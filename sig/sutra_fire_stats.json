@@ -1,0 +1,114 @@
+{
+  "ranked_by_count": [
+    {
+      "fire_count": 24,
+      "id": "1.4.14",
+      "total_time_ns": 5723595
+    },
+    {
+      "fire_count": 24,
+      "id": "4.1.2",
+      "total_time_ns": 818887
+    },
+    {
+      "fire_count": 24,
+      "id": "8.2.1",
+      "total_time_ns": 450048
+    },
+    {
+      "fire_count": 24,
+      "id": "6.4.1",
+      "total_time_ns": 420637
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.2",
+      "total_time_ns": 306075
+    },
+    {
+      "fire_count": 24,
+      "id": "4.1.1",
+      "total_time_ns": 305070
+    },
+    {
+      "fire_count": 8,
+      "id": "1.3.9",
+      "total_time_ns": 1020130
+    },
+    {
+      "fire_count": 5,
+      "id": "7.3.102",
+      "total_time_ns": 493934
+    },
+    {
+      "fire_count": 4,
+      "id": "7.3.103",
+      "total_time_ns": 486712
+    },
+    {
+      "fire_count": 4,
+      "id": "1.3.8",
+      "total_time_ns": 393912
+    },
+    {
+      "fire_count": 3,
+      "id": "7.1.12",
+      "total_time_ns": 485282
+    },
+    {
+      "fire_count": 3,
+      "id": "6.1.88",
+      "total_time_ns": 465415
+    },
+    {
+      "fire_count": 2,
+      "id": "6.1.78",
+      "total_time_ns": 586523
+    },
+    {
+      "fire_count": 2,
+      "id": "8.4.2",
+      "total_time_ns": 506155
+    },
+    {
+      "fire_count": 2,
+      "id": "6.1.87",
+      "total_time_ns": 477969
+    },
+    {
+      "fire_count": 2,
+      "id": "1.3.2",
+      "total_time_ns": 470026
+    },
+    {
+      "fire_count": 2,
+      "id": "1.3.3",
+      "total_time_ns": 419486
+    },
+    {
+      "fire_count": 1,
+      "id": "7.1.54",
+      "total_time_ns": 661480
+    },
+    {
+      "fire_count": 1,
+      "id": "6.1.101",
+      "total_time_ns": 462932
+    },
+    {
+      "fire_count": 1,
+      "id": "7.1.13",
+      "total_time_ns": 448233
+    },
+    {
+      "fire_count": 1,
+      "id": "6.1.107",
+      "total_time_ns": 427094
+    },
+    {
+      "fire_count": 1,
+      "id": "6.1.69",
+      "total_time_ns": 384858
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  { "index":  1, "devanagari": "अइउण्",      "phonemes": ["a", "i", "u"],               "it": "N" },
+  { "index":  2, "devanagari": "ऋऌक्",       "phonemes": ["f", "x"],                    "it": "k" },
+  { "index":  3, "devanagari": "एओङ्",       "phonemes": ["e", "o"],                    "it": "g" },
+  { "index":  4, "devanagari": "ऐऔच्",       "phonemes": ["E", "O"],                    "it": "c" },
+  { "index":  5, "devanagari": "हयवरट्",     "phonemes": ["h", "y", "v", "r"],          "it": "w" },
+  { "index":  6, "devanagari": "लण्",         "phonemes": ["l"],                         "it": "R" },
+  { "index":  7, "devanagari": "ञमङणनम्",    "phonemes": ["Y", "m", "N", "n"],          "it": "m" },
+  { "index":  8, "devanagari": "झभञ्",       "phonemes": ["J", "B"],                    "it": "Y" },
+  { "index":  9, "devanagari": "घढधष्",      "phonemes": ["G", "Q", "D"],               "it": "z" },
+  { "index": 10, "devanagari": "जबगडदश्",    "phonemes": ["j", "b", "g", "q", "d"],     "it": "S" },
+  { "index": 11, "devanagari": "खफछठथचटतव्", "phonemes": ["K", "P", "C", "W", "T", "c", "w", "t"], "it": "v" },
+  { "index": 12, "devanagari": "कपय्",       "phonemes": ["k", "p"],                    "it": "y" },
+  { "index": 13, "devanagari": "शषसर्",      "phonemes": ["S", "z", "s"],               "it": "r" },
+  { "index": 14, "devanagari": "हल्",         "phonemes": ["h"],                         "it": "l" }
+]

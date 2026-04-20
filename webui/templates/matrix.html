@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block title %}Matrix — Pāṇini Engine{% endblock %}
+
+{% block content %}
+<div class="panel">
+  <h1>24-Cell Paradigm Matrix</h1>
+  <div class="form-row">
+    <label>Stem (SLP1)
+      <input id="stem" type="text" value="{{ stem }}">
+    </label>
+    <label>Liṅga
+      <select id="linga">
+        <option value="pulliṅga" selected>पुंलिङ्ग</option>
+        <option value="strīliṅga">स्त्रीलिङ्ग</option>
+        <option value="napuṃsaka">नपुंसक</option>
+      </select>
+    </label>
+    <button id="load-btn">LOAD MATRIX</button>
+    <span id="load-status" class="muted" style="margin-left:12px;"></span>
+  </div>
+</div>
+
+<div class="panel">
+  <h2 id="matrix-head">Matrix</h2>
+  <p class="muted" style="font-size:12px;">
+    Click any cell → open full prakriyā trace.  Green = matches gold
+    corpus; red = mismatches gold; normal = no gold available.
+  </p>
+  <table class="matrix" id="matrix">
+    <thead>
+      <tr>
+        <th></th>
+        <th>{{ vacana_dev[1] }}</th>
+        <th>{{ vacana_dev[2] }}</th>
+        <th>{{ vacana_dev[3] }}</th>
+      </tr>
+    </thead>
+    <tbody id="matrix-body">
+      {% for v in range(1, 9) %}
+      <tr>
+        <th>{{ loop.index }}. {{ vibhakti_dev[loop.index] }}</th>
+        {% for vv in range(1, 4) %}
+        <td class="cell" data-cell="{{ v }}-{{ vv }}"
+            data-v="{{ v }}" data-vv="{{ vv }}">
+          <span class="dev">…</span>
+        </td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="panel" id="cell-trace" style="display:none;">
+  <h2><span id="cell-head"></span></h2>
+  <div id="cell-result"></div>
+  <div class="two-pane">
+    <div>
+      <div class="trace-filter" id="trace-filter">
+        <label><input type="checkbox" value="APPLIED"    checked> Applied</label>
+        <label><input type="checkbox" value="BLOCKED"    checked> Blocked</label>
+        <label><input type="checkbox" value="SKIPPED">            Skipped</label>
+        <label><input type="checkbox" value="STRUCTURAL" checked> Structural</label>
+      </div>
+      <ol class="trace" id="trace"></ol>
+    </div>
+    <div class="sutra-detail" id="sutra-detail">
+      <div class="empty">Click a trace step to view its sūtra.</div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block body_extra %}
+<script src="{{ url_for('static', filename='trace.js') }}"></script>
+<script>
+document.getElementById("load-btn").addEventListener("click", loadMatrix);
+document.addEventListener("DOMContentLoaded", loadMatrix);
+
+async function loadMatrix() {
+  const stem  = document.getElementById("stem").value;
+  const linga = document.getElementById("linga").value;
+  const status = document.getElementById("load-status");
+  status.innerHTML = '<span class="loading"></span> deriving all 24 cells…';
+
+  try {
+    const r = await fetch(`/api/matrix?stem=${encodeURIComponent(stem)}&linga=${encodeURIComponent(linga)}`);
+    const data = await r.json();
+    fillMatrix(data);
+    status.textContent = `done (stem=${stem})`;
+  } catch (e) {
+    status.textContent = "error: " + e.message;
+  }
+}
+
+function fillMatrix(data) {
+  document.querySelectorAll("#matrix td.cell").forEach(td => {
+    const key = td.dataset.cell;
+    const cell = data.cells[key];
+    td.classList.remove("match", "mismatch", "error");
+    if (!cell) { td.innerHTML = "<span>—</span>"; return; }
+    if (cell.error) {
+      td.classList.add("error");
+      td.innerHTML = `<span>${escapeHtml(cell.error)}</span>`;
+      return;
+    }
+    const surface = cell.surface_dev || "—";
+    let html = `<span class="dev">${escapeHtml(surface)}</span>`;
+    if (cell.gold_dev) {
+      if (cell.match) {
+        td.classList.add("match");
+      } else {
+        td.classList.add("mismatch");
+        html += `<span class="gold dev">gold: ${escapeHtml(cell.gold_dev)}</span>`;
+      }
+    }
+    td.innerHTML = html;
+    td.onclick = () => openCell(data.stem, td.dataset.v, td.dataset.vv);
+  });
+}
+
+async function openCell(stem, v, vv) {
+  const panel = document.getElementById("cell-trace");
+  const head  = document.getElementById("cell-head");
+  panel.style.display = "block";
+  panel.scrollIntoView({ behavior: "smooth", block: "start" });
+  head.textContent = `${stem} — vibhakti ${v}, vacana ${vv}`;
+  document.getElementById("trace").innerHTML = '<li class="muted">loading…</li>';
+  document.getElementById("sutra-detail").innerHTML =
+    '<div class="empty">Click a trace step to view its sūtra.</div>';
+
+  const r = await fetch("/api/derive", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ stem, vibhakti: +v, vacana: +vv }),
+  });
+  const data = await r.json();
+  document.getElementById("cell-result").innerHTML = `
+    <div class="result">
+      <div>
+        <div class="big-dev dev">${escapeHtml(data.surface_dev || "—")}</div>
+        <div class="slp1">${escapeHtml(data.surface_slp1)}</div>
+      </div>
+      <div class="stats">
+        <div>phase: ${data.phase}</div>
+        <div>
+          <span>${data.stats.applied_count} applied</span>
+          <span>${data.stats.blocked_count} blocked</span>
+          <span>${data.stats.skipped_count} skipped</span>
+        </div>
+      </div>
+    </div>`;
+  renderTrace(data.trace);
+}
+</script>
+{% endblock %}

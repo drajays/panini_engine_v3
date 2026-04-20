@@ -1,0 +1,7 @@
+{
+  "_doc": "Gaṇapāṭha (gaṇa lists used by sūtras like 1.1.27, 1.1.32 etc.). Stub with a couple of representative gaṇas.",
+  "sarvādi"  : ["sarva", "viSva", "anya", "anyatara", "itara", "tvat", "tva", "nema", "sama", "sim"],
+  "bhvādi"   : ["BU", "eD", "spard", "gAd", "bAD"],
+  "kaṇḍvādi" : ["kaRqU", "sanna", "matsn"],
+  "bahv-ādi" : ["bahu", "kati"]
+}

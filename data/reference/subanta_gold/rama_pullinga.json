@@ -1,0 +1,32 @@
+{
+  "_doc": "राम (masc. a-stem) paradigm — 24 cells. Keys are 'vibhakti-vacana'. form_dev is the target surface; path_sutras is the canonical proof path (anuvṛtti-baked-in IDs).",
+  "stem_slp1" : "rAma",
+  "stem_dev"  : "राम",
+  "linga"     : "pulliṅga",
+  "cells": {
+    "1-1": { "form_slp1": "rAmaH",       "form_dev": "रामः" },
+    "1-2": { "form_slp1": "rAmO",        "form_dev": "रामौ" },
+    "1-3": { "form_slp1": "rAmAH",       "form_dev": "रामाः" },
+    "2-1": { "form_slp1": "rAmam",       "form_dev": "रामम्" },
+    "2-2": { "form_slp1": "rAmO",        "form_dev": "रामौ" },
+    "2-3": { "form_slp1": "rAmAn",       "form_dev": "रामान्" },
+    "3-1": { "form_slp1": "rAmeRa",      "form_dev": "रामेण" },
+    "3-2": { "form_slp1": "rAmAByAm",    "form_dev": "रामाभ्याम्" },
+    "3-3": { "form_slp1": "rAmEH",       "form_dev": "रामैः" },
+    "4-1": { "form_slp1": "rAmAya",      "form_dev": "रामाय" },
+    "4-2": { "form_slp1": "rAmAByAm",    "form_dev": "रामाभ्याम्" },
+    "4-3": { "form_slp1": "rAmeByaH",    "form_dev": "रामेभ्यः" },
+    "5-1": { "form_slp1": "rAmAt",       "form_dev": "रामात्" },
+    "5-2": { "form_slp1": "rAmAByAm",    "form_dev": "रामाभ्याम्" },
+    "5-3": { "form_slp1": "rAmeByaH",    "form_dev": "रामेभ्यः" },
+    "6-1": { "form_slp1": "rAmasya",     "form_dev": "रामस्य" },
+    "6-2": { "form_slp1": "rAmayoH",     "form_dev": "रामयोः" },
+    "6-3": { "form_slp1": "rAmARAm",     "form_dev": "रामाणाम्" },
+    "7-1": { "form_slp1": "rAme",        "form_dev": "रामे" },
+    "7-2": { "form_slp1": "rAmayoH",     "form_dev": "रामयोः" },
+    "7-3": { "form_slp1": "rAmezu",      "form_dev": "रामेषु" },
+    "8-1": { "form_slp1": "rAma",        "form_dev": "राम" },
+    "8-2": { "form_slp1": "rAmO",        "form_dev": "रामौ" },
+    "8-3": { "form_slp1": "rAmAH",       "form_dev": "रामाः" }
+  }
+}

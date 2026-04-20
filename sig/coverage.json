@@ -1,0 +1,68 @@
+{
+  "by_type": {
+    "ADHIKARA": {
+      "coverage_pct": 100.0,
+      "implemented": 3,
+      "stubs": 0,
+      "total": 3
+    },
+    "ANUVADA": {
+      "coverage_pct": 100.0,
+      "implemented": 1,
+      "stubs": 0,
+      "total": 1
+    },
+    "ATIDESHA": {
+      "coverage_pct": 100.0,
+      "implemented": 1,
+      "stubs": 0,
+      "total": 1
+    },
+    "NIPATANA": {
+      "coverage_pct": 100.0,
+      "implemented": 1,
+      "stubs": 0,
+      "total": 1
+    },
+    "NIYAMA": {
+      "coverage_pct": 100.0,
+      "implemented": 1,
+      "stubs": 0,
+      "total": 1
+    },
+    "PARIBHASHA": {
+      "coverage_pct": 100.0,
+      "implemented": 1,
+      "stubs": 0,
+      "total": 1
+    },
+    "PRATISHEDHA": {
+      "coverage_pct": 100.0,
+      "implemented": 1,
+      "stubs": 0,
+      "total": 1
+    },
+    "SAMJNA": {
+      "coverage_pct": 100.0,
+      "implemented": 5,
+      "stubs": 0,
+      "total": 5
+    },
+    "VIBHASHA": {
+      "coverage_pct": 100.0,
+      "implemented": 1,
+      "stubs": 0,
+      "total": 1
+    },
+    "VIDHI": {
+      "coverage_pct": 100.0,
+      "implemented": 17,
+      "stubs": 0,
+      "total": 17
+    }
+  },
+  "coverage_pct": 100.0,
+  "implemented": 32,
+  "stubs": 0,
+  "total": 32
+}

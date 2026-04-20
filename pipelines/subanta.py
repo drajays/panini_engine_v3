@@ -1,0 +1,184 @@
+"""
+pipelines/subanta.py — subanta derivation driver.
+──────────────────────────────────────────────────
+
+Given:
+  stem_slp1    : str, e.g. "rAma"
+  vibhakti     : 1..8
+  vacana       : 1..3
+  linga        : "pulliṅga" | "strīliṅga" | "napuṃsaka"
+
+Returns:
+  State  — with full trace in state.trace and rendered surface in
+           state.flat_dev()  (reconcile with phonology.joiner for
+           proper halanta/mātrā surface).
+
+This is the ONLY place (vibhakti, vacana) enters the engine — and it
+enters via state.meta.  Every downstream cond() reads ONLY phonemic /
+saṃjñā / tag / adhikāra signals (CONSTITUTION Art. 2).
+
+Recipe (Aṣṭādhyāyī order; one step per apply_rule call):
+
+    STAGE 1: saṃjñā preflight
+        1.4.14  sup saṃjñā
+        4.1.1   ngyāp anuvāda
+        1.1.2   guṇa saṃjñā   (available for later sandhi)
+
+    STAGE 2: attach sup
+        4.1.2   ADHIKARA + attaches the (v,v) pratyaya to state.terms
+
+    STAGE 3: it-prakaraṇa on the pratyaya upadeśa
+        1.3.3   halantyam  (tag final consonants)
+        1.3.9   tasya lopaḥ (delete tagged it-varṇas)
+
+    STAGE 4: aṅgakārya
+        6.4.1   aṅgasya adhikāra
+      (conditional) 7.1.54  nuṭ āgama for (6,3)
+      (then)  1.3.9 again to lose the ṭ it-marker of nuṭ
+        6.4.148 yasyeti ca (when aṅga-final a meets i-pratyaya)
+
+    STAGE 5: sandhi
+        6.1.87  āt guṇaḥ  (e.g. a+i → e for (3,1))
+        6.1.101 akaḥ savarṇe dīrghaḥ
+
+    STAGE 6: pada merge — recipe marks state.terms joined as 'pada'
+             (structural, not a sūtra)
+
+    STAGE 7: tripāḍī
+        8.2.1   pūrvatrāsiddham (enter zone)
+        8.2.66  sasajuṣo ruḥ  (final s → ru)
+        8.3.15  ru → visarga at end
+"""
+from __future__ import annotations
+
+from typing import List
+
+from engine            import apply_rule
+from engine.state      import State, Term
+from phonology         import mk
+from phonology.varna   import mk_inherent_a
+
+
+def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
+                        linga: str = "pulliṅga") -> State:
+    """Build the initial state for a subanta derivation."""
+    # Each consonant gets inherent-a unless immediately followed by a
+    # vowel character in the stem.  We emit in canonical internal form:
+    # consonant halanta + vowel/inherent-a.  Simple loop:
+    varnas: List = []
+    from phonology.varna import AC_DEV, HAL_DEV
+    i = 0
+    while i < len(stem_slp1):
+        ch = stem_slp1[i]
+        if ch in HAL_DEV:
+            varnas.append(mk(ch))
+            # If next is a vowel, it'll be appended below.  If not
+            # (end or another consonant), append inherent-a.
+            nxt = stem_slp1[i + 1] if i + 1 < len(stem_slp1) else None
+            if nxt is None or nxt in HAL_DEV:
+                varnas.append(mk_inherent_a())
+            i += 1
+            continue
+        if ch in AC_DEV:
+            varnas.append(mk(ch))
+            i += 1
+            continue
+        # Skip unknown.
+        i += 1
+
+    stem = Term(
+        kind   = "prakriti",
+        varnas = varnas,
+        tags   = {"prātipadika", "anga", "upadesha"},
+        meta   = {"upadesha_slp1": stem_slp1},
+    )
+    state = State(terms=[stem])
+    state.meta["linga"]            = linga
+    state.meta["vibhakti_vacana"]  = f"{vibhakti}-{vacana}"
+    return state
+
+
+def derive(stem_slp1: str, vibhakti: int, vacana: int,
+           linga: str = "pulliṅga") -> State:
+    """
+    Aṣṭādhyāyī-kram pipeline.  Returns final state with complete trace.
+    """
+    s = build_initial_state(stem_slp1, vibhakti, vacana, linga)
+
+    # STAGE 1 — saṃjñā preflight.
+    s = apply_rule("1.4.14", s)
+    s = apply_rule("4.1.1",  s)
+    s = apply_rule("1.1.2",  s)
+
+    # STAGE 2 — sup attach.
+    s = apply_rule("4.1.2",  s)
+
+    # STAGE 3 — it prakaraṇa on the pratyaya.
+    s = apply_rule("1.3.2",  s)      # v3.1: anunāsika-it for vowels (su → s)
+    s = apply_rule("1.3.3",  s)
+    s = apply_rule("1.3.8",  s)      # v3.1: initial-ṅ it for sup pratyayas
+    s = apply_rule("1.3.9",  s)
+
+    # STAGE 4 — aṅgakārya.
+    s = apply_rule("6.4.1",   s)
+    # v3.1: sambuddhi su-lopa.  Fires only when pratyaya is tagged
+    # 'sambuddhi' (cell 8-1) and aṅga ends in hrasva/eṅ.  Done EARLY
+    # so later pratyaya-replacements don't re-materialize 's'.
+    s = apply_rule("6.1.69",  s)
+    # v3.1: ato-pratyaya replacements (ṭā→ina, ṅasi→āt, ṅas→sya).
+    s = apply_rule("7.1.12",  s)
+    # v3.1: ṅe → ya (dative-singular after a-stem).
+    s = apply_rule("7.1.13",  s)
+    s = apply_rule("7.1.54",  s)      # fires only when (6,3) & hrasva-final aṅga
+    s = apply_rule("1.3.9",   s)      # re-fire: remove ṭ-it of nuṭ if inserted
+    # v3.1: bahuvacane jhalyet — a → e before Bis/Byas/sup (plural jhal).
+    # MUST run before 7.3.102 (which would make a → ā instead).
+    s = apply_rule("7.3.103", s)
+    # v3.1: bahuvacane jhalyet — a → e before jhal-initial plural sup.
+    # MUST run before 7.3.102 (which would otherwise make a → ā).
+    s = apply_rule("7.3.103", s)
+    # v3.1: supi ca — aṅga-final 'a' → 'ā' before consonant-initial sup.
+    # Runs AFTER 7.1.12/13 replacements so the pratyaya's new first varṇa
+    # (y, s, t, ...) is visible as the trigger.
+    s = apply_rule("7.3.102", s)
+    s = apply_rule("6.4.148", s)      # yasyeti ca
+
+    # STAGE 5 — sandhi.
+    s = apply_rule("6.1.78",  s)      # v3.1: ayādi — y-insertion before 'os'
+    s = apply_rule("6.1.107", s)      # v3.1: ami pūrvaḥ — a+am → am (blocks 6.1.101)
+    s = apply_rule("6.1.87",  s)
+    s = apply_rule("6.1.88",  s)      # v3.1: vṛddhi — a+E/O → E/O
+    s = apply_rule("6.1.101", s)
+
+    # STAGE 6 — pada merge.
+    _pada_merge(s)
+
+    # STAGE 7 — tripāḍī.
+    s = apply_rule("8.2.1",  s)
+    s = apply_rule("8.2.66", s)
+    s = apply_rule("8.3.15", s)
+    s = apply_rule("8.3.59", s)       # v3.1: ṣatva after in-kuk vowels
+    s = apply_rule("8.4.2",  s)       # v3.1: ṇatva
+
+    return s
+
+
+def _pada_merge(state: State) -> None:
+    """Structural: merge all Terms into a single pada-tagged Term.
+    This is NOT a sūtra; it is tagged '__MERGE__' in the trace."""
+    if not state.terms:
+        return
+    all_varnas: List = []
+    for t in state.terms:
+        all_varnas.extend(t.varnas)
+    pada = Term(kind="pada", varnas=all_varnas, tags={"pada"}, meta={})
+    state.terms = [pada]
+    state.trace.append({
+        "sutra_id"    : "__MERGE__",
+        "sutra_type"  : "STRUCTURAL",
+        "type_label"  : "पद-मेलनम्",
+        "form_before" : state.flat_slp1(),  # already merged, but same
+        "form_after"  : state.flat_slp1(),
+        "why_dev"     : "पद-रचना — सुबन्त-संयोजनम् (संरचनात्मकं, न सूत्रम्)।",
+        "status"      : "APPLIED",
+    })

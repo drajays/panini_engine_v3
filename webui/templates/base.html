@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Pāṇini Engine v3{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  {% block head_extra %}{% endblock %}
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-dev">पाणिनि-यन्त्रम्</span>
+    <span class="brand-sub">Pāṇini Engine <span class="ver">v3.1</span></span>
+  </div>
+  <nav class="nav">
+    <a href="/"        class="{{ 'active' if nav_active == 'derive'  else '' }}">Derive</a>
+    <a href="/matrix"  class="{{ 'active' if nav_active == 'matrix'  else '' }}">24-Cell Matrix</a>
+    <a href="/sutras"  class="{{ 'active' if nav_active == 'sutras'  else '' }}">Sūtras</a>
+    <a href="/sig"     class="{{ 'active' if nav_active == 'sig'     else '' }}">SIG Graph</a>
+    <a href="/tests"   class="{{ 'active' if nav_active == 'tests'   else '' }}">Tests</a>
+  </nav>
+  <div class="cov">
+    {% if cov %}
+      <span class="cov-pct">{{ cov.coverage_pct }}%</span>
+      <span class="cov-count">{{ cov.implemented }}/{{ cov.total }} sūtras</span>
+    {% endif %}
+  </div>
+</header>
+
+<main class="content">
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+  Pāṇini Engine v3.1 · glass-box rule-based derivation ·
+  <a href="https://claude.ai">built with Claude</a>
+</footer>
+
+{% block body_extra %}{% endblock %}
+</body>
+</html>

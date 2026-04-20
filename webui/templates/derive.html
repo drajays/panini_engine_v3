@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}Derive — Pāṇini Engine{% endblock %}
+
+{% block content %}
+<div class="panel">
+  <h1>Subanta Derivation</h1>
+  <div class="form-row">
+    <label>Stem (SLP1)
+      <input id="stem" type="text" value="rAma">
+    </label>
+    <label>Vibhakti
+      <select id="vibhakti">
+        <option value="1">1. प्रथमा</option>
+        <option value="2">2. द्वितीया</option>
+        <option value="3">3. तृतीया</option>
+        <option value="4">4. चतुर्थी</option>
+        <option value="5">5. पञ्चमी</option>
+        <option value="6" selected>6. षष्ठी</option>
+        <option value="7">7. सप्तमी</option>
+        <option value="8">8. सम्बोधन</option>
+      </select>
+    </label>
+    <label>Vacana
+      <select id="vacana">
+        <option value="1">1. एकवचन</option>
+        <option value="2">2. द्विवचन</option>
+        <option value="3" selected>3. बहुवचन</option>
+      </select>
+    </label>
+    <label>Liṅga
+      <select id="linga">
+        <option value="pulliṅga" selected>पुंलिङ्ग</option>
+        <option value="strīliṅga">स्त्रीलिङ्ग</option>
+        <option value="napuṃsaka">नपुंसक</option>
+      </select>
+    </label>
+    <button id="derive-btn">DERIVE</button>
+  </div>
+</div>
+
+<div id="result-area"></div>
+
+<div class="two-pane">
+  <div class="panel">
+    <h2>प्रक्रिया — Trace</h2>
+    <div class="trace-filter" id="trace-filter">
+      <label><input type="checkbox" value="APPLIED"    checked> Applied</label>
+      <label><input type="checkbox" value="BLOCKED"    checked> Blocked</label>
+      <label><input type="checkbox" value="SKIPPED">            Skipped</label>
+      <label><input type="checkbox" value="STRUCTURAL" checked> Structural</label>
+    </div>
+    <ol class="trace" id="trace"></ol>
+  </div>
+
+  <div class="panel sutra-detail" id="sutra-detail">
+    <div class="empty">Click a trace step to view its sūtra.</div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block body_extra %}
+<script src="{{ url_for('static', filename='trace.js') }}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn   = document.getElementById("derive-btn");
+  btn.addEventListener("click", runDerive);
+  // Auto-run on first load.
+  runDerive();
+});
+
+async function runDerive() {
+  const stem     = document.getElementById("stem").value;
+  const vibhakti = parseInt(document.getElementById("vibhakti").value);
+  const vacana   = parseInt(document.getElementById("vacana").value);
+  const linga    = document.getElementById("linga").value;
+
+  const btn = document.getElementById("derive-btn");
+  btn.disabled = true;
+  btn.innerHTML = '<span class="loading"></span> deriving…';
+
+  try {
+    const r = await fetch("/api/derive", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ stem, vibhakti, vacana, linga }),
+    });
+    const data = await r.json();
+    if (!r.ok) { showError(data.error || r.statusText); return; }
+    renderResult(data);
+    renderTrace(data.trace);
+  } catch (e) {
+    showError(e.message);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = "DERIVE";
+  }
+}
+
+function showError(msg) {
+  document.getElementById("result-area").innerHTML =
+    `<div class="panel" style="color:var(--danger)">Error: ${escapeHtml(msg)}</div>`;
+}
+
+function renderResult(d) {
+  document.getElementById("result-area").innerHTML = `
+    <div class="result">
+      <div>
+        <div class="big-dev dev">${escapeHtml(d.surface_dev || "—")}</div>
+        <div class="slp1">${escapeHtml(d.surface_slp1)}</div>
+      </div>
+      <div class="stats">
+        <div>phase: ${d.phase}</div>
+        <div>
+          <span>${d.stats.applied_count} applied</span>
+          <span>${d.stats.blocked_count} blocked</span>
+          <span>${d.stats.skipped_count} skipped</span>
+          <span>${d.stats.total_steps} total</span>
+        </div>
+      </div>
+    </div>`;
+}
+</script>
+{% endblock %}

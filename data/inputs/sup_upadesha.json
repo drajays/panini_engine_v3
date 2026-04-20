@@ -1,0 +1,31 @@
+{
+  "_doc": "Sup-pratyaya inventory in raw upadeśa form (SLP1). Each key is (vibhakti, vacana) stringified as 'v-c'. Values: the SLP1 sequence WITH it-markers present (engine's 1.3.2–1.3.9 will remove them). Anunāsika marker: '~' suffix on a vowel. The 'has_halant_it' set (in the _meta block) lists keys whose pratyaya ends in a halant-it that 1.3.3 must strip.",
+  "_meta": {
+    "has_halant_it" : ["2-2", "7-3"],
+    "has_initial_n_it" : ["3-1", "4-1", "5-1", "6-1", "7-1"]
+  },
+  "1-1": "s~",
+  "1-2": "O",
+  "1-3": "jas",
+  "2-1": "am",
+  "2-2": "Ow",
+  "2-3": "Sas",
+  "3-1": "wA",
+  "3-2": "ByAm",
+  "3-3": "Bis",
+  "4-1": "Ne",
+  "4-2": "ByAm",
+  "4-3": "Byas",
+  "5-1": "Nasi",
+  "5-2": "ByAm",
+  "5-3": "Byas",
+  "6-1": "Nas",
+  "6-2": "os",
+  "6-3": "Am",
+  "7-1": "Ni",
+  "7-2": "os",
+  "7-3": "sup",
+  "8-1": "s~",
+  "8-2": "O",
+  "8-3": "jas"
+}
