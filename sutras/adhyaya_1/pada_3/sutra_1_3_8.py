@@ -1,20 +1,25 @@
 """
-1.3.8  लशक्वतद्धिते  —  SAMJNA
+1.3.8  उपदेशे लशक्वतद्धिते  —  SAMJNA
 
-Classical reading: "The initial ल्-श्-कु (= l, ś, k-varga) of a pratyaya
-in a non-taddhita context are 'it'."
+Śāstra / engine role (CONSTITUTION Arts. 1–2, 4, 7)
+──────────────────────────────────────────────────
+• **Type:** SAMJNA — initial **ḷ**-**ś**-**ku** (ल्·श्·कवर्ग) of a **non-taddhita**
+  pratyaya in upadeśa gets *it* (then **1.3.9** deletes).
 
-v3.1 representative implementation: we extend this to the broader
-Pāṇinian family (1.3.5–1.3.8) that collectively handles pratyaya-
-initial it-markers.  Specifically we tag the initial 'N' (ṅ) of sup
-pratyayas that carry the tag 'has_initial_n_it' (set by 4.1.2 from
-the JSON _meta block — which encodes the classical decisions).
+• **v3 representative encoding:** Classical लशक्व is implemented for the
+  **sup** inventory by tagging initial **ṅ** (SLP1 ``N``) when ``has_initial_n_it``
+  is set on the pratyaya Term — see ``sutra_4_1_2`` + ``_meta`` in
+  ``data/inputs/sup_upadesha.json``. This keeps phoneme logic in sūtra files
+  and inventory policy in **data/inputs/** (Art. 6 — engine never reads gold corpora).
 
-After this tagging, 1.3.9 tasya lopaḥ deletes the marked varṇa.
+• **v2 reference:** panini_engine_v2/core/sutra_1_3_8.py + ``it_rules.py``
+  ``_terms_sup_or_primary_upadesh`` family — different Term model; same idea:
+  first-hal it for eligible affixes.
 
-This keeps the code dumb (reads the tag) while the grammatical
-decisions about which pratyayas have initial-ṅ-its stay in data.
+• **Blindness:** ``cond`` reads tags / first Varṇa only — not paradigm coords.
 """
+from __future__ import annotations
+
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
 
@@ -49,11 +54,12 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.3.8",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "laSakv ataddhite",
-    text_dev       = "लशक्वतद्धिते",
-    padaccheda_dev = "ल-श-कु — अ-तद्धिते",
-    why_dev        = "उपदेशे प्रत्ययस्य आदौ ल्-श्-कु-वर्णस्य इत्-संज्ञा "
-                     "(अतद्धिते)। अत्र ङ्-वर्णान्तः प्रातिनिधिकः।",
+    text_slp1      = "upadeSe laSakv ataddhite it",
+    text_dev       = "उपदेशे लशक्वतद्धिते इत्",
+    padaccheda_dev = "उपदेशे लशकु-अतद्धिते इत्",
+    why_dev        = "अतद्धिते प्रत्ययस्य आदौ ल्-श्-कु-वर्णानाम् इत्-संज्ञा; "
+                     "अत्र ङ्-आदिः प्रातिनिध्येन ‘has_initial_n_it’ द्वारा निर्दिष्टः। "
+                     "लोपः १.३.९।",
     anuvritti_from = ("1.3.2",),
     cond           = cond,
     act            = act,

@@ -1,35 +1,46 @@
 """
-1.3.9  तस्य लोपः  —  VIDHI
+1.3.9  उपदेशे इतस्य लोपः  —  VIDHI
 
-"Of that (the 'it'-marker), there is lopa (deletion)."
+Śāstra / engine role (CONSTITUTION Arts. 1, 2, 5 (R1), 7)
+──────────────────────────────────────────────────────────
+• **Type:** VIDHI — **deletes** Varṇas that have been marked as *it* (by
+  **1.3.2**–**1.3.8** and related it-candidate tags). This is
+  the operational *lopa* of the *it* sound — not the saṃjñā step.
 
-This is the workhorse VIDHI that actually REMOVES it-tagged varṇas.
-It reads tags added by 1.3.2 / 1.3.3 / 1.3.5 / 1.3.7 / 1.3.8 and
-deletes the marked varṇas from their terms.
+• **tasya:** *Of that [it]* — anuvṛtti links to the *it* prakaraṇa opened by
+  **1.3.2**; baked into ``text_slp1`` as ``itasya`` (Art. 4).
 
-R1 is NOT exempt here: if this fires, it MUST delete at least one
-varṇa.  The dispatcher will raise R1Violation on silent no-op.
+• **R1:** Not exempt — if ``cond`` is True, ``act`` must remove at least one
+  Varṇa whose tags intersect ``IT_LOPA_TAGS``; otherwise *R1Violation*.
+
+• **v2 reference:** panini_engine_v2/core/it_rules.py ``cond_1_3_9`` /
+  ``act_1_3_9`` — same job on a different ``State`` / Varṇa model.
+
+• **Tags:** Only deletions listed in ``IT_LOPA_TAGS``; ``nut_agama_inserted``
+  etc. are deliberately excluded (see 7.1.54 notes in repo).
 """
+from __future__ import annotations
+
+from typing import Final, FrozenSet
+
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
 
-
-_IT_TAGS = (
-    "it",                          # already-confirmed it
-    "it_candidate_halantyam",      # from 1.3.3
-    "it_candidate_anunasika",      # from 1.3.2
-    "it_candidate_nit_tu_du",      # from 1.3.5
-    "it_candidate_cutu",           # from 1.3.7
-    "it_candidate_lasaku",         # from 1.3.8
-    # NOTE: 'it_candidate_nut_t' was historically used by 7.1.54 but
-    # incorrectly caused the inserted 'n' to be lopa-ed.  It is now
-    # renamed to 'nut_agama_inserted' (non-it) and does not belong here.
-)
+# Exposed for tools/UI — single source for “what 1.3.9 strips”
+IT_LOPA_TAGS: Final[FrozenSet[str]] = frozenset((
+    "it",
+    "it_candidate_halantyam",
+    "it_candidate_anunasika",
+    "it_candidate_nit_tu_du",
+    "it_candidate_sha_pratyaya",
+    "it_candidate_cutu",
+    "it_candidate_lasaku",
+))
 
 
 def _has_it_varna(term) -> bool:
     return any(
-        any(tag in v.tags for tag in _IT_TAGS)
+        v.tags & IT_LOPA_TAGS
         for v in term.varnas
     )
 
@@ -42,7 +53,7 @@ def act(state: State) -> State:
     for t in state.terms:
         t.varnas = [
             v for v in t.varnas
-            if not any(tag in v.tags for tag in _IT_TAGS)
+            if not (v.tags & IT_LOPA_TAGS)
         ]
     return state
 
@@ -50,11 +61,14 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.3.9",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "tasya lopaH",
-    text_dev       = "तस्य लोपः",
-    padaccheda_dev = "तस्य लोपः",
-    why_dev        = "इत्-संज्ञकस्य वर्णस्य लोपः भवति।",
-    anuvritti_from = ("1.3.2", "1.3.3"),
+    text_slp1      = "upadeSe itasya lopaH",
+    text_dev       = "उपदेशे इतस्य लोपः",
+    padaccheda_dev = "उपदेशे इतस्य लोपः",
+    why_dev        = "ये वर्णाः ‘इत्’ संज्ञकाः (१.३.२–१.३.८), तेषां लोपः। "
+                     "अयम् एव ध्वनि-अपगमः — संज्ञा-निर्देशो न।",
+    anuvritti_from = (
+        "1.3.2", "1.3.3", "1.3.4", "1.3.5", "1.3.6", "1.3.7", "1.3.8",
+    ),
     cond           = cond,
     act            = act,
 )

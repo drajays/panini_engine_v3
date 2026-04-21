@@ -36,7 +36,7 @@ Recipe (Aṣṭādhyāyī order; one step per apply_rule call):
         4.1.2   ADHIKARA + attaches the (v,v) pratyaya to state.terms
 
     STAGE 3: it-prakaraṇa on the pratyaya upadeśa
-        1.3.3   halantyam  (tag final consonants)
+        1.3.3–1.3.8  it-saṃjñā (halantyam, tusma block, ñiṭuḍu, ṣaḥ, cuṭu, laśakvat)
         1.3.9   tasya lopaḥ (delete tagged it-varṇas)
 
     STAGE 4: aṅgakārya
@@ -161,6 +161,10 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     # STAGE 3 — it prakaraṇa on the pratyaya.
     s = apply_rule("1.3.2",  s)      # v3.1: anunāsika-it for vowels (su → s)
     s = apply_rule("1.3.3",  s)
+    s = apply_rule("1.3.4",  s)      # tusma antya — halantyam blocked (registry)
+    s = apply_rule("1.3.5",  s)      # ādir ñiṭuḍavaḥ
+    s = apply_rule("1.3.6",  s)      # ṣaḥ pratyayasya
+    s = apply_rule("1.3.7",  s)      # cuṭu
     s = apply_rule("1.3.8",  s)      # v3.1: initial-ṅ it for sup pratyayas
     s = apply_rule("1.3.9",  s)
 

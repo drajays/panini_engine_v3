@@ -1,41 +1,41 @@
 """
-1.3.3  हलन्त्यम्  —  SAMJNA
+1.3.3  उपदेशेऽन्त्यं हलन्त्यम्  —  SAMJNA
 
-"The final consonant of an upadeśa is termed 'it'."
+Śāstra / engine role (CONSTITUTION Arts. 1–2, 4, 7)
+──────────────────────────────────────────────────
+• **Type:** SAMJNA — final **hal** of an upadeśa gets the name *it* (via
+  candidate tag); deletion is **1.3.9**, not here.
 
-(Anuvṛtti carries 'upadeśe' from 1.3.2 — already baked into text_slp1.)
+• **1.3.4 (न विभक्तौ तुस्माः):** A **sup** pratyaya whose final **hal** is in
+  **tusma** does **not** get halantyam (structural ``sup`` + ``TUSMA``; see
+  ``sutra_1_3_4``). The ``has_halant_it`` tag (from ``sup_upadesha.json``
+  ``_meta``) still gates which affixes participate in halantyam at all.
 
-Fires on any Term whose final Varna is a consonant AND which has the
-tag 'upadesha' (meaning it's being read in upadeśa state).  Tags that
-final Varna with 'it_candidate_halantyam'.  A separate VIDHI 1.3.9
-(tasya lopaḥ) then deletes it.
+• **Anuvṛtti (Art. 4):** ``upadeśe`` and ``it`` are baked into ``text_*``;
+  ``anuvritti_from`` points at **1.3.2** for the *upadeśe* anchor.
 
-This SAMJNA updates state.samjna_registry[('it', term_id)] to track
-which Term got an it-tag; R2 watches the registry for change.
+• **Blindness:** No paradigm coordinates in ``cond`` (Art. 2).
 """
+from __future__ import annotations
+
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
-from phonology     import HAL
+from phonology     import HAL, TUSMA
 
 
 def _eligible_terms(state: State):
-    """Yield (index, term) pairs with an unmarked final consonant that
-    are still in upadeśa state."""
+    """Yield (index, term) with an unmarked final hal in upadeśa (when allowed)."""
     for i, t in enumerate(state.terms):
         if "upadesha" not in t.tags:
             continue
-        # v3.1 correction: sup pratyayas in our inventory are already
-        # post-halantyam (the JSON entries like "jas", "am", "Sas" are
-        # the surface upadeśas without halant-it-markers).  1.3.3 only
-        # applies to upadeśas that classically CARRY halant-its:
-        # dhātus (like cikIrz~) and a handful of lit-style pratyayas.
-        # We mark those with tag 'has_halant_it'; if absent, we skip.
         if "sup" in t.tags and "has_halant_it" not in t.tags:
             continue
         if not t.varnas:
             continue
         last = t.varnas[-1]
         if last.slp1 not in HAL:
+            continue
+        if "sup" in t.tags and last.slp1 in TUSMA:
             continue
         if "it" in last.tags or "it_candidate_halantyam" in last.tags:
             continue
@@ -57,10 +57,11 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.3.3",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "hal antyam (upadeze it)",
-    text_dev       = "हलन्त्यम् (उपदेशे इत्)",
-    padaccheda_dev = "हल् अन्त्यम् उपदेशे इत्",
-    why_dev        = "उपदेशे अन्त्यः हल् वर्णः 'इत्' संज्ञां लभते।",
+    text_slp1      = "upadeSe hal antyam it",
+    text_dev       = "उपदेशेऽन्त्यं हलन्त्यम् इत्",
+    padaccheda_dev = "उपदेशे अन्त्यम् हल् — अन्त्यम् इत्",
+    why_dev        = "उपदेशे अन्त्यः हल् वर्णः ‘इत्’ संज्ञां लभते; "
+                     "तुस्मान्त-विभक्तौ निषेधः १.३.४। लोपः १.३.९।",
     anuvritti_from = ("1.3.2",),
     cond           = cond,
     act            = act,
