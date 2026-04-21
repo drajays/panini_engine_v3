@@ -37,7 +37,7 @@ from pipelines.subanta import build_initial_state
 # Mirrors pipelines/subanta.py but uses apply_rule_timed so SIG gets
 # per-sūtra timings.
 _RECIPE = [
-    "1.4.14", "4.1.1", "1.1.2",
+    "1.4.14", "4.1.1", "1.1.1", "1.1.2",
     "4.1.2",
     "1.3.2", "1.3.3", "1.3.8", "1.3.9",         # anunāsika + laśakv
     "6.4.1",
