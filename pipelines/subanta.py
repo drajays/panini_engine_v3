@@ -80,10 +80,12 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
         ch = stem_slp1[i]
         if ch in HAL_DEV:
             varnas.append(mk(ch))
-            # If next is a vowel, it'll be appended below.  If not
-            # (end or another consonant), append inherent-a.
+            # Inherent schwa only after a **word-final** consonant (no following
+            # letter).  If the next character is a vowel, it is consumed below.
+            # If it is another consonant, it forms a cluster (e.g. ``SyAma`` श्याम)
+            # — **no** schwa between the two hal-s.
             nxt = stem_slp1[i + 1] if i + 1 < len(stem_slp1) else None
-            if nxt is None or nxt in HAL_DEV:
+            if nxt is None:
                 varnas.append(mk_inherent_a())
             i += 1
             continue
