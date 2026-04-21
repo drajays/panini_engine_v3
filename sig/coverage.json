@@ -56,13 +56,13 @@
     },
     "VIDHI": {
       "coverage_pct": 100.0,
-      "implemented": 17,
+      "implemented": 20,
       "stubs": 0,
-      "total": 17
+      "total": 20
     }
   },
   "coverage_pct": 100.0,
-  "implemented": 32,
+  "implemented": 35,
   "stubs": 0,
-  "total": 32
+  "total": 35
 }

@@ -38,7 +38,13 @@ _BLOCKERS = frozenset({
 
 def _find_target(state: State):
     """Scan flat varṇa sequence for r...n with only non-blocker
-    intervening varṇas.  Return (term_idx, varna_idx) of the n."""
+    intervening varṇas.  Return (term_idx, varna_idx) of the n.
+
+    v3.2 correction: pada-final 'n' is EXEMPT from ṇatva (the
+    classical aṣṭādhyāyī restricts 8.4.2 to non-pada-final contexts).
+    After pada-merge there's only one Term, so 'pada-final' means
+    'last varṇa position of the single Term'.
+    """
     flat = []
     for ti, t in enumerate(state.terms):
         for vi, v in enumerate(t.varnas):
@@ -54,6 +60,11 @@ def _find_target(state: State):
             if vm.slp1 == "n":
                 # Already processed?
                 if "natva_done" in vm.tags:
+                    return None
+                # Pada-final exemption: if this n is the LAST varṇa
+                # of the last Term, do NOT fire ṇatva.  (Needed for
+                # cell 2-3 rAmAn accusative plural.)
+                if m == len(flat) - 1:
                     return None
                 return (ti2, vi2)
             if vm.slp1 in _BLOCKERS:

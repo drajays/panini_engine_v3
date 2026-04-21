@@ -1,34 +1,32 @@
-# Pāṇini Engine v3.2
+# Pāṇini Engine v3.3
 
 **A glass-box, rule-based derivation engine for Pāṇini's Aṣṭādhyāyī.**
 
 ## Status
 
 ```
-  Sūtras implemented   : 32 / 32       (100%, no stubs)
-  Rāma paradigm cells  : 20 / 24       (83% match against classical gold)
+  Sūtras implemented   : 35 / 35       (100%, no stubs)
+  Rāma paradigm cells  : 24 / 24       (FULL classical match)
   All 10 SutraTypes    : ✓ represented
-  Tests                : 328 passing, 4 xfailed (remaining 4 gold cells)
+  Tests                : 341 passing, 0 xfailed, 0 failed
   SIG truth-teller     : active (9 JSON artifacts + path-regression oracle)
 ```
 
-## The 20 green cells
+## The complete rāma paradigm — all 24 cells green
 
 ```
-      एकवचन           द्विवचन           बहुवचन
-1.  रामः       ✓    रामौ       ✓    रामाः      ✗   (jas-cluster)
-2.  रामम्      ✓    रामौ       ✓    रामान्     ✗   (Sas-cluster)
-3.  रामेण      ✓    रामाभ्याम् ✓    रामैः       ✗   (Bis-cluster)
-4.  रामाय      ✓    रामाभ्याम् ✓    रामेभ्यः   ✓
-5.  रामात्     ✓    रामाभ्याम् ✓    रामेभ्यः   ✓
-6.  रामस्य     ✓    रामयोः    ✓    रामाणाम्   ✓
-7.  रामे       ✓    रामयोः    ✓    रामेषु     ✓
-8.  राम        ✓    रामौ       ✓    रामाः      ✗   (jas-cluster)
+           एकवचन           द्विवचन           बहुवचन
+प्रथमा    रामः       ✓   रामौ       ✓   रामाः      ✓
+द्वितीया  रामम्      ✓   रामौ       ✓   रामान्     ✓
+तृतीया    रामेण      ✓   रामाभ्याम् ✓   रामैः      ✓
+चतुर्थी   रामाय      ✓   रामाभ्याम् ✓   रामेभ्यः   ✓
+पञ्चमी    रामात्     ✓   रामाभ्याम् ✓   रामेभ्यः   ✓
+षष्ठी     रामस्य     ✓   रामयोः    ✓   रामाणाम्   ✓
+सप्तमी    रामे       ✓   रामयोः    ✓   रामेषु     ✓
+सम्बोधन   राम        ✓   रामौ       ✓   रामाः      ✓
 ```
 
-## Architecture
-
-Locked in v3.0 constitution; never amended:
+## Architecture (locked in v3.0; never amended)
 
 - **10-fold SutraType** (SAMJNA · PARIBHASHA · VIDHI · NIYAMA · ATIDESHA ·
   ADHIKARA · PRATISHEDHA · ANUVADA · VIBHASHA · NIPATANA)
@@ -39,7 +37,7 @@ Locked in v3.0 constitution; never amended:
 - **cond(state)** forbidden from reading paradigm coordinates
   (vibhakti, vacana, puruṣa, lakāra) — enforced by AST tests
 
-v3.1 amendments (centralized & auditable):
+## v3.1 amendments (centralized and auditable)
 
 - `R1_EXEMPT` and `NIPATANA_FROZEN` frozensets
 - Three-phase model (angakarya → sandhi → tripadi) with `PhaseError`
@@ -49,6 +47,25 @@ v3.1 amendments (centralized & auditable):
 - `RecipeConflictError` for dual-claim positions
 - Full SIG truth-teller (9 v2-compatible JSONs + path-regression oracle)
 
+## The 35 sūtras (by SutraType)
+
+```
+  SAMJNA       (5):  1.1.2 · 1.3.2 · 1.3.3 · 1.3.8 · 1.4.14
+  PARIBHASHA   (1):  1.1.56
+  NIYAMA       (1):  1.1.47
+  ATIDESHA     (1):  1.2.1
+  ADHIKARA     (3):  4.1.2 · 6.4.1 · 8.2.1
+  PRATISHEDHA  (1):  1.1.6
+  ANUVADA      (1):  4.1.1
+  VIBHASHA     (1):  8.4.44
+  NIPATANA     (1):  6.3.109
+  VIDHI       (21):  1.3.9 · 6.1.69 · 6.1.78 · 6.1.87 · 6.1.88 ·
+                     6.1.101 · 6.1.102 · 6.1.103 · 6.1.107 ·
+                     6.4.148 · 7.1.9 · 7.1.12 · 7.1.13 · 7.1.54 ·
+                     7.3.102 · 7.3.103 · 8.2.66 · 8.3.15 · 8.3.59 ·
+                     8.4.2
+```
+
 ## Install and run
 
 ```bash
@@ -57,7 +74,7 @@ cd panini_engine_v3
 pip install -r requirements.txt
 
 # Run the full test suite.
-python -m pytest
+python -m pytest                              # 341 passed
 
 # Regenerate the 9 SIG artifacts + truth report.
 python -m tools.sig_benchmark
@@ -67,30 +84,18 @@ python -m tools.sutra_sig_report
 python -m tools.list_sutras_by_type
 
 # Validate all 24 cells against the gold corpus.
-python -m tools.validate_engine_against_source
+python -m tools.validate_engine_against_source   # 24/24 match
 ```
-
-## What remains for v3.3
-
-The 4 red cells need `jas` / `Sas` / `Bis` cluster rules. These
-collectively unlock cells 1-3, 2-3, 3-3, 8-3 — should land in one
-focused session.
 
 ## The truth-teller in action
 
 When you add a sūtra that changes a cell's derivation path (even if the
-surface form still matches gold), the SIG regression test fails loudly:
+surface form still matches gold), the SIG regression test fails loudly.
+If the change is intentional, refreeze:
 
+```bash
+python -m tools.sig_benchmark --freeze
 ```
-FAILED tests/regression/test_sig_baseline.py::test_applied_path_matches_baseline[7-3]
-  SIG PATH REGRESSION on cell 7-3:
-    baseline : ['1.4.14', ..., '7.3.103', '8.2.1']
-    current  : ['1.4.14', ..., '7.3.103', '8.2.1', '8.3.59']
-  Surface equality may still pass, but the derivation path changed.
-```
-
-This caught every real regression during this build. If the change is
-intentional, refreeze: `python -m tools.sig_benchmark --freeze`.
 
 ## Directory layout
 
@@ -99,14 +104,28 @@ panini_engine_v3/
 ├── CONSTITUTION.md          ← the 10 Articles (supreme law)
 ├── engine/                  ← fixed core (14 modules)
 ├── phonology/               ← pure phoneme layer (6 modules)
-├── sutras/                  ← content layer (32 sūtras, Aṣṭādhyāyī-kram)
+├── sutras/                  ← content layer (35 sūtras, Aṣṭādhyāyī-kram)
 ├── pipelines/               ← subanta recipe (tinanta stub)
 ├── data/
 │   ├── inputs/              ← 8 JSONs (Śiva, sup, tiṅ, dhātu, ...)
-│   └── reference/           ← GOLD corpus (firewall protected)
-├── tests/                   ← 328 tests (constitutional, unit, forward,
+│   └── reference/           ← gold corpus (firewall protected)
+├── tests/                   ← 341 tests (constitutional, unit, forward,
 │                              backward, regression)
 ├── tools/                   ← sig_benchmark, sig_report, listings, etc.
 ├── sig/                     ← 9 SIG artifacts (regenerated on demand)
 └── webui/                   ← Flask + HTML scaffold (resume later)
 ```
+
+## What's next (v3.4+)
+
+The complete masculine a-stem paradigm is landed.  Natural next steps:
+
+1. **Other stem types** — i-stem (हरि), u-stem (गुरु), ā-stem feminine (लता),
+   ī-stem (नदी), ṛ-stem (पितृ).  Each needs 5–15 additional sūtras; the
+   architecture supports them without any core changes.
+2. **Tinanta pipeline** — activate `pipelines/tinanta.py` for verb
+   conjugation. Needs ~30 additional sūtras across adhyāyas 3 and 6–8.
+3. **Kṛdanta + Taddhita** — derivational morphology. Recipe-driven, same
+   dispatcher.
+4. **Resume webui/** — now that the paradigm is complete, the UI has
+   interesting content to display.

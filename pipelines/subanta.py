@@ -129,11 +129,12 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     s = apply_rule("7.1.12",  s)
     # v3.1: ṅe → ya (dative-singular after a-stem).
     s = apply_rule("7.1.13",  s)
+    # v3.2: ato bhisa ais — Bis → Es (cell 3-3).  MUST run before
+    # 7.3.103 so that the pratyaya's upadeśa is already 'Es' and
+    # 7.3.103 (which keys off 'Bis') won't fire for this cell.
+    s = apply_rule("7.1.9",   s)
     s = apply_rule("7.1.54",  s)      # fires only when (6,3) & hrasva-final aṅga
     s = apply_rule("1.3.9",   s)      # re-fire: remove ṭ-it of nuṭ if inserted
-    # v3.1: bahuvacane jhalyet — a → e before Bis/Byas/sup (plural jhal).
-    # MUST run before 7.3.102 (which would make a → ā instead).
-    s = apply_rule("7.3.103", s)
     # v3.1: bahuvacane jhalyet — a → e before jhal-initial plural sup.
     # MUST run before 7.3.102 (which would otherwise make a → ā).
     s = apply_rule("7.3.103", s)
@@ -144,6 +145,11 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     s = apply_rule("6.4.148", s)      # yasyeti ca
 
     # STAGE 5 — sandhi.
+    # v3.2: jas/Sas pratyaya substitutions (cells 1-3, 2-3, 8-3).
+    # Fire BEFORE other sandhi because they both delete the stem's
+    # final 'a', so subsequent 6.1.x rules don't see stray 'a + X' pairs.
+    s = apply_rule("6.1.102", s)      # jas → As (prathamā-pl pūrvasavarṇa)
+    s = apply_rule("6.1.103", s)      # Sas → An (puṃsi acc-pl)
     s = apply_rule("6.1.78",  s)      # v3.1: ayādi — y-insertion before 'os'
     s = apply_rule("6.1.107", s)      # v3.1: ami pūrvaḥ — a+am → am (blocks 6.1.101)
     s = apply_rule("6.1.87",  s)

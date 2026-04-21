@@ -39,13 +39,15 @@ from pipelines.subanta import build_initial_state
 _RECIPE = [
     "1.4.14", "4.1.1", "1.1.2",
     "4.1.2",
-    "1.3.2", "1.3.3", "1.3.8", "1.3.9",         # v3.1: anunāsika + laśakv
+    "1.3.2", "1.3.3", "1.3.8", "1.3.9",         # anunāsika + laśakv
     "6.4.1",
     "6.1.69",
     "7.1.12", "7.1.13",
+    "7.1.9",                                     # v3.2: ato bhisa ais
     "7.1.54", "1.3.9",
-    "7.3.103", "7.3.102",                       # v3.1: bahuvacane jhalyet (before supi ca)
+    "7.3.103", "7.3.102",                        # bahuvacane jhalyet (before supi ca)
     "6.4.148",
+    "6.1.102", "6.1.103",                        # v3.2: jas/Sas substitutions
     "6.1.78", "6.1.107", "6.1.87", "6.1.88", "6.1.101",
     "8.2.1", "8.2.66", "8.3.15", "8.3.59", "8.4.2",
 ]

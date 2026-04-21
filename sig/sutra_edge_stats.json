@@ -41,24 +41,9 @@
       "weight": 4
     },
     {
-      "source": "6.4.1",
-      "target": "7.3.103",
-      "weight": 4
-    },
-    {
-      "source": "6.4.1",
-      "target": "8.2.1",
-      "weight": 4
-    },
-    {
-      "source": "7.3.103",
-      "target": "8.2.1",
-      "weight": 4
-    },
-    {
       "source": "6.1.88",
       "target": "8.2.1",
-      "weight": 3
+      "weight": 4
     },
     {
       "source": "6.4.1",
@@ -73,6 +58,16 @@
     {
       "source": "6.4.1",
       "target": "7.3.102",
+      "weight": 3
+    },
+    {
+      "source": "6.4.1",
+      "target": "7.3.103",
+      "weight": 3
+    },
+    {
+      "source": "7.3.103",
+      "target": "8.2.1",
       "weight": 3
     },
     {
@@ -96,6 +91,11 @@
       "weight": 2
     },
     {
+      "source": "6.1.102",
+      "target": "8.2.1",
+      "weight": 2
+    },
+    {
       "source": "6.1.78",
       "target": "8.2.1",
       "weight": 2
@@ -103,6 +103,11 @@
     {
       "source": "6.1.87",
       "target": "8.2.1",
+      "weight": 2
+    },
+    {
+      "source": "6.4.1",
+      "target": "6.1.102",
       "weight": 2
     },
     {
@@ -121,6 +126,11 @@
       "weight": 1
     },
     {
+      "source": "6.1.103",
+      "target": "8.2.1",
+      "weight": 1
+    },
+    {
       "source": "6.1.107",
       "target": "8.2.1",
       "weight": 1
@@ -128,6 +138,11 @@
     {
       "source": "6.1.69",
       "target": "8.2.1",
+      "weight": 1
+    },
+    {
+      "source": "6.4.1",
+      "target": "6.1.103",
       "weight": 1
     },
     {
@@ -156,6 +171,16 @@
       "weight": 1
     },
     {
+      "source": "6.4.1",
+      "target": "7.1.9",
+      "weight": 1
+    },
+    {
+      "source": "6.4.1",
+      "target": "8.2.1",
+      "weight": 1
+    },
+    {
       "source": "7.1.12",
       "target": "6.1.101",
       "weight": 1
@@ -178,6 +203,11 @@
     {
       "source": "7.1.54",
       "target": "7.3.102",
+      "weight": 1
+    },
+    {
+      "source": "7.1.9",
+      "target": "6.1.88",
       "weight": 1
     }
   ]
