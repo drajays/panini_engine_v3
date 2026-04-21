@@ -1,66 +1,97 @@
-"""Single विभक्ति/वचन — surface + trace."""
+"""एक कोष्ठक — विस्तृत प्रक्रिया (हिन्दी + देवनागरी)।"""
 from __future__ import annotations
 
 import streamlit as st
 
 import common  # noqa: E402
 
-st.set_page_config(page_title="राम — प्रक्रिया", page_icon="🔍", layout="wide")
+st.set_page_config(page_title="एक कोष्ठक — प्रक्रिया", page_icon="🔍", layout="wide")
 
 import sutras  # noqa: F401, E402
 from engine import SUTRA_REGISTRY
 from phonology.joiner import slp1_to_devanagari
-from pipelines.subanta import derive
+from pipelines.subanta import derive_akarant_pullinga, stem_slp1_looks_akarant_pullinga
 
-VIBHAKTI_DEV = (
-    "प्रथमा",
-    "द्वितीया",
-    "तृतीया",
-    "चतुर्थी",
-    "पञ्चमी",
-    "षष्ठी",
-    "सप्तमी",
-    "सम्बोधन",
+from i18n_hi import (
+    VACANA_HINDI,
+    VACANA_SANSKRIT,
+    VIBHAKTI_HINDI,
+    VIBHAKTI_SANSKRIT,
+    hint_for_sutra,
 )
-VACANA_DEV = ("एकवचन", "द्विवचन", "बहुवचन")
 
-st.title("एक कोष्ठकम् — प्रक्रिया")
-gold = common.load_rama_gold()
+st.markdown(
+    "### एक विभक्ति × एक वचन — पूरी प्रक्रिया\n\n"
+    "**अकारान्त पुंलिङ्ग** के लिए प्रातिपदिक SLP1 में दें (अन्त में `a`)। नीचे प्रत्येक चरण पर "
+    "संस्कृत व्याख्या और हिन्दी संक्षिप्त टिप्पणी है।"
+)
 
-c1, c2, c3 = st.columns(3)
+stem_slp1 = st.text_input("प्रातिपदिक (SLP1)", value="rAma", key="stem_cell")
+
+c1, c2 = st.columns(2)
 with c1:
-    vib = st.selectbox("विभक्ति", range(1, 9), format_func=lambda x: f"{x} — {VIBHAKTI_DEV[x - 1]}")
+    vib = st.selectbox(
+        "विभक्ति",
+        range(1, 9),
+        format_func=lambda x: f"{x} — {VIBHAKTI_SANSKRIT[x - 1]}",
+    )
 with c2:
-    vac = st.selectbox("वचन", range(1, 4), format_func=lambda x: f"{x} — {VACANA_DEV[x - 1]}")
-with c3:
-    linga = st.selectbox("लिङ्ग", ["pulliṅga", "strīliṅga", "napuṃsaka"], index=0)
+    vac = st.selectbox(
+        "वचन",
+        range(1, 4),
+        format_func=lambda x: f"{x} — {VACANA_SANSKRIT[x - 1]}",
+    )
 
+with st.expander("विभक्ति और वचन — हिन्दी में संक्षिप्त अर्थ", expanded=False):
+    st.markdown(
+        f"**चुनी विभक्ति:** {VIBHAKTI_SANSKRIT[vib - 1]} — {VIBHAKTI_HINDI[vib - 1]}\n\n"
+        f"**चुना वचन:** {VACANA_SANSKRIT[vac - 1]} — {VACANA_HINDI[vac - 1]}"
+    )
+
+if not stem_slp1_looks_akarant_pullinga(stem_slp1):
+    st.error(
+        "अकारान्त हेतु अन्तिम अक्षर छोटा **`a`** होना चाहिए (उदा. `rAma`)।"
+    )
+    st.stop()
+
+use_gold = stem_slp1.strip() == "rAma"
+gold = common.load_rama_gold() if use_gold else None
 key = f"{vib}-{vac}"
-gcell = gold["cells"].get(key, {})
-gold_dev = gcell.get("form_dev", "—")
-gold_slp = gcell.get("form_slp1", "—")
+gcell = gold["cells"].get(key, {}) if gold else {}
+gold_dev = gcell.get("form_dev", "—") if use_gold else "— (केवल rAma)"
+gold_slp = gcell.get("form_slp1", "—") if use_gold else "—"
 
-state = derive("rAma", vib, vac, linga=linga)
+state = derive_akarant_pullinga(stem_slp1.strip(), vib, vac)
 surface_dev = slp1_to_devanagari(state.terms[0].varnas) if state.terms else ""
 surface_slp = state.render()
 
 m1, m2 = st.columns(2)
 with m1:
-    st.metric("पृष्ठभूमि (gold)", gold_dev, delta=None)
+    st.markdown("##### सन्दर्भ रूप (यदि उपलब्ध)")
+    st.metric("gold (राम)", gold_dev if use_gold else "—", delta=None)
     st.caption(f"SLP1: `{gold_slp}`")
 with m2:
-    st.metric("इन्जिन् प्रक्रिया", surface_dev)
+    st.markdown("##### इन्जिन् निष्कर्ष")
+    st.metric("प्रक्रिया से रूप", surface_dev)
     st.caption(f"SLP1: `{surface_slp}`")
 
-with st.expander("सूत्र-मार्गः (trace)", expanded=True):
-    for step in state.trace:
-        sid = step.get("sutra_id", "")
-        st.markdown(
-            f"**{sid}** — {step.get('type_label', '')}  \n"
-            f"{step.get('form_before', '')} → {step.get('form_after', '')}  \n"
-            f"<small>{step.get('why_dev', '')}</small>",
-            unsafe_allow_html=True,
-        )
-        st.divider()
+st.markdown("---")
+st.markdown("#### सूत्र-मार्ग (क्रम से) — संस्कृत + हिन्दी सहायक")
 
-st.caption(f"Phase: `{state.phase}` · Rules in registry: {len(SUTRA_REGISTRY)}")
+for step in state.trace:
+    sid = step.get("sutra_id", "")
+    hi = hint_for_sutra(sid)
+    type_l = step.get("type_label", "")
+    why = step.get("why_dev", "")
+    before = step.get("form_before", "")
+    after = step.get("form_after", "")
+    st.markdown(
+        f"**{sid}** · {type_l}\n\n"
+        f"{before} → {after}\n\n"
+        f"*शास्त्रीय टिप्पणी:* {why}"
+    )
+    if hi:
+        st.info(f"**हिन्दी:** {hi}")
+    st.divider()
+
+st.caption(f"चरण: `{state.phase}` · नियम सूची में: {len(SUTRA_REGISTRY)}")

@@ -1,0 +1,21 @@
+# Panini Engine v3 — AI assistant rules
+
+## Supreme reference
+
+**Always follow `CONSTITUTION.md` at the repository root.** Before changing `engine/`, `sutras/`, `phonology/`, `pipelines/`, or `tests/constitutional/`, re-read the relevant Articles. If anything conflicts with this file, **CONSTITUTION.md wins**.
+
+## Non‑negotiables (summary)
+
+- **Glass box**: Every step must be explainable in Pāṇinian terms; no black-box shortcuts or lookup tables for derivations.
+- **One sūtra = one file** under `sutras/adhyaya_*/pada_*/sutra_*.py` with exactly one `SutraRecord` and one `cond` / `act` pair. No rule bundles.
+- **Mechanical blindness**: `cond(state)` must not read `(vibhakti, vacana)`, lakāra/puruṣa, surface Devanāgarī, target gold forms, or `data/reference/`.
+- **Firewall**: `data/reference/` is for tests/tools only — **not** the engine (Article 6).
+- **Anuvṛtti**: Stored in full in `text_slp1` / `text_dev`; the engine does not compute anuvṛtti at runtime (Article 4).
+- **Order**: Aṣṭādhyāyī kram + tripāḍī gate + resolver — no Kaumudī ordering (Article 3).
+- **R1–R5** invariants (`engine/r1_check.py`): e.g. a VIDHI that applies must change the rendered form unless exempt; SAMJNA must register; etc. (Article 5).
+- **Recipes** (`pipelines/*.py`) list `apply_rule()` calls only — no inline multi-sūtra hacks (Article 7).
+- **Prakriyā**: Paradigm cells stress the engine; fix sūtras/recipes, not the dispatcher to “pass tests” (Article 8).
+
+## Scope
+
+These rules apply to all work in this repository unless a task explicitly says otherwise.

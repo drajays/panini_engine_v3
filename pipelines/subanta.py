@@ -3,10 +3,15 @@ pipelines/subanta.py — subanta derivation driver.
 ──────────────────────────────────────────────────
 
 Given:
-  stem_slp1    : str, e.g. "rAma"
+  stem_slp1    : str, e.g. "rAma" (Velthuis / SLP1-style; अकारान्त = ends in hrasa ``a``)
   vibhakti     : 1..8
   vacana       : 1..3
   linga        : "pulliṅga" | "strīliṅga" | "napuṃsaka"
+
+अकारान्त पुंलिङ्ग (a-stem masculine) helpers:
+  • ``stem_slp1_looks_akarant_pullinga`` — shape check (pipeline/UI only).
+  • ``derive_akarant_pullinga`` — same recipe as ``derive(..., linga="pulliṅga")``
+    after validating stem shape (raises ``ValueError`` if not a-kāra-anta).
 
 Returns:
   State  — with full trace in state.trace and rendered surface in
@@ -97,6 +102,42 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
     state.meta["linga"]            = linga
     state.meta["vibhakti_vacana"]  = f"{vibhakti}-{vacana}"
     return state
+
+
+def stem_slp1_looks_akarant_pullinga(stem_slp1: str) -> bool:
+    """
+    True if ``stem_slp1`` (non-empty, stripped) ends in hrasa ``a`` — the usual
+    SLP1 shape for अकारान्त पुंलिङ्ग prātipadikas like ``rAma``, ``gaja``.
+
+    This is *not* a full morphological analysis; it guards UI and
+    ``derive_akarant_pullinga`` from obvious non–a-stem input. Does not read
+    external gold corpora (CONSTITUTION Art. 6).
+    """
+    s = stem_slp1.strip()
+    if len(s) < 1:
+        return False
+    return s[-1] == "a"
+
+
+def derive_akarant_pullinga(
+    stem_slp1: str,
+    vibhakti: int,
+    vacana: int,
+    *,
+    strict_stem: bool = True,
+) -> State:
+    """
+    Run the subanta recipe for **अकारान्त पुंलिङ्ग** (a-stem masculine).
+
+    Same as ``derive(stem_slp1, vibhakti, vacana, linga="pulliṅga")`` but
+    optionally validates that the stem ends in ``a`` (``strict_stem=True``).
+    """
+    if strict_stem and not stem_slp1_looks_akarant_pullinga(stem_slp1):
+        raise ValueError(
+            "अकारान्त पुंलिङ्ग हेतु प्रातिपदिक अन्त में ह्रस्व 'a' (SLP1) चाहिए — "
+            f"उदाहरण: rAma, gaja। प्राप्त: {stem_slp1!r}"
+        )
+    return derive(stem_slp1, vibhakti, vacana, linga="pulliṅga")
 
 
 def derive(stem_slp1: str, vibhakti: int, vacana: int,

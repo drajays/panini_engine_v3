@@ -18,16 +18,17 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-st.title("राम शब्द-रूप")
+st.title("अकारान्त पुंलिङ्ग शब्दरूप")
 st.markdown(
-    "अष्टाद्यायी-क्रमेन **पुल्लिङ्ग** अकारान्त प्रातिपदिक **राम** — "
-    "८ विभक्ति × ३ वचन = २४ रूपाः।"
+    "**अष्टाध्यायी-क्रम** से चलने वाला इन्जिन् — **अकारान्त** (अन्त में अ) **पुंलिङ्ग** "
+    "प्रातिपदिकों के **२४ रूप** (८ विभक्ति × ३ वचन)।\n\n"
+    "डिफ़ॉल्ट उदाहरण **राम** (`rAma`); आप **गज** (`gaja`) जैसे दूसरे अ-ान्त शब्द भी SLP1 में टाइप कर सकते हैं।"
 )
 
 st.info(
-    "Use the sidebar to open **Paradigm (8×3)** for the full table, or "
-    "**Cell derivation** to inspect one विभक्ति/वचन with the live engine trace."
+    "📊 **Paradigm (8×3)** — पूरी सारणी, प्रातिपदिक बदलकर देखें।\n\n"
+    "🔍 **Cell derivation** — एक कोष्ठक चुनकर हर सूत्र का क्रम, संस्कृत व्याख्या और हिन्दी संक्षिप्त वर्णन।"
 )
 
 st.divider()
-st.caption("Panini Engine v3 · `pipelines.subanta.derive` + Devanāgarī joiner")
+st.caption("Panini Engine v3 · `pipelines.subanta.derive_akarant_pullinga` / `derive` + देवनागरी जोड़")
