@@ -123,6 +123,40 @@ def stem_slp1_looks_akarant_pullinga(stem_slp1: str) -> bool:
     return s[-1] == "a"
 
 
+def stem_slp1_looks_ikarant_pullinga(stem_slp1: str) -> bool:
+    """
+    True if ``stem_slp1`` (non-empty, stripped) ends in hrasa ``i`` — the usual
+    SLP1 shape for इकारान्त पुंलिङ्ग prātipadikas like ``hari``.
+
+    Pipeline/UI guard only; not a full morphological analysis.
+    """
+    s = stem_slp1.strip()
+    if len(s) < 1:
+        return False
+    return s[-1] == "i"
+
+
+def derive_ikarant_pullinga(
+    stem_slp1: str,
+    vibhakti: int,
+    vacana: int,
+    *,
+    strict_stem: bool = True,
+) -> State:
+    """
+    Run the subanta recipe for **इकारान्त पुंलिङ्ग** (i-stem masculine).
+
+    Same as ``derive(..., linga="pulliṅga")`` but optionally validates stem shape
+    (``strict_stem=True``).
+    """
+    if strict_stem and not stem_slp1_looks_ikarant_pullinga(stem_slp1):
+        raise ValueError(
+            "इकारान्त पुंलिङ्ग हेतु प्रातिपदिक अन्त में ह्रस्व 'i' (SLP1) चाहिए — "
+            f"उदाहरण: hari। प्राप्त: {stem_slp1!r}"
+        )
+    return derive(stem_slp1, vibhakti, vacana, linga="pulliṅga")
+
+
 def derive_akarant_pullinga(
     stem_slp1: str,
     vibhakti: int,

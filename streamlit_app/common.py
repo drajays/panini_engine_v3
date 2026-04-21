@@ -10,8 +10,14 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 GOLD_PATH = ROOT / "data" / "reference" / "subanta_gold" / "rama_pullinga.json"
+HARI_GOLD_PATH = ROOT / "data" / "reference" / "subanta_gold" / "hari_pullinga.json"
 
 
 def load_rama_gold() -> dict:
     with open(GOLD_PATH, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def load_hari_gold() -> dict:
+    with open(HARI_GOLD_PATH, encoding="utf-8") as f:
         return json.load(f)
