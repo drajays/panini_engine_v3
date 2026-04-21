@@ -1,69 +1,48 @@
 """
 6.1.78  एचोऽयवायावः  —  VIDHI
 
-"An ec (= e/E/o/O) followed by an ac (vowel) is replaced respectively
- by ay/āy/av/āv."
+Classical rule:
+  If an EC vowel (e/E/o/O) is followed by an AC vowel, the EC splits:
+    e → ay, E → Ay, o → av, O → Av
 
-For a-stems, this matters because an earlier stage may have produced
-`e` or `o` that then meets a vowel-initial pratyaya.  In our corpus:
-
-  cells 6-2 / 7-2  rAma + os  →  via anuvṛtti produces... 
-         Wait: `rAma + os` has `a + o` sandhi at the boundary.
-         6.1.87 guṇa maps `a + o → o` (actually it doesn't — guṇa is
-         for a+i→e, a+u→o).  Our cells 6-2/7-2 need `a + o → ayo`.
-
-So for `rAma + os`:
-   pre-sandhi:  r A m a o s
-   step 1 — 6.1.87 guṇa on a+o? No: a+o → o by our guṇa map.
-   This is actually 6.1.87 operating on the BOUNDARY between stem-a
-   and pratyaya-o.  The result 'o' then meets NO following vowel,
-   so 6.1.78 would NOT fire classically.
-
-   But the gold is 'rAmayoH' — which has a 'y' inserted.  The classical
-   derivation: rAma + os → rAma (stem-final 'a' stays) + os → rAma-yos
-   (y-insertion between a and o).  The y-insertion sutra is actually
-   **6.1.101** or **8.3.17** variant — but the simplest is **6.1.78**
-   itself reading as: after a guṇa-step produces e/o, if that e/o
-   meets another vowel, it splits into ay/av.
-
-   Reanalysis: 6.1.87 produces 'o' from a+o.  Then we have 'rAm + o + s'.
-   But we need 'rAmayos'.  So the correct path is: 6.1.87 fires on
-   a+o → o (one varṇa) → 'rAmos'.  Then 6.1.78 sees 'o' followed by
-   another vowel?  'os' → 'o' is NOT followed by a vowel ('s' is a
-   consonant).  So 6.1.78 doesn't apply.
-
-   Actual classical Pāṇinian path for रामयोः:
-     rAma + os  →  (by 6.1.87 guṇa, a+o→o actually does NOT apply —
-                   guṇa is for a+i/u/f/x, not a+o)
-     So we have 'rAma' + 'os' with NO sandhi between them, producing
-     'rAmaos'.  Then 6.1.78 DOES apply: a+o is an ec+ac sequence
-     (a is NOT ec, but o is ec!).  Hmm.
-
-Let me re-check: EC = {e, E, o, O} (long + diphthong vowels).
-6.1.78 applies when an EC letter is followed by an AC letter.
-So we need the FIRST letter to be in EC.  'a' is NOT in EC.
-
-Correct classical derivation:
-  rAma + os  →  rAmos  (via 6.1.87 guṇa: a + o → o, produces long ā+o→o,
-                                      but in our guṇa map, a+o isn't listed)
-
-Actually 6.1.87 classical text says "āt guṇaḥ" — guṇa after ā (a/ā).
-The ENTIRE guṇa family is e, o, ar, al — so a+o→o IS classical guṇa.
-After 6.1.87: rAm + o + s.  Then 6.1.78 applies: o + s is NOT eco+aci
-(s is a consonant).  So no further change.  Final form: rAmos.
-Surface: रामोः?  No, गold is रामयोः.
-
-The actual classical sūtra that produces rāmayoḥ is the exception
-in 6.1.109 (or 6.1.111) — a separate niyama.  For v3.1 we can
-implement it as a targeted VIDHI: when an a-stem's final 'a' meets
-'os' pratyaya, insert 'y' between them (not do guṇa).
-
-Implemented narrowly:  'a' + 'o' where the 'o' is part of 'os' →
-insert 'y' between them instead of guṇa-merging.
+v3.1 originally implemented only a narrow 'a + os' helper for रामयोः.
+v3.4 extends the rule to its standard eco+aci behaviour, while keeping
+the prior narrow helper intact.
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
 from phonology     import mk
+from phonology.pratyahara import AC
+
+
+_ECO_SPLIT = {
+    "e": ("a", "y"),
+    "E": ("A", "y"),
+    "o": ("a", "v"),
+    "O": ("A", "v"),
+}
+
+
+def _find_eco_aci_boundary(state: State):
+    if len(state.terms) < 2:
+        return None
+    for i in range(len(state.terms) - 1):
+        anga = state.terms[i]
+        nxt  = state.terms[i + 1]
+        if "anga" not in anga.tags:
+            continue
+        if not anga.varnas or not nxt.varnas:
+            continue
+        # Avoid interfering with the dedicated ṅasi/ṅas pūrvarūpa handling (6.1.110).
+        if nxt.meta.get("upadesha_slp1") in {"Nasi", "Nas"}:
+            continue
+        if anga.meta.get("eco_ayavayava_done"):
+            continue
+        last = anga.varnas[-1].slp1
+        first = nxt.varnas[0].slp1
+        if last in _ECO_SPLIT and first in AC:
+            return i
+    return None
 
 
 def _find_target(state: State):
@@ -94,15 +73,28 @@ def _find_target(state: State):
 
 
 def cond(state: State) -> bool:
-    return _find_target(state) is not None
+    return (
+        _find_eco_aci_boundary(state) is not None
+        or _find_target(state) is not None
+    )
 
 
 def act(state: State) -> State:
+    i = _find_eco_aci_boundary(state)
+    if i is not None:
+        anga = state.terms[i]
+        last = anga.varnas[-1].slp1
+        a, yv = _ECO_SPLIT[last]
+        anga.varnas[-1] = mk(a)
+        anga.varnas.append(mk(yv))
+        anga.meta["eco_ayavayava_done"] = True
+        return state
+
     i = _find_target(state)
     if i is None:
         return state
     anga = state.terms[i]
-    # Insert 'y' at the END of the aṅga Term.  Classical: a + o → ay + o.
+    # Legacy narrow helper: insert 'y' at the END of the aṅga Term.
     anga.varnas.append(mk("y"))
     anga.meta["ay_insertion_done"] = True
     return state

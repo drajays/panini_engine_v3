@@ -1,0 +1,32 @@
+{
+  "_doc": "Gold subanta paradigm for masculine i-stem: हरि (hari). Used by tests/tools only (CONSTITUTION Art. 6 firewall).",
+  "stem_slp1": "hari",
+  "linga": "pulliṅga",
+  "cells": {
+    "1-1": {"form_dev": "हरिः"},
+    "1-2": {"form_dev": "हरी"},
+    "1-3": {"form_dev": "हरयः"},
+    "2-1": {"form_dev": "हरिम्"},
+    "2-2": {"form_dev": "हरी"},
+    "2-3": {"form_dev": "हरीन्"},
+    "3-1": {"form_dev": "हरिणा"},
+    "3-2": {"form_dev": "हरिभ्याम्"},
+    "3-3": {"form_dev": "हरिभिः"},
+    "4-1": {"form_dev": "हरये"},
+    "4-2": {"form_dev": "हरिभ्याम्"},
+    "4-3": {"form_dev": "हरिभ्यः"},
+    "5-1": {"form_dev": "हरेः"},
+    "5-2": {"form_dev": "हरिभ्याम्"},
+    "5-3": {"form_dev": "हरिभ्यः"},
+    "6-1": {"form_dev": "हरेः"},
+    "6-2": {"form_dev": "हर्योः"},
+    "6-3": {"form_dev": "हरीणाम्"},
+    "7-1": {"form_dev": "हरौ"},
+    "7-2": {"form_dev": "हर्योः"},
+    "7-3": {"form_dev": "हरिषु"},
+    "8-1": {"form_dev": "हरे"},
+    "8-2": {"form_dev": "हरी"},
+    "8-3": {"form_dev": "हरयः"}
+  }
+}
+

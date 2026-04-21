@@ -30,26 +30,6 @@ from engine.state  import State
 from phonology     import mk
 
 
-def _find_target(state: State):
-    if len(state.terms) < 2:
-        return None
-    anga = state.terms[-2]
-    pratyaya = state.terms[-1]
-    if "anga" not in anga.tags:
-        return None
-    if "sup" not in pratyaya.tags:
-        return None
-    if pratyaya.meta.get("upadesha_slp1") != "jas":
-        return None
-    if pratyaya.meta.get("jas_purvasavarna_done"):
-        return None
-    if not anga.varnas:
-        return None
-    if anga.varnas[-1].slp1 != "a":
-        return None
-    return None  # sentinel — we always fire when above match
-
-
 def _matches(state: State) -> bool:
     if len(state.terms) < 2:
         return False
@@ -59,15 +39,22 @@ def _matches(state: State) -> bool:
         return False
     if "sup" not in pratyaya.tags:
         return False
-    if pratyaya.meta.get("upadesha_slp1") != "jas":
-        return False
-    if pratyaya.meta.get("jas_purvasavarna_done"):
-        return False
-    if not anga.varnas:
-        return False
-    if anga.varnas[-1].slp1 != "a":
-        return False
-    return True
+    up = pratyaya.meta.get("upadesha_slp1")
+    if up == "jas":
+        if pratyaya.meta.get("jas_purvasavarna_done"):
+            return False
+        if not anga.varnas:
+            return False
+        return anga.varnas[-1].slp1 == "a"
+    if up in {"O", "Ow"}:
+        # v3.4 extension: i-stem dual (hari + au → harī) under the same
+        # pūrva-savarṇa idea (prathamā/dvitīyā dual boundary).
+        if pratyaya.meta.get("au_purvasavarna_done"):
+            return False
+        if not anga.varnas or not pratyaya.varnas:
+            return False
+        return anga.varnas[-1].slp1 == "i" and pratyaya.varnas[0].slp1 == "O"
+    return False
 
 
 def cond(state: State) -> bool:
@@ -79,14 +66,24 @@ def act(state: State) -> State:
         return state
     anga = state.terms[-2]
     pratyaya = state.terms[-1]
-    # Delete the stem-final 'a'.
-    del anga.varnas[-1]
-    # Replace pratyaya 'j a s' → 'A s' (the pūrva-savarṇa lengthens
-    # the combined a+a → ā; the 'j' vanishes under this merger).
-    pratyaya.varnas = [mk("A"), mk("s")]
-    pratyaya.meta["jas_purvasavarna_done"] = True
-    pratyaya.meta["upadesha_slp1_original"] = "jas"
-    pratyaya.meta["upadesha_slp1"] = "As"
+    up = pratyaya.meta.get("upadesha_slp1")
+    if up == "jas":
+        # Delete the stem-final 'a'.
+        del anga.varnas[-1]
+        # Replace pratyaya 'j a s' → 'A s' (the pūrva-savarṇa lengthens
+        # the combined a+a → ā; the 'j' vanishes under this merger).
+        pratyaya.varnas = [mk("A"), mk("s")]
+        pratyaya.meta["jas_purvasavarna_done"] = True
+        pratyaya.meta["upadesha_slp1_original"] = "jas"
+        pratyaya.meta["upadesha_slp1"] = "As"
+        return state
+    if up in {"O", "Ow"}:
+        # i + au → ī (hari + au → harī)
+        anga.varnas[-1] = mk("I")
+        # Drop the pratyaya entirely; the long ī is the combined result.
+        pratyaya.varnas = []
+        pratyaya.meta["au_purvasavarna_done"] = True
+        return state
     return state
 
 

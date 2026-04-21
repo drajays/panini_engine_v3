@@ -1,16 +1,11 @@
 """
 6.1.103  तस्माच्छसो नः पुंसि  —  VIDHI
 
-"For a masculine a-stem (puṃsi), after the substitution of 6.1.102
- pūrva-savarṇa applies, the 's' of Sas (accusative plural) is replaced
- by 'n'."
+"For masculine (puṃsi), the śas-ending (Sas) yields final 'n'."
 
-Operational meaning:
-  cell 2-3: rAma + Sas (acc pl)
-            → by the preceding 6.1.102-family pūrva-savarṇa, stem-final
-              'a' absorbs pratyaya-initial 'Sa' → 'A' + 's'
-            → then 6.1.103 (masc-a-stem specific) replaces 's' by 'n'
-            → rAmAn → रामान्
+Operational meaning (v3.4 scope):
+  - Keep the existing a-stem handling for रामा́न्.
+  - Extend to i-stem masculine like हरि + Sas → हरीन्.
 
 We implement as a single-step VIDHI: when the pratyaya upadesha is
 'Sas' and the aṅga ends in 'a' AND the liṅga is pulliṅga, perform
@@ -40,10 +35,6 @@ def _matches(state: State) -> bool:
         return False
     if pratyaya.meta.get("sas_substitution_done"):
         return False
-    if not anga.varnas:
-        return False
-    if anga.varnas[-1].slp1 != "a":
-        return False
     return True
 
 
@@ -56,16 +47,28 @@ def act(state: State) -> State:
         return state
     anga = state.terms[-2]
     pratyaya = state.terms[-1]
-    # Delete stem's final 'a' — absorbed by the lengthening.
-    del anga.varnas[-1]
     # Choose pratyaya replacement based on liṅga.
     linga = state.meta.get("linga", "pulliṅga")
     if linga == "pulliṅga":
-        # Sas → An for masculine a-stems.
-        pratyaya.varnas = [mk("A"), mk("n")]
-        new_upa = "An"
+        if anga.varnas and anga.varnas[-1].slp1 == "a":
+            # a-stem: delete stem's final 'a' — absorbed by the lengthening.
+            del anga.varnas[-1]
+            pratyaya.varnas = [mk("A"), mk("n")]
+            new_upa = "An"
+        elif anga.varnas and anga.varnas[-1].slp1 == "i":
+            # i-stem: i + śas → īn (hari → harīn)
+            anga.varnas[-1] = mk("I")
+            pratyaya.varnas = [mk("n")]
+            new_upa = "n"
+        else:
+            # Fallback: keep existing behaviour (no-op would violate R1),
+            # so treat like the a-stem An substitution without stem deletion.
+            pratyaya.varnas = [mk("A"), mk("n")]
+            new_upa = "An"
     else:
         # Neuter / feminine: standard pūrva-savarṇa → As.
+        if anga.varnas and anga.varnas[-1].slp1 == "a":
+            del anga.varnas[-1]
         pratyaya.varnas = [mk("A"), mk("s")]
         new_upa = "As"
     pratyaya.meta["sas_substitution_done"] = True

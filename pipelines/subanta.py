@@ -156,6 +156,8 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     s = apply_rule("4.1.1",  s)
     s = apply_rule("1.1.1",  s)  # saṃjñā only — prayoga awaits vidhi (e.g. 6.1.88)
     s = apply_rule("1.1.2",  s)
+    # v3.4: घि-संज्ञा for hari-like i/u stems (rules self-gate).
+    s = apply_rule("1.4.7",  s)
 
     # STAGE 2 — sup attach.
     s = apply_rule("4.1.2",  s)
@@ -186,6 +188,7 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     s = apply_rule("7.1.9",   s)
     s = apply_rule("7.1.54",  s)      # fires only when (6,3) & hrasva-final aṅga
     s = apply_rule("1.3.9",   s)      # re-fire: remove ṭ-it of nuṭ if inserted
+    s = apply_rule("6.4.3",   s)      # v3.4: nāmi — lengthen i/u before nuṭ + Am (harīṇām)
     # v3.1: bahuvacane jhalyet — a → e before jhal-initial plural sup.
     # MUST run before 7.3.102 (which would otherwise make a → ā).
     s = apply_rule("7.3.103", s)
@@ -194,6 +197,12 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     # (y, s, t, ...) is visible as the trigger.
     s = apply_rule("7.3.102", s)
     s = apply_rule("6.4.148", s)      # yasyeti ca
+    # v3.4: hari-like (ghi) aṅgakārya (rules self-gate by upadeśa identity).
+    s = apply_rule("7.3.108", s)      # sambuddhi: hari → hare
+    s = apply_rule("7.3.109", s)      # jasi:       hari → hare
+    s = apply_rule("7.3.111", s)      # ṅiti:       hari → hare
+    s = apply_rule("7.3.119", s)      # ṅi:         harau
+    s = apply_rule("7.3.120", s)      # ṭā:         hariṇā (via ṇatva later)
 
     # STAGE 5 — sandhi.
     # v3.2: jas/Sas pratyaya substitutions (cells 1-3, 2-3, 8-3).
@@ -203,8 +212,10 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     s = apply_rule("6.1.103", s)      # Sas → An (puṃsi acc-pl)
     s = apply_rule("6.1.78",  s)      # v3.1: ayādi — y-insertion before 'os'
     s = apply_rule("6.1.107", s)      # v3.1: ami pūrvaḥ — a+am → am (blocks 6.1.101)
+    s = apply_rule("6.1.77",  s)      # v3.4: iko yanaci (hari+os → haryos)
     s = apply_rule("6.1.87",  s)
     s = apply_rule("6.1.88",  s)      # v3.1: vṛddhi — a+E/O → E/O
+    s = apply_rule("6.1.110", s)      # v3.4: ṅasi/ṅas pūrvarūpa (hare + as(i) → hare + s(i))
     s = apply_rule("6.1.101", s)
 
     # STAGE 6 — pada merge.

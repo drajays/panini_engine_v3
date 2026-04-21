@@ -21,8 +21,12 @@ from engine.state  import State
 
 def _find_target(state: State):
     """
-    Find boundary where stem-a meets pratyaya 'am' (am upadeśa).
-    Action: delete the stem's final 'a' — the pratyaya's 'a' wins.
+    Find boundary where a vowel meets pratyaya 'am' (am upadeśa).
+
+    v3.4:
+      - if the aṅga ends in 'a', delete the aṅga-final 'a' (legacy behaviour).
+      - otherwise (e.g. hari + am), delete the pratyaya-initial 'a' so that
+        i + am → im.
     """
     if len(state.terms) < 2:
         return None
@@ -36,8 +40,6 @@ def _find_target(state: State):
         if nxt.meta.get("upadesha_slp1") != "am":
             continue
         if anga.meta.get("ami_purva_done"):
-            continue
-        if anga.varnas[-1].slp1 != "a":
             continue
         if nxt.varnas[0].slp1 != "a":
             continue
@@ -53,8 +55,14 @@ def act(state: State) -> State:
     i = _find_target(state)
     if i is None:
         return state
-    # Delete stem's final 'a'.
-    del state.terms[i].varnas[-1]
+    anga = state.terms[i]
+    nxt  = state.terms[i + 1]
+    if anga.varnas and anga.varnas[-1].slp1 == "a":
+        # Legacy: a + am → am (keep pratyaya a)
+        del anga.varnas[-1]
+    else:
+        # General pūrvarūpa at am-boundary: keep preceding vowel.
+        del nxt.varnas[0]
     state.terms[i].meta["ami_purva_done"] = True
     # Also block 6.1.101 for safety.
     state.blocked_sutras.add("6.1.101")
