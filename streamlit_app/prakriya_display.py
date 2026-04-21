@@ -7,7 +7,30 @@ from typing import Any, Dict, List
 
 import streamlit as st
 
+from phonology.joiner import slp1_to_devanagari
+from phonology.varna import parse_slp1_upadesha_sequence
 from trace_view import filter_steps_surface_changed
+
+
+def slp1_flat_to_devanagari_ui(slp_flat: str) -> str:
+    """
+    Render engine ``flat_slp1()`` / trace ``form_*`` strings as Devanāgarī.
+
+    Falls back to em-dash when parsing fails (should be rare).
+    """
+    if not slp_flat or not str(slp_flat).strip():
+        return "—"
+    try:
+        varnas = parse_slp1_upadesha_sequence(str(slp_flat).strip())
+        return slp1_to_devanagari(varnas)
+    except Exception:
+        return "—"
+
+
+def format_slp1_deva_pair(slp_flat: str) -> str:
+    """Single-line `` `SLP1` · देवनागरी `` for metrics and inline use."""
+    deva = slp1_flat_to_devanagari_ui(slp_flat)
+    return f"`{slp_flat}` · {deva}"
 
 
 def prepare_trace_display(
@@ -46,10 +69,14 @@ def render_trace_steps(
         why = step.get("why_dev", "")
         before = step.get("form_before", "")
         after = step.get("form_after", "")
+        b_dev = slp1_flat_to_devanagari_ui(before)
+        a_dev = slp1_flat_to_devanagari_ui(after)
         st.markdown(
             f"**{sid}** · `{type_l}`"
             + (f" · *{status}*" if status else "")
-            + f"\n\n`{before}` → `{after}`\n\n"
+            + "\n\n"
+            f"**पूर्व:** {format_slp1_deva_pair(before)}\n\n"
+            f"**पश्चात्:** {format_slp1_deva_pair(after)}\n\n"
             f"*शास्त्रीय टिप्पणी:* {why}"
         )
         hi = hint_for_sutra(sid)
