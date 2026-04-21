@@ -30,6 +30,9 @@ def _find_target(state: State):
         anga = state.terms[i - 1]
         if "anga" not in anga.tags:
             continue
+        # v3.5: adant sarvanāma (sarva) uses suṭ (7.1.52), not nuṭ.
+        if "sarvanama" in anga.tags:
+            continue
         if not anga.varnas:
             continue
         last = anga.varnas[-1]

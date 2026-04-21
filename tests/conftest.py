@@ -10,6 +10,9 @@ Provides:
   rama_stem_state  — State seeded with the 'rāma' prātipadika
   rama_gold        — loaded data/reference/subanta_gold/rama_pullinga.json
   hari_gold        — loaded data/reference/subanta_gold/hari_pullinga.json
+  sarva_gold       — loaded data/reference/subanta_gold/sarva_pullinga.json
+  jnana_gold       — loaded data/reference/subanta_gold/jnana_napumsaka.json
+  tad_gold         — loaded data/reference/subanta_gold/tad_pullinga.json
 """
 from __future__ import annotations
 
@@ -62,6 +65,27 @@ def rama_gold():
 @pytest.fixture(scope="session")
 def hari_gold():
     path = _ROOT / "data" / "reference" / "subanta_gold" / "hari_pullinga.json"
+    with path.open(encoding="utf-8") as f:
+        return json.load(f)
+
+
+@pytest.fixture(scope="session")
+def sarva_gold():
+    path = _ROOT / "data" / "reference" / "subanta_gold" / "sarva_pullinga.json"
+    with path.open(encoding="utf-8") as f:
+        return json.load(f)
+
+
+@pytest.fixture(scope="session")
+def jnana_gold():
+    path = _ROOT / "data" / "reference" / "subanta_gold" / "jnana_napumsaka.json"
+    with path.open(encoding="utf-8") as f:
+        return json.load(f)
+
+
+@pytest.fixture(scope="session")
+def tad_gold():
+    path = _ROOT / "data" / "reference" / "subanta_gold" / "tad_pullinga.json"
     with path.open(encoding="utf-8") as f:
         return json.load(f)
 

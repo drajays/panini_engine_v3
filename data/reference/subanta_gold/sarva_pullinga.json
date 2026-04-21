@@ -1,0 +1,32 @@
+{
+  "_doc": "Gold subanta paradigm for sarvanāma a-stem masculine: सर्व (sarva). Used by tests/tools only (CONSTITUTION Art. 6 firewall).",
+  "stem_slp1": "sarva",
+  "linga": "pulliṅga",
+  "cells": {
+    "1-1": {"form_dev": "सर्वः"},
+    "1-2": {"form_dev": "सर्वौ"},
+    "1-3": {"form_dev": "सर्वे"},
+    "2-1": {"form_dev": "सर्वम्"},
+    "2-2": {"form_dev": "सर्वौ"},
+    "2-3": {"form_dev": "सर्वान्"},
+    "3-1": {"form_dev": "सर्वेण"},
+    "3-2": {"form_dev": "सर्वाभ्याम्"},
+    "3-3": {"form_dev": "सर्वैः"},
+    "4-1": {"form_dev": "सर्वस्मै"},
+    "4-2": {"form_dev": "सर्वाभ्याम्"},
+    "4-3": {"form_dev": "सर्वेभ्यः"},
+    "5-1": {"form_dev": "सर्वस्मात्"},
+    "5-2": {"form_dev": "सर्वाभ्याम्"},
+    "5-3": {"form_dev": "सर्वेभ्यः"},
+    "6-1": {"form_dev": "सर्वस्य"},
+    "6-2": {"form_dev": "सर्वयोः"},
+    "6-3": {"form_dev": "सर्वेषाम्"},
+    "7-1": {"form_dev": "सर्वस्मिन्"},
+    "7-2": {"form_dev": "सर्वयोः"},
+    "7-3": {"form_dev": "सर्वेषु"},
+    "8-1": {"form_dev": "सर्व"},
+    "8-2": {"form_dev": "सर्वौ"},
+    "8-3": {"form_dev": "सर्वे"}
+  }
+}
+

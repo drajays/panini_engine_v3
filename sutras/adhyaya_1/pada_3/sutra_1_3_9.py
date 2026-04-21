@@ -51,10 +51,16 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     for t in state.terms:
-        t.varnas = [
-            v for v in t.varnas
-            if not (v.tags & IT_LOPA_TAGS)
-        ]
+        removed = [v.slp1 for v in t.varnas if (v.tags & IT_LOPA_TAGS)]
+        if removed:
+            # Preserve it-markers for downstream rules that depend on them
+            # (e.g. 7.2.116 checks for ṇit in a kṛt pratyaya).
+            prev = t.meta.get("it_markers")
+            if isinstance(prev, set):
+                prev.update(removed)
+            else:
+                t.meta["it_markers"] = set(removed)
+        t.varnas = [v for v in t.varnas if not (v.tags & IT_LOPA_TAGS)]
     return state
 
 

@@ -1,0 +1,29 @@
+{
+  "_doc": "Gold subanta paradigm for tyadādi sarvanāma: तद् (tad), masculine. No sambodhana (8-* absent). Used by tests/tools only.",
+  "stem_slp1": "tad",
+  "linga": "pulliṅga",
+  "cells": {
+    "1-1": {"form_dev": "सः"},
+    "1-2": {"form_dev": "तौ"},
+    "1-3": {"form_dev": "ते"},
+    "2-1": {"form_dev": "तम्"},
+    "2-2": {"form_dev": "तौ"},
+    "2-3": {"form_dev": "तान्"},
+    "3-1": {"form_dev": "तेन"},
+    "3-2": {"form_dev": "ताभ्याम्"},
+    "3-3": {"form_dev": "तैः"},
+    "4-1": {"form_dev": "तस्मै"},
+    "4-2": {"form_dev": "ताभ्याम्"},
+    "4-3": {"form_dev": "तेभ्यः"},
+    "5-1": {"form_dev": "तस्मात्"},
+    "5-2": {"form_dev": "ताभ्याम्"},
+    "5-3": {"form_dev": "तेभ्यः"},
+    "6-1": {"form_dev": "तस्य"},
+    "6-2": {"form_dev": "तयोः"},
+    "6-3": {"form_dev": "तेषाम्"},
+    "7-1": {"form_dev": "तस्मिन्"},
+    "7-2": {"form_dev": "तयोः"},
+    "7-3": {"form_dev": "तेषु"}
+  }
+}
+

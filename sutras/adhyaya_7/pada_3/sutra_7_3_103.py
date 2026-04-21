@@ -28,7 +28,7 @@ from phonology     import mk
 # Pratyaya upadeśas that trigger a → e.  These are the plural-jhal set
 # from our sup inventory.  (jas starts with 'j' — also jhal, also plural —
 # but jas has its own specific substitution path handled elsewhere.)
-_TRIGGER_UPADESHAS = frozenset({"Bis", "Byas", "sup"})
+_TRIGGER_UPADESHAS = frozenset({"Bis", "Byas", "sup", "sAm"})
 
 
 def _find_target(state: State):

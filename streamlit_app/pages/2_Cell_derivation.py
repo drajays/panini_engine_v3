@@ -11,7 +11,13 @@ import sutras  # noqa: F401, E402
 from sutras.adhyaya_1.pada_1.sutra_1_1_1 import VRIDHI_SAMJNA_REFERENCING_SUTRAS
 from engine import SUTRA_REGISTRY
 from phonology.joiner import slp1_to_devanagari
-from pipelines.subanta import derive_akarant_pullinga, stem_slp1_looks_akarant_pullinga
+from pipelines.subanta import (
+    derive,
+    derive_akarant_pullinga,
+    derive_ikarant_pullinga,
+    stem_slp1_looks_akarant_pullinga,
+    stem_slp1_looks_ikarant_pullinga,
+)
 from stem_input import (
     normalize_pratipadika_input,
     stem_slp1_to_display_devanagari,
@@ -28,14 +34,16 @@ from i18n_hi import (
 
 st.markdown(
     "### एक विभक्ति × एक वचन — पूरी प्रक्रिया\n\n"
-    "**अकारान्त पुंलिङ्ग:** प्रातिपदिक **देवनागरी** (`राम`) **या** **SLP1** (`rAma`) में दें — "
-    "अन्त में ह्रस्व अ। नीचे प्रत्येक चरण पर संस्कृत व्याख्या और हिन्दी संक्षिप्त टिप्पणी।"
+    "अभी यह पृष्ठ **पुंलिङ्ग** के दो stem प्रकार सपोर्ट करता है:\n\n"
+    "- **अकारान्त** (SLP1 अन्तिम `a`) — उदा. `राम` / `rAma`, `गज` / `gaja`\n"
+    "- **इकारान्त** (SLP1 अन्तिम `i`) — उदा. `हरि` / `hari`\n\n"
+    "नीचे प्रत्येक चरण पर संस्कृत व्याख्या और हिन्दी संक्षिप्त टिप्पणी।"
 )
 
 raw_stem = st.text_input(
     "प्रातिपदिक (देवनागरी या SLP1)",
     value="rAma",
-    placeholder="राम  या  rAma",
+    placeholder="राम / हरि  या  rAma / hari",
     key="stem_cell",
     help="एक समय में एक ही लिपि।",
 )
@@ -48,6 +56,15 @@ except ValueError as e:
 
 if not stem_slp:
     st.warning("कृपया प्रातिपदिक भरें।")
+    st.stop()
+
+is_akar = stem_slp1_looks_akarant_pullinga(stem_slp)
+is_ikar = stem_slp1_looks_ikarant_pullinga(stem_slp)
+if not (is_akar or is_ikar):
+    st.error(
+        "अभी केवल **अकारान्त** (SLP1 अन्तिम `a`) या **इकारान्त** (SLP1 अन्तिम `i`) "
+        "पुंलिङ्ग प्रातिपदिक समर्थित हैं। उदाहरण: `rAma`, `gaja`, `hari`।"
+    )
     st.stop()
 
 c1, c2 = st.columns(2)
@@ -70,32 +87,50 @@ with st.expander("विभक्ति और वचन — हिन्दी 
         f"**चुना वचन:** {VACANA_SANSKRIT[vac - 1]} — {VACANA_HINDI[vac - 1]}"
     )
 
-if not stem_slp1_looks_akarant_pullinga(stem_slp):
-    st.error(
-        "अकारान्त हेतु अन्त में ह्रस्व अ चाहिए — देवनागरी में `राम` जैसा, SLP1 में `rAma` जैसा।"
-    )
-    st.stop()
-
 stem_dev = stem_slp1_to_display_devanagari(stem_slp)
+stem_kind = "अकारान्त" if is_akar else "इकारान्त"
 st.caption(
-    f"**आंतरिक SLP1:** `{stem_slp}` · **देवनागरी प्रातिपदिक:** {stem_dev}"
+    f"**आंतरिक SLP1:** `{stem_slp}` · **देवनागरी प्रातिपदिक:** {stem_dev} · **विशेष:** {stem_kind}"
 )
 
-use_gold = stem_slp == "rAma"
-gold = common.load_rama_gold() if use_gold else None
+gold = None
+gold_label = None
+if stem_slp == "rAma":
+    gold = common.load_rama_gold()
+    gold_label = "राम (gold)"
+elif stem_slp == "hari":
+    gold = common.load_hari_gold()
+    gold_label = "हरि (gold)"
+elif stem_slp == "sarva":
+    gold = common.load_sarva_gold()
+    gold_label = "सर्व (gold)"
+elif stem_slp == "jYAna":
+    gold = common.load_jnana_gold()
+    gold_label = "ज्ञान (gold)"
+elif stem_slp == "tad":
+    gold = common.load_tad_gold()
+    gold_label = "तद् (gold)"
+
+use_gold = gold is not None
 key = f"{vib}-{vac}"
 gcell = gold["cells"].get(key, {}) if gold else {}
-gold_dev = gcell.get("form_dev", "—") if use_gold else "— (केवल राम)"
+gold_dev = gcell.get("form_dev", "—") if use_gold else "—"
 gold_slp = gcell.get("form_slp1", "—") if use_gold else "—"
 
-state = derive_akarant_pullinga(stem_slp, vib, vac)
+state = (
+    derive_akarant_pullinga(stem_slp, vib, vac)
+    if is_akar
+    else derive_ikarant_pullinga(stem_slp, vib, vac)
+)
 surface_dev = slp1_to_devanagari(state.terms[0].varnas) if state.terms else ""
 surface_slp = state.render()
 
 m1, m2 = st.columns(2)
 with m1:
     st.markdown("##### सन्दर्भ रूप (यदि उपलब्ध)")
-    st.metric("gold (राम)", gold_dev if use_gold else "—", delta=None)
+    st.metric("gold", gold_dev if use_gold else "—", delta=None)
+    if gold_label:
+        st.caption(gold_label)
     st.caption(f"SLP1: `{gold_slp}`")
 with m2:
     st.markdown("##### इन्जिन् निष्कर्ष")

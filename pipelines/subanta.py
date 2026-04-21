@@ -80,13 +80,10 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
         ch = stem_slp1[i]
         if ch in HAL_DEV:
             varnas.append(mk(ch))
-            # Inherent schwa only after a **word-final** consonant (no following
-            # letter).  If the next character is a vowel, it is consumed below.
-            # If it is another consonant, it forms a cluster (e.g. ``SyAma`` श्याम)
-            # — **no** schwa between the two hal-s.
-            nxt = stem_slp1[i + 1] if i + 1 < len(stem_slp1) else None
-            if nxt is None:
-                varnas.append(mk_inherent_a())
+            # We do NOT auto-append inherent 'a' after a final consonant.
+            # If a stem needs a final vowel, it must be explicit in the input
+            # (e.g. rAma, gaja). This keeps consonant-ending stems like `tad`
+            # well-formed.
             i += 1
             continue
         if ch in AC_DEV:
@@ -99,9 +96,20 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
     stem = Term(
         kind   = "prakriti",
         varnas = varnas,
-        tags   = {"prātipadika", "anga", "upadesha"},
+        # The stem is NOT a pratyaya upadeśa; do not tag it 'upadesha'.
+        # This prevents it-prakaraṇa rules like 1.3.3 from wrongly stripping
+        # stem-final consonants (critical for consonant-ending stems like `tad`).
+        tags   = {"prātipadika", "anga"},
         meta   = {"upadesha_slp1": stem_slp1},
     )
+    # Encode liṅga as a Term tag so sūtra cond() can remain blind to
+    # state.meta (CONSTITUTION Art. 2).
+    if linga == "napuṃsaka":
+        stem.tags.add("napuṃsaka")
+    elif linga == "strīliṅga":
+        stem.tags.add("strīliṅga")
+    else:
+        stem.tags.add("pulliṅga")
     state = State(terms=[stem])
     state.meta["linga"]            = linga
     state.meta["vibhakti_vacana"]  = f"{vibhakti}-{vacana}"
@@ -183,6 +191,10 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     """
     Aṣṭādhyāyī-kram pipeline.  Returns final state with complete trace.
     """
+    # Tyadādi pronouns like `tad` have no sambodhana (no vibhakti 8 forms).
+    if vibhakti == 8 and stem_slp1.strip() in {"tad", "tyad", "yad", "etad", "idam", "adas", "kim"}:
+        raise ValueError("त्यदादि-शब्देषु सम्बोधन-रूप (८-*) नास्ति।")
+
     s = build_initial_state(stem_slp1, vibhakti, vacana, linga)
 
     # STAGE 1 — saṃjñā preflight.
@@ -190,6 +202,10 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     s = apply_rule("4.1.1",  s)
     s = apply_rule("1.1.1",  s)  # saṃjñā only — prayoga awaits vidhi (e.g. 6.1.88)
     s = apply_rule("1.1.2",  s)
+    # v3.7: tyadādi-gaṇa tagging (includes sarvanāma tag for these stems).
+    s = apply_rule("1.2.72", s)
+    # v3.5: sarvanāma-saṃjñā (sarvādi-gaṇa; rules self-gate).
+    s = apply_rule("1.1.27", s)
     # v3.4: घि-संज्ञा for hari-like i/u stems (rules self-gate).
     s = apply_rule("1.4.7",  s)
 
@@ -208,20 +224,44 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
 
     # STAGE 4 — aṅgakārya.
     s = apply_rule("6.4.1",   s)
+    # v3.7: tyadādi prep should occur before 7.1.* / sandhi steps so later
+    # sandhi (e.g. 6.1.78 for -yoḥ) sees the a-ending aṅga.
+    s = apply_rule("7.2.106", s)      # tad/tyad: t → s before su
+    s = apply_rule("7.2.102", s)      # tyadādi final → a
+    s = apply_rule("6.1.97",  s)      # collapse a+a in tyadādi aṅga
     # v3.1: sambuddhi su-lopa.  Fires only when pratyaya is tagged
     # 'sambuddhi' (cell 8-1) and aṅga ends in hrasva/eṅ.  Done EARLY
     # so later pratyaya-replacements don't re-materialize 's'.
     s = apply_rule("6.1.69",  s)
     # v3.1: ato-pratyaya replacements (ṭā→ina, ṅasi→āt, ṅas→sya).
+    # v3.5: sarvanāma specials must run before general a-stem replacements.
+    s = apply_rule("7.1.15",  s)      # ṅasi/ṅi → smAt/smin
     s = apply_rule("7.1.12",  s)
     # v3.1: ṅe → ya (dative-singular after a-stem).
+    s = apply_rule("7.1.14",  s)      # sarvanāma: ṅe → smE
     s = apply_rule("7.1.13",  s)
     # v3.2: ato bhisa ais — Bis → Es (cell 3-3).  MUST run before
     # 7.3.103 so that the pratyaya's upadeśa is already 'Es' and
     # 7.3.103 (which keys off 'Bis') won't fire for this cell.
     s = apply_rule("7.1.9",   s)
+    # v3.5: sarvanāma plural jas substitution (sarve).
+    s = apply_rule("7.1.17",  s)
+    # v3.6: napuṃsaka specials.
+    s = apply_rule("7.1.24",  s)      # su/am → am (jnAnam)
+    s = apply_rule("7.1.19",  s)      # au → SI (jnAne)
+    s = apply_rule("7.1.20",  s)      # jas/Sas → Si (jnAnAni)
+    # v3.6: śi → sarvanāmasthāna (must run AFTER 7.1.19/20 created Si).
+    s = apply_rule("1.1.42",  s)
     s = apply_rule("7.1.54",  s)      # fires only when (6,3) & hrasva-final aṅga
+    # v3.5: sarvanāma gen-pl: suṭ āgama before Am (sarveṣām).
+    s = apply_rule("7.1.52",  s)
+    # Re-fire relevant it-prakaraṇa after sarvanāma substitutions/āgamas.
+    s = apply_rule("1.3.5",   s)
+    s = apply_rule("1.3.7",   s)
     s = apply_rule("1.3.9",   s)      # re-fire: remove ṭ-it of nuṭ if inserted
+    # v3.6: napuṃsaka plural: nuṃ + upadhā-dīrgha under sarvanāmasthāna.
+    s = apply_rule("7.1.72",  s)
+    s = apply_rule("6.4.8",   s)
     s = apply_rule("6.4.3",   s)      # v3.4: nāmi — lengthen i/u before nuṭ + Am (harīṇām)
     # v3.1: bahuvacane jhalyet — a → e before jhal-initial plural sup.
     # MUST run before 7.3.102 (which would otherwise make a → ā).

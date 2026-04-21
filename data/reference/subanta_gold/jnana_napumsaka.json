@@ -1,0 +1,32 @@
+{
+  "_doc": "Gold subanta paradigm for a-stem napuṃsaka: ज्ञान (jñāna). Used by tests/tools only (CONSTITUTION Art. 6 firewall).",
+  "stem_slp1": "jYAna",
+  "linga": "napuṃsaka",
+  "cells": {
+    "1-1": {"form_dev": "ज्ञानम्"},
+    "1-2": {"form_dev": "ज्ञाने"},
+    "1-3": {"form_dev": "ज्ञानानि"},
+    "2-1": {"form_dev": "ज्ञानम्"},
+    "2-2": {"form_dev": "ज्ञाने"},
+    "2-3": {"form_dev": "ज्ञानानि"},
+    "3-1": {"form_dev": "ज्ञानेन"},
+    "3-2": {"form_dev": "ज्ञानाभ्याम्"},
+    "3-3": {"form_dev": "ज्ञानैः"},
+    "4-1": {"form_dev": "ज्ञानाय"},
+    "4-2": {"form_dev": "ज्ञानाभ्याम्"},
+    "4-3": {"form_dev": "ज्ञानेभ्यः"},
+    "5-1": {"form_dev": "ज्ञानात्"},
+    "5-2": {"form_dev": "ज्ञानाभ्याम्"},
+    "5-3": {"form_dev": "ज्ञानेभ्यः"},
+    "6-1": {"form_dev": "ज्ञानस्य"},
+    "6-2": {"form_dev": "ज्ञानयोः"},
+    "6-3": {"form_dev": "ज्ञानानाम्"},
+    "7-1": {"form_dev": "ज्ञाने"},
+    "7-2": {"form_dev": "ज्ञानयोः"},
+    "7-3": {"form_dev": "ज्ञानेषु"},
+    "8-1": {"form_dev": "ज्ञान"},
+    "8-2": {"form_dev": "ज्ञाने"},
+    "8-3": {"form_dev": "ज्ञानानि"}
+  }
+}
+

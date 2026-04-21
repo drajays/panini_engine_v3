@@ -74,7 +74,11 @@ def act(state: State) -> State:
     ti, term, j = got
     v = term.varnas[j]
     v.tags.add("it_candidate_cutu")
-    state.samjna_registry[("it_cutu", ti, j)] = frozenset({v.slp1})
+    # Include current upadeśa identity in the key so a later pratyaya-substitution
+    # that reintroduces a cuṭu-initial hal at the same (ti,j) still records a
+    # distinct saṃjñā event (avoids R2 false-positive on re-fires).
+    upa = term.meta.get("upadesha_slp1")
+    state.samjna_registry[("it_cutu", ti, j, upa)] = frozenset({v.slp1})
     return state
 
 

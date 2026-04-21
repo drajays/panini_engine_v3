@@ -80,6 +80,15 @@ if stem_slp == "rAma":
 elif stem_slp == "hari":
     gold = common.load_hari_gold()
     gold_label = "हरि (gold)"
+elif stem_slp == "sarva":
+    gold = common.load_sarva_gold()
+    gold_label = "सर्व (gold)"
+elif stem_slp == "jYAna":
+    gold = common.load_jnana_gold()
+    gold_label = "ज्ञान (gold)"
+elif stem_slp == "tad":
+    gold = common.load_tad_gold()
+    gold_label = "तद् (gold)"
 
 use_gold = gold is not None
 stem_label = f"`{stem_slp}`"
