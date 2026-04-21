@@ -89,3 +89,13 @@ def devanagari_to_varnas(text: str) -> List[Varna]:
         i += 1
 
     return out
+
+
+def devanagari_to_slp1_flat(text: str) -> str:
+    """
+    Flat SLP1 string from a Devanāgarī word (for ``stem_slp1`` in pipelines).
+
+    Inverse direction of ``joiner.slp1_to_devanagari`` on a Varṇa list built
+    from the same surface. Whitespace in ``text`` is ignored.
+    """
+    return "".join(v.slp1 for v in devanagari_to_varnas(text))

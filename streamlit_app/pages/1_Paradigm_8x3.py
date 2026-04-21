@@ -12,6 +12,10 @@ import sutras  # noqa: F401, E402
 from engine import SUTRA_REGISTRY
 from phonology.joiner import slp1_to_devanagari
 from pipelines.subanta import derive_akarant_pullinga, stem_slp1_looks_akarant_pullinga
+from stem_input import (
+    normalize_pratipadika_input,
+    stem_slp1_to_display_devanagari,
+)
 
 from i18n_hi import (
     VACANA_HINDI,
@@ -22,39 +26,58 @@ from i18n_hi import (
 
 st.markdown(
     "### अकारान्त पुंलिङ्ग शब्दरूप (८ विभक्ति × ३ वचन)\n\n"
-    "**अकारान्त** = प्रातिपदिक अन्त में **अ** (जैसे राम, गज)। यहाँ **SLP1** में टाइप करें "
-    "(उदा. `rAma`, `gaja`) — इन्जिन् इसी रूप से रूप बनाता है।\n\n"
-    "**सोने के पैमाने (gold)** केवल `rAma` के लिए दिखते हैं; अन्य प्रातिपदिकों पर केवल इन्जिन्-आउटपुट।"
+    "**अकारान्त** = प्रातिपदिक अन्त में **अ** (जैसे राम, गज)। यहाँ **देवनागरी** "
+    "(जैसे `राम`, `गज`) **या** **SLP1 / Velthuis** (`rAma`, `gaja`) दोनों चलते हैं — "
+    "इन्जिन् अन्दर **SLP1** में बदलकर चलता है।\n\n"
+    "**सोने के पैमाने (gold)** केवल **राम** (`rAma` / `राम`) के लिए; अन्य प्रातिपदिकों पर केवल इन्जिन्-आउटपुट।"
 )
 
-stem_slp1 = st.text_input(
-    "प्रातिपदिक (SLP1, अ-ान्त)",
+raw_stem = st.text_input(
+    "प्रातिपदिक (देवनागरी या SLP1, अ-ान्त)",
     value="rAma",
-    help="Velthuis: rAma=राम, gaja=गज। अन्तिम अक्षर छोटा 'a' होना चाहिए।",
+    placeholder="राम  या  rAma",
+    help="देवनागरी: राम, गज। SLP1: rAma, gaja। एक समय में दोनों लिपियाँ मिलाकर न लिखें।",
 )
 
-if not stem_slp1_looks_akarant_pullinga(stem_slp1):
+try:
+    stem_slp = normalize_pratipadika_input(raw_stem)
+except ValueError as e:
+    st.error(str(e))
+    st.stop()
+
+if not stem_slp:
+    st.warning("कृपया प्रातिपदिक भरें।")
+    st.stop()
+
+if not stem_slp1_looks_akarant_pullinga(stem_slp):
     st.error(
-        "यह प्रातिपदिक अकारान्त पुंलिङ्ग के रूप में मान्य नहीं: अन्त में छोटा **`a`** चाहिए "
-        "(उदा. `rAma`, `gaja`)। `hari` या `rAmaH` जैसे रूप यहाँ नहीं चलेंगे।"
+        "यह प्रातिपदिक अकारान्त पुंलिङ्ग के रूप में मान्य नहीं: अन्त में ह्रस्व **अ** चाहिए "
+        "(देवनागरी में जैसे `राम`, `गज`; SLP1 में अन्तिम `a` — उदा. `rAma`, `gaja`)। "
+        "`हरि` या विसर्गान्त रूप यहाँ नहीं चलेंगे।"
     )
     st.stop()
 
-use_gold = stem_slp1.strip() == "rAma"
+stem_dev = stem_slp1_to_display_devanagari(stem_slp)
+st.caption(
+    f"**आंतरिक SLP1 (इन्जिन्):** `{stem_slp}` · "
+    f"**देवनागरी प्रातिपदिक:** {stem_dev}"
+)
+
+use_gold = stem_slp == "rAma"
 gold = common.load_rama_gold() if use_gold else None
-stem_label = f"`{stem_slp1.strip()}`"
+stem_label = f"`{stem_slp}`"
 
 col_opt1, col_opt2 = st.columns(2)
 with col_opt1:
     show_gold = st.toggle("राम के लिए सोना (gold) दिखाएँ", value=True, disabled=not use_gold)
     if not use_gold:
-        st.caption("केवल `rAma` पर gold उपलब्ध।")
+        st.caption("केवल `rAma` / `राम` पर gold उपलब्ध।")
 with col_opt2:
     compare = st.toggle("इन्जिन् vs gold भिन्नता सूची", value=True, disabled=not (use_gold and show_gold))
 
 
 def surface_for_cell(v: int, vac: int) -> tuple[str, str]:
-    state = derive_akarant_pullinga(stem_slp1.strip(), v, vac)
+    state = derive_akarant_pullinga(stem_slp, v, vac)
     if not state.terms:
         return "", ""
     dev = slp1_to_devanagari(state.terms[0].varnas)
@@ -89,7 +112,7 @@ for v in range(1, 9):
             row[f"{VACANA_SANSKRIT[vac - 1]}\n{VACANA_HINDI[vac - 1]}"] = f"{dev}  \n`{slp}`"
     rows.append(row)
 
-st.markdown(f"**प्रातिपदिक (SLP1):** {stem_label} · **लिङ्ग:** पुंलिङ्ग · **विशेष:** अकारान्त")
+st.markdown(f"**प्रातिपदिक:** {stem_dev} · **SLP1:** {stem_label} · **लिङ्ग:** पुंलिङ्ग · **विशेष:** अकारान्त")
 
 st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
 

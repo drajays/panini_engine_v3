@@ -1,6 +1,9 @@
 """
 6.1.88  वृद्धिरेचि  —  VIDHI
 
+Operational *vṛddhi* (substitution) here; the **saṃjñā** *vṛddhi* ‘which
+phonemes count’ is defined by **1.1.1** (not an adhikāra rule — universal).
+
 "When अ (from a preceding stem) meets ec (= e/E/o/O), the combined
  result is vṛddhi (the long-e/long-o grade) — actually, specifically
  when the ec is E/O, the vṛddhi variant is used; when the ec is e/o,

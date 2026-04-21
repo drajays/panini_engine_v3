@@ -27,7 +27,9 @@ Recipe (Aṣṭādhyāyī order; one step per apply_rule call):
     STAGE 1: saṃjñā preflight
         1.4.14  sup saṃjñā
         4.1.1   ngyāp anuvāda
-        1.1.1   vṛddhi saṃjñā (ā, ai, au → A, E, O)
+        1.1.1   vṛddhi saṃjñā (definition {A,E,O}; prayoga in vidhi sūtras)
+                [recipe schedules this early; vṛddhi *prayoga* not applied here—
+                 no vidhi invokes operational vṛddhi at this step, only saṃjñā]
         1.1.2   guṇa saṃjñā   (available for later sandhi)
 
     STAGE 2: attach sup
@@ -150,7 +152,7 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     # STAGE 1 — saṃjñā preflight.
     s = apply_rule("1.4.14", s)
     s = apply_rule("4.1.1",  s)
-    s = apply_rule("1.1.1",  s)
+    s = apply_rule("1.1.1",  s)  # saṃjñā only — prayoga awaits vidhi (e.g. 6.1.88)
     s = apply_rule("1.1.2",  s)
 
     # STAGE 2 — sup attach.
