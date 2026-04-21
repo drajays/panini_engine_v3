@@ -1,6 +1,7 @@
 {
   "_doc": "Kṛt pratyayas in raw upadeśa form. Stub — real catalog drawn from 3.1.91 onward.",
   "GaY"  : { "sutra": "3.3.18", "sense": "BAve" },
+  "tfc"  : { "sutra": "3.1.133", "sense": "kartari (tṛn agent noun)" },
   "Nvul" : { "sutra": "3.1.133", "sense": "kartari (agent)" },
   "tavyat": { "sutra": "3.1.96", "sense": "kartavyadyarTa" },
   "kta"   : { "sutra": "3.2.102", "sense": "niSThA" },

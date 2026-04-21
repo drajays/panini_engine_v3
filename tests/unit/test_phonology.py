@@ -14,6 +14,8 @@ from phonology.pratyahara import is_hrasva, is_dirgha
 from phonology.savarna    import is_savarna, dirgha_of
 from phonology.varna      import mk
 from phonology.joiner     import slp1_to_devanagari
+from phonology.tokenizer  import devanagari_to_varnas, devanagari_to_slp1_flat
+from phonology.varna      import parse_slp1_upadesha_sequence
 
 
 def test_ac_contains_all_vowels():
@@ -46,6 +48,17 @@ def test_hrasva_dirgha():
     assert is_hrasva("a")
     assert is_dirgha("A")
     assert not is_dirgha("a")
+
+
+def test_anunasika_chandrabindu_matches_slp1_tilde():
+    deva = "डुपचँष्"
+    vs_d = devanagari_to_varnas(deva)
+    vs_s = parse_slp1_upadesha_sequence("qupac~z")
+    assert slp1_to_devanagari(vs_d) == deva
+    assert slp1_to_devanagari(vs_s) == deva
+    assert devanagari_to_slp1_flat(deva) == "qupa~caz"
+    assert any("anunasika" in v.tags for v in vs_d)
+    assert any("anunasika" in v.tags for v in vs_s)
 
 
 def test_joiner_basic_devanagari():

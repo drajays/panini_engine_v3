@@ -3,6 +3,23 @@ pipelines/krdanta.py — kṛdanta derivation drivers (scaffold).
 
 This pipeline constructs a prātipadika from a dhātu + kṛt pratyaya by
 explicitly scheduling sūtras (no inline bundles).
+
+Recipes (step order aligned with pedagogical write-ups ``pachak.md`` /
+``nayak.md``):
+
+  • **qupac~z** + **Nvul** → **pAcaka**: saṃjñā (1.1.1, 1.1.50) → dhātu
+    it‑prakaraṇa → **6.1.65** (no-op) → kṛt adhikāra (**3.1.1**, **3.1.2**,
+    **3.1.91**) → ``kartari`` meta + **3.4.67** → **3.1.133** → kṛt it →
+    **7.1.1** → saṃjñā (**1.4.13**, **1.1.65**) → **6.4.1** → **7.2.116** →
+    **7.2.115** (no-op here) → **6.1.78** (no-op) → **1.2.46** → structural merge.
+
+  • **RIY** (णीञ्) + **Nvul** → **nAyaka**: same skeleton; **6.1.65** applies
+    (``R`` → ``n``) *before* **3.1.133**; **7.2.115** + **6.1.78** yield
+    ``nAyaka`` (not **7.2.116** upadhā-``a``).
+
+  • **ciY** + **tfc** → **cetf** → (``pipelines/subanta_trc``) **cetA** / चेता —
+    see ``cheta.md``; **7.2.10** blocks **7.2.35**; **7.3.84** guṇa; **7.1.94**
+    anaṅ; **6.4.11**; **6.1.66**; **8.2.7**.
 """
 from __future__ import annotations
 
@@ -11,9 +28,9 @@ from typing import List
 import sutras  # noqa: F401  (ensure registry loaded)
 
 from engine       import apply_rule
-from engine.state import State, Term
-from phonology    import mk
-from phonology.varna import mk_inherent_a
+from engine.state import State, Term, Varna
+from phonology.pratyahara import is_ekac_upadesha
+from phonology.varna import mk_inherent_a, parse_slp1_upadesha_sequence
 
 
 def _structural_merge_to_pratipadika(state: State, *, upadesha_slp1: str) -> State:
@@ -50,31 +67,57 @@ def _structural_merge_to_pratipadika(state: State, *, upadesha_slp1: str) -> Sta
     return s
 
 
-def _parse_upadesha_slp1(slp1_seq: str) -> List:
+def _structural_merge_trc_pratipadika(state: State, *, upadesha_slp1: str) -> State:
     """
-    Parse a raw upadeśa SLP1 string where '~' marks anunāsika on the
-    preceding vowel (same convention as sup_upadeśa).
+    Merge dhātu + ``tfc`` residue into one prātipadika **without** appending
+    inherent-a (ṛ-kāra / ``f``-anta stems like ``cetf``).
     """
-    varnas = []
-    i = 0
-    while i < len(slp1_seq):
-        ch = slp1_seq[i]
-        if i + 1 < len(slp1_seq) and slp1_seq[i + 1] == "~":
-            v = mk(ch, "anunasika")
-            i += 2
-        else:
-            v = mk(ch)
-            i += 1
-        varnas.append(v)
-    return varnas
+    s = state
+    if not s.terms:
+        return s
+    all_varnas = []
+    for t in s.terms:
+        all_varnas.extend(v.clone() for v in t.varnas)
+    prat = Term(
+        kind="prakriti",
+        varnas=all_varnas,
+        tags={"prātipadika", "anga"},
+        meta={
+            "upadesha_slp1": upadesha_slp1,
+            "trc_rikaranta": True,
+        },
+    )
+    before = s.flat_slp1()
+    s.terms = [prat]
+    after = s.flat_slp1()
+    s.trace.append({
+        "sutra_id": "__KRD_MERGE_TRC__",
+        "sutra_type": "STRUCTURAL",
+        "type_label": "कृदन्त-मेलनम् (तृच्)",
+        "form_before": before,
+        "form_after": after,
+        "why_dev": "धातु + तृच् → प्रातिपदिकम् (ऋ-अन्त, न कारान्त)।",
+        "status": "APPLIED",
+    })
+    return s
 
 
 def build_dhatu_state(dhatu_upadesha_slp1: str) -> State:
     dhatu = Term(
         kind="prakriti",
-        varnas=_parse_upadesha_slp1(dhatu_upadesha_slp1),
+        varnas=parse_slp1_upadesha_sequence(dhatu_upadesha_slp1),
         tags={"dhatu", "anga", "upadesha"},
         meta={"upadesha_slp1": dhatu_upadesha_slp1},
+    )
+    return State(terms=[dhatu])
+
+
+def build_dhatu_state_from_varnas(dhatu_varnas: List[Varna], *, upadesha_slp1: str) -> State:
+    dhatu = Term(
+        kind="prakriti",
+        varnas=[v.clone() for v in dhatu_varnas],
+        tags={"dhatu", "anga", "upadesha"},
+        meta={"upadesha_slp1": upadesha_slp1},
     )
     return State(terms=[dhatu])
 
@@ -83,35 +126,137 @@ def derive_krt(
     dhatu_upadesha_slp1: str,
     *,
     krt_upadesha_slp1: str = "Nvul",
+    dhatu_varnas: List[Varna] | None = None,
+    merge_pratipadika_label: str = "pAcaka",
 ) -> State:
     """
     Generic kṛdanta scaffold: dhātu (upadeśa) + chosen kṛt pratyaya.
-    Currently supports Nvul for the vr̥ddhi example (pācaka).
-    """
-    s = build_dhatu_state(dhatu_upadesha_slp1)
+    Supports Nvul for agent nouns (e.g. ``pAcaka``, ``nAyaka``).
 
-    # IT-prakaraṇa on dhātu.
+    ``merge_pratipadika_label`` is stored on the merged Term's ``meta`` and
+    should match the expected ``flat_slp1()`` stem (without extra inherent-a
+    duplication in the label string — the merge step appends inherent-a).
+    """
+    if dhatu_varnas is not None:
+        s = build_dhatu_state_from_varnas(dhatu_varnas, upadesha_slp1=dhatu_upadesha_slp1)
+    else:
+        s = build_dhatu_state(dhatu_upadesha_slp1)
+
+    # Saṃjñā / paribhāṣā used by later vidhi (vṛddhi prayoga, sthānāntara).
+    s = apply_rule("1.1.1", s)
+    s = apply_rule("1.1.50", s)
+
+    # Dhātu it‑prakaraṇa (१.३.१ … १.३.९).
+    s = apply_rule("1.3.1", s)
     s = apply_rule("1.3.2", s)
     s = apply_rule("1.3.5", s)
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
+    if s.terms:
+        s.terms[0].tags.discard("upadesha")
 
-    # Attach kṛt pratyaya.
+    # ६.१.६५ णो नः — before kṛt attachment (णीञ् → नी…); no-op on e.g. पच्.
+    s = apply_rule("6.1.65", s)
+
+    # Kṛt adhikāra block + kartṛ-artha for ३.४.६७.
+    s.meta["krt_artha"] = "kartari"
+    s = apply_rule("3.1.1", s)
+    s = apply_rule("3.1.2", s)
+    s = apply_rule("3.1.91", s)
+
     s.meta["krt_upadesha_slp1"] = krt_upadesha_slp1
     if krt_upadesha_slp1 == "Nvul":
+        s = apply_rule("3.4.67", s)
         s = apply_rule("3.1.133", s)
-        # IT on pratyaya, then vu→ak.
-        s = apply_rule("1.3.8", s)
+        s = apply_rule("1.3.7", s)
         s = apply_rule("1.3.3", s)
         s = apply_rule("1.3.9", s)
         s = apply_rule("7.1.1", s)
-        # upadhā-vṛddhi under ṇit.
+        s = apply_rule("1.4.13", s)
+        s = apply_rule("1.1.65", s)
+        s = apply_rule("6.4.1", s)
         s = apply_rule("7.2.116", s)
-        # Merge.
-        s = _structural_merge_to_pratipadika(s, upadesha_slp1="pAcaka")
+        s = apply_rule("7.2.115", s)
+        s = apply_rule("6.1.78", s)
+        s = apply_rule("1.2.46", s)
+        s = _structural_merge_to_pratipadika(s, upadesha_slp1=merge_pratipadika_label)
         return s
 
     raise ValueError(f"unsupported kṛt pratyaya: {krt_upadesha_slp1!r}")
+
+
+def derive_tfc_pratipadika(
+    dhatu_upadesha_slp1: str,
+    *,
+    udatta_dhatu: bool = False,
+) -> State:
+    """
+    Build a ``tfc`` (तृच्) prātipadika stem, e.g. ``ciY`` → ``cetf`` (चेतृ्…).
+
+    ``udatta_dhatu`` (seṭ / udātta in JSON ``flags.udatta``): when True with
+    ekāc stem, **7.2.10** does **not** block **7.2.35** (iṭ on the kṛt term).
+
+    Scheduling follows ``cheta.md``: dhātu IT → **6.1.65** (no-op unless णीञ्) →
+    kṛt adhikāra → **3.4.67** → **3.1.133** (``tfc``) → kṛt IT → **3.4.114** →
+    aṅga saṃjñā → **7.2.10** / **7.2.35** → **7.3.84** → **1.1.51** (when ṛ/ḷ) →
+    **6.1.78** (``o``+``i`` …) → **1.2.46** → merge (no inherent-a).
+    """
+    s = build_dhatu_state(dhatu_upadesha_slp1)
+    s = apply_rule("1.1.1", s)
+    s = apply_rule("1.1.50", s)
+    s = apply_rule("1.3.1", s)
+    s = apply_rule("1.3.2", s)
+    s = apply_rule("1.3.5", s)
+    s = apply_rule("1.3.3", s)
+    s = apply_rule("1.3.9", s)
+    if s.terms:
+        s.terms[0].tags.discard("upadesha")
+    s.meta["ekac_dhatu"] = is_ekac_upadesha(s.flat_slp1())
+    s.meta["udatta_dhatu"] = bool(udatta_dhatu)
+    s = apply_rule("6.1.65", s)
+    s.meta["krt_artha"] = "kartari"
+    s = apply_rule("3.1.1", s)
+    s = apply_rule("3.1.2", s)
+    s = apply_rule("3.1.91", s)
+    s.meta["krt_upadesha_slp1"] = "tfc"
+    s = apply_rule("3.4.67", s)
+    s = apply_rule("3.1.133", s)
+    s = apply_rule("1.3.7", s)
+    s = apply_rule("1.3.3", s)
+    s = apply_rule("1.3.9", s)
+    s = apply_rule("3.4.114", s)
+    s = apply_rule("1.4.13", s)
+    s = apply_rule("1.1.65", s)
+    s = apply_rule("6.4.1", s)
+    s = apply_rule("7.2.10", s)
+    s = apply_rule("7.2.35", s)
+    s = apply_rule("7.3.84", s)
+    s = apply_rule("1.1.51", s)
+    s = apply_rule("6.1.78", s)
+    s = apply_rule("1.2.46", s)
+    s = _structural_merge_trc_pratipadika(s, upadesha_slp1="tfc")
+    return s
+
+
+def derive_trc(dhatu_id: str) -> State:
+    """
+    End-to-end **tṛc** nominative singular from a ``dhatupatha_upadesha`` row
+    ``id`` (upadeśa + ``tfc`` + ``su`` 1-1).
+    """
+    from pipelines.dhatupatha import get_dhatu_row
+    from pipelines.subanta_trc import derive_trc_nom_sg
+
+    row = get_dhatu_row(dhatu_id)
+    up = row["upadesha_slp1"]
+    ud = bool(row.get("flags", {}).get("udatta", False))
+    k = derive_tfc_pratipadika(up, udatta_dhatu=ud)
+    stem = k.flat_slp1()
+    return derive_trc_nom_sg(stem, vibhakti=1, vacana=1, linga="pulliṅga")
+
+
+def derive_chetA() -> State:
+    """चेता — ``ciY`` + ``tfc`` + ``su`` (1-1), pulliṅga."""
+    return derive_trc("BvAdi_ciY")
 
 
 def derive_pAcaka_pratipadika() -> State:
@@ -119,7 +264,7 @@ def derive_pAcaka_pratipadika() -> State:
     Derive the prātipadika 'pAcaka' from dhātu डुपचँष् + ण्वुल्.
     Returns State whose last term is the derived prātipadika (anga).
     """
-    return derive_krt("qupac~z", krt_upadesha_slp1="Nvul")
+    return derive_krt("qupac~z", krt_upadesha_slp1="Nvul", merge_pratipadika_label="pAcaka")
 
 
 def derive_pAcakaH() -> State:
@@ -129,6 +274,19 @@ def derive_pAcakaH() -> State:
       (2) subanta: pAcaka + su (1-1) → pAcakaH
     """
     from pipelines.subanta import derive as derive_subanta
-    # Subanta driver accepts stem_slp1 by upadeśa identity; we pass the canonical.
     return derive_subanta("pAcaka", 1, 1, linga="pulliṅga")
 
+
+def derive_nAyaka_pratipadika() -> State:
+    """Derive prātipadika ``nAyaka`` from dhātu णीञ् (``RIY``) + ण्वुल्."""
+    return derive_krt("RIY", krt_upadesha_slp1="Nvul", merge_pratipadika_label="nAyaka")
+
+
+def derive_nAyakaH() -> State:
+    """
+    Full derivation of नायकः:
+      (1) kṛdanta: nAyaka
+      (2) subanta: nAyaka + su (1-1) → nAyakaH
+    """
+    from pipelines.subanta import derive as derive_subanta
+    return derive_subanta("nAyaka", 1, 1, linga="pulliṅga")

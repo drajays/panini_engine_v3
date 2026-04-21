@@ -19,16 +19,20 @@ Rules:
                                               Varna(slp1='a', dev='')
   • Anusvāra ('ं') → Varna('M', 'ं')
   • Visarga  ('ः') → Varna('H', 'ः')
+  • Candrabindu (ँ) → same ``anunasika`` tag as SLP1 ``~`` after the vowel
+    (see ``devanagari_to_slp1_flat`` / ``phonology.varna.parse_slp1_upadesha_sequence``).
 """
 from __future__ import annotations
 
 from typing import List
 
 from engine.state     import Varna
+from phonology.pratyahara import HAL as HAL_SET
 from phonology.varna  import AC_DEV, AC_MATRA, HAL_DEV
 
 
 _VIRAMA = "्"
+_CHANDRABINDU = "ँ"
 
 # Reverse maps.
 _DEV_TO_SLP1_VOWEL    = {v: k for k, v in AC_DEV.items()}
@@ -80,6 +84,27 @@ def devanagari_to_varnas(text: str) -> List[Varna]:
             out.append(Varna(slp1="M", dev="ं", tags=set()))
             i += 1
             continue
+        # Chandrabindu (ँ) = same *anunasika* signal as SLP1 '~' on a vowel.
+        # Orthography often places ँ after the second consonant of a cluster
+        # (e.g. डुपचँष्) while SLP1 writes ~ on the interconsonantal vowel
+        # (qupac~z).  When we see … Hal–inherent-a, Hal–inherent-a + ँ, the
+        # nasalization belongs to the *first* inherent-a (the पच् vowel).
+        if ch == _CHANDRABINDU:
+            if out:
+                if (
+                    len(out) >= 4
+                    and out[-1].slp1 == "a"
+                    and out[-1].dev == ""
+                    and out[-2].slp1 in HAL_SET
+                    and out[-3].slp1 == "a"
+                    and out[-3].dev == ""
+                    and out[-4].slp1 in HAL_SET
+                ):
+                    out[-3].tags.add("anunasika")
+                else:
+                    out[-1].tags.add("anunasika")
+            i += 1
+            continue
         if ch == "ः":
             out.append(Varna(slp1="H", dev="ः", tags=set()))
             i += 1
@@ -98,4 +123,11 @@ def devanagari_to_slp1_flat(text: str) -> str:
     Inverse direction of ``joiner.slp1_to_devanagari`` on a Varṇa list built
     from the same surface. Whitespace in ``text`` is ignored.
     """
-    return "".join(v.slp1 for v in devanagari_to_varnas(text))
+    # Preserve anunāsika explicitly using the same convention as sup/kṛt
+    # upadeśa inputs: a trailing '~' after the vowel.
+    out = []
+    for v in devanagari_to_varnas(text):
+        out.append(v.slp1)
+        if "anunasika" in v.tags and v.slp1 in AC_DEV:
+            out.append("~")
+    return "".join(out)

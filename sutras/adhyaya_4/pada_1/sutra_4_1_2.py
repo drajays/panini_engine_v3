@@ -23,8 +23,7 @@ from typing  import Any, Dict, Optional
 
 from engine            import SutraType, SutraRecord, register_sutra
 from engine.state      import State, Term
-from phonology         import mk
-from phonology.varna   import mk_inherent_a
+from phonology.varna   import parse_slp1_upadesha_sequence
 
 
 _INVENTORY: Optional[Dict[str, str]] = None
@@ -54,37 +53,11 @@ def _meta() -> Dict[str, Any]:
 
 def _upadesha_to_varnas(slp1_seq: str):
     """
-    '~' suffix on a vowel slp1 letter means anunāsika → adds that tag.
-    Example: 's~'  (for sup 1-1 upadeśa सुँ) stored as ['s', 'u~'];
-    but we encoded (1-1) as just 's~' meaning [s, u-inherent-anunāsika].
-    Here we parse: letters followed by '~' become anunāsika.
-
-    Note: 's~' in our sup_upadesha.json actually encodes the whole
-    upadeśa सुँ = s + u(anunāsika).  We special-case single-letter
-    upadeśas to add inherent-a.
+    Raw sup upadeśa SLP1 (see ``data/inputs/sup_upadesha.json``).
+    ``~`` and Devanagari candrabindu both denote the same ``anunasika`` tag;
+    see ``phonology.varna.parse_slp1_upadesha_sequence``.
     """
-    varnas = []
-    i = 0
-    while i < len(slp1_seq):
-        ch = slp1_seq[i]
-        anun = (i + 1 < len(slp1_seq) and slp1_seq[i + 1] == "~")
-        v = mk(ch)
-        if anun:
-            v.tags.add("anunasika")
-            i += 2
-        else:
-            i += 1
-        varnas.append(v)
-    # If the upadeśa is consonant-only (e.g. 's'), add inherent-a so
-    # it is pronounceable.  The joiner handles this correctly.
-    if varnas and varnas[-1].slp1 not in {
-        "a","A","i","I","u","U","f","F","x","X","e","E","o","O"
-    }:
-        # Only add inherent-a for the 'su' (1-1) case.  Others already
-        # have final vowels.  This is heuristic; real Pāṇini reads the
-        # upadeśa as given.
-        pass
-    return varnas
+    return parse_slp1_upadesha_sequence(slp1_seq)
 
 
 def cond(state: State) -> bool:
@@ -120,9 +93,6 @@ def act(state: State) -> State:
 
     # 'sup' varṇas (WITH it-markers preserved; 1.3.* will remove them)
     varnas = _upadesha_to_varnas(upadesha)
-    # For su (सुँ) we also add the inherent 'u' after 's', marked anunāsika.
-    if upadesha == "s~":
-        varnas = [mk("s"), mk("u", "anunasika")]
 
     # Pratyaya tags.  v3.1 addition: tag sambuddhi-ekavacana (8-1) so
     # 6.1.69 (su-lopa at sambuddhi) can fire without reading

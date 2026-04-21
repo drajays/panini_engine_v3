@@ -112,3 +112,13 @@ def is_hrasva(slp1: str) -> bool:
 
 def is_dirgha(slp1: str) -> bool:
     return slp1 in _DIRGHA
+
+
+def count_vowel_letters(slp1_flat: str) -> int:
+    """Count SLP1 vowel letters (hrasva + dīrgha) in a flat string."""
+    return sum(1 for ch in slp1_flat if is_hrasva(ch) or is_dirgha(ch))
+
+
+def is_ekac_upadesha(slp1_flat: str) -> bool:
+    """True iff exactly one vowel letter — used with 7.2.10 / एकाच् धातु."""
+    return count_vowel_letters(slp1_flat) == 1

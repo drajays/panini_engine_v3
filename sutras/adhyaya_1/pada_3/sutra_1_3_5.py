@@ -18,7 +18,8 @@ from typing import Optional
 
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
-from phonology     import HAL, NI_TU_DU
+from phonology     import NI_TU_DU
+from phonology.varna import HAL_DEV
 
 from sutras.adhyaya_1.pada_3.sutra_1_3_9 import IT_LOPA_TAGS
 
@@ -30,6 +31,12 @@ def _terms_sup_or_primary(state: State):
     ]
     if cand:
         return cand
+    krt = [
+        t for t in state.terms
+        if "krt" in t.tags and "upadesha" in t.tags
+    ]
+    if krt:
+        return krt
     if state.terms:
         return [state.terms[0]]
     return []
@@ -37,7 +44,7 @@ def _terms_sup_or_primary(state: State):
 
 def _first_hal_idx(varnas) -> Optional[int]:
     for j, v in enumerate(varnas):
-        if v.slp1 in HAL:
+        if v.slp1 in HAL_DEV:
             return j
     return None
 
@@ -73,7 +80,14 @@ def act(state: State) -> State:
     ti, term, j = got
     v = term.varnas[j]
     v.tags.add("it_candidate_nit_tu_du")
-    state.samjna_registry[("it_nit_tu_du", ti, j)] = frozenset({v.slp1})
+    # In dhātu upadeśas like "qupac~z", the anubandha is "qu" (डु) —
+    # both the initial hal (q) and the following vowel (u) are part of the marker.
+    # We tag the following 'u' as it-candidate too when present.
+    if j + 1 < len(term.varnas) and term.varnas[j + 1].slp1 == "u":
+        term.varnas[j + 1].tags.add("it_candidate_nit_tu_du")
+        state.samjna_registry[("it_nit_tu_du", ti, j, "qu")] = frozenset({v.slp1, "u"})
+    else:
+        state.samjna_registry[("it_nit_tu_du", ti, j)] = frozenset({v.slp1})
     return state
 
 

@@ -88,10 +88,47 @@ def mk_inherent_a() -> Varna:
     return Varna(slp1="a", dev="", tags=set())
 
 
+def parse_slp1_upadesha_sequence(slp1_seq: str) -> list:
+    """
+    Parse SLP1 upadeśa where a standalone ``~`` marks anunāsika on the nearest
+    preceding vowel (same information as Devanagari candrabindu ``ँ`` in
+    ``devanagari_to_varnas``).
+
+    Examples:
+      * ``qupac~z`` → ``… a(anunāsika), c, …`` (the ``~`` applies to the ``a``).
+      * Inventory ``s~`` (सुँ) → ``[s, u(anunāsika)]`` (no vowel precedes ``~``).
+
+    This must stay aligned with ``phonology.tokenizer.devanagari_to_slp1_flat``,
+    which emits ``~`` after vowel letters that carry the ``anunasika`` tag.
+    """
+    from phonology.pratyahara import AC, HAL
+
+    if slp1_seq == "s~":
+        return [mk("s"), mk("u", "anunasika")]
+    varnas: list = []
+    i = 0
+    while i < len(slp1_seq):
+        ch = slp1_seq[i]
+        if ch == "~":
+            for j in range(len(varnas) - 1, -1, -1):
+                if varnas[j].slp1 in AC:
+                    varnas[j].tags.add("anunasika")
+                    break
+            i += 1
+            continue
+        if ch == "a" and varnas and varnas[-1].slp1 in HAL:
+            v = mk_inherent_a()
+        else:
+            v = mk(ch)
+        varnas.append(v)
+        i += 1
+    return varnas
+
+
 def mk_upadesha(slp1_seq: str) -> list:
     """
     Build a raw upadeśa varṇa list from a SLP1 string.
     Used by sutras/adhyaya_4/pada_1/sutra_4_1_2.py (sup inventory) and
     the dhātupāṭha loader.
     """
-    return [mk(ch) for ch in slp1_seq]
+    return parse_slp1_upadesha_sequence(slp1_seq)

@@ -49,11 +49,13 @@ def _matches(state: State) -> bool:
     if any(t.kind == "pratyaya" and "krt" in t.tags for t in state.terms):
         return False
     upa = state.meta.get("krt_upadesha_slp1")
-    if upa != "Nvul":
-        return False
     if upa not in _load_krit():
         return False
-    return True
+    if upa == "Nvul":
+        return True
+    if upa == "tfc":
+        return True
+    return False
 
 
 def cond(state: State) -> bool:
@@ -63,12 +65,21 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if not _matches(state):
         return state
-    upa = "Nvul"
-    # Nvul (upadeśa) contains initial ण् and final ल् as it markers.
-    varnas = [mk("N"), mk("v"), mk("u"), mk("l")]
-    tags = {"pratyaya", "krt", "upadesha", "has_initial_n_it"}
-    pr = Term(kind="pratyaya", varnas=varnas, tags=tags, meta={"upadesha_slp1": upa})
-    state.terms.append(pr)
+    upa = state.meta.get("krt_upadesha_slp1")
+    if upa == "Nvul":
+        # Nvul (upadeśa): ण् + व् + उ + ल् — SLP1 ``R`` = ण् (see ``HAL_DEV``).
+        varnas = [mk("R"), mk("v"), mk("u"), mk("l")]
+        tags = {"pratyaya", "krt", "upadesha", "has_initial_n_it"}
+        pr = Term(kind="pratyaya", varnas=varnas, tags=tags, meta={"upadesha_slp1": upa})
+        state.terms.append(pr)
+        return state
+    if upa == "tfc":
+        # तृच् — SLP1 ``t`` + ``f`` (ऋ) + ``c`` (इत्, हलन्त्यम्).
+        varnas = [mk("t"), mk("f"), mk("c")]
+        tags = {"pratyaya", "krt", "upadesha"}
+        pr = Term(kind="pratyaya", varnas=varnas, tags=tags, meta={"upadesha_slp1": upa})
+        state.terms.append(pr)
+        return state
     return state
 
 

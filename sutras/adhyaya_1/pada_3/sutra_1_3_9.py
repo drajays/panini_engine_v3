@@ -25,6 +25,8 @@ from typing import Final, FrozenSet
 
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
+from phonology.pratyahara import AC
+from phonology.varna     import mk as v_mk, mk_inherent_a
 
 # Exposed for tools/UI — single source for “what 1.3.9 strips”
 IT_LOPA_TAGS: Final[FrozenSet[str]] = frozenset((
@@ -51,7 +53,29 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     for t in state.terms:
-        removed = [v.slp1 for v in t.varnas if (v.tags & IT_LOPA_TAGS)]
+        removed: list[str] = []
+        new_varnas = []
+        for v in t.varnas:
+            if not (v.tags & IT_LOPA_TAGS):
+                new_varnas.append(v)
+                continue
+            # Dhātu upadeśa: anunāsika vowel (१.३.२) — *it* is the nasal
+            # feature; the vowel letter remains (e.g. डुपचँष् → पच्, not प्-च्).
+            # Sup / other pratyayas: vowel marked anunāsika is fully elided
+            # (e.g. सुँ → स्).
+            if (
+                "dhatu" in t.tags
+                and "it_candidate_anunasika" in v.tags
+                and v.slp1 in AC
+            ):
+                removed.append(v.slp1)
+                if v.slp1 == "a" and v.dev == "":
+                    new_varnas.append(mk_inherent_a())
+                else:
+                    new_varnas.append(v_mk(v.slp1))
+                continue
+            removed.append(v.slp1)
+            # fall through: delete varna (do not append)
         if removed:
             # Preserve it-markers for downstream rules that depend on them
             # (e.g. 7.2.116 checks for ṇit in a kṛt pratyaya).
@@ -60,7 +84,7 @@ def act(state: State) -> State:
                 prev.update(removed)
             else:
                 t.meta["it_markers"] = set(removed)
-        t.varnas = [v for v in t.varnas if not (v.tags & IT_LOPA_TAGS)]
+        t.varnas = new_varnas
     return state
 
 

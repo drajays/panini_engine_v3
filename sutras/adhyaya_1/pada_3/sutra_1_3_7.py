@@ -17,7 +17,8 @@ from typing import Optional
 
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
-from phonology     import CUTU, HAL
+from phonology     import CUTU
+from phonology.varna import HAL_DEV
 
 from sutras.adhyaya_1.pada_3.sutra_1_3_9 import IT_LOPA_TAGS
 
@@ -29,14 +30,21 @@ def _terms_sup_or_primary(state: State):
     ]
     if cand:
         return cand
+    krt = [
+        t for t in state.terms
+        if "krt" in t.tags and "upadesha" in t.tags
+    ]
+    if krt:
+        return krt
     if state.terms:
         return [state.terms[0]]
     return []
 
 
 def _first_hal_idx(varnas) -> Optional[int]:
+    # Use canonical hal inventory (includes ``R`` = ण्), not only ``pratyahara.HAL``.
     for j, v in enumerate(varnas):
-        if v.slp1 in HAL:
+        if v.slp1 in HAL_DEV:
             return j
     return None
 

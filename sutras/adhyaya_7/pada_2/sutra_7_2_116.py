@@ -30,7 +30,7 @@ def _find_upadha_a(state: State):
     if "krt" not in pr.tags:
         return None
     itm = pr.meta.get("it_markers", set())
-    if not isinstance(itm, set) or "N" not in itm:
+    if not isinstance(itm, set) or not ("N" in itm or "R" in itm):
         return None
     if dhatu.meta.get("upadha_vrddhi_done"):
         return None

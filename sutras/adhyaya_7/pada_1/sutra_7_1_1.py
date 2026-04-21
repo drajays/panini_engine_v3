@@ -25,7 +25,7 @@ def _matches(state: State) -> bool:
     if pr.meta.get("upadesha_slp1") != "Nvul":
         return False
     itm = pr.meta.get("it_markers", set())
-    if not isinstance(itm, set) or "N" not in itm:
+    if not isinstance(itm, set) or not ("N" in itm or "R" in itm):
         return False
     if pr.meta.get("vu_to_ak_done"):
         return False
