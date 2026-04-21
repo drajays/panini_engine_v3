@@ -15,8 +15,8 @@ from pipelines.krdanta import (
     build_dhatu_state_from_varnas,
     derive_krt,
     derive_tfc_pratipadika,
-    derive_trc_nom_sg,
 )
+from pipelines.subanta_trc import derive_trc_nom_sg
 from prakriya_display import prepare_trace_display, render_trace_steps
 from i18n_hi import hint_for_sutra
 from phonology.tokenizer import devanagari_to_varnas
