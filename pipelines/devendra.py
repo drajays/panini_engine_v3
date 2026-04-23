@@ -9,8 +9,6 @@ examples from the notes:
 """
 from __future__ import annotations
 
-from dataclasses import dataclass
-
 import sutras  # noqa: F401  (fill registry)
 
 from engine       import apply_rule
@@ -18,7 +16,7 @@ from engine.state import State, Term
 from phonology    import mk
 from phonology.varna import AC_DEV, HAL_DEV
 
-from pipelines.subanta import derive_akarant_pullinga
+from pipelines.subanta import _pada_merge
 
 
 def _varnas_from_slp1(slp1: str) -> list:
@@ -32,44 +30,11 @@ def _varnas_from_slp1(slp1: str) -> list:
     return varnas
 
 
-def _structural_step(state: State, sid: str, label: str, why_dev: str) -> None:
-    state.trace.append({
-        "sutra_id"    : sid,
-        "sutra_type"  : "STRUCTURAL",
-        "type_label"  : label,
-        "form_before" : state.flat_slp1(),
-        "form_after"  : state.flat_slp1(),
-        "why_dev"     : why_dev,
-        "status"      : "APPLIED",
-    })
-
-
-def _merge_terms_as_pratipadika(state: State) -> None:
-    if not state.terms:
-        return
-    all_varnas: list = []
-    for t in state.terms:
-        all_varnas.extend(t.varnas)
-    merged = Term(
-        kind="prakriti",
-        varnas=all_varnas,
-        tags={"prātipadika", "anga"},
-        meta={"upadesha_slp1": state.flat_slp1()},
-    )
-    state.terms = [merged]
-    _structural_step(
-        state,
-        sid="__SAMASA_MERGE__",
-        label="समास-एकीकरणम्",
-        why_dev="दो पदों को एक प्रातिपदिक-आधार (अङ्ग) मानकर एक-Term में मर्ज किया।",
-    )
-
-
-@dataclass(frozen=True)
 class DemoCase:
-    first: str
-    second: str
-    expected_stem: str
+    def __init__(self, first: str, second: str, expected_stem: str):
+        self.first = first
+        self.second = second
+        self.expected_stem = expected_stem
 
 
 DEVENDRA = DemoCase(first="deva", second="indra", expected_stem="devendra")
@@ -77,31 +42,72 @@ SURYODAYA = DemoCase(first="sUrya", second="udaya", expected_stem="sUryodaya")
 
 
 def derive_demo(case: DemoCase) -> State:
-    # Phase 0: initial two-term state.
-    t1 = Term(kind="prakriti", varnas=_varnas_from_slp1(case.first), tags={"prātipadika"}, meta={})
-    t2 = Term(kind="prakriti", varnas=_varnas_from_slp1(case.second), tags={"prātipadika"}, meta={})
-    s = State(terms=[t1, t2])
-    _structural_step(
-        s,
-        sid="__INPUT__",
-        label="इनपुट",
-        why_dev=f"प्रातिपदिक-द्वय: {case.first} + {case.second}",
+    # Phase 0: input as two samāsa-members with their internal sup markers
+    # (as in devendra.md). These internal sups are deleted by 2.4.71.
+    t1 = Term(
+        kind="prakriti",
+        varnas=_varnas_from_slp1(case.first),
+        tags={"samasa_member"},
+        meta={"upadesha_slp1": case.first},
     )
+    sup1 = Term(
+        kind="pratyaya",
+        varnas=[mk("A"), mk("m")],  # "Am" (demo internal sup marker)
+        tags={"sup"},
+        meta={"upadesha_slp1": "Am"},
+    )
+    t2 = Term(
+        kind="prakriti",
+        varnas=_varnas_from_slp1(case.second),
+        tags={"samasa_member"},
+        meta={"upadesha_slp1": case.second},
+    )
+    sup2 = Term(
+        kind="pratyaya",
+        varnas=[mk("s"), mk("u")],  # "su~" simplified to "su" for demo
+        tags={"sup"},
+        meta={"upadesha_slp1": "su"},
+    )
+    s = State(terms=[t1, sup1, t2, sup2])
 
-    # Phase 2 (from notes): guṇa sandhi must delegate selection to 1.1.50.
-    s = apply_rule("1.1.2", s)    # guṇa-saṃjñā (availability)
-    s = apply_rule("1.1.50", s)   # sthāne'ntaratamaḥ gate (provides guna map)
-    s = apply_rule("6.1.87", s)   # āt guṇaḥ: a+i → e; a+u → o
+    # Phase 1: samāsa adhikāra metadata (glass-box scope marker).
+    s = apply_rule("2.1.3", s)
 
-    _merge_terms_as_pratipadika(s)
+    # Phase 1b: sup-lopa inside samāsa (removes internal sup terms).
+    s = apply_rule("2.4.71", s)
 
-    # Phase 3-5: subanta (prathamā-ekavacana) + tripāḍī visarga.
-    stem = s.render()
-    # Re-run full subanta recipe on the compound stem (narrow demo).
-    s2 = derive_akarant_pullinga(stem, vibhakti=1, vacana=1)
-    # Stitch traces (keep s2 state object; prepend s trace for UI).
-    s2.trace = s.trace + s2.trace
-    return s2
+    # Phase 2: guṇa sandhi (a+i→e, a+u→o) with sthāne'ntaratamaḥ selection.
+    s = apply_rule("1.1.2", s)    # guṇa-saṃjñā availability
+    s = apply_rule("1.1.50", s)   # sthāne'ntaratamaḥ gate (guna map)
+    s = apply_rule("6.1.87", s)   # ād guṇaḥ
+
+    # Phase 2b: prātipadika-saṃjñā for samāsa and structural merge into one aṅga.
+    # Implemented as SAMJNA in 1.2.46 (samāsa branch).
+    s = apply_rule("1.2.46", s)
+
+    # Phase 3: subanta prathamā-ekavacana on the compound a-stem.
+    s.meta["vibhakti_vacana"] = "1-1"
+    s = apply_rule("1.4.14", s)
+    s = apply_rule("4.1.1",  s)
+    s = apply_rule("1.1.2",  s)
+    s = apply_rule("6.4.1",  s)
+    s = apply_rule("4.1.2",  s)   # attach su~ (sup)
+    s = apply_rule("1.3.2",  s)   # anunāsika-it on vowels
+    s = apply_rule("1.3.3",  s)
+    s = apply_rule("1.3.4",  s)
+    s = apply_rule("1.3.5",  s)
+    s = apply_rule("1.3.6",  s)
+    s = apply_rule("1.3.7",  s)
+    s = apply_rule("1.3.8",  s)
+    s = apply_rule("1.3.9",  s)   # it-lopa (su~→s)
+    s = apply_rule("7.3.102", s)  # a→A before consonant-initial sup
+
+    # Phase 4: pada + tripāḍī visarga.
+    _pada_merge(s)                # structural, but traced
+    s = apply_rule("8.2.1",  s)
+    s = apply_rule("8.2.66", s)   # s→ru
+    s = apply_rule("8.3.15", s)   # ru→ḥ (H)
+    return s
 
 
 def derive_devendraH() -> State:

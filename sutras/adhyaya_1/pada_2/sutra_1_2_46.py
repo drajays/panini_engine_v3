@@ -14,10 +14,27 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
+    # ── Case A: kṛdanta path (legacy; unchanged) ─────────────────────────
     if len(state.terms) < 2:
         return False
     if "dhatu" not in state.terms[0].tags:
-        return False
+        # ── Case B: samāsa path (devendra/sūryodaya demo) ───────────────
+        # Glass-box policy: we allow a compound state to be promoted to a
+        # single prātipadika *and* structurally merged here, but only when
+        # the state already represents a samāsa (members tagged).
+        if state.samjna_registry.get("1.2.46_samasa_pratipadika"):
+            return False
+        if not state.terms:
+            return False
+        # Require at least two members and no pending sup pratyaya
+        # (internal sups must already be deleted by 2.4.71).
+        members = [t for t in state.terms if "samasa_member" in t.tags]
+        if len(members) < 2:
+            return False
+        if any("sup" in t.tags for t in state.terms):
+            return False
+        return True
+
     if "krt" not in state.terms[-1].tags:
         return False
     if state.samjna_registry.get("1.2.46_krit_pratipadika"):
@@ -35,6 +52,25 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    # Samāsa path: merge samāsa members into one prātipadika+aṅga term.
+    if "dhatu" not in state.terms[0].tags:
+        # Mark registry for audit.
+        state.samjna_registry["1.2.46_samasa_pratipadika"] = True
+        # Structural merge (changes Term segmentation but not surface).
+        from engine.state import Term
+        all_varnas = []
+        for t in state.terms:
+            all_varnas.extend(t.varnas)
+        merged = Term(
+            kind="prakriti",
+            varnas=all_varnas,
+            tags={"prātipadika", "anga"},
+            meta={"upadesha_slp1": state.flat_slp1()},
+        )
+        state.terms = [merged]
+        return state
+
+    # Kṛdanta path (legacy behaviour).
     state.samjna_registry["1.2.46_krit_pratipadika"] = True
     return state
 
