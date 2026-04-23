@@ -9,7 +9,8 @@
 • **Scope:** Same term scan as **1.3.5** / **1.3.7**; skips **dhātu**-tagged
   terms.
 
-• **v2 reference:** panini_engine_v2/core/it_rules.py ``cond_1_3_6`` /
+• **v2 reference:** ``~/Documents/panini_engine_v2/core/it_rules.py``
+  ``cond_1_3_6`` /
   ``act_1_3_6`` (v3 scans the sup pratyaya term in multi-term states).
 """
 from __future__ import annotations

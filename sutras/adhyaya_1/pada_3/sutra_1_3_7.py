@@ -8,7 +8,8 @@
 
 • **Scope:** Non-**dhātu**, **sup**-primary term list (same as **1.3.5**).
 
-• **v2 reference:** panini_engine_v2/core/it_rules.py ``cond_1_3_7`` /
+• **v2 reference:** ``~/Documents/panini_engine_v2/core/it_rules.py``
+  ``cond_1_3_7`` /
   ``act_1_3_7``.
 """
 from __future__ import annotations

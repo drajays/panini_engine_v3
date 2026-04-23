@@ -29,7 +29,7 @@ Nine sūtras where *vṛddhi* (the saṃjñā) is **directly** expressed in the
 Aṣṭādhyāyī (sākṣāt); anuvṛtti can carry the term into further rules:
   1.1.3, 1.1.73, 6.1.88, 6.2.105, 6.3.28, 6.3.39, 7.2.1, 7.2.114, 7.3.89
 
-(See panini_engine_v2/core/sutra_1_1_1.py for the older axiom-registration
+(See ``~/Documents/panini_engine_v2/core/sutra_1_1_1.py`` for the older axiom-registration
 pattern; v3 keeps definition in registry + full trace.)
 """
 from __future__ import annotations

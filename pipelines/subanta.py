@@ -31,6 +31,26 @@ Recipe (Aṣṭādhyāyī order; one step per apply_rule call):
                 [recipe schedules this early; vṛddhi *prayoga* not applied here—
                  no vidhi invokes operational vṛddhi at this step, only saṃjñā]
         1.1.2   guṇa saṃjñā   (available for later sandhi)
+        1.1.3   *ik* *sthāyin* under *guṇa* / *vṛddhi* (paribhāṣā gate)
+        1.1.7   *saṃyoga* (contiguous *hal*; paribhāṣā-śāstrīya cluster term)
+        1.1.8   *anunāsika* (mukha–*nāsikā* *avacana*; *anusvāra* / *chandrabindu* class)
+        1.1.9   *savarṇa* (*tulya* *āśya*–*prayatna*; ``phonology.savarna``)
+        1.1.10  *nājjhalau* ( *it* / *upadeśa* paribhāṣā before 1.3.2)
+        1.1.11  *pragṛhya* ( *ī, ū, e, ai, o, au* in *dvivacana*)
+        1.1.12  *adaso māt* ( *it* / *upadeśa* paribhāṣā: *aś* in *sarvān.* *adas* / *māt* )
+        1.1.13  *śe* ( *pragṛhya* *prayoga* off in *aś* / *ś* *locus*; *Kāśikā* *vṛtti* )
+        1.1.14  *nipāta ekājanāṅ* ( *pragṛhya* for *ekāc* *nipāta*; ashtadhyayi *i* 11014)
+        1.1.100  *na mātrā samāse* ( *Kāśikā* *vṛtti*; not the Pāṇini *1.1.14* pāṭha)
+        1.1.15  *ot* ( *O* in *nipāta*; *i* 11015)
+        1.1.16  *sambuddhau śākalyasya* … ( *Kāśikā*; *i* 11016)
+        1.1.17  *uÞ* *aḥ* ( *i* 11017)
+        1.1.18  *ū̐* / *Ū* + nasal ( *Oṅkāra*; *i* 11018)
+        1.1.19  *Ī*/*Ū* + *tau* *saptamī*-*artha* ( *pragṛhya* extension; *i* 11019)
+        1.1.20  *dā* / *dhā* + *ad*+**āp** → *ghu* ( *i* 11020)
+        1.1.21  *ādyantavad* *ekasmin* ( *i* 11021; *paribhāṣā* *gate* for *atideśa*)
+        1.1.22  *tarap* + *tamap* → *gha* (taddhita; *i* 11022; distinct from *ghu* **1.1.20**)
+        1.1.23  *bahu* / *gaṇa* / *vatu* / *ḍati* → *saṅkhyā* ( *i* 11023)
+        1.1.24  *ṣṇānta* → *ṣaṭ* ( *i* 11024; under 1.1.23 *saṅkhyā* anuvṛtti)
 
     STAGE 2: attach sup
         4.1.2   ADHIKARA + attaches the (v,v) pratyaya to state.terms
@@ -202,6 +222,26 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     s = apply_rule("4.1.1",  s)
     s = apply_rule("1.1.1",  s)  # saṃjñā only — prayoga awaits vidhi (e.g. 6.1.88)
     s = apply_rule("1.1.2",  s)
+    s = apply_rule("1.1.3",  s)  # *ik* *sthāyin* gate for *guṇa* / *vṛddhi*
+    s = apply_rule("1.1.7",  s)  # *saṃyoga* = adjacent *hal* (Tripāḍī / *hal* *vidhi* scope)
+    s = apply_rule("1.1.8",  s)  # *anunāsika* (anchor for ``anunasika`` / *M* in prakriyā)
+    s = apply_rule("1.1.9",  s)  # *savarṇa* (6.1.101 / sandhi premiss)
+    s = apply_rule("1.1.10", s)  # *nājjhalau* (*it* locus; before 1.3.2)
+    s = apply_rule("1.1.11", s)  # *pragṛhya* (dual *ī*…*au* in *saṃjñā*)
+    s = apply_rule("1.1.12", s)  # *adaso māt* (paribhāṣā for *a*ś / *etad*–*adas* *it*)
+    s = apply_rule("1.1.13", s)  # *śe* ( *aś* / *ś* locus vs *pragṛhya* )
+    s = apply_rule("1.1.14", s)  # *nipāta ekājanāṅ* ( 11014; *saṃjñā* for *ekāc* *nipāta* )
+    s = apply_rule("1.1.100", s)  # *Kāśikā* *na mātrā samāse* ( *vṛtti*; *paribhāṣā* *gate* )
+    s = apply_rule("1.1.15", s)  # *ot* ( 11015; *saṃjñā* )
+    s = apply_rule("1.1.16", s)  # *sambuddhau śākalyasya*… ( 11016; *saṃjñā* )
+    s = apply_rule("1.1.17", s)  # *uÞ* *aḥ* ( 11017 )
+    s = apply_rule("1.1.18", s)  # *ū̐* ( 11018; ``U.N`` in SLP1)
+    s = apply_rule("1.1.19", s)  # *IdU tau* *saptamī*-*artha* ( 11019; *saṃjñā* *extension* of 1.1.11)
+    s = apply_rule("1.1.20", s)  # *dA-DhA* *ghu* *ad*+**āp** ( 11020; *ghu* *dhātu* *set* )
+    s = apply_rule("1.1.21", s)  # *Adyantavad* *ekasmin* ( 11021; *paribhāṣā* )
+    s = apply_rule("1.1.22", s)  # *tarap-tamapO* *ghaH* ( 11022; *gha* *taddhita* *pratyaya* *set* )
+    s = apply_rule("1.1.23", s)  # *bahuganavatuqati* *saMkhyA* ( 11023; *saṅkhyā* *prātipadika* *set* )
+    s = apply_rule("1.1.24", s)  # *zRAntA* *zaW* ( 11024; *ṣaṭ* ending-set {'z','n'} )
     # v3.7: tyadādi-gaṇa tagging (includes sarvanāma tag for these stems).
     s = apply_rule("1.2.72", s)
     # v3.5: sarvanāma-saṃjñā (sarvādi-gaṇa; rules self-gate).

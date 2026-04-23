@@ -12,7 +12,8 @@
   ``data/inputs/sup_upadesha.json``. This keeps phoneme logic in sūtra files
   and inventory policy in **data/inputs/** (Art. 6 — engine never reads gold corpora).
 
-• **v2 reference:** panini_engine_v2/core/sutra_1_3_8.py + ``it_rules.py``
+• **v2 reference:** ``~/Documents/panini_engine_v2/core/sutra_1_3_8.py`` +
+  ``it_rules.py``
   ``_terms_sup_or_primary_upadesh`` family — different Term model; same idea:
   first-hal it for eligible affixes.
 

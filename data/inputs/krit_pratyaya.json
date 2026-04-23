@@ -1,10 +1,1949 @@
 {
-  "_doc": "Kṛt pratyayas in raw upadeśa form. Stub — real catalog drawn from 3.1.91 onward.",
-  "GaY"  : { "sutra": "3.3.18", "sense": "BAve" },
-  "tfc"  : { "sutra": "3.1.133", "sense": "kartari (tṛn agent noun)" },
-  "Nvul" : { "sutra": "3.1.133", "sense": "kartari (agent)" },
-  "tavyat": { "sutra": "3.1.96", "sense": "kartavyadyarTa" },
-  "kta"   : { "sutra": "3.2.102", "sense": "niSThA" },
-  "ktavatu": { "sutra": "3.2.102", "sense": "niSThA" },
-  "SatR"  : { "sutra": "3.2.124", "sense": "lawaH Sat" }
+  "_doc": {
+    "title": "Exhaustive Kṛt Pratyaya Catalog — Panini Engine v3",
+    "legacy_stub_note": "Earlier file had a duplicate mini-stub of GaY/tfc/Nvul/tavyat/kta/ktavatu/SatR; full entries appear below under the same keys.",
+    "version": "3.0.0",
+    "encoding": "SLP1 throughout. Devanāgarī in *_devanagari fields only.",
+    "key_conventions": {
+      "upadesha_slp1": "Full upadeśa form including all it-varṇas (SLP1).",
+      "prakriya_base_slp1": "Form after all it-lopa (= what the engine works with).",
+      "it_varna_slp1": "List of it-varṇa characters in upadeśa (SLP1 chars).",
+      "iT_behavior": "set=seṭ(always iṭ), anit=never iṭ, vet=optional, na=not applicable(vowel-initial).",
+      "dhatuka_type": "ardhadhatuka | sarvadhatuka",
+      "vidhana_sutra": "The sūtra that enjoins this pratyaya.",
+      "vidhana_sutra_range": "If a range covers this pratyaya (anuvṛtti scope).",
+      "artha_codes": "bhave|kartari|karmani|arhe|bhute|vartamane|bhavisyati|hetau|sambandhe",
+      "pada_niyama": "null | atmanepada | parasmaipada | ubhaya",
+      "lopa_by": "1.3.9 fires lopa on it-varṇas. Listed for trace.",
+      "guna_vrddhi_trigger": "Which it-flag triggers guṇa or vṛddhi.",
+      "SLP1_it_flag_key": {
+        "k": "kit → 1.1.5 (no guṇa/vṛddhi); samprasāraṇa by 1.2.5",
+        "K": "Khat",
+        "G": "Git → 7.3.52 (no cjoḥ ku palatalization)",
+        "N": "Rit (ṇit) → 7.2.115 vṛddhi of aṅga",
+        "Y": "Yit (ñit) → 7.2.115 vṛddhi of aṅga; also ātmanepada by 1.3.12",
+        "c": "cit → 6.1.163 antodata accent",
+        "t": "tit → 6.1.185 svarita accent",
+        "S": "Śit → sārvādhātuka by 3.4.113",
+        "n": "nit → 7.3.83 no guṇa when n-it ārdhadhātuka pratyaya",
+        "l": "lit (regular it-lopa only)",
+        "v": "vit",
+        "D": "Ḍit → ādeśa replaces whole sthānin (1.1.54)",
+        "q": "ḍit (= D in SLP1)",
+        "r": "rit → ātmanepada by 1.3.12 (in some forms)"
+      }
+    },
+    "json_fix": "2026-04-22: single root object; unique _section_* keys (no duplicate Unicode dividers)"
+  },
+  "_schema": {
+    "required_fields": [
+      "upadesha_devanagari",
+      "upadesha_slp1",
+      "vidhana_sutra",
+      "artha_codes",
+      "it_varna_slp1",
+      "prakriya_base_slp1",
+      "anubandha_flags",
+      "dhatuka_type",
+      "iT_behavior",
+      "is_krtya",
+      "is_nishtha",
+      "is_krit_samjna",
+      "effects"
+    ],
+    "optional_fields": [
+      "vidhana_sutra_range",
+      "adesha_slp1",
+      "adesha_sutra",
+      "adesha_dev",
+      "pada_niyama",
+      "dhatu_condition_slp1",
+      "dhatu_condition_dev",
+      "nishedhaka_sutras",
+      "guna_vrddhi_trigger",
+      "samprasarana_applicable",
+      "linga_default",
+      "stem_type",
+      "accent_rule",
+      "examples_slp1",
+      "examples_dev",
+      "special_interactions",
+      "vikarana_required",
+      "upasarga_required"
+    ]
+  },
+  "_section_krtya": "SECTION 1: KṚTYA PRATYAYAS (obligation — 3.1.96–3.1.132)",
+  "tavyat": {
+    "upadesha_devanagari": "तव्यत्",
+    "upadesha_slp1": "tavyat",
+    "vidhana_sutra": "3.1.96",
+    "vidhana_sutra_dev": "तव्यत्तव्यानीयरः",
+    "vidhana_sutra_range": "3.1.91–3.1.96",
+    "artha_codes": [
+      "arhe",
+      "karmani",
+      "bhave"
+    ],
+    "artha_dev": "आर्हे (करना चाहिए)",
+    "it_varna_slp1": [
+      "t"
+    ],
+    "prakriya_base_slp1": "tavya",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_tit": true,
+      "is_kit": false,
+      "is_Rit": false,
+      "is_Sit": false,
+      "is_Yit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "set",
+    "is_krtya": true,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "guṇa by 7.3.84 (ārdhadhātuka)",
+    "accent_rule": "6.1.185 titsvaritam — first vowel of pratyaya gets svarita",
+    "linga_default": "all three (m/f/n)",
+    "stem_type": "a-anta (masc.), ā-anta (fem.)",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "all dhātus",
+    "dhatu_condition_dev": "सर्व धातुओं से",
+    "examples_dev": [
+      "कर्तव्य (कृ+तव्यत्)",
+      "भवितव्य (भू+तव्यत्)",
+      "गन्तव्य (गम्+तव्यत्)"
+    ],
+    "examples_slp1": [
+      "kartavya",
+      "Bavitavya",
+      "gantavya"
+    ],
+    "special_interactions": "iṭ added by 7.2.35 for seṭ dhātus; for anit dhātus iṭ blocked by 7.2.10.",
+    "effects": "tit → svarita accent (6.1.185). kṛtya → karmaṇi/bhāve prayoga (3.4.69–3.4.70)."
+  },
+  "tavya": {
+    "upadesha_devanagari": "तव्य",
+    "upadesha_slp1": "tavya",
+    "vidhana_sutra": "3.1.96",
+    "vidhana_sutra_dev": "तव्यत्तव्यानीयरः",
+    "vidhana_sutra_range": "3.1.91–3.1.96",
+    "artha_codes": [
+      "arhe",
+      "karmani",
+      "bhave"
+    ],
+    "artha_dev": "आर्हे",
+    "it_varna_slp1": [],
+    "prakriya_base_slp1": "tavya",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_tit": false,
+      "is_kit": false,
+      "is_Rit": false,
+      "is_Sit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "set",
+    "is_krtya": true,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "guṇa by 7.3.84",
+    "accent_rule": "udātta on last vowel of aṅga (6.1.223)",
+    "linga_default": "all three",
+    "stem_type": "a-anta",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "all dhātus",
+    "dhatu_condition_dev": "सर्व धातुओं से",
+    "examples_dev": [
+      "कर्तव्य (without tit accent variant)"
+    ],
+    "special_interactions": "Identical base to tavyat; distinguished only by accent. Often treated as one pratyaya in practice.",
+    "effects": "No tit accent marker. kṛtya semantics same as tavyat."
+  },
+  "anIyar": {
+    "upadesha_devanagari": "अनीयर्",
+    "upadesha_slp1": "anIyar",
+    "vidhana_sutra": "3.1.96",
+    "vidhana_sutra_dev": "तव्यत्तव्यानीयरः",
+    "vidhana_sutra_range": "3.1.91–3.1.96",
+    "artha_codes": [
+      "arhe",
+      "karmani",
+      "bhave"
+    ],
+    "artha_dev": "आर्हे",
+    "it_varna_slp1": [
+      "r"
+    ],
+    "prakriya_base_slp1": "anIya",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_rit": true,
+      "is_kit": false,
+      "is_Rit": false,
+      "is_Sit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "na",
+    "is_krtya": true,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "guṇa by 7.3.84 (ārdhadhātuka); BUT pratyaya begins with vowel 'a' → 7.2.35 iṭ NOT applicable (not val-ādi)",
+    "accent_rule": "rit → ātmanepada tendency; accent on first vowel of pratyaya",
+    "linga_default": "all three",
+    "stem_type": "a-anta",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "all dhātus",
+    "dhatu_condition_dev": "सर्व धातुओं से",
+    "iT_note": "Starts with 'a' (vowel) → 7.2.35 (ārdhadhātukasyeḍ valādeḥ) does NOT apply. No iṭ ever.",
+    "examples_dev": [
+      "करणीय",
+      "भवनीय",
+      "गमनीय",
+      "वन्दनीय"
+    ],
+    "examples_slp1": [
+      "karaNIya",
+      "BavanIya",
+      "gamanIya",
+      "vandanIya"
+    ],
+    "special_interactions": "No iṭ (vowel-initial). guṇa of dhātu by 7.3.84. rit → potential ātmanepada marker in some forms.",
+    "effects": "Vowel-initial pratyaya — iṭ never added. rit-it flag. kṛtya semantics."
+  },
+  "yat": {
+    "upadesha_devanagari": "यत्",
+    "upadesha_slp1": "yat",
+    "vidhana_sutra": "3.1.97",
+    "vidhana_sutra_dev": "अचो यत्",
+    "vidhana_sutra_range": "3.1.97–3.1.123",
+    "artha_codes": [
+      "arhe",
+      "karmani",
+      "bhave"
+    ],
+    "artha_dev": "आर्हे — अच् (स्वर) अन्त धातुओं से",
+    "it_varna_slp1": [
+      "t"
+    ],
+    "prakriya_base_slp1": "ya",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_tit": true,
+      "is_kit": false,
+      "is_Rit": false,
+      "is_Sit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "na",
+    "is_krtya": true,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "guṇa by 7.3.84 if applicable; but many dhātus take no guṇa before yat",
+    "accent_rule": "6.1.185 titsvaritam",
+    "linga_default": "all three",
+    "stem_type": "a-anta",
+    "nishedhaka_sutras": [
+      "3.1.98–3.1.123 (special yat conditions)"
+    ],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "ac-anta dhātus (ending in vowel)",
+    "dhatu_condition_dev": "अजन्त धातुओं से",
+    "iT_note": "yat starts with 'y' (ya-kāra), which is a semi-vowel. 7.2.35 iṭ not applicable (y ∉ VAL set).",
+    "examples_dev": [
+      "देय (दा+यत्)",
+      "पेय (पा+यत्)",
+      "श्रेय (श्रि+यत्)"
+    ],
+    "examples_slp1": [
+      "deya",
+      "peya",
+      "Sreya"
+    ],
+    "special_interactions": "dhātu must end in ac (vowel) per 3.1.97. Many exceptions in 3.1.98–3.1.123.",
+    "effects": "tit → svarita (6.1.185). Vowel-final dhātus only. kṛtya semantics."
+  },
+  "kyap": {
+    "upadesha_devanagari": "क्यप्",
+    "upadesha_slp1": "kyap",
+    "vidhana_sutra": "3.1.106",
+    "vidhana_sutra_dev": "ऋुतो भवि क्यप् च",
+    "vidhana_sutra_range": "3.1.106–3.1.109",
+    "artha_codes": [
+      "arhe",
+      "karmani",
+      "bhave"
+    ],
+    "artha_dev": "आर्हे — विशिष्ट धातुओं से",
+    "it_varna_slp1": [
+      "k",
+      "p"
+    ],
+    "prakriya_base_slp1": "ya",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_kit": true,
+      "is_pit": true,
+      "is_Rit": false,
+      "is_Sit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": true,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "kit → no guṇa/vṛddhi (1.1.5 क्ङिति च). pit → parasmaipada optionally.",
+    "accent_rule": "6.1.185 does not apply (no tit)",
+    "linga_default": "all three",
+    "stem_type": "a-anta",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": true,
+    "dhatu_condition_slp1": "specific dhātus per 3.1.106–3.1.109",
+    "dhatu_condition_dev": "विशिष्ट धातुओं से (ऋत्, भवि आदि)",
+    "iT_note": "kit → iṭ blocked (1.1.5). anit.",
+    "examples_dev": [
+      "कार्य (कृ+क्यप्)",
+      "भार्य (भृ+क्यप्)"
+    ],
+    "examples_slp1": [
+      "kArya",
+      "BArya"
+    ],
+    "special_interactions": "kit prevents guṇa/vṛddhi. pit → parasmaipada. samprasāraṇa possible.",
+    "effects": "kit blocks guṇa/vṛddhi (1.1.5). pit (ātmanepada/parasmaipada niyama). kṛtya semantics."
+  },
+  "Ryat": {
+    "upadesha_devanagari": "ण्यत्",
+    "upadesha_slp1": "Ryat",
+    "vidhana_sutra": "3.1.124",
+    "vidhana_sutra_dev": "ऋहलोर्ण्यत्",
+    "vidhana_sutra_range": "3.1.124–3.1.132",
+    "artha_codes": [
+      "arhe",
+      "karmani",
+      "bhave"
+    ],
+    "artha_dev": "आर्हे — ऋकारान्त या हलन्त धातुओं से",
+    "it_varna_slp1": [
+      "R",
+      "t"
+    ],
+    "prakriya_base_slp1": "ya",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_Rit": true,
+      "is_tit": true,
+      "is_kit": false,
+      "is_Sit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "na",
+    "is_krtya": true,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "Rit (ṇit) → vṛddhi of aṅga by 7.2.115",
+    "accent_rule": "6.1.185 tit → svarita",
+    "linga_default": "all three",
+    "stem_type": "a-anta",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "f-anta or hal-anta dhātus",
+    "dhatu_condition_dev": "ऋकारान्त या हलन्त धातुओं से",
+    "iT_note": "y-initial pratyaya → 7.2.35 not applicable. Rit causes vṛddhi instead of guṇa.",
+    "examples_dev": [
+      "कार्य (कृ+ण्यत्)",
+      "वाच्य (वच्+ण्यत्)",
+      "नेय (नी+ण्यत् → Rit vṛddhi: nai+ya=nāya)"
+    ],
+    "examples_slp1": [
+      "kArya",
+      "vAcya",
+      "nEya"
+    ],
+    "special_interactions": "Rit triggers vṛddhi (7.2.115) not guṇa (7.3.84). tit accent. Often replaces yat for consonant-final dhātus.",
+    "effects": "Rit → vṛddhi (7.2.115). tit → svarita (6.1.185). kṛtya semantics."
+  },
+  "_section_kartari": "SECTION 2: AGENT (KARTARI) KṚT PRATYAYAS",
+  "tfc": {
+    "upadesha_devanagari": "तृच्",
+    "upadesha_slp1": "tfc",
+    "vidhana_sutra": "3.1.133",
+    "vidhana_sutra_dev": "ण्वुल्तृचौ",
+    "vidhana_sutra_range": "3.1.133",
+    "artha_codes": [
+      "kartari"
+    ],
+    "artha_dev": "कर्तरि (करने वाला)",
+    "it_varna_slp1": [
+      "c"
+    ],
+    "prakriya_base_slp1": "tf",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_cit": true,
+      "is_kit": false,
+      "is_Rit": false,
+      "is_Sit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "vet",
+    "iT_detail": {
+      "set_dhatus": "iṭ added (7.2.35): e.g. BU → BavitA",
+      "anit_dhatus": "iṭ blocked (7.2.10): e.g. ci → cetA, nI → netA",
+      "condition_sutra": "7.2.10 ekāc upadeśeḥ anudāttāt blocks iṭ for anit ekāc dhātus"
+    },
+    "anaN_applies": true,
+    "anaN_sutra": "7.1.94",
+    "anaN_dev": "ऋदुशनस्पुरुदंसोऽनेहसां च — ṛkārānta aṅga gets anaṅ before su (sarvanamasthāna)",
+    "upadha_dirgha_sutra": "6.4.11",
+    "upadha_dirgha_dev": "अप्तृन्तृच्स्वसृ॰ — upadhā lengthened before sarvanamasthāna su",
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "guṇa by 7.3.84 (ārdhadhātuka). cit → accent only.",
+    "accent_rule": "6.1.163 cit → antodata (last vowel of whole word gets udātta)",
+    "linga_default": "masculine (m.), feminine stem = -trī",
+    "stem_type": "ṛ-anta (oblique: cetṛ-, nom.sg.: cetā after n-lopa)",
+    "nom_sg_formation": "anaṅ (7.1.94) + upadhā-dīrgha (6.4.11) + s-lopa (6.1.66) + n-lopa (8.2.7)",
+    "nishedhaka_sutras": [
+      "7.2.10 (for anit ekāc dhātus)"
+    ],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "all dhātus (sarvadhātubhyaḥ)",
+    "dhatu_condition_dev": "सर्व धातुओं से",
+    "examples_dev": [
+      "चेता (चिञ्+तृच्)",
+      "नेता (णीञ्+तृच्)",
+      "स्तोता (ष्टुञ्+तृच्)",
+      "कर्ता (डुकृञ्+तृच्)",
+      "हर्ता (हृञ्+तृच्)",
+      "भविता (भू+तृच्)",
+      "तरिता (तॄ+तृच्)"
+    ],
+    "examples_slp1": [
+      "cetA",
+      "netA",
+      "stotA",
+      "kartA",
+      "hartA",
+      "BavitA",
+      "taritA"
+    ],
+    "special_interactions": "Works with 7.1.94 (anaṅ), 6.4.11 (upadhā-dīrgha), 6.1.66 (apṛkta s-lopa), 8.2.7 (n-lopa).",
+    "effects": "cit → antodata accent (6.1.163). guṇa by 7.3.84. iṭ: veṭ (set/anit by dhātu). Produces agent nouns with ṛ-declension."
+  },
+  "Nvul": {
+    "upadesha_devanagari": "ण्वुल्",
+    "upadesha_slp1": "Nvul",
+    "vidhana_sutra": "3.1.133",
+    "vidhana_sutra_dev": "ण्वुल्तृचौ",
+    "vidhana_sutra_range": "3.1.133",
+    "artha_codes": [
+      "kartari"
+    ],
+    "artha_dev": "कर्तरि",
+    "it_varna_slp1": [
+      "N",
+      "l"
+    ],
+    "prakriya_base_slp1": "vu",
+    "adesha_slp1": "aka",
+    "adesha_sutra": "7.1.1",
+    "adesha_dev": "युवोरनाकौ — वु → अक",
+    "anubandha_flags": {
+      "is_Rit": true,
+      "is_lit": true,
+      "is_kit": false,
+      "is_Sit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "vet",
+    "iT_detail": {
+      "anit_dhatus": "iṭ blocked by 7.2.10 for ekāc anit",
+      "set_dhatus": "iṭ added by 7.2.35"
+    },
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "Rit (ṇit) → vṛddhi of aṅga by 7.2.115",
+    "accent_rule": "udātta on aṅga's last vowel",
+    "linga_default": "masculine (a-anta: -aka)",
+    "stem_type": "a-anta after vu→aka substitution",
+    "adesha_process": "Nvul → [N=it by 1.3.7; l=it by 1.3.3; lopa by 1.3.9] → vu → [7.1.1 yuvor anākau] → aka",
+    "nishedhaka_sutras": [
+      "7.2.10 for anit ekāc"
+    ],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "all dhātus",
+    "dhatu_condition_dev": "सर्व धातुओं से",
+    "examples_dev": [
+      "नायक (नी+ण्वुल्)",
+      "पाचक (पच्+ण्वुल्)",
+      "गायक (गै+ण्वुल्)",
+      "भावक (भू+ण्वुल्)"
+    ],
+    "examples_slp1": [
+      "nAyaka",
+      "pAcaka",
+      "gAyaka",
+      "BAvaka"
+    ],
+    "special_interactions": "vu → aka (7.1.1). Rit triggers vṛddhi (7.2.115) not guṇa. Final stem = dhātu + vṛddhi + aka.",
+    "effects": "Rit → vṛddhi (7.2.115). vu→aka (7.1.1). Produces -aka agent nouns."
+  },
+  "Rini": {
+    "upadesha_devanagari": "णिनि",
+    "upadesha_slp1": "Rini",
+    "vidhana_sutra": "3.2.78",
+    "vidhana_sutra_dev": "सुप्यजातौ णिनिस्ताच्छील्ये",
+    "vidhana_sutra_range": "3.2.78–3.2.87",
+    "artha_codes": [
+      "kartari",
+      "tacchilya"
+    ],
+    "artha_dev": "ताच्छील्य (स्वभाव से करने वाला)",
+    "it_varna_slp1": [
+      "R",
+      "i"
+    ],
+    "prakriya_base_slp1": "in",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_Rit": true,
+      "is_idit": true,
+      "is_kit": false,
+      "is_Sit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "Rit → vṛddhi by 7.2.115",
+    "accent_rule": "udātta on vṛddhi vowel",
+    "linga_default": "masculine (in-anta)",
+    "stem_type": "in-anta (nom.sg. → -ī by 8.2.66 etc.)",
+    "idit_effect": "idit → nuṃ-āgama by 7.1.58 for feminine",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "all dhātus (with supyajātau condition)",
+    "dhatu_condition_dev": "विशिष्ट प्रसंगों में सर्व धातुओं से",
+    "examples_dev": [
+      "दायिन् (दा+णिनि)",
+      "कारिन् (कृ+णिनि)",
+      "पाचिन् (पच्+णिनि)"
+    ],
+    "examples_slp1": [
+      "dAyin",
+      "kArin",
+      "pAcin"
+    ],
+    "special_interactions": "Rit causes vṛddhi. idit causes nuṃ in some derivatives. in-anta declension.",
+    "effects": "Rit → vṛddhi (7.2.115). idit → nuṃ-āgama (7.1.58) for feminine. ātmanepadinaḥ by 1.3.12 possible."
+  },
+  "Satf~": {
+    "upadesha_devanagari": "शतृँ",
+    "upadesha_slp1": "Satf~",
+    "vidhana_sutra": "3.2.124",
+    "vidhana_sutra_dev": "लट् शतृशानचावप्रथमासमानाधिकरणे",
+    "vidhana_sutra_range": "3.2.124–3.2.127",
+    "artha_codes": [
+      "vartamane",
+      "kartari"
+    ],
+    "artha_dev": "वर्तमान कर्तरि",
+    "it_varna_slp1": [
+      "S",
+      "f~"
+    ],
+    "prakriya_base_slp1": "at",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_Sit": true,
+      "is_fdit": true,
+      "is_anunasika_it": true,
+      "is_kit": false
+    },
+    "dhatuka_type": "sarvadhatuka",
+    "iT_behavior": "na",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": "parasmaipada",
+    "guna_vrddhi_trigger": "Śit → sārvādhātuka (3.4.113) → vikaraṇa applies (śap etc.)",
+    "accent_rule": "svarita on at's vowel by ṛt-class",
+    "linga_default": "all three (m: -at/-ant, f: -antī, n: -at)",
+    "stem_type": "at-anta (nom.sg.m: -an, oblique: -ant-)",
+    "fdit_effect": "ṛdit → nuṃ-āgama in feminine: -antī by 7.1.80–81",
+    "vikarana_required": true,
+    "vikarana_note": "Śit → sārvādhātuka → vikaraṇa (śap/śyan/śnu etc.) required between dhātu and pratyaya",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "all parasmaipada dhātus",
+    "dhatu_condition_dev": "परस्मैपदी धातुओं से",
+    "examples_dev": [
+      "भवत् (भू+शतृँ)",
+      "पचत् (पच्+शतृँ)",
+      "गच्छत् (गम्+शतृँ)"
+    ],
+    "examples_slp1": [
+      "Bavat",
+      "pacat",
+      "gacCat"
+    ],
+    "special_interactions": "Śit → sārvādhātuka. ṛdit → nuṃ in feminine (7.1.80). Requires vikaraṇa (śap etc.).",
+    "effects": "Śit → sārvādhātuka samjñā (3.4.113). ṛdit → nuṃ for feminine. Present participle (parasmaipada)."
+  },
+  "SAnac": {
+    "upadesha_devanagari": "शानच्",
+    "upadesha_slp1": "SAnac",
+    "vidhana_sutra": "3.2.124",
+    "vidhana_sutra_dev": "लट् शतृशानचावप्रथमासमानाधिकरणे",
+    "vidhana_sutra_range": "3.2.124",
+    "artha_codes": [
+      "vartamane",
+      "kartari"
+    ],
+    "artha_dev": "वर्तमान कर्तरि (आत्मनेपद)",
+    "it_varna_slp1": [
+      "S",
+      "c"
+    ],
+    "prakriya_base_slp1": "Ana",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_Sit": true,
+      "is_cit": true,
+      "is_kit": false
+    },
+    "dhatuka_type": "sarvadhatuka",
+    "iT_behavior": "na",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": "atmanepada",
+    "guna_vrddhi_trigger": "Śit → sārvādhātuka",
+    "accent_rule": "cit → antodata (6.1.163)",
+    "linga_default": "all three",
+    "stem_type": "ā-anta (Ana-anta)",
+    "vikarana_required": true,
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "ātmanepada dhātus",
+    "dhatu_condition_dev": "आत्मनेपदी धातुओं से",
+    "examples_dev": [
+      "यजमान (यज्+शानच्)",
+      "सेवमान (सेव्+शानच्)",
+      "लभमान (लभ्+शानच्)"
+    ],
+    "examples_slp1": [
+      "yajamAna",
+      "sevamAna",
+      "laBamAna"
+    ],
+    "special_interactions": "Śit → sārvādhātuka. cit → antodata. ātmanepada partner to śatṛ.",
+    "effects": "Śit → sārvādhātuka (3.4.113). cit → antodata (6.1.163). Present participle (ātmanepada)."
+  },
+  "kvip": {
+    "upadesha_devanagari": "क्विप्",
+    "upadesha_slp1": "kvip",
+    "vidhana_sutra": "3.2.76",
+    "vidhana_sutra_dev": "पौरोगव्यतिक्रमयोश्च",
+    "vidhana_sutra_range": "3.2.61–3.2.87 (various kvip contexts)",
+    "artha_codes": [
+      "kartari",
+      "sambandhe"
+    ],
+    "artha_dev": "कर्तरि / सम्बन्धे",
+    "it_varna_slp1": [
+      "k",
+      "v",
+      "p"
+    ],
+    "prakriya_base_slp1": "",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_kit": true,
+      "is_vit": true,
+      "is_pit": true
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "kit → no guṇa/vṛddhi (1.1.5)",
+    "accent_rule": "vit → 6.1.187 ādyudātta",
+    "linga_default": "depends on upasarga/context",
+    "stem_type": "zero-suffix (pratyaya = zero after all lopa)",
+    "kvip_note": "All of k, v, p are it. Remaining base = empty string. Dhātu form itself becomes the stem.",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "specific dhātus per context",
+    "dhatu_condition_dev": "विशिष्ट प्रसंगों में",
+    "examples_dev": [
+      "स्पृश् (स्पृश्+क्विप्)",
+      "दृश् (दृश्+क्विप्)"
+    ],
+    "examples_slp1": [
+      "spfS",
+      "dfS"
+    ],
+    "special_interactions": "kit prevents guṇa/vṛddhi. The entire pratyaya disappears after lopa; dhātu = stem.",
+    "effects": "kit (no guṇa), vit, pit. Zero-suffix pratyaya. dhātu form serves as stem."
+  },
+  "qvip": {
+    "upadesha_devanagari": "ड्विप्",
+    "upadesha_slp1": "Dvip",
+    "vidhana_sutra": "3.2.61",
+    "vidhana_sutra_dev": "अचि कृत्",
+    "artha_codes": [
+      "kartari"
+    ],
+    "artha_dev": "कर्तरि",
+    "it_varna_slp1": [
+      "D",
+      "v",
+      "p"
+    ],
+    "prakriya_base_slp1": "i",
+    "adesha_slp1": null,
+    "anubandha_flags": {
+      "is_Dit": true,
+      "is_vit": true,
+      "is_pit": true,
+      "is_kit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "Dit → whole aṅga replaced by ādeśa (1.1.54)",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "specific dhātus",
+    "dhatu_condition_dev": "विशिष्ट धातुओं से",
+    "effects": "Dit → anekāl replacement (1.1.54). Produces compound-final nouns primarily."
+  },
+  "_section_bhava_karma": "SECTION 3: BHĀVA / KARMA KṚT PRATYAYAS",
+  "GaY": {
+    "upadesha_devanagari": "घञ्",
+    "upadesha_slp1": "GaY",
+    "vidhana_sutra": "3.3.18",
+    "vidhana_sutra_dev": "भावे",
+    "vidhana_sutra_range": "3.3.18–3.3.19",
+    "artha_codes": [
+      "bhave",
+      "karmani"
+    ],
+    "artha_dev": "भावे / अकर्तरि कारके",
+    "it_varna_slp1": [
+      "G",
+      "Y"
+    ],
+    "prakriya_base_slp1": "a",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_Git": true,
+      "is_Yit": true,
+      "is_kit": false,
+      "is_Sit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "Yit (ñit) → vṛddhi by 7.2.115; Git → prevents cjoḥ ku (7.3.52)",
+    "accent_rule": "udātta on vṛddhi vowel",
+    "linga_default": "masculine (a-anta)",
+    "stem_type": "a-anta (masc.)",
+    "git_effect": "Git → cjoḥ ku ghinṇyatoḥ (7.3.52) does NOT apply → palatal remains palatal",
+    "yit_effect": "Yit → vṛddhi of dhātu vowel (7.2.115)",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "all dhātus (bhāva context)",
+    "dhatu_condition_dev": "भाव और अकर्तृ कारक अर्थ में सर्व धातुओं से",
+    "examples_dev": [
+      "योग (युज्+घञ्)",
+      "भोग (भुज्+घञ्)",
+      "त्याग (त्यज्+घञ्)",
+      "काम (कम्+घञ्)",
+      "भाव (भू+घञ्)"
+    ],
+    "examples_slp1": [
+      "yoga",
+      "Boga",
+      "tyAga",
+      "kAma",
+      "BAva"
+    ],
+    "special_interactions": "Git blocks ku-substitution (7.3.52). Yit causes vṛddhi not guṇa. Most common bhāva pratyaya.",
+    "effects": "Yit → vṛddhi (7.2.115). Git → no palatalization (7.3.52). Produces bhāva nouns in -a (masc.)."
+  },
+  "ap": {
+    "upadesha_devanagari": "अप्",
+    "upadesha_slp1": "ap",
+    "vidhana_sutra": "3.3.57",
+    "vidhana_sutra_dev": "हनः सम्प्रसारणं च — and various other sutras",
+    "vidhana_sutra_range": "3.3.57–3.3.102 (ap in various contexts)",
+    "artha_codes": [
+      "bhave",
+      "karmani"
+    ],
+    "artha_dev": "भावे / कर्मणि",
+    "it_varna_slp1": [
+      "p"
+    ],
+    "prakriya_base_slp1": "a",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_pit": true,
+      "is_kit": false,
+      "is_Rit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "guṇa by 7.3.84",
+    "accent_rule": "udātta on dhātu vowel",
+    "linga_default": "masculine (a-anta)",
+    "stem_type": "a-anta",
+    "pit_effect": "pit → parasmaipada tendency",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": true,
+    "dhatu_condition_slp1": "specific dhātus per each sutra",
+    "dhatu_condition_dev": "विशिष्ट धातुओं से",
+    "examples_dev": [
+      "घन (हन्+अप् with samprasāraṇa)",
+      "शाप (शप्+अप्)"
+    ],
+    "examples_slp1": [
+      "Gana",
+      "SApa"
+    ],
+    "effects": "pit. guṇa by 7.3.84. Produces bhāva/karma a-anta nouns."
+  },
+  "lyuw": {
+    "upadesha_devanagari": "ल्युट्",
+    "upadesha_slp1": "lyuw",
+    "vidhana_sutra": "3.3.115",
+    "vidhana_sutra_dev": "भावे",
+    "vidhana_sutra_range": "3.3.115–3.3.118",
+    "artha_codes": [
+      "bhave",
+      "kartari"
+    ],
+    "artha_dev": "भावे और कर्तरि (नपुंसकलिंग)",
+    "it_varna_slp1": [
+      "l",
+      "w"
+    ],
+    "prakriya_base_slp1": "yu",
+    "adesha_slp1": "ana",
+    "adesha_sutra": "7.1.1",
+    "adesha_dev": "युवोरनाकौ — यु → अन",
+    "anubandha_flags": {
+      "is_lit": true,
+      "is_wit": true,
+      "is_kit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "set",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "guṇa by 7.3.84",
+    "accent_rule": "udātta on penultimate",
+    "linga_default": "neuter (n.)",
+    "stem_type": "ana-anta (napuṃsakaliṅga)",
+    "adesha_process": "lyuṭ → [l=it, w=it; lopa] → yu → [7.1.1 yuvor anākau] → ana",
+    "iT_note": "wij-it (ṭit) → ṭit causes ādeśa replaces sthānin's whole form (1.1.54 if anekāl). wit blocks guṇa in some contexts.",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "all dhātus",
+    "dhatu_condition_dev": "सर्व धातुओं से",
+    "examples_dev": [
+      "भवन (भू+ल्युट्)",
+      "गमन (गम्+ल्युट्)",
+      "करण (कृ+ल्युट्)",
+      "दर्शन (दृश्+ल्युट्)"
+    ],
+    "examples_slp1": [
+      "Bavana",
+      "gamana",
+      "karaNa",
+      "darSana"
+    ],
+    "special_interactions": "yu → ana (7.1.1). Produces -ana neuter nouns (bhāva). Most productive bhāva pratyaya.",
+    "effects": "lit, wit. yu→ana (7.1.1). guṇa (7.3.84). Produces -ana neuter bhāva nouns."
+  },
+  "Ramu": {
+    "upadesha_devanagari": "णमु",
+    "upadesha_slp1": "Ramu",
+    "vidhana_sutra": "3.3.3",
+    "vidhana_sutra_dev": "ध्रुवमपायेऽपादाने — and related",
+    "artha_codes": [
+      "bhave",
+      "sambandhe"
+    ],
+    "artha_dev": "भावे",
+    "it_varna_slp1": [
+      "R",
+      "u~"
+    ],
+    "prakriya_base_slp1": "am",
+    "adesha_slp1": null,
+    "anubandha_flags": {
+      "is_Rit": true,
+      "is_udit": true,
+      "is_kit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "Rit → vṛddhi (7.2.115)",
+    "accent_rule": "udātta on vṛddhi vowel",
+    "linga_default": "neuter (am-anta typically indeclinable)",
+    "stem_type": "am-anta (avyaya in many uses)",
+    "udit_effect": "udit → num-āgama option for feminine (6.4.16 type contexts)",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "specific dhātus",
+    "dhatu_condition_dev": "विशिष्ट धातुओं से",
+    "examples_dev": [
+      "नाम (नम्+णमु)"
+    ],
+    "examples_slp1": [
+      "nAma"
+    ],
+    "effects": "Rit → vṛddhi (7.2.115). udit → optional nuṃ. Produces am-anta neuter bhāva nouns."
+  },
+  "ktic": {
+    "upadesha_devanagari": "क्तिच्",
+    "upadesha_slp1": "ktic",
+    "vidhana_sutra": "3.3.94",
+    "vidhana_sutra_dev": "स्त्रियां क्तिन्",
+    "artha_codes": [
+      "bhave",
+      "karmani"
+    ],
+    "artha_dev": "भावे / कर्मणि (स्त्रीलिंग)",
+    "it_varna_slp1": [
+      "k",
+      "c"
+    ],
+    "prakriya_base_slp1": "ti",
+    "adesha_slp1": null,
+    "anubandha_flags": {
+      "is_kit": true,
+      "is_cit": true
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "kit → no guṇa/vṛddhi (1.1.5). cit → antodata accent.",
+    "accent_rule": "6.1.163 cit → antodata",
+    "linga_default": "feminine (i-anta: -ti)",
+    "stem_type": "i-anta (feminine)",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "all dhātus",
+    "dhatu_condition_dev": "सर्व धातुओं से",
+    "examples_dev": [
+      "मति (मन्+क्तिच्)",
+      "गति (गम्+क्तिच्)",
+      "स्थिति (स्था+क्तिच्)",
+      "कृति (कृ+क्तिच्)"
+    ],
+    "examples_slp1": [
+      "mati",
+      "gati",
+      "sTiti",
+      "kfti"
+    ],
+    "special_interactions": "kit prevents guṇa/vṛddhi. cit accent. Produces feminine -ti nouns (bhāva).",
+    "effects": "kit (no guṇa/vṛddhi, 1.1.5). cit → antodata (6.1.163). Produces feminine ti-anta bhāva nouns."
+  },
+  "ktin": {
+    "upadesha_devanagari": "क्तिन्",
+    "upadesha_slp1": "ktin",
+    "vidhana_sutra": "3.3.94",
+    "vidhana_sutra_dev": "स्त्रियां क्तिन्",
+    "artha_codes": [
+      "bhave",
+      "karmani"
+    ],
+    "artha_dev": "भावे / कर्मणि (स्त्रीलिंग)",
+    "it_varna_slp1": [
+      "k"
+    ],
+    "prakriya_base_slp1": "tin",
+    "adesha_slp1": null,
+    "anubandha_flags": {
+      "is_kit": true
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "kit → no guṇa/vṛddhi (1.1.5)",
+    "linga_default": "feminine",
+    "stem_type": "i-anta (feminine, n-final in stem)",
+    "note": "ktic and ktin are the same base; ktic is the cit-marked variant, ktin the regular variant. Both produce -ti feminines.",
+    "nishedhaka_sutras": [],
+    "examples_dev": [
+      "रति",
+      "श्रुति",
+      "भक्ति"
+    ],
+    "examples_slp1": [
+      "rati",
+      "Sruti",
+      "Bakti"
+    ],
+    "effects": "kit (no guṇa/vṛddhi). Produces feminine -ti bhāva/karma nouns."
+  },
+  "_section_nishtha": "SECTION 4: PAST PARTICIPLE — NIṢṬHĀ",
+  "kta": {
+    "upadesha_devanagari": "क्त",
+    "upadesha_slp1": "kta",
+    "vidhana_sutra": "3.2.102",
+    "vidhana_sutra_dev": "निष्ठा",
+    "vidhana_sutra_range": "3.2.102–3.2.123",
+    "artha_codes": [
+      "bhute",
+      "bhave",
+      "karmani"
+    ],
+    "artha_dev": "भूतकाल भाव/कर्म",
+    "it_varna_slp1": [
+      "k"
+    ],
+    "prakriya_base_slp1": "ta",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_kit": true,
+      "is_Sit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "vet",
+    "iT_detail": {
+      "set_dhatus": "iṭ added between dhātu and ta: e.g. BU → BAvita",
+      "anit_dhatus": "no iṭ: e.g. paca → pakta (with sandhi)",
+      "vet_dhatus": "optional iṭ"
+    },
+    "is_krtya": false,
+    "is_nishtha": true,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "kit → no guṇa/vṛddhi (1.1.5). samprasāraṇa possible (1.2.5).",
+    "accent_rule": "udātta on dhātu (6.2.148 type)",
+    "linga_default": "all three (a-anta: m/n, ā-anta: f)",
+    "stem_type": "a-anta",
+    "kit_effect": "kit → (a) no guṇa/vṛddhi (1.1.5); (b) samprasāraṇa applicable (1.2.5) for certain dhātus",
+    "nishedhaka_sutras": [
+      "7.2.10 (anit ekāc for iṭ)",
+      "1.1.5 (guṇa/vṛddhi blocked)"
+    ],
+    "samprasarana_applicable": true,
+    "samprasarana_sutra": "1.2.5 ṛditaḥ",
+    "dhatu_condition_slp1": "all dhātus",
+    "dhatu_condition_dev": "सर्व धातुओं से",
+    "examples_dev": [
+      "भूत (भू+क्त)",
+      "पक्व (पच्+क्त)",
+      "उक्त (वच्+क्त with samprasāraṇa)",
+      "गत (गम्+क्त)",
+      "कृत (कृ+क्त)",
+      "दत्त (दा+क्त)"
+    ],
+    "examples_slp1": [
+      "BUta",
+      "pakva",
+      "ukta",
+      "gata",
+      "kfta",
+      "datta"
+    ],
+    "special_interactions": "kit blocks guṇa/vṛddhi (1.1.5). iṭ optional (seṭ/anit/veṭ by dhātu). samprasāraṇa for vacanādi (1.2.5). ta → na for some dhātus (e.g. lagnaḥ).",
+    "effects": "kit (no guṇa/vṛddhi, 1.1.5; samprasāraṇa, 1.2.5). iṭ: veṭ. Produces past participial adjectives."
+  },
+  "ktavatu~": {
+    "upadesha_devanagari": "क्तवतुँ",
+    "upadesha_slp1": "ktavatu~",
+    "vidhana_sutra": "3.2.102",
+    "vidhana_sutra_dev": "निष्ठा",
+    "vidhana_sutra_range": "3.2.102",
+    "artha_codes": [
+      "bhute",
+      "kartari"
+    ],
+    "artha_dev": "भूतकाल कर्तरि",
+    "it_varna_slp1": [
+      "k",
+      "u~"
+    ],
+    "prakriya_base_slp1": "ktavat",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_kit": true,
+      "is_udit": true,
+      "is_anunasika_it": true
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "vet",
+    "is_krtya": false,
+    "is_nishtha": true,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "kit → no guṇa/vṛddhi",
+    "accent_rule": "udātta on dhātu vowel",
+    "linga_default": "all three (at-anta: m. -vān, f. -vatī, n. -vat)",
+    "stem_type": "at-anta (vat-anta → nom.sg.m.: -vān)",
+    "kit_effect": "kit → no guṇa/vṛddhi (1.1.5)",
+    "udit_effect": "udit → num-āgama (6.4.16 etc.) for feminine -vatī form",
+    "iT_note": "Same iṭ behavior as kta (shares 3.2.102 vidhāna). iṭ inserted before 'ta' portion.",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": true,
+    "dhatu_condition_slp1": "all dhātus",
+    "dhatu_condition_dev": "सर्व धातुओं से",
+    "examples_dev": [
+      "भूतवत् (भू+क्तवतुँ)",
+      "गतवत् (गम्+क्तवतुँ)",
+      "कृतवत् (कृ+क्तवतुँ)"
+    ],
+    "examples_slp1": [
+      "BUtavat",
+      "gatavat",
+      "kftavat"
+    ],
+    "special_interactions": "kit blocks guṇa. udit enables nuṃ-āgama for feminine. Shares iṭ with kta.",
+    "effects": "kit (no guṇa/vṛddhi). udit (nuṃ for feminine). Produces active past participle (kartari)."
+  },
+  "_section_avyaya_krt": "SECTION 5: INDECLINABLE KṚT (AVYAYA KṚT)",
+  "ktvA": {
+    "upadesha_devanagari": "क्त्वा",
+    "upadesha_slp1": "ktvA",
+    "vidhana_sutra": "3.4.21",
+    "vidhana_sutra_dev": "समानकर्तृकयोः पूर्वकाले",
+    "vidhana_sutra_range": "3.4.21",
+    "artha_codes": [
+      "pUrva_kAle"
+    ],
+    "artha_dev": "पूर्वकाल — समानकर्तृक क्रियाओं में पहले हुई क्रिया के लिए",
+    "it_varna_slp1": [
+      "k"
+    ],
+    "prakriya_base_slp1": "tvA",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_kit": true
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "vet",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "is_avyaya": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "kit → no guṇa/vṛddhi (1.1.5). samprasāraṇa applicable.",
+    "accent_rule": "avyaya — no accent marking needed in final form",
+    "linga_default": "avyaya (indeclinable)",
+    "stem_type": "avyaya (no vibhakti)",
+    "kit_effect": "kit → no guṇa/vṛddhi. samprasāraṇa (1.2.5).",
+    "restriction": "Only when the agent (kartā) of both verbs is the same",
+    "iT_note": "iṭ inserted before 'tvā' for seṭ dhātus. e.g. BU → BavitvA",
+    "nishedhaka_sutras": [
+      "3.4.22 (lyap replaces ktvā after upasarga)"
+    ],
+    "samprasarana_applicable": true,
+    "dhatu_condition_slp1": "all dhātus (without upasarga → ktvā; with upasarga → lyap)",
+    "dhatu_condition_dev": "उपसर्गरहित सर्व धातुओं से",
+    "examples_dev": [
+      "भूत्वा (भू+क्त्वा)",
+      "गत्वा (गम्+क्त्वा)",
+      "कृत्वा (कृ+क्त्वा)",
+      "दृष्ट्वा (दृश्+क्त्वा)",
+      "पचित्वा (पच्+क्त्वा, seṭ context)"
+    ],
+    "examples_slp1": [
+      "BUtvA",
+      "gatvA",
+      "kftvA",
+      "dfzwvA",
+      "pacitvA"
+    ],
+    "special_interactions": "kit blocks guṇa/vṛddhi. 3.4.22 lyap replaces after upasarga. Absolute construction.",
+    "effects": "kit (no guṇa/vṛddhi, 1.1.5; samprasāraṇa). Produces indeclinable gerund (absolutive)."
+  },
+  "lyap": {
+    "upadesha_devanagari": "ल्यप्",
+    "upadesha_slp1": "lyap",
+    "vidhana_sutra": "3.4.22",
+    "vidhana_sutra_dev": "द्विपदे स — क्त्वा ल्यप् becomes lyap after upasarga",
+    "artha_codes": [
+      "pUrva_kAle"
+    ],
+    "artha_dev": "पूर्वकाल — उपसर्गयुक्त धातुओं से",
+    "it_varna_slp1": [
+      "l",
+      "p"
+    ],
+    "prakriya_base_slp1": "ya",
+    "adesha_slp1": null,
+    "anubandha_flags": {
+      "is_lit": true,
+      "is_pit": true
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "na",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "is_avyaya": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "guṇa by 7.3.84",
+    "accent_rule": "avyaya",
+    "linga_default": "avyaya",
+    "stem_type": "avyaya",
+    "restriction": "Only after upasarga (lyap replaces ktvā per 3.4.22)",
+    "iT_note": "Starts with 'y' (semi-vowel) → 7.2.35 iṭ not applicable.",
+    "nishedhaka_sutras": [],
+    "dhatu_condition_slp1": "all dhātus with upasarga",
+    "dhatu_condition_dev": "उपसर्गयुक्त सर्व धातुओं से",
+    "examples_dev": [
+      "आगत्य (आ+गम्+ल्यप्)",
+      "प्रभूय (प्र+भू+ल्यप्)",
+      "उत्थाय (उत्+स्था+ल्यप्)"
+    ],
+    "examples_slp1": [
+      "AgatYa",
+      "praBUya",
+      "utTAya"
+    ],
+    "special_interactions": "Replaces ktvā after upasarga. lit, pit. y-initial → no iṭ.",
+    "effects": "lit, pit. guṇa by 7.3.84. Indeclinable gerund (after upasarga)."
+  },
+  "tumun": {
+    "upadesha_devanagari": "तुमुन्",
+    "upadesha_slp1": "tumun",
+    "vidhana_sutra": "3.3.10",
+    "vidhana_sutra_dev": "तुमर्थे सेसेनसेनसेत्वेनकेनान्यतरस्याम्",
+    "vidhana_sutra_range": "3.3.10–3.3.18",
+    "artha_codes": [
+      "tumArthe"
+    ],
+    "artha_dev": "तुमर्थ (उद्देश्य — purpose/intention)",
+    "it_varna_slp1": [
+      "n"
+    ],
+    "prakriya_base_slp1": "tum",
+    "adesha_slp1": null,
+    "anubandha_flags": {
+      "is_nit": true,
+      "is_kit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "vet",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "is_avyaya": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "nit → 7.3.83 (no guṇa in some contexts). guṇa by 7.3.84 generally.",
+    "accent_rule": "avyaya",
+    "linga_default": "avyaya",
+    "stem_type": "avyaya (tumantam)",
+    "nit_effect": "nit → 7.3.83: aṅga does not get guṇa when nit ārdhadhātuka pratyaya follows (for specific dhātus)",
+    "iT_note": "iṭ before 'tum' for seṭ dhātus. e.g. BU → BavitUm",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "all dhātus",
+    "dhatu_condition_dev": "सर्व धातुओं से",
+    "examples_dev": [
+      "भवितुम् (भू+तुमुन्)",
+      "कर्तुम् (कृ+तुमुन्)",
+      "गन्तुम् (गम्+तुमुन्)",
+      "पातुम् (पा+तुमुन्)",
+      "श्रोतुम् (श्रु+तुमुन्)"
+    ],
+    "examples_slp1": [
+      "Bavitum",
+      "kartum",
+      "gantum",
+      "pAtum",
+      "Srotum"
+    ],
+    "special_interactions": "nit → 7.3.83 for some dhātus. iṭ for seṭ dhātus. Infinitive function.",
+    "effects": "nit (7.3.83 no guṇa for some). iṭ: veṭ. Produces the Sanskrit infinitive (tumanta)."
+  },
+  "_section_misc": "SECTION 6: MISCELLANEOUS KṚT",
+  "vanip": {
+    "upadesha_devanagari": "वनिप्",
+    "upadesha_slp1": "vanip",
+    "vidhana_sutra": "3.2.75",
+    "vidhana_sutra_dev": "ऋत्विग्दधृक्स्रग्दिगुष्णिगञ्चुयुज्",
+    "artha_codes": [
+      "kartari",
+      "tacchilya"
+    ],
+    "artha_dev": "ताच्छील्य कर्तरि",
+    "it_varna_slp1": [
+      "v",
+      "p"
+    ],
+    "prakriya_base_slp1": "van",
+    "adesha_slp1": null,
+    "anubandha_flags": {
+      "is_vit": true,
+      "is_pit": true
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "guṇa by 7.3.84",
+    "accent_rule": "vit → 6.1.187 ādyudātta",
+    "linga_default": "masculine (an-anta)",
+    "stem_type": "an-anta (van-anta)",
+    "nishedhaka_sutras": [],
+    "dhatu_condition_slp1": "specific dhātus (gaṇa list)",
+    "dhatu_condition_dev": "ऋत्विक् आदि गण में पठित धातुओं से",
+    "examples_dev": [
+      "यजमान/यजु type contexts"
+    ],
+    "effects": "vit (ādyudātta 6.1.187). pit. Produces an-anta agent nouns."
+  },
+  "ini": {
+    "upadesha_devanagari": "इनि",
+    "upadesha_slp1": "ini",
+    "vidhana_sutra": "3.2.115",
+    "vidhana_sutra_dev": "आतश्चोपसर्गे",
+    "vidhana_sutra_range": "3.2.115–3.2.122",
+    "artha_codes": [
+      "kartari",
+      "tacchilya"
+    ],
+    "artha_dev": "ताच्छील्य कर्तरि",
+    "it_varna_slp1": [],
+    "prakriya_base_slp1": "in",
+    "adesha_slp1": null,
+    "anubandha_flags": {
+      "is_kit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "na",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "guṇa by 7.3.84 if applicable",
+    "accent_rule": "udātta on first vowel",
+    "linga_default": "masculine (in-anta)",
+    "stem_type": "in-anta (nom.sg.: -ī by visarga rules)",
+    "iT_note": "Vowel-initial ('i') → 7.2.35 not applicable. No iṭ.",
+    "nishedhaka_sutras": [],
+    "dhatu_condition_slp1": "ā-anta dhātus with upasarga context",
+    "dhatu_condition_dev": "विशिष्ट धातुओं से (उपसर्गयुक्त आकारान्त)",
+    "examples_dev": [
+      "ग्लानि",
+      "मेदिन् type forms"
+    ],
+    "effects": "Vowel-initial, no iṭ. Produces in-anta agent nouns."
+  },
+  "u": {
+    "upadesha_devanagari": "उ",
+    "upadesha_slp1": "u",
+    "vidhana_sutra": "3.3.1",
+    "vidhana_sutra_dev": "उणादयो बहुलम्",
+    "artha_codes": [
+      "bhave",
+      "kartari",
+      "karmani"
+    ],
+    "artha_dev": "उणादि — विविध अर्थों में",
+    "it_varna_slp1": [],
+    "prakriya_base_slp1": "u",
+    "adesha_slp1": null,
+    "anubandha_flags": {},
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "na",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "accent_rule": "varies by form",
+    "linga_default": "masculine/neuter (u-anta)",
+    "stem_type": "u-anta",
+    "special_note": "Part of uṇādi-sūtras (3.3.1). Not enumerated in Pāṇini but in uṇādi-pāṭha separately.",
+    "dhatu_condition_slp1": "various per uṇādi",
+    "examples_dev": [
+      "धातु (धा+उ)"
+    ],
+    "effects": "Uṇādi pratyaya. Produces u-anta nouns."
+  },
+  "Ra": {
+    "upadesha_devanagari": "ण",
+    "upadesha_slp1": "Ra",
+    "vidhana_sutra": "3.2.3",
+    "vidhana_sutra_dev": "आतो ऽनुपसर्गे कः",
+    "artha_codes": [
+      "kartari",
+      "karmani",
+      "bhave"
+    ],
+    "artha_dev": "विविध अर्थों में (कर्तरि, कर्मणि, भावे)",
+    "it_varna_slp1": [
+      "R"
+    ],
+    "prakriya_base_slp1": "a",
+    "adesha_slp1": null,
+    "anubandha_flags": {
+      "is_Rit": true
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "Rit → vṛddhi (7.2.115)",
+    "accent_rule": "udātta on vṛddhi vowel",
+    "linga_default": "masculine/neuter/feminine (a/ā-anta)",
+    "stem_type": "a-anta",
+    "nishedhaka_sutras": [],
+    "dhatu_condition_slp1": "various per context",
+    "dhatu_condition_dev": "विशिष्ट प्रसंगों में",
+    "examples_dev": [
+      "काम (कम्+ण)",
+      "राम (रम्+ण)"
+    ],
+    "examples_slp1": [
+      "kAma",
+      "rAma"
+    ],
+    "effects": "Rit → vṛddhi (7.2.115). Produces a-anta nouns."
+  },
+  "zkan": {
+    "upadesha_devanagari": "ष्कन्",
+    "upadesha_slp1": "zkan",
+    "vidhana_sutra": "3.3.101",
+    "vidhana_sutra_dev": "ऋदोरप् etc.",
+    "artha_codes": [
+      "bhave"
+    ],
+    "artha_dev": "भावे",
+    "it_varna_slp1": [
+      "z",
+      "n"
+    ],
+    "prakriya_base_slp1": "ka",
+    "adesha_slp1": null,
+    "anubandha_flags": {
+      "is_zit": true,
+      "is_nit": true
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "nit → 7.3.83 (no guṇa for some dhātus)",
+    "dhatu_condition_slp1": "specific dhātus",
+    "effects": "zit, nit. Produces ka-anta bhāva nouns."
+  },
+  "_section_adhikarana": "SECTION 7: KṚT FOR INSTRUMENT / LOCATION (ADHIKARAṆA)",
+  "aDikaraRa_ac": {
+    "upadesha_devanagari": "अच्",
+    "upadesha_slp1": "ac",
+    "vidhana_sutra": "3.3.56",
+    "vidhana_sutra_dev": "अच् कर्तृकरणयोश्च",
+    "vidhana_sutra_range": "3.3.56–3.3.57",
+    "artha_codes": [
+      "kartari",
+      "karane",
+      "adhikarane"
+    ],
+    "artha_dev": "कर्तरि, करणे, अधिकरणे",
+    "it_varna_slp1": [
+      "c"
+    ],
+    "prakriya_base_slp1": "a",
+    "adesha_slp1": null,
+    "anubandha_flags": {
+      "is_cit": true,
+      "is_kit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "cit → antodata accent; guṇa by 7.3.84",
+    "accent_rule": "6.1.163 cit → antodata",
+    "linga_default": "masculine (a-anta)",
+    "stem_type": "a-anta",
+    "nishedhaka_sutras": [],
+    "dhatu_condition_slp1": "various per context",
+    "examples_dev": [
+      "सर्प (सृप्+अच्)",
+      "वेध (विध्+अच्)"
+    ],
+    "effects": "cit → antodata (6.1.163). guṇa (7.3.84). Produces a-anta nouns for instrument/agent."
+  },
+  "_section_special": "SECTION 8: SPECIAL / NIPĀTA KṚT",
+  "naN": {
+    "upadesha_devanagari": "नङ्",
+    "upadesha_slp1": "naN",
+    "vidhana_sutra": "3.3.99",
+    "vidhana_sutra_dev": "अभि + नङ् type compounds",
+    "artha_codes": [
+      "bhave"
+    ],
+    "artha_dev": "विशिष्ट भाव",
+    "it_varna_slp1": [
+      "N"
+    ],
+    "prakriya_base_slp1": "na",
+    "adesha_slp1": null,
+    "anubandha_flags": {
+      "is_Rit": true
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "effects": "Rit → vṛddhi (7.2.115). Produces na-anta bhāva nouns."
+  },
+  "_section_lookups": "SECTION 9: ENGINE LOOKUP TABLES",
+  "_lookup_by_prakriya_base": {
+    "_doc": "Maps prakriya_base_slp1 → list of pratyaya IDs for dispatcher lookups.",
+    "a": [
+      "GaY",
+      "Ra",
+      "ap",
+      "ac",
+      "aDikaraRa_ac"
+    ],
+    "ya": [
+      "yat",
+      "Ryat",
+      "kyap",
+      "lyap"
+    ],
+    "tvA": [
+      "ktvA"
+    ],
+    "tum": [
+      "tumun"
+    ],
+    "tavya": [
+      "tavyat",
+      "tavya"
+    ],
+    "anIya": [
+      "anIyar"
+    ],
+    "ta": [
+      "kta"
+    ],
+    "ktavat": [
+      "ktavatu~"
+    ],
+    "at": [
+      "Satf~"
+    ],
+    "Ana": [
+      "SAnac"
+    ],
+    "tf": [
+      "tfc"
+    ],
+    "vu": [
+      "Nvul"
+    ],
+    "ti": [
+      "ktic"
+    ],
+    "tin": [
+      "ktin"
+    ],
+    "in": [
+      "Rini",
+      "ini"
+    ],
+    "van": [
+      "vanip"
+    ],
+    "yu": [
+      "lyuw"
+    ],
+    "am": [
+      "Ramu"
+    ],
+    "na": [
+      "naN"
+    ],
+    "ka": [
+      "zkan"
+    ]
+  },
+  "_lookup_by_artha": {
+    "kartari": [
+      "tfc",
+      "Nvul",
+      "Rini",
+      "Satf~",
+      "SAnac",
+      "kvip",
+      "qvip",
+      "ini",
+      "vanip"
+    ],
+    "karmani": [
+      "GaY",
+      "ap",
+      "kta",
+      "aDikaraRa_ac",
+      "ktic",
+      "ktin",
+      "lyuw"
+    ],
+    "bhave": [
+      "GaY",
+      "ap",
+      "ktic",
+      "ktin",
+      "lyuw",
+      "Ramu",
+      "naN",
+      "zkan",
+      "Ra"
+    ],
+    "arhe": [
+      "tavyat",
+      "tavya",
+      "anIyar",
+      "yat",
+      "Ryat",
+      "kyap"
+    ],
+    "bhute": [
+      "kta",
+      "ktavatu~"
+    ],
+    "vartamane": [
+      "Satf~",
+      "SAnac"
+    ],
+    "pUrva_kAle": [
+      "ktvA",
+      "lyap"
+    ],
+    "tumArthe": [
+      "tumun"
+    ],
+    "tacchilya": [
+      "Rini",
+      "ini",
+      "vanip"
+    ]
+  },
+  "_lookup_by_iT": {
+    "anit_always": [
+      "GaY",
+      "ap",
+      "kyap",
+      "ktic",
+      "ktin",
+      "kvip",
+      "Rini",
+      "vanip",
+      "Ra",
+      "naN"
+    ],
+    "set_always": [
+      "tavyat",
+      "tavya",
+      "lyuw"
+    ],
+    "vet_depends": [
+      "tfc",
+      "Nvul",
+      "kta",
+      "ktavatu~",
+      "tumun",
+      "ktvA"
+    ],
+    "na_vowel_initial": [
+      "anIyar",
+      "yat",
+      "Ryat",
+      "lyap",
+      "Satf~",
+      "SAnac",
+      "ini"
+    ]
+  },
+  "_lookup_by_anubandha_flag": {
+    "kit": [
+      "kta",
+      "ktavatu~",
+      "ktic",
+      "ktvA",
+      "kyap",
+      "kvip"
+    ],
+    "Rit": [
+      "Nvul",
+      "Ryat",
+      "Rini",
+      "Ra",
+      "Ramu",
+      "naN"
+    ],
+    "Yit": [
+      "GaY"
+    ],
+    "Git": [
+      "GaY"
+    ],
+    "Sit": [
+      "Satf~",
+      "SAnac"
+    ],
+    "tit": [
+      "tavyat",
+      "yat",
+      "Ryat"
+    ],
+    "cit": [
+      "tfc",
+      "SAnac",
+      "ktic",
+      "aDikaraRa_ac"
+    ],
+    "lit": [
+      "Nvul",
+      "lyuw"
+    ],
+    "nit": [
+      "tumun",
+      "zkan"
+    ],
+    "vit": [
+      "kvip",
+      "vanip"
+    ],
+    "pit": [
+      "ap",
+      "kyap",
+      "lyap",
+      "vanip"
+    ],
+    "udit": [
+      "ktavatu~",
+      "Ramu"
+    ],
+    "fdit": [
+      "Satf~"
+    ]
+  },
+  "_lookup_by_dhatuka_type": {
+    "ardhadhatuka": [
+      "GaY",
+      "tfc",
+      "Nvul",
+      "tavyat",
+      "tavya",
+      "anIyar",
+      "yat",
+      "kyap",
+      "Ryat",
+      "kta",
+      "ktavatu~",
+      "ktvA",
+      "lyap",
+      "tumun",
+      "Rini",
+      "lyuw",
+      "Ramu",
+      "ktic",
+      "ktin",
+      "vanip",
+      "ini",
+      "Ra",
+      "ap",
+      "kvip",
+      "qvip",
+      "aDikaraRa_ac",
+      "naN",
+      "zkan",
+      "u"
+    ],
+    "sarvadhatuka": [
+      "Satf~",
+      "SAnac"
+    ]
+  },
+  "_iT_block_condition": {
+    "_doc": "Conditions under which 7.2.10 blocks iṭ for a given pratyaya.",
+    "7.2.10_triggers": {
+      "condition": "dhātu is ekāc (single vowel) AND anudātta (anit flag in JSON)",
+      "blocked_for": [
+        "tfc",
+        "Nvul",
+        "kta",
+        "ktavatu~",
+        "ktvA",
+        "tumun"
+      ],
+      "not_blocked_for": "seṭ dhātus with udātta flag = true (e.g. BU, tF)"
+    }
+  },
+  "_guna_vrddhi_summary": {
+    "guna_by_7_3_84": [
+      "tfc",
+      "Nvul (blocked by Rit)",
+      "tavyat",
+      "tavya",
+      "anIyar",
+      "yat",
+      "ktvA",
+      "tumun",
+      "lyuw",
+      "GaY (blocked by Yit)",
+      "ap",
+      "aDikaraRa_ac"
+    ],
+    "vrddhi_by_7_2_115": [
+      "GaY (Yit)",
+      "Nvul (Rit)",
+      "Ryat (Rit)",
+      "Rini (Rit)",
+      "Ra (Rit)",
+      "Ramu (Rit)",
+      "naN (Rit)"
+    ],
+    "no_guna_vrddhi_kit_1_1_5": [
+      "kta",
+      "ktavatu~",
+      "ktic",
+      "ktvA",
+      "kyap",
+      "kvip"
+    ]
+  },
+  "_samprasarana_applicable": {
+    "_doc": "Pratyayas for which samprasāraṇa (1.2.5 ṛditaḥ and related) may apply.",
+    "yes": [
+      "kta",
+      "ktavatu~",
+      "ktvA",
+      "ap"
+    ],
+    "no": [
+      "tfc",
+      "Nvul",
+      "GaY",
+      "tavyat",
+      "yat",
+      "Ryat",
+      "lyuw",
+      "tumun"
+    ]
+  },
+  "_pada_niyama": {
+    "atmanepada_only": [
+      "SAnac"
+    ],
+    "parasmaipada_only": [
+      "Satf~"
+    ],
+    "ubhaya": [
+      "tfc",
+      "Nvul",
+      "GaY",
+      "kta",
+      "ktvA",
+      "tumun"
+    ]
+  },
+  "_stem_declension_class": {
+    "a_anta_masc": [
+      "GaY",
+      "Nvul",
+      "Ra",
+      "ap",
+      "Ramu (am-type)"
+    ],
+    "a_anta_neut": [
+      "lyuw (ana-neut)"
+    ],
+    "f_anta_masc": [
+      "tfc"
+    ],
+    "i_anta_fem": [
+      "ktic",
+      "ktin"
+    ],
+    "in_anta_masc": [
+      "Rini",
+      "ini"
+    ],
+    "at_anta": [
+      "Satf~",
+      "ktavatu~"
+    ],
+    "Ana_anta": [
+      "SAnac"
+    ],
+    "avyaya": [
+      "ktvA",
+      "lyap",
+      "tumun"
+    ]
+  }
 }

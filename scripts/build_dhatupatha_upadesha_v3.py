@@ -2,8 +2,11 @@
 """
 Build ``data/inputs/dhatupatha_upadesha.json`` from v2 exports:
 
-  * ``panini_engine_v2/data/dhatu_upadesha_post_it_lopa.json`` (940 Bhvādi roots)
-  * ``panini_engine_v2/data/dhatupatha_ashtadhyayi_txt.json`` (meanings / it-class / pada)
+  * ``dhatu_upadesha_post_it_lopa.json`` (940 Bhvādi roots)
+  * ``dhatupatha_ashtadhyayi_txt.json`` (meanings / it-class / pada)
+
+Resolved from, in order: ``<repo>/panini_engine_v2/data`` if present, else
+``~/Documents/panini_engine_v2/data`` (see ``_v2_data_dir()``).
 
 Plus **curated extensions** for dhātus outside that Bhvādi slice (other gaṇas) used by
 pipelines/tests (tṛc examples, णीञ्, etc.).
@@ -24,7 +27,21 @@ from phonology.pratyahara import is_ekac_upadesha
 from phonology.tokenizer import devanagari_to_slp1_flat
 
 ROOT = Path(__file__).resolve().parents[1]
-V2 = ROOT / "panini_engine_v2" / "data"
+
+
+def _v2_data_dir() -> Path:
+    """Prefer nested ignored clone; fallback to Documents checkout."""
+    nested = ROOT / "panini_engine_v2" / "data"
+    docs = Path.home() / "Documents" / "panini_engine_v2" / "data"
+    marker = "dhatu_upadesha_post_it_lopa.json"
+    if (nested / marker).is_file():
+        return nested
+    if (docs / marker).is_file():
+        return docs
+    return nested
+
+
+V2 = _v2_data_dir()
 OUT = ROOT / "data" / "inputs" / "dhatupatha_upadesha.json"
 
 POST_IT = V2 / "dhatu_upadesha_post_it_lopa.json"

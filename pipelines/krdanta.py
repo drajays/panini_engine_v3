@@ -7,9 +7,9 @@ explicitly scheduling sūtras (no inline bundles).
 Recipes (step order aligned with pedagogical write-ups ``pachak.md`` /
 ``nayak.md``):
 
-  • **qupac~z** + **Nvul** → **pAcaka**: saṃjñā (1.1.1, 1.1.50) → dhātu
+  • **qupac~z** + **Nvul** → **pAcaka**: saṃjñā / paribhāṣā (1.1.1, 1.1.3, 1.1.7, 1.1.8, 1.1.9, 1.1.10, 1.1.11, 1.1.12, 1.1.13, 1.1.14, 1.1.100, 1.1.15, 1.1.16, 1.1.17, 1.1.18, 1.1.19, 1.1.20, 1.1.21, 1.1.22, 1.1.23, 1.1.24, 1.1.50) → dhātu
     it‑prakaraṇa → **6.1.65** (no-op) → kṛt adhikāra (**3.1.1**, **3.1.2**,
-    **3.1.91**) → ``kartari`` meta + **3.4.67** → **3.1.133** → kṛt it →
+    **3.1.3**, **3.1.91**) → ``kartari`` meta + **3.4.67** → **3.1.133** → kṛt it →
     **7.1.1** → saṃjñā (**1.4.13**, **1.1.65**) → **6.4.1** → **7.2.116** →
     **7.2.115** (no-op here) → **6.1.78** (no-op) → **1.2.46** → structural merge.
 
@@ -144,6 +144,26 @@ def derive_krt(
 
     # Saṃjñā / paribhāṣā used by later vidhi (vṛddhi prayoga, sthānāntara).
     s = apply_rule("1.1.1", s)
+    s = apply_rule("1.1.3", s)
+    s = apply_rule("1.1.7", s)
+    s = apply_rule("1.1.8", s)
+    s = apply_rule("1.1.9", s)
+    s = apply_rule("1.1.10", s)
+    s = apply_rule("1.1.11", s)
+    s = apply_rule("1.1.12", s)
+    s = apply_rule("1.1.13", s)
+    s = apply_rule("1.1.14", s)
+    s = apply_rule("1.1.100", s)
+    s = apply_rule("1.1.15", s)
+    s = apply_rule("1.1.16", s)
+    s = apply_rule("1.1.17", s)
+    s = apply_rule("1.1.18", s)
+    s = apply_rule("1.1.19", s)
+    s = apply_rule("1.1.20", s)
+    s = apply_rule("1.1.21", s)
+    s = apply_rule("1.1.22", s)
+    s = apply_rule("1.1.23", s)
+    s = apply_rule("1.1.24", s)
     s = apply_rule("1.1.50", s)
 
     # Dhātu it‑prakaraṇa (१.३.१ … १.३.९).
@@ -162,6 +182,7 @@ def derive_krt(
     s.meta["krt_artha"] = "kartari"
     s = apply_rule("3.1.1", s)
     s = apply_rule("3.1.2", s)
+    s = apply_rule("3.1.3", s)
     s = apply_rule("3.1.91", s)
 
     s.meta["krt_upadesha_slp1"] = krt_upadesha_slp1
@@ -203,6 +224,26 @@ def derive_tfc_pratipadika(
     """
     s = build_dhatu_state(dhatu_upadesha_slp1)
     s = apply_rule("1.1.1", s)
+    s = apply_rule("1.1.3", s)
+    s = apply_rule("1.1.7", s)
+    s = apply_rule("1.1.8", s)
+    s = apply_rule("1.1.9", s)
+    s = apply_rule("1.1.10", s)
+    s = apply_rule("1.1.11", s)
+    s = apply_rule("1.1.12", s)
+    s = apply_rule("1.1.13", s)
+    s = apply_rule("1.1.14", s)
+    s = apply_rule("1.1.100", s)
+    s = apply_rule("1.1.15", s)
+    s = apply_rule("1.1.16", s)
+    s = apply_rule("1.1.17", s)
+    s = apply_rule("1.1.18", s)
+    s = apply_rule("1.1.19", s)
+    s = apply_rule("1.1.20", s)
+    s = apply_rule("1.1.21", s)
+    s = apply_rule("1.1.22", s)
+    s = apply_rule("1.1.23", s)
+    s = apply_rule("1.1.24", s)
     s = apply_rule("1.1.50", s)
     s = apply_rule("1.3.1", s)
     s = apply_rule("1.3.2", s)
@@ -217,6 +258,7 @@ def derive_tfc_pratipadika(
     s.meta["krt_artha"] = "kartari"
     s = apply_rule("3.1.1", s)
     s = apply_rule("3.1.2", s)
+    s = apply_rule("3.1.3", s)
     s = apply_rule("3.1.91", s)
     s.meta["krt_upadesha_slp1"] = "tfc"
     s = apply_rule("3.4.67", s)

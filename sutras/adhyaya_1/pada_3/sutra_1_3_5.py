@@ -9,7 +9,8 @@
 • **Scope:** Non-taddhita **sup** rows when present; else the primary upadeśa
   term (``terms[0]``), matching v2 ``_terms_sup_or_primary_upadesha``.
 
-• **v2 reference:** panini_engine_v2/core/it_rules.py ``cond_1_3_5`` /
+• **v2 reference:** ``~/Documents/panini_engine_v2/core/it_rules.py``
+  ``cond_1_3_5`` /
   ``act_1_3_5``.
 """
 from __future__ import annotations
@@ -96,7 +97,7 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = "AdiraYiTuDavAH",
     text_dev       = "आदिरञिटुडवः",
-    padaccheda_dev = "आदिः अञ्-इटु-डु-वः",
+    padaccheda_dev = "आदिः ञि-टु-ड-वः",
     why_dev        = "ञ्-इट्-डु-वर्णेषु प्रथमः हल् ‘इत्’ संज्ञकः; लोपः १.३.९।",
     anuvritti_from = ("1.3.2",),
     cond           = cond,

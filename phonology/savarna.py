@@ -2,6 +2,8 @@
 phonology/savarna.py — 1.1.9 tulyāsyaprayatnaṁ savarṇam.
 ─────────────────────────────────────────────────────────
 
+Śāstrīyā registry anchor: ``sutras/adhyaya_1/pada_1/sutra_1_1_9.py`` (``SutraType.SAMJNA``).
+
 Savarṇa (homorganic) classification.  Two phonemes are savarṇa if
 they share place of articulation (sthāna) and internal effort
 (ābhyantara-prayatna).

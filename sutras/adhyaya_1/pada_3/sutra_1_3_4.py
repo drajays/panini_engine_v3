@@ -13,7 +13,8 @@
 • **Interaction:** ``sutra_1_3_3`` skips tusma-final **sup** strips by the same
   phoneme check; this sūtra records the pratishedha in ``samjna_registry``.
 
-• **v2 reference:** panini_engine_v2/core/it_rules.py ``cond_1_3_4`` /
+• **v2 reference:** ``~/Documents/panini_engine_v2/core/it_rules.py``
+  ``cond_1_3_4`` /
   ``act_1_3_4``.
 """
 from __future__ import annotations
@@ -60,9 +61,9 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = "na vibhaktO tusmAH",
     text_dev       = "न विभक्तौ तुस्माः",
-    padaccheda_dev = "न विभक्तौ तुस्माः",
-    why_dev        = "विभक्तौ प्रत्यये तुस्म-वर्णान्ते हलन्त्यम् न भवति; "
-                     "अत्र संज्ञा-निर्देशः — हलन्त्य-विधिः १.३.३।",
+    padaccheda_dev = "न विभक्तौ तु-स्माः",
+    why_dev        = "विभक्ति-प्रत्यये अन्त्यौ तु-स्म-वर्णौ हलन्त्य-इत् संज्ञां न लभेते; "
+                     "विधिः १.३.३ एव न प्रवर्तते (तुस्मान्त-निषेधः)।",
     anuvritti_from = ("1.3.2", "1.3.3"),
     cond           = cond,
     act            = act,

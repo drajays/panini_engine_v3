@@ -13,7 +13,8 @@
 • **R1:** Not exempt — if ``cond`` is True, ``act`` must remove at least one
   Varṇa whose tags intersect ``IT_LOPA_TAGS``; otherwise *R1Violation*.
 
-• **v2 reference:** panini_engine_v2/core/it_rules.py ``cond_1_3_9`` /
+• **v2 reference:** ``~/Documents/panini_engine_v2/core/it_rules.py``
+  ``cond_1_3_9`` /
   ``act_1_3_9`` — same job on a different ``State`` / Varṇa model.
 
 • **Tags:** Only deletions listed in ``IT_LOPA_TAGS``; ``nut_agama_inserted``
@@ -33,6 +34,7 @@ IT_LOPA_TAGS: Final[FrozenSet[str]] = frozenset((
     "it",
     "it_candidate_halantyam",
     "it_candidate_anunasika",
+    "it_candidate_irit",
     "it_candidate_nit_tu_du",
     "it_candidate_sha_pratyaya",
     "it_candidate_cutu",
@@ -63,6 +65,9 @@ def act(state: State) -> State:
             # feature; the vowel letter remains (e.g. डुपचँष् → पच्, not प्-च्).
             # Sup / other pratyayas: vowel marked anunāsika is fully elided
             # (e.g. सुँ → स्).
+            if "it_candidate_irit" in v.tags:
+                removed.append(v.slp1)
+                continue
             if (
                 "dhatu" in t.tags
                 and "it_candidate_anunasika" in v.tags

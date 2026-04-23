@@ -30,6 +30,7 @@ _GUNA = {
 def _find_pair(state: State):
     """Scan flat varṇa sequence across Term boundaries; return
     (term_idx_1, varna_idx_1, term_idx_2, varna_idx_2, guṇa) or None."""
+    guna_map = state.paribhasha_gates.get("sthanantara_guna", _GUNA)
     flat = []
     for ti, t in enumerate(state.terms):
         for vi, v in enumerate(t.varnas):
@@ -37,7 +38,7 @@ def _find_pair(state: State):
     for k in range(len(flat) - 1):
         (ti1, vi1, v1) = flat[k]
         (ti2, vi2, v2) = flat[k + 1]
-        g = _GUNA.get((v1.slp1, v2.slp1))
+        g = guna_map.get((v1.slp1, v2.slp1))
         if g is not None:
             return (ti1, vi1, ti2, vi2, g)
     return None

@@ -12,17 +12,27 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    return "sthanantara_vrddhi" not in state.paribhasha_gates
+    return (
+        "sthanantara_vrddhi" not in state.paribhasha_gates
+        or "sthanantara_guna" not in state.paribhasha_gates
+    )
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates["sthanantara_vrddhi"] = {
+    state.paribhasha_gates.setdefault("sthanantara_vrddhi", {
         "a": "A",
         "i": "E",
         "I": "E",
         "u": "O",
         "U": "O",
-    }
+    })
+    # Guṇa-selection helper (used by 6.1.87 when present).
+    state.paribhasha_gates.setdefault("sthanantara_guna", {
+        ("a", "i"): "e",
+        ("a", "I"): "e",
+        ("a", "u"): "o",
+        ("a", "U"): "o",
+    })
     return state
 
 

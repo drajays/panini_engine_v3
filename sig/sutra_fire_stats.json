@@ -3,127 +3,247 @@
     {
       "fire_count": 24,
       "id": "1.4.14",
-      "total_time_ns": 6915159
+      "total_time_ns": 624960
     },
     {
       "fire_count": 24,
       "id": "4.1.2",
-      "total_time_ns": 1070363
+      "total_time_ns": 266998
     },
     {
       "fire_count": 24,
       "id": "6.4.1",
-      "total_time_ns": 629138
+      "total_time_ns": 244667
     },
     {
       "fire_count": 24,
       "id": "8.2.1",
-      "total_time_ns": 532486
+      "total_time_ns": 232337
     },
     {
       "fire_count": 24,
-      "id": "4.1.1",
-      "total_time_ns": 399343
+      "id": "1.1.11",
+      "total_time_ns": 144874
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.24",
+      "total_time_ns": 136665
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.23",
+      "total_time_ns": 135205
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.22",
+      "total_time_ns": 135167
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.19",
+      "total_time_ns": 133544
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.20",
+      "total_time_ns": 130959
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.21",
+      "total_time_ns": 130459
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.14",
+      "total_time_ns": 127956
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.100",
+      "total_time_ns": 127084
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.17",
+      "total_time_ns": 126458
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.18",
+      "total_time_ns": 126333
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.1",
+      "total_time_ns": 125249
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.15",
+      "total_time_ns": 124167
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.16",
+      "total_time_ns": 124166
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.12",
+      "total_time_ns": 123333
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.10",
+      "total_time_ns": 122751
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.13",
+      "total_time_ns": 122584
     },
     {
       "fire_count": 24,
       "id": "1.1.2",
-      "total_time_ns": 363248
+      "total_time_ns": 121501
     },
     {
-      "fire_count": 8,
+      "fire_count": 24,
+      "id": "4.1.1",
+      "total_time_ns": 121375
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.7",
+      "total_time_ns": 119709
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.3",
+      "total_time_ns": 119708
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.9",
+      "total_time_ns": 118124
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.8",
+      "total_time_ns": 117833
+    },
+    {
+      "fire_count": 12,
       "id": "1.3.9",
-      "total_time_ns": 1250166
+      "total_time_ns": 457289
+    },
+    {
+      "fire_count": 9,
+      "id": "1.3.4",
+      "total_time_ns": 201045
     },
     {
       "fire_count": 5,
       "id": "7.3.102",
-      "total_time_ns": 791092
+      "total_time_ns": 244917
     },
     {
       "fire_count": 4,
       "id": "6.1.88",
-      "total_time_ns": 591224
+      "total_time_ns": 245210
     },
     {
       "fire_count": 4,
       "id": "1.3.8",
-      "total_time_ns": 466963
-    },
-    {
-      "fire_count": 3,
-      "id": "7.3.103",
-      "total_time_ns": 845565
+      "total_time_ns": 194751
     },
     {
       "fire_count": 3,
       "id": "7.1.12",
-      "total_time_ns": 633337
+      "total_time_ns": 246004
     },
     {
-      "fire_count": 2,
-      "id": "1.3.2",
-      "total_time_ns": 646970
+      "fire_count": 3,
+      "id": "7.3.103",
+      "total_time_ns": 241917
+    },
+    {
+      "fire_count": 3,
+      "id": "1.3.7",
+      "total_time_ns": 214833
     },
     {
       "fire_count": 2,
       "id": "8.4.2",
-      "total_time_ns": 609549
+      "total_time_ns": 276501
     },
     {
       "fire_count": 2,
       "id": "6.1.87",
-      "total_time_ns": 575559
+      "total_time_ns": 249251
     },
     {
       "fire_count": 2,
       "id": "6.1.78",
-      "total_time_ns": 559484
-    },
-    {
-      "fire_count": 2,
-      "id": "1.3.3",
-      "total_time_ns": 512382
+      "total_time_ns": 235790
     },
     {
       "fire_count": 2,
       "id": "6.1.102",
-      "total_time_ns": 499930
+      "total_time_ns": 226667
     },
     {
-      "fire_count": 1,
-      "id": "6.1.69",
-      "total_time_ns": 670517
+      "fire_count": 2,
+      "id": "1.3.2",
+      "total_time_ns": 221121
     },
     {
-      "fire_count": 1,
-      "id": "6.1.103",
-      "total_time_ns": 605580
-    },
-    {
-      "fire_count": 1,
-      "id": "7.1.54",
-      "total_time_ns": 575855
-    },
-    {
-      "fire_count": 1,
-      "id": "7.1.13",
-      "total_time_ns": 574586
-    },
-    {
-      "fire_count": 1,
-      "id": "6.1.101",
-      "total_time_ns": 553934
-    },
-    {
-      "fire_count": 1,
-      "id": "6.1.107",
-      "total_time_ns": 545569
+      "fire_count": 2,
+      "id": "1.3.3",
+      "total_time_ns": 190585
     },
     {
       "fire_count": 1,
       "id": "7.1.9",
-      "total_time_ns": 534564
+      "total_time_ns": 339584
+    },
+    {
+      "fire_count": 1,
+      "id": "7.1.54",
+      "total_time_ns": 260876
+    },
+    {
+      "fire_count": 1,
+      "id": "6.1.103",
+      "total_time_ns": 253336
+    },
+    {
+      "fire_count": 1,
+      "id": "6.1.101",
+      "total_time_ns": 243998
+    },
+    {
+      "fire_count": 1,
+      "id": "7.1.13",
+      "total_time_ns": 236459
+    },
+    {
+      "fire_count": 1,
+      "id": "6.1.107",
+      "total_time_ns": 223125
+    },
+    {
+      "fire_count": 1,
+      "id": "6.1.69",
+      "total_time_ns": 217919
+    },
+    {
+      "fire_count": 1,
+      "id": "1.3.5",
+      "total_time_ns": 213581
     }
   ]
 }

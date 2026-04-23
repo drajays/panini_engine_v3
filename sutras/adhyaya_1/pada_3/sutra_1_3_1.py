@@ -24,6 +24,7 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     state.samjna_registry["1.3.1_bhuvadi_dhatu"] = True
+    state.samjna_registry["dhatu"] = frozenset({"1.3.1"})
     return state
 
 
@@ -33,7 +34,7 @@ SUTRA = SutraRecord(
     text_slp1      = "bhUvAdayo dhAtavaH",
     text_dev       = "भूवादयो धातवः",
     padaccheda_dev = "भू-आदयः धातवः",
-    why_dev        = "धातुपाठोक्ताः भू-आदयः धातु-संज्ञां लभन्ते।",
+    why_dev        = "भू आदि गणे पठितानां धातूनां धातु-संज्ञा (उपदेश एव अधिकृतः)।",
     anuvritti_from = (),
     cond           = cond,
     act            = act,
