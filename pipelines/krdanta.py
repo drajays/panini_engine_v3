@@ -30,7 +30,7 @@ import sutras  # noqa: F401  (ensure registry loaded)
 from engine       import apply_rule
 from engine.state import State, Term, Varna
 from pipelines.preflight_lopa_samjna import apply_preflight_luk_samjna_block
-from core.canonical_pipelines import P01_samjna_1_1_15_to_1_1_24
+from core.canonical_pipelines import P01_samjna_1_1_3_to_1_1_100, P01_samjna_1_1_15_to_1_1_24
 from phonology.pratyahara import is_ekac_upadesha
 from phonology.varna import mk_inherent_a, parse_slp1_upadesha_sequence
 
@@ -147,17 +147,7 @@ def derive_krt(
     # Saṃjñā / paribhāṣā used by later vidhi (vṛddhi prayoga, sthānāntara).
     s = apply_rule("1.1.1", s)
     s = apply_rule("1.1.73", s)
-    s = apply_rule("1.1.3", s)
-    s = apply_rule("1.1.7", s)
-    s = apply_preflight_luk_samjna_block(s)  # 1.1.60–1.1.63
-    s = apply_rule("1.1.8", s)
-    s = apply_rule("1.1.9", s)
-    s = apply_rule("1.1.10", s)
-    s = apply_rule("1.1.11", s)
-    s = apply_rule("1.1.12", s)
-    s = apply_rule("1.1.13", s)
-    s = apply_rule("1.1.14", s)
-    s = apply_rule("1.1.100", s)
+    s = P01_samjna_1_1_3_to_1_1_100(s=s, include_luk_block=True)
     s = P01_samjna_1_1_15_to_1_1_24(s)
     s = apply_rule("1.1.50", s)
 
@@ -222,17 +212,7 @@ def derive_tfc_pratipadika(
     s = build_dhatu_state(dhatu_upadesha_slp1)
     s = apply_rule("1.1.1", s)
     s = apply_rule("1.1.73", s)
-    s = apply_rule("1.1.3", s)
-    s = apply_rule("1.1.7", s)
-    s = apply_preflight_luk_samjna_block(s)  # 1.1.60–1.1.63
-    s = apply_rule("1.1.8", s)
-    s = apply_rule("1.1.9", s)
-    s = apply_rule("1.1.10", s)
-    s = apply_rule("1.1.11", s)
-    s = apply_rule("1.1.12", s)
-    s = apply_rule("1.1.13", s)
-    s = apply_rule("1.1.14", s)
-    s = apply_rule("1.1.100", s)
+    s = P01_samjna_1_1_3_to_1_1_100(s=s, include_luk_block=True)
     s = P01_samjna_1_1_15_to_1_1_24(s)
     s = apply_rule("1.1.50", s)
     s = apply_rule("1.3.1", s)

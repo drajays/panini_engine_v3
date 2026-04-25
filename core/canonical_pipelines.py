@@ -276,10 +276,28 @@ def P01_subanta_bootstrap(s: State) -> State:
     s = apply_rule("1.1.1",  s)
     s = apply_rule("1.1.73", s)
     s = apply_rule("1.1.2",  s)
+    s = P01_samjna_1_1_3_to_1_1_100(
+        s,
+        include_luk_block=not s.meta.get(_META_SALIYA_SUBANTA),
+    )
+    s = P01_samjna_1_1_15_to_1_1_24(s)
+    s = apply_rule("1.2.72", s)
+    s = apply_rule("1.2.45", s)
+    s = apply_rule("1.1.27", s)
+    s = apply_rule("1.4.7",  s)
+    return s
+
+
+def P01_samjna_1_1_3_to_1_1_100(s: State, *, include_luk_block: bool) -> State:
+    """
+    Shared saṃjñā/paribhāṣā slice (used by multiple recipes):
+
+    1.1.3 → 1.1.7 → (optional 1.1.60–1.1.63) → 1.1.8 → … → 1.1.14 → 1.1.100
+    """
     s = apply_rule("1.1.3",  s)
     s = apply_rule("1.1.7",  s)
-    if not s.meta.get(_META_SALIYA_SUBANTA):
-        s = apply_preflight_luk_samjna_block(s)
+    if include_luk_block:
+        s = apply_preflight_luk_samjna_block(s)  # 1.1.60–1.1.63
     s = apply_rule("1.1.8",  s)
     s = apply_rule("1.1.9",  s)
     s = apply_rule("1.1.10", s)
@@ -287,12 +305,7 @@ def P01_subanta_bootstrap(s: State) -> State:
     s = apply_rule("1.1.12", s)
     s = apply_rule("1.1.13", s)
     s = apply_rule("1.1.14", s)
-    s = P01_samjna_1_1_15_to_1_1_24(s)
     s = apply_rule("1.1.100", s)
-    s = apply_rule("1.2.72", s)
-    s = apply_rule("1.2.45", s)
-    s = apply_rule("1.1.27", s)
-    s = apply_rule("1.4.7",  s)
     return s
 
 
