@@ -64,6 +64,21 @@ def test_extract_applied_path_includes_applied_vacuous():
     assert extract_applied_path([_applied_vacuous("1.3.9", "ji")]) == ["1.3.9"]
 
 
+def test_extract_applied_path_omits_audit():
+    def _audit(sid):
+        return {
+            "sutra_id"    : sid,
+            "sutra_type"  : "ADHIKARA",
+            "status"      : "AUDIT",
+            "form_before" : "a",
+            "form_after"  : "a",
+            "why_dev"     : "x",
+        }
+
+    trace = [_audit("4.1.2"), _applied("1.1.1")]
+    assert extract_applied_path(trace) == ["1.1.1"]
+
+
 def test_extract_edges():
     assert extract_edges(["A", "B", "C"]) == [("A", "B"), ("B", "C")]
     assert extract_edges(["A"]) == []

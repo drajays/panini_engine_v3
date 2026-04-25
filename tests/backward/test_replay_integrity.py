@@ -77,14 +77,17 @@ def test_replay_applied_steps_reaches_same_form(v, vv):
         (i for i, st in enumerate(original.trace) if st["sutra_id"] == "__MERGE__"),
         None,
     )
-    # Pre-merge APPLIED sūtras only.
+    from engine.trace import TRACE_STATUSES_FIRED
+
+    # Pre-merge fired sūtras (APPLIED / APPLIED_VACUOUS / AUDIT).
     pre_merge_trace = (original.trace[:merge_idx]
                        if merge_idx is not None
                        else original.trace)
     applied_ids = [
         step["sutra_id"]
         for step in pre_merge_trace
-        if step.get("status") == "APPLIED" and not step["sutra_id"].startswith("__")
+        if step.get("status") in TRACE_STATUSES_FIRED
+        and not step["sutra_id"].startswith("__")
     ]
     replayed = build_initial_state("rAma", v, vv)
     for sid in applied_ids:

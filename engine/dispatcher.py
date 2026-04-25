@@ -39,6 +39,7 @@ from engine.trace        import (
     chronological_prev_sutra_id,
     make_applied_step,
     make_applied_vacuous_step,
+    make_audit_step,
     make_skipped_step,
 )
 
@@ -216,12 +217,24 @@ def apply_rule(
     check_r2(rec, samjna_before, new_state.samjna_registry)
     check_r3(rec, parib_before,  new_state.paribhasha_gates)
 
-    _append_traced_step(
-        new_state,
-        make_applied_step(
-            sutra_id, stype.name, contract["dev_label"],
-            form_before, form_after, rec.why_dev,
-        ),
-        prev_sutra, sutra_id,
-    )
+    # *अधिकार* / *paribhāṣā* / *anuvāda* — *prayoga* without surface *pariṇāma*:
+    # trace as AUDIT, not *vidhi* *APPLIED* (UI / analytics).
+    if stype in (SutraType.ADHIKARA, SutraType.PARIBHASHA, SutraType.ANUVADA):
+        _append_traced_step(
+            new_state,
+            make_audit_step(
+                sutra_id, stype.name, contract["dev_label"],
+                form_before, form_after, rec.why_dev,
+            ),
+            prev_sutra, sutra_id,
+        )
+    else:
+        _append_traced_step(
+            new_state,
+            make_applied_step(
+                sutra_id, stype.name, contract["dev_label"],
+                form_before, form_after, rec.why_dev,
+            ),
+            prev_sutra, sutra_id,
+        )
     return _finish_apply_rule(prev_sutra, sutra_id, new_state)

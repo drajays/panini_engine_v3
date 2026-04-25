@@ -15,8 +15,7 @@ Given:
 
 Returns:
   State  — with full trace in state.trace and rendered surface in
-           state.flat_dev()  (reconcile with phonology.joiner for
-           proper halanta/mātrā surface).
+           state.flat_dev()  (uses phonology.joiner for Devanāgarī).
 
 This is the ONLY place (vibhakti, vacana) enters the engine — and it
 enters via state.meta.  Every downstream cond() reads ONLY phonemic /
@@ -101,6 +100,16 @@ from engine            import apply_rule
 from engine.state      import State, Term
 from phonology         import mk
 from phonology.varna   import mk_inherent_a
+
+# Canonical *prakriyā* spines (single *apply_rule* scheduling).
+from core.canonical_pipelines import (  # noqa: PLC0415
+    P01_subanta_bootstrap        as run_subanta_preflight_through_1_4_7,
+    run_subanta_sup_attach_and_finish,
+    subanta_post_4_1_2,
+)
+
+# Backward-compatible name (imported by ``taddhita_itika_etikAyana``, *dik* demo, etc.).
+run_subanta_post_4_1_2 = subanta_post_4_1_2
 
 
 def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
@@ -248,6 +257,11 @@ def derive_akarant_pullinga(
 # Structural step in ``run_subanta_post_4_1_2`` (not a sūtra id).
 PADA_MERGE_STEP = "__PADA_MERGE__"
 
+# *Śālīyaḥ* (``derive_salIyaH``): taddhita ``derive_salIya`` already ran **1.1.60**–
+# **1.1.63** in *luk* order after **2.4.71**; subanta preflight must not re-apply
+# (avoids a spurious SKIPPED **1.1.61** before the real *luk* block in the *trace*).
+META_SALIYA_TADDHITA_SUBANTA_CONTINUATION = "sAlIya_taddhita_subanta_continuation"
+
 # Canonical ``apply_rule`` ids from **1.3.2** through tripāḍī, in engine order,
 # after **4.1.2** has attached *sup*.  Demos may iterate this tuple for verbose
 # traces; keep in sync with ``run_subanta_post_4_1_2``.
@@ -321,82 +335,17 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
 )
 
 
-def run_subanta_preflight_through_1_4_7(s: State) -> State:
-    """
-    STAGE 1 of ``run_subanta_pipeline``: saṃjñā preflight through **1.4.7**
-    (everything before **4.1.2** *sup* attach).  Includes **1.2.45** *prātipadika*
-    on *arthavad* non-dhātu stems.
-    """
-    s = apply_rule("1.4.14", s)
-    if s.meta.get("2_3_46_matra_prathama_eligible"):
-        s = apply_rule("2.3.1", s)
-        s = apply_rule("2.3.46", s)
-    s = apply_rule("4.1.1",  s)
-    # Strī-pratyaya *ṭāp* (4.1.4) under *strī* adhikāra (4.1.3), before *sup* (4.1.2).
-    if any("strīliṅga" in t.tags for t in s.terms):
-        s = apply_rule("4.1.3", s)
-        s = apply_rule("4.1.4", s)
-    s = apply_rule("1.1.1",  s)  # saṃjñā only — prayoga awaits vidhi (e.g. 6.1.88)
-    s = apply_rule("1.1.73", s)  # *vṛddha-pada* indices (1.1.1 *vṛddhi* + first *ac*)
-    s = apply_rule("1.1.2",  s)
-    s = apply_rule("1.1.3",  s)  # *ik* *sthāyin* gate for *guṇa* / *vṛddhi*
-    s = apply_rule("1.1.7",  s)  # *saṃyoga* = adjacent *hal* (Tripāḍī / *hal* *vidhi* scope)
-    s = apply_rule("1.1.60", s)  # *lopa* saṃjñā (*sthāne adarśanam*; anuv.* *sthāne* 1.1.50)
-    s = apply_rule("1.1.61", s)  # *luk* / *ślu* / *lup* — *pratyaya-lopa* classes (needs 1.1.60)
-    s = apply_rule("1.1.62", s)  # *pratyayalope pratyayalakṣaṇam* (paribhāṣā gate)
-    s = apply_rule("1.1.63", s)  # *na lumatā … aṅgasya pratyayalakṣaṇam* (*apavāda* to 1.1.62)
-    s = apply_rule("1.1.8",  s)  # *anunāsika* (anchor for ``anunasika`` / *M* in prakriyā)
-    s = apply_rule("1.1.9",  s)  # *savarṇa* (6.1.101 / sandhi premiss)
-    s = apply_rule("1.1.10", s)  # *nājjhalau* (*it* locus; before 1.3.2)
-    s = apply_rule("1.1.11", s)  # *pragṛhya* (dual *ī*…*au* in *saṃjñā*)
-    s = apply_rule("1.1.12", s)  # *adaso māt* (paribhāṣā for *a*ś / *etad*–*adas* *it*)
-    s = apply_rule("1.1.13", s)  # *śe* ( *aś* / *ś* locus vs *pragṛhya* )
-    s = apply_rule("1.1.14", s)  # *nipāta ekājanāṅ* ( 11014; *saṃjñā* for *ekāc* *nipāta* )
-    s = apply_rule("1.1.100", s)  # *Kāśikā* *na mātrā samāse* ( *vṛtti*; *paribhāṣā* *gate* )
-    s = apply_rule("1.1.15", s)  # *ot* ( 11015; *saṃjñā* )
-    s = apply_rule("1.1.16", s)  # *sambuddhau śākalyasya*… ( 11016; *saṃjñā* )
-    s = apply_rule("1.1.17", s)  # *uÞ* *aḥ* ( 11017 )
-    s = apply_rule("1.1.18", s)  # *ū̐* ( 11018; ``U.N`` in SLP1)
-    s = apply_rule("1.1.19", s)  # *IdU tau* *saptamī*-*artha* ( 11019; *saṃjñā* *extension* of 1.1.11)
-    s = apply_rule("1.1.20", s)  # *dA-DhA* *ghu* *ad*+**āp** ( 11020; *ghu* *dhātu* *set* )
-    s = apply_rule("1.1.21", s)  # *Adyantavad* *ekasmin* ( 11021; *paribhāṣā* )
-    s = apply_rule("1.1.46", s)  # *AdyantO* *TakitO* — *ṭit* before / *kit* after *āgamin*
-    s = apply_rule("1.1.22", s)  # *tarap-tamapO* *ghaH* ( 11022; *gha* *taddhita* *pratyaya* *set* )
-    s = apply_rule("1.1.23", s)  # *bahuganavatuqati* *saMkhyA* ( 11023; *saṅkhyā* *prātipadika* *set* )
-    s = apply_rule("1.1.24", s)  # *zRAntA* *zaW* ( 11024; *ṣaṭ* ending-set {'z','n'} )
-    # v3.7: tyadādi-gaṇa tagging (includes sarvanāma tag for these stems).
-    s = apply_rule("1.2.72", s)
-    # *Avyutpanna* *prātipadika* (before **1.2.46** *kṛt-taddhita-samāsa* scope).
-    s = apply_rule("1.2.45", s)
-    # v3.5: sarvanāma-saṃjñā (sarvādi-gaṇa; rules self-gate).
-    s = apply_rule("1.1.27", s)
-    # v3.4: घि-संज्ञा for hari-like i/u stems (rules self-gate).
-    s = apply_rule("1.4.7",  s)
-    return s
-
-
-def run_subanta_post_4_1_2(s: State) -> State:
-    """
-    Run **1.3.2** … tripāḍī on ``s`` after **4.1.2** has attached *sup*.
-    Inserts ``_pada_merge`` at the same point as the historical monolithic recipe.
-    """
-    for rid in SUBANTA_RULE_IDS_POST_4_1_2:
-        if rid == PADA_MERGE_STEP:
-            _pada_merge(s)
-        else:
-            s = apply_rule(rid, s)
-    return s
-
-
 def run_subanta_pipeline(s: State) -> State:
     """
     Run the standard *subanta* ``apply_rule`` sequence on an already-built
     ``State`` (as returned by ``build_initial_state``).  Used by ``derive()``
     and by demos that attach a compound stem before *sup* (e.g. dik-samāsa).
+
+    Implementation: ``core.canonical_pipelines`` — P01 (preflight) +
+    *sup* + P13 (it → pada-merge) + P14–P15 (tripāḍī), all through ``apply_rule`` only.
     """
     s = run_subanta_preflight_through_1_4_7(s)
-    s = apply_rule("4.1.2",  s)
-    return run_subanta_post_4_1_2(s)
+    return run_subanta_sup_attach_and_finish(s)
 
 
 def derive(stem_slp1: str, vibhakti: int, vacana: int,

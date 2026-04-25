@@ -8,10 +8,10 @@ Usage:
     python -m tools.replay_trace path/to/trace.json
 
 The trace file is a list of TraceStep dicts (as produced by
-engine.trace).  Only APPLIED steps are re-applied; SKIPPED steps
-are printed as context.  The initial state is re-built from the
-trace's first step's form_before (crude reverse-tokenization via
-phonology.tokenizer — good enough for inspection).
+engine.trace).  Fired steps (APPLIED, APPLIED_VACUOUS, AUDIT) are
+re-applied; other rows are printed as context.  The initial state
+is re-built from the trace's first step's form_before (crude
+reverse-tokenization via phonology.tokenizer — good enough for inspection).
 """
 from __future__ import annotations
 
@@ -50,17 +50,20 @@ def main(argv=None):
     varnas = devanagari_to_varnas(first_before)
     state = State(terms=[Term(kind="pada", varnas=varnas, tags={"upadesha"})])
 
+    from engine.trace import TRACE_STATUSES_FIRED
+
     for step in trace:
         sid = step["sutra_id"]
         status = step.get("status", "APPLIED")
         if sid.startswith("__"):
             print(f"  [structural] {sid} :: {step.get('why_dev','')}")
             continue
-        if status != "APPLIED":
+        if status not in TRACE_STATUSES_FIRED:
             print(f"  [skipped  ] {sid} ({status}) :: {step.get('why_dev','')}")
             continue
         state = apply_rule(sid, state)
-        print(f"  [applied  ] {sid} :: {state.render()}")
+        tag = "fired" if status == "AUDIT" else "applied"
+        print(f"  [{tag:7}] {sid} :: {state.render()}")
 
     print(f"\nFinal: {state.render()}")
     return 0

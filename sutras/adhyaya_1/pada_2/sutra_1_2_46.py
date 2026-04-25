@@ -26,6 +26,13 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
+    # Generic gate: any *vyutpanna* community containing kṛt / taddhita / samāsa
+    # should be promoted to prātipadika here.  This is deliberately **tag-driven**
+    # and does not read external corpora.
+    if any(("krt" in t.tags) or ("taddhita" in t.tags) or ("samasa_member" in t.tags) for t in state.terms):
+        if state.samjna_registry.get("1.2.46_generic_pratipadika"):
+            return False
+        return True
     # ── Case C: dik-samāsa already merged by 2.2.26 (single prātipadika) ───
     if len(state.terms) == 1:
         t0 = state.terms[0]
@@ -111,6 +118,17 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    if any(("krt" in t.tags) or ("taddhita" in t.tags) or ("samasa_member" in t.tags) for t in state.terms):
+        state.samjna_registry["1.2.46_generic_pratipadika"] = True
+        # Promote all non-pratyaya terms to prātipadika; also allow the vyutpanna
+        # pratyaya Term to be prātipadika for internal-luk recipes.
+        for t in state.terms:
+            if "pratyaya" not in t.tags:
+                t.tags.add("prātipadika")
+            if "taddhita" in t.tags or "krt" in t.tags:
+                t.tags.add("prātipadika")
+        # Do NOT return: specific glass-box branches may need to set their
+        # own audit registry flags (e.g. 1.2.46_sAlIya_avayava).
     # Case C: record prātipadika-saṃjñā for dik compound (structure unchanged).
     if len(state.terms) == 1:
         t0 = state.terms[0]

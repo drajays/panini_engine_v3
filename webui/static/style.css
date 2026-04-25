@@ -160,6 +160,8 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 }
 .trace-step:hover { background: #ece6d2; }
 .trace-step.applied   { border-left-color: var(--success); }
+.trace-step.applied_vacuous { border-left-color: #6b8e6b; }
+.trace-step.audit     { border-left-color: #6b7fb3; }
 .trace-step.blocked   { border-left-color: var(--danger);
                         background: #faf0ec; }
 .trace-step.skipped   { border-left-color: var(--ink-faint);

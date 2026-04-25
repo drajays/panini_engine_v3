@@ -171,10 +171,16 @@ class State:
         return "".join(term_phonetic_slp1(t) for t in self.terms)
 
     def flat_dev(self) -> str:
-        """Halanta-naive concatenation over phonetic varṇas only."""
+        """
+        Devanāgarī for the current tape: phonetic varṇa sequence through
+        ``phonology.joiner.slp1_to_devanagari`` (conjunct / mātrā aware).
+        Do not concat ``Varna.dev`` directly — that gives broken clusters.
+        """
         from engine.it_phonetic import term_phonetic_varnas
+        from phonology.joiner import slp1_to_devanagari
 
-        return "".join(v.dev for t in self.terms for v in term_phonetic_varnas(t))
+        varnas = [v for t in self.terms for v in term_phonetic_varnas(t)]
+        return slp1_to_devanagari(varnas)
 
     # For quick printing in traces.
     def render(self) -> str:

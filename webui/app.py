@@ -102,6 +102,7 @@ def api_derive():
         "stats": {
             "total_steps"   : len(state.trace),
             "applied_count" : sum(1 for s in state.trace if s.get("status") == "APPLIED"),
+            "audit_count"   : sum(1 for s in state.trace if s.get("status") == "AUDIT"),
             "blocked_count" : sum(1 for s in state.trace if s.get("status") == "BLOCKED"),
             "skipped_count" : sum(1 for s in state.trace if s.get("status") == "SKIPPED"),
         },

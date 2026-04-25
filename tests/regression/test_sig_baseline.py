@@ -4,10 +4,11 @@ tests/regression/test_sig_baseline.py
 
 SIG baseline regression oracle (v3.1 amendment).
 
-For every rāma paradigm cell, the set of APPLIED sūtras must match the
-baseline.  If the engine produces the correct surface form via a
-DIFFERENT sūtra path than the baseline, this is flagged as a regression
-even though surface-equality tests would pass.
+For every rāma paradigm cell, ``extract_applied_path`` (APPLIED and
+APPLIED_VACUOUS only — *not* AUDIT *adhikāra* / *paribhāṣā* / *anuvāda*)
+must match the baseline.  If the engine produces the correct surface
+form via a DIFFERENT sūtra path than the baseline, this is flagged as
+a regression even though surface-equality tests would pass.
 
 The baseline is stored as part of the repo at tests/regression/sig_applied_paths_baseline.json
 When a cell's path legitimately changes (because a new sūtra was added

@@ -1,17 +1,17 @@
-from pipelines.krdanta import (
-    derive_chetA,
-    derive_nAyakaH,
-    derive_nAyaka_pratipadika,
-    derive_pAcakaH,
-    derive_pAcaka_pratipadika,
-    derive_tfc_pratipadika,
-    derive_trc,
-)
 """
 pipelines — end-to-end derivations (subanta, tinanta, ...).
 
-A pipeline orchestrates apply_rule() calls in Aṣṭādhyāyī order.  It is
-NOT part of the engine core and its presence or absence does not
-affect correctness of any sūtra.  Pipelines exist so that test suites
-can exercise the engine on realistic derivations.
+This package intentionally does **not** import individual pipeline modules at
+import time. Importing submodules here creates circular dependencies once
+canonical scheduling wrappers live under ``core/`` (e.g. ``core.canonical_pipelines``
+imports a few pipeline helpers).
+
+Consumers should import the concrete pipeline they need, e.g.:
+
+  - ``from pipelines import subanta``
+  - ``from pipelines.krdanta import derive_pAcakaH``
 """
+
+from __future__ import annotations
+
+__all__ = []

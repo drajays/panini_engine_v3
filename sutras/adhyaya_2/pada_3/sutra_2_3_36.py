@@ -22,9 +22,24 @@ from sutras.adhyaya_1.pada_4.sutra_1_4_45 import SAMJNA_KEY as REG_1_4_45_ADH
 
 REGISTRY_KEY = "2.3.36_sAlIya_adhikaraNa_saptamI_slp1"
 META_LOCATIVE  = "2_3_36_sAlIya_locative_slp1"
+META_AUTO_SET_VIBHAKTI_VACANA = "2_3_36_auto_set_vibhakti_vacana"
+REGISTRY_KEY_AUTO_VV = "2.3.36_auto_vibhakti_vacana"
 
 
 def cond(state: State) -> bool:
+    # Generic helper (opt-in): if caller wants vibhakti selection from adhikaraṇa,
+    # set vibhakti-vacana for **4.1.2** sup attachment.
+    #
+    # This keeps the default engine policy unchanged (recipes typically supply
+    # vibhakti-vacana explicitly).  Here, 2.3.36 is allowed to *write* meta but
+    # never *read* paradigm coordinates (CONSTITUTION Art. 2).
+    if (
+        state.meta.get(META_AUTO_SET_VIBHAKTI_VACANA)
+        and not state.meta.get("vibhakti_vacana")
+        and isinstance(state.samjna_registry.get(REG_1_4_45_ADH), frozenset)
+        and state.samjna_registry.get(REG_1_4_45_ADH)
+    ):
+        return True
     if not state.meta.get("prakriya_sAlIya"):
         return False
     prev = state.samjna_registry.get(REG_1_4_45_ADH)
@@ -39,6 +54,16 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    if (
+        state.meta.get(META_AUTO_SET_VIBHAKTI_VACANA)
+        and not state.meta.get("vibhakti_vacana")
+        and isinstance(state.samjna_registry.get(REG_1_4_45_ADH), frozenset)
+        and state.samjna_registry.get(REG_1_4_45_ADH)
+    ):
+        # adhikaraṇa → saptamī ekavacana (ङि) for sup attachment by 4.1.2
+        state.meta["vibhakti_vacana"] = "7-1"
+        state.samjna_registry[REGISTRY_KEY_AUTO_VV] = "7-1"
+        return state
     loc = state.meta.get(META_LOCATIVE)
     assert isinstance(loc, str) and loc
     state.samjna_registry[REGISTRY_KEY] = loc

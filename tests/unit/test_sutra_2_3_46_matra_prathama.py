@@ -45,7 +45,7 @@ def test_preflight_schedules_2_3_1_and_2_3_46_when_eligible():
     # Later preflight rules (e.g. 4.1.1) are numerically past 2.3.73, so
     # ``purge_closed_adhikaras`` clears the 2.3.1 stack entry — expected.
     assert any(
-        step["sutra_id"] == "2.3.1" and step.get("status") == "APPLIED"
+        step["sutra_id"] == "2.3.1" and step.get("status") == "AUDIT"
         for step in s1.trace
     )
 

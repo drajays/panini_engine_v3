@@ -2,9 +2,9 @@
 engine/trace.py — TraceStep schema and trace helpers.
 ──────────────────────────────────────────────────────
 
-Schema (v3.1):
+Schema (v3.2):
     sutra_id / sutra_type / type_label / form_before / form_after /
-    why_dev / status ∈ {APPLIED, SKIPPED, BLOCKED}
+    why_dev / status ∈ {APPLIED, APPLIED_VACUOUS, AUDIT, SKIPPED, BLOCKED}
     gate_reason  : present when status == "BLOCKED"
     skip_reason  : present when status == "SKIPPED"
     skip_detail  : optional, human *śāstrīya* gloss for *COND-FALSE* (sūtra file)
@@ -29,8 +29,15 @@ from typing import Any, Dict, List, Optional
 
 TRACE_STATUS_APPLIED = "APPLIED"
 TRACE_STATUS_APPLIED_VACUOUS = "APPLIED_VACUOUS"
+# अधिकार / परिभाषा / अनुवाद: cond true, *prayoga* checked, typically no *varṇa* change.
+TRACE_STATUS_AUDIT = "AUDIT"
 TRACE_STATUS_SKIPPED = "SKIPPED"
 TRACE_STATUS_BLOCKED = "BLOCKED"
+
+# Cond passed and the sūtra ran (excludes gate-*skip* and COND-false only).
+TRACE_STATUSES_FIRED: frozenset[str] = frozenset((
+    TRACE_STATUS_APPLIED, TRACE_STATUS_APPLIED_VACUOUS, TRACE_STATUS_AUDIT,
+))
 
 # Dispatcher-only: *vidhi* ran (cond satisfied vacuously) for **1.3.9** when there is
 # no *it* row to *lop* — still a checked application, not **COND-FALSE** skip.
@@ -66,6 +73,20 @@ def make_applied_step(sutra_id, sutra_type, type_label,
         "form_after"  : form_after,
         "why_dev"     : why_dev,
         "status"      : TRACE_STATUS_APPLIED,
+    }
+
+
+def make_audit_step(sutra_id, sutra_type, type_label,
+                    form_before, form_after, why_dev):
+    """*Prayoga* recorded without classifying as a *vidhi* / *saṃjñā* *ādeśa* (see AUDIT)."""
+    return {
+        "sutra_id"    : sutra_id,
+        "sutra_type"  : sutra_type,
+        "type_label"  : type_label,
+        "form_before" : form_before,
+        "form_after"  : form_after,
+        "why_dev"     : why_dev,
+        "status"      : TRACE_STATUS_AUDIT,
     }
 
 

@@ -124,10 +124,10 @@ class SIGCollector:
     """
 
     def __init__(self) -> None:
-        # fire_stats[sid] = {"APPLIED": n, "SKIPPED": n, "BLOCKED": n,
+        # fire_stats[sid] = {"APPLIED": n, "AUDIT": n, "SKIPPED": n, "BLOCKED": n,
         #                    "total_time_ns": int, "samples_ns": [int, ...]}
         self.fire_stats : Dict[str, Dict[str, Any]] = defaultdict(
-            lambda: {"APPLIED": 0, "SKIPPED": 0, "BLOCKED": 0,
+            lambda: {"APPLIED": 0, "AUDIT": 0, "SKIPPED": 0, "BLOCKED": 0,
                      "total_time_ns": 0, "samples_ns": []}
         )
         # edge_stats[(src, dst)] = {"count": n, "paradigms": set}
@@ -169,7 +169,7 @@ class SIGCollector:
             status = step.get("status", _APPLIED_STATUS)
             if status == _APPLIED_VACUOUS:
                 self.fire_stats[sid]["APPLIED"] += 1
-            elif status in ("APPLIED", "SKIPPED", "BLOCKED"):
+            elif status in ("APPLIED", "AUDIT", "SKIPPED", "BLOCKED"):
                 self.fire_stats[sid][status] += 1
 
         chrono_seq = extract_chronological_sutra_sequence(trace)

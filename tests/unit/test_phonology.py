@@ -69,3 +69,9 @@ def test_joiner_basic_devanagari():
     out = slp1_to_devanagari(varnas)
     assert "र" in out
     assert "म" in out
+
+
+def test_joiner_sAlIyaH_slp1_flat_to_devanagari():
+    # SLP1 string → varṇa list → joiner (same path as State.flat_dev / UI trace).
+    varnas = parse_slp1_upadesha_sequence("SAlIyaH")
+    assert slp1_to_devanagari(varnas) == "शालीयः"

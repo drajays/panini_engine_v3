@@ -22,6 +22,8 @@ function statusIcon(step) {
   if (step._is_structural) return "◈";
   switch (step.status) {
     case "APPLIED" : return "✓";
+    case "APPLIED_VACUOUS" : return "○";
+    case "AUDIT"  : return "⟡";
     case "BLOCKED" : return "✗";
     case "SKIPPED" : return "·";
     default        : return "?";
@@ -38,6 +40,17 @@ function renderTrace(trace) {
   });
 }
 
+function _traceStepInFilter(step, active) {
+  if (step._is_structural) {
+    return active.has("STRUCTURAL");
+  }
+  const st = step.status || "APPLIED";
+  if (st === "APPLIED_VACUOUS") {
+    return active.has("APPLIED");
+  }
+  return active.has(st);
+}
+
 function applyTraceFilter() {
   const active = new Set(
     Array.from(document.querySelectorAll("#trace-filter input:checked"))
@@ -46,10 +59,9 @@ function applyTraceFilter() {
   const ol = document.getElementById("trace");
   ol.innerHTML = "";
   _currentTrace.forEach((step, idx) => {
-    const bucket = step._is_structural
-      ? "STRUCTURAL"
-      : (step.status || "APPLIED");
-    if (!active.has(bucket)) return;
+    if (!_traceStepInFilter(step, active)) {
+      return;
+    }
     ol.appendChild(renderStep(step, idx));
   });
 }

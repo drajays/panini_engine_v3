@@ -22,7 +22,13 @@ SAMJNA_KEY = "4.2.113_prAcya_bharata_dvyaca_note"
 def cond(state: State) -> bool:
     if not adhikara_in_effect("4.2.113", state, "4.1.82"):
         return False
-    return state.samjna_registry.get(SAMJNA_KEY) is None
+    if state.samjna_registry.get(SAMJNA_KEY) is not None:
+        return False
+    # Glass-box *prayoga* is for *dvyaca* / *prācyabhārata* tracks; *śālā* ākāra-anta
+    # *taddhita* recipe does not activate this — *COND-FALSE* (SKIPPED) when flagged.
+    if state.meta.get("prakriya_sAlIya"):
+        return False
+    return True
 
 
 def act(state: State) -> State:

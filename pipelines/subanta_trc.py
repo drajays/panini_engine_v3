@@ -16,6 +16,7 @@ from engine       import apply_rule
 from engine.state import State, Term
 
 from pipelines.subanta import build_initial_state
+from core.canonical_pipelines import P01_subanta_bootstrap
 
 
 def _pada_merge(state: State) -> None:
@@ -52,36 +53,8 @@ def derive_trc_nom_sg(
     if s.terms:
         s.terms[0].meta["trc_rikaranta"] = True
 
-    s = apply_rule("1.4.14", s)
-    s = apply_rule("4.1.1", s)
-    s = apply_rule("1.1.1", s)
-    s = apply_rule("1.1.73", s)
-    s = apply_rule("1.1.2", s)
-    s = apply_rule("1.1.3", s)
-    s = apply_rule("1.1.7", s)
-    s = apply_rule("1.1.60", s)  # *lopa* saṃjñā
-    s = apply_rule("1.1.61", s)  # *luk* / *ślu* / *lup*
-    s = apply_rule("1.1.62", s)  # *pratyayalope pratyayalakṣaṇam*
-    s = apply_rule("1.1.63", s)  # *na lumatā … aṅgasya pratyayalakṣaṇam*
-    s = apply_rule("1.1.8", s)
-    s = apply_rule("1.1.9", s)
-    s = apply_rule("1.1.10", s)
-    s = apply_rule("1.1.11", s)
-    s = apply_rule("1.1.12", s)
-    s = apply_rule("1.1.13", s)
-    s = apply_rule("1.1.14", s)
-    s = apply_rule("1.1.100", s)
-    s = apply_rule("1.1.15", s)
-    s = apply_rule("1.1.16", s)
-    s = apply_rule("1.1.17", s)
-    s = apply_rule("1.1.18", s)
-    s = apply_rule("1.1.19", s)
-    s = apply_rule("1.1.20", s)
-    s = apply_rule("1.1.21", s)
-    s = apply_rule("1.1.46", s)
-    s = apply_rule("1.1.22", s)
-    s = apply_rule("1.1.23", s)
-    s = apply_rule("1.1.24", s)
+    # Canonical preflight spine (shared, dispatcher-only scheduling).
+    s = P01_subanta_bootstrap(s)
     s = apply_rule("4.1.2", s)
 
     s = apply_rule("1.3.2", s)

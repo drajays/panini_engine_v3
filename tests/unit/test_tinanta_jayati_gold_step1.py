@@ -71,8 +71,10 @@ def test_step1_dhatu_samjna_and_lopa_register() -> None:
 
 
 def test_step1_trace_includes_core_sutras() -> None:
+    from engine.trace import TRACE_STATUSES_FIRED
+
     s = run_jayati_gold_step1()
-    ids = [e.get("sutra_id") for e in s.trace if e.get("status") == "APPLIED"]
+    ids = [e.get("sutra_id") for e in s.trace if e.get("status") in TRACE_STATUSES_FIRED]
     assert "1.1.60" in ids
     assert "1.3.1" in ids
     assert "1.3.10" in ids
@@ -289,7 +291,7 @@ def test_step8_checkpoint_jayati() -> None:
     assert s.terms[0].meta.get("eco_ayavayava_done") is True
     last3 = [e for e in s.trace if e.get("sutra_id") in ("6.1.72", "6.1.77", "6.1.78")]
     st = {e.get("sutra_id"): e.get("status") for e in last3 if e.get("sutra_id")}
-    assert st.get("6.1.72") == "APPLIED"
+    assert st.get("6.1.72") == "AUDIT"
     assert st.get("6.1.77") == "SKIPPED"
     assert st.get("6.1.78") == "APPLIED"
 
@@ -313,8 +315,8 @@ def test_step9_tripadi_audit_jayati_unchanged() -> None:
     assert s.meta.get("gold_jayati_step9_tripadi_audit", {}).get("tripadi_8_2_1") is True
     last83 = [e for e in s.trace if e.get("sutra_id") in ("8.1.16", "8.2.1", "8.2.66")]
     st = {e.get("sutra_id"): e.get("status") for e in last83 if e.get("sutra_id")}
-    assert st.get("8.1.16") == "APPLIED"
-    assert st.get("8.2.1") == "APPLIED"
+    assert st.get("8.1.16") == "AUDIT"
+    assert st.get("8.2.1") == "AUDIT"
     assert st.get("8.2.66") == "SKIPPED"
 
 

@@ -19,7 +19,7 @@ def test_derive_salIya_surface_and_core_rules():
     s = derive_salIya()
     assert s.flat_slp1() == "SAlIya"
     steps = {step["sutra_id"]: step.get("status") for step in s.trace}
-    assert steps.get("4.1.4") == "SKIPPED"  # ā-anta *śālā* — no *ṭāp* insert (**4.1.4** *ajādi* slice)
+    # 4.1.3/4.1.4 are not scheduled: *śālā* is already ṭāp-anta in this recipe.
     # चरण २: **4.1.82** right after *sup* (**4.1.2**), then **4.1.83** + **4.3.53**
     tids = [x["sutra_id"] for x in s.trace]
     i2 = tids.index("4.1.2")
@@ -38,14 +38,17 @@ def test_derive_salIya_surface_and_core_rules():
         tids.index("4.2.92"),
         tids.index("4.2.114"),
     )
-    t271, t2113 = tids.index("4.2.71"), tids.index("4.2.113")
     t1246 = tids.index("1.2.46")
-    assert i162 < t311 < t312 < t313 < t476 < t292 < t4114 < t271 < t2113 < t1246
-    ids = [step["sutra_id"] for step in s.trace if step.get("status") == "APPLIED"]
+    assert i162 < t311 < t312 < t313 < t476 < t292 < t4114 < t1246
+    from engine.trace import TRACE_STATUSES_FIRED
+
+    ids = [
+        step["sutra_id"] for step in s.trace
+        if step.get("status") in TRACE_STATUSES_FIRED
+    ]
     for required in (
         "4.1.1",
         "1.2.45",
-        "4.1.3",
         "4.1.2",
         "4.1.82",
         "4.1.83",
@@ -62,20 +65,29 @@ def test_derive_salIya_surface_and_core_rules():
         "4.1.76",
         "4.2.92",
         "4.2.114",
-        "4.2.71",
-        "4.2.113",
         "1.2.46",
         "2.4.71",
+        "1.1.60",
+        "1.1.61",
         "1.4.13",
         "6.4.1",
+        "1.1.54",
         "7.1.2",
         "1.3.10",
         "1.4.18",
         "6.4.129",
+        "1.1.52",
         "6.4.148",
-        "1.1.60",
     ):
         assert required in ids
+
+    t71 = next(x for x in s.trace if x.get("sutra_id") == "4.2.71")
+    t113 = next(x for x in s.trace if x.get("sutra_id") == "4.2.113")
+    assert t71.get("status") == "SKIPPED"
+    assert t113.get("status") == "SKIPPED"
+    assert tids.index("4.2.114") < tids.index("4.2.71") < tids.index("4.2.113")
+    assert tids.index("4.2.113") < tids.index("1.2.46")
+    assert tids.index("2.4.71") < tids.index("1.1.60") < tids.index("1.1.61")
 
 
 def test_derive_salIya_merge_optional():
@@ -143,7 +155,7 @@ def test_carana8_2_4_71_supo_luk_internal_su_taddhita_stays():
     assert not any("sup" in t.tags for t in s.terms)
     tids = [x["sutra_id"] for x in s.trace]
     assert tids.index("1.2.46") < tids.index("2.4.71")
-    assert "2.4.71" in {x["sutra_id"] for x in s.trace if x.get("status") == "APPLIED"}
+    assert "2.4.71" in {x["sutra_id"] for x in s.trace if x.get("status") in ("APPLIED", "AUDIT")}
     aMga = s.terms[0]
     tdd = next(t for t in s.terms if t.kind == "pratyaya" and "taddhita" in t.tags)
     assert "sup" not in tdd.tags
@@ -209,7 +221,7 @@ def test_carana11_bha_1_4_18_bhasya_6_4_129_6_4_148_anta_lopa():
     assert "bha" in aMga.tags
     assert s.samjna_registry.get("1.4.18_bha_anga_indices") == frozenset({0})
     t129 = s.trace[tids.index("6.4.129")]
-    assert t129.get("status") == "APPLIED"
+    assert t129.get("status") == "AUDIT"
     assert tids.index("1.4.18") < tids.index("6.4.129") < tids.index("6.4.148")
     st148 = s.trace[tids.index("6.4.148")]
     assert st148.get("status") == "APPLIED"

@@ -58,14 +58,16 @@ def validate_trace_against_whitelist(
     allowed: frozenset[str] | set[str] | None = None,
 ) -> list[str]:
     """
-    Return *sūtra* ids that appear *APPLIED* in ``s.trace`` but are *not* in
-    ``allowed`` (default: ``WHITELIST``).  Empty list ⇒ all *APPLIED* rows are
-    in the set (structural / ``__MERGE__`` steps ignored).
+    Return *sūtra* ids that *fired* (APPLIED / APPLIED_VACUOUS / AUDIT) in
+    ``s.trace`` but are *not* in ``allowed`` (default: ``WHITELIST``).  Empty list
+    ⇒ all such rows are in the set (structural / ``__MERGE__`` steps ignored).
     """
+    from engine.trace import TRACE_STATUSES_FIRED
+
     allow = WHITELIST if allowed is None else allowed
     bad: list[str] = []
     for row in s.trace:
-        if row.get("status") != "APPLIED":
+        if row.get("status") not in TRACE_STATUSES_FIRED:
             continue
         sid = row.get("sutra_id")
         if not sid or sid == "__MERGE__":

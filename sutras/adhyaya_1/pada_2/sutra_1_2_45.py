@@ -20,6 +20,8 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state  import State, Term
+from engine.it_phonetic import term_phonetic_slp1
+from engine.registries.lexicon_lookup import is_in_dhatupatha, is_known_pratyaya
 
 _REGISTRY_KEY = "1.2.45_arthavad_pratipadika_indices"
 
@@ -46,10 +48,27 @@ def _term_eligible(t: Term) -> bool:
 
 
 def _indices_to_add(state: State) -> frozenset[int]:
+    # 1.2.45 is the **avyutpanna** prātipadika gate. Once any pratyaya has been
+    # attached, prātipadika for this community must come from 1.2.46 instead.
+    if any("pratyaya" in t.tags for t in state.terms):
+        return frozenset()
     prev = state.samjna_registry.get(_REGISTRY_KEY)
     if not isinstance(prev, frozenset):
         prev = frozenset()
-    return frozenset(i for i in _eligible_terms(state) if i not in prev)
+    add: set[int] = set()
+    for i in _eligible_terms(state):
+        if i in prev:
+            continue
+        t = state.terms[i]
+        slp1 = (t.meta.get("upadesha_slp1") or "").strip() or term_phonetic_slp1(t)
+        # adhātu: neither tagged as dhātu, nor present in dhātupāṭha registry
+        if is_in_dhatupatha(slp1):
+            continue
+        # apratyaya: neither tagged as pratyaya, nor present in pratyaya inventory
+        if is_known_pratyaya(slp1):
+            continue
+        add.add(i)
+    return frozenset(add)
 
 
 def cond(state: State) -> bool:

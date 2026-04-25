@@ -23,7 +23,14 @@ SAMJNA_KEY = "4.2.71_or_aR_applicable"
 def cond(state: State) -> bool:
     if not adhikara_in_effect("4.2.71", state, "4.1.82"):
         return False
-    return state.samjna_registry.get(SAMJNA_KEY) is None
+    if state.samjna_registry.get(SAMJNA_KEY) is not None:
+        return False
+    # *O*rantād eva *ora*-*aR*; आकारादौ (शाला) *prayoga* न — COND-FALSE, no vacuous
+    # registry row (display as SKIPPED in *trace* when recipe schedules audit).
+    if state.terms and state.terms[0].varnas and state.terms[0].kind == "prakriti":
+        if state.terms[0].varnas[-1].slp1 != "o":
+            return False
+    return True
 
 
 def act(state: State) -> State:
