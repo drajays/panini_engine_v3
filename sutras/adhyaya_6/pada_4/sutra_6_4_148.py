@@ -1,53 +1,108 @@
 """
 6.4.148  यस्येति च  —  VIDHI
 
-"Of an aṅga whose final is 'a' or 'i' (+ long variants), before an
- it-initial pratyaya, the final vowel is elided (lopa)."
+Reading *aṅgasya* from **6.4.1** and *bhasya* from **6.4.129**: the *aṅga*'s
+final vowel is elided before an affix whose onset is *i* / *ī* (SLP1 ``i`` /
+``I``).
 
-Reading after anuvṛtti from 6.4.1 (aṅgasya): the *final* vowel of an
-aṅga is deleted when the following pratyaya starts with 'i' / 'I'.
+For **sup**-final pratyayas, the *aṅga* must carry the *bha* tag from **1.4.18**
+(*yaci bham*) so this rule fires only in the *bhādhikāra* scope intended for
+*svādi* (*ac* / *yaṭ*-onset *asarvanāmasthāna* affixes).  Non-**sup** affixes
+keep the older engine slice (dīrgha *ā* / *ī* only) without a *bha* check, so
+*taddhita* prakriyā examples can still schedule **6.4.148** when **6.4.129** is
+open (without requiring the **1.4.18** *bha* tag on **sup**).
 
-Representative logic here — full Pāṇinian nuance (all ā-stem vs.
-i-stem distinctions) is handled by additional conditions in a
-production file.
+Recipe exclusions: **a**+short **i** (→ **6.1.87** *guṇa*); **i**+**i**; and
+**a**+**ī** before *sarvanāmasthāna* / **O** / **Si**/**SI** surfaces so
+napuṃsaka dual **O** paths stay **jñāne**-style, not *lopa*.
 """
+from __future__ import annotations
+
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.gates  import adhikara_in_effect
 from engine.state  import State
 
 
-_FINAL_OK  = frozenset({"A", "I"})      # only dīrgha a/i — hrasva-a goes via guṇa
-_NEXT_OK   = frozenset({"i", "I"})
+_NEXT_OK = frozenset({"i", "I"})
+
+
+def _finals_for_pair(anga, pr) -> frozenset[str]:
+    if "sup" in pr.tags:
+        if "bha" not in anga.tags:
+            return frozenset()
+        return frozenset({"a", "A", "i", "I"})
+    return frozenset({"A", "I"})
+
+
+def _itika_pha_ayana_anga_a_lopa(state: State) -> tuple[int, int] | None:
+    """
+    *Narrow:* ``prakriya_itika_phak`` + **1.4.18** *bha*; **7.1.2** has
+    replaced *Pak* by *Āyana*; lopa of *aṅgāntya* *a* before initial *A*
+    of *Āyana* (6.4.129 + *yacy* *bha* pedagogy; not the general *i* / *ī* pair).
+    """
+    if not state.meta.get("prakriya_itika_phak"):
+        return None
+    for i in range(len(state.terms) - 1):
+        anga, nxt = state.terms[i], state.terms[i + 1]
+        if "anga" not in anga.tags or "bha" not in anga.tags:
+            continue
+        if "taddhita" not in nxt.tags or not nxt.varnas:
+            continue
+        if not nxt.meta.get("7_1_2_phadi_done"):
+            continue
+        if nxt.meta.get("upadesha_slp1") != "Ayana":
+            continue
+        if not anga.varnas or anga.varnas[-1].slp1 != "a":
+            continue
+        if nxt.varnas[0].slp1 != "A":
+            continue
+        return (i, len(anga.varnas) - 1)
+    return None
 
 
 def _find_target(state: State):
-    """Return (term_idx, varna_idx) of the aṅga-final vowel to delete,
-    or None.
-
-    v3.1 correction: hrasva 'a' is EXCLUDED from this rule — when
-    hrasva-a meets i/ī the correct output is guṇa 'e' via 6.1.87,
-    not lopa.  6.4.148 applies to dīrgha stems (ā/ī) where the
-    vowel is dropped wholesale before the i-pratyaya.
-    """
     if len(state.terms) < 2:
         return None
+    if not adhikara_in_effect("6.4.148", state, "6.4.1"):
+        return None
+    if not adhikara_in_effect("6.4.148", state, "6.4.129"):
+        return None
+    hit0 = _itika_pha_ayana_anga_a_lopa(state)
+    if hit0 is not None:
+        return hit0
     for i in range(len(state.terms) - 1):
         anga = state.terms[i]
-        nxt  = state.terms[i + 1]
+        nxt = state.terms[i + 1]
         if "anga" not in anga.tags:
             continue
         if not anga.varnas or not nxt.varnas:
             continue
+        finals_ok = _finals_for_pair(anga, nxt)
+        if not finals_ok:
+            continue
         last = anga.varnas[-1]
         first = nxt.varnas[0]
-        if last.slp1 in _FINAL_OK and first.slp1 in _NEXT_OK:
-            return (i, len(anga.varnas) - 1)
+        if last.slp1 not in finals_ok or first.slp1 not in _NEXT_OK:
+            continue
+        # Hrasva-a + short *i* is **6.1.87** *guṇa* (e.g. *rāma* + *ṭā* → *rāmeṇa*), not
+        # this *lopa*.  Keep *a* + long *ī* (*I*) for *deva* + *ṅīp* → *dev* + *ī*.
+        if last.slp1 == "a" and first.slp1 == "i":
+            continue
+        # *ikārānta* + affix-initial short *i* (e.g. *hari* + *Ni* → *harau*) — not this lopa.
+        if last.slp1 == "i" and first.slp1 == "i":
+            continue
+        # *a* + *ī* before *sarvanāmasthāna* / dual-*O* paths is not this *lopa*
+        # (e.g. *jñāna* + dual → *jñāne*; meta may still read ``O`` or ``Si``).
+        if last.slp1 == "a" and first.slp1 == "I":
+            if "sarvanamasthana" in nxt.tags:
+                continue
+            if nxt.meta.get("upadesha_slp1") in ("O", "Si", "SI"):
+                continue
+        return (i, len(anga.varnas) - 1)
     return None
 
 
 def cond(state: State) -> bool:
-    if not adhikara_in_effect("6.4.148", state, "6.4.1"):
-        return False
     return _find_target(state) is not None
 
 
@@ -66,8 +121,8 @@ SUTRA = SutraRecord(
     text_slp1      = "yasyeti ca (aNgasya)",
     text_dev       = "यस्येति च (अङ्गस्य)",
     padaccheda_dev = "यस्य इति च — अङ्गस्य",
-    why_dev        = "इ-आदि-प्रत्यये परे अङ्गस्य अन्त्यस्य अ/इ-वर्णस्य लोपः।",
-    anuvritti_from = ("6.4.1",),
+    why_dev        = "भाधिकारे इत्यादौ परे अङ्गान्त्यस्य अ/इ-वर्णस्य लोपः।",
+    anuvritti_from = ("6.4.1", "6.4.129"),
     cond           = cond,
     act            = act,
 )

@@ -1,9 +1,13 @@
 """
 7.3.84  सार्वधातुकार्धधातुकयोः  —  VIDHI
 
-Narrow v3: before a following **sārvadhātuka** or **ārdhadhātuka** affix,
-replace the **final ``ik`` vowel** of the dhātu *aṅga* with its **guṇa**
-substitute (1.1.2 / इको गुणवृद्धी operational slice).
+When the **first** affix **immediately after** the *dhātu* *Term* is *sārvadhātuka*
+or *ārdhadhātuka* (``is_sarvadhatuka_upadesha_slp1``, ``sarvadhatuka_3_4_113`` tag,
+or ``ardhadhatuka`` / ``sarvadhatuka`` tags — as with *kṛt* **tfc**), replace the
+**final ``ik`` vowel** of that *dhātu* with its **guṇa** substitute.
+
+Covers **kṛdanta** ``[dhātu, kṛt]`` and **tin**anta ``[dhātu, śap, tiṅ]`` (trigger
+on *Sap* / *tip* *upadeśa*), not only ``terms[-1]`` *kṛt*.
 
 ṛ/ṝ → ``a`` with **1.1.51** (उरण् रपरः) completing ``ar`` / ``ar``…
 """
@@ -13,6 +17,8 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology    import mk
 from phonology.pratyahara import IK
+
+from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import is_sarvadhatuka_upadesha_slp1
 
 
 _IK_GUNA = {
@@ -27,14 +33,36 @@ def _ik_letter(ch: str) -> bool:
     return ch in IK or ch in ("I", "U", "F", "X")
 
 
+def _first_dhatu_index(state: State) -> int | None:
+    for i, t in enumerate(state.terms):
+        if "dhatu" in t.tags:
+            return i
+    return None
+
+
+def _sarvadhatuka_or_ardhadhatuka_following_dhatu(state: State, di: int) -> bool:
+    """True iff ``terms[di+1]`` is the *pare* *sārvadhātuka* / *ārdhadhātuka* trigger."""
+    if di + 1 >= len(state.terms):
+        return False
+    nxt = state.terms[di + 1]
+    up = (nxt.meta.get("upadesha_slp1") or "").strip()
+    if is_sarvadhatuka_upadesha_slp1(up):
+        return True
+    if "ardhadhatuka" in nxt.tags or "sarvadhatuka" in nxt.tags:
+        return True
+    if "sarvadhatuka_3_4_113" in nxt.tags:
+        return True
+    return False
+
+
 def cond(state: State) -> bool:
-    if len(state.terms) < 2:
+    di = _first_dhatu_index(state)
+    if di is None:
         return False
-    d0 = state.terms[0]
-    pr = state.terms[-1]
-    if "dhatu" not in d0.tags or "krt" not in pr.tags:
+    d0 = state.terms[di]
+    if "dhatu" not in d0.tags:
         return False
-    if not (("ardhadhatuka" in pr.tags) or ("sarvadhatuka" in pr.tags)):
+    if not _sarvadhatuka_or_ardhadhatuka_following_dhatu(state, di):
         return False
     if d0.meta.get("anga_guna_7_3_84"):
         return False
@@ -45,7 +73,9 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    d0 = state.terms[0]
+    di = _first_dhatu_index(state)
+    assert di is not None
+    d0 = state.terms[di]
     last = d0.varnas[-1].slp1
     rep = _IK_GUNA.get(last, last)
     d0.varnas[-1] = mk(rep)
@@ -63,7 +93,10 @@ SUTRA = SutraRecord(
     text_slp1      = "sArvaDAtukArDaDAtukayoH",
     text_dev       = "सार्वधातुकार्धधातुकयोः",
     padaccheda_dev = "सार्वधातुक-आर्धधातुकयोः",
-    why_dev        = "अङ्गान्त्यिकः गुण आर्धधातुके/सार्वधातुके परे (तृच्-पथ)।",
+    why_dev        = (
+        "अङ्गान्तिकः गुणः — धातोः परतरं सार्वधातुके वा आर्धधातुके वा "
+        "(तिङ्-शित्-सूची, तृच्-आदि)।"
+    ),
     anuvritti_from = ("7.3.83",),
     cond           = cond,
     act            = act,

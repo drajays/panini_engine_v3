@@ -1,0 +1,8 @@
+{
+  "_doc": "Gold laṭ prathamā eka — ṇīñ (RIY) → nayati; steps 1–8 same spine as jayati; step 9 applies 6.1.65 before Tripāḍī entry.",
+  "id": "nayati_lat_prathama_eka",
+  "surface_target_slp1": "nayati",
+  "dhatupatha_row_id": "BvAdi_950",
+  "recipe": "pipelines.tinanta_nayati_gold:run_nayati_gold_through_step",
+  "recipe_args": [9]
+}

@@ -1,0 +1,8 @@
+{
+  "_doc": "Gold laṭ prathamā eka — tṛ (tF) → tarati; curated row BvAdi_951 (bhvādi-style spine); step 7 uses 7.3.84 + 1.1.51 (ṝ→ar).",
+  "id": "tarati_lat_prathama_eka",
+  "surface_target_slp1": "tarati",
+  "dhatupatha_row_id": "BvAdi_951",
+  "recipe": "pipelines.tinanta_tarati_gold:run_tarati_gold_through_step",
+  "recipe_args": [9]
+}

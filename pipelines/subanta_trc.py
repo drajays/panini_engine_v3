@@ -55,9 +55,14 @@ def derive_trc_nom_sg(
     s = apply_rule("1.4.14", s)
     s = apply_rule("4.1.1", s)
     s = apply_rule("1.1.1", s)
+    s = apply_rule("1.1.73", s)
     s = apply_rule("1.1.2", s)
     s = apply_rule("1.1.3", s)
     s = apply_rule("1.1.7", s)
+    s = apply_rule("1.1.60", s)  # *lopa* saṃjñā
+    s = apply_rule("1.1.61", s)  # *luk* / *ślu* / *lup*
+    s = apply_rule("1.1.62", s)  # *pratyayalope pratyayalakṣaṇam*
+    s = apply_rule("1.1.63", s)  # *na lumatā … aṅgasya pratyayalakṣaṇam*
     s = apply_rule("1.1.8", s)
     s = apply_rule("1.1.9", s)
     s = apply_rule("1.1.10", s)
@@ -73,6 +78,7 @@ def derive_trc_nom_sg(
     s = apply_rule("1.1.19", s)
     s = apply_rule("1.1.20", s)
     s = apply_rule("1.1.21", s)
+    s = apply_rule("1.1.46", s)
     s = apply_rule("1.1.22", s)
     s = apply_rule("1.1.23", s)
     s = apply_rule("1.1.24", s)
@@ -86,6 +92,7 @@ def derive_trc_nom_sg(
     s = apply_rule("1.3.7", s)
     s = apply_rule("1.3.8", s)
     s = apply_rule("1.3.9", s)
+    s = apply_rule("1.3.10", s)
 
     s = apply_rule("6.4.1", s)
     s = apply_rule("7.1.94", s)
@@ -99,5 +106,6 @@ def derive_trc_nom_sg(
     s = apply_rule("8.2.66", s)
     s = apply_rule("8.3.15", s)
     s = apply_rule("8.3.59", s)
+    s = apply_rule("8.4.1", s)
     s = apply_rule("8.4.2", s)
     return s

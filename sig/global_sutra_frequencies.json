@@ -1,0 +1,981 @@
+{
+  "description": "Per sūtra: how often ``apply_rule`` visited it, status breakdown, and accumulated wall time (from timed replays if provided).",
+  "sutras": [
+    {
+      "APPLIED": 5,
+      "BLOCKED": 0,
+      "SKIPPED": 241,
+      "apply_rule_invocations": 246,
+      "sutra_id": "1.3.5",
+      "total_time_ns": 8026034
+    },
+    {
+      "APPLIED": 23,
+      "BLOCKED": 0,
+      "SKIPPED": 223,
+      "apply_rule_invocations": 246,
+      "sutra_id": "1.3.7",
+      "total_time_ns": 14118127
+    },
+    {
+      "APPLIED": 246,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 246,
+      "sutra_id": "1.3.9",
+      "total_time_ns": 10007586
+    },
+    {
+      "APPLIED": 9,
+      "BLOCKED": 0,
+      "SKIPPED": 120,
+      "apply_rule_invocations": 129,
+      "sutra_id": "1.3.2",
+      "total_time_ns": 3812041
+    },
+    {
+      "APPLIED": 19,
+      "BLOCKED": 0,
+      "SKIPPED": 110,
+      "apply_rule_invocations": 129,
+      "sutra_id": "1.3.3",
+      "total_time_ns": 3541998
+    },
+    {
+      "APPLIED": 44,
+      "BLOCKED": 0,
+      "SKIPPED": 85,
+      "apply_rule_invocations": 129,
+      "sutra_id": "1.3.4",
+      "total_time_ns": 3629915
+    },
+    {
+      "APPLIED": 0,
+      "BLOCKED": 0,
+      "SKIPPED": 129,
+      "apply_rule_invocations": 129,
+      "sutra_id": "1.3.6",
+      "total_time_ns": 12349581
+    },
+    {
+      "APPLIED": 29,
+      "BLOCKED": 0,
+      "SKIPPED": 100,
+      "apply_rule_invocations": 129,
+      "sutra_id": "1.3.8",
+      "total_time_ns": 3371080
+    },
+    {
+      "APPLIED": 121,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 121,
+      "sutra_id": "1.1.2",
+      "total_time_ns": 1868002
+    },
+    {
+      "APPLIED": 121,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 121,
+      "sutra_id": "1.1.3",
+      "total_time_ns": 2060501
+    },
+    {
+      "APPLIED": 121,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 121,
+      "sutra_id": "1.1.60",
+      "total_time_ns": 2206874
+    },
+    {
+      "APPLIED": 121,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 121,
+      "sutra_id": "1.3.10",
+      "total_time_ns": 4178551
+    },
+    {
+      "APPLIED": 2,
+      "BLOCKED": 0,
+      "SKIPPED": 119,
+      "apply_rule_invocations": 121,
+      "sutra_id": "6.1.77",
+      "total_time_ns": 9741996
+    },
+    {
+      "APPLIED": 14,
+      "BLOCKED": 0,
+      "SKIPPED": 107,
+      "apply_rule_invocations": 121,
+      "sutra_id": "6.1.78",
+      "total_time_ns": 58739708
+    },
+    {
+      "APPLIED": 121,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 121,
+      "sutra_id": "6.4.1",
+      "total_time_ns": 3851329
+    },
+    {
+      "APPLIED": 121,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 121,
+      "sutra_id": "8.2.1",
+      "total_time_ns": 4502997
+    },
+    {
+      "APPLIED": 35,
+      "BLOCKED": 0,
+      "SKIPPED": 86,
+      "apply_rule_invocations": 121,
+      "sutra_id": "8.2.66",
+      "total_time_ns": 4550207
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.1",
+      "total_time_ns": 1773504
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.10",
+      "total_time_ns": 2031833
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.100",
+      "total_time_ns": 2261551
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.11",
+      "total_time_ns": 3114128
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.12",
+      "total_time_ns": 2051541
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.13",
+      "total_time_ns": 2983747
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.14",
+      "total_time_ns": 2197458
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.15",
+      "total_time_ns": 2230130
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.16",
+      "total_time_ns": 2365751
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.17",
+      "total_time_ns": 2126254
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.18",
+      "total_time_ns": 2174875
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.19",
+      "total_time_ns": 2211795
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.20",
+      "total_time_ns": 2223577
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.21",
+      "total_time_ns": 2391374
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.22",
+      "total_time_ns": 2548044
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.23",
+      "total_time_ns": 2445253
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.24",
+      "total_time_ns": 7320749
+    },
+    {
+      "APPLIED": 24,
+      "BLOCKED": 0,
+      "SKIPPED": 93,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.27",
+      "total_time_ns": 2796413
+    },
+    {
+      "APPLIED": 3,
+      "BLOCKED": 0,
+      "SKIPPED": 114,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.42",
+      "total_time_ns": 3781170
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.46",
+      "total_time_ns": 2423956
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.61",
+      "total_time_ns": 2170874
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.62",
+      "total_time_ns": 1938624
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.63",
+      "total_time_ns": 2223793
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.7",
+      "total_time_ns": 1859080
+    },
+    {
+      "APPLIED": 48,
+      "BLOCKED": 0,
+      "SKIPPED": 69,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.73",
+      "total_time_ns": 2241123
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.8",
+      "total_time_ns": 2058915
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.1.9",
+      "total_time_ns": 1936623
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.2.45",
+      "total_time_ns": 3558871
+    },
+    {
+      "APPLIED": 21,
+      "BLOCKED": 0,
+      "SKIPPED": 96,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.2.72",
+      "total_time_ns": 11681253
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.4.14",
+      "total_time_ns": 1815838
+    },
+    {
+      "APPLIED": 14,
+      "BLOCKED": 0,
+      "SKIPPED": 103,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.4.16",
+      "total_time_ns": 4291169
+    },
+    {
+      "APPLIED": 88,
+      "BLOCKED": 0,
+      "SKIPPED": 29,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.4.17",
+      "total_time_ns": 4302703
+    },
+    {
+      "APPLIED": 39,
+      "BLOCKED": 0,
+      "SKIPPED": 78,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.4.18",
+      "total_time_ns": 4180499
+    },
+    {
+      "APPLIED": 24,
+      "BLOCKED": 0,
+      "SKIPPED": 93,
+      "apply_rule_invocations": 117,
+      "sutra_id": "1.4.7",
+      "total_time_ns": 2634793
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "4.1.1",
+      "total_time_ns": 1787249
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "4.1.2",
+      "total_time_ns": 3977334
+    },
+    {
+      "APPLIED": 2,
+      "BLOCKED": 6,
+      "SKIPPED": 109,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.1.101",
+      "total_time_ns": 5497837
+    },
+    {
+      "APPLIED": 5,
+      "BLOCKED": 0,
+      "SKIPPED": 112,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.1.102",
+      "total_time_ns": 4851842
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 113,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.1.103",
+      "total_time_ns": 4518417
+    },
+    {
+      "APPLIED": 6,
+      "BLOCKED": 0,
+      "SKIPPED": 111,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.1.107",
+      "total_time_ns": 4663455
+    },
+    {
+      "APPLIED": 2,
+      "BLOCKED": 0,
+      "SKIPPED": 115,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.1.110",
+      "total_time_ns": 5419288
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 113,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.1.69",
+      "total_time_ns": 3603750
+    },
+    {
+      "APPLIED": 12,
+      "BLOCKED": 0,
+      "SKIPPED": 105,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.1.87",
+      "total_time_ns": 5465083
+    },
+    {
+      "APPLIED": 13,
+      "BLOCKED": 0,
+      "SKIPPED": 104,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.1.88",
+      "total_time_ns": 5021709
+    },
+    {
+      "APPLIED": 21,
+      "BLOCKED": 0,
+      "SKIPPED": 96,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.1.97",
+      "total_time_ns": 4251918
+    },
+    {
+      "APPLIED": 117,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.4.129",
+      "total_time_ns": 4885083
+    },
+    {
+      "APPLIED": 0,
+      "BLOCKED": 0,
+      "SKIPPED": 117,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.4.130",
+      "total_time_ns": 4913828
+    },
+    {
+      "APPLIED": 0,
+      "BLOCKED": 0,
+      "SKIPPED": 117,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.4.134",
+      "total_time_ns": 4691046
+    },
+    {
+      "APPLIED": 0,
+      "BLOCKED": 0,
+      "SKIPPED": 117,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.4.146",
+      "total_time_ns": 6189996
+    },
+    {
+      "APPLIED": 0,
+      "BLOCKED": 0,
+      "SKIPPED": 117,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.4.148",
+      "total_time_ns": 5556626
+    },
+    {
+      "APPLIED": 1,
+      "BLOCKED": 0,
+      "SKIPPED": 116,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.4.3",
+      "total_time_ns": 4604625
+    },
+    {
+      "APPLIED": 3,
+      "BLOCKED": 0,
+      "SKIPPED": 114,
+      "apply_rule_invocations": 117,
+      "sutra_id": "6.4.8",
+      "total_time_ns": 4186590
+    },
+    {
+      "APPLIED": 10,
+      "BLOCKED": 0,
+      "SKIPPED": 107,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.1.12",
+      "total_time_ns": 3920910
+    },
+    {
+      "APPLIED": 2,
+      "BLOCKED": 0,
+      "SKIPPED": 115,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.1.13",
+      "total_time_ns": 3980620
+    },
+    {
+      "APPLIED": 2,
+      "BLOCKED": 0,
+      "SKIPPED": 115,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.1.14",
+      "total_time_ns": 4059046
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 113,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.1.15",
+      "total_time_ns": 4249249
+    },
+    {
+      "APPLIED": 3,
+      "BLOCKED": 0,
+      "SKIPPED": 114,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.1.17",
+      "total_time_ns": 7781210
+    },
+    {
+      "APPLIED": 3,
+      "BLOCKED": 0,
+      "SKIPPED": 114,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.1.19",
+      "total_time_ns": 3668699
+    },
+    {
+      "APPLIED": 0,
+      "BLOCKED": 0,
+      "SKIPPED": 117,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.1.2",
+      "total_time_ns": 3986995
+    },
+    {
+      "APPLIED": 3,
+      "BLOCKED": 0,
+      "SKIPPED": 114,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.1.20",
+      "total_time_ns": 3891709
+    },
+    {
+      "APPLIED": 1,
+      "BLOCKED": 0,
+      "SKIPPED": 116,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.1.24",
+      "total_time_ns": 3649669
+    },
+    {
+      "APPLIED": 2,
+      "BLOCKED": 0,
+      "SKIPPED": 115,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.1.52",
+      "total_time_ns": 4376368
+    },
+    {
+      "APPLIED": 3,
+      "BLOCKED": 0,
+      "SKIPPED": 114,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.1.54",
+      "total_time_ns": 4543791
+    },
+    {
+      "APPLIED": 3,
+      "BLOCKED": 0,
+      "SKIPPED": 114,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.1.72",
+      "total_time_ns": 4374500
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 113,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.1.9",
+      "total_time_ns": 4158998
+    },
+    {
+      "APPLIED": 21,
+      "BLOCKED": 0,
+      "SKIPPED": 96,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.2.102",
+      "total_time_ns": 3665165
+    },
+    {
+      "APPLIED": 1,
+      "BLOCKED": 0,
+      "SKIPPED": 116,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.2.106",
+      "total_time_ns": 3773296
+    },
+    {
+      "APPLIED": 16,
+      "BLOCKED": 0,
+      "SKIPPED": 101,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.3.102",
+      "total_time_ns": 4486038
+    },
+    {
+      "APPLIED": 14,
+      "BLOCKED": 0,
+      "SKIPPED": 103,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.3.103",
+      "total_time_ns": 4535415
+    },
+    {
+      "APPLIED": 1,
+      "BLOCKED": 0,
+      "SKIPPED": 116,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.3.108",
+      "total_time_ns": 4570786
+    },
+    {
+      "APPLIED": 2,
+      "BLOCKED": 0,
+      "SKIPPED": 115,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.3.109",
+      "total_time_ns": 4286212
+    },
+    {
+      "APPLIED": 3,
+      "BLOCKED": 0,
+      "SKIPPED": 114,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.3.111",
+      "total_time_ns": 4240585
+    },
+    {
+      "APPLIED": 0,
+      "BLOCKED": 0,
+      "SKIPPED": 117,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.3.113",
+      "total_time_ns": 3954586
+    },
+    {
+      "APPLIED": 0,
+      "BLOCKED": 0,
+      "SKIPPED": 117,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.3.114",
+      "total_time_ns": 4302167
+    },
+    {
+      "APPLIED": 1,
+      "BLOCKED": 0,
+      "SKIPPED": 116,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.3.119",
+      "total_time_ns": 4333374
+    },
+    {
+      "APPLIED": 1,
+      "BLOCKED": 0,
+      "SKIPPED": 116,
+      "apply_rule_invocations": 117,
+      "sutra_id": "7.3.120",
+      "total_time_ns": 4423415
+    },
+    {
+      "APPLIED": 35,
+      "BLOCKED": 0,
+      "SKIPPED": 82,
+      "apply_rule_invocations": 117,
+      "sutra_id": "8.3.15",
+      "total_time_ns": 4507783
+    },
+    {
+      "APPLIED": 7,
+      "BLOCKED": 0,
+      "SKIPPED": 110,
+      "apply_rule_invocations": 117,
+      "sutra_id": "8.3.59",
+      "total_time_ns": 11912082
+    },
+    {
+      "APPLIED": 0,
+      "BLOCKED": 0,
+      "SKIPPED": 117,
+      "apply_rule_invocations": 117,
+      "sutra_id": "8.4.1",
+      "total_time_ns": 4270751
+    },
+    {
+      "APPLIED": 5,
+      "BLOCKED": 0,
+      "SKIPPED": 112,
+      "apply_rule_invocations": 117,
+      "sutra_id": "8.4.2",
+      "total_time_ns": 6188327
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "1.1.50",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 1,
+      "BLOCKED": 0,
+      "SKIPPED": 3,
+      "apply_rule_invocations": 4,
+      "sutra_id": "1.1.51",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "1.1.56",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "1.3.1",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "1.3.78",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 0,
+      "BLOCKED": 0,
+      "SKIPPED": 4,
+      "apply_rule_invocations": 4,
+      "sutra_id": "1.4.100",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "1.4.101",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "1.4.102",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "1.4.108",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "1.4.13",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "1.4.22",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "1.4.99",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "3.1.1",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "3.1.2",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "3.1.68",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "3.1.91",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "3.2.123",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "3.4.113",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "3.4.69",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "3.4.77",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "3.4.78",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "6.1.72",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "7.3.84",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 4,
+      "sutra_id": "8.1.16",
+      "total_time_ns": 0
+    },
+    {
+      "APPLIED": 1,
+      "BLOCKED": 0,
+      "SKIPPED": 0,
+      "apply_rule_invocations": 1,
+      "sutra_id": "6.1.65",
+      "total_time_ns": 0
+    }
+  ]
+}

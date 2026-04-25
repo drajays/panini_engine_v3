@@ -17,8 +17,34 @@ from __future__ import annotations
 import pytest
 
 from engine             import apply_rule
+from engine.sig         import replay_subanta_trace
 from pipelines.subanta  import derive, build_initial_state
 
+
+def test_replay_subanta_trace_matches_full_derive():
+    """Trace replay (including merge) is bitwise identical to a single ``derive``."""
+    s = derive("rAma", 3, 2)
+    r = replay_subanta_trace("rAma", 3, 2, s.trace)
+    assert r.render() == s.render()
+    s2 = derive("hari", 1, 1)
+    r2 = replay_subanta_trace("hari", 1, 1, s2.trace)
+    assert r2.render() == s2.render()
+
+
+def test_dik_samasa_compound_path_is_deterministic():
+    """
+    Dik *uttarapūrvā* demo: internal *sup* **luk** (2.4.71) and the second
+    **2.1.3** bookkeeping step are engine-specific; a naïve ``apply_rule`` re-run
+    from the initial vigraha is not required to match (state/meta differ). We
+    still require **forward** runs to be deterministic and surface-identical.
+    """
+    from pipelines.dik_uttarapurva_demo import caturthi_preset, derive_dik_caturthi_compound
+
+    p = caturthi_preset("uttarA_pUrvA")
+    a = derive_dik_caturthi_compound(p, verbose=False)
+    b = derive_dik_caturthi_compound(p, verbose=False)
+    assert a.render() == b.render() and a.flat_slp1() == b.flat_slp1()
+    assert [st["sutra_id"] for st in a.trace] == [st["sutra_id"] for st in b.trace]
 
 @pytest.mark.parametrize("v,vv", [(1, 1), (2, 1), (4, 1), (6, 3), (7, 3)])
 def test_forward_is_deterministic(v, vv):

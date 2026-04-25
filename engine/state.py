@@ -162,15 +162,19 @@ class State:
 
     # ─────────────────────────────────────────────────────────────────
     # Flat varṇa sequence — used by dispatcher to diff form_before /
-    # form_after.  Joining to Devanāgarī surface is done in
-    # phonology/joiner.py when a pipeline wants a surface string.
+    # form_after.  *It*-tagged Varṇas still on ``Term.varnas`` appear here until
+    # **1.3.9** removes the rows (ādeśa/lopa is **1.3.9** only, not 1.3.3/8 *saṃjñā*).
     # ─────────────────────────────────────────────────────────────────
     def flat_slp1(self) -> str:
-        return "".join(v.slp1 for t in self.terms for v in t.varnas)
+        from engine.it_phonetic import term_phonetic_slp1
+
+        return "".join(term_phonetic_slp1(t) for t in self.terms)
 
     def flat_dev(self) -> str:
-        """Halanta-naive concatenation. Use phonology.joiner for surface."""
-        return "".join(v.dev for t in self.terms for v in t.varnas)
+        """Halanta-naive concatenation over phonetic varṇas only."""
+        from engine.it_phonetic import term_phonetic_varnas
+
+        return "".join(v.dev for t in self.terms for v in term_phonetic_varnas(t))
 
     # For quick printing in traces.
     def render(self) -> str:

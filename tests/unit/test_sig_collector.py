@@ -25,6 +25,18 @@ def _applied(sid, before="a", after="b"):
     }
 
 
+def _applied_vacuous(sid, form="a"):
+    return {
+        "sutra_id"    : sid,
+        "sutra_type"  : "VIDHI",
+        "status"      : "APPLIED_VACUOUS",
+        "form_before" : form,
+        "form_after"  : form,
+        "why_dev"     : "शून्य",
+        "lopa_count"  : 0,
+    }
+
+
 def _blocked(sid):
     return {
         "sutra_id"    : sid,
@@ -46,6 +58,10 @@ def test_extract_applied_path_skips_structural_and_blocked():
         _structural("__PHASE__"),
     ]
     assert extract_applied_path(trace) == ["1.1.2", "1.3.9"]
+
+
+def test_extract_applied_path_includes_applied_vacuous():
+    assert extract_applied_path([_applied_vacuous("1.3.9", "ji")]) == ["1.3.9"]
 
 
 def test_extract_edges():
@@ -91,7 +107,26 @@ def test_transitions_high_confidence():
     assert ab and ab[0]["probability"] == 1.0
 
 
-def test_dump_all_writes_nine_files(tmp_path: Path):
+def test_chronological_edges_feed_global_files(tmp_path: Path):
+    col = SIGCollector()
+    # A → B → C in full trace order (SKIPPED still advances the Markov chain)
+    tr = [
+        _applied("1.1.1"),
+        {
+            "sutra_id": "1.1.2", "sutra_type": "X", "type_label": "t",
+            "form_before": "a", "form_after": "a", "why_dev": "t",
+            "status": "SKIPPED", "skip_reason": "COND-FALSE",
+        },
+        _applied("1.1.3"),
+    ]
+    col.ingest("t", tr)
+    g = col.global_sutra_edges()
+    assert any(e["source"] == "1.1.1" and e["target"] == "1.1.2" for e in g["edges"])
+    m = col.global_markov_transitions()
+    assert m["row_totals"].get("1.1.1", 0) >= 1
+
+
+def test_dump_all_writes_sig_artifact_bundle(tmp_path: Path):
     col = SIGCollector()
     col.ingest("c", [_applied("A"), _applied("B")])
     files = col.dump_all(tmp_path)
@@ -105,6 +140,9 @@ def test_dump_all_writes_nine_files(tmp_path: Path):
         "sutra_next_candidates.json",
         "sig_baseline.json",
         "sig_anomalies.json",
+        "global_sutra_frequencies.json",
+        "global_sutra_edges.json",
+        "global_markov_transitions.json",
     }
     assert expected.issubset(set(files.keys()))
     for name in expected:

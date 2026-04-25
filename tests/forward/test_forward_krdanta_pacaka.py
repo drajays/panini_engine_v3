@@ -36,6 +36,7 @@ def test_pachak_md_step_sutras_appear_in_trace():
         "1.1.19",
         "1.1.20",
         "1.1.21",
+        "1.1.46",
         "1.1.22",
         "1.1.23",
         "1.1.24",
@@ -57,6 +58,7 @@ def test_pachak_md_step_sutras_appear_in_trace():
         "7.2.116",
         "7.2.115",
         "6.1.78",
+        "1.2.45",
         "1.2.46",
         "__KRD_MERGE__",
     ):

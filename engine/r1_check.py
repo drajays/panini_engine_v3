@@ -37,6 +37,8 @@ def check_r1(
     A VIDHI / NIYAMA / NIPATANA / non-optional form-mutating sūtra
     that reported success but left the form unchanged is a BUG.
     """
+    if getattr(rec, "r1_form_identity_exempt", False):
+        return
     contract = SUTRA_TYPE_CONTRACTS[rec.sutra_type]
     if contract["r1_exempt"]:
         return

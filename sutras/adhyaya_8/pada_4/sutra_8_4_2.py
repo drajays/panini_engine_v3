@@ -5,9 +5,14 @@
  (referred by anuvṛtti from 8.4.1 'raṣābhyām no naḥ samānapade')
  is replaced by ṇ."
 
-Operational narrow reading: if within the SAME pada there is an
-r-varga or ṛ-varga (or ṣ) letter followed — even with intervening
-at/ku/pu/āṅ/num — by an 'n', that 'n' becomes 'ṇ'.
+Operational narrow reading: if within the SAME *Term* (model for *samānapade*)
+there is an r/ṛ/ṣ letter followed — even with intervening *aṭ* / *ku* / *pu* /
+*āṅ* / *num* — by an *n*, that *n* becomes *ṇ*, **provided** the *n* is **not**
+immediately after *r* / *ṛ* / *ṣ* (that adjacent *saṃhitā* subcase is **8.4.1**;
+this file is the *vyavāya* extension *apī*).
+
+*Cross-term:* the flat scan must **not** link *r* at the end of one *Term* with
+*n* at the start of the next (e.g. *agnir* + *nayati* — *ṇ* does not apply).
 
 For our corpus:
   cell 3-1 rAmena → rAmeRa (ṇ after r with intervening 'e m'; the 
@@ -51,24 +56,27 @@ def _find_target(state: State):
             flat.append((ti, vi, v))
 
     for k in range(len(flat)):
-        _, _, v = flat[k]
+        (ti0, _vi0, v) = flat[k]
         if v.slp1 not in {"r", "f", "F", "z"}:  # r, ṛ, ṝ, ṣ
             continue
-        # Scan forward.
+        # Scan forward, **within the same Term only** (samānapade / one pada).
         for m in range(k + 1, len(flat)):
             (ti2, vi2, vm) = flat[m]
+            if ti2 != ti0:
+                break
             if vm.slp1 == "n":
-                # Already processed?
+                if m == k + 1:
+                    # 8.4.1: adjacent *r* / *ṛ* / *ṣ* + *n*; *apī* of 8.4.2
+                    # extends only *vyavāya* cases.
+                    continue
                 if "natva_done" in vm.tags:
-                    return None
-                # Pada-final exemption: if this n is the LAST varṇa
-                # of the last Term, do NOT fire ṇatva.  (Needed for
-                # cell 2-3 rAmAn accusative plural.)
+                    continue
                 if m == len(flat) - 1:
-                    return None
+                    # Pada-final *n*; representative exemption (see 8.4.1).
+                    continue
                 return (ti2, vi2)
             if vm.slp1 in _BLOCKERS:
-                break  # blocked
+                break
     return None
 
 

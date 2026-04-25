@@ -6,6 +6,9 @@ through **5.4.160**.
 
 This is modelled as an adhikāra (v2: ``adhikara_prakarana.json`` sequence 29):
 from here, rules operate “from a prātipadika” until 5.4.160.
+
+When the stem carries ``strīliṅga``, ``act`` also sets
+``samjna_registry['4.1.1_strI_pratipadika']`` for demo/UI audit (not read by *cond*).
 """
 from __future__ import annotations
 
@@ -23,6 +26,9 @@ def act(state: State) -> State:
         "scope_end" : "5.4.160",
         "text_dev"  : "ङ्याप्प्रातिपदिकात्",
     })
+    # Audit key for strī *subanta* demos (adhikāra itself is not a morphological *vidhi*).
+    if any("strīliṅga" in t.tags for t in state.terms):
+        state.samjna_registry["4.1.1_strI_pratipadika"] = True
     return state
 
 

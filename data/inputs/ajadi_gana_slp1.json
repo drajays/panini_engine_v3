@@ -1,0 +1,24 @@
+{
+  "_doc": "Ajādi-gaṇa prātipadika bases (SLP1) for 4.1.4 *ajādyataṣṭāp*. Extend as needed; engine matches ``stem.meta['upadesha_slp1']`` or flat stem string.",
+  "members": [
+    "aja",
+    "eqaka",
+    "caTaka",
+    "aSvA",
+    "mUzika",
+    "bAla",
+    "hoqa",
+    "pAka",
+    "vatsa",
+    "manda",
+    "vilAta",
+    "kokila",
+    "kruYca",
+    "uSnih",
+    "devaviS",
+    "jyezWa",
+    "kanizWa",
+    "maDyama",
+    "SUdra"
+  ]
+}

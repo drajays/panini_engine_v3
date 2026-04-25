@@ -8,8 +8,8 @@
   },
   "_stats": {
     "bvadi_merged": 940,
-    "curated_extensions": 7,
-    "total_entries": 947
+    "curated_extensions": 8,
+    "total_entries": 948
   },
   "id_aliases": {
     "BvAdi_BU": "BvAdi_01_0001"
@@ -31236,6 +31236,35 @@
         "udatta": true
       },
       "notes": "तरिता — दिवादि तॄ; उदात्त/सेट् for ७.२.१०।"
+    },
+    {
+      "id": "BvAdi_951",
+      "tier": "curated_extension",
+      "dhatupatha_id": null,
+      "gana": 1,
+      "gana_number": 1,
+      "serial_in_gana": 951,
+      "sutra_ref": "1.951",
+      "upadesha_dev": "तॄ",
+      "upadesha_slp1": "tF",
+      "mula_dhatu_dev": "तॄ",
+      "raw_dhatu_after_it_lopa_dev": "तॄ",
+      "raw_dhatu_after_it_lopa_slp1": "tF",
+      "artha_dev": "प्लवनतरणयोः",
+      "artha_slp1": "plavanataraRayoH",
+      "gana_label_dev": "भ्वादिः",
+      "pada_label_dev": "परस्मैपदी",
+      "karmatva_label_dev": "सकर्मकः",
+      "it_class_label_dev": "सेट्",
+      "it_markers": [],
+      "flags": {
+        "anit": false,
+        "set": true,
+        "vet": false,
+        "ekac": true,
+        "udatta": true
+      },
+      "notes": "तॄ — laṭ prathamā eka gold (curated bhvādi-style spine with BU/ji); classical divādi entry remains divAdi_tF."
     },
     {
       "id": "BvAdi_950",

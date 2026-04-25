@@ -23,6 +23,9 @@ tools/sutra_sig_report.py works identically across engine versions:
   sig_anomalies.json            — slowdowns vs baseline (z-score)
   sig_linguistic.json           — hub_rules with in/out degree
   sutra_next_candidates.json    — k-nearest next sūtras per node
+  global_sutra_frequencies.json — all apply_rule invocations + time per sūtra
+  global_sutra_edges.json      — chronological A→B edge weights
+  global_markov_transitions.json — P(B|A) from chrono edges
 
 Anomaly detection uses a MIN_SAMPLES floor to avoid flapping on small
 corpora.  Z-score threshold is 3.0 for CRITICAL.
@@ -36,8 +39,11 @@ from collections import Counter, defaultdict
 from pathlib     import Path
 from typing      import Any, Dict, List, Optional, Tuple
 
+from engine.trace import extract_chronological_sutra_sequence
+
 
 _APPLIED_STATUS    = "APPLIED"
+_APPLIED_VACUOUS   = "APPLIED_VACUOUS"
 _MIN_SAMPLES       = 3          # below this, skip anomaly detection
 _CRITICAL_Z        = 3.0
 _WARN_Z            = 2.0
@@ -54,7 +60,8 @@ def extract_applied_path(trace: List[Dict[str, Any]]) -> List[str]:
     """Ordered list of sūtra_ids that APPLIED (skips structural / blocked / skipped)."""
     path: List[str] = []
     for step in trace:
-        if step.get("status") != _APPLIED_STATUS:
+        st = step.get("status")
+        if st not in (_APPLIED_STATUS, _APPLIED_VACUOUS):
             continue
         sid = step.get("sutra_id", "")
         if not sid or sid.startswith("__"):
@@ -65,6 +72,39 @@ def extract_applied_path(trace: List[Dict[str, Any]]) -> List[str]:
 
 def extract_edges(applied_path: List[str]) -> List[Tuple[str, str]]:
     return list(zip(applied_path, applied_path[1:]))
+
+
+def replay_subanta_trace(
+    stem_slp1 : str,
+    vibhakti  : int,
+    vacana    : int,
+    reference_trace: List[Dict[str, Any]],
+    *,
+    linga     : str = "pulliṅga",
+    per_step_times: Optional[Dict[str, List[int]]] = None,
+) -> Any:
+    """
+    Deterministically re-execute the subanta *apply_rule* sequence that is
+    recorded in ``reference_trace`` (e.g. from ``pipelines.subanta.derive``),
+    so wall times can be measured without the scheduler. Structural ``__MERGE__``
+    is replayed with ``pipelines.subanta``'s pada merge. Used for SIG: every
+    scheduled sūtra — including *SKIPPED* / *BLOCKED* rows that still ran
+    ``cond`` / gates — is timed when ``per_step_times`` is passed.
+    """
+    from pipelines.subanta import build_initial_state, _pada_merge
+
+    s = build_initial_state(stem_slp1, vibhakti, vacana, linga)
+    for step in reference_trace:
+        sid = step.get("sutra_id", "")
+        if sid == "__MERGE__":
+            _pada_merge(s)
+        elif sid and not sid.startswith("__"):
+            if per_step_times is not None:
+                s = apply_rule_timed(sid, s, per_step_times)
+            else:
+                from engine.dispatcher import apply_rule
+                s = apply_rule(sid, s)
+    return s
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -99,6 +139,13 @@ class SIGCollector:
         self.paths      : Dict[str, List[str]] = {}
         # Run metadata.
         self.test_count : int = 0
+        # Per-derivation CPU (sum of timed steps), when ingest gets timings.
+        self.cell_total_time_ns: Dict[str, int] = {}
+        # Every ``apply_rule`` in order (A→B), for global Markov / mermaid
+        self.chrono_edge_stats: Dict[Tuple[str, str], Dict[str, Any]] = defaultdict(
+            lambda: {"count": 0, "paradigms": set()}
+        )
+        self.apply_invocation_count: Dict[str, int] = defaultdict(int)
 
     # ── Ingest ─────────────────────────────────────────────────────
 
@@ -118,11 +165,24 @@ class SIGCollector:
             sid = step.get("sutra_id", "")
             if not sid or sid.startswith("__"):
                 continue
+            self.apply_invocation_count[sid] += 1
             status = step.get("status", _APPLIED_STATUS)
-            if status in ("APPLIED", "SKIPPED", "BLOCKED"):
+            if status == _APPLIED_VACUOUS:
+                self.fire_stats[sid]["APPLIED"] += 1
+            elif status in ("APPLIED", "SKIPPED", "BLOCKED"):
                 self.fire_stats[sid][status] += 1
 
+        chrono_seq = extract_chronological_sutra_sequence(trace)
+        for a, b in zip(chrono_seq, chrono_seq[1:]):
+            e = self.chrono_edge_stats[(a, b)]
+            e["count"] += 1
+            e["paradigms"].add(cell_id)
+
         if per_step_timing_ns:
+            cell_ns = 0
+            for times in per_step_timing_ns.values():
+                cell_ns += sum(times)
+            self.cell_total_time_ns[cell_id] = cell_ns
             for sid, times in per_step_timing_ns.items():
                 self.fire_stats[sid]["samples_ns"].extend(times)
                 self.fire_stats[sid]["total_time_ns"] += sum(times)
@@ -138,7 +198,7 @@ class SIGCollector:
     # ── Dump: individual files ─────────────────────────────────────
 
     def sutra_fire_stats(self) -> Dict[str, Any]:
-        """v2 schema: { ranked_by_count: [ {id, fire_count, total_time_ns}, ... ] }"""
+        """v2 schema + ranked_by_cpu (includes zero-APPLIED if timed)."""
         ranked = [
             {
                 "id"            : sid,
@@ -149,7 +209,35 @@ class SIGCollector:
             if stats["APPLIED"] > 0
         ]
         ranked.sort(key=lambda r: (-r["fire_count"], -r["total_time_ns"], r["id"]))
-        return {"ranked_by_count": ranked}
+
+        # Rules that consumed CPU in timed replay but did not *apply* a vidhi
+        # (SKIPPED / BLOCKED / vacuous) — “zero-fire but high-cost” telemetry.
+        cpu_ranked = [
+            {
+                "id"              : sid,
+                "applied"         : stats["APPLIED"],
+                "skipped"         : stats.get("SKIPPED", 0),
+                "blocked"         : stats.get("BLOCKED", 0),
+                "total_time_ns"   : stats["total_time_ns"],
+            }
+            for sid, stats in self.fire_stats.items()
+            if stats["total_time_ns"] > 0
+        ]
+        cpu_ranked.sort(
+            key=lambda r: (-r["total_time_ns"], -r["applied"], r["id"])
+        )
+
+        zero_apply_hot = [
+            {**r, "note": "evaluated in recipe but never APPLIED; still costs CPU."}
+            for r in cpu_ranked
+            if r["applied"] == 0 and r["total_time_ns"] > 0
+        ]
+
+        return {
+            "ranked_by_count"        : ranked,
+            "ranked_by_total_cpu_ns" : cpu_ranked,
+            "zero_fire_cpu_hot"      : zero_apply_hot,
+        }
 
     def sutra_edge_stats(self) -> Dict[str, Any]:
         """v2 schema: { top_edges: [ {source, target, weight}, ... ] }"""
@@ -234,7 +322,25 @@ class SIGCollector:
                 spiking.append(row)
         by_tot.sort(key=lambda r: -r["total_time_ns"])
         spiking.sort(key=lambda r: -r["p95_time_ns"])
-        return {"by_total_time": by_tot, "spiking_rules": spiking}
+        # Non-APPLIED (in trace) but still cost wall time in timed replay
+        no_apply: List[Dict[str, Any]] = []
+        for sid, stats in self.fire_stats.items():
+            fc = stats["APPLIED"]
+            tot = stats["total_time_ns"]
+            if fc or not tot:
+                continue
+            no_apply.append({
+                "sutra_id"     : sid,
+                "total_time_ns": tot,
+                "skipped"      : stats.get("SKIPPED", 0),
+                "blocked"      : stats.get("BLOCKED", 0),
+            })
+        no_apply.sort(key=lambda r: -r["total_time_ns"])
+        return {
+            "by_total_time"         : by_tot,
+            "spiking_rules"         : spiking,
+            "by_total_time_zero_fire": no_apply[:20],
+        }
 
     def sig_transitions(self, k: int = 8, min_p: float = 0.05) -> Dict[str, Any]:
         """
@@ -339,6 +445,108 @@ class SIGCollector:
             }
         return out
 
+    def global_sutra_frequencies(self) -> Dict[str, Any]:
+        """All ``apply_rule`` invocations and CPU per sūtra (cross-pipeline)."""
+        all_ids = sorted(
+            set(self.apply_invocation_count) | set(self.fire_stats), key=str
+        )
+        rows: List[Dict[str, Any]] = []
+        for sid in all_ids:
+            inv = int(self.apply_invocation_count.get(sid, 0))
+            fs = self.fire_stats.get(sid, {})
+            rows.append({
+                "sutra_id"                 : sid,
+                "apply_rule_invocations"     : inv,
+                "APPLIED"                  : int(fs.get("APPLIED", 0)),
+                "SKIPPED"                  : int(fs.get("SKIPPED", 0)),
+                "BLOCKED"                  : int(fs.get("BLOCKED", 0)),
+                "total_time_ns"            : int(fs.get("total_time_ns", 0)),
+            })
+        rows.sort(key=lambda r: (-r["apply_rule_invocations"], r["sutra_id"]))
+        return {
+            "description": (
+                "Per sūtra: how often ``apply_rule`` visited it, status breakdown, "
+                "and accumulated wall time (from timed replays if provided)."
+            ),
+            "sutras": rows,
+        }
+
+    def global_sutra_edges(self) -> Dict[str, Any]:
+        """Chronological A → B (every pair of consecutive ``apply_rule`` calls)."""
+        edges = [
+            {
+                "source"      : s,
+                "target"      : d,
+                "weight"      : e["count"],
+                "derivations" : sorted(e["paradigms"]),
+            }
+            for (s, d), e in self.chrono_edge_stats.items()
+        ]
+        edges.sort(key=lambda r: (-r["weight"], r["source"], r["target"]))
+        return {
+            "description": (
+                "Global directed edges from the full sūtra invocation order "
+                "(*subanta* / *tin*anta* / *samāsa* / … combined in ``ingest``)."
+            ),
+            "edges": edges,
+        }
+
+    def global_markov_transitions(self) -> Dict[str, Any]:
+        """P(target | source) = weight / row_total over chronological edges."""
+        row_tot: Dict[str, int] = defaultdict(int)
+        for (s, _d), e in self.chrono_edge_stats.items():
+            row_tot[s] += e["count"]
+        matrix: Dict[str, Dict[str, float]] = {}
+        for (s, d), e in self.chrono_edge_stats.items():
+            tot = row_tot.get(s, 0)
+            if not tot:
+                continue
+            matrix.setdefault(s, {})[d] = round(e["count"] / tot, 6)
+        flat: List[Dict[str, Any]] = []
+        for (s, d), e in self.chrono_edge_stats.items():
+            tot = row_tot.get(s, 0)
+            p = (e["count"] / tot) if tot else 0.0
+            flat.append({
+                "from"            : s,
+                "to"              : d,
+                "count"           : e["count"],
+                "P_to_given_from" : round(p, 6),
+                "row_total"       : tot,
+            })
+        flat.sort(key=lambda r: (-r["count"], r["from"], r["to"]))
+        return {
+            "description": (
+                "Row-stochastic view of the empirical transition graph "
+                "(*from* = conditioning sūtra)."
+            ),
+            "row_totals" : {k: row_tot[k] for k in sorted(row_tot)},
+            "matrix"     : {k: dict(v) for k, v in sorted(matrix.items())},
+            "transitions": flat,
+        }
+
+    def _cascade_slow_cells(self) -> List[Dict[str, Any]]:
+        """Flag derivations much slower than cohort median (pipeline-wide drag)."""
+        tmap = self.cell_total_time_ns
+        if not tmap or len(tmap) < 3:
+            return []
+        times = sorted(tmap.values())
+        med = times[len(times) // 2]
+        if not med:
+            return []
+        out: List[Dict[str, Any]] = []
+        for cid, ns in tmap.items():
+            ratio = ns / med
+            if ratio >= 2.5:
+                out.append({
+                    "cell_id"     : cid,
+                    "total_ns"    : ns,
+                    "median_ns"   : med,
+                    "vs_median"   : round(ratio, 2),
+                    "severity"    : "CRITICAL" if ratio >= 4.0 else "WARN",
+                })
+        out.sort(key=lambda r: -r["vs_median"])
+        return out
+
     def sig_anomalies(self, baseline: Dict[str, Any]) -> Dict[str, Any]:
         """
         Flag sūtras whose current avg deviates from baseline by
@@ -374,9 +582,21 @@ class SIGCollector:
                 "severity"        : severity,
             })
         anomalies.sort(key=lambda r: -abs(r["z_score"]))
+
+        times = list(self.cell_total_time_ns.values())
+        cell_profile: Dict[str, Any] = {
+            "derivations_timed": len(self.cell_total_time_ns),
+        }
+        if times:
+            times_sorted = sorted(times)
+            cell_profile["median_total_ns"] = times_sorted[len(times_sorted) // 2]
+            cell_profile["max_total_ns"]    = max(times)
+            cell_profile["min_total_ns"]    = min(times)
         return {
-            "run_test_count" : self.test_count,
-            "anomalies"      : anomalies,
+            "run_test_count"  : self.test_count,
+            "anomalies"       : anomalies,
+            "cell_cpu_profile": cell_profile,
+            "cascade_slow_cells": self._cascade_slow_cells(),
         }
 
     # ── Dump orchestrator ──────────────────────────────────────────
@@ -384,8 +604,8 @@ class SIGCollector:
     def dump_all(self, out_dir: Path,
                  prior_baseline: Optional[Dict[str, Any]] = None) -> Dict[str, Path]:
         """
-        Write all nine JSON files under `out_dir`.  Returns a map
-        {logical_name → filepath}.  Creates out_dir if absent.
+        Write legacy SIG JSONs plus three **global** telemetry files under ``out_dir``.
+        Returns ``{logical_name → filepath}``.  Creates ``out_dir`` if absent.
         """
         out_dir.mkdir(parents=True, exist_ok=True)
         files: Dict[str, Path] = {}
@@ -409,6 +629,9 @@ class SIGCollector:
         _write("sig_anomalies.json",           self.sig_anomalies(
             prior_baseline or {}
         ))
+        _write("global_sutra_frequencies.json", self.global_sutra_frequencies())
+        _write("global_sutra_edges.json",     self.global_sutra_edges())
+        _write("global_markov_transitions.json", self.global_markov_transitions())
 
         return files
 

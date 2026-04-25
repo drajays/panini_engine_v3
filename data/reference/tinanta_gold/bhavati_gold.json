@@ -1,0 +1,8 @@
+{
+  "_doc": "Gold laṭ prathamā eka — bhū (BU) → Bavati; steps 1–8 shared with jayati; step 9 = Tripāḍī audit (8.1.16, 8.2.1, 8.2.66).",
+  "id": "bhavati_lat_prathama_eka",
+  "surface_target_slp1": "Bavati",
+  "dhatupatha_row_id": "BvAdi_01_0001",
+  "recipe": "pipelines.tinanta_bhavati_gold:run_bhavati_gold_through_step",
+  "recipe_args": [9]
+}

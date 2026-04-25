@@ -9,7 +9,7 @@
   Rāma paradigm cells  : 24 / 24       (FULL classical match)
   All 10 SutraTypes    : ✓ represented
   Tests                : 341 passing, 0 xfailed, 0 failed
-  SIG truth-teller     : active (9 JSON artifacts + path-regression oracle)
+  SIG truth-teller     : active (9 core JSONs + coverage + manifest + path-regression oracle)
 ```
 
 ## The complete rāma paradigm — all 24 cells green
@@ -45,7 +45,7 @@
 - `BLOCKED` vs `SKIPPED` trace distinction
 - `make_stub()` + `coverage_report()`
 - `RecipeConflictError` for dual-claim positions
-- Full SIG truth-teller (9 v2-compatible JSONs + path-regression oracle)
+- Full SIG truth-teller (9 v2-compatible JSONs + `coverage.json` + `sig_manifest.json` + path-regression oracle)
 
 ## The 35 sūtras (by SutraType)
 
@@ -76,25 +76,26 @@ pip install -r requirements.txt
 # Run the full test suite.
 python -m pytest                              # 341 passed
 
-# Regenerate the 9 SIG artifacts + truth report.
-python -m tools.sig_benchmark
+# Regenerate the full `sig/` tree (all `subanta_gold/*.json` + optional *jayati* + coverage + manifest).
+make sig
+# or:  python3 -m tools.regenerate_sig_artifacts
 python -m tools.sutra_sig_report
 
 # List all sūtras by type.
 python -m tools.list_sutras_by_type
 
-# Validate all 24 cells against the gold corpus.
-python -m tools.validate_engine_against_source   # 24/24 match
+# Validate all subanta + relevant tinanta gold (auto-discovered under `data/reference/`).
+python -m tools.validate_engine_against_source
 ```
 
 ## The truth-teller in action
 
 When you add a sūtra that changes a cell's derivation path (even if the
 surface form still matches gold), the SIG regression test fails loudly.
-If the change is intentional, refreeze:
+If the change is intentional, refreeze (updates `sig/sig_baseline.json` and the applied-paths baseline in `tests/`):
 
 ```bash
-python -m tools.sig_benchmark --freeze
+python3 -m tools.regenerate_sig_artifacts --freeze
 ```
 
 ## Directory layout
@@ -112,7 +113,7 @@ panini_engine_v3/
 ├── tests/                   ← 341 tests (constitutional, unit, forward,
 │                              backward, regression)
 ├── tools/                   ← sig_benchmark, sig_report, listings, etc.
-├── sig/                     ← 9 SIG artifacts (regenerated on demand)
+├── sig/                     ← engine JSONs + `coverage.json` + `sig_manifest.json` (see `sig/README.md`)
 └── webui/                   ← Flask + HTML scaffold (resume later)
 ```
 

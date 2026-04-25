@@ -201,7 +201,7 @@ engine paths that bypass `apply_rule()`.
 
 ## Article 10 — Amendment Procedure
 
-These ten Articles are amended only by:
+These **twelve** Articles (numbered 0 through 11) are amended only by:
 1. Opening `docs/AMENDMENT_<N>.md` with the proposed change and rationale.
 2. Passing every constitutional, forward, backward, and regression test
    with the proposed change applied to a branch.
@@ -209,3 +209,30 @@ These ten Articles are amended only by:
 
 No silent edits. The Constitution's own change history is itself
 auditable.
+
+---
+
+## Article 11 — Sūtra Interaction Graph (SIG) and uniform telemetry
+
+**Role in architecture:** the engine maintains a **Sūtra Interaction
+Graph (SIG)**: a chronological, rule-by-rule record of how derivations
+traverse the sūtra registry. **Global** hooks (e.g. `ContextVar` in
+`engine/telemetry.py`) and downstream tooling depend on a single, reliable
+stream of sūtra applications.
+
+**Strict law (non-optional):** all morphological transformations and every
+sūtra application that affects `State` / `Term` as part of a Pāṇinian
+**derivation** MUST be routed **exclusively** through
+`engine.dispatcher.apply_rule`. **Direct mutation** of `State` or
+`Term` to simulate a sūtra, or to apply phonological/operational
+effects that should go through a registered sūtra’s `cond` / `act`,
+is **forbidden** outside of `apply_rule`, except for purely structural
+book-keeping in pipelines that does **not** stand in for a sūtra’s work
+and is recorded in `State.trace` in a way that cannot be mistaken for
+an applied rule. This ensures **100%** of rule-driven steps participate
+in the SIG and in `notify_apply_rule_end` (and any other dispatcher-level
+observers) without ad-hoc, per-pipeline hook wiring.
+
+**Corollary:** the executors in `engine/executors/*` are invoked only from
+`apply_rule` (the dispatcher is the only importer). Pipelines and recipes
+call `apply_rule(sutra_id, state, …)`; they do not call `exec_*` directly.

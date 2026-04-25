@@ -74,6 +74,8 @@ def derive_demo(case: DemoCase) -> State:
     s = apply_rule("2.1.3", s)
 
     # Phase 1b: sup-lopa inside samāsa (removes internal sup terms).
+    s.meta["pratipadika_avayava_ready"] = True
+    s.meta["2_4_71_luk_arm"] = True
     s = apply_rule("2.4.71", s)
 
     # Phase 2: guṇa sandhi (a+i→e, a+u→o) with sthāne'ntaratamaḥ selection.
@@ -82,7 +84,8 @@ def derive_demo(case: DemoCase) -> State:
     s = apply_rule("6.1.87", s)   # ād guṇaḥ
 
     # Phase 2b: prātipadika-saṃjñā for samāsa and structural merge into one aṅga.
-    # Implemented as SAMJNA in 1.2.46 (samāsa branch).
+    # *Prātipadika*: **1.2.45** (*avyutpanna*) then **1.2.46** (samāsa branch).
+    s = apply_rule("1.2.45", s)
     s = apply_rule("1.2.46", s)
 
     # Phase 3: subanta prathamā-ekavacana on the compound a-stem.
@@ -100,6 +103,7 @@ def derive_demo(case: DemoCase) -> State:
     s = apply_rule("1.3.7",  s)
     s = apply_rule("1.3.8",  s)
     s = apply_rule("1.3.9",  s)   # it-lopa (su~→s)
+    s = apply_rule("1.3.10", s)  # *yathāsaṅkhyam* paribhāṣā
     s = apply_rule("7.3.102", s)  # a→A before consonant-initial sup
 
     # Phase 4: pada + tripāḍī visarga.

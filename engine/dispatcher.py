@@ -32,7 +32,15 @@ from engine.r1_check   import check_r1, check_r2, check_r3
 from engine.registry   import get_sutra
 from engine.state      import State
 from engine.sutra_type import SutraRecord, SutraType, SUTRA_TYPE_CONTRACTS
-from engine.trace      import make_applied_step, make_skipped_step
+from engine.telemetry  import notify_apply_rule_end
+from engine.trace        import (
+    META_1_3_9_VACUOUS,
+    attach_chronological_transition,
+    chronological_prev_sutra_id,
+    make_applied_step,
+    make_applied_vacuous_step,
+    make_skipped_step,
+)
 
 
 # Lazy import of executors to avoid circular imports at package load time.
@@ -65,6 +73,19 @@ def _executor_table():
 _EXEC_TABLE: Optional[Dict[SutraType, Any]] = None
 
 
+def _append_traced_step(new_state: State, step: Dict[str, Any],
+                        prev_sutra: Optional[str], current_sutra: str) -> None:
+    new_state.trace.append(step)
+    attach_chronological_transition(new_state.trace[-1], prev_sutra, current_sutra)
+
+
+def _finish_apply_rule(
+    prev_sutra: Optional[str], sutra_id: str, new_state: State,
+) -> State:
+    notify_apply_rule_end(prev_sutra, sutra_id, new_state)
+    return new_state
+
+
 def apply_rule(
     sutra_id    : str,
     state       : State,
@@ -86,6 +107,8 @@ def apply_rule(
     rec         = get_sutra(sutra_id)
     stype       = rec.sutra_type
     contract    = SUTRA_TYPE_CONTRACTS[stype]
+    # Chronological “edge into” this invocation (previous non-structural sūtra, if any).
+    prev_sutra  = chronological_prev_sutra_id(state.trace)
 
     new_state   = state.clone()
     purge_closed_adhikaras(sutra_id, new_state)
@@ -96,27 +119,39 @@ def apply_rule(
 
     # ── Gate 1: Tripāḍī asiddha firewall ─────────────────────────────
     if asiddha_violates(sutra_id, new_state):
-        new_state.trace.append(make_skipped_step(
-            sutra_id, stype.name, contract["dev_label"], form_before,
-            rec.why_dev, "ASIDDHA-GATE (cannot fire outside Tripāḍī once entered)",
-        ))
-        return new_state
+        _append_traced_step(
+            new_state,
+            make_skipped_step(
+                sutra_id, stype.name, contract["dev_label"], form_before,
+                rec.why_dev, "ASIDDHA-GATE (cannot fire outside Tripāḍī once entered)",
+            ),
+            prev_sutra, sutra_id,
+        )
+        return _finish_apply_rule(prev_sutra, sutra_id, new_state)
 
     # ── Gate 2: Nipātana freeze ──────────────────────────────────────
     if is_frozen_by_nipatana(stype, new_state):
-        new_state.trace.append(make_skipped_step(
-            sutra_id, stype.name, contract["dev_label"], form_before,
-            rec.why_dev, "NIPATANA-FROZEN",
-        ))
-        return new_state
+        _append_traced_step(
+            new_state,
+            make_skipped_step(
+                sutra_id, stype.name, contract["dev_label"], form_before,
+                rec.why_dev, "NIPATANA-FROZEN",
+            ),
+            prev_sutra, sutra_id,
+        )
+        return _finish_apply_rule(prev_sutra, sutra_id, new_state)
 
     # ── Gate 3: Pratiṣedha block ─────────────────────────────────────
     if is_blocked(sutra_id, new_state):
-        new_state.trace.append(make_skipped_step(
-            sutra_id, stype.name, contract["dev_label"], form_before,
-            rec.why_dev, "PRATISHEDHA-BLOCKED",
-        ))
-        return new_state
+        _append_traced_step(
+            new_state,
+            make_skipped_step(
+                sutra_id, stype.name, contract["dev_label"], form_before,
+                rec.why_dev, "PRATISHEDHA-BLOCKED",
+            ),
+            prev_sutra, sutra_id,
+        )
+        return _finish_apply_rule(prev_sutra, sutra_id, new_state)
 
     # ── Gate 4: Vibhāṣā recipe choice ────────────────────────────────
     if stype is SutraType.VIBHASHA:
@@ -127,11 +162,15 @@ def apply_rule(
                 "choice_made" : False,
                 "alternative" : form_before,
             })
-            new_state.trace.append(make_skipped_step(
-                sutra_id, stype.name, contract["dev_label"], form_before,
-                rec.why_dev, "VIBHASHA-DECLINED",
-            ))
-            return new_state
+            _append_traced_step(
+                new_state,
+                make_skipped_step(
+                    sutra_id, stype.name, contract["dev_label"], form_before,
+                    rec.why_dev, "VIBHASHA-DECLINED",
+                ),
+                prev_sutra, sutra_id,
+            )
+            return _finish_apply_rule(prev_sutra, sutra_id, new_state)
 
     # ── Dispatch to executor (the ONLY place we call exec_*) ─────────
     exec_fn = _EXEC_TABLE[stype]
@@ -146,19 +185,43 @@ def apply_rule(
     form_after = new_state.render()
 
     if not fired:
-        new_state.trace.append(make_skipped_step(
-            sutra_id, stype.name, contract["dev_label"], form_before,
-            rec.why_dev, "COND-FALSE",
-        ))
-        return new_state
+        _sd = getattr(rec, "skip_detail_cond_false", None)
+        _append_traced_step(
+            new_state,
+            make_skipped_step(
+                sutra_id, stype.name, contract["dev_label"], form_before,
+                rec.why_dev, "COND-FALSE",
+                skip_detail=_sd,
+            ),
+            prev_sutra, sutra_id,
+        )
+        return _finish_apply_rule(prev_sutra, sutra_id, new_state)
+
+    # **1.3.9** — *it*-*prakaraṇa* *vidhi* is *paryālayit* even when there is no *it* to
+    # *lop*; executor signals vacuous *prayoga* (not *COND-FALSE* *skip*).
+    if new_state.meta.pop(META_1_3_9_VACUOUS, None):
+        w_v = getattr(rec, "why_dev_vacuous", None) or rec.why_dev
+        _append_traced_step(
+            new_state,
+            make_applied_vacuous_step(
+                sutra_id, stype.name, contract["dev_label"],
+                form_before, form_after, w_v, lopa_count=0,
+            ),
+            prev_sutra, sutra_id,
+        )
+        return _finish_apply_rule(prev_sutra, sutra_id, new_state)
 
     # ── Invariant checks on APPLIED step ─────────────────────────────
     check_r1(rec, form_before, form_after)
     check_r2(rec, samjna_before, new_state.samjna_registry)
     check_r3(rec, parib_before,  new_state.paribhasha_gates)
 
-    new_state.trace.append(make_applied_step(
-        sutra_id, stype.name, contract["dev_label"],
-        form_before, form_after, rec.why_dev,
-    ))
-    return new_state
+    _append_traced_step(
+        new_state,
+        make_applied_step(
+            sutra_id, stype.name, contract["dev_label"],
+            form_before, form_after, rec.why_dev,
+        ),
+        prev_sutra, sutra_id,
+    )
+    return _finish_apply_rule(prev_sutra, sutra_id, new_state)

@@ -25,4 +25,10 @@ def exec_anuvada(
     state: State,
     step : Dict[str, Any],
 ) -> Tuple[State, bool]:
+    # Most अनुवाद sūtras are unconditional (cond is None).  A few, such as
+    # **2.3.46**, carry a *śāstra* gate without phonological effect — honour
+    # cond when present so the trace records COND-FALSE instead of a spurious
+    # APPLIED row.
+    if rec.cond is not None and not rec.cond(state):
+        return state, False
     return state, True

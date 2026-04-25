@@ -245,6 +245,7 @@ def api_sig(name):
         "sutra_fire_stats", "sutra_edge_stats", "sutra_interaction_graph",
         "sig_critical_path", "sig_transitions", "sig_linguistic",
         "sig_baseline", "sig_anomalies", "sutra_next_candidates",
+        "global_sutra_frequencies", "global_sutra_edges", "global_markov_transitions",
         "coverage",
     }
     if name not in allowed:

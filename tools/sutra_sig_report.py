@@ -38,6 +38,12 @@ def _print_fire_stats(d):
     for r in top:
         print(f"  {r['id']:<12}  fire={r['fire_count']:>5}  "
               f"total_ns={r['total_time_ns']:>12}")
+    zf = d.get("zero_fire_cpu_hot", [])[:8]
+    if zf:
+        print("  Zero-APPLIED but CPU-hot (evaluated, skipped/blocked):")
+        for r in zf:
+            print(f"    {r['id']:<12}  total_ns={r['total_time_ns']:>12}  "
+                  f"sk={r.get('skipped',0)}  bl={r.get('blocked',0)}")
 
 
 def _print_edge_stats(d):
@@ -68,6 +74,11 @@ def _print_critical(d):
     for r in d.get("by_total_time", [])[:10]:
         print(f"  {r['sutra_id']:<12}  total_ns={r['total_time_ns']:>12}  "
               f"%total={r['pct_of_total_engine_time']:>5.1f}")
+    zf = d.get("by_total_time_zero_fire", [])
+    if zf:
+        print("  High CPU, zero APPLIED (timed-eval cost on skips/blocks):")
+        for r in zf[:5]:
+            print(f"    {r['sutra_id']:<12}  total_ns={r['total_time_ns']:>12}")
     spikes = d.get("spiking_rules", [])
     if spikes:
         print("  Spiking (p95 > 3× median):")
@@ -88,6 +99,18 @@ def _print_anomalies(d):
     for a in d["anomalies"][:10]:
         print(f"    [{a['severity']:<8}] {a['sutra_id']:<12}  "
               f"z={a['z_score']:+6.2f}  slowdown={a['slowdown_factor']:.2f}×")
+    prof = d.get("cell_cpu_profile") or {}
+    if prof.get("derivations_timed"):
+        print("  Per-derivation wall time (sum of timed apply_rule steps):")
+        print(f"    derivations_timed={prof['derivations_timed']!r}  "
+              f"median_total_ns={prof.get('median_total_ns')!r}  "
+              f"max={prof.get('max_total_ns')!r}")
+    casc = d.get("cascade_slow_cells") or []
+    if casc:
+        print("  Pipeline cascade (cells >> median CPU):")
+        for c in casc[:6]:
+            print(f"    [{c['severity']:<8}] {c['cell_id']!r}  "
+                  f"vs_median={c['vs_median']:.2f}×")
 
 
 def _print_hubs(d):

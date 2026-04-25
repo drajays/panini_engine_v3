@@ -4,8 +4,20 @@
 A stem formed by a kṛt / taddhita affix (or a compound) is called
 *prātipadika* — licensing sup attachment under ``4.1.1`` / ``4.1.2``.
 
+In glass-box recipes, **2.4.71** (*supo dhātūprātipadikayoḥ*) should run only
+after *avayava* are *prātipadika*-tagged; this engine models that with
+``meta['pratipadika_avayava_ready']`` before ``meta['2_4_71_luk_arm']`` arms
+*luk* (see **2.4.71** module doc).
+
 Engine: fires once a kṛt-augmented dhātu shape is ready (after ``7.2.116`` on
-the agent-noun path); registry flag for trace only.
+the agent-noun path); registry flag for trace only.  Case C records
+prātipadika-saṃjñā for a single merged dik-samāsa from ``2.2.26`` (no
+re-segmentation).  Case D tags the *taddhita* ``Term`` (e.g. *ChaH*) with ``prātipadika`` and sets
+a registry flag for *śālīya* recipes (``pipelines/taddhita_salIya``) *before*
+**2.4.71** *luk* and before *it*-*lopa* in the *phadi* chain **7.1.2** (pedagogy:
+**1.2.46** names the *kṛt-taddhita*-*anta* *śabda*; *C* of *Cha* is *it* per
+1.3.2–1.3.9).  Case E: same three-*Term* frame for *itika* + *phak*
+(``pipelines/taddhita_itika_etikAyana``; ``prakriya_itika_phak``).
 """
 from __future__ import annotations
 
@@ -14,6 +26,53 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
+    # ── Case C: dik-samāsa already merged by 2.2.26 (single prātipadika) ───
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if state.samjna_registry.get("1.2.46_dik_pratipadika"):
+            return False
+        if (
+            "dhatu" not in t0.tags
+            and "diksamasa" in t0.tags
+            and "bahuvrihi" in t0.tags
+            and "prātipadika" in t0.tags
+        ):
+            return True
+        return False
+
+    # ── Case D: *śālīya* glass-box — stem + internal *sup* + *taddhita* … ───
+    # ``meta['prakriya_sAlIya']`` is armed only by ``pipelines/taddhita_salIya``.
+    if state.meta.get("prakriya_sAlIya") and len(state.terms) >= 3:
+        t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
+        if (
+            "dhatu" not in t0.tags
+            and "anga" in t0.tags
+            and "prātipadika" in t0.tags
+            and "sup" in t1.tags
+            and "pratyaya" in t2.tags
+            and "taddhita" in t2.tags
+            and "sup" not in t2.tags
+        ):
+            if state.samjna_registry.get("1.2.46_sAlIya_avayava"):
+                return False
+            return True
+
+    # ── Case E: *itika* + *phak* (``pipelines/taddhita_itika_etikAyana``) —──
+    if state.meta.get("prakriya_itika_phak") and len(state.terms) >= 3:
+        t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
+        if (
+            "dhatu" not in t0.tags
+            and "anga" in t0.tags
+            and "prātipadika" in t0.tags
+            and "sup" in t1.tags
+            and "pratyaya" in t2.tags
+            and "taddhita" in t2.tags
+            and "sup" not in t2.tags
+        ):
+            if state.samjna_registry.get("1.2.46_itika_avayava"):
+                return False
+            return True
+
     # ── Case A: kṛdanta path (legacy; unchanged) ─────────────────────────
     if len(state.terms) < 2:
         return False
@@ -52,6 +111,43 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    # Case C: record prātipadika-saṃjñā for dik compound (structure unchanged).
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if "diksamasa" in t0.tags and "bahuvrihi" in t0.tags:
+            state.samjna_registry["1.2.46_dik_pratipadika"] = True
+            return state
+
+    if state.meta.get("prakriya_sAlIya") and len(state.terms) >= 3:
+        t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
+        if (
+            "dhatu" not in t0.tags
+            and "anga" in t0.tags
+            and "prātipadika" in t0.tags
+            and "sup" in t1.tags
+            and "pratyaya" in t2.tags
+            and "taddhita" in t2.tags
+            and "sup" not in t2.tags
+        ):
+            state.samjna_registry["1.2.46_sAlIya_avayava"] = True
+            t2.tags.add("prātipadika")
+            return state
+
+    if state.meta.get("prakriya_itika_phak") and len(state.terms) >= 3:
+        t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
+        if (
+            "dhatu" not in t0.tags
+            and "anga" in t0.tags
+            and "prātipadika" in t0.tags
+            and "sup" in t1.tags
+            and "pratyaya" in t2.tags
+            and "taddhita" in t2.tags
+            and "sup" not in t2.tags
+        ):
+            state.samjna_registry["1.2.46_itika_avayava"] = True
+            t2.tags.add("prātipadika")
+            return state
+
     # Samāsa path: merge samāsa members into one prātipadika+aṅga term.
     if "dhatu" not in state.terms[0].tags:
         # Mark registry for audit.

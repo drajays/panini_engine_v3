@@ -6,11 +6,10 @@
 • **Type:** SAMJNA — initial **ḷ**-**ś**-**ku** (ल्·श्·कवर्ग) of a **non-taddhita**
   pratyaya in upadeśa gets *it* (then **1.3.9** deletes).
 
-• **v3 representative encoding:** Classical लशक्व is implemented for the
-  **sup** inventory by tagging initial **ṅ** (SLP1 ``N``) when ``has_initial_n_it``
-  is set on the pratyaya Term — see ``sutra_4_1_2`` + ``_meta`` in
-  ``data/inputs/sup_upadesha.json``. This keeps phoneme logic in sūtra files
-  and inventory policy in **data/inputs/** (Art. 6 — engine never reads gold corpora).
+• **v3 encoding:** **Non-taddhita**, **non-dhātu** ``Term`` with ``upadesha`` whose **first**
+  Varṇa is **ल्·श्·कु** (SLP1 ``l``, ``S``, or ``KU_VARGA``) gets ``it_candidate_lasaku`` —
+  covers *śap* ``Sap``, **sup** *Ne*, etc.  Terms tagged ``lakAra_pratyaya_placeholder`` are
+  skipped so abstract ``laT`` keeps **1.3.3**-only *it* on ``T`` (gold *tin*anta spine).
 
 • **v2 reference:** ``~/Documents/panini_engine_v2/core/sutra_1_3_8.py`` +
   ``it_rules.py``
@@ -23,21 +22,32 @@ from __future__ import annotations
 
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
+from phonology      import KU_VARGA
+
+# ल्·श्·कवर्ग (SLP1) — *upadeśa* first letter for **1.3.8** *ataddhite*.
+_LASAKU_INITIAL_SLP1 = frozenset({"l", "S"}) | KU_VARGA
 
 
 def _eligible_terms(state: State):
     for i, t in enumerate(state.terms):
-        if "has_initial_n_it" not in t.tags:
-            continue
         if not t.varnas:
             continue
         first = t.varnas[0]
-        if first.slp1 != "N":
+        if "it" in first.tags or "it_candidate_lasaku" in first.tags:
             continue
-        if ("it" in first.tags or
-            "it_candidate_lasaku" in first.tags):
+        # Abstract *lakāra* spine (``laT`` …) — initial ``l`` is not *laśakavataddhite* *it* here;
+        # **1.3.3** *halantyam* on the final ``T`` / *lac* collapse handles the *lakāra* row.
+        if "lakAra_pratyaya_placeholder" in t.tags:
             continue
-        yield i
+        # Classical *laśakavataddhite* on *pratyaya* / affix *upadeśa* (not *dhātu*).
+        # Covers **sup** *Ne*-type rows (*ṅ* ∈ *ku*) and *śap* ``Sap`` (*ś* = ``S``), etc.
+        if (
+            "upadesha" in t.tags
+            and "dhatu" not in t.tags
+            and "taddhita" not in t.tags
+            and first.slp1 in _LASAKU_INITIAL_SLP1
+        ):
+            yield i
 
 
 def cond(state: State) -> bool:
@@ -58,9 +68,10 @@ SUTRA = SutraRecord(
     text_slp1      = "upadeSe laSakv ataddhite it",
     text_dev       = "उपदेशे लशक्वतद्धिते इत्",
     padaccheda_dev = "उपदेशे लशकु-अतद्धिते इत्",
-    why_dev        = "अतद्धिते प्रत्ययस्य आदौ ल्-श्-कु-वर्णानाम् इत्-संज्ञा; "
-                     "अत्र ङ्-आदिः प्रातिनिध्येन ‘has_initial_n_it’ द्वारा निर्दिष्टः। "
-                     "लोपः १.३.९।",
+    why_dev        = (
+        "अतद्धिते प्रत्ययादौ ल्-श्-कु-वर्णानाम् इत्-संज्ञा; लोपः १.३.९। "
+        "सुप्-पङ्क्तिषु ङ्-आदिर् अपि (*N* ∈ *ku*)।"
+    ),
     anuvritti_from = ("1.3.2",),
     cond           = cond,
     act            = act,

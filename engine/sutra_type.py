@@ -195,6 +195,16 @@ class SutraRecord:
 
         For NIPATANA:
             nipatana_form_slp1 : str  — the frozen varṇa sequence
+
+        Dispatcher / R1:
+            r1_form_identity_exempt : when True, **check_r1** skips the
+            ``form_before == form_after`` guard for this record only (rare:
+            e.g. **2.4.71** deletes *sup* ``Term`` objects whose ``varnas`` are
+            empty abstract placeholders, so ``State.flat_slp1()`` may be unchanged).
+        why_dev_vacuous: optional *trace* text for **1.3.9**-style *śūnya* *lopa*
+            (*APPLIED_VACUOUS* — see ``engine.dispatcher`` / ``engine.trace``).
+        skip_detail_cond_false: optional *trace* gloss when ``cond`` is false
+            (*skip_reason* = *COND-FALSE*); not read by ``cond`` (Art. 2).
     """
     sutra_id        : str
     sutra_type      : SutraType
@@ -222,6 +232,11 @@ class SutraRecord:
     atidesha_source  : Optional[str]                  = None
     atidesha_dest    : Optional[str]                  = None
     nipatana_form_slp1 : Optional[str]                = None
+
+    # Rare override: see field docstring on ``SutraRecord`` class above.
+    r1_form_identity_exempt: bool                    = False
+    why_dev_vacuous        : Optional[str]           = None
+    skip_detail_cond_false : Optional[str]           = None
 
     # ─────────────────────────────────────────────────────────────────
     # Self-validation.  Raises at import time (fail-fast) if a sūtra

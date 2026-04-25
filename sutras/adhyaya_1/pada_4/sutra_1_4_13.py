@@ -4,8 +4,12 @@
 The *ādi* of what follows from a pratyaya-ādeśa whose cause is a given
 element — that element is called *aṅga* with respect to that affix.
 
-Operational (kṛdanta): when a dhātu Term precedes a pratyaya Term, the dhātu
-is the *aṅga* for that pratyaya (registry key for trace / downstream gates).
+Operational: when a *dhātu* ``Term`` precedes a *pratyaya* ``Term``, the *dhātu*
+is the *aṅga* (registry *…_anga*).  **Case B:** *taddhite* (``pipelines/taddhita_salIya``) —
+*prakriti* is *aṅga* for the *taddhita* *pratyaya* when ``prakriya_sAlIya``; stem
+is already *aṅga*-*tag*ged, **1.4.13** registers the *aṅga* relation in the
+same *registry* *slot*.  **Case C:** ``prakriya_itika_phak`` (``pipelines/taddhita_itika_etikAyana``) —
+same pattern as Case B.
 """
 from __future__ import annotations
 
@@ -16,11 +20,31 @@ from engine.state import State
 def cond(state: State) -> bool:
     if len(state.terms) < 2:
         return False
-    if "dhatu" not in state.terms[0].tags:
+    if state.samjna_registry.get(("1.4.13_anga", 0)) is not None:
         return False
-    if "pratyaya" not in state.terms[1].tags:
+    t0, t1 = state.terms[0], state.terms[1]
+    if "pratyaya" not in t1.tags:
         return False
-    return state.samjna_registry.get(("1.4.13_anga", 0)) is None
+    if "dhatu" in t0.tags:
+        return True
+    # *śālīya* taddhita: *aṅga* = *prakriti* (not *dhātu*) *nimitta* of *taddhita*.
+    if (
+        state.meta.get("prakriya_sAlIya")
+        and "anga" in t0.tags
+        and "prātipadika" in t0.tags
+        and "dhatu" not in t0.tags
+        and "taddhita" in t1.tags
+    ):
+        return True
+    if (
+        state.meta.get("prakriya_itika_phak")
+        and "anga" in t0.tags
+        and "prātipadika" in t0.tags
+        and "dhatu" not in t0.tags
+        and "taddhita" in t1.tags
+    ):
+        return True
+    return False
 
 
 def act(state: State) -> State:

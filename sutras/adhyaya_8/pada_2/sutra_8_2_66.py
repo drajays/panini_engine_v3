@@ -60,6 +60,10 @@ SUTRA = SutraRecord(
     anuvritti_from = ("8.2.1",),
     cond           = cond,
     act            = act,
+    skip_detail_cond_false=(
+        "जयति का अन्त्य वर्ण 'i' (इ) = स्वर; पदान्त 'स्' नास्ति → "
+        "ससजुषो रुः N/A।"
+    ),
 )
 
 register_sutra(SUTRA)

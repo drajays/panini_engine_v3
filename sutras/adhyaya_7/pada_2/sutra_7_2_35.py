@@ -42,7 +42,9 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     pr = state.terms[-1]
-    pr.varnas.insert(0, mk("i"))
+    it_v = mk("i")
+    it_v.tags.add("it_agama")
+    pr.varnas.insert(0, it_v)
     pr.meta["it_agama_7_2_35_done"] = True
     return state
 

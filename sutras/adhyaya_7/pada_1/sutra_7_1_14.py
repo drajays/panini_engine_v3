@@ -27,6 +27,10 @@ def _matches(state: State) -> bool:
         return False
     if pr.meta.get("smai_done"):
         return False
+    # *adanta* only (same anuvṛtti thread as 7.1.13): *ā*-final stems keep **Ne**
+    # for **7.3.114** (*sarvanāmnaḥ syāṭ hr̥asvaś ca*).
+    if not anga.varnas or anga.varnas[-1].slp1 != "a":
+        return False
     return True
 
 

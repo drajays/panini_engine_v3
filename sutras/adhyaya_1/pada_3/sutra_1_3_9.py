@@ -5,13 +5,17 @@
 ──────────────────────────────────────────────────────────
 • **Type:** VIDHI — **deletes** Varṇas that have been marked as *it* (by
   **1.3.2**–**1.3.8** and related it-candidate tags). This is
-  the operational *lopa* of the *it* sound — not the saṃjñā step.
+  the operational *lopa* of the *it* sound — the **saṃjñā** *lopa* (“*adarśanam*”
+  in *sthāne* — **1.1.60** with *sthāne* anuv.* **1.1.50**) is registered separately;
+  **1.3.9** does not re-invoke **1.1.60** in ``cond`` (recipes preflight **1.1.60**).
 
 • **tasya:** *Of that [it]* — anuvṛtti links to the *it* prakaraṇa opened by
   **1.3.2**; baked into ``text_slp1`` as ``itasya`` (Art. 4).
 
-• **R1:** Not exempt — if ``cond`` is True, ``act`` must remove at least one
-  Varṇa whose tags intersect ``IT_LOPA_TAGS``; otherwise *R1Violation*.
+• **R1 / vacuous:** If *it* is tagged, ``act`` must remove the corresponding
+  rows and ``form_before`` may differ from ``form_after``.  If there is no *it* to
+  *lop*, the dispatcher records **APPLIED_VACUOUS** (checked *śūnya* *lopa*), not
+  **SKIPPED (COND-FALSE)**.
 
 • **v2 reference:** ``~/Documents/panini_engine_v2/core/it_rules.py``
   ``cond_1_3_9`` /
@@ -22,24 +26,13 @@
 """
 from __future__ import annotations
 
-from typing import Final, FrozenSet
-
 from engine        import SutraType, SutraRecord, register_sutra
+from engine.it_phonetic import IT_LOPA_TAGS
 from engine.state  import State
 from phonology.pratyahara import AC
 from phonology.varna     import mk as v_mk, mk_inherent_a
 
-# Exposed for tools/UI — single source for “what 1.3.9 strips”
-IT_LOPA_TAGS: Final[FrozenSet[str]] = frozenset((
-    "it",
-    "it_candidate_halantyam",
-    "it_candidate_anunasika",
-    "it_candidate_irit",
-    "it_candidate_nit_tu_du",
-    "it_candidate_sha_pratyaya",
-    "it_candidate_cutu",
-    "it_candidate_lasaku",
-))
+# Re-export for sibling sūtras (``1.3.5``–``1.3.7``); canonical set: ``engine.it_phonetic``.
 
 
 def _has_it_varna(term) -> bool:
@@ -106,6 +99,8 @@ SUTRA = SutraRecord(
     ),
     cond           = cond,
     act            = act,
+    why_dev_vacuous = "इत्-संज्ञक-वर्णाः न सन्ति, अतः लोपः शून्यः; "
+                      "तथापि नियम-परीक्षा अनिवार्या (१.३.९)।",
 )
 
 register_sutra(SUTRA)

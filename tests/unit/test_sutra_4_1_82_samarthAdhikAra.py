@@ -18,7 +18,12 @@ def test_sutra_metadata():
     assert r.sutra_type is SutraType.ADHIKARA
     assert r.adhikara_scope == ("4.1.82", "5.2.140")
     assert "samarth" in r.text_slp1
+    assert "prathamAt" in r.text_slp1
+    assert "NyAp" in r.text_slp1
+    assert "taddhitaH" in r.text_slp1
     assert "समर्थ" in r.text_dev
+    assert "ङ्याप्प्रातिपदिकात्" in r.text_dev
+    assert r.anuvritti_from == ("3.1.1", "3.1.2", "3.1.3", "4.1.1", "4.1.76")
 
 
 def test_act_pushes_scope_once():

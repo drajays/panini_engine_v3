@@ -26,13 +26,23 @@ Recipe (Aṣṭādhyāyī order; one step per apply_rule call):
 
     STAGE 1: saṃjñā preflight
         1.4.14  sup saṃjñā
+        (optional) 2.3.1 + 2.3.46 — when ``build_initial_state(...,
+        matra_prathama_2_3_46=True)`` / matching ``state.meta``:
+        *anabhihita* adhikāra opens, then **2.3.46** ANUVADA (trace) for
+        *prātipadikārtha* / *liṅga* / *parimāṇa* / *vacana*-*mātra* with
+        *prathamā* (cond is blind to ``vibhakti_vacana`` per Art. 2).
         4.1.1   ngyāp anuvāda
         1.1.1   vṛddhi saṃjñā (definition {A,E,O}; prayoga in vidhi sūtras)
                 [recipe schedules this early; vṛddhi *prayoga* not applied here—
                  no vidhi invokes operational vṛddhi at this step, only saṃjñā]
+        1.1.73  *vṛddha-pada* saṃjñā (first *ac* in *vṛddhi* ⇒ *vṛddham* pada)
         1.1.2   guṇa saṃjñā   (available for later sandhi)
         1.1.3   *ik* *sthāyin* under *guṇa* / *vṛddhi* (paribhāṣā gate)
         1.1.7   *saṃyoga* (contiguous *hal*; paribhāṣā-śāstrīya cluster term)
+        1.1.60  *lopa* (sthāne *adarśanam*; names deletion — **1.3.9** *vidhi* applies *lopa* to *it*)
+        1.1.61  *luk* / *ślu* / *lup* saṃjñā (*pratyayādarśana* subtypes; needs **1.1.60**)
+        1.1.62  *pratyayalakṣaṇam* paribhāṣā (*pratyayāśrita* *kārya* after *lopa*)
+        1.1.63  *na lumatā …* — *luk*/*ślu*/*lup*-*lopa* blocks *aṅga*-*pratyayalakṣaṇa* (**1.1.62** *apavāda*)
         1.1.8   *anunāsika* (mukha–*nāsikā* *avacana*; *anusvāra* / *chandrabindu* class)
         1.1.9   *savarṇa* (*tulya* *āśya*–*prayatna*; ``phonology.savarna``)
         1.1.10  *nājjhalau* ( *it* / *upadeśa* paribhāṣā before 1.3.2)
@@ -48,6 +58,7 @@ Recipe (Aṣṭādhyāyī order; one step per apply_rule call):
         1.1.19  *Ī*/*Ū* + *tau* *saptamī*-*artha* ( *pragṛhya* extension; *i* 11019)
         1.1.20  *dā* / *dhā* + *ad*+**āp** → *ghu* ( *i* 11020)
         1.1.21  *ādyantavad* *ekasmin* ( *i* 11021; *paribhāṣā* *gate* for *atideśa*)
+        1.1.46  *ādyantau* *ṭakitau* (*ṭit* before / *kit* after *āgamin*; *āgama-sthāna*)
         1.1.22  *tarap* + *tamap* → *gha* (taddhita; *i* 11022; distinct from *ghu* **1.1.20**)
         1.1.23  *bahu* / *gaṇa* / *vatu* / *ḍati* → *saṅkhyā* ( *i* 11023)
         1.1.24  *ṣṇānta* → *ṣaṭ* ( *i* 11024; under 1.1.23 *saṅkhyā* anuvṛtti)
@@ -58,12 +69,17 @@ Recipe (Aṣṭādhyāyī order; one step per apply_rule call):
     STAGE 3: it-prakaraṇa on the pratyaya upadeśa
         1.3.3–1.3.8  it-saṃjñā (halantyam, tusma block, ñiṭuḍu, ṣaḥ, cuṭu, laśakvat)
         1.3.9   tasya lopaḥ (delete tagged it-varṇas)
+        1.3.10  *samānām anudeśaḥ yathāsaṅkhyam* (paribhāṣā gate after first *it*-*lopa* pass)
 
     STAGE 4: aṅgakārya
         6.4.1   aṅgasya adhikāra
+        1.4.17 / 1.4.16 / 1.4.18  *prakṛti* saṃjñā (*pada* / *bha* *bādhyabādaka*)
+        after **1.1.42** (recipe order: **1.4.17** → **1.4.16** → **1.4.18**)
       (conditional) 7.1.54  nuṭ āgama for (6,3)
       (then)  1.3.9 again to lose the ṭ it-marker of nuṭ
-        6.4.148 yasyeti ca (when aṅga-final a meets i-pratyaya)
+        6.4.129 *bhasya* (recipe: pushed just before **6.4.130** so **7.** rules do
+                not purge it via ``purge_closed_adhikaras``)
+        6.4.130 / 6.4.134 / 6.4.146 / 6.4.148 — *bhādhikāra* *aṅgakārya* slice
 
     STAGE 5: sandhi
         6.1.87  āt guṇaḥ  (e.g. a+i → e for (3,1))
@@ -88,8 +104,22 @@ from phonology.varna   import mk_inherent_a
 
 
 def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
-                        linga: str = "pulliṅga") -> State:
-    """Build the initial state for a subanta derivation."""
+                        linga: str = "pulliṅga",
+                        *,
+                        matra_prathama_2_3_46: bool = False,
+                        nAmadheya_vrddha_term_indices: tuple[int, ...] | frozenset[int] | None = None,
+                        ) -> State:
+    """Build the initial state for a subanta derivation.
+
+    ``matra_prathama_2_3_46`` — when True, sets
+    ``state.meta['2_3_46_matra_prathama_eligible']`` so the subanta recipe
+    may schedule **2.3.1** + **2.3.46** in preflight (caller opts into this
+    *śāstra* slice; default subanta behaviour is unchanged).
+
+    ``nAmadheya_vrddha_term_indices`` — optional indices for **1.1.73**
+    *vārttika* (*vā nāmadheyasya vṛddha-saṃjñā*); stored as
+    ``state.meta['1_1_73_nAmadheya_vrddha_term_indices']`` for **1.1.73**.
+    """
     # Each consonant gets inherent-a unless immediately followed by a
     # vowel character in the stem.  We emit in canonical internal form:
     # consonant halanta + vowel/inherent-a.  Simple loop:
@@ -133,6 +163,15 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
     state = State(terms=[stem])
     state.meta["linga"]            = linga
     state.meta["vibhakti_vacana"]  = f"{vibhakti}-{vacana}"
+    if matra_prathama_2_3_46:
+        state.meta["2_3_46_matra_prathama_eligible"] = True
+    if nAmadheya_vrddha_term_indices is not None:
+        from sutras.adhyaya_1.pada_1.sutra_1_1_73 import (
+            META_NAMADHEYA_VRDDHA_INDICES,
+        )
+        state.meta[META_NAMADHEYA_VRDDHA_INDICES] = frozenset(
+            nAmadheya_vrddha_term_indices
+        )
     return state
 
 
@@ -206,24 +245,106 @@ def derive_akarant_pullinga(
     return derive(stem_slp1, vibhakti, vacana, linga="pulliṅga")
 
 
-def derive(stem_slp1: str, vibhakti: int, vacana: int,
-           linga: str = "pulliṅga") -> State:
-    """
-    Aṣṭādhyāyī-kram pipeline.  Returns final state with complete trace.
-    """
-    # Tyadādi pronouns like `tad` have no sambodhana (no vibhakti 8 forms).
-    if vibhakti == 8 and stem_slp1.strip() in {"tad", "tyad", "yad", "etad", "idam", "adas", "kim"}:
-        raise ValueError("त्यदादि-शब्देषु सम्बोधन-रूप (८-*) नास्ति।")
+# Structural step in ``run_subanta_post_4_1_2`` (not a sūtra id).
+PADA_MERGE_STEP = "__PADA_MERGE__"
 
-    s = build_initial_state(stem_slp1, vibhakti, vacana, linga)
+# Canonical ``apply_rule`` ids from **1.3.2** through tripāḍī, in engine order,
+# after **4.1.2** has attached *sup*.  Demos may iterate this tuple for verbose
+# traces; keep in sync with ``run_subanta_post_4_1_2``.
+SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
+    "1.3.2",
+    "1.3.3",
+    "1.3.4",
+    "1.3.5",
+    "1.3.6",
+    "1.3.7",
+    "1.3.8",
+    "1.3.9",
+    "1.3.10",
+    "6.4.1",
+    "7.1.2",
+    "7.2.106",
+    "7.2.102",
+    "6.1.97",
+    "6.1.69",
+    "7.1.15",
+    "7.1.12",
+    "7.1.14",
+    "7.3.113",
+    "7.3.114",
+    "7.1.13",
+    "7.1.9",
+    "7.1.17",
+    "7.1.24",
+    "7.1.19",
+    "7.1.20",
+    "1.1.42",
+    "1.4.17",
+    "1.4.16",
+    "1.4.18",
+    "7.1.54",
+    "7.1.52",
+    "1.3.5",
+    "1.3.7",
+    "1.3.9",
+    "7.1.72",
+    "6.4.8",
+    "6.4.3",
+    "7.3.103",
+    "7.3.102",
+    "6.4.129",
+    "6.4.130",
+    "6.4.134",
+    "6.4.146",
+    "6.4.148",
+    "7.3.108",
+    "7.3.109",
+    "7.3.111",
+    "7.3.119",
+    "7.3.120",
+    "6.1.102",
+    "6.1.103",
+    "6.1.78",
+    "6.1.107",
+    "6.1.77",
+    "6.1.87",
+    "6.1.88",
+    "6.1.110",
+    "6.1.101",
+    PADA_MERGE_STEP,
+    "8.2.1",
+    "8.2.66",
+    "8.3.15",
+    "8.3.59",
+    "8.4.1",
+    "8.4.2",
+)
 
-    # STAGE 1 — saṃjñā preflight.
+
+def run_subanta_preflight_through_1_4_7(s: State) -> State:
+    """
+    STAGE 1 of ``run_subanta_pipeline``: saṃjñā preflight through **1.4.7**
+    (everything before **4.1.2** *sup* attach).  Includes **1.2.45** *prātipadika*
+    on *arthavad* non-dhātu stems.
+    """
     s = apply_rule("1.4.14", s)
+    if s.meta.get("2_3_46_matra_prathama_eligible"):
+        s = apply_rule("2.3.1", s)
+        s = apply_rule("2.3.46", s)
     s = apply_rule("4.1.1",  s)
+    # Strī-pratyaya *ṭāp* (4.1.4) under *strī* adhikāra (4.1.3), before *sup* (4.1.2).
+    if any("strīliṅga" in t.tags for t in s.terms):
+        s = apply_rule("4.1.3", s)
+        s = apply_rule("4.1.4", s)
     s = apply_rule("1.1.1",  s)  # saṃjñā only — prayoga awaits vidhi (e.g. 6.1.88)
+    s = apply_rule("1.1.73", s)  # *vṛddha-pada* indices (1.1.1 *vṛddhi* + first *ac*)
     s = apply_rule("1.1.2",  s)
     s = apply_rule("1.1.3",  s)  # *ik* *sthāyin* gate for *guṇa* / *vṛddhi*
     s = apply_rule("1.1.7",  s)  # *saṃyoga* = adjacent *hal* (Tripāḍī / *hal* *vidhi* scope)
+    s = apply_rule("1.1.60", s)  # *lopa* saṃjñā (*sthāne adarśanam*; anuv.* *sthāne* 1.1.50)
+    s = apply_rule("1.1.61", s)  # *luk* / *ślu* / *lup* — *pratyaya-lopa* classes (needs 1.1.60)
+    s = apply_rule("1.1.62", s)  # *pratyayalope pratyayalakṣaṇam* (paribhāṣā gate)
+    s = apply_rule("1.1.63", s)  # *na lumatā … aṅgasya pratyayalakṣaṇam* (*apavāda* to 1.1.62)
     s = apply_rule("1.1.8",  s)  # *anunāsika* (anchor for ``anunasika`` / *M* in prakriyā)
     s = apply_rule("1.1.9",  s)  # *savarṇa* (6.1.101 / sandhi premiss)
     s = apply_rule("1.1.10", s)  # *nājjhalau* (*it* locus; before 1.3.2)
@@ -239,110 +360,70 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     s = apply_rule("1.1.19", s)  # *IdU tau* *saptamī*-*artha* ( 11019; *saṃjñā* *extension* of 1.1.11)
     s = apply_rule("1.1.20", s)  # *dA-DhA* *ghu* *ad*+**āp** ( 11020; *ghu* *dhātu* *set* )
     s = apply_rule("1.1.21", s)  # *Adyantavad* *ekasmin* ( 11021; *paribhāṣā* )
+    s = apply_rule("1.1.46", s)  # *AdyantO* *TakitO* — *ṭit* before / *kit* after *āgamin*
     s = apply_rule("1.1.22", s)  # *tarap-tamapO* *ghaH* ( 11022; *gha* *taddhita* *pratyaya* *set* )
     s = apply_rule("1.1.23", s)  # *bahuganavatuqati* *saMkhyA* ( 11023; *saṅkhyā* *prātipadika* *set* )
     s = apply_rule("1.1.24", s)  # *zRAntA* *zaW* ( 11024; *ṣaṭ* ending-set {'z','n'} )
     # v3.7: tyadādi-gaṇa tagging (includes sarvanāma tag for these stems).
     s = apply_rule("1.2.72", s)
+    # *Avyutpanna* *prātipadika* (before **1.2.46** *kṛt-taddhita-samāsa* scope).
+    s = apply_rule("1.2.45", s)
     # v3.5: sarvanāma-saṃjñā (sarvādi-gaṇa; rules self-gate).
     s = apply_rule("1.1.27", s)
     # v3.4: घि-संज्ञा for hari-like i/u stems (rules self-gate).
     s = apply_rule("1.4.7",  s)
-
-    # STAGE 2 — sup attach.
-    s = apply_rule("4.1.2",  s)
-
-    # STAGE 3 — it prakaraṇa on the pratyaya.
-    s = apply_rule("1.3.2",  s)      # v3.1: anunāsika-it for vowels (su → s)
-    s = apply_rule("1.3.3",  s)
-    s = apply_rule("1.3.4",  s)      # tusma antya — halantyam blocked (registry)
-    s = apply_rule("1.3.5",  s)      # ādir ñiṭuḍavaḥ
-    s = apply_rule("1.3.6",  s)      # ṣaḥ pratyayasya
-    s = apply_rule("1.3.7",  s)      # cuṭu
-    s = apply_rule("1.3.8",  s)      # v3.1: initial-ṅ it for sup pratyayas
-    s = apply_rule("1.3.9",  s)
-
-    # STAGE 4 — aṅgakārya.
-    s = apply_rule("6.4.1",   s)
-    # v3.7: tyadādi prep should occur before 7.1.* / sandhi steps so later
-    # sandhi (e.g. 6.1.78 for -yoḥ) sees the a-ending aṅga.
-    s = apply_rule("7.2.106", s)      # tad/tyad: t → s before su
-    s = apply_rule("7.2.102", s)      # tyadādi final → a
-    s = apply_rule("6.1.97",  s)      # collapse a+a in tyadādi aṅga
-    # v3.1: sambuddhi su-lopa.  Fires only when pratyaya is tagged
-    # 'sambuddhi' (cell 8-1) and aṅga ends in hrasva/eṅ.  Done EARLY
-    # so later pratyaya-replacements don't re-materialize 's'.
-    s = apply_rule("6.1.69",  s)
-    # v3.1: ato-pratyaya replacements (ṭā→ina, ṅasi→āt, ṅas→sya).
-    # v3.5: sarvanāma specials must run before general a-stem replacements.
-    s = apply_rule("7.1.15",  s)      # ṅasi/ṅi → smAt/smin
-    s = apply_rule("7.1.12",  s)
-    # v3.1: ṅe → ya (dative-singular after a-stem).
-    s = apply_rule("7.1.14",  s)      # sarvanāma: ṅe → smE
-    s = apply_rule("7.1.13",  s)
-    # v3.2: ato bhisa ais — Bis → Es (cell 3-3).  MUST run before
-    # 7.3.103 so that the pratyaya's upadeśa is already 'Es' and
-    # 7.3.103 (which keys off 'Bis') won't fire for this cell.
-    s = apply_rule("7.1.9",   s)
-    # v3.5: sarvanāma plural jas substitution (sarve).
-    s = apply_rule("7.1.17",  s)
-    # v3.6: napuṃsaka specials.
-    s = apply_rule("7.1.24",  s)      # su/am → am (jnAnam)
-    s = apply_rule("7.1.19",  s)      # au → SI (jnAne)
-    s = apply_rule("7.1.20",  s)      # jas/Sas → Si (jnAnAni)
-    # v3.6: śi → sarvanāmasthāna (must run AFTER 7.1.19/20 created Si).
-    s = apply_rule("1.1.42",  s)
-    s = apply_rule("7.1.54",  s)      # fires only when (6,3) & hrasva-final aṅga
-    # v3.5: sarvanāma gen-pl: suṭ āgama before Am (sarveṣām).
-    s = apply_rule("7.1.52",  s)
-    # Re-fire relevant it-prakaraṇa after sarvanāma substitutions/āgamas.
-    s = apply_rule("1.3.5",   s)
-    s = apply_rule("1.3.7",   s)
-    s = apply_rule("1.3.9",   s)      # re-fire: remove ṭ-it of nuṭ if inserted
-    # v3.6: napuṃsaka plural: nuṃ + upadhā-dīrgha under sarvanāmasthāna.
-    s = apply_rule("7.1.72",  s)
-    s = apply_rule("6.4.8",   s)
-    s = apply_rule("6.4.3",   s)      # v3.4: nāmi — lengthen i/u before nuṭ + Am (harīṇām)
-    # v3.1: bahuvacane jhalyet — a → e before jhal-initial plural sup.
-    # MUST run before 7.3.102 (which would otherwise make a → ā).
-    s = apply_rule("7.3.103", s)
-    # v3.1: supi ca — aṅga-final 'a' → 'ā' before consonant-initial sup.
-    # Runs AFTER 7.1.12/13 replacements so the pratyaya's new first varṇa
-    # (y, s, t, ...) is visible as the trigger.
-    s = apply_rule("7.3.102", s)
-    s = apply_rule("6.4.148", s)      # yasyeti ca
-    # v3.4: hari-like (ghi) aṅgakārya (rules self-gate by upadeśa identity).
-    s = apply_rule("7.3.108", s)      # sambuddhi: hari → hare
-    s = apply_rule("7.3.109", s)      # jasi:       hari → hare
-    s = apply_rule("7.3.111", s)      # ṅiti:       hari → hare
-    s = apply_rule("7.3.119", s)      # ṅi:         harau
-    s = apply_rule("7.3.120", s)      # ṭā:         hariṇā (via ṇatva later)
-
-    # STAGE 5 — sandhi.
-    # v3.2: jas/Sas pratyaya substitutions (cells 1-3, 2-3, 8-3).
-    # Fire BEFORE other sandhi because they both delete the stem's
-    # final 'a', so subsequent 6.1.x rules don't see stray 'a + X' pairs.
-    s = apply_rule("6.1.102", s)      # jas → As (prathamā-pl pūrvasavarṇa)
-    s = apply_rule("6.1.103", s)      # Sas → An (puṃsi acc-pl)
-    s = apply_rule("6.1.78",  s)      # v3.1: ayādi — y-insertion before 'os'
-    s = apply_rule("6.1.107", s)      # v3.1: ami pūrvaḥ — a+am → am (blocks 6.1.101)
-    s = apply_rule("6.1.77",  s)      # v3.4: iko yanaci (hari+os → haryos)
-    s = apply_rule("6.1.87",  s)
-    s = apply_rule("6.1.88",  s)      # v3.1: vṛddhi — a+E/O → E/O
-    s = apply_rule("6.1.110", s)      # v3.4: ṅasi/ṅas pūrvarūpa (hare + as(i) → hare + s(i))
-    s = apply_rule("6.1.101", s)
-
-    # STAGE 6 — pada merge.
-    _pada_merge(s)
-
-    # STAGE 7 — tripāḍī.
-    s = apply_rule("8.2.1",  s)
-    s = apply_rule("8.2.66", s)
-    s = apply_rule("8.3.15", s)
-    s = apply_rule("8.3.59", s)       # v3.1: ṣatva after in-kuk vowels
-    s = apply_rule("8.4.2",  s)       # v3.1: ṇatva
-
     return s
+
+
+def run_subanta_post_4_1_2(s: State) -> State:
+    """
+    Run **1.3.2** … tripāḍī on ``s`` after **4.1.2** has attached *sup*.
+    Inserts ``_pada_merge`` at the same point as the historical monolithic recipe.
+    """
+    for rid in SUBANTA_RULE_IDS_POST_4_1_2:
+        if rid == PADA_MERGE_STEP:
+            _pada_merge(s)
+        else:
+            s = apply_rule(rid, s)
+    return s
+
+
+def run_subanta_pipeline(s: State) -> State:
+    """
+    Run the standard *subanta* ``apply_rule`` sequence on an already-built
+    ``State`` (as returned by ``build_initial_state``).  Used by ``derive()``
+    and by demos that attach a compound stem before *sup* (e.g. dik-samāsa).
+    """
+    s = run_subanta_preflight_through_1_4_7(s)
+    s = apply_rule("4.1.2",  s)
+    return run_subanta_post_4_1_2(s)
+
+
+def derive(stem_slp1: str, vibhakti: int, vacana: int,
+           linga: str = "pulliṅga",
+           *,
+           matra_prathama_2_3_46: bool = False,
+           nAmadheya_vrddha_term_indices: tuple[int, ...] | frozenset[int] | None = None,
+           ) -> State:
+    """
+    Aṣṭādhyāyī-kram pipeline.  Returns final state with complete trace.
+
+    ``matra_prathama_2_3_46`` — forwarded to ``build_initial_state``; when
+    True, preflight runs **2.3.1** then **2.3.46** after **1.4.14**.
+
+    ``nAmadheya_vrddha_term_indices`` — forwarded to ``build_initial_state``
+    for **1.1.73** *vārttika* (*nāmadheya* optional *vṛddha*).
+    """
+    # Tyadādi pronouns like `tad` have no sambodhana (no vibhakti 8 forms).
+    if vibhakti == 8 and stem_slp1.strip() in {"tad", "tyad", "yad", "etad", "idam", "adas", "kim"}:
+        raise ValueError("त्यदादि-शब्देषु सम्बोधन-रूप (८-*) नास्ति।")
+
+    s = build_initial_state(
+        stem_slp1, vibhakti, vacana, linga,
+        matra_prathama_2_3_46=matra_prathama_2_3_46,
+        nAmadheya_vrddha_term_indices=nAmadheya_vrddha_term_indices,
+    )
+    return run_subanta_pipeline(s)
 
 
 def _pada_merge(state: State) -> None:

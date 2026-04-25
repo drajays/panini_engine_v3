@@ -1,0 +1,82 @@
+{
+  "artifacts": [
+    "coverage.json",
+    "global_markov_transitions.json",
+    "global_sutra_edges.json",
+    "global_sutra_frequencies.json",
+    "sig_anomalies.json",
+    "sig_baseline.json",
+    "sig_critical_path.json",
+    "sig_linguistic.json",
+    "sig_manifest.json",
+    "sig_transitions.json",
+    "sutra_edge_stats.json",
+    "sutra_fire_stats.json",
+    "sutra_interaction_graph.json",
+    "sutra_next_candidates.json"
+  ],
+  "corpora": [
+    {
+      "cells": 24,
+      "file": "data/reference/subanta_gold/hari_pullinga.json",
+      "id": "subanta:subanta_gold/hari_pullinga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/subanta_gold/jnana_napumsaka.json",
+      "id": "subanta:subanta_gold/jnana_napumsaka",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/subanta_gold/rama_pullinga.json",
+      "id": "subanta:subanta_gold/rama_pullinga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/subanta_gold/sarva_pullinga.json",
+      "id": "subanta:subanta_gold/sarva_pullinga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 21,
+      "file": "data/reference/subanta_gold/tad_pullinga.json",
+      "id": "subanta:subanta_gold/tad_pullinga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 1,
+      "file": "data/reference/tinanta_gold/bhavati_gold.json",
+      "id": "recipe:bhavati_gold",
+      "recipe": "pipelines.tinanta_bhavati_gold:run_bhavati_gold_through_step  args=[9]"
+    },
+    {
+      "cells": 1,
+      "file": "data/reference/tinanta_gold/jayati_prakriya.json",
+      "id": "tinanta:tinanta_gold/jayati_prakriya_jayati",
+      "recipe": "pipelines.tinanta_jayati_gold.run_jayati_gold_through_step(9)"
+    },
+    {
+      "cells": 1,
+      "file": "data/reference/tinanta_gold/nayati_gold.json",
+      "id": "recipe:nayati_gold",
+      "recipe": "pipelines.tinanta_nayati_gold:run_nayati_gold_through_step  args=[9]"
+    },
+    {
+      "cells": 1,
+      "file": "data/reference/tinanta_gold/tarati_gold.json",
+      "id": "recipe:tarati_gold",
+      "recipe": "pipelines.tinanta_tarati_gold:run_tarati_gold_through_step  args=[9]"
+    }
+  ],
+  "generated_utc": "2026-04-24T19:12:41.880430+00:00",
+  "generator": "panini_engine_v3.tools.sig_benchmark",
+  "sutra_coverage": {
+    "coverage_pct": 100.0,
+    "implemented": 219,
+    "total_registry": 219
+  },
+  "total_derivations": 121
+}

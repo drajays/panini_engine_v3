@@ -1,16 +1,30 @@
 """
 2.4.71  सुपो धातुप्रातिपदिकयोः  —  VIDHI
 
-Within dhātu/prātipadika contexts, *sup* affixes are deleted.
+पदच्छेदः  सुपः / धातु-प्रातिपदिकयोः
 
-In v3 this rule is used (narrowly, but glass-box) for samāsa demos where
-we start from a pair of prātipadikas with their internal sup markers, and
-then delete those internal sups before samāsa prātipadika promotion.
+अनुवृत्तिः  लुक् 2.4.58
 
-Mechanical blindness: the trigger is purely structural/tag-based:
-  - there are at least two samāsa members tagged ``samasa_member``
-  - at least one Term tagged ``sup`` exists (internal)
-The action deletes those sup Terms, mutating the surface (flat slp1).
+अनुवृत्तिसहितं सूत्रम्  धातु-प्रातिपदिकयोः सुपः लुक्
+
+Meaning (śāstra summary):
+धातोः प्रातिपदिकस्य वा अवयवरूपेण विद्यमानस्य सुप्-प्रत्ययस्य लुक् भवति।
+
+Engine (v3, glass-box):
+**2.4.71** applies only when a recipe arms **luk** and confirms that the
+*avayava* bearing internal *sup* are already *prātipadika*-tagged (śāstra link
+to **1.2.46** *kṛttaddhitasamāsāś ca* — the *padāntara-sū* are *prātipadika*
+before *sup* is elided from that community):
+
+  • ``state.meta['2_4_71_luk_arm'] == True`` — request *luk*.
+  • ``state.meta['pratipadika_avayava_ready'] == True`` — recipe asserts
+    *prātipadika* readiness on members.
+
+On success: delete all ``sup`` Terms; set ``2_4_71_luk_arm`` to ``False`` and
+``2_4_71_luk`` to ``True`` (completion / *sup* removed).
+
+Mechanical blindness:
+  - ``cond()`` reads only tags + ``state.meta`` keys (never vibhakti/vacana).
 """
 from __future__ import annotations
 
@@ -23,9 +37,9 @@ def _sup_term_indexes(state: State) -> list[int]:
 
 
 def cond(state: State) -> bool:
-    # Require a samāsa context (two or more members).
-    members = [t for t in state.terms if "samasa_member" in t.tags]
-    if len(members) < 2:
+    if not state.meta.get("2_4_71_luk_arm"):
+        return False
+    if not state.meta.get("pratipadika_avayava_ready"):
         return False
     return len(_sup_term_indexes(state)) > 0
 
@@ -37,19 +51,24 @@ def act(state: State) -> State:
     # Delete from right to left to keep indexes stable.
     for i in reversed(idxs):
         del state.terms[i]
+    state.meta["2_4_71_luk_arm"] = False
+    state.meta["2_4_71_luk"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id       = "2.4.71",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "supo DhAtu-prAtipadikayoH",
-    text_dev       = "सुपो धातुप्रातिपदिकयोः",
+    text_slp1      = "DhAtu-prAtipadikayoH supaH luk",
+    text_dev       = "धातुप्रातिपदिकयोः सुपः लुक्",
     padaccheda_dev = "सुपः / धातु-प्रातिपदिकयोः",
-    why_dev        = "समास-आदि संरचनात्मक प्रसङ्गे आन्तर-सुप्-प्रत्ययस्य लोपः।",
-    anuvritti_from = ("2.4.70",),
+    why_dev        = "धातु/प्रातिपदिक-अवयवे विद्यमानस्य सुपः लुक् (आर्म्ड-मेटा)।",
+    anuvritti_from = ("2.4.58", "2.4.70"),
     cond           = cond,
     act            = act,
+    # *sup* may be abstract (empty ``varnas``); ``flat_slp1()`` unchanged though
+    # *sup* ``Term`` objects are deleted — R1 would false-alarm without this flag.
+    r1_form_identity_exempt=True,
 )
 
 register_sutra(SUTRA)

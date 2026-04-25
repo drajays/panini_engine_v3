@@ -1,249 +1,1319 @@
 {
   "ranked_by_count": [
     {
-      "fire_count": 24,
-      "id": "1.4.14",
-      "total_time_ns": 624960
+      "fire_count": 246,
+      "id": "1.3.9",
+      "total_time_ns": 10007586
     },
     {
-      "fire_count": 24,
-      "id": "4.1.2",
-      "total_time_ns": 266998
-    },
-    {
-      "fire_count": 24,
-      "id": "6.4.1",
-      "total_time_ns": 244667
-    },
-    {
-      "fire_count": 24,
+      "fire_count": 121,
       "id": "8.2.1",
-      "total_time_ns": 232337
+      "total_time_ns": 4502997
     },
     {
-      "fire_count": 24,
-      "id": "1.1.11",
-      "total_time_ns": 144874
+      "fire_count": 121,
+      "id": "1.3.10",
+      "total_time_ns": 4178551
     },
     {
-      "fire_count": 24,
-      "id": "1.1.24",
-      "total_time_ns": 136665
+      "fire_count": 121,
+      "id": "6.4.1",
+      "total_time_ns": 3851329
     },
     {
-      "fire_count": 24,
-      "id": "1.1.23",
-      "total_time_ns": 135205
+      "fire_count": 121,
+      "id": "1.1.60",
+      "total_time_ns": 2206874
     },
     {
-      "fire_count": 24,
-      "id": "1.1.22",
-      "total_time_ns": 135167
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.19",
-      "total_time_ns": 133544
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.20",
-      "total_time_ns": 130959
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.21",
-      "total_time_ns": 130459
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.14",
-      "total_time_ns": 127956
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.100",
-      "total_time_ns": 127084
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.17",
-      "total_time_ns": 126458
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.18",
-      "total_time_ns": 126333
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.1",
-      "total_time_ns": 125249
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.15",
-      "total_time_ns": 124167
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.16",
-      "total_time_ns": 124166
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.12",
-      "total_time_ns": 123333
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.10",
-      "total_time_ns": 122751
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.13",
-      "total_time_ns": 122584
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.2",
-      "total_time_ns": 121501
-    },
-    {
-      "fire_count": 24,
-      "id": "4.1.1",
-      "total_time_ns": 121375
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.7",
-      "total_time_ns": 119709
-    },
-    {
-      "fire_count": 24,
+      "fire_count": 121,
       "id": "1.1.3",
-      "total_time_ns": 119708
+      "total_time_ns": 2060501
     },
     {
-      "fire_count": 24,
-      "id": "1.1.9",
-      "total_time_ns": 118124
+      "fire_count": 121,
+      "id": "1.1.2",
+      "total_time_ns": 1868002
     },
     {
-      "fire_count": 24,
+      "fire_count": 117,
+      "id": "1.1.24",
+      "total_time_ns": 7320749
+    },
+    {
+      "fire_count": 117,
+      "id": "6.4.129",
+      "total_time_ns": 4885083
+    },
+    {
+      "fire_count": 117,
+      "id": "4.1.2",
+      "total_time_ns": 3977334
+    },
+    {
+      "fire_count": 117,
+      "id": "1.2.45",
+      "total_time_ns": 3558871
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.11",
+      "total_time_ns": 3114128
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.13",
+      "total_time_ns": 2983747
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.22",
+      "total_time_ns": 2548044
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.23",
+      "total_time_ns": 2445253
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.46",
+      "total_time_ns": 2423956
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.21",
+      "total_time_ns": 2391374
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.16",
+      "total_time_ns": 2365751
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.100",
+      "total_time_ns": 2261551
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.15",
+      "total_time_ns": 2230130
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.63",
+      "total_time_ns": 2223793
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.20",
+      "total_time_ns": 2223577
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.19",
+      "total_time_ns": 2211795
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.14",
+      "total_time_ns": 2197458
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.18",
+      "total_time_ns": 2174875
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.61",
+      "total_time_ns": 2170874
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.17",
+      "total_time_ns": 2126254
+    },
+    {
+      "fire_count": 117,
       "id": "1.1.8",
-      "total_time_ns": 117833
+      "total_time_ns": 2058915
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.12",
+      "total_time_ns": 2051541
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.10",
+      "total_time_ns": 2031833
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.62",
+      "total_time_ns": 1938624
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.9",
+      "total_time_ns": 1936623
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.7",
+      "total_time_ns": 1859080
+    },
+    {
+      "fire_count": 117,
+      "id": "1.4.14",
+      "total_time_ns": 1815838
+    },
+    {
+      "fire_count": 117,
+      "id": "4.1.1",
+      "total_time_ns": 1787249
+    },
+    {
+      "fire_count": 117,
+      "id": "1.1.1",
+      "total_time_ns": 1773504
+    },
+    {
+      "fire_count": 88,
+      "id": "1.4.17",
+      "total_time_ns": 4302703
+    },
+    {
+      "fire_count": 48,
+      "id": "1.1.73",
+      "total_time_ns": 2241123
+    },
+    {
+      "fire_count": 44,
+      "id": "1.3.4",
+      "total_time_ns": 3629915
+    },
+    {
+      "fire_count": 39,
+      "id": "1.4.18",
+      "total_time_ns": 4180499
+    },
+    {
+      "fire_count": 35,
+      "id": "8.2.66",
+      "total_time_ns": 4550207
+    },
+    {
+      "fire_count": 35,
+      "id": "8.3.15",
+      "total_time_ns": 4507783
+    },
+    {
+      "fire_count": 29,
+      "id": "1.3.8",
+      "total_time_ns": 3371080
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.27",
+      "total_time_ns": 2796413
+    },
+    {
+      "fire_count": 24,
+      "id": "1.4.7",
+      "total_time_ns": 2634793
+    },
+    {
+      "fire_count": 23,
+      "id": "1.3.7",
+      "total_time_ns": 14118127
+    },
+    {
+      "fire_count": 21,
+      "id": "1.2.72",
+      "total_time_ns": 11681253
+    },
+    {
+      "fire_count": 21,
+      "id": "6.1.97",
+      "total_time_ns": 4251918
+    },
+    {
+      "fire_count": 21,
+      "id": "7.2.102",
+      "total_time_ns": 3665165
+    },
+    {
+      "fire_count": 19,
+      "id": "1.3.3",
+      "total_time_ns": 3541998
+    },
+    {
+      "fire_count": 16,
+      "id": "7.3.102",
+      "total_time_ns": 4486038
+    },
+    {
+      "fire_count": 14,
+      "id": "6.1.78",
+      "total_time_ns": 58739708
+    },
+    {
+      "fire_count": 14,
+      "id": "7.3.103",
+      "total_time_ns": 4535415
+    },
+    {
+      "fire_count": 14,
+      "id": "1.4.16",
+      "total_time_ns": 4291169
+    },
+    {
+      "fire_count": 13,
+      "id": "6.1.88",
+      "total_time_ns": 5021709
     },
     {
       "fire_count": 12,
-      "id": "1.3.9",
-      "total_time_ns": 457289
+      "id": "6.1.87",
+      "total_time_ns": 5465083
+    },
+    {
+      "fire_count": 10,
+      "id": "7.1.12",
+      "total_time_ns": 3920910
     },
     {
       "fire_count": 9,
-      "id": "1.3.4",
-      "total_time_ns": 201045
+      "id": "1.3.2",
+      "total_time_ns": 3812041
+    },
+    {
+      "fire_count": 7,
+      "id": "8.3.59",
+      "total_time_ns": 11912082
+    },
+    {
+      "fire_count": 6,
+      "id": "6.1.107",
+      "total_time_ns": 4663455
     },
     {
       "fire_count": 5,
-      "id": "7.3.102",
-      "total_time_ns": 244917
-    },
-    {
-      "fire_count": 4,
-      "id": "6.1.88",
-      "total_time_ns": 245210
-    },
-    {
-      "fire_count": 4,
-      "id": "1.3.8",
-      "total_time_ns": 194751
-    },
-    {
-      "fire_count": 3,
-      "id": "7.1.12",
-      "total_time_ns": 246004
-    },
-    {
-      "fire_count": 3,
-      "id": "7.3.103",
-      "total_time_ns": 241917
-    },
-    {
-      "fire_count": 3,
-      "id": "1.3.7",
-      "total_time_ns": 214833
-    },
-    {
-      "fire_count": 2,
-      "id": "8.4.2",
-      "total_time_ns": 276501
-    },
-    {
-      "fire_count": 2,
-      "id": "6.1.87",
-      "total_time_ns": 249251
-    },
-    {
-      "fire_count": 2,
-      "id": "6.1.78",
-      "total_time_ns": 235790
-    },
-    {
-      "fire_count": 2,
-      "id": "6.1.102",
-      "total_time_ns": 226667
-    },
-    {
-      "fire_count": 2,
-      "id": "1.3.2",
-      "total_time_ns": 221121
-    },
-    {
-      "fire_count": 2,
-      "id": "1.3.3",
-      "total_time_ns": 190585
-    },
-    {
-      "fire_count": 1,
-      "id": "7.1.9",
-      "total_time_ns": 339584
-    },
-    {
-      "fire_count": 1,
-      "id": "7.1.54",
-      "total_time_ns": 260876
-    },
-    {
-      "fire_count": 1,
-      "id": "6.1.103",
-      "total_time_ns": 253336
-    },
-    {
-      "fire_count": 1,
-      "id": "6.1.101",
-      "total_time_ns": 243998
-    },
-    {
-      "fire_count": 1,
-      "id": "7.1.13",
-      "total_time_ns": 236459
-    },
-    {
-      "fire_count": 1,
-      "id": "6.1.107",
-      "total_time_ns": 223125
-    },
-    {
-      "fire_count": 1,
-      "id": "6.1.69",
-      "total_time_ns": 217919
-    },
-    {
-      "fire_count": 1,
       "id": "1.3.5",
-      "total_time_ns": 213581
+      "total_time_ns": 8026034
+    },
+    {
+      "fire_count": 5,
+      "id": "8.4.2",
+      "total_time_ns": 6188327
+    },
+    {
+      "fire_count": 5,
+      "id": "6.1.102",
+      "total_time_ns": 4851842
+    },
+    {
+      "fire_count": 4,
+      "id": "6.1.103",
+      "total_time_ns": 4518417
+    },
+    {
+      "fire_count": 4,
+      "id": "7.1.15",
+      "total_time_ns": 4249249
+    },
+    {
+      "fire_count": 4,
+      "id": "7.1.9",
+      "total_time_ns": 4158998
+    },
+    {
+      "fire_count": 4,
+      "id": "6.1.69",
+      "total_time_ns": 3603750
+    },
+    {
+      "fire_count": 4,
+      "id": "1.1.50",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "1.1.56",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "1.3.1",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "1.3.78",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "1.4.101",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "1.4.102",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "1.4.108",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "1.4.13",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "1.4.22",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "1.4.99",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "3.1.1",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "3.1.2",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "3.1.68",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "3.1.91",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "3.2.123",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "3.4.113",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "3.4.69",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "3.4.77",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "3.4.78",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "6.1.72",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "7.3.84",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 4,
+      "id": "8.1.16",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 3,
+      "id": "7.1.17",
+      "total_time_ns": 7781210
+    },
+    {
+      "fire_count": 3,
+      "id": "7.1.54",
+      "total_time_ns": 4543791
+    },
+    {
+      "fire_count": 3,
+      "id": "7.1.72",
+      "total_time_ns": 4374500
+    },
+    {
+      "fire_count": 3,
+      "id": "7.3.111",
+      "total_time_ns": 4240585
+    },
+    {
+      "fire_count": 3,
+      "id": "6.4.8",
+      "total_time_ns": 4186590
+    },
+    {
+      "fire_count": 3,
+      "id": "7.1.20",
+      "total_time_ns": 3891709
+    },
+    {
+      "fire_count": 3,
+      "id": "1.1.42",
+      "total_time_ns": 3781170
+    },
+    {
+      "fire_count": 3,
+      "id": "7.1.19",
+      "total_time_ns": 3668699
+    },
+    {
+      "fire_count": 2,
+      "id": "6.1.77",
+      "total_time_ns": 9741996
+    },
+    {
+      "fire_count": 2,
+      "id": "6.1.101",
+      "total_time_ns": 5497837
+    },
+    {
+      "fire_count": 2,
+      "id": "6.1.110",
+      "total_time_ns": 5419288
+    },
+    {
+      "fire_count": 2,
+      "id": "7.1.52",
+      "total_time_ns": 4376368
+    },
+    {
+      "fire_count": 2,
+      "id": "7.3.109",
+      "total_time_ns": 4286212
+    },
+    {
+      "fire_count": 2,
+      "id": "7.1.14",
+      "total_time_ns": 4059046
+    },
+    {
+      "fire_count": 2,
+      "id": "7.1.13",
+      "total_time_ns": 3980620
+    },
+    {
+      "fire_count": 1,
+      "id": "6.4.3",
+      "total_time_ns": 4604625
+    },
+    {
+      "fire_count": 1,
+      "id": "7.3.108",
+      "total_time_ns": 4570786
+    },
+    {
+      "fire_count": 1,
+      "id": "7.3.120",
+      "total_time_ns": 4423415
+    },
+    {
+      "fire_count": 1,
+      "id": "7.3.119",
+      "total_time_ns": 4333374
+    },
+    {
+      "fire_count": 1,
+      "id": "7.2.106",
+      "total_time_ns": 3773296
+    },
+    {
+      "fire_count": 1,
+      "id": "7.1.24",
+      "total_time_ns": 3649669
+    },
+    {
+      "fire_count": 1,
+      "id": "1.1.51",
+      "total_time_ns": 0
+    },
+    {
+      "fire_count": 1,
+      "id": "6.1.65",
+      "total_time_ns": 0
+    }
+  ],
+  "ranked_by_total_cpu_ns": [
+    {
+      "applied": 14,
+      "blocked": 0,
+      "id": "6.1.78",
+      "skipped": 107,
+      "total_time_ns": 58739708
+    },
+    {
+      "applied": 23,
+      "blocked": 0,
+      "id": "1.3.7",
+      "skipped": 223,
+      "total_time_ns": 14118127
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.3.6",
+      "skipped": 129,
+      "total_time_ns": 12349581
+    },
+    {
+      "applied": 7,
+      "blocked": 0,
+      "id": "8.3.59",
+      "skipped": 110,
+      "total_time_ns": 11912082
+    },
+    {
+      "applied": 21,
+      "blocked": 0,
+      "id": "1.2.72",
+      "skipped": 96,
+      "total_time_ns": 11681253
+    },
+    {
+      "applied": 246,
+      "blocked": 0,
+      "id": "1.3.9",
+      "skipped": 0,
+      "total_time_ns": 10007586
+    },
+    {
+      "applied": 2,
+      "blocked": 0,
+      "id": "6.1.77",
+      "skipped": 119,
+      "total_time_ns": 9741996
+    },
+    {
+      "applied": 5,
+      "blocked": 0,
+      "id": "1.3.5",
+      "skipped": 241,
+      "total_time_ns": 8026034
+    },
+    {
+      "applied": 3,
+      "blocked": 0,
+      "id": "7.1.17",
+      "skipped": 114,
+      "total_time_ns": 7781210
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.24",
+      "skipped": 0,
+      "total_time_ns": 7320749
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.146",
+      "skipped": 117,
+      "total_time_ns": 6189996
+    },
+    {
+      "applied": 5,
+      "blocked": 0,
+      "id": "8.4.2",
+      "skipped": 112,
+      "total_time_ns": 6188327
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.148",
+      "skipped": 117,
+      "total_time_ns": 5556626
+    },
+    {
+      "applied": 2,
+      "blocked": 6,
+      "id": "6.1.101",
+      "skipped": 109,
+      "total_time_ns": 5497837
+    },
+    {
+      "applied": 12,
+      "blocked": 0,
+      "id": "6.1.87",
+      "skipped": 105,
+      "total_time_ns": 5465083
+    },
+    {
+      "applied": 2,
+      "blocked": 0,
+      "id": "6.1.110",
+      "skipped": 115,
+      "total_time_ns": 5419288
+    },
+    {
+      "applied": 13,
+      "blocked": 0,
+      "id": "6.1.88",
+      "skipped": 104,
+      "total_time_ns": 5021709
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.130",
+      "skipped": 117,
+      "total_time_ns": 4913828
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "6.4.129",
+      "skipped": 0,
+      "total_time_ns": 4885083
+    },
+    {
+      "applied": 5,
+      "blocked": 0,
+      "id": "6.1.102",
+      "skipped": 112,
+      "total_time_ns": 4851842
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.134",
+      "skipped": 117,
+      "total_time_ns": 4691046
+    },
+    {
+      "applied": 6,
+      "blocked": 0,
+      "id": "6.1.107",
+      "skipped": 111,
+      "total_time_ns": 4663455
+    },
+    {
+      "applied": 1,
+      "blocked": 0,
+      "id": "6.4.3",
+      "skipped": 116,
+      "total_time_ns": 4604625
+    },
+    {
+      "applied": 1,
+      "blocked": 0,
+      "id": "7.3.108",
+      "skipped": 116,
+      "total_time_ns": 4570786
+    },
+    {
+      "applied": 35,
+      "blocked": 0,
+      "id": "8.2.66",
+      "skipped": 86,
+      "total_time_ns": 4550207
+    },
+    {
+      "applied": 3,
+      "blocked": 0,
+      "id": "7.1.54",
+      "skipped": 114,
+      "total_time_ns": 4543791
+    },
+    {
+      "applied": 14,
+      "blocked": 0,
+      "id": "7.3.103",
+      "skipped": 103,
+      "total_time_ns": 4535415
+    },
+    {
+      "applied": 4,
+      "blocked": 0,
+      "id": "6.1.103",
+      "skipped": 113,
+      "total_time_ns": 4518417
+    },
+    {
+      "applied": 35,
+      "blocked": 0,
+      "id": "8.3.15",
+      "skipped": 82,
+      "total_time_ns": 4507783
+    },
+    {
+      "applied": 121,
+      "blocked": 0,
+      "id": "8.2.1",
+      "skipped": 0,
+      "total_time_ns": 4502997
+    },
+    {
+      "applied": 16,
+      "blocked": 0,
+      "id": "7.3.102",
+      "skipped": 101,
+      "total_time_ns": 4486038
+    },
+    {
+      "applied": 1,
+      "blocked": 0,
+      "id": "7.3.120",
+      "skipped": 116,
+      "total_time_ns": 4423415
+    },
+    {
+      "applied": 2,
+      "blocked": 0,
+      "id": "7.1.52",
+      "skipped": 115,
+      "total_time_ns": 4376368
+    },
+    {
+      "applied": 3,
+      "blocked": 0,
+      "id": "7.1.72",
+      "skipped": 114,
+      "total_time_ns": 4374500
+    },
+    {
+      "applied": 1,
+      "blocked": 0,
+      "id": "7.3.119",
+      "skipped": 116,
+      "total_time_ns": 4333374
+    },
+    {
+      "applied": 88,
+      "blocked": 0,
+      "id": "1.4.17",
+      "skipped": 29,
+      "total_time_ns": 4302703
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.3.114",
+      "skipped": 117,
+      "total_time_ns": 4302167
+    },
+    {
+      "applied": 14,
+      "blocked": 0,
+      "id": "1.4.16",
+      "skipped": 103,
+      "total_time_ns": 4291169
+    },
+    {
+      "applied": 2,
+      "blocked": 0,
+      "id": "7.3.109",
+      "skipped": 115,
+      "total_time_ns": 4286212
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "8.4.1",
+      "skipped": 117,
+      "total_time_ns": 4270751
+    },
+    {
+      "applied": 21,
+      "blocked": 0,
+      "id": "6.1.97",
+      "skipped": 96,
+      "total_time_ns": 4251918
+    },
+    {
+      "applied": 4,
+      "blocked": 0,
+      "id": "7.1.15",
+      "skipped": 113,
+      "total_time_ns": 4249249
+    },
+    {
+      "applied": 3,
+      "blocked": 0,
+      "id": "7.3.111",
+      "skipped": 114,
+      "total_time_ns": 4240585
+    },
+    {
+      "applied": 3,
+      "blocked": 0,
+      "id": "6.4.8",
+      "skipped": 114,
+      "total_time_ns": 4186590
+    },
+    {
+      "applied": 39,
+      "blocked": 0,
+      "id": "1.4.18",
+      "skipped": 78,
+      "total_time_ns": 4180499
+    },
+    {
+      "applied": 121,
+      "blocked": 0,
+      "id": "1.3.10",
+      "skipped": 0,
+      "total_time_ns": 4178551
+    },
+    {
+      "applied": 4,
+      "blocked": 0,
+      "id": "7.1.9",
+      "skipped": 113,
+      "total_time_ns": 4158998
+    },
+    {
+      "applied": 2,
+      "blocked": 0,
+      "id": "7.1.14",
+      "skipped": 115,
+      "total_time_ns": 4059046
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.1.2",
+      "skipped": 117,
+      "total_time_ns": 3986995
+    },
+    {
+      "applied": 2,
+      "blocked": 0,
+      "id": "7.1.13",
+      "skipped": 115,
+      "total_time_ns": 3980620
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "4.1.2",
+      "skipped": 0,
+      "total_time_ns": 3977334
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.3.113",
+      "skipped": 117,
+      "total_time_ns": 3954586
+    },
+    {
+      "applied": 10,
+      "blocked": 0,
+      "id": "7.1.12",
+      "skipped": 107,
+      "total_time_ns": 3920910
+    },
+    {
+      "applied": 3,
+      "blocked": 0,
+      "id": "7.1.20",
+      "skipped": 114,
+      "total_time_ns": 3891709
+    },
+    {
+      "applied": 121,
+      "blocked": 0,
+      "id": "6.4.1",
+      "skipped": 0,
+      "total_time_ns": 3851329
+    },
+    {
+      "applied": 9,
+      "blocked": 0,
+      "id": "1.3.2",
+      "skipped": 120,
+      "total_time_ns": 3812041
+    },
+    {
+      "applied": 3,
+      "blocked": 0,
+      "id": "1.1.42",
+      "skipped": 114,
+      "total_time_ns": 3781170
+    },
+    {
+      "applied": 1,
+      "blocked": 0,
+      "id": "7.2.106",
+      "skipped": 116,
+      "total_time_ns": 3773296
+    },
+    {
+      "applied": 3,
+      "blocked": 0,
+      "id": "7.1.19",
+      "skipped": 114,
+      "total_time_ns": 3668699
+    },
+    {
+      "applied": 21,
+      "blocked": 0,
+      "id": "7.2.102",
+      "skipped": 96,
+      "total_time_ns": 3665165
+    },
+    {
+      "applied": 1,
+      "blocked": 0,
+      "id": "7.1.24",
+      "skipped": 116,
+      "total_time_ns": 3649669
+    },
+    {
+      "applied": 44,
+      "blocked": 0,
+      "id": "1.3.4",
+      "skipped": 85,
+      "total_time_ns": 3629915
+    },
+    {
+      "applied": 4,
+      "blocked": 0,
+      "id": "6.1.69",
+      "skipped": 113,
+      "total_time_ns": 3603750
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.2.45",
+      "skipped": 0,
+      "total_time_ns": 3558871
+    },
+    {
+      "applied": 19,
+      "blocked": 0,
+      "id": "1.3.3",
+      "skipped": 110,
+      "total_time_ns": 3541998
+    },
+    {
+      "applied": 29,
+      "blocked": 0,
+      "id": "1.3.8",
+      "skipped": 100,
+      "total_time_ns": 3371080
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.11",
+      "skipped": 0,
+      "total_time_ns": 3114128
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.13",
+      "skipped": 0,
+      "total_time_ns": 2983747
+    },
+    {
+      "applied": 24,
+      "blocked": 0,
+      "id": "1.1.27",
+      "skipped": 93,
+      "total_time_ns": 2796413
+    },
+    {
+      "applied": 24,
+      "blocked": 0,
+      "id": "1.4.7",
+      "skipped": 93,
+      "total_time_ns": 2634793
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.22",
+      "skipped": 0,
+      "total_time_ns": 2548044
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.23",
+      "skipped": 0,
+      "total_time_ns": 2445253
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.46",
+      "skipped": 0,
+      "total_time_ns": 2423956
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.21",
+      "skipped": 0,
+      "total_time_ns": 2391374
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.16",
+      "skipped": 0,
+      "total_time_ns": 2365751
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.100",
+      "skipped": 0,
+      "total_time_ns": 2261551
+    },
+    {
+      "applied": 48,
+      "blocked": 0,
+      "id": "1.1.73",
+      "skipped": 69,
+      "total_time_ns": 2241123
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.15",
+      "skipped": 0,
+      "total_time_ns": 2230130
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.63",
+      "skipped": 0,
+      "total_time_ns": 2223793
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.20",
+      "skipped": 0,
+      "total_time_ns": 2223577
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.19",
+      "skipped": 0,
+      "total_time_ns": 2211795
+    },
+    {
+      "applied": 121,
+      "blocked": 0,
+      "id": "1.1.60",
+      "skipped": 0,
+      "total_time_ns": 2206874
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.14",
+      "skipped": 0,
+      "total_time_ns": 2197458
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.18",
+      "skipped": 0,
+      "total_time_ns": 2174875
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.61",
+      "skipped": 0,
+      "total_time_ns": 2170874
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.17",
+      "skipped": 0,
+      "total_time_ns": 2126254
+    },
+    {
+      "applied": 121,
+      "blocked": 0,
+      "id": "1.1.3",
+      "skipped": 0,
+      "total_time_ns": 2060501
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.8",
+      "skipped": 0,
+      "total_time_ns": 2058915
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.12",
+      "skipped": 0,
+      "total_time_ns": 2051541
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.10",
+      "skipped": 0,
+      "total_time_ns": 2031833
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.62",
+      "skipped": 0,
+      "total_time_ns": 1938624
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.9",
+      "skipped": 0,
+      "total_time_ns": 1936623
+    },
+    {
+      "applied": 121,
+      "blocked": 0,
+      "id": "1.1.2",
+      "skipped": 0,
+      "total_time_ns": 1868002
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.7",
+      "skipped": 0,
+      "total_time_ns": 1859080
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.4.14",
+      "skipped": 0,
+      "total_time_ns": 1815838
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "4.1.1",
+      "skipped": 0,
+      "total_time_ns": 1787249
+    },
+    {
+      "applied": 117,
+      "blocked": 0,
+      "id": "1.1.1",
+      "skipped": 0,
+      "total_time_ns": 1773504
+    }
+  ],
+  "zero_fire_cpu_hot": [
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.3.6",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 129,
+      "total_time_ns": 12349581
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.146",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 117,
+      "total_time_ns": 6189996
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.148",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 117,
+      "total_time_ns": 5556626
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.130",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 117,
+      "total_time_ns": 4913828
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.134",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 117,
+      "total_time_ns": 4691046
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.3.114",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 117,
+      "total_time_ns": 4302167
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "8.4.1",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 117,
+      "total_time_ns": 4270751
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.1.2",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 117,
+      "total_time_ns": 3986995
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.3.113",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 117,
+      "total_time_ns": 3954586
     }
   ]
 }

@@ -1,4 +1,40 @@
 {
   "anomalies": [],
-  "run_test_count": 24
+  "cascade_slow_cells": [
+    {
+      "cell_id": "sarva_pullinga:sarva:5-2",
+      "median_ns": 2636291,
+      "severity": "CRITICAL",
+      "total_ns": 72126664,
+      "vs_median": 27.36
+    },
+    {
+      "cell_id": "sarva_pullinga:sarva:5-1",
+      "median_ns": 2636291,
+      "severity": "CRITICAL",
+      "total_ns": 27666336,
+      "vs_median": 10.49
+    },
+    {
+      "cell_id": "sarva_pullinga:sarva:6-1",
+      "median_ns": 2636291,
+      "severity": "CRITICAL",
+      "total_ns": 11223377,
+      "vs_median": 4.26
+    },
+    {
+      "cell_id": "sarva_pullinga:sarva:4-3",
+      "median_ns": 2636291,
+      "severity": "WARN",
+      "total_ns": 8840494,
+      "vs_median": 3.35
+    }
+  ],
+  "cell_cpu_profile": {
+    "derivations_timed": 117,
+    "max_total_ns": 72126664,
+    "median_total_ns": 2636291,
+    "min_total_ns": 2273586
+  },
+  "run_test_count": 121
 }

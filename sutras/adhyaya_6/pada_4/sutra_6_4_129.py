@@ -4,6 +4,10 @@
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=64129):** *bhasya* —
 *bhādhikāraḥ* (scope through **6.4.175**
 ऋत्व्यवास्त्व्यवास्त्वमाध्वीहिरण्ययानि च्छन्दसि).
+
+*Subanta recipe:* **6.4.129** is applied just before **6.4.130** (not immediately
+after **6.4.1**), so ``purge_closed_adhikaras`` does not drop this scope as soon
+as the first **7.** rule runs (tuple order treats **6.4.175** < **7.1.2**).
 """
 from __future__ import annotations
 
