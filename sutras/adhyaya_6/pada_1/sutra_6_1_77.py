@@ -10,6 +10,9 @@ v3.4 usage:
 
 Blindness:
   - purely phonemic boundary check (aṅga-final IK, pratyaya-initial AC).
+
+The narrow *hari*+*os* path and the armed cross-*Term* path both skip when the
+left *aṅga* carries **1.1.11** ``pragrahya`` (e.g. *amū* + *atra*).
 """
 from __future__ import annotations
 
@@ -18,8 +21,37 @@ from engine.state import State
 from phonology    import mk
 from phonology.pratyahara import AC, IK
 
+from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
+
 
 _YAN_MAP = {"i": "y", "I": "y", "u": "v", "U": "v", "f": "r", "F": "r", "x": "l", "X": "l"}
+
+# Recipe-only general *iko yaṇ aci* across adjacent ``Term``s (e.g. *nu* + *anti*).
+_META_IK_YAN_ACI_GENERAL: str = "6_1_77_ik_yan_aci_general_arm"
+
+
+def _find_armed_ik_yan_aci(state: State) -> int | None:
+    """
+    Return index ``i`` such that ``terms[i]`` ends in *ik* and ``terms[i+1]``
+    begins with *ac*, when ``6_1_77_ik_yan_aci_general_arm`` is set.
+    """
+    if not state.meta.get(_META_IK_YAN_ACI_GENERAL):
+        return None
+    for i in range(len(state.terms) - 1):
+        left, right = state.terms[i], state.terms[i + 1]
+        if not left.varnas or not right.varnas:
+            continue
+        if left.meta.get("iko_yanaci_done"):
+            continue
+        if PRAGHYA_TERM_TAG in left.tags:
+            continue
+        la = left.varnas[-1].slp1
+        rf = right.varnas[0].slp1
+        # Armed path: allow dīrgha ``I``/``U``/… (``_YAN_MAP``), not only ``IK``.
+        if la not in _YAN_MAP or rf not in AC:
+            continue
+        return i
+    return None
 
 
 def _matches(state: State) -> bool:
@@ -28,6 +60,8 @@ def _matches(state: State) -> bool:
     anga = state.terms[-2]
     pr   = state.terms[-1]
     if "anga" not in anga.tags:
+        return False
+    if PRAGHYA_TERM_TAG in anga.tags:
         return False
     # v3.4: restrict to the 'os' boundary needed for haryoḥ/haryoḥ.
     # This avoids wrongly turning hari+am → haryam.
@@ -47,10 +81,17 @@ def _matches(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    return _matches(state)
+    return _matches(state) or _find_armed_ik_yan_aci(state) is not None
 
 
 def act(state: State) -> State:
+    j = _find_armed_ik_yan_aci(state)
+    if j is not None:
+        left = state.terms[j]
+        la = left.varnas[-1].slp1
+        left.varnas[-1] = mk(_YAN_MAP[la])
+        left.meta["iko_yanaci_done"] = True
+        return state
     if not _matches(state):
         return state
     anga = state.terms[-2]
@@ -65,7 +106,10 @@ SUTRA = SutraRecord(
     text_slp1      = "iko yaR aci",
     text_dev       = "इको यणचि",
     padaccheda_dev = "इकः यण् अचि",
-    why_dev        = "इक्-समाप्तेः परे अच्-आदौ यण्-आदेशः (हरि+ओस् → हर्योस्)।",
+    why_dev        = (
+        "इक्-समाप्तेः परे अच्-आदौ यण्-आदेशः (हरि+ओस् → हर्योस्; "
+        "अथवा रेसिपि-मेटा ६.१.७७-इक्-यण्-अचि-सामान्यम्)।"
+    ),
     anuvritti_from = ("6.1.72",),
     cond           = cond,
     act            = act,

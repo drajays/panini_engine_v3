@@ -24,7 +24,7 @@ from __future__ import annotations
 
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
-from phonology     import AC
+from phonology.varna import AC_DEV
 
 
 def _irit_indices(state: State):
@@ -60,7 +60,8 @@ def _eligible_anunasika_vowels(state: State):
         if "upadesha" not in t.tags:
             continue
         for j, v in enumerate(t.varnas):
-            if v.slp1 not in AC:
+            # अज् — all vowel letters (incl. dīrgha); ``AC`` pratyāhāra here is short-only.
+            if v.slp1 not in AC_DEV:
                 continue
             if "anunasika" not in v.tags:
                 continue

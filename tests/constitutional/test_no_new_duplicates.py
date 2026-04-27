@@ -22,7 +22,7 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 
 # Pinned after collapsing ``pipelines/subanta_trc`` preflight to P01.
 # Update only when you intentionally collapse more blocks (should decrease).
-MAX_DUPLICATE_GROUPS = 39
+MAX_DUPLICATE_GROUPS = 0
 
 
 @pytest.fixture(scope="module")

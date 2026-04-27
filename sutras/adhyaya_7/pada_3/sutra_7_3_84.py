@@ -19,6 +19,8 @@ from phonology    import mk
 from phonology.pratyahara import IK
 
 from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import is_sarvadhatuka_upadesha_slp1
+from sutras.adhyaya_1.pada_1.sutra_1_1_4 import ik_guna_vriddhi_blocked_by_1_1_4
+from sutras.adhyaya_1.pada_1.sutra_1_1_5 import ik_guna_vriddhi_blocked_by_1_1_5
 
 
 _IK_GUNA = {
@@ -56,11 +58,17 @@ def _sarvadhatuka_or_ardhadhatuka_following_dhatu(state: State, di: int) -> bool
 
 
 def cond(state: State) -> bool:
+    if ik_guna_vriddhi_blocked_by_1_1_4(state):
+        return False
+    if ik_guna_vriddhi_blocked_by_1_1_5(state):
+        return False
     di = _first_dhatu_index(state)
     if di is None:
         return False
     d0 = state.terms[di]
     if "dhatu" not in d0.tags:
+        return False
+    if d0.meta.get("dIdhIvevI_guna_vrddhi_nishedha"):
         return False
     if not _sarvadhatuka_or_ardhadhatuka_following_dhatu(state, di):
         return False

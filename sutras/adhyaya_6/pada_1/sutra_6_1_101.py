@@ -12,6 +12,8 @@ from engine.state  import State
 from phonology     import mk
 from phonology.savarna import is_savarna, dirgha_of
 
+from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
+
 
 _AK = frozenset({"a", "A", "i", "I", "u", "U", "f", "F", "x", "X"})
 
@@ -25,6 +27,10 @@ def _find_pair(state: State):
         (ti1, vi1, v1) = flat[k]
         (ti2, vi2, v2) = flat[k + 1]
         if v1.slp1 in _AK and v2.slp1 in _AK and is_savarna(v1.slp1, v2.slp1):
+            if ti1 != ti2 and PRAGHYA_TERM_TAG in state.terms[ti1].tags:
+                # Pragṛhya ‖ ac — no savarṇa-dīrgha across the *pada* boundary
+                # (6.1.125 prakṛti-bhāva; 1.1.11 tag on the left *term*).
+                continue
             # Replacement = dīrgha of the common series.
             return (ti1, vi1, ti2, vi2, dirgha_of(v1.slp1))
     return None

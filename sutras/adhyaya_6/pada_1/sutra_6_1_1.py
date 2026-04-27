@@ -7,19 +7,33 @@
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.state import State
+from engine.state import State, Term
 
 
 def cond(state: State) -> bool:
+    # Allow an explicit dvitva action even if adhikāra is already open.
+    if state.meta.get("6_1_1_dvitva_arm") and not state.samjna_registry.get("6.1.1_dvitva_done"):
+        return True
     return not any(e.get("id") == "6.1.1" for e in state.adhikara_stack)
 
 
 def act(state: State) -> State:
-    state.adhikara_stack.append({
-        "id"        : "6.1.1",
-        "scope_end" : "6.1.12",
-        "text_dev"  : "एकाचो द्वे प्रथमस्य",
-    })
+    if not any(e.get("id") == "6.1.1" for e in state.adhikara_stack):
+        state.adhikara_stack.append({
+            "id"        : "6.1.1",
+            "scope_end" : "6.1.12",
+            "text_dev"  : "एकाचो द्वे प्रथमस्य",
+        })
+    # Glass-box: when a recipe explicitly arms dvitya, duplicate the first dhātu
+    # as abhyāsa (structural but via apply_rule).
+    if state.meta.get("6_1_1_dvitva_arm") and not state.samjna_registry.get("6.1.1_dvitva_done"):
+        for i, t in enumerate(state.terms):
+            if "dhatu" not in t.tags:
+                continue
+            abhy = Term(kind=t.kind, varnas=list(t.varnas), tags=set(t.tags) | {"abhyasa"}, meta=dict(t.meta))
+            state.terms.insert(i, abhy)
+            state.samjna_registry["6.1.1_dvitva_done"] = True
+            break
     return state
 
 

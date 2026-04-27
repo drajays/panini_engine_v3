@@ -26,6 +26,7 @@ Practical workflow reminder:
 - **Recipes** (`pipelines/*.py`) list `apply_rule()` calls only — no inline multi-sūtra hacks (Article 7).
 - **Prakriyā**: Paradigm cells stress the engine; fix sūtras/recipes, not the dispatcher to “pass tests” (Article 8).
 - **SIG / single port**: All sūtra application and morphological transformation for derivations must go through `engine.dispatcher.apply_rule` only — no direct `State`/`Term` mutation to bypass the dispatcher, so SIG/telemetry stay complete and uniform (see CONSTITUTION Article 11).
+- **Fullest valid path (no shortcut *prakriyā*)**: Prefer the **fullest** *śāstrīya* sūtra sequence the engine legitimately allows A→B — not a minimal patch of one or two sūtras or duplicate pipelines for the same *prayoga*. Do not skip large applicable blocks (saṃjñā, *it* chain, aṅgakārya) without a real pratishedha/optional *prayoga* reason. One canonical entry per *prayoga* class where possible. See **CONSTITUTION Article 12**.
 
 ## Legacy Panini Engine v2 (reference only)
 

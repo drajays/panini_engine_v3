@@ -127,20 +127,32 @@ def cond(state: State) -> bool:
     if not state.terms:
         return False
     d0 = state.terms[0]
-    if "dhatu" not in d0.tags:
+    # v3: used both in dhātu-driven uRaN operations and in sandhi (6.1.87/6.1.91)
+    # where the left member is an aṅga/prātipadika.
+    if "dhatu" not in d0.tags and "anga" not in d0.tags and "prātipadika" not in d0.tags:
         return False
     if d0.meta.get("urN_rapara_pending") not in ("r", "l"):
         return False
     if not d0.varnas:
         return False
-    return d0.varnas[-1].slp1 == "a"
+    # aN = a/A/i/I/u/U (see docstring); accept any of these as the ādeśa.
+    ins_after = d0.meta.get("urN_rapara_after_index")
+    if isinstance(ins_after, int) and 0 <= ins_after < len(d0.varnas):
+        return d0.varnas[ins_after].slp1 in {"a", "A", "i", "I", "u", "U"}
+    return d0.varnas[-1].slp1 in {"a", "A", "i", "I", "u", "U"}
 
 
 def act(state: State) -> State:
     d0 = state.terms[0]
     kind = d0.meta.get("urN_rapara_pending")
-    d0.varnas.append(mk("r" if kind == "r" else "l"))
+    ins_after = d0.meta.get("urN_rapara_after_index")
+    v_rl = mk("r" if kind == "r" else "l")
+    if isinstance(ins_after, int) and -1 <= ins_after < len(d0.varnas):
+        d0.varnas.insert(ins_after + 1, v_rl)
+    else:
+        d0.varnas.append(v_rl)
     d0.meta["urN_rapara_pending"] = None
+    d0.meta.pop("urN_rapara_after_index", None)
     d0.meta["urN_rapara_done"] = True
     return state
 

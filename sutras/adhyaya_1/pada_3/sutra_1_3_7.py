@@ -37,6 +37,14 @@ def _terms_sup_or_primary(state: State):
     ]
     if krt:
         return krt
+    # *luṭ* *ḍā* residue (**qA**): *cuṭ* *it* on ``q`` (recipe ``1_3_7_lut_qA_arm``).
+    if state.meta.get("1_3_7_lut_qA_arm"):
+        qa = [
+            t for t in state.terms
+            if "upadesha" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() == "qA"
+        ]
+        if qa:
+            return qa
     if state.terms:
         return [state.terms[0]]
     return []

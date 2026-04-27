@@ -9,7 +9,8 @@ is the *aṅga* (registry *…_anga*).  **Case B:** *taddhite* (``pipelines/tadd
 *prakriti* is *aṅga* for the *taddhita* *pratyaya* when ``prakriya_sAlIya``; stem
 is already *aṅga*-*tag*ged, **1.4.13** registers the *aṅga* relation in the
 same *registry* *slot*.  **Case C:** ``prakriya_itika_phak`` (``pipelines/taddhita_itika_etikAyana``) —
-same pattern as Case B.
+same pattern as Case B.  **Case D:** ``prakriya_matup_asti`` — *go* + *matup* style
+``[prātipadika, taddhita]`` after **2.4.71** *luk* (``pipelines/gomAn_prathamA_go_matup``).
 """
 from __future__ import annotations
 
@@ -22,28 +23,38 @@ def cond(state: State) -> bool:
         return False
     if state.samjna_registry.get(("1.4.13_anga", 0)) is not None:
         return False
-    t0, t1 = state.terms[0], state.terms[1]
-    if "pratyaya" not in t1.tags:
-        return False
-    if "dhatu" in t0.tags:
-        return True
-    # *śālīya* taddhita: *aṅga* = *prakriti* (not *dhātu*) *nimitta* of *taddhita*.
-    if (
-        state.meta.get("prakriya_sAlIya")
-        and "anga" in t0.tags
-        and "prātipadika" in t0.tags
-        and "dhatu" not in t0.tags
-        and "taddhita" in t1.tags
-    ):
-        return True
-    if (
-        state.meta.get("prakriya_itika_phak")
-        and "anga" in t0.tags
-        and "prātipadika" in t0.tags
-        and "dhatu" not in t0.tags
-        and "taddhita" in t1.tags
-    ):
-        return True
+    for j in range(1, len(state.terms)):
+        t1 = state.terms[j]
+        if "pratyaya" not in t1.tags:
+            continue
+        t0 = state.terms[j - 1]
+        if "dhatu" in t0.tags:
+            return True
+        # *śālīya* taddhita: *aṅga* = *prakriti* (not *dhātu*) *nimitta* of *taddhita*.
+        if (
+            state.meta.get("prakriya_sAlIya")
+            and "anga" in t0.tags
+            and "prātipadika" in t0.tags
+            and "dhatu" not in t0.tags
+            and "taddhita" in t1.tags
+        ):
+            return True
+        if (
+            state.meta.get("prakriya_itika_phak")
+            and "anga" in t0.tags
+            and "prātipadika" in t0.tags
+            and "dhatu" not in t0.tags
+            and "taddhita" in t1.tags
+        ):
+            return True
+        if (
+            state.meta.get("prakriya_matup_asti")
+            and "anga" in t0.tags
+            and "prātipadika" in t0.tags
+            and "dhatu" not in t0.tags
+            and "taddhita" in t1.tags
+        ):
+            return True
     return False
 
 

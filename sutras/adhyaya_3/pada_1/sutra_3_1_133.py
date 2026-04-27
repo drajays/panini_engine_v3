@@ -39,11 +39,18 @@ def _load_krit() -> Dict[str, Any]:
     return _KRIT
 
 
+def _first_dhatu_term(state: State):
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            return t
+    return None
+
+
 def _matches(state: State) -> bool:
     if not state.terms:
         return False
-    dhatu = state.terms[0]
-    if "dhatu" not in dhatu.tags:
+    dhatu = _first_dhatu_term(state)
+    if dhatu is None:
         return False
     # Don't attach if a kṛt pratyaya already present.
     if any(t.kind == "pratyaya" and "krt" in t.tags for t in state.terms):
@@ -51,9 +58,7 @@ def _matches(state: State) -> bool:
     upa = state.meta.get("krt_upadesha_slp1")
     if upa not in _load_krit():
         return False
-    if upa == "Nvul":
-        return True
-    if upa == "tfc":
+    if upa in ("Nvul", "lyuw", "tfc"):
         return True
     return False
 
@@ -70,6 +75,12 @@ def act(state: State) -> State:
         # Nvul (upadeśa): ण् + व् + उ + ल् — SLP1 ``R`` = ण् (see ``HAL_DEV``).
         varnas = [mk("R"), mk("v"), mk("u"), mk("l")]
         tags = {"pratyaya", "krt", "upadesha", "has_initial_n_it"}
+        pr = Term(kind="pratyaya", varnas=varnas, tags=tags, meta={"upadesha_slp1": upa})
+        state.terms.append(pr)
+        return state
+    if upa == "lyuw":
+        varnas = [mk("l"), mk("y"), mk("u"), mk("w")]
+        tags = {"pratyaya", "krt", "upadesha"}
         pr = Term(kind="pratyaya", varnas=varnas, tags=tags, meta={"upadesha_slp1": upa})
         state.terms.append(pr)
         return state

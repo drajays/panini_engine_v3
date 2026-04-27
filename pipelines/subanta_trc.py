@@ -16,7 +16,7 @@ from engine       import apply_rule
 from engine.state import State, Term
 
 from pipelines.subanta import build_initial_state
-from core.canonical_pipelines import P01_subanta_bootstrap
+from core.canonical_pipelines import P01_subanta_bootstrap, sup_attach_it_chain
 
 
 def _pada_merge(state: State) -> None:
@@ -55,17 +55,7 @@ def derive_trc_nom_sg(
 
     # Canonical preflight spine (shared, dispatcher-only scheduling).
     s = P01_subanta_bootstrap(s)
-    s = apply_rule("4.1.2", s)
-
-    s = apply_rule("1.3.2", s)
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.4", s)
-    s = apply_rule("1.3.5", s)
-    s = apply_rule("1.3.6", s)
-    s = apply_rule("1.3.7", s)
-    s = apply_rule("1.3.8", s)
-    s = apply_rule("1.3.9", s)
-    s = apply_rule("1.3.10", s)
+    s = sup_attach_it_chain(s)
 
     s = apply_rule("6.4.1", s)
     s = apply_rule("7.1.94", s)

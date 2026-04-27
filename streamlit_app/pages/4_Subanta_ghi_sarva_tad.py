@@ -18,6 +18,7 @@ import sutras  # noqa: F401, E402
 from engine import SUTRA_REGISTRY
 from engine.state import State
 from phonology.joiner import slp1_to_devanagari
+from pipelines.sarva_subanta import derive_sarva_pulliṅga
 from pipelines.subanta import (
     derive,
     derive_akarant_pullinga,
@@ -262,20 +263,21 @@ with tab_ghi:
 with tab_sarva:
 
     def _sarva_cell(v: int, vac: int) -> tuple[str, str]:
-        stt = derive_akarant_pullinga("sarva", v, vac)
+        stt = derive_sarva_pulliṅga(v, vac)
         if not stt.terms:
             return "", ""
         dev = slp1_to_devanagari(stt.terms[0].varnas)
         return dev, stt.render()
 
     def _sarva_state(v: int, vac: int):
-        return derive_akarant_pullinga("sarva", v, vac)
+        return derive_sarva_pulliṅga(v, vac)
 
     _paradigm_block(
         tab_key="sarva",
         title_md=(
             "#### सर्वनाम — **सर्व** (अदन्त, पुंलिङ्ग)\n\n"
-            "१.१.२७ **सर्वादि**; ७.१.१४ / ७.१.१५ / ७.१.५२ / ७.३.१०३ आदि।"
+            "२४ **रूप** = एक *prakriyā*: ``derive_sarva_pulliṅga`` (``run_subanta_pipeline``)।\n"
+            "१.१.२७ **सर्वादि**; ७.१.१४–१७ (*जसः शी* → *सर्वे*), ६.१.८७; ७.१.५२, ७.३.१०३ *आदि*।"
         ),
         stem_slp="sarva",
         stem_dev=stem_slp1_to_display_devanagari("sarva"),

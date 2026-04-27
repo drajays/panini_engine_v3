@@ -16,6 +16,11 @@ from engine.state import State, Term
 from phonology    import mk
 from phonology.varna import AC_DEV, HAL_DEV
 
+from core.canonical_pipelines import (
+    P00_guna_prayoga_readiness,
+    P00_tripadi_rutva_visarga,
+    sup_attach_it_chain,
+)
 from pipelines.subanta import _pada_merge
 
 
@@ -79,8 +84,7 @@ def derive_demo(case: DemoCase) -> State:
     s = apply_rule("2.4.71", s)
 
     # Phase 2: guṇa sandhi (a+i→e, a+u→o) with sthāne'ntaratamaḥ selection.
-    s = apply_rule("1.1.2", s)    # guṇa-saṃjñā availability
-    s = apply_rule("1.1.50", s)   # sthāne'ntaratamaḥ gate (guna map)
+    s = P00_guna_prayoga_readiness(s)
     s = apply_rule("6.1.87", s)   # ād guṇaḥ
 
     # Phase 2b: prātipadika-saṃjñā for samāsa and structural merge into one aṅga.
@@ -94,23 +98,12 @@ def derive_demo(case: DemoCase) -> State:
     s = apply_rule("4.1.1",  s)
     s = apply_rule("1.1.2",  s)
     s = apply_rule("6.4.1",  s)
-    s = apply_rule("4.1.2",  s)   # attach su~ (sup)
-    s = apply_rule("1.3.2",  s)   # anunāsika-it on vowels
-    s = apply_rule("1.3.3",  s)
-    s = apply_rule("1.3.4",  s)
-    s = apply_rule("1.3.5",  s)
-    s = apply_rule("1.3.6",  s)
-    s = apply_rule("1.3.7",  s)
-    s = apply_rule("1.3.8",  s)
-    s = apply_rule("1.3.9",  s)   # it-lopa (su~→s)
-    s = apply_rule("1.3.10", s)  # *yathāsaṅkhyam* paribhāṣā
+    s = sup_attach_it_chain(s)  # 4.1.2 + 1.3.2–1.3.10 (*it* prakaraṇa)
     s = apply_rule("7.3.102", s)  # a→A before consonant-initial sup
 
     # Phase 4: pada + tripāḍī visarga.
     _pada_merge(s)                # structural, but traced
-    s = apply_rule("8.2.1",  s)
-    s = apply_rule("8.2.66", s)   # s→ru
-    s = apply_rule("8.3.15", s)   # ru→ḥ (H)
+    s = P00_tripadi_rutva_visarga(s)
     return s
 
 

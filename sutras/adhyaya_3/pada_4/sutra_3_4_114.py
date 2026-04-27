@@ -2,8 +2,8 @@
 3.4.114  आर्धधातुकं शेषः  —  SAMJNA
 
 Śeṣa pratyayas that are not sārvadhātuka (3.4.113) are ārdhadhātuka.
-Narrow v3 use: tag a **tfc** kṛt pratyaya so 7.2.35 / 7.3.84 can key off
-``ardhadhatuka`` without reading string goals.
+Narrow v3 use: tag a *kṛt* pratyaya (**tfc**, **gsnuC**/**snu**, **kta**, …) so
+**7.2.35** / **7.3.84** can key off ``ardhadhatuka`` without reading string goals.
 """
 from __future__ import annotations
 
@@ -24,9 +24,9 @@ def cond(state: State) -> bool:
         return False
     if "ardhadhatuka" in pr.tags:
         return False
-    upa = pr.meta.get("upadesha_slp1")
-    # tiṅ sārvadhātuka pratyayas are out of scope here; tfc is ārdhadhātuka.
-    return upa == "tfc"
+    upa = (pr.meta.get("upadesha_slp1") or "").strip()
+    # tiṅ sārvadhātuka pratyayas are out of scope here; *tfc* / *gsnuC* / *snu* are ārdhadhātuka.
+    return upa in {"tfc", "gsnuC", "snu", "kta", "ktavatu~", "lyuw"}
 
 
 def act(state: State) -> State:

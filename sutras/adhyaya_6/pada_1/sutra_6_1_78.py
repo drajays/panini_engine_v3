@@ -8,11 +8,16 @@ Classical rule:
 v3.1 originally implemented only a narrow 'a + os' helper for रामयोः.
 v3.4 extends the rule to its standard eco+aci behaviour, while keeping
 the prior narrow helper intact.
+
+v3.5: skip the *ec*+*ac* split when the *aṅga* **Term** carries **1.1.11**
+``pragrahya`` (e.g. *māle* + *iti* — **6.1.125** *prakṛti-bhāva*).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
 from phonology     import mk
 from phonology.pratyahara import AC
+
+from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
 
 
 _ECO_SPLIT = {
@@ -37,6 +42,9 @@ def _find_eco_aci_boundary(state: State):
         if nxt.meta.get("upadesha_slp1") in {"Nasi", "Nas"}:
             continue
         if anga.meta.get("eco_ayavayava_done"):
+            continue
+        if PRAGHYA_TERM_TAG in anga.tags:
+            # Pragṛhya ‖ ac — no *ay/Av* split (6.1.125 *prakṛti-bhāva*; 1.1.11 tag).
             continue
         last = anga.varnas[-1].slp1
         first = nxt.varnas[0].slp1

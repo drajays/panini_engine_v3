@@ -23,10 +23,10 @@ from phonology    import mk, HAL
 def _find_upadha_a(state: State):
     if len(state.terms) < 2:
         return None
-    dhatu = state.terms[0]
-    pr    = state.terms[-1]
-    if "dhatu" not in dhatu.tags:
+    dhatu = next((t for t in state.terms if "dhatu" in t.tags), None)
+    if dhatu is None:
         return None
+    pr    = state.terms[-1]
     if "krt" not in pr.tags:
         return None
     itm = pr.meta.get("it_markers", set())
@@ -41,7 +41,8 @@ def _find_upadha_a(state: State):
     # Upadhā = vowel before final consonant in this minimal model.
     if dhatu.varnas[-2].slp1 != "a":
         return None
-    return (0, len(dhatu.varnas) - 2)
+    di = state.terms.index(dhatu)
+    return (di, len(dhatu.varnas) - 2)
 
 
 def cond(state: State) -> bool:

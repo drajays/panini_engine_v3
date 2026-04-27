@@ -29,6 +29,8 @@ from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
 from phonology     import mk
 
+from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TAG_REFRESH_ARM_META
+
 
 def _matches(state: State) -> bool:
     if len(state.terms) < 2:
@@ -53,7 +55,10 @@ def _matches(state: State) -> bool:
             return False
         if not anga.varnas or not pratyaya.varnas:
             return False
-        return anga.varnas[-1].slp1 == "i" and pratyaya.varnas[0].slp1 == "O"
+        if anga.varnas[-1].slp1 == "i" and pratyaya.varnas[0].slp1 == "O":
+            return True
+        # u-stem dual (vāyu + au → vāyū) — same *pūrva-savarṇa* pattern as *hari* + *au*.
+        return anga.varnas[-1].slp1 == "u" and pratyaya.varnas[0].slp1 == "O"
     return False
 
 
@@ -78,11 +83,14 @@ def act(state: State) -> State:
         pratyaya.meta["upadesha_slp1"] = "As"
         return state
     if up in {"O", "Ow"}:
-        # i + au → ī (hari + au → harī)
-        anga.varnas[-1] = mk("I")
-        # Drop the pratyaya entirely; the long ī is the combined result.
+        # i + au → ī (hari + au → harī); u + au → ū (vāyu + au → vāyū)
+        last = anga.varnas[-1].slp1
+        anga.varnas[-1] = mk("I" if last == "i" else "U")
+        # Drop the pratyaya entirely; the long vowel is the combined result.
         pratyaya.varnas = []
         pratyaya.meta["au_purvasavarna_done"] = True
+        # Stem-final *ī/ū* is now *pragṛhya*-eligible; **1.1.11** runs again in P13.
+        state.meta[PRAGHYA_TAG_REFRESH_ARM_META] = True
         return state
     return state
 

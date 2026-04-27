@@ -25,6 +25,11 @@ from engine       import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
+from core.canonical_pipelines import P06b_pratyaya_through_taddhite_4_1_76
+from core.canonical_pipelines import P00_attach_sup_from_pratipadika
+from core.canonical_pipelines import P00_anabhihite_shashthi_shese_2_3_50
+from core.canonical_pipelines import P00_taddhita_it_lopa_chain
+from core.canonical_pipelines import P00_taddhita_pratipadika_internal_sup_luk_then_anga_vidhi
 from pipelines.subanta import (
     build_initial_state,
     run_subanta_post_4_1_2,
@@ -43,6 +48,7 @@ ADHIKARAS: tuple[str, ...] = (
 )
 WHITELIST: frozenset[str] = frozenset(
     {
+        "2.1.1", "2.3.1", "2.3.50",
         "4.1.1", "4.1.2", "4.1.76", "4.1.82", "4.1.92", "4.1.99",
         "1.2.45", "1.2.46", "2.4.71", "1.1.60", "1.1.62",
         "1.3.2", "1.3.3", "1.3.4", "1.3.5", "1.3.6", "1.3.7", "1.3.8", "1.3.9",
@@ -89,7 +95,8 @@ def build_itika_phak_initial_state() -> State:
     s = State(terms=[stem])
     s.meta["prakriya_itika_phak"] = True
     s.meta["linga"] = "pulliṅga"
-    s.meta["vibhakti_vacana"] = "6-1"
+    # Let 2.3.50 (ṣaṣṭhī śeṣe) set the coordinate in this glass-box pipeline.
+    s.meta["2_3_50_sheSa_shashthi_eligible"] = True
     return s
 
 
@@ -122,29 +129,23 @@ def derive_taddhita_itika_EtikAyana() -> State:
     *Taddhita* leg only: ``itika`` + *Nas* + *phak* → ``EtikAyana`` (SLP1 concat).
     """
     s = build_itika_phak_initial_state()
-    s = apply_rule("4.1.1", s)
-    s = apply_rule("1.2.45", s)
-    s = apply_rule("4.1.2", s)
+    # I. samarthya + ṣaṣṭhī (semantic contract / glass-box)
+    s = apply_rule("2.1.1", s)
+    s = P00_anabhihite_shashthi_shese_2_3_50(s)
+    s = P00_attach_sup_from_pratipadika(s)
     s = apply_rule("4.1.82", s)
     s = apply_rule("4.1.92", s)
     s.meta["4_1_99_prayoga"] = "naDAdi_Pak"
     s = apply_rule("4.1.99", s)
     s = apply_rule("1.1.1", s)
     s = apply_rule("1.1.50", s)
-    s = apply_rule("3.1.1", s)
-    s = apply_rule("3.1.2", s)
-    s = apply_rule("3.1.3", s)
-    s = apply_rule("4.1.76", s)
+    s = P06b_pratyaya_through_taddhite_4_1_76(s)
     _append_taddhita_Pak(s)
-    s = apply_rule("1.2.46", s)
-    s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
-    s = apply_rule("2.4.71", s)
-    s = apply_rule("1.1.62", s)
-    s = apply_rule("1.4.13", s)
+    s = P00_taddhita_pratipadika_internal_sup_luk_then_anga_vidhi(s)
     s = apply_rule("6.4.1", s)
     s = apply_rule("7.1.2", s)
-    s = apply_rule("1.3.10", s)
+    # V–VI. it-lopa chain (phak: k-it) + yathāsaṅkhyam
+    s = P00_taddhita_it_lopa_chain(s)
     s = apply_rule("7.2.118", s)
     s = apply_rule("1.4.18", s)
     s = apply_rule("6.4.129", s)

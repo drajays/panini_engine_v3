@@ -36,6 +36,8 @@ def test_ghu_set_registration():
     assert s1120.dhatu_upadesha_slp1_is_ghu(s1, "da~da")
     assert s1120.dhatu_upadesha_slp1_is_ghu(s1, "da~Da")
     assert s1120.dhatu_upadesha_slp1_is_ghu(s1, "adA~p")
+    assert s1120.dhatu_upadesha_slp1_is_ghu(s1, "de~N")
+    assert s1120.dhatu_upadesha_slp1_is_ghu(s1, "Dhe~N")
     assert not s1120.dhatu_upadesha_slp1_is_ghu(s1, "qupac~z")
     s2 = apply_rule("1.1.20", s1)
     assert s2.samjna_registry.get(s1120.GHU_KEY) is s1.samjna_registry.get(s1120.GHU_KEY)

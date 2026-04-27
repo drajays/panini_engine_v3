@@ -25,6 +25,11 @@ def test_is_savarna_slp1_delegates():
     assert not s119.is_savarna_slp1("a", "i")
 
 
+def test_is_savarna_slp1_nAjjhalou_ac_hal():
+    assert not s119.is_savarna_slp1("a", "h")
+    assert not s119.is_savarna_slp1("i", "S")
+
+
 def test_dirgha_savarna_of_ak():
     assert s119.dirgha_savarna_of_ak("a") == "A"
     assert s119.dirgha_savarna_of_ak("i") == "I"

@@ -32,7 +32,7 @@ def test_sankhya_set():
     s0 = State(terms=[t], samjna_registry={})
     s1 = apply_rule("1.1.23", s0)
     assert s1123.sankhya_samjna_1_1_23_is_registered(s1)
-    for stem in ("bahu", "gaNa", "vatu", "qati"):
+    for stem in ("bahu", "gaNa", "vatu", "qati", "tAvat", "kati"):
         assert s1123.pratipadika_slp1_in_sankhya_samjna(s1, stem)
     assert not s1123.pratipadika_slp1_in_sankhya_samjna(s1, "rAma")
     s2 = apply_rule("1.1.23", s1)

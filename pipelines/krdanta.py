@@ -30,7 +30,13 @@ import sutras  # noqa: F401  (ensure registry loaded)
 from engine       import apply_rule
 from engine.state import State, Term, Varna
 from pipelines.preflight_lopa_samjna import apply_preflight_luk_samjna_block
-from core.canonical_pipelines import P01_samjna_1_1_3_to_1_1_100, P01_samjna_1_1_15_to_1_1_24
+from core.canonical_pipelines import (
+    P01_samjna_1_1_15_to_1_1_24,
+    P01_samjna_1_1_3_to_1_1_100,
+    P00_it_halantyam_lopa_yathasankhyam,
+    P06a_pratyaya_adhikara_3_1_1_to_3,
+)
+from phonology import HAL
 from phonology.pratyahara import is_ekac_upadesha
 from phonology.varna import mk_inherent_a, parse_slp1_upadesha_sequence
 
@@ -46,8 +52,10 @@ def _structural_merge_to_pratipadika(state: State, *, upadesha_slp1: str) -> Sta
     all_varnas = []
     for t in s.terms:
         all_varnas.extend(v.clone() for v in t.varnas)
-    # Append inherent-a so the prātipadika is an a-stem in v3 internal form.
-    all_varnas.append(mk_inherent_a())
+    # Append inherent-a for consonant-final stems (a-stem model). Skip when the
+    # merged surface already ends in a vowel (e.g. ``…ana`` from *lyuṭ*).
+    if all_varnas and all_varnas[-1].slp1 in HAL:
+        all_varnas.append(mk_inherent_a())
     prat = Term(
         kind="prakriti",
         varnas=all_varnas,
@@ -130,6 +138,9 @@ def derive_krt(
     krt_upadesha_slp1: str = "Nvul",
     dhatu_varnas: List[Varna] | None = None,
     merge_pratipadika_label: str = "pAcaka",
+    prefix_terms: List[Term] | None = None,
+    dhatu_meta: dict | None = None,
+    extra_state_meta: dict | None = None,
 ) -> State:
     """
     Generic kṛdanta scaffold: dhātu (upadeśa) + chosen kṛt pratyaya.
@@ -143,6 +154,15 @@ def derive_krt(
         s = build_dhatu_state_from_varnas(dhatu_varnas, upadesha_slp1=dhatu_upadesha_slp1)
     else:
         s = build_dhatu_state(dhatu_upadesha_slp1)
+    if prefix_terms:
+        s.terms = list(prefix_terms) + s.terms
+    if dhatu_meta:
+        for t in s.terms:
+            if "dhatu" in t.tags:
+                t.meta.update(dhatu_meta)
+                break
+    if extra_state_meta:
+        s.meta.update(extra_state_meta)
 
     # Saṃjñā / paribhāṣā used by later vidhi (vṛddhi prayoga, sthānāntara).
     s = apply_rule("1.1.1", s)
@@ -155,26 +175,27 @@ def derive_krt(
     s = apply_rule("1.3.1", s)
     s = apply_rule("1.3.2", s)
     s = apply_rule("1.3.5", s)
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.9", s)
-    s = apply_rule("1.3.10", s)  # *samānām anudeśaḥ yathāsaṅkhyam* (paribhāṣā gate)
-    if s.terms:
-        s.terms[0].tags.discard("upadesha")
+    s = P00_it_halantyam_lopa_yathasankhyam(s)
+    for t in s.terms:
+        if "dhatu" in t.tags:
+            t.tags.discard("upadesha")
 
     # ६.१.६५ णो नः — before kṛt attachment (णीञ् → नी…); no-op on e.g. पच्.
     s = apply_rule("6.1.65", s)
 
-    # Kṛt adhikāra block + kartṛ-artha for ३.४.६७.
-    s.meta["krt_artha"] = "kartari"
-    s = apply_rule("3.1.1", s)
-    s = apply_rule("3.1.2", s)
-    s = apply_rule("3.1.3", s)
+    # Kṛt adhikāra block + kartṛ / bhāve scope.
+    if krt_upadesha_slp1 == "lyuw":
+        s.meta["krt_artha"] = "bhave"
+    else:
+        s.meta["krt_artha"] = "kartari"
+    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
     s = apply_rule("3.1.91", s)
 
     s.meta["krt_upadesha_slp1"] = krt_upadesha_slp1
     if krt_upadesha_slp1 == "Nvul":
         s = apply_rule("3.4.67", s)
         s = apply_rule("3.1.133", s)
+        s = apply_rule("1.3.8", s)
         s = apply_rule("1.3.7", s)
         s = apply_rule("1.3.3", s)
         s = apply_rule("1.3.9", s)
@@ -185,6 +206,32 @@ def derive_krt(
         s = apply_rule("7.2.116", s)
         s = apply_rule("7.2.115", s)
         s = apply_rule("6.1.78", s)
+        if s.meta.get("6_1_77_after_krt_arm"):
+            s.meta["6_1_77_ik_yan_aci_general_arm"] = True
+            s = apply_rule("6.1.77", s)
+        s = apply_rule("1.2.45", s)
+        s = apply_rule("1.2.46", s)
+        s = _structural_merge_to_pratipadika(s, upadesha_slp1=merge_pratipadika_label)
+        return s
+
+    if krt_upadesha_slp1 == "lyuw":
+        s = apply_rule("3.4.68", s)
+        s = apply_rule("3.1.133", s)
+        s = apply_rule("1.3.8", s)
+        s = apply_rule("1.3.7", s)
+        s = apply_rule("1.3.3", s)
+        s = apply_rule("1.3.9", s)
+        s = apply_rule("3.4.114", s)
+        s = apply_rule("1.4.13", s)
+        s = apply_rule("1.1.65", s)
+        s = apply_rule("6.4.1", s)
+        s = apply_rule("7.3.84", s)
+        s = apply_rule("7.1.1", s)
+        s = apply_rule("7.2.116", s)
+        s = apply_rule("7.2.115", s)
+        s = apply_rule("6.1.78", s)
+        s.meta["6_1_77_ik_yan_aci_general_arm"] = True
+        s = apply_rule("6.1.77", s)
         s = apply_rule("1.2.45", s)
         s = apply_rule("1.2.46", s)
         s = _structural_merge_to_pratipadika(s, upadesha_slp1=merge_pratipadika_label)
@@ -218,18 +265,14 @@ def derive_tfc_pratipadika(
     s = apply_rule("1.3.1", s)
     s = apply_rule("1.3.2", s)
     s = apply_rule("1.3.5", s)
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.9", s)
-    s = apply_rule("1.3.10", s)  # *yathāsaṅkhyam* paribhāṣā
+    s = P00_it_halantyam_lopa_yathasankhyam(s)
     if s.terms:
         s.terms[0].tags.discard("upadesha")
     s.meta["ekac_dhatu"] = is_ekac_upadesha(s.flat_slp1())
     s.meta["udatta_dhatu"] = bool(udatta_dhatu)
     s = apply_rule("6.1.65", s)
     s.meta["krt_artha"] = "kartari"
-    s = apply_rule("3.1.1", s)
-    s = apply_rule("3.1.2", s)
-    s = apply_rule("3.1.3", s)
+    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
     s = apply_rule("3.1.91", s)
     s.meta["krt_upadesha_slp1"] = "tfc"
     s = apply_rule("3.4.67", s)

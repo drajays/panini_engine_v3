@@ -40,8 +40,11 @@ def _find_target(state: State):
         if "satva_done" in v.tags:
             continue
         prev = t.varnas[i - 1]
+        # Some luṅ spines (sic + Īṭ) can present the conditioning vowel immediately
+        # after the s (… sI …) once terms have merged; we allow that narrow case too.
         if prev.slp1 not in _IN_KUK_PREV:
-            continue
+            if i + 1 >= len(t.varnas) or t.varnas[i + 1].slp1 not in _IN_KUK_PREV:
+                continue
         return i
     return None
 

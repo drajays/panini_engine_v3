@@ -16,7 +16,7 @@ from engine.state import State
 from phonology    import mk
 
 
-def _matches(state: State) -> bool:
+def _matches_nvul(state: State) -> bool:
     if len(state.terms) < 2:
         return False
     pr = state.terms[-1]
@@ -34,18 +34,44 @@ def _matches(state: State) -> bool:
     return True
 
 
+def _matches_lyuw(state: State) -> bool:
+    if len(state.terms) < 2:
+        return False
+    pr = state.terms[-1]
+    if "krt" not in pr.tags:
+        return False
+    if pr.meta.get("upadesha_slp1") != "lyuw":
+        return False
+    if pr.meta.get("yu_to_ana_done"):
+        return False
+    if "".join(v.slp1 for v in pr.varnas) != "yu":
+        return False
+    return True
+
+
+def _matches(state: State) -> bool:
+    return _matches_nvul(state) or _matches_lyuw(state)
+
+
 def cond(state: State) -> bool:
     return _matches(state)
 
 
 def act(state: State) -> State:
-    if not _matches(state):
+    if _matches_nvul(state):
+        pr = state.terms[-1]
+        pr.varnas = [mk("a"), mk("k")]
+        pr.meta["vu_to_ak_done"] = True
+        pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "Nvul")
+        pr.meta["upadesha_slp1"] = "ak"
         return state
-    pr = state.terms[-1]
-    pr.varnas = [mk("a"), mk("k")]
-    pr.meta["vu_to_ak_done"] = True
-    pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "Nvul")
-    pr.meta["upadesha_slp1"] = "ak"
+    if _matches_lyuw(state):
+        pr = state.terms[-1]
+        pr.varnas = [mk("a"), mk("n"), mk("a")]
+        pr.meta["yu_to_ana_done"] = True
+        pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "lyuw")
+        pr.meta["upadesha_slp1"] = "ana"
+        return state
     return state
 
 
@@ -55,7 +81,7 @@ SUTRA = SutraRecord(
     text_slp1      = "yuvor anAkau",
     text_dev       = "युवोरनाकौ",
     padaccheda_dev = "युवोः अनाकौ",
-    why_dev        = "ण्वुल्-प्रत्ययस्य ‘वु’ शेषे ‘अक्’ आदेशः (पाचक)।",
+    why_dev        = "‘यु’-‘वु’-स्थाने ‘अन्’-‘अक्’ आदेशः (ण्वुल् / ल्युट् इति संकीर्णम्)।",
     anuvritti_from = ("7.1.0",),
     cond           = cond,
     act            = act,

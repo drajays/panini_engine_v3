@@ -70,6 +70,8 @@ def test_taddhita_community_1_2_45_skipped_1_2_46_applies():
     assert st45.get("status") == "SKIPPED"
 
     s2 = apply_rule("1.2.46", s1)
+    assert len(s2.terms) == 2
+    assert s2.samjna_registry.get("1.2.46_anga_taddhita_two_term") is True
     assert "prātipadika" in s2.terms[0].tags
     st46 = _last_step_for(s2, "1.2.46")
     assert st46.get("status") == "APPLIED"

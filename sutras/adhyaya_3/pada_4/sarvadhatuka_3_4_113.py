@@ -21,6 +21,7 @@ from sutras.adhyaya_3.pada_4.tin_adesha_3_4_78 import TIN_ADESHA_18, TIN_ADESHA_
 _SIT_VIK: Final[Tuple[str, ...]] = (
     "Sap",
     "Syan",
+    "Snu",
     "SnuM",
     "Sa",
     "Snam",
@@ -41,7 +42,11 @@ _SIT_KRT: Final[Tuple[str, ...]] = (
 SIT_VIK_SARVADHATUKA_SLP1: Final[FrozenSet[str]] = frozenset(_SIT_VIK)
 SIT_KRT_SARVADHATUKA_SLP1: Final[FrozenSet[str]] = frozenset(_SIT_KRT)
 SIT_SARVADHATUKA_SLP1: Final[FrozenSet[str]] = SIT_VIK_SARVADHATUKA_SLP1 | SIT_KRT_SARVADHATUKA_SLP1
-SARVADHATUKA_UPADESHA_SLP1: Final[FrozenSet[str]] = TIN_ADESHA_SET | SIT_SARVADHATUKA_SLP1
+# *anti* (**7.1.3** *ādeśa* for *jhi*) — *sārvadhātuka* *tiṅ*-class for narrow inventory checks.
+_TIN_713_EXTRA: Final[Tuple[str, ...]] = ("anti",)
+SARVADHATUKA_UPADESHA_SLP1: Final[FrozenSet[str]] = (
+    TIN_ADESHA_SET | SIT_SARVADHATUKA_SLP1 | frozenset(_TIN_713_EXTRA)
+)
 
 TIN_COUNT: Final[int] = len(TIN_ADESHA_18)
 SIT_COUNT: Final[int] = len(SIT_SARVADHATUKA_SLP1)

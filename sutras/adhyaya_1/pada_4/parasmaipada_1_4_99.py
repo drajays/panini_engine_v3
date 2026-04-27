@@ -27,8 +27,9 @@ from sutras.adhyaya_3.pada_4.tin_adesha_3_4_78 import TIN_ADESHA_18
 # First nine of **3.4.78** = *parasmaipadīya* *tiṅ* (see ``TIN_ADESHA_18`` order) + *śatṛ* (3.2.124) + *kvasu* (3.2.107).
 # SLP1 follows ``phonology.varna`` (``T``/``Ta``/…).
 _PARASMAI_TIN9: Final[Tuple[str, ...]] = TIN_ADESHA_18[:9]
+# *anti* is the **7.1.3** *ādeśa* for *jhi* (same *parasmaipada* cell as *jhi*).
 PARASMAI_UPADESHA_SLP1: Final[FrozenSet[str]] = (
-    frozenset(_PARASMAI_TIN9) | frozenset({"Satf", "kvasu"})
+    frozenset(_PARASMAI_TIN9) | frozenset({"Satf", "kvasu", "anti"})
 )
 
 

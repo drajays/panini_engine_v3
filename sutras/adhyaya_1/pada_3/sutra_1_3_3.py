@@ -10,6 +10,8 @@
   **tusma** does **not** get halantyam (structural ``sup`` + ``TUSMA``; see
   ``sutra_1_3_4``). The ``has_halant_it`` tag (from ``sup_upadesha.json``
   ``_meta``) still gates which affixes participate in halantyam at all.
+  The same *tusma*-final exclusion applies to **tiṅ** *ādeśa* *vibhakti* *Terms*
+  (``is_tin_vibhakti_pratyaya`` — e.g. *tas*, *mas*).
 
 • **Anuvṛtti (Art. 4):** ``upadeśe`` and ``it`` are baked into ``text_*``;
   ``anuvritti_from`` points at **1.3.2** for the *upadeśe* anchor.
@@ -21,6 +23,8 @@ from __future__ import annotations
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
 from phonology     import HAL, TUSMA
+
+from sutras.adhyaya_1.pada_4.vibhakti_samjna_1_4_104 import is_tin_vibhakti_pratyaya
 
 
 def _eligible_terms(state: State):
@@ -36,6 +40,10 @@ def _eligible_terms(state: State):
         if last.slp1 not in HAL:
             continue
         if "sup" in t.tags and last.slp1 in TUSMA:
+            continue
+        # *na vibhaktau tusmāḥ* (1.3.4) — *tiṅ* *ādeśa* *vibhakti* finals in *tusma*
+        # are likewise not *halantyam-it* (e.g. *tas*, *mas*).
+        if is_tin_vibhakti_pratyaya(t) and last.slp1 in TUSMA:
             continue
         if "it" in last.tags or "it_candidate_halantyam" in last.tags:
             continue

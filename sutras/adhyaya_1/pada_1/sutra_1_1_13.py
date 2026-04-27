@@ -8,6 +8,10 @@ taken in *samāsa* / *sup* *sandhi* *prakaraṇa* that are governed by the *śit
 conventions.  v3 records a **paribhāṣā** *gate* only (R3); *vidhi* *cond* will consult the
 key when *ś*-initial *aṅga* / *pratyaya* *prayoga* is implemented ( **6.1.88** –style).
 
+For the *Kāśikā* *prayoga* where the **7.1.39** *śe* residue *e* (*asme*, *tve*, *me*, …)
+is *pragṛhya* before external *ac*, see ``SHE_PRAGHYA_TAG_ARM_META`` on ``State`` and
+``sutra_1_1_11._tag_she_pragrahya_residue``.
+
 See also **1.1.14** (``sutra_1_1_14``) *nipāta ekājanāṅ*; **1.1.100** (``sutra_1_1_100``) *na mātrā samāse* ( *Kāśikā* ).
 
 CONSTITUTION Art. 2: *cond* inspects only *State* *markers* (no *vibhakti* / *vacana* in *cond*).

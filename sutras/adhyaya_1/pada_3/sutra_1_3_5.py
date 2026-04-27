@@ -32,6 +32,15 @@ def _terms_sup_or_primary(state: State):
     ]
     if cand:
         return cand
+    # Taddhita upadeśas also participate in 1.3.5 (e.g. ñya, ñi, ṭu, ḍu markers).
+    # v3 previously skipped these, which blocked it-markers like initial 'Y' (ñ)
+    # from being recorded in `it_markers` by 1.3.9 — needed for 7.2.117.
+    taddhita = [
+        t for t in state.terms
+        if "taddhita" in t.tags and "upadesha" in t.tags
+    ]
+    if taddhita:
+        return taddhita
     krt = [
         t for t in state.terms
         if "krt" in t.tags and "upadesha" in t.tags
@@ -83,10 +92,12 @@ def act(state: State) -> State:
     v.tags.add("it_candidate_nit_tu_du")
     # In dhātu upadeśas like "qupac~z", the anubandha is "qu" (डु) —
     # both the initial hal (q) and the following vowel (u) are part of the marker.
-    # We tag the following 'u' as it-candidate too when present.
-    if j + 1 < len(term.varnas) and term.varnas[j + 1].slp1 == "u":
-        term.varnas[j + 1].tags.add("it_candidate_nit_tu_du")
-        state.samjna_registry[("it_nit_tu_du", ti, j, "qu")] = frozenset({v.slp1, "u"})
+    # We tag the following vowel as it-candidate too for the classical digraph
+    # markers **ñi** / **ṭu** / **ḍu** (and qu- in SLP1).
+    if j + 1 < len(term.varnas) and term.varnas[j + 1].slp1 in {"u", "i"}:
+        nxt = term.varnas[j + 1]
+        nxt.tags.add("it_candidate_nit_tu_du")
+        state.samjna_registry[("it_nit_tu_du", ti, j, v.slp1)] = frozenset({v.slp1, nxt.slp1})
     else:
         state.samjna_registry[("it_nit_tu_du", ti, j)] = frozenset({v.slp1})
     return state

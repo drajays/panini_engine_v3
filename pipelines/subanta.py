@@ -116,7 +116,10 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
                         linga: str = "pulliṅga",
                         *,
                         matra_prathama_2_3_46: bool = False,
+                        sheSa_shashthi_2_3_50: bool = False,
                         nAmadheya_vrddha_term_indices: tuple[int, ...] | frozenset[int] | None = None,
+                        bahuvrIhi_samAsa: bool = False,
+                        tRtIyA_tatpurusha_samAsa: bool = False,
                         ) -> State:
     """Build the initial state for a subanta derivation.
 
@@ -125,9 +128,24 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
     may schedule **2.3.1** + **2.3.46** in preflight (caller opts into this
     *śāstra* slice; default subanta behaviour is unchanged).
 
+    ``sheSa_shashthi_2_3_50`` — when True, sets
+    ``state.meta['2_3_50_sheSa_shashthi_eligible']`` so the subanta recipe
+    may schedule **2.3.1** + **2.3.50** in preflight (opt-in semantic flag
+    for *śeṣa* relation → *ṣaṣṭhī* selection; default behaviour unchanged).
+
     ``nAmadheya_vrddha_term_indices`` — optional indices for **1.1.73**
-    *vārttika* (*vā nāmadheyasya vṛddha-saṃjñā*); stored as
+    *vārttika* for *nāmadheya*; stored as
     ``state.meta['1_1_73_nAmadheya_vrddha_term_indices']`` for **1.1.73**.
+
+    ``bahuvrIhi_samAsa`` — when True, adds the ``"bahuvrihi"`` tag to the stem so
+    preflight **1.1.29** can apply (*na bahuvrīhau* cancels *sarvanāma* from **1.1.27**);
+    *recipe* opt-in, not a *siddha* (vibhakti, vacana) in *cond*. The ASCII hyphen
+    in *upadeśa* (e.g. ``priya-viSva``) is skipped in the *varṇa* loop but preserved in
+    ``Term.meta`` for the **1.1.27** *sarvādi* list id (``प्रियविश्वाय .md``).
+
+    ``tRtIyA_tatpurusha_samAsa`` — when True, tags the stem with ``"tRtIyA_tatpurusha"`` so
+    preflight **1.1.30** can apply (*tṛtīyā-samāse* cancels *sarvanāma*; ``तृतीयासमासे निषेध .md``).
+    List compound ids (e.g. ``mAsa-pUrva``) in ``data/inputs/sarvadi_slp1.json`` for **1.1.27**.
     """
     # Each consonant gets inherent-a unless immediately followed by a
     # vowel character in the stem.  We emit in canonical internal form:
@@ -174,6 +192,8 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
     state.meta["vibhakti_vacana"]  = f"{vibhakti}-{vacana}"
     if matra_prathama_2_3_46:
         state.meta["2_3_46_matra_prathama_eligible"] = True
+    if sheSa_shashthi_2_3_50:
+        state.meta["2_3_50_sheSa_shashthi_eligible"] = True
     if nAmadheya_vrddha_term_indices is not None:
         from sutras.adhyaya_1.pada_1.sutra_1_1_73 import (
             META_NAMADHEYA_VRDDHA_INDICES,
@@ -181,6 +201,10 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
         state.meta[META_NAMADHEYA_VRDDHA_INDICES] = frozenset(
             nAmadheya_vrddha_term_indices
         )
+    if bahuvrIhi_samAsa:
+        stem.tags.add("bahuvrihi")
+    if tRtIyA_tatpurusha_samAsa:
+        stem.tags.add("tRtIyA_tatpurusha")
     return state
 
 
@@ -280,6 +304,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.2.106",
     "7.2.102",
     "6.1.97",
+    "7.2.113",
     "6.1.69",
     "7.1.15",
     "7.1.12",
@@ -317,9 +342,11 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.3.119",
     "7.3.120",
     "6.1.102",
+    "1.1.11",
     "6.1.103",
     "6.1.78",
     "6.1.107",
+    "6.1.125",
     "6.1.77",
     "6.1.87",
     "6.1.88",
@@ -353,6 +380,8 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
            *,
            matra_prathama_2_3_46: bool = False,
            nAmadheya_vrddha_term_indices: tuple[int, ...] | frozenset[int] | None = None,
+           bahuvrIhi_samAsa: bool = False,
+           tRtIyA_tatpurusha_samAsa: bool = False,
            ) -> State:
     """
     Aṣṭādhyāyī-kram pipeline.  Returns final state with complete trace.
@@ -362,6 +391,8 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
 
     ``nAmadheya_vrddha_term_indices`` — forwarded to ``build_initial_state``
     for **1.1.73** *vārttika* (*nāmadheya* optional *vṛddha*).
+
+    ``bahuvrIhi_samAsa`` / ``tRtIyA_tatpurusha_samAsa`` — forwarded to ``build_initial_state``.
     """
     # Tyadādi pronouns like `tad` have no sambodhana (no vibhakti 8 forms).
     if vibhakti == 8 and stem_slp1.strip() in {"tad", "tyad", "yad", "etad", "idam", "adas", "kim"}:
@@ -371,6 +402,8 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
         stem_slp1, vibhakti, vacana, linga,
         matra_prathama_2_3_46=matra_prathama_2_3_46,
         nAmadheya_vrddha_term_indices=nAmadheya_vrddha_term_indices,
+        bahuvrIhi_samAsa=bahuvrIhi_samAsa,
+        tRtIyA_tatpurusha_samAsa=tRtIyA_tatpurusha_samAsa,
     )
     return run_subanta_pipeline(s)
 

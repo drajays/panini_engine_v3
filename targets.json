@@ -1,0 +1,402 @@
+{
+  "generated_at": "2026-04-27T05:30:20.673227+00:00",
+  "python": "3.14.3",
+  "import_errors": [],
+  "records": [
+    {
+      "module": "pipelines.AdIDhyakaH",
+      "callable": "derive_AdIDhyakaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.AdIDhyakaH",
+      "callable": "derive_AdIDhyaka_pratipadika",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.AdIDhyakaH",
+      "callable": "derive_krt",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.AdIDhyanam",
+      "callable": "derive_AdIDhyana_pratipadika",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.AdIDhyanam",
+      "callable": "derive_AdIDhyanam",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.AdIDhyanam",
+      "callable": "derive_krt",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.aabhyam_idam_7_2_113",
+      "callable": "derive_idam_dvibhi_aabhyam",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.acaEzIt_luN_ciY",
+      "callable": "derive_acaEzIt",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.agnI_iti_pragRhya_demo",
+      "callable": "derive_agnI_iti_pragrahya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.agnI_iti_pragRhya_demo",
+      "callable": "derive_vAyU_iti_no_yan",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.akArzIt_luN_dukrY",
+      "callable": "derive_akArzIt",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.alAvIt_luN_lUY",
+      "callable": "derive_alAvIt",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.amI_atra_pragRhya_demo",
+      "callable": "derive_amI_atra_pragrahya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.amU_atra_pragRhya_demo",
+      "callable": "derive_amU_atra_pragrahya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.araNya_tatra_bhava_AraRyaH",
+      "callable": "derive_AraRyaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.araNya_tatra_bhava_AraRyaH",
+      "callable": "derive_AraRya_pratipadika",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.asme_indrAbfhaspatI_pragRhya_demo",
+      "callable": "derive_asme_indrAbfhaspatI_pragrahya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.asme_indrAbfhaspatI_pragRhya_demo",
+      "callable": "derive_me_iti_pragrahya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.asme_indrAbfhaspatI_pragRhya_demo",
+      "callable": "derive_tve_iti_pragrahya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.aupagu_apatya_aupAgava",
+      "callable": "derive_aupAgavaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.aupagu_apatya_aupAgava",
+      "callable": "derive_aupAgava_pratipadika",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.bhinnavAn_prathamA_Bidi",
+      "callable": "derive_bhinnavAn",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.cinutaH_dvivacana_lat_ciY",
+      "callable": "derive_cinutaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.cinvanti_lat_ciY",
+      "callable": "derive_cinvanti",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.citaH_prathamA_ciY",
+      "callable": "derive_citaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.citavAn_prathamA_ciY",
+      "callable": "derive_citavAn",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.daNDahasta_nAjjhalau_demo",
+      "callable": "derive_daNDahasta_nAjjhalau_demo",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.daNDahasta_nAjjhalau_demo",
+      "callable": "derive_dadhi_SItalam_nAjjhalau_demo",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.devendra",
+      "callable": "derive_devendraH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.devendra",
+      "callable": "derive_sUryodayaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.dik_uttarapurva_demo",
+      "callable": "derive_dik_caturthi_compound",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.dik_uttarapurva_demo",
+      "callable": "derive_uttarapurva_compound",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.gOrI_adhizritaH_pragRhya_demo",
+      "callable": "derive_gOrI_aDiSritaH_pragrahya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.gOrI_adhizritaH_pragRhya_demo",
+      "callable": "derive_mAmakI_iti_pragrahya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.gOrI_adhizritaH_pragRhya_demo",
+      "callable": "derive_tanU_iti_pragrahya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.gomAn_prathamA_go_matup",
+      "callable": "derive_gomAn",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.jiRNu_prathamA_ji",
+      "callable": "derive_jizRuH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.kRtavAn_prathamA_kf",
+      "callable": "derive_kRtavAn",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.kftvas_sankhya_avyaya",
+      "callable": "derive_bahukftvaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.kftvas_sankhya_avyaya",
+      "callable": "derive_katikftvaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.kftvas_sankhya_avyaya",
+      "callable": "derive_tAvatkftvaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.krdanta",
+      "callable": "derive_chetA",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.krdanta",
+      "callable": "derive_krt",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.krdanta",
+      "callable": "derive_nAyakaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.krdanta",
+      "callable": "derive_nAyaka_pratipadika",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.krdanta",
+      "callable": "derive_pAcakaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.krdanta",
+      "callable": "derive_pAcaka_pratipadika",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.krdanta",
+      "callable": "derive_tfc_pratipadika",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.krdanta",
+      "callable": "derive_trc",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.kumAri_itarA_tamA_taddhita",
+      "callable": "derive_kumAritama",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.kumAri_itarA_tamA_taddhita",
+      "callable": "derive_kumAritara",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.loluv_yang_lUY",
+      "callable": "derive_loluvH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.mAle_iti_pragRhya_demo",
+      "callable": "derive_mAle_iti_pragrahya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.mArzwi_lat_mFj",
+      "callable": "derive_mArzwi",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.mAsa_pUrva_tRtIyA_subanta",
+      "callable": "derive_dvyahapUrvAya_caturthI_eka",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.mAsa_pUrva_tRtIyA_subanta",
+      "callable": "derive_mAsapUrvAya_caturthI_eka",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.mAsa_pUrva_tRtIyA_subanta",
+      "callable": "derive_tryahapUrvAya_caturthI_eka",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.mRuSTavAn_prathamA_mfzu",
+      "callable": "derive_mRuSTavAn",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.maharsi_mahAt_fzi",
+      "callable": "derive_maharziH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.marImfja_prathamA_mFjU",
+      "callable": "derive_marImfjaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.medyati_lat_mid",
+      "callable": "derive_medyati",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.paWitA_lut_prathamA",
+      "callable": "derive_paWitA",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.pacete_iti_pragRhya_demo",
+      "callable": "derive_pacete_iti_pragrahya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.priyaviSva_bahuvrIhi_subanta",
+      "callable": "derive_priyaviSvAya_caturthI_eka",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.sarva_subanta",
+      "callable": "derive_sarva_pulliṅga",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.sarvaka_subanta",
+      "callable": "derive_sarvakaha",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.stutavAn_prathamA_stuY",
+      "callable": "derive_stutavAn",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.subanta",
+      "callable": "derive_akarant_pullinga",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.subanta",
+      "callable": "derive_ikarant_pullinga",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.subanta_trc",
+      "callable": "derive_trc_nom_sg",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.taddhita_itika_etikAyana",
+      "callable": "derive_EtikAyana_subanta",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.taddhita_itika_etikAyana",
+      "callable": "derive_full_itika_EtikAyanaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.taddhita_itika_etikAyana",
+      "callable": "derive_taddhita_itika_EtikAyana",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.taddhita_salIya",
+      "callable": "derive_mAlIya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.taddhita_salIya",
+      "callable": "derive_salIya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.taddhita_salIya",
+      "callable": "derive_salIyaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.un_iti_UUm_pragRhya_demo",
+      "callable": "derive_U_ti_UUm_pragrahya",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.vaipASaH_vipAS_tatra_bhava",
+      "callable": "derive_vaipASaH",
+      "dry_run": true
+    },
+    {
+      "module": "pipelines.vaipASaH_vipAS_tatra_bhava",
+      "callable": "derive_vaipASa_pratipadika",
+      "dry_run": true
+    }
+  ]
+}

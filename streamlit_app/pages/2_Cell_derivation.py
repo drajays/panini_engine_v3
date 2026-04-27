@@ -11,6 +11,7 @@ import sutras  # noqa: F401, E402
 from sutras.adhyaya_1.pada_1.sutra_1_1_1 import VRIDHI_SAMJNA_REFERENCING_SUTRAS
 from engine import SUTRA_REGISTRY
 from phonology.joiner import slp1_to_devanagari
+from pipelines.sarva_subanta import derive_sarva_pulliṅga
 from pipelines.subanta import (
     derive,
     derive_akarant_pullinga,
@@ -117,11 +118,12 @@ gcell = gold["cells"].get(key, {}) if gold else {}
 gold_dev = gcell.get("form_dev", "—") if use_gold else "—"
 gold_slp = gcell.get("form_slp1", "—") if use_gold else "—"
 
-state = (
-    derive_akarant_pullinga(stem_slp, vib, vac)
-    if is_akar
-    else derive_ikarant_pullinga(stem_slp, vib, vac)
-)
+if stem_slp == "sarva":
+    state = derive_sarva_pulliṅga(vib, vac)
+elif is_akar:
+    state = derive_akarant_pullinga(stem_slp, vib, vac)
+else:
+    state = derive_ikarant_pullinga(stem_slp, vib, vac)
 surface_dev = slp1_to_devanagari(state.terms[0].varnas) if state.terms else ""
 surface_slp = state.render()
 

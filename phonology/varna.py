@@ -111,7 +111,8 @@ def parse_slp1_upadesha_sequence(slp1_seq: str) -> list:
         ch = slp1_seq[i]
         if ch == "~":
             for j in range(len(varnas) - 1, -1, -1):
-                if varnas[j].slp1 in AC:
+                # AC from pratyāhāra may exclude dīrgha letters; treat any vowel as eligible.
+                if varnas[j].slp1 in AC_DEV:
                     varnas[j].tags.add("anunasika")
                     break
             i += 1

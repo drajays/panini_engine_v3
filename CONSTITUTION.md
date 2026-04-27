@@ -201,7 +201,7 @@ engine paths that bypass `apply_rule()`.
 
 ## Article 10 — Amendment Procedure
 
-These **twelve** Articles (numbered 0 through 11) are amended only by:
+These **thirteen** Articles (numbered 0 through 12) are amended only by:
 1. Opening `docs/AMENDMENT_<N>.md` with the proposed change and rationale.
 2. Passing every constitutional, forward, backward, and regression test
    with the proposed change applied to a branch.
@@ -236,3 +236,47 @@ observers) without ad-hoc, per-pipeline hook wiring.
 **Corollary:** the executors in `engine/executors/*` are invoked only from
 `apply_rule` (the dispatcher is the only importer). Pipelines and recipes
 call `apply_rule(sutra_id, state, …)`; they do not call `exec_*` directly.
+
+---
+
+## Article 12 — Fullest valid sūtra path; no duplicate shortcuts
+
+When moving a derivation from **state A** to **state B** (e.g. prātipadika →
+pada, or aṅga+pratyaya → surface), the implementation must seek the
+**fullest** *śāstrīya* path that the Aṣṭādhyāyī admits through the engine —
+**not** the smallest patch of one or two sūtras that happens to print the
+target string.
+
+1. **Rule-based and blind (Articles 2–3, 6–7, 11).** Every *vidhi* step
+   must be a real `SutraRecord` with `cond(state)` satisfied from phonemic
+   / saṃjñā / *upadeśa* / adhikāra signals. No *recipe* may read
+   `data/reference/`, gold paradigms, or “expected Devanāgarī” in order to
+   **choose** which sūtra fires. Shortcuts that **bypass** `apply_rule` for
+   morphological work forbidden by **Article 11** remain **forbidden**.
+
+2. **Prefer a dense, valid trace over a thin hack.** If two designs both
+   produce a correct surface but one **skips** sūtra blocks that a comparable
+   *śāstrīya* *prayoga* of the same *class* normally traverses
+   (saṃjñā, adhikāra, *it*‑prakaraṇa, aṅgakārya, sandhi) **without**
+   a pratisedha, optional-path, or tripāḍī *asiddhatva* account, the thinner
+   design is **suspect**. Extend **sūtra** *cond* / **recipe** *order* so
+   the trace reflects the **longer** *legitimate* application sequence —
+   the one a scholar could still justify line-by-line (Article 0), not a
+   Kaumudī *short circuit* (Article 3). This does **not** mean “maximize
+   arbitrary rule count”: pratishedha, *asiddha*, and *anarthaka*
+   *prayoga* exclusions still apply; **never** add spurious sūtra fires.
+
+3. **No duplicate or forked *prakriyā* for the same *locus*.** The same
+   *prayoga* class (e.g. a given *prātipadika* + *sup* paradigm) should use
+   **one** canonical pipeline entry (e.g. a single `derive_*` for that
+   stem) so all cells share the **same** rule spine unless a **documented**
+   *vibhāṣā* / *śāstrīya* *choice* actually forks (Article 1). Ad hoc
+   copy-paste recipes for the same derivation are **duplication** and
+   complicate **SIG** audit (Article 11).
+
+4. **Change policy.** If a “shortcut” is removed and more sūtras apply, or
+   if a duplicate pipeline is merged into a canonical one, this is
+   *progression toward* Article 12, not a regression, **provided** `cond`
+   truth and **Article 3** order are preserved. Update
+   `tests/regression/*` (including SIG baselines where used) as for any
+   intentional trace change (Article 8, Article 9).

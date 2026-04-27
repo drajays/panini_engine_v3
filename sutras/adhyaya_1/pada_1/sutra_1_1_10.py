@@ -7,6 +7,11 @@ the *jhal* consonants are **out of the scope** of a preceding *aś* ( *a* + *c*
 members meant when an earlier rule (e.g. *aś* *it* for *lopa*) is read across
 *pratyāhāra* boundaries.  (Anchor for the *iṭ*-*prakaraṇa*, **1.3.2**–**1.3.9**.)
 
+**Prayoga reading (*ac*–*hal*):** an *ac* letter and a *hal* letter are **never**
+*savarṇa* to each other (*na + ac + halau*).  The operational mirror lives in
+``phonology.savarna.is_savarna`` (so **6.1.101** and other *savarṇa*-sensitive
+*vidhi*s do not treat e.g. *a*+*h* or *i*+*ś* as homorganic pairs).
+
 v3 records an interpretive **gate** in ``paribhasha_gates`` (R3) so *vidhi*
 *cond* paths that assign *it* to varṇas in *upadeśa* can align with the pāṭha
 without reading *vibhakti* / target forms.

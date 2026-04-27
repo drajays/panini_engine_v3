@@ -29,8 +29,8 @@ from __future__ import annotations
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.it_phonetic import IT_LOPA_TAGS
 from engine.state  import State
-from phonology.pratyahara import AC
-from phonology.varna     import mk as v_mk, mk_inherent_a
+from phonology.pratyahara import is_dirgha
+from phonology.varna     import AC_DEV, mk as v_mk, mk_inherent_a
 
 # Re-export for sibling sūtras (``1.3.5``–``1.3.7``); canonical set: ``engine.it_phonetic``.
 
@@ -42,6 +42,14 @@ def _has_it_varna(term) -> bool:
     )
 
 
+def _only_it_varnas_after(term, j: int) -> bool:
+    """True iff every varṇa strictly after ``j`` already bears an *it* lopa tag."""
+    for k in range(j + 1, len(term.varnas)):
+        if not (term.varnas[k].tags & IT_LOPA_TAGS):
+            return False
+    return True
+
+
 def cond(state: State) -> bool:
     return any(_has_it_varna(t) for t in state.terms)
 
@@ -50,7 +58,7 @@ def act(state: State) -> State:
     for t in state.terms:
         removed: list[str] = []
         new_varnas = []
-        for v in t.varnas:
+        for j, v in enumerate(t.varnas):
             if not (v.tags & IT_LOPA_TAGS):
                 new_varnas.append(v)
                 continue
@@ -64,9 +72,29 @@ def act(state: State) -> State:
             if (
                 "dhatu" in t.tags
                 and "it_candidate_anunasika" in v.tags
-                and v.slp1 in AC
+                and v.slp1 in AC_DEV
             ):
                 removed.append(v.slp1)
+                # Final anunāsika vowel (e.g. "…A~") or vowel whose only tail material
+                # is *it* (e.g. ``mFjU~z``: ``U`` before hal-it ``z``) — full elision.
+                if j == len(t.varnas) - 1 or _only_it_varnas_after(t, j):
+                    # ``dIDI~N``-class dhātus: dīrgha ``I``/``U``/``F`` before final
+                    # ``N`` (halantyam it) — keep the vowel, drop only anunāsika
+                    # (contrast ``mFjU~z`` where tail is ``z``, not ``N``).
+                    if (
+                        "dhatu" in t.tags
+                        and is_dirgha(v.slp1)
+                        and j + 1 == len(t.varnas) - 1
+                        and t.varnas[-1].slp1 == "N"
+                        and "it_candidate_halantyam" in t.varnas[-1].tags
+                    ):
+                        if v.slp1 == "a" and v.dev == "":
+                            new_varnas.append(mk_inherent_a())
+                        else:
+                            new_varnas.append(v_mk(v.slp1))
+                        continue
+                    continue
+                # Otherwise, nasalization is the it-feature; the vowel letter remains.
                 if v.slp1 == "a" and v.dev == "":
                     new_varnas.append(mk_inherent_a())
                 else:

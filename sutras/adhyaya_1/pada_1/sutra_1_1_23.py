@@ -5,9 +5,9 @@
 technical name *saṅkhyā* (as per index ``type``: *संख्यासंज्ञा*).  *Padaccheda* follows ``pc``:
 *बहु*–*गण*–*वतु*–*डति* · *संख्या*.
 
-v3: ``samjna_registry['saṅkhyā']`` = *frozenset* of the four canonical **prātipadika** SLP1 stems this engine
-uses: ``bahu`` , ``gaNa`` , ``vatu`` , ``qati`` (``q`` = ड् in ``phonology.varna``).  *Vidhi* may use
-``pratipadika_slp1_in_sankhya_samjna``; no *Term* mutation here.
+v3: ``samjna_registry['saṅkhyā']`` = *frozenset* of **prātipadika** SLP1 keys: the four *śāstrīya* *loci*
+(``bahu`` , ``gaNa`` , ``vatu`` , ``qati``) plus *corpus* *vatuṭ* / *ḍati* *antas* ``tAvat`` , ``kati``
+(``q`` = ड्).  *Vidhi* may use ``pratipadika_slp1_in_sankhya_samjna``; no *Term* mutation here.
 """
 from __future__ import annotations
 
@@ -23,6 +23,8 @@ SANKHYA_1_1_23_PRATIPADIKA_SLP1: FrozenSet[str] = frozenset(
         "gaNa",  # गण
         "vatu",  # वतु
         "qati",  # q + a + t + i = डति (q = ड् *varna*)
+        "tAvat",  # तावत् (५.२.३९ *vatuṭ* *anta* — *corpus*)
+        "kati",  # कति (*kim* + *ḍati* — *corpus*)
     }
 )
 

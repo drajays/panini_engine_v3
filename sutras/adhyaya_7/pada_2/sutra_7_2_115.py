@@ -39,11 +39,15 @@ def _vrddhi_vowel(ch: str, state: State) -> Optional[str]:
 def _find(state: State):
     if len(state.terms) < 2:
         return None
-    dhatu = state.terms[0]
+    dhatu = next((t for t in state.terms if "dhatu" in t.tags), None)
+    if dhatu is None:
+        return None
     pr = state.terms[-1]
-    if "dhatu" not in dhatu.tags or "krt" not in pr.tags:
+    if "krt" not in pr.tags:
         return None
     if dhatu.meta.get("aco_nniti_vrddhi_done"):
+        return None
+    if dhatu.meta.get("dIdhIvevI_guna_vrddhi_nishedha"):
         return None
     itm = pr.meta.get("it_markers", set())
     if not isinstance(itm, set):
@@ -59,7 +63,8 @@ def _find(state: State):
     rep = _vrddhi_vowel(last, state)
     if rep is None:
         return None
-    return (0, len(dhatu.varnas) - 1, rep)
+    di = state.terms.index(dhatu)
+    return (di, len(dhatu.varnas) - 1, rep)
 
 
 def cond(state: State) -> bool:

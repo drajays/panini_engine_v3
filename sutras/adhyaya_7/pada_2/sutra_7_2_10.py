@@ -19,7 +19,13 @@ def cond(state: State) -> bool:
         return False
     if "7.2.35" in state.blocked_sutras:
         return False
-    return any("krt" in t.tags and "ardhadhatuka" in t.tags for t in state.terms)
+    # Default narrow v3: kṛt ārdhadhātuka.
+    if any("krt" in t.tags and "ardhadhatuka" in t.tags for t in state.terms):
+        return True
+    # Opt-in luṅ: treat sic as ārdhadhātuka locus (glass-box).
+    if state.meta.get("7_2_10_allow_sic") and state.meta.get("luN_sic_ardhadhatuka"):
+        return any((t.meta.get("upadesha_slp1") or "").strip() == "sic" for t in state.terms)
+    return False
 
 
 def act(state: State) -> State:
