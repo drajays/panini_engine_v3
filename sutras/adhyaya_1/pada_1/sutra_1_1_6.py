@@ -20,6 +20,33 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
 
+# In practice, the classical paribhāṣā is invoked by name for a small
+# fixed dhātu set (दीधी / वेवी / ईट्).  We expose a helper so vidhis can
+# block guṇa/vṛddhi by **dhātu identity** rather than pipeline-injected meta.
+_DIDHI_VEVI_IT_BASES: frozenset[str] = frozenset({"dIDhI", "vevI", "iw"})
+
+
+def _normalize_upadesha_base(up: str | None) -> str:
+    """
+    Best-effort normalizer for dhātu identity checks.
+    Examples:
+      'dIDhI~N' → 'dIDhI'
+      'iw'      → 'iw'
+    """
+    if not up:
+        return ""
+    s = up.strip().replace("~", "")
+    # Drop trailing it letters if present (common in upadeśa strings).
+    while s and s[-1] in {"N", "Y", "R"}:
+        s = s[:-1]
+    return s
+
+
+def dhatu_blocked_by_1_1_6(upadesha_slp1: str | None) -> bool:
+    """True iff the dhātu is in the 1.1.6 दीधी-वेवी-ईट् set (operational helper)."""
+    return _normalize_upadesha_base(upadesha_slp1) in _DIDHI_VEVI_IT_BASES
+
+
 def cond(state: State) -> bool:
     return "id_agama_guna_nishedha" not in state.paribhasha_gates
 

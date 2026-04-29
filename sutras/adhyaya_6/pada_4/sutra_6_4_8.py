@@ -5,9 +5,10 @@ Operational role (v3.6, neuter a-stems like ज्ञानानि):
   After 7.1.72 inserts nuṃ (n) on the aṅga, when the following pratyaya
   is `sarvanamasthana` and NOT sambuddhi, lengthen the aṅga's upadhā-vowel.
 
-Minimal implementation for a-stems ending in -na:
-  - if the aṅga ends with ... n + a + n (i.e. final 'n' from nuṃ, and
-    the preceding varṇa is the inherent 'a'), change that 'a' to 'A'.
+Minimal implementation (v3.6):
+  - after nuṃ-āgama in our neuter demos, the aṅga ends with a final 'n'
+    (the surviving consonant of nuṃ). Lengthen the upadhā vowel immediately
+    before that final consonant (e.g. ... a n → ... A n).
 
 This yields: jYAna + n + i → jYAnAn + i → ज्ञानानि (after joiner).
 """
@@ -23,7 +24,7 @@ def _matches(state: State) -> bool:
         return False
     anga = state.terms[-2]
     pr   = state.terms[-1]
-    if "anga" not in anga.tags or "napuṃsaka" not in anga.tags:
+    if "anga" not in anga.tags:
         return False
     if "sup" not in pr.tags:
         return False
@@ -35,12 +36,11 @@ def _matches(state: State) -> bool:
         return False
     if len(anga.varnas) < 3:
         return False
-    # Expect ... n a n (where the last n is the nuṃ insertion).
+    # Expect final 'n' (nuṃ's surviving consonant) and an upadhā-vowel
+    # immediately before it.
     if anga.varnas[-1].slp1 != "n":
         return False
-    if anga.varnas[-2].slp1 != "a":
-        return False
-    if anga.varnas[-3].slp1 != "n":
+    if anga.varnas[-2].slp1 not in {"a", "i", "u"}:
         return False
     return True
 
@@ -53,7 +53,8 @@ def act(state: State) -> State:
     if not _matches(state):
         return state
     anga = state.terms[-2]
-    anga.varnas[-2] = mk("A")
+    _dirgha = {"a": "A", "i": "I", "u": "U"}
+    anga.varnas[-2] = mk(_dirgha[anga.varnas[-2].slp1])
     anga.meta["sarvanamasthana_upadha_dirgha_done"] = True
     return state
 

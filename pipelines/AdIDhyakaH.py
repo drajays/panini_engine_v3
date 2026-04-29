@@ -9,19 +9,21 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from phonology import mk
+from phonology.varna import parse_slp1_upadesha_sequence
 from engine.state import State, Term
 
 from pipelines.krdanta import derive_krt
-from pipelines.subanta import build_initial_state, run_subanta_pipeline
+from pipelines.subanta import run_subanta_preflight_through_1_4_7, run_subanta_sup_attach_and_finish
 
 
 def _A_upasarga() -> Term:
     return Term(
-        kind="prakriti",
-        varnas=[mk("A")],
-        tags={"upasarga", "anga"},
-        meta={},
+        kind="upasarga",
+        # Use ``AN`` (no ``~``) so 1.3.3 marks final ``N`` as it; ``~`` would
+        # nasalize the vowel and incorrectly make ``A`` itself it via 1.3.2.
+        varnas=parse_slp1_upadesha_sequence("AN"),
+        tags={"upadesha"},
+        meta={"upadesha_slp1": "AN"},
     )
 
 
@@ -32,17 +34,20 @@ def derive_AdIDhyaka_pratipadika() -> State:
         krt_upadesha_slp1="Nvul",
         merge_pratipadika_label="AdIDhyaka",
         prefix_terms=[_A_upasarga()],
-        dhatu_meta={"dIdhIvevI_guna_vrddhi_nishedha": True},
-        extra_state_meta={"6_1_77_after_krt_arm": True},
     )
 
 
 def derive_AdIDhyakaH() -> State:
     """Puṃliṅga prathamā ekavacana (``su`` → ``H``)."""
     s = derive_AdIDhyaka_pratipadika()
-    stem = s.flat_slp1()
-    s2 = build_initial_state(stem, vibhakti=1, vacana=1, linga="pulliṅga")
-    return run_subanta_pipeline(s2)
+    # Continue on the same State to preserve prakriyā trace.
+    if s.terms:
+        s.terms[0].tags.add("pulliṅga")
+    s.meta["linga"] = "pulliṅga"
+    s.meta["vibhakti_vacana"] = "1-1"
+    s = run_subanta_preflight_through_1_4_7(s)
+    s = run_subanta_sup_attach_and_finish(s)
+    return s
 
 
 __all__ = ["derive_AdIDhyaka_pratipadika", "derive_AdIDhyakaH"]

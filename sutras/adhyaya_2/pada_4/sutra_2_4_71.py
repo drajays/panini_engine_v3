@@ -20,20 +20,19 @@ before *sup* is elided from that community):
   • ``state.meta['pratipadika_avayava_ready'] == True`` — recipe asserts
     *prātipadika* readiness on members.
 
-On success: delete all ``sup`` Terms; set ``2_4_71_luk_arm`` to ``False`` and
-``2_4_71_luk`` to ``True`` (completion / *sup* removed).
+On success: **zero-width ghost** each internal ``sup`` ``Term`` (clear
+``varnas``, add ``luk_lopa``; retain ``sup`` / ``pratyaya`` tags); set
+``2_4_71_luk_arm`` to ``False`` and ``2_4_71_luk`` to ``True`` (completion).
+See ``engine/lopa_ghost.py``.
 
 Mechanical blindness:
   - ``cond()`` reads only tags + ``state.meta`` keys (never vibhakti/vacana).
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
+from engine import SutraType, SutraRecord, register_sutra
+from engine.lopa_ghost import LUK_LOPA_GHOST_TAG, state_live_sup_indexes
 from engine.state import State
-
-
-def _sup_term_indexes(state: State) -> list[int]:
-    return [i for i, t in enumerate(state.terms) if "sup" in t.tags]
 
 
 def cond(state: State) -> bool:
@@ -41,16 +40,17 @@ def cond(state: State) -> bool:
         return False
     if not state.meta.get("pratipadika_avayava_ready"):
         return False
-    return len(_sup_term_indexes(state)) > 0
+    return len(state_live_sup_indexes(state)) > 0
 
 
 def act(state: State) -> State:
-    idxs = _sup_term_indexes(state)
+    idxs = state_live_sup_indexes(state)
     if not idxs:
         return state
-    # Delete from right to left to keep indexes stable.
-    for i in reversed(idxs):
-        del state.terms[i]
+    for i in idxs:
+        t = state.terms[i]
+        t.varnas.clear()
+        t.tags.add(LUK_LOPA_GHOST_TAG)
     state.meta["2_4_71_luk_arm"] = False
     state.meta["2_4_71_luk"] = True
     return state
@@ -66,8 +66,8 @@ SUTRA = SutraRecord(
     anuvritti_from = ("2.4.58", "2.4.70"),
     cond           = cond,
     act            = act,
-    # *sup* may be abstract (empty ``varnas``); ``flat_slp1()`` unchanged though
-    # *sup* ``Term`` objects are deleted — R1 would false-alarm without this flag.
+    # *sup* may be abstract; ``flat_slp1()`` unchanged on ghost transition — R1
+    # would false-alarm without this flag.
     r1_form_identity_exempt=True,
 )
 

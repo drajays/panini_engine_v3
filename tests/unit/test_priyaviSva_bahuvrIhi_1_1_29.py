@@ -29,7 +29,7 @@ def test_priyaviSvAya_caturthI_eka_bahuvrIhi_path():
 
 
 def test_priya_viSva_without_bahuvrIhi_sarvanAma_smai():
-    s = derive("priya-viSva", 4, 1, "pulliṅga", bahuvrIhi_samAsa=False)
+    s = derive("priya-viSva", 4, 1, "pulliṅga")
     assert s.flat_slp1() == "priyaviSvasmE"
     assert _had(s, "1.1.14", "APPLIED")
     assert not _had(s, "1.1.29", "APPLIED")

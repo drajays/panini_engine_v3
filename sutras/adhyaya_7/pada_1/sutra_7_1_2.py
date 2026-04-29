@@ -28,7 +28,8 @@ from __future__ import annotations
 
 from typing import List, Optional, Tuple
 
-from engine       import SutraType, SutraRecord, register_sutra
+from engine import SutraType, SutraRecord, register_sutra
+from engine.lopa_ghost import term_is_sup_luk_ghost
 from engine.state import State, Term, Varna
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -89,15 +90,33 @@ def _phadi_replacement(varnas: List[Varna]) -> Optional[Tuple[str, List[Varna]]]
     return None
 
 
+def _rightmost_phadi_pratyaya_index(state: State) -> int | None:
+    for j in range(len(state.terms) - 1, -1, -1):
+        pr = state.terms[j]
+        if _pratyaya_in_scope(pr):
+            return j
+    return None
+
+
+def _anga_index_left_of_phadi(state: State, pr_index: int) -> int | None:
+    k = pr_index - 1
+    while k >= 0 and term_is_sup_luk_ghost(state.terms[k]):
+        k -= 1
+    if k < 0 or "anga" not in state.terms[k].tags:
+        return None
+    return k
+
+
 def _matches(state: State) -> bool:
     if len(state.terms) < 2:
         return False
-    anga = state.terms[-2]
-    pr = state.terms[-1]
-    if "anga" not in anga.tags:
+    pj = _rightmost_phadi_pratyaya_index(state)
+    if pj is None:
         return False
-    if not _pratyaya_in_scope(pr):
+    aj = _anga_index_left_of_phadi(state, pj)
+    if aj is None:
         return False
+    pr = state.terms[pj]
     if pr.meta.get(_META_DONE):
         return False
     if _phadi_replacement(pr.varnas) is None:
@@ -112,7 +131,10 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if not _matches(state):
         return state
-    pr = state.terms[-1]
+    pj = _rightmost_phadi_pratyaya_index(state)
+    if pj is None:
+        return state
+    pr = state.terms[pj]
     rep = _phadi_replacement(pr.varnas)
     if rep is None:
         return state

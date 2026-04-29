@@ -3,12 +3,12 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.tinanta_bhavati_gold import (
+from tools.tinanta_bhavati_gold import (
     BHAVATI_DHATU_ROW_ID,
     run_bhavati_gold_through_step,
     run_bhavati_gold_step9,
 )
-from pipelines.tinanta_jayati_gold import run_jayati_gold_through_step
+from tools.tinanta_jayati_gold import run_jayati_gold_through_step
 
 
 def test_bhavati_checkpoint_after_step1():

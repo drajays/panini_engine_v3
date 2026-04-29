@@ -45,7 +45,17 @@ def act(state: State) -> State:
     if not _matches(state):
         return state
     anga = state.terms[-2]
-    anga.varnas.append(mk("n"))
+    # Insert nuṃ's surviving consonant after the last vowel (mit-placement 1.1.47),
+    # not at the absolute end. This enables yasas → yasAn-s(i) style outcomes.
+    j = None
+    for k in range(len(anga.varnas) - 1, -1, -1):
+        if anga.varnas[k].slp1 in {"a", "i", "u", "f", "x", "A", "I", "U", "F", "X", "e", "E", "o", "O"}:
+            j = k
+            break
+    if j is None:
+        anga.varnas.append(mk("n"))
+    else:
+        anga.varnas.insert(j + 1, mk("n"))
     anga.meta["num_agama_done"] = True
     return state
 

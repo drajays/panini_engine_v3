@@ -2,13 +2,12 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.aabhyam_idam_7_2_113 import derive_idam_dvibhi_aabhyam
 from pipelines.subanta import derive
 
 
 def test_idam_trika_dvibhi_aabhyam_flat():
     for vb in (3, 4, 5):
-        s = derive_idam_dvibhi_aabhyam(vb)
+        s = derive("idam", vb, 2)
         assert s.flat_slp1() == "AByAm"
 
 

@@ -12,6 +12,7 @@ import sutras  # noqa: F401
 from engine       import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
+from phonology.pratyahara import is_ekac_upadesha
 
 from core.canonical_pipelines import (
     P00_dhatu_upadesha_it_lopa,
@@ -34,9 +35,6 @@ def _build_dukrY_state() -> State:
     s = State(terms=[dhatu], meta={}, trace=[])
     s.meta["lakara"] = "luG"
     s.meta["pada"] = "parasmaipada"
-    # ekāc + anudātta for 7.2.10 iṭ-block (as per note).
-    s.meta["ekac_dhatu"] = True
-    s.meta["udatta_dhatu"] = False
     return s
 
 
@@ -57,6 +55,8 @@ def derive_akArzIt() -> State:
     s = apply_rule("1.3.1", s)
     s = apply_rule("1.3.5", s)
     s = P00_upadesha_it_anunasik_hal_lopa(s)
+    s.meta["ekac_dhatu"] = is_ekac_upadesha(s.flat_slp1())
+    s.meta.setdefault("udatta_dhatu", False)
 
     # Pratyaya adhikāra (3.1.91 + 3.1.1–3)
     s = apply_rule("3.1.91", s)
@@ -67,7 +67,6 @@ def derive_akArzIt() -> State:
     s = P00_tip_to_t_aprkta(s)
 
     # aṭ augment
-    s.meta["aT_agama_6_4_71"] = True
     s = apply_rule("6.4.71", s)
 
     # iṭ attempt then block (7.2.10), per note.
@@ -84,8 +83,6 @@ def derive_akArzIt() -> State:
 
     # Īṭ augment before apṛkta t
     s = apply_rule("7.3.96", s)
-    # i + I → I across sic-Īṭ boundary.
-    s = apply_rule("6.1.101", s)
 
     # Tripāḍī: ṣatva (s → z) after Ī
     s = _enter_tripadi_and_satva(s)

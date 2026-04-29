@@ -10,12 +10,18 @@ NotImplementedError so tests/forward can mark tiṅanta cells 'xfail'.
 from engine.state import State
 
 
-def derive(dhatu_upadesha: str,
-           lakara: str,
-           pada: str,
-           purusha: int,
-           vacana: int) -> State:
+def derive(
+    dhatu_upadesha: str,
+    lakara: str,
+    prayoga: str,  # "kartari" | "karmani" | "bhave"
+    purusha: int,
+    vacana: int,
+    *,
+    upasargas: list[str] | None = None,
+) -> State:
     raise NotImplementedError(
         "tiṅanta pipeline is scheduled for v3.1; subanta coverage first "
-        "(CONSTITUTION Article 8 — depth before breadth)."
+        "(CONSTITUTION Article 8 — depth before breadth). "
+        "Design constraint: pada must be resolved internally from prayoga + dhātu markers + upasargas "
+        "(no external 'pada' argument)."
     )

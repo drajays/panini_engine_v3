@@ -5,7 +5,7 @@ then strī *caturthī* *ekavacana* (ङे) — two *vikalpa* paths from **1.1.2
 Śāstra order: **1.2.45** (*arthavad … prātipadikam*) on *avyutpanna* members, then
 **1.2.46** prerequisite for **2.4.71** is modelled by tagging members *prātipadika*
 and setting ``meta['pratipadika_avayava_ready']`` before arming *luk*; internal *sup*
-(**2.4.71**) then **2.2.26** (puṃvat + **1.2.48** *hrasva* on the *bahuvrīhi*);
+(**2.4.71** *luk* as zero-width internal-*sup* ghosts) then **2.2.26** (puṃvat + **1.2.48** *hrasva* on the *bahuvrīhi*);
 **1.2.46** again records *prātipadika* on the merged stem.  ``run_subanta_pipeline``
 (same sequence as ``pipelines.subanta.derive``)
 runs with *cond* blind to *vibhakti* (Constitution Art. 2 — coordinates only in
@@ -33,8 +33,9 @@ from sutras.adhyaya_2.pada_2.sutra_2_2_26 import (
     _dir_name,
 )
 
-from engine       import apply_rule
+from engine import apply_rule
 from engine.it_phonetic import term_phonetic_varnas
+from engine.lopa_ghost import term_is_sup_luk_ghost
 from engine.state import State, Term
 from phonology    import mk
 from phonology.joiner import slp1_to_devanagari
@@ -196,29 +197,26 @@ def _surface_dev_for_display(s: State) -> str:
 
 
 def _is_dik_two_member_after_internal_luk(s: State) -> bool:
-    """True after **2.4.71** on this demo: two *samāsa-member* *prakṛti*, *sup* deleted."""
-    if len(s.terms) != 2:
-        return False
+    """True after **2.4.71**: two *samāsa-member* *prakṛti* plus one internal-*sup* ghost."""
     if s.meta.get("2_4_71_luk") is not True:
         return False
-    for t in s.terms:
-        if t.kind != "prakriti":
-            return False
-        if not {"prātipadika", "samasa_member"}.issubset(t.tags):
-            return False
-    return True
+    prs = [
+        t
+        for t in s.terms
+        if t.kind == "prakriti" and {"prātipadika", "samasa_member"}.issubset(t.tags)
+    ]
+    if len(prs) != 2:
+        return False
+    ghosts = [t for t in s.terms if term_is_sup_luk_ghost(t)]
+    if len(ghosts) != 1:
+        return False
+    return len(s.terms) == 3
 
 
 def _term_line_dik_post_luk_member(i: int, t: Term) -> str:
     slp = "".join(v.slp1 for v in t.varnas)
     tags = sorted(t.tags)
     return f"  [{i}] prakriti  slp1={slp!r}   tags={tags!r}"
-
-
-def _term_line_dik_luk_placeholder(idx: int) -> str:
-    return (
-        f"  [{idx}] pratyaya  slp1=∅ (luk)   tags={['sup', 'luk_2_4_71']!r}"
-    )
 
 
 def _flat_slp1_display_two_members(s: State) -> str:
@@ -239,20 +237,26 @@ def _surface_dev_two_members(s: State) -> str:
 def _print_state_engine_internal_post_luk(s: State) -> None:
     """Step 2b: ``apply_rule('2.1.3')`` only re-pushes *samāsa* adhikāra for **2.2.26**."""
     print("   STATUS: engine bookkeeping — not a Pāṇinian rule")
-    print("   luk-tagged pratyayas purged from token list")
-    print(f"   flat_slp1() = {_flat_slp1_display_two_members_spaced(s)!r}")
+    print("   internal *sup* are **2.4.71** zero-width ghosts (still on tape)")
+    prs = [t for t in s.terms if t.kind == "prakriti"]
+    spaced = " | ".join("".join(v.slp1 for v in t.varnas) for t in prs)
+    print(f"   flat_slp1() = {spaced!r}")
     print()
 
 
 def _print_state_dik_post_internal_luk(s: State) -> None:
-    print("   ACTION: luk of internal sups [1] and [3]")
+    print("   ACTION: luk of internal sups (ghost *sup* terms, empty ``varnas``)")
     print()
-    print(_term_line_dik_post_luk_member(0, s.terms[0]))
-    print(_term_line_dik_luk_placeholder(1))
-    print(_term_line_dik_post_luk_member(2, s.terms[1]))
-    print(_term_line_dik_luk_placeholder(3))
+    for i, t in enumerate(s.terms):
+        if term_is_sup_luk_ghost(t):
+            print(f"  [{i}] pratyaya  slp1=∅ (luk)   tags={sorted(t.tags)!r}")
+        elif t.kind == "prakriti":
+            print(_term_line_dik_post_luk_member(i, t))
+        else:
+            print(_term_line(i, t))
     print()
-    spaced = _flat_slp1_display_two_members_spaced(s)
+    prs = [t for t in s.terms if t.kind == "prakriti"]
+    spaced = " | ".join("".join(v.slp1 for v in t.varnas) for t in prs)
     print(f"  flat_slp1() = {spaced!r} (members not yet merged)")
     print(f"  surface_dev  = {_surface_dev_two_members(s)!r}")
     lk = s.meta.get("2_4_71_luk")
@@ -369,16 +373,31 @@ def _devanagari_from_flat_slp1(slp: str) -> str:
     return slp1_to_devanagari(_varnas_from_slp1(slp))
 
 
+def _dik_merge_pair_terms(s: State) -> tuple[Term, Term] | None:
+    """The two *prakṛti* *dik* members, ignoring **2.4.71** *sup* ghosts between them."""
+    prs = [
+        t
+        for t in s.terms
+        if t.kind == "prakriti"
+        and "samasa_member" in t.tags
+        and "prātipadika" in t.tags
+    ]
+    if len(prs) == 2:
+        return prs[0], prs[1]
+    return None
+
+
 def _print_uttarapurva_step_3_unpacked(s_before: State, s_after: State) -> None:
     """
     Verbose-only narrative: **2.2.26** demo bundles merge, vārttika puṃvat, and
     **1.2.48** *hrasva* in one ``apply_rule`` call — unpack into 3a–3d for trace.
     """
-    if len(s_before.terms) != 2 or len(s_after.terms) != 1:
+    pair = _dik_merge_pair_terms(s_before)
+    if pair is None or len(s_after.terms) != 1:
         _print_state("3) 2.2.26 दिङ्नामान्यन्तराले (+ Kāś. पुंवद्-वृत्ति-सङ्केतः meta)", s_after)
         return
 
-    t0, t1 = s_before.terms[0], s_before.terms[1]
+    t0, t1 = pair
     m0, m1 = t0.meta.get("dik_name"), t1.meta.get("dik_name")
     flat_0, flat_1 = _flat_term_concat(t0), _flat_term_concat(t1)
     flat_3ab = flat_0 + flat_1
@@ -442,7 +461,7 @@ def build_vigraha_uttarapurva_state() -> State:
     ``upadesha_slp1='suP'`` (class label, not a realized cell like **NAs**) — so
     ``State.flat_slp1()`` does not splice phantom vowels; the demo uses
     ``_flat_slp1_for_display`` / ``_print_state`` to show ``uttarA[SUP]pUrvA[SUP]``
-    until **2.4.71** removes the *sup* terms.
+    until **2.4.71** *luk* (internal *sup* become zero-width ghosts).
     """
     return build_dik_caturthi_vigraha(caturthi_preset("uttarA_pUrvA"))
 

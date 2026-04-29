@@ -111,6 +111,35 @@ from core.canonical_pipelines import (  # noqa: PLC0415
 # Backward-compatible name (imported by ``taddhita_itika_etikAyana``, *dik* demo, etc.).
 run_subanta_post_4_1_2 = subanta_post_4_1_2
 
+def derive_from_state(
+    state: State,
+    vibhakti: int,
+    vacana: int,
+    *,
+    linga: str | None = None,
+    matra_prathama_2_3_46: bool = False,
+    nAmadheya_vrddha_term_indices: tuple[int, ...] | frozenset[int] | None = None,
+) -> State:
+    """
+    Zero-patchwork entry point when a `State` already exists upstream
+    (kṛdanta/taddhita/samāsa): do not flatten+rebuild; do not staple saṃjñā tags
+    via boolean args.
+
+    This only injects the *semantic* cell request into `state.meta`:
+    `vibhakti_vacana` (and optionally `linga`). All morphological work still
+    proceeds through `apply_rule()` only.
+    """
+    if linga is not None:
+        state.meta["linga"] = linga
+    state.meta["vibhakti_vacana"] = f"{vibhakti}-{vacana}"
+    if matra_prathama_2_3_46:
+        state.meta["2_3_46_matra_prathama_eligible"] = True
+    if nAmadheya_vrddha_term_indices is not None:
+        from sutras.adhyaya_1.pada_1.sutra_1_1_73 import META_NAMADHEYA_VRDDHA_INDICES
+
+        state.meta[META_NAMADHEYA_VRDDHA_INDICES] = frozenset(nAmadheya_vrddha_term_indices)
+    return run_subanta_pipeline(state)
+
 
 def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
                         linga: str = "pulliṅga",
@@ -118,8 +147,6 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
                         matra_prathama_2_3_46: bool = False,
                         sheSa_shashthi_2_3_50: bool = False,
                         nAmadheya_vrddha_term_indices: tuple[int, ...] | frozenset[int] | None = None,
-                        bahuvrIhi_samAsa: bool = False,
-                        tRtIyA_tatpurusha_samAsa: bool = False,
                         ) -> State:
     """Build the initial state for a subanta derivation.
 
@@ -137,15 +164,10 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
     *vārttika* for *nāmadheya*; stored as
     ``state.meta['1_1_73_nAmadheya_vrddha_term_indices']`` for **1.1.73**.
 
-    ``bahuvrIhi_samAsa`` — when True, adds the ``"bahuvrihi"`` tag to the stem so
-    preflight **1.1.29** can apply (*na bahuvrīhau* cancels *sarvanāma* from **1.1.27**);
-    *recipe* opt-in, not a *siddha* (vibhakti, vacana) in *cond*. The ASCII hyphen
-    in *upadeśa* (e.g. ``priya-viSva``) is skipped in the *varṇa* loop but preserved in
-    ``Term.meta`` for the **1.1.27** *sarvādi* list id (``प्रियविश्वाय .md``).
-
-    ``tRtIyA_tatpurusha_samAsa`` — when True, tags the stem with ``"tRtIyA_tatpurusha"`` so
-    preflight **1.1.30** can apply (*tṛtīyā-samāse* cancels *sarvanāma*; ``तृतीयासमासे निषेध .md``).
-    List compound ids (e.g. ``mAsa-pUrva``) in ``data/inputs/sarvadi_slp1.json`` for **1.1.27**.
+    NOTE (anti-patchwork): do NOT inject samāsa saṃjñās via boolean flags here.
+    If a stem is a *bahuvrīhi* or *tṛtīyā-tatpuruṣa*, those tags must already be
+    present on the incoming `State` via the samāsa module, and subanta should be
+    invoked via `derive_from_state(...)`.
     """
     # Each consonant gets inherent-a unless immediately followed by a
     # vowel character in the stem.  We emit in canonical internal form:
@@ -201,10 +223,6 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
         state.meta[META_NAMADHEYA_VRDDHA_INDICES] = frozenset(
             nAmadheya_vrddha_term_indices
         )
-    if bahuvrIhi_samAsa:
-        stem.tags.add("bahuvrihi")
-    if tRtIyA_tatpurusha_samAsa:
-        stem.tags.add("tRtIyA_tatpurusha")
     return state
 
 
@@ -300,6 +318,9 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.3.9",
     "1.3.10",
     "6.4.1",
+    "7.1.94",
+    "6.4.11",
+    "6.1.66",
     "7.1.2",
     "7.2.106",
     "7.2.102",
@@ -362,6 +383,149 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
 )
 
 
+def _subanta_scanner_winner_by_spine_order(candidates: list[str], spine_ids: list[str]) -> str:
+    """
+    When several post-4.1.2 sūtras *cond* true together, pick the one listed
+    earliest on ``SUBANTA_RULE_IDS_POST_4_1_2`` (fixed Aṣṭādhyāyī-kram; CONSTITUTION
+    Art. 3 — no autonomous ``engine.resolver`` tie-break in this pipeline).
+    """
+    if not candidates:
+        raise ValueError("subanta scanner needs at least one candidate")
+    if len(candidates) == 1:
+        return candidates[0]
+    order = {sid: i for i, sid in enumerate(spine_ids)}
+    return min(candidates, key=lambda sid: order.get(sid, 1_000_000))
+
+
+def run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
+    """
+    Scan-driven execution for the post-4.1.2 region.
+
+    This replaces the “macro list” style (linear iteration) with a repeated
+    scan over the *same* rule pool:
+    - enumerate applicable candidates on the current state
+    - if several apply, take the earliest listed on ``SUBANTA_RULE_IDS_POST_4_1_2``
+    - apply that id via ``apply_rule``
+    - repeat until no candidates remain or ``max_steps`` is hit
+
+    The candidate pool is intentionally limited to the subanta post-4.1.2
+    spine (this module’s curated coverage set). It is **not** a global
+    registry-wide autonomous derivation.
+    """
+    from engine.registry import get_sutra
+    from engine.trace import TRACE_STATUSES_FIRED
+    from engine.gates import asiddha_violates, is_blocked, is_frozen_by_nipatana
+
+    # De-duplicate ids: unlike a linear recipe, a scanner does not need
+    # repeated scheduling of the same sūtra id.
+    all_ids: list[str] = list(dict.fromkeys(
+        sid for sid in SUBANTA_RULE_IDS_POST_4_1_2 if sid != PADA_MERGE_STEP
+    ))
+
+    def _state_sig(st: State) -> tuple:
+        # Signature for “did this rule actually do new work at a new site?”
+        # Must be sensitive to term segmentation + tags, not just flat form.
+        return (
+            st.flat_slp1(),
+            tuple(
+                (
+                    t.kind,
+                    t.meta.get("upadesha_slp1"),
+                    tuple(sorted(t.tags)),
+                    len(t.varnas),
+                    (t.varnas[0].slp1 if t.varnas else None),
+                    (t.varnas[-1].slp1 if t.varnas else None),
+                )
+                for t in st.terms
+            ),
+            st.phase,
+            st.tripadi_zone,
+            frozenset(st.blocked_sutras),
+        )
+
+    def _scan_pool(ids: list[str]) -> None:
+        nonlocal s
+        remaining = list(ids)
+        # Ledger: (sutra_id, state_signature_before) pairs that led to a fired
+        # step without changing the signature (i.e., repeating the same “site”
+        # would be an un-Pāṇinian infinite loop).
+        no_progress_sites: set[tuple[str, tuple]] = set()
+        steps = 0
+        while remaining:
+            if steps >= max_steps:
+                raise RuntimeError(
+                    f"subanta scanner exceeded max_steps={max_steps}; "
+                    f"last form: {s.flat_slp1()!r}; remaining terms: {len(s.terms)}"
+                )
+            steps += 1
+
+            candidates: list[str] = []
+            for sid in remaining:
+                rec = get_sutra(sid)
+                if is_blocked(sid, s):
+                    continue
+                if asiddha_violates(sid, s):
+                    continue
+                if is_frozen_by_nipatana(rec.sutra_type, s):
+                    continue
+                if (sid, _state_sig(s)) in no_progress_sites:
+                    continue
+                if rec.cond is not None and rec.cond(s):
+                    candidates.append(sid)
+
+            if not candidates:
+                return
+
+            winner = _subanta_scanner_winner_by_spine_order(candidates, all_ids)
+            sig_before = _state_sig(s)
+            before_len = len(s.trace)
+            s = apply_rule(winner, s)
+            if len(s.trace) > before_len:
+                last = s.trace[-1]
+                if last.get("sutra_id") == winner and last.get("status") in TRACE_STATUSES_FIRED:
+                    sig_after = _state_sig(s)
+                    # If this firing did not change anything observable in the
+                    # state signature, do not allow it to re-fire on the exact
+                    # same signature again.  But the rule remains available for
+                    # other sites or after other rules change the tape.
+                    if sig_after == sig_before:
+                        no_progress_sites.add((winner, sig_before))
+
+    # Phase-ordered pools (still glass-box, but no hardcoded linear macro pass):
+    # - it-prakaraṇa first (so later rules see cleaned affix shapes)
+    # - aṅgakārya next (6.4/7.* + bha/pada saṃjñā)
+    # - sandhi next (6.1.*)
+    # - structural merge into pada
+    # - tripāḍī last (8.2.1+)
+    it_ids      = [sid for sid in all_ids if sid.startswith("1.3.")]
+    tripadi_ids = [sid for sid in all_ids if sid.startswith("8.")]
+    sandhi_ids  = [sid for sid in all_ids if sid.startswith("6.1.")]
+    angakarya_ids = [
+        sid for sid in all_ids
+        if sid not in set(it_ids) | set(sandhi_ids) | set(tripadi_ids)
+    ]
+
+    _scan_pool(it_ids)
+    _scan_pool(angakarya_ids)
+    _scan_pool(sandhi_ids)
+
+    if len(s.terms) > 1:
+        _pada_merge(s)
+
+    _scan_pool(tripadi_ids)
+    return s
+
+
+def run_subanta_sup_attach_and_finish_scanner(s: State, *, max_steps: int = 500) -> State:
+    """
+    Preflight (P01) is still recipe-scheduled (includes ANUVADA and adhikāra openings).
+    After 4.1.2 attaches sup, the rest is driven by the scanner loop.
+    """
+    s = run_subanta_preflight_through_1_4_7(s)
+    s = apply_rule("4.1.2", s)
+    return run_subanta_post_4_1_2_scanner(s, max_steps=max_steps)
+
+
 def run_subanta_pipeline(s: State) -> State:
     """
     Run the standard *subanta* ``apply_rule`` sequence on an already-built
@@ -380,8 +544,7 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
            *,
            matra_prathama_2_3_46: bool = False,
            nAmadheya_vrddha_term_indices: tuple[int, ...] | frozenset[int] | None = None,
-           bahuvrIhi_samAsa: bool = False,
-           tRtIyA_tatpurusha_samAsa: bool = False,
+           autonomous_scanner: bool = False,
            ) -> State:
     """
     Aṣṭādhyāyī-kram pipeline.  Returns final state with complete trace.
@@ -392,19 +555,17 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     ``nAmadheya_vrddha_term_indices`` — forwarded to ``build_initial_state``
     for **1.1.73** *vārttika* (*nāmadheya* optional *vṛddha*).
 
-    ``bahuvrIhi_samAsa`` / ``tRtIyA_tatpurusha_samAsa`` — forwarded to ``build_initial_state``.
+    NOTE (anti-patchwork): samāsa saṃjñās (bahuvrīhi / tṛtīyā-tatpuruṣa) must come
+    from an upstream samāsa derivation. Use `derive_from_state(...)` instead of
+    injecting them here.
     """
-    # Tyadādi pronouns like `tad` have no sambodhana (no vibhakti 8 forms).
-    if vibhakti == 8 and stem_slp1.strip() in {"tad", "tyad", "yad", "etad", "idam", "adas", "kim"}:
-        raise ValueError("त्यदादि-शब्देषु सम्बोधन-रूप (८-*) नास्ति।")
-
     s = build_initial_state(
         stem_slp1, vibhakti, vacana, linga,
         matra_prathama_2_3_46=matra_prathama_2_3_46,
         nAmadheya_vrddha_term_indices=nAmadheya_vrddha_term_indices,
-        bahuvrIhi_samAsa=bahuvrIhi_samAsa,
-        tRtIyA_tatpurusha_samAsa=tRtIyA_tatpurusha_samAsa,
     )
+    if autonomous_scanner:
+        return run_subanta_sup_attach_and_finish_scanner(s)
     return run_subanta_pipeline(s)
 
 
@@ -413,10 +574,39 @@ def _pada_merge(state: State) -> None:
     This is NOT a sūtra; it is tagged '__MERGE__' in the trace."""
     if not state.terms:
         return
+    # Preserve pragṛhya across structural merge so sentence-level sandhi rules
+    # (6.1.125 / 6.1.101 / 6.1.77) can see it on the pada term.
+    from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
+
+    keep_pragrahya = any(PRAGHYA_TERM_TAG in t.tags for t in state.terms)
+    # Preserve index-based saṃjñās that are semantically "on the whole stem"
+    # across structural merges, so they don't re-fire vacuously later.
+    keep_bha = any("bha" in t.tags for t in state.terms)
+    keep_pratipadika = any("prātipadika" in t.tags for t in state.terms)
+    keep_anga = any("anga" in t.tags for t in state.terms)
+    keep_linga = (
+        "strīliṅga" if any("strīliṅga" in t.tags for t in state.terms)
+        else "napuṃsaka" if any("napuṃsaka" in t.tags for t in state.terms)
+        else "pulliṅga" if any("pulliṅga" in t.tags for t in state.terms)
+        else None
+    )
     all_varnas: List = []
     for t in state.terms:
         all_varnas.extend(t.varnas)
-    pada = Term(kind="pada", varnas=all_varnas, tags={"pada"}, meta={})
+    tags = {"pada"}
+    if keep_pragrahya:
+        tags.add(PRAGHYA_TERM_TAG)
+    if keep_bha:
+        tags.add("bha")
+    if keep_pratipadika:
+        tags.add("prātipadika")
+    if keep_anga:
+        tags.add("anga")
+    if keep_linga:
+        tags.add(keep_linga)
+    if any("krt_tfc" in t.tags for t in state.terms):
+        tags.add("krt_tfc")
+    pada = Term(kind="pada", varnas=all_varnas, tags=tags, meta={})
     state.terms = [pada]
     state.trace.append({
         "sutra_id"    : "__MERGE__",

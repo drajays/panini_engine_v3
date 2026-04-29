@@ -12,8 +12,9 @@ the prior narrow helper intact.
 v3.5: skip the *ec*+*ac* split when the *aṅga* **Term** carries **1.1.11**
 ``pragrahya`` (e.g. *māle* + *iti* — **6.1.125** *prakṛti-bhāva*).
 """
-from engine        import SutraType, SutraRecord, register_sutra
-from engine.state  import State
+from engine import SutraType, SutraRecord, register_sutra
+from engine.lopa_ghost import iter_anga_to_following_pratyaya_pairs, state_has_sup_luk_ghost
+from engine.state import State
 from phonology     import mk
 from phonology.pratyahara import AC
 
@@ -31,9 +32,14 @@ _ECO_SPLIT = {
 def _find_eco_aci_boundary(state: State):
     if len(state.terms) < 2:
         return None
-    for i in range(len(state.terms) - 1):
+    pairs = (
+        iter_anga_to_following_pratyaya_pairs(state)
+        if state_has_sup_luk_ghost(state)
+        else ((i, i + 1) for i in range(len(state.terms) - 1))
+    )
+    for i, j in pairs:
         anga = state.terms[i]
-        nxt  = state.terms[i + 1]
+        nxt = state.terms[j]
         if "anga" not in anga.tags:
             continue
         if not anga.varnas or not nxt.varnas:
@@ -60,9 +66,14 @@ def _find_target(state: State):
     """
     if len(state.terms) < 2:
         return None
-    for i in range(len(state.terms) - 1):
+    pairs = (
+        iter_anga_to_following_pratyaya_pairs(state)
+        if state_has_sup_luk_ghost(state)
+        else ((i, i + 1) for i in range(len(state.terms) - 1))
+    )
+    for i, j in pairs:
         anga = state.terms[i]
-        nxt  = state.terms[i + 1]
+        nxt = state.terms[j]
         if not anga.varnas or not nxt.varnas:
             continue
         if "anga" not in anga.tags:

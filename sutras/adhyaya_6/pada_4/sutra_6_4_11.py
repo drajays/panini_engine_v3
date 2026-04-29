@@ -2,7 +2,7 @@
 6.4.11  अप्तृन्तृच्…  —  VIDHI
 
 Narrow v3: lengthen the **upadhā** (vowel before final ``n`` of ``…an``)
-to **dīrgha** when **trc_nom_sg_pipeline** applies — ``cetan`` → ``cetAn``
+to **dīrgha** on a **tṛc** prātipadika (``krt_tfc``) — ``cetan`` → ``cetAn``
 before ``s``.
 """
 from __future__ import annotations
@@ -14,13 +14,11 @@ from phonology.pratyahara import is_hrasva
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("trc_nom_sg_pipeline"):
-        return False
     if len(state.terms) < 2:
         return False
     ang = state.terms[0]
     sup = state.terms[-1]
-    if "prātipadika" not in ang.tags or "sup" not in sup.tags:
+    if "krt_tfc" not in ang.tags or "prātipadika" not in ang.tags or "sup" not in sup.tags:
         return False
     if ang.meta.get("upadha_dirgha_6_4_11_done"):
         return False

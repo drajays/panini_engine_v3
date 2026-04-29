@@ -15,6 +15,8 @@ from __future__ import annotations
 
 from typing import Any, Final, FrozenSet, List
 
+from engine.lopa_ghost import LUK_LOPA_GHOST_TAG
+
 # Single source — must match ``sutra_1_3_9`` deletion set.
 IT_LOPA_TAGS: Final[FrozenSet[str]] = frozenset((
     "it",
@@ -38,6 +40,8 @@ def varna_contributes_phonetically(_v: Any, _term: Any) -> bool:
 
 def term_phonetic_varnas(term: Any) -> List[Any]:
     """Linear ``Term.varnas`` in order (``flat_slp1`` = surface tape until 1.3.9 *lopa*)."""
+    if LUK_LOPA_GHOST_TAG in getattr(term, "tags", ()):
+        return []
     return [v for v in term.varnas if varna_contributes_phonetically(v, term)]
 
 

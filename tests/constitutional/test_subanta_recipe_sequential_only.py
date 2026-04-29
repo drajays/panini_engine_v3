@@ -26,7 +26,7 @@ def test_pipelines_subanta_never_imports_resolver():
 
 
 def test_tinanta_jayati_gold_does_not_import_resolve():
-    p = (ROOT / "pipelines" / "tinanta_jayati_gold.py").read_text(encoding="utf-8")
+    p = (ROOT / "tools" / "tinanta_jayati_gold.py").read_text(encoding="utf-8")
     assert "from engine.resolver" not in p
     assert "import engine.resolver" not in p
 

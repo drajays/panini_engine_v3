@@ -10,8 +10,10 @@ from engine.sutra_type import SutraType
 from engine.state      import State, Term
 from phonology.varna   import parse_slp1_upadesha_sequence
 
+from engine.lopa_ghost import LUK_LOPA_GHOST_TAG
 from sutras.adhyaya_1.pada_4.vibhakti_samjna_1_4_104 import (
     TAG_1_4_104_VIBHAKTI,
+    is_sup_vibhakti_pratyaya,
     terms_needing_1_4_104_vibhakti,
 )
 from sutras.adhyaya_3.pada_1.vikarana_sap_3_1_68 import SAP_INSERT_TAG
@@ -42,6 +44,17 @@ def test_sutra_metadata() -> None:
     assert "1.4.1" in r.anuvritti_from
     assert "1.4.101" in r.anuvritti_from
     assert "1.4.103" in r.anuvritti_from
+
+
+def test_sup_luk_ghost_not_sup_vibhakti_pratyaya_for_104() -> None:
+    ghost = Term(
+        kind="pratyaya",
+        varnas=[],
+        tags={"pratyaya", "sup", LUK_LOPA_GHOST_TAG},
+        meta={"upadesha_slp1": "su~"},
+    )
+    assert is_sup_vibhakti_pratyaya(ghost) is False
+    assert terms_needing_1_4_104_vibhakti(State(terms=[ghost])) == []
 
 
 def test_apply_tags_tip_and_sup() -> None:

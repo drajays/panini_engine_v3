@@ -10,7 +10,8 @@ from collections.abc import Callable
 
 import sutras  # noqa: F401
 
-from engine       import apply_rule
+from engine import apply_rule
+from engine.lopa_ghost import term_is_sup_luk_ghost
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 from pipelines.preflight_lopa_samjna import apply_preflight_luk_samjna_block
@@ -91,14 +92,20 @@ def _annotate_taddhit_anta_pada(s: State) -> None:
     if not s.meta.get("prakriya_sAlIya"):
         return
     s.meta["taddhitānta_pada_slp1"] = s.flat_slp1()
-    if (
-        len(s.terms) >= 2
-        and s.terms[0].kind == "prakriti"
-        and s.terms[1].kind == "pratyaya"
-        and "taddhita" in s.terms[1].tags
-    ):
-        s.terms[0].tags.add("taddhitānta")
-        s.terms[1].tags.add("taddhitānta")
+    t0 = next((t for t in s.terms if t.kind == "prakriti"), None)
+    t1 = next(
+        (
+            t
+            for t in s.terms
+            if t.kind == "pratyaya"
+            and "taddhita" in t.tags
+            and not term_is_sup_luk_ghost(t)
+        ),
+        None,
+    )
+    if t0 is not None and t1 is not None:
+        t0.tags.add("taddhitānta")
+        t1.tags.add("taddhitānta")
 
 
 def P04_taddhita_prathama_sup_block(s: State) -> State:
@@ -367,8 +374,21 @@ def P00_krt_ardhadhatuka_ekac_it_and_guna_audit(s: State) -> State:
     **7.2.35**) → ``P00_anga_guna_audit_1_4_13_1_1_5_7_3_84`` (*citaḥ* / *jiṣṇu* …).
     """
     s = apply_rule("3.4.114", s)
-    s.meta["ekac_dhatu"] = True
-    s.meta["udatta_dhatu"] = False
+    # Compute ekāc dynamically from current dhātu tape (post-it-lopa) if caller
+    # has not already provided the flags (e.g. from a dhātupāṭha row).
+    from phonology.pratyahara import is_ekac_upadesha
+
+    def _ekac_default() -> bool:
+        for t in s.terms:
+            if "dhatu" not in t.tags:
+                continue
+            up = (t.meta.get("upadesha_slp1") or "").strip()
+            if up:
+                return is_ekac_upadesha(up)
+        return is_ekac_upadesha(s.flat_slp1())
+
+    s.meta["ekac_dhatu"] = bool(s.meta.get("ekac_dhatu", _ekac_default()))
+    s.meta.setdefault("udatta_dhatu", False)
     s = apply_rule("7.2.10", s)
     s = apply_rule("7.2.35", s)
     s = P00_anga_guna_audit_1_4_13_1_1_5_7_3_84(s)
@@ -578,6 +598,12 @@ def P00_luN_lakara_cli_sic(s: State) -> State:
     s = apply_rule("3.1.43", s)
     s = apply_rule("3.1.44", s)
     s = P00_it_halantyam_lopa_yathasankhyam(s)
+    # After it-lopa, ``sic`` is no longer in upadeśa-state; otherwise later generic
+    # it-chains (e.g. tiṅ it-lopa in ``P00_tip_to_t_aprkta``) would incorrectly
+    # re-tag the remaining ``s`` as halantyam-it and delete it.
+    for t in s.terms:
+        if (t.meta.get("upadesha_slp1") or "").strip() == "sic":
+            t.tags.discard("upadesha")
     return s
 
 
@@ -1102,8 +1128,8 @@ def P13_subanta_iti_anga_sandhi_to_pada(s: State) -> State:
 
 
 def P14_tripadi_purvakhya_visarga(s: State) -> State:
-    """8.2.1 *pūrvatrāsiddham* + 8.2.66 *ru* + 8.3.15 *visarjanīya*."""
-    for sid in ("8.2.1", "8.2.66", "8.3.15"):
+    """8.2.1 *pūrvatrāsiddham* + 8.2.7 (narrow *krt_tfc*) + 8.2.66 *ru* + 8.3.15 *visarga*."""
+    for sid in ("8.2.1", "8.2.7", "8.2.66", "8.3.15"):
         s = apply_rule(sid, s)
     return s
 

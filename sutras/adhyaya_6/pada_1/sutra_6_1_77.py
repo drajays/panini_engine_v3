@@ -54,6 +54,58 @@ def _find_armed_ik_yan_aci(state: State) -> int | None:
     return None
 
 
+def _find_krt_ak_boundary(state: State) -> int | None:
+    """
+    Universal kṛdanta boundary: dhātu-final IK/dīrgha followed by kṛt 'ak' (7.1.1).
+    Example: āṅ + dīdhīṅ + ṇvul → ... dIDhI + ak → dIDhyak ...
+    """
+    for i in range(len(state.terms) - 1):
+        left, right = state.terms[i], state.terms[i + 1]
+        if "dhatu" not in left.tags:
+            continue
+        if "krt" not in right.tags:
+            continue
+        if (right.meta.get("upadesha_slp1") or "").strip() != "ak":
+            continue
+        if not left.varnas or not right.varnas:
+            continue
+        if left.meta.get("iko_yanaci_done"):
+            continue
+        if PRAGHYA_TERM_TAG in left.tags:
+            continue
+        la = left.varnas[-1].slp1
+        rf = right.varnas[0].slp1
+        if la not in _YAN_MAP or rf not in AC:
+            continue
+        return i
+    return None
+
+
+def _find_iti_boundary(state: State) -> int | None:
+    """
+    Sentence boundary with the nipāta ``iti``: allow *iko yaṇ aci* to be
+    *considered* without recipe arming, but still respect pragṛhya.
+
+    This supports demos like ``vAyU iti`` where 6.1.125 (prakṛti-bhāva) blocks yaṇ.
+    """
+    for i in range(len(state.terms) - 1):
+        left, right = state.terms[i], state.terms[i + 1]
+        if not left.varnas or not right.varnas:
+            continue
+        if left.meta.get("iko_yanaci_done"):
+            continue
+        if PRAGHYA_TERM_TAG in left.tags:
+            continue
+        if (right.meta.get("upadesha_slp1") or "").strip() != "iti":
+            continue
+        la = left.varnas[-1].slp1
+        rf = right.varnas[0].slp1
+        if la not in _YAN_MAP or rf not in AC:
+            continue
+        return i
+    return None
+
+
 def _matches(state: State) -> bool:
     if len(state.terms) < 2:
         return False
@@ -81,10 +133,29 @@ def _matches(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    return _matches(state) or _find_armed_ik_yan_aci(state) is not None
+    return (
+        _matches(state)
+        or _find_armed_ik_yan_aci(state) is not None
+        or _find_krt_ak_boundary(state) is not None
+        or _find_iti_boundary(state) is not None
+    )
 
 
 def act(state: State) -> State:
+    j = _find_iti_boundary(state)
+    if j is not None:
+        left = state.terms[j]
+        la = left.varnas[-1].slp1
+        left.varnas[-1] = mk(_YAN_MAP[la])
+        left.meta["iko_yanaci_done"] = True
+        return state
+    j = _find_krt_ak_boundary(state)
+    if j is not None:
+        left = state.terms[j]
+        la = left.varnas[-1].slp1
+        left.varnas[-1] = mk(_YAN_MAP[la])
+        left.meta["iko_yanaci_done"] = True
+        return state
     j = _find_armed_ik_yan_aci(state)
     if j is not None:
         left = state.terms[j]

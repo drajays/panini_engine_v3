@@ -199,8 +199,8 @@ class SutraRecord:
         Dispatcher / R1:
             r1_form_identity_exempt : when True, **check_r1** skips the
             ``form_before == form_after`` guard for this record only (rare:
-            e.g. **2.4.71** deletes *sup* ``Term`` objects whose ``varnas`` are
-            empty abstract placeholders, so ``State.flat_slp1()`` may be unchanged).
+            e.g. **2.4.71** *luk* zero-width-ghosts internal *sup* ``Term``s (cleared
+            ``varnas``), so ``State.flat_slp1()`` may be unchanged).
         why_dev_vacuous: optional *trace* text for **1.3.9**-style *śūnya* *lopa*
             (*APPLIED_VACUOUS* — see ``engine.dispatcher`` / ``engine.trace``).
         skip_detail_cond_false: optional *trace* gloss when ``cond`` is false

@@ -57,7 +57,12 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     for i, t in _eligible_terms(state):
         t.varnas[-1].tags.add("it_candidate_halantyam")
-        key = ("it_halantyam", i)
+        # Back-compat: keep the historical index-only key expected by some tests.
+        # Also keep a stable key that survives later structural insertions.
+        state.samjna_registry[("it_halantyam", i)] = frozenset({t.varnas[-1].slp1})
+
+        up = (t.meta.get("upadesha_slp1") or "").strip()
+        key = ("it_halantyam", i, up)
         state.samjna_registry[key] = frozenset({t.varnas[-1].slp1})
     return state
 

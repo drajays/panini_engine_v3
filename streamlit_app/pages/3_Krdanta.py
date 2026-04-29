@@ -15,7 +15,7 @@ from pipelines.krdanta import (
     derive_krt,
     derive_tfc_pratipadika,
 )
-from pipelines.subanta_trc import derive_trc_nom_sg
+from pipelines.subanta_trc import derive_trc_nom_sg_from_state
 from prakriya_display import (
     format_slp1_deva_pair,
     prepare_trace_display,
@@ -174,8 +174,8 @@ with tab_trc:
         try:
             k_state = derive_tfc_pratipadika(up, udatta_dhatu=ud)
             stem_slp = k_state.flat_slp1()
-            s_state = derive_trc_nom_sg(
-                stem_slp,
+            s_state = derive_trc_nom_sg_from_state(
+                k_state,
                 vibhakti=1,
                 vacana=1,
                 linga="pulliṅga",

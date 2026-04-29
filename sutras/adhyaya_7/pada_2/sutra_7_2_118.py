@@ -12,9 +12,10 @@ compete with **7.2.116** (ṇit *upadhā*) or **7.2.117** (ñit).
 """
 from __future__ import annotations
 
-from engine        import SutraType, SutraRecord, register_sutra
-from engine.gates  import adhikara_in_effect
-from engine.state  import State
+from engine import SutraType, SutraRecord, register_sutra
+from engine.gates import adhikara_in_effect
+from engine.lopa_ghost import term_is_sup_luk_ghost
+from engine.state import State
 from phonology     import mk
 
 
@@ -26,6 +27,25 @@ def _adi_i_to_E(anga) -> int | None:
     return None
 
 
+def _itika_kit_taddhita_index(state: State) -> int | None:
+    for j in range(len(state.terms) - 1, -1, -1):
+        pr = state.terms[j]
+        if term_is_sup_luk_ghost(pr):
+            continue
+        if "taddhita" in pr.tags and "kit" in pr.tags:
+            return j
+    return None
+
+
+def _anga_index_before(state: State, pr_index: int) -> int | None:
+    k = pr_index - 1
+    while k >= 0 and term_is_sup_luk_ghost(state.terms[k]):
+        k -= 1
+    if k < 0 or "anga" not in state.terms[k].tags:
+        return None
+    return k
+
+
 def _matches(state: State) -> bool:
     if not state.meta.get("prakriya_itika_phak"):
         return False
@@ -33,9 +53,13 @@ def _matches(state: State) -> bool:
         return False
     if len(state.terms) < 2:
         return False
-    anga, pr = state.terms[0], state.terms[1]
-    if "anga" not in anga.tags:
+    pj = _itika_kit_taddhita_index(state)
+    if pj is None:
         return False
+    aj = _anga_index_before(state, pj)
+    if aj is None:
+        return False
+    anga, pr = state.terms[aj], state.terms[pj]
     if "taddhita" not in pr.tags or "kit" not in pr.tags:
         return False
     if not pr.meta.get("7_1_2_phadi_done"):
@@ -52,7 +76,11 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if not _matches(state):
         return state
-    anga = state.terms[0]
+    pj = _itika_kit_taddhita_index(state)
+    aj = _anga_index_before(state, pj) if pj is not None else None
+    if pj is None or aj is None:
+        return state
+    anga = state.terms[aj]
     j = _adi_i_to_E(anga)
     if j is None:
         return state

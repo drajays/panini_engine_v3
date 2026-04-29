@@ -22,8 +22,9 @@ from __future__ import annotations
 
 from typing import Optional
 
-from engine       import SutraType, SutraRecord, register_sutra
+from engine import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
+from engine.lopa_ghost import term_is_sup_luk_ghost
 from engine.state import State
 from phonology    import mk
 from phonology.pratyahara import is_dirgha, is_hrasva
@@ -60,25 +61,31 @@ def _find(state: State):
         return None
     if len(state.terms) < 2:
         return None
-    anga = state.terms[0]
-    pr   = state.terms[1]
-    if "anga" not in anga.tags:
-        return None
-    if "taddhita" not in pr.tags:
-        return None
-    itm = pr.meta.get("it_markers", set())
-    if not isinstance(itm, set):
-        return None
-    if not (("Y" in itm) or ("N" in itm) or ("R" in itm)):
-        return None
-    if anga.meta.get("7_2_117_adi_vrddhi_done"):
-        return None
-    for j, v in enumerate(anga.varnas):
-        if _is_ac(v.slp1):
-            rep = _vrddhi_vowel(v.slp1, state)
-            if rep is None or rep == v.slp1:
-                return None
-            return (0, j, rep)
+    for pj in range(1, len(state.terms)):
+        pr = state.terms[pj]
+        if term_is_sup_luk_ghost(pr):
+            continue
+        if "taddhita" not in pr.tags:
+            continue
+        itm = pr.meta.get("it_markers", set())
+        if not isinstance(itm, set):
+            continue
+        if not (("Y" in itm) or ("N" in itm) or ("R" in itm)):
+            continue
+        k = pj - 1
+        while k >= 0 and term_is_sup_luk_ghost(state.terms[k]):
+            k -= 1
+        if k < 0 or "anga" not in state.terms[k].tags:
+            continue
+        anga = state.terms[k]
+        if anga.meta.get("7_2_117_adi_vrddhi_done"):
+            continue
+        for j, v in enumerate(anga.varnas):
+            if _is_ac(v.slp1):
+                rep = _vrddhi_vowel(v.slp1, state)
+                if rep is None or rep == v.slp1:
+                    return None
+                return (k, j, rep)
     return None
 
 

@@ -32,6 +32,9 @@ def _build_state() -> State:
 
 def derive_mRuSTavAn() -> State:
     s = _build_state()
+    # ``mfzu~`` is not ``is_ekac_upadesha`` by string shape — arm **7.2.10** for
+    # the same **7.2.35** gate as *bhinnavān* (see ``bhinnavAn_prathamA_Bidi``).
+    s.meta["ekac_dhatu"] = True
     s = P00_ktavatu_kartari_nistha_opening(
         s,
         target_upadesha_slp1="mfzu~",

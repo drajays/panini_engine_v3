@@ -1,8 +1,8 @@
 """
 7.1.94  ऋदुशनस्पुरुदंसोऽनेहसां च  —  VIDHI
 
-Narrow v3: for a **tṛc** nominal stem (``trc_nom_sg_pipeline``) whose aṅga
-ends in **f** (vocalic ṛ), substitute **an** for that **f** before **su**
+Narrow v3: for a **tṛc** prātipadika (``krt_tfc`` on the aṅga) whose final
+is **f** (vocalic ṛ), substitute **an** for that **f** before **su**
 (single ``s`` after it-prakaraṇa).
 """
 from __future__ import annotations
@@ -13,13 +13,11 @@ from phonology    import mk
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("trc_nom_sg_pipeline"):
-        return False
     if len(state.terms) < 2:
         return False
     ang = state.terms[0]
     sup = state.terms[-1]
-    if "prātipadika" not in ang.tags or "sup" not in sup.tags:
+    if "krt_tfc" not in ang.tags or "prātipadika" not in ang.tags or "sup" not in sup.tags:
         return False
     if ang.meta.get("anaN_7_1_94_done"):
         return False

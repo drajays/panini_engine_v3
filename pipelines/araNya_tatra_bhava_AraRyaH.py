@@ -24,7 +24,10 @@ from core.canonical_pipelines import (
     P00_taddhita_internal_Ni_luk_1_2_46_2_4_71,
     P00_taddhita_Ni_locative_then_tatra_bhava_adhikara,
 )
-from pipelines.subanta import build_initial_state, run_subanta_pipeline
+from pipelines.subanta import (
+    run_subanta_preflight_through_1_4_7,
+    run_subanta_sup_attach_and_finish,
+)
 
 from sutras.adhyaya_1.pada_2.sutra_1_2_46 import META_TADDHITA_AVAYAVA
 def _make_araNya_state() -> State:
@@ -112,26 +115,17 @@ def derive_AraRyaH() -> State:
     """
     Full: taddhita stem + subanta prathamā ekavacana (target: AraRyaH).
     """
-    t = derive_AraRya_pratipadika()
-    stem = t.flat_slp1().strip()
-    s = build_initial_state(stem, 1, 1, "pulliṅga")
-
-    # Carry over trace/registries so the final State is a single auditable run.
-    s.trace = [dict(st) for st in t.trace]
-    s.samjna_registry = dict(t.samjna_registry)
-    s.paribhasha_gates = dict(t.paribhasha_gates)
-    s.adhikara_stack = [dict(e) for e in t.adhikara_stack]
-    s.blocked_sutras = set(t.blocked_sutras)
-    s.niyama_gates = dict(t.niyama_gates)
-    s.atidesha_map = dict(t.atidesha_map)
-    s.vibhasha_forks = [dict(f) for f in t.vibhasha_forks]
-    s.nipatana_flag = t.nipatana_flag
-    s.tripadi_zone = t.tripadi_zone
-    s.phase = t.phase
-    s.meta = {**t.meta, **s.meta}
-    # Prevent subanta preflight from re-running our generic taddhita avayava hooks.
+    s = derive_AraRya_pratipadika()
+    # Continue in the same State (no flatten → rebuild), preserving full trace.
+    if s.terms:
+        s.terms[0].tags.add("pulliṅga")
+    s.meta["linga"] = "pulliṅga"
+    s.meta["vibhakti_vacana"] = "1-1"
+    # Prevent subanta preflight from re-running generic taddhita avayava hooks.
     s.meta.pop(META_TADDHITA_AVAYAVA, None)
-    return run_subanta_pipeline(s)
+    s = run_subanta_preflight_through_1_4_7(s)
+    s = run_subanta_sup_attach_and_finish(s)
+    return s
 
 
 __all__ = ["derive_AraRya_pratipadika", "derive_AraRyaH"]

@@ -16,6 +16,7 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology    import mk
 from phonology.pratyahara import is_dirgha, is_hrasva
+from sutras.adhyaya_1.pada_1.sutra_1_1_6 import dhatu_blocked_by_1_1_6
 
 
 def _vrddhi_vowel(ch: str, state: State) -> Optional[str]:
@@ -47,7 +48,7 @@ def _find(state: State):
         return None
     if dhatu.meta.get("aco_nniti_vrddhi_done"):
         return None
-    if dhatu.meta.get("dIdhIvevI_guna_vrddhi_nishedha"):
+    if dhatu_blocked_by_1_1_6(dhatu.meta.get("upadesha_slp1")):
         return None
     itm = pr.meta.get("it_markers", set())
     if not isinstance(itm, set):

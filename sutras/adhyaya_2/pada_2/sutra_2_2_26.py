@@ -68,7 +68,8 @@ from __future__ import annotations
 
 from typing import Optional
 
-from engine       import SutraType, SutraRecord, register_sutra
+from engine import SutraType, SutraRecord, register_sutra
+from engine.lopa_ghost import term_is_sup_luk_ghost
 from engine.state import State, Term
 from phonology    import mk
 from phonology.gostriyor_upasarjana import apply_strI_pratyaya_final_hrasva, flat_slp1
@@ -193,6 +194,14 @@ def _dir_name(t: Term) -> Optional[str]:
     return canon if canon in _DIR else None
 
 
+def _only_sup_luk_ghosts_between(state: State, i_lo: int, i_hi: int) -> bool:
+    """Allow **2.4.71** zero-width internal-*sup* ghosts between the two *prakṛti*."""
+    for j in range(i_lo + 1, i_hi):
+        if not term_is_sup_luk_ghost(state.terms[j]):
+            return False
+    return True
+
+
 def _find_pair(state: State):
     if not state.meta.get("diksamasa_compound"):
         return None
@@ -200,6 +209,7 @@ def _find_pair(state: State):
         return None
     if len(state.terms) < 2:
         return None
+    # Prefer adjacent *prakṛti* *prātipadika* (legacy two-*Term* tape).
     for i in range(len(state.terms) - 1):
         t1, t2 = state.terms[i], state.terms[i + 1]
         if t1.kind != "prakriti" or t2.kind != "prakriti":
@@ -217,7 +227,32 @@ def _find_pair(state: State):
         stem = _PAIR_TO_STEM.get(key)
         if stem is None:
             continue
-        return i, stem
+        return i, i + 1, stem
+    # **2.4.71** *luk*: ``[prakṛti, sup-ghost, prakṛti, …]`` — same *dik* logic.
+    pr_idxs = [
+        j
+        for j, t in enumerate(state.terms)
+        if t.kind == "prakriti" and "prātipadika" in t.tags and _dir_name(t) is not None
+    ]
+    for a in range(len(pr_idxs) - 1):
+        i_lo, i_hi = pr_idxs[a], pr_idxs[a + 1]
+        if i_hi <= i_lo:
+            continue
+        if not _only_sup_luk_ghosts_between(state, i_lo, i_hi):
+            continue
+        t1, t2 = state.terms[i_lo], state.terms[i_hi]
+        if not _diknama_pair_ok(t1, t2):
+            continue
+        if _yaugika_blocked(t1, t2):
+            continue
+        d1, d2 = _dir_name(t1), _dir_name(t2)
+        if d1 is None or d2 is None:
+            continue
+        key = frozenset({d1, d2})
+        stem = _PAIR_TO_STEM.get(key)
+        if stem is None:
+            continue
+        return i_lo, i_hi, stem
     return None
 
 
@@ -229,9 +264,9 @@ def act(state: State) -> State:
     hit = _find_pair(state)
     if hit is None:
         return state
-    i, stem = hit
-    t1 = state.terms[i]
-    t2 = state.terms[i + 1]
+    i_lo, i_hi, stem = hit
+    t1 = state.terms[i_lo]
+    t2 = state.terms[i_hi]
 
     _rewrite_member_pumvat_surface(t1)
     _rewrite_member_pumvat_surface(t2)
@@ -253,7 +288,7 @@ def act(state: State) -> State:
     )
     _apply_bahuvrihi_upasarjana_hrasva(merged)
 
-    state.terms = state.terms[:i] + [merged] + state.terms[i + 2 :]
+    state.terms = state.terms[:i_lo] + [merged] + state.terms[i_hi + 1 :]
     state.meta["diksamasa_compound"] = True
     state.meta["bahuvrihi_formed"] = True
     state.meta["vartika_puMvat_applied"] = bool(puMvat_vrtti)

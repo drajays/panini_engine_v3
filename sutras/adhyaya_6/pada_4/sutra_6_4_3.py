@@ -22,7 +22,7 @@ from engine.state import State
 from phonology    import mk
 
 
-_DIRGHA_MAP = {"i": "I", "u": "U"}
+_DIRGHA_MAP = {"a": "A", "i": "I", "u": "U"}
 
 
 def _matches(state: State) -> bool:

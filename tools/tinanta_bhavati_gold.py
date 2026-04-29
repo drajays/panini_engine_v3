@@ -16,7 +16,7 @@ import sutras  # noqa: F401
 
 from engine.state import State
 
-from pipelines.tinanta_jayati_gold import (
+from tools.tinanta_jayati_gold import (
     run_jayati_gold_step8,
     run_jayati_gold_step9,
     run_jayati_gold_through_step,

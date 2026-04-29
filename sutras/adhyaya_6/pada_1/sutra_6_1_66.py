@@ -13,13 +13,11 @@ from phonology.pratyahara import is_dirgha
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("trc_nom_sg_pipeline"):
-        return False
     if len(state.terms) < 2:
         return False
     ang = state.terms[0]
     sup = state.terms[-1]
-    if "prātipadika" not in ang.tags or "sup" not in sup.tags:
+    if "krt_tfc" not in ang.tags or "prātipadika" not in ang.tags or "sup" not in sup.tags:
         return False
     if ang.meta.get("apṛkta_hal_lopa_6_1_66_done"):
         return False

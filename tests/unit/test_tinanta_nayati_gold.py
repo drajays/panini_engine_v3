@@ -3,8 +3,8 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.tinanta_jayati_gold import run_jayati_gold_through_step
-from pipelines.tinanta_nayati_gold import (
+from tools.tinanta_jayati_gold import run_jayati_gold_through_step
+from tools.tinanta_nayati_gold import (
     NAYATI_DHATU_ROW_ID,
     run_nayati_gold_through_step,
     run_nayati_gold_step9,

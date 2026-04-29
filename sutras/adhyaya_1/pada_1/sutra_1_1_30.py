@@ -6,7 +6,7 @@ conferred in a *tṛtīyā*-*tatpuruṣa* *samāsa* (*tṛtīyā-samāse*).
 
 v3: after **1.1.27** has set ``sarvanama`` on a *sarvādi*-listed *upadeśa* *aṅga*, this
 rule *removes* that tag when the aṅga carries the structural tag ``tRtIyA_tatpurusha``
-(see ``build_initial_state(..., tRtIyA_tatpurusha_samAsa=True)``; user
+(samāsa memory; do not inject via subanta input booleans; user
 ``तृतीयासमासे निषेध .md``).
 
 *CONSTITUTION* Art. 2: *cond* reads only *Term* *tags* / *meta* — not ``(vibhakti, vacana)``,

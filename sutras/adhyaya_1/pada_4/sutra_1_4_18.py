@@ -28,8 +28,9 @@ First sound of the affix is read from ``Term.varnas[0]`` after the engine's
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
-from engine.state  import State
+from engine import SutraType, SutraRecord, register_sutra
+from engine.lopa_ghost import term_is_sup_luk_ghost
+from engine.state import State
 from sutras.adhyaya_1.pada_4.samjna_sup_prakriti_1_4 import (
     is_sarvanamasthana_sup,
     yaci_onset_loose,
@@ -53,8 +54,16 @@ def _taddhite_yaci_anga_ok(pr) -> bool:
 
 
 def _eligible_anga_indices(state: State):
-    for i in range(len(state.terms) - 1):
-        anga, pr = state.terms[i], state.terms[i + 1]
+    for j in range(1, len(state.terms)):
+        pr = state.terms[j]
+        if term_is_sup_luk_ghost(pr):
+            continue
+        k = j - 1
+        while k >= 0 and term_is_sup_luk_ghost(state.terms[k]):
+            k -= 1
+        if k < 0:
+            continue
+        anga = state.terms[k]
         if "anga" not in anga.tags:
             continue
         if "sup" in pr.tags:
@@ -66,7 +75,7 @@ def _eligible_anga_indices(state: State):
                 continue
             if "bha" in anga.tags:
                 continue
-            yield i
+            yield k
             continue
         if (
             state.meta.get("prakriya_sAlIya")
@@ -79,7 +88,7 @@ def _eligible_anga_indices(state: State):
                 continue
             if "bha" in anga.tags:
                 continue
-            yield i
+            yield k
             continue
         if (
             state.meta.get("prakriya_itika_phak")
@@ -92,7 +101,7 @@ def _eligible_anga_indices(state: State):
                 continue
             if "bha" in anga.tags:
                 continue
-            yield i
+            yield k
             continue
         if (
             state.meta.get(_META_GENERIC_TADDHITA_AVAYAVA)
@@ -105,7 +114,7 @@ def _eligible_anga_indices(state: State):
                 continue
             if "bha" in anga.tags:
                 continue
-            yield i
+            yield k
 
 
 def cond(state: State) -> bool:

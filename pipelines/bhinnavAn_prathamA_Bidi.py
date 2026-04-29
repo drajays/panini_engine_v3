@@ -33,6 +33,9 @@ def _build_state() -> State:
 
 def derive_bhinnavAn() -> State:
     s = _build_state()
+    # ``Bidi~`` is not ``is_ekac_upadesha`` (tilde / shape) — still arm **7.2.10**
+    # so **7.2.35** *iṭ* does not misfire on *ktavatu~* before **6.1.111**.
+    s.meta["ekac_dhatu"] = True
     s.meta["3_2_102_bhinn_before_tavat_arm"] = True
     s = P00_ktavatu_kartari_nistha_opening(
         s,

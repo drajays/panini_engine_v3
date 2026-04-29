@@ -19,6 +19,7 @@ after pada-merge and the other tripāḍī sūtras have run.
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
 from phonology     import mk
+from phonology.pratyahara import HAL
 
 
 # Preceding vowels that trigger ṣatva (simplified "in+kuk").
@@ -40,10 +41,15 @@ def _find_target(state: State):
         if "satva_done" in v.tags:
             continue
         prev = t.varnas[i - 1]
-        # Some luṅ spines (sic + Īṭ) can present the conditioning vowel immediately
-        # after the s (… sI …) once terms have merged; we allow that narrow case too.
+        # Some luṅ spines (hal + sic + Īṭ): *s* is not immediately after IK, but *I*
+        # follows *s*. Only then (HAL before *s*) do we admit this lookahead —
+        # not vowel‑*a*+*sī* from **sīyuṭ** after a stem vowel (**gasI** …).
         if prev.slp1 not in _IN_KUK_PREV:
             if i + 1 >= len(t.varnas) or t.varnas[i + 1].slp1 not in _IN_KUK_PREV:
+                continue
+            # Lookahead (… hal s IK …) reaches luṅ *sic*+*Īṭ* etc.; do not treat
+            # … ac s IK … (*ga*+*sī*, vowel-*a* before *sīyuṭ*'s *s*) as ṣatva.
+            if prev.slp1 not in HAL:
                 continue
         return i
     return None

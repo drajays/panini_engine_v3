@@ -1,5 +1,5 @@
 """
-8.2.36  व्रश्चभ्रस्जसृजमृजयजराजभ्राजच्छशां षः  —  VIDHI (narrow: j → z in mArj)
+8.2.36  व्रश्चभ्रस्जसृजमृजयजराजभ्राजच्छशां षः  —  VIDHI (narrow demos: j→z, S→z)
 
 Glass-box scope for `mArzwi`:
   When the stem contains "...rj" (from mFj vṛddhi), replace that final 'j' with 'z' (ष्).
@@ -17,6 +17,9 @@ def _find(state: State):
     t = state.terms[0]
     if t.meta.get("8_2_36_sha_done"):
         return None
+    # Narrow demo: allow final S (ś) → z (ṣ) when recipe-armed (pRSTvA).
+    if state.meta.get("8_2_36_sh_to_sh_arm") and t.varnas and t.varnas[-1].slp1 == "S":
+        return (0, len(t.varnas) - 1)
     for i in range(1, len(t.varnas)):
         if t.varnas[i - 1].slp1 == "r" and t.varnas[i].slp1 == "j":
             return (0, i)
@@ -34,6 +37,7 @@ def act(state: State) -> State:
     ti, i = hit
     state.terms[ti].varnas[i] = mk("z")
     state.terms[ti].meta["8_2_36_sha_done"] = True
+    state.meta.pop("8_2_36_sh_to_sh_arm", None)
     return state
 
 

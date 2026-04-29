@@ -48,7 +48,7 @@ def test_pUrva_eka_still_smai_path_7_1_14():
 
 
 def test_mAsa_pUrva_list_id_without_tRtIyA_triggers_smai():
-    s = derive(STEM_MASA_PURVA, 4, 1, "pulliṅga", tRtIyA_tatpurusha_samAsa=False)
+    s = derive(STEM_MASA_PURVA, 4, 1, "pulliṅga")
     assert s.flat_slp1() == "mAsapUrvasmE"
     assert _ap(s, "7.1.14")
 

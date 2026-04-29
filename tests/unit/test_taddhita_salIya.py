@@ -152,7 +152,10 @@ def test_carana8_2_4_71_supo_luk_internal_su_taddhita_stays():
     """
     s = derive_salIya()
     assert s.meta.get("2_4_71_luk") is True
-    assert not any("sup" in t.tags for t in s.terms)
+    from engine.lopa_ghost import term_is_sup_luk_ghost, term_sup_phonetically_live
+
+    assert not any(term_sup_phonetically_live(t) for t in s.terms)
+    assert any(term_is_sup_luk_ghost(t) for t in s.terms)
     tids = [x["sutra_id"] for x in s.trace]
     assert tids.index("1.2.46") < tids.index("2.4.71")
     assert "2.4.71" in {x["sutra_id"] for x in s.trace if x.get("status") in ("APPLIED", "AUDIT")}
@@ -233,12 +236,19 @@ def test_carana12_flat_slp1_taddhitānta_and_pratipadika_parts():
     """
     चरण १२: *saṃhitā* ``SAlIya``; *dvy*-*avayava* still *taddhite*-*anta*; no second 1.2.46 in *trace*.
     """
+    from engine.lopa_ghost import term_is_sup_luk_ghost
+
     s = derive_salIya()
     assert s.flat_slp1() == "SAlIya"
     tids = [x["sutra_id"] for x in s.trace]
     assert tids.index("1.2.46") < tids.index("6.4.148")
     assert tids.count("1.2.46") == 1
-    a0, p1 = s.terms[0], s.terms[1]
+    a0 = s.terms[0]
+    p1 = next(
+        t
+        for t in s.terms[1:]
+        if "taddhita" in t.tags and not term_is_sup_luk_ghost(t)
+    )
     assert "taddhitānta" in a0.tags and "taddhitānta" in p1.tags
     assert s.meta.get("taddhitānta_pada_slp1") == "SAlIya"
     assert "prātipadika" in a0.tags and "prātipadika" in p1.tags

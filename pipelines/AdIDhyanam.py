@@ -9,19 +9,21 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from phonology import mk
+from phonology.varna import parse_slp1_upadesha_sequence
 from engine.state import State, Term
 
 from pipelines.krdanta import derive_krt
-from pipelines.subanta import build_initial_state, run_subanta_pipeline
+from pipelines.subanta import run_subanta_preflight_through_1_4_7, run_subanta_sup_attach_and_finish
 
 
 def _A_upasarga() -> Term:
     return Term(
-        kind="prakriti",
-        varnas=[mk("A")],
-        tags={"upasarga", "anga"},
-        meta={},
+        kind="upasarga",
+        # Use ``AN`` (no ``~``) so 1.3.3 marks final ``N`` as it; ``~`` would
+        # nasalize the vowel and incorrectly make ``A`` itself it via 1.3.2.
+        varnas=parse_slp1_upadesha_sequence("AN"),
+        tags={"upadesha"},
+        meta={"upadesha_slp1": "AN"},
     )
 
 
@@ -32,7 +34,6 @@ def derive_AdIDhyana_pratipadika() -> State:
         krt_upadesha_slp1="lyuw",
         merge_pratipadika_label="AdIDhyana",
         prefix_terms=[_A_upasarga()],
-        dhatu_meta={"dIdhIvevI_guna_vrddhi_nishedha": True},
     )
     return s
 
@@ -40,9 +41,13 @@ def derive_AdIDhyana_pratipadika() -> State:
 def derive_AdIDhyanam() -> State:
     """Full pada: prātipadika + *subanta* (2-1 ekavacana napuṃsaka)."""
     s = derive_AdIDhyana_pratipadika()
-    stem = s.flat_slp1()
-    s2 = build_initial_state(stem, vibhakti=2, vacana=1, linga="napuṃsaka")
-    return run_subanta_pipeline(s2)
+    if s.terms:
+        s.terms[0].tags.add("napuṃsaka")
+    s.meta["linga"] = "napuṃsaka"
+    s.meta["vibhakti_vacana"] = "2-1"
+    s = run_subanta_preflight_through_1_4_7(s)
+    s = run_subanta_sup_attach_and_finish(s)
+    return s
 
 
 __all__ = ["derive_AdIDhyana_pratipadika", "derive_AdIDhyanam"]

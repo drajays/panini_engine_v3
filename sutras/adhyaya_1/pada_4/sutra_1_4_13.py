@@ -14,7 +14,8 @@ same pattern as Case B.  **Case D:** ``prakriya_matup_asti`` — *go* + *matup* 
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
+from engine import SutraType, SutraRecord, register_sutra
+from engine.lopa_ghost import term_is_sup_luk_ghost
 from engine.state import State
 
 
@@ -27,7 +28,14 @@ def cond(state: State) -> bool:
         t1 = state.terms[j]
         if "pratyaya" not in t1.tags:
             continue
-        t0 = state.terms[j - 1]
+        if term_is_sup_luk_ghost(t1):
+            continue
+        k = j - 1
+        while k >= 0 and term_is_sup_luk_ghost(state.terms[k]):
+            k -= 1
+        if k < 0:
+            continue
+        t0 = state.terms[k]
         if "dhatu" in t0.tags:
             return True
         # *śālīya* taddhita: *aṅga* = *prakriti* (not *dhātu*) *nimitta* of *taddhita*.

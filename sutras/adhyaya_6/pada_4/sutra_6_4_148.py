@@ -18,9 +18,10 @@ napuṃsaka dual **O** paths stay **jñāne**-style, not *lopa*.
 """
 from __future__ import annotations
 
-from engine        import SutraType, SutraRecord, register_sutra
-from engine.gates  import adhikara_in_effect
-from engine.state  import State
+from engine import SutraType, SutraRecord, register_sutra
+from engine.gates import adhikara_in_effect
+from engine.lopa_ghost import term_is_sup_luk_ghost
+from engine.state import State
 
 
 _NEXT_OK = frozenset({"i", "I"})
@@ -42,8 +43,16 @@ def _itika_pha_ayana_anga_a_lopa(state: State) -> tuple[int, int] | None:
     """
     if not state.meta.get("prakriya_itika_phak"):
         return None
-    for i in range(len(state.terms) - 1):
-        anga, nxt = state.terms[i], state.terms[i + 1]
+    for j in range(1, len(state.terms)):
+        nxt = state.terms[j]
+        if term_is_sup_luk_ghost(nxt):
+            continue
+        k = j - 1
+        while k >= 0 and term_is_sup_luk_ghost(state.terms[k]):
+            k -= 1
+        if k < 0:
+            continue
+        anga = state.terms[k]
         if "anga" not in anga.tags or "bha" not in anga.tags:
             continue
         if "taddhita" not in nxt.tags or not nxt.varnas:
@@ -56,7 +65,7 @@ def _itika_pha_ayana_anga_a_lopa(state: State) -> tuple[int, int] | None:
             continue
         if nxt.varnas[0].slp1 != "A":
             continue
-        return (i, len(anga.varnas) - 1)
+        return (k, len(anga.varnas) - 1)
     return None
 
 
@@ -70,9 +79,16 @@ def _find_target(state: State):
     hit0 = _itika_pha_ayana_anga_a_lopa(state)
     if hit0 is not None:
         return hit0
-    for i in range(len(state.terms) - 1):
-        anga = state.terms[i]
-        nxt = state.terms[i + 1]
+    for j in range(1, len(state.terms)):
+        nxt = state.terms[j]
+        if term_is_sup_luk_ghost(nxt):
+            continue
+        k = j - 1
+        while k >= 0 and term_is_sup_luk_ghost(state.terms[k]):
+            k -= 1
+        if k < 0:
+            continue
+        anga = state.terms[k]
         if "anga" not in anga.tags:
             continue
         if not anga.varnas or not nxt.varnas:
@@ -98,7 +114,7 @@ def _find_target(state: State):
                 continue
             if nxt.meta.get("upadesha_slp1") in ("O", "Si", "SI"):
                 continue
-        return (i, len(anga.varnas) - 1)
+        return (k, len(anga.varnas) - 1)
     return None
 
 

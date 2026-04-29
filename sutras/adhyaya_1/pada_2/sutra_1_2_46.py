@@ -21,7 +21,8 @@ a registry flag for *śālīya* recipes (``pipelines/taddhita_salIya``) *before*
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
+from engine import SutraType, SutraRecord, register_sutra
+from engine.lopa_ghost import term_sup_phonetically_live
 from engine.state import State
 
 
@@ -90,7 +91,7 @@ def cond(state: State) -> bool:
 
     # ── Case F: generic taddhita *avayava* frame (caller opt-in) —──────────
     # Used by glass-box pipelines that keep [anga + sup + taddhita] as three Terms
-    # until 2.4.71 removes the internal sup.
+    # until 2.4.71 *luk* (zero-width ghost *sup*).
     if state.meta.get(META_TADDHITA_AVAYAVA) and len(state.terms) >= 3:
         t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
         if (
@@ -135,12 +136,12 @@ def cond(state: State) -> bool:
             return False
         if not state.terms:
             return False
-        # Require at least two members and no pending sup pratyaya
-        # (internal sups must already be deleted by 2.4.71).
+        # Require at least two members and no pending phonetic *sup* *pratyaya*
+        # (internal *sup* may be **2.4.71** zero-width ghosts — still ``sup``-tagged).
         members = [t for t in state.terms if "samasa_member" in t.tags]
         if len(members) < 2:
             return False
-        if any("sup" in t.tags for t in state.terms):
+        if any(term_sup_phonetically_live(t) for t in state.terms):
             return False
         return True
 
@@ -235,6 +236,11 @@ def act(state: State) -> State:
 
     # Samāsa path: merge samāsa members into one prātipadika+aṅga term.
     if "dhatu" not in state.terms[0].tags:
+        # If a live internal *sup* is still present, do not structurally merge yet.
+        # (Cond() enforces the same policy; keep act() consistent for safety.)
+        from engine.lopa_ghost import term_sup_phonetically_live
+        if any(term_sup_phonetically_live(t) for t in state.terms):
+            return state
         # ``[upasarga, dhātu, kṛt]`` — not a samāsa; kṛdanta merge happens elsewhere.
         if any("dhatu" in t.tags for t in state.terms) and any(
             "krt" in t.tags for t in state.terms

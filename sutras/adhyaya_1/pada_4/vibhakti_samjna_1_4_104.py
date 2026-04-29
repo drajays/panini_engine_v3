@@ -16,6 +16,7 @@ from __future__ import annotations
 
 from typing import Final, Tuple
 
+from engine.lopa_ghost import LUK_LOPA_GHOST_TAG
 from engine.state import State, Term
 
 from sutras.adhyaya_3.pada_4.tin_adesha_3_4_78 import TIN_ADESHA_18, TIN_ADESHA_SET
@@ -57,7 +58,10 @@ def _norm_upadesha_slp1(s: str) -> str:
 
 def is_sup_vibhakti_pratyaya(t: Term) -> bool:
     """``Term`` tagged ``sup`` by **4.1.2** (or compatible loaders)."""
-    return t.kind == "pratyaya" and "sup" in t.tags
+    if t.kind != "pratyaya" or "sup" not in t.tags:
+        return False
+    # **2.4.71** *luk* leaves a zero-width *sup* ghost — not a *vibhakti* bearer.
+    return LUK_LOPA_GHOST_TAG not in t.tags
 
 
 def is_tin_vibhakti_pratyaya(t: Term) -> bool:

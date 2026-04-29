@@ -10,7 +10,7 @@ import sutras  # noqa: F401
 
 from sutras.adhyaya_1.pada_1.lopa_samjna_1_1_60 import LOPA_REGISTER_VALUE, LOPA_SAMJNA_KEY
 
-from pipelines.tinanta_jayati_gold import (
+from tools.tinanta_jayati_gold import (
     JAYATI_DHATU_ROW_ID,
     STEP_1_RULE_IDS,
     STEP_2_RULE_IDS,

@@ -10,18 +10,24 @@ phoneme is ``y``, replace final ``o`` with ``a`` (*guṇa* substitute anchor).
 """
 from __future__ import annotations
 
-from engine        import SutraType, SutraRecord, register_sutra
-from engine.gates  import adhikara_in_effect
-from engine.state  import State
+from engine import SutraType, SutraRecord, register_sutra
+from engine.gates import adhikara_in_effect
+from engine.lopa_ghost import iter_anga_to_following_pratyaya_pairs, state_has_sup_luk_ghost
+from engine.state import State
 from phonology     import mk
 
 
 def _find_o_before_y(state: State):
     if len(state.terms) < 2:
         return None
-    for ti in range(len(state.terms) - 1):
+    pairs = (
+        iter_anga_to_following_pratyaya_pairs(state)
+        if state_has_sup_luk_ghost(state)
+        else ((ti, ti + 1) for ti in range(len(state.terms) - 1))
+    )
+    for ti, pi in pairs:
         anga = state.terms[ti]
-        pr = state.terms[ti + 1]
+        pr = state.terms[pi]
         if "anga" not in anga.tags or "bha" not in anga.tags:
             continue
         if not pr.varnas or not anga.varnas:
@@ -64,9 +70,14 @@ def _find_u_before_a(state: State):
     """
     if len(state.terms) < 2:
         return None
-    for ti in range(len(state.terms) - 1):
+    pairs = (
+        iter_anga_to_following_pratyaya_pairs(state)
+        if state_has_sup_luk_ghost(state)
+        else ((ti, ti + 1) for ti in range(len(state.terms) - 1))
+    )
+    for ti, pi in pairs:
         anga = state.terms[ti]
-        pr = state.terms[ti + 1]
+        pr = state.terms[pi]
         if "anga" not in anga.tags or "bha" not in anga.tags:
             continue
         if not pr.varnas or not anga.varnas:

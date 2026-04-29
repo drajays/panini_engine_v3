@@ -1,41 +1,18 @@
 """
-pipelines/subanta_trc.py — nominal singular recipe for **tṛc** stems (चेता-पथ).
+pipelines/subanta_trc.py — *tṛc* prātipadika + *subanta* (continuous *State*).
 
-Uses ``state.meta['trc_nom_sg_pipeline']`` so 7.1.94 / 6.4.11 / 6.1.66 / 8.2.7
-self-gate without reading vibhakti in sūtra cond().
-
-This is a **pipeline** only; it does not change dispatcher semantics.
+**Zero-patchwork:** no ``trc_nom_sg_pipeline`` meta, no ``apply_rule`` scripts.
+The kṛdanta merge tags the stem with ``krt_tfc`` (see ``krdanta._structural_merge_trc_pratipadika``);
+sūtras **7.1.94**, **6.4.11**, **6.1.66**, **8.2.7** self-gate on that tag + tape shape.
+All execution goes through ``pipelines.subanta`` (``apply_rule`` only).
 """
 from __future__ import annotations
 
-from typing import List
-
 import sutras  # noqa: F401
 
-from engine       import apply_rule
-from engine.state import State, Term
+from engine.state import State
 
-from pipelines.subanta import build_initial_state
-from core.canonical_pipelines import P01_subanta_bootstrap, sup_attach_it_chain
-
-
-def _pada_merge(state: State) -> None:
-    if not state.terms:
-        return
-    all_varnas: List = []
-    for t in state.terms:
-        all_varnas.extend(t.varnas)
-    pada = Term(kind="pada", varnas=all_varnas, tags={"pada"}, meta={})
-    state.terms = [pada]
-    state.trace.append({
-        "sutra_id"    : "__MERGE__",
-        "sutra_type"  : "STRUCTURAL",
-        "type_label"  : "पद-मेलनम्",
-        "form_before" : state.flat_slp1(),
-        "form_after"  : state.flat_slp1(),
-        "why_dev"     : "तृच्-सुबन्त — पद-संयोजनम् (संरचनात्मकम्)।",
-        "status"      : "APPLIED",
-    })
+from pipelines.subanta import build_initial_state, derive_from_state
 
 
 def derive_trc_nom_sg(
@@ -46,29 +23,31 @@ def derive_trc_nom_sg(
     linga: str = "pulliṅga",
 ) -> State:
     """
-    Subanta slice for a **tṛc** stem (e.g. ``cetf``) + ``su`` → ``cetA`` surface.
+    *Subanta* on a *tṛc* stem string (e.g. ``cetf``): same motor as ``derive``,
+    provided the stem carries ``krt_tfc`` when coming from ``derive_tfc_pratipadika``.
+
+    For a bare string like ``cetf`` without ``krt_tfc``, use
+    ``derive_trc_nom_sg_from_state`` after building *State* upstream.
     """
     s = build_initial_state(stem_slp1, vibhakti, vacana, linga)
-    s.meta["trc_nom_sg_pipeline"] = True
-    if s.terms:
-        s.terms[0].meta["trc_rikaranta"] = True
+    return derive_trc_nom_sg_from_state(s, vibhakti=vibhakti, vacana=vacana, linga=linga)
 
-    # Canonical preflight spine (shared, dispatcher-only scheduling).
-    s = P01_subanta_bootstrap(s)
-    s = sup_attach_it_chain(s)
 
-    s = apply_rule("6.4.1", s)
-    s = apply_rule("7.1.94", s)
-    s = apply_rule("6.4.11", s)
-    s = apply_rule("6.1.66", s)
+def derive_trc_nom_sg_from_state(
+    s: State,
+    *,
+    vibhakti: int = 1,
+    vacana: int = 1,
+    linga: str = "pulliṅga",
+) -> State:
+    """
+    Continue *subanta* on an existing *State* (kṛdanta → subanta) without
+    flattening. Requires ``krt_tfc`` on the prātipadika *Term* from the tṛc merge.
+    """
+    return derive_from_state(s, vibhakti, vacana, linga=linga)
 
-    _pada_merge(s)
 
-    s = apply_rule("8.2.1", s)
-    s = apply_rule("8.2.7", s)
-    s = apply_rule("8.2.66", s)
-    s = apply_rule("8.3.15", s)
-    s = apply_rule("8.3.59", s)
-    s = apply_rule("8.4.1", s)
-    s = apply_rule("8.4.2", s)
-    return s
+__all__ = [
+    "derive_trc_nom_sg",
+    "derive_trc_nom_sg_from_state",
+]

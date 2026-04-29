@@ -91,10 +91,9 @@ def _structural_merge_trc_pratipadika(state: State, *, upadesha_slp1: str) -> St
     prat = Term(
         kind="prakriti",
         varnas=all_varnas,
-        tags={"prātipadika", "anga"},
+        tags={"prātipadika", "anga", "krt_tfc"},
         meta={
             "upadesha_slp1": upadesha_slp1,
-            "trc_rikaranta": True,
         },
     )
     before = s.flat_slp1()
@@ -179,6 +178,8 @@ def derive_krt(
     for t in s.terms:
         if "dhatu" in t.tags:
             t.tags.discard("upadesha")
+    # Upasarga-saṃjñā (1.4.59) if applicable (e.g. āṅ + dīdhīṅ ...).
+    s = apply_rule("1.4.59", s)
 
     # ६.१.६५ णो नः — before kṛt attachment (णीञ् → नी…); no-op on e.g. पच्.
     s = apply_rule("6.1.65", s)
@@ -206,9 +207,8 @@ def derive_krt(
         s = apply_rule("7.2.116", s)
         s = apply_rule("7.2.115", s)
         s = apply_rule("6.1.78", s)
-        if s.meta.get("6_1_77_after_krt_arm"):
-            s.meta["6_1_77_ik_yan_aci_general_arm"] = True
-            s = apply_rule("6.1.77", s)
+        # Sandhi on the dhātu+kṛt boundary (e.g. dIDhI + ak → dIDhyak).
+        s = apply_rule("6.1.77", s)
         s = apply_rule("1.2.45", s)
         s = apply_rule("1.2.46", s)
         s = _structural_merge_to_pratipadika(s, upadesha_slp1=merge_pratipadika_label)
@@ -301,14 +301,13 @@ def derive_trc(dhatu_id: str) -> State:
     ``id`` (upadeśa + ``tfc`` + ``su`` 1-1).
     """
     from pipelines.dhatupatha import get_dhatu_row
-    from pipelines.subanta_trc import derive_trc_nom_sg
+    from pipelines.subanta_trc import derive_trc_nom_sg_from_state
 
     row = get_dhatu_row(dhatu_id)
     up = row["upadesha_slp1"]
     ud = bool(row.get("flags", {}).get("udatta", False))
     k = derive_tfc_pratipadika(up, udatta_dhatu=ud)
-    stem = k.flat_slp1()
-    return derive_trc_nom_sg(stem, vibhakti=1, vacana=1, linga="pulliṅga")
+    return derive_trc_nom_sg_from_state(k, vibhakti=1, vacana=1, linga="pulliṅga")
 
 
 def derive_chetA() -> State:
@@ -330,8 +329,20 @@ def derive_pAcakaH() -> State:
       (1) kṛdanta: pAcaka
       (2) subanta: pAcaka + su (1-1) → pAcakaH
     """
-    from pipelines.subanta import derive as derive_subanta
-    return derive_subanta("pAcaka", 1, 1, linga="pulliṅga")
+    from pipelines.subanta import (
+        run_subanta_preflight_through_1_4_7,
+        run_subanta_sup_attach_and_finish,
+    )
+
+    s = derive_pAcaka_pratipadika()
+    # Continue on the same State (no flatten → rebuild), preserving full trace.
+    if s.terms:
+        s.terms[0].tags.add("pulliṅga")
+    s.meta["linga"] = "pulliṅga"
+    s.meta["vibhakti_vacana"] = "1-1"
+    s = run_subanta_preflight_through_1_4_7(s)
+    s = run_subanta_sup_attach_and_finish(s)
+    return s
 
 
 def derive_nAyaka_pratipadika() -> State:
@@ -345,5 +356,16 @@ def derive_nAyakaH() -> State:
       (1) kṛdanta: nAyaka
       (2) subanta: nAyaka + su (1-1) → nAyakaH
     """
-    from pipelines.subanta import derive as derive_subanta
-    return derive_subanta("nAyaka", 1, 1, linga="pulliṅga")
+    from pipelines.subanta import (
+        run_subanta_preflight_through_1_4_7,
+        run_subanta_sup_attach_and_finish,
+    )
+
+    s = derive_nAyaka_pratipadika()
+    if s.terms:
+        s.terms[0].tags.add("pulliṅga")
+    s.meta["linga"] = "pulliṅga"
+    s.meta["vibhakti_vacana"] = "1-1"
+    s = run_subanta_preflight_through_1_4_7(s)
+    s = run_subanta_sup_attach_and_finish(s)
+    return s

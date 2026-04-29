@@ -31,8 +31,8 @@ from core.canonical_pipelines import (
     P06a_pratyaya_adhikara_3_1_1_to_3,
 )
 from pipelines.subanta import (
-    build_initial_state,
-    run_subanta_pipeline,
+    run_subanta_preflight_through_1_4_7,
+    run_subanta_sup_attach_and_finish,
 )
 from sutras.adhyaya_1.pada_2.sutra_1_2_46 import META_TADDHITA_AVAYAVA
 
@@ -140,28 +140,18 @@ def derive_aupAgavaH() -> State:
     Full derivation: taddhita pratipadika + subanta prathamā-ekavacana (puṃ).
     Final expected surface: औपगवः (SLP1: OpagavaH).
     """
-    t = derive_aupAgava_pratipadika()
-    stem = t.flat_slp1().strip()
-
-    # Subanta leg (reuse canonical pipeline); keep full trace by copying.
-    s = build_initial_state(stem, 1, 1, "pulliṅga")
-    s.trace = [dict(st) for st in t.trace]
-    s.samjna_registry = dict(t.samjna_registry)
-    s.paribhasha_gates = dict(t.paribhasha_gates)
-    s.adhikara_stack = [dict(e) for e in t.adhikara_stack]
-    s.blocked_sutras = set(t.blocked_sutras)
-    s.niyama_gates = dict(t.niyama_gates)
-    s.atidesha_map = dict(t.atidesha_map)
-    s.vibhasha_forks = [dict(f) for f in t.vibhasha_forks]
-    s.nipatana_flag = t.nipatana_flag
-    s.tripadi_zone = t.tripadi_zone
-    s.phase = t.phase
-    merged_meta = {**t.meta, **s.meta}
+    s = derive_aupAgava_pratipadika()
+    # Continue in the same State (no flatten → rebuild), preserving full trace.
+    s.meta["linga"] = "pulliṅga"
+    s.meta["vibhakti_vacana"] = "1-1"
+    if s.terms:
+        s.terms[0].tags.add("pulliṅga")
     # Prevent a second preflight application of 2.3.50 in the subanta leg.
-    merged_meta.pop("2_3_50_sheSa_shashthi_eligible", None)
-    merged_meta.pop("2_3_50_override_vibhakti_vacana", None)
-    s.meta = merged_meta
-    return run_subanta_pipeline(s)
+    s.meta.pop("2_3_50_sheSa_shashthi_eligible", None)
+    s.meta.pop("2_3_50_override_vibhakti_vacana", None)
+    s = run_subanta_preflight_through_1_4_7(s)
+    s = run_subanta_sup_attach_and_finish(s)
+    return s
 
 
 __all__ = ["derive_aupAgava_pratipadika", "derive_aupAgavaH"]
