@@ -5,8 +5,13 @@ Narrow v3 slice for avyayībhāva demos:
   - In avyayībhāva, the avyaya member is the prathamā-nirdiṣṭa component and
     receives upasarjana-saṃjñā.
 
+Narrow **tat-puruṣa** slice (**``prakriya_39``**, ``pipelines/yUpadAru_vfkaBhaya_prakriya_39_demo.py``):
+  - Recipe arms ``meta['prakriya_39_tatpurusa_upasarjana']`` and tags the prior member with
+    ``prakriya_39_upasarjana_purva`` (after **2.4.71** internal sup ghosts).
+
 Engine: when a term carries ``avyayibhava`` and looks like an avyaya (tag
-``avyaya`` or kind ``nipata``), tag it ``upasarjana``.
+``avyaya`` or kind ``nipata``), tag it ``upasarjana``. Else (tat-puruṣa branch): tag
+terms marked ``prakriya_39_upasarjana_purva``.
 """
 from __future__ import annotations
 
@@ -17,6 +22,14 @@ from sutras.adhyaya_2.pada_1.sutra_2_1_6 import TAG_AVYAYIBHAVA
 
 
 def _eligible(state: State):
+    if state.meta.get("prakriya_39_tatpurusa_upasarjana"):
+        for t in state.terms:
+            if "prakriya_39_upasarjana_purva" not in t.tags:
+                continue
+            if "upasarjana" in t.tags:
+                continue
+            yield t
+        return
     for t in state.terms:
         if TAG_AVYAYIBHAVA not in t.tags:
             continue

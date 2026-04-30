@@ -654,6 +654,28 @@ def P00_tin_tas_adesh_full(s: State) -> State:
     return s
 
 
+def P00_laG_tin_tas_tAm_adesh_block(s: State) -> State:
+    """
+    *Laṅ* (``state.meta['lakara'] == 'laG'``) → *lac* resolved to *tas*,
+    then **3.4.101** *tas* → **tām**, then the usual *tiṅ* / *pada* saṃjñā slice
+    and minimal *tin* it-lopa (same trailing block as ``P00_tin_tas_adesh_full``, but with
+    **3.4.101** inserted immediately after **3.4.78**).
+
+    Caller must set ``1_4_22_affix_class`` on the *dhātu* Term and already have appended
+    the *lac* placeholder (**3.2.111**) before **3.4.77**.
+    """
+    s = apply_rule("3.4.77", s)
+    s.meta["tin_adesha_pending"] = True
+    s.meta["tin_adesha_slp1"] = "tas"
+    s = apply_rule("3.4.78", s)
+    s = apply_rule("3.4.101", s)
+    for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
+        s = apply_rule(sid, s)
+    s = apply_rule("1.3.3", s)
+    s = apply_rule("1.3.9", s)
+    return s
+
+
 def P00_lat_vartamane_tas_and_sap(s: State) -> State:
     """
     Common laṭ 3rd dual *parasmaipada* spine:

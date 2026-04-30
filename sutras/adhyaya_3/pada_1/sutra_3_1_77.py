@@ -24,7 +24,8 @@ def _matches(state: State) -> bool:
     dh = state.terms[0]
     if "dhatu" not in dh.tags:
         return False
-    if (dh.meta.get("upadesha_slp1") or "").strip() not in {"muc"}:
+    # Narrow demo extension: allow additional tudādi witnesses when the recipe arms.
+    if (dh.meta.get("upadesha_slp1") or "").strip() not in {"muc", "kF"}:
         return False
     if any((t.meta.get("upadesha_slp1") or "").strip() == "Sa" for t in state.terms):
         return False

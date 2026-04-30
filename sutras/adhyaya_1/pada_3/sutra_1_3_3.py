@@ -41,6 +41,10 @@ def _eligible_terms(state: State):
             continue
         if "sup" in t.tags and last.slp1 in TUSMA:
             continue
+        up_tin = (t.meta.get("upadesha_slp1") or "").strip()
+        # **tām** (narrow **3.4.101** output): final nasal *m* is not *halantyam-it*.
+        if up_tin == "tAm" and last.slp1 == "m":
+            continue
         # *na vibhaktau tusmāḥ* (1.3.4) — *tiṅ* *ādeśa* *vibhakti* finals in *tusma*
         # are likewise not *halantyam-it* (e.g. *tas*, *mas*).
         if is_tin_vibhakti_pratyaya(t) and last.slp1 in TUSMA:

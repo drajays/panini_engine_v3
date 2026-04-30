@@ -14,11 +14,13 @@ producing the short-a outcome.  Alternative: make 6.1.107 block
 6.1.101 via state.blocked_sutras — but only for this specific
 boundary.  Since only one context matters (a + am), simpler to
 do the merge here directly.
+
+v3.5 guard: when the *aṅga* ends in ``r`` before ``am``, the *else* branch
+must **not** delete ``am``'s initial ``a`` — that would yield an illegal
+``r``+``m`` cluster (e.g. ``hotAr`` + ``am`` → ``*hotArm``).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
-
-
 def _find_target(state: State):
     """
     Find boundary where a vowel meets pratyaya 'am' (am upadeśa).
@@ -42,6 +44,12 @@ def _find_target(state: State):
         if anga.meta.get("ami_purva_done"):
             continue
         if nxt.varnas[0].slp1 != "a":
+            continue
+        # ``…r`` + ``am``: do **not** drop ``am``-initial ``a`` — that would yield an
+        # illegal *r*+*m* cluster (e.g. ``hotAr`` + ``am`` → ``*hotArm`` instead of
+        # ``hotAram``).  Contrast ``hari`` + ``am`` → ``har`` + ``im`` (vowel-final
+        # *aṅga* path).
+        if anga.varnas[-1].slp1 == "r":
             continue
         return i
     return None

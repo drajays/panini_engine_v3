@@ -64,12 +64,18 @@ def is_sup_vibhakti_pratyaya(t: Term) -> bool:
     return LUK_LOPA_GHOST_TAG not in t.tags
 
 
+# **3.4.101** *tas* → **tām** in *laṅ* / *lit* … — surface *tiṅ* not in ``TIN_ADESHA_18``.
+TIN_SURFACE_AADESHA_SLP1_EXTRA: Final[frozenset[str]] = frozenset({"tAm"})
+
+
 def is_tin_vibhakti_pratyaya(t: Term) -> bool:
     """*Tiṅ* *ādeśa* replacers of *lac* only (**3.4.78**), not *śap* / *śyan* / *lakāra* *upadeśa*."""
     if t.kind != "pratyaya":
         return False
     up = _norm_upadesha_slp1(t.meta.get("upadesha_slp1") or "")
-    return up in TIN_ADESHA_SET
+    if up in TIN_ADESHA_SET:
+        return True
+    return up in TIN_SURFACE_AADESHA_SLP1_EXTRA and "tin_adesha_3_4_78" in t.tags
 
 
 def term_has_1_4_104_vibhakti(t: Term) -> bool:

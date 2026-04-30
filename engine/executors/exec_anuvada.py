@@ -2,15 +2,15 @@
 engine/executors/exec_anuvada.py
 ──────────────────────────────────
 
-अनुवाद — pure restatement.  Does nothing.
+अनुवाद — restatement; default *prayoga* is trace-only (no ``act``).
 
-Purpose: makes inherited anuvṛtti explicit in the trace without
-pretending a grammatical operation took place.  The anuvṛtti itself
-is ALREADY baked into rec.text_slp1 / text_dev (CONSTITUTION Art. 4),
-so execution is truly a no-op.
+When ``rec.act`` is set, it runs after ``cond`` passes (meta / *śruti*
+stamps, arm clears — still typically no *varṇa* tape change).
 
-R1-exempt; the dispatcher records this as APPLIED with form unchanged.
-Still returns fired=True so that the trace shows the line.
+Purpose: inherited *anuvṛtti* is baked into ``rec.text_slp1`` / ``text_dev``
+(CONSTITUTION Art. 4); the trace row records the *śāstra* line.
+
+R1-exempt; the dispatcher records **AUDIT** when the form is unchanged.
 """
 from __future__ import annotations
 
@@ -31,4 +31,6 @@ def exec_anuvada(
     # APPLIED row.
     if rec.cond is not None and not rec.cond(state):
         return state, False
+    if rec.act is not None:
+        return rec.act(state), True
     return state, True

@@ -16,16 +16,24 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    if not state.tripadi_zone:
+    # Branch A (default): Tripāḍī, pada-final n-lopa.
+    if state.tripadi_zone and len(state.terms) == 1 and "pada" in state.terms[0].tags:
+        t0 = state.terms[0]
+        armed = ("krt_tfc" in t0.tags) or bool(state.meta.get("8_2_7_arm"))
+        if not armed:
+            return False
+        if t0.meta.get("nalopa_8_2_7_done"):
+            return False
+        if not t0.varnas:
+            return False
+        return t0.varnas[-1].slp1 == "n"
+
+    # Branch B (narrow demo): samāsa boundary n-lopa on the prior member (P011 dvigu).
+    if not state.meta.get("8_2_7_compound_purvapada_n_lopa_arm"):
         return False
-    if len(state.terms) != 1:
+    if len(state.terms) < 2:
         return False
     t0 = state.terms[0]
-    if "pada" not in t0.tags:
-        return False
-    armed = ("krt_tfc" in t0.tags) or bool(state.meta.get("8_2_7_arm"))
-    if not armed:
-        return False
     if t0.meta.get("nalopa_8_2_7_done"):
         return False
     if not t0.varnas:
@@ -37,6 +45,8 @@ def act(state: State) -> State:
     t0 = state.terms[0]
     t0.varnas.pop()
     t0.meta["nalopa_8_2_7_done"] = True
+    # One-shot for the narrow compound branch.
+    state.meta.pop("8_2_7_compound_purvapada_n_lopa_arm", None)
     return state
 
 

@@ -38,3 +38,10 @@ def test_1_1_40_marks_avyaya_for_tosun() -> None:
     assert "avyaya" in s1.terms[0].tags
     assert "avyaya" in s1.terms[1].tags
 
+
+def test_1_1_40_marks_avyaya_for_tumun() -> None:
+    s0 = State(terms=[_anga("BU"), _pr("tum", "tumun")])
+    s1 = apply_rule("1.1.40", s0)
+    assert "avyaya" in s1.terms[0].tags
+    assert "avyaya" in s1.terms[1].tags
+

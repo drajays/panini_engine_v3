@@ -3,11 +3,12 @@
 
 User note (``1_1_40.md``): avyaya assignment for kṛdantas / derivatives ending in
 the pratyayas **ktvā**, **tosun**, **kasun** (historical pratyaya identity, not
-mere terminal phonology).
+mere terminal phonology). **tumun** is included for ``split_prakriyas_11`` **P001**
+(**भवितुम्**) — same *avyaya* classification pattern as *ktvā*/*tosun*/*kasun*.
 
 Engine (glass-box):
   - Detect the pratyaya ancestry via ``pratyaya.meta['upadesha_slp1_original']``
-    (or fallback to current ``upadesha_slp1``) in {"ktvA","tosun","kasun"}.
+    (or fallback to current ``upadesha_slp1``) in {"ktvA","tosun","kasun","tumun"}.
   - If an aṅga is followed by such a pratyaya, tag the block as ``avyaya``.
   - This is a metadata/paribhāṣā effect: no surface change.
 
@@ -24,7 +25,7 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.lopa_ghost import iter_anga_to_following_pratyaya_pairs
 from engine.state import State
 
-_TARGET_ORIG = frozenset({"ktvA", "tosun", "kasun"})
+_TARGET_ORIG = frozenset({"ktvA", "tosun", "kasun", "tumun"})
 
 META_1_1_40_DONE: str = "1_1_40_ktvA_tosun_kasun_avyaya_done"
 

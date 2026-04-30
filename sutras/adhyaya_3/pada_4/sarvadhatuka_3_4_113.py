@@ -15,6 +15,7 @@ from __future__ import annotations
 
 from typing import Final, FrozenSet, Tuple
 
+from sutras.adhyaya_1.pada_4.vibhakti_samjna_1_4_104 import TIN_SURFACE_AADESHA_SLP1_EXTRA
 from sutras.adhyaya_3.pada_4.tin_adesha_3_4_78 import TIN_ADESHA_18, TIN_ADESHA_SET
 
 # Vikaraṇa (śit).
@@ -45,7 +46,7 @@ SIT_SARVADHATUKA_SLP1: Final[FrozenSet[str]] = SIT_VIK_SARVADHATUKA_SLP1 | SIT_K
 # *anti* (**7.1.3** *ādeśa* for *jhi*) — *sārvadhātuka* *tiṅ*-class for narrow inventory checks.
 _TIN_713_EXTRA: Final[Tuple[str, ...]] = ("anti",)
 SARVADHATUKA_UPADESHA_SLP1: Final[FrozenSet[str]] = (
-    TIN_ADESHA_SET | SIT_SARVADHATUKA_SLP1 | frozenset(_TIN_713_EXTRA)
+    TIN_ADESHA_SET | SIT_SARVADHATUKA_SLP1 | frozenset(_TIN_713_EXTRA) | TIN_SURFACE_AADESHA_SLP1_EXTRA
 )
 
 TIN_COUNT: Final[int] = len(TIN_ADESHA_18)

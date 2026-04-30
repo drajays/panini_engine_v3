@@ -30,6 +30,7 @@ from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import (
     SIT_VIK_SARVADHATUKA_SLP1,
     is_sarvadhatuka_upadesha_slp1,
 )
+from sutras.adhyaya_1.pada_4.vibhakti_samjna_1_4_104 import TIN_SURFACE_AADESHA_SLP1_EXTRA
 from sutras.adhyaya_3.pada_4.tin_adesha_3_4_78 import TIN_ADESHA_SET
 
 # Recipe-only: when **3.4.69** has not run, allow *kartari* for unit tests / narrow demos.
@@ -55,7 +56,11 @@ def _sap_trigger_next_pratyaya(up: str) -> bool:
         return False
     if k in SIT_VIK_SARVADHATUKA_SLP1:
         return False
-    return k in TIN_ADESHA_SET or k in SIT_KRT_SARVADHATUKA_SLP1
+    return (
+        k in TIN_ADESHA_SET
+        or k in TIN_SURFACE_AADESHA_SLP1_EXTRA
+        or k in SIT_KRT_SARVADHATUKA_SLP1
+    )
 
 
 def _kartari_ok(state: State) -> bool:

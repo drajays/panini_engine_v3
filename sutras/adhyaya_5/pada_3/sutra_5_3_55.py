@@ -3,8 +3,9 @@
 *atiśayana* when ``5_3_55_tamap_arm`` *meta*)
 
 Full *Aṣṭādhyāyī* *prayoga* needs **5.3.2**–**5.3.26** *adhikāra* and *samarthya*; v3
-*glass-box* *corpus* only appends a **tama**+**p**-shaped taddhita *Term* for
-*piṇḍa* *prakriyā* (e.g. *kumārī* → *kumāritamā* in user ``kumari.md``).
+*glass-box* *corpus* appends a **tama**+**p**-shaped taddhita *Term* when either
+``5_3_55_tamap_arm`` (*strīliṅga*, e.g. *kumārī* → *kumāritamā* in ``kumari.md``)
+or ``5_3_55_tamap_pullinga_arm`` (*pulliṅga*, ``prakriya_22`` *ratnadhātama*-) is set.
 """
 from __future__ import annotations
 
@@ -14,16 +15,22 @@ from phonology     import parse_slp1_upadesha_sequence
 
 
 def _site(state: State) -> int | None:
-    if not state.meta.get("5_3_55_tamap_arm"):
-        return None
     if len(state.terms) != 1:
         return None
     t0 = state.terms[0]
-    if "prātipadika" not in t0.tags or "strīliṅga" not in t0.tags:
+    if "prātipadika" not in t0.tags:
         return None
     if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms[1:]):
         return None
-    return 0
+    if state.meta.get("5_3_55_tamap_arm"):
+        if "strīliṅga" not in t0.tags:
+            return None
+        return 0
+    if state.meta.get("5_3_55_tamap_pullinga_arm"):
+        if "pulliṅga" not in t0.tags:
+            return None
+        return 0
+    return None
 
 
 def cond(state: State) -> bool:
@@ -41,6 +48,7 @@ def act(state: State) -> State:
     )
     state.terms.append(p)
     state.meta.pop("5_3_55_tamap_arm", None)
+    state.meta.pop("5_3_55_tamap_pullinga_arm", None)
     return state
 
 
