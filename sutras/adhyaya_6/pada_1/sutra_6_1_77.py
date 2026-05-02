@@ -25,6 +25,8 @@ from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
 
 
 _YAN_MAP = {"i": "y", "I": "y", "u": "v", "U": "v", "f": "r", "F": "r", "x": "l", "X": "l"}
+# Armed paths may see dīrgha vowels represented as SLP1 capitals; treat them as *ac* for this rule.
+_AC_EXT = frozenset(set(AC) | {"A", "I", "U", "F", "X", "E", "O"})
 
 # Recipe-only general *iko yaṇ aci* across adjacent ``Term``s (e.g. *nu* + *anti*).
 _META_IK_YAN_ACI_GENERAL: str = "6_1_77_ik_yan_aci_general_arm"
@@ -48,7 +50,7 @@ def _find_armed_ik_yan_aci(state: State) -> int | None:
         la = left.varnas[-1].slp1
         rf = right.varnas[0].slp1
         # Armed path: allow dīrgha ``I``/``U``/… (``_YAN_MAP``), not only ``IK``.
-        if la not in _YAN_MAP or rf not in AC:
+        if la not in _YAN_MAP or rf not in _AC_EXT:
             continue
         return i
     return None

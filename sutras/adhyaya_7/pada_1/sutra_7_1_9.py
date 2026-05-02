@@ -3,6 +3,11 @@
 
 "After an a-stem aṅga, the pratyaya 'bhis' is replaced by 'ais' (= Es)."
 
+Teaching **P042** (*gārgyāḥ*): JSON cites **7.1.9** for the *bahu-vacana* surface step;
+engine implements a **narrow** ``jas`` → ``as`` substitution (``a`` + ``s`` *upadeśa*)
+when ``state.meta['P042_7_1_9_jas_to_as_arm']`` — distinct from the **Bis** → **Es**
+branch below.
+
   cell 3-3: rAma + Bis → rAma + Es (via 7.1.9)
                         → rAm + Es    (via 7.3.103 a→e? no — 7.1.9 must
                                        fire BEFORE 7.3.103 because it
@@ -24,6 +29,26 @@ from engine        import SutraType, SutraRecord, register_sutra
 from engine.gates  import adhikara_in_effect
 from engine.state  import State
 from phonology     import mk
+
+
+def _matches_p042_jas_to_as(state: State) -> bool:
+    if not state.meta.get("P042_7_1_9_jas_to_as_arm"):
+        return False
+    if len(state.terms) < 2:
+        return False
+    anga = state.terms[-2]
+    pratyaya = state.terms[-1]
+    if "anga" not in anga.tags or "P042_gArgya_stem" not in anga.tags:
+        return False
+    if "sup" not in pratyaya.tags:
+        return False
+    if (pratyaya.meta.get("upadesha_slp1") or "").strip() != "jas":
+        return False
+    if pratyaya.meta.get("P042_jas_to_as_done"):
+        return False
+    if not anga.varnas or anga.varnas[-1].slp1 != "a":
+        return False
+    return True
 
 
 def _matches(state: State) -> bool:
@@ -49,10 +74,18 @@ def _matches(state: State) -> bool:
 def cond(state: State) -> bool:
     if not adhikara_in_effect("7.1.9", state, "6.4.1"):
         return False
-    return _matches(state)
+    return _matches_p042_jas_to_as(state) or _matches(state)
 
 
 def act(state: State) -> State:
+    if _matches_p042_jas_to_as(state):
+        pratyaya = state.terms[-1]
+        pratyaya.varnas = [mk("a"), mk("s")]
+        pratyaya.meta["upadesha_slp1_original"] = "jas"
+        pratyaya.meta["upadesha_slp1"] = "as"
+        pratyaya.meta["P042_jas_to_as_done"] = True
+        state.meta.pop("P042_7_1_9_jas_to_as_arm", None)
+        return state
     if not _matches(state):
         return state
     pratyaya = state.terms[-1]

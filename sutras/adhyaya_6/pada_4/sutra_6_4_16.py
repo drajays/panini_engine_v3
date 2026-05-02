@@ -9,9 +9,13 @@ Narrow v3 (*cicīṣati*):
   drop the leading ``i`` of ``is`` so the surface presents ``…Iṣ…`` (tripāḍī
   **8.3.59** conditions on *ī* immediately before *s*).
 
+P030 (*vivakṣaka*): same frame, but dhātu ``vac`` after samprasāraṇa presents as
+``u`` + ``c`` — lengthen initial ``u`` to ``U`` (``ū``), then drop leading ``i``
+from ``is`` → ``s``.
+
 Engine:
   - recipe arms ``state.meta['6_4_16_sani_dirgha_arm']``.
-  - applies only to ``upadesha_slp1`` in a fixed demo set (currently ``ci``).
+  - applies to ``upadesha_slp1`` in ``{"ci", "vac"}``.
 """
 from __future__ import annotations
 
@@ -19,7 +23,7 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology.varna import mk
 
-_DHATU_UPADESHA = frozenset({"ci"})
+_DHATU_UPADESHA = frozenset({"ci", "vac"})
 
 
 def _find_main_ci(state: State) -> int | None:
@@ -37,7 +41,18 @@ def _find_main_ci(state: State) -> int | None:
         up = (mid.meta.get("upadesha_slp1") or "").strip()
         if up not in _DHATU_UPADESHA:
             continue
-        if not mid.varnas or mid.varnas[-1].slp1 != "i":
+        if up == "ci":
+            if not mid.varnas or mid.varnas[-1].slp1 != "i":
+                continue
+        elif up == "vac":
+            # Samprasāraṇa + pūrvarūpa: ``u`` + ``c`` on the non-abhyāsa copy.
+            if (
+                len(mid.varnas) < 2
+                or mid.varnas[0].slp1 != "u"
+                or mid.varnas[1].slp1 != "c"
+            ):
+                continue
+        else:
             continue
         if mid.meta.get("6_4_16_dirgha_done"):
             continue
@@ -58,7 +73,11 @@ def act(state: State) -> State:
     if i is None:
         return state
     mid = state.terms[i]
-    mid.varnas[-1] = mk("I")
+    up = (mid.meta.get("upadesha_slp1") or "").strip()
+    if up == "ci":
+        mid.varnas[-1] = mk("I")
+    else:
+        mid.varnas[0] = mk("U")
     mid.meta["6_4_16_dirgha_done"] = True
     san = state.terms[i + 1]
     if (

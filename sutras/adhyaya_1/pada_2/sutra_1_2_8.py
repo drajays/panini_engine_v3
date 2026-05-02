@@ -15,7 +15,7 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
 
-_DHATU_SET = {"rud", "vid", "muz", "grah", "svap", "pfcC", "ci"}
+_DHATU_SET = {"rud", "vid", "muz", "grah", "svap", "pfcC", "ci", "vac"}
 
 
 def _find(state: State) -> int | None:

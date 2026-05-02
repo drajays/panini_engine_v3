@@ -17,7 +17,23 @@ from phonology import mk
 
 _JHAL_TO_JAS = {
     "D": "d",  # dh -> d (for this demo)
+    "G": "g",  # P033: gh -> g before jaś d
 }
+
+
+def _find_p033_Gd(state: State):
+    if not state.meta.get("P033_8_4_53_jashtva_arm"):
+        return None
+    if len(state.terms) != 1:
+        return None
+    t = state.terms[0]
+    if "pada" not in t.tags or t.meta.get("P033_8_4_53_Gd_done"):
+        return None
+    vs = t.varnas
+    for i in range(len(vs) - 1):
+        if vs[i].slp1 == "G" and vs[i + 1].slp1 == "d":
+            return i
+    return None
 
 
 def _find(state: State):
@@ -38,10 +54,17 @@ def _find(state: State):
 def cond(state: State) -> bool:
     if not state.tripadi_zone:
         return False
-    return _find(state) is not None
+    return _find_p033_Gd(state) is not None or _find(state) is not None
 
 
 def act(state: State) -> State:
+    ip = _find_p033_Gd(state)
+    if ip is not None:
+        t = state.terms[0]
+        t.varnas[ip] = mk(_JHAL_TO_JAS[t.varnas[ip].slp1])
+        t.meta["P033_8_4_53_Gd_done"] = True
+        state.meta.pop("P033_8_4_53_jashtva_arm", None)
+        return state
     i = _find(state)
     if i is None:
         return state

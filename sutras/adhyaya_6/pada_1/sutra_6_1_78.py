@@ -56,6 +56,16 @@ def _find_eco_aci_boundary(state: State):
         first = nxt.varnas[0].slp1
         if last in _ECO_SPLIT and first in AC:
             return i
+        # **P036** (*nināya*): *eco* before the augment vowel of ``ṇal`` (**N**+**a**+…),
+        #   i.e. *aṅga*-final **e** + the **a** of ``Nal`` (second *varṇa*), recipe-gated.
+        if last in _ECO_SPLIT:
+            up = (nxt.meta.get("upadesha_slp1") or "").strip()
+            if (
+                up == "Nal"
+                and len(nxt.varnas) >= 2
+                and nxt.varnas[1].slp1 in AC
+            ):
+                return i
     return None
 
 

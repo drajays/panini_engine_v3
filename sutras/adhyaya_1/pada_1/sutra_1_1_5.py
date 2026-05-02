@@ -47,6 +47,12 @@ def ik_guna_vriddhi_blocked_by_1_1_5(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
+    # **P041** (*agnicit*): record *kṅiti* paribhāṣā after *kvip* (*kit*) context
+    # without requiring a surviving ``kngiti``-tagged ``Term``.
+    if state.meta.get("P041_record_kngiti_arm"):
+        if state.paribhasha_gates.get(GATE_KEY, {}).get("ik_guna_vrddhi_kngiti") is True:
+            return False
+        return True
     if not ik_guna_vriddhi_blocked_by_1_1_5(state):
         return False
     if state.paribhasha_gates.get(GATE_KEY, {}).get("ik_guna_vrddhi_kngiti") is True:
@@ -55,6 +61,14 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    if state.meta.get("P041_record_kngiti_arm"):
+        state.paribhasha_gates[GATE_KEY] = {
+            "ik_guna_vrddhi_kngiti": True,
+            "kngiti": True,
+        }
+        state.samjna_registry["1.1.5_kngiti"] = True
+        state.meta.pop("P041_record_kngiti_arm", None)
+        return state
     state.paribhasha_gates[GATE_KEY] = {
         "ik_guna_vrddhi_kngiti": True,
         "kngiti": True,

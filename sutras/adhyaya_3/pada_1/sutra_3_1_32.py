@@ -17,10 +17,23 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    for t in state.terms:
-        if "sanadi" in t.tags:
+    # P025: *ṇic* residue stays a separate ``pratyaya`` ``Term``; only the stem
+    # *prakṛti* (not the *sanādi* ``Term`` itself) receives *dhātu* here.
+    if state.meta.get("P025_3_1_32_arm"):
+        for t in state.terms:
+            if t.kind != "prakriti":
+                continue
+            if "sanadi" in t.tags:
+                continue
+            if "prātipadika" not in t.tags:
+                continue
             t.tags.add("dhatu")
             t.tags.add("anga")
+    else:
+        for t in state.terms:
+            if "sanadi" in t.tags:
+                t.tags.add("dhatu")
+                t.tags.add("anga")
     state.samjna_registry["3.1.32_sanadyanta_dhatu"] = True
     return state
 

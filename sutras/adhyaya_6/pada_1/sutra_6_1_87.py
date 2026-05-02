@@ -44,6 +44,10 @@ def _find_pair(state: State):
         (ti2, vi2, v2) = flat[k + 1]
         pair = (v1.slp1, v2.slp1)
         g = guna_map.get(pair)
+        # ``1.1.50`` may install a minimal ``sthanantara_guna`` map (hrasva ``a`` only).
+        # Fall back to the full ``_GUNA`` table for pairs like ``(A, u)`` → ``o``.
+        if g is None:
+            g = _GUNA.get(pair)
         if g is not None:
             return (ti1, vi1, ti2, vi2, g, None)
         # Special: a/A + f/x → a (then 1.1.51 uRaN-rapara will append r/l).

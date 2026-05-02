@@ -20,7 +20,36 @@ from engine.state import State
 from phonology    import mk, HAL
 
 
+def _find_upadha_a_nic_p037(state: State):
+    """Narrow **P037**: *aṭ* + *ṇic* residue ``i`` (``Ric`` ``Term`` still *para*)."""
+    if not state.meta.get("P037_7_2_116_arm"):
+        return None
+    if len(state.terms) < 2:
+        return None
+    dhatu = next((t for t in state.terms if "dhatu" in t.tags), None)
+    if dhatu is None:
+        return None
+    di = state.terms.index(dhatu)
+    if di + 1 >= len(state.terms):
+        return None
+    pr = state.terms[di + 1]
+    if "nic" not in pr.tags:
+        return None
+    if dhatu.meta.get("upadha_vrddhi_done"):
+        return None
+    if len(dhatu.varnas) < 2:
+        return None
+    if dhatu.varnas[-1].slp1 not in HAL:
+        return None
+    if dhatu.varnas[-2].slp1 != "a":
+        return None
+    return (di, len(dhatu.varnas) - 2)
+
+
 def _find_upadha_a(state: State):
+    hit = _find_upadha_a_nic_p037(state)
+    if hit is not None:
+        return hit
     if len(state.terms) < 2:
         return None
     dhatu = next((t for t in state.terms if "dhatu" in t.tags), None)
@@ -56,6 +85,7 @@ def act(state: State) -> State:
     ti, vi = hit
     state.terms[ti].varnas[vi] = mk("A")
     state.terms[ti].meta["upadha_vrddhi_done"] = True
+    state.meta.pop("P037_7_2_116_arm", None)
     return state
 
 

@@ -636,6 +636,26 @@ def P00_tip_to_ti(s: State) -> State:
     return s
 
 
+def P00_lit_tip_to_Nal(s: State) -> State:
+    """
+    *Liṭ* 3sg *parasmaipada* **tip** row (same block as ``P00_tip_to_ti``), then
+    **3.4.82** *lit* **tip** → **ṇal** (``Nal``) when ``P036_3_4_82_lit_Nal_arm`` is set.
+
+    Caller must set ``1_4_22_affix_class`` to ``\"eka\"`` on the primary *dhātu*
+    ``Term`` before **3.4.77** (cf. ``P00_tip_to_ti``).
+    """
+    s = apply_rule("3.4.77", s)
+    s.meta["tin_adesha_pending"] = True
+    s.meta["tin_adesha_slp1"] = "tip"
+    s = apply_rule("3.4.78", s)
+    s = apply_rule("1.4.99", s)
+    s = apply_rule("1.3.3", s)
+    s = apply_rule("1.3.9", s)
+    s.meta["P036_3_4_82_lit_Nal_arm"] = True
+    s = apply_rule("3.4.82", s)
+    return s
+
+
 def P00_tin_tas_adesh_full(s: State) -> State:
     """
     *Laṭ* → *tas* (3rd dual *parasmaipada*) with *tiṅ* / *pada* saṃjñā slice.

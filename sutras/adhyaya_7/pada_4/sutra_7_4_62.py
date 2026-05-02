@@ -5,8 +5,12 @@ Demo slice (जिघृक्षति):
   In the abhyāsa, replace initial guttural `g` (ku) with its corresponding
   palatal `j` (cu).
 
+Teaching **P040** (*juhoti*): *abhyāsa* initial **h** (``hu``) → **j**
+(``P040_juhoti_abhyasa`` + ``state.meta['P040_7_4_62_abhyasa_arm']``).
+
 Engine:
   - recipe arms via ``state.meta['7_4_62_kuhoscu_abhyasa_arm']``.
+  - **P040** via ``state.meta['P040_7_4_62_abhyasa_arm']``.
 """
 from __future__ import annotations
 
@@ -25,16 +29,41 @@ def _find(state: State):
             continue
         if not t.varnas:
             continue
-        if t.varnas[0].slp1 == "g":
+        # **g** or **G** (घ) → **j** (P034 *jakṣatuḥ* abhyāsa, *kuhoścuḥ* narrow).
+        if t.varnas[0].slp1 in {"g", "G"}:
+            return ti
+    return None
+
+
+def _find_p040_juhoti(state: State):
+    if not state.meta.get("P040_7_4_62_abhyasa_arm"):
+        return None
+    for ti, t in enumerate(state.terms):
+        if "abhyasa" not in t.tags:
+            continue
+        if "P040_juhoti_abhyasa" not in t.tags:
+            continue
+        if t.meta.get("7_4_62_done"):
+            continue
+        if not t.varnas:
+            continue
+        if t.varnas[0].slp1 == "h":
             return ti
     return None
 
 
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    return _find(state) is not None or _find_p040_juhoti(state) is not None
 
 
 def act(state: State) -> State:
+    ti_p = _find_p040_juhoti(state)
+    if ti_p is not None:
+        t = state.terms[ti_p]
+        t.varnas[0] = mk("j")
+        t.meta["7_4_62_done"] = True
+        state.meta.pop("P040_7_4_62_abhyasa_arm", None)
+        return state
     ti = _find(state)
     if ti is None:
         return state

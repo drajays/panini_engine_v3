@@ -49,8 +49,23 @@ def _matches_lyuw(state: State) -> bool:
     return True
 
 
+def _matches_tyup(state: State) -> bool:
+    if len(state.terms) < 2:
+        return False
+    pr = state.terms[-1]
+    if "taddhita" not in pr.tags:
+        return False
+    if pr.meta.get("upadesha_slp1") != "tyup":
+        return False
+    if pr.meta.get("tyu_to_tana_done"):
+        return False
+    if "".join(v.slp1 for v in pr.varnas) != "tyu":
+        return False
+    return True
+
+
 def _matches(state: State) -> bool:
-    return _matches_nvul(state) or _matches_lyuw(state)
+    return _matches_nvul(state) or _matches_lyuw(state) or _matches_tyup(state)
 
 
 def cond(state: State) -> bool:
@@ -71,6 +86,13 @@ def act(state: State) -> State:
         pr.meta["yu_to_ana_done"] = True
         pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "lyuw")
         pr.meta["upadesha_slp1"] = "ana"
+        return state
+    if _matches_tyup(state):
+        pr = state.terms[-1]
+        pr.varnas = [mk("t"), mk("a"), mk("n"), mk("a")]
+        pr.meta["tyu_to_tana_done"] = True
+        pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "tyup")
+        pr.meta["upadesha_slp1"] = "tana"
         return state
     return state
 

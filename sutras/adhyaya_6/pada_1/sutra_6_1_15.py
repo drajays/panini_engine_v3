@@ -22,7 +22,10 @@ _DHATU_UPADESHA_SET = frozenset({"vac", "svap", "yaj"})
 
 def _is_kit_pratyaya(pr) -> bool:
     markers = pr.meta.get("it_markers") or set()
-    return "k" in markers or pr.meta.get("kit") is True
+    if "k" in markers or pr.meta.get("kit") is True:
+        return True
+    # *kitvat* on *san* (**1.2.8** ``kngiti``) licences **6.1.15** for *vac*+*san*.
+    return "kngiti" in pr.tags and "sanadi" in pr.tags
 
 
 def _find_target(state: State):

@@ -35,7 +35,7 @@ def _matches(state: State) -> bool:
     if dh.meta.get("3_1_78_snam_done"):
         return False
     up = (dh.meta.get("upadesha_slp1") or "").strip()
-    if up not in {"Bid", "Cid", "ruD"}:
+    if up not in {"Bid", "Cid", "ruD", "viS"}:
         return False
     return any(_is_ac(v.slp1) for v in dh.varnas)
 

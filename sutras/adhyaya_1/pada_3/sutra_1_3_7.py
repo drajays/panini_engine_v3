@@ -25,6 +25,15 @@ from sutras.adhyaya_1.pada_3.sutra_1_3_9 import IT_LOPA_TAGS
 
 
 def _terms_sup_or_primary(state: State):
+    # P025 *ṇic* ``Term`` (``meta['P025_Nic_pratyaya']``) must win over a leading
+    # *prātipadika* stem so **1.3.7** *cuṭu* tags the initial ``N`` of ``Nic``.
+    nic_p025 = [
+        t
+        for t in state.terms
+        if t.kind == "pratyaya" and t.meta.get("P025_Nic_pratyaya")
+    ]
+    if nic_p025:
+        return nic_p025
     cand = [
         t for t in state.terms
         if "sup" in t.tags and "taddhita" not in t.tags

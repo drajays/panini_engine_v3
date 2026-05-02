@@ -9,6 +9,7 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology    import mk
+from phonology.pratyahara import JHAL
 
 
 def _find(state: State):
@@ -17,6 +18,10 @@ def _find(state: State):
     t = state.terms[0]
     if t.meta.get("8_2_36_sha_done"):
         return None
+    if state.meta.get("P031_8_2_36_S_before_jhal_arm"):
+        for i in range(len(t.varnas) - 1):
+            if t.varnas[i].slp1 == "S" and t.varnas[i + 1].slp1 in JHAL:
+                return (0, i)
     # Narrow demo: allow final S (ś) → z (ṣ) when recipe-armed (pRSTvA).
     if state.meta.get("8_2_36_sh_to_sh_arm") and t.varnas and t.varnas[-1].slp1 == "S":
         return (0, len(t.varnas) - 1)
@@ -38,6 +43,7 @@ def act(state: State) -> State:
     state.terms[ti].varnas[i] = mk("z")
     state.terms[ti].meta["8_2_36_sha_done"] = True
     state.meta.pop("8_2_36_sh_to_sh_arm", None)
+    state.meta.pop("P031_8_2_36_S_before_jhal_arm", None)
     return state
 
 

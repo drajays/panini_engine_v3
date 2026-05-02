@@ -11,6 +11,11 @@ that *s* ``Varna`` (and remove an emptied *sup* ``Term``).
     lists **6.1.66** only; commentary uses **6.1.68** — ``prakriya_36_ardhaBAj_sup_lopa_arm``).
   • ``prakriya_37`` — ``ṭāp``/long-vowel-final stem ``pAcakavndArikA`` + apṛkta ``s`` (*śruti* slice for
     **पाचकवृन्दारिका** — ``prakriya_37_6_1_68_tApanta_arm``; distinct from the ``hal``-final branch above).
+
+  • P023 — ``dyukAmA`` (ṭāp-anta) + apṛkta ``s`` → lopa (``P023_6_1_68_tApanta_arm``).
+  • P039 — ``viSAKA`` (strī *ṭāp*-anta stem) + apṛkta ``s`` → lopa
+    (``P039_6_1_68_tApanta_arm``).
+  • P041 — ``agnicit`` (hal-anta) + apṛkta ``s`` → lopa (``P041_6_1_68_arm``).
 """
 from __future__ import annotations
 
@@ -91,9 +96,75 @@ def _eligible_prakriya_37_tApanta(state: State) -> bool:
     return True
 
 
+def _eligible_P023_tApanta(state: State) -> bool:
+    if len(state.terms) < 2:
+        return False
+    if not state.meta.get("P023_6_1_68_tApanta_arm"):
+        return False
+    anga, pr = state.terms[-2], state.terms[-1]
+    if "anga" not in anga.tags:
+        return False
+    if "sup" not in pr.tags or len(pr.varnas) != 1:
+        return False
+    if TAG_APRKTA not in pr.tags:
+        return False
+    if pr.varnas[0].slp1 != "s":
+        return False
+    if not anga.varnas or anga.varnas[-1].slp1 != "A":
+        return False
+    if not (anga.meta.get("stri_TAp_4_1_4") or "TAp_anta" in anga.tags):
+        return False
+    return True
+
+
+def _eligible_P041_agnicit_hal(state: State) -> bool:
+    if len(state.terms) < 2:
+        return False
+    if not state.meta.get("P041_6_1_68_arm"):
+        return False
+    anga, pr = state.terms[-2], state.terms[-1]
+    if "anga" not in anga.tags or "P041_agnicit_demo" not in anga.tags:
+        return False
+    if "sup" not in pr.tags or len(pr.varnas) != 1:
+        return False
+    if TAG_APRKTA not in pr.tags:
+        return False
+    if pr.varnas[0].slp1 != "s":
+        return False
+    if not anga.varnas or anga.varnas[-1].slp1 not in HAL:
+        return False
+    return True
+
+
+def _eligible_P039_tApanta(state: State) -> bool:
+    if len(state.terms) < 2:
+        return False
+    if not state.meta.get("P039_6_1_68_tApanta_arm"):
+        return False
+    anga, pr = state.terms[-2], state.terms[-1]
+    if "anga" not in anga.tags:
+        return False
+    if "P039_viSAKA_demo" not in anga.tags:
+        return False
+    if "sup" not in pr.tags or len(pr.varnas) != 1:
+        return False
+    if TAG_APRKTA not in pr.tags:
+        return False
+    if pr.varnas[0].slp1 != "s":
+        return False
+    if not anga.varnas or anga.varnas[-1].slp1 != "A":
+        return False
+    if not (anga.meta.get("stri_TAp_4_1_4") or "TAp_anta" in anga.tags):
+        return False
+    return True
+
+
 def cond(state: State) -> bool:
     return (
-        _eligible_prakriya_37_tApanta(state)
+        _eligible_P041_agnicit_hal(state)
+        or _eligible_P039_tApanta(state)
+        or _eligible_P023_tApanta(state)
+        or _eligible_prakriya_37_tApanta(state)
         or _eligible_prakriya_36_ardhaBAj(state)
         or _eligible_prakriya_35_vAc(state)
         or _eligible(state)
@@ -101,6 +172,27 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    if _eligible_P041_agnicit_hal(state):
+        pr = state.terms[-1]
+        pr.varnas.clear()
+        state.terms.pop()
+        state.samjna_registry["6.1.68_hal_sup_lopa_P041"] = True
+        state.meta.pop("P041_6_1_68_arm", None)
+        return state
+    if _eligible_P039_tApanta(state):
+        pr = state.terms[-1]
+        pr.varnas.clear()
+        state.terms.pop()
+        state.samjna_registry["6.1.68_tApanta_sup_lopa_P039"] = True
+        state.meta.pop("P039_6_1_68_tApanta_arm", None)
+        return state
+    if _eligible_P023_tApanta(state):
+        pr = state.terms[-1]
+        pr.varnas.clear()
+        state.terms.pop()
+        state.samjna_registry["6.1.68_tApanta_sup_lopa_P023"] = True
+        state.meta.pop("P023_6_1_68_tApanta_arm", None)
+        return state
     if _eligible_prakriya_37_tApanta(state):
         pr = state.terms[-1]
         pr.varnas.clear()

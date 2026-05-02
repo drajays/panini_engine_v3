@@ -28,13 +28,36 @@ def _find(state: State):
     return None
 
 
+def _find_p033_Gta(state: State):
+    """P033 **8.2.40**: *jhazi* *t*→*d* (द्) after **G** (घ्)."""
+    if not state.meta.get("P033_8_2_40_G_to_d_arm"):
+        return None
+    if len(state.terms) != 1:
+        return None
+    t = state.terms[0]
+    if "pada" not in t.tags or t.meta.get("P033_8_2_40_Gta_done"):
+        return None
+    vs = t.varnas
+    for i in range(len(vs) - 1):
+        if vs[i].slp1 == "G" and vs[i + 1].slp1 == "t":
+            return i + 1
+    return None
+
+
 def cond(state: State) -> bool:
     if not state.tripadi_zone:
         return False
-    return _find(state) is not None
+    return _find_p033_Gta(state) is not None or _find(state) is not None
 
 
 def act(state: State) -> State:
+    j3 = _find_p033_Gta(state)
+    if j3 is not None:
+        t = state.terms[0]
+        t.varnas[j3] = mk("d")
+        t.meta["P033_8_2_40_Gta_done"] = True
+        state.meta.pop("P033_8_2_40_G_to_d_arm", None)
+        return state
     j = _find(state)
     if j is None:
         return state

@@ -65,7 +65,7 @@ def is_sup_vibhakti_pratyaya(t: Term) -> bool:
 
 
 # **3.4.101** *tas* → **tām** in *laṅ* / *lit* … — surface *tiṅ* not in ``TIN_ADESHA_18``.
-TIN_SURFACE_AADESHA_SLP1_EXTRA: Final[frozenset[str]] = frozenset({"tAm"})
+TIN_SURFACE_AADESHA_SLP1_EXTRA: Final[frozenset[str]] = frozenset({"tAm", "hi", "Qi", "ran"})
 
 
 def is_tin_vibhakti_pratyaya(t: Term) -> bool:

@@ -86,7 +86,14 @@ def find_sap_insertion_dhatu_index(state: State) -> int | None:
             continue
         if i + 1 >= len(state.terms):
             continue
-        nxt = state.terms[i + 1]
+        j = i + 1
+        # Skip *liṅ* *sīyuṭ* residue (**3.4.102**) so *śap* targets the first *tiṅ*
+        # *ādeśa* (e.g. **P038** *vidhi-liṅ* → ``ran``).
+        while j < len(state.terms) and "ling_sIyuw" in state.terms[j].tags:
+            j += 1
+        if j >= len(state.terms):
+            continue
+        nxt = state.terms[j]
         if nxt.kind != "pratyaya":
             continue
         up = (nxt.meta.get("upadesha_slp1") or "").strip()
