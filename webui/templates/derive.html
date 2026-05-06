@@ -1,40 +1,40 @@
 {% extends "base.html" %}
-{% block title %}Derive — Pāṇini Engine{% endblock %}
+{% block title %}व्युत्पत्तिः — पाणिनि-यन्त्रम्{% endblock %}
 
 {% block content %}
 <div class="panel">
-  <h1>Subanta Derivation</h1>
+  <h1>सुबन्त-व्युत्पत्तिः</h1>
   <div class="form-row">
-    <label>Stem (SLP1)
+    <label>प्रातिपदिकम् (SLP1)
       <input id="stem" type="text" value="rAma">
     </label>
-    <label>Vibhakti
+    <label>विभक्तिः
       <select id="vibhakti">
-        <option value="1">1. प्रथमा</option>
-        <option value="2">2. द्वितीया</option>
-        <option value="3">3. तृतीया</option>
-        <option value="4">4. चतुर्थी</option>
-        <option value="5">5. पञ्चमी</option>
-        <option value="6" selected>6. षष्ठी</option>
-        <option value="7">7. सप्तमी</option>
-        <option value="8">8. सम्बोधन</option>
+        <option value="1">१. प्रथमा</option>
+        <option value="2">२. द्वितीया</option>
+        <option value="3">३. तृतीया</option>
+        <option value="4">४. चतुर्थी</option>
+        <option value="5">५. पञ्चमी</option>
+        <option value="6" selected>६. षष्ठी</option>
+        <option value="7">७. सप्तमी</option>
+        <option value="8">८. सम्बोधनम्</option>
       </select>
     </label>
-    <label>Vacana
+    <label>वचनम्
       <select id="vacana">
-        <option value="1">1. एकवचन</option>
-        <option value="2">2. द्विवचन</option>
-        <option value="3" selected>3. बहुवचन</option>
+        <option value="1">१. एकवचनम्</option>
+        <option value="2">२. द्विवचनम्</option>
+        <option value="3" selected>३. बहुवचनम्</option>
       </select>
     </label>
-    <label>Liṅga
+    <label>लिङ्गम्
       <select id="linga">
-        <option value="pulliṅga" selected>पुंलिङ्ग</option>
-        <option value="strīliṅga">स्त्रीलिङ्ग</option>
-        <option value="napuṃsaka">नपुंसक</option>
+        <option value="pulliṅga" selected>पुंलिङ्गम्</option>
+        <option value="strīliṅga">स्त्रीलिङ्गम्</option>
+        <option value="napuṃsaka">नपुंसकलिङ्गम्</option>
       </select>
     </label>
-    <button id="derive-btn">DERIVE</button>
+    <button id="derive-btn">व्युत्पादयतु</button>
   </div>
 </div>
 
@@ -42,19 +42,19 @@
 
 <div class="two-pane">
   <div class="panel">
-    <h2>प्रक्रिया — Trace</h2>
+    <h2>प्रक्रिया</h2>
     <div class="trace-filter" id="trace-filter">
-      <label><input type="checkbox" value="APPLIED"    checked> Applied</label>
-      <label><input type="checkbox" value="AUDIT"     checked> Audit</label>
-      <label><input type="checkbox" value="BLOCKED"    checked> Blocked</label>
-      <label><input type="checkbox" value="SKIPPED">            Skipped</label>
-      <label><input type="checkbox" value="STRUCTURAL" checked> Structural</label>
+      <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
+      <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
+      <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
+      <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
+      <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
     </div>
     <ol class="trace" id="trace"></ol>
   </div>
 
   <div class="panel sutra-detail" id="sutra-detail">
-    <div class="empty">Click a trace step to view its sūtra.</div>
+    <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
   </div>
 </div>
 
@@ -64,9 +64,7 @@
 <script src="{{ url_for('static', filename='trace.js') }}"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const btn   = document.getElementById("derive-btn");
-  btn.addEventListener("click", runDerive);
-  // Auto-run on first load.
+  document.getElementById("derive-btn").addEventListener("click", runDerive);
   runDerive();
 });
 
@@ -78,7 +76,7 @@ async function runDerive() {
 
   const btn = document.getElementById("derive-btn");
   btn.disabled = true;
-  btn.innerHTML = '<span class="loading"></span> deriving…';
+  btn.innerHTML = '<span class="loading"></span> व्युत्पाद्यते…';
 
   try {
     const r = await fetch("/api/derive", {
@@ -94,13 +92,13 @@ async function runDerive() {
     showError(e.message);
   } finally {
     btn.disabled = false;
-    btn.innerHTML = "DERIVE";
+    btn.innerHTML = "व्युत्पादयतु";
   }
 }
 
 function showError(msg) {
   document.getElementById("result-area").innerHTML =
-    `<div class="panel" style="color:var(--danger)">Error: ${escapeHtml(msg)}</div>`;
+    `<div class="panel" style="color:var(--danger)">दोषः: ${escapeHtml(msg)}</div>`;
 }
 
 function renderResult(d) {
@@ -111,12 +109,12 @@ function renderResult(d) {
         <div class="slp1">${escapeHtml(d.surface_slp1)}</div>
       </div>
       <div class="stats">
-        <div>phase: ${d.phase}</div>
+        <div>अवस्था: ${escapeHtml(d.phase)}</div>
         <div>
-          <span>${d.stats.applied_count} applied</span>
-          <span>${d.stats.blocked_count} blocked</span>
-          <span>${d.stats.skipped_count} skipped</span>
-          <span>${d.stats.total_steps} total</span>
+          <span>${d.stats.applied_count} प्रयुक्तानि</span>
+          <span>${d.stats.blocked_count} निवारितानि</span>
+          <span>${d.stats.skipped_count} अतिक्रान्तानि</span>
+          <span>${d.stats.total_steps} सर्वाणि</span>
         </div>
       </div>
     </div>`;

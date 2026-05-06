@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block title %}सूत्र-सूची — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block content %}
+<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+  <h1 style="margin:0;">सूत्र-सूची</h1>
+  <span class="muted" style="font-size:13px;">पाणिनीय-सूत्राणाम् अनुक्रमणिका</span>
+</div>
+
+<div class="panel">
+  <div class="form-row" style="gap:8px;align-items:center;">
+    <input id="s-search" type="text" placeholder="सूत्र-क्रमाङ्केन वा पाठेन अन्वेषयतु…"
+           style="flex:1;max-width:420px;" autocomplete="off">
+    <div id="s-type-bar" style="display:flex;flex-wrap:wrap;gap:4px;"></div>
+    <span class="muted" id="s-count" style="font-size:12px;margin-left:8px;"></span>
+  </div>
+</div>
+
+<div id="s-body">
+  <div class="panel" style="text-align:center;color:var(--ink-faint);">
+    <span class="loading"></span> सूत्राणि लाद्यन्ते…
+  </div>
+</div>
+{% endblock %}
+
+{% block body_extra %}
+<script>
+const _TYPE_DEV = {
+  "VIDHI"       : "विधिः",
+  "PARIBHASHA"  : "परिभाषा",
+  "SAMJNA"      : "संज्ञा",
+  "ADHIKARA"    : "अधिकारः",
+  "ANUVADA"     : "अनुवादः",
+  "NIYAMA"      : "नियमः",
+  "ATIDESA"     : "अतिदेशः",
+  "PRATISHEDHA" : "प्रतिषेधः",
+  "UTSARGA"     : "उत्सर्गः",
+  "APAVADA"     : "अपवादः",
+};
+function typeDev(t) { return _TYPE_DEV[t] || t; }
+function escH(s) {
+  if (!s) return "";
+  return String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
+}
+
+let _all = [];
+let _activeType = "";
+let _search = "";
+
+async function init() {
+  const r = await fetch("/api/sutras");
+  const data = await r.json();
+  _all = [];
+  for (const [type, rows] of Object.entries(data.by_type)) {
+    rows.forEach(s => _all.push({ ...s, sutra_type: type }));
+  }
+  _all.sort((a, b) => {
+    const pa = a.sutra_id.split(".").map(Number);
+    const pb = b.sutra_id.split(".").map(Number);
+    for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+      if ((pa[i]||0) !== (pb[i]||0)) return (pa[i]||0) - (pb[i]||0);
+    }
+    return 0;
+  });
+  const types = [...new Set(_all.map(s => s.sutra_type))];
+  buildTypeBar(types, _all.length);
+  render();
+}
+
+function buildTypeBar(types, total) {
+  const bar = document.getElementById("s-type-bar");
+  bar.innerHTML =
+    `<button class="pl-cat-btn active" data-t="">सर्वाणि <span style="opacity:.6;font-weight:400;">${total}</span></button>`;
+  types.forEach(t => {
+    const n = _all.filter(s => s.sutra_type === t).length;
+    const btn = document.createElement("button");
+    btn.className = "pl-cat-btn";
+    btn.dataset.t = t;
+    btn.innerHTML = `${escH(typeDev(t))} <span style="opacity:.6;font-weight:400;">${n}</span>`;
+    bar.appendChild(btn);
+  });
+  bar.querySelectorAll(".pl-cat-btn").forEach(b => {
+    b.addEventListener("click", () => {
+      bar.querySelectorAll(".pl-cat-btn").forEach(x => x.classList.remove("active"));
+      b.classList.add("active");
+      _activeType = b.dataset.t;
+      render();
+    });
+  });
+}
+
+function filtered() {
+  return _all.filter(s => {
+    if (_activeType && s.sutra_type !== _activeType) return false;
+    if (_search) {
+      const q = _search.toLowerCase();
+      return s.sutra_id.includes(q) ||
+             (s.text_dev  || "").toLowerCase().includes(q) ||
+             (s.why_dev   || "").toLowerCase().includes(q);
+    }
+    return true;
+  });
+}
+
+function render() {
+  const items = filtered();
+  document.getElementById("s-count").textContent = `${items.length} सूत्राणि`;
+  const body = document.getElementById("s-body");
+  if (!items.length) {
+    body.innerHTML = `<div class="panel" style="text-align:center;color:var(--ink-faint);">कोऽपि सूत्रं न मिलति</div>`;
+    return;
+  }
+  let html = `<table class="matrix" style="width:100%;border-collapse:collapse;">
+    <thead><tr>
+      <th style="text-align:left;padding:6px 8px;font-size:11px;color:var(--ink-faint);">क्रमाङ्कः</th>
+      <th style="text-align:left;padding:6px 8px;font-size:11px;color:var(--ink-faint);">प्रकारः</th>
+      <th style="text-align:left;padding:6px 8px;font-size:11px;color:var(--ink-faint);">सूत्रम्</th>
+      <th style="text-align:left;padding:6px 8px;font-size:11px;color:var(--ink-faint);">विवरणम्</th>
+    </tr></thead><tbody>`;
+  items.forEach(s => {
+    html += `<tr style="border-top:1px solid var(--line-soft);cursor:pointer;"
+                 onclick="location.href='/sutra/${encodeURIComponent(s.sutra_id)}'">
+      <td style="padding:6px 8px;font-family:var(--mono);font-size:12px;white-space:nowrap;">
+        <a href="/sutra/${encodeURIComponent(s.sutra_id)}" style="color:var(--accent);">${escH(s.sutra_id)}</a>
+      </td>
+      <td style="padding:6px 8px;font-size:11px;color:var(--ink-dim);">${escH(typeDev(s.sutra_type))}</td>
+      <td style="padding:6px 8px;" class="dev">${escH(s.text_dev || "")}</td>
+      <td style="padding:6px 8px;font-size:12px;color:var(--ink-dim);" class="dev">${escH(s.why_dev || "")}</td>
+    </tr>`;
+  });
+  html += `</tbody></table>`;
+  body.innerHTML = `<div class="panel" style="padding:0;overflow-x:auto;">${html}</div>`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  init();
+  document.getElementById("s-search").addEventListener("input", e => {
+    _search = e.target.value.trim();
+    render();
+  });
+});
+</script>
+{% endblock %}

@@ -15,20 +15,25 @@ producing the short-a outcome.  Alternative: make 6.1.107 block
 boundary.  Since only one context matters (a + am), simpler to
 do the merge here directly.
 
-v3.5 guard: when the *aṅga* ends in ``r`` before ``am``, the *else* branch
-must **not** delete ``am``'s initial ``a`` — that would yield an illegal
-``r``+``m`` cluster (e.g. ``hotAr`` + ``am`` → ``*hotArm``).
+v3.5 guard: when the *aṅga* ends in a **consonant** before ``am`` (e.g. ``…r``,
+``…m``), **6.1.107** must **not** delete ``am``'s initial ``a`` — otherwise
+``hotAr`` + ``am`` → ``*hotArm``, or ``paktrim`` + ``am`` → ``*paktrimm``
+(corrected-v2 **P003**).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
+from phonology.varna import AC_DEV
+
+
 def _find_target(state: State):
     """
-    Find boundary where a vowel meets pratyaya 'am' (am upadeśa).
+    Find boundary where the *aṅga* meets pratyaya ``am`` (``am`` upadeśa).
 
     v3.4:
-      - if the aṅga ends in 'a', delete the aṅga-final 'a' (legacy behaviour).
-      - otherwise (e.g. hari + am), delete the pratyaya-initial 'a' so that
-        i + am → im.
+      - if the aṅga ends in ``a``, delete the aṅga-final ``a`` (``rAma`` + ``am``).
+      - if it ends in another **vowel** (e.g. ``hari`` + ``am``), delete the
+        pratyaya-initial ``a`` so that ``i`` + ``am`` → ``im``.
+      - if it ends in a **consonant**, do **not** apply (``hotAram``, ``paktrimam``).
     """
     if len(state.terms) < 2:
         return None
@@ -45,11 +50,8 @@ def _find_target(state: State):
             continue
         if nxt.varnas[0].slp1 != "a":
             continue
-        # ``…r`` + ``am``: do **not** drop ``am``-initial ``a`` — that would yield an
-        # illegal *r*+*m* cluster (e.g. ``hotAr`` + ``am`` → ``*hotArm`` instead of
-        # ``hotAram``).  Contrast ``hari`` + ``am`` → ``har`` + ``im`` (vowel-final
-        # *aṅga* path).
-        if anga.varnas[-1].slp1 == "r":
+        last = anga.varnas[-1].slp1
+        if last not in AC_DEV:
             continue
         return i
     return None

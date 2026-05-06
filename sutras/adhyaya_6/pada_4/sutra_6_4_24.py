@@ -16,7 +16,13 @@ from engine.state import State
 
 
 def _kngiti_present(state: State) -> bool:
-    return any("kngiti" in t.tags for t in state.terms if "pratyaya" in t.tags)
+    # *kṅiti* locus: *kṛt* *pratyaya* rows use ``kind="pratyaya"`` with *kngiti* tag
+    # (``"pratyaya"`` string tag is not always present on the same ``Term``).
+    return any(
+        "kngiti" in t.tags
+        for t in state.terms
+        if t.kind == "pratyaya" or "pratyaya" in t.tags
+    )
 
 
 def cond(state: State) -> bool:

@@ -1,7 +1,9 @@
 """
-pipelines/aBavatAm_split_prakriyas_P005_demo.py — **P005** (**अभवताम्**, *laṅ*).
+pipelines/aBavatAm_split_prakriyas_P005_demo.py — legacy **P005** split-prakriyā (**अभवताम्**, *laṅ*).
 
 Source: ``…/my_scripts/final/split_prakriyas_11/P005.json``.
+This is **not** ``corrected_prakriyas_v2`` **P005-A** (*kurucarī*) / **P005-B** (*upasarajaḥ*);
+those bundle rows need separate glass-box recipes.
 
 Spine (rule-based ``apply_rule`` only; tin block factored as ``P00_laG_tin_tas_tAm_adesh_block``):
 
@@ -17,7 +19,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_laG_tin_tas_tAm_adesh_block, P06a_pratyaya_adhikara_3_1_1_to_3
+from core.canonical_pipelines import P00_laG_tin_tas_tAm_adesh_block, P00_lashakvataddhite_it_lopa_chain, P06a_pratyaya_adhikara_3_1_1_to_3
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -35,7 +37,6 @@ def derive_aBavatAm_split_prakriyas_P005() -> State:
     s = State(terms=[dhatu], meta={}, trace=[])
     s.meta["prakriya_P005_aBavatAm_split_prakriyas_11"] = True
     s.meta["lakara"] = "laG"
-    s.meta["3_2_111_laG_arm"] = True
 
     s = apply_rule("3.2.111", s)
     s = apply_rule("3.1.91", s)
@@ -43,10 +44,8 @@ def derive_aBavatAm_split_prakriyas_P005() -> State:
 
     s = P00_laG_tin_tas_tAm_adesh_block(s)
 
-    s.meta["3_1_68_kartari_recipe"] = True
     s = apply_rule("3.1.68", s)
-    for sid in ("1.3.8", "1.3.3", "1.3.9"):
-        s = apply_rule(sid, s)
+    s = P00_lashakvataddhite_it_lopa_chain(s)
 
     s = apply_rule("7.3.84", s)
     s = apply_rule("6.1.78", s)

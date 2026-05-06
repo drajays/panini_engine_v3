@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% block title %}सूत्र-संबन्धः — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block content %}
+<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+  <h1 style="margin:0;">सूत्र-संबन्ध-आलेखः</h1>
+  <span class="muted" style="font-size:13px;">Sutra Interaction Graph (SIG)</span>
+</div>
+
+<div class="panel">
+  <div class="form-row" style="gap:8px;align-items:center;">
+    <button id="load-btn">SIG-आँकडाः लादयतु</button>
+    <button id="freeze-btn" style="background:var(--bg-card);border-color:var(--line);color:var(--ink);">
+      SIG पुनर्निर्मातु
+    </button>
+    <span id="sig-status" class="muted" style="margin-left:8px;font-size:13px;"></span>
+  </div>
+</div>
+
+<div id="sig-panels" style="display:none;">
+
+  <!-- सांख्यिकी -->
+  <div class="panel">
+    <h2 style="font-size:14px;color:var(--ink-dim);margin:0 0 12px;">सूत्र-सञ्चालन-सांख्यिकी</h2>
+    <div id="stats-bar" style="display:flex;gap:24px;flex-wrap:wrap;">
+      <div id="stat-total"  class="stat-box"><div class="sv">—</div><div class="sl">सूत्राणि</div></div>
+      <div id="stat-edges"  class="stat-box"><div class="sv">—</div><div class="sl">संबन्धाः</div></div>
+      <div id="stat-active" class="stat-box"><div class="sv">—</div><div class="sl">सक्रिय-सूत्राणि</div></div>
+    </div>
+  </div>
+
+  <!-- शीर्ष-सूत्राणि -->
+  <div class="panel">
+    <h2 style="font-size:14px;color:var(--ink-dim);margin:0 0 8px;">सर्वाधिक-सञ्चालित-सूत्राणि</h2>
+    <table class="matrix" id="top-sutras" style="width:100%;border-collapse:collapse;">
+      <thead><tr>
+        <th style="text-align:left;padding:4px 8px;font-size:11px;color:var(--ink-faint);">क्रमाङ्कः</th>
+        <th style="text-align:left;padding:4px 8px;font-size:11px;color:var(--ink-faint);">सूत्रम्</th>
+        <th style="text-align:right;padding:4px 8px;font-size:11px;color:var(--ink-faint);">सञ्चालनानि</th>
+      </tr></thead>
+      <tbody id="top-body"></tbody>
+    </table>
+  </div>
+
+  <!-- अपूर्व-संबन्धाः -->
+  <div class="panel">
+    <h2 style="font-size:14px;color:var(--ink-dim);margin:0 0 8px;">प्रमुख-सूत्र-संबन्धाः</h2>
+    <table class="matrix" id="top-edges" style="width:100%;border-collapse:collapse;">
+      <thead><tr>
+        <th style="text-align:left;padding:4px 8px;font-size:11px;color:var(--ink-faint);">पूर्व-सूत्रम्</th>
+        <th style="text-align:left;padding:4px 8px;font-size:11px;color:var(--ink-faint);">उत्तर-सूत्रम्</th>
+        <th style="text-align:right;padding:4px 8px;font-size:11px;color:var(--ink-faint);">संख्या</th>
+      </tr></thead>
+      <tbody id="edge-body"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<div id="sig-empty" class="panel" style="text-align:center;color:var(--ink-faint);">
+  <p>SIG-आँकडाः अद्यापि निर्मिताः न सन्ति।</p>
+  <p style="font-size:12px;">
+    "SIG पुनर्निर्मातु" इति बटनं क्लिक् कृत्वा आँकडान् निर्मातु।<br>
+    वा टर्मिनले: <code>python -m tools.sig_benchmark --freeze</code>
+  </p>
+</div>
+{% endblock %}
+
+{% block head_extra %}
+<style>
+.stat-box { text-align:center; min-width:80px; }
+.stat-box .sv { font-size:28px; font-weight:700; color:var(--accent); font-family:var(--mono); }
+.stat-box .sl { font-size:11px; color:var(--ink-faint); margin-top:2px; }
+</style>
+{% endblock %}
+
+{% block body_extra %}
+<script>
+function escH(s) {
+  if (!s) return "";
+  return String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
+}
+
+async function loadSig() {
+  const status = document.getElementById("sig-status");
+  status.innerHTML = '<span class="loading"></span> लाद्यते…';
+
+  try {
+    const [statsR, edgesR] = await Promise.all([
+      fetch("/api/sig/sutra_fire_stats"),
+      fetch("/api/sig/sutra_edge_stats"),
+    ]);
+
+    if (!statsR.ok) {
+      document.getElementById("sig-empty").style.display = "";
+      document.getElementById("sig-panels").style.display = "none";
+      status.textContent = "आँकडाः न मिलन्ति — SIG निर्मातु";
+      return;
+    }
+
+    const stats = await statsR.json();
+    const edges = edgesR.ok ? await edgesR.json() : { edges: [] };
+
+    document.getElementById("sig-panels").style.display = "";
+    document.getElementById("sig-empty").style.display = "none";
+
+    /* सांख्यिकी */
+    const sutras = Object.entries(stats.sutra_counts || {});
+    const active = sutras.filter(([,v]) => v > 0).length;
+    document.querySelector("#stat-total  .sv").textContent = sutras.length;
+    document.querySelector("#stat-edges  .sv").textContent = (edges.edges || []).length;
+    document.querySelector("#stat-active .sv").textContent = active;
+
+    /* शीर्ष-२५ सूत्राणि */
+    const top = sutras.sort((a,b) => b[1]-a[1]).slice(0,25);
+    document.getElementById("top-body").innerHTML = top.map(([sid, cnt]) =>
+      `<tr style="border-top:1px solid var(--line-soft);">
+        <td style="padding:4px 8px;font-family:var(--mono);font-size:12px;">
+          <a href="/sutra/${encodeURIComponent(sid)}" style="color:var(--accent);">${escH(sid)}</a>
+        </td>
+        <td style="padding:4px 8px;font-size:12px;"></td>
+        <td style="padding:4px 8px;text-align:right;font-family:var(--mono);font-size:12px;">${escH(String(cnt))}</td>
+      </tr>`
+    ).join("");
+
+    /* शीर्ष-२५ संबन्धाः */
+    const topE = (edges.edges || []).sort((a,b) => b.weight-a.weight).slice(0,25);
+    document.getElementById("edge-body").innerHTML = topE.map(e =>
+      `<tr style="border-top:1px solid var(--line-soft);">
+        <td style="padding:4px 8px;font-family:var(--mono);font-size:12px;">
+          <a href="/sutra/${encodeURIComponent(e.from)}" style="color:var(--accent);">${escH(e.from)}</a>
+        </td>
+        <td style="padding:4px 8px;font-family:var(--mono);font-size:12px;">
+          <a href="/sutra/${encodeURIComponent(e.to)}" style="color:var(--accent);">${escH(e.to)}</a>
+        </td>
+        <td style="padding:4px 8px;text-align:right;font-family:var(--mono);font-size:12px;">${escH(String(e.weight))}</td>
+      </tr>`
+    ).join("");
+
+    status.textContent = "सम्पन्नम्";
+  } catch(err) {
+    status.textContent = "दोषः: " + err.message;
+  }
+}
+
+document.getElementById("load-btn").addEventListener("click", loadSig);
+document.getElementById("freeze-btn").addEventListener("click", async () => {
+  const status = document.getElementById("sig-status");
+  const btn = document.getElementById("freeze-btn");
+  btn.disabled = true;
+  status.innerHTML = '<span class="loading"></span> SIG निर्मीयते… (कतिपय-मिनिटाः)';
+  try {
+    const r = await fetch("/api/run-sig", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ freeze: true }),
+    });
+    const d = await r.json();
+    if (d.error) { status.textContent = "दोषः: " + d.error; return; }
+    status.textContent = "निर्माणं सम्पन्नम् — पुनर्लादयति…";
+    await loadSig();
+  } catch(e) {
+    status.textContent = "दोषः: " + e.message;
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+document.addEventListener("DOMContentLoaded", loadSig);
+</script>
+{% endblock %}

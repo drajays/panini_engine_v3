@@ -51,13 +51,47 @@ def _find(state: State):
     return None
 
 
+def _find_p001_d_pre_tripadi(state: State):
+    """
+    **P001-D**: after pre–**8.2.1** **8.2.40**, ``iDDa`` — run **8.4.53** on the
+    first ``D`` before *jhac* ``D`` while ``tripadi_zone`` is still false.
+    """
+    if not state.meta.get("corrected_v2_P001_D_pre_tripadi_cluster_arm"):
+        return None
+    if state.tripadi_zone:
+        return None
+    if len(state.terms) != 1:
+        return None
+    t = state.terms[0]
+    if "pada" not in t.tags:
+        return None
+    if not t.meta.get("corrected_v2_P001_D_pre_8240_done"):
+        return None
+    if t.meta.get("corrected_v2_P001_D_pre_8453_done"):
+        return None
+    vs = t.varnas
+    for i in range(len(vs) - 1):
+        if vs[i].slp1 in _JHAL_TO_JAS and vs[i + 1].slp1 == "D":
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
+    if _find_p001_d_pre_tripadi(state) is not None:
+        return True
     if not state.tripadi_zone:
         return False
     return _find_p033_Gd(state) is not None or _find(state) is not None
 
 
 def act(state: State) -> State:
+    ipd = _find_p001_d_pre_tripadi(state)
+    if ipd is not None:
+        t = state.terms[0]
+        t.varnas[ipd] = mk(_JHAL_TO_JAS[t.varnas[ipd].slp1])
+        t.meta["corrected_v2_P001_D_pre_8453_done"] = True
+        state.meta.pop("corrected_v2_P001_D_pre_tripadi_cluster_arm", None)
+        return state
     ip = _find_p033_Gd(state)
     if ip is not None:
         t = state.terms[0]
@@ -80,7 +114,7 @@ SUTRA = SutraRecord(
     text_slp1="JhalAM jaS JhaSi",
     text_dev="झलां जश् झशि",
     padaccheda_dev="झलाम् / जश् / झशि",
-    why_dev="झशि परे झल्-वर्णस्य जश्-आदेशः (डेमो: ध् → द्)।",
+    why_dev="झशि परे झल्-वर्णस्य जश्-आदेशः (डेमो: ध् → द्; प००१-डि पूर्व-त्रिपादी)।",
     anuvritti_from=("8.2.1",),
     cond=cond,
     act=act,

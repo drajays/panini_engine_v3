@@ -31,6 +31,34 @@ from phonology     import mk
 
 
 # Blockers: these consonants break the r ... n linkage.
+META_P009_NATVA = "corrected_v2_P009_8_4_2_arm"
+
+
+def _find_p009_natva(state: State):
+    """
+    **P009** *parikrīṇīte*: *ṛ*-like ``r`` in ``krI`` and word-initial ``n`` of the
+    ``SnA`` residue ``nI`` — permitted *vyavāya* with only ``I`` between — ṇatva even
+    though ``krI`` and ``nI`` sit in adjacent ``Term``s (bundle convention).
+    """
+    if not state.meta.get(META_P009_NATVA):
+        return None
+    for i in range(len(state.terms) - 1):
+        t0, t1 = state.terms[i], state.terms[i + 1]
+        f0 = "".join(v.slp1 for v in t0.varnas)
+        if not f0.endswith("krI"):
+            continue
+        if "dhatu" not in t0.tags:
+            continue
+        if not t1.varnas or t1.varnas[0].slp1 != "n":
+            continue
+        if "SnA_vikaraṇa" not in t1.tags:
+            continue
+        if "natva_done" in t1.varnas[0].tags:
+            continue
+        return (i + 1, 0)
+    return None
+
+
 _BLOCKERS = frozenset({
     # Dental-varga + palatal + cerebral + sibilants
     "t", "T", "d", "D",
@@ -83,10 +111,20 @@ def _find_target(state: State):
 def cond(state: State) -> bool:
     if not state.tripadi_zone:
         return False
+    if _find_p009_natva(state) is not None:
+        return True
     return _find_target(state) is not None
 
 
 def act(state: State) -> State:
+    hit09 = _find_p009_natva(state)
+    if hit09 is not None:
+        ti, vi = hit09
+        new_varna = mk("R")
+        new_varna.tags.add("natva_done")
+        state.terms[ti].varnas[vi] = new_varna
+        state.meta.pop(META_P009_NATVA, None)
+        return state
     hit = _find_target(state)
     if hit is None:
         return state

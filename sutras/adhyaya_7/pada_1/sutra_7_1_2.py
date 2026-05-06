@@ -47,7 +47,7 @@ def _pratyaya_in_scope(pr: Term) -> bool:
     return True
 
 
-def _phadi_replacement(varnas: List[Varna]) -> Optional[Tuple[str, List[Varna]]]:
+def _phadi_replacement(varnas: List[Varna], state: Optional[State] = None) -> Optional[Tuple[str, List[Varna]]]:
     """
     If leading shape matches Ph/Ḍh/Kh/Ch/Gh opener, return
     (new_upadesha_slp1, new_varna_list).  Else None.
@@ -55,6 +55,28 @@ def _phadi_replacement(varnas: List[Varna]) -> Optional[Tuple[str, List[Varna]]]
     if not varnas:
         return None
     c0 = varnas[0].slp1
+    # caṭphañ residue **Pa** (फ् + अ) → **Ayana** — corrected-v2 **P004-A** (armed meta).
+    if (
+        state is not None
+        and state.meta.get("corrected_v2_P004_A_phadi_Pa_arm")
+        and c0 == "P"
+        and len(varnas) == 2
+        and varnas[1].slp1 == "a"
+    ):
+        return ("Ayana", parse_slp1_upadesha_sequence("Ayana"))
+    # Same **P004-A**: after *it*-slice the opener **ca** remains → surface **caPa**;
+    # **7.1.2** Ph→*Āyan* replaces the **pha** portion; **ca** is not pronounced (*laghu*
+    # pedagogy matches *itika*+*phak* tape ending in **Ayana**).
+    if (
+        state is not None
+        and state.meta.get("corrected_v2_P004_A_phadi_Pa_arm")
+        and len(varnas) == 4
+        and varnas[0].slp1 == "c"
+        and varnas[1].slp1 == "a"
+        and varnas[2].slp1 == "P"
+        and varnas[3].slp1 == "a"
+    ):
+        return ("Ayana", parse_slp1_upadesha_sequence("Ayana"))
     # phak
     if (
         c0 == "P"
@@ -119,7 +141,7 @@ def _matches(state: State) -> bool:
     pr = state.terms[pj]
     if pr.meta.get(_META_DONE):
         return False
-    if _phadi_replacement(pr.varnas) is None:
+    if _phadi_replacement(pr.varnas, state) is None:
         return False
     return True
 
@@ -135,7 +157,7 @@ def act(state: State) -> State:
     if pj is None:
         return state
     pr = state.terms[pj]
-    rep = _phadi_replacement(pr.varnas)
+    rep = _phadi_replacement(pr.varnas, state)
     if rep is None:
         return state
     new_id, new_varnas = rep
@@ -145,6 +167,7 @@ def act(state: State) -> State:
     pr.varnas = [v.clone() for v in new_varnas]
     pr.meta["upadesha_slp1"] = new_id
     pr.meta[_META_DONE] = True
+    state.meta.pop("corrected_v2_P004_A_phadi_Pa_arm", None)
     return state
 
 

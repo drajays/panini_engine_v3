@@ -17,11 +17,37 @@ from __future__ import annotations
 from typing import Optional
 
 from engine        import SutraType, SutraRecord, register_sutra
+from engine.lopa_ghost import term_is_sup_luk_ghost
 from engine.state  import State
 from phonology     import CUTU
 from phonology.varna import HAL_DEV
 
 from sutras.adhyaya_1.pada_3.sutra_1_3_9 import IT_LOPA_TAGS
+
+# **corrected-v2 P004-B:** *ñya* ``Yya`` — initial ``Y`` (ञ्) is *cuṭ*-class *it*; must
+# win over *prātipadika*-initial ``S`` (श्) on the stem (also *cuṭ*).
+META_P004_B_Yya_CUTU = "corrected_v2_P004_B_Yya_cuTu_arm"
+_UPA_Yya = "Yya"
+
+
+def _eligible_p004_b_yya(state: State):
+    if not state.meta.get(META_P004_B_Yya_CUTU):
+        return
+    for ti, t in enumerate(state.terms):
+        if "taddhita" not in t.tags:
+            continue
+        if (t.meta.get("upadesha_slp1") or "").strip() != _UPA_Yya:
+            continue
+        vs = t.varnas
+        j = _first_hal_idx(vs)
+        if j is None:
+            continue
+        v = vs[j]
+        if v.slp1 not in CUTU:
+            continue
+        if v.tags & IT_LOPA_TAGS:
+            continue
+        yield ti, t, j
 
 
 def _terms_sup_or_primary(state: State):
@@ -35,8 +61,11 @@ def _terms_sup_or_primary(state: State):
     if nic_p025:
         return nic_p025
     cand = [
-        t for t in state.terms
-        if "sup" in t.tags and "taddhita" not in t.tags
+        t
+        for t in state.terms
+        if "sup" in t.tags
+        and "taddhita" not in t.tags
+        and not term_is_sup_luk_ghost(t)
     ]
     if cand:
         return cand
@@ -46,6 +75,25 @@ def _terms_sup_or_primary(state: State):
     ]
     if krt:
         return krt
+    # **3.1.26** *ṇic* ``Ric`` / **2.1.26** *Nic*: *cuṭū* must target the affix’s
+    # initial ``R`` (ण्), not the preceding *dhātu*’s first *hal* (e.g. ``p`` of ``pA``).
+    # Restrict to pratyayas whose **first** upadeśa *hal* is ``R`` so other *nic* frames
+    # (e.g. *śuk* augment paths) keep the legacy *cuṭū* competition logic.
+    nic_ric: list = []
+    for t in state.terms:
+        if t.kind != "pratyaya" or "nic" not in t.tags:
+            continue
+        up = (t.meta.get("upadesha_slp1") or "").strip()
+        if up.endswith("~"):
+            up = up[:-1]
+        if up not in {"Ric", "Nic"}:
+            continue
+        vs = t.varnas
+        j = _first_hal_idx(vs)
+        if j is not None and vs[j].slp1 == "R":
+            nic_ric.append(t)
+    if nic_ric:
+        return nic_ric
     # *luṭ* *ḍā* residue (**qA**): *cuṭ* *it* on ``q`` (recipe ``1_3_7_lut_qA_arm``).
     if state.meta.get("1_3_7_lut_qA_arm"):
         qa = [
@@ -54,6 +102,16 @@ def _terms_sup_or_primary(state: State):
         ]
         if qa:
             return qa
+    # **P017** (*paṭapaṭāyati*): **``qAc``** (डाच्) must win over preceding *prātipadika*
+    # ``pawapawat`` so **1.3.7** *cuṭū* tags initial ``q``, not ``p``.
+    if state.meta.get("corrected_v2_P017_1_3_7_qAc_arm"):
+        qac = [
+            t
+            for t in state.terms
+            if "upadesha" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() == "qAc"
+        ]
+        if qac:
+            return qac
     if state.terms:
         return [state.terms[0]]
     return []
@@ -69,6 +127,10 @@ def _first_hal_idx(varnas) -> Optional[int]:
 
 def _eligible(state: State):
     if not any("upadesha" in t.tags for t in state.terms):
+        return
+    p04 = next(_eligible_p004_b_yya(state), None)
+    if p04 is not None:
+        yield p04
         return
     for term in _terms_sup_or_primary(state):
         if "dhatu" in term.tags:
@@ -105,6 +167,12 @@ def act(state: State) -> State:
     # distinct saṃjñā event (avoids R2 false-positive on re-fires).
     upa = term.meta.get("upadesha_slp1")
     state.samjna_registry[("it_cutu", ti, j, upa)] = frozenset({v.slp1})
+    if (
+        state.meta.get(META_P004_B_Yya_CUTU)
+        and "taddhita" in term.tags
+        and (term.meta.get("upadesha_slp1") or "").strip() == _UPA_Yya
+    ):
+        state.meta.pop(META_P004_B_Yya_CUTU, None)
     return state
 
 

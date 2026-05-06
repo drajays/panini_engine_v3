@@ -1,12 +1,13 @@
 """
-7.1.58  इदितो नुम् धातोः  —  VIDHI (narrow demo)
+7.1.58  इदितो नुम् धातोः  —  VIDHI
 
-Demo slice (वन्दे .md):
-  For dhātu `vad` (from upadeśa `vadi~`), insert nuṃ (n) after the last vowel
-  (1.1.47 placement), yielding `vand`.
+*Idit* dhātus (roots bearing the indicatory vowel *i* in upadeśa, marked ``"idit"``
+in tags after *it*-lopa) receive the nasal augment *num* (``n``) inserted after the
+last vowel of the dhātu (placement per **1.1.47**).
 
-Engine:
-  - recipe-armed by ``state.meta['7_1_58_num_arm']``.
+Engine: fires on any dhātu ``Term`` whose ``tags`` include ``"idit"`` and which
+has not yet been augmented.  No arm flag — the grammatical property alone drives
+the rule.
 """
 from __future__ import annotations
 
@@ -20,29 +21,27 @@ def _is_ac(ch: str) -> bool:
     return bool(is_hrasva(ch) or is_dirgha(ch) or ch in {"e", "E", "o", "O"})
 
 
-def _matches(state: State) -> bool:
-    if not state.meta.get("7_1_58_num_arm"):
-        return False
-    if not state.terms:
-        return False
-    dh = state.terms[0]
-    if "dhatu" not in dh.tags:
-        return False
-    if (dh.meta.get("upadesha_slp1") or "").strip() != "vad":
-        return False
-    if dh.meta.get("7_1_58_num_done"):
-        return False
-    return True
+def _find_idit_dhatu(state: State):
+    """Return the first dhātu Term tagged ``idit`` that has not yet received nuṃ."""
+    for t in state.terms:
+        if "dhatu" not in t.tags:
+            continue
+        if "idit" not in t.tags:
+            continue
+        if t.meta.get("7_1_58_num_done"):
+            continue
+        return t
+    return None
 
 
 def cond(state: State) -> bool:
-    return _matches(state)
+    return _find_idit_dhatu(state) is not None
 
 
 def act(state: State) -> State:
-    if not _matches(state):
+    dh = _find_idit_dhatu(state)
+    if dh is None:
         return state
-    dh = state.terms[0]
     j = None
     for k in range(len(dh.varnas) - 1, -1, -1):
         if _is_ac(dh.varnas[k].slp1):

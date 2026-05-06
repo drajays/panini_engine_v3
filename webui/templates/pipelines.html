@@ -1,0 +1,285 @@
+{% extends "base.html" %}
+{% block title %}प्रक्रियाः — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block content %}
+<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+  <h1 style="margin:0;">प्रक्रिया-दर्शनम्</h1>
+  <span class="muted" style="font-size:13px;">{{ pipeline_count }} व्युत्पत्तयः</span>
+</div>
+
+<div class="pipelines-shell">
+
+  <!-- ── वामपट्टिका : प्रक्रिया-सूची ── -->
+  <div class="pl-browser">
+    <div class="pl-search-bar">
+      <input type="text" id="pl-search"
+             placeholder="नाम्ना वा विवरणेन अन्वेषयतु…"
+             autocomplete="off">
+    </div>
+    <div class="pl-cats" id="pl-cats">
+      <!-- JS द्वारा पूर्यते -->
+    </div>
+    <div class="pl-count-info" id="pl-count-info"></div>
+    <div class="pl-list" id="pl-list">
+      <div class="pl-loading"><span class="loading"></span> प्रक्रियाः लादयति…</div>
+    </div>
+  </div>
+
+  <!-- ── दक्षिणपट्टिका : व्युत्पत्ति-दर्शनम् ── -->
+  <div class="pl-viewer" id="pl-viewer">
+
+    <!-- रिक्त-अवस्था -->
+    <div class="pl-viewer-empty" id="pl-empty">
+      <div class="big-icon">◈</div>
+      <div class="dev" style="font-size:22px;color:var(--accent);">प्रक्रियां चिनुत</div>
+      <div style="font-size:13px;">व्युत्पत्तिं चालयितुं वामे प्रविष्टिं क्लिक् करुत</div>
+    </div>
+
+    <!-- चलन-अवस्था -->
+    <div class="pl-loading" id="pl-running" style="display:none;flex:1;">
+      <span class="loading" style="width:20px;height:20px;border-width:3px;"></span>
+      <span>व्युत्पत्तिः चल्यते…</span>
+    </div>
+
+    <!-- दोष-अवस्था -->
+    <div id="pl-error" style="display:none;flex:1;">
+      <div class="pl-error-msg" id="pl-error-msg"></div>
+    </div>
+
+    <!-- परिणाम-दर्शनम् -->
+    <div class="pl-viewer-inner" id="pl-result" style="display:none;">
+
+      <!-- परिणाम-शीर्षम् -->
+      <div class="pl-result-bar" id="pl-result-bar"></div>
+
+      <!-- प्रक्रिया + सूत्र-विवरणम् -->
+      <div class="pl-trace-area">
+        <div class="pl-trace-left">
+          <h2 style="font-size:14px;color:var(--ink-dim);margin:0 0 8px;">प्रक्रिया</h2>
+          <div class="trace-filter" id="trace-filter">
+            <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
+            <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
+            <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
+            <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
+            <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
+          </div>
+          <ol class="trace" id="trace" style="overflow-y:auto;flex:1;margin:0;"></ol>
+        </div>
+        <div class="pl-trace-right" id="sutra-detail">
+          <h2 style="font-size:14px;color:var(--ink-dim);margin:0 0 8px;">सूत्र-विवरणम्</h2>
+          <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- pl-viewer -->
+</div><!-- pipelines-shell -->
+{% endblock %}
+
+{% block body_extra %}
+<script src="{{ url_for('static', filename='trace.js') }}"></script>
+<script>
+/* ── वर्ग-नाम-देवनागरी-सारणी ──────────────────────────────── */
+const _CAT_DEV = {
+  "Corrected"  : "संशोधितम्",
+  "Kṛdanta"   : "कृदन्तम्",
+  "Tiṅanta"   : "तिङन्तम्",
+  "Taddhita"   : "तद्धितम्",
+  "Samāsa"    : "समासः",
+  "Paribhāṣā" : "परिभाषा",
+  "Demo"       : "प्रदर्शनम्",
+};
+function catDev(c) { return _CAT_DEV[c] || c; }
+
+/* ── स्थिति ─────────────────────────────────────────────────── */
+let _catalog   = [];
+let _activeCat = "";
+let _search    = "";
+let _running   = null;
+
+/* ── सूची-लादनम् ────────────────────────────────────────────── */
+async function loadCatalog() {
+  const r    = await fetch("/api/pipelines");
+  const data = await r.json();
+  _catalog   = data.pipelines;
+  buildCatButtons(data.categories);
+  renderList();
+}
+
+function buildCatButtons(categories) {
+  const bar   = document.getElementById("pl-cats");
+  const total = _catalog.filter(p => !p.error).length;
+  bar.innerHTML =
+    `<button class="pl-cat-btn active" data-cat="">सर्वाः <span style="opacity:.6;font-weight:400;">${total}</span></button>`;
+  categories.forEach(cat => {
+    const n = _catalog.filter(p => p.category === cat && !p.error).length;
+    if (!n) return;
+    const btn  = document.createElement("button");
+    btn.className = "pl-cat-btn";
+    btn.dataset.cat = cat;
+    const slug = cat.replace(/[^a-zA-Z]/g, "");
+    btn.innerHTML =
+      `<span class="cat-badge cat-${slug}">${catDev(cat)}</span> <span style="opacity:.6;font-weight:400;">${n}</span>`;
+    bar.appendChild(btn);
+  });
+  bar.querySelectorAll(".pl-cat-btn").forEach(b => {
+    b.addEventListener("click", () => {
+      bar.querySelectorAll(".pl-cat-btn").forEach(x => x.classList.remove("active"));
+      b.classList.add("active");
+      _activeCat = b.dataset.cat;
+      renderList();
+    });
+  });
+}
+
+/* ── फ़िल्टरण ────────────────────────────────────────────────── */
+function filtered() {
+  return _catalog.filter(p => {
+    if (_activeCat && p.category !== _activeCat) return false;
+    if (_search) {
+      const q = _search.toLowerCase();
+      return (
+        p.stem.toLowerCase().includes(q) ||
+        p.fn_name.toLowerCase().includes(q) ||
+        p.description.toLowerCase().includes(q)
+      );
+    }
+    return true;
+  });
+}
+
+/* ── सूची-प्रस्तुतिः ─────────────────────────────────────────── */
+function renderList() {
+  const list  = document.getElementById("pl-list");
+  const items = filtered();
+  const visible = items.filter(p => !p.error);
+  document.getElementById("pl-count-info").textContent =
+    `${visible.length} प्रक्रियाः`;
+
+  if (!items.length) {
+    list.innerHTML = `<div style="padding:24px;text-align:center;color:var(--ink-faint);font-size:13px;">कोऽपि प्रक्रिया न मिलति</div>`;
+    return;
+  }
+
+  const useCats = !_activeCat && !_search;
+  let html = "";
+  let lastCat = null;
+
+  items.forEach(p => {
+    if (useCats && p.category !== lastCat) {
+      if (lastCat !== null) html += `</div>`;
+      const slug = p.category.replace(/[^a-zA-Z]/g, "");
+      html += `<div class="pl-cat-group">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.5px;
+                    text-transform:uppercase;color:var(--ink-faint);
+                    padding:8px 6px 3px;border-bottom:1px solid var(--line-soft);">
+          <span class="cat-badge cat-${slug} dev">${catDev(p.category)}</span>
+        </div>`;
+      lastCat = p.category;
+    }
+    const slug   = p.category.replace(/[^a-zA-Z]/g, "");
+    const active = p.key === _running ? "active" : "";
+    const errCls = p.error ? "pl-error-item" : "";
+
+    /* प्रकार्य-नाम — upadesha-रूपम् */
+    const dispName = p.fn_name
+      .replace(/^derive_/, "")
+      .replace(/_/g, " ");
+
+    html += `
+      <div class="pl-item ${active} ${errCls}"
+           data-key="${escapeHtml(p.key)}"
+           onclick="selectPipeline('${escapeHtml(p.key)}')">
+        <div class="pl-item-head">
+          <span class="pl-fn-name">${escapeHtml(p.fn_name)}</span>
+          ${!useCats ? `<span class="cat-badge cat-${slug} dev">${catDev(p.category)}</span>` : ""}
+          ${p.needs_args ? `<span style="font-size:9px;color:var(--warn);" title="तर्काः आवश्यकाः">तर्क</span>` : ""}
+        </div>
+        <div class="pl-desc">${escapeHtml(p.description)}</div>
+      </div>`;
+  });
+  if (useCats && lastCat !== null) html += `</div>`;
+  list.innerHTML = html;
+}
+
+/* ── प्रक्रिया-चलनम् ────────────────────────────────────────── */
+async function selectPipeline(key) {
+  if (_running === key) return;
+  _running = key;
+  renderList();
+  showState("running");
+
+  try {
+    const r    = await fetch(`/api/pipeline/${encodeURIComponent(key)}`, { method: "POST" });
+    const data = await r.json();
+    if (!r.ok || data.error) {
+      showError(data.error || r.statusText, data.traceback);
+      return;
+    }
+    showResult(data);
+  } catch(e) {
+    showError(e.message, null);
+  }
+}
+
+/* ── UI-अवस्था ──────────────────────────────────────────────── */
+function showState(which) {
+  document.getElementById("pl-empty").style.display   = which === "empty"   ? ""     : "none";
+  document.getElementById("pl-running").style.display = which === "running" ? ""     : "none";
+  document.getElementById("pl-error").style.display   = which === "error"   ? ""     : "none";
+  document.getElementById("pl-result").style.display  = which === "result"  ? ""     : "none";
+  if (which === "running" || which === "error") {
+    document.getElementById("pl-running").style.flex = "1";
+    document.getElementById("pl-error").style.flex   = "1";
+  }
+}
+
+function showError(msg, traceback) {
+  document.getElementById("pl-error-msg").textContent =
+    traceback ? `${msg}\n\n${traceback}` : msg;
+  showState("error");
+}
+
+function showResult(data) {
+  const bar  = document.getElementById("pl-result-bar");
+  const slug = (data.category || "Demo").replace(/[^a-zA-Z]/g, "");
+  const catLabel = catDev(data.category || "Demo");
+
+  bar.innerHTML = `
+    <div>
+      <div class="big-dev dev">${escapeHtml(data.surface_dev || "—")}</div>
+      <div class="slp1">${escapeHtml(data.surface_slp1)}</div>
+    </div>
+    <div style="font-size:11px;color:var(--ink-faint);margin-left:8px;">
+      <span class="cat-badge cat-${slug} dev" style="margin-right:6px;">${escapeHtml(catLabel)}</span>
+      <span style="font-family:var(--mono);color:var(--ink-dim);">${escapeHtml(data.fn_name)}</span>
+    </div>
+    <div class="stats">
+      <div style="margin-bottom:2px;color:var(--ink-faint);">चरणानि</div>
+      <div>
+        <span title="प्रयुक्तम्">${data.stats.applied_count} प्रयुक्तम्</span>
+        <span title="निवारितम्">${data.stats.blocked_count} निवारितम्</span>
+        <span title="अतिक्रान्तम्">${data.stats.skipped_count} अतिक्रान्तम्</span>
+        <span title="सर्वाणि">${data.stats.total_steps} सर्वाणि</span>
+      </div>
+    </div>`;
+
+  /* सूत्र-विवरण-पट्टिका पुनरारम्भः */
+  document.getElementById("sutra-detail").innerHTML =
+    `<h2 style="font-size:14px;color:var(--ink-dim);margin:0 0 8px;">सूत्र-विवरणम्</h2>
+     <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>`;
+
+  showState("result");
+  renderTrace(data.trace);
+}
+
+/* ── आरम्भः ─────────────────────────────────────────────────── */
+document.addEventListener("DOMContentLoaded", () => {
+  loadCatalog();
+  document.getElementById("pl-search").addEventListener("input", e => {
+    _search = e.target.value.trim();
+    renderList();
+  });
+});
+</script>
+{% endblock %}

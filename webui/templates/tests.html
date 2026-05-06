@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}परीक्षाः — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block content %}
+<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;">
+  <h1 style="margin:0;">परीक्षा-सञ्चालकः</h1>
+  <span class="muted" style="font-size:13px;">pytest-द्वारा परीक्षा-सञ्चालनम्</span>
+</div>
+
+<div class="panel">
+  <div class="form-row">
+    <button id="run-btn">परीक्षाः चालयतु</button>
+    <span id="run-status" class="muted" style="margin-left:12px;font-size:13px;"></span>
+  </div>
+</div>
+
+<div id="result-area" style="display:none;">
+  <div class="panel">
+    <div id="summary-bar" style="margin-bottom:12px;"></div>
+    <pre id="stdout-box"
+         style="background:var(--bg-card);border:1px solid var(--line-soft);
+                border-radius:6px;padding:12px;font-size:11px;line-height:1.5;
+                overflow-x:auto;white-space:pre-wrap;max-height:600px;overflow-y:auto;">
+    </pre>
+    <pre id="stderr-box"
+         style="display:none;background:var(--bg-card);border:1px solid var(--danger);
+                border-radius:6px;padding:12px;font-size:11px;line-height:1.5;
+                overflow-x:auto;white-space:pre-wrap;max-height:200px;overflow-y:auto;
+                margin-top:8px;color:var(--danger);">
+    </pre>
+  </div>
+</div>
+{% endblock %}
+
+{% block body_extra %}
+<script>
+function escH(s) {
+  if (!s) return "";
+  return String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
+}
+
+document.getElementById("run-btn").addEventListener("click", async () => {
+  const btn    = document.getElementById("run-btn");
+  const status = document.getElementById("run-status");
+  const area   = document.getElementById("result-area");
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="loading"></span> परीक्षाः चल्यन्ते…';
+  status.textContent = "";
+  area.style.display = "none";
+
+  try {
+    const r    = await fetch("/api/run-tests", { method: "POST" });
+    const data = await r.json();
+
+    if (data.error) {
+      status.textContent = "दोषः: " + data.error;
+      return;
+    }
+
+    area.style.display = "";
+    const passed = (data.stdout.match(/(\d+) passed/)?.[1] || "?");
+    const failed = (data.stdout.match(/(\d+) failed/)?.[1] || "0");
+    const color  = data.returncode === 0 ? "var(--success)" : "var(--danger)";
+    document.getElementById("summary-bar").innerHTML =
+      `<span style="font-size:16px;font-weight:700;color:${color};">
+        ${data.returncode === 0 ? "✓ उत्तीर्णम्" : "✗ असफलम्"}
+       </span>
+       <span class="muted" style="margin-left:12px;font-size:13px;">
+         ${escH(passed)} उत्तीर्णाः · ${escH(failed)} असफलाः · ${escH(data.elapsed_s)} सेकन्डाः
+       </span>`;
+
+    document.getElementById("stdout-box").textContent = data.stdout;
+    const errBox = document.getElementById("stderr-box");
+    if (data.stderr && data.stderr.trim()) {
+      errBox.style.display = "";
+      errBox.textContent = data.stderr;
+    } else {
+      errBox.style.display = "none";
+    }
+    status.textContent = "";
+  } catch(e) {
+    status.textContent = "दोषः: " + e.message;
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = "परीक्षाः चालयतु";
+  }
+});
+</script>
+{% endblock %}

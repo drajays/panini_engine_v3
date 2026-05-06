@@ -17,7 +17,9 @@ from phonology.pratyahara import YAN
 from sutras.adhyaya_1.pada_1.sutra_1_1_45 import META_TARGETS
 
 
-_DHATU_UPADESHA_SET = frozenset({"vac", "svap", "yaj"})
+# ``quvap~z`` (ḍuvapā̃ṣ) retains full upadeśa in ``meta`` while the tape is ``vap``;
+# samprasāraṇa scope matches *vap* (corrected-v2 **P003-C**).
+_DHATU_UPADESHA_SET = frozenset({"vac", "svap", "yaj", "vap", "quvap~z"})
 
 
 def _is_kit_pratyaya(pr) -> bool:
@@ -31,7 +33,6 @@ def _is_kit_pratyaya(pr) -> bool:
 def _find_target(state: State):
     if len(state.terms) < 2:
         return None
-    # Demo frame: [dhatu, pratyaya]
     dh = next((t for t in state.terms if "dhatu" in t.tags), None)
     if dh is None:
         return None

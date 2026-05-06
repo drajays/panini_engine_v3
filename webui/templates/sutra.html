@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}{{ rec.sutra_id }} — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block content %}
+{% set _TYPE_DEV = {
+  "VIDHI"       : "विधिः",
+  "PARIBHASHA"  : "परिभाषा",
+  "SAMJNA"      : "संज्ञा",
+  "ADHIKARA"    : "अधिकारः",
+  "ANUVADA"     : "अनुवादः",
+  "NIYAMA"      : "नियमः",
+  "ATIDESA"     : "अतिदेशः",
+  "PRATISHEDHA" : "प्रतिषेधः",
+  "UTSARGA"     : "उत्सर्गः",
+  "APAVADA"     : "अपवादः",
+} %}
+
+<div style="margin-bottom:8px;">
+  <a href="/sutras" style="font-size:12px;color:var(--accent);">← सूत्र-सूची</a>
+</div>
+
+<div class="panel">
+  <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;">
+    <h1 style="margin:0;font-family:var(--mono);font-size:28px;color:var(--accent);">{{ rec.sutra_id }}</h1>
+    <span style="font-size:12px;padding:2px 8px;border-radius:4px;background:var(--bg-card);
+                 border:1px solid var(--line-soft);color:var(--ink-dim);">
+      {{ _TYPE_DEV.get(rec.sutra_type, rec.sutra_type) }}
+    </span>
+  </div>
+
+  {% if rec.text_dev %}
+  <div class="dev" style="font-size:26px;margin-top:16px;line-height:1.5;">{{ rec.text_dev }}</div>
+  {% endif %}
+
+  {% if rec.padaccheda_dev %}
+  <div class="dev" style="font-size:15px;color:var(--ink-dim);margin-top:6px;">{{ rec.padaccheda_dev }}</div>
+  {% endif %}
+
+  {% if rec.text_slp1 %}
+  <div class="slp1" style="margin-top:4px;">{{ rec.text_slp1 }}</div>
+  {% endif %}
+</div>
+
+{% if rec.why_dev %}
+<div class="panel">
+  <h2 style="font-size:14px;color:var(--ink-dim);margin:0 0 8px;">व्याख्यानम्</h2>
+  <div class="dev" style="font-size:15px;line-height:1.7;">{{ rec.why_dev }}</div>
+</div>
+{% endif %}
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+
+  {% if rec.anuvritti_from %}
+  <div class="panel">
+    <h2 style="font-size:13px;color:var(--ink-dim);margin:0 0 8px;">अनुवृत्तिः</h2>
+    {% for sid in rec.anuvritti_from %}
+    <div style="margin-bottom:4px;">
+      <a href="/sutra/{{ sid|urlencode }}" style="font-family:var(--mono);font-size:12px;color:var(--accent);">{{ sid }}</a>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if rec.adhikara_scope %}
+  <div class="panel">
+    <h2 style="font-size:13px;color:var(--ink-dim);margin:0 0 8px;">अधिकार-क्षेत्रम्</h2>
+    {% for sid in rec.adhikara_scope %}
+    <div style="margin-bottom:4px;">
+      <a href="/sutra/{{ sid|urlencode }}" style="font-family:var(--mono);font-size:12px;color:var(--accent);">{{ sid }}</a>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if rec.blocks_sutra_ids %}
+  <div class="panel">
+    <h2 style="font-size:13px;color:var(--ink-dim);margin:0 0 8px;">प्रतिरोधः (blocks)</h2>
+    {% for sid in rec.blocks_sutra_ids %}
+    <div style="margin-bottom:4px;">
+      <a href="/sutra/{{ sid|urlencode }}" style="font-family:var(--mono);font-size:12px;color:var(--accent);">{{ sid }}</a>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+</div>
+
+<div class="panel" style="margin-top:12px;">
+  <h2 style="font-size:13px;color:var(--ink-dim);margin:0 0 8px;">प्रक्रिया-दर्शनम्</h2>
+  <p class="muted" style="font-size:12px;">
+    इदं सूत्रम् <a href="/pipelines" style="color:var(--accent);">प्रक्रिया-पृष्ठे</a> व्युत्पत्तिषु द्रष्टुं शक्यते।
+    <a href="/matrix" style="color:var(--accent);">चतुर्विंशतिकोष्ठे</a> अपि व्युत्पत्तयः निरीक्षणीयाः।
+  </p>
+</div>
+{% endblock %}

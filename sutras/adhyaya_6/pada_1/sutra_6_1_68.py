@@ -1,225 +1,107 @@
 """
-6.1.68  हल्ङ्याब्भ्यो दीर्घात् सुतिस्यपृक्तं हल्  —  VIDHI
+6.1.68  हल्ङ्याब्भ्यो दीर्घात् सुतिस्यपृक्तं हल्  —  VIDHI (universal)
 
-Narrow v3: when ``state.meta["6_1_68_arm"]``, the *aṅga* ``Term`` ends in a
-*hal*, the following *sup* is a single *s* tagged *apṛkta* (**1.2.41**), drop
-that *s* ``Varna`` (and remove an emptied *sup* ``Term``).
+The apṛkta *hal* (single consonant *su* / *ti* / *si* residue) is dropped after:
 
-  • ``prakriya_35`` — ``vAc`` + ``su``→``s`` apṛkta *śruti* slice (JSON ``ordered_sutra_sequence``
-    lists **6.1.66** for this prayoga; śāstrīya anchor here is **6.1.68** — ``prakriya_35_vAc_sup_lopa_arm``).
-  • ``prakriya_36`` — ``ardhaBAj`` + ``su``→``s`` apṛkta (``…/separated_prakriyas/prakriya_36_*.json``
-    lists **6.1.66** only; commentary uses **6.1.68** — ``prakriya_36_ardhaBAj_sup_lopa_arm``).
-  • ``prakriya_37`` — ``ṭāp``/long-vowel-final stem ``pAcakavndArikA`` + apṛkta ``s`` (*śruti* slice for
-    **पाचकवृन्दारिका** — ``prakriya_37_6_1_68_tApanta_arm``; distinct from the ``hal``-final branch above).
+  (a) a **hal**-final *aṅga* (consonant-final stem), or
+  (b) a **dīrgha-Ī**-final *aṅga* (*ṅī*-anta, long *ī* strī pratyaya), or
+  (c) a **dīrgha-Ā**-final *aṅga* (*Āp*-anta, long *ā* strī pratyaya / *ṭāp*).
 
-  • P023 — ``dyukAmA`` (ṭāp-anta) + apṛkta ``s`` → lopa (``P023_6_1_68_tApanta_arm``).
-  • P039 — ``viSAKA`` (strī *ṭāp*-anta stem) + apṛkta ``s`` → lopa
-    (``P039_6_1_68_tApanta_arm``).
-  • P041 — ``agnicit`` (hal-anta) + apṛkta ``s`` → lopa (``P041_6_1_68_arm``).
+Engine (universal): scans all adjacent *(aṅga, sup)* pairs.  The *sup* must be
+exactly one *varna*, tagged **apṛkta** (by **1.2.41**), and that *varna* must be
+``s``.  The *aṅga*'s final *varna* must be in HAL, or be long ``A`` or ``I``.
+
+``cond`` / ``_find_eligible_boundary`` use only the phonological environment.
+
+When a rule application succeeds, ``act`` may also set **demo-scoped** registry
+keys if ``state.meta`` carries a known arm **and** the eligible *aṅga* bears
+the matching witness tag (telemetry only; not read by ``cond``).
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
+from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology.pratyahara import HAL
 
 from sutras.adhyaya_1.pada_2.sutra_1_2_41 import TAG_APRKTA
 
+# Finals that licence 6.1.68 on the ṅī / Āp (dīrgha) branch.
+_DIRGHA_STRĪ_FINALS = frozenset({"A", "I"})
 
-def _hal_sup_s_pattern(state: State, meta_arm: str | None) -> bool:
-    if len(state.terms) < 2:
-        return False
-    anga, pr = state.terms[-2], state.terms[-1]
-    if "anga" not in anga.tags:
-        return False
-    if "sup" not in pr.tags or len(pr.varnas) != 1:
-        return False
-    if TAG_APRKTA not in pr.tags:
-        return False
-    if pr.varnas[0].slp1 != "s":
-        return False
-    if not anga.varnas or anga.varnas[-1].slp1 not in HAL:
-        return False
-    if meta_arm == "prakriya_35":
-        if not state.meta.get("prakriya_35_vAc_sup_lopa_arm"):
-            return False
-        if "prakriya_35_vAc_sup_demo" not in anga.tags:
-            return False
-        if anga.meta.get("upadesha_slp1") != "vAc":
-            return False
-        return True
-    if meta_arm == "prakriya_36":
-        if not state.meta.get("prakriya_36_ardhaBAj_sup_lopa_arm"):
-            return False
-        if "prakriya_36_ardhaBAj_demo" not in anga.tags:
-            return False
-        if anga.meta.get("upadesha_slp1") != "ardhaBAj":
-            return False
-        return True
-    if not state.meta.get("6_1_68_arm"):
-        return False
-    return True
+# (meta arm key, ``samjna_registry`` stamp, required subset of *aṅga* ``tags``)
+_DEMO_6_1_68_SIGNATURES: tuple[tuple[str, str, frozenset[str]], ...] = (
+    ("P041_6_1_68_arm", "6.1.68_hal_sup_lopa_P041", frozenset({"P041_agnicit_demo"})),
+    (
+        "prakriya_37_6_1_68_tApanta_arm",
+        "6.1.68_tApanta_sup_lopa_prakriya_37",
+        frozenset({"prakriya_37_pAcakavndArikA_Atap_demo"}),
+    ),
+    (
+        "prakriya_36_ardhaBAj_sup_lopa_arm",
+        "6.1.68_ardhaBAj_sup_lopa_prakriya_36",
+        frozenset({"prakriya_36_ardhaBAj_demo"}),
+    ),
+    (
+        "prakriya_35_vAc_sup_lopa_arm",
+        "6.1.68_vAc_sup_lopa_prakriya_35",
+        frozenset({"prakriya_35_vAc_sup_demo"}),
+    ),
+    ("P039_6_1_68_tApanta_arm", "6.1.68_tApanta_sup_lopa_P039", frozenset({"P039_viSAKA_demo"})),
+)
 
 
-def _eligible(state: State) -> bool:
-    return _hal_sup_s_pattern(state, None)
+def _stamp_demo_6_1_68_aliases(state: State, anga_i: int) -> None:
+    if anga_i < 0 or anga_i >= len(state.terms):
+        return
+    tags = state.terms[anga_i].tags
+    for meta_key, reg_key, need in _DEMO_6_1_68_SIGNATURES:
+        if not state.meta.get(meta_key):
+            continue
+        if not need.issubset(tags):
+            continue
+        state.samjna_registry[reg_key] = True
 
 
-def _eligible_prakriya_35_vAc(state: State) -> bool:
-    return _hal_sup_s_pattern(state, "prakriya_35")
-
-
-def _eligible_prakriya_36_ardhaBAj(state: State) -> bool:
-    return _hal_sup_s_pattern(state, "prakriya_36")
-
-
-def _eligible_prakriya_37_tApanta(state: State) -> bool:
-    if len(state.terms) < 2:
-        return False
-    if not state.meta.get("prakriya_37_6_1_68_tApanta_arm"):
-        return False
-    anga, pr = state.terms[-2], state.terms[-1]
-    if "anga" not in anga.tags:
-        return False
-    if "sup" not in pr.tags or len(pr.varnas) != 1:
-        return False
-    if TAG_APRKTA not in pr.tags:
-        return False
-    if pr.varnas[0].slp1 != "s":
-        return False
-    if "prakriya_37_pAcakavndArikA_Atap_demo" not in anga.tags:
-        return False
-    if anga.meta.get("upadesha_slp1") != "pAcakavndArikA":
-        return False
-    if not anga.varnas or anga.varnas[-1].slp1 != "A":
-        return False
-    return True
-
-
-def _eligible_P023_tApanta(state: State) -> bool:
-    if len(state.terms) < 2:
-        return False
-    if not state.meta.get("P023_6_1_68_tApanta_arm"):
-        return False
-    anga, pr = state.terms[-2], state.terms[-1]
-    if "anga" not in anga.tags:
-        return False
-    if "sup" not in pr.tags or len(pr.varnas) != 1:
-        return False
-    if TAG_APRKTA not in pr.tags:
-        return False
-    if pr.varnas[0].slp1 != "s":
-        return False
-    if not anga.varnas or anga.varnas[-1].slp1 != "A":
-        return False
-    if not (anga.meta.get("stri_TAp_4_1_4") or "TAp_anta" in anga.tags):
-        return False
-    return True
-
-
-def _eligible_P041_agnicit_hal(state: State) -> bool:
-    if len(state.terms) < 2:
-        return False
-    if not state.meta.get("P041_6_1_68_arm"):
-        return False
-    anga, pr = state.terms[-2], state.terms[-1]
-    if "anga" not in anga.tags or "P041_agnicit_demo" not in anga.tags:
-        return False
-    if "sup" not in pr.tags or len(pr.varnas) != 1:
-        return False
-    if TAG_APRKTA not in pr.tags:
-        return False
-    if pr.varnas[0].slp1 != "s":
-        return False
-    if not anga.varnas or anga.varnas[-1].slp1 not in HAL:
-        return False
-    return True
-
-
-def _eligible_P039_tApanta(state: State) -> bool:
-    if len(state.terms) < 2:
-        return False
-    if not state.meta.get("P039_6_1_68_tApanta_arm"):
-        return False
-    anga, pr = state.terms[-2], state.terms[-1]
-    if "anga" not in anga.tags:
-        return False
-    if "P039_viSAKA_demo" not in anga.tags:
-        return False
-    if "sup" not in pr.tags or len(pr.varnas) != 1:
-        return False
-    if TAG_APRKTA not in pr.tags:
-        return False
-    if pr.varnas[0].slp1 != "s":
-        return False
-    if not anga.varnas or anga.varnas[-1].slp1 != "A":
-        return False
-    if not (anga.meta.get("stri_TAp_4_1_4") or "TAp_anta" in anga.tags):
-        return False
-    return True
+def _find_eligible_boundary(state: State) -> int | None:
+    """
+    Return index *i* such that ``terms[i]`` is an *aṅga* eligible under 6.1.68
+    and ``terms[i+1]`` is an apṛkta ``s`` (*sup*).
+    """
+    for i in range(len(state.terms) - 1):
+        anga = state.terms[i]
+        pr = state.terms[i + 1]
+        if "anga" not in anga.tags:
+            continue
+        if not anga.varnas:
+            continue
+        final = anga.varnas[-1].slp1
+        if final not in HAL and final not in _DIRGHA_STRĪ_FINALS:
+            continue
+        if "sup" not in pr.tags:
+            continue
+        if len(pr.varnas) != 1:
+            continue
+        if TAG_APRKTA not in pr.tags:
+            continue
+        if pr.varnas[0].slp1 != "s":
+            continue
+        return i
+    return None
 
 
 def cond(state: State) -> bool:
-    return (
-        _eligible_P041_agnicit_hal(state)
-        or _eligible_P039_tApanta(state)
-        or _eligible_P023_tApanta(state)
-        or _eligible_prakriya_37_tApanta(state)
-        or _eligible_prakriya_36_ardhaBAj(state)
-        or _eligible_prakriya_35_vAc(state)
-        or _eligible(state)
-    )
+    return _find_eligible_boundary(state) is not None
 
 
 def act(state: State) -> State:
-    if _eligible_P041_agnicit_hal(state):
-        pr = state.terms[-1]
-        pr.varnas.clear()
-        state.terms.pop()
-        state.samjna_registry["6.1.68_hal_sup_lopa_P041"] = True
-        state.meta.pop("P041_6_1_68_arm", None)
+    i = _find_eligible_boundary(state)
+    if i is None:
         return state
-    if _eligible_P039_tApanta(state):
-        pr = state.terms[-1]
-        pr.varnas.clear()
-        state.terms.pop()
-        state.samjna_registry["6.1.68_tApanta_sup_lopa_P039"] = True
-        state.meta.pop("P039_6_1_68_tApanta_arm", None)
-        return state
-    if _eligible_P023_tApanta(state):
-        pr = state.terms[-1]
-        pr.varnas.clear()
-        state.terms.pop()
-        state.samjna_registry["6.1.68_tApanta_sup_lopa_P023"] = True
-        state.meta.pop("P023_6_1_68_tApanta_arm", None)
-        return state
-    if _eligible_prakriya_37_tApanta(state):
-        pr = state.terms[-1]
-        pr.varnas.clear()
-        state.terms.pop()
-        state.samjna_registry["6.1.68_tApanta_sup_lopa_prakriya_37"] = True
-        state.meta.pop("prakriya_37_6_1_68_tApanta_arm", None)
-        return state
-    if _eligible_prakriya_36_ardhaBAj(state):
-        pr = state.terms[-1]
-        pr.varnas.clear()
-        state.terms.pop()
-        state.samjna_registry["6.1.68_ardhaBAj_sup_lopa_prakriya_36"] = True
-        state.meta.pop("prakriya_36_ardhaBAj_sup_lopa_arm", None)
-        return state
-    if _eligible_prakriya_35_vAc(state):
-        pr = state.terms[-1]
-        pr.varnas.clear()
-        state.terms.pop()
-        state.samjna_registry["6.1.68_vAc_sup_lopa_prakriya_35"] = True
-        state.meta.pop("prakriya_35_vAc_sup_lopa_arm", None)
-        return state
-    if _eligible(state):
-        pr = state.terms[-1]
-        pr.varnas.clear()
-        state.terms.pop()
-        state.samjna_registry["6.1.68_sut_aprkta_hal_lopa"] = True
-        return state
+    pr = state.terms[i + 1]
+    pr.varnas.clear()
+    state.terms.pop(i + 1)
+    state.samjna_registry["6.1.68_aprkta_sup_lopa"] = True
+    _stamp_demo_6_1_68_aliases(state, i)
     return state
 
 
@@ -229,7 +111,7 @@ SUTRA = SutraRecord(
     text_slp1      = "hal~yAbbhyo dIrghAt sutisyapfktaM hal",
     text_dev       = "हल्ङ्याब्भ्यो दीर्घात् सुतिस्यपृक्तं हल्",
     padaccheda_dev = "हल्-ङि-आभ्यः / दीर्घात् / सु-तिसि-अपृक्तम् / हल्",
-    why_dev        = "हल्-अन्ताद् अङ्गात् परस्य अपृक्त-सु-हल्-लोपः।",
+    why_dev        = "हल्-अन्तात् / ङी-आभ्-अन्तात् दीर्घात् अङ्गात् परस्य अपृक्त-सु-हल्-लोपः।",
     anuvritti_from = (),
     cond           = cond,
     act            = act,

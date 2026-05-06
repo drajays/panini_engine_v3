@@ -5,6 +5,9 @@
 
 (B) **P031** (*viśiṇḍhi*): dental ``n`` before palatal ``S`` (श्) → ``R`` (ण्),
     recipe-armed only (JSON’s confused *ṣṭu*-row folded here).
+
+(C) **corrected-v2 P001-B** (*dhṛṣṭaḥ*): ``z``+``t`` → ``z``+``w`` **before**
+    **8.2.1** so **4.1.2** can attach *sup* (Tripāḍī firewall).
 """
 from __future__ import annotations
 
@@ -50,6 +53,27 @@ def _find_p036_Na_to_a(state: State) -> bool:
     return True
 
 
+def _find_p001_b_zt_pre_tripadi(state: State):
+    """
+    **P001-B**: merged *pada* ``Dfz``+``ta`` → ``Dfzta``; apply *ṣṭ* **before**
+    ``state.tripadi_zone`` so ``4.1.2`` is not ASIDDHA-blocked.
+    """
+    if not state.meta.get("corrected_v2_P001_B_zt_pre_tripadi_arm"):
+        return None
+    if state.tripadi_zone:
+        return None
+    if not state.terms:
+        return None
+    t = state.terms[0]
+    if t.meta.get("corrected_v2_P001_B_zt_done"):
+        return None
+    vs = t.varnas
+    for i in range(len(vs) - 1):
+        if vs[i].slp1 == "z" and vs[i + 1].slp1 == "t":
+            return i + 1
+    return None
+
+
 def _find_zt(state: State):
     if not state.tripadi_zone:
         return None
@@ -69,6 +93,7 @@ def cond(state: State) -> bool:
     return (
         _find_p036_Na_to_a(state)
         or _find_p031(state) is not None
+        or _find_p001_b_zt_pre_tripadi(state) is not None
         or _find_zt(state) is not None
     )
 
@@ -90,6 +115,13 @@ def act(state: State) -> State:
         t.meta["P031_8_4_41_done"] = True
         state.meta.pop("P031_8_4_41_n_R_before_S_arm", None)
         return state
+    i_pre = _find_p001_b_zt_pre_tripadi(state)
+    if i_pre is not None:
+        t = state.terms[0]
+        t.varnas[i_pre] = mk("w")
+        t.meta["corrected_v2_P001_B_zt_done"] = True
+        state.meta.pop("corrected_v2_P001_B_zt_pre_tripadi_arm", None)
+        return state
     i = _find_zt(state)
     if i is None:
         return state
@@ -105,7 +137,7 @@ SUTRA = SutraRecord(
     text_slp1="zwunA zwuH",
     text_dev="ष्टुना ष्टुः",
     padaccheda_dev="ष्टुना / ष्टुः",
-    why_dev="ष्-समीपे तकारस्य टकारादेशः; प०३१ न्→ण् (श्-पूर्व); प०३६ ``Na``→``a`` (णल्-आदि)।",
+    why_dev="ष्-समीपे तकारस्य टकारादेशः; प०३१ न्→ण्; प०३६ ``Na``→``a``; P001-B पूर्व-त्रिपादी ``z``+``t``।",
     anuvritti_from=("8.2.1",),
     cond=cond,
     act=act,

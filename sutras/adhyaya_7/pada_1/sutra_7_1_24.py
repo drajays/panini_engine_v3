@@ -19,6 +19,7 @@ from phonology    import mk
 # Only su (s~) needs conversion. The am upadeśa is already am; applying
 # a VIDHI that leaves the form unchanged would violate R1.
 _TARGETS = frozenset({"s~"})
+META_P003_AM = "corrected_v2_P003_subanta_tail_arm"
 
 
 def _matches(state: State) -> bool:
@@ -38,6 +39,10 @@ def _matches(state: State) -> bool:
         return False
     if not anga.varnas:
         return False
+    # **corrected-v2 P003** (*paktrimam*, *kṛtrimam*, *uptrimam*): stem ends in **m**
+    # (*ktri*+*mam* residue); **sū** → **am** like **ato ’m** on **a**-final napumsaka.
+    if state.meta.get(META_P003_AM) and anga.varnas[-1].slp1 == "m":
+        return True
     if anga.varnas[-1].slp1 != "a":
         return False
     return True
@@ -55,6 +60,7 @@ def act(state: State) -> State:
     pr.meta["ato_am_done"] = True
     pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", pr.meta.get("upadesha_slp1"))
     pr.meta["upadesha_slp1"] = "am"
+    state.meta.pop(META_P003_AM, None)
     return state
 
 

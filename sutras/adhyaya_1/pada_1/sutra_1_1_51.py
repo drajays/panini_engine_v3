@@ -119,14 +119,24 @@ mechanically blind via pre-set flags on the aṅga.
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.state import State
+from engine.state import State, Term
 from phonology    import mk
+
+
+def _urN_rapara_target(state: State) -> Term | None:
+    """Term carrying **7.3.84** *guṇa* pending *uṛaṇ-r/l-apara* (not always ``terms[0]`` when an *upasarga* precedes the *dhātu*)."""
+    for t in state.terms:
+        if t.meta.get("urN_rapara_pending") in ("r", "l"):
+            return t
+    return None
 
 
 def cond(state: State) -> bool:
     if not state.terms:
         return False
-    d0 = state.terms[0]
+    d0 = _urN_rapara_target(state)
+    if d0 is None:
+        return False
     # v3: used both in dhātu-driven uRaN operations and in sandhi (6.1.87/6.1.91)
     # where the left member is an aṅga/prātipadika.
     if "dhatu" not in d0.tags and "anga" not in d0.tags and "prātipadika" not in d0.tags:
@@ -143,7 +153,8 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    d0 = state.terms[0]
+    d0 = _urN_rapara_target(state)
+    assert d0 is not None
     kind = d0.meta.get("urN_rapara_pending")
     ins_after = d0.meta.get("urN_rapara_after_index")
     v_rl = mk("r" if kind == "r" else "l")

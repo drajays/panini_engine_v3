@@ -604,6 +604,10 @@ def P00_luN_lakara_cli_sic(s: State) -> State:
     for t in s.terms:
         if (t.meta.get("upadesha_slp1") or "").strip() == "sic":
             t.tags.discard("upadesha")
+    # Tag sic as ardhadhatuka so 7.2.35 can detect it natively (no arm needed).
+    for t in s.terms:
+        if (t.meta.get("upadesha_slp1") or "").strip() == "sic":
+            t.tags.add("ardhadhatuka")
     return s
 
 
@@ -715,7 +719,6 @@ def P00_lat_vartamane_tas_and_sap(s: State) -> State:
         del laT.varnas[-1]
     s.terms.append(laT)
     s = P00_tin_tas_adesh_full(s)
-    s.meta["3_1_68_kartari_recipe"] = True
     s = apply_rule("3.1.68", s)
     return s
 
@@ -756,7 +759,6 @@ def P00_lat_vartamane_jhi_and_sap(s: State) -> State:
         del laT.varnas[-1]
     s.terms.append(laT)
     s = P00_tin_jhi_adesh_full(s)
-    s.meta["3_1_68_kartari_recipe"] = True
     s = apply_rule("3.1.68", s)
     return s
 
@@ -779,7 +781,6 @@ def P00_lat_vartamane_tip_and_sap(s: State) -> State:
         del laT.varnas[-1]
     s.terms.append(laT)
     s = P00_tip_to_ti(s)
-    s.meta["3_1_68_kartari_recipe"] = True
     s = apply_rule("3.1.68", s)
     return s
 

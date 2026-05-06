@@ -14,11 +14,14 @@ SUTRA_REGISTRY and renders traces, matrix, and SIG graph on demand.
 """
 from __future__ import annotations
 
+import importlib
+import inspect as _inspect
 import json
 import subprocess
 import sys
 import time
 from pathlib import Path
+from typing import Any
 
 from flask import Flask, render_template, request, jsonify, abort
 
@@ -311,6 +314,212 @@ def api_run_sig():
         "returncode": r.returncode,
         "stdout"    : r.stdout,
         "stderr"    : r.stderr[-1000:],
+    })
+
+
+# ─────────────────────────────────────────────────────────────────
+# Pipeline showcase — auto-discovery
+# ─────────────────────────────────────────────────────────────────
+
+_EXCLUDED_PIPELINE_STEMS = frozenset({
+    "subanta", "subanta_trc", "krdanta", "tinanta",
+    "dhatupatha", "preflight_lopa_samjna", "dik_caturthi_glassbox_text",
+})
+
+_CATEGORY_ORDER = [
+    "Corrected", "Kṛdanta", "Tiṅanta", "Taddhita", "Samāsa", "Paribhāṣā", "Demo",
+]
+
+_PIPELINE_CATALOG: list[dict[str, Any]] | None = None
+
+
+def _categorize_pipeline(stem: str) -> str:
+    s = stem.lower()
+    if "corrected" in s:
+        return "Corrected"
+    if any(x in s for x in [
+        "_kta_", "_ktri_", "ktavatu", "nistha", "_kvip", "_kvi_",
+        "_ghurac_", "_lyuw_", "_lyap_", "krdanta",
+    ]):
+        return "Kṛdanta"
+    if any(x in s for x in [
+        "_lat_", "_lag_", "_lun_", "_lut_", "_lig_", "_lit_", "_lrt_",
+        "tinanta", "atmanepada", "parasmaipada", "_nic_", "_kyaz_", "_san_",
+        "split_prakriyas",
+    ]):
+        return "Tiṅanta"
+    if any(x in s for x in ["taddhita", "saliya", "maliya", "matup"]):
+        return "Taddhita"
+    if any(x in s for x in ["samasa", "bahuvrihi", "dvandva", "tatpurusha"]):
+        return "Samāsa"
+    if "_note_" in s or "paribhasha" in s or s.endswith("_note"):
+        return "Paribhāṣā"
+    return "Demo"
+
+
+def _build_pipeline_catalog() -> list[dict[str, Any]]:
+    global _PIPELINE_CATALOG
+    if _PIPELINE_CATALOG is not None:
+        return _PIPELINE_CATALOG
+
+    pipelines_dir = _ROOT / "pipelines"
+    catalog: list[dict[str, Any]] = []
+
+    for py_file in sorted(pipelines_dir.glob("*.py")):
+        stem = py_file.stem
+        if stem.startswith("_") or stem in _EXCLUDED_PIPELINE_STEMS:
+            continue
+        mod_name = f"pipelines.{stem}"
+        try:
+            mod = importlib.import_module(mod_name)
+        except Exception as ex:
+            catalog.append({
+                "key": f"{stem}__error",
+                "stem": stem,
+                "fn_name": "— import error —",
+                "category": _categorize_pipeline(stem),
+                "description": f"Import failed: {type(ex).__name__}: {ex}",
+                "needs_args": False,
+                "error": True,
+            })
+            continue
+
+        fns_added = 0
+        for fn_name, fn in _inspect.getmembers(mod, _inspect.isfunction):
+            if fn.__module__ != mod_name:
+                continue
+            if not (fn_name.startswith("derive_") or fn_name == "derive"):
+                continue
+            sig = _inspect.signature(fn)
+            needs_args = any(
+                p.default is _inspect.Parameter.empty
+                for p in sig.parameters.values()
+            )
+            doc = _inspect.getdoc(fn) or _inspect.getdoc(mod) or ""
+            first_line = next(
+                (ln.strip() for ln in doc.splitlines() if ln.strip()), stem
+            )
+            catalog.append({
+                "key": f"{stem}__{fn_name}",
+                "stem": stem,
+                "fn_name": fn_name,
+                "category": _categorize_pipeline(stem),
+                "description": first_line,
+                "needs_args": needs_args,
+                "error": False,
+            })
+            fns_added += 1
+
+    order = {c: i for i, c in enumerate(_CATEGORY_ORDER)}
+    catalog.sort(key=lambda p: (order.get(p["category"], 99), p["stem"], p["fn_name"]))
+    _PIPELINE_CATALOG = catalog
+    return catalog
+
+
+@app.route("/pipelines")
+def pipelines_page():
+    cat = _build_pipeline_catalog()
+    count = sum(1 for p in cat if not p.get("error"))
+    return render_template(
+        "pipelines.html",
+        nav_active="pipelines",
+        cov=coverage_report(SUTRA_REGISTRY),
+        pipeline_count=count,
+    )
+
+
+@app.route("/api/pipelines")
+def api_pipelines():
+    cat = _build_pipeline_catalog()
+    seen: set[str] = set()
+    categories: list[str] = []
+    for p in cat:
+        c = p["category"]
+        if c not in seen:
+            seen.add(c)
+            categories.append(c)
+    return jsonify({"pipelines": cat, "categories": categories})
+
+
+@app.route("/api/pipeline/<path:key>", methods=["POST"])
+def api_pipeline_run(key: str):
+    """Run a single demo pipeline by catalog key (stem__fn_name)."""
+    cat = _build_pipeline_catalog()
+    entry = next((p for p in cat if p["key"] == key), None)
+    if entry is None:
+        return jsonify({"error": f"pipeline '{key}' not found"}), 404
+    if entry.get("error"):
+        return jsonify({"error": entry["description"]}), 500
+    if entry["needs_args"]:
+        return jsonify({"error": "Pipeline requires arguments — not auto-runnable."}), 400
+
+    stem, fn_name = entry["stem"], entry["fn_name"]
+    try:
+        mod = importlib.import_module(f"pipelines.{stem}")
+    except Exception as ex:
+        return jsonify({"error": f"Import failed: {ex}"}), 500
+
+    fn = getattr(mod, fn_name, None)
+    if fn is None:
+        return jsonify({"error": f"Function {fn_name} not found."}), 404
+
+    try:
+        state = fn()
+    except Exception as ex:
+        import traceback as _tb
+        return jsonify({
+            "error": f"{type(ex).__name__}: {ex}",
+            "traceback": _tb.format_exc()[-2000:],
+        }), 500
+
+    from phonology.joiner import slp1_to_devanagari
+    try:
+        all_varnas = [v for t in state.terms for v in t.varnas]
+        surface_dev = slp1_to_devanagari(all_varnas) if all_varnas else ""
+    except Exception:
+        surface_dev = ""
+
+    surface_slp1 = ""
+    try:
+        surface_slp1 = state.flat_slp1()
+    except Exception:
+        pass
+    if not surface_slp1:
+        try:
+            surface_slp1 = state.render()
+        except Exception:
+            pass
+
+    enriched = []
+    for step in state.trace:
+        sid = step.get("sutra_id", "")
+        rec = SUTRA_REGISTRY.get(sid) if sid and not sid.startswith("__") else None
+        enriched.append({
+            **step,
+            "_is_structural": bool(sid.startswith("__")) if sid else False,
+            "_sutra_text_dev": getattr(rec, "text_dev", None),
+            "_padaccheda_dev": getattr(rec, "padaccheda_dev", None),
+            "_anuvritti_from": list(getattr(rec, "anuvritti_from", ()) or ()),
+        })
+
+    tr = state.trace
+    return jsonify({
+        "key": key,
+        "fn_name": fn_name,
+        "category": entry["category"],
+        "description": entry["description"],
+        "surface_dev": surface_dev,
+        "surface_slp1": surface_slp1,
+        "trace": enriched,
+        "stats": {
+            "total_steps": len(tr),
+            "applied_count": sum(
+                1 for s in tr if s.get("status") in {"APPLIED", "APPLIED_VACUOUS"}
+            ),
+            "audit_count":   sum(1 for s in tr if s.get("status") == "AUDIT"),
+            "blocked_count": sum(1 for s in tr if s.get("status") == "BLOCKED"),
+            "skipped_count": sum(1 for s in tr if s.get("status") == "SKIPPED"),
+        },
     })
 
 

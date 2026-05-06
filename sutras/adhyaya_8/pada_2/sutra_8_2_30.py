@@ -15,6 +15,8 @@ from engine.state import State
 from phonology import mk
 from phonology.pratyahara import JHAL
 
+META_PRE_TRIPADI_P003_A = "corrected_v2_P003_A_8_2_30_arm"
+
 
 def _find(state: State):
     # 1) Intra-term: ... c + JHAL ...
@@ -40,9 +42,11 @@ def _find(state: State):
 
 
 def cond(state: State) -> bool:
-    if not state.tripadi_zone:
+    if _find(state) is None:
         return False
-    return _find(state) is not None
+    if state.meta.get(META_PRE_TRIPADI_P003_A):
+        return True
+    return bool(state.tripadi_zone)
 
 
 def act(state: State) -> State:
@@ -53,6 +57,7 @@ def act(state: State) -> State:
     t = state.terms[ti]
     t.varnas[vi] = mk("k")
     t.meta["8_2_30_cutuku_done"] = True
+    state.meta.pop(META_PRE_TRIPADI_P003_A, None)
     return state
 
 
@@ -62,7 +67,8 @@ SUTRA = SutraRecord(
     text_slp1="coH kuH",
     text_dev="चोः कुः",
     padaccheda_dev="चोः कुः",
-    why_dev="झलि/पदान्ते परे च-वर्णस्य क-वर्णादेशः (उक्त-उपपत्ति)।",
+    why_dev="झलि/पदान्ते परे च-वर्णस्य क-वर्णादेशः (उक्त-उपपत्ति)। "
+             "प००३-ए: त्रिपादी-प्रवेशात् पूर्वम् अनुमतम्।",
     anuvritti_from=("8.2.1",),
     cond=cond,
     act=act,

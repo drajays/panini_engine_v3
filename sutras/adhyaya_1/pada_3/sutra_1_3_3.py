@@ -26,6 +26,29 @@ from phonology     import HAL, TUSMA
 
 from sutras.adhyaya_1.pada_4.vibhakti_samjna_1_4_104 import is_tin_vibhakti_pratyaya
 
+META_P011_B_suT_IC = "corrected_v2_P011_B_suT_ic_arm"
+
+
+def _p011_b_suT_mid_u_it(state: State) -> None:
+    """**P011-B:** *suṭ* residue ``suT`` → ``s`` — medial ``u`` is *it* (bundle); **1.3.9** elides."""
+    if not state.meta.get(META_P011_B_suT_IC):
+        return
+    for i, t in enumerate(state.terms):
+        if "upadesha" not in t.tags:
+            continue
+        if (t.meta.get("upadesha_slp1") or "").strip() != "suT":
+            continue
+        vs = t.varnas
+        if len(vs) != 3:
+            continue
+        if vs[0].slp1 != "s" or vs[1].slp1 != "u" or vs[2].slp1 != "T":
+            continue
+        if "it" in vs[1].tags:
+            continue
+        vs[1].tags.add("it")
+        state.samjna_registry[("it_P011_B_suT_u", i)] = frozenset({"u"})
+    state.meta.pop(META_P011_B_suT_IC, None)
+
 
 def _eligible_terms(state: State):
     """Yield (index, term) with an unmarked final hal in upadeśa (when allowed)."""
@@ -45,6 +68,18 @@ def _eligible_terms(state: State):
         # **tām** (narrow **3.4.101** output): final nasal *m* is not *halantyam-it*.
         if up_tin == "tAm" and last.slp1 == "m":
             continue
+        # **ktrim** (*ktri* + Vt. **4.4.20** *mam*): final **m** is the augment, not
+        # *halantyam-it* (corrected-v2 **P003**).
+        if up_tin == "ktrim" and last.slp1 == "m":
+            continue
+        # **P010** *āyacchate*: keep *yam*’s final *m* until **7.3.78** (*yacch*).
+        if state.meta.get("corrected_v2_P010_preserve_yam_m") and "dhatu" in t.tags:
+            if up_tin == "yam" and last.slp1 == "m":
+                continue
+        # **P019** *avartsyat*: keep **vft**’s final **t** until **7.3.86** (not *halantyam-it* here).
+        if state.meta.get("corrected_v2_P019_demo") and "dhatu" in t.tags:
+            if up_tin == "vft" and last.slp1 == "t":
+                continue
         # *na vibhaktau tusmāḥ* (1.3.4) — *tiṅ* *ādeśa* *vibhakti* finals in *tusma*
         # are likewise not *halantyam-it* (e.g. *tas*, *mas*).
         if is_tin_vibhakti_pratyaya(t) and last.slp1 in TUSMA:
@@ -55,6 +90,20 @@ def _eligible_terms(state: State):
 
 
 def cond(state: State) -> bool:
+    if state.meta.get(META_P011_B_suT_IC):
+        for t in state.terms:
+            if "upadesha" not in t.tags:
+                continue
+            if (t.meta.get("upadesha_slp1") or "").strip() != "suT":
+                continue
+            vs = t.varnas
+            if (
+                len(vs) == 3
+                and vs[0].slp1 == "s"
+                and vs[1].slp1 == "u"
+                and vs[2].slp1 == "T"
+            ):
+                return True
     return next(_eligible_terms(state), None) is not None
 
 
@@ -68,6 +117,7 @@ def act(state: State) -> State:
         up = (t.meta.get("upadesha_slp1") or "").strip()
         key = ("it_halantyam", i, up)
         state.samjna_registry[key] = frozenset({t.varnas[-1].slp1})
+    _p011_b_suT_mid_u_it(state)
     return state
 
 

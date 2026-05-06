@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sa">
 <head>
   <meta charset="UTF-8">
-  <title>{% block title %}Pāṇini Engine v3{% endblock %}</title>
+  <title>{% block title %}पाणिनि-यन्त्रम्{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   {% block head_extra %}{% endblock %}
 </head>
@@ -14,16 +14,17 @@
     <span class="brand-sub">Pāṇini Engine <span class="ver">v3.1</span></span>
   </div>
   <nav class="nav">
-    <a href="/"        class="{{ 'active' if nav_active == 'derive'  else '' }}">Derive</a>
-    <a href="/matrix"  class="{{ 'active' if nav_active == 'matrix'  else '' }}">24-Cell Matrix</a>
-    <a href="/sutras"  class="{{ 'active' if nav_active == 'sutras'  else '' }}">Sūtras</a>
-    <a href="/sig"     class="{{ 'active' if nav_active == 'sig'     else '' }}">SIG Graph</a>
-    <a href="/tests"   class="{{ 'active' if nav_active == 'tests'   else '' }}">Tests</a>
+    <a href="/"          class="{{ 'active' if nav_active == 'derive'    else '' }}">व्युत्पत्तिः</a>
+    <a href="/matrix"    class="{{ 'active' if nav_active == 'matrix'    else '' }}">चतुर्विंशतिकोष्ठम्</a>
+    <a href="/pipelines" class="{{ 'active' if nav_active == 'pipelines' else '' }}">प्रक्रियाः</a>
+    <a href="/sutras"    class="{{ 'active' if nav_active == 'sutras'    else '' }}">सूत्राणि</a>
+    <a href="/sig"       class="{{ 'active' if nav_active == 'sig'       else '' }}">सूत्र-संबन्धः</a>
+    <a href="/tests"     class="{{ 'active' if nav_active == 'tests'     else '' }}">परीक्षाः</a>
   </nav>
   <div class="cov">
     {% if cov %}
       <span class="cov-pct">{{ cov.coverage_pct }}%</span>
-      <span class="cov-count">{{ cov.implemented }}/{{ cov.total }} sūtras</span>
+      <span class="cov-count">{{ cov.implemented }}/{{ cov.total }} सूत्राणि</span>
     {% endif %}
   </div>
 </header>
@@ -33,8 +34,8 @@
 </main>
 
 <footer class="footer">
-  Pāṇini Engine v3.1 · glass-box rule-based derivation ·
-  <a href="https://claude.ai">built with Claude</a>
+  पाणिनि-यन्त्रम् v3.1 · काचपेटिका-नियम-आधारित-व्युत्पत्तिः ·
+  <a href="https://claude.ai">Claude-सहायेन निर्मितम्</a>
 </footer>
 
 {% block body_extra %}{% endblock %}

@@ -43,6 +43,7 @@ _REGISTRY_BHA_INDICES = "1.4.18_bha_anga_indices"
 # Long-vowel *ac* onsets not present in the engine’s ``pratyahara.AC`` bitvector.
 _DĪRGHĀC_FIRST = frozenset({"A", "I", "U"})
 _META_GENERIC_TADDHITA_AVAYAVA = "prakriya_taddhita_avayava"
+_META_P004_A_CA_PHAYA = "prakriya_P004_A_caPhaya"
 
 
 def _taddhite_yaci_anga_ok(pr) -> bool:
@@ -104,9 +105,35 @@ def _eligible_anga_indices(state: State):
             yield k
             continue
         if (
+            state.meta.get(_META_P004_A_CA_PHAYA)
+            and "taddhita" in pr.tags
+            and "pratyaya" in pr.tags
+        ):
+            if "pada_1_4_16" in anga.tags:
+                continue
+            if not _taddhite_yaci_anga_ok(pr):
+                continue
+            if "bha" in anga.tags:
+                continue
+            yield k
+            continue
+        if (
             state.meta.get(_META_GENERIC_TADDHITA_AVAYAVA)
             and "taddhita" in pr.tags
             and "pratyaya" in pr.tags
+        ):
+            if "pada_1_4_16" in anga.tags:
+                continue
+            if not _taddhite_yaci_anga_ok(pr):
+                continue
+            if "bha" in anga.tags:
+                continue
+            yield k
+            continue
+        if (
+            state.meta.get("corrected_v2_P017_demo")
+            and "pratyaya" in pr.tags
+            and "sup" not in pr.tags
         ):
             if "pada_1_4_16" in anga.tags:
                 continue

@@ -18,15 +18,23 @@ from engine.state import State
 from phonology import mk
 
 
+def _first_dhatu_index(state: State) -> int | None:
+    for i, t in enumerate(state.terms):
+        if "dhatu" in t.tags:
+            return i
+    return None
+
+
 def _find(state: State):
-    if len(state.terms) < 2:
+    di = _first_dhatu_index(state)
+    if di is None:
         return None
-    dh = state.terms[0]
+    dh = state.terms[di]
     if "dhatu" not in dh.tags and "anga" not in dh.tags:
         return None
     # Find the next pratyaya carrying kṅiti signal (skip intervening vikaraṇa like `u`).
     kng_pr = None
-    for j in range(1, len(state.terms)):
+    for j in range(di + 1, len(state.terms)):
         if "pratyaya" not in state.terms[j].tags:
             continue
         if "kngiti" in state.terms[j].tags:
@@ -55,7 +63,9 @@ def act(state: State) -> State:
     i = _find(state)
     if i is None:
         return state
-    dh = state.terms[0]
+    di = _first_dhatu_index(state)
+    assert di is not None
+    dh = state.terms[di]
     dh.varnas[i] = mk("u")
     dh.meta["6_4_110_at_ut_done"] = True
     return state

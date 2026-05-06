@@ -27,6 +27,8 @@ IT_LOPA_TAGS: Final[FrozenSet[str]] = frozenset((
     "it_candidate_sha_pratyaya",
     "it_candidate_cutu",
     "it_candidate_lasaku",
+    # Narrow **corrected-v2 P007**: final ``o`` on ``BaYjo``-class seṭādiṅ upadeśa.
+    "it_candidate_ovarga_anubandha",
 ))
 
 

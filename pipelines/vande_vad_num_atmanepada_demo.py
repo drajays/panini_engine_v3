@@ -22,7 +22,7 @@ def derive_vande() -> State:
     dhatu = Term(
         kind="prakriti",
         varnas=parse_slp1_upadesha_sequence("vadi~"),
-        tags={"dhatu", "anga", "upadesha"},
+        tags={"dhatu", "anga", "upadesha", "idit"},
         meta={"upadesha_slp1": "vadi~"},
     )
     s = State(terms=[dhatu], meta={}, trace=[])
@@ -36,9 +36,7 @@ def derive_vande() -> State:
 
     # idito num dhatoH
     s = apply_rule("1.1.47", s)
-    s.meta["7_1_58_num_arm"] = True
     s = apply_rule("7.1.58", s)
-    s.meta.pop("7_1_58_num_arm", None)
 
     # laṭ + ātmanepada 1sg i
     s = apply_rule("3.1.91", s)
@@ -54,20 +52,19 @@ def derive_vande() -> State:
         del laT.varnas[-1]
     s.terms.append(laT)
 
-    s.meta["1_3_12_arm"] = True
     s = apply_rule("1.3.12", s)
-    s.meta.pop("1_3_12_arm", None)
 
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = s.meta.pop("tin_adesha_for_vande")
+    # 1sg ātmanepada in our tin inventory is `iw`; its hal (`w`) will be removed
+    # by 1.3.3 + 1.3.9, leaving `i`, then 3.4.79 (demo) yields `e`.
+    s.meta["tin_adesha_slp1"] = "iw"
     s = apply_rule("3.4.78", s)
     # it-lopa on `iw` → `i`
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
 
-    # Insert Sap between dhātu and i (cartari); then it-lopa yields `a`.
-    s.meta["3_1_68_kartari_recipe"] = True
+    # Insert Sap between dhātu and i (kartari); then it-lopa yields `a`.
     s = apply_rule("3.1.68", s)
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.8", s)

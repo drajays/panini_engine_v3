@@ -64,11 +64,15 @@ def _sap_trigger_next_pratyaya(up: str) -> bool:
 
 
 def _kartari_ok(state: State) -> bool:
-    if state.paribhasha_gates.get(f"{GATE_PFX}_licenses_kartari") is True:
+    gate_key = f"{GATE_PFX}_licenses_kartari"
+    # If 3.4.69 ran and explicitly licensed kartari, honour it.
+    if state.paribhasha_gates.get(gate_key) is True:
         return True
-    if state.meta.get(KARTARI_RECIPE_META_KEY) is True:
-        return True
-    return False
+    # If 3.4.69 ran and explicitly denied kartari (karmani/bhāve), respect that.
+    if gate_key in state.paribhasha_gates:
+        return False
+    # 3.4.69 has not run: kartari is the unmarked (default) prayoga.
+    return True
 
 
 def _dhato_adhikara_3_1_91_open(state: State) -> bool:
