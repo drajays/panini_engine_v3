@@ -84,8 +84,6 @@ def _site_32(state: State) -> bool:
 
 
 def _site_34(state: State) -> bool:
-    if not state.meta.get("prakriya_34_2_3_48_arm"):
-        return False
     if len(state.terms) != 2:
         return False
     t0, t1 = state.terms[0], state.terms[1]
@@ -124,7 +122,6 @@ def act(state: State) -> State:
     if _site_34(state):
         state.terms[0].tags.add("sAmantrita")
         state.samjna_registry["2.3.48_sAmantrita_aDyApaka_prakriya_34"] = True
-        state.meta.pop("prakriya_34_2_3_48_arm", None)
         return state
     if _site_30(state):
         state.terms[0].tags.add("sAmantrita")

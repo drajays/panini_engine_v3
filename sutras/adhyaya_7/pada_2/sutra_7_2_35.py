@@ -24,6 +24,27 @@ def _val_initial(pr_first: str) -> bool:
     return True
 
 
+def _ardhadhatuka_vikarana_index(state: State) -> int | None:
+    """Find first ardhadhatuka vikaraṇa (not kṛt) after dhatu starting with val — natural luṅ path."""
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags:
+            continue
+        for j in range(i + 1, len(state.terms)):
+            pr = state.terms[j]
+            if "ardhadhatuka" not in pr.tags:
+                continue
+            if "krt" in pr.tags:
+                continue
+            if pr.meta.get("it_agama_7_2_35_done"):
+                continue
+            if not pr.varnas:
+                continue
+            if not _val_initial(pr.varnas[0].slp1):
+                continue
+            return j
+    return None
+
+
 def _target_term(state: State):
     allow_sic = bool(state.meta.get("7_2_35_allow_sic", False))
     if allow_sic:
@@ -63,6 +84,8 @@ def cond(state: State) -> bool:
     j = _lut_tasi_vikaranha_index(state)
     if j is not None:
         return True
+    if _ardhadhatuka_vikarana_index(state) is not None:
+        return True
     if len(state.terms) < 2:
         return False
     d0 = state.terms[0]
@@ -92,6 +115,14 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    j = _ardhadhatuka_vikarana_index(state)
+    if j is not None:
+        t = state.terms[j]
+        it_v = mk("i")
+        it_v.tags.add("it_agama")
+        t.varnas.insert(0, it_v)
+        t.meta["it_agama_7_2_35_done"] = True
+        return state
     j = _lut_tasi_vikaranha_index(state)
     if j is not None:
         t = state.terms[j]

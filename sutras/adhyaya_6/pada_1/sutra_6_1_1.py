@@ -11,6 +11,14 @@ from engine.state import State, Term
 
 
 def cond(state: State) -> bool:
+    # **P017** (*paṭapaṭāyati*): duplicate **``pawat``** *prātipadika* (vārttika
+    # *dvitva* before डाच्), distinct from *dhātu* *abhyāsa* **6.1.1** arm.
+    if state.meta.get("corrected_v2_P017_6_1_1_dvitva_arm") and not state.samjna_registry.get(
+        "6.1.1_p017_dvitva_done"
+    ):
+        if len(state.terms) == 1 and "prātipadika" in state.terms[0].tags:
+            if "".join(v.slp1 for v in state.terms[0].varnas) == "pawat":
+                return True
     # Allow an explicit dvitva action even if adhikāra is already open.
     if state.meta.get("6_1_1_dvitva_arm") and not state.samjna_registry.get("6.1.1_dvitva_done"):
         return True
@@ -24,6 +32,24 @@ def act(state: State) -> State:
             "scope_end" : "6.1.12",
             "text_dev"  : "एकाचो द्वे प्रथमस्य",
         })
+    if state.meta.get("corrected_v2_P017_6_1_1_dvitva_arm") and not state.samjna_registry.get(
+        "6.1.1_p017_dvitva_done"
+    ):
+        for i, t in enumerate(state.terms):
+            if "prātipadika" not in t.tags:
+                continue
+            if "".join(v.slp1 for v in t.varnas) != "pawat":
+                continue
+            dup = Term(
+                kind=t.kind,
+                varnas=list(t.varnas),
+                tags=set(t.tags),
+                meta=dict(t.meta),
+            )
+            state.terms.insert(i + 1, dup)
+            state.samjna_registry["6.1.1_p017_dvitva_done"] = True
+            state.meta.pop("corrected_v2_P017_6_1_1_dvitva_arm", None)
+            return state
     # Glass-box: when a recipe explicitly arms dvitya, duplicate the first dhātu
     # as abhyāsa (structural but via apply_rule).
     if state.meta.get("6_1_1_dvitva_arm") and not state.samjna_registry.get("6.1.1_dvitva_done"):

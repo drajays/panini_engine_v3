@@ -10,7 +10,7 @@ Narrow v3:
     ``prakriya_33_1_2_40_arm`` + tag ``prakriya_33_mAtaro_apaH_accent_demo`` →
     ``samjna_registry['1.2.40_sannatara_prakriya_33']``.
   • ``prakriya_34`` (**अध्यापक क्व**): ``terms[0]`` ``prakriya_34_aDyApaka_sarvAnudAtta_note`` (**8.1.19**) +
-    ``terms[1]`` ``prakriya_34_kv_svarita_note`` (**6.1.185**) + ``prakriya_34_1_2_40_arm`` →
+    ``terms[1]`` ``tit_svarita_note`` (**6.1.185** universal *tit*-check) →
     ``samjna_registry['1.2.40_sannatara_prakriya_34']``.
 
 ``cond`` does not read surface Devanāgarī targets — only ``meta`` arms + ``Term.tags``.
@@ -36,8 +36,6 @@ def _site_prakriya_33(state: State) -> bool:
 
 
 def _site_prakriya_34(state: State) -> bool:
-    if not state.meta.get("prakriya_34_1_2_40_arm"):
-        return False
     if len(state.terms) < 2:
         return False
     t0, t1 = state.terms[0], state.terms[1]
@@ -45,7 +43,8 @@ def _site_prakriya_34(state: State) -> bool:
         return False
     if not t0.meta.get("prakriya_34_aDyApaka_sarvAnudAtta_note"):
         return False
-    if not t1.meta.get("prakriya_34_kv_svarita_note"):
+    # 6.1.185 (universal tit-svaritam) stamps tit_svarita_note on the tit term.
+    if not t1.meta.get("tit_svarita_note"):
         return False
     if state.samjna_registry.get("1.2.40_sannatara_prakriya_34"):
         return False
@@ -59,7 +58,6 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if _site_prakriya_34(state):
         state.samjna_registry["1.2.40_sannatara_prakriya_34"] = True
-        state.meta.pop("prakriya_34_1_2_40_arm", None)
         return state
     if _site_prakriya_33(state):
         state.samjna_registry["1.2.40_sannatara_prakriya_33"] = True

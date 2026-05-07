@@ -17,21 +17,23 @@ from engine.state import State
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
+def _find_iN_dhatu(state: State):
+    """Find the iN dhatu term by tag, not position."""
+    for t in state.terms:
+        if "dhatu" not in t.tags:
+            continue
+        if (t.meta.get("upadesha_slp1") or "").strip() != "iN":
+            continue
+        if t.meta.get("2_4_45_iNo_ga_done"):
+            continue
+        return t
+    return None
+
+
 def _matches(state: State) -> bool:
-    if not state.meta.get("2_4_45_iNo_ga_luG_arm"):
-        return False
-    if not state.terms:
-        return False
-    dh = state.terms[0]
-    if "dhatu" not in dh.tags:
-        return False
-    if (dh.meta.get("upadesha_slp1") or "").strip() != "iN":
-        return False
     if state.meta.get("lakara") != "luG":
         return False
-    if dh.meta.get("2_4_45_iNo_ga_done"):
-        return False
-    return True
+    return _find_iN_dhatu(state) is not None
 
 
 def cond(state: State) -> bool:
@@ -41,11 +43,12 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if not _matches(state):
         return state
-    dh = state.terms[0]
+    dh = _find_iN_dhatu(state)
+    if dh is None:
+        return state
     dh.varnas = list(parse_slp1_upadesha_sequence("gAN"))
     dh.meta["upadesha_slp1"] = "gAN"
     dh.meta["2_4_45_iNo_ga_done"] = True
-    state.meta["2_4_45_iNo_ga_luG_arm"] = False
     return state
 
 

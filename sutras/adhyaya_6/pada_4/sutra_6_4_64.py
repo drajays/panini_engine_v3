@@ -63,8 +63,6 @@ def _atus_pratyaya_idx(state: State, dhi: int) -> int | None:
 
 
 def _site_ic(state: State) -> bool:
-    if not state.meta.get("6_4_64_A_lopa_kngitic_i_arm"):
-        return False
     dhi = _find_dhatu_idx(state)
     if dhi is None:
         return False
@@ -113,7 +111,6 @@ def act(state: State) -> State:
             return state
         dh.varnas.pop()
         state.terms[j].meta["6_4_64_target_done"] = True
-        state.meta["6_4_64_A_lopa_kngitic_i_arm"] = False
         return state
     return state
 

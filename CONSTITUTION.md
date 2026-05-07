@@ -201,7 +201,7 @@ engine paths that bypass `apply_rule()`.
 
 ## Article 10 — Amendment Procedure
 
-These **thirteen** Articles (numbered 0 through 12) are amended only by:
+These **fourteen** Articles (numbered 0 through 13) are amended only by:
 1. Opening `docs/AMENDMENT_<N>.md` with the proposed change and rationale.
 2. Passing every constitutional, forward, backward, and regression test
    with the proposed change applied to a branch.
@@ -280,3 +280,39 @@ target string.
    truth and **Article 3** order are preserved. Update
    `tests/regression/*` (including SIG baselines where used) as for any
    intentional trace change (Article 8, Article 9).
+
+---
+
+## Article 13 — Universal sūtra implementation architecture
+
+**Goal:** every **VIDHI** / **SAMJNA** / **NIYAMA** (executable sūtra) should
+be able to fire because **linguistic** predicates on `State` / `Term` are
+true — not because a recipe flipped an ad hoc `state.meta["…_arm"]` switch.
+
+1. **No new demo scaffolding in sūtra `cond` / `act`.** Do not add
+   `state.meta` keys whose only purpose is to enable a single pipeline
+   (`*_arm`, `corrected_v2_*`, prakriya ids, etc.) inside
+   `sutras/adhyaya_*/pada_*/sutra_*.py`. Existing legacy uses are **technical
+   debt** to be removed when that file is next refactored for behaviour.
+
+2. **Pipelines remain the scheduler only (Article 7).** They call
+   `apply_rule` and may set meta for **non-morphological** sequencing where
+   the CONSTITUTION already permits it — but if a sūtra’s `cond` would read
+   `False` without such a key, the fix belongs in **tags**, prior **SAMJNA**
+   steps, **registry** entries, or **Term**-local completion flags — not in a
+   permanent bypass arm.
+
+3. **Enumerations and idempotency.** Dhātu lists or affix classes **named in
+   the sūtra** (or loaded once from kosha data at import) live in
+   **module-level** `frozenset`s or helpers. Per-rule completion flags on a
+   `Term` use names derived from the **sūtra id** (e.g. `6_4_24_…_done`), not
+   from demo ids.
+
+4. **Detail and checklist.** See `docs/SUTRA_UNIVERSAL_RULE_ARCHITECTURE.md`.
+   Cursor applies an additional project rule under
+   `.cursor/rules/panini-sutra-universal-architecture.mdc` to matching paths.
+
+**Relation to Article 2.** Article 2 still governs what `cond` may *read*.
+Article 13 adds **how** new implementations should shape those reads: prefer
+structural tags and registry over recipe flags; prefer phonological
+predicates over surface fingerprints of a single example form.

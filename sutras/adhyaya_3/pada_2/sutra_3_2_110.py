@@ -11,6 +11,8 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
+AT_AGAMA_CONTEXT_TAG = "aT_agama_context"
+
 
 def cond(state: State) -> bool:
     # Glass-box arming: pipelines must opt-in (CONSTITUTION: cond() may not read paradigm selectors).
@@ -24,6 +26,9 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    for term in state.terms:
+        if "dhatu" in term.tags:
+            term.tags.add(AT_AGAMA_CONTEXT_TAG)
     t = Term(
         kind="pratyaya",
         varnas=parse_slp1_upadesha_sequence("luG"),

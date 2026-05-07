@@ -4,6 +4,12 @@
 
 **Always follow `CONSTITUTION.md` at the repository root.** Before changing `engine/`, `sutras/`, `phonology/`, `pipelines/`, or `tests/constitutional/`, re-read the relevant Articles. If anything conflicts with this file, **CONSTITUTION.md wins**.
 
+**Sūtra implementation hygiene:** follow **CONSTITUTION Article 13** and
+`docs/SUTRA_UNIVERSAL_RULE_ARCHITECTURE.md` — universal `cond`/`act` from
+linguistic state; no new `state.meta` demo arms inside `sutras/**/sutra_*.py`
+(legacy debt is migrated, not extended). The Cursor rule
+`.cursor/rules/panini-sutra-universal-architecture.mdc` applies to those paths.
+
 ## Sūtra pāṭha authority (two-tier)
 
 When adding or checking **Devanagarī sūtra text** (`text_dev`, *padaccheda* for humans), prefer a local **ashtadhyayi-master**-style TSV (e.g. `data/sutrANi.tsv` with columns `index` + `sutra`) for offline grep — **do not** commit absolute paths such as `~/Downloads/...` into the engine; a short human note in a sūtra docstring is enough (*“cross-check: `sutrANi.tsv`”*).

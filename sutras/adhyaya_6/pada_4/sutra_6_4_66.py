@@ -20,32 +20,40 @@ from engine.state import State
 from phonology import HAL, mk
 
 
+def _find_gAN_dhatu_and_next_pratyaya(state: State):
+    """Find gAN dhatu and the immediately following pratyaya, by tag (not position)."""
+    for i, dh in enumerate(state.terms):
+        if "dhatu" not in dh.tags:
+            continue
+        if (dh.meta.get("upadesha_slp1") or "").strip() != "gAN":
+            continue
+        if dh.meta.get("6_4_66_iitva_done"):
+            continue
+        for j in range(i + 1, len(state.terms)):
+            pr = state.terms[j]
+            if "pratyaya" not in pr.tags:
+                continue
+            if not pr.varnas or pr.varnas[0].slp1 not in HAL:
+                return None
+            return (dh, pr)
+    return None
+
+
 def _find(state: State):
-    if len(state.terms) < 2:
-        return None
-    dh = state.terms[0]
-    pr = state.terms[1]
-    if "dhatu" not in dh.tags:
-        return None
-    if (dh.meta.get("upadesha_slp1") or "").strip() != "gAN":
-        return None
-    if dh.meta.get("6_4_66_iitva_done"):
-        return None
-    if "pratyaya" not in pr.tags:
-        return None
-    if not pr.varnas or pr.varnas[0].slp1 not in HAL:
-        return None
-    # Atideśa: treat the following pratyaya as ṅit.
     if (
         state.atidesha_map.get(("pratyaya_after_gaN_or_kutAdi", "pratyaya"))
         != "ṅit"
     ):
         return None
-    # Expect g + A + N on tape (demo slice).
+    result = _find_gAN_dhatu_and_next_pratyaya(state)
+    if result is None:
+        return None
+    dh, _pr = result
+    # Expect g + A (+ possible other varnas) on tape (demo slice).
     vs = dh.varnas
     for i, v in enumerate(vs):
         if v.slp1 == "A":
-            return i
+            return (dh, i)
     return None
 
 
@@ -54,10 +62,10 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    i = _find(state)
-    if i is None:
+    result = _find(state)
+    if result is None:
         return state
-    dh = state.terms[0]
+    dh, i = result
     dh.varnas[i] = mk("I")
     dh.meta["6_4_66_iitva_done"] = True
     return state

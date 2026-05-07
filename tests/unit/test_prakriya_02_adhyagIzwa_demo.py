@@ -17,7 +17,7 @@ def _fired_ids(state) -> list[str]:
 
 def test_prakriya_02_surface() -> None:
     s = derive_prakriya_02()
-    assert s.flat_slp1() == "aDhyagIzwa"
+    assert s.flat_slp1() == "aDyagIzwa"
 
 
 def test_prakriya_02_key_spine_fires_in_order() -> None:

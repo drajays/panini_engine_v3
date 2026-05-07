@@ -16,26 +16,15 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("1_3_12_arm"):
-        return False
     if state.meta.get("pada") == "Atmanepada":
         return False
-    if not state.terms or "dhatu" not in state.terms[0].tags:
+    if not any("dhatu" in t.tags for t in state.terms):
         return False
-    up = (state.terms[0].meta.get("upadesha_slp1") or "").strip()
-    target = (state.meta.get("1_3_12_target_upadesha_slp1") or "").strip()
-    if target:
-        return up == target
-    return up == "vad"
+    return True
 
 
 def act(state: State) -> State:
     state.meta["pada"] = "Atmanepada"
-    # Keep vande-demo behaviour when not overridden.
-    if not (state.meta.get("1_3_12_target_upadesha_slp1") or "").strip():
-        # 1sg ātmanepada in our tin inventory is `iw`; its hal (`w`) will be removed
-        # by 1.3.3 + 1.3.9, leaving `i`, then 3.4.79 (demo) yields `e`.
-        state.meta["tin_adesha_for_vande"] = "iw"
     state.paribhasha_gates["1.3.12_anudatta_nit_atmanepada"] = True
     return state
 

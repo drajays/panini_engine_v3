@@ -21,7 +21,7 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     state.adhikara_stack.append({
         "id": "3.3.162",
-        "scope_end": "3.3.1",
+        "scope_end": "3.3.162",
         "text_dev": "लोट् च",
     })
     state.meta.pop("P031_3_3_162_loT_adhikara_arm", None)
@@ -38,7 +38,7 @@ SUTRA = SutraRecord(
     anuvritti_from=(),
     cond=cond,
     act=act,
-    adhikara_scope=("3.3.162", "3.3.1"),
+    adhikara_scope=("3.3.162", "3.3.162"),
 )
 
 register_sutra(SUTRA)

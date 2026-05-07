@@ -83,8 +83,6 @@ def _site_prakriya_32_aDyApaka(state: State) -> bool:
 
 
 def _site_prakriya_34_aDyApaka_kv(state: State) -> bool:
-    if not state.meta.get("prakriya_34_8_1_19_arm"):
-        return False
     if not _adhikara_8_1_18_open(state):
         return False
     if len(state.terms) < 2:
@@ -121,7 +119,6 @@ def act(state: State) -> State:
         return state
     if _site_prakriya_34_aDyApaka_kv(state):
         state.terms[0].meta["prakriya_34_aDyApaka_sarvAnudAtta_note"] = True
-        state.meta.pop("prakriya_34_8_1_19_arm", None)
         return state
     if _site_prakriya_30(state):
         state.terms[0].meta["prakriya_30_sarvAnudAtta_note"] = True

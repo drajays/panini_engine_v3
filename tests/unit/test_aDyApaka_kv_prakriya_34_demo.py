@@ -53,7 +53,7 @@ def test_meta_and_registry() -> None:
     s = derive_aDyApaka_kv_prakriya_34()
     assert s.samjna_registry.get("2.3.48_sAmantrita_aDyApaka_prakriya_34") is True
     assert s.terms[0].meta.get("prakriya_34_aDyApaka_sarvAnudAtta_note") is True
-    assert s.terms[1].meta.get("prakriya_34_kv_svarita_note") is True
+    assert s.terms[1].meta.get("tit_svarita_note") is True  # 6.1.185 now uses universal tit key
     assert s.samjna_registry.get("1.2.40_sannatara_prakriya_34") is True
 
 

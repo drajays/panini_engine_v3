@@ -15,11 +15,16 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
 
+def _first_dhatu(state: State):
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            return t
+    return None
+
+
 def _dhatu_ends_in_samyoga(state: State) -> bool:
-    if not state.terms:
-        return False
-    dh = state.terms[0]
-    if not dh.varnas:
+    dh = _first_dhatu(state)
+    if dh is None or not dh.varnas:
         return False
     # Narrow: detect two final consonants.
     hal = {"k","K","g","G","N","c","C","j","J","Y","w","W","q","Q","R","t","T","d","D","n","p","P","b","B","m","y","r","l","v","S","z","s","h"}
@@ -39,6 +44,10 @@ def _find_pratyaya(state: State) -> int | None:
         if "pratyaya" not in t.tags:
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
+        if state.meta.get("corrected_v2_P014_1_2_5_lit_kit_e_arm") and up == "e":
+            if "kngiti" in t.tags:
+                return None
+            return i
         if up in {"atus", "Ralatus"} or t.meta.get("lit_atus") is True:
             if "kngiti" in t.tags:
                 return None
@@ -56,6 +65,7 @@ def act(state: State) -> State:
         return state
     state.terms[i].tags.add("kngiti")
     state.samjna_registry["1.2.5_asamyogal_lit_kit"] = True
+    state.meta.pop("corrected_v2_P014_1_2_5_lit_kit_e_arm", None)
     return state
 
 

@@ -25,8 +25,6 @@ def _primary_dhatu_upadesha(state: State) -> str:
 
 
 def _find_sic_term(state: State):
-    if not state.meta.get("1_2_17_ghu_sici_ic_arm"):
-        return None
     if not ghu_samjna_is_registered(state):
         return None
     up0 = _primary_dhatu_upadesha(state)
@@ -56,7 +54,6 @@ def act(state: State) -> State:
     t.tags.add("upadesha")
     t.tags.add("kngiti")
     t.meta["1_2_17_ic_adesha_done"] = True
-    state.meta["1_2_17_ghu_sici_ic_arm"] = False
     return state
 
 

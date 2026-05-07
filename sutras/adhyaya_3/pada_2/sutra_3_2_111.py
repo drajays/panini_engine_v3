@@ -11,12 +11,10 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
+AT_AGAMA_CONTEXT_TAG = "aT_agama_context"
+
 
 def cond(state: State) -> bool:
-    if not state.meta.get("3_2_111_laG_arm", False):
-        return False
-    if (state.meta.get("lakara") or "").strip() != "laG":
-        return False
     return not any(
         t.kind == "pratyaya" and (t.meta.get("upadesha_slp1") or "").strip() == "laG"
         for t in state.terms
@@ -24,6 +22,9 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    for term in state.terms:
+        if "dhatu" in term.tags:
+            term.tags.add(AT_AGAMA_CONTEXT_TAG)
     t = Term(
         kind="pratyaya",
         varnas=parse_slp1_upadesha_sequence("laG"),

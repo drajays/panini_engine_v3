@@ -5,8 +5,9 @@ Glass-box demo slice (भीषयते .md):
   When the recipe arms causative formation, append the sanādi pratyaya ṇic.
 
 Engine representation:
-  - We model ṇic as a sanādi pratyaya whose surviving segment is `i`.
-  - The full upadeśa identity is recorded as ``meta['upadesha_slp1'] = 'Ric'``.
+  - By default ṇic is a single ``i`` ``Term`` (``upadesha_slp1`` still ``Ric``).
+  - When the stem carries tag ``emit_Ric_tape`` (e.g. **P015** before **7.3.37**),
+    the tape is the full ``Ric`` letters so **1.3.7** *cuṭū* can target initial ``R``.
 """
 from __future__ import annotations
 
@@ -32,9 +33,18 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if not _matches(state):
         return state
+    dh0 = state.terms[0]
+    # Full ``Ric`` tape when the recipe tags the stem (e.g. **P015** *pā* + *ṇic* before
+    # **7.3.37** *yuk*): **1.3.7** needs an initial ``R`` for *cuṭū*.  Default remains the
+    # minimal ``i`` residue (other *ṇic* demos merge / augment without re-expanding *ṇ*).
+    if "emit_Ric_tape" in dh0.tags:
+        dh0.tags.discard("emit_Ric_tape")
+        nic_varnas = list(parse_slp1_upadesha_sequence("Ric"))
+    else:
+        nic_varnas = list(parse_slp1_upadesha_sequence("i"))
     nic = Term(
         kind="pratyaya",
-        varnas=list(parse_slp1_upadesha_sequence("i")),
+        varnas=nic_varnas,
         tags={"pratyaya", "upadesha", "sanadi", "nic"},
         meta={"upadesha_slp1": "Ric"},
     )

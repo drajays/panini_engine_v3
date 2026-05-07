@@ -19,6 +19,19 @@ from engine.state import State
 from phonology import mk
 
 
+def _find_p014_k(state: State):
+    if not state.meta.get("corrected_v2_P014_7_4_62_abhyasa_arm"):
+        return None
+    for ti, t in enumerate(state.terms):
+        if "abhyasa" not in t.tags:
+            continue
+        if t.meta.get("7_4_62_done"):
+            continue
+        if t.varnas and t.varnas[0].slp1 == "k":
+            return ti
+    return None
+
+
 def _find(state: State):
     if not state.meta.get("7_4_62_kuhoscu_abhyasa_arm"):
         return None
@@ -53,10 +66,21 @@ def _find_p040_juhoti(state: State):
 
 
 def cond(state: State) -> bool:
-    return _find(state) is not None or _find_p040_juhoti(state) is not None
+    return (
+        _find_p014_k(state) is not None
+        or _find(state) is not None
+        or _find_p040_juhoti(state) is not None
+    )
 
 
 def act(state: State) -> State:
+    ti_k = _find_p014_k(state)
+    if ti_k is not None:
+        t = state.terms[ti_k]
+        t.varnas[0] = mk("c")
+        t.meta["7_4_62_done"] = True
+        state.meta.pop("corrected_v2_P014_7_4_62_abhyasa_arm", None)
+        return state
     ti_p = _find_p040_juhoti(state)
     if ti_p is not None:
         t = state.terms[ti_p]
@@ -80,7 +104,7 @@ SUTRA = SutraRecord(
     text_slp1="kuhoScuH (narrow)",
     text_dev="कुहोश्चुः",
     padaccheda_dev="कुहोः / चुः",
-    why_dev="अभ्यासे कु-वर्णस्य चु-आदेशः (ग→ज) — जिघृक्षति।",
+    why_dev="अभ्यासे कु-वर्णस्य चु-आदेशः (ग→ज; P014: क→च) — जिघृक्षति।",
     anuvritti_from=("7.4.1",),
     cond=cond,
     act=act,
