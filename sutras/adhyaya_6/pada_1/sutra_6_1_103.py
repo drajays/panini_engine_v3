@@ -60,6 +60,11 @@ def act(state: State) -> State:
             anga.varnas[-1] = mk("I")
             pratyaya.varnas = [mk("n")]
             new_upa = "n"
+        elif anga.varnas and anga.varnas[-1].slp1 == "u":
+            # u-stem: u + śas → ūn (śambhu → śambhūn) via pūrva-savarṇa dīrgha
+            anga.varnas[-1] = mk("U")
+            pratyaya.varnas = [mk("n")]
+            new_upa = "n"
         else:
             # Fallback: keep existing behaviour (no-op would violate R1),
             # so treat like the a-stem An substitution without stem deletion.

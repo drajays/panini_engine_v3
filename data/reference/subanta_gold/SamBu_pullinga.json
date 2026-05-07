@@ -1,0 +1,31 @@
+{
+    "_doc": "Gold subanta paradigm for masculine u-stem: शम्भु (SamBu). Used by tests/tools only (CONSTITUTION Art. 6 firewall).",
+    "stem_slp1": "SamBu",
+    "linga": "pulliṅga",
+    "cells": {
+        "1-1": {"form_dev": "शम्भुः"},
+        "1-2": {"form_dev": "शम्भू"},
+        "1-3": {"form_dev": "शम्भवः"},
+        "2-1": {"form_dev": "शम्भुम्"},
+        "2-2": {"form_dev": "शम्भू"},
+        "2-3": {"form_dev": "शम्भून्"},
+        "3-1": {"form_dev": "शम्भुना"},
+        "3-2": {"form_dev": "शम्भुभ्याम्"},
+        "3-3": {"form_dev": "शम्भुभिः"},
+        "4-1": {"form_dev": "शम्भवे"},
+        "4-2": {"form_dev": "शम्भुभ्याम्"},
+        "4-3": {"form_dev": "शम्भुभ्यः"},
+        "5-1": {"form_dev": "शम्भोः"},
+        "5-2": {"form_dev": "शम्भुभ्याम्"},
+        "5-3": {"form_dev": "शम्भुभ्यः"},
+        "6-1": {"form_dev": "शम्भोः"},
+        "6-2": {"form_dev": "शम्भ्वोः"},
+        "6-3": {"form_dev": "शम्भूनाम्"},
+        "7-1": {"form_dev": "शम्भौ"},
+        "7-2": {"form_dev": "शम्भ्वोः"},
+        "7-3": {"form_dev": "शम्भुषु"},
+        "8-1": {"form_dev": "शम्भो"},
+        "8-2": {"form_dev": "शम्भू"},
+        "8-3": {"form_dev": "शम्भवः"}
+    }
+}

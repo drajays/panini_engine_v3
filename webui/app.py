@@ -122,6 +122,68 @@ _VIBHAKTI_DEV = {
 }
 _VACANA_DEV = {1: "एकवचन", 2: "द्विवचन", 3: "बहुवचन"}
 
+# Paradigm presets — shown as quick-load buttons in matrix + showcase pages.
+_PARADIGM_PRESETS: list[dict] = [
+    {
+        "stem_slp1"  : "rAma",
+        "stem_dev"   : "रामः",
+        "linga"      : "pulliṅga",
+        "class_short": "अकारान्त",
+        "class_dev"  : "अकारान्त पुंलिङ्गम्",
+        "samjna_dev" : [],
+        "featured"   : False,
+    },
+    {
+        "stem_slp1"  : "hari",
+        "stem_dev"   : "हरिः",
+        "linga"      : "pulliṅga",
+        "class_short": "इकारान्त · घि",
+        "class_dev"  : "इकारान्त पुंलिङ्गम् (घिसंज्ञक)",
+        "samjna_dev" : ["घिसंज्ञक (१.४.७)"],
+        "featured"   : False,
+    },
+    {
+        "stem_slp1"  : "SamBu",
+        "stem_dev"   : "शम्भुः",
+        "linga"      : "pulliṅga",
+        "class_short": "उकारान्त · घि",
+        "class_dev"  : "उकारान्त पुंलिङ्गम् (घिसंज्ञक)",
+        "samjna_dev" : ["घिसंज्ञक (१.४.७)"],
+        "featured"   : True,
+    },
+    {
+        "stem_slp1"  : "sarva",
+        "stem_dev"   : "सर्वः",
+        "linga"      : "pulliṅga",
+        "class_short": "सर्वनाम",
+        "class_dev"  : "अकारान्त सर्वनाम पुंलिङ्गम्",
+        "samjna_dev" : ["सर्वनाम (१.१.२७)"],
+        "featured"   : False,
+    },
+]
+
+
+def _load_gold_for_stem(stem: str, linga: str) -> dict[str, str]:
+    """Auto-load gold reference for (stem, linga) from subanta_gold directory."""
+    gold_dir = _ROOT / "data" / "reference" / "subanta_gold"
+    if not gold_dir.exists():
+        return {}
+    suffix = {"pulliṅga": "pullinga", "strīliṅga": "strilinga",
+               "napuṃsaka": "napumsaka"}.get(linga, "pullinga")
+    for fname in (f"{stem}_{suffix}.json", f"{stem.lower()}_{suffix}.json"):
+        p = gold_dir / fname
+        if p.exists():
+            gdata = json.loads(p.read_text(encoding="utf-8"))
+            return {c: d["form_dev"] for c, d in gdata.get("cells", {}).items()}
+    for jf in sorted(gold_dir.glob("*.json")):
+        try:
+            gdata = json.loads(jf.read_text(encoding="utf-8"))
+            if gdata.get("stem_slp1") == stem and gdata.get("linga") == linga:
+                return {c: d["form_dev"] for c, d in gdata.get("cells", {}).items()}
+        except Exception:
+            pass
+    return {}
+
 
 @app.route("/matrix")
 def matrix():
@@ -132,6 +194,7 @@ def matrix():
         stem=stem,
         vibhakti_dev=_VIBHAKTI_DEV,
         vacana_dev=_VACANA_DEV,
+        presets=_PARADIGM_PRESETS,
         cov=coverage_report(SUTRA_REGISTRY),
     )
 
@@ -142,12 +205,7 @@ def api_matrix():
     stem  = request.args.get("stem", "rAma")
     linga = request.args.get("linga", "pulliṅga")
 
-    # Load gold if present for comparison.
-    gold_path = _ROOT / "data" / "reference" / "subanta_gold" / "rama_pullinga.json"
-    gold = {}
-    if stem == "rAma" and gold_path.exists():
-        gdata = json.loads(gold_path.read_text(encoding="utf-8"))
-        gold = {c: d["form_dev"] for c, d in gdata.get("cells", {}).items()}
+    gold = _load_gold_for_stem(stem, linga)
 
     from phonology.joiner import slp1_to_devanagari
 
@@ -171,7 +229,36 @@ def api_matrix():
             except Exception as ex:
                 cells[key] = {"error": f"{type(ex).__name__}: {ex}"}
 
-    return jsonify({"stem": stem, "linga": linga, "cells": cells})
+    match_count = sum(1 for c in cells.values() if c.get("match") is True)
+    return jsonify({
+        "stem"        : stem,
+        "linga"       : linga,
+        "cells"       : cells,
+        "has_gold"    : bool(gold),
+        "match_count" : match_count,
+        "total_cells" : 24,
+    })
+
+
+# ─────────────────────────────────────────────────────────────────
+# Paradigm showcase — शम्भु development page
+# ─────────────────────────────────────────────────────────────────
+
+@app.route("/showcase")
+def showcase_page():
+    return render_template(
+        "showcase.html",
+        nav_active="showcase",
+        cov=coverage_report(SUTRA_REGISTRY),
+        vibhakti_dev=_VIBHAKTI_DEV,
+        vacana_dev=_VACANA_DEV,
+        presets=_PARADIGM_PRESETS,
+    )
+
+
+@app.route("/api/paradigm-presets")
+def api_paradigm_presets():
+    return jsonify({"presets": _PARADIGM_PRESETS})
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -528,9 +615,11 @@ def api_pipeline_run(key: str):
 # ─────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
+    import os as _os
+    _port = int(_os.environ.get("PANINI_PORT", 5000))
     print("═" * 60)
     print(f"  Pāṇini Engine v3 — Web UI")
     print(f"  Registry: {len(SUTRA_REGISTRY)} sūtras loaded")
-    print(f"  Open: http://localhost:5000")
+    print(f"  Open: http://localhost:{_port}")
     print("═" * 60)
-    app.run(host="127.0.0.1", port=5000, debug=False)
+    app.run(host="127.0.0.1", port=_port, debug=False)

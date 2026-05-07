@@ -1,0 +1,411 @@
+{% extends "base.html" %}
+{% block title %}शम्भु-प्रदर्शनी — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block content %}
+
+<!-- ── Hero ────────────────────────────────────────────────────── -->
+<div class="panel sc-hero">
+  <div class="sc-hero-left">
+    <div class="sc-hero-dev dev">शम्भुः</div>
+    <div class="sc-hero-title">उकारान्त पुंलिङ्ग — घिसंज्ञक</div>
+    <div class="sc-hero-sub">SLP1: <code>SamBu</code> · masculine u-stem · ghī-saṃjñaka</div>
+    <div class="sc-hero-samjna">
+      <span class="sc-rule-chip">१.२.४५ — प्रातिपदिकम्</span>
+      <span class="sc-rule-chip">१.४.७ — घिसंज्ञा</span>
+      <span class="sc-rule-chip">४.१.२ — सुप्-विधानम्</span>
+    </div>
+  </div>
+  <div class="sc-hero-right">
+    <div class="sc-hero-desc">
+      <strong>१.४.७ शेषो घ्यसखि</strong> — सखि-वर्जं ह्रस्व इकारान्त-उकारान्त-शब्दानां
+      घिसंज्ञा भवति। अतः <em>शम्भु</em> घिसंज्ञकः।
+    </div>
+    <div class="sc-hero-desc" style="margin-top:8px;">
+      घिसंज्ञकत्वात् विशेष-कार्याणि — गुण (७.३.१०८–१११), यण् (६.१.७७),
+      अयवादेश (६.१.७८), नुट्-आगम (७.१.५४), नामी-दीर्घ (६.४.३) इत्यादीनि।
+    </div>
+    <div style="margin-top:16px;">
+      <a href="/matrix?stem=SamBu" class="btn-outline">→ चतुर्विंशति-कोष्ठे पश्यतु</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── 24-cell paradigm ─────────────────────────────────────────── -->
+<div class="panel">
+  <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:4px;">
+    <h2 style="margin:0;">रूपावली</h2>
+    <span id="sc-gold-pill" class="gold-pill" style="display:none;"></span>
+    <span class="muted" style="font-size:11px;margin-left:auto;">
+      कोष्ठे क्लिक् करुत → व्युत्पत्ति-प्रक्रिया पश्यतु
+    </span>
+  </div>
+
+  <table class="matrix sc-matrix" id="sc-matrix">
+    <thead>
+      <tr>
+        <th></th>
+        <th>{{ vacana_dev[1] }}</th>
+        <th>{{ vacana_dev[2] }}</th>
+        <th>{{ vacana_dev[3] }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for v in range(1, 9) %}
+      <tr>
+        <th class="vib-th">
+          <span class="vib-num">{{ v }}</span>
+          <span class="dev">{{ vibhakti_dev[v] }}</span>
+        </th>
+        {% for vv in range(1, 4) %}
+        <td class="cell" data-cell="{{ v }}-{{ vv }}"
+            data-v="{{ v }}" data-vv="{{ vv }}">
+          <span class="dev sc-cell-form">…</span>
+        </td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <!-- Trace panel for clicked cell -->
+  <div id="sc-cell-trace" style="display:none;margin-top:16px;border-top:1px solid var(--line-soft);padding-top:16px;">
+    <h3 id="sc-cell-head" style="margin:0 0 10px;"></h3>
+    <div id="sc-cell-result"></div>
+    <div class="two-pane" style="margin-top:12px;">
+      <div>
+        <div class="trace-filter" id="trace-filter">
+          <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
+          <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
+          <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
+          <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
+          <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
+        </div>
+        <ol class="trace" id="trace" style="max-height:400px;overflow-y:auto;"></ol>
+      </div>
+      <div class="sutra-detail" id="sutra-detail">
+        <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Engine fixes ─────────────────────────────────────────────── -->
+<div class="panel">
+  <h2>यन्त्र-सुधार
+    <span class="muted" style="font-size:13px;font-weight:400;">— Engine Fixes Applied</span>
+  </h2>
+
+  <!-- Before / After comparison -->
+  <div class="sc-fix-focus">
+    <div class="sc-fix-focus-label">
+      द्वितीया बहुवचन (२-३) — <code>शम्भु + शस्</code>
+    </div>
+    <div class="sc-ba">
+      <div class="sc-ba-col sc-before">
+        <div class="sc-ba-tag">पूर्वम् (दोषः)</div>
+        <div class="sc-ba-form dev wrong-form">शम्भोआन्</div>
+        <div class="sc-ba-chain">
+          <code>6.4.146</code> गुणः (u→o) → <code>6.1.103</code> → An<br>
+          <em>SamBu + Sas → SamBo + as → SamBoAn</em>
+        </div>
+      </div>
+      <div class="sc-ba-arrow">⟶</div>
+      <div class="sc-ba-col sc-after">
+        <div class="sc-ba-tag">अधुना (शुद्धम्)</div>
+        <div class="sc-ba-form dev correct-form">शम्भून्</div>
+        <div class="sc-ba-chain">
+          <code>6.1.102</code> पूर्वसवर्ण (u+a→ū) → <code>6.1.103</code> → n<br>
+          <em>SamBu + Sas → SamBU + n → SamBUn</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fix cards -->
+  <div class="sc-fix-cards">
+    <div class="sc-fix-card">
+      <div class="sc-fix-header">
+        <span class="sc-fix-num">सुधार १</span>
+        <span class="sc-fix-sid">6.4.146 — ओर्गुणः</span>
+      </div>
+      <div class="sc-fix-rule dev">भस्य अङ्गस्य ओकार-उकारयोः गुणः</div>
+      <div class="sc-fix-body">
+        <p><strong>समस्या:</strong> The <em>_find_u_before_a</em> extension (designed for
+        taddhita/aupagava context) was firing in the subanta spine before <em>śas</em>
+        (accusative plural), converting <code>u → o</code> via bhasya guṇa — before
+        6.1.102–103 could apply the correct pūrva-savarṇa dīrgha.</p>
+        <p><strong>सुधारः:</strong> Added guard in <code>_find_u_before_a</code>:
+        <code class="fix-code">if pr.meta.get("upadesha_slp1") == "Sas": continue</code>
+        — bhasya guṇa is now blocked before <em>śas</em>; 6.1.102→103 handle u-stems correctly.</p>
+      </div>
+    </div>
+
+    <div class="sc-fix-card">
+      <div class="sc-fix-header">
+        <span class="sc-fix-num">सुधार २</span>
+        <span class="sc-fix-sid">6.1.103 — तस्माच्छसो नः पुंसि</span>
+      </div>
+      <div class="sc-fix-rule dev">पुंसि शसः नकारादेशः — उकारान्त-शाखा</div>
+      <div class="sc-fix-body">
+        <p><strong>समस्या:</strong> Rule only handled a-stems (rāmān) and i-stems (harīn).
+        For u-stem masculine, the fallback produced incorrect <code>An</code> substitution
+        without lengthening, yielding a wrong form.</p>
+        <p><strong>सुधारः:</strong> Added u-stem arm in <code>act()</code>:
+        <code class="fix-code">elif anga.varnas[-1].slp1 == "u": anga.varnas[-1] = mk("U"); pratyaya.varnas = [mk("n")]</code>
+        — u-stem masculine now correctly yields <em>śambhūn</em> (शम्भून्).</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Key sūtras table ─────────────────────────────────────────── -->
+<div class="panel">
+  <h2>सूत्र-क्रमः — रूपाणि च</h2>
+  <div style="overflow-x:auto;">
+  <table class="sc-sutra-table">
+    <thead>
+      <tr>
+        <th>विभक्ति-वचन</th>
+        <th>प्रत्ययः</th>
+        <th>मुख्य-सूत्रम्</th>
+        <th class="dev">अन्तिम-रूपम्</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>१.१ प्र.एक.</td><td><code>सुँ</code></td>
+          <td>ससजुषो रुः (८.२.६६) + विसर्ग (८.३.१५)</td>
+          <td class="dev">शम्भुः</td></tr>
+      <tr><td>१.२ प्र.द्वि.</td><td><code>औ</code></td>
+          <td>प्रथमयोः पूर्वसवर्णः (६.१.१०२)</td>
+          <td class="dev">शम्भू</td></tr>
+      <tr class="row-highlight"><td>१.३ प्र.बहु.</td><td><code>जस्</code></td>
+          <td>जसि च (७.३.१०९) + एचोऽयवायावः (६.१.७८)</td>
+          <td class="dev">शम्भवः</td></tr>
+      <tr><td>२.१ द्वि.एक.</td><td><code>अम्</code></td>
+          <td>अमि पूर्वः (६.१.१०७)</td>
+          <td class="dev">शम्भुम्</td></tr>
+      <tr><td>२.२ द्वि.द्वि.</td><td><code>औट्</code></td>
+          <td>प्रथमयोः पूर्वसवर्णः (६.१.१०२)</td>
+          <td class="dev">शम्भू</td></tr>
+      <tr class="row-fixed"><td>२.३ द्वि.बहु. <span class="fix-badge">सुधारितम्</span></td>
+          <td><code>शस्</code></td>
+          <td>पूर्वसवर्ण-दीर्घ (६.१.१०२) + तस्माच्छसो नः (६.१.१०३)</td>
+          <td class="dev">शम्भून्</td></tr>
+      <tr><td>३.१ तृ.एक.</td><td><code>टा</code></td>
+          <td>आङो नाऽस्त्रियाम् (७.३.१२०)</td>
+          <td class="dev">शम्भुना</td></tr>
+      <tr><td>३.२ तृ.द्वि.</td><td><code>भ्याम्</code></td>
+          <td>वर्ण-संयोग</td>
+          <td class="dev">शम्भुभ्याम्</td></tr>
+      <tr><td>३.३ तृ.बहु.</td><td><code>भिस्</code></td>
+          <td>रुत्व-विसर्ग</td>
+          <td class="dev">शम्भुभिः</td></tr>
+      <tr class="row-highlight"><td>४.१ च.एक.</td><td><code>ङे</code></td>
+          <td>घेर्ङिति (७.३.१११) + एचोऽयवायावः (६.१.७८)</td>
+          <td class="dev">शम्भवे</td></tr>
+      <tr><td>४.२ च.द्वि.</td><td><code>भ्याम्</code></td>
+          <td>वर्ण-संयोग</td>
+          <td class="dev">शम्भुभ्याम्</td></tr>
+      <tr><td>४.३ च.बहु.</td><td><code>भ्यस्</code></td>
+          <td>रुत्व-विसर्ग</td>
+          <td class="dev">शम्भुभ्यः</td></tr>
+      <tr class="row-highlight"><td>५.१ पं.एक.</td><td><code>ङसिँ</code></td>
+          <td>घेर्ङिति (७.३.१११) + ङसिङसोश्च (६.१.११०)</td>
+          <td class="dev">शम्भोः</td></tr>
+      <tr><td>५.२ पं.द्वि.</td><td><code>भ्याम्</code></td>
+          <td>वर्ण-संयोग</td>
+          <td class="dev">शम्भुभ्याम्</td></tr>
+      <tr><td>५.३ पं.बहु.</td><td><code>भ्यस्</code></td>
+          <td>रुत्व-विसर्ग</td>
+          <td class="dev">शम्भुभ्यः</td></tr>
+      <tr class="row-highlight"><td>६.१ ष.एक.</td><td><code>ङस्</code></td>
+          <td>घेर्ङिति (७.३.१११) + ङसिङसोश्च (६.१.११०)</td>
+          <td class="dev">शम्भोः</td></tr>
+      <tr class="row-highlight"><td>६.२ ष.द्वि.</td><td><code>ओस्</code></td>
+          <td>इको यणचि (६.१.७७)</td>
+          <td class="dev">शम्भ्वोः</td></tr>
+      <tr class="row-highlight"><td>६.३ ष.बहु.</td><td><code>आम्</code></td>
+          <td>ह्रस्वनद्यापो नुट् (७.१.५४) + नामी (६.४.३)</td>
+          <td class="dev">शम्भूनाम्</td></tr>
+      <tr class="row-highlight"><td>७.१ स.एक.</td><td><code>ङि</code></td>
+          <td>अच्च घेः (७.३.११९) + वृद्धिरेचि (६.१.८८)</td>
+          <td class="dev">शम्भौ</td></tr>
+      <tr class="row-highlight"><td>७.२ स.द्वि.</td><td><code>ओस्</code></td>
+          <td>इको यणचि (६.१.७७)</td>
+          <td class="dev">शम्भ्वोः</td></tr>
+      <tr><td>७.३ स.बहु.</td><td><code>सुप्</code></td>
+          <td>आदेशप्रत्यययोः (८.३.५९) षत्वम्</td>
+          <td class="dev">शम्भुषु</td></tr>
+      <tr class="row-highlight"><td>८.१ सम्बोधन एक.</td><td><code>सु</code></td>
+          <td>ह्रस्वस्य गुणः (७.३.१०८) + एङ्ह्रस्वात् सम्बुद्धेः (६.१.६९)</td>
+          <td class="dev">शम्भो</td></tr>
+      <tr><td>८.२ सम्बोधन द्वि.</td><td><code>औ</code></td>
+          <td>प्रथमयोः पूर्वसवर्णः (६.१.१०२)</td>
+          <td class="dev">शम्भू</td></tr>
+      <tr class="row-highlight"><td>८.३ सम्बोधन बहु.</td><td><code>जस्</code></td>
+          <td>जसि च (७.३.१०९) + एचोऽयवायावः (६.१.७८)</td>
+          <td class="dev">शम्भवः</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="muted" style="font-size:11px;margin-top:6px;">
+    <span class="row-fixed-legend"></span> सुधारित-कोष्ठम् (Fixed cell) ·
+    <span class="row-highlight-legend"></span> घि-संज्ञा-जन्य-कार्यम्
+  </p>
+</div>
+
+<!-- ── Other u-kārānta stems ────────────────────────────────────── -->
+<div class="panel">
+  <h2>अन्ये उकारान्त-शब्दाः
+    <span class="muted" style="font-size:13px;font-weight:400;">— Same paradigm spine</span>
+  </h2>
+  <div class="sc-peer-grid" id="sc-peer-grid">
+    <div class="sc-peer-loading"><span class="loading"></span> लादयति…</div>
+  </div>
+</div>
+
+<!-- ── Test panel ────────────────────────────────────────────────── -->
+<div class="panel">
+  <h2>परीक्षा-परिणामः</h2>
+  <div id="sc-test-result" class="sc-test-result">
+    <span class="loading"></span> परीक्षाः चल्यन्ते…
+  </div>
+</div>
+
+{% endblock %}
+
+{% block body_extra %}
+<script src="{{ url_for('static', filename='trace.js') }}"></script>
+<script>
+/* ── Load the 24-cell paradigm for SamBu ── */
+async function loadShowcaseMatrix() {
+  const r    = await fetch("/api/matrix?stem=SamBu&linga=pulliṅga");
+  const data = await r.json();
+
+  document.querySelectorAll("#sc-matrix td.cell").forEach(td => {
+    const key  = td.dataset.cell;
+    const cell = data.cells[key];
+    td.classList.remove("match", "mismatch", "error");
+    if (!cell || cell.error) return;
+    const surface = cell.surface_dev || "—";
+    td.querySelector(".sc-cell-form").textContent = surface;
+    if (cell.gold_dev !== null && cell.gold_dev !== undefined) {
+      td.classList.add(cell.match ? "match" : "mismatch");
+    }
+    td.onclick = () => openScCell(+td.dataset.v, +td.dataset.vv);
+  });
+
+  /* Mark the fixed cell */
+  const fixedTd = document.querySelector("#sc-matrix td[data-cell='2-3']");
+  if (fixedTd) fixedTd.classList.add("cell-fixed");
+
+  if (data.has_gold) {
+    const pill = document.getElementById("sc-gold-pill");
+    pill.textContent = `${data.match_count}/${data.total_cells} स्वर्ण-मिलितम्`;
+    pill.className   = "gold-pill " + (data.match_count === 24 ? "gold-pill-all" : "gold-pill-partial");
+    pill.style.display = "inline";
+  }
+}
+
+/* ── Click a cell to see its trace ── */
+async function openScCell(v, vv) {
+  const traceDiv = document.getElementById("sc-cell-trace");
+  traceDiv.style.display = "block";
+  traceDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+  document.getElementById("sc-cell-head").textContent =
+    `शम्भु — विभक्तिः ${v}, वचनम् ${vv}`;
+  document.getElementById("trace").innerHTML =
+    '<li class="muted">लादयति…</li>';
+  document.getElementById("sutra-detail").innerHTML =
+    '<div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>';
+
+  const r    = await fetch("/api/derive", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ stem: "SamBu", vibhakti: v, vacana: vv, linga: "pulliṅga" }),
+  });
+  const data = await r.json();
+  document.getElementById("sc-cell-result").innerHTML = `
+    <div class="result">
+      <div>
+        <div class="big-dev dev">${escapeHtml(data.surface_dev || "—")}</div>
+        <div class="slp1">${escapeHtml(data.surface_slp1)}</div>
+      </div>
+      <div class="stats">
+        <div>${data.stats.applied_count} प्रयुक्तानि ·
+             ${data.stats.blocked_count} निवारितानि ·
+             ${data.stats.skipped_count} अतिक्रान्तानि</div>
+      </div>
+    </div>`;
+  renderTrace(data.trace);
+}
+
+/* ── Load peer u-kārānta stems ── */
+async function loadPeers() {
+  const peers = [
+    { stem: "BAnu",   dev: "भानुः",   meaning: "सूर्यः" },
+    { stem: "vAyu",   dev: "वायुः",   meaning: "पवनः" },
+    { stem: "guru",   dev: "गुरुः",   meaning: "आचार्यः" },
+    { stem: "viZRu",  dev: "विष्णुः", meaning: "देवः" },
+    { stem: "Sifu",   dev: "शिशुः",   meaning: "बालः" },
+  ];
+
+  const grid = document.getElementById("sc-peer-grid");
+  const cards = await Promise.all(peers.map(async p => {
+    try {
+      const r = await fetch(`/api/matrix?stem=${encodeURIComponent(p.stem)}&linga=pulliṅga`);
+      const d = await r.json();
+      const nom = d.cells["1-1"]?.surface_dev || "—";
+      const acc_pl = d.cells["2-3"]?.surface_dev || "—";
+      return `<div class="sc-peer-card">
+        <div class="sc-peer-dev dev">${escapeHtml(p.dev)}</div>
+        <div class="sc-peer-meaning muted">${escapeHtml(p.meaning)}</div>
+        <div class="sc-peer-forms">
+          <div><span class="sc-peer-label">प्र.एक.</span>
+               <span class="dev">${escapeHtml(nom)}</span></div>
+          <div><span class="sc-peer-label">द्वि.बहु.</span>
+               <span class="dev">${escapeHtml(acc_pl)}</span></div>
+        </div>
+        <a href="/matrix?stem=${encodeURIComponent(p.stem)}"
+           class="sc-peer-link">रूपावली →</a>
+      </div>`;
+    } catch(_) { return ""; }
+  }));
+  grid.innerHTML = cards.join("");
+}
+
+/* ── Run tests and show results ── */
+async function runTests() {
+  const div = document.getElementById("sc-test-result");
+  try {
+    const r    = await fetch("/api/run-tests", { method: "POST" });
+    const data = await r.json();
+    const ok   = data.returncode === 0;
+    const m    = data.stdout.match(/(\d+) passed/);
+    const f    = data.stdout.match(/(\d+) failed/);
+    const passed = m ? m[1] : "?";
+    const failed = f ? f[1] : "0";
+    div.innerHTML = `
+      <div class="sc-test-badge ${ok ? "pass" : "fail"}">
+        ${ok ? "✓ सर्वाः परीक्षाः उत्तीर्णाः" : "✗ परीक्षा-असफलम्"}
+      </div>
+      <div style="margin-top:6px;font-size:13px;color:var(--ink-dim);">
+        <strong>${escapeHtml(passed)}</strong> उत्तीर्णाः ·
+        <strong>${escapeHtml(failed)}</strong> असफलाः ·
+        <span class="mono">${escapeHtml(String(data.elapsed_s))}s</span>
+      </div>
+      <div style="margin-top:4px;font-size:11px;color:var(--ink-faint);">
+        शम्भु-परीक्षाः: test_SamBu_subanta.py — 17 परीक्षाः
+      </div>`;
+  } catch(e) {
+    div.innerHTML = `<span class="muted">परीक्षा-परिणामः अनुपलब्धः: ${escapeHtml(e.message)}</span>`;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadShowcaseMatrix();
+  loadPeers();
+  runTests();
+});
+</script>
+{% endblock %}

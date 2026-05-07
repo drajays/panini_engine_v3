@@ -67,6 +67,10 @@ def _find_u_before_a(state: State):
     v3 extension for taddhita glass-box spines (e.g. औपगव):
     under 6.4.1 + 6.4.129 (*bhasya*), if a *bha* aṅga ends in 'u' and the
     following pratyaya begins with 'a', apply guṇa: u → o.
+
+    Guard: does NOT apply before śas (sup accusative plural); for u-stem
+    masculine like śambhu + śas, the correct process is pūrva-savarṇa
+    dīrgha (6.1.102–6.1.103) giving śambhūn, not guṇa.
     """
     if len(state.terms) < 2:
         return None
@@ -89,6 +93,9 @@ def _find_u_before_a(state: State):
         if anga.varnas[-1].slp1 != "u":
             continue
         if pr.varnas[0].slp1 != "a":
+            continue
+        # śas (accusative plural) is handled by 6.1.102–6.1.103, not by bhasya guṇa.
+        if pr.meta.get("upadesha_slp1") == "Sas":
             continue
         return (ti, len(anga.varnas) - 1)
     return None

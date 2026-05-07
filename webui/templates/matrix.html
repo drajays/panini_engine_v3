@@ -4,7 +4,21 @@
 {% block content %}
 <div class="panel">
   <h1>चतुर्विंशतिकोष्ठ-प्रतिमानम्</h1>
-  <div class="form-row">
+
+  <!-- शीघ्र-उदाहरणम् preset strip -->
+  <div class="preset-strip">
+    <span class="preset-label">शीघ्र-उदाहरणम्:</span>
+    {% for p in presets %}
+    <button class="preset-btn{% if p.featured %} preset-featured{% endif %}"
+            data-stem="{{ p.stem_slp1 }}" data-linga="{{ p.linga }}">
+      <span class="dev preset-dev">{{ p.stem_dev }}</span>
+      <span class="preset-class">{{ p.class_short }}{% if p.featured %} ★{% endif %}</span>
+    </button>
+    {% endfor %}
+  </div>
+
+  <!-- Custom stem form -->
+  <div class="form-row" style="margin-top:12px;">
     <label>प्रातिपदिकम् (SLP1)
       <input id="stem" type="text" value="{{ stem }}">
     </label>
@@ -18,13 +32,21 @@
     <button id="load-btn">कोष्ठं लादयतु</button>
     <span id="load-status" class="muted" style="margin-left:12px;"></span>
   </div>
+
+  <!-- Gold summary + stem class badge — hidden until loaded -->
+  <div id="matrix-info" style="display:none;margin-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <span id="stem-class-badge" class="stem-class-badge"></span>
+    <span id="gold-pill" class="gold-pill"></span>
+    <a id="showcase-link" href="/showcase" class="muted" style="font-size:12px;display:none;">→ विस्तृत-प्रदर्शनी</a>
+  </div>
 </div>
 
 <div class="panel">
   <h2 id="matrix-head">कोष्ठः</h2>
   <p class="muted" style="font-size:12px;">
     कोष्ठे क्लिक् करुत → पूर्णा प्रक्रिया पश्यतु।
-    हरितवर्णः = स्वर्ण-संग्रहेण मेलनम्; रक्तवर्णः = भेदः; सामान्यः = स्वर्णं नास्ति।
+    <span class="legend-dot match"></span> स्वर्ण-मिलितम्
+    <span class="legend-dot mismatch"></span> भेदः
   </p>
   <table class="matrix" id="matrix">
     <thead>
@@ -38,7 +60,10 @@
     <tbody id="matrix-body">
       {% for v in range(1, 9) %}
       <tr>
-        <th>{{ loop.index }}. {{ vibhakti_dev[loop.index] }}</th>
+        <th class="vib-th">
+          <span class="vib-num">{{ loop.index }}</span>
+          {{ vibhakti_dev[loop.index] }}
+        </th>
         {% for vv in range(1, 4) %}
         <td class="cell" data-cell="{{ v }}-{{ vv }}"
             data-v="{{ v }}" data-vv="{{ vv }}">
@@ -70,32 +95,55 @@
     </div>
   </div>
 </div>
-
 {% endblock %}
 
 {% block body_extra %}
 <script src="{{ url_for('static', filename='trace.js') }}"></script>
 <script>
+/* ── Stem class data from presets ── */
+const _PRESETS = {{ presets | tojson }};
+const _PRESET_MAP = {};
+_PRESETS.forEach(p => { _PRESET_MAP[p.stem_slp1 + "|" + p.linga] = p; });
+
+/* ── Preset button clicks ── */
+document.querySelectorAll(".preset-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.getElementById("stem").value  = btn.dataset.stem;
+    document.getElementById("linga").value = btn.dataset.linga;
+    loadMatrix();
+  });
+});
+
 document.getElementById("load-btn").addEventListener("click", loadMatrix);
 document.addEventListener("DOMContentLoaded", loadMatrix);
 
 async function loadMatrix() {
-  const stem  = document.getElementById("stem").value;
+  const stem  = document.getElementById("stem").value.trim();
   const linga = document.getElementById("linga").value;
   const status = document.getElementById("load-status");
+
+  /* Highlight active preset button */
+  document.querySelectorAll(".preset-btn").forEach(b => {
+    b.classList.toggle("active", b.dataset.stem === stem && b.dataset.linga === linga);
+  });
+
   status.innerHTML = '<span class="loading"></span> चतुर्विंशतिः कोष्ठाः व्युत्पाद्यन्ते…';
+  document.getElementById("matrix-info").style.display = "none";
 
   try {
-    const r = await fetch(`/api/matrix?stem=${encodeURIComponent(stem)}&linga=${encodeURIComponent(linga)}`);
+    const r    = await fetch(`/api/matrix?stem=${encodeURIComponent(stem)}&linga=${encodeURIComponent(linga)}`);
     const data = await r.json();
     fillMatrix(data);
-    status.textContent = `सम्पन्नम् (प्रातिपदिकम् = ${stem})`;
+    showMatrixInfo(data, stem, linga);
+    status.textContent = `सम्पन्नम् — ${escapeHtml(stem)}`;
   } catch (e) {
     status.textContent = "दोषः: " + e.message;
   }
 }
 
 function fillMatrix(data) {
+  document.getElementById("matrix-head").textContent =
+    `कोष्ठः — ${data.stem}`;
   document.querySelectorAll("#matrix td.cell").forEach(td => {
     const key  = td.dataset.cell;
     const cell = data.cells[key];
@@ -103,12 +151,12 @@ function fillMatrix(data) {
     if (!cell) { td.innerHTML = "<span>—</span>"; return; }
     if (cell.error) {
       td.classList.add("error");
-      td.innerHTML = `<span>${escapeHtml(cell.error)}</span>`;
+      td.innerHTML = `<span class="muted" style="font-size:11px;">${escapeHtml(cell.error)}</span>`;
       return;
     }
     const surface = cell.surface_dev || "—";
     let html = `<span class="dev">${escapeHtml(surface)}</span>`;
-    if (cell.gold_dev) {
+    if (cell.gold_dev !== null && cell.gold_dev !== undefined) {
       if (cell.match) {
         td.classList.add("match");
       } else {
@@ -117,11 +165,43 @@ function fillMatrix(data) {
       }
     }
     td.innerHTML = html;
-    td.onclick = () => openCell(data.stem, td.dataset.v, td.dataset.vv);
+    td.onclick = () => openCell(data.stem, td.dataset.v, td.dataset.vv, data.linga);
   });
 }
 
-async function openCell(stem, v, vv) {
+function showMatrixInfo(data, stem, linga) {
+  const infoDiv = document.getElementById("matrix-info");
+  infoDiv.style.display = "flex";
+
+  /* Stem class badge */
+  const preset = _PRESET_MAP[stem + "|" + linga];
+  const badge  = document.getElementById("stem-class-badge");
+  if (preset) {
+    badge.textContent = preset.class_dev;
+    badge.style.display = "inline";
+    const samjna = (preset.samjna_dev || []).join(" · ");
+    if (samjna) badge.title = samjna;
+  } else {
+    badge.style.display = "none";
+  }
+
+  /* Gold match pill */
+  const pill = document.getElementById("gold-pill");
+  if (data.has_gold) {
+    const all  = data.match_count === data.total_cells;
+    pill.textContent = `${data.match_count}/${data.total_cells} स्वर्ण-मिलितम्`;
+    pill.className   = "gold-pill " + (all ? "gold-pill-all" : "gold-pill-partial");
+    pill.style.display = "inline";
+  } else {
+    pill.style.display = "none";
+  }
+
+  /* Showcase link — only for SamBu */
+  const scLink = document.getElementById("showcase-link");
+  scLink.style.display = (stem === "SamBu") ? "inline" : "none";
+}
+
+async function openCell(stem, v, vv, linga) {
   const panel = document.getElementById("cell-trace");
   const head  = document.getElementById("cell-head");
   panel.style.display = "block";
@@ -134,7 +214,7 @@ async function openCell(stem, v, vv) {
   const r = await fetch("/api/derive", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ stem, vibhakti: +v, vacana: +vv }),
+    body: JSON.stringify({ stem, vibhakti: +v, vacana: +vv, linga: linga || "pulliṅga" }),
   });
   const data = await r.json();
   document.getElementById("cell-result").innerHTML = `
