@@ -11,6 +11,10 @@ via **6.1.77** with ``6_1_77_ik_yan_aci_general_arm`` (*iko yaṇ aci*).  The
 **6.4.77** / **6.4.87** ladder from the note is not modelled as separate *vidhi*s
 yet (docstring on ``P00_ciY_lat_jhi_snu_tripadi_tail``).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

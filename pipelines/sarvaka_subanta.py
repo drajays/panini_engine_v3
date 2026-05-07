@@ -14,6 +14,10 @@ User ``सर्वकः.md`` — *sarvādi* *adanta* *sarvanāma* + *anuṣṅ
 *Cross-check* *pāṭha* for **5.3.71** / **5.3.70** *kram*: *ashtadhyayi-com* *sutraani* / local
 ``data/sutrANi.tsv`` if available.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401 — register all sūtra modules

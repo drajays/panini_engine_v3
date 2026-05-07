@@ -16,6 +16,10 @@ Spine (glass-box; **6.4.16** follows *cicīṣati*-style ordering — after *dvi
 The optional JSON steps **7.2.35**/**7.2.10** (*iṭ*) are *prayoga*-blocked here and are
 not scheduled (same intent as the JSON’s “blocked” rows).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

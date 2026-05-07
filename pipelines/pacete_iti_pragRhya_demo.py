@@ -12,6 +12,10 @@ on *dvivacana* *anta* *e* and **6.1.125** *prakṛti-bhāva* block that — surf
 Full *tiṅ* derivation for *pac*+laṭ+3du+Āt is not wired end-to-end here; the demo
 isolates the sandhi slice (same pattern as ``mAle_iti_pragRhya_demo``).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

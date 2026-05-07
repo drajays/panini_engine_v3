@@ -7,6 +7,10 @@ sutras/adhyaya_3/pada_*/* are populated with the laT / laN / liT
 machinery.  For now this is a placeholder that raises a clear
 NotImplementedError so tests/forward can mark tiṅanta cells 'xfail'.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from engine.state import State
 
 

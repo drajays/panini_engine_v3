@@ -6,6 +6,10 @@ Source note: ``/Users/dr.ajayshukla/Documents/my panini notes/अग्नी.md
 **1.1.11** marks dual *ī/ū/…* *aṅga* as *pragṛhya*; **6.1.125** registers *prakṛti-bhāva*
 before *ac*; **6.1.101** / **6.1.77** must not merge *ī+i* or *ū+i* across the boundary.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

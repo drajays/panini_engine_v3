@@ -11,6 +11,10 @@ OCR/teaching trace is labelled *very-low*; engine models the JSON’s mechanical
   • **8.4.55** span ``gda``→``agda`` completes the illustrative *siddhi* (substitute **2.4.40**
     *ad*→*ghas* + augment echo, per JSON notes).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

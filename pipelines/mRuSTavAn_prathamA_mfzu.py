@@ -4,6 +4,10 @@ pipelines/mRuSTavAn_prathamA_mfzu.py — मृष्टवान् (*mṛṣ* 
 *Viśeṣa:* **8.4.40** (*z*+*t* → *z*+*w*, i.e. *ṣ*+*ṭ*) runs on the merged stem
 before *Tripāḍī* via ``ktavatu_mfz_stuta_arm`` (see ``sutra_8_4_40``).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

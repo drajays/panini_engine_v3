@@ -10,6 +10,10 @@ Target SLP1: ``paTayati`` — *paṭu* + *ṇic* (*vārttika* frame under **2.1.
 Structural merge (``__MERGE__``) joins *paṭ* + *ṇic* residue ``i`` into one *dhātu*
 ``paTi`` so **7.3.84** can see an *ik*-final *aṅga* before *śap*’s ``a``.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

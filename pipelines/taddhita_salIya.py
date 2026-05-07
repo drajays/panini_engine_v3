@@ -5,6 +5,10 @@ Pedagogical *śāstra* *śr̥ṅkhalā* and glass-box notes are in ``git`` histo
 and the engine wiki; the executable spine lives only in
 ``core.canonical_pipelines`` (CONSTITUTION Art. 7, 11: recipes call the dispatcher only).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

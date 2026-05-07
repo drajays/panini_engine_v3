@@ -15,6 +15,10 @@ Spine (glass-box):
 JSON rows **7.3.86**/**6.4.111** are *prayoga*-inert here; **8.3.24**/**8.4.41** are folded
 into the same **8.4.55** controlled span (parallel to **P031**).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

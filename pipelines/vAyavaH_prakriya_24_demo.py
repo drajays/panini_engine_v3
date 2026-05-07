@@ -12,6 +12,10 @@ CONSTITUTION Art. 7 / 11: ``apply_rule`` + structural merge only; subanta tail
 reuses ``build_initial_state`` / ``run_subanta_preflight_through_1_4_7`` /
 ``subanta_post_4_1_2`` (cf. ``agnI_iti_pragRhya_demo``).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

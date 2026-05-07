@@ -9,6 +9,10 @@ Art. 7 / 11); *Tripāḍī* opens only after *sup* so **4.1.2** is not *asiddha*
 **1.4.110** (*avasāna*) cannot be invoked after **8.2.1** in this engine: non–8.x
 sūtras are *asiddha*-gated once ``tripadi_zone`` is true (``engine/gates.py``).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

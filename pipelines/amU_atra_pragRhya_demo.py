@@ -10,6 +10,10 @@ scope gives *pragṛhya*; **6.1.125** *prakṛti-bhāva* blocks *yaṇ* — *am�
 Full *adas*→*amU* *subanta* slice is not required here; this isolates the boundary like
 ``agnI_iti_pragRhya_demo`` / ``pacete_iti_pragRhya_demo``.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

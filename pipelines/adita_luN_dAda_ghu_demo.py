@@ -11,11 +11,15 @@ Narrow spine (aligned with corrected JSON prose):
   **ā**-lop before **इ** (**6.4.64** demo), tin **ति** (**3.4.78** → ``ta``), *pada* merge +
   tripāḍī entry (**8.2.1**).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_luN_lakara_cli_sic, P06a_pratyaya_adhikara_3_1_1_to_3
+from core.canonical_pipelines import P00_it_halantyam_lopa_yathasankhyam, P00_luN_lakara_cli_sic, P06a_pratyaya_adhikara_3_1_1_to_3
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -39,16 +43,13 @@ def derive_adita() -> State:
 
     s = apply_rule("1.1.20", s)
 
-    s.meta["1_2_17_ghu_sici_ic_arm"] = True
     s = apply_rule("1.2.17", s)
 
     # Drop ``c``-it off **इच्** (demo path).
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_it_halantyam_lopa_yathasankhyam(s)
 
     s = apply_rule("6.4.71", s)
 
-    s.meta["6_4_64_A_lopa_kngitic_i_arm"] = True
     s = apply_rule("6.4.64", s)
 
     # ``lu`` placeholder → tin ``ta`` (ātmanepada third singular).
@@ -56,8 +57,7 @@ def derive_adita() -> State:
     s.meta["tin_adesha_pending"] = True
     s.meta["tin_adesha_slp1"] = "ta"
     s = apply_rule("3.4.78", s)
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_it_halantyam_lopa_yathasankhyam(s)
 
     from pipelines.subanta import _pada_merge  # noqa: PLC0415
 

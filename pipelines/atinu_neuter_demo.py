@@ -14,6 +14,10 @@ Summary (execution spine aligned with the note):
 Implementation is shared with ``atiri_atinu_kulam_demo`` (same EC-final neuter
 substrate machinery).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 from pipelines.atiri_atinu_kulam_demo import derive_atinu

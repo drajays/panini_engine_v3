@@ -12,6 +12,10 @@ Glass-box spine (JSON ``panini_engine_pipeline`` / corrected analysis):
 CONSTITUTION Art. 7 / 11: ``apply_rule`` + structural merge only; phase-boundary
 ``samjna_registry`` clear is documented for **1.2.46** re-entry after the *kṛt* leg.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

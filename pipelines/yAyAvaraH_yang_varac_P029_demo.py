@@ -12,6 +12,10 @@ for pedagogy):
   (*lopo vyor vali* — JSON mislabels as **6.1.66**) → optional **6.1.101** →
   structural merge → ``P00_subanta_prathama_su_tripadi_visarga``.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

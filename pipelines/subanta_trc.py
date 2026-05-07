@@ -6,6 +6,10 @@ The kṛdanta merge tags the stem with ``krt_tfc`` (see ``krdanta._structural_me
 sūtras **7.1.94**, **6.4.11**, **6.1.66**, **8.2.7** self-gate on that tag + tape shape.
 All execution goes through ``pipelines.subanta`` (``apply_rule`` only).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

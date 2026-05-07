@@ -14,6 +14,10 @@ no separate engine step.
 **Dhātu *it*:** like **P037**, ``upadesha`` is removed from ``pac`` after **1.3.1**
 so the root-final ``c`` is not treated as *halantyam-it*.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

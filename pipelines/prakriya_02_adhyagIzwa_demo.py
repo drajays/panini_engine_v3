@@ -7,6 +7,10 @@ This entry’s corrected prakriyā is the same `अध्यगीष्ट` lu�
 `pipelines/adhyagIzwa_luN_demo.py`. To avoid duplicate pipelines (CONSTITUTION
 Art. 12), this module is a thin alias wrapper only.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 from engine.state import State

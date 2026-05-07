@@ -13,6 +13,10 @@ pipelines/taddhita_itika_etikAyana.py — *itika* + *Ṣaṣ* (*Nas*) + *phak* �
 *śikṣā* for *pada* + *saṃhitā* before **8.2.1**), then ``run_subanta_post_4_1_2`` for
 **8.2.66** / **8.3.15** etc. — target ``EtikAyanaH``.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401  (registry)

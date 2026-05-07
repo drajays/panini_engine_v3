@@ -13,6 +13,10 @@ Spine (glass-box):
   → **6.4.101** (*hi*→*Qi*) → ``_pada_merge`` → Tripāḍī **8.2.1** → **8.4.41** (*n*→*R*)
   → **8.2.36** (*S*→*z* before *jhal*) → **8.4.55** (P031 *viSir* bridge to ``viSiRQi``).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

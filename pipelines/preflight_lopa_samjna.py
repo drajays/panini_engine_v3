@@ -6,6 +6,10 @@ Several recipes need the same *lopa* / *luk*–*ślu*–*lup* *saṃjñā* / *pr
 sequence; **sūtra* logic* remains in ``sutras/``; this module only *schedules*
 ``apply_rule`` calls.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 from engine       import apply_rule

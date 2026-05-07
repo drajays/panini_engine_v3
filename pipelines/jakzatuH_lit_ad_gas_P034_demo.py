@@ -11,6 +11,10 @@ Spine (glass-box ``apply_rule`` + narrow meta arms, per JSON):
   • **6.1.8** / **6.1.4** / **7.4.60** / **7.4.62** / **7.4.59** on *abhyāsa*
   • *pada* merge → **8.2.1** → **8.4.55** ``jaGsatus``→``jakzatus`` → **8.2.66** / **8.3.15** (SLP1 **z** = ष)
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

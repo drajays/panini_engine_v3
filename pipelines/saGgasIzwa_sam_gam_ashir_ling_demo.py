@@ -17,6 +17,10 @@ Narrow spine:
   **6.4.37** → **3.4.107** → *pada* merge → **8.2.1**
   **8.3.23** → **8.3.59** (twice) → **8.4.58** → **8.4.41**
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

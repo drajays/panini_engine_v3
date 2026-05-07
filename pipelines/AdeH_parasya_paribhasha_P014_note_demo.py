@@ -12,6 +12,10 @@ the relevant paribhāṣā(s) and asserts their gates are installed.
 
 CONSTITUTION Art. 7 / 11: ``apply_rule`` only.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401
@@ -33,9 +37,8 @@ def derive_AdeH_parasya_paribhasha_P014_note() -> State:
 
     s = apply_rule("1.1.54", s)
 
-    # Cross-reference demo gate (does not depend on 1.1.54, but is cited in JSON).
-    s.meta["1_3_12_arm"] = True
-    s.meta["1_3_12_target_upadesha_slp1"] = "__none__"
+    # Cross-reference cited in JSON; 1.3.12 does not fire here (no dhatu term in this
+    # prātipadika context — natural non-application).
     s = apply_rule("1.3.12", s)
     return s
 

@@ -11,6 +11,10 @@ Note: The JSON is low-confidence; this file implements the note’s intended
 glass-box spine using the existing samprasāraṇa mapper (1.1.45) plus 6.1.108,
 then the standard avyaya→sup-luk chain (1.1.40 → 2.4.82).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

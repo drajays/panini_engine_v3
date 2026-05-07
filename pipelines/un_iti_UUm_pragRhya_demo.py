@@ -7,6 +7,10 @@ Source note: ``/Users/dr.ajayshukla/Documents/my panini notes/अस्मे �
 Recipe: ``ANARSHA_META_KEY`` + ``UUM_ADESA_ARM_META`` → **1.1.18** → **6.1.125** → **6.1.77**
 / **6.1.78** — surface stays *ūṃ* + *iti* (no *vaṇ* / *ay*).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

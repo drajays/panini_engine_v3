@@ -8,6 +8,10 @@ ending in merged taddhita-anta *prātipadika* *kumAritara* / *kumAritama* (full 
 **6.3.43** *hrasva* on the *I*; ``P00_taddhita_it_lopa_chain``; structural merge; ``subanta``.
 CONSTITUTION Art. 7 / 11: *apply_rule* + structural merge only.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

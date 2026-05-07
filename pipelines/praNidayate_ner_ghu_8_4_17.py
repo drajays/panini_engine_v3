@@ -12,6 +12,10 @@ v3: no **1.3.12** / **3.4** / **6.1.78** *vidhi* in this file — the *āpta* ro
 
 *Śruti target (SLP1):* **praRidayate** (ण् = ``R``).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

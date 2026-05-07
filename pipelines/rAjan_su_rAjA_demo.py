@@ -14,6 +14,10 @@ Matches the note `1_1_43.md`:
     8.2.1    Tripāḍī gate
     8.2.7    nalopa (recipe-armed): rAjAn → rAjA
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

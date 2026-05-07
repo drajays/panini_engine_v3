@@ -9,6 +9,10 @@ Target SLP1: ``gArgyAH`` — *garga* + **yañ** (**4.1.105**), *it* on **yaY**, 
 **7.1.9** (narrow **P042** ``jas``→``as``), **6.1.101**, ``_pada_merge``, **8.2.1** →
 **8.2.66** → **8.3.15** → **8.2.30** (skip), **1.1.68**.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

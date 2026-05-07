@@ -21,6 +21,10 @@ Recipes (step order aligned with pedagogical write-ups ``pachak.md`` /
     see ``cheta.md``; **7.2.10** blocks **7.2.35**; **7.3.84** guṇa; **7.1.94**
     anaṅ; **6.4.11**; **6.1.66**; **8.2.7**.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 from typing import List

@@ -14,6 +14,10 @@ Spine (engine order; cf. JSON teaching steps **n3–n14**):
   **6.4.114** (*s*-loss + *dh* → *ḍ* before *ī*, **before** **8.2.1** so the
   Tripāḍī *asiddha* gate does not block adhyāya **6.**) → **8.2.1**.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

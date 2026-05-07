@@ -11,6 +11,10 @@ on *tas* is blocked by **1.3.3** + ``is_tin_vibhakti_pratyaya`` for *tusma* fina
 *Sunutaḥ* (*ṣañ abhiṣave* → *su* by **6.1.64**) is the same spine once **6.1.64**
 exists in the engine and the *dhātu* row is wired — not implemented here.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

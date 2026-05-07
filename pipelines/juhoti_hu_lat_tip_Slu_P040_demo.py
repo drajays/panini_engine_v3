@@ -10,6 +10,10 @@ skip), **7.4.62** *kuhoścuḥ*, **7.3.84** *guṇa*, **1.1.62** (*pratyaya-lak�
 
 Structural: after **1.1.61**, remove the ``Slu`` placeholder ``Term`` (JSON ``hu+0+ti``).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

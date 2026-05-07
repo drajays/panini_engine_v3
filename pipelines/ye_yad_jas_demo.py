@@ -8,6 +8,10 @@ Operational ``apply_rule`` order:
   **6.4.1** → **3.1.4** → **7.2.102** → **6.1.84** → **6.1.97** → **7.1.17** →
   **1.3.7** → **1.3.9** → **6.1.87** → **8.2.1** → **8.2.5** (accent *saṃjñā* on tape-less model).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

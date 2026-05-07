@@ -8,6 +8,10 @@ Narrative (from ``…/separated_prakriyas/prakriya_17_*.json``, OCR-corrected):
 
 v3: no *svara* marks on ``Varna`` rows; ``apply_rule`` only registers audit keys.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

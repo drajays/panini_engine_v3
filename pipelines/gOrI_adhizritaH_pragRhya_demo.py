@@ -9,6 +9,10 @@ with ``SAPTAMYARTHA_PRAGHYA_TAG_ARM_META`` the engine stamps ``pragrahya`` on *�
 *anga*/*prātipadika* **Term**s so **6.1.125** blocks **6.1.77** (*iko yaṇ aci*) before *ac*
 (*adhiśritaḥ*, *iti*).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

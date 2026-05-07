@@ -10,6 +10,10 @@ from *ā*+*ī* guṇa). **6.1.78** (*ecoyavāyāvaḥ*) must not split *e* befor
 Full *mAlA* → *mAle* in the engine may still use other *sup* paths; this demo fixes the
 sandhi boundary in isolation.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

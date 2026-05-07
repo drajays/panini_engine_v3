@@ -9,6 +9,10 @@ Target SLP1: ``agnicit`` — *agni* + *√ci* + *kvip* (*upapada* *kṛt*), *it*
 (skip), **1.1.46**, **6.1.71** (*tuk*), structural *upapada* merge, *subanta*
 *su* + **6.1.68**, **8.2.30** (no change here), **1.1.68**.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

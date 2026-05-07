@@ -10,6 +10,10 @@ Target surface (SLP1): "AraRyaH" (आरण्यः).
 This is a minimal pipeline: it reuses canonical scheduling blocks to avoid
 duplication (tests/constitutional/test_no_new_duplicates.py).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

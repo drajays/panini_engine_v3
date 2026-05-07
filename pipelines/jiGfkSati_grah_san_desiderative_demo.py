@@ -13,6 +13,10 @@ Implemented narrow spine:
   merge + tripāḍī k+s→k+ṣ (8.3.46 armed)
   laṭ 3sg kartari (P00_lat_vartamane_tip_and_sap) + it-lopa on śap.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

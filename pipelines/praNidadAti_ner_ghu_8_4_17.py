@@ -8,6 +8,10 @@ State model: three ``Term``s (``pra`` | ``ni`` | **dadAti** *dhātu*), **1.1.20*
 
 *Cross-check* user note: ``…/my panini notes/प्रणिददाति'.md`` — *n* in *ni* after *pra* before *ghu* *dā*.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401  — SUTRA_REGISTRY

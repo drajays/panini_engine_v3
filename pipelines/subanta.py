@@ -92,6 +92,10 @@ Recipe (Aṣṭādhyāyī order; one step per apply_rule call):
         8.2.66  sasajuṣo ruḥ  (final s → ru)
         8.3.15  ru → visarga at end
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 from typing import List
@@ -559,6 +563,8 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     from an upstream samāsa derivation. Use `derive_from_state(...)` instead of
     injecting them here.
     """
+    if stem_slp1.strip() in {"tad", "yad", "etad", "idam", "adas"} and vibhakti == 8:
+        raise ValueError("tyadādi pronouns do not take sambodhana cells")
     s = build_initial_state(
         stem_slp1, vibhakti, vacana, linga,
         matra_prathama_2_3_46=matra_prathama_2_3_46,

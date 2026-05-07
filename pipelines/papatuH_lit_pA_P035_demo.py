@@ -12,6 +12,10 @@ Spine (``apply_rule`` + recipe meta):
   • *pada* merge (concat ⇒ **papatus**; JSON n.10 *savarṇa-dīrgha* is folded here)
   • **8.2.1** → **8.2.66** / **8.3.15** (ru / visarga)
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

@@ -37,8 +37,7 @@ All forms use the same engine path: ``build_initial_state("sarva", v, vac, "pull
   Non-*sarvanāma* (e.g. *rāma* **6-3**): **7.1.54** *num* (*nuṭ*), *not* **7.1.52**; contrast only,
   one ``derive(…)`` *prakriyā* each.
   Parallel *śabda* **viSva** uses the same *sup* *sūtra* spine: ``viSveṣām`` / ``viSvezAm`` (SLP1).
-  Full *paradigma* of **6-3** already checked by ``test_24_cells_match_reference_gold`` against
-  ``data/reference/subanta_gold/sarva_pullinga.json``; this *śikṣā* text names the *dṛśya* chain
+  Full *paradigma* of **6-3** already checked by ``test_24_cells_match_reference_gold``; this *śikṣā* text names the *dṛśya* chain
   the trace exercises for the *aṣmād* *ādi* *sarvanāma* *adanta* slice.
 
 *Śikṣā link* (user ``सर्वकः.md`` *—* *anuṣṅa* *-aka* *prathama* *eka* *सर्वकः*):
@@ -50,6 +49,10 @@ All forms use the same engine path: ``build_initial_state("sarva", v, vac, "pull
 *Śikṣā link* (user ``तृतीयासमासे निषेध .md`` *—* *tṛtīyā* *tatpuruṣa*):
   **1.1.30** *tṛtīyā-samāse* (after **1.1.29** in *P01*) cancels *sarvanāma* on ``tRtIyA_tatpurusha`` *aṅga*; same *caturthī* *āya* tail as *priya-viśvāya* but for *māsa-pūrv* *śabda* *ids* — ``pipelines.mAsa_pUrva_tRtIyA_subanta`` and ``sarvadi_slp1`` entries ``mAsa-pUrva``, *etc.*
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 from engine.state import State

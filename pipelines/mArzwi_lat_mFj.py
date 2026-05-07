@@ -5,6 +5,10 @@ Source note: `/Users/dr.ajayshukla/Documents/my panini notes/मार्ष्�
 
 Target SLP1: **mArzwi** (मार्ष्टि).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

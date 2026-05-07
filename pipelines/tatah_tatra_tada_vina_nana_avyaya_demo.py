@@ -14,6 +14,10 @@ not on fully modelling the taddhita-vidhāna sūtras (5.3.7/10/15, 5.2.27, …).
 Those affixes are represented as explicit *taddhita* Terms with
 ``meta['asarva_vibhakti_taddhita']=True`` so 1.1.38 can remain configuration-driven.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

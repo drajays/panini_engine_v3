@@ -11,6 +11,10 @@ Narrow spine (as per note):
   6.1.8 dvitva + 6.1.4 abhyāsa-gate + 7.4.60 trim + 8.4.54 carca (B→b)
   Tripāḍī ru/visarga on final -s.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

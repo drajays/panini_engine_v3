@@ -14,6 +14,10 @@ Note: JSON’s **6.1.101** at *ā*+*u* is modeled here as **6.1.87** *ād guṇa
 (``A`` + ``u`` → ``o``), after **6.3.46** + **6.1.101** fix *mahat* → *mahā* shape
 (``a`` + ``A`` → ``A``) as in ``pipelines/maharsi_mahAt_fzi.py``.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

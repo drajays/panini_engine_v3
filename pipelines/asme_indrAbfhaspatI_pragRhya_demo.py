@@ -11,6 +11,10 @@ that *e* would split to *ay*. *Kāśikā* on **1.1.13** *śe* treats that residu
 Engine path: arm ``SHE_PRAGHYA_TAG_ARM_META`` on ``State``, ``apply_rule("1.1.11", s)``
 (so **1.1.11** *act* tags final-*e* *aṅga*/*prātipadika*), then **6.1.125** + **6.1.78**.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

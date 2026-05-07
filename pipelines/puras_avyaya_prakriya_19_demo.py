@@ -12,6 +12,10 @@ is not yet in the Varṇa *it* scanner) → **1.1.38** + ``su`` + **2.4.82** →
 **3.1.1–3.1.3** (*ādyudātta* *adhikāra*) is applied for alignment with the
 scholarly step list; **3.1.3** does not alter surface in this slice.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401

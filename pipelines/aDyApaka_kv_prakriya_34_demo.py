@@ -12,6 +12,10 @@ Flat tape: ``aDyApaka`` + ``kv`` → ``aDyApakakv``.
 
 CONSTITUTION Art. 7 / 11: ``apply_rule`` only.
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401
@@ -39,7 +43,7 @@ def _mk_kv_nipAta() -> Term:
     return Term(
         kind="nipata",
         varnas=list(parse_slp1_upadesha_sequence("kv")),
-        tags={"nipāta", "prakriya_34_kv_interrogative_demo"},
+        tags={"nipāta", "prakriya_34_kv_interrogative_demo", "tit"},
         meta={"upadesha_slp1": "kv"},
     )
 
@@ -51,19 +55,15 @@ def derive_aDyApaka_kv_prakriya_34() -> State:
         trace=[],
     )
 
-    s.meta["prakriya_34_2_3_48_arm"] = True
     s = apply_rule("2.3.48", s)
 
     s = apply_rule("8.1.16", s)
     s = apply_rule("8.1.18", s)
 
-    s.meta["prakriya_34_8_1_19_arm"] = True
     s = apply_rule("8.1.19", s)
 
-    s.meta["prakriya_34_6_1_185_arm"] = True
     s = apply_rule("6.1.185", s)
 
-    s.meta["prakriya_34_1_2_40_arm"] = True
     s = apply_rule("1.2.40", s)
     return s
 

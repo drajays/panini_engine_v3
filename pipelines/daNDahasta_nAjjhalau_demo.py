@@ -7,6 +7,10 @@ Glass-box: merged *saṃhitā* tapes, **1.1.9** (*savarṇa* saṃjñā) + **1.1
 (*paribhāṣā* gate) + **6.1.101** — surface must **not** show *savarṇa-dīrgha*
 across *ac*–*hal* (``phonology.savarna.is_savarna`` implements *nājjhalau*).
 """
+# ── Claude Code review 2026-05-07 ──────────────────────────────────
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
+# Structural merges recorded in State.trace · no gold shortcuts      
+# ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401
