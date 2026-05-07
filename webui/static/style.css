@@ -906,6 +906,252 @@ table.matrix td.cell-fixed::after {
 }
 .sc-peer-link:hover { color: var(--accent); }
 
+/* ── Patha analyzer ───────────────────────────────────────────── */
+
+.patha-examples {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.patha-ex-label {
+  font-size: 11px;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+.patha-ex-btn {
+  font-size: 12px;
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  background: var(--bg-panel);
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--ink-dim);
+  font-family: var(--dev);
+  transition: all 0.12s;
+}
+.patha-ex-btn:hover { border-color: var(--accent-dim); color: var(--accent); background: var(--bg-subtle); }
+
+.patha-textarea {
+  width: 100%;
+  font-family: var(--dev);
+  font-size: 18px;
+  line-height: 1.7;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg-panel);
+  color: var(--ink);
+  resize: vertical;
+  min-height: 70px;
+}
+.patha-textarea:focus { outline: none; border-color: var(--accent); }
+
+/* ── Stats bar ────────────────────────────────────────────────── */
+
+.patha-stats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.pa-stat {
+  text-align: center;
+  min-width: 56px;
+}
+.pa-stat-num {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--mono);
+  line-height: 1;
+}
+.pa-stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ink-faint);
+  margin-top: 2px;
+}
+.pa-stat-ok  .pa-stat-num { color: var(--success); }
+.pa-stat-unk .pa-stat-num { color: var(--ink-faint); }
+.pa-stat-amb .pa-stat-num { color: var(--warn); }
+.pa-stat-bar-wrap {
+  flex: 1;
+  min-width: 120px;
+}
+.pa-progress-track {
+  height: 6px;
+  background: var(--line-soft);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+.pa-progress-fill {
+  height: 100%;
+  background: var(--success);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+/* ── Word cards ────────────────────────────────────────────────── */
+
+.patha-words-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.pw-card {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg-panel);
+  cursor: pointer;
+  transition: all 0.12s;
+  min-width: 90px;
+  text-align: center;
+}
+.pw-card:hover { background: var(--bg-subtle); border-color: var(--accent-dim); }
+.pw-recognized  { border-color: #90c090; }
+.pw-ambiguous   { border-color: #e0a040; }
+.pw-unrecognized { border-color: var(--line); opacity: 0.7; }
+.pw-selected    { border-color: var(--accent) !important;
+                  background: #fff8ec !important;
+                  box-shadow: 0 2px 8px rgba(139,46,0,0.12); }
+
+.pw-surface {
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.pw-unk-form { color: var(--ink-faint); }
+
+.pw-stem-line {
+  font-size: 11px;
+  color: var(--ink-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+  font-family: var(--dev);
+}
+.pw-class {
+  font-size: 9px;
+  color: var(--ink-faint);
+  letter-spacing: 0.2px;
+}
+.pw-label-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 3px; }
+.pw-label-chip {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 8px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--line);
+  color: var(--ink-dim);
+  font-family: var(--mono);
+  white-space: nowrap;
+}
+.pw-amb-badge {
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 6px;
+  background: #fff3cd;
+  border: 1px solid #e0c060;
+  color: var(--warn);
+}
+.pw-unk-label {
+  font-size: 10px;
+  color: var(--ink-faint);
+  font-style: italic;
+  padding: 2px 0;
+}
+
+/* ── Detail panel ─────────────────────────────────────────────── */
+
+.patha-detail-panel {
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+.patha-detail-panel .empty {
+  color: var(--ink-faint);
+  font-style: italic;
+  padding: 40px 16px;
+  text-align: center;
+  font-size: 13px;
+}
+.pd-surface {
+  font-size: 40px;
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.pd-vibhakti {
+  font-size: 15px;
+  color: var(--ink-dim);
+  font-family: var(--dev);
+  margin-bottom: 10px;
+}
+.pd-note {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+.pd-tab-btn {
+  font-size: 12px;
+  padding: 4px 10px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+}
+.pd-tab-active {
+  background: var(--accent) !important;
+  color: white !important;
+  border-color: var(--accent) !important;
+}
+
+/* ── Lexicon reference ────────────────────────────────────────── */
+
+.lex-class-group { margin-bottom: 16px; }
+.lex-class-header {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+  padding: 4px 0;
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 8px;
+  font-family: var(--dev);
+}
+
+.patha-lex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+}
+.lex-entry {
+  padding: 8px 10px;
+  border: 1px solid var(--line-soft);
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.12s;
+  background: var(--bg-panel);
+}
+.lex-entry:hover { border-color: var(--accent-dim); background: var(--bg-subtle); }
+.lex-dev   { font-size: 18px; color: var(--accent); margin-bottom: 2px; }
+.lex-slp1  { font-size: 10px; color: var(--ink-faint); margin-bottom: 2px; }
+.lex-gloss { font-size: 10px; }
+
 /* ── Test result ─────────────────────────────────────────────── */
 
 .sc-test-result { font-size: 14px; }

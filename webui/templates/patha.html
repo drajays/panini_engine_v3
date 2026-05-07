@@ -1,0 +1,372 @@
+{% extends "base.html" %}
+{% block title %}पाठ-विश्लेषणम् — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block content %}
+
+<!-- ── Input panel ───────────────────────────────────────────────── -->
+<div class="panel">
+  <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px;">
+    <h1 style="margin:0;">पाठ-विश्लेषणम्</h1>
+    <span class="muted" style="font-size:13px;">Devanāgarī text → सुबन्त-पद-विश्लेषण</span>
+  </div>
+  <p class="muted" style="font-size:12px;margin:0 0 10px;">
+    देवनागर्याम् लिखतु। विच्छिन्न-रूपाणि (sandhi-viccheda) लिखतु।
+    यन्त्रम् केवलं सुबन्त-रूपाणि विश्लेषयति (तिङन्त-रूपाणि नहि)।
+    कोशे <strong>{{ lexicon_count }}</strong> प्रातिपदिकानि · <strong>{{ index_forms }}</strong> रूपाणि।
+  </p>
+
+  <!-- Example strip -->
+  <div class="patha-examples">
+    <span class="patha-ex-label">उदाहरणानि:</span>
+    <button class="patha-ex-btn"
+      data-text="शम्भुः गुरोः शिष्यः। भानोः प्रकाशे वायुः। शम्भवे गुरवे धर्मः।">
+      शम्भु-स्तुतिः
+    </button>
+    <button class="patha-ex-btn"
+      data-text="रामस्य धर्मः सत्यम्। योगे ज्ञानम् सुखम्। लोकस्य मार्गे धर्मम् पश्य।">
+      रामायण-उद्धरणम्
+    </button>
+    <button class="patha-ex-btn"
+      data-text="हरेः कवेः मुनेः ज्ञानम्। हरिभिः सर्वेषाम् मार्गः। मुनिः कवये ज्ञानम् ददाति।">
+      हरि-मुनि-ज्ञानम्
+    </button>
+    <button class="patha-ex-btn"
+      data-text="शम्भुः गुरुः भानुः वायुश्च। शम्भून् गुरून् वायुना। शम्भूनाम् लोके धर्मः।">
+      उकारान्त-रूपावली
+    </button>
+  </div>
+
+  <!-- Textarea -->
+  <textarea id="patha-input" class="patha-textarea" rows="3"
+    placeholder="यहाँ संस्कृत-पाठं लिखतु… उदा॰ शम्भुः गुरोः शिष्यः।">शम्भुः गुरोः शिष्यः। भानोः प्रकाशे वायुः। शम्भवे गुरवे धर्मः।</textarea>
+
+  <div class="form-row" style="margin-top:8px;">
+    <button id="analyze-btn">विश्लेषयतु</button>
+    <span id="analyze-status" class="muted" style="font-size:12px;margin-left:10px;"></span>
+  </div>
+</div>
+
+<!-- ── Analysis output ───────────────────────────────────────────── -->
+<div id="patha-result" style="display:none;">
+
+  <!-- Stats bar -->
+  <div class="panel patha-stats-bar" id="patha-stats-bar"></div>
+
+  <!-- Words + detail two-pane -->
+  <div class="two-pane">
+
+    <!-- Left: interlinear word display -->
+    <div class="panel" style="min-height:200px;">
+      <h2 style="margin:0 0 12px;">पद-विश्लेषणम्</h2>
+      <div class="patha-words-flow" id="patha-words"></div>
+    </div>
+
+    <!-- Right: detail for selected word -->
+    <div class="panel patha-detail-panel" id="patha-detail-panel">
+      <div class="empty" id="patha-detail-empty">
+        पदं द्रष्टुम् उपर्युक्तं पदम् क्लिक् करुत।
+      </div>
+      <div id="patha-detail-content" style="display:none;">
+
+        <!-- Surface form headline -->
+        <div id="pd-headline"></div>
+
+        <!-- Analysis tabs (for ambiguous words) -->
+        <div id="pd-tabs" style="margin-bottom:10px;"></div>
+
+        <!-- Prakriyā trace area -->
+        <div id="pd-trace-area" style="display:none;">
+          <h3 style="margin:12px 0 6px;">प्रक्रिया</h3>
+          <div class="trace-filter" id="trace-filter">
+            <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
+            <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
+            <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
+            <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
+            <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
+          </div>
+          <ol class="trace" id="trace" style="max-height:340px;overflow-y:auto;margin:0;"></ol>
+        </div>
+        <div id="sutra-detail">
+          <div class="empty" style="padding:16px;font-size:12px;">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── Lexicon reference ─────────────────────────────────────────── -->
+<div class="panel" style="margin-top:0;">
+  <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px;">
+    <h2 style="margin:0;">पाठ-कोशः</h2>
+    <span class="muted" style="font-size:12px;">{{ lexicon_count }} प्रातिपदिकानि · {{ index_forms }} विश्लेषणीय-रूपाणि</span>
+    <button id="lex-toggle-btn" class="secondary" style="margin-left:auto;font-size:11px;padding:3px 10px;">
+      दर्शयतु / गोपयतु
+    </button>
+  </div>
+
+  <div id="lex-body" style="display:none;">
+    <!-- Group by class -->
+    {% set classes = lexicon | map(attribute='class_short') | unique | list %}
+    {% for cls in ['अकारान्त', 'अकारान्त न', 'इकारान्त · घि', 'उकारान्त · घि', 'सर्वनाम'] %}
+    {% set entries = lexicon | selectattr('class_short', 'equalto', cls) | list %}
+    {% if entries %}
+    <div class="lex-class-group">
+      <div class="lex-class-header">{{ cls }}</div>
+      <div class="patha-lex-grid">
+        {% for e in entries %}
+        <div class="lex-entry" data-stem="{{ e.stem_slp1 }}" data-linga="{{ e.linga }}"
+             title="{{ e.gloss_en }}" onclick="lexLookup('{{ e.stem_slp1 }}','{{ e.linga }}')">
+          <div class="lex-dev dev">{{ e.stem_dev }}</div>
+          <div class="lex-slp1 mono">{{ e.stem_slp1 }}</div>
+          <div class="lex-gloss muted">{{ e.gloss_en }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
+
+{% block body_extra %}
+<script src="{{ url_for('static', filename='trace.js') }}"></script>
+<script>
+/* ── Constants ── */
+const _VIB_LONG = {
+  1:"प्रथमा", 2:"द्वितीया", 3:"तृतीया", 4:"चतुर्थी",
+  5:"पञ्चमी", 6:"षष्ठी",   7:"सप्तमी", 8:"सम्बोधन",
+};
+const _VAC_LONG  = {1:"एकवचन",   2:"द्विवचन",    3:"बहुवचन"};
+const _LING_LONG = {
+  "pulliṅga":"पुंलिङ्ग", "strīliṅga":"स्त्रीलिङ्ग", "napuṃsaka":"नपुंसकलिङ्ग"
+};
+const _LING_SHORT = {"pulliṅga":"पुं", "strīliṅga":"स्त्री", "napuṃsaka":"न"};
+
+let _lastResult   = null;
+let _selectedWord = null;
+let _selectedAna  = null;
+
+/* ── Example buttons ── */
+document.querySelectorAll(".patha-ex-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.getElementById("patha-input").value = btn.dataset.text;
+    analyze();
+  });
+});
+
+/* ── Analyze ── */
+document.getElementById("analyze-btn").addEventListener("click", analyze);
+document.addEventListener("DOMContentLoaded", analyze);
+
+async function analyze() {
+  const text   = document.getElementById("patha-input").value.trim();
+  const btn    = document.getElementById("analyze-btn");
+  const status = document.getElementById("analyze-status");
+  if (!text) return;
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="loading"></span> विश्लेषयति…';
+  status.textContent = "";
+
+  try {
+    const r    = await fetch("/api/patha/analyze", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text }),
+    });
+    const data = await r.json();
+    if (data.error) { status.textContent = "दोषः: " + data.error; return; }
+    _lastResult = data;
+    renderResult(data);
+    document.getElementById("patha-result").style.display = "";
+  } catch(e) {
+    status.textContent = "दोषः: " + e.message;
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = "विश्लेषयतु";
+  }
+}
+
+/* ── Render stats bar ── */
+function renderResult(data) {
+  /* Stats */
+  const recPct = data.total > 0 ? Math.round(100 * data.recognized / data.total) : 0;
+  document.getElementById("patha-stats-bar").innerHTML = `
+    <div class="patha-stats">
+      <div class="pa-stat">
+        <div class="pa-stat-num">${data.total}</div>
+        <div class="pa-stat-label">पदानि</div>
+      </div>
+      <div class="pa-stat pa-stat-ok">
+        <div class="pa-stat-num">${data.recognized}</div>
+        <div class="pa-stat-label">ज्ञात</div>
+      </div>
+      <div class="pa-stat pa-stat-unk">
+        <div class="pa-stat-num">${data.unrecognized}</div>
+        <div class="pa-stat-label">अज्ञात</div>
+      </div>
+      <div class="pa-stat pa-stat-amb">
+        <div class="pa-stat-num">${data.ambiguous}</div>
+        <div class="pa-stat-label">द्विार्थ</div>
+      </div>
+      <div class="pa-stat-bar-wrap">
+        <div class="pa-progress-track">
+          <div class="pa-progress-fill" style="width:${recPct}%"></div>
+        </div>
+        <div class="pa-stat-label">${recPct}% ज्ञात</div>
+      </div>
+    </div>`;
+
+  /* Words */
+  renderWords(data.words);
+  /* Reset detail */
+  resetDetail();
+}
+
+/* ── Word chips ── */
+function renderWords(words) {
+  const container = document.getElementById("patha-words");
+  container.innerHTML = "";
+  words.forEach((w, idx) => {
+    const div = document.createElement("div");
+    div.className = "pw-card" +
+      (w.recognized ? (w.ambiguous ? " pw-ambiguous" : " pw-recognized") : " pw-unrecognized");
+    div.dataset.idx = idx;
+
+    const ana  = w.analyses[0] || null;
+    const surf = escapeHtml(w.form_dev);
+
+    if (w.recognized) {
+      const stemLine = escapeHtml(ana.stem_dev) + " <span class='pw-class'>" + escapeHtml(ana.class_short) + "</span>";
+      const labelChip = `<span class="pw-label-chip">${escapeHtml(ana.label_short)}</span>`;
+      const ambBadge = w.ambiguous
+        ? `<span class="pw-amb-badge">${w.count} अर्थाः</span>` : "";
+      div.innerHTML = `
+        <div class="pw-surface dev">${surf}</div>
+        <div class="pw-stem-line">${stemLine}${ambBadge}</div>
+        <div class="pw-label-row">${labelChip}</div>`;
+    } else {
+      div.innerHTML = `
+        <div class="pw-surface dev pw-unk-form">${surf}</div>
+        <div class="pw-unk-label">अज्ञातम्</div>`;
+    }
+
+    div.addEventListener("click", () => selectWord(w, div));
+    container.appendChild(div);
+  });
+}
+
+/* ── Select a word ── */
+function selectWord(wordData, el) {
+  document.querySelectorAll(".pw-card.pw-selected").forEach(c => c.classList.remove("pw-selected"));
+  el.classList.add("pw-selected");
+  _selectedWord = wordData;
+  _selectedAna  = wordData.analyses[0] || null;
+
+  const content = document.getElementById("patha-detail-content");
+  document.getElementById("patha-detail-empty").style.display = "none";
+  content.style.display = "";
+
+  renderDetailHeader(wordData);
+  renderDetailTabs(wordData);
+  if (_selectedAna) {
+    loadTrace(_selectedAna);
+  } else {
+    document.getElementById("pd-trace-area").style.display = "none";
+    document.getElementById("sutra-detail").innerHTML =
+      '<div class="empty" style="padding:16px;font-size:12px;">व्युत्पत्तिः अनुपलब्धा।</div>';
+  }
+}
+
+function renderDetailHeader(wordData) {
+  const div = document.getElementById("pd-headline");
+  if (!wordData.recognized) {
+    div.innerHTML = `
+      <div class="pd-surface dev">${escapeHtml(wordData.form_dev)}</div>
+      <div class="pd-note muted">यत् पदं कोशे नास्ति — संभवतः तिङन्तम्, निपातः, वा अज्ञात-प्रातिपदिकम्।</div>`;
+    return;
+  }
+  const a = wordData.analyses[0];
+  div.innerHTML = `
+    <div class="pd-surface dev">${escapeHtml(wordData.form_dev)}</div>
+    <div class="pd-vibhakti dev">
+      ${escapeHtml(_VIB_LONG[a.vibhakti])} ${escapeHtml(_VAC_LONG[a.vacana])}
+      <span class="muted">(${escapeHtml(_LING_LONG[a.linga])})</span>
+    </div>`;
+}
+
+function renderDetailTabs(wordData) {
+  const tabs = document.getElementById("pd-tabs");
+  tabs.innerHTML = "";
+  if (wordData.analyses.length <= 1) return;
+  wordData.analyses.forEach((ana, i) => {
+    const btn = document.createElement("button");
+    btn.className = "pd-tab-btn secondary" + (i === 0 ? " pd-tab-active" : "");
+    btn.innerHTML = `<span class="dev">${escapeHtml(ana.stem_dev)}</span> `
+                  + `<span style="font-size:10px;">${escapeHtml(ana.label_short)}</span>`;
+    btn.addEventListener("click", () => {
+      tabs.querySelectorAll(".pd-tab-btn").forEach(b => b.classList.remove("pd-tab-active"));
+      btn.classList.add("pd-tab-active");
+      _selectedAna = ana;
+      renderDetailHeader({ ...wordData, analyses: [ana] });
+      loadTrace(ana);
+    });
+    tabs.appendChild(btn);
+  });
+}
+
+/* ── Load prakriyā trace ── */
+async function loadTrace(ana) {
+  const traceArea = document.getElementById("pd-trace-area");
+  const traceList = document.getElementById("trace");
+  traceArea.style.display = "";
+  traceList.innerHTML = '<li class="muted" style="padding:6px;">लादयति…</li>';
+  document.getElementById("sutra-detail").innerHTML =
+    '<div class="empty" style="padding:16px;font-size:12px;">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>';
+
+  try {
+    const r = await fetch("/api/patha/trace", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        stem_slp1: ana.stem_slp1,
+        vibhakti:  ana.vibhakti,
+        vacana:    ana.vacana,
+        linga:     ana.linga,
+      }),
+    });
+    const data = await r.json();
+    if (data.error) {
+      traceList.innerHTML = `<li class="muted">दोषः: ${escapeHtml(data.error)}</li>`;
+      return;
+    }
+    renderTrace(data.trace);
+  } catch(e) {
+    traceList.innerHTML = `<li class="muted">दोषः: ${escapeHtml(e.message)}</li>`;
+  }
+}
+
+function resetDetail() {
+  document.getElementById("patha-detail-empty").style.display = "";
+  document.getElementById("patha-detail-content").style.display = "none";
+  _selectedWord = null;
+  _selectedAna  = null;
+}
+
+/* ── Lexicon panel toggle ── */
+document.getElementById("lex-toggle-btn").addEventListener("click", () => {
+  const body = document.getElementById("lex-body");
+  body.style.display = body.style.display === "none" ? "" : "none";
+});
+
+/* ── Lexicon entry click → analyze that form ── */
+function lexLookup(stem, linga) {
+  /* Show the 24-cell matrix for this stem */
+  window.open(`/matrix?stem=${encodeURIComponent(stem)}`, "_blank");
+}
+</script>
+{% endblock %}

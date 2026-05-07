@@ -241,6 +241,80 @@ def api_matrix():
 
 
 # ─────────────────────────────────────────────────────────────────
+# पाठ-विश्लेषण — text / śloka analysis
+# ─────────────────────────────────────────────────────────────────
+
+@app.route("/patha")
+def patha_page():
+    from pipelines.patha_pipeline import get_form_index, lexicon_info
+    index = get_form_index()          # build + cache on first request
+    lex   = lexicon_info()
+    return render_template(
+        "patha.html",
+        nav_active="patha",
+        cov=coverage_report(SUTRA_REGISTRY),
+        lexicon=lex,
+        lexicon_count=len(lex),
+        index_forms=len(index),
+    )
+
+
+@app.route("/api/patha/analyze", methods=["POST"])
+def api_patha_analyze():
+    data = request.get_json(force=True)
+    text = (data.get("text") or "").strip()
+    if not text:
+        return jsonify({"error": "empty text"}), 400
+    from pipelines.patha_pipeline import analyze_patha
+    return jsonify(analyze_patha(text))
+
+
+@app.route("/api/patha/trace", methods=["POST"])
+def api_patha_trace():
+    """Full prakriyā trace for one (stem, vibhakti, vacana, linga) tuple."""
+    data  = request.get_json(force=True)
+    stem  = (data.get("stem_slp1") or "").strip()
+    vibh  = int(data.get("vibhakti", 1))
+    vac   = int(data.get("vacana",   1))
+    linga = data.get("linga", "pulliṅga")
+    if not stem:
+        return jsonify({"error": "stem_slp1 required"}), 400
+    try:
+        state = derive(stem, vibh, vac, linga=linga)
+    except Exception as ex:
+        return jsonify({"error": f"{type(ex).__name__}: {ex}"}), 500
+    from phonology.joiner import slp1_to_devanagari
+    surface_dev = slp1_to_devanagari(state.terms[0].varnas) if state.terms else ""
+    enriched = []
+    for step in state.trace:
+        sid = step.get("sutra_id", "")
+        rec = SUTRA_REGISTRY.get(sid) if sid and not sid.startswith("__") else None
+        enriched.append({
+            **step,
+            "_is_structural" : bool(sid.startswith("__")),
+            "_sutra_text_dev": getattr(rec, "text_dev",      None),
+            "_padaccheda_dev": getattr(rec, "padaccheda_dev", None),
+            "_anuvritti_from": list(getattr(rec, "anuvritti_from", ()) or ()),
+        })
+    tr = state.trace
+    return jsonify({
+        "stem_slp1"   : stem,
+        "vibhakti"    : vibh,
+        "vacana"      : vac,
+        "linga"       : linga,
+        "surface_dev" : surface_dev,
+        "surface_slp1": state.render(),
+        "trace"       : enriched,
+        "stats": {
+            "total_steps"   : len(tr),
+            "applied_count" : sum(1 for s in tr if s.get("status") == "APPLIED"),
+            "blocked_count" : sum(1 for s in tr if s.get("status") == "BLOCKED"),
+            "skipped_count" : sum(1 for s in tr if s.get("status") == "SKIPPED"),
+        },
+    })
+
+
+# ─────────────────────────────────────────────────────────────────
 # Paradigm showcase — शम्भु development page
 # ─────────────────────────────────────────────────────────────────
 
