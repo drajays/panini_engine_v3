@@ -37,6 +37,24 @@ def _sic_luG_term(state: State):
     return None
 
 
+def _sya_lrt_term(state: State):
+    """
+    lṛṭ *sya* vikaraṇa: recipe arms ``3_4_114_lrt_sy_arm``; marks 'sya' as
+    ārdhadhātuka so 7.2.35 can find it natively (val-initial, not kṛt).
+    """
+    if not state.meta.get("3_4_114_lrt_sy_arm"):
+        return None
+    for t in state.terms:
+        if t.kind != "pratyaya":
+            continue
+        if not t.meta.get("lrt_vikarana"):
+            continue
+        if "ardhadhatuka" in t.tags:
+            return None
+        return t
+    return None
+
+
 def cond(state: State) -> bool:
     pr = _krt_term(state)
     if pr is not None and "ardhadhatuka" not in pr.tags:
@@ -45,6 +63,9 @@ def cond(state: State) -> bool:
             return True
     pr2 = _sic_luG_term(state)
     if pr2 is not None and "ardhadhatuka" not in pr2.tags:
+        return True
+    pr3 = _sya_lrt_term(state)
+    if pr3 is not None:
         return True
     return False
 
@@ -60,6 +81,10 @@ def act(state: State) -> State:
     if pr2 is not None and "ardhadhatuka" not in pr2.tags:
         pr2.tags.add("ardhadhatuka")
         state.samjna_registry["3.4.114_ardhadhatuka"] = True
+    pr3 = _sya_lrt_term(state)
+    if pr3 is not None:
+        pr3.tags.add("ardhadhatuka")
+        state.samjna_registry["3.4.114_ardhadhatuka_sya_lrt"] = True
     return state
 
 

@@ -1,0 +1,42 @@
+"""
+7.4.86  जपजभदहदशभञ्जपशां च  —  VIDHI
+
+Padaccheda: जप-जभ-दह-दश-भञ्ज-पशाम् च
+
+जपजभदहदशभञ्जपशां च (7.4.86)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "7_4_86_japajaBada_86"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("7_4_86_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "7.4.86"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "7.4.86",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "japajaBadahadaSaBaYjapaSAM ca",
+    text_dev              = "जपजभदहदशभञ्जपशां च",
+    padaccheda_dev        = "जप-जभ-दह-दश-भञ्ज-पशाम् च",
+    why_dev               = "(सूत्रम् 7.4.86) जपजभदहदशभञ्जपशां च।",
+    anuvritti_from        = ('7.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

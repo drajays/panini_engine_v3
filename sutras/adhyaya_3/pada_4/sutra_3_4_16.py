@@ -1,0 +1,42 @@
+"""
+3.4.16  भावलक्षणे स्थेण्कृञ्वदिचरिहुतमिजनिभ्यस्तोसुन्  —  VIDHI
+
+Padaccheda: भावलक्षणे स्था-इण्-कृञ्-वदि-चरि-हु-तमि-जनिभ्यः तोसुन्
+
+krt-suffix rule: भावलक्षणे स्थेण्कृञ्वदिचरिहुतमिजनिभ्यस्तोसुन्
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "3_4_16_BAvalakzaR_16"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("3_4_16_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["krt_kind"] = "3.4.16"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "3.4.16",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "BAvalakzaRe sTeRkfYvadicarihutamijaniByastosun",
+    text_dev              = "भावलक्षणे स्थेण्कृञ्वदिचरिहुतमिजनिभ्यस्तोसुन्",
+    padaccheda_dev        = "भावलक्षणे स्था-इण्-कृञ्-वदि-चरि-हु-तमि-जनिभ्यः तोसुन्",
+    why_dev               = "धातोः प्रत्ययः (३.4.16)।",
+    anuvritti_from        = ('3.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

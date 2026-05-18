@@ -1,0 +1,42 @@
+"""
+8.2.61  नसत्तनिषत्तानुत्तप्रतूर्तसूर्तगूर्तानि छन्दसि  —  VIDHI
+
+Padaccheda: नसत्त-निषत्त-अनुत्त-प्रतूर्त-सूर्त-गूर्तानि छन्दसि
+
+नसत्तनिषत्तानुत्तप्रतूर्तसूर्तगूर्तानि छन्दसि (8.2.61)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "8_2_61_nasattaniz_61"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("8_2_61_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["sandhi_kind"]             = "8.2.61"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "8.2.61",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "nasattanizattAnuttapratUrtasUrtagUrtAni Candasi",
+    text_dev              = "नसत्तनिषत्तानुत्तप्रतूर्तसूर्तगूर्तानि छन्दसि",
+    padaccheda_dev        = "नसत्त-निषत्त-अनुत्त-प्रतूर्त-सूर्त-गूर्तानि छन्दसि",
+    why_dev               = "(सूत्रम् 8.2.61) नसत्तनिषत्तानुत्तप्रतूर्तसूर्तगूर्तानि छन्दसि।",
+    anuvritti_from        = ('8.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

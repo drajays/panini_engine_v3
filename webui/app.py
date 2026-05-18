@@ -816,7 +816,7 @@ def api_tinanta():
 
     supported_gana = row.get("gana", 1)
     # lṛṭ/laṅ: vikaraṇa selection is gaṇa-independent for these lakāras.
-    if lakara not in ("lRT", "laG", "liG", "AsIrliG") and supported_gana not in (1, 4, 6):
+    if lakara not in ("lRT", "laG", "liG", "AsIrliG", "luG") and supported_gana not in (1, 4, 6):
         return jsonify({
             "warning": f"Gaṇa {supported_gana} vikaraṇa not yet implemented; using bhvādi logic.",
             "gana_override": 1,

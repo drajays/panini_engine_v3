@@ -1,11 +1,11 @@
 """
-7.1.3  झोऽन्तः  —  VIDHI (narrow: *jhi* → *anti*)
+7.1.3  झोऽन्तः  —  VIDHI
 
-Glass-box: when ``state.meta["7_1_3_jho_anta_arm"]`` is true and a *tiṅ* *ādeśa*
-``Term`` has ``upadesha_slp1 == "jhi"`` with varṇa-shape *j* + *h* + *i* (initial
-*jh* cluster in two *varṇa*s), replace that ``Term`` with *anti*.
+Replaces the 'jh' sound with 'ant':
+  • laṭ/laṅ path with jhi intact (3 varnas j+h+i):  jhi → anti
+  • laṅ path after 3.4.100 drops 'i' (2 varnas j+h): jh  → ant
 
-*Cross-check:* ``sutrANi.tsv`` row 7.1.3; machine index i=71003.
+The jhi upadeśa tag is used to identify the target term in both cases.
 """
 from __future__ import annotations
 
@@ -14,18 +14,22 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
-def _find_jhi(state: State) -> int | None:
+def _find_jhi(state: State) -> tuple[int, bool] | None:
+    """Return (index, has_i) where has_i=True means jhi (3 varnas), False means jh (2 varnas)."""
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
             continue
         if (t.meta.get("upadesha_slp1") or "").strip() != "jhi":
             continue
-        if len(t.varnas) != 3:
-            continue
-        v0, v1, v2 = t.varnas[0].slp1, t.varnas[1].slp1, t.varnas[2].slp1
-        if v0 not in ("j", "J") or v1 != "h" or v2 != "i":
-            continue
-        return i
+        vs = t.varnas
+        if len(vs) == 3:
+            v0, v1, v2 = vs[0].slp1, vs[1].slp1, vs[2].slp1
+            if v0 in ("j", "J") and v1 == "h" and v2 == "i":
+                return i, True
+        elif len(vs) == 2:
+            v0, v1 = vs[0].slp1, vs[1].slp1
+            if v0 in ("j", "J") and v1 == "h":
+                return i, False
     return None
 
 
@@ -36,18 +40,22 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    idx = _find_jhi(state)
-    if idx is None:
+    result = _find_jhi(state)
+    if result is None:
         return state
+    idx, has_i = result
     old = state.terms[idx]
-    anti = Term(
+    # jhi (has_i=True) → anti; jh (has_i=False, after 3.4.100) → ant
+    new_slp1 = "anti" if has_i else "ant"
+    new_term = Term(
         kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("anti"),
+        varnas=parse_slp1_upadesha_sequence(new_slp1),
         tags=set(old.tags),
         meta=dict(old.meta),
     )
-    anti.meta["upadesha_slp1"] = "anti"
-    state.terms[idx] = anti
+    new_term.meta["upadesha_slp1"] = new_slp1
+    new_term.tags.discard("upadesha")  # prevent 1.3.3 re-firing on ant/anti finals
+    state.terms[idx] = new_term
     return state
 
 

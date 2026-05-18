@@ -50,9 +50,15 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     pending = _dhatu_adjacent_sarvadhatuka_untagged(state)
+    # Canonical registry entry (present on first AND later firings).
     state.samjna_registry["3.4.113_sarvadhatuka_slp1"] = SARVADHATUKA_UPADESHA_SLP1
     for t in pending:
         t.tags.add(SARVADHATUKA_113)
+        # Per-term entry so each call visibly changes samjna_registry (R2 invariant):
+        # a second firing (e.g. for vikaraṇa śap after tiṅ ādeśa was already tagged)
+        # adds a different key → registry IS changed → no R2 violation.
+        up = (t.meta.get("upadesha_slp1") or "").strip() or "unknown"
+        state.samjna_registry[f"3.4.113_tagged_{up}"] = True
     return state
 
 

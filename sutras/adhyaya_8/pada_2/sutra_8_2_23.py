@@ -9,6 +9,10 @@ v3 extension (narrow, P022 द्यौः):
   When recipe arms ``state.meta["P022_8_2_23_final_v_lopa_arm"]`` and the first
   term ends in ``…Ov`` (``O`` + ``v``), delete that final ``v`` before a
   following ``su`` sup.  This models the JSON's *dyOv + su → dyO + su* slice.
+
+v3 extension (asmad dvitīyā bahu):
+  When recipe arms ``state.meta["8_2_23_asmad_ns_arm"]``, the pada ends in
+  ``ns`` (``…n`` + ``s``). Delete the final ``s`` → अस्मान्।
 """
 from __future__ import annotations
 
@@ -27,6 +31,20 @@ def _hit(state: State):
     if len(vs) < 2:
         return None
     if vs[-1].slp1 != "t" or vs[-2].slp1 != "n":
+        return None
+    return len(vs) - 1
+
+
+def _hit_asmad_ns(state: State):
+    """Asmad dvitīyā bahu: pada ends in 'ns' → drop final 's'."""
+    if not state.meta.get("8_2_23_asmad_ns_arm"):
+        return None
+    if len(state.terms) != 1:
+        return None
+    vs = state.terms[0].varnas
+    if len(vs) < 2:
+        return None
+    if vs[-1].slp1 != "s" or vs[-2].slp1 != "n":
         return None
     return len(vs) - 1
 
@@ -55,7 +73,11 @@ def _hit_P022_final_v(state: State):
 
 
 def cond(state: State) -> bool:
-    return _hit(state) is not None or _hit_P022_final_v(state) is not None
+    return (
+        _hit(state) is not None
+        or _hit_P022_final_v(state) is not None
+        or _hit_asmad_ns(state) is not None
+    )
 
 
 def act(state: State) -> State:
@@ -65,6 +87,14 @@ def act(state: State) -> State:
         del state.terms[ti].varnas[vi]
         state.meta["P022_8_2_23_final_v_lopa_arm"] = False
         state.samjna_registry["8.2.23_samyoganta_lopa"] = True
+        return state
+
+    # Asmad dvitīyā bahu: drop final 's' from '...ns'
+    ji_ns = _hit_asmad_ns(state)
+    if ji_ns is not None:
+        del state.terms[0].varnas[ji_ns]
+        state.meta["8_2_23_asmad_ns_arm"] = False
+        state.samjna_registry["8.2.23_samyoganta_lopa_asmad"] = True
         return state
 
     ji = _hit(state)

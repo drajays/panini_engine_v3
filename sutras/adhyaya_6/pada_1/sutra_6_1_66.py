@@ -1,12 +1,14 @@
 """
 6.1.66  हल्ङ्याब्भ्यो दीर्घात् सुतिपृक्तं हल्  —  VIDHI
 
-Three operational paths:
+Four operational paths:
   1. Original narrow path: elide apṛkta s after long-vowel upadhā tṛc stem.
   2. Arm ``6_1_66_liG_y_before_hal_arm``: vidhi-liṅ y-lopa before HAL.
-  3. Arm ``6_1_66_ashir_liG_sip_arm``: āśīr-liṅ 2sg — drop the apṛkta 's'
-     (from sip after 3.4.100 i-lopa) that follows the yāsuṭ term.
-     After this drop, the yāsuṭ 's' undergoes 8.2.66 → r → ḥ giving bhūyāḥ.
+  3. Arm ``6_1_66_ashir_liG_sip_arm``: āśīr-liṅ 2sg sip-derived s lopa.
+  4. Arm ``6_1_66_luG_vuk_arm``: luṅ — the 'v' of the vuk augment (6.4.88,
+     after u/k it-lopa) drops when the immediately following term starts with
+     any HAL consonant.  Before AC-initial tiṅ (am, ant) v stays, giving
+     abhūvam/abhūvan; before HAL-initial tiṅ (t, s, tām, etc.) v drops.
 """
 from __future__ import annotations
 
@@ -84,11 +86,34 @@ def _find_ashir_sip_s(state: State):
     return None
 
 
+def _find_vuk_v(state: State):
+    """luṅ: vuk term (single 'v' after it-lopa) before HAL-initial next term."""
+    if not state.meta.get("6_1_66_luG_vuk_arm"):
+        return None
+    for i, t in enumerate(state.terms):
+        if not t.meta.get("vuk_6_4_88"):
+            continue
+        if t.meta.get("6_1_66_vuk_done"):
+            continue
+        if not t.varnas or t.varnas[-1].slp1 != "v":
+            continue
+        if i + 1 >= len(state.terms):
+            continue
+        nxt = state.terms[i + 1]
+        if not nxt.varnas:
+            continue
+        if nxt.varnas[0].slp1 not in HAL:
+            continue
+        return i
+    return None
+
+
 def cond(state: State) -> bool:
     return (
         _find_tfc_aprkta(state) is not None
         or _find_yasut_y(state) is not None
         or _find_ashir_sip_s(state) is not None
+        or _find_vuk_v(state) is not None
     )
 
 
@@ -113,6 +138,13 @@ def act(state: State) -> State:
         state.terms[idx].meta["6_1_66_ashir_sip_done"] = True
         state.terms.pop(idx)
         state.samjna_registry["6.1.66_ashir_sip_s_lopa"] = True
+        return state
+
+    idx = _find_vuk_v(state)
+    if idx is not None:
+        state.terms[idx].meta["6_1_66_vuk_done"] = True
+        state.terms.pop(idx)
+        state.samjna_registry["6.1.66_vuk_v_lopa"] = True
         return state
 
     return state

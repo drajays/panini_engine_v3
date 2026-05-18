@@ -741,6 +741,116 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
 # ─────────────────────────────────────────────────────────────────────────────
 # LIṄ (ĀŚĪR / BENEDICTIVE) PIPELINE
 # ─────────────────────────────────────────────────────────────────────────────
+# LUṄ (ADYATANA BHŪTA / AORIST) PIPELINE
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State:
+    """
+    Derive a luṅ (aorist / adyatana bhūta) form from the post-1.3.78 state.
+    Full 9-cell bhū luṅ parasmaipada pipeline.
+
+    Key features:
+      • 3.2.110 attaches luG (+ aT_agama_context on dhātu)
+      • 3.1.43 cli inserted; 3.1.44 cli→sic
+      • 2.4.77 (gāti-sthā-ghu-pā-bhū) luk of sic in parasmaipada → sic deleted
+      • 3.4.101 tiṅ substitutions (tas→tām etc.) AFTER sic deletion
+      • 3.4.100 i-lopa (ti→t, si→s, jhi→jh)
+      • 7.1.3 jh→ant (3pl only)
+      • 3.4.99 s-lopa (vas→va, mas→ma)
+      • 6.4.71 aṭ augment (6.4.71)
+      • 6.4.88 vuk augment (bhū only) → [v,u~,k] → after it-lopa → [v]
+      • 6.1.66 v (vuk) drops before HAL-initial tiṅ; stays before AC-initial
+      • NO guṇa (vuk intervenes; 7.3.84 not called)
+      • Tripāḍī: 8.2.39/8.4.56, 8.2.66/8.3.15, 8.2.23
+
+    Expected forms (bhū):
+      3sg → अभूत्  3du → अभूताम्  3pl → अभूवन्
+      2sg → अभूः   2du → अभूतम्   2pl → अभूत
+      1sg → अभूवम् 1du → अभूव    1pl → अभूम
+    """
+    state.meta["lakara"] = "luG"
+
+    # ── Stage: 3.2.110 luṅ attachment ───────────────────────────────────────
+    state.meta["3_2_110_luG_arm"] = True
+    state = apply_rule("3.2.110", state)
+    state = apply_rule("1.3.2", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    # ── Stage: cli/sic chain (before lakāra substitution: 3.1.43 needs luG) ──
+    state.meta["3_1_43_cli_luG_arm"] = True
+    state = apply_rule("3.1.43", state)   # inserts cli before luG placeholder
+    state = apply_rule("3.1.44", state)   # cli → sic (upadesha_slp1="sic", varnas=[s,c])
+
+    # ── Stage: 3.4.77 + 3.4.78 tiṅ ādeśa ────────────────────────────────────
+    state = apply_rule("3.4.77", state)
+    tin_adesha = _select_tin_adesha("luG", pada_key, purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"]    = tin_adesha
+    state = apply_rule("3.4.78", state)
+    state = apply_rule("1.4.99", state)
+    state = P00_tin_tusma_audit_halantyam_lopa(state)  # drops p-it of tiṅ; c-it of sic
+
+    # ── Stage: 3.4.113 tiṅ is sārvadhatuka ──────────────────────────────────
+    state = apply_rule("3.4.113", state)
+
+    # ── Stage: 2.4.77 luk of sic (bhū parasmaipada) ──────────────────────────
+    state.meta["2_4_77_luG_sic_lopa_arm"] = True
+    state = apply_rule("2.4.77", state)
+
+    # ── Stage: 1.2.4 apit sārvadhatuka → kṅit ───────────────────────────────
+    state = apply_rule("1.2.4", state)
+
+    # ── Stage: tiṅ substitutions ─────────────────────────────────────────────
+    state = apply_rule("3.4.101", state)   # tas→tām, Tas→tam, Ta→ta, mi→am
+    state = apply_rule("3.4.100", state)   # ti→t, si→s, jhi→jh
+    state.meta["7_1_3_jho_anta_arm"] = True
+    state = apply_rule("7.1.3", state)     # jh→ant (3pl)
+    state.meta.pop("7_1_3_jho_anta_arm", None)
+    state.meta["3_4_99_luG_s_lopa_arm"] = True
+    state = apply_rule("3.4.99", state)    # vas→va, mas→ma
+    state.meta.pop("3_4_99_luG_s_lopa_arm", None)
+
+    # ── Stage: aṅgakārya ────────────────────────────────────────────────────
+    state = apply_rule("1.4.13", state)
+
+    # 6.4.71 aṭ augment (fires via aT_agama_context set by 3.2.110)
+    state = apply_rule("6.4.71", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    # 6.4.88 vuk augment (bhuvo vug-luṅ-liṭoḥ)
+    state.meta["6_4_88_arm"] = True
+    state = apply_rule("6.4.88", state)
+    state = apply_rule("1.3.2", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    # 6.1.66 v of vuk drops before HAL (t/s/m/v/…); stays before AC (a of am/ant)
+    state.meta["6_1_66_luG_vuk_arm"] = True
+    state = apply_rule("6.1.66", state)
+    state.meta.pop("6_1_66_luG_vuk_arm", None)
+
+    state = apply_rule("1.4.14", state)
+
+    # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
+    _pada_merge(state)
+    state = apply_rule("8.2.1",  state)
+    state.meta["8_2_39_arm"] = True
+    state = apply_rule("8.2.39", state)    # t→d at pada-end (3sg)
+    state.meta["8_4_56_arm"] = True
+    state = apply_rule("8.4.56", state)    # d→t at avasāna (3sg)
+    state = apply_rule("8.2.66", state)    # s→r (2sg)
+    state = apply_rule("8.3.15", state)    # r→ḥ (2sg)
+    state.meta["8_2_23_arm"] = True
+    state = apply_rule("8.2.23", state)    # saṃyogānta lopa (3pl: ant→an)
+    state.meta["8_4_68_arm"] = True
+    state = apply_rule("8.4.68", state)
+
+    return state
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 
 def _derive_ashir_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State:
     """
@@ -1134,6 +1244,13 @@ def derive(
         state = apply_rule("3.1.91", state)
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_lit(state, pada_key, purusha, vacana)
+
+    # ── luṅ dispatch ─────────────────────────────────────────────────────────
+    if lakara in ("luG",):
+        # Aorist (adyatana bhūta) via cli/sic→luk + vuk augment
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        return _derive_luG(state, pada_key, purusha, vacana)
 
     # ── luṭ dispatch ─────────────────────────────────────────────────────────
     if lakara in ("luT",):
@@ -1564,3 +1681,43 @@ def derive_bhuyasva() -> State:
 def derive_bhuyasma() -> State:
     """Glass-box: भू + आशीर्-लिँङ् उत्तमपुरुष बहुवचन → भूयास्म."""
     return derive("BU", "AsIrliG", "kartari", 1, 3)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LUṄ (AORIST) CONVENIENCE WRAPPERS
+# ─────────────────────────────────────────────────────────────────────────────
+
+def derive_abhut() -> State:
+    """Glass-box: भू + लुँङ् प्रथमपुरुष एकवचन → अभूत्."""
+    return derive("BU", "luG", "kartari", 3, 1)
+
+def derive_abhutam() -> State:
+    """Glass-box: भू + लुँङ् प्रथमपुरुष द्विवचन → अभूताम्."""
+    return derive("BU", "luG", "kartari", 3, 2)
+
+def derive_abhuvan() -> State:
+    """Glass-box: भू + लुँङ् प्रथमपुरुष बहुवचन → अभूवन्."""
+    return derive("BU", "luG", "kartari", 3, 3)
+
+def derive_abhuh() -> State:
+    """Glass-box: भू + लुँङ् मध्यमपुरुष एकवचन → अभूः."""
+    return derive("BU", "luG", "kartari", 2, 1)
+
+def derive_abhutam2() -> State:
+    """Glass-box: भू + लुँङ् मध्यमपुरुष द्विवचन → अभूतम्."""
+    return derive("BU", "luG", "kartari", 2, 2)
+
+def derive_abhuta() -> State:
+    """Glass-box: भू + लुँङ् मध्यमपुरुष बहुवचन → अभूत."""
+    return derive("BU", "luG", "kartari", 2, 3)
+
+def derive_abhuvam() -> State:
+    """Glass-box: भू + लुँङ् उत्तमपुरुष एकवचन → अभूवम्."""
+    return derive("BU", "luG", "kartari", 1, 1)
+
+def derive_abhuva() -> State:
+    """Glass-box: भू + लुँङ् उत्तमपुरुष द्विवचन → अभूव."""
+    return derive("BU", "luG", "kartari", 1, 2)
+
+def derive_abhuma() -> State:
+    """Glass-box: भू + लुँङ् उत्तमपुरुष बहुवचन → अभूम."""
+    return derive("BU", "luG", "kartari", 1, 3)
