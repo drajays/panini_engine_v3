@@ -1175,6 +1175,136 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# LOṬ (ĀJÑĀRTHA / IMPERATIVE) PIPELINE
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State:
+    """
+    Derive a loṭ (imperative / ājñārtha) form from the post-1.3.78 state.
+    Full 9-cell bhū loṭ parasmaipada pipeline.
+
+    Key features:
+      • 3.3.162 loṭ attachment (trace marker); placeholder appended inline
+      • Same tiṅ ādeśas as laT (tip/tas/jhi/sip/Tas/Ta/mip/vas/mas)
+      • 3.4.113 sārvadhatuka + śap vikaraṇa
+      • 3.4.89: mip→ni (apavāda to 3.4.101; call first — 1sg: bhavāni)
+      • 3.4.101: tas→tām (3du), Tas→tam (2du), Ta→ta (2pl)
+      • 3.4.87: sip→hi (2sg — before 3.4.86 sees 'si')
+      • 7.1.3: jhi→anti (with 'i' intact — no 3.4.100 for loṭ)
+      • 3.4.86: i→u (ti→tu 3sg; anti→antu 3pl; skips hi/ni)
+      • 3.4.99: s-lopa (vas→va 1du; mas→ma 1pl)
+      • 6.4.105: delete 'hi' after 'a' (2sg: bhava+hi → bhava)
+      • 7.3.101: a→ā before yañ (ni 1sg, va 1du, ma 1pl)
+      • 7.3.84: guṇa (bhū → bho; śap is sārvadhatuka)
+      • 6.1.78/6.1.97 sandhi; Tripāḍī
+
+    Expected forms (bhū):
+      3sg → भवतु     3du → भवताम्   3pl → भवन्तु
+      2sg → भव       2du → भवतम्    2pl → भवत
+      1sg → भवानि    1du → भवाव     1pl → भवाम
+    """
+    state.meta["lakara"] = "loT"
+
+    # ── Stage: 3.3.162 loṭ attachment (trace) + inline placeholder ───────────
+    state.meta["3_3_162_loT_arm"] = True
+    state = apply_rule("3.3.162", state)
+    state.meta.pop("3_3_162_loT_done", None)
+    loT_varnas = parse_slp1_upadesha_sequence("loT")
+    if loT_varnas and loT_varnas[-1].slp1 == "T":
+        loT_varnas = loT_varnas[:-1]
+    loT_term = Term(
+        kind="pratyaya",
+        varnas=loT_varnas,
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        meta={"upadesha_slp1": "loT"},
+    )
+    state.terms.append(loT_term)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    # ── Stage: 3.4.77 + 3.4.78 tiṅ ādeśa (same laT base set) ─────────────────
+    state = apply_rule("3.4.77", state)
+    tin_adesha = _select_tin_adesha("laT", pada_key, purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"]    = tin_adesha
+    state = apply_rule("3.4.78", state)
+    state = apply_rule("1.4.99", state)
+    state = P00_tin_tusma_audit_halantyam_lopa(state)
+
+    # ── Stage: 3.4.113 tiṅ is sārvadhatuka ──────────────────────────────────
+    state = apply_rule("3.4.113", state)
+
+    # ── Stage: 1.2.4 apit → kṅit ─────────────────────────────────────────────
+    state = apply_rule("1.2.4", state)
+
+    # ── Stage: śap vikaraṇa (3.1.68 for bhvādi gaṇa 1) ──────────────────────
+    gana: int = state.terms[0].meta.get("gana", 1)
+    state = _apply_vikarana(state, gana)
+
+    # ── Stage: loṭ-specific tiṅ substitutions ────────────────────────────────
+    # 3.4.89 FIRST (mi→ni, apavāda to 3.4.101's mi→am for 1sg)
+    state.meta["3_4_89_loT_arm"] = True
+    state = apply_rule("3.4.89", state)
+    state.meta.pop("3_4_89_loT_arm", None)
+
+    # 3.4.101: tas→tām (3du), Tas→tam (2du), Ta→ta (2pl)
+    # mi→am won't fire since mi is already ni for 1sg
+    state = apply_rule("3.4.101", state)
+
+    # 3.4.87: sip→hi BEFORE 3.4.86 (prevent 'si' being seen by i→u rule)
+    state.meta["P031_3_4_87_sip_to_hi_arm"] = True
+    state = apply_rule("3.4.87", state)
+
+    # 7.1.3: jhi→anti (has_i=True — loṭ retains 'i', unlike laṅ which drops it first)
+    state.meta["7_1_3_jho_anta_arm"] = True
+    state = apply_rule("7.1.3", state)
+    state.meta.pop("7_1_3_jho_anta_arm", None)
+
+    # 3.4.86: i→u (ti→tu for 3sg; anti→antu for 3pl; skip hi from 3.4.87, ni from 3.4.89)
+    state.meta["3_4_86_loT_arm"] = True
+    state = apply_rule("3.4.86", state)
+    state.meta.pop("3_4_86_loT_arm", None)
+
+    # 3.4.99: s-lopa (vas→va for 1du; mas→ma for 1pl)
+    state.meta["3_4_99_loT_s_lopa_arm"] = True
+    state = apply_rule("3.4.99", state)
+    state.meta.pop("3_4_99_loT_s_lopa_arm", None)
+
+    # 6.4.105: delete 'hi' after short 'a' of aṅga (2sg: bhava+hi → bhava)
+    state.meta["6_4_105_loT_hi_lopa_arm"] = True
+    state = apply_rule("6.4.105", state)
+    state.meta.pop("6_4_105_loT_hi_lopa_arm", None)
+
+    # ── Stage: aṅgakārya ────────────────────────────────────────────────────
+    state = apply_rule("1.4.13", state)
+    state = apply_rule("1.1.5",  state)
+
+    # 7.3.101: a→ā before yañ-initial tiṅ (n of ni for 1sg; v of va for 1du; m of ma for 1pl)
+    state.meta["7_3_101_arm"] = True
+    state = apply_rule("7.3.101", state)
+
+    # 7.3.84: guṇa (bhū → bho; śap is sārvadhatuka trigger)
+    state = apply_rule("7.3.84", state)
+
+    # ── Stage: pada + sandhi ─────────────────────────────────────────────────
+    state = apply_rule("1.4.14", state)
+    state = apply_rule("6.1.78", state)
+    # 6.1.97: a+a → a (3pl: śap-a + antu-a → bhavantu)
+    state.meta["6_1_97_tinganta_arm"] = True
+    state = apply_rule("6.1.97", state)
+
+    # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
+    _pada_merge(state)
+    state = apply_rule("8.2.1",  state)
+    state = apply_rule("8.2.66", state)   # vacuous (no pada-final 's')
+    state = apply_rule("8.3.15", state)   # vacuous
+    state.meta["8_4_68_arm"] = True
+    state = apply_rule("8.4.68", state)
+
+    return state
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # LṚṄ (KRIYĀTIPATTI / CONDITIONAL) PIPELINE
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -1412,6 +1542,13 @@ def derive(
         state = apply_rule("3.1.91", state)
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_lRG(state, pada_key, purusha, vacana)
+
+    # ── loṭ dispatch ──────────────────────────────────────────────────────────
+    if lakara in ("loT",):
+        # Imperative (ājñārtha) via śap + loṭ-specific tiṅ substitutions
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        return _derive_loT(state, pada_key, purusha, vacana)
 
     # ═══════════════════════════════════════════════════════════════════
     # STAGE 3 — LAKĀRA ATTACHMENT + TIṄ SELECTION (spec steps 2–9)
