@@ -1,0 +1,47 @@
+{
+  "_doc": "Gold vidhiliṅ (optative) for bhū — 9 parasmaipada cells",
+  "id": "BU_liN_parasmai_gold",
+  "dhatu_dev": "भू",
+  "dhatu_slp1": "BU",
+  "lakara": "liN",
+  "prayoga": "kartari",
+  "pada": "parasmai",
+  "cells": {
+    "3-1": {
+      "surface_dev": "भवेत्",
+      "surface_slp1": "Bavet"
+    },
+    "3-2": {
+      "surface_dev": "भवेताम्",
+      "surface_slp1": "BavetAm"
+    },
+    "3-3": {
+      "surface_dev": "भवेयुः",
+      "surface_slp1": "BaveyuH"
+    },
+    "2-1": {
+      "surface_dev": "भवेः",
+      "surface_slp1": "BaveH"
+    },
+    "2-2": {
+      "surface_dev": "भवेतम्",
+      "surface_slp1": "Bavetam"
+    },
+    "2-3": {
+      "surface_dev": "भवेत",
+      "surface_slp1": "Baveta"
+    },
+    "1-1": {
+      "surface_dev": "भवेयम्",
+      "surface_slp1": "Baveyam"
+    },
+    "1-2": {
+      "surface_dev": "भवेव",
+      "surface_slp1": "Baveva"
+    },
+    "1-3": {
+      "surface_dev": "भवेम",
+      "surface_slp1": "Bavema"
+    }
+  }
+}

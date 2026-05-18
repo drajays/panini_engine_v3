@@ -28,8 +28,10 @@ _SUTRA_ID_FULLMATCH = re.compile(r"^\d+\.\d+\.\d+$")
 
 # Stable prefix for ``derive(\"rAma\", 1, 1)`` (subanta canonical path).
 # If preflight is intentionally reordered, update this tuple and the audit note.
+# NOTE (v3.2): 1.4.14 moved out of P01_subanta_bootstrap into SUBANTA_RULE_IDS_POST_4_1_2
+# (after 4.1.2 attaches sup); 1.4.7 similarly moved post-it-chain.  Preflight now
+# starts directly with 4.1.1.
 EXPECTED_DERIVE_RAMA_1_1_CHRONO_PREFIX: tuple[str, ...] = (
-    "1.4.14",
     "4.1.1",
     "1.1.1",
     "1.1.73",

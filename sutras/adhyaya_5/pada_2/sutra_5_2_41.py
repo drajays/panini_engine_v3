@@ -1,0 +1,42 @@
+"""
+5.2.41  किमः संख्यापरिमाणे डति च  —  VIDHI
+
+Padaccheda: किमः संख्या-परिमाणे डति (लुप्तप्रथमान्तनिर्देशः) च
+
+किमः संख्यापरिमाणे डति च (5.2.41)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "5_2_41_kimaH_41"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("5_2_41_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["taddhita_kind"]             = "5.2.41"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "5.2.41",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "kimaH saMKyAparimARe qati ca",
+    text_dev              = "किमः संख्यापरिमाणे डति च",
+    padaccheda_dev        = "किमः संख्या-परिमाणे डति (लुप्तप्रथमान्तनिर्देशः) च",
+    why_dev               = "(सूत्रम् 5.2.41) किमः संख्यापरिमाणे डति च।",
+    anuvritti_from        = ('5.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

@@ -1,0 +1,42 @@
+"""
+3.3.116  कर्मणि च येन संस्पर्शात् कर्तुः शरीरसुखम्  —  VIDHI
+
+Padaccheda: कर्मणि च येन संस्पर्शात् कर्तुः शरीर-सुखम्
+
+krt-suffix rule: कर्मणि च येन संस्पर्शात् कर्तुः शरीरसुखम्
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "3_3_116_karmaRi_116"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("3_3_116_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["krt_kind"] = "3.3.116"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "3.3.116",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "karmaRi ca yena saMsparSAt kartuH SarIrasuKam",
+    text_dev              = "कर्मणि च येन संस्पर्शात् कर्तुः शरीरसुखम्",
+    padaccheda_dev        = "कर्मणि च येन संस्पर्शात् कर्तुः शरीर-सुखम्",
+    why_dev               = "धातोः प्रत्ययः (३.3.116)।",
+    anuvritti_from        = ('3.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

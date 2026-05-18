@@ -85,6 +85,12 @@ def _find_eligible_boundary(state: State) -> int | None:
             continue
         if pr.varnas[0].slp1 != "s":
             continue
+        # Long-ā / long-ī strī (ङी·आप्) before apṛkta ``s`` of *su* (प्रथमा
+        # एकवचनम्): **6.1.68** applies.  सम्बुद्धि-एकवचनम् is handled by **7.3.106**
+        # + **6.1.69** instead — do not delete ``s`` here or **7.3.106** never sees
+        # the ``su`` residue (``cond`` is tag-based only; no ``vibhakti`` read).
+        if final in _DIRGHA_STRĪ_FINALS and "sambuddhi" in pr.tags:
+            continue
         return i
     return None
 

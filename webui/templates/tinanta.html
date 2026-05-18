@@ -1,0 +1,340 @@
+{% extends "base.html" %}
+{% block title %}तिङन्त-व्युत्पत्तिः — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block head_extra %}
+<style>
+.tin-form { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:1rem; align-items:end; margin-bottom:1rem; }
+.tin-form label { display:flex; flex-direction:column; font-size:.85rem; color:var(--ink-dim); gap:.25rem; }
+.tin-form select, .tin-form input { font-size:1rem; padding:.4rem .6rem; border:1px solid var(--line); border-radius:4px; background:var(--bg); color:var(--ink); }
+.result-banner { display:flex; align-items:center; gap:1.5rem; padding:1.2rem 1.5rem; background:var(--bg-subtle); border-left:4px solid var(--accent); border-radius:6px; margin:1rem 0; }
+.result-dev { font-size:2.4rem; font-family:var(--dev); color:var(--accent); }
+.result-slp1 { font-family:var(--mono); font-size:1rem; color:var(--ink-dim); }
+.meta-chips { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; }
+.chip { padding:.2rem .7rem; border-radius:12px; font-size:.8rem; background:var(--line-soft); color:var(--ink-dim); }
+.paradigm-grid { display:grid; grid-template-columns:auto repeat(3,1fr); gap:2px; margin:1rem 0; }
+.paradigm-grid .hdr { font-weight:600; font-size:.82rem; color:var(--ink-dim); padding:.4rem .6rem; background:var(--bg-subtle); text-align:center; }
+.paradigm-grid .row-lbl { font-size:.82rem; color:var(--ink-dim); padding:.4rem .6rem; background:var(--bg-subtle); }
+.paradigm-grid .cell { padding:.5rem .7rem; text-align:center; font-family:var(--dev); font-size:1.1rem; background:var(--bg-panel); cursor:pointer; border:1px solid var(--line-soft); border-radius:3px; transition:background .15s; }
+.paradigm-grid .cell:hover { background:var(--bg-subtle); }
+.paradigm-grid .cell.active { background:#fff3e0; border-color:var(--accent-dim); }
+.paradigm-grid .cell .slp1 { font-family:var(--mono); font-size:.7rem; color:var(--ink-faint); display:block; margin-top:.15rem; }
+.trace-row { border-bottom:1px solid var(--line-soft); padding:.5rem .75rem; display:flex; align-items:baseline; gap:.75rem; cursor:pointer; }
+.trace-row:hover { background:var(--bg-subtle); }
+.trace-row.changed { border-left:3px solid var(--accent-dim); }
+.trace-row.audit   { border-left:3px solid #888; opacity:.7; }
+.sid-badge { font-family:var(--mono); font-size:.78rem; min-width:5rem; color:var(--accent-dim); }
+.trace-form { font-size:.92rem; }  /* Devanāgarī forms rendered inside; no mono */
+.arrow { color:var(--ink-faint); }
+.trace-why { font-size:.82rem; color:var(--ink-dim); margin-left:auto; max-width:40%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.trace-detail { display:none; padding:.75rem 1rem; background:var(--bg-subtle); border-left:4px solid var(--line); margin:.25rem 0; font-size:.88rem; }
+.trace-detail.open { display:block; }
+.trace-detail .why-dev { font-family:var(--dev); font-size:.95rem; }
+.stats-row { display:flex; gap:1.5rem; font-size:.83rem; color:var(--ink-dim); margin:.5rem 0 1rem; }
+.stats-row b { color:var(--ink); }
+.btn-group { display:flex; gap:.5rem; flex-wrap:wrap; }
+.btn-sm { padding:.3rem .8rem; font-size:.85rem; border:1px solid var(--line); border-radius:4px; background:var(--bg); cursor:pointer; }
+.btn-sm:hover { background:var(--bg-subtle); }
+.btn-primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-primary:hover { background:#6e2400; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="panel">
+  <h1>तिङन्त-व्युत्पत्तिः <span style="font-size:.7em;color:var(--ink-dim);">Tiṅanta Glass-Box</span></h1>
+  <p style="color:var(--ink-dim);margin:.25rem 0 1rem;">
+    धातु + लकार + पुरुष + वचन → अष्टाध्यायी-क्रम में सम्पूर्ण प्रक्रिया।
+    प्रत्येक चरण <code>apply_rule()</code> से।
+  </p>
+
+  <div class="tin-form">
+    <label>धातु (SLP1 / देवनागरी)
+      <input id="dhatu" type="text" value="BU" placeholder="BU / pac / nI …">
+    </label>
+    <label>लकार
+      <select id="lakara">
+        {% for k,v in lakara_choices.items() %}
+        <option value="{{ k }}" {% if k == 'laT' %}selected{% endif %}>{{ v.dev }} · {{ v.en }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>प्रयोग
+      <select id="prayoga">
+        <option value="kartari" selected>कर्तरि</option>
+        <option value="karmani">कर्मणि</option>
+        <option value="bhave">भावे</option>
+      </select>
+    </label>
+    <label>पुरुष
+      <select id="purusha">
+        <option value="3" selected>प्रथमपुरुष (3rd)</option>
+        <option value="2">मध्यमपुरुष (2nd)</option>
+        <option value="1">उत्तमपुरुष (1st)</option>
+      </select>
+    </label>
+    <label>वचन
+      <select id="vacana">
+        <option value="1" selected>एकवचन</option>
+        <option value="2">द्विवचन</option>
+        <option value="3">बहुवचन</option>
+      </select>
+    </label>
+    <label>&nbsp;
+      <button class="btn-primary" onclick="deriveTin()">▶ व्युत्पादयतु</button>
+    </label>
+  </div>
+
+  <div class="btn-group" style="margin-bottom:.5rem;">
+    <span style="font-size:.8rem;color:var(--ink-dim);align-self:center;">त्वरित:</span>
+    <button class="btn-sm" onclick="quickFill('BU','laT','kartari')">भवति</button>
+    <button class="btn-sm" onclick="quickFill('pac','laT','kartari')">पचति</button>
+    <button class="btn-sm" onclick="quickFill('nI','laT','kartari')">नयति</button>
+    <button class="btn-sm" onclick="quickFill('BU','loT','kartari')">भवतु</button>
+    <button class="btn-sm" onclick="derivePara()">⊞ सम्पूर्ण ९ रूप</button>
+  </div>
+</div>
+
+<div id="result-area"></div>
+
+<div class="two-pane" id="trace-area" style="display:none;">
+  <div class="panel" style="flex:2;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem;">
+      <h2 style="margin:0;">प्रक्रिया</h2>
+      <div style="display:flex;gap:.5rem;font-size:.8rem;">
+        <label><input type="checkbox" id="show-audit" checked onchange="renderTrace()"> अधिकार/परिभाषा</label>
+        <label><input type="checkbox" id="show-skipped" onchange="renderTrace()"> अतिक्रान्त</label>
+      </div>
+    </div>
+    <div class="stats-row" id="stats-row"></div>
+    <div id="trace-list"></div>
+    <button class="btn-sm" style="margin-top:.5rem;" onclick="downloadTrace()">⬇ JSON डाउनलोड</button>
+  </div>
+  <div class="panel" style="flex:1;" id="sutra-detail-tin">
+    <div class="empty" style="color:var(--ink-faint);font-size:.9rem;">चरण पर क्लिक करें — सूत्र-विवरण यहाँ आएगा।</div>
+  </div>
+</div>
+{% endblock %}
+
+{% block body_extra %}
+<script>
+let _trace = [];
+let _lastResult = null;
+
+function quickFill(dhatu, lakara, prayoga) {
+  document.getElementById('dhatu').value = dhatu;
+  document.getElementById('lakara').value = lakara;
+  document.getElementById('prayoga').value = prayoga;
+  deriveTin();
+}
+
+async function deriveTin() {
+  const body = {
+    dhatu:   document.getElementById('dhatu').value.trim(),
+    lakara:  document.getElementById('lakara').value,
+    prayoga: document.getElementById('prayoga').value,
+    purusha: +document.getElementById('purusha').value,
+    vacana:  +document.getElementById('vacana').value,
+  };
+  document.getElementById('result-area').innerHTML = '<p style="color:var(--ink-dim);">⏳ …</p>';
+  document.getElementById('trace-area').style.display = 'none';
+
+  const r = await fetch('/api/tinanta', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify(body)
+  });
+  const d = await r.json();
+  if (d.error) {
+    document.getElementById('result-area').innerHTML =
+      `<div class="panel" style="border-left:3px solid var(--danger);color:var(--danger);">⚠ ${d.error}</div>`;
+    return;
+  }
+  _lastResult = d;
+  _trace = d.trace || [];
+  showResult(d);
+  renderTrace();
+  document.getElementById('trace-area').style.display = '';
+}
+
+async function derivePara() {
+  const body = {
+    dhatu:   document.getElementById('dhatu').value.trim(),
+    lakara:  document.getElementById('lakara').value,
+    prayoga: document.getElementById('prayoga').value,
+  };
+  const r = await fetch('/api/tinanta/paradigm', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify(body)
+  });
+  const d = await r.json();
+  if (d.error) {
+    document.getElementById('result-area').innerHTML =
+      `<div class="panel" style="color:var(--danger);">⚠ ${d.error}</div>`;
+    return;
+  }
+  showParadigm(d);
+}
+
+function showResult(d) {
+  const div = document.getElementById('result-area');
+  div.innerHTML = `
+    <div class="result-banner">
+      <div class="result-dev">${d.surface_dev}</div>
+      <div>
+        <div class="result-slp1">${d.surface_slp1}</div>
+        <div class="meta-chips">
+          <span class="chip">${d.dhatu_dev} (${d.dhatu_slp1})</span>
+          <span class="chip">${d.gana_dev || 'गण '+d.gana}</span>
+          <span class="chip">${d.pada_dev}</span>
+          <span class="chip">${d.lakara}</span>
+          <span class="chip">${d.artha_en}</span>
+        </div>
+      </div>
+    </div>`;
+}
+
+const PURUSHA_LABELS = {3:'प्रथम (3rd)', 2:'मध्यम (2nd)', 1:'उत्तम (1st)'};
+const VACANA_LABELS  = {1:'एक', 2:'द्वि', 3:'बहु'};
+
+function showParadigm(d) {
+  let html = `<div class="panel"><h2>${d.dhatu_dev} (${d.lakara}) — ९ रूप</h2>
+    <div class="paradigm-grid">
+      <div class="hdr"></div>
+      <div class="hdr">एकवचन</div><div class="hdr">द्विवचन</div><div class="hdr">बहुवचन</div>`;
+  for (const p of [3,2,1]) {
+    html += `<div class="row-lbl">${PURUSHA_LABELS[p]}</div>`;
+    for (const v of [1,2,3]) {
+      const key = `${p}-${v}`;
+      const c = d.cells[key] || {};
+      if (c.error) {
+        html += `<div class="cell" style="color:var(--danger);font-size:.8rem;">⚠ ${c.error}</div>`;
+      } else {
+        html += `<div class="cell" onclick="loadCell('${d.dhatu_slp1}','${d.lakara}','${d.prayoga||'kartari'}',${p},${v})">
+          ${c.surface_dev}<span class="slp1">${c.surface_slp1}</span></div>`;
+      }
+    }
+  }
+  html += `</div></div>`;
+  document.getElementById('result-area').innerHTML = html;
+}
+
+async function loadCell(dhatu, lakara, prayoga, purusha, vacana) {
+  document.getElementById('dhatu').value   = dhatu;
+  document.getElementById('lakara').value  = lakara;
+  document.getElementById('prayoga').value = prayoga;
+  document.getElementById('purusha').value = purusha;
+  document.getElementById('vacana').value  = vacana;
+  await deriveTin();
+  document.getElementById('trace-area').scrollIntoView({behavior:'smooth'});
+}
+
+function renderTrace() {
+  const showAudit   = document.getElementById('show-audit').checked;
+  const showSkipped = document.getElementById('show-skipped').checked;
+  const stats = _lastResult?.stats || {};
+  document.getElementById('stats-row').innerHTML =
+    `<span>कुल <b>${stats.total_steps||0}</b></span>
+     <span>प्रयुक्त <b>${stats.applied_count||0}</b></span>
+     <span>अधिकार/परिभाषा <b>${stats.audit_count||0}</b></span>
+     <span>अतिक्रान्त <b>${stats.skipped_count||0}</b></span>`;
+
+  const list = document.getElementById('trace-list');
+  list.innerHTML = '';
+  _trace.forEach((step, i) => {
+    const sid      = step.sutra_id || '?';
+    const isStruct = step._is_structural || false;
+    // Devanāgarī forms from the backend enrichment layer; SLP1 as tooltip
+    const fbDev = step.form_before_dev != null ? step.form_before_dev : (step.form_before || '');
+    const faDev = step.form_after_dev  != null ? step.form_after_dev  : (step.form_after  || '');
+    const changed   = (step.form_before || '') !== (step.form_after || '');
+    const ev        = step.status || step.event || '';
+    if (!showAudit   && ev === 'AUDIT')   return;
+    if (!showSkipped && (ev === 'SKIPPED' || ev === 'COND-FALSE')) return;
+
+    const isAudit  = ev === 'AUDIT';
+    const rowClass = changed ? 'trace-row changed' : isAudit ? 'trace-row audit' : 'trace-row';
+
+    let formHtml;
+    if (changed) {
+      const tip = `title="${step.form_before||''} → ${step.form_after||''}"`;
+      formHtml = `<span ${tip} style="cursor:help">`
+               + `<span style="font-family:var(--dev)">${fbDev}</span>`
+               + ` <span class="arrow">→</span> `
+               + `<span style="font-family:var(--dev);color:var(--accent-dim)">${faDev}</span>`
+               + `</span>`;
+    } else {
+      const display = isStruct ? (step._structural_dev || '') : faDev;
+      formHtml = `<span style="font-family:var(--dev);color:var(--ink-faint)">${display}</span>`;
+    }
+
+    const sutraLabel = isStruct
+      ? (step._structural_dev || '')
+      : (step._sutra_text_dev || step.why_dev || '').substring(0, 55);
+    const displaySid = isStruct ? '' : sid;
+
+    const row = document.createElement('div');
+    row.className = rowClass;
+    row.innerHTML = `
+      <span class="sid-badge">${displaySid}</span>
+      ${formHtml}
+      <span class="trace-why">${sutraLabel}</span>`;
+    row.onclick = () => showSutraDetail(step, i);
+    list.appendChild(row);
+  });
+}
+
+function showSutraDetail(step, i) {
+  const sid      = step.sutra_id || '?';
+  const isStruct = step._is_structural || false;
+  const panel    = document.getElementById('sutra-detail-tin');
+  const pcd      = step._padaccheda_dev || '';
+  const textDev  = step._sutra_text_dev || '';
+  const why      = step.why_dev || '';
+  const anuvr    = (step._anuvritti_from || []).join(', ');
+  const ev       = step.status || step.event || '';
+
+  // Primary display: Devanāgarī; SLP1 as secondary small text
+  const fbDev = step.form_before_dev != null ? step.form_before_dev : (step.form_before || '');
+  const faDev = step.form_after_dev  != null ? step.form_after_dev  : (step.form_after  || '');
+  const fbSlp = step.form_before || '';
+  const faSlp = step.form_after  || '';
+  const changed = fbSlp !== faSlp;
+
+  const structLabel = isStruct ? (step._structural_dev || sid) : '';
+  const heading     = isStruct ? structLabel : (textDev || sid);
+
+  panel.innerHTML = `
+    <h3 style="font-family:var(--dev);margin:0 0 .25rem;">${heading}</h3>
+    ${!isStruct ? `<div style="font-family:var(--mono);color:var(--accent);font-size:.9rem;margin-bottom:.4rem;">${sid}</div>` : ''}
+    ${pcd ? `<div style="font-size:.82rem;color:var(--ink-dim);margin-bottom:.4rem;font-family:var(--dev);">${pcd}</div>` : ''}
+    ${why ? `<div style="font-size:.85rem;margin:.4rem 0;font-family:var(--dev);line-height:1.6;">${why}</div>` : ''}
+    ${changed ? `
+      <div style="margin:.75rem 0;line-height:2;">
+        <span style="font-family:var(--dev);font-size:1.05rem;">${fbDev}</span>
+        <span style="color:var(--ink-faint);margin:0 .3rem;">→</span>
+        <span style="font-family:var(--dev);font-size:1.05rem;color:var(--accent-dim);">${faDev}</span>
+        <span style="font-family:var(--mono);font-size:.7rem;color:var(--ink-faint);margin-left:.5rem;">${fbSlp} → ${faSlp}</span>
+      </div>` : ''}
+    <div style="font-size:.75rem;color:var(--ink-faint);">स्थिति: ${ev}</div>
+    ${anuvr ? `<div style="font-size:.75rem;color:var(--ink-faint);">अनुवृत्तिः: ${anuvr}</div>` : ''}
+    ${!isStruct ? `<a href="/sutra/${sid}" style="font-size:.8rem;color:var(--accent);display:inline-block;margin-top:.75rem;">सूत्र-विवरण ↗</a>` : ''}`;
+}
+
+function downloadTrace() {
+  if (!_lastResult) return;
+  const blob = new Blob([JSON.stringify(_lastResult.trace, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `tinanta_${_lastResult.dhatu_slp1}_${_lastResult.lakara}.json`;
+  a.click();
+}
+
+const SUTRA_REGISTRY_STUB = {};
+
+// Pre-fill from URL param
+const _urlTin = new URL(window.location.href);
+if (_urlTin.searchParams.get('dhatu')) {
+  document.getElementById('dhatu').value = _urlTin.searchParams.get('dhatu');
+  deriveTin();
+}
+</script>
+{% endblock %}

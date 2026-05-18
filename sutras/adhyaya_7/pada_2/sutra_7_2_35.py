@@ -7,6 +7,11 @@ immediately before a following pratyaya that begins with a **velar-class**
 not in ``YAN``.
 
 Blocked by **7.2.10** via ``state.blocked_sutras`` for ekāc **anudātta** dhātus.
+
+General liṭ-tiṅ arm (``state.meta["7_2_35_arm"] is True``):
+  Inserts iṭ before the rightmost pratyaya/agama/tin term (the liṭ ādeśa
+  residue), regardless of whether it is val-initial, for the consonant-initial
+  liṭ ādeśa cells (Tal→ta, va, ma).
 """
 from __future__ import annotations
 
@@ -58,8 +63,11 @@ def _target_term(state: State):
 def _lut_tasi_vikaranha_index(state: State) -> int | None:
     """
     *luṭ* recipe: *tāsi* *vikaraṇa* ``Term`` (``tAsi_vikaraṇa``) takes initial *iṭ*
-    when the following *tiṅ* residue begins with a *valādi* consonant (*tip*
-    → ``ti``).
+    because tāsi itself is ārdhadhātuka and val-initial (``t`` of ``tAs`` is val).
+
+    Rule 7.2.35 "ārdhadhātukasya iṭ valādeḥ": the ārdhadhātuka (tāsi) that
+    begins with a val consonant receives iṭ.  The initial letter of the tāsi
+    term is ``t`` (val) always, regardless of what the following tiṅ starts with.
     """
     if not state.meta.get("7_2_35_lut_tAsi_it_arm"):
         return None
@@ -71,12 +79,37 @@ def _lut_tasi_vikaranha_index(state: State) -> int | None:
             continue
         if t.meta.get("it_agama_7_2_35_done"):
             continue
-        nxt = state.terms[j + 1]
-        if not nxt.varnas:
+        # Check that tāsi itself is val-initial (t is val).
+        if not t.varnas:
             continue
-        if not _val_initial(nxt.varnas[0].slp1):
+        # The first varna of tAsi is always 't'; verify val-initial on tāsi.
+        first_slp1 = t.varnas[0].slp1
+        if not _val_initial(first_slp1):
             continue
         return j
+    return None
+
+
+def _lit_tin_index(state: State) -> int | None:
+    """
+    General liṭ-tiṅ arm: find the rightmost pratyaya/tin term after dhātu
+    that hasn't had iṭ inserted yet. Used for consonant-initial liṭ ādeśas
+    (ta from Tal, va, ma) where iṭ must be inserted even if not val-initial.
+    """
+    if not state.meta.get("7_2_35_arm"):
+        return None
+    # Find rightmost pratyaya term not yet done
+    for i in range(len(state.terms) - 1, -1, -1):
+        t = state.terms[i]
+        if "pratyaya" not in t.tags and "agama" not in t.tags:
+            continue
+        if "dhatu" in t.tags:
+            continue
+        if t.meta.get("it_agama_7_2_35_done"):
+            continue
+        if not t.varnas:
+            continue
+        return i
     return None
 
 
@@ -85,6 +118,9 @@ def cond(state: State) -> bool:
     if j is not None:
         return True
     if _ardhadhatuka_vikarana_index(state) is not None:
+        return True
+    # General liṭ-tiṅ arm
+    if _lit_tin_index(state) is not None:
         return True
     if len(state.terms) < 2:
         return False
@@ -130,6 +166,16 @@ def act(state: State) -> State:
         it_v.tags.add("it_agama")
         t.varnas.insert(0, it_v)
         t.meta["it_agama_7_2_35_done"] = True
+        return state
+    # General liṭ-tiṅ arm
+    j = _lit_tin_index(state)
+    if j is not None:
+        t = state.terms[j]
+        it_v = mk("i")
+        it_v.tags.add("it_agama")
+        t.varnas.insert(0, it_v)
+        t.meta["it_agama_7_2_35_done"] = True
+        state.meta["7_2_35_arm"] = False
         return state
     pr = _target_term(state)
     if pr is None:

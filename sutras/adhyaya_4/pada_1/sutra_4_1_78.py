@@ -1,0 +1,42 @@
+"""
+4.1.78  अणिञोरनार्षयोर्गुरूपोत्तमयोः ष्यङ् गोत्रे  —  VIDHI
+
+Padaccheda: अण्-इञोः अनार्षयोः गुरु-उपोत्तमयोः ष्यङ् गोत्रे
+
+अणिञोरनार्षयोर्गुरूपोत्तमयोः ष्यङ् गोत्रे (4.1.78)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "4_1_78_aRiYoranAr_78"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("4_1_78_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["taddhita_kind"]             = "4.1.78"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "4.1.78",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "aRiYoranArzayorgurUpottamayoH zyaN gotre",
+    text_dev              = "अणिञोरनार्षयोर्गुरूपोत्तमयोः ष्यङ् गोत्रे",
+    padaccheda_dev        = "अण्-इञोः अनार्षयोः गुरु-उपोत्तमयोः ष्यङ् गोत्रे",
+    why_dev               = "(सूत्रम् 4.1.78) अणिञोरनार्षयोर्गुरूपोत्तमयोः ष्यङ् गोत्रे।",
+    anuvritti_from        = ('4.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

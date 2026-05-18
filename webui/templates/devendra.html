@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}देवेन्द्र-सूर्योदय समासः — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block content %}
+<div class="panel">
+  <h1>समास-व्युत्पत्तिः <span class="muted" style="font-size:14px;font-weight:400;">(Compound Derivation)</span></h1>
+  <p class="muted" style="font-size:13px;margin:0 0 12px;">
+    देव + इन्द्र → देवेन्द्रः तथा सूर्य + उदय → सूर्योदयः —
+    गुण-सन्धि-सहित-तत्पुरुष-समास-प्रक्रिया।
+    ६.१.८७ आद्गुणः सूत्रेण a+i→e / a+u→o।
+  </p>
+
+  <div class="preset-strip">
+    <span class="preset-label">उदाहरणम्:</span>
+    <button class="preset-btn preset-featured active" data-example="devendra">
+      <span class="dev preset-dev">देव+इन्द्र</span>
+      <span class="preset-class">a + i → e</span>
+    </button>
+    <button class="preset-btn" data-example="suryodaya">
+      <span class="dev preset-dev">सूर्य+उदय</span>
+      <span class="preset-class">a + u → o</span>
+    </button>
+  </div>
+  <div style="margin-top:10px;">
+    <button id="derive-btn">व्युत्पादयतु</button>
+    <span id="derive-status" class="muted" style="margin-left:12px;font-size:12px;"></span>
+  </div>
+</div>
+
+<!-- Result panel -->
+<div class="panel" id="result-panel" style="display:none;">
+  <div class="result">
+    <div>
+      <div id="result-dev"  class="big-dev dev"></div>
+      <div id="result-slp1" class="slp1"></div>
+    </div>
+    <div id="result-stats" class="stats"></div>
+  </div>
+
+  <div class="two-pane">
+    <div>
+      <h2>प्रक्रिया</h2>
+      <div class="trace-filter" id="trace-filter">
+        <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
+        <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
+        <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
+        <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
+        <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
+      </div>
+      <ol class="trace" id="trace"></ol>
+    </div>
+    <div class="sutra-detail" id="sutra-detail">
+      <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
+    </div>
+  </div>
+</div>
+
+<!-- Error panel -->
+<div class="panel" id="error-panel" style="display:none;">
+  <div class="pl-error-msg" id="error-msg"></div>
+</div>
+{% endblock %}
+
+{% block body_extra %}
+<script src="{{ url_for('static', filename='trace.js') }}"></script>
+<script>
+let _activeExample = 'devendra';
+
+document.querySelectorAll('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    _activeExample = btn.dataset.example;
+  });
+});
+
+document.getElementById('derive-btn').addEventListener('click', doDerive);
+
+// Auto-load on page load
+document.addEventListener('DOMContentLoaded', doDerive);
+
+async function doDerive() {
+  const status = document.getElementById('derive-status');
+  status.innerHTML = '<span class="loading"></span> व्युत्पाद्यते…';
+  document.getElementById('result-panel').style.display = 'none';
+  document.getElementById('error-panel').style.display  = 'none';
+
+  try {
+    const r = await fetch('/api/devendra', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ example: _activeExample }),
+    });
+    const data = await r.json();
+
+    if (data.error) {
+      document.getElementById('error-panel').style.display = '';
+      document.getElementById('error-msg').textContent =
+        data.error + (data.traceback ? '\n\n' + data.traceback : '');
+      status.textContent = 'दोषः।';
+      return;
+    }
+
+    document.getElementById('result-panel').style.display = '';
+    document.getElementById('result-dev').textContent  = data.surface_dev || '—';
+    document.getElementById('result-slp1').textContent = data.surface_slp1 || '';
+
+    const tr = data.stats || {};
+    document.getElementById('result-stats').innerHTML =
+      `<div>${tr.total_steps || 0} चरणाः</div>
+       <div>
+         <span>${tr.applied_count || 0} प्रयुक्तानि</span>
+         <span>${tr.blocked_count || 0} निवारितानि</span>
+         <span>${tr.skipped_count || 0} अतिक्रान्तानि</span>
+       </div>`;
+
+    renderTrace(data.trace);
+    document.getElementById('sutra-detail').innerHTML =
+      '<div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>';
+    status.textContent = 'सम्पन्नम् — ' + (data.title_dev || '');
+  } catch (e) {
+    document.getElementById('error-panel').style.display = '';
+    document.getElementById('error-msg').textContent = 'दोषः: ' + e.message;
+    status.textContent = 'दोषः।';
+  }
+}
+</script>
+{% endblock %}

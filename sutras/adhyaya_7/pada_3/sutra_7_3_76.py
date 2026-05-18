@@ -1,0 +1,42 @@
+"""
+7.3.76  क्रमः परस्मैपदेषु  —  VIDHI
+
+Padaccheda: क्रमः परस्मैपदेषु
+
+क्रमः परस्मैपदेषु (7.3.76)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "7_3_76_kramaH_76"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("7_3_76_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "7.3.76"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "7.3.76",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "kramaH parasmEpadezu",
+    text_dev              = "क्रमः परस्मैपदेषु",
+    padaccheda_dev        = "क्रमः परस्मैपदेषु",
+    why_dev               = "(सूत्रम् 7.3.76) क्रमः परस्मैपदेषु।",
+    anuvritti_from        = ('7.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

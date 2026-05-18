@@ -1,0 +1,42 @@
+"""
+4.4.128  मत्वर्थे मासतन्वोः  —  VIDHI
+
+Padaccheda: मतु-अर्थे मास-तन्वोः
+
+मत्वर्थे मासतन्वोः (4.4.128)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "4_4_128_matvarTe_128"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("4_4_128_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["taddhita_kind"]             = "4.4.128"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "4.4.128",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "matvarTe mAsatanvoH",
+    text_dev              = "मत्वर्थे मासतन्वोः",
+    padaccheda_dev        = "मतु-अर्थे मास-तन्वोः",
+    why_dev               = "(सूत्रम् 4.4.128) मत्वर्थे मासतन्वोः।",
+    anuvritti_from        = ('4.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

@@ -1,0 +1,42 @@
+"""
+7.3.30  नञः शुचीश्वरक्षेत्रज्ञकुशलनिपुणानाम्  —  VIDHI
+
+Padaccheda: नञः शुचि-ईश्वर-क्षेत्रज्ञ-कुशल-निपुणानाम्
+
+नञः शुचीश्वरक्षेत्रज्ञकुशलनिपुणानाम् (7.3.30)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "7_3_30_naYaH_30"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("7_3_30_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "7.3.30"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "7.3.30",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "naYaH SucISvarakzetrajYakuSalanipuRAnAm",
+    text_dev              = "नञः शुचीश्वरक्षेत्रज्ञकुशलनिपुणानाम्",
+    padaccheda_dev        = "नञः शुचि-ईश्वर-क्षेत्रज्ञ-कुशल-निपुणानाम्",
+    why_dev               = "(सूत्रम् 7.3.30) नञः शुचीश्वरक्षेत्रज्ञकुशलनिपुणानाम्।",
+    anuvritti_from        = ('7.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

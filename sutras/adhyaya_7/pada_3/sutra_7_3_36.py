@@ -1,0 +1,42 @@
+"""
+7.3.36  अर्त्तिह्रीब्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ  —  VIDHI
+
+Padaccheda: अर्त्ति-ह्री-व्ली-री-क्नूयी-क्ष्मायी-आताम् पुक् णौ
+
+अर्त्तिह्रीब्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ (7.3.36)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "7_3_36_arttihrIbl_36"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("7_3_36_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "7.3.36"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "7.3.36",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "arttihrIblIrIknUyIkzmAyyAtAM puNRO",
+    text_dev              = "अर्त्तिह्रीब्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ",
+    padaccheda_dev        = "अर्त्ति-ह्री-व्ली-री-क्नूयी-क्ष्मायी-आताम् पुक् णौ",
+    why_dev               = "(सूत्रम् 7.3.36) अर्त्तिह्रीब्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ।",
+    anuvritti_from        = ('7.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

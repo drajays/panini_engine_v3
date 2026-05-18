@@ -8,7 +8,6 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from phonology    import HAL
 
 
 TAG_APRKTA = "apfkta_1_2_41"
@@ -20,7 +19,8 @@ def _eligible(state: State):
             continue
         if TAG_APRKTA in t.tags:
             continue
-        if len(t.varnas) == 1 and t.varnas[0].slp1 in HAL:
+        # ekāl = any single AL (phoneme), not just consonants
+        if len(t.varnas) == 1:
             yield i
 
 

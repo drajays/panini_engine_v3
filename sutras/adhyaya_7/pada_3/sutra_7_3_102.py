@@ -53,6 +53,9 @@ def _find_target(state: State):
     last = anga.varnas[-1]
     if last.slp1 != "a":
         return None
+    # *strī* + ``yA`` (तृतीयैकवचनम् after **7.1.12**): keep hrasva ``a`` — no **7.3.102** dīrgha.
+    if "strīliṅga" in anga.tags and pratyaya.meta.get("upadesha_slp1") == "yA":
+        return None
     # Pratyaya first varṇa must be in the trigger set.
     first = pratyaya.varnas[0]
     if first.slp1 not in _TRIGGER_INITIAL:

@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% block title %}धातुपाठः — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block head_extra %}
+<style>
+.search-bar { display:flex; gap:.5rem; align-items:center; margin-bottom:1rem; flex-wrap:wrap; }
+.search-bar input { flex:1; min-width:200px; padding:.5rem .75rem; border:1px solid var(--line); border-radius:4px; font-size:1rem; }
+.search-bar select { padding:.5rem .6rem; border:1px solid var(--line); border-radius:4px; font-size:.9rem; background:var(--bg); }
+.dhatu-table { width:100%; border-collapse:collapse; font-size:.9rem; }
+.dhatu-table th { background:var(--bg-subtle); padding:.5rem .75rem; text-align:left; font-weight:600; color:var(--ink-dim); border-bottom:2px solid var(--line); position:sticky; top:0; }
+.dhatu-table td { padding:.45rem .75rem; border-bottom:1px solid var(--line-soft); vertical-align:middle; }
+.dhatu-table tr:hover td { background:var(--bg-subtle); }
+.dhatu-table tr.selected td { background:#fff3e0; }
+.dev-cell { font-family:var(--dev); font-size:1.15rem; }
+.slp1-cell { font-family:var(--mono); font-size:.85rem; color:var(--ink-dim); }
+.chip-sm { padding:.15rem .5rem; border-radius:10px; font-size:.75rem; background:var(--line-soft); color:var(--ink-dim); }
+.chip-para { background:#e8f5e9; color:#1a5c1a; }
+.chip-atma { background:#e3f0ff; color:#1a3a6b; }
+.chip-ubha { background:#f9f0ff; color:#4a1a7a; }
+.pagination { display:flex; gap:.5rem; align-items:center; margin-top:1rem; font-size:.85rem; }
+.pagination button { padding:.3rem .7rem; border:1px solid var(--line); border-radius:4px; background:var(--bg); cursor:pointer; }
+.pagination button:hover { background:var(--bg-subtle); }
+.pagination button:disabled { opacity:.4; cursor:default; }
+.dhatu-detail { padding:1rem; }
+.dhatu-detail h3 { font-family:var(--dev); margin:0 0 .25rem; font-size:1.5rem; }
+.detail-row { display:flex; gap:.5rem; margin:.3rem 0; font-size:.88rem; }
+.detail-key { color:var(--ink-dim); min-width:80px; }
+.derive-btn { margin-top:1rem; padding:.4rem 1rem; background:var(--accent); color:#fff; border:none; border-radius:4px; cursor:pointer; font-size:.9rem; }
+.derive-btn:hover { background:#6e2400; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="panel">
+  <h1>धातुपाठः <span style="font-size:.65em;color:var(--ink-dim);">Dhātupāṭha Browser</span></h1>
+  <p style="color:var(--ink-dim);margin:.25rem 0 1rem;">
+    <b id="total-count">…</b> धातवः · अर्थ / उपदेश / गण द्वारा खोजें।
+  </p>
+
+  <div class="search-bar">
+    <input id="search-q" type="text" placeholder="खोजें — BU / भू / to be / सत्ता …" oninput="debounceSearch()">
+    <select id="filter-gana" onchange="loadDhatu()">
+      <option value="">सर्वे गणाः</option>
+      <option value="1">१ भ्वादिः</option>
+      <option value="2">२ अदादिः</option>
+      <option value="3">३ जुहोत्यादिः</option>
+      <option value="4">४ दिवादिः</option>
+      <option value="5">५ स्वादिः</option>
+      <option value="6">६ तुदादिः</option>
+      <option value="7">७ रुधादिः</option>
+      <option value="8">८ तनादिः</option>
+      <option value="9">९ क्र्यादिः</option>
+      <option value="10">१० चुरादिः</option>
+    </select>
+    <select id="filter-pada" onchange="loadDhatu()">
+      <option value="">सर्वे पदानि</option>
+      <option value="parasmai">परस्मैपदी</option>
+      <option value="atmane">आत्मनेपदी</option>
+      <option value="ubhaya">उभयपदी</option>
+    </select>
+  </div>
+
+  <div style="overflow-x:auto;">
+    <table class="dhatu-table">
+      <thead>
+        <tr>
+          <th>धातुः</th>
+          <th>SLP1</th>
+          <th>अर्थः (संस्कृत)</th>
+          <th>अर्थः (English)</th>
+          <th>गणः</th>
+          <th>पदम्</th>
+          <th>इत्</th>
+        </tr>
+      </thead>
+      <tbody id="dhatu-tbody">
+        <tr><td colspan="7" style="color:var(--ink-dim);text-align:center;padding:2rem;">लोड हो रहा है…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <button id="prev-btn" onclick="changePage(-1)" disabled>← पूर्व</button>
+    <span id="page-info">—</span>
+    <button id="next-btn" onclick="changePage(1)">अग्र →</button>
+    <span style="color:var(--ink-faint);margin-left:auto;">प्रति पृष्ठ: 50</span>
+  </div>
+</div>
+
+<div class="two-pane">
+  <div style="flex:2;"></div>
+  <div class="panel" id="dhatu-detail" style="flex:1;min-width:260px;">
+    <div style="color:var(--ink-faint);font-size:.9rem;">धातु चुनें — विवरण यहाँ आएगा।</div>
+  </div>
+</div>
+{% endblock %}
+
+{% block body_extra %}
+<script>
+let _offset = 0;
+const _limit = 50;
+let _total   = 0;
+let _timer   = null;
+let _selected = null;
+
+function debounceSearch() {
+  clearTimeout(_timer);
+  _timer = setTimeout(() => { _offset = 0; loadDhatu(); }, 280);
+}
+
+async function loadDhatu() {
+  const q     = document.getElementById('search-q').value;
+  const gana  = document.getElementById('filter-gana').value;
+  const pada  = document.getElementById('filter-pada').value;
+  const url   = `/api/dhatupatha?q=${encodeURIComponent(q)}&gana=${gana}&pada=${pada}&limit=${_limit}&offset=${_offset}`;
+  const r     = await fetch(url);
+  const d     = await r.json();
+  _total = d.total;
+  document.getElementById('total-count').textContent = _total;
+  renderRows(d.entries);
+  updatePagination();
+}
+
+function renderRows(entries) {
+  const tbody = document.getElementById('dhatu-tbody');
+  if (!entries.length) {
+    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--ink-faint);padding:2rem;">कोई धातु नहीं मिली।</td></tr>';
+    return;
+  }
+  tbody.innerHTML = entries.map(e => {
+    const padaChip = e.pada_dev.includes('परस्मैपदी') ? 'chip-para' :
+                     e.pada_dev.includes('आत्मनेपदी')  ? 'chip-atma' : 'chip-ubha';
+    return `<tr onclick="showDetail('${e.slp1}')" class="${_selected===e.slp1?'selected':''}">
+      <td class="dev-cell">${e.dev}</td>
+      <td class="slp1-cell">${e.slp1}</td>
+      <td>${e.artha_dev}</td>
+      <td style="color:var(--ink-dim);">${e.artha_en}</td>
+      <td>${e.gana} · <span style="font-size:.8rem;color:var(--ink-dim);">${e.gana_dev}</span></td>
+      <td><span class="chip-sm ${padaChip}">${e.pada_dev.replace('पदी','')}</span></td>
+      <td style="font-size:.78rem;color:var(--ink-dim);">${e.it_class}</td>
+    </tr>`;
+  }).join('');
+}
+
+function updatePagination() {
+  const page = Math.floor(_offset/_limit)+1;
+  const pages = Math.ceil(_total/_limit);
+  document.getElementById('page-info').textContent = `${page} / ${pages || 1}`;
+  document.getElementById('prev-btn').disabled = _offset === 0;
+  document.getElementById('next-btn').disabled = _offset+_limit >= _total;
+}
+
+function changePage(dir) {
+  _offset = Math.max(0, _offset + dir*_limit);
+  loadDhatu();
+}
+
+async function showDetail(slp1) {
+  _selected = slp1;
+  const r = await fetch(`/api/dhatupatha/${slp1}`);
+  if (!r.ok) return;
+  const e = await r.json();
+  const padaChip = (e.pada_label_dev||'').includes('परस्मैपदी') ? 'chip-para' :
+                   (e.pada_label_dev||'').includes('आत्मनेपदी')  ? 'chip-atma' : 'chip-ubha';
+  document.getElementById('dhatu-detail').innerHTML = `
+    <div class="dhatu-detail">
+      <h3>${e.mula_dhatu_dev || e.upadesha_dev}</h3>
+      <div style="font-family:var(--mono);color:var(--accent);font-size:1rem;margin-bottom:.5rem;">${e.upadesha_slp1}</div>
+      <div class="detail-row"><span class="detail-key">अर्थः</span><span>${e.artha_dev}</span></div>
+      <div class="detail-row"><span class="detail-key">English</span><span style="color:var(--ink-dim);">${e.artha_en}</span></div>
+      <div class="detail-row"><span class="detail-key">गणः</span><span>${e.gana} · ${e.gana_label_dev}</span></div>
+      <div class="detail-row"><span class="detail-key">पदम्</span><span class="chip-sm ${padaChip}">${e.pada_label_dev}</span></div>
+      <div class="detail-row"><span class="detail-key">कर्मत्वम्</span><span>${e.karmatva_label_dev||'—'}</span></div>
+      <div class="detail-row"><span class="detail-key">इत्-वर्गः</span><span>${e.it_class_label_dev||'—'}</span></div>
+      <div class="detail-row"><span class="detail-key">सेट्/अनिट्</span>
+        <span>${e.flags?.set?'सेट्':''} ${e.flags?.anit?'अनिट्':''} ${e.flags?.vet?'वेट्':''}</span></div>
+      <div class="detail-row"><span class="detail-key">ID</span><span style="font-family:var(--mono);font-size:.78rem;color:var(--ink-faint);">${e.id}</span></div>
+      <button class="derive-btn" onclick="deriveTinFromHere('${e.upadesha_slp1}')">⚙ तिङन्त व्युत्पादयतु →</button>
+    </div>`;
+}
+
+function deriveTinFromHere(slp1) {
+  window.location.href = `/tinanta?dhatu=${encodeURIComponent(slp1)}`;
+}
+
+// Init
+loadDhatu();
+
+// Pre-fill from URL param
+const _url = new URL(window.location.href);
+if (_url.searchParams.get('q')) {
+  document.getElementById('search-q').value = _url.searchParams.get('q');
+  loadDhatu();
+}
+</script>
+{% endblock %}

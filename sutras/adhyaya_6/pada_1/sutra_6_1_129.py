@@ -1,0 +1,42 @@
+"""
+6.1.129  अप्लुतवदुपस्थिते  —  VIDHI
+
+Padaccheda: अ-प्लुत-वत् उपस्थिते
+
+अप्लुतवदुपस्थिते (6.1.129)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "6_1_129_aplutavadu_129"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("6_1_129_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "6.1.129"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "6.1.129",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "aplutavadupasTite",
+    text_dev              = "अप्लुतवदुपस्थिते",
+    padaccheda_dev        = "अ-प्लुत-वत् उपस्थिते",
+    why_dev               = "(सूत्रम् 6.1.129) अप्लुतवदुपस्थिते।",
+    anuvritti_from        = ('6.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

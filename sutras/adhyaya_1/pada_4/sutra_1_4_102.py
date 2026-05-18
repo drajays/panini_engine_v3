@@ -9,8 +9,9 @@
 *Śāstra:* within each *puruṣa* triplet of *tiṅ* *ādeśa*, the three affixes are named *ekavacana*,
 *dvivacana*, *bahuvacana* in order (*ekaśaḥ*).
 
-*Engine:* ``cond`` delegates to ``terms_needing_tin_102_vacana``; *tags* ``tin_102_*``; *registry*
-``1.4.102_tin_vacana`` holds the ordered *tag* *names* (R2).
+*Engine:* ``cond`` delegates to ``terms_needing_tin_102_vacana`` (for tiṅ) and also handles sup
+terms tagged ``sup_ekavacana``/``sup_dvivacana``/``sup_bahuvacana`` (from **4.1.2**) that have
+not yet received ``sup_102_vacana_registered`` tag; *registry* ``1.4.102_tin_vacana`` (R2).
 """
 from __future__ import annotations
 
@@ -24,9 +25,29 @@ from sutras.adhyaya_1.pada_4.tin_vacana_1_4_102 import (
     vacana_102_tag_for_tin_adesha,
 )
 
+# Tag applied to sup terms after 1.4.102 has recorded their vacana saṃjñā
+_SUP_102_DONE_TAG = "sup_102_vacana_registered"
+_SUP_VACANA_INPUT_TAGS = frozenset({"sup_ekavacana", "sup_dvivacana", "sup_bahuvacana"})
+
+
+def _terms_needing_sup_102_vacana(state: State) -> list[Term]:
+    """Sup terms carrying a vacana signal from 4.1.2 that haven't been registered yet."""
+    out: list[Term] = []
+    for t in state.terms:
+        if t.kind != "pratyaya":
+            continue
+        if "sup" not in t.tags:
+            continue
+        if not (t.tags & _SUP_VACANA_INPUT_TAGS):
+            continue
+        if _SUP_102_DONE_TAG in t.tags:
+            continue
+        out.append(t)
+    return out
+
 
 def cond(state: State) -> bool:
-    return bool(terms_needing_tin_102_vacana(state))
+    return bool(terms_needing_tin_102_vacana(state)) or bool(_terms_needing_sup_102_vacana(state))
 
 
 def _apply_vacana_102(t: Term) -> None:
@@ -37,11 +58,26 @@ def _apply_vacana_102(t: Term) -> None:
     t.tags.add(new_tag)
 
 
+def _apply_sup_vacana_102(t: Term) -> None:
+    """Convert sup_ekavacana/dvivacana/bahuvacana → canonical vacana saṃjñā and mark done."""
+    # Map from the 4.1.2-tagged signal to the canonical vacana saṃjñā tag
+    if "sup_ekavacana" in t.tags:
+        t.tags.add("ekavacana")
+    elif "sup_dvivacana" in t.tags:
+        t.tags.add("dvivacana")
+    elif "sup_bahuvacana" in t.tags:
+        t.tags.add("bahuvacana")
+    t.tags.add(_SUP_102_DONE_TAG)
+
+
 def act(state: State) -> State:
-    pending = terms_needing_tin_102_vacana(state)
+    tin_pending = terms_needing_tin_102_vacana(state)
+    sup_pending = _terms_needing_sup_102_vacana(state)
     state.samjna_registry["1.4.102_tin_vacana"] = TIN_102_VACANA_ORDER
-    for t in pending:
+    for t in tin_pending:
         _apply_vacana_102(t)
+    for t in sup_pending:
+        _apply_sup_vacana_102(t)
     return state
 
 

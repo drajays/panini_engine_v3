@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% block title %}सर्वनाम-प्रतिमानम् — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block content %}
+<div class="panel">
+  <h1>सर्वनाम-प्रतिमानम् <span class="muted" style="font-size:14px;font-weight:400;">(Pronoun Paradigm)</span></h1>
+  <p class="muted" style="font-size:13px;margin:0 0 12px;">
+    अस्मद् (प्रथम-पुरुषः) — ७ विभक्ति × ३ वचन = २१ रूपाणि।
+    पाणिनीय-क्रमेण ७.१.२७–७.२.९६ सूत्रैः व्युत्पाद्यते।
+  </p>
+
+  <!-- Preset strip -->
+  <div class="preset-strip">
+    <span class="preset-label">सर्वनाम:</span>
+    <button class="preset-btn preset-featured active" data-pronoun="asmad">
+      <span class="dev preset-dev">अस्मद्</span>
+      <span class="preset-class">उत्तम-पुरुषः</span>
+    </button>
+    <!-- Future: yuzmad button here -->
+  </div>
+  <div style="margin-top:10px;">
+    <button id="load-btn">कोष्ठं लादयतु</button>
+    <span id="load-status" class="muted" style="margin-left:12px;font-size:12px;"></span>
+  </div>
+</div>
+
+<div class="panel">
+  <h2 style="margin-top:0;">कोष्ठः — <span id="pronoun-head" class="dev">अस्मद्</span></h2>
+  <p class="muted" style="font-size:12px;margin:0 0 12px;">
+    कोष्ठे क्लिक् करुत → पूर्णा प्रक्रिया पश्यतु।
+  </p>
+
+  <!-- 7×3 table: 7 vibhaktis × 3 vacanas, no sambodhana for pronouns -->
+  <table class="matrix" id="sarvanama-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>एकवचन</th>
+        <th>द्विवचन</th>
+        <th>बहुवचन</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for v, vname in [(1,"प्रथमा"),(2,"द्वितीया"),(3,"तृतीया"),(4,"चतुर्थी"),(5,"पञ्चमी"),(6,"षष्ठी"),(7,"सप्तमी")] %}
+      <tr>
+        <th class="vib-th">
+          <span class="vib-num">{{ v }}</span>
+          <span class="dev">{{ vname }}</span>
+        </th>
+        {% for vac in [1, 2, 3] %}
+        <td class="cell" data-vibhakti="{{ v }}" data-vacana="{{ vac }}" id="cell-{{ v }}-{{ vac }}">
+          <span class="dev">…</span>
+        </td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- Trace panel — hidden until a cell is clicked -->
+<div class="panel" id="trace-panel" style="display:none;">
+  <h2 id="trace-title" class="dev" style="margin-top:0;">प्रक्रिया</h2>
+  <div class="two-pane">
+    <div>
+      <div class="trace-filter" id="trace-filter">
+        <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
+        <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
+        <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
+        <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
+        <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
+      </div>
+      <ol class="trace" id="trace"></ol>
+    </div>
+    <div class="sutra-detail" id="sutra-detail">
+      <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block body_extra %}
+<script src="{{ url_for('static', filename='trace.js') }}"></script>
+<script>
+// Auto-load on page load
+document.addEventListener('DOMContentLoaded', () => loadParadigm('asmad'));
+
+function loadParadigm(pronoun) {
+  const status = document.getElementById('load-status');
+  status.innerHTML = '<span class="loading"></span> व्युत्पाद्यते…';
+
+  document.getElementById('pronoun-head').textContent =
+    pronoun === 'asmad' ? 'अस्मद्' : 'युष्मद्';
+
+  // Reset cells
+  document.querySelectorAll('#sarvanama-table td.cell').forEach(td => {
+    td.innerHTML = '<span class="dev">…</span>';
+    td.classList.remove('active');
+  });
+  document.getElementById('trace-panel').style.display = 'none';
+
+  fetch('/api/sarvanama', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ pronoun })
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.error) { status.textContent = 'दोषः: ' + data.error; return; }
+    Object.entries(data.cells).forEach(([key, cell]) => {
+      const td = document.getElementById('cell-' + key);
+      if (td) td.innerHTML = '<span class="dev">' + escapeHtml(cell.surface_dev) + '</span>';
+    });
+    status.textContent = 'सम्पन्नम्।';
+  })
+  .catch(e => { status.textContent = 'दोषः: ' + e.message; });
+}
+
+document.getElementById('load-btn').addEventListener('click', () => {
+  const btn = document.querySelector('.preset-btn.active');
+  loadParadigm(btn ? btn.dataset.pronoun : 'asmad');
+});
+
+document.querySelectorAll('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    loadParadigm(btn.dataset.pronoun);
+  });
+});
+
+// Cell click → trace
+document.querySelectorAll('#sarvanama-table td.cell').forEach(cell => {
+  cell.addEventListener('click', () => {
+    const v   = cell.dataset.vibhakti;
+    const vac = cell.dataset.vacana;
+    const pronoun = document.querySelector('.preset-btn.active')?.dataset.pronoun || 'asmad';
+
+    document.querySelectorAll('#sarvanama-table td.cell').forEach(c => c.classList.remove('active'));
+    cell.classList.add('active');
+
+    document.getElementById('trace-panel').style.display = '';
+    document.getElementById('trace-title').textContent = 'प्रक्रिया — लादयति…';
+    document.getElementById('trace').innerHTML = '<li class="muted">लादयति…</li>';
+    document.getElementById('sutra-detail').innerHTML =
+      '<div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>';
+
+    fetch('/api/sarvanama/trace', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pronoun, vibhakti: parseInt(v), vacana: parseInt(vac) })
+    })
+    .then(r => r.json())
+    .then(data => {
+      if (data.error) {
+        document.getElementById('trace').innerHTML =
+          '<li class="muted" style="color:var(--danger);">' + escapeHtml(data.error) + '</li>';
+        return;
+      }
+      document.getElementById('trace-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('trace-title').textContent =
+        'प्रक्रिया — ' + data.surface_dev;
+      renderTrace(data.trace);
+    })
+    .catch(e => {
+      document.getElementById('trace').innerHTML =
+        '<li class="muted" style="color:var(--danger);">दोषः: ' + escapeHtml(e.message) + '</li>';
+    });
+  });
+});
+</script>
+{% endblock %}

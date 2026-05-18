@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block title %}कृदन्तम् — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block content %}
+<div class="panel">
+  <h1>कृदन्त-व्युत्पत्तिः <span class="muted" style="font-size:14px;font-weight:400;">(Kṛdanta Derivation)</span></h1>
+  <p class="muted" style="font-size:13px;margin:0 0 12px;">
+    धातुं प्रविश्य कृत्-प्रत्ययं चित्वा कृदन्त-प्रातिपदिकं व्युत्पादयतु।
+    तृच् (agent noun) तथा ण्वुल् (agent noun -aka) समर्थितौ।
+  </p>
+
+  <div class="form-row">
+    <label>धातु-क्रमाङ्कः (ID)
+      <input id="dhatu-id" type="text" value="BU" list="dhatu-suggestions"
+             placeholder="e.g. BU, qupa~c~z, RIY">
+      <datalist id="dhatu-suggestions">
+        {% for did in demo_ids %}
+        <option value="{{ did }}">{{ did }}</option>
+        {% endfor %}
+      </datalist>
+    </label>
+
+    <label>कृत्-प्रत्ययः
+      <select id="krt-type">
+        <option value="tfc">तृच् (tṛc) — चेता, भोक्ता</option>
+        <option value="nvul">ण्वुल् (ṇvul) — पाचक, नायक</option>
+      </select>
+    </label>
+
+    <button id="derive-btn">व्युत्पादयतु</button>
+    <span id="derive-status" class="muted" style="margin-left:8px;font-size:12px;"></span>
+  </div>
+
+  <!-- Quick demo buttons -->
+  <div style="margin-top:12px;">
+    <span class="muted" style="font-size:11px;">शीघ्र-उदाहरणानि:</span>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;">
+      <button class="secondary demo-btn" data-id="qupa~c~z" data-krt="nvul">पाचक (qupa~c~z + ण्वुल्)</button>
+      <button class="secondary demo-btn" data-id="RIY"      data-krt="nvul">नायक (RIY + ण्वुल्)</button>
+      <button class="secondary demo-btn" data-id="ciY"      data-krt="tfc">चेता (ciY + तृच्)</button>
+      <button class="secondary demo-btn" data-id="BU"       data-krt="tfc">भवितृ (BU + तृच्)</button>
+    </div>
+  </div>
+</div>
+
+<!-- Result panel — hidden until derived -->
+<div class="panel" id="result-panel" style="display:none;">
+  <div class="result">
+    <div>
+      <div id="result-dev" class="big-dev dev"></div>
+      <div id="result-slp1" class="slp1"></div>
+    </div>
+    <div id="result-stats" class="stats"></div>
+  </div>
+
+  <div class="two-pane">
+    <div>
+      <h2>प्रक्रिया</h2>
+      <div class="trace-filter" id="trace-filter">
+        <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
+        <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
+        <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
+        <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
+        <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
+      </div>
+      <ol class="trace" id="trace"></ol>
+    </div>
+    <div class="sutra-detail" id="sutra-detail">
+      <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
+    </div>
+  </div>
+</div>
+
+<!-- Error panel -->
+<div class="panel" id="error-panel" style="display:none;">
+  <div class="pl-error-msg" id="error-msg"></div>
+</div>
+{% endblock %}
+
+{% block body_extra %}
+<script src="{{ url_for('static', filename='trace.js') }}"></script>
+<script>
+document.getElementById('derive-btn').addEventListener('click', doDerive);
+
+document.getElementById('dhatu-id').addEventListener('keydown', e => {
+  if (e.key === 'Enter') doDerive();
+});
+
+document.querySelectorAll('.demo-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('dhatu-id').value = btn.dataset.id;
+    document.getElementById('krt-type').value = btn.dataset.krt;
+    doDerive();
+  });
+});
+
+async function doDerive() {
+  const dhatuId = document.getElementById('dhatu-id').value.trim();
+  const krtType = document.getElementById('krt-type').value;
+  const status  = document.getElementById('derive-status');
+
+  if (!dhatuId) { status.textContent = 'धातु-क्रमाङ्कं प्रविशतु।'; return; }
+
+  status.innerHTML = '<span class="loading"></span> व्युत्पाद्यते…';
+  document.getElementById('result-panel').style.display = 'none';
+  document.getElementById('error-panel').style.display  = 'none';
+
+  try {
+    const r = await fetch('/api/krdanta', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ dhatu_id: dhatuId, krt_type: krtType }),
+    });
+    const data = await r.json();
+
+    if (data.error) {
+      document.getElementById('error-panel').style.display = '';
+      document.getElementById('error-msg').textContent =
+        data.error + (data.traceback ? '\n\n' + data.traceback : '');
+      status.textContent = 'दोषः।';
+      return;
+    }
+
+    document.getElementById('result-panel').style.display = '';
+    document.getElementById('result-dev').textContent  = data.surface_dev || '—';
+    document.getElementById('result-slp1').textContent = '';
+
+    const tr = data.trace || [];
+    const applied = tr.filter(s => s.status === 'APPLIED' || s.status === 'APPLIED_VACUOUS').length;
+    const blocked = tr.filter(s => s.status === 'BLOCKED').length;
+    document.getElementById('result-stats').innerHTML =
+      `<div>${tr.length} चरणाः</div>
+       <div><span>${applied} प्रयुक्तानि</span> <span>${blocked} निवारितानि</span></div>`;
+
+    renderTrace(data.trace);
+    document.getElementById('sutra-detail').innerHTML =
+      '<div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>';
+    status.textContent = 'सम्पन्नम्।';
+  } catch (e) {
+    document.getElementById('error-panel').style.display = '';
+    document.getElementById('error-msg').textContent = 'दोषः: ' + e.message;
+    status.textContent = 'दोषः।';
+  }
+}
+</script>
+{% endblock %}

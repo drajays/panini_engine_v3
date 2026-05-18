@@ -1,0 +1,42 @@
+"""
+3.3.42  संघे चानौत्तराधर्ये  —  VIDHI
+
+Padaccheda: संघे च अनौत्तराधर्ये
+
+krt-suffix rule: संघे चानौत्तराधर्ये
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "3_3_42_saMGe_42"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("3_3_42_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["krt_kind"] = "3.3.42"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "3.3.42",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "saMGe cAnOttarADarye",
+    text_dev              = "संघे चानौत्तराधर्ये",
+    padaccheda_dev        = "संघे च अनौत्तराधर्ये",
+    why_dev               = "धातोः प्रत्ययः (३.3.42)।",
+    anuvritti_from        = ('3.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

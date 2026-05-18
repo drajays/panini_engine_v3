@@ -4,8 +4,9 @@
 *Virāma* (pause / end of utterance) is called *avasāna* — one of the
 conditions for **8.3.15** visarga at word-final *r*.
 
-Engine: registers ``samjna_registry['1.4.110_avasana']`` in Tripāḍī once
-``tripadi_zone`` is active (recipe schedules this immediately before **8.3.15**).
+Engine: fires once the form has been merged into a *pada* Term (post sandhi,
+post pada-merge) and before entering the Tripāḍī zone (**8.2.1**).
+Registers ``samjna_registry['1.4.110_avasana']``.
 """
 from __future__ import annotations
 
@@ -14,9 +15,9 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    if not state.tripadi_zone:
+    if state.samjna_registry.get("1.4.110_avasana") is not None:
         return False
-    return state.samjna_registry.get("1.4.110_avasana") is None
+    return any("pada" in t.tags for t in state.terms)
 
 
 def act(state: State) -> State:

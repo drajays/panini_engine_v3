@@ -29,6 +29,13 @@ from phonology.varna   import parse_slp1_upadesha_sequence
 _INVENTORY: Optional[Dict[str, str]] = None
 _META     : Optional[Dict[str, Any]] = None
 
+# Vacana cell sets (used in act() to tag sup terms; module-level for efficiency)
+_EKA  = {"1-1", "2-1", "3-1", "4-1", "5-1", "6-1", "7-1", "8-1"}
+_DVI  = {"1-2", "2-2", "3-2", "4-2", "5-2", "6-2", "7-2", "8-2"}
+_BAHU = {"1-3", "2-3", "3-3", "4-3", "5-3", "6-3", "7-3", "8-3"}
+# Sarvanamasthana-eligible cells (prathamā all 3 + dvitīyā eka/dvi, non-napumsaka only)
+_SARV = {"1-1", "1-2", "1-3", "2-1", "2-2"}
+
 
 def _load_inventory() -> None:
     global _INVENTORY, _META
@@ -117,6 +124,18 @@ def act(state: State) -> State:
         tags   = tags,
         meta   = {"upadesha_slp1": upadesha},
     )
+
+    # Vacana tags (read by 1.4.102 without needing raw vibhakti_vacana)
+    if vv in _EKA:
+        pratyaya.tags.add("sup_ekavacana")
+    elif vv in _DVI:
+        pratyaya.tags.add("sup_dvivacana")
+    elif vv in _BAHU:
+        pratyaya.tags.add("sup_bahuvacana")
+    # Sarvanamasthana eligibility signal (read by 1.1.43 / 1.4.103)
+    if vv in _SARV:
+        pratyaya.tags.add("sup_sarvanamasthana_eligible")
+
     state.terms.append(pratyaya)
     return state
 

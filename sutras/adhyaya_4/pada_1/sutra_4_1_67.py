@@ -1,0 +1,42 @@
+"""
+4.1.67  बाह्वन्तात् संज्ञायाम्  —  VIDHI
+
+Padaccheda: बाहु-अन्तात् संज्ञायाम्
+
+बाह्वन्तात् संज्ञायाम् (4.1.67)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "4_1_67_bAhvantAt_67"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("4_1_67_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["taddhita_kind"]             = "4.1.67"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "4.1.67",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "bAhvantAt saMjYAyAm",
+    text_dev              = "बाह्वन्तात् संज्ञायाम्",
+    padaccheda_dev        = "बाहु-अन्तात् संज्ञायाम्",
+    why_dev               = "(सूत्रम् 4.1.67) बाह्वन्तात् संज्ञायाम्।",
+    anuvritti_from        = ('4.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

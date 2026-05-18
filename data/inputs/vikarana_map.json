@@ -1,0 +1,65 @@
+{
+  "_doc": "Gaṇa → vikaraṇa pratyaya mapping. upadesha_slp1 is the raw upadeśa (it-marked).",
+  "1": {
+    "gana_name": "bhvādi",
+    "vikarana_slp1": "Sap",
+    "sutra": "3.1.68",
+    "vikarana_dev": "शप्"
+  },
+  "2": {
+    "gana_name": "adādi",
+    "vikarana_slp1": null,
+    "sutra": "2.4.72",
+    "vikarana_dev": "शप् (लुक्)",
+    "note": "śap-luk: zero vikaraṇa"
+  },
+  "3": {
+    "gana_name": "juhotyādi",
+    "vikarana_slp1": null,
+    "sutra": "3.1.5",
+    "vikarana_dev": "श्लु",
+    "note": "reduplication; no separate vikaraṇa pratyaya"
+  },
+  "4": {
+    "gana_name": "divādi",
+    "vikarana_slp1": "SyaN",
+    "sutra": "3.1.69",
+    "vikarana_dev": "श्यन्"
+  },
+  "5": {
+    "gana_name": "svādi",
+    "vikarana_slp1": "Snu",
+    "sutra": "3.1.73",
+    "vikarana_dev": "श्नु"
+  },
+  "6": {
+    "gana_name": "tudādi",
+    "vikarana_slp1": "Sa",
+    "sutra": "3.1.77",
+    "vikarana_dev": "श"
+  },
+  "7": {
+    "gana_name": "rudhādi",
+    "vikarana_slp1": "Snam",
+    "sutra": "3.1.78",
+    "vikarana_dev": "श्नम्"
+  },
+  "8": {
+    "gana_name": "tanādi",
+    "vikarana_slp1": "u",
+    "sutra": "3.1.79",
+    "vikarana_dev": "उ"
+  },
+  "9": {
+    "gana_name": "kryādi",
+    "vikarana_slp1": "SnA",
+    "sutra": "3.1.81",
+    "vikarana_dev": "श्ना"
+  },
+  "10": {
+    "gana_name": "curādi",
+    "vikarana_slp1": "Ric",
+    "sutra": "3.1.25",
+    "vikarana_dev": "णिच्"
+  }
+}

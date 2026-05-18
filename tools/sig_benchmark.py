@@ -430,6 +430,8 @@ def main(argv=None) -> int:
     if args.freeze:
         from engine.sig       import extract_applied_path
         from pipelines.subanta import derive as real_derive
+        from tools.sig_sequence_groups import write_sequence_group_baseline
+
         applied_paths = {}
         for v in range(1, 9):
             for vv in range(1, 4):
@@ -447,6 +449,14 @@ def main(argv=None) -> int:
             encoding="utf-8",
         )
         print(f"  ✓ applied-paths baseline frozen at {baseline_path}")
+        sequence_group_path = (
+            _ROOT / "tests" / "regression" / "sig_sequence_groups_baseline.json"
+        )
+        groups = write_sequence_group_baseline(sequence_group_path, sig_dir=args.out)
+        print(
+            f"  ✓ sequence-groups baseline frozen at {sequence_group_path} "
+            f"({len(groups['groups'])} group(s))"
+        )
 
     # Exit-code policy: fail on CRITICAL anomalies (regression oracle).
     anomalies = json.loads(

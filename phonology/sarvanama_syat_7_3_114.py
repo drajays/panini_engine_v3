@@ -9,7 +9,7 @@ from __future__ import annotations
 from typing import FrozenSet
 
 # ṅit *sup* pratyayas keyed like ``4.1.2`` inventory (same set as 7.3.111).
-_NGIT_SUP_UPADESHA: FrozenSet[str] = frozenset({"Ne", "Nas", "Nasi"})
+_NGIT_SUP_UPADESHA: FrozenSet[str] = frozenset({"Ne", "Nas", "Nasi", "Ni"})
 
 
 def ngit_sup_upadeshas() -> FrozenSet[str]:

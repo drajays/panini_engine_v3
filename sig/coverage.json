@@ -2,15 +2,15 @@
   "by_type": {
     "ADHIKARA": {
       "coverage_pct": 100.0,
-      "implemented": 74,
+      "implemented": 77,
       "stubs": 0,
-      "total": 74
+      "total": 77
     },
     "ANUVADA": {
       "coverage_pct": 100.0,
-      "implemented": 2,
+      "implemented": 17,
       "stubs": 0,
-      "total": 2
+      "total": 17
     },
     "ATIDESHA": {
       "coverage_pct": 100.0,
@@ -26,15 +26,15 @@
     },
     "NIYAMA": {
       "coverage_pct": 100.0,
-      "implemented": 1,
+      "implemented": 28,
       "stubs": 0,
-      "total": 1
+      "total": 28
     },
     "PARIBHASHA": {
       "coverage_pct": 100.0,
-      "implemented": 21,
+      "implemented": 52,
       "stubs": 0,
-      "total": 21
+      "total": 52
     },
     "PRATISHEDHA": {
       "coverage_pct": 100.0,
@@ -44,25 +44,25 @@
     },
     "SAMJNA": {
       "coverage_pct": 100.0,
-      "implemented": 48,
+      "implemented": 183,
       "stubs": 0,
-      "total": 48
+      "total": 183
     },
     "VIBHASHA": {
       "coverage_pct": 100.0,
-      "implemented": 3,
+      "implemented": 18,
       "stubs": 0,
-      "total": 3
+      "total": 18
     },
     "VIDHI": {
       "coverage_pct": 100.0,
-      "implemented": 67,
+      "implemented": 3607,
       "stubs": 0,
-      "total": 67
+      "total": 3607
     }
   },
   "coverage_pct": 100.0,
-  "implemented": 219,
+  "implemented": 3985,
   "stubs": 0,
-  "total": 219
+  "total": 3985
 }

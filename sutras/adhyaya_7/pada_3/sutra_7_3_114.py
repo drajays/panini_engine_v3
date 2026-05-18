@@ -51,7 +51,11 @@ def _matches(state: State) -> bool:
         return False
     if "sup" not in pr.tags:
         return False
-    if not ngit_sup_match(pr.meta.get("upadesha_slp1")):
+    up = pr.meta.get("upadesha_slp1")
+    # **Ni** (सप्तम्येकवचनम्) is outside the **7.3.114** *syāṭ* slice here.
+    if up == "Ni":
+        return False
+    if not ngit_sup_match(up):
         return False
     if pr.meta.get("syat_7_3_114_done"):
         return False

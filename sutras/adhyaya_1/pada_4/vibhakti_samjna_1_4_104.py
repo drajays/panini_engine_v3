@@ -75,7 +75,12 @@ def is_tin_vibhakti_pratyaya(t: Term) -> bool:
     up = _norm_upadesha_slp1(t.meta.get("upadesha_slp1") or "")
     if up in TIN_ADESHA_SET:
         return True
-    return up in TIN_SURFACE_AADESHA_SLP1_EXTRA and "tin_adesha_3_4_78" in t.tags
+    if up in TIN_SURFACE_AADESHA_SLP1_EXTRA and "tin_adesha_3_4_78" in t.tags:
+        return True
+    # **3.4.82** liṭ-parasmaipada ādeśas: atus/us/aTus/a/va/ma/Ral/Tal are vibhakti.
+    # The meta flag 'lit_tin_adesha' marks these as tiṅ-vibhakti so 1.3.4 protection
+    # (na vibhaktau tusmāḥ) applies to the tusma-final 's' in atus/us/aTus.
+    return bool(t.meta.get("3_4_82_done"))
 
 
 def term_has_1_4_104_vibhakti(t: Term) -> bool:

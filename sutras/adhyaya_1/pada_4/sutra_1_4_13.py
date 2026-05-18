@@ -38,6 +38,9 @@ def cond(state: State) -> bool:
         t0 = state.terms[k]
         if "dhatu" in t0.tags:
             return True
+        # *prātipadika* + *sup*: the prātipadika is aṅga with respect to sup.
+        if "prātipadika" in t0.tags and "sup" in t1.tags:
+            return True
         # *śālīya* taddhita: *aṅga* = *prakriti* (not *dhātu*) *nimitta* of *taddhita*.
         if (
             state.meta.get("prakriya_sAlIya")

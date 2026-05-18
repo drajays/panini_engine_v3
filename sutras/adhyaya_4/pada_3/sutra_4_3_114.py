@@ -1,0 +1,42 @@
+"""
+4.3.114  उरसो यच्च  —  VIDHI
+
+Padaccheda: उरसः यत् च
+
+उरसो यच्च (4.3.114)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "4_3_114_uraso_114"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("4_3_114_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["taddhita_kind"]             = "4.3.114"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "4.3.114",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "uraso yacca",
+    text_dev              = "उरसो यच्च",
+    padaccheda_dev        = "उरसः यत् च",
+    why_dev               = "(सूत्रम् 4.3.114) उरसो यच्च।",
+    anuvritti_from        = ('4.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

@@ -1,0 +1,42 @@
+"""
+6.1.199  पथिमथोः सर्वनामस्थाने  —  VIDHI
+
+Padaccheda: पथि-मथोः सर्वनामस्थाने
+
+पथिमथोः सर्वनामस्थाने (6.1.199)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "6_1_199_paTimaToH_199"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("6_1_199_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "6.1.199"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "6.1.199",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "paTimaToH sarvanAmasTAne",
+    text_dev              = "पथिमथोः सर्वनामस्थाने",
+    padaccheda_dev        = "पथि-मथोः सर्वनामस्थाने",
+    why_dev               = "(सूत्रम् 6.1.199) पथिमथोः सर्वनामस्थाने।",
+    anuvritti_from        = ('6.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

@@ -1,0 +1,42 @@
+"""
+5.4.93  अग्राख्यायामुरसः  —  VIDHI
+
+Padaccheda: अग्राख्यायाम् उरसः
+
+अग्राख्यायामुरसः (5.4.93)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "5_4_93_agrAKyAyAm_93"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("5_4_93_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["taddhita_kind"]             = "5.4.93"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "5.4.93",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "agrAKyAyAmurasaH",
+    text_dev              = "अग्राख्यायामुरसः",
+    padaccheda_dev        = "अग्राख्यायाम् उरसः",
+    why_dev               = "(सूत्रम् 5.4.93) अग्राख्यायामुरसः।",
+    anuvritti_from        = ('5.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

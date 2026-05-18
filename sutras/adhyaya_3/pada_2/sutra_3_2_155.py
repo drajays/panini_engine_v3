@@ -1,0 +1,42 @@
+"""
+3.2.155  जल्पभिक्षकुट्टलुण्टवृङः षाकन्  —  VIDHI
+
+Padaccheda: जल्प-भिक्ष-कुट्ट-लुण्ठ-वृङः षाकन्
+
+krt-suffix rule: जल्पभिक्षकुट्टलुण्टवृङः षाकन् (155)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "3_2_155_jalpaBikza_155"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("3_2_155_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["krt_kind"] = "3.2.155"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "3.2.155",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "jalpaBikzakuwwaluRwavfNaH zAkan",
+    text_dev              = "जल्पभिक्षकुट्टलुण्टवृङः षाकन्",
+    padaccheda_dev        = "जल्प-भिक्ष-कुट्ट-लुण्ठ-वृङः षाकन्",
+    why_dev               = "धातोः कृत्-प्रत्ययः [जल्पभिक्षकुट्टलुण्टवृङः षाकन्] विहितः (३.२.155)।",
+    anuvritti_from        = ('3.1.1', '3.2.78'),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

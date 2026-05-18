@@ -1,0 +1,42 @@
+"""
+7.3.3  न य्वाभ्यां पदान्ताभ्याम् पूर्वौ तु ताभ्यामैच्  —  VIDHI
+
+Padaccheda: न य्-वाभ्याम् पद-अन्ताभ्याम् पूर्वौ तु ताभ्याम् ऐच्
+
+न य्वाभ्यां पदान्ताभ्याम् पूर्वौ तु ताभ्यामैच् (7.3.3)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "7_3_3_na_3"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("7_3_3_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "7.3.3"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "7.3.3",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "na yvAByAM padAntAByAm pUrvO tu tAByAmEc",
+    text_dev              = "न य्वाभ्यां पदान्ताभ्याम् पूर्वौ तु ताभ्यामैच्",
+    padaccheda_dev        = "न य्-वाभ्याम् पद-अन्ताभ्याम् पूर्वौ तु ताभ्याम् ऐच्",
+    why_dev               = "(सूत्रम् 7.3.3) न य्वाभ्यां पदान्ताभ्याम् पूर्वौ तु ताभ्यामैच्।",
+    anuvritti_from        = ('7.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

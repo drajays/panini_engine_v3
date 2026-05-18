@@ -33,12 +33,42 @@ def _kngiti_signal(state: State) -> bool:
     return any("kngiti" in t.tags for t in state.terms)
 
 
+def _immediate_trigger_is_kngiti(state: State) -> bool:
+    """
+    True iff the IMMEDIATE trigger term for guṇa (the pratyaya term right
+    after the first dhātu) itself carries the kṅit tag.
+
+    Pāṇinian principle: kṅiti blocking (1.1.5) applies only when the
+    *triggering* pratyaya is kṅit.  A tiṅ ādeśa (e.g. *tas*) carrying the
+    apith-ṅit tag via 1.2.4 does NOT block guṇa when a vikaraṇa (e.g. śap)
+    sits between the dhātu and the tiṅ ādeśa — because śap (the immediate
+    trigger) is śit, not kṅit.
+    """
+    dhatu_idx: int | None = None
+    for i, t in enumerate(state.terms):
+        if "dhatu" in t.tags:
+            dhatu_idx = i
+            break
+    if dhatu_idx is None:
+        return _kngiti_signal(state)   # fallback: old broad check
+    trigger_idx = dhatu_idx + 1
+    if trigger_idx >= len(state.terms):
+        return False
+    return "kngiti" in state.terms[trigger_idx].tags
+
+
 def ik_guna_vriddhi_blocked_by_1_1_5(state: State) -> bool:
     """
     When True, **1.1.3** *ik* *guṇa* / *vṛddhi* *sthāyin* is **out of scope** for
     the *utsarga* ordering (*kṅiti* locus), per 1.1.5.
+
+    Checks only the IMMEDIATE trigger term after the dhātu.  A tiṅ ādeśa
+    (e.g. *tas*) tagged kṅit by 1.2.4 apith does NOT block guṇa when a
+    vikaraṇa (śap) intervenes as the actual trigger — śap is śit, not kṅit.
     """
-    return _kngiti_signal(state)
+    if state.samjna_registry.get("1.1.5_kngiti") is True:
+        return True
+    return _immediate_trigger_is_kngiti(state)
 
 
 # ═══════════════════════════════════════════════════════════════

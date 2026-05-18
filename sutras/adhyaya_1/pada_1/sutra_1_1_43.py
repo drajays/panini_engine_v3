@@ -51,11 +51,51 @@ def _eligible_prakriya_21_am(state: State) -> bool:
     return True
 
 
+def _eligible_sup_sarvanamasthana(state: State) -> bool:
+    """
+    New path (v3.2): fires when a sup term has 'sup_sarvanamasthana_eligible' tag
+    AND the stem is non-napumsaka.  Does NOT require the 1_1_43_arm meta flag.
+    This encodes: सुड् अनपुंसकस्य — the su-p (sarvanamasthana-eligible cells)
+    of non-neuter declension receive sarvanamasthana saṃjñā.
+    """
+    # Find a sup pratyaya that is eligible but not yet tagged
+    sup_term = None
+    for t in state.terms:
+        if t.kind == "pratyaya" and "sup" in t.tags:
+            if "sup_sarvanamasthana_eligible" in t.tags and TAG not in t.tags:
+                sup_term = t
+                break
+    if sup_term is None:
+        return False
+    # Stem must be non-napumsaka: no napuṃsaka tag on any prakriti/prātipadika term
+    for t in state.terms:
+        if "prātipadika" in t.tags or t.kind == "prakriti":
+            if "napuṃsaka" in t.tags:
+                return False
+    return True
+
+
 def cond(state: State) -> bool:
-    return _eligible_s_sup(state) or _eligible_prakriya_21_am(state)
+    return (
+        _eligible_s_sup(state)
+        or _eligible_prakriya_21_am(state)
+        or _eligible_sup_sarvanamasthana(state)
+    )
 
 
 def act(state: State) -> State:
+    if _eligible_sup_sarvanamasthana(state):
+        # Tag all eligible-but-untagged sup terms
+        for t in state.terms:
+            if (
+                t.kind == "pratyaya"
+                and "sup" in t.tags
+                and "sup_sarvanamasthana_eligible" in t.tags
+                and TAG not in t.tags
+            ):
+                t.tags.add(TAG)
+        state.samjna_registry["1.1.43_su_sarvanamasthana"] = True
+        return state
     if not (_eligible_s_sup(state) or _eligible_prakriya_21_am(state)):
         return state
     pr = state.terms[-1]

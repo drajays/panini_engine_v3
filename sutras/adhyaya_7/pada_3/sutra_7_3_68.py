@@ -1,0 +1,42 @@
+"""
+7.3.68  प्रयोज्यनियोज्यौ शक्यार्थे  —  VIDHI
+
+Padaccheda: प्रयोज्य-नियोज्यौ शक्यार्थे
+
+प्रयोज्यनियोज्यौ शक्यार्थे (7.3.68)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "7_3_68_prayojyani_68"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("7_3_68_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "7.3.68"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "7.3.68",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "prayojyaniyojyO SakyArTe",
+    text_dev              = "प्रयोज्यनियोज्यौ शक्यार्थे",
+    padaccheda_dev        = "प्रयोज्य-नियोज्यौ शक्यार्थे",
+    why_dev               = "(सूत्रम् 7.3.68) प्रयोज्यनियोज्यौ शक्यार्थे।",
+    anuvritti_from        = ('7.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

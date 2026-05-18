@@ -1,0 +1,48 @@
+{
+  "_doc": "Gold laṭ for pac (qupac~z) — 9 parasmaipada cells",
+  "id": "pac_laT_parasmai_gold",
+  "dhatu_dev": "पच्",
+  "dhatu_slp1": "pac",
+  "dhatupatha_id": "BvAdi_pac",
+  "lakara": "laT",
+  "prayoga": "kartari",
+  "pada": "parasmai",
+  "cells": {
+    "3-1": {
+      "surface_dev": "पचति",
+      "surface_slp1": "pacati"
+    },
+    "3-2": {
+      "surface_dev": "पचतः",
+      "surface_slp1": "pacataH"
+    },
+    "3-3": {
+      "surface_dev": "पचन्ति",
+      "surface_slp1": "pacanti"
+    },
+    "2-1": {
+      "surface_dev": "पचसि",
+      "surface_slp1": "pacasi"
+    },
+    "2-2": {
+      "surface_dev": "पचथः",
+      "surface_slp1": "pacaTaH"
+    },
+    "2-3": {
+      "surface_dev": "पचथ",
+      "surface_slp1": "pacaTa"
+    },
+    "1-1": {
+      "surface_dev": "पचामि",
+      "surface_slp1": "pacAmi"
+    },
+    "1-2": {
+      "surface_dev": "पचावः",
+      "surface_slp1": "pacAvaH"
+    },
+    "1-3": {
+      "surface_dev": "पचामः",
+      "surface_slp1": "pacAmaH"
+    }
+  }
+}

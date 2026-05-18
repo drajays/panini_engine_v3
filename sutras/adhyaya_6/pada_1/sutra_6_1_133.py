@@ -1,0 +1,42 @@
+"""
+6.1.133  स्यश्छन्दसि बहुलम्  —  VIDHI
+
+Padaccheda: स्यः (षष्ठ्यर्थे प्रथमा) छन्दसि बहुलम्
+
+स्यश्छन्दसि बहुलम् (6.1.133)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "6_1_133_syaSCandas_133"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("6_1_133_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "6.1.133"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "6.1.133",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "syaSCandasi bahulam",
+    text_dev              = "स्यश्छन्दसि बहुलम्",
+    padaccheda_dev        = "स्यः (षष्ठ्यर्थे प्रथमा) छन्दसि बहुलम्",
+    why_dev               = "(सूत्रम् 6.1.133) स्यश्छन्दसि बहुलम्।",
+    anuvritti_from        = ('6.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

@@ -1,0 +1,42 @@
+"""
+5.2.127  अर्शआदिभ्योऽच्  —  VIDHI
+
+Padaccheda: अर्श-आदिभ्यः अच्
+
+अर्शआदिभ्योऽच् (5.2.127)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "5_2_127_arSaAdiByo_127"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("5_2_127_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["taddhita_kind"]             = "5.2.127"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "5.2.127",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "arSaAdiByo'c",
+    text_dev              = "अर्शआदिभ्योऽच्",
+    padaccheda_dev        = "अर्श-आदिभ्यः अच्",
+    why_dev               = "(सूत्रम् 5.2.127) अर्शआदिभ्योऽच्।",
+    anuvritti_from        = ('5.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

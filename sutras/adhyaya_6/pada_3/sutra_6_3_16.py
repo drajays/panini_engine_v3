@@ -1,0 +1,42 @@
+"""
+6.3.16  विभाषा वर्षक्षरशरवरात्  —  VIDHI
+
+Padaccheda: विभाषा वर्ष-क्षर-शर-वरात्
+
+विभाषा वर्षक्षरशरवरात् (6.3.16)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "6_3_16_viBAzA_16"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("6_3_16_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "6.3.16"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "6.3.16",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "viBAzA varzakzaraSaravarAt",
+    text_dev              = "विभाषा वर्षक्षरशरवरात्",
+    padaccheda_dev        = "विभाषा वर्ष-क्षर-शर-वरात्",
+    why_dev               = "(सूत्रम् 6.3.16) विभाषा वर्षक्षरशरवरात्।",
+    anuvritti_from        = ('6.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

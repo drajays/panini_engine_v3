@@ -1,0 +1,42 @@
+"""
+3.3.126  ईषद्दुःसुषु कृच्छ्राकृच्छ्रार्थेषु खल्  —  VIDHI
+
+Padaccheda: ईषत्-दुस्-सुषु कृच्छ्र-अकृच्छ्र-अर्थेषु खल्
+
+krt-suffix rule: ईषद्दुःसुषु कृच्छ्राकृच्छ्रार्थेषु खल्
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "3_3_126_IzadduHsuz_126"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("3_3_126_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["krt_kind"] = "3.3.126"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "3.3.126",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "IzadduHsuzu kfcCrAkfcCrArTezu Kal",
+    text_dev              = "ईषद्दुःसुषु कृच्छ्राकृच्छ्रार्थेषु खल्",
+    padaccheda_dev        = "ईषत्-दुस्-सुषु कृच्छ्र-अकृच्छ्र-अर्थेषु खल्",
+    why_dev               = "धातोः प्रत्ययः (३.3.126)।",
+    anuvritti_from        = ('3.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

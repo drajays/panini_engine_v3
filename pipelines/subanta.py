@@ -4,6 +4,7 @@ pipelines/subanta.py — subanta derivation driver.
 
 Given:
   stem_slp1    : str, e.g. "rAma" (Velthuis / SLP1-style; अकारान्त = ends in hrasa ``a``)
+                 or "rADA" (ध = SLP1 ``D``; stem ends in long ``A`` for ``ā``-anta strī).
   vibhakti     : 1..8
   vacana       : 1..3
   linga        : "pulliṅga" | "strīliṅga" | "napuṃsaka"
@@ -12,6 +13,13 @@ Given:
   • ``stem_slp1_looks_akarant_pullinga`` — shape check (pipeline/UI only).
   • ``derive_akarant_pullinga`` — same recipe as ``derive(..., linga="pulliṅga")``
     after validating stem shape (raises ``ValueError`` if not a-kāra-anta).
+
+आकारान्त स्त्रीलिङ्ग (ā-stem feminine) helpers:
+  • ``stem_slp1_looks_Akarant_strilinga`` — stem ends in SLP1 long ``A`` (``ā``).
+  • ``derive_akarant_strilinga`` — ``derive(..., linga="strīliṅga")`` with optional shape guard.
+
+*Sarvādi* सर्वनाम (e.g. **अन्य**, ``anya`` — listed in ``data/inputs/sarvadi_slp1.json`` for **1.1.27**):
+  • ``derive_anya_pullinga`` — thin wrapper; gold in ``data/reference/subanta_gold/anya_pullinga.json``.
 
 Returns:
   State  — with full trace in state.trace and rendered surface in
@@ -300,6 +308,50 @@ def derive_akarant_pullinga(
     return derive(stem_slp1, vibhakti, vacana, linga="pulliṅga")
 
 
+def stem_slp1_looks_Akarant_strilinga(stem_slp1: str) -> bool:
+    """
+    True if ``stem_slp1`` ends in long ``A`` (SLP1 = ā) — the usual shape for
+    आकारान्त स्त्रीलिङ्ग prātipadikas like ``rADA`` (राधा, ध = ``D``).
+
+    Pipeline/UI guard only; does not read ``data/reference/`` (CONSTITUTION Art. 6).
+    """
+    s = stem_slp1.strip()
+    if len(s) < 1:
+        return False
+    return s[-1] == "A"
+
+
+def derive_akarant_strilinga(
+    stem_slp1: str,
+    vibhakti: int,
+    vacana: int,
+    *,
+    strict_stem: bool = True,
+) -> State:
+    """
+    Run the subanta recipe for **आकारान्त स्त्रीलिङ्ग** (ā-stem feminine).
+
+    Same as ``derive(stem_slp1, vibhakti, vacana, linga="strīliṅga")`` but
+    optionally validates that the stem ends in ``A`` (``strict_stem=True``).
+    """
+    if strict_stem and not stem_slp1_looks_Akarant_strilinga(stem_slp1):
+        raise ValueError(
+            "आकारान्त स्त्रीलिङ्ग हेतु प्रातिपदिक अन्त में दीर्घ 'A' (SLP1) चाहिए — "
+            f"उदाहरण: rADA (राधा)। प्राप्त: {stem_slp1!r}"
+        )
+    return derive(stem_slp1, vibhakti, vacana, linga="strīliṅga")
+
+
+def derive_anya_pullinga(vibhakti: int, vacana: int) -> State:
+    """
+    **अन्य** — *sarvanāma* (1.1.27 *sarvādi* list), *a*-stem masculine.
+
+    Thin wrapper around ``derive("anya", ...)``.  Gold surfaces:
+    ``data/reference/subanta_gold/anya_pullinga.json`` (tests/UI only).
+    """
+    return derive("anya", vibhakti, vacana, linga="pulliṅga")
+
+
 # Structural step in ``run_subanta_post_4_1_2`` (not a sūtra id).
 PADA_MERGE_STEP = "__PADA_MERGE__"
 
@@ -312,6 +364,13 @@ META_SALIYA_TADDHITA_SUBANTA_CONTINUATION = "sAlIya_taddhita_subanta_continuatio
 # after **4.1.2** has attached *sup*.  Demos may iterate this tuple for verbose
 # traces; keep in sync with ``run_subanta_post_4_1_2``.
 SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
+    "3.1.1",
+    "3.1.2",
+    "1.4.102",
+    "1.1.43",
+    "1.4.103",
+    "1.4.13",
+    "1.4.14",
     "1.3.2",
     "1.3.3",
     "1.3.4",
@@ -321,6 +380,9 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.3.8",
     "1.3.9",
     "1.3.10",
+    "1.4.7",
+    "1.2.41",
+    "6.1.68",
     "6.4.1",
     "7.1.94",
     "6.4.11",
@@ -330,6 +392,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.2.102",
     "6.1.97",
     "7.2.113",
+    "7.3.106",
     "6.1.69",
     "7.1.15",
     "7.1.12",
@@ -378,6 +441,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.1.110",
     "6.1.101",
     PADA_MERGE_STEP,
+    "1.4.110",
     "8.2.1",
     "8.2.66",
     "8.3.15",

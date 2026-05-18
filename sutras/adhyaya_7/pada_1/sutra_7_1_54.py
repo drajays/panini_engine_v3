@@ -38,7 +38,8 @@ def _find_target(state: State):
         last = anga.varnas[-1]
         if (last.slp1 in _HRASVA
             or "nadi" in anga.tags
-            or "Ap"   in anga.tags):
+            or "Ap" in anga.tags
+            or ("strīliṅga" in anga.tags and last.slp1 == "A")):
             # Guard idempotency: if pratyaya already has 'n' at front
             # with the nuṭ-it-tag, we've fired — don't fire again.
             if pratyaya.varnas and "nut_agama_inserted" in pratyaya.varnas[0].tags:

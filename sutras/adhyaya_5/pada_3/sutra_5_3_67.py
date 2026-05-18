@@ -1,0 +1,42 @@
+"""
+5.3.67  ईषदसमाप्तौ कल्पब्देश्यदेशीयरः  —  VIDHI
+
+Padaccheda: ईषत्-असमाप्तौ कल्पप्-देश्य-देशीयरः
+
+ईषदसमाप्तौ कल्पब्देश्यदेशीयरः (5.3.67)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "5_3_67_IzadasamAp_67"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("5_3_67_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["taddhita_kind"]             = "5.3.67"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "5.3.67",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "IzadasamAptO kalpabdeSyadeSIyaraH",
+    text_dev              = "ईषदसमाप्तौ कल्पब्देश्यदेशीयरः",
+    padaccheda_dev        = "ईषत्-असमाप्तौ कल्पप्-देश्य-देशीयरः",
+    why_dev               = "(सूत्रम् 5.3.67) ईषदसमाप्तौ कल्पब्देश्यदेशीयरः।",
+    anuvritti_from        = ('5.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

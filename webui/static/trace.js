@@ -63,7 +63,22 @@ function statusIcon(step) {
 
 /* ── प्रक्रिया-प्रदर्शनम् ──────────────────────────────────── */
 
-function renderTrace(trace) {
+/**
+ * renderTrace(trace) — original API: renders into #trace with filter checkboxes.
+ * renderTrace(trace, container) — extended API: renders directly into `container`
+ *   element without filter support (used by pages that supply their own container).
+ */
+function renderTrace(trace, container) {
+  if (container) {
+    // Extended API: render directly into given container, no filter.
+    _currentTrace = trace;
+    container.innerHTML = "";
+    trace.forEach((step, idx) => {
+      container.appendChild(renderStep(step, idx));
+    });
+    return;
+  }
+  // Original API: use #trace + filter checkboxes.
   _currentTrace = trace;
   applyTraceFilter();
   document.querySelectorAll("#trace-filter input").forEach(cb => {
@@ -97,8 +112,24 @@ function renderStep(step, idx) {
 
   const sid     = step.sutra_id || "";
   const textDev = step._sutra_text_dev || "";
-  const before  = escapeHtml(step.form_before || "");
-  const after   = escapeHtml(step.form_after  || "");
+
+  // Use Devanāgarī form strings if provided by the backend enrichment layer.
+  // Fall back to SLP1 only if the _dev fields are absent (old API responses).
+  const beforeDev = step.form_before_dev != null ? step.form_before_dev : (step.form_before || "");
+  const afterDev  = step.form_after_dev  != null ? step.form_after_dev  : (step.form_after  || "");
+
+  // For structural steps, show the clean Devanāgarī label instead of the raw ID.
+  const structLabel = step._structural_dev || sid;
+  const displayId   = step._is_structural ? structLabel : sid;
+
+  let formHtml = "";
+  if (beforeDev !== afterDev) {
+    formHtml = `<span class="ts-form-dev dev">${escapeHtml(beforeDev)}</span>`
+             + `<span class="arrow">→</span>`
+             + `<span class="ts-form-dev dev ts-form-after">${escapeHtml(afterDev)}</span>`;
+  } else {
+    formHtml = `<span class="ts-form-dev dev ts-form-unchanged">${escapeHtml(afterDev || beforeDev)}</span>`;
+  }
 
   let extraLine = "";
   if (step.status === "BLOCKED" && step.gate_reason) {
@@ -114,9 +145,9 @@ function renderStep(step, idx) {
   li.innerHTML = `
     <div class="ts-head">
       <span class="ts-icon">${statusIcon(step)}</span>
-      <span class="ts-id">${escapeHtml(sid)}</span>
-      <span class="ts-dev dev">${escapeHtml(textDev || step.why_dev || "")}</span>
-      <span class="ts-form">${before}<span class="arrow">→</span>${after}</span>
+      <span class="ts-id">${escapeHtml(step._is_structural ? "" : sid)}</span>
+      <span class="ts-dev dev">${escapeHtml(textDev || (step._is_structural ? structLabel : (step.why_dev || "")))}</span>
+      <span class="ts-form">${formHtml}</span>
     </div>
     ${extraLine}
   `;
@@ -142,14 +173,14 @@ function renderSutraDetail(step) {
   const panel = document.getElementById("sutra-detail");
 
   if (step._is_structural) {
+    const structLabel = step._structural_dev || step.sutra_id || "";
     panel.innerHTML = `
-      <h2>संरचना-चरणम्</h2>
-      <div class="kv"><strong>संख्या</strong> <span class="mono">${escapeHtml(step.sutra_id)}</span></div>
-      <div class="kv"><strong>प्रकारः</strong> ${escapeHtml(step.sutra_type || "")}</div>
+      <h2 class="dev">${escapeHtml(structLabel)}</h2>
+      <div class="kv"><strong>प्रकारः</strong> <span class="dev">संरचना-चरणम्</span></div>
       <div class="why dev">${escapeHtml(step.why_dev || "")}</div>
       <div class="muted" style="font-size:11px;margin-top:12px;">
-        संरचना-चरणाः व्युत्पत्ति-सहायकाः सन्ति — पद-सन्धानम्, अवस्था-परिवर्तनम्,
-        स्थिर-बिन्दु-अभिसरणम् — एते सूत्राणि न सन्ति।
+        संरचना-चरणाः व्युत्पत्ति-सहायकाः सन्ति — पद-मेलनम्, अवस्था-परिवर्तनम् —
+        एते सूत्राणि न सन्ति।
       </div>
     `;
     return;
@@ -202,9 +233,13 @@ function renderSutraDetail(step) {
                    </div>` : ""}
 
     <div class="kv"><strong>पूर्वरूपम्</strong>
-      <span class="mono">${escapeHtml(step.form_before || "")}</span></div>
+      <span class="dev">${escapeHtml(step.form_before_dev ?? step.form_before ?? "")}</span>
+      <span class="muted mono" style="font-size:10px;margin-left:6px;">${escapeHtml(step.form_before || "")}</span>
+    </div>
     <div class="kv"><strong>उत्तररूपम्</strong>
-      <span class="mono">${escapeHtml(step.form_after  || "")}</span></div>
+      <span class="dev">${escapeHtml(step.form_after_dev ?? step.form_after ?? "")}</span>
+      <span class="muted mono" style="font-size:10px;margin-left:6px;">${escapeHtml(step.form_after || "")}</span>
+    </div>
 
     ${anuv ? `<div class="kv"><strong>अनुवृत्तिः</strong>
                 <span class="mono">${escapeHtml(anuv)}</span></div>` : ""}

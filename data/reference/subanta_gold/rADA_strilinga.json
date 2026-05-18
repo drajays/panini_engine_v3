@@ -1,0 +1,32 @@
+{
+  "_doc": "राधा (strī, ā-kāra-anta) — 24 cells. stem_slp1 uses Velthuis D for ध (not ASCII dh). सम्बोधन 8-1…8-3 per clip targets (राधे / राधे / राधाः).",
+  "stem_slp1": "rADA",
+  "stem_dev": "राधा",
+  "linga": "strīliṅga",
+  "cells": {
+    "1-1": { "form_slp1": "rADA", "form_dev": "राधा" },
+    "1-2": { "form_slp1": "rADe", "form_dev": "राधे" },
+    "1-3": { "form_slp1": "rADAH", "form_dev": "राधाः" },
+    "2-1": { "form_slp1": "rADAm", "form_dev": "राधाम्" },
+    "2-2": { "form_slp1": "rADe", "form_dev": "राधे" },
+    "2-3": { "form_slp1": "rADAH", "form_dev": "राधाः" },
+    "3-1": { "form_slp1": "rADayA", "form_dev": "राधया" },
+    "3-2": { "form_slp1": "rADAByAm", "form_dev": "राधाभ्याम्" },
+    "3-3": { "form_slp1": "rADABiH", "form_dev": "राधाभिः" },
+    "4-1": { "form_slp1": "rADAyE", "form_dev": "राधायै" },
+    "4-2": { "form_slp1": "rADAByAm", "form_dev": "राधाभ्याम्" },
+    "4-3": { "form_slp1": "rADAByaH", "form_dev": "राधाभ्यः" },
+    "5-1": { "form_slp1": "rADAyAH", "form_dev": "राधायाः" },
+    "5-2": { "form_slp1": "rADAByAm", "form_dev": "राधाभ्याम्" },
+    "5-3": { "form_slp1": "rADAByaH", "form_dev": "राधाभ्यः" },
+    "6-1": { "form_slp1": "rADAyAH", "form_dev": "राधायाः" },
+    "6-2": { "form_slp1": "rADayoH", "form_dev": "राधयोः" },
+    "6-3": { "form_slp1": "rADAnAm", "form_dev": "राधानाम्" },
+    "7-1": { "form_slp1": "rADAyAm", "form_dev": "राधायाम्" },
+    "7-2": { "form_slp1": "rADayoH", "form_dev": "राधयोः" },
+    "7-3": { "form_slp1": "rADAsu", "form_dev": "राधासु" },
+    "8-1": { "form_slp1": "rADe", "form_dev": "राधे" },
+    "8-2": { "form_slp1": "rADe", "form_dev": "राधे" },
+    "8-3": { "form_slp1": "rADAH", "form_dev": "राधाः" }
+  }
+}

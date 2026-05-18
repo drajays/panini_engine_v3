@@ -417,6 +417,16 @@ def P00_lashakvataddhite_it_lopa_chain(s: State) -> State:
     return s
 
 
+def P00_tin_tusma_audit_halantyam_lopa(s: State) -> State:
+    """
+    Common tiṅ ādeśa it-lopa slice:
+    1.3.4 (tusma audit) → 1.3.3 (halantyam) → 1.3.9 (tasya lopaḥ).
+    """
+    for sid in ("1.3.4", "1.3.3", "1.3.9"):
+        s = apply_rule(sid, s)
+    return s
+
+
 def P00_taddhita_Ni_locative_then_tatra_bhava_adhikara(s: State) -> State:
     """
     Shared opening for *tatra-bhava* recipes with internal *saptamī* *Ni*
@@ -1062,7 +1072,6 @@ def derive_salIyaH() -> State:
 # ── Subanta P01 (bootstrap through 1.4.7) — moved from ``pipelines/subanta`` ─
 
 def P01_subanta_bootstrap(s: State) -> State:
-    s = apply_rule("1.4.14", s)
     if s.meta.get("2_3_46_matra_prathama_eligible"):
         s = apply_rule("2.3.1", s)
         s = apply_rule("2.3.46", s)
@@ -1085,7 +1094,6 @@ def P01_subanta_bootstrap(s: State) -> State:
     s = apply_rule("1.1.27", s)
     s = apply_rule("1.1.29", s)  # *na bahuvrīhau* — strip **1.1.27** *sarvanama* on *bahuvrīhi* *aṅga*
     s = apply_rule("1.1.30", s)  # *tṛtīyā-samāse* — strip *sarvanāma* on *tṛtīyā*-*tatpuruṣa* *aṅga* (**1.1.30**)
-    s = apply_rule("1.4.7",  s)
     return s
 
 
@@ -1215,6 +1223,7 @@ __all__ = [
     "P13_subanta_iti_anga_sandhi_to_pada",
     "P14_tripadi_purvakhya_visarga",
     "P15_tripadi_shesha_sibilant_n",
+    "P00_tin_tusma_audit_halantyam_lopa",
     "build_malIya_initial_state",
     "build_salIya_initial_state",
     "derive_mAlIya",

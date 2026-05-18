@@ -39,7 +39,10 @@ def _matches(state: State) -> bool:
         return False
     if "sup" not in pr.tags:
         return False
-    if pr.meta.get("upadesha_slp1") != "Ne":
+    up = pr.meta.get("upadesha_slp1")
+    if up not in {"Ne", "Ni"}:
+        return False
+    if up == "Ni" and "strīliṅga" not in anga.tags:
         return False
     if pr.meta.get("yad_ap_7_3_113_done"):
         return False
@@ -63,10 +66,17 @@ def act(state: State) -> State:
         return state
     _ai, pj = hit
     pr = state.terms[pj]
-    pr.varnas = [mk("y"), mk("A"), mk("e")]
+    up = pr.meta.get("upadesha_slp1")
+    if up == "Ne":
+        pr.varnas = [mk("y"), mk("A"), mk("e")]
+        pr.meta["upadesha_slp1"] = "yAe"
+    elif up == "Ni":
+        pr.varnas = [mk("y"), mk("A"), mk("m")]
+        pr.meta["upadesha_slp1"] = "yAm"
+    else:
+        return state
     pr.meta["yad_ap_7_3_113_agama"] = "yAw"
-    pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1", "Ne")
-    pr.meta["upadesha_slp1"] = "yAe"
+    pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", up)
     pr.meta["yad_ap_7_3_113_done"] = True
     return state
 

@@ -1,0 +1,42 @@
+"""
+4.4.46  संज्ञायां ललाटकुक्कुट्यौ पश्यति  —  VIDHI
+
+Padaccheda: संज्ञायाम् ललाट-कुक्‍कुट्यौ पश्यति (क्रियापदम्)
+
+संज्ञायां ललाटकुक्कुट्यौ पश्यति (4.4.46)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "4_4_46_saMjYAyAM_46"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("4_4_46_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["taddhita_kind"]             = "4.4.46"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "4.4.46",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "saMjYAyAM lalAwakukkuwyO paSyati",
+    text_dev              = "संज्ञायां ललाटकुक्कुट्यौ पश्यति",
+    padaccheda_dev        = "संज्ञायाम् ललाट-कुक्‍कुट्यौ पश्यति (क्रियापदम्)",
+    why_dev               = "(सूत्रम् 4.4.46) संज्ञायां ललाटकुक्कुट्यौ पश्यति।",
+    anuvritti_from        = ('4.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

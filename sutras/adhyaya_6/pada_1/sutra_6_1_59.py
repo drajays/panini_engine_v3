@@ -1,0 +1,42 @@
+"""
+6.1.59  अनुदात्तस्य चर्दुपधस्यान्यतरस्याम्  —  VIDHI
+
+Padaccheda: अनुदात्तस्य च ऋत्-उपधस्य अन्यतरस्याम्
+
+अनुदात्तस्य चर्दुपधस्यान्यतरस्याम् (6.1.59)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "6_1_59_anudAttasy_59"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("6_1_59_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "6.1.59"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "6.1.59",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "anudAttasya cardupaDasyAnyatarasyAm",
+    text_dev              = "अनुदात्तस्य चर्दुपधस्यान्यतरस्याम्",
+    padaccheda_dev        = "अनुदात्तस्य च ऋत्-उपधस्य अन्यतरस्याम्",
+    why_dev               = "(सूत्रम् 6.1.59) अनुदात्तस्य चर्दुपधस्यान्यतरस्याम्।",
+    anuvritti_from        = ('6.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

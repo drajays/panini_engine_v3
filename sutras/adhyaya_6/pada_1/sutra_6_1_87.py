@@ -42,6 +42,26 @@ def _find_pair(state: State):
     for k in range(len(flat) - 1):
         (ti1, vi1, v1) = flat[k]
         (ti2, vi2, v2) = flat[k + 1]
+        # *strī* · *ā*-banta + dual ``O`` / vocative dual ``O`` (*sup*): आ + औ → ``e``.
+        if (
+            v1.slp1 == "A"
+            and v2.slp1 == "O"
+            and ti1 != ti2
+            and "strīliṅga" in state.terms[ti1].tags
+            and "sup" in state.terms[ti2].tags
+            and not state.terms[ti2].meta.get("6_1_87_strI_AO_done")
+        ):
+            return (ti1, vi1, ti2, vi2, "e", "strI_AO")
+        if (
+            v1.slp1 == "A"
+            and v2.slp1 == "o"
+            and ti1 != ti2
+            and "strīliṅga" in state.terms[ti1].tags
+            and "sup" in state.terms[ti2].tags
+            and state.terms[ti2].meta.get("upadesha_slp1") == "os"
+            and not state.terms[ti1].meta.get("6_1_87_strI_os_done")
+        ):
+            return (ti1, vi1, ti2, vi2, "", "strI_os")
         pair = (v1.slp1, v2.slp1)
         g = guna_map.get(pair)
         # ``1.1.50`` may install a minimal ``sthanantara_guna`` map (hrasva ``a`` only).
@@ -66,11 +86,22 @@ def act(state: State) -> State:
     if hit is None:
         return state
     ti1, vi1, ti2, vi2, g, pending = hit
+    if pending == "strI_os":
+        anga = state.terms[ti1]
+        pr = state.terms[ti2]
+        if anga.varnas and anga.varnas[-1].slp1 == "A":
+            anga.varnas.pop()
+        pr.varnas.insert(0, mk("y"))
+        pr.varnas.insert(0, mk("a"))
+        anga.meta["6_1_87_strI_os_done"] = True
+        return state
     # Replace the FIRST varṇa with the guṇa and DELETE the second.
     state.terms[ti1].varnas[vi1] = mk(g)
     # Delete the second varṇa.
     del state.terms[ti2].varnas[vi2]
-    if pending is not None:
+    if pending == "strI_AO":
+        state.terms[ti2].meta["6_1_87_strI_AO_done"] = True
+    elif pending is not None:
         t = state.terms[ti1]
         t.meta["urN_rapara_pending"] = pending
         # Insert r/l immediately after the substitution site (not at term end).

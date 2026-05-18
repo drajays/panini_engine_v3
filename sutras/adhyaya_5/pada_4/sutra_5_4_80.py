@@ -1,0 +1,42 @@
+"""
+5.4.80  श्वसो वसीयःश्रेयसः  —  VIDHI
+
+Padaccheda: श्वसः वसीयः-श्रेयसः
+
+श्वसो वसीयःश्रेयसः (5.4.80)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "5_4_80_Svaso_80"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("5_4_80_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["taddhita_kind"]             = "5.4.80"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "5.4.80",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "Svaso vasIyaHSreyasaH",
+    text_dev              = "श्वसो वसीयःश्रेयसः",
+    padaccheda_dev        = "श्वसः वसीयः-श्रेयसः",
+    why_dev               = "(सूत्रम् 5.4.80) श्वसो वसीयःश्रेयसः।",
+    anuvritti_from        = ('5.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

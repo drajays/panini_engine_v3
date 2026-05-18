@@ -1,0 +1,42 @@
+"""
+6.1.33  अभ्यस्तस्य च  —  VIDHI
+
+Padaccheda: अभ्यस्तस्य च
+
+अभ्यस्तस्य च (6.1.33)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "6_1_33_aByastasya_33"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("6_1_33_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "6.1.33"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "6.1.33",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "aByastasya ca",
+    text_dev              = "अभ्यस्तस्य च",
+    padaccheda_dev        = "अभ्यस्तस्य च",
+    why_dev               = "(सूत्रम् 6.1.33) अभ्यस्तस्य च।",
+    anuvritti_from        = ('6.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

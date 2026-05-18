@@ -1,0 +1,42 @@
+"""
+7.3.75  ष्ठिवुक्लम्याचमां शिति  —  VIDHI
+
+Padaccheda: ष्ठिवु-क्लमु-चमाम् शिति
+
+ष्ठिवुक्लम्याचमां शिति (7.3.75)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "7_3_75_zWivuklamy_75"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("7_3_75_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "7.3.75"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "7.3.75",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "zWivuklamyAcamAM Siti",
+    text_dev              = "ष्ठिवुक्लम्याचमां शिति",
+    padaccheda_dev        = "ष्ठिवु-क्लमु-चमाम् शिति",
+    why_dev               = "(सूत्रम् 7.3.75) ष्ठिवुक्लम्याचमां शिति।",
+    anuvritti_from        = ('7.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

@@ -1,0 +1,80 @@
+{
+  "_doc": "Lakāra metadata — name, meaning, and key sūtras.",
+  "laT": {
+    "dev": "लट्",
+    "en": "present tense",
+    "sa": "वर्तमानकाल",
+    "sutra": "3.2.123",
+    "kala": "vartamana"
+  },
+  "liT": {
+    "dev": "लिट्",
+    "en": "perfect (past remote)",
+    "sa": "परोक्ष-भूतकाल",
+    "sutra": "3.2.115",
+    "kala": "paroksha"
+  },
+  "luT": {
+    "dev": "लुट्",
+    "en": "1st future (periphrastic)",
+    "sa": "अनद्यतन-भविष्य",
+    "sutra": "3.3.15",
+    "kala": "anadyatana_bhavisya"
+  },
+  "lRT": {
+    "dev": "लृट्",
+    "en": "2nd future (simple)",
+    "sa": "भविष्यत्काल",
+    "sutra": "3.3.13",
+    "kala": "bhavisya"
+  },
+  "loT": {
+    "dev": "लोट्",
+    "en": "imperative",
+    "sa": "आज्ञार्थ",
+    "sutra": "3.3.162",
+    "kala": "ajnaartha"
+  },
+  "laN": {
+    "dev": "लङ्",
+    "en": "imperfect (past today)",
+    "sa": "अनद्यतन-भूत",
+    "sutra": "3.2.111",
+    "kala": "anadyatana_bhuta"
+  },
+  "liN": {
+    "dev": "लिङ्",
+    "en": "optative (vidhiliṅ)",
+    "sa": "विधिलिङ्",
+    "sutra": "3.3.161",
+    "kala": "vidhyartha"
+  },
+  "AsIrliN": {
+    "dev": "लिङ् (आशीः)",
+    "en": "benedictive (āśīrliṅ)",
+    "sa": "आशीर्लिङ्",
+    "sutra": "3.3.173",
+    "kala": "ashih"
+  },
+  "luN": {
+    "dev": "लुङ्",
+    "en": "aorist",
+    "sa": "भूतकाल",
+    "sutra": "3.2.110",
+    "kala": "bhuta"
+  },
+  "lfN": {
+    "dev": "लृङ्",
+    "en": "conditional",
+    "sa": "क्रियातिपत्ति",
+    "sutra": "3.3.139",
+    "kala": "kriyatipatti"
+  },
+  "leT": {
+    "dev": "लेट्",
+    "en": "Vedic subjunctive",
+    "sa": "छान्दस",
+    "sutra": "3.4.6",
+    "kala": "chandasa"
+  }
+}

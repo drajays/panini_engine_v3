@@ -1,39 +1,25 @@
 {
   "hub_rules": [
     {
-      "fire_count": 246,
-      "hub_type": "sink",
-      "in_degree": 16,
-      "out_degree": 8,
+      "fire_count": 282,
+      "hub_type": "broadcast",
+      "in_degree": 17,
+      "out_degree": 30,
       "sutra_id": "1.3.9"
     },
     {
-      "fire_count": 117,
-      "hub_type": "broadcast",
-      "in_degree": 5,
-      "out_degree": 14,
-      "sutra_id": "6.4.129"
-    },
-    {
-      "fire_count": 121,
+      "fire_count": 102,
       "hub_type": "sink",
-      "in_degree": 14,
-      "out_degree": 3,
-      "sutra_id": "8.2.1"
-    },
-    {
-      "fire_count": 121,
-      "hub_type": "broadcast",
-      "in_degree": 2,
-      "out_degree": 15,
-      "sutra_id": "6.4.1"
-    },
-    {
-      "fire_count": 88,
-      "hub_type": "sink",
-      "in_degree": 11,
+      "in_degree": 13,
       "out_degree": 5,
       "sutra_id": "1.4.17"
+    },
+    {
+      "fire_count": 46,
+      "hub_type": "broadcast",
+      "in_degree": 2,
+      "out_degree": 11,
+      "sutra_id": "1.2.41"
     }
   ]
 }

@@ -1,0 +1,42 @@
+"""
+7.3.35  जनिवध्योश्च  —  VIDHI
+
+Padaccheda: जनि-वध्योः च
+
+जनिवध्योश्च (7.3.35)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "7_3_35_janivaDyoS_35"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("7_3_35_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["anga_kind"]             = "7.3.35"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "7.3.35",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "janivaDyoSca",
+    text_dev              = "जनिवध्योश्च",
+    padaccheda_dev        = "जनि-वध्योः च",
+    why_dev               = "(सूत्रम् 7.3.35) जनिवध्योश्च।",
+    anuvritti_from        = ('7.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

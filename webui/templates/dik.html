@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block title %}दिक्-समासः — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block content %}
+<div class="panel">
+  <h1>दिक्-समास-व्युत्पत्तिः <span class="muted" style="font-size:14px;font-weight:400;">(Dik-Compound Glassbox)</span></h1>
+  <p class="muted" style="font-size:13px;margin:0 0 12px;">
+    उत्तरापूर्वा / दक्षिणापूर्वा — दिक्-नाम-समास, चतुर्थी-एकवचन।
+    २.२.२६ दिग्नामान्यन्तराले इत्यादि-सूत्रैः व्युत्पाद्यते।
+    काच-पेटी व्याख्या: संस्कृत-सूत्र-क्रम + हिन्दी-विवरण।
+  </p>
+
+  <div class="preset-strip">
+    <span class="preset-label">उदाहरणम्:</span>
+    <button class="preset-btn preset-featured active" data-preset="uttarA_pUrvA">
+      <span class="dev preset-dev">उत्तरापूर्वा</span>
+      <span class="preset-class">uttarā + pūrvā</span>
+    </button>
+    <button class="preset-btn" data-preset="dakziRA_pUrvA">
+      <span class="dev preset-dev">दक्षिणापूर्वा</span>
+      <span class="preset-class">dakṣiṇā + pūrvā</span>
+    </button>
+  </div>
+  <div style="margin-top:10px;">
+    <button id="load-btn">व्याख्यां दर्शयतु</button>
+    <span id="load-status" class="muted" style="margin-left:12px;font-size:12px;"></span>
+  </div>
+</div>
+
+<!-- Glassbox rows panel -->
+<div class="panel" id="glass-panel" style="display:none;">
+  <h2 id="glass-title" class="dev" style="margin-top:0;"></h2>
+
+  <table class="sc-sutra-table" id="glass-table">
+    <thead>
+      <tr>
+        <th style="width:40px;">क्र.</th>
+        <th>संस्कृत-सूत्र-क्रमः</th>
+        <th>SLP1-अनुक्रमः</th>
+        <th>हिन्दी-विवरणम्</th>
+      </tr>
+    </thead>
+    <tbody id="glass-body">
+    </tbody>
+  </table>
+</div>
+
+<!-- Error panel -->
+<div class="panel" id="error-panel" style="display:none;">
+  <div class="pl-error-msg" id="error-msg"></div>
+</div>
+
+<div class="panel" style="font-size:13px;color:var(--ink-dim);">
+  <h2 style="margin-top:0;">टिप्पणी</h2>
+  <ul style="margin:0;padding-left:20px;line-height:1.8;">
+    <li>२.१.३ समासाधिकार; २.४.७१ अन्तःसुप्-लोपः।</li>
+    <li>२.२.२६ दिग्नामान्यन्तराले — दिक्-संज्ञक-शब्दः पूर्वपद-पुंवद्भावः।</li>
+    <li>१.२.४८ ह्रस्वः — उत्तरपद-ह्रस्वः।</li>
+    <li>७.३.११३ / ७.३.११४ — चतुर्थी-ङे-पर: याड् / स्याट् (दो मार्गाः)।</li>
+    <li>६.१.८८ — वृद्धि-सन्धिः → ऐ।</li>
+  </ul>
+</div>
+{% endblock %}
+
+{% block body_extra %}
+<script>
+let _activePreset = 'uttarA_pUrvA';
+
+document.querySelectorAll('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    _activePreset = btn.dataset.preset;
+  });
+});
+
+document.getElementById('load-btn').addEventListener('click', loadGlass);
+
+// Auto-load on page load
+document.addEventListener('DOMContentLoaded', loadGlass);
+
+function escapeHtml(s) {
+  if (s === null || s === undefined) return '';
+  return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+}
+
+async function loadGlass() {
+  const status = document.getElementById('load-status');
+  status.innerHTML = '<span class="loading"></span> लादयति…';
+  document.getElementById('glass-panel').style.display = 'none';
+  document.getElementById('error-panel').style.display = 'none';
+
+  try {
+    const r = await fetch('/api/dik/glass', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ preset: _activePreset }),
+    });
+    const data = await r.json();
+
+    if (data.error) {
+      document.getElementById('error-panel').style.display = '';
+      document.getElementById('error-msg').textContent = data.error;
+      status.textContent = 'दोषः।';
+      return;
+    }
+
+    document.getElementById('glass-panel').style.display = '';
+    document.getElementById('glass-title').textContent = data.title || '';
+
+    const tbody = document.getElementById('glass-body');
+    tbody.innerHTML = '';
+    (data.rows || []).forEach(row => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="font-weight:700;color:var(--accent);font-family:var(--mono);">${escapeHtml(row.label)}</td>
+        <td style="font-family:var(--dev);font-size:13px;line-height:1.6;">${escapeHtml(row.sa)}</td>
+        <td style="font-family:var(--mono);font-size:11px;color:var(--ink-faint);word-break:break-all;">${escapeHtml(row.slp1)}</td>
+        <td style="font-size:12px;color:var(--ink-dim);line-height:1.6;">${escapeHtml(row.hindi)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+    status.textContent = 'सम्पन्नम्।';
+  } catch (e) {
+    document.getElementById('error-panel').style.display = '';
+    document.getElementById('error-msg').textContent = 'दोषः: ' + e.message;
+    status.textContent = 'दोषः।';
+  }
+}
+</script>
+{% endblock %}

@@ -32,7 +32,9 @@ def _find_target(state: State):
     if not anga.varnas:
         return None
     last = anga.varnas[-1]
-    if last.slp1 != "a":
+    if last.slp1 not in {"a", "A"}:
+        return None
+    if last.slp1 == "A" and "strīliṅga" not in anga.tags:
         return None
 
     return len(state.terms) - 1

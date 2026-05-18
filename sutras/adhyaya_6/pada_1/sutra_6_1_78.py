@@ -18,6 +18,10 @@ from engine.state import State
 from phonology     import mk
 from phonology.pratyahara import AC
 
+# AC pratyāhāra in the engine stores only short vowels (savarṇa via savarna.py).
+# 6.1.78 fires before ANY ac — both short and long — so extend the check set.
+_AC_ALL = AC | frozenset({"A", "I", "U", "F", "X"})
+
 from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
 
 
@@ -54,7 +58,7 @@ def _find_eco_aci_boundary(state: State):
             continue
         last = anga.varnas[-1].slp1
         first = nxt.varnas[0].slp1
-        if last in _ECO_SPLIT and first in AC:
+        if last in _ECO_SPLIT and first in _AC_ALL:
             return i
         # **P036** (*nināya*): *eco* before the augment vowel of ``ṇal`` (**N**+**a**+…),
         #   i.e. *aṅga*-final **e** + the **a** of ``Nal`` (second *varṇa*), recipe-gated.

@@ -28,11 +28,18 @@ from engine.state  import State
 from phonology     import mk
 
 
-# Pratyaya upadeśa (as set by 4.1.2) → replacement SLP1 sequence.
-_REPLACEMENTS = {
+# Pratyaya upadeśa (as set by 4.1.2) → replacement SLP1 sequence for *ato* *aṅga*.
+_REPLACEMENTS_ATO = {
     "wA"   : "ina",   # ṭā   → ina
     "Nasi" : "At",    # ṅasi → āt
     "Nas"  : "sya",   # ṅas  → sya
+}
+
+# *ā*-banta *strī* (*Ap*): distinct *ādeśa* shapes (instrumental ``yA`` …).
+_REPLACEMENTS_STRĪ_AP = {
+    "wA"   : "yA",
+    "Nasi" : "yAH",
+    "Nas"  : "yAH",
 }
 
 
@@ -52,7 +59,7 @@ def _find_target(state: State):
     if "sup" not in pratyaya.tags:
         return None
     upa = pratyaya.meta.get("upadesha_slp1")
-    if upa not in _REPLACEMENTS:
+    if upa not in set(_REPLACEMENTS_ATO) | set(_REPLACEMENTS_STRĪ_AP):
         return None
 
     # Idempotency: once we've replaced, the varṇas no longer look like
@@ -69,10 +76,20 @@ def _find_target(state: State):
     # Careful: after it-lopa (1.3.9), the aṅga's final could be the
     # inherent-a of its last consonant (Varna slp1='a', dev='').
     last = anga.varnas[-1]
-    if last.slp1 != "a":
+    # ``ato`` *aṅga* (``a``-final) **or** *ā*-banta *strī* (``A`` + ``strīliṅga`` tag).
+    if last.slp1 not in {"a", "A"}:
+        return None
+    if last.slp1 == "A" and "strīliṅga" not in anga.tags:
         return None
 
-    return len(state.terms) - 1, _REPLACEMENTS[upa]
+    if last.slp1 == "a":
+        repl = _REPLACEMENTS_ATO.get(upa)
+    else:
+        repl = _REPLACEMENTS_STRĪ_AP.get(upa)
+    if not repl:
+        return None
+
+    return len(state.terms) - 1, repl
 
 
 def cond(state: State) -> bool:
@@ -87,11 +104,20 @@ def act(state: State) -> State:
         return state
     idx, replacement_slp1 = hit
     pratyaya = state.terms[idx]
+    anga = state.terms[idx - 1]
     pratyaya.varnas = [mk(ch) for ch in replacement_slp1]
     pratyaya.meta["ato_replacement_done"] = True
     # Update upadesha_slp1 for downstream rules that key off it.
     pratyaya.meta["upadesha_slp1_original"] = pratyaya.meta.get("upadesha_slp1")
     pratyaya.meta["upadesha_slp1"] = replacement_slp1
+    # *ā*-banta *strī* + ``yA`` (तृतीयैकवचनम्): अङ्गान्त्यस्य ``A`` → ``a`` → **राधया**.
+    if (
+        replacement_slp1 == "yA"
+        and "strīliṅga" in anga.tags
+        and anga.varnas
+        and anga.varnas[-1].slp1 == "A"
+    ):
+        anga.varnas[-1] = mk("a")
     return state
 
 

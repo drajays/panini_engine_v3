@@ -1,0 +1,42 @@
+"""
+4.4.122  रेवतीजगतीहविष्याभ्यः प्रशस्ये  —  VIDHI
+
+Padaccheda: रेवती-जगती-हविष्याभ्यः प्रशस्ये
+
+रेवतीजगतीहविष्याभ्यः प्रशस्ये (4.4.122)
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "4_4_122_revatIjaga_122"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("4_4_122_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["taddhita_kind"]             = "4.4.122"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "4.4.122",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "revatIjagatIhavizyAByaH praSasye",
+    text_dev              = "रेवतीजगतीहविष्याभ्यः प्रशस्ये",
+    padaccheda_dev        = "रेवती-जगती-हविष्याभ्यः प्रशस्ये",
+    why_dev               = "(सूत्रम् 4.4.122) रेवतीजगतीहविष्याभ्यः प्रशस्ये।",
+    anuvritti_from        = ('4.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

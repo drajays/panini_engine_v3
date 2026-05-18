@@ -1,0 +1,42 @@
+"""
+3.3.118  पुंसि संज्ञायां घः प्रायेण  —  VIDHI
+
+Padaccheda: पुंसि संज्ञायाम् घः प्रायेण
+
+krt-suffix rule: पुंसि संज्ञायां घः प्रायेण
+"""
+from __future__ import annotations
+
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+
+_GATE_KEY: str = "3_3_118_puMsi_118"
+
+
+def cond(state: State) -> bool:
+    if state.paribhasha_gates.get(_GATE_KEY) is True:
+        return False
+    return state.meta.get("3_3_118_arm") is True
+
+
+def act(state: State) -> State:
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY]  = True
+    state.meta["krt_kind"] = "3.3.118"
+    return state
+
+
+SUTRA = SutraRecord(
+    sutra_id              = "3.3.118",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "puMsi saMjYAyAM GaH prAyeRa",
+    text_dev              = "पुंसि संज्ञायां घः प्रायेण",
+    padaccheda_dev        = "पुंसि संज्ञायाम् घः प्रायेण",
+    why_dev               = "धातोः प्रत्ययः (३.3.118)।",
+    anuvritti_from        = ('3.1.1',),
+    cond                  = cond,
+    act                   = act,
+)
+
+register_sutra(SUTRA)

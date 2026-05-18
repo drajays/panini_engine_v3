@@ -1,0 +1,48 @@
+{
+  "_doc": "Gold laṭ paradigm for bhū (BU) — all 9 parasmaipada cells (3×3)",
+  "id": "BU_laT_parasmai_gold",
+  "dhatu_dev": "भू",
+  "dhatu_slp1": "BU",
+  "dhatupatha_id": "BvAdi_01_0001",
+  "lakara": "laT",
+  "prayoga": "kartari",
+  "pada": "parasmai",
+  "cells": {
+    "3-1": {
+      "surface_dev": "भवति",
+      "surface_slp1": "Bavati"
+    },
+    "3-2": {
+      "surface_dev": "भवतः",
+      "surface_slp1": "BavataH"
+    },
+    "3-3": {
+      "surface_dev": "भवन्ति",
+      "surface_slp1": "Bavanti"
+    },
+    "2-1": {
+      "surface_dev": "भवसि",
+      "surface_slp1": "Bavasi"
+    },
+    "2-2": {
+      "surface_dev": "भवथः",
+      "surface_slp1": "BavaTaH"
+    },
+    "2-3": {
+      "surface_dev": "भवथ",
+      "surface_slp1": "BavaTa"
+    },
+    "1-1": {
+      "surface_dev": "भवामि",
+      "surface_slp1": "BavAmi"
+    },
+    "1-2": {
+      "surface_dev": "भवावः",
+      "surface_slp1": "BavAvaH"
+    },
+    "1-3": {
+      "surface_dev": "भवामः",
+      "surface_slp1": "BavAmaH"
+    }
+  }
+}
