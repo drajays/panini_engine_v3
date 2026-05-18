@@ -125,23 +125,31 @@ _LAKARA_KEY: dict[str, str] = {
 
 @lru_cache(maxsize=1)
 def _upadesha_to_id_map() -> dict[str, str]:
-    """Reverse map: upadesha_slp1 → dhātupātha canonical id."""
+    """Reverse map: upadesha_slp1 → dhātupātha canonical id.
+
+    Indexed by:
+      1. Exact upadesha_slp1 (e.g. 'BU', 'paci~', 'paWa~')
+      2. Trailing-~ stripped form (e.g. 'paci' from 'paci~')
+      3. raw_dhatu_after_it_lopa_slp1 (e.g. 'pac', 'paW', 'nI') — lets
+         callers use the clean post-IT-lopa form as the lookup key.
+    """
     env = _envelope(_payload())
     m: dict[str, str] = {}
     for e in env["entries"]:
-        up = e.get("upadesha_slp1", "")
+        up  = e.get("upadesha_slp1", "")
+        raw = e.get("raw_dhatu_after_it_lopa_slp1", "")
         eid = e.get("id", "")
-        if up and eid:
-            # Map exact upadesha and the alias 'BvAdi_BU' style
+        if not eid:
+            continue
+        if up:
             m[up] = eid
-            # Also map clean (no trailing ~) version
             clean = up.rstrip("~")
             if clean and clean not in m:
                 m[clean] = eid
-    # Also load explicit aliases
-    for alias, target in env.get("id_aliases", {}).items():
-        # alias like 'BvAdi_BU' → already covered by id lookup
-        pass
+        # raw post-IT-lopa form (e.g. 'paW' for 'paWa~') — lower priority,
+        # do not override upadesha-key mappings already set.
+        if raw and raw not in m:
+            m[raw] = eid
     return m
 
 
