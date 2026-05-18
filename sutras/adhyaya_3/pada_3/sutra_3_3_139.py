@@ -1,11 +1,10 @@
 """
 3.3.139  लिङ्निमित्ते लृङ् क्रियातिपत्तौ  —  VIDHI (narrow: *lṛṅ* placeholder)
 
-Teaching **corrected_prakriyas_v2** **P019** (*avartsyat*): attach the *lṛṅ*
-lakāra placeholder **``lRG``** to the *dhātu* tape (counterfactual / *kriyātipatti*).
-
-Engine:
-  • ``state.meta['corrected_v2_P019_3_3_139_lRG_arm']`` (cleared in ``act``).
+Two operational paths:
+  1. ``corrected_v2_P019_3_3_139_lRG_arm``: P019 path for *vṛt* dhātu only.
+  2. ``3_3_139_lRG_arm``: general glass-box path — attach *lṛṅ* for any dhātu
+     (counterfactual / *kriyātipatti* mood, e.g. bhū → abhavaṣyat).
 """
 from __future__ import annotations
 
@@ -16,10 +15,14 @@ from phonology.varna import parse_slp1_upadesha_sequence
 AT_AGAMA_CONTEXT_TAG = "aT_agama_context"
 
 
-def _site(state: State) -> bool:
+def _already_has_lRG(state: State) -> bool:
+    return any((t.meta.get("upadesha_slp1") or "").strip() == "lRG" for t in state.terms)
+
+
+def _site_p019(state: State) -> bool:
     if not state.meta.get("corrected_v2_P019_3_3_139_lRG_arm"):
         return False
-    if any((t.meta.get("upadesha_slp1") or "").strip() == "lRG" for t in state.terms):
+    if _already_has_lRG(state):
         return False
     for t in state.terms:
         if "dhatu" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() == "vft":
@@ -27,13 +30,15 @@ def _site(state: State) -> bool:
     return False
 
 
-def cond(state: State) -> bool:
-    return _site(state)
+def _site_general(state: State) -> bool:
+    if not state.meta.get("3_3_139_lRG_arm"):
+        return False
+    if _already_has_lRG(state):
+        return False
+    return any("dhatu" in t.tags for t in state.terms)
 
 
-def act(state: State) -> State:
-    if not _site(state):
-        return state
+def _attach_lRG(state: State) -> State:
     for term in state.terms:
         if "dhatu" in term.tags:
             term.tags.add(AT_AGAMA_CONTEXT_TAG)
@@ -46,7 +51,22 @@ def act(state: State) -> State:
     if lit.varnas and lit.varnas[-1].slp1 == "G":
         del lit.varnas[-1]
     state.terms.append(lit)
-    state.meta.pop("corrected_v2_P019_3_3_139_lRG_arm", None)
+    return state
+
+
+def cond(state: State) -> bool:
+    return _site_p019(state) or _site_general(state)
+
+
+def act(state: State) -> State:
+    if _site_p019(state):
+        _attach_lRG(state)
+        state.meta.pop("corrected_v2_P019_3_3_139_lRG_arm", None)
+        return state
+    if _site_general(state):
+        _attach_lRG(state)
+        state.meta.pop("3_3_139_lRG_arm", None)
+        return state
     return state
 
 

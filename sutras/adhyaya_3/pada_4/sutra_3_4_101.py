@@ -30,7 +30,7 @@ _TASTHA_MAP: dict[tuple[str, str], str] = {
 
 def _find_target(state: State) -> tuple[int, str] | None:
     """Return (index, new_slp1) for the first matching tiṅ ādeśa in laṅ."""
-    if (state.meta.get("lakara") or "").strip() not in {"laG", "liG", "AsIrliG", "luG"}:
+    if (state.meta.get("lakara") or "").strip() not in {"laG", "liG", "AsIrliG", "luG", "lRG"}:
         return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":

@@ -1174,6 +1174,125 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     return state
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# LṚṄ (KRIYĀTIPATTI / CONDITIONAL) PIPELINE
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _derive_lRG(state: State, pada_key: str, purusha: int, vacana: int) -> State:
+    """
+    Derive a lṛṅ (conditional / kriyātipatti) form from the post-1.3.78 state.
+    Full 9-cell bhū lṛṅ parasmaipada pipeline.
+
+    Key features:
+      • 3.3.139 attaches lṛṅ (+ aT_agama_context on dhātu)
+      • 3.1.33 inserts sya vikaraṇa (s+y+a) after dhātu
+      • 3.4.114 marks sya as ārdhadhātuka
+      • 7.2.35 inserts iṭ before sya (val-initial ārdhadhātuka)
+      • 3.4.101 tiṅ substitutions (tas→tām, thas→tam, tha→ta, mi→am)
+      • 3.4.100 i-lopa (ti→t, si→s, jhi→jh)
+      • 7.1.3 jh→ant (3pl)
+      • 3.4.99 s-lopa (vas→va, mas→ma)
+      • 6.4.71 aṭ augment (lṛṅ is in luṅ/laṅ/lṛṅ group)
+      • 7.3.101 ato dīrgho yañi (1du/1pl: sya-a→ā before v/m)
+      • 7.3.84 guṇa (bhū → bho; NOT blocked — sya is ārdhadhātuka, not kit)
+      • 6.1.78 ecoyavāyāvaḥ (bho+i → bhav+i)
+      • 6.1.97 ato guṇe (3pl: sya+ant → sy+ant; 1sg: sya+am → sy+am)
+      • Tripāḍī: 8.2.39/8.4.56, 8.2.23, 8.2.66/8.3.15, 8.3.59
+
+    Expected forms (bhū):
+      3sg → अभविष्यत्   3du → अभविष्यताम्  3pl → अभविष्यन्
+      2sg → अभविष्यः    2du → अभविष्यतम्   2pl → अभविष्यत
+      1sg → अभविष्यम्   1du → अभविष्याव    1pl → अभविष्याम
+    """
+    state.meta["lakara"] = "lRG"
+
+    # ── Stage: 3.3.139 lṛṅ attachment ───────────────────────────────────────
+    state.meta["3_3_139_lRG_arm"] = True
+    state = apply_rule("3.3.139", state)
+    state = apply_rule("1.3.2", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    # ── Stage: 3.4.77 + 3.4.78 tiṅ ādeśa ────────────────────────────────────
+    state = apply_rule("3.4.77", state)
+    tin_adesha = _select_tin_adesha("lRT", pada_key, purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"]    = tin_adesha
+    state = apply_rule("3.4.78", state)
+    state = apply_rule("1.4.99", state)
+    state = P00_tin_tusma_audit_halantyam_lopa(state)
+
+    # ── Stage: 3.4.113 tiṅ is sārvadhatuka ──────────────────────────────────
+    state = apply_rule("3.4.113", state)
+
+    # ── Stage: 3.1.33 insert sya vikaraṇa after dhātu ───────────────────────
+    state.meta["3_1_33_lRG_sy_arm"] = True
+    state = apply_rule("3.1.33", state)
+    state.meta.pop("3_1_33_lRG_sy_arm", None)
+
+    # ── Stage: 3.4.114 mark sya as ārdhadhātuka ─────────────────────────────
+    state.meta["3_4_114_lRG_sy_arm"] = True
+    state = apply_rule("3.4.114", state)
+    state.meta.pop("3_4_114_lRG_sy_arm", None)
+
+    # ── Stage: 7.2.35 iṭ before sya (val-initial ārdhadhātuka) ─────────────
+    state = apply_rule("7.2.35", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    # ── Stage: 1.2.4 apit sārvadhatuka → kṅit ───────────────────────────────
+    state = apply_rule("1.2.4", state)
+
+    # ── Stage: tiṅ substitutions (laṅ-style) ────────────────────────────────
+    state = apply_rule("3.4.101", state)   # tas→tām, Tas→tam, Ta→ta, mi→am (apavāda)
+    state = apply_rule("3.4.100", state)   # ti→t, si→s, jhi→jh
+    state.meta["7_1_3_jho_anta_arm"] = True
+    state = apply_rule("7.1.3", state)     # jh→ant (3pl)
+    state.meta.pop("7_1_3_jho_anta_arm", None)
+    state.meta["3_4_99_lRG_s_lopa_arm"] = True
+    state = apply_rule("3.4.99", state)    # vas→va, mas→ma
+    state.meta.pop("3_4_99_lRG_s_lopa_arm", None)
+
+    # ── Stage: aṅgakārya ────────────────────────────────────────────────────
+    state = apply_rule("1.4.13", state)
+    state = apply_rule("1.1.5",  state)
+
+    # 6.4.71 aṭ augment (lṛṅ is in luṅ/laṅ/lṛṅ group; fires on aT_agama_context)
+    state = apply_rule("6.4.71", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    # 7.3.101 ato dīrgho yañi: sya-a → ā before yañ-initial tiṅ (v of va, m of ma)
+    state.meta["7_3_101_arm"] = True
+    state = apply_rule("7.3.101", state)
+
+    # 7.3.84 guṇa (bhū → bho; ārdhadhātuka sya triggers)
+    state = apply_rule("7.3.84", state)
+
+    # ── Stage: pada saṃjñā + sandhi ─────────────────────────────────────────
+    state = apply_rule("1.4.14", state)
+    state = apply_rule("6.1.78", state)    # bho+i(ṭ) → bhav+i
+    state.meta["6_1_97_tinganta_arm"] = True
+    state = apply_rule("6.1.97", state)    # a+a → a (3pl: sya+ant; 1sg: sya+am)
+
+    # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
+    _pada_merge(state)
+    state = apply_rule("8.2.1",  state)
+    state.meta["8_2_39_arm"] = True
+    state = apply_rule("8.2.39", state)    # t→d at pada-end (3sg)
+    state.meta["8_4_56_arm"] = True
+    state = apply_rule("8.4.56", state)    # d→t at avasāna (3sg)
+    state.meta["8_2_23_arm"] = True
+    state = apply_rule("8.2.23", state)    # saṃyogānta lopa: ant→an (3pl)
+    state = apply_rule("8.2.66", state)    # s→ru (2sg)
+    state = apply_rule("8.3.15", state)    # ru→ḥ (2sg)
+    state = apply_rule("8.3.59", state)    # s→ṣ after IK (sya→ṣya)
+    state.meta["8_4_68_arm"] = True
+    state = apply_rule("8.4.68", state)
+
+    return state
+
+
 def derive(
     dhatu_upadesha: str,
     lakara: str,
@@ -1286,6 +1405,13 @@ def derive(
         state = apply_rule("3.1.91", state)
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_lRT(state, pada_key, purusha, vacana)
+
+    # ── lṛṅ dispatch ─────────────────────────────────────────────────────────
+    if lakara in ("lRG",):
+        # Conditional (kriyātipatti) via sya vikaraṇa + aṭ augment
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        return _derive_lRG(state, pada_key, purusha, vacana)
 
     # ═══════════════════════════════════════════════════════════════════
     # STAGE 3 — LAKĀRA ATTACHMENT + TIṄ SELECTION (spec steps 2–9)
@@ -1721,3 +1847,43 @@ def derive_abhuva() -> State:
 def derive_abhuma() -> State:
     """Glass-box: भू + लुँङ् उत्तमपुरुष बहुवचन → अभूम."""
     return derive("BU", "luG", "kartari", 1, 3)
+
+# ─────────────────────────────────────────────────────────────────────────────
+# LṚṄ (CONDITIONAL) CONVENIENCE WRAPPERS
+# ─────────────────────────────────────────────────────────────────────────────
+
+def derive_abhavisyat() -> State:
+    """Glass-box: भू + लृँङ् प्रथमपुरुष एकवचन → अभविष्यत्."""
+    return derive("BU", "lRG", "kartari", 3, 1)
+
+def derive_abhavisyatam() -> State:
+    """Glass-box: भू + लृँङ् प्रथमपुरुष द्विवचन → अभविष्यताम्."""
+    return derive("BU", "lRG", "kartari", 3, 2)
+
+def derive_abhavisyan() -> State:
+    """Glass-box: भू + लृँङ् प्रथमपुरुष बहुवचन → अभविष्यन्."""
+    return derive("BU", "lRG", "kartari", 3, 3)
+
+def derive_abhavisyah() -> State:
+    """Glass-box: भू + लृँङ् मध्यमपुरुष एकवचन → अभविष्यः."""
+    return derive("BU", "lRG", "kartari", 2, 1)
+
+def derive_abhavisyatam2() -> State:
+    """Glass-box: भू + लृँङ् मध्यमपुरुष द्विवचन → अभविष्यतम्."""
+    return derive("BU", "lRG", "kartari", 2, 2)
+
+def derive_abhavisyata() -> State:
+    """Glass-box: भू + लृँङ् मध्यमपुरुष बहुवचन → अभविष्यत."""
+    return derive("BU", "lRG", "kartari", 2, 3)
+
+def derive_abhavisyam() -> State:
+    """Glass-box: भू + लृँङ् उत्तमपुरुष एकवचन → अभविष्यम्."""
+    return derive("BU", "lRG", "kartari", 1, 1)
+
+def derive_abhavisyav() -> State:
+    """Glass-box: भू + लृँङ् उत्तमपुरुष द्विवचन → अभविष्याव."""
+    return derive("BU", "lRG", "kartari", 1, 2)
+
+def derive_abhavisyam2() -> State:
+    """Glass-box: भू + लृँङ् उत्तमपुरुष बहुवचन → अभविष्याम."""
+    return derive("BU", "lRG", "kartari", 1, 3)

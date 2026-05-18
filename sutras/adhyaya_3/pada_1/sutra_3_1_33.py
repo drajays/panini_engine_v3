@@ -1,8 +1,13 @@
 """
 3.1.33  स्यतासी लृलुटोः  —  VIDHI (narrow)
 
-Glass-box: under ``3_1_33_tasi_lut_arm``, insert the *tāsi* *vikaraṇa* shape
-``t``-``A``-``s`` immediately before the *luṭ* *lac* placeholder ``Term``.
+Glass-box paths:
+  • ``3_1_33_lrt_sy_arm``: lṛṭ — insert *sya* vikaraṇa (s+y+a) after the
+    dhātu, before the tiṅ ādeśa.  The final 'a' is the inherent vowel of 'ya'
+    and is essential for 7.3.101 (ato dīrgho yañi) in uttama forms.
+  • ``3_1_33_tasi_lut_arm``: luṭ — insert *tāsi* vikaraṇa before luṭ placeholder.
+  • ``corrected_v2_P019_3_1_33_sy_arm``: luṅ P019 — insert *sy* (no 'a') before
+    existing 'ti' in the *vṛt* context.
 
 ``cond`` is mechanically blind to *puruṣa* / *vacana* (CONSTITUTION Art. 2).
 """
@@ -40,12 +45,40 @@ def _luT_index(state: State) -> int | None:
     return None
 
 
+def _lrt_dhatu_index(state: State) -> int | None:
+    """For lṛṭ: find dhātu position to insert *sya* immediately after it."""
+    if not state.meta.get("3_1_33_lrt_sy_arm"):
+        return None
+    if state.meta.get("3_1_33_lrt_sy_done"):
+        return None
+    for i, t in enumerate(state.terms):
+        if "dhatu" in t.tags:
+            return i + 1
+    return None
+
+
+def _lRG_dhatu_index(state: State) -> int | None:
+    """For lṛṅ: find dhātu position to insert *sya* immediately after it."""
+    if not state.meta.get("3_1_33_lRG_sy_arm"):
+        return None
+    if state.meta.get("3_1_33_lRG_sy_done"):
+        return None
+    for i, t in enumerate(state.terms):
+        if "dhatu" in t.tags:
+            return i + 1
+    return None
+
+
 def cond(state: State) -> bool:
     if (
         state.meta.get("corrected_v2_P019_3_1_33_sy_arm")
         and not state.meta.get("corrected_v2_P019_3_1_33_sy_done")
         and _p019_sy_insert_index(state) is not None
     ):
+        return True
+    if _lrt_dhatu_index(state) is not None:
+        return True
+    if _lRG_dhatu_index(state) is not None:
         return True
     if not state.meta.get("3_1_33_tasi_lut_arm"):
         return False
@@ -66,6 +99,31 @@ def act(state: State) -> State:
         state.terms.insert(j_sy, sy)
         state.meta["corrected_v2_P019_3_1_33_sy_done"] = True
         state.meta.pop("corrected_v2_P019_3_1_33_sy_arm", None)
+        return state
+    j_lrt = _lrt_dhatu_index(state)
+    if j_lrt is not None:
+        sya = Term(
+            kind="pratyaya",
+            varnas=[mk("s"), mk("y"), mk("a")],
+            tags={"pratyaya", "vikarana", "upadesha"},
+            meta={"upadesha_slp1": "sya", "lrt_vikarana": True},
+        )
+        state.terms.insert(j_lrt, sya)
+        state.meta["3_1_33_lrt_sy_done"] = True
+        state.meta.pop("3_1_33_lrt_sy_arm", None)
+        return state
+    j_lRG = _lRG_dhatu_index(state)
+    if j_lRG is not None:
+        # lṛṅ vikaraṇa 'sya': same as lṛṭ but tagged lRG_vikarana for 3.4.114.
+        sya = Term(
+            kind="pratyaya",
+            varnas=[mk("s"), mk("y"), mk("a")],
+            tags={"pratyaya", "vikarana", "upadesha"},
+            meta={"upadesha_slp1": "sya", "lRG_vikarana": True},
+        )
+        state.terms.insert(j_lRG, sya)
+        state.meta["3_1_33_lRG_sy_done"] = True
+        state.meta.pop("3_1_33_lRG_sy_arm", None)
         return state
     j = _luT_index(state)
     if j is None:

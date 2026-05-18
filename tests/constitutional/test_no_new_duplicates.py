@@ -25,7 +25,9 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 # Long-term goal: drive to 0 by extracting shared sequences into canonical_pipelines.
 # Update only when blocks are intentionally collapsed (should decrease) or new
 # pipeline files are deliberately added.
-MAX_DUPLICATE_GROUPS = 460
+# Updated: +2 from _derive_lit() in pipelines/tinanta.py (liṭ pipeline).
+# Updated: +1 from _derive_lRG() in pipelines/tinanta.py (lṛṅ conditional pipeline).
+MAX_DUPLICATE_GROUPS = 463
 
 
 @pytest.fixture(scope="module")

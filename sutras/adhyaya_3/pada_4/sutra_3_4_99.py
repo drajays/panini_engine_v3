@@ -23,7 +23,7 @@ _NGIT_S_FINAL: frozenset[str] = frozenset({"vas", "mas"})
 
 def _find_ngit_s_term(state: State):
     """Find a ṅit tiṅ ādeśa (vas/mas) ending in 's' for laṅ/liṅ s-lopa."""
-    if not (state.meta.get("3_4_99_laG_s_lopa_arm") or state.meta.get("3_4_99_liG_s_lopa_arm") or state.meta.get("3_4_99_luG_s_lopa_arm")):
+    if not (state.meta.get("3_4_99_laG_s_lopa_arm") or state.meta.get("3_4_99_liG_s_lopa_arm") or state.meta.get("3_4_99_luG_s_lopa_arm") or state.meta.get("3_4_99_lRG_s_lopa_arm")):
         return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
