@@ -8,8 +8,21 @@
     आकारान्त स्त्री (उदा. राधा): SLP1 <code>rADA</code> (ध = <code>D</code>) + स्त्रीलिङ्गम् — मैट्रिक्स-पृष्ठे पूर्वनिर्धारितं चिनुत।
   </p>
   <div class="form-row">
-    <label>प्रातिपदिकम् (SLP1)
-      <input id="stem" type="text" value="rAma">
+    <label>इनपुट-विधि
+      <select id="input-scheme" onchange="onSchemeChange()">
+        <option value="slp1" selected>SLP1</option>
+        <option value="iast">IAST</option>
+        <option value="hk">Harvard-Kyoto</option>
+        <option value="velthuis">Velthuis</option>
+        <option value="wx">WX</option>
+        <option value="itrans">ITRANS</option>
+        <option value="devanagari">देवनागरी</option>
+      </select>
+    </label>
+    <label id="stem-label">प्रातिपदिकम् (SLP1)
+      <input id="stem" type="text" value="rAma"
+             oninput="onStemInput()" autocomplete="off" autocorrect="off" spellcheck="false">
+      <span id="stem-preview" style="font-size:.75rem;color:var(--accent);margin-top:.15rem;font-family:serif;display:block;min-height:1.1em;"></span>
     </label>
     <label>विभक्तिः
       <select id="vibhakti">
@@ -64,6 +77,7 @@
 {% endblock %}
 
 {% block body_extra %}
+<script src="{{ url_for('static', filename='transliterate.js') }}"></script>
 <script src="{{ url_for('static', filename='trace.js') }}"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -71,8 +85,26 @@ document.addEventListener("DOMContentLoaded", () => {
   runDerive();
 });
 
+function getScheme() { return document.getElementById('input-scheme').value; }
+function getStemSLP1() { return Transliterate.toSLP1(document.getElementById('stem').value.trim(), getScheme()); }
+
+function onStemInput() {
+  const scheme = getScheme();
+  if (scheme === 'slp1') { document.getElementById('stem-preview').textContent = ''; return; }
+  const p = Transliterate.preview(document.getElementById('stem').value, scheme);
+  document.getElementById('stem-preview').textContent = p.dev ? `${p.dev}  [SLP1: ${p.slp1}]` : '';
+}
+
+function onSchemeChange() {
+  const scheme = getScheme();
+  document.getElementById('stem-label').childNodes[0].textContent =
+    `प्रातिपदिकम् (${Transliterate.SCHEME_LABELS[scheme]})`;
+  if (scheme === 'slp1') document.getElementById('stem-preview').textContent = '';
+  else onStemInput();
+}
+
 async function runDerive() {
-  const stem     = document.getElementById("stem").value;
+  const stem     = getStemSLP1();
   const vibhakti = parseInt(document.getElementById("vibhakti").value);
   const vacana   = parseInt(document.getElementById("vacana").value);
   const linga    = document.getElementById("linga").value;

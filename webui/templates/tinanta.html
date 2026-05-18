@@ -48,8 +48,21 @@
   </p>
 
   <div class="tin-form">
-    <label>धातु (SLP1 / देवनागरी)
-      <input id="dhatu" type="text" value="BU" placeholder="BU / pac / nI …">
+    <label>इनपुट-विधि
+      <select id="input-scheme" onchange="onSchemeChange()">
+        <option value="slp1" selected>SLP1</option>
+        <option value="iast">IAST</option>
+        <option value="hk">Harvard-Kyoto</option>
+        <option value="velthuis">Velthuis</option>
+        <option value="wx">WX</option>
+        <option value="itrans">ITRANS</option>
+        <option value="devanagari">देवनागरी</option>
+      </select>
+    </label>
+    <label id="dhatu-label">धातु
+      <input id="dhatu" type="text" value="BU" placeholder="BU / pac / nI …"
+             oninput="onDhatuInput()" autocomplete="off" autocorrect="off" spellcheck="false">
+      <span id="dhatu-preview" style="font-size:.75rem;color:var(--accent);margin-top:.15rem;font-family:var(--dev);display:block;min-height:1.1em;"></span>
     </label>
     <label>लकार
       <select id="lakara">
@@ -116,11 +129,48 @@
 {% endblock %}
 
 {% block body_extra %}
+<script src="{{ url_for('static', filename='transliterate.js') }}"></script>
 <script>
 let _trace = [];
 let _lastResult = null;
 
+// ── Transliteration helpers ────────────────────────────────────────────────
+function getScheme() {
+  return document.getElementById('input-scheme').value;
+}
+
+function getDhatuSLP1() {
+  const raw = document.getElementById('dhatu').value.trim();
+  return Transliterate.toSLP1(raw, getScheme());
+}
+
+function onDhatuInput() {
+  const scheme = getScheme();
+  if (scheme === 'slp1') {
+    document.getElementById('dhatu-preview').textContent = '';
+    return;
+  }
+  const p = Transliterate.preview(document.getElementById('dhatu').value, scheme);
+  const lbl = p.dev ? `${p.dev}  [SLP1: ${p.slp1}]` : '';
+  document.getElementById('dhatu-preview').textContent = lbl;
+}
+
+function onSchemeChange() {
+  const scheme = getScheme();
+  const lbl = document.getElementById('dhatu-label');
+  lbl.childNodes[0].textContent = `धातु (${Transliterate.SCHEME_LABELS[scheme]})`;
+  // If switching back to SLP1, clear preview
+  if (scheme === 'slp1') {
+    document.getElementById('dhatu-preview').textContent = '';
+  } else {
+    onDhatuInput();
+  }
+}
+
 function quickFill(dhatu, lakara, prayoga) {
+  // quickFill always provides SLP1 — switch scheme to SLP1 to show it correctly
+  document.getElementById('input-scheme').value = 'slp1';
+  onSchemeChange();
   document.getElementById('dhatu').value = dhatu;
   document.getElementById('lakara').value = lakara;
   document.getElementById('prayoga').value = prayoga;
@@ -129,7 +179,7 @@ function quickFill(dhatu, lakara, prayoga) {
 
 async function deriveTin() {
   const body = {
-    dhatu:   document.getElementById('dhatu').value.trim(),
+    dhatu:   getDhatuSLP1(),
     lakara:  document.getElementById('lakara').value,
     prayoga: document.getElementById('prayoga').value,
     purusha: +document.getElementById('purusha').value,
@@ -157,7 +207,7 @@ async function deriveTin() {
 
 async function derivePara() {
   const body = {
-    dhatu:   document.getElementById('dhatu').value.trim(),
+    dhatu:   getDhatuSLP1(),
     lakara:  document.getElementById('lakara').value,
     prayoga: document.getElementById('prayoga').value,
   };
@@ -218,6 +268,9 @@ function showParadigm(d) {
 }
 
 async function loadCell(dhatu, lakara, prayoga, purusha, vacana) {
+  // loadCell always receives SLP1 from the paradigm grid
+  document.getElementById('input-scheme').value = 'slp1';
+  onSchemeChange();
   document.getElementById('dhatu').value   = dhatu;
   document.getElementById('lakara').value  = lakara;
   document.getElementById('prayoga').value = prayoga;
