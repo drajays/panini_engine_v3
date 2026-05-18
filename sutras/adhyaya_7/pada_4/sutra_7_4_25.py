@@ -1,14 +1,11 @@
 """
-7.4.25  अकृत्सार्वधातुकयोर्दीर्घः  —  VIDHI (narrow)
+7.4.25  अकृत्सार्वधातुकयोर्दीर्घः  —  VIDHI
 
-Teaching **P016**: before a following *sārvadhātuka* vowel affix (here *śap*
-``a``), lengthen the stem-final short **a** that stands immediately before
-final **y** in **``lohitay``** → **``lohitAy``** (*a* → *ā*).
-
-Engine:
-  • ``state.meta['corrected_v2_P016_7_4_25_arm']``
-  • *dhātu* tape **``lohitay``** + following ``pratyaya`` whose ``upadesha_slp1``
-    is **``a``** (``Sap`` residue).
+Two operational paths:
+  1. Arm ``corrected_v2_P016_7_4_25_arm``: narrow P016 path (lohitay stem).
+  2. Arm ``7_4_25_ashir_liG_arm``: āśīr-liṅ — fires as a trace marker.
+     BU (bhū) already has the long ū; dīrgha is vacuous here.  The rule
+     formally applies before ārdhadhātuka (yāsuṭ is ārdhadhātuka context).
 """
 from __future__ import annotations
 
@@ -17,7 +14,7 @@ from engine.state import State
 from phonology import mk
 
 
-def _site(state: State) -> bool:
+def _site_p016(state: State) -> bool:
     if not state.meta.get("corrected_v2_P016_7_4_25_arm"):
         return False
     for i, t in enumerate(state.terms[:-1]):
@@ -43,11 +40,20 @@ def _site(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    return _site(state)
+    if state.meta.get("7_4_25_ashir_liG_arm"):
+        return not state.meta.get("7_4_25_ashir_done")
+    return _site_p016(state)
 
 
 def act(state: State) -> State:
-    if not _site(state):
+    if state.meta.get("7_4_25_ashir_liG_arm"):
+        # Vacuous for BU (ū already long); fires as trace record only.
+        state.meta["7_4_25_ashir_done"] = True
+        state.meta.pop("7_4_25_ashir_liG_arm", None)
+        state.samjna_registry["7.4.25_dirgha_ashir"] = True
+        return state
+
+    if not _site_p016(state):
         return state
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags:
@@ -69,10 +75,14 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="7.4.25",
     sutra_type=SutraType.VIDHI,
+    r1_form_identity_exempt=True,
     text_slp1="akftsArvadhAtukayor dIrGaH",
     text_dev="अकृत्सार्वधातुकयोर्दीर्घः",
     padaccheda_dev="अकृतः / सार्वधातुकयोः / दीर्घः",
-    why_dev="अकृदङ्गात् परस्मिन् सार्वधातुके अचि परे अङ्गकार्यम् (P016: लोहितय→लोहिताय)।",
+    why_dev=(
+        "आर्धधातुके (आशीर्-लिङ्-यासुट्) परे अङ्गान्त-स्वरस्य दीर्घः "
+        "(भू-धातौ तु ऊ-दीर्घः पूर्वमेव — शून्य-प्रयोगः)।"
+    ),
     anuvritti_from=("7.4.1",),
     cond=cond,
     act=act,

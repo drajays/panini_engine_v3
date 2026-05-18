@@ -1,9 +1,11 @@
 """
-3.4.100  इतश्च  —  VIDHI (narrow: delete final 'i' of tiṅ residue in luṅ)
+3.4.100  इतश्च  —  VIDHI (laṅ/luṅ/lṛṅ: drop final 'i' of tiṅ ādeśa)
 
-Engine: in luṅ aorist glass-box spines, after tiṅ ādeśa + it-lopa yields "ti",
-drop the vowel 'i' so the residue is a single hal 't' (apṛkta), licensing
-7.3.96 Īṭ-āgama.
+Drops the final 'i' of a tiṅ ādeśa in laṅ / luṅ / lṛṅ contexts:
+  tip→ti → t,  sip→si → s,  jhi → jh  (then 7.1.3 converts jh→ant for 3pl).
+
+Note: mip→mi is handled by 3.4.101 (apavāda); 3.4.100 naturally skips 'mi'
+when 3.4.101 has already converted it to 'am' (varnas end in 'm' not 'i').
 """
 from __future__ import annotations
 
@@ -12,36 +14,39 @@ from engine.state import State, Term
 from phonology import mk
 
 
-def _find_ti(state: State):
+def _find_i_final_tin(state: State):
+    """Find a tiṅ ādeśa term ending in 'i' in laṅ/luṅ/lṛṅ context."""
     lk = (state.meta.get("lakara") or "").strip()
-    if lk not in {"luG", "lRG"}:
+    if lk not in {"luG", "lRG", "laG", "liG", "AsIrliG"}:
         return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
             continue
-        # Look for 'ti' exactly.
-        if "".join(v.slp1 for v in t.varnas) != "ti":
+        if "tin_adesha_3_4_78" not in t.tags:
             continue
         if t.meta.get("3_4_100_itasca_done"):
+            continue
+        vs = t.varnas
+        if not vs or vs[-1].slp1 != "i":
             continue
         return i
     return None
 
 
 def cond(state: State) -> bool:
-    return _find_ti(state) is not None
+    return _find_i_final_tin(state) is not None
 
 
 def act(state: State) -> State:
-    i = _find_ti(state)
+    i = _find_i_final_tin(state)
     if i is None:
         return state
     t = state.terms[i]
-    # delete the 'i' (second varna)
-    if len(t.varnas) >= 2 and t.varnas[1].slp1 == "i":
-        del t.varnas[1]
+    # Drop the final 'i' varna.
+    if t.varnas and t.varnas[-1].slp1 == "i":
+        del t.varnas[-1]
     t.meta["3_4_100_itasca_done"] = True
-    # **P019** (*avartsyat*): ``sy`` + ``t`` surface needs intervening ``a`` (``…स्यत्``).
+    # P019 (avartsyat): sy + t needs intervening a between vikaraṇa and t.
     if state.meta.get("corrected_v2_P019_demo") and i > 0:
         prev = state.terms[i - 1]
         if (prev.meta.get("upadesha_slp1") or "").strip() == "sy":
@@ -62,8 +67,8 @@ SUTRA = SutraRecord(
     text_dev       = "इतश्च",
     padaccheda_dev = "इतः / च",
     why_dev        = (
-        "लुङ्/लृङ्-प्रक्रियायां तिङ्-अन्तस्थ इकारस्य लोपः (ति→त्); "
-        "P019: ``sy``-``t`` मध्ये ``a``।"
+        "लङ्/लुङ्/लृङ्-प्रक्रियायां तिङ्-अन्तस्थ इकारस्य लोपः "
+        "(ति→त्, सि→स्, झि→झ्); लङि: ७.१.३-पूर्वं झि→झ् → अन्त्।"
     ),
     anuvritti_from = (),
     cond           = cond,

@@ -40,6 +40,88 @@ app = Flask(__name__, template_folder="templates", static_folder="static")
 
 
 # ─────────────────────────────────────────────────────────────────
+# Presentation-layer transliteration helpers
+# (pure view code — never touches State internals)
+# ─────────────────────────────────────────────────────────────────
+
+# Structural step IDs → clean Devanāgarī labels shown in the UI.
+_STRUCTURAL_DEV: dict[str, str] = {
+    "__MERGE__"             : "पद-मेलनम्",
+    "__FIXED_POINT__"       : "स्थिर-बिन्दुः",
+    "__TRIPADI_ENTER__"     : "त्रिपाद्याः-प्रवेशः",
+    "__ANGA_SWEEP__"        : "अङ्ग-परीक्षा",
+    "__IT_LOPA_PASS__"      : "इत्-लोपः",
+    "__SANDHI_PASS__"       : "सन्धिः",
+    "__COMPOUND_MERGE__"    : "समास-मेलनम्",
+}
+
+
+def _slp1_str_to_dev(slp1_str: str) -> str:
+    """
+    Convert a flat SLP1 form string (as stored in trace form_before/form_after)
+    to Devanāgarī for display.
+
+    Strategy: parse the SLP1 string through the engine's phoneme parser so that
+    conjunct consonants, mātrās, and halanta virāmas are rendered correctly by
+    the joiner — identical to how State.flat_dev() works on the live State tape.
+
+    Structural IDs (e.g. '__MERGE__') are mapped to Devanāgarī labels.
+    Empty strings stay empty.  Unparseable strings fall back to the original.
+    """
+    if not slp1_str:
+        return ""
+    # Structural marker
+    if slp1_str in _STRUCTURAL_DEV:
+        return _STRUCTURAL_DEV[slp1_str]
+    try:
+        from phonology.varna import parse_slp1_upadesha_sequence
+        from phonology.joiner import slp1_to_devanagari
+        varnas = parse_slp1_upadesha_sequence(slp1_str)
+        return slp1_to_devanagari(varnas)
+    except Exception:
+        return slp1_str  # safe fallback — never break the UI
+
+
+def _enrich_trace(raw_trace: list[dict]) -> list[dict]:
+    """
+    Add presentation-layer fields to every trace step dict:
+
+      form_before_dev   : Devanāgarī rendering of form_before (SLP1 → Dev)
+      form_after_dev    : Devanāgarī rendering of form_after  (SLP1 → Dev)
+      _sutra_text_dev   : sūtra text from SUTRA_REGISTRY (was already set inline)
+      _padaccheda_dev   : padaccheda from SUTRA_REGISTRY
+      _anuvritti_from   : list of IDs from SUTRA_REGISTRY
+      _is_structural    : True for __MERGE__ etc.
+      _structural_dev   : Devanāgarī label for structural steps
+
+    The original SLP1 strings in form_before / form_after are left intact;
+    only the _dev variants are added.  State objects are never imported here.
+    """
+    out = []
+    for step in raw_trace:
+        sid = step.get("sutra_id", "")
+        rec = SUTRA_REGISTRY.get(sid) if sid and not sid.startswith("__") else None
+        is_struct = bool(sid.startswith("__")) if sid else False
+
+        fb = step.get("form_before", "") or ""
+        fa = step.get("form_after",  "") or ""
+
+        out.append({
+            **step,
+            # Devanāgarī transliterations (presentation only)
+            "form_before_dev" : _slp1_str_to_dev(fb),
+            "form_after_dev"  : _slp1_str_to_dev(fa),
+            # Sūtra metadata from registry
+            "_is_structural"  : is_struct,
+            "_structural_dev" : _STRUCTURAL_DEV.get(sid, "") if is_struct else "",
+            "_sutra_text_dev" : getattr(rec, "text_dev",       None),
+            "_padaccheda_dev" : getattr(rec, "padaccheda_dev", None),
+            "_anuvritti_from" : list(getattr(rec, "anuvritti_from", ()) or ()),
+        })
+    return out
+
+
+# ─────────────────────────────────────────────────────────────────
 # Home / nav
 # ─────────────────────────────────────────────────────────────────
 
@@ -79,18 +161,7 @@ def api_derive():
     )
     applied_path = extract_applied_path(state.trace)
 
-    # Annotate trace rows with sūtra metadata for the UI.
-    enriched = []
-    for step in state.trace:
-        sid = step.get("sutra_id", "")
-        rec = SUTRA_REGISTRY.get(sid) if sid and not sid.startswith("__") else None
-        enriched.append({
-            **step,
-            "_is_structural" : sid.startswith("__") if sid else False,
-            "_sutra_text_dev": getattr(rec, "text_dev",   None),
-            "_padaccheda_dev": getattr(rec, "padaccheda_dev", None),
-            "_anuvritti_from": list(getattr(rec, "anuvritti_from", ()) or ()),
-        })
+    enriched = _enrich_trace(state.trace)
 
     return jsonify({
         "stem"         : stem,
@@ -124,6 +195,15 @@ _VACANA_DEV = {1: "एकवचन", 2: "द्विवचन", 3: "बहु�
 
 # Paradigm presets — shown as quick-load buttons in matrix + showcase pages.
 _PARADIGM_PRESETS: list[dict] = [
+    {
+        "stem_slp1"  : "rADA",
+        "stem_dev"   : "राधा",
+        "linga"      : "strīliṅga",
+        "class_short": "अकारान्त · स्त्री",
+        "class_dev"  : "आकारान्त स्त्रीलिङ्गम् (ā-anta)",
+        "samjna_dev" : [],
+        "featured"   : False,
+    },
     {
         "stem_slp1"  : "rAma",
         "stem_dev"   : "रामः",
@@ -159,6 +239,24 @@ _PARADIGM_PRESETS: list[dict] = [
         "class_dev"  : "अकारान्त सर्वनाम पुंलिङ्गम्",
         "samjna_dev" : ["सर्वनाम (१.१.२७)"],
         "featured"   : False,
+    },
+    {
+        "stem_slp1"  : "anya",
+        "stem_dev"   : "अन्यः",
+        "linga"      : "pulliṅga",
+        "class_short": "सर्वनाम",
+        "class_dev"  : "अकारान्त सर्वनाम पुंलिङ्गम् (अन्य)",
+        "samjna_dev" : ["सर्वनाम (१.१.२७)"],
+        "featured"   : False,
+    },
+    {
+        "stem_slp1"  : "guru",
+        "stem_dev"   : "गुरुः",
+        "linga"      : "pulliṅga",
+        "class_short": "उकारान्त · घि",
+        "class_dev"  : "उकारान्त पुंलिङ्गम् (घिसंज्ञक)",
+        "samjna_dev" : ["घिसंज्ञक (१.४.७)"],
+        "featured"   : True,
     },
 ]
 
@@ -285,17 +383,7 @@ def api_patha_trace():
         return jsonify({"error": f"{type(ex).__name__}: {ex}"}), 500
     from phonology.joiner import slp1_to_devanagari
     surface_dev = slp1_to_devanagari(state.terms[0].varnas) if state.terms else ""
-    enriched = []
-    for step in state.trace:
-        sid = step.get("sutra_id", "")
-        rec = SUTRA_REGISTRY.get(sid) if sid and not sid.startswith("__") else None
-        enriched.append({
-            **step,
-            "_is_structural" : bool(sid.startswith("__")),
-            "_sutra_text_dev": getattr(rec, "text_dev",      None),
-            "_padaccheda_dev": getattr(rec, "padaccheda_dev", None),
-            "_anuvritti_from": list(getattr(rec, "anuvritti_from", ()) or ()),
-        })
+    enriched = _enrich_trace(state.trace)
     tr = state.trace
     return jsonify({
         "stem_slp1"   : stem,
@@ -651,17 +739,7 @@ def api_pipeline_run(key: str):
         except Exception:
             pass
 
-    enriched = []
-    for step in state.trace:
-        sid = step.get("sutra_id", "")
-        rec = SUTRA_REGISTRY.get(sid) if sid and not sid.startswith("__") else None
-        enriched.append({
-            **step,
-            "_is_structural": bool(sid.startswith("__")) if sid else False,
-            "_sutra_text_dev": getattr(rec, "text_dev", None),
-            "_padaccheda_dev": getattr(rec, "padaccheda_dev", None),
-            "_anuvritti_from": list(getattr(rec, "anuvritti_from", ()) or ()),
-        })
+    enriched = _enrich_trace(state.trace)
 
     tr = state.trace
     return jsonify({
@@ -682,6 +760,486 @@ def api_pipeline_run(key: str):
             "skipped_count": sum(1 for s in tr if s.get("status") == "SKIPPED"),
         },
     })
+
+
+# ─────────────────────────────────────────────────────────────────
+# Tiṅanta derivation
+# ─────────────────────────────────────────────────────────────────
+
+@app.route("/tinanta")
+def tinanta_page():
+    lak_meta_path = _ROOT / "data" / "inputs" / "lakara_metadata.json"
+    lak_meta = {}
+    if lak_meta_path.exists():
+        lak_meta = json.loads(lak_meta_path.read_text(encoding="utf-8"))
+    lakara_choices = {k: v for k, v in lak_meta.items() if not k.startswith("_")}
+    return render_template(
+        "tinanta.html",
+        nav_active="tinanta",
+        cov=coverage_report(SUTRA_REGISTRY),
+        lakara_choices=lakara_choices,
+    )
+
+
+@app.route("/api/tinanta", methods=["POST"])
+def api_tinanta():
+    from pipelines.tinanta import derive as tin_derive, _dhatu_row_by_upadesha
+    data    = request.get_json(force=True)
+    dhatu   = (data.get("dhatu") or "BU").strip()
+    lakara  = (data.get("lakara") or "laT").strip()
+    prayoga = (data.get("prayoga") or "kartari").strip()
+    purusha = int(data.get("purusha", 3))
+    vacana  = int(data.get("vacana", 1))
+
+    if not dhatu:
+        return jsonify({"error": "dhatu required"}), 400
+    if prayoga not in ("kartari", "karmani", "bhave"):
+        return jsonify({"error": "prayoga must be kartari/karmani/bhave"}), 400
+
+    # Normalize Devanāgarī input
+    if any(0x0900 <= ord(c) <= 0x097F for c in dhatu):
+        from pipelines.dhatupatha import _payload, _envelope
+        env = _envelope(_payload())
+        match = next(
+            (e for e in env["entries"]
+             if e.get("mula_dhatu_dev","").strip() == dhatu.strip()),
+            None
+        )
+        if not match:
+            return jsonify({"error": f"Devanāgarī dhātu '{dhatu}' not found"}), 404
+        dhatu = match["upadesha_slp1"]
+
+    try:
+        row = _dhatu_row_by_upadesha(dhatu)
+    except KeyError as e:
+        return jsonify({"error": str(e)}), 404
+
+    supported_gana = row.get("gana", 1)
+    # lṛṭ/laṅ: vikaraṇa selection is gaṇa-independent for these lakāras.
+    if lakara not in ("lRT", "laG", "liG", "AsIrliG") and supported_gana not in (1, 4, 6):
+        return jsonify({
+            "warning": f"Gaṇa {supported_gana} vikaraṇa not yet implemented; using bhvādi logic.",
+            "gana_override": 1,
+        }), 202
+
+    try:
+        state = tin_derive(dhatu, lakara, prayoga, purusha, vacana)
+    except NotImplementedError as e:
+        return jsonify({"error": f"Not implemented: {e}"}), 501
+    except Exception as ex:
+        return jsonify({"error": f"{type(ex).__name__}: {ex}"}), 500
+
+    surface_dev  = state.flat_dev()
+    surface_slp1 = state.flat_slp1()
+
+    enriched = _enrich_trace(state.trace)
+
+    tr = state.trace
+    return jsonify({
+        "dhatu_slp1"  : dhatu,
+        "dhatu_dev"   : row.get("mula_dhatu_dev", dhatu),
+        "artha_dev"   : row.get("artha_dev", ""),
+        "artha_en"    : row.get("artha_en", ""),
+        "gana"        : row.get("gana", 1),
+        "gana_dev"    : row.get("gana_label_dev", ""),
+        "pada_dev"    : row.get("pada_label_dev", ""),
+        "lakara"      : lakara,
+        "prayoga"     : prayoga,
+        "purusha"     : purusha,
+        "vacana"      : vacana,
+        "surface_dev" : surface_dev,
+        "surface_slp1": surface_slp1,
+        "trace"       : enriched,
+        "stats": {
+            "total_steps"   : len(tr),
+            "applied_count" : sum(1 for s in tr if s.get("status") in {"APPLIED","APPLIED_VACUOUS"}),
+            "audit_count"   : sum(1 for s in tr if s.get("status") == "AUDIT"),
+            "skipped_count" : sum(1 for s in tr if s.get("status") == "SKIPPED"),
+        },
+    })
+
+
+@app.route("/api/tinanta/paradigm", methods=["POST"])
+def api_tinanta_paradigm():
+    """Derive all 9 parasmaipada cells for a dhātu + lakāra."""
+    from pipelines.tinanta import derive as tin_derive, _dhatu_row_by_upadesha
+    data    = request.get_json(force=True)
+    dhatu   = (data.get("dhatu") or "BU").strip()
+    lakara  = (data.get("lakara") or "laT").strip()
+    prayoga = (data.get("prayoga") or "kartari").strip()
+    pada    = (data.get("pada") or "parasmai").strip()
+
+    try:
+        row = _dhatu_row_by_upadesha(dhatu)
+    except KeyError as e:
+        return jsonify({"error": str(e)}), 404
+
+    from phonology.joiner import slp1_to_devanagari
+    PURUSHA_ORDER = [3, 2, 1]
+    VACANA_ORDER  = [1, 2, 3]
+
+    cells = {}
+    for p in PURUSHA_ORDER:
+        for v in VACANA_ORDER:
+            key = f"{p}-{v}"
+            try:
+                state = tin_derive(dhatu, lakara, prayoga, p, v)
+                cells[key] = {
+                    "surface_dev" : state.flat_dev(),
+                    "surface_slp1": state.flat_slp1(),
+                }
+            except Exception as ex:
+                cells[key] = {"error": f"{type(ex).__name__}: {ex}"}
+
+    return jsonify({
+        "dhatu_slp1": dhatu,
+        "dhatu_dev" : row.get("mula_dhatu_dev", dhatu),
+        "lakara"    : lakara,
+        "pada"      : pada,
+        "cells"     : cells,
+    })
+
+
+# ─────────────────────────────────────────────────────────────────
+# Dhātupātha browser
+# ─────────────────────────────────────────────────────────────────
+
+@app.route("/dhatupatha")
+def dhatupatha_page():
+    return render_template(
+        "dhatupatha.html",
+        nav_active="dhatupatha",
+        cov=coverage_report(SUTRA_REGISTRY),
+    )
+
+
+@app.route("/api/dhatupatha")
+def api_dhatupatha_list():
+    """List/search dhātus from data/inputs/dhatupatha_upadesha.json."""
+    from pipelines.dhatupatha import _payload, _envelope
+    env     = _envelope(_payload())
+    entries = env["entries"]
+
+    q       = (request.args.get("q") or "").strip().lower()
+    gana    = request.args.get("gana", "")
+    pada    = request.args.get("pada", "")
+    limit   = min(int(request.args.get("limit", 50)), 200)
+    offset  = int(request.args.get("offset", 0))
+
+    filtered = []
+    for e in entries:
+        if gana and str(e.get("gana","")) != gana:
+            continue
+        if pada:
+            pl = e.get("pada_label_dev","")
+            if pada == "parasmai" and "परस्मैपदी" not in pl:
+                continue
+            if pada == "atmane" and "आत्मनेपदी" not in pl:
+                continue
+            if pada == "ubhaya" and "उभयपदी" not in pl:
+                continue
+        if q:
+            haystack = (
+                e.get("upadesha_slp1","") + " " +
+                e.get("mula_dhatu_dev","") + " " +
+                e.get("artha_dev","") + " " +
+                e.get("artha_en","")
+            ).lower()
+            if q not in haystack:
+                continue
+        filtered.append({
+            "id"          : e.get("id",""),
+            "slp1"        : e.get("upadesha_slp1",""),
+            "dev"         : e.get("mula_dhatu_dev",""),
+            "artha_dev"   : e.get("artha_dev",""),
+            "artha_en"    : e.get("artha_en",""),
+            "gana"        : e.get("gana",1),
+            "gana_dev"    : e.get("gana_label_dev",""),
+            "pada_dev"    : e.get("pada_label_dev",""),
+            "it_class"    : e.get("it_class_label_dev",""),
+            "karmatva"    : e.get("karmatva_label_dev",""),
+        })
+
+    total = len(filtered)
+    page  = filtered[offset:offset+limit]
+    return jsonify({
+        "total"   : total,
+        "offset"  : offset,
+        "limit"   : limit,
+        "entries" : page,
+    })
+
+
+@app.route("/api/dhatupatha/<dhatu_id>")
+def api_dhatupatha_detail(dhatu_id: str):
+    from pipelines.tinanta import _dhatu_row_by_upadesha
+    try:
+        row = _dhatu_row_by_upadesha(dhatu_id)
+    except KeyError as e:
+        abort(404)
+    return jsonify(row)
+
+
+# ─────────────────────────────────────────────────────────────────
+# Sūtra quick reference (from sutra_ref_out JSON)
+# ─────────────────────────────────────────────────────────────────
+
+_SUTRA_REF_CACHE: dict | None = None
+
+
+def _load_sutra_ref() -> dict:
+    global _SUTRA_REF_CACHE
+    if _SUTRA_REF_CACHE is not None:
+        return _SUTRA_REF_CACHE
+    p = _ROOT / "data" / "reference" / "sutra_quick_ref.json"
+    if p.exists():
+        _SUTRA_REF_CACHE = json.loads(p.read_text(encoding="utf-8"))
+    else:
+        _SUTRA_REF_CACHE = {}
+    return _SUTRA_REF_CACHE
+
+
+@app.route("/api/sutra-ref/<sid>")
+def api_sutra_ref(sid: str):
+    ref = _load_sutra_ref()
+    data = ref.get(sid)
+    if not data:
+        return jsonify({"error": f"sūtra {sid} not in quick-ref"}), 404
+    rec = SUTRA_REGISTRY.get(sid)
+    return jsonify({
+        **data,
+        "sutra_id"    : sid,
+        "implemented" : rec is not None,
+        "sutra_type"  : rec.sutra_type.name if rec else None,
+        "why_dev"     : getattr(rec, "why_dev", None),
+        "anuvritti"   : list(getattr(rec, "anuvritti_from", ()) or ()),
+    })
+
+
+@app.route("/api/sutra-ref/search")
+def api_sutra_ref_search():
+    q     = (request.args.get("q") or "").strip().lower()
+    limit = min(int(request.args.get("limit", 30)), 100)
+    ref   = _load_sutra_ref()
+    if not q:
+        return jsonify({"results": []})
+    results = []
+    for sid, data in ref.items():
+        hay = (data.get("dev","") + " " + data.get("slp1","") + " " +
+               data.get("gloss_en","") + " " + sid).lower()
+        if q in hay:
+            results.append({"sid": sid, **data})
+        if len(results) >= limit:
+            break
+    return jsonify({"results": results, "total": len(results)})
+
+
+# ─────────────────────────────────────────────────────────────────
+# सर्वनाम — pronoun paradigm (अस्मद्)
+# ─────────────────────────────────────────────────────────────────
+
+@app.route("/sarvanama")
+def sarvanama_page():
+    return render_template("sarvanama.html", nav_active="sarvanama",
+                           cov=coverage_report(SUTRA_REGISTRY))
+
+
+@app.route("/api/sarvanama", methods=["POST"])
+def api_sarvanama():
+    """Return all 21 cells for asmad paradigm."""
+    data = request.get_json(force=True)
+    pronoun = data.get("pronoun", "asmad")  # future: yuzmad too
+
+    from pipelines.asmad_subanta import derive_asmad
+    from phonology.joiner import slp1_to_devanagari
+
+    cells = {}
+    VIBHAKTI_DEV = {1: "प्रथमा", 2: "द्वितीया", 3: "तृतीया", 4: "चतुर्थी",
+                    5: "पञ्चमी", 6: "षष्ठी", 7: "सप्तमी"}
+    VACANA_DEV = {1: "एकवचन", 2: "द्विवचन", 3: "बहुवचन"}
+
+    for v in range(1, 8):  # 7 vibhaktis for pronouns
+        for vac in range(1, 4):
+            key = f"{v}-{vac}"
+            try:
+                state = derive_asmad(v, vac)
+                surface = state.flat_dev() if hasattr(state, "flat_dev") else ""
+                cells[key] = {
+                    "surface_dev": surface,
+                    "vibhakti_dev": VIBHAKTI_DEV[v],
+                    "vacana_dev": VACANA_DEV[vac],
+                }
+            except Exception as ex:
+                cells[key] = {
+                    "surface_dev": f"त्रुटिः: {ex}",
+                    "vibhakti_dev": VIBHAKTI_DEV[v],
+                    "vacana_dev": VACANA_DEV[vac],
+                }
+
+    return jsonify({"pronoun": pronoun, "cells": cells})
+
+
+@app.route("/api/sarvanama/trace", methods=["POST"])
+def api_sarvanama_trace():
+    """Return trace for a single asmad cell."""
+    data = request.get_json(force=True)
+    v    = int(data.get("vibhakti", 1))
+    vac  = int(data.get("vacana", 1))
+    from pipelines.asmad_subanta import derive_asmad
+    try:
+        state = derive_asmad(v, vac)
+        surface = state.flat_dev() if hasattr(state, "flat_dev") else ""
+        enriched = _enrich_trace(state.trace)
+        return jsonify({"surface_dev": surface, "trace": enriched})
+    except Exception as ex:
+        return jsonify({"error": str(ex)}), 500
+
+
+# ─────────────────────────────────────────────────────────────────
+# कृदन्तम् — kṛdanta derivation (tṛc / ṇvul)
+# ─────────────────────────────────────────────────────────────────
+
+@app.route("/krdanta")
+def krdanta_page():
+    try:
+        from pipelines.dhatupatha import list_tfc_demo_ids
+        demo_ids = list_tfc_demo_ids()[:20]
+    except Exception:
+        demo_ids = ["BU", "BvAdi_ciY", "qupa~c~z", "RIY", "kf", "gama~", "dfSi~"]
+    return render_template("krdanta.html", nav_active="krdanta",
+                           cov=coverage_report(SUTRA_REGISTRY),
+                           demo_ids=demo_ids)
+
+
+@app.route("/api/krdanta", methods=["POST"])
+def api_krdanta():
+    data     = request.get_json(force=True)
+    dhatu_id = (data.get("dhatu_id") or "BU").strip()
+    krt_type = data.get("krt_type", "tfc")  # tfc or nvul
+    try:
+        from pipelines.dhatupatha import get_dhatu_row
+        row = get_dhatu_row(dhatu_id)
+        if not row:
+            return jsonify({"error": f"Unknown dhatu: {dhatu_id}"}), 400
+        upadesha = row.get("upadesha_slp1") or row.get("id") or dhatu_id
+        udatta   = bool(row.get("flags", {}).get("udatta", False))
+
+        if krt_type == "tfc":
+            from pipelines.krdanta import derive_tfc_pratipadika
+            from pipelines.subanta_trc import derive_trc_nom_sg_from_state
+            tfc_state = derive_tfc_pratipadika(upadesha, udatta_dhatu=udatta)
+            nom_state = derive_trc_nom_sg_from_state(tfc_state, vibhakti=1, vacana=1, linga="pulliṅga")
+            surface   = nom_state.flat_dev() if hasattr(nom_state, "flat_dev") else ""
+            enriched  = _enrich_trace(nom_state.trace)
+            return jsonify({
+                "surface_dev": surface,
+                "trace": enriched,
+                "dhatu_id": dhatu_id,
+                "krt_type": krt_type,
+            })
+        elif krt_type == "nvul":
+            from pipelines.krdanta import derive_krt
+            # Use generic derive_krt with Nvul; stem label derived from upadesha
+            label = upadesha.replace("~", "").rstrip("\\") + "aka"
+            nvul_state = derive_krt(
+                upadesha,
+                krt_upadesha_slp1="Nvul",
+                merge_pratipadika_label=label,
+            )
+            surface  = nvul_state.flat_dev() if hasattr(nvul_state, "flat_dev") else ""
+            enriched = _enrich_trace(nvul_state.trace)
+            return jsonify({
+                "surface_dev": surface,
+                "trace": enriched,
+                "dhatu_id": dhatu_id,
+                "krt_type": krt_type,
+            })
+        else:
+            return jsonify({"error": f"Unsupported krt_type: {krt_type}"}), 400
+    except Exception as ex:
+        import traceback as _tb
+        return jsonify({
+            "error": f"{type(ex).__name__}: {ex}",
+            "traceback": _tb.format_exc()[-2000:],
+        }), 500
+
+
+# ─────────────────────────────────────────────────────────────────
+# देवेन्द्र / सूर्योदय — samāsa demo
+# ─────────────────────────────────────────────────────────────────
+
+@app.route("/devendra")
+def devendra_page():
+    return render_template("devendra.html", nav_active="devendra",
+                           cov=coverage_report(SUTRA_REGISTRY))
+
+
+@app.route("/api/devendra", methods=["POST"])
+def api_devendra():
+    """Derive one of the samāsa examples: devendraH or sUryodayaH."""
+    data    = request.get_json(force=True)
+    example = (data.get("example") or "devendra").strip().lower()
+    from pipelines.devendra import derive_devendraH, derive_sUryodayaH
+    try:
+        if example == "suryodaya":
+            state = derive_sUryodayaH()
+            title = "सूर्योदयः"
+        else:
+            state = derive_devendraH()
+            title = "देवेन्द्रः"
+        surface  = state.flat_dev() if hasattr(state, "flat_dev") else ""
+        enriched = _enrich_trace(state.trace)
+        tr = state.trace
+        return jsonify({
+            "example"      : example,
+            "title_dev"    : title,
+            "surface_dev"  : surface,
+            "surface_slp1" : state.flat_slp1() if hasattr(state, "flat_slp1") else "",
+            "trace"        : enriched,
+            "stats": {
+                "total_steps"   : len(tr),
+                "applied_count" : sum(1 for s in tr if s.get("status") in {"APPLIED","APPLIED_VACUOUS"}),
+                "audit_count"   : sum(1 for s in tr if s.get("status") == "AUDIT"),
+                "blocked_count" : sum(1 for s in tr if s.get("status") == "BLOCKED"),
+                "skipped_count" : sum(1 for s in tr if s.get("status") == "SKIPPED"),
+            },
+        })
+    except Exception as ex:
+        import traceback as _tb
+        return jsonify({
+            "error"    : f"{type(ex).__name__}: {ex}",
+            "traceback": _tb.format_exc()[-2000:],
+        }), 500
+
+
+# ─────────────────────────────────────────────────────────────────
+# दिक्-समासः — dik compound demo
+# ─────────────────────────────────────────────────────────────────
+
+@app.route("/dik")
+def dik_page():
+    return render_template("dik.html", nav_active="dik",
+                           cov=coverage_report(SUTRA_REGISTRY))
+
+
+@app.route("/api/dik/glass", methods=["POST"])
+def api_dik_glass():
+    """Return glassbox explanation rows for a dik-samāsa preset."""
+    data = request.get_json(force=True)
+    pid  = (data.get("preset") or "uttarA_pUrvA").strip()
+    try:
+        from pipelines.dik_caturthi_glassbox_text import glass_rows
+        from pipelines.dik_uttarapurva_demo import caturthi_preset
+        p    = caturthi_preset(pid)
+        rows = glass_rows(p)
+        return jsonify({
+            "preset"  : pid,
+            "title"   : p.title_short_deva,
+            "rows"    : [{"label": r[0], "sa": r[1], "slp1": r[2], "hindi": r[3]}
+                         for r in rows],
+        })
+    except Exception as ex:
+        return jsonify({"error": f"{type(ex).__name__}: {ex}"}), 500
 
 
 # ─────────────────────────────────────────────────────────────────
