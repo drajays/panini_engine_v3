@@ -1,0 +1,546 @@
+{% extends "base.html" %}
+{% block title %}धातु-छन्दकः — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block head_extra %}
+<style>
+/* ── Layout ── */
+.df-layout { display:flex; gap:1rem; align-items:flex-start; }
+.df-sidebar { width:260px; flex-shrink:0; position:sticky; top:.5rem; }
+.df-main { flex:1; min-width:0; }
+
+/* ── Filter panel ── */
+.filter-panel { background:var(--bg-panel); border:1px solid var(--line-soft); border-radius:8px; padding:.75rem; }
+.filter-panel h3 { font-size:.82rem; font-weight:600; color:var(--ink-dim); text-transform:uppercase; letter-spacing:.06em; margin:0 0 .5rem; }
+.filter-section { margin-bottom:.9rem; }
+.filter-label { font-size:.75rem; color:var(--ink-faint); margin-bottom:.3rem; }
+
+.chip-group { display:flex; flex-wrap:wrap; gap:.3rem; }
+.chip-filter {
+  padding:.25rem .65rem; border-radius:14px; font-size:.78rem; cursor:pointer;
+  border:1.5px solid var(--line); background:var(--bg); color:var(--ink-dim);
+  transition:all .12s; user-select:none;
+}
+.chip-filter:hover { border-color:var(--accent-dim); color:var(--accent-dim); }
+.chip-filter.active {
+  background:var(--accent); color:#fff; border-color:var(--accent);
+  font-weight:600;
+}
+
+/* Gaṇa chips */
+.chip-filter.g1  { --c:#8b4513; }
+.chip-filter.g2  { --c:#005f73; }
+.chip-filter.g3  { --c:#660066; }
+.chip-filter.g4  { --c:#1a5c1a; }
+.chip-filter.g5  { --c:#a05000; }
+.chip-filter.g6  { --c:#003380; }
+.chip-filter.g7  { --c:#6b0000; }
+.chip-filter.g8  { --c:#004d40; }
+.chip-filter.g9  { --c:#4a1a7a; }
+.chip-filter.g10 { --c:#5a3e00; }
+.chip-filter[data-type="gana"].active { background:var(--c,var(--accent)); border-color:var(--c,var(--accent)); }
+
+/* Search */
+.df-search { display:flex; gap:.5rem; margin-bottom:.75rem; }
+.df-search input {
+  flex:1; padding:.45rem .7rem;
+  border:1px solid var(--line); border-radius:6px;
+  font-size:.9rem; background:var(--bg); color:var(--ink);
+}
+.clear-btn { padding:.4rem .65rem; border:1px solid var(--line); border-radius:6px; background:var(--bg); cursor:pointer; font-size:.82rem; color:var(--ink-dim); }
+.clear-btn:hover { background:var(--bg-subtle); }
+
+/* Active filters bar */
+.active-bar { display:flex; gap:.35rem; flex-wrap:wrap; min-height:1.6rem; margin-bottom:.6rem; align-items:center; }
+.active-tag { display:inline-flex; align-items:center; gap:.25rem; padding:.15rem .5rem; border-radius:10px; font-size:.75rem; background:var(--accent); color:#fff; }
+.active-tag button { background:none; border:none; color:#fff; cursor:pointer; font-size:.8rem; padding:0; line-height:1; opacity:.8; }
+.active-tag button:hover { opacity:1; }
+.result-count { font-size:.78rem; color:var(--ink-faint); margin-left:auto; }
+
+/* ── Results list ── */
+.dhatu-list { display:flex; flex-direction:column; gap:2px; }
+.dhatu-row {
+  display:flex; align-items:center; gap:.6rem;
+  padding:.45rem .7rem; border-radius:6px;
+  background:var(--bg-panel); border:1px solid transparent;
+  cursor:pointer; transition:all .1s;
+}
+.dhatu-row:hover { border-color:var(--line-soft); background:var(--bg-subtle); }
+.dhatu-row.selected { border-color:var(--accent-dim); background:#fff3e0; }
+.dhatu-row .dev { font-family:var(--dev); font-size:1.05rem; min-width:5rem; }
+.dhatu-row .slp1 { font-family:var(--mono); font-size:.78rem; color:var(--ink-faint); min-width:5.5rem; }
+.dhatu-row .artha { font-size:.82rem; color:var(--ink-dim); flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.dhatu-row .chips { display:flex; gap:.25rem; flex-shrink:0; }
+.chip-xs { padding:.1rem .4rem; border-radius:8px; font-size:.7rem; background:var(--line-soft); color:var(--ink-dim); white-space:nowrap; }
+.chip-P { background:#e8f5e9; color:#1a5c1a; }
+.chip-A { background:#e3f0ff; color:#1a3a6b; }
+.chip-U { background:#f9f0ff; color:#4a1a7a; }
+.chip-S { background:#fff9e6; color:#7a5000; }
+.chip-AN { background:#fce4ec; color:#7a0020; }
+
+/* Pagination */
+.df-pag { display:flex; gap:.4rem; align-items:center; margin-top:.75rem; font-size:.82rem; }
+.df-pag button { padding:.25rem .6rem; border:1px solid var(--line); border-radius:4px; background:var(--bg); cursor:pointer; }
+.df-pag button:disabled { opacity:.35; cursor:default; }
+.df-pag button:not(:disabled):hover { background:var(--bg-subtle); }
+
+/* ── Detail / Paradigm pane ── */
+.df-detail { background:var(--bg-panel); border:1px solid var(--line-soft); border-radius:8px; overflow:hidden; }
+.df-detail-header { padding:.65rem .9rem; background:var(--bg-subtle); border-bottom:1px solid var(--line-soft); display:flex; align-items:center; gap:.75rem; }
+.df-detail-header .big-dev { font-family:var(--dev); font-size:1.6rem; color:var(--accent); }
+.df-detail-header .meta { font-size:.8rem; color:var(--ink-dim); line-height:1.6; }
+.df-detail-header .derive-all-btn {
+  margin-left:auto; padding:.35rem .9rem;
+  background:var(--accent); color:#fff; border:none; border-radius:5px;
+  font-size:.82rem; cursor:pointer; white-space:nowrap;
+}
+.df-detail-header .derive-all-btn:hover { background:#6e2400; }
+
+.df-empty { padding:2.5rem; text-align:center; color:var(--ink-faint); font-size:.9rem; }
+
+/* ── Inline 10-lakāra grid ── */
+.lak-mini-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap:.5rem;
+  padding:.75rem;
+}
+.lak-mini-card { border:1px solid var(--line-soft); border-radius:6px; overflow:hidden; }
+.lak-mini-hdr { padding:.25rem .5rem; background:var(--bg-subtle); font-size:.72rem; display:flex; align-items:baseline; gap:.4rem; border-bottom:1px solid var(--line-soft); }
+.lak-mini-hdr .dev { font-family:var(--dev); font-size:.9rem; color:var(--accent-dim); font-weight:600; }
+.lak-mini-hdr .en { color:var(--ink-faint); font-size:.68rem; }
+.para-mini { width:100%; border-collapse:collapse; font-size:.8rem; }
+.para-mini th { font-size:.65rem; color:var(--ink-faint); text-align:center; padding:.15rem .2rem; background:var(--bg-subtle); border-bottom:1px solid var(--line-soft); }
+.para-mini td.rl { font-size:.62rem; color:var(--ink-faint); padding:.15rem .25rem; background:var(--bg-subtle); border-right:1px solid var(--line-soft); }
+.para-mini td.fc { font-family:var(--dev); font-size:.82rem; text-align:center; padding:.2rem .25rem; cursor:pointer; border:1px solid transparent; }
+.para-mini td.fc:hover { background:var(--bg-subtle); border-color:var(--line-soft); }
+.para-mini td.fc.loading { color:var(--ink-faint); font-size:.7rem; font-family:monospace; }
+.para-mini td.fc.err { color:var(--danger); font-size:.65rem; font-family:monospace; }
+
+/* Trace popover */
+#trace-pop {
+  display:none; position:fixed; bottom:1rem; right:1rem; z-index:100;
+  width:min(520px,96vw); max-height:50vh; overflow-y:auto;
+  background:var(--bg-panel); border:1px solid var(--line); border-radius:8px;
+  box-shadow:0 4px 20px rgba(0,0,0,.18); padding:.75rem;
+}
+#trace-pop h4 { margin:0 0 .4rem; font-size:.88rem; font-family:var(--dev); }
+#trace-pop .close { float:right; background:none; border:none; cursor:pointer; font-size:1rem; color:var(--ink-dim); }
+.tr-row { display:flex; gap:.5rem; font-size:.76rem; padding:.25rem 0; border-bottom:1px solid var(--line-soft); align-items:baseline; }
+.tr-row:last-child { border:none; }
+.tr-row.ch { border-left:3px solid var(--accent-dim); padding-left:.35rem; }
+.tr-sid { font-family:var(--mono); min-width:4rem; color:var(--accent-dim); }
+.tr-form { font-family:var(--dev); }
+.tr-why { color:var(--ink-faint); margin-left:auto; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:38%; }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1 style="margin:.5rem 0 .75rem;">धातु-छन्दकः <span style="font-size:.6em;color:var(--ink-dim);">Dhātu Filter &amp; Paradigm</span></h1>
+
+<div class="df-layout">
+  <!-- ── Sidebar: filters ── -->
+  <aside class="df-sidebar">
+    <div class="filter-panel">
+      <h3>छन्दकाः · Filters</h3>
+
+      <div class="filter-section">
+        <div class="filter-label">गणः (Gaṇa)</div>
+        <div class="chip-group" id="fg-gana">
+          <span class="chip-filter g1"  data-type="gana" data-val="1"  onclick="toggleChip(this)">१ भ्वादि</span>
+          <span class="chip-filter g2"  data-type="gana" data-val="2"  onclick="toggleChip(this)">२ अदादि</span>
+          <span class="chip-filter g3"  data-type="gana" data-val="3"  onclick="toggleChip(this)">३ जुहोत्यादि</span>
+          <span class="chip-filter g4"  data-type="gana" data-val="4"  onclick="toggleChip(this)">४ दिवादि</span>
+          <span class="chip-filter g5"  data-type="gana" data-val="5"  onclick="toggleChip(this)">५ स्वादि</span>
+          <span class="chip-filter g6"  data-type="gana" data-val="6"  onclick="toggleChip(this)">६ तुदादि</span>
+          <span class="chip-filter g7"  data-type="gana" data-val="7"  onclick="toggleChip(this)">७ रुधादि</span>
+          <span class="chip-filter g8"  data-type="gana" data-val="8"  onclick="toggleChip(this)">८ तनादि</span>
+          <span class="chip-filter g9"  data-type="gana" data-val="9"  onclick="toggleChip(this)">९ क्र्यादि</span>
+          <span class="chip-filter g10" data-type="gana" data-val="10" onclick="toggleChip(this)">१० चुरादि</span>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <div class="filter-label">पदम् (Pada)</div>
+        <div class="chip-group" id="fg-pada">
+          <span class="chip-filter" data-type="pada" data-val="parasmai" onclick="toggleChip(this)">परस्मैपदी</span>
+          <span class="chip-filter" data-type="pada" data-val="atmane"   onclick="toggleChip(this)">आत्मनेपदी</span>
+          <span class="chip-filter" data-type="pada" data-val="ubhaya"   onclick="toggleChip(this)">उभयपदी</span>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <div class="filter-label">इट् (iṭ augment)</div>
+        <div class="chip-group" id="fg-it">
+          <span class="chip-filter" data-type="it" data-val="set"  onclick="toggleChip(this)">सेट्</span>
+          <span class="chip-filter" data-type="it" data-val="anit" onclick="toggleChip(this)">अनिट्</span>
+          <span class="chip-filter" data-type="it" data-val="vet"  onclick="toggleChip(this)">वेट्</span>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <div class="filter-label">कर्मत्वम् (Karma)</div>
+        <div class="chip-group" id="fg-karma">
+          <span class="chip-filter" data-type="karma" data-val="sakarmaka"  onclick="toggleChip(this)">सकर्मक</span>
+          <span class="chip-filter" data-type="karma" data-val="akarmaka"   onclick="toggleChip(this)">अकर्मक</span>
+        </div>
+      </div>
+
+      <button onclick="clearAll()" style="width:100%;padding:.35rem;font-size:.78rem;border:1px solid var(--line);border-radius:4px;background:var(--bg);cursor:pointer;color:var(--ink-dim);">
+        ✕ सर्वे छन्दकाः हटाएँ
+      </button>
+    </div>
+  </aside>
+
+  <!-- ── Main: search + list ── -->
+  <div class="df-main">
+    <div class="df-search">
+      <input id="search-q" type="text" placeholder="खोजें — BU / भू / to be / sound …" oninput="debounceSearch()" autocomplete="off">
+      <button class="clear-btn" onclick="clearSearch()">✕</button>
+    </div>
+
+    <div class="active-bar" id="active-bar">
+      <span style="font-size:.75rem;color:var(--ink-faint);">कोई सक्रिय छन्दक नहीं।</span>
+      <span class="result-count" id="result-count"></span>
+    </div>
+
+    <div class="dhatu-list" id="dhatu-list">
+      <div style="padding:1.5rem;text-align:center;color:var(--ink-faint);">लोड हो रहा है…</div>
+    </div>
+
+    <div class="df-pag">
+      <button id="prev-btn" onclick="changePage(-1)" disabled>← पूर्व</button>
+      <span id="page-info">—</span>
+      <button id="next-btn" onclick="changePage(1)">अग्र →</button>
+      <span style="margin-left:auto;font-size:.75rem;color:var(--ink-faint);">प्रति पृष्ठ: 40</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Detail + Paradigm (full width below) ── -->
+<div id="df-detail-area" style="margin-top:.75rem;display:none;">
+  <div class="df-detail">
+    <div class="df-detail-header" id="df-hdr">
+      <div class="df-empty">धातु चुनें।</div>
+    </div>
+    <div id="df-paradigm">
+      <div class="df-empty">धातु चुनने पर दश-लकार-रूपावली यहाँ आएगी।</div>
+    </div>
+  </div>
+</div>
+
+<!-- Trace popover -->
+<div id="trace-pop">
+  <button class="close" onclick="closePop()">✕</button>
+  <h4 id="trace-heading-pop">प्रक्रिया</h4>
+  <div id="trace-rows-pop"></div>
+</div>
+{% endblock %}
+
+{% block body_extra %}
+<script>
+const ALL_LAK = {{ all_lakaras | tojson }};  // [[id, dev, en], ...]
+const LIMIT = 40;
+let _offset = 0, _total = 0, _timer = null;
+let _filters = {};    // type → value
+let _selected = null; // currently selected upadesha_slp1
+let _dhataData = null; // last fetched paradigm data
+
+// ── URL params ─────────────────────────────────────────────────────────────
+function parseURL() {
+  const p = new URLSearchParams(window.location.search);
+  const fs = (p.get('filters') || '').split(';').filter(Boolean);
+  for (const f of fs) {
+    const [k, v] = f.split('~');
+    if (!k || !v) continue;
+    // Map ashtadhyayi.com shortcodes → our values
+    if (k === 'gana')    setFilter('gana',  v);
+    if (k === 'pada')    setFilter('pada',  v === 'P' ? 'parasmai' : v === 'A' ? 'atmane' : 'ubhaya');
+    if (k === 'idaagam') setFilter('it',    v === 'S' ? 'set' : v === 'V' ? 'vet' : 'anit');
+    if (k === 'karma')   setFilter('karma', v === 'A' ? 'akarmaka' : 'sakarmaka');
+  }
+}
+
+function setFilter(type, val) {
+  _filters[type] = val;
+  document.querySelectorAll(`.chip-filter[data-type="${type}"]`).forEach(c => {
+    c.classList.toggle('active', c.dataset.val === val);
+  });
+}
+
+function buildFilterURL() {
+  const fs = [];
+  if (_filters.gana)  fs.push(`gana~${_filters.gana === 'parasmai' ? 'P' : _filters.gana}`);
+  if (_filters.pada)  fs.push(`pada~${_filters.pada === 'parasmai' ? 'P' : _filters.pada === 'atmane' ? 'A' : 'U'}`);
+  if (_filters.it)    fs.push(`idaagam~${_filters.it === 'set' ? 'S' : _filters.it === 'vet' ? 'V' : 'AN'}`);
+  if (_filters.karma) fs.push(`karma~${_filters.karma === 'akarmaka' ? 'A' : 'S'}`);
+  const url = new URL(window.location.href.split('?')[0]);
+  if (fs.length) url.searchParams.set('filters', fs.join(';'));
+  history.replaceState(null, '', url.toString());
+}
+
+// ── Filter chip toggle ─────────────────────────────────────────────────────
+function toggleChip(el) {
+  const type = el.dataset.type, val = el.dataset.val;
+  if (_filters[type] === val) {
+    delete _filters[type];
+    el.classList.remove('active');
+  } else {
+    document.querySelectorAll(`.chip-filter[data-type="${type}"]`).forEach(c => c.classList.remove('active'));
+    _filters[type] = val;
+    el.classList.add('active');
+  }
+  _offset = 0;
+  buildFilterURL();
+  updateActiveBar();
+  loadList();
+}
+
+function clearAll() {
+  _filters = {};
+  document.querySelectorAll('.chip-filter').forEach(c => c.classList.remove('active'));
+  document.getElementById('search-q').value = '';
+  _offset = 0;
+  buildFilterURL();
+  updateActiveBar();
+  loadList();
+}
+
+function clearSearch() {
+  document.getElementById('search-q').value = '';
+  _offset = 0;
+  loadList();
+}
+
+function debounceSearch() {
+  clearTimeout(_timer);
+  _timer = setTimeout(() => { _offset = 0; loadList(); }, 260);
+}
+
+const FILTER_LABELS = {
+  gana:  { '1':'भ्वादि','2':'अदादि','3':'जुहोत्यादि','4':'दिवादि','5':'स्वादि','6':'तुदादि','7':'रुधादि','8':'तनादि','9':'क्र्यादि','10':'चुरादि' },
+  pada:  { parasmai:'परस्मैपदी', atmane:'आत्मनेपदी', ubhaya:'उभयपदी' },
+  it:    { set:'सेट्', anit:'अनिट्', vet:'वेट्' },
+  karma: { sakarmaka:'सकर्मक', akarmaka:'अकर्मक' },
+};
+
+function updateActiveBar() {
+  const bar = document.getElementById('active-bar');
+  const entries = Object.entries(_filters);
+  if (!entries.length) {
+    bar.innerHTML = '<span style="font-size:.75rem;color:var(--ink-faint);">कोई सक्रिय छन्दक नहीं।</span><span class="result-count" id="result-count"></span>';
+    return;
+  }
+  const tags = entries.map(([t, v]) => {
+    const lbl = (FILTER_LABELS[t] || {})[v] || v;
+    return `<span class="active-tag">${lbl}<button onclick="removeFilter('${t}')">✕</button></span>`;
+  }).join('');
+  bar.innerHTML = tags + '<span class="result-count" id="result-count"></span>';
+}
+
+function removeFilter(type) {
+  delete _filters[type];
+  document.querySelectorAll(`.chip-filter[data-type="${type}"]`).forEach(c => c.classList.remove('active'));
+  _offset = 0;
+  buildFilterURL();
+  updateActiveBar();
+  loadList();
+}
+
+// ── API call ───────────────────────────────────────────────────────────────
+async function loadList() {
+  const q     = document.getElementById('search-q').value;
+  const params = new URLSearchParams({
+    q, limit: LIMIT, offset: _offset,
+    ...((_filters.gana)  && {gana:  _filters.gana}),
+    ...((_filters.pada)  && {pada:  _filters.pada}),
+    ...((_filters.it)    && {it:    _filters.it}),
+    ...((_filters.karma) && {karma: _filters.karma}),
+  });
+  const r = await fetch(`/api/dhatupatha?${params}`);
+  const d = await r.json();
+  _total = d.total;
+  const rc = document.getElementById('result-count');
+  if (rc) rc.textContent = `${_total} धातवः`;
+  renderList(d.entries);
+  renderPagination();
+}
+
+function renderList(entries) {
+  const el = document.getElementById('dhatu-list');
+  if (!entries.length) {
+    el.innerHTML = '<div style="padding:1.5rem;text-align:center;color:var(--ink-faint);">कोई धातु नहीं मिली।</div>';
+    return;
+  }
+  el.innerHTML = entries.map(e => {
+    const padaCls = e.pada_dev.includes('परस्मैपदी') ? 'chip-P' : e.pada_dev.includes('आत्मनेपदी') ? 'chip-A' : 'chip-U';
+    const itCls   = e.it_class.includes('अनिट्') ? 'chip-AN' : 'chip-S';
+    const sel     = _selected === e.slp1 ? 'selected' : '';
+    return `<div class="dhatu-row ${sel}" onclick="selectDhatu('${escHtml(e.slp1)}','${escHtml(e.dev)}')">
+      <span class="dev">${e.dev}</span>
+      <span class="slp1">${e.slp1}</span>
+      <span class="artha">${e.artha_en}</span>
+      <span class="chips">
+        <span class="chip-xs ${padaCls}">${e.pada_dev.replace(/पदी$/,'')}</span>
+        <span class="chip-xs ${itCls}">${e.it_class||'—'}</span>
+        <span class="chip-xs">${e.gana}·${e.gana_dev.replace(/ादिः$/,'')}</span>
+      </span>
+    </div>`;
+  }).join('');
+}
+
+function renderPagination() {
+  const page  = Math.floor(_offset / LIMIT) + 1;
+  const pages = Math.max(1, Math.ceil(_total / LIMIT));
+  document.getElementById('page-info').textContent = `${page} / ${pages}`;
+  document.getElementById('prev-btn').disabled = _offset === 0;
+  document.getElementById('next-btn').disabled = _offset + LIMIT >= _total;
+}
+
+function changePage(dir) {
+  _offset = Math.max(0, _offset + dir * LIMIT);
+  loadList();
+}
+
+// ── Select dhātu → show paradigm ──────────────────────────────────────────
+async function selectDhatu(slp1, dev) {
+  if (_selected === slp1) {
+    _selected = null;
+    document.querySelectorAll('.dhatu-row').forEach(r => r.classList.remove('selected'));
+    document.getElementById('df-detail-area').style.display = 'none';
+    closePop();
+    return;
+  }
+  _selected = slp1;
+  document.querySelectorAll('.dhatu-row').forEach(r =>
+    r.classList.toggle('selected', r.querySelector('.slp1')?.textContent === slp1));
+
+  document.getElementById('df-detail-area').style.display = '';
+  document.getElementById('df-hdr').innerHTML =
+    `<span class="big-dev">${dev}</span>
+     <span class="meta"><span style="font-family:var(--mono);color:var(--accent);">${slp1}</span></span>
+     <button class="derive-all-btn" onclick="openFullPage('${escHtml(slp1)}')">↗ पूर्ण दश-लकार पृष्ठ</button>`;
+  document.getElementById('df-paradigm').innerHTML = buildLoadingGrid();
+  document.getElementById('df-detail-area').scrollIntoView({behavior:'smooth', block:'start'});
+
+  const r = await fetch('/api/tinanta/all_lakara', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({dhatu: slp1, prayoga:'kartari'}),
+  });
+  const d = await r.json();
+  if (d.error) {
+    document.getElementById('df-paradigm').innerHTML =
+      `<div class="df-empty" style="color:var(--danger);">⚠ ${escHtml(d.error)}</div>`;
+    return;
+  }
+  _dhataData = d;
+  // Update header with full meta
+  document.getElementById('df-hdr').innerHTML =
+    `<span class="big-dev">${d.dhatu_dev}</span>
+     <span class="meta">
+       <span style="font-family:var(--mono);color:var(--accent);font-size:.9rem;">${d.dhatu_slp1}</span>
+       <span style="margin-left:.5rem;">${d.artha_en}</span><br>
+       <span class="chip-xs">${d.gana_dev||''}</span>
+       <span class="chip-xs">${d.pada_dev||''}</span>
+     </span>
+     <button class="derive-all-btn" onclick="openFullPage('${escHtml(d.dhatu_slp1)}')">↗ पूर्ण पृष्ठ</button>`;
+  renderInlineParadigm(d);
+}
+
+function buildLoadingGrid() {
+  return `<div class="lak-mini-grid">${
+    ALL_LAK.map(([id,dev]) => `<div class="lak-mini-card">
+      <div class="lak-mini-hdr"><span class="dev">${dev}</span></div>
+      <div style="padding:.5rem;text-align:center;color:var(--ink-faint);font-size:.75rem;">⏳ …</div>
+    </div>`).join('')
+  }</div>`;
+}
+
+function renderInlineParadigm(d) {
+  const html = ALL_LAK.map(([lak_id, lak_dev, lak_en]) => {
+    const info = d.lakaras[lak_id] || {};
+    const cells = info.cells || {};
+    let rows = '';
+    for (const p of [3,2,1]) {
+      rows += `<tr><td class="rl">${['प्र·','म·','उ·'][3-p]}</td>`;
+      for (const v of [1,2,3]) {
+        const k = `${p}-${v}`, c = cells[k] || {};
+        if (c.error) {
+          rows += `<td class="fc err" title="${escHtml(c.error)}">—</td>`;
+        } else {
+          rows += `<td class="fc" onclick="showCellTrace('${escHtml(d.dhatu_slp1)}','${lak_id}',${p},${v})"
+                      title="${escHtml(c.surface_slp1||'')}">${escHtml(c.surface_dev||'')}</td>`;
+        }
+      }
+      rows += '</tr>';
+    }
+    return `<div class="lak-mini-card">
+      <div class="lak-mini-hdr"><span class="dev">${lak_dev}</span><span class="en">${lak_en}</span><span style="font-family:var(--mono);font-size:.65rem;color:var(--ink-faint);margin-left:auto;">${lak_id}</span></div>
+      <table class="para-mini">
+        <thead><tr><th></th><th>एक</th><th>द्वि</th><th>बहु</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+  }).join('');
+  document.getElementById('df-paradigm').innerHTML = `<div class="lak-mini-grid">${html}</div>`;
+}
+
+// ── Cell trace pop ─────────────────────────────────────────────────────────
+async function showCellTrace(dhatu, lak, p, v) {
+  const pop = document.getElementById('trace-pop');
+  document.getElementById('trace-heading-pop').textContent = '⏳ लोड हो रहा है…';
+  document.getElementById('trace-rows-pop').innerHTML = '';
+  pop.style.display = '';
+
+  const r = await fetch('/api/tinanta', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({dhatu, lakara:lak, prayoga:'kartari', purusha:p, vacana:v}),
+  });
+  const d = await r.json();
+  if (d.error) {
+    document.getElementById('trace-heading-pop').textContent = '⚠ ' + d.error;
+    return;
+  }
+  const PURUSHA = {3:'प्र·',2:'म·',1:'उ·'};
+  const VACANA  = {1:'एक',2:'द्वि',3:'बहु'};
+  document.getElementById('trace-heading-pop').textContent =
+    `${d.surface_dev} — ${d.lakara} ${PURUSHA[p]}${VACANA[v]}`;
+
+  const rows = (d.trace || []).filter(s => s.status === 'APPLIED' || s.status === 'STRUCTURAL');
+  document.getElementById('trace-rows-pop').innerHTML = rows.map(s => {
+    const ch = s.form_before !== s.form_after;
+    const fbD = s.form_before_dev ?? s.form_before ?? '';
+    const faD = s.form_after_dev ?? s.form_after ?? '';
+    const why = (s._sutra_text_dev || s._structural_dev || '').substring(0,50);
+    const fHtml = ch
+      ? `<span class="tr-form">${escHtml(fbD)} <span style="color:var(--ink-faint)">→</span> <span style="color:var(--accent-dim)">${escHtml(faD)}</span></span>`
+      : `<span class="tr-form" style="color:var(--ink-faint)">${escHtml(faD)}</span>`;
+    return `<div class="tr-row ${ch?'ch':''}">
+      <span class="tr-sid">${escHtml(s.sutra_id||'')}</span>
+      ${fHtml}
+      <span class="tr-why">${escHtml(why)}</span>
+    </div>`;
+  }).join('');
+}
+
+function closePop() {
+  document.getElementById('trace-pop').style.display = 'none';
+}
+
+function openFullPage(slp1) {
+  const url = `/tinanta/all`;
+  window.open(url + `#${encodeURIComponent(slp1)}`, '_blank');
+  // Also pre-fill by passing state via localStorage
+  localStorage.setItem('tinanta_all_dhatu', slp1);
+  window.location.href = url;
+}
+
+function escHtml(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Init ───────────────────────────────────────────────────────────────────
+parseURL();
+updateActiveBar();
+loadList();
+</script>
+{% endblock %}

@@ -985,6 +985,16 @@ def api_tinanta_all_lakara():
 # Dhātupātha browser
 # ─────────────────────────────────────────────────────────────────
 
+@app.route("/dhatufilters")
+def dhatufilters_page():
+    return render_template(
+        "dhatufilters.html",
+        nav_active="dhatufilters",
+        cov=coverage_report(SUTRA_REGISTRY),
+        all_lakaras=_ALL_LAKARAS,
+    )
+
+
 @app.route("/dhatupatha")
 def dhatupatha_page():
     return render_template(
@@ -1004,6 +1014,8 @@ def api_dhatupatha_list():
     q       = (request.args.get("q") or "").strip().lower()
     gana    = request.args.get("gana", "")
     pada    = request.args.get("pada", "")
+    it_cls  = request.args.get("it", "")     # set | anit | vet
+    karma   = request.args.get("karma", "")  # sakarmaka | akarmaka
     limit   = min(int(request.args.get("limit", 50)), 200)
     offset  = int(request.args.get("offset", 0))
 
@@ -1018,6 +1030,20 @@ def api_dhatupatha_list():
             if pada == "atmane" and "आत्मनेपदी" not in pl:
                 continue
             if pada == "ubhaya" and "उभयपदी" not in pl:
+                continue
+        if it_cls:
+            fl = e.get("flags", {}) or {}
+            if it_cls == "set"  and not (fl.get("set") and not fl.get("anit")):
+                continue
+            if it_cls == "anit" and not fl.get("anit"):
+                continue
+            if it_cls == "vet"  and not fl.get("vet"):
+                continue
+        if karma:
+            km = e.get("karmatva_label_dev", "") or ""
+            if karma == "sakarmaka"  and "सकर्मक" not in km:
+                continue
+            if karma == "akarmaka"   and "अकर्मक" not in km:
                 continue
         if q:
             haystack = (
