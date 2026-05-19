@@ -42,10 +42,18 @@ def _site_p016(state: State) -> bool:
 def cond(state: State) -> bool:
     if state.meta.get("7_4_25_ashir_liG_arm"):
         return not state.meta.get("7_4_25_ashir_done")
+    if state.meta.get("7_4_25_karmani_yak_arm"):
+        return not state.meta.get("7_4_25_karmani_done")
     return _site_p016(state)
 
 
 def act(state: State) -> State:
+    if state.meta.get("7_4_25_karmani_yak_arm"):
+        # Vacuous for bhū (ū already long); fires as trace marker only.
+        state.meta["7_4_25_karmani_done"] = True
+        state.meta.pop("7_4_25_karmani_yak_arm", None)
+        state.samjna_registry["7.4.25_karmani_vacuous"] = True
+        return state
     if state.meta.get("7_4_25_ashir_liG_arm"):
         # Vacuous for BU (ū already long); fires as trace record only.
         state.meta["7_4_25_ashir_done"] = True

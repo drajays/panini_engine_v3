@@ -75,9 +75,13 @@ def _find_p013(state: State) -> tuple[int, int] | None:
 
 def _find_tinganta_cross(state: State) -> int | None:
     """
-    Tiṅanta context: cross-term `a`(vikaraṇa-final) + `a`(tiṅ-initial) junction.
-    Returns index i of the left term (vikaraṇa) whose final `a` is to be deleted.
-    Fires after 7.1.3 transforms jhi → anti; the vikaraṇa `a` elides before `a` of anti.
+    Tiṅanta context: cross-term `a`(vikaraṇa/yaḳ-final) + `a`/`e`(tiṅ-initial) junction.
+    Returns index i of the left term whose final `a` is to be deleted (pararūpa).
+
+    Cases:
+      kartari 3pl:  vikaraṇa-a + anti-a  → a+a → delete first a
+      karmani 3pl:  yaḳ-a     + ante-a   → a+a → delete first a
+      karmani 1sg:  yaḳ-a     + e        → a+e → delete first a (pararūpa by 6.1.97)
     """
     if not state.meta.get(_META_TINGANTA):
         return None
@@ -88,7 +92,7 @@ def _find_tinganta_cross(state: State) -> int | None:
             continue
         if t1.varnas[-1].slp1 != "a":
             continue
-        if t2.varnas[0].slp1 != "a":
+        if t2.varnas[0].slp1 not in {"a", "e"}:
             continue
         if t1.meta.get("6_1_97_tinganta_done"):
             continue

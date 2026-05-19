@@ -1,11 +1,11 @@
 """
 7.1.3  झोऽन्तः  —  VIDHI
 
-Replaces the 'jh' sound with 'ant':
-  • laṭ/laṅ path with jhi intact (3 varnas j+h+i):  jhi → anti
-  • laṅ path after 3.4.100 drops 'i' (2 varnas j+h): jh  → ant
-
-The jhi upadeśa tag is used to identify the target term in both cases.
+Replaces the jh (jha) sound with anta:
+  • kartari (parasmai) laṭ/laṅ  jhi (j+h+i): jhi → anti
+  • laṅ after 3.4.100 drops i   jh  (j+h):   jh  → ant
+  • karmani (ātmanepada) 3pl:   Ja  (J single-char jha, after 3.4.79 → Je):
+                                  Je  → ante   (J+rest → ant+rest)
 """
 from __future__ import annotations
 
@@ -14,47 +14,55 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
-def _find_jhi(state: State) -> tuple[int, bool] | None:
-    """Return (index, has_i) where has_i=True means jhi (3 varnas), False means jh (2 varnas)."""
+def _find_jh_term(state: State):
+    """Return (index, kind) where kind in {'jhi','jh','Je'}."""
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
             continue
-        if (t.meta.get("upadesha_slp1") or "").strip() != "jhi":
-            continue
+        up = (t.meta.get("upadesha_slp1") or "").strip()
         vs = t.varnas
-        if len(vs) == 3:
-            v0, v1, v2 = vs[0].slp1, vs[1].slp1, vs[2].slp1
-            if v0 in ("j", "J") and v1 == "h" and v2 == "i":
-                return i, True
-        elif len(vs) == 2:
-            v0, v1 = vs[0].slp1, vs[1].slp1
-            if v0 in ("j", "J") and v1 == "h":
-                return i, False
+        # Parasmai (kartari): upadesha jhi, varnas j+h+i or j+h
+        if up == "jhi":
+            if len(vs) == 3 and vs[0].slp1 in {"j","J"} and vs[1].slp1 == "h" and vs[2].slp1 == "i":
+                return (i, "jhi")
+            if len(vs) == 2 and vs[0].slp1 in {"j","J"} and vs[1].slp1 == "h":
+                return (i, "jh")
+        # Ātmanepada (karmani): upadesha Ja (original) or Je (after 3.4.79), varnas start with J
+        if up in {"Ja", "Je"} and len(vs) >= 1 and vs[0].slp1 == "J":
+            return (i, "Je")
     return None
 
 
 def cond(state: State) -> bool:
     if not state.meta.get("7_1_3_jho_anta_arm"):
         return False
-    return _find_jhi(state) is not None
+    return _find_jh_term(state) is not None
 
 
 def act(state: State) -> State:
-    result = _find_jhi(state)
+    result = _find_jh_term(state)
     if result is None:
         return state
-    idx, has_i = result
+    idx, kind = result
     old = state.terms[idx]
-    # jhi (has_i=True) → anti; jh (has_i=False, after 3.4.100) → ant
-    new_slp1 = "anti" if has_i else "ant"
+    if kind == "jhi":
+        new_slp1 = "anti"
+        new_varnas = parse_slp1_upadesha_sequence("anti")
+    elif kind == "jh":
+        new_slp1 = "ant"
+        new_varnas = parse_slp1_upadesha_sequence("ant")
+    else:
+        # karmani: Je = [J, e] → replace J with [a,n,t], keep e → ante
+        new_varnas = parse_slp1_upadesha_sequence("ant") + list(old.varnas[1:])
+        new_slp1 = "ante"
     new_term = Term(
         kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence(new_slp1),
+        varnas=new_varnas,
         tags=set(old.tags),
         meta=dict(old.meta),
     )
     new_term.meta["upadesha_slp1"] = new_slp1
-    new_term.tags.discard("upadesha")  # prevent 1.3.3 re-firing on ant/anti finals
+    new_term.tags.discard("upadesha")
     state.terms[idx] = new_term
     return state
 
@@ -65,7 +73,10 @@ SUTRA = SutraRecord(
     text_slp1      = "Jho antaH",
     text_dev       = "झोऽन्तः",
     padaccheda_dev = "झः / अन्तः",
-    why_dev        = "झि-प्रत्ययस्य झकारस्य अन्तादेशः → अन्ति (ग्लास-बॉक्स्)।",
+    why_dev        = (
+        "झि-प्रत्ययस्य झकारस्य अन्तादेशः → अन्ति (परस्मैपद); "
+        "कर्मणि झ (J) → अन्त → झे (Je) के बाद अन्ते।"
+    ),
     anuvritti_from = (),
     cond           = cond,
     act            = act,

@@ -108,12 +108,34 @@ def _find_vuk_v(state: State):
     return None
 
 
+def _find_karmani_iy(state: State):
+    """karmani: drop y from iy within tiṅ ādeśa (after 7.2.81: Ate→iyte).
+    Finds the 'y' at varnas[1] of a pratyaya starting with i+y, before a HAL."""
+    if not state.meta.get("6_1_66_karmani_iy_arm"):
+        return None
+    for i, t in enumerate(state.terms):
+        if t.kind != "pratyaya":
+            continue
+        if t.meta.get("6_1_66_karmani_iy_done"):
+            continue
+        vs = t.varnas
+        if len(vs) < 3:
+            continue
+        if vs[0].slp1 != "i" or vs[1].slp1 != "y":
+            continue
+        if vs[2].slp1 not in HAL:
+            continue
+        return i
+    return None
+
+
 def cond(state: State) -> bool:
     return (
         _find_tfc_aprkta(state) is not None
         or _find_yasut_y(state) is not None
         or _find_ashir_sip_s(state) is not None
         or _find_vuk_v(state) is not None
+        or _find_karmani_iy(state) is not None
     )
 
 
@@ -147,6 +169,16 @@ def act(state: State) -> State:
         state.samjna_registry["6.1.66_vuk_v_lopa"] = True
         return state
 
+    idx = _find_karmani_iy(state)
+    if idx is not None:
+        t = state.terms[idx]
+        del t.varnas[1]  # drop y at position 1 (i-y-hal → i-hal)
+        t.meta["6_1_66_karmani_iy_done"] = True
+        t.meta["upadesha_slp1"] = "".join(v.slp1 for v in t.varnas)
+        state.meta.pop("6_1_66_karmani_iy_arm", None)
+        state.samjna_registry["6.1.66_karmani_iy_lopa"] = True
+        return state
+
     return state
 
 
@@ -159,7 +191,8 @@ SUTRA = SutraRecord(
     why_dev        = (
         "तृच्-पथ: दीर्घात् परस्य अपृक्त हल्-लोपः (सु→स्)। "
         "विधि-लिङ्-पथ: यासुट्-अवशेष [i,y] में य्-लोपः हल्-पूर्वे। "
-        "आशीर्-लिङ्-पथ (२मध्यम-एक): यासुट्-पश्चात् सिप्-जन्य-स्-लोपः।"
+        "आशीर्-लिङ्-पथ (२मध्यम-एक): यासुट्-पश्चात् सिप्-जन्य-स्-लोपः। "
+        "कर्मणि-पथ: ७.२.८१-जन्य इय् में य्-लोपः हल्-पूर्वे (इय्ते→इते)।"
     ),
     anuvritti_from = ("6.1.65",),
     cond           = cond,

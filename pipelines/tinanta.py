@@ -1489,6 +1489,146 @@ def _derive_lRG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     return state
 
 
+def _derive_karmani_laT(state: State, purusha: int, vacana: int) -> State:
+    """
+    Karmani laṭ (passive present) for bhvādi dhātus.
+
+    Key sūtras: 1.3.13 (ātmanepada), 3.1.67 (yaḳ vikaraṇa), 3.4.78 (tiṅ ādeśa),
+    3.4.79 (ṭi→e), 3.4.80 (thās→se), 7.1.3 (jha→ante), 7.2.81 (ā→iy),
+    6.1.66 (y-lopa), 6.1.87 (a+i→e), 6.1.97 (a+a/e pararūpa), 7.3.101 (yañi dīrgha).
+
+    Example: bhū + laṭ karmani 3sg → भूयते
+    """
+    # ── Tag dhātu for bhāva/karma prayoga ────────────────────────────────
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            t.tags.add("bhava_karma_usage")
+            break
+
+    # ── 1.3.13 bhāvakarmaṇoḥ: ātmanepada in karmani ─────────────────────
+    state = apply_rule("1.3.13", state)
+
+    # ── 3.2.123 vartamāne laṭ ────────────────────────────────────────────
+    state = apply_rule("3.2.123", state)
+
+    # Attach laṭ placeholder
+    laT_varnas = parse_slp1_upadesha_sequence("laT")
+    if laT_varnas and laT_varnas[-1].slp1 == "T":
+        laT_varnas = laT_varnas[:-1]
+    laT_term = Term(
+        kind="pratyaya",
+        varnas=laT_varnas,
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        meta={"upadesha_slp1": "laT"},
+    )
+    state.terms.append(laT_term)
+
+    # ── 3.4.77 lasya ─────────────────────────────────────────────────────
+    state = apply_rule("3.4.77", state)
+
+    # ── 3.4.78: select ātmanepada tiṅ ādeśa ──────────────────────────────
+    tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"]    = tin_adesha
+    state = apply_rule("3.4.78", state)
+
+    # ── 1.4.99 parasmaipade (audit: records vibhakti saṃjñā) ──────────────
+    state = apply_rule("1.4.99", state)
+    # ── 1.4.100 lakāratāṅānāv ātmanepadam ────────────────────────────────
+    state = apply_rule("1.4.100", state)
+
+    # ── IT-prakaraṇa on tiṅ ādeśa (1.3.4/1.3.3/1.3.9) ───────────────────
+    state = P00_tin_tusma_audit_halantyam_lopa(state)
+
+    # ── 3.4.113 tiṅśit sārvadhatukam ─────────────────────────────────────
+    state = apply_rule("3.4.113", state)
+
+    # ── 1.2.4 sārvadhatukam apit ─────────────────────────────────────────
+    state = apply_rule("1.2.4", state)
+
+    # ── 3.1.67: sārvadhatuke yaḳ — insert yaḳ between dhātu and tiṅ ─────
+    state.meta["3_1_67_arm"] = True
+    state = apply_rule("3.1.67", state)  # records the event
+
+    # Recipe: physically insert yaḳ after dhātu
+    _dhatu_idx = next(i for i, t in enumerate(state.terms) if "dhatu" in t.tags)
+    _yak = Term(
+        kind="pratyaya",
+        varnas=parse_slp1_upadesha_sequence("yak"),
+        tags={"pratyaya", "upadesha", "vikarana"},
+        meta={"upadesha_slp1": "yak"},
+    )
+    state.terms.insert(_dhatu_idx + 1, _yak)
+
+    # ── IT-prakaraṇa on yaḳ: 1.3.3 (k→IT) + 1.3.9 (k drops) → ya ───────
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    # Mark ya (remaining) as kṅit so 1.1.5 blocks guṇa on dhātu
+    for t in state.terms:
+        if t.meta.get("upadesha_slp1") == "yak" and "vikarana" in t.tags:
+            t.tags.add("kngiti")
+            break
+
+    # ── 3.4.114 ārdhadhātukam śeṣaḥ (vacuous trace step) ─────────────────
+    state = apply_rule("3.4.114", state)
+
+    # ── 3.4.79: ṭita ātmanepada ṭere (terminal vowel+rest → e) ───────────
+    state = apply_rule("3.4.79", state)
+
+    # ── 3.4.80: thāsasse (2sg: thās → se) ────────────────────────────────
+    state = apply_rule("3.4.80", state)
+
+    # ── 1.2.4 second pass (sārvadhatukam apit — yaḳ context) ──────────────
+    state = apply_rule("1.2.4", state)
+
+    # ── 1.4.13 aṅga-saṃjñā ───────────────────────────────────────────────
+    state = apply_rule("1.4.13", state)
+
+    # ── 1.1.5 kṅiti ca: block guṇa before yaḳ (kit) ──────────────────────
+    state = apply_rule("1.1.5", state)
+
+    # ── 7.4.25 akṛtsārvadhatukayoḥ dīrgha (vacuous for bhū) ──────────────
+    state.meta["7_4_25_karmani_yak_arm"] = True
+    state = apply_rule("7.4.25", state)
+
+    # ── 7.1.3: jho'ntaḥ (karmani 3pl: Je → ante) ─────────────────────────
+    state.meta["7_1_3_jho_anta_arm"] = True
+    state = apply_rule("7.1.3", state)
+
+    # ── 7.2.81: āto ṅitaḥ (3du/2du: ā of Ate/ATe → iy) ──────────────────
+    state.meta["7_2_81_Atam_arm"] = True
+    state = apply_rule("7.2.81", state)
+
+    # ── 6.1.66: lopo vyorvali (drop y from iy before val) ─────────────────
+    state.meta["6_1_66_karmani_iy_arm"] = True
+    state = apply_rule("6.1.66", state)
+
+    # ── 7.3.101 ato dīrgho yañi (1du/1pl: ya → yā before v/m) ────────────
+    state.meta["7_3_101_arm"] = True
+    state = apply_rule("7.3.101", state)
+
+    # ── 1.4.14 pāda-saṃjñā ───────────────────────────────────────────────
+    state = apply_rule("1.4.14", state)
+
+    # ── 6.1.87 ādguṇaḥ (3du/2du: ya(a)+ite(i) → ye+te cross-term) ────────
+    state = apply_rule("6.1.87", state)
+
+    # ── 6.1.97 ato guṇe (3pl: a+a→a, 1sg: a+e→e pararūpa) ───────────────
+    state.meta["6_1_97_tinganta_arm"] = True
+    state = apply_rule("6.1.97", state)
+
+    # ── STRUCTURAL: pada merge ────────────────────────────────────────────
+    _pada_merge(state)
+
+    # ── TRIPĀḌĪ ──────────────────────────────────────────────────────────
+    state = apply_rule("8.2.1", state)
+    state = apply_rule("8.2.66", state)
+    state = apply_rule("8.3.15", state)
+
+    return state
+
+
 def derive(
     dhatu_upadesha: str,
     lakara: str,
@@ -1552,6 +1692,14 @@ def derive(
     if prayoga == "kartari":
         state = apply_rule("1.3.78", state)
     pada_key = _resolve_pada_from_gate(state)  # "parasmai" or "atmane"
+
+    # ── karmani dispatch ──────────────────────────────────────────────────────
+    if prayoga == "karmani":
+        if lakara == "laT":
+            state = apply_rule("3.1.91", state)
+            state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+            return _derive_karmani_laT(state, purusha, vacana)
+        raise NotImplementedError(f"karmani prayoga for lakāra {lakara!r} not yet implemented")
 
     # ── liṭ dispatch ─────────────────────────────────────────────────────────
     if lakara in ("liT",):
