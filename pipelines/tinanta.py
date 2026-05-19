@@ -436,10 +436,15 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("6.1.5", state)
         # 7.4.60 halādiḥ śeṣaḥ — trim CVC abhyāsa to CV (e.g. paW → pa)
         state = apply_rule("7.4.60", state)
-        # 7.2.116 ato upadhāyāḥ — liṭ strong (Ral=3sg/1sg): vṛddhi a→ā in root
         if lit_adesha == "Ral":
+            # 7.2.116 ato upadhāyāḥ — liṭ strong: vṛddhi a→ā for 'a'-upadha roots (paṭh→papāṭha)
             state.meta["7_2_116_liT_upadha_vrddhi_arm"] = True
             state = apply_rule("7.2.116", state)
+            # 7.3.84 sārvadhatukārdhadhātukayoḥ — liṭ strong: guṇa of IK-upadha roots (cit→ciceta)
+            # Tag the Ral-residue suffix as ārdhadhātuka so 7.3.84's trigger fires
+            state.meta["7_3_84_liT_strong_arm"] = True
+            state = apply_rule("7.3.84", state)
+            state.meta.pop("7_3_84_liT_strong_arm", None)
         # 1.4.13 aṅga saṃjñā
         state = apply_rule("1.4.13", state)
         # 6.4.88 vuk

@@ -20,7 +20,7 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology    import mk
-from phonology.pratyahara import IK
+from phonology.pratyahara import IK, HAL
 
 from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import is_sarvadhatuka_upadesha_slp1
 from sutras.adhyaya_1.pada_1.sutra_1_1_4 import ik_guna_vriddhi_blocked_by_1_1_4
@@ -44,6 +44,19 @@ def _first_dhatu_index(state: State) -> int | None:
     for i, t in enumerate(state.terms):
         if "dhatu" in t.tags:
             return i
+    return None
+
+
+def _last_ik_index(d0) -> int | None:
+    """Return the index of the last IK vowel in d0.varnas.
+
+    For vowel-final dhātus (e.g. BU = [B,U]) this is len-1 — same as before.
+    For consonant-final dhātus with an IK penultimate vowel (e.g. cit = [c,i,t])
+    this returns the index of that vowel so guṇa targets it correctly.
+    """
+    for j in range(len(d0.varnas) - 1, -1, -1):
+        if _ik_letter(d0.varnas[j].slp1):
+            return j
     return None
 
 
@@ -88,8 +101,28 @@ def _p040_eligible(state: State) -> bool:
         return False
     if not d0.varnas:
         return False
-    last = d0.varnas[-1].slp1
-    return _ik_letter(last)
+    return _last_ik_index(d0) is not None
+
+
+def _liT_strong_eligible(state: State) -> bool:
+    """liṭ strong arm: guṇa of IK-upadha root (e.g. cit→cet) when 7.2.116 left it unchanged."""
+    if not state.meta.get("7_3_84_liT_strong_arm"):
+        return False
+    # Find the NON-abhyāsa dhātu term
+    d0 = None
+    for t in state.terms:
+        if "dhatu" in t.tags and "abhyasa" not in t.tags:
+            d0 = t
+            break
+    if d0 is None:
+        return False
+    if d0.meta.get("anga_guna_7_3_84") or d0.meta.get("upadha_vrddhi_done"):
+        return False  # 7.2.116 already applied vṛddhi (a-upadha case)
+    # Only for consonant-final dhātus: vowel-final ones (e.g. BU) get vuk (6.4.88)
+    # which intervenes between dhātu and suffix, blocking guṇa.
+    if not d0.varnas or d0.varnas[-1].slp1 not in HAL:
+        return False
+    return _last_ik_index(d0) is not None
 
 
 def cond(state: State) -> bool:
@@ -99,6 +132,8 @@ def cond(state: State) -> bool:
         return False
     if state.meta.get("P040_7_3_84_arm"):
         return _p040_eligible(state)
+    if state.meta.get("7_3_84_liT_strong_arm"):
+        return _liT_strong_eligible(state)
     di = _first_dhatu_index(state)
     if di is None:
         return False
@@ -113,36 +148,38 @@ def cond(state: State) -> bool:
         return False
     if not d0.varnas:
         return False
-    last = d0.varnas[-1].slp1
-    return _ik_letter(last)
+    return _last_ik_index(d0) is not None
 
 
-def act(state: State) -> State:
-    if state.meta.get("P040_7_3_84_arm") and _p040_eligible(state):
-        di = _p040_non_abhyasa_hu_dhatu_index(state)
-        assert di is not None
-        d0 = state.terms[di]
-        last = d0.varnas[-1].slp1
-        rep = _IK_GUNA.get(last, last)
-        d0.varnas[-1] = mk(rep)
-        d0.meta["anga_guna_7_3_84"] = True
-        if last in ("f", "F"):
-            d0.meta["urN_rapara_pending"] = "r"
-        elif last in ("x", "X"):
-            d0.meta["urN_rapara_pending"] = "l"
-        state.meta.pop("P040_7_3_84_arm", None)
-        return state
-    di = _first_dhatu_index(state)
-    assert di is not None
-    d0 = state.terms[di]
-    last = d0.varnas[-1].slp1
+def _apply_guna_to_dhatu(d0) -> None:
+    ik_i = _last_ik_index(d0)
+    assert ik_i is not None
+    last = d0.varnas[ik_i].slp1
     rep = _IK_GUNA.get(last, last)
-    d0.varnas[-1] = mk(rep)
+    d0.varnas[ik_i] = mk(rep)
     d0.meta["anga_guna_7_3_84"] = True
     if last in ("f", "F"):
         d0.meta["urN_rapara_pending"] = "r"
     elif last in ("x", "X"):
         d0.meta["urN_rapara_pending"] = "l"
+
+
+def act(state: State) -> State:
+    if state.meta.get("7_3_84_liT_strong_arm") and _liT_strong_eligible(state):
+        d0 = next(t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags)
+        _apply_guna_to_dhatu(d0)
+        return state
+    if state.meta.get("P040_7_3_84_arm") and _p040_eligible(state):
+        di = _p040_non_abhyasa_hu_dhatu_index(state)
+        assert di is not None
+        d0 = state.terms[di]
+        _apply_guna_to_dhatu(d0)
+        state.meta.pop("P040_7_3_84_arm", None)
+        return state
+    di = _first_dhatu_index(state)
+    assert di is not None
+    d0 = state.terms[di]
+    _apply_guna_to_dhatu(d0)
     return state
 
 
