@@ -21,6 +21,10 @@ def _find_tasi(state: State):
     for i, t in enumerate(state.terms):
         if t.meta.get("tAsi_vikaraṇa") and not t.meta.get("6_4_62_done"):
             return i
+        # sya vikaraṇa in bhāvakarmaṇa (6.4.62 explicitly names sya)
+        up = (t.meta.get("upadesha_slp1") or "").strip()
+        if up == "sya" and "vikarana" in t.tags and not t.meta.get("6_4_62_done"):
+            return i
     return None
 
 
