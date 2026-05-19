@@ -92,7 +92,7 @@ KHAR  = build_pratyahara("K", "r")
 # out letter-by-letter; they are NOT further-derivable pratyāhāras.
 # ──────────────────────────────────────────────────────────────
 
-TUSMA     = frozenset({"t", "T", "d", "D", "n", "s"})
+TUSMA     = frozenset({"t", "T", "d", "D", "n", "m", "s"})
 CUTU      = frozenset({"c", "C", "j", "J", "Y", "S", "w", "W", "q", "Q", "R"})
 KU_VARGA  = frozenset({"k", "K", "g", "G", "N"})
 NI_TU_DU  = frozenset({"Y", "w", "q"})

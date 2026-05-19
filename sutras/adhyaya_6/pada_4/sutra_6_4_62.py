@@ -1,28 +1,48 @@
 """
 6.4.62  स्यसिच्सीयुट्तासिषु भावकर्मणोरुपदेशेऽज्झनग्रहदृशां वा चिण्वदिट् च  —  VIDHI
 
-Padaccheda: स्य-सिच्-सीयुट्‍-तासिषु भाव-कर्म्मणोः उपदेशे अच्-हन-ग्रह-दृशाम् वा चिण्-वत् इट् च
+In bhāvakarmaṇa context, before tāsi (luṭ vikaraṇa), optionally insert iṭ
+"ciṇvat" (treated like ciṇ, which is ñit). The ciṇvat treatment means 7.2.115
+(aco ñṇiti) fires giving vṛddhi on the dhātu, instead of 7.3.84 (guṇa).
 
-स्यसिच्सीयुट्तासिषु भावकर्मणोरुपदेशेऽज्झनग्रहदृशां वा चिण्वदिट् च (6.4.62)
+Engine: recipe arms via state.meta["6_4_62_arm"]. Finds the tāsi vikaraṇa term
+(tagged tAsi_vikaraṇa) and inserts iṭ before it, marking it as ciṇvat.
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.state import State
+from engine.state import State, Term
+from phonology.varna import parse_slp1_upadesha_sequence
 
-_GATE_KEY: str = "6_4_62_syasicsIyu_62"
+
+def _find_tasi(state: State):
+    if not state.meta.get("6_4_62_arm"):
+        return None
+    for i, t in enumerate(state.terms):
+        if t.meta.get("tAsi_vikaraṇa") and not t.meta.get("6_4_62_done"):
+            return i
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return state.meta.get("6_4_62_arm") is True
+    return _find_tasi(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.4.62"
+    i = _find_tasi(state)
+    if i is None:
+        return state
+    it_v = Term(
+        kind="agama",
+        varnas=parse_slp1_upadesha_sequence("iw"),
+        tags={"agama", "upadesha", "it_agama", "cinvat_it"},
+        meta={"upadesha_slp1": "iw", "cinvat_it": True},
+    )
+    state.terms.insert(i, it_v)
+    state.terms[i + 1].meta["6_4_62_done"] = True
+    state.meta.pop("6_4_62_arm", None)
+    state.meta["7_2_115_karmani_lut_arm"] = True  # signal vṛddhi via ciṇvat
+    state.samjna_registry["6.4.62_cinvat_it"] = True
     return state
 
 

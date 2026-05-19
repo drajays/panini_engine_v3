@@ -23,9 +23,9 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 # Map: (expected current varnas of tiṅ residue, upadesha) → adesha SLP1
 _PRATHAMA_MAP: dict[str, tuple[str, ...]] = {
-    "qA" : ("ti",),          # tip → qA (ḍā)
-    "rO" : ("tas",),         # tas → rO (rau)
-    "ras": ("jhi",),         # jhi → ras (ras)
+    "qA" : ("ti", "ta"),         # tip→ti (parasmai) / ta (ātmanepada) → qA (ḍā)
+    "rO" : ("tas", "AtAm"),      # tas (parasmai) / AtAm (ātmanepada) → rO (rau)
+    "ras": ("jhi", "Ja"),        # jhi (parasmai) / Ja (ātmanepada) → ras
 }
 
 

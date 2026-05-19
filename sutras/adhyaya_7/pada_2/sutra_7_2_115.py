@@ -38,6 +38,21 @@ def _vrddhi_vowel(ch: str, state: State) -> Optional[str]:
 
 
 def _find(state: State):
+    # Karmani luṭ arm: direct vṛddhi on dhātu (ciṇvat iṭ from 6.4.62)
+    if state.meta.get("7_2_115_karmani_lut_arm"):
+        dhatu = next((t for t in state.terms if "dhatu" in t.tags), None)
+        if dhatu is None or dhatu.meta.get("aco_nniti_vrddhi_done"):
+            return None
+        if not dhatu.varnas:
+            return None
+        last = dhatu.varnas[-1].slp1
+        rep = _vrddhi_vowel(last, state)
+        if rep is None:
+            return None
+        di = state.terms.index(dhatu)
+        return (di, len(dhatu.varnas) - 1, rep)
+
+    # Original kṛt path
     if len(state.terms) < 2:
         return None
     dhatu = next((t for t in state.terms if "dhatu" in t.tags), None)
@@ -79,6 +94,7 @@ def act(state: State) -> State:
     ti, vi, rep = hit
     state.terms[ti].varnas[vi] = mk(rep)
     state.terms[ti].meta["aco_nniti_vrddhi_done"] = True
+    state.meta.pop("7_2_115_karmani_lut_arm", None)
     return state
 
 
