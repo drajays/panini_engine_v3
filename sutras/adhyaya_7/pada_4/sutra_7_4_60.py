@@ -17,6 +17,43 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from phonology.varna import Varna
+
+# SLP1 sets used by the halādi-trim helper
+_AC  = frozenset("aAiIuUeEoOfFxX")   # AC pratyāhāra (all vowels)
+_SAR = frozenset("SzshLr")            # śar consonants (ś=S ṣ=z s h ḻ=L r)
+
+
+def _haladi_trim(varnas: list[Varna]) -> list[Varna]:
+    """Return the abhyāsa trimmed to first consonant + first following vowel.
+
+    Incorporates the 7.4.61 (śarpūrvāḥ khayaḥ) pre-step: when the first
+    consonant of the onset cluster is a śar (ś, ṣ, s, h, r, ḻ) and at least
+    one more consonant precedes the vowel, the śar is dropped so the khay that
+    follows becomes the halādi.
+
+    Examples:
+      [p, a, W]         → [p, a]   (paṭh  → pa)  unchanged
+      [c, y, u, t]      → [c, u]   (after ś-drop of Scyut → cyut → cu)
+      [S, c, y, u, t]   → [c, u]   (Scyut → apply śar-drop → [c,y,u,t] → cu)
+      [k, z, i, p]      → [k, i]   (kṣip  → ki, then 7.4.62 k→c gives ci)
+    """
+    if not varnas:
+        return varnas
+    # Find first vowel index
+    vi = next((j for j, v in enumerate(varnas) if v.slp1 in _AC), None)
+    if vi is None:
+        return list(varnas[:2])  # no vowel — fallback
+    onset = varnas[:vi]          # all consonants before the first vowel
+    vowel = varnas[vi]
+    if not onset:
+        return [vowel]           # vowel-initial (edge case)
+    if len(onset) == 1:
+        return [onset[0], vowel] # exactly one onset consonant — keep as is
+    # Multiple onset consonants: apply 7.4.61 if first is śar
+    if onset[0].slp1 in _SAR:
+        onset = onset[1:]        # drop the leading śar consonant
+    return [onset[0], vowel]     # keep first remaining consonant + vowel
 
 
 def _find(state: State):
@@ -134,7 +171,7 @@ def act(state: State) -> State:
         t.varnas = [t.varnas[0]]
         t.meta.pop("7_4_60_first_hal_only", None)
     else:
-        t.varnas = t.varnas[:2]
+        t.varnas = _haladi_trim(t.varnas)
     t.meta["7_4_60_haladi_done"] = True
     return state
 

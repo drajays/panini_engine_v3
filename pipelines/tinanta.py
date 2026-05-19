@@ -459,9 +459,12 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state.meta["P029_7_4_59_abhyasa_hrasva_arm"] = True
     state = apply_rule("7.4.59", state)
 
-    # ── 7.4.73 bhavateraḥ (abhyāsa u→a for bhū) ──────────────────────────────
-    state.meta["7_4_73_arm"] = True
-    state = apply_rule("7.4.73", state)
+    # ── 7.4.73 bhavateraḥ (abhyāsa u→a) — only for bhū ─────────────────────────
+    _dht = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+    _dht_up = (_dht.meta.get("upadesha_slp1") or "").strip() if _dht else ""
+    if _dht_up in {"BU", "BU~"}:
+        state.meta["7_4_73_arm"] = True
+        state = apply_rule("7.4.73", state)
 
     # ── 1.4.14 pada saṃjñā ───────────────────────────────────────────────────
     state = apply_rule("1.4.14", state)
