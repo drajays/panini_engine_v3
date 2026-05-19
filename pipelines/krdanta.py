@@ -308,7 +308,7 @@ def derive_trc(dhatu_id: str) -> State:
     from pipelines.subanta_trc import derive_trc_nom_sg_from_state
 
     row = get_dhatu_row(dhatu_id)
-    up = row["upadesha_slp1"]
+    up = row.get("raw_dhatu_after_it_lopa_slp1") or row["upadesha_slp1"]
     ud = bool(row.get("flags", {}).get("udatta", False))
     k = derive_tfc_pratipadika(up, udatta_dhatu=ud)
     return derive_trc_nom_sg_from_state(k, vibhakti=1, vacana=1, linga="pulliṅga")

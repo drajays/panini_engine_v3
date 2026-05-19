@@ -40,7 +40,12 @@ def kartari_parasmaipada_seza_active(state: State) -> bool:
 
 
 def _desired_gate_active(dhatu: Term) -> bool:
-    return not bool(dhatu.meta.get(ATMANE_LICENSE_META_KEY))
+    val = dhatu.meta.get(ATMANE_LICENSE_META_KEY)
+    # "ubhaya" = dhātu can take both padas; 1.3.78 śeṣa still gives parasmaipada
+    # as the default in kartari (ātmanepada requires a specific 1.3.12–77 context).
+    if val == "ubhaya":
+        return True
+    return not bool(val)
 
 
 def seza_parasmaipada_gate_needs_update(state: State) -> bool:

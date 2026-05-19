@@ -1,9 +1,7 @@
 """
-3.1.77  तुदादिभ्यः शः  —  VIDHI (narrow demo)
+3.1.77  तुदादिभ्यः शः  —  VIDHI
 
-Demo slice (मुञ्चति.md):
-  For tudādi dhātu `muc`, use vikaraṇa `Sa` (whose surface remainder is `a`)
-  instead of `Sap`.
+  For tudādi (gaṇa 6) dhātu, use vikaraṇa `Sa` instead of `Sap`.
 
 Engine:
   - recipe-armed: ``state.meta['3_1_77_sa_arm']``.
@@ -23,9 +21,6 @@ def _matches(state: State) -> bool:
         return False
     dh = state.terms[0]
     if "dhatu" not in dh.tags:
-        return False
-    # Narrow demo extension: allow additional tudādi witnesses when the recipe arms.
-    if (dh.meta.get("upadesha_slp1") or "").strip() not in {"muc", "kF"}:
         return False
     if any((t.meta.get("upadesha_slp1") or "").strip() == "Sa" for t in state.terms):
         return False
@@ -55,7 +50,7 @@ SUTRA = SutraRecord(
     text_slp1="tudAdibhyaH SaH",
     text_dev="तुदादिभ्यः शः",
     padaccheda_dev="तुदादिभ्यः शः",
-    why_dev="तुदादि-गणेभ्यः धातुभ्यः श-विकरणः (डेमो: मुच्)।",
+    why_dev="तुदादि-गणेभ्यः धातुभ्यः श-विकरणः।",
     anuvritti_from=("3.1.67", "3.1.91"),
     cond=cond,
     act=act,

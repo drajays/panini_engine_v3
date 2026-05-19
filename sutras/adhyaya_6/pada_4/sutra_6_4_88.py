@@ -33,10 +33,22 @@ def _already_done(state: State) -> bool:
     return state.samjna_registry.get("6_4_88_vuk_inserted") is True
 
 
+def _is_bhu_dhatu(state: State) -> bool:
+    """True iff primary dhātu is BU (bhū) — the rule is 'bhuvō vuk'."""
+    di = _find_dhatu_index(state)
+    if di is None:
+        return False
+    d = state.terms[di]
+    up = (d.meta.get("upadesha_slp1") or "").strip()
+    return up in {"BU", "BU~"}
+
+
 def cond(state: State) -> bool:
     if not state.meta.get("6_4_88_arm"):
         return False
     if _already_done(state):
+        return False
+    if not _is_bhu_dhatu(state):
         return False
     di = _find_dhatu_index(state)
     if di is None:

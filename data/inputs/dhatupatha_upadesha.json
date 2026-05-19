@@ -41,11 +41,11 @@
       "gana_label_dev": "भ्वादिः",
       "pada_label_dev": "परस्मैपदी",
       "karmatva_label_dev": "अकर्मकः",
-      "it_class_label_dev": "सेट्",
+      "it_class_label_dev": "अनिट्",
       "it_markers": [],
       "flags": {
-        "anit": false,
-        "set": true,
+        "anit": true,
+        "set": false,
         "vet": false,
         "ekac": true,
         "udatta": false
@@ -12577,7 +12577,7 @@
     {
       "id": "BvAdi_01_0381",
       "tier": "bvadi_merged",
-      "dhatupatha_id": "01.0381",
+      "dhatupatha_id": "01.0607",
       "gana": 1,
       "gana_number": 1,
       "serial_in_gana": 381,
@@ -12596,7 +12596,7 @@
       "karmatva_label_dev": "सकर्मकः",
       "it_class_label_dev": "सेट्",
       "it_markers": [
-        "अँ"
+        "ँ"
       ],
       "flags": {
         "anit": false,
@@ -31164,7 +31164,7 @@
       "serial_in_gana": 10,
       "sutra_ref": "8.10",
       "upadesha_dev": "डुकृञ्",
-      "upadesha_slp1": "kF",
+      "upadesha_slp1": "DukfY",
       "mula_dhatu_dev": "कृ",
       "raw_dhatu_after_it_lopa_dev": "कृ",
       "raw_dhatu_after_it_lopa_slp1": "kf",
@@ -31173,7 +31173,10 @@
       "gana_label_dev": "तनादिः",
       "pada_label_dev": "उभयपदी",
       "it_class_label_dev": "अनिट्",
-      "it_markers": [],
+      "it_markers": [
+        "डु",
+        "ञ्"
+      ],
       "flags": {
         "anit": true,
         "set": false,
@@ -31181,7 +31184,8 @@
         "ekac": true,
         "udatta": false
       },
-      "notes": "डुकृञ् — ``kF`` engine slice until ``DukfY`` / ``qukfY`` डु-it is complete in it-prakaraṇa."
+      "notes": "डुकृञ् — ``kF`` engine slice until ``DukfY`` / ``qukfY`` डु-it is complete in it-prakaraṇa.",
+      "artha_en": "to do, to make"
     },
     {
       "id": "BvAdi_hfY",
@@ -31295,6 +31299,239 @@
         "Nit_initial": true
       },
       "notes": "णीञ् — णो नः (6.1.65) on Nvul path."
+    },
+    {
+      "id": "BvAdi_01_1137",
+      "tier": "bvadi_merged",
+      "dhatupatha_id": "01.1137",
+      "gana": 1,
+      "gana_number": 1,
+      "serial_in_gana": 1137,
+      "sutra_ref": "01.1137",
+      "upadesha_dev": "गमॢँ",
+      "upadesha_slp1": "gamx~",
+      "mula_dhatu_dev": "गम्",
+      "raw_dhatu_after_it_lopa_dev": "गम्",
+      "raw_dhatu_after_it_lopa_slp1": "gam",
+      "artha_dev": "गतौ",
+      "artha_slp1": "",
+      "artha_en": "to go",
+      "artha_hi": "",
+      "gana_label_dev": "भ्वादिः",
+      "pada_label_dev": "परस्मैपदी",
+      "karmatva_label_dev": "सकर्मकः",
+      "it_class_label_dev": "अनिट्",
+      "it_markers": [
+        "ॢँ"
+      ],
+      "flags": {
+        "anit": true,
+        "set": false,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "v2-imported: 01.1137"
+    },
+    {
+      "id": "JuhotyAdi_03_0001",
+      "tier": "juhotyadi",
+      "dhatupatha_id": "03.0001",
+      "gana": 3,
+      "gana_number": 3,
+      "serial_in_gana": 1,
+      "sutra_ref": "03.0001",
+      "upadesha_dev": "हुँ",
+      "upadesha_slp1": "hu~",
+      "mula_dhatu_dev": "हु",
+      "raw_dhatu_after_it_lopa_dev": "हु",
+      "raw_dhatu_after_it_lopa_slp1": "hu",
+      "artha_dev": "दानादनयोः",
+      "artha_slp1": "",
+      "artha_en": "to sacrifice, to offer",
+      "artha_hi": "",
+      "gana_label_dev": "जुहोत्यादिः",
+      "pada_label_dev": "उभयपदी",
+      "karmatva_label_dev": "सकर्मकः",
+      "it_class_label_dev": "अनिट्",
+      "it_markers": [
+        "ँ"
+      ],
+      "flags": {
+        "anit": true,
+        "set": false,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "v2-imported: 03.0001"
+    },
+    {
+      "id": "divAdi_04_0001",
+      "tier": "divadi",
+      "dhatupatha_id": "04.0001",
+      "gana": 4,
+      "gana_number": 4,
+      "serial_in_gana": 1,
+      "sutra_ref": "04.0001",
+      "upadesha_dev": "दिवुँ",
+      "upadesha_slp1": "divu~",
+      "mula_dhatu_dev": "दिव्",
+      "raw_dhatu_after_it_lopa_dev": "दिव्",
+      "raw_dhatu_after_it_lopa_slp1": "div",
+      "artha_dev": "क्रीडा-विजिगीषा-व्यवहार-द्युति-स्तुति-मोद-मद-स्वप्न-कान्ति-गतिषु",
+      "artha_slp1": "",
+      "artha_en": "to play, to gamble",
+      "artha_hi": "",
+      "gana_label_dev": "दिवादिः",
+      "pada_label_dev": "परस्मैपदी",
+      "karmatva_label_dev": "अकर्मकः",
+      "it_class_label_dev": "सेट्",
+      "it_markers": [
+        "ँ"
+      ],
+      "flags": {
+        "anit": false,
+        "set": true,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "v2-imported: 04.0001"
+    },
+    {
+      "id": "svAdi_05_0001",
+      "tier": "svadi",
+      "dhatupatha_id": "05.0001",
+      "gana": 5,
+      "gana_number": 5,
+      "serial_in_gana": 1,
+      "sutra_ref": "05.0001",
+      "upadesha_dev": "षुञ्",
+      "upadesha_slp1": "zuY",
+      "mula_dhatu_dev": "सु",
+      "raw_dhatu_after_it_lopa_dev": "सु",
+      "raw_dhatu_after_it_lopa_slp1": "su",
+      "artha_dev": "प्रसवैश्वर्ययोः",
+      "artha_slp1": "",
+      "artha_en": "to press (Soma), to beget",
+      "artha_hi": "",
+      "gana_label_dev": "स्वादिः",
+      "pada_label_dev": "उभयपदी",
+      "karmatva_label_dev": "सकर्मकः",
+      "it_class_label_dev": "अनिट्",
+      "it_markers": [
+        "ष्",
+        "ञ्"
+      ],
+      "flags": {
+        "anit": true,
+        "set": false,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "v2-imported: 05.0001"
+    },
+    {
+      "id": "tudAdi_06_0001",
+      "tier": "tudadi",
+      "dhatupatha_id": "06.0001",
+      "gana": 6,
+      "gana_number": 6,
+      "serial_in_gana": 1,
+      "sutra_ref": "06.0001",
+      "upadesha_dev": "तुदँ",
+      "upadesha_slp1": "tuda~",
+      "mula_dhatu_dev": "तुद्",
+      "raw_dhatu_after_it_lopa_dev": "तुद्",
+      "raw_dhatu_after_it_lopa_slp1": "tud",
+      "artha_dev": "व्यथने",
+      "artha_slp1": "",
+      "artha_en": "to strike, to pain",
+      "artha_hi": "",
+      "gana_label_dev": "तुदादिः",
+      "pada_label_dev": "उभयपदी",
+      "karmatva_label_dev": "सकर्मकः",
+      "it_class_label_dev": "अनिट्",
+      "it_markers": [
+        "ँ"
+      ],
+      "flags": {
+        "anit": true,
+        "set": false,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "v2-imported: 06.0001"
+    },
+    {
+      "id": "ruDAdi_07_0001",
+      "tier": "rudhadi",
+      "dhatupatha_id": "07.0001",
+      "gana": 7,
+      "gana_number": 7,
+      "serial_in_gana": 1,
+      "sutra_ref": "07.0001",
+      "upadesha_dev": "रुधिँर्",
+      "upadesha_slp1": "ruDi~r",
+      "mula_dhatu_dev": "रुध्",
+      "raw_dhatu_after_it_lopa_dev": "रुध्",
+      "raw_dhatu_after_it_lopa_slp1": "ruD",
+      "artha_dev": "आवरणे",
+      "artha_slp1": "",
+      "artha_en": "to obstruct, to confine",
+      "artha_hi": "",
+      "gana_label_dev": "रुधादिः",
+      "pada_label_dev": "उभयपदी",
+      "karmatva_label_dev": "सकर्मकः",
+      "it_class_label_dev": "अनिट्",
+      "it_markers": [
+        "इँ",
+        "र्"
+      ],
+      "flags": {
+        "anit": true,
+        "set": false,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "v2-imported: 07.0001"
+    },
+    {
+      "id": "kryAdi_09_0001",
+      "tier": "kryadi",
+      "dhatupatha_id": "09.0001",
+      "gana": 9,
+      "gana_number": 9,
+      "serial_in_gana": 1,
+      "sutra_ref": "09.0001",
+      "upadesha_dev": "क्रीञ्",
+      "upadesha_slp1": "krIY",
+      "mula_dhatu_dev": "क्री",
+      "raw_dhatu_after_it_lopa_dev": "क्री",
+      "raw_dhatu_after_it_lopa_slp1": "krI",
+      "artha_dev": "द्रव्यविनिमये",
+      "artha_slp1": "",
+      "artha_en": "to buy",
+      "artha_hi": "",
+      "gana_label_dev": "क्र्यादिः",
+      "pada_label_dev": "उभयपदी",
+      "karmatva_label_dev": "सकर्मकः",
+      "it_class_label_dev": "अनिट्",
+      "it_markers": [
+        "ञ्"
+      ],
+      "flags": {
+        "anit": true,
+        "set": false,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "v2-imported: 09.0001"
     }
   ]
 }

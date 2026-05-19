@@ -72,7 +72,7 @@ import sutras  # noqa: F401  — side-effect: registers all sūtras
 
 from engine       import apply_rule
 from engine.state import State, Term
-from phonology.varna import parse_slp1_upadesha_sequence
+from phonology.varna import parse_slp1_upadesha_sequence, mk as _mk
 
 from core.canonical_pipelines import (
     P00_bhuvadi_dhatu_it_anunasik_hal,
@@ -423,6 +423,8 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("6.1.4", state)
         state.meta["6_1_5_arm"] = True
         state = apply_rule("6.1.5", state)
+        # 7.4.60 halādiḥ śeṣaḥ — trim CVC abhyāsa to CV (e.g. paW → pa)
+        state = apply_rule("7.4.60", state)
     else:
         # ── NO-iṭ path: dvitva FIRST, then 1.4.13, vuk ───────────────────────
         if lit_adesha not in ("Ral",):
@@ -432,6 +434,12 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("6.1.4", state)
         state.meta["6_1_5_arm"] = True
         state = apply_rule("6.1.5", state)
+        # 7.4.60 halādiḥ śeṣaḥ — trim CVC abhyāsa to CV (e.g. paW → pa)
+        state = apply_rule("7.4.60", state)
+        # 7.2.116 ato upadhāyāḥ — liṭ strong (Ral=3sg/1sg): vṛddhi a→ā in root
+        if lit_adesha == "Ral":
+            state.meta["7_2_116_liT_upadha_vrddhi_arm"] = True
+            state = apply_rule("7.2.116", state)
         # 1.4.13 aṅga saṃjñā
         state = apply_rule("1.4.13", state)
         # 6.4.88 vuk
@@ -802,42 +810,80 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: 3.4.113 tiṅ is sārvadhatuka ──────────────────────────────────
     state = apply_rule("3.4.113", state)
 
-    # ── Stage: 2.4.77 luk of sic (bhū parasmaipada) ──────────────────────────
-    state.meta["2_4_77_luG_sic_lopa_arm"] = True
-    state = apply_rule("2.4.77", state)
+    # ── Detect seṭ vs aniṭ ───────────────────────────────────────────────────
+    _dhatu_t = next((t for t in state.terms if "dhatu" in t.tags), None)
+    _is_anit  = _dhatu_t is not None and bool(_dhatu_t.meta.get("anit_dhatu"))
+
+    if _is_anit:
+        # ── aniṭ path: 2.4.77 luk of sic (gāti-sthā-ghu-pā-bhū) ─────────────
+        state.meta["2_4_77_luG_sic_lopa_arm"] = True
+        state = apply_rule("2.4.77", state)
+    else:
+        # ── seṭ path: 7.2.35 iṭ insertion before sic ─────────────────────────
+        for _t in state.terms:
+            if (_t.meta.get("upadesha_slp1") or "").strip() == "sic":
+                _t.tags.add("ardhadhatuka")
+        state.meta["7_2_35_allow_sic"]      = True
+        state.meta["luN_sic_ardhadhatuka"]  = True
+        state = apply_rule("7.2.35", state)
+        # No IT lopa needed: P00 already dropped sic's c-IT; iṭ 'i' has no T marker
+        state.meta.pop("7_2_35_allow_sic", None)
+        state.meta.pop("luN_sic_ardhadhatuka", None)
 
     # ── Stage: 1.2.4 apit sārvadhatuka → kṅit ───────────────────────────────
     state = apply_rule("1.2.4", state)
 
     # ── Stage: tiṅ substitutions ─────────────────────────────────────────────
     state = apply_rule("3.4.101", state)   # tas→tām, Tas→tam, Ta→ta, mi→am
+
+    if not _is_anit and (purusha, vacana) == (3, 3):
+        # seṭ 3pl: jher jus (3.4.108) → [u, s] instead of 7.1.3 jh→anti
+        state.meta["3_4_108_liG_jus_arm"] = True
+        state = apply_rule("3.4.108", state)
+        state.meta.pop("3_4_108_liG_jus_arm", None)
+
     state = apply_rule("3.4.100", state)   # ti→t, si→s, jhi→jh
-    state.meta["7_1_3_jho_anta_arm"] = True
-    state = apply_rule("7.1.3", state)     # jh→ant (3pl)
-    state.meta.pop("7_1_3_jho_anta_arm", None)
+
+    if _is_anit:
+        state.meta["7_1_3_jho_anta_arm"] = True
+        state = apply_rule("7.1.3", state)     # jh→ant (3pl, aniṭ only)
+        state.meta.pop("7_1_3_jho_anta_arm", None)
+
     state.meta["3_4_99_luG_s_lopa_arm"] = True
     state = apply_rule("3.4.99", state)    # vas→va, mas→ma
     state.meta.pop("3_4_99_luG_s_lopa_arm", None)
+
+    # ── seṭ: for 3sg/2sg sic lopa → ī ───────────────────────────────────────
+    if not _is_anit and (purusha, vacana) in {(3, 1), (2, 1)}:
+        for _t in state.terms:
+            if (_t.meta.get("upadesha_slp1") or "").strip() == "sic":
+                _t.varnas = [_mk("I")]          # iṭ 'i' lengthened → ī; sic 's' dropped
+                _t.meta["sic_lopa_it_dirgha"] = True
+                break
 
     # ── Stage: aṅgakārya ────────────────────────────────────────────────────
     state = apply_rule("1.4.13", state)
 
     # 6.4.71 aṭ augment (fires via aT_agama_context set by 3.2.110)
     state = apply_rule("6.4.71", state)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
+    # aṭ augment is plain 'a' with no IT tags; skip 1.3.3/1.3.9 for seṭ to
+    # avoid re-processing the sic 's' as halantyam-IT
+    if _is_anit:
+        state = apply_rule("1.3.3", state)
+        state = apply_rule("1.3.9", state)
 
-    # 6.4.88 vuk augment (bhuvo vug-luṅ-liṭoḥ)
-    state.meta["6_4_88_arm"] = True
-    state = apply_rule("6.4.88", state)
-    state = apply_rule("1.3.2", state)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
+    if _is_anit:
+        # 6.4.88 vuk augment (bhuvo vug-luṅ-liṭoḥ) — aniṭ/bhū only
+        state.meta["6_4_88_arm"] = True
+        state = apply_rule("6.4.88", state)
+        state = apply_rule("1.3.2", state)
+        state = apply_rule("1.3.3", state)
+        state = apply_rule("1.3.9", state)
 
-    # 6.1.66 v of vuk drops before HAL (t/s/m/v/…); stays before AC (a of am/ant)
-    state.meta["6_1_66_luG_vuk_arm"] = True
-    state = apply_rule("6.1.66", state)
-    state.meta.pop("6_1_66_luG_vuk_arm", None)
+        # 6.1.66 v of vuk drops before HAL; stays before AC
+        state.meta["6_1_66_luG_vuk_arm"] = True
+        state = apply_rule("6.1.66", state)
+        state.meta.pop("6_1_66_luG_vuk_arm", None)
 
     state = apply_rule("1.4.14", state)
 
@@ -848,10 +894,14 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("8.2.39", state)    # t→d at pada-end (3sg)
     state.meta["8_4_56_arm"] = True
     state = apply_rule("8.4.56", state)    # d→t at avasāna (3sg)
-    state = apply_rule("8.2.66", state)    # s→r (2sg)
-    state = apply_rule("8.3.15", state)    # r→ḥ (2sg)
+    state = apply_rule("8.2.66", state)    # s→r (word-final: 2sg sip, 3pl jus)
+    state = apply_rule("8.3.15", state)    # r→ḥ
+    # seṭ: ṣatvam (s→ṣ after IK in internal sic residue) + ṣṭu (ṣ+t→ṣ+ṭ)
+    if not _is_anit:
+        state = apply_rule("8.3.59", state)    # sic-s → ṣ after iṭ-i
+        state = apply_rule("8.4.41", state)    # ṣ+t → ṣ+ṭ (for tām/tam/ta)
     state.meta["8_2_23_arm"] = True
-    state = apply_rule("8.2.23", state)    # saṃyogānta lopa (3pl: ant→an)
+    state = apply_rule("8.2.23", state)    # saṃyogānta lopa (aniṭ 3pl: ant→an)
     state.meta["8_4_68_arm"] = True
     state = apply_rule("8.4.68", state)
 

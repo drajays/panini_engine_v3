@@ -22,6 +22,7 @@ from sutras.adhyaya_1.pada_3.kartari_pada_1_3_78 import (
     GATE_KEY,
     find_primary_dhatu,
     seza_parasmaipada_gate_needs_update,
+    _desired_gate_active,
 )
 
 
@@ -32,9 +33,8 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     d = find_primary_dhatu(state)
     assert d is not None
-    active = not bool(d.meta.get(ATMANE_LICENSE_META_KEY))
     state.paribhasha_gates[GATE_KEY] = {
-        "active": active,
+        "active": _desired_gate_active(d),
         "pATha": "1.3.78",
     }
     return state
