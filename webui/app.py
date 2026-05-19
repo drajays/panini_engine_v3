@@ -901,6 +901,87 @@ def api_tinanta_paradigm():
 
 
 # ─────────────────────────────────────────────────────────────────
+# All-10-lakāra paradigm page
+# ─────────────────────────────────────────────────────────────────
+
+_ALL_LAKARAS = [
+    ("laT",      "लट्",   "Present"),
+    ("liT",      "लिट्",  "Perfect"),
+    ("luT",      "लुट्",  "Periphrastic Future"),
+    ("lRT",      "लृट्",  "Simple Future"),
+    ("loT",      "लोट्",  "Imperative"),
+    ("laG",      "लङ्",   "Imperfect"),
+    ("liG",      "विधिलिङ्", "Optative"),
+    ("AsIrliG",  "आशीर्लिङ्", "Benedictive"),
+    ("luG",      "लुङ्",  "Aorist"),
+    ("lRG",      "लृङ्",  "Conditional"),
+]
+
+
+@app.route("/tinanta/all")
+def tinanta_all_page():
+    lak_meta_path = _ROOT / "data" / "inputs" / "lakara_metadata.json"
+    lak_meta = {}
+    if lak_meta_path.exists():
+        lak_meta = json.loads(lak_meta_path.read_text(encoding="utf-8"))
+    return render_template(
+        "tinanta_all.html",
+        nav_active="tinanta",
+        cov=coverage_report(SUTRA_REGISTRY),
+        all_lakaras=_ALL_LAKARAS,
+        lak_meta=lak_meta,
+    )
+
+
+@app.route("/api/tinanta/all_lakara", methods=["POST"])
+def api_tinanta_all_lakara():
+    """Derive all 9 cells × 10 lakāras for a dhātu."""
+    from pipelines.tinanta import derive as tin_derive, _dhatu_row_by_upadesha
+    data    = request.get_json(force=True)
+    dhatu   = (data.get("dhatu") or "paW").strip()
+    prayoga = (data.get("prayoga") or "kartari").strip()
+
+    try:
+        row = _dhatu_row_by_upadesha(dhatu)
+    except KeyError as e:
+        return jsonify({"error": str(e)}), 404
+
+    result: dict[str, Any] = {}
+    for (lak_id, lak_dev, lak_en) in _ALL_LAKARAS:
+        cells: dict[str, Any] = {}
+        for p in (3, 2, 1):
+            for v in (1, 2, 3):
+                key = f"{p}-{v}"
+                try:
+                    state = tin_derive(dhatu, lak_id, prayoga, p, v)
+                    cells[key] = {
+                        "surface_dev" : state.flat_dev(),
+                        "surface_slp1": state.flat_slp1(),
+                    }
+                except NotImplementedError as e:
+                    cells[key] = {"error": f"Not implemented: {e}"}
+                except Exception as ex:
+                    cells[key] = {"error": f"{type(ex).__name__}: {ex}"}
+        result[lak_id] = {
+            "lak_dev" : lak_dev,
+            "lak_en"  : lak_en,
+            "cells"   : cells,
+        }
+
+    return jsonify({
+        "dhatu_slp1" : dhatu,
+        "dhatu_dev"  : row.get("mula_dhatu_dev", dhatu),
+        "artha_dev"  : row.get("artha_dev", ""),
+        "artha_en"   : row.get("artha_en", ""),
+        "gana"       : row.get("gana", 1),
+        "gana_dev"   : row.get("gana_label_dev", ""),
+        "pada_dev"   : row.get("pada_label_dev", ""),
+        "prayoga"    : prayoga,
+        "lakaras"    : result,
+    })
+
+
+# ─────────────────────────────────────────────────────────────────
 # Dhātupātha browser
 # ─────────────────────────────────────────────────────────────────
 

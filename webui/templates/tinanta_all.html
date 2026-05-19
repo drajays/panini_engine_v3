@@ -1,0 +1,414 @@
+{% extends "base.html" %}
+{% block title %}दश-लकार-रूपावली — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block head_extra %}
+<style>
+/* ── Controls ── */
+.ctrl-bar { display:flex; flex-wrap:wrap; gap:.75rem; align-items:flex-end; margin-bottom:.75rem; }
+.ctrl-bar label { display:flex; flex-direction:column; font-size:.83rem; color:var(--ink-dim); gap:.2rem; }
+.ctrl-bar select, .ctrl-bar input {
+  font-size:.95rem; padding:.35rem .55rem;
+  border:1px solid var(--line); border-radius:4px;
+  background:var(--bg); color:var(--ink);
+}
+.ctrl-bar input { min-width:9rem; }
+.quick-btns { display:flex; gap:.4rem; flex-wrap:wrap; margin-bottom:.5rem; }
+.qbtn { padding:.25rem .7rem; font-size:.82rem; border:1px solid var(--line); border-radius:4px; background:var(--bg); cursor:pointer; }
+.qbtn:hover { background:var(--bg-subtle); }
+
+/* ── Dhātu banner ── */
+.dhatu-banner {
+  display:flex; gap:1rem; align-items:center;
+  padding:.75rem 1rem; background:var(--bg-subtle);
+  border-left:4px solid var(--accent); border-radius:6px;
+  margin-bottom:1rem;
+}
+.dhatu-banner .dev { font-family:var(--dev); font-size:1.8rem; color:var(--accent); }
+.dhatu-banner .meta { font-size:.85rem; color:var(--ink-dim); }
+.dhatu-banner .chip { display:inline-block; padding:.15rem .55rem; border-radius:10px; font-size:.78rem; background:var(--line-soft); color:var(--ink-dim); margin:.1rem .2rem 0 0; }
+
+/* ── Lakāra grid ── */
+.lak-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap:1rem;
+  margin-bottom:1rem;
+}
+
+.lak-card {
+  background:var(--bg-panel);
+  border:1px solid var(--line-soft);
+  border-radius:8px;
+  overflow:hidden;
+}
+.lak-card-header {
+  padding:.45rem .75rem;
+  background:var(--bg-subtle);
+  border-bottom:1px solid var(--line-soft);
+  display:flex; align-items:baseline; gap:.6rem;
+}
+.lak-card-header .dev { font-family:var(--dev); font-size:1.1rem; color:var(--accent-dim); font-weight:600; }
+.lak-card-header .en  { font-size:.78rem; color:var(--ink-faint); }
+.lak-card-header .id  { font-family:var(--mono); font-size:.72rem; color:var(--ink-faint); margin-left:auto; }
+
+/* ── 3×3 paradigm within card ── */
+.para-table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:.9rem;
+}
+.para-table th {
+  padding:.3rem .5rem;
+  font-size:.72rem; font-weight:500;
+  color:var(--ink-dim);
+  text-align:center;
+  background:var(--bg-subtle);
+  border-bottom:1px solid var(--line-soft);
+}
+.para-table td.row-lbl {
+  padding:.3rem .5rem;
+  font-size:.72rem; color:var(--ink-dim);
+  background:var(--bg-subtle);
+  border-right:1px solid var(--line-soft);
+  white-space:nowrap;
+}
+.para-table td.cell {
+  padding:.4rem .5rem;
+  text-align:center;
+  font-family:var(--dev);
+  font-size:1rem;
+  cursor:pointer;
+  border:1px solid var(--line-soft);
+  transition:background .12s;
+}
+.para-table td.cell:hover { background:var(--bg-subtle); }
+.para-table td.cell.active { background:#fff3e0; border-color:var(--accent-dim); }
+.para-table td.cell .slp1  { display:block; font-family:var(--mono); font-size:.65rem; color:var(--ink-faint); margin-top:.1rem; }
+.para-table td.cell.err    { color:var(--danger); font-size:.72rem; font-family:var(--mono); cursor:default; }
+.para-table td.cell.loading { color:var(--ink-faint); font-size:.8rem; }
+
+/* ── Trace panel ── */
+#trace-panel {
+  display:none;
+  position:sticky; bottom:0;
+  background:var(--bg-panel);
+  border-top:2px solid var(--accent-dim);
+  max-height:38vh;
+  overflow-y:auto;
+  padding:.75rem 1rem;
+  z-index:20;
+  box-shadow:0 -4px 12px rgba(0,0,0,.12);
+}
+#trace-panel h3 { margin:0 0 .4rem; font-size:.95rem; font-family:var(--dev); }
+#trace-panel .close-btn {
+  float:right; cursor:pointer; font-size:1rem; color:var(--ink-dim);
+  background:none; border:none; padding:0;
+}
+.trace-row-sm {
+  display:flex; align-items:baseline; gap:.6rem;
+  padding:.3rem .2rem; border-bottom:1px solid var(--line-soft);
+  font-size:.82rem;
+}
+.trace-row-sm:last-child { border-bottom:none; }
+.trace-row-sm.changed { border-left:3px solid var(--accent-dim); padding-left:.4rem; }
+.trace-row-sm .sid { font-family:var(--mono); font-size:.72rem; min-width:4.5rem; color:var(--accent-dim); }
+.trace-row-sm .forms { font-family:var(--dev); }
+.trace-row-sm .why  { font-size:.74rem; color:var(--ink-dim); margin-left:auto; max-width:38%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.trace-stats { font-size:.78rem; color:var(--ink-dim); margin-bottom:.35rem; }
+.trace-stats b { color:var(--ink); }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="panel">
+  <h1>दश-लकार-रूपावली <span style="font-size:.65em;color:var(--ink-dim);">All 10 Lakāras · Parasmaipada</span></h1>
+  <p style="color:var(--ink-dim);margin:.2rem 0 .8rem;font-size:.88rem;">
+    एक धातु के सभी दश लकार — प्रत्येक कोष्ठ पर क्लिक करने पर प्रक्रिया दिखाई देती है।
+  </p>
+
+  <div class="ctrl-bar">
+    <label>इनपुट-विधि
+      <select id="input-scheme" onchange="onSchemeChange()">
+        <option value="slp1" selected>SLP1</option>
+        <option value="iast">IAST</option>
+        <option value="hk">Harvard-Kyoto</option>
+        <option value="velthuis">Velthuis</option>
+        <option value="wx">WX</option>
+        <option value="itrans">ITRANS</option>
+        <option value="devanagari">देवनागरी</option>
+      </select>
+    </label>
+    <label id="dhatu-label">धातु
+      <input id="dhatu" type="text" value="paW" autocomplete="off" autocorrect="off" spellcheck="false"
+             oninput="onDhatuInput()" onkeydown="if(event.key==='Enter')deriveAll()">
+      <span id="dhatu-preview" style="font-size:.72rem;color:var(--accent);font-family:var(--dev);min-height:1em;display:block;margin-top:.1rem;"></span>
+    </label>
+    <label>प्रयोग
+      <select id="prayoga">
+        <option value="kartari" selected>कर्तरि</option>
+      </select>
+    </label>
+    <label>&nbsp;
+      <button onclick="deriveAll()" style="padding:.4rem 1.1rem;background:var(--accent);color:#fff;border:none;border-radius:4px;font-size:.95rem;cursor:pointer;">▶ सर्वे लकाराः</button>
+    </label>
+  </div>
+
+  <div class="quick-btns">
+    <span style="font-size:.78rem;color:var(--ink-dim);align-self:center;">त्वरित:</span>
+    <button class="qbtn" onclick="quickFill('paW')">पठ् (to read)</button>
+    <button class="qbtn" onclick="quickFill('BU')">भू (to be)</button>
+    <button class="qbtn" onclick="quickFill('nI')">नी (to lead)</button>
+    <button class="qbtn" onclick="quickFill('gam')">गम् (to go)</button>
+    <button class="qbtn" onclick="quickFill('kf')">कृ (to do)</button>
+    <button class="qbtn" onclick="quickFill('dA')">दा (to give)</button>
+    <button class="qbtn" onclick="quickFill('tuda~')">तुद् (to strike)</button>
+  </div>
+</div>
+
+<div id="dhatu-banner" style="display:none;" class="dhatu-banner">
+  <div class="dev" id="banner-dev"></div>
+  <div class="meta" id="banner-meta"></div>
+</div>
+
+<div id="lak-grid" class="lak-grid">
+  {% for lak_id, lak_dev, lak_en in all_lakaras %}
+  <div class="lak-card" id="card-{{ lak_id }}">
+    <div class="lak-card-header">
+      <span class="dev">{{ lak_dev }}</span>
+      <span class="en">{{ lak_en }}</span>
+      <span class="id">{{ lak_id }}</span>
+    </div>
+    <table class="para-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>एकवचन</th>
+          <th>द्विवचन</th>
+          <th>बहुवचन</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-lbl">प्र·(३)</td>
+          <td class="cell loading" id="c-{{ lak_id }}-3-1" onclick="showTrace('{{ lak_id }}',3,1)">…</td>
+          <td class="cell loading" id="c-{{ lak_id }}-3-2" onclick="showTrace('{{ lak_id }}',3,2)">…</td>
+          <td class="cell loading" id="c-{{ lak_id }}-3-3" onclick="showTrace('{{ lak_id }}',3,3)">…</td>
+        </tr>
+        <tr>
+          <td class="row-lbl">म·(२)</td>
+          <td class="cell loading" id="c-{{ lak_id }}-2-1" onclick="showTrace('{{ lak_id }}',2,1)">…</td>
+          <td class="cell loading" id="c-{{ lak_id }}-2-2" onclick="showTrace('{{ lak_id }}',2,2)">…</td>
+          <td class="cell loading" id="c-{{ lak_id }}-2-3" onclick="showTrace('{{ lak_id }}',2,3)">…</td>
+        </tr>
+        <tr>
+          <td class="row-lbl">उ·(१)</td>
+          <td class="cell loading" id="c-{{ lak_id }}-1-1" onclick="showTrace('{{ lak_id }}',1,1)">…</td>
+          <td class="cell loading" id="c-{{ lak_id }}-1-2" onclick="showTrace('{{ lak_id }}',1,2)">…</td>
+          <td class="cell loading" id="c-{{ lak_id }}-1-3" onclick="showTrace('{{ lak_id }}',1,3)">…</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  {% endfor %}
+</div>
+
+<div id="trace-panel">
+  <button class="close-btn" onclick="closeTrace()">✕</button>
+  <h3 id="trace-heading">प्रक्रिया</h3>
+  <div class="trace-stats" id="trace-stats"></div>
+  <div id="trace-rows"></div>
+  <a id="trace-link" href="/tinanta" style="display:inline-block;margin-top:.5rem;font-size:.8rem;color:var(--accent);">पूर्ण प्रक्रिया ↗</a>
+</div>
+{% endblock %}
+
+{% block body_extra %}
+<script src="{{ url_for('static', filename='transliterate.js') }}"></script>
+<script>
+const ALL_LAK = [
+  {% for lak_id, lak_dev, lak_en in all_lakaras %}"{{ lak_id }}"{% if not loop.last %},{% endif %}{% endfor %}
+];
+
+let _data = null;       // full API response
+let _activeCell = null; // {lak, p, v}
+
+// ── Transliteration ───────────────────────────────────────────────────────────
+function getScheme() { return document.getElementById('input-scheme').value; }
+function getDhatuSLP1() {
+  return Transliterate.toSLP1(document.getElementById('dhatu').value.trim(), getScheme());
+}
+function onDhatuInput() {
+  const scheme = getScheme();
+  if (scheme === 'slp1') { document.getElementById('dhatu-preview').textContent = ''; return; }
+  const p = Transliterate.preview(document.getElementById('dhatu').value, scheme);
+  document.getElementById('dhatu-preview').textContent = p.dev ? `${p.dev}  [SLP1: ${p.slp1}]` : '';
+}
+function onSchemeChange() {
+  const scheme = getScheme();
+  document.getElementById('dhatu-label').childNodes[0].textContent = `धातु (${Transliterate.SCHEME_LABELS[scheme]})`;
+  if (scheme === 'slp1') document.getElementById('dhatu-preview').textContent = '';
+  else onDhatuInput();
+}
+function quickFill(slp1) {
+  document.getElementById('input-scheme').value = 'slp1';
+  onSchemeChange();
+  document.getElementById('dhatu').value = slp1;
+  deriveAll();
+}
+
+// ── Derive all lakāras ────────────────────────────────────────────────────────
+async function deriveAll() {
+  const dhatu   = getDhatuSLP1();
+  const prayoga = document.getElementById('prayoga').value;
+  if (!dhatu) return;
+
+  // Reset cells to loading
+  ALL_LAK.forEach(lak => {
+    for (const p of [3,2,1]) for (const v of [1,2,3]) {
+      const td = document.getElementById(`c-${lak}-${p}-${v}`);
+      if (td) { td.textContent = '…'; td.className = 'cell loading'; }
+    }
+  });
+  document.getElementById('dhatu-banner').style.display = 'none';
+  closeTrace();
+
+  try {
+    const r = await fetch('/api/tinanta/all_lakara', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({dhatu, prayoga}),
+    });
+    const d = await r.json();
+    if (!r.ok || d.error) {
+      showGlobalError(d.error || r.statusText);
+      return;
+    }
+    _data = d;
+    renderBanner(d);
+    renderAllCells(d);
+  } catch (e) {
+    showGlobalError(e.message);
+  }
+}
+
+function renderBanner(d) {
+  document.getElementById('banner-dev').textContent = d.dhatu_dev || d.dhatu_slp1;
+  document.getElementById('banner-meta').innerHTML =
+    `<span class="chip">${d.dhatu_slp1}</span>`+
+    `<span class="chip">${d.gana_dev||'गण '+d.gana}</span>`+
+    `<span class="chip">${d.pada_dev||''}</span>`+
+    `<span class="chip">${d.artha_en||''}</span>`;
+  document.getElementById('dhatu-banner').style.display = '';
+}
+
+function renderAllCells(d) {
+  for (const [lak_id, info] of Object.entries(d.lakaras)) {
+    for (const [key, cell] of Object.entries(info.cells)) {
+      const [p, v] = key.split('-');
+      const td = document.getElementById(`c-${lak_id}-${p}-${v}`);
+      if (!td) continue;
+      if (cell.error) {
+        td.className = 'cell err';
+        td.textContent = '—';
+        td.title = cell.error;
+      } else {
+        td.className = 'cell';
+        td.innerHTML = `${escapeHtml(cell.surface_dev)}<span class="slp1">${escapeHtml(cell.surface_slp1)}</span>`;
+      }
+    }
+  }
+}
+
+// ── Trace panel ───────────────────────────────────────────────────────────────
+async function showTrace(lak, p, v) {
+  if (!_data) return;
+  const dhatu   = _data.dhatu_slp1;
+  const prayoga = _data.prayoga || 'kartari';
+
+  // Highlight active cell
+  if (_activeCell) {
+    const prev = document.getElementById(`c-${_activeCell.lak}-${_activeCell.p}-${_activeCell.v}`);
+    if (prev) prev.classList.remove('active');
+  }
+  _activeCell = {lak, p, v};
+  const td = document.getElementById(`c-${lak}-${p}-${v}`);
+  if (td) td.classList.add('active');
+
+  document.getElementById('trace-rows').innerHTML = '<div style="color:var(--ink-dim);padding:.5rem;">⏳ …</div>';
+  document.getElementById('trace-panel').style.display = '';
+
+  const r = await fetch('/api/tinanta', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({dhatu, lakara:lak, prayoga, purusha:p, vacana:v}),
+  });
+  const d = await r.json();
+  if (!r.ok || d.error) {
+    document.getElementById('trace-rows').innerHTML = `<div style="color:var(--danger);">${escapeHtml(d.error||'error')}</div>`;
+    return;
+  }
+
+  const lak_info = _data.lakaras[lak] || {};
+  const PURUSHA_DEV = {3:'प्र·', 2:'म·', 1:'उ·'};
+  const VACANA_DEV  = {1:'एक', 2:'द्वि', 3:'बहु'};
+  document.getElementById('trace-heading').textContent =
+    `${d.surface_dev}  —  ${lak_info.lak_dev||lak} ${PURUSHA_DEV[p]}${VACANA_DEV[v]}वचन`;
+
+  const stats = d.stats || {};
+  document.getElementById('trace-stats').innerHTML =
+    `<b>${stats.applied_count||0}</b> प्रयुक्त · `+
+    `<b>${stats.audit_count||0}</b> अधिकार · `+
+    `<b>${stats.skipped_count||0}</b> अतिक्रान्त · `+
+    `<b>${stats.total_steps||0}</b> कुल`;
+
+  const trace = (d.trace || []).filter(s => s.status === 'APPLIED' || s.status === 'STRUCTURAL' || s.status === 'AUDIT');
+  const rows = document.getElementById('trace-rows');
+  rows.innerHTML = '';
+  trace.forEach(step => {
+    const changed = (step.form_before||'') !== (step.form_after||'');
+    const fbDev = step.form_before_dev ?? step.form_before ?? '';
+    const faDev = step.form_after_dev  ?? step.form_after  ?? '';
+    const div = document.createElement('div');
+    div.className = 'trace-row-sm' + (changed ? ' changed' : '');
+    const isStruct = step._is_structural || false;
+    const sid = isStruct ? '' : (step.sutra_id || '');
+    let formHtml;
+    if (changed) {
+      formHtml = `<span class="forms">${escapeHtml(fbDev)} <span style="color:var(--ink-faint)">→</span> <span style="color:var(--accent-dim)">${escapeHtml(faDev)}</span></span>`;
+    } else {
+      formHtml = `<span class="forms" style="color:var(--ink-faint)">${escapeHtml(faDev)}</span>`;
+    }
+    const why = step._sutra_text_dev || step._structural_dev || step.why_dev || '';
+    div.innerHTML = `<span class="sid">${escapeHtml(sid)}</span>${formHtml}<span class="why">${escapeHtml(why.substring(0,60))}</span>`;
+    rows.appendChild(div);
+  });
+
+  // Update deep-link
+  document.getElementById('trace-link').href = `/tinanta?dhatu=${encodeURIComponent(dhatu)}`;
+  document.getElementById('trace-panel').scrollIntoView({behavior:'smooth', block:'end'});
+}
+
+function closeTrace() {
+  document.getElementById('trace-panel').style.display = 'none';
+  if (_activeCell) {
+    const td = document.getElementById(`c-${_activeCell.lak}-${_activeCell.p}-${_activeCell.v}`);
+    if (td) td.classList.remove('active');
+    _activeCell = null;
+  }
+}
+
+function showGlobalError(msg) {
+  ALL_LAK.forEach(lak => {
+    for (const p of [3,2,1]) for (const v of [1,2,3]) {
+      const td = document.getElementById(`c-${lak}-${p}-${v}`);
+      if (td) { td.textContent = '⚠'; td.className = 'cell err'; td.title = msg; }
+    }
+  });
+}
+
+function escapeHtml(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// Auto-derive on load with paW
+document.addEventListener('DOMContentLoaded', () => deriveAll());
+</script>
+{% endblock %}
