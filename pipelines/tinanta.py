@@ -1489,6 +1489,156 @@ def _derive_lRG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     return state
 
 
+_KARMANI_LIT_NEEDS_IT: frozenset = frozenset({(2, 1), (2, 3), (1, 2), (1, 3)})
+
+
+def _derive_karmani_lit(state: State, purusha: int, vacana: int) -> State:
+    """
+    Karmani liṭ (passive perfect) for bhvādi dhātus.
+
+    Key sūtras: 1.3.13, 3.4.81 (ta→eś, Ja→irec), 3.4.79 (ṭi→e), 3.4.80 (thās→se),
+    1.2.5, dvitva (6.1.8), 6.4.88 (vuk), 7.4.59/73, 8.3.59, 8.3.78.
+
+    Example: bhū + liṭ karmani 3sg → बभूवे
+    """
+    # ── Tag dhātu for bhāva/karma ──────────────────────────────────────────
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            t.tags.add("bhava_karma_usage")
+            break
+
+    # ── 3.2.115 parokṣe liṭ ───────────────────────────────────────────────
+    state.meta["3_2_115_paroksha_lit_arm"] = True
+    state = apply_rule("3.2.115", state)
+    state = apply_rule("1.3.2", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    # ── 1.3.13 bhāvakarmaṇoḥ: ātmanepada ─────────────────────────────────
+    state = apply_rule("1.3.13", state)
+
+    # ── 3.4.77 lasya ─────────────────────────────────────────────────────
+    state = apply_rule("3.4.77", state)
+
+    # ── 3.4.78: select ātmanepada tiṅ ādeśa ──────────────────────────────
+    tin_adesha = _select_tin_adesha("liT", "atmane", purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"]    = tin_adesha
+    state = apply_rule("3.4.78", state)
+
+    # ── 1.4.99 + 1.4.100 saṃjñā ──────────────────────────────────────────
+    state = apply_rule("1.4.99", state)
+    state = apply_rule("1.4.100", state)
+
+    # ── IT on tiṅ ādeśa ───────────────────────────────────────────────────
+    state = P00_tin_tusma_audit_halantyam_lopa(state)
+
+    # ── 3.4.115 liṭ ca (1st) ─────────────────────────────────────────────
+    state.paribhasha_gates.pop("3_4_115_liw_115", None)
+    state.meta["3_4_115_arm"] = True
+    state = apply_rule("3.4.115", state)
+
+    # ── 3.4.81: ta → eś  /  Ja → irec  (3sg and 3pl) ────────────────────
+    state.meta["3_4_81_lit_esh_arm"] = True
+    state = apply_rule("3.4.81", state)
+
+    # ── 3.4.79: ṭi→e for other cells (Atam→Ate, ATAm→ATe, Dvam→Dve, etc.) ─
+    state = apply_rule("3.4.79", state)
+
+    # ── 3.4.80: thāsasse (2sg: TAs → se) ────────────────────────────────
+    state = apply_rule("3.4.80", state)
+
+    # ── IT on liṭ-specific ādeśas (eS→e, irec→ire, etc.) ─────────────────
+    state = apply_rule("1.3.4", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.7", state)
+    state = apply_rule("1.3.9", state)
+
+    # ── 3.4.115 liṭ ca (2nd) ─────────────────────────────────────────────
+    state.paribhasha_gates.pop("3_4_115_liw_115", None)
+    state.meta["3_4_115_arm"] = True
+    state = apply_rule("3.4.115", state)
+
+    # ── 1.2.5 asaṃyogālliṭ kit ───────────────────────────────────────────
+    state = apply_rule("1.2.5", state)
+
+    needs_it = (purusha, vacana) in _KARMANI_LIT_NEEDS_IT
+
+    if needs_it:
+        # iṭ FIRST → 1.4.13 → vuk → dvitva
+        state.meta["7_2_13_arm"] = True
+        state = apply_rule("7.2.13", state)
+        state.meta["7_2_35_arm"] = True
+        state = apply_rule("7.2.35", state)
+        state = apply_rule("1.3.3", state)
+        state = apply_rule("1.3.9", state)
+        state = apply_rule("1.4.13", state)
+        state.meta["6_4_88_arm"] = True
+        state = apply_rule("6.4.88", state)
+        state = apply_rule("1.3.2", state)
+        state = apply_rule("1.3.3", state)
+        state = apply_rule("1.3.9", state)
+        state.meta["6_1_8_lit_dvitva_arm"] = True
+        state = apply_rule("6.1.8", state)
+        state = apply_rule("6.1.4", state)
+        state.meta["6_1_5_arm"] = True
+        state = apply_rule("6.1.5", state)
+        state = apply_rule("7.4.60", state)
+    else:
+        # dvitva FIRST → 1.4.13 → vuk
+        state.meta["6_1_8_lit_dvitva_arm"] = True
+        state = apply_rule("6.1.8", state)
+        state = apply_rule("6.1.4", state)
+        state.meta["6_1_5_arm"] = True
+        state = apply_rule("6.1.5", state)
+        state = apply_rule("7.4.60", state)
+        state = apply_rule("1.4.13", state)
+        state.meta["6_4_88_arm"] = True
+        state = apply_rule("6.4.88", state)
+        state = apply_rule("1.3.2", state)
+        state = apply_rule("1.3.3", state)
+        state = apply_rule("1.3.9", state)
+
+    # ── 7.4.59 hrasva (abhyāsa U→u) ──────────────────────────────────────
+    state.meta["P029_7_4_59_abhyasa_hrasva_arm"] = True
+    state = apply_rule("7.4.59", state)
+
+    # ── 7.4.73 bhavateraḥ (abhyāsa u→a, only for bhū) ────────────────────
+    _dht = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+    _dht_up = (_dht.meta.get("upadesha_slp1") or "").strip() if _dht else ""
+    if _dht_up in {"BU", "BU~"}:
+        state.meta["7_4_73_arm"] = True
+        state = apply_rule("7.4.73", state)
+
+    # ── 1.4.14 pāda-saṃjñā ───────────────────────────────────────────────
+    state = apply_rule("1.4.14", state)
+
+    # ── TRIPĀḌĪ ───────────────────────────────────────────────────────────
+    state = apply_rule("8.2.1", state)
+
+    # 8.3.78: dh→ḍh after iṭ-i in liṭ (2pl: i+Dve → i+Qve = iḍhve)
+    state.meta["8_3_78_arm"] = True
+    state = apply_rule("8.3.78", state)
+
+    # 8.4.54 abhyāse carc (B→b in abhyāsa)
+    state = apply_rule("8.4.54", state)
+
+    # 8.4.68
+    state.meta["8_4_68_arm"] = True
+    state = apply_rule("8.4.68", state)
+
+    # ── MERGE ─────────────────────────────────────────────────────────────
+    _pada_merge(state)
+
+    # ── POST-MERGE TRIPĀḌĪ ────────────────────────────────────────────────
+    # 8.3.59 ṣatvam: s→ṣ after iṭ-i in merged pada (2sg: ...i+se → ...i+ṣe)
+    state = apply_rule("8.3.59", state)
+    state = apply_rule("8.2.66", state)
+    state = apply_rule("8.3.15", state)
+
+    return state
+
+
 def _derive_karmani_laT(state: State, purusha: int, vacana: int) -> State:
     """
     Karmani laṭ (passive present) for bhvādi dhātus.
@@ -1699,6 +1849,10 @@ def derive(
             state = apply_rule("3.1.91", state)
             state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
             return _derive_karmani_laT(state, purusha, vacana)
+        if lakara == "liT":
+            state = apply_rule("3.1.91", state)
+            state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+            return _derive_karmani_lit(state, purusha, vacana)
         raise NotImplementedError(f"karmani prayoga for lakāra {lakara!r} not yet implemented")
 
     # ── liṭ dispatch ─────────────────────────────────────────────────────────

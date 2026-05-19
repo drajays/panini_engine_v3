@@ -1,12 +1,11 @@
 """
-3.4.81  लिटस्तझयोरेशिरेच्  —  VIDHI (narrow demo)
+3.4.81  लिटस्तझयोरेशिरेच्  —  VIDHI
 
-Demo slice (ईधे):
-  In liṭ, replace the 3sg ātmane-pada ending `ta` with `eS`.
-  Then `S` is it (1.3.3) and is loped (1.3.9) leaving `e`.
+In liṭ:
+  - ātmanepada 3sg `ta` → `eS` (eŚ after IT-lopa = e)
+  - ātmanepada 3pl `Ja` (jha) → `irec` (iReC after IT-lopa = ire)
 
-Engine:
-  - recipe arms via ``state.meta['3_4_81_lit_esh_arm']``.
+Engine: recipe arms via ``state.meta['3_4_81_lit_esh_arm']``.
 """
 from __future__ import annotations
 
@@ -15,12 +14,16 @@ from engine.state import State
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
-def _find_ta(state: State) -> int | None:
+def _find_ta_or_Ja(state: State):
+    """Return (index, kind) where kind in {'ta', 'Ja'}."""
     for i, t in enumerate(state.terms):
         if "pratyaya" not in t.tags:
             continue
-        if (t.meta.get("upadesha_slp1") or "").strip() == "ta":
-            return i
+        up = (t.meta.get("upadesha_slp1") or "").strip()
+        if up == "ta":
+            return (i, "ta")
+        if up == "Ja":
+            return (i, "Ja")
     return None
 
 
@@ -29,19 +32,23 @@ def cond(state: State) -> bool:
         return False
     if not state.meta.get("3_4_81_lit_esh_arm"):
         return False
-    return _find_ta(state) is not None
+    return _find_ta_or_Ja(state) is not None
 
 
 def act(state: State) -> State:
-    ti = _find_ta(state)
-    if ti is None:
+    hit = _find_ta_or_Ja(state)
+    if hit is None:
         return state
+    ti, kind = hit
     pr = state.terms[ti]
-    pr.varnas = list(parse_slp1_upadesha_sequence("eS"))
-    pr.meta["upadesha_slp1"] = "eS"
+    if kind == "ta":
+        pr.varnas = list(parse_slp1_upadesha_sequence("eS"))
+        pr.meta["upadesha_slp1"] = "eS"
+    else:  # Ja → irec
+        pr.varnas = list(parse_slp1_upadesha_sequence("irec"))
+        pr.meta["upadesha_slp1"] = "irec"
     pr.tags.add("upadesha")
     state.meta["3_4_81_lit_esh_arm"] = False
-    # record that 1.1.55 was intended for this replacement
     state.meta["1_1_55_anekal_shit_sarvasya_arm"] = True
     return state
 
