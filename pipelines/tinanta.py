@@ -2125,6 +2125,174 @@ def _derive_karmani_lRT(state: State, purusha: int, vacana: int) -> State:
     return state
 
 
+def _derive_karmani_loT(state: State, purusha: int, vacana: int) -> State:
+    """
+    Karmani loṭ (passive imperative) for bhvādi dhātus.
+
+    Key sūtras: 1.3.13 (ātmanepada), 3.3.162 (loṭ), 3.1.67 (yaḳ),
+    3.4.79 (ṭi→e), 3.4.80 (thās→se), 3.4.90 (e→ām, non-uttama),
+    3.4.91 (se→sva, dhve→dhvam), 3.4.93 (e→ai, uttama),
+    3.4.92 (āṭ for uttama), 7.1.3 (J→ant for 3pl),
+    7.2.81 (ā→iy for 3du/2du), 6.1.66 (y-lopa), 6.1.87 (a+i→e),
+    6.1.90 (āṭ+ai→ai, 1sg), 6.1.88 (a+ai→ai), 6.1.101 (a+ā→ā, 1du/1pl).
+
+    Verified forms (bhū): भूयताम् भूयेताम् भूयन्ताम्
+                          भूयस्व  भूयेथाम् भूयध्वम्
+                          भूयै    भूयावहै  भूयामहै
+    """
+    # ── Tag dhātu for bhāva/karma prayoga ──────────────────────────────────
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            t.tags.add("bhava_karma_usage")
+            break
+
+    # ── 1.3.13 bhāvakarmaṇoḥ: ātmanepada in karmani ─────────────────────
+    state = apply_rule("1.3.13", state)
+
+    # ── 3.3.162 loṭ ca ────────────────────────────────────────────────────
+    state.meta["3_3_162_loT_arm"] = True
+    state = apply_rule("3.3.162", state)
+    state.meta.pop("3_3_162_loT_done", None)
+    loT_varnas = parse_slp1_upadesha_sequence("loT")
+    if loT_varnas and loT_varnas[-1].slp1 == "T":
+        loT_varnas = loT_varnas[:-1]
+    loT_term = Term(
+        kind="pratyaya",
+        varnas=loT_varnas,
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        meta={"upadesha_slp1": "loT"},
+    )
+    state.terms.append(loT_term)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    # ── 3.4.77 lasya + 3.4.78 tiṅ ādeśa (ātmanepada, laT base) ──────────
+    state = apply_rule("3.4.77", state)
+    tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"]    = tin_adesha
+    state = apply_rule("3.4.78", state)
+    state = apply_rule("1.4.99", state)
+    state = apply_rule("1.4.100", state)
+
+    # ── IT-prakaraṇa on tiṅ ādeśa ─────────────────────────────────────────
+    state = P00_tin_tusma_audit_halantyam_lopa(state)
+
+    # ── 3.4.113 tiṅśit sārvadhatukam ─────────────────────────────────────
+    state = apply_rule("3.4.113", state)
+
+    # ── 1.2.4 sārvadhatuka apit → kṅit ──────────────────────────────────
+    state = apply_rule("1.2.4", state)
+
+    # ── 3.1.67: sārvadhatuke yaḳ ─────────────────────────────────────────
+    state.meta["3_1_67_arm"] = True
+    state = apply_rule("3.1.67", state)
+    _dhatu_idx = next(i for i, t in enumerate(state.terms) if "dhatu" in t.tags)
+    _yak = Term(
+        kind="pratyaya",
+        varnas=parse_slp1_upadesha_sequence("yak"),
+        tags={"pratyaya", "upadesha", "vikarana"},
+        meta={"upadesha_slp1": "yak"},
+    )
+    state.terms.insert(_dhatu_idx + 1, _yak)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+    for t in state.terms:
+        if t.meta.get("upadesha_slp1") == "yak" and "vikarana" in t.tags:
+            t.tags.add("kngiti")
+            break
+
+    # ── 3.4.114 ārdhadhātuka śeṣa (vacuous trace) ─────────────────────────
+    state = apply_rule("3.4.114", state)
+
+    # ── 3.4.79: ṭita ātmanepada ṭere (ṭi → e) ────────────────────────────
+    state = apply_rule("3.4.79", state)
+
+    # ── 3.4.80: thāsasse (2sg: thAs → se) ────────────────────────────────
+    state = apply_rule("3.4.80", state)
+
+    # ── 3.4.90: āmeta (non-uttama: e → ām: te/Ate/Je/ATe → tAm/AtAm/JAm/ATAm)
+    state.meta["3_4_90_loT_karmani_arm"] = True
+    state = apply_rule("3.4.90", state)
+    state.meta.pop("3_4_90_loT_karmani_arm", None)
+
+    # ── 3.4.91: savābhyāṃ vāmau (2sg: se→sva; 2pl: Dve→Dvam) ────────────
+    state.meta["3_4_91_loT_karmani_arm"] = True
+    state = apply_rule("3.4.91", state)
+    state.meta.pop("3_4_91_loT_karmani_arm", None)
+
+    # ── 3.4.93: eta ai (uttama: terminal e → E/ai) ────────────────────────
+    state.meta["3_4_93_loT_karmani_arm"] = True
+    state = apply_rule("3.4.93", state)
+    state.meta.pop("3_4_93_loT_karmani_arm", None)
+
+    # ── 3.4.92: āḍuttamasya picca (attach āṭ before uttama tiṅ) ──────────
+    state.meta["3_4_92_loT_karmani_arm"] = True
+    state = apply_rule("3.4.92", state)
+    state.meta.pop("3_4_92_loT_karmani_arm", None)
+    # IT-prakaraṇa on āṭ only when 3.4.92 actually inserted it (uttama cells)
+    if any("aTa_agama" in t.tags for t in state.terms):
+        state = apply_rule("1.3.3", state)
+        state = apply_rule("1.3.9", state)
+
+    # ── 1.2.4 second pass (sārvadhatuka apit context) ─────────────────────
+    state = apply_rule("1.2.4", state)
+
+    # ── 1.4.13 aṅga-saṃjñā ───────────────────────────────────────────────
+    state = apply_rule("1.4.13", state)
+
+    # ── 1.1.5 kṅiti ca: block guṇa before yaḳ ────────────────────────────
+    state = apply_rule("1.1.5", state)
+
+    # ── 7.4.25 akṛt sārvadhatukayoḥ dīrgha (vacuous for bhū, ū already long)
+    state.meta["7_4_25_karmani_yak_arm"] = True
+    state = apply_rule("7.4.25", state)
+
+    # ── 7.1.3: jho'ntaḥ (karmani 3pl: JAm → antAm) ───────────────────────
+    state.meta["7_1_3_jho_anta_arm"] = True
+    state = apply_rule("7.1.3", state)
+    state.meta.pop("7_1_3_jho_anta_arm", None)
+
+    # ── 7.2.81: āto ṅitaḥ (3du/2du: A→iy in AtAm/ATAm) ─────────────────
+    state.meta["7_2_81_Atam_arm"] = True
+    state = apply_rule("7.2.81", state)
+
+    # ── 6.1.66: lopo vyorvali (drop y from iy before HAL) ─────────────────
+    state.meta["6_1_66_karmani_iy_arm"] = True
+    state = apply_rule("6.1.66", state)
+
+    # ── 1.4.14 pāda-saṃjñā ───────────────────────────────────────────────
+    state = apply_rule("1.4.14", state)
+
+    # ── 6.1.87: ādguṇaḥ (3du/2du: ya-a + itAm/iTAm-i → yetAm/yeThAm) ───
+    state = apply_rule("6.1.87", state)
+
+    # ── 6.1.97: ato guṇe (3pl: delete ya-a before antAm-a, pararūpa) ─────
+    state.meta["6_1_97_tinganta_arm"] = True
+    state = apply_rule("6.1.97", state)
+
+    # ── 6.1.90: āṭaśca (1sg: del āṭ-ā before ai; prereq for 6.1.88) ──────
+    state.meta["6_1_90_loT_karmani_arm"] = True
+    state = apply_rule("6.1.90", state)
+    state.meta.pop("6_1_90_loT_karmani_arm", None)
+
+    # ── 6.1.88: vṛddhireci (1sg: ya-a + E→E, ya becomes y) ───────────────
+    state = apply_rule("6.1.88", state)
+
+    # ── 6.1.101: akaḥ savarṇe dīrgha (1du/1pl: ya-a + āṭ-ā → yā) ────────
+    state = apply_rule("6.1.101", state)
+
+    # ── MERGE + TRIPĀḌĪ ───────────────────────────────────────────────────
+    _pada_merge(state)
+    state = apply_rule("8.2.1",  state)
+    state = apply_rule("8.2.66", state)
+    state = apply_rule("8.3.15", state)
+    state.meta["8_4_68_arm"] = True
+    state = apply_rule("8.4.68", state)
+
+    return state
+
+
 def derive(
     dhatu_upadesha: str,
     lakara: str,
@@ -2207,6 +2375,10 @@ def derive(
             state = apply_rule("3.1.91", state)
             state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
             return _derive_karmani_lRT(state, purusha, vacana)
+        if lakara == "loT":
+            state = apply_rule("3.1.91", state)
+            state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+            return _derive_karmani_loT(state, purusha, vacana)
         raise NotImplementedError(f"karmani prayoga for lakāra {lakara!r} not yet implemented")
 
     # ── liṭ dispatch ─────────────────────────────────────────────────────────

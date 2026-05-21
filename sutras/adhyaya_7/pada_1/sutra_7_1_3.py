@@ -27,8 +27,8 @@ def _find_jh_term(state: State):
                 return (i, "jhi")
             if len(vs) == 2 and vs[0].slp1 in {"j","J"} and vs[1].slp1 == "h":
                 return (i, "jh")
-        # Ātmanepada (karmani): upadesha Ja (original) or Je (after 3.4.79), varnas start with J
-        if up in {"Ja", "Je"} and len(vs) >= 1 and vs[0].slp1 == "J":
+        # Ātmanepada (karmani): upadesha Ja/Je (laT) or JAm (loṭ after 3.4.90), varnas start with J
+        if len(vs) >= 1 and vs[0].slp1 == "J" and "tin_adesha_3_4_78" in t.tags:
             return (i, "Je")
     return None
 
@@ -52,9 +52,10 @@ def act(state: State) -> State:
         new_slp1 = "ant"
         new_varnas = parse_slp1_upadesha_sequence("ant")
     else:
-        # karmani: Je = [J, e] → replace J with [a,n,t], keep e → ante
+        # karmani: J-initial term (Je after laT 3.4.79, or JAm after loṭ 3.4.90)
+        # → replace J with [a,n,t], keep rest → ante or antAm
         new_varnas = parse_slp1_upadesha_sequence("ant") + list(old.varnas[1:])
-        new_slp1 = "ante"
+        new_slp1 = "ant" + "".join(v.slp1 for v in old.varnas[1:])
     new_term = Term(
         kind="pratyaya",
         varnas=new_varnas,
