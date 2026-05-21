@@ -58,6 +58,9 @@ def cond(state: State) -> bool:
     if state.meta.get("ashir_liG"):
         return _find_tin_index(state) is not None
     if state.meta.get("vidhi_liG"):
+        # karmani vidhi-liG: tiṅ ādeśa already installed (no liG placeholder)
+        if state.meta.get("3_4_102_karmani_liG_arm"):
+            return _find_tin_index(state) is not None
         return _find_liG_index(state) is not None
     return False
 
@@ -67,8 +70,11 @@ def act(state: State) -> State:
         idx = _find_tin_index(state)
         slp = "sI"
     elif state.meta.get("vidhi_liG"):
-        idx = _find_liG_index(state)
-        slp = "sIyuw"
+        if state.meta.get("3_4_102_karmani_liG_arm"):
+            idx = _find_tin_index(state)
+        else:
+            idx = _find_liG_index(state)
+        slp = "sIy"   # sīy after IT-lopa of ṭ (halantyam); uccharaṇārtha u also elided
     else:
         return state
     if idx is None:
@@ -81,6 +87,7 @@ def act(state: State) -> State:
     )
     state.terms.insert(idx, sI)
     state.meta["3_4_102_sIyuw_arm"] = False
+    state.meta.pop("3_4_102_karmani_liG_arm", None)
     return state
 
 

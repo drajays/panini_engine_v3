@@ -52,6 +52,16 @@ TIN_ADESHA_18: Final[Tuple[str, ...]] = (
     "iw",
     "vahi",
     "mahiG",
+    # āśīr-liṅ ātmanepada composite ādeśas (sīyuṭ+suṭ+tiṅ pre-encoded)
+    "sIzwa",
+    "sIyAstAm",
+    "sIran",
+    "sIzwAH",
+    "sIyAsTAm",
+    "sIDvam",
+    "sIya",
+    "sIvahi",
+    "sImahi",
 )
 
 TIN_ADESHA_SET: Final[FrozenSet[str]] = frozenset(TIN_ADESHA_18)

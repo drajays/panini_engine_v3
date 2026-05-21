@@ -30,7 +30,7 @@ def _find_ja_index(state: State) -> int | None:
 def cond(state: State) -> bool:
     if not state.meta.get("P038_3_4_105_arm"):
         return False
-    if not state.meta.get("vidhi_liG"):
+    if not (state.meta.get("vidhi_liG") or state.meta.get("ashir_liG")):
         return False
     return _find_ja_index(state) is not None
 

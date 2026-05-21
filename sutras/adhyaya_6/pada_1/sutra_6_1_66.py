@@ -1,7 +1,7 @@
 """
 6.1.66  हल्ङ्याब्भ्यो दीर्घात् सुतिपृक्तं हल्  —  VIDHI
 
-Four operational paths:
+Five operational paths:
   1. Original narrow path: elide apṛkta s after long-vowel upadhā tṛc stem.
   2. Arm ``6_1_66_liG_y_before_hal_arm``: vidhi-liṅ y-lopa before HAL.
   3. Arm ``6_1_66_ashir_liG_sip_arm``: āśīr-liṅ 2sg sip-derived s lopa.
@@ -9,6 +9,8 @@ Four operational paths:
      after u/k it-lopa) drops when the immediately following term starts with
      any HAL consonant.  Before AC-initial tiṅ (am, ant) v stays, giving
      abhūvam/abhūvan; before HAL-initial tiṅ (t, s, tām, etc.) v drops.
+  5. Arm ``6_1_66_karmani_liG_sIyuw_arm``: karmani vidhi-liṅ — drop the final
+     y of the sīyuṭ-remnant [I,y] (ling_sIyuw term) before HAL-initial tiṅ.
 """
 from __future__ import annotations
 
@@ -129,6 +131,29 @@ def _find_karmani_iy(state: State):
     return None
 
 
+def _find_siyuw_y(state: State):
+    """karmani vidhi-liṅ: drop y from sīyuṭ-remnant [I,y] (ling_sIyuw term)
+    before HAL-initial next term."""
+    if not state.meta.get("6_1_66_karmani_liG_sIyuw_arm"):
+        return None
+    for i, t in enumerate(state.terms):
+        if "ling_sIyuw" not in t.tags:
+            continue
+        if t.meta.get("6_1_66_siyuw_y_lopa_done"):
+            continue
+        if not t.varnas or t.varnas[-1].slp1 != "y":
+            continue
+        if i + 1 >= len(state.terms):
+            continue
+        nxt = state.terms[i + 1]
+        if not nxt.varnas:
+            continue
+        if nxt.varnas[0].slp1 not in HAL:
+            continue
+        return i
+    return None
+
+
 def cond(state: State) -> bool:
     return (
         _find_tfc_aprkta(state) is not None
@@ -136,6 +161,7 @@ def cond(state: State) -> bool:
         or _find_ashir_sip_s(state) is not None
         or _find_vuk_v(state) is not None
         or _find_karmani_iy(state) is not None
+        or _find_siyuw_y(state) is not None
     )
 
 
@@ -179,6 +205,15 @@ def act(state: State) -> State:
         state.samjna_registry["6.1.66_karmani_iy_lopa"] = True
         return state
 
+    idx = _find_siyuw_y(state)
+    if idx is not None:
+        t = state.terms[idx]
+        del t.varnas[-1]  # drop final y from [I,y]
+        t.meta["6_1_66_siyuw_y_lopa_done"] = True
+        state.meta.pop("6_1_66_karmani_liG_sIyuw_arm", None)
+        state.samjna_registry["6.1.66_siyuw_y_lopa"] = True
+        return state
+
     return state
 
 
@@ -192,7 +227,8 @@ SUTRA = SutraRecord(
         "तृच्-पथ: दीर्घात् परस्य अपृक्त हल्-लोपः (सु→स्)। "
         "विधि-लिङ्-पथ: यासुट्-अवशेष [i,y] में य्-लोपः हल्-पूर्वे। "
         "आशीर्-लिङ्-पथ (२मध्यम-एक): यासुट्-पश्चात् सिप्-जन्य-स्-लोपः। "
-        "कर्मणि-पथ: ७.२.८१-जन्य इय् में य्-लोपः हल्-पूर्वे (इय्ते→इते)।"
+        "कर्मणि-पथ: ७.२.८१-जन्य इय् में य्-लोपः हल्-पूर्वे (इय्ते→इते)। "
+        "कर्मणि-विधिलिङ्-पथ: सीयुट्-अवशेष [I,y] में य्-लोपः हल्-पूर्वे।"
     ),
     anuvritti_from = ("6.1.65",),
     cond           = cond,
