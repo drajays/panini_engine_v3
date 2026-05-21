@@ -117,6 +117,7 @@ _LAKARA_KEY: dict[str, str] = {
     "luG": "luN",
     "lRG": "lfN",
     "AsIrliG": "AsIrliN",
+    "luG_karmani": "luN-karmani",
 }
 
 
@@ -1778,6 +1779,86 @@ def _derive_karmani_ashir_liG(state: State, purusha: int, vacana: int) -> State:
     return state
 
 
+def _derive_karmani_luG(state: State, purusha: int, vacana: int) -> State:
+    """
+    Karmani luṅ (passive aorist / adyatana bhūta) for bhvādi dhātus.
+
+    Vikaraṇa: ciṇ (3.1.66 bhāvakarmaṇoḥ) — ṅit, causes vṛddhi on dhātu final
+    vowel (7.2.115). ciṇ surface after IT-lopa: [i].
+
+    tiṅ ādeśas pre-encoded as "luN-karmani-atmane" in tin_upadesha.json:
+      3sg  → "i"       (ta-luk per 6.4.104; just ciṇ surface)
+      3du  → "isAtAm"  (ciṇ[i] + suṭ[s] + ātām)
+      3pl  → "isata"   (ciṇ[i] + suṭ[s] + ata, after jha→anta)
+      2sg  → "isWAs"   (ciṇ[i] + suṭ[s] + ṭhāḥ; W=ṭha pre-encoded)
+      2du  → "isATAm"  (ciṇ[i] + suṭ[s] + āthām)
+      2pl  → "iDvam"   (ciṇ[i] + dhvam; suṭ-s dropped before D)
+      1sg  → "isi"     (ciṇ[i] + suṭ[s] + iṭ[i])
+      1du  → "isvahi"  (ciṇ[i] + suṭ[s] + vahi)
+      1pl  → "ismahi"  (ciṇ[i] + suṭ[s] + mahi)
+
+    Pipeline: 8.3.59 converts suṭ-s → ṣ (z) after ciṇ-i (iK) in tripāḍī.
+    8.2.66 + 8.3.15 produce visarga on 2sg final -s.
+
+    Expected (bhū): अभावि अभाविषाताम् अभाविषत अभाविष्ठाः अभाविषाथाम्
+                    अभाविध्वम् अभाविषि अभाविष्वहि अभाविष्महि
+    """
+    state.meta["lakara"] = "luG_karmani"
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            t.tags.add("bhava_karma_usage")
+            break
+
+    state = apply_rule("1.3.13", state)
+
+    # 3.2.110 luṅ attachment: attaches luG placeholder + tags dhātu aT_agama_context
+    state.meta["3_2_110_luG_arm"] = True
+    state = apply_rule("3.2.110", state)
+    state = apply_rule("1.3.2", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    # 3.1.66 ciṇ trace: records that karmani ciṇ vikaraṇa applies
+    state.meta["3_1_66_arm"] = True
+    state = apply_rule("3.1.66", state)
+
+    # 3.4.77 + 3.4.78: install pre-encoded karmani tiṅ ādeśa (replaces luG placeholder)
+    state = apply_rule("3.4.77", state)
+    tin_adesha = _select_tin_adesha("luG_karmani", "atmane", purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"]    = tin_adesha
+    state = apply_rule("3.4.78", state)
+    state = apply_rule("1.4.99", state)
+    state = apply_rule("1.4.100", state)
+    # No P00 tusma audit: karmani ādeśas start with 'i' — no halantyam IT to drop
+
+    # 6.4.104 ciṇo luk trace (3sg ta-luk baked into "i" pre-encoding)
+    state.meta["6_4_104_arm"] = True
+    state = apply_rule("6.4.104", state)
+
+    state = apply_rule("1.4.13", state)
+
+    # 7.2.115 vṛddhi: ciṇ is ṅit → dhātu final vowel → vṛddhi (BU: U→O=au)
+    state.meta["7_2_115_karmani_lut_arm"] = True
+    state = apply_rule("7.2.115", state)
+
+    # 6.4.71 aṭ augment (a- prepended to dhātu via aT_agama_context from 3.2.110)
+    state = apply_rule("6.4.71", state)
+
+    state = apply_rule("1.4.14", state)
+
+    # 6.1.78 eco'yavāyāvaḥ: O (au) → Av (bhO → bhav)
+    state = apply_rule("6.1.78", state)
+
+    _pada_merge(state)
+    state = apply_rule("8.2.1", state)
+    state = apply_rule("8.2.66", state)   # final s→r (2sg -As ending)
+    state = apply_rule("8.3.15", state)   # r→ḥ (visarga)
+    state = apply_rule("8.3.59", state)   # suṭ-s → ṣ (z) after ciṇ-i (iK)
+
+    return state
+
+
 def _derive_karmani_luT(state: State, purusha: int, vacana: int) -> State:
     """
     Karmani luṭ (passive periphrastic future) for bhvādi dhātus.
@@ -2677,6 +2758,10 @@ def derive(
             state = apply_rule("3.1.91", state)
             state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
             return _derive_karmani_ashir_liG(state, purusha, vacana)
+        if lakara == "luG":
+            state = apply_rule("3.1.91", state)
+            state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+            return _derive_karmani_luG(state, purusha, vacana)
         raise NotImplementedError(f"karmani prayoga for lakāra {lakara!r} not yet implemented")
 
     # ── liṭ dispatch ─────────────────────────────────────────────────────────
