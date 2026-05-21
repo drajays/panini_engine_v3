@@ -34,10 +34,12 @@ _VRIDDHI_TARGET = {
     ("a", "E"): "E",
     ("a", "O"): "O",
     ("a", "e"): "E",  # vṛddhi before ec (e.g. 7.3.114 → kasyE / kasyai)
+    ("a", "o"): "O",  # a+o → vṛddhi au (e.g. for dīrgha-ā stems + os)
     # Also when preceding is 'A' (dīrgha), same outcome.
     ("A", "E"): "E",
     ("A", "O"): "O",
     ("A", "e"): "E",
+    ("A", "o"): "O",  # ā+o → vṛddhi au (e.g. hāhā + os → hāhauḥ)
 }
 
 

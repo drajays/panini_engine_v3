@@ -91,6 +91,19 @@ def _find_eligible_boundary(state: State) -> int | None:
         # the ``su`` residue (``cond`` is tag-based only; no ``vibhakti`` read).
         if final in _DIRGHA_STRĪ_FINALS and "sambuddhi" in pr.tags:
             continue
+        # 6.1.68 dīrgha-A/I branch applies only to strī (ṅī·āp) stems.
+        # Non-strī words ending in ā (e.g. hāhā pulliṅga, avyaya) are excluded.
+        # Exception: demo arms explicitly mark āp-anta stems even without strīliṅga tag.
+        if final in _DIRGHA_STRĪ_FINALS and "strīliṅga" not in anga.tags:
+            has_tap_arm = any(
+                state.meta.get(k)
+                for k in (
+                    "prakriya_37_6_1_68_tApanta_arm",
+                    "P039_6_1_68_tApanta_arm",
+                )
+            )
+            if not has_tap_arm:
+                continue
         return i
     return None
 

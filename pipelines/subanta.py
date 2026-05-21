@@ -380,6 +380,8 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.3.8",
     "1.3.9",
     "1.3.10",
+    "7.1.93",  # anang sau: sakhī 1sg → sakhān (i → an; arm-gated)
+    "6.4.8",   # dīrgha before sarvananāmasthāna (fires here for anang; idempotent)
     "1.4.7",
     "1.2.41",
     "6.1.68",
@@ -432,6 +434,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.1.102",
     "1.1.11",
     "6.1.103",
+    "7.1.92",  # sakhyur-asambauddhou: vṛddhi (i→E=ai) before sarvananāmasthāna (arm-gated)
     "6.1.78",
     "6.1.107",
     "6.1.125",
@@ -634,6 +637,21 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
         matra_prathama_2_3_46=matra_prathama_2_3_46,
         nAmadheya_vrddha_term_indices=nAmadheya_vrddha_term_indices,
     )
+    # sakhī-class i-stem masculine: tag and set 7.1.92/7.1.93 arms
+    _SAKHI_CLASS = {"sakhI", "sakhi"}
+    if stem_slp1.strip() in _SAKHI_CLASS and linga == "pulliṅga":
+        for t in s.terms:
+            if "prātipadika" in t.tags:
+                t.tags.add("sakhi_ikarant")
+        # 7.1.93: anang fires for 1sg (sau = su context)
+        if vibhakti == 1 and vacana == 1:
+            s.meta["7_1_93_arm"] = True
+            s.meta["8_2_7_arm"]  = True  # n-lopa: sakhān → sakhā after anang
+        # 7.1.92: ṇidvat fires for all sarvananāmasthāna non-sambodhana cells
+        # sarvananāmasthāna = 1st/2nd vibhakti sg/du/pl + 8th is samboddhi (excluded)
+        _SARVANAM = {(1,1),(1,2),(1,3),(2,1),(2,2),(2,3)}
+        if (vibhakti, vacana) in _SARVANAM and vibhakti != 8:
+            s.meta["7_1_92_arm"] = True
     if autonomous_scanner:
         return run_subanta_sup_attach_and_finish_scanner(s)
     return run_subanta_pipeline(s)
