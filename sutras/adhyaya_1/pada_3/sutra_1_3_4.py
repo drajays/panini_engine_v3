@@ -27,7 +27,11 @@ from phonology     import HAL, TUSMA
 def _tusma_sup_indices(state: State) -> list[int]:
     out: list[int] = []
     for i, t in enumerate(state.terms):
-        if "sup" not in t.tags or "upadesha" not in t.tags:
+        if "upadesha" not in t.tags:
+            continue
+        # Both sup (nominal) and tiṅ ādeśa (verbal) are vibhakti pratyayas
+        is_vibhakti = "sup" in t.tags or "tin_adesha_3_4_78" in t.tags
+        if not is_vibhakti:
             continue
         if not t.varnas:
             continue

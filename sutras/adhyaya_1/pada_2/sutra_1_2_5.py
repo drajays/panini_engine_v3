@@ -52,6 +52,11 @@ def _find_pratyaya(state: State) -> int | None:
             if "kngiti" in t.tags:
                 return None
             return i
+        # ātmanepada karmani/bhāva liṭ tiṅ ādeśas (tagged by 3.4.78)
+        if "tin_adesha_3_4_78" in t.tags:
+            if "kngiti" in t.tags:
+                return None
+            return i
     return None
 
 
