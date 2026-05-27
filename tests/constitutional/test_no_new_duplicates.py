@@ -30,7 +30,8 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 # Updated: +16 from cursor's bhāve/karmaṇi/dhātu-browser tiṅanta work (2026-05-22 session).
 # Updated: +50 from additional bhāve/karmani lakāra pipelines restored from stash (2026-05-27).
 # Updated: +1 from dASaraThi_apatya_iY_demo.py (2026-05-28).
-MAX_DUPLICATE_GROUPS = 530
+# Updated: +19 from vandanIya, pracChanIya, mlecChanIya pipelines (2026-05-28).
+MAX_DUPLICATE_GROUPS = 549
 
 
 @pytest.fixture(scope="module")

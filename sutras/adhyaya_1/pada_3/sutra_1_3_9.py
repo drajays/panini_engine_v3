@@ -68,6 +68,8 @@ def act(state: State) -> State:
             # (e.g. सुँ → स्).
             if "it_candidate_irit" in v.tags:
                 removed.append(v.slp1)
+                # After all irit varnas drop, mark the dhātu as "irit" (iñr vārttika).
+                # Done outside loop (below) after we know all irit were removed.
                 continue
             if (
                 "dhatu" in t.tags
@@ -110,6 +112,10 @@ def act(state: State) -> State:
                 prev.update(removed)
             else:
                 t.meta["it_markers"] = set(removed)
+            # iñr vārttika: if both 'i' and 'r' were irit-lopped from a dhātu,
+            # mark it "irit" so 3.1.57 can fire and 7.1.58 (idit num) stays silent.
+            if "dhatu" in t.tags and "i" in removed and "r" in removed:
+                t.tags.add("irit")
         t.varnas = new_varnas
     return state
 
