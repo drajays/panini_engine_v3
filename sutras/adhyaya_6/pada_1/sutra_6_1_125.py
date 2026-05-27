@@ -9,7 +9,8 @@ v3 implements the *pragṛhya* ‖ *ac* half: **1.1.11** tags the left *term*;
 This sūtra registers the *prayoga* in ``samjna_registry`` (R2) and stamps the
 right *term* ``meta`` once per boundary so repeated scheduling does not loop.
 
-*Pluta* is not yet modeled on ``Term``s; when it is, extend ``_boundary_index``.
+*Pluta* is modeled at the ``Term`` level via ``"pluta" in term.tags``.
+A pipeline marks a term as pluta before calling this sūtra.
 """
 from __future__ import annotations
 
@@ -26,7 +27,10 @@ _META_ACK = "6_1_125_prakRti_aci_ack"
 def _boundary_index(state: State) -> int | None:
     for i in range(len(state.terms) - 1):
         left, right = state.terms[i], state.terms[i + 1]
-        if PRAGHYA_TERM_TAG not in left.tags:
+        # pragṛhya or pluta (3-mora) term before ac-initial
+        is_pragrha = PRAGHYA_TERM_TAG in left.tags
+        is_pluta = "pluta" in left.tags  # Term tagged pluta by pipeline/rule
+        if not (is_pragrha or is_pluta):
             continue
         if right.meta.get(_META_ACK):
             continue
