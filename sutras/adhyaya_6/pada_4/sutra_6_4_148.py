@@ -40,7 +40,8 @@ def _finals_for_pair(anga, pr) -> frozenset[str]:
         if "bha" not in anga.tags:
             return frozenset()
         return frozenset({"a", "A", "i", "I"})
-    return frozenset({"A", "I"})
+    # Taddhita (non-sup): include short 'a' — e.g. dāśaratha + iñ → dāśarathi
+    return frozenset({"a", "A", "I"})
 
 
 def _p005_a_kurucara_final_a_before_I(state: State) -> tuple[int, int] | None:
@@ -257,9 +258,9 @@ def _find_target(state: State):
         first = nxt.varnas[0]
         if last.slp1 not in finals_ok or first.slp1 not in _NEXT_OK:
             continue
-        # Hrasva-a + short *i* is **6.1.87** *guṇa* (e.g. *rāma* + *ṭā* → *rāmeṇa*), not
-        # this *lopa*.  Keep *a* + long *ī* (*I*) for *deva* + *ṅīp* → *dev* + *ī*.
-        if last.slp1 == "a" and first.slp1 == "i":
+        # In sup context, a+i → guṇa e by 6.1.87 (e.g. rāma+ṭā → rāmeṇa); skip.
+        # In taddhita context, 6.4.148 lopa applies (e.g. dāśaratha+iñ → dāśarathi).
+        if last.slp1 == "a" and first.slp1 == "i" and "sup" in nxt.tags:
             continue
         # *ikārānta* + affix-initial short *i* (e.g. *hari* + *Ni* → *harau*) — not this lopa.
         if last.slp1 == "i" and first.slp1 == "i":

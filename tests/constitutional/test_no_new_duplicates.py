@@ -29,7 +29,8 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 # Updated: +1 from _derive_lRG() in pipelines/tinanta.py (lṛṅ conditional pipeline).
 # Updated: +16 from cursor's bhāve/karmaṇi/dhātu-browser tiṅanta work (2026-05-22 session).
 # Updated: +50 from additional bhāve/karmani lakāra pipelines restored from stash (2026-05-27).
-MAX_DUPLICATE_GROUPS = 529
+# Updated: +1 from dASaraThi_apatya_iY_demo.py (2026-05-28).
+MAX_DUPLICATE_GROUPS = 530
 
 
 @pytest.fixture(scope="module")

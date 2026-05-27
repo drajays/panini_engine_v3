@@ -14,6 +14,13 @@ Classical role:
   ṛ, ḷ} — all vowels including short forms; with 1.1.70 (tapara) one may
   restrict to specific lengths.
 
+  The same principle applies to PRATYAYA lists — e.g.:
+    sup   = su (first in 4.1.2) + p (it of last entry "sup") = all 21 sups
+    tiṅ   = ti (from "tip") + ṅ (it of "mahiṅ") = all 18 tiṅ ādeśas
+    taṅ   = ta + ṅ = ātmanepada subset of tiṅ
+    ṭāp   = ṭā (from TAp) + p = ṭāp/ḍāp/cāp strī-pratyaya group
+  See phonology/pratyaya_pratyahara.py for the engine implementation.
+
 v3 engine role:
   - Installs gate "1_1_71_Adir_antyena_sahetA" in paribhasha_gates once
     per derivation (idempotent guard via cond).
@@ -21,6 +28,8 @@ v3 engine role:
   - cond() reads ONLY paribhasha_gates (Art. 2 compliant: no vibhakti,
     vacana, lakāra, surface Devanāgarī, data, or reference access).
   - No arm flags.  r1_form_identity_exempt=True (no surface change).
+  - Phoneme pratyāhāras: phonology/pratyahara.py (AC, HAL, IK, …)
+  - Pratyaya pratyāhāras: phonology/pratyaya_pratyahara.py (SUP, TIN, …)
 """
 from __future__ import annotations
 
