@@ -19,10 +19,18 @@ def test_metadata():
 
 
 def test_samjna_idempotent():
-    t = Term(kind="prakriti", varnas=[mk("a")])
+    # Audit P1b: 1.1.16 fires only when an *o*-ending Term is on tape.
+    t = Term(kind="prakriti", varnas=[mk("o")])
     s0 = State(terms=[t])
     s1 = apply_rule("1.1.16", s0)
     assert s1116.sambuddhau_shakalya_samjna_is_registered(s1)
     assert s1116.sambuddhau_shakalya_gate_is_set(s1)
     s2 = apply_rule("1.1.16", s1)
     assert s2.samjna_registry.get(s1116.SAMJNA_KEY) == s1.samjna_registry.get(s1116.SAMJNA_KEY)
+
+
+def test_no_stamp_without_o_ending():
+    t = Term(kind="prakriti", varnas=[mk("a")])
+    s0 = State(terms=[t])
+    s1 = apply_rule("1.1.16", s0)
+    assert not s1116.sambuddhau_shakalya_samjna_is_registered(s1)

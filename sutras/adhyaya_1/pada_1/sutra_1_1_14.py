@@ -59,8 +59,17 @@ def nipata_ekajang_samjna_is_registered(state: State) -> bool:
     return state.samjna_registry.get(SAMJNA_KEY) is True
 
 
+def _state_has_nipata(state: State) -> bool:
+    """True iff some Term on the tape is tagged as a *nipāta*. The
+    *ekāc-anāṅ* pragṛhya saṃjñā is irrelevant in any derivation with no
+    nipāta — registry-stamp is suppressed there as trace noise (audit P1b)."""
+    return any("nipāta" in t.tags or "nipata" in t.tags for t in state.terms)
+
+
 def cond(state: State) -> bool:
-    return not nipata_ekajang_samjna_is_registered(state)
+    if nipata_ekajang_samjna_is_registered(state):
+        return False
+    return _state_has_nipata(state)
 
 
 def act(state: State) -> State:

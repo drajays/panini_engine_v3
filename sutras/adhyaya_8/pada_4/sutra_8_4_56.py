@@ -4,8 +4,8 @@
 At avasāna (word boundary / pause), jaś consonants optionally become car
 (voiceless stops).  In practice always applied for final-position forms.
 
-Engine: when armed with ``8_4_56_arm``, find the final consonant 'd' of the
-merged pada (placed there by 8.2.39 jhal→jaś) and convert back to 't' (car).
+Phonological predicate: merged pada (single term) ends in a jaś consonant
+(d, g, b, j, etc., placed there by 8.2.39 jhal→jaś). Converts to car (voiceless).
 
 Jaś→car map (subset relevant to laṅ/luṅ):  d→t, g→k, j→c, b→p, etc.
 For laṅ 3sg, 8.2.39 converts final 't'→'d', then 8.4.56 converts 'd'→'t'.
@@ -43,8 +43,6 @@ def _find_jas_final(state: State) -> int | None:
 
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not state.meta.get("8_4_56_arm"):
         return False
     return _find_jas_final(state) is not None
 

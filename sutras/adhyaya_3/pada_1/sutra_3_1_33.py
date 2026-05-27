@@ -19,13 +19,16 @@ from phonology import mk
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
-def _p019_sy_insert_index(state: State) -> int | None:
-    if not state.meta.get("corrected_v2_P019_3_1_33_sy_arm"):
+def _lrng_ṛ_sy_insert_index(state: State) -> int | None:
+    """Lṛṅ + ṛ-dhātu (``vft``) + following ``ti`` ādeśa: insert ``sy`` (not ``sya``)."""
+    if (state.meta.get("lakara") or "").strip() != "lRG":
+        return None
+    if state.meta.get("lrng_ṛ_sy_done"):
         return None
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags:
             continue
-        if "".join(v.slp1 for v in t.varnas) != "vft":
+        if not any(v.slp1 == "f" for v in t.varnas):
             continue
         nxt = state.terms[i + 1]
         up = (nxt.meta.get("upadesha_slp1") or "").strip()
@@ -35,6 +38,12 @@ def _p019_sy_insert_index(state: State) -> int | None:
             continue
         return i + 1
     return None
+
+
+def _p019_sy_insert_index(state: State) -> int | None:
+    if not state.meta.get("corrected_v2_P019_3_1_33_sy_arm"):
+        return None
+    return _lrng_ṛ_sy_insert_index(state)
 
 
 def _luT_index(state: State) -> int | None:
@@ -70,6 +79,8 @@ def _lRG_dhatu_index(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
+    if _lrng_ṛ_sy_insert_index(state) is not None:
+        return True
     if (
         state.meta.get("corrected_v2_P019_3_1_33_sy_arm")
         and not state.meta.get("corrected_v2_P019_3_1_33_sy_done")
@@ -88,6 +99,19 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    j_ṛ = _lrng_ṛ_sy_insert_index(state)
+    if j_ṛ is not None:
+        sy = Term(
+            kind="pratyaya",
+            varnas=list(parse_slp1_upadesha_sequence("sy")),
+            tags={"pratyaya", "vikarana", "ardhadhatuka"},
+            meta={"upadesha_slp1": "sy"},
+        )
+        state.terms.insert(j_ṛ, sy)
+        state.meta["lrng_ṛ_sy_done"] = True
+        state.meta.pop("corrected_v2_P019_3_1_33_sy_arm", None)
+        state.meta.pop("corrected_v2_P019_3_1_33_sy_done", None)
+        return state
     j_sy = _p019_sy_insert_index(state)
     if j_sy is not None:
         sy = Term(

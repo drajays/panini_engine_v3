@@ -1118,6 +1118,17 @@ def P01_samjna_1_1_3_to_1_1_100(s: State, *, include_luk_block: bool) -> State:
     return s
 
 
+def P01_samjna_dhatu_class(s: State) -> State:
+    """Dhātu-only saṃjñā spine: *ghu* (1.1.20), *kṅiti* gate (1.1.5).
+
+    Called from tiṅanta / kṛdanta entry points after the dhātu ``Term`` is on
+    the tape — **not** from subanta bootstrap (audit P2 §4.3).
+    """
+    for sid in ("1.1.20", "1.1.5"):
+        s = apply_rule(sid, s)
+    return s
+
+
 def P01_samjna_1_1_15_to_1_1_24(s: State) -> State:
     """
     Shared saṃjñā/paribhāṣā slice (used by multiple recipes):

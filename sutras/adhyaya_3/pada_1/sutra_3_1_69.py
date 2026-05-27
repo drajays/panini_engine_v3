@@ -1,9 +1,11 @@
 """
-3.1.69  दिवादिभ्यः श्यन्  —  VIDHI (narrow: replace Sap with Syan)
+3.1.69  दिवादिभ्यः श्यन्  —  VIDHI (apavāda: replace Śap with Śyan for divādi)
 
-Glass-box scope for `medyati`:
-  When a pipeline marks a divādi-dhātu and a `Sap` vikaraṇa has been inserted
-  (3.1.68), replace that `Sap` term with `Syan`.
+Pāṇinian flow:
+  3.1.68 (utsarga) first inserts Śap for all dhātus;
+  3.1.69 (apavāda) replaces Śap with Śyan for divādi (gaṇa 4) dhātus.
+
+cond: dhātu.meta["gana"] == 4 AND a Śap term is present on the tape.
 """
 from __future__ import annotations
 
@@ -19,8 +21,16 @@ def _find_sap(state: State) -> int | None:
     return None
 
 
+def _dhatu_gana(state: State) -> int | None:
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            g = t.meta.get("gana")
+            return int(g) if g is not None else None
+    return None
+
+
 def cond(state: State) -> bool:
-    if not state.meta.get("3_1_69_syan_arm"):
+    if _dhatu_gana(state) != 4:
         return False
     return _find_sap(state) is not None
 

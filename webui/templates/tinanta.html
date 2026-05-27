@@ -113,8 +113,9 @@
   <div class="panel" style="flex:2;">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem;">
       <h2 style="margin:0;">प्रक्रिया</h2>
-      <div style="display:flex;gap:.5rem;font-size:.8rem;">
-        <label><input type="checkbox" id="show-audit" checked onchange="renderTrace()"> अधिकार/परिभाषा</label>
+      <div style="display:flex;gap:.5rem;font-size:.8rem;flex-wrap:wrap;">
+        <label><input type="checkbox" id="show-rupa-only" checked onchange="renderTrace()"> रूप-परिवर्तन-मात्रम्</label>
+        <label><input type="checkbox" id="show-audit" onchange="renderTrace()"> अधिकार/परिभाषा</label>
         <label><input type="checkbox" id="show-skipped" onchange="renderTrace()"> अतिक्रान्त</label>
       </div>
     </div>
@@ -281,6 +282,7 @@ async function loadCell(dhatu, lakara, prayoga, purusha, vacana) {
 }
 
 function renderTrace() {
+  const showRupaOnly = document.getElementById('show-rupa-only').checked;
   const showAudit   = document.getElementById('show-audit').checked;
   const showSkipped = document.getElementById('show-skipped').checked;
   const stats = _lastResult?.stats || {};
@@ -300,6 +302,10 @@ function renderTrace() {
     const faDev = step.form_after_dev  != null ? step.form_after_dev  : (step.form_after  || '');
     const changed   = (step.form_before || '') !== (step.form_after || '');
     const ev        = step.status || step.event || '';
+    if (showRupaOnly) {
+      if (isStruct) return;
+      if (ev !== 'APPLIED' || !changed) return;
+    }
     if (!showAudit   && ev === 'AUDIT')   return;
     if (!showSkipped && (ev === 'SKIPPED' || ev === 'COND-FALSE')) return;
 

@@ -29,7 +29,13 @@ def test_pATha_bytes_match_ashtadhyayi_s():
 
 
 def test_ghu_set_registration():
-    t = Term(kind="prakriti", varnas=[mk("a")])
+    # Audit P1a: 1.1.20 fires only when a ghu-eligible dhātu is on the tape.
+    t = Term(
+        kind="dhatu",
+        varnas=[mk("d"), mk("a")],
+        tags={"dhatu"},
+        meta={"upadesha_slp1": "da~da"},
+    )
     s0 = State(terms=[t], samjna_registry={})
     s1 = apply_rule("1.1.20", s0)
     assert s1120.ghu_samjna_is_registered(s1)
@@ -41,3 +47,11 @@ def test_ghu_set_registration():
     assert not s1120.dhatu_upadesha_slp1_is_ghu(s1, "qupac~z")
     s2 = apply_rule("1.1.20", s1)
     assert s2.samjna_registry.get(s1120.GHU_KEY) is s1.samjna_registry.get(s1120.GHU_KEY)
+
+
+def test_no_stamp_without_ghu_dhatu():
+    """Audit P1a: a derivation without dā/dhā/ad+āp dhātu does not stamp."""
+    t = Term(kind="prakriti", varnas=[mk("a")])  # no dhātu tag
+    s0 = State(terms=[t], samjna_registry={})
+    s1 = apply_rule("1.1.20", s0)
+    assert not s1120.ghu_samjna_is_registered(s1)

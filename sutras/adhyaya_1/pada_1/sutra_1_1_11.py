@@ -92,12 +92,32 @@ def _tag_she_pragrahya_residue(state: State) -> None:
             t.tags.add(PRAGHYA_TERM_TAG)
 
 
+def _state_has_pragriya_eligible_anta(state: State) -> bool:
+    """True iff some Term currently on the tape ends in one of the *pragṛhya*
+    vowels (ī, ū, e, ai, o, au). If none do, the pragṛhya saṃjñā cannot
+    apply to anything in this derivation and the eager registry-stamp is
+    pure trace noise (audit P1b)."""
+    for t in state.terms:
+        fin = t.final_varna
+        if fin and is_pragrahya_slp1_vowel(fin.slp1):
+            return True
+    return False
+
+
 def cond(state: State) -> bool:
-    if not pragrahya_samjna_is_registered(state):
-        return True
+    # Arm-based triggers (post-6.1.102 refresh; Vedic śe residue tagging)
+    # are *structural* signals set by other sūtras/recipes — keep firing.
     if bool(state.meta.get(PRAGHYA_TAG_REFRESH_ARM_META)):
         return True
-    return bool(state.meta.get(SHE_PRAGHYA_TAG_ARM_META))
+    if bool(state.meta.get(SHE_PRAGHYA_TAG_ARM_META)):
+        return True
+    # Eager-bootstrap fires only when the registry is still empty AND
+    # there is at least one Term in the state whose final varṇa is a
+    # candidate for pragṛhya. Otherwise the SAMJNA stamp is irrelevant
+    # noise in the trace (audit P1b).
+    if pragrahya_samjna_is_registered(state):
+        return False
+    return _state_has_pragriya_eligible_anta(state)
 
 
 def act(state: State) -> State:

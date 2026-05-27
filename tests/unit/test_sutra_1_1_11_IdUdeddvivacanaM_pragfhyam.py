@@ -27,12 +27,23 @@ def test_vowel_membership():
 
 
 def test_samjna_bootstrap_idempotent():
-    t = Term(kind="prakriti", varnas=[mk("a")])
+    # Audit P1b: 1.1.11 fires only when some Term has a pragṛhya-eligible
+    # vowel anta (ī, ū, e, ai, o, au). Use a stem ending in ī (g + I).
+    t = Term(kind="prakriti", varnas=[mk("g"), mk("I")])
     s0 = State(terms=[t])
     s1 = apply_rule("1.1.11", s0)
     assert s1.samjna_registry.get("pragrahya") == s1111.PRAGHYA_VOWEL_SLP1
     s2 = apply_rule("1.1.11", s1)
     assert s2.samjna_registry.get("pragrahya") == s1.samjna_registry.get("pragrahya")
+
+
+def test_no_stamp_when_no_pragriya_eligible_anta():
+    """Audit P1b: a derivation with no pragṛhya-eligible vowel anta (e.g.
+    रामाणाम् stem 'rAma') should NOT stamp the registry."""
+    t = Term(kind="prakriti", varnas=[mk("a")])  # final 'a' is hrasva, not pragṛhya
+    s0 = State(terms=[t])
+    s1 = apply_rule("1.1.11", s0)
+    assert not s1111.pragrahya_samjna_is_registered(s1)
 
 
 def test_pragrahya_samjna_is_registered():

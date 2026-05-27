@@ -28,16 +28,27 @@ _GUNA_UPADHA = {
 }
 
 
-def _p019_vft_guna_index(state: State) -> int | None:
-    if not state.meta.get("corrected_v2_P019_vRt_guNa_arm"):
+def _lrng_dhatu_ṛ_guna_index(state: State) -> int | None:
+    """
+    Lṛṅ + dhātu with SLP1 ``f`` (ऋ): replace ṛ → ``ar`` (P019 *vft* → *vart* spine).
+    """
+    if (state.meta.get("lakara") or "").strip() != "lRG":
         return None
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags:
             continue
-        if "".join(v.slp1 for v in t.varnas) != "vft":
+        if t.meta.get("lrng_ṛ_guna_done"):
+            continue
+        if not any(v.slp1 == "f" for v in t.varnas):
             continue
         return i
     return None
+
+
+def _p019_vft_guna_index(state: State) -> int | None:
+    if not state.meta.get("corrected_v2_P019_vRt_guNa_arm"):
+        return None
+    return _lrng_dhatu_ṛ_guna_index(state)
 
 
 def _p018_b_dyut_guna(state: State) -> tuple[int, int] | None:
@@ -109,6 +120,8 @@ def _find_target(state: State):
 def cond(state: State) -> bool:
     if _p018_b_dyut_guna(state) is not None:
         return True
+    if _lrng_dhatu_ṛ_guna_index(state) is not None:
+        return True
     if _p019_vft_guna_index(state) is not None:
         return True
     hit = _find_target(state)
@@ -133,14 +146,15 @@ def act(state: State) -> State:
         t.meta["P018_B_guna_dyot_done"] = True
         state.meta.pop("corrected_v2_P018_B_7_3_86_arm", None)
         return state
-    p019_i = _p019_vft_guna_index(state)
-    if p019_i is not None:
-        t = state.terms[p019_i]
+    ṛ_i = _lrng_dhatu_ṛ_guna_index(state)
+    if ṛ_i is not None:
+        t = state.terms[ṛ_i]
         vs = t.varnas
         for j, v in enumerate(vs):
             if v.slp1 == "f":
                 t.varnas = vs[:j] + [mk("a"), mk("r")] + vs[j + 1 :]
                 break
+        t.meta["lrng_ṛ_guna_done"] = True
         state.meta.pop("corrected_v2_P019_vRt_guNa_arm", None)
         return state
     hit = _find_target(state)

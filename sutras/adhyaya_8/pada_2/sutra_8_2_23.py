@@ -1,18 +1,12 @@
 """
 8.2.23  संयोगान्तस्य लोपः  —  VIDHI
 
-Narrow v3: in Tripāḍī, when ``state.meta["8_2_23_arm"]`` and the *pada* ends in
-``nt`` (``…n`` + ``t``), delete the final ``t`` (*saṃyogānta* *lopa* of the
-cluster-final consonant).
+Three operational paths — all phonologically discriminated:
 
-v3 extension (narrow, P022 द्यौः):
-  When recipe arms ``state.meta["P022_8_2_23_final_v_lopa_arm"]`` and the first
-  term ends in ``…Ov`` (``O`` + ``v``), delete that final ``v`` before a
-  following ``su`` sup.  This models the JSON's *dyOv + su → dyO + su* slice.
-
-v3 extension (asmad dvitīyā bahu):
-  When recipe arms ``state.meta["8_2_23_asmad_ns_arm"]``, the pada ends in
-  ``ns`` (``…n`` + ``s``). Delete the final ``s`` → अस्मान्।
+  1. Tripāḍī zone, pada ends in ``nt`` → drop final ``t``.
+  2. ``8_2_23_dyauH_v_lopa_arm`` (dyauḥ-specific): first term ends in ``…Ov``,
+     followed by a ``su`` sup → drop final ``v``.
+  3. ``8_2_23_asmad_ns_arm`` (asmad dvitīyā bahu): pada ends in ``ns`` → drop final ``s``.
 """
 from __future__ import annotations
 
@@ -21,8 +15,7 @@ from engine.state import State
 
 
 def _hit(state: State):
-    if not state.meta.get("8_2_23_arm"):
-        return None
+    """Tripāḍī nt-lopa: fires on phonological environment alone."""
     if not state.tripadi_zone:
         return None
     if len(state.terms) != 1:
@@ -50,7 +43,7 @@ def _hit_asmad_ns(state: State):
 
 
 def _hit_P022_final_v(state: State):
-    if not state.meta.get("P022_8_2_23_final_v_lopa_arm"):
+    if not state.meta.get("8_2_23_dyauH_v_lopa_arm"):
         return None
     if not state.tripadi_zone:
         return None
@@ -85,7 +78,7 @@ def act(state: State) -> State:
     if hit is not None:
         ti, vi = hit
         del state.terms[ti].varnas[vi]
-        state.meta["P022_8_2_23_final_v_lopa_arm"] = False
+        state.meta["8_2_23_dyauH_v_lopa_arm"] = False
         state.samjna_registry["8.2.23_samyoganta_lopa"] = True
         return state
 

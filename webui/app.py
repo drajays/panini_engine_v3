@@ -23,7 +23,7 @@ import time
 from pathlib import Path
 from typing import Any
 
-from flask import Flask, render_template, request, jsonify, abort
+from flask import Flask, render_template, request, jsonify, abort, redirect, url_for
 
 # Ensure repo root importable when launched as a module.
 _ROOT = Path(__file__).resolve().parent.parent
@@ -493,21 +493,14 @@ def sig_page():
 
 @app.route("/api/sig/<name>")
 def api_sig(name):
-    """Serve any SIG JSON artifact by filename (e.g. 'sutra_interaction_graph')."""
-    allowed = {
-        "sutra_fire_stats", "sutra_edge_stats", "sutra_interaction_graph",
-        "sig_critical_path", "sig_transitions", "sig_linguistic",
-        "sig_baseline", "sig_anomalies", "sutra_next_candidates",
-        "global_sutra_frequencies", "global_sutra_edges", "global_markov_transitions",
-        "coverage",
-    }
+    """Serve any SIG JSON artifact by filename (e.g. 'sutra_interaction_graph').
+    Allowlist is derived from files actually present in sig/ — no hardcoded list.
+    """
+    sig_dir = _ROOT / "sig"
+    allowed = {p.stem for p in sig_dir.glob("*.json")} if sig_dir.exists() else set()
     if name not in allowed:
         abort(404)
-    path = _ROOT / "sig" / f"{name}.json"
-    if not path.exists():
-        return jsonify({
-            "error": f"{name}.json not found. Run: python -m tools.sig_benchmark --freeze"
-        }), 404
+    path = sig_dir / f"{name}.json"
     return jsonify(json.loads(path.read_text(encoding="utf-8")))
 
 
@@ -582,7 +575,17 @@ _CATEGORY_ORDER = [
 _PIPELINE_CATALOG: list[dict[str, Any]] | None = None
 
 
-def _categorize_pipeline(stem: str) -> str:
+def _categorize_pipeline(stem: str, mod: Any = None) -> str:
+    """Return the display category for a pipeline module.
+
+    Priority:
+      1. ``__pipeline_category__`` attribute on the loaded module (data-driven).
+      2. Filename heuristic (fallback for modules that don't declare a category).
+    """
+    if mod is not None:
+        declared = getattr(mod, "__pipeline_category__", None)
+        if declared and isinstance(declared, str):
+            return declared
     s = stem.lower()
     if "corrected" in s:
         return "Corrected"
@@ -626,13 +629,14 @@ def _build_pipeline_catalog() -> list[dict[str, Any]]:
                 "key": f"{stem}__error",
                 "stem": stem,
                 "fn_name": "— import error —",
-                "category": _categorize_pipeline(stem),
+                "category": _categorize_pipeline(stem),   # no mod available on import failure
                 "description": f"Import failed: {type(ex).__name__}: {ex}",
                 "needs_args": False,
                 "error": True,
             })
             continue
 
+        category = _categorize_pipeline(stem, mod)   # honour __pipeline_category__ if set
         fns_added = 0
         for fn_name, fn in _inspect.getmembers(mod, _inspect.isfunction):
             if fn.__module__ != mod_name:
@@ -652,7 +656,7 @@ def _build_pipeline_catalog() -> list[dict[str, Any]]:
                 "key": f"{stem}__{fn_name}",
                 "stem": stem,
                 "fn_name": fn_name,
-                "category": _categorize_pipeline(stem),
+                "category": category,
                 "description": first_line,
                 "needs_args": needs_args,
                 "error": False,
@@ -796,14 +800,15 @@ def api_tinanta():
     if prayoga not in ("kartari", "karmani", "bhave"):
         return jsonify({"error": "prayoga must be kartari/karmani/bhave"}), 400
 
-    # Normalize Devanāgarī input
-    if any(0x0900 <= ord(c) <= 0x097F for c in dhatu):
+    # Normalize Devanāgarī input via core.transliterate (Art.6 clean: tools layer).
+    from core.transliterate import dev_to_slp1 as _dev_to_slp1
+    if _dev_to_slp1(dhatu) != dhatu:           # non-trivial → input is Devanāgarī
         from pipelines.dhatupatha import _payload, _envelope
         env = _envelope(_payload())
         match = next(
             (e for e in env["entries"]
-             if e.get("mula_dhatu_dev","").strip() == dhatu.strip()),
-            None
+             if e.get("mula_dhatu_dev", "").strip() == dhatu.strip()),
+            None,
         )
         if not match:
             return jsonify({"error": f"Devanāgarī dhātu '{dhatu}' not found"}), 404
@@ -814,13 +819,7 @@ def api_tinanta():
     except KeyError as e:
         return jsonify({"error": str(e)}), 404
 
-    supported_gana = row.get("gana", 1)
-    # lṛṭ/laṅ: vikaraṇa selection is gaṇa-independent for these lakāras.
-    if lakara not in ("lRT", "laG", "liG", "AsIrliG", "luG", "lRG") and supported_gana not in (1, 4, 6):
-        return jsonify({
-            "warning": f"Gaṇa {supported_gana} vikaraṇa not yet implemented; using bhvādi logic.",
-            "gana_override": 1,
-        }), 202
+    dhatu_slp1 = row.get("upadesha_slp1", dhatu)
 
     try:
         state = tin_derive(dhatu, lakara, prayoga, purusha, vacana)
@@ -836,20 +835,21 @@ def api_tinanta():
 
     tr = state.trace
     return jsonify({
-        "dhatu_slp1"  : dhatu,
-        "dhatu_dev"   : row.get("mula_dhatu_dev", dhatu),
-        "artha_dev"   : row.get("artha_dev", ""),
-        "artha_en"    : row.get("artha_en", ""),
-        "gana"        : row.get("gana", 1),
-        "gana_dev"    : row.get("gana_label_dev", ""),
-        "pada_dev"    : row.get("pada_label_dev", ""),
-        "lakara"      : lakara,
-        "prayoga"     : prayoga,
-        "purusha"     : purusha,
-        "vacana"      : vacana,
-        "surface_dev" : surface_dev,
-        "surface_slp1": surface_slp1,
-        "trace"       : enriched,
+        "dhatu_slp1"     : dhatu_slp1,
+        "dhatu_dev"      : row.get("mula_dhatu_dev", dhatu_slp1),
+        "dhatupatha_id"  : row.get("dhatupatha_id", ""),
+        "artha_dev"      : row.get("artha_dev", ""),
+        "artha_en"       : row.get("artha_en", ""),
+        "gana"           : row.get("gana", 1),
+        "gana_dev"       : row.get("gana_label_dev", ""),
+        "pada_dev"       : row.get("pada_label_dev", ""),
+        "lakara"         : lakara,
+        "prayoga"        : prayoga,
+        "purusha"        : purusha,
+        "vacana"         : vacana,
+        "surface_dev"    : surface_dev,
+        "surface_slp1"   : surface_slp1,
+        "trace"          : enriched,
         "stats": {
             "total_steps"   : len(tr),
             "applied_count" : sum(1 for s in tr if s.get("status") in {"APPLIED","APPLIED_VACUOUS"}),
@@ -969,15 +969,16 @@ def api_tinanta_all_lakara():
         }
 
     return jsonify({
-        "dhatu_slp1" : dhatu,
-        "dhatu_dev"  : row.get("mula_dhatu_dev", dhatu),
-        "artha_dev"  : row.get("artha_dev", ""),
-        "artha_en"   : row.get("artha_en", ""),
-        "gana"       : row.get("gana", 1),
-        "gana_dev"   : row.get("gana_label_dev", ""),
-        "pada_dev"   : row.get("pada_label_dev", ""),
-        "prayoga"    : prayoga,
-        "lakaras"    : result,
+        "dhatu_slp1"    : dhatu,
+        "dhatu_dev"     : row.get("mula_dhatu_dev", dhatu),
+        "dhatupatha_id" : row.get("dhatupatha_id", ""),
+        "artha_dev"     : row.get("artha_dev", ""),
+        "artha_en"      : row.get("artha_en", ""),
+        "gana"          : row.get("gana", 1),
+        "gana_dev"      : row.get("gana_label_dev", ""),
+        "pada_dev"      : row.get("pada_label_dev", ""),
+        "prayoga"       : prayoga,
+        "lakaras"       : result,
     })
 
 
@@ -985,12 +986,43 @@ def api_tinanta_all_lakara():
 # Dhātupātha browser
 # ─────────────────────────────────────────────────────────────────
 
+@app.route("/dhatu/<path_id>")
+def dhatu_ashtadhyayi_link(path_id: str):
+    """Deep link matching ashtadhyayi.com/dhatu/01.0001 (भ्वादि gaṇa 1 default)."""
+    pid = path_id.strip().replace("-", ".")
+    if not pid or len(pid.split(".")) != 2:
+        abort(404)
+    return redirect(
+        url_for(
+            "dhatufilters_page",
+            dhatu=pid,
+            filters="gana~1",
+        )
+    )
+
+
 @app.route("/dhatufilters")
 def dhatufilters_page():
     return render_template(
         "dhatufilters.html",
         nav_active="dhatufilters",
         cov=coverage_report(SUTRA_REGISTRY),
+        all_lakaras=_ALL_LAKARAS,
+    )
+
+
+@app.route("/prakriya/tinanta")
+def prakriya_tinanta_page():
+    """Full glass-box prakriyā for one tiṅanta cell (query-param driven)."""
+    lak_meta_path = _ROOT / "data" / "inputs" / "lakara_metadata.json"
+    lak_meta: dict = {}
+    if lak_meta_path.exists():
+        lak_meta = json.loads(lak_meta_path.read_text(encoding="utf-8"))
+    return render_template(
+        "prakriya_tinanta.html",
+        nav_active="dhatufilters",
+        cov=coverage_report(SUTRA_REGISTRY),
+        lak_meta=lak_meta,
         all_lakaras=_ALL_LAKARAS,
     )
 
@@ -1048,6 +1080,8 @@ def api_dhatupatha_list():
         if q:
             haystack = (
                 e.get("upadesha_slp1","") + " " +
+                e.get("dhatupatha_id","") + " " +
+                e.get("id","") + " " +
                 e.get("mula_dhatu_dev","") + " " +
                 e.get("artha_dev","") + " " +
                 e.get("artha_en","")
@@ -1055,16 +1089,17 @@ def api_dhatupatha_list():
             if q not in haystack:
                 continue
         filtered.append({
-            "id"          : e.get("id",""),
-            "slp1"        : e.get("upadesha_slp1",""),
-            "dev"         : e.get("mula_dhatu_dev",""),
-            "artha_dev"   : e.get("artha_dev",""),
-            "artha_en"    : e.get("artha_en",""),
-            "gana"        : e.get("gana",1),
-            "gana_dev"    : e.get("gana_label_dev",""),
-            "pada_dev"    : e.get("pada_label_dev",""),
-            "it_class"    : e.get("it_class_label_dev",""),
-            "karmatva"    : e.get("karmatva_label_dev",""),
+            "id"             : e.get("id",""),
+            "dhatupatha_id"  : e.get("dhatupatha_id",""),
+            "slp1"           : e.get("upadesha_slp1",""),
+            "dev"            : e.get("mula_dhatu_dev",""),
+            "artha_dev"      : e.get("artha_dev",""),
+            "artha_en"       : e.get("artha_en",""),
+            "gana"           : e.get("gana",1),
+            "gana_dev"       : e.get("gana_label_dev",""),
+            "pada_dev"       : e.get("pada_label_dev",""),
+            "it_class"       : e.get("it_class_label_dev",""),
+            "karmatva"       : e.get("karmatva_label_dev",""),
         })
 
     total = len(filtered)
@@ -1079,12 +1114,24 @@ def api_dhatupatha_list():
 
 @app.route("/api/dhatupatha/<dhatu_id>")
 def api_dhatupatha_detail(dhatu_id: str):
-    from pipelines.tinanta import _dhatu_row_by_upadesha
+    from pipelines.dhatupatha import resolve_dhatu_identifier
     try:
-        row = _dhatu_row_by_upadesha(dhatu_id)
-    except KeyError as e:
+        row = resolve_dhatu_identifier(dhatu_id)
+    except KeyError:
         abort(404)
-    return jsonify(row)
+    return jsonify({
+        "id"            : row.get("id", ""),
+        "dhatupatha_id" : row.get("dhatupatha_id", ""),
+        "slp1"          : row.get("upadesha_slp1", ""),
+        "dev"           : row.get("mula_dhatu_dev", ""),
+        "artha_dev"     : row.get("artha_dev", ""),
+        "artha_en"      : row.get("artha_en", ""),
+        "gana"          : row.get("gana", 1),
+        "gana_dev"      : row.get("gana_label_dev", ""),
+        "pada_dev"      : row.get("pada_label_dev", ""),
+        "it_class"      : row.get("it_class_label_dev", ""),
+        "karmatva"      : row.get("karmatva_label_dev", ""),
+    })
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -1160,11 +1207,9 @@ def api_sarvanama():
     from pipelines.asmad_subanta import derive_asmad
     from phonology.joiner import slp1_to_devanagari
 
+    # Pronouns use vibhaktis 1-7 (no sambodhana); reuse module-level label maps.
+    _SARVANAMA_VIB_DEV = {k: v for k, v in _VIBHAKTI_DEV.items() if k <= 7}
     cells = {}
-    VIBHAKTI_DEV = {1: "प्रथमा", 2: "द्वितीया", 3: "तृतीया", 4: "चतुर्थी",
-                    5: "पञ्चमी", 6: "षष्ठी", 7: "सप्तमी"}
-    VACANA_DEV = {1: "एकवचन", 2: "द्विवचन", 3: "बहुवचन"}
-
     for v in range(1, 8):  # 7 vibhaktis for pronouns
         for vac in range(1, 4):
             key = f"{v}-{vac}"
@@ -1173,14 +1218,14 @@ def api_sarvanama():
                 surface = state.flat_dev() if hasattr(state, "flat_dev") else ""
                 cells[key] = {
                     "surface_dev": surface,
-                    "vibhakti_dev": VIBHAKTI_DEV[v],
-                    "vacana_dev": VACANA_DEV[vac],
+                    "vibhakti_dev": _SARVANAMA_VIB_DEV[v],
+                    "vacana_dev": _VACANA_DEV[vac],
                 }
             except Exception as ex:
                 cells[key] = {
                     "surface_dev": f"त्रुटिः: {ex}",
-                    "vibhakti_dev": VIBHAKTI_DEV[v],
-                    "vacana_dev": VACANA_DEV[vac],
+                    "vibhakti_dev": _SARVANAMA_VIB_DEV[v],
+                    "vacana_dev": _VACANA_DEV[vac],
                 }
 
     return jsonify({"pronoun": pronoun, "cells": cells})
@@ -1246,8 +1291,8 @@ def api_krdanta():
             })
         elif krt_type == "nvul":
             from pipelines.krdanta import derive_krt
-            # Use generic derive_krt with Nvul; stem label derived from upadesha
-            label = upadesha.replace("~", "").rstrip("\\") + "aka"
+            # Label comes from dhātupātha metadata; fall back to raw upadesha only.
+            label = row.get("raw_dhatu_after_it_lopa_slp1") or upadesha.rstrip("~").rstrip("\\")
             nvul_state = derive_krt(
                 upadesha,
                 krt_upadesha_slp1="Nvul",

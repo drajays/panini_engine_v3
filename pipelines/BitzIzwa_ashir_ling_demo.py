@@ -34,7 +34,7 @@ def derive_BitzIzwa() -> State:
     s = State(terms=[dhatu], meta={}, trace=[])
 
     # āśīr-liṅ lakāra placeholder.
-    s.meta["3_3_173_ashishi_ling_arm"] = True
+    s.meta["ashir_liG"] = True
     s = apply_rule("3.3.173", s)
 
     # tin ādeśa: choose ātmanepada 3sg `ta` without reading paradigm coords in cond().

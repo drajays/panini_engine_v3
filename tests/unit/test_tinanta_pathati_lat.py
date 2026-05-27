@@ -10,7 +10,10 @@ Derivation (3sg): पठँ [1.3.2 anunāsika-it] → पठ् [1.3.9 lopa]
 
 Key: dhātu is consonant-final (ṭh); no guṇa fires (no IK upadhā vowel);
      śap-a follows W (ṭh) directly; no sandhi needed.
-Input key: 'paW' (= raw post-IT-lopa form of upadeśa 'paWa~' = पठँ)
+Input key: 'paW' (raw post-IT-lopa form of upadeśa 'paWa~' = पठँ).
+Upadeśa 'paWa~' has anunaasika-seṭ IT; the engine's 1.3.12 path for
+seṭ dhātus is a known open issue — tests use post-lopa form to
+exercise the laṭ/laṅ/etc. spine without the IT-pada interaction.
 """
 from __future__ import annotations
 

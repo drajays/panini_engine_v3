@@ -201,7 +201,7 @@ engine paths that bypass `apply_rule()`.
 
 ## Article 10 — Amendment Procedure
 
-These **fourteen** Articles (numbered 0 through 13) are amended only by:
+These **fifteen** Articles (numbered 0 through 14) are amended only by:
 1. Opening `docs/AMENDMENT_<N>.md` with the proposed change and rationale.
 2. Passing every constitutional, forward, backward, and regression test
    with the proposed change applied to a branch.
@@ -316,3 +316,90 @@ true — not because a recipe flipped an ad hoc `state.meta["…_arm"]` switch.
 Article 13 adds **how** new implementations should shape those reads: prefer
 structural tags and registry over recipe flags; prefer phonological
 predicates over surface fingerprints of a single example form.
+
+### Article 13 §1 — Hardened by AMENDMENT 14
+
+No file under `sutras/` may be committed if its `cond()` reads
+`state.meta[K]` where `K` ends in `_arm` or matches the regex
+`(?i)(corrected_v[0-9]+|P[0-9]+(_|$))`. The constitutional test
+`tests/constitutional/test_no_new_arm_gates.py` enforces this on a
+strict-additive basis: existing `_arm` reads are grandfathered and
+counted; any commit increasing the count fails CI. Migrations that
+*decrease* the count are always allowed.
+
+Pipelines under `pipelines/` and orchestrators under `core/` may still
+set `_arm` keys during the migration period, but each new write must
+be accompanied by a removal in the same commit (net additive: zero or
+negative).
+
+---
+
+## Article 14 — Authoritative Sources and Citation
+
+> Added by **AMENDMENT 14** (see `docs/AMENDMENT_14.md`).
+
+Every sūtra file under `sutras/adhyaya_*/pada_*/sutra_*.py` whose
+`cond()` or `act()` makes a non-trivial linguistic decision **must**
+name the textual source that justifies that decision. The
+authoritative source roster is defined in `audit_cursor.md` § 0
+and `audit_claude.md` § A. The roster's precedence order is binding.
+
+**Minimum citation** in each sūtra file's module docstring:
+
+1. **Source #1** — ashtadhyayi.com row index (e.g. `i = 64003` for
+   sūtra 6.4.3) — for `text_dev`, `text_slp1`, `padaccheda_dev`,
+   `anuvritti_from`, `sutra_type`.
+2. **Source #2** — Kāśikā Vṛtti udāharaṇa (and pratyudāharaṇa where
+   applicable), quoted in Devanāgarī.
+3. **Cross-validation** — either (a) a note that the surface output
+   was verified against Vidyut (`github.com/ambuda-org/vidyut`) and/or
+   Saṃsādhanī (`sanskrit.uohyd.ac.in/scl/`), OR (b) a regression-test
+   reference under `tests/regression/` that pins the surface.
+
+**Citation source precedence:**
+
+```
+1. ashtadhyayi.com data repo (sūtra pāṭha, padaccheda, anuvṛtti)
+2. Kāśikā Vṛtti (Vāmana + Jayāditya)
+3. Mahābhāṣya (Patañjali) + Pradīpa + Uddyota
+4. Siddhānta-Kaumudī + Tattva-bodhinī  ← cross-reference only;
+   never drives engine ordering (Art. 3)
+5. Laghu-Siddhānta-Kaumudī
+6. Prakriyā-Kaumudī / Prakriyā-Sarvasva
+```
+
+Tier 2 (paribhāṣā: Paribhāṣenduśekhara, Vyāḍi, Śākaṭāyana;
+ancillaries: Liṅgānuśāsana, Phiṭ-sūtras, Uṇādi-sūtras), Tier 3
+(Dhātupāṭha, Gaṇapāṭha), Tier 4 (Vidyut, Saṃsādhanī, Sanskrit
+Heritage), and Tier 5 (Cardona, Kiparsky, Sharma, Vasu, Joshi &
+Roodbergen) are cited as supporting evidence per the full roster.
+
+**Forbidden as sources:** unverified blog posts, LLM output without
+independent verification, Wikipedia (use to locate primary then cite
+primary), PDFs without edition lineage, surface-form transliterators
+as a source of rule logic.
+
+**Conflict resolution:** When two roster sources disagree, the
+lower-numbered (higher precedence) source wins. If the disagreement
+is itself notable, the resolution is documented in
+`docs/AMENDMENT_<N>.md` and the sūtra docstring links to that
+amendment.
+
+**Article 12 reinforcement (added by AMENDMENT 14):** No new file
+under `pipelines/` may carry the substring `_corrected_` or
+`_corrected_P` in its name. Constitutional test
+`tests/constitutional/test_no_corrected_pipelines.py` refuses such
+commits. The substring implies the canonical pipeline is wrong; fix
+the canonical pipeline instead.
+
+**Article 8 §2 clarification (added by AMENDMENT 14):** The web UI's
+default trace filter shows only `APPLIED` (form-changing) rows.
+`AUDIT` and `APPLIED_VACUOUS` rows remain recorded by the engine
+and available via a "विस्तरः" toggle. Their absence from the default
+view is **not** a regression. Engine trace completeness is verified
+by `tests/regression/`, not by the UI default.
+
+**Constitutional test added under this Article:**
+`tests/constitutional/test_sutra_source_citation.py` refuses commits
+that touch a sūtra file without updating the citation fields named
+above.

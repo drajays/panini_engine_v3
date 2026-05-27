@@ -34,8 +34,6 @@ def _find_jh_term(state: State):
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("7_1_3_jho_anta_arm"):
-        return False
     return _find_jh_term(state) is not None
 
 

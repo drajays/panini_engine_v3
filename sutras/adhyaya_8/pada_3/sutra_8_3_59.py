@@ -26,7 +26,10 @@ from phonology.pratyahara import HAL
 _IN_KUK_PREV = frozenset({"i", "I", "u", "U", "f", "F", "e", "E", "o", "O"})
 
 
-_SEMIVOWELS = frozenset({"y", "v", "r", "l"})  # yañ-class consonants that don't block ṣatvam
+# Characters transparent for ṣatva look-back: semivowels, anusvāra (M), visarga (H).
+# Anusvāra and visarga (from 8.3.24/8.3.15) do not interrupt the iK context that
+# triggers ṣatva — scan back through them to find the preceding iK vowel.
+_SEMIVOWELS = frozenset({"y", "v", "r", "l", "M", "H"})
 
 
 def _find_target(state: State):

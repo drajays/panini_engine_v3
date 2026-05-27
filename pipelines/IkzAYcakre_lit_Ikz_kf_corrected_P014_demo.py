@@ -38,7 +38,7 @@ def derive_IkzAYcakre_lit_Ikz_kf_corrected_P014() -> State:
     s.meta["corrected_v2_P014_3_1_36_am_arm"] = True
     s = apply_rule("3.1.36", s)
 
-    s.meta["corrected_v2_P014_2_4_81_lit_luk_arm"] = True
+    s.meta["2_4_81_lit_luk_arm"] = True
     s = apply_rule("2.4.81", s)
 
     s.meta["corrected_v2_P014_3_1_40_anuprayoga_arm"] = True

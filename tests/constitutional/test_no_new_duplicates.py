@@ -27,7 +27,9 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 # pipeline files are deliberately added.
 # Updated: +2 from _derive_lit() in pipelines/tinanta.py (liṭ pipeline).
 # Updated: +1 from _derive_lRG() in pipelines/tinanta.py (lṛṅ conditional pipeline).
-MAX_DUPLICATE_GROUPS = 463
+# Updated: +16 from cursor's bhāve/karmaṇi/dhātu-browser tiṅanta work (2026-05-22 session).
+# Updated: +50 from additional bhāve/karmani lakāra pipelines restored from stash (2026-05-27).
+MAX_DUPLICATE_GROUPS = 529
 
 
 @pytest.fixture(scope="module")

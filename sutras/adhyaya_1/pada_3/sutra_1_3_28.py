@@ -1,57 +1,75 @@
 """
-1.3.28  आङो यमहनः  —  PARIBHASHA (narrow: corrected-v2 **P010** *āyacchate*)
+1.3.28  आङो यमहनः  —  PARIBHASHA
 
-*Śāstra (laghu):* when **āṅ** precedes *yam* / *han*, *ātmanepada* *prayoga* is
-triggered (pedagogical registry here; *tin* choice remains recipe-driven via **3.4.78**).
+*Padaccheda:* *āṅaḥ* (pañcamī) / *yam-hanaḥ* (ṣaṣṭhī).
 
-Engine: ``corrected_v2_P010_1_3_28_arm`` + tape ``[A~N, yam-dhātu]`` (witness *upadeśa*).
+*Śāstra:* when **āṅ** (*A~N*) immediately precedes *yam* / *han* *dhātu*, *ātmanepada*
+is licensed in *kartari* (P010 *āyacchate*).
+
+*Engine:* reads prefix ``upasarga`` tag + following *dhātu* stem ``yam``; sets
+``kartari_atmanepada_licensed`` (Art. 2 safe).
 """
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
-from engine.state import State
+from engine.state import State, Term
 
-_META_ARM = "corrected_v2_P010_1_3_28_arm"
+from sutras.adhyaya_1.pada_3.kartari_pada_1_3_78 import ATMANE_LICENSE_META_KEY
+
+_YAM_STEMS = frozenset({"yam", "han"})
 
 
-def _witness(state: State) -> bool:
-    if len(state.terms) < 2:
-        return False
-    t0, t1 = state.terms[0], state.terms[1]
-    up0 = (t0.meta.get("upadesha_slp1") or "").strip()
-    if up0 != "A~N":
-        return False
-    if "dhatu" not in t1.tags:
-        return False
-    return "".join(v.slp1 for v in t1.varnas) == "yam"
+def _anga_base(up: str | None) -> str:
+    s = (up or "").strip().replace("~", "")
+    while s and s[-1] in {"N", "Y", "R"}:
+        s = s[:-1]
+    return s
+
+
+def _witness(state: State) -> tuple[Term, Term] | None:
+    for i in range(len(state.terms) - 1):
+        t0, t1 = state.terms[i], state.terms[i + 1]
+        if "upasarga" not in t0.tags:
+            continue
+        if _anga_base(t0.meta.get("upadesha_slp1")) != "A":
+            continue
+        if "dhatu" not in t1.tags:
+            continue
+        stem = "".join(v.slp1 for v in t1.varnas)
+        if stem in _YAM_STEMS:
+            return t0, t1
+    return None
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get(_META_ARM):
+    if state.paribhasha_gates.get("1.3.28_Anga_yamhan_atmanepada"):
         return False
-    return _witness(state)
+    return _witness(state) is not None
 
 
 def act(state: State) -> State:
-    if not cond(state):
+    hit = _witness(state)
+    if hit is None:
         return state
+    _, dhatu = hit
+    dhatu.meta[ATMANE_LICENSE_META_KEY] = True
+    state.meta["pada"] = "Atmanepada"
     state.paribhasha_gates["1.3.28_Anga_yamhan_atmanepada"] = True
-    state.samjna_registry["1.3.28_P010_Anga_yam"] = True
-    state.meta.pop(_META_ARM, None)
+    state.samjna_registry["1.3.28_Anga_yam"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id="1.3.28",
     sutra_type=SutraType.PARIBHASHA,
+    r1_form_identity_exempt=True,
     text_slp1="ANgo yamhanos tu karmaRi",
     text_dev="आङो यमहनः",
     padaccheda_dev="आङः / यमहनः",
-    why_dev="आङ्-पूर्वयोः यम्-हन्-धात्वोः संबन्धे आत्मनेपद-प्रकरणार्थः (प०१०)।",
+    why_dev="आङ्-पूर्वयोः यम्-हन्-धात्वोः कर्तरि आत्मनेपदम् (P010 आयच्छते)।",
     anuvritti_from=("1.3.27",),
     cond=cond,
     act=act,
-    r1_form_identity_exempt=True,
 )
 
 register_sutra(SUTRA)

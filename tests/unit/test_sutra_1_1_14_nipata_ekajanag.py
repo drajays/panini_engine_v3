@@ -30,9 +30,18 @@ def test_sutra_metadata():
 
 
 def test_samjna_bootstrap_idempotent():
-    t = Term(kind="prakriti", varnas=[mk("a")])
+    # Audit P1b: 1.1.14 fires only when a nipāta Term is on the tape.
+    t = Term(kind="nipata", varnas=[mk("a")], tags={"nipāta"})
     s0 = State(terms=[t])
     s1 = apply_rule("1.1.14", s0)
     assert s1114.nipata_ekajang_samjna_is_registered(s1)
     s2 = apply_rule("1.1.14", s1)
     assert s2.samjna_registry.get(s1114.SAMJNA_KEY) is True
+
+
+def test_no_stamp_when_no_nipata():
+    """Audit P1b: a derivation without any nipāta Term does not stamp."""
+    t = Term(kind="prakriti", varnas=[mk("a")])
+    s0 = State(terms=[t])
+    s1 = apply_rule("1.1.14", s0)
+    assert not s1114.nipata_ekajang_samjna_is_registered(s1)

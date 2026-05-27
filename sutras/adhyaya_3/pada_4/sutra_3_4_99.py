@@ -3,12 +3,12 @@
 
 Two operational paths:
   1. Arm ``3_4_99_arm``: legacy gate-setter (krt_kind = 3.4.99).
-  2. Arm ``3_4_99_laG_s_lopa_arm``: laṅ ṅit-tiṅ s-lopa — drops the final 's'
-     of 'vas' (1du) and 'mas' (1pl) tiṅ ādeśas, giving 'v' and 'm'.
+  2. Lakāra-based ṅit s-lopa: when state.meta["lakara"] is one of the ṅit
+     lakāras {laG, liG, AsIrliG, luG, lRG, loT}, drop the final 's' of
+     ṅit tiṅ ādeśas 'vas' and 'mas'.
 
-In laṅ, 'vas' and 'mas' are ṅit (carry no explicit anunāsika, but the rule
-applies to them nityam = mandatorily); 3.4.99 deletes their viram-s so the
-tiṅ ādeśa ends with the prātipadika consonant alone.
+In laṅ, 'vas' and 'mas' are ṅit (mandatorily applied); 3.4.99 deletes their
+final 's' so the tiṅ ādeśa ends with the prātipadika consonant alone.
 """
 from __future__ import annotations
 
@@ -17,13 +17,16 @@ from engine.state import State
 
 _GATE_KEY: str = "3_4_99_nityaM_99"
 
-# ṅit tiṅ ādeśas in laṅ whose final 's' is dropped (upadesha SLP1 values).
+# ṅit tiṅ ādeśas whose final 's' is dropped.
 _NGIT_S_FINAL: frozenset[str] = frozenset({"vas", "mas"})
+
+# Lakāras in which 3.4.99 ṅit s-lopa applies.
+_NGIT_LAKARA_SET: frozenset[str] = frozenset({"laG", "liG", "AsIrliG", "luG", "lRG", "loT"})
 
 
 def _find_ngit_s_term(state: State):
-    """Find a ṅit tiṅ ādeśa (vas/mas) ending in 's' for laṅ/liṅ s-lopa."""
-    if not (state.meta.get("3_4_99_laG_s_lopa_arm") or state.meta.get("3_4_99_liG_s_lopa_arm") or state.meta.get("3_4_99_luG_s_lopa_arm") or state.meta.get("3_4_99_lRG_s_lopa_arm") or state.meta.get("3_4_99_loT_s_lopa_arm")):
+    """Find a ṅit tiṅ ādeśa (vas/mas) ending in 's' for ṅit-lakāra s-lopa."""
+    if state.meta.get("lakara") not in _NGIT_LAKARA_SET:
         return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":

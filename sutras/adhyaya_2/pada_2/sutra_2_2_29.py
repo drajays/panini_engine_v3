@@ -7,8 +7,7 @@ Engine scope (v3 glass-box):
 
 For ``split_prakriyas_11/P013.json`` we only need a narrow stamp:
   - requires **2.1.3** (*samāsa* adhikāra) on ``adhikara_stack``
-  - recipe arms via ``state.meta['prakriya_P013_2_2_29_arm']``
-  - witness tags include ``prakriya_P013_mAtApitarO_demo`` on any term
+  - recipe arms via ``state.meta['2_2_29_dvandva_arm']``
 
 No varṇa mutation.
 """
@@ -23,20 +22,18 @@ def _samasa_adhikara_open(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("prakriya_P013_2_2_29_arm"):
+    if not state.meta.get("2_2_29_dvandva_arm"):
         return False
     if not _samasa_adhikara_open(state):
         return False
-    if state.samjna_registry.get("2.2.29_cArthe_dvandva_prakriya_P013"):
-        return False
-    if not any("prakriya_P013_mAtApitarO_demo" in t.tags for t in state.terms):
+    if state.samjna_registry.get("2.2.29_cArthe_dvandva"):
         return False
     return True
 
 
 def act(state: State) -> State:
-    state.samjna_registry["2.2.29_cArthe_dvandva_prakriya_P013"] = True
-    state.meta.pop("prakriya_P013_2_2_29_arm", None)
+    state.samjna_registry["2.2.29_cArthe_dvandva"] = True
+    state.meta.pop("2_2_29_dvandva_arm", None)
     return state
 
 

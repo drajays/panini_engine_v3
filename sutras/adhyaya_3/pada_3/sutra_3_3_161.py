@@ -5,7 +5,7 @@ Teaching **P038** (*paceran*): in *vidhi* / *nimantraṇa* / … senses, introdu
 *lakāra* placeholder ``liG`` (*liṅ*).
 
 Engine:
-  - recipe arms ``state.meta['P038_3_3_161_vidhi_liG_arm']``.
+  - recipe arms ``state.meta['3_3_161_vidhi_liG_arm']``.
   - appends ``liG`` like **3.3.173**, but sets ``vidhi_liG`` (not ``ashir_liG``).
 """
 from __future__ import annotations
@@ -16,7 +16,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("P038_3_3_161_vidhi_liG_arm"):
+    if not state.meta.get("3_3_161_vidhi_liG_arm"):
         return False
     return not any((t.meta.get("upadesha_slp1") or "").strip() == "liG" for t in state.terms)
 
@@ -32,7 +32,7 @@ def act(state: State) -> State:
     )
     state.terms.append(liG)
     state.meta["vidhi_liG"] = True
-    state.meta.pop("P038_3_3_161_vidhi_liG_arm", None)
+    state.meta.pop("3_3_161_vidhi_liG_arm", None)
     return state
 
 

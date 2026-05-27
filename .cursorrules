@@ -4,47 +4,119 @@
 
 **Always follow `CONSTITUTION.md` at the repository root.** Before changing `engine/`, `sutras/`, `phonology/`, `pipelines/`, or `tests/constitutional/`, re-read the relevant Articles. If anything conflicts with this file, **CONSTITUTION.md wins**.
 
-**Sūtra implementation hygiene:** follow **CONSTITUTION Article 13** and
-`docs/SUTRA_UNIVERSAL_RULE_ARCHITECTURE.md` — universal `cond`/`act` from
-linguistic state; no new `state.meta` demo arms inside `sutras/**/sutra_*.py`
-(legacy debt is migrated, not extended). The Cursor rule
-`.cursor/rules/panini-sutra-universal-architecture.mdc` applies to those paths.
+## Coordination log (MANDATORY before any audit task)
 
-## Sūtra pāṭha authority (two-tier)
+**Read `audit/RUN_LOG.md` before you start, and append to it as you work.** That file is the single coordination point between Cursor and Claude Code. On session start:
 
-When adding or checking **Devanagarī sūtra text** (`text_dev`, *padaccheda* for humans), prefer a local **ashtadhyayi-master**-style TSV (e.g. `data/sutrANi.tsv` with columns `index` + `sutra`) for offline grep — **do not** commit absolute paths such as `~/Downloads/...` into the engine; a short human note in a sūtra docstring is enough (*“cross-check: `sutrANi.tsv`”*).
+1. Read §B "In-flight claims" — do NOT touch files claimed by another agent.
+2. Read §C "Action history" (newest entries) — understand what just shipped.
+3. Add your own claim row in §B (timestamp, agent=`cursor`, task name with P-level, files you will edit, status=`in-progress`).
+4. On task completion: change status to `released` and append a §C entry (what changed, why, tests run, next).
 
-For **SLP1 (`e`)**, structured **padaccheda** (`pc`), **anuvṛtti** links (`an`), and **siddhārtha** (`ss`), use the machine index [ashtadhyayi-com/data `sutraani/data.txt`](https://github.com/ashtadhyayi-com/data) (row key `i` = `1` + adhyāya + pāda + sūtra as digits, e.g. `11012` = 1.1.12). Keep **CONSTITUTION** Art. 2/6: no `data/reference/` in `cond`, and do not import reference JSON from `sutras/`.
+Treat the log as authoritative. If your claim row conflicts with another agent's, surface to the human user rather than overwriting.
 
-Practical workflow reminder:
-- Devanāgarī pāṭha correctness + sūtra sequence: **local** `sutrANi.tsv` (ashtadhyayi-master clone) — offline, grep-friendly.
-- Rich machine metadata (`e`, `pc`, `an`, `type`, `ss`): **ashtadhyayi-com** `sutraani/data.txt` (network fetch ok for dev, never vendored into `sutras/`).
+**Audit playbook:** `audit_claude.md` (rationale, Kāśikā references, priorities) and `audit_cursor.md` (executable file-by-file tasks). The audit Articles to enforce:
+
+- **Article 13 §1 (hardened, AMENDMENT 14):** No new `_arm`-gated `cond()` in `sutras/`. Existing arms are grandfathered and counted; net-additive commits fail CI. Migrations decreasing the count are always allowed.
+- **Article 14 (new, AMENDMENT 14):** Every sūtra file's docstring must cite source #1 (ashtadhyayi.com row), source #2 (Kāśikā udāharaṇa), and a cross-validation note (Vidyut / Saṃsādhanī / regression test).
+
+## Authoritative sources (mandatory citation in sūtra files)
+
+Use the source list in `audit_cursor.md` §0 / `audit_claude.md` §A. Precedence is binding; lower numbers win disputes.
+
+### Tier 1 — sūtra pāṭha and direct vṛttis
+1. **ashtadhyayi.com data repo** — `github.com/ashtadhyayi-com/data` (`sutraani/data.txt`; row key `i = 1·adhyāya·pāda·sūtra` digits). Use for `text_dev`, `text_slp1` (`e`), `padaccheda_dev` (`pc`), `anuvritti_from` (`an`), `sutra_type`, siddhārtha (`ss`). **Never** import this into `sutras/` (Art. 6); cite by row index in docstring.
+2. **Kāśikā Vṛtti** (Vāmana + Jayāditya) — ashtadhyayi.com → "Kāśikā" tab. Quote the udāharaṇa in Devanāgarī in the sūtra docstring.
+3. **Mahābhāṣya** (Patañjali) + Pradīpa + Uddyota — ashtadhyayi.com → "Bhāṣya" tab. Consult when Kāśikā silent/contested.
+4. **Siddhānta-Kaumudī + Tattva-bodhinī** — cross-reference only, never drive engine ordering (Art. 3).
+5. Laghu-SK; 6. Prakriyā-Kaumudī / Prakriyā-Sarvasva.
+
+### Tier 2 — paribhāṣā & meta-grammar
+7. Paribhāṣenduśekhara (Nāgeśa); 8. Vyāḍi / Śākaṭāyana paribhāṣās; 9. Liṅgānuśāsana; 10. Phiṭ-sūtras; 11. Uṇādi-sūtras.
+
+### Tier 3 — kosha & dhātu
+12. Dhātupāṭha (Pāṇinīya) — local `data/inputs/dhatupatha.json`; 13. Gaṇapāṭha — local `data/inputs/ganapatha.json`; 14. Nighaṇṭu + Nirukta; 15. Köln Sanskrit Lexicon (surface only).
+
+### Tier 4 — computational oracles (cross-validation only)
+16. **Vidyut** (`github.com/ambuda-org/vidyut`) — Rust prakriyā engine; oracle for surface forms; **never copy code logic**.
+17. **Saṃsādhanī (IIIT-H Hyderabad)** — `sanskrit.uohyd.ac.in/scl/` — subanta/tinanta/kṛdanta analyzers + tag taxonomy + gold paradigms.
+18. **Sanskrit Heritage Platform (INRIA)** — `sanskrit.inria.fr/` — finite-state morphology; independent surface oracle.
+19. JNU SCL group; 20. DCS (annotated corpus); 21. GRETIL; 22. SARIT.
+
+### Tier 5 — methodology (engine design)
+23. Cardona, *Pāṇini: A Survey of Research* (1976);
+24. Cardona, *Pāṇini: His Work and Its Traditions* (1988, 1997);
+25. Kiparsky, *Pāṇini as a Variationist* (1979) + *Theoretical Problems* (1982);
+26. Sharma, *Aṣṭādhyāyī* (6 vols.); 27. Vasu (1891 English trans.);
+28. Matilal, *The Word and the World*; 29. Joshi & Roodbergen multi-vol;
+30. SCL proceedings (Kulkarni, Huet eds.); 31. Deshpande; 32. Kak (1987).
+
+### Forbidden as sources
+- Blog posts, YouTube transcripts, LLM output without verification.
+- Wikipedia as a citation (use it to locate the primary, then cite the primary).
+- PDFs without edition lineage.
+- Surface-form transliterators (Aksharamukha etc.) as a source of **rule logic** — they are transliterators only.
+
+## Sūtra implementation hygiene
+
+**Follow CONSTITUTION Article 13** (universal `cond`/`act` from linguistic state) and `docs/SUTRA_UNIVERSAL_RULE_ARCHITECTURE.md`. Cursor rule `.cursor/rules/panini-sutra-universal-architecture.mdc` activates on `sutras/**/sutra_*.py`. Cursor rule `.cursor/rules/panini-authoritative-sources.mdc` enforces Article 14 citation on the same paths.
+
+**Mandatory in every sūtra file's module docstring:**
+
+```python
+"""
+X.Y.Z  <sūtra in Devanāgarī>  —  <SutraType>
+
+Sources consulted:
+- ashtadhyayi.com data.txt row i=<index, e.g. 64003 for 6.4.3>
+- Kāśikā: "<udāharaṇa quoted in Devanāgarī>"
+  pratyudāharaṇa: "<if applicable>"
+- Cross-validation: <Vidyut surface ✓ for रामाणाम्> OR
+  <regression test: tests/regression/test_rama_genitive_plural.py>
+
+[Implementation paragraph: what cond reads, what act does, in
+linguistic terms — not "fires when arm set by P0NN demo".]
+"""
+```
+
+If Cursor proposes to add or modify a sūtra file without all three citation lines, refuse and ask the user to supply or confirm.
 
 ## Non‑negotiables (summary)
 
-- **Glass box**: Every step must be explainable in Pāṇinian terms; no black-box shortcuts or lookup tables for derivations.
-- **One sūtra = one file** under `sutras/adhyaya_*/pada_*/sutra_*.py` with exactly one `SutraRecord` and one `cond` / `act` pair. No rule bundles.
-- **Mechanical blindness**: `cond(state)` must not read `(vibhakti, vacana)`, lakāra/puruṣa, surface Devanāgarī, target gold forms, or `data/reference/`.
-- **Firewall**: `data/reference/` is for tests/tools only — **not** the engine (Article 6).
-- **Anuvṛtti**: Stored in full in `text_slp1` / `text_dev`; the engine does not compute anuvṛtti at runtime (Article 4).
-- **Order**: Aṣṭādhyāyī kram + tripāḍī gate + resolver — no Kaumudī ordering (Article 3).
-- **R1–R5** invariants (`engine/r1_check.py`): e.g. a VIDHI that applies must change the rendered form unless exempt; SAMJNA must register; etc. (Article 5).
-- **Recipes** (`pipelines/*.py`) list `apply_rule()` calls only — no inline multi-sūtra hacks (Article 7).
-- **Prakriyā**: Paradigm cells stress the engine; fix sūtras/recipes, not the dispatcher to “pass tests” (Article 8).
-- **SIG / single port**: All sūtra application and morphological transformation for derivations must go through `engine.dispatcher.apply_rule` only — no direct `State`/`Term` mutation to bypass the dispatcher, so SIG/telemetry stay complete and uniform (see CONSTITUTION Article 11).
-- **Fullest valid path (no shortcut *prakriyā*)**: Prefer the **fullest** *śāstrīya* sūtra sequence the engine legitimately allows A→B — not a minimal patch of one or two sūtras or duplicate pipelines for the same *prayoga*. Do not skip large applicable blocks (saṃjñā, *it* chain, aṅgakārya) without a real pratishedha/optional *prayoga* reason. One canonical entry per *prayoga* class where possible. See **CONSTITUTION Article 12**.
+- **Glass box** (Art. 0): Every step must be explainable in Pāṇinian terms. No black-box shortcuts, lookup tables, or surface-string fingerprints.
+- **One sūtra = one file** (Art. 7): `sutras/adhyaya_*/pada_*/sutra_*.py`, one `SutraRecord`, one `cond`/`act` pair.
+- **Mechanical blindness** (Art. 2): `cond()` must not read `(vibhakti, vacana)`, `(lakāra, puruṣa, vacana)`, surface Devanāgarī, target gold form, or `data/reference/`.
+- **Firewall** (Art. 6): `data/reference/` is tests/tools only.
+- **Anuvṛtti** (Art. 4): full in `text_slp1` / `text_dev`; engine never computes at runtime.
+- **Order** (Art. 3): Aṣṭādhyāyī kram + tripāḍī gate + resolver. **No** Kaumudī ordering.
+- **R1–R5 invariants** (Art. 5): VIDHI must change form unless exempt; SAMJNA must register; etc.
+- **Recipes are scheduler only** (Art. 7): `apply_rule()` calls + structural helpers; no inline multi-sūtra hacks.
+- **SIG** (Art. 11): All rule application goes through `engine.dispatcher.apply_rule` only.
+- **Fullest valid path** (Art. 12): Prefer the full śāstrīya sūtra sequence; **never** create `*_corrected_*` duplicate pipelines. One canonical entry per *prayoga* class.
+- **Source citation** (Art. 14, AMENDMENT 14): Every non-trivial `cond()`/`act()` cites the source roster above.
+
+## Anti-patterns — refuse to introduce these
+
+When Cursor proposes any of the following, **stop** and surface to the user:
+
+1. A new `state.meta[..._arm]` key written by a pipeline.
+2. A `cond()` that reads `state.meta["lakara"]`, `vibhakti_vacana`, `puruṣa`, `vacana`, or any surface Devanāgarī string.
+3. A `cond()` that reads from `data/reference/`.
+4. A new `pipelines/*_corrected_*_demo.py` file.
+5. A `sutras/.../sutra_X_Y_Z.py` whose `cond()` mentions a demo or prakriya ID (`P0NN`, `corrected_v2`).
+6. An import of `requests` or any network library inside `sutras/` or `engine/`.
+7. A monkey-patch of any class in `engine/`.
+8. A sūtra file commit without the Article 14 citation block (sources #1, #2, cross-validation).
+9. Any direct mutation of `State` or `Term` that bypasses `apply_rule` for morphological work (Art. 11).
+10. A Kaumudī-driven ordering of sūtras in a recipe (Art. 3).
+
+## Web UI display vs. engine truth (Art. 8 §2 clarification, AMENDMENT 14)
+
+The default trace filter in `webui/templates/*.html` shows only `APPLIED` (form-changing) rows. `AUDIT` and `APPLIED_VACUOUS` rows are recorded by the engine and revealed by the "विस्तरः" toggle. Their absence from the default view is **not** a regression — engine completeness is verified by `tests/regression/`, not by UI defaults.
 
 ## Legacy Panini Engine v2 (reference only)
 
-v2 is **not** part of this git tree (`panini_engine_v2/` is gitignored when nested). For
-comparison with older rule logic or JSON exports, use the checkout at:
-
-- **Core:** `~/Documents/panini_engine_v2/core` (e.g. `it_rules.py`)
-- **Data:** `~/Documents/panini_engine_v2/data` (e.g. `dhatu_upadesha_post_it_lopa.json`,
-  `sutra_ref_out/`)
-
-Do not copy v2 code verbatim into v3 sūtra files; v3 follows `CONSTITUTION.md` and the
-`SutraRecord` + Varṇa model.
+v2 is **not** part of this git tree. For comparison with older rule logic or JSON exports, use the local checkout at `~/Documents/panini_engine_v2/{core,data}`. **Do not copy v2 code verbatim** into v3 sūtra files; v3 follows `CONSTITUTION.md` and the `SutraRecord` + Varṇa model.
 
 ## Scope
 

@@ -28,8 +28,21 @@ def sambuddhau_shakalya_gate_is_set(state: State) -> bool:
     return sambuddhau_shakalya_samjna_is_registered(state)
 
 
+def _state_has_o_or_t_ending(state: State) -> bool:
+    """Structural shape for *sambuddhau-Śākalya* relevance: some Term ends
+    in *o* (the *o-it* of the rule). Without such a Term, this saṃjñā has
+    no application here and is suppressed as trace noise (audit P1b)."""
+    for t in state.terms:
+        fin = t.final_varna
+        if fin and fin.slp1 == "o":
+            return True
+    return False
+
+
 def cond(state: State) -> bool:
-    return not sambuddhau_shakalya_samjna_is_registered(state)
+    if sambuddhau_shakalya_samjna_is_registered(state):
+        return False
+    return _state_has_o_or_t_ending(state)
 
 
 def act(state: State) -> State:

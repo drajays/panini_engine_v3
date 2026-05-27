@@ -58,6 +58,17 @@ def act(state: State) -> State:
     i = _find_target(state)
     if i is None:
         return state
+    anga = state.terms[i - 1]
+    anga_slp1 = "".join(v.slp1 for v in anga.varnas)
+    anga_kind = (
+        "नदी-अन्त" if "nadi" in anga.tags
+        else "आप्-अन्त" if "Ap" in anga.tags
+        else "ह्रस्वान्त"
+    )
+    state.meta["__why_now_dev__"] = (
+        f"अङ्गम् {anga_slp1} ({anga_kind}); परः सुप् आम्; "
+        f"अतः नुट्-आगमः। (काशिका ७।१।५४)"
+    )
     nut = mk("n", "nut_agama_inserted")
     state.terms[i].varnas.insert(0, nut)
     return state

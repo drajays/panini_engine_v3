@@ -15,18 +15,16 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("prakriya_P013_2_2_34_arm"):
+    if not state.meta.get("2_2_34_dvandva_arm"):
         return False
-    if state.samjna_registry.get("2.2.34_alpActaram_prakriya_P013"):
-        return False
-    if not any("prakriya_P013_mAtApitarO_demo" in t.tags for t in state.terms):
+    if state.samjna_registry.get("2.2.34_alpActaram"):
         return False
     return True
 
 
 def act(state: State) -> State:
-    state.samjna_registry["2.2.34_alpActaram_prakriya_P013"] = True
-    state.meta.pop("prakriya_P013_2_2_34_arm", None)
+    state.samjna_registry["2.2.34_alpActaram"] = True
+    state.meta.pop("2_2_34_dvandva_arm", None)
     return state
 
 

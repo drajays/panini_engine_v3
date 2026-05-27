@@ -59,8 +59,16 @@ def act(state: State) -> State:
         return state
     anga = state.terms[-2]
     pr   = state.terms[-1]
-    anga.varnas[-1] = mk(_DIRGHA_MAP[anga.varnas[-1].slp1])
+    old_v = anga.varnas[-1].slp1
+    new_v = _DIRGHA_MAP[old_v]
+    anga_slp1_before = "".join(v.slp1 for v in anga.varnas)
+    anga.varnas[-1] = mk(new_v)
     pr.meta["nami_dirgha_done"] = True
+    anga_slp1_after = "".join(v.slp1 for v in anga.varnas)
+    state.meta["__why_now_dev__"] = (
+        f"अङ्गम् {anga_slp1_before} (अन्त्य {old_v} → दीर्घ {new_v} = {anga_slp1_after}); "
+        f"परं नाम् (नुट्+आम्); दीर्घत्वम्। (काशिका ६।४।३)"
+    )
     return state
 
 

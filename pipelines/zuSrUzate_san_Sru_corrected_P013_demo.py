@@ -88,7 +88,6 @@ def derive_zuSrUzate_san_Sru_corrected_P013() -> State:
     from pipelines.subanta import _pada_merge
 
     _pada_merge(s)
-    s.meta["corrected_v2_P013_6_1_97_arm"] = True
     s = apply_rule("6.1.97", s)
 
     s = apply_rule("8.2.1", s)

@@ -187,16 +187,55 @@ def act(state: State) -> State:
     return state
 
 
+def _find_seT_sic_collapse(state: State) -> int | None:
+    """
+    seṭ luṅ (3sg/2sg): after 7.2.35 inserts iṭ into sic, the sic term has
+    varnas [i, s] (iṭ-i + sic-s). The term is tagged "seT_sic_it_lopa_context".
+    Collapse [i, s] → [I] (iṭ-i lengthened, sic-s dropped).
+
+    Phonemic predicate: term tagged "seT_sic_it_lopa_context" + varnas == [i, s].
+    """
+    for i, t in enumerate(state.terms):
+        if "seT_sic_it_lopa_context" not in t.tags:
+            continue
+        if t.meta.get("seT_sic_collapse_done"):
+            continue
+        if len(t.varnas) == 2 and t.varnas[0].slp1 == "i" and t.varnas[1].slp1 == "s":
+            return i
+    return None
+
+
+_orig_cond = cond
+_orig_act  = act
+
+
+def cond(state: State) -> bool:
+    return _orig_cond(state) or _find_seT_sic_collapse(state) is not None
+
+
+def act(state: State) -> State:
+    idx = _find_seT_sic_collapse(state)
+    if idx is not None:
+        t = state.terms[idx]
+        t.varnas = [mk("I")]
+        t.meta["seT_sic_collapse_done"] = True
+        t.meta["sic_lopa_it_dirgha"]    = True
+        state.samjna_registry["7.2.35_seT_sic_iy_to_I"] = True
+        return state
+    return _orig_act(state)
+
+
 SUTRA = SutraRecord(
-    sutra_id       = "7.2.35",
-    sutra_type     = SutraType.VIDHI,
-    text_slp1      = "ArDaDAtukasyeQ valAdeH",
-    text_dev       = "आर्धधातुकस्येड् वलादेः",
-    padaccheda_dev = "आर्धधातुकस्य इट् वलादेः",
-    why_dev        = "आर्धधातुके परे वल्-प्रथमादौ इट्-आगमः (प्रतिषेधे न)।",
-    anuvritti_from = ("7.2.34",),
-    cond           = cond,
-    act            = act,
+    sutra_id              = "7.2.35",
+    sutra_type            = SutraType.VIDHI,
+    r1_form_identity_exempt = True,
+    text_slp1             = "ArDaDAtukasyeQ valAdeH",
+    text_dev              = "आर्धधातुकस्येड् वलादेः",
+    padaccheda_dev        = "आर्धधातुकस्य इट् वलादेः",
+    why_dev               = "आर्धधातुके परे वल्-प्रथमादौ इट्-आगमः (प्रतिषेधे न)।",
+    anuvritti_from        = ("7.2.34",),
+    cond                  = cond,
+    act                   = act,
 )
 
 register_sutra(SUTRA)

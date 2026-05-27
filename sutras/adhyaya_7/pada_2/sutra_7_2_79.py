@@ -2,7 +2,7 @@
 7.2.79  लोपः सीयुट्स्योऽनिटि  —  VIDHI
 
 Two operational paths:
-  1. Arm ``P038_7_2_79_sIyuw_s_lopa_arm``: original ātmanepada sīyuṭ s-lopa.
+  1. Arm ``7_2_79_sIyuw_s_lopa_arm``: original ātmanepada sīyuṭ s-lopa.
   2. Arm ``7_2_79_liG_yasut_arm``: vidhi-liṅ parasmaipada — drop the final
      's' from the yāsuṭ augment term [y,A,s] → [y,A].
 """
@@ -13,12 +13,12 @@ from engine.state import State
 
 
 def _find_sIyuw(state: State) -> int | None:
-    if not state.meta.get("P038_7_2_79_sIyuw_s_lopa_arm"):
+    if not state.meta.get("7_2_79_sIyuw_s_lopa_arm"):
         return None
     for i, t in enumerate(state.terms):
         if "ling_sIyuw" not in t.tags:
             continue
-        if t.meta.get("P038_7_2_79_done"):
+        if t.meta.get("7_2_79_sIyuw_done"):
             continue
         if not t.varnas or t.varnas[0].slp1 != "s":
             continue
@@ -50,8 +50,8 @@ def act(state: State) -> State:
     if idx is not None:
         t = state.terms[idx]
         del t.varnas[0]
-        t.meta["P038_7_2_79_done"] = True
-        state.meta.pop("P038_7_2_79_sIyuw_s_lopa_arm", None)
+        t.meta["7_2_79_sIyuw_done"] = True
+        state.meta.pop("7_2_79_sIyuw_s_lopa_arm", None)
         return state
 
     idx = _find_yasut(state)

@@ -20,10 +20,18 @@ def test_metadata():
 
 
 def test_samjna_idempotent():
-    t = Term(kind="prakriti", varnas=[mk("a")])
+    # Audit P1b: 1.1.15 fires only when an *o*-ending nipāta Term is on tape.
+    t = Term(kind="nipata", varnas=[mk("o")], tags={"nipāta"})
     s0 = State(terms=[t])
     s1 = apply_rule("1.1.15", s0)
     assert s1115.ot_praghy_samjna_is_registered(s1)
     assert s1115.ot_gate_is_set(s1)
     s2 = apply_rule("1.1.15", s1)
     assert s2.samjna_registry.get(s1115.OT_KEY) == s1.samjna_registry.get(s1115.OT_KEY)
+
+
+def test_no_stamp_without_o_ending_nipata():
+    t = Term(kind="prakriti", varnas=[mk("a")])
+    s0 = State(terms=[t])
+    s1 = apply_rule("1.1.15", s0)
+    assert not s1115.ot_praghy_samjna_is_registered(s1)

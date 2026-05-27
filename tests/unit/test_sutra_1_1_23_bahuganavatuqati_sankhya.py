@@ -28,7 +28,14 @@ def test_pATha():
 
 
 def test_sankhya_set():
-    t = Term(kind="prakriti", varnas=[mk("a")])
+    # Audit P1a: 1.1.23 fires only when a prātipadika in the saṅkhyā set is
+    # on the tape. The test must therefore present such a stem (e.g. "bahu").
+    t = Term(
+        kind="prakriti",
+        varnas=[mk("a")],
+        tags={"prātipadika"},
+        meta={"upadesha_slp1": "bahu"},
+    )
     s0 = State(terms=[t], samjna_registry={})
     s1 = apply_rule("1.1.23", s0)
     assert s1123.sankhya_samjna_1_1_23_is_registered(s1)
@@ -37,3 +44,17 @@ def test_sankhya_set():
     assert not s1123.pratipadika_slp1_in_sankhya_samjna(s1, "rAma")
     s2 = apply_rule("1.1.23", s1)
     assert s2.samjna_registry.get(s1123.SANKHYA_KEY) is s1.samjna_registry.get(s1123.SANKHYA_KEY)
+
+
+def test_no_stamp_when_no_sankhya_pratipadika():
+    """Audit P1a (CONSTITUTION Art. 14): registry-stamp is suppressed for a
+    derivation that has no saṅkhyā-eligible stem (e.g. राम)."""
+    t = Term(
+        kind="prakriti",
+        varnas=[mk("a")],
+        tags={"prātipadika"},
+        meta={"upadesha_slp1": "rAma"},
+    )
+    s0 = State(terms=[t], samjna_registry={})
+    s1 = apply_rule("1.1.23", s0)
+    assert not s1123.sankhya_samjna_1_1_23_is_registered(s1)

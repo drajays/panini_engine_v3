@@ -48,7 +48,7 @@ def derive_saGgasIzwa() -> State:
     s.meta["1_3_29_samo_gamyricchiblAm_arm"] = True
     s = apply_rule("1.3.29", s)
 
-    s.meta["3_3_173_ashishi_ling_arm"] = True
+    s.meta["ashir_liG"] = True
     s = apply_rule("3.3.173", s)
 
     s = apply_rule("3.4.77", s)

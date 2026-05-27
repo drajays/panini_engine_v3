@@ -66,8 +66,14 @@ def act(state: State) -> State:
     if hit is None:
         return state
     ti1, vi1, ti2, vi2, target = hit
+    v1_slp1 = state.terms[ti1].varnas[vi1].slp1
+    v2_slp1 = state.terms[ti2].varnas[vi2].slp1
     state.terms[ti1].varnas[vi1] = mk(target)
     del state.terms[ti2].varnas[vi2]
+    state.meta["__why_now_dev__"] = (
+        f"संधिः: {v1_slp1} + {v2_slp1} → {target} (वृद्धि-एकादेशः); "
+        f"(काशिका ६।१।८८)"
+    )
     return state
 
 

@@ -10,8 +10,8 @@ the final 't' of "mat" (mad+at after 7.2.90) → 'd' (giving mad).
 
 Engine implementation:
   cond:
-    • arm flag "8_2_39_arm" set in meta
-    • pada (merged term) ends in 't'
+    • term has "pada" tag (merged pada, post _pada_merge)
+    • term ends in 't' (jhal)
     • no "8_2_39_done" in term tags
   act:
     • replace final 't' with 'd'
@@ -25,10 +25,11 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _find_target(state: State):
-    if not state.meta.get("8_2_39_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if "8_2_39_done" in t.tags:
+            continue
+        # Only apply to merged pada terms (post-merge, pūrvatrāsiddham zone)
+        if "pada" not in t.tags:
             continue
         if not t.varnas:
             continue

@@ -37,6 +37,7 @@ from pipelines.preflight_lopa_samjna import apply_preflight_luk_samjna_block
 from core.canonical_pipelines import (
     P01_samjna_1_1_15_to_1_1_24,
     P01_samjna_1_1_3_to_1_1_100,
+    P01_samjna_dhatu_class,
     P00_it_halantyam_lopa_yathasankhyam,
     P06a_pratyaya_adhikara_3_1_1_to_3,
 )
@@ -166,6 +167,9 @@ def derive_krt(
                 break
     if extra_state_meta:
         s.meta.update(extra_state_meta)
+
+    # Dhātu-class saṃjñā spine (audit P2 §4.3) — before subanta-oriented blanket.
+    s = P01_samjna_dhatu_class(s)
 
     # Saṃjñā / paribhāṣā used by later vidhi (vṛddhi prayoga, sthānāntara).
     s = apply_rule("1.1.1", s)

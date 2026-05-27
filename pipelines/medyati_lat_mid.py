@@ -31,7 +31,7 @@ def _build_state() -> State:
         kind="prakriti",
         varnas=parse_slp1_upadesha_sequence("YimidA~"),
         tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": "YimidA~"},
+        meta={"upadesha_slp1": "YimidA~", "gana": 4},
     )
     s = State(terms=[dhatu], meta={}, trace=[])
     s.meta["pada"] = "parasmaipada"
@@ -52,8 +52,7 @@ def derive_medyati() -> State:
     # laṭ spine: adhikāra + laT + tip→ti + Sap
     s = P00_lat_vartamane_tip_and_sap(s)
 
-    # divādi apavāda: Syan (3.1.69).
-    s.meta["3_1_69_syan_arm"] = True
+    # divādi apavāda: Syan (3.1.69) — cond checks gana==4 + Śap on tape.
     s = apply_rule("3.1.69", s)
 
     # it-lopa on Syan → y (as per note).

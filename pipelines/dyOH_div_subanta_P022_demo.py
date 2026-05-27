@@ -58,7 +58,7 @@ def derive_dyOH_div_subanta_P022() -> State:
 
     # Tripāḍī rules.
     s = apply_rule("8.2.1", s)
-    s.meta["P022_8_2_23_final_v_lopa_arm"] = True
+    s.meta["8_2_23_dyauH_v_lopa_arm"] = True
     s = apply_rule("8.2.23", s)
 
     from pipelines.subanta import _pada_merge

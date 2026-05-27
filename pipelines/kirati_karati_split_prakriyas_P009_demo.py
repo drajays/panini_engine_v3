@@ -29,12 +29,12 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def derive_kirati_karati_split_prakriyas_P009() -> State:
-    # Dhātu witness (kF) for the recorded guṇa demonstration.
+    # Dhātu witness (kF) for the recorded guṇa demonstration — treated as tudādi (gana 6).
     dhatu = Term(
         kind="prakriti",
         varnas=list(parse_slp1_upadesha_sequence("kF")),
         tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": "kF"},
+        meta={"upadesha_slp1": "kF", "gana": 6},
     )
     s = State(terms=[dhatu], meta={}, trace=[])
     s.meta["prakriya_P009_kirati_note_karati_spine"] = True
@@ -58,8 +58,7 @@ def derive_kirati_karati_split_prakriyas_P009() -> State:
     s.meta["tin_adesha_slp1"] = "tip"
     s = apply_rule("3.4.78", s)
 
-    # tudādi vikaraṇa Sa (recipe-armed; narrow slice extended for kF).
-    s.meta["3_1_77_sa_arm"] = True
+    # tudādi vikaraṇa Sa — cond checks gana==6 + no existing Śa.
     s = apply_rule("3.1.77", s)
 
     # it on Sa initial S, then lopa → surface a.

@@ -77,9 +77,7 @@ def _merge_finish(s: State, *, need_tripadi: bool = False,
             s = apply_rule("8.2.23", s)
             s.meta.pop("8_2_23_asmad_ns_arm", None)
         if need_t_to_d:
-            s.meta["8_2_39_arm"] = True
             s = apply_rule("8.2.39", s)
-            s.meta.pop("8_2_39_arm", None)
         if need_visarga:
             s = apply_rule("8.2.66", s)
             s = apply_rule("8.3.15", s)
@@ -250,7 +248,6 @@ def _cell_5_1(s: State) -> State:
     s.meta.pop("7_2_96_ma_arm", None)
     s = apply_rule("6.1.97", s)       # a+a → a (intra-stem)
     s = apply_rule("7.2.90", s)       # del d (Mode A)
-    s.meta["6_1_97_asmad_crossterm_arm"] = True
     s = apply_rule("6.1.97", s)       # a+a cross-term (ma + at boundary)
     return _merge_finish(s, need_tripadi=True, need_t_to_d=True)
 
@@ -268,7 +265,6 @@ def _cell_5_3(s: State) -> State:
     s.meta["7_2_90_direct_arm"] = True
     s = apply_rule("7.2.90", s)       # del d (direct arm)
     s.meta.pop("7_2_90_direct_arm", None)
-    s.meta["6_1_97_asmad_crossterm_arm"] = True
     s = apply_rule("6.1.97", s)       # a+a cross-term (asma + at boundary)
     return _merge_finish(s, need_tripadi=True, need_t_to_d=True)
 
@@ -288,9 +284,7 @@ def _cell_6_1(s: State) -> State:
     s.meta.pop("7_2_96_mama_arm", None)
     s = apply_rule("6.1.97", s)       # a+a → a (intra-stem: mamaad → mamad)
     s = apply_rule("7.2.90", s)       # del d (Mode A)
-    # stem=[m,a,m,a], pratyaya=[a] — cross-term a+a → a
-    s.meta["6_1_97_asmad_crossterm_arm"] = True
-    s = apply_rule("6.1.97", s)
+    s = apply_rule("6.1.97", s)       # cross-term a+a → a (stem-final + pratyaya)
     return _merge_finish(s)
 
 

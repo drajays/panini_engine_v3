@@ -31,7 +31,9 @@ def _matches(state: State) -> bool:
         return False
     if "sup" not in pr.tags:
         return False
-    if "sambuddhi" in pr.tags:
+    # For napuṃsaka, sambodhana eka = prathamā eka (neuter vocative = nominative),
+    # so atoʼm applies even in sambuddhi context.  For pulliṅga/strīliṅga, skip.
+    if "sambuddhi" in pr.tags and "napuṃsaka" not in anga.tags:
         return False
     if pr.meta.get("upadesha_slp1") not in _TARGETS:
         return False

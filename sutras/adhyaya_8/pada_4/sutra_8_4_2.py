@@ -120,18 +120,37 @@ def act(state: State) -> State:
     hit09 = _find_p009_natva(state)
     if hit09 is not None:
         ti, vi = hit09
+        t = state.terms[ti]
+        form_before = "".join(v.dev for v in t.varnas if v.dev)
         new_varna = mk("R")
         new_varna.tags.add("natva_done")
-        state.terms[ti].varnas[vi] = new_varna
+        t.varnas[vi] = new_varna
         state.meta.pop(META_P009_NATVA, None)
+        form_after = "".join(v.dev for v in t.varnas if v.dev)
+        state.meta["__why_now_dev__"] = (
+            f"ऋ-कारोत्तरम् न → ण (P009 क्री-SnA context); "
+            f"{form_before!r} → {form_after!r}। (काशिका ८।४।२)"
+        )
         return state
     hit = _find_target(state)
     if hit is None:
         return state
     ti, vi = hit
+    t = state.terms[ti]
+    trigger_slp1 = "?"
+    for i in range(vi - 1, -1, -1):
+        if t.varnas[i].slp1 in {"r", "f", "F", "z"}:
+            trigger_slp1 = t.varnas[i].slp1
+            break
+    form_slp1_before = "".join(v.slp1 for v in t.varnas)
     new_varna = mk("R")
     new_varna.tags.add("natva_done")
-    state.terms[ti].varnas[vi] = new_varna
+    t.varnas[vi] = new_varna
+    form_slp1_after = "".join(v.slp1 for v in t.varnas)
+    state.meta["__why_now_dev__"] = (
+        f"निमित्तम् {trigger_slp1} (र/ऋ/ष-वर्णः); न → ण (व्यवाय-अपि); "
+        f"{form_slp1_before} → {form_slp1_after}। (काशिका ८।४।२)"
+    )
     return state
 
 

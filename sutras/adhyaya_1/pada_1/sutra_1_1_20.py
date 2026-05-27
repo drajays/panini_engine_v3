@@ -39,8 +39,24 @@ GHU_KEY: str = "ghu"
 _TEXT_DEV: str = "\u0926\u093e\u0927\u093e \u0918\u094d\u0935\u0926\u093e\u092a\u094d"
 
 
+def _state_has_ghu_dhatu(state: State) -> bool:
+    """True iff some Term on the tape is a *dhātu* whose *upadeśa*-SLP1 lies
+    in the *ghu* set. The registry-stamp only fires when there is something
+    in this derivation that could need the *ghu* saṃjñā — otherwise the
+    saṃjñā is irrelevant noise in the trace (see audit P1a)."""
+    for t in state.terms:
+        if "dhatu" not in t.tags:
+            continue
+        u = (t.meta.get("upadesha_slp1") or "").strip()
+        if u in GHU_DHATU_UPADESHA_SLP1:
+            return True
+    return False
+
+
 def cond(state: State) -> bool:
-    return state.samjna_registry.get(GHU_KEY) != GHU_DHATU_UPADESHA_SLP1
+    if state.samjna_registry.get(GHU_KEY) == GHU_DHATU_UPADESHA_SLP1:
+        return False
+    return _state_has_ghu_dhatu(state)
 
 
 def act(state: State) -> State:

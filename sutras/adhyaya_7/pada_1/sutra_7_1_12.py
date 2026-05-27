@@ -29,17 +29,21 @@ from phonology     import mk
 
 
 # Pratyaya upadeśa (as set by 4.1.2) → replacement SLP1 sequence for *ato* *aṅga*.
+# "Nasi~" is the anunāsika form of the same upadeśa (sup_upadesha.json may carry the ~
+# marker so 1.3.2 can strip the anunāsika-it vowel for consonant-ending stems).
 _REPLACEMENTS_ATO = {
-    "wA"   : "ina",   # ṭā   → ina
-    "Nasi" : "At",    # ṅasi → āt
-    "Nas"  : "sya",   # ṅas  → sya
+    "wA"    : "ina",   # ṭā   → ina
+    "Nasi"  : "At",    # ṅasi → āt
+    "Nasi~" : "At",    # same upadeśa with anunāsika marker
+    "Nas"   : "sya",   # ṅas  → sya
 }
 
 # *ā*-banta *strī* (*Ap*): distinct *ādeśa* shapes (instrumental ``yA`` …).
 _REPLACEMENTS_STRĪ_AP = {
-    "wA"   : "yA",
-    "Nasi" : "yAH",
-    "Nas"  : "yAH",
+    "wA"    : "yA",
+    "Nasi"  : "yAH",
+    "Nasi~" : "yAH",
+    "Nas"   : "yAH",
 }
 
 

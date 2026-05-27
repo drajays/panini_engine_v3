@@ -3,9 +3,7 @@
 
   For tudādi (gaṇa 6) dhātu, use vikaraṇa `Sa` instead of `Sap`.
 
-Engine:
-  - recipe-armed: ``state.meta['3_1_77_sa_arm']``.
-  - inserts a `Sa` vikaraṇa term immediately after the dhātu.
+cond: dhātu.meta["gana"] == 6 AND no existing Śa term on tape.
 """
 from __future__ import annotations
 
@@ -14,8 +12,16 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
+def _dhatu_gana(state: State) -> int | None:
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            g = t.meta.get("gana")
+            return int(g) if g is not None else None
+    return None
+
+
 def _matches(state: State) -> bool:
-    if not state.meta.get("3_1_77_sa_arm"):
+    if _dhatu_gana(state) != 6:
         return False
     if not state.terms:
         return False

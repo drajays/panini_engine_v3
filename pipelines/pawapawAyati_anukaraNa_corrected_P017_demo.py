@@ -106,7 +106,6 @@ def derive_pawapawAyati_anukaraNa_corrected_P017() -> State:
     s.meta["corrected_v2_P017_8_1_2_arm"] = True
     s = apply_rule("8.1.2", s)
 
-    s.meta["corrected_v2_P017_6_1_97_pararupa_arm"] = True
     s = apply_rule("6.1.97", s)
 
     s.meta["corrected_v2_P017_1_3_7_qAc_arm"] = True

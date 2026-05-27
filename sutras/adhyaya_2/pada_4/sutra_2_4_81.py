@@ -6,7 +6,7 @@ undergoes *luk* (disappears).  The **īkṣ** + **ām** pieces are then fused in
 one **prātipadika** *Term* (**``IkzAm``**) for the periphrastic spine.
 
 Engine:
-  • ``state.meta['corrected_v2_P014_2_4_81_lit_luk_arm']``
+  • ``state.meta['2_4_81_lit_luk_arm']``
   • expects ``… + Ikz + Am + liT``
 """
 from __future__ import annotations
@@ -16,7 +16,7 @@ from engine.state import State, Term
 
 
 def _site(state: State) -> bool:
-    if not state.meta.get("corrected_v2_P014_2_4_81_lit_luk_arm"):
+    if not state.meta.get("2_4_81_lit_luk_arm"):
         return False
     if len(state.terms) < 3:
         return False
@@ -48,7 +48,7 @@ def act(state: State) -> State:
         meta={},
     )
     state.terms.append(merged)
-    state.meta.pop("corrected_v2_P014_2_4_81_lit_luk_arm", None)
+    state.meta.pop("2_4_81_lit_luk_arm", None)
     return state
 
 

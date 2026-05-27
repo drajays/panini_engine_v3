@@ -33,6 +33,14 @@ def _find(state: State):
         return None
     if pr.meta.get("7_1_23_luk_done"):
         return None
+    # 7.1.24 (atoʼm) is apavāda for a-anta napuṃsaka: the 'am' stays (jñānam, jñānam, jñāna).
+    # 7.1.23 is blocked when anga ends in 'a' (7.1.24's scope).  For consonant-ending
+    # napuṃsaka (dhanus, manas), the anga does NOT end in 'a', so 7.1.23 applies.
+    if anga.varnas and anga.varnas[-1].slp1 == "a":
+        return None
+    # Also skip when 7.1.24 already handled the conversion (ato_am_done flag).
+    if pr.meta.get("ato_am_done"):
+        return None
     return len(state.terms) - 1
 
 

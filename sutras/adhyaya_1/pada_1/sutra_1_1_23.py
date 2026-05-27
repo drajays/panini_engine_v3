@@ -35,8 +35,24 @@ SANKHYA_KEY: str = "saṅkhyā"
 _TEXT_DEV: str = "बहुगणवतुडति संख्या"
 
 
+def _state_has_sankhya_pratipadika(state: State) -> bool:
+    """True iff some Term is a *prātipadika* whose *upadeśa*-SLP1 lies in
+    the *saṅkhyā* set (*bahu*, *gaṇa*, *vatu*, *ḍati*, plus corpus extensions
+    *tāvat*, *kati*). The registry-stamp fires only when such a stem is on
+    the tape (see audit P1a)."""
+    for t in state.terms:
+        if "prātipadika" not in t.tags:
+            continue
+        u = (t.meta.get("upadesha_slp1") or "").strip()
+        if u in SANKHYA_1_1_23_PRATIPADIKA_SLP1:
+            return True
+    return False
+
+
 def cond(state: State) -> bool:
-    return state.samjna_registry.get(SANKHYA_KEY) != SANKHYA_1_1_23_PRATIPADIKA_SLP1
+    if state.samjna_registry.get(SANKHYA_KEY) == SANKHYA_1_1_23_PRATIPADIKA_SLP1:
+        return False
+    return _state_has_sankhya_pratipadika(state)
 
 
 def act(state: State) -> State:

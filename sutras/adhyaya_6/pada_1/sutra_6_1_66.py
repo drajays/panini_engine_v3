@@ -1,16 +1,12 @@
 """
 6.1.66  हल्ङ्याब्भ्यो दीर्घात् सुतिपृक्तं हल्  —  VIDHI
 
-Five operational paths:
+Five operational paths — all arm-free, phonemic/tag-based:
   1. Original narrow path: elide apṛkta s after long-vowel upadhā tṛc stem.
-  2. Arm ``6_1_66_liG_y_before_hal_arm``: vidhi-liṅ y-lopa before HAL.
-  3. Arm ``6_1_66_ashir_liG_sip_arm``: āśīr-liṅ 2sg sip-derived s lopa.
-  4. Arm ``6_1_66_luG_vuk_arm``: luṅ — the 'v' of the vuk augment (6.4.88,
-     after u/k it-lopa) drops when the immediately following term starts with
-     any HAL consonant.  Before AC-initial tiṅ (am, ant) v stays, giving
-     abhūvam/abhūvan; before HAL-initial tiṅ (t, s, tām, etc.) v drops.
-  5. Arm ``6_1_66_karmani_liG_sIyuw_arm``: karmani vidhi-liṅ — drop the final
-     y of the sīyuṭ-remnant [I,y] (ling_sIyuw term) before HAL-initial tiṅ.
+  2. vidhi-liṅ y-lopa: Term tagged "yasut_agama" ends in 'y' before HAL.
+  3. āśīr-liṅ 2sg sip-derived s lopa: single 's' tiṅ-ādeśa after yasut_agama term.
+  4. luṅ vuk v-lopa: Term with meta["vuk_6_4_88"] ends in 'v' before HAL.
+  5. karmani vidhi-liṅ sīyuṭ y-lopa: Term tagged "ling_sIyuw" ends in 'y' before HAL.
 """
 from __future__ import annotations
 
@@ -48,8 +44,6 @@ def _find_tfc_aprkta(state: State):
 
 def _find_yasut_y(state: State):
     """liG: yāsuṭ remnant [i,y] with 'y' before HAL-initial next term."""
-    if not state.meta.get("6_1_66_liG_y_before_hal_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if "yasut_agama" not in t.tags:
             continue
@@ -70,8 +64,6 @@ def _find_yasut_y(state: State):
 
 def _find_ashir_sip_s(state: State):
     """āśīr-liṅ 2sg: single apṛkta 's' term after yāsuṭ term."""
-    if not state.meta.get("6_1_66_ashir_liG_sip_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if "tin_adesha_3_4_78" not in t.tags:
             continue
@@ -90,8 +82,6 @@ def _find_ashir_sip_s(state: State):
 
 def _find_vuk_v(state: State):
     """luṅ: vuk term (single 'v' after it-lopa) before HAL-initial next term."""
-    if not state.meta.get("6_1_66_luG_vuk_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if not t.meta.get("vuk_6_4_88"):
             continue
@@ -113,8 +103,6 @@ def _find_vuk_v(state: State):
 def _find_karmani_iy(state: State):
     """karmani: drop y from iy within tiṅ ādeśa (after 7.2.81: Ate→iyte).
     Finds the 'y' at varnas[1] of a pratyaya starting with i+y, before a HAL."""
-    if not state.meta.get("6_1_66_karmani_iy_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
             continue
@@ -134,8 +122,6 @@ def _find_karmani_iy(state: State):
 def _find_siyuw_y(state: State):
     """karmani vidhi-liṅ: drop y from sīyuṭ-remnant [I,y] (ling_sIyuw term)
     before HAL-initial next term."""
-    if not state.meta.get("6_1_66_karmani_liG_sIyuw_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if "ling_sIyuw" not in t.tags:
             continue
@@ -201,7 +187,6 @@ def act(state: State) -> State:
         del t.varnas[1]  # drop y at position 1 (i-y-hal → i-hal)
         t.meta["6_1_66_karmani_iy_done"] = True
         t.meta["upadesha_slp1"] = "".join(v.slp1 for v in t.varnas)
-        state.meta.pop("6_1_66_karmani_iy_arm", None)
         state.samjna_registry["6.1.66_karmani_iy_lopa"] = True
         return state
 
@@ -210,7 +195,6 @@ def act(state: State) -> State:
         t = state.terms[idx]
         del t.varnas[-1]  # drop final y from [I,y]
         t.meta["6_1_66_siyuw_y_lopa_done"] = True
-        state.meta.pop("6_1_66_karmani_liG_sIyuw_arm", None)
         state.samjna_registry["6.1.66_siyuw_y_lopa"] = True
         return state
 

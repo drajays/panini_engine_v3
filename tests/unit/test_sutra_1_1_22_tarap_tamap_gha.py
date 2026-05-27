@@ -28,7 +28,13 @@ def test_pATha():
 
 
 def test_gha_set():
-    t = Term(kind="prakriti", varnas=[mk("a")])
+    # Audit P1a: 1.1.22 fires only with a tarap/tamap taddhita pratyaya on tape.
+    t = Term(
+        kind="pratyaya",
+        varnas=[mk("t"), mk("a"), mk("r"), mk("a"), mk("p")],
+        tags={"pratyaya", "taddhita"},
+        meta={"upadesha_slp1": "tarap"},
+    )
     s0 = State(terms=[t], samjna_registry={})
     s1 = apply_rule("1.1.22", s0)
     assert s1122.gha_samjna_is_registered(s1)
@@ -37,3 +43,10 @@ def test_gha_set():
     assert not s1122.taddhita_pratyaya_upadesha_slp1_is_gha(s1, "tva")
     s2 = apply_rule("1.1.22", s1)
     assert s2.samjna_registry.get(s1122.GHA_KEY) is s1.samjna_registry.get(s1122.GHA_KEY)
+
+
+def test_no_stamp_without_gha_taddhita():
+    t = Term(kind="prakriti", varnas=[mk("a")])
+    s0 = State(terms=[t], samjna_registry={})
+    s1 = apply_rule("1.1.22", s0)
+    assert not s1122.gha_samjna_is_registered(s1)

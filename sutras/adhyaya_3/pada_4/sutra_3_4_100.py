@@ -46,17 +46,32 @@ def act(state: State) -> State:
     if t.varnas and t.varnas[-1].slp1 == "i":
         del t.varnas[-1]
     t.meta["3_4_100_itasca_done"] = True
-    # P019 (avartsyat): sy + t needs intervening a between vikaraṇa and t.
+    # Lṛṅ ṛ-dhātu (P019 / vftu~): ``sy`` + ``t`` needs intervening ``a`` (*avartsyat*).
+    if i > 0 and (state.meta.get("lakara") or "").strip() == "lRG":
+        prev = state.terms[i - 1]
+        if (prev.meta.get("upadesha_slp1") or "").strip() == "sy":
+            if not state.meta.get("lrng_ṛ_tin_a_done"):
+                ins = Term(
+                    kind="pratyaya",
+                    varnas=[mk("a")],
+                    tags={"pratyaya"},
+                    meta={"upadesha_slp1": "a"},
+                )
+                state.terms.insert(i, ins)
+                state.meta["lrng_ṛ_tin_a_done"] = True
+    # Legacy demo flag (until P019 pipeline deleted).
     if state.meta.get("corrected_v2_P019_demo") and i > 0:
         prev = state.terms[i - 1]
         if (prev.meta.get("upadesha_slp1") or "").strip() == "sy":
-            ins = Term(
-                kind="pratyaya",
-                varnas=[mk("a")],
-                tags={"pratyaya"},
-                meta={"upadesha_slp1": "a"},
-            )
-            state.terms.insert(i, ins)
+            if not state.meta.get("lrng_ṛ_tin_a_done"):
+                ins = Term(
+                    kind="pratyaya",
+                    varnas=[mk("a")],
+                    tags={"pratyaya"},
+                    meta={"upadesha_slp1": "a"},
+                )
+                state.terms.insert(i, ins)
+                state.meta["lrng_ṛ_tin_a_done"] = True
     return state
 
 

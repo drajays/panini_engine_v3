@@ -28,8 +28,6 @@ def derive_Ayacchate_lat_yam_corrected_P010() -> State:
         meta={"upadesha_slp1": "yama~"},
     )
     s = State(terms=[dh], meta={}, trace=[], samjna_registry={})
-    s.meta["corrected_v2_P010_demo"] = True
-    s.meta["corrected_v2_P010_preserve_yam_m"] = True
     s.meta["lakara"] = "laT"
 
     for sid in ("1.3.1", "1.3.2", "1.3.3", "1.3.9"):
@@ -38,16 +36,14 @@ def derive_Ayacchate_lat_yam_corrected_P010() -> State:
     s.terms[0].meta["upadesha_slp1"] = "yam"
 
     ang = Term(
-        kind="prakriti",
+        kind="upasarga",
         varnas=list(parse_slp1_upadesha_sequence("A~N")),
-        tags={"prātipadika", "anga", "upadesha"},
+        tags={"pratyaya", "upadesha"},
         meta={"upadesha_slp1": "A~N"},
     )
     s.terms.insert(0, ang)
 
     s = apply_rule("1.4.59", s)
-
-    s.meta["corrected_v2_P010_1_3_28_arm"] = True
     s = apply_rule("1.3.28", s)
 
     s = apply_rule("3.1.91", s)
@@ -73,16 +69,14 @@ def derive_Ayacchate_lat_yam_corrected_P010() -> State:
     s.meta["3_1_68_kartari_recipe"] = True
     s = apply_rule("3.1.68", s)
 
-    for sid in ("1.3.8", "1.3.3", "1.3.9"):
-        s = apply_rule(sid, s)
-
-    s.meta["corrected_v2_P010_7_3_78_arm"] = True
-    s = apply_rule("7.3.78", s)
-    s.meta.pop("corrected_v2_P010_preserve_yam_m", None)
-    # Stop **1.3.3** from treating medial/final **छ्** as *halantyam-it* on the dhātu.
     for t in s.terms:
         if "dhatu" in t.tags:
             t.tags.discard("upadesha")
+
+    for sid in ("1.3.8", "1.3.3", "1.3.9"):
+        s = apply_rule(sid, s)
+
+    s = apply_rule("7.3.78", s)
 
     for sid in ("1.3.3", "1.3.9"):
         s = apply_rule(sid, s)

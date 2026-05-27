@@ -215,6 +215,10 @@
 <div id="trace-panel">
   <button class="close-btn" onclick="closeTrace()">✕</button>
   <h3 id="trace-heading">प्रक्रिया</h3>
+  <div style="display:flex;gap:.75rem;font-size:.8rem;margin:.25rem 0 .5rem;flex-wrap:wrap;">
+    <label><input type="checkbox" id="trace-rupa-only" checked onchange="rerenderTrace()"> रूप-परिवर्तन-मात्रम्</label>
+    <label><input type="checkbox" id="trace-show-audit" onchange="rerenderTrace()"> अधिकार/परिभाषा</label>
+  </div>
   <div class="trace-stats" id="trace-stats"></div>
   <div id="trace-rows"></div>
   <a id="trace-link" href="/tinanta" style="display:inline-block;margin-top:.5rem;font-size:.8rem;color:var(--accent);">पूर्ण प्रक्रिया ↗</a>
@@ -230,6 +234,8 @@ const ALL_LAK = [
 
 let _data = null;       // full API response
 let _activeCell = null; // {lak, p, v}
+let _lastTrace = null;       // last /api/tinanta trace for rerender
+let _lastTraceStats = null;  // matching stats blob
 
 // ── Transliteration ───────────────────────────────────────────────────────────
 function getScheme() { return document.getElementById('input-scheme').value; }
@@ -352,23 +358,46 @@ async function showTrace(lak, p, v) {
   document.getElementById('trace-heading').textContent =
     `${d.surface_dev}  —  ${lak_info.lak_dev||lak} ${PURUSHA_DEV[p]}${VACANA_DEV[v]}वचन`;
 
-  const stats = d.stats || {};
+  _lastTrace = d.trace || [];
+  _lastTraceStats = d.stats || {};
+  paintTraceRows(_lastTraceStats);
+
+  // Update deep-link
+  document.getElementById('trace-link').href = `/tinanta?dhatu=${encodeURIComponent(dhatu)}`;
+  document.getElementById('trace-panel').scrollIntoView({behavior:'smooth', block:'end'});
+}
+
+function rerenderTrace() {
+  if (_lastTrace) paintTraceRows(_lastTraceStats || {});
+}
+
+function paintTraceRows(stats) {
+  const showRupaOnly = document.getElementById('trace-rupa-only').checked;
+  const showAudit    = document.getElementById('trace-show-audit').checked;
   document.getElementById('trace-stats').innerHTML =
     `<b>${stats.applied_count||0}</b> प्रयुक्त · `+
     `<b>${stats.audit_count||0}</b> अधिकार · `+
     `<b>${stats.skipped_count||0}</b> अतिक्रान्त · `+
     `<b>${stats.total_steps||0}</b> कुल`;
 
-  const trace = (d.trace || []).filter(s => s.status === 'APPLIED' || s.status === 'STRUCTURAL' || s.status === 'AUDIT');
   const rows = document.getElementById('trace-rows');
   rows.innerHTML = '';
-  trace.forEach(step => {
+  (_lastTrace || []).forEach(step => {
+    const ev = step.status || step.event || '';
+    const isStruct = step._is_structural || false;
     const changed = (step.form_before||'') !== (step.form_after||'');
+    if (showRupaOnly) {
+      if (isStruct) return;
+      if (ev !== 'APPLIED' || !changed) return;
+    } else if (!showAudit && ev === 'AUDIT') {
+      return;
+    } else if (ev !== 'APPLIED' && ev !== 'AUDIT' && !isStruct) {
+      return;
+    }
     const fbDev = step.form_before_dev ?? step.form_before ?? '';
     const faDev = step.form_after_dev  ?? step.form_after  ?? '';
     const div = document.createElement('div');
     div.className = 'trace-row-sm' + (changed ? ' changed' : '');
-    const isStruct = step._is_structural || false;
     const sid = isStruct ? '' : (step.sutra_id || '');
     let formHtml;
     if (changed) {
@@ -380,10 +409,6 @@ async function showTrace(lak, p, v) {
     div.innerHTML = `<span class="sid">${escapeHtml(sid)}</span>${formHtml}<span class="why">${escapeHtml(why.substring(0,60))}</span>`;
     rows.appendChild(div);
   });
-
-  // Update deep-link
-  document.getElementById('trace-link').href = `/tinanta?dhatu=${encodeURIComponent(dhatu)}`;
-  document.getElementById('trace-panel').scrollIntoView({behavior:'smooth', block:'end'});
 }
 
 function closeTrace() {

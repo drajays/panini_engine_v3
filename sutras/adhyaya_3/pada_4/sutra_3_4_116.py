@@ -2,10 +2,12 @@
 3.4.116  लिङाशिषि  —  VIDHI
 
 Two operational paths:
-  1. Arm ``3_4_116_arm``: legacy gate-setter.
-  2. Arm ``3_4_116_ashir_liG_arm``: āśīr-liṅ — mark the tiṅ ādeśa as
-     ārdhadhātuka (not sārvadhatuka).  Fires as a context-marker; also
-     ensures 3.4.113 cannot tag the āśīr-liṅ tiṅ as sārvadhatuka.
+  1. Legacy arm ``3_4_116_arm``: gate-setter.
+  2. Phonological path: āśīr-liṅ context (``state.meta["ashir_liG"]``) — mark
+     the tiṅ ādeśa as ārdhadhātuka so 3.4.113 cannot tag it sārvadhatuka.
+
+cond (āśīr-liṅ path): ``state.meta["ashir_liG"]`` is set AND a tiṅ ādeśa
+  (tagged ``tin_adesha_3_4_78``) without ``3_4_116_ardhadhatuka_done`` exists.
 """
 from __future__ import annotations
 
@@ -28,7 +30,7 @@ def _find_tin(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if state.meta.get("3_4_116_ashir_liG_arm"):
+    if state.meta.get("ashir_liG"):
         return _find_tin(state) is not None
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
@@ -36,14 +38,13 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if state.meta.get("3_4_116_ashir_liG_arm"):
+    if state.meta.get("ashir_liG"):
         idx = _find_tin(state)
         if idx is not None:
             t = state.terms[idx]
             t.tags.discard("sarvadhatuka")
             t.tags.add("ardhadhatuka")
             t.meta["3_4_116_ardhadhatuka_done"] = True
-        state.meta.pop("3_4_116_ashir_liG_arm", None)
         state.samjna_registry["3.4.116_ardhadhatuka"] = True
         return state
     state.paribhasha_gates[_GATE_KEY] = True

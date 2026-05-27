@@ -41,7 +41,9 @@ def test_samjna_bootstrap():
 
 
 def test_requires_1_1_11_bootstrap():
-    t = Term(kind="prakriti", varnas=[mk("a")])
+    # Audit P1b: 1.1.11 now fires only with a pragṛhya-eligible anta.
+    # Use an *ī*-ending Term so the cascade 1.1.11 → 1.1.19 stamps.
+    t = Term(kind="prakriti", varnas=[mk("g"), mk("I")])
     s0 = State(terms=[t], samjna_registry={})
     s1 = apply_rule("1.1.19", s0)
     assert not s1119.eeUu_tau_saptamIartha_samjna_is_registered(s1)

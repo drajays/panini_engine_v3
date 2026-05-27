@@ -407,6 +407,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.1.24",
     "7.1.19",
     "7.1.20",
+    "7.1.23",
     "1.1.42",
     "1.4.17",
     "1.4.16",
@@ -417,6 +418,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.3.7",
     "1.3.9",
     "7.1.72",
+    "6.4.10",   # upadhā dīrgha after num insertion (dhanuṣ bahu: u→U before n+s)
     "6.4.8",
     "6.4.3",
     "7.3.103",
@@ -447,10 +449,14 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.4.110",
     "8.2.1",
     "8.2.66",
-    "8.3.15",
-    "8.3.59",
+    "8.3.15",   # ru → visarga at avasāna or before khar
+    "8.3.16",   # roḥ supi (trace/ANUVADA; structural work done by 8.3.15)
+    "8.3.24",   # n → anusvāra before jhal
+    "8.3.36",
+    "8.3.59",   # ṣatva: scans back through M/H so fires correctly after 8.3.24/8.3.15
     "8.4.1",
     "8.4.2",
+    "8.4.41",
 )
 
 
@@ -578,7 +584,20 @@ def run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
 
     _scan_pool(it_ids)
     _scan_pool(angakarya_ids)
+    # Second cuṭu-it pass: strip S from new pratyayas created by substitution (e.g. Si from 7.1.20).
+    # Guard: only run when a live sup term with unprocessed cuṭu initial exists; this prevents
+    # 1.3.7 from falling back to the stem when all pratyaya varṇas have been removed by luk (7.1.23).
+    from phonology import CUTU
+    if any(
+        "sup" in t.tags and t.varnas and t.varnas[0].slp1 in CUTU
+        and "it_candidate_cutu" not in t.varnas[0].tags
+        for t in s.terms
+    ):
+        _scan_pool(["1.3.7", "1.3.9"])
     _scan_pool(sandhi_ids)
+    # Pre-merge rutva: enter tripāḍī zone and convert stem-final s→r before HAL-initial sup
+    # (8.2.66 _target_premerge requires len(terms)≥2, so must run before _pada_merge)
+    _scan_pool(["8.2.1", "8.2.66"])
 
     if len(s.terms) > 1:
         _pada_merge(s)

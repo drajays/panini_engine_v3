@@ -1,11 +1,10 @@
 """
-7.3.78  पाघ्राध्मास्थाम्नादण्ड्या…  —  VIDHI (narrow: corrected-v2 **P010** *yam* → *yacch*)
+7.3.78  पाघ्राध्मास्थाम्नादण्ड्या…  —  VIDHI (yam → yacch, P010 spine)
 
-*Śāstra (laghu):* **pā-ghrā-dhmā-sthmā-mnā-daṇḍyā…** block includes *yam* → *yacch* before a
-following *sārvadhātuka* *vikaraṇa* *śap* residue (*ac*).
+*Narrow scope (repository):* *dhātu* ``yam`` immediately before *śap* residue ``a``
+(*ś*/*p* it-lopa per **1.3.8** / **1.3.9**) → substitute ``yacC`` (यच्छ्).
 
-Engine: ``corrected_v2_P010_7_3_78_arm`` — *dhātu* ``yam`` immediately before a ``Term``
-whose sole phoneme is ``a`` (*śap* residue).
+Full *pā-ghrā-dhmā-sthmā-mnā-daṇḍyā…* block is not exhaustively implemented here.
 """
 from __future__ import annotations
 
@@ -13,25 +12,25 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology.varna import parse_slp1_upadesha_sequence
 
-_META_ARM = "corrected_v2_P010_7_3_78_arm"
-
 
 def _hit(state: State) -> int | None:
-    if not state.meta.get(_META_ARM):
-        return None
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags:
             continue
         if "".join(v.slp1 for v in t.varnas) != "yam":
             continue
         nxt = state.terms[i + 1]
-        if len(nxt.varnas) != 1 or nxt.varnas[0].slp1 != "a":
-            continue
-        return i
+        if len(nxt.varnas) == 1 and nxt.varnas[0].slp1 == "a":
+            return i
+        up = (nxt.meta.get("upadesha_slp1") or "").strip()
+        if up == "Sap" and len(nxt.varnas) == 1 and nxt.varnas[0].slp1 == "a":
+            return i
     return None
 
 
 def cond(state: State) -> bool:
+    if state.samjna_registry.get("7.3.78_yam_to_yacC"):
+        return False
     return _hit(state) is not None
 
 
@@ -40,18 +39,18 @@ def act(state: State) -> State:
     if i is None:
         return state
     state.terms[i].varnas = list(parse_slp1_upadesha_sequence("yacC"))
-    state.samjna_registry["7.3.78_P010_yam_to_yacC"] = True
-    state.meta.pop(_META_ARM, None)
+    state.terms[i].meta["upadesha_slp1"] = "yacC"
+    state.samjna_registry["7.3.78_yam_to_yacC"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id="7.3.78",
     sutra_type=SutraType.VIDHI,
-    text_slp1="pA GsnA ... yacC ... (narrow P010)",
-    text_dev="पाघ्राध्मास्थाम्ना… (यम्→यच्छ्, प०१०)",
+    text_slp1="pA GsnA ... yacC ... (yam P010)",
+    text_dev="पाघ्राध्मास्थाम्ना… (यम्→यच्छ्)",
     padaccheda_dev="पा-घ्रा-ध्मा-स्था-म्ना-दण्ड्या…",
-    why_dev="यम्-धातोः यच्छ्-आदेशः — प०१० संक्षिप्तम्।",
+    why_dev="यम्-धातोः यच्छ्-आदेशः — P010 / सार्वधातुके शप्-पूर्वम्।",
     anuvritti_from=("7.3.69",),
     cond=cond,
     act=act,

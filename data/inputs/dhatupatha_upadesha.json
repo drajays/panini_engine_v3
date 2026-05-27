@@ -8,11 +8,13 @@
   },
   "_stats": {
     "bvadi_merged": 940,
-    "curated_extensions": 8,
+    "curated_extensions": 9,
     "total_entries": 948
   },
   "id_aliases": {
-    "BvAdi_BU": "BvAdi_01_0001"
+    "BvAdi_BU": "BvAdi_01_0001",
+    "Asa~": "Adadi_Asa",
+    "As": "Adadi_Asa"
   },
   "flag_overrides": {
     "BvAdi_01_0001": {
@@ -32225,6 +32227,38 @@
         "Nit_initial": true
       },
       "notes": "णीञ् — णो नः (6.1.65) on Nvul path."
+    },
+    {
+      "id": "Adadi_Asa",
+      "tier": "curated_extension",
+      "dhatupatha_id": "02.0001",
+      "gana": 2,
+      "gana_number": 2,
+      "serial_in_gana": 1,
+      "sutra_ref": "2.1",
+      "upadesha_dev": "आसँ",
+      "upadesha_slp1": "Asa~",
+      "mula_dhatu_dev": "आस्",
+      "raw_dhatu_after_it_lopa_dev": "आस्",
+      "raw_dhatu_after_it_lopa_slp1": "As",
+      "artha_dev": "उपवेशने",
+      "artha_slp1": "upaveSane",
+      "artha_en": "to sit, to be seated",
+      "gana_label_dev": "अदादिः",
+      "pada_label_dev": "आत्मनेपदी",
+      "karmatva_label_dev": "अकर्मकः",
+      "it_class_label_dev": "सेट्",
+      "it_markers": [
+        "अँ"
+      ],
+      "flags": {
+        "anit": false,
+        "set": true,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "P008 gold आस्ते — अनुदात्तेत् + अदादि śap-luk laṭ spine."
     }
   ]
 }

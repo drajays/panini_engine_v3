@@ -19,8 +19,23 @@ def ot_praghy_samjna_is_registered(state: State) -> bool:
     return state.samjna_registry.get(OT_KEY) is True
 
 
+def _state_has_o_ending_nipata(state: State) -> bool:
+    """True iff some Term is a *nipāta* whose final varṇa is *o*. The *ot*
+    pragṛhya saṃjñā is irrelevant without such a Term — registry-stamp is
+    suppressed there as trace noise (audit P1b)."""
+    for t in state.terms:
+        if not ({"nipāta", "nipata"} & t.tags):
+            continue
+        fin = t.final_varna
+        if fin and fin.slp1 == "o":
+            return True
+    return False
+
+
 def cond(state: State) -> bool:
-    return not ot_praghy_samjna_is_registered(state)
+    if ot_praghy_samjna_is_registered(state):
+        return False
+    return _state_has_o_ending_nipata(state)
 
 
 def act(state: State) -> State:

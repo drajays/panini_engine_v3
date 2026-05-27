@@ -74,8 +74,16 @@ def act(state: State) -> State:
     if hit is None:
         return state
     ti, vi = hit
-    state.terms[ti].varnas[vi] = mk("A")
-    state.terms[ti].meta["aNga_dirgha_done"] = True
+    anga = state.terms[ti]
+    anga_slp1 = "".join(v.slp1 for v in anga.varnas)
+    sup_upadesha = state.terms[-1].meta.get("upadesha_slp1", "?")
+    anga.varnas[vi] = mk("A")
+    anga.meta["aNga_dirgha_done"] = True
+    anga_after = "".join(v.slp1 for v in anga.varnas)
+    state.meta["__why_now_dev__"] = (
+        f"अङ्गम् {anga_slp1} (अन्त्य a → दीर्घ A = {anga_after}); "
+        f"परः यञादि-सुप् {sup_upadesha}; दीर्घत्वम्। (काशिका ७।३।१०२)"
+    )
     return state
 
 

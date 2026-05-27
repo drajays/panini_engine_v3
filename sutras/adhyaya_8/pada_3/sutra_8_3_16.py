@@ -1,40 +1,42 @@
 """
-8.3.16  रोः सुपि  —  VIDHI
+8.3.16  रोः सुपि  —  ANUVADA (trace marker)
 
-Padaccheda: रोः सुपि
+"A ru (intermediate r from 8.2.66) before a sup retains visarga."
 
-रोः सुपि (8.3.16)
+Engine role: 8.3.15 (khara-avasānayoḥ) already converts ru → visarga before
+khar-initial sup (e.g. 'su' of saptamī bahu: s is khar).  Before voiced-initial
+sup (e.g. bhyām: B is voiced, not khar) the ru stays as 'r' — 8.3.15 does not
+fire, and 8.3.16 does not create a new visarga either (classical form dhanurbhyām,
+not dhanuḥbhyām).
+
+This sūtra is recorded as ANUVADA: it fires as a trace event to mark the
+"roḥ supi" śāstra context for downstream rules (8.3.17+), but does not itself
+mutate any varṇa.  All structural work is done by 8.3.15 and 8.3.59.
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-_GATE_KEY: str = "8_3_16_roH_16"
-
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return state.meta.get("8_3_16_arm") is True
+    # Structural conversion already handled by 8.3.15; this rule is a trace only.
+    return False
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"]             = "8.3.16"
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "8.3.16",
-    sutra_type            = SutraType.VIDHI,
+    sutra_type            = SutraType.ANUVADA,
     r1_form_identity_exempt = True,
     text_slp1             = "roH supi",
     text_dev              = "रोः सुपि",
     padaccheda_dev        = "रोः सुपि",
-    why_dev               = "(सूत्रम् 8.3.16) रोः सुपि।",
-    anuvritti_from        = ('8.1.1',),
+    why_dev               = "सुपि-पूर्वस्य रु-विसर्गः (८.३.१५ एव कार्यम्; अनुवादः)।",
+    anuvritti_from        = ("8.2.1",),
     cond                  = cond,
     act                   = act,
 )

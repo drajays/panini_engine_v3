@@ -226,6 +226,17 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 .sutra-detail .padaccheda { color: var(--ink-dim); margin: 4px 0; }
 .sutra-detail .why { margin: 10px 0; }
 .sutra-detail .kv { font-size: 12px; margin: 4px 0; }
+/* why_now_dev "अत्र किमर्थम्" context box */
+.sutra-detail .kv.why-now-box {
+  background: var(--bg-alt, #f5f3ec);
+  border-left: 3px solid var(--accent, #b05c2a);
+  border-radius: 3px;
+  padding: 6px 10px;
+  margin-top: 8px;
+  font-family: var(--dev);
+  font-size: 13px;
+  line-height: 1.7;
+}
 .sutra-detail .kv strong { display: inline-block; min-width: 100px;
                             color: var(--ink-faint);
                             font-weight: 600; font-size: 11px;

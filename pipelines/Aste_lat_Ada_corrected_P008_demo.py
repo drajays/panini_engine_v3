@@ -29,7 +29,7 @@ def derive_Aste_lat_Ada_corrected_P008() -> State:
         kind="prakriti",
         varnas=list(parse_slp1_upadesha_sequence("Asa~")),
         tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": "Asa~"},
+        meta={"upadesha_slp1": "Asa~", "gana": 2},
     )
     s = State(terms=[dhatu], meta={}, trace=[])
     s.meta["corrected_v2_P008_Aste_demo"] = True
@@ -40,10 +40,10 @@ def derive_Aste_lat_Ada_corrected_P008() -> State:
     if s.terms:
         s.terms[0].tags.discard("upadesha")
         s.terms[0].meta["upadesha_slp1"] = "As"
+        s.terms[0].meta["ekac_dhatu"] = True
+        s.terms[0].meta["udatta_dhatu"] = False
 
-    s.meta["1_3_12_arm"] = True
     s = apply_rule("1.3.12", s)
-    s.meta.pop("1_3_12_arm", None)
 
     s = apply_rule("3.1.91", s)
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
@@ -66,7 +66,6 @@ def derive_Aste_lat_Ada_corrected_P008() -> State:
     s.meta["3_1_68_kartari_recipe"] = True
     s = apply_rule("3.1.68", s)
 
-    s.meta["2_4_72_sap_luk_arm"] = True
     s = apply_rule("2.4.72", s)
 
     s = apply_rule("3.4.113", s)

@@ -43,9 +43,9 @@ def derive_mAtApitarO_dvandva_split_prakriyas_P013() -> State:
     s = State(terms=[t1, t2], meta={}, trace=[])
 
     s = apply_rule("2.1.3", s)
-    s.meta["prakriya_P013_2_2_29_arm"] = True
+    s.meta["2_2_29_dvandva_arm"] = True
     s = apply_rule("2.2.29", s)
-    s.meta["prakriya_P013_2_2_34_arm"] = True
+    s.meta["2_2_34_dvandva_arm"] = True
     s = apply_rule("2.2.34", s)
 
     s.meta["prakriya_P013_6_3_25_arm"] = True

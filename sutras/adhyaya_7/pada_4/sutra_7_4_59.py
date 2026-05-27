@@ -48,7 +48,7 @@ def _first_dirgha_ak_index(t) -> int | None:
 
 def _armed_dirgha_abhyasa(state: State) -> bool:
     return bool(
-        state.meta.get("P029_7_4_59_abhyasa_hrasva_arm")
+        state.meta.get("7_4_59_abhyasa_hrasva_arm")
         or state.meta.get("P030_7_4_59_abhyasa_hrasva_arm")
         or state.meta.get("P035_7_4_59_abhyasa_hrasva_arm")
     )
@@ -62,7 +62,7 @@ def _site_dirgha(state: State) -> bool:
         return False
     t = state.terms[i]
     if (
-        t.meta.get("P029_7_4_59_hrasva_done")
+        t.meta.get("7_4_59_abhyasa_hrasva_done")
         or t.meta.get("P030_7_4_59_hrasva_done")
         or t.meta.get("P035_7_4_59_hrasva_done")
     ):
@@ -156,8 +156,8 @@ def act(state: State) -> State:
         t.meta["P035_7_4_59_hrasva_done"] = True
         state.meta.pop("P035_7_4_59_abhyasa_hrasva_arm", None)
     else:
-        t.meta["P029_7_4_59_hrasva_done"] = True
-        state.meta.pop("P029_7_4_59_abhyasa_hrasva_arm", None)
+        t.meta["7_4_59_abhyasa_hrasva_done"] = True
+        state.meta.pop("7_4_59_abhyasa_hrasva_arm", None)
     return state
 
 

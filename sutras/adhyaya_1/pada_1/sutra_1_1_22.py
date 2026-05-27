@@ -28,8 +28,23 @@ GHA_KEY: str = "gha"
 _TEXT_DEV: str = "तरप्तमपौ घः"
 
 
+def _state_has_gha_taddhita(state: State) -> bool:
+    """True iff some Term is a *taddhita* *pratyaya* with *upadeśa*-SLP1 in
+    the *gha* set. The registry-stamp fires only when a *tarap*/*tamap*
+    *pratyaya* is on the tape (see audit P1a)."""
+    for t in state.terms:
+        if "taddhita" not in t.tags and t.kind != "pratyaya":
+            continue
+        u = (t.meta.get("upadesha_slp1") or "").strip()
+        if u in GHA_TADDHITA_PRATYAYA_UPADESHA_SLP1:
+            return True
+    return False
+
+
 def cond(state: State) -> bool:
-    return state.samjna_registry.get(GHA_KEY) != GHA_TADDHITA_PRATYAYA_UPADESHA_SLP1
+    if state.samjna_registry.get(GHA_KEY) == GHA_TADDHITA_PRATYAYA_UPADESHA_SLP1:
+        return False
+    return _state_has_gha_taddhita(state)
 
 
 def act(state: State) -> State:

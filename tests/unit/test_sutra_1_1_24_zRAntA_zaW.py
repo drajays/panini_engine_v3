@@ -29,10 +29,17 @@ def test_pATha_bytes_match_ashtadhyayi_s():
 
 
 def test_requires_1_1_23_sankhya_bootstrap():
-    t = Term(kind="prakriti", varnas=[mk("a")])
+    # Audit P1a: 1.1.23/1.1.24 fire only when a saṅkhyā prātipadika is on
+    # the tape (e.g. "bahu"); otherwise stamping is suppressed as noise.
+    t = Term(
+        kind="prakriti",
+        varnas=[mk("a")],
+        tags={"prātipadika"},
+        meta={"upadesha_slp1": "bahu"},
+    )
     s0 = State(terms=[t], samjna_registry={})
     s1 = apply_rule("1.1.24", s0)
-    assert not s1124.zat_samjna_is_registered(s1)
+    assert not s1124.zat_samjna_is_registered(s1)  # 1.1.23 not yet stamped
 
     s2 = apply_rule("1.1.23", s0)
     assert s1123.sankhya_samjna_1_1_23_is_registered(s2)

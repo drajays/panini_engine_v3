@@ -15,18 +15,18 @@ function escapeHtml(s) {
     .replaceAll(">", "&gt;");
 }
 
-/* सूत्रप्रकार-देवनागरी-नाम-सारणी */
+/* सूत्रप्रकार-देवनागरी-नाम-सारणी — engine/sutra_type.py SutraType enum के अनुसार */
 const _SUTRA_TYPE_DEV = {
-  "VIDHI"       : "विधिः",
-  "PARIBHASHA"  : "परिभाषा",
   "SAMJNA"      : "संज्ञा",
-  "ADHIKARA"    : "अधिकारः",
-  "ANUVADA"     : "अनुवादः",
+  "PARIBHASHA"  : "परिभाषा",
+  "VIDHI"       : "विधिः",
   "NIYAMA"      : "नियमः",
-  "ATIDESA"     : "अतिदेशः",
+  "ATIDESHA"    : "अतिदेशः",
+  "ADHIKARA"    : "अधिकारः",
   "PRATISHEDHA" : "प्रतिषेधः",
-  "UTSARGA"     : "उत्सर्गः",
-  "APAVADA"     : "अपवादः",
+  "ANUVADA"     : "अनुवादः",
+  "VIBHASHA"    : "विभाषा",
+  "NIPATANA"    : "निपातनम्",
 };
 
 /* स्थिति-देवनागरी-नाम-सारणी */
@@ -87,6 +87,18 @@ function renderTrace(trace, container) {
 }
 
 function _traceStepInFilter(step, active) {
+  // रूप-परिवर्तन-मात्रम् — show every step that actually changes the form,
+  // regardless of status. This includes ADHIKARA steps whose act() attaches
+  // a pratyaya (e.g. 4.1.2 sup-attachment) and VIDHI APPLIED steps, but
+  // hides registry-only saṃjñā stamps, pure paribhāṣā audits, and
+  // APPLIED_VACUOUS rows. The full trace remains available by unchecking
+  // RUPA_PARIVARTANA_ONLY.
+  if (active.has("RUPA_PARIVARTANA_ONLY")) {
+    if (step._is_structural) return true;  // pada-merging, etc.
+    const before = step.form_before || "";
+    const after  = step.form_after  || "";
+    return before !== after;
+  }
   if (step._is_structural) return active.has("STRUCTURAL");
   const st = step.status || "APPLIED";
   if (st === "APPLIED_VACUOUS") return active.has("APPLIED");
@@ -216,6 +228,12 @@ function renderSutraDetail(step) {
     <div class="text-dev dev">${escapeHtml(step._sutra_text_dev || "")}</div>
     <div class="padaccheda dev">${escapeHtml(step._padaccheda_dev || "")}</div>
     <div class="why dev">${escapeHtml(step.why_dev || "")}</div>
+    ${step.why_now_dev
+      ? `<div class="kv" style="margin-top:6px;">
+           <strong>अत्र किमर्थम्</strong>
+           <span class="dev" style="font-size:13px;">${escapeHtml(step.why_now_dev)}</span>
+         </div>`
+      : ""}
 
     <div class="kv"><strong>स्थितिः</strong>
       <span style="color:${stColor};">${escapeHtml(stLabel)}</span>

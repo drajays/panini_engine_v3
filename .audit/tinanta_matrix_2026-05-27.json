@@ -1,0 +1,8118 @@
+{
+  "generated_at": "2026-05-27T06:00:33.089482+00:00",
+  "full_paradigm": true,
+  "dhatu_smoke": [
+    "BU",
+    "paci~",
+    "kfvi~"
+  ],
+  "counts": {
+    "OK": 810,
+    "NI": 0,
+    "ERR": 0,
+    "SKIP": 0,
+    "EMPTY": 0
+  },
+  "cells": [
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवति",
+      "surface_slp1": "Bavati"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवतः",
+      "surface_slp1": "BavataH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवन्ति",
+      "surface_slp1": "Bavanti"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवसि",
+      "surface_slp1": "Bavasi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवथः",
+      "surface_slp1": "BavaTaH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवथ",
+      "surface_slp1": "BavaTa"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवामि",
+      "surface_slp1": "BavAmi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवावः",
+      "surface_slp1": "BavAvaH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवामः",
+      "surface_slp1": "BavAmaH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "बभूव",
+      "surface_slp1": "baBUva"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "बभूवतुः",
+      "surface_slp1": "baBUvatuH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "बभूवुः",
+      "surface_slp1": "baBUvuH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "बभूइथ",
+      "surface_slp1": "baBUiTa"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "बभूवथुः",
+      "surface_slp1": "baBUvaTuH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "बभूव",
+      "surface_slp1": "baBUva"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "बभूव",
+      "surface_slp1": "baBUva"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "बभूइव",
+      "surface_slp1": "baBUiva"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "बभूइम",
+      "surface_slp1": "baBUima"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भविता",
+      "surface_slp1": "BavitA"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवितारौ",
+      "surface_slp1": "BavitArO"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवितारः",
+      "surface_slp1": "BavitAraH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवितासि",
+      "surface_slp1": "BavitAsi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवितास्थः",
+      "surface_slp1": "BavitAsTaH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवितास्थ",
+      "surface_slp1": "BavitAsTa"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवितास्मि",
+      "surface_slp1": "BavitAsmi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवितास्वः",
+      "surface_slp1": "BavitAsvaH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवितास्मः",
+      "surface_slp1": "BavitAsmaH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भविष्यति",
+      "surface_slp1": "Bavizyati"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भविष्यतः",
+      "surface_slp1": "BavizyataH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भविष्यन्ति",
+      "surface_slp1": "Bavizyanti"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भविष्यसि",
+      "surface_slp1": "Bavizyasi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भविष्यथः",
+      "surface_slp1": "BavizyaTaH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भविष्यथ",
+      "surface_slp1": "BavizyaTa"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भविष्यामि",
+      "surface_slp1": "BavizyAmi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भविष्यावः",
+      "surface_slp1": "BavizyAvaH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भविष्यामः",
+      "surface_slp1": "BavizyAmaH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवतु",
+      "surface_slp1": "Bavatu"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवताम्",
+      "surface_slp1": "BavatAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवन्तु",
+      "surface_slp1": "Bavantu"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भव",
+      "surface_slp1": "Bava"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवतम्",
+      "surface_slp1": "Bavatam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवत",
+      "surface_slp1": "Bavata"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवानि",
+      "surface_slp1": "BavAni"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवाव",
+      "surface_slp1": "BavAva"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवाम",
+      "surface_slp1": "BavAma"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभवत्",
+      "surface_slp1": "aBavat"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभवताम्",
+      "surface_slp1": "aBavatAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभवन्",
+      "surface_slp1": "aBavan"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभवः",
+      "surface_slp1": "aBavaH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभवतम्",
+      "surface_slp1": "aBavatam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभवत",
+      "surface_slp1": "aBavata"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभवम्",
+      "surface_slp1": "aBavam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभवाव",
+      "surface_slp1": "aBavAva"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभवाम",
+      "surface_slp1": "aBavAma"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवेत्",
+      "surface_slp1": "Bavet"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवेताम्",
+      "surface_slp1": "BavetAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवेयुः",
+      "surface_slp1": "BaveyuH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवेः",
+      "surface_slp1": "BaveH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवेतम्",
+      "surface_slp1": "Bavetam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवेत",
+      "surface_slp1": "Baveta"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवेयम्",
+      "surface_slp1": "Baveyam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवेव",
+      "surface_slp1": "Baveva"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवेम",
+      "surface_slp1": "Bavema"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयात्",
+      "surface_slp1": "BUyAt"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयास्ताम्",
+      "surface_slp1": "BUyAstAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयासुः",
+      "surface_slp1": "BUyAsuH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयाः",
+      "surface_slp1": "BUyAH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयास्तम्",
+      "surface_slp1": "BUyAstam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयास्त",
+      "surface_slp1": "BUyAsta"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयासम्",
+      "surface_slp1": "BUyAsam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयास्व",
+      "surface_slp1": "BUyAsva"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयास्म",
+      "surface_slp1": "BUyAsma"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभूत्",
+      "surface_slp1": "aBUt"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभूताम्",
+      "surface_slp1": "aBUtAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभूवन्",
+      "surface_slp1": "aBUvan"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभूः",
+      "surface_slp1": "aBUH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभूतम्",
+      "surface_slp1": "aBUtam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभूत",
+      "surface_slp1": "aBUta"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभूवम्",
+      "surface_slp1": "aBUvam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभूव",
+      "surface_slp1": "aBUva"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभूम",
+      "surface_slp1": "aBUma"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभविष्यत्",
+      "surface_slp1": "aBavizyat"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभविष्यताम्",
+      "surface_slp1": "aBavizyatAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभविष्यन्",
+      "surface_slp1": "aBavizyan"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभविष्यः",
+      "surface_slp1": "aBavizyaH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभविष्यतम्",
+      "surface_slp1": "aBavizyatam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभविष्यत",
+      "surface_slp1": "aBavizyata"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभविष्यम्",
+      "surface_slp1": "aBavizyam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभविष्याव",
+      "surface_slp1": "aBavizyAva"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभविष्याम",
+      "surface_slp1": "aBavizyAma"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयते",
+      "surface_slp1": "BUyate"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयेते",
+      "surface_slp1": "BUyete"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयन्ते",
+      "surface_slp1": "BUyante"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयसे",
+      "surface_slp1": "BUyase"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयेथे",
+      "surface_slp1": "BUyeTe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयध्वे",
+      "surface_slp1": "BUyaDve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूये",
+      "surface_slp1": "BUye"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयावहे",
+      "surface_slp1": "BUyAvahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयामहे",
+      "surface_slp1": "BUyAmahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "बभूवे",
+      "surface_slp1": "baBUve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "बभूवाते",
+      "surface_slp1": "baBUvAte"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "बभूविरे",
+      "surface_slp1": "baBUvire"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "बभूइषे",
+      "surface_slp1": "baBUize"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "बभूवाथे",
+      "surface_slp1": "baBUvATe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "बभूइढ्वे",
+      "surface_slp1": "baBUiQve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "बभूवे",
+      "surface_slp1": "baBUve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "बभूइवहे",
+      "surface_slp1": "baBUivahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "बभूइमहे",
+      "surface_slp1": "baBUimahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भविता",
+      "surface_slp1": "BavitA"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवितारौ",
+      "surface_slp1": "BavitArO"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवितारः",
+      "surface_slp1": "BavitAraH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवितासे",
+      "surface_slp1": "BavitAse"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवितासाथे",
+      "surface_slp1": "BavitAsATe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भविताध्वे",
+      "surface_slp1": "BavitADve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भविताहे",
+      "surface_slp1": "BavitAhe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवितास्वहे",
+      "surface_slp1": "BavitAsvahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवितास्महे",
+      "surface_slp1": "BavitAsmahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भाविष्यते",
+      "surface_slp1": "BAvizyate"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भाविष्येते",
+      "surface_slp1": "BAvizyete"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भाविष्यन्ते",
+      "surface_slp1": "BAvizyante"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भाविष्यसे",
+      "surface_slp1": "BAvizyase"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भाविष्येथे",
+      "surface_slp1": "BAvizyeTe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भाविष्यध्वे",
+      "surface_slp1": "BAvizyaDve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भाविष्ये",
+      "surface_slp1": "BAvizye"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भाविष्यावहे",
+      "surface_slp1": "BAvizyAvahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भाविष्यामहे",
+      "surface_slp1": "BAvizyAmahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयताम्",
+      "surface_slp1": "BUyatAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयेताम्",
+      "surface_slp1": "BUyetAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयन्ताम्",
+      "surface_slp1": "BUyantAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयस्व",
+      "surface_slp1": "BUyasva"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयेथाम्",
+      "surface_slp1": "BUyeTAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयध्वम्",
+      "surface_slp1": "BUyaDvam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयै",
+      "surface_slp1": "BUyE"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयावहै",
+      "surface_slp1": "BUyAvahE"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयामहै",
+      "surface_slp1": "BUyAmahE"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभूयत",
+      "surface_slp1": "aBUyata"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभूयेताम्",
+      "surface_slp1": "aBUyetAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभूयन्त",
+      "surface_slp1": "aBUyanta"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभूयथाः",
+      "surface_slp1": "aBUyaTAH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभूयेथाम्",
+      "surface_slp1": "aBUyeTAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभूयध्वम्",
+      "surface_slp1": "aBUyaDvam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभूये",
+      "surface_slp1": "aBUye"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभूयावहि",
+      "surface_slp1": "aBUyAvahi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभूयामहि",
+      "surface_slp1": "aBUyAmahi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयेत",
+      "surface_slp1": "BUyeta"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयेयाताम्",
+      "surface_slp1": "BUyeyAtAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयेरन्",
+      "surface_slp1": "BUyeran"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयेथाः",
+      "surface_slp1": "BUyeTAH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयेयाथाम्",
+      "surface_slp1": "BUyeyATAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयेध्वम्",
+      "surface_slp1": "BUyeDvam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयेयि",
+      "surface_slp1": "BUyeyi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयेवहि",
+      "surface_slp1": "BUyevahi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयेमहि",
+      "surface_slp1": "BUyemahi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भविषीष्ट",
+      "surface_slp1": "BavizIzwa"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भविषीयास्ताम्",
+      "surface_slp1": "BavizIyAstAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भविषीरन्",
+      "surface_slp1": "BavizIran"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भविषीष्टाः",
+      "surface_slp1": "BavizIzwAH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भविषीयास्थाम्",
+      "surface_slp1": "BavizIyAsTAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भविषीध्वम्",
+      "surface_slp1": "BavizIDvam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भविषीय",
+      "surface_slp1": "BavizIya"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भविषीवहि",
+      "surface_slp1": "BavizIvahi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भविषीमहि",
+      "surface_slp1": "BavizImahi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभावि",
+      "surface_slp1": "aBAvi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभाविषाताम्",
+      "surface_slp1": "aBAvizAtAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभाविषत",
+      "surface_slp1": "aBAvizata"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभाविष्ठाः",
+      "surface_slp1": "aBAvizWAH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभाविषाथाम्",
+      "surface_slp1": "aBAvizATAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभाविध्वम्",
+      "surface_slp1": "aBAviDvam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभाविषि",
+      "surface_slp1": "aBAvizi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभाविष्वहि",
+      "surface_slp1": "aBAvizvahi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभाविष्महि",
+      "surface_slp1": "aBAvizmahi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभाविष्यते",
+      "surface_slp1": "aBAvizyate"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभाविष्यआते",
+      "surface_slp1": "aBAvizyaAte"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभाविष्यन्ते",
+      "surface_slp1": "aBAvizyante"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभाविष्यसे",
+      "surface_slp1": "aBAvizyase"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभाविष्यआथे",
+      "surface_slp1": "aBAvizyaATe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभाविष्यध्वे",
+      "surface_slp1": "aBAvizyaDve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभाविष्ये",
+      "surface_slp1": "aBAvizye"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभाविष्यावहे",
+      "surface_slp1": "aBAvizyAvahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभाविष्यामहे",
+      "surface_slp1": "aBAvizyAmahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवते",
+      "surface_slp1": "Bavate"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवेते",
+      "surface_slp1": "Bavete"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवन्ते",
+      "surface_slp1": "Bavante"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवसे",
+      "surface_slp1": "Bavase"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवेथे",
+      "surface_slp1": "BaveTe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवध्वे",
+      "surface_slp1": "BavaDve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवे",
+      "surface_slp1": "Bave"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवावहे",
+      "surface_slp1": "BavAvahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवामहे",
+      "surface_slp1": "BavAmahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "बभूवे",
+      "surface_slp1": "baBUve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "बभूवाते",
+      "surface_slp1": "baBUvAte"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "बभूविरे",
+      "surface_slp1": "baBUvire"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "बभूइषे",
+      "surface_slp1": "baBUize"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "बभूवाथे",
+      "surface_slp1": "baBUvATe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "बभूइढ्वे",
+      "surface_slp1": "baBUiQve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "बभूवे",
+      "surface_slp1": "baBUve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "बभूइवहे",
+      "surface_slp1": "baBUivahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "बभूइमहे",
+      "surface_slp1": "baBUimahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भविता",
+      "surface_slp1": "BavitA"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवितारौ",
+      "surface_slp1": "BavitArO"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवितारः",
+      "surface_slp1": "BavitAraH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवितास्थाः",
+      "surface_slp1": "BavitAsTAH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवितासाथाम्",
+      "surface_slp1": "BavitAsATAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवितास्ध्वम्",
+      "surface_slp1": "BavitAsDvam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भवितासि",
+      "surface_slp1": "BavitAsi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भवितास्वहि",
+      "surface_slp1": "BavitAsvahi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भवितास्महि",
+      "surface_slp1": "BavitAsmahi"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भविष्यते",
+      "surface_slp1": "Bavizyate"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भविष्यआते",
+      "surface_slp1": "BavizyaAte"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भविष्यन्ते",
+      "surface_slp1": "Bavizyante"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भविष्यसे",
+      "surface_slp1": "Bavizyase"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भविष्यआथे",
+      "surface_slp1": "BavizyaATe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भविष्यध्वे",
+      "surface_slp1": "BavizyaDve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भविष्ये",
+      "surface_slp1": "Bavizye"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भविष्यावहे",
+      "surface_slp1": "BavizyAvahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भविष्यामहे",
+      "surface_slp1": "BavizyAmahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूते",
+      "surface_slp1": "BUte"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूआते",
+      "surface_slp1": "BUAte"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूअन्ते",
+      "surface_slp1": "BUante"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूसे",
+      "surface_slp1": "BUse"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूआथे",
+      "surface_slp1": "BUATe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूध्वे",
+      "surface_slp1": "BUDve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूए",
+      "surface_slp1": "BUe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूवहे",
+      "surface_slp1": "BUvahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूमहे",
+      "surface_slp1": "BUmahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभूते",
+      "surface_slp1": "aBUte"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभूआते",
+      "surface_slp1": "aBUAte"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभूअन्ते",
+      "surface_slp1": "aBUante"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभूसे",
+      "surface_slp1": "aBUse"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभूआथे",
+      "surface_slp1": "aBUATe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभूध्वे",
+      "surface_slp1": "aBUDve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभूए",
+      "surface_slp1": "aBUe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभूवहे",
+      "surface_slp1": "aBUvahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभूमहे",
+      "surface_slp1": "aBUmahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयाते",
+      "surface_slp1": "BUyAte"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयाआते",
+      "surface_slp1": "BUyAAte"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयाझे",
+      "surface_slp1": "BUyAJe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयासे",
+      "surface_slp1": "BUyAse"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयाआथे",
+      "surface_slp1": "BUyAATe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयाध्वे",
+      "surface_slp1": "BUyADve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयाए",
+      "surface_slp1": "BUyAe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयावहे",
+      "surface_slp1": "BUyAvahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयामहे",
+      "surface_slp1": "BUyAmahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयास्त",
+      "surface_slp1": "BUyAsta"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयासाताम्",
+      "surface_slp1": "BUyAsAtAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयास्झ",
+      "surface_slp1": "BUyAsJa"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयास्थाः",
+      "surface_slp1": "BUyAsTAH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयासाथाम्",
+      "surface_slp1": "BUyAsATAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयास्ध्वम्",
+      "surface_slp1": "BUyAsDvam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "भूयाः",
+      "surface_slp1": "BUyAH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "भूयास्व",
+      "surface_slp1": "BUyAsva"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "भूयास्म",
+      "surface_slp1": "BUyAsma"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभूत",
+      "surface_slp1": "aBUta"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभूवाताम्",
+      "surface_slp1": "aBUvAtAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभूवन्त",
+      "surface_slp1": "aBUvanta"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभूथाः",
+      "surface_slp1": "aBUTAH"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभूवाथाम्",
+      "surface_slp1": "aBUvATAm"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभूध्वम्",
+      "surface_slp1": "aBUDvam"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभूव्",
+      "surface_slp1": "aBUv"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभूव",
+      "surface_slp1": "aBUva"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभूम",
+      "surface_slp1": "aBUma"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभविष्यते",
+      "surface_slp1": "aBavizyate"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभविष्यआते",
+      "surface_slp1": "aBavizyaAte"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभविष्यन्ते",
+      "surface_slp1": "aBavizyante"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभविष्यसे",
+      "surface_slp1": "aBavizyase"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभविष्यआथे",
+      "surface_slp1": "aBavizyaATe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभविष्यध्वे",
+      "surface_slp1": "aBavizyaDve"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अभविष्ये",
+      "surface_slp1": "aBavizye"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अभविष्यावहे",
+      "surface_slp1": "aBavizyAvahe"
+    },
+    {
+      "dhatu": "BU",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अभविष्यामहे",
+      "surface_slp1": "aBavizyAmahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचत",
+      "surface_slp1": "pacata"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचआताम्",
+      "surface_slp1": "pacaAtAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचन्त",
+      "surface_slp1": "pacanta"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचथाः",
+      "surface_slp1": "pacaTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचआथाम्",
+      "surface_slp1": "pacaATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचध्वम्",
+      "surface_slp1": "pacaDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचइ",
+      "surface_slp1": "pacai"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचावहि",
+      "surface_slp1": "pacAvahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचामहि",
+      "surface_slp1": "pacAmahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पपाच",
+      "surface_slp1": "papAca"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पपचतुः",
+      "surface_slp1": "papacatuH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पपचुः",
+      "surface_slp1": "papacuH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पपचिथ",
+      "surface_slp1": "papaciTa"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पपचथुः",
+      "surface_slp1": "papacaTuH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पपच",
+      "surface_slp1": "papaca"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पपाच",
+      "surface_slp1": "papAca"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पपचिव",
+      "surface_slp1": "papaciva"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पपचिम",
+      "surface_slp1": "papacima"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिता",
+      "surface_slp1": "pacitA"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचितारौ",
+      "surface_slp1": "pacitArO"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचितारः",
+      "surface_slp1": "pacitAraH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचितास्थाः",
+      "surface_slp1": "pacitAsTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचितासाथाम्",
+      "surface_slp1": "pacitAsATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचितास्ध्वम्",
+      "surface_slp1": "pacitAsDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचितासि",
+      "surface_slp1": "pacitAsi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचितास्वहि",
+      "surface_slp1": "pacitAsvahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचितास्महि",
+      "surface_slp1": "pacitAsmahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिष्यत",
+      "surface_slp1": "pacizyata"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचिष्यआताम्",
+      "surface_slp1": "pacizyaAtAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचिष्यन्त",
+      "surface_slp1": "pacizyanta"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिष्यथाः",
+      "surface_slp1": "pacizyaTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचिष्यआथाम्",
+      "surface_slp1": "pacizyaATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचिष्यध्वम्",
+      "surface_slp1": "pacizyaDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिष्यइ",
+      "surface_slp1": "pacizyai"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचिष्यावहि",
+      "surface_slp1": "pacizyAvahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचिष्यामहि",
+      "surface_slp1": "pacizyAmahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचत",
+      "surface_slp1": "pacata"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचआताम्",
+      "surface_slp1": "pacaAtAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचन्त",
+      "surface_slp1": "pacanta"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचथाः",
+      "surface_slp1": "pacaTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचआथाम्",
+      "surface_slp1": "pacaATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचध्वम्",
+      "surface_slp1": "pacaDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचउ",
+      "surface_slp1": "pacau"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचावहु",
+      "surface_slp1": "pacAvahu"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचामहु",
+      "surface_slp1": "pacAmahu"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचत",
+      "surface_slp1": "apacata"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचआताम्",
+      "surface_slp1": "apacaAtAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचन्त",
+      "surface_slp1": "apacanta"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचथाः",
+      "surface_slp1": "apacaTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचआथाम्",
+      "surface_slp1": "apacaATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचध्वम्",
+      "surface_slp1": "apacaDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपच",
+      "surface_slp1": "apaca"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचाव",
+      "surface_slp1": "apacAva"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचाम",
+      "surface_slp1": "apacAma"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचेत",
+      "surface_slp1": "paceta"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचेयाताम्",
+      "surface_slp1": "paceyAtAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचेझ",
+      "surface_slp1": "paceJa"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचेथाः",
+      "surface_slp1": "paceTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचेयाथाम्",
+      "surface_slp1": "paceyATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचेध्वम्",
+      "surface_slp1": "paceDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचेय्",
+      "surface_slp1": "pacey"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचेवह्",
+      "surface_slp1": "pacevah"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचेमह्",
+      "surface_slp1": "pacemah"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्यास्त",
+      "surface_slp1": "pacyAsta"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्यासाताम्",
+      "surface_slp1": "pacyAsAtAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्यास्झ",
+      "surface_slp1": "pacyAsJa"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्यास्थाः",
+      "surface_slp1": "pacyAsTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्यासाथाम्",
+      "surface_slp1": "pacyAsATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्यास्ध्वम्",
+      "surface_slp1": "pacyAsDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्याः",
+      "surface_slp1": "pacyAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्यास्व",
+      "surface_slp1": "pacyAsva"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्यास्म",
+      "surface_slp1": "pacyAsma"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्ट",
+      "surface_slp1": "apacizwa"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिषाताम्",
+      "surface_slp1": "apacizAtAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्झ",
+      "surface_slp1": "apacizJa"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्थाः",
+      "surface_slp1": "apacizTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिषाथाम्",
+      "surface_slp1": "apacizATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्ध्वम्",
+      "surface_slp1": "apacizDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिः",
+      "surface_slp1": "apaciH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिष्वह्",
+      "surface_slp1": "apacizvah"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्मह्",
+      "surface_slp1": "apacizmah"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्यत",
+      "surface_slp1": "apacizyata"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिष्यआताम्",
+      "surface_slp1": "apacizyaAtAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्यन्त",
+      "surface_slp1": "apacizyanta"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्यथाः",
+      "surface_slp1": "apacizyaTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिष्यआथाम्",
+      "surface_slp1": "apacizyaATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्यध्वम्",
+      "surface_slp1": "apacizyaDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्य",
+      "surface_slp1": "apacizya"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिष्याव",
+      "surface_slp1": "apacizyAva"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्याम",
+      "surface_slp1": "apacizyAma"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्यते",
+      "surface_slp1": "pacyate"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्येते",
+      "surface_slp1": "pacyete"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्यन्ते",
+      "surface_slp1": "pacyante"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्यसे",
+      "surface_slp1": "pacyase"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्येथे",
+      "surface_slp1": "pacyeTe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्यध्वे",
+      "surface_slp1": "pacyaDve"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्ये",
+      "surface_slp1": "pacye"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्यावहे",
+      "surface_slp1": "pacyAvahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्यामहे",
+      "surface_slp1": "pacyAmahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पपचे",
+      "surface_slp1": "papace"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पपचाते",
+      "surface_slp1": "papacAte"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पपचिरे",
+      "surface_slp1": "papacire"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पपचिषे",
+      "surface_slp1": "papacize"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पपचाथे",
+      "surface_slp1": "papacATe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पपचिढ्वे",
+      "surface_slp1": "papaciQve"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पपचे",
+      "surface_slp1": "papace"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पपचिवहे",
+      "surface_slp1": "papacivahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पपचिमहे",
+      "surface_slp1": "papacimahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिता",
+      "surface_slp1": "pacitA"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचितारौ",
+      "surface_slp1": "pacitArO"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचितारः",
+      "surface_slp1": "pacitAraH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचितासे",
+      "surface_slp1": "pacitAse"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचितासाथे",
+      "surface_slp1": "pacitAsATe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचिताध्वे",
+      "surface_slp1": "pacitADve"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिताहे",
+      "surface_slp1": "pacitAhe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचितास्वहे",
+      "surface_slp1": "pacitAsvahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचितास्महे",
+      "surface_slp1": "pacitAsmahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिष्यते",
+      "surface_slp1": "pacizyate"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचिष्येते",
+      "surface_slp1": "pacizyete"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचिष्यन्ते",
+      "surface_slp1": "pacizyante"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिष्यसे",
+      "surface_slp1": "pacizyase"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचिष्येथे",
+      "surface_slp1": "pacizyeTe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचिष्यध्वे",
+      "surface_slp1": "pacizyaDve"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिष्ये",
+      "surface_slp1": "pacizye"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचिष्यावहे",
+      "surface_slp1": "pacizyAvahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचिष्यामहे",
+      "surface_slp1": "pacizyAmahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्यताम्",
+      "surface_slp1": "pacyatAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्येताम्",
+      "surface_slp1": "pacyetAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्यन्ताम्",
+      "surface_slp1": "pacyantAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्यस्व",
+      "surface_slp1": "pacyasva"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्येथाम्",
+      "surface_slp1": "pacyeTAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्यध्वम्",
+      "surface_slp1": "pacyaDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्यै",
+      "surface_slp1": "pacyE"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्यावहै",
+      "surface_slp1": "pacyAvahE"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्यामहै",
+      "surface_slp1": "pacyAmahE"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपच्यत",
+      "surface_slp1": "apacyata"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपच्येताम्",
+      "surface_slp1": "apacyetAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपच्यन्त",
+      "surface_slp1": "apacyanta"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपच्यथाः",
+      "surface_slp1": "apacyaTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपच्येथाम्",
+      "surface_slp1": "apacyeTAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपच्यध्वम्",
+      "surface_slp1": "apacyaDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपच्ये",
+      "surface_slp1": "apacye"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपच्यावहि",
+      "surface_slp1": "apacyAvahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपच्यामहि",
+      "surface_slp1": "apacyAmahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्येत",
+      "surface_slp1": "pacyeta"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्येयाताम्",
+      "surface_slp1": "pacyeyAtAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्येरन्",
+      "surface_slp1": "pacyeran"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्येथाः",
+      "surface_slp1": "pacyeTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्येयाथाम्",
+      "surface_slp1": "pacyeyATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्येध्वम्",
+      "surface_slp1": "pacyeDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्येयि",
+      "surface_slp1": "pacyeyi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्येवहि",
+      "surface_slp1": "pacyevahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्येमहि",
+      "surface_slp1": "pacyemahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिषीष्ट",
+      "surface_slp1": "pacizIzwa"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचिषीयास्ताम्",
+      "surface_slp1": "pacizIyAstAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचिषीरन्",
+      "surface_slp1": "pacizIran"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिषीष्टाः",
+      "surface_slp1": "pacizIzwAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचिषीयास्थाम्",
+      "surface_slp1": "pacizIyAsTAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचिषीध्वम्",
+      "surface_slp1": "pacizIDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिषीय",
+      "surface_slp1": "pacizIya"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचिषीवहि",
+      "surface_slp1": "pacizIvahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचिषीमहि",
+      "surface_slp1": "pacizImahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचि",
+      "surface_slp1": "apaci"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिषाताम्",
+      "surface_slp1": "apacizAtAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिषत",
+      "surface_slp1": "apacizata"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्ठाः",
+      "surface_slp1": "apacizWAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिषाथाम्",
+      "surface_slp1": "apacizATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिध्वम्",
+      "surface_slp1": "apaciDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिषि",
+      "surface_slp1": "apacizi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिष्वहि",
+      "surface_slp1": "apacizvahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्महि",
+      "surface_slp1": "apacizmahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्यते",
+      "surface_slp1": "apacizyate"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिष्यआते",
+      "surface_slp1": "apacizyaAte"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्यन्ते",
+      "surface_slp1": "apacizyante"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्यसे",
+      "surface_slp1": "apacizyase"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिष्यआथे",
+      "surface_slp1": "apacizyaATe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्यध्वे",
+      "surface_slp1": "apacizyaDve"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्ये",
+      "surface_slp1": "apacizye"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिष्यावहे",
+      "surface_slp1": "apacizyAvahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्यामहे",
+      "surface_slp1": "apacizyAmahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचते",
+      "surface_slp1": "pacate"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचेते",
+      "surface_slp1": "pacete"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचन्ते",
+      "surface_slp1": "pacante"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचसे",
+      "surface_slp1": "pacase"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचेथे",
+      "surface_slp1": "paceTe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचध्वे",
+      "surface_slp1": "pacaDve"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचे",
+      "surface_slp1": "pace"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचावहे",
+      "surface_slp1": "pacAvahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचामहे",
+      "surface_slp1": "pacAmahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पपचे",
+      "surface_slp1": "papace"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पपचाते",
+      "surface_slp1": "papacAte"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पपचिरे",
+      "surface_slp1": "papacire"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पपचिषे",
+      "surface_slp1": "papacize"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पपचाथे",
+      "surface_slp1": "papacATe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पपचिढ्वे",
+      "surface_slp1": "papaciQve"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पपचे",
+      "surface_slp1": "papace"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पपचिवहे",
+      "surface_slp1": "papacivahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पपचिमहे",
+      "surface_slp1": "papacimahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिता",
+      "surface_slp1": "pacitA"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचितारौ",
+      "surface_slp1": "pacitArO"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचितारः",
+      "surface_slp1": "pacitAraH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचितास्थाः",
+      "surface_slp1": "pacitAsTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचितासाथाम्",
+      "surface_slp1": "pacitAsATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचितास्ध्वम्",
+      "surface_slp1": "pacitAsDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचितासि",
+      "surface_slp1": "pacitAsi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचितास्वहि",
+      "surface_slp1": "pacitAsvahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचितास्महि",
+      "surface_slp1": "pacitAsmahi"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिष्यते",
+      "surface_slp1": "pacizyate"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचिष्यआते",
+      "surface_slp1": "pacizyaAte"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचिष्यन्ते",
+      "surface_slp1": "pacizyante"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिष्यसे",
+      "surface_slp1": "pacizyase"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचिष्यआथे",
+      "surface_slp1": "pacizyaATe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचिष्यध्वे",
+      "surface_slp1": "pacizyaDve"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचिष्ये",
+      "surface_slp1": "pacizye"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचिष्यावहे",
+      "surface_slp1": "pacizyAvahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचिष्यामहे",
+      "surface_slp1": "pacizyAmahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्ते",
+      "surface_slp1": "pacte"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचाते",
+      "surface_slp1": "pacAte"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पचन्ते",
+      "surface_slp1": "pacante"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्से",
+      "surface_slp1": "pacse"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पचाथे",
+      "surface_slp1": "pacATe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्ध्वे",
+      "surface_slp1": "pacDve"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पचे",
+      "surface_slp1": "pace"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्वहे",
+      "surface_slp1": "pacvahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्महे",
+      "surface_slp1": "pacmahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपच्ते",
+      "surface_slp1": "apacte"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचाते",
+      "surface_slp1": "apacAte"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचन्ते",
+      "surface_slp1": "apacante"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपच्से",
+      "surface_slp1": "apacse"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचाथे",
+      "surface_slp1": "apacATe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपच्ध्वे",
+      "surface_slp1": "apacDve"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचे",
+      "surface_slp1": "apace"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपच्वहे",
+      "surface_slp1": "apacvahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपच्महे",
+      "surface_slp1": "apacmahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्याते",
+      "surface_slp1": "pacyAte"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्याआते",
+      "surface_slp1": "pacyAAte"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्याझे",
+      "surface_slp1": "pacyAJe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्यासे",
+      "surface_slp1": "pacyAse"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्याआथे",
+      "surface_slp1": "pacyAATe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्याध्वे",
+      "surface_slp1": "pacyADve"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्याए",
+      "surface_slp1": "pacyAe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्यावहे",
+      "surface_slp1": "pacyAvahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्यामहे",
+      "surface_slp1": "pacyAmahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्यास्त",
+      "surface_slp1": "pacyAsta"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्यासाताम्",
+      "surface_slp1": "pacyAsAtAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्यास्झ",
+      "surface_slp1": "pacyAsJa"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्यास्थाः",
+      "surface_slp1": "pacyAsTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्यासाथाम्",
+      "surface_slp1": "pacyAsATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्यास्ध्वम्",
+      "surface_slp1": "pacyAsDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "पच्याः",
+      "surface_slp1": "pacyAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "पच्यास्व",
+      "surface_slp1": "pacyAsva"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "पच्यास्म",
+      "surface_slp1": "pacyAsma"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्ट",
+      "surface_slp1": "apacizwa"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिषाताम्",
+      "surface_slp1": "apacizAtAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्झ",
+      "surface_slp1": "apacizJa"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्थाः",
+      "surface_slp1": "apacizTAH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिषाथाम्",
+      "surface_slp1": "apacizATAm"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्ध्वम्",
+      "surface_slp1": "apacizDvam"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिः",
+      "surface_slp1": "apaciH"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिष्वह्",
+      "surface_slp1": "apacizvah"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्मह्",
+      "surface_slp1": "apacizmah"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्यते",
+      "surface_slp1": "apacizyate"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिष्यआते",
+      "surface_slp1": "apacizyaAte"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्यन्ते",
+      "surface_slp1": "apacizyante"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्यसे",
+      "surface_slp1": "apacizyase"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिष्यआथे",
+      "surface_slp1": "apacizyaATe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्यध्वे",
+      "surface_slp1": "apacizyaDve"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अपचिष्ये",
+      "surface_slp1": "apacizye"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अपचिष्यावहे",
+      "surface_slp1": "apacizyAvahe"
+    },
+    {
+      "dhatu": "paci~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अपचिष्यामहे",
+      "surface_slp1": "apacizyAmahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवति",
+      "surface_slp1": "kavati"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवतः",
+      "surface_slp1": "kavataH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवन्ति",
+      "surface_slp1": "kavanti"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवसि",
+      "surface_slp1": "kavasi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवथः",
+      "surface_slp1": "kavaTaH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवथ",
+      "surface_slp1": "kavaTa"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवामि",
+      "surface_slp1": "kavAmi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवावः",
+      "surface_slp1": "kavAvaH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवामः",
+      "surface_slp1": "kavAmaH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृकव",
+      "surface_slp1": "kfkava"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृकृवतुः",
+      "surface_slp1": "kfkfvatuH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृकृवुः",
+      "surface_slp1": "kfkfvuH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृकृविथ",
+      "surface_slp1": "kfkfviTa"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृकृवथुः",
+      "surface_slp1": "kfkfvaTuH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृकृव",
+      "surface_slp1": "kfkfva"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृकव",
+      "surface_slp1": "kfkava"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृकृविव",
+      "surface_slp1": "kfkfviva"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृकृविम",
+      "surface_slp1": "kfkfvima"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कविता",
+      "surface_slp1": "kavitA"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवितारौ",
+      "surface_slp1": "kavitArO"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवितारः",
+      "surface_slp1": "kavitAraH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवितासि",
+      "surface_slp1": "kavitAsi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवितास्थः",
+      "surface_slp1": "kavitAsTaH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवितास्थ",
+      "surface_slp1": "kavitAsTa"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवितास्मि",
+      "surface_slp1": "kavitAsmi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवितास्वः",
+      "surface_slp1": "kavitAsvaH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवितास्मः",
+      "surface_slp1": "kavitAsmaH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कविष्यति",
+      "surface_slp1": "kavizyati"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कविष्यतः",
+      "surface_slp1": "kavizyataH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कविष्यन्ति",
+      "surface_slp1": "kavizyanti"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कविष्यसि",
+      "surface_slp1": "kavizyasi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कविष्यथः",
+      "surface_slp1": "kavizyaTaH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कविष्यथ",
+      "surface_slp1": "kavizyaTa"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कविष्यामि",
+      "surface_slp1": "kavizyAmi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कविष्यावः",
+      "surface_slp1": "kavizyAvaH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कविष्यामः",
+      "surface_slp1": "kavizyAmaH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवतु",
+      "surface_slp1": "kavatu"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवताम्",
+      "surface_slp1": "kavatAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवन्तु",
+      "surface_slp1": "kavantu"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कव",
+      "surface_slp1": "kava"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवतम्",
+      "surface_slp1": "kavatam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवत",
+      "surface_slp1": "kavata"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवानि",
+      "surface_slp1": "kavAni"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवाव",
+      "surface_slp1": "kavAva"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवाम",
+      "surface_slp1": "kavAma"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकवत्",
+      "surface_slp1": "akavat"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकवताम्",
+      "surface_slp1": "akavatAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकवन्",
+      "surface_slp1": "akavan"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकवः",
+      "surface_slp1": "akavaH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकवतम्",
+      "surface_slp1": "akavatam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकवत",
+      "surface_slp1": "akavata"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकवम्",
+      "surface_slp1": "akavam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकवाव",
+      "surface_slp1": "akavAva"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकवाम",
+      "surface_slp1": "akavAma"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवेत्",
+      "surface_slp1": "kavet"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवेताम्",
+      "surface_slp1": "kavetAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवेयुः",
+      "surface_slp1": "kaveyuH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवेः",
+      "surface_slp1": "kaveH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवेतम्",
+      "surface_slp1": "kavetam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवेत",
+      "surface_slp1": "kaveta"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवेयम्",
+      "surface_slp1": "kaveyam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवेव",
+      "surface_slp1": "kaveva"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवेम",
+      "surface_slp1": "kavema"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्यात्",
+      "surface_slp1": "kfvyAt"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्यास्ताम्",
+      "surface_slp1": "kfvyAstAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्यासुः",
+      "surface_slp1": "kfvyAsuH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्याः",
+      "surface_slp1": "kfvyAH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्यास्तम्",
+      "surface_slp1": "kfvyAstam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्यास्त",
+      "surface_slp1": "kfvyAsta"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्यासम्",
+      "surface_slp1": "kfvyAsam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्यास्व",
+      "surface_slp1": "kfvyAsva"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्यास्म",
+      "surface_slp1": "kfvyAsma"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृवीत्",
+      "surface_slp1": "akfvIt"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृविष्टाम्",
+      "surface_slp1": "akfvizwAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृविषुः",
+      "surface_slp1": "akfvizuH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृवीः",
+      "surface_slp1": "akfvIH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृविष्टम्",
+      "surface_slp1": "akfvizwam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृविष्ट",
+      "surface_slp1": "akfvizwa"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृविषम्",
+      "surface_slp1": "akfvizam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृविष्व",
+      "surface_slp1": "akfvizva"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृविष्म",
+      "surface_slp1": "akfvizma"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकविष्यत्",
+      "surface_slp1": "akavizyat"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकविष्यताम्",
+      "surface_slp1": "akavizyatAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकविष्यन्",
+      "surface_slp1": "akavizyan"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकविष्यः",
+      "surface_slp1": "akavizyaH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकविष्यतम्",
+      "surface_slp1": "akavizyatam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकविष्यत",
+      "surface_slp1": "akavizyata"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकविष्यम्",
+      "surface_slp1": "akavizyam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकविष्याव",
+      "surface_slp1": "akavizyAva"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "kartari",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकविष्याम",
+      "surface_slp1": "akavizyAma"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्यते",
+      "surface_slp1": "kfvyate"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्येते",
+      "surface_slp1": "kfvyete"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्यन्ते",
+      "surface_slp1": "kfvyante"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्यसे",
+      "surface_slp1": "kfvyase"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्येथे",
+      "surface_slp1": "kfvyeTe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्यध्वे",
+      "surface_slp1": "kfvyaDve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्ये",
+      "surface_slp1": "kfvye"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्यावहे",
+      "surface_slp1": "kfvyAvahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्यामहे",
+      "surface_slp1": "kfvyAmahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृकृवे",
+      "surface_slp1": "kfkfve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृकृवाते",
+      "surface_slp1": "kfkfvAte"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृकृविरे",
+      "surface_slp1": "kfkfvire"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृकृविषे",
+      "surface_slp1": "kfkfvize"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृकृवाथे",
+      "surface_slp1": "kfkfvATe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृकृविढ्वे",
+      "surface_slp1": "kfkfviQve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृकृवे",
+      "surface_slp1": "kfkfve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृकृविवहे",
+      "surface_slp1": "kfkfvivahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृकृविमहे",
+      "surface_slp1": "kfkfvimahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कविता",
+      "surface_slp1": "kavitA"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवितारौ",
+      "surface_slp1": "kavitArO"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवितारः",
+      "surface_slp1": "kavitAraH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवितासे",
+      "surface_slp1": "kavitAse"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवितासाथे",
+      "surface_slp1": "kavitAsATe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कविताध्वे",
+      "surface_slp1": "kavitADve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कविताहे",
+      "surface_slp1": "kavitAhe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवितास्वहे",
+      "surface_slp1": "kavitAsvahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवितास्महे",
+      "surface_slp1": "kavitAsmahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृविष्यते",
+      "surface_slp1": "kfvizyate"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृविष्येते",
+      "surface_slp1": "kfvizyete"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृविष्यन्ते",
+      "surface_slp1": "kfvizyante"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृविष्यसे",
+      "surface_slp1": "kfvizyase"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृविष्येथे",
+      "surface_slp1": "kfvizyeTe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृविष्यध्वे",
+      "surface_slp1": "kfvizyaDve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृविष्ये",
+      "surface_slp1": "kfvizye"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृविष्यावहे",
+      "surface_slp1": "kfvizyAvahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृविष्यामहे",
+      "surface_slp1": "kfvizyAmahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्यताम्",
+      "surface_slp1": "kfvyatAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्येताम्",
+      "surface_slp1": "kfvyetAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्यन्ताम्",
+      "surface_slp1": "kfvyantAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्यस्व",
+      "surface_slp1": "kfvyasva"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्येथाम्",
+      "surface_slp1": "kfvyeTAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्यध्वम्",
+      "surface_slp1": "kfvyaDvam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्यै",
+      "surface_slp1": "kfvyE"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्यावहै",
+      "surface_slp1": "kfvyAvahE"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्यामहै",
+      "surface_slp1": "kfvyAmahE"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृव्यत",
+      "surface_slp1": "akfvyata"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृव्येताम्",
+      "surface_slp1": "akfvyetAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृव्यन्त",
+      "surface_slp1": "akfvyanta"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृव्यथाः",
+      "surface_slp1": "akfvyaTAH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृव्येथाम्",
+      "surface_slp1": "akfvyeTAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृव्यध्वम्",
+      "surface_slp1": "akfvyaDvam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृव्ये",
+      "surface_slp1": "akfvye"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृव्यावहि",
+      "surface_slp1": "akfvyAvahi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृव्यामहि",
+      "surface_slp1": "akfvyAmahi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्येत",
+      "surface_slp1": "kfvyeta"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्येयाताम्",
+      "surface_slp1": "kfvyeyAtAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्येरन्",
+      "surface_slp1": "kfvyeran"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्येथाः",
+      "surface_slp1": "kfvyeTAH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्येयाथाम्",
+      "surface_slp1": "kfvyeyATAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्येध्वम्",
+      "surface_slp1": "kfvyeDvam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्येयि",
+      "surface_slp1": "kfvyeyi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्येवहि",
+      "surface_slp1": "kfvyevahi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्येमहि",
+      "surface_slp1": "kfvyemahi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कविषीष्ट",
+      "surface_slp1": "kavizIzwa"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कविषीयास्ताम्",
+      "surface_slp1": "kavizIyAstAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कविषीरन्",
+      "surface_slp1": "kavizIran"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कविषीष्टाः",
+      "surface_slp1": "kavizIzwAH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कविषीयास्थाम्",
+      "surface_slp1": "kavizIyAsTAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कविषीध्वम्",
+      "surface_slp1": "kavizIDvam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कविषीय",
+      "surface_slp1": "kavizIya"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कविषीवहि",
+      "surface_slp1": "kavizIvahi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कविषीमहि",
+      "surface_slp1": "kavizImahi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृवि",
+      "surface_slp1": "akfvi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृविषाताम्",
+      "surface_slp1": "akfvizAtAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृविषत",
+      "surface_slp1": "akfvizata"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृविष्ठाः",
+      "surface_slp1": "akfvizWAH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृविषाथाम्",
+      "surface_slp1": "akfvizATAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृविध्वम्",
+      "surface_slp1": "akfviDvam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृविषि",
+      "surface_slp1": "akfvizi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृविष्वहि",
+      "surface_slp1": "akfvizvahi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृविष्महि",
+      "surface_slp1": "akfvizmahi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृविष्यते",
+      "surface_slp1": "akfvizyate"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृविष्यआते",
+      "surface_slp1": "akfvizyaAte"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृविष्यन्ते",
+      "surface_slp1": "akfvizyante"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृविष्यसे",
+      "surface_slp1": "akfvizyase"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृविष्यआथे",
+      "surface_slp1": "akfvizyaATe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृविष्यध्वे",
+      "surface_slp1": "akfvizyaDve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृविष्ये",
+      "surface_slp1": "akfvizye"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृविष्यावहे",
+      "surface_slp1": "akfvizyAvahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "karmani",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृविष्यामहे",
+      "surface_slp1": "akfvizyAmahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवते",
+      "surface_slp1": "kavate"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवेते",
+      "surface_slp1": "kavete"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवन्ते",
+      "surface_slp1": "kavante"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवसे",
+      "surface_slp1": "kavase"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवेथे",
+      "surface_slp1": "kaveTe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवध्वे",
+      "surface_slp1": "kavaDve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवे",
+      "surface_slp1": "kave"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवावहे",
+      "surface_slp1": "kavAvahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवामहे",
+      "surface_slp1": "kavAmahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृकृवे",
+      "surface_slp1": "kfkfve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृकृवाते",
+      "surface_slp1": "kfkfvAte"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृकृविरे",
+      "surface_slp1": "kfkfvire"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृकृविषे",
+      "surface_slp1": "kfkfvize"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृकृवाथे",
+      "surface_slp1": "kfkfvATe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृकृविढ्वे",
+      "surface_slp1": "kfkfviQve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृकृवे",
+      "surface_slp1": "kfkfve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृकृविवहे",
+      "surface_slp1": "kfkfvivahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृकृविमहे",
+      "surface_slp1": "kfkfvimahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कविता",
+      "surface_slp1": "kavitA"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवितारौ",
+      "surface_slp1": "kavitArO"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवितारः",
+      "surface_slp1": "kavitAraH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवितास्थाः",
+      "surface_slp1": "kavitAsTAH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवितासाथाम्",
+      "surface_slp1": "kavitAsATAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवितास्ध्वम्",
+      "surface_slp1": "kavitAsDvam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कवितासि",
+      "surface_slp1": "kavitAsi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कवितास्वहि",
+      "surface_slp1": "kavitAsvahi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कवितास्महि",
+      "surface_slp1": "kavitAsmahi"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कविष्यते",
+      "surface_slp1": "kavizyate"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कविष्यआते",
+      "surface_slp1": "kavizyaAte"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कविष्यन्ते",
+      "surface_slp1": "kavizyante"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कविष्यसे",
+      "surface_slp1": "kavizyase"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कविष्यआथे",
+      "surface_slp1": "kavizyaATe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कविष्यध्वे",
+      "surface_slp1": "kavizyaDve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कविष्ये",
+      "surface_slp1": "kavizye"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कविष्यावहे",
+      "surface_slp1": "kavizyAvahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कविष्यामहे",
+      "surface_slp1": "kavizyAmahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्ते",
+      "surface_slp1": "kfvte"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृवाते",
+      "surface_slp1": "kfvAte"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृवन्ते",
+      "surface_slp1": "kfvante"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्से",
+      "surface_slp1": "kfvse"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृवाथे",
+      "surface_slp1": "kfvATe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्ध्वे",
+      "surface_slp1": "kfvDve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृवे",
+      "surface_slp1": "kfve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्वहे",
+      "surface_slp1": "kfvvahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "loT",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्महे",
+      "surface_slp1": "kfvmahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृव्ते",
+      "surface_slp1": "akfvte"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृवाते",
+      "surface_slp1": "akfvAte"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृवन्ते",
+      "surface_slp1": "akfvante"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृव्से",
+      "surface_slp1": "akfvse"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृवाथे",
+      "surface_slp1": "akfvATe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृव्ध्वे",
+      "surface_slp1": "akfvDve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृवे",
+      "surface_slp1": "akfve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृव्वहे",
+      "surface_slp1": "akfvvahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "laG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृव्महे",
+      "surface_slp1": "akfvmahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्याते",
+      "surface_slp1": "kfvyAte"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्याआते",
+      "surface_slp1": "kfvyAAte"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्याझे",
+      "surface_slp1": "kfvyAJe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्यासे",
+      "surface_slp1": "kfvyAse"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्याआथे",
+      "surface_slp1": "kfvyAATe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्याध्वे",
+      "surface_slp1": "kfvyADve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्याए",
+      "surface_slp1": "kfvyAe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्यावहे",
+      "surface_slp1": "kfvyAvahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "liG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्यामहे",
+      "surface_slp1": "kfvyAmahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्यास्त",
+      "surface_slp1": "kfvyAsta"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्यासाताम्",
+      "surface_slp1": "kfvyAsAtAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्यास्झ",
+      "surface_slp1": "kfvyAsJa"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्यास्थाः",
+      "surface_slp1": "kfvyAsTAH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्यासाथाम्",
+      "surface_slp1": "kfvyAsATAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्यास्ध्वम्",
+      "surface_slp1": "kfvyAsDvam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "कृव्याः",
+      "surface_slp1": "kfvyAH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "कृव्यास्व",
+      "surface_slp1": "kfvyAsva"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "AsIrliG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "कृव्यास्म",
+      "surface_slp1": "kfvyAsma"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृविष्ट",
+      "surface_slp1": "akfvizwa"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृविषाताम्",
+      "surface_slp1": "akfvizAtAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृविष्झ",
+      "surface_slp1": "akfvizJa"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृविष्थाः",
+      "surface_slp1": "akfvizTAH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृविषाथाम्",
+      "surface_slp1": "akfvizATAm"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृविष्ध्वम्",
+      "surface_slp1": "akfvizDvam"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकृविः",
+      "surface_slp1": "akfviH"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकृविष्वह्",
+      "surface_slp1": "akfvizvah"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "luG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकृविष्मह्",
+      "surface_slp1": "akfvizmah"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकविष्यते",
+      "surface_slp1": "akavizyate"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकविष्यआते",
+      "surface_slp1": "akavizyaAte"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 3,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकविष्यन्ते",
+      "surface_slp1": "akavizyante"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकविष्यसे",
+      "surface_slp1": "akavizyase"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकविष्यआथे",
+      "surface_slp1": "akavizyaATe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 2,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकविष्यध्वे",
+      "surface_slp1": "akavizyaDve"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 1,
+      "status": "OK",
+      "surface_dev": "अकविष्ये",
+      "surface_slp1": "akavizye"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 2,
+      "status": "OK",
+      "surface_dev": "अकविष्यावहे",
+      "surface_slp1": "akavizyAvahe"
+    },
+    {
+      "dhatu": "kfvi~",
+      "prayoga": "bhave",
+      "lakara": "lRG",
+      "purusha": 1,
+      "vacana": 3,
+      "status": "OK",
+      "surface_dev": "अकविष्यामहे",
+      "surface_slp1": "akavizyAmahe"
+    }
+  ]
+}

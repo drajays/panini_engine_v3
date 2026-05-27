@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block title %}तिङन्त-प्रक्रिया — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block head_extra %}
+<style>
+.prk-header { display:flex; flex-wrap:wrap; align-items:baseline; gap:.75rem 1.25rem;
+  padding:1rem 1.25rem; background:var(--bg-subtle); border-left:4px solid var(--accent);
+  border-radius:6px; margin-bottom:1rem; }
+.prk-header .surface { font-family:var(--dev); font-size:2rem; color:var(--accent); }
+.prk-header .meta { font-size:.85rem; color:var(--ink-dim); line-height:1.6; }
+.prk-header .links { margin-left:auto; display:flex; gap:.5rem; flex-wrap:wrap; }
+.prk-header .links a { font-size:.8rem; padding:.25rem .6rem; border:1px solid var(--line);
+  border-radius:4px; text-decoration:none; color:var(--accent-dim); }
+.prk-header .links a:hover { background:var(--bg-panel); }
+.prk-stats { display:flex; gap:1.25rem; font-size:.82rem; color:var(--ink-dim); margin-bottom:.75rem; }
+.prk-stats b { color:var(--ink); }
+.prk-back { font-size:.85rem; margin-bottom:.5rem; }
+</style>
+{% endblock %}
+
+{% block content %}
+<p class="prk-back"><a href="/dhatufilters">← धातु-छन्दकः</a></p>
+
+<div class="prk-header" id="prk-header">
+  <div>
+    <div class="surface" id="prk-surface">…</div>
+    <div class="meta" id="prk-meta">लोड हो रहा है…</div>
+  </div>
+  <div class="links" id="prk-links"></div>
+</div>
+
+<div class="prk-stats" id="prk-stats"></div>
+
+<div class="two-pane">
+  <div class="panel">
+    <h2>प्रक्रिया</h2>
+    <div class="trace-filter" id="trace-filter">
+      <label><input type="checkbox" value="RUPA_PARIVARTANA_ONLY" checked> रूप-परिवर्तन-मात्रम्</label>
+      <label><input type="checkbox" value="APPLIED" checked> प्रयुक्तम्</label>
+      <label><input type="checkbox" value="AUDIT" checked> निरीक्षणम्</label>
+      <label><input type="checkbox" value="BLOCKED" checked> निवारितम्</label>
+      <label><input type="checkbox" value="SKIPPED"> अतिक्रान्तम्</label>
+      <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
+    </div>
+    <ol class="trace" id="trace"></ol>
+  </div>
+  <div class="panel sutra-detail" id="sutra-detail">
+    <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
+  </div>
+</div>
+{% endblock %}
+
+{% block body_extra %}
+<script src="{{ url_for('static', filename='trace.js') }}"></script>
+<script>
+const LAK_DEV = {
+  laT:"लट्", liT:"लिट्", luT:"लुट्", lRT:"लृट्", loT:"लोट्",
+  laG:"लङ्", liG:"विधिलिङ्", AsIrliG:"आशीर्लिङ्", luG:"लुङ्", lRG:"लृङ्",
+};
+const PURUSHA = {3:"प्रथमपुरुषः", 2:"मध्यमपुरुषः", 1:"उत्तमपुरुषः"};
+const VACANA  = {1:"एकवचनम्", 2:"द्विवचनम्", 3:"बहुवचनम्"};
+const PRAYOGA = {kartari:"कर्तरि", karmani:"कर्मणि", bhave:"भावे"};
+
+function qp(name, def) {
+  const v = new URLSearchParams(location.search).get(name);
+  return v != null && v !== "" ? v : def;
+}
+
+function esc(s) {
+  return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+function ashtadhyayiDhatuUrl(dhatupathaId) {
+  if (!dhatupathaId) return "https://ashtadhyayi.com/dhatu";
+  return `https://ashtadhyayi.com/dhatu/${encodeURIComponent(dhatupathaId)}?filters=gana~1`;
+}
+
+async function runPrakriya() {
+  const dhatu   = qp("dhatu", "BU");
+  const lakara  = qp("lakara", "laT");
+  const prayoga = qp("prayoga", "kartari");
+  const purusha = parseInt(qp("purusha", "3"), 10);
+  const vacana  = parseInt(qp("vacana", "1"), 10);
+
+  const r = await fetch("/api/tinanta", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({dhatu, lakara, prayoga, purusha, vacana}),
+  });
+  const d = await r.json();
+  if (d.error) {
+    document.getElementById("prk-surface").textContent = "⚠";
+    document.getElementById("prk-meta").textContent = d.error;
+    return;
+  }
+
+  const pid = d.dhatupatha_id || "";
+  document.getElementById("prk-surface").textContent = d.surface_dev || "";
+  document.getElementById("prk-meta").innerHTML =
+    `<span style="font-family:var(--dev);">${esc(d.dhatu_dev)}</span> `
+    + `<span class="mono" style="color:var(--accent);">${esc(d.dhatu_slp1)}</span>`
+    + (pid ? ` · <span class="mono">${esc(pid)}</span>` : "")
+    + `<br>${esc(LAK_DEV[lakara]||lakara)} · ${esc(PRAYOGA[prayoga]||prayoga)} · `
+    + `${esc(PURUSHA[purusha]||purusha)} · ${esc(VACANA[vacana]||vacana)}`
+    + (d.artha_en ? `<br><span style="color:var(--ink-faint);">${esc(d.artha_en)}</span>` : "");
+
+  document.getElementById("prk-links").innerHTML =
+    `<a href="${ashtadhyayiDhatuUrl(pid)}" target="_blank" rel="noopener">ashtadhyayi.com ↗</a>`
+    + `<a href="https://ambuda-org.github.io/vidyullekha/" target="_blank" rel="noopener">Vidyullekha (Vidyut) ↗</a>`
+    + `<a href="/dhatufilters?dhatu=${encodeURIComponent(pid||d.dhatu_slp1)}">धातु-छन्दकः</a>`;
+
+  const st = d.stats || {};
+  document.getElementById("prk-stats").innerHTML =
+    `<span>कुल <b>${st.total_steps||0}</b></span>`
+    + `<span>प्रयुक्त <b>${st.applied_count||0}</b></span>`
+    + `<span>निरीक्षित <b>${st.audit_count||0}</b></span>`
+    + `<span>अतिक्रान्त <b>${st.skipped_count||0}</b></span>`;
+
+  document.title = `${d.surface_dev || ""} — तिङन्त-प्रक्रिया`;
+  renderTrace(d.trace || []);
+  const first = document.querySelector(".trace-step");
+  if (first) first.click();
+}
+
+document.addEventListener("DOMContentLoaded", runPrakriya);
+</script>
+{% endblock %}

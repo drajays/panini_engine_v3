@@ -78,9 +78,7 @@ def derive_viSinanti_laT_rudhadi_P032() -> State:
     for sid in ("1.3.3", "1.3.9"):
         s = apply_rule(sid, s)
 
-    s.meta["7_1_3_jho_anta_arm"] = True
     s = apply_rule("7.1.3", s)
-    s.meta.pop("7_1_3_jho_anta_arm", None)
 
     s = apply_rule("1.1.47", s)
     s.meta["3_1_78_snam_arm"] = True

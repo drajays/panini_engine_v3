@@ -46,10 +46,14 @@ def _fired_sutra_ids(state) -> list[str]:
 
 
 def test_sutra_1_3_1_fires(bhavati_state):
-    """1.3.1 bhūvādayo dhātavaḥ must fire first to establish dhātu-saṃjñā."""
+    """1.3.1 bhūvādayo dhātavaḥ must fire early to establish dhātu-saṃjñā.
+
+    P01_samjna_dhatu_class (1.1.20, 1.1.5) now fires before 1.3.1 in the
+    tinanta pipeline (audit P2 §4.3).  1.3.1 must still precede 1.3.78.
+    """
     ids = _fired_sutra_ids(bhavati_state)
     assert "1.3.1" in ids
-    assert ids.index("1.3.1") == 0
+    assert ids.index("1.3.1") < ids.index("1.3.78")
 
 
 def test_sutra_1_3_78_fires_before_tin(bhavati_state):

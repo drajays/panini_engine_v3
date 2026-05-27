@@ -30,6 +30,8 @@ def _eligible(state: State):
             continue
         if "pada_1_4_16" in anga.tags:
             continue
+        if "bha" in anga.tags:  # 1.4.18 is apavāda: bha blocks pada re-entry
+            continue
         yield i
 
 
@@ -44,6 +46,7 @@ def act(state: State) -> State:
     new_idx: set[int] = set(prev)
     for i in _eligible(state):
         state.terms[i].tags.add("pada_1_4_17")
+        state.terms[i].tags.add("pada")        # needed for 8.2.66 pre-merge rutva
         new_idx.add(i)
     state.samjna_registry[_REGISTRY] = frozenset(new_idx)
     return state

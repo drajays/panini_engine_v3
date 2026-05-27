@@ -229,12 +229,15 @@ def apply_rule(
             prev_sutra, sutra_id,
         )
     else:
-        _append_traced_step(
-            new_state,
-            make_applied_step(
-                sutra_id, stype.name, contract["dev_label"],
-                form_before, form_after, rec.why_dev,
-            ),
-            prev_sutra, sutra_id,
+        _applied_step = make_applied_step(
+            sutra_id, stype.name, contract["dev_label"],
+            form_before, form_after, rec.why_dev,
         )
+        # P5 why_now hook: act() may set state.meta["__why_now_dev__"]
+        # (Devanāgarī string) to explain *why* the rule fires for this specific
+        # derivation state. The dispatcher lifts it out of meta and into the step.
+        _why_now = new_state.meta.pop("__why_now_dev__", None)
+        if _why_now:
+            _applied_step["why_now_dev"] = _why_now
+        _append_traced_step(new_state, _applied_step, prev_sutra, sutra_id)
     return _finish_apply_rule(prev_sutra, sutra_id, new_state)

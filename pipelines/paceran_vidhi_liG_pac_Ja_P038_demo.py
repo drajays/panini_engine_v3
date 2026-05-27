@@ -47,7 +47,7 @@ def derive_paceran_vidhi_liG_pac_Ja_P038() -> State:
     s = apply_rule("3.1.91", s)
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
 
-    s.meta["P038_3_3_161_vidhi_liG_arm"] = True
+    s.meta["3_3_161_vidhi_liG_arm"] = True
     s = apply_rule("3.3.161", s)
 
     s.meta["3_4_102_sIyuw_arm"] = True
@@ -60,7 +60,7 @@ def derive_paceran_vidhi_liG_pac_Ja_P038() -> State:
     s.meta["tin_adesha_slp1"] = "Ja"
     s = apply_rule("3.4.78", s)
 
-    s.meta["P038_3_4_105_arm"] = True
+    s.meta["3_4_105_arm"] = True
     s = apply_rule("3.4.105", s)
 
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
@@ -68,7 +68,7 @@ def derive_paceran_vidhi_liG_pac_Ja_P038() -> State:
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
 
-    s.meta["P038_7_2_79_sIyuw_s_lopa_arm"] = True
+    s.meta["7_2_79_sIyuw_s_lopa_arm"] = True
     s = apply_rule("7.2.79", s)
     s.meta["P038_6_4_105_uw_trim_arm"] = True
     s = apply_rule("6.4.105", s)

@@ -4,27 +4,24 @@
 Padaccheda: भुवः वुक् लुङ्-लिटोः
 
 For bhū in luṅ/liṭ, insert vuk (= v, after IT lopa of u and k) as an āgama
-immediately after the dhātu term. vuk's u and k are both it → only v survives.
+immediately after the dhātu term.  vuk's u and k are both it → only v survives.
 
-Engine:
-  - cond: ``state.meta.get("6_4_88_arm") is True``
-  - Find the LAST dhātu-tagged term; if the next term is already a vuk term,
-    skip (already done).
-  - act: insert a new Term(kind="agama") with varnas [v, u(it), k(it)] after
-    the dhātu term, marked so 1.3.9 removes u and k leaving only v.
-  - state.samjna_registry["6_4_88_vuk_inserted"] = True
+cond (structural — no lakāra read):
+  - dhātu upadesha is BU/BU~
+  - luṅ context: dhātu has ``aT_agama_context`` tag (set by 3.2.110)
+    OR liṭ context: an abhyāsa term is on the tape (set by 6.1.4 dvitva)
+  - vuk not already inserted
 """
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
-from phonology.varna import parse_slp1_upadesha_sequence, mk
+from phonology.varna import mk
 
 
 def _find_dhatu_index(state: State) -> int | None:
-    """Find the LAST dhātu-tagged term index."""
     for i in range(len(state.terms) - 1, -1, -1):
-        if "dhatu" in state.terms[i].tags:
+        if "dhatu" in state.terms[i].tags and "abhyasa" not in state.terms[i].tags:
             return i
     return None
 
@@ -34,30 +31,43 @@ def _already_done(state: State) -> bool:
 
 
 def _is_bhu_dhatu(state: State) -> bool:
-    """True iff primary dhātu is BU (bhū) — the rule is 'bhuvō vuk'."""
     di = _find_dhatu_index(state)
     if di is None:
         return False
-    d = state.terms[di]
-    up = (d.meta.get("upadesha_slp1") or "").strip()
+    up = (state.terms[di].meta.get("upadesha_slp1") or "").strip()
     return up in {"BU", "BU~"}
 
 
+def _luN_or_liT_context(state: State) -> bool:
+    """True for luṅ or liṭ — using structural Term tags only (no lakāra read).
+
+    luṅ: dhātu carries ``aT_agama_context`` tag (before 6.4.71 fires)
+         OR ``aT_agama_6_4_71_done`` meta (after 6.4.71 fires and consumes the tag).
+    liṭ: an ``abhyasa`` term is on the tape (set by 6.1.4 dvitva).
+    """
+    for t in state.terms:
+        if "aT_agama_context" in t.tags:       # pre-6.4.71 luṅ
+            return True
+        if t.meta.get("aT_agama_6_4_71_done"): # post-6.4.71 luṅ
+            return True
+    for t in state.terms:
+        if "abhyasa" in t.tags:                # liṭ dvitva context
+            return True
+    return False
+
+
 def cond(state: State) -> bool:
-    if not state.meta.get("6_4_88_arm"):
-        return False
     if _already_done(state):
         return False
     if not _is_bhu_dhatu(state):
         return False
+    if not _luN_or_liT_context(state):
+        return False
     di = _find_dhatu_index(state)
     if di is None:
         return False
-    # Check that the next term is not already a vuk term
-    if di + 1 < len(state.terms):
-        nxt = state.terms[di + 1]
-        if nxt.meta.get("vuk_6_4_88"):
-            return False
+    if di + 1 < len(state.terms) and state.terms[di + 1].meta.get("vuk_6_4_88"):
+        return False
     return True
 
 
@@ -66,30 +76,19 @@ def act(state: State) -> State:
     if di is None:
         return state
 
-    # Build vuk āgama: v + u(it) + k(it)
-    # vuk upadesha: v is the residue; u and k are it-markers (1.3.3 halantyam → k is it;
-    # 1.3.2/anunasika treatment: u in vuk is it by anuvṛtti from prior rules).
-    # We build varnas manually: v stays, u gets it_candidate_halantyam-style tag,
-    # k gets it_candidate_halantyam.
     v_varna = mk("v")
     u_varna = mk("u")
-    u_varna.tags.add("it_candidate_halantyam")   # u is it in vuk (1.3.3 scope)
+    u_varna.tags.add("it_candidate_halantyam")
     k_varna = mk("k")
-    k_varna.tags.add("it_candidate_halantyam")   # k is halantyam it
+    k_varna.tags.add("it_candidate_halantyam")
 
     vuk_term = Term(
         kind="agama",
         varnas=[v_varna, u_varna, k_varna],
         tags={"agama", "pratyaya"},
-        meta={
-            "upadesha_slp1": "vuk",
-            "vuk_6_4_88": True,
-        },
+        meta={"upadesha_slp1": "vuk", "vuk_6_4_88": True},
     )
-
-    # Insert after dhātu
     state.terms.insert(di + 1, vuk_term)
-    state.meta["6_4_88_arm"] = False
     state.samjna_registry["6_4_88_vuk_inserted"] = True
     return state
 
@@ -101,7 +100,7 @@ SUTRA = SutraRecord(
     text_slp1             = "Buvo vugluNliwoH",
     text_dev              = "भुवो वुग्लुङ्लिटोः",
     padaccheda_dev        = "भुवः वुक् लुङ्-लिटोः",
-    why_dev               = "भू-धातोः लुङि लिटि च वुक्-आगमः; वुकः उ-क् इत्-लोपे केवलं व् अवशिष्यते।",
+    why_dev               = "भू-धातोः लुङि लिटि च वुक्-आगमः।",
     anuvritti_from        = ('6.1.1',),
     cond                  = cond,
     act                   = act,

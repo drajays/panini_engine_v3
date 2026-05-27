@@ -28,7 +28,7 @@ def derive_muYcati() -> State:
         kind="prakriti",
         varnas=parse_slp1_upadesha_sequence("muci~"),
         tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": "muci~"},
+        meta={"upadesha_slp1": "muci~", "gana": 6},
     )
     s = State(terms=[dhatu], meta={}, trace=[])
 
@@ -54,10 +54,8 @@ def derive_muYcati() -> State:
     s.terms.append(laT)
     s = P00_tip_to_ti(s)
 
-    # tudādi vikaraṇa Sa, then num on muc before Sa.
-    s.meta["3_1_77_sa_arm"] = True
+    # tudādi vikaraṇa Sa — cond checks gana==6 + no existing Śa.
     s = apply_rule("3.1.77", s)
-    s.meta.pop("3_1_77_sa_arm", None)
     # it-lopa on Sa: laśakvataddhite (S it) → tasya lopaḥ.
     s = apply_rule("1.3.8", s)
     s = apply_rule("1.3.9", s)
