@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.2.5",
+  "sk_number": 2242,
+  "text": {
+    "dev": "असंयोगाल्लिट् कित्",
+    "slp1": "asaMyogAlliw kit",
+    "padaccheda": {
+      "dev": "असंयोगात् · लिट् · कित्",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "**अपित्** ← १.२.४",
+    "anuvrtti_pada": "12004: अपित्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**Liṭ** **tiṅ** **kit** when first **dhātu** ``Term.text`` has no final **saṃyoga** (trailing **hal** run length under 2 per **1.1.7**). ``atidesha_1_2_5_lit_kit``; **kit** tag. Requires ``env.lakara`` or ``ting_row.lakara`` **liT**."
+  },
+  "downstream": {
+    "next_sutra": "1.2.6",
+    "previous_sutra": "1.2.4",
+    "next_effect": null,
+    "note": "Marks **liṭ** **tiṅ** **kit** for **it**/**kṅiti** (e.g. **1.1.5**) when stem-final cluster is absent."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "बिभिदतुः",
+      "alt_dev": "बिभिदुः",
+      "raw": "बिभिदतुः, बिभिदुः",
+      "source": "Kashika 1.2.5",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "चिच्छिदतुः",
+      "alt_dev": "चिच्छिदुः",
+      "raw": "चिच्छिदतुः, चिच्छिदुः",
+      "source": "Kashika 1.2.5",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ईजतुः",
+      "alt_dev": "ईजुः",
+      "raw": "ईजतुः, ईजुः",
+      "source": "Kashika 1.2.5",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "असंयोगादिति किम्? सस्रंसे",
+      "alt_dev": null,
+      "raw": "असंयोगादिति किम्? सस्रंसे",
+      "source": "Kashika 1.2.5",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "**Liṭ** is **kit** when the **aṅga** does not end in **saṃyoga** (no final consonant cluster).",
+    "sa": "असंयोगाद् अङ्गात् लिट् प्रत्ययः कित् संज्ञकः।"
+  },
+  "authority": {
+    "kashika_ref": "1.2.5",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.2.6",
+    "test_file": "tests/test_sutra_1_2_5.py",
+    "notes": null,
+    "condition_key": "cond_1_2_5",
+    "action_key": "act_1_2_5"
+  }
+}

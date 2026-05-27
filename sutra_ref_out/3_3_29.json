@@ -1,0 +1,125 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "3.3.29",
+  "sk_number": 3200,
+  "text": {
+    "dev": "उन्न्योर्ग्रः",
+    "slp1": "unnyorgraH",
+    "padaccheda": {
+      "dev": "उत्-न्योः ग्रः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 33016: घञ् | 33018: भावे | 33019: अकर्तरि च कारके संज्ञायाम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M03",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "3.3.30",
+    "previous_sutra": "3.3.28",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उद्गारः समुद्रस्य",
+      "alt_dev": null,
+      "raw": "उद्गारः समुद्रस्य",
+      "source": "Kashika 3.3.29",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "निगारो देवदत्तस्य",
+      "alt_dev": null,
+      "raw": "निगारो देवदत्तस्य",
+      "source": "Kashika 3.3.29",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उन्न्योरिति किम्? गरः",
+      "alt_dev": null,
+      "raw": "उन्न्योरिति किम्? गरः",
+      "source": "Kashika 3.3.29",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "3.3.29",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "stub",
+    "similar_sutra": "3.3.30",
+    "test_file": "tests/test_sutra_3_3_29.py",
+    "notes": null,
+    "condition_key": "cond_3_3_29",
+    "action_key": "act_3_3_29"
+  }
+}

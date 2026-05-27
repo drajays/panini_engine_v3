@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.3",
+  "sk_number": 266,
+  "text": {
+    "dev": "यू स्त्र्याख्यौ नदी",
+    "slp1": "yU stryAKyO nadI",
+    "padaccheda": {
+      "dev": "यू · स्त्र्याख्यौ · नदी",
+      "slp1": "yU · stryAKyO · nadI",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": "1.4.1",
+    "anuvritta_note": null,
+    "anuvrtti_pada": null,
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Saṃjñā: ī/ū-ending strī-ākhyā words are called nadī."
+  },
+  "downstream": {
+    "next_sutra": "1.4.4",
+    "previous_sutra": "1.4.2",
+    "next_effect": null,
+    "note": "Subanta/tinanta downstream: enables nadī-specific operations (e.g., 7.3.112 āṇ-nadyāḥ) when linga is strī and the stem is ī/ū-anta."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अविभक्तिकोऽय निर्देशः",
+      "alt_dev": null,
+      "raw": "अविभक्तिकोऽय निर्देशः",
+      "source": "Kashika 1.4.3",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "स्त्रियमाचक्षाते स्त्र्याख्यौ",
+      "alt_dev": null,
+      "raw": "स्त्रियमाचक्षाते स्त्र्याख्यौ",
+      "source": "Kashika 1.4.3",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "मूलविभुजादिदर्शनात् (३.२.५ वा०) कप्रत्ययः",
+      "alt_dev": null,
+      "raw": "मूलविभुजादिदर्शनात् (३.२.५ वा०) कप्रत्ययः",
+      "source": "Kashika 1.4.3",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ईकारान्तम् — कुमारी",
+      "alt_dev": null,
+      "raw": "ईकारान्तम् — कुमारी",
+      "source": "Kashika 1.4.3",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "The feminine words ending in ī or ū are called nadī.",
+    "sa": "ईकारान्त-ऊकारान्तं स्त्र्याख्यं शब्दरूपं नदी-संज्ञं भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.3",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.4",
+    "test_file": "tests/test_sutra_1_4_3.py",
+    "notes": "Kāśikā: ‘ईकारान्तम् ऊकारान्तं च स्त्र्याख्यं शब्दरूपं नदीसंज्ञं भवति।’ (ex: कुमारी, गौरी; ब्रह्मवन्धूः, यवागूः; excludes मात्रे, दुहित्रे).",
+    "condition_key": "cond_1_4_3",
+    "action_key": "act_1_4_3"
+  }
+}

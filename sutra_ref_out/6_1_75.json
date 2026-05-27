@@ -1,0 +1,162 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "6.1.75",
+  "sk_number": 148,
+  "text": {
+    "dev": "दीर्घात्",
+    "slp1": "dIrGAt",
+    "padaccheda": {
+      "dev": "दीर्घात्",
+      "slp1": "dIrGAt",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "6.1.73",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "6.1.72",
+    "anuvritta_note": null,
+    "anuvrtti_pada": "61071: तुक् | 61072: संहितायाम् | 61073: छे",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M06",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Implemented at a term boundary: dīrgha-vowel-ending + छ-initial → append “त्” to the left term (tuk insertion stage)."
+  },
+  "downstream": {
+    "next_sutra": "6.1.76",
+    "previous_sutra": "6.1.74",
+    "next_effect": null,
+    "note": "To derive forms like ह्रीच्छति and म्लेच्छति by inserting tuk before छ after a long vowel under saṃhitā."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "{'source': 'Kashika (SanskritDocuments) 6.1.75'",
+      "alt_dev": "'example_dev': 'ह्रीच्छति; म्लेच्छति', 'note': 'Engine test asserts the tuk insertion stage: ई + छति → ईत्छति (later → ईच्छति).'}",
+      "raw": "{'source': 'Kashika (SanskritDocuments) 6.1.75', 'example_dev': 'ह्रीच्छति; म्लेच्छति', 'note': 'Engine test asserts the tuk insertion stage: ई + छति → ईत्छति (later → ईच्छति).'}",
+      "source": "Kashika 6.1.75",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "{'source': 'Kashika (SanskritDocuments) 6.1.75'",
+      "alt_dev": "'example_dev': 'अपचाच्छायते; विचाच्छायते', 'note': 'Long vowel (आ) before छ triggers tuk.'}",
+      "raw": "{'source': 'Kashika (SanskritDocuments) 6.1.75', 'example_dev': 'अपचाच्छायते; विचाच्छायते', 'note': 'Long vowel (आ) before छ triggers tuk.'}",
+      "source": "Kashika 6.1.75",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ह्रीच्छति",
+      "alt_dev": null,
+      "raw": "ह्रीच्छति",
+      "source": "Kashika 6.1.75",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "म्लेच्छति",
+      "alt_dev": null,
+      "raw": "म्लेच्छति",
+      "source": "Kashika 6.1.75",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अपचाच्छायते",
+      "alt_dev": null,
+      "raw": "अपचाच्छायते",
+      "source": "Kashika 6.1.75",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "विचाच्छायते",
+      "alt_dev": null,
+      "raw": "विचाच्छायते",
+      "source": "Kashika 6.1.75",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Continuing the tuk-āgama rule: when छ follows after a long vowel (dīrgha) in saṃhitā, tuk occurs on that long vowel.",
+    "sa": "छे तुक् इति अनुवर्तते। दीर्घात् परतः छकारे, पूर्वस्य तस्य एव दीर्घस्य तुगागमो भवति।"
+  },
+  "authority": {
+    "kashika_ref": "6.1.75",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "6.1.76",
+    "test_file": "tests/test_sutra_6_1_75.py",
+    "notes": null,
+    "condition_key": "cond_6_1_75",
+    "action_key": "act_6_1_75"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.3.103",
+  "sk_number": 3640,
+  "text": {
+    "dev": "युष्मत्तत्ततक्षुःष्वन्तःपादम्",
+    "slp1": "yuzmattattatakzuHzvantaHpAdam",
+    "padaccheda": {
+      "dev": "युष्मत्-त्द्-ततक्षुःषु अन्तः-पादम्",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "82108: संहितायाम् | 83055: मूर्धन्यः | 83056: सः | 83057: इण्कोः | 83058: नुम्विसर्जनीयशर्व्यवायेऽपि | 83101: तादौ",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "8.3.104",
+    "previous_sutra": "8.3.102",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "युष्मदादेशास्त्वम्",
+      "alt_dev": "त्वाम्, ते, तव",
+      "raw": "युष्मदादेशास्त्वम्, त्वाम्, ते, तव",
+      "source": "Kashika 8.3.103",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अग्निष्ट्वं  नामासीत्",
+      "alt_dev": null,
+      "raw": "अग्निष्ट्वं  नामासीत्",
+      "source": "Kashika 8.3.103",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "त्वा — अग्निष्ट्वा वर्धयामसि",
+      "alt_dev": null,
+      "raw": "त्वा — अग्निष्ट्वा वर्धयामसि",
+      "source": "Kashika 8.3.103",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ते — अग्निष्टे विश्वमानय",
+      "alt_dev": null,
+      "raw": "ते — अग्निष्टे विश्वमानय",
+      "source": "Kashika 8.3.103",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "8.3.103",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "stub",
+    "similar_sutra": "8.3.104",
+    "test_file": "tests/test_sutra_8_3_103.py",
+    "notes": null,
+    "condition_key": "cond_8_3_103",
+    "action_key": "act_8_3_103"
+  }
+}

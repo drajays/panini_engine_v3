@@ -88,8 +88,6 @@ def _find_kim_qati(state: State) -> bool:
 
 def _find_p005_b_jan_before_dit_a(state: State) -> int | None:
     """``jan`` + *ḍit* remainder ``a`` → index of the *jan* ``Term``."""
-    if not state.meta.get(META_P005_B_143):
-        return None
     if state.meta.get(META_P005_B_143_DONE):
         return None
     for i in range(len(state.terms) - 1):

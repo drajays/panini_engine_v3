@@ -27,8 +27,6 @@ def _lit_index(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("corrected_v2_P014_3_1_36_am_arm"):
-        return False
     if not state.meta.get("lakara_liT"):
         return False
     li = _lit_index(state)
@@ -59,7 +57,6 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "Am"},
     )
     state.terms.insert(li, am)
-    state.meta.pop("corrected_v2_P014_3_1_36_am_arm", None)
     return state
 
 

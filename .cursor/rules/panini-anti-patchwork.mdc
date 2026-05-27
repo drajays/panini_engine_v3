@@ -1,0 +1,86 @@
+---
+description: Pāṇini engine — anti-patchwork enforcement (no new _arm gates, no _corrected_ pipelines)
+globs:
+  - "sutras/**/*.py"
+  - "pipelines/**/*.py"
+  - "core/**/*.py"
+alwaysApply: false
+---
+
+# Anti-patchwork enforcement
+
+Supreme law: **`CONSTITUTION.md` Article 13 (hardened)** and **Article 12
+(reinforced)** — both updated by `docs/AMENDMENT_14.md`.
+
+## Hard refusals
+
+### 1. No new `_arm`-gated `cond()` in `sutras/`
+
+A `cond()` in `sutras/**/*.py` may NOT read `state.meta[K]` where
+`K` ends in `_arm` or matches `(?i)(corrected_v[0-9]+|P[0-9]+(_|$))`.
+
+Existing reads are grandfathered. Any commit that **increases** the
+total `_arm` read count in `sutras/` fails CI via
+`tests/constitutional/test_no_new_arm_gates.py`.
+
+### 2. No new `_arm` writes in `pipelines/` or `core/` unless net-zero
+
+A pipeline or core file may add a new `state.meta["..._arm"] = ...`
+write ONLY if the same commit removes another `_arm` write. Net
+change must be ≤ 0.
+
+### 3. No `_corrected_*` pipeline files
+
+A new file under `pipelines/` may NOT be created with `_corrected_`
+or `_corrected_P` in its filename. The substring implies the
+canonical pipeline is wrong; fix the canonical pipeline instead.
+
+Existing `_corrected_*` files are tracked for cleanup in
+`audit_cursor.md` §6 (P4).
+
+### 4. No surface-string fingerprints in `cond()`
+
+A `cond()` may NOT compare against a hardcoded Devanāgarī or SLP1
+string that names a single example word (e.g.
+`if t.flat_slp1() == "rAma": ...`). Use phonological / structural /
+saṃjñā-registry predicates only.
+
+### 5. No reads of `(vibhakti, vacana)`, `lakāra`, etc. in sūtra `cond()`
+
+Article 2 forbids; this rule restates for visibility. The single
+permitted exception is `4.1.2`'s own `act()`, which IS the rule that
+maps paradigm coordinates to upadeśa.
+
+## What to do instead
+
+Replace `_arm` gates with:
+
+- **Term tags**: `term.tags.add("samasa_pending")` set by the recipe;
+  the sūtra reads `if any("samasa_pending" in t.tags for t in state.terms)`.
+- **Saṃjñā registry presence**: `state.samjna_registry.get("ghu")` —
+  the sūtra reads from the registry only.
+- **Phonological predicates**: aṅga-final vowel class, presence of
+  IK/HAL/AC at a given position, term-boundary shapes.
+- **Adhikāra stack**: `any(e["id"] == "2.1.3" for e in state.adhikara_stack)`
+  for "inside samāsa scope".
+
+Replace `_corrected_*demo.py` with:
+
+- Fix the canonical pipeline.
+- Delete the corrected duplicate.
+- Update tests to point at the canonical entry.
+
+See `audit_cursor.md` §5 (P3 migration template) for the per-sūtra
+migration procedure.
+
+## Refusal protocol
+
+When asked to add code that matches any hard refusal above, STOP and:
+
+1. Quote the relevant article (e.g. "CONSTITUTION Art. 13 §1
+   forbids new `_arm` gates").
+2. Propose the structural replacement (tag / registry / predicate).
+3. Ask the user to confirm the replacement OR to open an Amendment
+   under Art. 10 if they believe the rule itself should change.
+
+Do not silently add the patchwork "just to make the test pass."

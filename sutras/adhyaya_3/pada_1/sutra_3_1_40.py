@@ -17,8 +17,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _site(state: State) -> bool:
-    if not state.meta.get("corrected_v2_P014_3_1_40_anuprayoga_arm"):
-        return False
     if not state.terms:
         return False
     t = state.terms[-1]
@@ -50,7 +48,6 @@ def act(state: State) -> State:
     if lit.varnas and lit.varnas[-1].slp1 == "T":
         del lit.varnas[-1]
     state.terms.extend([kf, lit])
-    state.meta.pop("corrected_v2_P014_3_1_40_anuprayoga_arm", None)
     return state
 
 

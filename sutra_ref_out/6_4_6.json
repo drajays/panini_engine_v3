@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "6.4.6",
+  "sk_number": 283,
+  "text": {
+    "dev": "नृ च",
+    "slp1": "nf ca",
+    "padaccheda": {
+      "dev": "नृ (लुप्तषष्ठ्यन्तनिर्देशः) च",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "63111: दीर्घः | 64001: अङ्गस्य | 64003: नामि | 64005: छन्दस्युभयथा",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M06",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "6.4.7",
+    "previous_sutra": "6.4.5",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "त्वं नृणां (पै० सं० २.१०.४) नृपते",
+      "alt_dev": null,
+      "raw": "त्वं नृणां (पै० सं० २.१०.४) नृपते",
+      "source": "Kashika 6.4.6",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "त्वं नृ॒णां नृ॑पते (ऋ० २.१.१)",
+      "alt_dev": null,
+      "raw": "त्वं नृ॒णां नृ॑पते (ऋ० २.१.१)",
+      "source": "Kashika 6.4.6",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "केचिदत्र छन्दसीति नानुवर्तयन्ति",
+      "alt_dev": null,
+      "raw": "केचिदत्र छन्दसीति नानुवर्तयन्ति",
+      "source": "Kashika 6.4.6",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तेन भाषायामपि विकल्पो भवति",
+      "alt_dev": null,
+      "raw": "तेन भाषायामपि विकल्पो भवति",
+      "source": "Kashika 6.4.6",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "6.4.6",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "6.4.7",
+    "test_file": "tests/test_sutra_6_4_6.py",
+    "notes": null,
+    "condition_key": "cond_6_4_6",
+    "action_key": "act_6_4_6"
+  }
+}

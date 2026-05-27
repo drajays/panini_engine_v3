@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "2.4.1",
+  "sk_number": 731,
+  "text": {
+    "dev": "द्विगुरेकवचनम्",
+    "slp1": "dvigurekavacanam",
+    "padaccheda": {
+      "dev": "द्विगुः एकवचनम्",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": null,
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M02",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "2.4.2",
+    "previous_sutra": "2.3.73",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "एकस्य वचनमेकवचनम्",
+      "alt_dev": null,
+      "raw": "एकस्य वचनमेकवचनम्",
+      "source": "Kashika 2.4.1",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "एकस्यार्थस्य वाचको भवतीत्यर्थः",
+      "alt_dev": null,
+      "raw": "एकस्यार्थस्य वाचको भवतीत्यर्थः",
+      "source": "Kashika 2.4.1",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "समाहारद्विगोश्चेदं ग्रहणम्",
+      "alt_dev": "नान्यस्य",
+      "raw": "समाहारद्विगोश्चेदं ग्रहणम्, नान्यस्य",
+      "source": "Kashika 2.4.1",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पञ्च पूलाः समाहृताः पञ्चपूली",
+      "alt_dev": null,
+      "raw": "पञ्च पूलाः समाहृताः पञ्चपूली",
+      "source": "Kashika 2.4.1",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "2.4.1",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "2.4.2",
+    "test_file": "tests/test_sutra_2_4_1.py",
+    "notes": null,
+    "condition_key": "cond_2_4_1",
+    "action_key": "act_2_4_1"
+  }
+}

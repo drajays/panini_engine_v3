@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "7.1.9",
+  "sk_number": 203,
+  "text": {
+    "dev": "अतो भिस ऐस्",
+    "slp1": "ato Bisa Es",
+    "padaccheda": {
+      "dev": "अतः भिस ऐस्",
+      "slp1": "ato · Bisa · Es",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "64001: अङ्गस्य",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "F",
+    "module": "M07",
+    "prakarana": "subanta",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "7.1.10",
+    "previous_sutra": "7.1.8",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वृक्षैः",
+      "alt_dev": null,
+      "raw": "वृक्षैः",
+      "source": "Kashika 7.1.9",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्लक्षैः",
+      "alt_dev": null,
+      "raw": "प्लक्षैः",
+      "source": "Kashika 7.1.9",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अतिजरसैः",
+      "alt_dev": null,
+      "raw": "अतिजरसैः",
+      "source": "Kashika 7.1.9",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "इति जरशब्दस्य जरसादेशः",
+      "alt_dev": null,
+      "raw": "इति जरशब्दस्य जरसादेशः",
+      "source": "Kashika 7.1.9",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "7.1.9",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "7.1.10",
+    "test_file": "tests/test_sutra_7_1_9.py",
+    "notes": null,
+    "condition_key": "cond_7_1_9",
+    "action_key": "act_7_1_9"
+  },
+  "new_constitution_blind_template": {
+    "text_dev": "अतो भिस ऐस्",
+    "padaccheda_dev": "अतः (पञ्चमी) भिसः (षष्ठी) ऐस् (प्रथमा)",
+    "op_type": "ADESA",
+    "why_dev": "अ-कारान्त-अङ्गात् परस्य भिस्-प्रत्ययस्य 'ऐस्' आदेशः",
+    "action": {
+      "replace_pratyaya_with": [
+        {
+          "slp1": "E",
+          "dev": "ऐ",
+          "tags": []
+        },
+        {
+          "slp1": "s",
+          "dev": "स्",
+          "tags": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.3.8",
+  "sk_number": 195,
+  "text": {
+    "dev": "लशक्वतद्धिते",
+    "slp1": "laSakvatadDite",
+    "padaccheda": {
+      "dev": "लशक्व · अतद्धिते",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "1.3.2",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "1.3.7",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": null,
+    "anuvritta_note": "Blocks 1.3.7 in the taddhita sub-context; carries upadeśa/it context from 1.3.2 and initial/pratyaya scope from 1.3.7.",
+    "anuvrtti_pada": "13002: उपदेशे इत् | 13005: आदिः | 13006: प्रत्ययस्य",
+    "from_chain": {
+      "inherited_words_dev": [
+        "उपदेशे",
+        "इत्"
+      ],
+      "inherited_words_en": [
+        "in upadeśa",
+        "it-marker"
+      ],
+      "scope_condition": "NOT taddhita context (excludes taddhita pratyayas)",
+      "anuvritta_from_chain": [
+        "1.3.2",
+        "1.3.7"
+      ]
+    }
+  },
+  "classification": {
+    "phase": "B",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": "1.3.7",
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Pratiṣedha (apavāda of 1.3.7): in taddhita-context, initial la/śa/kv (lashakvat) are not marked as it by 1.3.7 (चुटू)."
+  },
+  "downstream": {
+    "next_sutra": "1.3.9",
+    "previous_sutra": "1.3.7",
+    "next_effect": null,
+    "note": "It-prakaraṇa: prevents over-marking of taddhita affixes as it under the cuṭū rule."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "लकार —   — चयनम्",
+      "alt_dev": null,
+      "raw": "लकार —   — चयनम्",
+      "source": "Kashika 1.3.8",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "जयनम्",
+      "alt_dev": null,
+      "raw": "जयनम्",
+      "source": "Kashika 1.3.8",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "शकार —   — भवति",
+      "alt_dev": null,
+      "raw": "शकार —   — भवति",
+      "source": "Kashika 1.3.8",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पचति",
+      "alt_dev": null,
+      "raw": "पचति",
+      "source": "Kashika 1.3.8",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "In non-taddhita contexts, initial la/śa/kv may be it (per 1.3.7); but in taddhita, they are not (1.3.7 is blocked).",
+    "sa": "तद्धिते लशक्व (आदौ) न इत्संज्ञकाः — १.३.७ निषिध्यते।"
+  },
+  "authority": {
+    "kashika_ref": "1.3.8",
+    "jijnasu_ref": "Vol.1 p.52",
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.3.9",
+    "test_file": "tests/test_sutra_1_3_8.py",
+    "notes": null,
+    "condition_key": "cond_1_3_8",
+    "action_key": "act_1_3_8"
+  },
+  "new_constitution_blind_template": {
+    "text_dev": "लशक्वतद्धिते",
+    "padaccheda_dev": "ल-श-कु अतद्धिते",
+    "op_type": "SAMJNA",
+    "why_dev": "अ-तद्धित-प्रत्ययस्य आदौ ल्/श्/कु-वर्ग → इत्-संज्ञा",
+    "trigger_slp1_set": [
+      "G",
+      "K",
+      "N",
+      "S",
+      "g",
+      "k",
+      "l"
+    ]
+  }
+}

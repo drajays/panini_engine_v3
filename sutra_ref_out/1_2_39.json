@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.2.39",
+  "sk_number": 3668,
+  "text": {
+    "dev": "स्वरितात् संहितायामनुदात्तानाम्",
+    "slp1": "svaritAt saMhitAyAmanudAttAnAm",
+    "padaccheda": {
+      "dev": "स्वरितात् · संहितायाम् · अनुदात्तानाम्",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "**एकश्रुति** ← १.२.३३; **स्वरित** · **संहिता** · **अनुदात्त**",
+    "anuvrtti_pada": "12033: एकश्रुति | 12031: स्वरित",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**Vidhi**: from **svarita** (**svaritāt**), in **saṃhitā** (continuous junction text), the **anudātta** syllables (**anudāttānām**) fall under this accent span — **ekaśruti**-chain continuation (**1.2.33**). Silico: ``Environment.svaritAt_saMhitA_anudAttAnAm_1_2_39`` **True** after this rule is applied."
+  },
+  "downstream": {
+    "next_sutra": "1.2.40",
+    "previous_sutra": "1.2.38",
+    "next_effect": null,
+    "note": "Links **svarita** onset to following **anudātta** loci when parsing **saṃhitā**-style continuous form under **ekaśruti**."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "माण॑वक जटिलकाध्यापक॒ क्व॑ गमिष्यसि",
+      "alt_dev": null,
+      "raw": "माण॑वक जटिलकाध्यापक॒ क्व॑ गमिष्यसि",
+      "source": "Kashika 1.2.39",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तत्पुनर्   (८.४.६६) इति स्वरितं संपद्यते",
+      "alt_dev": null,
+      "raw": "तत्पुनर्   (८.४.६६) इति स्वरितं संपद्यते",
+      "source": "Kashika 1.2.39",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सर्व एत आमन्त्रितनिघातेनानुदात्ताः",
+      "alt_dev": null,
+      "raw": "सर्व एत आमन्त्रितनिघातेनानुदात्ताः",
+      "source": "Kashika 1.2.39",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "संहिताग्रहणं किम्? अवग्रहे मा भूत् — इ॒मं",
+      "alt_dev": null,
+      "raw": "संहिताग्रहणं किम्? अवग्रहे मा भूत् — इ॒मं",
+      "source": "Kashika 1.2.39",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "From **svarita**, in **saṃhitā**, (the rule applies to) **anudātta** syllables — accent domain after **svarita** in connected recitation.",
+    "sa": "संहितायां स्वरितात् अनुदात्तानां स्वरविधिः।"
+  },
+  "authority": {
+    "kashika_ref": "1.2.39",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.2.40",
+    "test_file": "tests/test_sutra_1_2_39.py",
+    "notes": null,
+    "condition_key": "cond_1_2_39",
+    "action_key": "act_1_2_39"
+  }
+}

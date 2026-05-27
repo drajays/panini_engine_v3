@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.4.40",
+  "sk_number": 111,
+  "text": {
+    "dev": "स्तोः श्चुना श्चुः",
+    "slp1": "stoH ScunA ScuH",
+    "padaccheda": {
+      "dev": "स्तोः · श्चुना · श्चुः",
+      "slp1": "stoH · ScunA · ScuH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "82108: संहितायाम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "tripadi",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "8.4.41",
+    "previous_sutra": "8.4.39",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वृक्षश्शेते",
+      "alt_dev": null,
+      "raw": "वृक्षश्शेते",
+      "source": "Kashika 8.4.40",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तच्शेते",
+      "alt_dev": null,
+      "raw": "तच्शेते",
+      "source": "Kashika 8.4.40",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "In saṃhitā (tripāḍī), a dental s or dental t-varga consonant (त् थ् द् ध् न्) followed by a ścu consonant (श् च् छ् ज् झ् ञ्) is replaced by the corresponding palatal (स्→श्, त्→च्, थ्→छ्, द्→ज्, ध्→झ्, न्→ञ्).",
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "8.4.40",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "8.4.41",
+    "test_file": "tests/test_sutra_8_4_40.py",
+    "notes": "Tripāḍī saṃhitā: stoḥ (s/t-varga) palatalizes before ścu.",
+    "condition_key": "cond_8_4_40",
+    "action_key": "act_8_4_40"
+  }
+}

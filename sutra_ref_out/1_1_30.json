@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.1.30",
+  "sk_number": 223,
+  "text": {
+    "dev": "तृतीयासमासे",
+    "slp1": "tftIyAsamAse",
+    "padaccheda": {
+      "dev": "तृतीया-समासे ७/१",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "अनुवृत्तिः **सर्वनामानि** (१.१.२७), **न** (१.१.२९)।",
+    "anuvrtti_pada": "11027: सर्वादीनि सर्वनामानि | 11029: न",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "samasa",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": "1.1.27",
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Anuvṛtti **न सर्वनामानि** (१.१.२७ + १.१.२९): sarvādi not **sarvanāma** in **tṛtīyā-tatpuruṣa**. Meta: ``tftIya_samasa`` True or ``purvapada_vibhakti`` 3. Effective predicate ``is_sarvanama_term_1_1_27_30``."
+  },
+  "downstream": {
+    "next_sutra": "1.1.31",
+    "previous_sutra": "1.1.29",
+    "next_effect": null,
+    "note": "Sarvanāma-only sandhi and subanta rules skip sarvādi in instrumental dependent compounds"
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पाण्डुना रङ्गः",
+      "alt_dev": null,
+      "raw": "पाण्डुना रङ्गः",
+      "source": "Kashika 1.1.30",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "गङ्गया पतिः",
+      "alt_dev": null,
+      "raw": "गङ्गया पतिः",
+      "source": "Kashika 1.1.30",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "मासपूर्वाय",
+      "alt_dev": null,
+      "raw": "मासपूर्वाय",
+      "source": "Kashika 1.1.30",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "संवत्सरपूर्वाय",
+      "alt_dev": null,
+      "raw": "संवत्सरपूर्वाय",
+      "source": "Kashika 1.1.30",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "द्व्यहपूर्वाय",
+      "alt_dev": null,
+      "raw": "द्व्यहपूर्वाय",
+      "source": "Kashika 1.1.30",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "त्र्यहपूर्वाय",
+      "alt_dev": null,
+      "raw": "त्र्यहपूर्वाय",
+      "source": "Kashika 1.1.30",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Niyama on 1.1.27 (with **न** from 1.1.29): **sarvanāma** does not apply to sarvādi members in a compound whose prior member stands in the **third case** (tṛtīyā-tatpuruṣa).",
+    "sa": "तृतीयातत्पुरुषसमासे सर्वादयः सर्वनामसंज्ञां न लभन्ते।"
+  },
+  "authority": {
+    "kashika_ref": "1.1.30",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.1.31",
+    "test_file": "tests/test_sutra_1_1_30.py",
+    "notes": null,
+    "condition_key": "cond_1_1_30",
+    "action_key": "act_1_1_30"
+  }
+}

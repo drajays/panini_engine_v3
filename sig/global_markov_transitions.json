@@ -102,7 +102,7 @@
       "1.1.10": 1.0
     },
     "1.2.41": {
-      "6.4.1": 1.0
+      "6.1.68": 1.0
     },
     "1.2.45": {
       "1.1.27": 1.0
@@ -147,7 +147,7 @@
       "1.4.13": 1.0
     },
     "1.4.110": {
-      "8.2.66": 1.0
+      "8.2.1": 1.0
     },
     "1.4.13": {
       "1.4.14": 1.0
@@ -180,7 +180,7 @@
       "3.1.1": 1.0
     },
     "6.1.101": {
-      "8.2.1": 1.0
+      "1.4.110": 1.0
     },
     "6.1.102": {
       "1.1.11": 1.0
@@ -199,6 +199,9 @@
     },
     "6.1.66": {
       "7.1.2": 1.0
+    },
+    "6.1.68": {
+      "6.4.1": 1.0
     },
     "6.1.69": {
       "7.1.15": 1.0
@@ -294,13 +297,16 @@
       "7.2.102": 1.0
     },
     "7.2.113": {
-      "6.1.69": 1.0
+      "7.3.106": 1.0
     },
     "7.3.102": {
       "6.4.129": 1.0
     },
     "7.3.103": {
       "7.3.102": 1.0
+    },
+    "7.3.106": {
+      "6.1.69": 1.0
     },
     "7.3.108": {
       "7.3.109": 1.0
@@ -330,7 +336,7 @@
       "8.3.15": 1.0
     },
     "8.2.7": {
-      "1.4.110": 1.0
+      "8.2.66": 1.0
     },
     "8.3.15": {
       "8.3.59": 1.0
@@ -343,930 +349,946 @@
     }
   },
   "row_totals": {
-    "1.1.1": 141,
-    "1.1.10": 141,
-    "1.1.100": 141,
-    "1.1.11": 282,
-    "1.1.12": 141,
-    "1.1.13": 141,
-    "1.1.14": 141,
-    "1.1.15": 141,
-    "1.1.16": 141,
-    "1.1.17": 141,
-    "1.1.18": 141,
-    "1.1.19": 141,
-    "1.1.2": 141,
-    "1.1.20": 141,
-    "1.1.21": 141,
-    "1.1.22": 141,
-    "1.1.23": 141,
-    "1.1.24": 141,
-    "1.1.27": 141,
-    "1.1.29": 141,
-    "1.1.3": 141,
-    "1.1.30": 141,
-    "1.1.42": 141,
-    "1.1.43": 141,
-    "1.1.46": 141,
-    "1.1.60": 141,
-    "1.1.61": 141,
-    "1.1.62": 141,
-    "1.1.63": 141,
-    "1.1.7": 141,
-    "1.1.73": 141,
-    "1.1.8": 141,
-    "1.1.9": 141,
-    "1.2.41": 141,
-    "1.2.45": 141,
-    "1.2.72": 141,
-    "1.3.10": 141,
-    "1.3.2": 141,
-    "1.3.3": 141,
-    "1.3.4": 141,
-    "1.3.5": 282,
-    "1.3.6": 141,
-    "1.3.7": 282,
-    "1.3.8": 141,
-    "1.3.9": 282,
-    "1.4.102": 141,
-    "1.4.103": 141,
-    "1.4.110": 141,
-    "1.4.13": 141,
-    "1.4.14": 141,
-    "1.4.16": 141,
-    "1.4.17": 141,
-    "1.4.18": 141,
-    "1.4.7": 141,
-    "3.1.1": 141,
-    "3.1.2": 141,
-    "4.1.1": 141,
-    "4.1.2": 141,
-    "6.1.101": 141,
-    "6.1.102": 141,
-    "6.1.103": 141,
-    "6.1.107": 141,
-    "6.1.110": 141,
-    "6.1.125": 141,
-    "6.1.66": 141,
-    "6.1.69": 141,
-    "6.1.77": 141,
-    "6.1.78": 141,
-    "6.1.87": 141,
-    "6.1.88": 141,
-    "6.1.97": 141,
-    "6.4.1": 141,
-    "6.4.11": 141,
-    "6.4.129": 141,
-    "6.4.130": 141,
-    "6.4.134": 141,
-    "6.4.146": 141,
-    "6.4.148": 141,
-    "6.4.3": 141,
-    "6.4.8": 141,
-    "7.1.12": 141,
-    "7.1.13": 141,
-    "7.1.14": 141,
-    "7.1.15": 141,
-    "7.1.17": 141,
-    "7.1.19": 141,
-    "7.1.2": 141,
-    "7.1.20": 141,
-    "7.1.24": 141,
-    "7.1.52": 141,
-    "7.1.54": 141,
-    "7.1.72": 141,
-    "7.1.9": 141,
-    "7.1.94": 141,
-    "7.2.102": 141,
-    "7.2.106": 141,
-    "7.2.113": 141,
-    "7.3.102": 141,
-    "7.3.103": 141,
-    "7.3.108": 141,
-    "7.3.109": 141,
-    "7.3.111": 141,
-    "7.3.113": 141,
-    "7.3.114": 141,
-    "7.3.119": 141,
-    "7.3.120": 141,
-    "8.2.1": 141,
-    "8.2.66": 141,
-    "8.2.7": 141,
-    "8.3.15": 141,
-    "8.3.59": 141,
-    "8.4.1": 141
+    "1.1.1": 24,
+    "1.1.10": 24,
+    "1.1.100": 24,
+    "1.1.11": 48,
+    "1.1.12": 24,
+    "1.1.13": 24,
+    "1.1.14": 24,
+    "1.1.15": 24,
+    "1.1.16": 24,
+    "1.1.17": 24,
+    "1.1.18": 24,
+    "1.1.19": 24,
+    "1.1.2": 24,
+    "1.1.20": 24,
+    "1.1.21": 24,
+    "1.1.22": 24,
+    "1.1.23": 24,
+    "1.1.24": 24,
+    "1.1.27": 24,
+    "1.1.29": 24,
+    "1.1.3": 24,
+    "1.1.30": 24,
+    "1.1.42": 24,
+    "1.1.43": 24,
+    "1.1.46": 24,
+    "1.1.60": 24,
+    "1.1.61": 24,
+    "1.1.62": 24,
+    "1.1.63": 24,
+    "1.1.7": 24,
+    "1.1.73": 24,
+    "1.1.8": 24,
+    "1.1.9": 24,
+    "1.2.41": 24,
+    "1.2.45": 24,
+    "1.2.72": 24,
+    "1.3.10": 24,
+    "1.3.2": 24,
+    "1.3.3": 24,
+    "1.3.4": 24,
+    "1.3.5": 48,
+    "1.3.6": 24,
+    "1.3.7": 48,
+    "1.3.8": 24,
+    "1.3.9": 48,
+    "1.4.102": 24,
+    "1.4.103": 24,
+    "1.4.110": 24,
+    "1.4.13": 24,
+    "1.4.14": 24,
+    "1.4.16": 24,
+    "1.4.17": 24,
+    "1.4.18": 24,
+    "1.4.7": 24,
+    "3.1.1": 24,
+    "3.1.2": 24,
+    "4.1.1": 24,
+    "4.1.2": 24,
+    "6.1.101": 24,
+    "6.1.102": 24,
+    "6.1.103": 24,
+    "6.1.107": 24,
+    "6.1.110": 24,
+    "6.1.125": 24,
+    "6.1.66": 24,
+    "6.1.68": 24,
+    "6.1.69": 24,
+    "6.1.77": 24,
+    "6.1.78": 24,
+    "6.1.87": 24,
+    "6.1.88": 24,
+    "6.1.97": 24,
+    "6.4.1": 24,
+    "6.4.11": 24,
+    "6.4.129": 24,
+    "6.4.130": 24,
+    "6.4.134": 24,
+    "6.4.146": 24,
+    "6.4.148": 24,
+    "6.4.3": 24,
+    "6.4.8": 24,
+    "7.1.12": 24,
+    "7.1.13": 24,
+    "7.1.14": 24,
+    "7.1.15": 24,
+    "7.1.17": 24,
+    "7.1.19": 24,
+    "7.1.2": 24,
+    "7.1.20": 24,
+    "7.1.24": 24,
+    "7.1.52": 24,
+    "7.1.54": 24,
+    "7.1.72": 24,
+    "7.1.9": 24,
+    "7.1.94": 24,
+    "7.2.102": 24,
+    "7.2.106": 24,
+    "7.2.113": 24,
+    "7.3.102": 24,
+    "7.3.103": 24,
+    "7.3.106": 24,
+    "7.3.108": 24,
+    "7.3.109": 24,
+    "7.3.111": 24,
+    "7.3.113": 24,
+    "7.3.114": 24,
+    "7.3.119": 24,
+    "7.3.120": 24,
+    "8.2.1": 24,
+    "8.2.66": 24,
+    "8.2.7": 24,
+    "8.3.15": 24,
+    "8.3.59": 24,
+    "8.4.1": 24
   },
   "transitions": [
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.1",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.73"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.10",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.11"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.100",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.15"
     },
     {
       "P_to_given_from": 0.5,
-      "count": 141,
+      "count": 24,
       "from": "1.1.11",
-      "row_total": 282,
+      "row_total": 48,
       "to": "1.1.12"
     },
     {
       "P_to_given_from": 0.5,
-      "count": 141,
+      "count": 24,
       "from": "1.1.11",
-      "row_total": 282,
+      "row_total": 48,
       "to": "6.1.103"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.12",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.13"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.13",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.14"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.14",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.100"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.15",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.16"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.16",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.17"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.17",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.18"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.18",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.19"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.19",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.20"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.2",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.3"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.20",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.21"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.21",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.46"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.22",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.23"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.23",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.24"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.24",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.2.72"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.27",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.29"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.29",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.30"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.3",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.7"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.30",
-      "row_total": 141,
+      "row_total": 24,
       "to": "4.1.2"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.42",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.4.17"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.43",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.4.103"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.46",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.22"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.60",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.61"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.61",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.62"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.62",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.63"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.63",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.8"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.7",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.60"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.73",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.2"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.8",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.9"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.1.9",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.10"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.2.41",
-      "row_total": 141,
-      "to": "6.4.1"
+      "row_total": 24,
+      "to": "6.1.68"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.2.45",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.27"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.2.72",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.2.45"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.3.10",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.4.7"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.3.2",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.3.3"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.3.3",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.3.4"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.3.4",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.3.5"
     },
     {
       "P_to_given_from": 0.5,
-      "count": 141,
+      "count": 24,
       "from": "1.3.5",
-      "row_total": 282,
+      "row_total": 48,
       "to": "1.3.6"
     },
     {
       "P_to_given_from": 0.5,
-      "count": 141,
+      "count": 24,
       "from": "1.3.5",
-      "row_total": 282,
+      "row_total": 48,
       "to": "1.3.7"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.3.6",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.3.7"
     },
     {
       "P_to_given_from": 0.5,
-      "count": 141,
+      "count": 24,
       "from": "1.3.7",
-      "row_total": 282,
+      "row_total": 48,
       "to": "1.3.8"
     },
     {
       "P_to_given_from": 0.5,
-      "count": 141,
+      "count": 24,
       "from": "1.3.7",
-      "row_total": 282,
+      "row_total": 48,
       "to": "1.3.9"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.3.8",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.3.9"
     },
     {
       "P_to_given_from": 0.5,
-      "count": 141,
+      "count": 24,
       "from": "1.3.9",
-      "row_total": 282,
+      "row_total": 48,
       "to": "1.3.10"
     },
     {
       "P_to_given_from": 0.5,
-      "count": 141,
+      "count": 24,
       "from": "1.3.9",
-      "row_total": 282,
+      "row_total": 48,
       "to": "7.1.72"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.4.102",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.1.43"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.4.103",
-      "row_total": 141,
+      "row_total": 24,
       "to": "1.4.13"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "1.4.110",
-      "row_total": 141,
-      "to": "8.2.66"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "1.4.13",
-      "row_total": 141,
-      "to": "1.4.14"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "1.4.14",
-      "row_total": 141,
-      "to": "1.3.2"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "1.4.16",
-      "row_total": 141,
-      "to": "1.4.18"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "1.4.17",
-      "row_total": 141,
-      "to": "1.4.16"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "1.4.18",
-      "row_total": 141,
-      "to": "7.1.54"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "1.4.7",
-      "row_total": 141,
-      "to": "1.2.41"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "3.1.1",
-      "row_total": 141,
-      "to": "3.1.2"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "3.1.2",
-      "row_total": 141,
-      "to": "1.4.102"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "4.1.1",
-      "row_total": 141,
-      "to": "1.1.1"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "4.1.2",
-      "row_total": 141,
-      "to": "3.1.1"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.1.101",
-      "row_total": 141,
+      "row_total": 24,
       "to": "8.2.1"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.1.102",
-      "row_total": 141,
-      "to": "1.1.11"
+      "count": 24,
+      "from": "1.4.13",
+      "row_total": 24,
+      "to": "1.4.14"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.1.103",
-      "row_total": 141,
-      "to": "6.1.78"
+      "count": 24,
+      "from": "1.4.14",
+      "row_total": 24,
+      "to": "1.3.2"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.1.107",
-      "row_total": 141,
-      "to": "6.1.125"
+      "count": 24,
+      "from": "1.4.16",
+      "row_total": 24,
+      "to": "1.4.18"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.1.110",
-      "row_total": 141,
-      "to": "6.1.101"
+      "count": 24,
+      "from": "1.4.17",
+      "row_total": 24,
+      "to": "1.4.16"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.1.125",
-      "row_total": 141,
-      "to": "6.1.77"
+      "count": 24,
+      "from": "1.4.18",
+      "row_total": 24,
+      "to": "7.1.54"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.1.66",
-      "row_total": 141,
-      "to": "7.1.2"
+      "count": 24,
+      "from": "1.4.7",
+      "row_total": 24,
+      "to": "1.2.41"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.1.69",
-      "row_total": 141,
-      "to": "7.1.15"
+      "count": 24,
+      "from": "3.1.1",
+      "row_total": 24,
+      "to": "3.1.2"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.1.77",
-      "row_total": 141,
-      "to": "6.1.87"
+      "count": 24,
+      "from": "3.1.2",
+      "row_total": 24,
+      "to": "1.4.102"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.1.78",
-      "row_total": 141,
-      "to": "6.1.107"
+      "count": 24,
+      "from": "4.1.1",
+      "row_total": 24,
+      "to": "1.1.1"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.1.87",
-      "row_total": 141,
-      "to": "6.1.88"
+      "count": 24,
+      "from": "4.1.2",
+      "row_total": 24,
+      "to": "3.1.1"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.1.88",
-      "row_total": 141,
-      "to": "6.1.110"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.1.97",
-      "row_total": 141,
-      "to": "7.2.113"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.4.1",
-      "row_total": 141,
-      "to": "7.1.94"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.4.11",
-      "row_total": 141,
-      "to": "6.1.66"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.4.129",
-      "row_total": 141,
-      "to": "6.4.130"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.4.130",
-      "row_total": 141,
-      "to": "6.4.134"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.4.134",
-      "row_total": 141,
-      "to": "6.4.146"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.4.146",
-      "row_total": 141,
-      "to": "6.4.148"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.4.148",
-      "row_total": 141,
-      "to": "7.3.108"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.4.3",
-      "row_total": 141,
-      "to": "7.3.103"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "6.4.8",
-      "row_total": 141,
-      "to": "6.4.3"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.12",
-      "row_total": 141,
-      "to": "7.1.14"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.13",
-      "row_total": 141,
-      "to": "7.1.9"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.14",
-      "row_total": 141,
-      "to": "7.3.113"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.15",
-      "row_total": 141,
-      "to": "7.1.12"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.17",
-      "row_total": 141,
-      "to": "7.1.24"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.19",
-      "row_total": 141,
-      "to": "7.1.20"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.2",
-      "row_total": 141,
-      "to": "7.2.106"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.20",
-      "row_total": 141,
-      "to": "1.1.42"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.24",
-      "row_total": 141,
-      "to": "7.1.19"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.52",
-      "row_total": 141,
-      "to": "1.3.5"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.54",
-      "row_total": 141,
-      "to": "7.1.52"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.72",
-      "row_total": 141,
-      "to": "6.4.8"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.9",
-      "row_total": 141,
-      "to": "7.1.17"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.1.94",
-      "row_total": 141,
-      "to": "6.4.11"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.2.102",
-      "row_total": 141,
-      "to": "6.1.97"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.2.106",
-      "row_total": 141,
-      "to": "7.2.102"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.2.113",
-      "row_total": 141,
-      "to": "6.1.69"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.3.102",
-      "row_total": 141,
-      "to": "6.4.129"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.3.103",
-      "row_total": 141,
-      "to": "7.3.102"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.3.108",
-      "row_total": 141,
-      "to": "7.3.109"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.3.109",
-      "row_total": 141,
-      "to": "7.3.111"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.3.111",
-      "row_total": 141,
-      "to": "7.3.119"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.3.113",
-      "row_total": 141,
-      "to": "7.3.114"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.3.114",
-      "row_total": 141,
-      "to": "7.1.13"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.3.119",
-      "row_total": 141,
-      "to": "7.3.120"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "7.3.120",
-      "row_total": 141,
-      "to": "6.1.102"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "8.2.1",
-      "row_total": 141,
-      "to": "8.2.7"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "8.2.66",
-      "row_total": 141,
-      "to": "8.3.15"
-    },
-    {
-      "P_to_given_from": 1.0,
-      "count": 141,
-      "from": "8.2.7",
-      "row_total": 141,
+      "count": 24,
+      "from": "6.1.101",
+      "row_total": 24,
       "to": "1.4.110"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
+      "from": "6.1.102",
+      "row_total": 24,
+      "to": "1.1.11"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.1.103",
+      "row_total": 24,
+      "to": "6.1.78"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.1.107",
+      "row_total": 24,
+      "to": "6.1.125"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.1.110",
+      "row_total": 24,
+      "to": "6.1.101"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.1.125",
+      "row_total": 24,
+      "to": "6.1.77"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.1.66",
+      "row_total": 24,
+      "to": "7.1.2"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.1.68",
+      "row_total": 24,
+      "to": "6.4.1"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.1.69",
+      "row_total": 24,
+      "to": "7.1.15"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.1.77",
+      "row_total": 24,
+      "to": "6.1.87"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.1.78",
+      "row_total": 24,
+      "to": "6.1.107"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.1.87",
+      "row_total": 24,
+      "to": "6.1.88"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.1.88",
+      "row_total": 24,
+      "to": "6.1.110"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.1.97",
+      "row_total": 24,
+      "to": "7.2.113"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.4.1",
+      "row_total": 24,
+      "to": "7.1.94"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.4.11",
+      "row_total": 24,
+      "to": "6.1.66"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.4.129",
+      "row_total": 24,
+      "to": "6.4.130"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.4.130",
+      "row_total": 24,
+      "to": "6.4.134"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.4.134",
+      "row_total": 24,
+      "to": "6.4.146"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.4.146",
+      "row_total": 24,
+      "to": "6.4.148"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.4.148",
+      "row_total": 24,
+      "to": "7.3.108"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.4.3",
+      "row_total": 24,
+      "to": "7.3.103"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "6.4.8",
+      "row_total": 24,
+      "to": "6.4.3"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.12",
+      "row_total": 24,
+      "to": "7.1.14"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.13",
+      "row_total": 24,
+      "to": "7.1.9"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.14",
+      "row_total": 24,
+      "to": "7.3.113"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.15",
+      "row_total": 24,
+      "to": "7.1.12"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.17",
+      "row_total": 24,
+      "to": "7.1.24"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.19",
+      "row_total": 24,
+      "to": "7.1.20"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.2",
+      "row_total": 24,
+      "to": "7.2.106"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.20",
+      "row_total": 24,
+      "to": "1.1.42"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.24",
+      "row_total": 24,
+      "to": "7.1.19"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.52",
+      "row_total": 24,
+      "to": "1.3.5"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.54",
+      "row_total": 24,
+      "to": "7.1.52"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.72",
+      "row_total": 24,
+      "to": "6.4.8"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.9",
+      "row_total": 24,
+      "to": "7.1.17"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.1.94",
+      "row_total": 24,
+      "to": "6.4.11"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.2.102",
+      "row_total": 24,
+      "to": "6.1.97"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.2.106",
+      "row_total": 24,
+      "to": "7.2.102"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.2.113",
+      "row_total": 24,
+      "to": "7.3.106"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.3.102",
+      "row_total": 24,
+      "to": "6.4.129"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.3.103",
+      "row_total": 24,
+      "to": "7.3.102"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.3.106",
+      "row_total": 24,
+      "to": "6.1.69"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.3.108",
+      "row_total": 24,
+      "to": "7.3.109"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.3.109",
+      "row_total": 24,
+      "to": "7.3.111"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.3.111",
+      "row_total": 24,
+      "to": "7.3.119"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.3.113",
+      "row_total": 24,
+      "to": "7.3.114"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.3.114",
+      "row_total": 24,
+      "to": "7.1.13"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.3.119",
+      "row_total": 24,
+      "to": "7.3.120"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "7.3.120",
+      "row_total": 24,
+      "to": "6.1.102"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "8.2.1",
+      "row_total": 24,
+      "to": "8.2.7"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "8.2.66",
+      "row_total": 24,
+      "to": "8.3.15"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
+      "from": "8.2.7",
+      "row_total": 24,
+      "to": "8.2.66"
+    },
+    {
+      "P_to_given_from": 1.0,
+      "count": 24,
       "from": "8.3.15",
-      "row_total": 141,
+      "row_total": 24,
       "to": "8.3.59"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "8.3.59",
-      "row_total": 141,
+      "row_total": 24,
       "to": "8.4.1"
     },
     {
       "P_to_given_from": 1.0,
-      "count": 141,
+      "count": 24,
       "from": "8.4.1",
-      "row_total": 141,
+      "row_total": 24,
       "to": "8.4.2"
     }
   ]

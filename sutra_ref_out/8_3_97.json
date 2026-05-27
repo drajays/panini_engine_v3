@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.3.97",
+  "sk_number": 2918,
+  "text": {
+    "dev": "अम्बाम्बगोभूमिसव्यापद्वित्रिकुशेकुशङ्क्वङ्गुमञ्जिपुञ्जिपरमेबर्हिर्दिव्यग्निभ्यः स्थः",
+    "slp1": "ambAmbagoBUmisavyApadvitrikuSekuSaNkvaNgumaYjipuYjiparamebarhirdivyagniByaH sTaH",
+    "padaccheda": {
+      "dev": "अम्ब-आम्-गो-भूमि-सव्य-अप-द्वि-त्रि-कु-शेकु-शङ्‍कु-अङ्गु-मञ्जि-पुञ्जि-परमे-बर्हिः-दिवि-अग्निभ्यः स्थः (षष्ठ्यर्थे प्रथमा)",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "82108: संहितायाम् | 83055: अपदान्तस्य मूर्धन्यः | 83056: सः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "8.3.98",
+    "previous_sutra": "8.3.96",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अम्बष्ठः",
+      "alt_dev": null,
+      "raw": "अम्बष्ठः",
+      "source": "Kashika 8.3.97",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "आम्बष्ठः",
+      "alt_dev": null,
+      "raw": "आम्बष्ठः",
+      "source": "Kashika 8.3.97",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "गोष्ठः",
+      "alt_dev": null,
+      "raw": "गोष्ठः",
+      "source": "Kashika 8.3.97",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "भूमिष्ठः",
+      "alt_dev": null,
+      "raw": "भूमिष्ठः",
+      "source": "Kashika 8.3.97",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "8.3.97",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "stub",
+    "similar_sutra": "8.3.98",
+    "test_file": "tests/test_sutra_8_3_97.py",
+    "notes": null,
+    "condition_key": "cond_8_3_97",
+    "action_key": "act_8_3_97"
+  }
+}

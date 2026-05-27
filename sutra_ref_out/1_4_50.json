@@ -1,0 +1,178 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.50",
+  "sk_number": 538,
+  "text": {
+    "dev": "तथायुक्तं चानिप्सीतम्",
+    "slp1": "taTAyuktaM cAnipsItam",
+    "padaccheda": {
+      "dev": "तथायुक्तम् · च · अनीप्सितम् · कर्म",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "1.4.23",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "1.4.49",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "1.4.23",
+    "anuvritta_note": "Under 1.4.23 kāraka-adhikāra; inherits karma from 1.4.49 (kartur-īpsitatama) and extends it to tathā-yukta anīpsita (including dveshya/upēkṣya).",
+    "anuvrtti_pada": "14023: कारके | 14049: कर्म",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Saṃjñā (kāraka/karma): a kāraka that is not the kartṛ’s most desired, but is connected to the action in the same manner as the īpsitatama, is also designated `karma`."
+  },
+  "downstream": {
+    "next_sutra": "1.4.51",
+    "previous_sutra": "1.4.49",
+    "next_effect": null,
+    "note": "Allows karma designation (and downstream operations such as accusative assignment) even when the object is not desired but is inevitably/incidentally connected to the action."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "विषं भक्षयति।",
+      "alt_dev": null,
+      "raw": "विषं भक्षयति।",
+      "source": "Kashika 1.4.50",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "चौरान् पश्यति।",
+      "alt_dev": null,
+      "raw": "चौरान् पश्यति।",
+      "source": "Kashika 1.4.50",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ग्रामं गच्छन् वृक्षमूलान्युपसर्पति।",
+      "alt_dev": null,
+      "raw": "ग्रामं गच्छन् वृक्षमूलान्युपसर्पति।",
+      "source": "Kashika 1.4.50",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ईप्सितादन्यत् सर्वमनीप्सितं द्वेष्यमितरच्च",
+      "alt_dev": null,
+      "raw": "ईप्सितादन्यत् सर्वमनीप्सितं द्वेष्यमितरच्च",
+      "source": "Kashika 1.4.50",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "विषं भक्षयति",
+      "alt_dev": null,
+      "raw": "विषं भक्षयति",
+      "source": "Kashika 1.4.50",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "चौरान् पश्यति",
+      "alt_dev": null,
+      "raw": "चौरान् पश्यति",
+      "source": "Kashika 1.4.50",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ग्रामं गच्छन् वृक्षमूलान्युपसर्पति",
+      "alt_dev": null,
+      "raw": "ग्रामं गच्छन् वृक्षमूलान्युपसर्पति",
+      "source": "Kashika 1.4.50",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "A non-desired (anīpsita) kāraka which is connected to the action in the same manner (tathā-yukta) as the īpsitatama is also called karma.",
+    "sa": "येन प्रकारेण कर्तुरीप्सिततमं क्रियया युज्यते, तेनैव प्रकारेण यदनीप्सितं युक्तं भवति, तस्यापि कर्मसंज्ञा भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.50",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.51",
+    "test_file": "tests/test_sutra_1_4_50.py",
+    "notes": "Kāśikā: “येन प्रकारेण कर्तुरीप्सिततमं क्रियया युज्यते, तेन एव चेत् प्रकारेन यदनीप्सितं युक्तं भवति, तस्य कर्मसंज्ञा विधीयते।”",
+    "condition_key": "cond_1_4_50",
+    "action_key": "act_1_4_50"
+  }
+}

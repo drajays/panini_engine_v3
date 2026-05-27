@@ -1,0 +1,178 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.3.30",
+  "sk_number": 132,
+  "text": {
+    "dev": "नश्च",
+    "slp1": "naSca",
+    "padaccheda": {
+      "dev": "नः च",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "8.2.1",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "8.3.29",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "8.2.1",
+    "anuvritta_note": null,
+    "anuvrtti_pada": "81016: पदस्य | 82108: संहितायाम् |  83026: वा | 83029: सि धुट्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "vibhasha",
+    "optionality": {
+      "value": true,
+      "paninian_term": "विकल्पेन"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": false,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "8.3.31",
+    "previous_sutra": "8.3.29",
+    "next_effect": null,
+    "note": "Kāśikā: भवान्त्साये / भवान् साये; महान्त्साये / महान् साये. (Engine models dh-āgama stage.)"
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "भवान्त्साये",
+      "alt_dev": null,
+      "raw": "भवान्त्साये",
+      "source": "Kashika 8.3.30",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "भवान् साये",
+      "alt_dev": null,
+      "raw": "भवान् साये",
+      "source": "Kashika 8.3.30",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "महान्त्साये",
+      "alt_dev": null,
+      "raw": "महान्त्साये",
+      "source": "Kashika 8.3.30",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "महान् साये",
+      "alt_dev": null,
+      "raw": "महान् साये",
+      "source": "Kashika 8.3.30",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "भवान्त्साये",
+      "alt_dev": "भवान् साये",
+      "raw": "भवान्त्साये, भवान् साये",
+      "source": "Kashika 8.3.30",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "महान्त्साये",
+      "alt_dev": "महान् साये",
+      "raw": "महान्त्साये, महान् साये",
+      "source": "Kashika 8.3.30",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "धुटश्चर्त्वस्य चासिद्धत्वाद्   इति रुत्वं न भवति",
+      "alt_dev": null,
+      "raw": "धुटश्चर्त्वस्य चासिद्धत्वाद्   इति रुत्वं न भवति",
+      "source": "Kashika 8.3.30",
+      "variant_type": "vibhasha"
+    }
+  ],
+  "gloss": {
+    "en": "Optionally, after an n-final pada, a dhuṭ (dh) augment is inserted before a following s-initial pada.",
+    "sa": "नकारान्तात् पदात्, परस्य सकारादेः पदस्य पूर्वं विकल्पेन धुडागमः।"
+  },
+  "authority": {
+    "kashika_ref": "8.3.30",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "8.3.31",
+    "test_file": "tests/test_sutra_8_3_30.py",
+    "notes": null,
+    "condition_key": "cond_8_3_30",
+    "action_key": "act_8_3_30"
+  }
+}

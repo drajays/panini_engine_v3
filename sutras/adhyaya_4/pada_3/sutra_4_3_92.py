@@ -46,8 +46,6 @@ def _has_Yya(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get(META_ARM):
-        return False
     si = _stem_index(state)
     if si is None:
         return False
@@ -57,8 +55,6 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if not cond(state):
-        return state
     si = _stem_index(state)
     if si is None:
         return state
@@ -72,7 +68,6 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": _AFFIX_UPA},
     )
     state.terms.insert(sj + 1, affix)
-    state.meta.pop(META_ARM, None)
     return state
 
 

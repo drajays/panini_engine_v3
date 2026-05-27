@@ -21,8 +21,6 @@ _META_P012 = "corrected_v2_P012_6_4_113_arm"
 
 def _hit(state: State) -> tuple[int, int] | None:
     """Return (term_idx, vowel_idx) of ``A`` in ``…n A`` before ``ta``."""
-    if not (state.meta.get(_META_P009) or state.meta.get(_META_P012)):
-        return None
     for i, t in enumerate(state.terms[:-1]):
         vs = t.varnas
         if len(vs) != 2:
@@ -49,8 +47,6 @@ def act(state: State) -> State:
     ti, vi = h
     state.terms[ti].varnas[vi] = mk("I")
     state.samjna_registry["6.4.113_snA_nA_to_nI"] = True
-    state.meta.pop(_META_P009, None)
-    state.meta.pop(_META_P012, None)
     return state
 
 

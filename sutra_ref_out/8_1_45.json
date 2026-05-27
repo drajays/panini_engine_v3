@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.1.45",
+  "sk_number": 3952,
+  "text": {
+    "dev": "लोपे विभाषा",
+    "slp1": "lope viBAzA",
+    "padaccheda": {
+      "dev": "लोपे विभाषा",
+      "slp1": "lope · viBAzA",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "81016: पदस्य | 81017: पदात् | 81018: अनुदात्तं सर्वमपादादौ | 81028: तिङ् | 81029: न | 81044: किं क्रियाप्रश्नेऽनुपसर्गमप्रतिषिद्धम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "I",
+    "module": "M08",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "8.1.46",
+    "previous_sutra": "8.1.44",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "देवदत्तः पच॑ति",
+      "alt_dev": "आहोस्वित् पठ॑ति",
+      "raw": "देवदत्तः पच॑ति, आहोस्वित् पठ॑ति",
+      "source": "Kashika 8.1.45",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "विनैव किमा प्रश्नोऽवगम्यते",
+      "alt_dev": null,
+      "raw": "विनैव किमा प्रश्नोऽवगम्यते",
+      "source": "Kashika 8.1.45",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्राप्तविभाषेयं किमर्थेन योगात्",
+      "alt_dev": null,
+      "raw": "प्राप्तविभाषेयं किमर्थेन योगात्",
+      "source": "Kashika 8.1.45",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पूर्ववत् प्रत्युदाहरणानि",
+      "alt_dev": null,
+      "raw": "पूर्ववत् प्रत्युदाहरणानि",
+      "source": "Kashika 8.1.45",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "8.1.45",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "stub",
+    "similar_sutra": "8.1.46",
+    "test_file": "tests/test_sutra_8_1_45.py",
+    "notes": null,
+    "condition_key": "cond_8_1_45",
+    "action_key": "act_8_1_45"
+  }
+}

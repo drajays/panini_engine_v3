@@ -57,21 +57,19 @@ def _haladi_trim(varnas: list[Varna]) -> list[Varna]:
 
 
 def _find(state: State):
-    if state.meta.get("corrected_v2_P013_Sru_abhyasa_arm"):
-        for ti, t in enumerate(state.terms):
-            if "abhyasa" not in t.tags:
-                continue
-            if t.meta.get("7_4_60_haladi_done"):
-                continue
-            vs = t.varnas
-            if (
-                len(vs) == 3
-                and vs[0].slp1 == "S"
-                and vs[1].slp1 == "r"
-                and vs[2].slp1 == "u"
-            ):
-                return ti
-        return None
+    for ti, t in enumerate(state.terms):
+        if "abhyasa" not in t.tags:
+            continue
+        if t.meta.get("7_4_60_haladi_done"):
+            continue
+        vs = t.varnas
+        if (
+            len(vs) == 3
+            and vs[0].slp1 == "S"
+            and vs[1].slp1 == "r"
+            and vs[2].slp1 == "u"
+        ):
+            return ti
     if state.meta.get("P037_7_4_60_Iw_trim_arm"):
         for ti, t in enumerate(state.terms):
             if "abhyasa" not in t.tags:
@@ -122,21 +120,19 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if state.meta.get("corrected_v2_P013_Sru_abhyasa_arm"):
-        for ti, t in enumerate(state.terms):
-            if "abhyasa" not in t.tags or t.meta.get("7_4_60_haladi_done"):
-                continue
-            vs = t.varnas
-            if (
-                len(vs) == 3
-                and vs[0].slp1 == "S"
-                and vs[1].slp1 == "r"
-                and vs[2].slp1 == "u"
-            ):
-                t.varnas = [vs[0], vs[2]]
-                t.meta["7_4_60_haladi_done"] = True
-                state.meta.pop("corrected_v2_P013_Sru_abhyasa_arm", None)
-                return state
+    for ti, t in enumerate(state.terms):
+        if "abhyasa" not in t.tags or t.meta.get("7_4_60_haladi_done"):
+            continue
+        vs = t.varnas
+        if (
+            len(vs) == 3
+            and vs[0].slp1 == "S"
+            and vs[1].slp1 == "r"
+            and vs[2].slp1 == "u"
+        ):
+            t.varnas = [vs[0], vs[2]]
+            t.meta["7_4_60_haladi_done"] = True
+            return state
     if state.meta.get("P037_7_4_60_Iw_trim_arm"):
         for ti, t in enumerate(state.terms):
             if "abhyasa" not in t.tags or t.meta.get("7_4_60_haladi_done"):

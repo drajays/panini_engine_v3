@@ -97,21 +97,16 @@ def derive_pawapawAyati_anukaraNa_corrected_P017() -> State:
 
     s = apply_rule("1.2.45", s)
 
-    s.meta["corrected_v2_P017_6_1_1_dvitva_arm"] = True
     s = apply_rule("6.1.1", s)
 
-    s.meta["corrected_v2_P017_5_4_57_arm"] = True
     s = apply_rule("5.4.57", s)
 
-    s.meta["corrected_v2_P017_8_1_2_arm"] = True
     s = apply_rule("8.1.2", s)
 
     s = apply_rule("6.1.97", s)
 
-    s.meta["corrected_v2_P017_1_3_7_qAc_arm"] = True
     for sid in ("1.3.7", "1.3.3", "1.3.9"):
         s = apply_rule(sid, s)
-    s.meta.pop("corrected_v2_P017_1_3_7_qAc_arm", None)
 
     s = apply_rule("1.4.18", s)
 
@@ -120,7 +115,6 @@ def derive_pawapawAyati_anukaraNa_corrected_P017() -> State:
 
     _merge_pawapaw_shap_a(s)
 
-    s.meta["corrected_v2_P017_3_1_13_arm"] = True
     s = apply_rule("3.1.13", s)
 
     for sid in ("1.3.8", "1.3.3", "1.3.9"):

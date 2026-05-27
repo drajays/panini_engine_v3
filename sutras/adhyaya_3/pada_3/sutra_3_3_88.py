@@ -32,11 +32,11 @@ def cond(state: State) -> bool:
     if "dhatu" not in t0.tags:
         return False
     st = _stem(t0)
-    if state.meta.get(META_ARM_A) and st == "pac":
+    if st == "pac":
         return True
-    if state.meta.get(META_ARM_B) and st == "kf":
+    if st == "kf":
         return True
-    if state.meta.get(META_ARM_C) and st == "vap":
+    if st == "vap":
         return True
     return False
 

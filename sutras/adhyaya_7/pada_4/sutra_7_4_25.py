@@ -15,8 +15,6 @@ from phonology import mk
 
 
 def _site_p016(state: State) -> bool:
-    if not state.meta.get("corrected_v2_P016_7_4_25_arm"):
-        return False
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags:
             continue
@@ -75,7 +73,6 @@ def act(state: State) -> State:
             continue
         t.varnas[-2] = mk("A")
         t.meta["7_4_25_dirgha_done"] = True
-        state.meta.pop("corrected_v2_P016_7_4_25_arm", None)
         return state
     return state
 

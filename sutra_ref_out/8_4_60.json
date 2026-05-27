@@ -1,0 +1,175 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.4.60",
+  "sk_number": 117,
+  "text": {
+    "dev": "तोर्लि",
+    "slp1": "torli",
+    "padaccheda": {
+      "dev": "तोः । लि",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "82108: संहितायाम् | 84058: परसवर्णः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Tripāḍī saṃhitā sandhi — ta-varga → l before l (nitya)."
+  },
+  "downstream": {
+    "next_sutra": "8.4.61",
+    "previous_sutra": "8.4.59",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अग्निचित् + लुनाति → अग्निचिल्लुनाति",
+      "alt_dev": null,
+      "raw": "अग्निचित् + लुनाति → अग्निचिल्लुनाति",
+      "source": "Kashika 8.4.60",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सोमसुत् + लुनाति → सोमसुल्लुनाति",
+      "alt_dev": null,
+      "raw": "सोमसुत् + लुनाति → सोमसुल्लुनाति",
+      "source": "Kashika 8.4.60",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "भवाँन् + लुनाति → भवाँल्लुनाति",
+      "alt_dev": null,
+      "raw": "भवाँन् + लुनाति → भवाँल्लुनाति",
+      "source": "Kashika 8.4.60",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "महाँन् + लुनाति → महाँल्लुनाति",
+      "alt_dev": null,
+      "raw": "महाँन् + लुनाति → महाँल्लुनाति",
+      "source": "Kashika 8.4.60",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अग्निचित् + लुनाति -> अग्निचिल्लुनाति",
+      "alt_dev": null,
+      "raw": "अग्निचित् + लुनाति -> अग्निचिल्लुनाति",
+      "source": "Kashika 8.4.60",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सोमसुत् + लुनाति -> सोमसुल्लुनाति",
+      "alt_dev": null,
+      "raw": "सोमसुत् + लुनाति -> सोमसुल्लुनाति",
+      "source": "Kashika 8.4.60",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "भवाँन् + लुनाति -> भवाँल्लुनाति",
+      "alt_dev": null,
+      "raw": "भवाँन् + लुनाति -> भवाँल्लुनाति",
+      "source": "Kashika 8.4.60",
+      "variant_type": null
+    },
+    {
+      "id": 8,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "महाँन् + लुनाति -> महाँल्लुनाति",
+      "alt_dev": null,
+      "raw": "महाँन् + लुनाति -> महाँल्लुनाति",
+      "source": "Kashika 8.4.60",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Before ल्, a preceding ta-varga consonant (त् थ् द् ध् न्) is replaced by ल्.",
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "8.4.60",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "8.4.61",
+    "test_file": "tests/test_sutra_8_4_60.py",
+    "notes": "संहितायां पदान्तस्थस्य त-वर्गस्य (त्-थ्-द्-ध्-न्) लकारे परे लकारादेशः।",
+    "condition_key": "cond_8_4_60",
+    "action_key": "act_8_4_60"
+  }
+}

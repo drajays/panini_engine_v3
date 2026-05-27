@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "4.3.34",
+  "sk_number": 1407,
+  "text": {
+    "dev": "श्रविष्ठाफल्गुन्यनुराधास्वातितिष्यपुनर्वसुहस्तविशाखाऽषाढाबहुलाल्लुक्",
+    "slp1": "SravizWAPalgunyanurADAsvAtitizyapunarvasuhastaviSAKA'zAQAbahulAlluk",
+    "padaccheda": {
+      "dev": "श्रविष्ठा-फल्गुनी-अनुराधा-स्वाति-तिष्य-पुनर्वसु-हस्त-विशाखा-अषाढा-बहुलात् लुक्",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 42092: शेषे | 43025: तत्र जातः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M04",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "4.3.35",
+    "previous_sutra": "4.3.33",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तस्मिन् स्त्रीप्रत्ययस्यापि   इति लुग् भवति",
+      "alt_dev": null,
+      "raw": "तस्मिन् स्त्रीप्रत्ययस्यापि   इति लुग् भवति",
+      "source": "Kashika 4.3.34",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "श्रविष्ठासु जातः श्रविष्ठः",
+      "alt_dev": null,
+      "raw": "श्रविष्ठासु जातः श्रविष्ठः",
+      "source": "Kashika 4.3.34",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "फल्गुनः",
+      "alt_dev": null,
+      "raw": "फल्गुनः",
+      "source": "Kashika 4.3.34",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अनुराधः",
+      "alt_dev": null,
+      "raw": "अनुराधः",
+      "source": "Kashika 4.3.34",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "4.3.34",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "stub",
+    "similar_sutra": "4.3.35",
+    "test_file": "tests/test_sutra_4_3_34.py",
+    "notes": null,
+    "condition_key": "cond_4_3_34",
+    "action_key": "act_4_3_34"
+  }
+}

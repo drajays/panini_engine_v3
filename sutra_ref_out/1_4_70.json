@@ -1,0 +1,174 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.70",
+  "sk_number": 771,
+  "text": {
+    "dev": "अदोऽनुपदेशे",
+    "slp1": "ado'nupadeSe",
+    "padaccheda": {
+      "dev": "अदः · अनुपदेशे",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "1.4.56",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "1.4.59",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "1.4.60",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "1.4.56",
+    "anuvritta_note": "Under 1.4.56; **क्रियायोगे** from 1.4.59; **गति** from 1.4.60; **अनुपदेशे** is the new locative head.",
+    "anuvrtti_pada": "14056: निपाताः | 14059: क्रियायोगे | 14060: गतिः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Saṃjñā (**gati**): **अदः** is **gati** under **क्रियायोगे** in **अनुपदेश** — use outside śāstra **उपदेश** (ordinary / non-technical discourse), per Kāśikā."
+  },
+  "downstream": {
+    "next_sutra": "1.4.71",
+    "previous_sutra": "1.4.69",
+    "next_effect": null,
+    "note": "Keeps distal deictic **अदः** in the **gati**/**upasarga** chain for running speech."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अदः पश्य",
+      "alt_dev": null,
+      "raw": "अदः पश्य",
+      "source": "Kashika 1.4.70",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अदः आगच्छति",
+      "alt_dev": null,
+      "raw": "अदः आगच्छति",
+      "source": "Kashika 1.4.70",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उपदेशः परार्थः प्रयोगः",
+      "alt_dev": null,
+      "raw": "उपदेशः परार्थः प्रयोगः",
+      "source": "Kashika 1.4.70",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अदःकृत्य",
+      "alt_dev": null,
+      "raw": "अदःकृत्य",
+      "source": "Kashika 1.4.70",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अ॒दःकृ॑तम्",
+      "alt_dev": null,
+      "raw": "अ॒दःकृ॑तम्",
+      "source": "Kashika 1.4.70",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "यद॑दःक॒रोति॑",
+      "alt_dev": null,
+      "raw": "यद॑दःक॒रोति॑",
+      "source": "Kashika 1.4.70",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "**Adaḥ** is **gati** when yoked to the action in **anupadeśa** (non-upadeśa / everyday reference).",
+    "sa": "अदोऽनुपदेशे क्रियायोगे गतिसंज्ञं भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.70",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.71",
+    "test_file": "tests/test_sutra_1_4_70.py",
+    "notes": "Contrasts śāstra **upadeśa** contexts where **adas**-class items behave differently.",
+    "condition_key": "cond_1_4_70",
+    "action_key": "act_1_4_70"
+  }
+}

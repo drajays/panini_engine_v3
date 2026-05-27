@@ -155,7 +155,6 @@ def act(state: State) -> State:
                 t.varnas = vs[:j] + [mk("a"), mk("r")] + vs[j + 1 :]
                 break
         t.meta["lrng_ṛ_guna_done"] = True
-        state.meta.pop("corrected_v2_P019_vRt_guNa_arm", None)
         return state
     hit = _find_target(state)
     if hit is None:

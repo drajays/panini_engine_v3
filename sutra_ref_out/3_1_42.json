@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "3.1.42",
+  "sk_number": 3403,
+  "text": {
+    "dev": "अभ्युत्सादयांप्रजनयांचिकयांरमयामकः",
+    "slp1": "aByutsAdayAMprajanayAMcikayAMramayAmakaH",
+    "padaccheda": {
+      "dev": "अभ्युत्सादयाम् प्रजनयाम् चिकयाम् रमयाम् अकः (तिङ्) पावयांक्रियात् (तिङ्) विदामक्रन् (तिङ्) इति छन्दसि",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "31041: अन्यतरस्याम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M03",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "3.1.43",
+    "previous_sutra": "3.1.41",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "चिनोतेरपि तत्रैवाम्प्रत्ययो द्विर्वचनं कुत्वं च",
+      "alt_dev": null,
+      "raw": "चिनोतेरपि तत्रैवाम्प्रत्ययो द्विर्वचनं कुत्वं च",
+      "source": "Kashika 3.1.42",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अकरिति चतुर्भिरपि प्रत्येकमनुप्रयोगः संबध्यते",
+      "alt_dev": null,
+      "raw": "अकरिति चतुर्भिरपि प्रत्येकमनुप्रयोगः संबध्यते",
+      "source": "Kashika 3.1.42",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अभ्युत्साद॒या॑म॒कः (मै०सं० १.६.५)",
+      "alt_dev": null,
+      "raw": "अभ्युत्साद॒या॑म॒कः (मै०सं० १.६.५)",
+      "source": "Kashika 3.1.42",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अभ्युदसीषददिति भाषायाम्",
+      "alt_dev": null,
+      "raw": "अभ्युदसीषददिति भाषायाम्",
+      "source": "Kashika 3.1.42",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "3.1.42",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "stub",
+    "similar_sutra": "3.1.43",
+    "test_file": "tests/test_sutra_3_1_42.py",
+    "notes": null,
+    "condition_key": "cond_3_1_42",
+    "action_key": "act_3_1_42"
+  }
+}

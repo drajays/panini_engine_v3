@@ -1,0 +1,197 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.2.66",
+  "sk_number": 162,
+  "text": {
+    "dev": "ससजुषो रुँः",
+    "slp1": "sasajuzo ru~H",
+    "padaccheda": {
+      "dev": "सस् · सजुषोः · रुः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "81016: पदस्य",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "tripadi",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "8.2.67",
+    "previous_sutra": "8.2.65",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अग्निरत्र",
+      "alt_dev": null,
+      "raw": "अग्निरत्र",
+      "source": "Kashika 8.2.66",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वायुरत्र",
+      "alt_dev": null,
+      "raw": "वायुरत्र",
+      "source": "Kashika 8.2.66",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सजूर्ऋतुभिः",
+      "alt_dev": null,
+      "raw": "सजूर्ऋतुभिः",
+      "source": "Kashika 8.2.66",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सजूर्देवेभिः",
+      "alt_dev": null,
+      "raw": "सजूर्देवेभिः",
+      "source": "Kashika 8.2.66",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अग्निस् + अत्र -> अग्निरत्र",
+      "alt_dev": null,
+      "raw": "अग्निस् + अत्र -> अग्निरत्र",
+      "source": "Kashika 8.2.66",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वायुस् + अत्र -> वायुरत्र",
+      "alt_dev": null,
+      "raw": "वायुस् + अत्र -> वायुरत्र",
+      "source": "Kashika 8.2.66",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सजुष् + ऋतुभिः -> सजूर्ऋतुभिः",
+      "alt_dev": null,
+      "raw": "सजुष् + ऋतुभिः -> सजूर्ऋतुभिः",
+      "source": "Kashika 8.2.66",
+      "variant_type": null
+    },
+    {
+      "id": 8,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सजुष् + देवेभिः -> सजूर्देवेभिः",
+      "alt_dev": null,
+      "raw": "सजुष् + देवेभिः -> सजूर्देवेभिः",
+      "source": "Kashika 8.2.66",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Replace final s/ṣ with r (ru-ādeśa) in saṃhitā.",
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "8.2.66",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "8.2.67",
+    "test_file": "tests/test_sutra_8_2_66.py",
+    "notes": "Corpus-driven: handles agnis/vāyus and sajūṣ examples in SK order; Vedic accent marks ignored by tokenizer.",
+    "condition_key": "cond_8_2_66",
+    "action_key": "act_8_2_66"
+  },
+  "new_constitution_blind_template": {
+    "text_dev": "ससजुषो रुः",
+    "padaccheda_dev": "सस्-सजुषोः (षष्ठी-द्विवचनम्) रुः (प्रथमा)",
+    "op_type": "ADESA",
+    "why_dev": "पदान्त-सकारस्य (वा सजुष्-अन्त-षकारस्य) 'रुँ' आदेशः",
+    "action": {
+      "adesha_varnas": [
+        {
+          "slp1": "r",
+          "dev": "र्",
+          "tags": []
+        },
+        {
+          "slp1": "u",
+          "dev": "उ",
+          "tags": [
+            "anunasika"
+          ]
+        }
+      ]
+    }
+  }
+}

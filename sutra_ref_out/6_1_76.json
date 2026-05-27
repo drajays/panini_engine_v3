@@ -1,0 +1,162 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "6.1.76",
+  "sk_number": 149,
+  "text": {
+    "dev": "पदान्ताद्वा",
+    "slp1": "padAntAdvA",
+    "padaccheda": {
+      "dev": "पदान्तात् वा",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "6.1.75",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "6.1.72",
+    "anuvritta_note": null,
+    "anuvrtti_pada": "61071: तुक् | 61072: संहितायाम् | 61073: छे",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M06",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "vibhasha",
+    "optionality": {
+      "value": true,
+      "paninian_term": "विकल्पेन"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": false,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Engine models the vibhāṣā by providing an explicit “no-tuk” branch tag (blocking 6.1.75) at term boundaries treated as padānta. The “tuk” branch is obtained by applying 6.1.75."
+  },
+  "downstream": {
+    "next_sutra": "6.1.77",
+    "previous_sutra": "6.1.75",
+    "next_effect": null,
+    "note": "To allow optional absence of tuk at padānta in long-vowel + छ contexts, matching Kāśikā-attested doublets."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "{'source': 'Kashika (SanskritDocuments) 6.1.76'",
+      "alt_dev": "'example_dev': 'कुटीच्छाया / कुटीछाया', 'note': 'Engine: apply 6.1.75 for tuk-stage; apply 6.1.76 for the no-tuk branch.'}",
+      "raw": "{'source': 'Kashika (SanskritDocuments) 6.1.76', 'example_dev': 'कुटीच्छाया / कुटीछाया', 'note': 'Engine: apply 6.1.75 for tuk-stage; apply 6.1.76 for the no-tuk branch.'}",
+      "source": "Kashika 6.1.76",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "{'source': 'Kashika (SanskritDocuments) 6.1.76'",
+      "alt_dev": "'example_dev': 'कुवलीच्छाया / कुवलीछाया', 'note': 'Same optionality at padānta.'}",
+      "raw": "{'source': 'Kashika (SanskritDocuments) 6.1.76', 'example_dev': 'कुवलीच्छाया / कुवलीछाया', 'note': 'Same optionality at padānta.'}",
+      "source": "Kashika 6.1.76",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कुटीच्छाया",
+      "alt_dev": "कुटीछाया",
+      "raw": "कुटीच्छाया, कुटीछाया",
+      "source": "Kashika 6.1.76",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कुवलीच्छाया",
+      "alt_dev": "कुवलीछाया",
+      "raw": "कुवलीच्छाया, कुवलीछाया",
+      "source": "Kashika 6.1.76",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "विश्वजनच्छत्रम्",
+      "alt_dev": null,
+      "raw": "विश्वजनच्छत्रम्",
+      "source": "Kashika 6.1.76",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "विश्वजनछत्रम्",
+      "alt_dev": null,
+      "raw": "विश्वजनछत्रम्",
+      "source": "Kashika 6.1.76",
+      "variant_type": "vibhasha"
+    }
+  ],
+  "gloss": {
+    "en": "At padānta, after a long vowel before छ (under dīrghāt…tuk), tuk-āgama is optional.",
+    "sa": "दीर्घात् छे तुक् इति अनुवर्तते। पदान्ताद् दीर्घात् परतः छकारे तुगागमो वा भवति।"
+  },
+  "authority": {
+    "kashika_ref": "6.1.76",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "6.1.77",
+    "test_file": "tests/test_sutra_6_1_76.py",
+    "notes": null,
+    "condition_key": "cond_6_1_76",
+    "action_key": "act_6_1_76"
+  }
+}

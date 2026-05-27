@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.18",
+  "sk_number": 231,
+  "text": {
+    "dev": "यचि भम्",
+    "slp1": "yaci Bam",
+    "padaccheda": {
+      "dev": "यचि · भम्",
+      "slp1": "yaci · Bam",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "Continues 1.4.17 context; replaces the pada-saṃjñā there with bhaṃ-saṃjñā.",
+    "anuvrtti_pada": "14017: स्वादिषु असर्वनामस्थाने",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": "1.4.17",
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 2,
+    "soi_doi_note": "Apavāda: before yac (y-ādi or a-ādi) within the 1.4.17 svādi non-sarvanāmasthāna chain, the preceding is bhaṃ (bham), blocking pada."
+  },
+  "downstream": {
+    "next_sutra": "1.4.19",
+    "previous_sutra": "1.4.17",
+    "next_effect": null,
+    "note": "Provides bhaṃ-scope for later bhāṃ-based operations (e.g., 6.4.129 ‘bhā pradeśāḥ bhāsya’ etc.), and models the bādhā of pada."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "यकारादौ — गार्ग्यः",
+      "alt_dev": null,
+      "raw": "यकारादौ — गार्ग्यः",
+      "source": "Kashika 1.4.18",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वात्स्यः",
+      "alt_dev": null,
+      "raw": "वात्स्यः",
+      "source": "Kashika 1.4.18",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अजादौ — दाक्षिः",
+      "alt_dev": null,
+      "raw": "अजादौ — दाक्षिः",
+      "source": "Kashika 1.4.18",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्लाक्षिः",
+      "alt_dev": null,
+      "raw": "प्लाक्षिः",
+      "source": "Kashika 1.4.18",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Before yac, (the preceding) is called bhaṃ (bham).",
+    "sa": "यचि परतः पूर्वं भसंज्ञकं भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.18",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.19",
+    "test_file": "tests/test_sutra_1_4_18.py",
+    "notes": "Kāśikā: ‘पूर्वेण पदसंज्ञायां प्राप्तायां तदपवादो भसंज्ञा विधीयते…’",
+    "condition_key": "cond_1_4_18",
+    "action_key": "act_1_4_18"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "2.4.34",
+  "sk_number": 351,
+  "text": {
+    "dev": "द्वितीयाटौस्स्वेनः",
+    "slp1": "dvitIyAwOssvenaH",
+    "padaccheda": {
+      "dev": "द्वितीया-टा-ओस्सु एनः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "24033: एतदः | 24032: इदमः अन्वादेशे अश् अनुदात्तः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M02",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "2.4.35",
+    "previous_sutra": "2.4.33",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "इदमो मण्डूकप्लुतिन्यायेनानुवृत्तिः",
+      "alt_dev": null,
+      "raw": "इदमो मण्डूकप्लुतिन्यायेनानुवृत्तिः",
+      "source": "Kashika 2.4.34",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "इमं छात्रं छन्दोऽध्यापय",
+      "alt_dev": "अथो एनं व्याकरणमध्यापय",
+      "raw": "इमं छात्रं छन्दोऽध्यापय, अथो एनं व्याकरणमध्यापय",
+      "source": "Kashika 2.4.34",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अनेन छात्रेण रात्रिरधीता",
+      "alt_dev": "अथो एनेनाहरप्यधीतम्",
+      "raw": "अनेन छात्रेण रात्रिरधीता, अथो एनेनाहरप्यधीतम्",
+      "source": "Kashika 2.4.34",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "एतेन छात्रेण रात्रिरधीता",
+      "alt_dev": "अथो एनेनाहरप्यधीतम्",
+      "raw": "एतेन छात्रेण रात्रिरधीता, अथो एनेनाहरप्यधीतम्",
+      "source": "Kashika 2.4.34",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "2.4.34",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "2.4.35",
+    "test_file": "tests/test_sutra_2_4_34.py",
+    "notes": null,
+    "condition_key": "cond_2_4_34",
+    "action_key": "act_2_4_34"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.3.1",
+  "sk_number": 18,
+  "text": {
+    "dev": "भूवादयो धातवः",
+    "slp1": "BUvAdayo DAtavaH",
+    "padaccheda": {
+      "dev": "भू-व-आदयः · धातवः",
+      "slp1": "BUvAdayo · DAtavaH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": null,
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "B",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Saṃjñā for roots listed in dhātupāṭha (aupadeśika). Sautrika/ātideśika dhātus obtain dhātutva via other sūtras (e.g. 3.1.32), not by 1.3.1 alone."
+  },
+  "downstream": {
+    "next_sutra": "1.3.2",
+    "previous_sutra": "1.2.73",
+    "next_effect": null,
+    "note": "Tinanta pipeline: dhātu recognition gates lakāra/tiṅ selection and subsequent aṅga-kārya."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "भू — भवति",
+      "alt_dev": null,
+      "raw": "भू — भवति",
+      "source": "Kashika 1.3.1",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "एध — एधते",
+      "alt_dev": null,
+      "raw": "एध — एधते",
+      "source": "Kashika 1.3.1",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "स्पर्ध — स्पर्धते",
+      "alt_dev": null,
+      "raw": "स्पर्ध — स्पर्धते",
+      "source": "Kashika 1.3.1",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "धातुशब्दः पूर्वाचार्यसंज्ञा",
+      "alt_dev": null,
+      "raw": "धातुशब्दः पूर्वाचार्यसंज्ञा",
+      "source": "Kashika 1.3.1",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "The words beginning with भू and the rest, when used to denote an action, are called dhātu.",
+    "sa": "भू-आदीनां शब्दानां क्रियावाचिनि अर्थे धातुसंज्ञा भवति; धातुपाठे औपदेशिकाः ~२००० धातवः।"
+  },
+  "authority": {
+    "kashika_ref": "1.3.1",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.3.2",
+    "test_file": "tests/test_sutra_1_3_1.py",
+    "notes": "संज्ञासूत्रम् (धातुसंज्ञा). सूत्रम्: भूवादयो धातवः। पदच्छेदः — भूवादयः (प्रथमा बहुवचनम्), धातवः (प्रथमा बहुवचनम्). भू-व-आदयः इति विग्रहे वकारो माङ्गल्यार्थः (भाष्य); काशिकायां वैकल्पिकः पक्षः — भू + वादयः (क्रियासामान्य) इति। धातुपाठेऽर्थाः निर्देशमात्राः, न परिपूर्णाः न च निर्भराः। औपदेशिकाः धातवः धातुपाठ उपदिष्टाः; सौत्राः सूत्रैरेवोद्धृताः; आतिदेशिकाः सनादिप्रत्ययादिभिः (३.१.३२)।",
+    "condition_key": "cond_1_3_1",
+    "action_key": "act_1_3_1"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.3.32",
+  "sk_number": 2705,
+  "text": {
+    "dev": "गन्धनावक्षेपणसेवनसाहसिक्यप्रतियत्नप्रकथनोपयोगेषु कृञः",
+    "slp1": "ganDanAvakzepaRasevanasAhasikyapratiyatnaprakaTanopayogezu kfYaH",
+    "padaccheda": {
+      "dev": "गन्धन-अवक्षेपण-सेवन-साहसिक्य-प्रतियत्न-प्रकथन-उपयोगेषु · कृञः",
+      "slp1": "ganDanAvakzepaRasevanasAhasikyapratiyatnaprakaTanopayogezu · kfYaH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "Anuvṛtti of ‘ātmanepadam’ from 1.3.12.",
+    "anuvrtti_pada": "13012: आत्मनेपदम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "B",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Vidhi (pada-selection): for kṛ (kri; कृञः) in gandhana/avakṣepaṇa/sevana/sāhasikya/pratiyatna/prakathana/upayoga senses, select ātmanepada (anuvṛtti from 1.3.12)."
+  },
+  "downstream": {
+    "next_sutra": "1.3.33",
+    "previous_sutra": "1.3.31",
+    "next_effect": null,
+    "note": "Tinanta pipeline: selects ātmanepada for kṛ when derivation sense is in this listed group (recorded via env trigger)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अकर्त्रभिप्रायार्थोऽयमारम्भः",
+      "alt_dev": null,
+      "raw": "अकर्त्रभिप्रायार्थोऽयमारम्भः",
+      "source": "Kashika 1.3.32",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "गन्धनादिष्वर्थेषु वर्तमानात् करोतेरात्मनेपदं भवति",
+      "alt_dev": null,
+      "raw": "गन्धनादिष्वर्थेषु वर्तमानात् करोतेरात्मनेपदं भवति",
+      "source": "Kashika 1.3.32",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "गन्धनमपकारप्रयुक्तं हिंसात्मकं सूचनम्",
+      "alt_dev": null,
+      "raw": "गन्धनमपकारप्रयुक्तं हिंसात्मकं सूचनम्",
+      "source": "Kashika 1.3.32",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तथाहि —",
+      "alt_dev": "इति चुरादौ पठ्यते",
+      "raw": "तथाहि — ,  इति चुरादौ पठ्यते",
+      "source": "Kashika 1.3.32",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "For kṛ (kri), in the senses of smelling, throwing down, serving, rash action, strenuous effort, narration, and use/application, (the pada) is ātmanepada.",
+    "sa": "गन्धनावक्षेपणसेवनसाहसिक्यप्रतियत्नप्रकथनोपयोगेषु कृञः आत्मनेपदम्।"
+  },
+  "authority": {
+    "kashika_ref": "1.3.32",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.3.33",
+    "test_file": "tests/test_sutra_1_3_32.py",
+    "notes": null,
+    "condition_key": "cond_1_3_32",
+    "action_key": "act_1_3_32"
+  }
+}

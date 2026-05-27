@@ -1,0 +1,82 @@
+---
+description: Pāṇini engine — authoritative source citation requirement for sūtras (CONSTITUTION Art. 14)
+globs:
+  - "sutras/**/sutra_*.py"
+alwaysApply: false
+---
+
+# Authoritative source citation (sūtra files)
+
+Supreme law: **`CONSTITUTION.md` Article 14** (added by `docs/AMENDMENT_14.md`).
+Operational reference: **`audit_cursor.md` § 0** and **`audit_claude.md` § A**.
+
+## When editing or creating a sūtra file
+
+Every commit that touches a sūtra file MUST result in the file
+containing this block in its module docstring (positions of fields
+fixed; content per sūtra):
+
+```python
+"""
+X.Y.Z  <sūtra in Devanāgarī>  —  <SutraType>
+
+Sources consulted:
+- ashtadhyayi.com data.txt row i=<index>          # mandatory
+- Kāśikā: "<udāharaṇa in Devanāgarī>"             # mandatory
+  pratyudāharaṇa: "<if applicable>"
+- Cross-validation: <Vidyut surface ✓ for <form>> OR
+  <regression test: tests/regression/<test_file>.py>   # mandatory (one of)
+
+[Implementation paragraph in linguistic terms.]
+"""
+```
+
+## Citation precedence (binding)
+
+1. ashtadhyayi.com data repo (`github.com/ashtadhyayi-com/data`)
+2. Kāśikā Vṛtti
+3. Mahābhāṣya + Pradīpa + Uddyota
+4. Siddhānta-Kaumudī + Tattva-bodhinī   ← cross-ref only, never drives ordering
+5. Laghu-Siddhānta-Kaumudī
+6. Prakriyā-Kaumudī / Prakriyā-Sarvasva
+
+When sources disagree, the lower-numbered source wins. Document the
+disagreement in `docs/AMENDMENT_<N>.md` and link from the sūtra
+docstring.
+
+## Cross-validation oracles (Tier 4)
+
+Use these to verify surface output, NOT to derive rule logic:
+
+- **Vidyut** (`github.com/ambuda-org/vidyut`) — Rust prakriyā engine.
+- **Saṃsādhanī (IIIT-H Hyderabad)** — `sanskrit.uohyd.ac.in/scl/`.
+- **Sanskrit Heritage Platform (INRIA)** — `sanskrit.inria.fr/`.
+
+When Vidyut or Saṃsādhanī disagrees with the engine's surface
+output, the engine is **suspect** — investigate before merging. Do
+not silently override the oracle.
+
+## Forbidden as a citation
+
+- Blog posts, YouTube transcripts.
+- LLM output (ChatGPT etc.) without independent verification.
+- Wikipedia (use it to locate primary, then cite primary).
+- PDFs without a clear edition lineage.
+- Surface-form transliterators (Aksharamukha etc.) as a source of
+  rule logic.
+
+## Refusal conditions
+
+If a sūtra file commit would lack one of the three mandatory
+citation lines (ashtadhyayi.com row, Kāśikā udāharaṇa,
+cross-validation note), STOP. Surface the missing field to the user
+and ask for the correct source before continuing. Do not invent a
+citation.
+
+## Relation to Article 6
+
+Article 6 forbids `cond()` reading `data/reference/`. The citation
+fields in the docstring are documentation, not runtime reads —
+adding them does not violate Article 6. But you may not import or
+fetch the cited source at runtime from within a sūtra file's
+`cond()` or `act()`.

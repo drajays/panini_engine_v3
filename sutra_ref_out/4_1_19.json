@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "4.1.19",
+  "sk_number": 477,
+  "text": {
+    "dev": "कौरव्यमाण्डूकाभ्यां च",
+    "slp1": "kOravyamARqUkAByAM ca",
+    "padaccheda": {
+      "dev": "कौरव्य-माण्डूकाभ्याम् च",
+      "slp1": "kOravyamARqUkAByAM · ca",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "31001: प्रत्ययः | 31002: परः च | 41001: प्रातिपदिकात् | 41003: स्त्रियाम् | 41004: अतः | 41014: अनुपसर्जनात् | 41017: ष्फस्तद्धितः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M04",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "4.1.20",
+    "previous_sutra": "4.1.18",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कुर्वादिभ्यो ण्ये  कृते   इत्यणि च",
+      "alt_dev": null,
+      "raw": "कुर्वादिभ्यो ण्ये  कृते   इत्यणि च",
+      "source": "Kashika 4.1.19",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "यथाक्रमं टाब्ङीपोरपवादः",
+      "alt_dev": null,
+      "raw": "यथाक्रमं टाब्ङीपोरपवादः",
+      "source": "Kashika 4.1.19",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कौरव्यायणी",
+      "alt_dev": null,
+      "raw": "कौरव्यायणी",
+      "source": "Kashika 4.1.19",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "माण्डूकायनी",
+      "alt_dev": null,
+      "raw": "माण्डूकायनी",
+      "source": "Kashika 4.1.19",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "4.1.19",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "4.1.20",
+    "test_file": "tests/test_sutra_4_1_19.py",
+    "notes": null,
+    "condition_key": "cond_4_1_19",
+    "action_key": "act_4_1_19"
+  }
+}

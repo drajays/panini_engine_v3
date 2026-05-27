@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "6.2.145",
+  "sk_number": 3879,
+  "text": {
+    "dev": "सूपमानात् क्तः",
+    "slp1": "sUpamAnAt ktaH",
+    "padaccheda": {
+      "dev": "सु-उपमानात् क्तः",
+      "slp1": "sUpamAnAt · ktaH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "62064: उदात्तः | 62111: उत्तरपद | 62143: अन्तः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M06",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "6.2.146",
+    "previous_sutra": "6.2.144",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सु॒कृ॒तम् (तै०सं० ४.७.२.२)",
+      "alt_dev": null,
+      "raw": "सु॒कृ॒तम् (तै०सं० ४.७.२.२)",
+      "source": "Kashika 6.2.145",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सु॒भु॒क्त म्",
+      "alt_dev": null,
+      "raw": "सु॒भु॒क्त म्",
+      "source": "Kashika 6.2.145",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सु॒पी॒तम्",
+      "alt_dev": null,
+      "raw": "सु॒पी॒तम्",
+      "source": "Kashika 6.2.145",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उपमानात् — वृ॒का॒व॒लु॒प्तम्",
+      "alt_dev": null,
+      "raw": "उपमानात् — वृ॒का॒व॒लु॒प्तम्",
+      "source": "Kashika 6.2.145",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "6.2.145",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "stub",
+    "similar_sutra": "6.2.146",
+    "test_file": "tests/test_sutra_6_2_145.py",
+    "notes": null,
+    "condition_key": "cond_6_2_145",
+    "action_key": "act_6_2_145"
+  }
+}

@@ -34,7 +34,6 @@ def derive_avartsyat_lRG_vf_corrected_P019() -> State:
 
     s = apply_rule("1.3.1", s)
 
-    s.meta["corrected_v2_P019_3_3_139_lRG_arm"] = True
     s = apply_rule("3.3.139", s)
 
     s = apply_rule("3.1.91", s)
@@ -47,12 +46,10 @@ def derive_avartsyat_lRG_vf_corrected_P019() -> State:
     for sid in ("1.3.3", "1.3.9"):
         s = apply_rule(sid, s)
 
-    s.meta["corrected_v2_P019_3_1_33_sy_arm"] = True
     s = apply_rule("3.1.33", s)
 
     s = apply_rule("3.4.100", s)
 
-    s.meta["corrected_v2_P019_vRt_guNa_arm"] = True
     s = apply_rule("7.3.86", s)
     s = apply_rule("1.1.51", s)
 

@@ -55,22 +55,16 @@ def _phadi_replacement(varnas: List[Varna], state: Optional[State] = None) -> Op
     if not varnas:
         return None
     c0 = varnas[0].slp1
-    # caṭphañ residue **Pa** (फ् + अ) → **Ayana** — corrected-v2 **P004-A** (armed meta).
+    # caṭphañ residue **Pa** (फ् + अ) → **Ayana**.
     if (
-        state is not None
-        and state.meta.get("corrected_v2_P004_A_phadi_Pa_arm")
-        and c0 == "P"
+        c0 == "P"
         and len(varnas) == 2
         and varnas[1].slp1 == "a"
     ):
         return ("Ayana", parse_slp1_upadesha_sequence("Ayana"))
-    # Same **P004-A**: after *it*-slice the opener **ca** remains → surface **caPa**;
-    # **7.1.2** Ph→*Āyan* replaces the **pha** portion; **ca** is not pronounced (*laghu*
-    # pedagogy matches *itika*+*phak* tape ending in **Ayana**).
+    # After *it*-slice the opener **ca** remains → surface **caPa**.
     if (
-        state is not None
-        and state.meta.get("corrected_v2_P004_A_phadi_Pa_arm")
-        and len(varnas) == 4
+        len(varnas) == 4
         and varnas[0].slp1 == "c"
         and varnas[1].slp1 == "a"
         and varnas[2].slp1 == "P"
@@ -167,7 +161,6 @@ def act(state: State) -> State:
     pr.varnas = [v.clone() for v in new_varnas]
     pr.meta["upadesha_slp1"] = new_id
     pr.meta[_META_DONE] = True
-    state.meta.pop("corrected_v2_P004_A_phadi_Pa_arm", None)
     return state
 
 

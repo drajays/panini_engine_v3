@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.1.36",
+  "sk_number": 220,
+  "text": {
+    "dev": "अन्तरं बहिर्योगोपसंव्यानयोः",
+    "slp1": "antaraM bahiryogopasaMvyAnayoH",
+    "padaccheda": {
+      "dev": "अन्तरम् · बहिर्योग-उपसंव्यानयोः",
+      "slp1": "antaraM · bahiryogopasaMvyAnayoH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "अनुवृत्तिः सर्वनामानि (१.१.२७); विभाषा जसि (१.१.३२) केषुचित् प्रकरणेषु।",
+    "anuvrtti_pada": "11027: सर्वनामानि | 11032: विभाषा जसि",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "subanta",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Stem **antara** (SLP1 antara) is **sarvanāma** in **bahiryoga** or **upasaṃvyāna** sense. Meta: ``bahiryoga_artha`` or ``upasaMvyAna_artha``. Not in JSON **sarvanama**; **१.१.२९–३१** use ``sutra_1_1_36.is_sarvanama_term_1_1_27_or_34_or_35_or_36``."
+  },
+  "downstream": {
+    "next_sutra": "1.1.37",
+    "previous_sutra": "1.1.35",
+    "next_effect": null,
+    "note": "7.3.102–111 when antara is marked bahiryoga_artha or upasaMvyAna_artha"
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अन्तरः",
+      "alt_dev": null,
+      "raw": "अन्तरः",
+      "source": "Kashika 1.1.36",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अन्तरम्",
+      "alt_dev": null,
+      "raw": "अन्तरम्",
+      "source": "Kashika 1.1.36",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अन्तरे गृहाः",
+      "alt_dev": "अन्तरा गृहाः",
+      "raw": "अन्तरे गृहाः, अन्तरा गृहाः",
+      "source": "Kashika 1.1.36",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "नगरबाह्याश्चाण्डालादिगृहा उच्यन्ते",
+      "alt_dev": null,
+      "raw": "नगरबाह्याश्चाण्डालादिगृहा उच्यन्ते",
+      "source": "Kashika 1.1.36",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अन्तरे शाटकाः",
+      "alt_dev": "अन्तराः शाटकाः",
+      "raw": "अन्तरे शाटकाः, अन्तराः शाटकाः",
+      "source": "Kashika 1.1.36",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उपसंव्यानं  परिधानीयमुच्यते",
+      "alt_dev": "न प्रावरणीयम्",
+      "raw": "उपसंव्यानं  परिधानीयमुच्यते, न प्रावरणीयम्",
+      "source": "Kashika 1.1.36",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "**antara** is **sarvanāma** when used in the sense of **bahiryoga** or **upasaṃvyāna** (dual locative **-ayoḥ** in the sūtra).",
+    "sa": "अन्तरशब्दः बहिर्योगार्थे उपसंव्यानार्थे वा सर्वनामसंज्ञकः।"
+  },
+  "authority": {
+    "kashika_ref": "1.1.36",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.1.37",
+    "test_file": "tests/test_sutra_1_1_36.py",
+    "notes": null,
+    "condition_key": "cond_1_1_36",
+    "action_key": "act_1_1_36"
+  }
+}

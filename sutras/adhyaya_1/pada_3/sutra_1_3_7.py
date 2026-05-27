@@ -31,8 +31,6 @@ _UPA_Yya = "Yya"
 
 
 def _eligible_p004_b_yya(state: State):
-    if not state.meta.get(META_P004_B_Yya_CUTU):
-        return
     for ti, t in enumerate(state.terms):
         if "taddhita" not in t.tags:
             continue
@@ -102,16 +100,17 @@ def _terms_sup_or_primary(state: State):
         ]
         if qa:
             return qa
-    # **P017** (*paṭapaṭāyati*): **``qAc``** (डाच्) must win over preceding *prātipadika*
-    # ``pawapawat`` so **1.3.7** *cuṭū* tags initial ``q``, not ``p``.
-    if state.meta.get("corrected_v2_P017_1_3_7_qAc_arm"):
-        qac = [
-            t
-            for t in state.terms
-            if "upadesha" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() == "qAc"
-        ]
-        if qac:
-            return qac
+    # dit_pratyaya qAc (डाच्) must win over preceding prātipadika so 1.3.7 cuṭū
+    # tags initial q, not p (structural: dit_pratyaya tag on qAc term).
+    qac = [
+        t
+        for t in state.terms
+        if "upadesha" in t.tags
+        and "dit_pratyaya" in t.tags
+        and (t.meta.get("upadesha_slp1") or "").strip() == "qAc"
+    ]
+    if qac:
+        return qac
     if state.terms:
         return [state.terms[0]]
     return []

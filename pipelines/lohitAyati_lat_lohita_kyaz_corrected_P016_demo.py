@@ -65,7 +65,6 @@ def derive_lohitAyati_lat_lohita_kyaz_corrected_P016() -> State:
 
     s = apply_rule("1.2.45", s)
 
-    s.meta["corrected_v2_P016_3_1_13_arm"] = True
     s = apply_rule("3.1.13", s)
 
     for sid in ("1.3.8", "1.3.3", "1.3.9"):
@@ -102,7 +101,6 @@ def derive_lohitAyati_lat_lohita_kyaz_corrected_P016() -> State:
     s = apply_rule("3.4.113", s)
     s = apply_rule("1.1.64", s)
 
-    s.meta["corrected_v2_P016_7_4_25_arm"] = True
     s = apply_rule("7.4.25", s)
 
     s = apply_rule("6.1.101", s)

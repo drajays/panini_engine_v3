@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.2.26",
+  "sk_number": 2617,
+  "text": {
+    "dev": "रलो व्युपधाद्धलादेः संश्च",
+    "slp1": "ralo vyupaDAdDalAdeH saMSca",
+    "padaccheda": {
+      "dev": "रलः · व्युपधात् · हलादेः · सं · च",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "**कित्** ← १.२.५; **न सेट्** ← १.२.१८; **क्त्वा** ← १.२.२२; **वा** ← १.२.२३",
+    "anuvrtti_pada": "12005: कित् | 12018: न सेट् | 12022: क्त्वा | 12023: वा",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**san** ∧ **dhātu** with **r**/**l** **hal** immediately **pūrva** to **upadhā** **ac** (``purva_hal_is_r_or_l_before_upadha_ac_slp1``) ∧ following **झल्** (**Jal**) — ``atidesha_1_2_26_ralo_vyupadha_hal_adi_san`` on **dhātu** (extends **1.2.9** class; separate meta from **1.2.9**)."
+  },
+  "downstream": {
+    "next_sutra": "1.2.27",
+    "previous_sutra": "1.2.25",
+    "next_effect": null,
+    "note": "Widens **aṅga**–**झल्** atideśa under **san** for **r**/**l**–**vyupadhā** stems (e.g. **likh**-type **l**–**i**–final **hal**)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उश्च इश्च वी",
+      "alt_dev": null,
+      "raw": "उश्च इश्च वी",
+      "source": "Kashika 1.2.26",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वी उपधे यस्य स व्युपधः",
+      "alt_dev": null,
+      "raw": "वी उपधे यस्य स व्युपधः",
+      "source": "Kashika 1.2.26",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "द्युतित्वा",
+      "alt_dev": "द्योतित्वा",
+      "raw": "द्युतित्वा, द्योतित्वा",
+      "source": "Kashika 1.2.26",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "दिद्युतिषते",
+      "alt_dev": "दिद्योतिषते",
+      "raw": "दिद्युतिषते, दिद्योतिषते",
+      "source": "Kashika 1.2.26",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "**Also** for **san**: **r**/**l** in the **vyupadhā** position with **hal**-initial following (**ca** with **1.2.9** **ik**/**झल्** chain).",
+    "sa": "संनिमित्ते रलो व्युपधाया हलादौ झलि इवातिदेशः।"
+  },
+  "authority": {
+    "kashika_ref": "1.2.26",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.2.27",
+    "test_file": "tests/test_sutra_1_2_26.py",
+    "notes": null,
+    "condition_key": "cond_1_2_26",
+    "action_key": "act_1_2_26"
+  }
+}

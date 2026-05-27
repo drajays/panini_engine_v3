@@ -65,16 +65,13 @@ def derive_apajAnIte_lat_apa_jYA_corrected_P012() -> State:
     s.meta["tin_adesha_slp1"] = "ta"
     s = apply_rule("3.4.78", s)
 
-    s.meta["corrected_v2_P012_3_1_81_arm"] = True
     s = apply_rule("3.1.81", s)
 
-    s.meta["corrected_v2_P012_7_3_79_arm"] = True
     s = apply_rule("7.3.79", s)
 
     for sid in ("1.3.8", "1.3.9"):
         s = apply_rule(sid, s)
 
-    s.meta["corrected_v2_P012_6_4_113_arm"] = True
     s = apply_rule("6.4.113", s)
 
     s = apply_rule("1.1.64", s)

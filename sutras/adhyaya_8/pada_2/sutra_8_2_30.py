@@ -41,10 +41,18 @@ def _find(state: State):
     return None
 
 
+def _has_ktrim_krt(state: State) -> bool:
+    """Structural: a kṛt Term with ``ktrim`` upadeśa is present — pre-tripāḍī *coḥ kuḥ* allowed."""
+    return any(
+        "krt" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() == "ktrim"
+        for t in state.terms
+    )
+
+
 def cond(state: State) -> bool:
     if _find(state) is None:
         return False
-    if state.meta.get(META_PRE_TRIPADI_P003_A):
+    if _has_ktrim_krt(state):
         return True
     return bool(state.tripadi_zone)
 
@@ -57,7 +65,6 @@ def act(state: State) -> State:
     t = state.terms[ti]
     t.varnas[vi] = mk("k")
     t.meta["8_2_30_cutuku_done"] = True
-    state.meta.pop(META_PRE_TRIPADI_P003_A, None)
     return state
 
 

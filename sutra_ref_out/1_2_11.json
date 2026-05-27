@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.2.11",
+  "sk_number": 2300,
+  "text": {
+    "dev": "लिङ्सिचावात्मनेपदेषु",
+    "slp1": "liNsicAvAtmanepadezu",
+    "padaccheda": {
+      "dev": "लिङ्-सिचौ · आत्मनेपदेषु",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "**हलन्तात्** ← १.२.१०; **इकः झल्** ← १.२.९",
+    "anuvrtti_pada": "12005: कित् | 12009: इकः झल् | 12010: हलन्तात्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**Liṅ**+**sic** in **ātmanepada**: same **ik**/**halanta**+**Jal** atideśa as **1.2.9–1.2.10** without requiring **kit** from **1.2.5**. ``env.lakara`` ∈ **viDiliN**/**ASIrliN**/**liN**; ``ling_sic_affix`` or tag **sic**; ``state_qualifies_ling_sica_atmane_1_2_11``."
+  },
+  "downstream": {
+    "next_sutra": "1.2.12",
+    "previous_sutra": "1.2.10",
+    "next_effect": null,
+    "note": "Scopes **aṅgakārya** for **liṅ**/**sic** **ātmanepada** parallel to **kit**-triggered **1.2.9**/**1.2.10**."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सन् इति निवृत्तम्",
+      "alt_dev": null,
+      "raw": "सन् इति निवृत्तम्",
+      "source": "Kashika 1.2.11",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "भित्सीष्ट",
+      "alt_dev": null,
+      "raw": "भित्सीष्ट",
+      "source": "Kashika 1.2.11",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "भुत्सीष्ट",
+      "alt_dev": null,
+      "raw": "भुत्सीष्ट",
+      "source": "Kashika 1.2.11",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सिचि खल्वपि — अभित्त",
+      "alt_dev": null,
+      "raw": "सिचि खल्वपि — अभित्त",
+      "source": "Kashika 1.2.11",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "**Liṅ** and **sic** in **ātmanepada** take the **ik**/**hal** + **झल्** atideśa (extends **1.2.9–1.2.10**).",
+    "sa": "लिङ्सिचोरात्मनेपदेषु झल्त्वम्।"
+  },
+  "authority": {
+    "kashika_ref": "1.2.11",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.2.12",
+    "test_file": "tests/test_sutra_1_2_11.py",
+    "notes": null,
+    "condition_key": "cond_1_2_11",
+    "action_key": "act_1_2_11"
+  }
+}

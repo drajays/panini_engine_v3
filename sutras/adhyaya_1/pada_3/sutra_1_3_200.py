@@ -20,8 +20,6 @@ _UPA = "BaYjo"
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get(META_ARM):
-        return False
     if len(state.terms) != 1:
         return False
     t0 = state.terms[0]
@@ -37,9 +35,15 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if not cond(state):
-        return state
     t0 = state.terms[0]
+    if "dhatu" not in t0.tags or "upadesha" not in t0.tags:
+        return state
+    if (t0.meta.get("upadesha_slp1") or "").strip() != _UPA:
+        return state
+    if not t0.varnas or t0.varnas[-1].slp1 != "o":
+        return state
+    if "it_candidate_ovarga_anubandha" in t0.varnas[-1].tags:
+        return state
     t0.varnas[-1].tags.add("it_candidate_ovarga_anubandha")
     state.samjna_registry[("it_ovarga_anubandha", 0, len(t0.varnas) - 1)] = frozenset({"o"})
     state.meta.pop(META_ARM, None)

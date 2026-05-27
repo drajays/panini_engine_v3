@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.2.63",
+  "sk_number": 820,
+  "text": {
+    "dev": "तिष्यपुनर्वस्वोर्नक्षत्रद्वंद्वे बहुवचनस्य",
+    "slp1": "tizyapunarvasvornakzatradvaMdve bahuvacanasya",
+    "padaccheda": {
+      "dev": "तिष्यपुनर्वस्वोः · नक्षत्रद्वंद्वे · बहुवचनस्य",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "Continues the nakṣatra/number chain (see 1.2.58–1.2.62).",
+    "anuvrtti_pada": null,
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Vidhi scope marker: in **nakṣatra-dvandva** of **Tiṣya** and **Punarvasu**, treat the **bahuvacana** usage as **dvivacana** (nitya). Silico: ``Environment.tizyapunarvasvor_nakzatradvaMdve_bahuvacanasya_1_2_63``; ``core/sutra_1_2_63``; no direct mutation yet."
+  },
+  "downstream": {
+    "next_sutra": "1.2.64",
+    "previous_sutra": "1.2.62",
+    "next_effect": null,
+    "note": "Number-selection for nakṣatra dvandva names: records the obligatory dual treatment."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तिष्य एकः पुनर्वसू द्वौ",
+      "alt_dev": "तेषां द्वन्द्वो बह्वर्थः",
+      "raw": "तिष्य एकः पुनर्वसू द्वौ, तेषां द्वन्द्वो बह्वर्थः",
+      "source": "Kashika 1.2.63",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तत्र बहुवचने प्राप्ते द्विवचनं विधीयते",
+      "alt_dev": null,
+      "raw": "तत्र बहुवचने प्राप्ते द्विवचनं विधीयते",
+      "source": "Kashika 1.2.63",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उदितौ तिष्यपुनर्वसू दृश्येते",
+      "alt_dev": null,
+      "raw": "उदितौ तिष्यपुनर्वसू दृश्येते",
+      "source": "Kashika 1.2.63",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तिष्यपुनर्वस्वोरिति किम्? विशाखानुराधाः",
+      "alt_dev": null,
+      "raw": "तिष्यपुनर्वस्वोरिति किम्? विशाखानुराधाः",
+      "source": "Kashika 1.2.63",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "In the **nakṣatra dvandva** (Tiṣya + Punarvasu), **bahuvacana** is treated as **dual** (dvivacana), obligatorily.",
+    "sa": "नक्षत्रद्वन्द्वे तिष्यपुनर्वस्वोः बहुवचनस्य द्विवचनत्वं नित्यम्।"
+  },
+  "authority": {
+    "kashika_ref": "1.2.63",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.2.64",
+    "test_file": "tests/test_sutra_1_2_63.py",
+    "notes": null,
+    "condition_key": "cond_1_2_63",
+    "action_key": "act_1_2_63"
+  }
+}

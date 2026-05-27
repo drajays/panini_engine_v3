@@ -1,0 +1,175 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.1.21",
+  "sk_number": 348,
+  "text": {
+    "dev": "आद्यन्तवदेकस्मिन्",
+    "slp1": "Adyantavadekasmin",
+    "padaccheda": {
+      "dev": "आदि-अन्तवत् | एकस्मिन्",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": null,
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "paribhasha",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": true,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 0,
+    "soi_doi_note": "Resolver: when scope has one phonological/morph unit, ādi- and anta-vṛtti coincide. adyanta_coincide_1_1_21(span_len); adi_anta_indices_1_1_21."
+  },
+  "downstream": {
+    "next_sutra": "1.1.22",
+    "previous_sutra": "1.1.20",
+    "next_effect": null,
+    "note": "1.1.22 तरप्तमपौ, taddhita ādi/anta anuvṛtti, sandhi span logic"
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कुमारितरा",
+      "alt_dev": null,
+      "raw": "कुमारितरा",
+      "source": "Kashika 1.1.21",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कुमारितमा",
+      "alt_dev": null,
+      "raw": "कुमारितमा",
+      "source": "Kashika 1.1.21",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ब्रह्मणितरा",
+      "alt_dev": null,
+      "raw": "ब्रह्मणितरा",
+      "source": "Kashika 1.1.21",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ब्राह्मणितमा",
+      "alt_dev": null,
+      "raw": "ब्राह्मणितमा",
+      "source": "Kashika 1.1.21",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सप्तम्यर्थे वतिः",
+      "alt_dev": null,
+      "raw": "सप्तम्यर्थे वतिः",
+      "source": "Kashika 1.1.21",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "आदाविव अन्त इव एकस्मिन्नपि कार्यं भवति",
+      "alt_dev": null,
+      "raw": "आदाविव अन्त इव एकस्मिन्नपि कार्यं भवति",
+      "source": "Kashika 1.1.21",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "एकस्मिन्निति किम् ? सभासन्नयने भवः साभासन्नयनः",
+      "alt_dev": null,
+      "raw": "एकस्मिन्निति किम् ? सभासन्नयने भवः साभासन्नयनः",
+      "source": "Kashika 1.1.21",
+      "variant_type": null
+    },
+    {
+      "id": 8,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "आकारमाश्रित्य वृद्धसंज्ञा न भवति",
+      "alt_dev": null,
+      "raw": "आकारमाश्रित्य वृद्धसंज्ञा न भवति",
+      "source": "Kashika 1.1.21",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Paribhāṣā: where there is only one unit in scope, both **ādi**- and **anta**-ordered operations apply to it (beginning = end).",
+    "sa": "यत्रैकमेव तत्राद्यन्तवद् भवति — आदि-विहितम् अन्त-विहितं च तस्मिन्नेव।"
+  },
+  "authority": {
+    "kashika_ref": "1.1.21",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.1.22",
+    "test_file": "tests/test_sutra_1_1_21.py",
+    "notes": null,
+    "condition_key": "cond_1_1_21",
+    "action_key": "act_1_1_21"
+  }
+}

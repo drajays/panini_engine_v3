@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.2.19",
+  "sk_number": 3052,
+  "text": {
+    "dev": "निष्ठा शीङ्स्विदिमिदिक्ष्विदिधृषः",
+    "slp1": "nizWA SINsvidimidikzvidiDfzaH",
+    "padaccheda": {
+      "dev": "निष्ठा · शीङ्-स्विदि-मिदि-क्ष्विदि-धृषः",
+      "slp1": "nizWA · SINsvidimidikzvidiDfzaH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "**कित्** ← १.२.५; **न सेट्** ← १.२.१८",
+    "anuvrtti_pada": "12005: कित् | 12018: न सेट्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**Śīṅ**/**svid**/**mid**/**kṣvid**/**dhṛṣ** + **niṣṭhā** (**kta**/**ktavatu**): **kit** on **kṛt** term. ``is_nistha_kit_sisinadi_dhatu_upadesha_slp1``; ``atidesha_1_2_19_nistha_kit``; anuvṛtti **न सेट्** **1.2.18**."
+  },
+  "downstream": {
+    "next_sutra": "1.2.20",
+    "previous_sutra": "1.2.18",
+    "next_effect": null,
+    "note": "Tags **niṣṭhā** **kṛt** as **kit** for listed autobindhu roots, coordinating **1.2.18** **na seṭ** scope."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "शयितः",
+      "alt_dev": "शयितवान्",
+      "raw": "शयितः, शयितवान्",
+      "source": "Kashika 1.2.19",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्रस्वेदितः",
+      "alt_dev": "प्रस्वेदितवान्",
+      "raw": "प्रस्वेदितः, प्रस्वेदितवान्",
+      "source": "Kashika 1.2.19",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्रमेदितः",
+      "alt_dev": "प्रमेदितवान्",
+      "raw": "प्रमेदितः, प्रमेदितवान्",
+      "source": "Kashika 1.2.19",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्रक्ष्वेदितः",
+      "alt_dev": "प्रक्ष्वेदितवान्",
+      "raw": "प्रक्ष्वेदितः, प्रक्ष्वेदितवान्",
+      "source": "Kashika 1.2.19",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "For **niṣṭhā** (**kta**, **ktavatu**), **śīṅ**, **svid**, **mid**, **kṣvid**, and **dhṛṣ** dhātus: **kit** on the **niṣṭhā** affix (**anuvṛtti** **कित्**).",
+    "sa": "शीङादिभ्यो निष्ठायां कित्।"
+  },
+  "authority": {
+    "kashika_ref": "1.2.19",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.2.20",
+    "test_file": "tests/test_sutra_1_2_19.py",
+    "notes": null,
+    "condition_key": "cond_1_2_19",
+    "action_key": "act_1_2_19"
+  }
+}

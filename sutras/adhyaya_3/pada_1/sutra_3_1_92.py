@@ -19,8 +19,6 @@ _META_ARM_B = "corrected_v2_P005_B_3_1_92_arm"
 
 
 def _witness_a(state: State) -> bool:
-    if not state.meta.get(_META_ARM_A):
-        return False
     if len(state.terms) < 3:
         return False
     t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
@@ -36,8 +34,6 @@ def _witness_a(state: State) -> bool:
 
 
 def _witness_b(state: State) -> bool:
-    if not state.meta.get(_META_ARM_B):
-        return False
     if len(state.terms) < 3:
         return False
     t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]

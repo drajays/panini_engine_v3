@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.8",
+  "sk_number": 257,
+  "text": {
+    "dev": "पतिः समास एव",
+    "slp1": "patiH samAsa eva",
+    "padaccheda": {
+      "dev": "पतिः · समासे · एव",
+      "slp1": "patiH · samAsa · eva",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": "1.4.1",
+    "anuvritta_note": "Continues ghī-saṃjñā context from 1.4.7.",
+    "anuvrtti_pada": "14007: घि",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Niyama: pati is called ghi only in samāsa (restricts 1.4.7 ghī-sañjñā application for pati)."
+  },
+  "downstream": {
+    "next_sutra": "1.4.9",
+    "previous_sutra": "1.4.7",
+    "next_effect": null,
+    "note": "Ensures ghī-dependent operations apply to pati only in compounds (e.g., प्रजापतये), not in standalone (पत्ये)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पतिशब्दः समास एव घिसंज्ञो भवति",
+      "alt_dev": null,
+      "raw": "पतिशब्दः समास एव घिसंज्ञो भवति",
+      "source": "Kashika 1.4.8",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्रजापतिना",
+      "alt_dev": null,
+      "raw": "प्रजापतिना",
+      "source": "Kashika 1.4.8",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्रजापतये",
+      "alt_dev": null,
+      "raw": "प्रजापतये",
+      "source": "Kashika 1.4.8",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "समास इति किम्? पत्या",
+      "alt_dev": null,
+      "raw": "समास इति किम्? पत्या",
+      "source": "Kashika 1.4.8",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "The word pati is (ghi) only in a compound.",
+    "sa": "पतिशब्दः समासे एव घि-संज्ञकः भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.8",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.9",
+    "test_file": "tests/test_sutra_1_4_8.py",
+    "notes": "Kāśikā: ‘पतिशब्दः समासे एव घिसंज्ञो भवति… समासे इति किम्? पत्या…’",
+    "condition_key": "cond_1_4_8",
+    "action_key": "act_1_4_8"
+  }
+}

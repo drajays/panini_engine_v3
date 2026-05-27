@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.2.71",
+  "sk_number": 937,
+  "text": {
+    "dev": "श्वशुरः श्वश्र्वा",
+    "slp1": "SvaSuraH SvaSrvA",
+    "padaccheda": {
+      "dev": "श्वशुरः · श्वश्र्वा",
+      "slp1": "SvaSuraH · SvaSrvA",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "Anuvṛtti of **śeṣa/ekaśeṣa** from 1.2.64 and optionality (**anyatarasyām**) from 1.2.69.",
+    "anuvrtti_pada": "12064: शेषः | 12069: अन्यतरस्याम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "anyatara",
+    "optionality": {
+      "value": true,
+      "paninian_term": "अन्यतरस्याम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": false,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Vidhi scope marker within the ekaśeṣa chain: records the special selection context for śvaśura (father-in-law) with śvaśrū (mother-in-law), under the ongoing anyatarasyām (optional) context. Silico: records only via ``Environment.SvaSuraH_SvaSrvA_1_2_71``; ``core/sutra_1_2_71``."
+  },
+  "downstream": {
+    "next_sutra": "1.2.72",
+    "previous_sutra": "1.2.70",
+    "next_effect": null,
+    "note": "Samāsa/ekaśeṣa pipeline: records śvaśura+śvaśrū selection scope under the ongoing optionality context."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "श्वश्र्वा सहवचने श्वशुरशब्दः शिष्यतेऽन्यतरस्याम्",
+      "alt_dev": null,
+      "raw": "श्वश्र्वा सहवचने श्वशुरशब्दः शिष्यतेऽन्यतरस्याम्",
+      "source": "Kashika 1.2.71",
+      "variant_type": "anyatara"
+    }
+  ],
+  "gloss": {
+    "en": "Within the ekaśeṣa chain (under anyatarasyām), records the special selection context for ‘father-in-law’ with ‘mother-in-law’.",
+    "sa": "एकशेषप्रसङ्गे (अन्यतरस्याम्) श्वशुर-श्वश्र्वोः विशेषः।"
+  },
+  "authority": {
+    "kashika_ref": "1.2.71",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.2.72",
+    "test_file": "tests/test_sutra_1_2_71.py",
+    "notes": null,
+    "condition_key": "cond_1_2_71",
+    "action_key": "act_1_2_71"
+  }
+}

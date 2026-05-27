@@ -2,9 +2,9 @@
   "by_type": {
     "ADHIKARA": {
       "coverage_pct": 100.0,
-      "implemented": 77,
+      "implemented": 76,
       "stubs": 0,
-      "total": 77
+      "total": 76
     },
     "ANUVADA": {
       "coverage_pct": 100.0,
@@ -56,9 +56,9 @@
     },
     "VIDHI": {
       "coverage_pct": 100.0,
-      "implemented": 3607,
+      "implemented": 3608,
       "stubs": 0,
-      "total": 3607
+      "total": 3608
     }
   },
   "coverage_pct": 100.0,

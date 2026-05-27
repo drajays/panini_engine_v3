@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.3.106",
+  "sk_number": 3643,
+  "text": {
+    "dev": "पूर्वपदात्",
+    "slp1": "pUrvapadAt",
+    "padaccheda": {
+      "dev": "पूर्व-पदात्",
+      "slp1": "pUrvapadAt",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "82108: संहितायाम् | 83055: अपदान्तस्य मूर्धन्यः | 83056: सः | 83057: इण्कोः | 83058: नुम्विसर्जनीयशर्व्यवायेऽपि | 83104: एकेषाम् | 83105: छन्दसि",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "8.3.107",
+    "previous_sutra": "8.3.105",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "द्वि॑ष॒न्धिः॒ (मै०सं० ३.८.२)",
+      "alt_dev": "द्विसन्धिः",
+      "raw": "द्वि॑ष॒न्धिः॒ (मै०सं० ३.८.२), द्विसन्धिः",
+      "source": "Kashika 8.3.106",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "त्रि॑ष॒न्धिः॒ (मै०सं० ३.८.२)",
+      "alt_dev": "त्रिसन्धिः",
+      "raw": "त्रि॑ष॒न्धिः॒ (मै०सं० ३.८.२), त्रिसन्धिः",
+      "source": "Kashika 8.3.106",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "मधुष्ठानम्",
+      "alt_dev": "मधुस्थानम्",
+      "raw": "मधुष्ठानम् , मधुस्थानम्",
+      "source": "Kashika 8.3.106",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "असमासेऽपि यत् पूर्वपदं तदपीह गृह्यते",
+      "alt_dev": null,
+      "raw": "असमासेऽपि यत् पूर्वपदं तदपीह गृह्यते",
+      "source": "Kashika 8.3.106",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "8.3.106",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "stub",
+    "similar_sutra": "8.3.107",
+    "test_file": "tests/test_sutra_8_3_106.py",
+    "notes": null,
+    "condition_key": "cond_8_3_106",
+    "action_key": "act_8_3_106"
+  }
+}

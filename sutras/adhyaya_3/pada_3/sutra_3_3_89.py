@@ -34,9 +34,9 @@ def cond(state: State) -> bool:
         return False
     up = (t0.meta.get("upadesha_slp1") or "").strip()
     stem = "".join(v.slp1 for v in t0.varnas)
-    if state.meta.get(META_ARM_A) and up == _UPADESHA_A and stem == "vep":
+    if up == _UPADESHA_A and stem == "vep":
         return True
-    if state.meta.get(META_ARM_B) and up == _UPADESHA_B and stem == "zvi":
+    if up == _UPADESHA_B and stem == "zvi":
         return True
     return False
 

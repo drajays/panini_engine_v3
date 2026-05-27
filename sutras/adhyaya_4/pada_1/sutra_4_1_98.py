@@ -35,8 +35,6 @@ def _stem_idx(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get(META_ARM):
-        return False
     if not adhikara_in_effect("4.1.98", state, "4.1.92"):
         return False
     if _stem_idx(state) is None:
@@ -47,7 +45,11 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if not cond(state):
+    if not adhikara_in_effect("4.1.98", state, "4.1.92"):
+        return state
+    if _stem_idx(state) is None:
+        return state
+    if _has_caPaY(state):
         return state
     pr = Term(
         kind="pratyaya",
@@ -56,7 +58,6 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": _TAD_UPA},
     )
     state.terms.append(pr)
-    state.meta.pop(META_ARM, None)
     return state
 
 

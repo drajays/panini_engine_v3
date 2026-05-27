@@ -52,10 +52,8 @@ def derive_bhinnaH_kta_Bidi_corrected_P001_A() -> State:
     s = P00_lashakvataddhite_it_lopa_chain(s)
     s = P00_krt_ardhadhatuka_ekac_it_and_guna_audit(s)
 
-    s.meta["corrected_v2_P001_A_8_2_42_arm"] = True
     s = apply_rule("8.2.42", s)
 
-    s.meta["corrected_v2_P001_A_1_2_46_arm"] = True
     s = apply_rule("1.2.46", s)
 
     s.meta["linga"] = "pulliṅga"

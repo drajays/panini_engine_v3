@@ -44,7 +44,7 @@ def _find_pratyaya(state: State) -> int | None:
         if "pratyaya" not in t.tags:
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
-        if state.meta.get("corrected_v2_P014_1_2_5_lit_kit_e_arm") and up == "e":
+        if up == "e":
             if "kngiti" in t.tags:
                 return None
             return i
@@ -70,7 +70,6 @@ def act(state: State) -> State:
         return state
     state.terms[i].tags.add("kngiti")
     state.samjna_registry["1.2.5_asamyogal_lit_kit"] = True
-    state.meta.pop("corrected_v2_P014_1_2_5_lit_kit_e_arm", None)
     return state
 
 

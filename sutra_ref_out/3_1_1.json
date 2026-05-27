@@ -1,0 +1,130 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "3.1.1",
+  "sk_number": 180,
+  "text": {
+    "dev": "प्रत्ययः",
+    "slp1": "pratyayaH",
+    "padaccheda": {
+      "dev": "प्रत्ययः (प्रथमा-एकवचनम्)",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": null,
+    "from_chain": {
+      "inherited_words_dev": [],
+      "inherited_words_en": [],
+      "scope_condition": "Pratyayādhikāra: newly taught śāstra items in chapters 3–5 through end of 5 are technically pratyaya-saṃjñaka (not only new affix chains; includes saṃjñā/adhikāra/niyama/atideśa sūtras in scope).",
+      "anuvritta_from_chain": []
+    }
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M03",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Pratyayādhikāra (3.1.1): scope chapters 3–5 to chapter-end; technical ‘pratyaya’ for all newly taught śāstra items in range, not only affix inventory; coexists with saṃjñā/niyama sūtras in same adhikāra."
+  },
+  "downstream": {
+    "next_sutra": "3.1.2",
+    "previous_sutra": "2.4.85",
+    "next_effect": null,
+    "note": "Anchors pratyaya-saṃjñā and the largest adhikāra; engine marks pratyaya role for downstream rules."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्रत्ययशब्दः संज्ञात्वेनाधिक्रियते",
+      "alt_dev": null,
+      "raw": "प्रत्ययशब्दः संज्ञात्वेनाधिक्रियते",
+      "source": "Kashika 3.1.1",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कर्त्तव्यम्",
+      "alt_dev": null,
+      "raw": "कर्त्तव्यम्",
+      "source": "Kashika 3.1.1",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "करणीयम्",
+      "alt_dev": null,
+      "raw": "करणीयम्",
+      "source": "Kashika 3.1.1",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Pratyayādhikāra anchor: from here through the end of the fifth chapter, newly taught technical terms count as pratyayāḥ in the śāstra sense (includes headings and rules in scope, not only new affix-phoneme chains); seven major classes are enumerated in vritti_note.",
+    "sa": "अयं प्रत्ययाधिकारः — इतः परं पञ्चमाध्यायसमाप्तिपर्यन्तं पाठ्यानि नूतनानि शब्दानि प्रत्ययसंज्ञकानि भवन्ति (केवलं नूतन-प्रत्यय-मात्राणि न)। सप्त प्रकाराः: सनादि, विकरण, तिङ्, कृत्, सुप्, स्त्री, तद्धित इति।"
+  },
+  "authority": {
+    "kashika_ref": "3.1.1",
+    "jijnasu_ref": "Vol.2 (pratyayādhikāra) — Jijñāsu / Bhāṣya",
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "3.1.2",
+    "test_file": "tests/test_sutra_3_1_1.py",
+    "notes": "संज्ञासूत्रम् · अधिकारसूत्रम् (प्रत्ययसंज्ञा / प्रत्ययाधिकारः)। अनुवृत्तिः —। अधिकारोऽयम् अष्टाध्याय्यां महत्तमः; व्याप्तिस् तृतीय-चतुर्थ-पञ्चमाध्यायेषु। (१) सनादयः — गुप्तिज्किद्भ्यः सन् ३.१.५ादि, आर्धधातुके ३.१.३१। (२) विकरणाः — स्यतासी… ३.१.३३ादि यावल्लिङ्याशिष्यङ् ३.१.८६। (३) तिङ् — तिप्तस्झि… ३.४.७८; लस्य ३.४.७७। (४) कृत् — तृतीये पाठिताः सनादि-विकरण-तिङ्-भिन्नाः सर्वे। (५) सुप् — स्वौजस्… ४.१.२। (६) स्त्री — अजाद्यतष्टाप् ४.१.४ादि। (७) तद्धित — ४.१.७६ादि। ज्ञातव्यम्: अत्र संज्ञा·अधिकार·नियम·अतिदेश-सूत्राण्यपि सन्ति। प्रयोगाः — अर्थवद्-धातुर्-अप्रत्ययः प्रातिपदिकम् १.२.४५; प्रत्ययलोपे प्रत्ययलक्षणम् १.१.६२; प्रत्ययस्थात् कात् पूर्वस्यात् इदाप्यसुपः ७.३.४४।",
+    "condition_key": "cond_3_1_1",
+    "action_key": "act_3_1_1"
+  }
+}

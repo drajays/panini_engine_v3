@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.1.17",
+  "sk_number": 106,
+  "text": {
+    "dev": "उञः",
+    "slp1": "uYaH",
+    "padaccheda": {
+      "dev": "उञः",
+      "slp1": "uYaH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "Anuvṛtti प्रगृह्यम् from 1.1.11; निपात from 1.1.14.",
+    "anuvrtti_pada": "11011: प्रगृह्यम् | 11016: शाकल्यस्य इतौ अनार्षे",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": "1.1.11",
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 2,
+    "soi_doi_note": "Nipāta ending in short u (uñ). Predicate: is_pragfhya_1_1_17; chain: is_pragfhya_pada_through_1_1_17. Known multi-vowel forms: UJA_NIPATA_SLP1_KNOWN."
+  },
+  "downstream": {
+    "next_sutra": "1.1.18",
+    "previous_sutra": "1.1.16",
+    "next_effect": null,
+    "note": "1.1.11, 1.1.14, pragṛhya sandhi for u-final nipāta"
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्रभु",
+      "alt_dev": null,
+      "raw": "प्रभु",
+      "source": "Kashika 1.1.17",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "साधु",
+      "alt_dev": null,
+      "raw": "साधु",
+      "source": "Kashika 1.1.17",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "स्तु",
+      "alt_dev": null,
+      "raw": "स्तु",
+      "source": "Kashika 1.1.17",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "शाकल्यस्येति विभाषार्थम्",
+      "alt_dev": null,
+      "raw": "शाकल्यस्येति विभाषार्थम्",
+      "source": "Kashika 1.1.17",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उ इति",
+      "alt_dev": null,
+      "raw": "उ इति",
+      "source": "Kashika 1.1.17",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "विति",
+      "alt_dev": null,
+      "raw": "विति",
+      "source": "Kashika 1.1.17",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Niyama on 1.1.11: nipāta pada ending in short **u** (उञ्) is pragṛhya. Covers 1.1.14 ekājan-aṅ + final **u**, plus listed uñ-anta (e.g. prabhu, sādhu).",
+    "sa": "निपातात् उकारान्तं प्रगृह्यम्।"
+  },
+  "authority": {
+    "kashika_ref": "1.1.17",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.1.18",
+    "test_file": "tests/test_sutra_1_1_17.py",
+    "notes": null,
+    "condition_key": "cond_1_1_17",
+    "action_key": "act_1_1_17"
+  }
+}

@@ -33,16 +33,12 @@ _META_P013 = "corrected_v2_P013_sani_dirgha_arm"
 
 def _allowed_dhatu_upadesha(state: State) -> frozenset[str]:
     out = set(_DHATU_UPADESHA)
-    if state.meta.get(_META_P013):
-        out.add("Sru")
+    out.add("Sru")
     return frozenset(out)
 
 
 def _find_main_ci(state: State) -> int | None:
-    if not (
-        state.meta.get("6_4_16_sani_dirgha_arm")
-        or state.meta.get(_META_P013)
-    ):
+    if not state.meta.get("6_4_16_sani_dirgha_arm"):
         return None
     ts = state.terms
     if len(ts) < 3:
@@ -111,7 +107,6 @@ def act(state: State) -> State:
         san.meta["upadesha_slp1"] = "s"
         san.meta["6_4_16_san_initial_i_lopa_done"] = True
     state.meta["6_4_16_sani_dirgha_arm"] = False
-    state.meta.pop(_META_P013, None)
     return state
 
 

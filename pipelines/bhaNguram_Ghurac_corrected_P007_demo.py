@@ -45,7 +45,6 @@ def derive_bhaNgura_pratipadika_corrected_P007() -> State:
     s = apply_rule("1.3.1", s)
     s = apply_rule("1.3.2", s)
     s = apply_rule("1.3.5", s)
-    s.meta["corrected_v2_P007_BaYjo_ovarga_arm"] = True
     s = apply_rule("1.3.200", s)
     s = P00_it_halantyam_lopa_yathasankhyam(s)
     for t in s.terms:
@@ -58,7 +57,6 @@ def derive_bhaNgura_pratipadika_corrected_P007() -> State:
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
     s = apply_rule("3.1.91", s)
 
-    s.meta["corrected_v2_P007_3_2_161_arm"] = True
     s = apply_rule("3.2.161", s)
 
     s = apply_rule("1.3.8", s)

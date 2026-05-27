@@ -45,8 +45,6 @@ def _finals_for_pair(anga, pr) -> frozenset[str]:
 
 def _p005_a_kurucara_final_a_before_I(state: State) -> tuple[int, int] | None:
     """**P005-A**: *kurucara* + *ṅīp* residue ``ī`` — *aṅgāntya* ``a`` *lopa*."""
-    if not state.meta.get(META_P005_A_148):
-        return None
     for j in range(1, len(state.terms)):
         nxt = state.terms[j]
         if term_is_sup_luk_ghost(nxt):
@@ -171,8 +169,6 @@ def _p004_b_shandikya_final_a_before_initial_ya(state: State):
     **corrected-v2 P004-B** (*śāṇḍikya*): *aṅgāntya* hrasa ``a`` before *ñya*
     residue ``ya`` (initial ``y`` + ``a``), under **6.4.129** + **6.4.148**.
     """
-    if not state.meta.get(META_P004_B_148):
-        return None
     for j in range(1, len(state.terms)):
         nxt = state.terms[j]
         if term_is_sup_luk_ghost(nxt):
@@ -292,9 +288,6 @@ def act(state: State) -> State:
     ti, vi = hit
     del state.terms[ti].varnas[vi]
     state.meta.pop("prakriya_P018_6_4_148_i_lopa_before_ika_arm", None)
-    state.meta.pop(META_P004_B_148, None)
-    if hit_p05 is not None and hit_p05 == hit:
-        state.meta.pop(META_P005_A_148, None)
     if hit_s2 is not None and hit_s2 == hit:
         state.meta.pop(META_P004_A_STAGE2_148, None)
     return state

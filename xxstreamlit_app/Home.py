@@ -1,0 +1,41 @@
+"""
+राम शब्द-रूप — Panini Engine v3 (Streamlit)
+
+Run from repo root:
+  pip install streamlit
+  streamlit run streamlit_app/Home.py
+"""
+from __future__ import annotations
+
+import streamlit as st
+
+import common  # noqa: E402 — ensures repo root on sys.path for multipage
+
+st.set_page_config(
+    page_title="राम शब्द-रूप",
+    page_icon="📿",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+st.title("पुंलिङ्ग शब्दरूप + प्रक्रिया")
+st.markdown(
+    "**अष्टाध्यायी-क्रम** से चलने वाला इन्जिन् — अभी **पुंलिङ्ग** के दो stem प्रकार:\n\n"
+    "- **अकारान्त** (`...a`) — उदा. `राम` / `rAma`, `गज` / `gaja`\n"
+    "- **इकारान्त** (`...i`) — उदा. `हरि` / `hari`\n\n"
+    "एक ही पृष्ठ पर **२४ रूप (8×3)** + किसी भी **एक कोष्ठक की पूर्ण प्रक्रिया (ट्रेस)** देख सकते हैं।"
+)
+
+st.info(
+    "📊 **Paradigm (8×3)** — पूरी सारणी, प्रातिपदिक बदलकर देखें।\n\n"
+    "🔍 **Cell derivation** — एक कोष्ठक चुनकर ट्रेस: **सभी चरण** अथवा **केवल वे चरण जहाँ SLP1 रूप बदला**।\n\n"
+    "🧩 **Kṛdanta** — **ण्वुल्** (पाचक) तथा **तृच्** (चेता, नेता, …) की **दो-खण्ड प्रक्रिया** "
+    "(कृदन्त + सुबन्त) पूर्ण ट्रेस सहित।\n\n"
+    "📿 **घि · सर्व · तद् · ज्ञान** — **हरि** (घि), **सर्व**, **तद्** (त्यदादि), **ज्ञान** (नपुंसक) की सारणी + "
+    "निष्कर्ष व ट्रेस (तद् में सम्बोधन नहीं)।\n\n"
+    "🧭 **दिक्-समास + चतुर्थी (ङे)** — उत्तर+पूर्व व दक्षिण+पूर्व; देवनागरी-हिन्दी काच-व्याख्या, "
+    "slp1 कोष्ठक में, पूर्ण इंजिन-ट्रेस + डाउनलोड।"
+)
+
+st.divider()
+st.caption("Panini Engine v3 · `pipelines.subanta.derive` (+ stem guards) + देवनागरी जोड़")

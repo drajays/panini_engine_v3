@@ -41,8 +41,6 @@ def _dyut_site(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get(_META_ARM):
-        return False
     return _dyut_site(state)
 
 
@@ -59,7 +57,6 @@ def act(state: State) -> State:
         # *aṅ* is **ङित्** — **1.1.5** *kṅiti ca* blocks **7.3.86** (P018-A note).
         t.tags.add("kngiti")
         break
-    state.meta.pop(_META_ARM, None)
     return state
 
 

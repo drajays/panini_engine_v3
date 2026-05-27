@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "2.1.36",
+  "sk_number": 698,
+  "text": {
+    "dev": "चतुर्थी तदर्थार्थबलिहितसुखरक्षितैः",
+    "slp1": "caturTI tadarTArTabalihitasuKarakzitEH",
+    "padaccheda": {
+      "dev": "चतुर्थी तदर्थ-अर्थ-बलि-हित-सुख-रक्षितैः",
+      "slp1": "caturTI · tadarTArTabalihitasuKarakzitEH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "21002: सुप् | 21003: समासः | 21004: सह सुपा | 21011: विभाषा | 21022: तत्पुरुषः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M02",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "2.1.37",
+    "previous_sutra": "2.1.35",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तदिति सर्वनाम्ना चतुर्थ्यन्तस्यार्थः परामृश्यते",
+      "alt_dev": null,
+      "raw": "तदिति सर्वनाम्ना चतुर्थ्यन्तस्यार्थः परामृश्यते",
+      "source": "Kashika 2.1.36",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तस्मै इदं तदर्थम्",
+      "alt_dev": null,
+      "raw": "तस्मै इदं तदर्थम्",
+      "source": "Kashika 2.1.36",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तदर्थेन प्रकृतिविकारभावे समासोऽयमिष्यते",
+      "alt_dev": null,
+      "raw": "तदर्थेन प्रकृतिविकारभावे समासोऽयमिष्यते",
+      "source": "Kashika 2.1.36",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "यूपाय दारु",
+      "alt_dev": "यूपदारु",
+      "raw": "यूपाय दारु, यूपदारु",
+      "source": "Kashika 2.1.36",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "2.1.36",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "2.1.37",
+    "test_file": "tests/test_sutra_2_1_36.py",
+    "notes": null,
+    "condition_key": "cond_2_1_36",
+    "action_key": "act_2_1_36"
+  }
+}

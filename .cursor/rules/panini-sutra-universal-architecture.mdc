@@ -1,0 +1,33 @@
+---
+description: Pāṇini engine — universal sūtra cond/act architecture (no demo arms in rules)
+globs:
+  - "sutras/**/sutra_*.py"
+  - "engine/rules/**/*.py"
+alwaysApply: false
+---
+
+# Universal rule architecture (sūtra files)
+
+Supreme law: **`CONSTITUTION.md`**, including **Article 13** and
+`docs/SUTRA_UNIVERSAL_RULE_ARCHITECTURE.md`.
+
+When editing matched files:
+
+1. **`cond` / `act`** must not depend on recipe demo keys in `state.meta`
+   (`*_arm`, `corrected_v2_*`, prakriya IDs). Legacy debt is migrated, not
+   copied.
+
+2. Prefer **`Term.tags`**, **`it_markers`**, **`samjna_registry`**, and
+   **`adhikara_in_effect`** over gold-form or single-root `==` checks.
+
+3. **Module-level** `frozenset` / data for sūtra-enumerated dhātus or
+   morpheme classes — not scattered string literals for one pipeline.
+
+4. **One `_find` → `cond` → `act`**; idempotency keys like
+   `{sutra_id}_operation_done` on the operated `Term`.
+
+5. **Naming:** helpers after linguistic operations, not demos or proper
+   names of example words.
+
+If a change would violate Article 2 (mechanical blindness) or Article 11
+(SIG), stop and amend the recipe or engine data path instead.

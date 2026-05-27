@@ -52,7 +52,6 @@ def derive_vepathuH_athuc_wuvepf_corrected_P002_A() -> State:
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
     s = apply_rule("3.1.91", s)
 
-    s.meta["corrected_v2_P002_A_3_3_89_arm"] = True
     s = apply_rule("3.3.89", s)
     s = P00_lashakvataddhite_it_lopa_chain(s)
     s = apply_rule("3.4.114", s)
@@ -63,7 +62,6 @@ def derive_vepathuH_athuc_wuvepf_corrected_P002_A() -> State:
     stem.kind = "prakriti"
     stem.tags.discard("pada")
     stem.meta["corrected_v2_P002_A_bhava_stem"] = True
-    s.meta["corrected_v2_P002_A_1_2_46_arm"] = True
     s = apply_rule("1.2.46", s)
 
     s.meta["linga"] = "pulliṅga"

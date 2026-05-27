@@ -1,0 +1,190 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.3.19",
+  "sk_number": 67,
+  "text": {
+    "dev": "लोपः शाकल्यस्य",
+    "slp1": "lopaH SAkalyasya",
+    "padaccheda": {
+      "dev": "लोपः शाकल्यस्य",
+      "slp1": "lopaH · SAkalyasya",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "8.1.16",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "8.2.108",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "8.3.17",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "8.3.18",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": null,
+    "anuvritta_note": "Anuvṛtti of padānta/samhitā scope and the vyor/aśi environment from the immediately preceding 8.3 thread (per padaccheda).",
+    "anuvrtti_pada": "81016: पदस्य | 82108: संहितायाम् | 83017: अपूर्वस्य अशि | 83018: व्योः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "vibhasha",
+    "optionality": {
+      "value": true,
+      "paninian_term": "विकल्पेन"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": false,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**लोपः शाकल्यस्य** — In Tripāḍī saṃhitā, Śākalya optionally deletes padānta **y/v** (from prior ay/av expansions) when preceded by **a** and followed by **aŚ** (vowel-class)."
+  },
+  "downstream": {
+    "next_sutra": "8.3.20",
+    "previous_sutra": "8.3.18",
+    "next_effect": null,
+    "note": "Provides the Śākalya optional lopa that yields alternants like क आस्ते / कयास्ते and द्वा अत्र / द्वावत्र."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "क आस्ते / कयास्ते",
+      "alt_dev": null,
+      "raw": "क आस्ते / कयास्ते",
+      "source": "Kashika 8.3.19",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "द्वा अत्र / द्वावत्र",
+      "alt_dev": null,
+      "raw": "द्वा अत्र / द्वावत्र",
+      "source": "Kashika 8.3.19",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "असा आदित्यः / असावादित्यः",
+      "alt_dev": null,
+      "raw": "असा आदित्यः / असावादित्यः",
+      "source": "Kashika 8.3.19",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "क आस्ते",
+      "alt_dev": "कयास्ते",
+      "raw": "क आस्ते, कयास्ते",
+      "source": "Kashika 8.3.19",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "काक आस्ते",
+      "alt_dev": "काकयास्ते",
+      "raw": "काक आस्ते, काकयास्ते",
+      "source": "Kashika 8.3.19",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अस्मा उद्धर",
+      "alt_dev": "अस्मायुद्धर",
+      "raw": "अस्मा उद्धर, अस्मायुद्धर",
+      "source": "Kashika 8.3.19",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "द्वा अत्र द्वावत्र",
+      "alt_dev": null,
+      "raw": "द्वा अत्र द्वावत्र",
+      "source": "Kashika 8.3.19",
+      "variant_type": "vibhasha"
+    }
+  ],
+  "gloss": {
+    "en": "According to Śākalya, the final y or v (when preceded by a and followed by aś) is optionally deleted.",
+    "sa": "शाकल्यस्य मते पदान्तयोः अवर्णपूर्वयोः य/व-लोपो (विभाषा) अशि परतः भवति।"
+  },
+  "authority": {
+    "kashika_ref": "8.3.19",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "8.3.20",
+    "test_file": "tests/test_sutra_8_3_19.py",
+    "notes": null,
+    "condition_key": "cond_8_3_19",
+    "action_key": "act_8_3_19"
+  }
+}

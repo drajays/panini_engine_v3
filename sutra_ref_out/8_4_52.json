@@ -1,0 +1,172 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.4.52",
+  "sk_number": 58,
+  "text": {
+    "dev": "दीर्घादाचार्याणाम्",
+    "slp1": "dIrGAdAcAryARAm",
+    "padaccheda": {
+      "dev": "दीर्घात् ५/१ आचार्याणाम् ६/३",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "8.2.108",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "8.4.46",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "8.4.47",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "8.4.48",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "8.4.50",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "8.4.51",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": null,
+    "anuvritta_note": "Kāśikā: blocks the dvitva that would otherwise follow from the “द्वे / अनचि च” thread in saṃhitā.",
+    "anuvrtti_pada": "82108: संहितायाम् | 84046: द्वे | 84048: न",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "After a **dīrgha** vowel, according to the ācārya tradition, the dvitva under the running 8.4.46–47 thread does not occur."
+  },
+  "downstream": {
+    "next_sutra": "8.4.53",
+    "previous_sutra": "8.4.51",
+    "next_effect": null,
+    "note": "Prevents over-gemination after long vowels in words like दात्रम्, पात्रम्, मूत्रम्, सूत्रम् (Kāśikā)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "दात्रम्",
+      "alt_dev": null,
+      "raw": "दात्रम्",
+      "source": "Kashika 8.4.52",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पात्रम्",
+      "alt_dev": null,
+      "raw": "पात्रम्",
+      "source": "Kashika 8.4.52",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "मूत्रम्",
+      "alt_dev": null,
+      "raw": "मूत्रम्",
+      "source": "Kashika 8.4.52",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सूत्रम्",
+      "alt_dev": null,
+      "raw": "सूत्रम्",
+      "source": "Kashika 8.4.52",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "After a long vowel (**dīrgha**), according to the ācāryas, the (dvitva) doubling does not occur.",
+    "sa": "दीर्घात् परतः आचार्यमतेन द्वित्वं न भवति।"
+  },
+  "authority": {
+    "kashika_ref": "8.4.52",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "8.4.53",
+    "test_file": "tests/test_sutra_8_4_52.py",
+    "notes": null,
+    "condition_key": "cond_8_4_52",
+    "action_key": "act_8_4_52"
+  }
+}

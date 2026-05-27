@@ -42,8 +42,8 @@ def _matches(state: State) -> bool:
     if not anga.varnas:
         return False
     # **corrected-v2 P003** (*paktrimam*, *kṛtrimam*, *uptrimam*): stem ends in **m**
-    # (*ktri*+*mam* residue); **sū** → **am** like **ato ’m** on **a**-final napumsaka.
-    if state.meta.get(META_P003_AM) and anga.varnas[-1].slp1 == "m":
+    # (*ktri*+*mam* residue); **sū** → **am** like **ato ‘m** on **a**-final napumsaka.
+    if anga.varnas[-1].slp1 == "m":
         return True
     if anga.varnas[-1].slp1 != "a":
         return False
@@ -62,7 +62,6 @@ def act(state: State) -> State:
     pr.meta["ato_am_done"] = True
     pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", pr.meta.get("upadesha_slp1"))
     pr.meta["upadesha_slp1"] = "am"
-    state.meta.pop(META_P003_AM, None)
     return state
 
 

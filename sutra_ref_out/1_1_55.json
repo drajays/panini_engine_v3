@@ -1,0 +1,141 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.1.55",
+  "sk_number": 45,
+  "text": {
+    "dev": "अनेकाल्शित्सर्वस्य",
+    "slp1": "anekAlSitsarvasya",
+    "padaccheda": {
+      "dev": "अनेक-अल्-शित् · सर्वस्य",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "षष्ठी ← १.१.४९",
+    "anuvrtti_pada": "11049: षष्ठी",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "paribhasha",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": true,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**aneka** **al** + **Śit** (tag ``Sit``) ⇒ **sarvasya**. ``aneka_al_sit_sarvasya_scope_active``; string helpers ``segment_has_aneka_al_slp1``, ``count_al_phonemes_slp1``. **Anuvṛtti** **ṣaṣṭhī** (**1.1.49**)."
+  },
+  "downstream": {
+    "next_sutra": "1.1.56",
+    "previous_sutra": "1.1.54",
+    "next_effect": null,
+    "note": "Widens **sthāna**/**ādeśa** to every qualifying **al** on the stem when **Śit** vikaraṇa/tiṅ is present."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "— भविता",
+      "alt_dev": null,
+      "raw": "— भविता",
+      "source": "Kashika 1.1.55",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "भवितुम्",
+      "alt_dev": null,
+      "raw": "भवितुम्",
+      "source": "Kashika 1.1.55",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "भवितव्यम्",
+      "alt_dev": null,
+      "raw": "भवितव्यम्",
+      "source": "Kashika 1.1.55",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "शित् खल्वपि —   — कुण्डानि तिष्ठन्ति",
+      "alt_dev": null,
+      "raw": "शित् खल्वपि —   — कुण्डानि तिष्ठन्ति",
+      "source": "Kashika 1.1.55",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Paribhāṣā: with **several** **al** and a **Śit** affix, the rule applies to **all** of them (**sarvasya**).",
+    "sa": "अनेकेषु अच्-हल्-वर्णेषु शिति प्रत्यये सर्वेषु विधिः भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.1.55",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.1.56",
+    "test_file": "tests/test_sutra_1_1_55.py",
+    "notes": null,
+    "condition_key": "cond_1_1_55",
+    "action_key": "act_1_1_55"
+  },
+  "new_constitution_blind_template": {
+    "text_dev": "अनेकाल्शित्सर्वस्य",
+    "padaccheda_dev": "अनेकाल्-शित् सर्वस्य",
+    "op_type": "SAMJNA",
+    "why_dev": "अनेकाल् (बहुवर्णः) ādeśा → सर्व-आदेशः"
+  }
+}

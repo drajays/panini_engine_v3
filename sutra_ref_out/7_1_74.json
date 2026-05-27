@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "7.1.74",
+  "sk_number": 321,
+  "text": {
+    "dev": "तृतीयाऽऽदिषु भाषितपुंस्कं पुंवद्गालवस्य",
+    "slp1": "tftIyA''dizu BAzitapuMskaM puMvadgAlavasya",
+    "padaccheda": {
+      "dev": "तृतीया-आदिषु भाषितपुंस्कम् पुंवत् गालवस्य",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "64001: अङ्गस्य | 71058: नुम् | 71073: इकोऽचि विभक्तौ",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "F",
+    "module": "M07",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "7.1.75",
+    "previous_sutra": "7.1.73",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ग्रामणीर्ब्राह्मणः",
+      "alt_dev": "ग्रामणि ब्राह्मणकुलम्",
+      "raw": "ग्रामणीर्ब्राह्मणः, ग्रामणि ब्राह्मणकुलम्",
+      "source": "Kashika 7.1.74",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ग्रामण्या ब्राह्मणकुलेन",
+      "alt_dev": "ग्रामणिना ब्राह्मणकुलेन",
+      "raw": "ग्रामण्या ब्राह्मणकुलेन, ग्रामणिना ब्राह्मणकुलेन",
+      "source": "Kashika 7.1.74",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ग्रामण्ये ब्राह्मणकुलाय",
+      "alt_dev": "ग्रामणिने ब्राह्मणकुलाय",
+      "raw": "ग्रामण्ये ब्राह्मणकुलाय, ग्रामणिने ब्राह्मणकुलाय",
+      "source": "Kashika 7.1.74",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ग्रामण्यां ब्राह्मणकुले",
+      "alt_dev": "ग्रामणिनि ब्राह्मणकुले",
+      "raw": "ग्रामण्यां ब्राह्मणकुले, ग्रामणिनि ब्राह्मणकुले",
+      "source": "Kashika 7.1.74",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "7.1.74",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "7.1.75",
+    "test_file": "tests/test_sutra_7_1_74.py",
+    "notes": null,
+    "condition_key": "cond_7_1_74",
+    "action_key": "act_7_1_74"
+  }
+}

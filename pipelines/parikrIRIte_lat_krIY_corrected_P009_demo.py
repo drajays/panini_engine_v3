@@ -66,19 +66,16 @@ def derive_parikrIRIte_lat_krIY_corrected_P009() -> State:
     s.meta["tin_adesha_slp1"] = "ta"
     s = apply_rule("3.4.78", s)
 
-    s.meta["corrected_v2_P009_3_1_81_arm"] = True
     s = apply_rule("3.1.81", s)
 
     for sid in ("1.3.8", "1.3.9"):
         s = apply_rule(sid, s)
 
-    s.meta["corrected_v2_P009_6_4_113_arm"] = True
     s = apply_rule("6.4.113", s)
 
     s = apply_rule("1.1.64", s)
     s = apply_rule("3.4.79", s)
 
-    s.meta["corrected_v2_P009_8_4_2_arm"] = True
     s = apply_rule("8.2.1", s)
     s = apply_rule("8.4.2", s)
 

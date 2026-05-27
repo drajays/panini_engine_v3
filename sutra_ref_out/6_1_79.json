@@ -1,0 +1,184 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "6.1.79",
+  "sk_number": 63,
+  "text": {
+    "dev": "वान्तो यि प्रत्यये",
+    "slp1": "vAnto yi pratyaye",
+    "padaccheda": {
+      "dev": "वान्तः यि प्रत्यये",
+      "slp1": "vAnto · yi · pratyaye",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "6.1.72",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "6.1.77",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "6.1.78",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "6.1.72",
+    "anuvritta_note": "Continues the saṃhitā sandhi scope (6.1.72) and the ec-context from 6.1.78; this sutra specifies the o/au→av/āv behaviour specifically when the following is y-initial pratyaya.",
+    "anuvrtti_pada": "61072: संहितायाम् | 61077: अचि | 61078: एचः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M06",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**वान्तो यि प्रत्यये** — In saṃhitā, before a **y-initial pratyaya**, the **vant-ādeśa** applies: **o→av**, **au→āv**."
+  },
+  "downstream": {
+    "next_sutra": "6.1.80",
+    "previous_sutra": "6.1.78",
+    "next_effect": null,
+    "note": "Ensures correct v-expansion before y-initial suffixes, yielding stems like गव्य-, नाव्य- used in Kāśikā examples."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "गव्यं",
+      "alt_dev": null,
+      "raw": "गव्यं",
+      "source": "Kashika 6.1.79",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "नाव्यः",
+      "alt_dev": null,
+      "raw": "नाव्यः",
+      "source": "Kashika 6.1.79",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "बाभ्रव्यः",
+      "alt_dev": null,
+      "raw": "बाभ्रव्यः",
+      "source": "Kashika 6.1.79",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "माण्डव्यः",
+      "alt_dev": null,
+      "raw": "माण्डव्यः",
+      "source": "Kashika 6.1.79",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "नाव्यो ह्रदः",
+      "alt_dev": null,
+      "raw": "नाव्यो ह्रदः",
+      "source": "Kashika 6.1.79",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "शङ्कव्यं दारु",
+      "alt_dev": null,
+      "raw": "शङ्कव्यं दारु",
+      "source": "Kashika 6.1.79",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पिचव्यः कार्पासः",
+      "alt_dev": null,
+      "raw": "पिचव्यः कार्पासः",
+      "source": "Kashika 6.1.79",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "In saṃhitā, before a y-initial suffix (pratyaya), o and au are replaced by av and āv respectively (vant-ādeśa).",
+    "sa": "संहितायाम् यकारादौ प्रत्यये परतः ओ/औ-स्थाने क्रमशः अव्/आव् (वान्तादेशः) भवति।"
+  },
+  "authority": {
+    "kashika_ref": "6.1.79",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "6.1.80",
+    "test_file": "tests/test_sutra_6_1_79.py",
+    "notes": null,
+    "condition_key": "cond_6_1_79",
+    "action_key": "act_6_1_79"
+  }
+}

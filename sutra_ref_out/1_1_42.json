@@ -1,0 +1,165 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.1.42",
+  "sk_number": 313,
+  "text": {
+    "dev": "शि सर्वनामस्थानम्",
+    "slp1": "Si sarvanAmasTAnam",
+    "padaccheda": {
+      "dev": "शि · सर्वनामस्थानम्",
+      "slp1": "Si · sarvanAmasTAnam",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": null,
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**śi** span in **sup** → **sarvanāmasthāna**. Slots encoded ``vibhakti:vacana`` (1–7, 1–3). Default **7** = **prathamā**/**dvitīyā** triṣu + **tṛtīyā** **eka** (common śi reading). ``samjna_rules.is_sarvanamasthana_vibhakti_vacana``; ``sutra_1_1_42.is_sarvanamasthana_sup_meta``."
+  },
+  "downstream": {
+    "next_sutra": "1.1.43",
+    "previous_sutra": "1.1.41",
+    "next_effect": null,
+    "note": "7.3.102–111 sarvanāma sup substitution, coordination with 1.1.27"
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सः",
+      "alt_dev": null,
+      "raw": "सः",
+      "source": "Kashika 1.1.42",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तौ",
+      "alt_dev": null,
+      "raw": "तौ",
+      "source": "Kashika 1.1.42",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ते",
+      "alt_dev": null,
+      "raw": "ते",
+      "source": "Kashika 1.1.42",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "किमिदं शि इति?   इति शिरादेशः",
+      "alt_dev": null,
+      "raw": "किमिदं शि इति?   इति शिरादेशः",
+      "source": "Kashika 1.1.42",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कुण्डानि तिष्ठन्ति",
+      "alt_dev": null,
+      "raw": "कुण्डानि तिष्ठन्ति",
+      "source": "Kashika 1.1.42",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कुण्डानि पश्य",
+      "alt_dev": null,
+      "raw": "कुण्डानि पश्य",
+      "source": "Kashika 1.1.42",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "दधीनि",
+      "alt_dev": null,
+      "raw": "दधीनि",
+      "source": "Kashika 1.1.42",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Saṃjñā **sarvanāmasthāna**: the **śi** positions in the **sup** system (pronoun-specific case–number slots).",
+    "sa": "सुपि शि-प्रत्याहारो यः स सर्वनामस्थानसंज्ञकः।"
+  },
+  "authority": {
+    "kashika_ref": "1.1.42",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.1.43",
+    "test_file": "tests/test_sutra_1_1_42.py",
+    "notes": null,
+    "condition_key": "cond_1_1_42",
+    "action_key": "act_1_1_42"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.3.10",
+  "sk_number": 128,
+  "text": {
+    "dev": "यथासंख्यमनुदेशः समानाम्",
+    "slp1": "yaTAsaMKyamanudeSaH samAnAm",
+    "padaccheda": {
+      "dev": "यथासंख्यम् · अनुदेशः · समानाम्",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": null,
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "B",
+    "module": "M01",
+    "prakarana": "paribhasha",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": true,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 0,
+    "soi_doi_note": "Paribhāṣā: when multiple same-kind items are enumerated and then referred to, the correspondence is in the same order (yathā-saṃkhyam)."
+  },
+  "downstream": {
+    "next_sutra": "1.3.11",
+    "previous_sutra": "1.3.9",
+    "next_effect": null,
+    "note": "Resolver/parsing aid: order-preserving correspondence used across list-based grammatical references."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "यथासंख्यं यथाक्रममनुदेशो भवति",
+      "alt_dev": null,
+      "raw": "यथासंख्यं यथाक्रममनुदेशो भवति",
+      "source": "Kashika 1.3.10",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अनुदिश्यत इत्यनुदेशः",
+      "alt_dev": null,
+      "raw": "अनुदिश्यत इत्यनुदेशः",
+      "source": "Kashika 1.3.10",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पश्चादुच्चार्यत इत्यर्थः",
+      "alt_dev": null,
+      "raw": "पश्चादुच्चार्यत इत्यर्थः",
+      "source": "Kashika 1.3.10",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "(४. ३.९४)",
+      "alt_dev": null,
+      "raw": "(४. ३.९४)",
+      "source": "Kashika 1.3.10",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "For like items, anudeśa (reference) follows the same order as the original enumeration (yathā-saṃkhyam).",
+    "sa": "समानानां यथासंख्यम् अनुदेशः (क्रमेण सम्बन्धः)।"
+  },
+  "authority": {
+    "kashika_ref": "1.3.10",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.3.11",
+    "test_file": "tests/test_sutra_1_3_10.py",
+    "notes": null,
+    "condition_key": "cond_1_3_10",
+    "action_key": "act_1_3_10"
+  }
+}

@@ -19,12 +19,16 @@ from phonology import mk
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
+<<<<<<< HEAD
 def _lrng_ṛ_sy_insert_index(state: State) -> int | None:
     """Lṛṅ + ṛ-dhātu (``vft``) + following ``ti`` ādeśa: insert ``sy`` (not ``sya``)."""
     if (state.meta.get("lakara") or "").strip() != "lRG":
         return None
     if state.meta.get("lrng_ṛ_sy_done"):
         return None
+=======
+def _p019_sy_insert_index(state: State) -> int | None:
+>>>>>>> 5392166 (P4: Remove corrected_v2_P demo arm keys from all sutra cond() functions)
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags:
             continue
@@ -82,8 +86,7 @@ def cond(state: State) -> bool:
     if _lrng_ṛ_sy_insert_index(state) is not None:
         return True
     if (
-        state.meta.get("corrected_v2_P019_3_1_33_sy_arm")
-        and not state.meta.get("corrected_v2_P019_3_1_33_sy_done")
+        not state.meta.get("corrected_v2_P019_3_1_33_sy_done")
         and _p019_sy_insert_index(state) is not None
     ):
         return True
@@ -122,7 +125,6 @@ def act(state: State) -> State:
         )
         state.terms.insert(j_sy, sy)
         state.meta["corrected_v2_P019_3_1_33_sy_done"] = True
-        state.meta.pop("corrected_v2_P019_3_1_33_sy_arm", None)
         return state
     j_lrt = _lrt_dhatu_index(state)
     if j_lrt is not None:

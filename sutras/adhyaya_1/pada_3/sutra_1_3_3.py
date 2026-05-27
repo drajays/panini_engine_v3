@@ -31,8 +31,6 @@ META_P011_B_suT_IC = "corrected_v2_P011_B_suT_ic_arm"
 
 def _p011_b_suT_mid_u_it(state: State) -> None:
     """**P011-B:** *suṭ* residue ``suT`` → ``s`` — medial ``u`` is *it* (bundle); **1.3.9** elides."""
-    if not state.meta.get(META_P011_B_suT_IC):
-        return
     for i, t in enumerate(state.terms):
         if "upadesha" not in t.tags:
             continue
@@ -90,20 +88,19 @@ def _eligible_terms(state: State):
 
 
 def cond(state: State) -> bool:
-    if state.meta.get(META_P011_B_suT_IC):
-        for t in state.terms:
-            if "upadesha" not in t.tags:
-                continue
-            if (t.meta.get("upadesha_slp1") or "").strip() != "suT":
-                continue
-            vs = t.varnas
-            if (
-                len(vs) == 3
-                and vs[0].slp1 == "s"
-                and vs[1].slp1 == "u"
-                and vs[2].slp1 == "T"
-            ):
-                return True
+    for t in state.terms:
+        if "upadesha" not in t.tags:
+            continue
+        if (t.meta.get("upadesha_slp1") or "").strip() != "suT":
+            continue
+        vs = t.varnas
+        if (
+            len(vs) == 3
+            and vs[0].slp1 == "s"
+            and vs[1].slp1 == "u"
+            and vs[2].slp1 == "T"
+        ):
+            return True
     return next(_eligible_terms(state), None) is not None
 
 
@@ -118,6 +115,7 @@ def act(state: State) -> State:
         key = ("it_halantyam", i, up)
         state.samjna_registry[key] = frozenset({t.varnas[-1].slp1})
     _p011_b_suT_mid_u_it(state)
+    state.meta.pop(META_P011_B_suT_IC, None)
     return state
 
 

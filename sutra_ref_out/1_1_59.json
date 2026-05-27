@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.1.59",
+  "sk_number": 2243,
+  "text": {
+    "dev": "द्विर्वचनेऽचि",
+    "slp1": "dvirvacane'ci",
+    "padaccheda": {
+      "dev": "द्विर्वचने · अचि",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "स्थानिवत् आदेशः · अचः ← १.१.५६–५७",
+    "anuvrtti_pada": "11056: स्थानिवत् आदेशः| 11057: अचः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**Dvirvacana** + **aci**: restore **1.1.56–57** despite **dvirvacana** in **1.1.58**. ``sthanivat_adesh_for_downstream_respecting_1_1_58_and_59``; ``dvirvacana_aci_subcontext``."
+  },
+  "downstream": {
+    "next_sutra": "1.1.60",
+    "previous_sutra": "1.1.58",
+    "next_effect": null,
+    "note": "Abhyāsa / reduplication with vowels: re-enables **sthānivat** analysis cut by **1.1.58** for plain **dvirvacana**."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "रूपातिदेशश्चायं नियतकालः",
+      "alt_dev": null,
+      "raw": "रूपातिदेशश्चायं नियतकालः",
+      "source": "Kashika 1.1.59",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तेन कृते द्विर्वचने पुनरादेशरूपमेवावतिष्ठते",
+      "alt_dev": null,
+      "raw": "तेन कृते द्विर्वचने पुनरादेशरूपमेवावतिष्ठते",
+      "source": "Kashika 1.1.59",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "आल्लोपोपधालोपणिलोपयणयवायावादेशाः प्रयोजनम्",
+      "alt_dev": null,
+      "raw": "आल्लोपोपधालोपणिलोपयणयवायावादेशाः प्रयोजनम्",
+      "source": "Kashika 1.1.59",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "आल्लोपः — पपतुः",
+      "alt_dev": "पपुः",
+      "raw": "आल्लोपः — पपतुः, पपुः",
+      "source": "Kashika 1.1.59",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Atideśa: in doubling (**dvirvacana**), when **ac** is involved (**aci**), **sthānivat** **ādeśa** and **ac** scope (**1.1.56–57**) apply again.",
+    "sa": "द्विर्वचने अचि स्थानिवदादेशः अच्-नियमः च पुनः प्रवर्तते।"
+  },
+  "authority": {
+    "kashika_ref": "1.1.59",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.1.60",
+    "test_file": "tests/test_sutra_1_1_59.py",
+    "notes": null,
+    "condition_key": "cond_1_1_59",
+    "action_key": "act_1_1_59"
+  }
+}

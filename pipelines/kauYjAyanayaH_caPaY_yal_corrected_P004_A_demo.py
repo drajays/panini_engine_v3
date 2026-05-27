@@ -70,7 +70,6 @@ def derive_kauYjAyanayaH_caPaY_yal_corrected_P004_A() -> State:
     s = apply_rule("4.1.82", s)
     s = apply_rule("4.1.92", s)
 
-    s.meta["corrected_v2_P004_A_4_1_98_arm"] = True
     s = apply_rule("4.1.98", s)
 
     s = apply_rule("1.1.1", s)
@@ -82,7 +81,6 @@ def derive_kauYjAyanayaH_caPaY_yal_corrected_P004_A() -> State:
     for sid in ("1.3.7", "1.3.3", "1.3.8", "1.3.9", "1.3.10"):
         s = apply_rule(sid, s)
 
-    s.meta["corrected_v2_P004_A_phadi_Pa_arm"] = True
     s = apply_rule("7.1.2", s)
     s = P00_taddhita_it_lopa_chain(s)
 
@@ -96,14 +94,12 @@ def derive_kauYjAyanayaH_caPaY_yal_corrected_P004_A() -> State:
     _normalize_merged_pratipadika(s, upadesha_slp1="kauYjAyana")
 
     # ── Stage 2: *yuvāpatya* **yañ** ───────────────────────────────────────
-    s.meta["corrected_v2_P004_A_stage2_yaY_arm"] = True
     s = apply_rule("4.1.105", s)
 
     s = apply_rule("6.4.1", s)
     for sid in ("1.3.3", "1.3.9", "1.3.10"):
         s = apply_rule(sid, s)
     s = apply_rule("6.4.129", s)
-    s.meta["corrected_v2_P004_A_stage2_6_4_148_arm"] = True
     s = apply_rule("6.4.148", s)
 
     _pada_merge(s)

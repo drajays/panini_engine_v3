@@ -1,0 +1,188 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "6.1.127",
+  "sk_number": 91,
+  "text": {
+    "dev": "इकोऽसवर्णे शाकल्यस्य ह्रस्वश्च",
+    "slp1": "iko'savarRe SAkalyasya hrasvaSca",
+    "padaccheda": {
+      "dev": "इकः अ-सवर्णे शाकल्यस्य ह्रस्वः च",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "6.1.111",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "6.1.72",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "6.1.72",
+    "anuvritta_note": null,
+    "anuvrtti_pada": "61072: संहितायाम् | 61125: अचि | 61115: प्रकृत्या",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M06",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "vibhasha",
+    "optionality": {
+      "value": true,
+      "paninian_term": "विकल्पेन"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": false,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "This rule provides an optional branch competing with 6.1.77. In the engine, applying 6.1.127 marks a blocker tag so 6.1.77 is not applied afterward in that derivation."
+  },
+  "downstream": {
+    "next_sutra": "6.1.128",
+    "previous_sutra": "6.1.126",
+    "next_effect": null,
+    "note": "Model Śākalya’s optional prakṛtibhāva/shortening before asavarṇa vowels, alongside the standard yaṇ-sandhi derivation."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "दधि अत्र (पक्षे: दध्यत्र)",
+      "alt_dev": null,
+      "raw": "दधि अत्र (पक्षे: दध्यत्र)",
+      "source": "Kashika 6.1.127",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "मधु अत्र (पक्षे: मध्वत्र)",
+      "alt_dev": null,
+      "raw": "मधु अत्र (पक्षे: मध्वत्र)",
+      "source": "Kashika 6.1.127",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कुमारि अत्र (पक्षे: कुमार्यत्र)",
+      "alt_dev": null,
+      "raw": "कुमारि अत्र (पक्षे: कुमार्यत्र)",
+      "source": "Kashika 6.1.127",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "किशोरि अत्र (पक्षे: किशोर्यत्र)",
+      "alt_dev": null,
+      "raw": "किशोरि अत्र (पक्षे: किशोर्यत्र)",
+      "source": "Kashika 6.1.127",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "दधि अत्र",
+      "alt_dev": "दध्यत्र",
+      "raw": "दधि अत्र, दध्यत्र",
+      "source": "Kashika 6.1.127",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "मधु अत्र",
+      "alt_dev": "मध्वत्र",
+      "raw": "मधु अत्र, मध्वत्र",
+      "source": "Kashika 6.1.127",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कुमारि अत्र",
+      "alt_dev": "कुमार्यत्र",
+      "raw": "कुमारि अत्र, कुमार्यत्र",
+      "source": "Kashika 6.1.127",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 8,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "किशोरि अत्र",
+      "alt_dev": "किशोर्यत्र",
+      "raw": "किशोरि अत्र, किशोर्यत्र",
+      "source": "Kashika 6.1.127",
+      "variant_type": "vibhasha"
+    }
+  ],
+  "gloss": {
+    "en": "Optionally (Śākalya), a padānta ik vowel before a dissimilar following vowel (asavarṇa ac) remains in its natural form, and the ik is (if needed) shortened (hrasva).",
+    "sa": "In saṃhitā at a pada boundary, if the left ends in ik (i/ī/u/ū/ṛ/ṝ/ḷ/ḹ) and the next begins with a vowel that is not savarṇa, Śākalya allows prakṛtibhāva (no yaṇ substitution) and sets the ik to hrasva; alternative derivation applies 6.1.77 (yaṇ)."
+  },
+  "authority": {
+    "kashika_ref": "6.1.127",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "6.1.128",
+    "test_file": "tests/test_sutra_6_1_127.py",
+    "notes": null,
+    "condition_key": "cond_6_1_127",
+    "action_key": "act_6_1_127"
+  }
+}

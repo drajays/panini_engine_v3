@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.22",
+  "sk_number": 186,
+  "text": {
+    "dev": "द्व्येकयोर्द्विवचनैकवचने",
+    "slp1": "dvyekayordvivacanEkavacane",
+    "padaccheda": {
+      "dev": "द्व्येकयोः · द्विवचनैकवचने",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": null,
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Vidhi: when dvaitva is intended, use dvivacana; when ekatva is intended, use ekavacana (semantic vacana selection via env triggers)."
+  },
+  "downstream": {
+    "next_sutra": "1.4.23",
+    "previous_sutra": "1.4.21",
+    "next_effect": null,
+    "note": "Semantic number selection: drives vacana choice (eka/dvi) for later sup/tiṅ selection pipelines."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "एतदपि सामान्यविहितयोर्द्विवचनैकवचनयोरर्थाभिधानम्",
+      "alt_dev": null,
+      "raw": "एतदपि सामान्यविहितयोर्द्विवचनैकवचनयोरर्थाभिधानम्",
+      "source": "Kashika 1.4.22",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "द्वित्वे द्विवचनं भवति",
+      "alt_dev": "एकत्व एकवचनं भवति",
+      "raw": "द्वित्वे द्विवचनं भवति, एकत्व एकवचनं भवति",
+      "source": "Kashika 1.4.22",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ब्राह्मणौ पठतः",
+      "alt_dev": null,
+      "raw": "ब्राह्मणौ पठतः",
+      "source": "Kashika 1.4.22",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ब्राह्मणः पठति",
+      "alt_dev": null,
+      "raw": "ब्राह्मणः पठति",
+      "source": "Kashika 1.4.22",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "When duality or oneness is intended, (use) the dual or singular respectively.",
+    "sa": "द्वित्वे विवक्षिते द्विवचनम्, एकत्वे विवक्षिते एकवचनं च भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.22",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.23",
+    "test_file": "tests/test_sutra_1_4_22.py",
+    "notes": "Kāśikā: ‘द्वित्वे द्विवचनं भवति। एकत्वे एकवचनं भवति।’",
+    "condition_key": "cond_1_4_22",
+    "action_key": "act_1_4_22"
+  }
+}

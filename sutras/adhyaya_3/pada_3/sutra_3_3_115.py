@@ -22,8 +22,6 @@ def _stem_slp1(t) -> str:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get(META_ARM):
-        return False
     if len(state.terms) != 1:
         return False
     t0 = state.terms[0]

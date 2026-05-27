@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.3.55",
+  "sk_number": 2728,
+  "text": {
+    "dev": "दाणश्च सा चेच्चतुर्थ्यर्थे",
+    "slp1": "dARaSca sA ceccaturTyarTe",
+    "padaccheda": {
+      "dev": "दाणः · च · सा · चेत् · चतुर्थ्यर्थे",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "Anuvṛtti of ‘ātmanepadam’ from 1.3.12.",
+    "anuvrtti_pada": "13012: आत्मनेपदम् | 13054: समस्तृतीयायुक्तात्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "B",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Vidhi (pada-selection): for dāṇ (दाण्) (and the specified sā-condition), when in caturthī-artha, select ātmanepada (anuvṛtti from 1.3.12)."
+  },
+  "downstream": {
+    "next_sutra": "1.3.56",
+    "previous_sutra": "1.3.54",
+    "next_effect": null,
+    "note": "Tinanta pipeline: selects ātmanepada for dāṇ in sā + caturthī-artha contexts (recorded via env trigger)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "दास्या संप्रयच्छते",
+      "alt_dev": null,
+      "raw": "दास्या संप्रयच्छते",
+      "source": "Kashika 1.3.55",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वृषल्या संप्रयच्छते",
+      "alt_dev": null,
+      "raw": "वृषल्या संप्रयच्छते",
+      "source": "Kashika 1.3.55",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कामुकः सन् दास्यै ददातीत्यर्थः",
+      "alt_dev": null,
+      "raw": "कामुकः सन् दास्यै ददातीत्यर्थः",
+      "source": "Kashika 1.3.55",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "चतुर्थ्यर्थ इति किम्? पाणिना संप्रयच्छति",
+      "alt_dev": null,
+      "raw": "चतुर्थ्यर्थ इति किम्? पाणिना संप्रयच्छति",
+      "source": "Kashika 1.3.55",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "For dāṇ also, if (there is) sā, when in the sense of the dative (caturthī-artha), (the pada) is ātmanepada.",
+    "sa": "दाणः (सा चेत्) चतुर्थ्यर्थे आत्मनेपदम्।"
+  },
+  "authority": {
+    "kashika_ref": "1.3.55",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.3.56",
+    "test_file": "tests/test_sutra_1_3_55.py",
+    "notes": null,
+    "condition_key": "cond_1_3_55",
+    "action_key": "act_1_3_55"
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.3.36",
+  "sk_number": 151,
+  "text": {
+    "dev": "वा शरि",
+    "slp1": "vA Sari",
+    "padaccheda": {
+      "dev": "वा । शरि",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "82108: संहितायाम् | 83034: विसर्जनीयस्य | 83035: विसर्जनीयः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Tripāḍī saṃhitā sandhi — optional visarga → śar before śar."
+  },
+  "downstream": {
+    "next_sutra": "8.3.37",
+    "previous_sutra": "8.3.35",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वृक्षः + शेते → वृक्षश्शेते (वा वृक्षः शेते)",
+      "alt_dev": null,
+      "raw": "वृक्षः + शेते → वृक्षश्शेते (वा वृक्षः शेते)",
+      "source": "Kashika 8.3.36",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्लक्षः + शेते → प्लक्षश्शेते (वा प्लक्षः शेते)",
+      "alt_dev": null,
+      "raw": "प्लक्षः + शेते → प्लक्षश्शेते (वा प्लक्षः शेते)",
+      "source": "Kashika 8.3.36",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वृक्षः + षण्डे → वृक्षष्षण्डे (वा वृक्षः षण्डे)",
+      "alt_dev": null,
+      "raw": "वृक्षः + षण्डे → वृक्षष्षण्डे (वा वृक्षः षण्डे)",
+      "source": "Kashika 8.3.36",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वृक्षः + साये → वृक्षस्साये (वा वृक्षः साये)",
+      "alt_dev": null,
+      "raw": "वृक्षः + साये → वृक्षस्साये (वा वृक्षः साये)",
+      "source": "Kashika 8.3.36",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वृक्षः + शेते -> वृक्षश्शेते",
+      "alt_dev": "वृक्षः शेते",
+      "raw": "वृक्षः + शेते -> वृक्षश्शेते, वृक्षः शेते",
+      "source": "Kashika 8.3.36",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्लक्षः + शेते -> प्लक्षश्शेते",
+      "alt_dev": "प्लक्षः शेते",
+      "raw": "प्लक्षः + शेते -> प्लक्षश्शेते, प्लक्षः शेते",
+      "source": "Kashika 8.3.36",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वृक्षः + षण्डे -> वृक्षष्षण्डे",
+      "alt_dev": "वृक्षः षण्डे",
+      "raw": "वृक्षः + षण्डे -> वृक्षष्षण्डे, वृक्षः षण्डे",
+      "source": "Kashika 8.3.36",
+      "variant_type": null
+    },
+    {
+      "id": 8,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वृक्षः + साये -> वृक्षस्साये",
+      "alt_dev": "वृक्षः साये",
+      "raw": "वृक्षः + साये -> वृक्षस्साये, वृक्षः साये",
+      "source": "Kashika 8.3.36",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Before śar (श्/ष्/स्), visarga may optionally be replaced by that śar consonant.",
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "8.3.36",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "8.3.37",
+    "test_file": "tests/test_sutra_8_3_36.py",
+    "notes": "संहितायां शरि परे विसर्जनीयस्य तद्रूप-शरादेशो विकल्पेन (श्श/ष्ष/स्स)।",
+    "condition_key": "cond_8_3_36",
+    "action_key": "act_8_3_36"
+  }
+}

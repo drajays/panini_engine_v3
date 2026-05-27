@@ -1,0 +1,152 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.57",
+  "sk_number": 20,
+  "text": {
+    "dev": "चादयोऽसत्त्वे",
+    "slp1": "cAdayo'sattve",
+    "padaccheda": {
+      "dev": "चादयः · असत्त्वे · निपाताः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "1.4.56",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "1.4.56",
+    "anuvritta_note": "Under 1.4.56 nipāta-adhikāra (prāk īśvarāt); **nipātāḥ** anuvṛtta; applies to gaṇa-listed cādi, not substance sense.",
+    "anuvrtti_pada": "14056: निपाताः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Saṃjñā (nipāta): cādi (gaṇa-listed from च) items are `nipata` when **not** used in dravya (substance) meaning — **asattve** (prasajya-pratiṣedha vs sattva = dravya)."
+  },
+  "downstream": {
+    "next_sutra": "1.4.58",
+    "previous_sutra": "1.4.56",
+    "next_effect": null,
+    "note": "Feeds nipāta-dependent rules (e.g. avyaya / accent / sandhi tracks) for particles and listed indeclinables in non-substance readings."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "च",
+      "alt_dev": null,
+      "raw": "च",
+      "source": "Kashika 1.4.57",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वा",
+      "alt_dev": null,
+      "raw": "वा",
+      "source": "Kashika 1.4.57",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ह",
+      "alt_dev": null,
+      "raw": "ह",
+      "source": "Kashika 1.4.57",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "एव",
+      "alt_dev": null,
+      "raw": "एव",
+      "source": "Kashika 1.4.57",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्रसज्यप्रतिषेधोऽयम्",
+      "alt_dev": "सत्त्वमिति च द्रव्यमुच्यते",
+      "raw": "प्रसज्यप्रतिषेधोऽयम्, सत्त्वमिति च द्रव्यमुच्यते",
+      "source": "Kashika 1.4.57",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Cādi items are called nipāta when they do not denote dravya (substance); when they denote dravya they are not nipāta by this rule.",
+    "sa": "चादयो निपातसंज्ञकाः भवन्ति, यदि सत्त्वे अर्थे (द्रव्यवाचिनः) न वर्तन्ते।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.57",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.58",
+    "test_file": "tests/test_sutra_1_4_57.py",
+    "notes": "Kāśikā: prasajya-pratiṣedha; sattva = dravya; contrast e.g. पशुः पुरोडशः vs दृśyārthe पशु.",
+    "condition_key": "cond_1_4_57",
+    "action_key": "act_1_4_57"
+  }
+}

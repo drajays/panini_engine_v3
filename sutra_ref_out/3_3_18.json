@@ -1,0 +1,151 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "3.3.18",
+  "sk_number": 3184,
+  "text": {
+    "dev": "भावे",
+    "slp1": "BAve",
+    "padaccheda": {
+      "dev": "भावे",
+      "slp1": "BAve",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "31001: प्रत्ययः | 31002: परः च | 31003: आद्युदात्तः च | 31091: धातोः | 31093: कृत् | 33016: घञ् | 33018: भावे",
+    "from_chain": {
+      "inherited_words_dev": [
+        "कृत्",
+        "घञ्",
+        "भावे"
+      ],
+      "inherited_words_en": [
+        "kṛt (primary suffix class)",
+        "ghañ (named in 3.3.16)",
+        "in the sense of bhāva (abstract action / mere action)"
+      ],
+      "scope_condition": "Bhāvādhikāra: kṛt affixes (e.g. ghañ) after dhātu when action-as-bhāva is denoted (Vasu); see sutras.json vritti_note",
+      "anuvritta_from_chain": [
+        "3.1.93",
+        "3.3.16"
+      ]
+    }
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M03",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Engine: bhāvādhikāra scope is metadata-driven; concrete ghañ/yaṭ choice = later vidhi sūtras. apply_rule('3.3.18') is non-applicable (heading)."
+  },
+  "downstream": {
+    "next_sutra": "3.3.19",
+    "previous_sutra": "3.3.17",
+    "next_effect": null,
+    "note": "Scopes kṛt affixation when the derived sense is abstract action (bhāva), hosting rules like 3.3.16 ghañ."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पाकः",
+      "alt_dev": null,
+      "raw": "पाकः",
+      "source": "Kashika 3.3.18",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "त्यागः",
+      "alt_dev": null,
+      "raw": "त्यागः",
+      "source": "Kashika 3.3.18",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "रागः",
+      "alt_dev": null,
+      "raw": "रागः",
+      "source": "Kashika 3.3.18",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "क्रियासामान्यवाची भवतिः",
+      "alt_dev": null,
+      "raw": "क्रियासामान्यवाची भवतिः",
+      "source": "Kashika 3.3.18",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "In the sense of bhāva (mere action / abstract action), kṛt affixes such as ghañ attach after the root (e.g. pac + ghañ → pākaḥ ‘cooking’; tyāgaḥ, rāgaḥ). The words are verbal / abstract nouns; gender and number vary (paktiḥ, pacanam, pākau, pākāḥ).",
+    "sa": "भावे अर्थे धातोः कृद्-प्रत्यया विधीयन्ते; **घञ्** आदयः क्रियामात्रस्य वाचकाः । यथा पच्+घञ्=पाकः, त्यागः, रागः । पक्तिः, पचनम्, पाकौ — लिङ्गवचनानि विविधानि ।"
+  },
+  "authority": {
+    "kashika_ref": "3.3.18",
+    "jijnasu_ref": "Vol.3 (kṛdanta / bhāva) — Vasu English gloss in sutras.json",
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "3.3.19",
+    "test_file": "tests/test_sutra_3_3_18.py",
+    "notes": "अधिकारसूत्रम् — **भावाधिकारः** (S. C. Vasu). अनुवृत्तिः **कृत्** **३.१.९३**, **घञ्** **३.३.१६** । अधिकारः **३.१.१** प्रत्ययः · **३.१.२** परश्च · **३.१.३** आद्युदात्तश्च · **३.१.९१** धातोः · **३.३.१८** भावे । **घञ्** धातोः परः भावमात्रे वर्तते; क्रियायाः सामान्यावस्थोक्तिः । रूपाणि न केवलं पुंल्लिङ्गे एकवचने — पक्तिः, पचनम्, पाकौ, पाकाः । संख्यातः **७.२.११६**, **७.३.५२**; **६.४.२७** इत्यादि सूत्रैः रूपसिद्धिः ।",
+    "condition_key": "cond_3_3_18",
+    "action_key": "act_3_3_18"
+  }
+}

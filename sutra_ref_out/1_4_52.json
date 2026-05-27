@@ -1,0 +1,198 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.52",
+  "sk_number": 540,
+  "text": {
+    "dev": "गतिबुद्धिप्रत्यवसानार्थशब्दकर्माकर्मकाणामणि कर्ता",
+    "slp1": "gatibudDipratyavasAnArTaSabdakarmAkarmakARAmaRi kartA",
+    "padaccheda": {
+      "dev": "गतिबुद्धिप्रत्यवसानार्थशब्दकर्माकर्मकाणाम् · अणि · कर्ता · सः · णौ · (कर्म)",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "1.4.23",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "1.4.49",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "1.4.23",
+    "anuvritta_note": "Under 1.4.23 kāraka-adhikāra; inherits karma from 1.4.49. This is the classic “prayojya-kartṛ = karma” rule for ṇic, restricted to the listed semantic/valency classes (with traditional exceptions handled upstream).",
+    "anuvrtti_pada": "14023: कारके | 14049: कर्म",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Saṃjñā (kāraka/karma): in ṇic (causative) of the listed dhātu-classes, the base-verb kartā (aṇi-kartā / prayojya-kartṛ) is designated `karma`."
+  },
+  "downstream": {
+    "next_sutra": "1.4.53",
+    "previous_sutra": "1.4.51",
+    "next_effect": null,
+    "note": "Enables correct kāraka tagging in causatives: the base-verb agent becomes a karma participant for downstream vibhakti/tiṅ operations."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "गच्छति माणवको ग्रामम्। गमयति माणवकं ग्रामम्।",
+      "alt_dev": null,
+      "raw": "गच्छति माणवको ग्रामम्। गमयति माणवकं ग्रामम्।",
+      "source": "Kashika 1.4.52",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "बुध्यते माणवको धर्मम्। बोधयति माणवकं धर्मम्।",
+      "alt_dev": null,
+      "raw": "बुध्यते माणवको धर्मम्। बोधयति माणवकं धर्मम्।",
+      "source": "Kashika 1.4.52",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "भुङ्क्ते माणवको ओदनम्। भोजयति माणवकं ओदनम्।",
+      "alt_dev": null,
+      "raw": "भुङ्क्ते माणवको ओदनम्। भोजयति माणवकं ओदनम्।",
+      "source": "Kashika 1.4.52",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अधीते माणवको वेदम्। अध्यापयति माणवकं वेदम्।",
+      "alt_dev": null,
+      "raw": "अधीते माणवको वेदम्। अध्यापयति माणवकं वेदम्।",
+      "source": "Kashika 1.4.52",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "आस्ते देवदत्तः। आसयति देवदत्तम्।",
+      "alt_dev": null,
+      "raw": "आस्ते देवदत्तः। आसयति देवदत्तम्।",
+      "source": "Kashika 1.4.52",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "गच्छति माणवको ग्रामम्",
+      "alt_dev": null,
+      "raw": "गच्छति माणवको ग्रामम्",
+      "source": "Kashika 1.4.52",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "गमयति माणवकं ग्रामम्",
+      "alt_dev": null,
+      "raw": "गमयति माणवकं ग्रामम्",
+      "source": "Kashika 1.4.52",
+      "variant_type": null
+    },
+    {
+      "id": 8,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "याति माणवको ग्रामम्",
+      "alt_dev": null,
+      "raw": "याति माणवको ग्रामम्",
+      "source": "Kashika 1.4.52",
+      "variant_type": null
+    },
+    {
+      "id": 9,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "यापयति माणवकं ग्रामम्",
+      "alt_dev": null,
+      "raw": "यापयति माणवकं ग्रामम्",
+      "source": "Kashika 1.4.52",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "In ṇic (causative) of the listed classes (gati/buddhi/pratyavasāna-artha; śabda-karmaka; and akarmaka), the kartā in the base (aṇi) form is called karma in the causative (ṇi) form.",
+    "sa": "गत्यर्थबुद्ध्यर्थप्रत्यवसानार्थशब्दकर्मक-अकर्मक-धातूनाम् अण्यन्तावस्थायां यः कर्ता, सः ण्यन्तावस्थायां कर्मसंज्ञकः भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.52",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.53",
+    "test_file": "tests/test_sutra_1_4_52.py",
+    "notes": "Kāśikā: “... अण्यन्तानाम् यः कर्ता, स ण्यन्तानां कर्मसंज्ञो भवति।” Notes traditional carve-outs (नी/वह etc.) and that “aṇi” blocks cases where ṇic is already present.",
+    "condition_key": "cond_1_4_52",
+    "action_key": "act_1_4_52"
+  }
+}

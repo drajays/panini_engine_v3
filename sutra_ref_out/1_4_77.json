@@ -1,0 +1,180 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.77",
+  "sk_number": 778,
+  "text": {
+    "dev": "नित्यं हस्ते पाणावुपयमने",
+    "slp1": "nityaM haste pARAvupayamane",
+    "padaccheda": {
+      "dev": "नित्यम् · हस्ते · पाणौ · उपयमने",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "1.4.56",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "1.4.59",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "1.4.60",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "1.4.76",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "1.4.56",
+    "anuvritta_note": "Under 1.4.56; **क्रियायोगे** from 1.4.59; **गति** from 1.4.60; new heads **नित्यम्**, **हस्ते**, **पाणौ**, **उपयमने**.",
+    "anuvrtti_pada": "14056: निपाताः | 14059: क्रियायोगे | 14060: गतिः | 14076: मध्येपदेनिवचने च",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Saṃjñā (**गति**): **हस्ते** and **पाणौ** (case-homophonous nipātas) are **नित्यम्** (always) **गति** in **उपयमन** (marriage/bringing-near) context, under **क्रियायोगे**."
+  },
+  "downstream": {
+    "next_sutra": "1.4.78",
+    "previous_sutra": "1.4.76",
+    "next_effect": null,
+    "note": "Ensures upayamana hand-taking collocations enter the **gati**/**upasarga** chain (feeds downstream verb-complex rules)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "हस्ते गृह्णाति",
+      "alt_dev": null,
+      "raw": "हस्ते गृह्णाति",
+      "source": "Kashika 1.4.77",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पाणौ गृह्णाति",
+      "alt_dev": null,
+      "raw": "पाणौ गृह्णाति",
+      "source": "Kashika 1.4.77",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उपयमनं दारकर्म",
+      "alt_dev": null,
+      "raw": "उपयमनं दारकर्म",
+      "source": "Kashika 1.4.77",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पाणौकृत्य",
+      "alt_dev": null,
+      "raw": "पाणौकृत्य",
+      "source": "Kashika 1.4.77",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "हस्तेकृत्य",
+      "alt_dev": null,
+      "raw": "हस्तेकृत्य",
+      "source": "Kashika 1.4.77",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "दारकर्म कृत्वेत्यर्थः",
+      "alt_dev": null,
+      "raw": "दारकर्म कृत्वेत्यर्थः",
+      "source": "Kashika 1.4.77",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "In the upayamana (marriage) context, **haste** and **pāṇau** are always treated as **gati** when yoked to the verb.",
+    "sa": "उपयमने हस्ते पाणौ नित्यं क्रियायोगे गतिसंज्ञे भवतः।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.77",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.78",
+    "test_file": "tests/test_sutra_1_4_77.py",
+    "notes": "The particles **हस्ते/पाणौ** (vibhakti-pratirūpaka) behave as **gati** specifically in upayamana collocations.",
+    "condition_key": "cond_1_4_77",
+    "action_key": "act_1_4_77"
+  }
+}

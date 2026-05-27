@@ -23,8 +23,6 @@ def _flat(t: Term) -> str:
 
 
 def _site(state: State) -> bool:
-    if not state.meta.get(_META_ARM):
-        return False
     if len(state.terms) != 2:
         return False
     a, b = state.terms[0], state.terms[1]
@@ -52,7 +50,6 @@ def act(state: State) -> State:
     )
     q.tags.add("dit_pratyaya")
     state.terms.append(q)
-    state.meta.pop(_META_ARM, None)
     return state
 
 

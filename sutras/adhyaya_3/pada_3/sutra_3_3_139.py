@@ -20,8 +20,6 @@ def _already_has_lRG(state: State) -> bool:
 
 
 def _site_p019(state: State) -> bool:
-    if not state.meta.get("corrected_v2_P019_3_3_139_lRG_arm"):
-        return False
     if _already_has_lRG(state):
         return False
     for t in state.terms:
@@ -61,7 +59,6 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if _site_p019(state):
         _attach_lRG(state)
-        state.meta.pop("corrected_v2_P019_3_3_139_lRG_arm", None)
         return state
     if _site_general(state):
         _attach_lRG(state)

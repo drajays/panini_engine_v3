@@ -177,84 +177,71 @@ def cond(state: State) -> bool:
                 return True
             return False
 
-    # Case G: ``corrected_prakriyas_v2`` **P001-A** — single *nisthā* stem *bhinna*
-    # after narrow **8.2.42** (must precede Case B: stem has no ``dhatu`` tag).
-    if state.meta.get("corrected_v2_P001_A_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P001_A_nistha_stem"):
-                return not state.samjna_registry.get("1.2.46_corrected_v2_P001_A")
+    # Case G: *nisthā* stem *bhinna* after narrow **8.2.42** (must precede Case B).
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P001_A_nistha_stem"):
+            return not state.samjna_registry.get("1.2.46_corrected_v2_P001_A")
 
     # Case H: **P001-B** (*dhṛṣṭaḥ*) — *pada* merged *Dfz*+*ta* → **8.4.41** *ṣṭ*.
-    if state.meta.get("corrected_v2_P001_B_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P001_B_nistha_stem"):
-                return not state.samjna_registry.get("1.2.46_corrected_v2_P001_B")
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P001_B_nistha_stem"):
+            return not state.samjna_registry.get("1.2.46_corrected_v2_P001_B")
 
     # Case I: **P001-C** (*svinnaḥ*) — **8.2.42** on ``svid`` + *kta* (after **6.1.64**).
-    if state.meta.get("corrected_v2_P001_C_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P001_C_nistha_stem"):
-                return not state.samjna_registry.get("1.2.46_corrected_v2_P001_C")
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P001_C_nistha_stem"):
+            return not state.samjna_registry.get("1.2.46_corrected_v2_P001_C")
 
-    # Case J: **P001-D** (*iddhaḥ*) — *pada* ``idDa`` after **8.4.53** (pre–**8.2.1**
-    # cluster slice + ``kta``-final ``a`` retained until **1.2.46**).
-    if state.meta.get("corrected_v2_P001_D_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P001_D_nistha_stem"):
-                return not state.samjna_registry.get("1.2.46_corrected_v2_P001_D")
+    # Case J: **P001-D** (*iddhaḥ*) — *pada* ``idDa`` after **8.4.53**.
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P001_D_nistha_stem"):
+            return not state.samjna_registry.get("1.2.46_corrected_v2_P001_D")
 
-    # Case K: **P002-A** (*vepathuḥ*) — *athuc* *kṛt* merged *pada* ``vepathu``.
-    if state.meta.get("corrected_v2_P002_A_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P002_A_bhava_stem"):
-                return not state.samjna_registry.get("1.2.46_corrected_v2_P002_A")
+    # Case K: **P002-A** (*vepathuḥ*) — *athuc* *kṛt* merged *pada*.
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P002_A_bhava_stem"):
+            return not state.samjna_registry.get("1.2.46_corrected_v2_P002_A")
 
-    # Case L: **P002-B** (*śvayathuḥ*) — *athuc* *kṛt* merged *pada* ``zvayathu``.
-    if state.meta.get("corrected_v2_P002_B_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P002_B_bhava_stem"):
-                return not state.samjna_registry.get("1.2.46_corrected_v2_P002_B")
+    # Case L: **P002-B** (*śvayathuḥ*) — *athuc* *kṛt* merged *pada*.
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P002_B_bhava_stem"):
+            return not state.samjna_registry.get("1.2.46_corrected_v2_P002_B")
 
-    # Case M: **P003-A** (*paktrimam*) — *ktri*+*mam* merged stem ``paktrim``.
-    if state.meta.get("corrected_v2_P003_A_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P003_A_ktrim_stem"):
-                return not state.samjna_registry.get("1.2.46_corrected_v2_P003_A")
+    # Case M: **P003-A** (*paktrimam*) — *ktri*+*mam* merged stem.
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P003_A_ktrim_stem"):
+            return not state.samjna_registry.get("1.2.46_corrected_v2_P003_A")
 
-    # Case N: **P003-B** (*kṛtrimam*) — merged stem ``kftrim``.
-    if state.meta.get("corrected_v2_P003_B_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P003_B_ktrim_stem"):
-                return not state.samjna_registry.get("1.2.46_corrected_v2_P003_B")
+    # Case N: **P003-B** (*kṛtrimam*) — merged stem.
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P003_B_ktrim_stem"):
+            return not state.samjna_registry.get("1.2.46_corrected_v2_P003_B")
 
-    # Case O: **P003-C** (*uptrimam*) — samprasāraṇa stem ``uptrim``.
-    if state.meta.get("corrected_v2_P003_C_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P003_C_ktrim_stem"):
-                return not state.samjna_registry.get("1.2.46_corrected_v2_P003_C")
+    # Case O: **P003-C** (*uptrimam*) — samprasāraṇa stem.
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P003_C_ktrim_stem"):
+            return not state.samjna_registry.get("1.2.46_corrected_v2_P003_C")
 
-    # Case R: **P005-A** — merged *kurucara* before **4.1.15** *ṅīp*.
-    if state.meta.get("corrected_v2_P005_A_kurucara_merged_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P005_A_kurucara_stem"):
-                return not state.samjna_registry.get("1.2.46_corrected_v2_P005_A_kurucara")
+    # Case R: merged *kurucara* before **4.1.15** *ṅīp*.
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P005_A_kurucara_stem"):
+            return not state.samjna_registry.get("1.2.46_corrected_v2_P005_A_kurucara")
 
-    # Case U: **P005-B** — merged *upasaraja* before *subanta*.
-    if state.meta.get("corrected_v2_P005_B_upasaraja_merged_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P005_B_upasaraja_stem"):
-                return not state.samjna_registry.get("1.2.46_corrected_v2_P005_B_upasaraja")
+    # Case U: merged *upasaraja* before *subanta*.
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P005_B_upasaraja_stem"):
+            return not state.samjna_registry.get("1.2.46_corrected_v2_P005_B_upasaraja")
 
     # ── Case B: samāsa path (devendra/sūryodaya demo) ─────────────────────
     if "dhatu" not in state.terms[0].tags:
@@ -278,96 +265,78 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if state.meta.get("corrected_v2_P001_A_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P001_A_nistha_stem"):
-                if not state.samjna_registry.get("1.2.46_corrected_v2_P001_A"):
-                    state.samjna_registry["1.2.46_corrected_v2_P001_A"] = True
-                    t0.tags.add("prātipadika")
-                    t0.tags.add("anga")
-                state.meta.pop("corrected_v2_P001_A_1_2_46_arm", None)
-                return state
-    if state.meta.get("corrected_v2_P001_B_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P001_B_nistha_stem"):
-                if not state.samjna_registry.get("1.2.46_corrected_v2_P001_B"):
-                    state.samjna_registry["1.2.46_corrected_v2_P001_B"] = True
-                    t0.tags.add("prātipadika")
-                    t0.tags.add("anga")
-                state.meta.pop("corrected_v2_P001_B_1_2_46_arm", None)
-                return state
-    if state.meta.get("corrected_v2_P001_C_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P001_C_nistha_stem"):
-                if not state.samjna_registry.get("1.2.46_corrected_v2_P001_C"):
-                    state.samjna_registry["1.2.46_corrected_v2_P001_C"] = True
-                    t0.tags.add("prātipadika")
-                    t0.tags.add("anga")
-                state.meta.pop("corrected_v2_P001_C_1_2_46_arm", None)
-                return state
-    if state.meta.get("corrected_v2_P001_D_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P001_D_nistha_stem"):
-                if not state.samjna_registry.get("1.2.46_corrected_v2_P001_D"):
-                    state.samjna_registry["1.2.46_corrected_v2_P001_D"] = True
-                    t0.tags.add("prātipadika")
-                    t0.tags.add("anga")
-                state.meta.pop("corrected_v2_P001_D_1_2_46_arm", None)
-                return state
-    if state.meta.get("corrected_v2_P002_A_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P002_A_bhava_stem"):
-                if not state.samjna_registry.get("1.2.46_corrected_v2_P002_A"):
-                    state.samjna_registry["1.2.46_corrected_v2_P002_A"] = True
-                    t0.tags.add("prātipadika")
-                    t0.tags.add("anga")
-                state.meta.pop("corrected_v2_P002_A_1_2_46_arm", None)
-                return state
-    if state.meta.get("corrected_v2_P002_B_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P002_B_bhava_stem"):
-                if not state.samjna_registry.get("1.2.46_corrected_v2_P002_B"):
-                    state.samjna_registry["1.2.46_corrected_v2_P002_B"] = True
-                    t0.tags.add("prātipadika")
-                    t0.tags.add("anga")
-                state.meta.pop("corrected_v2_P002_B_1_2_46_arm", None)
-                return state
-    if state.meta.get("corrected_v2_P003_A_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P003_A_ktrim_stem"):
-                if not state.samjna_registry.get("1.2.46_corrected_v2_P003_A"):
-                    state.samjna_registry["1.2.46_corrected_v2_P003_A"] = True
-                    t0.tags.add("prātipadika")
-                    t0.tags.add("anga")
-                state.meta.pop("corrected_v2_P003_A_1_2_46_arm", None)
-                return state
-    if state.meta.get("corrected_v2_P003_B_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P003_B_ktrim_stem"):
-                if not state.samjna_registry.get("1.2.46_corrected_v2_P003_B"):
-                    state.samjna_registry["1.2.46_corrected_v2_P003_B"] = True
-                    t0.tags.add("prātipadika")
-                    t0.tags.add("anga")
-                state.meta.pop("corrected_v2_P003_B_1_2_46_arm", None)
-                return state
-    if state.meta.get("corrected_v2_P003_C_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P003_C_ktrim_stem"):
-                if not state.samjna_registry.get("1.2.46_corrected_v2_P003_C"):
-                    state.samjna_registry["1.2.46_corrected_v2_P003_C"] = True
-                    t0.tags.add("prātipadika")
-                    t0.tags.add("anga")
-                state.meta.pop("corrected_v2_P003_C_1_2_46_arm", None)
-                return state
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P001_A_nistha_stem"):
+            if not state.samjna_registry.get("1.2.46_corrected_v2_P001_A"):
+                state.samjna_registry["1.2.46_corrected_v2_P001_A"] = True
+                t0.tags.add("prātipadika")
+                t0.tags.add("anga")
+            return state
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P001_B_nistha_stem"):
+            if not state.samjna_registry.get("1.2.46_corrected_v2_P001_B"):
+                state.samjna_registry["1.2.46_corrected_v2_P001_B"] = True
+                t0.tags.add("prātipadika")
+                t0.tags.add("anga")
+            return state
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P001_C_nistha_stem"):
+            if not state.samjna_registry.get("1.2.46_corrected_v2_P001_C"):
+                state.samjna_registry["1.2.46_corrected_v2_P001_C"] = True
+                t0.tags.add("prātipadika")
+                t0.tags.add("anga")
+            return state
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P001_D_nistha_stem"):
+            if not state.samjna_registry.get("1.2.46_corrected_v2_P001_D"):
+                state.samjna_registry["1.2.46_corrected_v2_P001_D"] = True
+                t0.tags.add("prātipadika")
+                t0.tags.add("anga")
+            return state
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P002_A_bhava_stem"):
+            if not state.samjna_registry.get("1.2.46_corrected_v2_P002_A"):
+                state.samjna_registry["1.2.46_corrected_v2_P002_A"] = True
+                t0.tags.add("prātipadika")
+                t0.tags.add("anga")
+            return state
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P002_B_bhava_stem"):
+            if not state.samjna_registry.get("1.2.46_corrected_v2_P002_B"):
+                state.samjna_registry["1.2.46_corrected_v2_P002_B"] = True
+                t0.tags.add("prātipadika")
+                t0.tags.add("anga")
+            return state
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P003_A_ktrim_stem"):
+            if not state.samjna_registry.get("1.2.46_corrected_v2_P003_A"):
+                state.samjna_registry["1.2.46_corrected_v2_P003_A"] = True
+                t0.tags.add("prātipadika")
+                t0.tags.add("anga")
+            return state
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P003_B_ktrim_stem"):
+            if not state.samjna_registry.get("1.2.46_corrected_v2_P003_B"):
+                state.samjna_registry["1.2.46_corrected_v2_P003_B"] = True
+                t0.tags.add("prātipadika")
+                t0.tags.add("anga")
+            return state
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P003_C_ktrim_stem"):
+            if not state.samjna_registry.get("1.2.46_corrected_v2_P003_C"):
+                state.samjna_registry["1.2.46_corrected_v2_P003_C"] = True
+                t0.tags.add("prātipadika")
+                t0.tags.add("anga")
+            return state
 
     if state.meta.get("corrected_v2_P005_A_upapada_frame") and len(state.terms) >= 4:
         t0, t1, t2, t3 = state.terms[0], state.terms[1], state.terms[2], state.terms[3]
@@ -402,29 +371,25 @@ def act(state: State) -> State:
             state.meta.pop("corrected_v2_P005_B_upapada_frame", None)
             return state
 
-    if state.meta.get("corrected_v2_P005_A_kurucara_merged_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P005_A_kurucara_stem"):
-                if not state.samjna_registry.get("1.2.46_corrected_v2_P005_A_kurucara"):
-                    state.samjna_registry["1.2.46_corrected_v2_P005_A_kurucara"] = True
-                    t0.tags.add("prātipadika")
-                    t0.tags.add("anga")
-                    t0.tags.add("strīliṅga")
-                state.meta.pop("corrected_v2_P005_A_kurucara_merged_1_2_46_arm", None)
-                return state
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P005_A_kurucara_stem"):
+            if not state.samjna_registry.get("1.2.46_corrected_v2_P005_A_kurucara"):
+                state.samjna_registry["1.2.46_corrected_v2_P005_A_kurucara"] = True
+                t0.tags.add("prātipadika")
+                t0.tags.add("anga")
+                t0.tags.add("strīliṅga")
+            return state
 
-    if state.meta.get("corrected_v2_P005_B_upasaraja_merged_1_2_46_arm"):
-        if len(state.terms) == 1:
-            t0 = state.terms[0]
-            if t0.meta.get("corrected_v2_P005_B_upasaraja_stem"):
-                if not state.samjna_registry.get("1.2.46_corrected_v2_P005_B_upasaraja"):
-                    state.samjna_registry["1.2.46_corrected_v2_P005_B_upasaraja"] = True
-                    t0.tags.add("prātipadika")
-                    t0.tags.add("anga")
-                    t0.tags.add("pulliṅga")
-                state.meta.pop("corrected_v2_P005_B_upasaraja_merged_1_2_46_arm", None)
-                return state
+    if len(state.terms) == 1:
+        t0 = state.terms[0]
+        if t0.meta.get("corrected_v2_P005_B_upasaraja_stem"):
+            if not state.samjna_registry.get("1.2.46_corrected_v2_P005_B_upasaraja"):
+                state.samjna_registry["1.2.46_corrected_v2_P005_B_upasaraja"] = True
+                t0.tags.add("prātipadika")
+                t0.tags.add("anga")
+                t0.tags.add("pulliṅga")
+            return state
 
     if len(state.terms) == 1 and state.terms[0].meta.get("5_3_71_akac_vyutpanna"):
         if state.samjna_registry.get("1.2.46_5_3_71_akac"):

@@ -23,8 +23,6 @@ META_ARM_C = "corrected_v2_P001_C_8_2_42_arm"
 
 
 def _match_rad_nistha_two_terms(state: State, stem_slp1: str, meta_arm: str) -> bool:
-    if not state.meta.get(meta_arm):
-        return False
     if len(state.terms) != 2:
         return False
     a, b = state.terms[0], state.terms[1]

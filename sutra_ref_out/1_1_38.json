@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.1.38",
+  "sk_number": 448,
+  "text": {
+    "dev": "तद्धितश्चासर्वविभक्तिः",
+    "slp1": "tadDitaScAsarvaviBaktiH",
+    "padaccheda": {
+      "dev": "तद्धितः · च · असर्वविभक्तिः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "अनुवृत्तिः अव्ययम् (१.१.३७)।",
+    "anuvrtti_pada": "11037: अव्ययम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "taddhita",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**च** → **अव्ययम्** (१.१.३७): **taddhita** + **asarvavibhakti** (no full **sup** paradigm). Silico: ``taddhita`` or ``taddhita_pratyaya_id`` ∧ ``asarvavibhakti``. Predicate ``sutra_1_1_38.is_avyaya_term_1_1_38``; through **१.१.४१** ``sutra_1_1_41.is_avyaya_term_1_1_37_38_39_40_41``."
+  },
+  "downstream": {
+    "next_sutra": "1.1.39",
+    "previous_sutra": "1.1.37",
+    "next_effect": null,
+    "note": "sup block, accent, samāsa with avyayībhāva taddhita, coordination with 1.1.37"
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तया",
+      "alt_dev": null,
+      "raw": "तया",
+      "source": "Kashika 1.1.38",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तदा",
+      "alt_dev": null,
+      "raw": "तदा",
+      "source": "Kashika 1.1.38",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "यस्माद् न सर्वविभक्तेरुत्पत्तिः सोऽसर्वविभक्तिः",
+      "alt_dev": null,
+      "raw": "यस्माद् न सर्वविभक्तेरुत्पत्तिः सोऽसर्वविभक्तिः",
+      "source": "Kashika 1.1.38",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ततः",
+      "alt_dev": null,
+      "raw": "ततः",
+      "source": "Kashika 1.1.38",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "यतः",
+      "alt_dev": null,
+      "raw": "यतः",
+      "source": "Kashika 1.1.38",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तत्र",
+      "alt_dev": null,
+      "raw": "तत्र",
+      "source": "Kashika 1.1.38",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "With **ca** carrying **avyaya** from 1.1.37: a **taddhita** that is **asarvavibhakti** (not taking all cases) is **avyaya**.",
+    "sa": "तद्धितान्तोऽसर्वविभक्तिकश्च अव्ययसंज्ञकः।"
+  },
+  "authority": {
+    "kashika_ref": "1.1.38",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.1.39",
+    "test_file": "tests/test_sutra_1_1_38.py",
+    "notes": null,
+    "condition_key": "cond_1_1_38",
+    "action_key": "act_1_1_38"
+  }
+}

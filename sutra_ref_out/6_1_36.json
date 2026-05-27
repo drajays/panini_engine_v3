@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "6.1.36",
+  "sk_number": 3512,
+  "text": {
+    "dev": "अपस्पृधेथामानृचुरानृहुश्चिच्युषेतित्याजश्राताःश्रितमाशीराशीर्त्तः",
+    "slp1": "apaspfDeTAmAnfcurAnfhuScicyuzetityAjaSrAtAHSritamASIrASIrttaH",
+    "padaccheda": {
+      "dev": "अपस्पृधेथाम् (तिङ्) आनृचुः (तिङ्) आनृहुः (तिङ्) चिच्युषे (तिङ्) तित्याज (तिङ्) श्राताः श्रितम् आशीर् आशीर्त्ताः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "61013: सम्प्रसारणम् | 61034: छन्दसि",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M06",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "6.1.37",
+    "previous_sutra": "6.1.35",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "इन्द्र॑श्च विष्णो॒ यदप॑स्पृधेथाम् (ऋ० ६.६९.८)",
+      "alt_dev": null,
+      "raw": "इन्द्र॑श्च विष्णो॒ यदप॑स्पृधेथाम् (ऋ० ६.६९.८)",
+      "source": "Kashika 6.1.36",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अस्पर्धेथामिति भाषायाम्",
+      "alt_dev": null,
+      "raw": "अस्पर्धेथामिति भाषायाम्",
+      "source": "Kashika 6.1.36",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "इत्यडागमाभावः",
+      "alt_dev": null,
+      "raw": "इत्यडागमाभावः",
+      "source": "Kashika 6.1.36",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अत्र प्रत्युदाहरणमपास्पर्धेथामिति भाषायाम्",
+      "alt_dev": null,
+      "raw": "अत्र प्रत्युदाहरणमपास्पर्धेथामिति भाषायाम्",
+      "source": "Kashika 6.1.36",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "6.1.36",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "stub",
+    "similar_sutra": "6.1.37",
+    "test_file": "tests/test_sutra_6_1_36.py",
+    "notes": null,
+    "condition_key": "cond_6_1_36",
+    "action_key": "act_6_1_36"
+  }
+}

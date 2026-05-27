@@ -48,7 +48,6 @@ def derive_SANDikyaH_Yya_SRqika_corrected_P004_B() -> State:
     s = apply_rule("2.1.1", s)
     s = P00_attach_sup_from_pratipadika(s)
 
-    s.meta["corrected_v2_P004_B_4_3_92_arm"] = True
     s = apply_rule("4.3.92", s)
 
     s = apply_rule("1.1.1", s)
@@ -66,7 +65,6 @@ def derive_SANDikyaH_Yya_SRqika_corrected_P004_B() -> State:
     s = apply_rule("7.2.117", s)
 
     s = apply_rule("6.4.129", s)
-    s.meta["corrected_v2_P004_B_6_4_148_arm"] = True
     s = apply_rule("6.4.148", s)
 
     _pada_merge(s)

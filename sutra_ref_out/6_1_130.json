@@ -1,0 +1,178 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "6.1.130",
+  "sk_number": 99,
+  "text": {
+    "dev": "ई३ चाक्रवर्मणस्य",
+    "slp1": "I3 cAkravarmaRasya",
+    "padaccheda": {
+      "dev": "ई३ (लुप्तप्रथमान्तनिर्देशः) चाक्रवर्मणस्य",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "6.1.72",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "6.1.111",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "6.1.72",
+    "anuvritta_note": null,
+    "anuvrtti_pada": "61125: अचि | 61129: अप्लुतवत्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M06",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "vibhasha",
+    "optionality": {
+      "value": true,
+      "paninian_term": "विकल्पेन"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": false,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Engine models this as an optional override tag that can cancel the apluta-vat behavior (6.1.129) for ī³ and allow pluta’s prakṛtibhāva-blocking (6.1.125) to remain effective in that derivation."
+  },
+  "downstream": {
+    "next_sutra": "6.1.131",
+    "previous_sutra": "6.1.129",
+    "next_effect": null,
+    "note": "Supports derivations where ī³ remains pluta-vat before vowels (e.g., ही³ इदम्) and provides a controlled override against upasthita-based apluta-vat interpretations."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अस्तु ही इत्यब्रूताम् / अस्तु ही³ इत्यब्रूताम्",
+      "alt_dev": null,
+      "raw": "अस्तु ही इत्यब्रूताम् / अस्तु ही³ इत्यब्रूताम्",
+      "source": "Kashika 6.1.130",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "चिनु हीदम् / चिनु ही³ इदम्",
+      "alt_dev": null,
+      "raw": "चिनु हीदम् / चिनु ही³ इदम्",
+      "source": "Kashika 6.1.130",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वशा³ इयम् → वशेयम् (कथनम्: ईकारादन्यत्रापि)",
+      "alt_dev": null,
+      "raw": "वशा³ इयम् → वशेयम् (कथनम्: ईकारादन्यत्रापि)",
+      "source": "Kashika 6.1.130",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अस्तु हीत्यब्रूताम्",
+      "alt_dev": null,
+      "raw": "अस्तु हीत्यब्रूताम्",
+      "source": "Kashika 6.1.130",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अस्ति हि३ इत्यब्रूताम्",
+      "alt_dev": null,
+      "raw": "अस्ति हि३ इत्यब्रूताम्",
+      "source": "Kashika 6.1.130",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "चिनु हीदम्",
+      "alt_dev": null,
+      "raw": "चिनु हीदम्",
+      "source": "Kashika 6.1.130",
+      "variant_type": "vibhasha"
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "चिनु हि३ इदम्",
+      "alt_dev": null,
+      "raw": "चिनु हि३ इदम्",
+      "source": "Kashika 6.1.130",
+      "variant_type": "vibhasha"
+    }
+  ],
+  "gloss": {
+    "en": "Optionally (per Cākravarman), ī-pluta (ई³) before a following vowel behaves as pluta (pluta-vat), i.e., it retains pluta-effects rather than being neutralized.",
+    "sa": "चाक्रवर्मणस्य मते ई³कारः अचि परतः प्लुतवत् भवति (विभाषा)।"
+  },
+  "authority": {
+    "kashika_ref": "6.1.130",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "6.1.131",
+    "test_file": "tests/test_sutra_6_1_130.py",
+    "notes": null,
+    "condition_key": "cond_6_1_130",
+    "action_key": "act_6_1_130"
+  }
+}

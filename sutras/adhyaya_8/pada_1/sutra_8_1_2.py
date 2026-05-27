@@ -23,8 +23,6 @@ def _flat(t: Term) -> str:
 
 
 def _site(state: State) -> bool:
-    if not state.meta.get(_META_ARM):
-        return False
     if len(state.terms) != 3:
         return False
     t0, t1, t2 = state.terms
@@ -46,7 +44,6 @@ def act(state: State) -> State:
         return state
     state.terms[1].meta[_META_STAMP] = True
     state.samjna_registry["8.1.2_P017_paramAmreDita_index"] = 1
-    state.meta.pop(_META_ARM, None)
     return state
 
 

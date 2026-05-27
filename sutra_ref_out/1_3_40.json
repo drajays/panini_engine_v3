@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.3.40",
+  "sk_number": 2713,
+  "text": {
+    "dev": "आङ उद्गमने",
+    "slp1": "ANa udgamane",
+    "padaccheda": {
+      "dev": "आङः · उद्गमने",
+      "slp1": "ANa · udgamane",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "Anuvṛtti of ‘ātmanepadam’ from 1.3.12 and ‘kram’ (क्रमः) from 1.3.38.",
+    "anuvrtti_pada": "13012: आत्मनेपदम् | 13038: क्रमः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "B",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Vidhi (pada-selection): for kram (anuvṛtti from 1.3.38) with āṅ- in udgamana sense, select ātmanepada (anuvṛtti from 1.3.12)."
+  },
+  "downstream": {
+    "next_sutra": "1.3.41",
+    "previous_sutra": "1.3.39",
+    "next_effect": null,
+    "note": "Tinanta pipeline: selects ātmanepada for āṅ + kram under udgamana sense (recorded via env trigger)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "आक्रमत आदित्यः",
+      "alt_dev": null,
+      "raw": "आक्रमत आदित्यः",
+      "source": "Kashika 1.3.40",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "आक्रमते चन्द्रमाः",
+      "alt_dev": null,
+      "raw": "आक्रमते चन्द्रमाः",
+      "source": "Kashika 1.3.40",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "आक्रमन्ते ज्योतींषि",
+      "alt_dev": null,
+      "raw": "आक्रमन्ते ज्योतींषि",
+      "source": "Kashika 1.3.40",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उद्गमन इति किम्? आक्रामति माणवकः कुतपम्",
+      "alt_dev": null,
+      "raw": "उद्गमन इति किम्? आक्रामति माणवकः कुतपम्",
+      "source": "Kashika 1.3.40",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "For kram with the prefix āṅ-, in the sense of going up/out (udgamana), (the pada) is ātmanepada.",
+    "sa": "आङ उद्गमने क्रमः आत्मनेपदम्।"
+  },
+  "authority": {
+    "kashika_ref": "1.3.40",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.3.41",
+    "test_file": "tests/test_sutra_1_3_40.py",
+    "notes": null,
+    "condition_key": "cond_1_3_40",
+    "action_key": "act_1_3_40"
+  }
+}

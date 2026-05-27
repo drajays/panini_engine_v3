@@ -57,11 +57,9 @@ def derive_dhRSTaH_kta_YiDfzf_corrected_P001_B() -> State:
     s = P00_krt_ardhadhatuka_ekac_it_and_guna_audit(s)
 
     _pada_merge(s)
-    s.meta["corrected_v2_P001_B_zt_pre_tripadi_arm"] = True
     s = apply_rule("8.4.41", s)
 
     s.terms[0].meta["corrected_v2_P001_B_nistha_stem"] = True
-    s.meta["corrected_v2_P001_B_1_2_46_arm"] = True
     s = apply_rule("1.2.46", s)
 
     # ``1.2.46`` leaves the Tripāḍī ``pada`` shell; subanta tail expects a

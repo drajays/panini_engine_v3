@@ -25,10 +25,6 @@ def _stem(prev: Term) -> str:
 
 
 def _ta_idx_kryadi_snA(state: State) -> int | None:
-    want_krI = bool(state.meta.get(_META_P009))
-    want_jYA = bool(state.meta.get(_META_P012))
-    if not (want_krI or want_jYA):
-        return None
     for i, t in enumerate(state.terms):
         if "tin_adesha_3_4_78" not in t.tags:
             continue
@@ -40,9 +36,9 @@ def _ta_idx_kryadi_snA(state: State) -> int | None:
         if "dhatu" not in prev.tags:
             continue
         st = _stem(prev)
-        if want_krI and st == "krI":
+        if st == "krI":
             return i
-        if want_jYA and st == "jYA":
+        if st == "jYA":
             return i
     return None
 

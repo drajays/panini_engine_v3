@@ -34,8 +34,6 @@ def _find(state: State) -> int | None:
 def cond(state: State) -> bool:
     if not state.tripadi_zone:
         return False
-    if not state.meta.get("corrected_v2_P014_8_3_7_arm"):
-        return False
     return _find(state) is not None
 
 
@@ -46,7 +44,6 @@ def act(state: State) -> State:
     t = state.terms[0]
     t.varnas[i] = mk("M")
     t.meta["8_3_7_m_to_M_done"] = True
-    state.meta.pop("corrected_v2_P014_8_3_7_arm", None)
     return state
 
 

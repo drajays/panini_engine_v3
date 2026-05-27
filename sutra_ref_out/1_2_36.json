@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.2.36",
+  "sk_number": 3665,
+  "text": {
+    "dev": "विभाषा छन्दसि",
+    "slp1": "viBAzA Candasi",
+    "padaccheda": {
+      "dev": "विभाषा · छन्दसि",
+      "slp1": "viBAzA · Candasi",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "**एकश्रुति** ← १.२.३३",
+    "anuvrtti_pada": "12033: एकश्रुति",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "vibhasha",
+    "optionality": {
+      "value": true,
+      "paninian_term": "विकल्पेन"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": false,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**Vibhāṣā** in **chandasi**: **ekaśruti** (**anuvṛtti** **1.2.33**) and its dependent accent **vidhi**s are **optional** in Vedic (**chandas**). Silico: ``Environment.vibhasha_candasi_accent_1_2_36`` **True** after this rule is applied; combine with ``Environment.is_vedic`` in downstream accent tier."
+  },
+  "downstream": {
+    "next_sutra": "1.2.37",
+    "previous_sutra": "1.2.35",
+    "next_effect": null,
+    "note": "Marks **ekaśruti**-block accent **vidhi**s as **vibhāṣā** when derivation is **chandasi** (**is_vedic**)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [],
+  "gloss": {
+    "en": "**Vibhāṣā** (optional rule) in **chandasi** (Vedic): **ekaśruti**-chain accent treatment is not **nitya** there.",
+    "sa": "छन्दसि एकश्रुतिविषयकं विधानं विभाषया भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.2.36",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.2.37",
+    "test_file": "tests/test_sutra_1_2_36.py",
+    "notes": null,
+    "condition_key": "cond_1_2_36",
+    "action_key": "act_1_2_36"
+  }
+}

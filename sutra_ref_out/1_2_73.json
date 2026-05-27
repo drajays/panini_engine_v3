@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.2.73",
+  "sk_number": 939,
+  "text": {
+    "dev": "ग्राम्यपशुसंघेषु अतरुणेषु स्त्री",
+    "slp1": "grAmyapaSusaMGezu ataruRezu strI",
+    "padaccheda": {
+      "dev": "ग्राम्यपशुसंघेषु · अतरुणेषु · स्त्री",
+      "slp1": "grAmyapaSusaMGezu · ataruRezu · strI",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "Anuvṛtti of **śeṣa/ekaśeṣa** from 1.2.64.",
+    "anuvrtti_pada": "12064: शेषः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Vidhi scope marker within the ekaśeṣa chain: in grāmya-paśu-saṅgha (rural animal collectives/herds), when the referents are ataruṇa (not young), the collective is treated as strī (feminine). Silico: records only via ``Environment.grAmyapaSusaMGezu_ataruRezu_strI_1_2_73``; ``core/sutra_1_2_73``."
+  },
+  "downstream": {
+    "next_sutra": "1.3.1",
+    "previous_sutra": "1.2.72",
+    "next_effect": null,
+    "note": "Samāsa/ekaśeṣa pipeline: records the strī-treatment scope for grāmya-paśu collectives that are ataruṇa."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "एतेषु सह विवक्षायां स्त्री शिष्यते",
+      "alt_dev": null,
+      "raw": "एतेषु सह विवक्षायां स्त्री शिष्यते",
+      "source": "Kashika 1.2.73",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अतरुणग्रहणं सामर्थ्यात् पशुविशेषणम्",
+      "alt_dev": null,
+      "raw": "अतरुणग्रहणं सामर्थ्यात् पशुविशेषणम्",
+      "source": "Kashika 1.2.73",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "गाव इमाः",
+      "alt_dev": null,
+      "raw": "गाव इमाः",
+      "source": "Kashika 1.2.73",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अजा इमाः",
+      "alt_dev": null,
+      "raw": "अजा इमाः",
+      "source": "Kashika 1.2.73",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Within ekaśeṣa, for rural animal collectives (non-young), the collective is treated as feminine (strī).",
+    "sa": "एकशेषप्रसङ्गे ग्राम्यपशुसंघेषु अतरुणेषु स्त्री (स्त्रीत्वव्यवहारः)।"
+  },
+  "authority": {
+    "kashika_ref": "1.2.73",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.3.1",
+    "test_file": "tests/test_sutra_1_2_73.py",
+    "notes": null,
+    "condition_key": "cond_1_2_73",
+    "action_key": "act_1_2_73"
+  }
+}

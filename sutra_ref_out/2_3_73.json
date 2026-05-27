@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "2.3.73",
+  "sk_number": 631,
+  "text": {
+    "dev": "चतुर्थी चाशिष्यायुष्यमद्रभद्रकुशलसुखार्थहितैः",
+    "slp1": "caturTI cASizyAyuzyamadraBadrakuSalasuKArTahitEH",
+    "padaccheda": {
+      "dev": "चतुर्थी च आशिषि आयुष्य-मद्र-भद्र-कुशल-सुख-अर्थहितैः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "23050: षष्ठी शेषे | 23072: अन्यतरस्याम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M02",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "2.4.1",
+    "previous_sutra": "2.3.72",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "चकारो विकल्पानुकर्षणार्थः",
+      "alt_dev": null,
+      "raw": "चकारो विकल्पानुकर्षणार्थः",
+      "source": "Kashika 2.3.73",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अत्रायुष्यादीनां पर्यायग्रहणं कर्तव्यम्",
+      "alt_dev": null,
+      "raw": "अत्रायुष्यादीनां पर्यायग्रहणं कर्तव्यम्",
+      "source": "Kashika 2.3.73",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "चिरं जीवितं देवदत्ताय देवदत्तस्य वा भूयात्",
+      "alt_dev": null,
+      "raw": "चिरं जीवितं देवदत्ताय देवदत्तस्य वा भूयात्",
+      "source": "Kashika 2.3.73",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "मदं्र देवदत्ताय देवदत्तस्य वा भूयात्",
+      "alt_dev": null,
+      "raw": "मदं्र देवदत्ताय देवदत्तस्य वा भूयात्",
+      "source": "Kashika 2.3.73",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "2.3.73",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "2.4.1",
+    "test_file": "tests/test_sutra_2_3_73.py",
+    "notes": null,
+    "condition_key": "cond_2_3_73",
+    "action_key": "act_2_3_73"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.3.21",
+  "sk_number": 170,
+  "text": {
+    "dev": "उञि च पदे",
+    "slp1": "uYi ca pade",
+    "padaccheda": {
+      "dev": "उञि · च · पदे",
+      "slp1": "uYi · ca · pade",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": "8.2.1",
+    "anuvritta_note": null,
+    "anuvrtti_pada": "82108: संहितायाम् | 83017: अपूर्वस्य | 83018: व्योः | 83019: लोपः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "8.3.22",
+    "previous_sutra": "8.3.20",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "स उ एकाग्निः",
+      "alt_dev": null,
+      "raw": "स उ एकाग्निः",
+      "source": "Kashika 8.3.21",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "स उ एकविंशवर्तनिः",
+      "alt_dev": null,
+      "raw": "स उ एकविंशवर्तनिः",
+      "source": "Kashika 8.3.21",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "स + उ + एकविंशवर्तनिः -> (u-boundary) उयेकविंशवर्तनिः",
+      "alt_dev": null,
+      "raw": "स + उ + एकविंशवर्तनिः -> (u-boundary) उयेकविंशवर्तनिः",
+      "source": "Kashika 8.3.21",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "स + उ + एकाग्निः -> (u-boundary) उयेकाग्निः",
+      "alt_dev": null,
+      "raw": "स + उ + एकाग्निः -> (u-boundary) उयेकाग्निः",
+      "source": "Kashika 8.3.21",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पद इति किम्? तन्त्र + उतम् (no) ; तन्त्रयुतम् (blocked)",
+      "alt_dev": null,
+      "raw": "पद इति किम्? तन्त्र + उतम् (no) ; तन्त्रयुतम् (blocked)",
+      "source": "Kashika 8.3.21",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Insert y after u in pada context (SK-driven subset).",
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "8.3.21",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "8.3.22",
+    "test_file": "tests/test_sutra_8_3_21.py",
+    "notes": "SK-driven: u + vowel → uy... when 'pada' saṃjñā present; excludes tantra+utam note.",
+    "condition_key": "cond_8_3_21",
+    "action_key": "act_8_3_21"
+  }
+}

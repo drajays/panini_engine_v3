@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.2.27",
+  "sk_number": 4,
+  "text": {
+    "dev": "ऊकालोऽज्झ्रस्वदीर्घप्लुतः",
+    "slp1": "UkAlo'jJrasvadIrGaplutaH",
+    "padaccheda": {
+      "dev": "ऊकालः · अच् · ह्रस्वदीर्घप्लुतः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": null,
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Saṃjñā **ūkāla** for **ac** under **hrasva**/**dīrgha**/**pluta**. Table **ukAla_ac** = Māheśvara **ac** atoms (13 SLP1 chars); **pluta** is length on the host (**3** / pluta digit), not a separate letter. ``samjna_rules.is_ukAla_ac_slp1``."
+  },
+  "downstream": {
+    "next_sutra": "1.2.28",
+    "previous_sutra": "1.2.26",
+    "next_effect": null,
+    "note": "Foundational vowel-length taxonomy for śikṣā-linked rules; membership aligns with **ac** in this engine."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उकालो ह्रस्वः — दधि",
+      "alt_dev": null,
+      "raw": "उकालो ह्रस्वः — दधि",
+      "source": "Kashika 1.2.27",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "मधु",
+      "alt_dev": null,
+      "raw": "मधु",
+      "source": "Kashika 1.2.27",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ऊकालो दीर्घः — कुमारी गौरी",
+      "alt_dev": null,
+      "raw": "ऊकालो दीर्घः — कुमारी गौरी",
+      "source": "Kashika 1.2.27",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ऊ३कालः प्लुतः — देवदत्त३ अत्र न्वसि",
+      "alt_dev": null,
+      "raw": "ऊ३कालः प्लुतः — देवदत्त३ अत्र न्वसि",
+      "source": "Kashika 1.2.27",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "**Ūkāla**: vowels (**ac**) in the **hrasva**, **dīrgha**, or **pluta** temporal classes.",
+    "sa": "अचां ह्रस्वदीर्घप्लुतभेदेन ऊकालसंज्ञा।"
+  },
+  "authority": {
+    "kashika_ref": "1.2.27",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.2.28",
+    "test_file": "tests/test_sutra_1_2_27.py",
+    "notes": null,
+    "condition_key": "cond_1_2_27",
+    "action_key": "act_1_2_27"
+  }
+}

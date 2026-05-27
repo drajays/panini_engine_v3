@@ -17,8 +17,6 @@ _META_ARM = "corrected_v2_P005_A_4_1_15_arm"
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get(_META_ARM):
-        return False
     if len(state.terms) != 1:
         return False
     t0 = state.terms[0]
@@ -36,7 +34,6 @@ def act(state: State) -> State:
     )
     state.terms.append(nIp)
     state.samjna_registry["4.1.15_P005_A_NIp"] = True
-    state.meta.pop(_META_ARM, None)
     return state
 
 

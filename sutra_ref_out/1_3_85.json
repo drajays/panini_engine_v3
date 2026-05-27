@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.3.85",
+  "sk_number": 2751,
+  "text": {
+    "dev": "विभाषाऽकर्मकात्",
+    "slp1": "viBAzA'karmakAt",
+    "padaccheda": {
+      "dev": "विभाषा · अकर्मकात्",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "Anuvṛtti of ‘parasmaipada’ from 1.3.78; context ‘upa- + ram’ from 1.3.84.",
+    "anuvrtti_pada": "13078: परस्मैपदम् | 13084: रमः | 13084: उपात्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "B",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "anyatara",
+    "optionality": {
+      "value": true,
+      "paninian_term": "अन्यतरस्याम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": false,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Vidhi (vibhāṣā): for upa- + ram when akarmaka, parasmaipada is optional (anuvṛtti: parasmaipada from 1.3.78; upa+ram from 1.3.84)."
+  },
+  "downstream": {
+    "next_sutra": "1.3.86",
+    "previous_sutra": "1.3.84",
+    "next_effect": null,
+    "note": "Tinanta pipeline: marks upa + ram + akarmaka contexts where parasmaipada is optionally allowed."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पूर्वेण नित्ये परस्मैपदे प्राप्ते विकल्प आरभ्यते",
+      "alt_dev": null,
+      "raw": "पूर्वेण नित्ये परस्मैपदे प्राप्ते विकल्प आरभ्यते",
+      "source": "Kashika 1.3.85",
+      "variant_type": "anyatara"
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उपपूर्वाद् रमतेरकर्मकाद् विभाषा परस्मैपदं भवति",
+      "alt_dev": null,
+      "raw": "उपपूर्वाद् रमतेरकर्मकाद् विभाषा परस्मैपदं भवति",
+      "source": "Kashika 1.3.85",
+      "variant_type": "anyatara"
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "यावद्भुक्तमुपरमति",
+      "alt_dev": "यावद्भुक्तमुपरमते",
+      "raw": "यावद्भुक्तमुपरमति, यावद्भुक्तमुपरमते",
+      "source": "Kashika 1.3.85",
+      "variant_type": "anyatara"
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "निवर्तत इत्यर्थः",
+      "alt_dev": null,
+      "raw": "निवर्तत इत्यर्थः",
+      "source": "Kashika 1.3.85",
+      "variant_type": "anyatara"
+    }
+  ],
+  "gloss": {
+    "en": "Optionally, for upa- + ram (when intransitive), (the pada) is parasmaipada.",
+    "sa": "अकर्मकादुपपूर्वस्य रमः विभाषा परस्मैपदम्।"
+  },
+  "authority": {
+    "kashika_ref": "1.3.85",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.3.86",
+    "test_file": "tests/test_sutra_1_3_85.py",
+    "notes": "Kāśikā: ‘पूर्वेण नित्ये परस्मैपदे प्राप्ते विकल्प आरभ्यते… उपपूर्वद् रमतेरकर्मकाद् विभाषा परस्मैपदं भवति।’",
+    "condition_key": "cond_1_3_85",
+    "action_key": "act_1_3_85"
+  }
+}

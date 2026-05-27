@@ -40,8 +40,6 @@ def _find_p009_natva(state: State):
     ``SnA`` residue ``nI`` — permitted *vyavāya* with only ``I`` between — ṇatva even
     though ``krI`` and ``nI`` sit in adjacent ``Term``s (bundle convention).
     """
-    if not state.meta.get(META_P009_NATVA):
-        return None
     for i in range(len(state.terms) - 1):
         t0, t1 = state.terms[i], state.terms[i + 1]
         f0 = "".join(v.slp1 for v in t0.varnas)
@@ -125,7 +123,6 @@ def act(state: State) -> State:
         new_varna = mk("R")
         new_varna.tags.add("natva_done")
         t.varnas[vi] = new_varna
-        state.meta.pop(META_P009_NATVA, None)
         form_after = "".join(v.dev for v in t.varnas if v.dev)
         state.meta["__why_now_dev__"] = (
             f"ऋ-कारोत्तरम् न → ण (P009 क्री-SnA context); "

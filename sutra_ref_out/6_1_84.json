@@ -1,0 +1,122 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "6.1.84",
+  "sk_number": 68,
+  "text": {
+    "dev": "एकः पूर्वपरयोः",
+    "slp1": "ekaH pUrvaparayoH",
+    "padaccheda": {
+      "dev": "एकः पूर्व-परयोः",
+      "slp1": "ekaH · pUrvaparayoH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "6.1.72",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "6.1.84",
+    "anuvritta_note": "Scope marker for ekādeśa-style sandhi operations (e.g., 6.1.87 आद्गुणः), under saṃhitā.",
+    "anuvrtti_pada": "61072: संहितायाम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M06",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**एकः पूर्वपरयोः** — Adhikāra: in the following saṃhitā sandhi rules (as traditionally bounded), the operation is **ekādeśa**: one substitute stands for both pūrva+para."
+  },
+  "downstream": {
+    "next_sutra": "6.1.85",
+    "previous_sutra": "6.1.83",
+    "next_effect": null,
+    "note": "Governs downstream sandhi rules by ensuring a single replacement accounts for both interacting sounds (pūrva+para)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "खट्वेन्द्रः",
+      "alt_dev": null,
+      "raw": "खट्वेन्द्रः",
+      "source": "Kashika 6.1.84",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "मालेन्द्रः",
+      "alt_dev": null,
+      "raw": "मालेन्द्रः",
+      "source": "Kashika 6.1.84",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "One (substitute) stands in place of both the prior and the following.",
+    "sa": "पूर्वस्य परस्य च द्वयोः स्थाने एकादेशः।"
+  },
+  "authority": {
+    "kashika_ref": "6.1.84",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "6.1.85",
+    "test_file": "tests/test_sutra_6_1_84.py",
+    "notes": null,
+    "condition_key": "cond_6_1_84",
+    "action_key": "act_6_1_84"
+  }
+}

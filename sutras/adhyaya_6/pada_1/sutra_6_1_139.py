@@ -36,8 +36,6 @@ def _upa_before_kf(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("corrected_v2_P011_B_6_1_139_arm"):
-        return False
     i = _upa_before_kf(state)
     if i is None:
         return False
@@ -60,7 +58,6 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "suT"},
     )
     state.terms.insert(i + 1, su)
-    state.meta["corrected_v2_P011_B_6_1_139_arm"] = False
     return state
 
 

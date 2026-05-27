@@ -1,0 +1,175 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.3.46",
+  "sk_number": 160,
+  "text": {
+    "dev": "अतः कृकमिकंसकुम्भपात्रकुशाकर्णीष्वनव्ययस्य",
+    "slp1": "ataH kfkamikaMsakumBapAtrakuSAkarRIzvanavyayasya",
+    "padaccheda": {
+      "dev": "अतः · कृ-कमि-कंस-कुम्भ-पात्र-कुशाकर्णीषु · अनव्ययस्य",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "82108: संहितायाम् | 83034: विसर्जनीयस्य | 83038: सः | 83045: नित्यं समासेऽनुत्तरपदस्थस्य",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "8.3.47",
+    "previous_sutra": "8.3.45",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अयस्कारः",
+      "alt_dev": null,
+      "raw": "अयस्कारः",
+      "source": "Kashika 8.3.46",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पयस्कारः",
+      "alt_dev": null,
+      "raw": "पयस्कारः",
+      "source": "Kashika 8.3.46",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अयस्कामः",
+      "alt_dev": null,
+      "raw": "अयस्कामः",
+      "source": "Kashika 8.3.46",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पयस्कामः",
+      "alt_dev": null,
+      "raw": "पयस्कामः",
+      "source": "Kashika 8.3.46",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अयःकारः -> अयस्कारः",
+      "alt_dev": "कृ — अयस्कारः",
+      "raw": "अयःकारः -> अयस्कारः, कृ — अयस्कारः",
+      "source": "Kashika 8.3.46",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पयःकारः -> पयस्कारः",
+      "alt_dev": null,
+      "raw": "पयःकारः -> पयस्कारः",
+      "source": "Kashika 8.3.46",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अयःकामः -> अयस्कामः",
+      "alt_dev": "कमि — अयस्कामः",
+      "raw": "अयःकामः -> अयस्कामः, कमि — अयस्कामः",
+      "source": "Kashika 8.3.46",
+      "variant_type": null
+    },
+    {
+      "id": 8,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पयःकामः -> पयस्कामः",
+      "alt_dev": null,
+      "raw": "पयःकामः -> पयस्कामः",
+      "source": "Kashika 8.3.46",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "For non-avyaya bases ending in -aḥ, replace visarga with s before certain following words (kṛ/kami/...); corpus: ayah/payah + k- forms.",
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "8.3.46",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "8.3.47",
+    "test_file": "tests/test_sutra_8_3_46.py",
+    "notes": "Corpus-driven minimal: handles ayah-/payah- compounds before k- (अयस्कारः, पयस्कारः, अयस्कामः, पयस्कामः).",
+    "condition_key": "cond_8_3_46",
+    "action_key": "act_8_3_46"
+  }
+}

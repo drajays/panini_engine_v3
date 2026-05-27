@@ -1,0 +1,172 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.3.32",
+  "sk_number": 134,
+  "text": {
+    "dev": "ङमो ह्रस्वादचि ङमुण्नित्यम्",
+    "slp1": "Namo hrasvAdaci NamuRnityam",
+    "padaccheda": {
+      "dev": "ङमः ह्रस्वात् अचि ङमुट् नित्यम्",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "8.2.1",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "8.2.1",
+    "anuvritta_note": null,
+    "anuvrtti_pada": "81016: पदस्य | 82108: संहितायाम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "8.3.33",
+    "previous_sutra": "8.3.31",
+    "next_effect": null,
+    "note": "Kāśikā: प्रत्यङ्ङास्ते, वण्णास्ते, कुर्वन्नास्ते."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्रत्यङ्ङास्ते",
+      "alt_dev": null,
+      "raw": "प्रत्यङ्ङास्ते",
+      "source": "Kashika 8.3.32",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वण्णास्ते",
+      "alt_dev": null,
+      "raw": "वण्णास्ते",
+      "source": "Kashika 8.3.32",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कुर्वन्नास्ते",
+      "alt_dev": null,
+      "raw": "कुर्वन्नास्ते",
+      "source": "Kashika 8.3.32",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "णकारान्ताद् णुट् — वण्णास्ते",
+      "alt_dev": null,
+      "raw": "णकारान्ताद् णुट् — वण्णास्ते",
+      "source": "Kashika 8.3.32",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वण्णवोचत्",
+      "alt_dev": null,
+      "raw": "वण्णवोचत्",
+      "source": "Kashika 8.3.32",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "नकारान्ताद् नुट् — कुर्वन्नास्ते",
+      "alt_dev": null,
+      "raw": "नकारान्ताद् नुट् — कुर्वन्नास्ते",
+      "source": "Kashika 8.3.32",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कुर्वन्नवोचत्",
+      "alt_dev": null,
+      "raw": "कुर्वन्नवोचत्",
+      "source": "Kashika 8.3.32",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "After a short vowel followed by ṅ/ṇ/n at pada-end, when a vowel follows, the corresponding nasal augment (ṅuṭ/ṇuṭ/nuṭ) is inserted obligatorily.",
+    "sa": "ह्रस्वात् परः यो ङ/ण/न् (पदान्तः), तदन्तात् पदात् परस्य अचः पूर्वं यथासङ्ख्यं ङुट्/णुट्/नुट् आगमः नित्यम्।"
+  },
+  "authority": {
+    "kashika_ref": "8.3.32",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "8.3.33",
+    "test_file": "tests/test_sutra_8_3_32.py",
+    "notes": null,
+    "condition_key": "cond_8_3_32",
+    "action_key": "act_8_3_32"
+  }
+}

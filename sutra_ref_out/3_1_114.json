@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "3.1.114",
+  "sk_number": 2865,
+  "text": {
+    "dev": "राजसूयसूर्यमृषोद्यरुच्यकुप्यकृष्टपच्याव्यथ्याः",
+    "slp1": "rAjasUyasUryamfzodyarucyakupyakfzwapacyAvyaTyAH",
+    "padaccheda": {
+      "dev": "राजसूय-सूर्य-मृषोद्य-रुच्य-कुप्य-कृष्टपच्य-अव्यथ्याः",
+      "slp1": "rAjasUyasUryamfzodyarucyakupyakfzwapacyAvyaTyAH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 31106: क्यप्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M03",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "3.1.115",
+    "previous_sutra": "3.1.113",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "राज्ञा सोतव्यः",
+      "alt_dev": "राजा वेह सूयते राजसूयः क्रतुः",
+      "raw": "राज्ञा सोतव्यः, राजा वेह सूयते राजसूयः क्रतुः",
+      "source": "Kashika 3.1.114",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सूसर्तिभ्यां क्यप् सर्तेरुत्वं सुवतेर्वा रुडागमः",
+      "alt_dev": null,
+      "raw": "सूसर्तिभ्यां क्यप् सर्तेरुत्वं सुवतेर्वा रुडागमः",
+      "source": "Kashika 3.1.114",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सरति सुवति वा सूर्यः",
+      "alt_dev": null,
+      "raw": "सरति सुवति वा सूर्यः",
+      "source": "Kashika 3.1.114",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "मृषोद्यम्",
+      "alt_dev": null,
+      "raw": "मृषोद्यम्",
+      "source": "Kashika 3.1.114",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "3.1.114",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "stub",
+    "similar_sutra": "3.1.115",
+    "test_file": "tests/test_sutra_3_1_114.py",
+    "notes": null,
+    "condition_key": "cond_3_1_114",
+    "action_key": "act_3_1_114"
+  }
+}

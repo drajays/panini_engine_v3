@@ -43,9 +43,7 @@ def derive_kRtrimam_ktri_kf_corrected_P003_B() -> State:
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
     s = apply_rule("3.1.91", s)
 
-    s.meta["corrected_v2_P003_B_3_3_88_arm"] = True
     s = apply_rule("3.3.88", s)
-    s.meta["corrected_v2_P003_mam_augment_arm"] = True
     s = apply_rule("4.4.20", s)
     s = apply_rule("3.4.114", s)
     s = P00_lashakvataddhite_it_lopa_chain(s)
@@ -57,13 +55,11 @@ def derive_kRtrimam_ktri_kf_corrected_P003_B() -> State:
     stem.kind = "prakriti"
     stem.tags.discard("pada")
     stem.meta["corrected_v2_P003_B_ktrim_stem"] = True
-    s.meta["corrected_v2_P003_B_1_2_46_arm"] = True
     s = apply_rule("1.2.46", s)
 
     stem = s.terms[0]
     stem.tags.add("napuṃsaka")
     s.meta["vibhakti_vacana"] = "1-1"
-    s.meta["corrected_v2_P003_subanta_tail_arm"] = True
     s = apply_rule("4.1.1", s)
     s = apply_rule("1.2.45", s)
     s = apply_rule("4.1.2", s)

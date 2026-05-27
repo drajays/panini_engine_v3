@@ -17,8 +17,6 @@ _META_ARM = "corrected_v2_P012_7_3_79_arm"
 
 
 def _hit(state: State) -> int | None:
-    if not state.meta.get(_META_ARM):
-        return None
     for i, dh in enumerate(state.terms[:-1]):
         if "dhatu" not in dh.tags:
             continue
@@ -41,7 +39,6 @@ def act(state: State) -> State:
         return state
     state.terms[i].varnas = list(parse_slp1_upadesha_sequence("jA"))
     state.samjna_registry["7.3.79_P012_jYA_to_jA"] = True
-    state.meta.pop(_META_ARM, None)
     return state
 
 

@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.19",
+  "sk_number": 1896,
+  "text": {
+    "dev": "तसौ मत्वर्थे",
+    "slp1": "tasO matvarTe",
+    "padaccheda": {
+      "dev": "तसौ · मत्वर्थे · भम्",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "Continues bhaṃ (1.4.18).",
+    "anuvrtti_pada": "14018: भम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Under matvartha pratyaya, t-anta and s-anta word-forms receive bhaṃ (bham) saṃjñā (anuvṛtti: bhaṃ from 1.4.18)."
+  },
+  "downstream": {
+    "next_sutra": "1.4.20",
+    "previous_sutra": "1.4.18",
+    "next_effect": null,
+    "note": "Establishes bhaṃ-scope for matvartha-derived stems ending in t/s (supports later bhaṃ-based operations)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उदश्वित्वान् घोषः",
+      "alt_dev": null,
+      "raw": "उदश्वित्वान् घोषः",
+      "source": "Kashika 1.4.19",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "विद्युत्वान् बलाहकः",
+      "alt_dev": null,
+      "raw": "विद्युत्वान् बलाहकः",
+      "source": "Kashika 1.4.19",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सकारान्तम् — यशस्वी",
+      "alt_dev": null,
+      "raw": "सकारान्तम् — यशस्वी",
+      "source": "Kashika 1.4.19",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पयस्वी",
+      "alt_dev": null,
+      "raw": "पयस्वी",
+      "source": "Kashika 1.4.19",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "In matvartha context, t-final and s-final (forms) are called bhaṃ.",
+    "sa": "तकारान्तं सकारान्तं शब्दरूपं मत्वर्थे प्रत्यये परतो भसंज्ञं भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.19",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.20",
+    "test_file": "tests/test_sutra_1_4_19.py",
+    "notes": "Kāśikā: ‘भम् इति वर्तते… तकारान्तं सकारान्तं शब्दरूपं मत्वर्थे प्रत्यये परतो भसंज्ञं भवति…’",
+    "condition_key": "cond_1_4_19",
+    "action_key": "act_1_4_19"
+  }
+}

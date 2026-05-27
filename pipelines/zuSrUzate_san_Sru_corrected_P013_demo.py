@@ -50,11 +50,9 @@ def derive_zuSrUzate_san_Sru_corrected_P013() -> State:
     s = apply_rule("6.1.1", s)
     s = apply_rule("6.1.4", s)
 
-    s.meta["corrected_v2_P013_sani_dirgha_arm"] = True
     s.meta["6_4_16_sani_dirgha_arm"] = True
     s = apply_rule("6.4.16", s)
 
-    s.meta["corrected_v2_P013_Sru_abhyasa_arm"] = True
     s = apply_rule("7.4.60", s)
 
     s = apply_rule("3.1.91", s)

@@ -1,0 +1,131 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.14",
+  "sk_number": 29,
+  "text": {
+    "dev": "सुप्तिङन्तं पदम्",
+    "slp1": "suptiNantaM padam",
+    "padaccheda": {
+      "dev": "सुप्-तिङ्-अन्तम् · पदम्",
+      "slp1": "suptiNantaM · padam",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": null,
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Saṃjñā: that which is sup-anta or tiṅ-anta is called pada; engine recognizes sup/tiṅ via pratyaya tags and adds `pada` to State.sanjna_set."
+  },
+  "downstream": {
+    "next_sutra": "1.4.15",
+    "previous_sutra": "1.4.13",
+    "next_effect": null,
+    "note": "Defines pada for later operations that apply to complete inflected forms (pada-kārya)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सुबन्तं तिङन्तं च शब्दरूपं पदसंज्ञं भवति",
+      "alt_dev": null,
+      "raw": "सुबन्तं तिङन्तं च शब्दरूपं पदसंज्ञं भवति",
+      "source": "Kashika 1.4.14",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ब्राह्मणाः पठन्ति",
+      "alt_dev": null,
+      "raw": "ब्राह्मणाः पठन्ति",
+      "source": "Kashika 1.4.14",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "गौरी ब्राह्मणितरा",
+      "alt_dev": null,
+      "raw": "गौरी ब्राह्मणितरा",
+      "source": "Kashika 1.4.14",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "That which ends in a sup (nominal) or tiṅ (verbal) affix is called pada.",
+    "sa": "सुप्-अन्तं तिङ्-अन्तं च पद-संज्ञकं भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.14",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.15",
+    "test_file": "tests/test_sutra_1_4_14.py",
+    "notes": null,
+    "condition_key": "cond_1_4_14",
+    "action_key": "act_1_4_14"
+  },
+  "new_constitution_blind_template": {
+    "text_dev": "सुप्तिङन्तं पदम्",
+    "padaccheda_dev": "सुप्-तिङ्-अन्तम् पदम्",
+    "op_type": "SAMJNA",
+    "why_dev": "सुप्-प्रत्ययान्तम् अङ्गम् पद-संज्ञकम्"
+  }
+}

@@ -35,13 +35,11 @@ def derive_IkzAYcakre_lit_Ikz_kf_corrected_P014() -> State:
     s.meta["3_2_115_paroksha_lit_arm"] = True
     s = apply_rule("3.2.115", s)
 
-    s.meta["corrected_v2_P014_3_1_36_am_arm"] = True
     s = apply_rule("3.1.36", s)
 
     s.meta["2_4_81_lit_luk_arm"] = True
     s = apply_rule("2.4.81", s)
 
-    s.meta["corrected_v2_P014_3_1_40_anuprayoga_arm"] = True
     s = apply_rule("3.1.40", s)
 
     s = apply_rule("3.1.91", s)
@@ -62,7 +60,6 @@ def derive_IkzAYcakre_lit_Ikz_kf_corrected_P014() -> State:
     if s.terms and "pratyaya" in s.terms[-1].tags:
         s.terms[-1].meta["upadesha_slp1"] = "e"
 
-    s.meta["corrected_v2_P014_1_2_5_lit_kit_e_arm"] = True
     s = apply_rule("1.2.5", s)
 
     s.meta["6_1_8_lit_dvitva_arm"] = True
@@ -79,7 +76,6 @@ def derive_IkzAYcakre_lit_Ikz_kf_corrected_P014() -> State:
     s = apply_rule("1.1.51", s)
     s = apply_rule("7.4.60", s)
 
-    s.meta["corrected_v2_P014_7_4_62_abhyasa_arm"] = True
     s = apply_rule("7.4.62", s)
 
     s = apply_rule("6.1.77", s)
@@ -94,7 +90,6 @@ def derive_IkzAYcakre_lit_Ikz_kf_corrected_P014() -> State:
 
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
-    s.meta["corrected_v2_P014_8_3_7_arm"] = True
     s = apply_rule("8.3.7", s)
     s = apply_rule("8.4.58", s)
     return s

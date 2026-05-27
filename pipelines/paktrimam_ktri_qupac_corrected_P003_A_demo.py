@@ -47,15 +47,12 @@ def derive_paktrimam_ktri_qupac_corrected_P003_A() -> State:
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
     s = apply_rule("3.1.91", s)
 
-    s.meta["corrected_v2_P003_A_3_3_88_arm"] = True
     s = apply_rule("3.3.88", s)
-    s.meta["corrected_v2_P003_mam_augment_arm"] = True
     s = apply_rule("4.4.20", s)
     s = apply_rule("3.4.114", s)
     s = P00_lashakvataddhite_it_lopa_chain(s)
 
     # **8.2.30** before **1.2.46**: avoid premature **8.2.1** (tripāḍī gate blocks **1.2.46**).
-    s.meta["corrected_v2_P003_A_8_2_30_arm"] = True
     s = apply_rule("8.2.30", s)
     _pada_merge(s)
 
@@ -63,13 +60,11 @@ def derive_paktrimam_ktri_qupac_corrected_P003_A() -> State:
     stem.kind = "prakriti"
     stem.tags.discard("pada")
     stem.meta["corrected_v2_P003_A_ktrim_stem"] = True
-    s.meta["corrected_v2_P003_A_1_2_46_arm"] = True
     s = apply_rule("1.2.46", s)
 
     stem = s.terms[0]
     stem.tags.add("napuṃsaka")
     s.meta["vibhakti_vacana"] = "1-1"
-    s.meta["corrected_v2_P003_subanta_tail_arm"] = True
     s = apply_rule("4.1.1", s)
     s = apply_rule("1.2.45", s)
     s = apply_rule("4.1.2", s)

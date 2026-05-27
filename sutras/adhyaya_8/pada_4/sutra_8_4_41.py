@@ -58,8 +58,6 @@ def _find_p001_b_zt_pre_tripadi(state: State):
     **P001-B**: merged *pada* ``Dfz``+``ta`` → ``Dfzta``; apply *ṣṭ* **before**
     ``state.tripadi_zone`` so ``4.1.2`` is not ASIDDHA-blocked.
     """
-    if not state.meta.get("corrected_v2_P001_B_zt_pre_tripadi_arm"):
-        return None
     if state.tripadi_zone:
         return None
     if not state.terms:
@@ -120,7 +118,6 @@ def act(state: State) -> State:
         t = state.terms[0]
         t.varnas[i_pre] = mk("w")
         t.meta["corrected_v2_P001_B_zt_done"] = True
-        state.meta.pop("corrected_v2_P001_B_zt_pre_tripadi_arm", None)
         return state
     i = _find_zt(state)
     if i is None:

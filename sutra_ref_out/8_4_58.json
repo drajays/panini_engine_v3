@@ -1,0 +1,175 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.4.58",
+  "sk_number": 124,
+  "text": {
+    "dev": "अनुस्वारस्य ययि परसवर्णः",
+    "slp1": "anusvArasya yayi parasavarRaH",
+    "padaccheda": {
+      "dev": "अनुस्वारस्य । ययि । परसवर्णः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "82108: संहितायाम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "tripadi",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Tripāḍī saṃhitā sandhi — anusvāra (M) → homorganic nasal before yay."
+  },
+  "downstream": {
+    "next_sutra": "8.4.59",
+    "previous_sutra": "8.4.57",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "शं + किता → शङ्किता",
+      "alt_dev": null,
+      "raw": "शं + किता → शङ्किता",
+      "source": "Kashika 8.4.58",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "शं + कितुम् → शङ्कितुम्",
+      "alt_dev": null,
+      "raw": "शं + कितुम् → शङ्कितुम्",
+      "source": "Kashika 8.4.58",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "शं + कितव्यम् → शङ्कितव्यम्",
+      "alt_dev": null,
+      "raw": "शं + कितव्यम् → शङ्कितव्यम्",
+      "source": "Kashika 8.4.58",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उं + छिता → उञ्छिता",
+      "alt_dev": null,
+      "raw": "उं + छिता → उञ्छिता",
+      "source": "Kashika 8.4.58",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "शं + किता -> शङ्किता",
+      "alt_dev": null,
+      "raw": "शं + किता -> शङ्किता",
+      "source": "Kashika 8.4.58",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "शं + कितुम् -> शङ्कितुम्",
+      "alt_dev": null,
+      "raw": "शं + कितुम् -> शङ्कितुम्",
+      "source": "Kashika 8.4.58",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "शं + कितव्यम् -> शङ्कितव्यम्",
+      "alt_dev": null,
+      "raw": "शं + कितव्यम् -> शङ्कितव्यम्",
+      "source": "Kashika 8.4.58",
+      "variant_type": null
+    },
+    {
+      "id": 8,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "उं + छिता -> उञ्छिता",
+      "alt_dev": null,
+      "raw": "उं + छिता -> उञ्छिता",
+      "source": "Kashika 8.4.58",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "In saṃhitā, anusvāra becomes the homorganic nasal (parasavarṇa) before a following yayi consonant.",
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "8.4.58",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "8.4.59",
+    "test_file": "tests/test_sutra_8_4_58.py",
+    "notes": "संहितायां अनुस्वारस्य (ं) ययि परे परसवर्णादेशः — क-वर्गे ङ्, च-वर्गे ञ्, ट-वर्गे ण्, त-वर्गे न्, प-वर्गे म्।",
+    "condition_key": "cond_8_4_58",
+    "action_key": "act_8_4_58"
+  }
+}

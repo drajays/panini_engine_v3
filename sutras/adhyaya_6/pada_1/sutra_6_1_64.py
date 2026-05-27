@@ -15,8 +15,6 @@ META_ARM = "corrected_v2_P001_C_6_1_64_arm"
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get(META_ARM):
-        return False
     if len(state.terms) < 1:
         return False
     t0 = state.terms[0]
@@ -35,7 +33,6 @@ def act(state: State) -> State:
     t0 = state.terms[0]
     t0.varnas[0] = mk("s")
     t0.meta["corrected_v2_P001_C_6_1_64_done"] = True
-    state.meta.pop(META_ARM, None)
     return state
 
 

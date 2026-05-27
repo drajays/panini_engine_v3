@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.1.50",
+  "sk_number": 39,
+  "text": {
+    "dev": "स्थानेऽन्तरतमः",
+    "slp1": "sTAne'ntaratamaH",
+    "padaccheda": {
+      "dev": "स्थाने · अन्तरतमः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "स्थाने ← १.१.४९",
+    "anuvrtti_pada": "11049: स्थाने",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "paribhasha",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": true,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**sthāne** + **1.1.49**: pick **antaratama** (closest) sthānin / ādeśa target. ``sutra_1_1_50.antaratama_substitution_rank``, ``select_antaratama_adeshana_target`` / ``_slp1`` — tiers: identity, **1.1.9** sāvarṇya, Śikṣā **sthāna**/**prayatna** overlap. Heuristic until full prakriyā graph."
+  },
+  "downstream": {
+    "next_sutra": "1.1.51",
+    "previous_sutra": "1.1.49",
+    "next_effect": null,
+    "note": "Resolve competing sthāna candidates for **ādeśa**; feeds substitution / sandhi engines."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कुतश्च शब्दस्यान्तर्यम्? स्थानार्थगुणप्रमाणतः",
+      "alt_dev": null,
+      "raw": "कुतश्च शब्दस्यान्तर्यम्? स्थानार्थगुणप्रमाणतः",
+      "source": "Kashika 1.1.50",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "स्थानतः —   — दण्डाग्रम्",
+      "alt_dev": null,
+      "raw": "स्थानतः —   — दण्डाग्रम्",
+      "source": "Kashika 1.1.50",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "यूपाग्रम्",
+      "alt_dev": null,
+      "raw": "यूपाग्रम्",
+      "source": "Kashika 1.1.50",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "द्वयोरकारयोः कण्ठ्य एव दीर्घ आकारो भवति",
+      "alt_dev": null,
+      "raw": "द्वयोरकारयोः कण्ठ्य एव दीर्घ आकारो भवति",
+      "source": "Kashika 1.1.50",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "Paribhāṣā: at the substitution **place**, the **antaratama** (most proximate) element is the target.",
+    "sa": "स्थाने अन्तरतमः आदेश्यः।"
+  },
+  "authority": {
+    "kashika_ref": "1.1.50",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.1.51",
+    "test_file": "tests/test_sutra_1_1_50.py",
+    "notes": null,
+    "condition_key": "cond_1_1_50",
+    "action_key": "act_1_1_50"
+  }
+}

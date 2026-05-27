@@ -1,0 +1,175 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.3.40",
+  "sk_number": 154,
+  "text": {
+    "dev": "नमस्पुरसोर्गत्योः",
+    "slp1": "namaspurasorgatyoH",
+    "padaccheda": {
+      "dev": "नमस् · पुरस् · गत्योः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "81016: पदस्य | 82108: संहितायाम् | 83034: विसर्जनीयस्य | 83037: कुप्वोः | 83038: सः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "8.3.41",
+    "previous_sutra": "8.3.39",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "नमस्कर्ता",
+      "alt_dev": null,
+      "raw": "नमस्कर्ता",
+      "source": "Kashika 8.3.40",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "नमस्कर्तुम्",
+      "alt_dev": null,
+      "raw": "नमस्कर्तुम्",
+      "source": "Kashika 8.3.40",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "नमस्कर्तव्यम्",
+      "alt_dev": null,
+      "raw": "नमस्कर्तव्यम्",
+      "source": "Kashika 8.3.40",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पुरस्कर्ता",
+      "alt_dev": null,
+      "raw": "पुरस्कर्ता",
+      "source": "Kashika 8.3.40",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "नमःकर्ता -> नमस्कर्ता",
+      "alt_dev": "नमः + कर्ता",
+      "raw": "नमःकर्ता -> नमस्कर्ता, नमः + कर्ता",
+      "source": "Kashika 8.3.40",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "नमःकर्तुम् -> नमस्कर्तुम्",
+      "alt_dev": "नमः + कर्तुम्",
+      "raw": "नमःकर्तुम् -> नमस्कर्तुम्, नमः + कर्तुम्",
+      "source": "Kashika 8.3.40",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "नमःकर्तव्यम् -> नमस्कर्तव्यम्",
+      "alt_dev": "नमः + कर्तव्यम्",
+      "raw": "नमःकर्तव्यम् -> नमस्कर्तव्यम्, नमः + कर्तव्यम्",
+      "source": "Kashika 8.3.40",
+      "variant_type": null
+    },
+    {
+      "id": 8,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पुरःकर्ता -> पुरस्कर्ता",
+      "alt_dev": "पुरः + कर्ता",
+      "raw": "पुरःकर्ता -> पुरस्कर्ता, पुरः + कर्ता",
+      "source": "Kashika 8.3.40",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "For namas and puras used as gati, replace visarga with s (स्) before a following consonant.",
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "8.3.40",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "8.3.41",
+    "test_file": "tests/test_sutra_8_3_40.py",
+    "notes": "Corpus-driven: handles namas/puras prefix sandhi visible in नमः + कर्ता → नमस्कर्ता and पुरः + कर्ता → पुरस्कर्ता.",
+    "condition_key": "cond_8_3_40",
+    "action_key": "act_8_3_40"
+  }
+}

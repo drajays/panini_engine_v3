@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.3.119",
+  "sk_number": 3647,
+  "text": {
+    "dev": "निव्यभिभ्योऽड्व्यावये वा छन्दसि",
+    "slp1": "nivyaBiByo'qvyAvaye vA Candasi",
+    "padaccheda": {
+      "dev": "नि-वि-अभिभ्यः अट्-व्यवाये वा छन्दसि",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "82108: संहितायाम् | 83055: अपदान्तस्य मूर्धन्यः | 83056: सः | 83057: इण्कोः | 83110: न",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "8.4.1",
+    "previous_sutra": "8.3.118",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "न्यषीदत् पिता नः",
+      "alt_dev": "न्यसीदत्",
+      "raw": "न्यषीदत् पिता नः, न्यसीदत्",
+      "source": "Kashika 8.3.119",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "व्यषीदत् पिता नः",
+      "alt_dev": "व्यसीदत्",
+      "raw": "व्यषीदत् पिता नः, व्यसीदत्",
+      "source": "Kashika 8.3.119",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अभ्यषीदत्",
+      "alt_dev": "अभ्यसीदत्",
+      "raw": "अभ्यषीदत्, अभ्यसीदत्",
+      "source": "Kashika 8.3.119",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "सदिष्वञ्जोरिति तदिह न अनुवर्तते",
+      "alt_dev": null,
+      "raw": "सदिष्वञ्जोरिति तदिह न अनुवर्तते",
+      "source": "Kashika 8.3.119",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "8.3.119",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "stub",
+    "similar_sutra": "8.4.1",
+    "test_file": "tests/test_sutra_8_3_119.py",
+    "notes": null,
+    "condition_key": "cond_8_3_119",
+    "action_key": "act_8_3_119"
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "6.1.87",
+  "sk_number": 69,
+  "text": {
+    "dev": "आद्गुणः",
+    "slp1": "AdguRaH",
+    "padaccheda": {
+      "dev": "आत् गुणः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "6.1.72",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "6.1.77",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "6.1.84",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "6.1.72",
+    "anuvritta_note": "Anuvṛtti of **अचि** and **एकः पूर्वपरयोः** (6.1.84). This sutra specifies the guṇa ekādeśa for a/ā + ik.",
+    "anuvrtti_pada": "61072: संहितायाम् | 61077: अचि | 61084: एकः पूर्वपरयोः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M06",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**आद्गुणः** — Under ekādeśa-scope (6.1.84), in saṃhitā when **a/ā** is followed by an **ik** vowel, both are replaced by one **guṇa** vowel."
+  },
+  "downstream": {
+    "next_sutra": "6.1.88",
+    "previous_sutra": "6.1.86",
+    "next_effect": null,
+    "note": "Produces standard saṃhitā guṇa-sandhi forms such as तवेदम्, खट्वेन्द्रः, मालेन्द्रः."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तव + इदम् → तवेदम्",
+      "alt_dev": null,
+      "raw": "तव + इदम् → तवेदम्",
+      "source": "Kashika 6.1.87",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "खट्वा + इन्द्रः → खट्वेन्द्रः",
+      "alt_dev": null,
+      "raw": "खट्वा + इन्द्रः → खट्वेन्द्रः",
+      "source": "Kashika 6.1.87",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "माला + इन्द्रः → मालेन्द्रः",
+      "alt_dev": null,
+      "raw": "माला + इन्द्रः → मालेन्द्रः",
+      "source": "Kashika 6.1.87",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तव + उदकम् → तवोदकम्",
+      "alt_dev": null,
+      "raw": "तव + उदकम् → तवोदकम्",
+      "source": "Kashika 6.1.87",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तव + ऋश्यः → तवर्श्यः",
+      "alt_dev": null,
+      "raw": "तव + ऋश्यः → तवर्श्यः",
+      "source": "Kashika 6.1.87",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तव + ऌकारः → तवल्कारः",
+      "alt_dev": null,
+      "raw": "तव + ऌकारः → तवल्कारः",
+      "source": "Kashika 6.1.87",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तवेदम्",
+      "alt_dev": null,
+      "raw": "तवेदम्",
+      "source": "Kashika 6.1.87",
+      "variant_type": null
+    },
+    {
+      "id": 8,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "खट्वेन्द्रः",
+      "alt_dev": null,
+      "raw": "खट्वेन्द्रः",
+      "source": "Kashika 6.1.87",
+      "variant_type": null
+    },
+    {
+      "id": 9,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "मालेन्द्रः",
+      "alt_dev": null,
+      "raw": "मालेन्द्रः",
+      "source": "Kashika 6.1.87",
+      "variant_type": null
+    },
+    {
+      "id": 10,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तवेहते",
+      "alt_dev": null,
+      "raw": "तवेहते",
+      "source": "Kashika 6.1.87",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "In saṃhitā, under ekādeśa, when a/ā is followed by an ik vowel, a single guṇa substitute replaces both.",
+    "sa": "संहितायाम् (एकादेशाधिकारे) अवर्णात् परे इक्-स्वरे पूर्वपरयोः स्थाने एकः गुणादेशः भवति।"
+  },
+  "authority": {
+    "kashika_ref": "6.1.87",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "6.1.88",
+    "test_file": "tests/test_sutra_6_1_87.py",
+    "notes": null,
+    "condition_key": "cond_6_1_87",
+    "action_key": "act_6_1_87"
+  },
+  "new_constitution_blind_template": {
+    "text_dev": "आद्गुणः",
+    "padaccheda_dev": "आत् (पञ्चमी) गुणः (प्रथमा)",
+    "op_type": "ADESA",
+    "why_dev": "अ-वर्ण-पूर्व + इक् → गुणैकादेशः",
+    "action": {
+      "guna_table": {
+        "a|i": {
+          "slp1": "e",
+          "dev": "ए",
+          "tags": []
+        },
+        "a|I": {
+          "slp1": "e",
+          "dev": "ए",
+          "tags": []
+        },
+        "a|u": {
+          "slp1": "o",
+          "dev": "ओ",
+          "tags": []
+        },
+        "a|U": {
+          "slp1": "o",
+          "dev": "ओ",
+          "tags": []
+        },
+        "A|i": {
+          "slp1": "e",
+          "dev": "ए",
+          "tags": []
+        },
+        "A|I": {
+          "slp1": "e",
+          "dev": "ए",
+          "tags": []
+        },
+        "A|u": {
+          "slp1": "o",
+          "dev": "ओ",
+          "tags": []
+        },
+        "A|U": {
+          "slp1": "o",
+          "dev": "ओ",
+          "tags": []
+        }
+      }
+    }
+  }
+}

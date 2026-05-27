@@ -20,8 +20,6 @@ from phonology import mk
 
 
 def _find_p014_k(state: State):
-    if not state.meta.get("corrected_v2_P014_7_4_62_abhyasa_arm"):
-        return None
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags:
             continue
@@ -79,7 +77,6 @@ def act(state: State) -> State:
         t = state.terms[ti_k]
         t.varnas[0] = mk("c")
         t.meta["7_4_62_done"] = True
-        state.meta.pop("corrected_v2_P014_7_4_62_abhyasa_arm", None)
         return state
     ti_p = _find_p040_juhoti(state)
     if ti_p is not None:

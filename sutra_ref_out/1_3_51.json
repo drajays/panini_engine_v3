@@ -1,0 +1,125 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.3.51",
+  "sk_number": 2724,
+  "text": {
+    "dev": "अवाद्ग्रः",
+    "slp1": "avAdgraH",
+    "padaccheda": {
+      "dev": "अवात् · ग्रः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "Anuvṛtti of ‘ātmanepadam’ from 1.3.12.",
+    "anuvrtti_pada": "13012: आत्मनेपदम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "B",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Vidhi (pada-selection): for grah (gra; ग्रः) preceded by ava-, select ātmanepada (anuvṛtti from 1.3.12)."
+  },
+  "downstream": {
+    "next_sutra": "1.3.52",
+    "previous_sutra": "1.3.50",
+    "next_effect": null,
+    "note": "Tinanta pipeline: selects ātmanepada for ava + grah contexts (recorded via env trigger)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तस्य ह्यवपूर्वस्य प्रयोग एव नास्ति",
+      "alt_dev": null,
+      "raw": "तस्य ह्यवपूर्वस्य प्रयोग एव नास्ति",
+      "source": "Kashika 1.3.51",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अवगिरते",
+      "alt_dev": "अवगिरेते, अवगिरन्ते",
+      "raw": "अवगिरते, अवगिरेते, अवगिरन्ते",
+      "source": "Kashika 1.3.51",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अवादिति किम्? गिरति",
+      "alt_dev": null,
+      "raw": "अवादिति किम्? गिरति",
+      "source": "Kashika 1.3.51",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "For grah with ava-, (the pada) is ātmanepada.",
+    "sa": "अवाद्ग्रः आत्मनेपदम्।"
+  },
+  "authority": {
+    "kashika_ref": "1.3.51",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.3.52",
+    "test_file": "tests/test_sutra_1_3_51.py",
+    "notes": null,
+    "condition_key": "cond_1_3_51",
+    "action_key": "act_1_3_51"
+  }
+}

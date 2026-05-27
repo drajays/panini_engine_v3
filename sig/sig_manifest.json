@@ -18,47 +18,17 @@
   "corpora": [
     {
       "cells": 24,
-      "file": "data/reference/subanta_gold/SamBu_pullinga.json",
-      "id": "subanta:subanta_gold/SamBu_pullinga",
-      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
-    },
-    {
-      "cells": 24,
-      "file": "data/reference/subanta_gold/hari_pullinga.json",
-      "id": "subanta:subanta_gold/hari_pullinga",
-      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
-    },
-    {
-      "cells": 24,
-      "file": "data/reference/subanta_gold/jnana_napumsaka.json",
-      "id": "subanta:subanta_gold/jnana_napumsaka",
-      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
-    },
-    {
-      "cells": 24,
       "file": "data/reference/subanta_gold/rama_pullinga.json",
       "id": "subanta:subanta_gold/rama_pullinga",
       "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
-    },
-    {
-      "cells": 24,
-      "file": "data/reference/subanta_gold/sarva_pullinga.json",
-      "id": "subanta:subanta_gold/sarva_pullinga",
-      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
-    },
-    {
-      "cells": 21,
-      "file": "data/reference/subanta_gold/tad_pullinga.json",
-      "id": "subanta:subanta_gold/tad_pullinga",
-      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
     }
   ],
-  "generated_utc": "2026-05-11T02:59:37.164337+00:00",
+  "generated_utc": "2026-05-27T18:43:27.787884+00:00",
   "generator": "panini_engine_v3.tools.sig_benchmark",
   "sutra_coverage": {
     "coverage_pct": 100.0,
     "implemented": 3985,
     "total_registry": 3985
   },
-  "total_derivations": 141
+  "total_derivations": 24
 }

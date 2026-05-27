@@ -17,8 +17,6 @@ META_ARM = "corrected_v2_P003_mam_augment_arm"
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get(META_ARM):
-        return False
     if len(state.terms) < 2:
         return False
     pr = state.terms[-1]
@@ -33,7 +31,6 @@ def act(state: State) -> State:
     pr = state.terms[-1]
     pr.varnas = list(parse_slp1_upadesha_sequence("ktrim"))
     pr.meta["upadesha_slp1"] = "ktrim"
-    state.meta.pop(META_ARM, None)
     return state
 
 

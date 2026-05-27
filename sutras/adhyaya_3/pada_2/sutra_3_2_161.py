@@ -21,8 +21,6 @@ def _stem_slp1(t) -> str:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get(META_ARM):
-        return False
     if len(state.terms) != 1:
         return False
     t0 = state.terms[0]
@@ -38,7 +36,16 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if not cond(state):
+    if len(state.terms) != 1:
+        return state
+    t0 = state.terms[0]
+    if "dhatu" not in t0.tags:
+        return state
+    if (t0.meta.get("upadesha_slp1") or "").strip() != _DHATU_UPA:
+        return state
+    if _stem_slp1(t0) != "BaYj":
+        return state
+    if state.samjna_registry.get(_REG):
         return state
     pr = Term(
         kind="pratyaya",
@@ -48,7 +55,6 @@ def act(state: State) -> State:
     )
     state.terms.append(pr)
     state.samjna_registry[_REG] = True
-    state.meta.pop(META_ARM, None)
     return state
 
 

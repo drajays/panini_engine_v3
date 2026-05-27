@@ -1,0 +1,164 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.86",
+  "sk_number": 550,
+  "text": {
+    "dev": "हीने",
+    "slp1": "hIne",
+    "padaccheda": {
+      "dev": "हीने",
+      "slp1": "hIne",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "1.4.56",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "1.4.83",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "1.4.84",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "1.4.83",
+    "anuvritta_note": "Under nipāta domain (1.4.56) and karmapravacanīya adhikāra (1.4.83); carries **अनु** from 1.4.84; adds **हीने**.",
+    "anuvrtti_pada": "14056: निपाताः | 14083: कर्मप्रवचनीयाः | 14084: अनुः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Saṃjñā (karmapravacanīya): under 1.4.83, with **anu** carried from 1.4.84, **anu** is karmapravacanīya in the **hīna** (deficiency/inferiority) frame."
+  },
+  "downstream": {
+    "next_sutra": "1.4.87",
+    "previous_sutra": "1.4.85",
+    "next_effect": null,
+    "note": "Allows downstream karmapravacanīya-conditioned rules to apply when **anu** expresses deficiency/inferiority."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अनु हीनम्",
+      "alt_dev": null,
+      "raw": "अनु हीनम्",
+      "source": "Kashika 1.4.86",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तेनेयं हीनोत्कृष्टसंबन्धे संज्ञा विज्ञायते",
+      "alt_dev": null,
+      "raw": "तेनेयं हीनोत्कृष्टसंबन्धे संज्ञा विज्ञायते",
+      "source": "Kashika 1.4.86",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "हीने द्योत्येऽयमनुः कर्मप्रवचनीयसंज्ञो भवति",
+      "alt_dev": null,
+      "raw": "हीने द्योत्येऽयमनुः कर्मप्रवचनीयसंज्ञो भवति",
+      "source": "Kashika 1.4.86",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अनु शाकटायनं वैयाकरणाः",
+      "alt_dev": null,
+      "raw": "अनु शाकटायनं वैयाकरणाः",
+      "source": "Kashika 1.4.86",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अन्वर्जुनं योद्धारः",
+      "alt_dev": null,
+      "raw": "अन्वर्जुनं योद्धारः",
+      "source": "Kashika 1.4.86",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "In the hīna (deficiency/inferiority) sense, **anu** is treated as a karmapravacanīya.",
+    "sa": "हीनेऽर्थे अनुः कर्मप्रवचनीयसंज्ञो भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.86",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.87",
+    "test_file": "tests/test_sutra_1_4_86.py",
+    "notes": "Hīna-artha selection is upstream; this sūtra assigns karmapravacanīya status to **anu** in that frame.",
+    "condition_key": "cond_1_4_86",
+    "action_key": "act_1_4_86"
+  }
+}

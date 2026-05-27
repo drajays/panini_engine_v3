@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.3.93",
+  "sk_number": 2351,
+  "text": {
+    "dev": "लुटि च कॢपः",
+    "slp1": "luwi ca kxpaH",
+    "padaccheda": {
+      "dev": "लुटि · च · कॢपः",
+      "slp1": "luwi · ca · kxpaH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "Anuvṛtti of ‘vā’ from 1.3.90; of ‘parasmaipada’ from 1.3.78; sya/san carried from 1.3.92 via ‘ca’.",
+    "anuvrtti_pada": "13078: परस्मैपदम् | 13090: वा | 13092: स्यसनोः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "B",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "anyatara",
+    "optionality": {
+      "value": true,
+      "paninian_term": "अन्यतरस्याम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": false,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Vidhi (vibhāṣā): for klṛp with luṭ (and with sya|san carried via anuvṛtti from 1.3.92), parasmaipada optionally applies (anuvṛtti of ‘vā’ from 1.3.90; parasmaipada from 1.3.78)."
+  },
+  "downstream": {
+    "next_sutra": "1.4.1",
+    "previous_sutra": "1.3.92",
+    "next_effect": null,
+    "note": "Tinanta pipeline: when klṛp + luṭ (and/or sya|san) context is recognized, allow parasmaipada option (env trigger)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "चकारस्तर्हि स्यसनोरनुकर्षणार्थो न वक्तव्यः",
+      "alt_dev": null,
+      "raw": "चकारस्तर्हि स्यसनोरनुकर्षणार्थो न वक्तव्यः",
+      "source": "Kashika 1.3.93",
+      "variant_type": "anyatara"
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "एवं तर्हीयं प्राप्तिः पूर्वां प्राप्तिं बाधेत",
+      "alt_dev": null,
+      "raw": "एवं तर्हीयं प्राप्तिः पूर्वां प्राप्तिं बाधेत",
+      "source": "Kashika 1.3.93",
+      "variant_type": "anyatara"
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तस्माच्चकारः स्यसनोरनुकर्षणार्थः क्रियते",
+      "alt_dev": null,
+      "raw": "तस्माच्चकारः स्यसनोरनुकर्षणार्थः क्रियते",
+      "source": "Kashika 1.3.93",
+      "variant_type": "anyatara"
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "लुटि च स्यसनोश्च कृपेः परस्मैपदं वा भवति",
+      "alt_dev": null,
+      "raw": "लुटि च स्यसनोश्च कृपेः परस्मैपदं वा भवति",
+      "source": "Kashika 1.3.93",
+      "variant_type": "anyatara"
+    }
+  ],
+  "gloss": {
+    "en": "Optionally, for klṛp in luṭ (and also with sya/san), (the pada) is parasmaipada.",
+    "sa": "लुटि च स्यसनोश्च कॢपेः विभाषा परस्मैपदम्।"
+  },
+  "authority": {
+    "kashika_ref": "1.3.93",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.1",
+    "test_file": "tests/test_sutra_1_3_93.py",
+    "notes": "Kāśikā: ‘…लुटि च स्यसनोश्च क्लृपेः परस्मैपदं वा भवति।’",
+    "condition_key": "cond_1_3_93",
+    "action_key": "act_1_3_93"
+  }
+}

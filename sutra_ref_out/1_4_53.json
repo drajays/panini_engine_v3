@@ -1,0 +1,174 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.53",
+  "sk_number": 541,
+  "text": {
+    "dev": "हृक्रोरन्यतरस्याम्",
+    "slp1": "hfkroranyatarasyAm",
+    "padaccheda": {
+      "dev": "हृक्रोः · अन्यतरस्याम् · (अणि कर्ता सः णौ कर्म)",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "1.4.23",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "1.4.49",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "1.4.52",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "1.4.23",
+    "anuvritta_note": "Under 1.4.23; inherits karma from 1.4.49 and the “aṇi kartā sa ṇau” frame from 1.4.52; adds vibhāṣā for hṛ/kṛ specifically.",
+    "anuvrtti_pada": "14023: कारके | 14049: कर्म | 14052: अणि कर्ता सः णौ",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "anyatara",
+    "optionality": {
+      "value": true,
+      "paninian_term": "अन्यतरस्याम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": false,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Saṃjñā (kāraka/karma): for hṛ and kṛ, the aṇi-kartā (prayojya-kartṛ) is optionally designated `karma` in the ṇic (causative) form (anyatarasyām)."
+  },
+  "downstream": {
+    "next_sutra": "1.4.54",
+    "previous_sutra": "1.4.52",
+    "next_effect": null,
+    "note": "Models optional prayojya-kartṛ karma marking for causatives of hṛ/kṛ so downstream can assign accusative or instrumental as appropriate."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "हरति भारं मानवकः। हारयति भारं मानवकम्। हारयति मानवकेन भारम्।",
+      "alt_dev": null,
+      "raw": "हरति भारं मानवकः। हारयति भारं मानवकम्। हारयति मानवकेन भारम्।",
+      "source": "Kashika 1.4.53",
+      "variant_type": "anyatara"
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "करोति कटं देवदत्तः। कारयति कटं देवदत्तम्। कारयति कटं देवदत्तेन।",
+      "alt_dev": null,
+      "raw": "करोति कटं देवदत्तः। कारयति कटं देवदत्तम्। कारयति कटं देवदत्तेन।",
+      "source": "Kashika 1.4.53",
+      "variant_type": "anyatara"
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "हरति भारं माणवकः",
+      "alt_dev": null,
+      "raw": "हरति भारं माणवकः",
+      "source": "Kashika 1.4.53",
+      "variant_type": "anyatara"
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "हारयति भारं माणवकम्",
+      "alt_dev": "माणवकेनेति वा",
+      "raw": "हारयति भारं माणवकम्, माणवकेनेति वा",
+      "source": "Kashika 1.4.53",
+      "variant_type": "anyatara"
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अभिवादिदृशोरात्मनेपद उपसंख्यानम्",
+      "alt_dev": null,
+      "raw": "अभिवादिदृशोरात्मनेपद उपसंख्यानम्",
+      "source": "Kashika 1.4.53",
+      "variant_type": "anyatara"
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अभिवदति गुरुं देवदत्तः",
+      "alt_dev": null,
+      "raw": "अभिवदति गुरुं देवदत्तः",
+      "source": "Kashika 1.4.53",
+      "variant_type": "anyatara"
+    }
+  ],
+  "gloss": {
+    "en": "For hṛ and kṛ, the kartā in the base (aṇi) form is optionally called karma in the ṇic form (accusative or instrumental on the prayojya-kartṛ).",
+    "sa": "हरतेः करोतेश्च अण्यन्तयोः यः कर्ता, सः ण्यन्तयोरन्यतरस्यां कर्मसंज्ञो भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.53",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.54",
+    "test_file": "tests/test_sutra_1_4_53.py",
+    "notes": "Kāśikā: “हरतेः करोतेश्च अण्यन्तयोर् यः कर्ता स ण्यन्तयोरन्यतरस्यां कर्मसंज्ञो भवति।”",
+    "condition_key": "cond_1_4_53",
+    "action_key": "act_1_4_53"
+  }
+}

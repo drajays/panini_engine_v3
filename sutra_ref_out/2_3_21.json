@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "2.3.21",
+  "sk_number": 566,
+  "text": {
+    "dev": "इत्थंभूतलक्षणे",
+    "slp1": "itTaMBUtalakzaRe",
+    "padaccheda": {
+      "dev": "इत्थंभूत-लक्षणे (लक्ष्यते अनेनेति लक्षणम्)",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "23018: तृतीया",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M02",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "2.3.22",
+    "previous_sutra": "2.3.20",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ततस्तृतीया विभक्तिर्भवति",
+      "alt_dev": null,
+      "raw": "ततस्तृतीया विभक्तिर्भवति",
+      "source": "Kashika 2.3.21",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अपि भवान् कमण्डलुना छात्रमद्राक्षीत्",
+      "alt_dev": null,
+      "raw": "अपि भवान् कमण्डलुना छात्रमद्राक्षीत्",
+      "source": "Kashika 2.3.21",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "छात्रेणोपाध्यायम्",
+      "alt_dev": null,
+      "raw": "छात्रेणोपाध्यायम्",
+      "source": "Kashika 2.3.21",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "शिखया परिव्राजकम्",
+      "alt_dev": null,
+      "raw": "शिखया परिव्राजकम्",
+      "source": "Kashika 2.3.21",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "2.3.21",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "2.3.22",
+    "test_file": "tests/test_sutra_2_3_21.py",
+    "notes": null,
+    "condition_key": "cond_2_3_21",
+    "action_key": "act_2_3_21"
+  }
+}

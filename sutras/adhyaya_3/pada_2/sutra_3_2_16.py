@@ -27,8 +27,6 @@ def _car_index(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get(_META_ARM):
-        return False
     i = _car_index(state)
     if i is None:
         return False
@@ -40,8 +38,6 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if not cond(state):
-        return state
     i = _car_index(state)
     if i is None:
         return state
@@ -53,7 +49,6 @@ def act(state: State) -> State:
     )
     state.terms.insert(i + 1, ta)
     state.samjna_registry["3.2.16_P005_A_wa"] = True
-    state.meta.pop(_META_ARM, None)
     return state
 
 

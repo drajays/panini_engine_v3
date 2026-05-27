@@ -19,23 +19,13 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _site(state: State) -> bool:
-    if state.meta.get("corrected_v2_P017_3_1_13_arm"):
-        if len(state.terms) != 1:
-            return False
-        t = state.terms[0]
-        if "prātipadika" not in t.tags or "dhatu" in t.tags:
-            return False
-        return "".join(v.slp1 for v in t.varnas) == "pawapawA"
-    if not state.meta.get("corrected_v2_P016_3_1_13_arm"):
-        return False
     if len(state.terms) != 1:
         return False
     t = state.terms[0]
-    if "prātipadika" not in t.tags:
+    if "prātipadika" not in t.tags or "dhatu" in t.tags:
         return False
-    if "dhatu" in t.tags:
-        return False
-    return "".join(v.slp1 for v in t.varnas) == "lohita"
+    stem = "".join(v.slp1 for v in t.varnas)
+    return stem in {"pawapawA", "lohita"}
 
 
 def cond(state: State) -> bool:

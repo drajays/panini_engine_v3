@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "2.1.53",
+  "sk_number": 732,
+  "text": {
+    "dev": "कुत्सितानि कुत्सनैः",
+    "slp1": "kutsitAni kutsanEH",
+    "padaccheda": {
+      "dev": "कुत्सितानि कुत्सनैः",
+      "slp1": "kutsitAni · kutsanEH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "21002: सुप् | 21003: समासः | 21004: सह सुपा | 21011: विभाषा | 21022: तत्पुरुषः | 21049: समानाधिकरणेन",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M02",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "2.1.54",
+    "previous_sutra": "2.1.52",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "शब्दप्रवृत्तिनिमित्तकुत्सायामयं समास इष्यते",
+      "alt_dev": null,
+      "raw": "शब्दप्रवृत्तिनिमित्तकुत्सायामयं समास इष्यते",
+      "source": "Kashika 2.1.53",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वैयाकरणखसूचिः",
+      "alt_dev": null,
+      "raw": "वैयाकरणखसूचिः",
+      "source": "Kashika 2.1.53",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "निष्प्रतिभ इत्यर्थः",
+      "alt_dev": null,
+      "raw": "निष्प्रतिभ इत्यर्थः",
+      "source": "Kashika 2.1.53",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "याज्ञिककितवः",
+      "alt_dev": null,
+      "raw": "याज्ञिककितवः",
+      "source": "Kashika 2.1.53",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "2.1.53",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "2.1.54",
+    "test_file": "tests/test_sutra_2_1_53.py",
+    "notes": null,
+    "condition_key": "cond_2_1_53",
+    "action_key": "act_2_1_53"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "6.2.150",
+  "sk_number": 3884,
+  "text": {
+    "dev": "अनो भावकर्मवचनः",
+    "slp1": "ano BAvakarmavacanaH",
+    "padaccheda": {
+      "dev": "अनः भावकर्मवचनः",
+      "slp1": "ano · BAvakarmavacanaH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "62064: उदात्तः | 62111: उत्तरपद | 62143: अन्तः | 62148: कारकात्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M06",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "6.2.151",
+    "previous_sutra": "6.2.149",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ओ॒द॒न॒भो॒ज॒नं सुखम्",
+      "alt_dev": null,
+      "raw": "ओ॒द॒न॒भो॒ज॒नं सुखम्",
+      "source": "Kashika 6.2.150",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प॒यः॒पा॒नं सुखम्",
+      "alt_dev": null,
+      "raw": "प॒यः॒पा॒नं सुखम्",
+      "source": "Kashika 6.2.150",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "च॒न्द॒न॒पि्॒रय॒ङ्गु॒का॒ले॒प॒नं सुखम्",
+      "alt_dev": null,
+      "raw": "च॒न्द॒न॒पि्॒रय॒ङ्गु॒का॒ले॒प॒नं सुखम्",
+      "source": "Kashika 6.2.150",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "कर्मवचनरा॒ज॒भो॒ज॒नाः शालयः",
+      "alt_dev": null,
+      "raw": "कर्मवचनरा॒ज॒भो॒ज॒नाः शालयः",
+      "source": "Kashika 6.2.150",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "6.2.150",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "stub",
+    "similar_sutra": "6.2.151",
+    "test_file": "tests/test_sutra_6_2_150.py",
+    "notes": null,
+    "condition_key": "cond_6_2_150",
+    "action_key": "act_6_2_150"
+  }
+}

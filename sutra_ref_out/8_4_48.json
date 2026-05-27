@@ -1,0 +1,174 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "8.4.48",
+  "sk_number": 55,
+  "text": {
+    "dev": "नादिन्याक्रोशे पुत्रस्य",
+    "slp1": "nAdinyAkroSe putrasya",
+    "padaccheda": {
+      "dev": "न ०/० आदिनी ७/१ आक्रोशे ७/१ पुत्रस्य ६/१",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "8.2.108",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "8.4.46",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "8.4.47",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": null,
+    "anuvritta_note": "Anuvṛtti: **संहितायाम्** (8.2.108) and the running **द्वे** (8.4.46–47).",
+    "anuvrtti_pada": "82108: संहितायाम् | 84046: द्वे",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "H",
+    "module": "M08",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**न ...** — in **ākrōśa** (abuse), when **ādīnī** follows, **putra** does **not** undergo the dvitva that would otherwise apply under **8.4.46–47**."
+  },
+  "downstream": {
+    "next_sutra": "8.4.49",
+    "previous_sutra": "8.4.47",
+    "next_effect": null,
+    "note": "Prevents over-generation of gemination in a specific lexical+semantic (abuse) frame per Kāśikā."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पुत्रादिनी त्वमसि पापे (आक्रोशे) — न द्वित्वम्",
+      "alt_dev": null,
+      "raw": "पुत्रादिनी त्वमसि पापे (आक्रोशे) — न द्वित्वम्",
+      "source": "Kashika 8.4.48",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "तत्त्वकथने द्विर्वचनं भवत्येव — पुत्त्रादिनी (निन्दाया अभावे)",
+      "alt_dev": null,
+      "raw": "तत्त्वकथने द्विर्वचनं भवत्येव — पुत्त्रादिनी (निन्दाया अभावे)",
+      "source": "Kashika 8.4.48",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "इति प्राप्तिः प्रतिषिध्यते",
+      "alt_dev": null,
+      "raw": "इति प्राप्तिः प्रतिषिध्यते",
+      "source": "Kashika 8.4.48",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पुत्रादिनी त्वमसि पापे",
+      "alt_dev": null,
+      "raw": "पुत्रादिनी त्वमसि पापे",
+      "source": "Kashika 8.4.48",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "आक्रोश इति किम्? तत्त्वक थने द्विर्वचनं भवत्येव",
+      "alt_dev": null,
+      "raw": "आक्रोश इति किम्? तत्त्वक थने द्विर्वचनं भवत्येव",
+      "source": "Kashika 8.4.48",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "पुत्रानत्तीति पुत्त्रादिनी शिशुमारी व्याघ्री",
+      "alt_dev": null,
+      "raw": "पुत्रानत्तीति पुत्त्रादिनी शिशुमारी व्याघ्री",
+      "source": "Kashika 8.4.48",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "In **ākrōśa**, when **ādīnī** follows, the (dvitva) doubling does not occur for **putra**.",
+    "sa": "आक्रोशे आदिनीपरतः पुत्रशब्दस्य न द्वित्वम्।"
+  },
+  "authority": {
+    "kashika_ref": "8.4.48",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "8.4.49",
+    "test_file": "tests/test_sutra_8_4_48.py",
+    "notes": null,
+    "condition_key": "cond_8_4_48",
+    "action_key": "act_8_4_48"
+  }
+}

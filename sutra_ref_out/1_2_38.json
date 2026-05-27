@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.2.38",
+  "sk_number": 3667,
+  "text": {
+    "dev": "देवब्रह्मणोरनुदात्तः",
+    "slp1": "devabrahmaRoranudAttaH",
+    "padaccheda": {
+      "dev": "देवब्रह्मणोः · अनुदात्तः",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "**एकश्रुति** · **स्वरितस्य** ← १.२.३३ · १.२.३१",
+    "anuvrtti_pada": "12033: एकश्रुति | 12031: स्वरितस्य",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "A",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "**Vidhi**: **deva** and **brahman** (dual **-oḥ**) are **anudātta** in the **ekaśruti**/liturgical accent frame (**anuvṛtti** **ekaśruti** **1.2.33**, **svarita** **1.2.31**). Silico: ``Environment.devabrahmaRor_anudAtta_1_2_38`` **True** after this rule is applied."
+  },
+  "downstream": {
+    "next_sutra": "1.2.39",
+    "previous_sutra": "1.2.37",
+    "next_effect": null,
+    "note": "Priestly **deva**/**brahman** vocatives in **ekaśruti** — assign **anudātta** per accent tier."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "देवब्रह्मणोः स्वरितस्यानुदात्त आदेशो भवति",
+      "alt_dev": null,
+      "raw": "देवब्रह्मणोः स्वरितस्यानुदात्त आदेशो भवति",
+      "source": "Kashika 1.2.38",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "दे॒वा ब्र॒ह्माण आ॒गच्छत (श०ब्रा० ३.३.४.२०)",
+      "alt_dev": null,
+      "raw": "दे॒वा ब्र॒ह्माण आ॒गच्छत (श०ब्रा० ३.३.४.२०)",
+      "source": "Kashika 1.2.38",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "**Deva** and **brahman** (dual) are **anudātta** (low pitch) under the **ekaśruti**/**svarita** accent chain.",
+    "sa": "देवब्रह्मणोः शब्दयोरुभयोरप्यनुदात्तः स्वरः।"
+  },
+  "authority": {
+    "kashika_ref": "1.2.38",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.2.39",
+    "test_file": "tests/test_sutra_1_2_38.py",
+    "notes": null,
+    "condition_key": "cond_1_2_38",
+    "action_key": "act_1_2_38"
+  }
+}

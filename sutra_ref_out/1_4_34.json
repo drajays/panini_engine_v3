@@ -1,0 +1,148 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.4.34",
+  "sk_number": 572,
+  "text": {
+    "dev": "श्लाघह्नुङ्स्थाशपां ज्ञीप्स्यमानः",
+    "slp1": "SlAGahnuNsTASapAM jYIpsyamAnaH",
+    "padaccheda": {
+      "dev": "श्लाघ-ह्नुङ्-स्था-शपाम् · ज्ञीप्स्यमानः · सम्प्रदानम्",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "1.4.23",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "1.4.32",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "1.4.23",
+    "anuvritta_note": "Under 1.4.23 kāraka-adhikāra; sampradāna continues from 1.4.32.",
+    "anuvrtti_pada": "14023: कारके | 14032: सम्प्रदानम्",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "D",
+    "module": "M01",
+    "prakarana": "samjna",
+    "op_type": "SAMJNA",
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": true
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Saṃjñā (kāraka/sampradāna): with ślāgh/hnuṅ/sthā/śap, the jñīpsyamāna (intended to be informed/known) is called sampradāna; engine tags locus term as `sampradana` via env trigger."
+  },
+  "downstream": {
+    "next_sutra": "1.4.35",
+    "previous_sutra": "1.4.33",
+    "next_effect": null,
+    "note": "Enables caturthī (2.3.13) and other sampradāna-dependent operations for these constructions."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ज्ञीप्स्यमानो ज्ञपयितुमिष्यमाणो बोधयितुमभिप्रेतः",
+      "alt_dev": null,
+      "raw": "ज्ञीप्स्यमानो ज्ञपयितुमिष्यमाणो बोधयितुमभिप्रेतः",
+      "source": "Kashika 1.4.34",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "देवदत्ताय श्लाघते",
+      "alt_dev": null,
+      "raw": "देवदत्ताय श्लाघते",
+      "source": "Kashika 1.4.34",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "एवं देवदत्ताय ह्नुते",
+      "alt_dev": null,
+      "raw": "एवं देवदत्ताय ह्नुते",
+      "source": "Kashika 1.4.34",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "यज्ञदत्ताय ह्नुते",
+      "alt_dev": null,
+      "raw": "यज्ञदत्ताय ह्नुते",
+      "source": "Kashika 1.4.34",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "With ślāgh/hnuṅ/sthā/śap, the jñīpsyamāna (intended to be informed) is called sampradāna.",
+    "sa": "श्लाघ-ह्नुङ्-स्था-शप-धातूनां प्रयोगे ज्ञीप्स्यमानः (ज्ञपयितुम् इष्यमाणः, बोध्यितुम् अभिप्रेतः) यत् कारकं तत् सम्प्रदानसंज्ञं भवति।"
+  },
+  "authority": {
+    "kashika_ref": "1.4.34",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.4.35",
+    "test_file": "tests/test_sutra_1_4_34.py",
+    "notes": "Kāśikā: ‘ज्ञीप्स्यमानः … बोध्यितुम् अभिप्रेतः…’ (ex: देवदत्ताय श्लाघते).",
+    "condition_key": "cond_1_4_34",
+    "action_key": "act_1_4_34"
+  }
+}

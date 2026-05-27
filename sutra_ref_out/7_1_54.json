@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "7.1.54",
+  "sk_number": 208,
+  "text": {
+    "dev": "ह्रस्वनद्यापो नुट्",
+    "slp1": "hrasvanadyApo nuw",
+    "padaccheda": {
+      "dev": "ह्रस्व-नदी-आपः नुट्",
+      "slp1": "hrasvanadyApo · nuw",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": null,
+    "anuvrtti_pada": "64001: अङ्गस्य | 71052: आमि",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "F",
+    "module": "M07",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "7.1.55",
+    "previous_sutra": "7.1.53",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "ह्रस्वान्तात् तावत् — वक्षाणाम्",
+      "alt_dev": null,
+      "raw": "ह्रस्वान्तात् तावत् — वक्षाणाम्",
+      "source": "Kashika 7.1.54",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "प्लक्षाणाम्",
+      "alt_dev": null,
+      "raw": "प्लक्षाणाम्",
+      "source": "Kashika 7.1.54",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अग्नीनाम्",
+      "alt_dev": null,
+      "raw": "अग्नीनाम्",
+      "source": "Kashika 7.1.54",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "वायूनाम्",
+      "alt_dev": null,
+      "raw": "वायूनाम्",
+      "source": "Kashika 7.1.54",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": null,
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "7.1.54",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "7.1.55",
+    "test_file": "tests/test_sutra_7_1_54.py",
+    "notes": null,
+    "condition_key": "cond_7_1_54",
+    "action_key": "act_7_1_54"
+  },
+  "new_constitution_blind_template": {
+    "text_dev": "ह्रस्वनद्यापो नुट्",
+    "padaccheda_dev": "ह्रस्व-नदी-आपः (पञ्चमी) नुट् (प्रथमा)",
+    "op_type": "AGAMA",
+    "why_dev": "ह्रस्व-अन्त / नदी-अन्त / आप्-अन्त अङ्गात् परस्य आम्-प्रत्ययस्य आदौ नुट् आगमः",
+    "action": {
+      "agama_varnas": [
+        {
+          "slp1": "n",
+          "dev": "न्",
+          "tags": []
+        },
+        {
+          "slp1": "w",
+          "dev": "ट्",
+          "tags": []
+        }
+      ]
+    }
+  }
+}

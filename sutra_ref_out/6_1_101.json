@@ -1,0 +1,248 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "6.1.101",
+  "sk_number": 85,
+  "text": {
+    "dev": "अकः सवर्णे दीर्घः",
+    "slp1": "akaH savarRe dIrgaH",
+    "padaccheda": {
+      "dev": "अकः सवर्णे दीर्घः",
+      "slp1": "akaH · savarRe · dIrgaH",
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [
+      {
+        "sutra": "6.1.72",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      },
+      {
+        "sutra": "6.1.84",
+        "name": null,
+        "terms_inherited": [],
+        "mechanism": "anuvritta_from"
+      }
+    ],
+    "adhikara": "6.1.72",
+    "anuvritta_note": null,
+    "anuvrtti_pada": "61072: संहितायाम् | 61077: अचि | 61084: एकः पूर्वपरयोः",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "G",
+    "module": "M06",
+    "prakarana": "sandhi",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "bulk TSV import — classify when implementing"
+  },
+  "downstream": {
+    "next_sutra": "6.1.102",
+    "previous_sutra": "6.1.100",
+    "next_effect": null,
+    "note": null
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "दण्ड + अग्रम् → दण्डाग्रम् (a + a → ā)",
+      "alt_dev": null,
+      "raw": "दण्ड + अग्रम् → दण्डाग्रम् (a + a → ā)",
+      "source": "Kashika 6.1.101",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "दधि + इन्द्रः → दधीन्द्रः (i + i → ī)",
+      "alt_dev": null,
+      "raw": "दधि + इन्द्रः → दधीन्द्रः (i + i → ī)",
+      "source": "Kashika 6.1.101",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "मधु + उदके → मधूदके (u + u → ū)",
+      "alt_dev": null,
+      "raw": "मधु + उदके → मधूदके (u + u → ū)",
+      "source": "Kashika 6.1.101",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "दण्डाग्रम्",
+      "alt_dev": null,
+      "raw": "दण्डाग्रम्",
+      "source": "Kashika 6.1.101",
+      "variant_type": null
+    },
+    {
+      "id": 5,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "दधीन्द्रः",
+      "alt_dev": null,
+      "raw": "दधीन्द्रः",
+      "source": "Kashika 6.1.101",
+      "variant_type": null
+    },
+    {
+      "id": 6,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "मधूदके",
+      "alt_dev": null,
+      "raw": "मधूदके",
+      "source": "Kashika 6.1.101",
+      "variant_type": null
+    },
+    {
+      "id": 7,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "होतश्यः",
+      "alt_dev": null,
+      "raw": "होतश्यः",
+      "source": "Kashika 6.1.101",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "In saṃhitā, aK + savarṇa → dīrgha (long vowel ekādeśa).",
+    "sa": null
+  },
+  "authority": {
+    "kashika_ref": "6.1.101",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "6.1.102",
+    "test_file": "tests/test_sutra_6_1_101.py",
+    "notes": null,
+    "condition_key": "cond_6_1_101",
+    "action_key": "act_6_1_101"
+  },
+  "new_constitution_blind_template": {
+    "text_dev": "अकः सवर्णे दीर्घः",
+    "padaccheda_dev": "अकः (षष्ठी) सवर्णे (सप्तमी) दीर्घः (प्रथमा)",
+    "op_type": "ADESA",
+    "why_dev": "अक्-वर्ण + सवर्ण-अक् → दीर्घैकादेशः",
+    "action": {
+      "savarna_dirgha_table": {
+        "a|a": {
+          "slp1": "A",
+          "dev": "आ",
+          "tags": []
+        },
+        "a|A": {
+          "slp1": "A",
+          "dev": "आ",
+          "tags": []
+        },
+        "A|a": {
+          "slp1": "A",
+          "dev": "आ",
+          "tags": []
+        },
+        "A|A": {
+          "slp1": "A",
+          "dev": "आ",
+          "tags": []
+        },
+        "i|i": {
+          "slp1": "I",
+          "dev": "ई",
+          "tags": []
+        },
+        "i|I": {
+          "slp1": "I",
+          "dev": "ई",
+          "tags": []
+        },
+        "I|i": {
+          "slp1": "I",
+          "dev": "ई",
+          "tags": []
+        },
+        "I|I": {
+          "slp1": "I",
+          "dev": "ई",
+          "tags": []
+        },
+        "u|u": {
+          "slp1": "U",
+          "dev": "ऊ",
+          "tags": []
+        },
+        "u|U": {
+          "slp1": "U",
+          "dev": "ऊ",
+          "tags": []
+        },
+        "U|u": {
+          "slp1": "U",
+          "dev": "ऊ",
+          "tags": []
+        },
+        "U|U": {
+          "slp1": "U",
+          "dev": "ऊ",
+          "tags": []
+        }
+      }
+    }
+  }
+}

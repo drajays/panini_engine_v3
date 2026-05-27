@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "_template_version": "2.1",
+    "_usage": "One JSON per sūtra — reference for engine coding. null = unknown/not applicable.",
+    "_ssot": "panini_engine_v2 data/sutras.json + data/sk_kashika.json (sūtra id, text, sk_number, resolver fields)",
+    "_sk_authority": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+    "_sk_mismatch_warning": null,
+    "_source_paths": {
+      "sutras_json_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sutras.json",
+      "sk_kashika_engine": "/Users/dr.ajayshukla/panini_engine_v2/data/sk_kashika.json",
+      "sutras_json_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sutras.json",
+      "sk_kashika_supplement": "/Users/dr.ajayshukla/ashtadhyayi/sk_kashika.json",
+      "sutra_basics": "/Users/dr.ajayshukla/ashtadhyayi/sutraBasics.json",
+      "anuvritta_chains": "/Users/dr.ajayshukla/panini_engine_v2/data/anuvritta_chains.json"
+    }
+  },
+  "id": "1.3.49",
+  "sk_number": 2722,
+  "text": {
+    "dev": "अनोरकर्मकात्",
+    "slp1": "anorakarmakAt",
+    "padaccheda": {
+      "dev": "अनोः · अकर्मकात्",
+      "slp1": null,
+      "vibhakti": null
+    }
+  },
+  "inheritance": {
+    "anuvritta": [],
+    "adhikara": null,
+    "anuvritta_note": "Anuvṛtti of ‘ātmanepadam’ from 1.3.12 and ‘vad’ (वदः) from 1.3.47.",
+    "anuvrtti_pada": "13012: आत्मनेपदम् | 13047: वदः | 13048: व्यक्तवाचां समुच्चारणे",
+    "from_chain": null
+  },
+  "classification": {
+    "phase": "B",
+    "module": "M01",
+    "prakarana": "general",
+    "op_type": null,
+    "modality": "nitya",
+    "optionality": {
+      "value": false,
+      "paninian_term": "नित्यम्"
+    },
+    "chandasa_only": false,
+    "paribhasha": false,
+    "samjna_only": false
+  },
+  "trigger": null,
+  "action": null,
+  "resolver": {
+    "condition_count": null,
+    "operand_index": null,
+    "apavada_of": null,
+    "utsarga_of": null,
+    "conflict_override": {},
+    "nitya": true,
+    "antaranga": false,
+    "blocks": [],
+    "blocked_by": [],
+    "priority_tier": 3,
+    "soi_doi_note": "Vidhi (pada-selection): for vad (anuvṛtti from 1.3.47) with anu- when akarmaka (intransitive), select ātmanepada (anuvṛtti from 1.3.12)."
+  },
+  "downstream": {
+    "next_sutra": "1.3.50",
+    "previous_sutra": "1.3.48",
+    "next_effect": null,
+    "note": "Tinanta pipeline: selects ātmanepada for anu + vad when marked akarmaka (recorded via env trigger)."
+  },
+  "logic": {
+    "cond_logic": null,
+    "act_logic": null,
+    "machine_readable": null
+  },
+  "examples": [
+    {
+      "id": 1,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अनुवदते कठः कलापस्य",
+      "alt_dev": null,
+      "raw": "अनुवदते कठः कलापस्य",
+      "source": "Kashika 1.3.49",
+      "variant_type": null
+    },
+    {
+      "id": 2,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अनुवदते मौद्गः पैप्पलादस्य",
+      "alt_dev": null,
+      "raw": "अनुवदते मौद्गः पैप्पलादस्य",
+      "source": "Kashika 1.3.49",
+      "variant_type": null
+    },
+    {
+      "id": 3,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "अनुःसादृश्ये",
+      "alt_dev": null,
+      "raw": "अनुःसादृश्ये",
+      "source": "Kashika 1.3.49",
+      "variant_type": null
+    },
+    {
+      "id": 4,
+      "left_dev": null,
+      "right_dev": null,
+      "output_dev": "यथा कलापोऽधीयानो वदति तथा कठ इत्यर्थः",
+      "alt_dev": null,
+      "raw": "यथा कलापोऽधीयानो वदति तथा कठ इत्यर्थः",
+      "source": "Kashika 1.3.49",
+      "variant_type": null
+    }
+  ],
+  "gloss": {
+    "en": "For vad with anu-, when it is akarmaka (intransitive), (the pada) is ātmanepada.",
+    "sa": "अनोरकर्मकात् वदः आत्मनेपदम्।"
+  },
+  "authority": {
+    "kashika_ref": "1.3.49",
+    "jijnasu_ref": null,
+    "pushpa_dikshit_ref": null,
+    "open_questions": []
+  },
+  "implementation": {
+    "status": "complete",
+    "similar_sutra": "1.3.50",
+    "test_file": "tests/test_sutra_1_3_49.py",
+    "notes": null,
+    "condition_key": "cond_1_3_49",
+    "action_key": "act_1_3_49"
+  }
+}
