@@ -6,13 +6,9 @@ Padaccheda: अतः दीर्घः यञि
 "Of a (short a), before a yañ consonant (y v r l ñ ṅ ṇ n m),
 the ā (dīrgha) substitutes."
 
-In the tiṅanta prakriyā: after vikaraṇa IT-lopa the aṅga/vikaraṇa ends
-with short `a` and the tiṅ ādeśa begins with a yañ consonant (m in `mi`,
-v in `vas`, m in `mas`).  This rule lengthens that `a` → `Ā`, producing
-the correct uttama-puruṣa sandhi: bhav+A+mi = bhavāmi, bhav+A+vas →
-bhavāvaḥ, bhav+A+mas → bhavāmaḥ.
-
-Engine arm: ``state.meta["7_3_101_arm"] is True``.
+Fires whenever an a-ending term is followed by a yañ-initial pratyaya term
+(``"pratyaya" in t2.tags``).  No arm needed — the phonological predicate is
+complete and the ``7_3_101_done`` flag on the term prevents re-firing.
 """
 from __future__ import annotations
 
@@ -53,8 +49,6 @@ def _find(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("7_3_101_arm"):
-        return False
     return _find(state) is not None
 
 
