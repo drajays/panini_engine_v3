@@ -77,7 +77,8 @@ def test_samjna_hook_sees_sutra_ids():
     tids: list[str] = []
     tok = set_apply_rule_hook(lambda _f, to, _s: tids.append(to))
     try:
-        s0 = State(terms=[Term(kind="prakriti", varnas=[mk("a")])])
+        # 1.1.14 cond() requires a nipāta-tagged term (P1 tightening).
+        s0 = State(terms=[Term(kind="nipata", varnas=[mk("a")], tags={"nipāta"})])
         s1 = apply_rule("1.1.14", s0)
         s2 = apply_rule("1.1.14", s1)
         assert s1114.nipata_ekajang_samjna_is_registered(s2)

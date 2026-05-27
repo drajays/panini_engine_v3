@@ -28,7 +28,7 @@ def _build_state() -> State:
         kind="prakriti",
         varnas=parse_slp1_upadesha_sequence("mFjU~z"),
         tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": "mFjU~z"},
+        meta={"upadesha_slp1": "mFjU~z", "gana": 2},
     )
     s = State(terms=[dhatu], meta={}, trace=[])
     s.meta["pada"] = "parasmaipada"

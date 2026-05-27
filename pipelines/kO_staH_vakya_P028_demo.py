@@ -53,7 +53,7 @@ def _derive_staH() -> str:
         kind="prakriti",
         varnas=parse_slp1_upadesha_sequence("as"),
         tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": "as", "karmakatva": "akarmaka"},
+        meta={"upadesha_slp1": "as", "karmakatva": "akarmaka", "gana": 2},
     )
     # Mark dvivacana class for 1.4.22 slice inside P00_tin_tas_adesh_full.
     dhatu.meta["1_4_22_affix_class"] = "dvi"
