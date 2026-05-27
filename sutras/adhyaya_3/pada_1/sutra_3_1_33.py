@@ -19,16 +19,12 @@ from phonology import mk
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
-<<<<<<< HEAD
 def _lrng_ṛ_sy_insert_index(state: State) -> int | None:
     """Lṛṅ + ṛ-dhātu (``vft``) + following ``ti`` ādeśa: insert ``sy`` (not ``sya``)."""
     if (state.meta.get("lakara") or "").strip() != "lRG":
         return None
     if state.meta.get("lrng_ṛ_sy_done"):
         return None
-=======
-def _p019_sy_insert_index(state: State) -> int | None:
->>>>>>> 5392166 (P4: Remove corrected_v2_P demo arm keys from all sutra cond() functions)
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags:
             continue

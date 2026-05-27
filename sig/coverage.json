@@ -8,9 +8,9 @@
     },
     "ANUVADA": {
       "coverage_pct": 100.0,
-      "implemented": 17,
+      "implemented": 19,
       "stubs": 0,
-      "total": 17
+      "total": 19
     },
     "ATIDESHA": {
       "coverage_pct": 100.0,
@@ -56,9 +56,9 @@
     },
     "VIDHI": {
       "coverage_pct": 100.0,
-      "implemented": 3608,
+      "implemented": 3606,
       "stubs": 0,
-      "total": 3608
+      "total": 3606
     }
   },
   "coverage_pct": 100.0,

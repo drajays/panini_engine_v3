@@ -3,272 +3,232 @@
     {
       "fire_count": 48,
       "id": "1.3.9",
-      "total_time_ns": 827042
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.11",
-      "total_time_ns": 657955
+      "total_time_ns": 868578
     },
     {
       "fire_count": 24,
       "id": "1.4.110",
-      "total_time_ns": 472876
+      "total_time_ns": 471085
     },
     {
       "fire_count": 24,
       "id": "1.4.102",
-      "total_time_ns": 358001
+      "total_time_ns": 375040
     },
     {
       "fire_count": 24,
       "id": "1.4.13",
-      "total_time_ns": 339084
+      "total_time_ns": 355664
     },
     {
       "fire_count": 24,
       "id": "1.4.14",
-      "total_time_ns": 333955
+      "total_time_ns": 343665
     },
     {
       "fire_count": 24,
       "id": "1.2.45",
-      "total_time_ns": 307462
+      "total_time_ns": 306998
     },
     {
       "fire_count": 24,
       "id": "1.1.73",
-      "total_time_ns": 225627
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.24",
-      "total_time_ns": 220627
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.23",
-      "total_time_ns": 214712
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.22",
-      "total_time_ns": 213751
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.20",
-      "total_time_ns": 212124
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.19",
-      "total_time_ns": 211630
+      "total_time_ns": 233460
     },
     {
       "fire_count": 24,
       "id": "1.1.18",
-      "total_time_ns": 206624
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.16",
-      "total_time_ns": 205459
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.15",
-      "total_time_ns": 203794
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.14",
-      "total_time_ns": 194669
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.2",
-      "total_time_ns": 188584
-    },
-    {
-      "fire_count": 24,
-      "id": "1.1.8",
-      "total_time_ns": 183046
+      "total_time_ns": 214668
     },
     {
       "fire_count": 24,
       "id": "1.1.9",
-      "total_time_ns": 182749
+      "total_time_ns": 191331
     },
     {
       "fire_count": 24,
-      "id": "1.1.60",
-      "total_time_ns": 181669
+      "id": "1.1.8",
+      "total_time_ns": 191042
     },
     {
       "fire_count": 24,
       "id": "1.1.61",
-      "total_time_ns": 180000
+      "total_time_ns": 188748
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.2",
+      "total_time_ns": 185876
     },
     {
       "fire_count": 24,
       "id": "1.1.7",
-      "total_time_ns": 176373
+      "total_time_ns": 183542
+    },
+    {
+      "fire_count": 24,
+      "id": "1.1.60",
+      "total_time_ns": 183373
     },
     {
       "fire_count": 24,
       "id": "1.1.1",
-      "total_time_ns": 172794
+      "total_time_ns": 179957
     },
     {
       "fire_count": 16,
       "id": "1.4.17",
-      "total_time_ns": 427457
+      "total_time_ns": 458083
     },
     {
       "fire_count": 14,
       "id": "1.3.4",
-      "total_time_ns": 346669
+      "total_time_ns": 356917
     },
     {
       "fire_count": 8,
       "id": "8.2.66",
-      "total_time_ns": 451210
+      "total_time_ns": 489206
     },
     {
       "fire_count": 8,
       "id": "8.3.15",
-      "total_time_ns": 449622
+      "total_time_ns": 474877
     },
     {
       "fire_count": 8,
       "id": "1.2.41",
-      "total_time_ns": 377834
+      "total_time_ns": 362913
+    },
+    {
+      "fire_count": 6,
+      "id": "1.1.11",
+      "total_time_ns": 708583
     },
     {
       "fire_count": 6,
       "id": "1.4.18",
-      "total_time_ns": 440665
+      "total_time_ns": 449958
     },
     {
       "fire_count": 5,
       "id": "1.3.8",
-      "total_time_ns": 350793
+      "total_time_ns": 361917
     },
     {
       "fire_count": 5,
       "id": "1.1.43",
-      "total_time_ns": 330252
+      "total_time_ns": 342503
     },
     {
       "fire_count": 4,
       "id": "6.1.88",
-      "total_time_ns": 505833
+      "total_time_ns": 531084
     },
     {
       "fire_count": 4,
       "id": "7.3.102",
-      "total_time_ns": 455958
+      "total_time_ns": 494543
     },
     {
       "fire_count": 3,
       "id": "1.3.7",
-      "total_time_ns": 811040
+      "total_time_ns": 842709
     },
     {
       "fire_count": 3,
       "id": "7.3.103",
-      "total_time_ns": 456496
-    },
-    {
-      "fire_count": 3,
-      "id": "1.4.16",
-      "total_time_ns": 416082
+      "total_time_ns": 480039
     },
     {
       "fire_count": 3,
       "id": "7.1.12",
-      "total_time_ns": 408709
+      "total_time_ns": 453833
+    },
+    {
+      "fire_count": 3,
+      "id": "1.4.16",
+      "total_time_ns": 446417
     },
     {
       "fire_count": 2,
       "id": "6.1.87",
-      "total_time_ns": 508749
+      "total_time_ns": 540377
     },
     {
       "fire_count": 2,
       "id": "6.1.78",
-      "total_time_ns": 498709
+      "total_time_ns": 526333
     },
     {
       "fire_count": 2,
       "id": "8.4.2",
-      "total_time_ns": 473372
+      "total_time_ns": 499289
     },
     {
       "fire_count": 2,
       "id": "6.1.102",
-      "total_time_ns": 452707
+      "total_time_ns": 480083
     },
     {
       "fire_count": 2,
       "id": "1.3.2",
-      "total_time_ns": 348584
+      "total_time_ns": 365373
     },
     {
       "fire_count": 2,
       "id": "1.3.3",
-      "total_time_ns": 337335
+      "total_time_ns": 351207
     },
     {
       "fire_count": 1,
       "id": "1.3.5",
-      "total_time_ns": 784371
+      "total_time_ns": 822917
     },
     {
       "fire_count": 1,
       "id": "6.1.101",
-      "total_time_ns": 503044
+      "total_time_ns": 523795
     },
     {
       "fire_count": 1,
       "id": "6.1.107",
-      "total_time_ns": 470417
-    },
-    {
-      "fire_count": 1,
-      "id": "6.1.103",
-      "total_time_ns": 450331
+      "total_time_ns": 493458
     },
     {
       "fire_count": 1,
       "id": "8.3.59",
-      "total_time_ns": 445374
+      "total_time_ns": 480375
+    },
+    {
+      "fire_count": 1,
+      "id": "6.1.103",
+      "total_time_ns": 479457
     },
     {
       "fire_count": 1,
       "id": "6.4.3",
-      "total_time_ns": 444875
+      "total_time_ns": 472164
     },
     {
       "fire_count": 1,
       "id": "7.1.54",
-      "total_time_ns": 440246
-    },
-    {
-      "fire_count": 1,
-      "id": "7.1.9",
-      "total_time_ns": 409249
+      "total_time_ns": 458292
     },
     {
       "fire_count": 1,
       "id": "7.1.13",
-      "total_time_ns": 404209
+      "total_time_ns": 448336
+    },
+    {
+      "fire_count": 1,
+      "id": "7.1.9",
+      "total_time_ns": 447252
     },
     {
       "fire_count": 1,
       "id": "6.1.69",
-      "total_time_ns": 361957
+      "total_time_ns": 381709
     }
   ],
   "ranked_by_total_cpu_ns": [
@@ -277,815 +237,851 @@
       "blocked": 0,
       "id": "1.3.9",
       "skipped": 0,
-      "total_time_ns": 827042
+      "total_time_ns": 868578
     },
     {
       "applied": 3,
       "blocked": 0,
       "id": "1.3.7",
       "skipped": 45,
-      "total_time_ns": 811040
+      "total_time_ns": 842709
     },
     {
       "applied": 1,
       "blocked": 0,
       "id": "1.3.5",
       "skipped": 47,
-      "total_time_ns": 784371
+      "total_time_ns": 822917
     },
     {
-      "applied": 24,
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.8",
+      "skipped": 48,
+      "total_time_ns": 791003
+    },
+    {
+      "applied": 6,
       "blocked": 0,
       "id": "1.1.11",
-      "skipped": 24,
-      "total_time_ns": 657955
+      "skipped": 42,
+      "total_time_ns": 708583
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "6.4.148",
       "skipped": 24,
-      "total_time_ns": 534251
+      "total_time_ns": 563037
     },
     {
       "applied": 2,
       "blocked": 0,
       "id": "6.1.87",
       "skipped": 22,
-      "total_time_ns": 508749
+      "total_time_ns": 540377
     },
     {
       "applied": 4,
       "blocked": 0,
       "id": "6.1.88",
       "skipped": 20,
-      "total_time_ns": 505833
-    },
-    {
-      "applied": 1,
-      "blocked": 1,
-      "id": "6.1.101",
-      "skipped": 22,
-      "total_time_ns": 503044
+      "total_time_ns": 531084
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "6.4.146",
       "skipped": 24,
-      "total_time_ns": 500584
+      "total_time_ns": 527459
     },
     {
       "applied": 2,
       "blocked": 0,
       "id": "6.1.78",
       "skipped": 22,
-      "total_time_ns": 498709
+      "total_time_ns": 526333
     },
     {
-      "applied": 0,
-      "blocked": 0,
-      "id": "6.1.110",
-      "skipped": 24,
-      "total_time_ns": 473873
+      "applied": 1,
+      "blocked": 1,
+      "id": "6.1.101",
+      "skipped": 22,
+      "total_time_ns": 523795
     },
     {
       "applied": 2,
       "blocked": 0,
       "id": "8.4.2",
       "skipped": 22,
-      "total_time_ns": 473372
-    },
-    {
-      "applied": 24,
-      "blocked": 0,
-      "id": "1.4.110",
-      "skipped": 0,
-      "total_time_ns": 472876
-    },
-    {
-      "applied": 1,
-      "blocked": 0,
-      "id": "6.1.107",
-      "skipped": 23,
-      "total_time_ns": 470417
+      "total_time_ns": 499289
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "6.1.77",
+      "id": "6.1.110",
       "skipped": 24,
-      "total_time_ns": 469043
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "6.4.130",
-      "skipped": 24,
-      "total_time_ns": 463542
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "6.1.125",
-      "skipped": 24,
-      "total_time_ns": 458709
-    },
-    {
-      "applied": 3,
-      "blocked": 0,
-      "id": "7.3.103",
-      "skipped": 21,
-      "total_time_ns": 456496
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "6.4.134",
-      "skipped": 24,
-      "total_time_ns": 456417
+      "total_time_ns": 496121
     },
     {
       "applied": 4,
       "blocked": 0,
       "id": "7.3.102",
       "skipped": 20,
-      "total_time_ns": 455958
+      "total_time_ns": 494543
+    },
+    {
+      "applied": 1,
+      "blocked": 0,
+      "id": "6.1.107",
+      "skipped": 23,
+      "total_time_ns": 493458
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "7.3.108",
+      "id": "6.1.77",
       "skipped": 24,
-      "total_time_ns": 454666
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.3.120",
-      "skipped": 24,
-      "total_time_ns": 453666
-    },
-    {
-      "applied": 2,
-      "blocked": 0,
-      "id": "6.1.102",
-      "skipped": 22,
-      "total_time_ns": 452707
+      "total_time_ns": 493043
     },
     {
       "applied": 8,
       "blocked": 0,
       "id": "8.2.66",
       "skipped": 16,
-      "total_time_ns": 451210
-    },
-    {
-      "applied": 1,
-      "blocked": 0,
-      "id": "6.1.103",
-      "skipped": 23,
-      "total_time_ns": 450331
-    },
-    {
-      "applied": 8,
-      "blocked": 0,
-      "id": "8.3.15",
-      "skipped": 16,
-      "total_time_ns": 449622
+      "total_time_ns": 489206
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "8.4.1",
+      "id": "6.1.125",
       "skipped": 24,
-      "total_time_ns": 449082
+      "total_time_ns": 489001
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.130",
+      "skipped": 24,
+      "total_time_ns": 487000
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.134",
+      "skipped": 24,
+      "total_time_ns": 485582
     },
     {
       "applied": 1,
       "blocked": 0,
       "id": "8.3.59",
       "skipped": 23,
-      "total_time_ns": 445374
-    },
-    {
-      "applied": 1,
-      "blocked": 0,
-      "id": "6.4.3",
-      "skipped": 23,
-      "total_time_ns": 444875
+      "total_time_ns": 480375
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "8.2.1",
-      "skipped": 0,
-      "total_time_ns": 441624
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.3.119",
+      "id": "7.3.108",
       "skipped": 24,
-      "total_time_ns": 441375
+      "total_time_ns": 480291
     },
     {
-      "applied": 6,
+      "applied": 2,
       "blocked": 0,
-      "id": "1.4.18",
-      "skipped": 18,
-      "total_time_ns": 440665
+      "id": "6.1.102",
+      "skipped": 22,
+      "total_time_ns": 480083
     },
     {
-      "applied": 0,
+      "applied": 3,
       "blocked": 0,
-      "id": "8.2.7",
-      "skipped": 24,
-      "total_time_ns": 440541
-    },
-    {
-      "applied": 1,
-      "blocked": 0,
-      "id": "7.1.54",
-      "skipped": 23,
-      "total_time_ns": 440246
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.3.109",
-      "skipped": 24,
-      "total_time_ns": 439087
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.3.111",
-      "skipped": 24,
-      "total_time_ns": 439041
+      "id": "7.3.103",
+      "skipped": 21,
+      "total_time_ns": 480039
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "6.4.129",
       "skipped": 0,
-      "total_time_ns": 438918
+      "total_time_ns": 479625
+    },
+    {
+      "applied": 1,
+      "blocked": 0,
+      "id": "6.1.103",
+      "skipped": 23,
+      "total_time_ns": 479457
+    },
+    {
+      "applied": 8,
+      "blocked": 0,
+      "id": "8.3.15",
+      "skipped": 16,
+      "total_time_ns": 474877
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "6.4.8",
+      "id": "7.1.92",
       "skipped": 24,
-      "total_time_ns": 429751
+      "total_time_ns": 474876
+    },
+    {
+      "applied": 1,
+      "blocked": 0,
+      "id": "6.4.3",
+      "skipped": 23,
+      "total_time_ns": 472164
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.3.120",
+      "skipped": 24,
+      "total_time_ns": 471874
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.3.119",
+      "skipped": 24,
+      "total_time_ns": 471211
+    },
+    {
+      "applied": 24,
+      "blocked": 0,
+      "id": "1.4.110",
+      "skipped": 0,
+      "total_time_ns": 471085
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "8.4.1",
+      "skipped": 24,
+      "total_time_ns": 470582
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "8.2.7",
+      "skipped": 24,
+      "total_time_ns": 464666
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.3.109",
+      "skipped": 24,
+      "total_time_ns": 464584
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.3.111",
+      "skipped": 24,
+      "total_time_ns": 463756
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "8.2.1",
+      "skipped": 0,
+      "total_time_ns": 460873
+    },
+    {
+      "applied": 1,
+      "blocked": 0,
+      "id": "7.1.54",
+      "skipped": 23,
+      "total_time_ns": 458292
     },
     {
       "applied": 16,
       "blocked": 0,
       "id": "1.4.17",
       "skipped": 8,
-      "total_time_ns": 427457
-    },
-    {
-      "applied": 3,
-      "blocked": 0,
-      "id": "1.4.16",
-      "skipped": 21,
-      "total_time_ns": 416082
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.3.113",
-      "skipped": 24,
-      "total_time_ns": 413500
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.3.114",
-      "skipped": 24,
-      "total_time_ns": 412041
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.1.72",
-      "skipped": 24,
-      "total_time_ns": 411460
-    },
-    {
-      "applied": 1,
-      "blocked": 0,
-      "id": "7.1.9",
-      "skipped": 23,
-      "total_time_ns": 409249
+      "total_time_ns": 458083
     },
     {
       "applied": 3,
       "blocked": 0,
       "id": "7.1.12",
       "skipped": 21,
-      "total_time_ns": 408709
+      "total_time_ns": 453833
     },
     {
-      "applied": 0,
+      "applied": 6,
       "blocked": 0,
-      "id": "7.1.52",
-      "skipped": 24,
-      "total_time_ns": 407251
+      "id": "1.4.18",
+      "skipped": 18,
+      "total_time_ns": 449958
     },
     {
       "applied": 1,
       "blocked": 0,
       "id": "7.1.13",
       "skipped": 23,
-      "total_time_ns": 404209
+      "total_time_ns": 448336
+    },
+    {
+      "applied": 1,
+      "blocked": 0,
+      "id": "7.1.9",
+      "skipped": 23,
+      "total_time_ns": 447252
+    },
+    {
+      "applied": 3,
+      "blocked": 0,
+      "id": "1.4.16",
+      "skipped": 21,
+      "total_time_ns": 446417
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "1.3.10",
-      "skipped": 0,
-      "total_time_ns": 398500
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "1.1.42",
+      "id": "6.4.10",
       "skipped": 24,
-      "total_time_ns": 392625
+      "total_time_ns": 438624
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "7.1.20",
+      "id": "7.1.72",
       "skipped": 24,
-      "total_time_ns": 389500
+      "total_time_ns": 436998
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "7.3.106",
+      "id": "7.3.113",
       "skipped": 24,
-      "total_time_ns": 387373
+      "total_time_ns": 436251
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "7.1.19",
+      "id": "7.1.52",
       "skipped": 24,
-      "total_time_ns": 384247
+      "total_time_ns": 427916
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "7.1.24",
+      "id": "7.3.114",
       "skipped": 24,
-      "total_time_ns": 381664
-    },
-    {
-      "applied": 8,
-      "blocked": 0,
-      "id": "1.2.41",
-      "skipped": 16,
-      "total_time_ns": 377834
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.1.17",
-      "skipped": 24,
-      "total_time_ns": 377667
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "6.1.68",
-      "skipped": 24,
-      "total_time_ns": 376084
+      "total_time_ns": 426791
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "6.1.97",
       "skipped": 24,
-      "total_time_ns": 375417
+      "total_time_ns": 418374
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.42",
+      "skipped": 24,
+      "total_time_ns": 418166
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.1.23",
+      "skipped": 24,
+      "total_time_ns": 414209
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.1.20",
+      "skipped": 24,
+      "total_time_ns": 413627
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.3.106",
+      "skipped": 24,
+      "total_time_ns": 410790
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.1.19",
+      "skipped": 24,
+      "total_time_ns": 406879
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.1.24",
+      "skipped": 24,
+      "total_time_ns": 405584
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "7.1.14",
       "skipped": 24,
-      "total_time_ns": 371585
+      "total_time_ns": 405292
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "1.4.7",
+      "id": "7.1.17",
       "skipped": 24,
-      "total_time_ns": 367084
+      "total_time_ns": 403456
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "7.2.113",
-      "skipped": 24,
-      "total_time_ns": 367042
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.1.15",
-      "skipped": 24,
-      "total_time_ns": 366791
-    },
-    {
-      "applied": 1,
-      "blocked": 0,
-      "id": "6.1.69",
-      "skipped": 23,
-      "total_time_ns": 361957
-    },
-    {
-      "applied": 24,
-      "blocked": 0,
-      "id": "1.4.102",
+      "id": "1.3.10",
       "skipped": 0,
-      "total_time_ns": 358001
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.1.2",
-      "skipped": 24,
-      "total_time_ns": 357290
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "6.4.1",
-      "skipped": 0,
-      "total_time_ns": 354498
+      "total_time_ns": 401085
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "6.1.66",
       "skipped": 24,
-      "total_time_ns": 353291
+      "total_time_ns": 397372
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "7.2.106",
+      "id": "7.1.15",
       "skipped": 24,
-      "total_time_ns": 352497
+      "total_time_ns": 383211
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "7.2.102",
+      "id": "7.1.2",
       "skipped": 24,
-      "total_time_ns": 352291
-    },
-    {
-      "applied": 5,
-      "blocked": 0,
-      "id": "1.3.8",
-      "skipped": 19,
-      "total_time_ns": 350793
+      "total_time_ns": 383000
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "1.3.6",
+      "id": "7.2.113",
       "skipped": 24,
-      "total_time_ns": 349752
-    },
-    {
-      "applied": 2,
-      "blocked": 0,
-      "id": "1.3.2",
-      "skipped": 22,
-      "total_time_ns": 348584
+      "total_time_ns": 382544
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "6.4.11",
+      "id": "7.1.93",
       "skipped": 24,
-      "total_time_ns": 347497
+      "total_time_ns": 381751
     },
     {
-      "applied": 14,
+      "applied": 1,
       "blocked": 0,
-      "id": "1.3.4",
-      "skipped": 10,
-      "total_time_ns": 346669
+      "id": "6.1.69",
+      "skipped": 23,
+      "total_time_ns": 381709
+    },
+    {
+      "applied": 24,
+      "blocked": 0,
+      "id": "1.4.102",
+      "skipped": 0,
+      "total_time_ns": 375040
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "7.1.94",
       "skipped": 24,
-      "total_time_ns": 345917
+      "total_time_ns": 369793
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.11",
+      "skipped": 24,
+      "total_time_ns": 369747
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.1",
+      "skipped": 0,
+      "total_time_ns": 365915
+    },
+    {
+      "applied": 2,
+      "blocked": 0,
+      "id": "1.3.2",
+      "skipped": 22,
+      "total_time_ns": 365373
+    },
+    {
+      "applied": 8,
+      "blocked": 0,
+      "id": "1.2.41",
+      "skipped": 16,
+      "total_time_ns": 362913
+    },
+    {
+      "applied": 5,
+      "blocked": 0,
+      "id": "1.3.8",
+      "skipped": 19,
+      "total_time_ns": 361917
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.1.68",
+      "skipped": 24,
+      "total_time_ns": 360875
+    },
+    {
+      "applied": 14,
+      "blocked": 0,
+      "id": "1.3.4",
+      "skipped": 10,
+      "total_time_ns": 356917
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.3.6",
+      "skipped": 24,
+      "total_time_ns": 356128
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.2.102",
+      "skipped": 24,
+      "total_time_ns": 355791
     },
     {
       "applied": 24,
       "blocked": 0,
       "id": "1.4.13",
       "skipped": 0,
-      "total_time_ns": 339084
+      "total_time_ns": 355664
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.2.106",
+      "skipped": 24,
+      "total_time_ns": 353585
     },
     {
       "applied": 2,
       "blocked": 0,
       "id": "1.3.3",
       "skipped": 22,
-      "total_time_ns": 337335
-    },
-    {
-      "applied": 24,
-      "blocked": 0,
-      "id": "1.4.14",
-      "skipped": 0,
-      "total_time_ns": 333955
-    },
-    {
-      "applied": 5,
-      "blocked": 0,
-      "id": "1.1.43",
-      "skipped": 19,
-      "total_time_ns": 330252
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "1.4.103",
-      "skipped": 5,
-      "total_time_ns": 326955
+      "total_time_ns": 351207
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "4.1.2",
       "skipped": 0,
-      "total_time_ns": 323375
+      "total_time_ns": 351087
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "3.1.2",
+      "id": "1.4.7",
+      "skipped": 24,
+      "total_time_ns": 348500
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.4.103",
+      "skipped": 5,
+      "total_time_ns": 344126
+    },
+    {
+      "applied": 24,
+      "blocked": 0,
+      "id": "1.4.14",
       "skipped": 0,
-      "total_time_ns": 310667
+      "total_time_ns": 343665
+    },
+    {
+      "applied": 5,
+      "blocked": 0,
+      "id": "1.1.43",
+      "skipped": 19,
+      "total_time_ns": 342503
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "3.1.1",
       "skipped": 0,
-      "total_time_ns": 309332
+      "total_time_ns": 323374
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "3.1.2",
+      "skipped": 0,
+      "total_time_ns": 323042
     },
     {
       "applied": 24,
       "blocked": 0,
       "id": "1.2.45",
       "skipped": 0,
-      "total_time_ns": 307462
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "1.1.27",
-      "skipped": 24,
-      "total_time_ns": 231252
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "1.2.72",
-      "skipped": 24,
-      "total_time_ns": 226371
-    },
-    {
-      "applied": 24,
-      "blocked": 0,
-      "id": "1.1.73",
-      "skipped": 0,
-      "total_time_ns": 225627
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "1.1.29",
-      "skipped": 24,
-      "total_time_ns": 224163
+      "total_time_ns": 306998
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "1.1.30",
       "skipped": 24,
-      "total_time_ns": 223712
+      "total_time_ns": 251874
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.2.72",
+      "skipped": 24,
+      "total_time_ns": 250748
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.27",
+      "skipped": 24,
+      "total_time_ns": 234252
     },
     {
       "applied": 24,
       "blocked": 0,
-      "id": "1.1.24",
+      "id": "1.1.73",
       "skipped": 0,
-      "total_time_ns": 220627
+      "total_time_ns": 233460
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.29",
+      "skipped": 24,
+      "total_time_ns": 232876
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.23",
+      "skipped": 24,
+      "total_time_ns": 229627
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "1.1.46",
       "skipped": 0,
-      "total_time_ns": 220083
-    },
-    {
-      "applied": 24,
-      "blocked": 0,
-      "id": "1.1.23",
-      "skipped": 0,
-      "total_time_ns": 214712
-    },
-    {
-      "applied": 24,
-      "blocked": 0,
-      "id": "1.1.22",
-      "skipped": 0,
-      "total_time_ns": 213751
-    },
-    {
-      "applied": 24,
-      "blocked": 0,
-      "id": "1.1.20",
-      "skipped": 0,
-      "total_time_ns": 212124
-    },
-    {
-      "applied": 24,
-      "blocked": 0,
-      "id": "1.1.19",
-      "skipped": 0,
-      "total_time_ns": 211630
+      "total_time_ns": 223707
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "1.1.17",
-      "skipped": 0,
-      "total_time_ns": 208833
+      "id": "1.1.24",
+      "skipped": 24,
+      "total_time_ns": 218542
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.22",
+      "skipped": 24,
+      "total_time_ns": 217210
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "1.1.21",
       "skipped": 0,
-      "total_time_ns": 208669
+      "total_time_ns": 217122
     },
     {
       "applied": 24,
       "blocked": 0,
       "id": "1.1.18",
       "skipped": 0,
-      "total_time_ns": 206624
+      "total_time_ns": 214668
     },
     {
-      "applied": 24,
+      "applied": 0,
       "blocked": 0,
-      "id": "1.1.16",
-      "skipped": 0,
-      "total_time_ns": 205459
+      "id": "1.1.20",
+      "skipped": 24,
+      "total_time_ns": 209248
     },
     {
-      "applied": 24,
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.17",
+      "skipped": 0,
+      "total_time_ns": 208086
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.19",
+      "skipped": 24,
+      "total_time_ns": 206793
+    },
+    {
+      "applied": 0,
       "blocked": 0,
       "id": "1.1.15",
-      "skipped": 0,
-      "total_time_ns": 203794
+      "skipped": 24,
+      "total_time_ns": 204248
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "1.1.100",
       "skipped": 0,
-      "total_time_ns": 196290
+      "total_time_ns": 203749
     },
     {
-      "applied": 24,
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.16",
+      "skipped": 24,
+      "total_time_ns": 202997
+    },
+    {
+      "applied": 0,
       "blocked": 0,
       "id": "1.1.14",
-      "skipped": 0,
-      "total_time_ns": 194669
+      "skipped": 24,
+      "total_time_ns": 201710
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "1.1.13",
       "skipped": 0,
-      "total_time_ns": 191625
+      "total_time_ns": 198960
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "1.1.12",
       "skipped": 0,
-      "total_time_ns": 189921
-    },
-    {
-      "applied": 24,
-      "blocked": 0,
-      "id": "1.1.2",
-      "skipped": 0,
-      "total_time_ns": 188584
+      "total_time_ns": 197293
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "1.1.10",
       "skipped": 0,
-      "total_time_ns": 185540
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "1.1.63",
-      "skipped": 0,
-      "total_time_ns": 183709
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "1.1.3",
-      "skipped": 0,
-      "total_time_ns": 183414
-    },
-    {
-      "applied": 24,
-      "blocked": 0,
-      "id": "1.1.8",
-      "skipped": 0,
-      "total_time_ns": 183046
-    },
-    {
-      "applied": 24,
-      "blocked": 0,
-      "id": "1.1.9",
-      "skipped": 0,
-      "total_time_ns": 182749
+      "total_time_ns": 193376
     },
     {
       "applied": 0,
       "blocked": 0,
       "id": "4.1.1",
       "skipped": 0,
-      "total_time_ns": 182373
+      "total_time_ns": 192290
     },
     {
       "applied": 24,
       "blocked": 0,
-      "id": "1.1.60",
+      "id": "1.1.9",
       "skipped": 0,
-      "total_time_ns": 181669
+      "total_time_ns": 191331
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "1.1.62",
+      "id": "1.1.63",
       "skipped": 0,
-      "total_time_ns": 180834
+      "total_time_ns": 191121
+    },
+    {
+      "applied": 24,
+      "blocked": 0,
+      "id": "1.1.8",
+      "skipped": 0,
+      "total_time_ns": 191042
     },
     {
       "applied": 24,
       "blocked": 0,
       "id": "1.1.61",
       "skipped": 0,
-      "total_time_ns": 180000
+      "total_time_ns": 188748
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.62",
+      "skipped": 0,
+      "total_time_ns": 186627
+    },
+    {
+      "applied": 24,
+      "blocked": 0,
+      "id": "1.1.2",
+      "skipped": 0,
+      "total_time_ns": 185876
     },
     {
       "applied": 24,
       "blocked": 0,
       "id": "1.1.7",
       "skipped": 0,
-      "total_time_ns": 176373
+      "total_time_ns": 183542
+    },
+    {
+      "applied": 24,
+      "blocked": 0,
+      "id": "1.1.60",
+      "skipped": 0,
+      "total_time_ns": 183373
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.3",
+      "skipped": 0,
+      "total_time_ns": 182082
     },
     {
       "applied": 24,
       "blocked": 0,
       "id": "1.1.1",
       "skipped": 0,
-      "total_time_ns": 172794
+      "total_time_ns": 179957
     }
   ],
   "zero_fire_cpu_hot": [
     {
       "applied": 0,
       "blocked": 0,
+      "id": "6.4.8",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 48,
+      "total_time_ns": 791003
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
       "id": "6.4.148",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 534251
+      "total_time_ns": 563037
     },
     {
       "applied": 0,
@@ -1093,7 +1089,7 @@
       "id": "6.4.146",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 500584
+      "total_time_ns": 527459
     },
     {
       "applied": 0,
@@ -1101,7 +1097,7 @@
       "id": "6.1.110",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 473873
+      "total_time_ns": 496121
     },
     {
       "applied": 0,
@@ -1109,15 +1105,7 @@
       "id": "6.1.77",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 469043
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "6.4.130",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 463542
+      "total_time_ns": 493043
     },
     {
       "applied": 0,
@@ -1125,7 +1113,15 @@
       "id": "6.1.125",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 458709
+      "total_time_ns": 489001
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.130",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 487000
     },
     {
       "applied": 0,
@@ -1133,7 +1129,7 @@
       "id": "6.4.134",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 456417
+      "total_time_ns": 485582
     },
     {
       "applied": 0,
@@ -1141,63 +1137,7 @@
       "id": "7.3.108",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 454666
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.3.120",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 453666
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "8.4.1",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 449082
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "8.2.1",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 0,
-      "total_time_ns": 441624
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.3.119",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 441375
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "8.2.7",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 440541
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.3.109",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 439087
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.3.111",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 439041
+      "total_time_ns": 480291
     },
     {
       "applied": 0,
@@ -1205,31 +1145,79 @@
       "id": "6.4.129",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 0,
-      "total_time_ns": 438918
+      "total_time_ns": 479625
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "6.4.8",
+      "id": "7.1.92",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 429751
+      "total_time_ns": 474876
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "7.3.113",
+      "id": "7.3.120",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 413500
+      "total_time_ns": 471874
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "7.3.114",
+      "id": "7.3.119",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 412041
+      "total_time_ns": 471211
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "8.4.1",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 470582
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "8.2.7",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 464666
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.3.109",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 464584
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.3.111",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 463756
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "8.2.1",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 0,
+      "total_time_ns": 460873
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.10",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 438624
     },
     {
       "applied": 0,
@@ -1237,7 +1225,15 @@
       "id": "7.1.72",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 411460
+      "total_time_ns": 436998
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.3.113",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 436251
     },
     {
       "applied": 0,
@@ -1245,71 +1241,15 @@
       "id": "7.1.52",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 407251
+      "total_time_ns": 427916
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "1.3.10",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 0,
-      "total_time_ns": 398500
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "1.1.42",
+      "id": "7.3.114",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 392625
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.1.20",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 389500
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.3.106",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 387373
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.1.19",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 384247
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.1.24",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 381664
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.1.17",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 377667
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "6.1.68",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 376084
+      "total_time_ns": 426791
     },
     {
       "applied": 0,
@@ -1317,7 +1257,55 @@
       "id": "6.1.97",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 375417
+      "total_time_ns": 418374
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.42",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 418166
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.1.23",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 414209
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.1.20",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 413627
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.3.106",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 410790
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.1.19",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 406879
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.1.24",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 405584
     },
     {
       "applied": 0,
@@ -1325,47 +1313,23 @@
       "id": "7.1.14",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 371585
+      "total_time_ns": 405292
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "1.4.7",
+      "id": "7.1.17",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 367084
+      "total_time_ns": 403456
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "7.2.113",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 367042
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.1.15",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 366791
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "7.1.2",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 357290
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "6.4.1",
+      "id": "1.3.10",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 0,
-      "total_time_ns": 354498
+      "total_time_ns": 401085
     },
     {
       "applied": 0,
@@ -1373,39 +1337,39 @@
       "id": "6.1.66",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 353291
+      "total_time_ns": 397372
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "7.2.106",
+      "id": "7.1.15",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 352497
+      "total_time_ns": 383211
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "7.2.102",
+      "id": "7.1.2",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 352291
+      "total_time_ns": 383000
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "1.3.6",
+      "id": "7.2.113",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 349752
+      "total_time_ns": 382544
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "6.4.11",
+      "id": "7.1.93",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 347497
+      "total_time_ns": 381751
     },
     {
       "applied": 0,
@@ -1413,15 +1377,55 @@
       "id": "7.1.94",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 345917
+      "total_time_ns": 369793
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "1.4.103",
+      "id": "6.4.11",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 5,
-      "total_time_ns": 326955
+      "skipped": 24,
+      "total_time_ns": 369747
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.4.1",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 0,
+      "total_time_ns": 365915
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "6.1.68",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 360875
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.3.6",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 356128
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.2.102",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 355791
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "7.2.106",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 353585
     },
     {
       "applied": 0,
@@ -1429,15 +1433,23 @@
       "id": "4.1.2",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 0,
-      "total_time_ns": 323375
+      "total_time_ns": 351087
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "3.1.2",
+      "id": "1.4.7",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 0,
-      "total_time_ns": 310667
+      "skipped": 24,
+      "total_time_ns": 348500
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.4.103",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 5,
+      "total_time_ns": 344126
     },
     {
       "applied": 0,
@@ -1445,31 +1457,15 @@
       "id": "3.1.1",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 0,
-      "total_time_ns": 309332
+      "total_time_ns": 323374
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "1.1.27",
+      "id": "3.1.2",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 231252
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "1.2.72",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 226371
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "1.1.29",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 24,
-      "total_time_ns": 224163
+      "skipped": 0,
+      "total_time_ns": 323042
     },
     {
       "applied": 0,
@@ -1477,7 +1473,39 @@
       "id": "1.1.30",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 24,
-      "total_time_ns": 223712
+      "total_time_ns": 251874
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.2.72",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 250748
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.27",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 234252
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.29",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 232876
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.23",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 229627
     },
     {
       "applied": 0,
@@ -1485,15 +1513,23 @@
       "id": "1.1.46",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 0,
-      "total_time_ns": 220083
+      "total_time_ns": 223707
     },
     {
       "applied": 0,
       "blocked": 0,
-      "id": "1.1.17",
+      "id": "1.1.24",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 0,
-      "total_time_ns": 208833
+      "skipped": 24,
+      "total_time_ns": 218542
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.22",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 217210
     },
     {
       "applied": 0,
@@ -1501,7 +1537,39 @@
       "id": "1.1.21",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 0,
-      "total_time_ns": 208669
+      "total_time_ns": 217122
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.20",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 209248
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.17",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 0,
+      "total_time_ns": 208086
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.19",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 206793
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.15",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 204248
     },
     {
       "applied": 0,
@@ -1509,7 +1577,23 @@
       "id": "1.1.100",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 0,
-      "total_time_ns": 196290
+      "total_time_ns": 203749
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.16",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 202997
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.14",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 24,
+      "total_time_ns": 201710
     },
     {
       "applied": 0,
@@ -1517,7 +1601,7 @@
       "id": "1.1.13",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 0,
-      "total_time_ns": 191625
+      "total_time_ns": 198960
     },
     {
       "applied": 0,
@@ -1525,7 +1609,7 @@
       "id": "1.1.12",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 0,
-      "total_time_ns": 189921
+      "total_time_ns": 197293
     },
     {
       "applied": 0,
@@ -1533,23 +1617,7 @@
       "id": "1.1.10",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 0,
-      "total_time_ns": 185540
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "1.1.63",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 0,
-      "total_time_ns": 183709
-    },
-    {
-      "applied": 0,
-      "blocked": 0,
-      "id": "1.1.3",
-      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
-      "skipped": 0,
-      "total_time_ns": 183414
+      "total_time_ns": 193376
     },
     {
       "applied": 0,
@@ -1557,7 +1625,15 @@
       "id": "4.1.1",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 0,
-      "total_time_ns": 182373
+      "total_time_ns": 192290
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.63",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 0,
+      "total_time_ns": 191121
     },
     {
       "applied": 0,
@@ -1565,7 +1641,15 @@
       "id": "1.1.62",
       "note": "evaluated in recipe but never APPLIED; still costs CPU.",
       "skipped": 0,
-      "total_time_ns": 180834
+      "total_time_ns": 186627
+    },
+    {
+      "applied": 0,
+      "blocked": 0,
+      "id": "1.1.3",
+      "note": "evaluated in recipe but never APPLIED; still costs CPU.",
+      "skipped": 0,
+      "total_time_ns": 182082
     }
   ]
 }

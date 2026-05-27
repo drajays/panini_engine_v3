@@ -23,7 +23,7 @@
       "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
     }
   ],
-  "generated_utc": "2026-05-27T18:43:27.787884+00:00",
+  "generated_utc": "2026-05-27T19:56:33.769262+00:00",
   "generator": "panini_engine_v3.tools.sig_benchmark",
   "sutra_coverage": {
     "coverage_pct": 100.0,

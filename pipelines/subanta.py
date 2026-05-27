@@ -384,14 +384,14 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.4.8",   # dīrgha before sarvananāmasthāna (fires here for anang; idempotent)
     "1.4.7",
     "1.2.41",
+    "7.2.106",  # tad/tyad t→s before su (must precede 6.1.68 su-lopa; 7.2.106 checks sup still present)
+    "7.2.102",  # tyadādi final hal→a (must precede 6.1.68; after substitution stem is vowel-final)
     "6.1.68",
     "6.4.1",
     "7.1.94",
     "6.4.11",
     "6.1.66",
     "7.1.2",
-    "7.2.106",
-    "7.2.102",
     "6.1.97",
     "7.2.113",
     "7.3.106",
