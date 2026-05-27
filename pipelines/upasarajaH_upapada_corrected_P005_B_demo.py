@@ -59,7 +59,7 @@ def derive_upasarajaH_upapada_corrected_P005_B() -> State:
     upasara = Term(
         kind="prakriti",
         varnas=list(parse_slp1_upadesha_sequence("upasara")),
-        tags={"anga", "prātipadika"},
+        tags={"anga", "prātipadika", "upapada"},
         meta={"upadesha_slp1": "upasara"},
     )
     ni = Term(
@@ -92,7 +92,6 @@ def derive_upasarajaH_upapada_corrected_P005_B() -> State:
     for sid in ("1.3.3", "1.3.9"):
         s = apply_rule(sid, s)
 
-    s.meta["2_2_19_upapada_atiNg_arm"] = True
     s = apply_rule("2.2.19", s)
 
     s = apply_rule("1.2.46", s)

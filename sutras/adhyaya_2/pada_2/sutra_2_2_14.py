@@ -19,7 +19,7 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    return bool(state.meta.get("P023_2_2_14_bahuvrihi_arm")) and not bool(
+    return any("bahuvrIhi" in t.tags for t in state.terms) and not bool(
         state.samjna_registry.get("2.2.14_bahuvrihi")
     )
 

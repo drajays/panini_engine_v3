@@ -1,14 +1,11 @@
 """
-2.2.24  अनेकमन्यपदार्थे  —  SAMJNA (narrow for P024 bahuvrīhi)
+2.2.24  अनेकमन्यपदार्थे  —  SAMJNA (bahuvrīhi)
 
 Pāṭha (cross-check: ``sutrANi.tsv`` / ashtadhyayi-com ``data.txt`` i=20224):
   *anekam anyapadārthe* — names the *bahuvrīhi* class when several members
   denote another entity’s meaning.
 
-v3 narrow slice:
-  • recipe arms: ``state.meta["P024_2_2_24_arm"] == True`` (P024)
-                 or ``state.meta["P027_2_2_24_arm"] == True`` (P027)
-  • effect: register ``samjna_registry["2.2.24_anekam_anyapadartha"]`` once.
+Fires when any Term carries the ``bahuvrIhi`` tag (structural environment).
 """
 from __future__ import annotations
 
@@ -17,14 +14,13 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    arm = bool(state.meta.get("P024_2_2_24_arm")) or bool(state.meta.get("P027_2_2_24_arm"))
-    return arm and not bool(state.samjna_registry.get("2.2.24_anekam_anyapadartha"))
+    if not any("bahuvrIhi" in t.tags for t in state.terms):
+        return False
+    return not bool(state.samjna_registry.get("2.2.24_anekam_anyapadartha"))
 
 
 def act(state: State) -> State:
     state.samjna_registry["2.2.24_anekam_anyapadartha"] = True
-    state.meta.pop("P024_2_2_24_arm", None)
-    state.meta.pop("P027_2_2_24_arm", None)
     return state
 
 

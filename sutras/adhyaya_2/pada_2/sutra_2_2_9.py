@@ -25,8 +25,6 @@ _YAJAKA_ADI = frozenset({"yAjaka", "sTapati", "purohita", "AcArya"})
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get("2_2_9_yajaka_gate") is True:
         return False
-    if not state.meta.get("2_2_9_arm"):
-        return False
     return any(
         "yajaka_adi" in t.tags or t.meta.get("upadesha_slp1") in _YAJAKA_ADI
         for t in state.terms
@@ -34,11 +32,8 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if not cond(state):
-        return state
     state.paribhasha_gates["2_2_9_yajaka_gate"] = True
     state.samjna_registry["2_2_9_yajaka_adi_samasa"] = True
-    state.meta.pop("2_2_9_arm", None)
     return state
 
 

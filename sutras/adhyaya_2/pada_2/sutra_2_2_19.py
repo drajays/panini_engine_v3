@@ -1,16 +1,12 @@
 """
-2.2.19  उपपदमतिङ्खि  —  SAMJNA (narrow *glass-box*)
+2.2.19  उपपदमतिङ्खि  —  SAMJNA (upapada compound)
 
 Śāstra summary: an *upapada* is compounded with a related *pada* that does not end
 in a *tiṅ* affix — licensing *samāsa* of the *upapada* frame (e.g. *ratna* + *śas*
 with *√dhā* + *kvip* in ``prakriya_22``).
 
-Engine:
-  Recipe arms ``state.meta['2_2_19_upapada_atiNg_arm']`` once internal *sup* and
-  *kṛt* are on the tape; **act** records a registry flag and clears the arm.
-  Structural *padasaṅkara* is handled by the recipe (CONSTITUTION Art. 7).
-
-``cond`` / ``act`` do not read *vibhakti* / surface gold.
+Fires when any Term carries the ``upapada`` tag (structural environment set by
+the pipeline before calling this sūtra).
 """
 from __future__ import annotations
 
@@ -19,14 +15,13 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    return bool(state.meta.get("2_2_19_upapada_atiNg_arm"))
+    if not any("upapada" in t.tags for t in state.terms):
+        return False
+    return not bool(state.samjna_registry.get("2.2.19_upapada_atiNg"))
 
 
 def act(state: State) -> State:
-    if not cond(state):
-        return state
     state.samjna_registry["2.2.19_upapada_atiNg"] = True
-    state.meta.pop("2_2_19_upapada_atiNg_arm", None)
     return state
 
 

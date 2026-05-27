@@ -33,19 +33,13 @@ _KD_TAGS = frozenset({
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get("2_2_11_karmadharaya_gate") is True:
         return False
-    if not state.meta.get("2_2_11_arm"):
-        return False
     return any(not _KD_TAGS.isdisjoint(t.tags) for t in state.terms)
 
 
 def act(state: State) -> State:
-    if not cond(state):
-        return state
     state.paribhasha_gates["2_2_11_karmadharaya_gate"] = True
     state.samjna_registry["2_2_11_karmadharaya"] = True
-    # Mark karmadhāraya saṃjñā in registry.
     state.samjna_registry["karmadharaya"] = True
-    state.meta.pop("2_2_11_arm", None)
     return state
 
 

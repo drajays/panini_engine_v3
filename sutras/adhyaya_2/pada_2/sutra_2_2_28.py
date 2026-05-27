@@ -84,11 +84,9 @@ def _merged_stem_slp1(companion: str) -> str:
 
 
 def _find_hit(state: State) -> Optional[Tuple[int, int, str]]:
-    if not state.meta.get("2_2_28_arm"):
+    if not _in_samasa_adhikara(state):
         return None
     if not state.meta.get("2_2_28_tulyayoga"):
-        return None
-    if not _in_samasa_adhikara(state):
         return None
     for i in range(len(state.terms)):
         t0 = state.terms[i]
@@ -132,8 +130,6 @@ def act(state: State) -> State:
         },
     )
     state.terms = state.terms[:i] + [merged] + state.terms[j + 1 :]
-    state.meta["2_2_28_arm"] = False
-    state.meta["2_2_28_tulyayoga"] = False
     return state
 
 

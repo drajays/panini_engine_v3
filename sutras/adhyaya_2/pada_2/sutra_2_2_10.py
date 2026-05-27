@@ -25,19 +25,13 @@ from engine.state import State
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get("2_2_10_nirdhaarana_gate") is True:
         return False
-    if not state.meta.get("2_2_10_arm"):
-        return False
     return any("nirdhaarana" in t.tags for t in state.terms)
 
 
 def act(state: State) -> State:
-    if not cond(state):
-        return state
     state.paribhasha_gates["2_2_10_nirdhaarana_gate"] = True
     state.samjna_registry["2_2_10_nirdhaarana_blocked"] = True
-    # Block the ṣaṣṭhī-tatpuruṣa gate for nirdhāraṇa contexts.
     state.paribhasha_gates["2_2_8_sasthi_gate"] = True
-    state.meta.pop("2_2_10_arm", None)
     return state
 
 

@@ -38,7 +38,7 @@ def _ratna_upapada_karma() -> Term:
     return Term(
         kind="prakriti",
         varnas=list(parse_slp1_upadesha_sequence("ratna")),
-        tags={"anga"},
+        tags={"anga", "upapada"},
         meta={"upadesha_slp1": "ratna"},
     )
 
@@ -132,7 +132,6 @@ def derive_ratnaDAtamam_prakriya_22() -> State:
     s.meta["2_4_71_luk_arm"] = True
     s = apply_rule("2.4.71", s)
 
-    s.meta["2_2_19_upapada_atiNg_arm"] = True
     s = apply_rule("2.2.19", s)
 
     s = P00_lashakvataddhite_it_lopa_chain(s)

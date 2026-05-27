@@ -93,7 +93,7 @@ def derive_kurucarI_upapada_corrected_P005_A() -> State:
     kuru = Term(
         kind="prakriti",
         varnas=list(parse_slp1_upadesha_sequence("kuru")),
-        tags={"anga", "prātipadika"},
+        tags={"anga", "prātipadika", "upapada"},
         meta={"upadesha_slp1": "kuru"},
     )
     ni = Term(
@@ -121,7 +121,6 @@ def derive_kurucarI_upapada_corrected_P005_A() -> State:
     s.meta["corrected_v2_P005_A_3_2_16_arm"] = True
     s = apply_rule("3.2.16", s)
 
-    s.meta["2_2_19_upapada_atiNg_arm"] = True
     s = apply_rule("2.2.19", s)
 
     s = apply_rule("1.2.46", s)

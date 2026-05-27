@@ -47,7 +47,6 @@ def derive_mahoraskena_bahuvrihi_P024() -> State:
 
     s = apply_rule("1.1.68", s)
 
-    s.meta["P024_2_2_24_arm"] = True
     s = apply_rule("2.2.24", s)
 
     s.meta["P024_5_4_151_kap_arm"] = True

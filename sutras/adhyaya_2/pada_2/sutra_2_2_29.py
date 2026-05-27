@@ -1,15 +1,9 @@
 """
-2.2.29  चार्थे द्वन्द्वः  —  SAMJNA (narrow demo)
+2.2.29  चार्थे द्वन्द्वः  —  SAMJNA (dvandva compound)
 
 Engine scope (v3 glass-box):
-  This repository uses several *samāsa* sūtras as **registry stamps** when the
-  JSON spine requires them, without implementing a full compound generator.
-
-For ``split_prakriyas_11/P013.json`` we only need a narrow stamp:
-  - requires **2.1.3** (*samāsa* adhikāra) on ``adhikara_stack``
-  - recipe arms via ``state.meta['2_2_29_dvandva_arm']``
-
-No varṇa mutation.
+  Fires when any Term carries the ``dvandva`` tag and the samāsa adhikāra (2.1.3)
+  is open on ``adhikara_stack``. No arm flag needed.
 """
 from __future__ import annotations
 
@@ -22,18 +16,15 @@ def _samasa_adhikara_open(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("2_2_29_dvandva_arm"):
+    if not any("dvandva" in t.tags for t in state.terms):
         return False
     if not _samasa_adhikara_open(state):
         return False
-    if state.samjna_registry.get("2.2.29_cArthe_dvandva"):
-        return False
-    return True
+    return not bool(state.samjna_registry.get("2.2.29_cArthe_dvandva"))
 
 
 def act(state: State) -> State:
     state.samjna_registry["2.2.29_cArthe_dvandva"] = True
-    state.meta.pop("2_2_29_dvandva_arm", None)
     return state
 
 

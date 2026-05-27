@@ -24,10 +24,6 @@ from engine.state import State
 _PUURVA_APARA = frozenset({"pUrva", "apara", "aDara", "uttara"})
 
 
-def _arm_ok(state: State) -> bool:
-    return bool(state.meta.get("2_2_1_arm"))
-
-
 def _pair_ok(state: State) -> bool:
     terms = state.terms
     if len(terms) < 2:
@@ -44,15 +40,12 @@ def _pair_ok(state: State) -> bool:
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get("2_2_1_purva_apara_gate") is True:
         return False
-    return _arm_ok(state) and _pair_ok(state)
+    return _pair_ok(state)
 
 
 def act(state: State) -> State:
-    if not cond(state):
-        return state
     state.paribhasha_gates["2_2_1_purva_apara_gate"] = True
     state.samjna_registry["2_2_1_purva_apara_ekadesha"] = True
-    state.meta.pop("2_2_1_arm", None)
     return state
 
 

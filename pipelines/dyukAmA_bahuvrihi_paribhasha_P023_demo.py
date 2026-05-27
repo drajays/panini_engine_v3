@@ -62,13 +62,13 @@ def derive_dyukAmA_bahuvrihi_P023() -> State:
     div = Term(
         kind="prakriti",
         varnas=list(parse_slp1_upadesha_sequence("div")),
-        tags={"anga"},
+        tags={"anga", "bahuvrIhi"},
         meta={"upadesha_slp1": "div", "vyutpanna": True},
     )
     kAma = Term(
         kind="prakriti",
         varnas=list(parse_slp1_upadesha_sequence("kAma")),
-        tags={"anga"},
+        tags={"anga", "bahuvrIhi"},
         meta={"upadesha_slp1": "kAma", "vyutpanna": True},
     )
     # Start with two members; sup comes later after strī.
@@ -76,7 +76,6 @@ def derive_dyukAmA_bahuvrihi_P023() -> State:
 
     s = apply_rule("1.1.68", s)
     s = apply_rule("1.2.46", s)
-    s.meta["P023_2_2_14_bahuvrihi_arm"] = True
     s = apply_rule("2.2.14", s)
 
     # div → di + u (P023-armed 6.1.127), then yaṇ across Terms.

@@ -1,11 +1,10 @@
 """
-2.2.34  अल्पाच्तरम्  —  ANUVADA (narrow ordering note)
+2.2.34  अल्पाच्तरम्  —  ANUVADA (dvandva ordering note)
 
 Śāstra: provides a default ordering preference among compound members.
 
-Engine (narrow): for ``split_prakriyas_11/P013.json`` the JSON lists this as an
-ordering step but also notes a special sanctioned reversal for the pair.
-We therefore record only an **anuvāda audit step** when the recipe arms it,
+Engine: fires when any Term carries the ``dvandva`` tag and the dvandva samjña
+has already been stamped (2.2.29 fired first). Records an anuvāda audit step
 without mutating the tape.
 """
 from __future__ import annotations
@@ -15,16 +14,15 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("2_2_34_dvandva_arm"):
+    if not any("dvandva" in t.tags for t in state.terms):
         return False
-    if state.samjna_registry.get("2.2.34_alpActaram"):
+    if not bool(state.samjna_registry.get("2.2.29_cArthe_dvandva")):
         return False
-    return True
+    return not bool(state.samjna_registry.get("2.2.34_alpActaram"))
 
 
 def act(state: State) -> State:
     state.samjna_registry["2.2.34_alpActaram"] = True
-    state.meta.pop("2_2_34_dvandva_arm", None)
     return state
 
 

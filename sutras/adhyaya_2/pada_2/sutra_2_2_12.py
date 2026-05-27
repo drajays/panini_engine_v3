@@ -25,17 +25,12 @@ from engine.state import State
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get("2_2_12_kta_puja_gate") is True:
         return False
-    if not state.meta.get("2_2_12_arm"):
-        return False
     return any("kta_puja" in t.tags for t in state.terms)
 
 
 def act(state: State) -> State:
-    if not cond(state):
-        return state
     state.paribhasha_gates["2_2_12_kta_puja_gate"] = True
     state.samjna_registry["2_2_12_kta_puja_samasa"] = True
-    state.meta.pop("2_2_12_arm", None)
     return state
 
 

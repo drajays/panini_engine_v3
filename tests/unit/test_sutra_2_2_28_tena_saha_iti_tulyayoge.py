@@ -51,7 +51,6 @@ def test_merges_putra_saha_to_saputra_when_armed_tulyayoga():
     assert len(s1.terms) == 1
     assert s1.flat_slp1() == "saputra"
     assert {"bahuvrihi", "sahasamasa"}.issubset(s1.terms[0].tags)
-    assert s1.meta.get("2_2_28_arm") is False
 
 
 def test_no_merge_without_tulyayoga_meta():
