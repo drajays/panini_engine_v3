@@ -239,6 +239,27 @@ def _prep_bhave(state: State) -> State:
     return apply_rule("3.4.69", state)
 
 
+def _karmani_yak_it_and_ngiti(state: State) -> State:
+    """*yaḳ* it-lopa (**1.3.3** / **1.3.9**) + *ṅit* mark for **7.2.81** / **1.1.5**."""
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+    for t in state.terms:
+        if "vikarana" not in t.tags:
+            continue
+        stem = "".join(v.slp1 for v in t.varnas)
+        if stem in {"ya", "y"} or (t.meta.get("upadesha_slp1") or "").strip() in {"yak", "ya"}:
+            t.tags.add("kngiti")
+            t.tags.add("ngiti_vikaraṇa")
+            break
+    return state
+
+
+def _karmani_apply_yak(state: State) -> State:
+    """**3.1.67** inserts *yaḳ*; recipe runs it-lopa + *ṅit* saṃjñā only."""
+    state = apply_rule("3.1.67", state)
+    return _karmani_yak_it_and_ngiti(state)
+
+
 def _bhave_atmanepada_tin_after_lopa(state: State) -> State:
     """After ``P00_tin_tusma`` on bhāve paths: 1.4.100 + 3.4.79/80."""
     if state.meta.get("prayoga") != "bhave":
@@ -1656,23 +1677,7 @@ def _derive_karmani_laG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("3.4.113", state)
     state = apply_rule("1.2.4", state)
 
-    # 3.1.67 yaḳ insertion (karmani: sārvadhatuke yaḳ)
-    state.meta["3_1_67_arm"] = True
-    state = apply_rule("3.1.67", state)
-    _dhatu_idx = next(i for i, t in enumerate(state.terms) if "dhatu" in t.tags)
-    _yak = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("yak"),
-        tags={"pratyaya", "upadesha", "vikarana"},
-        meta={"upadesha_slp1": "yak"},
-    )
-    state.terms.insert(_dhatu_idx + 1, _yak)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
-    for t in state.terms:
-        if t.meta.get("upadesha_slp1") == "yak" and "vikarana" in t.tags:
-            t.tags.add("kngiti")
-            break
+    state = _karmani_apply_yak(state)
 
     # No 3.4.79/3.4.80 — laṅ is not ṭit
 
@@ -1685,14 +1690,11 @@ def _derive_karmani_laG(state: State, purusha: int, vacana: int) -> State:
 
     state = apply_rule("1.1.5", state)
 
-    state.meta["7_4_25_karmani_yak_arm"] = True
     state = apply_rule("7.4.25", state)
 
     # 7.1.3 jho'ntaḥ: karmani 3pl Ja → anta (no prior 3.4.79, so just J→ant+a)
     state = apply_rule("7.1.3", state)
 
-    # 7.2.81 āto ṅitaḥ: 3du/2du ā of Atam/ATAm → iy (yaḳ is ṅit)
-    state.meta["7_2_81_Atam_arm"] = True
     state = apply_rule("7.2.81", state)
 
     # 6.1.66 y-lopa (drop y from iy before HAL)
@@ -1758,23 +1760,7 @@ def _derive_karmani_liG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("3.4.113", state)
     state = apply_rule("1.2.4", state)
 
-    # 3.1.67 yaḳ insertion
-    state.meta["3_1_67_arm"] = True
-    state = apply_rule("3.1.67", state)
-    _dhatu_idx = next(i for i, t in enumerate(state.terms) if "dhatu" in t.tags)
-    _yak = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("yak"),
-        tags={"pratyaya", "upadesha", "vikarana"},
-        meta={"upadesha_slp1": "yak"},
-    )
-    state.terms.insert(_dhatu_idx + 1, _yak)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
-    for t in state.terms:
-        if t.meta.get("upadesha_slp1") == "yak" and "vikarana" in t.tags:
-            t.tags.add("kngiti")
-            break
+    state = _karmani_apply_yak(state)
 
     # 3.4.105 Ja→ran (3pl)
     state.meta["3_4_105_arm"] = True
@@ -1797,7 +1783,6 @@ def _derive_karmani_liG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.4.13", state)
     state = apply_rule("1.1.5", state)
 
-    state.meta["7_4_25_karmani_yak_arm"] = True
     state = apply_rule("7.4.25", state)
 
     # 7.1.3 jho'ntaḥ: 3pl ran already substituted (3.4.105), vacuous here
@@ -2416,6 +2401,12 @@ def _derive_bhave_laT(state: State, purusha: int, vacana: int) -> State:
 
     Example: bhū + laṭ bhāve 3sg → भवते (not karmaṇi भूयते).
     """
+    # Tag dhātu for bhāva prayoga (needed by 7.2.81 structural cond)
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            t.tags.add("bhava_karma_usage")
+            break
+
     state = apply_rule("3.2.123", state)
 
     laT_varnas = parse_slp1_upadesha_sequence("laT")
@@ -2454,7 +2445,6 @@ def _derive_bhave_laT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.1.5", state)
     state = apply_rule("7.3.84", state)
     state = apply_rule("7.1.3", state)
-    state.meta["7_2_81_Atam_arm"] = True
     state = apply_rule("7.2.81", state)
     state = apply_rule("6.1.66", state)
     state = apply_rule("7.3.101", state)
@@ -2526,29 +2516,7 @@ def _derive_karmani_laT(state: State, purusha: int, vacana: int) -> State:
     # ── 1.2.4 sārvadhatukam apit ─────────────────────────────────────────
     state = apply_rule("1.2.4", state)
 
-    # ── 3.1.67: sārvadhatuke yaḳ — insert yaḳ between dhātu and tiṅ ─────
-    state.meta["3_1_67_arm"] = True
-    state = apply_rule("3.1.67", state)  # records the event
-
-    # Recipe: physically insert yaḳ after dhātu
-    _dhatu_idx = next(i for i, t in enumerate(state.terms) if "dhatu" in t.tags)
-    _yak = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("yak"),
-        tags={"pratyaya", "upadesha", "vikarana"},
-        meta={"upadesha_slp1": "yak"},
-    )
-    state.terms.insert(_dhatu_idx + 1, _yak)
-
-    # ── IT-prakaraṇa on yaḳ: 1.3.3 (k→IT) + 1.3.9 (k drops) → ya ───────
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
-
-    # Mark ya (remaining) as kṅit so 1.1.5 blocks guṇa on dhātu
-    for t in state.terms:
-        if t.meta.get("upadesha_slp1") == "yak" and "vikarana" in t.tags:
-            t.tags.add("kngiti")
-            break
+    state = _karmani_apply_yak(state)
 
     # ── 3.4.114 ārdhadhātukam śeṣaḥ (vacuous trace step) ─────────────────
     state = apply_rule("3.4.114", state)
@@ -2568,15 +2536,11 @@ def _derive_karmani_laT(state: State, purusha: int, vacana: int) -> State:
     # ── 1.1.5 kṅiti ca: block guṇa before yaḳ (kit) ──────────────────────
     state = apply_rule("1.1.5", state)
 
-    # ── 7.4.25 akṛtsārvadhatukayoḥ dīrgha (vacuous for bhū) ──────────────
-    state.meta["7_4_25_karmani_yak_arm"] = True
     state = apply_rule("7.4.25", state)
 
     # ── 7.1.3: jho'ntaḥ (karmani 3pl: Je → ante) ─────────────────────────
     state = apply_rule("7.1.3", state)
 
-    # ── 7.2.81: āto ṅitaḥ (3du/2du: ā of Ate/ATe → iy) ──────────────────
-    state.meta["7_2_81_Atam_arm"] = True
     state = apply_rule("7.2.81", state)
 
     # ── 6.1.66: lopo vyorvali (drop y from iy before val) ─────────────────
@@ -2697,8 +2661,6 @@ def _derive_karmani_lRT(state: State, purusha: int, vacana: int) -> State:
     # ── 7.1.3 Ja→ante (3pl: Je→ante; vacuous for other cells) ────────────
     state = apply_rule("7.1.3", state)
 
-    # ── 7.2.81 āto ṅitaḥ (3du/2du: ā→iy after 3.4.79) ───────────────────
-    state.meta["7_2_81_Atam_arm"] = True
     state = apply_rule("7.2.81", state)
 
     # ── 6.1.66 lopo vyorvali (drop y from iy before HAL) ─────────────────
@@ -2872,23 +2834,7 @@ def _derive_karmani_loT(state: State, purusha: int, vacana: int) -> State:
     # ── 1.2.4 sārvadhatuka apit → kṅit ──────────────────────────────────
     state = apply_rule("1.2.4", state)
 
-    # ── 3.1.67: sārvadhatuke yaḳ ─────────────────────────────────────────
-    state.meta["3_1_67_arm"] = True
-    state = apply_rule("3.1.67", state)
-    _dhatu_idx = next(i for i, t in enumerate(state.terms) if "dhatu" in t.tags)
-    _yak = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("yak"),
-        tags={"pratyaya", "upadesha", "vikarana"},
-        meta={"upadesha_slp1": "yak"},
-    )
-    state.terms.insert(_dhatu_idx + 1, _yak)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
-    for t in state.terms:
-        if t.meta.get("upadesha_slp1") == "yak" and "vikarana" in t.tags:
-            t.tags.add("kngiti")
-            break
+    state = _karmani_apply_yak(state)
 
     # ── 3.4.114 ārdhadhātuka śeṣa (vacuous trace) ─────────────────────────
     state = apply_rule("3.4.114", state)
@@ -2932,15 +2878,11 @@ def _derive_karmani_loT(state: State, purusha: int, vacana: int) -> State:
     # ── 1.1.5 kṅiti ca: block guṇa before yaḳ ────────────────────────────
     state = apply_rule("1.1.5", state)
 
-    # ── 7.4.25 akṛt sārvadhatukayoḥ dīrgha (vacuous for bhū, ū already long)
-    state.meta["7_4_25_karmani_yak_arm"] = True
     state = apply_rule("7.4.25", state)
 
     # ── 7.1.3: jho'ntaḥ (karmani 3pl: JAm → antAm) ───────────────────────
     state = apply_rule("7.1.3", state)
 
-    # ── 7.2.81: āto ṅitaḥ (3du/2du: A→iy in AtAm/ATAm) ─────────────────
-    state.meta["7_2_81_Atam_arm"] = True
     state = apply_rule("7.2.81", state)
 
     # ── 6.1.66: lopo vyorvali (drop y from iy before HAL) ─────────────────

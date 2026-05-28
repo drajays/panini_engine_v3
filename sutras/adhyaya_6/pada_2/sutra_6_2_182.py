@@ -16,7 +16,7 @@ _GATE_KEY: str = "6_2_182_pareraBito_182"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("6_2_182_arm") is True
+    return any(t.varnas for t in state.terms)
 
 
 def act(state: State) -> State:
