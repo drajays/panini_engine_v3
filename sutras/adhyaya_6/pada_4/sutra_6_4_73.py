@@ -8,6 +8,7 @@ Padaccheda: छन्दसि अपि दृश्यते (क्रिय�
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.gates import adhikara_in_effect
 from engine.state import State
 
 _GATE_KEY: str = "6_4_73_Candasyapi_73"
@@ -16,7 +17,7 @@ _GATE_KEY: str = "6_4_73_Candasyapi_73"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("6_4_73_arm") is True
+    return adhikara_in_effect("6.4.73", state, "6.4.1")
 
 
 def act(state: State) -> State:

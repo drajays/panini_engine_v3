@@ -54,7 +54,9 @@ def cond(state: State) -> bool:
         return _find_yasut_suw_pair(state) is not None
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("8_2_29_arm") is True
+    if state.tripadi_zone and any("anga" in t.tags or t.varnas for t in state.terms):
+        return True
+    return bool(state.meta.get("8_2_29_arm"))
 
 
 def act(state: State) -> State:
