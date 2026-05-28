@@ -16,7 +16,10 @@ _GATE_KEY: str = "6_4_104_ciRo_104"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("6_4_104_arm") is True
+    # Structural: ciṇ luk fires in karmani/bhāva context (dhātu tagged by pipeline)
+    if any("bhava_karma_usage" in t.tags for t in state.terms):
+        return True
+    return bool(state.meta.get("6_4_104_arm"))
 
 
 def act(state: State) -> State:

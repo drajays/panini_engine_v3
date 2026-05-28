@@ -3,7 +3,8 @@
 
 Padaccheda: चिण् भाव-कर्मणोः
 
-Krt suffix rule from dhatu: चिण् भावकर्मणोः (66)
+ciṇ suffix in bhāva/karmani context. Structurally: all karmani pipelines
+tag the dhātu with "bhava_karma_usage" before calling this sūtra.
 """
 from __future__ import annotations
 
@@ -16,7 +17,10 @@ _GATE_KEY: str = "3_1_66_ciR_66"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("3_1_66_arm") is True
+    # Structural: karmani/bhāva pipeline tags dhātu "bhava_karma_usage"
+    if any("bhava_karma_usage" in t.tags for t in state.terms):
+        return True
+    return bool(state.meta.get("3_1_66_arm"))
 
 
 def act(state: State) -> State:

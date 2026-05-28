@@ -3,7 +3,8 @@
 
 Padaccheda: सार्वधातुके यक्
 
-Krt suffix rule from dhatu: सार्वधातुके यक् (67)
+yak vikaraṇa in sārvadhātuka (karmani/bhāva) context. Structurally:
+all karmani pipelines tag the dhātu with "bhava_karma_usage" before this.
 """
 from __future__ import annotations
 
@@ -16,7 +17,10 @@ _GATE_KEY: str = "3_1_67_sArvaDAtuke_67"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("3_1_67_arm") is True
+    # Structural: karmani/bhāva pipeline tags dhātu "bhava_karma_usage"
+    if any("bhava_karma_usage" in t.tags for t in state.terms):
+        return True
+    return bool(state.meta.get("3_1_67_arm"))
 
 
 def act(state: State) -> State:
