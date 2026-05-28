@@ -27,9 +27,9 @@ META_P017_143_DONE = "6_4_143_p017_te_lopa_done"
 
 
 def _find_p017_te_lopa(state: State) -> int | None:
-    """**P017**: *bha* **``pawapawat``** + *ḍit* residue ``a`` → drop final ``at``."""
-    if not state.meta.get(META_P017_143):
-        return None
+    """P017 ṭi-lopa: bha-tagged ``pawapawat`` + ḍit suffix → drop final ``at``.
+    Structural: checks bha tag + stem identity + dit_pratyaya; no arm (Art. 13).
+    """
     if state.meta.get(META_P017_143_DONE):
         return None
     if len(state.terms) != 2:

@@ -17,7 +17,8 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _matches(state: State) -> bool:
-    if not state.meta.get("3_1_26_nic_arm"):
+    # Structural: nic_recipe="nic" coordination key OR legacy arm.
+    if not (state.meta.get("nic_recipe") == "nic" or state.meta.get("3_1_26_nic_arm")):
         return False
     if not state.terms or "dhatu" not in state.terms[0].tags:
         return False
@@ -49,6 +50,7 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "Ric"},
     )
     state.terms.append(nic)
+    state.meta.pop("nic_recipe", None)
     return state
 
 

@@ -605,13 +605,11 @@ def test_P013_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 def test_P015_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
     """**P015** (*pāyayate*): bundle IAST ↔ engine SLP1 surface."""
 
-    from pipelines.pAyayate_pa_Nic_corrected_P015_demo import (
-        derive_pAyayate_pa_Nic_corrected_P015,
-    )
+    from pipelines.tinanta import derive
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P015")
     assert hit["target"]["iast"] == "pāyayate"
-    assert derive_pAyayate_pa_Nic_corrected_P015().flat_slp1() == "pAyayate"
+    assert derive("pA", "laT", "kartari", 3, 1, nic_recipe=True).flat_slp1() == "pAyayate"
 
 
 def test_P014_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
@@ -629,25 +627,21 @@ def test_P014_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 def test_P016_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
     """**P016** (*lohitāyati*): bundle IAST ↔ engine SLP1 surface."""
 
-    from pipelines.lohitAyati_lat_lohita_kyaz_corrected_P016_demo import (
-        derive_lohitAyati_lat_lohita_kyaz_corrected_P016,
-    )
+    from pipelines.tinanta import derive_denominative_laT
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P016")
     assert hit["target"]["iast"] == "lohitāyati"
-    assert derive_lohitAyati_lat_lohita_kyaz_corrected_P016().flat_slp1() == "lohitAyati"
+    assert derive_denominative_laT("lohita", 3, 1).flat_slp1() == "lohitAyati"
 
 
 def test_P017_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
     """**P017** (*paṭapaṭāyati*): bundle IAST ↔ engine SLP1 surface."""
 
-    from pipelines.pawapawAyati_anukaraNa_corrected_P017_demo import (
-        derive_pawapawAyati_anukaraNa_corrected_P017,
-    )
+    from pipelines.tinanta import derive_anukarana_laT
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P017")
     assert hit["target"]["iast"] == "paṭapaṭāyati"
-    assert derive_pawapawAyati_anukaraNa_corrected_P017().flat_slp1() == "pawapawAyati"
+    assert derive_anukarana_laT("pawat", 3, 1).flat_slp1() == "pawapawAyati"
 
 
 def test_P018_A_bundle_target_matches_pipeline(corrected_v2: dict) -> None:

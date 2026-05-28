@@ -1571,6 +1571,252 @@ def _derive_laT_jYA_apa(state: State, purusha: int, vacana: int) -> State:
     return state
 
 
+def _kyaz_merge(state: State, stem_slp1: str) -> None:
+    """Merge prātipadika + kyaz residue (``ya``) → dhātu ``stem_slp1 + y``."""
+    if len(state.terms) < 2:
+        return
+    stem, sfx = state.terms[0], state.terms[1]
+    sfx_flat = "".join(v.slp1 for v in sfx.varnas)
+    sfx_tail = [sfx.varnas[0]] if sfx_flat == "ya" else list(sfx.varnas)
+    merged = Term(
+        kind="prakriti",
+        varnas=list(stem.varnas) + sfx_tail,
+        tags={"dhatu", "anga", "sanadi"},
+        meta={},
+    )
+    state.terms = [merged] + state.terms[2:]
+    state.trace.append({
+        "sutra_id": "__MERGE__", "sutra_type": "STRUCTURAL",
+        "type_label": "धातु-संयोगः",
+        "form_before": state.flat_slp1(), "form_after": state.flat_slp1(),
+        "why_dev": f"{stem_slp1} + य्-अवशेष → {stem_slp1}य (kyaz-dhātu)।",
+        "status": "APPLIED",
+    })
+
+
+def derive_denominative_laT(
+    nominal_slp1: str,
+    purusha: int,
+    vacana: int,
+) -> State:
+    """
+    Kyaz denominative laṭ parasmaipada — P016 *lohitāyati*.
+
+    Chain: **1.2.45** → **3.1.13** (kyaz) → **1.3.8/3/9** → merge → **3.1.32** →
+    **3.1.91** → P06a → **3.2.123** → laṭ → **3.4.77** → **3.4.78** (tip) →
+    **3.1.68** (śap) → **1.3.3/8/9** → **3.4.113** → **7.4.25** → merge.
+    """
+    import sutras  # noqa: F401  trigger sutra registration
+
+    stem = Term(
+        kind="prakriti",
+        varnas=list(parse_slp1_upadesha_sequence(nominal_slp1)),
+        tags=set(),
+        meta={},
+    )
+    state = State(terms=[stem], meta={}, trace=[], samjna_registry={})
+    state = apply_rule("1.2.45", state)
+    state = apply_rule("3.1.13", state)
+    for sid in ("1.3.8", "1.3.3", "1.3.9"):
+        state = apply_rule(sid, state)
+    _kyaz_merge(state, nominal_slp1)
+    state = apply_rule("3.1.32", state)
+    state = apply_rule("3.1.91", state)
+    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+    state = apply_rule("3.2.123", state)
+    laT_varnas = parse_slp1_upadesha_sequence("laT")
+    if laT_varnas and laT_varnas[-1].slp1 == "T":
+        laT_varnas = laT_varnas[:-1]
+    state.terms.append(Term(
+        kind="pratyaya",
+        varnas=laT_varnas,
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        meta={"upadesha_slp1": "laT"},
+    ))
+    state = apply_rule("3.4.77", state)
+    tin_adesha = _select_tin_adesha("laT", "parasmai", purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"] = tin_adesha
+    state = apply_rule("3.4.78", state)
+    state.meta["3_1_68_kartari_recipe"] = True
+    state = apply_rule("3.1.68", state)
+    for sid in ("1.3.3", "1.3.8", "1.3.9"):
+        state = apply_rule(sid, state)
+    state = apply_rule("3.4.113", state)
+    state = apply_rule("1.1.64", state)
+    state = apply_rule("7.4.25", state)
+    state = apply_rule("6.1.101", state)
+    _pada_merge(state)
+    return state
+
+
+def _merge_two_terms_to_pratipadika(state: State, why: str) -> None:
+    """Merge first two terms into a single prātipadika Term."""
+    if len(state.terms) < 2:
+        return
+    a, b = state.terms[0], state.terms[1]
+    merged = Term(
+        kind="prakriti",
+        varnas=list(a.varnas) + list(b.varnas),
+        tags={"anga", "prātipadika"},
+        meta=dict(a.meta),
+    )
+    state.terms = [merged] + state.terms[2:]
+    state.trace.append({
+        "sutra_id": "__MERGE__", "sutra_type": "STRUCTURAL",
+        "type_label": "अच्-संयोगः",
+        "form_before": state.flat_slp1(), "form_after": state.flat_slp1(),
+        "why_dev": why, "status": "APPLIED",
+    })
+
+
+def derive_anukarana_laT(
+    anukarana_slp1: str,
+    purusha: int,
+    vacana: int,
+) -> State:
+    """
+    Anukaraṇa (sound-imitation) kyaz laṭ — P017 *paṭapaṭāyati*.
+
+    Chain: **1.2.45** → **6.1.1** (dvitva) → **5.4.57** (qāc) → **8.1.2** →
+    **6.1.97** → **1.3.7/3/9** → **1.4.18** → **6.4.143** (ṭi-lopa) →
+    merge → **3.1.13** (kyaz) → **1.3.8/3/9** → merge → **3.1.32** →
+    laṭ spine → merge.
+    """
+    import sutras  # noqa: F401
+
+    stem = Term(
+        kind="prakriti",
+        varnas=list(parse_slp1_upadesha_sequence(anukarana_slp1)),
+        tags={"anga"},
+        meta={"upadesha_slp1": anukarana_slp1},
+    )
+    state = State(terms=[stem], meta={}, trace=[], samjna_registry={})
+    state = apply_rule("1.2.45", state)
+    state = apply_rule("6.1.1", state)    # dvitva (structural for prātipadika)
+    state = apply_rule("5.4.57", state)   # qāc suffix
+    state = apply_rule("8.1.2", state)
+    state = apply_rule("6.1.97", state)
+    for sid in ("1.3.7", "1.3.3", "1.3.9"):
+        state = apply_rule(sid, state)
+    state = apply_rule("1.4.18", state)
+    state = apply_rule("6.4.143", state)  # ṭi-lopa (structural: bha+stem+dit)
+    # After 6.4.143, stem has lost final ṭi syllables. The next term is qāc residue
+    # (a/A). Merge them to get the prātipadika for kyaz.
+    stem_now = "".join(v.slp1 for v in state.terms[0].varnas) if state.terms else ""
+    _merge_two_terms_to_pratipadika(state, f"{stem_now} + qAc-residue → {stem_now}A")
+    state = apply_rule("3.1.13", state)   # kyaz (structural: fires for this stem)
+    for sid in ("1.3.8", "1.3.3", "1.3.9"):
+        state = apply_rule(sid, state)
+    # Merge prātipadika + kyaz residue (ya → y) → dhātu
+    stem_after = "".join(v.slp1 for v in state.terms[0].varnas) if state.terms else ""
+    _kyaz_merge(state, stem_after)
+    state = apply_rule("3.1.32", state)
+    state = apply_rule("3.1.91", state)
+    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+    state = apply_rule("3.2.123", state)
+    laT_varnas = parse_slp1_upadesha_sequence("laT")
+    if laT_varnas and laT_varnas[-1].slp1 == "T":
+        laT_varnas = laT_varnas[:-1]
+    state.terms.append(Term(
+        kind="pratyaya",
+        varnas=laT_varnas,
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        meta={"upadesha_slp1": "laT"},
+    ))
+    state = apply_rule("3.4.77", state)
+    tin_adesha = _select_tin_adesha("laT", "parasmai", purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"] = tin_adesha
+    state = apply_rule("3.4.78", state)
+    state.meta["3_1_68_kartari_recipe"] = True
+    state = apply_rule("3.1.68", state)
+    for sid in ("1.3.3", "1.3.8", "1.3.9"):
+        state = apply_rule(sid, state)
+    state = apply_rule("3.4.113", state)
+    state = apply_rule("1.1.64", state)
+    _pada_merge(state)
+    return state
+
+
+def _nic_merge(state: State) -> None:
+    """Merge dhātu + ṇic residue (``i``) + yuk(y) → secondary dhātu."""
+    # After 3.1.26 inserts ṇic as "i" or "Ric" and 7.3.37 inserts yuk (y),
+    # merge the three pieces into a single secondary dhātu term.
+    if len(state.terms) < 2:
+        return
+    parts: list[str] = []
+    for t in state.terms:
+        parts.extend(v.slp1 for v in t.varnas)
+    merged_slp1 = "".join(parts)
+    merged = Term(
+        kind="prakriti",
+        varnas=list(parse_slp1_upadesha_sequence(merged_slp1)),
+        tags={"dhatu", "anga"},
+        meta={"upadesha_slp1": merged_slp1},
+    )
+    state.terms = [merged]
+    state.trace.append({
+        "sutra_id": "__MERGE__", "sutra_type": "STRUCTURAL",
+        "type_label": "धातु-मेलनम्",
+        "form_before": state.flat_slp1(), "form_after": state.flat_slp1(),
+        "why_dev": f"dhātu + ṇic-i + yuk → {merged_slp1} (Ṇic-dhātu)।",
+        "status": "APPLIED",
+    })
+
+
+def _derive_laT_nic_atmane(state: State, purusha: int, vacana: int) -> State:
+    """
+    Ṇic causative laṭ ātmanepada — P015 *pāyayate*.
+
+    Chain: **3.1.26** (ṇic) → **1.3.7/3/9** → **7.3.37** (yuk) → merge →
+    **3.1.32** → **3.1.91** → P06a → **3.2.123** → laṭ → **3.4.77** →
+    **3.4.78** (ta) → **3.1.68** (śap) → **1.3.3/8/9** → **3.4.113** →
+    **1.1.64** → **3.4.79** → **7.3.84** → **6.1.78** → merge.
+    """
+    state.meta["lakara"] = "laT"
+    state.meta["nic_recipe"] = "nic"
+    # Tag dhātu for 3.1.26 emit_Ric_tape (for 1.3.7 to find R)
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            t.tags.add("emit_Ric_tape")
+            break
+    state = apply_rule("3.1.26", state)
+    for sid in ("1.3.7", "1.3.3", "1.3.9"):
+        state = apply_rule(sid, state)
+    state = apply_rule("7.3.37", state)
+    _nic_merge(state)
+    state = apply_rule("3.1.32", state)
+    state = apply_rule("3.1.91", state)
+    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+    state = apply_rule("3.2.123", state)
+    laT_varnas = parse_slp1_upadesha_sequence("laT")
+    if laT_varnas and laT_varnas[-1].slp1 == "T":
+        laT_varnas = laT_varnas[:-1]
+    state.terms.append(Term(
+        kind="pratyaya",
+        varnas=laT_varnas,
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        meta={"upadesha_slp1": "laT"},
+    ))
+    state = apply_rule("3.4.77", state)
+    tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"] = tin_adesha
+    state = apply_rule("3.4.78", state)
+    state.meta["3_1_68_kartari_recipe"] = True
+    state = apply_rule("3.1.68", state)
+    for sid in ("1.3.3", "1.3.8", "1.3.9"):
+        state = apply_rule(sid, state)
+    state = apply_rule("3.4.113", state)
+    state = apply_rule("1.1.64", state)
+    state = apply_rule("3.4.79", state)
+    state = apply_rule("7.3.84", state)
+    state = apply_rule("6.1.78", state)
+    _pada_merge(state)
+    return state
+
+
 def _san_check(state: State) -> bool:
     """P013 tape: any *dhātu* — sanādi desiderative path (``san_recipe = 'san'``)."""
     return state.meta.get("san_recipe") == "san"
@@ -3187,6 +3433,7 @@ def derive(
     upasargas: list[str] | None = None,
     pada: str | None = None,    # "parasmai" | "atmane" | None (auto-detect)
     san_recipe: bool = False,   # True → desiderative (sanādi) spine
+    nic_recipe: bool = False,   # True → Ṇic causative spine
 ) -> State:
     """
     Derive a tiṅanta form via the Aṣṭādhyāyī.
@@ -3244,6 +3491,10 @@ def derive(
     state = P00_bhuvadi_dhatu_it_anunasik_hal(state)
 
     state = _attach_upasargas(state, upasargas)
+
+    # ── Ṇic causative dispatch (P015) ──────────────────────────────────────
+    if nic_recipe and lakara == "laT":
+        return _derive_laT_nic_atmane(state, purusha, vacana)
 
     # ── sanādi dispatch (desiderative / P013) ──────────────────────────────
     if san_recipe and lakara == "laT":

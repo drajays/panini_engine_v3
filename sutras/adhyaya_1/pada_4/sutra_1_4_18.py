@@ -142,6 +142,21 @@ def _eligible_anga_indices(state: State):
             if "bha" in anga.tags:
                 continue
             yield k
+        # Structural: non-sup, ḍit/non-taddhita pratyaya with vowel onset
+        # (e.g. qāc residue "A" in anukaraṇa kyaz derivation — Art. 13).
+        if (
+            "pratyaya" in pr.tags
+            and "sup" not in pr.tags
+            and "taddhita" not in pr.tags
+            and "dit_pratyaya" in pr.tags
+        ):
+            if "pada_1_4_16" in anga.tags:
+                continue
+            if not _taddhite_yaci_anga_ok(pr):
+                continue
+            if "bha" in anga.tags:
+                continue
+            yield k
 
 
 def cond(state: State) -> bool:

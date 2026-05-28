@@ -32356,6 +32356,37 @@
         "udatta": false
       },
       "notes": "śru (pre-resolved form for P013 sananta; anunāsika it pre-stripped)"
+    },
+    {
+      "id": "BvAdi_pA",
+      "tier": "bvadi_merged",
+      "dhatupatha_id": "01.0468",
+      "gana": 1,
+      "gana_number": 1,
+      "serial_in_gana": 468,
+      "sutra_ref": "1.0468",
+      "upadesha_dev": "पा",
+      "upadesha_slp1": "pA",
+      "mula_dhatu_dev": "पा",
+      "raw_dhatu_after_it_lopa_dev": "पा",
+      "raw_dhatu_after_it_lopa_slp1": "pA",
+      "artha_dev": "पाने",
+      "artha_slp1": "pAne",
+      "artha_en": "to drink",
+      "artha_hi": "पीना",
+      "gana_label_dev": "भ्वादिः",
+      "pada_label_dev": "आत्मनेपदी",
+      "karmatva_label_dev": "सकर्मकः",
+      "it_class_label_dev": "अनिट्",
+      "it_markers": [],
+      "flags": {
+        "anit": true,
+        "set": false,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "pā (to drink) — added for P015 Ṇic causative"
     }
   ]
 }
