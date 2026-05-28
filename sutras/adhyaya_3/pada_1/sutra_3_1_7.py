@@ -1,14 +1,12 @@
 """
-3.1.7  धातोः कर्मणः समानकर्तृकादिच्छायां वा  —  VIDHI (narrow demo)
+3.1.7  धातोः कर्मणः समानकर्तृकादिच्छायां वा  —  VIDHI
 
-Demo slice (रुरुदिषति):
-  In the sense of desire (icchā), add the sanādi pratyaya `san` (represented
-  here as surface `is`) after the dhātu.
+In the sense of desire (icchā), add the sanādi pratyaya ``san`` (surface ``is``)
+after the dhātu.
 
-Engine:
-  - recipe arms via ``state.meta['3_1_7_san_arm']``.
-  - appends a pratyaya Term tagged ``sanadi`` with ``upadesha_slp1='is'``.
-  - marks it ārdhadhātuka (desiderative base).
+Structural trigger (CONSTITUTION Art. 13): ``state.meta["san_recipe"] == "san"``
+coordination key (like ``krtya_recipe``).  No arm flag needed.
+Backward-compat: ``3_1_7_san_arm`` still accepted so existing pipelines continue.
 """
 from __future__ import annotations
 
@@ -17,8 +15,14 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
+def _wants_san(state: State) -> bool:
+    if state.meta.get("san_recipe") == "san":
+        return True
+    return bool(state.meta.get("3_1_7_san_arm"))
+
+
 def cond(state: State) -> bool:
-    if not state.meta.get("3_1_7_san_arm"):
+    if not _wants_san(state):
         return False
     # avoid duplicates
     return not any((t.meta.get("upadesha_slp1") or "").strip() in {"san", "is"} and "sanadi" in t.tags for t in state.terms)
@@ -35,6 +39,7 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "is"},
     )
     state.terms.append(san)
+    state.meta.pop("san_recipe", None)
     state.meta["3_1_7_san_arm"] = False
     return state
 

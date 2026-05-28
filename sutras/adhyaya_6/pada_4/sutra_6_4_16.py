@@ -38,8 +38,7 @@ def _allowed_dhatu_upadesha(state: State) -> frozenset[str]:
 
 
 def _find_main_ci(state: State) -> int | None:
-    if not state.meta.get("6_4_16_sani_dirgha_arm"):
-        return None
+    # Structural: abhyāsa + dhātu(ci/Sru/vac) + sanādi on tape. No arm needed.
     ts = state.terms
     if len(ts) < 3:
         return None
@@ -106,7 +105,7 @@ def act(state: State) -> State:
         san.varnas = san.varnas[1:]
         san.meta["upadesha_slp1"] = "s"
         san.meta["6_4_16_san_initial_i_lopa_done"] = True
-    state.meta["6_4_16_sani_dirgha_arm"] = False
+    state.meta.pop("6_4_16_sani_dirgha_arm", None)
     return state
 
 

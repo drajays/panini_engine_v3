@@ -1571,6 +1571,67 @@ def _derive_laT_jYA_apa(state: State, purusha: int, vacana: int) -> State:
     return state
 
 
+def _san_check(state: State) -> bool:
+    """P013 tape: any *dhātu* — sanādi desiderative path (``san_recipe = 'san'``)."""
+    return state.meta.get("san_recipe") == "san"
+
+
+def _derive_laT_san_atmane(state: State, purusha: int, vacana: int) -> State:
+    """
+    Sanādi (desiderative) laṭ ātmanepada — P013 *śuśrūṣate*.
+
+    Chain: **3.1.7** (san) → **1.2.8** → **1.1.5** → **3.1.32** (saṃjñā) →
+    **6.1.1** (dvitva, structural) → **6.1.4** → **6.4.16** (dīrgha before san) →
+    **7.4.60** (abhyāsa hrasva) → **3.1.91** → P06a → **3.2.123** → laṭ →
+    **3.4.77** → **3.4.78** (ta) → **3.1.68** (śap) → **1.3.3/8/9** →
+    **3.4.113** → **1.1.64** → **3.4.79** → merge → **6.1.97** → **8.2.1** →
+    **8.3.59**.
+    """
+    state.meta["lakara"] = "laT"
+    # 3.1.7: san suffix (structural via san_recipe coordination key)
+    state = apply_rule("3.1.7", state)
+    state = apply_rule("1.2.8", state)
+    state = apply_rule("1.1.5", state)
+    state = apply_rule("3.1.32", state)
+    # 6.1.1: dvitva — fires structurally (dhātu + sanādi on tape)
+    state = apply_rule("6.1.1", state)
+    state = apply_rule("6.1.4", state)
+    # 6.4.16: dīrgha before san — fires structurally (abhyāsa + dhātu + san)
+    state = apply_rule("6.4.16", state)
+    # 7.4.60: abhyāsa hrasva reduction
+    state = apply_rule("7.4.60", state)
+    # Tiṅ spine (ātmanepada 3sg laṭ)
+    state = apply_rule("3.1.91", state)
+    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+    state = apply_rule("3.2.123", state)
+    laT_varnas = parse_slp1_upadesha_sequence("laT")
+    if laT_varnas and laT_varnas[-1].slp1 == "T":
+        laT_varnas = laT_varnas[:-1]
+    state.terms.append(Term(
+        kind="pratyaya",
+        varnas=laT_varnas,
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        meta={"upadesha_slp1": "laT"},
+    ))
+    state = apply_rule("3.4.77", state)
+    tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"] = tin_adesha
+    state = apply_rule("3.4.78", state)
+    state.meta["3_1_68_kartari_recipe"] = True
+    state = apply_rule("3.1.68", state)
+    for sid in ("1.3.3", "1.3.8", "1.3.9"):
+        state = apply_rule(sid, state)
+    state = apply_rule("3.4.113", state)
+    state = apply_rule("1.1.64", state)
+    state = apply_rule("3.4.79", state)
+    _pada_merge(state)
+    state = apply_rule("6.1.97", state)
+    state = apply_rule("8.2.1", state)
+    state = apply_rule("8.3.59", state)
+    return state
+
+
 def _dyut_vi_check(state: State) -> bool:
     """P018-B tape: ``vi`` + ``dyut`` *dhātu* — ātmanepada luṅ (kartrabhiprāya 1.3.72)."""
     for i, t in enumerate(state.terms):
@@ -3125,6 +3186,7 @@ def derive(
     *,
     upasargas: list[str] | None = None,
     pada: str | None = None,    # "parasmai" | "atmane" | None (auto-detect)
+    san_recipe: bool = False,   # True → desiderative (sanādi) spine
 ) -> State:
     """
     Derive a tiṅanta form via the Aṣṭādhyāyī.
@@ -3182,6 +3244,11 @@ def derive(
     state = P00_bhuvadi_dhatu_it_anunasik_hal(state)
 
     state = _attach_upasargas(state, upasargas)
+
+    # ── sanādi dispatch (desiderative / P013) ──────────────────────────────
+    if san_recipe and lakara == "laT":
+        state.meta["san_recipe"] = "san"
+        return _derive_laT_san_atmane(state, purusha, vacana)
 
     # ── 3. STAGE 2 — pada-nirṇaya (1.3.12 / 1.3.28 block, then 1.3.78 śeṣa) ─
     # 1.3.28 āṅo yamahanaḥ; 1.3.12 anudāttet → ātmanepada before 1.3.78.

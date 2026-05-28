@@ -593,15 +593,13 @@ def test_P007_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 
 
 def test_P013_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P013** (*śuśrūṣate*): bundle IAST ↔ engine SLP1 surface."""
+    """**P013** (*śuśrūṣate*): canonical derive() ← Śru laṭ ātmanepada 3sg desiderative."""
 
-    from pipelines.zuSrUzate_san_Sru_corrected_P013_demo import (
-        derive_zuSrUzate_san_Sru_corrected_P013,
-    )
+    from pipelines.tinanta import derive
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P013")
     assert hit["target"]["iast"] == "śuśrūṣate"
-    assert derive_zuSrUzate_san_Sru_corrected_P013().flat_slp1() == "SuSrUzate"
+    assert derive("Sru", "laT", "kartari", 3, 1, san_recipe=True).flat_slp1() == "SuSrUzate"
 
 
 def test_P015_bundle_target_matches_pipeline(corrected_v2: dict) -> None:

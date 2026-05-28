@@ -32325,6 +32325,37 @@
         "udatta": false
       },
       "notes": "Pedagogical भू-धू-मू set — karmaṇi laṭ मूयते paradigm."
+    },
+    {
+      "id": "BvAdi_Sru",
+      "tier": "bvadi_merged",
+      "dhatupatha_id": "01.Sru",
+      "gana": 1,
+      "gana_number": 1,
+      "serial_in_gana": 9999,
+      "sutra_ref": "1.Sru",
+      "upadesha_dev": "श्रु",
+      "upadesha_slp1": "Sru",
+      "mula_dhatu_dev": "श्रु",
+      "raw_dhatu_after_it_lopa_dev": "श्रु",
+      "raw_dhatu_after_it_lopa_slp1": "Sru",
+      "artha_dev": "श्रवणे",
+      "artha_slp1": "SravaNe",
+      "artha_en": "to hear",
+      "artha_hi": "सुनना",
+      "gana_label_dev": "भ्वादिः",
+      "pada_label_dev": "आत्मनेपदी",
+      "karmatva_label_dev": "सकर्मकः",
+      "it_class_label_dev": "अनिट्",
+      "it_markers": [],
+      "flags": {
+        "anit": true,
+        "set": false,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "śru (pre-resolved form for P013 sananta; anunāsika it pre-stripped)"
     }
   ]
 }

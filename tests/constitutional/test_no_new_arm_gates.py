@@ -44,7 +44,7 @@ _SUTRAS_ROOT = pathlib.Path(__file__).resolve().parents[2] / "sutras"
 # the P5/P6 audit.  This is a CEILING: migrations that remove an arm read must
 # lower this number; commits may never raise it.
 #   • measured 2026-05-28 after the P5 arm-flag clearance campaign.
-ARM_GATE_BASELINE = 96
+ARM_GATE_BASELINE = 95
 
 
 def _meta_key(node: ast.AST):

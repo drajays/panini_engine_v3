@@ -10,12 +10,37 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
 
 
+def _needs_sanadi_dvitva(state: State) -> bool:
+    """Structural: dhātu + san (desiderative) suffix on tape, no abhyāsa yet.
+
+    Only fires for the san desiderative pratyaya (upadesha "is"/"san").
+    Does NOT fire for yaṅ (yaG) which is also tagged sanadi but needs its own
+    dvitva path via P00_yang_dvitva_abhyasa_gate.
+    """
+    if state.samjna_registry.get("6.1.1_dvitva_done"):
+        return False
+    _SAN_UPADESHA = frozenset({"san", "is"})
+    has_san = any(
+        "sanadi" in t.tags
+        and (t.meta.get("upadesha_slp1") or "").strip() in _SAN_UPADESHA
+        for t in state.terms
+    )
+    if not has_san:
+        return False
+    if not any("dhatu" in t.tags for t in state.terms):
+        return False
+    return not any("abhyasa" in t.tags for t in state.terms)
+
+
 def cond(state: State) -> bool:
     # Duplicate **``pawat``** *prātipadika* (vārttika *dvitva* before डाच्).
     if not state.samjna_registry.get("6.1.1_p017_dvitva_done"):
         if len(state.terms) == 1 and "prātipadika" in state.terms[0].tags:
             if "".join(v.slp1 for v in state.terms[0].varnas) == "pawat":
                 return True
+    # Structural sanādi dvitva (no arm needed).
+    if _needs_sanadi_dvitva(state):
+        return True
     # Allow an explicit dvitva action even if adhikāra is already open.
     if state.meta.get("6_1_1_dvitva_arm") and not state.samjna_registry.get("6.1.1_dvitva_done"):
         return True
@@ -44,9 +69,9 @@ def act(state: State) -> State:
             state.terms.insert(i + 1, dup)
             state.samjna_registry["6.1.1_p017_dvitva_done"] = True
             return state
-    # Glass-box: when a recipe explicitly arms dvitya, duplicate the first dhātu
-    # as abhyāsa (structural but via apply_rule).
-    if state.meta.get("6_1_1_dvitva_arm") and not state.samjna_registry.get("6.1.1_dvitva_done"):
+    # Structural sanādi dvitva OR arm-gated dvitva: duplicate first dhātu as abhyāsa.
+    if (_needs_sanadi_dvitva(state) or
+            (state.meta.get("6_1_1_dvitva_arm") and not state.samjna_registry.get("6.1.1_dvitva_done"))):
         for i, t in enumerate(state.terms):
             if "dhatu" not in t.tags:
                 continue
