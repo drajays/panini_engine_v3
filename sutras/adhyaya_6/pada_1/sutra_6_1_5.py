@@ -3,7 +3,12 @@
 
 Padaccheda: उभे अभ्यस्तम्
 
-उभे अभ्यस्तम् (6.1.5)
+Both the abhyāsa (reduplication copy) and the dhātu together are called
+"abhyasta". This sūtra fires when dvitva (6.1.4 + 6.1.8) has created an
+"abhyasa"-tagged term on the tape.
+
+Structural trigger: any Term on the tape carries the "abhyasa" tag — which
+6.1.8 sets on the newly created reduplication copy.
 """
 from __future__ import annotations
 
@@ -16,7 +21,11 @@ _GATE_KEY: str = "6_1_5_uBe_5"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("6_1_5_arm") is True
+    # Structural: dvitva has placed an abhyāsa term on the tape (6.1.8)
+    if any("abhyasa" in t.tags for t in state.terms):
+        return True
+    # Legacy arm path (backward-compat)
+    return bool(state.meta.get("6_1_5_arm"))
 
 
 def act(state: State) -> State:
