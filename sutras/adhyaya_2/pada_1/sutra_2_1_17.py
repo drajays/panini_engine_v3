@@ -31,7 +31,6 @@ def cond(state: State) -> bool:
         if t.meta.get("upadesha_slp1") in _TISTHADGU_GANA:
             return True
     # Also fire when explicitly armed by pipeline
-    return bool(state.meta.get("2_1_17_tisthadgu_arm"))
 
 
 def act(state: State) -> State:

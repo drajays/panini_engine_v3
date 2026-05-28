@@ -18,7 +18,6 @@ def cond(state: State) -> bool:
         return False
     if any("dhatu" in t.tags for t in state.terms):
         return True
-    return bool(state.meta.get("3_3_37_arm"))
 
 
 def act(state: State) -> State:

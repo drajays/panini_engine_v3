@@ -22,7 +22,6 @@ def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     # Fire when the pipeline marks an āyāma (extent/length) avyayībhāva context.
-    return bool(state.meta.get("2_1_16_ayama_arm"))
 
 
 def act(state: State) -> State:

@@ -19,7 +19,6 @@ def cond(state: State) -> bool:
         return False
     if adhikara_in_effect("7.2.14", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
         return True
-    return bool(state.meta.get("7_2_14_arm"))
 
 def act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True

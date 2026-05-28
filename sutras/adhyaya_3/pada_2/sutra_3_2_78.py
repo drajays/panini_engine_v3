@@ -21,7 +21,6 @@ def cond(state: State) -> bool:
             and not any("krt" in t.tags and "pratyaya" in t.tags
                         for t in state.terms)):
         return True
-    return bool(state.meta.get("3_2_78_arm"))
 
 
 def act(state: State) -> State:

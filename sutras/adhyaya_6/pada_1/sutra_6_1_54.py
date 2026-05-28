@@ -19,7 +19,6 @@ def cond(state: State) -> bool:
     # Structural: aṅga present
     if any("anga" in t.tags or t.varnas for t in state.terms):
         return True
-    return bool(state.meta.get("6_1_54_arm"))
 
 
 def act(state: State) -> State:

@@ -18,7 +18,6 @@ def cond(state: State) -> bool:
         return False
     if any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
         return True
-    return bool(state.meta.get("2_3_40_arm"))
 
 
 def act(state: State) -> State:

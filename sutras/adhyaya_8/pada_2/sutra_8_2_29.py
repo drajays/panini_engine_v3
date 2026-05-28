@@ -56,7 +56,6 @@ def cond(state: State) -> bool:
         return False
     if state.tripadi_zone and any("anga" in t.tags or t.varnas for t in state.terms):
         return True
-    return bool(state.meta.get("8_2_29_arm"))
 
 
 def act(state: State) -> State:
