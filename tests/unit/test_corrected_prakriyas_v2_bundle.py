@@ -677,12 +677,10 @@ def test_P018_B_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 
 
 def test_P019_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P019** (*avartsyat*): bundle IAST ↔ engine SLP1 surface."""
+    """**P019** (*avartsyat*): canonical derive() ← vftu~ lṛṅ kartarī 3sg."""
 
-    from pipelines.avartsyat_lRG_vf_corrected_P019_demo import (
-        derive_avartsyat_lRG_vf_corrected_P019,
-    )
+    from pipelines.tinanta import derive
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P019")
     assert hit["target"]["iast"] == "avartsyat"
-    assert derive_avartsyat_lRG_vf_corrected_P019().flat_slp1() == "avartsyat"
+    assert derive("vftu~", "lRG", "kartari", 3, 1).flat_slp1() == "avartsyat"
