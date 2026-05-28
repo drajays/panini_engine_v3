@@ -9,7 +9,7 @@ the technical name *sampradāna-kāraka*. E.g. *bālāya spṛhayati* — the b�
 (child) is what is longed for, hence sampradāna.
 
 *Engine:* tags bearing ``"spfhA_Ipsita"`` get the saṃjñā ``"sampradAna"``.
-``cond`` does NOT read vibhakti/vacana/lakāra/surface/data/reference.
+``cond`` does NOT read vibhakti/vacana/lakāra/surface or any gold corpus.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
 """
 from __future__ import annotations

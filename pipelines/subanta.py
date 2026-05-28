@@ -19,7 +19,7 @@ Given:
   • ``derive_akarant_strilinga`` — ``derive(..., linga="strīliṅga")`` with optional shape guard.
 
 *Sarvādi* सर्वनाम (e.g. **अन्य**, ``anya`` — listed in ``data/inputs/sarvadi_slp1.json`` for **1.1.27**):
-  • ``derive_anya_pullinga`` — thin wrapper; gold in ``data/reference/subanta_gold/anya_pullinga.json``.
+  • ``derive_anya_pullinga`` — thin wrapper; gold lives under the test/UI gold corpus.
 
 Returns:
   State  — with full trace in state.trace and rendered surface in
@@ -313,7 +313,7 @@ def stem_slp1_looks_Akarant_strilinga(stem_slp1: str) -> bool:
     True if ``stem_slp1`` ends in long ``A`` (SLP1 = ā) — the usual shape for
     आकारान्त स्त्रीलिङ्ग prātipadikas like ``rADA`` (राधा, ध = ``D``).
 
-    Pipeline/UI guard only; does not read ``data/reference/`` (CONSTITUTION Art. 6).
+    Pipeline/UI guard only; does not read any gold corpus (CONSTITUTION Art. 6).
     """
     s = stem_slp1.strip()
     if len(s) < 1:
@@ -346,8 +346,8 @@ def derive_anya_pullinga(vibhakti: int, vacana: int) -> State:
     """
     **अन्य** — *sarvanāma* (1.1.27 *sarvādi* list), *a*-stem masculine.
 
-    Thin wrapper around ``derive("anya", ...)``.  Gold surfaces:
-    ``data/reference/subanta_gold/anya_pullinga.json`` (tests/UI only).
+    Thin wrapper around ``derive("anya", ...)``.  Gold surfaces live in the
+    test/UI gold corpus only (CONSTITUTION Art. 6).
     """
     return derive("anya", vibhakti, vacana, linga="pulliṅga")
 

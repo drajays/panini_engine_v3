@@ -12,7 +12,7 @@ the *sup-saṃjñā*.
 
 *Engine:* sets ``paribhasha_gates["1_4_103_supaH"]`` once.  Downstream rules
 check this gate before assigning *vibhakti* tags via **1.4.104**.
-``cond`` never reads vibhakti/vacana/lakāra/surface/data/reference.
+``cond`` never reads vibhakti/vacana/lakāra/surface or any gold corpus.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
 """
 from __future__ import annotations
