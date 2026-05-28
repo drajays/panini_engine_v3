@@ -30,3 +30,4 @@ coverage.xml
 # Nested prior engine checkout (local reference; not part of v3 tree)
 panini_engine_v2/
 panini_engine_v2--git/
+.claude/worktrees/
