@@ -53,11 +53,10 @@ def _p019_vft_guna_index(state: State) -> int | None:
 
 def _p018_b_dyut_guna(state: State) -> tuple[int, int] | None:
     """
-    **P018-B** (*vyadyotiṣṭa*): laghūpadha **``u``** of **``dyut``** → **``o``**
-    once **7.2.35** has placed initial **``i``** on ``sic``.
+    Laghūpadha guṇa: **``u``** of **``dyut``** → **``o``** before a sic term
+    whose first varṇa is **``i``** (placed by **7.2.35** iṭ-āgama). Structural:
+    checks dhātu+sic adjacency; no arm flag (Art. 13).
     """
-    if not state.meta.get("corrected_v2_P018_B_7_3_86_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags:
             continue

@@ -663,15 +663,13 @@ def test_P018_A_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 
 
 def test_P018_B_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P018-B** (*vyadyotiṣṭa*): bundle IAST ↔ engine SLP1 surface."""
+    """**P018-B** (*vyadyotiṣṭa*): canonical derive() ← vi + dyuta~ luṅ ātmanepada 3sg."""
 
-    from pipelines.vyadyotizwa_luN_dyut_corrected_P018_B_demo import (
-        derive_vyadyotizwa_luN_dyut_corrected_P018_B,
-    )
+    from pipelines.tinanta import derive
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P018-B")
     assert hit["target"]["iast"] == "vyadyotiṣṭa"
-    assert derive_vyadyotizwa_luN_dyut_corrected_P018_B().flat_slp1() == "vyadyotizwa"
+    assert derive("dyuta~", "luG", "kartari", 3, 1, upasargas=["vi"], pada="atmane").flat_slp1() == "vyadyotizwa"
 
 
 def test_P019_bundle_target_matches_pipeline(corrected_v2: dict) -> None:

@@ -862,6 +862,8 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
         # No IT lopa needed: P00 already dropped sic's c-IT; iṭ 'i' has no T marker
         state.meta.pop("7_2_35_allow_sic", None)
         state.meta.pop("luN_sic_ardhadhatuka", None)
+        # 7.3.86 laghūpadha guṇa before sic+iṭ (structural: dyut+i → dyot+i)
+        state = apply_rule("7.3.86", state)
 
     # ── Stage: 1.2.4 apit sārvadhatuka → kṅit ───────────────────────────────
     state = apply_rule("1.2.4", state)
@@ -1567,6 +1569,19 @@ def _derive_laT_jYA_apa(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("3.4.79", state)
     _pada_merge(state)
     return state
+
+
+def _dyut_vi_check(state: State) -> bool:
+    """P018-B tape: ``vi`` + ``dyut`` *dhātu* — ātmanepada luṅ (kartrabhiprāya 1.3.72)."""
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags:
+            continue
+        if "".join(v.slp1 for v in t.varnas) != "dyut":
+            return False
+        if i == 0:
+            return False
+        return (state.terms[i - 1].meta.get("upadesha_slp1") or "").strip() == "vi"
+    return False
 
 
 def _kf_with_upasarga_check(state: State) -> bool:
@@ -3109,6 +3124,7 @@ def derive(
     vacana: int,         # 1 = eka, 2 = dvi, 3 = bahu
     *,
     upasargas: list[str] | None = None,
+    pada: str | None = None,    # "parasmai" | "atmane" | None (auto-detect)
 ) -> State:
     """
     Derive a tiṅanta form via the Aṣṭādhyāyī.
@@ -3118,6 +3134,9 @@ def derive(
     dhatu_upadesha : SLP1 upadeśa string from dhātupātha (e.g. "BU", "pac", "kf").
     lakara         : SLP1 lakāra name (e.g. "laT", "liT", "loT", "laG").
     prayoga        : "kartari" | "karmani" | "bhave".
+    pada           : Optional pada override "parasmai" | "atmane". When set, skips
+                     the automatic 1.3.12/1.3.78 pada detection. Useful for ubhayapadi
+                     roots where the context selects a specific pada (e.g. P018-B).
     purusha        : 3 (prathama), 2 (madhyama), 1 (uttama).
     vacana         : 1 (ekavacana), 2 (dvivacana), 3 (bahuvacana).
 
@@ -3170,7 +3189,7 @@ def derive(
         state = apply_rule("1.3.28", state)
         state = apply_rule("1.3.12", state)
         state = apply_rule("1.3.78", state)
-    pada_key = _resolve_pada_from_gate(state)  # "parasmai" or "atmane"
+    pada_key = pada if pada in ("parasmai", "atmane") else _resolve_pada_from_gate(state)
 
     # ── bhāve dispatch (3.4.69 — ātmanepada, no karmaṇi yaḳ) ───────────────
     if prayoga == "bhave":
