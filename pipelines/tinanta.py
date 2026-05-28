@@ -826,7 +826,10 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: cli/sic chain (before lakāra substitution: 3.1.43 needs luG) ──
     state.meta["3_1_43_cli_luG_arm"] = True
     state = apply_rule("3.1.43", state)   # inserts cli before luG placeholder
-    state = apply_rule("3.1.44", state)   # cli → sic (upadesha_slp1="sic", varnas=[s,c])
+    # 3.1.55 cli→aṅ for puṣyādi/dyutādi (parasmaipada only); structural cond (dyut+cli)
+    if pada_key == "parasmai":
+        state = apply_rule("3.1.55", state)
+    state = apply_rule("3.1.44", state)   # cli → sic; vacuous if 3.1.55 already fired
 
     # ── Stage: 3.4.77 + 3.4.78 tiṅ ādeśa ────────────────────────────────────
     state = apply_rule("3.4.77", state)
@@ -912,6 +915,11 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
         # 6.1.66 v of vuk drops before HAL; stays before AC
         state = apply_rule("6.1.66", state)
+
+    # 6.1.77 iko yaṇ aci — IK→yaṇ before AC (fires for upasarga+aṭ junctions,
+    # e.g. vi+a → vy+a in vyadyutat). Must run AFTER vuk so that ū of bhū is
+    # separated from anti by vuk-v (preventing spurious ū→v change in abhūvant).
+    state = apply_rule("6.1.77", state)
 
     state = apply_rule("1.4.14", state)
 
