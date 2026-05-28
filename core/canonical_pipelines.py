@@ -211,9 +211,10 @@ def P00_upadesha_it_anunasik_hal_lopa(s: State) -> State:
 
 
 def P00_bhuvadi_dhatu_it_anunasik_hal(s: State) -> State:
-    """1.3.1 → *anunāsika*/*hal* *it* slice → drop ``upadesha`` on the primary dhātu."""
+    """1.3.1 → anunāsika/hal it → **1.3.5** ādi ñi/ṭu/ḍu → 1.3.9 → drop upadesha."""
     s = apply_rule("1.3.1", s)
-    s = P00_upadesha_it_anunasik_hal_lopa(s)
+    for sid in ("1.3.2", "1.3.3", "1.3.5", "1.3.9"):
+        s = apply_rule(sid, s)
     if s.terms:
         s.terms[0].tags.discard("upadesha")
     return s

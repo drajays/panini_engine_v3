@@ -1316,7 +1316,6 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("3.4.101", state)
 
     # 3.4.87: sip→hi BEFORE 3.4.86 (prevent 'si' being seen by i→u rule)
-    state.meta["P031_3_4_87_sip_to_hi_arm"] = True
     state = apply_rule("3.4.87", state)
 
     # 7.1.3: jhi→anti (has_i=True — loṭ retains 'i', unlike laṅ which drops it first)
@@ -1492,6 +1491,182 @@ def _derive_laT_yam_Anga(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule(sid, state)
     state = apply_rule("1.1.64", state)
     state = apply_rule("3.4.79", state)
+    _pada_merge(state)
+    return state
+
+
+def _jYA_apa_check(state: State) -> bool:
+    """P012 tape: ``apa`` + ``jYA`` *dhātu* (1.3.44 apahnave jñaḥ → ātmanepada; 3.1.81 śnā)."""
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags:
+            continue
+        if "".join(v.slp1 for v in t.varnas) != "jYA":
+            return False
+        if i == 0:
+            return False
+        prev = state.terms[i - 1]
+        if "upasarga" not in prev.tags:
+            return False
+        return (prev.meta.get("upadesha_slp1") or "").strip() == "apa"
+    return False
+
+
+def _krI_with_upasarga_check(state: State) -> bool:
+    """P009 tape: upasarga + ``krI`` *dhātu* (3.1.81 śnā; ātmanepada by 1.3.72 svarita-ñit)."""
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags:
+            continue
+        if "".join(v.slp1 for v in t.varnas) != "krI":
+            return False
+        if i == 0:
+            return False
+        return "upasarga" in state.terms[i - 1].tags
+    return False
+
+
+def _derive_laT_jYA_apa(state: State, purusha: int, vacana: int) -> State:
+    """
+    ``apa`` + ``jYA`` laṭ ātmanepada (P012 *apajānīte*): **1.3.44** context.
+
+    Chain: **3.1.91** → P06a → **3.2.123** → laṭ → **3.4.77** → **3.4.78** (ta) →
+    **3.1.81** (śnā) → **7.3.79** (jñā→jā) → **1.3.8** / **1.3.9** →
+    **6.4.113** → **1.1.64** → **3.4.79** → merge.
+    """
+    state.meta["lakara"] = "laT"
+    state = apply_rule("3.1.91", state)
+    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+    state = apply_rule("3.2.123", state)
+    laT_varnas = parse_slp1_upadesha_sequence("laT")
+    if laT_varnas and laT_varnas[-1].slp1 == "T":
+        laT_varnas = laT_varnas[:-1]
+    state.terms.append(Term(
+        kind="pratyaya",
+        varnas=laT_varnas,
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        meta={"upadesha_slp1": "laT"},
+    ))
+    state = apply_rule("3.4.77", state)
+    tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"] = tin_adesha
+    state = apply_rule("3.4.78", state)
+    state = apply_rule("3.1.81", state)
+    state = apply_rule("7.3.79", state)
+    for sid in ("1.3.8", "1.3.9"):
+        state = apply_rule(sid, state)
+    state = apply_rule("6.4.113", state)
+    state = apply_rule("1.1.64", state)
+    state = apply_rule("3.4.79", state)
+    _pada_merge(state)
+    return state
+
+
+def _kf_with_upasarga_check(state: State) -> bool:
+    """P011 tape: upasarga + ``kf`` *dhātu* (gana 8 tanādi; 3.1.79 u-vikaraṇa; ātmanepada)."""
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags:
+            continue
+        if "".join(v.slp1 for v in t.varnas) != "kf":
+            return False
+        if t.meta.get("gana") != 8:
+            return False
+        if i == 0:
+            return False
+        return "upasarga" in state.terms[i - 1].tags
+    return False
+
+
+def _derive_laT_kf_u_atmane(state: State, purusha: int, vacana: int) -> State:
+    """
+    upasarga + ``kf`` (qukfY) laṭ ātmanepada (P011-A *utkurute*, P011-B *upaskurute*):
+    **3.1.79** u-vikaraṇa + **7.3.84** guṇa.
+
+    Chain: **6.1.135**/**6.1.139** (suṭ, if applicable) → **3.1.91** → P06a →
+    **3.2.123** → laṭ → **3.4.77** → **3.4.78** (ta) → **3.1.79** (u) →
+    **7.3.84** → **1.1.51** → **1.2.4** → **1.1.64** → **3.4.79** →
+    **6.4.110** → merge → **8.2.1** → **8.4.55**.
+    """
+    state.meta["lakara"] = "laT"
+    # suṭ agama for upa + kf (6.1.135/6.1.139) — fires structurally if conditions met.
+    state = apply_rule("6.1.135", state)
+    state = apply_rule("6.1.139", state)
+    # 1.3.3/1.3.9 on suṭ it-marker only — guard upasarga terms so their final
+    # hal (e.g. 'd' in ud) is not misread as halantyam it.
+    for t in state.terms:
+        if "upasarga" in t.tags:
+            t.tags.discard("upadesha")
+    for sid in ("1.3.3", "1.3.9"):
+        state = apply_rule(sid, state)
+    state = apply_rule("3.1.91", state)
+    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+    state = apply_rule("3.2.123", state)
+    laT_varnas = parse_slp1_upadesha_sequence("laT")
+    if laT_varnas and laT_varnas[-1].slp1 == "T":
+        laT_varnas = laT_varnas[:-1]
+    state.terms.append(Term(
+        kind="pratyaya",
+        varnas=laT_varnas,
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        meta={"upadesha_slp1": "laT"},
+    ))
+    state = apply_rule("3.4.77", state)
+    tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"] = tin_adesha
+    state = apply_rule("3.4.78", state)
+    # 3.1.79 fires structurally: gana 8 + tin_adesha_3_4_78 on tape
+    state = apply_rule("3.1.79", state)
+    state = apply_rule("7.3.84", state)
+    state = apply_rule("1.1.51", state)
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            t.tags.discard("upadesha")
+    state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
+    state = apply_rule("1.2.4", state)
+    state = apply_rule("1.1.5", state)
+    state = apply_rule("1.1.64", state)
+    state = apply_rule("3.4.79", state)
+    state = apply_rule("6.4.110", state)
+    _pada_merge(state)
+    state = apply_rule("8.2.1", state)
+    state = apply_rule("8.4.55", state)
+    return state
+
+
+def _derive_laT_krI_sna_atmane(state: State, purusha: int, vacana: int) -> State:
+    """
+    upasarga + ``krI`` laṭ ātmanepada (P009 *parikrīṇīte*): **3.1.81** śnā + tripāḍī.
+
+    Chain: **3.1.91** → P06a → **3.2.123** → laṭ → **3.4.77** → **3.4.78** (ta) →
+    **3.1.81** (śnā) → **1.3.8** / **1.3.9** → **6.4.113** → **1.1.64** →
+    **3.4.79** → **8.2.1** → **8.4.2** → merge.
+    """
+    state.meta["lakara"] = "laT"
+    state = apply_rule("3.1.91", state)
+    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+    state = apply_rule("3.2.123", state)
+    laT_varnas = parse_slp1_upadesha_sequence("laT")
+    if laT_varnas and laT_varnas[-1].slp1 == "T":
+        laT_varnas = laT_varnas[:-1]
+    state.terms.append(Term(
+        kind="pratyaya",
+        varnas=laT_varnas,
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        meta={"upadesha_slp1": "laT"},
+    ))
+    state = apply_rule("3.4.77", state)
+    tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"] = tin_adesha
+    state = apply_rule("3.4.78", state)
+    state = apply_rule("3.1.81", state)
+    for sid in ("1.3.8", "1.3.9"):
+        state = apply_rule(sid, state)
+    state = apply_rule("6.4.113", state)
+    state = apply_rule("1.1.64", state)
+    state = apply_rule("3.4.79", state)
+    state = apply_rule("8.2.1", state)
+    state = apply_rule("8.4.2", state)
     _pada_merge(state)
     return state
 
@@ -2975,6 +3150,7 @@ def derive(
     #   1.3.1  dhātu saṃjñā
     #   1.3.2  anunāsika → it (vacuous for most dhātus without anunāsika it)
     #   1.3.3  halantyam (vacuous for dhātus without trailing hal-it upadeśa)
+    #   1.3.5  ādir añiṭuḍavaḥ — ñi/ṭu/ḍu initial markers → it (DukfY → kf)
     #   1.3.9  it-lopa (removes it-marked varṇas from upadeśa)
     state = P00_bhuvadi_dhatu_it_anunasik_hal(state)
 
@@ -3131,6 +3307,18 @@ def derive(
     # ── laṭ dispatch (āṅ + yam / P010) ───────────────────────────────────────
     if lakara in ("laT",) and _yam_with_A_upasarga(state):
         return _derive_laT_yam_Anga(state, purusha, vacana)
+
+    # ── laṭ dispatch (apa + jYā / P012) ──────────────────────────────────────
+    if lakara in ("laT",) and _jYA_apa_check(state):
+        return _derive_laT_jYA_apa(state, purusha, vacana)
+
+    # ── laṭ dispatch (upasarga + krī / P009) ─────────────────────────────────
+    if lakara in ("laT",) and _krI_with_upasarga_check(state):
+        return _derive_laT_krI_sna_atmane(state, purusha, vacana)
+
+    # ── laṭ dispatch (upasarga + kf tanādi / P011) ────────────────────────────
+    if lakara in ("laT",) and _kf_with_upasarga_check(state):
+        return _derive_laT_kf_u_atmane(state, purusha, vacana)
 
     # ═══════════════════════════════════════════════════════════════════
     # STAGE 3 — LAKĀRA ATTACHMENT + TIṄ SELECTION (spec steps 2–9)

@@ -31,7 +31,9 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 # Updated: +50 from additional bhāve/karmani lakāra pipelines restored from stash (2026-05-27).
 # Updated: +1 from dASaraThi_apatya_iY_demo.py (2026-05-28).
 # Updated: +19 from vandanIya, pracChanIya, mlecChanIya pipelines (2026-05-28).
-MAX_DUPLICATE_GROUPS = 549
+# Updated: +29 from T3 merge — _derive_laT_jYA_apa/_krI_sna/_kf_u_atmane spines
+#          added to tinanta.py for P009/P011/P012 corrected demo integration (2026-05-28).
+MAX_DUPLICATE_GROUPS = 578
 
 
 @pytest.fixture(scope="module")

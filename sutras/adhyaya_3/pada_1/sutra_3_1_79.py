@@ -1,14 +1,16 @@
 """
-3.1.79  तनादिकृञ्भ्यः उः  —  VIDHI (narrow demo)
+3.1.79  तनादिकृञ्भ्यः उः  —  VIDHI
 
-Demo slice (कुरुतः):
-  For tanādi dhātu `kf` (कृ) in laṭ, insert the vikaraṇa `u` (उ) as a pratyaya
-  immediately after the dhātu (exception to śap).
+For tanādi (gaṇa 8) and kṛñ roots, insert vikaraṇa ``u`` after the dhātu,
+displacing śap (3.1.68 apavāda). The ``u`` is sārvadhatuka-tagged so 7.3.84
+fires guṇa on the dhātu (kṛ → kar).
 
-Engine:
-  - recipe arms via ``state.meta['3_1_79_tanadi_u_arm']``.
-  - inserts a pratyaya Term with SLP1 ``u`` tagged as ``sarvadhatuka`` so
-    **7.3.84** triggers guṇa on the dhātu.
+Structural trigger (CONSTITUTION Art. 13):
+- dhātu ``gana == 8`` OR stem in ``_TANADI_STEMS``
+- a ``tin_adesha_3_4_78``-tagged term is on tape (sārvadhatuka context)
+- no ``u`` vikaraṇa already inserted
+
+No arm flag required (Art. 13).
 """
 from __future__ import annotations
 
@@ -16,40 +18,40 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
+# Post-it-lopa stems of tanādi roots currently exercised in this repository.
+_TANADI_STEMS: frozenset[str] = frozenset({"kf", "tan", "man", "san", "van", "kan"})
 
-def _first_dhatu_index(state: State) -> int | None:
+
+def _find_dhatu_for_u(state: State) -> int | None:
     for i, t in enumerate(state.terms):
-        if "dhatu" in t.tags:
-            return i
+        if "dhatu" not in t.tags:
+            continue
+        gana = t.meta.get("gana")
+        stem = "".join(v.slp1 for v in t.varnas)
+        if gana != 8 and stem not in _TANADI_STEMS:
+            continue
+        if t.meta.get("3_1_79_u_done"):
+            continue
+        # already inserted?
+        if i + 1 < len(state.terms):
+            nxt = state.terms[i + 1]
+            if (nxt.meta.get("upadesha_slp1") or "").strip() == "u":
+                continue
+        # sārvadhatuka tin must be on tape
+        if not any("tin_adesha_3_4_78" in t2.tags for t2 in state.terms):
+            continue
+        return i
     return None
 
 
-def _matches(state: State) -> bool:
-    if not state.meta.get("3_1_79_tanadi_u_arm"):
-        return False
-    di = _first_dhatu_index(state)
-    if di is None:
-        return False
-    dh = state.terms[di]
-    if (dh.meta.get("upadesha_slp1") or "").strip() not in {"kf", "qukfY"}:
-        return False
-    if dh.meta.get("3_1_79_u_done"):
-        return False
-    # already inserted?
-    if di + 1 < len(state.terms) and (state.terms[di + 1].meta.get("upadesha_slp1") or "").strip() == "u":
-        return False
-    return True
-
-
 def cond(state: State) -> bool:
-    return _matches(state)
+    return _find_dhatu_for_u(state) is not None
 
 
 def act(state: State) -> State:
-    if not _matches(state):
+    di = _find_dhatu_for_u(state)
+    if di is None:
         return state
-    di = _first_dhatu_index(state)
-    assert di is not None
     u = Term(
         kind="pratyaya",
         varnas=list(parse_slp1_upadesha_sequence("u")),
@@ -58,7 +60,7 @@ def act(state: State) -> State:
     )
     state.terms.insert(di + 1, u)
     state.terms[di].meta["3_1_79_u_done"] = True
-    state.meta["3_1_79_tanadi_u_arm"] = False
+    state.meta.pop("3_1_79_tanadi_u_arm", None)
     return state
 
 

@@ -533,15 +533,13 @@ def test_P005_B_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 
 
 def test_P009_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P009** (*parikrīṇīte*): bundle IAST ↔ engine SLP1 surface."""
+    """**P009** (*parikrīṇīte*): canonical derive() ← pari + krIY laṭ ātmanepada 3sg."""
 
-    from pipelines.parikrIRIte_lat_krIY_corrected_P009_demo import (
-        derive_parikrIRIte_lat_krIY_corrected_P009,
-    )
+    from pipelines.tinanta import derive
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P009")
     assert hit["target"]["iast"] == "parikrīṇīte"
-    assert derive_parikrIRIte_lat_krIY_corrected_P009().flat_slp1() == "parikrIRIte"
+    assert derive("krIY", "laT", "kartari", 3, 1, upasargas=["pari"]).flat_slp1() == "parikrIRIte"
 
 
 def test_P010_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
@@ -557,39 +555,33 @@ def test_P010_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 
 
 def test_P011_A_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P011-A** (*utkurute*): bundle IAST ↔ engine SLP1 surface."""
+    """**P011-A** (*utkurute*): canonical derive() ← ud + qukfY laṭ ātmanepada 3sg."""
 
-    from pipelines.utkurute_lat_ud_kf_corrected_P011_A_demo import (
-        derive_utkurute_lat_ud_kf_corrected_P011_A,
-    )
+    from pipelines.tinanta import derive
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P011-A")
     assert hit["target"]["iast"] == "utkurute"
-    assert derive_utkurute_lat_ud_kf_corrected_P011_A().flat_slp1() == "utkurute"
+    assert derive("qukfY", "laT", "kartari", 3, 1, upasargas=["ud"]).flat_slp1() == "utkurute"
 
 
 def test_P011_B_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P011-B** (*upaskurute*): bundle IAST ↔ engine SLP1 surface."""
+    """**P011-B** (*upaskurute*): canonical derive() ← upa + qukfY laṭ ātmanepada 3sg."""
 
-    from pipelines.upaskurute_lat_upa_kf_corrected_P011_B_demo import (
-        derive_upaskurute_lat_upa_kf_corrected_P011_B,
-    )
+    from pipelines.tinanta import derive
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P011-B")
     assert hit["target"]["iast"] == "upaskurute"
-    assert derive_upaskurute_lat_upa_kf_corrected_P011_B().flat_slp1() == "upaskurute"
+    assert derive("qukfY", "laT", "kartari", 3, 1, upasargas=["upa"]).flat_slp1() == "upaskurute"
 
 
 def test_P012_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P012** (*apajānīte*): bundle IAST ↔ engine SLP1 surface."""
+    """**P012** (*apajānīte*): canonical derive() ← apa + jYA laṭ ātmanepada 3sg."""
 
-    from pipelines.apajAnIte_lat_apa_jYA_corrected_P012_demo import (
-        derive_apajAnIte_lat_apa_jYA_corrected_P012,
-    )
+    from pipelines.tinanta import derive
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P012")
     assert hit["target"]["iast"] == "apajānīte"
-    assert derive_apajAnIte_lat_apa_jYA_corrected_P012().flat_slp1() == "apajAnIte"
+    assert derive("jYA", "laT", "kartari", 3, 1, upasargas=["apa"]).flat_slp1() == "apajAnIte"
 
 
 def test_P007_bundle_target_matches_pipeline(corrected_v2: dict) -> None:

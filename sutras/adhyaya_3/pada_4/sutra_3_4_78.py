@@ -58,6 +58,12 @@ def act(state: State) -> State:
     assert idx is not None
     adesha = (state.meta.get("tin_adesha_slp1") or "").strip()
     t = state.terms[idx]
+    # Preserve source lakāra provenance (e.g. "loT") so downstream sūtras
+    # (3.4.87 sip→hi) can verify loṭ context structurally without reading
+    # state.meta["lakara"] (Art.2§2c).
+    source_lak = (t.meta.get("upadesha_slp1") or "").strip()
+    if source_lak:
+        t.meta["source_lakara_upadesha"] = source_lak
     t.varnas = parse_slp1_upadesha_sequence(adesha)
     t.meta["upadesha_slp1"] = adesha
     t.tags.add("tin_adesha_3_4_78")
