@@ -17,7 +17,10 @@ _GATE_KEY: str = "1_2_34_yajna_karma"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("1_2_34_arm") is True
+    # Structural: relevant term present
+    if any(t.varnas for t in state.terms):
+        return True
+    return bool(state.meta.get("1_2_34_arm"))
 
 
 def act(state: State) -> State:
