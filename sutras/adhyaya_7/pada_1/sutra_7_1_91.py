@@ -3,7 +3,10 @@
 
 Padaccheda: णल् उत्तमः वा
 
-णलुत्तमो वा (7.1.91)
+ṇal (liṭ perfect 1sg ādeśa "Ral") is optionally used for uttama (1st person)
+in liṭ context. Structurally: fires when the tiṅ ādeśa "Ral" is present on
+the tape (this is the liṭ parasmaipada 1sg ādeśa, only reachable in
+first-person liṭ derivation).
 """
 from __future__ import annotations
 
@@ -16,7 +19,18 @@ _GATE_KEY: str = "7_1_91_Raluttamo_91"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("7_1_91_arm") is True
+    # Structural: ṇal (Ral) tiṅ ādeśa is on the tape (liṭ 1sg context)
+    for t in state.terms:
+        if "tin_adesha_3_4_78" in t.tags:
+            up = t.meta.get("upadesha_slp1") or ""
+            if up in ("Ral", "al"):  # Ral = ṇal; al = reduced form
+                return True
+        # Also match by current varnas (Ral → R,a,l after partial processing)
+        flat = "".join(v.slp1 for v in t.varnas)
+        if flat in ("Ral", "al") and "pratyaya" in t.tags:
+            return True
+    # Legacy arm path
+    return bool(state.meta.get("7_1_91_arm"))
 
 
 def act(state: State) -> State:
