@@ -8,6 +8,7 @@ Also ashala (without shala).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.gates import adhikara_in_effect
 from engine.state import State
 
 _GATE_KEY: str = "2_4_24_asala_ca"
@@ -16,7 +17,7 @@ _GATE_KEY: str = "2_4_24_asala_ca"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("2_4_24_arm") is True
+    return adhikara_in_effect("2.4.24", state, "2.4.19")
 
 
 def act(state: State) -> State:

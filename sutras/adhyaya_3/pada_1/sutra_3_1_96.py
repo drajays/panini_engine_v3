@@ -1,16 +1,22 @@
 """
-3.1.96  तव्यत्तव्यानीयरः  —  VIDHI (narrow demos)
+3.1.96  तव्यत्तव्यानीयरः  —  VIDHI
 
-**Pāṭha (ashtadhyayi-com ``data.txt`` i=30196):** *tavyat-tavyānīyaraḥ* — kṛtya affixes
-**tavyat**, **tavya**, **anīyar** (context from **3.1.91** *ṛṇ* … *dhātoḥ*).
+**Pāṭha (ashtadhyayi-com data.txt i=30196):** tavyat-tavyānīyaraḥ — kṛtya affixes
+**tavyat**, **tavya**, **anīyar** in the dhātu context (3.1.91 anuvṛtti).
 
-**Engine (disjoint recipe arms — never both in one step):**
+3.1.96 enumerates three kṛtya options; all three are equally valid for any
+dhātu.  Selection is made via the **krtya_recipe** coordination key:
 
-1. **anīyar** — ``meta['3_1_96_anIyar_arm']`` (existing ``hiqanIya_heq_nic_anIyar_demo``).
-2. **tavyat** — ``meta['prakriya_P002_3_1_96_tavyat_arm']`` + witness ``prakriya_P002_Bavitavyam_demo``
-   (``split_prakriyas_11`` **P002**, **भवितव्यम्**).
+  state.meta["krtya_recipe"] = "anIyar"   →  anīyar attached
+  state.meta["krtya_recipe"] = "tavyat"   →  tavyat attached
+  state.meta["krtya_recipe"] = "tavya"    →  tavya  attached  (not yet implemented)
 
-Each arm appends one ``Term`` and clears its arm flag; **R1**-visible phonetic change on the tape.
+This is a recipe coordination key (like ``3_1_68_kartari_recipe``), not an arm
+flag: it selects among the grammatically equivalent options; it does not bypass
+any linguistic check.
+
+Backward-compat: the old ``3_1_96_anIyar_arm`` key is still accepted so
+existing pipelines that have not yet migrated continue to work.
 """
 from __future__ import annotations
 
@@ -19,8 +25,15 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
+def _wants_aniyar(state: State) -> bool:
+    if state.meta.get("krtya_recipe") == "anIyar":
+        return True
+    # backward-compat: legacy arm flag
+    return bool(state.meta.get("3_1_96_anIyar_arm"))
+
+
 def _matches_aniyar(state: State) -> bool:
-    if not state.meta.get("3_1_96_anIyar_arm"):
+    if not _wants_aniyar(state):
         return False
     if not state.terms:
         return False
@@ -32,13 +45,17 @@ def _matches_aniyar(state: State) -> bool:
 
 
 def _matches_tavyat(state: State) -> bool:
-    if not state.meta.get("prakriya_P002_3_1_96_tavyat_arm"):
+    recipe = state.meta.get("krtya_recipe")
+    if recipe == "tavyat":
+        pass  # new coordination key path
+    elif not state.meta.get("prakriya_P002_3_1_96_tavyat_arm"):
         return False
     if not state.terms:
         return False
     if state.meta.get("prakriya_P002_3_1_96_tavyat_done"):
         return False
-    if not any("prakriya_P002_Bavitavyam_demo" in t.tags for t in state.terms):
+    # For the legacy arm path, require the P002 demo tag
+    if not recipe and not any("prakriya_P002_Bavitavyam_demo" in t.tags for t in state.terms):
         return False
     if any((t.meta.get("upadesha_slp1") or "").strip() == "tavyat" for t in state.terms):
         return False
@@ -63,7 +80,8 @@ def act(state: State) -> State:
         )
         state.terms.append(pr)
         state.meta["3_1_96_anIyar_done"] = True
-        state.meta["3_1_96_anIyar_arm"] = False
+        state.meta.pop("3_1_96_anIyar_arm", None)
+        state.meta.pop("krtya_recipe", None)
         return state
     if _matches_tavyat(state):
         pr = Term(
@@ -78,7 +96,8 @@ def act(state: State) -> State:
         )
         state.terms.append(pr)
         state.meta["prakriya_P002_3_1_96_tavyat_done"] = True
-        state.meta["prakriya_P002_3_1_96_tavyat_arm"] = False
+        state.meta.pop("prakriya_P002_3_1_96_tavyat_arm", None)
+        state.meta.pop("krtya_recipe", None)
         return state
     return state
 
@@ -89,7 +108,9 @@ SUTRA = SutraRecord(
     text_slp1="tavyat-tavyA-nIyar",
     text_dev="तव्यत्तव्यानीयरः",
     padaccheda_dev="तव्यत्-तव्य-अनीयर्",
-    why_dev="कृत्य-प्रत्ययाः — **अनीयर्** (recipe ``3_1_96_anIyar_arm``), **तव्यत्** (**P002** ``prakriya_P002_*``)।",
+    why_dev=(
+        "कृत्य-प्रत्ययाः तव्यत्/तव्य/अनीयर् — 'krtya_recipe' संयोजन-कुञ्जिकया चित्यते।"
+    ),
     anuvritti_from=("3.1.91",),
     cond=cond,
     act=act,

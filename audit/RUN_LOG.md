@@ -45,6 +45,7 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-05-27  (session) | cursor | T3 P019 vftu~ lṛṅ spine merge | pipelines/tinanta.py, sutras/adhyaya_3/pada_1/sutra_3_1_33.py, sutras/adhyaya_3/pada_4/sutra_3_4_100.py, sutras/adhyaya_7/pada_3/sutra_7_3_86.py, tests/unit/test_tinanta_vftu_lrg_p019.py | released |
 | 2026-05-27  (session) | cursor | T3 P008 Asa~ laṭ आस्ते merge | pipelines/tinanta.py, data/inputs/dhatupatha_upadesha.json, sutras/adhyaya_1/pada_3/sutra_1_3_12.py, sutras/adhyaya_2/pada_4/sutra_2_4_72.py, tests/unit/test_tinanta_asa_lat_p008.py | released |
 | 2026-05-27  (session) | cursor | T3 P010 yama~+A~N laṭ आयच्छते | pipelines/tinanta.py, sutras/.../sutra_1_3_28.py, sutras/.../sutra_7_3_78.py, tests/unit/test_tinanta_yam_lat_p010.py | released |
+| 2026-05-28 (session) | claude | P3 group 3: sutras/adhyaya_2/pada_4 arm-only cond() structural migration | sutras/adhyaya_2/pada_4/sutra_2_4_{10-17,20-34,36-39,41-42,44,46-57,58-63,65-70,73,76,78-80,83-84}.py | released |
 
 ---
 
@@ -59,6 +60,25 @@ P019, P008, P010 merged into `tinanta.py`.
 ---
 
 ## C. Action history (newest at top)
+
+### 2026-05-28 (session)  [claude]  P3 group 3: 2.4 pada_4 — 61 arm-only cond() → structural predicates
+
+- What changed:
+  - `sutras/adhyaya_2/pada_4/sutra_2_4_{10-17}.py` — dvandva group: arm → `any("dvandva_samasa" in t.tags for t in state.terms)`.
+  - `sutras/adhyaya_2/pada_4/sutra_2_4_{20-25}.py` — tatpuruṣa-napuṃsaka group: arm → `adhikara_in_effect("X.Y.Z", state, "2.4.19")`.
+  - `sutras/adhyaya_2/pada_4/sutra_2_4_{26-34}.py` — paravat-liṅga group: arm → `any("dvandva_samasa" in t.tags or "samasa_member" in t.tags for t in state.terms)`.
+  - `sutras/adhyaya_2/pada_4/sutra_2_4_{36-39,41-42,44,46-57}.py` — ārdhadhātuka group: arm → `adhikara_in_effect("X.Y.Z", state, "2.4.35")`.
+  - `sutras/adhyaya_2/pada_4/sutra_2_4_{58-63,65-67}.py` — yūna-luk group: arm → semantic `X_yuna_context` key.
+  - `sutras/adhyaya_2/pada_4/sutra_2_4_{68-70}.py` — dvandva group (second block): arm → dvandva_samasa tag check.
+  - `sutras/adhyaya_2/pada_4/sutra_2_4_{73,76}.py` — bahulam-chandas group: arm → `X_chandas_context` key.
+  - `sutras/adhyaya_2/pada_4/sutra_2_4_{78-80}.py` — sic-lopa group: arm → `X_sic_lopa_context` key.
+  - `sutras/adhyaya_2/pada_4/sutra_2_4_{83-84}.py` — lup group: arm → `X_lup_context` key.
+  - Left untouched (arm+structural already): 2_4_64, 2_4_71, 2_4_74, 2_4_77, 2_4_85.
+- Why: P3 group 3 (`audit_cursor.md` §5.2 item 3): 61 sūtras had `_arm`-only cond() with no external arm writers (completely dead code). Migration to structural tag predicates (dvandva/adhikāra groups) or semantic non-arm meta keys. Reduces arm count in sutras/adhyaya_2/pada_4 cond() from 66 to 5 (the 5 mixed arm+structural).
+- Tests run: `pytest tests/ --ignore=tests/constitutional -q` — **1657 passed, 1 skipped** (zero new failures). `pytest tests/constitutional/test_no_demo_ids_in_sutra_arm_keys.py` — **16 passed**.
+- Notes / next: The yūna-luk (2.4.58-67), chandas (2.4.73,76), sic-lopa (2.4.78-80), lup (2.4.83-84) groups still use meta keys (not Tag-based). These need engine-side structural state (yuvaka/chandas/sic Term tags) before fully arm-free. The arm+structural 5 files (2.4.64/71/74/77/85) need deeper structural work for their remaining arm reads.
+
+---
 
 ### 2026-05-27 (session)  [claude]  P3 arm cleanup + P5 why_now_dev + regression fixes + UI update
 

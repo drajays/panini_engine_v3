@@ -1,16 +1,20 @@
 """
 pipelines/kRzRa3_atra_pluta_pragraha_demo.py — कृष्ण३ अत्र glass-box.
 
-कृष्ण३ + अत्र → कृष्ण३ अत्र  (no sandhi — pluta pragraha)
+कृष्ण३ + अत्र  →  कृष्ण३ अत्र   (prakṛti-bhāva — no sandhi)
 
-By प्लुतप्रगृह्याच्च नित्यम् अचि ६.१.१२५:
-  When a pluta vowel (3-mora, e.g. 'a3' = kṛṣṇa³) is immediately followed
-  by an ac-initial term, prakṛti-bhāva (preservation of original form) is
-  nityam — no sandhi (no savarna-dīrgha 6.1.101, no yaṇ 6.1.77).
+Rule chain:
+  6.1.125 प्लुतप्रगृह्याच्च नित्यम् अचि:
+    "pluta" tag on left Term + ac-initial right Term → prakṛti-bhāva (nityam).
+    Stamps right.meta[_META_ACK] so 6.1.101 savarna-dīrgha is suppressed.
 
-The pluta vowel is modeled as a Term tagged "pluta".
+Contrast: kṛṣṇa (non-pluta) + atra → 6.1.101 would fuse a+a → ā → "kṛṣṇātra".
+With pluta: kṛṣṇa³ + atra → forms preserved unchanged → "kṛṣṇa3 atra".
 
-Target: **kRzRa3 atra** (कृष्ण३ अत्र) — space is vākya boundary; forms unchanged.
+SLP1 note: pluta (3-mora) rendered as trailing "3" in the vākya string
+(traditional IAST: kṛṣṇa3 for कृष्ण३).
+
+Target: **kRzRa3 atra** (कृष्ण३ अत्र)
 """
 # ── Claude Code review 2026-05-28 ──────────────────────────────────
 # CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected
@@ -22,20 +26,31 @@ import sutras  # noqa: F401
 
 from engine import apply_rule
 from engine.state import State, Term
+from engine.trace import TRACE_STATUSES_FIRED
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
-def derive_kRzRa3_atra_pluta_pragraha() -> str:
+def _render_pluta_vakya(s: State) -> str:
+    """Render vākya with trailing '3' on any Term tagged 'pluta'."""
+    parts = []
+    for t in s.terms:
+        slp1 = "".join(v.slp1 for v in t.varnas)
+        if "pluta" in t.tags:
+            slp1 += "3"
+        parts.append(slp1)
+    return " ".join(parts)
+
+
+def derive_kRzRa3_atra_pluta_pragraha() -> State:
     """
-    Derive 'कृष्ण३ अत्र': kṛṣṇa (pluta final 'a³') + atra → prakṛti-bhāva.
-    Returns the space-separated rendered vākya string.
+    kṛṣṇa (pluta final 'a³') + atra → prakṛti-bhāva by 6.1.125.
+    Returns State; call _render_pluta_vakya(s) for "kRzRa3 atra".
     """
-    # kṛṣṇa with pluta final 'a' — modeled as Term tag "pluta"
     kRzRa = Term(
         kind="prakriti",
         varnas=parse_slp1_upadesha_sequence("kRzRa"),
         tags={"prātipadika", "pluta"},
-        meta={"upadesha_slp1": "kRzRa", "pluta_on_final": True},
+        meta={"upadesha_slp1": "kRzRa", "pluta_on_final": "a"},
     )
     atra = Term(
         kind="prakriti",
@@ -45,13 +60,21 @@ def derive_kRzRa3_atra_pluta_pragraha() -> str:
     )
     s = State(terms=[kRzRa, atra], meta={}, trace=[])
 
-    # 6.1.125: pluta + ac-initial → prakṛti-bhāva (no sandhi)
+    # 6.1.125 प्लुतप्रगृह्याच्च नित्यम् अचि:
+    # pluta + ac-initial → stamp _META_ACK on atra, record in samjna_registry
     s = apply_rule("6.1.125", s)
-
-    # Render each pada separately (pluta: no cross-pada sandhi)
-    forms = [t.meta.get("upadesha_slp1") or "".join(v.slp1 for v in t.varnas)
-             for t in s.terms]
-    return " ".join(forms)
+    return s
 
 
-__all__ = ["derive_kRzRa3_atra_pluta_pragraha"]
+def render_kRzRa3_atra(s: State | None = None) -> str:
+    """Return 'kRzRa3 atra' from a derived State (or derive fresh)."""
+    if s is None:
+        s = derive_kRzRa3_atra_pluta_pragraha()
+    return _render_pluta_vakya(s)
+
+
+__all__ = [
+    "derive_kRzRa3_atra_pluta_pragraha",
+    "render_kRzRa3_atra",
+    "_render_pluta_vakya",
+]

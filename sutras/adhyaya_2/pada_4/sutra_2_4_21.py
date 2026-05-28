@@ -8,6 +8,7 @@ upajña and upakrama in 'desiring to teach' context.
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.gates import adhikara_in_effect
 from engine.state import State
 
 _GATE_KEY: str = "2_4_21_upajna_upakrama"
@@ -16,7 +17,7 @@ _GATE_KEY: str = "2_4_21_upajna_upakrama"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("2_4_21_arm") is True
+    return adhikara_in_effect("2.4.21", state, "2.4.19")
 
 
 def act(state: State) -> State:

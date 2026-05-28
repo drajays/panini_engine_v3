@@ -47,9 +47,9 @@ def derive_vandanIya() -> State:
     s = apply_rule("1.1.47", s)
     s = apply_rule("7.1.58", s)
 
-    # kṛtya context: dhātoḥ (3.1.91) then anīyar by 3.1.96
+    # kṛtya context: dhātoḥ (3.1.91) then anīyar by 3.1.96 (krtya_recipe key)
     s = apply_rule("3.1.91", s)
-    s.meta["3_1_96_anIyar_arm"] = True
+    s.meta["krtya_recipe"] = "anIyar"
     s = apply_rule("3.1.96", s)
 
     # it-lopa on anīyar's 'r' (hal-antyam 1.3.3 → 1.3.9)

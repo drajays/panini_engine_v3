@@ -8,6 +8,7 @@ adas root becomes jagdhi in lyap, ti, kit context.
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.gates import adhikara_in_effect
 from engine.state import State
 
 _GATE_KEY: str = "2_4_36_adah_jagdhi"
@@ -16,7 +17,7 @@ _GATE_KEY: str = "2_4_36_adah_jagdhi"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("2_4_36_arm") is True
+    return adhikara_in_effect("2.4.36", state, "2.4.35")
 
 
 def act(state: State) -> State:

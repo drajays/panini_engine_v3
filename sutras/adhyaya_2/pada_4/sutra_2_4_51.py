@@ -8,6 +8,7 @@ Also in nic with san and can.
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.gates import adhikara_in_effect
 from engine.state import State
 
 _GATE_KEY: str = "2_4_51_nau_san_cana"
@@ -16,7 +17,7 @@ _GATE_KEY: str = "2_4_51_nau_san_cana"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("2_4_51_arm") is True
+    return adhikara_in_effect("2.4.51", state, "2.4.35")
 
 
 def act(state: State) -> State:

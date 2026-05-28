@@ -44,9 +44,9 @@ def derive_mlecChanIya() -> State:
     s.terms[0].tags.discard("upadesha")
     s.terms[0].meta["upadesha_slp1"] = "mleC"
 
-    # kṛtya context + anīyar attachment
+    # kṛtya context + anīyar (krtya_recipe coordination key)
     s = apply_rule("3.1.91", s)
-    s.meta["3_1_96_anIyar_arm"] = True
+    s.meta["krtya_recipe"] = "anIyar"
     s = apply_rule("3.1.96", s)
 
     # it-lopa on anīyar 'r'

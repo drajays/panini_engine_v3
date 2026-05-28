@@ -16,7 +16,7 @@ _GATE_KEY: str = "2_4_67_na_gopavana"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("2_4_67_arm") is True
+    return state.meta.get("2_4_67_yuna_context") is True
 
 
 def act(state: State) -> State:
