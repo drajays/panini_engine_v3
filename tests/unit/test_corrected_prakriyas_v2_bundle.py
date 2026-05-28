@@ -441,13 +441,13 @@ def test_P003_C_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 
 
 def test_P008_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P008** (*āste*): bundle IAST ↔ engine SLP1 surface."""
+    """**P008** (*āste*): canonical derive() ← Asa~ laṭ kartarī 3sg (adādi gaṇa 2)."""
 
-    from pipelines.Aste_lat_Ada_corrected_P008_demo import derive_Aste_lat_Ada_corrected_P008
+    from pipelines.tinanta import derive
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P008")
     assert hit["target"]["iast"] == "āste"
-    assert derive_Aste_lat_Ada_corrected_P008().flat_slp1() == "Aste"
+    assert derive("Asa~", "laT", "kartari", 3, 1).flat_slp1() == "Aste"
 
 
 def test_P006_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
@@ -543,15 +543,13 @@ def test_P009_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 
 
 def test_P010_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P010** (*āyacchate*): bundle IAST ↔ engine SLP1 surface (च्छ् as ``cC``)."""
+    """**P010** (*āyacchate*): canonical derive() ← āṅ + yam laṭ ātmanepada 3sg."""
 
-    from pipelines.Ayacchate_lat_yam_corrected_P010_demo import (
-        derive_Ayacchate_lat_yam_corrected_P010,
-    )
+    from pipelines.tinanta import derive
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P010")
     assert hit["target"]["iast"] == "āyacchate"
-    assert derive_Ayacchate_lat_yam_corrected_P010().flat_slp1() == "AyacCate"
+    assert derive("yam", "laT", "kartari", 3, 1, upasargas=["A"]).flat_slp1() == "AyacCate"
 
 
 def test_P011_A_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
