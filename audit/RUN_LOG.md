@@ -46,6 +46,7 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-05-27  (session) | cursor | T3 P008 Asa~ laṭ आस्ते merge | pipelines/tinanta.py, data/inputs/dhatupatha_upadesha.json, sutras/adhyaya_1/pada_3/sutra_1_3_12.py, sutras/adhyaya_2/pada_4/sutra_2_4_72.py, tests/unit/test_tinanta_asa_lat_p008.py | released |
 | 2026-05-27  (session) | cursor | T3 P010 yama~+A~N laṭ आयच्छते | pipelines/tinanta.py, sutras/.../sutra_1_3_28.py, sutras/.../sutra_7_3_78.py, tests/unit/test_tinanta_yam_lat_p010.py | released |
 | 2026-05-28 (session) | claude | P3 group 3: sutras/adhyaya_2/pada_4 arm-only cond() structural migration | sutras/adhyaya_2/pada_4/sutra_2_4_{10-17,20-34,36-39,41-42,44,46-57,58-63,65-70,73,76,78-80,83-84}.py | released |
+| 2026-05-28 (session) | cursor | T4 karmaṇi laṭ भू/धू/मू — structural yaḳ spine | pipelines/tinanta.py, sutras/.../sutra_3_1_67.py, yak_vik_3_1_67.py, sutra_7_2_81.py, sutra_7_4_25.py, data/inputs/dhatupatha_upadesha.json, tests/unit/test_tinanta_bhu_dhu_mu_karmani_lat.py | released |
 
 ---
 
@@ -116,6 +117,20 @@ Append a section for every meaningful action. Format:
 - Tests run: <command, result>
 - Notes / next: <follow-up>
 ```
+
+---
+
+### 2026-05-28  (session)  [cursor]  T4 — karmaṇi laṭ भू/धू/मू 9×3 paradigm (structural yaḳ)
+
+- What changed:
+  - **3.1.67** — `act()` inserts *yaḳ*; `yak_vik_3_1_67.py` helper; removed recipe `terms.insert` + `3_1_67_arm`.
+  - **7.2.81** / **7.4.25** — structural *bhava_karma_usage* paths (no `_arm`).
+  - `pipelines/tinanta.py` — `_karmani_apply_yak`, `_karmani_yak_it_and_ngiti` shared by all karmaṇi spines.
+  - `data/inputs/dhatupatha_upadesha.json` — curated **DU**, **mU** (अनिट् *ū*-roots, like **BU**).
+  - `tests/unit/test_tinanta_bhu_dhu_mu_karmani_lat.py` — 27 gold cells.
+- Why: user request — rule-based karmaṇi laṭ ātmanepada matching शब्द-style paradigm (भूयते … मूयामहे).
+- Tests run: `pytest tests/unit/test_tinanta_bhu_dhu_mu_karmani_lat.py tests/unit/test_tinanta_coverage_matrix.py` — pass.
+- Notes / next: Web UI / dhātu browser can expose `prayoga=karmani` for this set.
 
 ---
 

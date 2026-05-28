@@ -37,17 +37,30 @@ def _site_p016(state: State) -> bool:
     return False
 
 
+def _karmani_vacuous_dirgha(state: State) -> bool:
+    """Karmaṇi/bhāve: *yaḳ* path — *dīrgha* vacuous when *aṅga* already has long *ī/ū*."""
+    if state.meta.get("7_4_25_karmani_done"):
+        return False
+    if not any("dhatu" in t.tags and "bhava_karma_usage" in t.tags for t in state.terms):
+        return False
+    for t in state.terms:
+        if "dhatu" not in t.tags:
+            continue
+        if any(v.slp1 in {"U", "I", "F", "X"} for v in t.varnas):
+            return True
+    return False
+
+
 def cond(state: State) -> bool:
     if state.meta.get("7_4_25_ashir_liG_arm"):
         return not state.meta.get("7_4_25_ashir_done")
-    if state.meta.get("7_4_25_karmani_yak_arm"):
-        return not state.meta.get("7_4_25_karmani_done")
+    if _karmani_vacuous_dirgha(state):
+        return True
     return _site_p016(state)
 
 
 def act(state: State) -> State:
-    if state.meta.get("7_4_25_karmani_yak_arm"):
-        # Vacuous for bhū (ū already long); fires as trace marker only.
+    if _karmani_vacuous_dirgha(state) and not state.meta.get("7_4_25_ashir_liG_arm"):
         state.meta["7_4_25_karmani_done"] = True
         state.meta.pop("7_4_25_karmani_yak_arm", None)
         state.samjna_registry["7.4.25_karmani_vacuous"] = True

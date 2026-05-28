@@ -8,13 +8,19 @@
   },
   "_stats": {
     "bvadi_merged": 940,
-    "curated_extensions": 9,
+    "curated_extensions": 11,
     "total_entries": 948
   },
   "id_aliases": {
     "BvAdi_BU": "BvAdi_01_0001",
     "Asa~": "Adadi_Asa",
-    "As": "Adadi_Asa"
+    "As": "Adadi_Asa",
+    "DU~": "BvAdi_DU",
+    "DU": "BvAdi_DU",
+    "mU~": "BvAdi_mU",
+    "mU": "BvAdi_mU",
+    "धू": "BvAdi_DU",
+    "मू": "BvAdi_mU"
   },
   "flag_overrides": {
     "BvAdi_01_0001": {
@@ -32259,6 +32265,66 @@
         "udatta": false
       },
       "notes": "P008 gold आस्ते — अनुदात्तेत् + अदादि śap-luk laṭ spine."
+    },
+    {
+      "id": "BvAdi_DU",
+      "tier": "curated_extension",
+      "dhatupatha_id": "01.0951",
+      "gana": 1,
+      "gana_number": 1,
+      "serial_in_gana": 951,
+      "sutra_ref": "1.951",
+      "upadesha_dev": "धू",
+      "upadesha_slp1": "DU",
+      "mula_dhatu_dev": "धू",
+      "raw_dhatu_after_it_lopa_dev": "धू",
+      "raw_dhatu_after_it_lopa_slp1": "DU",
+      "artha_dev": "कम्पने",
+      "artha_slp1": "kamPane",
+      "artha_en": "to shake, tremble",
+      "gana_label_dev": "भ्वादिः",
+      "pada_label_dev": "परस्मैपदी",
+      "karmatva_label_dev": "अकर्मकः",
+      "it_class_label_dev": "अनिट्",
+      "it_markers": [],
+      "flags": {
+        "anit": true,
+        "set": false,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "Pedagogical भू-धू-मू set — karmaṇi laṭ धूयते paradigm."
+    },
+    {
+      "id": "BvAdi_mU",
+      "tier": "curated_extension",
+      "dhatupatha_id": "01.0952",
+      "gana": 1,
+      "gana_number": 1,
+      "serial_in_gana": 952,
+      "sutra_ref": "1.952",
+      "upadesha_dev": "मू",
+      "upadesha_slp1": "mU",
+      "mula_dhatu_dev": "मू",
+      "raw_dhatu_after_it_lopa_dev": "मू",
+      "raw_dhatu_after_it_lopa_slp1": "mU",
+      "artha_dev": "बन्धने",
+      "artha_slp1": "banDane",
+      "artha_en": "to bind, fasten",
+      "gana_label_dev": "भ्वादिः",
+      "pada_label_dev": "परस्मैपदी",
+      "karmatva_label_dev": "अकर्मकः",
+      "it_class_label_dev": "अनिट्",
+      "it_markers": [],
+      "flags": {
+        "anit": true,
+        "set": false,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "Pedagogical भू-धू-मू set — karmaṇi laṭ मूयते paradigm."
     }
   ]
 }
