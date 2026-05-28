@@ -120,6 +120,10 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     state.samjna_registry["savarNa"] = SAVARNA_REGISTER_VALUE
+    state.meta["__why_now_dev__"] = (
+        "समान-आस्य-प्रयत्नौ वर्णौ परस्परं सवर्ण-संज्ञकौ; अनेन सवर्ण-दीर्घ-आदि "
+        "(६.१.१०१ आदि) कार्याणि प्रसजन्ति। (१.१.९)"
+    )
     return state
 
 

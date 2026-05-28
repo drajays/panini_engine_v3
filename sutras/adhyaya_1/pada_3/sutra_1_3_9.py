@@ -117,6 +117,10 @@ def act(state: State) -> State:
             if "dhatu" in t.tags and "i" in removed and "r" in removed:
                 t.tags.add("irit")
         t.varnas = new_varnas
+    state.meta["__why_now_dev__"] = (
+        "इत्-संज्ञक-वर्णानां लोपः उपदेशावस्थायाम् (इतस्य लोपः); "
+        "एते वर्णाः १.३.२–१.३.८ इति सूत्रैः ‘इत्’-संज्ञां प्राप्ताः। (१.३.९)"
+    )
     return state
 
 

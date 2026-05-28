@@ -84,6 +84,10 @@ def act(state: State) -> State:
     for i in add:
         state.terms[i].tags.add("prātipadika")
     state.samjna_registry[_REGISTRY_KEY] = new_idx
+    state.meta["__why_now_dev__"] = (
+        "अर्थवत्-शब्दरूपं धातु-प्रत्यय-प्रत्ययान्त-वर्जितम् इति "
+        "प्रातिपदिक-संज्ञां लभते (अव्युत्पन्न-प्रातिपदिकम्)। (१.२.४५)"
+    )
     return state
 
 

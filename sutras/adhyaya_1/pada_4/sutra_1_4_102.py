@@ -78,6 +78,10 @@ def act(state: State) -> State:
         _apply_vacana_102(t)
     for t in sup_pending:
         _apply_sup_vacana_102(t)
+    state.meta["__why_now_dev__"] = (
+        "प्रत्येक-पुरुष-त्रिके क्रमेण एकवचन-द्विवचन-बहुवचन-संज्ञाः; "
+        "विभक्ति-प्रत्ययस्य वचन-संज्ञा अत्र निर्धार्यते। (१.४.१०२)"
+    )
     return state
 
 

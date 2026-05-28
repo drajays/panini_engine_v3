@@ -17,6 +17,10 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     state.samjna_registry["1.4.14_suptinganta_pada_samjna"] = True
+    state.meta["__why_now_dev__"] = (
+        "सुप्-अन्तः तिङ्-अन्तः वा शब्दः पद-संज्ञकः; अनेन पद-कार्याणि "
+        "(त्रिपादी-सन्धि-आदि) प्रसजन्ति। (१.४.१४)"
+    )
     return state
 
 

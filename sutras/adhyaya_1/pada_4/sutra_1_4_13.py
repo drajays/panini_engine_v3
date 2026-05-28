@@ -71,6 +71,10 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     state.samjna_registry[("1.4.13_anga", 0)] = frozenset({"active"})
+    state.meta["__why_now_dev__"] = (
+        "प्रत्ययात् पूर्वं स्थितः अवयवः अङ्ग-संज्ञकः (प्रत्यये परतः अङ्गम्); "
+        "अनेन अङ्ग-अधिकार-कार्याणि (६.४.१ आदि) प्रसजन्ति। (१.४.१३)"
+    )
     return state
 
 

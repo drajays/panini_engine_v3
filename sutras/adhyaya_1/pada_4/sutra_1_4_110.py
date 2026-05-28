@@ -22,6 +22,10 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     state.samjna_registry["1.4.110_avasana"] = True
+    state.meta["__why_now_dev__"] = (
+        "पद-समाप्तौ विरामः अवसान-संज्ञकः; अनेन खर्-अवसानयोः "
+        "विसर्जनीय-प्रसङ्गः सिध्यति। (१.४.११०)"
+    )
     return state
 
 

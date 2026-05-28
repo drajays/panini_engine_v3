@@ -62,6 +62,10 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     state.samjna_registry["anunAsika"] = ANUNASIKA_REGISTER_VALUE
+    state.meta["__why_now_dev__"] = (
+        "मुखेन नासिकया च उच्चार्यमाणः वर्णः अनुनासिक-संज्ञकः; अनेन "
+        "उपदेशेऽजनुनासिक इत् (१.३.२) आदि कार्याणि प्रसजन्ति। (१.१.८)"
+    )
     return state
 
 

@@ -124,6 +124,10 @@ def act(state: State) -> State:
         if 0 <= i < len(state.terms):
             state.terms[i].tags.add("vṛddha")
     state.samjna_registry[VRIDDHAM_INDICES_KEY] = new
+    state.meta["__why_now_dev__"] = (
+        "पदस्य प्रथमः अच् वृद्धि-संज्ञकः (आ/ऐ/औ) इति तत् पदं वृद्ध-संज्ञकम्; "
+        "अनेन वृद्धात् छ-आदि-कार्याणि (४.२.११४ आदि) प्रसजन्ति। (१.१.७३)"
+    )
     return state
 
 

@@ -94,6 +94,10 @@ def act(state: State) -> State:
             "active": True,
             "pATha": "1.1.18",
         }
+    state.meta["__why_now_dev__"] = (
+        "अनार्षे इति-परे उञः शाकल्य-मतेन वैकल्पिकः ऊँ-आदेशः, "
+        "स च प्रगृह्यः (अच्-सन्धि-निषेधः)। (१.१.१८)"
+    )
     return state
 
 
