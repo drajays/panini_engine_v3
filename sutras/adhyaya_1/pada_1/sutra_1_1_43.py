@@ -83,6 +83,12 @@ def cond(state: State) -> bool:
     )
 
 
+_WHY_NOW = (
+    "अनपुंसक (पुं/स्त्री) प्रातिपदिकस्य सुँ-आदिः सर्वनामस्थान-सुप् 'सर्वनामस्थान'-संज्ञां "
+    "प्राप्नोति; अनया संज्ञया अङ्ग-कार्याणि (यथा ७.१.७० नुम्) प्रवर्तन्ते। (१.१.४३)"
+)
+
+
 def act(state: State) -> State:
     if _eligible_sup_sarvanamasthana(state):
         # Tag all eligible-but-untagged sup terms
@@ -95,12 +101,14 @@ def act(state: State) -> State:
             ):
                 t.tags.add(TAG)
         state.samjna_registry["1.1.43_su_sarvanamasthana"] = True
+        state.meta["__why_now_dev__"] = _WHY_NOW
         return state
     if not (_eligible_s_sup(state) or _eligible_prakriya_21_am(state)):
         return state
     pr = state.terms[-1]
     pr.tags.add(TAG)
     state.samjna_registry["1.1.43_su_sarvanamasthana"] = True
+    state.meta["__why_now_dev__"] = _WHY_NOW
     return state
 
 

@@ -76,6 +76,10 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     state.samjna_registry[LUK_SLU_LUP_SAMJNA_KEY] = LUK_SLU_LUP_REGISTER_VALUE
+    state.meta["__why_now_dev__"] = (
+        "प्रत्ययलोपस्य 'लुक्'/'श्लुः'/'लुप्' इति त्रयः विशेष-संज्ञाः अधुना पञ्जीकृताः; "
+        "लोप-संज्ञा (१.१.६०) पूर्वम् एव सक्रिया। (१.१.६१)"
+    )
     return state
 
 

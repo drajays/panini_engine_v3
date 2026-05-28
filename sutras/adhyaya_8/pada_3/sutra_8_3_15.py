@@ -48,6 +48,10 @@ def act(state: State) -> State:
         return state
     ti, vi = hit
     state.terms[ti].varnas[vi] = mk("H")
+    state.meta["__why_now_dev__"] = (
+        "खर्-वर्णे परे अवसाने च 'रु' (८.२.६६) इत्यस्य विसर्गः (ः); "
+        "एवं रामः, धनुः इति विसर्गान्त-रूपं सिध्यति। (८.३.१५)"
+    )
     return state
 
 

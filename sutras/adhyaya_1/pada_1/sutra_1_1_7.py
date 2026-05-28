@@ -56,6 +56,10 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     state.samjna_registry["samyoga"] = SAMYOGA_REGISTER_VALUE
+    state.meta["__why_now_dev__"] = (
+        "अनन्तराः (मध्ये अच्-रहिताः) हल्-वर्णाः 'संयोग'-संज्ञां प्राप्नुवन्ति; "
+        "इयं संज्ञा संयोगाश्रित-विधिषु (यथा ८.२.२३, ६.१.६८) उपयुज्यते। (१.१.७)"
+    )
     return state
 
 

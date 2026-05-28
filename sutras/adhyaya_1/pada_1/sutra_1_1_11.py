@@ -130,6 +130,10 @@ def act(state: State) -> State:
     _tag_dvivacana_praghy_terms(state)
     _tag_she_pragrahya_residue(state)
     state.meta.pop(PRAGHYA_TAG_REFRESH_ARM_META, None)
+    state.meta["__why_now_dev__"] = (
+        "द्विवचनान्ते ई, ऊ, ए, ऐ, ओ, औ — एते 'प्रगृह्य'-संज्ञां प्राप्नुवन्ति; "
+        "अतः सन्धि-कार्यं न प्रवर्तते (यथा हरी इति, विष्णू इति)। (१.१.११)"
+    )
     return state
 
 

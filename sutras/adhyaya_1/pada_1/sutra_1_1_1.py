@@ -67,6 +67,10 @@ def act(state: State) -> State:
     """Set ``samjna_registry['vṛddhi']`` to the Ā/ai/au phoneme set (SLP1).
     No varṇa mutation; *prayoga* of vṛddhi is left to vidhi sūtras."""
     state.samjna_registry["vṛddhi"] = VRIDHI_PHONEMES_SLP1
+    state.meta["__why_now_dev__"] = (
+        "आ, ऐ, औ — एते वर्णाः 'वृद्धि'-संज्ञां प्राप्नुवन्ति; इयं संज्ञा "
+        "वृद्धि-विधिषु (यथा ६.१.८८ वृद्धिरेचि, ७.२.१ सिचि वृद्धिः) उपयुज्यते। (१.१.१)"
+    )
     return state
 
 

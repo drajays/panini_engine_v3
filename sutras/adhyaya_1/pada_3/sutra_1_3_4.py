@@ -57,6 +57,10 @@ def act(state: State) -> State:
         state.samjna_registry[("1_3_4_tusma_vibhakti", i)] = frozenset(
             {last.slp1}
         )
+    state.meta["__why_now_dev__"] = (
+        "विभक्ति-प्रत्यये अन्त्यौ तु-स्म-वर्णौ हलन्त्य-इत् (१.३.३) संज्ञां न लभेते; "
+        "अयं प्रतिषेधः, अतः अन्त्य-हल् न लुप्यते (यथा सुप् सुँ, तुस्मान्त-रक्षा)। (१.३.४)"
+    )
     return state
 
 

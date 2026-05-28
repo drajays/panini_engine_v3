@@ -59,6 +59,10 @@ def act(state: State) -> State:
         state.terms[i].varnas[0].tags.add("it_candidate_lasaku")
         key = ("it_lasaku", i)
         state.samjna_registry[key] = frozenset({state.terms[i].varnas[0].slp1})
+    state.meta["__why_now_dev__"] = (
+        "अतद्धित-प्रत्ययस्य आदौ ल्/श्/कवर्ग-वर्णः 'इत्'-संज्ञां प्राप्नोति; "
+        "अयं वर्णः अनन्तरं १.३.९ इति लुप्यते (यथा शप् → अ, ङी → ई)। (१.३.८)"
+    )
     return state
 
 

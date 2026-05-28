@@ -45,6 +45,10 @@ def act(state: State) -> State:
         anga.tags.discard("pada_1_4_17")
         new_idx.add(i)
     state.samjna_registry[_REGISTRY] = frozenset(new_idx)
+    state.meta["__why_now_dev__"] = (
+        "सिति (स्-इत्) प्रत्यये परे प्रकृतिः 'पद'-संज्ञां प्राप्नोति; इयं संज्ञा "
+        "भ-संज्ञां (१.४.१८) बाधते (यथा ऊर्णा+युस्)। (१.४.१६)"
+    )
     return state
 
 

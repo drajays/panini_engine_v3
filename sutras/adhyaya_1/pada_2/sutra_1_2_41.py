@@ -40,6 +40,10 @@ def act(state: State) -> State:
         state.terms[i].tags.add(TAG_APRKTA)
         s.add(i)
     state.samjna_registry["1.2.41_apfkta_indices"] = frozenset(s)
+    state.meta["__why_now_dev__"] = (
+        "एक-अल् (एक-वर्ण) प्रत्ययः 'अपृक्त'-संज्ञां प्राप्नोति; अनया संज्ञया "
+        "ईट्-आगम-आदि-विधयः (यथा ७.३.९६) प्रवर्तन्ते। (१.२.४१)"
+    )
     return state
 
 

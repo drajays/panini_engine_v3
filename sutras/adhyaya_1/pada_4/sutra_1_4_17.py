@@ -49,6 +49,10 @@ def act(state: State) -> State:
         state.terms[i].tags.add("pada")        # needed for 8.2.66 pre-merge rutva
         new_idx.add(i)
     state.samjna_registry[_REGISTRY] = frozenset(new_idx)
+    state.meta["__why_now_dev__"] = (
+        "असर्वनामस्थान-स्वादि-प्रत्यये परे प्रातिपदिकम् 'पद'-संज्ञां प्राप्नोति; "
+        "अनया पदाश्रित-कार्याणि (यथा ८.२.७ न-लोपः) प्रवर्तन्ते। (१.४.१७)"
+    )
     return state
 
 

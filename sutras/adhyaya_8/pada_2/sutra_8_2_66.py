@@ -79,16 +79,23 @@ def act(state: State) -> State:
     ru = mk("r")
     ru.tags.add("ru_intermediate")
 
+    _why = (
+        "पदान्त-सकारस्य 'रु'-आदेशः (त्रिपादी); अयं रु पुनः ८.३.१५ इति "
+        "खर्/अवसाने विसर्गः, अन्यत्र (घोष-हलि) रेफः अवशिष्यते। (८.२.६६)"
+    )
+
     hit = _target_premerge(state)
     if hit is not None:
         ti, vi = hit
         state.terms[ti].varnas[vi] = ru
+        state.meta["__why_now_dev__"] = _why
         return state
 
     hit = _target_postmerge(state)
     if hit is not None:
         ti, vi = hit
         state.terms[ti].varnas[vi] = ru
+        state.meta["__why_now_dev__"] = _why
     return state
 
 

@@ -37,6 +37,10 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     state.samjna_registry[LOPA_SAMJNA_KEY] = LOPA_REGISTER_VALUE
+    state.meta["__why_now_dev__"] = (
+        "स्थाने वर्णस्य वर्णसमूहस्य वा अदर्शनं 'लोप'-संज्ञां प्राप्नोति; "
+        "अनया संज्ञया उत्तर-विधयः (यथा १.३.९ इत्-लोपः) प्रवर्तन्ते। (१.१.६०)"
+    )
     return state
 
 

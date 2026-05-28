@@ -81,6 +81,12 @@ def cond(state: State) -> bool:
     return _find_pair(state) is not None
 
 
+_WHY_NOW = (
+    "अ/आ-कारात् परे इक्-वर्णे (इ/उ/ऋ/ऌ) सति उभयोः स्थाने एकः गुण-वर्णः आदिश्यते; "
+    "यथा अ+इ → ए, अ+उ → ओ (एकादेश-गुण-सन्धिः)। (६.१.८७)"
+)
+
+
 def act(state: State) -> State:
     hit = _find_pair(state)
     if hit is None:
@@ -94,6 +100,7 @@ def act(state: State) -> State:
         pr.varnas.insert(0, mk("y"))
         pr.varnas.insert(0, mk("a"))
         anga.meta["6_1_87_strI_os_done"] = True
+        state.meta["__why_now_dev__"] = _WHY_NOW
         return state
     # Replace the FIRST varṇa with the guṇa and DELETE the second.
     state.terms[ti1].varnas[vi1] = mk(g)
@@ -106,6 +113,7 @@ def act(state: State) -> State:
         t.meta["urN_rapara_pending"] = pending
         # Insert r/l immediately after the substitution site (not at term end).
         t.meta["urN_rapara_after_index"] = vi1
+    state.meta["__why_now_dev__"] = _WHY_NOW
     return state
 
 

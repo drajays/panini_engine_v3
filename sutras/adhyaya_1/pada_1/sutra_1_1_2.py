@@ -30,6 +30,10 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     state.samjna_registry["guṇa"] = frozenset({"a", "e", "o"})
+    state.meta["__why_now_dev__"] = (
+        "अ, ए, ओ — एते वर्णाः 'गुण'-संज्ञां प्राप्नुवन्ति; इयं संज्ञा गुण-वृद्धि-विधिषु "
+        "(यथा ७.३.८४ सार्वधातुकार्धधातुकयोः) उपयुज्यते। (१.१.२)"
+    )
     return state
 
 

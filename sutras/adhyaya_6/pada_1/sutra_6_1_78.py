@@ -112,6 +112,12 @@ def cond(state: State) -> bool:
     )
 
 
+_WHY_NOW = (
+    "अच्-वर्णे परे एच्-वर्णस्य (ए/ऐ/ओ/औ) क्रमेण अय्/आय्/अव्/आव् इति आदेशः; "
+    "यथा ए+अ → अय् (जे+अ → जय → जयति)। (६.१.७८)"
+)
+
+
 def act(state: State) -> State:
     i = _find_eco_aci_boundary(state)
     if i is not None:
@@ -121,6 +127,7 @@ def act(state: State) -> State:
         anga.varnas[-1] = mk(a)
         anga.varnas.append(mk(yv))
         anga.meta["eco_ayavayava_done"] = True
+        state.meta["__why_now_dev__"] = _WHY_NOW
         return state
 
     i = _find_target(state)
@@ -130,6 +137,7 @@ def act(state: State) -> State:
     # Legacy narrow helper: insert 'y' at the END of the aṅga Term.
     anga.varnas.append(mk("y"))
     anga.meta["ay_insertion_done"] = True
+    state.meta["__why_now_dev__"] = _WHY_NOW
     return state
 
 

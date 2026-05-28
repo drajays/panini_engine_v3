@@ -67,6 +67,10 @@ def act(state: State) -> State:
     state.terms[ti].meta["aNga_e_done"] = True
     # Also block 7.3.102 from re-applying to this aṅga.
     state.terms[ti].meta["aNga_dirgha_done"] = True
+    state.meta["__why_now_dev__"] = (
+        "झल्-आदि-बहुवचन-सुप्-प्रत्यये परे अदन्त-अङ्गस्य अन्त्य-अ-कारस्य 'ए'-आदेशः; "
+        "यथा राम+भिस् → रामेभिस् (→ रामैः), राम+भ्यस् → रामेभ्यः। (७.३.१०३)"
+    )
     return state
 
 

@@ -166,6 +166,10 @@ def act(state: State) -> State:
     # distinct saṃjñā event (avoids R2 false-positive on re-fires).
     upa = term.meta.get("upadesha_slp1")
     state.samjna_registry[("it_cutu", ti, j, upa)] = frozenset({v.slp1})
+    state.meta["__why_now_dev__"] = (
+        "उपदेशे प्रत्ययस्य आदौ चवर्ग-टवर्गीयः प्रथमः हल् 'इत्'-संज्ञां प्राप्नोति; "
+        "अयं वर्णः अनन्तरं १.३.९ इति लुप्यते (यथा ण्यत्, ण्वुल्, ण्यन्तर्गत-ण्)। (१.३.७)"
+    )
     if (
         state.meta.get(META_P004_B_Yya_CUTU)
         and "taddhita" in term.tags

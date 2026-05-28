@@ -160,6 +160,10 @@ def act(state: State) -> State:
         anga.tags.discard("pada_1_4_16")
         new_idx.add(i)
     state.samjna_registry[_REGISTRY_BHA_INDICES] = frozenset(new_idx)
+    state.meta["__why_now_dev__"] = (
+        "यकारादौ अजादौ वा असर्वनामस्थान-प्रत्यये परे प्रकृतिः 'भ'-संज्ञां प्राप्नोति; "
+        "इयं संज्ञा पद-संज्ञां (१.४.१७) बाधते, अतः पदाश्रित-कार्यं न (यथा राजन्+शस्)। (१.४.१८)"
+    )
     return state
 
 
