@@ -43,11 +43,7 @@ def _find_ngit_s_term(state: State):
 
 
 def cond(state: State) -> bool:
-    if _find_ngit_s_term(state) is not None:
-        return True
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return state.meta.get("3_4_99_arm") is True
+    return _find_ngit_s_term(state) is not None
 
 
 def act(state: State) -> State:

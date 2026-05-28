@@ -50,11 +50,7 @@ def _find_jhi_tin(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if _find_jhi_tin(state) is not None:
-        return True
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return state.meta.get("3_4_108_arm") is True
+    return _find_jhi_tin(state) is not None
 
 
 def act(state: State) -> State:

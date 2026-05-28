@@ -16,7 +16,9 @@ _GATE_KEY: str = "3_3_40_hastAdAne_40"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    return state.meta.get("3_3_40_arm") is True
+    if any("dhatu" in t.tags for t in state.terms):
+        return True
+    return bool(state.meta.get("3_3_40_arm"))
 
 
 def act(state: State) -> State:
