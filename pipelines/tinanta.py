@@ -1739,6 +1739,34 @@ def derive_anukarana_laT(
     return state
 
 
+def derive_periphrastic_lit(
+    dhatu_slp1: str,
+    purusha: int,
+    vacana: int,
+) -> State:
+    """
+    Periphrastic liṭ (ām + kṛñ anuprayoga) — P014 *īkṣāñcakre*.
+
+    For ijādi gurumad ātmanepada dhātus (e.g. 'Ikz').
+    e.g. derive_periphrastic_lit('Ikz', 3, 1) → 'IkzAYcakre'
+    """
+    import sutras  # noqa: F401
+
+    row = _dhatu_row_by_upadesha(dhatu_slp1)
+    dhatu_term = _build_dhatu_term(row)
+    state = State(terms=[dhatu_term], meta={}, trace=[], samjna_registry={})
+    state = P01_samjna_dhatu_class(state)
+    state = P00_bhuvadi_dhatu_it_anunasik_hal(state)
+    # After it-lopa the varnas are the clean post-IT form ("Ikz"), but
+    # upadesha_slp1 in meta still holds the raw form ("Ikza~").
+    # 3.1.36 and 2.4.81 check upadesha_slp1 == "Ikz", so normalize here.
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            t.meta["upadesha_slp1"] = "".join(v.slp1 for v in t.varnas)
+            break
+    return _derive_lit_am_kf_atmane(state, purusha, vacana)
+
+
 def _nic_merge(state: State) -> None:
     """Merge dhātu + ṇic residue (``i``) + yuk(y) → secondary dhātu."""
     # After 3.1.26 inserts ṇic as "i" or "Ric" and 7.3.37 inserts yuk (y),
@@ -2670,6 +2698,78 @@ def _derive_karmani_luT(state: State, purusha: int, vacana: int) -> State:
 
 
 _KARMANI_LIT_NEEDS_IT: frozenset = frozenset({(2, 1), (2, 3), (1, 2), (1, 3)})
+
+
+def _derive_lit_am_kf_atmane(state: State, purusha: int, vacana: int) -> State:
+    """
+    Periphrastic liṭ (ām + kṛñ anuprayoga) ātmanepada — P014 *īkṣāñcakre*.
+
+    Sūtra order:
+      3.2.115 (liṭ) → 3.1.36 (ām) → 2.4.81 (luk+merge→IkzAm) →
+      3.1.40 (kṛñ) → scope (3.1.91/P06a/3.4.77) → 3.4.78 (ta) →
+      3.4.81 (ta→e) → IT-lopa → 1.2.5 → 6.1.8 (dvitva) →
+      7.4.66 (ṛ→a+rapara) → 1.1.51 → 7.4.60 (trim) → 7.4.62 (k→c) →
+      6.1.77 (ṛ+e→re) → 6.4.71 (aT) → merge → 8.3.7 → 8.4.58
+    """
+    # ── 3.2.115 liṭ attachment; sets lakara_liT ──────────────────────────────
+    state.meta["3_2_115_paroksha_lit_arm"] = True
+    state = apply_rule("3.2.115", state)
+    # ── 3.1.36 ām insertion (structural: reads lakara_liT + Ikz identity) ────
+    state = apply_rule("3.1.36", state)
+    # ── 2.4.81 liṭ-luk + merge Ikz+ām → IkzAm prātipadika ───────────────────
+    state.meta["2_4_81_lit_luk_arm"] = True
+    state = apply_rule("2.4.81", state)
+    # ── 3.1.40 kṛñ anuprayoga (structural: fires on IkzAm prātipadika) ───────
+    state = apply_rule("3.1.40", state)
+    # ── Scope ────────────────────────────────────────────────────────────────
+    state = apply_rule("3.1.91", state)
+    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+    state = apply_rule("3.4.77", state)
+    state = apply_rule("1.3.12", state)
+    # ── tiṅ selection: ātmanepada ─────────────────────────────────────────────
+    tin_adesha = _select_tin_adesha("liT", "atmane", purusha, vacana)
+    state.meta["tin_adesha_pending"] = True
+    state.meta["tin_adesha_slp1"] = tin_adesha
+    state = apply_rule("3.4.78", state)
+    # ── 3.4.81 ta → eś  (3sg ātmanepada liṭ) ────────────────────────────────
+    state.meta["3_4_81_lit_esh_arm"] = True
+    state = apply_rule("3.4.81", state)
+    # ── IT processing: eś → e ────────────────────────────────────────────────
+    state = apply_rule("1.1.55", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+    if state.terms and "pratyaya" in state.terms[-1].tags:
+        state.terms[-1].meta["upadesha_slp1"] = "e"
+    # ── 1.2.5 asaṃyogāl liṭ kit ──────────────────────────────────────────────
+    state = apply_rule("1.2.5", state)
+    # ── 6.1.8 dvitva of kṛ + 6.1.4 abhyāsa gate ─────────────────────────────
+    state.meta["6_1_8_lit_dvitva_arm"] = True
+    state = apply_rule("6.1.8", state)
+    state = apply_rule("6.1.4", state)
+    # ── 7.4.66 ṛ→a (uRaṇ) in kṛ abhyāsa; trim to first hal; k→c ─────────────
+    for i, t in enumerate(state.terms):
+        if "abhyasa" in t.tags:
+            state.terms[i].meta["7_4_60_first_hal_only"] = True
+            break
+    state.meta["7_4_66_urat_abhyasa_arm"] = True
+    state = apply_rule("7.4.66", state)
+    state = apply_rule("1.1.51", state)
+    state = apply_rule("7.4.60", state)
+    state = apply_rule("7.4.62", state)
+    # ── 6.1.77 iko yaṇ aci: dhātu-final ṛ(f) + e → r+e ─────────────────────
+    state = apply_rule("6.1.77", state)
+    # ── 6.4.71 aT augment on kṛ dhātu ───────────────────────────────────────
+    for term in state.terms:
+        if "dhatu" in term.tags:
+            term.tags.add("aT_agama_context")
+            break
+    state = apply_rule("6.4.71", state)
+    # ── Merge + tripāḍī sandhi ────────────────────────────────────────────────
+    _pada_merge(state)
+    state = apply_rule("8.2.1", state)
+    state = apply_rule("8.3.7", state)
+    state = apply_rule("8.4.58", state)
+    return state
 
 
 def _derive_bhave_lit(state: State, purusha: int, vacana: int) -> State:

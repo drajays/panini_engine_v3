@@ -615,13 +615,11 @@ def test_P015_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 def test_P014_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
     """**P014** (*īkṣāñcakre*): bundle IAST ↔ engine SLP1 surface."""
 
-    from pipelines.IkzAYcakre_lit_Ikz_kf_corrected_P014_demo import (
-        derive_IkzAYcakre_lit_Ikz_kf_corrected_P014,
-    )
+    from pipelines.tinanta import derive_periphrastic_lit
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P014")
     assert hit["target"]["iast"] == "īkṣāñcakre"
-    assert derive_IkzAYcakre_lit_Ikz_kf_corrected_P014().flat_slp1() == "IkzAYcakre"
+    assert derive_periphrastic_lit("Ikz", 3, 1).flat_slp1() == "IkzAYcakre"
 
 
 def test_P016_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
