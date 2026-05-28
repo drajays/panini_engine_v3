@@ -40,7 +40,6 @@ def derive_akurvAtAm_laG_tanadi_kf_P020() -> State:
     s = State(terms=[dhatu], meta={}, trace=[])
     s.meta["prakriya_P020_akurvAtAm_split_prakriyas_11"] = True
     s.meta["lakara"] = "laG"
-    s.meta["3_2_111_laG_arm"] = True
 
     s = apply_rule("3.2.111", s)
     s = apply_rule("3.1.91", s)
@@ -68,7 +67,6 @@ def derive_akurvAtAm_laG_tanadi_kf_P020() -> State:
     s = apply_rule("6.4.110", s)
 
     # kuru + AtAm → kurvAtAm (general arm across terms)
-    s.meta["6_1_77_ik_yan_aci_general_arm"] = True
     s = apply_rule("6.1.77", s)
 
     # aṭ augment for laṅ

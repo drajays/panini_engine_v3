@@ -71,7 +71,6 @@ def derive_vivakSakaH_san_Nvul_P030() -> State:
     s.meta["P030_7_4_60_abhyasa_vowel_only_arm"] = True
     s = apply_rule("7.4.60", s)
 
-    s.meta["6_1_77_ik_yan_aci_general_arm"] = True
     s = apply_rule("6.1.77", s)
 
     _pada_merge(s)
@@ -87,7 +86,6 @@ def derive_vivakSakaH_san_Nvul_P030() -> State:
         s.terms[0].meta["upadesha_slp1"] = "vac"
 
     s.tripadi_zone = False
-    s.meta.pop("6_1_77_ik_yan_aci_general_arm", None)
 
     s = apply_rule("8.2.1", s)
     s = apply_rule("8.2.30", s)

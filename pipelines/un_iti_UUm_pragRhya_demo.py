@@ -45,7 +45,6 @@ def derive_U_ti_UUm_pragrahya() -> State:
     s.meta[UUM_ADESA_ARM_META] = True
     s = apply_rule("1.1.18", s)
     s = apply_rule("6.1.125", s)
-    s.meta["6_1_77_ik_yan_aci_general_arm"] = True
     s = apply_rule("6.1.77", s)
     s = apply_rule("6.1.78", s)
     return s

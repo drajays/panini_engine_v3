@@ -54,7 +54,6 @@ def derive_uptrimam_ktri_quvap_corrected_P003_C() -> State:
     s = apply_rule("3.4.114", s)
     s = P00_lashakvataddhite_it_lopa_chain(s)
 
-    s.meta["corrected_v2_P003_C_6_1_15_arm"] = True
     s = apply_rule("6.1.15", s)
     s = apply_rule("1.1.45", s)
     s = apply_rule("6.1.108", s)
@@ -65,7 +64,6 @@ def derive_uptrimam_ktri_quvap_corrected_P003_C() -> State:
     stem.kind = "prakriti"
     stem.tags.discard("pada")
     stem.meta["corrected_v2_P003_C_ktrim_stem"] = True
-    s.meta["corrected_v2_P003_C_1_2_46_arm"] = True
     s = apply_rule("1.2.46", s)
 
     stem = s.terms[0]
@@ -78,11 +76,9 @@ def derive_uptrimam_ktri_quvap_corrected_P003_C() -> State:
     s = apply_rule("7.1.24", s)
     for sid in ("1.3.2", "1.3.9"):
         s = apply_rule(sid, s)
-    s.meta["corrected_v2_P003_skip_6_1_107_arm"] = True
     s = apply_rule("6.1.107", s)
     _pada_merge(s)
     s = P00_tripadi_rutva_visarga(s)
-    s.meta.pop("corrected_v2_P003_skip_6_1_107_arm", None)
     return s
 
 

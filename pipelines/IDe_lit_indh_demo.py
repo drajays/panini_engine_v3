@@ -47,7 +47,6 @@ def derive_IDe() -> State:
         s.terms.pop()
 
     # ātmanepada gate (narrow: just records pada)
-    s.meta["1_3_12_arm"] = True
     s.meta["1_3_12_target_upadesha_slp1"] = "inD"
     s = apply_rule("1.3.12", s)
 

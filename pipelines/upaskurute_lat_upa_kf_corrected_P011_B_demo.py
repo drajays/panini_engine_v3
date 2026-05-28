@@ -50,7 +50,6 @@ def derive_upaskurute_lat_upa_kf_corrected_P011_B() -> State:
     s = apply_rule("1.4.59", s)
 
     s = apply_rule("6.1.135", s)
-    s.meta["corrected_v2_P011_B_6_1_139_arm"] = True
     s = apply_rule("6.1.139", s)
 
     for t in s.terms:

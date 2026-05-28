@@ -62,7 +62,6 @@ def derive_svinnaH_kta_YizvidA_corrected_P001_C() -> State:
     s.meta["corrected_v2_P001_C_8_2_42_arm"] = True
     s = apply_rule("8.2.42", s)
 
-    s.meta["corrected_v2_P001_C_1_2_46_arm"] = True
     s = apply_rule("1.2.46", s)
 
     s.meta["linga"] = "pulliṅga"

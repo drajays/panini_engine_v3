@@ -542,16 +542,12 @@ def P00_ugit_pratipadika_prathama_sup_tail(s: State) -> State:
     s = apply_rule("6.4.14", s)
     s.meta.pop("6_4_14_arm", None)
     s = apply_rule("1.2.41", s)
-    s.meta["6_1_68_arm"] = True
     s = apply_rule("6.1.68", s)
-    s.meta.pop("6_1_68_arm", None)
     s = apply_rule("1.4.14", s)
     s = apply_rule("1.1.7", s)
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
-    s.meta["8_2_23_arm"] = True
     s = apply_rule("8.2.23", s)
-    s.meta.pop("8_2_23_arm", None)
     return s
 
 
@@ -841,15 +837,11 @@ def P00_ciY_lat_jhi_snu_tripadi_tail(s: State) -> State:
     s = apply_rule("3.1.73", s)
     s.meta.pop("3_1_73_snu_arm", None)
     s = P00_lashakvataddhite_it_lopa_chain(s)
-    s.meta["7_1_3_jho_anta_arm"] = True
     s = apply_rule("7.1.3", s)
-    s.meta.pop("7_1_3_jho_anta_arm", None)
     s = apply_rule("3.4.113", s)
     s = P00_anga_guna_audit_1_4_13_1_1_5_7_3_84(s)
     s = apply_rule("6.1.72", s)
-    s.meta["6_1_77_ik_yan_aci_general_arm"] = True
     s = apply_rule("6.1.77", s)
-    s.meta.pop("6_1_77_ik_yan_aci_general_arm", None)
     s = apply_rule("1.4.14", s)
     from pipelines.subanta import _pada_merge
 

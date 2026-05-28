@@ -108,7 +108,6 @@ def derive_upasarajaH_upapada_corrected_P005_B() -> State:
 
     _merge_upasaraja(s)
 
-    s.meta["corrected_v2_P005_B_upasaraja_merged_1_2_46_arm"] = True
     s = apply_rule("1.2.46", s)
 
     s.meta["linga"] = "pulliṅga"

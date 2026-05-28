@@ -45,7 +45,6 @@ def _amI_atra_state() -> State:
 def derive_amI_atra_pragrahya() -> State:
     """*amī* + *atra* — no *I*→*y* under **6.1.77** at pragṛhya ‖ *ac*."""
     s = _amI_atra_state()
-    s.meta["6_1_77_ik_yan_aci_general_arm"] = True
     s = apply_rule("6.1.125", s)
     s = apply_rule("6.1.77", s)
     return s

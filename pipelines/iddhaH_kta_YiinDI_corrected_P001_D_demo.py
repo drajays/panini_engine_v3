@@ -74,7 +74,6 @@ def derive_iddhaH_kta_YiinDI_corrected_P001_D() -> State:
     stem.kind = "prakriti"
     stem.tags.discard("pada")
     stem.meta["corrected_v2_P001_D_nistha_stem"] = True
-    s.meta["corrected_v2_P001_D_1_2_46_arm"] = True
     s = apply_rule("1.2.46", s)
 
     s.meta["linga"] = "pulliṅga"

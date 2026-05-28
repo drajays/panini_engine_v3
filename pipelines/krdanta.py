@@ -238,7 +238,6 @@ def derive_krt(
         s = apply_rule("7.2.116", s)
         s = apply_rule("7.2.115", s)
         s = apply_rule("6.1.78", s)
-        s.meta["6_1_77_ik_yan_aci_general_arm"] = True
         s = apply_rule("6.1.77", s)
         s = apply_rule("1.2.45", s)
         s = apply_rule("1.2.46", s)

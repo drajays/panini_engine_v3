@@ -71,11 +71,9 @@ def derive_paktrimam_ktri_qupac_corrected_P003_A() -> State:
     s = apply_rule("7.1.24", s)
     for sid in ("1.3.2", "1.3.9"):
         s = apply_rule(sid, s)
-    s.meta["corrected_v2_P003_skip_6_1_107_arm"] = True
     s = apply_rule("6.1.107", s)
     _pada_merge(s)
     s = P00_tripadi_rutva_visarga(s)
-    s.meta.pop("corrected_v2_P003_skip_6_1_107_arm", None)
     return s
 
 

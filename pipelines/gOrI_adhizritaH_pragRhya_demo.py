@@ -36,7 +36,6 @@ def _stamp_saptamyartha_pragrahya_tags(s: State) -> State:
 
 
 def _block_yan_after_pragrahya(s: State) -> State:
-    s.meta["6_1_77_ik_yan_aci_general_arm"] = True
     s = apply_rule("6.1.125", s)
     s = apply_rule("6.1.77", s)
     return s

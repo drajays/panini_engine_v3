@@ -44,6 +44,8 @@ def derive_mRuSTavAn() -> State:
         target_upadesha_slp1="mfzu~",
         dhatu_bootstrap=P00_anunasikadi_bhuvadi_dhatu_it_chain,
     )
+    # Read (via value-used .pop) by P00_ciY_ktavatu_nistha_prathama_tail to run
+    # ṣṭutva (8.4.40/8.4.41) after the first merge — keep this write.
     s.meta["ktavatu_mfz_stuta_arm"] = True
     s = P00_ciY_ktavatu_nistha_prathama_tail(s)
     return s

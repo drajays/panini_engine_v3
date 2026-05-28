@@ -97,7 +97,6 @@ def derive_pratyagni() -> State:
     s = apply_rule("2.2.30", s)
 
     # 6.1.77 yāṇ: arm generic cross-term
-    s.meta["6_1_77_ik_yan_aci_general_arm"] = True
     s = apply_rule("6.1.77", s)
 
     # Merge to one term for final output and attach su via 4.1.2, then avyaya via 1.1.41.

@@ -72,7 +72,6 @@ def derive_zvayathuH_athuc_wzvi_corrected_P002_B() -> State:
     stem.kind = "prakriti"
     stem.tags.discard("pada")
     stem.meta["corrected_v2_P002_B_bhava_stem"] = True
-    s.meta["corrected_v2_P002_B_1_2_46_arm"] = True
     s = apply_rule("1.2.46", s)
 
     s.meta["linga"] = "pulliṅga"

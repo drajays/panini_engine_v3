@@ -53,9 +53,7 @@ def derive_rAjA() -> State:
     s = apply_rule("6.4.8", s)   # rAjan -> rAjAn (needs sarvanamasthana)
 
     s = apply_rule("1.2.41", s)  # apṛkta on single s
-    s.meta["6_1_68_arm"] = True
     s = apply_rule("6.1.68", s)  # drop s
-    s.meta.pop("6_1_68_arm", None)
 
     _pada_merge(s)
     s = apply_rule("8.2.1", s)

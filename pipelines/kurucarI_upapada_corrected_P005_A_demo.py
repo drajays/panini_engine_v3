@@ -134,7 +134,6 @@ def derive_kurucarI_upapada_corrected_P005_A() -> State:
 
     _merge_kurucara(s)
 
-    s.meta["corrected_v2_P005_A_kurucara_merged_1_2_46_arm"] = True
     s = apply_rule("1.2.46", s)
 
     s.meta["corrected_v2_P005_A_4_1_15_arm"] = True
@@ -158,7 +157,6 @@ def derive_kurucarI_upapada_corrected_P005_A() -> State:
     s = apply_rule("1.3.9", s)
     s = apply_rule("1.2.41", s)
 
-    s.meta["corrected_v2_P005_A_6_1_68_arm"] = True
     s = apply_rule("6.1.68", s)
 
     return s

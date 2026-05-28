@@ -88,9 +88,7 @@ def derive_dyukAmA_bahuvrihi_P023() -> State:
     s = apply_rule("6.1.66", s)
 
     # di + u → dy + u (iko yaṇ aci) across Terms (armed general path).
-    s.meta["6_1_77_ik_yan_aci_general_arm"] = True
     s = apply_rule("6.1.77", s)
-    s.meta.pop("6_1_77_ik_yan_aci_general_arm", None)
 
     # Structural: represent compound stem dyu + kAma.
     _compound_merge_dyu_kAma(s)
@@ -131,7 +129,6 @@ def derive_dyukAmA_bahuvrihi_P023() -> State:
     s = apply_rule("1.3.2", s)
     s = apply_rule("1.3.9", s)
     s = apply_rule("1.2.41", s)
-    s.meta["P023_6_1_68_tApanta_arm"] = True
     s = apply_rule("6.1.68", s)
 
     s = apply_rule("1.1.68", s)
