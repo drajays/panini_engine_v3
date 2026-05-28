@@ -39,11 +39,10 @@ def _find_yasut_ya(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if _find_yasut_ya(state) is not None:
-        return True
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return state.meta.get("7_2_80_arm") is True
+    # Structural path: yāsuṭ remnant [y,A] → [i,y] after a-final term.
+    # (The legacy gate-setter arm path is dead — no caller sets ``7_2_80_arm``
+    # and the gate it produced is read by no other sūtra.  Art.7: no arm read.)
+    return _find_yasut_ya(state) is not None
 
 
 def act(state: State) -> State:

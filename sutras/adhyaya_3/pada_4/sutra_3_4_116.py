@@ -30,11 +30,12 @@ def _find_tin(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
+    # Phonological path: in āśīr-liṅ, mark the tiṅ ādeśa ārdhadhātuka.
+    # (The legacy gate-setter arm path is dead — no caller sets ``3_4_116_arm``
+    # and the gate it produced is read by no other sūtra.  Art.7: no arm read.)
     if state.meta.get("ashir_liG"):
         return _find_tin(state) is not None
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return state.meta.get("3_4_116_arm") is True
+    return False
 
 
 def act(state: State) -> State:

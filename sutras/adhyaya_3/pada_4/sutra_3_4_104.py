@@ -28,13 +28,14 @@ def _find_tin_index(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
+    # Structural path: kit-yāsuṭ insertion in āśīr-liṅ before the tiṅ ādeśa.
+    # (The legacy gate-setter arm path is dead — no caller sets ``3_4_104_arm``
+    # and the gate it produced is read by no other sūtra.  Art.7: no arm read.)
     if state.meta.get("3_4_104_ashir_yasut_arm"):
         if state.meta.get("3_4_104_yasut_done"):
             return False
         return _find_tin_index(state) is not None
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return state.meta.get("3_4_104_arm") is True
+    return False
 
 
 def act(state: State) -> State:
