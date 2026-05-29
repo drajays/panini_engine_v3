@@ -4,12 +4,17 @@
 Two operational paths:
   1. Arm ``7_2_79_sIyuw_s_lopa_arm``: original ātmanepada sīyuṭ s-lopa.
   2. Arm ``7_2_79_liG_yasut_arm``: vidhi-liṅ parasmaipada — drop the final
-     's' from the yāsuṭ augment term [y,A,s] → [y,A].
+     's' from the yāsuṭ augment term [y,A,s] → [y,A]; additionally, for
+     the *adādi* 3pl path (dhātu directly precedes yasut, i.e. previous term
+     ends in HAL) and the tiṅ 'us' starts with u/U, drop the 'A' → [y].
+     This gives ad+y+us → adyuḥ.  For bhvādi (śap-a before yasut), rule
+     7.2.80 handles yā+us → iy+us via a separate transformation.
 """
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from phonology import HAL
 
 
 def _find_sIyuw(state: State) -> int | None:
@@ -58,6 +63,22 @@ def act(state: State) -> State:
     if idx is not None:
         t = state.terms[idx]
         del t.varnas[-1]  # drop final 's' from [y,A,s] → [y,A]
+        # For adādi 3pl: when the term BEFORE yasut ends in a HAL (consonant),
+        # the dhātu directly precedes the agama (no śap-a between them).  In
+        # that case, if the following tiṅ starts with u/U, also drop 'A' → [y],
+        # giving ad+y+us → adyuḥ.
+        # When there IS a vowel-final term before yasut (e.g. bhū-śap-a), rule
+        # 7.2.80 handles the yā+us → iy+us conversion instead — leave A intact.
+        if (t.varnas and t.varnas[-1].slp1 == "A"
+                and idx + 1 < len(state.terms)
+                and idx > 0):
+            nxt = state.terms[idx + 1]
+            prev = state.terms[idx - 1]
+            prev_last = prev.varnas[-1].slp1 if prev.varnas else ""
+            if (nxt.varnas and nxt.varnas[0].slp1 in {"u", "U"}
+                    and prev_last in HAL):
+                del t.varnas[-1]  # drop 'A' from [y,A] → [y]
+                state.samjna_registry["7.2.79_yasut_A_lopa"] = True
         t.meta["7_2_79_yasut_done"] = True
         state.meta.pop("7_2_79_liG_yasut_arm", None)
         state.samjna_registry["7.2.79_yasut_s_lopa"] = True

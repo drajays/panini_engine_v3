@@ -1342,21 +1342,6 @@ def _derive_liG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
     state = apply_rule("7.2.79", state)
     state.meta.pop("7_2_79_liG_yasut_arm", None)
 
-    # 3pl clip: ``yās``→``y`` (not ``yā``) before ``jus``/``us`` (``अद्युः``).
-    if purusha == 3 and vacana == 3:
-        for i, t in enumerate(state.terms):
-            if "yasut_agama" not in t.tags or not t.varnas:
-                continue
-            if t.varnas[-1].slp1 != "A":
-                continue
-            if i + 1 >= len(state.terms):
-                continue
-            nxt = state.terms[i + 1]
-            cur = "".join(v.slp1 for v in nxt.varnas)
-            if (nxt.meta.get("upadesha_slp1") or "").strip() == "jus" or cur.startswith("u"):
-                t.varnas = [v for v in t.varnas if v.slp1 != "A"]
-                break
-
     state.meta["suw_recipe"] = True
     state = apply_rule("3.4.107", state)
     state.meta.pop("suw_recipe", None)
