@@ -38,7 +38,14 @@ from core.canonical_pipelines import (
     P01_samjna_1_1_15_to_1_1_24,
     P01_samjna_1_1_3_to_1_1_100,
     P01_samjna_dhatu_class,
+    P00_anga_guna_audit_1_4_13_1_1_5_7_3_84,
+    P00_anunasikadi_bhuvadi_dhatu_it_chain,
+    P00_ciY_kartari_krt_nistha_adhikara_prefix,
     P00_it_halantyam_lopa_yathasankhyam,
+    P00_krt_ardhadhatuka_ekac_it_and_guna_audit,
+    P00_lashakvataddhite_it_lopa_chain,
+    P00_pratipadika_prathama_sup_after_stem_merge,
+    P00_tripadi_rutva_visarga,
     P06a_pratyaya_adhikara_3_1_1_to_3,
 )
 from phonology import HAL
@@ -375,4 +382,332 @@ def derive_nAyakaH() -> State:
     s.meta["vibhakti_vacana"] = "1-1"
     s = run_subanta_preflight_through_1_4_7(s)
     s = run_subanta_sup_attach_and_finish(s)
+    return s
+
+
+# ── P006: ciñ + lyuṭ → cayanam (napuṃsaka prathamā ekavacana) ───────────────
+
+
+def derive_cayanam() -> State:
+    """P006: ciñ + lyuṭ → cayanam — napuṃsaka prathamā ekavacana."""
+    from pipelines.subanta import (
+        run_subanta_preflight_through_1_4_7,
+        run_subanta_sup_attach_and_finish,
+    )
+
+    s = derive_krt("ciY", krt_upadesha_slp1="lyuw", merge_pratipadika_label="cayana")
+    if s.terms:
+        s.terms[0].tags.add("napuṃsaka")
+    s.meta["linga"] = "napuṃsaka"
+    s.meta["vibhakti_vacana"] = "1-1"
+    s = run_subanta_preflight_through_1_4_7(s)
+    s = run_subanta_sup_attach_and_finish(s)
+    return s
+
+
+# ── P007: BaYjo + ghurac → bhaNguram (napuṃsaka prathamā ekavacana) ─────────
+
+
+def derive_bhaNguram() -> State:
+    """P007: BaYjo + ghurac → bhaNguram — napuṃsaka prathamā ekavacana."""
+    from pipelines.subanta import (
+        _pada_merge,
+        run_subanta_preflight_through_1_4_7,
+        run_subanta_sup_attach_and_finish,
+    )
+
+    s = build_dhatu_state("BaYjo")
+    s = apply_rule("1.1.1", s)
+    s = apply_rule("1.1.73", s)
+    s = P01_samjna_1_1_3_to_1_1_100(s=s, include_luk_block=True)
+    s = P01_samjna_1_1_15_to_1_1_24(s)
+    s = apply_rule("1.1.50", s)
+    for sid in ("1.3.1", "1.3.2", "1.3.5", "1.3.200"):
+        s = apply_rule(sid, s)
+    s = P00_it_halantyam_lopa_yathasankhyam(s)
+    for t in s.terms:
+        if "dhatu" in t.tags:
+            t.tags.discard("upadesha")
+    s = apply_rule("1.4.59", s)
+    s = apply_rule("6.1.65", s)
+    s.meta["krt_artha"] = "kartari"
+    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
+    s = apply_rule("3.1.91", s)
+    s = apply_rule("3.2.161", s)
+    for sid in ("1.3.8", "1.3.7", "1.3.3", "1.3.9", "1.3.10"):
+        s = apply_rule(sid, s)
+    s = apply_rule("1.1.50", s)
+    s = apply_rule("7.3.52", s)
+    s = apply_rule("1.2.45", s)
+    s = apply_rule("1.2.46", s)
+    s = _structural_merge_to_pratipadika(s, upadesha_slp1="BaNgura")
+    if s.terms:
+        s.terms[0].tags.add("napuṃsaka")
+    s.meta["linga"] = "napuṃsaka"
+    s.meta["vibhakti_vacana"] = "1-1"
+    s = run_subanta_preflight_through_1_4_7(s)
+    s = run_subanta_sup_attach_and_finish(s)
+    return s
+
+
+# ── P002: athuc forms (ṭvit dhātus) ─────────────────────────────────────────
+
+
+def _derive_athuc_stem(dhatu_upadesha: str) -> State:
+    """Build kṛdanta stem from ṭvit dhātu + athuc (3.3.89, structural)."""
+    from pipelines.subanta import _pada_merge
+
+    dhatu = Term(
+        kind="prakriti",
+        varnas=list(parse_slp1_upadesha_sequence(dhatu_upadesha)),
+        tags={"dhatu", "anga", "upadesha"},
+        meta={"upadesha_slp1": dhatu_upadesha},
+    )
+    s = State(terms=[dhatu], meta={}, trace=[])
+    s.meta["pada"] = "parasmaipada"
+    s.meta["ekac_dhatu"] = True
+    for sid in ("1.3.1", "1.3.5", "1.3.2", "1.3.9"):
+        s = apply_rule(sid, s)
+    if s.terms:
+        s.terms[0].tags.discard("upadesha")
+    s = apply_rule("1.3.1", s)
+    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
+    s = apply_rule("3.1.91", s)
+    s = apply_rule("3.3.89", s)
+    s = P00_lashakvataddhite_it_lopa_chain(s)
+    s = apply_rule("3.4.114", s)
+    _pada_merge(s)
+    stem = s.terms[0]
+    stem.kind = "prakriti"
+    stem.tags.discard("pada")
+    return s
+
+
+def derive_vepathuH() -> State:
+    """P002-A: ṭuvepṛ (wuvepf~) + athuc → vepathuḥ — pulliṅga prathamā ekavacana."""
+    s = _derive_athuc_stem("wuvepf~")
+    s = apply_rule("1.2.46", s)
+    s.meta["linga"] = "pulliṅga"
+    s = apply_rule("4.1.1", s)
+    s = P00_pratipadika_prathama_sup_after_stem_merge(s)
+    s = P00_tripadi_rutva_visarga(s)
+    return s
+
+
+def derive_zvayathuH() -> State:
+    """P002-B: wzvi (ṭuoñśvi) + athuc → zvayathuḥ — pulliṅga prathamā ekavacana."""
+    from pipelines.subanta import _pada_merge
+    from core.canonical_pipelines import P00_guna_prayoga_readiness
+
+    dhatu = Term(
+        kind="prakriti",
+        varnas=list(parse_slp1_upadesha_sequence("wzvi")),
+        tags={"dhatu", "anga", "upadesha"},
+        meta={"upadesha_slp1": "wzvi"},
+    )
+    s = State(terms=[dhatu], meta={}, trace=[])
+    s.meta["pada"] = "parasmaipada"
+    s.meta["ekac_dhatu"] = True
+    for sid in ("1.3.1", "1.3.5", "1.3.2", "1.3.9"):
+        s = apply_rule(sid, s)
+    if s.terms:
+        s.terms[0].tags.discard("upadesha")
+    s = apply_rule("1.3.1", s)
+    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
+    s = apply_rule("3.1.91", s)
+    s = apply_rule("3.3.89", s)
+    s = P00_lashakvataddhite_it_lopa_chain(s)
+    s = apply_rule("3.4.114", s)
+    s = P00_guna_prayoga_readiness(s)
+    s = apply_rule("7.3.84", s)
+    s = apply_rule("6.1.78", s)
+    _pada_merge(s)
+    stem = s.terms[0]
+    stem.kind = "prakriti"
+    stem.tags.discard("pada")
+    s = apply_rule("1.2.46", s)
+    s.meta["linga"] = "pulliṅga"
+    s = apply_rule("4.1.1", s)
+    s = P00_pratipadika_prathama_sup_after_stem_merge(s)
+    s = P00_tripadi_rutva_visarga(s)
+    return s
+
+
+# ── P003: ktri forms (ḍvit dhātus + 4.4.20 mam) ─────────────────────────────
+
+
+def _derive_ktri_stem(dhatu_upadesha: str) -> State:
+    """Build ktri kṛt attachment for ḍvit dhātus (3.3.88, structural: pac/kf/vap)."""
+    dhatu = Term(
+        kind="prakriti",
+        varnas=list(parse_slp1_upadesha_sequence(dhatu_upadesha)),
+        tags={"dhatu", "anga", "upadesha"},
+        meta={"upadesha_slp1": dhatu_upadesha},
+    )
+    s = State(terms=[dhatu], meta={}, trace=[])
+    s.meta["ekac_dhatu"] = True
+    for sid in ("1.3.1", "1.3.5", "1.3.2", "1.3.3", "1.3.9"):
+        s = apply_rule(sid, s)
+    if s.terms:
+        s.terms[0].tags.discard("upadesha")
+    s = apply_rule("1.3.1", s)
+    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
+    s = apply_rule("3.1.91", s)
+    s = apply_rule("3.3.88", s)
+    s = apply_rule("4.4.20", s)
+    s = apply_rule("3.4.114", s)
+    s = P00_lashakvataddhite_it_lopa_chain(s)
+    return s
+
+
+def _ktri_subanta_tail(s: State) -> State:
+    """Shared napuṃsaka prathamā ekavacana subanta tail for ktri forms."""
+    from pipelines.subanta import _pada_merge
+
+    _pada_merge(s)
+    stem = s.terms[0]
+    stem.kind = "prakriti"
+    stem.tags.discard("pada")
+    s = apply_rule("1.2.46", s)
+    stem = s.terms[0]
+    stem.tags.add("napuṃsaka")
+    s.meta["vibhakti_vacana"] = "1-1"
+    s = apply_rule("4.1.1", s)
+    s = apply_rule("1.2.45", s)
+    s = apply_rule("4.1.2", s)
+    s = apply_rule("7.1.24", s)
+    for sid in ("1.3.2", "1.3.9"):
+        s = apply_rule(sid, s)
+    s = apply_rule("6.1.107", s)
+    _pada_merge(s)
+    s = P00_tripadi_rutva_visarga(s)
+    return s
+
+
+def derive_paktrimam() -> State:
+    """P003-A: qupac~z (ḍupacāṣ) + ktri + mam → paktrimam — napuṃsaka prathamā eka."""
+    s = _derive_ktri_stem("qupac~z")
+    s = apply_rule("8.2.30", s)
+    return _ktri_subanta_tail(s)
+
+
+def derive_krtrimam() -> State:
+    """P003-B: kf (ḍukṛñ) + ktri + mam → kṛtrimam — napuṃsaka prathamā ekavacana."""
+    s = _derive_ktri_stem("kf")
+    s = apply_rule("7.3.84", s)
+    s = apply_rule("1.1.5", s)
+    return _ktri_subanta_tail(s)
+
+
+def derive_uptrimam() -> State:
+    """P003-C: quvap~z (ḍuvapāṣ) + ktri + mam → uptrimam — napuṃsaka prathamā eka."""
+    s = _derive_ktri_stem("quvap~z")
+    s = apply_rule("6.1.15", s)
+    s = apply_rule("1.1.45", s)
+    s = apply_rule("6.1.108", s)
+    return _ktri_subanta_tail(s)
+
+
+# ── P001: niṣṭhā (kta) forms ─────────────────────────────────────────────────
+
+
+def _derive_kta_manual_it_chain(dhatu_upadesha: str) -> State:
+    """Shared niṣṭhā prefix for P001-B/C/D (manual it-chain, not P00_anunasikadi)."""
+    dhatu = Term(
+        kind="prakriti",
+        varnas=list(parse_slp1_upadesha_sequence(dhatu_upadesha)),
+        tags={"dhatu", "anga", "upadesha"},
+        meta={"upadesha_slp1": dhatu_upadesha},
+    )
+    s = State(terms=[dhatu], meta={}, trace=[])
+    s.meta["pada"] = "parasmaipada"
+    s.meta["ekac_dhatu"] = True
+    for sid in ("1.3.1", "1.3.5", "1.3.2", "1.3.9"):
+        s = apply_rule(sid, s)
+    if s.terms:
+        s.terms[0].tags.discard("upadesha")
+    s = apply_rule("1.3.1", s)
+    s = P00_ciY_kartari_krt_nistha_adhikara_prefix(s)
+    s.meta["3_2_102_target_upadesha_slp1"] = dhatu_upadesha
+    s.meta["3_2_102_kta_arm"] = True
+    s = apply_rule("3.2.102", s)
+    s = P00_lashakvataddhite_it_lopa_chain(s)
+    s = P00_krt_ardhadhatuka_ekac_it_and_guna_audit(s)
+    return s
+
+
+def derive_bhinnaH() -> State:
+    """P001-A: bhid (Bidi~) + kta → bhinnaḥ — pulliṅga prathamā ekavacana."""
+    dhatu = Term(
+        kind="prakriti",
+        varnas=list(parse_slp1_upadesha_sequence("Bidi~")),
+        tags={"dhatu", "anga", "upadesha"},
+        meta={"upadesha_slp1": "Bidi~"},
+    )
+    s = State(terms=[dhatu], meta={}, trace=[])
+    s.meta["pada"] = "parasmaipada"
+    s.meta["ekac_dhatu"] = True
+    s = P00_anunasikadi_bhuvadi_dhatu_it_chain(s)
+    s = P00_ciY_kartari_krt_nistha_adhikara_prefix(s)
+    s.meta["3_2_102_target_upadesha_slp1"] = "Bidi~"
+    s.meta["3_2_102_kta_arm"] = True
+    s = apply_rule("3.2.102", s)
+    s = P00_lashakvataddhite_it_lopa_chain(s)
+    s = P00_krt_ardhadhatuka_ekac_it_and_guna_audit(s)
+    s = apply_rule("8.2.42", s)
+    s = apply_rule("1.2.46", s)
+    s.meta["linga"] = "pulliṅga"
+    s = P00_pratipadika_prathama_sup_after_stem_merge(s)
+    s = P00_tripadi_rutva_visarga(s)
+    return s
+
+
+def derive_DfzwaH() -> State:
+    """P001-B: ñidhṛṣ (YiDfzf~) + kta → dhṛṣṭaḥ — pulliṅga prathamā ekavacana."""
+    from pipelines.subanta import _pada_merge
+
+    s = _derive_kta_manual_it_chain("YiDfzf~")
+    _pada_merge(s)
+    s = apply_rule("8.4.41", s)
+    stem = s.terms[0]
+    stem.kind = "prakriti"
+    stem.tags.discard("pada")
+    s = apply_rule("1.2.46", s)
+    s.meta["linga"] = "pulliṅga"
+    s = P00_pratipadika_prathama_sup_after_stem_merge(s)
+    s = P00_tripadi_rutva_visarga(s)
+    return s
+
+
+def derive_svinnaH() -> State:
+    """P001-C: ñiṣvid (YizvidA~) + kta → svinnaḥ — pulliṅga prathamā ekavacana."""
+    s = _derive_kta_manual_it_chain("YizvidA~")
+    s = apply_rule("6.1.64", s)
+    s = apply_rule("8.2.42", s)
+    s = apply_rule("1.2.46", s)
+    s.meta["linga"] = "pulliṅga"
+    s = P00_pratipadika_prathama_sup_after_stem_merge(s)
+    s = P00_tripadi_rutva_visarga(s)
+    return s
+
+
+def derive_idDaH() -> State:
+    """P001-D: ñiindh (YiinDI~) + kta → iddhaḥ — pulliṅga prathamā ekavacana."""
+    from pipelines.subanta import _pada_merge
+
+    s = _derive_kta_manual_it_chain("YiinDI~")
+    if s.terms:
+        s.terms[0].meta["upadesha_slp1"] = "inD"
+    s = apply_rule("6.4.24", s)
+    _pada_merge(s)
+    s.meta["corrected_v2_P001_D_pre_tripadi_cluster_arm"] = True
+    s = apply_rule("8.2.40", s)
+    s = apply_rule("8.4.53", s)
+    stem = s.terms[0]
+    stem.kind = "prakriti"
+    stem.tags.discard("pada")
+    s = apply_rule("1.2.46", s)
+    s.meta["linga"] = "pulliṅga"
+    s = P00_pratipadika_prathama_sup_after_stem_merge(s)
+    s = P00_tripadi_rutva_visarga(s)
     return s

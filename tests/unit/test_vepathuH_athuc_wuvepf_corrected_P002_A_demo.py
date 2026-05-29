@@ -1,21 +1,18 @@
-"""Unit tests for ``pipelines/vepathuH_athuc_wuvepf_corrected_P002_A_demo.py`` (**P002-A**)."""
+"""Unit tests for P002-A (vepathuḥ) — canonical krdanta.derive_vepathuH()."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.vepathuH_athuc_wuvepf_corrected_P002_A_demo import (
-    derive_vepathuH_athuc_wuvepf_corrected_P002_A,
-)
+from pipelines.krdanta import derive_vepathuH
 
 
 def test_P002_A_render_vepathuH():
-    s = derive_vepathuH_athuc_wuvepf_corrected_P002_A()
-    assert s.render() == "vepathuH"
+    assert derive_vepathuH().flat_slp1() == "vepathuH"
 
 
 def test_P002_A_spine_core_order():
-    s = derive_vepathuH_athuc_wuvepf_corrected_P002_A()
+    s = derive_vepathuH()
     ids = [x.get("sutra_id") for x in s.trace if x.get("sutra_id")]
     assert "3.3.89" in ids
     assert "1.2.46" in ids

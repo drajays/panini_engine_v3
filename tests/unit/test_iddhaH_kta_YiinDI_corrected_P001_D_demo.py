@@ -1,21 +1,18 @@
-"""Unit tests for ``pipelines/iddhaH_kta_YiinDI_corrected_P001_D_demo.py`` (**P001-D**)."""
+"""Unit tests for P001-D (iddhaḥ) — canonical krdanta.derive_idDaH()."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.iddhaH_kta_YiinDI_corrected_P001_D_demo import (
-    derive_iddhaH_kta_YiinDI_corrected_P001_D,
-)
+from pipelines.krdanta import derive_idDaH
 
 
 def test_P001_D_render_iddhaH():
-    s = derive_iddhaH_kta_YiinDI_corrected_P001_D()
-    assert s.render() == "idDaH"
+    assert derive_idDaH().flat_slp1() == "idDaH"
 
 
 def test_P001_D_spine_pre_tripadi_cluster_then_subanta():
-    s = derive_iddhaH_kta_YiinDI_corrected_P001_D()
+    s = derive_idDaH()
     ids = [x.get("sutra_id") for x in s.trace if x.get("sutra_id")]
     assert "8.2.40" in ids
     assert "8.4.53" in ids

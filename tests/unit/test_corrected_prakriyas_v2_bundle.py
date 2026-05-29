@@ -351,93 +351,91 @@ def test_P003_C_astadhyayi_spine_order(corrected_v2: dict) -> None:
 def test_P001_A_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
     """**P001-A** (*bhinnaḥ*): bundle IAST ↔ engine SLP1 surface."""
 
-    from pipelines.bhinnaH_kta_Bidi_corrected_P001_A_demo import derive_bhinnaH_kta_Bidi_corrected_P001_A
+    from pipelines.krdanta import derive_bhinnaH
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P001-A")
     assert hit["target"]["iast"] == "bhinnaḥ"
-    assert derive_bhinnaH_kta_Bidi_corrected_P001_A().flat_slp1() == "bhinnaH"
+    assert derive_bhinnaH().flat_slp1() == "bhinnaH"
 
 
 def test_P001_B_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
     """**P001-B** (*dhṛṣṭaḥ*): bundle IAST ↔ engine SLP1 surface."""
 
-    from pipelines.dhRSTaH_kta_YiDfzf_corrected_P001_B_demo import derive_dhRSTaH_kta_YiDfzf_corrected_P001_B
+    from pipelines.krdanta import derive_DfzwaH
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P001-B")
     assert hit["target"]["iast"] == "dhṛṣṭaḥ"
-    assert derive_dhRSTaH_kta_YiDfzf_corrected_P001_B().flat_slp1() == "DfzwaH"
+    assert derive_DfzwaH().flat_slp1() == "DfzwaH"
 
 
 def test_P001_C_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
     """**P001-C** (*svinnaḥ*): bundle IAST ↔ engine SLP1 surface."""
 
-    from pipelines.svinnaH_kta_YizvidA_corrected_P001_C_demo import derive_svinnaH_kta_YizvidA_corrected_P001_C
+    from pipelines.krdanta import derive_svinnaH
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P001-C")
     assert hit["target"]["iast"] == "svinnaḥ"
-    assert derive_svinnaH_kta_YizvidA_corrected_P001_C().flat_slp1() == "svinnaH"
+    assert derive_svinnaH().flat_slp1() == "svinnaH"
 
 
 def test_P001_D_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
     """**P001-D** (*iddhaḥ*): bundle IAST ↔ engine SLP1 surface."""
 
-    from pipelines.iddhaH_kta_YiinDI_corrected_P001_D_demo import derive_iddhaH_kta_YiinDI_corrected_P001_D
+    from pipelines.krdanta import derive_idDaH
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P001-D")
     assert hit["target"]["iast"] == "iddhaḥ"
-    assert derive_iddhaH_kta_YiinDI_corrected_P001_D().flat_slp1() == "idDaH"
+    assert derive_idDaH().flat_slp1() == "idDaH"
 
 
 def test_P002_A_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
     """**P002-A** (*vepathuḥ*): bundle IAST ↔ engine SLP1 surface."""
 
-    from pipelines.vepathuH_athuc_wuvepf_corrected_P002_A_demo import (
-        derive_vepathuH_athuc_wuvepf_corrected_P002_A,
-    )
+    from pipelines.krdanta import derive_vepathuH
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P002-A")
     assert hit["target"]["iast"] == "vepathuḥ"
-    assert derive_vepathuH_athuc_wuvepf_corrected_P002_A().flat_slp1() == "vepathuH"
+    assert derive_vepathuH().flat_slp1() == "vepathuH"
 
 
 def test_P002_B_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
     """**P002-B** (*śvayathuḥ*): bundle IAST ↔ engine SLP1 surface."""
 
-    from pipelines.zvayathuH_athuc_wzvi_corrected_P002_B_demo import derive_zvayathuH_athuc_wzvi_corrected_P002_B
+    from pipelines.krdanta import derive_zvayathuH
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P002-B")
     assert hit["target"]["iast"] == "śvayathuḥ"
-    assert derive_zvayathuH_athuc_wzvi_corrected_P002_B().flat_slp1() == "zvayathuH"
+    assert derive_zvayathuH().flat_slp1() == "zvayathuH"
 
 
 def test_P003_A_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
     """**P003-A** (*paktrimam*): bundle IAST ↔ engine SLP1 surface."""
 
-    from pipelines.paktrimam_ktri_qupac_corrected_P003_A_demo import derive_paktrimam_ktri_qupac_corrected_P003_A
+    from pipelines.krdanta import derive_paktrimam
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P003-A")
     assert hit["target"]["iast"] == "paktrimam"
-    assert derive_paktrimam_ktri_qupac_corrected_P003_A().flat_slp1() == "paktrimam"
+    assert derive_paktrimam().flat_slp1() == "paktrimam"
 
 
 def test_P003_B_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
     """**P003-B** (*kṛtrimam*): bundle IAST ↔ engine SLP1 surface."""
 
-    from pipelines.kRtrimam_ktri_kf_corrected_P003_B_demo import derive_kRtrimam_ktri_kf_corrected_P003_B
+    from pipelines.krdanta import derive_krtrimam
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P003-B")
     assert hit["target"]["iast"] == "kṛtrimam"
-    assert derive_kRtrimam_ktri_kf_corrected_P003_B().flat_slp1() == "kftrimam"
+    assert derive_krtrimam().flat_slp1() == "kftrimam"
 
 
 def test_P003_C_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
     """**P003-C** (*uptrimam*): bundle IAST ↔ engine SLP1 surface."""
 
-    from pipelines.uptrimam_ktri_quvap_corrected_P003_C_demo import derive_uptrimam_ktri_quvap_corrected_P003_C
+    from pipelines.krdanta import derive_uptrimam
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P003-C")
     assert hit["target"]["iast"] == "uptrimam"
-    assert derive_uptrimam_ktri_quvap_corrected_P003_C().flat_slp1() == "uptrimam"
+    assert derive_uptrimam().flat_slp1() == "uptrimam"
 
 
 def test_P008_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
@@ -451,85 +449,73 @@ def test_P008_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 
 
 def test_P006_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P006** (*cayanam*): reference row matches the corrected-v2 demo pipeline."""
+    """**P006** (*cayanam*): canonical krdanta.derive_cayanam()."""
 
-    from pipelines.cayanam_ciY_lyuw_corrected_P006_demo import derive_cayanam_corrected_P006
+    from pipelines.krdanta import derive_cayanam
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P006")
     assert hit["target"]["iast"] == "cayanam"
-    assert derive_cayanam_corrected_P006().flat_slp1() == "cayanam"
+    assert derive_cayanam().flat_slp1() == "cayanam"
 
 
 def test_P004_C_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P004-C** (*brāhmaṇāḥ*): bundle IAST ↔ engine SLP1 surface."""
+    """**P004-C** (*brāhmaṇāḥ*): canonical subanta.derive()."""
 
-    from pipelines.brAhmaRAH_prathamA_bahu_corrected_P004_C_demo import (
-        derive_brAhmaRAH_prathamA_bahu_corrected_P004_C,
-    )
+    from pipelines.subanta import derive
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P004-C")
     assert hit["target"]["iast"] == "brāhmaṇāḥ"
-    assert derive_brAhmaRAH_prathamA_bahu_corrected_P004_C().flat_slp1() == "brAhmaRAH"
+    assert derive("brAhmaRa", vibhakti=1, vacana=3, linga="pulliṅga").flat_slp1() == "brAhmaRAH"
 
 
 def test_P004_D_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P004-D** (*vācā*): bundle IAST ↔ engine SLP1 surface."""
+    """**P004-D** (*vācā*): canonical subanta.derive()."""
 
-    from pipelines.vAcA_tRtIyA_strI_corrected_P004_D_demo import (
-        derive_vAcA_tRtIyA_strI_corrected_P004_D,
-    )
+    from pipelines.subanta import derive
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P004-D")
     assert hit["target"]["iast"] == "vācā"
-    assert derive_vAcA_tRtIyA_strI_corrected_P004_D().flat_slp1() == "vAcA"
+    assert derive("vAc", vibhakti=3, vacana=1, linga="strīliṅga").flat_slp1() == "vAcA"
 
 
 def test_P004_B_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P004-B** (*śāṇḍikyaḥ*): bundle IAST ↔ engine SLP1 surface."""
+    """**P004-B** (*śāṇḍikyaḥ*): canonical taddhita.derive_SANqikyaH()."""
 
-    from pipelines.SANDikyaH_Yya_SRqika_corrected_P004_B_demo import (
-        derive_SANDikyaH_Yya_SRqika_corrected_P004_B,
-    )
+    from pipelines.taddhita import derive_SANqikyaH
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P004-B")
     assert hit["target"]["iast"] == "śāṇḍikyaḥ"
-    assert derive_SANDikyaH_Yya_SRqika_corrected_P004_B().flat_slp1() == "SARqikyaH"
+    assert derive_SANqikyaH().flat_slp1() == "SARqikyaH"
 
 
 def test_P004_A_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P004-A** (*kauñjāyanyaḥ*): bundle IAST ↔ engine SLP1 surface."""
+    """**P004-A** (*kauñjāyanyaḥ*): canonical taddhita.derive_kauYjAyanyaH()."""
 
-    from pipelines.kauYjAyanayaH_caPaY_yal_corrected_P004_A_demo import (
-        derive_kauYjAyanayaH_caPaY_yal_corrected_P004_A,
-    )
+    from pipelines.taddhita import derive_kauYjAyanyaH
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P004-A")
     assert hit["target"]["iast"] == "kauñjāyanyaḥ"
-    assert derive_kauYjAyanayaH_caPaY_yal_corrected_P004_A().flat_slp1() == "kOYjAyanyaH"
+    assert derive_kauYjAyanyaH().flat_slp1() == "kOYjAyanyaH"
 
 
 def test_P005_A_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P005-A** (*kurucarī*): bundle IAST ↔ engine SLP1 surface."""
+    """**P005-A** (*kurucarī*): canonical upapada_krt.derive_kurucarI()."""
 
-    from pipelines.kurucarI_upapada_corrected_P005_A_demo import (
-        derive_kurucarI_upapada_corrected_P005_A,
-    )
+    from pipelines.upapada_krt import derive_kurucarI
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P005-A")
     assert hit["target"]["iast"] == "kurucarī"
-    assert derive_kurucarI_upapada_corrected_P005_A().flat_slp1() == "kurucarI"
+    assert derive_kurucarI().flat_slp1() == "kurucarI"
 
 
 def test_P005_B_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P005-B** (*upasarajaḥ*): bundle IAST ↔ engine SLP1 surface."""
+    """**P005-B** (*upasarajaḥ*): canonical upapada_krt.derive_upasarajaH()."""
 
-    from pipelines.upasarajaH_upapada_corrected_P005_B_demo import (
-        derive_upasarajaH_upapada_corrected_P005_B,
-    )
+    from pipelines.upapada_krt import derive_upasarajaH
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P005-B")
     assert hit["target"]["iast"] == "upasarajaḥ"
-    assert derive_upasarajaH_upapada_corrected_P005_B().flat_slp1() == "upasarajaH"
+    assert derive_upasarajaH().flat_slp1() == "upasarajaH"
 
 
 def test_P009_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
@@ -583,13 +569,13 @@ def test_P012_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 
 
 def test_P007_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
-    """**P007** (*bhaṅguram*): bundle IAST ↔ engine SLP1 surface."""
+    """**P007** (*bhaṅguram*): canonical krdanta.derive_bhaNguram()."""
 
-    from pipelines.bhaNguram_Ghurac_corrected_P007_demo import derive_bhaNguram_corrected_P007
+    from pipelines.krdanta import derive_bhaNguram
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P007")
     assert hit["target"]["iast"] == "bhaṅguram"
-    assert derive_bhaNguram_corrected_P007().flat_slp1() == "BaNguram"
+    assert derive_bhaNguram().flat_slp1() == "BaNguram"
 
 
 def test_P013_bundle_target_matches_pipeline(corrected_v2: dict) -> None:

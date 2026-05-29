@@ -1,21 +1,18 @@
-"""Unit tests for ``pipelines/zvayathuH_athuc_wzvi_corrected_P002_B_demo.py`` (**P002-B**)."""
+"""Unit tests for P002-B (śvayathuḥ) — canonical krdanta.derive_zvayathuH()."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.zvayathuH_athuc_wzvi_corrected_P002_B_demo import (
-    derive_zvayathuH_athuc_wzvi_corrected_P002_B,
-)
+from pipelines.krdanta import derive_zvayathuH
 
 
 def test_P002_B_render_zvayathuH():
-    s = derive_zvayathuH_athuc_wzvi_corrected_P002_B()
-    assert s.render() == "zvayathuH"
+    assert derive_zvayathuH().flat_slp1() == "zvayathuH"
 
 
 def test_P002_B_spine_core_order():
-    s = derive_zvayathuH_athuc_wzvi_corrected_P002_B()
+    s = derive_zvayathuH()
     ids = [x.get("sutra_id") for x in s.trace if x.get("sutra_id")]
     assert "3.3.89" in ids
     assert "7.3.84" in ids

@@ -1,21 +1,18 @@
-"""Unit tests for ``pipelines/uptrimam_ktri_quvap_corrected_P003_C_demo.py`` (**P003-C**)."""
+"""Unit tests for P003-C (uptrimam) — canonical krdanta.derive_uptrimam()."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.uptrimam_ktri_quvap_corrected_P003_C_demo import (
-    derive_uptrimam_ktri_quvap_corrected_P003_C,
-)
+from pipelines.krdanta import derive_uptrimam
 
 
 def test_P003_C_render_uptrimam():
-    s = derive_uptrimam_ktri_quvap_corrected_P003_C()
-    assert s.flat_slp1() == "uptrimam"
+    assert derive_uptrimam().flat_slp1() == "uptrimam"
 
 
 def test_P003_C_spine_core_order():
-    s = derive_uptrimam_ktri_quvap_corrected_P003_C()
+    s = derive_uptrimam()
     ids = [x.get("sutra_id") for x in s.trace if x.get("sutra_id")]
     assert "3.3.88" in ids
     assert "4.4.20" in ids

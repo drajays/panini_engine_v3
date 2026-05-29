@@ -1,21 +1,18 @@
-"""Unit tests for ``pipelines/bhinnaH_kta_Bidi_corrected_P001_A_demo.py`` (bundle **P001-A**)."""
+"""Unit tests for P001-A (bhinnaḥ) — canonical krdanta.derive_bhinnaH()."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.bhinnaH_kta_Bidi_corrected_P001_A_demo import (
-    derive_bhinnaH_kta_Bidi_corrected_P001_A,
-)
+from pipelines.krdanta import derive_bhinnaH
 
 
 def test_P001_A_render_bhinnaH():
-    s = derive_bhinnaH_kta_Bidi_corrected_P001_A()
-    assert s.render() == "bhinnaH"
+    assert derive_bhinnaH().flat_slp1() == "bhinnaH"
 
 
 def test_P001_A_has_bundle_spine_ids():
-    s = derive_bhinnaH_kta_Bidi_corrected_P001_A()
+    s = derive_bhinnaH()
     ids = [x.get("sutra_id") for x in s.trace if x.get("sutra_id")]
     assert "8.2.42" in ids
     assert "1.2.46" in ids
