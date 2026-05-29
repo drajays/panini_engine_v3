@@ -11,6 +11,7 @@ from collections.abc import Callable
 import sutras  # noqa: F401
 
 from engine import apply_rule
+from engine.fixed_point import run_to_fixed_point
 from engine.lopa_ghost import term_is_sup_luk_ghost
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -187,6 +188,17 @@ def P00_krt_guna_sandhi_tail(s: State) -> State:
     return s
 
 
+def P00_samhita_iko_yanaci_spine(s: State) -> State:
+    """
+    Saṃhitā *iko yaṇ aci* block (6.1.72 adhikāra + apavāda sweep).
+
+    Order: **6.1.125** (pragṛhya/pluta ‖ *ac*) → **6.1.101** (savarṇa-dīrgha) →
+    **6.1.77** (yaṇ).  ``6.1.77`` ``cond`` also blocks savarṇa IK‖*ac* (apavāda).
+    """
+    s = apply_rule("6.1.72", s)
+    return run_to_fixed_point(["6.1.125", "6.1.101", "6.1.77"], s)
+
+
 def P00_tanadi_u_guna(s: State) -> State:
     """Tanādi-u guṇa prefix: 3.1.79 (u-vikaraṇa) → 7.3.84 (guṇa) → 1.1.51 (r-para)."""
     s = apply_rule("3.1.79", s)
@@ -265,6 +277,13 @@ def P00_san_kit_kngiti(s: State) -> State:
     s = apply_rule("3.1.7", s)
     s = apply_rule("1.2.8", s)
     s = apply_rule("1.1.5", s)
+    return s
+
+
+def P00_san_dvitva(s: State) -> State:
+    """San desiderative dvitva: 6.1.1 (dvitva) → 6.1.4 (halādi śeṣa)."""
+    s = apply_rule("6.1.1", s)
+    s = apply_rule("6.1.4", s)
     return s
 
 
@@ -1080,6 +1099,16 @@ def P06_taddhita_adhikara_stack(s: State) -> State:
     return s
 
 
+def P00_taddhita_1_1_scope(s: State) -> State:
+    """Taddhita 1.1 scope: 1.1.1 → 1.1.50 → P06b → P00_taddhita_pratipadika → 6.4.1."""
+    s = apply_rule("1.1.1", s)
+    s = apply_rule("1.1.50", s)
+    s = P06b_pratyaya_through_taddhite_4_1_76(s)
+    s = P00_taddhita_pratipadika_internal_sup_luk_then_anga_vidhi(s)
+    s = apply_rule("6.4.1", s)
+    return s
+
+
 def P07_cha_vidhanam_4_2_114(s: State) -> State:
     """
     *vṛddhāc chaḥ* + 4.2.71 / 4.2.113 (audit) + *CaH* (structural).
@@ -1345,6 +1374,94 @@ def run_subanta_sup_attach_and_finish(s: State) -> State:
     return subanta_post_4_1_2(s)
 
 
+# ── Batch-extracted canonicals (2026-05-30) ──────────────────────────────────
+
+def P00_jas_si_num_napumsaka(s: State) -> State:
+    """Napuṃsaka prathama-bahu jas→Śi chain: 4.1.2 → 7.1.20 → 1.3.7 → 1.3.9 → 1.1.42 → 7.1.72."""
+    s = apply_rule("4.1.2", s)
+    s = apply_rule("7.1.20", s)
+    s = apply_rule("1.3.7", s)
+    s = apply_rule("1.3.9", s)
+    s = apply_rule("1.1.42", s)
+    s = apply_rule("7.1.72", s)
+    return s
+
+
+def P00_lit_dvitva_abhyasa_hrasva(s: State, *, short_abhyasa: bool = False) -> State:
+    """Liṭ dvitva abhyāsa reduction: 6.1.8 → 6.1.4 → 7.4.60.
+    Set short_abhyasa=True for vowel-initial dhātus needing 7_4_60_first_hal_only."""
+    s = apply_rule("6.1.8", s)
+    if short_abhyasa and s.terms and "abhyasa" in s.terms[0].tags:
+        s.terms[0].meta["7_4_60_first_hal_only"] = True
+    s = apply_rule("6.1.4", s)
+    s = apply_rule("7.4.60", s)
+    return s
+
+
+def P00_samprasarana_dirgha(s: State) -> State:
+    """Samprasāraṇa + dīrgha: 6.1.15 → 1.1.45 → 6.1.108."""
+    s = apply_rule("6.1.15", s)
+    s = apply_rule("1.1.45", s)
+    s = apply_rule("6.1.108", s)
+    return s
+
+
+def P00_aniyar_it_lopa_3_1_91(s: State) -> State:
+    """Anīyar it-lopa + dhātoḥ: 1.3.1 → 1.3.2 → 1.3.9 → 3.1.91."""
+    s = apply_rule("1.3.1", s)
+    s = apply_rule("1.3.2", s)
+    s = apply_rule("1.3.9", s)
+    s = apply_rule("3.1.91", s)
+    return s
+
+
+def P00_bha_vidhi_6_4_148_1_1_60(s: State) -> State:
+    """Bha-adhikāra + dīrgha lopa: 1.4.18 → 6.4.129 → 6.4.148 → 1.1.60."""
+    s = apply_rule("1.4.18", s)
+    s = apply_rule("6.4.129", s)
+    s = apply_rule("6.4.148", s)
+    s = apply_rule("1.1.60", s)
+    return s
+
+
+def P00_mahat_An_samasa_sandhi(s: State) -> State:
+    """Bahuvṛīhi mahat-An sandhi: 1.2.46 → (An_mahat) 1.1.52 → 6.3.46 → 6.1.101 → (guṇa) 6.1.87."""
+    s = apply_rule("1.2.46", s)
+    s.meta["An_mahat_recipe"] = True
+    s = apply_rule("1.1.52", s)
+    s = apply_rule("6.3.46", s)
+    s = apply_rule("6.1.101", s)
+    s = P00_guna_prayoga_readiness(s)
+    s = apply_rule("6.1.87", s)
+    return s
+
+
+def P00_jas_7_1_17_it_lopa_6_1_87(s: State) -> State:
+    """Sarvanāma jas chain: 7.1.17 → 1.3.7 → 1.3.9 → 6.1.87."""
+    s = apply_rule("7.1.17", s)
+    s = apply_rule("1.3.7", s)
+    s = apply_rule("1.3.9", s)
+    s = apply_rule("6.1.87", s)
+    return s
+
+
+def P00_hal_anit_guna(s: State) -> State:
+    """Hal anit it-lopa + guṇa: 1.3.3 → 1.3.9 → 7.3.84."""
+    s = apply_rule("1.3.3", s)
+    s = apply_rule("1.3.9", s)
+    s = apply_rule("7.3.84", s)
+    return s
+
+
+def P00_lit_ta_esh_it_lopa(s: State) -> State:
+    """Liṭ ta→eś + it-lopa: 3.4.81 → 1.1.55 → 1.3.3 → 1.3.9."""
+    s = apply_rule("3.4.81", s)
+    s = apply_rule("1.1.55", s)
+    s = apply_rule("1.3.3", s)
+    s = apply_rule("1.3.9", s)
+    return s
+
+
 __all__ = [
     "P01_subanta_bootstrap",
     "P01_taddhita_bootstrap_idle",
@@ -1365,6 +1482,8 @@ __all__ = [
     "P14_tripadi_purvakhya_visarga",
     "P15_tripadi_shesha_sibilant_n",
     "P00_tin_tusma_audit_halantyam_lopa",
+    "P00_samhita_iko_yanaci_spine",
+    "P00_krt_guna_sandhi_tail",
     "build_malIya_initial_state",
     "build_salIya_initial_state",
     "derive_mAlIya",

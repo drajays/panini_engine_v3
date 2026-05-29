@@ -30,7 +30,7 @@ from core.canonical_pipelines import P06b_pratyaya_through_taddhite_4_1_76
 from core.canonical_pipelines import P00_attach_sup_from_pratipadika
 from core.canonical_pipelines import P00_anabhihite_shashthi_shese_2_3_50
 from core.canonical_pipelines import P00_taddhita_it_lopa_chain
-from core.canonical_pipelines import P00_taddhita_pratipadika_internal_sup_luk_then_anga_vidhi
+from core.canonical_pipelines import P00_taddhita_pratipadika_internal_sup_luk_then_anga_vidhi, P00_taddhita_1_1_scope, P00_bha_vidhi_6_4_148_1_1_60
 from pipelines.subanta import _pada_merge
 from pipelines.subanta import (
     build_initial_state,
@@ -98,18 +98,11 @@ def derive_taddhita_itika_EtikAyana() -> State:
     s = apply_rule("4.1.82", s)
     s = apply_rule("4.1.92", s)
     s = apply_rule("4.1.99", s)
-    s = apply_rule("1.1.1", s)
-    s = apply_rule("1.1.50", s)
-    s = P06b_pratyaya_through_taddhite_4_1_76(s)
-    s = P00_taddhita_pratipadika_internal_sup_luk_then_anga_vidhi(s)
-    s = apply_rule("6.4.1", s)
+    s = P00_taddhita_1_1_scope(s)
     s = apply_rule("7.1.2", s)
     s = P00_taddhita_it_lopa_chain(s)
     s = apply_rule("7.2.118", s)
-    s = apply_rule("1.4.18", s)
-    s = apply_rule("6.4.129", s)
-    s = apply_rule("6.4.148", s)
-    s = apply_rule("1.1.60", s)
+    s = P00_bha_vidhi_6_4_148_1_1_60(s)
     _annotate_itika_taddhitānta(s)
     return s
 

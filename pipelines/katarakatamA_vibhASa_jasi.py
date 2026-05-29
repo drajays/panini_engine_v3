@@ -16,7 +16,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_tripadi_rutva_visarga
+from core.canonical_pipelines import P00_tripadi_rutva_visarga, P00_jas_7_1_17_it_lopa_6_1_87
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -86,11 +86,7 @@ def derive_katarakatame(*, vibhasha_choice: bool) -> State:
     s = apply_rule("1.1.32", s, {"vibhasha_choice": vibhasha_choice})
 
     # If sarvanāma is present, jas→śī then a+ī→e (6.1.87).
-    s = apply_rule("7.1.17", s)
-    # it chain on inserted śī opener (S).
-    s = apply_rule("1.3.7", s)
-    s = apply_rule("1.3.9", s)
-    s = apply_rule("6.1.87", s)
+    s = P00_jas_7_1_17_it_lopa_6_1_87(s)
 
     # Else-path: jas opener j is cuṭu-it and will be loped, then 6.1.102 handles a+a.
     s = apply_rule("1.3.7", s)

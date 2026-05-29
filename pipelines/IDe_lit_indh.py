@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_lit_dvitva_abhyasa_hrasva, P00_lit_ta_esh_it_lopa
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -61,10 +62,7 @@ def derive_IDe() -> State:
 
     # ta -> eS, then anekal-shit gate, then it-lopa on S -> e
     s.meta["liT_esh_recipe"] = True
-    s = apply_rule("3.4.81", s)
-    s = apply_rule("1.1.55", s)
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_lit_ta_esh_it_lopa(s)
     # normalize the remaining liṭ ending as `e`
     if s.terms and "pratyaya" in s.terms[-1].tags:
         s.terms[-1].meta["upadesha_slp1"] = "e"
@@ -78,11 +76,7 @@ def derive_IDe() -> State:
 
     # liṭ dvitva + abhyāsa operations (trim abhyāsa to just initial vowel i)
     s.meta["liT_dvitva_recipe"] = True
-    s = apply_rule("6.1.8", s)
-    if len(s.terms) >= 2 and "abhyasa" in s.terms[0].tags:
-        s.terms[0].meta["7_4_60_first_hal_only"] = True
-    s = apply_rule("6.1.4", s)
-    s = apply_rule("7.4.60", s)
+    s = P00_lit_dvitva_abhyasa_hrasva(s, short_abhyasa=True)
 
     # i + i -> I (savarṇa dīrgha)
     s = apply_rule("6.1.101", s)

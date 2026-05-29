@@ -24,6 +24,7 @@ from core.canonical_pipelines import (
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
     P00_lit_lakara_scope,
+    P00_hal_anit_guna,
 )
 from engine import apply_rule
 from engine.state import State, Term
@@ -45,10 +46,7 @@ def derive_ninAya_lit_nI_P036() -> State:
     s = P00_lit_lakara_scope(s)
     s = P00_lit_tip_to_Nal(s)
 
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.9", s)
-
-    s = apply_rule("7.3.84", s)
+    s = P00_hal_anit_guna(s)
     s = apply_rule("6.1.78", s)
 
     s.meta["P036_8_4_41_Na_to_augment_a_arm"] = True

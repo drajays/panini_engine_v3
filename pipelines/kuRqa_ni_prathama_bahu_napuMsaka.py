@@ -16,13 +16,14 @@ Implements the exact sūtra spine described in the user's `कुण्डान
 Final expected surface (SLP1): ``kuRqAni``.
 """
 # ── Claude Code review 2026-05-07 ──────────────────────────────────
-# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
-# Structural merges recorded in State.trace · no gold shortcuts      
+# CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected
+# Structural merges recorded in State.trace · no gold shortcuts
 # ─────────────────────────────────────────────────────────────────────
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_jas_si_num_napumsaka
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -39,16 +40,10 @@ def derive_kuRqAni() -> State:
     s = State(terms=[stem], meta={"linga": "napuṃsaka"}, trace=[])
     s = apply_rule("1.2.45", s)
     s.meta["vibhakti_vacana"] = "1-3"
-    s = apply_rule("4.1.2", s)
-    s = apply_rule("7.1.20", s)
-    s = apply_rule("1.3.7", s)
-    s = apply_rule("1.3.9", s)
-    s = apply_rule("1.1.42", s)
-    s = apply_rule("7.1.72", s)
+    s = P00_jas_si_num_napumsaka(s)
     s = apply_rule("1.1.47", s)
     s = apply_rule("6.4.8", s)
     return s
 
 
 __all__ = ["derive_kuRqAni"]
-

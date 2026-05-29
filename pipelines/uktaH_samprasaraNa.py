@@ -22,7 +22,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_sup_it_lopa_aprkta
+from core.canonical_pipelines import P00_sup_it_lopa_aprkta, P00_samprasarana_dirgha
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -80,9 +80,7 @@ def derive_uktaH() -> State:
     s = apply_rule("1.1.26", s)
     s = apply_rule("1.3.8", s)
     s = apply_rule("1.3.9", s)
-    s = apply_rule("6.1.15", s)
-    s = apply_rule("1.1.45", s)
-    s = apply_rule("6.1.108", s)
+    s = P00_samprasarana_dirgha(s)
 
     # Now treat vac+ta as a prātipadika and attach su for uktaH.
     s = _structural_merge_to_pratipadika(s, upadesha_slp1="ukta")

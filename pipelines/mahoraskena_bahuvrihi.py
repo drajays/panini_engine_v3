@@ -26,7 +26,7 @@ from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from core.canonical_pipelines import P00_guna_prayoga_readiness
+from core.canonical_pipelines import P00_guna_prayoga_readiness, P00_mahat_An_samasa_sandhi
 from pipelines.subanta import derive_from_state
 
 
@@ -52,14 +52,7 @@ def derive_mahoraskena_bahuvrihi_P024() -> State:
     s.meta["P024_5_4_151_kap_arm"] = True
     s = apply_rule("5.4.151", s)
 
-    s = apply_rule("1.2.46", s)
-
-    s = apply_rule("1.1.52", s)
-    s.meta["An_mahat_recipe"] = True
-    s = apply_rule("6.3.46", s)
-    s = apply_rule("6.1.101", s)
-    s = P00_guna_prayoga_readiness(s)
-    s = apply_rule("6.1.87", s)
+    s = P00_mahat_An_samasa_sandhi(s)
 
     s = derive_from_state(s, 3, 1)
 

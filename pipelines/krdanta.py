@@ -53,6 +53,7 @@ from core.canonical_pipelines import (
     P00_anga_samjna_6_4_1,
     P00_krt_guna_sandhi_tail,
     P00_nvul_krt_prefix,
+    P00_samprasarana_dirgha,
 )
 from phonology import HAL
 from phonology.pratyahara import is_ekac_upadesha
@@ -582,9 +583,7 @@ def derive_krtrimam() -> State:
 def derive_uptrimam() -> State:
     """P003-C: quvap~z (ḍuvapāṣ) + ktri + mam → uptrimam — napuṃsaka prathamā eka."""
     s = _derive_ktri_stem("quvap~z")
-    s = apply_rule("6.1.15", s)
-    s = apply_rule("1.1.45", s)
-    s = apply_rule("6.1.108", s)
+    s = P00_samprasarana_dirgha(s)
     return _ktri_subanta_tail(s)
 
 

@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_lat_vartamane_tip_and_sap, P00_san_kit_kngiti
+from core.canonical_pipelines import P00_lat_vartamane_tip_and_sap, P00_san_kit_kngiti, P00_san_dvitva
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -41,8 +41,7 @@ def derive_rurudizati() -> State:
 
     # dvitva + abhyāsa trim
     s.meta["dvitva_recipe"] = True
-    s = apply_rule("6.1.1", s)
-    s = apply_rule("6.1.4", s)
+    s = P00_san_dvitva(s)
     s = apply_rule("7.4.60", s)
 
     # laṭ 3sg kartari + śap

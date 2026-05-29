@@ -93,6 +93,9 @@ from core.canonical_pipelines import (
     P00_tripadi_8_4_55_visarga,
     P00_luk_samjna_60_62,
     P00_stri_4_1_wap,
+    P00_san_dvitva,
+    P00_hal_anit_guna,
+    P00_lit_ta_esh_it_lopa,
 )
 
 from pipelines.dhatupatha import get_dhatu_row, _payload, _envelope
@@ -925,6 +928,67 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
 # LUṄ (ADYATANA BHŪTA / AORIST) PIPELINE
 # ─────────────────────────────────────────────────────────────────────────────
 
+
+def _derive_luG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> State:
+    """
+    *ad* → *ghas* *luṅ* kartari (2.4.37): अघसत्, अघसताम्, … per clip prakriyā.
+
+    Differs from *bhū* *luṅ*: tiṅ before *ghas*; *cli*→*aṅ* (3.1.55), not *sic*/*2.4.77*;
+    no *vuk*/*6.1.66*; *6.4.71* *aṭ* only.
+    """
+    state.meta["lakara"] = "luG"
+    state.meta["luG_recipe"] = True
+    state = apply_rule("3.2.110", state)
+    state = apply_rule("1.3.2", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    tin_adesha = _select_tin_adesha("luG", pada_key, purusha, vacana)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
+    state = P00_tin_tusma_audit_halantyam_lopa(state)
+
+    state = apply_rule("3.4.113", state)
+    state = apply_rule("2.4.37", state)
+    state = apply_rule("1.3.2", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    state.meta["cli_luG_recipe"] = True
+    state = apply_rule("3.1.43", state)
+    state = apply_rule("3.1.55", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    state = apply_rule("3.4.114", state)
+    state = apply_rule("3.4.101", state)
+    state = apply_rule("3.4.100", state)
+    if purusha == 3 and vacana == 3:
+        state = apply_rule("7.1.3", state)
+    state = apply_rule("3.4.99", state)
+    state = apply_rule("6.1.66", state)
+    state = apply_rule("1.2.4", state)
+    state = apply_rule("1.4.13", state)
+    state = apply_rule("6.4.71", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+    state = apply_rule("1.4.14", state)
+    state = apply_rule("7.3.101", state)
+    state = apply_rule("6.1.97", state)
+
+    _pada_merge(state)
+    state = apply_rule("8.2.1", state)
+    if purusha == 3 and vacana == 1:
+        state = apply_rule("8.2.39", state)
+        state = apply_rule("8.4.56", state)
+    if purusha == 2 and vacana == 1:
+        state = apply_rule("8.2.66", state)
+        state = apply_rule("8.3.15", state)
+    if purusha == 3 and vacana == 3:
+        state = apply_rule("8.2.23", state)
+    state = apply_rule("8.4.68", state)
+    return state
+
+
 def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State:
     """
     Derive a luṅ (aorist / adyatana bhūta) form from the post-1.3.78 state.
@@ -1240,6 +1304,95 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     return state
 
 
+def _derive_liG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> State:
+    """
+    *ad* *liṅ* kartari (अद्यात् … अद्याम): *śap* + **2.4.72** *luk*, *yāsuṭ* + **7.2.79**,
+    **3.4.107** *suṭ* (तिथोः), no *guṇa*; **8.2.39**/**8.4.56** (3sg), tripāḍī **8.2.66**/**8.3.15**.
+    """
+    state.meta["lakara"] = "liG"
+    state.meta["_liG_ad_spine"] = True
+    state.meta["_liG_skip_guna"] = True
+
+    state.meta["liG_vidhi_recipe"] = True
+    state = apply_rule("3.3.161", state)
+    state = apply_rule("1.3.2", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    tin_adesha = _select_tin_adesha("laT", pada_key, purusha, vacana)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
+    state = P00_tin_tusma_audit_halantyam_lopa(state)
+
+    state = apply_rule("3.4.113", state)
+    state = apply_rule("1.2.4", state)
+
+    state.meta["3_1_68_kartari_recipe"] = True
+    state = apply_rule("3.1.68", state)
+    state = apply_rule("2.4.72", state)
+
+    state = apply_rule("3.4.101", state)
+    state = apply_rule("3.4.108", state)
+    state = apply_rule("3.4.100", state)
+    state = apply_rule("3.4.99", state)
+
+    state.meta["yasut_recipe"] = True
+    state = apply_rule("3.4.103", state)
+
+    state.meta["7_2_79_liG_yasut_arm"] = True
+    state = apply_rule("7.2.79", state)
+    state.meta.pop("7_2_79_liG_yasut_arm", None)
+
+    # 3pl clip: ``yās``→``y`` (not ``yā``) before ``jus``/``us`` (``अद्युः``).
+    if purusha == 3 and vacana == 3:
+        for i, t in enumerate(state.terms):
+            if "yasut_agama" not in t.tags or not t.varnas:
+                continue
+            if t.varnas[-1].slp1 != "A":
+                continue
+            if i + 1 >= len(state.terms):
+                continue
+            nxt = state.terms[i + 1]
+            cur = "".join(v.slp1 for v in nxt.varnas)
+            if (nxt.meta.get("upadesha_slp1") or "").strip() == "jus" or cur.startswith("u"):
+                t.varnas = [v for v in t.varnas if v.slp1 != "A"]
+                break
+
+    state.meta["suw_recipe"] = True
+    state = apply_rule("3.4.107", state)
+    state.meta.pop("suw_recipe", None)
+
+    state.meta["liG_ad_8_2_29_suw_recipe"] = True
+    state = apply_rule("8.2.29", state)
+    state.meta.pop("liG_ad_8_2_29_suw_recipe", None)
+
+    state = apply_rule("1.4.13", state)
+    state = apply_rule("1.1.5", state)
+    state = apply_rule("1.4.14", state)
+    state = apply_rule("6.1.101", state)
+
+    _pada_merge(state)
+    if purusha == 3 and vacana == 1:
+        state = apply_rule("8.2.1", state)
+        state = apply_rule("8.2.39", state)
+        state = apply_rule("8.4.56", state)
+        state = apply_rule("8.4.68", state)
+    elif purusha == 3 and vacana == 3:
+        state = apply_rule("8.2.1", state)
+        state = apply_rule("6.1.96", state)
+        state = apply_rule("8.2.66", state)
+        state = apply_rule("8.3.15", state)
+        state = apply_rule("8.4.68", state)
+    elif purusha == 2 and vacana == 1:
+        state = P00_tripadi_rutva_visarga(state)
+        state = apply_rule("8.4.68", state)
+    else:
+        state = apply_rule("8.4.68", state)
+
+    state.meta.pop("_liG_ad_spine", None)
+    state.meta.pop("_liG_skip_guna", None)
+    return state
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # LṚṬ (SĀMĀNYA BHAVIṢYAT / SIMPLE FUTURE) PIPELINE
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1382,6 +1535,70 @@ def _derive_lRT_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
     state.meta["_lRT_ad_spine"] = True
     state = apply_rule("7.2.10", state)
     return _derive_lRT(state, pada_key, purusha, vacana)
+
+
+def _derive_lRG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> State:
+    """
+    *ad* *lṛṅ* kartari (आत्स्यत् …): *sya* + **7.2.10** (no iṭ), **6.4.72** *āṭ*,
+    no *guṇa*; tripāḍī **8.4.55** (खरि च).
+    """
+    state.meta["ekac_dhatu"] = True
+    state.meta["lRG_ad_ekac_spine"] = True
+    state.meta["_lRG_skip_guna"] = True
+    state.meta["lRG_ad_spine"] = True
+    state = apply_rule("7.2.10", state)
+
+    state.meta["lakara"] = "lRG"
+    state.meta["3_3_139_lRG_arm"] = True
+    state = apply_rule("3.3.139", state)
+    state = apply_rule("1.3.2", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    tin_adesha = _select_tin_adesha("lRG", pada_key, purusha, vacana)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
+    state = P00_tin_tusma_audit_halantyam_lopa(state)
+
+    state = apply_rule("3.4.113", state)
+    state.meta["3_1_33_lRG_sy_arm"] = True
+    state = apply_rule("3.1.33", state)
+    state.meta.pop("3_1_33_lRG_sy_arm", None)
+
+    state.meta["3_4_114_lRG_sy_arm"] = True
+    state = apply_rule("3.4.114", state)
+    state.meta.pop("3_4_114_lRG_sy_arm", None)
+
+    state = apply_rule("3.4.101", state)
+    state = apply_rule("3.4.100", state)
+    state = apply_rule("7.1.3", state)
+    state = apply_rule("3.4.99", state)
+    state = apply_rule("1.2.4", state)
+    state = apply_rule("1.4.13", state)
+    state = apply_rule("1.1.5", state)
+    state = apply_rule("6.4.72", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+    state = apply_rule("6.1.90", state)
+    state = apply_rule("7.3.101", state)
+    state = apply_rule("1.4.14", state)
+    state = apply_rule("6.1.97", state)
+
+    _pada_merge(state)
+    state = apply_rule("8.2.1", state)
+    if purusha == 3 and vacana == 1:
+        state = apply_rule("8.2.39", state)
+        state = apply_rule("8.4.56", state)
+    if purusha == 3 and vacana == 3:
+        state = apply_rule("8.2.23", state)
+    if purusha == 2 and vacana == 1:
+        state = apply_rule("8.2.66", state)
+        state = apply_rule("8.3.15", state)
+    state = P00_tripadi_8_4_55_visarga(state)
+    state = apply_rule("8.4.68", state)
+    state.meta.pop("lRG_ad_spine", None)
+    state.meta.pop("lRG_ad_ekac_spine", None)
+    state.meta.pop("_lRG_skip_guna", None)
+    return state
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -2071,8 +2288,7 @@ def _derive_laT_san_atmane(state: State, purusha: int, vacana: int) -> State:
     state = P00_san_kit_kngiti(state)
     state = apply_rule("3.1.32", state)
     # 6.1.1: dvitva — fires structurally (dhātu + sanādi on tape)
-    state = apply_rule("6.1.1", state)
-    state = apply_rule("6.1.4", state)
+    state = P00_san_dvitva(state)
     # 6.4.16: dīrgha before san — fires structurally (abhyāsa + dhātu + san)
     state = apply_rule("6.4.16", state)
     # 7.4.60: abhyāsa hrasva reduction
@@ -2524,11 +2740,7 @@ def _derive_karmani_ashir_liG(state: State, purusha: int, vacana: int) -> State:
             t.tags.add("ardhadhatuka")
             break
     state = apply_rule("7.2.35", state)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
-
-    # 7.3.84 guṇa (bhū → bho)
-    state = apply_rule("7.3.84", state)
+    state = P00_hal_anit_guna(state)
 
     state = apply_rule("1.4.14", state)
 
@@ -2854,11 +3066,7 @@ def _derive_lit_am_kf_atmane(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("3.4.78", state)
     # ── 3.4.81 ta → eś  (3sg ātmanepada liṭ) ────────────────────────────────
     state.meta["liT_esh_recipe"] = True
-    state = apply_rule("3.4.81", state)
-    # ── IT processing: eś → e ────────────────────────────────────────────────
-    state = apply_rule("1.1.55", state)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
+    state = P00_lit_ta_esh_it_lopa(state)
     if state.terms and "pratyaya" in state.terms[-1].tags:
         state.terms[-1].meta["upadesha_slp1"] = "e"
     # ── 1.2.5 asaṃyogāl liṭ kit ──────────────────────────────────────────────
@@ -3766,6 +3974,12 @@ def derive(
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_lit(state, pada_key, purusha, vacana)
 
+    # ── luṅ dispatch (अद् … अघसत् — 2.4.37 घस् + 3.1.55 अङ्) ─────────────────
+    if lakara in ("luG",) and _adadi_dhatu_stem_slp1(state) == "ad":
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        return _derive_luG_ad(state, pada_key, purusha, vacana)
+
     # ── luṅ dispatch ─────────────────────────────────────────────────────────
     if lakara in ("luG",):
         # Aorist (adyatana bhūta) via cli/sic→luk + vuk augment
@@ -3786,12 +4000,24 @@ def derive(
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_luT(state, pada_key, purusha, vacana)
 
+    # ── āśīr-liṅ dispatch (अद् … अद्यात् — no śap; 3.4.104 KIT) ─────────────
+    if lakara in ("AsIrliG",) and _adadi_dhatu_stem_slp1(state) == "ad":
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        return _derive_ashir_liG(state, pada_key, purusha, vacana)
+
     # ── āśīr-liṅ dispatch ───────────────────────────────────────────────────
     if lakara in ("AsIrliG",):
         # Benedictive (āśīr-liṅ) via kit yāsuṭ, suṭ, 8.2.29 s-lopa
         state = apply_rule("3.1.91", state)
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_ashir_liG(state, pada_key, purusha, vacana)
+
+    # ── liṅ dispatch (अद् … अद्यात्) ───────────────────────────────────────
+    if lakara in ("liG",) and _adadi_dhatu_stem_slp1(state) == "ad":
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        return _derive_liG_ad(state, pada_key, purusha, vacana)
 
     # ── liṅ dispatch ─────────────────────────────────────────────────────────
     if lakara in ("liG",):
@@ -3819,6 +4045,12 @@ def derive(
         state = apply_rule("3.1.91", state)
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_lRT(state, pada_key, purusha, vacana)
+
+    # ── lṛṅ dispatch (अद् … आत्स्यत् — 6.4.72 आट्) ─────────────────────────────
+    if lakara in ("lRG",) and _adadi_dhatu_stem_slp1(state) == "ad":
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        return _derive_lRG_ad(state, pada_key, purusha, vacana)
 
     # ── lṛṅ dispatch ─────────────────────────────────────────────────────────
     if lakara in ("lRG",):
@@ -3994,22 +4226,7 @@ def derive(
     # STAGE 8 — TRIPĀḌĪ: PŪRVATRĀSIDDHA ZONE (spec steps 20–22)
     # ═══════════════════════════════════════════════════════════════════
 
-    # 8.2.1 pūrvatrāsiddham — opens the asiddha zone; all subsequent
-    # sūtras (8.2.1–8.4.68) are invisible to all prior sūtras.
-    # Sets state.tripadi_zone = True.
-    state = apply_rule("8.2.1", state)
-
-    # 8.2.66 ssa-sajuṣo ruḥ — pada-final 's' (and 'sajuṣ') → 'r' (ru-intermediate).
-    # The 'r' carries tag 'ru_intermediate' for 8.3.15 to find.
-    #   • भवतस् → भवतर् (for 3du, 3pl, 2sg, etc.)
-    #   • भवति  → no change (final vowel, not s)        (spec step 20)
-    state = apply_rule("8.2.66", state)
-
-    # 8.3.15 kharavaṣānayorvisarjanīyaḥ — ru (r with ru_intermediate tag)
-    # before a khar consonant or avasāna (pause) → visarjanīya (ḥ = H).
-    #   • भवतर् → भवतः                                    (spec step 22)
-    #   • भवति  → no change (no ru_intermediate)
-    state = apply_rule("8.3.15", state)
+    state = P00_tripadi_rutva_visarga(state)
 
     return state
 

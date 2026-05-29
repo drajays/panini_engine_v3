@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_jas_7_1_17_it_lopa_6_1_87
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -46,10 +47,7 @@ def derive_ye_yad_jas() -> State:
     s = apply_rule("7.2.102", s)
     s = apply_rule("6.1.84", s)
     s = apply_rule("6.1.97", s)
-    s = apply_rule("7.1.17", s)
-    s = apply_rule("1.3.7", s)
-    s = apply_rule("1.3.9", s)
-    s = apply_rule("6.1.87", s)
+    s = P00_jas_7_1_17_it_lopa_6_1_87(s)
     s = apply_rule("8.2.1", s)
     s.meta["ye_yad_jas_recipe"] = True
     s = apply_rule("8.2.5", s)

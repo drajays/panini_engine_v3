@@ -18,6 +18,8 @@ from core.canonical_pipelines import (
     P00_taddhita_it_lopa_chain,
     P00_taddhita_pratipadika_internal_sup_luk_then_anga_vidhi,
     P00_taddhita_it_lopa_to_6_4,
+    P00_taddhita_1_1_scope,
+    P00_bha_vidhi_6_4_148_1_1_60,
 )
 from pipelines.subanta import (
     _pada_merge,
@@ -66,12 +68,7 @@ def derive_kauYjAyanyaH() -> State:
     s = apply_rule("4.1.92", s)
     s = apply_rule("4.1.98", s)
 
-    s = apply_rule("1.1.1", s)
-    s = apply_rule("1.1.50", s)
-    s = P06b_pratyaya_through_taddhite_4_1_76(s)
-    s = P00_taddhita_pratipadika_internal_sup_luk_then_anga_vidhi(s)
-
-    s = apply_rule("6.4.1", s)
+    s = P00_taddhita_1_1_scope(s)
     for sid in ("1.3.7", "1.3.3", "1.3.8", "1.3.9", "1.3.10"):
         s = apply_rule(sid, s)
 
@@ -79,10 +76,7 @@ def derive_kauYjAyanyaH() -> State:
     s = P00_taddhita_it_lopa_chain(s)
 
     s = apply_rule("7.2.117", s)
-    s = apply_rule("1.4.18", s)
-    s = apply_rule("6.4.129", s)
-    s = apply_rule("6.4.148", s)
-    s = apply_rule("1.1.60", s)
+    s = P00_bha_vidhi_6_4_148_1_1_60(s)
 
     _pada_merge(s)
     _normalize_merged_pratipadika(s, upadesha_slp1="kauYjAyana")
@@ -128,12 +122,7 @@ def derive_SANqikyaH() -> State:
     s = P00_attach_sup_from_pratipadika(s)
     s = apply_rule("4.3.92", s)
 
-    s = apply_rule("1.1.1", s)
-    s = apply_rule("1.1.50", s)
-    s = P06b_pratyaya_through_taddhite_4_1_76(s)
-    s = P00_taddhita_pratipadika_internal_sup_luk_then_anga_vidhi(s)
-
-    s = apply_rule("6.4.1", s)
+    s = P00_taddhita_1_1_scope(s)
     s.meta[META_P004_B_Yya_CUTU] = True
     for sid in ("1.3.7", "1.3.3", "1.3.8", "1.3.9", "1.3.10"):
         s = apply_rule(sid, s)

@@ -24,6 +24,7 @@ from core.canonical_pipelines import (
     P06a_pratyaya_adhikara_3_1_1_to_3,
     P00_tin_tas_adesh_full,
     P00_tripadi_8_4_55_visarga,
+    P00_lit_dvitva_abhyasa_hrasva,
 )
 from engine import apply_rule
 from engine.state import State, Term
@@ -64,12 +65,7 @@ def derive_jakzatuH_lit_ad_gas_P034() -> State:
     s = apply_rule("6.4.100", s)
 
     s.meta["liT_dvitva_recipe"] = True
-    s = apply_rule("6.1.8", s)
-    s = apply_rule("6.1.4", s)
-
-    if s.terms and "abhyasa" in s.terms[0].tags:
-        s.terms[0].meta["7_4_60_first_hal_only"] = True
-    s = apply_rule("7.4.60", s)
+    s = P00_lit_dvitva_abhyasa_hrasva(s, short_abhyasa=True)
 
     s.meta["7_4_62_kuhoscu_abhyasa_arm"] = True
     s = apply_rule("7.4.62", s)

@@ -21,7 +21,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_tavyat_anIyar_it_lopa
+from core.canonical_pipelines import P00_tavyat_anIyar_it_lopa, P00_aniyar_it_lopa_3_1_91
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -39,14 +39,11 @@ def derive_pracChanIya() -> State:
     s = State(terms=[dhatu], meta={}, trace=[])
 
     # it-lopa: anunāsika a~ → pracC
-    s = apply_rule("1.3.1", s)
-    s = apply_rule("1.3.2", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_aniyar_it_lopa_3_1_91(s)
     s.terms[0].tags.discard("upadesha")
     s.terms[0].meta["upadesha_slp1"] = "pracC"
 
     # kṛtya context + anīyar (krtya_recipe coordination key)
-    s = apply_rule("3.1.91", s)
     s.meta["krtya_recipe"] = "anIyar"
     s = P00_tavyat_anIyar_it_lopa(s)
 

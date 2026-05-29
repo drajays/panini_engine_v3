@@ -20,7 +20,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_lat_vartamane_tip_and_sap, P00_san_kit_kngiti
+from core.canonical_pipelines import P00_lat_vartamane_tip_and_sap, P00_san_kit_kngiti, P00_san_dvitva
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -40,8 +40,7 @@ def derive_cicIzati() -> State:
     s = apply_rule("3.1.32", s)
 
     s.meta["dvitva_recipe"] = True
-    s = apply_rule("6.1.1", s)
-    s = apply_rule("6.1.4", s)
+    s = P00_san_dvitva(s)
     s.meta["6_4_16_sani_dirgha_arm"] = True
     s = apply_rule("6.4.16", s)
 

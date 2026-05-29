@@ -21,8 +21,7 @@ from core.canonical_pipelines import (
     P00_guna_prayoga_readiness,
     P00_attach_su_it_lopa,
     P00_tripadi_rutva_visarga,
-
-    P00_tripadi_rutva_visarga,
+    P00_mahat_An_samasa_sandhi,
 )
 
 
@@ -62,18 +61,8 @@ def derive_maharziH() -> State:
     for t in s.terms:
         t.tags.add("samasa_member")
 
-    # Prātipadika-saṃjñā for the samāsa community (1.2.46 will structurally merge).
-    s = apply_rule("1.2.46", s)
-
-    # 6.3.46 ān-ādeśa for mahat, then a+A → A (6.1.101)
-    s.meta["An_mahat_recipe"] = True
-    s = apply_rule("1.1.52", s)
-    s = apply_rule("6.3.46", s)
-    s = apply_rule("6.1.101", s)
-
-    # ā + ṛ → ar (6.1.87) + r-paratva (1.1.51)
-    s = P00_guna_prayoga_readiness(s)
-    s = apply_rule("6.1.87", s)
+    # Prātipadika-saṃjñā + mahat An-sandhi.
+    s = P00_mahat_An_samasa_sandhi(s)
     s = apply_rule("1.1.51", s)
 
     # Promote to final prātipadika (so 4.1.2 can attach su), then Tripāḍī r/visarga.

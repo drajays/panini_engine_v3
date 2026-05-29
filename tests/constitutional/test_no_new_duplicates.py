@@ -54,7 +54,15 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 # Lowered: -4 from 2026-05-29 — P00_tripadi_8_4_55_visarga, P00_luk_samjna_60_62,
 #          P00_stri_4_1_wap added; callers in tinanta, jakzatuH, agnicit, gArgyAH,
 #          dyukAmA, viSAKaH updated.
-MAX_DUPLICATE_GROUPS = 75
+# Lowered: -12 from 2026-05-30 — P00_san_dvitva + P00_taddhita_1_1_scope scripts;
+#          san dvitva in cicIzati, rurudizati, vivakSakaH, tinanta, jiGfkSati;
+#          taddhita_1_1_scope in taddhita + taddhita_itika_etikAyana.
+# Lowered: -36 from 2026-05-30 — batch extraction: P00_jas_si_num_napumsaka,
+#          P00_lit_dvitva_abhyasa_hrasva, P00_samprasarana_dirgha, P00_aniyar_it_lopa_3_1_91,
+#          P00_bha_vidhi_6_4_148_1_1_60, P00_mahat_An_samasa_sandhi, P00_jas_7_1_17_it_lopa_6_1_87,
+#          P00_hal_anit_guna, P00_lit_ta_esh_it_lopa; + P00_tripadi_rutva_visarga replacements
+#          in tinanta; restored sutra_6_1_77 (pre-existing modified sutra).
+MAX_DUPLICATE_GROUPS = 27
 
 
 @pytest.fixture(scope="module")

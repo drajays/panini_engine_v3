@@ -24,8 +24,8 @@ from core.canonical_pipelines import (
     P06a_pratyaya_adhikara_3_1_1_to_3,
     P00_tin_tas_adesh_full,
     P00_lit_lakara_scope,
-
     P00_tripadi_rutva_visarga,
+    P00_lit_dvitva_abhyasa_hrasva,
 )
 from engine import apply_rule
 from engine.state import State, Term
@@ -59,9 +59,7 @@ def derive_vibhidatuH() -> State:
 
     # dvitva & abhyāsa operations
     s.meta["liT_dvitva_recipe"] = True
-    s = apply_rule("6.1.8", s)
-    s = apply_rule("6.1.4", s)
-    s = apply_rule("7.4.60", s)
+    s = P00_lit_dvitva_abhyasa_hrasva(s)
     s = apply_rule("8.4.54", s)
 
     # upasarga vi-

@@ -36,6 +36,8 @@ from core.canonical_pipelines import (
     P00_anga_samjna_6_4_1,
     P00_nvul_krt_prefix,
     P00_krt_guna_sandhi_tail,
+    P00_san_dvitva,
+    P00_samprasarana_dirgha,
 )
 from pipelines.krdanta import _structural_merge_to_pratipadika
 from pipelines.subanta import _pada_merge
@@ -60,13 +62,10 @@ def derive_vivakSakaH_san_Nvul_P030() -> State:
     s = P00_san_kit_kngiti(s)
     s = apply_rule("3.1.32", s)
 
-    s = apply_rule("6.1.15", s)
-    s = apply_rule("1.1.45", s)
-    s = apply_rule("6.1.108", s)
+    s = P00_samprasarana_dirgha(s)
 
     s.meta["dvitva_recipe"] = True
-    s = apply_rule("6.1.1", s)
-    s = apply_rule("6.1.4", s)
+    s = P00_san_dvitva(s)
 
     s.meta["6_4_16_sani_dirgha_arm"] = True
     s = apply_rule("6.4.16", s)
