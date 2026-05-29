@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}कृदन्त{% endblock %}
+{% block content %}
+<h2>कृदन्त व्युत्पत्ति</h2>
+
+<form class="derive-form" hx-post="/krdanta/derive" hx-target="#result" hx-indicator="#spinner">
+  <div class="form-row">
+    <label>धातु (SLP1 या देवनागरी)
+      <input type="text" name="dhatu" placeholder="paw, BU, kf…" required>
+    </label>
+    <label>कृत्-प्रत्यय
+      <select name="krt_type">
+        <option value="nvul">ण्वुल् (पाचक)</option>
+        <option value="trc">तृच् (चेता, नेता)</option>
+        <option value="kta">क्त (भूतकृदन्त)</option>
+        <option value="ktri">क्त्रि</option>
+        <option value="lyuw">ल्युट् (भावन)</option>
+      </select>
+    </label>
+    <label class="checkbox-label">
+      <input type="checkbox" name="surface_only" value="true"> केवल रूप-परिवर्तन
+    </label>
+    <button type="submit" class="btn-primary">व्युत्पत्ति ▶</button>
+    <span id="spinner" class="spinner htmx-indicator">⏳</span>
+  </div>
+</form>
+
+<div id="result"></div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}घि · सर्व · तद् · ज्ञान{% endblock %}
+{% block content %}
+<h2>विशेष शब्दरूप — घि, सर्व, तद्, ज्ञान</h2>
+
+<form class="derive-form" hx-post="/special/derive" hx-target="#result" hx-indicator="#spinner">
+  <div class="form-row">
+    <label>शब्द-प्रकार
+      <select name="stem_type">
+        <option value="hari">हरि (घि-शब्द, पुंलिङ्ग)</option>
+        <option value="nadi">नदी (घि-शब्द, स्त्रीलिङ्ग)</option>
+        <option value="sarva">सर्व (सर्वनाम)</option>
+        <option value="tad">तद् (त्यदादि)</option>
+        <option value="jYAna">ज्ञान (नपुंसक, अकारान्त)</option>
+        <option value="vAc">वाच् (हलन्त-स्त्री)</option>
+      </select>
+    </label>
+    <button type="submit" class="btn-primary">सारणी दिखाएँ ▶</button>
+    <span id="spinner" class="spinner htmx-indicator">⏳</span>
+  </div>
+</form>
+
+<div id="result"></div>
+{% endblock %}

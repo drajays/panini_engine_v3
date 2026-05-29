@@ -1,0 +1,38 @@
+{% if error %}
+<div class="error">{{ error }}</div>
+{% elif table %}
+<div class="paradigm-wrap">
+  <table class="paradigm-table">
+    <thead>
+      <tr>
+        <th>विभक्ति</th>
+        {% for vl in VACANA_LABELS %}<th>{{ vl }}</th>{% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in table %}
+      <tr>
+        <td class="vib-label">{{ VIBHAKTI_LABELS[loop.index0] }}</td>
+        {% for cell in row %}
+        <td class="paradigm-cell">
+          <button class="cell-btn"
+            hx-post="/paradigm/cell"
+            hx-target="#trace-panel"
+            hx-vals='{"stem":"{{ stem }}","linga":"{{ linga }}","vi":{{ cell.vi }},"va":{{ cell.va }},"surface_only":"false"}'
+            title="{{ cell.slp }}">
+            <span class="deva">{{ cell.deva }}</span>
+            <span class="slp1">{{ cell.slp }}</span>
+          </button>
+        </td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="trace-controls">
+  <span class="hint">↑ किसी भी कोष्ठक पर क्लिक करें → ट्रेस देखें</span>
+</div>
+<div id="trace-panel" class="trace-panel"></div>
+{% endif %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}देवेन्द्र / सूर्योदय{% endblock %}
+{% block content %}
+<h2>देवेन्द्र / सूर्योदय — सन्धि प्रक्रिया</h2>
+
+{% if results.error %}
+<div class="error">{{ results.error }}</div>
+{% else %}
+<div class="demo-grid">
+  {% for key, label in [("devendra","देव + इन्द्र → देवेन्द्र"), ("suryodaya","सूर्य + उदय → सूर्योदय")] %}
+  {% if key in results %}
+  {% set r = results[key] %}
+  <div class="demo-card">
+    <h3>{{ label }}</h3>
+    <div class="demo-result">
+      <span class="deva final-big">{{ r.deva }}</span>
+      <span class="slp1">{{ r.form }}</span>
+    </div>
+    <details>
+      <summary>पूर्ण प्रक्रिया ({{ r.steps|length }} चरण)</summary>
+      {% include "_trace_inline.html" with context %}
+    </details>
+    <details>
+      <summary>केवल रूप-परिवर्तन ({{ r.steps_surface|length }} चरण)</summary>
+      {% set steps = r.steps_surface %}
+      {% include "_trace_inline.html" with context %}
+    </details>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}तिङन्त प्रक्रिया{% endblock %}
+{% block content %}
+<h2>तिङन्त व्युत्पत्ति</h2>
+
+<form class="derive-form" hx-post="/tinanta/derive" hx-target="#result" hx-indicator="#spinner">
+  <div class="form-row">
+    <label>धातु (SLP1)
+      <input type="text" name="dhatu" placeholder="BU, paw, kf…" required>
+    </label>
+    <label>लकार
+      <select name="lakara">
+        {% for l in LAKARAS %}<option>{{ l }}</option>{% endfor %}
+      </select>
+    </label>
+    <label>पद
+      <select name="pada">
+        {% for p in PADAS %}<option>{{ p }}</option>{% endfor %}
+      </select>
+    </label>
+    <label>पुरुष
+      <select name="purusha">
+        {% for label, val in PURUSHAS %}<option value="{{ val }}">{{ label }}</option>{% endfor %}
+      </select>
+    </label>
+    <label>वचन
+      <select name="vacana">
+        {% for label, val in VACANAS %}<option value="{{ val }}">{{ label }}</option>{% endfor %}
+      </select>
+    </label>
+    <label class="checkbox-label">
+      <input type="checkbox" name="surface_only" value="true"> केवल रूप-परिवर्तन
+    </label>
+    <button type="submit" class="btn-primary">व्युत्पत्ति ▶</button>
+    <span id="spinner" class="spinner htmx-indicator">⏳</span>
+  </div>
+</form>
+
+<div id="result"></div>
+{% endblock %}

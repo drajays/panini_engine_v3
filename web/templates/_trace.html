@@ -1,0 +1,46 @@
+{% if error %}
+<div class="error">{{ error }}</div>
+{% else %}
+<div class="trace-result">
+  <div class="trace-header">
+    <span class="trace-title">{{ title }}</span>
+    <span class="trace-final">
+      <strong>{{ final_deva }}</strong>
+      <span class="slp1">{{ final_form }}</span>
+    </span>
+  </div>
+
+  {% if steps %}
+  <table class="trace-table">
+    <thead>
+      <tr>
+        <th>सूत्र</th>
+        <th>प्रकार</th>
+        <th>पूर्व-रूप</th>
+        <th>उत्तर-रूप</th>
+        <th>कारण</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for s in steps %}
+      <tr class="trace-row {{ 'row-applied' if s.status == 'APPLIED' else 'row-skipped' }}">
+        <td class="sutra-id">{{ s.sutra_id }}</td>
+        <td class="type-label">{{ s.type_label }}</td>
+        <td class="form-cell">
+          <span class="deva">{{ s.before_deva }}</span>
+          <span class="slp1">{{ s.before_slp }}</span>
+        </td>
+        <td class="form-cell">
+          <span class="deva">{{ s.after_deva }}</span>
+          <span class="slp1">{{ s.after_slp }}</span>
+        </td>
+        <td class="why">{{ s.why }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="no-steps">कोई चरण नहीं (रूप अपरिवर्तित)</p>
+  {% endif %}
+</div>
+{% endif %}

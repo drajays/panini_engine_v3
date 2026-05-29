@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}दिक्-समास + चतुर्थी{% endblock %}
+{% block content %}
+<h2>दिक्-समास + स्त्री चतुर्थी (ङे)</h2>
+
+{% if results.error %}
+<div class="error">{{ results.error }}</div>
+{% else %}
+<div class="demo-grid">
+  {% for pid, label in [("uttarapurva","उत्तर + पूर्व → उत्तरपूर्वस्यै"), ("dakshinapurva","दक्षिण + पूर्व → दक्षिणपूर्वस्यै")] %}
+  {% if pid in results %}
+  {% set r = results[pid] %}
+  {% if r.error is defined %}
+  <div class="demo-card"><h3>{{ label }}</h3><div class="error">{{ r.error }}</div></div>
+  {% else %}
+  <div class="demo-card">
+    <h3>{{ label }}</h3>
+    <div class="demo-result">
+      <span class="deva final-big">{{ r.deva }}</span>
+      <span class="slp1">{{ r.form }}</span>
+    </div>
+    <details>
+      <summary>पूर्ण प्रक्रिया ({{ r.steps|length }} चरण)</summary>
+      {% set steps = r.steps %}{% include "_trace_inline.html" with context %}
+    </details>
+  </div>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
+{% endblock %}

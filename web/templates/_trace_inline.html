@@ -1,0 +1,19 @@
+{% set trace_steps = steps if steps is defined else r.steps %}
+{% if trace_steps %}
+<table class="trace-table">
+  <thead>
+    <tr><th>सूत्र</th><th>प्रकार</th><th>पूर्व</th><th>उत्तर</th><th>कारण</th></tr>
+  </thead>
+  <tbody>
+    {% for s in trace_steps %}
+    <tr class="trace-row {{ 'row-applied' if s.status == 'APPLIED' else 'row-skipped' }}">
+      <td class="sutra-id">{{ s.sutra_id }}</td>
+      <td class="type-label">{{ s.type_label }}</td>
+      <td class="form-cell"><span class="deva">{{ s.before_deva }}</span> <span class="slp1">{{ s.before_slp }}</span></td>
+      <td class="form-cell"><span class="deva">{{ s.after_deva }}</span> <span class="slp1">{{ s.after_slp }}</span></td>
+      <td class="why">{{ s.why }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}

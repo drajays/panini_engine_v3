@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="sa" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Panini Engine v3{% endblock %}</title>
+<script src="https://unpkg.com/htmx.org@1.9.12"></script>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<nav class="nav">
+  <a class="nav-brand" href="/">📿 Panini Engine v3</a>
+  <div class="nav-links">
+    <a href="/paradigm">शब्दरूप 8×3</a>
+    <a href="/tinanta">तिङन्त</a>
+    <a href="/krdanta">कृदन्त</a>
+    <a href="/special">घि · सर्व · तद्</a>
+    <a href="/devendra">देवेन्द्र</a>
+    <a href="/dik">दिक्-समास</a>
+  </div>
+</nav>
+
+<main class="main">
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+  Panini Engine v3 · अष्टाध्यायी-क्रम · ARM_GATE_BASELINE = 0
+</footer>
+</body>
+</html>

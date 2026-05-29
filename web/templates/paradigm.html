@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}शब्दरूप 8×3{% endblock %}
+{% block content %}
+<h2>शब्दरूप — पूर्ण विभक्ति-सारणी (8×3)</h2>
+
+<form class="derive-form" hx-post="/paradigm/derive" hx-target="#result" hx-indicator="#spinner">
+  <div class="form-row">
+    <label>प्रातिपदिक (SLP1)
+      <input type="text" name="stem" value="{{ stem }}" placeholder="rAma, hari, nadi…" required>
+    </label>
+    <label>लिङ्ग
+      <select name="linga">
+        <option value="pulliṅga" {% if linga=="pulliṅga" %}selected{% endif %}>पुंलिङ्ग</option>
+        <option value="strīliṅga" {% if linga=="strīliṅga" %}selected{% endif %}>स्त्रीलिङ्ग</option>
+        <option value="napuṃsaka" {% if linga=="napuṃsaka" %}selected{% endif %}>नपुंसकलिङ्ग</option>
+      </select>
+    </label>
+    <button type="submit" class="btn-primary">व्युत्पत्ति करें ▶</button>
+    <span id="spinner" class="spinner htmx-indicator">⏳</span>
+  </div>
+</form>
+
+<div id="result">
+  {% if table %}{% include "_paradigm_table.html" %}{% endif %}
+</div>
+{% endblock %}

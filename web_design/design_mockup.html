@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--
+  PANINI ENGINE v3 — Design Mockup
+  ─────────────────────────────────
+  This is a STATIC mockup for Claude.ai Pro to redesign/restyle.
+  All data is hardcoded. No backend needed.
+
+  DESIGN BRIEF:
+  - Sanskrit grammar engine UI (Devanāgarī + Latin script)
+  - Needs to feel scholarly, authoritative, clean
+  - Primary color: deep maroon (#8B1A1A) + saffron (#FF9933)
+  - Must render Devanāgarī text (using Google Fonts: Noto Sans Devanagari)
+  - Interactive: HTMX-powered (htmx.org), no React/Vue
+  - Key components: nav, paradigm 8×3 table, rule-trace table, derivation form
+
+  PLEASE REDESIGN: modernize the CSS while keeping semantic HTML structure.
+  The <style> block at the bottom is what to redesign.
+-->
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panini Engine v3 — Design Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ── NAVIGATION ──────────────────────────────────────── -->
+<nav class="nav">
+  <a class="nav-brand" href="#">📿 Panini Engine v3</a>
+  <div class="nav-links">
+    <a href="#" class="active">शब्दरूप 8×3</a>
+    <a href="#">तिङन्त</a>
+    <a href="#">कृदन्त</a>
+    <a href="#">घि · सर्व · तद्</a>
+    <a href="#">देवेन्द्र</a>
+    <a href="#">दिक्-समास</a>
+  </div>
+</nav>
+
+<!-- ── MAIN CONTENT ────────────────────────────────────── -->
+<main class="main">
+
+  <!-- PAGE TITLE -->
+  <h2>शब्दरूप — पूर्ण विभक्ति-सारणी (8×3)</h2>
+
+  <!-- DERIVATION FORM -->
+  <form class="derive-form">
+    <div class="form-row">
+      <label>प्रातिपदिक (SLP1)
+        <input type="text" value="rAma" placeholder="rAma, hari, nadi…">
+      </label>
+      <label>लिङ्ग
+        <select>
+          <option selected>पुंलिङ्ग</option>
+          <option>स्त्रीलिङ्ग</option>
+          <option>नपुंसकलिङ्ग</option>
+        </select>
+      </label>
+      <button type="button" class="btn-primary">व्युत्पत्ति करें ▶</button>
+    </div>
+  </form>
+
+  <!-- PARADIGM TABLE 8×3 -->
+  <div class="paradigm-wrap">
+    <table class="paradigm-table">
+      <thead>
+        <tr>
+          <th>विभक्ति</th>
+          <th>एकवचन</th>
+          <th>द्विवचन</th>
+          <th>बहुवचन</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="vib-label">प्र. (nominative)</td>
+          <td class="paradigm-cell"><button class="cell-btn active-cell"><span class="deva">रामः</span><span class="slp1">rAmaH</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामौ</span><span class="slp1">rAmO</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामाः</span><span class="slp1">rAmAH</span></button></td>
+        </tr>
+        <tr>
+          <td class="vib-label">द्वि. (accusative)</td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामम्</span><span class="slp1">rAmam</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामौ</span><span class="slp1">rAmO</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामान्</span><span class="slp1">rAmAn</span></button></td>
+        </tr>
+        <tr>
+          <td class="vib-label">तृ. (instrumental)</td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामेण</span><span class="slp1">rAmeRa</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामाभ्याम्</span><span class="slp1">rAmAByAm</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामैः</span><span class="slp1">rAmEH</span></button></td>
+        </tr>
+        <tr>
+          <td class="vib-label">च. (dative)</td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामाय</span><span class="slp1">rAmAya</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामाभ्याम्</span><span class="slp1">rAmAByAm</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामेभ्यः</span><span class="slp1">rAmeByaH</span></button></td>
+        </tr>
+        <tr>
+          <td class="vib-label">प. (ablative)</td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामात्</span><span class="slp1">rAmAt</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामाभ्याम्</span><span class="slp1">rAmAByAm</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामेभ्यः</span><span class="slp1">rAmeByaH</span></button></td>
+        </tr>
+        <tr>
+          <td class="vib-label">ष. (genitive)</td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामस्य</span><span class="slp1">rAmasya</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामयोः</span><span class="slp1">rAmayoH</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामाणाम्</span><span class="slp1">rAmARAm</span></button></td>
+        </tr>
+        <tr>
+          <td class="vib-label">स. (locative)</td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामे</span><span class="slp1">rAme</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामयोः</span><span class="slp1">rAmayoH</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">रामेषु</span><span class="slp1">rAmeSu</span></button></td>
+        </tr>
+        <tr>
+          <td class="vib-label">सं. (vocative)</td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">हे राम</span><span class="slp1">he rAma</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">हे रामौ</span><span class="slp1">he rAmO</span></button></td>
+          <td class="paradigm-cell"><button class="cell-btn"><span class="deva">हे रामाः</span><span class="slp1">he rAmAH</span></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="hint">↑ किसी भी कोष्ठक पर क्लिक करें → व्युत्पत्ति-ट्रेस देखें</p>
+
+  <!-- TRACE PANEL (shows when a cell is clicked) -->
+  <div class="trace-result" style="margin-top:1.5rem">
+    <div class="trace-header">
+      <span class="trace-title">प्र. एकवचन — nominative singular</span>
+      <span class="trace-final">
+        <strong class="deva">रामः</strong>
+        <span class="slp1">rAmaH</span>
+      </span>
+    </div>
+
+    <table class="trace-table">
+      <thead>
+        <tr>
+          <th>सूत्र</th>
+          <th>प्रकार</th>
+          <th>पूर्व-रूप</th>
+          <th>उत्तर-रूप</th>
+          <th>कारण (हिन्दी)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row-applied">
+          <td class="sutra-id">4.1.2</td>
+          <td class="type-label">VIDHI</td>
+          <td class="form-cell"><span class="deva">राम</span><span class="slp1">rAma</span></td>
+          <td class="form-cell"><span class="deva">रामसु</span><span class="slp1">rAmasu</span></td>
+          <td class="why">स्वौजसमौट् … — प्रथमा-एकवचन-सु का संयोजन।</td>
+        </tr>
+        <tr class="row-applied">
+          <td class="sutra-id">7.3.102</td>
+          <td class="type-label">VIDHI</td>
+          <td class="form-cell"><span class="deva">रामसु</span><span class="slp1">rAmasu</span></td>
+          <td class="form-cell"><span class="deva">रामस्</span><span class="slp1">rAmas</span></td>
+          <td class="why">सुपि च — उपधा-दीर्घ + इत्-लोप (u-varna)।</td>
+        </tr>
+        <tr class="row-applied">
+          <td class="sutra-id">8.2.66</td>
+          <td class="type-label">VIDHI</td>
+          <td class="form-cell"><span class="deva">रामस्</span><span class="slp1">rAmas</span></td>
+          <td class="form-cell"><span class="deva">रामर्</span><span class="slp1">rAmar</span></td>
+          <td class="why">ससजुषो रुः — पद-अन्त्य-स → रु (र्)।</td>
+        </tr>
+        <tr class="row-applied">
+          <td class="sutra-id">8.3.15</td>
+          <td class="type-label">VIDHI</td>
+          <td class="form-cell"><span class="deva">रामर्</span><span class="slp1">rAmar</span></td>
+          <td class="form-cell"><span class="deva">रामः</span><span class="slp1">rAmaH</span></td>
+          <td class="why">खरवसानयोर्विसर्जनीयः — अवसान में रु → विसर्ग।</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<!-- ── FOOTER ──────────────────────────────────────────── -->
+<footer class="footer">
+  Panini Engine v3 · अष्टाध्यायी-क्रम · ARM_GATE_BASELINE = 0 · 18,453 tests passing
+</footer>
+
+<!-- ════════════════════════════════════════════════════════
+     ↓ CSS TO REDESIGN — replace this entire <style> block
+     ════════════════════════════════════════════════════════ -->
+<style>
+/* FONT IMPORTS */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --saffron: #FF9933;
+  --deep-maroon: #8B1A1A;
+  --cream: #FDF8F0;
+  --ink: #1a1a2e;
+  --muted: #666;
+  --border: #ddd;
+  --applied: #e8f5e9;
+  --skipped: #fff8e1;
+  --font-deva: 'Noto Sans Devanagari', 'Mangal', serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body { font-family: var(--font-body); background: var(--cream); color: var(--ink); line-height: 1.6; }
+
+.nav { background: var(--deep-maroon); color: #fff; display: flex; align-items: center; gap: 1rem; padding: 0.75rem 1.5rem; flex-wrap: wrap; }
+.nav-brand { font-family: var(--font-deva); font-size: 1.1rem; font-weight: 700; color: #FFD700; text-decoration: none; margin-right: auto; }
+.nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; padding: 0.3rem 0.7rem; border-radius: 4px; font-family: var(--font-deva); font-size: 0.9rem; }
+.nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.2); color: #fff; }
+
+.main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; min-height: calc(100vh - 100px); }
+
+h2 { font-family: var(--font-deva); color: var(--deep-maroon); font-size: 1.6rem; margin-bottom: 1.25rem; }
+
+/* Form */
+.derive-form { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; }
+.form-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; }
+label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.82rem; color: var(--muted); font-weight: 500; }
+input[type="text"], select { font-family: var(--font-deva), var(--font-body); font-size: 0.95rem; padding: 0.45rem 0.65rem; border: 1px solid var(--border); border-radius: 6px; min-width: 140px; background: #fafafa; }
+input[type="text"]:focus, select:focus { outline: 2px solid var(--saffron); background: #fff; }
+.btn-primary { background: var(--deep-maroon); color: #fff; border: none; padding: 0.5rem 1.25rem; border-radius: 6px; cursor: pointer; font-family: var(--font-deva); font-size: 0.95rem; font-weight: 600; transition: background 0.2s; }
+.btn-primary:hover { background: #6b1212; }
+
+/* Paradigm table */
+.paradigm-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 0.75rem; }
+.paradigm-table { width: 100%; border-collapse: collapse; font-family: var(--font-deva); }
+.paradigm-table thead tr { background: var(--deep-maroon); }
+.paradigm-table th { color: #fff; padding: 0.6rem 1rem; text-align: center; font-size: 0.88rem; font-weight: 600; }
+.vib-label { padding: 0.5rem 1rem; font-size: 0.82rem; color: var(--muted); background: #f9f9f9; white-space: nowrap; font-family: var(--font-deva); border-right: 1px solid var(--border); }
+.paradigm-cell { border: 1px solid #f0f0f0; }
+.cell-btn { width: 100%; border: none; background: none; cursor: pointer; padding: 0.6rem 0.5rem; text-align: center; transition: background 0.15s; }
+.cell-btn:hover { background: #fff3e0; }
+.active-cell { background: #fff3cd; }
+.cell-btn .deva { display: block; font-size: 1.05rem; color: var(--ink); }
+.cell-btn .slp1 { display: block; font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); margin-top: 2px; }
+
+.hint { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-bottom: 1rem; }
+
+/* Trace */
+.trace-result { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.trace-header { display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.25rem; background: #f7f3ee; border-bottom: 1px solid var(--border); }
+.trace-title { font-family: var(--font-deva); font-weight: 600; color: var(--muted); font-size: 0.9rem; }
+.trace-final .deva { font-family: var(--font-deva); font-size: 1.8rem; color: var(--deep-maroon); }
+.trace-final .slp1 { display: block; font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); text-align: right; }
+.trace-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.trace-table th { background: #f5f5f5; padding: 0.45rem 0.85rem; text-align: left; border-bottom: 2px solid var(--border); font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.trace-table td { padding: 0.45rem 0.85rem; border-bottom: 1px solid #f5f5f5; vertical-align: middle; }
+.row-applied { background: var(--applied); }
+.row-skipped { background: var(--skipped); }
+.sutra-id { font-family: var(--font-mono); font-weight: 700; font-size: 0.85rem; color: var(--deep-maroon); white-space: nowrap; }
+.type-label { font-size: 0.75rem; color: var(--muted); white-space: nowrap; font-family: var(--font-mono); }
+.form-cell .deva { font-family: var(--font-deva); font-size: 1rem; }
+.form-cell .slp1 { display: block; font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); }
+.why { font-family: var(--font-deva); font-size: 0.88rem; line-height: 1.4; }
+
+.footer { text-align: center; padding: 1.25rem; color: var(--muted); font-size: 0.78rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+</style>
+</html>
