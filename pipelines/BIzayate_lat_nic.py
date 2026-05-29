@@ -22,6 +22,7 @@ from core.canonical_pipelines import (
     P00_lashakvataddhite_it_lopa_chain,
     P06a_pratyaya_adhikara_3_1_1_to_3,
     P00_tin_adesha_base,
+    P00_lac_lat_attach,
 )
 
 
@@ -41,18 +42,7 @@ def _build_state() -> State:
 def _lat_ta_and_sap(s: State) -> State:
     # Like canonical P00_lat_vartamane_tip_and_sap, but choose ātmanepada `ta`
     # and then apply 1.1.64 + 3.4.79 to get `te`.
-    s = apply_rule("3.1.91", s)
-    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s = apply_rule("3.2.123", s)
-    laT = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("laT"),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-    if laT.varnas and laT.varnas[-1].slp1 == "T":
-        del laT.varnas[-1]
-    s.terms.append(laT)
+    s = P00_lac_lat_attach(s)
     # Substitute to ta via 3.4.78
     s = P00_tin_adesha_base(s, "ta")
     # Insert Sap between dhātu and ta

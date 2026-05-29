@@ -38,7 +38,10 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 # Lowered: -1 from 2026-05-29 tinanta.py restructuring — extracted 22 parasmaipada
 #          tiṅ-spine blocks into P00_parasmai_tin_adesha (via P00_tin_adesha_base),
 #          14 ātmanepada blocks into P00_tin_adesha_base across 5 files.
-MAX_DUPLICATE_GROUPS = 129
+# Lowered: -13 from 2026-05-29 — canonicalized remaining 3.4.77/78 in canonical_pipelines
+#          + vande; extracted P00_lac_lat_attach (3.1.91→3.2.123→laT) into canonical,
+#          replacing 9 occurrences across canonical_pipelines, BIzayate, paTayati, tinanta.
+MAX_DUPLICATE_GROUPS = 116
 
 
 @pytest.fixture(scope="module")

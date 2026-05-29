@@ -18,7 +18,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_krt_it_lopa, P00_tin_adesha_base
+from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_krt_it_lopa, P00_tin_adesha_base, P00_lac_lat_attach
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -80,18 +80,7 @@ def derive_paTayati_paTu_Nic_P025() -> State:
 
     _merge_paT_nic_i_to_paTi(s)
 
-    s = apply_rule("3.1.91", s)
-    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s = apply_rule("3.2.123", s)
-    laT = Term(
-        kind="pratyaya",
-        varnas=list(parse_slp1_upadesha_sequence("laT")),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-    if laT.varnas and laT.varnas[-1].slp1 == "T":
-        del laT.varnas[-1]
-    s.terms.append(laT)
+    s = P00_lac_lat_attach(s)
 
     s.meta["3_1_68_kartari_recipe"] = True
     s = P00_tin_adesha_base(s, "tip")

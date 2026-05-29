@@ -87,6 +87,7 @@ from core.canonical_pipelines import (
     P00_san_kit_kngiti,
     P00_parasmai_tin_adesha,
     P00_tin_adesha_base,
+    P00_lac_lat_attach,
 )
 
 from pipelines.dhatupatha import get_dhatu_row, _payload, _envelope
@@ -1495,18 +1496,7 @@ def _derive_laT_jYA_apa(state: State, purusha: int, vacana: int) -> State:
     **6.4.113** → **1.1.64** → **3.4.79** → merge.
     """
     state.meta["lakara"] = "laT"
-    state = apply_rule("3.1.91", state)
-    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
-    state = apply_rule("3.2.123", state)
-    laT_varnas = parse_slp1_upadesha_sequence("laT")
-    if laT_varnas and laT_varnas[-1].slp1 == "T":
-        laT_varnas = laT_varnas[:-1]
-    state.terms.append(Term(
-        kind="pratyaya",
-        varnas=laT_varnas,
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    ))
+    state = P00_lac_lat_attach(state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
     state = P00_tin_adesha_base(state, tin_adesha)
     state = apply_rule("3.1.81", state)
@@ -1570,18 +1560,7 @@ def derive_denominative_laT(
         state = apply_rule(sid, state)
     _kyaz_merge(state, nominal_slp1)
     state = apply_rule("3.1.32", state)
-    state = apply_rule("3.1.91", state)
-    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
-    state = apply_rule("3.2.123", state)
-    laT_varnas = parse_slp1_upadesha_sequence("laT")
-    if laT_varnas and laT_varnas[-1].slp1 == "T":
-        laT_varnas = laT_varnas[:-1]
-    state.terms.append(Term(
-        kind="pratyaya",
-        varnas=laT_varnas,
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    ))
+    state = P00_lac_lat_attach(state)
     tin_adesha = _select_tin_adesha("laT", "parasmai", purusha, vacana)
     state = P00_tin_adesha_base(state, tin_adesha)
     state.meta["3_1_68_kartari_recipe"] = True
@@ -1658,18 +1637,7 @@ def derive_anukarana_laT(
     stem_after = "".join(v.slp1 for v in state.terms[0].varnas) if state.terms else ""
     _kyaz_merge(state, stem_after)
     state = apply_rule("3.1.32", state)
-    state = apply_rule("3.1.91", state)
-    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
-    state = apply_rule("3.2.123", state)
-    laT_varnas = parse_slp1_upadesha_sequence("laT")
-    if laT_varnas and laT_varnas[-1].slp1 == "T":
-        laT_varnas = laT_varnas[:-1]
-    state.terms.append(Term(
-        kind="pratyaya",
-        varnas=laT_varnas,
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    ))
+    state = P00_lac_lat_attach(state)
     tin_adesha = _select_tin_adesha("laT", "parasmai", purusha, vacana)
     state = P00_tin_adesha_base(state, tin_adesha)
     state.meta["3_1_68_kartari_recipe"] = True
@@ -1758,18 +1726,7 @@ def _derive_laT_nic_atmane(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("7.3.37", state)
     _nic_merge(state)
     state = apply_rule("3.1.32", state)
-    state = apply_rule("3.1.91", state)
-    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
-    state = apply_rule("3.2.123", state)
-    laT_varnas = parse_slp1_upadesha_sequence("laT")
-    if laT_varnas and laT_varnas[-1].slp1 == "T":
-        laT_varnas = laT_varnas[:-1]
-    state.terms.append(Term(
-        kind="pratyaya",
-        varnas=laT_varnas,
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    ))
+    state = P00_lac_lat_attach(state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
     state = P00_tin_adesha_base(state, tin_adesha)
     state.meta["3_1_68_kartari_recipe"] = True
@@ -1813,18 +1770,7 @@ def _derive_laT_san_atmane(state: State, purusha: int, vacana: int) -> State:
     # 7.4.60: abhyāsa hrasva reduction
     state = apply_rule("7.4.60", state)
     # Tiṅ spine (ātmanepada 3sg laṭ)
-    state = apply_rule("3.1.91", state)
-    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
-    state = apply_rule("3.2.123", state)
-    laT_varnas = parse_slp1_upadesha_sequence("laT")
-    if laT_varnas and laT_varnas[-1].slp1 == "T":
-        laT_varnas = laT_varnas[:-1]
-    state.terms.append(Term(
-        kind="pratyaya",
-        varnas=laT_varnas,
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    ))
+    state = P00_lac_lat_attach(state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
     state = P00_tin_adesha_base(state, tin_adesha)
     state.meta["3_1_68_kartari_recipe"] = True
@@ -1890,18 +1836,7 @@ def _derive_laT_kf_u_atmane(state: State, purusha: int, vacana: int) -> State:
             t.tags.discard("upadesha")
     for sid in ("1.3.3", "1.3.9"):
         state = apply_rule(sid, state)
-    state = apply_rule("3.1.91", state)
-    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
-    state = apply_rule("3.2.123", state)
-    laT_varnas = parse_slp1_upadesha_sequence("laT")
-    if laT_varnas and laT_varnas[-1].slp1 == "T":
-        laT_varnas = laT_varnas[:-1]
-    state.terms.append(Term(
-        kind="pratyaya",
-        varnas=laT_varnas,
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    ))
+    state = P00_lac_lat_attach(state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
     state = P00_tin_adesha_base(state, tin_adesha)
     # 3.1.79 fires structurally: gana 8 + tin_adesha_3_4_78 on tape
@@ -1932,18 +1867,7 @@ def _derive_laT_krI_sna_atmane(state: State, purusha: int, vacana: int) -> State
     **3.4.79** → **8.2.1** → **8.4.2** → merge.
     """
     state.meta["lakara"] = "laT"
-    state = apply_rule("3.1.91", state)
-    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
-    state = apply_rule("3.2.123", state)
-    laT_varnas = parse_slp1_upadesha_sequence("laT")
-    if laT_varnas and laT_varnas[-1].slp1 == "T":
-        laT_varnas = laT_varnas[:-1]
-    state.terms.append(Term(
-        kind="pratyaya",
-        varnas=laT_varnas,
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    ))
+    state = P00_lac_lat_attach(state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
     state = P00_tin_adesha_base(state, tin_adesha)
     state = apply_rule("3.1.81", state)

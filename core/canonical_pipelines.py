@@ -728,6 +728,23 @@ def P00_parasmai_tin_adesha(s: State, tin_form: str) -> State:
     return s
 
 
+def P00_lac_lat_attach(s: State) -> State:
+    """laṭ-pratyaya scope: 3.1.91 → (P06a 3.1.1–3) → 3.2.123 → append laṭ placeholder."""
+    s = apply_rule("3.1.91", s)
+    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
+    s = apply_rule("3.2.123", s)
+    laT = Term(
+        kind="pratyaya",
+        varnas=parse_slp1_upadesha_sequence("laT"),
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        meta={"upadesha_slp1": "laT"},
+    )
+    if laT.varnas and laT.varnas[-1].slp1 == "T":
+        del laT.varnas[-1]
+    s.terms.append(laT)
+    return s
+
+
 def P00_tip_to_t_aprkta(s: State) -> State:
     """3sg parasmaipada luṅ spine: tip → t (apṛkta) via 3.4.100 → 1.2.41."""
     s = P00_parasmai_tin_adesha(s, "tip")
@@ -763,10 +780,7 @@ def P00_tin_tas_adesh_full(s: State) -> State:
     Caller must set ``1_4_22_affix_class`` to ``\"dvi\"`` on the primary *dhātu*
     ``Term`` (``dvi_eka_1_4_22.DVI_EKA_NIMITTA_KEY``) before **3.4.77**.
     """
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "tas"
-    s = apply_rule("3.4.78", s)
+    s = P00_tin_adesha_base(s, "tas")
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
         s = apply_rule(sid, s)
     s = apply_rule("1.3.3", s)
@@ -784,10 +798,7 @@ def P00_laG_tin_tas_tAm_adesh_block(s: State) -> State:
     Caller must set ``1_4_22_affix_class`` on the *dhātu* Term and already have appended
     the *lac* placeholder (**3.2.111**) before **3.4.77**.
     """
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "tas"
-    s = apply_rule("3.4.78", s)
+    s = P00_tin_adesha_base(s, "tas")
     s = apply_rule("3.4.101", s)
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
         s = apply_rule(sid, s)
@@ -802,18 +813,7 @@ def P00_lat_vartamane_tas_and_sap(s: State) -> State:
 
       3.1.91 → (3.1.1–3) → 3.2.123 → +laT → ``P00_tin_tas_adesh_full`` → 3.1.68 (*Sap*).
     """
-    s = apply_rule("3.1.91", s)
-    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s = apply_rule("3.2.123", s)
-    laT = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("laT"),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-    if laT.varnas and laT.varnas[-1].slp1 == "T":
-        del laT.varnas[-1]
-    s.terms.append(laT)
+    s = P00_lac_lat_attach(s)
     s = P00_tin_tas_adesh_full(s)
     s = apply_rule("3.1.68", s)
     return s
@@ -825,10 +825,7 @@ def P00_tin_jhi_adesh_full(s: State) -> State:
 
     Do **not** set ``1_4_22_affix_class`` for *bahuvacana* (*1.4.22* *cond* false).
     """
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "jhi"
-    s = apply_rule("3.4.78", s)
+    s = P00_tin_adesha_base(s, "jhi")
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
         s = apply_rule(sid, s)
     s = apply_rule("1.3.3", s)
@@ -842,18 +839,7 @@ def P00_lat_vartamane_jhi_and_sap(s: State) -> State:
 
       3.1.91 → (3.1.1–3) → 3.2.123 → +laT → ``P00_tin_jhi_adesh_full`` → 3.1.68 (*Sap*).
     """
-    s = apply_rule("3.1.91", s)
-    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s = apply_rule("3.2.123", s)
-    laT = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("laT"),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-    if laT.varnas and laT.varnas[-1].slp1 == "T":
-        del laT.varnas[-1]
-    s.terms.append(laT)
+    s = P00_lac_lat_attach(s)
     s = P00_tin_jhi_adesh_full(s)
     s = apply_rule("3.1.68", s)
     return s
@@ -864,18 +850,7 @@ def P00_lat_vartamane_tip_and_sap(s: State) -> State:
     Common laṭ 3sg kartari spine used in demos:
       3.1.91 → (3.1.1–3) → 3.2.123 → +laT (structural) → tip→ti → 3.1.68 (Sap)
     """
-    s = apply_rule("3.1.91", s)
-    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s = apply_rule("3.2.123", s)
-    laT = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("laT"),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-    if laT.varnas and laT.varnas[-1].slp1 == "T":
-        del laT.varnas[-1]
-    s.terms.append(laT)
+    s = P00_lac_lat_attach(s)
     s = P00_tip_to_ti(s)
     s = apply_rule("3.1.68", s)
     return s
