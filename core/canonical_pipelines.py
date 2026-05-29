@@ -127,12 +127,81 @@ def P00_napumsaka_am_sandhi(s: State) -> State:
     return s
 
 
-def P00_sup_it_lopa_aprkta(s: State) -> State:
-    """Sup attachment + it-lopa + apṛkta saṃjñā: 4.1.2 → 1.3.2 → 1.3.9 → 1.2.41."""
+def P00_tavyat_anIyar_it_lopa(s: State) -> State:
+    """Kṛt suffix attachment + it-lopa (tavyat/anīyar path): 3.1.96 → 1.3.3 → 1.3.9."""
+    s = apply_rule("3.1.96", s)
+    s = apply_rule("1.3.3", s)
+    s = apply_rule("1.3.9", s)
+    return s
+
+
+def P00_krt_it_lopa(s: State) -> State:
+    """Kṛt it-lopa chain: 1.3.7 (lashakva) → 1.3.3 (halantyam) → 1.3.9 (tasya lopaḥ)."""
+    s = apply_rule("1.3.7", s)
+    s = apply_rule("1.3.3", s)
+    s = apply_rule("1.3.9", s)
+    return s
+
+
+def P00_anga_samjna_6_4_1(s: State) -> State:
+    """Aṅga saṃjñā + ṣaṣṭhī-adhikāra: 1.4.13 (yasmāt…) → 1.1.65 (alo'ntyasya) → 6.4.1 (aṅgasya)."""
+    s = apply_rule("1.4.13", s)
+    s = apply_rule("1.1.65", s)
+    s = apply_rule("6.4.1", s)
+    return s
+
+
+def P00_sup_it_lopa(s: State) -> State:
+    """Sup attachment + it-lopa: 4.1.2 → 1.3.2 → 1.3.9."""
     s = apply_rule("4.1.2", s)
     s = apply_rule("1.3.2", s)
     s = apply_rule("1.3.9", s)
+    return s
+
+
+def P00_sup_it_lopa_aprkta(s: State) -> State:
+    """Sup attachment + it-lopa + apṛkta saṃjñā: 4.1.2 → 1.3.2 → 1.3.9 → 1.2.41."""
+    s = P00_sup_it_lopa(s)
     s = apply_rule("1.2.41", s)
+    return s
+
+
+def P00_nvul_krt_prefix(s: State) -> State:
+    """ṇvul kṛt it-spine prefix: 3.4.67 → 3.1.133 → 1.3.8 → krt_it_lopa → 7.1.1 → anga_samjna_6_4_1."""
+    s = apply_rule("3.4.67", s)
+    s = apply_rule("3.1.133", s)
+    s = apply_rule("1.3.8", s)
+    s = P00_krt_it_lopa(s)
+    s = apply_rule("7.1.1", s)
+    s = P00_anga_samjna_6_4_1(s)
+    return s
+
+
+def P00_krt_guna_sandhi_tail(s: State) -> State:
+    """Kṛt guṇa + sandhi tail: 7.2.115 → 6.1.78 → 6.1.77 → 1.2.45 → 1.2.46."""
+    s = apply_rule("7.2.115", s)
+    s = apply_rule("6.1.78", s)
+    s = apply_rule("6.1.77", s)
+    s = apply_rule("1.2.45", s)
+    s = apply_rule("1.2.46", s)
+    return s
+
+
+def P00_tanadi_u_kit(s: State) -> State:
+    """Tanādi-u kṛt kit chain: 3.1.79 → 7.3.84 → 1.1.51 → 1.2.4 → 1.1.5."""
+    s = apply_rule("3.1.79", s)
+    s = apply_rule("7.3.84", s)
+    s = apply_rule("1.1.51", s)
+    s = apply_rule("1.2.4", s)
+    s = apply_rule("1.1.5", s)
+    return s
+
+
+def P00_taddhita_it_lopa_to_6_4(s: State) -> State:
+    """Taddhita it-lopa + aṅga range: 7.2.117 → 6.4.129 → 6.4.148."""
+    s = apply_rule("7.2.117", s)
+    s = apply_rule("6.4.129", s)
+    s = apply_rule("6.4.148", s)
     return s
 
 

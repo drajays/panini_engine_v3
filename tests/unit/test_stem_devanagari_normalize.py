@@ -4,7 +4,7 @@ from __future__ import annotations
 import pytest
 
 from phonology.tokenizer import devanagari_to_slp1_flat
-from streamlit_app.stem_input import (
+from phonology.stem_input import (
     normalize_pratipadika_input,
     stem_slp1_to_display_devanagari,
 )

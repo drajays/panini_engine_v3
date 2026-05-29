@@ -49,6 +49,10 @@ from core.canonical_pipelines import (
     P06a_pratyaya_adhikara_3_1_1_to_3,
 
     P00_tripadi_rutva_visarga,
+    P00_krt_it_lopa,
+    P00_anga_samjna_6_4_1,
+    P00_krt_guna_sandhi_tail,
+    P00_nvul_krt_prefix,
 )
 from phonology import HAL
 from phonology.pratyahara import is_ekac_upadesha
@@ -211,23 +215,9 @@ def derive_krt(
 
     s.meta["krt_upadesha_slp1"] = krt_upadesha_slp1
     if krt_upadesha_slp1 == "Nvul":
-        s = apply_rule("3.4.67", s)
-        s = apply_rule("3.1.133", s)
-        s = apply_rule("1.3.8", s)
-        s = apply_rule("1.3.7", s)
-        s = apply_rule("1.3.3", s)
-        s = apply_rule("1.3.9", s)
-        s = apply_rule("7.1.1", s)
-        s = apply_rule("1.4.13", s)
-        s = apply_rule("1.1.65", s)
-        s = apply_rule("6.4.1", s)
+        s = P00_nvul_krt_prefix(s)
         s = apply_rule("7.2.116", s)
-        s = apply_rule("7.2.115", s)
-        s = apply_rule("6.1.78", s)
-        # Sandhi on the dhātu+kṛt boundary (e.g. dIDhI + ak → dIDhyak).
-        s = apply_rule("6.1.77", s)
-        s = apply_rule("1.2.45", s)
-        s = apply_rule("1.2.46", s)
+        s = P00_krt_guna_sandhi_tail(s)
         s = _structural_merge_to_pratipadika(s, upadesha_slp1=merge_pratipadika_label)
         return s
 
@@ -235,21 +225,13 @@ def derive_krt(
         s = apply_rule("3.4.68", s)
         s = apply_rule("3.1.133", s)
         s = apply_rule("1.3.8", s)
-        s = apply_rule("1.3.7", s)
-        s = apply_rule("1.3.3", s)
-        s = apply_rule("1.3.9", s)
+        s = P00_krt_it_lopa(s)
         s = apply_rule("3.4.114", s)
-        s = apply_rule("1.4.13", s)
-        s = apply_rule("1.1.65", s)
-        s = apply_rule("6.4.1", s)
+        s = P00_anga_samjna_6_4_1(s)
         s = apply_rule("7.3.84", s)
         s = apply_rule("7.1.1", s)
         s = apply_rule("7.2.116", s)
-        s = apply_rule("7.2.115", s)
-        s = apply_rule("6.1.78", s)
-        s = apply_rule("6.1.77", s)
-        s = apply_rule("1.2.45", s)
-        s = apply_rule("1.2.46", s)
+        s = P00_krt_guna_sandhi_tail(s)
         s = _structural_merge_to_pratipadika(s, upadesha_slp1=merge_pratipadika_label)
         return s
 
@@ -293,13 +275,9 @@ def derive_tfc_pratipadika(
     s.meta["krt_upadesha_slp1"] = "tfc"
     s = apply_rule("3.4.67", s)
     s = apply_rule("3.1.133", s)
-    s = apply_rule("1.3.7", s)
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_krt_it_lopa(s)
     s = apply_rule("3.4.114", s)
-    s = apply_rule("1.4.13", s)
-    s = apply_rule("1.1.65", s)
-    s = apply_rule("6.4.1", s)
+    s = P00_anga_samjna_6_4_1(s)
     s = apply_rule("7.2.10", s)
     s = apply_rule("7.2.35", s)
     s = apply_rule("7.3.84", s)

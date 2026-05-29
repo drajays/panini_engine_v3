@@ -24,7 +24,7 @@ from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from core.canonical_pipelines import P00_upadesha_it_1_3_1_2_5
+from core.canonical_pipelines import P00_upadesha_it_1_3_1_2_5, P00_tavyat_anIyar_it_lopa
 from pipelines.subanta import _pada_merge
 
 
@@ -50,11 +50,7 @@ def derive_vandanIya() -> State:
     # kṛtya context: dhātoḥ (3.1.91) then anīyar by 3.1.96 (krtya_recipe key)
     s = apply_rule("3.1.91", s)
     s.meta["krtya_recipe"] = "anIyar"
-    s = apply_rule("3.1.96", s)
-
-    # it-lopa on anīyar's 'r' (hal-antyam 1.3.3 → 1.3.9)
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_tavyat_anIyar_it_lopa(s)
 
     # Structural merge → vandanīya
     _pada_merge(s)

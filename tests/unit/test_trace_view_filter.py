@@ -1,4 +1,4 @@
-from streamlit_app.trace_view import filter_steps_surface_changed
+from web.display import filter_surface_changed as filter_steps_surface_changed
 
 
 def test_filter_keeps_only_changed():

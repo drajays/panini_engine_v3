@@ -1113,9 +1113,7 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
     _pada_merge(state)
-    state = apply_rule("8.2.1",  state)
-    state = apply_rule("8.2.66", state)   # s → r  (2sg yāḥ→yuḥ, 3pl)
-    state = apply_rule("8.3.15", state)   # r → ḥ
+    state = P00_tripadi_rutva_visarga(state)
 
     return state
 
@@ -1239,9 +1237,7 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # ── Merge + Tripāḍī ──────────────────────────────────────────────────────
     _pada_merge(state)
-    state = apply_rule("8.2.1", state)
-    state = apply_rule("8.2.66", state)   # pada-final s → ru
-    state = apply_rule("8.3.15", state)   # ru → ḥ
+    state = P00_tripadi_rutva_visarga(state)
     state = apply_rule("8.3.59", state)   # s → ṣ after IK in pratyaya (sya → ṣya)
     state = apply_rule("8.4.68", state)   # trace marker
 
@@ -1363,9 +1359,7 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
     _pada_merge(state)
-    state = apply_rule("8.2.1",  state)
-    state = apply_rule("8.2.66", state)   # vacuous (no pada-final 's')
-    state = apply_rule("8.3.15", state)   # vacuous
+    state = P00_tripadi_rutva_visarga(state)
     state = apply_rule("8.4.68", state)
 
     return state
@@ -2244,9 +2238,7 @@ def _derive_karmani_laG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.1.97", state)
 
     _pada_merge(state)
-    state = apply_rule("8.2.1", state)
-    state = apply_rule("8.2.66", state)  # s→r (2sg TAs-s at word-final)
-    state = apply_rule("8.3.15", state)  # r→ḥ
+    state = P00_tripadi_rutva_visarga(state)
 
     return state
 
@@ -2480,9 +2472,7 @@ def _derive_karmani_luG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.1.78", state)
 
     _pada_merge(state)
-    state = apply_rule("8.2.1", state)
-    state = apply_rule("8.2.66", state)   # final s→r (2sg -As ending)
-    state = apply_rule("8.3.15", state)   # r→ḥ (visarga)
+    state = P00_tripadi_rutva_visarga(state)
     state = apply_rule("8.3.59", state)   # suṭ-s → ṣ (z) after ciṇ-i (iK)
 
     return state
@@ -3287,9 +3277,7 @@ def _derive_karmani_lRT(state: State, purusha: int, vacana: int) -> State:
     _pada_merge(state)
 
     # ── TRIPĀḌĪ ───────────────────────────────────────────────────────────
-    state = apply_rule("8.2.1", state)
-    state = apply_rule("8.2.66", state)   # vacuous (no pada-final s)
-    state = apply_rule("8.3.15", state)   # vacuous
+    state = P00_tripadi_rutva_visarga(state)
     state = apply_rule("8.3.59", state)   # s→ṣ after iṭ-i (in sya: iṣya)
     state = apply_rule("8.4.68", state)
 
@@ -3506,9 +3494,7 @@ def _derive_karmani_loT(state: State, purusha: int, vacana: int) -> State:
 
     # ── MERGE + TRIPĀḌĪ ───────────────────────────────────────────────────
     _pada_merge(state)
-    state = apply_rule("8.2.1",  state)
-    state = apply_rule("8.2.66", state)
-    state = apply_rule("8.3.15", state)
+    state = P00_tripadi_rutva_visarga(state)
     state = apply_rule("8.4.68", state)
 
     return state

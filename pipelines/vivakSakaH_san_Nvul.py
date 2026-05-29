@@ -32,6 +32,10 @@ from core.canonical_pipelines import (
     P00_subanta_prathama_su_tripadi_visarga,
     P06a_pratyaya_adhikara_3_1_1_to_3,
     P00_san_kit_kngiti,
+    P00_krt_it_lopa,
+    P00_anga_samjna_6_4_1,
+    P00_nvul_krt_prefix,
+    P00_krt_guna_sandhi_tail,
 )
 from pipelines.krdanta import _structural_merge_to_pratipadika
 from pipelines.subanta import _pada_merge
@@ -99,25 +103,14 @@ def derive_vivakSakaH_san_Nvul_P030() -> State:
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
     s = apply_rule("3.1.91", s)
     s.meta["krt_upadesha_slp1"] = "Nvul"
-    s = apply_rule("3.4.67", s)
-    s = apply_rule("3.1.133", s)
-    for sid in ("1.3.8", "1.3.7", "1.3.3", "1.3.9"):
-        s = apply_rule(sid, s)
-    s = apply_rule("7.1.1", s)
-    s = apply_rule("1.4.13", s)
-    s = apply_rule("1.1.65", s)
-    s = apply_rule("6.4.1", s)
+    s = P00_nvul_krt_prefix(s)
     # JSON **P030** step 16: *acaḥ ñṇiti* does not further strengthen this stem
     # (cf. *sthānivat* / teaching note); **7.2.116** would wrongly vṛddhi the
     # medial *a* of *vivak-* → *vivāk-*.
     s.blocked_sutras.add("7.2.116")
     s = apply_rule("7.2.116", s)
     s.blocked_sutras.discard("7.2.116")
-    s = apply_rule("7.2.115", s)
-    s = apply_rule("6.1.78", s)
-    s = apply_rule("6.1.77", s)
-    s = apply_rule("1.2.45", s)
-    s = apply_rule("1.2.46", s)
+    s = P00_krt_guna_sandhi_tail(s)
     s = _structural_merge_to_pratipadika(s, upadesha_slp1="vivakSaka")
 
     s.meta["linga"] = "pulliṅga"

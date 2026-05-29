@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_tavyat_anIyar_it_lopa
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -47,11 +48,7 @@ def derive_mlecChanIya() -> State:
     # kṛtya context + anīyar (krtya_recipe coordination key)
     s = apply_rule("3.1.91", s)
     s.meta["krtya_recipe"] = "anIyar"
-    s = apply_rule("3.1.96", s)
-
-    # it-lopa on anīyar 'r'
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_tavyat_anIyar_it_lopa(s)
 
     # 6.1.75: dīrgha 'e' before C within dhātu → insert tuk 't' (→ mletC + anIya)
     s = apply_rule("6.1.75", s)

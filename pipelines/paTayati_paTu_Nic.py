@@ -18,7 +18,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3
+from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_krt_it_lopa
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -67,9 +67,7 @@ def derive_paTayati_paTu_Nic_P025() -> State:
     s.meta["P025_2_1_26_Nic_arm"] = True
     s = apply_rule("2.1.26", s)
 
-    s = apply_rule("1.3.7", s)
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_krt_it_lopa(s)
 
     s.meta["P025_3_1_32_arm"] = True
     s = apply_rule("3.1.32", s)

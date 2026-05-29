@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_sup_it_lopa
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -41,10 +42,7 @@ def derive_rAjA() -> State:
 
     s = apply_rule("1.2.46", s)
     s.meta["vibhakti_vacana"] = "1-1"
-    s = apply_rule("4.1.2", s)   # su
-
-    s = apply_rule("1.3.2", s)   # u-it
-    s = apply_rule("1.3.9", s)   # u-lopa => s
+    s = P00_sup_it_lopa(s)
 
     s.meta["1_1_43_arm"] = True
     s = apply_rule("1.1.43", s)

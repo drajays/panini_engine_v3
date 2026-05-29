@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_tavyat_anIyar_it_lopa
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -67,10 +68,7 @@ def derive_hiqanIya() -> State:
     s = apply_rule("3.1.32", s)
 
     s.meta["3_1_96_anIyar_arm"] = True
-    s = apply_rule("3.1.96", s)
-
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_tavyat_anIyar_it_lopa(s)
 
     if s.terms:
         s.terms[-1].meta["krtya_anIya_pratyaya"] = True
