@@ -712,16 +712,25 @@ def P00_luN_lakara_cli_sic(s: State) -> State:
     return s
 
 
-def P00_tip_to_t_aprkta(s: State) -> State:
-    """
-    Canonical tiṅ selection for 3sg parasmaipada in these luṅ recipes:
-      3.4.77 → 3.4.78 (+meta tip) → 1.4.99 → it-lopa on tip → 3.4.100 → 1.2.41
-    """
+def P00_tin_adesha_base(s: State, tin_form: str) -> State:
+    """Core tiṅ-spine (no saṃjñā): 3.4.77 (lasya) → 3.4.78 (tin_form ādeśa)."""
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "tip"
+    s.meta["tin_adesha_form"] = tin_form
     s = apply_rule("3.4.78", s)
+    return s
+
+
+def P00_parasmai_tin_adesha(s: State, tin_form: str) -> State:
+    """Core parasmaipada tiṅ-spine: 3.4.77 (lasya) → 3.4.78 (tin_form ādeśa) → 1.4.99 (parasmaipade)."""
+    s = P00_tin_adesha_base(s, tin_form)
     s = apply_rule("1.4.99", s)
+    return s
+
+
+def P00_tip_to_t_aprkta(s: State) -> State:
+    """3sg parasmaipada luṅ spine: tip → t (apṛkta) via 3.4.100 → 1.2.41."""
+    s = P00_parasmai_tin_adesha(s, "tip")
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
     s = apply_rule("3.4.100", s)
@@ -730,30 +739,16 @@ def P00_tip_to_t_aprkta(s: State) -> State:
 
 
 def P00_tip_to_ti(s: State) -> State:
-    """Canonical tiṅ selection for 3sg parasmaipada: 3.4.77 → 3.4.78(tip) → 1.4.99 → it-lopa (p) ⇒ ti."""
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "tip"
-    s = apply_rule("3.4.78", s)
-    s = apply_rule("1.4.99", s)
+    """3sg parasmaipada tiṅ spine: 3.4.77 → 3.4.78(tip) → 1.4.99 → it-lopa (p) ⇒ ti."""
+    s = P00_parasmai_tin_adesha(s, "tip")
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
     return s
 
 
 def P00_lit_tip_to_Nal(s: State) -> State:
-    """
-    *Liṭ* 3sg *parasmaipada* **tip** row (same block as ``P00_tip_to_ti``), then
-    **3.4.82** *lit* **tip** → **ṇal** (``Nal``) when ``liT_Nal_recipe`` is set.
-
-    Caller must set ``1_4_22_affix_class`` to ``\"eka\"`` on the primary *dhātu*
-    ``Term`` before **3.4.77** (cf. ``P00_tip_to_ti``).
-    """
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "tip"
-    s = apply_rule("3.4.78", s)
-    s = apply_rule("1.4.99", s)
+    """Liṭ 3sg parasmaipada: tip spine then 3.4.82 tip→Nal when liT_Nal_recipe is set."""
+    s = P00_parasmai_tin_adesha(s, "tip")
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
     s.meta["liT_Nal_recipe"] = True

@@ -22,7 +22,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3
+from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_adesha_base
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -53,10 +53,7 @@ def derive_kirati_karati_split_prakriyas_P009() -> State:
         del laT.varnas[-1]
     s.terms.append(laT)
 
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "tip"
-    s = apply_rule("3.4.78", s)
+    s = P00_tin_adesha_base(s, "tip")
 
     # tudādi vikaraṇa Sa — cond checks gana==6 + no existing Śa.
     s = apply_rule("3.1.77", s)

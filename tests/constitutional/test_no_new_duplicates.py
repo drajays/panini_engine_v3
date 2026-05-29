@@ -35,7 +35,10 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 #          added to tinanta.py for P009/P011/P012 corrected demo integration (2026-05-28).
 # Lowered: -353 from T3/T4 cleanup — deleted 31 corrected files, renamed 120 demo
 #          pipelines. Remaining 225 groups targeted for canonical extraction.
-MAX_DUPLICATE_GROUPS = 130
+# Lowered: -1 from 2026-05-29 tinanta.py restructuring — extracted 22 parasmaipada
+#          tiṅ-spine blocks into P00_parasmai_tin_adesha (via P00_tin_adesha_base),
+#          14 ātmanepada blocks into P00_tin_adesha_base across 5 files.
+MAX_DUPLICATE_GROUPS = 129
 
 
 @pytest.fixture(scope="module")

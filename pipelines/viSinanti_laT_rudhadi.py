@@ -30,6 +30,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 from core.canonical_pipelines import (
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
+    P00_tin_adesha_base,
 )
 from pipelines.subanta import _pada_merge
 
@@ -69,10 +70,7 @@ def derive_viSinanti_laT_rudhadi_P032() -> State:
         del laT.varnas[-1]
     s.terms.append(laT)
 
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "jhi"
-    s = apply_rule("3.4.78", s)
+    s = P00_tin_adesha_base(s, "jhi")
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
         s = apply_rule(sid, s)
     for sid in ("1.3.3", "1.3.9"):

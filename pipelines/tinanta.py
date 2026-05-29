@@ -85,6 +85,8 @@ from core.canonical_pipelines import (
 
     P00_tripadi_rutva_visarga,
     P00_san_kit_kngiti,
+    P00_parasmai_tin_adesha,
+    P00_tin_adesha_base,
 )
 
 from pipelines.dhatupatha import get_dhatu_row, _payload, _envelope
@@ -392,16 +394,8 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("1.3.9", state)
 
     # 3.4.77 lasya adhikāra (scope for tiṅ substitution)
-    state = apply_rule("3.4.77", state)
-
-    # 3.4.78: standard tiṅ ādeśa from tin_upadesha.json
     tin_adesha_std = _select_tin_adesha("liT", pada_key, purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"] = tin_adesha_std
-    state = apply_rule("3.4.78", state)
-
-    # 1.4.99 parasmaipade saṃjñā
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha_std)
 
     # IT on tiṅ ādeśa
     state = P00_tin_tusma_audit_halantyam_lopa(state)
@@ -567,13 +561,8 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state.meta.pop("tasi_luT_recipe", None)
 
     # ── Stage: 3.4.77 lasya + 3.4.78 tiṅ ādeśa ─────────────────────────────
-    state = apply_rule("3.4.77", state)
     tin_adesha_std = _select_tin_adesha("luT", pada_key, purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"] = tin_adesha_std
-    state = apply_rule("3.4.78", state)
-    # 1.4.99 parasmaipade — marks tiṅ ādeśa as parasmaipada
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha_std)
     # IT on tiṅ ādeśa: 1.3.4 (tusma protect) + 1.3.3 (halantyam) + 1.3.9 (lopa)
     #   tip→ti, sip→si, mip→mi; tas/Tas/vas/mas retain (tusma-s protected); Ta/jhi vacuous
     state = P00_tin_tusma_audit_halantyam_lopa(state)
@@ -715,12 +704,8 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("1.3.9", state)
 
     # ── Stage: 3.4.77 + 3.4.78 tiṅ ādeśa ───────────────────────────────────
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laG", pada_key, purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
     state = _bhave_atmanepada_tin_after_lopa(state)
 
@@ -833,12 +818,8 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("3.1.44", state)   # cli → sic; vacuous if 3.1.55 already fired
 
     # ── Stage: 3.4.77 + 3.4.78 tiṅ ādeśa ────────────────────────────────────
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("luG", pada_key, purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = P00_tin_tusma_audit_halantyam_lopa(state)  # drops p-it of tiṅ; c-it of sic
 
     # ── Stage: 3.4.113 tiṅ is sārvadhatuka ──────────────────────────────────
@@ -962,12 +943,8 @@ def _derive_ashir_liG(state: State, pada_key: str, purusha: int, vacana: int) ->
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
 
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laT", pada_key, purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
 
     state = apply_rule("3.4.116", state)
@@ -1057,12 +1034,8 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("1.3.9", state)
 
     # ── Stage: 3.4.77 lasya + 3.4.78 tiṅ ādeśa (standard laT set) ──────────
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laT", pada_key, purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
     state = _bhave_atmanepada_tin_after_lopa(state)
 
@@ -1177,14 +1150,8 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("1.3.9", state)
 
     # ── Stage: 3.4.77 lasya + 3.4.78 tiṅ ādeśa ─────────────────────────────
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("lRT", pada_key, purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-
-    # 1.4.99 parasmaipade saṃjñā
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
 
     # IT on tiṅ ādeśa (1.3.4 tusma guard + 1.3.3 halantyam + 1.3.9 lopa)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
@@ -1293,12 +1260,8 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("1.3.9", state)
 
     # ── Stage: 3.4.77 + 3.4.78 tiṅ ādeśa (same laT base set) ─────────────────
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laT", pada_key, purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
     state = _bhave_atmanepada_tin_after_lopa(state)
 
@@ -1442,11 +1405,8 @@ def _derive_laT_adadi(state: State, purusha: int, vacana: int) -> State:
         meta={"upadesha_slp1": "laT"},
     )
     state.terms.append(laT_term)
-    state = apply_rule("3.4.77", state)
-    state.meta["tin_adesha_pending"] = True
     _tin = _select_tin_adesha("laT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_form"] = _tin
-    state = apply_rule("3.4.78", state)
+    state = P00_tin_adesha_base(state, _tin)
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
     state = apply_rule("2.4.72", state)
@@ -1477,11 +1437,8 @@ def _derive_laT_yam_Anga(state: State, purusha: int, vacana: int) -> State:
             meta={"upadesha_slp1": "laT"},
         )
     )
-    state = apply_rule("3.4.77", state)
-    state.meta["tin_adesha_pending"] = True
     _tin2 = _select_tin_adesha("laT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_form"] = _tin2
-    state = apply_rule("3.4.78", state)
+    state = P00_tin_adesha_base(state, _tin2)
     state = apply_rule("3.4.113", state)
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
@@ -1550,11 +1507,8 @@ def _derive_laT_jYA_apa(state: State, purusha: int, vacana: int) -> State:
         tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
         meta={"upadesha_slp1": "laT"},
     ))
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"] = tin_adesha
-    state = apply_rule("3.4.78", state)
+    state = P00_tin_adesha_base(state, tin_adesha)
     state = apply_rule("3.1.81", state)
     state = apply_rule("7.3.79", state)
     for sid in ("1.3.8", "1.3.9"):
@@ -1628,11 +1582,8 @@ def derive_denominative_laT(
         tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
         meta={"upadesha_slp1": "laT"},
     ))
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laT", "parasmai", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"] = tin_adesha
-    state = apply_rule("3.4.78", state)
+    state = P00_tin_adesha_base(state, tin_adesha)
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
     for sid in ("1.3.3", "1.3.8", "1.3.9"):
@@ -1719,11 +1670,8 @@ def derive_anukarana_laT(
         tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
         meta={"upadesha_slp1": "laT"},
     ))
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laT", "parasmai", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"] = tin_adesha
-    state = apply_rule("3.4.78", state)
+    state = P00_tin_adesha_base(state, tin_adesha)
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
     for sid in ("1.3.3", "1.3.8", "1.3.9"):
@@ -1822,11 +1770,8 @@ def _derive_laT_nic_atmane(state: State, purusha: int, vacana: int) -> State:
         tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
         meta={"upadesha_slp1": "laT"},
     ))
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"] = tin_adesha
-    state = apply_rule("3.4.78", state)
+    state = P00_tin_adesha_base(state, tin_adesha)
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
     for sid in ("1.3.3", "1.3.8", "1.3.9"):
@@ -1880,11 +1825,8 @@ def _derive_laT_san_atmane(state: State, purusha: int, vacana: int) -> State:
         tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
         meta={"upadesha_slp1": "laT"},
     ))
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"] = tin_adesha
-    state = apply_rule("3.4.78", state)
+    state = P00_tin_adesha_base(state, tin_adesha)
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
     for sid in ("1.3.3", "1.3.8", "1.3.9"):
@@ -1960,11 +1902,8 @@ def _derive_laT_kf_u_atmane(state: State, purusha: int, vacana: int) -> State:
         tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
         meta={"upadesha_slp1": "laT"},
     ))
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"] = tin_adesha
-    state = apply_rule("3.4.78", state)
+    state = P00_tin_adesha_base(state, tin_adesha)
     # 3.1.79 fires structurally: gana 8 + tin_adesha_3_4_78 on tape
     state = apply_rule("3.1.79", state)
     state = apply_rule("7.3.84", state)
@@ -2005,11 +1944,8 @@ def _derive_laT_krI_sna_atmane(state: State, purusha: int, vacana: int) -> State
         tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
         meta={"upadesha_slp1": "laT"},
     ))
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"] = tin_adesha
-    state = apply_rule("3.4.78", state)
+    state = P00_tin_adesha_base(state, tin_adesha)
     state = apply_rule("3.1.81", state)
     for sid in ("1.3.8", "1.3.9"):
         state = apply_rule(sid, state)
@@ -2034,11 +1970,8 @@ def _derive_lRG_ṛ_dhatu(state: State, pada_key: str, purusha: int, vacana: int
     state.meta["lakara"] = "lRG"
     state.meta["3_3_139_lRG_arm"] = True
     state = apply_rule("3.3.139", state)
-    state = apply_rule("3.4.77", state)
-    state.meta["tin_adesha_pending"] = True
     _tin = _select_tin_adesha("lRG", pada_key, purusha, vacana)
-    state.meta["tin_adesha_form"] = _tin
-    state = apply_rule("3.4.78", state)
+    state = P00_tin_adesha_base(state, _tin)
     # Halantyam + it-lopa on tiṅ ādeśa: ``tip`` → ``ti`` (required before 3.1.33 ``sy``).
     for sid in ("1.3.3", "1.3.9"):
         state = apply_rule(sid, state)
@@ -2094,12 +2027,8 @@ def _derive_lRG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("1.3.9", state)
 
     # ── Stage: 3.4.77 + 3.4.78 tiṅ ādeśa ────────────────────────────────────
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("lRT", pada_key, purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
     state = _bhave_atmanepada_tin_after_lopa(state)
 
@@ -2191,12 +2120,8 @@ def _derive_karmani_laG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
 
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laG", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = apply_rule("1.4.100", state)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
 
@@ -2272,12 +2197,8 @@ def _derive_karmani_liG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
 
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = apply_rule("1.4.100", state)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
 
@@ -2358,14 +2279,8 @@ def _derive_karmani_ashir_liG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
 
-    state = apply_rule("3.4.77", state)
-
-    # Use AsIrliN-atmane ādeśas directly — they encode sīy+suṭ+tiṅ
     tin_adesha = _select_tin_adesha("AsIrliG", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = apply_rule("1.4.100", state)
     # No tusma audit: AsIrliN ādeśas start with 's' (val) not tusma final
 
@@ -2444,12 +2359,8 @@ def _derive_karmani_luG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("3.1.66", state)
 
     # 3.4.77 + 3.4.78: install pre-encoded karmani tiṅ ādeśa (replaces luG placeholder)
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("luG_karmani", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = apply_rule("1.4.100", state)
     # No P00 tusma audit: karmani ādeśas start with 'i' — no halantyam IT to drop
 
@@ -2514,12 +2425,8 @@ def _derive_karmani_luT(state: State, purusha: int, vacana: int) -> State:
     state.meta.pop("tasi_luT_recipe", None)
 
     # ── 3.4.77 + 3.4.78: ātmanepada tiṅ ādeśa ────────────────────────────
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("luT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = apply_rule("1.4.100", state)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
 
@@ -2764,12 +2671,8 @@ def _derive_bhave_lit(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("liT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"] = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = apply_rule("1.4.100", state)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
     state.paribhasha_gates.pop("3_4_115_liw_115", None)
@@ -2867,16 +2770,8 @@ def _derive_karmani_lit(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.3.13", state)
 
     # ── 3.4.77 lasya ─────────────────────────────────────────────────────
-    state = apply_rule("3.4.77", state)
-
-    # ── 3.4.78: select ātmanepada tiṅ ādeśa ──────────────────────────────
     tin_adesha = _select_tin_adesha("liT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-
-    # ── 1.4.99 + 1.4.100 saṃjñā ──────────────────────────────────────────
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = apply_rule("1.4.100", state)
 
     # ── IT on tiṅ ādeśa ───────────────────────────────────────────────────
@@ -3011,12 +2906,8 @@ def _derive_bhave_laT(state: State, purusha: int, vacana: int) -> State:
         )
     )
 
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"] = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = apply_rule("1.4.100", state)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
     state = apply_rule("3.4.113", state)
@@ -3082,16 +2973,8 @@ def _derive_karmani_laT(state: State, purusha: int, vacana: int) -> State:
     state.terms.append(laT_term)
 
     # ── 3.4.77 lasya ─────────────────────────────────────────────────────
-    state = apply_rule("3.4.77", state)
-
-    # ── 3.4.78: select ātmanepada tiṅ ādeśa ──────────────────────────────
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-
-    # ── 1.4.99 parasmaipade (audit: records vibhakti saṃjñā) ──────────────
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     # ── 1.4.100 lakāratāṅānāv ātmanepadam ────────────────────────────────
     state = apply_rule("1.4.100", state)
 
@@ -3200,12 +3083,8 @@ def _derive_karmani_lRT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.3.9", state)
 
     # ── 3.4.77 + 3.4.78: ātmanepada tiṅ ādeśa ────────────────────────────
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("lRT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = apply_rule("1.4.100", state)
 
     # ── 3.4.113 tiṅśit sārvadhatukam ─────────────────────────────────────
@@ -3303,12 +3182,8 @@ def _derive_karmani_lRG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
 
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("lRG", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"] = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = apply_rule("1.4.100", state)
     state = apply_rule("3.4.113", state)
 
@@ -3401,12 +3276,8 @@ def _derive_karmani_loT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.3.9", state)
 
     # ── 3.4.77 lasya + 3.4.78 tiṅ ādeśa (ātmanepada, laT base) ──────────
-    state = apply_rule("3.4.77", state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = apply_rule("1.4.100", state)
 
     # ── IT-prakaraṇa on tiṅ ādeśa ─────────────────────────────────────────
@@ -3770,19 +3641,8 @@ def derive(
     state.terms.append(laT_term)
 
     # 3.4.77 lasya — adhikāra: scope for tiṅ substitution (3.4.77–3.4.112)
-    state = apply_rule("3.4.77", state)
-
-    # 3.4.78 tiptasjhi… — replace lakāra placeholder with the selected tiṅ ādeśa.
-    # The ādeśa (tip/tas/jhi/…) is chosen at the recipe layer using the
-    # puruṣa/vacana coordinates from tin_upadesha.json; the engine cond
-    # is blind to those coordinates (CONSTITUTION Art. 2). (spec step 7)
     tin_adesha = _select_tin_adesha(lakara, pada_key, purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"]    = tin_adesha
-    state = apply_rule("3.4.78", state)
-
-    # 1.4.99 parasmaipade — saṃjñā: marks ādeśa as parasmaipada vibhakti.
-    state = apply_rule("1.4.99", state)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
 
     # ─── IT-prakaraṇa on the tiṅ ādeśa ──────────────────────────────────
     # 1.3.4 (audit), 1.3.3, 1.3.9 on the tiṅ ādeśa.

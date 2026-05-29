@@ -18,7 +18,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_krt_it_lopa
+from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_krt_it_lopa, P00_tin_adesha_base
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -94,10 +94,7 @@ def derive_paTayati_paTu_Nic_P025() -> State:
     s.terms.append(laT)
 
     s.meta["3_1_68_kartari_recipe"] = True
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "tip"
-    s = apply_rule("3.4.78", s)
+    s = P00_tin_adesha_base(s, "tip")
 
     s = apply_rule("3.1.68", s)
     s = apply_rule("1.3.8", s)

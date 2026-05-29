@@ -21,6 +21,7 @@ from core.canonical_pipelines import (
     P00_upadesha_it_1_3_1_2_5,
     P00_lashakvataddhite_it_lopa_chain,
     P06a_pratyaya_adhikara_3_1_1_to_3,
+    P00_tin_adesha_base,
 )
 
 
@@ -53,10 +54,7 @@ def _lat_ta_and_sap(s: State) -> State:
         del laT.varnas[-1]
     s.terms.append(laT)
     # Substitute to ta via 3.4.78
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "ta"
-    s = apply_rule("3.4.78", s)
+    s = P00_tin_adesha_base(s, "ta")
     # Insert Sap between dhātu and ta
     s.meta["3_1_68_kartari_recipe"] = True
     s = apply_rule("3.1.68", s)
