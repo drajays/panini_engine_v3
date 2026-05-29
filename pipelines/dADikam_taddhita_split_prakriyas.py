@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_napumsaka_am_sandhi
+from core.canonical_pipelines import P00_napumsaka_am_sandhi, P00_taddhita_it_lopa_to_6_4
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -46,12 +46,8 @@ def derive_dADikam_taddhita_split_prakriyas_P018() -> State:
     s = apply_rule("1.1.50", s)
 
     s = apply_rule("6.4.1", s)
-    s = apply_rule("7.2.117", s)
-
-    # Open *bhasya* just before 6.4.148 (see 6.4.129 note in this repo).
-    s = apply_rule("6.4.129", s)
     s.meta["prakriya_P018_6_4_148_i_lopa_before_ika_arm"] = True
-    s = apply_rule("6.4.148", s)
+    s = P00_taddhita_it_lopa_to_6_4(s)
 
     s = apply_rule("1.2.46", s)
 

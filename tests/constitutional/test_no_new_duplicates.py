@@ -47,7 +47,8 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 #          P00_lit_lakara_scope, P00_avyayibhava_pratipadika_luk; replaced callers in
 #          canonical_pipelines, BIzayate, vande, tinanta, yAyAvaraH, pratyagni, yUpadAru,
 #          agda/ninAya/papatuH/vibhidatuH liṭ demos.
-MAX_DUPLICATE_GROUPS = 94
+# Lowered: -7 from 2026-05-29 — make dADikam/dASaraThi/taddhita use P00_taddhita_it_lopa_to_6_4.
+MAX_DUPLICATE_GROUPS = 87
 
 
 @pytest.fixture(scope="module")

@@ -17,6 +17,7 @@ from core.canonical_pipelines import (
     P00_attach_sup_from_pratipadika,
     P00_taddhita_it_lopa_chain,
     P00_taddhita_pratipadika_internal_sup_luk_then_anga_vidhi,
+    P00_taddhita_it_lopa_to_6_4,
 )
 from pipelines.subanta import (
     _pada_merge,
@@ -137,9 +138,7 @@ def derive_SANqikyaH() -> State:
     for sid in ("1.3.7", "1.3.3", "1.3.8", "1.3.9", "1.3.10"):
         s = apply_rule(sid, s)
 
-    s = apply_rule("7.2.117", s)
-    s = apply_rule("6.4.129", s)
-    s = apply_rule("6.4.148", s)
+    s = P00_taddhita_it_lopa_to_6_4(s)
 
     _pada_merge(s)
     if s.terms:

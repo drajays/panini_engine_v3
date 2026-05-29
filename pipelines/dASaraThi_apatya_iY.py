@@ -28,6 +28,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 from core.canonical_pipelines import (
     P00_taddhita_it_lopa_chain,
     P00_vrddhi_prayoga_readiness,
+    P00_taddhita_it_lopa_to_6_4,
 )
 
 
@@ -59,13 +60,8 @@ def derive_dASaraThi() -> State:
     s = apply_rule("1.4.13", s)
     s = apply_rule("6.4.1", s)
 
-    # Vṛddhi readiness paribhāṣā gates, then 7.2.117 taddhite ñit vṛddhi (a → ā)
     s = P00_vrddhi_prayoga_readiness(s)
-    s = apply_rule("7.2.117", s)
-
-    # 6.4.148 yasyeti ca: lopa of aṅgāntya 'a' before 'i' onset of iñ residue
-    s = apply_rule("6.4.129", s)
-    s = apply_rule("6.4.148", s)
+    s = P00_taddhita_it_lopa_to_6_4(s)
 
     s = apply_rule("1.1.60", s)
     return s
