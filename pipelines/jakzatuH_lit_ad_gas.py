@@ -23,6 +23,7 @@ from core.canonical_pipelines import (
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
     P00_tin_tas_adesh_full,
+    P00_tripadi_8_4_55_visarga,
 )
 from engine import apply_rule
 from engine.state import State, Term
@@ -81,9 +82,7 @@ def derive_jakzatuH_lit_ad_gas_P034() -> State:
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
     s.meta["P034_8_4_55_jakz_cluster_arm"] = True
-    s = apply_rule("8.4.55", s)
-    s = apply_rule("8.2.66", s)
-    s = apply_rule("8.3.15", s)
+    s = P00_tripadi_8_4_55_visarga(s)
     return s
 
 

@@ -90,6 +90,9 @@ from core.canonical_pipelines import (
     P00_lac_lat_attach,
     P00_tanadi_u_guna,
     P00_hal_it_lopa,
+    P00_tripadi_8_4_55_visarga,
+    P00_luk_samjna_60_62,
+    P00_stri_4_1_wap,
 )
 
 from pipelines.dhatupatha import get_dhatu_row, _payload, _envelope
@@ -518,6 +521,108 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     return state
 
 
+def _derive_lit_ad_gas(state: State, pada_key: str, purusha: int, vacana: int) -> State:
+    """
+    *ad* → *ghas* *liṭ* kartari (2.4.40): जघास, जक्षतुः, … per clip prakriyā.
+
+    Uses *liṭ* parasmaipada ādeśas (3.4.82), *kit* (1.2.5), reduplication, *7.2.116*
+    (ṇal cells), *6.4.98*/*6.4.100*, *7.4.60*/*7.4.62*/*7.4.59*, tripāḍī *8.3.60*/*8.4.55*.
+    """
+    lit_adesha = _LIT_PARASMAI_ADESHA[(purusha, vacana)]
+    ral_path = lit_adesha == "Ral"
+    needs_it = _lit_needs_it(purusha, vacana)
+    kit_path = lit_adesha in {"atus", "aTus", "us", "va", "ma", "th", "a"}
+
+    state.meta["lakara"] = "liT"
+    state.meta["liT_lakara_recipe"] = True
+    state = apply_rule("3.2.115", state)
+    state = apply_rule("2.4.40", state)
+    for sid in ("1.3.2", "1.3.3", "1.3.9"):
+        state = apply_rule(sid, state)
+
+    tin_std = _select_tin_adesha("liT", pada_key, purusha, vacana)
+    state = P00_parasmai_tin_adesha(state, tin_std)
+    state = P00_tin_tusma_audit_halantyam_lopa(state)
+
+    state.paribhasha_gates.pop("3_4_115_liw_115", None)
+    state.meta["liT_115_recipe"] = True
+    state = apply_rule("3.4.115", state)
+    state.meta["liT_82_adesha_form"] = lit_adesha
+    state.meta["liT_82_recipe"] = True
+    state = apply_rule("3.4.82", state)
+    state = apply_rule("1.3.4", state)
+    state = P00_hal_it_lopa(state)
+
+    state.paribhasha_gates.pop("3_4_115_liw_115", None)
+    state.meta["liT_115_recipe"] = True
+    state = apply_rule("3.4.115", state)
+
+    if purusha == 1 and vacana == 1:
+        state.meta["Nal_uttama_recipe"] = True
+        state = apply_rule("7.1.91", state)
+
+    if kit_path and not ral_path:
+        state = apply_rule("1.2.5", state)
+
+    if needs_it:
+        state = apply_rule("7.2.13", state)
+        state.meta["7_2_35_arm"] = True
+        state = apply_rule("7.2.35", state)
+        state = apply_rule("1.3.3", state)
+        state = apply_rule("1.3.9", state)
+        state.meta["liT_dvitva_recipe"] = True
+        state = apply_rule("6.1.8", state)
+        state = apply_rule("6.1.4", state)
+        state.meta["sandhi_6_1_5_recipe"] = True
+        state = apply_rule("6.1.5", state)
+        state = apply_rule("1.4.13", state)
+        state = apply_rule("6.4.98", state)
+    else:
+        if kit_path and lit_adesha in {"atus", "aTus"}:
+            state = apply_rule("6.4.100", state)
+        state.meta["liT_dvitva_recipe"] = True
+        state = apply_rule("6.1.8", state)
+        state = apply_rule("6.1.4", state)
+        state.meta["sandhi_6_1_5_recipe"] = True
+        state = apply_rule("6.1.5", state)
+        if ral_path:
+            state = apply_rule("1.4.13", state)
+            state.meta["7_2_116_liT_upadha_vrddhi_arm"] = True
+            state = apply_rule("7.2.116", state)
+        else:
+            state = apply_rule("1.4.13", state)
+            state = apply_rule("6.4.98", state)
+
+    for t in state.terms:
+        if (
+            "abhyasa" in t.tags
+            and kit_path
+            and not needs_it
+            and lit_adesha in {"atus", "us", "aTus"}
+        ):
+            t.meta["7_4_60_first_hal_only"] = True
+    state = apply_rule("7.4.60", state)
+    state = apply_rule("7.4.62", state)
+
+    if kit_path and lit_adesha in {"atus", "us", "aTus", "va", "ma"} and not needs_it:
+        state.meta["P034_7_4_59_abhyasa_pad_a_arm"] = True
+        state = apply_rule("7.4.59", state)
+
+    state = apply_rule("1.4.14", state)
+    state = apply_rule("8.2.1", state)
+    state = apply_rule("8.4.54", state)
+    state = apply_rule("8.4.68", state)
+    _pada_merge(state)
+    flat_pre = state.flat_slp1()
+    state = apply_rule("8.3.60", state)
+    if flat_pre == "jaGsatus":
+        state.meta["P034_8_4_55_jakz_cluster_arm"] = True
+        state = apply_rule("8.4.55", state)
+    state = P00_tripadi_8_4_55_visarga(state)
+    state = apply_rule("8.4.68", state)
+    return state
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # LUṬ (ANADYATANA BHAVIṢYAT / PERIPHRASTIC FUTURE) PIPELINE
 # ─────────────────────────────────────────────────────────────────────────────
@@ -528,6 +633,17 @@ _LUT_PRATHAMA_ADESHA: dict[tuple, str] = {
     (3, 2): "rO",    # rau (r+O=au)
     (3, 3): "ras",   # ras (r+a+s)
 }
+
+_LUT_AD_PRATHAMA_ADESHA: dict[tuple, str] = {
+    (3, 1): "qA",
+    (3, 2): "ras",   # clip: तास्+रस् → ता+रः (not rau)
+    (3, 3): "ras",
+}
+
+
+def _lut_prathama_adesha(state: State, purusha: int, vacana: int) -> str | None:
+    table = _LUT_AD_PRATHAMA_ADESHA if state.meta.get("_luT_ad_spine") else _LUT_PRATHAMA_ADESHA
+    return table.get((purusha, vacana))
 
 
 def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State:
@@ -560,6 +676,9 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state.meta["tasi_luT_recipe"] = True
     state = apply_rule("3.1.33", state)
     state.meta.pop("tasi_luT_recipe", None)
+    if state.meta.get("_luT_apply_114"):
+        state.meta["lakara"] = "luT"
+        state = apply_rule("3.4.114", state)
 
     # ── Stage: 3.4.77 lasya + 3.4.78 tiṅ ādeśa ─────────────────────────────
     tin_adesha_std = _select_tin_adesha("luT", pada_key, purusha, vacana)
@@ -574,7 +693,7 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     if purusha == 3 and vacana == 1:
         # 3sg: 2.4.85(ti→qA), set dit_pratyaya, 7.2.35(iṭ before tāsi while qA has q=val),
         #      1.3.7(q→it), 1.3.9(lope q→A), 1.4.13, 7.3.84, 6.4.143(tAs→t), 1.4.14, 6.1.78
-        adesha = _LUT_PRATHAMA_ADESHA[(3, 1)]
+        adesha = _lut_prathama_adesha(state, 3, 1)
         state.meta["luT_adesha_form"] = adesha
         state.meta["luT_prathama_recipe"] = True
         state = apply_rule("2.4.85", state)
@@ -593,7 +712,8 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("1.3.9", state)
         # 1.4.13 aṅga saṃjñā, 7.3.84 guṇa (BU→Bo)
         state = apply_rule("1.4.13", state)
-        state = apply_rule("7.3.84", state)
+        if not state.meta.get("_luT_skip_guna"):
+            state = apply_rule("7.3.84", state)
         # 6.4.143: tāsi (i+t+A+s) → (i+t) before A (ḍit) — ṭi-lopa
         state.meta["6_4_143_lut_tasi_arm"] = True
         state = apply_rule("6.4.143", state)
@@ -608,13 +728,14 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("7.2.35", state)
         state.meta.pop("7_2_35_lut_tAsi_it_arm", None)
         state = apply_rule("1.2.4", state)
-        adesha = _LUT_PRATHAMA_ADESHA[(3, 2)]
+        adesha = _lut_prathama_adesha(state, 3, 2)
         state.meta["luT_adesha_form"] = adesha
         state.meta["luT_prathama_recipe"] = True
         state = apply_rule("2.4.85", state)
         state.meta.pop("luT_prathama_recipe", None)
         state = apply_rule("1.4.13", state)
-        state = apply_rule("7.3.84", state)
+        if not state.meta.get("_luT_skip_guna"):
+            state = apply_rule("7.3.84", state)
         # 7.4.51: drop s from tāsi before r (rO starts with r)
         state.meta["ri_ca_recipe"] = True
         state = apply_rule("7.4.51", state)
@@ -628,13 +749,14 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("7.2.35", state)
         state.meta.pop("7_2_35_lut_tAsi_it_arm", None)
         state = apply_rule("1.2.4", state)
-        adesha = _LUT_PRATHAMA_ADESHA[(3, 3)]
+        adesha = _lut_prathama_adesha(state, 3, 3)
         state.meta["luT_adesha_form"] = adesha
         state.meta["luT_prathama_recipe"] = True
         state = apply_rule("2.4.85", state)
         state.meta.pop("luT_prathama_recipe", None)
         state = apply_rule("1.4.13", state)
-        state = apply_rule("7.3.84", state)
+        if not state.meta.get("_luT_skip_guna"):
+            state = apply_rule("7.3.84", state)
         # 7.4.51: drop s from tāsi before r (ras starts with r)
         state.meta["ri_ca_recipe"] = True
         state = apply_rule("7.4.51", state)
@@ -648,7 +770,8 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("7.2.35", state)
         state.meta.pop("7_2_35_lut_tAsi_it_arm", None)
         state = apply_rule("1.4.13", state)
-        state = apply_rule("7.3.84", state)
+        if not state.meta.get("_luT_skip_guna"):
+            state = apply_rule("7.3.84", state)
         # 7.4.50: drop s from tāsi before si (si starts with s)
         state.meta["tasa_lopa_recipe"] = True
         state = apply_rule("7.4.50", state)
@@ -665,14 +788,39 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         # 1.2.4 for cells whose tiṅ is sārvadhatuka apit (most of them)
         state = apply_rule("1.2.4", state)
         state = apply_rule("1.4.13", state)
-        state = apply_rule("7.3.84", state)
+        if not state.meta.get("_luT_skip_guna"):
+            state = apply_rule("7.3.84", state)
         state = apply_rule("1.4.14", state)
         state = apply_rule("6.1.78", state)
 
     # ── Merge + Tripāḍī ──────────────────────────────────────────────────────
     _pada_merge(state)
-    state = P00_tripadi_rutva_visarga(state)
+    if state.meta.get("_luT_ad_spine"):
+        state.meta.pop("_luT_ad_spine", None)
+        state.meta.pop("_luT_skip_guna", None)
+        state.meta.pop("luT_ad_ekac_spine", None)
+        state = apply_rule("8.2.1", state)
+        state = P00_tripadi_8_4_55_visarga(state)
+        state = apply_rule("8.4.68", state)
+    else:
+        state = P00_tripadi_rutva_visarga(state)
 
+    return state
+
+
+def _derive_luT_ad(state: State, pada_key: str, purusha: int, vacana: int) -> State:
+    """
+    *ad* *luṭ* kartari (अत्ता …): *tāsi* + **3.4.114**, **7.2.10** (no iṭ), no *guṇa*,
+    **6.4.143** (3sg), tripāḍī **8.4.55** (खरि च).
+    """
+    state.meta["ekac_dhatu"] = True
+    state.meta["luT_ad_ekac_spine"] = True
+    state.meta["_luT_skip_guna"] = True
+    state.meta["_luT_ad_spine"] = True
+    state.meta["_luT_apply_114"] = True
+    state = apply_rule("7.2.10", state)
+    state = _derive_luT(state, pada_key, purusha, vacana)
+    state.meta.pop("_luT_apply_114", None)
     return state
 
 
@@ -1194,7 +1342,8 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # (m of mip/mas, v of vas).  Vacuous for non-yañ-initial ādeśas.
     state = apply_rule("7.3.101", state)
     # 7.3.84 guṇa: IK-vowel of dhātu (Ū of BU) → guṇa (o).
-    state = apply_rule("7.3.84", state)
+    if not state.meta.get("_lRT_skip_guna"):
+        state = apply_rule("7.3.84", state)
 
     # ── Stage: pada saṃjñā + sandhi ─────────────────────────────────────────
     state = apply_rule("1.4.14", state)
@@ -1205,11 +1354,34 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # ── Merge + Tripāḍī ──────────────────────────────────────────────────────
     _pada_merge(state)
-    state = P00_tripadi_rutva_visarga(state)
-    state = apply_rule("8.3.59", state)   # s → ṣ after IK in pratyaya (sya → ṣya)
-    state = apply_rule("8.4.68", state)   # trace marker
+    if state.meta.get("_lRT_ad_spine"):
+        state.meta.pop("_lRT_ad_spine", None)
+        state.meta.pop("_lRT_skip_guna", None)
+        state.meta.pop("lRT_ad_ekac_spine", None)
+        state = apply_rule("8.2.1", state)
+        state = P00_tripadi_8_4_55_visarga(state)
+        state = apply_rule("8.3.24", state)
+        state = apply_rule("8.4.58", state)
+        state = apply_rule("8.4.68", state)
+    else:
+        state = P00_tripadi_rutva_visarga(state)
+        state = apply_rule("8.3.59", state)   # s → ṣ after IK in pratyaya (sya → ṣya)
+        state = apply_rule("8.4.68", state)   # trace marker
 
     return state
+
+
+def _derive_lRT_ad(state: State, pada_key: str, purusha: int, vacana: int) -> State:
+    """
+    *ad* *lṛṭ* kartari (अत्स्यति …): *sya* + **7.2.10** (no iṭ), no *guṇa*,
+    tripāḍī **8.4.55** (खरि च), **8.3.24**/**8.4.58** (3pl).
+    """
+    state.meta["ekac_dhatu"] = True
+    state.meta["lRT_ad_ekac_spine"] = True
+    state.meta["_lRT_skip_guna"] = True
+    state.meta["_lRT_ad_spine"] = True
+    state = apply_rule("7.2.10", state)
+    return _derive_lRT(state, pada_key, purusha, vacana)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1329,6 +1501,97 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     return state
 
 
+def _derive_loT_ad(state: State, pada_key: str, purusha: int, vacana: int) -> State:
+    """
+    *ad* *loṭ* kartari (अत्तु … अदाम): *śap* + **2.4.72** *luk*, loṭ *tiṅ* spine,
+    **3.4.92** *āṭ* (uttama), **6.4.101** *hi*→*dh* (2sg), no *guṇa*;
+    tripāḍī **8.4.55** (खरि च) / **8.3.24**/**8.4.58** (3pl).
+    """
+    state.meta["lakara"] = "loT"
+    state.meta["_loT_ad_spine"] = True
+    state.meta["_loT_skip_guna"] = True
+
+    state.meta["loT_recipe"] = True
+    state = apply_rule("3.3.162", state)
+    state.meta.pop("3_3_162_loT_done", None)
+    loT_varnas = parse_slp1_upadesha_sequence("loT")
+    if loT_varnas and loT_varnas[-1].slp1 == "T":
+        loT_varnas = loT_varnas[:-1]
+    state.terms.append(
+        Term(
+            kind="pratyaya",
+            varnas=loT_varnas,
+            tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+            meta={"upadesha_slp1": "loT"},
+        )
+    )
+    state = apply_rule("1.3.2", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    tin_adesha = _select_tin_adesha("laT", pada_key, purusha, vacana)
+    state = P00_parasmai_tin_adesha(state, tin_adesha)
+    state = P00_tin_tusma_audit_halantyam_lopa(state)
+
+    state = apply_rule("3.4.113", state)
+    state = apply_rule("1.2.4", state)
+
+    state.meta["3_1_68_kartari_recipe"] = True
+    state = apply_rule("3.1.68", state)
+    state = apply_rule("2.4.72", state)
+
+    if purusha == 1 and vacana == 1:
+        state.meta["3_4_89_loT_arm"] = True
+        state = apply_rule("3.4.89", state)
+        state.meta.pop("3_4_89_loT_arm", None)
+
+    state = apply_rule("3.4.101", state)
+
+    if purusha == 2 and vacana == 1:
+        state = apply_rule("3.4.87", state)
+
+    state = apply_rule("7.1.3", state)
+
+    state.meta["3_4_86_loT_arm"] = True
+    state = apply_rule("3.4.86", state)
+    state.meta.pop("3_4_86_loT_arm", None)
+
+    state = apply_rule("3.4.99", state)
+
+    if purusha == 1:
+        state.meta["3_4_92_loT_uttama_arm"] = True
+        state = apply_rule("3.4.92", state)
+        state.meta.pop("3_4_92_loT_uttama_arm", None)
+        if any("aTa_agama" in t.tags for t in state.terms):
+            state = apply_rule("1.3.3", state)
+            state = apply_rule("1.3.9", state)
+
+    state = apply_rule("1.4.13", state)
+    state = apply_rule("1.1.5", state)
+
+    if purusha == 2 and vacana == 1:
+        state.meta["P031_6_4_101_hi_to_Qi_arm"] = True
+        state = apply_rule("6.4.101", state)
+        state.meta.pop("P031_6_4_101_hi_to_Qi_arm", None)
+
+    state = apply_rule("1.4.14", state)
+
+    _pada_merge(state)
+    if purusha == 3 and vacana == 3:
+        state = apply_rule("8.2.1", state)
+        state = apply_rule("8.3.24", state)
+        state = apply_rule("8.4.58", state)
+        state = apply_rule("8.4.68", state)
+    elif purusha == 2 and vacana == 1:
+        state = apply_rule("8.4.68", state)
+    else:
+        state = apply_rule("8.2.1", state)
+        state = apply_rule("8.4.55", state)
+        state = apply_rule("8.4.68", state)
+
+    return state
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # LṚṄ (KRIYĀTIPATTI / CONDITIONAL) PIPELINE
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1387,6 +1650,51 @@ def _is_adadi_dhatu(state: State) -> bool:
         if "dhatu" in t.tags and t.meta.get("gana") == 2:
             return True
     return False
+
+
+def _adadi_dhatu_stem_slp1(state: State) -> str:
+    """Post–it-lopa *dhātu* stem on tape (e.g. ``ad``, ``As``)."""
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            return "".join(v.slp1 for v in t.varnas)
+    return ""
+
+
+def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
+    """
+    Adādi laṭ kartari parasmaipada (अद्भक्षणे → अत्ति … अद्मः): *śap* + **2.4.72** *luk*,
+    no *guṇa*; tripāḍī **8.4.55** (खरि च), **8.2.66**/**8.3.15**, **8.3.24**/**8.4.58** (3pl).
+    """
+    state.meta["lakara"] = "laT"
+    state = apply_rule("3.2.123", state)
+    laT_varnas = parse_slp1_upadesha_sequence("laT")
+    if laT_varnas and laT_varnas[-1].slp1 == "T":
+        laT_varnas = laT_varnas[:-1]
+    laT_term = Term(
+        kind="pratyaya",
+        varnas=laT_varnas,
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        meta={"upadesha_slp1": "laT"},
+    )
+    state.terms.append(laT_term)
+    _tin = _select_tin_adesha("laT", "parasmai", purusha, vacana)
+    state = P00_parasmai_tin_adesha(state, _tin)
+    state = P00_tin_tusma_audit_halantyam_lopa(state)
+    state = apply_rule("3.4.113", state)
+    state = apply_rule("1.2.4", state)
+    state.meta["3_1_68_kartari_recipe"] = True
+    state = apply_rule("3.1.68", state)
+    state = apply_rule("2.4.72", state)
+    state = apply_rule("7.1.3", state)
+    state = apply_rule("1.4.13", state)
+    state = apply_rule("1.4.14", state)
+    _pada_merge(state)
+    state = apply_rule("8.2.1", state)
+    state = P00_tripadi_8_4_55_visarga(state)
+    state = apply_rule("8.3.24", state)
+    state = apply_rule("8.4.58", state)
+    state = apply_rule("8.4.68", state)
+    return state
 
 
 def _derive_laT_adadi(state: State, purusha: int, vacana: int) -> State:
@@ -3445,6 +3753,12 @@ def derive(
             return _derive_karmani_lRG(state, purusha, vacana)
         raise NotImplementedError(f"karmani prayoga for lakāra {lakara!r} not yet implemented")
 
+    # ── liṭ dispatch (अद् → घस् / 2.4.40) ────────────────────────────────────
+    if lakara in ("liT",) and _adadi_dhatu_stem_slp1(state) == "ad":
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        return _derive_lit_ad_gas(state, pada_key, purusha, vacana)
+
     # ── liṭ dispatch ─────────────────────────────────────────────────────────
     if lakara in ("liT",):
         # Full liṭ pipeline handles everything from here
@@ -3458,6 +3772,12 @@ def derive(
         state = apply_rule("3.1.91", state)
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_luG(state, pada_key, purusha, vacana)
+
+    # ── luṭ dispatch (अद् … अत्ता) ────────────────────────────────────────────
+    if lakara in ("luT",) and _adadi_dhatu_stem_slp1(state) == "ad":
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        return _derive_luT_ad(state, pada_key, purusha, vacana)
 
     # ── luṭ dispatch ─────────────────────────────────────────────────────────
     if lakara in ("luT",):
@@ -3487,6 +3807,12 @@ def derive(
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_laG(state, pada_key, purusha, vacana)
 
+    # ── lṛṭ dispatch (अद् … अत्स्यति) ───────────────────────────────────────
+    if lakara in ("lRT",) and _adadi_dhatu_stem_slp1(state) == "ad":
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        return _derive_lRT_ad(state, pada_key, purusha, vacana)
+
     # ── lṛṭ dispatch ─────────────────────────────────────────────────────────
     if lakara in ("lRT",):
         # Simple future (sāmānya bhaviṣyat) via sy vikaraṇa
@@ -3501,6 +3827,12 @@ def derive(
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_lRG(state, pada_key, purusha, vacana)
 
+    # ── loṭ dispatch (अद् … अत्तु) ───────────────────────────────────────────
+    if lakara in ("loT",) and _adadi_dhatu_stem_slp1(state) == "ad":
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        return _derive_loT_ad(state, pada_key, purusha, vacana)
+
     # ── loṭ dispatch ──────────────────────────────────────────────────────────
     if lakara in ("loT",):
         # Imperative (ājñārtha) via śap + loṭ-specific tiṅ substitutions
@@ -3508,7 +3840,13 @@ def derive(
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_loT(state, pada_key, purusha, vacana)
 
-    # ── laṭ dispatch (Adādi / P008) ─────────────────────────────────────────
+    # ── laṭ dispatch (Adādi अद् kartari / अत्ति paradigm) ───────────────────
+    if lakara in ("laT",) and _is_adadi_dhatu(state) and _adadi_dhatu_stem_slp1(state) == "ad":
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        return _derive_laT_adadi_kartari(state, purusha, vacana)
+
+    # ── laṭ dispatch (Adādi / P008 आसँ) ────────────────────────────────────
     if lakara in ("laT",) and _is_adadi_dhatu(state):
         state = apply_rule("3.1.91", state)
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)

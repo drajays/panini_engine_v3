@@ -919,6 +919,29 @@ def P00_tripadi_rutva_visarga(s: State) -> State:
     return s
 
 
+def P00_tripadi_8_4_55_visarga(s: State) -> State:
+    """Tripāḍī 8.4.55 (jhaL→jaz) → 8.2.66 (ru) → 8.3.15 (visarga)."""
+    s = apply_rule("8.4.55", s)
+    s = apply_rule("8.2.66", s)
+    s = apply_rule("8.3.15", s)
+    return s
+
+
+def P00_luk_samjna_60_62(s: State) -> State:
+    """Luk-saṃjñā chain: 1.1.60 (adhi→ti) → 1.1.61 → 1.1.62."""
+    s = apply_rule("1.1.60", s)
+    s = apply_rule("1.1.61", s)
+    s = apply_rule("1.1.62", s)
+    return s
+
+
+def P00_stri_4_1_wap(s: State) -> State:
+    """Strī ṭāp suffix: 4.1.3 (ṭāp) → 4.1.4 (ā-adhikāra). Caller must have called 4.1.1 first."""
+    s = apply_rule("4.1.3", s)
+    s = apply_rule("4.1.4", s)
+    return s
+
+
 def P00_ciY_lat_tas_snu_tripadi_tail(s: State) -> State:
     """
     After ``P00_lat_vartamane_tas_and_sap`` (*ciñ* … *tas* + *Sap*):
@@ -1081,9 +1104,7 @@ def P02_pratipadika_1_2_46_taddhita_anga(s: State) -> State:
 def P08_sup_luk_2_4_71(s: State) -> State:
     """*sū* *luk* + 1.1.60/61/62 in *luk* order."""
     s = apply_rule("2.4.71", s)
-    s = apply_rule("1.1.60", s)
-    s = apply_rule("1.1.61", s)
-    s = apply_rule("1.1.62", s)
+    s = P00_luk_samjna_60_62(s)
     return s
 
 
@@ -1189,8 +1210,7 @@ def P01_subanta_bootstrap(s: State) -> State:
         s = P00_anabhihite_shashthi_shese_2_3_50(s)
     s = apply_rule("4.1.1",  s)
     if any("strīliṅga" in t.tags for t in s.terms):
-        s = apply_rule("4.1.3", s)
-        s = apply_rule("4.1.4", s)
+        s = P00_stri_4_1_wap(s)
     s = apply_rule("1.1.1",  s)
     s = apply_rule("1.1.73", s)
     s = apply_rule("1.1.2",  s)

@@ -17,7 +17,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_lashakvataddhite_it_lopa_chain, P06a_pratyaya_adhikara_3_1_1_to_3, P00_sup_it_lopa_aprkta
+from core.canonical_pipelines import P00_lashakvataddhite_it_lopa_chain, P06a_pratyaya_adhikara_3_1_1_to_3, P00_sup_it_lopa_aprkta, P00_luk_samjna_60_62
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -107,10 +107,7 @@ def derive_agnicit_agni_ci_kvip_P041() -> State:
     s = apply_rule("6.1.67", s)
     _p041_remove_empty_kvip(s)
 
-    s = apply_rule("1.1.60", s)
-    s = apply_rule("1.1.61", s)
-
-    s = apply_rule("1.1.62", s)
+    s = P00_luk_samjna_60_62(s)
 
     s.meta["kngiti_recipe"] = True
     s = apply_rule("1.1.5", s)

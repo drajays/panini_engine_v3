@@ -24,7 +24,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_sup_it_lopa_aprkta
+from core.canonical_pipelines import P00_sup_it_lopa_aprkta, P00_stri_4_1_wap
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -103,8 +103,7 @@ def derive_dyukAmA_bahuvrihi_P023() -> State:
 
     # Strī adhikāra + ṭāp.
     s = apply_rule("4.1.1", s)
-    s = apply_rule("4.1.3", s)
-    s = apply_rule("4.1.4", s)
+    s = P00_stri_4_1_wap(s)
     s = apply_rule("6.1.101", s)
 
     # Structural: fold the ṭāp residue Term into the stem so sup sits immediately

@@ -17,7 +17,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tripadi_rutva_visarga
+from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tripadi_rutva_visarga, P00_luk_samjna_60_62
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -79,10 +79,7 @@ def derive_gArgyAH_garga_yaY_luk_P042() -> State:
     s.meta["samhitA_64_recipe"] = True
     s = apply_rule("2.4.64", s)
 
-    s = apply_rule("1.1.60", s)
-    s = apply_rule("1.1.61", s)
-
-    s = apply_rule("1.1.62", s)
+    s = P00_luk_samjna_60_62(s)
     s = apply_rule("1.1.63", s)
 
     s.meta["P042_7_1_9_jas_to_as_arm"] = True

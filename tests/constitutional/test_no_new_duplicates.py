@@ -51,7 +51,10 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 # Lowered: -8 from 2026-05-29 — eliminate remaining direct 3.4.77/78 in demo pipelines
 #          (adhyagIzwa, adita_luN, agda, BitzIzwa, paceran, saGgasIzwa, viSiNQi, BIzayate+);
 #          add P00_snam_infix_8_2_1 + P00_lac_lat_attach to Binatti/ruNaddhi/muYcati/kirati/viSinanti.
-MAX_DUPLICATE_GROUPS = 79
+# Lowered: -4 from 2026-05-29 — P00_tripadi_8_4_55_visarga, P00_luk_samjna_60_62,
+#          P00_stri_4_1_wap added; callers in tinanta, jakzatuH, agnicit, gArgyAH,
+#          dyukAmA, viSAKaH updated.
+MAX_DUPLICATE_GROUPS = 75
 
 
 @pytest.fixture(scope="module")
