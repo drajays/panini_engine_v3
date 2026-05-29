@@ -10,7 +10,7 @@ with **1.1.59** *sthānivat* the guṇa vowel **e** of **nī** is treated as pre
 *abhyāsa*, so insert **ne** (not a copy of **nay**) before **nay** + **a**.
 
 Engine:
-  • default: ``state.meta['6_1_8_lit_dvitva_arm']`` — copy *dhātu*.
+  • default: ``state.meta['liT_dvitva_recipe']`` — copy *dhātu*.
   • **P036**: ``state.meta['P036_6_1_8_lit_sthanivat_ne_arm']``.
 """
 from __future__ import annotations
@@ -54,7 +54,7 @@ def cond(state: State) -> bool:
         return False
     if _site_p036(state):
         return True
-    if not state.meta.get("6_1_8_lit_dvitva_arm"):
+    if not state.meta.get("liT_dvitva_recipe"):
         return False
     di = _first_dhatu_index(state)
     if di is None:
@@ -78,7 +78,7 @@ def act(state: State) -> State:
         state.terms[di + 1].meta["P036_6_1_8_done"] = True
         state.meta.pop("P036_6_1_8_lit_sthanivat_ne_arm", None)
         return state
-    if not state.meta.get("6_1_8_lit_dvitva_arm"):
+    if not state.meta.get("liT_dvitva_recipe"):
         return state
     di = _first_dhatu_index(state)
     if di is None:
@@ -93,7 +93,7 @@ def act(state: State) -> State:
     ab.tags.discard("dhatu")
     ab.meta["6_1_8_abhyasa"] = True
     state.terms.insert(di, ab)
-    state.meta["6_1_8_lit_dvitva_arm"] = False
+    state.meta["liT_dvitva_recipe"] = False
     return state
 
 

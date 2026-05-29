@@ -47,7 +47,7 @@ def derive_vibhidatuH() -> State:
         s.terms[0].tags.discard("upadesha")
 
     # parokṣa liṭ
-    s.meta["3_2_115_paroksha_lit_arm"] = True
+    s.meta["liT_lakara_recipe"] = True
     s = apply_rule("3.2.115", s)
 
     # pratyaya adhikāra and tiṅ ādeśa (tas)
@@ -65,7 +65,7 @@ def derive_vibhidatuH() -> State:
     s = apply_rule("7.3.86", s)
 
     # dvitva & abhyāsa operations
-    s.meta["6_1_8_lit_dvitva_arm"] = True
+    s.meta["liT_dvitva_recipe"] = True
     s = apply_rule("6.1.8", s)
     s = apply_rule("6.1.4", s)
     s = apply_rule("7.4.60", s)

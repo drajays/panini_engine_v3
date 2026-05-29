@@ -53,7 +53,7 @@ def derive_anekAlSit_sarvasya_paribhasha_P015_demo() -> State:
     )
     s = State(terms=[t], meta={}, trace=[])
 
-    s.meta["1_1_55_anekal_shit_sarvasya_arm"] = True
+    s.meta["anekal_shit_recipe"] = True
     s = apply_rule("1.1.55", s)
 
     # Demonstration: jas/Sas (whole pratyaya) → Si under 7.1.20.

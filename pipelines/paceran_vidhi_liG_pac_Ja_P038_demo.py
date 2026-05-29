@@ -47,7 +47,7 @@ def derive_paceran_vidhi_liG_pac_Ja_P038() -> State:
     s = apply_rule("3.1.91", s)
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
 
-    s.meta["3_3_161_vidhi_liG_arm"] = True
+    s.meta["liG_vidhi_recipe"] = True
     s = apply_rule("3.3.161", s)
 
     s.meta["3_4_102_sIyuw_arm"] = True

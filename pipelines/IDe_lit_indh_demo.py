@@ -39,7 +39,7 @@ def derive_IDe() -> State:
     s = apply_rule("1.3.1", s)
 
     # parokṣa liṭ
-    s.meta["3_2_115_paroksha_lit_arm"] = True
+    s.meta["liT_lakara_recipe"] = True
     s = apply_rule("3.2.115", s)
     # Remove the lakāra placeholder term; this demo models liṭ effects via the
     # explicit `ta` ending + 3.4.81 and dvitva (6.1.8).
@@ -60,7 +60,7 @@ def derive_IDe() -> State:
     s.terms.append(ta)
 
     # ta -> eS, then anekal-shit gate, then it-lopa on S -> e
-    s.meta["3_4_81_lit_esh_arm"] = True
+    s.meta["liT_esh_recipe"] = True
     s = apply_rule("3.4.81", s)
     s = apply_rule("1.1.55", s)
     s = apply_rule("1.3.3", s)
@@ -77,7 +77,7 @@ def derive_IDe() -> State:
     s = apply_rule("6.4.24", s)
 
     # liṭ dvitva + abhyāsa operations (trim abhyāsa to just initial vowel i)
-    s.meta["6_1_8_lit_dvitva_arm"] = True
+    s.meta["liT_dvitva_recipe"] = True
     s = apply_rule("6.1.8", s)
     if len(s.terms) >= 2 and "abhyasa" in s.terms[0].tags:
         s.terms[0].meta["7_4_60_first_hal_only"] = True

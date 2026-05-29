@@ -382,7 +382,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     """
     state.meta["lakara"] = "liT"
     # ── Stage 3: liṭ attachment ──────────────────────────────────────────────
-    state.meta["3_2_115_paroksha_lit_arm"] = True
+    state.meta["liT_lakara_recipe"] = True
     state = apply_rule("3.2.115", state)
     state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
@@ -406,7 +406,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── 3.4.115 (1st) + 3.4.82 liṭ-specific ādeśa ───────────────────────────
     # Reset gate for first call
     state.paribhasha_gates.pop("3_4_115_liw_115", None)
-    state.meta["3_4_115_arm"] = True
+    state.meta["liT_115_recipe"] = True
     state = apply_rule("3.4.115", state)
 
     lit_adesha = _LIT_PARASMAI_ADESHA[(purusha, vacana)]
@@ -423,7 +423,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── 3.4.115 (2nd audit) + optional 7.1.91 ────────────────────────────────
     # Reset gate for second call
     state.paribhasha_gates.pop("3_4_115_liw_115", None)
-    state.meta["3_4_115_arm"] = True
+    state.meta["liT_115_recipe"] = True
     state = apply_rule("3.4.115", state)
 
     if purusha == 1 and vacana == 1:
@@ -451,7 +451,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("1.3.3", state)
         state = apply_rule("1.3.9", state)
         # dvitva
-        state.meta["6_1_8_lit_dvitva_arm"] = True
+        state.meta["liT_dvitva_recipe"] = True
         state = apply_rule("6.1.8", state)
         state = apply_rule("6.1.4", state)
         state.meta["6_1_5_arm"] = True
@@ -462,7 +462,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         # ── NO-iṭ path: dvitva FIRST, then 1.4.13, vuk ───────────────────────
         if lit_adesha not in ("Ral",):
             state = apply_rule("1.2.5", state)
-        state.meta["6_1_8_lit_dvitva_arm"] = True
+        state.meta["liT_dvitva_recipe"] = True
         state = apply_rule("6.1.8", state)
         state = apply_rule("6.1.4", state)
         state.meta["6_1_5_arm"] = True
@@ -1047,7 +1047,7 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state.meta["lakara"] = "liG"
 
     # ── Stage: 3.3.161 vidhiliṅ attachment ──────────────────────────────────
-    state.meta["3_3_161_vidhi_liG_arm"] = True
+    state.meta["liG_vidhi_recipe"] = True
     state = apply_rule("3.3.161", state)
 
     # IT on liG upadeśa (G is halantyam-it; anunaasika vacuous)
@@ -2275,7 +2275,7 @@ def _derive_karmani_liG(state: State, purusha: int, vacana: int) -> State:
 
     state = apply_rule("1.3.13", state)
 
-    state.meta["3_3_161_vidhi_liG_arm"] = True
+    state.meta["liG_vidhi_recipe"] = True
     state = apply_rule("3.3.161", state)
     state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
@@ -2712,7 +2712,7 @@ def _derive_lit_am_kf_atmane(state: State, purusha: int, vacana: int) -> State:
       6.1.77 (ṛ+e→re) → 6.4.71 (aT) → merge → 8.3.7 → 8.4.58
     """
     # ── 3.2.115 liṭ attachment; sets lakara_liT ──────────────────────────────
-    state.meta["3_2_115_paroksha_lit_arm"] = True
+    state.meta["liT_lakara_recipe"] = True
     state = apply_rule("3.2.115", state)
     # ── 3.1.36 ām insertion (structural: reads lakara_liT + Ikz identity) ────
     state = apply_rule("3.1.36", state)
@@ -2732,7 +2732,7 @@ def _derive_lit_am_kf_atmane(state: State, purusha: int, vacana: int) -> State:
     state.meta["tin_adesha_slp1"] = tin_adesha
     state = apply_rule("3.4.78", state)
     # ── 3.4.81 ta → eś  (3sg ātmanepada liṭ) ────────────────────────────────
-    state.meta["3_4_81_lit_esh_arm"] = True
+    state.meta["liT_esh_recipe"] = True
     state = apply_rule("3.4.81", state)
     # ── IT processing: eś → e ────────────────────────────────────────────────
     state = apply_rule("1.1.55", state)
@@ -2743,7 +2743,7 @@ def _derive_lit_am_kf_atmane(state: State, purusha: int, vacana: int) -> State:
     # ── 1.2.5 asaṃyogāl liṭ kit ──────────────────────────────────────────────
     state = apply_rule("1.2.5", state)
     # ── 6.1.8 dvitva of kṛ + 6.1.4 abhyāsa gate ─────────────────────────────
-    state.meta["6_1_8_lit_dvitva_arm"] = True
+    state.meta["liT_dvitva_recipe"] = True
     state = apply_rule("6.1.8", state)
     state = apply_rule("6.1.4", state)
     # ── 7.4.66 ṛ→a (uRaṇ) in kṛ abhyāsa; trim to first hal; k→c ─────────────
@@ -2774,7 +2774,7 @@ def _derive_lit_am_kf_atmane(state: State, purusha: int, vacana: int) -> State:
 
 def _derive_bhave_lit(state: State, purusha: int, vacana: int) -> State:
     """Bhāve liṭ — same spine as karmaṇi liṭ but without 1.3.13 / yaḳ."""
-    state.meta["3_2_115_paroksha_lit_arm"] = True
+    state.meta["liT_lakara_recipe"] = True
     state = apply_rule("3.2.115", state)
     state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
@@ -2788,9 +2788,9 @@ def _derive_bhave_lit(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.4.100", state)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
     state.paribhasha_gates.pop("3_4_115_liw_115", None)
-    state.meta["3_4_115_arm"] = True
+    state.meta["liT_115_recipe"] = True
     state = apply_rule("3.4.115", state)
-    state.meta["3_4_81_lit_esh_arm"] = True
+    state.meta["liT_esh_recipe"] = True
     state = apply_rule("3.4.81", state)
     state = apply_rule("3.4.79", state)
     state = apply_rule("3.4.80", state)
@@ -2799,7 +2799,7 @@ def _derive_bhave_lit(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.3.7", state)
     state = apply_rule("1.3.9", state)
     state.paribhasha_gates.pop("3_4_115_liw_115", None)
-    state.meta["3_4_115_arm"] = True
+    state.meta["liT_115_recipe"] = True
     state = apply_rule("3.4.115", state)
     state = apply_rule("1.2.5", state)
     needs_it = (purusha, vacana) in _KARMANI_LIT_NEEDS_IT
@@ -2815,14 +2815,14 @@ def _derive_bhave_lit(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule("1.3.2", state)
         state = apply_rule("1.3.3", state)
         state = apply_rule("1.3.9", state)
-        state.meta["6_1_8_lit_dvitva_arm"] = True
+        state.meta["liT_dvitva_recipe"] = True
         state = apply_rule("6.1.8", state)
         state = apply_rule("6.1.4", state)
         state.meta["6_1_5_arm"] = True
         state = apply_rule("6.1.5", state)
         state = apply_rule("7.4.60", state)
     else:
-        state.meta["6_1_8_lit_dvitva_arm"] = True
+        state.meta["liT_dvitva_recipe"] = True
         state = apply_rule("6.1.8", state)
         state = apply_rule("6.1.4", state)
         state.meta["6_1_5_arm"] = True
@@ -2872,7 +2872,7 @@ def _derive_karmani_lit(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.3.13", state)
 
     # ── 3.2.115 parokṣe liṭ ───────────────────────────────────────────────
-    state.meta["3_2_115_paroksha_lit_arm"] = True
+    state.meta["liT_lakara_recipe"] = True
     state = apply_rule("3.2.115", state)
     state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
@@ -2899,11 +2899,11 @@ def _derive_karmani_lit(state: State, purusha: int, vacana: int) -> State:
 
     # ── 3.4.115 liṭ ca (1st) ─────────────────────────────────────────────
     state.paribhasha_gates.pop("3_4_115_liw_115", None)
-    state.meta["3_4_115_arm"] = True
+    state.meta["liT_115_recipe"] = True
     state = apply_rule("3.4.115", state)
 
     # ── 3.4.81: ta → eś  /  Ja → irec  (3sg and 3pl) ────────────────────
-    state.meta["3_4_81_lit_esh_arm"] = True
+    state.meta["liT_esh_recipe"] = True
     state = apply_rule("3.4.81", state)
 
     # ── 3.4.79: ṭi→e for other cells (Atam→Ate, ATAm→ATe, Dvam→Dve, etc.) ─
@@ -2920,7 +2920,7 @@ def _derive_karmani_lit(state: State, purusha: int, vacana: int) -> State:
 
     # ── 3.4.115 liṭ ca (2nd) ─────────────────────────────────────────────
     state.paribhasha_gates.pop("3_4_115_liw_115", None)
-    state.meta["3_4_115_arm"] = True
+    state.meta["liT_115_recipe"] = True
     state = apply_rule("3.4.115", state)
 
     # ── 1.2.5 asaṃyogālliṭ kit ───────────────────────────────────────────
@@ -2941,7 +2941,7 @@ def _derive_karmani_lit(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule("1.3.2", state)
         state = apply_rule("1.3.3", state)
         state = apply_rule("1.3.9", state)
-        state.meta["6_1_8_lit_dvitva_arm"] = True
+        state.meta["liT_dvitva_recipe"] = True
         state = apply_rule("6.1.8", state)
         state = apply_rule("6.1.4", state)
         state.meta["6_1_5_arm"] = True
@@ -2949,7 +2949,7 @@ def _derive_karmani_lit(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule("7.4.60", state)
     else:
         # dvitva FIRST → 1.4.13 → vuk
-        state.meta["6_1_8_lit_dvitva_arm"] = True
+        state.meta["liT_dvitva_recipe"] = True
         state = apply_rule("6.1.8", state)
         state = apply_rule("6.1.4", state)
         state.meta["6_1_5_arm"] = True

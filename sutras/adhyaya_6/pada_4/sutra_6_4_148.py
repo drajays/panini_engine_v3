@@ -28,7 +28,7 @@ _NEXT_OK = frozenset({"i", "I"})
 
 META_P004_B_148 = "corrected_v2_P004_B_6_4_148_arm"
 
-META_P004_A_CA_PHAYA = "prakriya_P004_A_caPhaya"
+META_P004_A_CA_PHAYA = "caPhaya_taddhita_frame"
 META_P004_A_STAGE2_148 = "corrected_v2_P004_A_stage2_6_4_148_arm"
 _UPA_KAU_YJ_AYANA = "kauYjAyana"
 
@@ -71,7 +71,7 @@ def _p005_a_kurucara_final_a_before_I(state: State) -> tuple[int, int] | None:
 def _p004_a_caPhaya_ayana_anga_a_lopa(state: State) -> tuple[int, int] | None:
     """
     Same tape geometry as *itika*+*phak* (**Ayana** after **7.1.2**), keyed by
-    ``prakriya_P004_A_caPhaya`` (corrected-v2 **P004-A**, च्फञ् cycle).
+    ``caPhaya_taddhita_frame`` (corrected-v2 **P004-A**, च्फञ् cycle).
     """
     if not state.meta.get(META_P004_A_CA_PHAYA):
         return None

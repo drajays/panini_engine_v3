@@ -91,7 +91,7 @@ def cond(state: State) -> bool:
             return True
 
     # ── Case Q: **P005-A** *kurucarī* — [upapada + live sup + *car* + *wa* *kṛt*]
-    if state.meta.get("corrected_v2_P005_A_upapada_frame") and len(state.terms) >= 4:
+    if state.meta.get("upapada_krt_kurucara_frame") and len(state.terms) >= 4:
         t0, t1, t2, t3 = state.terms[0], state.terms[1], state.terms[2], state.terms[3]
         if (
             "upapada" in t0.tags
@@ -107,7 +107,7 @@ def cond(state: State) -> bool:
             return True
 
     # ── Case S: **P005-B** *upasarajaḥ* — [upapada + live sup + *jan~* + *qa* *kṛt*]
-    if state.meta.get("corrected_v2_P005_B_upapada_frame") and len(state.terms) >= 4:
+    if state.meta.get("upapada_krt_upasaraja_frame") and len(state.terms) >= 4:
         t0, t1, t2, t3 = state.terms[0], state.terms[1], state.terms[2], state.terms[3]
         if (
             "upapada" in t0.tags
@@ -124,7 +124,7 @@ def cond(state: State) -> bool:
             return True
 
     # ── Case P: **P004-A** *kuñja* + *Nas* + *caPaY* (gotra *caṭphañ*) —──────
-    if state.meta.get("prakriya_P004_A_caPhaya") and len(state.terms) >= 3:
+    if state.meta.get("caPhaya_taddhita_frame") and len(state.terms) >= 3:
         t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
         if (
             "dhatu" not in t0.tags
@@ -338,7 +338,7 @@ def act(state: State) -> State:
                 t0.tags.add("anga")
             return state
 
-    if state.meta.get("corrected_v2_P005_A_upapada_frame") and len(state.terms) >= 4:
+    if state.meta.get("upapada_krt_kurucara_frame") and len(state.terms) >= 4:
         t0, t1, t2, t3 = state.terms[0], state.terms[1], state.terms[2], state.terms[3]
         if (
             "upapada" in t0.tags
@@ -351,10 +351,10 @@ def act(state: State) -> State:
         ):
             state.samjna_registry["1.2.46_P005_A_avayava"] = True
             t3.tags.add("prātipadika")
-            state.meta.pop("corrected_v2_P005_A_upapada_frame", None)
+            state.meta.pop("upapada_krt_kurucara_frame", None)
             return state
 
-    if state.meta.get("corrected_v2_P005_B_upapada_frame") and len(state.terms) >= 4:
+    if state.meta.get("upapada_krt_upasaraja_frame") and len(state.terms) >= 4:
         t0, t1, t2, t3 = state.terms[0], state.terms[1], state.terms[2], state.terms[3]
         if (
             "upapada" in t0.tags
@@ -368,7 +368,7 @@ def act(state: State) -> State:
         ):
             state.samjna_registry["1.2.46_P005_B_avayava"] = True
             t3.tags.add("prātipadika")
-            state.meta.pop("corrected_v2_P005_B_upapada_frame", None)
+            state.meta.pop("upapada_krt_upasaraja_frame", None)
             return state
 
     if len(state.terms) == 1:
@@ -448,7 +448,7 @@ def act(state: State) -> State:
             t2.tags.add("prātipadika")
             return state
 
-    if state.meta.get("prakriya_P004_A_caPhaya") and len(state.terms) >= 3:
+    if state.meta.get("caPhaya_taddhita_frame") and len(state.terms) >= 3:
         t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
         if (
             "dhatu" not in t0.tags

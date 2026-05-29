@@ -40,7 +40,7 @@ def derive_kurucarI() -> State:
         meta={"upadesha_slp1": "car"},
     )
     s = State(terms=[kuru, ni, car], meta={}, trace=[], samjna_registry={})
-    s.meta["corrected_v2_P005_A_upapada_frame"] = True
+    s.meta["upapada_krt_kurucara_frame"] = True
 
     s = apply_rule("1.3.1", s)
     s = apply_rule("3.1.92", s)
@@ -146,7 +146,7 @@ def derive_upasarajaH() -> State:
         meta={"upadesha_slp1": "jan~"},
     )
     s = State(terms=[upasara, ni, jan], meta={}, trace=[], samjna_registry={})
-    s.meta["corrected_v2_P005_B_upapada_frame"] = True
+    s.meta["upapada_krt_upasaraja_frame"] = True
 
     s = apply_rule("1.3.1", s)
     s = apply_rule("3.1.92", s)

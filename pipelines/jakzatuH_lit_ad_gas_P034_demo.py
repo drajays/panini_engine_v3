@@ -45,7 +45,7 @@ def derive_jakzatuH_lit_ad_gas_P034() -> State:
     if s.terms:
         s.terms[0].tags.discard("upadesha")
 
-    s.meta["3_2_115_paroksha_lit_arm"] = True
+    s.meta["liT_lakara_recipe"] = True
     s = apply_rule("3.2.115", s)
 
     s.meta["P034_2_4_40_ad_to_gas_arm"] = True
@@ -62,7 +62,7 @@ def derive_jakzatuH_lit_ad_gas_P034() -> State:
     s.meta["P034_6_4_100_gas_upadha_atus_arm"] = True
     s = apply_rule("6.4.100", s)
 
-    s.meta["6_1_8_lit_dvitva_arm"] = True
+    s.meta["liT_dvitva_recipe"] = True
     s = apply_rule("6.1.8", s)
     s = apply_rule("6.1.4", s)
 

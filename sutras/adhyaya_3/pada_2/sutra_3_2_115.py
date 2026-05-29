@@ -5,7 +5,7 @@ Demo slice (विभिदतुः):
   Introduce lakāra liṭ when the recipe marks parokṣa-bhūta context.
 
 Engine:
-  - recipe arms via ``state.meta['3_2_115_paroksha_lit_arm']``.
+  - recipe arms via ``state.meta['liT_lakara_recipe']``.
   - sets ``state.meta['lakara_liT'] = True`` and appends a placeholder pratyaya
     Term with ``upadesha_slp1 = 'liT'``.
 """
@@ -17,14 +17,14 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def cond(state: State) -> bool:
-    return bool(state.meta.get("3_2_115_paroksha_lit_arm")) and not state.meta.get("lakara_liT")
+    return bool(state.meta.get("liT_lakara_recipe")) and not state.meta.get("lakara_liT")
 
 
 def act(state: State) -> State:
     if not cond(state):
         return state
     state.meta["lakara_liT"] = True
-    state.meta["3_2_115_paroksha_lit_arm"] = False
+    state.meta["liT_lakara_recipe"] = False
     lit = Term(
         kind="pratyaya",
         varnas=parse_slp1_upadesha_sequence("liT"),

@@ -5,7 +5,7 @@ In liṭ:
   - ātmanepada 3sg `ta` → `eS` (eŚ after IT-lopa = e)
   - ātmanepada 3pl `Ja` (jha) → `irec` (iReC after IT-lopa = ire)
 
-Engine: recipe arms via ``state.meta['3_4_81_lit_esh_arm']``.
+Engine: recipe arms via ``state.meta['liT_esh_recipe']``.
 """
 from __future__ import annotations
 
@@ -30,7 +30,7 @@ def _find_ta_or_Ja(state: State):
 def cond(state: State) -> bool:
     if not state.meta.get("lakara_liT"):
         return False
-    if not state.meta.get("3_4_81_lit_esh_arm"):
+    if not state.meta.get("liT_esh_recipe"):
         return False
     return _find_ta_or_Ja(state) is not None
 
@@ -48,8 +48,8 @@ def act(state: State) -> State:
         pr.varnas = list(parse_slp1_upadesha_sequence("irec"))
         pr.meta["upadesha_slp1"] = "irec"
     pr.tags.add("upadesha")
-    state.meta["3_4_81_lit_esh_arm"] = False
-    state.meta["1_1_55_anekal_shit_sarvasya_arm"] = True
+    state.meta["liT_esh_recipe"] = False
+    state.meta["anekal_shit_recipe"] = True
     return state
 
 

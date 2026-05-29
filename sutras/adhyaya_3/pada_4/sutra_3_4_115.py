@@ -19,7 +19,7 @@ def cond(state: State) -> bool:
     # Structural: relevant term present
     if any(t.varnas for t in state.terms):
         return True
-    return bool(state.meta.get("3_4_115_arm"))
+    return bool(state.meta.get("liT_115_recipe"))
 
 
 def act(state: State) -> State:

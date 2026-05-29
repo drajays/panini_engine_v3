@@ -6,7 +6,7 @@ Demo slice (ईधे):
   sthānī. In our demos, **3.4.81** uses this to replace `ta` with `eS`.
 
 Engine:
-  - recipe-armed by ``state.meta['1_1_55_anekal_shit_sarvasya_arm']``.
+  - recipe-armed by ``state.meta['anekal_shit_recipe']``.
   - identity-exempt (paribhāṣā bookkeeping).
 """
 from __future__ import annotations
@@ -16,12 +16,12 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    return bool(state.meta.get("1_1_55_anekal_shit_sarvasya_arm")) and not state.paribhasha_gates.get("1.1.55")
+    return bool(state.meta.get("anekal_shit_recipe")) and not state.paribhasha_gates.get("1.1.55")
 
 
 def act(state: State) -> State:
     state.paribhasha_gates["1.1.55"] = True
-    state.meta["1_1_55_anekal_shit_sarvasya_arm"] = False
+    state.meta["anekal_shit_recipe"] = False
     return state
 
 

@@ -54,7 +54,7 @@ def derive_kauYjAyanyaH() -> State:
     )
     stem.tags.add("pulliṅga")
     s = State(terms=[stem], meta={}, trace=[])
-    s.meta["prakriya_P004_A_caPhaya"] = True
+    s.meta["caPhaya_taddhita_frame"] = True
     s.meta["linga"] = "pulliṅga"
     s.meta[META_2_3_50_ELIGIBLE] = True
 

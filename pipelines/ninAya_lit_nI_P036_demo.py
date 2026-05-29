@@ -45,7 +45,7 @@ def derive_ninAya_lit_nI_P036() -> State:
     if s.terms:
         s.terms[0].tags.discard("upadesha")
 
-    s.meta["3_2_115_paroksha_lit_arm"] = True
+    s.meta["liT_lakara_recipe"] = True
     s = apply_rule("3.2.115", s)
 
     s = apply_rule("3.1.91", s)
