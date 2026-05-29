@@ -1,10 +1,10 @@
-"""Unit tests for ``pipelines/sthAnivadAdezO_nalvidhau_paribhasha_P016_note_demo.py`` (**P016**)."""
+"""Unit tests for ``pipelines/sthAnivadAdezO_nalvidhau_paribhasha_note.py`` (**P016**)."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.sthAnivadAdezO_nalvidhau_paribhasha_P016_note_demo import (
+from pipelines.sthAnivadAdezO_nalvidhau_paribhasha_note import (
     derive_sthAnivadAdezO_nalvidhau_paribhasha_P016_note,
 )
 

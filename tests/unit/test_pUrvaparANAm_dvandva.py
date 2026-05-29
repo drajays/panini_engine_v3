@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.pUrvaparANAm_dvandva_demo import derive_pUrvaparANAm
+from pipelines.pUrvaparANAm_dvandva import derive_pUrvaparANAm
 
 
 def _ap(s, sid: str) -> bool:

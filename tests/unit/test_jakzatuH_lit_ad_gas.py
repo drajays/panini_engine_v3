@@ -14,7 +14,7 @@ def test_jakzatuH_lit_ad_gas_P034_surface() -> None:
     from phonology.joiner import slp1_to_devanagari
     from engine.it_phonetic import term_phonetic_varnas
 
-    from pipelines.jakzatuH_lit_ad_gas_P034_demo import derive_jakzatuH_lit_ad_gas_P034
+    from pipelines.jakzatuH_lit_ad_gas import derive_jakzatuH_lit_ad_gas_P034
 
     s = derive_jakzatuH_lit_ad_gas_P034()
     assert s.flat_slp1() == "jakzatuH"
@@ -22,7 +22,7 @@ def test_jakzatuH_lit_ad_gas_P034_surface() -> None:
 
 
 def test_jakzatuH_lit_ad_gas_P034_spine() -> None:
-    from pipelines.jakzatuH_lit_ad_gas_P034_demo import derive_jakzatuH_lit_ad_gas_P034
+    from pipelines.jakzatuH_lit_ad_gas import derive_jakzatuH_lit_ad_gas_P034
 
     s = derive_jakzatuH_lit_ad_gas_P034()
     for sid in (

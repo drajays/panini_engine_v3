@@ -3,7 +3,7 @@ Locks the spine from `/Users/dr.ajayshukla/Documents/my panini notes/अति�
 """
 import sutras  # noqa: F401
 
-from pipelines.atinu_neuter_demo import derive_atinu
+from pipelines.atinu_neuter import derive_atinu
 
 
 def _sutra_ids_chronological(state):

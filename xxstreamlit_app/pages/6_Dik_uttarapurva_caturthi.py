@@ -12,7 +12,7 @@ import streamlit as st
 import common  # noqa: E402
 
 from pipelines.dik_caturthi_glassbox_text import GLASS_HEADER, glass_plain_text, glass_rows
-from pipelines.dik_uttarapurva_demo import (
+from pipelines.dik_uttarapurva import (
     DikCaturthiId,
     capture_caturthi_prakriya_stdout,
     caturthi_preset,
@@ -167,7 +167,7 @@ with st.expander("काच-पेटी — टर्मिनल-रूप (�
     gtxt = glass_plain_text(p_meta)
     st.code(gtxt, language=None)
     st.caption(
-        f"कमान: `python3 -m pipelines.dik_uttarapurva_demo glass {preset}`"
+        f"कमान: `python3 -m pipelines.dik_uttarapurva glass {preset}`"
     )
     st.download_button(
         "⬇ काच-पेटी टेक्स्ट (.txt)",
@@ -216,7 +216,7 @@ with tab_gl:
         _trace_pre(sections.get("appendix", ""), height_vh=48)
 
 with tab_tr:
-    st.caption("डाउनलोड = वही raw UTF-8 जो टर्मिनल पर `python3 -m pipelines.dik_uttarapurva_demo caturthi` (डिफ़ाल्ट) देता है। "
+    st.caption("डाउनलोड = वही raw UTF-8 जो टर्मिनल पर `python3 -m pipelines.dik_uttarapurva caturthi` (डिफ़ाल्ट) देता है। "
                "पृष्ठ पर `selectbox` हेतु यह स्क्रिप्ट के समान *preset* से capचर होता है।")
     st.download_button(
         "⬇ पूर्ण लेख डाउनलोड (.txt)",

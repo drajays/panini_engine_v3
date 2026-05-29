@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.agacCa_phit481_accent_prakriya_27_demo import (
+from pipelines.agacCa_phit481_accent import (
     derive_agacCa_accent_prakriya_27,
     _mk_agacCa_tinanta_accent_demo,
 )

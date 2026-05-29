@@ -1,10 +1,10 @@
-"""Unit tests for ``pipelines/niSkOZAmbiH_prakriya_40_demo.py`` (``prakriya_40``)."""
+"""Unit tests for ``pipelines/niSkOZAmbiH.py`` (``prakriya_40``)."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.niSkOZAmbiH_prakriya_40_demo import derive_niSkOZAmbi_stem_prakriya_40
+from pipelines.niSkOZAmbiH import derive_niSkOZAmbi_stem_prakriya_40
 
 
 def _trace_ids(s):

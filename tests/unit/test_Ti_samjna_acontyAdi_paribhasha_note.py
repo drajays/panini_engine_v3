@@ -1,10 +1,10 @@
-"""Unit tests for ``pipelines/Ti_samjna_acontyAdi_paribhasha_P043_note_demo.py`` (**P043**)."""
+"""Unit tests for ``pipelines/Ti_samjna_acontyAdi_paribhasha_note.py`` (**P043**)."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.Ti_samjna_acontyAdi_paribhasha_P043_note_demo import (
+from pipelines.Ti_samjna_acontyAdi_paribhasha_note import (
     derive_Ti_samjna_acontyAdi_paribhasha_P043_note,
 )
 from sutras.adhyaya_1.pada_1.sutra_1_1_64 import P043_QUEUE_KEY, P043_WORD_META

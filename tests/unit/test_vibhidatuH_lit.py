@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.vibhidatuH_lit_demo import derive_vibhidatuH
+from pipelines.vibhidatuH_lit import derive_vibhidatuH
 
 
 def _fired(trace, sid: str) -> bool:

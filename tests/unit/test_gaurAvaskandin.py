@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.gaurAvaskandin_prakriya_29_demo import (
+from pipelines.gaurAvaskandin import (
     derive_gaurAvaskandin_prakriya_29,
     _mk_gaurAvaskandin_vocative_demo,
 )

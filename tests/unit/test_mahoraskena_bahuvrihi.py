@@ -4,7 +4,7 @@ from __future__ import annotations
 def test_P024_surface_and_key_spine_order():
     import sutras  # noqa: F401
 
-    from pipelines.mahoraskena_bahuvrihi_P024_demo import derive_mahoraskena_bahuvrihi_P024
+    from pipelines.mahoraskena_bahuvrihi import derive_mahoraskena_bahuvrihi_P024
 
     s = derive_mahoraskena_bahuvrihi_P024()
     assert s.flat_slp1() == "mahoraskena"

@@ -1,10 +1,10 @@
-"""Unit tests for ``pipelines/AdeH_parasya_paribhasha_P014_note_demo.py`` (**P014**)."""
+"""Unit tests for ``pipelines/AdeH_parasya_paribhasha_note.py`` (**P014**)."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.AdeH_parasya_paribhasha_P014_note_demo import (
+from pipelines.AdeH_parasya_paribhasha_note import (
     derive_AdeH_parasya_paribhasha_P014_note,
 )
 

@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.dadhiccChatram_samasa_demo import derive_dadhiccChatram
+from pipelines.dadhiccChatram_samasa import derive_dadhiccChatram
 
 
 def _fired(trace: list[dict], sid: str) -> bool:

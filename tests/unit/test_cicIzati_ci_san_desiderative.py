@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.cicIzati_ci_san_desiderative_demo import derive_cicIzati
+from pipelines.cicIzati_ci_san_desiderative import derive_cicIzati
 
 
 def _fired(trace: list, sid: str) -> bool:

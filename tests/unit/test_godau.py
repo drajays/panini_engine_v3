@@ -1,10 +1,10 @@
-"""Unit tests for ``pipelines/godau_prakriya_46_demo.py`` (``prakriya_46``)."""
+"""Unit tests for ``pipelines/godau.py`` (``prakriya_46``)."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.godau_prakriya_46_demo import derive_godau_prakriya_46
+from pipelines.godau import derive_godau_prakriya_46
 
 
 def _trace_ids(s):

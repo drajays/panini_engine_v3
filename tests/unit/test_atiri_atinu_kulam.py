@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.atiri_atinu_kulam_demo import derive_atinu, derive_atiri
+from pipelines.atiri_atinu_kulam import derive_atinu, derive_atiri
 
 
 def test_atiri() -> None:

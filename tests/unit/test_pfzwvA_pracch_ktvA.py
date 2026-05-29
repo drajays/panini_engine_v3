@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.pfzwvA_pracch_ktvA_demo import derive_pfzwvA
+from pipelines.pfzwvA_pracch_ktvA import derive_pfzwvA
 
 
 def _fired(trace, sid: str) -> bool:

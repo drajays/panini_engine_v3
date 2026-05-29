@@ -4,7 +4,7 @@ from __future__ import annotations
 import sutras  # noqa: F401
 
 from engine.trace import TRACE_STATUSES_FIRED
-from pipelines.dASaraThi_apatya_iY_demo import derive_dASaraThi
+from pipelines.dASaraThi_apatya_iY import derive_dASaraThi
 
 
 def test_dASaraThi_surface():

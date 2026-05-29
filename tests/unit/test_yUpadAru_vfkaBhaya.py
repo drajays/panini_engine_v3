@@ -1,10 +1,10 @@
-"""Unit tests for ``pipelines/yUpadAru_vfkaBhaya_prakriya_39_demo.py``."""
+"""Unit tests for ``pipelines/yUpadAru_vfkaBhaya.py``."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.yUpadAru_vfkaBhaya_prakriya_39_demo import (
+from pipelines.yUpadAru_vfkaBhaya import (
     derive_vfkaBhayam_prakriya_39,
     derive_yUpadAru_prakriya_39,
 )

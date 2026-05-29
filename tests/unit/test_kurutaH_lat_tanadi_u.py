@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.kurutaH_lat_tanadi_u_demo import derive_kurutaH
+from pipelines.kurutaH_lat_tanadi_u import derive_kurutaH
 
 
 def test_kurutaH_surface() -> None:

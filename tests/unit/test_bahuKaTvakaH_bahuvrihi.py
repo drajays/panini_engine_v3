@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 def test_derive_bahuKaTvakaH_bahuvrihi_P027():
-    from pipelines.bahuKaTvakaH_bahuvrihi_P027_demo import derive_bahuKaTvakaH_bahuvrihi_P027
+    from pipelines.bahuKaTvakaH_bahuvrihi import derive_bahuKaTvakaH_bahuvrihi_P027
 
     s = derive_bahuKaTvakaH_bahuvrihi_P027()
     assert s.render() == "bahuKaTvakaH"

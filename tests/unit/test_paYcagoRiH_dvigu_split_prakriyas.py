@@ -1,10 +1,10 @@
-"""Unit tests for ``pipelines/paYcagoRiH_dvigu_split_prakriyas_P011_demo.py`` (**P011**)."""
+"""Unit tests for ``pipelines/paYcagoRiH_dvigu_split_prakriyas.py`` (**P011**)."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.paYcagoRiH_dvigu_split_prakriyas_P011_demo import (
+from pipelines.paYcagoRiH_dvigu_split_prakriyas import (
     derive_paYcagoRiH_dvigu_split_prakriyas_P011,
 )
 

@@ -4,7 +4,7 @@ from __future__ import annotations
 def test_P023_json_spine_and_surface_dyukAmA():
     import sutras  # noqa: F401
 
-    from pipelines.dyukAmA_bahuvrihi_paribhasha_P023_demo import derive_dyukAmA_bahuvrihi_P023
+    from pipelines.dyukAmA_bahuvrihi_paribhasha import derive_dyukAmA_bahuvrihi_P023
 
     s = derive_dyukAmA_bahuvrihi_P023()
     assert s.flat_slp1() == "dyukAmA"

@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.tva_prakriya_23_demo import derive_tva_prakriya_23, _mk_tvAm_pada
+from pipelines.tva import derive_tva_prakriya_23, _mk_tvAm_pada
 
 
 def _fired_ids(state: State) -> list[str]:

@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.indra_sambuddhi_prakriya_26_demo import (
+from pipelines.indra_sambuddhi import (
     derive_indra_sambuddhi_prakriya_26,
     _mk_indra_sambuddhi,
 )

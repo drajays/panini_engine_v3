@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.pAcakavndArikA_prakriya_37_demo import (
+from pipelines.pAcakavndArikA import (
     derive_prakriya_37_karmadhAraya_puMvaw,
     derive_prakriya_37_tApanta_sup_lopa,
 )

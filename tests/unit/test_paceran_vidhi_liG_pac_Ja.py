@@ -4,7 +4,7 @@ from __future__ import annotations
 def test_P038_paceran_surface_and_spine():
     import sutras  # noqa: F401
 
-    from pipelines.paceran_vidhi_liG_pac_Ja_P038_demo import (
+    from pipelines.paceran_vidhi_liG_pac_Ja import (
         derive_paceran_vidhi_liG_pac_Ja_P038,
     )
 

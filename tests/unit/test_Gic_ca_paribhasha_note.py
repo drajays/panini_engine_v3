@@ -1,10 +1,10 @@
-"""Unit tests for ``pipelines/Gic_ca_paribhasha_P012_note_demo.py`` (**P012**)."""
+"""Unit tests for ``pipelines/Gic_ca_paribhasha_note.py`` (**P012**)."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.Gic_ca_paribhasha_P012_note_demo import derive_Gic_ca_paribhasha_P012_note
+from pipelines.Gic_ca_paribhasha_note import derive_Gic_ca_paribhasha_P012_note
 
 
 def _trace_ids(s):

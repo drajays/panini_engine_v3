@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.hiqanIya_heq_nic_anIyar_demo import derive_hiqanIya
+from pipelines.hiqanIya_heq_nic_anIyar import derive_hiqanIya
 
 
 def test_hiqanIya_surface() -> None:

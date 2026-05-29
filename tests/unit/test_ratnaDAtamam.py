@@ -6,7 +6,7 @@ from engine.state import State, Term
 
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from pipelines.ratnaDAtamam_prakriya_22_demo import derive_ratnaDAtamam_prakriya_22
+from pipelines.ratnaDAtamam import derive_ratnaDAtamam_prakriya_22
 
 
 def _fired_ids(state: State) -> list[str]:

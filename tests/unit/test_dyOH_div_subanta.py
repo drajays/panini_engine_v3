@@ -4,7 +4,7 @@ from __future__ import annotations
 def test_P022_json_spine_order_and_surface_dyOH():
     import sutras  # noqa: F401
 
-    from pipelines.dyOH_div_subanta_P022_demo import derive_dyOH_div_subanta_P022
+    from pipelines.dyOH_div_subanta import derive_dyOH_div_subanta_P022
 
     s = derive_dyOH_div_subanta_P022()
     assert s.flat_slp1() == "dyOH"

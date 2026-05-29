@@ -14,7 +14,7 @@ def test_papatuH_lit_pA_P035_surface() -> None:
     from phonology.joiner import slp1_to_devanagari
     from engine.it_phonetic import term_phonetic_varnas
 
-    from pipelines.papatuH_lit_pA_P035_demo import derive_papatuH_lit_pA_P035
+    from pipelines.papatuH_lit_pA import derive_papatuH_lit_pA_P035
 
     s = derive_papatuH_lit_pA_P035()
     assert s.flat_slp1() == "papatuH"
@@ -22,7 +22,7 @@ def test_papatuH_lit_pA_P035_surface() -> None:
 
 
 def test_papatuH_lit_pA_P035_spine() -> None:
-    from pipelines.papatuH_lit_pA_P035_demo import derive_papatuH_lit_pA_P035
+    from pipelines.papatuH_lit_pA import derive_papatuH_lit_pA_P035
 
     s = derive_papatuH_lit_pA_P035()
     for sid in (

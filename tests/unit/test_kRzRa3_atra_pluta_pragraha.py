@@ -1,7 +1,7 @@
 """
 6.1.125 प्लुतप्रगृह्याच्च नित्यम् अचि — pluta + ac-initial = prakṛti-bhāva.
 
-Test suite for pipelines/kRzRa3_atra_pluta_pragraha_demo.py:
+Test suite for pipelines/kRzRa3_atra_pluta_pragraha.py:
   1. Surface: "kRzRa3 atra" (pluta marker '3' appended, no sandhi)
   2. 6.1.125 fires (APPLIED in trace)
   3. samjna_registry records the boundary
@@ -18,7 +18,7 @@ from engine.state import State, Term
 from engine.trace import TRACE_STATUSES_FIRED
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from pipelines.kRzRa3_atra_pluta_pragraha_demo import (
+from pipelines.kRzRa3_atra_pluta_pragraha import (
     derive_kRzRa3_atra_pluta_pragraha,
     render_kRzRa3_atra,
     _render_pluta_vakya,

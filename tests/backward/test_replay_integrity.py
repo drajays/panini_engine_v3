@@ -38,7 +38,7 @@ def test_dik_samasa_compound_path_is_deterministic():
     from the initial vigraha is not required to match (state/meta differ). We
     still require **forward** runs to be deterministic and surface-identical.
     """
-    from pipelines.dik_uttarapurva_demo import caturthi_preset, derive_dik_caturthi_compound
+    from pipelines.dik_uttarapurva import caturthi_preset, derive_dik_caturthi_compound
 
     p = caturthi_preset("uttarA_pUrvA")
     a = derive_dik_caturthi_compound(p, verbose=False)

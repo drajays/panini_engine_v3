@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.rurudizati_san_desiderative_demo import derive_rurudizati
+from pipelines.rurudizati_san_desiderative import derive_rurudizati
 
 
 def _fired(trace, sid: str) -> bool:

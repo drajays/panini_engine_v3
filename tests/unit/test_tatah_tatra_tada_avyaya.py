@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.tatah_tatra_tada_vina_nana_avyaya_demo import (
+from pipelines.tatah_tatra_tada_vina_nana_avyaya import (
     derive_nAnA,
     derive_tadA,
     derive_tataH,

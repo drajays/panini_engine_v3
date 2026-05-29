@@ -1,10 +1,10 @@
-"""Unit tests for ``pipelines/paYcendra_prakriya_42_demo.py`` (``prakriya_42``)."""
+"""Unit tests for ``pipelines/paYcendra.py`` (``prakriya_42``)."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.paYcendra_prakriya_42_demo import derive_paYcendra_prakriya_42
+from pipelines.paYcendra import derive_paYcendra_prakriya_42
 
 
 def _trace_ids(s):

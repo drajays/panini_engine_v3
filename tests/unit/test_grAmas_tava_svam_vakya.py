@@ -4,7 +4,7 @@ from __future__ import annotations
 def test_P021_vakya_visarga_t_sandhi_trace_and_surface():
     import sutras  # noqa: F401
 
-    from pipelines.grAmas_tava_svam_vakya_P021_demo import derive_grAmas_tava_svam_vakya_P021
+    from pipelines.grAmas_tava_svam_vakya import derive_grAmas_tava_svam_vakya_P021
 
     s = derive_grAmas_tava_svam_vakya_P021()
 

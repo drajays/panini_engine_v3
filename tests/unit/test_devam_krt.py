@@ -4,7 +4,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.devam_krt_prakriya_20_demo import derive_devam_prakriya_20
+from pipelines.devam_krt import derive_devam_prakriya_20
 
 
 def _fired_or_audit_ids(state: State) -> list[str]:

@@ -1,11 +1,11 @@
-"""Unit tests for ``pipelines/vaktA_split_prakriyas_P003_demo.py`` (**P003**)."""
+"""Unit tests for ``pipelines/vaktA_split_prakriyas.py`` (**P003**)."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
 from engine import SUTRA_REGISTRY
-from pipelines.vaktA_split_prakriyas_P003_demo import derive_vaktA_split_prakriyas_P003
+from pipelines.vaktA_split_prakriyas import derive_vaktA_split_prakriyas_P003
 
 
 def _fired_ids(state):

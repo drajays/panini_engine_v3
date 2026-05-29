@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.adita_luN_dAda_ghu_demo import derive_adita
+from pipelines.adita_luN_dAda_ghu import derive_adita
 
 
 def _fired_ids(state) -> list[str]:

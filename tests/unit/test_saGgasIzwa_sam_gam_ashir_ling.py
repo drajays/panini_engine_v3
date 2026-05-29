@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.saGgasIzwa_sam_gam_ashir_ling_demo import derive_saGgasIzwa
+from pipelines.saGgasIzwa_sam_gam_ashir_ling import derive_saGgasIzwa
 
 
 def _fired(trace: list, sid: str) -> bool:

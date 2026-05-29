@@ -1,7 +1,7 @@
-"""Unit tests for ``pipelines/ye_yad_jas_demo.py`` (यद् + जस् → ये)."""
+"""Unit tests for ``pipelines/ye_yad_jas.py`` (यद् + जस् → ये)."""
 from __future__ import annotations
 
-from pipelines.ye_yad_jas_demo import derive_ye_yad_jas
+from pipelines.ye_yad_jas import derive_ye_yad_jas
 
 
 def test_ye_yad_jas_surface() -> None:

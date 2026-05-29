@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.Binatti_Cinatti_rudhadi_snam_demo import derive_Binatti, derive_Cinatti
+from pipelines.Binatti_Cinatti_rudhadi_snam import derive_Binatti, derive_Cinatti
 
 
 def test_Binatti_surface() -> None:

@@ -63,7 +63,7 @@ def _state_snapshot(s: Any) -> dict[str, Any]:
 
 
 def _dik_default_preset() -> Any:
-    from pipelines.dik_uttarapurva_demo import caturthi_preset
+    from pipelines.dik_uttarapurva import caturthi_preset
 
     return caturthi_preset("uttarA_pUrvA")
 
@@ -94,7 +94,7 @@ def _infer_bind(
     try:
         b = sig.bind()
         b.apply_defaults()
-        if module_name == "pipelines.dik_uttarapurva_demo" and "verbose" in b.arguments:
+        if module_name == "pipelines.dik_uttarapurva" and "verbose" in b.arguments:
             b.arguments["verbose"] = False
             notes.append("verbose=False for dik_uttarapurva_demo")
         return tuple(), dict(b.arguments), ("; ".join(notes) if notes else "")
@@ -159,7 +159,7 @@ def _infer_bind(
     try:
         b = sig.bind(*pos, **kw)
         b.apply_defaults()
-        if module_name == "pipelines.dik_uttarapurva_demo" and "verbose" in b.arguments:
+        if module_name == "pipelines.dik_uttarapurva" and "verbose" in b.arguments:
             b.arguments["verbose"] = False
             notes.append("verbose=False for dik_uttarapurva_demo")
         final_kw = dict(b.arguments)

@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.uditvA_uzitvA_ktvA_samprasaraNa_demo import derive_uditvA, derive_uzitvA
+from pipelines.uditvA_uzitvA_ktvA_samprasaraNa import derive_uditvA, derive_uzitvA
 
 
 def _fired(trace, sid: str) -> bool:

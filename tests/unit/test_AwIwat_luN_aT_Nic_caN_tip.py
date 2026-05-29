@@ -4,7 +4,7 @@ from __future__ import annotations
 def test_P037_AwIwat_surface_and_spine():
     import sutras  # noqa: F401
 
-    from pipelines.AwIwat_luN_aT_Nic_caN_tip_P037_demo import (
+    from pipelines.AwIwat_luN_aT_Nic_caN_tip import (
         derive_AwIwat_luN_aT_Nic_caN_tip_P037,
     )
 

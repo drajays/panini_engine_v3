@@ -1,11 +1,11 @@
-"""Unit tests for ``pipelines/Bavitum_split_prakriyas_P001_demo.py`` (**P001**)."""
+"""Unit tests for ``pipelines/Bavitum_split_prakriyas.py`` (**P001**)."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
 from engine import SUTRA_REGISTRY
-from pipelines.Bavitum_split_prakriyas_P001_demo import derive_Bavitum_split_prakriyas_P001
+from pipelines.Bavitum_split_prakriyas import derive_Bavitum_split_prakriyas_P001
 
 
 def _trace_ids(s):

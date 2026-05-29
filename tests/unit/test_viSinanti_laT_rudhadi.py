@@ -5,7 +5,7 @@ def test_derive_viSinanti_laT_rudhadi_P032():
     from phonology.joiner import slp1_to_devanagari
     from engine.it_phonetic import term_phonetic_varnas
 
-    from pipelines.viSinanti_laT_rudhadi_P032_demo import derive_viSinanti_laT_rudhadi_P032
+    from pipelines.viSinanti_laT_rudhadi import derive_viSinanti_laT_rudhadi_P032
 
     s = derive_viSinanti_laT_rudhadi_P032()
     assert s.render() == "viSinanti"

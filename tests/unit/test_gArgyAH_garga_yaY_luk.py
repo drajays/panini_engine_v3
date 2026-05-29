@@ -4,7 +4,7 @@ from __future__ import annotations
 def test_P042_json_spine_and_surface_gArgyAH():
     import sutras  # noqa: F401
 
-    from pipelines.gArgyAH_garga_yaY_luk_P042_demo import derive_gArgyAH_garga_yaY_luk_P042
+    from pipelines.gArgyAH_garga_yaY_luk import derive_gArgyAH_garga_yaY_luk_P042
 
     s = derive_gArgyAH_garga_yaY_luk_P042()
     assert s.flat_slp1() == "gArgyAH"

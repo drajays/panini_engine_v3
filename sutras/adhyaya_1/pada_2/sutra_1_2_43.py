@@ -5,7 +5,7 @@ Narrow v3 slice for avyayībhāva demos:
   - In avyayībhāva, the avyaya member is the prathamā-nirdiṣṭa component and
     receives upasarjana-saṃjñā.
 
-Narrow **tat-puruṣa** slice (**``prakriya_39``**, ``pipelines/yUpadAru_vfkaBhaya_prakriya_39_demo.py``):
+Narrow **tat-puruṣa** slice (**``prakriya_39``**, ``pipelines/yUpadAru_vfkaBhaya.py``):
   - Recipe arms ``meta['prakriya_39_tatpurusa_upasarjana']`` and tags the prior member with
     ``prakriya_39_upasarjana_purva`` (after **2.4.71** internal sup ghosts).
 

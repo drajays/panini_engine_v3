@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.ardhaBAj_sup_prakriya_36_demo import (
+from pipelines.ardhaBAj_sup import (
     _mk_ardhaBAj_prAtipadika_demo,
     _mk_sup_s_pratyaya_after_it_lopa,
     derive_ardhaBAj_sup_prakriya_36,

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 def test_gOrI_aDiSritaH_no_yan_across_pragrahya():
-    from pipelines.gOrI_adhizritaH_pragRhya_demo import derive_gOrI_aDiSritaH_pragrahya
+    from pipelines.gOrI_adhizritaH_pragRhya import derive_gOrI_aDiSritaH_pragrahya
     from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
 
     s = derive_gOrI_aDiSritaH_pragrahya()
@@ -12,14 +12,14 @@ def test_gOrI_aDiSritaH_no_yan_across_pragrahya():
 
 
 def test_mAmakI_iti_no_yan():
-    from pipelines.gOrI_adhizritaH_pragRhya_demo import derive_mAmakI_iti_pragrahya
+    from pipelines.gOrI_adhizritaH_pragRhya import derive_mAmakI_iti_pragrahya
 
     s = derive_mAmakI_iti_pragrahya()
     assert s.flat_slp1() == "mAmakIiti"
 
 
 def test_tanU_iti_no_yan():
-    from pipelines.gOrI_adhizritaH_pragRhya_demo import derive_tanU_iti_pragrahya
+    from pipelines.gOrI_adhizritaH_pragRhya import derive_tanU_iti_pragrahya
 
     s = derive_tanU_iti_pragrahya()
     assert s.flat_slp1() == "tanUiti"

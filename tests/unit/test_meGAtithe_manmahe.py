@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.meGAtithe_manmahe_prakriya_28_demo import (
+from pipelines.meGAtithe_manmahe import (
     derive_meGAtithe_manmahe_prakriya_28,
     _mk_meGAtithe_voc,
     _mk_manmahe_tin,

@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.kaSTazrita_prakriya_38_demo import (
+from pipelines.kaSTazrita import (
     _mk_kaSTazrita_witness,
     derive_kaSTazrita_prakriya_38,
 )

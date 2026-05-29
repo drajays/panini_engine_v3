@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.mfqitvA_ktvA_avyaya_demo import derive_mfqitvA
+from pipelines.mfqitvA_ktvA_avyaya import derive_mfqitvA
 
 
 def _fired(trace, sid: str) -> bool:

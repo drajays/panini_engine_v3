@@ -1,8 +1,8 @@
 """
 काच-पेटी (ग्लासबॉक्स) — देवनागरी व्याख्या; slp1 Roman कोष्ठक में।
 
-    python3 -m pipelines.dik_uttarapurva_demo glass
-    python3 -m pipelines.dik_uttarapurva_demo glass dakziRA_pUrvA
+    python3 -m pipelines.dik_uttarapurva glass
+    python3 -m pipelines.dik_uttarapurva glass dakziRA_pUrvA
 """
 # ── Claude Code review 2026-05-07 ──────────────────────────────────
 # CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from typing import List, Tuple
 
-from pipelines.dik_uttarapurva_demo import DikCaturthiId, DikCaturthiPreset, caturthi_preset
+from pipelines.dik_uttarapurva import DikCaturthiId, DikCaturthiPreset, caturthi_preset
 
 # देवनागरी सूत्र-क्रम: 7.3.113 / 7.3.114 / 6.1.88 (CJK-अंक नहीं)।
 D_7_3_113 = f"\N{DEVANAGARI DIGIT SEVEN}.\N{DEVANAGARI DIGIT THREE}.\N{DEVANAGARI DIGIT ONE}\N{DEVANAGARI DIGIT ONE}\N{DEVANAGARI DIGIT THREE}"

@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.mAtaro_apaH_prakriya_33_demo import (
+from pipelines.mAtaro_apaH import (
     _mk_mAtaro_apaH_accent_demo,
     derive_mAtaro_apaH_prakriya_33,
 )

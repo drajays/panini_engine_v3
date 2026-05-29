@@ -1,11 +1,11 @@
-"""Unit tests for ``pipelines/yuvatiH_stri_split_prakriyas_P006_demo.py`` (**P006**)."""
+"""Unit tests for ``pipelines/yuvatiH_stri_split_prakriyas.py`` (**P006**)."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
 from engine import SUTRA_REGISTRY
-from pipelines.yuvatiH_stri_split_prakriyas_P006_demo import (
+from pipelines.yuvatiH_stri_split_prakriyas import (
     derive_yuvatiH_stri_split_prakriyas_P006,
 )
 

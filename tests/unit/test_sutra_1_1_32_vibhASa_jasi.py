@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.katarakatamA_vibhASa_jasi_demo import derive_katarakatame
+from pipelines.katarakatamA_vibhASa_jasi import derive_katarakatame
 
 
 def _ap(s, sid: str) -> bool:

@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.EdaviDa_jWilaka_aDyApaka_prakriya_32_demo import (
+from pipelines.EdaviDa_jWilaka_aDyApaka import (
     _mk_aDyApaka,
     _mk_EdaviDa,
     _mk_jaWilaka,

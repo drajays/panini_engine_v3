@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 def test_asme_indrAbfhaspatI_no_eco_78_after_she_pragrahya():
-    from pipelines.asme_indrAbfhaspatI_pragRhya_demo import derive_asme_indrAbfhaspatI_pragrahya
+    from pipelines.asme_indrAbfhaspatI_pragRhya import derive_asme_indrAbfhaspatI_pragrahya
     from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
 
     s = derive_asme_indrAbfhaspatI_pragrahya()
@@ -12,14 +12,14 @@ def test_asme_indrAbfhaspatI_no_eco_78_after_she_pragrahya():
 
 
 def test_tve_iti_no_eco_78_after_she_pragrahya():
-    from pipelines.asme_indrAbfhaspatI_pragRhya_demo import derive_tve_iti_pragrahya
+    from pipelines.asme_indrAbfhaspatI_pragRhya import derive_tve_iti_pragrahya
 
     s = derive_tve_iti_pragrahya()
     assert s.flat_slp1() == "tveiti"
 
 
 def test_me_iti_no_eco_78_after_she_pragrahya():
-    from pipelines.asme_indrAbfhaspatI_pragRhya_demo import derive_me_iti_pragrahya
+    from pipelines.asme_indrAbfhaspatI_pragRhya import derive_me_iti_pragrahya
 
     s = derive_me_iti_pragrahya()
     assert s.flat_slp1() == "meiti"

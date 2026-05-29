@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.subrahmaRyom_prakriya_25_demo import (
+from pipelines.subrahmaRyom import (
     derive_subrahmaRyom_prakriya_25,
     _mk_subrahmaRyA_om,
 )

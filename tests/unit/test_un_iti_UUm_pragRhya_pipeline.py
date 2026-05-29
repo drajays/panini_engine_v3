@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 def test_u_ti_UUm_no_yan_or_eco_after_pragrahya():
-    from pipelines.un_iti_UUm_pragRhya_demo import derive_U_ti_UUm_pragrahya
+    from pipelines.un_iti_UUm_pragRhya import derive_U_ti_UUm_pragrahya
     from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
 
     s = derive_U_ti_UUm_pragrahya()

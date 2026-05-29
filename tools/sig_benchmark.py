@@ -86,7 +86,7 @@ def _ingest_jayati_gold(col: SIGCollector) -> None:
 
 def _ingest_samasa_dik_uttarapurva(col: SIGCollector) -> None:
     """*Dik* *samāsa* *uttarapūrvā* — compound + internal *luk* path (apply_rule)."""
-    from pipelines.dik_uttarapurva_demo import caturthi_preset, derive_dik_caturthi_compound
+    from pipelines.dik_uttarapurva import caturthi_preset, derive_dik_caturthi_compound
 
     s = derive_dik_caturthi_compound(
         caturthi_preset("uttarA_pUrvA"), verbose=False
@@ -391,7 +391,7 @@ def main(argv=None) -> int:
             {
                 "id"    : "samasa:dik_uttarapurva",
                 "cells" : 1,
-                "recipe": "pipelines.dik_uttarapurva_demo.derive_dik_caturthi_compound",
+                "recipe": "pipelines.dik_uttarapurva.derive_dik_caturthi_compound",
             }
         )
     if args.with_krdanta_pacaka:

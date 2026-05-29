@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.imam_me_RV_prakriya_31_demo import (
+from pipelines.imam_me_RV import (
     derive_imam_me_RV_prakriya_31,
     _mk_imam_acc_demo,
     _mk_me_asmad_demo,

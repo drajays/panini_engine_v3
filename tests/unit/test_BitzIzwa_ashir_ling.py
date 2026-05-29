@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.BitzIzwa_ashir_ling_demo import derive_BitzIzwa
+from pipelines.BitzIzwa_ashir_ling import derive_BitzIzwa
 
 
 def _fired(trace: list, sid: str) -> bool:

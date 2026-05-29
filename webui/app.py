@@ -1381,7 +1381,7 @@ def api_dik_glass():
     pid  = (data.get("preset") or "uttarA_pUrvA").strip()
     try:
         from pipelines.dik_caturthi_glassbox_text import glass_rows
-        from pipelines.dik_uttarapurva_demo import caturthi_preset
+        from pipelines.dik_uttarapurva import caturthi_preset
         p    = caturthi_preset(pid)
         rows = glass_rows(p)
         return jsonify({

@@ -1,10 +1,10 @@
-"""Unit tests for ``pipelines/akurvAtAm_laG_tanadi_kf_P020_demo.py`` (**P020**)."""
+"""Unit tests for ``pipelines/akurvAtAm_laG_tanadi_kf.py`` (**P020**)."""
 
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from pipelines.akurvAtAm_laG_tanadi_kf_P020_demo import derive_akurvAtAm_laG_tanadi_kf_P020
+from pipelines.akurvAtAm_laG_tanadi_kf import derive_akurvAtAm_laG_tanadi_kf_P020
 
 
 def _trace_ids(s):

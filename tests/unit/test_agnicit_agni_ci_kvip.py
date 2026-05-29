@@ -4,7 +4,7 @@ from __future__ import annotations
 def test_P041_json_spine_and_surface_agnicit():
     import sutras  # noqa: F401
 
-    from pipelines.agnicit_agni_ci_kvip_P041_demo import derive_agnicit_agni_ci_kvip_P041
+    from pipelines.agnicit_agni_ci_kvip import derive_agnicit_agni_ci_kvip_P041
 
     s = derive_agnicit_agni_ci_kvip_P041()
     assert s.flat_slp1() == "agnicit"

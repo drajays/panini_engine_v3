@@ -8,7 +8,7 @@ from engine.state import State
 
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from pipelines.vAyavaH_prakriya_24_demo import derive_vAyavaH_prakriya_24, _mk_vA_dhatu
+from pipelines.vAyavaH import derive_vAyavaH_prakriya_24, _mk_vA_dhatu
 
 
 def _trace_ids(state: State) -> list[str]:

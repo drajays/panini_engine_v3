@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.IDe_lit_indh_demo import derive_IDe
+from pipelines.IDe_lit_indh import derive_IDe
 
 
 def _fired(trace, sid: str) -> bool:

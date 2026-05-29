@@ -5,7 +5,7 @@ from __future__ import annotations
 import sutras  # noqa: F401
 
 from phonology.savarna import is_savarna
-from pipelines.daNDahasta_nAjjhalau_demo import (
+from pipelines.daNDahasta_nAjjhalau import (
     derive_daNDahasta_nAjjhalau_demo,
     derive_dadhi_SItalam_nAjjhalau_demo,
 )

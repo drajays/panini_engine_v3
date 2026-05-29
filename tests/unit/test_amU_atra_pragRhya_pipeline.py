@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 def test_amU_atra_no_iko_yan_across_pragrahya():
-    from pipelines.amU_atra_pragRhya_demo import derive_amU_atra_pragrahya
+    from pipelines.amU_atra_pragRhya import derive_amU_atra_pragrahya
 
     s = derive_amU_atra_pragrahya()
     assert s.flat_slp1() == "amUatra"

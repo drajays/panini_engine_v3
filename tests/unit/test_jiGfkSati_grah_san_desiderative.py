@@ -1,6 +1,6 @@
 import sutras  # noqa: F401
 
-from pipelines.jiGfkSati_grah_san_desiderative_demo import derive_jiGfkSati
+from pipelines.jiGfkSati_grah_san_desiderative import derive_jiGfkSati
 
 
 def _fired(trace, sid: str) -> bool:

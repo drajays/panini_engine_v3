@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 def test_agnI_iti_no_dIrgha_across_pragrahya():
-    from pipelines.agnI_iti_pragRhya_demo import derive_agnI_iti_pragrahya
+    from pipelines.agnI_iti_pragRhya import derive_agnI_iti_pragrahya
 
     s = derive_agnI_iti_pragrahya()
     assert s.flat_slp1() == "agnIiti"
@@ -10,7 +10,7 @@ def test_agnI_iti_no_dIrgha_across_pragrahya():
 
 
 def test_vAyU_iti_no_iko_yan_across_pragrahya():
-    from pipelines.agnI_iti_pragRhya_demo import derive_vAyU_iti_no_yan
+    from pipelines.agnI_iti_pragRhya import derive_vAyU_iti_no_yan
 
     s = derive_vAyU_iti_no_yan()
     assert s.flat_slp1() == "vAyUiti"

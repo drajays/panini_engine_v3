@@ -4,7 +4,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.puras_avyaya_prakriya_19_demo import (
+from pipelines.puras_avyaya import (
     _mk_Ni_sup,
     _mk_asi_taddhita,
     _mk_pUrva,

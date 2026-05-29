@@ -4,7 +4,7 @@ from __future__ import annotations
 def test_P040_json_spine_and_surface_juhoti():
     import sutras  # noqa: F401
 
-    from pipelines.juhoti_hu_lat_tip_Slu_P040_demo import derive_juhoti_hu_lat_tip_Slu_P040
+    from pipelines.juhoti_hu_lat_tip_Slu import derive_juhoti_hu_lat_tip_Slu_P040
 
     s = derive_juhoti_hu_lat_tip_Slu_P040()
     assert s.flat_slp1() == "juhoti"

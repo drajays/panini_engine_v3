@@ -4,7 +4,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.hotAram_prakriya_21_demo import derive_hotAram_prakriya_21
+from pipelines.hotAram import derive_hotAram_prakriya_21
 from pipelines.krdanta import derive_tfc_pratipadika
 
 

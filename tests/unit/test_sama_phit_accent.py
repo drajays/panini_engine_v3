@@ -1,7 +1,7 @@
 """``prakriya_17`` — ``sama`` + Phit / **6.1.158** accent demo."""
 from __future__ import annotations
 
-from pipelines.sama_phit_accent_demo import (
+from pipelines.sama_phit_accent import (
     derive_non_phit418_phiSa_stem,
     derive_sama_phit_accent,
 )

@@ -4,7 +4,7 @@ from __future__ import annotations
 def test_P039_json_spine_and_surface_viSAKaH():
     import sutras  # noqa: F401
 
-    from pipelines.viSAKaH_taddhita_luk_aR_paribhasha_P039_demo import (
+    from pipelines.viSAKaH_taddhita_luk_aR_paribhasha import (
         derive_viSAKaH_taddhita_luk_aR_P039,
     )
 

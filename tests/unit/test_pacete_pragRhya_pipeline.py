@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 def test_pacete_iti_no_eco_ayavAyAva_across_pragrahya():
-    from pipelines.pacete_iti_pragRhya_demo import derive_pacete_iti_pragrahya
+    from pipelines.pacete_iti_pragRhya import derive_pacete_iti_pragrahya
 
     s = derive_pacete_iti_pragrahya()
     assert s.flat_slp1() == "paceteiti"

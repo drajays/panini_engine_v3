@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.maGavan_vocative_prakriya_30_demo import (
+from pipelines.maGavan_vocative import (
     derive_maGavan_vocative_prakriya_30,
     _mk_maGavan_Amant_demo,
 )

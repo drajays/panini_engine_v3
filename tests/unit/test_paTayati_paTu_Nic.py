@@ -4,7 +4,7 @@ from __future__ import annotations
 def test_P025_paTayati_surface_and_spine_order():
     import sutras  # noqa: F401
 
-    from pipelines.paTayati_paTu_Nic_P025_demo import derive_paTayati_paTu_Nic_P025
+    from pipelines.paTayati_paTu_Nic import derive_paTayati_paTu_Nic_P025
 
     s = derive_paTayati_paTu_Nic_P025()
     assert s.flat_slp1() == "paTayati"
@@ -19,7 +19,7 @@ def test_P025_paTayati_surface_and_spine_order():
 def test_P025_7_2_116_does_not_mutate():
     import sutras  # noqa: F401
 
-    from pipelines.paTayati_paTu_Nic_P025_demo import derive_paTayati_paTu_Nic_P025
+    from pipelines.paTayati_paTu_Nic import derive_paTayati_paTu_Nic_P025
 
     s = derive_paTayati_paTu_Nic_P025()
     row = next((t for t in s.trace if t.get("sutra_id") == "7.2.116"), None)

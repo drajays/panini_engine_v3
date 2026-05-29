@@ -2,7 +2,7 @@ from __future__ import annotations
 
 
 def test_avaDIt_flat_and_key_trace_order():
-    from pipelines.avaDIt_luN_han_P026_demo import derive_avaDIt
+    from pipelines.avaDIt_luN_han import derive_avaDIt
 
     s = derive_avaDIt()
     assert s.flat_slp1() == "avaDIt"
