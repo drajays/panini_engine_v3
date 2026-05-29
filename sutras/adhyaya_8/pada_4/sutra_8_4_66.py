@@ -169,7 +169,7 @@ def cond(state: State) -> bool:
         return True
     if not state.tripadi_zone:
         return False
-    if not state.meta.get("phit_1_1_arm"):
+    if not state.meta.get("phit_1_1_recipe"):
         return False
     if state.samjna_registry.get("phit_418_sarvAnudAtta"):
         return False
@@ -207,7 +207,7 @@ def act(state: State) -> State:
     if up is None:
         return state
     state.samjna_registry["phit_phiSa_anta_udAtta_candidate"] = frozenset({up})
-    state.meta.pop("phit_1_1_arm", None)
+    state.meta.pop("phit_1_1_recipe", None)
     return state
 
 

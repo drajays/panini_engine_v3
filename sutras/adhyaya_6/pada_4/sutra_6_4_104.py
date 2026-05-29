@@ -19,7 +19,7 @@ def cond(state: State) -> bool:
     # Structural: ciṇ luk fires in karmani/bhāva context (dhātu tagged by pipeline)
     if any("bhava_karma_usage" in t.tags for t in state.terms):
         return True
-    return bool(state.meta.get("6_4_104_arm"))
+    return bool(state.meta.get("hal_na_lopa_recipe"))
 
 
 def act(state: State) -> State:

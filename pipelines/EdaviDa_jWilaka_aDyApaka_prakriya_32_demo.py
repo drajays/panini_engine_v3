@@ -85,7 +85,7 @@ def derive_EdaviDa_triplet_prakriya_32() -> State:
     s.meta["prakriya_32_6_1_198_arm"] = True
     s = apply_rule("6.1.198", s)
 
-    s.meta["prakriya_32_6_1_158_arm"] = True
+    s.meta["trivoc_6_1_158_recipe"] = True
     s = apply_rule("6.1.158", s)
 
     s = apply_rule("8.1.16", s)

@@ -3,7 +3,7 @@
 
 Two operational paths:
   1. Arm ``8_2_29_arm``: legacy gate-setter.
-  2. Arm ``8_2_29_ashir_liG_arm``: āśīr-liṅ saṃyoga s-lopa.
+  2. Arm ``ashir_8_2_29_recipe``: āśīr-liṅ saṃyoga s-lopa.
 
 āśīr-liṅ path (fires on terms, before _pada_merge):
 
@@ -50,7 +50,7 @@ def _all_hal(t) -> bool:
 
 
 def cond(state: State) -> bool:
-    if state.meta.get("8_2_29_ashir_liG_arm"):
+    if state.meta.get("ashir_8_2_29_recipe"):
         return _find_yasut_suw_pair(state) is not None
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
@@ -59,7 +59,7 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if state.meta.get("8_2_29_ashir_liG_arm"):
+    if state.meta.get("ashir_8_2_29_recipe"):
         j = _find_yasut_suw_pair(state)
         if j is None:
             return state

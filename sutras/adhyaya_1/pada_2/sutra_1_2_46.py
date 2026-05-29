@@ -6,7 +6,7 @@ A stem formed by a kṛt / taddhita affix (or a compound) is called
 
 In glass-box recipes, **2.4.71** (*supo dhātūprātipadikayoḥ*) should run only
 after *avayava* are *prātipadika*-tagged; this engine models that with
-``meta['pratipadika_avayava_ready']`` before ``meta['2_4_71_luk_arm']`` arms
+``meta['pratipadika_avayava_ready']`` before ``meta['luk_2_4_71_recipe']`` arms
 *luk* (see **2.4.71** module doc).
 
 Engine: fires once a kṛt-augmented dhātu shape is ready (after ``7.2.116`` on

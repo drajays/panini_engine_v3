@@ -79,7 +79,7 @@ def derive_sAmanyas() -> State:
     s.meta[META_TADDHITA_AVAYAVA] = True
     s = apply_rule("1.2.46", s)
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
 
     s = P00_taddhita_it_lopa_chain(s)
@@ -87,12 +87,12 @@ def derive_sAmanyas() -> State:
 
     s_sub = build_initial_state("sAmanya", 1, 1, "pulliṅga")
     s_sub.trace = list(s.trace) + list(s_sub.trace)
-    s_sub.meta["prakriya_18_6_1_213_arm"] = True
+    s_sub.meta["sama_6_1_213_recipe"] = True
     s_sub = apply_rule("6.1.213", s_sub)
-    s_sub.meta.pop("prakriya_18_6_1_213_arm", None)
-    s_sub.meta["prakriya_18_6_1_158_arm"] = True
+    s_sub.meta.pop("sama_6_1_213_recipe", None)
+    s_sub.meta["sama_6_1_158_recipe"] = True
     s_sub = apply_rule("6.1.158", s_sub)
-    s_sub.meta.pop("prakriya_18_6_1_158_arm", None)
+    s_sub.meta.pop("sama_6_1_158_recipe", None)
     return run_subanta_sup_attach_and_finish(s_sub)
 
 

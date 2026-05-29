@@ -20,7 +20,7 @@ def cond(state: State) -> bool:
     # Structural: karmani/bhāva pipeline tags dhātu "bhava_karma_usage"
     if any("bhava_karma_usage" in t.tags for t in state.terms):
         return True
-    return bool(state.meta.get("3_1_66_arm"))
+    return bool(state.meta.get("ciN_recipe"))
 
 
 def act(state: State) -> State:

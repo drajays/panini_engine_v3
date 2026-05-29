@@ -95,7 +95,7 @@ def derive_agnicit_agni_ci_kvip_P041() -> State:
     s = apply_rule("1.1.68", s)
 
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s.meta["3_2_76_kvip_arm"] = True
+    s.meta["kvip_recipe"] = True
     s = apply_rule("3.2.76", s)
 
     s.meta["P041_3_2_91_arm"] = True
@@ -112,7 +112,7 @@ def derive_agnicit_agni_ci_kvip_P041() -> State:
 
     s = apply_rule("1.1.62", s)
 
-    s.meta["P041_record_kngiti_arm"] = True
+    s.meta["kngiti_recipe"] = True
     s = apply_rule("1.1.5", s)
 
     s = apply_rule("7.3.86", s)

@@ -1,7 +1,7 @@
 """
 5.2.94  तदस्यास्त्यर्थे मतुप्  —  VIDHI (narrow)
 
-Glass-box: when a recipe arms ``state.meta["5_2_94_matup_arm"]`` and the tape is
+Glass-box: when a recipe arms ``state.meta["matup_recipe"]`` and the tape is
 ``[prātipadika, internal sup]`` (second ``Term`` tagged ``sup``), append the
 *matup* *upadeśa* ``matu~p`` (``u`` with *anunāsika* for **1.3.2**) as a
 *taddhita* ``Term``.
@@ -16,7 +16,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("5_2_94_matup_arm"):
+    if not state.meta.get("matup_recipe"):
         return False
     if len(state.terms) != 2:
         return False
@@ -28,7 +28,7 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if not state.meta.get("5_2_94_matup_arm"):
+    if not state.meta.get("matup_recipe"):
         return state
     if len(state.terms) != 2 or "sup" not in state.terms[1].tags:
         return state
@@ -41,7 +41,7 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "matu~p"},
     )
     state.terms.append(pr)
-    state.meta["5_2_94_matup_arm"] = False
+    state.meta["matup_recipe"] = False
     state.meta["5_2_94_matup_done"] = True
     return state
 

@@ -61,7 +61,7 @@ def derive_vivakSakaH_san_Nvul_P030() -> State:
     s = apply_rule("1.1.45", s)
     s = apply_rule("6.1.108", s)
 
-    s.meta["6_1_1_dvitva_arm"] = True
+    s.meta["dvitva_recipe"] = True
     s = apply_rule("6.1.1", s)
     s = apply_rule("6.1.4", s)
 

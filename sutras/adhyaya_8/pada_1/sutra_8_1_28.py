@@ -11,7 +11,7 @@ in the JSON narrative when no other **tiṅ** *pada* precedes; *śruti* stamp on
 stamp ``meta['prakriya_27_gaccha_base_anudAtta_note']`` on ``terms[0]``.
 
 **P044** (``split_prakriyas_11/P044.json``): two ANUVADA stamps under recipe
-``prakriya_P044_paribhasha_note`` — (1) ``P044_8_1_28_tin_context_arm`` for the
+``paribhasha_recipe`` — (1) ``P044_8_1_28_tin_context_arm`` for the
 *tiṅ*–*atiṅ* *nighāta* frame, (2) ``P044_8_1_28_nighata_illustration_arm`` for
 the *odanam pacati* illustration (identity on tape; trace only).
 
@@ -24,7 +24,7 @@ from engine.state import State
 
 
 def _p044_nighata_cond(state: State) -> bool:
-    if not state.meta.get("prakriya_P044_paribhasha_note"):
+    if not state.meta.get("paribhasha_recipe"):
         return False
     if not state.meta.get("P044_8_1_28_nighata_illustration_arm"):
         return False
@@ -32,7 +32,7 @@ def _p044_nighata_cond(state: State) -> bool:
 
 
 def _p044_tin_context_cond(state: State) -> bool:
-    if not state.meta.get("prakriya_P044_paribhasha_note"):
+    if not state.meta.get("paribhasha_recipe"):
         return False
     if not state.meta.get("P044_8_1_28_tin_context_arm"):
         return False

@@ -83,13 +83,13 @@ def derive_pratyagni() -> State:
 
     # 2.1.5 avyayībhāva adhikāra + 2.1.13 specific prati-abhimukhya samāsa mark
     s = apply_rule("2.1.5", s)
-    s.meta["2_1_13_prati_abhimukhya_arm"] = True
+    s.meta["prati_abhimukhya_recipe"] = True
     s = apply_rule("2.1.13", s)
 
     # 1.2.46 prātipadika-saṃjñā + 2.4.71 internal sup-luk (ghost)
     s = apply_rule("1.2.46", s)
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
 
     # 1.2.43 upasarjana on the avyaya; 2.2.30 move it to front
@@ -117,12 +117,12 @@ def derive_adhistri() -> State:
     s = State(terms=[strI, ni, adhi], meta={}, trace=[])
 
     s = apply_rule("2.1.5", s)
-    s.meta["2_1_6_avyayibhava_arm"] = True
+    s.meta["avyayibhava_recipe"] = True
     s = apply_rule("2.1.6", s)
 
     s = apply_rule("1.2.46", s)
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
 
     s = apply_rule("1.2.43", s)

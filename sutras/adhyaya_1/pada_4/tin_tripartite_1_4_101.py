@@ -31,7 +31,7 @@ TIN_101_TRIPARTITE: Final[Tuple[str, str, str]] = (
 TIN_101_ALL_TRIPARTITE_TAGS: Final[frozenset[str]] = frozenset(TIN_101_TRIPARTITE)
 
 
-def _normalise_tin_adesha_slp1(s: str) -> str:
+def _normalise_tin_adesha_form(s: str) -> str:
     t = s.strip()
     if t in TIN_ADESHA_SET:
         return t
@@ -42,7 +42,7 @@ def _normalise_tin_adesha_slp1(s: str) -> str:
 
 def tripartite_101_tag_for_tin_adesha(s: str) -> str | None:
     """Return the *tiṅ* *tripartite* *tag* for a normalised *ādeśa* *upadeśa* string, or *None*."""
-    key = _normalise_tin_adesha_slp1(s)
+    key = _normalise_tin_adesha_form(s)
     if key not in TIN_ADESHA_SET:
         return None
     i = TIN_ADESHA_18.index(key)

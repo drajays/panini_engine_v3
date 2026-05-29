@@ -41,7 +41,7 @@ def derive_cicIzati() -> State:
     s = apply_rule("1.1.5", s)
     s = apply_rule("3.1.32", s)
 
-    s.meta["6_1_1_dvitva_arm"] = True
+    s.meta["dvitva_recipe"] = True
     s = apply_rule("6.1.1", s)
     s = apply_rule("6.1.4", s)
     s.meta["6_4_16_sani_dirgha_arm"] = True

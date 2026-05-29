@@ -55,7 +55,7 @@ def derive_kirati_karati_split_prakriyas_P009() -> State:
 
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "tip"
+    s.meta["tin_adesha_form"] = "tip"
     s = apply_rule("3.4.78", s)
 
     # tudādi vikaraṇa Sa — cond checks gana==6 + no existing Śa.

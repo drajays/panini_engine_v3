@@ -6,13 +6,13 @@ is *anudātta* (sentence-level accent sandhi; cross-check: ashtadhyayi-com
 ``data.txt`` / local ``sutrANi.tsv``).
 
 Narrow v3:
-  • ``prakriya_17`` — **Phit** / **6.1.158** closure (``prakriya_17_6_1_158_arm``).
-  • ``prakriya_18`` — *sāmanyaḥ* accent note (``prakriya_18_6_1_158_arm``).
-  • ``prakriya_20`` — *devam* *kṛdanta* accent note (``prakriya_20_devam_6_1_158_arm``).
-  • ``prakriya_26`` — *indra* *sambuddhi* accent note (``prakriya_26_6_1_158_arm``).
-  • ``prakriya_28`` — **मेघातिथे मन्महे** accent note (``prakriya_28_6_1_158_arm``).
-  • ``prakriya_29`` — **गौरावस्कन्दिन्** accent note (``prakriya_29_6_1_158_arm``).
-  • ``prakriya_32`` — tri-vocative accent note (``prakriya_32_6_1_158_arm``).
+  • ``prakriya_17`` — **Phit** / **6.1.158** closure (``phit_6_1_158_recipe``).
+  • ``prakriya_18`` — *sāmanyaḥ* accent note (``sama_6_1_158_recipe``).
+  • ``prakriya_20`` — *devam* *kṛdanta* accent note (``devam_6_1_158_recipe``).
+  • ``prakriya_26`` — *indra* *sambuddhi* accent note (``indra_6_1_158_recipe``).
+  • ``prakriya_28`` — **मेघातिथे मन्महे** accent note (``megha_6_1_158_recipe``).
+  • ``prakriya_29`` — **गौरावस्कन्दिन्** accent note (``gaura_6_1_158_recipe``).
+  • ``prakriya_32`` — tri-vocative accent note (``trivoc_6_1_158_recipe``).
   • Trace-only (no *svara* columns on the flat tape).
 """
 from __future__ import annotations
@@ -23,21 +23,21 @@ from engine.state import State
 
 def cond(state: State) -> bool:
     return bool(
-        state.meta.get("prakriya_17_6_1_158_arm")
-        or state.meta.get("prakriya_18_6_1_158_arm")
-        or state.meta.get("prakriya_20_devam_6_1_158_arm")
-        or state.meta.get("prakriya_26_6_1_158_arm")
-        or state.meta.get("prakriya_28_6_1_158_arm")
-        or state.meta.get("prakriya_29_6_1_158_arm")
-        or state.meta.get("prakriya_32_6_1_158_arm")
+        state.meta.get("phit_6_1_158_recipe")
+        or state.meta.get("sama_6_1_158_recipe")
+        or state.meta.get("devam_6_1_158_recipe")
+        or state.meta.get("indra_6_1_158_recipe")
+        or state.meta.get("megha_6_1_158_recipe")
+        or state.meta.get("gaura_6_1_158_recipe")
+        or state.meta.get("trivoc_6_1_158_recipe")
     )
 
 
 def act(state: State) -> State:
-    state.meta.pop("prakriya_26_6_1_158_arm", None)
-    state.meta.pop("prakriya_28_6_1_158_arm", None)
-    state.meta.pop("prakriya_29_6_1_158_arm", None)
-    state.meta.pop("prakriya_32_6_1_158_arm", None)
+    state.meta.pop("indra_6_1_158_recipe", None)
+    state.meta.pop("megha_6_1_158_recipe", None)
+    state.meta.pop("gaura_6_1_158_recipe", None)
+    state.meta.pop("trivoc_6_1_158_recipe", None)
     return state
 
 

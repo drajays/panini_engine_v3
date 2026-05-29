@@ -50,10 +50,10 @@ def derive_prakftya_lyap_split_prakriyas_P017() -> State:
     s = State(terms=[_upasarga("pra"), _dhatu_kf()], meta={}, trace=[])
     s.meta["prakriya_P017_prakftya_split_prakriyas_11"] = True
 
-    s.meta["3_4_21_ktvA_arm"] = True
+    s.meta["ktvA_recipe"] = True
     s = apply_rule("3.4.21", s)
 
-    s.meta["7_1_37_lyap_arm"] = True
+    s.meta["lyap_recipe"] = True
     s = apply_rule("7.1.37", s)
 
     s = apply_rule("1.3.8", s)

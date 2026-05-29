@@ -42,7 +42,7 @@ def derive_rurudizati() -> State:
     s = apply_rule("3.1.32", s)
 
     # dvitva + abhyāsa trim
-    s.meta["6_1_1_dvitva_arm"] = True
+    s.meta["dvitva_recipe"] = True
     s = apply_rule("6.1.1", s)
     s = apply_rule("6.1.4", s)
     s = apply_rule("7.4.60", s)

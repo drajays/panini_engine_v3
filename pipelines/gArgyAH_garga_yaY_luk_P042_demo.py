@@ -73,10 +73,10 @@ def derive_gArgyAH_garga_yaY_luk_P042() -> State:
     s.meta["vibhakti_vacana"] = "1-3"
     s = apply_rule("4.1.2", s)
 
-    s.meta["P042_4_1_162_arm"] = True
+    s.meta["eka_des_recipe"] = True
     s = apply_rule("4.1.162", s)
 
-    s.meta["P042_2_4_64_arm"] = True
+    s.meta["samhitA_64_recipe"] = True
     s = apply_rule("2.4.64", s)
 
     s = apply_rule("1.1.60", s)

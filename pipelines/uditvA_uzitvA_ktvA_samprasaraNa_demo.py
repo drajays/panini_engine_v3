@@ -82,7 +82,7 @@ def derive_uzitvA() -> State:
     s = State(terms=[dhatu, _ktvA_with_sup(), _sup_su()], meta={}, trace=[])
     s = _samprasaran_v_to_u_on_first_term(s)
     s = apply_rule("6.1.108", s)
-    s.meta["8_3_60_shasi_vasi_ghasi_arm"] = True
+    s.meta["shasi_vasi_recipe"] = True
     s = apply_rule("8.3.60", s)
     s = apply_rule("1.1.40", s)
     s = apply_rule("2.4.82", s)

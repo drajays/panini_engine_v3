@@ -57,9 +57,9 @@ def derive_rAjA() -> State:
 
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
-    s.meta["8_2_7_arm"] = True
+    s.meta["n_lopa_recipe"] = True
     s = apply_rule("8.2.7", s)
-    s.meta.pop("8_2_7_arm", None)
+    s.meta.pop("n_lopa_recipe", None)
     return s
 
 

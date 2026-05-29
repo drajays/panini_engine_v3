@@ -7,7 +7,7 @@
 The user ``prakriya_26`` narrative (Vedic *āhvāna* after *subrahmaṇyā*) records an
 *udātta* lift on the syllable that had received *svarita* from **8.4.66** in the
 pedagogical sequence.  This engine slice only registers that audit closure when
-``state.meta['prakriya_26_1_2_37_arm']`` is True and **8.4.66** has already marked
+``state.meta['indra_1_2_37_recipe']`` is True and **8.4.66** has already marked
 ``samjna_registry['prakriya_26_svarita_locus']``.
 
 No flat-tape mutation (CONSTITUTION Art. 2).
@@ -19,7 +19,7 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("prakriya_26_1_2_37_arm"):
+    if not state.meta.get("indra_1_2_37_recipe"):
         return False
     if not state.samjna_registry.get("prakriya_26_svarita_locus"):
         return False
@@ -32,7 +32,7 @@ def act(state: State) -> State:
     if not cond(state):
         return state
     state.meta["prakriya_26_subrahmaNyAhvAna_closure"] = True
-    state.meta.pop("prakriya_26_1_2_37_arm", None)
+    state.meta.pop("indra_1_2_37_recipe", None)
     return state
 
 

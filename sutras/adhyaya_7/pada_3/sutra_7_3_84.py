@@ -9,7 +9,7 @@ or ``ardhadhatuka`` / ``sarvadhatuka`` tags — as with *kṛt* **tfc**), replac
 Covers **kṛdanta** ``[dhātu, kṛt]`` and **tin**anta ``[dhātu, śap, tiṅ]`` (trigger
 on *Sap* / *tip* *upadeśa*), not only ``terms[-1]`` *kṛt*.
 
-Narrow **P040** (*juhoti*): when ``state.meta['P040_7_3_84_arm']``, *guṇa* targets the
+Narrow **P040** (*juhoti*): when ``state.meta['juhoti_guna_recipe']``, *guṇa* targets the
 **non-*abhyāsa*** *hu* *dhātu* before ``ti`` (not ``_first_dhatu_index``, which would
 hit the *abhyāsa* copy).
 
@@ -62,7 +62,7 @@ def _last_ik_index(d0) -> int | None:
 
 def _p040_non_abhyasa_hu_dhatu_index(state: State) -> int | None:
     """**P040** *juhoti*: *guṇa* on the second *hu* (non-*abhyāsa*), not the first."""
-    if not state.meta.get("P040_7_3_84_arm"):
+    if not state.meta.get("juhoti_guna_recipe"):
         return None
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags or "abhyasa" in t.tags:
@@ -106,7 +106,7 @@ def _p040_eligible(state: State) -> bool:
 
 def _liT_strong_eligible(state: State) -> bool:
     """liṭ strong arm: guṇa of IK-upadha root (e.g. cit→cet) when 7.2.116 left it unchanged."""
-    if not state.meta.get("7_3_84_liT_strong_arm"):
+    if not state.meta.get("liT_strong_recipe"):
         return False
     # Find the NON-abhyāsa dhātu term
     d0 = None
@@ -130,9 +130,9 @@ def cond(state: State) -> bool:
         return False
     if ik_guna_vriddhi_blocked_by_1_1_5(state):
         return False
-    if state.meta.get("P040_7_3_84_arm"):
+    if state.meta.get("juhoti_guna_recipe"):
         return _p040_eligible(state)
-    if state.meta.get("7_3_84_liT_strong_arm"):
+    if state.meta.get("liT_strong_recipe"):
         return _liT_strong_eligible(state)
     di = _first_dhatu_index(state)
     if di is None:
@@ -165,16 +165,16 @@ def _apply_guna_to_dhatu(d0) -> None:
 
 
 def act(state: State) -> State:
-    if state.meta.get("7_3_84_liT_strong_arm") and _liT_strong_eligible(state):
+    if state.meta.get("liT_strong_recipe") and _liT_strong_eligible(state):
         d0 = next(t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags)
         _apply_guna_to_dhatu(d0)
         return state
-    if state.meta.get("P040_7_3_84_arm") and _p040_eligible(state):
+    if state.meta.get("juhoti_guna_recipe") and _p040_eligible(state):
         di = _p040_non_abhyasa_hu_dhatu_index(state)
         assert di is not None
         d0 = state.terms[di]
         _apply_guna_to_dhatu(d0)
-        state.meta.pop("P040_7_3_84_arm", None)
+        state.meta.pop("juhoti_guna_recipe", None)
         return state
     di = _first_dhatu_index(state)
     assert di is not None

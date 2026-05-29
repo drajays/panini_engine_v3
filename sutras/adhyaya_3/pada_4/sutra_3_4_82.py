@@ -8,14 +8,14 @@ Teaching JSON **P036** (*nināya*): in liṭ, for parasmaipada 3rd singular, rep
 ``tip``/``ti`` (after **3.4.78**) with ``ṇal`` (machine ``Nal``).
 
 General liṭ-parasmaipada ādeśa arm:
-  ``state.meta['3_4_82_arm']`` is True AND
-  ``state.meta['3_4_82_lit_adesha_slp1']`` is set — finds the rightmost
+  ``state.meta['liT_82_recipe']`` is True AND
+  ``state.meta['liT_82_adesha_form']`` is set — finds the rightmost
   pratyaya term and replaces its varṇas with the given ādeśa.
 
 Engine:
-  • *atus*: ``state.meta['3_4_82_lit_atus_arm']`` + ``tas`` from **3.4.78**.
-  • **P036**: ``state.meta['P036_3_4_82_lit_Nal_arm']`` + ``tip``/``ti`` *tiṅ* row.
-  • **General liṭ**: ``state.meta['3_4_82_arm']`` + ``state.meta['3_4_82_lit_adesha_slp1']``.
+  • *atus*: ``state.meta['liT_atus_recipe']`` + ``tas`` from **3.4.78**.
+  • **P036**: ``state.meta['liT_Nal_recipe']`` + ``tip``/``ti`` *tiṅ* row.
+  • **General liṭ**: ``state.meta['liT_82_recipe']`` + ``state.meta['liT_82_adesha_form']``.
 """
 from __future__ import annotations
 
@@ -36,7 +36,7 @@ def _find_tas(state: State) -> int | None:
 
 
 def _find_lit_tip(state: State) -> int | None:
-    if not state.meta.get("P036_3_4_82_lit_Nal_arm"):
+    if not state.meta.get("liT_Nal_recipe"):
         return None
     if not state.meta.get("lakara_liT"):
         return None
@@ -65,11 +65,11 @@ def cond(state: State) -> bool:
     if not state.meta.get("lakara_liT"):
         return False
     # General liṭ arm
-    if state.meta.get("3_4_82_arm") and state.meta.get("3_4_82_lit_adesha_slp1"):
+    if state.meta.get("liT_82_recipe") and state.meta.get("liT_82_adesha_form"):
         return _find_rightmost_pratyaya(state) is not None
-    if state.meta.get("3_4_82_lit_atus_arm"):
+    if state.meta.get("liT_atus_recipe"):
         return _find_tas(state) is not None
-    if state.meta.get("P036_3_4_82_lit_Nal_arm"):
+    if state.meta.get("liT_Nal_recipe"):
         return _find_lit_tip(state) is not None
     return False
 
@@ -100,11 +100,11 @@ def _mark_it_candidates(adesha: str, varnas: list) -> None:
 
 def act(state: State) -> State:
     # General liṭ arm — replaces rightmost pratyaya with the given ādeśa
-    if state.meta.get("3_4_82_arm") and state.meta.get("3_4_82_lit_adesha_slp1"):
+    if state.meta.get("liT_82_recipe") and state.meta.get("liT_82_adesha_form"):
         ti = _find_rightmost_pratyaya(state)
         if ti is None:
             return state
-        adesha = state.meta["3_4_82_lit_adesha_slp1"]
+        adesha = state.meta["liT_82_adesha_form"]
         varnas = list(parse_slp1_upadesha_sequence(adesha))
         # Mark cuṭū and halantyam it-candidates for 1.3.7 / 1.3.3 / 1.3.9
         _mark_it_candidates(adesha, varnas)
@@ -115,12 +115,12 @@ def act(state: State) -> State:
             meta={"upadesha_slp1": adesha, "3_4_82_done": True},
         )
         state.terms[ti] = new_term
-        state.meta["3_4_82_arm"] = False
-        state.meta.pop("3_4_82_lit_adesha_slp1", None)
+        state.meta["liT_82_recipe"] = False
+        state.meta.pop("liT_82_adesha_form", None)
         state.samjna_registry["3_4_82_lit_adesha"] = adesha
         return state
 
-    if state.meta.get("P036_3_4_82_lit_Nal_arm"):
+    if state.meta.get("liT_Nal_recipe"):
         ti = _find_lit_tip(state)
         if ti is None:
             return state
@@ -135,7 +135,7 @@ def act(state: State) -> State:
         if nal.varnas and nal.varnas[-1].slp1 == "l":
             nal.varnas[-1].tags.add("it_candidate_halantyam")
         state.terms[ti] = nal
-        state.meta["P036_3_4_82_lit_Nal_arm"] = False
+        state.meta["liT_Nal_recipe"] = False
         return state
 
     ti = _find_tas(state)
@@ -148,7 +148,7 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "atus", "lit_atus": True},
     )
     state.terms[ti] = atus
-    state.meta["3_4_82_lit_atus_arm"] = False
+    state.meta["liT_atus_recipe"] = False
     return state
 
 

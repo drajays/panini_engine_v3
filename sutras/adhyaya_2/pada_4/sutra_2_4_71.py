@@ -16,13 +16,13 @@ Engine (v3, glass-box):
 to **1.2.46** *kṛttaddhitasamāsāś ca* — the *padāntara-sū* are *prātipadika*
 before *sup* is elided from that community):
 
-  • ``state.meta['2_4_71_luk_arm'] == True`` — request *luk*.
+  • ``state.meta['luk_2_4_71_recipe'] == True`` — request *luk*.
   • ``state.meta['pratipadika_avayava_ready'] == True`` — recipe asserts
     *prātipadika* readiness on members.
 
 On success: **zero-width ghost** each internal ``sup`` ``Term`` (clear
 ``varnas``, add ``luk_lopa``; retain ``sup`` / ``pratyaya`` tags); set
-``2_4_71_luk_arm`` to ``False`` and ``2_4_71_luk`` to ``True`` (completion).
+``luk_2_4_71_recipe`` to ``False`` and ``2_4_71_luk`` to ``True`` (completion).
 See ``engine/lopa_ghost.py``.
 
 Mechanical blindness:
@@ -36,7 +36,7 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("2_4_71_luk_arm"):
+    if not state.meta.get("luk_2_4_71_recipe"):
         return False
     if not state.meta.get("pratipadika_avayava_ready"):
         return False
@@ -51,7 +51,7 @@ def act(state: State) -> State:
         t = state.terms[i]
         t.varnas.clear()
         t.tags.add(LUK_LOPA_GHOST_TAG)
-    state.meta["2_4_71_luk_arm"] = False
+    state.meta["luk_2_4_71_recipe"] = False
     state.meta["2_4_71_luk"] = True
     return state
 

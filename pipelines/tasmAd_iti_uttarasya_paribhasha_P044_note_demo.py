@@ -38,8 +38,8 @@ def derive_tasmAd_iti_uttarasya_paribhasha_P044_note() -> State:
         ),
     ]
     s = State(terms=terms, meta={}, trace=[])
-    s.meta["prakriya_P044_paribhasha_note"] = True
-    s.meta["prakriya_P044_paribhasha_note_only"] = True
+    s.meta["paribhasha_recipe"] = True
+    s.meta["paribhasha_recipe_only"] = True
 
     s = apply_rule("1.1.68", s)
     s = apply_rule("1.1.67", s)
@@ -47,7 +47,7 @@ def derive_tasmAd_iti_uttarasya_paribhasha_P044_note() -> State:
     s.meta["P044_8_1_28_tin_context_arm"] = True
     s = apply_rule("8.1.28", s)
 
-    s.meta["P044_1_1_67_atina_arm"] = True
+    s.meta["atina_recipe"] = True
     s = apply_rule("1.1.67", s)
 
     s.meta["P044_8_1_28_nighata_illustration_arm"] = True
@@ -55,7 +55,7 @@ def derive_tasmAd_iti_uttarasya_paribhasha_P044_note() -> State:
 
     s = apply_rule("1.1.66", s)
 
-    s.meta["P044_1_1_67_siddhi_arm"] = True
+    s.meta["siddhi_recipe"] = True
     s = apply_rule("1.1.67", s)
     return s
 

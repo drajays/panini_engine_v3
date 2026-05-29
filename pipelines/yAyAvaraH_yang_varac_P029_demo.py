@@ -59,7 +59,7 @@ def derive_yAyAvaraH_yang_varac_P029() -> State:
     s = apply_rule("7.4.83", s)
     s = apply_rule("7.4.60", s)
 
-    s.meta["P029_3_2_176_varac_arm"] = True
+    s.meta["varac_recipe"] = True
     s = apply_rule("3.2.176", s)
 
     for t in s.terms:

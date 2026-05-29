@@ -17,11 +17,11 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    return bool(state.meta.get("prakriya_25_6_1_152_arm"))
+    return bool(state.meta.get("sandhi_6_1_152_recipe"))
 
 
 def act(state: State) -> State:
-    state.meta.pop("prakriya_25_6_1_152_arm", None)
+    state.meta.pop("sandhi_6_1_152_recipe", None)
     return state
 
 

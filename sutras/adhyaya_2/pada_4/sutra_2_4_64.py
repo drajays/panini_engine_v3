@@ -15,7 +15,7 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("P042_2_4_64_arm"):
+    if not state.meta.get("samhitA_64_recipe"):
         return False
     if len(state.terms) < 2:
         return False
@@ -33,7 +33,7 @@ def act(state: State) -> State:
     if not cond(state):
         return state
     state.samjna_registry["2.4.64_P042_yanna_luk_audit"] = True
-    state.meta.pop("P042_2_4_64_arm", None)
+    state.meta.pop("samhitA_64_recipe", None)
     return state
 
 

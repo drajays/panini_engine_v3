@@ -11,7 +11,7 @@ Result: sakh+[i] → sakh+[a,n] = sakhan
 Then 6.4.8 dīrgha: sakhān
 Then 6.1.68 apṛkta s-lopa, then 8.2.7 n-lopa: sakhā
 
-Engine: arm ``7_1_93_arm`` + finds sakhi-type stem (prātipadika ending in 'i'
+Engine: arm ``anaN_recipe`` + finds sakhi-type stem (prātipadika ending in 'i'
 tagged sakhi_ikarant) and replaces final 'i' with [a,n] (anang after ṅ-lopa).
 """
 from __future__ import annotations
@@ -38,7 +38,7 @@ def _find_sakhi_stem(state: State) -> int | None:
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    if not state.meta.get("7_1_93_arm"):
+    if not state.meta.get("anaN_recipe"):
         return False
     return _find_sakhi_stem(state) is not None
 
@@ -55,7 +55,7 @@ def act(state: State) -> State:
     t.meta["7_1_93_done"] = True
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
-    state.meta.pop("7_1_93_arm", None)
+    state.meta.pop("anaN_recipe", None)
     return state
 
 

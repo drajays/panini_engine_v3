@@ -40,7 +40,7 @@ def derive_BitzIzwa() -> State:
     # tin ādeśa: choose ātmanepada 3sg `ta` without reading paradigm coords in cond().
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "ta"
+    s.meta["tin_adesha_form"] = "ta"
     s = apply_rule("3.4.78", s)
 
     # sīyut + suṭ augments for this āśīr-liṅ demo.

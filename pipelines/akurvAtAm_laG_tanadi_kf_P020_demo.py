@@ -48,7 +48,7 @@ def derive_akurvAtAm_laG_tanadi_kf_P020() -> State:
     # tiṅ ādeśa: AtAm (3rd dual ātmanepada)
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "AtAm"
+    s.meta["tin_adesha_form"] = "AtAm"
     s = apply_rule("3.4.78", s)
 
     # tanādi u-vikaraṇa

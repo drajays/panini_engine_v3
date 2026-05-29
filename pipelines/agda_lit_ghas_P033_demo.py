@@ -59,7 +59,7 @@ def derive_agda_lit_ghas_P033() -> State:
 
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "ta"
+    s.meta["tin_adesha_form"] = "ta"
     s = apply_rule("3.4.78", s)
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
         s = apply_rule(sid, s)
@@ -71,7 +71,7 @@ def derive_agda_lit_ghas_P033() -> State:
 
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
-    s.meta["P033_8_2_26_jhalo_jhali_arm"] = True
+    s.meta["jhalo_jhali_recipe"] = True
     s = apply_rule("8.2.26", s)
     s.meta["P033_8_2_40_G_to_d_arm"] = True
     s = apply_rule("8.2.40", s)

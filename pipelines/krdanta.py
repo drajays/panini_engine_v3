@@ -629,7 +629,7 @@ def _derive_kta_manual_it_chain(dhatu_upadesha: str) -> State:
     s = apply_rule("1.3.1", s)
     s = P00_ciY_kartari_krt_nistha_adhikara_prefix(s)
     s.meta["3_2_102_target_upadesha_slp1"] = dhatu_upadesha
-    s.meta["3_2_102_kta_arm"] = True
+    s.meta["kta_recipe"] = True
     s = apply_rule("3.2.102", s)
     s = P00_lashakvataddhite_it_lopa_chain(s)
     s = P00_krt_ardhadhatuka_ekac_it_and_guna_audit(s)
@@ -650,7 +650,7 @@ def derive_bhinnaH() -> State:
     s = P00_anunasikadi_bhuvadi_dhatu_it_chain(s)
     s = P00_ciY_kartari_krt_nistha_adhikara_prefix(s)
     s.meta["3_2_102_target_upadesha_slp1"] = "Bidi~"
-    s.meta["3_2_102_kta_arm"] = True
+    s.meta["kta_recipe"] = True
     s = apply_rule("3.2.102", s)
     s = P00_lashakvataddhite_it_lopa_chain(s)
     s = P00_krt_ardhadhatuka_ekac_it_and_guna_audit(s)

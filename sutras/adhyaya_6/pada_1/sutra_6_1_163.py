@@ -5,7 +5,7 @@
 *antodātta* on the *pada* (accent *śāstra*; v3 has no *svara* tape).
 
 Narrow v3 (``prakriya_20`` *devam*):
-  • ``state.meta['prakriya_20_6_1_163_arm']`` — trace-only *anuvāda*.
+  • ``state.meta['devam_6_1_163_recipe']`` — trace-only *anuvāda*.
 """
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    return bool(state.meta.get("prakriya_20_6_1_163_arm"))
+    return bool(state.meta.get("devam_6_1_163_recipe"))
 
 
 def act(state: State) -> State:

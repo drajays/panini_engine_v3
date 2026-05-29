@@ -6,7 +6,7 @@ Narrow demo (संगसीष्ट / ``saGgasIzwa``):
   mark the neighbouring *dhātu* ``gam`` Term with ``ātmanepada_licensed_1_3_29``.
 
 Engine:
-  - recipe arms via ``state.meta['1_3_29_samo_gamyricchiblAm_arm']``.
+  - recipe arms via ``state.meta['samo_recipe']``.
   - requires contiguous ``[ Term tagged upasarga with surface ``sam`` ][ dhātu with
     ``upadesha_slp1=='gam'`` ]``.
 """
@@ -17,7 +17,7 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("1_3_29_samo_gamyricchiblAm_arm"):
+    if not state.meta.get("samo_recipe"):
         return False
     for i in range(len(state.terms) - 1):
         u, dh = state.terms[i], state.terms[i + 1]
@@ -48,7 +48,7 @@ def act(state: State) -> State:
             dh.tags.add("ātmanepada_licensed_1_3_29")
             dh.meta["1_3_29_done"] = True
             state.samjna_registry["1.3.29_samo_gam_tag"] = True
-            state.meta["1_3_29_samo_gamyricchiblAm_arm"] = False
+            state.meta["samo_recipe"] = False
             break
     return state
 

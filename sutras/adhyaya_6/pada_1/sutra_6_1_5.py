@@ -25,7 +25,7 @@ def cond(state: State) -> bool:
     if any("abhyasa" in t.tags for t in state.terms):
         return True
     # Legacy arm path (backward-compat)
-    return bool(state.meta.get("6_1_5_arm"))
+    return bool(state.meta.get("sandhi_6_1_5_recipe"))
 
 
 def act(state: State) -> State:

@@ -42,7 +42,7 @@ def cond(state: State) -> bool:
     if _needs_sanadi_dvitva(state):
         return True
     # Allow an explicit dvitva action even if adhikāra is already open.
-    if state.meta.get("6_1_1_dvitva_arm") and not state.samjna_registry.get("6.1.1_dvitva_done"):
+    if state.meta.get("dvitva_recipe") and not state.samjna_registry.get("6.1.1_dvitva_done"):
         return True
     return not any(e.get("id") == "6.1.1" for e in state.adhikara_stack)
 
@@ -71,7 +71,7 @@ def act(state: State) -> State:
             return state
     # Structural sanādi dvitva OR arm-gated dvitva: duplicate first dhātu as abhyāsa.
     if (_needs_sanadi_dvitva(state) or
-            (state.meta.get("6_1_1_dvitva_arm") and not state.samjna_registry.get("6.1.1_dvitva_done"))):
+            (state.meta.get("dvitva_recipe") and not state.samjna_registry.get("6.1.1_dvitva_done"))):
         for i, t in enumerate(state.terms):
             if "dhatu" not in t.tags:
                 continue

@@ -246,7 +246,7 @@ def P00_yang_dvitva_abhyasa_gate(s: State) -> State:
     """**6.1.1** → **6.1.9** → second **6.1.1** (*dvitva*) → **6.1.4** (*pūrvaḥ abhyāsaḥ*)."""
     s = apply_rule("6.1.1", s)
     s = apply_rule("6.1.9", s)
-    s.meta["6_1_1_dvitva_arm"] = True
+    s.meta["dvitva_recipe"] = True
     s = apply_rule("6.1.1", s)
     s = apply_rule("6.1.4", s)
     return s
@@ -266,7 +266,7 @@ def P00_yang_ac_three_term_frame(s: State) -> State:
 
 def P00_yang_luk_2_4_74_and_1_1_4(s: State) -> State:
     """Arm **2.4.74** (*yaṅ*-*luk* before *aC*) and register **1.1.4**."""
-    s.meta["2_4_74_yang_luk_arm"] = True
+    s.meta["yang_luk_recipe"] = True
     s = apply_rule("2.4.74", s)
     s = apply_rule("1.1.4", s)
     return s
@@ -354,7 +354,7 @@ def P00_ktavatu_kartari_nistha_opening(
     s = dhatu_bootstrap(s)
     s = P00_dhatu_kartari_krt_nistha_adhikara_prefix(s)
     s.meta["3_2_102_target_upadesha_slp1"] = target_upadesha_slp1
-    s.meta["3_2_102_ktavatu_arm"] = True
+    s.meta["ktavatu_recipe"] = True
     s = apply_rule("3.2.102", s)
     s = P00_lashakvataddhite_anunasikanta_it_lopa_chain(s)
     s = P00_krt_ardhadhatuka_ekac_it_and_guna_audit(s)
@@ -464,7 +464,7 @@ def P00_taddhita_internal_Ni_luk_1_2_46_2_4_71(s: State) -> State:
     s.meta[META_TADDHITA_AVAYAVA] = True
     s = apply_rule("1.2.46", s)
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
     return s
 
@@ -487,13 +487,13 @@ def P00_taddhita_pratipadika_internal_sup_luk_then_anga_vidhi(s: State) -> State
 
       **1.2.46** → **2.4.71** *luk* → **1.1.62** → **1.4.13**
 
-    Caller must arm ``pratipadika_avayava_ready`` / ``2_4_71_luk_arm`` inputs
+    Caller must arm ``pratipadika_avayava_ready`` / ``luk_2_4_71_recipe`` inputs
     via **1.2.46** / this helper (this routine sets them immediately before
     **2.4.71**).
     """
     s = apply_rule("1.2.46", s)
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
     s = apply_rule("1.1.62", s)
     s = apply_rule("1.4.13", s)
@@ -598,10 +598,10 @@ def P00_luN_lakara_cli_sic(s: State) -> State:
     Canonicalizes:
       3.2.110 → 3.4.69 → (3.1.43 → 3.1.44) → P00_it_halantyam_lopa_yathasankhyam
     """
-    s.meta["3_2_110_luG_arm"] = True
+    s.meta["luG_recipe"] = True
     s = apply_rule("3.2.110", s)
     s = apply_rule("3.4.69", s)
-    s.meta["3_1_43_cli_luG_arm"] = True
+    s.meta["cli_luG_recipe"] = True
     s = apply_rule("3.1.43", s)
     s = apply_rule("3.1.44", s)
     s = P00_it_halantyam_lopa_yathasankhyam(s)
@@ -625,7 +625,7 @@ def P00_tip_to_t_aprkta(s: State) -> State:
     """
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "tip"
+    s.meta["tin_adesha_form"] = "tip"
     s = apply_rule("3.4.78", s)
     s = apply_rule("1.4.99", s)
     s = apply_rule("1.3.3", s)
@@ -639,7 +639,7 @@ def P00_tip_to_ti(s: State) -> State:
     """Canonical tiṅ selection for 3sg parasmaipada: 3.4.77 → 3.4.78(tip) → 1.4.99 → it-lopa (p) ⇒ ti."""
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "tip"
+    s.meta["tin_adesha_form"] = "tip"
     s = apply_rule("3.4.78", s)
     s = apply_rule("1.4.99", s)
     s = apply_rule("1.3.3", s)
@@ -650,19 +650,19 @@ def P00_tip_to_ti(s: State) -> State:
 def P00_lit_tip_to_Nal(s: State) -> State:
     """
     *Liṭ* 3sg *parasmaipada* **tip** row (same block as ``P00_tip_to_ti``), then
-    **3.4.82** *lit* **tip** → **ṇal** (``Nal``) when ``P036_3_4_82_lit_Nal_arm`` is set.
+    **3.4.82** *lit* **tip** → **ṇal** (``Nal``) when ``liT_Nal_recipe`` is set.
 
     Caller must set ``1_4_22_affix_class`` to ``\"eka\"`` on the primary *dhātu*
     ``Term`` before **3.4.77** (cf. ``P00_tip_to_ti``).
     """
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "tip"
+    s.meta["tin_adesha_form"] = "tip"
     s = apply_rule("3.4.78", s)
     s = apply_rule("1.4.99", s)
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
-    s.meta["P036_3_4_82_lit_Nal_arm"] = True
+    s.meta["liT_Nal_recipe"] = True
     s = apply_rule("3.4.82", s)
     return s
 
@@ -676,7 +676,7 @@ def P00_tin_tas_adesh_full(s: State) -> State:
     """
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "tas"
+    s.meta["tin_adesha_form"] = "tas"
     s = apply_rule("3.4.78", s)
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
         s = apply_rule(sid, s)
@@ -697,7 +697,7 @@ def P00_laG_tin_tas_tAm_adesh_block(s: State) -> State:
     """
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "tas"
+    s.meta["tin_adesha_form"] = "tas"
     s = apply_rule("3.4.78", s)
     s = apply_rule("3.4.101", s)
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
@@ -738,7 +738,7 @@ def P00_tin_jhi_adesh_full(s: State) -> State:
     """
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "jhi"
+    s.meta["tin_adesha_form"] = "jhi"
     s = apply_rule("3.4.78", s)
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
         s = apply_rule(sid, s)
@@ -808,9 +808,9 @@ def P00_ciY_lat_tas_snu_tripadi_tail(s: State) -> State:
       ``P00_anga_guna_audit_1_4_13_1_1_5_7_3_84`` → **1.4.14** → *pada* merge →
       ``P00_tripadi_rutva_visarga`` (*cinutaḥ*).
     """
-    s.meta["3_1_73_snu_arm"] = True
+    s.meta["snu_recipe"] = True
     s = apply_rule("3.1.73", s)
-    s.meta.pop("3_1_73_snu_arm", None)
+    s.meta.pop("snu_recipe", None)
     s = P00_lashakvataddhite_it_lopa_chain(s)
     s = apply_rule("3.4.113", s)
     s = P00_anga_guna_audit_1_4_13_1_1_5_7_3_84(s)
@@ -834,9 +834,9 @@ def P00_ciY_lat_jhi_snu_tripadi_tail(s: State) -> State:
     *Śāstra note:* **6.4.77** / **6.4.87** (*śnu* + *aca* + *sārvadhātuke*) are not
     split here; the recipe arms only the **6.1.77** *yaṇ* outcome (*cinvanti*).
     """
-    s.meta["3_1_73_snu_arm"] = True
+    s.meta["snu_recipe"] = True
     s = apply_rule("3.1.73", s)
-    s.meta.pop("3_1_73_snu_arm", None)
+    s.meta.pop("snu_recipe", None)
     s = P00_lashakvataddhite_it_lopa_chain(s)
     s = apply_rule("7.1.3", s)
     s = apply_rule("3.4.113", s)
@@ -957,7 +957,7 @@ def P02_pratipadika_1_2_46_taddhita_anga(s: State) -> State:
     """*kṛt-tad-dhita* prātipadika on taddhita-anta (1.2.46) + *luk* *arm*."""
     s = apply_rule("1.2.46", s)
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     return s
 
 

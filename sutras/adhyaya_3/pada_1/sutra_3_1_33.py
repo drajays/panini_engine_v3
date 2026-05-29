@@ -5,8 +5,8 @@ Glass-box paths:
   • ``3_1_33_lrt_sy_arm``: lṛṭ — insert *sya* vikaraṇa (s+y+a) after the
     dhātu, before the tiṅ ādeśa.  The final 'a' is the inherent vowel of 'ya'
     and is essential for 7.3.101 (ato dīrgho yañi) in uttama forms.
-  • ``3_1_33_tasi_lut_arm``: luṭ — insert *tāsi* vikaraṇa before luṭ placeholder.
-  • ``corrected_v2_P019_3_1_33_sy_arm``: luṅ P019 — insert *sy* (no 'a') before
+  • ``tasi_luT_recipe``: luṭ — insert *tāsi* vikaraṇa before luṭ placeholder.
+  • ``luN_sy_recipe``: luṅ P019 — insert *sy* (no 'a') before
     existing 'ti' in the *vṛt* context.
 
 ``cond`` is mechanically blind to *puruṣa* / *vacana* (CONSTITUTION Art. 2).
@@ -41,7 +41,7 @@ def _lrng_ṛ_sy_insert_index(state: State) -> int | None:
 
 
 def _p019_sy_insert_index(state: State) -> int | None:
-    if not state.meta.get("corrected_v2_P019_3_1_33_sy_arm"):
+    if not state.meta.get("luN_sy_recipe"):
         return None
     return _lrng_ṛ_sy_insert_index(state)
 
@@ -82,7 +82,7 @@ def cond(state: State) -> bool:
     if _lrng_ṛ_sy_insert_index(state) is not None:
         return True
     if (
-        not state.meta.get("corrected_v2_P019_3_1_33_sy_done")
+        not state.meta.get("luN_sy_done")
         and _p019_sy_insert_index(state) is not None
     ):
         return True
@@ -90,7 +90,7 @@ def cond(state: State) -> bool:
         return True
     if _lRG_dhatu_index(state) is not None:
         return True
-    if not state.meta.get("3_1_33_tasi_lut_arm"):
+    if not state.meta.get("tasi_luT_recipe"):
         return False
     if state.meta.get("3_1_33_tasi_lut_done"):
         return False
@@ -108,8 +108,8 @@ def act(state: State) -> State:
         )
         state.terms.insert(j_ṛ, sy)
         state.meta["lrng_ṛ_sy_done"] = True
-        state.meta.pop("corrected_v2_P019_3_1_33_sy_arm", None)
-        state.meta.pop("corrected_v2_P019_3_1_33_sy_done", None)
+        state.meta.pop("luN_sy_recipe", None)
+        state.meta.pop("luN_sy_done", None)
         return state
     j_sy = _p019_sy_insert_index(state)
     if j_sy is not None:
@@ -120,7 +120,7 @@ def act(state: State) -> State:
             meta={"upadesha_slp1": "sy"},
         )
         state.terms.insert(j_sy, sy)
-        state.meta["corrected_v2_P019_3_1_33_sy_done"] = True
+        state.meta["luN_sy_done"] = True
         return state
     j_lrt = _lrt_dhatu_index(state)
     if j_lrt is not None:

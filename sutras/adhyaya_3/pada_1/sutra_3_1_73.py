@@ -1,7 +1,7 @@
 """
 3.1.73  स्वादिभ्यः श्नुः  —  VIDHI (narrow: replace *Sap* with *śnu*)
 
-Glass-box: when a pipeline arms ``state.meta["3_1_73_snu_arm"]`` and a *Sap*
+Glass-box: when a pipeline arms ``state.meta["snu_recipe"]`` and a *Sap*
 *vikaraṇa* *Term* is present (from **3.1.68**), replace it with *śnu* *upadeśa*
 ``Snu`` — *ś* is *it* (**1.3.8**); after **1.3.9** only ``nu`` remains.
 
@@ -25,7 +25,7 @@ def _find_sap(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("3_1_73_snu_arm"):
+    if not state.meta.get("snu_recipe"):
         return False
     return _find_sap(state) is not None
 

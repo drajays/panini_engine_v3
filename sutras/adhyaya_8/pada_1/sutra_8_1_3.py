@@ -8,7 +8,7 @@ Engine (``prakriya_17`` — **Phit 4.18** list, *sarvānudātta* block):
     Aṣṭādhyāyī sūtra; this module **reuses** the **8.1.3** anchor only for
     registry placement in the Tripāḍī–*anudātta* neighbourhood.
   • When ``phiSa_pratipadika`` + ``upadesha_slp1`` ∈ ``PHIT_418_…`` and
-    ``phit_4_18_arm``, register ``samjna_registry['phit_418_sarvAnudAtta']``.
+    ``phit_4_18_recipe``, register ``samjna_registry['phit_418_sarvAnudAtta']``.
 """
 from __future__ import annotations
 
@@ -31,7 +31,7 @@ def _stem(state: State):
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("phit_4_18_arm"):
+    if not state.meta.get("phit_4_18_recipe"):
         return False
     hit = _stem(state)
     if hit is None:
@@ -50,7 +50,7 @@ def act(state: State) -> State:
         return state
     _, up = hit
     state.samjna_registry["phit_418_sarvAnudAtta"] = frozenset({up})
-    state.meta.pop("phit_4_18_arm", None)
+    state.meta.pop("phit_4_18_recipe", None)
     return state
 
 

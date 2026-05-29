@@ -43,7 +43,7 @@ def derive_indra_sambuddhi_prakriya_26() -> State:
     s.meta["prakriya_26_6_1_198_arm"] = True
     s = apply_rule("6.1.198", s)
 
-    s.meta["prakriya_26_6_1_158_arm"] = True
+    s.meta["indra_6_1_158_recipe"] = True
     s = apply_rule("6.1.158", s)
 
     s.tripadi_zone = True
@@ -54,7 +54,7 @@ def derive_indra_sambuddhi_prakriya_26() -> State:
     # ``asiddha_violates`` would skip it (``engine/gates.py``); exit Tripāḍī for
     # this *āhvāna*-closure *anuvāda* row only.
     s.tripadi_zone = False
-    s.meta["prakriya_26_1_2_37_arm"] = True
+    s.meta["indra_1_2_37_recipe"] = True
     s = apply_rule("1.2.37", s)
     return s
 

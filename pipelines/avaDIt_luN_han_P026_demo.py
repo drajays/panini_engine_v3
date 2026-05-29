@@ -53,13 +53,13 @@ def derive_avaDIt() -> State:
     s = apply_rule("1.1.68", s)
     s = apply_rule("1.3.1", s)
 
-    s.meta["3_2_110_luG_arm"] = True
+    s.meta["luG_recipe"] = True
     s = apply_rule("3.2.110", s)
     s = apply_rule("3.4.69", s)
     s = apply_rule("3.1.91", s)
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
 
-    s.meta["3_1_43_cli_luG_arm"] = True
+    s.meta["cli_luG_recipe"] = True
     s = apply_rule("3.1.43", s)
     s = apply_rule("3.1.44", s)
     s = P00_it_halantyam_lopa_yathasankhyam(s)
@@ -85,7 +85,7 @@ def derive_avaDIt() -> State:
     s.meta["luN_sic_ardhadhatuka"] = True
     s = apply_rule("7.2.35", s)
 
-    s.meta["6_4_48_P026_trace_arm"] = True
+    s.meta["trace_6_4_48_recipe"] = True
     s = apply_rule("6.4.48", s)
 
     s = apply_rule("1.1.56", s)

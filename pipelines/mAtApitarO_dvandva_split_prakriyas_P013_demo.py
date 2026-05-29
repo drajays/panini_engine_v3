@@ -54,7 +54,7 @@ def derive_mAtApitarO_dvandva_split_prakriyas_P013() -> State:
     s = apply_rule("4.1.2", s)
 
     # JSON placeholder (no mutation in this demo slice).
-    s.meta["prakriya_P013_6_1_93_arm"] = True
+    s.meta["sandhi_6_1_93_recipe"] = True
     s = apply_rule("6.1.93", s)
     return s
 

@@ -21,7 +21,7 @@ def _lakara_index(state: State) -> int | None:
 
 def cond(state: State) -> bool:
     # Glass-box arming: pipelines must opt-in (CONSTITUTION: cond() may not read paradigm selectors).
-    if not state.meta.get("3_1_43_cli_luG_arm", False):
+    if not state.meta.get("cli_luG_recipe", False):
         return False
     if not any("dhatu" in t.tags for t in state.terms):
         return False

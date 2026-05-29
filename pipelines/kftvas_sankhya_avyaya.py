@@ -70,7 +70,7 @@ def _kftvas_tail_from_single_sankhya_pratipadika(s: State, *, merge_label: str) 
     s = P00_attach_sup_from_pratipadika(s)
     s = sup_attach_it_chain(s)
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
     s = apply_rule("1.4.14", s)
     _pada_merge(s)

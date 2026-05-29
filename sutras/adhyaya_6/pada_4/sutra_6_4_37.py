@@ -7,7 +7,7 @@ Narrow v3 (संगसीष्ट / ``saGgasIzwa``):
   trailing ``m``.
 
 Engine:
-  - recipe arms ``state.meta['6_4_37_gam_anunasika_arm']``.
+  - recipe arms ``state.meta['gam_anunasika_recipe']``.
 """
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ from phonology.pratyahara import JHAL
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("6_4_37_gam_anunasika_arm"):
+    if not state.meta.get("gam_anunasika_recipe"):
         return False
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags:
@@ -50,7 +50,7 @@ def act(state: State) -> State:
         if t.varnas and t.varnas[-1].slp1 == "m":
             t.varnas.pop()
             t.meta["6_4_37_gam_m_lopa_done"] = True
-            state.meta["6_4_37_gam_anunasika_arm"] = False
+            state.meta["gam_anunasika_recipe"] = False
             break
     return state
 

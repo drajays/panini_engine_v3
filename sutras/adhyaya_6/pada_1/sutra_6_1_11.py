@@ -3,9 +3,9 @@
 
 Operational JSON **P037** cites *dvitva* under *luṅ*(*i*): this engine slice
 records eligibility and arms the existing **6.1.1** *dvitva* hook (recipe must
-still call **6.1.1** with ``6_1_1_dvitva_arm`` afterwards).
+still call **6.1.1** with ``dvitva_recipe`` afterwards).
 
-COND: ``state.meta['P037_6_1_11_lugi_arm']`` after the luṅ spine has created
+COND: ``state.meta['lugi_recipe']`` after the luṅ spine has created
 the structural aorist context.
 """
 from __future__ import annotations
@@ -19,12 +19,12 @@ GATE_KEY = "P037_6_1_11_lugi_dvitva"
 def cond(state: State) -> bool:
     if GATE_KEY in state.paribhasha_gates:
         return False
-    return bool(state.meta.get("P037_6_1_11_lugi_arm"))
+    return bool(state.meta.get("lugi_recipe"))
 
 
 def act(state: State) -> State:
     state.paribhasha_gates[GATE_KEY] = True
-    state.meta.pop("P037_6_1_11_lugi_arm", None)
+    state.meta.pop("lugi_recipe", None)
     return state
 
 

@@ -55,7 +55,7 @@ def _lat_ta_and_sap(s: State) -> State:
     # Substitute to ta via 3.4.78
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "ta"
+    s.meta["tin_adesha_form"] = "ta"
     s = apply_rule("3.4.78", s)
     # Insert Sap between dhātu and ta
     s.meta["3_1_68_kartari_recipe"] = True
@@ -130,9 +130,9 @@ def derive_BIzayate() -> State:
     s = apply_rule("3.1.32", s)
 
     # Atmanepada override (trace fact for the note).
-    s.meta["1_3_68_arm"] = True
+    s.meta["atma_recipe"] = True
     s = apply_rule("1.3.68", s)
-    s.meta.pop("1_3_68_arm", None)
+    s.meta.pop("atma_recipe", None)
 
     # laṭ + ta + Sap
     s = _lat_ta_and_sap(s)

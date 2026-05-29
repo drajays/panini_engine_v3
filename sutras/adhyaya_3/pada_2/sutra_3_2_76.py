@@ -5,7 +5,7 @@
 *ratnāni dadhāti* → *ratnadhā* (``prakriya_22`` JSON).
 
 Engine (v3):
-  When ``state.meta['3_2_76_kvip_arm']`` is True and the tape already bears a
+  When ``state.meta['kvip_recipe']`` is True and the tape already bears a
   *dhātu* ``Term`` without a *kvip* ``Term``, append ``kvip`` as a ``krt`` *pratyaya*
   immediately after that *dhātu*.
 
@@ -31,7 +31,7 @@ def _already_has_kvip(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("3_2_76_kvip_arm"):
+    if not state.meta.get("kvip_recipe"):
         return False
     if _already_has_kvip(state):
         return False
@@ -51,7 +51,7 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "kvip"},
     )
     state.terms.insert(di + 1, kvip)
-    state.meta.pop("3_2_76_kvip_arm", None)
+    state.meta.pop("kvip_recipe", None)
     return state
 
 

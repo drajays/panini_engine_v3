@@ -50,7 +50,7 @@ def derive_citaH() -> State:
 
     s = P00_ciY_kartari_krt_nistha_adhikara_prefix(s)
     s.meta["3_2_102_target_upadesha_slp1"] = "ciY"
-    s.meta["3_2_102_kta_arm"] = True
+    s.meta["kta_recipe"] = True
     s = apply_rule("3.2.102", s)
     s = P00_lashakvataddhite_it_lopa_chain(s)
 

@@ -82,7 +82,7 @@ def derive_vAyavaH_prakriya_24() -> State:
     s = apply_rule("3.1.91", s)
     s = apply_rule("3.1.3", s)
 
-    s.meta["prakriya_24_uR_arm"] = True
+    s.meta["uR_recipe"] = True
     s = apply_rule("3.3.174", s)
     for sid in _IT_AFTER_uR:
         s = apply_rule(sid, s)

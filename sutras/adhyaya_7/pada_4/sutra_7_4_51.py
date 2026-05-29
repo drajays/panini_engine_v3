@@ -4,7 +4,7 @@
 *tāsi*-vikaraṇa (``tAsi_vikaraṇa``) Term that ends in ``…A``+``s`` → drop
 the final ``s`` when the following tiṅ Term begins with ``r``.
 
-Gate: ``7_4_51_arm``; completion registered in ``samjna_registry``.
+Gate: ``ri_ca_recipe``; completion registered in ``samjna_registry``.
 
 This is the *luṭ* 3du (rau) and 3pl (ras) path:
   [BU, i+t+A+s, rO] → [BU, i+t+A, rO]   (3du)
@@ -40,7 +40,7 @@ def _find_tasi_before_r(state: State) -> int | None:
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    if not state.meta.get("7_4_51_arm"):
+    if not state.meta.get("ri_ca_recipe"):
         return False
     return _find_tasi_before_r(state) is not None
 

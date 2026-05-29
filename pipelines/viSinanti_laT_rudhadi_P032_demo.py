@@ -71,7 +71,7 @@ def derive_viSinanti_laT_rudhadi_P032() -> State:
 
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "jhi"
+    s.meta["tin_adesha_form"] = "jhi"
     s = apply_rule("3.4.78", s)
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
         s = apply_rule(sid, s)

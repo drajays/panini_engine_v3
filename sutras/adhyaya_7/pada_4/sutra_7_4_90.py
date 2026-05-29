@@ -11,7 +11,7 @@ row here.  After **7.4.60** the abhyāsa may be a lone *hal* (``m``); an
 inherent-``a`` row is inserted before ``r`` + ``I`` so ``flat_slp1`` yields
 ``marI`` (मरी), not ``mrI``.
 
-Arm with ``state.meta["7_4_90_rIk_arm"]`` in the recipe.
+Arm with ``state.meta["rIk_recipe"]`` in the recipe.
 """
 from __future__ import annotations
 
@@ -47,7 +47,7 @@ def _find_abhyasa(state: State):
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("7_4_90_rIk_arm"):
+    if not state.meta.get("rIk_recipe"):
         return False
     if not _upadhA_f_in_non_abhyasa_dhatu(state):
         return False

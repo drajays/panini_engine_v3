@@ -62,7 +62,7 @@ def derive_vande() -> State:
     s.meta["tin_adesha_pending"] = True
     # 1sg ātmanepada in our tin inventory is `iw`; its hal (`w`) will be removed
     # by 1.3.3 + 1.3.9, leaving `i`, then 3.4.79 (demo) yields `e`.
-    s.meta["tin_adesha_slp1"] = "iw"
+    s.meta["tin_adesha_form"] = "iw"
     s = apply_rule("3.4.78", s)
     # it-lopa on `iw` → `i`
     s = apply_rule("1.3.3", s)

@@ -6,7 +6,7 @@ understood on the **preceding** (*pūrva*) element — contrast **1.1.67**
 (*pañcamī* → *uttara*).
 
 Engine: installs ``paribhasha_gates['1.1.66_tasminniti_nirdiste_purvasya']`` when
-``state.meta['prakriya_P044_paribhasha_note']`` is set (recipe-scoped demo).
+``state.meta['paribhasha_recipe']`` is set (recipe-scoped demo).
 """
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ _GATE_KEY = "1.1.66_tasminniti_nirdiste_purvasya"
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("prakriya_P044_paribhasha_note"):
+    if not state.meta.get("paribhasha_recipe"):
         return False
     return _GATE_KEY not in state.paribhasha_gates
 

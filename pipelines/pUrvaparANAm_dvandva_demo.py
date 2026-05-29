@@ -98,7 +98,7 @@ def derive_pUrvaparANAm() -> State:
 
     # Stage 2: internal sup-luk (2.4.71) → ghosts (zero-width).
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
 
     # Stage 3: structural dvandva merge to a single aṅga.

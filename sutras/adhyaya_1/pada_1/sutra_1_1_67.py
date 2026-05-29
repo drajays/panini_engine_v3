@@ -6,9 +6,9 @@ understood on the **following** (*uttara*) element.
 
 Engine (``split_prakriyas_11/P044.json``):
   - Base gate ``1.1.67_tasmAd_iti_uttarasya`` on first application.
-  - With ``state.meta['P044_1_1_67_atina_arm']``: gate
+  - With ``state.meta['atina_recipe']``: gate
     ``1.1.67_atiNa_panchami_targets_uttara`` (*atiṅaḥ* in **8.1.28** position).
-  - With ``state.meta['P044_1_1_67_siddhi_arm']``: summary gate
+  - With ``state.meta['siddhi_recipe']``: summary gate
     ``1.1.67_panchami_saptami_positional_semantics`` (paired with **1.1.66**).
 """
 from __future__ import annotations
@@ -22,31 +22,31 @@ _GATE_SEM = "1.1.67_panchami_saptami_positional_semantics"
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("prakriya_P044_paribhasha_note"):
+    if not state.meta.get("paribhasha_recipe"):
         return False
-    if state.meta.get("P044_1_1_67_siddhi_arm"):
+    if state.meta.get("siddhi_recipe"):
         return _GATE_SEM not in state.paribhasha_gates
-    if state.meta.get("P044_1_1_67_atina_arm"):
+    if state.meta.get("atina_recipe"):
         return _GATE_ATINA not in state.paribhasha_gates
     return _GATE_MAIN not in state.paribhasha_gates
 
 
 def act(state: State) -> State:
-    if not state.meta.get("prakriya_P044_paribhasha_note"):
+    if not state.meta.get("paribhasha_recipe"):
         return state
-    if state.meta.get("P044_1_1_67_siddhi_arm"):
+    if state.meta.get("siddhi_recipe"):
         state.paribhasha_gates[_GATE_SEM] = {
             "mode": "panchami_uttara_saptami_purva",
             "why_dev": "पञ्चम्य-उत्तर- vs सप्तम्य-पूर्व-स्थानिकम् (१.१.६७–६६) — P044।",
         }
-        state.meta.pop("P044_1_1_67_siddhi_arm", None)
+        state.meta.pop("siddhi_recipe", None)
         return state
-    if state.meta.get("P044_1_1_67_atina_arm"):
+    if state.meta.get("atina_recipe"):
         state.paribhasha_gates[_GATE_ATINA] = {
             "mode": "atiNa_panchami_para_tin",
             "why_dev": "‘अतिङः’ इति पञ्चम्यर्थः पर-तिङन्ते कार्यम् — १.१.६७ + ८.१.२८ (P044)।",
         }
-        state.meta.pop("P044_1_1_67_atina_arm", None)
+        state.meta.pop("atina_recipe", None)
         return state
     state.paribhasha_gates[_GATE_MAIN] = {
         "mode": "panchami_uttara",

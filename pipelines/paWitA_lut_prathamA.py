@@ -51,9 +51,9 @@ def derive_paWitA() -> State:
     s = apply_rule("3.3.15", s)
     s.meta.pop("luT_recipe", None)
 
-    s.meta["3_1_33_tasi_lut_arm"] = True
+    s.meta["tasi_luT_recipe"] = True
     s = apply_rule("3.1.33", s)
-    s.meta.pop("3_1_33_tasi_lut_arm", None)
+    s.meta.pop("tasi_luT_recipe", None)
 
     s = apply_rule("3.4.77", s)
     s = P00_tip_to_ti(s)
@@ -63,9 +63,9 @@ def derive_paWitA() -> State:
     s = apply_rule("7.2.35", s)
     s.meta.pop("7_2_35_lut_tAsi_it_arm", None)
 
-    s.meta["2_4_85_lut_prathama_arm"] = True
+    s.meta["luT_prathama_recipe"] = True
     s = apply_rule("2.4.85", s)
-    s.meta.pop("2_4_85_lut_prathama_arm", None)
+    s.meta.pop("luT_prathama_recipe", None)
 
     if len(s.terms) >= 2:
         s.terms[-1].meta["dit_pratyaya"] = True

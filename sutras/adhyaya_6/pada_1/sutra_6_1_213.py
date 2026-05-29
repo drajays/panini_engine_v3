@@ -5,7 +5,7 @@
 affix is **yat** (accent *śāstra*; v3 has no *svara* on ``Varna`` rows).
 
 Narrow v3 (``prakriya_18``):
-  • ``cond`` — ``state.meta['prakriya_18_6_1_213_arm']``.
+  • ``cond`` — ``state.meta['sama_6_1_213_recipe']``.
 """
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    return bool(state.meta.get("prakriya_18_6_1_213_arm"))
+    return bool(state.meta.get("sama_6_1_213_recipe"))
 
 
 def act(state: State) -> State:

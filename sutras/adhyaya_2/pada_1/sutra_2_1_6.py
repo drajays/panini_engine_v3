@@ -8,7 +8,7 @@ a minimal, auditable *samāsa* assignment used by demos like **adhistri**:
     an internal sup (*avayava*), mark the state as avyayībhāva-ready.
 
 We do not attempt full semantic parsing; the pipeline arms
-``meta['2_1_6_avyayibhava_arm']=True``.
+``meta['avyayibhava_recipe']=True``.
 """
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ TAG_AVYAYIBHAVA: str = "avyayibhava"
 
 
 def cond(state: State) -> bool:
-    return bool(state.meta.get("2_1_6_avyayibhava_arm")) and not state.samjna_registry.get("2_1_6_avyayibhava")
+    return bool(state.meta.get("avyayibhava_recipe")) and not state.samjna_registry.get("2_1_6_avyayibhava")
 
 
 def act(state: State) -> State:

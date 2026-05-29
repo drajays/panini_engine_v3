@@ -50,7 +50,7 @@ def derive_gaurAvaskandin_prakriya_29() -> State:
     s.meta["prakriya_29_6_1_197_arm"] = True
     s = apply_rule("6.1.197", s)
 
-    s.meta["prakriya_29_6_1_158_arm"] = True
+    s.meta["gaura_6_1_158_recipe"] = True
     s = apply_rule("6.1.158", s)
 
     s.meta["prakriya_29_6_1_198_arm"] = True

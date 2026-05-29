@@ -40,7 +40,7 @@ def test_vAyavaH_json_spine_and_subanta_hotspots() -> None:
 
 
 def test_3_3_174_appends_uR() -> None:
-    s = State(terms=[_mk_vA_dhatu()], meta={"prakriya_24_uR_arm": True}, trace=[])
+    s = State(terms=[_mk_vA_dhatu()], meta={"uR_recipe": True}, trace=[])
     s1 = apply_rule("3.3.174", s)
     assert len(s1.terms) == 2
     assert s1.terms[1].meta.get("upadesha_slp1") == "uR"

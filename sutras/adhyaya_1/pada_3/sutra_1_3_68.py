@@ -5,7 +5,7 @@ Glass-box note (भीषयते .md):
   In the causative-fear sense for `bhI`, the prayoga is forced to ātmanepada.
 
 Engine:
-  - recipe-armed: ``state.meta['1_3_68_arm']``.
+  - recipe-armed: ``state.meta['atma_recipe']``.
   - records `state.meta['pada'] = 'Atmanepada'` for downstream scheduling.
 """
 from __future__ import annotations
@@ -15,7 +15,7 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("1_3_68_arm"):
+    if not state.meta.get("atma_recipe"):
         return False
     if state.meta.get("pada") == "Atmanepada":
         return False

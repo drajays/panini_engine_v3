@@ -61,7 +61,7 @@ def derive_paYcagoRiH_dvigu_split_prakriyas_P011() -> State:
     s = apply_rule("2.1.51", s)
 
     # paYcan-goRI boundary: drop final n of paYcan (JSON cites 8.2.7).
-    s.meta["8_2_7_compound_purvapada_n_lopa_arm"] = True
+    s.meta["purvapada_n_lopa_recipe"] = True
     s = apply_rule("8.2.7", s)
 
     # taddhita “tena krītam” stamps and luk-note stamp (no varṇa mutation here).
@@ -77,7 +77,7 @@ def derive_paYcagoRiH_dvigu_split_prakriyas_P011() -> State:
     # internal sup-luk (2.4.71) on the samāsa members.
     s = apply_rule("1.2.46", s)
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
 
     # 1.2.48 hrasva on goRI (I → i) as per JSON: mark that member as upasarjana + strī-final signal.

@@ -30,7 +30,7 @@ def _find_ktva(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("7_1_37_lyap_arm"):
+    if not state.meta.get("lyap_recipe"):
         return False
     i = _find_ktva(state)
     if i is None:
@@ -48,7 +48,7 @@ def act(state: State) -> State:
     pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "ktvA")
     pr.meta["upadesha_slp1"] = "lyap"
     pr.meta["7_1_37_ktvA_to_lyap_done"] = True
-    state.meta["7_1_37_lyap_arm"] = False
+    state.meta["lyap_recipe"] = False
     return state
 
 

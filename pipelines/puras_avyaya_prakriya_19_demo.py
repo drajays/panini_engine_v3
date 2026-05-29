@@ -111,7 +111,7 @@ def derive_puras_avyaya_prakriya_19() -> State:
     s.meta[META_TADDHITA_AVAYAVA] = True
     s = apply_rule("1.2.46", s)
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
 
     s = P00_taddhita_it_lopa_chain(s)

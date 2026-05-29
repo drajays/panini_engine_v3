@@ -6,8 +6,8 @@ when conditioned by an *udātta* (accent *śāstra*; v3 has no *svara* column on
 the phonetic tape).
 
 Narrow v3:
-  • ``prakriya_16`` — यद् + जस् → ये tail: arms ``state.meta['8_2_5_ye_yad_jas_arm']``.
-  • ``prakriya_20`` — *devam* *ekādeśa* accent (``prakriya_20_devam_8_2_5_arm``).
+  • ``prakriya_16`` — यद् + जस् → ये tail: arms ``state.meta['ye_yad_jas_recipe']``.
+  • ``prakriya_20`` — *devam* *ekādeśa* accent (``devam_8_2_5_recipe``).
 
 Common:
   • Fires only in **Tripāḍī** (``state.tripadi_zone`` after **8.2.1**).
@@ -24,8 +24,8 @@ def cond(state: State) -> bool:
     if not state.tripadi_zone:
         return False
     if not (
-        state.meta.get("8_2_5_ye_yad_jas_arm")
-        or state.meta.get("prakriya_20_devam_8_2_5_arm")
+        state.meta.get("ye_yad_jas_recipe")
+        or state.meta.get("devam_8_2_5_recipe")
     ):
         return False
     if "ekadesa_udatta_8_2_5" in state.samjna_registry:
@@ -36,8 +36,8 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     surface = state.flat_slp1()
     state.samjna_registry["ekadesa_udatta_8_2_5"] = frozenset({surface})
-    state.meta.pop("8_2_5_ye_yad_jas_arm", None)
-    state.meta.pop("prakriya_20_devam_8_2_5_arm", None)
+    state.meta.pop("ye_yad_jas_recipe", None)
+    state.meta.pop("devam_8_2_5_recipe", None)
     return state
 
 

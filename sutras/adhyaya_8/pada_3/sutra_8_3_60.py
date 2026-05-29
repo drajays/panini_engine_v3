@@ -6,7 +6,7 @@ Demo slice (उषित्वा / uzitvA):
   (ṣatva) before the following `tvA` block.
 
 Engine:
-  - recipe arms via ``state.meta['8_3_60_shasi_vasi_ghasi_arm']``.
+  - recipe arms via ``state.meta['shasi_vasi_recipe']``.
   - narrow: applies only when the primary dhātu upadeśa is `vas` and the dhātu
     term currently contains `s` as its final varṇa.
 """
@@ -18,7 +18,7 @@ from phonology import mk
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("8_3_60_shasi_vasi_ghasi_arm"):
+    if not state.meta.get("shasi_vasi_recipe"):
         return False
     if not state.terms:
         return False
@@ -40,7 +40,7 @@ def act(state: State) -> State:
     dh = state.terms[0]
     dh.varnas[-1] = mk("z")
     dh.meta["8_3_60_satva_done"] = True
-    state.meta["8_3_60_shasi_vasi_ghasi_arm"] = False
+    state.meta["shasi_vasi_recipe"] = False
     return state
 
 

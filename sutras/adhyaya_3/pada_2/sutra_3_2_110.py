@@ -16,7 +16,7 @@ AT_AGAMA_CONTEXT_TAG = "aT_agama_context"
 
 def cond(state: State) -> bool:
     # Glass-box arming: pipelines must opt-in (CONSTITUTION: cond() may not read paradigm selectors).
-    if not state.meta.get("3_2_110_luG_arm", False):
+    if not state.meta.get("luG_recipe", False):
         return False
     # Only once.
     return not any(

@@ -30,7 +30,7 @@ def cond(state: State) -> bool:
         if flat in ("Ral", "al") and "pratyaya" in t.tags:
             return True
     # Legacy arm path
-    return bool(state.meta.get("7_1_91_arm"))
+    return bool(state.meta.get("Nal_uttama_recipe"))
 
 
 def act(state: State) -> State:

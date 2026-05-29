@@ -64,7 +64,7 @@ def derive_maharziH() -> State:
     s = apply_rule("1.2.46", s)
 
     # 6.3.46 ān-ādeśa for mahat, then a+A → A (6.1.101)
-    s.meta["6_3_46_An_mahat_arm"] = True
+    s.meta["An_mahat_recipe"] = True
     s = apply_rule("1.1.52", s)
     s = apply_rule("6.3.46", s)
     s = apply_rule("6.1.101", s)

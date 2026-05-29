@@ -46,4 +46,4 @@ def test_6_1_62_requires_arm() -> None:
 def test_6_1_152_requires_arm() -> None:
     s = State(terms=list(_mk_subrahmaRyA_om().terms), meta={}, trace=[])
     s1 = apply_rule("6.1.152", s)
-    assert "prakriya_25_6_1_152_arm" not in s1.meta
+    assert "sandhi_6_1_152_recipe" not in s1.meta

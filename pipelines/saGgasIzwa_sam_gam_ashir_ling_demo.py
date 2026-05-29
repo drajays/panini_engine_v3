@@ -45,7 +45,7 @@ def derive_saGgasIzwa() -> State:
     )
     s = State(terms=[sam, dhatu], meta={}, trace=[])
 
-    s.meta["1_3_29_samo_gamyricchiblAm_arm"] = True
+    s.meta["samo_recipe"] = True
     s = apply_rule("1.3.29", s)
 
     s.meta["ashir_liG"] = True
@@ -53,14 +53,14 @@ def derive_saGgasIzwa() -> State:
 
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "ta"
+    s.meta["tin_adesha_form"] = "ta"
     s = apply_rule("3.4.78", s)
 
     s.meta["sIyuw_recipe"] = True
     s = apply_rule("3.4.102", s)
     s.meta["1_2_13_va_gam_kit_arm"] = True
     s = apply_rule("1.2.13", s)
-    s.meta["6_4_37_gam_anunasika_arm"] = True
+    s.meta["gam_anunasika_recipe"] = True
     s = apply_rule("6.4.37", s)
     s.meta["suw_recipe"] = True
     s = apply_rule("3.4.107", s)

@@ -73,8 +73,8 @@ def test_3_2_76_appends_kvip_after_dhatu() -> None:
         tags={"dhatu", "anga"},
         meta={"upadesha_slp1": "DA"},
     )
-    s = State(terms=[dha], meta={"3_2_76_kvip_arm": True}, trace=[])
+    s = State(terms=[dha], meta={"kvip_recipe": True}, trace=[])
     s1 = apply_rule("3.2.76", s)
     assert len(s1.terms) == 2
     assert s1.terms[1].meta.get("upadesha_slp1") == "kvip"
-    assert "3_2_76_kvip_arm" not in s1.meta
+    assert "kvip_recipe" not in s1.meta

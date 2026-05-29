@@ -3,7 +3,7 @@
 
 Engine (glass-box):
   This sūtra is represented as a narrow “attach kṛt ktvā” step when the recipe
-  arms it via ``state.meta['3_4_21_ktvA_arm']``.
+  arms it via ``state.meta['ktvA_recipe']``.
 
   It appends a pratyaya ``Term`` whose surface tape is modelled as ``itvA`` with
   ancestry marker ``upadesha_slp1_original='ktvA'`` (same convention as existing
@@ -17,7 +17,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("3_4_21_ktvA_arm"):
+    if not state.meta.get("ktvA_recipe"):
         return False
     if not any("dhatu" in t.tags for t in state.terms):
         return False
@@ -33,7 +33,7 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "itvA", "upadesha_slp1_original": "ktvA"},
     )
     state.terms.append(pr)
-    state.meta["3_4_21_ktvA_arm"] = False
+    state.meta["ktvA_recipe"] = False
     return state
 
 

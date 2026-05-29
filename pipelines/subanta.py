@@ -664,13 +664,13 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
                 t.tags.add("sakhi_ikarant")
         # 7.1.93: anang fires for 1sg (sau = su context)
         if vibhakti == 1 and vacana == 1:
-            s.meta["7_1_93_arm"] = True
-            s.meta["8_2_7_arm"]  = True  # n-lopa: sakhān → sakhā after anang
+            s.meta["anaN_recipe"] = True
+            s.meta["n_lopa_recipe"]  = True  # n-lopa: sakhān → sakhā after anang
         # 7.1.92: ṇidvat fires for all sarvananāmasthāna non-sambodhana cells
         # sarvananāmasthāna = 1st/2nd vibhakti sg/du/pl + 8th is samboddhi (excluded)
         _SARVANAM = {(1,1),(1,2),(1,3),(2,1),(2,2),(2,3)}
         if (vibhakti, vacana) in _SARVANAM and vibhakti != 8:
-            s.meta["7_1_92_arm"] = True
+            s.meta["sakhyu_recipe"] = True
     if autonomous_scanner:
         return run_subanta_sup_attach_and_finish_scanner(s)
     return run_subanta_pipeline(s)

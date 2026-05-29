@@ -64,7 +64,7 @@ def derive_viSiNQi_loT_rudhadi_P031() -> State:
 
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "sip"
+    s.meta["tin_adesha_form"] = "sip"
     s = apply_rule("3.4.78", s)
 
     s.meta["P031_3_4_87_sip_to_hi_arm"] = True

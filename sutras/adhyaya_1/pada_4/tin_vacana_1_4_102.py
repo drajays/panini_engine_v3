@@ -25,7 +25,7 @@ TIN_102_VACANA_ORDER: Final[Tuple[str, str, str]] = (TIN_102_TAG_EKA, TIN_102_TA
 TIN_102_ALL_VACANA_TAGS: Final[frozenset[str]] = frozenset(TIN_102_VACANA_ORDER)
 
 
-def _normalise_tin_adesha_slp1(s: str) -> str:
+def _normalise_tin_adesha_form(s: str) -> str:
     t = s.strip()
     if t in TIN_ADESHA_SET:
         return t
@@ -36,7 +36,7 @@ def _normalise_tin_adesha_slp1(s: str) -> str:
 
 def vacana_102_tag_for_tin_adesha(s: str) -> str | None:
     """Return the *1.4.102* *vacana* *tag* for a normalised *tiṅ* *ādeśa* *upadeśa*, or *None*."""
-    key = _normalise_tin_adesha_slp1(s)
+    key = _normalise_tin_adesha_form(s)
     if key not in TIN_ADESHA_SET:
         return None
     i = TIN_ADESHA_18.index(key)

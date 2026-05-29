@@ -55,7 +55,7 @@ def derive_mahoraskena_bahuvrihi_P024() -> State:
     s = apply_rule("1.2.46", s)
 
     s = apply_rule("1.1.52", s)
-    s.meta["6_3_46_An_mahat_arm"] = True
+    s.meta["An_mahat_recipe"] = True
     s = apply_rule("6.3.46", s)
     s = apply_rule("6.1.101", s)
     s = P00_guna_prayoga_readiness(s)

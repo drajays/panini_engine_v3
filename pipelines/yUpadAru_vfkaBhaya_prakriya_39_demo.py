@@ -61,7 +61,7 @@ def derive_yUpadAru_prakriya_39() -> State:
 
     s = apply_rule("1.2.46", s)
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
 
     s.meta["prakriya_39_tatpurusa_upasarjana"] = True
@@ -95,7 +95,7 @@ def derive_vfkaBhayam_prakriya_39() -> State:
 
     s = apply_rule("1.2.46", s)
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
 
     s.meta["prakriya_39_tatpurusa_upasarjana"] = True

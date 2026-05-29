@@ -17,7 +17,7 @@ final ``T`` (``State.flat_slp1()`` still ``jilaT``); **1.3.9** is the *lopa* *vi
 (``jila``).  A recipe-only collapse ``la`` → ``l`` on the *lakāra* ``Term`` sets ``flat_slp1()`` to
 ``jil`` (pedagogical *lac* = ``l``; ``meta['upadesha_slp1']`` stays ``laT`` for later **3.4.78**).
 
-**Step 4:** **3.4.77** *lasyādhikāra* → recipe ``tin_adesha_slp1`` / ``tin_adesha_pending`` → **3.4.78** (*lac* → *tip*),
+**Step 4:** **3.4.77** *lasyādhikāra* → recipe ``tin_adesha_form`` / ``tin_adesha_pending`` → **3.4.78** (*lac* → *tip*),
 then **1.4.99** / **1.4.100** / **1.3.78** / **1.4.101** / **1.4.108** / **1.4.102** / **1.4.22** (``1_4_22_affix_class=eka`` on *ji*).
 
 **Step 5:** **3.1.91** (*dhātoḥ* *adhikāra* — required on ``adhikara_stack`` for **3.1.68**), **3.4.113** (*tiṅ-śit* *sārvadhātukam* tag on *tip*),
@@ -428,7 +428,7 @@ def run_jayati_gold_step4(
     else:
         post77 = tuple(steps[3].get("rule_ids_after_lat") or STEP_4_POST_77_RULE_IDS)
     s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_slp1"] = "tip"
+    s.meta["tin_adesha_form"] = "tip"
     s.meta["tin_adesha_pending"] = True
     return apply_rule_chain(s, post77)
 

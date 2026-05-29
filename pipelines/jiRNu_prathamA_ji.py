@@ -45,7 +45,7 @@ def derive_jizRuH() -> State:
     s = apply_rule("3.1.91", s)
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
 
-    s.meta["3_2_139_gsnu_arm"] = True
+    s.meta["gsnu_recipe"] = True
     s = apply_rule("3.2.139", s)
     s = P00_lashakvataddhite_it_lopa_chain(s)
 

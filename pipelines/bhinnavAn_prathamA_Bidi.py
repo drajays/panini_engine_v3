@@ -1,7 +1,7 @@
 """
 pipelines/bhinnavAn_prathamA_Bidi.py — भिन्नवान् (*bhid* + *ktavatu~*, prathamā-ekavacana).
 
-*Viśeṣa:* **3.2.102** arms ``3_2_102_bhinn_before_tavat_arm`` (*Bid*→*Binn*),
+*Viśeṣa:* **3.2.102** arms ``bhinn_before_tavat_recipe`` (*Bid*→*Binn*),
 then **6.1.111** drops the *t* onset of *tavat* so *Binn* + *avat* merges before
 the usual *ugit* / *num* / *6.4.14* tail.
 """
@@ -40,7 +40,7 @@ def derive_bhinnavAn() -> State:
     # ``Bidi~`` is not ``is_ekac_upadesha`` (tilde / shape) — still arm **7.2.10**
     # so **7.2.35** *iṭ* does not misfire on *ktavatu~* before **6.1.111**.
     s.meta["ekac_dhatu"] = True
-    s.meta["3_2_102_bhinn_before_tavat_arm"] = True
+    s.meta["bhinn_before_tavat_recipe"] = True
     s = P00_ktavatu_kartari_nistha_opening(
         s,
         target_upadesha_slp1="Bidi~",

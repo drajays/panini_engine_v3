@@ -4,7 +4,7 @@
 Used in the user's *pratyagni* derivation: agnim prati → pratyagni (avyayībhāva).
 
 Engine approach (glass-box):
-  - Pipeline arms ``meta['2_1_13_prati_abhimukhya_arm']=True``.
+  - Pipeline arms ``meta['prati_abhimukhya_recipe']=True``.
   - If an avyaya member with ``upadesha_slp1 == 'prati'`` is present, mark the
     samāsa members as ``avyayibhava`` so downstream 1.2.43 / 2.2.30 / 1.1.41 fire.
 """
@@ -21,7 +21,7 @@ def _has_prati(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("2_1_13_prati_abhimukhya_arm"):
+    if not state.meta.get("prati_abhimukhya_recipe"):
         return False
     if state.samjna_registry.get("2_1_13_prati_abhimukhya"):
         return False

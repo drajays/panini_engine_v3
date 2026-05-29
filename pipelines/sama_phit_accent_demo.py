@@ -33,12 +33,12 @@ def _mk_phiSa_stem(*, upadesha_slp1: str) -> Term:
 def derive_sama_phit_accent() -> State:
     """``sama`` — Phit 4.18 wins; **8.4.66** (*Phit* 1.1 utsarga) is blocked."""
     s = State(terms=[_mk_phiSa_stem(upadesha_slp1="sama")])
-    s.meta["prakriya_17_6_1_158_arm"] = True
+    s.meta["phit_6_1_158_recipe"] = True
     s = apply_rule("6.1.158", s)
-    s.meta.pop("prakriya_17_6_1_158_arm", None)
-    s.meta["phit_4_18_arm"] = True
+    s.meta.pop("phit_6_1_158_recipe", None)
+    s.meta["phit_4_18_recipe"] = True
     s = apply_rule("8.1.3", s)
-    s.meta["phit_1_1_arm"] = True
+    s.meta["phit_1_1_recipe"] = True
     s = apply_rule("8.2.1", s)
     s = apply_rule("8.4.66", s)
     return s
@@ -47,12 +47,12 @@ def derive_sama_phit_accent() -> State:
 def derive_non_phit418_phiSa_stem() -> State:
     """Control: stem not in the Phit 4.18 list → **8.4.66** registers the utsarga candidate."""
     s = State(terms=[_mk_phiSa_stem(upadesha_slp1="rAma")])
-    s.meta["prakriya_17_6_1_158_arm"] = True
+    s.meta["phit_6_1_158_recipe"] = True
     s = apply_rule("6.1.158", s)
-    s.meta.pop("prakriya_17_6_1_158_arm", None)
-    s.meta["phit_4_18_arm"] = True
+    s.meta.pop("phit_6_1_158_recipe", None)
+    s.meta["phit_4_18_recipe"] = True
     s = apply_rule("8.1.3", s)
-    s.meta["phit_1_1_arm"] = True
+    s.meta["phit_1_1_recipe"] = True
     s = apply_rule("8.2.1", s)
     s = apply_rule("8.4.66", s)
     return s

@@ -51,7 +51,7 @@ def derive_ye_yad_jas() -> State:
     s = apply_rule("1.3.9", s)
     s = apply_rule("6.1.87", s)
     s = apply_rule("8.2.1", s)
-    s.meta["8_2_5_ye_yad_jas_arm"] = True
+    s.meta["ye_yad_jas_recipe"] = True
     s = apply_rule("8.2.5", s)
     return s
 

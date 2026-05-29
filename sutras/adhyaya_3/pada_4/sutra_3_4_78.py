@@ -9,7 +9,7 @@ by one of the eighteen *ādeśa* *pratyaya* strings, *para* to the *dhātu*.
 
 **Engine (CONSTITUTION Art. 2):** ``cond`` does **not** read *puruṣa* / *vacana* / *lakāra-name*
 as paradigm coordinates.  The *recipe* commits the target *ādeśa* in
-``state.meta['tin_adesha_slp1']`` (a string from :data:`TIN_ADESHA_18`) and sets
+``state.meta['tin_adesha_form']`` (a string from :data:`TIN_ADESHA_18`) and sets
 ``state.meta['tin_adesha_pending'] is True`` when substitution should fire.
 
 The *lakāra* *pratyaya* ``Term`` is recognised by ``meta['upadesha_slp1']`` ∈
@@ -47,7 +47,7 @@ def cond(state: State) -> bool:
         return False
     if not state.meta.get("tin_adesha_pending"):
         return False
-    adesha = (state.meta.get("tin_adesha_slp1") or "").strip()
+    adesha = (state.meta.get("tin_adesha_form") or "").strip()
     if not is_tin_adesha(adesha):
         return False
     return _lakara_pratyaya_index(state) is not None
@@ -56,7 +56,7 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     idx = _lakara_pratyaya_index(state)
     assert idx is not None
-    adesha = (state.meta.get("tin_adesha_slp1") or "").strip()
+    adesha = (state.meta.get("tin_adesha_form") or "").strip()
     t = state.terms[idx]
     # Preserve source lakāra provenance (e.g. "loT") so downstream sūtras
     # (3.4.87 sip→hi) can verify loṭ context structurally without reading
@@ -69,7 +69,7 @@ def act(state: State) -> State:
     t.tags.add("tin_adesha_3_4_78")
     t.tags.discard("lakAra_pratyaya_placeholder")
     state.meta["tin_adesha_pending"] = False
-    state.meta.pop("tin_adesha_slp1", None)
+    state.meta.pop("tin_adesha_form", None)
     return state
 
 

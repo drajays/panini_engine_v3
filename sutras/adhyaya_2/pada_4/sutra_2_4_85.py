@@ -1,17 +1,17 @@
 """
 2.4.85  लुटः प्रथमस्य डारौरसः  —  VIDHI
 
-When ``2_4_85_lut_prathama_arm`` is set and the *tiṅ* residue is the *prathama*
+When ``luT_prathama_recipe`` is set and the *tiṅ* residue is the *prathama*
 *parasmaipada* shape (after *halantyam*-lopa on *tip*/*tas*/*jhi*), replace it
-with the adesha given by ``state.meta['2_4_85_adesha_slp1']``:
+with the adesha given by ``state.meta['luT_adesha_form']``:
   - ``ti``  (from *tip*)  → ``qA``  (ḍā)
   - ``tas`` (from *tas*)  → ``rO``  (rau)
   - ``jhi`` (from *jhi*)  → ``ras`` (ras)
 
-The *recipe* commits the target adesha in ``state.meta['2_4_85_adesha_slp1']``
+The *recipe* commits the target adesha in ``state.meta['luT_adesha_form']``
 so ``cond`` remains blind to *puruṣa* / *vacana* coordinates (CONSTITUTION Art. 2).
 
-For backward-compat, when ``2_4_85_adesha_slp1`` is absent, defaults to *ti* → *qA*
+For backward-compat, when ``luT_adesha_form`` is absent, defaults to *ti* → *qA*
 (the legacy single-cell path).
 """
 from __future__ import annotations
@@ -44,11 +44,11 @@ def _find_tin_residue(state: State, expected_varnas: tuple[str, ...]) -> int | N
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("2_4_85_lut_prathama_arm"):
+    if not state.meta.get("luT_prathama_recipe"):
         return False
     if state.meta.get("2_4_85_lut_prathama_done"):
         return False
-    adesha = (state.meta.get("2_4_85_adesha_slp1") or "qA").strip()
+    adesha = (state.meta.get("luT_adesha_form") or "qA").strip()
     expected_list = _PRATHAMA_MAP.get(adesha)
     if expected_list is None:
         return False
@@ -59,7 +59,7 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    adesha = (state.meta.get("2_4_85_adesha_slp1") or "qA").strip()
+    adesha = (state.meta.get("luT_adesha_form") or "qA").strip()
     expected_list = _PRATHAMA_MAP.get(adesha)
     if not expected_list:
         return state

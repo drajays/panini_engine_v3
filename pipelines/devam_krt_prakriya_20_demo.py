@@ -73,12 +73,12 @@ def derive_devam_prakriya_20() -> State:
     s = _structural_merge_deva(s)
     s = apply_rule("1.2.46", s)
 
-    s.meta["prakriya_20_6_1_163_arm"] = True
+    s.meta["devam_6_1_163_recipe"] = True
     s = apply_rule("6.1.163", s)
-    s.meta.pop("prakriya_20_6_1_163_arm", None)
-    s.meta["prakriya_20_devam_6_1_158_arm"] = True
+    s.meta.pop("devam_6_1_163_recipe", None)
+    s.meta["devam_6_1_158_recipe"] = True
     s = apply_rule("6.1.158", s)
-    s.meta.pop("prakriya_20_devam_6_1_158_arm", None)
+    s.meta.pop("devam_6_1_158_recipe", None)
 
     s_sub = build_initial_state("deva", 2, 1, "pulliṅga")
     s_sub.trace = list(s.trace) + list(s_sub.trace)
@@ -86,7 +86,7 @@ def derive_devam_prakriya_20() -> State:
     s_sub = apply_rule("4.1.2", s_sub)
     s_sub = apply_rule("3.1.4", s_sub)
     s_sub = subanta_post_4_1_2(s_sub)
-    s_sub.meta["prakriya_20_devam_8_2_5_arm"] = True
+    s_sub.meta["devam_8_2_5_recipe"] = True
     s_sub = apply_rule("8.2.5", s_sub)
     return s_sub
 

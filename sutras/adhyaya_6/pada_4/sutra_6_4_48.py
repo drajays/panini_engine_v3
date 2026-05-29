@@ -5,7 +5,7 @@ Narrow **P026** note: *ato lopaḥ* would delete a stem-final *a* before a
 following *a*-class context; on **vadh** there is no such *a*, so this step is
 a śāstrīya audit in the JSON’s teaching order (no *varṇa* rewrite).
 
-Pipelines arm ``state.meta['6_4_48_P026_trace_arm']`` once.
+Pipelines arm ``state.meta['trace_6_4_48_recipe']`` once.
 """
 from __future__ import annotations
 
@@ -14,11 +14,11 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    return bool(state.meta.get("6_4_48_P026_trace_arm"))
+    return bool(state.meta.get("trace_6_4_48_recipe"))
 
 
 def act(state: State) -> State:
-    state.meta["6_4_48_P026_trace_arm"] = False
+    state.meta["trace_6_4_48_recipe"] = False
     return state
 
 

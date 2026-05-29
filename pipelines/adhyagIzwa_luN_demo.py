@@ -79,7 +79,7 @@ def derive_aDhyagIzwa() -> State:
     # Choose 3sg ātmanepada ending `ta`.
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "ta"
+    s.meta["tin_adesha_form"] = "ta"
     s = apply_rule("3.4.78", s)
     s = P00_it_halantyam_lopa_yathasankhyam(s)  # tin it-lopa
 

@@ -57,7 +57,7 @@ def derive_paceran_vidhi_liG_pac_Ja_P038() -> State:
 
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "Ja"
+    s.meta["tin_adesha_form"] = "Ja"
     s = apply_rule("3.4.78", s)
 
     s.meta["Ja_ran_recipe"] = True

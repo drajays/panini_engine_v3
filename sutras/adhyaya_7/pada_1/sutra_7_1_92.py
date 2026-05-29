@@ -8,7 +8,7 @@ sakhi is treated as ṇit (ṇidvat). This causes vṛddhi on the final 'i' of
 sakhi (via 7.2.115 acoñṇiti): i → ai (vṛddhi). Then 6.1.78 eco'yavāyāvaḥ:
 ai → āy. Result: sakhi → sakhāy + pratyaya.
 
-Engine: arm ``7_1_92_arm`` + finds the pratyaya term tagged "sarvanamasthana"
+Engine: arm ``sakhyu_recipe`` + finds the pratyaya term tagged "sarvanamasthana"
 (and not sambodhana/sambuddhi). Applies vṛddhi to the stem's final 'i'.
 """
 from __future__ import annotations
@@ -44,7 +44,7 @@ def _find_sakhi_pratyaya_boundary(state: State) -> int | None:
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    if not state.meta.get("7_1_92_arm"):
+    if not state.meta.get("sakhyu_recipe"):
         return False
     return _find_sakhi_pratyaya_boundary(state) is not None
 
@@ -62,7 +62,7 @@ def act(state: State) -> State:
     t.tags.discard("pragrahya")
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
-    state.meta.pop("7_1_92_arm", None)
+    state.meta.pop("sakhyu_recipe", None)
     return state
 
 

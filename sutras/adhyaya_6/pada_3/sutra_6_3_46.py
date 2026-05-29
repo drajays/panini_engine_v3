@@ -41,7 +41,7 @@ def _find(state: State):
 
 def cond(state: State) -> bool:
     # Glass-box arming: pipeline must opt-in.
-    if not state.meta.get("6_3_46_An_mahat_arm"):
+    if not state.meta.get("An_mahat_recipe"):
         return False
     return _find(state) is not None
 

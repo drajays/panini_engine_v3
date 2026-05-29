@@ -98,7 +98,7 @@ def derive_paTayati_paTu_Nic_P025() -> State:
     s.meta["3_1_68_kartari_recipe"] = True
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_slp1"] = "tip"
+    s.meta["tin_adesha_form"] = "tip"
     s = apply_rule("3.4.78", s)
 
     s = apply_rule("3.1.68", s)

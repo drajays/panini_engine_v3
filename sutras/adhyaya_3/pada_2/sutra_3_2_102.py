@@ -4,14 +4,14 @@
 **Pāṭha (machine index i=32102):** *niṣṭhā* — *bhūte* *kṛt* **kta** / **ktavatu**…
 (adhikāra scope per local ``krit_pratyaya.json`` *vidhana_sutra_range*).
 
-Glass-box v3: when ``state.meta["3_2_102_kta_arm"]`` **or**
-``state.meta["3_2_102_ktavatu_arm"]`` is set and ``terms[0]`` is a *dhātu* whose
+Glass-box v3: when ``state.meta["kta_recipe"]`` **or**
+``state.meta["ktavatu_recipe"]`` is set and ``terms[0]`` is a *dhātu* whose
 ``meta["upadesha_slp1"]`` matches ``state.meta["3_2_102_target_upadesha_slp1"]``
 (recipe-selected *upadeśa* row), append **kta** or **ktavatu~** as a *kṛt* ``Term``
 with ``kngiti`` (**1.1.5** *kit* after **1.3.8** drops initial ``k`` *it*;
 **ktavatu~** also supplies **1.3.2** *anunāsika* *it* on final ``u`` for *ugit*).
 
-Optional: ``state.meta["3_2_102_bhinn_before_tavat_arm"]`` (``*ktavatu~*`` only)
+Optional: ``state.meta["bhinn_before_tavat_recipe"]`` (``*ktavatu~*`` only)
 rewrites ``Bid`` → ``Binn`` on the *dhātu* tape before the *kṛt* is appended
 (glass-box *bhid* row; **6.1.111** then drops the *t* onset of *tavat* so *Binn*
 + *avat* merges).
@@ -32,7 +32,7 @@ def _target_upadesha(state: State) -> str:
 
 
 def cond(state: State) -> bool:
-    if not (state.meta.get("3_2_102_kta_arm") or state.meta.get("3_2_102_ktavatu_arm")):
+    if not (state.meta.get("kta_recipe") or state.meta.get("ktavatu_recipe")):
         return False
     if len(state.terms) != 1:
         return False
@@ -48,11 +48,11 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     t0 = state.terms[0]
-    if state.meta.get("3_2_102_ktavatu_arm") and state.meta.get("3_2_102_bhinn_before_tavat_arm"):
+    if state.meta.get("ktavatu_recipe") and state.meta.get("bhinn_before_tavat_recipe"):
         if "".join(v.slp1 for v in t0.varnas) == "Bid":
             t0.varnas = parse_slp1_upadesha_sequence("Binn")
-        state.meta.pop("3_2_102_bhinn_before_tavat_arm", None)
-    if state.meta.get("3_2_102_kta_arm"):
+        state.meta.pop("bhinn_before_tavat_recipe", None)
+    if state.meta.get("kta_recipe"):
         pr = Term(
             kind="pratyaya",
             varnas=parse_slp1_upadesha_sequence("kta"),

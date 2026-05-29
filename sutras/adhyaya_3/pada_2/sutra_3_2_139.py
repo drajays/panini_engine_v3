@@ -4,7 +4,7 @@
 **Pāṭha:** *glājiṣṭhaś ca gsnūḥ* — *tācchīlye* *gsnuC* after **3.2.134**
 (*ākv…* *adhikāra*).
 
-Glass-box v3: when ``state.meta["3_2_139_gsnu_arm"]`` is set and ``terms[0]`` is
+Glass-box v3: when ``state.meta["gsnu_recipe"]`` is set and ``terms[0]`` is
 a *dhātu* whose *upadeśa* is ``ji``, append a *kṛt* ``Term`` **gsnuC**
 (``g`` + ``s`` + ``n`` + ``u`` + ``c`` *it*).  The initial ``g`` is *it* by
 **1.3.8** (*laśakvataddhite*); the ``Term`` carries ``kngiti`` so **1.1.5**
@@ -18,7 +18,7 @@ from phonology    import mk
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("3_2_139_gsnu_arm"):
+    if not state.meta.get("gsnu_recipe"):
         return False
     if len(state.terms) != 1:
         return False

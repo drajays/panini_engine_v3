@@ -43,8 +43,8 @@ _SUTRAS_ROOT = pathlib.Path(__file__).resolve().parents[2] / "sutras"
 # Number of arm-gate string-literal reads inside sūtra ``cond()`` bodies as of
 # the P5/P6 audit.  This is a CEILING: migrations that remove an arm read must
 # lower this number; commits may never raise it.
-#   • measured 2026-05-29 after P001-P019 T3 audit + 22-key arm-rename campaign.
-ARM_GATE_BASELINE = 73
+#   • measured 2026-05-29 after P001-P019 T3 audit + full arm-key elimination campaign.
+ARM_GATE_BASELINE = 0
 
 
 def _meta_key(node: ast.AST):

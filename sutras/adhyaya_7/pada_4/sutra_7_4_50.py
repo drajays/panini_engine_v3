@@ -5,7 +5,7 @@
 the final ``s`` when the following tiṅ Term begins with ``s`` (i.e., *si* from
 *sip* for 2sg, or *ty* from *asti*).
 
-Gate: ``7_4_50_arm``; completion registered in ``samjna_registry``.
+Gate: ``tasa_lopa_recipe``; completion registered in ``samjna_registry``.
 
 *luṭ* 2sg (si) path:
   [BU, i+t+A+s, si] → [BU, i+t+A, si]
@@ -41,7 +41,7 @@ def _find_tasi_before_si(state: State) -> int | None:
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    if not state.meta.get("7_4_50_arm"):
+    if not state.meta.get("tasa_lopa_recipe"):
         return False
     return _find_tasi_before_si(state) is not None
 

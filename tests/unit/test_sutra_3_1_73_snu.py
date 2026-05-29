@@ -30,7 +30,7 @@ def test_replace_sap_when_armed():
             ),
             sap,
         ],
-        meta={"3_1_73_snu_arm": True},
+        meta={"snu_recipe": True},
     )
     s1 = apply_rule("3.1.73", s0)
     assert len(s1.terms) == 2

@@ -3,7 +3,7 @@
 
 Two operational paths:
   1. Arm ``corrected_v2_P016_7_4_25_arm``: narrow P016 path (lohitay stem).
-  2. Arm ``7_4_25_ashir_liG_arm``: āśīr-liṅ — fires as a trace marker.
+  2. Arm ``ashir_7_4_25_recipe``: āśīr-liṅ — fires as a trace marker.
      BU (bhū) already has the long ū; dīrgha is vacuous here.  The rule
      formally applies before ārdhadhātuka (yāsuṭ is ārdhadhātuka context).
 """
@@ -52,7 +52,7 @@ def _karmani_vacuous_dirgha(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    if state.meta.get("7_4_25_ashir_liG_arm"):
+    if state.meta.get("ashir_7_4_25_recipe"):
         return not state.meta.get("7_4_25_ashir_done")
     if _karmani_vacuous_dirgha(state):
         return True
@@ -60,15 +60,15 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if _karmani_vacuous_dirgha(state) and not state.meta.get("7_4_25_ashir_liG_arm"):
+    if _karmani_vacuous_dirgha(state) and not state.meta.get("ashir_7_4_25_recipe"):
         state.meta["7_4_25_karmani_done"] = True
         state.meta.pop("7_4_25_karmani_yak_arm", None)
         state.samjna_registry["7.4.25_karmani_vacuous"] = True
         return state
-    if state.meta.get("7_4_25_ashir_liG_arm"):
+    if state.meta.get("ashir_7_4_25_recipe"):
         # Vacuous for BU (ū already long); fires as trace record only.
         state.meta["7_4_25_ashir_done"] = True
-        state.meta.pop("7_4_25_ashir_liG_arm", None)
+        state.meta.pop("ashir_7_4_25_recipe", None)
         state.samjna_registry["7.4.25_dirgha_ashir"] = True
         return state
 

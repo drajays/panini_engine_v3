@@ -4,7 +4,7 @@
 *Śāstra (laghu):* *apatya* in the *pautra-prabhṛti* sense with **yañ** is named
 *gotra*.
 
-Engine: ``state.meta['P042_4_1_162_arm']`` + ``P042_gArgya_stem`` tag on the stem
+Engine: ``state.meta['eka_des_recipe']`` + ``P042_gArgya_stem`` tag on the stem
 ``Term`` before *jas* — registers ``samjna_registry['4.1.162_gotra_P042']``.
 """
 from __future__ import annotations
@@ -14,16 +14,16 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("P042_4_1_162_arm"):
+    if not state.meta.get("eka_des_recipe"):
         return False
     return any("P042_gArgya_stem" in t.tags for t in state.terms)
 
 
 def act(state: State) -> State:
-    if not state.meta.get("P042_4_1_162_arm"):
+    if not state.meta.get("eka_des_recipe"):
         return state
     state.samjna_registry["4.1.162_gotra_P042"] = True
-    state.meta.pop("P042_4_1_162_arm", None)
+    state.meta.pop("eka_des_recipe", None)
     return state
 
 

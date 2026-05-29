@@ -34,7 +34,7 @@ def _find(state: State):
 
 
 def cond(state: State) -> bool:
-    return bool(state.meta.get("2_4_74_yang_luk_arm")) and _find(state) is not None
+    return bool(state.meta.get("yang_luk_recipe")) and _find(state) is not None
 
 
 def act(state: State) -> State:

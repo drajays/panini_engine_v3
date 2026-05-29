@@ -13,7 +13,7 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("prakriya_P013_6_1_93_arm"):
+    if not state.meta.get("sandhi_6_1_93_recipe"):
         return False
     if state.samjna_registry.get("6.1.93_om_angoH_placeholder_P013"):
         return False
@@ -24,7 +24,7 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     state.samjna_registry["6.1.93_om_angoH_placeholder_P013"] = True
-    state.meta.pop("prakriya_P013_6_1_93_arm", None)
+    state.meta.pop("sandhi_6_1_93_recipe", None)
     return state
 
 

@@ -122,7 +122,7 @@ def derive_aupAgava_pratipadika() -> State:
 
     # IV. sup-luk (remove Nas)
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
 
     # V. it-saṃjñā + lopa on aR (R = it ⇒ ṇit marker recorded)

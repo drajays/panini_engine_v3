@@ -6,7 +6,7 @@
 band; this file is the *vidhi* hook only).
 
 Engine:
-  When ``state.meta['prakriya_24_uR_arm']`` is True and the tape is exactly one
+  When ``state.meta['uR_recipe']`` is True and the tape is exactly one
   ``dhātu`` ``Term`` with ``meta['upadesha_slp1'] == 'vA'``, append ``uR`` (*uṇ*
   *upadeśa*) as a ``kṛt`` *pratyaya* ``Term`` and stamp ``meta['prakriya_24_uR_source']``
   for downstream **7.3.33**.
@@ -21,7 +21,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("prakriya_24_uR_arm"):
+    if not state.meta.get("uR_recipe"):
         return False
     if len(state.terms) != 1:
         return False
@@ -43,7 +43,7 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "uR", "prakriya_24_uR_source": True},
     )
     state.terms.append(uR)
-    state.meta.pop("prakriya_24_uR_arm", None)
+    state.meta.pop("uR_recipe", None)
     return state
 
 

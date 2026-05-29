@@ -124,12 +124,12 @@ def _structural_merge_ratnaDAtama(s: State) -> State:
 def derive_ratnaDAtamam_prakriya_22() -> State:
     s = State(terms=[_ratna_upapada_karma(), _Sas_internal(), _dha_dhatu()], meta={}, trace=[])
 
-    s.meta["3_2_76_kvip_arm"] = True
+    s.meta["kvip_recipe"] = True
     s = apply_rule("3.2.76", s)
     s = apply_rule("1.2.46", s)
 
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
 
     s = apply_rule("2.2.19", s)

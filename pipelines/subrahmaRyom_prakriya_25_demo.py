@@ -69,7 +69,7 @@ def _structural_pada_merge(s: State) -> State:
 
 def derive_subrahmaRyom_prakriya_25() -> State:
     s = _mk_subrahmaRyA_om()
-    s.meta["prakriya_25_6_1_152_arm"] = True
+    s.meta["sandhi_6_1_152_recipe"] = True
     s = apply_rule("6.1.152", s)
     s.meta["prakriya_25_6_1_62_pararupa_arm"] = True
     s = apply_rule("6.1.62", s)

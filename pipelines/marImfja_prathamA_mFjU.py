@@ -53,7 +53,7 @@ def derive_marImfjaH() -> State:
     s = apply_rule("1.1.51", s)
     s.terms[0].meta["7_4_60_first_hal_only"] = True
     s = apply_rule("7.4.60", s)
-    s.meta["7_4_90_rIk_arm"] = True
+    s.meta["rIk_recipe"] = True
     s = apply_rule("7.4.90", s)
 
     s = P00_yang_ac_three_term_frame(s)

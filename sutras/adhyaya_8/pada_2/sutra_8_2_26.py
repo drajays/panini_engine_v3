@@ -5,7 +5,7 @@ Teaching JSON **P033** step 8: in a *jhal*+*jhal* contact, the first *jhal* is *
 when the second is *jhal* — here **s** (first) between **G** and **t** drops,
 yielding **Gta**.
 
-Arms: ``state.meta['P033_8_2_26_jhalo_jhali_arm']``; Tripāḍī zone; single *pada*
+Arms: ``state.meta['jhalo_jhali_recipe']``; Tripāḍī zone; single *pada*
 with flat ``Gsta``.
 """
 from __future__ import annotations
@@ -23,7 +23,7 @@ def _flat_pada(state: State) -> str:
 def cond(state: State) -> bool:
     if not state.tripadi_zone:
         return False
-    if not state.meta.get("P033_8_2_26_jhalo_jhali_arm"):
+    if not state.meta.get("jhalo_jhali_recipe"):
         return False
     if state.terms[0].meta.get("P033_8_2_26_done"):
         return False
@@ -44,7 +44,7 @@ def act(state: State) -> State:
     ):
         del t.varnas[1]
     t.meta["P033_8_2_26_done"] = True
-    state.meta.pop("P033_8_2_26_jhalo_jhali_arm", None)
+    state.meta.pop("jhalo_jhali_recipe", None)
     return state
 
 

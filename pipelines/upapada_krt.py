@@ -50,7 +50,7 @@ def derive_kurucarI() -> State:
     s = apply_rule("1.2.46", s)
 
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
 
     for sid in ("1.3.7", "1.3.9"):
@@ -161,7 +161,7 @@ def derive_upasarajaH() -> State:
     s = apply_rule("1.2.46", s)
 
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
 
     for sid in ("1.3.7", "1.3.9"):

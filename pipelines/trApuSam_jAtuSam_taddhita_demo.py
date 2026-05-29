@@ -111,9 +111,9 @@ def _derive_vikara_neuter_nom_sg(stem_slp1: str, *, out_upadesha_slp1: str) -> S
     # Recipe assertion for 2.4.71 (see sutra_2_4_71 doc): internal-avayava ready.
     s.meta["pratipadika_avayava_ready"] = True
 
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)  # sup (Nas) luk -> ghost
-    s.meta.pop("2_4_71_luk_arm", None)
+    s.meta.pop("luk_2_4_71_recipe", None)
     s.meta.pop("pratipadika_avayava_ready", None)
 
     s = apply_rule("6.4.1", s)

@@ -34,5 +34,5 @@ def test_P044_trace_paribhasha_sequence_and_gates():
     assert s.meta.get("P044_nighata_on_following_tin_demo") is True
     assert s.meta.get("P044_8_1_28_tin_context_arm") is None
     assert s.meta.get("P044_8_1_28_nighata_illustration_arm") is None
-    assert s.meta.get("P044_1_1_67_atina_arm") is None
-    assert s.meta.get("P044_1_1_67_siddhi_arm") is None
+    assert s.meta.get("atina_recipe") is None
+    assert s.meta.get("siddhi_recipe") is None

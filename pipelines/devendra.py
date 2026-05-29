@@ -84,7 +84,7 @@ def derive_demo(case: DemoCase) -> State:
 
     # Phase 1b: sup-lopa inside samāsa (removes internal sup terms).
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
 
     # Phase 2: guṇa sandhi (a+i→e, a+u→o) with sthāne'ntaratamaḥ selection.

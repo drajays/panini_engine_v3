@@ -27,12 +27,12 @@ def test_zero_width_ghost_internal_sup_when_armed():
     t2 = Term(kind="prakriti", varnas=[mk("p")], tags={"prātipadika"}, meta={})
     s0 = State(
         terms=[t1, sup, t2],
-        meta={"2_4_71_luk_arm": True, "pratipadika_avayava_ready": True},
+        meta={"luk_2_4_71_recipe": True, "pratipadika_avayava_ready": True},
     )
 
     s1 = apply_rule("2.4.71", s0)
     assert len(s1.terms) == 3
-    assert s1.meta.get("2_4_71_luk_arm") is False
+    assert s1.meta.get("luk_2_4_71_recipe") is False
     assert s1.meta.get("2_4_71_luk") is True
     g = s1.terms[1]
     assert term_is_sup_luk_ghost(g)
@@ -56,7 +56,7 @@ def test_skips_when_armed_but_pratipadika_ready_false():
     t1 = Term(kind="prakriti", varnas=[mk("r")], tags={"prātipadika"}, meta={})
     sup = Term(kind="pratyaya", varnas=[mk("A"), mk("s")], tags={"sup"}, meta={"upadesha_slp1": "As"})
     t2 = Term(kind="prakriti", varnas=[mk("p")], tags={"prātipadika"}, meta={})
-    s0 = State(terms=[t1, sup, t2], meta={"2_4_71_luk_arm": True})
+    s0 = State(terms=[t1, sup, t2], meta={"luk_2_4_71_recipe": True})
 
     s1 = apply_rule("2.4.71", s0)
     assert len(s1.terms) == 3

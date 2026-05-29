@@ -88,7 +88,7 @@ def derive_juhoti_hu_lat_tip_Slu_P040() -> State:
 
     s = apply_rule("3.4.113", s)
 
-    s.meta["P040_7_3_84_arm"] = True
+    s.meta["juhoti_guna_recipe"] = True
     s = apply_rule("7.3.84", s)
 
     s = apply_rule("1.1.62", s)

@@ -55,7 +55,7 @@ def derive_meGAtithe_manmahe_prakriya_28() -> State:
     s.meta["prakriya_28_6_1_198_arm"] = True
     s = apply_rule("6.1.198", s)
 
-    s.meta["prakriya_28_6_1_158_arm"] = True
+    s.meta["megha_6_1_158_recipe"] = True
     s = apply_rule("6.1.158", s)
 
     s = apply_rule("8.2.1", s)

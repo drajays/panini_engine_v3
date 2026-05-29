@@ -51,7 +51,7 @@ def derive_papatuH_lit_pA_P035() -> State:
 
     s = apply_rule("3.1.91", s)
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s.meta["3_4_82_lit_atus_arm"] = True
+    s.meta["liT_atus_recipe"] = True
     s = P00_tin_tas_adesh_full(s)
 
     s = apply_rule("3.4.82", s)

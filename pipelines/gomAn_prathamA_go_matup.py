@@ -67,7 +67,7 @@ def derive_gomAn() -> State:
     )
     s = State(terms=[go, jas], meta={"linga": "pulliṅga"}, trace=[])
 
-    s.meta["5_2_94_matup_arm"] = True
+    s.meta["matup_recipe"] = True
     s = apply_rule("5.2.94", s)
 
     # Prevent **1.2.46** *samāsa* merge of ``[go, jas, matup]`` (same opt-in as *itika*+*phak*).

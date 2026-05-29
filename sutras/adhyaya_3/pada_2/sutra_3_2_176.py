@@ -4,7 +4,7 @@
 Teaching JSON **P029** step 9: after the *yaṅ* *abhyāsa* frame, attach the *kṛt*
 *varac* (surface *vara*) to form the agent noun of the intensive.
 
-Narrow v3: ``state.meta['P029_3_2_176_varac_arm']`` appends an upadeśa Term
+Narrow v3: ``state.meta['varac_recipe']`` appends an upadeśa Term
 ``varac`` tagged ``krt`` / ``pratyaya`` / ``upadesha`` for the **1.3** *it* chain.
 """
 from __future__ import annotations
@@ -15,7 +15,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("P029_3_2_176_varac_arm"):
+    if not state.meta.get("varac_recipe"):
         return False
     return not any((t.meta.get("upadesha_slp1") or "").strip() == "varac" for t in state.terms)
 
@@ -30,7 +30,7 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "varac"},
     )
     state.terms.append(varac)
-    state.meta.pop("P029_3_2_176_varac_arm", None)
+    state.meta.pop("varac_recipe", None)
     return state
 
 

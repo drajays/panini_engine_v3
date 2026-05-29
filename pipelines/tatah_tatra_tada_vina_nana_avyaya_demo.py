@@ -80,7 +80,7 @@ def derive_tataH() -> State:
     tas = _taddhita("tas")
     s = State(terms=[tad, nasi, tas], meta={}, trace=[])
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
     s = apply_rule("7.2.102", s)
     s = apply_rule("6.1.97", s)
@@ -94,7 +94,7 @@ def derive_yataH() -> State:
     tas = _taddhita("tas")
     s = State(terms=[yad, nasi, tas], meta={}, trace=[])
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
     s = apply_rule("7.2.102", s)
     s = apply_rule("6.1.97", s)
@@ -107,7 +107,7 @@ def derive_tatra() -> State:
     tra = _taddhita("tra")
     s = State(terms=[tad, ni, tra], meta={}, trace=[])
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
     s = apply_rule("7.2.102", s)
     s = apply_rule("6.1.97", s)
@@ -122,7 +122,7 @@ def derive_yatra() -> State:
     tra = _taddhita("tra")
     s = State(terms=[yad, ni, tra], meta={}, trace=[])
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
     s = apply_rule("7.2.102", s)
     s = apply_rule("6.1.97", s)
@@ -135,7 +135,7 @@ def derive_tadA() -> State:
     dA = _taddhita("dA")
     s = State(terms=[tad, ni, dA], meta={}, trace=[])
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
     s = apply_rule("7.2.102", s)
     s = apply_rule("6.1.97", s)
@@ -148,7 +148,7 @@ def derive_yadA() -> State:
     dA = _taddhita("dA")
     s = State(terms=[yad, ni, dA], meta={}, trace=[])
     s.meta["pratipadika_avayava_ready"] = True
-    s.meta["2_4_71_luk_arm"] = True
+    s.meta["luk_2_4_71_recipe"] = True
     s = apply_rule("2.4.71", s)
     s = apply_rule("7.2.102", s)
     s = apply_rule("6.1.97", s)

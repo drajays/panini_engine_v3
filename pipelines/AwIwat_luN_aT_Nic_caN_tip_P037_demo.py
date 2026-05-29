@@ -88,7 +88,7 @@ def derive_AwIwat_luN_aT_Nic_caN_tip_P037() -> State:
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
 
     s.meta["P037_3_1_48_caN_arm"] = True
-    s.meta["3_2_110_luG_arm"] = True
+    s.meta["luG_recipe"] = True
     s = apply_rule("3.2.110", s)
     s = apply_rule("3.1.48", s)
     s = apply_rule("3.4.69", s)
@@ -102,9 +102,9 @@ def derive_AwIwat_luN_aT_Nic_caN_tip_P037() -> State:
     s = apply_rule("6.4.51", s)
 
     s = apply_rule("6.1.1", s)
-    s.meta["P037_6_1_11_lugi_arm"] = True
+    s.meta["lugi_recipe"] = True
     s = apply_rule("6.1.11", s)
-    s.meta["6_1_1_dvitva_arm"] = True
+    s.meta["dvitva_recipe"] = True
     s = apply_rule("6.1.1", s)
     s = apply_rule("6.1.4", s)
 
