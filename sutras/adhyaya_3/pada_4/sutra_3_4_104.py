@@ -3,7 +3,7 @@
 
 Two operational paths:
   1. Arm ``3_4_104_arm``: legacy gate-setter.
-  2. Arm ``3_4_104_ashir_yasut_arm``: āśīr-liṅ — insert the yāsuṭ augment
+  2. Arm ``ashir_yasut_recipe``: āśīr-liṅ — insert the yāsuṭ augment
      [y,A,s] (after u~/T it-lopa) immediately before the tiṅ ādeśa, tagged
      as KIT.  The kit-mark on yāsuṭ causes 1.1.5 (kṅiti ca) to block guṇa
      on the dhātu (hence bhūyāt not bhaveyāt).
@@ -31,7 +31,7 @@ def cond(state: State) -> bool:
     # Structural path: kit-yāsuṭ insertion in āśīr-liṅ before the tiṅ ādeśa.
     # (The legacy gate-setter arm path is dead — no caller sets ``3_4_104_arm``
     # and the gate it produced is read by no other sūtra.  Art.7: no arm read.)
-    if state.meta.get("3_4_104_ashir_yasut_arm"):
+    if state.meta.get("ashir_yasut_recipe"):
         if state.meta.get("3_4_104_yasut_done"):
             return False
         return _find_tin_index(state) is not None
@@ -39,7 +39,7 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if state.meta.get("3_4_104_ashir_yasut_arm") and not state.meta.get("3_4_104_yasut_done"):
+    if state.meta.get("ashir_yasut_recipe") and not state.meta.get("3_4_104_yasut_done"):
         idx = _find_tin_index(state)
         if idx is None:
             return state
@@ -53,7 +53,7 @@ def act(state: State) -> State:
         )
         state.terms.insert(idx, yasut)
         state.meta["3_4_104_yasut_done"] = True
-        state.meta.pop("3_4_104_ashir_yasut_arm", None)
+        state.meta.pop("ashir_yasut_recipe", None)
         state.samjna_registry["3.4.104_yasut_inserted"] = True
         return state
     state.paribhasha_gates[_GATE_KEY] = True

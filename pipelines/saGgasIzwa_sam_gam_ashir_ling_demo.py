@@ -56,13 +56,13 @@ def derive_saGgasIzwa() -> State:
     s.meta["tin_adesha_slp1"] = "ta"
     s = apply_rule("3.4.78", s)
 
-    s.meta["3_4_102_sIyuw_arm"] = True
+    s.meta["sIyuw_recipe"] = True
     s = apply_rule("3.4.102", s)
     s.meta["1_2_13_va_gam_kit_arm"] = True
     s = apply_rule("1.2.13", s)
     s.meta["6_4_37_gam_anunasika_arm"] = True
     s = apply_rule("6.4.37", s)
-    s.meta["3_4_107_suw_arm"] = True
+    s.meta["suw_recipe"] = True
     s = apply_rule("3.4.107", s)
 
     from pipelines.subanta import _pada_merge  # noqa: PLC0415

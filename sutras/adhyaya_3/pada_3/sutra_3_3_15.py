@@ -1,7 +1,7 @@
 """
 3.3.15  अनद्यतने लुट्  —  VIDHI (narrow)
 
-Glass-box: when a recipe arms ``3_3_15_lut_arm`` under the **3.3.3** future
+Glass-box: when a recipe arms ``luT_recipe`` under the **3.3.3** future
 adhikāra, attach the *luṭ* *lac* placeholder (``luT``) after the *dhātu*.
 
 ``cond`` does not read *lakāra* names from paradigm metadata beyond the
@@ -16,7 +16,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("3_3_15_lut_arm"):
+    if not state.meta.get("luT_recipe"):
         return False
     if state.meta.get("3_3_15_lut_attached"):
         return False

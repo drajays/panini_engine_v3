@@ -14,7 +14,7 @@ Narrow v3 representation (*āśīr* path):
   tripāḍī is: a long vowel ``I`` followed by ``s`` from suṭ (3.4.107).
 
 Engine:
-  - recipe arms via ``state.meta['3_4_102_sIyuw_arm']``.
+  - recipe arms via ``state.meta['sIyuw_recipe']``.
   - inserts a pratyaya Term tagged ``ling_sIyuw`` immediately before the final
     *tiṅ* term (``ashir_liG``) **or** before ``liG`` (``vidhi_liG``).
 """
@@ -51,7 +51,7 @@ def _find_liG_index(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("3_4_102_sIyuw_arm"):
+    if not state.meta.get("sIyuw_recipe"):
         return False
     if any("ling_sIyuw" in t.tags for t in state.terms):
         return False
@@ -59,7 +59,7 @@ def cond(state: State) -> bool:
         return _find_tin_index(state) is not None
     if state.meta.get("vidhi_liG"):
         # karmani vidhi-liG: tiṅ ādeśa already installed (no liG placeholder)
-        if state.meta.get("3_4_102_karmani_liG_arm"):
+        if state.meta.get("karmani_liG_recipe"):
             return _find_tin_index(state) is not None
         return _find_liG_index(state) is not None
     return False
@@ -70,7 +70,7 @@ def act(state: State) -> State:
         idx = _find_tin_index(state)
         slp = "sI"
     elif state.meta.get("vidhi_liG"):
-        if state.meta.get("3_4_102_karmani_liG_arm"):
+        if state.meta.get("karmani_liG_recipe"):
             idx = _find_tin_index(state)
         else:
             idx = _find_liG_index(state)
@@ -86,8 +86,8 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": slp},
     )
     state.terms.insert(idx, sI)
-    state.meta["3_4_102_sIyuw_arm"] = False
-    state.meta.pop("3_4_102_karmani_liG_arm", None)
+    state.meta["sIyuw_recipe"] = False
+    state.meta.pop("karmani_liG_recipe", None)
     return state
 
 

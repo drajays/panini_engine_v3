@@ -46,7 +46,7 @@ def derive_viSiNQi_loT_rudhadi_P031() -> State:
     s = apply_rule("1.1.68", s)
     s = apply_rule("1.3.1", s)
 
-    s.meta["P031_3_3_162_loT_adhikara_arm"] = True
+    s.meta["loT_adhikara_recipe"] = True
     s = apply_rule("3.3.162", s)
 
     s = apply_rule("3.1.91", s)

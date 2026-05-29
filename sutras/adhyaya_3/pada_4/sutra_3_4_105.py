@@ -4,7 +4,7 @@
 Teaching **P038** (*paceran*): in the *vidhi-liṅ* frame, *tiṅ* *ādeśa* ``Ja`` is
 replaced by ``ran`` (SLP1 ``r`` ``a`` ``n``).
 
-Narrow: ``state.meta['3_4_105_arm']`` + ``vidhi_liG`` + ``Ja`` *tiṅ* term.
+Narrow: ``state.meta['Ja_ran_recipe']`` + ``vidhi_liG`` + ``Ja`` *tiṅ* term.
 """
 from __future__ import annotations
 
@@ -28,7 +28,7 @@ def _find_ja_index(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("3_4_105_arm"):
+    if not state.meta.get("Ja_ran_recipe"):
         return False
     if not (state.meta.get("vidhi_liG") or state.meta.get("ashir_liG")):
         return False
@@ -43,7 +43,7 @@ def act(state: State) -> State:
     t.varnas = list(parse_slp1_upadesha_sequence("ran"))
     t.meta["upadesha_slp1"] = "ran"
     t.meta["3_4_105_done"] = True
-    state.meta.pop("3_4_105_arm", None)
+    state.meta.pop("Ja_ran_recipe", None)
     return state
 
 

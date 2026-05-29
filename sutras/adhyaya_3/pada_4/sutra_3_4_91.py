@@ -7,7 +7,7 @@ In loṭ (imperative), this rule operates on two cells:
   2. 2pl (madhyamā bahuvacana): Dve → Dvam
        (after 3.4.79 replaces Dvam's ṭi-am with e, giving Dve=dhve)
 
-Arm: state.meta["3_4_91_loT_karmani_arm"] must be True.
+Arm: state.meta["loT_karmani_recipe"] must be True.
 """
 from __future__ import annotations
 
@@ -46,13 +46,13 @@ def _find_dhve(state: State):
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("3_4_91_loT_karmani_arm"):
+    if not state.meta.get("loT_karmani_recipe"):
         return False
     return _find_se(state) is not None or _find_dhve(state) is not None
 
 
 def act(state: State) -> State:
-    if not state.meta.get("3_4_91_loT_karmani_arm"):
+    if not state.meta.get("loT_karmani_recipe"):
         return state
 
     hit = _find_se(state)
@@ -63,7 +63,7 @@ def act(state: State) -> State:
         t.varnas = parse_slp1_upadesha_sequence("sva")
         t.meta["upadesha_slp1"] = "sva"
         t.meta["3_4_91_done"] = True
-        state.meta.pop("3_4_91_loT_karmani_arm", None)
+        state.meta.pop("loT_karmani_recipe", None)
         state.samjna_registry["3.4.91_se_to_sva"] = True
         return state
 
@@ -75,7 +75,7 @@ def act(state: State) -> State:
         t.varnas = list(t.varnas[:-1]) + [_mk("a"), _mk("m")]
         t.meta["upadesha_slp1"] = "".join(v.slp1 for v in t.varnas)
         t.meta["3_4_91_done"] = True
-        state.meta.pop("3_4_91_loT_karmani_arm", None)
+        state.meta.pop("loT_karmani_recipe", None)
         state.samjna_registry["3.4.91_Dve_to_Dvam"] = True
         return state
 

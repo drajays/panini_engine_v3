@@ -45,7 +45,7 @@ def cond(state: State) -> bool:
     if any("abhyasa" in t.tags for t in state.terms) and _dhatu_in_group(state):
         return True
     # Legacy arm path
-    return bool(state.meta.get("7_2_13_arm"))
+    return bool(state.meta.get("liT_krsrbhr_recipe"))
 
 
 def act(state: State) -> State:

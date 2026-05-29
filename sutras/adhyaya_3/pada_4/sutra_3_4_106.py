@@ -7,7 +7,7 @@ In the āśīr-liṅ ātmanepada frame: the 1sg tiṅ ādeśa iṭ (= iw after
 IT-lopa of w → [i]) is replaced by 'a'. This gives the 1sg ending sīya
 (sīyuṭ + a) instead of sīyuṭ + i.
 
-Engine: arm ``3_4_106_arm`` + ``ashir_liG`` + finds term tagged
+Engine: arm ``iT_a_recipe`` + ``ashir_liG`` + finds term tagged
 ``tin_adesha_3_4_78`` with single varṇa 'i'.
 """
 from __future__ import annotations
@@ -37,7 +37,7 @@ def _find_it_i(state: State) -> int | None:
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    if not state.meta.get("3_4_106_arm"):
+    if not state.meta.get("iT_a_recipe"):
         return False
     if not state.meta.get("ashir_liG"):
         return False
@@ -56,7 +56,7 @@ def act(state: State) -> State:
     state.terms[idx].varnas = [mk("a")]
     state.terms[idx].meta["upadesha_slp1"] = "a"
     state.terms[idx].meta["3_4_106_done"] = True
-    state.meta.pop("3_4_106_arm", None)
+    state.meta.pop("iT_a_recipe", None)
     state.samjna_registry["3.4.106_it_to_a"] = True
     return state
 

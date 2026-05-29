@@ -8,7 +8,7 @@ This gives ba-bhū → ba-bhū-v... → after abhyāsa: bu-BU- → after 7.4.59 
   abhyāsa has u (short) → 7.4.73 turns u → a → ba-BU-...
 
 Engine:
-  - cond: ``state.meta.get("7_4_73_arm") is True`` AND
+  - cond: ``state.meta.get("bhU_abhyasa_recipe") is True`` AND
     find abhyāsa term whose last vowel (or only vowel) is ``u`` (hrasva).
   - act: replace that ``u`` varna with ``a``.
   - state.samjna_registry["7_4_73_bhavatеra"] = True
@@ -35,7 +35,7 @@ def _find_abhyasa_u(state: State):
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("7_4_73_arm"):
+    if not state.meta.get("bhU_abhyasa_recipe"):
         return False
     if state.samjna_registry.get("7_4_73_bhavatеra"):
         return False
@@ -49,7 +49,7 @@ def act(state: State) -> State:
     i, j = hit
     state.terms[i].varnas[j] = mk("a")
     state.terms[i].meta["7_4_73_done"] = True
-    state.meta["7_4_73_arm"] = False
+    state.meta["bhU_abhyasa_recipe"] = False
     state.samjna_registry["7_4_73_bhavatеra"] = True
     return state
 

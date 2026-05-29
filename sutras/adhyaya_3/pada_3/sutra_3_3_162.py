@@ -2,8 +2,8 @@
 3.3.162  लोट् च  —  VIDHI (narrow: loṭ lakāra attachment)
 
 Two operational paths:
-  1. ``P031_3_3_162_loT_adhikara_arm``: legacy P031 adhikāra push.
-  2. ``3_3_162_loT_arm``: glass-box loṭ pipeline — fires as a trace marker;
+  1. ``loT_adhikara_recipe``: legacy P031 adhikāra push.
+  2. ``loT_recipe``: glass-box loṭ pipeline — fires as a trace marker;
      the loT placeholder Term is appended inline in the calling pipeline
      (following the same pattern as 3.3.13 for lṛṭ).
 """
@@ -14,24 +14,24 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    if state.meta.get("3_3_162_loT_arm"):
+    if state.meta.get("loT_recipe"):
         return not state.meta.get("3_3_162_loT_done")
-    if not state.meta.get("P031_3_3_162_loT_adhikara_arm"):
+    if not state.meta.get("loT_adhikara_recipe"):
         return False
     return not any(e.get("id") == "3.3.162" for e in state.adhikara_stack)
 
 
 def act(state: State) -> State:
-    if state.meta.get("3_3_162_loT_arm"):
+    if state.meta.get("loT_recipe"):
         state.meta["3_3_162_loT_done"] = True
-        state.meta.pop("3_3_162_loT_arm", None)
+        state.meta.pop("loT_recipe", None)
         return state
     state.adhikara_stack.append({
         "id": "3.3.162",
         "scope_end": "3.3.162",
         "text_dev": "लोट् च",
     })
-    state.meta.pop("P031_3_3_162_loT_adhikara_arm", None)
+    state.meta.pop("loT_adhikara_recipe", None)
     return state
 
 

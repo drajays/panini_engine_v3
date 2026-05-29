@@ -3,7 +3,7 @@
 
 Two operational paths:
   1. Arm ``3_4_103_arm``: legacy gate-setter (krt_kind = 3.4.103).
-  2. Arm ``3_4_103_yasut_arm``: vidhi-liṅ — insert the *yāsuṭ* augment
+  2. Arm ``yasut_recipe``: vidhi-liṅ — insert the *yāsuṭ* augment
      Term ``[y, A, s]`` (pre-processed: u~ and T already conceptually removed)
      immediately before the rightmost tiṅ ādeśa Term.
 
@@ -34,7 +34,7 @@ def cond(state: State) -> bool:
     # Structural path: yāsuṭ insertion in vidhi-liṅ before the tiṅ ādeśa.
     # (The legacy gate-setter arm path is dead — no caller sets ``3_4_103_arm``
     # and the gate it produced is read by no other sūtra.  Art.7: no arm read.)
-    if state.meta.get("3_4_103_yasut_arm"):
+    if state.meta.get("yasut_recipe"):
         if state.meta.get("3_4_103_yasut_done"):
             return False
         return _find_tin_index(state) is not None
@@ -42,7 +42,7 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if state.meta.get("3_4_103_yasut_arm") and not state.meta.get("3_4_103_yasut_done"):
+    if state.meta.get("yasut_recipe") and not state.meta.get("3_4_103_yasut_done"):
         idx = _find_tin_index(state)
         if idx is None:
             return state
@@ -56,7 +56,7 @@ def act(state: State) -> State:
         )
         state.terms.insert(idx, yasut)
         state.meta["3_4_103_yasut_done"] = True
-        state.meta.pop("3_4_103_yasut_arm", None)
+        state.meta.pop("yasut_recipe", None)
         state.samjna_registry["3.4.103_yasut_inserted"] = True
         return state
     # Legacy gate path

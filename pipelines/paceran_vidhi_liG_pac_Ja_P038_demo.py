@@ -50,7 +50,7 @@ def derive_paceran_vidhi_liG_pac_Ja_P038() -> State:
     s.meta["liG_vidhi_recipe"] = True
     s = apply_rule("3.3.161", s)
 
-    s.meta["3_4_102_sIyuw_arm"] = True
+    s.meta["sIyuw_recipe"] = True
     s = apply_rule("3.4.102", s)
 
     s = apply_rule("3.4.69", s)
@@ -60,7 +60,7 @@ def derive_paceran_vidhi_liG_pac_Ja_P038() -> State:
     s.meta["tin_adesha_slp1"] = "Ja"
     s = apply_rule("3.4.78", s)
 
-    s.meta["3_4_105_arm"] = True
+    s.meta["Ja_ran_recipe"] = True
     s = apply_rule("3.4.105", s)
 
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):

@@ -435,7 +435,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     if needs_it:
         # ── iṭ path: iṭ FIRST, then 1.4.13, vuk, IT, dvitva ─────────────────
         state = apply_rule("1.2.5", state)
-        state.meta["7_2_13_arm"] = True
+        state.meta["liT_krsrbhr_recipe"] = True
         state = apply_rule("7.2.13", state)
         state.meta["7_2_35_arm"] = True
         state = apply_rule("7.2.35", state)
@@ -495,7 +495,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     _dht = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
     _dht_up = (_dht.meta.get("upadesha_slp1") or "").strip() if _dht else ""
     if _dht_up in {"BU", "BU~"}:
-        state.meta["7_4_73_arm"] = True
+        state.meta["bhU_abhyasa_recipe"] = True
         state = apply_rule("7.4.73", state)
 
     # ── 1.4.14 pada saṃjñā ───────────────────────────────────────────────────
@@ -550,9 +550,9 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("3.3.3", state)
 
     # ── Stage: 3.3.15 — attach luṭ lakāra placeholder ──────────────────────
-    state.meta["3_3_15_lut_arm"] = True
+    state.meta["luT_recipe"] = True
     state = apply_rule("3.3.15", state)
-    state.meta.pop("3_3_15_lut_arm", None)
+    state.meta.pop("luT_recipe", None)
     # IT on luṭ upadeśa (vacuous — luṭ has no anunāsika or live hal-it)
     state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
@@ -976,13 +976,13 @@ def _derive_ashir_liG(state: State, pada_key: str, purusha: int, vacana: int) ->
     state = apply_rule("3.4.100", state)
     state = apply_rule("3.4.99",  state)
 
-    state.meta["3_4_104_ashir_yasut_arm"] = True
+    state.meta["ashir_yasut_recipe"] = True
     state = apply_rule("3.4.104", state)
     state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
 
-    state.meta["3_4_107_suw_arm"] = True
+    state.meta["suw_recipe"] = True
     state = apply_rule("3.4.107", state)
 
     state = apply_rule("1.4.13", state)
@@ -1086,7 +1086,7 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("3.4.99", state)
 
     # ── Stage: 3.4.103 yāsuṭ insertion ─────────────────────────────────────
-    state.meta["3_4_103_yasut_arm"] = True
+    state.meta["yasut_recipe"] = True
     state = apply_rule("3.4.103", state)
 
     # ── Stage: yāsuṭ processing ──────────────────────────────────────────────
@@ -1279,7 +1279,7 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state.meta["lakara"] = "loT"
 
     # ── Stage: 3.3.162 loṭ attachment (trace) + inline placeholder ───────────
-    state.meta["3_3_162_loT_arm"] = True
+    state.meta["loT_recipe"] = True
     state = apply_rule("3.3.162", state)
     state.meta.pop("3_3_162_loT_done", None)
     loT_varnas = parse_slp1_upadesha_sequence("loT")
@@ -2296,14 +2296,14 @@ def _derive_karmani_liG(state: State, purusha: int, vacana: int) -> State:
     state = _karmani_apply_yak(state)
 
     # 3.4.105 Ja→ran (3pl)
-    state.meta["3_4_105_arm"] = True
+    state.meta["Ja_ran_recipe"] = True
     state = apply_rule("3.4.105", state)
 
     # No 3.4.79/3.4.80 (vidhiliṅ not ṭit for ātmanepada ṭi-substitution)
 
     # 3.4.102 sīyuṭ insertion between yaḳ and tiṅ (karmani: use tiṅ ādeśa, not liG placeholder)
-    state.meta["3_4_102_sIyuw_arm"] = True
-    state.meta["3_4_102_karmani_liG_arm"] = True
+    state.meta["sIyuw_recipe"] = True
+    state.meta["karmani_liG_recipe"] = True
     state = apply_rule("3.4.102", state)
 
     # 7.2.79 s-lopa: drop 's' of sīyuṭ [s,I,y] → [I,y]
@@ -2516,9 +2516,9 @@ def _derive_karmani_luT(state: State, purusha: int, vacana: int) -> State:
 
     # ── 3.3.3 + 3.3.15: luṭ attachment ───────────────────────────────────
     state = apply_rule("3.3.3", state)
-    state.meta["3_3_15_lut_arm"] = True
+    state.meta["luT_recipe"] = True
     state = apply_rule("3.3.15", state)
-    state.meta.pop("3_3_15_lut_arm", None)
+    state.meta.pop("luT_recipe", None)
     state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
@@ -2804,7 +2804,7 @@ def _derive_bhave_lit(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.2.5", state)
     needs_it = (purusha, vacana) in _KARMANI_LIT_NEEDS_IT
     if needs_it:
-        state.meta["7_2_13_arm"] = True
+        state.meta["liT_krsrbhr_recipe"] = True
         state = apply_rule("7.2.13", state)
         state.meta["7_2_35_arm"] = True
         state = apply_rule("7.2.35", state)
@@ -2838,7 +2838,7 @@ def _derive_bhave_lit(state: State, purusha: int, vacana: int) -> State:
     _dht = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
     _dht_up = (_dht.meta.get("upadesha_slp1") or "").strip() if _dht else ""
     if _dht_up in {"BU", "BU~"}:
-        state.meta["7_4_73_arm"] = True
+        state.meta["bhU_abhyasa_recipe"] = True
         state = apply_rule("7.4.73", state)
     state = apply_rule("1.4.14", state)
     state = apply_rule("8.2.1", state)
@@ -2930,7 +2930,7 @@ def _derive_karmani_lit(state: State, purusha: int, vacana: int) -> State:
 
     if needs_it:
         # iṭ FIRST → 1.4.13 → vuk → dvitva
-        state.meta["7_2_13_arm"] = True
+        state.meta["liT_krsrbhr_recipe"] = True
         state = apply_rule("7.2.13", state)
         state.meta["7_2_35_arm"] = True
         state = apply_rule("7.2.35", state)
@@ -2969,7 +2969,7 @@ def _derive_karmani_lit(state: State, purusha: int, vacana: int) -> State:
     _dht = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
     _dht_up = (_dht.meta.get("upadesha_slp1") or "").strip() if _dht else ""
     if _dht_up in {"BU", "BU~"}:
-        state.meta["7_4_73_arm"] = True
+        state.meta["bhU_abhyasa_recipe"] = True
         state = apply_rule("7.4.73", state)
 
     # ── 1.4.14 pāda-saṃjñā ───────────────────────────────────────────────
@@ -3405,7 +3405,7 @@ def _derive_karmani_loT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.3.13", state)
 
     # ── 3.3.162 loṭ ca ────────────────────────────────────────────────────
-    state.meta["3_3_162_loT_arm"] = True
+    state.meta["loT_recipe"] = True
     state = apply_rule("3.3.162", state)
     state.meta.pop("3_3_162_loT_done", None)
     loT_varnas = parse_slp1_upadesha_sequence("loT")
@@ -3456,9 +3456,9 @@ def _derive_karmani_loT(state: State, purusha: int, vacana: int) -> State:
     state.meta.pop("3_4_90_loT_karmani_arm", None)
 
     # ── 3.4.91: savābhyāṃ vāmau (2sg: se→sva; 2pl: Dve→Dvam) ────────────
-    state.meta["3_4_91_loT_karmani_arm"] = True
+    state.meta["loT_karmani_recipe"] = True
     state = apply_rule("3.4.91", state)
-    state.meta.pop("3_4_91_loT_karmani_arm", None)
+    state.meta.pop("loT_karmani_recipe", None)
 
     # ── 3.4.93: eta ai (uttama: terminal e → E/ai) ────────────────────────
     state.meta["3_4_93_loT_karmani_arm"] = True

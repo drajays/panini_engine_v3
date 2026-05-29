@@ -8,7 +8,7 @@ This fires for: 3sg (t), 3du (tāṃ), 2du (tam), 2pl (ta) — all t-initial.
 Does NOT fire for: 3pl (us), 2sg (s), 1sg (am), 1du (va), 1pl (ma).
 
 Engine:
-  - arm ``state.meta['3_4_107_suw_arm']`` + ``state.meta['ashir_liG']``.
+  - arm ``state.meta['suw_recipe']`` + ``state.meta['ashir_liG']``.
   - suṭ Term tagged ``suw_agama``.
 """
 from __future__ import annotations
@@ -38,7 +38,7 @@ def _find_tin_t_initial(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("3_4_107_suw_arm"):
+    if not state.meta.get("suw_recipe"):
         return False
     if not state.meta.get("ashir_liG"):
         return False
@@ -56,7 +56,7 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "s", "suw_agama": True},
     )
     state.terms.insert(idx, suw)
-    state.meta["3_4_107_suw_arm"] = False
+    state.meta["suw_recipe"] = False
     state.samjna_registry["3.4.107_suw_inserted"] = True
     return state
 

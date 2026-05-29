@@ -47,9 +47,9 @@ def derive_paWitA() -> State:
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
 
     s = apply_rule("3.3.3", s)
-    s.meta["3_3_15_lut_arm"] = True
+    s.meta["luT_recipe"] = True
     s = apply_rule("3.3.15", s)
-    s.meta.pop("3_3_15_lut_arm", None)
+    s.meta.pop("luT_recipe", None)
 
     s.meta["3_1_33_tasi_lut_arm"] = True
     s = apply_rule("3.1.33", s)
