@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_it_halantyam_lopa_yathasankhyam, P00_luN_lakara_cli_sic, P06a_pratyaya_adhikara_3_1_1_to_3
+from core.canonical_pipelines import P00_it_halantyam_lopa_yathasankhyam, P00_luN_lakara_cli_sic, P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_adesha_base
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -77,10 +77,7 @@ def derive_aDhyagIzwa() -> State:
     s = apply_rule("6.1.101", s)  # I + i → I
 
     # Choose 3sg ātmanepada ending `ta`.
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "ta"
-    s = apply_rule("3.4.78", s)
+    s = P00_tin_adesha_base(s, "ta")
     s = P00_it_halantyam_lopa_yathasankhyam(s)  # tin it-lopa
 
     # Tripāḍī: ṣatva + ṣṭutva.

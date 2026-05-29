@@ -48,7 +48,10 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 #          canonical_pipelines, BIzayate, vande, tinanta, yAyAvaraH, pratyagni, yUpadAru,
 #          agda/ninAya/papatuH/vibhidatuH liṭ demos.
 # Lowered: -7 from 2026-05-29 — make dADikam/dASaraThi/taddhita use P00_taddhita_it_lopa_to_6_4.
-MAX_DUPLICATE_GROUPS = 87
+# Lowered: -8 from 2026-05-29 — eliminate remaining direct 3.4.77/78 in demo pipelines
+#          (adhyagIzwa, adita_luN, agda, BitzIzwa, paceran, saGgasIzwa, viSiNQi, BIzayate+);
+#          add P00_snam_infix_8_2_1 + P00_lac_lat_attach to Binatti/ruNaddhi/muYcati/kirati/viSinanti.
+MAX_DUPLICATE_GROUPS = 79
 
 
 @pytest.fixture(scope="module")

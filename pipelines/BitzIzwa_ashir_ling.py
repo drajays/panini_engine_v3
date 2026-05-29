@@ -19,6 +19,8 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_tin_adesha_base
+
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -38,10 +40,7 @@ def derive_BitzIzwa() -> State:
     s = apply_rule("3.3.173", s)
 
     # tin ādeśa: choose ātmanepada 3sg `ta` without reading paradigm coords in cond().
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "ta"
-    s = apply_rule("3.4.78", s)
+    s = P00_tin_adesha_base(s, "ta")
 
     # sīyut + suṭ augments for this āśīr-liṅ demo.
     s.meta["sIyuw_recipe"] = True

@@ -20,6 +20,8 @@ from core.canonical_pipelines import (
     P00_tip_to_ti,
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
+
+    P00_lac_lat_attach,
 )
 
 
@@ -40,18 +42,7 @@ def derive_muYcati() -> State:
         s.terms[0].meta["upadesha_slp1"] = "muc"
 
     # laṭ + tip→ti (no Sap; tudādi uses Sa-vikaraṇa)
-    s = apply_rule("3.1.91", s)
-    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s = apply_rule("3.2.123", s)
-    laT = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("laT"),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-    if laT.varnas and laT.varnas[-1].slp1 == "T":
-        del laT.varnas[-1]
-    s.terms.append(laT)
+    s = P00_lac_lat_attach(s)
     s = P00_tip_to_ti(s)
 
     # tudādi vikaraṇa Sa — cond checks gana==6 + no existing Śa.

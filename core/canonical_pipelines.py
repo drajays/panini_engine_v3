@@ -240,6 +240,18 @@ def P00_avyayibhava_pratipadika_luk(s: State) -> State:
     return s
 
 
+def P00_snam_infix_8_2_1(s: State) -> State:
+    """Rudhādi śnam infix + Tripāḍī: 1.1.47 → 3.1.78 (śnam) → pada-merge → 8.2.1."""
+    from pipelines.subanta import _pada_merge  # noqa: PLC0415
+    s = apply_rule("1.1.47", s)
+    s.meta["3_1_78_snam_arm"] = True
+    s = apply_rule("3.1.78", s)
+    s.meta.pop("3_1_78_snam_arm", None)
+    _pada_merge(s)
+    s = apply_rule("8.2.1", s)
+    return s
+
+
 def P00_taddhita_it_lopa_to_6_4(s: State) -> State:
     """Taddhita it-lopa + aṅga range: 7.2.117 → 6.4.129 → 6.4.148."""
     s = apply_rule("7.2.117", s)

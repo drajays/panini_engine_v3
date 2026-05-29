@@ -22,7 +22,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_adesha_base
+from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_adesha_base, P00_lac_lat_attach
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -40,18 +40,7 @@ def derive_kirati_karati_split_prakriyas_P009() -> State:
     s.meta["prakriya_P009_kirati_note_karati_spine"] = True
 
     # laṭ setup (structural placeholder + tip selection by 3.4.78).
-    s = apply_rule("3.1.91", s)
-    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s = apply_rule("3.2.123", s)
-    laT = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("laT"),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-    if laT.varnas and laT.varnas[-1].slp1 == "T":
-        del laT.varnas[-1]
-    s.terms.append(laT)
+    s = P00_lac_lat_attach(s)
 
     s = P00_tin_adesha_base(s, "tip")
 

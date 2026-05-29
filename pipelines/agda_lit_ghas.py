@@ -27,6 +27,7 @@ from core.canonical_pipelines import (
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
     P00_lit_lakara_scope,
+    P00_tin_adesha_base,
 )
 from pipelines.subanta import _pada_merge
 
@@ -50,10 +51,7 @@ def derive_agda_lit_ghas_P033() -> State:
     s = P00_upadesha_it_1_3_1_2_5(s)
     s = P00_lit_lakara_scope(s)
 
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "ta"
-    s = apply_rule("3.4.78", s)
+    s = P00_tin_adesha_base(s, "ta")
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
         s = apply_rule(sid, s)
     for sid in ("1.3.3", "1.3.9"):

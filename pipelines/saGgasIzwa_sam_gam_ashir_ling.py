@@ -25,6 +25,8 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_tin_adesha_base
+
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -51,10 +53,7 @@ def derive_saGgasIzwa() -> State:
     s.meta["ashir_liG"] = True
     s = apply_rule("3.3.173", s)
 
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "ta"
-    s = apply_rule("3.4.78", s)
+    s = P00_tin_adesha_base(s, "ta")
 
     s.meta["sIyuw_recipe"] = True
     s = apply_rule("3.4.102", s)
