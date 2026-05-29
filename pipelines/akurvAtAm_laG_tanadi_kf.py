@@ -24,7 +24,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3
+from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_adesha_base, P00_tanadi_u_guna
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -45,23 +45,11 @@ def derive_akurvAtAm_laG_tanadi_kf_P020() -> State:
     s = apply_rule("3.1.91", s)
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
 
-    # tiṅ ādeśa: AtAm (3rd dual ātmanepada)
-    s = apply_rule("3.4.77", s)
-    s.meta["tin_adesha_pending"] = True
-    s.meta["tin_adesha_form"] = "AtAm"
-    s = apply_rule("3.4.78", s)
-
-    # tanādi u-vikaraṇa
+    s = P00_tin_adesha_base(s, "AtAm")
     s.meta["3_1_79_tanadi_u_arm"] = True
-    s = apply_rule("3.1.79", s)
-
-    # guṇa on kf before sārvadhātuka u; then uRaN-rapara completes ar
-    s = apply_rule("7.3.84", s)
-    s = apply_rule("1.1.51", s)
+    s = P00_tanadi_u_guna(s)
     if s.terms:
         s.terms[0].tags.discard("upadesha")
-
-    # a → u before kṅit sārvadhātuka (engine context setup)
     s = apply_rule("1.2.4", s)
     s = apply_rule("1.1.5", s)
     s = apply_rule("6.4.110", s)

@@ -41,7 +41,9 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 # Lowered: -13 from 2026-05-29 — canonicalized remaining 3.4.77/78 in canonical_pipelines
 #          + vande; extracted P00_lac_lat_attach (3.1.91→3.2.123→laT) into canonical,
 #          replacing 9 occurrences across canonical_pipelines, BIzayate, paTayati, tinanta.
-MAX_DUPLICATE_GROUPS = 116
+# Lowered: -9 from 2026-05-29 — extracted P00_tanadi_u_guna (3.1.79→7.3.84→1.1.51),
+#          refactored P00_tanadi_u_kit to call it; updated akurvAtAm, kurutaH, tinanta.
+MAX_DUPLICATE_GROUPS = 107
 
 
 @pytest.fixture(scope="module")

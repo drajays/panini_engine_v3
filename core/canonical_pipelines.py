@@ -187,11 +187,17 @@ def P00_krt_guna_sandhi_tail(s: State) -> State:
     return s
 
 
-def P00_tanadi_u_kit(s: State) -> State:
-    """Tanādi-u kṛt kit chain: 3.1.79 → 7.3.84 → 1.1.51 → 1.2.4 → 1.1.5."""
+def P00_tanadi_u_guna(s: State) -> State:
+    """Tanādi-u guṇa prefix: 3.1.79 (u-vikaraṇa) → 7.3.84 (guṇa) → 1.1.51 (r-para)."""
     s = apply_rule("3.1.79", s)
     s = apply_rule("7.3.84", s)
     s = apply_rule("1.1.51", s)
+    return s
+
+
+def P00_tanadi_u_kit(s: State) -> State:
+    """Tanādi-u kṛt kit chain: 3.1.79 → 7.3.84 → 1.1.51 → 1.2.4 → 1.1.5."""
+    s = P00_tanadi_u_guna(s)
     s = apply_rule("1.2.4", s)
     s = apply_rule("1.1.5", s)
     return s

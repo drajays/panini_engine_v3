@@ -24,6 +24,8 @@ from core.canonical_pipelines import (
     P00_upadesha_it_anunasik_hal_lopa,
     P06a_pratyaya_adhikara_3_1_1_to_3,
     P00_tin_tas_adesh_full,
+    P00_lac_lat_attach,
+    P00_tanadi_u_guna,
 
     P00_tripadi_rutva_visarga,
 )
@@ -52,30 +54,10 @@ def derive_kurutaH() -> State:
         s.terms[0].tags.discard("upadesha")
         s.terms[0].meta["upadesha_slp1"] = "kf"
 
-    # Pratyaya adhikāra + laṭ + tas (3rd dual parasmaipada).
-    s = apply_rule("3.1.91", s)
-    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s = apply_rule("3.2.123", s)
-    laT = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("laT"),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-    if laT.varnas and laT.varnas[-1].slp1 == "T":
-        del laT.varnas[-1]
-    s.terms.append(laT)
+    s = P00_lac_lat_attach(s)
     s = P00_tin_tas_adesh_full(s)
-
-    # tanādi u-vikaraṇa (śap apavāda).
     s.meta["3_1_79_tanadi_u_arm"] = True
-    s = apply_rule("3.1.79", s)
-
-    # guṇa on dhātu ik-final (f → a) in presence of following sārvadhātuka u.
-    s = apply_rule("7.3.84", s)
-    s = apply_rule("1.1.51", s)  # complete r-para for f→a
-
-    # sarvadhātukam apit → kṅiti context on tas.
+    s = P00_tanadi_u_guna(s)
     s = apply_rule("1.2.4", s)
     s = apply_rule("1.1.5", s)
 

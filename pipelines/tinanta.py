@@ -88,6 +88,7 @@ from core.canonical_pipelines import (
     P00_parasmai_tin_adesha,
     P00_tin_adesha_base,
     P00_lac_lat_attach,
+    P00_tanadi_u_guna,
 )
 
 from pipelines.dhatupatha import get_dhatu_row, _payload, _envelope
@@ -1839,10 +1840,7 @@ def _derive_laT_kf_u_atmane(state: State, purusha: int, vacana: int) -> State:
     state = P00_lac_lat_attach(state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
     state = P00_tin_adesha_base(state, tin_adesha)
-    # 3.1.79 fires structurally: gana 8 + tin_adesha_3_4_78 on tape
-    state = apply_rule("3.1.79", state)
-    state = apply_rule("7.3.84", state)
-    state = apply_rule("1.1.51", state)
+    state = P00_tanadi_u_guna(state)
     for t in state.terms:
         if "dhatu" in t.tags:
             t.tags.discard("upadesha")
