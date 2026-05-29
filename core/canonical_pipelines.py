@@ -203,6 +203,43 @@ def P00_tanadi_u_kit(s: State) -> State:
     return s
 
 
+def P00_hal_anit_it_lopa(s: State) -> State:
+    """Halantyam + anit it-lopa: 1.3.3 (halantyam) → 1.3.8 (laśakva) → 1.3.9 (lopaḥ)."""
+    s = apply_rule("1.3.3", s)
+    s = apply_rule("1.3.8", s)
+    s = apply_rule("1.3.9", s)
+    return s
+
+
+def P00_hal_it_lopa(s: State) -> State:
+    """Halantyam + cuṭū it-lopa: 1.3.3 (halantyam) → 1.3.7 (cuṭū) → 1.3.9 (lopaḥ)."""
+    s = apply_rule("1.3.3", s)
+    s = apply_rule("1.3.7", s)
+    s = apply_rule("1.3.9", s)
+    return s
+
+
+def P00_lit_lakara_scope(s: State) -> State:
+    """liṭ-lakāra scope: 1.3.9 → 3.2.115 (liṭ) → 3.1.91 → (P06a 3.1.1–3)."""
+    s = apply_rule("1.3.9", s)
+    if s.terms:
+        s.terms[0].tags.discard("upadesha")
+    s.meta["liT_lakara_recipe"] = True
+    s = apply_rule("3.2.115", s)
+    s = apply_rule("3.1.91", s)
+    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
+    return s
+
+
+def P00_avyayibhava_pratipadika_luk(s: State) -> State:
+    """Avyayibhāva compound start: 1.2.46 (prātipadika-saṃjñā) → 2.4.71 (sup-luk)."""
+    s = apply_rule("1.2.46", s)
+    s.meta["pratipadika_avayava_ready"] = True
+    s.meta["luk_2_4_71_recipe"] = True
+    s = apply_rule("2.4.71", s)
+    return s
+
+
 def P00_taddhita_it_lopa_to_6_4(s: State) -> State:
     """Taddhita it-lopa + aṅga range: 7.2.117 → 6.4.129 → 6.4.148."""
     s = apply_rule("7.2.117", s)
@@ -933,9 +970,7 @@ def P00_taddhita_it_lopa_chain(s: State) -> State:
     Common taddhita it-chain (k-it etc.):
       1.3.3 (halantyam) → 1.3.8 (laśakvataddhite) → 1.3.9 (tasya lopaḥ) → 1.3.10
     """
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.8", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_hal_anit_it_lopa(s)
     s = apply_rule("1.3.10", s)
     return s
 

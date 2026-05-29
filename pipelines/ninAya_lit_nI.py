@@ -23,6 +23,7 @@ from core.canonical_pipelines import (
     P00_lit_tip_to_Nal,
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
+    P00_lit_lakara_scope,
 )
 from engine import apply_rule
 from engine.state import State, Term
@@ -41,15 +42,7 @@ def derive_ninAya_lit_nI_P036() -> State:
     s = State(terms=[dhatu], meta={}, trace=[])
 
     s = P00_upadesha_it_1_3_1_2_5(s)
-    s = apply_rule("1.3.9", s)
-    if s.terms:
-        s.terms[0].tags.discard("upadesha")
-
-    s.meta["liT_lakara_recipe"] = True
-    s = apply_rule("3.2.115", s)
-
-    s = apply_rule("3.1.91", s)
-    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
+    s = P00_lit_lakara_scope(s)
     s = P00_lit_tip_to_Nal(s)
 
     s = apply_rule("1.3.3", s)

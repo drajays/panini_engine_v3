@@ -26,6 +26,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 from core.canonical_pipelines import (
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
+    P00_lit_lakara_scope,
 )
 from pipelines.subanta import _pada_merge
 
@@ -47,15 +48,7 @@ def derive_agda_lit_ghas_P033() -> State:
     s = apply_rule("1.1.68", s)
     s = apply_rule("1.3.1", s)
     s = P00_upadesha_it_1_3_1_2_5(s)
-    s = apply_rule("1.3.9", s)
-    if s.terms:
-        s.terms[0].tags.discard("upadesha")
-
-    s.meta["liT_lakara_recipe"] = True
-    s = apply_rule("3.2.115", s)
-
-    s = apply_rule("3.1.91", s)
-    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
+    s = P00_lit_lakara_scope(s)
 
     s = apply_rule("3.4.77", s)
     s.meta["tin_adesha_pending"] = True

@@ -43,7 +43,11 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 #          replacing 9 occurrences across canonical_pipelines, BIzayate, paTayati, tinanta.
 # Lowered: -9 from 2026-05-29 — extracted P00_tanadi_u_guna (3.1.79→7.3.84→1.1.51),
 #          refactored P00_tanadi_u_kit to call it; updated akurvAtAm, kurutaH, tinanta.
-MAX_DUPLICATE_GROUPS = 107
+# Lowered: -13 from 2026-05-29 — added P00_hal_anit_it_lopa, P00_hal_it_lopa,
+#          P00_lit_lakara_scope, P00_avyayibhava_pratipadika_luk; replaced callers in
+#          canonical_pipelines, BIzayate, vande, tinanta, yAyAvaraH, pratyagni, yUpadAru,
+#          agda/ninAya/papatuH/vibhidatuH liṭ demos.
+MAX_DUPLICATE_GROUPS = 94
 
 
 @pytest.fixture(scope="module")

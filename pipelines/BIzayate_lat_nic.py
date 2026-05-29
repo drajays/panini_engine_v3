@@ -23,6 +23,7 @@ from core.canonical_pipelines import (
     P06a_pratyaya_adhikara_3_1_1_to_3,
     P00_tin_adesha_base,
     P00_lac_lat_attach,
+    P00_hal_anit_it_lopa,
 )
 
 
@@ -109,9 +110,7 @@ def derive_BIzayate() -> State:
 
     # it-lopa on zuk (u~ and k).
     s = apply_rule("1.3.2", s)
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.8", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_hal_anit_it_lopa(s)
 
     # Merge to derived dhātu BIzi and tag dhātu again.
     s = _structural_merge_zuk_and_nic_into_dhatu(s)

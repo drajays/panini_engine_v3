@@ -20,6 +20,7 @@ from core.canonical_pipelines import (
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
     P00_tin_adesha_base,
+    P00_hal_anit_it_lopa,
 )
 
 
@@ -66,9 +67,7 @@ def derive_vande() -> State:
 
     # Insert Sap between dhātu and i (kartari); then it-lopa yields `a`.
     s = apply_rule("3.1.68", s)
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.8", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_hal_anit_it_lopa(s)
 
     # i -> e (Ti + 3.4.79), then a + e → e (pararūpa) structurally by merge.
     s = apply_rule("1.1.64", s)

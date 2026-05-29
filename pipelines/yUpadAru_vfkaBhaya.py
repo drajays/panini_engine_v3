@@ -24,7 +24,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_napumsaka_am_sandhi
+from core.canonical_pipelines import P00_napumsaka_am_sandhi, P00_avyayibhava_pratipadika_luk
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -60,10 +60,7 @@ def derive_yUpadAru_prakriya_39() -> State:
     s.meta["prakriya_39_2_1_36_arm"] = True
     s = apply_rule("2.1.36", s)
 
-    s = apply_rule("1.2.46", s)
-    s.meta["pratipadika_avayava_ready"] = True
-    s.meta["luk_2_4_71_recipe"] = True
-    s = apply_rule("2.4.71", s)
+    s = P00_avyayibhava_pratipadika_luk(s)
 
     s.meta["prakriya_39_tatpurusa_upasarjana"] = True
     for t in s.terms:
@@ -94,10 +91,7 @@ def derive_vfkaBhayam_prakriya_39() -> State:
     s.meta["prakriya_39_2_1_37_arm"] = True
     s = apply_rule("2.1.37", s)
 
-    s = apply_rule("1.2.46", s)
-    s.meta["pratipadika_avayava_ready"] = True
-    s.meta["luk_2_4_71_recipe"] = True
-    s = apply_rule("2.4.71", s)
+    s = P00_avyayibhava_pratipadika_luk(s)
 
     s.meta["prakriya_39_tatpurusa_upasarjana"] = True
     for t in s.terms:

@@ -29,6 +29,7 @@ from core.canonical_pipelines import (
     P00_subanta_prathama_su_tripadi_visarga,
     P00_yang_adhikara_yaG_append_sanadi,
     P00_yang_dvitva_abhyasa_gate,
+    P00_hal_it_lopa,
 )
 from pipelines.subanta import _pada_merge
 
@@ -67,9 +68,7 @@ def derive_yAyAvaraH_yang_varac_P029() -> State:
             t.tags.add("prātipadika")
             t.tags.add("pulliṅga")
 
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.7", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_hal_it_lopa(s)
 
     s.meta["P029_6_1_70_vy_lopa_arm"] = True
     s = apply_rule("6.1.70", s)

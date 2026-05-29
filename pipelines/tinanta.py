@@ -89,6 +89,7 @@ from core.canonical_pipelines import (
     P00_tin_adesha_base,
     P00_lac_lat_attach,
     P00_tanadi_u_guna,
+    P00_hal_it_lopa,
 )
 
 from pipelines.dhatupatha import get_dhatu_row, _payload, _envelope
@@ -415,9 +416,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # IT on liṭ ādeśa (1.3.4 tusma, 1.3.3 halantyam, 1.3.7 cuṭū, 1.3.9 lopa)
     state = apply_rule("1.3.4", state)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.7", state)
-    state = apply_rule("1.3.9", state)
+    state = P00_hal_it_lopa(state)
 
     # ── 3.4.115 (2nd audit) + optional 7.1.91 ────────────────────────────────
     # Reset gate for second call
@@ -2605,9 +2604,7 @@ def _derive_bhave_lit(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("3.4.79", state)
     state = apply_rule("3.4.80", state)
     state = apply_rule("1.3.4", state)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.7", state)
-    state = apply_rule("1.3.9", state)
+    state = P00_hal_it_lopa(state)
     state.paribhasha_gates.pop("3_4_115_liw_115", None)
     state.meta["liT_115_recipe"] = True
     state = apply_rule("3.4.115", state)
@@ -2716,9 +2713,7 @@ def _derive_karmani_lit(state: State, purusha: int, vacana: int) -> State:
 
     # ── IT on liṭ-specific ādeśas (eS→e, irec→ire, etc.) ─────────────────
     state = apply_rule("1.3.4", state)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.7", state)
-    state = apply_rule("1.3.9", state)
+    state = P00_hal_it_lopa(state)
 
     # ── 3.4.115 liṭ ca (2nd) ─────────────────────────────────────────────
     state.paribhasha_gates.pop("3_4_115_liw_115", None)

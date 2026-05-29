@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_avyayibhava_pratipadika_luk
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -87,10 +88,7 @@ def derive_pratyagni() -> State:
     s = apply_rule("2.1.13", s)
 
     # 1.2.46 prātipadika-saṃjñā + 2.4.71 internal sup-luk (ghost)
-    s = apply_rule("1.2.46", s)
-    s.meta["pratipadika_avayava_ready"] = True
-    s.meta["luk_2_4_71_recipe"] = True
-    s = apply_rule("2.4.71", s)
+    s = P00_avyayibhava_pratipadika_luk(s)
 
     # 1.2.43 upasarjana on the avyaya; 2.2.30 move it to front
     s = apply_rule("1.2.43", s)
@@ -120,10 +118,7 @@ def derive_adhistri() -> State:
     s.meta["avyayibhava_recipe"] = True
     s = apply_rule("2.1.6", s)
 
-    s = apply_rule("1.2.46", s)
-    s.meta["pratipadika_avayava_ready"] = True
-    s.meta["luk_2_4_71_recipe"] = True
-    s = apply_rule("2.4.71", s)
+    s = P00_avyayibhava_pratipadika_luk(s)
 
     s = apply_rule("1.2.43", s)
     s = apply_rule("2.2.30", s)
