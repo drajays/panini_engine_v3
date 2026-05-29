@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_tripadi_rutva_visarga
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -67,9 +68,7 @@ def _finish_with_su_luk_and_optional_visarga(s: State) -> State:
     # Merge to a single pada and apply visarga tail where applicable.
     from pipelines.subanta import _pada_merge
     _pada_merge(s)
-    s = apply_rule("8.2.1", s)
-    s = apply_rule("8.2.66", s)
-    s = apply_rule("8.3.15", s)
+    s = P00_tripadi_rutva_visarga(s)
     return s
 
 

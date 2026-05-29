@@ -28,6 +28,8 @@ from core.canonical_pipelines import (
     P00_lashakvataddhite_it_lopa_chain,
     P00_pratipadika_prathama_sup_after_stem_merge,
     P00_tripadi_rutva_visarga,
+
+    P00_tripadi_rutva_visarga,
 )
 
 

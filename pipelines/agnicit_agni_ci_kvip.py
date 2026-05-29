@@ -17,7 +17,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_lashakvataddhite_it_lopa_chain, P06a_pratyaya_adhikara_3_1_1_to_3
+from core.canonical_pipelines import P00_lashakvataddhite_it_lopa_chain, P06a_pratyaya_adhikara_3_1_1_to_3, P00_sup_it_lopa_aprkta
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -126,10 +126,7 @@ def derive_agnicit_agni_ci_kvip_P041() -> State:
 
     s = apply_rule("4.1.1", s)
     s.meta["vibhakti_vacana"] = "1-1"
-    s = apply_rule("4.1.2", s)
-    s = apply_rule("1.3.2", s)
-    s = apply_rule("1.3.9", s)
-    s = apply_rule("1.2.41", s)
+    s = P00_sup_it_lopa_aprkta(s)
 
     s.meta["P041_6_1_68_arm"] = True
     s = apply_rule("6.1.68", s)

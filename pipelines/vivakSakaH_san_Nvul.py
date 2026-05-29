@@ -31,6 +31,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 from core.canonical_pipelines import (
     P00_subanta_prathama_su_tripadi_visarga,
     P06a_pratyaya_adhikara_3_1_1_to_3,
+    P00_san_kit_kngiti,
 )
 from pipelines.krdanta import _structural_merge_to_pratipadika
 from pipelines.subanta import _pada_merge
@@ -52,9 +53,7 @@ def derive_vivakSakaH_san_Nvul_P030() -> State:
     s = apply_rule("1.1.68", s)
 
     s.meta["3_1_7_san_arm"] = True
-    s = apply_rule("3.1.7", s)
-    s = apply_rule("1.2.8", s)
-    s = apply_rule("1.1.5", s)
+    s = P00_san_kit_kngiti(s)
     s = apply_rule("3.1.32", s)
 
     s = apply_rule("6.1.15", s)

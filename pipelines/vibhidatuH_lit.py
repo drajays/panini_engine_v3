@@ -23,6 +23,8 @@ from core.canonical_pipelines import (
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
     P00_tin_tas_adesh_full,
+
+    P00_tripadi_rutva_visarga,
 )
 from engine import apply_rule
 from engine.state import State, Term
@@ -84,9 +86,7 @@ def derive_vibhidatuH() -> State:
     from pipelines.subanta import _pada_merge  # noqa: PLC0415
 
     _pada_merge(s)
-    s = apply_rule("8.2.1", s)
-    s = apply_rule("8.2.66", s)
-    s = apply_rule("8.3.15", s)
+    s = P00_tripadi_rutva_visarga(s)
     return s
 
 

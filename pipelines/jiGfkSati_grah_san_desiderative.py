@@ -21,7 +21,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_lat_vartamane_tip_and_sap
+from core.canonical_pipelines import P00_lat_vartamane_tip_and_sap, P00_san_kit_kngiti
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -39,9 +39,7 @@ def derive_jiGfkSati() -> State:
 
     # Add sanādi (desiderative) suffix.
     s.meta["3_1_7_san_arm"] = True
-    s = apply_rule("3.1.7", s)   # adds `is`
-    s = apply_rule("1.2.8", s)   # kitvat marker on san
-    s = apply_rule("1.1.5", s)
+    s = P00_san_kit_kngiti(s)
 
     # samprasāraṇa r→f and pūrvarūpa (delete following a)
     for vi, v in enumerate(s.terms[0].varnas):

@@ -119,6 +119,31 @@ def P04_taddhita_prathama_sup_block(s: State) -> State:
     return s
 
 
+def P00_napumsaka_am_sandhi(s: State) -> State:
+    """Napuṃsaka prathamā-ekavacana tail: 4.1.2 (su~) → 7.1.24 (su→am) → 6.1.107 (ami pūrvaḥ)."""
+    s = apply_rule("4.1.2", s)
+    s = apply_rule("7.1.24", s)
+    s = apply_rule("6.1.107", s)
+    return s
+
+
+def P00_sup_it_lopa_aprkta(s: State) -> State:
+    """Sup attachment + it-lopa + apṛkta saṃjñā: 4.1.2 → 1.3.2 → 1.3.9 → 1.2.41."""
+    s = apply_rule("4.1.2", s)
+    s = apply_rule("1.3.2", s)
+    s = apply_rule("1.3.9", s)
+    s = apply_rule("1.2.41", s)
+    return s
+
+
+def P00_san_kit_kngiti(s: State) -> State:
+    """San desiderative start: 3.1.7 (san attachment) → 1.2.8 (san is kit) → 1.1.5 (kṅiti ca)."""
+    s = apply_rule("3.1.7", s)
+    s = apply_rule("1.2.8", s)
+    s = apply_rule("1.1.5", s)
+    return s
+
+
 def P03_taddhita_karaka_tatra_bhava(s: State) -> State:
     """*samarthā* / *prāg-dīvyat* / *tatra bhava* + *kāraka* / *adhikaraṇa* / saptamī smṛti."""
     s = apply_rule("4.1.82", s)

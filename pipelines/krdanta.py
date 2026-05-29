@@ -47,6 +47,8 @@ from core.canonical_pipelines import (
     P00_pratipadika_prathama_sup_after_stem_merge,
     P00_tripadi_rutva_visarga,
     P06a_pratyaya_adhikara_3_1_1_to_3,
+
+    P00_tripadi_rutva_visarga,
 )
 from phonology import HAL
 from phonology.pratyahara import is_ekac_upadesha

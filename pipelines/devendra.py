@@ -24,6 +24,8 @@ from core.canonical_pipelines import (
     P00_guna_prayoga_readiness,
     P00_tripadi_rutva_visarga,
     sup_attach_it_chain,
+
+    P00_tripadi_rutva_visarga,
 )
 from pipelines.subanta import _pada_merge
 

@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_sup_it_lopa_aprkta
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -89,10 +90,7 @@ def derive_uktaH() -> State:
     # Now attach su and finish with ru/visarga.
     s.meta["vibhakti_vacana"] = "1-1"
     s.meta["linga"] = "pulliṅga"
-    s = apply_rule("4.1.2", s)
-    s = apply_rule("1.3.2", s)
-    s = apply_rule("1.3.9", s)
-    s = apply_rule("1.2.41", s)
+    s = P00_sup_it_lopa_aprkta(s)
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
     s = apply_rule("8.2.30", s)

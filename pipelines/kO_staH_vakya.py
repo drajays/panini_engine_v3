@@ -23,7 +23,7 @@ from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_tas_adesh_full
+from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_tas_adesh_full, P00_tripadi_rutva_visarga
 from pipelines.subanta import (
     SUBANTA_RULE_IDS_POST_4_1_2,
     PADA_MERGE_STEP,
@@ -96,9 +96,7 @@ def _derive_staH() -> str:
 
     # Merge and ru/visarga for tas → taH.
     _pada_merge(s)
-    s = apply_rule("8.2.1", s)
-    s = apply_rule("8.2.66", s)
-    s = apply_rule("8.3.15", s)
+    s = P00_tripadi_rutva_visarga(s)
     return s.render()
 
 

@@ -82,6 +82,9 @@ from core.canonical_pipelines import (
     P00_anga_guna_audit_1_4_13_1_1_5_7_3_84,
     P01_samjna_dhatu_class,
     P06a_pratyaya_adhikara_3_1_1_to_3,
+
+    P00_tripadi_rutva_visarga,
+    P00_san_kit_kngiti,
 )
 
 from pipelines.dhatupatha import get_dhatu_row, _payload, _envelope
@@ -678,9 +681,7 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # ── Merge + Tripāḍī ──────────────────────────────────────────────────────
     _pada_merge(state)
-    state = apply_rule("8.2.1", state)
-    state = apply_rule("8.2.66", state)
-    state = apply_rule("8.3.15", state)
+    state = P00_tripadi_rutva_visarga(state)
 
     return state
 
@@ -1863,9 +1864,7 @@ def _derive_laT_san_atmane(state: State, purusha: int, vacana: int) -> State:
     """
     state.meta["lakara"] = "laT"
     # 3.1.7: san suffix (structural via san_recipe coordination key)
-    state = apply_rule("3.1.7", state)
-    state = apply_rule("1.2.8", state)
-    state = apply_rule("1.1.5", state)
+    state = P00_san_kit_kngiti(state)
     state = apply_rule("3.1.32", state)
     # 6.1.1: dvitva — fires structurally (dhātu + sanādi on tape)
     state = apply_rule("6.1.1", state)
@@ -2333,9 +2332,7 @@ def _derive_karmani_liG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.1.97", state)
 
     _pada_merge(state)
-    state = apply_rule("8.2.1", state)
-    state = apply_rule("8.2.66", state)
-    state = apply_rule("8.3.15", state)
+    state = P00_tripadi_rutva_visarga(state)
 
     return state
 
@@ -2403,9 +2400,7 @@ def _derive_karmani_ashir_liG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.1.78", state)
 
     _pada_merge(state)
-    state = apply_rule("8.2.1", state)
-    state = apply_rule("8.2.66", state)
-    state = apply_rule("8.3.15", state)
+    state = P00_tripadi_rutva_visarga(state)
 
     # 8.3.59 ṣatvam (once): sīy-leading-s → ṣ after iṭ-i
     state = apply_rule("8.3.59", state)
@@ -3058,9 +3053,7 @@ def _derive_bhave_laT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.1.87", state)
     state = apply_rule("6.1.97", state)
     _pada_merge(state)
-    state = apply_rule("8.2.1", state)
-    state = apply_rule("8.2.66", state)
-    state = apply_rule("8.3.15", state)
+    state = P00_tripadi_rutva_visarga(state)
     return state
 
 
@@ -3167,9 +3160,7 @@ def _derive_karmani_laT(state: State, purusha: int, vacana: int) -> State:
     _pada_merge(state)
 
     # ── TRIPĀḌĪ ──────────────────────────────────────────────────────────
-    state = apply_rule("8.2.1", state)
-    state = apply_rule("8.2.66", state)
-    state = apply_rule("8.3.15", state)
+    state = P00_tripadi_rutva_visarga(state)
 
     return state
 

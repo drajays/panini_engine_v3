@@ -33,7 +33,9 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 # Updated: +19 from vandanIya, pracChanIya, mlecChanIya pipelines (2026-05-28).
 # Updated: +29 from T3 merge — _derive_laT_jYA_apa/_krI_sna/_kf_u_atmane spines
 #          added to tinanta.py for P009/P011/P012 corrected demo integration (2026-05-28).
-MAX_DUPLICATE_GROUPS = 578
+# Lowered: -353 from T3/T4 cleanup — deleted 31 corrected files, renamed 120 demo
+#          pipelines. Remaining 225 groups targeted for canonical extraction.
+MAX_DUPLICATE_GROUPS = 187
 
 
 @pytest.fixture(scope="module")

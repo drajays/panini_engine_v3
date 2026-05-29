@@ -17,7 +17,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3
+from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tripadi_rutva_visarga
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -96,9 +96,7 @@ def derive_gArgyAH_garga_yaY_luk_P042() -> State:
 
     s = apply_rule("1.4.14", s)
 
-    s = apply_rule("8.2.1", s)
-    s = apply_rule("8.2.66", s)
-    s = apply_rule("8.3.15", s)
+    s = P00_tripadi_rutva_visarga(s)
     s = apply_rule("8.2.30", s)
 
     s.meta.pop("1_1_68_svadrupa_audit_done", None)

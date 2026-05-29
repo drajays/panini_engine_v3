@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_sup_it_lopa_aprkta
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -125,10 +126,7 @@ def derive_dyukAmA_bahuvrihi_P023() -> State:
 
     # Attach prathamā-ekavacana and drop it via 6.1.68 (ṭāp-anta path).
     s.meta["vibhakti_vacana"] = "1-1"
-    s = apply_rule("4.1.2", s)
-    s = apply_rule("1.3.2", s)
-    s = apply_rule("1.3.9", s)
-    s = apply_rule("1.2.41", s)
+    s = P00_sup_it_lopa_aprkta(s)
     s = apply_rule("6.1.68", s)
 
     s = apply_rule("1.1.68", s)

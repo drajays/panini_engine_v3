@@ -21,6 +21,8 @@ from core.canonical_pipelines import (
     P00_guna_prayoga_readiness,
     P00_attach_su_it_lopa,
     P00_tripadi_rutva_visarga,
+
+    P00_tripadi_rutva_visarga,
 )
 
 

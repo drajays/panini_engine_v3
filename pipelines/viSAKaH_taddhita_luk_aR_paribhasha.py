@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_tripadi_rutva_visarga, P00_sup_it_lopa_aprkta
 from engine import apply_rule
 from engine.state import State, Term
 from phonology import mk
@@ -85,19 +86,14 @@ def derive_viSAKaH_taddhita_luk_aR_P039() -> State:
     s = apply_rule("4.1.4", s)
 
     s.meta["vibhakti_vacana"] = "1-1"
-    s = apply_rule("4.1.2", s)
-    s = apply_rule("1.3.2", s)
-    s = apply_rule("1.3.9", s)
-    s = apply_rule("1.2.41", s)
+    s = P00_sup_it_lopa_aprkta(s)
 
     s.meta["P039_6_1_68_tApanta_arm"] = True
     s = apply_rule("6.1.68", s)
 
     _p039_masc_pada_for_visarga(s)
 
-    s = apply_rule("8.2.1", s)
-    s = apply_rule("8.2.66", s)
-    s = apply_rule("8.3.15", s)
+    s = P00_tripadi_rutva_visarga(s)
     s = apply_rule("1.1.68", s)
     return s
 

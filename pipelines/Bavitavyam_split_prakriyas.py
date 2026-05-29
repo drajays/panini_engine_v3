@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_napumsaka_am_sandhi
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -57,9 +58,7 @@ def derive_Bavitavyam_split_prakriyas_P002() -> State:
     _pada_merge(s)
 
     s.meta["vibhakti_vacana"] = "1-1"
-    s = apply_rule("4.1.2", s)
-    s = apply_rule("7.1.24", s)
-    s = apply_rule("6.1.107", s)
+    s = P00_napumsaka_am_sandhi(s)
     return s
 
 

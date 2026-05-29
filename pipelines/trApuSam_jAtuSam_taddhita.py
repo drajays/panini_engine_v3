@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_napumsaka_am_sandhi
 from engine import apply_rule
 from engine.lopa_ghost import term_is_sup_luk_ghost
 from engine.state import State, Term
@@ -125,9 +126,7 @@ def _derive_vikara_neuter_nom_sg(stem_slp1: str, *, out_upadesha_slp1: str) -> S
     # Now prathamā ekavacana napuṃsaka: su -> am -> amipūrva.
     s.terms[0].tags.add("napuṃsaka")
     s.meta["vibhakti_vacana"] = "1-1"
-    s = apply_rule("4.1.2", s)   # su (s~)
-    s = apply_rule("7.1.24", s)  # su -> am
-    s = apply_rule("6.1.107", s) # am i pūrvaḥ: drop stem-final a
+    s = P00_napumsaka_am_sandhi(s)
     return s
 
 

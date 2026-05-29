@@ -9,6 +9,7 @@ from core.canonical_pipelines import (
     P01_subanta_bootstrap,
     P06a_pratyaya_adhikara_3_1_1_to_3,
     run_subanta_sup_attach_and_finish,
+    P00_sup_it_lopa_aprkta,
 )
 from engine import apply_rule
 from engine.lopa_ghost import term_is_sup_luk_ghost
@@ -114,10 +115,7 @@ def derive_kurucarI() -> State:
 
     s = apply_rule("4.1.1", s)
     s.meta["vibhakti_vacana"] = "1-1"
-    s = apply_rule("4.1.2", s)
-    s = apply_rule("1.3.2", s)
-    s = apply_rule("1.3.9", s)
-    s = apply_rule("1.2.41", s)
+    s = P00_sup_it_lopa_aprkta(s)
     s = apply_rule("6.1.68", s)
     return s
 
