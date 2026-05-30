@@ -20,8 +20,8 @@ from core.canonical_pipelines import (
     P00_tip_to_ti,
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
-
     P00_lac_lat_attach,
+    P00_snam_it_lopa_chain,
 )
 
 
@@ -45,11 +45,8 @@ def derive_muYcati() -> State:
     s = P00_lac_lat_attach(s)
     s = P00_tip_to_ti(s)
 
-    # tudādi vikaraṇa Sa — cond checks gana==6 + no existing Śa.
-    s = apply_rule("3.1.77", s)
-    # it-lopa on Sa: laśakvataddhite (S it) → tasya lopaḥ.
-    s = apply_rule("1.3.8", s)
-    s = apply_rule("1.3.9", s)
+    # tudādi vikaraṇa Sa + it-lopa (3.1.77 → 1.3.8 → 1.3.9)
+    s = P00_snam_it_lopa_chain(s)
 
     s = apply_rule("6.4.1", s)
     s = apply_rule("1.1.47", s)

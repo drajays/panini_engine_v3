@@ -96,6 +96,7 @@ from core.canonical_pipelines import (
     P00_san_dvitva,
     P00_hal_anit_guna,
     P00_lit_ta_esh_it_lopa,
+    P00_mRj_abhyasa_hrasva,
 )
 
 from pipelines.dhatupatha import get_dhatu_row, _payload, _envelope
@@ -3066,9 +3067,7 @@ def _derive_lit_am_kf_atmane(state: State, purusha: int, vacana: int) -> State:
             state.terms[i].meta["7_4_60_first_hal_only"] = True
             break
     state.meta["7_4_66_urat_abhyasa_arm"] = True
-    state = apply_rule("7.4.66", state)
-    state = apply_rule("1.1.51", state)
-    state = apply_rule("7.4.60", state)
+    state = P00_mRj_abhyasa_hrasva(state)
     state = apply_rule("7.4.62", state)
     # ── 6.1.77 iko yaṇ aci: dhātu-final ṛ(f) + e → r+e ─────────────────────
     state = apply_rule("6.1.77", state)
@@ -3340,9 +3339,7 @@ def _derive_bhave_laT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("3.4.79", state)
     state = apply_rule("3.4.80", state)
     state = apply_rule("1.2.4", state)
-    state = apply_rule("1.4.13", state)
-    state = apply_rule("1.1.5", state)
-    state = apply_rule("7.3.84", state)
+    state = P00_anga_guna_audit_1_4_13_1_1_5_7_3_84(state)
     state = apply_rule("7.1.3", state)
     state = apply_rule("7.2.81", state)
     state = apply_rule("6.1.66", state)

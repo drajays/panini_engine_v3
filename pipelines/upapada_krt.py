@@ -10,6 +10,7 @@ from core.canonical_pipelines import (
     P06a_pratyaya_adhikara_3_1_1_to_3,
     run_subanta_sup_attach_and_finish,
     P00_sup_it_lopa_aprkta,
+    P00_bha_avakasha_6_4_148,
 )
 from engine import apply_rule
 from engine.lopa_ghost import term_is_sup_luk_ghost
@@ -91,8 +92,7 @@ def derive_kurucarI() -> State:
         s = apply_rule(sid, s)
 
     s = apply_rule("6.4.1", s)
-    s = apply_rule("6.4.129", s)
-    s = apply_rule("6.4.148", s)
+    s = P00_bha_avakasha_6_4_148(s)
 
     # Merge kurucara + ī → kurucarī
     before2 = s.flat_slp1()

@@ -28,6 +28,7 @@ from core.canonical_pipelines import (
     P00_tanadi_u_guna,
 
     P00_tripadi_rutva_visarga,
+    P00_tanadi_kit_6_4_110,
 )
 from engine import apply_rule
 from engine.state import State, Term
@@ -58,11 +59,8 @@ def derive_kurutaH() -> State:
     s = P00_tin_tas_adesh_full(s)
     s.meta["3_1_79_tanadi_u_arm"] = True
     s = P00_tanadi_u_guna(s)
-    s = apply_rule("1.2.4", s)
-    s = apply_rule("1.1.5", s)
-
-    # a → u before kṅit sārvadhātuka.
-    s = apply_rule("6.4.110", s)
+    # a → u before kṅit sārvadhātuka (1.2.4 → 1.1.5 → 6.4.110).
+    s = P00_tanadi_kit_6_4_110(s)
 
     # Merge and finish ru/visarga.
     from pipelines.subanta import _pada_merge  # noqa: PLC0415

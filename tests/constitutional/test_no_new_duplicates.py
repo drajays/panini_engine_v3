@@ -62,9 +62,13 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 #          P00_bha_vidhi_6_4_148_1_1_60, P00_mahat_An_samasa_sandhi, P00_jas_7_1_17_it_lopa_6_1_87,
 #          P00_hal_anit_guna, P00_lit_ta_esh_it_lopa; + P00_tripadi_rutva_visarga replacements
 #          in tinanta; restored sutra_6_1_77 (pre-existing modified sutra).
-# Raised: +8 from cursor untracked sthanivat_anal_ashrita_lesson.py (pedagogical
-#          lesson sharing sequences with prakftya_lyap_split_prakriyas.py).
-MAX_DUPLICATE_GROUPS = 35
+# Raised: +14 from 2026-05-30 — cursor untracked lesson pipelines
+#          (agaty_gam_lyap_acah, avadhIt_han_lun_ekavacana, dIdhye_dIdhi_lat_parasmin,
+#           sthanivat_anal_ashrita, sthanivat_it_samjna) sharing sequences with existing files;
+#          Round-2 batch extractions: P00_amantrana_2_3_48_accent, P00_tanadi_kit_6_4_110,
+#          P00_tuk_tripadi_6_1_73, P00_bha_avakasha_6_4_148, P00_mRj_abhyasa_hrasva,
+#          P00_attach_sup_from_pratipadika (krdanta), P00_anga_guna_audit (tinanta).
+MAX_DUPLICATE_GROUPS = 41
 
 
 @pytest.fixture(scope="module")

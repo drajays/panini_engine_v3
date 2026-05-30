@@ -26,6 +26,7 @@ from core.canonical_pipelines import (
     P00_yang_adhikara_yaG_append_sanadi,
     P00_yang_dvitva_abhyasa_gate,
     P00_yang_luk_2_4_74_and_1_1_4,
+    P00_mRj_abhyasa_hrasva,
 )
 
 
@@ -49,10 +50,7 @@ def derive_marImfjaH() -> State:
     s = P00_yang_dvitva_abhyasa_gate(s)
 
     s.meta["7_4_66_urat_abhyasa_arm"] = True
-    s = apply_rule("7.4.66", s)
-    s = apply_rule("1.1.51", s)
-    s.terms[0].meta["7_4_60_first_hal_only"] = True
-    s = apply_rule("7.4.60", s)
+    s = P00_mRj_abhyasa_hrasva(s, first_hal_only=True)
     s.meta["rIk_recipe"] = True
     s = apply_rule("7.4.90", s)
 

@@ -24,7 +24,7 @@ from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from core.canonical_pipelines import P00_taddhita_it_lopa_chain, P00_tripadi_rutva_visarga
+from core.canonical_pipelines import P00_taddhita_it_lopa_chain, P00_tripadi_rutva_visarga, P06a_pratyaya_adhikara_3_1_1_to_3
 from sutras.adhyaya_1.pada_1.sutra_1_1_38 import META_ASARVA_VIBHAKTI_TADDHITA
 from sutras.adhyaya_1.pada_2.sutra_1_2_46 import META_TADDHITA_AVAYAVA
 
@@ -101,9 +101,7 @@ def derive_puras_avyaya_prakriya_19() -> State:
     s = State(terms=[_mk_pUrva(), _mk_Ni_sup(), _mk_asi_taddhita()])
     s.meta["prakriya_19_puras"] = True
 
-    s = apply_rule("3.1.1", s)
-    s = apply_rule("3.1.2", s)
-    s = apply_rule("3.1.3", s)
+    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
 
     s.meta["prakriya_19_puras_5_3_39_arm"] = True
     s = apply_rule("5.3.39", s)

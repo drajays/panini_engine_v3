@@ -22,7 +22,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_adesha_base, P00_lac_lat_attach
+from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_adesha_base, P00_lac_lat_attach, P00_snam_it_lopa_chain
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -44,12 +44,8 @@ def derive_kirati_karati_split_prakriyas_P009() -> State:
 
     s = P00_tin_adesha_base(s, "tip")
 
-    # tudādi vikaraṇa Sa — cond checks gana==6 + no existing Śa.
-    s = apply_rule("3.1.77", s)
-
-    # it on Sa initial S, then lopa → surface a.
-    s = apply_rule("1.3.8", s)
-    s = apply_rule("1.3.9", s)
+    # tudādi vikaraṇa Sa + it-lopa (3.1.77 → 1.3.8 → 1.3.9)
+    s = P00_snam_it_lopa_chain(s)
 
     # guṇa on kF (F → a, then 1.1.51 inserts r) before the following sārvadhātuka Sa.
     s = apply_rule("7.3.84", s)

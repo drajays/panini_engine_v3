@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_bhavati_guna_yav
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -53,9 +54,7 @@ def derive_Bavitum_split_prakriyas_P001() -> State:
 
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
-    s = apply_rule("7.2.35", s)
-    s = apply_rule("7.3.84", s)
-    s = apply_rule("6.1.78", s)
+    s = P00_bhavati_guna_yav(s)
 
     s = apply_rule("1.1.40", s)
 

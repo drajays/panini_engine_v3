@@ -20,6 +20,8 @@ from core.canonical_pipelines import (
     P00_taddhita_it_lopa_to_6_4,
     P00_taddhita_1_1_scope,
     P00_bha_vidhi_6_4_148_1_1_60,
+    P00_taddhita_2_1_1_sup_scope,
+    P00_bha_avakasha_6_4_148,
 )
 from pipelines.subanta import (
     _pada_merge,
@@ -61,11 +63,7 @@ def derive_kauYjAyanyaH() -> State:
     s.meta["linga"] = "pulliṅga"
     s.meta[META_2_3_50_ELIGIBLE] = True
 
-    s = apply_rule("2.1.1", s)
-    s = P00_anabhihite_shashthi_shese_2_3_50(s)
-    s = P00_attach_sup_from_pratipadika(s)
-    s = apply_rule("4.1.82", s)
-    s = apply_rule("4.1.92", s)
+    s = P00_taddhita_2_1_1_sup_scope(s)
     s = apply_rule("4.1.98", s)
 
     s = P00_taddhita_1_1_scope(s)
@@ -87,8 +85,7 @@ def derive_kauYjAyanyaH() -> State:
     s = apply_rule("6.4.1", s)
     for sid in ("1.3.3", "1.3.9", "1.3.10"):
         s = apply_rule(sid, s)
-    s = apply_rule("6.4.129", s)
-    s = apply_rule("6.4.148", s)
+    s = P00_bha_avakasha_6_4_148(s)
 
     _pada_merge(s)
     _normalize_merged_pratipadika(s, upadesha_slp1="kauYjAyanaya")

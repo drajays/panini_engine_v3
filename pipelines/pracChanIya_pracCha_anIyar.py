@@ -21,12 +21,9 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_tavyat_anIyar_it_lopa, P00_aniyar_it_lopa_3_1_91
-from engine import apply_rule
+from core.canonical_pipelines import P00_tavyat_anIyar_it_lopa, P00_aniyar_it_lopa_3_1_91, P00_tuk_tripadi_6_1_73
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
-
-from pipelines.subanta import _pada_merge
 
 
 def derive_pracChanIya() -> State:
@@ -47,16 +44,9 @@ def derive_pracChanIya() -> State:
     s.meta["krtya_recipe"] = "anIyar"
     s = P00_tavyat_anIyar_it_lopa(s)
 
-    # 6.1.73: hrasva 'a' before C within dhātu → insert tuk 't' (→ pratC + anIya)
-    s = apply_rule("6.1.73", s)
-
-    # Merge then enter tripāḍī for ścutva
-    _pada_merge(s)
-    s = apply_rule("8.2.1", s)
-
-    # 8.4.40 stoḥ ścunā ścuḥ: t+C → c (→ pracCanIya = प्रच्छनीय)
+    # 6.1.73 tuk → pada-merge → 8.2.1 → 8.4.40 stoḥ ścunā: t+C → c
     s.meta["8_4_40_sto_tCh_arm"] = True
-    s = apply_rule("8.4.40", s)
+    s = P00_tuk_tripadi_6_1_73(s)
     return s
 
 

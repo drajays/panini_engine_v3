@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_amantrana_2_3_48_accent
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -80,13 +81,9 @@ def derive_EdaviDa_triplet_prakriya_32() -> State:
     )
 
     s.meta["prakriya_32_2_3_48_arm"] = True
-    s = apply_rule("2.3.48", s)
-
     s.meta["prakriya_32_6_1_198_arm"] = True
-    s = apply_rule("6.1.198", s)
-
     s.meta["trivoc_6_1_158_recipe"] = True
-    s = apply_rule("6.1.158", s)
+    s = P00_amantrana_2_3_48_accent(s)
 
     s = apply_rule("8.1.16", s)
     s = apply_rule("8.1.18", s)

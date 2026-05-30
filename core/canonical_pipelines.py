@@ -188,6 +188,22 @@ def P00_krt_guna_sandhi_tail(s: State) -> State:
     return s
 
 
+def P00_tripadi_yar_anaci_dvitva_spine(s: State, *, exhaustive: bool = False) -> State:
+    """
+    Tripāḍī *yar* optional gemination: **8.2.108** → **8.2.1** → **8.4.46** → **8.4.47**.
+
+    Default: one pass each (``vikalpa`` — one site per call).  ``exhaustive=True`` loops
+    until stable (e.g. ``kfzna`` + ``sya`` — both gemination loci).
+    """
+    s = apply_rule("8.2.108", s)
+    s = apply_rule("8.2.1", s)
+    if not exhaustive:
+        s = apply_rule("8.4.46", s)
+        s = apply_rule("8.4.47", s)
+        return s
+    return run_to_fixed_point(["8.4.46", "8.4.47"], s)
+
+
 def P00_samhita_iko_yanaci_spine(s: State) -> State:
     """
     Saṃhitā *iko yaṇ aci* block (6.1.72 adhikāra + apavāda sweep).
@@ -1462,6 +1478,93 @@ def P00_lit_ta_esh_it_lopa(s: State) -> State:
     return s
 
 
+# ── Batch-extracted canonicals (2026-05-30 round 2) ──────────────────────────
+
+def P00_idit_num_3_1_91(s: State) -> State:
+    """Idit num + dhātoḥ: 1.1.47 → 7.1.58 → 3.1.91."""
+    s = apply_rule("1.1.47", s)
+    s = apply_rule("7.1.58", s)
+    s = apply_rule("3.1.91", s)
+    return s
+
+
+def P00_bhavati_guna_yav(s: State) -> State:
+    """Bhvādi guṇa + yavāy sandhi: 7.2.35 → 7.3.84 → 6.1.78."""
+    s = apply_rule("7.2.35", s)
+    s = apply_rule("7.3.84", s)
+    s = apply_rule("6.1.78", s)
+    return s
+
+
+def P00_krt_purvatr_8_2_30(s: State) -> State:
+    """Kṛt tripāḍī start: 8.2.1 (pūrvatrāsiddha) → 8.2.30 (saṃyogānta lopa)."""
+    s = apply_rule("8.2.1", s)
+    s = apply_rule("8.2.30", s)
+    return s
+
+
+def P00_taddhita_2_1_1_sup_scope(s: State) -> State:
+    """Taddhita samāsa scope: 2.1.1 → anabhihite → sup → 4.1.82 → 4.1.92."""
+    s = apply_rule("2.1.1", s)
+    s = P00_anabhihite_shashthi_shese_2_3_50(s)
+    s = P00_attach_sup_from_pratipadika(s)
+    s = apply_rule("4.1.82", s)
+    s = apply_rule("4.1.92", s)
+    return s
+
+
+def P00_snam_it_lopa_chain(s: State) -> State:
+    """Tudādi śnam vikaraṇa + it-lopa: 3.1.77 → 1.3.8 → 1.3.9."""
+    s = apply_rule("3.1.77", s)
+    s = apply_rule("1.3.8", s)
+    s = apply_rule("1.3.9", s)
+    return s
+
+
+def P00_amantrana_2_3_48_accent(s: State) -> State:
+    """Āmantrana accent chain: 2.3.48 → 6.1.198 → 6.1.158."""
+    s = apply_rule("2.3.48", s)
+    s = apply_rule("6.1.198", s)
+    s = apply_rule("6.1.158", s)
+    return s
+
+
+def P00_tanadi_kit_6_4_110(s: State) -> State:
+    """Tanādi kṅit gate + upadhā: 1.2.4 → 1.1.5 → 6.4.110."""
+    s = apply_rule("1.2.4", s)
+    s = apply_rule("1.1.5", s)
+    s = apply_rule("6.4.110", s)
+    return s
+
+
+def P00_tuk_tripadi_6_1_73(s: State) -> State:
+    """Tuk + tripāḍī for CChV: 6.1.73 → pada-merge → 8.2.1 → 8.4.40."""
+    s = apply_rule("6.1.73", s)
+    from pipelines.subanta import _pada_merge  # noqa: PLC0415
+    _pada_merge(s)
+    s = apply_rule("8.2.1", s)
+    s = apply_rule("8.4.40", s)
+    return s
+
+
+def P00_bha_avakasha_6_4_148(s: State) -> State:
+    """Bha-adhikāra avasāna: 6.4.129 → 6.4.148."""
+    s = apply_rule("6.4.129", s)
+    s = apply_rule("6.4.148", s)
+    return s
+
+
+def P00_mRj_abhyasa_hrasva(s: State, *, first_hal_only: bool = False) -> State:
+    """Mṛj/yaṅ abhyāsa hrasva: 7.4.66 → 1.1.51 → 7.4.60.
+    Set first_hal_only=True for vowel-initial abhyāsa needing 7_4_60_first_hal_only."""
+    s = apply_rule("7.4.66", s)
+    s = apply_rule("1.1.51", s)
+    if first_hal_only and s.terms and "abhyasa" in s.terms[0].tags:
+        s.terms[0].meta["7_4_60_first_hal_only"] = True
+    s = apply_rule("7.4.60", s)
+    return s
+
+
 __all__ = [
     "P01_subanta_bootstrap",
     "P01_taddhita_bootstrap_idle",
@@ -1483,6 +1586,7 @@ __all__ = [
     "P15_tripadi_shesha_sibilant_n",
     "P00_tin_tusma_audit_halantyam_lopa",
     "P00_samhita_iko_yanaci_spine",
+    "P00_tripadi_yar_anaci_dvitva_spine",
     "P00_krt_guna_sandhi_tail",
     "build_malIya_initial_state",
     "build_salIya_initial_state",

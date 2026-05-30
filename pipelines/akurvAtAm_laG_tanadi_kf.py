@@ -24,7 +24,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_adesha_base, P00_tanadi_u_guna
+from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_adesha_base, P00_tanadi_u_guna, P00_tanadi_kit_6_4_110
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -50,9 +50,7 @@ def derive_akurvAtAm_laG_tanadi_kf_P020() -> State:
     s = P00_tanadi_u_guna(s)
     if s.terms:
         s.terms[0].tags.discard("upadesha")
-    s = apply_rule("1.2.4", s)
-    s = apply_rule("1.1.5", s)
-    s = apply_rule("6.4.110", s)
+    s = P00_tanadi_kit_6_4_110(s)
 
     # kuru + AtAm → kurvAtAm (general arm across terms)
     s = apply_rule("6.1.77", s)

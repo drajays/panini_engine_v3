@@ -18,7 +18,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from engine import apply_rule
+from core.canonical_pipelines import P00_tuk_tripadi_6_1_73
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -39,15 +39,8 @@ def derive_dadhiccChatram() -> State:
     s = State(terms=[t1, t2], meta={}, trace=[])
 
     s.meta["6_1_73_che_ca_arm"] = True
-    s = apply_rule("6.1.73", s)
-
-    from pipelines.subanta import _pada_merge  # noqa: PLC0415
-
-    _pada_merge(s)
-    s = apply_rule("8.2.1", s)
-
     s.meta["8_4_40_sto_tCh_arm"] = True
-    s = apply_rule("8.4.40", s)
+    s = P00_tuk_tripadi_6_1_73(s)
     return s
 
 

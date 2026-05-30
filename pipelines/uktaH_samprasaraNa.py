@@ -22,7 +22,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_sup_it_lopa_aprkta, P00_samprasarana_dirgha
+from core.canonical_pipelines import P00_sup_it_lopa_aprkta, P00_samprasarana_dirgha, P00_krt_purvatr_8_2_30
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -90,8 +90,7 @@ def derive_uktaH() -> State:
     s.meta["linga"] = "pulliṅga"
     s = P00_sup_it_lopa_aprkta(s)
     _pada_merge(s)
-    s = apply_rule("8.2.1", s)
-    s = apply_rule("8.2.30", s)
+    s = P00_krt_purvatr_8_2_30(s)
     s = apply_rule("8.2.66", s)
     s = apply_rule("8.3.15", s)
     return s

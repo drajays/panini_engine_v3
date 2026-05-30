@@ -24,7 +24,7 @@ from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from core.canonical_pipelines import P00_upadesha_it_1_3_1_2_5, P00_tavyat_anIyar_it_lopa
+from core.canonical_pipelines import P00_upadesha_it_1_3_1_2_5, P00_tavyat_anIyar_it_lopa, P00_idit_num_3_1_91
 from pipelines.subanta import _pada_merge
 
 
@@ -43,12 +43,8 @@ def derive_vandanIya() -> State:
     s.terms[0].tags.discard("upadesha")
     s.terms[0].meta["upadesha_slp1"] = "vad"
 
-    # 7.1.58 idito nuṃ dhātoḥ: insert n after last vowel → vand
-    s = apply_rule("1.1.47", s)
-    s = apply_rule("7.1.58", s)
-
-    # kṛtya context: dhātoḥ (3.1.91) then anīyar by 3.1.96 (krtya_recipe key)
-    s = apply_rule("3.1.91", s)
+    # 7.1.58 idito nuṃ dhātoḥ: insert n after last vowel → vand; then dhātoḥ
+    s = P00_idit_num_3_1_91(s)
     s.meta["krtya_recipe"] = "anIyar"
     s = P00_tavyat_anIyar_it_lopa(s)
 

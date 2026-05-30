@@ -30,7 +30,7 @@ from core.canonical_pipelines import P06b_pratyaya_through_taddhite_4_1_76
 from core.canonical_pipelines import P00_attach_sup_from_pratipadika
 from core.canonical_pipelines import P00_anabhihite_shashthi_shese_2_3_50
 from core.canonical_pipelines import P00_taddhita_it_lopa_chain
-from core.canonical_pipelines import P00_taddhita_pratipadika_internal_sup_luk_then_anga_vidhi, P00_taddhita_1_1_scope, P00_bha_vidhi_6_4_148_1_1_60
+from core.canonical_pipelines import P00_taddhita_pratipadika_internal_sup_luk_then_anga_vidhi, P00_taddhita_1_1_scope, P00_bha_vidhi_6_4_148_1_1_60, P00_taddhita_2_1_1_sup_scope
 from pipelines.subanta import _pada_merge
 from pipelines.subanta import (
     build_initial_state,
@@ -92,11 +92,7 @@ def derive_taddhita_itika_EtikAyana() -> State:
     # NOTE: A fully universal autonomous taddhita scanner is staged separately
     # (`derive_taddhita_itika_EtikAyana_from_state`) and will replace this once
     # the resolver+lexicon coverage is complete for the 4.1.* domain.
-    s = apply_rule("2.1.1", s)
-    s = P00_anabhihite_shashthi_shese_2_3_50(s)
-    s = P00_attach_sup_from_pratipadika(s)
-    s = apply_rule("4.1.82", s)
-    s = apply_rule("4.1.92", s)
+    s = P00_taddhita_2_1_1_sup_scope(s)
     s = apply_rule("4.1.99", s)
     s = P00_taddhita_1_1_scope(s)
     s = apply_rule("7.1.2", s)

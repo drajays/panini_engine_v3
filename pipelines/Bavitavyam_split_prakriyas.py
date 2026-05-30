@@ -23,7 +23,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_napumsaka_am_sandhi, P00_tavyat_anIyar_it_lopa
+from core.canonical_pipelines import P00_napumsaka_am_sandhi, P00_tavyat_anIyar_it_lopa, P00_bhavati_guna_yav
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -43,9 +43,7 @@ def derive_Bavitavyam_split_prakriyas_P002() -> State:
 
     s.meta["prakriya_P002_3_1_96_tavyat_arm"] = True
     s = P00_tavyat_anIyar_it_lopa(s)
-    s = apply_rule("7.2.35", s)
-    s = apply_rule("7.3.84", s)
-    s = apply_rule("6.1.78", s)
+    s = P00_bhavati_guna_yav(s)
     s = apply_rule("1.2.46", s)
 
     s.terms[-1].tags.add("napuṃsaka")

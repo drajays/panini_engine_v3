@@ -54,6 +54,7 @@ from core.canonical_pipelines import (
     P00_krt_guna_sandhi_tail,
     P00_nvul_krt_prefix,
     P00_samprasarana_dirgha,
+    P00_attach_sup_from_pratipadika,
 )
 from phonology import HAL
 from phonology.pratyahara import is_ekac_upadesha
@@ -553,9 +554,7 @@ def _ktri_subanta_tail(s: State) -> State:
     stem = s.terms[0]
     stem.tags.add("napuṃsaka")
     s.meta["vibhakti_vacana"] = "1-1"
-    s = apply_rule("4.1.1", s)
-    s = apply_rule("1.2.45", s)
-    s = apply_rule("4.1.2", s)
+    s = P00_attach_sup_from_pratipadika(s)
     s = apply_rule("7.1.24", s)
     for sid in ("1.3.2", "1.3.9"):
         s = apply_rule(sid, s)

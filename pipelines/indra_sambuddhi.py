@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_amantrana_2_3_48_accent
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -38,13 +39,9 @@ def derive_indra_sambuddhi_prakriya_26() -> State:
     s = State(terms=[_mk_indra_sambuddhi()], meta={}, trace=[])
 
     s.meta["prakriya_26_2_3_48_arm"] = True
-    s = apply_rule("2.3.48", s)
-
     s.meta["prakriya_26_6_1_198_arm"] = True
-    s = apply_rule("6.1.198", s)
-
     s.meta["indra_6_1_158_recipe"] = True
-    s = apply_rule("6.1.158", s)
+    s = P00_amantrana_2_3_48_accent(s)
 
     s.tripadi_zone = True
     s.meta["prakriya_26_8_4_66_arm"] = True

@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_idit_num_3_1_91
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -40,12 +41,10 @@ def derive_vande() -> State:
         s.terms[0].tags.discard("upadesha")
         s.terms[0].meta["upadesha_slp1"] = "vad"
 
-    # idito num dhatoH
-    s = apply_rule("1.1.47", s)
-    s = apply_rule("7.1.58", s)
+    # idito num dhatoH + dhātoḥ scope
+    s = P00_idit_num_3_1_91(s)
 
     # laṭ + ātmanepada 1sg i
-    s = apply_rule("3.1.91", s)
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
     s = apply_rule("3.2.123", s)
     laT = Term(

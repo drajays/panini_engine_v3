@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_krt_purvatr_8_2_30
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -55,8 +56,7 @@ def derive_vaktA_split_prakriyas_P003() -> State:
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
 
-    s = apply_rule("8.2.1", s)
-    s = apply_rule("8.2.30", s)
+    s = P00_krt_purvatr_8_2_30(s)
     s.tripadi_zone = False
 
     s = apply_rule("1.2.45", s)
