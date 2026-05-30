@@ -38,6 +38,7 @@ from core.canonical_pipelines import (
     P00_krt_guna_sandhi_tail,
     P00_san_dvitva,
     P00_samprasarana_dirgha,
+    P00_san_dirgha_hrasva,
 )
 from pipelines.krdanta import _structural_merge_to_pratipadika
 from pipelines.subanta import _pada_merge
@@ -68,10 +69,8 @@ def derive_vivakSakaH_san_Nvul_P030() -> State:
     s = P00_san_dvitva(s)
 
     s.meta["6_4_16_sani_dirgha_arm"] = True
-    s = apply_rule("6.4.16", s)
-
     s.meta["P030_7_4_60_abhyasa_vowel_only_arm"] = True
-    s = apply_rule("7.4.60", s)
+    s = P00_san_dirgha_hrasva(s)
 
     s = apply_rule("6.1.77", s)
 

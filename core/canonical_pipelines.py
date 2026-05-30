@@ -168,12 +168,9 @@ def P00_sup_it_lopa_aprkta(s: State) -> State:
 
 
 def P00_nvul_krt_prefix(s: State) -> State:
-    """ṇvul kṛt it-spine prefix: 3.4.67 → 3.1.133 → 1.3.8 → krt_it_lopa → 7.1.1 → anga_samjna_6_4_1."""
+    """ṇvul kṛt it-spine prefix: 3.4.67 → [3.1.133 → 1.3.8 → krt_it_lopa → 7.1.1] → anga_samjna_6_4_1."""
     s = apply_rule("3.4.67", s)
-    s = apply_rule("3.1.133", s)
-    s = apply_rule("1.3.8", s)
-    s = P00_krt_it_lopa(s)
-    s = apply_rule("7.1.1", s)
+    s = P00_nvul_133_7_1_1(s)
     s = P00_anga_samjna_6_4_1(s)
     return s
 
@@ -558,7 +555,6 @@ def P00_krt_ardhadhatuka_ekac_it_and_guna_audit(s: State) -> State:
     After *kṛt* *it*-*lopa*: **3.4.114** → *ekāc* *anudātta* *iṭ* block (**7.2.10** /
     **7.2.35**) → ``P00_anga_guna_audit_1_4_13_1_1_5_7_3_84`` (*citaḥ* / *jiṣṇu* …).
     """
-    s = apply_rule("3.4.114", s)
     # Compute ekāc dynamically from current dhātu tape (post-it-lopa) if caller
     # has not already provided the flags (e.g. from a dhātupāṭha row).
     from phonology.pratyahara import is_ekac_upadesha
@@ -574,8 +570,7 @@ def P00_krt_ardhadhatuka_ekac_it_and_guna_audit(s: State) -> State:
 
     s.meta["ekac_dhatu"] = bool(s.meta.get("ekac_dhatu", _ekac_default()))
     s.meta.setdefault("udatta_dhatu", False)
-    s = apply_rule("7.2.10", s)
-    s = apply_rule("7.2.35", s)
+    s = P00_anit_iT_tfc_chain(s)
     s = P00_anga_guna_audit_1_4_13_1_1_5_7_3_84(s)
     return s
 
@@ -1562,6 +1557,160 @@ def P00_mRj_abhyasa_hrasva(s: State, *, first_hal_only: bool = False) -> State:
     if first_hal_only and s.terms and "abhyasa" in s.terms[0].tags:
         s.terms[0].meta["7_4_60_first_hal_only"] = True
     s = apply_rule("7.4.60", s)
+    return s
+
+
+# ── Round-3 deduplication canonicals ─────────────────────────────────────────
+
+def P00_at_agama_it_lopa(s: State) -> State:
+    """aṭ-āgama + it-lopa: 6.4.71 → 1.3.3 → 1.3.9."""
+    s = apply_rule("6.4.71", s)
+    s = apply_rule("1.3.3", s)
+    s = apply_rule("1.3.9", s)
+    return s
+
+
+def P00_vikarana_it_lopa(s: State) -> State:
+    """Vikaraṇa it-lopa: 1.3.8 → 1.3.3 → 1.3.9."""
+    s = apply_rule("1.3.8", s)
+    s = apply_rule("1.3.3", s)
+    s = apply_rule("1.3.9", s)
+    return s
+
+
+def P00_avyaya_sup_luk(s: State) -> State:
+    """Avyaya sup-luk: 1.1.40 → 4.1.2 → 2.4.82."""
+    s = apply_rule("1.1.40", s)
+    s = apply_rule("4.1.2", s)
+    s = apply_rule("2.4.82", s)
+    return s
+
+
+def P00_tripadi_anusvara_parasavarna(s: State) -> State:
+    """Tripāḍī anusvāra + parasavarṇa: 8.2.1 → 8.3.24 → 8.4.58."""
+    s = apply_rule("8.2.1", s)
+    s = apply_rule("8.3.24", s)
+    s = apply_rule("8.4.58", s)
+    return s
+
+
+def P00_ru_visarga_pair(s: State) -> State:
+    """Ru + visarga sandhi pair: 8.2.66 → 8.3.15."""
+    s = apply_rule("8.2.66", s)
+    s = apply_rule("8.3.15", s)
+    return s
+
+
+def P00_tripadi_samyoganta_ru_visarga(s: State) -> State:
+    """Tripāḍī saṃyogānta-lopa + ru + visarga: 8.2.23 → 8.2.66 → 8.3.15."""
+    s = apply_rule("8.2.23", s)
+    s = apply_rule("8.2.66", s)
+    s = apply_rule("8.3.15", s)
+    return s
+
+
+def P00_adadi_tere_3_4_79(s: State) -> State:
+    """Adādi ṭere chain: 3.4.113 → 1.1.64 → 3.4.79."""
+    s = apply_rule("3.4.113", s)
+    s = apply_rule("1.1.64", s)
+    s = apply_rule("3.4.79", s)
+    return s
+
+
+def P00_adadi_sap_luk_tere(s: State) -> State:
+    """Adādi śap-luk + ṭere: 3.1.68 → 2.4.72 → [3.4.113 → 1.1.64 → 3.4.79]."""
+    s = apply_rule("3.1.68", s)
+    s = apply_rule("2.4.72", s)
+    s = P00_adadi_tere_3_4_79(s)
+    return s
+
+
+def P00_amantrana_8_1_19(s: State) -> State:
+    """Āmantrana pada rules: 8.1.16 → 8.1.18 → 8.1.19."""
+    s = apply_rule("8.1.16", s)
+    s = apply_rule("8.1.18", s)
+    s = apply_rule("8.1.19", s)
+    return s
+
+
+def P00_dvigu_5_1_37_5_1_28(s: State) -> State:
+    """Dvigu scope + saṃkhyā: 4.1.76 → 5.1.37 → 5.1.28."""
+    s = apply_rule("4.1.76", s)
+    s = apply_rule("5.1.37", s)
+    s = apply_rule("5.1.28", s)
+    return s
+
+
+def P00_luN_han_sic_6_4_48(s: State) -> State:
+    """luṅ-han sic chain: 3.4.114 → 7.2.35 → 6.4.48 → 1.1.57."""
+    s = apply_rule("3.4.114", s)
+    s = apply_rule("7.2.35", s)
+    s = apply_rule("6.4.48", s)
+    s = apply_rule("1.1.57", s)
+    return s
+
+
+def P00_luG_dhatu_it_context(s: State) -> State:
+    """luṅ dhātu it-context: 1.1.68 → 1.3.1 → 3.1.91."""
+    s = apply_rule("1.1.68", s)
+    s = apply_rule("1.3.1", s)
+    s = apply_rule("3.1.91", s)
+    return s
+
+
+def P00_nvul_133_7_1_1(s: State) -> State:
+    """ṇvul 3.1.133 → 1.3.8 → [krt_it_lopa] → 7.1.1."""
+    s = apply_rule("3.1.133", s)
+    s = apply_rule("1.3.8", s)
+    s = P00_krt_it_lopa(s)
+    s = apply_rule("7.1.1", s)
+    return s
+
+
+def P00_anit_iT_tfc_chain(s: State) -> State:
+    """anit iṭ chain: 3.4.114 → [anga_samjna] → 7.2.10 → 7.2.35."""
+    s = apply_rule("3.4.114", s)
+    s = P00_anga_samjna_6_4_1(s)
+    s = apply_rule("7.2.10", s)
+    s = apply_rule("7.2.35", s)
+    return s
+
+
+def P00_san_dirgha_hrasva(s: State) -> State:
+    """San dīrgha + abhyāsa hrasva: 6.4.16 → 7.4.60."""
+    s = apply_rule("6.4.16", s)
+    s = apply_rule("7.4.60", s)
+    return s
+
+
+def P00_yang_abhyasa_hrasva_chain(s: State) -> State:
+    """Yaṅ abhyāsa hrasva chain: 7.4.59 → 7.4.83 → 7.4.60."""
+    s = apply_rule("7.4.59", s)
+    s = apply_rule("7.4.83", s)
+    s = apply_rule("7.4.60", s)
+    return s
+
+
+def P00_as_lat_adadi_2_4_72(s: State) -> State:
+    """Adādi as+laṭ spine: 2.4.72 → 1.2.4 → 6.4.111."""
+    s = apply_rule("2.4.72", s)
+    s = apply_rule("1.2.4", s)
+    s = apply_rule("6.4.111", s)
+    return s
+
+
+def P00_guna_sandhi_7_3_84_6_1_78(s: State) -> State:
+    """Guṇa + sandhi: 7.3.84 → 6.1.78."""
+    s = apply_rule("7.3.84", s)
+    s = apply_rule("6.1.78", s)
+    return s
+
+
+def P00_a_lopa_sthanivat_1_1_58(s: State) -> State:
+    """a-lopa + sthānivat context: 6.4.48 → 1.1.57 → 1.1.58."""
+    s = apply_rule("6.4.48", s)
+    s = apply_rule("1.1.57", s)
+    s = apply_rule("1.1.58", s)
     return s
 
 

@@ -17,6 +17,7 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 from core.canonical_pipelines import (
+    P00_tripadi_anusvara_parasavarna,
     P00_tip_to_ti,
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
@@ -58,9 +59,7 @@ def derive_muYcati() -> State:
     from pipelines.subanta import _pada_merge
 
     _pada_merge(s)
-    s = apply_rule("8.2.1", s)
-    s = apply_rule("8.3.24", s)
-    s = apply_rule("8.4.58", s)
+    s = P00_tripadi_anusvara_parasavarna(s)
     return s
 
 

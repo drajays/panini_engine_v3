@@ -9,7 +9,7 @@ Spine (engine order; cf. JSON teaching steps **n3–n14**):
   **1.1.68** → **1.3.1** → **3.2.110**/**3.4.69** → **3.1.91** + ``P06a`` →
   **cli/sic** (**3.1.43**/**3.1.44** + *it*) → **2.4.43** (*han* → *vadh*) →
   **6.4.71** (*aṭ*) → *tiṅ* **tip** → **t** → **3.4.114** (*sic* ārdhadhātuka) →
-  **7.2.35** (*iṭ*) → **6.4.48** (audit) → **1.1.56** → *vṛddhi* readiness →
+  **7.2.35** (*iṭ*) → **6.4.48** + **1.1.57** → **1.1.56** → *vṛddhi* readiness →
   **7.2.7** (first pass COND-false, then *i* → *ī* on *sic*) → *pada* merge →
   **6.4.114** (*s*-loss + *dh* → *ḍ* before *ī*, **before** **8.2.1** so the
   Tripāḍī *asiddha* gate does not block adhyāya **6.**) → **8.2.1**.
@@ -31,6 +31,7 @@ from core.canonical_pipelines import (
     P00_tip_to_t_aprkta,
     P00_vrddhi_prayoga_readiness,
     P06a_pratyaya_adhikara_3_1_1_to_3,
+    P00_luN_han_sic_6_4_48,
 )
 
 
@@ -79,14 +80,10 @@ def derive_avaDIt() -> State:
     s = P00_tip_to_t_aprkta(s)
 
     s.meta["3_4_114_luN_sic_samjna_arm"] = True
-    s = apply_rule("3.4.114", s)
-
     s.meta["7_2_35_allow_sic"] = True
     s.meta["luN_sic_ardhadhatuka"] = True
-    s = apply_rule("7.2.35", s)
-
-    s.meta["trace_6_4_48_recipe"] = True
-    s = apply_rule("6.4.48", s)
+    s.meta["han_6_4_48_arm"] = True
+    s = P00_luN_han_sic_6_4_48(s)
 
     s = apply_rule("1.1.56", s)
 

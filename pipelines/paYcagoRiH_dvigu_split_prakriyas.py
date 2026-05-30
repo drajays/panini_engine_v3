@@ -24,7 +24,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_subanta_prathama_su_tripadi_visarga
+from core.canonical_pipelines import P00_subanta_prathama_su_tripadi_visarga, P00_dvigu_5_1_37_5_1_28
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -65,14 +65,11 @@ def derive_paYcagoRiH_dvigu_split_prakriyas_P011() -> State:
     s = apply_rule("8.2.7", s)
 
     # taddhita “tena krītam” stamps and luk-note stamp (no varṇa mutation here).
-    s = apply_rule("4.1.76", s)
     s.meta["prakriya_P011_tena_krItam_note"] = True
     s.meta["prakriya_P011_5_1_37_arm"] = True
-    s = apply_rule("5.1.37", s)
-
     s.meta["prakriya_P011_dvigu_Tak_luk_note"] = True
     s.meta["prakriya_P011_5_1_28_arm"] = True
-    s = apply_rule("5.1.28", s)
+    s = P00_dvigu_5_1_37_5_1_28(s)
 
     # internal sup-luk (2.4.71) on the samāsa members.
     s = apply_rule("1.2.46", s)

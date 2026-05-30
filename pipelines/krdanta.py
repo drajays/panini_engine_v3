@@ -55,6 +55,7 @@ from core.canonical_pipelines import (
     P00_nvul_krt_prefix,
     P00_samprasarana_dirgha,
     P00_attach_sup_from_pratipadika,
+    P00_anit_iT_tfc_chain,
 )
 from phonology import HAL
 from phonology.pratyahara import is_ekac_upadesha
@@ -278,10 +279,7 @@ def derive_tfc_pratipadika(
     s = apply_rule("3.4.67", s)
     s = apply_rule("3.1.133", s)
     s = P00_krt_it_lopa(s)
-    s = apply_rule("3.4.114", s)
-    s = P00_anga_samjna_6_4_1(s)
-    s = apply_rule("7.2.10", s)
-    s = apply_rule("7.2.35", s)
+    s = P00_anit_iT_tfc_chain(s)
     s = apply_rule("7.3.84", s)
     s = apply_rule("1.1.51", s)
     s = apply_rule("6.1.78", s)

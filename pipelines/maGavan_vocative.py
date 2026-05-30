@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_amantrana_8_1_19
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -37,11 +38,8 @@ def derive_maGavan_vocative_prakriya_30() -> State:
     s.meta["prakriya_30_2_3_48_arm"] = True
     s = apply_rule("2.3.48", s)
 
-    s = apply_rule("8.1.16", s)
-    s = apply_rule("8.1.18", s)
-
     s.meta["prakriya_30_8_1_19_arm"] = True
-    s = apply_rule("8.1.19", s)
+    s = P00_amantrana_8_1_19(s)
     return s
 
 

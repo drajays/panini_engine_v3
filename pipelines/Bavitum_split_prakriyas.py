@@ -21,7 +21,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_bhavati_guna_yav
+from core.canonical_pipelines import P00_bhavati_guna_yav, P00_avyaya_sup_luk
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -56,11 +56,8 @@ def derive_Bavitum_split_prakriyas_P001() -> State:
     s = apply_rule("1.3.9", s)
     s = P00_bhavati_guna_yav(s)
 
-    s = apply_rule("1.1.40", s)
-
     s.meta["vibhakti_vacana"] = "1-1"
-    s = apply_rule("4.1.2", s)
-    s = apply_rule("2.4.82", s)
+    s = P00_avyaya_sup_luk(s)
     return s
 
 

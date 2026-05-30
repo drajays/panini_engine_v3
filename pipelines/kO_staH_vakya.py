@@ -23,7 +23,7 @@ from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_tas_adesh_full, P00_tripadi_rutva_visarga
+from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_tas_adesh_full, P00_tripadi_rutva_visarga, P00_as_lat_adadi_2_4_72
 from pipelines.subanta import (
     SUBANTA_RULE_IDS_POST_4_1_2,
     PADA_MERGE_STEP,
@@ -87,12 +87,8 @@ def _derive_staH() -> str:
     )
     s.terms.insert(1, Sap)
     s.meta["2_4_72_sap_luk_arm"] = True
-    s = apply_rule("2.4.72", s)
-
-    # apit sārvadhātuka → kṅiti (1.2.4), then as a-lopa (6.4.111).
-    s = apply_rule("1.2.4", s)
     s.meta["P028_6_4_111_as_al_lopa_arm"] = True
-    s = apply_rule("6.4.111", s)
+    s = P00_as_lat_adadi_2_4_72(s)
 
     # Merge and ru/visarga for tas → taH.
     _pada_merge(s)

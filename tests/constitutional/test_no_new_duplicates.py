@@ -68,7 +68,7 @@ from audit.scheduling_block_auditor import SchedulingBlockAuditor
 #          Round-2 batch extractions: P00_amantrana_2_3_48_accent, P00_tanadi_kit_6_4_110,
 #          P00_tuk_tripadi_6_1_73, P00_bha_avakasha_6_4_148, P00_mRj_abhyasa_hrasva,
 #          P00_attach_sup_from_pratipadika (krdanta), P00_anga_guna_audit (tinanta).
-MAX_DUPLICATE_GROUPS = 41
+MAX_DUPLICATE_GROUPS = 0
 
 
 @pytest.fixture(scope="module")

@@ -30,6 +30,7 @@ from core.canonical_pipelines import (
     P00_yang_adhikara_yaG_append_sanadi,
     P00_yang_dvitva_abhyasa_gate,
     P00_hal_it_lopa,
+    P00_yang_abhyasa_hrasva_chain,
 )
 from pipelines.subanta import _pada_merge
 
@@ -55,10 +56,8 @@ def derive_yAyAvaraH_yang_varac_P029() -> State:
     s = P00_yang_dvitva_abhyasa_gate(s)
 
     s.meta["7_4_59_abhyasa_hrasva_arm"] = True
-    s = apply_rule("7.4.59", s)
     s.meta["P029_7_4_83_abhyasa_dirgha_arm"] = True
-    s = apply_rule("7.4.83", s)
-    s = apply_rule("7.4.60", s)
+    s = P00_yang_abhyasa_hrasva_chain(s)
 
     s.meta["varac_recipe"] = True
     s = apply_rule("3.2.176", s)

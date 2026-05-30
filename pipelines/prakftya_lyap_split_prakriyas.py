@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_vikarana_it_lopa, P00_avyaya_sup_luk
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -56,25 +57,17 @@ def derive_prakftya_lyap_split_prakriyas_P017() -> State:
     s.meta["lyap_recipe"] = True
     s = apply_rule("7.1.37", s)
 
-    s = apply_rule("1.3.8", s)
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_vikarana_it_lopa(s)
 
     s = apply_rule("6.1.71", s)
 
-    # Mark the block as avyaya (1.1.40 sees anga+pratyaya ancestry for ktvā/lyap).
-    s = apply_rule("1.1.40", s)
-
-    # Merge prefix+dhātu+pratyaya into one pada then attach su and immediately luk it.
     from pipelines.subanta import _pada_merge  # noqa: PLC0415
 
     _pada_merge(s)
-    # Structural merge does not preserve `avyaya`; carry it forward so 2.4.82 can see it.
     if s.terms:
         s.terms[0].tags.add("avyaya")
     s.meta["vibhakti_vacana"] = "1-1"
-    s = apply_rule("4.1.2", s)
-    s = apply_rule("2.4.82", s)
+    s = P00_avyaya_sup_luk(s)
     return s
 
 

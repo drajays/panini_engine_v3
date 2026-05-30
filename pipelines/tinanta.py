@@ -97,6 +97,14 @@ from core.canonical_pipelines import (
     P00_hal_anit_guna,
     P00_lit_ta_esh_it_lopa,
     P00_mRj_abhyasa_hrasva,
+    P00_at_agama_it_lopa,
+    P00_tripadi_anusvara_parasavarna,
+    P00_ru_visarga_pair,
+    P00_tripadi_samyoganta_ru_visarga,
+    P00_adadi_tere_3_4_79,
+    P00_adadi_sap_luk_tere,
+    P00_san_dirgha_hrasva,
+    P00_guna_sandhi_7_3_84_6_1_78,
 )
 
 from pipelines.dhatupatha import get_dhatu_row, _payload, _envelope
@@ -886,11 +894,8 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # ── Stage: aṅgakārya ────────────────────────────────────────────────────
     state = apply_rule("1.4.13", state)
-    # 6.4.71: aṭ augment prepended to dhātu (fires because 3.2.111 set aT_agama_context)
-    state = apply_rule("6.4.71", state)
-    # Trace steps for aṭ it-lopa (T of aṭ is conceptual; vacuous in engine)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
+    # 6.4.71 aṭ + it-lopa (aṭ T is conceptual)
+    state = P00_at_agama_it_lopa(state)
 
     state = apply_rule("1.1.5", state)
     # 7.3.101: 'a' of śap → 'ā' before yañ-initial tiṅ ādeśa (v of 'v', m of 'm')
@@ -969,9 +974,7 @@ def _derive_luG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
     state = apply_rule("6.1.66", state)
     state = apply_rule("1.2.4", state)
     state = apply_rule("1.4.13", state)
-    state = apply_rule("6.4.71", state)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
+    state = P00_at_agama_it_lopa(state)
     state = apply_rule("1.4.14", state)
     state = apply_rule("7.3.101", state)
     state = apply_rule("6.1.97", state)
@@ -1096,13 +1099,10 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: aṅgakārya ────────────────────────────────────────────────────
     state = apply_rule("1.4.13", state)
 
-    # 6.4.71 aṭ augment (fires via aT_agama_context set by 3.2.110)
+    # 6.4.71 aṭ augment; skip it-lopa for seṭ to avoid re-processing sic 's'
     state = apply_rule("6.4.71", state)
-    # aṭ augment is plain 'a' with no IT tags; skip 1.3.3/1.3.9 for seṭ to
-    # avoid re-processing the sic 's' as halantyam-IT
     if _is_anit:
-        state = apply_rule("1.3.3", state)
-        state = apply_rule("1.3.9", state)
+        state = P00_hal_it_lopa(state)
 
     if _is_anit:
         # 6.4.88 vuk augment (bhuvo vug-luṅ-liṭoḥ) — aniṭ/bhū only
@@ -1497,10 +1497,8 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state.meta.pop("_lRT_ad_spine", None)
         state.meta.pop("_lRT_skip_guna", None)
         state.meta.pop("lRT_ad_ekac_spine", None)
-        state = apply_rule("8.2.1", state)
         state = P00_tripadi_8_4_55_visarga(state)
-        state = apply_rule("8.3.24", state)
-        state = apply_rule("8.4.58", state)
+        state = P00_tripadi_anusvara_parasavarna(state)
         state = apply_rule("8.4.68", state)
     else:
         state = P00_tripadi_rutva_visarga(state)
@@ -1577,8 +1575,7 @@ def _derive_lRG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
     if purusha == 3 and vacana == 3:
         state = apply_rule("8.2.23", state)
     if purusha == 2 and vacana == 1:
-        state = apply_rule("8.2.66", state)
-        state = apply_rule("8.3.15", state)
+        state = P00_ru_visarga_pair(state)
     state = P00_tripadi_8_4_55_visarga(state)
     state = apply_rule("8.4.68", state)
     state.meta.pop("lRG_ad_spine", None)
@@ -1781,9 +1778,7 @@ def _derive_loT_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
 
     _pada_merge(state)
     if purusha == 3 and vacana == 3:
-        state = apply_rule("8.2.1", state)
-        state = apply_rule("8.3.24", state)
-        state = apply_rule("8.4.58", state)
+        state = P00_tripadi_anusvara_parasavarna(state)
         state = apply_rule("8.4.68", state)
     elif purusha == 2 and vacana == 1:
         state = apply_rule("8.4.68", state)
@@ -1894,8 +1889,7 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     _pada_merge(state)
     state = apply_rule("8.2.1", state)
     state = P00_tripadi_8_4_55_visarga(state)
-    state = apply_rule("8.3.24", state)
-    state = apply_rule("8.4.58", state)
+    state = P00_tripadi_anusvara_parasavarna(state)
     state = apply_rule("8.4.68", state)
     return state
 
@@ -1920,11 +1914,7 @@ def _derive_laT_adadi(state: State, purusha: int, vacana: int) -> State:
     _tin = _select_tin_adesha("laT", "atmane", purusha, vacana)
     state = P00_tin_adesha_base(state, _tin)
     state.meta["3_1_68_kartari_recipe"] = True
-    state = apply_rule("3.1.68", state)
-    state = apply_rule("2.4.72", state)
-    state = apply_rule("3.4.113", state)
-    state = apply_rule("1.1.64", state)
-    state = apply_rule("3.4.79", state)
+    state = P00_adadi_sap_luk_tere(state)
     _pada_merge(state)
     return state
 
@@ -2244,11 +2234,8 @@ def _derive_laT_nic_atmane(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("3.1.68", state)
     for sid in ("1.3.3", "1.3.8", "1.3.9"):
         state = apply_rule(sid, state)
-    state = apply_rule("3.4.113", state)
-    state = apply_rule("1.1.64", state)
-    state = apply_rule("3.4.79", state)
-    state = apply_rule("7.3.84", state)
-    state = apply_rule("6.1.78", state)
+    state = P00_adadi_tere_3_4_79(state)
+    state = P00_guna_sandhi_7_3_84_6_1_78(state)
     _pada_merge(state)
     return state
 
@@ -2275,10 +2262,8 @@ def _derive_laT_san_atmane(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("3.1.32", state)
     # 6.1.1: dvitva — fires structurally (dhātu + sanādi on tape)
     state = P00_san_dvitva(state)
-    # 6.4.16: dīrgha before san — fires structurally (abhyāsa + dhātu + san)
-    state = apply_rule("6.4.16", state)
-    # 7.4.60: abhyāsa hrasva reduction
-    state = apply_rule("7.4.60", state)
+    # 6.4.16 dīrgha + 7.4.60 abhyāsa hrasva
+    state = P00_san_dirgha_hrasva(state)
     # Tiṅ spine (ātmanepada 3sg laṭ)
     state = P00_lac_lat_attach(state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
@@ -2287,9 +2272,7 @@ def _derive_laT_san_atmane(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("3.1.68", state)
     for sid in ("1.3.3", "1.3.8", "1.3.9"):
         state = apply_rule(sid, state)
-    state = apply_rule("3.4.113", state)
-    state = apply_rule("1.1.64", state)
-    state = apply_rule("3.4.79", state)
+    state = P00_adadi_tere_3_4_79(state)
     _pada_merge(state)
     state = apply_rule("6.1.97", state)
     state = apply_rule("8.2.1", state)
@@ -2494,10 +2477,8 @@ def _derive_lRG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("1.4.13", state)
     state = apply_rule("1.1.5",  state)
 
-    # 6.4.71 aṭ augment (lṛṅ is in luṅ/laṅ/lṛṅ group; fires on aT_agama_context)
-    state = apply_rule("6.4.71", state)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
+    # 6.4.71 aṭ + it-lopa (lṛṅ group)
+    state = P00_at_agama_it_lopa(state)
 
     # 7.3.101 ato dīrgho yañi: sya-a → ā before yañ-initial tiṅ (v of va, m of ma)
     state = apply_rule("7.3.101", state)
@@ -2515,9 +2496,7 @@ def _derive_lRG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("8.2.1",  state)
     state = apply_rule("8.2.39", state)    # t→d at pada-end (3sg)
     state = apply_rule("8.4.56", state)    # d→t at avasāna (3sg)
-    state = apply_rule("8.2.23", state)    # saṃyogānta lopa: ant→an (3pl)
-    state = apply_rule("8.2.66", state)    # s→ru (2sg)
-    state = apply_rule("8.3.15", state)    # ru→ḥ (2sg)
+    state = P00_tripadi_samyoganta_ru_visarga(state)
     state = apply_rule("8.3.59", state)    # s→ṣ after IK (sya→ṣya)
     state = apply_rule("8.4.68", state)
 
@@ -2565,10 +2544,8 @@ def _derive_karmani_laG(state: State, purusha: int, vacana: int) -> State:
 
     state = apply_rule("1.4.13", state)
 
-    # 6.4.71 aṭ āgama (a- prepended to dhātu via aT_agama_context)
-    state = apply_rule("6.4.71", state)
-    state = apply_rule("1.3.3", state)  # vacuous trace
-    state = apply_rule("1.3.9", state)
+    # 6.4.71 aṭ + it-lopa
+    state = P00_at_agama_it_lopa(state)
 
     state = apply_rule("1.1.5", state)
 
@@ -3625,9 +3602,7 @@ def _derive_karmani_lRG(state: State, purusha: int, vacana: int) -> State:
 
     state = apply_rule("1.4.13", state)
     state = apply_rule("1.1.5", state)
-    state = apply_rule("6.4.71", state)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
+    state = P00_at_agama_it_lopa(state)
 
     state = apply_rule("7.2.81", state)
     state = apply_rule("6.1.66", state)
@@ -3641,9 +3616,7 @@ def _derive_karmani_lRG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("8.2.1", state)
     state = apply_rule("8.2.39", state)
     state = apply_rule("8.4.56", state)
-    state = apply_rule("8.2.23", state)
-    state = apply_rule("8.2.66", state)
-    state = apply_rule("8.3.15", state)
+    state = P00_tripadi_samyoganta_ru_visarga(state)
     state = apply_rule("8.3.59", state)
     state = apply_rule("8.4.68", state)
     return state

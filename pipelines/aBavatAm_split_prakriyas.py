@@ -23,7 +23,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_laG_tin_tas_tAm_adesh_block, P00_lashakvataddhite_it_lopa_chain, P06a_pratyaya_adhikara_3_1_1_to_3
+from core.canonical_pipelines import P00_laG_tin_tas_tAm_adesh_block, P00_lashakvataddhite_it_lopa_chain, P06a_pratyaya_adhikara_3_1_1_to_3, P00_guna_sandhi_7_3_84_6_1_78
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -50,9 +50,7 @@ def derive_aBavatAm_split_prakriyas_P005() -> State:
 
     s = apply_rule("3.1.68", s)
     s = P00_lashakvataddhite_it_lopa_chain(s)
-
-    s = apply_rule("7.3.84", s)
-    s = apply_rule("6.1.78", s)
+    s = P00_guna_sandhi_7_3_84_6_1_78(s)
     s = apply_rule("6.4.71", s)
     return s
 

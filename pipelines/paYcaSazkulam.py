@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_dvigu_5_1_37_5_1_28
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -36,14 +37,11 @@ def _witness_paYcaSazkulam_prakriya_43() -> Term:
 def derive_paYcaSazkulam_prakriya_43() -> State:
     s = State(terms=[_witness_paYcaSazkulam_prakriya_43()], meta={}, trace=[])
 
-    s = apply_rule("4.1.76", s)
     s.meta["prakriya_43_tena_krItam_note"] = True
     s.meta["prakriya_43_5_1_37_arm"] = True
-    s = apply_rule("5.1.37", s)
-
     s.meta["prakriya_43_dvigu_Tak_luk_note"] = True
     s.meta["prakriya_43_5_1_28_arm"] = True
-    s = apply_rule("5.1.28", s)
+    s = P00_dvigu_5_1_37_5_1_28(s)
     return s
 
 

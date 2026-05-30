@@ -22,7 +22,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_adesha_base
+from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_adesha_base, P00_luG_dhatu_it_context, P00_vikarana_it_lopa
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -39,12 +39,9 @@ def derive_paceran_vidhi_liG_pac_Ja_P038() -> State:
     s.meta["lakara"] = "liG"
     s.meta["pada"] = "Atmanepada"
 
-    s = apply_rule("1.1.68", s)
-    s = apply_rule("1.3.1", s)
+    s = P00_luG_dhatu_it_context(s)
     if s.terms:
         s.terms[0].tags.discard("upadesha")
-
-    s = apply_rule("3.1.91", s)
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
 
     s.meta["liG_vidhi_recipe"] = True
@@ -77,9 +74,7 @@ def derive_paceran_vidhi_liG_pac_Ja_P038() -> State:
     s = apply_rule("3.1.91", s)
     s.meta["3_1_68_kartari_recipe"] = True
     s = apply_rule("3.1.68", s)
-    s = apply_rule("1.3.8", s)
-    s = apply_rule("1.3.3", s)
-    s = apply_rule("1.3.9", s)
+    s = P00_vikarana_it_lopa(s)
 
     s = apply_rule("6.1.84", s)
     s = apply_rule("6.1.87", s)
