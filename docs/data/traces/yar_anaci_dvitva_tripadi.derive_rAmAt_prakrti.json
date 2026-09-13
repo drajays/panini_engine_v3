@@ -1,0 +1,1 @@
+{"module": "pipelines.yar_anaci_dvitva_tripadi", "callable": "derive_rAmAt_prakrti", "ok": true, "smoke_note": null, "invocation": {"args": [], "kwargs": {}}, "result_kind": "state", "final_flat_slp1": "rAmAt", "phase": "angakarya", "tripadi_zone": false, "trace_len": 0, "trace": []}

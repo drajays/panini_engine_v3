@@ -45,3 +45,6 @@ full-check: audit-duplicates audit-blocks audit-constitutional test-all
 	@echo "  ALL CHECKS PASSED"
 	@$(PYTHON) -c 'import re; from pathlib import Path; f=Path("tests/constitutional/test_no_new_duplicates.py"); m=re.search(r"MAX_DUPLICATE_GROUPS\s*=\s*(\d+)", f.read_text(encoding="utf-8")); ceiling=int(m.group(1)) if m else -1; print(f"  Duplicate ceiling : {ceiling}"); print("  Target            : 0"); print(f"  Progress          : {112-ceiling}/112 collapsed")'
 	@echo "══════════════════════════════════════════"
+
+pages:
+	python3 -m tools.build_pages

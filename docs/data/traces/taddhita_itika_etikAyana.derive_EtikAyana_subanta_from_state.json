@@ -1,0 +1,1 @@
+{"module": "pipelines.taddhita_itika_etikAyana", "callable": "derive_EtikAyana_subanta_from_state", "ok": false, "skip": true, "reason": "could not infer smoke arguments from signature"}

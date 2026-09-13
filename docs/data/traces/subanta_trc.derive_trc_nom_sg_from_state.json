@@ -1,0 +1,1 @@
+{"module": "pipelines.subanta_trc", "callable": "derive_trc_nom_sg_from_state", "ok": false, "skip": true, "reason": "could not infer smoke arguments from signature"}

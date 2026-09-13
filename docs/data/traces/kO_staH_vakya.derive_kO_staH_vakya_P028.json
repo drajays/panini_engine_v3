@@ -1,0 +1,1 @@
+{"module": "pipelines.kO_staH_vakya", "callable": "derive_kO_staH_vakya_P028", "ok": true, "smoke_note": null, "invocation": {"args": [], "kwargs": {}}, "result_kind": "state", "error": "expected State, got str"}

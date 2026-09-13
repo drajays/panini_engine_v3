@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pāṇini Engine v3 — glass-box derivations</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafaf7; --panel:#fff; --subtle:#f1ede3; --ink:#1b1a17; --dim:#5b574d;
+  --faint:#8b8578; --accent:#8b2e00; --ok:#196b1a; --warn:#b07600; --bad:#a02020;
+  --line:#d7d2c4; --soft:#ece8dc;
+  --mono:"SF Mono",Menlo,Consolas,monospace;
+  --dev:"Noto Serif Devanagari","Noto Sans Devanagari","Sanskrit Text",serif;
+  --body:Charter,"Iowan Old Style",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#16150f; --panel:#1e1d16; --subtle:#262418; --ink:#ece7d8; --dim:#b0a894;
+  --faint:#837c6c; --accent:#e08a55; --ok:#7fc07f; --warn:#d8ab4a; --bad:#e07676;
+  --line:#3a382c; --soft:#2a281e;
+}}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;font:15px/1.5 var(--body);color:var(--ink);background:var(--bg)}
+.dev{font-family:var(--dev)}
+code,.mono{font-family:var(--mono);font-size:.86em}
+header{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;align-items:baseline;
+  padding:.7rem 1rem;border-bottom:1px solid var(--line);background:var(--panel)}
+header h1{margin:0;font-size:1.05rem;letter-spacing:.01em}
+header h1 span{color:var(--accent)}
+header .meta{color:var(--faint);font-size:.8rem}
+header label{font-size:.8rem;color:var(--dim)}
+select,input{font:inherit;font-size:.85rem;padding:.25rem .4rem;border:1px solid var(--line);
+  border-radius:4px;background:var(--panel);color:var(--ink)}
+main{display:flex;height:calc(100% - 3.1rem)}
+#list{width:19rem;flex:none;border-right:1px solid var(--line);overflow:auto;background:var(--panel)}
+#list .search{position:sticky;top:0;padding:.5rem;background:var(--panel);border-bottom:1px solid var(--soft)}
+#list input{width:100%}
+#list a{display:block;padding:.4rem .6rem;border-bottom:1px solid var(--soft);
+  text-decoration:none;color:var(--ink);cursor:pointer}
+#list a:hover{background:var(--subtle)}
+#list a.sel{background:var(--subtle);box-shadow:inset 3px 0 0 var(--accent)}
+#list .form{font-family:var(--dev);font-size:1.05rem}
+#list .sub{color:var(--faint);font-size:.72rem;font-family:var(--mono);word-break:break-all}
+#list a.err .form{color:var(--bad)}
+#pane{flex:1;overflow:auto;padding:1rem 1.25rem 4rem}
+#pane h2{margin:0;font-family:var(--dev);font-size:2rem;font-weight:600}
+#pane .slp{color:var(--faint);font-family:var(--mono);font-size:.85rem;margin:.2rem 0 .8rem}
+.badges{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem}
+.badge{font-size:.72rem;padding:.15rem .45rem;border:1px solid var(--line);border-radius:99px;color:var(--dim)}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th{text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--faint);border-bottom:1px solid var(--line);padding:.3rem .5rem;font-weight:400}
+td{border-bottom:1px solid var(--soft);padding:.35rem .5rem;vertical-align:top}
+tr.nochange td{color:var(--dim)}
+tr.nochange .arrow{visibility:hidden}
+td.n{color:var(--faint);font-family:var(--mono);font-size:.75rem;width:2.5rem}
+td.sid{font-family:var(--mono);white-space:nowrap;color:var(--accent)}
+td.forms{font-family:var(--dev);white-space:nowrap}
+.arrow{color:var(--faint);padding:0 .3rem}
+.after{font-weight:600}
+td.why{font-family:var(--dev);color:var(--dim);line-height:1.6}
+.st{font-size:.7rem;font-family:var(--mono)}
+.APPLIED{color:var(--ok)} .BLOCKED{color:var(--bad)} .SKIPPED{color:var(--faint)} .AUDIT{color:var(--warn)}
+.err-box{border:1px solid var(--bad);border-radius:4px;padding:.6rem .8rem;color:var(--bad);font-family:var(--mono);font-size:.82rem;white-space:pre-wrap}
+.empty{color:var(--faint);margin-top:20vh;text-align:center}
+@media (max-width:700px){main{flex-direction:column;height:auto}
+  #list{width:100%;max-height:40vh;border-right:none;border-bottom:1px solid var(--line)}
+  td.why{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1><span class="dev">पाणिनि</span> Engine <span>v3</span></h1>
+  <span class="meta" id="meta"></span>
+  <label>script
+    <select id="scheme">
+      <option value="devanagari">देवनागरी</option>
+      <option value="iast">IAST</option>
+      <option value="slp1">SLP1</option>
+    </select>
+  </label>
+  <label><input type="checkbox" id="surface"> surface changes only</label>
+</header>
+<main>
+  <nav id="list"><div class="search"><input id="q" placeholder="search derivations…" autocomplete="off"></div><div id="items"></div></nav>
+  <section id="pane"><p class="empty">Pick a derivation.</p></section>
+</main>
+<script src="transliterate.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const tr = t => Transliterate.fromSLP1(t || "", $("#scheme").value);
+const esc = s => (s ?? "").toString().replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+let INDEX = [], current = null, cache = {};
+
+fetch("data/index.json").then(r => r.json()).then(d => {
+  INDEX = d.derivations;
+  $("#meta").textContent = `${INDEX.length} derivations · built ${d.generated_at.slice(0,10)}`;
+  renderList();
+  if (location.hash) open(location.hash.slice(1));
+});
+
+function renderList() {
+  const q = $("#q").value.trim().toLowerCase();
+  const hits = INDEX.filter(r => !q || (r.slug + " " + (r.form||"")).toLowerCase().includes(q));
+  $("#items").innerHTML = hits.map(r => `
+    <a href="#${r.slug}" class="${r.ok ? "" : "err"} ${r.slug === current ? "sel" : ""}">
+      <div class="form">${r.ok ? esc(tr(r.form)) : "—"}</div>
+      <div class="sub">${esc(r.module)}</div>
+    </a>`).join("") || `<p class="empty">no match</p>`;
+}
+
+function open(slug) {
+  const meta = INDEX.find(r => r.slug === slug);
+  if (!meta) return;
+  current = slug;
+  renderList();
+  if (cache[slug]) return render(meta, cache[slug]);
+  $("#pane").innerHTML = `<p class="empty">loading…</p>`;
+  fetch(`data/traces/${encodeURIComponent(slug)}.json`).then(r => r.json())
+    .then(rec => { cache[slug] = rec; if (current === slug) render(meta, rec); });
+}
+
+function render(meta, rec) {
+  const surface = $("#surface").checked;
+  const rows = (rec.trace || []).map((s, i) => ({ ...s, n: i + 1 }))
+    .filter(s => !surface || s.form_before !== s.form_after);
+  $("#pane").innerHTML = `
+    <h2>${rec.ok ? esc(tr(rec.final_flat_slp1)) : "—"}</h2>
+    <div class="slp">${esc(rec.final_flat_slp1 || "")} · ${esc(rec.module)}.${esc(rec.callable)}()</div>
+    <div class="badges">
+      ${rec.phase ? `<span class="badge">phase: ${esc(rec.phase)}</span>` : ""}
+      ${rec.trace_len ? `<span class="badge">${rec.trace_len} steps</span>` : ""}
+      ${rec.tripadi_zone ? `<span class="badge">tripādī</span>` : ""}
+      ${rec.smoke_note ? `<span class="badge">${esc(rec.smoke_note)}</span>` : ""}
+    </div>
+    ${rec.error ? `<div class="err-box">${esc(rec.error)}</div>` : ""}
+    ${rows.length ? `<table><thead><tr><th></th><th>sūtra</th><th>type</th><th>form</th><th>status</th><th>why</th></tr></thead><tbody>
+      ${rows.map(s => `<tr class="${s.form_before === s.form_after ? "nochange" : ""}">
+        <td class="n">${s.n}</td>
+        <td class="sid">${esc(s.sutra_id)}</td>
+        <td class="dev" style="font-size:.8rem">${esc(s.type_label || s.sutra_type)}</td>
+        <td class="forms">${esc(tr(s.form_before))}<span class="arrow">→</span><span class="after">${esc(tr(s.form_after))}</span></td>
+        <td class="st ${esc(s.status)}">${esc(s.status)}</td>
+        <td class="why">${esc(s.why_dev)}</td></tr>`).join("")}
+    </tbody></table>` : (rec.error ? "" : `<p class="empty">no trace</p>`)}`;
+}
+
+$("#q").oninput = renderList;
+$("#scheme").onchange = $("#surface").onchange = () => {
+  renderList();
+  if (current && cache[current]) render(INDEX.find(r => r.slug === current), cache[current]);
+};
+addEventListener("hashchange", () => open(location.hash.slice(1)));
+</script>
+</body>
+</html>

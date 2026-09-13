@@ -1,0 +1,1 @@
+{"module": "pipelines.subanta", "callable": "derive_akarant_strilinga", "ok": false, "skip": false, "smoke_note": "stem_slp1='rAma' (smoke); vibhakti=1 (smoke)", "invocation": {"args": ["rAma", 1, 1], "kwargs": {"strict_stem": true}}, "error": "ValueError: आकारान्त स्त्रीलिङ्ग हेतु प्रातिपदिक अन्त में दीर्घ 'A' (SLP1) चाहिए — उदाहरण: rADA (राधा)। प्राप्त: 'rAma'"}
