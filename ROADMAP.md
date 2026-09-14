@@ -153,6 +153,50 @@ most valuable single change in this document.
 
 ---
 
+## 4.5 Both journeys: how analysis is built
+
+The product this is for: paste a verse — दण्डः शास्ति प्रजाः सर्वा दण्ड एवाभिरक्षति — and get every
+word split out, taken back to its root, and then derived forward again, each step citing its sūtra.
+
+**Measured on this repo, 2026-09-15.** Of the five derivable words in that line, four already
+generate correctly today: दण्डः · प्रजाः · सर्वाः · रक्षति. शास्ति fails — not for want of rules
+(the adādi tiṅanta path has tests) but because `data/inputs/dhatupatha_upadesha.json` holds 986
+roots of which **971 are gaṇa 1**; gaṇas 2–10 have 15 entries between them. And
+`pipelines/patha_pipeline.py` already analyses by the right method — it generates every cell of
+its lexicon and indexes the surfaces — but the lexicon is 28 stems, 451 forms, nominals only, and
+it splits on whitespace.
+
+So the gap to this product is **data and two mechanisms**, not a new engine.
+
+### The rule that makes it tractable
+
+> **Analysis proposes; generation verifies. There is never a reverse rule.**
+
+Forward derivation is a relation (one-to-many, because vibhāṣā forks). Analysis is preimage
+computation on that relation, and by blind search it is exponential. Two properties of the grammar
+make it cheap, and they are different properties, so they get different machinery:
+
+| layer | property | method |
+|---|---|---|
+| **morphology** (subanta · tiṅanta · kṛt · taddhita) | a lemma's paradigm is **finite** — 24 nominal cells, 9 × lakāra verbal cells | **enumerate**: generate every cell once, index surface → (lemma, features, derivation id). The analyser is a *cache of the generator*, so it can never disagree with the grammar. |
+| **sandhi** (saṃhitā + tripādī) | a **local** relation over varṇa boundaries with bounded context | **invert**: compile to a finite-state transducer and run it backwards to get a lattice of candidate splits — over-generating on purpose. |
+| **samāsa · derived stems** | unbounded (compounds nest) | recursive search over the same rule set, bounded by the lattice and the index. |
+
+Every candidate that survives is then **re-generated forward and compared to the input string**.
+That check is what licenses the answer — and it is also the teaching artifact, because the reverse
+journey and the forward journey are then literally the same trace read in two directions.
+
+### Ambiguity is the product
+
+For a learner, "सर्वाः is accusative plural feminine" is worth less than "सर्वाः could be X or Y;
+it is Y here **because** it agrees with प्रजाः in liṅga, vacana and vibhakti, and because शास्ति
+takes a कर्मन् (1.4.49)". So the analyser returns *ranked candidates with reasons*, never a single
+answer, and the kāraka layer (1.4.23–55) plus agreement is what does the ranking.
+
+The matching refusal: **an unknown word is a gap, never a guess.** No statistical fallback, no
+"probably a noun". A closed world that says what it does not know is worth more to a scholar than
+an open one that improvises.
+
 ## 5. Roadmap
 
 Gates are binary. No phase starts before its predecessor's gate passes. Two clocks are reported at
@@ -162,7 +206,10 @@ that raises coverage and lowers quality is a failed phase.
 ### Phase A — Tell the truth (foundation)
 *Land:* honest coverage metric (invoked · moved · tested · cited) replacing `coverage_report()`;
 `sutra_lint` in the hook; `gaps.py` so every SKIPPED becomes a named missing sūtra; `bench/`
-skeleton with a Vidyut differential runner and the first published agreement number.
+skeleton with a Vidyut differential runner and the first published agreement number; **the
+generated-forms index** — `patha_pipeline.build_form_index()` generalised over the full dhātupāṭha
+and a śabda list, verbs included. That index is one artifact doing three jobs: it makes analysis
+possible, it *is* the honest coverage number, and it is the differential-test corpus against Vidyut.
 *Gate:* one command prints a report card; the README's numbers are all reproducible; the honest
 coverage number is committed.
 
@@ -187,15 +234,17 @@ autonomous loop**, with identical surfaces and traces a scholar can read.
 stub-gloss files are either implemented as data or demoted out of the coverage count.
 *Gate:* a new sūtra in an already-modelled shape needs a record and tests — zero engine edits.
 
-### Phase E — Breadth, measured
-*Land:* frequency-ranked implementation driven by the gap list: the ~600 sūtras that govern the
-most-frequent 90 % of running-text tokens, prakaraṇa by prakaraṇa.
-*Gate:* token coverage ladder 60 % → 80 % → 90 % on a fixed 1M-token corpus, published per release.
+### Phase E — Both journeys (moved ahead of breadth: the audience decided it)
+*Land:* the dhātupāṭha completed for gaṇas 2–10 and a śabda list loaded; sandhi splitting as an
+invertible transducer over the tripādī/saṃhitā rules; generate-and-test verification; kāraka
+(1.4.23–55) and agreement as the ranker; the "explain this word" surface showing both journeys.
+*Gate:* every word of a fixed teaching passage — Manusmṛti 7.18 is the acceptance case — split,
+analysed, ranked with reasons, and re-derived forward with citations.
 
-### Phase F — Analysis (the valuable half)
-*Land:* sandhi lattice with optional splits, split ranker, morphological analyser, samāsa
-splitting, kāraka labels (1.4.23–55). Every candidate split carries the sūtras that license it.
-*Gate:* ≥95 % pada recognition on 10k tokens of Gītā/Rāmāyaṇa; split F1 and lemma accuracy published.
+### Phase F — Breadth, measured
+*Land:* frequency-ranked implementation driven by the gap list, prakaraṇa by prakaraṇa.
+*Gate:* token-coverage ladder 60 % → 80 % → 90 % on a fixed **teaching** corpus (Gītā ·
+Manusmṛti · Hitopadeśa · Pañcatantra — what learners actually read), published per release.
 
 ### Phase G — Accent and Vedic *(only after F)*
 svara, Vedic variants, vārtikas. Refused until the classical core is measured.
@@ -212,6 +261,8 @@ svara, Vedic variants, vārtikas. Refused until the classical core is measured.
   number is one command away.
 - **No test weakened to pass.** A failing test is a bug in the rule.
 - **No accent, no Vedic, no vārtika before the classical core is measured.**
+- **No guessed analysis.** An unrecognised word is a gap naming what is missing, never a
+  statistical fallback (§4.5).
 - **No second engine.** One trunk (§0).
 
 ---
@@ -219,9 +270,9 @@ svara, Vedic variants, vārtikas. Refused until the classical core is measured.
 ## 7. Decisions needed
 
 1. **Hours/week and horizon** — changes the schedule, not the order.
-2. **Primary audience** — scholars/learners (explanation, commentary, teaching mode) or NLP
-   pipelines (analysis throughput, lemma accuracy). Both are in the plan; the audience decides
-   what ships first at each gate.
+2. ~~**Primary audience**~~ — **decided 2026-09-15: scholars and learners first** (explanation,
+   commentary, teaching mode); NLP pipelines later. §5.5 and the phase order below follow from
+   this.
 3. **Cooperation stance** — approach Ambuda (Vidyut) and UoH with the benchmark early, or build
    the lead first? Recommendation: early. A benchmark with two engines on it is worth more than
    one with ours.
