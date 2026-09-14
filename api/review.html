@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>प्रक्रिया-संशोधनम् — Pāṇini Engine v3</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafaf7;--panel:#fff;--subtle:#f1ede3;--ink:#1b1a17;--dim:#5b574d;--faint:#8b8578;
+  --accent:#8b2e00;--ok:#196b1a;--warn:#b07600;--bad:#a02020;--line:#d7d2c4;--soft:#ece8dc;
+  --mono:"SF Mono",Menlo,Consolas,monospace;--dev:"Noto Serif Devanagari","Noto Sans Devanagari",serif;
+  --body:Charter,"Iowan Old Style",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#16150f;--panel:#1e1d16;--subtle:#262418;--ink:#ece7d8;--dim:#b0a894;--faint:#837c6c;
+  --accent:#e08a55;--ok:#7fc07f;--warn:#d8ab4a;--bad:#e07676;--line:#3a382c;--soft:#2a281e;
+}}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.5 var(--body);color:var(--ink);background:var(--bg)}
+.dev{font-family:var(--dev)}
+code,.mono{font-family:var(--mono);font-size:.85em}
+header{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;padding:.6rem 1rem;
+  border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5}
+h1{margin:0;font-size:1rem;font-weight:600}
+h1 .dev{color:var(--accent);font-size:1.15rem}
+select,input,button{font:inherit;font-size:.85rem;padding:.3rem .5rem;border:1px solid var(--line);
+  border-radius:4px;background:var(--panel);color:var(--ink)}
+input[type=text]{width:8rem}
+button{cursor:pointer}
+button.go{background:var(--accent);color:#fff;border-color:var(--accent);padding:.3rem .9rem}
+main{padding:1rem;max-width:1100px;margin:0 auto}
+.surface{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;padding:.9rem 1.1rem;background:var(--subtle);
+  border-left:4px solid var(--accent);border-radius:5px;margin-bottom:.6rem}
+.surface .form{font-family:var(--dev);font-size:2.1rem;color:var(--accent);line-height:1.2}
+.surface .slp{font-family:var(--mono);font-size:.85rem;color:var(--dim)}
+.surface .stats{margin-left:auto;font-size:.78rem;color:var(--dim)}
+.rowline{display:flex;gap:.6rem;align-items:baseline;padding:.35rem .5rem;border-bottom:1px solid var(--soft)}
+.rowline:hover{background:var(--subtle)}
+.rowline.changed{border-left:3px solid var(--accent)}
+.rowline.flagged{background:rgba(160,32,32,.07);border-left:3px solid var(--bad)}
+.n{color:var(--faint);font-family:var(--mono);font-size:.72rem;width:2.2rem;flex:none}
+.sid{font-family:var(--mono);font-size:.8rem;color:var(--accent);width:4.5rem;flex:none}
+.forms{font-family:var(--dev);font-size:1rem;width:16rem;flex:none}
+.arrow{color:var(--faint);padding:0 .25rem}
+.st{font-family:var(--mono);font-size:.68rem;width:5rem;flex:none}
+.APPLIED,.APPLIED_VACUOUS{color:var(--ok)}.BLOCKED{color:var(--bad)}.SKIPPED{color:var(--faint)}.AUDIT{color:var(--warn)}
+.why{font-family:var(--dev);font-size:.82rem;color:var(--dim);flex:1;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.flag{flex:none;border:none;background:none;font-size:.95rem;opacity:.35;padding:0 .3rem}
+.rowline:hover .flag,.rowline.flagged .flag{opacity:1}
+.editor{padding:.6rem .8rem .8rem 3rem;background:var(--subtle);border-bottom:1px solid var(--soft)}
+.editor .full{font-family:var(--dev);font-size:.9rem;color:var(--dim);margin-bottom:.5rem}
+.editor .fields{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.editor input{width:11rem}
+.note{padding:.3rem .5rem .5rem 3rem;font-size:.82rem;color:var(--bad);border-bottom:1px solid var(--soft)}
+.note b{font-family:var(--dev);font-weight:600}
+.note button{font-size:.7rem;padding:.1rem .4rem;margin-left:.5rem}
+.open-list{margin-top:2rem;border-top:1px solid var(--line);padding-top:1rem}
+.open-list h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);font-weight:400}
+.open-list li{margin:.3rem 0;font-size:.85rem}
+.msg{color:var(--faint);padding:2rem 0;text-align:center}
+.err{color:var(--bad);font-family:var(--mono);font-size:.82rem;white-space:pre-wrap;
+  border:1px solid var(--bad);border-radius:4px;padding:.6rem}
+@media (max-width:700px){.forms{width:auto}.why,.st{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1><span class="dev">प्रक्रिया-संशोधनम्</span> · review</h1>
+  <select id="kind" onchange="fields()">
+    <option value="subanta">सुबन्त</option>
+    <option value="tinanta">तिङन्त</option>
+    <option value="krdanta">कृदन्त</option>
+  </select>
+  <span id="fields"></span>
+  <button class="go" onclick="derive()">व्युत्पादय</button>
+  <span id="count" style="margin-left:auto;font-size:.78rem;color:var(--faint)"></span>
+</header>
+<main>
+  <div id="out"><p class="msg">Derive a form, then flag any step that is wrong.</p></div>
+  <div class="open-list" id="open"></div>
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => (s ?? "").toString().replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const FIELDS = {
+  subanta: `<input type="text" id="stem" value="rAma" title="prātipadika (SLP1)">
+    <select id="vibhakti">${[1,2,3,4,5,6,7,8].map(v=>`<option>${v}</option>`).join("")}</select>
+    <select id="vacana">${[1,2,3].map(v=>`<option>${v}</option>`).join("")}</select>
+    <select id="linga"><option>pulliṅga</option><option>strīliṅga</option><option>napuṃsaka</option></select>`,
+  tinanta: `<input type="text" id="dhatu" value="BU" title="upadeśa SLP1 or देवनागरी">
+    <input type="text" id="lakara" value="laT" style="width:4.5rem">
+    <select id="prayoga"><option>kartari</option><option>karmani</option><option>bhave</option></select>
+    <select id="purusha">${[1,2,3].map(v=>`<option${v===3?" selected":""}>${v}</option>`).join("")}</select>
+    <select id="vacana">${[1,2,3].map(v=>`<option>${v}</option>`).join("")}</select>`,
+  krdanta: `<input type="text" id="dhatu_id" value="BU" title="upadeśa, pāṭha id, or row id">
+    <select id="krt"><option value="tfc">तृच्</option><option value="Nvul">ण्वुल्</option></select>`,
+};
+let DERIV = null, TARGET = null, NOTES = {};
+
+function fields(){ $("#fields").innerHTML = FIELDS[$("#kind").value]; }
+
+function params(){
+  const k = $("#kind").value, v = id => $("#"+id).value;
+  if (k === "subanta") return {stem:v("stem"), vibhakti:+v("vibhakti"), vacana:+v("vacana"), linga:v("linga")};
+  if (k === "tinanta") return {dhatu:v("dhatu"), lakara:v("lakara"), prayoga:v("prayoga"), purusha:+v("purusha"), vacana:+v("vacana")};
+  return {dhatu_id:v("dhatu_id"), krt:v("krt")};
+}
+
+async function derive(){
+  const kind = $("#kind").value, body = params();
+  TARGET = kind + ":" + JSON.stringify(body, Object.keys(body).sort());
+  $("#out").innerHTML = `<p class="msg">deriving…</p>`;
+  const r = await fetch(`/v1/${kind}`, {method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify(body)});
+  const d = await r.json();
+  if (!r.ok) { $("#out").innerHTML = `<div class="err">${esc(d.detail || JSON.stringify(d))}</div>`; return; }
+  DERIV = d;
+  await loadNotes();
+  render();
+}
+
+async function loadNotes(){
+  const r = await fetch("/v1/reviews?target=" + encodeURIComponent(TARGET));
+  const d = await r.json();
+  NOTES = {};
+  for (const c of d.reviews) (NOTES[c.step_n ?? "final"] ||= []).push(c);
+  await refreshOpen();
+}
+
+function render(){
+  const d = DERIV;
+  $("#out").innerHTML = `
+    <div class="surface">
+      <div>
+        <div class="form">${esc(d.surface.dev)}</div>
+        <div class="slp">${esc(d.surface.slp1)}</div>
+      </div>
+      <div class="fields">
+        <input type="text" id="exp-final" placeholder="अपेक्षितं रूपम्" style="width:9rem">
+        <button onclick="save(null,null)">रूपं दोषयुक्तम् — save</button>
+      </div>
+      <div class="stats">${d.stats.applied} applied · ${d.stats.audit} audit ·
+        ${d.stats.blocked} blocked · ${d.stats.skipped} skipped · ${d.stats.total} steps</div>
+    </div>
+    ${notesFor("final")}
+    ${d.steps.map(step).join("")}`;
+}
+
+function step(s){
+  const flagged = NOTES[s.n]?.length;
+  return `<div class="rowline ${s.changed ? "changed" : ""} ${flagged ? "flagged" : ""}" id="row${s.n}">
+      <span class="n">${s.n}</span>
+      <span class="sid" title="${esc(s.text_dev || "")}">${esc(s.sutra_id)}</span>
+      <span class="forms">${esc(s.before.dev)}<span class="arrow">→</span>${esc(s.after.dev)}</span>
+      <span class="st ${esc(s.status)}">${esc(s.status)}</span>
+      <span class="why">${esc(s.why_dev)}</span>
+      <button class="flag" title="flag this step" onclick="edit(${s.n})">⚑</button>
+    </div>
+    <div id="ed${s.n}"></div>
+    ${notesFor(s.n)}`;
+}
+
+function notesFor(key){
+  return (NOTES[key] || []).map(c => `<div class="note">
+      ⚑ ${c.expected_form ? `अपेक्षितम् <b>${esc(c.expected_form)}</b> ` : ""}
+      ${c.expected_sutra ? `सूत्रम् <code>${esc(c.expected_sutra)}</code> ` : ""}
+      ${esc(c.note || "")}
+      <button onclick="del('${c.id}')">delete</button>
+    </div>`).join("");
+}
+
+function edit(n){
+  const box = $("#ed" + n);
+  if (box.innerHTML) { box.innerHTML = ""; return; }
+  const s = DERIV.steps[n - 1];
+  box.innerHTML = `<div class="editor">
+      <div class="full">${esc(s.sutra_id)} ${esc(s.text_dev || "")} — ${esc(s.why_dev)}</div>
+      <div class="fields">
+        <input type="text" id="ef${n}" placeholder="अपेक्षितं रूपम् (after)">
+        <input type="text" id="es${n}" placeholder="अपेक्षितं सूत्रम्" style="width:7rem">
+        <input type="text" id="en${n}" placeholder="टिप्पणी / note" style="width:20rem">
+        <button onclick="save(${n}, '${esc(s.sutra_id)}')">save</button>
+      </div>
+    </div>`;
+  $("#ef" + n).focus();
+}
+
+async function save(n, sutra_id){
+  const val = id => ($("#" + id)?.value || "").trim();
+  const body = n === null
+    ? {target: TARGET, step_n: null, sutra_id: null, expected_form: val("exp-final"), expected_sutra: "", note: ""}
+    : {target: TARGET, step_n: n, sutra_id, expected_form: val("ef"+n), expected_sutra: val("es"+n), note: val("en"+n)};
+  if (!body.expected_form && !body.expected_sutra && !body.note) return;
+  body.observed_form = n === null ? DERIV.surface.dev : DERIV.steps[n-1].after.dev;
+  await fetch("/v1/reviews", {method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify(body)});
+  await loadNotes();
+  render();
+}
+
+async function del(id){
+  await fetch("/v1/reviews/" + encodeURIComponent(id), {method:"DELETE"});
+  await loadNotes();
+  render();
+}
+
+async function refreshOpen(){
+  const r = await fetch("/v1/reviews");
+  const d = await r.json();
+  $("#count").textContent = `${d.total} open correction${d.total === 1 ? "" : "s"}`;
+  $("#open").innerHTML = d.total ? `<h2>all open corrections</h2><ul>` + d.reviews.map(c =>
+      `<li><code>${esc(c.target)}</code> ${c.step_n ? "step " + c.step_n + " · " + esc(c.sutra_id || "") : "final form"} →
+       <b class="dev">${esc(c.expected_form || "")}</b> ${esc(c.note || "")}</li>`).join("") + "</ul>" : "";
+}
+
+fields();
+refreshOpen();
+</script>
+</body>
+</html>

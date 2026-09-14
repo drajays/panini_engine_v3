@@ -59,3 +59,30 @@ def test_unknown_dhatu_is_404_not_500():
     with pytest.raises(HTTPException) as ex:
         api.get_dhatu("no.such.dhatu")
     assert ex.value.status_code == 404
+
+
+def test_review_roundtrip(tmp_path, monkeypatch):
+    """A correction can be filed against a step, listed, and deleted."""
+    monkeypatch.setattr(api, "REVIEW_FILE", tmp_path / "corrections.jsonl")
+    assert api.list_reviews()["total"] == 0
+
+    rec = api.add_review(api.ReviewIn(
+        target='tinanta:{"dhatu":"gam"}', step_n=20, sutra_id="1.3.3",
+        observed_form="गमति", expected_form="गच्छ", expected_sutra="7.3.77",
+        note="इषुगमियमां छः should fire here",
+    ))
+    assert api.list_reviews(target='tinanta:{"dhatu":"gam"}')["total"] == 1
+    assert api.list_reviews(target="something-else")["total"] == 0
+
+    api.delete_review(rec["id"])
+    assert api.list_reviews()["total"] == 0
+    with pytest.raises(HTTPException) as ex:
+        api.delete_review(rec["id"])
+    assert ex.value.status_code == 404
+
+
+def test_empty_review_is_rejected(tmp_path, monkeypatch):
+    monkeypatch.setattr(api, "REVIEW_FILE", tmp_path / "corrections.jsonl")
+    with pytest.raises(HTTPException) as ex:
+        api.add_review(api.ReviewIn(target="x", step_n=1))
+    assert ex.value.status_code == 422

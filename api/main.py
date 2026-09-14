@@ -14,12 +14,17 @@ Run:
 """
 from __future__ import annotations
 
+import json
+import os
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Literal
+from uuid import uuid4
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse, RedirectResponse
 from pydantic import BaseModel, Field
 
 _ROOT = Path(__file__).resolve().parent.parent
@@ -328,3 +333,76 @@ def krdanta(req: KrdantaReq) -> dict[str, Any]:
 @app.get("/v1/translit", tags=["meta"])
 def translit(slp1: str) -> dict[str, str]:
     return {"slp1": slp1, "dev": slp1_str_to_dev(slp1)}
+
+
+# ─────────────────────────────────────────────────────────────────
+# प्रक्रिया-संशोधनम् — human review of derivations
+#
+# Corrections are appended to a JSONL file in the repo (not a database):
+# they are meant to be read, diffed and committed, and to become test cases.
+# Set PANINI_REVIEW_DIR to write elsewhere (a mounted volume, say).
+# ─────────────────────────────────────────────────────────────────
+
+REVIEW_FILE = Path(
+    os.environ.get("PANINI_REVIEW_DIR", _ROOT / "data" / "reviews")
+) / "corrections.jsonl"
+
+
+class ReviewIn(BaseModel):
+    target: str = Field(..., description="derivation key, e.g. 'tinanta:{\"dhatu\":\"gam\",...}'")
+    step_n: int | None = Field(None, description="1-based step index; null = the final form")
+    sutra_id: str | None = None
+    observed_form: str = ""
+    expected_form: str = ""
+    expected_sutra: str = ""
+    note: str = ""
+
+
+def _read_reviews() -> list[dict[str, Any]]:
+    if not REVIEW_FILE.exists():
+        return []
+    return [json.loads(line) for line in REVIEW_FILE.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+@app.get("/v1/reviews", tags=["review"])
+def list_reviews(target: str | None = None) -> dict[str, Any]:
+    rows = [r for r in _read_reviews() if target is None or r.get("target") == target]
+    return {"total": len(rows), "reviews": rows}
+
+
+@app.post("/v1/reviews", tags=["review"])
+def add_review(req: ReviewIn) -> dict[str, Any]:
+    if not (req.expected_form or req.expected_sutra or req.note):
+        raise HTTPException(422, "a correction needs an expected form, an expected sūtra, or a note")
+    rec = {
+        "id": uuid4().hex[:12],
+        "at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        **req.model_dump(),
+    }
+    REVIEW_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with REVIEW_FILE.open("a", encoding="utf-8") as fp:
+        fp.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    return rec
+
+
+@app.delete("/v1/reviews/{review_id}", tags=["review"])
+def delete_review(review_id: str) -> dict[str, Any]:
+    rows = _read_reviews()
+    keep = [r for r in rows if r.get("id") != review_id]
+    if len(keep) == len(rows):
+        raise HTTPException(404, f"no such correction: {review_id}")
+    REVIEW_FILE.write_text(
+        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in keep), encoding="utf-8"
+    )
+    return {"deleted": review_id, "remaining": len(keep)}
+
+
+@app.get("/review", response_class=HTMLResponse, include_in_schema=False)
+def review_page() -> str:
+    """Derive a form and correct it in the same view."""
+    return (Path(__file__).parent / "review.html").read_text(encoding="utf-8")
+
+
+@app.get("/", include_in_schema=False)
+def root() -> RedirectResponse:
+    return RedirectResponse("/review")

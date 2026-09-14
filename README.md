@@ -170,6 +170,29 @@ Every derivation response has the same shape:
 }
 ```
 
+### प्रक्रिया-संशोधनम् — see and correct a prakriyā in one view
+
+`make api` also serves a review page at **`/review`**: derive any subanta,
+tiṅanta or kṛdanta form, then flag the exact step where the derivation goes
+wrong — expected form, expected sūtra, free note.  Corrections append to
+`data/reviews/corrections.jsonl`, one JSON object per line, so they are
+greppable, diffable, committable, and ready to become test cases.
+
+```bash
+make api                                   # → http://127.0.0.1:8000/review
+PANINI_REVIEW_DIR=/mnt/data make api       # write corrections elsewhere
+```
+
+| method | path | |
+|--------|------|--|
+| GET | `/v1/reviews?target=` | open corrections, all or for one derivation |
+| POST | `/v1/reviews` | file one (step_n `null` = the final form is wrong) |
+| DELETE | `/v1/reviews/{id}` | withdraw one |
+
+The page writes to the local filesystem, so run it locally where the file
+lands in the repo.  A hosted container has an ephemeral disk — corrections
+made there vanish on restart unless you mount a volume.
+
 The engine needs no third-party package at runtime (no pandas, no Flask):
 `Dockerfile` builds a ~40 MB image, imports in ~0.6 s, and answers a
 derivation in ~15 ms.  No database, no session state — every request is a
