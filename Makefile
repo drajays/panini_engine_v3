@@ -51,3 +51,6 @@ pages:
 
 api:
 	uvicorn api.main:app --reload --port 8000
+
+ui:
+	./"Panini Engine.command"

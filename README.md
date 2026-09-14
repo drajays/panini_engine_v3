@@ -125,6 +125,20 @@ Launch the web UI:
 ./run_web.sh          # http://127.0.0.1:5050/
 ```
 
+## Run it locally
+
+Double-click **`Panini Engine.command`** in Finder (or `make ui`).  It starts
+both local servers, waits for the engine to load, and opens the browser:
+
+```
+  संशोधनम्  http://127.0.0.1:8000/review   derive a form, correct the prakriyā
+  API docs  http://127.0.0.1:8000/docs
+  पूर्ण-UI   http://127.0.0.1:5050/        paradigms · धातुपाठ · SIG · tests
+```
+
+Closing the Terminal window stops both.  Dependencies install themselves on
+first run; a port already in use is reused rather than fought over.
+
 ## HTTP API
 
 Rule application as a service.  Every response carries the ordered chain of
