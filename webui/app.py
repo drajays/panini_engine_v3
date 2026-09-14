@@ -6,8 +6,9 @@ webui/app.py — Flask web UI for Pāṇini Engine v3.
 Run:
     pip install flask
     cd panini_engine_v3
-    python -m webui.app
-    # open http://localhost:5000
+    ./run_web.sh
+    # or: python -m webui.app
+    # open http://127.0.0.1:5050
 
 Zero build step.  Serves Devanāgarī-ready HTML.  Reads the live
 SUTRA_REGISTRY and renders traces, matrix, and SIG graph on demand.
@@ -39,86 +40,13 @@ from pipelines.subanta import derive
 app = Flask(__name__, template_folder="templates", static_folder="static")
 
 
-# ─────────────────────────────────────────────────────────────────
-# Presentation-layer transliteration helpers
-# (pure view code — never touches State internals)
-# ─────────────────────────────────────────────────────────────────
+# Presentation helpers live in core/trace_view.py (shared with api/).
+from core.trace_view import (  # noqa: E402
+    STRUCTURAL_DEV as _STRUCTURAL_DEV,
+    slp1_str_to_dev as _slp1_str_to_dev,
+    enrich_trace as _enrich_trace,
+)
 
-# Structural step IDs → clean Devanāgarī labels shown in the UI.
-_STRUCTURAL_DEV: dict[str, str] = {
-    "__MERGE__"             : "पद-मेलनम्",
-    "__FIXED_POINT__"       : "स्थिर-बिन्दुः",
-    "__TRIPADI_ENTER__"     : "त्रिपाद्याः-प्रवेशः",
-    "__ANGA_SWEEP__"        : "अङ्ग-परीक्षा",
-    "__IT_LOPA_PASS__"      : "इत्-लोपः",
-    "__SANDHI_PASS__"       : "सन्धिः",
-    "__COMPOUND_MERGE__"    : "समास-मेलनम्",
-}
-
-
-def _slp1_str_to_dev(slp1_str: str) -> str:
-    """
-    Convert a flat SLP1 form string (as stored in trace form_before/form_after)
-    to Devanāgarī for display.
-
-    Strategy: parse the SLP1 string through the engine's phoneme parser so that
-    conjunct consonants, mātrās, and halanta virāmas are rendered correctly by
-    the joiner — identical to how State.flat_dev() works on the live State tape.
-
-    Structural IDs (e.g. '__MERGE__') are mapped to Devanāgarī labels.
-    Empty strings stay empty.  Unparseable strings fall back to the original.
-    """
-    if not slp1_str:
-        return ""
-    # Structural marker
-    if slp1_str in _STRUCTURAL_DEV:
-        return _STRUCTURAL_DEV[slp1_str]
-    try:
-        from phonology.varna import parse_slp1_upadesha_sequence
-        from phonology.joiner import slp1_to_devanagari
-        varnas = parse_slp1_upadesha_sequence(slp1_str)
-        return slp1_to_devanagari(varnas)
-    except Exception:
-        return slp1_str  # safe fallback — never break the UI
-
-
-def _enrich_trace(raw_trace: list[dict]) -> list[dict]:
-    """
-    Add presentation-layer fields to every trace step dict:
-
-      form_before_dev   : Devanāgarī rendering of form_before (SLP1 → Dev)
-      form_after_dev    : Devanāgarī rendering of form_after  (SLP1 → Dev)
-      _sutra_text_dev   : sūtra text from SUTRA_REGISTRY (was already set inline)
-      _padaccheda_dev   : padaccheda from SUTRA_REGISTRY
-      _anuvritti_from   : list of IDs from SUTRA_REGISTRY
-      _is_structural    : True for __MERGE__ etc.
-      _structural_dev   : Devanāgarī label for structural steps
-
-    The original SLP1 strings in form_before / form_after are left intact;
-    only the _dev variants are added.  State objects are never imported here.
-    """
-    out = []
-    for step in raw_trace:
-        sid = step.get("sutra_id", "")
-        rec = SUTRA_REGISTRY.get(sid) if sid and not sid.startswith("__") else None
-        is_struct = bool(sid.startswith("__")) if sid else False
-
-        fb = step.get("form_before", "") or ""
-        fa = step.get("form_after",  "") or ""
-
-        out.append({
-            **step,
-            # Devanāgarī transliterations (presentation only)
-            "form_before_dev" : _slp1_str_to_dev(fb),
-            "form_after_dev"  : _slp1_str_to_dev(fa),
-            # Sūtra metadata from registry
-            "_is_structural"  : is_struct,
-            "_structural_dev" : _STRUCTURAL_DEV.get(sid, "") if is_struct else "",
-            "_sutra_text_dev" : getattr(rec, "text_dev",       None),
-            "_padaccheda_dev" : getattr(rec, "padaccheda_dev", None),
-            "_anuvritti_from" : list(getattr(rec, "anuvritti_from", ()) or ()),
-        })
-    return out
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -126,10 +54,32 @@ def _enrich_trace(raw_trace: list[dict]) -> list[dict]:
 # ─────────────────────────────────────────────────────────────────
 
 @app.route("/")
-def index():
-    return render_template("derive.html",
-                           nav_active="derive",
-                           cov=coverage_report(SUTRA_REGISTRY))
+def home():
+    return render_template(
+        "home.html",
+        nav_active="home",
+        cov=coverage_report(SUTRA_REGISTRY),
+    )
+
+
+@app.route("/derive")
+def derive_page():
+    return render_template(
+        "derive.html",
+        nav_active="derive",
+        cov=coverage_report(SUTRA_REGISTRY),
+    )
+
+
+# Legacy FastAPI (xxweb/) paths → unified Flask routes
+@app.route("/paradigm")
+def legacy_paradigm():
+    return redirect(url_for("matrix", **request.args))
+
+
+@app.route("/special")
+def legacy_special():
+    return redirect(url_for("showcase_page", **request.args))
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -1400,10 +1350,11 @@ def api_dik_glass():
 
 if __name__ == "__main__":
     import os as _os
-    _port = int(_os.environ.get("PANINI_PORT", 5000))
+    _port = int(_os.environ.get("PANINI_PORT", 5050))
     print("═" * 60)
     print(f"  Pāṇini Engine v3 — Web UI")
     print(f"  Registry: {len(SUTRA_REGISTRY)} sūtras loaded")
-    print(f"  Open: http://localhost:{_port}")
+    print(f"  Open: http://127.0.0.1:{_port}/  (home — all tools linked)")
+    print(f"  Or run: ./run_web.sh {_port}")
     print("═" * 60)
     app.run(host="127.0.0.1", port=_port, debug=False)

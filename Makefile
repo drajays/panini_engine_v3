@@ -48,3 +48,6 @@ full-check: audit-duplicates audit-blocks audit-constitutional test-all
 
 pages:
 	python3 -m tools.build_pages
+
+api:
+	uvicorn api.main:app --reload --port 8000

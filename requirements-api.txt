@@ -1,0 +1,4 @@
+# Runtime deps for api/main.py only — the engine itself needs no third-party
+# package (no pandas, no flask). Keeps the container image small.
+fastapi>=0.110
+uvicorn[standard]>=0.27

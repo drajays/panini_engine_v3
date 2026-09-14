@@ -114,8 +114,66 @@ panini_engine_v3/
 │                              backward, regression)
 ├── tools/                   ← sig_benchmark, sig_report, listings, etc.
 ├── sig/                     ← engine JSONs + `coverage.json` + `sig_manifest.json` (see `sig/README.md`)
-└── webui/                   ← Flask + HTML scaffold (resume later)
+├── webui/                   ← active Flask web UI (./run_web.sh)
+├── xxweb/                   ← DEPRECATED FastAPI prototype (reference only)
+└── xxstreamlit_app/         ← DEPRECATED Streamlit UI (reference only)
 ```
+
+Launch the web UI:
+
+```bash
+./run_web.sh          # http://127.0.0.1:5050/
+```
+
+## HTTP API
+
+Rule application as a service.  Every response carries the ordered chain of
+sūtras the engine actually applied — the surface form is a by-product of the
+derivation, never a table lookup.
+
+```bash
+pip install -r requirements-api.txt
+make api                       # http://127.0.0.1:8000  · docs at /docs
+```
+
+| method | path | what it derives |
+|--------|------|-----------------|
+| GET  | `/v1/health` | registry size + coverage report |
+| GET  | `/v1/sutras`, `/v1/sutras/{id}` | sūtra text, padaccheda, anuvṛtti, blocks |
+| POST | `/v1/subanta` | one nominal cell (stem · vibhakti · vacana · liṅga) |
+| GET  | `/v1/subanta/paradigm` | all 24 cells |
+| POST | `/v1/tinanta` | one verbal cell (dhātu · lakāra · prayoga · puruṣa · vacana) |
+| GET  | `/v1/tinanta/paradigm` | all 9 cells of one lakāra |
+| POST | `/v1/krdanta` | tṛc / ṇvul derivates |
+| GET  | `/v1/dhatu`, `/v1/dhatu/{id}` | dhātupāṭha search and lookup |
+| GET  | `/v1/translit` | SLP1 → Devanāgarī |
+
+```bash
+curl -X POST localhost:8000/v1/subanta \
+     -H 'content-type: application/json' \
+     -d '{"stem":"hari","vibhakti":3,"vacana":1}'
+# → surface हरिणा, plus all 125 trace steps with status and why_dev
+```
+
+Every derivation response has the same shape:
+
+```jsonc
+{
+  "input":   { "stem": "hari", "vibhakti": 3, "vacana": 1, "linga": "pulliṅga" },
+  "surface": { "slp1": "hariRA", "dev": "हरिणा" },
+  "applied_path": ["1.1.1", "1.1.2", "..."],       // sūtras that fired, in order
+  "steps":   [ { "n": 1, "sutra_id": "1.4.14", "status": "APPLIED",
+                 "before": {"slp1": "hari", "dev": "हरि"},
+                 "after":  {"slp1": "hari", "dev": "हरि"},
+                 "why_dev": "..." } ],
+  "stats":   { "total": 125, "applied": 21, "audit": 19, "blocked": 0, "skipped": 85 }
+}
+```
+
+The engine needs no third-party package at runtime (no pandas, no Flask):
+`Dockerfile` builds a ~40 MB image, imports in ~0.6 s, and answers a
+derivation in ~15 ms.  No database, no session state — every request is a
+fresh derivation, so the API scales by caching, not by storage.
 
 ## What's next (v3.4+)
 
@@ -128,5 +186,4 @@ The complete masculine a-stem paradigm is landed.  Natural next steps:
    conjugation. Needs ~30 additional sūtras across adhyāyas 3 and 6–8.
 3. **Kṛdanta + Taddhita** — derivational morphology. Recipe-driven, same
    dispatcher.
-4. **Resume webui/** — now that the paradigm is complete, the UI has
-   interesting content to display.
+4. **Extend webui/** — add new prayoga classes and stem types to the live UI.
