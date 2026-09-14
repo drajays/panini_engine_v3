@@ -2,7 +2,7 @@
 1.1.11  ईदूदेद्द्विवचनं प्रगृह्यम्  (IdUdeddvivacanaM pragfhyam)  —  SAMJNA
 
 **Śāstra (GRETIL pāṭha):** a *dvivacana* (dual) *pada* whose *anta* (in the *anuvṛtti*
-scope of this *ūha*) is *ī, ū, e, ai, o, or au* is called *pragṅhya* (to be
+scope of this *ūha*) is *ī, ū, or e* is called *pragṛhya* (to be
 “held” – no *lopa* of final vowel in certain *sandhi* contexts that name *pragṅhya*).
 
 v3: **R2** — ``act`` writes the definiens to ``samjna_registry['pragrahya']`` (vowel
@@ -34,8 +34,11 @@ from typing import FrozenSet
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
 
-# ī, ū, e, ai, o, au — SLP1 (E, O align with 1.1.1 for *ai* / *au* diphthongs).
-PRAGHYA_VOWEL_SLP1: FrozenSet[str] = frozenset({"I", "U", "e", "E", "o", "O"})
+# ईत् · ऊत् · एत् — exactly *ī, ū, e* (SLP1 I, U, e).  *ai / o / au* are NOT
+# named here: *rāmau* is not pragṛhya, which is why *rāmau + imau → rāmāv imau*
+# (6.1.78 एचोऽयवायावः).  Final *o* of a nipāta comes from **1.1.15 ओत्**, and
+# *ū̃* from **1.1.18** — each tags its own Terms, not through this set.
+PRAGHYA_VOWEL_SLP1: FrozenSet[str] = frozenset({"I", "U", "e"})
 
 # Term-level *pragṛhya* mark (when **1.1.11** *prayoga* applies in *dvivacana*).
 PRAGHYA_TERM_TAG: str = "pragrahya"
@@ -49,7 +52,7 @@ _REGISTRY_REASSERT: str = "1.1.11_pragrahya_prayoga_reassert"
 
 
 def is_pragrahya_slp1_vowel(slp1: str) -> bool:
-    """True iff ``slp1`` is one of the *ī, ū, e, ai, o, au* definienda (1.1.11)."""
+    """True iff ``slp1`` is one of the *ī, ū, e* definienda (1.1.11)."""
     return slp1 in PRAGHYA_VOWEL_SLP1
 
 
@@ -94,7 +97,7 @@ def _tag_she_pragrahya_residue(state: State) -> None:
 
 def _state_has_pragriya_eligible_anta(state: State) -> bool:
     """True iff some Term currently on the tape ends in one of the *pragṛhya*
-    vowels (ī, ū, e, ai, o, au). If none do, the pragṛhya saṃjñā cannot
+    vowels (ī, ū, e). If none do, the pragṛhya saṃjñā cannot
     apply to anything in this derivation and the eager registry-stamp is
     pure trace noise (audit P1b)."""
     for t in state.terms:
@@ -131,14 +134,15 @@ def act(state: State) -> State:
     _tag_she_pragrahya_residue(state)
     state.meta.pop(PRAGHYA_TAG_REFRESH_ARM_META, None)
     state.meta["__why_now_dev__"] = (
-        "द्विवचनान्ते ई, ऊ, ए, ऐ, ओ, औ — एते 'प्रगृह्य'-संज्ञां प्राप्नुवन्ति; "
+        "द्विवचनान्ते ई-ऊ-ए — एते एव 'प्रगृह्य'-संज्ञां प्राप्नुवन्ति; "
         "अतः सन्धि-कार्यं न प्रवर्तते (यथा हरी इति, विष्णू इति)। (१.१.११)"
     )
     return state
 
 
 _WHY = (
-    "द्विवचनान्ते ई-कार-ऊ-कार-ए-ऐ-ओ-औ, ते 'प्रगृह्य' संज्ञिनः; "
+    "द्विवचनान्तम् ईत्-ऊत्-एत् इति त्रयम् एव 'प्रगृह्य'-संज्ञकम् (ओत् १.१.१५, "
+    "ऊँ १.१.१८ इत्यादिभिः अन्यत्र); "
     "सन्धौ न लोप-ग्रहः (उत्सर्ग-नियमः)।"
 )
 

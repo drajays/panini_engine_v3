@@ -49,16 +49,19 @@ def _matches(state: State) -> bool:
             return False
         return anga.varnas[-1].slp1 == "a"
     if up in {"O", "Ow"}:
-        # v3.4 extension: i-stem dual (hari + au → harī) under the same
-        # pūrva-savarṇa idea (prathamā/dvitīyā dual boundary).
+        # प्रथमा/द्वितीया dual boundary: अक् + औ.  The utsarga claims every
+        # अक्-final aṅga here — *hari + au → harī*, *vāyu + au → vāyū*, and
+        # (as प्राप्ति only) *rāma + au*.  The अ/आ case is taken away by the
+        # निषेध **6.1.104 नादिचि**, which blocks this sūtra before it is
+        # reached; the vṛddhi **6.1.88** then gives *rāmau*.  This sūtra does
+        # not narrow itself to dodge that — utsarga/apavāda stays visible.
         if pratyaya.meta.get("au_purvasavarna_done"):
             return False
         if not anga.varnas or not pratyaya.varnas:
             return False
-        if anga.varnas[-1].slp1 == "i" and pratyaya.varnas[0].slp1 == "O":
-            return True
-        # u-stem dual (vāyu + au → vāyū) — same *pūrva-savarṇa* pattern as *hari* + *au*.
-        return anga.varnas[-1].slp1 == "u" and pratyaya.varnas[0].slp1 == "O"
+        if pratyaya.varnas[0].slp1 != "O":
+            return False
+        return anga.varnas[-1].slp1 in {"i", "u", "a", "A"}
     return False
 
 
@@ -83,14 +86,16 @@ def act(state: State) -> State:
         pratyaya.meta["upadesha_slp1"] = "As"
         return state
     if up in {"O", "Ow"}:
-        # i + au → ī (hari + au → harī); u + au → ū (vāyu + au → vāyū)
+        # पूर्वसवर्ण दीर्घ: i + au → ī, u + au → ū, and (only when 6.1.104 did
+        # not block this sūtra) a/ā + au → ā.
         last = anga.varnas[-1].slp1
-        anga.varnas[-1] = mk("I" if last == "i" else "U")
+        anga.varnas[-1] = mk({"i": "I", "u": "U", "a": "A", "A": "A"}[last])
         # Drop the pratyaya entirely; the long vowel is the combined result.
         pratyaya.varnas = []
         pratyaya.meta["au_purvasavarna_done"] = True
-        # Stem-final *ī/ū* is now *pragṛhya*-eligible; **1.1.11** runs again in P13.
-        state.meta[PRAGHYA_TAG_REFRESH_ARM_META] = True
+        if last in {"i", "u"}:
+            # Stem-final *ī/ū* is now *pragṛhya*-eligible; **1.1.11** runs again in P13.
+            state.meta[PRAGHYA_TAG_REFRESH_ARM_META] = True
         return state
     return state
 
@@ -101,8 +106,9 @@ SUTRA = SutraRecord(
     text_slp1      = "prathamayoH pUrvasavarRaH",
     text_dev       = "प्रथमयोः पूर्वसवर्णः",
     padaccheda_dev = "प्रथमयोः पूर्व-सवर्णः",
-    why_dev        = "प्रथमा/द्वितीया-बहुवचन-सीमायां अ+अच्-योः पूर्व-सवर्ण-दीर्घः "
-                     "(जस्-प्रत्यये परे 'ज'-वर्णोऽपि पूर्वयोगेन अन्तर्भवति)।",
+    why_dev        = "प्रथमा-द्वितीययोः सुप्-सीमायाम् अक्+अच्-योः पूर्व-सवर्ण-दीर्घ-एकादेशः "
+                     "(जस्-प्रत्यये परे 'ज'-वर्णोऽपि पूर्वयोगेन अन्तर्भवति); "
+                     "आत्-पूर्वे तु ६.१.१०४ नादिचि इति निषेधः।",
     anuvritti_from = ("6.1.84", "6.1.101"),
     cond           = cond,
     act            = act,

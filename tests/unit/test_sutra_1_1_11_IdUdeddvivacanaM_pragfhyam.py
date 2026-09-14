@@ -20,15 +20,18 @@ def test_sutra_metadata():
 
 
 def test_vowel_membership():
-    assert s1111.is_pragrahya_slp1_vowel("I")
-    assert s1111.is_pragrahya_slp1_vowel("E")
-    assert not s1111.is_pragrahya_slp1_vowel("a")
-    assert not s1111.is_pragrahya_slp1_vowel("A")
+    # ईत् · ऊत् · एत् — exactly three, no more.
+    for slp1 in ("I", "U", "e"):
+        assert s1111.is_pragrahya_slp1_vowel(slp1)
+    # ऐ, ओ, औ are NOT named by this sūtra: *rāmau* is not pragṛhya, hence
+    # *rāmau + imau → rāmāv imau* (6.1.78).  Final *o* of a nipāta is 1.1.15.
+    for slp1 in ("E", "o", "O", "a", "A"):
+        assert not s1111.is_pragrahya_slp1_vowel(slp1)
 
 
 def test_samjna_bootstrap_idempotent():
     # Audit P1b: 1.1.11 fires only when some Term has a pragṛhya-eligible
-    # vowel anta (ī, ū, e, ai, o, au). Use a stem ending in ī (g + I).
+    # vowel anta (ī, ū, e). Use a stem ending in ī (g + I).
     t = Term(kind="prakriti", varnas=[mk("g"), mk("I")])
     s0 = State(terms=[t])
     s1 = apply_rule("1.1.11", s0)
