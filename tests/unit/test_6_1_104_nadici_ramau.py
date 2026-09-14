@@ -59,3 +59,16 @@ def test_other_rama_cells_unchanged():
     assert derive("rAma", 1, 1).flat_dev() == "रामः"
     assert derive("rAma", 1, 3).flat_dev() == "रामाः"
     assert derive("rAma", 2, 3).flat_dev() == "रामान्"
+
+
+def test_nadi_dual_is_not_pragrhya_before_its_sup_arrives():
+    """नद्यौ — the stem *nadī* is pragṛhya only as a finished dual pada.
+
+    While the औ is still unattached, tagging the stem blocked 6.1.77 इको यणचि
+    and the dual came out *nadīau*.
+    """
+    state = derive("nadI", 1, 2, linga="strīliṅga")
+    assert state.flat_dev() == "नद्यौ"
+    assert "APPLIED" in _status(state.trace, "6.1.77")
+    # हरी keeps its pragṛhya: there 6.1.102 spends the sup into the aṅga first.
+    assert derive("hari", 1, 2).flat_dev() == "हरी"

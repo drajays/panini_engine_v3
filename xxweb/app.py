@@ -1,4 +1,8 @@
-"""web/app.py — Panini Engine v3 web UI (FastAPI + Jinja2 + HTMX)."""
+"""xxweb/app.py — DEPRECATED FastAPI + HTMX UI (reference only).
+
+Do not run. Use webui/ via ./run_web.sh instead.
+Former launch (archaeology): cd xxweb && uvicorn app:app --port 8000
+"""
 from __future__ import annotations
 
 import sys

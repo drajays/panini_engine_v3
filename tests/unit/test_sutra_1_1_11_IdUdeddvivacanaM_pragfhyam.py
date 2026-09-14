@@ -54,12 +54,26 @@ def test_pragrahya_samjna_is_registered():
     assert s1111.pragrahya_samjna_is_registered(s)
 
 
-def test_act_tags_pragrahya_in_dvivacana_from_meta():
+def test_act_tags_pragrahya_on_a_dvivacana_pada():
+    """प्रगृह्य belongs to the finished dual *pada* (1.4.14)."""
     t = Term(
-        kind="prakriti",
+        kind="pada",
         varnas=[mk("g"), mk("I")],
-        tags={"prātipadika", "anga"},
+        tags={"prātipadika", "anga", "pada"},
     )
     s0 = State(terms=[t], meta={"vibhakti_vacana": "1-2", "linga": "pulliṅga"})
     s1 = apply_rule("1.1.11", s0)
     assert s1111.PRAGHYA_TERM_TAG in s1.terms[0].tags
+
+
+def test_act_does_not_tag_a_stem_still_awaiting_its_sup():
+    """*nadī* is not pragṛhya before its औ arrives — else 6.1.77 is blocked
+    and the dual comes out *nadīau* instead of नद्यौ."""
+    t = Term(
+        kind="prakriti",
+        varnas=[mk("n"), mk("a"), mk("d"), mk("I")],
+        tags={"prātipadika", "anga"},
+    )
+    s0 = State(terms=[t], meta={"vibhakti_vacana": "1-2", "linga": "strīliṅga"})
+    s1 = apply_rule("1.1.11", s0)
+    assert s1111.PRAGHYA_TERM_TAG not in s1.terms[0].tags

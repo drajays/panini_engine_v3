@@ -74,8 +74,17 @@ def _vacana_from_meta(state: State) -> int | None:
 def _tag_dvivacana_praghy_terms(state: State) -> None:
     if _vacana_from_meta(state) != 2:  # dvivacana
         return
+    # प्रगृह्य is a property of the finished dual *pada*, never of a prātipadika
+    # still waiting for its sup.  A bare stem is eligible only once it *is* a
+    # pada (1.4.14), or once 6.1.102 has spent the sup into it (*agnī*, *harī*,
+    # *vāyū* — the refresh arm).  Tagging the bare stem made *nadī* pragṛhya
+    # before its औ ever arrived, which blocked 6.1.77 and gave *nadīau* for
+    # नद्यौ.
+    spent_sup = bool(state.meta.get(PRAGHYA_TAG_REFRESH_ARM_META))
     for t in state.terms:
         if not ({"prātipadika", "anga"} & t.tags):
+            continue
+        if not spent_sup and "pada" not in t.tags:
             continue
         fin = t.final_varna
         if fin and is_pragrahya_slp1_vowel(fin.slp1):
