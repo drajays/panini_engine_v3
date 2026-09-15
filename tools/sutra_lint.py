@@ -19,6 +19,12 @@ repository, and each can fail — advice is not a check.
                          (Art. 15). 87 more are like it today.
 
   ERRORS (never acceptable)
+    nisedha-firing-as-vidhi
+                         the dangerous half of the row above: a निषेध typed
+                         VIDHI that *actually fires*. It is then doing vidhi
+                         work under a negation's text. Zero today, and the
+                         other 87 are inert — which is why they are backlog
+                         (see docs/NISEDHA_REVIEW.md) and this is an error.
     inert-pratisedha     a प्रतिषेध whose declared target is never actually
                          BLOCKED anywhere in the suite — a निषेध that cannot
                          say no is dead code (Art. 15)
@@ -140,6 +146,7 @@ def lint() -> dict[str, Any]:
     report = honest_coverage(SUTRA_REGISTRY)
     ledger = load_ledger() or {}
     moved = set(ledger.get("moved", ()))
+    invoked = set(ledger.get("invoked", ()))
     suite_sig = (
         json.loads(SUITE_SIG_PATH.read_text(encoding="utf-8"))
         if SUITE_SIG_PATH.exists() else {"nodes": {}}
@@ -153,6 +160,7 @@ def lint() -> dict[str, Any]:
         "arm-in-cond": [],
         "coordinate-in-cond": [],
         "nisedha-as-vidhi": [],
+        "nisedha-firing-as-vidhi": [],
         "inert-pratisedha": [],
         "uncited-mover": [],
         "untested-mover": [],
@@ -173,6 +181,8 @@ def lint() -> dict[str, Any]:
         type_name = rec.sutra_type.name
         if type_name == "VIDHI" and not blocks and _is_nisedha(sid, rec):
             findings["nisedha-as-vidhi"].append(f"{sid} {text_dev}")
+            if sid in invoked:
+                findings["nisedha-firing-as-vidhi"].append(f"{sid} {text_dev}")
         if type_name == "PRATISHEDHA" and blocks:
             if not any(b in ever_blocked for b in blocks):
                 findings["inert-pratisedha"].append(f"{sid} → {','.join(blocks)}")
@@ -197,7 +207,7 @@ def _has_test(sutra_id: str) -> bool:
 
 
 RATCHETED = ("arm-in-cond", "coordinate-in-cond", "nisedha-as-vidhi")
-ERRORS = ("inert-pratisedha",)
+ERRORS = ("nisedha-firing-as-vidhi", "inert-pratisedha")
 
 
 def main(argv: list[str] | None = None) -> int:

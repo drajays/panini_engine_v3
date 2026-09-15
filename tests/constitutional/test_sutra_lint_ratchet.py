@@ -6,8 +6,9 @@ The lint is the gate; this is the gate's gate.
 
 Three counts may only fall — arm-gated conds (Art. 13 §1), paradigm
 coordinates in conds (Art. 2 §2c), and निषेध-shaped sūtras typed VIDHI with no
-declared block (Art. 15). One count must stay zero: a प्रतिषेध that never
-blocks anything is dead code.
+declared block (Art. 15). Two must stay zero: a निषेध typed VIDHI that actually
+*fires* (it is then doing vidhi work under a negation's text), and a प्रतिषेध
+whose target is never blocked (dead code).
 """
 from __future__ import annotations
 
@@ -68,3 +69,12 @@ def test_why_not_reports_an_unscheduled_sutra():
     with redirect_stdout(buf):
         explain(derive("rAma", 1, 1), "7.3.77")
     assert "NEVER SCHEDULED" in buf.getvalue()
+
+
+def test_the_nisedha_backlog_has_a_review_document(findings):
+    """87 inert निषेधs are backlog, not a sweep — and the backlog is written down."""
+    review = __import__("pathlib").Path(__file__).resolve().parents[2] / "docs" / "NISEDHA_REVIEW.md"
+    assert review.exists(), "run 'python3 -m tools.nisedha_review'"
+    text = review.read_text(encoding="utf-8")
+    for finding in findings["nisedha-as-vidhi"][:5]:
+        assert f"`{finding.split()[0]}`" in text, f"{finding} is not in the review"
