@@ -45,7 +45,6 @@ def derive_BitzIzwa() -> State:
     # sīyut + suṭ augments for this āśīr-liṅ demo.
     s.meta["sIyuw_recipe"] = True
     s = apply_rule("3.4.102", s)
-    s.meta["1_2_11_ling_sic_kitvat_arm"] = True
     s = apply_rule("1.2.11", s)
     s.meta["suw_recipe"] = True
     s = apply_rule("3.4.107", s)

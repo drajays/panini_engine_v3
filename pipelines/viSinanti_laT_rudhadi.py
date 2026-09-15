@@ -70,7 +70,6 @@ def derive_viSinanti_laT_rudhadi_P032() -> State:
     s = apply_rule("7.1.3", s)
 
     s = P00_snam_infix_8_2_1(s)
-    s.meta["P032_8_4_55_viSinanti_bridge_arm"] = True
     s = apply_rule("8.4.55", s)
     return s
 

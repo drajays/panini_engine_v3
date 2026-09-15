@@ -41,10 +41,8 @@ def derive_prakriya_37_karmadhAraya_puMvaw() -> State:
     s = State(terms=[_mk_pAcikA_vndArikA_witness()], meta={}, trace=[])
 
     s.meta["prakriya_37_tatpurusa_upapatti_note"] = True
-    s.meta["prakriya_37_1_2_42_arm"] = True
     s = apply_rule("1.2.42", s)
 
-    s.meta["prakriya_37_6_3_42_arm"] = True
     s = apply_rule("6.3.42", s)
     return s
 

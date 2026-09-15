@@ -80,16 +80,12 @@ def _structural_merge_ratnaDA(s: State) -> State:
         meta={"upadesha_slp1": "ratnaDA"},
     )
     s.terms = [merged]
-    s.trace.append(
-        {
-            "sutra_id": "__RATNADHA_UPAPADA_MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "उपपद-क्विप्-मेलनम्",
-            "form_before": b,
-            "form_after": s.flat_slp1(),
-            "why_dev": "रत्न + धा → रत्नधा (संरचनात्मकं)।",
-            "status": "APPLIED",
-        }
+    s.emit_structural(
+        "__RATNADHA_UPAPADA_MERGE__",
+        form_before=b,
+        form_after=s.flat_slp1(),
+        why_dev="रत्न + धा → रत्नधा (संरचनात्मकं)।",
+        type_label="उपपद-क्विप्-मेलनम्",
     )
     return s
 
@@ -107,16 +103,12 @@ def _structural_merge_ratnaDAtama(s: State) -> State:
         meta={"upadesha_slp1": "ratnaDAtama"},
     )
     s.terms = [merged]
-    s.trace.append(
-        {
-            "sutra_id": "__RATNADHA_TAMA_MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "तमप्-मेलनम्",
-            "form_before": b,
-            "form_after": s.flat_slp1(),
-            "why_dev": "रत्नधा + तम → रत्नधातम (संरचनात्मकं)।",
-            "status": "APPLIED",
-        }
+    s.emit_structural(
+        "__RATNADHA_TAMA_MERGE__",
+        form_before=b,
+        form_after=s.flat_slp1(),
+        why_dev="रत्नधा + तम → रत्नधातम (संरचनात्मकं)।",
+        type_label="तमप्-मेलनम्",
     )
     return s
 
@@ -136,7 +128,6 @@ def derive_ratnaDAtamam_prakriya_22() -> State:
 
     s = P00_lashakvataddhite_it_lopa_chain(s)
 
-    s.meta["prakriya_22_kvip_residue_arm"] = True
     s = apply_rule("6.1.67", s)
 
     s = _structural_merge_ratnaDA(s)

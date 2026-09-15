@@ -48,16 +48,12 @@ def _trim_agaty_tape(state: State) -> None:
         dh.varnas.pop()
     pr.varnas = [v for v in pr.varnas if v.slp1 in ("t", "y")]
     after = state.flat_slp1()
-    state.trace.append(
-        {
-            "sutra_id": "__MERGE_PREP__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "आगत्य-धातु-प्रत्यय-संस्कारः",
-            "form_before": before,
-            "form_after": after,
-            "why_dev": "गम्→ग (अन्तिम-म-लोपः प्रदर्शनार्थम्); ल्यप्→त्य (इत्-शेष-लोपः)।",
-            "status": "APPLIED",
-        }
+    state.emit_structural(
+        "__MERGE_PREP__",
+        form_before=before,
+        form_after=after,
+        why_dev="गम्→ग (अन्तिम-म-लोपः प्रदर्शनार्थम्); ल्यप्→त्य (इत्-शेष-लोपः)।",
+        type_label="आगत्य-धातु-प्रत्यय-संस्कारः",
     )
 
 
@@ -71,7 +67,6 @@ def derive_agaty_gam_lyap_acah_lesson() -> State:
     s.meta["7_1_37_insert_lyap_matu"] = True
     s = apply_rule("7.1.37", s)
 
-    s.meta["6_4_38_lyap_m_lopa_arm"] = True
     s = apply_rule("6.4.38", s)
 
     s = P00_vikarana_it_lopa(s)

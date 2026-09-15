@@ -10,7 +10,6 @@ Spine (rule-based ``apply_rule`` only):
 
 Note: JSON cites **6.4.134** for *yuvan*→*yuva*; the engine's default 6.4.134
 implements the *bha* upadhā-a-lopa slice (rājan-type).  For this demo we arm a
-strictly-narrow alternate branch via ``state.meta['6_4_134_an_final_n_lopa_arm']``.
 
 CONSTITUTION Art. 7 / 11: ``apply_rule`` only.
 """
@@ -53,9 +52,7 @@ def derive_yuvatiH_stri_split_prakriyas_P006() -> State:
     s = apply_rule("1.3.9", s)
 
     # yuvan + ti → yuva + ti (n-lopa) — narrow arm
-    s.meta["6_4_134_an_final_n_lopa_arm"] = True
     s = apply_rule("6.4.134", s)
-    s.meta.pop("6_4_134_an_final_n_lopa_arm", None)
 
     s = apply_rule("1.2.46", s)
 

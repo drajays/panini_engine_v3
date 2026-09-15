@@ -68,7 +68,6 @@ def derive_IDe() -> State:
         s.terms[-1].meta["upadesha_slp1"] = "e"
 
     # indhi/bhavati paribhāṣā for kṅiti locus on liṭ-ending
-    s.meta["1_2_6_indhi_bhavati_arm"] = True
     s = apply_rule("1.2.6", s)
 
     # n-lopa before kṅiti: inD -> iD

@@ -46,7 +46,6 @@ def derive_bhinnavAn() -> State:
         target_upadesha_slp1="Bidi~",
         dhatu_bootstrap=P00_anunasikadi_bhuvadi_dhatu_it_chain,
     )
-    s.meta["6_1_111_nn_t_lopa_arm"] = True
     s = P00_ciY_ktavatu_nistha_prathama_tail(s)
     return s
 

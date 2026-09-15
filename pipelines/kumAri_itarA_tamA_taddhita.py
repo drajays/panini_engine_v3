@@ -52,16 +52,12 @@ def _structural_merge_pratipadika(s: State, *, label: str) -> State:
     b = s.flat_slp1()
     s.terms = [merged]
     a = s.flat_slp1()
-    s.trace.append(
-        {
-            "sutra_id": f"__KUMArI_TADDHITA_MERGE__{label}__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "कुमारी-तद्धित-मेलनम्",
-            "form_before": b,
-            "form_after": a,
-            "why_dev": "तद्धित-प्रक्रियायां अङ्ग+प्रत्यय-संयोजनम् (संरचनात्मकं)।",
-            "status": "APPLIED",
-        }
+    s.emit_structural(
+        f"__KUMArI_TADDHITA_MERGE__{label}__",
+        form_before=b,
+        form_after=a,
+        why_dev="तद्धित-प्रक्रियायां अङ्ग+प्रत्यय-संयोजनम् (संरचनात्मकं)।",
+        type_label="कुमारी-तद्धित-मेलनम्",
     )
     return s
 
@@ -82,7 +78,6 @@ def derive_kumAri_taddhita_core(*, arm: str) -> State:
     s = apply_rule(sid, s)
     s = apply_rule("1.1.22", s)
     s = apply_rule("1.2.46", s)
-    s.meta["6_3_43_NGy_hrasva_arm"] = True
     s = apply_rule("6.3.43", s)
     s = P00_taddhita_it_lopa_chain(s)
     return _structural_merge_pratipadika(s, label=arm)

@@ -70,7 +70,6 @@ def derive_avaDIt() -> State:
         if (t.meta.get("upadesha_slp1") or "").strip() == "sic":
             t.tags.discard("upadesha")
 
-    s.meta["2_4_43_han_vadh_luG_arm"] = True
     s = apply_rule("2.4.43", s)
     # Final ``h`` of *vadh* must survive the *tiṅ* *it*-chain (**1.3.3**/**1.3.9**).
     s.terms[0].tags.discard("upadesha")
@@ -79,10 +78,8 @@ def derive_avaDIt() -> State:
 
     s = P00_tip_to_t_aprkta(s)
 
-    s.meta["3_4_114_luN_sic_samjna_arm"] = True
     s.meta["7_2_35_allow_sic"] = True
     s.meta["luN_sic_ardhadhatuka"] = True
-    s.meta["han_6_4_48_arm"] = True
     s = P00_luN_han_sic_6_4_48(s)
 
     s = apply_rule("1.1.56", s)
@@ -95,7 +92,6 @@ def derive_avaDIt() -> State:
     from pipelines.subanta import _pada_merge  # noqa: PLC0415
 
     _pada_merge(s)
-    s.meta["6_4_114_P026_arm"] = True
     s = apply_rule("6.4.114", s)
     s = apply_rule("8.2.1", s)
     return s

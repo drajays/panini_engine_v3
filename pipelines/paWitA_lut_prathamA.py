@@ -58,10 +58,8 @@ def derive_paWitA() -> State:
     s = apply_rule("3.4.77", s)
     s = P00_tip_to_ti(s)
 
-    s.meta["7_2_35_lut_tAsi_it_arm"] = True
     s = apply_rule("1.1.46", s)
     s = apply_rule("7.2.35", s)
-    s.meta.pop("7_2_35_lut_tAsi_it_arm", None)
 
     s.meta["luT_prathama_recipe"] = True
     s = apply_rule("2.4.85", s)
@@ -70,15 +68,11 @@ def derive_paWitA() -> State:
     if len(s.terms) >= 2:
         s.terms[-1].meta["dit_pratyaya"] = True
 
-    s.meta["6_4_143_lut_tasi_arm"] = True
     s = apply_rule("6.4.143", s)
-    s.meta.pop("6_4_143_lut_tasi_arm", None)
 
     # *ḍā* it-lopa: ``q`` (cuṭ) + ``A`` → ``A`` (residue).
-    s.meta["1_3_7_lut_qA_arm"] = True
     for sid in ("1.3.7", "1.3.3", "1.3.9"):
         s = apply_rule(sid, s)
-    s.meta.pop("1_3_7_lut_qA_arm", None)
 
     # Merge to ``paWit`` + ``A`` (``dit``) for **7.3.86** + **1.1.6** slice.
     all_v = []
@@ -100,15 +94,13 @@ def derive_paWitA() -> State:
     before = s.flat_slp1()
     s.terms = [anga, pr]
     after = s.flat_slp1()
-    s.trace.append({
-        "sutra_id": "__PATHITA_MERGE__",
-        "sutra_type": "STRUCTURAL",
-        "type_label": "पठिता-मेलनम्",
-        "form_before": before,
-        "form_after": after,
-        "why_dev": "धातु+तास्-शेष+आ → अङ्ग + डित्-परः (संरचनात्मकं, न सूत्रम्)।",
-        "status": "APPLIED",
-    })
+    s.emit_structural(
+        "__PATHITA_MERGE__",
+        form_before=before,
+        form_after=after,
+        why_dev="धातु+तास्-शेष+आ → अङ्ग + डित्-परः (संरचनात्मकं, न सूत्रम्)।",
+        type_label="पठिता-मेलनम्",
+    )
 
     s = apply_rule("1.1.6", s)
     s = apply_rule("7.3.86", s)

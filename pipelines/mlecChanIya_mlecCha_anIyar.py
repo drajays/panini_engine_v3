@@ -55,7 +55,6 @@ def derive_mlecChanIya() -> State:
     s = apply_rule("8.2.1", s)
 
     # 8.4.40 stoḥ ścunā ścuḥ: t+C → c (→ mlecCanIya = म्लेच्छनीय)
-    s.meta["8_4_40_sto_tCh_arm"] = True
     s = apply_rule("8.4.40", s)
     return s
 

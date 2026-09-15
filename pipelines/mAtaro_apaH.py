@@ -41,7 +41,6 @@ def derive_mAtaro_apaH_prakriya_33() -> State:
     # Commentary: *ekaśruti* blocked across ``पृश्निमातरः`` … ``अपः`` boundary — narrow arm.
     s.meta["prakriya_33_ekazruti_na_upapatti_note"] = True
 
-    s.meta["prakriya_33_1_2_40_arm"] = True
     s = apply_rule("1.2.40", s)
     return s
 

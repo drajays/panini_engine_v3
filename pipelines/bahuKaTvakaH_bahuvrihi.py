@@ -44,10 +44,8 @@ def derive_bahuKaTvakaH_bahuvrihi_P027() -> State:
 
     s = apply_rule("2.2.24", s)
 
-    s.meta["P027_5_4_154_kap_arm"] = True
     s = apply_rule("5.4.154", s)
 
-    s.meta["P027_7_4_15_Ap_hrasva_arm"] = True
     s = apply_rule("7.4.15", s)
 
     s = apply_rule("1.2.46", s)

@@ -42,7 +42,6 @@ def derive_Amalakam_prakriya_44() -> State:
 
     s = apply_rule("4.1.76", s)
     s.meta["prakriya_44_tasya_vikAra_note"] = True
-    s.meta["prakriya_44_4_3_134_arm"] = True
     s = apply_rule("4.3.134", s)
 
     s = apply_rule("1.2.46", s)

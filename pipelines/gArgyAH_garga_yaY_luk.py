@@ -33,16 +33,12 @@ def _p042_merge_to_gArgya(state: State) -> None:
         meta={"upadesha_slp1": "gArgya"},
     )
     state.terms = [stem]
-    state.trace.append(
-        {
-            "sutra_id": "__MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "यञ्-मेलनम्",
-            "form_before": b,
-            "form_after": state.flat_slp1(),
-            "why_dev": "गार्ग + य → गार्ग्य (संरचनात्मकं, P042)।",
-            "status": "APPLIED",
-        }
+    state.emit_structural(
+        "__MERGE__",
+        form_before=b,
+        form_after=state.flat_slp1(),
+        why_dev="गार्ग + य → गार्ग्य (संरचनात्मकं, P042)।",
+        type_label="यञ्-मेलनम्",
     )
 
 
@@ -59,7 +55,6 @@ def derive_gArgyAH_garga_yaY_luk_P042() -> State:
     s = apply_rule("4.1.76", s)
     s = apply_rule("4.1.1", s)
 
-    s.meta["P042_4_1_105_yaY_arm"] = True
     s = apply_rule("4.1.105", s)
 
     for sid in ("1.3.3", "1.3.8", "1.3.9", "1.3.10"):
@@ -82,7 +77,6 @@ def derive_gArgyAH_garga_yaY_luk_P042() -> State:
     s = P00_luk_samjna_60_62(s)
     s = apply_rule("1.1.63", s)
 
-    s.meta["P042_7_1_9_jas_to_as_arm"] = True
     s = apply_rule("7.1.9", s)
 
     s = apply_rule("6.1.101", s)

@@ -41,7 +41,7 @@ def _witness_BU_split_P002() -> Term:
 def derive_Bavitavyam_split_prakriyas_P002() -> State:
     s = State(terms=[_witness_BU_split_P002()], meta={}, trace=[])
 
-    s.meta["prakriya_P002_3_1_96_tavyat_arm"] = True
+    s.meta["krtya_recipe"] = "tavyat"
     s = P00_tavyat_anIyar_it_lopa(s)
     s = P00_bhavati_guna_yav(s)
     s = apply_rule("1.2.46", s)

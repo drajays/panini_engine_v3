@@ -39,15 +39,13 @@ def _structural_merge_gomat(s: State) -> State:
     before = s.flat_slp1()
     s.terms = [merged]
     after = s.flat_slp1()
-    s.trace.append({
-        "sutra_id": "__GOMAN_MERGE__",
-        "sutra_type": "STRUCTURAL",
-        "type_label": "गोमत्-मेलनम्",
-        "form_before": before,
-        "form_after": after,
-        "why_dev": "अङ्ग+मतुप्-शेषयोः संयोजनम् (संरचनात्मकं, न सूत्रम्)।",
-        "status": "APPLIED",
-    })
+    s.emit_structural(
+        "__GOMAN_MERGE__",
+        form_before=before,
+        form_after=after,
+        why_dev="अङ्ग+मतुप्-शेषयोः संयोजनम् (संरचनात्मकं, न सूत्रम्)।",
+        type_label="गोमत्-मेलनम्",
+    )
     return s
 
 

@@ -70,15 +70,13 @@ def _structural_merge_dvandva_to_single_anga(s: State) -> State:
     )
     s.terms = [merged]
     after = s.flat_slp1()
-    s.trace.append({
-        "sutra_id": "__DVANDVA_MERGE__",
-        "sutra_type": "STRUCTURAL",
-        "type_label": "द्वन्द्व-मेलनम्",
-        "form_before": before,
-        "form_after": after,
-        "why_dev": "पूर्व + पर (द्वन्द्व) → एकं प्रातिपदिकम् (संरचनात्मकं, न सूत्रम्)।",
-        "status": "APPLIED",
-    })
+    s.emit_structural(
+        "__DVANDVA_MERGE__",
+        form_before=before,
+        form_after=after,
+        why_dev="पूर्व + पर (द्वन्द्व) → एकं प्रातिपदिकम् (संरचनात्मकं, न सूत्रम्)।",
+        type_label="द्वन्द्व-मेलनम्",
+    )
     return s
 
 

@@ -36,16 +36,12 @@ def _merge_paT_nic_i_to_paTi(state: State) -> None:
         meta={"upadesha_slp1": "paTi"},
     )
     state.terms = [merged] + state.terms[2:]
-    state.trace.append(
-        {
-            "sutra_id": "__MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "धातु-मेलनम्",
-            "form_before": state.flat_slp1(),
-            "form_after": state.flat_slp1(),
-            "why_dev": "पट् + णिच्-अवशेष-इकारः → पटि (एक-धातु-टर्म्, P025)।",
-            "status": "APPLIED",
-        }
+    state.emit_structural(
+        "__MERGE__",
+        form_before=state.flat_slp1(),
+        form_after=state.flat_slp1(),
+        why_dev="पट् + णिच्-अवशेष-इकारः → पटि (एक-धातु-टर्म्, P025)।",
+        type_label="धातु-मेलनम्",
     )
 
 
@@ -64,15 +60,12 @@ def derive_paTayati_paTu_Nic_P025() -> State:
     s.meta["vibhakti_vacana"] = "2-1"
     s = apply_rule("4.1.2", s)
 
-    s.meta["P025_2_1_26_Nic_arm"] = True
     s = apply_rule("2.1.26", s)
 
     s = P00_krt_it_lopa(s)
 
-    s.meta["P025_3_1_32_arm"] = True
     s = apply_rule("3.1.32", s)
 
-    s.meta["P025_6_4_155_Ti_lopa_arm"] = True
     s = apply_rule("6.4.155", s)
 
     s = apply_rule("1.1.57", s)

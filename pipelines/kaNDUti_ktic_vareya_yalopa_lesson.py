@@ -47,16 +47,12 @@ def _merge_kaNDU_ti(s: State) -> State:
     )
     s.terms = [merged]
     after = s.flat_slp1()
-    s.trace.append(
-        {
-            "sutra_id": "__KRT_MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "क्तिच्-मेलनम्",
-            "form_before": before,
-            "form_after": after,
-            "why_dev": "कण्डू + ति → कण्डूति (रूपसिद्धि)।",
-            "status": "APPLIED",
-        }
+    s.emit_structural(
+        "__KRT_MERGE__",
+        form_before=before,
+        form_after=after,
+        why_dev="कण्डू + ति → कण्डूति (रूपसिद्धि)।",
+        type_label="क्तिच्-मेलनम्",
     )
     return s
 

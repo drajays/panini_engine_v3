@@ -54,7 +54,6 @@ def derive_avadhIt_han_lun_ekavacana_lesson() -> State:
 
     s = P00_luN_lakara_cli_sic(s)
 
-    s.meta["2_4_43_han_vadh_luG_arm"] = True
     s = apply_rule("2.4.43", s)
     s.terms[0].tags.discard("upadesha")
 
@@ -63,10 +62,8 @@ def derive_avadhIt_han_lun_ekavacana_lesson() -> State:
     s = P00_parasmai_tin_adesha(s, "tip")
     s = P00_hal_it_lopa(s)
 
-    s.meta["3_4_114_luN_sic_samjna_arm"] = True
     s.meta["7_2_35_allow_sic"] = True
     s.meta["luN_sic_ardhadhatuka"] = True
-    s.meta["han_6_4_48_arm"] = True
     s = P00_luN_han_sic_6_4_48(s)
     s.meta.pop("7_2_35_allow_sic", None)
     s.meta.pop("luN_sic_ardhadhatuka", None)

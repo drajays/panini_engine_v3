@@ -24,13 +24,11 @@ def exec_vibhasha(
     if not rec.cond(state):
         return state, False
 
-    # Record the fork BEFORE mutating so 'alternative' reflects the
-    # form had we declined the option.
-    alternative_form = state.render()
+    # Capture the "declined" branch as a fully isolated State before mutating.
+    declined_fork = state.fork()
+    declined_fork.meta[f"{rec.sutra_id}_skipped_vibhasha"] = True
+
     new_state = rec.act(state)
-    new_state.vibhasha_forks.append({
-        "sutra_id"    : rec.sutra_id,
-        "choice_made" : True,
-        "alternative" : alternative_form,
-    })
+    new_state.meta[f"{rec.sutra_id}_applied_vibhasha"] = True
+    new_state.vibhasha_forks.append(declined_fork)
     return new_state, True

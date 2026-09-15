@@ -59,16 +59,12 @@ def _structural_merge_vAyu(s: State) -> State:
         meta={"upadesha_slp1": "vAyu"},
     )
     s.terms = [merged]
-    s.trace.append(
-        {
-            "sutra_id": "__VAYU_KRT_MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "वायु-प्रातिपदिक-मेलनम्",
-            "form_before": b,
-            "form_after": s.flat_slp1(),
-            "why_dev": "वा + य् + उ → वायु (संरचनात्मकं)।",
-            "status": "APPLIED",
-        }
+    s.emit_structural(
+        "__VAYU_KRT_MERGE__",
+        form_before=b,
+        form_after=s.flat_slp1(),
+        why_dev="वा + य् + उ → वायु (संरचनात्मकं)।",
+        type_label="वायु-प्रातिपदिक-मेलनम्",
     )
     return s
 
@@ -87,7 +83,6 @@ def derive_vAyavaH_prakriya_24() -> State:
     for sid in _IT_AFTER_uR:
         s = apply_rule(sid, s)
 
-    s.meta["prakriya_24_7_3_33_arm"] = True
     s = apply_rule("7.3.33", s)
     s = _structural_merge_vAyu(s)
 

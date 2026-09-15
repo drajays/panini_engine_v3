@@ -64,20 +64,15 @@ def derive_viSiNQi_loT_rudhadi_P031() -> State:
 
     s = P00_tin_adesha_base(s, "sip")
 
-    s.meta["P031_3_4_87_sip_to_hi_arm"] = True
     s = apply_rule("3.4.87", s)
 
     s = apply_rule("1.1.47", s)
-    s.meta["3_1_78_snam_arm"] = True
     s = apply_rule("3.1.78", s)
-    s.meta.pop("3_1_78_snam_arm", None)
 
     s = apply_rule("1.2.4", s)
 
-    s.meta["P031_6_4_111_sna_al_lopa_arm"] = True
     s = apply_rule("6.4.111", s)
 
-    s.meta["P031_6_4_101_hi_to_Qi_arm"] = True
     s = apply_rule("6.4.101", s)
 
     _pada_merge(s)
@@ -87,7 +82,6 @@ def derive_viSiNQi_loT_rudhadi_P031() -> State:
     s = apply_rule("8.4.41", s)
     s.meta["P031_8_2_36_S_before_jhal_arm"] = True
     s = apply_rule("8.2.36", s)
-    s.meta["P031_8_4_55_viSir_bridge_arm"] = True
     s = apply_rule("8.4.55", s)
 
     return s

@@ -46,16 +46,12 @@ def _compound_merge_dyu_kAma(state: State) -> None:
         meta={"upadesha_slp1": "dyukAma", "vyutpanna": True},
     )
     state.terms = [stem, *rest]
-    state.trace.append(
-        {
-            "sutra_id": "__MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "समास-मेलनम्",
-            "form_before": state.flat_slp1(),
-            "form_after": state.flat_slp1(),
-            "why_dev": "समास-रचना — dyu + kAma इति संयुक्त-प्रातिपदिक-रूपेण संरचनात्मक-मेलनम्।",
-            "status": "APPLIED",
-        }
+    state.emit_structural(
+        "__MERGE__",
+        form_before=state.flat_slp1(),
+        form_after=state.flat_slp1(),
+        why_dev="समास-रचना — dyu + kAma इति संयुक्त-प्रातिपदिक-रूपेण संरचनात्मक-मेलनम्।",
+        type_label="समास-मेलनम्",
     )
 
 
@@ -80,7 +76,6 @@ def derive_dyukAmA_bahuvrihi_P023() -> State:
     s = apply_rule("2.2.14", s)
 
     # div → di + u (P023-armed 6.1.127), then yaṇ across Terms.
-    s.meta["P023_6_1_127_div_v_to_u_arm"] = True
     s = apply_rule("6.1.127", s)
 
     # Paribhāṣā note: sthānivadbhāva gate (for the demo).
@@ -111,16 +106,12 @@ def derive_dyukAmA_bahuvrihi_P023() -> State:
     if len(s.terms) >= 2 and "stri_wAp" in s.terms[1].tags:
         # 6.1.101 has already created the long-A in the stem; the residue Term is structural noise now.
         s.terms.pop(1)
-        s.trace.append(
-            {
-                "sutra_id": "__MERGE__",
-                "sutra_type": "STRUCTURAL",
-                "type_label": "टाप्-अवशेष-लोपः",
-                "form_before": s.flat_slp1(),
-                "form_after": s.flat_slp1(),
-                "why_dev": "टाप्-प्रत्ययस्य अवशेषः संरचनात्मकतया अपसार्यते (आदेश-दीर्घः ६.१.१०१ इत्यनेन सिद्धः)।",
-                "status": "APPLIED",
-            }
+        s.emit_structural(
+            "__MERGE__",
+            form_before=s.flat_slp1(),
+            form_after=s.flat_slp1(),
+            why_dev="टाप्-प्रत्ययस्य अवशेषः संरचनात्मकतया अपसार्यते (आदेश-दीर्घः ६.१.१०१ इत्यनेन सिद्धः)।",
+            type_label="टाप्-अवशेष-लोपः",
         )
 
     # Attach prathamā-ekavacana and drop it via 6.1.68 (ṭāp-anta path).

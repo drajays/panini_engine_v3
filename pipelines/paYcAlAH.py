@@ -39,7 +39,6 @@ def derive_paYcAlAH_prakriya_45() -> State:
 
     s.meta["prakriya_45_lupi_yuktavad_note"] = True
     s.meta["prakriya_45_janapade_luk_context_note"] = True
-    s.meta["prakriya_45_1_2_51_arm"] = True
     s = apply_rule("1.2.51", s)
     return s
 

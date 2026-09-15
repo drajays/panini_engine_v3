@@ -49,7 +49,6 @@ def derive_niSkOZAmbi_stem_prakriya_40() -> State:
     s = apply_rule("8.2.1", s)
     s = apply_rule("8.3.15", s)
 
-    s.meta["prakriya_40_8_3_41_arm"] = True
     s = apply_rule("8.3.41", s)
     return s
 

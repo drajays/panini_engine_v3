@@ -40,7 +40,6 @@ def derive_pramANakRtAntarye_P007_demo() -> State:
     s = apply_rule("1.1.50", s)
 
     # Arm 1.1.48 explicit wrapper around the ec→ik kernel.
-    s.meta["1_1_48_ec_ig_hrasva_arm"] = True
     s.meta["1_1_48_target_term_index"] = 0
     s.meta["1_1_48_target_varna_index"] = 0
     s = apply_rule("1.1.48", s)

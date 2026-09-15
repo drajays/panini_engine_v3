@@ -52,13 +52,10 @@ def derive_papatuH_lit_pA_P035() -> State:
     s = apply_rule("3.4.82", s)
     s = apply_rule("1.2.5", s)
 
-    s.meta["P035_6_4_64_A_lopa_atus_arm"] = True
     s = apply_rule("6.4.64", s)
 
-    s.meta["P035_6_1_2_ekaca_dve_arm"] = True
     s = apply_rule("6.1.2", s)
 
-    s.meta["P035_7_4_59_abhyasa_hrasva_arm"] = True
     s = apply_rule("7.4.59", s)
 
     from pipelines.subanta import _pada_merge  # noqa: PLC0415

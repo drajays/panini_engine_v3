@@ -57,7 +57,6 @@ def derive_kurutaH() -> State:
 
     s = P00_lac_lat_attach(s)
     s = P00_tin_tas_adesh_full(s)
-    s.meta["3_1_79_tanadi_u_arm"] = True
     s = P00_tanadi_u_guna(s)
     # a → u before kṅit sārvadhātuka (1.2.4 → 1.1.5 → 6.4.110).
     s = P00_tanadi_kit_6_4_110(s)

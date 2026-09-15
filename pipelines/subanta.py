@@ -678,50 +678,6 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
 
 
 def _pada_merge(state: State) -> None:
-    """Structural: merge all Terms into a single pada-tagged Term.
-    This is NOT a sūtra; it is tagged '__MERGE__' in the trace."""
-    if not state.terms:
-        return
-    # Preserve pragṛhya across structural merge so sentence-level sandhi rules
-    # (6.1.125 / 6.1.101 / 6.1.77) can see it on the pada term.
-    from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
-
-    keep_pragrahya = any(PRAGHYA_TERM_TAG in t.tags for t in state.terms)
-    # Preserve index-based saṃjñās that are semantically "on the whole stem"
-    # across structural merges, so they don't re-fire vacuously later.
-    keep_bha = any("bha" in t.tags for t in state.terms)
-    keep_pratipadika = any("prātipadika" in t.tags for t in state.terms)
-    keep_anga = any("anga" in t.tags for t in state.terms)
-    keep_linga = (
-        "strīliṅga" if any("strīliṅga" in t.tags for t in state.terms)
-        else "napuṃsaka" if any("napuṃsaka" in t.tags for t in state.terms)
-        else "pulliṅga" if any("pulliṅga" in t.tags for t in state.terms)
-        else None
-    )
-    all_varnas: List = []
-    for t in state.terms:
-        all_varnas.extend(t.varnas)
-    tags = {"pada"}
-    if keep_pragrahya:
-        tags.add(PRAGHYA_TERM_TAG)
-    if keep_bha:
-        tags.add("bha")
-    if keep_pratipadika:
-        tags.add("prātipadika")
-    if keep_anga:
-        tags.add("anga")
-    if keep_linga:
-        tags.add(keep_linga)
-    if any("krt_tfc" in t.tags for t in state.terms):
-        tags.add("krt_tfc")
-    pada = Term(kind="pada", varnas=all_varnas, tags=tags, meta={})
-    state.terms = [pada]
-    state.trace.append({
-        "sutra_id"    : "__MERGE__",
-        "sutra_type"  : "STRUCTURAL",
-        "type_label"  : "पद-मेलनम्",
-        "form_before" : state.flat_slp1(),  # already merged, but same
-        "form_after"  : state.flat_slp1(),
-        "why_dev"     : "पद-रचना — सुबन्त-संयोजनम् (संरचनात्मकं, न सूत्रम्)।",
-        "status"      : "APPLIED",
-    })
+    """Structural merge. Delegates to engine.phases.pada_merger.pada_merge."""
+    from engine.phases.pada_merger import pada_merge
+    pada_merge(state)

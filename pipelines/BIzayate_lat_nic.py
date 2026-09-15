@@ -72,16 +72,12 @@ def _structural_merge_zuk_and_nic_into_dhatu(s: State) -> State:
     dh.tags.add("sanadi")
     # Remove zuk and nic terms.
     s.terms = [dh] + s.terms[3:]
-    s.trace.append(
-        {
-            "sutra_id": "__NIC_ZUK_MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "णिच्-षुक्-मेलनम्",
-            "form_before": before,
-            "form_after": s.flat_slp1(),
-            "why_dev": "भी + षुक् + णिच्-शेष (ष्+इ) → भीषि (संरचनात्मकं, न सूत्रम्)।",
-            "status": "APPLIED",
-        }
+    s.emit_structural(
+        "__NIC_ZUK_MERGE__",
+        form_before=before,
+        form_after=s.flat_slp1(),
+        why_dev="भी + षुक् + णिच्-शेष (ष्+इ) → भीषि (संरचनात्मकं, न सूत्रम्)।",
+        type_label="णिच्-षुक्-मेलनम्",
     )
     return s
 
@@ -98,13 +94,12 @@ def derive_BIzayate() -> State:
         s.terms[0].meta["upadesha_slp1"] = "BI"
 
     # Causative ṇic.
-    s.meta["3_1_26_nic_arm"] = True
+    s.meta["nic_recipe"] = "nic"
     s = apply_rule("3.1.26", s)
     s.meta.pop("3_1_26_nic_arm", None)
 
     # Fear-causation augment.
     s = apply_rule("1.1.46", s)
-    s.meta["7_3_40_zuk_arm"] = True
     s = apply_rule("7.3.40", s)
     s.meta.pop("7_3_40_zuk_arm", None)
 

@@ -46,7 +46,6 @@ def derive_mAtApitarO_dvandva_split_prakriyas_P013() -> State:
     s = apply_rule("2.2.29", s)
     s = apply_rule("2.2.34", s)
 
-    s.meta["prakriya_P013_6_3_25_arm"] = True
     s = apply_rule("6.3.25", s)
 
     # Attach prathamā-dvivacana (O).

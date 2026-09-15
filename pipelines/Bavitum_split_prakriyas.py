@@ -49,7 +49,6 @@ def derive_Bavitum_split_prakriyas_P001() -> State:
     s = State(terms=[_witness_BU_split_P001(), _tumun_pratyaya_P001()], meta={}, trace=[])
 
     s.meta["prakriya_P001_samAnakartRk_tumun_note"] = True
-    s.meta["prakriya_P001_3_3_158_arm"] = True
     s = apply_rule("3.3.158", s)
 
     s = apply_rule("1.3.3", s)

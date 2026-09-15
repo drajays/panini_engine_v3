@@ -127,7 +127,10 @@ class State:
     blocked_sutras   : Set[str]                      = field(default_factory=set)
     niyama_gates     : Dict[str, Any]                = field(default_factory=dict)
     atidesha_map     : Dict[tuple, str]              = field(default_factory=dict)
-    vibhasha_forks   : List[Dict[str, Any]]          = field(default_factory=list)
+    vibhasha_forks   : List[Any]                      = field(default_factory=list)
+    # vibhasha_forks holds either:
+    #   • dict  — declined-fork audit record (sutra_id, choice_made, alternative)
+    #   • State — full alternative branch created by exec_vibhasha (fork() copy)
     nipatana_flag    : bool                          = False
     tripadi_zone     : bool                          = False
     # v3.1 amendment — three-phase model.  `phase` is authoritative;
@@ -152,13 +155,27 @@ class State:
             blocked_sutras   = set(self.blocked_sutras),
             niyama_gates     = dict(self.niyama_gates),
             atidesha_map     = dict(self.atidesha_map),
-            vibhasha_forks   = [dict(f) for f in self.vibhasha_forks],
+            vibhasha_forks   = [
+                f.clone() if isinstance(f, State) else dict(f)
+                for f in self.vibhasha_forks
+            ],
             nipatana_flag    = self.nipatana_flag,
             tripadi_zone     = self.tripadi_zone,
             phase            = self.phase,
             trace            = [dict(s) for s in self.trace],
             meta             = deepcopy(self.meta),
         )
+
+    def fork(self) -> "State":
+        """Deep-isolated copy for vibhāṣā alternative branch.
+
+        Identical to clone() except vibhasha_forks is reset to [] and
+        meta["forked_from"] records the id of the parent state.
+        """
+        child = self.clone()
+        child.vibhasha_forks = []
+        child.meta["forked_from"] = id(self)
+        return child
 
     # ─────────────────────────────────────────────────────────────────
     # Flat varṇa sequence — used by dispatcher to diff form_before /
@@ -181,6 +198,33 @@ class State:
 
         varnas = [v for t in self.terms for v in term_phonetic_varnas(t)]
         return slp1_to_devanagari(varnas)
+
+    # ─────────────────────────────────────────────────────────────────
+    # Structural event emission — for non-sūtra book-keeping steps.
+    # Use this instead of state.trace.append({...}) directly so all
+    # structural steps have a consistent shape and can be distinguished
+    # from sūtra applications by downstream tools (TraceBuilder etc.).
+    # ─────────────────────────────────────────────────────────────────
+    def emit_structural(
+        self,
+        label: str,
+        form_before: str,
+        form_after: str,
+        why_dev: str,
+        **extra: Any,
+    ) -> None:
+        """Append a non-sūtra structural step to the trace."""
+        step: Dict[str, Any] = {
+            "sutra_id":    label,
+            "sutra_type":  "STRUCTURAL",
+            "type_label":  label,
+            "form_before": form_before,
+            "form_after":  form_after,
+            "why_dev":     why_dev,
+            "status":      "APPLIED",
+        }
+        step.update(extra)
+        self.trace.append(step)
 
     # For quick printing in traces.
     def render(self) -> str:

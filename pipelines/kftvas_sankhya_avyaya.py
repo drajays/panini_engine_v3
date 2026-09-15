@@ -45,16 +45,12 @@ def _merge_anga_taddhita(s: State, *, label: str) -> State:
     )
     b = s.flat_slp1()
     s.terms = [merged]
-    s.trace.append(
-        {
-            "sutra_id": f"__KFTVAS_MERGE__{label}__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "कृत्वस्-मेलनम्",
-            "form_before": b,
-            "form_after": s.flat_slp1(),
-            "why_dev": "अङ्ग+कृत्वसुट्-संयोजनम् (संरचनात्मकं)।",
-            "status": "APPLIED",
-        }
+    s.emit_structural(
+        f"__KFTVAS_MERGE__{label}__",
+        form_before=b,
+        form_after=s.flat_slp1(),
+        why_dev="अङ्ग+कृत्वसुट्-संयोजनम् (संरचनात्मकं)।",
+        type_label="कृत्वस्-मेलनम्",
     )
     return s
 
@@ -118,7 +114,6 @@ def derive_katikftvaH() -> State:
         meta={"upadesha_slp1": "qati"},
     )
     s = State(terms=[kim, qati], meta={"linga": "pulliṅga"}, trace=[])
-    s.meta["6_4_143_kim_qati_arm"] = True
     s = apply_rule("6.4.143", s)
     s = apply_rule("1.2.45", s)
     s = apply_rule("1.1.23", s)

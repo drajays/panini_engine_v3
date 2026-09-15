@@ -73,9 +73,7 @@ def _merge_finish(s: State, *, need_tripadi: bool = False,
     if need_tripadi or need_visarga or need_ns_drop or need_t_to_d:
         s = apply_rule("8.2.1", s)
         if need_ns_drop:
-            s.meta["8_2_23_asmad_ns_arm"] = True
             s = apply_rule("8.2.23", s)
-            s.meta.pop("8_2_23_asmad_ns_arm", None)
         if need_t_to_d:
             s = apply_rule("8.2.39", s)
         if need_visarga:
@@ -101,9 +99,7 @@ def _cell_1_1(s: State) -> State:
 
 def _cell_1_2(s: State) -> State:
     """आवाम् — prathamā dvivacana."""
-    s.meta["7_1_28_au_arm"] = True
     s = apply_rule("7.1.28", s)       # au → am
-    s.meta.pop("7_1_28_au_arm", None)
     s.meta["7_2_92_arm"] = True
     s = apply_rule("7.2.92", s)       # asm → āva
     s.meta.pop("7_2_92_arm", None)
@@ -118,9 +114,7 @@ def _cell_1_2(s: State) -> State:
 
 def _cell_1_3(s: State) -> State:
     """वयम् — prathamā bahuvacana."""
-    s.meta["7_1_28_as_arm"] = True
     s = apply_rule("7.1.28", s)       # jas/as → am
-    s.meta.pop("7_1_28_as_arm", None)
     s.meta["7_2_93_arm"] = True
     s = apply_rule("7.2.93", s)       # asm → vaya
     s.meta.pop("7_2_93_arm", None)
@@ -147,9 +141,7 @@ def _cell_2_1(s: State) -> State:
 
 def _cell_2_2(s: State) -> State:
     """आवाम् — dvitīyā dvivacana."""
-    s.meta["7_1_28_au_arm"] = True
     s = apply_rule("7.1.28", s)       # auT → am (after T-it lopa)
-    s.meta.pop("7_1_28_au_arm", None)
     s.meta["7_2_92_arm"] = True
     s = apply_rule("7.2.92", s)       # asm → āva
     s.meta.pop("7_2_92_arm", None)
@@ -210,9 +202,7 @@ def _cell_3_3(s: State) -> State:
 
 def _cell_4_1(s: State) -> State:
     """मह्यम् — caturthi ekavacana."""
-    s.meta["7_1_28_e_arm"] = True
     s = apply_rule("7.1.28", s)       # ṅe/e → am
-    s.meta.pop("7_1_28_e_arm", None)
     s.meta["7_2_95_arm"] = True
     s = apply_rule("7.2.95", s)       # asm → mahya
     s.meta.pop("7_2_95_arm", None)

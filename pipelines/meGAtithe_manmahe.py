@@ -49,10 +49,8 @@ def _mk_manmahe_tin() -> Term:
 def derive_meGAtithe_manmahe_prakriya_28() -> State:
     s = State(terms=[_mk_meGAtithe_voc(), _mk_manmahe_tin()], meta={}, trace=[])
 
-    s.meta["prakriya_28_2_1_2_arm"] = True
     s = apply_rule("2.1.2", s)
 
-    s.meta["prakriya_28_6_1_198_arm"] = True
     s = apply_rule("6.1.198", s)
 
     s.meta["megha_6_1_158_recipe"] = True
@@ -60,7 +58,6 @@ def derive_meGAtithe_manmahe_prakriya_28() -> State:
 
     s = apply_rule("8.2.1", s)
 
-    s.meta["prakriya_28_8_4_66_arm"] = True
     s = apply_rule("8.4.66", s)
     return s
 

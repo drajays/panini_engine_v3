@@ -38,7 +38,7 @@ def derive_jiGfkSati() -> State:
     s = State(terms=[dhatu], meta={}, trace=[])
 
     # Add sanādi (desiderative) suffix.
-    s.meta["3_1_7_san_arm"] = True
+    s.meta["san_recipe"] = "san"
     s = P00_san_kit_kngiti(s)
 
     # samprasāraṇa r→f and pūrvarūpa (delete following a)
@@ -58,9 +58,7 @@ def derive_jiGfkSati() -> State:
         s.terms[0].varnas = list(parse_slp1_upadesha_sequence("ga"))
 
     # abhyāsa changes: g -> j, a -> i
-    s.meta["7_4_62_kuhoscu_abhyasa_arm"] = True
     s = apply_rule("7.4.62", s)
-    s.meta["7_4_79_sanyatah_abhyasa_arm"] = True
     s = apply_rule("7.4.79", s)
 
     # h->D then g->G then D->k before s of san.

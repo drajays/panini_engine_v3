@@ -55,16 +55,12 @@ def _structural_merge_agama_into_anga(state: State) -> State:
     merged_varnas = [v.clone() for v in anga.varnas] + [v.clone() for v in agm.varnas]
     anga.varnas = merged_varnas
     state.terms.pop(1)
-    state.trace.append(
-        {
-            "sutra_id": "__ZUK_MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "षुक्-मेलनम्",
-            "form_before": before,
-            "form_after": state.flat_slp1(),
-            "why_dev": "षुक्-आगमस्य शेष-वर्णः (ष्) अङ्गे एव अन्तर्भाव्यते (संरचनात्मकं, न सूत्रम्)।",
-            "status": "APPLIED",
-        }
+    state.emit_structural(
+        "__ZUK_MERGE__",
+        form_before=before,
+        form_after=state.flat_slp1(),
+        why_dev="षुक्-आगमस्य शेष-वर्णः (ष्) अङ्गे एव अन्तर्भाव्यते (संरचनात्मकं, न सूत्रम्)।",
+        type_label="षुक्-मेलनम्",
     )
     return state
 
@@ -83,16 +79,12 @@ def _structural_merge_non_ghost_terms_to_pratipadika(state: State, *, upadesha_s
     )
     before = state.flat_slp1()
     state.terms = [merged]
-    state.trace.append(
-        {
-            "sutra_id": "__TADDHITA_MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "तद्धित-मेलनम्",
-            "form_before": before,
-            "form_after": state.flat_slp1(),
-            "why_dev": "तद्धितान्त-प्रातिपदिक-रचना (संरचनात्मकं, न सूत्रम्)।",
-            "status": "APPLIED",
-        }
+    state.emit_structural(
+        "__TADDHITA_MERGE__",
+        form_before=before,
+        form_after=state.flat_slp1(),
+        why_dev="तद्धितान्त-प्रातिपदिक-रचना (संरचनात्मकं, न सूत्रम्)।",
+        type_label="तद्धित-मेलनम्",
     )
     return state
 
@@ -102,9 +94,7 @@ def _derive_vikara_neuter_nom_sg(stem_slp1: str, *, out_upadesha_slp1: str) -> S
     s = apply_rule("4.1.2", s)   # Nas
     s = apply_rule("1.1.46", s)  # kit/tit placement gate
 
-    s.meta["4_3_138_arm"] = True
     s = apply_rule("4.3.138", s)
-    s.meta.pop("4_3_138_arm", None)
 
     s = _run_it_chain(s)         # zuk -> z ; aR -> a (with R as it-marker)
     s = _structural_merge_agama_into_anga(s)

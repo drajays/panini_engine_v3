@@ -78,12 +78,13 @@ def derive_kurucarI() -> State:
         meta={"upadesha_slp1": "kurucara", "corrected_v2_P005_A_kurucara_stem": True},
     )
     s.terms = [merged]
-    s.trace.append({
-        "sutra_id": "__MERGE__", "sutra_type": "STRUCTURAL",
-        "type_label": "उपपद-कुरुचर",
-        "form_before": before, "form_after": s.flat_slp1(),
-        "why_dev": "कुरु + चर् + ट्-शेष → कुरुचर।", "status": "APPLIED",
-    })
+    s.emit_structural(
+        "__MERGE__",
+        form_before=before,
+        form_after=s.flat_slp1(),
+        why_dev="कुरु + चर् + ट्-शेष → कुरुचर।",
+        type_label="उपपद-कुरुचर",
+    )
 
     s = apply_rule("1.2.46", s)
     s = apply_rule("4.1.15", s)
@@ -106,12 +107,13 @@ def derive_kurucarI() -> State:
         meta={"upadesha_slp1": "kurucarI"},
     )
     s.terms = [merged2]
-    s.trace.append({
-        "sutra_id": "__MERGE__", "sutra_type": "STRUCTURAL",
-        "type_label": "कुरुचरी",
-        "form_before": before2, "form_after": s.flat_slp1(),
-        "why_dev": "कुरुचर् + ई → कुरुचरी।", "status": "APPLIED",
-    })
+    s.emit_structural(
+        "__MERGE__",
+        form_before=before2,
+        form_after=s.flat_slp1(),
+        why_dev="कुरुचर् + ई → कुरुचरी।",
+        type_label="कुरुचरी",
+    )
 
     s = apply_rule("4.1.1", s)
     s.meta["vibhakti_vacana"] = "1-1"
@@ -181,12 +183,13 @@ def derive_upasarajaH() -> State:
         meta={"upadesha_slp1": "upasaraja"},
     )
     s.terms = [merged]
-    s.trace.append({
-        "sutra_id": "__MERGE__", "sutra_type": "STRUCTURAL",
-        "type_label": "उपपद-उपसरज",
-        "form_before": before, "form_after": s.flat_slp1(),
-        "why_dev": "उपसर + ज् + अ → उपसरज।", "status": "APPLIED",
-    })
+    s.emit_structural(
+        "__MERGE__",
+        form_before=before,
+        form_after=s.flat_slp1(),
+        why_dev="उपसर + ज् + अ → उपसरज।",
+        type_label="उपपद-उपसरज",
+    )
 
     s = apply_rule("1.2.46", s)
     s.meta["linga"] = "pulliṅga"

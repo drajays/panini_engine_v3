@@ -46,7 +46,6 @@ def derive_akurvAtAm_laG_tanadi_kf_P020() -> State:
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
 
     s = P00_tin_adesha_base(s, "AtAm")
-    s.meta["3_1_79_tanadi_u_arm"] = True
     s = P00_tanadi_u_guna(s)
     if s.terms:
         s.terms[0].tags.discard("upadesha")

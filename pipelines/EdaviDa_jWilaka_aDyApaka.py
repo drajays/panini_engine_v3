@@ -80,29 +80,22 @@ def derive_EdaviDa_triplet_prakriya_32() -> State:
         trace=[],
     )
 
-    s.meta["prakriya_32_2_3_48_arm"] = True
-    s.meta["prakriya_32_6_1_198_arm"] = True
     s.meta["trivoc_6_1_158_recipe"] = True
     s = P00_amantrana_2_3_48_accent(s)
 
     s = apply_rule("8.1.16", s)
     s = apply_rule("8.1.18", s)
 
-    s.meta["prakriya_32_8_1_72_arm"] = True
     s = apply_rule("8.1.72", s)
 
-    s.meta["prakriya_32_8_1_73_arm"] = True
     s = apply_rule("8.1.73", s)
 
-    s.meta["prakriya_32_8_1_19_jWilaka_arm"] = True
     s = apply_rule("8.1.19", s)
 
-    s.meta["prakriya_32_8_1_19_aDyApaka_arm"] = True
     s = apply_rule("8.1.19", s)
 
     s = apply_rule("8.2.1", s)
 
-    s.meta["prakriya_32_8_4_66_arm"] = True
     s = apply_rule("8.4.66", s)
     return s
 

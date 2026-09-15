@@ -35,7 +35,7 @@ def derive_rurudizati() -> State:
     s = State(terms=[dhatu], meta={}, trace=[])
 
     # Add sanādi (desiderative) suffix.
-    s.meta["3_1_7_san_arm"] = True
+    s.meta["san_recipe"] = "san"
     s = P00_san_kit_kngiti(s)
     s = apply_rule("3.1.32", s)
 

@@ -11,6 +11,7 @@ from collections.abc import Callable
 import sutras  # noqa: F401
 
 from engine import apply_rule
+from core.phases.tripadi import execute_tripadi_phase
 from engine.fixed_point import run_to_fixed_point
 from engine.lopa_ghost import term_is_sup_luk_ghost
 from engine.state import State, Term
@@ -269,9 +270,7 @@ def P00_snam_infix_8_2_1(s: State) -> State:
     """Rudhādi śnam infix + Tripāḍī: 1.1.47 → 3.1.78 (śnam) → pada-merge → 8.2.1."""
     from pipelines.subanta import _pada_merge  # noqa: PLC0415
     s = apply_rule("1.1.47", s)
-    s.meta["3_1_78_snam_arm"] = True
     s = apply_rule("3.1.78", s)
-    s.meta.pop("3_1_78_snam_arm", None)
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
     return s
@@ -601,7 +600,17 @@ def P00_tin_tusma_audit_halantyam_lopa(s: State) -> State:
     """
     Common tiṅ ādeśa it-lopa slice:
     1.3.4 (tusma audit) → 1.3.3 (halantyam) → 1.3.9 (tasya lopaḥ).
+
+    Stamps ``meta["pit"] = True`` on tiṅ pratyaya terms whose upadeśa ends in
+    'P' (the pit-marker) *before* 1.3.9 removes it — so 1.2.4 can skip these
+    (pit forms: tiP/siP/miP are NOT apit; taS/jhi/vas/mas/etc. are apit).
     """
+    # Stamp pit=True before 1.3.9 removes the p-marker (tiP/siP/miP upadeśas end in 'p').
+    for t in s.terms:
+        if "pratyaya" in t.tags:
+            up = (t.meta.get("upadesha_slp1") or "").strip()
+            if up.endswith("p") or up.endswith("P"):
+                t.meta["pit"] = True
     for sid in ("1.3.4", "1.3.3", "1.3.9"):
         s = apply_rule(sid, s)
     return s
@@ -707,20 +716,14 @@ def P00_ugit_pratipadika_prathama_sup_tail(s: State) -> State:
     t0.tags.add("prātipadika")
     t0.tags.add("anga")
     s.meta["vibhakti_vacana"] = "1-1"
-    s.meta["1_1_43_arm"] = True
     s = apply_rule("4.1.2", s)
     for sid in ("1.3.2", "1.3.9"):
         s = apply_rule(sid, s)
     s = apply_rule("1.1.43", s)
-    s.meta.pop("1_1_43_arm", None)
     s = apply_rule("1.1.47", s)
-    s.meta["7_1_70_arm"] = True
     s = apply_rule("7.1.70", s)
-    s.meta.pop("7_1_70_arm", None)
     s = apply_rule("6.4.1", s)
-    s.meta["6_4_14_arm"] = True
     s = apply_rule("6.4.14", s)
-    s.meta.pop("6_4_14_arm", None)
     s = apply_rule("1.2.41", s)
     s = apply_rule("6.1.68", s)
     s = apply_rule("1.4.14", s)
@@ -760,8 +763,7 @@ def P00_ciY_ktavatu_nistha_prathama_tail(s: State) -> State:
     """
     from pipelines.subanta import _pada_merge
 
-    if s.meta.get("6_1_111_nn_t_lopa_arm"):
-        s = apply_rule("6.1.111", s)
+    s = apply_rule("6.1.111", s)
     _pada_merge(s)
     if s.meta.pop("ktavatu_mfz_stuta_arm", None):
         s.meta["8_4_40_pre_tripadi_arm"] = True
@@ -942,19 +944,13 @@ def P00_lat_vartamane_tip_and_sap(s: State) -> State:
 
 
 def P00_tripadi_rutva_visarga(s: State) -> State:
-    """Common Tripāḍī tail for prathamā-ekavacana su: 8.2.1 → 8.2.66 → 8.3.15."""
-    s = apply_rule("8.2.1", s)
-    s = apply_rule("8.2.66", s)
-    s = apply_rule("8.3.15", s)
-    return s
+    """Universal Tripāḍī phase (delegates to execute_tripadi_phase)."""
+    return execute_tripadi_phase(s)
 
 
 def P00_tripadi_8_4_55_visarga(s: State) -> State:
-    """Tripāḍī 8.4.55 (jhaL→jaz) → 8.2.66 (ru) → 8.3.15 (visarga)."""
-    s = apply_rule("8.4.55", s)
-    s = apply_rule("8.2.66", s)
-    s = apply_rule("8.3.15", s)
-    return s
+    """Universal Tripāḍī phase (delegates to execute_tripadi_phase)."""
+    return execute_tripadi_phase(s)
 
 
 def P00_luk_samjna_60_62(s: State) -> State:
@@ -1230,7 +1226,10 @@ def derive_salIyaH() -> State:
     s.blocked_sutras = set(taddh.blocked_sutras)
     s.niyama_gates = dict(taddh.niyama_gates)
     s.atidesha_map = dict(taddh.atidesha_map)
-    s.vibhasha_forks = [dict(f) for f in taddh.vibhasha_forks]
+    s.vibhasha_forks = [
+        f.clone() if hasattr(f, "clone") else dict(f)
+        for f in taddh.vibhasha_forks
+    ]
     s.nipatana_flag = taddh.nipatana_flag
     s.tripadi_zone = taddh.tripadi_zone
     s.phase = taddh.phase
@@ -1587,11 +1586,8 @@ def P00_avyaya_sup_luk(s: State) -> State:
 
 
 def P00_tripadi_anusvara_parasavarna(s: State) -> State:
-    """Tripāḍī anusvāra + parasavarṇa: 8.2.1 → 8.3.24 → 8.4.58."""
-    s = apply_rule("8.2.1", s)
-    s = apply_rule("8.3.24", s)
-    s = apply_rule("8.4.58", s)
-    return s
+    """Universal Tripāḍī phase (delegates to execute_tripadi_phase)."""
+    return execute_tripadi_phase(s)
 
 
 def P00_ru_visarga_pair(s: State) -> State:
@@ -1602,11 +1598,8 @@ def P00_ru_visarga_pair(s: State) -> State:
 
 
 def P00_tripadi_samyoganta_ru_visarga(s: State) -> State:
-    """Tripāḍī saṃyogānta-lopa + ru + visarga: 8.2.23 → 8.2.66 → 8.3.15."""
-    s = apply_rule("8.2.23", s)
-    s = apply_rule("8.2.66", s)
-    s = apply_rule("8.3.15", s)
-    return s
+    """Universal Tripāḍī phase (delegates to execute_tripadi_phase)."""
+    return execute_tripadi_phase(s)
 
 
 def P00_adadi_tere_3_4_79(s: State) -> State:

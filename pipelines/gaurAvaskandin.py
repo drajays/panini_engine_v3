@@ -44,21 +44,17 @@ def _mk_gaurAvaskandin_vocative_demo() -> Term:
 def derive_gaurAvaskandin_prakriya_29() -> State:
     s = State(terms=[_mk_gaurAvaskandin_vocative_demo()], meta={}, trace=[])
 
-    s.meta["prakriya_29_2_3_48_arm"] = True
     s = apply_rule("2.3.48", s)
 
-    s.meta["prakriya_29_6_1_197_arm"] = True
     s = apply_rule("6.1.197", s)
 
     s.meta["gaura_6_1_158_recipe"] = True
     s = apply_rule("6.1.158", s)
 
-    s.meta["prakriya_29_6_1_198_arm"] = True
     s = apply_rule("6.1.198", s)
 
     s = apply_rule("8.2.1", s)
 
-    s.meta["prakriya_29_8_4_66_arm"] = True
     s = apply_rule("8.4.66", s)
     return s
 

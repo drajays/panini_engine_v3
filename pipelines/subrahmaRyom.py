@@ -53,16 +53,12 @@ def _structural_pada_merge(s: State) -> State:
         meta={"upadesha_slp1": "subrahmaRyom"},
     )
     s.terms = [merged]
-    s.trace.append(
-        {
-            "sutra_id": "__SUBRAHMArYOM_PADA_MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "सुब्रह्मण्योम्-पद-मेलनम्",
-            "form_before": b,
-            "form_after": s.flat_slp1(),
-            "why_dev": "ओम्-पूर्वं एकं पदम् (संरचनात्मकं)।",
-            "status": "APPLIED",
-        }
+    s.emit_structural(
+        "__SUBRAHMArYOM_PADA_MERGE__",
+        form_before=b,
+        form_after=s.flat_slp1(),
+        why_dev="ओम्-पूर्वं एकं पदम् (संरचनात्मकं)।",
+        type_label="सुब्रह्मण्योम्-पद-मेलनम्",
     )
     return s
 
@@ -71,7 +67,6 @@ def derive_subrahmaRyom_prakriya_25() -> State:
     s = _mk_subrahmaRyA_om()
     s.meta["sandhi_6_1_152_recipe"] = True
     s = apply_rule("6.1.152", s)
-    s.meta["prakriya_25_6_1_62_pararupa_arm"] = True
     s = apply_rule("6.1.62", s)
     s = _structural_pada_merge(s)
     return s

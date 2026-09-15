@@ -72,10 +72,8 @@ def _mk_spfSa_dhatu_kvin_demo() -> Term:
 def derive_prakriya_35_spfSa_ac_karmakartari() -> State:
     s = State(terms=[_mk_spfSa_dhatu_kvin_demo()], meta={}, trace=[])
 
-    s.meta["prakriya_35_1_3_1_arm"] = True
     s = apply_rule("1.3.1", s)
 
-    s.meta["prakriya_35_3_1_62_arm"] = True
     s = apply_rule("3.1.62", s)
     return s
 

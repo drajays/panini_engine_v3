@@ -54,27 +54,22 @@ def _structural_sAmanya_merge(s: State) -> State:
         meta={"upadesha_slp1": "sAmanya"},
     )
     s.terms = [merged]
-    s.trace.append({
-        "sutra_id"    : "__TADDHITA_SAMANYA_MERGE__",
-        "sutra_type"  : "STRUCTURAL",
-        "type_label"  : "तद्धित-मेलनम्",
-        "form_before" : form_before,
-        "form_after"  : s.flat_slp1(),
-        "why_dev"     : "सामन् + यत्-इत-lopa → सामन्य (संरचनात्मकं)।",
-        "status"      : "APPLIED",
-    })
+    s.emit_structural(
+        "__TADDHITA_SAMANYA_MERGE__",
+        form_before=form_before,
+        form_after=s.flat_slp1(),
+        why_dev="सामन् + यत्-इत-lopa → सामन्य (संरचनात्मकं)।",
+        type_label="तद्धित-मेलनम्",
+    )
     return s
 
 
 def derive_sAmanyas() -> State:
     s = State(terms=[_mk_sAman(), _mk_Ni_sup()])
     s.meta["prakriya_18_sAmanyas"] = True
-    s.meta["prakriya_18_4_4_98_arm"] = True
     s = apply_rule("4.4.98", s)
     s = apply_rule("6.4.168", s)
-    s.meta["prakriya_18_6_4_144_attempt_arm"] = True
     s = apply_rule("6.4.144", s)
-    s.meta.pop("prakriya_18_6_4_144_attempt_arm", None)
 
     s.meta[META_TADDHITA_AVAYAVA] = True
     s = apply_rule("1.2.46", s)

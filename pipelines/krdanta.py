@@ -86,15 +86,13 @@ def _structural_merge_to_pratipadika(state: State, *, upadesha_slp1: str) -> Sta
     before = s.flat_slp1()
     s.terms = [prat]
     after = s.flat_slp1()
-    s.trace.append({
-        "sutra_id": "__KRD_MERGE__",
-        "sutra_type": "STRUCTURAL",
-        "type_label": "कृदन्त-मेलनम्",
-        "form_before": before,
-        "form_after": after,
-        "why_dev": "धातु + कृत्-प्रत्ययः → प्रातिपदिकम् (संरचनात्मकं, न सूत्रम्)।",
-        "status": "APPLIED",
-    })
+    s.emit_structural(
+        "__KRD_MERGE__",
+        form_before=before,
+        form_after=after,
+        why_dev="धातु + कृत्-प्रत्ययः → प्रातिपदिकम् (संरचनात्मकं, न सूत्रम्)।",
+        type_label="कृदन्त-मेलनम्",
+    )
     return s
 
 
@@ -120,15 +118,13 @@ def _structural_merge_trc_pratipadika(state: State, *, upadesha_slp1: str) -> St
     before = s.flat_slp1()
     s.terms = [prat]
     after = s.flat_slp1()
-    s.trace.append({
-        "sutra_id": "__KRD_MERGE_TRC__",
-        "sutra_type": "STRUCTURAL",
-        "type_label": "कृदन्त-मेलनम् (तृच्)",
-        "form_before": before,
-        "form_after": after,
-        "why_dev": "धातु + तृच् → प्रातिपदिकम् (ऋ-अन्त, न कारान्त)।",
-        "status": "APPLIED",
-    })
+    s.emit_structural(
+        "__KRD_MERGE_TRC__",
+        form_before=before,
+        form_after=after,
+        why_dev="धातु + तृच् → प्रातिपदिकम् (ऋ-अन्त, न कारान्त)।",
+        type_label="कृदन्त-मेलनम् (तृच्)",
+    )
     return s
 
 

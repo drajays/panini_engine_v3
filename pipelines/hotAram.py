@@ -34,15 +34,11 @@ def derive_hotAram_prakriya_21():
     s = run_subanta_preflight_through_1_4_7(s)
     s = apply_rule("4.1.2", s)
 
-    s.meta["prakriya_21_1_1_43_am_arm"] = True
     s = apply_rule("1.1.43", s)
-    s.meta.pop("prakriya_21_1_1_43_am_arm", None)
 
-    s.meta["prakriya_21_7_3_110_arm"] = True
     s = apply_rule("7.3.110", s)
     s = apply_rule("1.1.51", s)
 
-    s.meta["prakriya_21_6_4_11_arm"] = True
     s = apply_rule("6.4.11", s)
 
     s = apply_rule("3.1.4", s)

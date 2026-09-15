@@ -38,8 +38,6 @@ def derive_dadhiccChatram() -> State:
     )
     s = State(terms=[t1, t2], meta={}, trace=[])
 
-    s.meta["6_1_73_che_ca_arm"] = True
-    s.meta["8_4_40_sto_tCh_arm"] = True
     s = P00_tuk_tripadi_6_1_73(s)
     return s
 

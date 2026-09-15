@@ -49,20 +49,16 @@ def derive_ninAya_lit_nI_P036() -> State:
     s = P00_hal_anit_guna(s)
     s = apply_rule("6.1.78", s)
 
-    s.meta["P036_8_4_41_Na_to_augment_a_arm"] = True
     s = apply_rule("8.4.41", s)
 
-    s.meta["P036_6_1_8_lit_sthanivat_ne_arm"] = True
     s = apply_rule("6.1.8", s)
 
-    s.meta["P036_7_4_59_abhyasa_ne_to_ni_arm"] = True
     s = apply_rule("7.4.59", s)
     s = apply_rule("7.4.60", s)
 
     from pipelines.subanta import _pada_merge  # noqa: PLC0415
 
     _pada_merge(s)
-    s.meta["P036_6_1_101_ninaya_dirgha_arm"] = True
     s = apply_rule("6.1.101", s)
     return s
 

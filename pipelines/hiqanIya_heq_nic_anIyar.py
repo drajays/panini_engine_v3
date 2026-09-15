@@ -32,16 +32,12 @@ def _merge_heq_nic_to_hiqi(s: State) -> State:
     dh.meta["6_4_51_nic_tail_i"] = True
     dh.tags.add("sanadi")
     s.terms.pop(1)
-    s.trace.append(
-        {
-            "sutra_id": "__HEQ_NIC_MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "णिच्-धातु-मेलनम्",
-            "form_before": before,
-            "form_after": s.flat_slp1(),
-            "why_dev": "हेड्+णिच् → हिडि (संरचनात्मकं, न सूत्रम्)।",
-            "status": "APPLIED",
-        }
+    s.emit_structural(
+        "__HEQ_NIC_MERGE__",
+        form_before=before,
+        form_after=s.flat_slp1(),
+        why_dev="हेड्+णिच् → हिडि (संरचनात्मकं, न सूत्रम्)।",
+        type_label="णिच्-धातु-मेलनम्",
     )
     return s
 
@@ -56,7 +52,7 @@ def derive_hiqanIya() -> State:
     )
     s = State(terms=[stem], meta={}, trace=[])
 
-    s.meta["3_1_26_nic_arm"] = True
+    s.meta["nic_recipe"] = "nic"
     s = apply_rule("3.1.26", s)
     s.meta.pop("3_1_26_nic_arm", None)
 
@@ -67,7 +63,7 @@ def derive_hiqanIya() -> State:
     s = apply_rule("6.4.1", s)
     s = apply_rule("3.1.32", s)
 
-    s.meta["3_1_96_anIyar_arm"] = True
+    s.meta["krtya_recipe"] = "anIyar"
     s = P00_tavyat_anIyar_it_lopa(s)
 
     if s.terms:

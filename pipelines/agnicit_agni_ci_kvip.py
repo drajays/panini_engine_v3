@@ -36,16 +36,12 @@ def _p041_remove_empty_kvip(state: State) -> None:
         return
     b = state.flat_slp1()
     state.terms = new_terms
-    state.trace.append(
-        {
-            "sutra_id": "__MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "क्विप्-शेष-लोपः",
-            "form_before": b,
-            "form_after": state.flat_slp1(),
-            "why_dev": "क्विप्-प्रत्ययस्य सर्व-वर्ण-लोपानन्तरम् अपसारणम् (P041)।",
-            "status": "APPLIED",
-        }
+    state.emit_structural(
+        "__MERGE__",
+        form_before=b,
+        form_after=state.flat_slp1(),
+        why_dev="क्विप्-प्रत्ययस्य सर्व-वर्ण-लोपानन्तरम् अपसारणम् (P041)।",
+        type_label="क्विप्-शेष-लोपः",
     )
 
 
@@ -64,16 +60,12 @@ def _p041_merge_agni_cit(state: State) -> None:
     )
     b = state.flat_slp1()
     state.terms = [merged]
-    state.trace.append(
-        {
-            "sutra_id": "__MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "उपपद-क्विप्-मेलनम्",
-            "form_before": b,
-            "form_after": state.flat_slp1(),
-            "why_dev": "अग्नि + चित् → अग्निचित् (संरचनात्मकं, P041)।",
-            "status": "APPLIED",
-        }
+    state.emit_structural(
+        "__MERGE__",
+        form_before=b,
+        form_after=state.flat_slp1(),
+        why_dev="अग्नि + चित् → अग्निचित् (संरचनात्मकं, P041)।",
+        type_label="उपपद-क्विप्-मेलनम्",
     )
 
 
@@ -98,12 +90,10 @@ def derive_agnicit_agni_ci_kvip_P041() -> State:
     s.meta["kvip_recipe"] = True
     s = apply_rule("3.2.76", s)
 
-    s.meta["P041_3_2_91_arm"] = True
     s = apply_rule("3.2.91", s)
 
     s = P00_lashakvataddhite_it_lopa_chain(s)
     # ``kvip`` may leave a ``vi`` / ``v`` residue (**6.1.67**, same motor as *prakriya_22*).
-    s.meta["prakriya_22_kvip_residue_arm"] = True
     s = apply_rule("6.1.67", s)
     _p041_remove_empty_kvip(s)
 
@@ -116,7 +106,6 @@ def derive_agnicit_agni_ci_kvip_P041() -> State:
 
     s = apply_rule("1.1.46", s)
 
-    s.meta["P041_6_1_71_tuk_arm"] = True
     s = apply_rule("6.1.71", s)
 
     _p041_merge_agni_cit(s)

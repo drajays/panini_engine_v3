@@ -45,11 +45,9 @@ def derive_dyOH_div_subanta_P022() -> State:
     s = apply_rule("4.1.2", s)
 
     # Mark the sup as sarvanāmasthāna so 7.1.84 can see it.
-    s.meta["1_1_43_arm"] = True
     s = apply_rule("1.1.43", s)
 
     # div → dyOv before sarvanāmasthāna.
-    s.meta["P022_7_1_84_div_aut_arm"] = True
     s = apply_rule("7.1.84", s)
 
     # it-lopa: s~ → s so that 8.2.66 can fire.
@@ -59,7 +57,6 @@ def derive_dyOH_div_subanta_P022() -> State:
 
     # Tripāḍī rules.
     s = apply_rule("8.2.1", s)
-    s.meta["8_2_23_dyauH_v_lopa_arm"] = True
     s = apply_rule("8.2.23", s)
 
     from pipelines.subanta import _pada_merge

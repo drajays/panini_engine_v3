@@ -48,15 +48,12 @@ def _mk_me_asmad_demo() -> Term:
 def derive_imam_me_RV_prakriya_31() -> State:
     s = State(terms=[_mk_imam_acc_demo(), _mk_me_asmad_demo()], meta={}, trace=[])
 
-    s.meta["prakriya_31_6_1_197_arm"] = True
     s = apply_rule("6.1.197", s)
 
-    s.meta["prakriya_31_8_1_22_arm"] = True
     s = apply_rule("8.1.22", s)
 
     s = apply_rule("8.2.1", s)
 
-    s.meta["prakriya_31_8_4_66_arm"] = True
     s = apply_rule("8.4.66", s)
     return s
 

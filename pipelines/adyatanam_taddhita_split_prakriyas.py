@@ -33,7 +33,6 @@ def derive_adyatanam_taddhita_split_prakriyas_P019() -> State:
     s = State(terms=[stem], meta={}, trace=[])
     s.meta["prakriya_P019_adyatanam_split_prakriyas_11"] = True
 
-    s.meta["prakriya_P019_4_3_23_tyup_arm"] = True
     s = apply_rule("4.3.23", s)
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)

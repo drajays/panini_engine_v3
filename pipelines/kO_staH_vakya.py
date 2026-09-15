@@ -37,7 +37,6 @@ def _derive_kO() -> str:
     s = build_initial_state("kim", 1, 2, "pulliṅga")
     s = run_subanta_preflight_through_1_4_7(s)
     s = apply_rule("4.1.2", s)
-    s.meta["P028_7_2_103_kim_kah_arm"] = True
     s = apply_rule("7.2.103", s)
     # Continue the canonical subanta tail (includes 6.1.88 and ru/visarga)
     for sid in SUBANTA_RULE_IDS_POST_4_1_2:
@@ -86,8 +85,6 @@ def _derive_staH() -> str:
         meta={"upadesha_slp1": "Sap"},
     )
     s.terms.insert(1, Sap)
-    s.meta["2_4_72_sap_luk_arm"] = True
-    s.meta["P028_6_4_111_as_al_lopa_arm"] = True
     s = P00_as_lat_adadi_2_4_72(s)
 
     # Merge and ru/visarga for tas → taH.

@@ -85,15 +85,13 @@ def _structural_asi_to_as(s: State) -> State:
         t.varnas = list(parse_slp1_upadesha_sequence("as"))
         t.meta["upadesha_slp1"] = "as"
         break
-    s.trace.append({
-        "sutra_id"    : "__PRAKRIYA_19_ASI_TO_AS__",
-        "sutra_type"  : "STRUCTURAL",
-        "type_label"  : "उच्चारणार्थ-इकार-लोपः",
-        "form_before" : fb,
-        "form_after"  : s.flat_slp1(),
-        "why_dev"     : "असि-प्रत्ययस्यान्त्य-इकारस्य लोपः → अस् (संरचनात्मकं)।",
-        "status"      : "APPLIED",
-    })
+    s.emit_structural(
+        "__PRAKRIYA_19_ASI_TO_AS__",
+        form_before=fb,
+        form_after=s.flat_slp1(),
+        why_dev="असि-प्रत्ययस्यान्त्य-इकारस्य लोपः → अस् (संरचनात्मकं)।",
+        type_label="उच्चारणार्थ-इकार-लोपः",
+    )
     return s
 
 
@@ -103,7 +101,6 @@ def derive_puras_avyaya_prakriya_19() -> State:
 
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
 
-    s.meta["prakriya_19_puras_5_3_39_arm"] = True
     s = apply_rule("5.3.39", s)
 
     s.meta[META_TADDHITA_AVAYAVA] = True

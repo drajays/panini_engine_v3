@@ -44,13 +44,11 @@ def derive_tasmAd_iti_uttarasya_paribhasha_P044_note() -> State:
     s = apply_rule("1.1.68", s)
     s = apply_rule("1.1.67", s)
 
-    s.meta["P044_8_1_28_tin_context_arm"] = True
     s = apply_rule("8.1.28", s)
 
     s.meta["atina_recipe"] = True
     s = apply_rule("1.1.67", s)
 
-    s.meta["P044_8_1_28_nighata_illustration_arm"] = True
     s = apply_rule("8.1.28", s)
 
     s = apply_rule("1.1.66", s)

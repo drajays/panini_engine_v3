@@ -48,16 +48,12 @@ def _structural_merge_to_pratipadika(state: State, *, upadesha_slp1: str) -> Sta
     )
     before = s.flat_slp1()
     s.terms = [merged]
-    s.trace.append(
-        {
-            "sutra_id": "__UKTA_MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "उक्त-मेलनम्",
-            "form_before": before,
-            "form_after": s.flat_slp1(),
-            "why_dev": "धातु + क्त → प्रातिपदिकम् (संरचनात्मकं, न सूत्रम्)।",
-            "status": "APPLIED",
-        }
+    s.emit_structural(
+        "__UKTA_MERGE__",
+        form_before=before,
+        form_after=s.flat_slp1(),
+        why_dev="धातु + क्त → प्रातिपदिकम् (संरचनात्मकं, न सूत्रम्)।",
+        type_label="उक्त-मेलनम्",
     )
     return s
 

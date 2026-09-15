@@ -57,15 +57,13 @@ def _structural_merge_dvandva(st1: Term, st2: Term) -> State:
         meta={"upadesha_slp1": merged_slp1},
     )
     s0 = State(terms=[merged], meta={}, trace=s.trace)
-    s0.trace.append({
-        "sutra_id": "__DVANDVA_MERGE__",
-        "sutra_type": "STRUCTURAL",
-        "type_label": "द्वन्द्व-मेलनम्",
-        "form_before": merged_slp1,
-        "form_after": merged_slp1,
-        "why_dev": "कतर + कतम → कतरकतम (संरचनात्मकं, न सूत्रम्)।",
-        "status": "APPLIED",
-    })
+    s0.emit_structural(
+        "__DVANDVA_MERGE__",
+        form_before=merged_slp1,
+        form_after=merged_slp1,
+        why_dev="कतर + कतम → कतरकतम (संरचनात्मकं, न सूत्रम्)।",
+        type_label="द्वन्द्व-मेलनम्",
+    )
     return s0
 
 

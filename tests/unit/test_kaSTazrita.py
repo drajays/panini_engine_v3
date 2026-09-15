@@ -39,10 +39,7 @@ def test_spine_order_and_registry() -> None:
 def test_2_1_23_requires_samasa_adhikara() -> None:
     s = State(
         terms=[_mk_kaSTazrita_witness()],
-        meta={
-            "prakriya_38_dvitIyA_compound_vidhi_note": True,
-            "prakriya_38_2_1_23_arm": True,
-        },
+        meta={"prakriya_38_dvitIyA_compound_vidhi_note": True},
         trace=[],
     )
     s1 = apply_rule("2.1.23", s)

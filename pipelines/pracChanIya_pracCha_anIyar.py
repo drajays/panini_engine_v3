@@ -45,7 +45,6 @@ def derive_pracChanIya() -> State:
     s = P00_tavyat_anIyar_it_lopa(s)
 
     # 6.1.73 tuk → pada-merge → 8.2.1 → 8.4.40 stoḥ ścunā: t+C → c
-    s.meta["8_4_40_sto_tCh_arm"] = True
     s = P00_tuk_tripadi_6_1_73(s)
     return s
 

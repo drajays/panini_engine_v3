@@ -40,7 +40,6 @@ def derive_kaSTazrita_prakriya_38() -> State:
     s = apply_rule("2.1.3", s)
 
     s.meta["prakriya_38_dvitIyA_compound_vidhi_note"] = True
-    s.meta["prakriya_38_2_1_23_arm"] = True
     s = apply_rule("2.1.23", s)
     return s
 

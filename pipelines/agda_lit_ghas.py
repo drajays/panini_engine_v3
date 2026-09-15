@@ -57,18 +57,14 @@ def derive_agda_lit_ghas_P033() -> State:
     for sid in ("1.3.3", "1.3.9"):
         s = apply_rule(sid, s)
 
-    s.meta["P033_6_4_100_gas_upadha_arm"] = True
     s = apply_rule("6.4.100", s)
 
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
     s.meta["jhalo_jhali_recipe"] = True
     s = apply_rule("8.2.26", s)
-    s.meta["P033_8_2_40_G_to_d_arm"] = True
     s = apply_rule("8.2.40", s)
-    s.meta["P033_8_4_53_jashtva_arm"] = True
     s = apply_rule("8.4.53", s)
-    s.meta["P033_8_4_55_agda_bridge_arm"] = True
     s = apply_rule("8.4.55", s)
     return s
 

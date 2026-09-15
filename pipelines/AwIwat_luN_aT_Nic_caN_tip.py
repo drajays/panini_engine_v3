@@ -44,16 +44,12 @@ def _merge_Aw_nic_i(state: State) -> None:
     )
     merged.meta["upadesha_slp1"] = "awi"
     state.terms = [merged] + state.terms[2:]
-    state.trace.append(
-        {
-            "sutra_id": "__MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "धातु-मेलनम्",
-            "form_before": state.flat_slp1(),
-            "form_after": state.flat_slp1(),
-            "why_dev": "आट् + णिच्-अवशेष → आटि (P037 अन्तरा)।",
-            "status": "APPLIED",
-        }
+    state.emit_structural(
+        "__MERGE__",
+        form_before=state.flat_slp1(),
+        form_after=state.flat_slp1(),
+        why_dev="आट् + णिच्-अवशेष → आटि (P037 अन्तरा)।",
+        type_label="धातु-मेलनम्",
     )
 
 
@@ -75,12 +71,11 @@ def derive_AwIwat_luN_aT_Nic_caN_tip_P037() -> State:
     if s.terms:
         s.terms[0].tags.discard("upadesha")
 
-    s.meta["3_1_26_nic_arm"] = True
+    s.meta["nic_recipe"] = "nic"
     s = apply_rule("3.1.26", s)
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
 
-    s.meta["P037_7_2_116_arm"] = True
     s = apply_rule("7.2.116", s)
     _merge_Aw_nic_i(s)
 
@@ -98,7 +93,6 @@ def derive_AwIwat_luN_aT_Nic_caN_tip_P037() -> State:
     s = apply_rule("6.4.71", s)
     s = apply_rule("6.1.101", s)
 
-    s.meta["P037_6_4_51_arm"] = True
     s = apply_rule("6.4.51", s)
 
     s = apply_rule("6.1.1", s)
@@ -108,16 +102,11 @@ def derive_AwIwat_luN_aT_Nic_caN_tip_P037() -> State:
     s = apply_rule("6.1.1", s)
     s = apply_rule("6.1.4", s)
 
-    s.meta["P037_7_4_59_abhyasa_Aw_arm"] = True
     s = apply_rule("7.4.59", s)
-    s.meta["P037_7_4_93_sanvat_arm"] = True
     s = apply_rule("7.4.93", s)
-    s.meta["P037_7_4_94_dirgha_arm"] = True
     s = apply_rule("7.4.94", s)
-    s.meta["P037_7_4_60_Iw_trim_arm"] = True
     s = apply_rule("7.4.60", s)
 
-    s.meta["P037_6_1_101_awIw_cluster_arm"] = True
     s = apply_rule("6.1.101", s)
 
     from pipelines.subanta import _pada_merge  # noqa: PLC0415

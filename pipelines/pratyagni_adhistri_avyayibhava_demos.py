@@ -64,15 +64,13 @@ def _merge_to_single_pratipadika(s: State, *, label: str) -> State:
             merged.tags.add(tg)
     b = s.flat_slp1()
     s.terms = [merged]
-    s.trace.append({
-        "sutra_id": f"__AVYAYIBHAVA_MERGE__{label}__",
-        "sutra_type": "STRUCTURAL",
-        "type_label": "अव्ययीभाव-मेलनम्",
-        "form_before": b,
-        "form_after": s.flat_slp1(),
-        "why_dev": "समास-पश्चात् एकं प्रातिपदिकम् (संरचनात्मकं)।",
-        "status": "APPLIED",
-    })
+    s.emit_structural(
+        f"__AVYAYIBHAVA_MERGE__{label}__",
+        form_before=b,
+        form_after=s.flat_slp1(),
+        why_dev="समास-पश्चात् एकं प्रातिपदिकम् (संरचनात्मकं)।",
+        type_label="अव्ययीभाव-मेलनम्",
+    )
     return s
 
 

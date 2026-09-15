@@ -37,10 +37,10 @@ def test_subrahmaRyom_ordered_spine() -> None:
     assert ids.index("6.1.152") < ids.index("6.1.62")
 
 
-def test_6_1_62_requires_arm() -> None:
+def test_6_1_62_fires_structurally() -> None:
     s = _mk_subrahmaRyA_om()
     s1 = apply_rule("6.1.62", s)
-    assert s1.flat_slp1() == "subrahmaRyAom"
+    assert s1.flat_slp1() == "subrahmaRyom"
 
 
 def test_6_1_152_requires_arm() -> None:

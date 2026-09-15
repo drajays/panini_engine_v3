@@ -36,7 +36,6 @@ def derive_tva_prakriya_23() -> State:
     s = State(terms=[_mk_tvAm_pada()], meta={}, trace=[])
     s = apply_rule("8.1.18", s)
     s.meta["prakriya_23_apAda_adau_arm"] = True
-    s.meta["prakriya_23_8_1_23_arm"] = True
     s = apply_rule("8.1.23", s)
     return s
 

@@ -79,15 +79,13 @@ def _structural_merge_to_pratipadika(s: State, *, upadesha_slp1: str) -> State:
     before = s.flat_slp1()
     s.terms = [merged]
     after = s.flat_slp1()
-    s.trace.append({
-        "sutra_id": "__ARANYA_MERGE__",
-        "sutra_type": "STRUCTURAL",
-        "type_label": "आरण्य-मेलनम्",
-        "form_before": before,
-        "form_after": after,
-        "why_dev": "अरण्य + (ञ्य-शेष) → एकं प्रातिपदिकम् (संरचनात्मकं, न सूत्रम्)।",
-        "status": "APPLIED",
-    })
+    s.emit_structural(
+        "__ARANYA_MERGE__",
+        form_before=before,
+        form_after=after,
+        why_dev="अरण्य + (ञ्य-शेष) → एकं प्रातिपदिकम् (संरचनात्मकं, न सूत्रम्)।",
+        type_label="आरण्य-मेलनम्",
+    )
     return s
 
 

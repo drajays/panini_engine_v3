@@ -59,7 +59,7 @@ def derive_vivakSakaH_san_Nvul_P030() -> State:
 
     s = apply_rule("1.1.68", s)
 
-    s.meta["3_1_7_san_arm"] = True
+    s.meta["san_recipe"] = "san"
     s = P00_san_kit_kngiti(s)
     s = apply_rule("3.1.32", s)
 
@@ -68,14 +68,11 @@ def derive_vivakSakaH_san_Nvul_P030() -> State:
     s.meta["dvitva_recipe"] = True
     s = P00_san_dvitva(s)
 
-    s.meta["6_4_16_sani_dirgha_arm"] = True
-    s.meta["P030_7_4_60_abhyasa_vowel_only_arm"] = True
     s = P00_san_dirgha_hrasva(s)
 
     s = apply_rule("6.1.77", s)
 
     _pada_merge(s)
-    s.meta["P030_6_1_112_vivakSa_stem_arm"] = True
     s = apply_rule("6.1.112", s)
 
     if s.terms:

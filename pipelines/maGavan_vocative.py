@@ -35,10 +35,8 @@ def _mk_maGavan_Amant_demo() -> Term:
 def derive_maGavan_vocative_prakriya_30() -> State:
     s = State(terms=[_mk_maGavan_Amant_demo()], meta={}, trace=[])
 
-    s.meta["prakriya_30_2_3_48_arm"] = True
     s = apply_rule("2.3.48", s)
 
-    s.meta["prakriya_30_8_1_19_arm"] = True
     s = P00_amantrana_8_1_19(s)
     return s
 

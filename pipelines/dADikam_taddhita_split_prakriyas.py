@@ -36,7 +36,6 @@ def derive_dADikam_taddhita_split_prakriyas_P018() -> State:
     s.meta["prakriya_P018_dADikam_split_prakriyas_11"] = True
 
     s = apply_rule("4.1.76", s)
-    s.meta["prakriya_P018_4_4_135_Tak_arm"] = True
     s = apply_rule("4.4.135", s)
 
     s = apply_rule("1.3.7", s)
@@ -46,7 +45,6 @@ def derive_dADikam_taddhita_split_prakriyas_P018() -> State:
     s = apply_rule("1.1.50", s)
 
     s = apply_rule("6.4.1", s)
-    s.meta["prakriya_P018_6_4_148_i_lopa_before_ika_arm"] = True
     s = P00_taddhita_it_lopa_to_6_4(s)
 
     s = apply_rule("1.2.46", s)

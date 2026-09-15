@@ -57,7 +57,6 @@ def derive_yUpadAru_prakriya_39() -> State:
 
     s = apply_rule("2.1.3", s)
     s.meta["prakriya_39_catvarTI_compound_vidhi_note"] = True
-    s.meta["prakriya_39_2_1_36_arm"] = True
     s = apply_rule("2.1.36", s)
 
     s = P00_avyayibhava_pratipadika_luk(s)
@@ -88,7 +87,6 @@ def derive_vfkaBhayam_prakriya_39() -> State:
 
     s = apply_rule("2.1.3", s)
     s.meta["prakriya_39_paYcamI_compound_vidhi_note"] = True
-    s.meta["prakriya_39_2_1_37_arm"] = True
     s = apply_rule("2.1.37", s)
 
     s = P00_avyayibhava_pratipadika_luk(s)

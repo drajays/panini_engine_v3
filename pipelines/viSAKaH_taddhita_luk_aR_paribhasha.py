@@ -45,19 +45,15 @@ def _p039_masc_pada_for_visarga(state: State) -> None:
     t.varnas.append(mk("s"))
     t.kind = "pada"
     t.tags.add("pada")
-    state.trace.append(
-        {
-            "sutra_id": "__MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "P039-पुं-प्रथम-पद",
-            "form_before": state.flat_slp1(),
-            "form_after": state.flat_slp1(),
-            "why_dev": (
-                "टाप्-अन्त-स्त्रीमूलात् पुंलिङ्ग-प्रथमायाः विशाख-आकारान्तं "
-                "तथा पदान्त-सकारं संरचनात्मकं (JSON क्रमे ८.२.६६ सङ्क्षेपः)।"
-            ),
-            "status": "APPLIED",
-        }
+    state.emit_structural(
+        "__MERGE__",
+        form_before=state.flat_slp1(),
+        form_after=state.flat_slp1(),
+        why_dev=(
+        "टाप्-अन्त-स्त्रीमूलात् पुंलिङ्ग-प्रथमायाः विशाख-आकारान्तं "
+        "तथा पदान्त-सकारं संरचनात्मकं (JSON क्रमे ८.२.६६ सङ्क्षेपः)।"
+        ),
+        type_label="P039-पुं-प्रथम-पद",
     )
 
 
@@ -73,9 +69,7 @@ def derive_viSAKaH_taddhita_luk_aR_P039() -> State:
     s = apply_rule("1.1.68", s)
     s = apply_rule("4.1.76", s)
 
-    s.meta["P039_4_3_25_arm"] = True
     s = apply_rule("4.3.25", s)
-    s.meta["P039_4_3_34_arm"] = True
     s = apply_rule("4.3.34", s)
 
     s = apply_rule("1.1.60", s)

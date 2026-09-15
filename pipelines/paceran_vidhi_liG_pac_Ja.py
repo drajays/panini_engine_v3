@@ -62,11 +62,8 @@ def derive_paceran_vidhi_liG_pac_Ja_P038() -> State:
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
 
-    s.meta["7_2_79_sIyuw_s_lopa_arm"] = True
     s = apply_rule("7.2.79", s)
-    s.meta["P038_6_4_105_uw_trim_arm"] = True
     s = apply_rule("6.4.105", s)
-    s.meta["P038_6_1_70_y_before_r_arm"] = True
     s = apply_rule("6.1.70", s)
 
     # **3.1.91** *adhikāra* is purged once execution passes chapter **7** (see

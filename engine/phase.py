@@ -1,24 +1,14 @@
 """
-engine/phase.py — Three-phase derivation model.
-─────────────────────────────────────────────────
+engine/phase.py — Derivation phase model (extended for cond discipline).
+────────────────────────────────────────────────────────────────────────────
 
-CONSTITUTION v3.1 amendment.  The derivation proceeds through three
-phases in strict forward order:
+Forward-only phase chain for autonomous enumeration:
 
-    "angakarya"  → Adhyāya 6.4.x / 7.x base modifications (fixed-point)
-    "sandhi"     → Adhyāya 6.1.x + 8.1.x sandhi rules (one pass)
-    "tripadi"    → Adhyāya 8.2.1–8.4.68 (linear, asiddha to earlier)
+    upadesha  →  pratyaya  →  angakarya  →  sandhi  →  tripadi
 
-Phase transitions are declared by pipelines / recipes via
-`set_phase(state, new_phase)`.  Backward transitions raise PhaseError.
-The `tripadi_zone` bool on State mirrors `phase == "tripadi"` for
-backward compatibility with v3.0 gates.
-
-Rationale: prior to v3.1, the only phase machinery was the bool
-`tripadi_zone`, set by 8.2.1.  This worked for "am I past the
-tripāḍī barrier?" but gave no vocabulary for "am I in aṅgakārya?"
-vs "am I in sandhi?" — which matters once aṅgakārya becomes a
-fixed-point sweep (Article 7.3 amendment).
+Legacy default on ``State`` remains ``angakarya`` so recipe pipelines that
+never call ``set_phase`` still restrict scheduler scans to aṅgakārya + later
+phases only — not adhyāya 3 kṛt stubs on a bare dhātu tape.
 """
 from __future__ import annotations
 
@@ -30,22 +20,59 @@ class PhaseError(RuntimeError):
     a derivation step that has already begun."""
 
 
-_VALID_FORWARD = {
+_VALID_FORWARD: dict[str, str] = {
+    "upadesha"  : "pratyaya",
+    "pratyaya"  : "angakarya",
     "angakarya" : "sandhi",
     "sandhi"    : "tripadi",
 }
 
-_ALL_PHASES = frozenset({"angakarya", "sandhi", "tripadi"})
+_ALL_PHASES = frozenset(_VALID_FORWARD.keys()) | frozenset({"tripadi"})
+
+# Sūtra id ranges eligible per phase (inclusive lo/hi tuples).
+_PHASE_RANGES: dict[str, tuple[tuple[tuple[int, ...], tuple[int, ...]], ...]] = {
+    "upadesha": (
+        ((1, 1, 1), (1, 1, 100)),
+        ((1, 2, 1), (1, 2, 72)),
+        ((1, 3, 1), (1, 3, 9)),
+        ((1, 4, 1), (1, 4, 17)),
+    ),
+    "pratyaya": (
+        ((2, 4, 1), (2, 4, 85)),
+        ((3, 1, 1), (3, 4, 117)),
+    ),
+    "angakarya": (
+        ((6, 4, 1), (6, 4, 168)),
+        ((7, 1, 1), (7, 4, 62)),
+    ),
+    "sandhi": (
+        ((6, 1, 1), (6, 1, 229)),
+        ((6, 2, 1), (6, 2, 199)),
+        ((6, 3, 1), (6, 3, 999)),
+        ((8, 1, 1), (8, 1, 73)),
+    ),
+}
+
+
+def _id_tuple(sid: str) -> tuple[int, ...]:
+    return tuple(int(p) for p in sid.split("."))
+
+
+def sutra_in_phase(sutra_id: str, phase: str) -> bool:
+    """Return True iff ``sutra_id`` lies in the ID window for ``phase``."""
+    if phase == "tripadi":
+        return is_tripadi_sutra(sutra_id)
+    t = _id_tuple(sutra_id)
+    for lo, hi in _PHASE_RANGES.get(phase, ()):
+        if lo <= t <= hi:
+            return True
+    return False
 
 
 def set_phase(state: State, new_phase: str) -> State:
     """
-    Transition `state.phase` to `new_phase`, in place.  Returns the
+    Transition ``state.phase`` to ``new_phase``, in place.  Returns the
     state for convenience.  Raises PhaseError on invalid transitions.
-
-    Valid transitions:
-        angakarya → sandhi
-        sandhi    → tripadi
 
     Self-transitions (same → same) are no-ops (idempotent).
     """
@@ -56,7 +83,7 @@ def set_phase(state: State, new_phase: str) -> State:
 
     current = state.phase
     if current == new_phase:
-        return state  # idempotent
+        return state
 
     expected = _VALID_FORWARD.get(current)
     if expected != new_phase:
@@ -66,20 +93,18 @@ def set_phase(state: State, new_phase: str) -> State:
         )
 
     state.phase = new_phase
-    # Mirror into tripadi_zone for backward compat with v3.0 gates.
     state.tripadi_zone = (new_phase == "tripadi")
 
-    state.trace.append({
-        "sutra_id"    : "__PHASE__",
-        "sutra_type"  : "STRUCTURAL",
-        "type_label"  : "पदच्छेद-अवस्था",
-        "form_before" : state.flat_slp1(),
-        "form_after"  : state.flat_slp1(),
-        "why_dev"     : f"अवस्था-परिवर्तनम्: {current} → {new_phase}",
-        "status"      : "APPLIED",
-        "phase_from"  : current,
-        "phase_to"    : new_phase,
-    })
+    form = state.flat_slp1()
+    state.emit_structural(
+        "__PHASE__",
+        form_before=form,
+        form_after=form,
+        why_dev=f"अवस्था-परिवर्तनम्: {current} → {new_phase}",
+        type_label="पदच्छेद-अवस्था",
+        phase_from=current,
+        phase_to=new_phase,
+    )
     return state
 
 

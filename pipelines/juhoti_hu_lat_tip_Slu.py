@@ -31,16 +31,12 @@ def _p040_remove_slu_placeholder(state: State) -> None:
         return
     for i in reversed(idxs):
         state.terms.pop(i)
-    state.trace.append(
-        {
-            "sutra_id": "__MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "श्लु-अवशेष-लोपः",
-            "form_before": state.flat_slp1(),
-            "form_after": state.flat_slp1(),
-            "why_dev": "१.१.६१-अनन्तरं श्लु-प्रत्ययस्य संरचनात्मक-अपसारणम् (P040)।",
-            "status": "APPLIED",
-        }
+        state.emit_structural(
+        "__MERGE__",
+        form_before=state.flat_slp1(),
+        form_after=state.flat_slp1(),
+        why_dev="१.१.६१-अनन्तरं श्लु-प्रत्ययस्य संरचनात्मक-अपसारणम् (P040)।",
+        type_label="श्लु-अवशेष-लोपः",
     )
 
 
@@ -71,19 +67,16 @@ def derive_juhoti_hu_lat_tip_Slu_P040() -> State:
 
     s = P00_tip_to_ti(s)
 
-    s.meta["P040_2_4_75_arm"] = True
     s = apply_rule("2.4.75", s)
 
     s = apply_rule("1.1.60", s)
     s = apply_rule("1.1.61", s)
     _p040_remove_slu_placeholder(s)
 
-    s.meta["P040_6_1_10_slau_arm"] = True
     s = apply_rule("6.1.10", s)
 
     s = apply_rule("7.4.59", s)
 
-    s.meta["P040_7_4_62_abhyasa_arm"] = True
     s = apply_rule("7.4.62", s)
 
     s = apply_rule("3.4.113", s)

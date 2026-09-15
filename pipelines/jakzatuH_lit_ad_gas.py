@@ -50,7 +50,6 @@ def derive_jakzatuH_lit_ad_gas_P034() -> State:
     s.meta["liT_lakara_recipe"] = True
     s = apply_rule("3.2.115", s)
 
-    s.meta["P034_2_4_40_ad_to_gas_arm"] = True
     s = apply_rule("2.4.40", s)
 
     s = apply_rule("3.1.91", s)
@@ -61,23 +60,20 @@ def derive_jakzatuH_lit_ad_gas_P034() -> State:
     s = apply_rule("3.4.82", s)
     s = apply_rule("1.2.5", s)
 
-    s.meta["P034_6_4_100_gas_upadha_atus_arm"] = True
     s = apply_rule("6.4.100", s)
 
     s.meta["liT_dvitva_recipe"] = True
     s = P00_lit_dvitva_abhyasa_hrasva(s, short_abhyasa=True)
 
-    s.meta["7_4_62_kuhoscu_abhyasa_arm"] = True
     s = apply_rule("7.4.62", s)
 
-    s.meta["P034_7_4_59_abhyasa_pad_a_arm"] = True
     s = apply_rule("7.4.59", s)
 
     from pipelines.subanta import _pada_merge  # noqa: PLC0415
 
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
-    s.meta["P034_8_4_55_jakz_cluster_arm"] = True
+    s = apply_rule("8.3.60", s)
     s = P00_tripadi_8_4_55_visarga(s)
     return s
 

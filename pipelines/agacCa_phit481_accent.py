@@ -38,15 +38,12 @@ def _mk_agacCa_tinanta_accent_demo() -> Term:
 def derive_agacCa_accent_prakriya_27() -> State:
     s = State(terms=[_mk_agacCa_tinanta_accent_demo()], meta={}, trace=[])
 
-    s.meta["prakriya_27_8_1_6_arm"] = True
     s = apply_rule("8.1.6", s)
 
-    s.meta["prakriya_27_8_1_28_arm"] = True
     s = apply_rule("8.1.28", s)
 
     s = apply_rule("8.2.1", s)
 
-    s.meta["prakriya_27_8_4_66_arm"] = True
     s = apply_rule("8.4.66", s)
     return s
 

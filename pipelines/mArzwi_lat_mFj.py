@@ -48,7 +48,6 @@ def derive_mArzwi() -> State:
     s = P00_lat_vartamane_tip_and_sap(s)
 
     # adādi luk of Sap.
-    s.meta["2_4_72_sap_luk_arm"] = True
     s = apply_rule("1.1.60", s)
     s = apply_rule("2.4.72", s)
 

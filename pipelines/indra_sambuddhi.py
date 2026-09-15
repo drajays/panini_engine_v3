@@ -38,13 +38,10 @@ def _mk_indra_sambuddhi() -> Term:
 def derive_indra_sambuddhi_prakriya_26() -> State:
     s = State(terms=[_mk_indra_sambuddhi()], meta={}, trace=[])
 
-    s.meta["prakriya_26_2_3_48_arm"] = True
-    s.meta["prakriya_26_6_1_198_arm"] = True
     s.meta["indra_6_1_158_recipe"] = True
     s = P00_amantrana_2_3_48_accent(s)
 
     s.tripadi_zone = True
-    s.meta["prakriya_26_8_4_66_arm"] = True
     s = apply_rule("8.4.66", s)
 
     # **1.2.37** is adhyāya 1 — outside Tripāḍī.  With ``tripadi_zone`` still True,

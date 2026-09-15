@@ -57,7 +57,6 @@ def derive_saGgasIzwa() -> State:
 
     s.meta["sIyuw_recipe"] = True
     s = apply_rule("3.4.102", s)
-    s.meta["1_2_13_va_gam_kit_arm"] = True
     s = apply_rule("1.2.13", s)
     s.meta["gam_anunasika_recipe"] = True
     s = apply_rule("6.4.37", s)
@@ -68,7 +67,6 @@ def derive_saGgasIzwa() -> State:
 
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
-    s.meta["8_3_23_m_o_anuswara_arm"] = True
     s = apply_rule("8.3.23", s)
     s = apply_rule("8.3.59", s)
     s = apply_rule("8.3.59", s)

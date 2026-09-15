@@ -42,12 +42,10 @@ def derive_paYcendra_prakriya_42() -> State:
 
     s = apply_rule("2.1.3", s)
     s.meta["prakriya_42_taddhitartha_samAhAra_note"] = True
-    s.meta["prakriya_42_2_1_51_arm"] = True
     s = apply_rule("2.1.51", s)
 
     s = apply_rule("4.1.76", s)
     s.meta["prakriya_42_dvigu_anapatye_note"] = True
-    s.meta["prakriya_42_4_1_88_arm"] = True
     s = apply_rule("4.1.88", s)
     return s
 

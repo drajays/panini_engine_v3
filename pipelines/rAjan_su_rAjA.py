@@ -44,9 +44,7 @@ def derive_rAjA() -> State:
     s.meta["vibhakti_vacana"] = "1-1"
     s = P00_sup_it_lopa(s)
 
-    s.meta["1_1_43_arm"] = True
     s = apply_rule("1.1.43", s)
-    s.meta.pop("1_1_43_arm", None)
 
     s = apply_rule("6.4.8", s)   # rAjan -> rAjAn (needs sarvanamasthana)
 

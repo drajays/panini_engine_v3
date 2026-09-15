@@ -51,9 +51,7 @@ def derive_muYcati() -> State:
 
     s = apply_rule("6.4.1", s)
     s = apply_rule("1.1.47", s)
-    s.meta["7_1_59_num_arm"] = True
     s = apply_rule("7.1.59", s)
-    s.meta.pop("7_1_59_num_arm", None)
 
     # Merge to one pada then anusvāra + parasavarṇa.
     from pipelines.subanta import _pada_merge

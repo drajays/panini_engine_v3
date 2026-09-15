@@ -43,15 +43,13 @@ def _structural_merge_deva(s: State) -> State:
         meta={"upadesha_slp1": "deva"},
     )
     s.terms = [merged]
-    s.trace.append({
-        "sutra_id"    : "__KRDANTA_DEVA_MERGE__",
-        "sutra_type"  : "STRUCTURAL",
-        "type_label"  : "कृदन्त-मेलनम्",
-        "form_before" : fb,
-        "form_after"  : s.flat_slp1(),
-        "why_dev"     : "दिव् + अ → देव (संरचनात्मकं)।",
-        "status"      : "APPLIED",
-    })
+    s.emit_structural(
+        "__KRDANTA_DEVA_MERGE__",
+        form_before=fb,
+        form_after=s.flat_slp1(),
+        why_dev="दिव् + अ → देव (संरचनात्मकं)।",
+        type_label="कृदन्त-मेलनम्",
+    )
     return s
 
 
@@ -65,7 +63,6 @@ def derive_devam_prakriya_20() -> State:
         trace=[],
     )
     s = apply_rule("3.1.91", s)
-    s.meta["prakriya_20_3_1_134_arm"] = True
     s = apply_rule("3.1.134", s)
     s = P00_bhuvadi_dhatu_it_anunasik_hal(s)
     s = apply_rule("1.1.6", s)

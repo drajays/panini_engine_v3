@@ -40,16 +40,13 @@ def derive_godau_prakriya_46() -> State:
     s = apply_rule("4.1.76", s)
 
     s.meta["prakriya_46_adUrabhava_aR_note"] = True
-    s.meta["prakriya_46_4_2_70_arm"] = True
     s = apply_rule("4.2.70", s)
 
     s.meta["prakriya_46_varaNAdi_luk_note"] = True
-    s.meta["prakriya_46_4_2_82_arm"] = True
     s = apply_rule("4.2.82", s)
 
     s.meta["prakriya_46_lupi_yuktavad_note"] = True
     s.meta["prakriya_46_varaNAdi_luk_context_note"] = True
-    s.meta["prakriya_46_1_2_51_arm"] = True
     s = apply_rule("1.2.51", s)
     return s
 

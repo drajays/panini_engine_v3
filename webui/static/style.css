@@ -55,6 +55,9 @@ pre { white-space: pre-wrap; word-break: break-word; }
   background: var(--bg-panel);
 }
 .brand { display: flex; flex-direction: column; line-height: 1.1; }
+a.brand { text-decoration: none; color: inherit; border-radius: 4px; padding: 2px 4px; }
+a.brand:hover { background: var(--bg-subtle); }
+a.brand.brand-active { background: var(--bg-subtle); }
 .brand-dev { font-size: 21px; color: var(--accent); }
 .brand-sub { font-size: 11px; color: var(--ink-faint); letter-spacing: 0.5px; }
 .ver { color: var(--accent-dim); font-weight: 600; }
@@ -1199,3 +1202,82 @@ table.matrix td.cell-fixed::after {
   vertical-align: middle;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Home dashboard ───────────────────────────────────────────── */
+
+.hero { text-align: center; padding: 2rem 0 1rem; }
+.hero h1 {
+  font-family: var(--dev);
+  font-size: 2.4rem;
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+.hero-sub {
+  color: var(--ink-dim);
+  font-family: var(--dev);
+  font-size: 1rem;
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.home-section { margin: 2rem 0 1.5rem; }
+.home-section-title {
+  font-family: var(--dev);
+  font-size: 1.1rem;
+  color: var(--ink-dim);
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line-soft);
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.card {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.25rem 1.35rem;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+  display: block;
+}
+.card:hover {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  border-color: var(--accent-dim);
+}
+.card-featured { border-color: var(--accent-dim); }
+.card-icon { font-size: 1.75rem; margin-bottom: 0.35rem; }
+.card h3 {
+  font-family: var(--dev);
+  color: var(--accent);
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+.card p {
+  font-family: var(--dev);
+  font-size: 0.88rem;
+  color: var(--ink-dim);
+  margin: 0;
+  line-height: 1.5;
+}
+.info-box {
+  margin: 2rem 0 0;
+  padding: 1rem 1.25rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--ink-dim);
+  line-height: 1.6;
+}
+.info-box code {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  background: var(--bg-panel);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+}

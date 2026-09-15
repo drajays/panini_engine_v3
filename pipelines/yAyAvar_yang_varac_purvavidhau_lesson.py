@@ -53,16 +53,12 @@ def _merge_angas_with_yaG_a_before_varac(s: State) -> State:
     )
     s.terms = [stem, varac]
     after = s.flat_slp1()
-    s.trace.append(
-        {
-            "sutra_id": "__YANG_ANGA_MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "यङन्ताङ्ग-मेलनम्",
-            "form_before": before,
-            "form_after": after,
-            "why_dev": "यायाय + यङ्-अकारः → यायायअ (६.४.४८-पूर्वम्)।",
-            "status": "APPLIED",
-        }
+    s.emit_structural(
+        "__YANG_ANGA_MERGE__",
+        form_before=before,
+        form_after=after,
+        why_dev="यायाय + यङ्-अकारः → यायायअ (६.४.४८-पूर्वम्)।",
+        type_label="यङन्ताङ्ग-मेलनम्",
     )
     return s
 
@@ -88,16 +84,12 @@ def _merge_stem_varac(s: State) -> State:
     )
     s.terms = [merged]
     after = s.flat_slp1()
-    s.trace.append(
-        {
-            "sutra_id": "__KRT_PADA_MERGE__",
-            "sutra_type": "STRUCTURAL",
-            "type_label": "वरच्-मेलनम्",
-            "form_before": before,
-            "form_after": after,
-            "why_dev": "याया + वर → यायावर (रूपसिद्धि)।",
-            "status": "APPLIED",
-        }
+    s.emit_structural(
+        "__KRT_PADA_MERGE__",
+        form_before=before,
+        form_after=after,
+        why_dev="याया + वर → यायावर (रूपसिद्धि)।",
+        type_label="वरच्-मेलनम्",
     )
     return s
 
@@ -110,8 +102,6 @@ def derive_yAyAvar_yang_varac_purvavidhau_lesson() -> State:
     s = P00_yang_adhikara_yaG_append_sanadi(s)
     s = P00_yang_dvitva_abhyasa_gate(s)
 
-    s.meta["7_4_59_abhyasa_hrasva_arm"] = True
-    s.meta["P029_7_4_83_abhyasa_dirgha_arm"] = True
     s = P00_yang_abhyasa_hrasva_chain(s)
 
     s.meta["varac_recipe"] = True

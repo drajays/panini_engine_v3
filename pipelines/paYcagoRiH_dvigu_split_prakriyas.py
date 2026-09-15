@@ -56,7 +56,6 @@ def derive_paYcagoRiH_dvigu_split_prakriyas_P011() -> State:
     s = State(terms=[paYcan, su1, goRI, su2], meta={}, trace=[])
 
     s.meta["prakriya_P011_taddhitartha_samAhAra_note"] = True
-    s.meta["prakriya_P011_2_1_51_arm"] = True
     s = apply_rule("2.1.3", s)
     s = apply_rule("2.1.51", s)
 
@@ -66,9 +65,7 @@ def derive_paYcagoRiH_dvigu_split_prakriyas_P011() -> State:
 
     # taddhita “tena krītam” stamps and luk-note stamp (no varṇa mutation here).
     s.meta["prakriya_P011_tena_krItam_note"] = True
-    s.meta["prakriya_P011_5_1_37_arm"] = True
     s.meta["prakriya_P011_dvigu_Tak_luk_note"] = True
-    s.meta["prakriya_P011_5_1_28_arm"] = True
     s = P00_dvigu_5_1_37_5_1_28(s)
 
     # internal sup-luk (2.4.71) on the samāsa members.

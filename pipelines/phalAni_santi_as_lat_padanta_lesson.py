@@ -65,15 +65,13 @@ def _merge_verbal_pada(s: State) -> State:
     )
     s.terms = [s.terms[0], merged]
     after = s.flat_slp1()
-    s.trace.append({
-        "sutra_id": "__VERBAL_PADA_MERGE__",
-        "sutra_type": "STRUCTURAL",
-        "type_label": "सन्ति-पद-मेलनम्",
-        "form_before": before,
-        "form_after": after,
-        "why_dev": "धातु+तिङ्-शेषयोः एकं पदम् (वाक्यान्वाख्यान-पाठ)।",
-        "status": "APPLIED",
-    })
+    s.emit_structural(
+        "__VERBAL_PADA_MERGE__",
+        form_before=before,
+        form_after=after,
+        why_dev="धातु+तिङ्-शेषयोः एकं पदम् (वाक्यान्वाख्यान-पाठ)।",
+        type_label="सन्ति-पद-मेलनम्",
+    )
     return s
 
 
@@ -101,7 +99,6 @@ def derive_phalAni_santi_as_lat_padanta_lesson() -> State:
     s.meta.update(verbal.meta)
     s.trace.extend(verbal.trace)
 
-    s.meta["2_4_72_sap_luk_arm"] = True
     s = P00_as_lat_adadi_2_4_72(s)
     s = apply_rule("7.1.3", s)
 

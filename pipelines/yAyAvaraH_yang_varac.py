@@ -55,8 +55,6 @@ def derive_yAyAvaraH_yang_varac_P029() -> State:
     s = P00_yang_adhikara_yaG_append_sanadi(s)
     s = P00_yang_dvitva_abhyasa_gate(s)
 
-    s.meta["7_4_59_abhyasa_hrasva_arm"] = True
-    s.meta["P029_7_4_83_abhyasa_dirgha_arm"] = True
     s = P00_yang_abhyasa_hrasva_chain(s)
 
     s.meta["varac_recipe"] = True
@@ -69,7 +67,6 @@ def derive_yAyAvaraH_yang_varac_P029() -> State:
 
     s = P00_hal_it_lopa(s)
 
-    s.meta["P029_6_1_70_vy_lopa_arm"] = True
     s = apply_rule("6.1.70", s)
 
     s = apply_rule("6.1.101", s)

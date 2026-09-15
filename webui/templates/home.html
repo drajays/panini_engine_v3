@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block title %}पाणिनि-यन्त्रम् — मुख्यम्{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <h1>पाणिनि-यन्त्रम्</h1>
+  <p class="hero-sub">अष्टाध्यायी-क्रम-आधारित ग्लास-बॉक्स संस्कृत व्युत्पत्ति-यन्त्रम् — एकैक URL, सर्वे उपकरणाः</p>
+</div>
+
+<section class="home-section">
+  <h2 class="home-section-title">व्युत्पत्तिः</h2>
+  <div class="card-grid">
+    <a class="card" href="/derive">
+      <div class="card-icon">📖</div>
+      <h3>सुबन्त-व्युत्पत्तिः</h3>
+      <p>प्रातिपदिक + विभक्ति + वचन — पूर्ण प्रक्रिया-ट्रेस।</p>
+    </a>
+    <a class="card card-featured" href="/tinanta">
+      <div class="card-icon">⚙️</div>
+      <h3>तिङन्तम्</h3>
+      <p>धातु + लकार + पुरुष + वचन — एक रूप की ग्लास-बॉक्स प्रक्रिया।</p>
+    </a>
+    <a class="card" href="/tinanta/all">
+      <div class="card-icon">📋</div>
+      <h3>दश-लकाराः</h3>
+      <p>एक धातु के सभी दस लकार — कर्तरि / कर्मणि / भावे।</p>
+    </a>
+    <a class="card" href="/matrix">
+      <div class="card-icon">📊</div>
+      <h3>२४-कोष्ठम्</h3>
+      <p>८×३ विभक्ति-वचन सारणी — प्रत्येक कोष्ठक पर प्रक्रिया।</p>
+    </a>
+    <a class="card" href="/krdanta">
+      <div class="card-icon">🧩</div>
+      <h3>कृदन्तम्</h3>
+      <p>ण्वुल्, तृच्, अन्य कृत्-प्रत्यय — द्वि-चरण प्रक्रिया।</p>
+    </a>
+    <a class="card" href="/sarvanama">
+      <div class="card-icon">🔁</div>
+      <h3>सर्वनाम</h3>
+      <p>सर्व/तद्/एतद्-रूप — सर्वनाम-व्युत्पत्तिः।</p>
+    </a>
+  </div>
+</section>
+
+<section class="home-section">
+  <h2 class="home-section-title">धातु · पाठ · समास</h2>
+  <div class="card-grid">
+    <a class="card card-featured" href="/dhatufilters">
+      <div class="card-icon">🔍</div>
+      <h3>धातु-छन्दकः</h3>
+      <p>ashtadhyayi.com-शैली — गण, पद, इति, कर्म — १०-लकार ग्रिड।</p>
+    </a>
+    <a class="card" href="/dhatupatha">
+      <div class="card-icon">📚</div>
+      <h3>धातुपाठः</h3>
+      <p>पाणिनीय धातु-सूची — खोज, विवरण, सूत्र-संदर्भ।</p>
+    </a>
+    <a class="card" href="/patha">
+      <div class="card-icon">🔬</div>
+      <h3>पाठ-विश्लेषणम्</h3>
+      <p>पद-रूप से पूर्व-विश्लेषण — अनुवृत्ति-पथ।</p>
+    </a>
+    <a class="card" href="/devendra">
+      <div class="card-icon">✨</div>
+      <h3>समासः</h3>
+      <p>देव+इन्द्र, सूर्य+उदय — सन्धि-प्रक्रिया।</p>
+    </a>
+    <a class="card" href="/dik">
+      <div class="card-icon">🧭</div>
+      <h3>दिक्-समास</h3>
+      <p>उत्तरपूर्व / दक्षिणपूर्व — चतुर्थी-समास।</p>
+    </a>
+    <a class="card" href="/showcase">
+      <div class="card-icon">📿</div>
+      <h3>शम्भु-प्रदर्शनम्</h3>
+      <p>विशेष-प्रकार — हरि, सर्व, तद्, ज्ञान आदि सारण्याः।</p>
+    </a>
+  </div>
+</section>
+
+<section class="home-section">
+  <h2 class="home-section-title">यन्त्र · परीक्षा</h2>
+  <div class="card-grid">
+    <a class="card" href="/pipelines">
+      <div class="card-icon">🛤️</div>
+      <h3>प्रक्रियाः</h3>
+      <p>सर्व canonical pipeline — एक-क्लिक व्युत्पत्ति।</p>
+    </a>
+    <a class="card" href="/sutras">
+      <div class="card-icon">📜</div>
+      <h3>सूत्राणि</h3>
+      <p>{{ cov.implemented }}/{{ cov.total }} सूत्र — क्रम, प्रकार, स्थिति।</p>
+    </a>
+    <a class="card" href="/sig">
+      <div class="card-icon">🔗</div>
+      <h3>SIG</h3>
+      <p>Single Interface Graph — नियम-निर्भरता-चित्रम्।</p>
+    </a>
+    <a class="card" href="/tests">
+      <div class="card-icon">✅</div>
+      <h3>परीक्षाः</h3>
+      <p>pytest + SIG benchmark — ब्राउज़र से चलाएँ।</p>
+    </a>
+  </div>
+</section>
+
+<div class="info-box">
+  <strong>स्थानीय प्रवेशः:</strong>
+  सर्वे पृष्ठाः <code id="home-base-url">http://127.0.0.1:5000</code> पर एकैक Flask-सर्वर में —
+  <code>./run_web.sh</code> या <code>python -m webui.app</code> से आरम्भम्।
+</div>
+{% endblock %}
+
+{% block body_extra %}
+<script>
+(function () {
+  var el = document.getElementById('home-base-url');
+  if (el) el.textContent = window.location.origin;
+})();
+</script>
+{% endblock %}

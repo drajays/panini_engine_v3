@@ -38,9 +38,7 @@ def derive_paYcaSazkulam_prakriya_43() -> State:
     s = State(terms=[_witness_paYcaSazkulam_prakriya_43()], meta={}, trace=[])
 
     s.meta["prakriya_43_tena_krItam_note"] = True
-    s.meta["prakriya_43_5_1_37_arm"] = True
     s.meta["prakriya_43_dvigu_Tak_luk_note"] = True
-    s.meta["prakriya_43_5_1_28_arm"] = True
     s = P00_dvigu_5_1_37_5_1_28(s)
     return s
 

@@ -80,15 +80,13 @@ def _structural_merge_to_pratipadika(s: State, *, upadesha_slp1: str) -> State:
     before = s.flat_slp1()
     s.terms = [merged]
     after = s.flat_slp1()
-    s.trace.append({
-        "sutra_id": "__AUPAGAVA_MERGE__",
-        "sutra_type": "STRUCTURAL",
-        "type_label": "औपगव-मेलनम्",
-        "form_before": before,
-        "form_after": after,
-        "why_dev": "तद्धित-प्रक्रियायां अङ्ग+प्रत्यय-संयोजनम् (संरचनात्मकं, न सूत्रम्)।",
-        "status": "APPLIED",
-    })
+    s.emit_structural(
+        "__AUPAGAVA_MERGE__",
+        form_before=before,
+        form_after=after,
+        why_dev="तद्धित-प्रक्रियायां अङ्ग+प्रत्यय-संयोजनम् (संरचनात्मकं, न सूत्रम्)।",
+        type_label="औपगव-मेलनम्",
+    )
     return s
 
 

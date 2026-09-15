@@ -52,21 +52,18 @@ def run_to_fixed_point(sutra_ids: List[str], state: State) -> State:
             state = apply_rule(sid, state)
         form_after_sweep = state.flat_slp1()
         if form_before_sweep == form_after_sweep:
-            # Converged.  Log as a structural trace note so audits can
-            # see how many sweeps a derivation needed.
-            state.trace.append({
-                "sutra_id"    : "__FIXED_POINT__",
-                "sutra_type"  : "STRUCTURAL",
-                "type_label"  : "स्थिर-बिन्दु-सम्प्राप्तिः",
-                "form_before" : form_after_sweep,
-                "form_after"  : form_after_sweep,
-                "why_dev"     : (
+            # Converged — log as a structural trace note.
+            state.emit_structural(
+                "__FIXED_POINT__",
+                form_before=form_after_sweep,
+                form_after=form_after_sweep,
+                why_dev=(
                     f"अङ्गकार्य-आवृत्तिषु {sweep_n + 1} सम्प्राप्तिः। "
                     f"(sutra_ids: {len(sutra_ids)})"
                 ),
-                "status"      : "APPLIED",
-                "sweeps_run"  : sweep_n + 1,
-            })
+                type_label="स्थिर-बिन्दु-सम्प्राप्तिः",
+                sweeps_run=sweep_n + 1,
+            )
             return state
         last_form = form_after_sweep
 

@@ -49,7 +49,6 @@ def derive_marImfjaH() -> State:
     s = P00_yang_adhikara_yaG_append_sanadi(s)
     s = P00_yang_dvitva_abhyasa_gate(s)
 
-    s.meta["7_4_66_urat_abhyasa_arm"] = True
     s = P00_mRj_abhyasa_hrasva(s, first_hal_only=True)
     s.meta["rIk_recipe"] = True
     s = apply_rule("7.4.90", s)

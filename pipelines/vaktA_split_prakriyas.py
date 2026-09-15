@@ -50,7 +50,6 @@ def _witness_vac_split_P003() -> Term:
 def derive_vaktA_split_prakriyas_P003() -> State:
     s = State(terms=[_witness_vac_split_P003()], meta={}, trace=[])
 
-    s.meta["prakriya_P003_3_2_135_tRn_arm"] = True
     s = apply_rule("3.2.135", s)
 
     s = apply_rule("1.3.3", s)
