@@ -20,6 +20,7 @@ Measured, not asserted. Every number here comes from a command
   tests                    : 19,136 passing, 1 skipped
   agreement vs Vidyut      :  81.1 %   (338 of 417 grid cells; nominals 192/192)
   open gaps                :    281   (202 unscheduled rules · 79 disagreements)
+  form index               : 45,936 forms · 35,426 surfaces · 1,012 lemmas
 ```
 
 ```bash
@@ -27,6 +28,7 @@ make coverage        # regenerates the ledger and prints the block above
 make lint            # constitutional lint (Art. 2 · 13 · 15 · 16)
 make bench           # differential report card against Vidyut (Art. 19)
 make gaps            # the ranked worklist of what is missing (Art. 18, ~10 min)
+make index           # rebuild the generated-forms index and verify a sample (Art. 17)
 make test-all        # the suite
 ```
 

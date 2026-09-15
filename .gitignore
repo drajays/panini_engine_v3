@@ -31,3 +31,7 @@ coverage.xml
 panini_engine_v2/
 panini_engine_v2--git/
 .claude/worktrees/
+
+# Build artifact: 10 MB, rewritten wholesale by `make index` (Art. 17).
+# The committed fingerprint is data/index/manifest.json.
+data/index/forms.db

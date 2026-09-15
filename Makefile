@@ -67,3 +67,7 @@ bench:
 
 gaps:
 	python3 -m tools.gaps_report
+
+index:
+	python3 -m tools.build_form_index
+	python3 -m tools.build_form_index --verify 300

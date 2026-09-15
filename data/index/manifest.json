@@ -1,0 +1,265 @@
+{
+  "forms": 45936,
+  "distinct_surfaces": 35426,
+  "lemmas": 1012,
+  "gaps": 162,
+  "meta": {
+    "generated_at": "2026-09-15T09:17:40+00:00",
+    "stems": "72",
+    "dhatus": "986",
+    "cells": "46098",
+    "seconds": "49.3"
+  },
+  "fingerprint": [
+    {
+      "surface": "BAnuH",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:1:1"
+    },
+    {
+      "surface": "BAnU",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:1:2"
+    },
+    {
+      "surface": "BAnavaH",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:1:3"
+    },
+    {
+      "surface": "BAnum",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:2:1"
+    },
+    {
+      "surface": "BAnU",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:2:2"
+    },
+    {
+      "surface": "BAnUn",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:2:3"
+    },
+    {
+      "surface": "BAnunA",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:3:1"
+    },
+    {
+      "surface": "BAnuByAm",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:3:2"
+    },
+    {
+      "surface": "BAnuBiH",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:3:3"
+    },
+    {
+      "surface": "BAnave",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:4:1"
+    },
+    {
+      "surface": "BAnuByAm",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:4:2"
+    },
+    {
+      "surface": "BAnuByaH",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:4:3"
+    },
+    {
+      "surface": "BAnoH",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:5:1"
+    },
+    {
+      "surface": "BAnuByAm",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:5:2"
+    },
+    {
+      "surface": "BAnuByaH",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:5:3"
+    },
+    {
+      "surface": "BAnoH",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:6:1"
+    },
+    {
+      "surface": "BAnvoH",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:6:2"
+    },
+    {
+      "surface": "BAnUnAm",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:6:3"
+    },
+    {
+      "surface": "BAnO",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:7:1"
+    },
+    {
+      "surface": "BAnvoH",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:7:2"
+    },
+    {
+      "surface": "BAnuzu",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:7:3"
+    },
+    {
+      "surface": "BAno",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:8:1"
+    },
+    {
+      "surface": "BAnU",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:8:2"
+    },
+    {
+      "surface": "BAnavaH",
+      "lemma": "BAnu",
+      "cell": "subanta:BAnu:pum:8:3"
+    },
+    {
+      "surface": "BUH",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:1:1"
+    },
+    {
+      "surface": "BvO",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:1:2"
+    },
+    {
+      "surface": "BvaH",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:1:3"
+    },
+    {
+      "surface": "BUm",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:2:1"
+    },
+    {
+      "surface": "BvO",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:2:2"
+    },
+    {
+      "surface": "BvAn",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:2:3"
+    },
+    {
+      "surface": "BvA",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:3:1"
+    },
+    {
+      "surface": "BUByAm",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:3:2"
+    },
+    {
+      "surface": "BUBiH",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:3:3"
+    },
+    {
+      "surface": "Bve",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:4:1"
+    },
+    {
+      "surface": "BUByAm",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:4:2"
+    },
+    {
+      "surface": "BUByaH",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:4:3"
+    },
+    {
+      "surface": "Bvasi",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:5:1"
+    },
+    {
+      "surface": "BUByAm",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:5:2"
+    },
+    {
+      "surface": "BUByaH",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:5:3"
+    },
+    {
+      "surface": "BvaH",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:6:1"
+    },
+    {
+      "surface": "BvoH",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:6:2"
+    },
+    {
+      "surface": "BvAm",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:6:3"
+    },
+    {
+      "surface": "Bvi",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:7:1"
+    },
+    {
+      "surface": "BvoH",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:7:2"
+    },
+    {
+      "surface": "BUzu",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:7:3"
+    },
+    {
+      "surface": "BUH",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:8:1"
+    },
+    {
+      "surface": "BvO",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:8:2"
+    },
+    {
+      "surface": "BvaH",
+      "lemma": "BU",
+      "cell": "subanta:BU:pum:8:3"
+    },
+    {
+      "surface": "DarmaH",
+      "lemma": "Darma",
+      "cell": "subanta:Darma:pum:1:1"
+    },
+    {
+      "surface": "DarmO",
+      "lemma": "Darma",
+      "cell": "subanta:Darma:pum:1:2"
+    }
+  ]
+}

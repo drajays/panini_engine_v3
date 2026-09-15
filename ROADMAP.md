@@ -238,11 +238,17 @@ numbers being real.*
 | A2 ✅ | `sutra_lint` (`make lint`) — seven checks, three of them ratcheted; `why_not` explains any sūtra's fate in one derivation | ratchet frozen at arm-in-cond 33 · coordinate-in-cond 34 · **nisedha-as-vidhi 87**; enforced by `tests/constitutional/test_sutra_lint_ratchet.py` |
 | A3 ✅ | `engine/gaps.py` + `make gaps` — three typed gap kinds, each dry-run verified | **281 gaps on the 417-cell grid**: 202 unscheduled (a rule whose cond was true, that would have changed the form, and that no pipeline asked) + 79 oracle disagreements. The dry-run filter is the whole design: without it the same grid reports 17,285 |
 | A4 ✅ | `bench/` — 417-cell grid, Vidyut oracle committed as CSV so the comparison reproduces without installing it (`make bench`) | **81.1 % agreement (338/417)**: all 192 nominal cells agree; every one of the 79 disagreements is verbal — पा 45, कृ 25, गम् liṭ 6, नी liṭ 3. Pinned by `tests/regression/test_bench_agreement.py` |
-| A5 | form index v1 — `build_form_index()` generalised over the whole dhātupāṭha and a śabda list, verbs included, stored as a regenerable artifact | CI rebuilds it and re-derives a sample; drift is a build failure |
+| A5 ✅ | form index v1 — `engine/form_index.py` + `make index`: 986 dhātus × 5 lakāras × 9 and 72 stems × 24 | **45,936 forms · 35,426 distinct surfaces · 1,012 lemmas · 162 gaps**, built in 50 s; 300/300 sampled rows re-derive. The 10 MB SQLite file is a build artifact and is **not** committed — `data/index/manifest.json` is the committed fingerprint |
 
-**Gate A:** one command prints the report card; every README number is reproducible; registered vs
-implemented and the first agreement rate are both committed. **A1–A4 are done; A5 (the form index)
-remains.**
+**Gate A: closed (2026-09-15).** A1–A5 all land, each with a command and a committed number:
+`make coverage` · `make lint` · `make gaps` · `make bench` · `make index`.
+
+    registered 3,985 · implemented 254 · agreement 81.1 % · gaps 281 · index 45,936 forms
+
+The index already answers the analysis question the product needs: रामौ returns three readings
+(prathamā, dvitīyā, sambodhana dual), नद्यौ returns three, and गच्छति returns none — the last being
+the same gap the worklist ranks. **Phase B starts next**, with its 87 निषेधs and 202 unscheduled
+rules already enumerated.
 
 The two instruments corroborate, which is the strongest evidence either is measuring something
 real: the 79 cells where Vidyut disagrees need exactly the rules the gap list ranks highest —
