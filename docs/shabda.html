@@ -1,0 +1,194 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>शब्दरूप — Pāṇini Engine</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@400;600&display=swap">
+<style>
+:root{
+  --ground:#f3ece0;        /* parchment */
+  --panel:#fbf7ef;
+  --band:#d8c49a;          /* the table's header band */
+  --band-soft:#e7d9bb;
+  --row:#fdfbf7;
+  --row-alt:#f6f0e4;
+  --ink:#241d12;
+  --ink-soft:#5d5140;
+  --ink-faint:#8d8069;
+  --rule:#d9ccb2;
+  --indigo:#2c4a7c;        /* sūtra citations */
+  --madder:#9c3822;        /* forms under derivation */
+  --moss:#3f6b4a;
+  --select:#f6e6a8;        /* the chosen cell */
+  --dev:"Noto Serif Devanagari","Noto Sans Devanagari",serif;
+  --mono:"IBM Plex Mono",Menlo,monospace;
+  --body:"Spectral",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#17140f; --panel:#201b14; --band:#3d3325; --band-soft:#2b2419;
+    --row:#1d1811; --row-alt:#221d15; --ink:#ece3d2; --ink-soft:#b0a58f;
+    --ink-faint:#857a66; --rule:#3a3125; --indigo:#8fb0e2; --madder:#e08a6e;
+    --moss:#87bd91; --select:#4a3f20;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#17140f; --panel:#201b14; --band:#3d3325; --band-soft:#2b2419;
+  --row:#1d1811; --row-alt:#221d15; --ink:#ece3d2; --ink-soft:#b0a58f;
+  --ink-faint:#857a66; --rule:#3a3125; --indigo:#8fb0e2; --madder:#e08a6e;
+  --moss:#87bd91; --select:#4a3f20;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 var(--body)}
+.dev{font-family:var(--dev)}
+code,.mono{font-family:var(--mono);font-size:.85em}
+
+header{
+  display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;align-items:baseline;
+  padding:1rem 1.25rem;background:var(--band);border-bottom:1px solid var(--rule);
+}
+header h1{font-family:var(--dev);font-size:1.15rem;margin:0;font-weight:600}
+header .sub{font-size:.85rem;color:var(--ink-soft)}
+header .count{margin-left:auto;font-family:var(--mono);font-size:.76rem;color:var(--ink-soft)}
+select{font:inherit;font-size:.9rem;padding:.3rem .5rem;border:1px solid var(--rule);
+  border-radius:3px;background:var(--panel);color:var(--ink);font-family:var(--dev)}
+
+main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;
+  align-items:start}
+@media (max-width:900px){main{grid-template-columns:1fr}}
+
+.tablewrap{padding:1.25rem;overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:32rem}
+caption{text-align:left;font-family:var(--dev);font-size:1.3rem;font-weight:600;
+  padding-bottom:.6rem}
+caption small{display:block;font-family:var(--body);font-size:.8rem;font-weight:400;
+  color:var(--ink-soft);margin-top:.15rem}
+th{background:var(--band);font-family:var(--dev);font-weight:600;font-size:.95rem;
+  text-align:left;padding:.55rem .8rem;border:1px solid var(--rule)}
+th.rowhead{background:var(--band-soft);width:9rem}
+td{border:1px solid var(--rule);padding:0;background:var(--row)}
+tr:nth-child(even) td{background:var(--row-alt)}
+td button{
+  width:100%;text-align:left;border:0;background:none;cursor:pointer;color:inherit;
+  font-family:var(--dev);font-size:1.05rem;padding:.55rem .8rem;display:flex;
+  align-items:baseline;gap:.5rem;
+}
+td button:hover{background:var(--band-soft)}
+td button:focus-visible{outline:2px solid var(--indigo);outline-offset:-2px}
+td.selected button{background:var(--select);font-weight:600}
+td .mark{font-family:var(--mono);font-size:.72rem;color:var(--moss)}
+td .mark.bad{color:var(--madder)}
+
+.detail{padding:1.25rem 1.25rem 3rem;border-left:1px solid var(--rule);
+  background:var(--panel);min-height:60vh}
+@media (max-width:900px){.detail{border-left:0;border-top:1px solid var(--rule)}}
+.detail h2{font-family:var(--dev);font-size:1.5rem;margin:0 0 .15rem;color:var(--madder)}
+.detail .cellname{font-family:var(--dev);color:var(--ink-soft);font-size:.95rem;margin-bottom:1rem}
+.step{display:grid;grid-template-columns:1.2rem 1fr;gap:.5rem;margin-bottom:.9rem}
+.step .arrow{color:var(--madder);font-family:var(--mono)}
+.step .form{font-family:var(--dev);font-size:1.15rem;color:var(--madder);font-weight:500}
+.step .cites{font-family:var(--dev);font-size:.92rem;color:var(--ink-soft);
+  margin-top:.15rem;line-height:1.7}
+.step .sutra{color:var(--indigo)}
+.step .num{font-family:var(--mono);font-size:.8rem;color:var(--indigo)}
+.step .why{display:block;color:var(--ink-faint);font-size:.86rem;margin-top:.1rem}
+.step .hint{display:block;color:var(--ink-faint);font-size:.84rem;margin-top:.1rem}
+.final{margin-top:1.25rem;padding-top:.85rem;border-top:1px solid var(--rule);
+  font-family:var(--dev);font-size:1.25rem}
+.final .ok{font-family:var(--mono);font-size:.76rem;color:var(--moss);margin-left:.5rem}
+.final .no{color:var(--madder)}
+.empty{color:var(--ink-faint);margin-top:4rem;text-align:center}
+footer{padding:1rem 1.25rem;border-top:1px solid var(--rule);font-size:.8rem;
+  color:var(--ink-faint);background:var(--band-soft)}
+footer a{color:var(--indigo)}
+</style>
+
+<header>
+  <h1 class="dev">शब्दरूपाणि</h1>
+  <span class="sub">every form derived by the engine — click one to read its prakriyā</span>
+  <label class="sub">शब्दः <select id="word"></select></label>
+  <span class="count" id="count"></span>
+</header>
+
+<main>
+  <div class="tablewrap"><table id="grid"><caption id="cap"></caption></table></div>
+  <section class="detail" id="detail"><p class="empty dev">रूपं चिनु — pick a form.</p></section>
+</main>
+
+<footer>
+  Forms derived by <strong>panini_engine_v3</strong>; attested paradigms from
+  <a href="https://github.com/ashtadhyayi-com/data">ashtadhyayi-com/data</a>.
+  A ✓ means the derived form matches the attested one.
+</footer>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => (s ?? "").toString().replace(/[&<>"]/g, (c) =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+let DATA = null, current = null, selected = null;
+
+fetch("data/shabda.json").then((r) => r.json()).then((d) => {
+  DATA = d;
+  $("#word").innerHTML = d.words.map((w, i) =>
+    `<option value="${i}">${esc(w.word)} — ${esc(w.linga)}</option>`).join("");
+  $("#word").onchange = (e) => show(d.words[+e.target.value]);
+  show(d.words.find((w) => w.stem_slp1 === "rAma") || d.words[0]);
+});
+
+function show(word) {
+  current = word;
+  $("#word").value = DATA.words.indexOf(word);
+  const { vibhakti, vacana } = DATA.labels;
+  const agree = Object.values(word.cells).filter((c) => c.agrees).length;
+  $("#count").textContent = `${agree}/24 match the attested paradigm`;
+  $("#cap").innerHTML =
+    `${esc(word.word)}<small>${esc(word.linga)}${word.artha ? " · " + esc(word.artha) : ""}</small>`;
+  $("#grid").innerHTML = `<caption id="cap">${$("#cap").innerHTML}</caption>
+    <tr><th></th>${vacana.map((v) => `<th>${esc(v)}</th>`).join("")}</tr>` +
+    vibhakti.map((label, vi) => `<tr><th class="rowhead">${esc(label)}</th>` +
+      vacana.map((_, vn) => {
+        const key = `${vi + 1}-${vn + 1}`;
+        const cell = word.cells[key];
+        const mark = cell.agrees ? "✓" : (cell.form_dev ? "✗" : "—");
+        return `<td id="cell-${key}"><button onclick="pick('${key}')">
+            <span>${esc(cell.form_dev || cell.error || "—")}</span>
+            <span class="mark ${cell.agrees ? "" : "bad"}">${mark}</span>
+          </button></td>`;
+      }).join("") + "</tr>").join("");
+  $("#detail").innerHTML = `<p class="empty dev">रूपं चिनु — pick a form.</p>`;
+  selected = null;
+}
+
+function pick(key) {
+  if (selected) document.getElementById(`cell-${selected}`)?.classList.remove("selected");
+  selected = key;
+  document.getElementById(`cell-${key}`)?.classList.add("selected");
+  const cell = current.cells[key];
+  const [vi, vn] = key.split("-").map(Number);
+  const name = `${DATA.labels.vibhakti[vi - 1]} ${DATA.labels.vacana[vn - 1]}`;
+  const steps = cell.steps.map((step) => `
+    <div class="step">
+      <span class="arrow">→</span>
+      <div>
+        <span class="form">${esc(step.form_dev)}</span>
+        <span class="cites">[ ${step.sutras.map(citation).join(" ")} ]</span>
+      </div>
+    </div>`).join("");
+  const attested = cell.attested.join(", ");
+  $("#detail").innerHTML = `
+    <h2>${esc(current.word)}</h2>
+    <p class="cellname">${esc(name)} · अपेक्षितम् ${esc(attested)}</p>
+    ${steps || `<p class="empty">${esc(cell.error || "no steps recorded")}</p>`}
+    <p class="final">${esc(cell.form_dev || "—")}
+      <span class="ok ${cell.agrees ? "" : "no"}">${cell.agrees ? "✓ matches the attested form" : "✗ differs from " + esc(attested)}</span>
+    </p>`;
+}
+
+function citation(s) {
+  const text = s.text_dev ? `<span class="sutra">${esc(s.text_dev)}</span> ` : "";
+  const num = `<span class="num">${esc(s.id)}</span>`;
+  if (!s.acts) return `${text}${num} इति ·`;
+  const why = s.why_dev ? `<span class="why">${esc(s.why_dev)}</span>` : "";
+  const hint = s.hint_hi ? `<span class="hint">${esc(s.hint_hi)}</span>` : "";
+  return `${text}${num} इति${why}${hint}`;
+}
+</script>
