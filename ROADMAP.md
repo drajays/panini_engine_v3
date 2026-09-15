@@ -235,7 +235,7 @@ numbers being real.*
 | # | deliverable | check |
 |---|---|---|
 | A1 | `coverage_report()` returns **registered** and **implemented** separately (invoked · moved · cited · tested); the honest number is committed | the number drops 3,985 → ~296 and the README is corrected |
-| A2 | `sutra_lint` enforcing Art. 16's four conditions, wired into the edit hook | the failing list is emitted as the worklist, not suppressed |
+| A2 ✅ | `sutra_lint` (`make lint`) — seven checks, three of them ratcheted; `why_not` explains any sūtra's fate in one derivation | ratchet frozen at arm-in-cond 33 · coordinate-in-cond 34 · **nisedha-as-vidhi 87**; enforced by `tests/constitutional/test_sutra_lint_ratchet.py` |
 | A3 | `gaps.py` — an unmodelled context emits a named gap; gaps aggregate into a frequency-ranked list | the 6,496 silent SKIPPEDs become a queryable worklist |
 | A4 | `bench/` with a differential runner against Vidyut (MIT, Python bindings) | first agreement number on the rāma and bhū grids, committed |
 | A5 | form index v1 — `build_form_index()` generalised over the whole dhātupāṭha and a śabda list, verbs included, stored as a regenerable artifact | CI rebuilds it and re-derives a sample; drift is a build failure |
@@ -253,6 +253,10 @@ implemented and the first agreement rate are both committed.
 | B3 | convert every engineered conflict (Art. 15 test); 6.1.104 ↔ 6.1.102 is the template, already repaired | Art. 15's enforcement test green, site by site, none silenced |
 | B4 | asiddha strata — a visibility matrix (8.2.1 · 6.4.22 · 6.1.86) replacing the `tripadi_zone` flag | the 8.2.66 ⇄ 8.3.34 cycle stays broken for a stated reason |
 | B5 | vibhāṣā forks returned as outputs, every branch tested | optional rules produce branches, not a silent choice |
+
+Phase B's worklist is now enumerated: `make lint` reports **87 sūtras whose padaccheda carries the
+standalone word न — निषेधs typed VIDHI with no declared block**, exactly the shape 6.1.104 had. Only
+*one* PRATISHEDHA in the registry has न in its padaccheda. Converting those 87 is the bulk of B3.
 
 **Gate B:** measured on `sig/suite_sig.json` — today the whole suite produces **229 BLOCKED
 firings against 164,048 SKIPPED**, and only **six sūtras are ever blocked at all** (101 of those

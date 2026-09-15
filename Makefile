@@ -58,3 +58,6 @@ ui:
 coverage:
 	python3 -m tools.firing_coverage
 	python3 -m tools.firing_coverage --report
+
+lint:
+	python3 -m tools.sutra_lint
