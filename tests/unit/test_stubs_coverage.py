@@ -28,27 +28,28 @@ def test_make_stub_for_every_type_registers_cleanly():
 
 def test_coverage_report_shape():
     cov = coverage_report(SUTRA_REGISTRY)
-    assert "total" in cov
-    assert "implemented" in cov
-    assert "stubs" in cov
-    assert "coverage_pct" in cov
-    assert "by_type" in cov
-    # All registry entries are real (non-stub) currently.
-    assert cov["stubs"] == 0
-    assert cov["implemented"] == cov["total"] == len(SUTRA_REGISTRY)
-    assert cov["coverage_pct"] == 100.0
+    for key in ("registered", "implemented", "coverage_pct", "conditions",
+                "moving_but_uncited", "stubs", "scaffolded", "by_type"):
+        assert key in cov
+    assert cov["registered"] == cov["total"] == len(SUTRA_REGISTRY)
+    assert cov["stubs"] == 0              # no make_stub() records remain
+    # Art. 16: a record is not a rule. Implemented counts only sūtras that are
+    # invoked, move the state, are cited and are tested — far fewer than exist.
+    assert cov["implemented"] < cov["registered"]
+    assert cov["scaffolded"] == cov["registered"] - cov["implemented"]
 
 
 def test_coverage_report_counts_stubs_correctly():
-    # Temporarily insert a stub, check coverage drops by 1.
+    # Registering a stub adds a *record*, never a rule (Art. 16).
     SUTRA_REGISTRY.pop("0.8.8", None)
     baseline = coverage_report(SUTRA_REGISTRY)
 
     stub = make_stub("0.8.8", SutraType.VIDHI)
     register_sutra(stub)
     mid = coverage_report(SUTRA_REGISTRY)
-    assert mid["total"] == baseline["total"] + 1
+    assert mid["registered"] == baseline["registered"] + 1
     assert mid["stubs"] == 1
-    assert mid["implemented"] == baseline["total"]
+    assert mid["implemented"] == baseline["implemented"]        # unchanged
+    assert mid["scaffolded"] == baseline["scaffolded"] + 1
 
     SUTRA_REGISTRY.pop("0.8.8", None)

@@ -6,7 +6,7 @@
 
 **Date opened:** 2026-09-15
 **Author:** drajayshukla (measurements and drafting by Claude)
-**Status:** PROPOSED — not yet in force.
+**Status:** **ACCEPTED 2026-09-15** — in force; Articles 15–19 are part of CONSTITUTION.md.
 
 ---
 
@@ -179,8 +179,11 @@ This Amendment takes effect only when signed here. Until then, `CONSTITUTION.md`
 is unchanged and Articles 15–19 have no force.
 
 ```
-Accepted by: ________________________  date: __________
+Accepted by: drajayshukla                date: 2026-09-15
 ```
+
+Acceptance was given in session `session_01RfWLZYH92LTeQna4h3CMpr` ("agreed signed go ahead").
+Articles 15–19 were applied to `CONSTITUTION.md` in the same commit as this signature.
 
 ## 6. Rollback
 

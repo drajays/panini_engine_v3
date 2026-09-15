@@ -54,3 +54,7 @@ api:
 
 ui:
 	./"Panini Engine.command"
+
+coverage:
+	python3 -m tools.firing_coverage
+	python3 -m tools.firing_coverage --report

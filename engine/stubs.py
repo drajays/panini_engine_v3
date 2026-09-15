@@ -89,30 +89,46 @@ def is_stub(rec: SutraRecord) -> bool:
 
 def coverage_report(registry: Dict[str, SutraRecord]) -> Dict[str, Any]:
     """
-    Return coverage statistics for a SUTRA_REGISTRY-shaped dict.
+    Coverage for a SUTRA_REGISTRY-shaped dict, per **Article 16**.
 
-    Shape:
+    ``registered`` counts records that exist. ``implemented`` counts records
+    that are invoked, move the state, are cited and are tested — computed by
+    :mod:`engine.coverage` from the firing ledger plus repository facts.
+    ``coverage_pct`` is the *implemented* percentage: Art. 16 forbids
+    presenting the registered count as coverage, here and in every interface
+    that reads this dict.
+
+    Shape::
+
       {
-        "total"          : int,
-        "implemented"    : int,
-        "stubs"          : int,
-        "coverage_pct"   : float,
-        "by_type"        : { "VIDHI": {"implemented": n, "stubs": k, ...}, ... },
+        "registered"     : int,   # records in the registry
+        "implemented"    : int,   # Art. 16: invoked + moved + cited + tested
+        "coverage_pct"   : float, # implemented / registered
+        "conditions"     : {"invoked": n, "moved": n, "cited": n, "tested": n},
+        "moving_but_uncited": [sutra_id, ...],   # the immediate worklist
+        "stubs"          : int,   # legacy: records built by make_stub()
+        "scaffolded"     : int,   # registered - implemented
+        "total"          : int,   # legacy alias of "registered"
+        "by_type"        : {"VIDHI": {...}, ...},
       }
     """
+    from engine.coverage import honest_coverage
+
     total       = len(registry)
     stubs       = sum(1 for r in registry.values() if is_stub(r))
-    implemented = total - stubs
+    honest      = honest_coverage(registry)
+    implemented = honest["implemented"]
 
     by_type: Dict[str, Dict[str, int]] = defaultdict(
         lambda: {"total": 0, "implemented": 0, "stubs": 0}
     )
-    for r in registry.values():
+    implemented_ids = set(honest["implemented_ids"])
+    for sid, r in registry.items():
         bt = by_type[r.sutra_type.name]
         bt["total"] += 1
         if is_stub(r):
             bt["stubs"] += 1
-        else:
+        if sid in implemented_ids:
             bt["implemented"] += 1
 
     for bt in by_type.values():
@@ -122,9 +138,15 @@ def coverage_report(registry: Dict[str, SutraRecord]) -> Dict[str, Any]:
         )
 
     return {
-        "total"        : total,
-        "implemented"  : implemented,
-        "stubs"        : stubs,
-        "coverage_pct" : round(100.0 * implemented / total, 2) if total else 0.0,
-        "by_type"      : dict(by_type),
+        "registered"         : total,
+        "implemented"        : implemented,
+        "coverage_pct"       : honest["implemented_pct"],
+        "conditions"         : honest["conditions"],
+        "moving_but_uncited" : honest["moving_but_uncited"],
+        "ledger"             : honest["ledger"],
+        "notes"              : honest["notes"],
+        "stubs"              : stubs,
+        "scaffolded"         : total - implemented,
+        "total"              : total,          # legacy alias of "registered"
+        "by_type"            : dict(by_type),
     }

@@ -201,7 +201,7 @@ engine paths that bypass `apply_rule()`.
 
 ## Article 10 — Amendment Procedure
 
-These **fifteen** Articles (numbered 0 through 14) are amended only by:
+These **twenty** Articles (numbered 0 through 19) are amended only by:
 1. Opening `docs/AMENDMENT_<N>.md` with the proposed change and rationale.
 2. Passing every constitutional, forward, backward, and regression test
    with the proposed change applied to a branch.
@@ -403,3 +403,119 @@ by `tests/regression/`, not by the UI default.
 `tests/constitutional/test_sutra_source_citation.py` refuses commits
 that touch a sūtra file without updating the citation fields named
 above.
+
+---
+
+## Article 15 — Conflict is declared, never engineered
+
+> Added by **AMENDMENT 15** (see `docs/AMENDMENT_15.md`).
+
+A sūtra's `cond()` describes **its own** condition as Pāṇini states it. It may
+never be narrowed to avoid another sūtra.
+
+When two sūtras claim the same position, the loser is determined by a declared
+relation — `blocks_sutra_ids` (प्रतिषेध), `apavada_of` (अपवाद), adhikāra scope, or
+stratum — and the winner is chosen by the engine's paribhāṣā layer, primarily
+**1.4.2 विप्रतिषेधे परं कार्यम्**. The losing sūtra appears in the trace as
+`BLOCKED`, naming the rule that beat it and why.
+
+An utsarga that excludes a case in order to let an apavāda through is a
+constitutional violation **even when every test passes**, because the derivation
+then records a reason Pāṇini did not give.
+
+*Worked example (the template):* 6.1.102 प्रथमयोः पूर्वसवर्णः had narrowed itself
+to i/u-final aṅgas so that रामौ would come out right; 6.1.104 नादिचि, the निषेध
+that actually does that work, was a stub typed `VIDHI` with no blocks. Repaired
+2026-09-15: 6.1.102 claims every अक्-final aṅga, 6.1.104 is a `PRATISHEDHA`
+blocking it, and the trace shows APPLIED → BLOCKED → वृद्धि.
+
+*Enforcement:* `tests/constitutional/test_no_engineered_conflict.py`
+(scheduled: ROADMAP Phase B3).
+
+---
+
+## Article 16 — Coverage is firing, not registration
+
+> Added by **AMENDMENT 15**.
+
+A sūtra counts as **implemented** only when all four hold:
+
+1. it is **invoked** by at least one derivation in the test suite;
+2. it **changes the state**, or is explicitly `r1_form_identity_exempt`;
+3. it carries a **citation** to sūtra text and to the source that justifies its
+   predicate (Art. 14);
+4. it carries **≥ 3 positive and ≥ 2 negative tests** — "must not fire here" is
+   half of what a sūtra means.
+
+Everything else is **registered**, not implemented, and the two counts are
+reported separately. No document, README, or interface may present the
+registered count as coverage.
+
+*Enforcement:* `engine/coverage.py` + `tests/constitutional/test_coverage_is_honest.py`
+(in force). The ≥3/≥2 split lands with `sutra_lint` (ROADMAP Phase A2).
+
+---
+
+## Article 17 — Analysis proposes, generation verifies
+
+> Added by **AMENDMENT 15**.
+
+The engine has exactly one rule base, and it runs in one direction: generation.
+
+Analysis (pada-cheda, morphological identification, kāraka labelling) may only
+**propose candidates**. A candidate becomes an answer only when the forward
+engine, run on that candidate, reproduces the input string exactly. The accepted
+analysis ships with that forward derivation.
+
+No reverse rule may be written. Sandhi may be *inverted* mechanically as an
+over-generating candidate source; morphology may be *enumerated* into an index.
+Neither is a rule.
+
+**The form index is a cache, never a grammar.** Any table of generated forms is
+a build artifact: regenerated from the engine, never hand-edited, re-derived in
+CI. A form in the index that the engine can no longer derive is a build failure.
+The engine never consults the index to derive — an engine that reads its own
+cache to produce a derivation has become the lookup table Art. 0 forbids.
+
+*Enforcement:* `tests/constitutional/test_index_is_regenerable.py`,
+`test_no_reverse_rules.py` (scheduled: ROADMAP Phase E3/E5).
+
+---
+
+## Article 18 — A gap is an output
+
+> Added by **AMENDMENT 15**.
+
+When the engine cannot derive or cannot analyse, it must say **what is missing**,
+naming the sūtra, the dhātu, or the lexical entry that would close the gap.
+Silence is a bug.
+
+An unrecognised word is a gap, never a guess. No statistical fallback, no
+"probably a noun", no partial form presented as a derivation. A closed world
+that states its boundary is worth more to a scholar than an open one that
+improvises.
+
+Gaps are emitted in the trace and aggregated into a frequency-ranked worklist;
+that list, not intuition, orders implementation.
+
+*Enforcement:* `engine/gaps.py` (scheduled: ROADMAP Phase A3).
+
+---
+
+## Article 19 — We do not grade our own homework
+
+> Added by **AMENDMENT 15**.
+
+Correctness claims are settled against sources outside this repository:
+attested usage from the corpus, the classical commentaries, and at least one
+independent implementation.
+
+Every release publishes its agreement rate and the commands that reproduce it.
+A disagreement with an external oracle is a **work item**, never a verdict in
+either direction: the other implementation may be wrong, and the investigation
+is the deliverable.
+
+No number may appear in the README that a reader cannot regenerate with one
+command.
+
+*Enforcement:* `bench/` differential runner (scheduled: ROADMAP Phase A4).

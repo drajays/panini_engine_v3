@@ -4,13 +4,31 @@
 
 ## Status
 
+Measured, not asserted. Every number here comes from a command
+(CONSTITUTION Art. 16 · Art. 19).
+
 ```
-  Sūtras implemented   : 35 / 35       (100%, no stubs)
-  Rāma paradigm cells  : 24 / 24       (FULL classical match)
-  All 10 SutraTypes    : ✓ represented
-  Tests                : 341 passing, 0 xfailed, 0 failed
-  SIG truth-teller     : active (9 core JSONs + coverage + manifest + path-regression oracle)
+  sūtra records registered :  3,985
+  sūtras implemented       :     53   (1.33 %)   invoked + moves the state
+                                                 + cited (Art. 14) + tested
+    invoked                :    568
+    move the state         :    350
+    cited                  :    182
+    tested                 :    528
+  worklist                 :    296   move the tape but are not yet cited
+  rāma paradigm cells      :  24/24   full classical match
+  tests                    : 19,125 passing, 1 skipped
 ```
+
+```bash
+make coverage        # regenerates the ledger and prints the block above
+make test-all        # the suite
+```
+
+**A record is not a rule.** 3,985 sūtra files exist; 53 of them currently satisfy
+all four conditions of Art. 16. The gap is the roadmap, and the 296-entry worklist
+— sūtras that already do real work but carry no citation — is the next batch.
+See [`ROADMAP.md`](ROADMAP.md).
 
 ## The complete rāma paradigm — all 24 cells green
 
