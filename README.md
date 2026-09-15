@@ -19,6 +19,8 @@ Measured, not asserted. Every number here comes from a command
   rāma paradigm cells      :  24/24   full classical match
   tests                    : 19,136 passing, 1 skipped
   agreement vs Vidyut      :  81.1 %   (338 of 417 grid cells; nominals 192/192)
+  arm-gated conds          :     33   (Art. 13 §1 — ratcheted, was 155)
+  coordinate reads in cond :     29   (Art. 2 §2c — 11 owed back, see the lint)
   open gaps                :    281   (202 unscheduled rules · 79 disagreements)
   form index               : 45,936 forms · 35,426 surfaces · 1,012 lemmas
 ```

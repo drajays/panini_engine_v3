@@ -1,5 +1,53 @@
 {
-  "arm-in-cond": 156,
-  "coordinate-in-cond": 21,
-  "nisedha-as-vidhi": 87
+  "arm-in-cond": 33,
+  "coordinate-in-cond": 29,
+  "nisedha-as-vidhi": 87,
+  "_note": "Counts may only fall. coordinate-in-cond also pins the *set* below: a new offender fails the ratchet even if an old one is repaired in the same commit, which a count alone would hide.",
+  "coordinate-in-cond-ids": [
+    "1.2.5",
+    "1.2.6",
+    "2.3.36",
+    "2.3.50",
+    "2.4.37",
+    "2.4.40",
+    "2.4.43",
+    "2.4.45",
+    "3.1.33",
+    "3.1.36",
+    "3.2.115",
+    "3.3.139",
+    "3.4.100",
+    "3.4.101",
+    "3.4.81",
+    "3.4.82",
+    "3.4.86",
+    "3.4.89",
+    "6.1.2",
+    "6.1.66",
+    "6.1.8",
+    "6.4.100",
+    "6.4.120",
+    "6.4.72",
+    "7.2.1",
+    "7.2.116",
+    "7.3.86",
+    "7.4.62",
+    "8.3.60"
+  ],
+  "_coordinate_debt": {
+    "owed": [
+      "2.4.37",
+      "3.3.139",
+      "3.4.86",
+      "3.4.89",
+      "6.1.66",
+      "6.4.72",
+      "6.4.100",
+      "6.4.120",
+      "7.2.116",
+      "7.4.62",
+      "8.3.60"
+    ],
+    "why": "These eleven arrived with the arm-removal work: cond() previously read an _arm flag and now reads vibhakti / vacana / puruṣa / lakāra. Art. 2 §2c forbids the latter, and it is the worse of the two — an arm is visible debt, a coordinate read looks like a real condition while making the engine sighted. Replace with structural Term tags."
+  }
 }

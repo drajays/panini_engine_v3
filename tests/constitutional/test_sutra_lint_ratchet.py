@@ -32,6 +32,26 @@ def test_baseline_is_committed():
     assert set(RATCHETED) <= set(baseline)
 
 
+def test_no_new_coordinate_reader_appears(findings):
+    """The set, not just the count.
+
+    A commit that repairs one offender and adds another leaves the count
+    unchanged, so the ratchet pins the identities too. The eleven listed under
+    `_coordinate_debt` arrived with the arm migration and are owed back.
+    """
+    baseline = json.loads(BASELINE_PATH.read_text(encoding="utf-8"))
+    known = set(baseline["coordinate-in-cond-ids"])
+    current = set(findings["coordinate-in-cond"])
+    assert current <= known, f"new coordinate readers in cond: {sorted(current - known)}"
+
+
+def test_the_coordinate_debt_is_still_named(findings):
+    baseline = json.loads(BASELINE_PATH.read_text(encoding="utf-8"))
+    owed = baseline["_coordinate_debt"]["owed"]
+    assert owed, "the debt list was emptied without the repairs"
+    assert set(owed) <= set(baseline["coordinate-in-cond-ids"])
+
+
 @pytest.mark.parametrize("name", RATCHETED)
 def test_ratchet_never_rises(findings, name):
     baseline = json.loads(BASELINE_PATH.read_text(encoding="utf-8"))
