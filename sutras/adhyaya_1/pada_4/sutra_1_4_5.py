@@ -13,12 +13,17 @@ from __future__ import annotations
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
 
+# The pipelines tag a feminine stem "strīliṅga"; these sūtras were written
+# against a bare "stri". Accept either, so the नदी / ह्रस्व saṃjñās can fire on
+# the tape the subanta pipeline actually builds.
+FEMININE_TAGS: frozenset = frozenset({"stri", "strīliṅga"})
+
 
 def _eligible(state: State):
     for t in state.terms:
         if "prātipadika" not in t.tags:
             continue
-        if "stri" not in t.tags:
+        if not (FEMININE_TAGS & t.tags):
             continue
         if "aami_context" not in t.meta:
             continue

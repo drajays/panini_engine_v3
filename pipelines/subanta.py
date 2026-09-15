@@ -395,6 +395,9 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.1.97",
     "7.2.113",
     "7.3.106",
+    # 7.3.107 must precede 6.1.69: the सु is dropped *after* a hrasva,
+    # and it is this rule that makes नदी short in सम्बुद्धि.
+    "7.3.107",
     "6.1.69",
     "7.1.15",
     "7.1.12",
@@ -422,6 +425,8 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.4.8",
     "6.4.3",
     "7.3.103",
+    "7.3.112",  # आट् for ṅit sups after नदी — नद्यै · नद्याः
+    "7.3.116",  # ङि → आम् after नदी — नद्याम्
     "7.3.102",
     "6.4.129",
     "6.4.130",

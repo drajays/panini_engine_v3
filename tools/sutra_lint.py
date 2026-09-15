@@ -21,10 +21,13 @@ repository, and each can fail — advice is not a check.
   ERRORS (never acceptable)
     nisedha-firing-as-vidhi
                          the dangerous half of the row above: a निषेध typed
-                         VIDHI that *actually fires*. It is then doing vidhi
-                         work under a negation's text. Zero today, and the
-                         other 87 are inert — which is why they are backlog
-                         (see docs/NISEDHA_REVIEW.md) and this is an error.
+                         VIDHI that fires **and changes the form**. It is then
+                         doing vidhi work under a negation's text. A निषेध that
+                         is invoked and changes nothing is the placeholder
+                         problem, already counted as backlog above — nine of
+                         them are invoked vacuously today (6.4.4, 6.4.7,
+                         6.4.30, 6.4.39, 6.4.69, 6.4.74, 6.4.85, 6.4.126,
+                         6.4.137) and none of them moves the tape.
     inert-pratisedha     a प्रतिषेध whose declared target is never actually
                          BLOCKED anywhere in the suite — a निषेध that cannot
                          say no is dead code (Art. 15)
@@ -181,7 +184,7 @@ def lint() -> dict[str, Any]:
         type_name = rec.sutra_type.name
         if type_name == "VIDHI" and not blocks and _is_nisedha(sid, rec):
             findings["nisedha-as-vidhi"].append(f"{sid} {text_dev}")
-            if sid in invoked:
+            if sid in moved:
                 findings["nisedha-firing-as-vidhi"].append(f"{sid} {text_dev}")
         if type_name == "PRATISHEDHA" and blocks:
             if not any(b in ever_blocked for b in blocks):

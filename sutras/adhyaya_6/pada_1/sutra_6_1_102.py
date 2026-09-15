@@ -60,6 +60,17 @@ def _matches(state: State) -> bool:
         if not anga.varnas:
             return False
         return anga.varnas[-1].slp1 == "a"
+    if up == "Sas":
+        # द्वितीया बहुवचन is inside प्रथमयोः. For a नदी-type stem (ī/ū-final) the
+        # pūrvasavarṇa is the stem's own long vowel: नदी + अस् → नदीस् → नदीः.
+        # Long-vowel stems only: नदी · वधू · लता. Short i/u stems reach their
+        # शस् form through 6.1.103 (हरीन् · वायून्), which lengthens and
+        # substitutes न् in one step for the masculine.
+        if pratyaya.meta.get("Sas_purvasavarna_done"):
+            return False
+        if not anga.varnas or not pratyaya.varnas:
+            return False
+        return anga.varnas[-1].slp1 in {"I", "U", "A"}
     if up in {"O", "Ow"}:
         # प्रथमा/द्वितीया dual boundary: अक् + औ.  The utsarga claims every
         # अक्-final aṅga here — *hari + au → harī*, *vāyu + au → vāyū*, and
@@ -96,6 +107,15 @@ def act(state: State) -> State:
         pratyaya.meta["jas_purvasavarna_done"] = True
         pratyaya.meta["upadesha_slp1_original"] = "jas"
         pratyaya.meta["upadesha_slp1"] = "As"
+        return state
+    if up == "Sas":
+        # The stem's long vowel absorbs the affix's अ; only the स् survives.
+        pratyaya.varnas = [mk("s")]
+        pratyaya.meta["Sas_purvasavarna_done"] = True
+        state.meta["__why_now_dev__"] = (
+            "प्रथमयोः (द्वितीया-बहुवचने) अक्+अच्-योः पूर्वसवर्ण-दीर्घः — "
+            "नदी-आदि-दीर्घ-स्वरे शस्-अकारः तत्रैव लीयते (नदी + अस् → नदीस्)।"
+        )
         return state
     if up in {"O", "Ow"}:
         # पूर्वसवर्ण दीर्घ: i + au → ī, u + au → ū, and (only when 6.1.104 did

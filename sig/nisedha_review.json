@@ -488,7 +488,7 @@
       "anuvritta_vidhi": [],
       "previous_sutra": "6.4.3",
       "kashika": "तिसृणाम्",
-      "fires_anywhere": false
+      "fires_anywhere": true
     },
     {
       "sutra_id": "6.4.7",
@@ -499,7 +499,7 @@
       "anuvritta_vidhi": [],
       "previous_sutra": "6.4.6",
       "kashika": "पञ्चानाम्",
-      "fires_anywhere": false
+      "fires_anywhere": true
     },
     {
       "sutra_id": "6.4.30",
@@ -510,7 +510,7 @@
       "anuvritta_vidhi": [],
       "previous_sutra": "6.4.29",
       "kashika": "अञ्चिता  अस्य गुरवः",
-      "fires_anywhere": false
+      "fires_anywhere": true
     },
     {
       "sutra_id": "6.4.39",
@@ -521,7 +521,7 @@
       "anuvritta_vidhi": [],
       "previous_sutra": "6.4.38",
       "kashika": "यन्तिः",
-      "fires_anywhere": false
+      "fires_anywhere": true
     },
     {
       "sutra_id": "6.4.69",
@@ -532,7 +532,7 @@
       "anuvritta_vidhi": [],
       "previous_sutra": "6.4.68",
       "kashika": "प्रदाय",
-      "fires_anywhere": false
+      "fires_anywhere": true
     },
     {
       "sutra_id": "6.4.74",
@@ -543,7 +543,7 @@
       "anuvritta_vidhi": [],
       "previous_sutra": "6.4.73",
       "kashika": "मा भवान् कार्षीत्",
-      "fires_anywhere": false
+      "fires_anywhere": true
     },
     {
       "sutra_id": "6.4.85",
@@ -554,7 +554,7 @@
       "anuvritta_vidhi": [],
       "previous_sutra": "6.4.84",
       "kashika": "प्रतिभुवौ",
-      "fires_anywhere": false
+      "fires_anywhere": true
     },
     {
       "sutra_id": "6.4.126",
@@ -565,7 +565,7 @@
       "anuvritta_vidhi": [],
       "previous_sutra": "6.4.125",
       "kashika": "विशशसतुः",
-      "fires_anywhere": false
+      "fires_anywhere": true
     },
     {
       "sutra_id": "6.4.137",
@@ -576,7 +576,7 @@
       "anuvritta_vidhi": [],
       "previous_sutra": "6.4.136",
       "kashika": "पर्वणा",
-      "fires_anywhere": false
+      "fires_anywhere": true
     },
     {
       "sutra_id": "6.4.170",

@@ -1263,6 +1263,13 @@ def P01_subanta_bootstrap(s: State) -> State:
     s = apply_rule("1.1.27", s)
     s = apply_rule("1.1.29", s)  # *na bahuvrīhau* — strip **1.1.27** *sarvanama* on *bahuvrīhi* *aṅga*
     s = apply_rule("1.1.30", s)  # *tṛtīyā-samāse* — strip *sarvanāma* on *tṛtīyā*-*tatpuruṣa* *aṅga* (**1.1.30**)
+    # स्त्री-संज्ञाः — यू स्त्र्याख्यौ नदी (1.4.3) and its neighbours. Without these
+    # the नदी saṃjñā never exists, and every rule conditioned on it (7.3.112,
+    # 7.3.116, 7.3.107, 7.1.54) declines: नदी came out नद्ये / नदि / नद्याम् where
+    # the attested paradigm has नद्यै / नद्याम् / नदीनाम्.
+    s = apply_rule("1.4.3", s)
+    s = apply_rule("1.4.4", s)
+    s = apply_rule("1.4.5", s)
     return s
 
 

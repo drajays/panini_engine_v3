@@ -13,9 +13,9 @@ the combined substitution directly:
   - delete stem's final 'a'
   - replace pratyaya 'S a s' → 'A n'
 
-Liṅga is a state.meta field, readable by act() (but NOT by cond()).
-For cond, we require the pratyaya tag 'sup' + upadesha 'Sas' + stem
-final 'a'.  The masc/neut/fem split is performed in act().
+पुंसि is the sūtra's own restriction and is now part of ``cond``, read from
+the aṅga's liṅga tag. A feminine or neuter stem does not reach this rule at
+all: it keeps the pūrvasavarṇa 6.1.102 gave it (नदी + अस् → नदीस् → नदीः).
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 61103 · तस्माच्छसो नः पुंसि
@@ -46,7 +46,11 @@ def _matches(state: State) -> bool:
         return False
     if pratyaya.meta.get("sas_substitution_done"):
         return False
-    return True
+    # पुंसि — the sūtra's own restriction, read off the aṅga's liṅga tag
+    # (structural, not a paradigm coordinate). Feminine and neuter stems keep
+    # whatever 6.1.102 gave them: नदी + अस् → नदीस् → नदीः, and the old
+    # unconditional As-substitution here overwrote exactly that.
+    return bool({"pulliṅga", "pum"} & anga.tags)
 
 
 def cond(state: State) -> bool:
@@ -58,9 +62,7 @@ def act(state: State) -> State:
         return state
     anga = state.terms[-2]
     pratyaya = state.terms[-1]
-    # Choose pratyaya replacement based on liṅga.
-    linga = state.meta.get("linga", "pulliṅga")
-    if linga == "pulliṅga":
+    if True:
         if anga.varnas and anga.varnas[-1].slp1 == "a":
             # a-stem: delete stem's final 'a' — absorbed by the lengthening.
             del anga.varnas[-1]
@@ -81,12 +83,6 @@ def act(state: State) -> State:
             # so treat like the a-stem An substitution without stem deletion.
             pratyaya.varnas = [mk("A"), mk("n")]
             new_upa = "An"
-    else:
-        # Neuter / feminine: standard pūrva-savarṇa → As.
-        if anga.varnas and anga.varnas[-1].slp1 == "a":
-            del anga.varnas[-1]
-        pratyaya.varnas = [mk("A"), mk("s")]
-        new_upa = "As"
     pratyaya.meta["sas_substitution_done"] = True
     pratyaya.meta["upadesha_slp1_original"] = "Sas"
     pratyaya.meta["upadesha_slp1"] = new_upa

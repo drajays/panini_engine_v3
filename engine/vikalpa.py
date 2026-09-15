@@ -50,10 +50,19 @@ def choose(choices: dict[str, bool]) -> Iterator[None]:
 
 
 def optional_rules_reached(state: Any) -> list[str]:
-    """The विभाषा sūtras this derivation actually put a question to."""
+    """The विभाषा sūtras this derivation actually put a question to.
+
+    A विभाषा whose own condition was false is not an option the derivation
+    faced — it is simply inapplicable, like any other rule that declines. Only
+    a rule that fired, or that was held back by the choice, counts: otherwise
+    every subanta would report 1.4.5 वाऽऽमि as a branch point merely because
+    the scheduler walked past it.
+    """
     seen: list[str] = []
     for step in getattr(state, "trace", ()):
         if step.get("sutra_type") != "VIBHASHA":
+            continue
+        if step.get("skip_reason") == "COND-FALSE":
             continue
         sid = step.get("sutra_id")
         if sid and sid not in seen:
