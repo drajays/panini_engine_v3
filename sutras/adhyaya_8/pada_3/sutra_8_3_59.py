@@ -15,6 +15,17 @@ replaced by 'ṣ' (SLP1 'z').
 
 Tripādī (8.x), but operates on the pratyaya's s.  We detect this
 after pada-merge and the other tripāḍī sūtras have run.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 83059 · आदेशप्रत्यययोः
+              padaccheda: आदेश-प्रत्यययोः
+              anuvṛtti:   82108: संहितायाम् | 83055: अपदान्तस्य मूर्धन्यः | 83056: सः | 83057: इण्कोः | 83058: नुम्विसर्जनीयशर्व्यवायेऽपि
+  Source #2 — Kāśikā 8.3.59 udāharaṇa:
+                आदेशप्रत्यययोरिति षष्ठी भेदेन संबध्यते
+                आदेशस्य तावत् — सिषेव
+                सुष्वाप
+  Cross-check — surface pinned by: tests/regression/test_anya_pullinga_gold.py, tests/unit/test_BitzIzwa_ashir_ling.py, tests/unit/test_acaEzIt_pipeline.py
+  Reference record: sutra_ref_out/8_3_59.json
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State

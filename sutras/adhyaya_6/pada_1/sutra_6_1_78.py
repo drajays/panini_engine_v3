@@ -11,6 +11,19 @@ the prior narrow helper intact.
 
 v3.5: skip the *ec*+*ac* split when the *aṅga* **Term** carries **1.1.11**
 ``pragrahya`` (e.g. *māle* + *iti* — **6.1.125** *prakṛti-bhāva*).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61078 · एचोऽयवायावः
+              padaccheda: एचः अय्-अव्-आय्-आवः
+              anuvṛtti:   61072: संहितायाम् | 61077: अचि
+              adhikāra:   6.1.72
+  Source #2 — Kāśikā 6.1.78 udāharaṇa:
+                चयनम्
+                लवनम्
+                चायकः
+  Gloss (sa) — संहितायाम् अचि परतः एचः स्थाने अय्/अव्/आय्/आव् आदेशाः यथासङ्ख्यं भवन्ति।
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_nayaka.py, tests/forward/test_forward_krdanta_pacaka.py, tests/regression/test_anya_pullinga_gold.py
+  Reference record: sutra_ref_out/6_1_78.json
 """
 from engine import SutraType, SutraRecord, register_sutra
 from engine.lopa_ghost import iter_anga_to_following_pratyaya_pairs, state_has_sup_luk_ghost

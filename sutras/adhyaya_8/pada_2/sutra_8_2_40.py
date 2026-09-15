@@ -5,6 +5,16 @@ Demo slice (रुणद्धि .md):
   When a jhaṣ phoneme (here: 'D' = ध्) precedes 't' (from ti), change that 't'
   to 'D' (ध्). This creates the trigger for 8.4.53 (jhalām jaś jhaśi) on the
   preceding consonant.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 82040 · झषस्तथोर्धोऽधः
+              padaccheda: झषः त-थोः धः अ-धः
+  Source #2 — Kāśikā 8.2.40 udāharaṇa:
+                लब्धा
+                लब्धुम्
+                लब्धव्यम्
+  Cross-check — surface pinned by: tests/unit/test_corrected_prakriyas_v2_bundle.py, tests/unit/test_iddhaH_kta_YiinDI.py
+  Reference record: sutra_ref_out/8_2_40.json
 """
 from __future__ import annotations
 

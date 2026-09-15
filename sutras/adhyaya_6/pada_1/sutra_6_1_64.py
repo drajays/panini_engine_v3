@@ -4,6 +4,17 @@
 Glass-box row for *ñiṣvidā̃* → *ṣvid* → *svid* before *kta* *niṣṭhā* (**8.2.42**).
 
 General *dhātvādeḥ ṣaḥ saḥ* scope is **not** attempted here (CONSTITUTION Art. 7).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61064 · धात्वादेः षः सः
+              padaccheda: धातु-आदेः षः सः
+              anuvṛtti:   61045: उपदेशे
+  Source #2 — Kāśikā 6.1.64 udāharaṇa:
+                षह — सहते
+                षिच — सिञ्चति
+                धातुग्रहणं किम् ? षोडश
+  Cross-check — surface pinned by: tests/unit/test_corrected_prakriyas_v2_bundle.py, tests/unit/test_svinnaH_kta_YizvidA.py
+  Reference record: sutra_ref_out/6_1_64.json
 """
 from __future__ import annotations
 

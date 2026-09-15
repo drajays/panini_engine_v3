@@ -21,6 +21,17 @@ pratyaya we're replacing by the upadesha_slp1 meta field (set by the
 sup-attacher at 4.1.2).
 
 R1 is NOT exempt: if this fires, the form MUST change.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71012 · टाङसिङसामिनात्स्याः
+              padaccheda: टा-ङसि-ङसाम् इन-आत्-स्याः
+              anuvṛtti:   64001: अङ्गस्य | 71009: अतः
+  Source #2 — Kāśikā 7.1.12 udāharaṇa:
+                टा इत्येतस्येनादेशो भवति — वृक्षेण
+                प्लक्षेण
+                ङसीत्येतस्य आत् — वृक्षात्
+  Cross-check — surface pinned by: tests/unit/test_mahoraskena_bahuvrihi.py, tests/unit/test_sarvasmai_smat_smin_prakriya.py
+  Reference record: sutra_ref_out/7_1_12.json
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.gates  import adhikara_in_effect

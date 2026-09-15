@@ -6,6 +6,17 @@
 v3: recipe-only arms for ``corrected_prakriyas_v2`` **P003-A** (*paktrimam*),
 **P003-B** (*kṛtrimam*), **P003-C** (*uptrimam*). General *ḍvit* scope is **not**
 implemented (CONSTITUTION Art. 7).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 33088 · ड्वितः क्त्रिः
+              padaccheda: डु-इतः क्त्रिः
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 33018: भावे | 33019: अकर्तरि च कारके संज्ञायाम्
+  Source #2 — Kāśikā 3.3.88 udāharaṇa:
+                इति वचनात् केवलो न प्रयुज्यते
+                — पक्त्रिमम्
+                — उप्त्रिमम्
+  Cross-check — surface pinned by: tests/unit/test_corrected_prakriyas_v2_bundle.py, tests/unit/test_kRtrimam_ktri_kf.py, tests/unit/test_paktrimam_ktri_qupac.py
+  Reference record: sutra_ref_out/3_3_88.json
 """
 from __future__ import annotations
 

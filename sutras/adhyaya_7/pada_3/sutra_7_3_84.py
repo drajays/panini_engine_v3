@@ -14,6 +14,17 @@ Narrow **P040** (*juhoti*): when ``state.meta['juhoti_guna_recipe']``, *guṇa* 
 hit the *abhyāsa* copy).
 
 ṛ/ṝ → ``a`` with **1.1.51** (उरण् रपरः) completing ``ar`` / ``ar``…
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73084 · सार्वधातुकार्धधातुकयोः
+              padaccheda: सार्वधातुक-आर्धधातुकयोः
+              anuvṛtti:   64001: अङ्गस्य | 73082: गुणः | 11003: इकः
+  Source #2 — Kāśikā 7.3.84 udāharaṇa:
+                तरति
+                नयति
+                भवति
+  Cross-check — surface pinned by: tests/constitutional/test_no_new_duplicates.py, tests/test_bhavati_glassbox.py, tests/unit/test_Bavitavyam_split_prakriyas.py
+  Reference record: sutra_ref_out/7_3_84.json
 """
 from __future__ import annotations
 

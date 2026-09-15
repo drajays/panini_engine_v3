@@ -4,6 +4,17 @@
 Demo slice (मुञ्चति.md):
   If anusvāra (M) is followed by a yayi consonant (here: c), replace M by the
   corresponding nasal of that consonant's varga (here: Y = ñ).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 84058 · अनुस्वारस्य ययि परसवर्णः
+              padaccheda: अनुस्वारस्य । ययि । परसवर्णः
+              anuvṛtti:   82108: संहितायाम्
+  Source #2 — Kāśikā 8.4.58 udāharaṇa:
+                शं + किता → शङ्किता
+                शं + कितुम् → शङ्कितुम्
+                शं + कितव्यम् → शङ्कितव्यम्
+  Cross-check — surface pinned by: tests/unit/test_saGgasIzwa_sam_gam_ashir_ling.py
+  Reference record: sutra_ref_out/8_4_58.json
 """
 from __future__ import annotations
 

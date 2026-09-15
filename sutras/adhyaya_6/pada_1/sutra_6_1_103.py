@@ -16,6 +16,17 @@ the combined substitution directly:
 Liṅga is a state.meta field, readable by act() (but NOT by cond()).
 For cond, we require the pratyaya tag 'sup' + upadesha 'Sas' + stem
 final 'a'.  The masc/neut/fem split is performed in act().
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61103 · तस्माच्छसो नः पुंसि
+              padaccheda: तस्मात् शसः नः पुंसि
+              anuvṛtti:   61072: संहितायाम् | 61102: पूर्वसवर्णः
+  Source #2 — Kāśikā 6.1.103 udāharaṇa:
+                वृक्षान्
+                अग्नीन्
+                वायून्
+  Cross-check — surface pinned by: tests/unit/test_SamBu_subanta.py
+  Reference record: sutra_ref_out/6_1_103.json
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State

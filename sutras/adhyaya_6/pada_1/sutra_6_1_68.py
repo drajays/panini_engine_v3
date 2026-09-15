@@ -16,6 +16,17 @@ exactly one *varna*, tagged **apṛkta** (by **1.2.41**), and that *varna* must 
 When a rule application succeeds, ``act`` may also set **demo-scoped** registry
 keys if ``state.meta`` carries a known arm **and** the eligible *aṅga* bears
 the matching witness tag (telemetry only; not read by ``cond``).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61068 · हल्ङ्याब्भ्यो दीर्घात् सुतिस्यपृक्तं हल्
+              padaccheda: हल्-ङी-आब्भ्यः दीर्घात् सु-ति-सि अपृक्तम् हल्
+              anuvṛtti:   61066: लोपः
+  Source #2 — Kāśikā 6.1.68 udāharaṇa:
+                तदिह लौकिकेनार्थेनार्थवत् कर्मसाधनं द्रष्टव्यम्
+                लुप्यत इति लोपः
+                हलन्तात् सुलोपः — राजा
+  Cross-check — surface pinned by: tests/regression/test_rADA_strilinga_gold.py, tests/unit/test_agnicit_agni_ci_kvip.py, tests/unit/test_ardhaBAj_sup.py
+  Reference record: sutra_ref_out/6_1_68.json
 """
 from __future__ import annotations
 

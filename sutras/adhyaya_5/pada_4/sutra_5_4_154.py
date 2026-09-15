@@ -8,6 +8,17 @@ v3 narrow slice:
   • requires bahuvrīhi saṃjñā registry from **2.2.24**
   • expects two samāsa members: ``bahu`` + ``KaTvA`` (upadeśa snapshots)
   • appends a kap residue as phonetic ``ka`` (upadeśa stored as ``kap``)
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 54154 · शेषाद्विभाषा
+              padaccheda: शेषात् विभाषा
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 54068: समासान्ताः | 54113: बहुव्रीहौ | 54151: कप्
+  Source #2 — Kāśikā 5.4.154 udāharaṇa:
+                बह्व्यः खट्वा अस्मिन् बहुखट्वकः
+                बहुमालकः
+                बहुवीणकः
+  Cross-check — surface pinned by: tests/unit/test_bahuKaTvakaH_bahuvrihi.py
+  Reference record: sutra_ref_out/5_4_154.json
 """
 from __future__ import annotations
 

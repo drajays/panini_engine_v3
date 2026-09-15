@@ -12,6 +12,17 @@
 requires **3.1.91** on ``adhikara_stack`` (*dhātoḥ*) and *kartari* licence (**3.4.69** or recipe meta).
 Does **not** implement *divādi*
 *apavāda* (*śyan* etc.).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31068 · कर्तरि शप्
+              padaccheda: कर्तरि शप्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31022: धातोः | 31067: सार्वधातुके
+  Source #2 — Kāśikā 3.1.68 udāharaṇa:
+                पकारः स्वरार्थः
+                भवति
+                पचति
+  Cross-check — surface pinned by: tests/test_bhavati_glassbox.py, tests/unit/test_aBavatAm_split_prakriyas.py, tests/unit/test_autonomous_vs_recipe.py
+  Reference record: sutra_ref_out/3_1_68.json
 """
 from __future__ import annotations
 

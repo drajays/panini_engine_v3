@@ -19,6 +19,17 @@ v3.5 guard: when the *aṅga* ends in a **consonant** before ``am`` (e.g. ``…r
 ``…m``), **6.1.107** must **not** delete ``am``'s initial ``a`` — otherwise
 ``hotAr`` + ``am`` → ``*hotArm``, or ``paktrim`` + ``am`` → ``*paktrimm``
 (corrected-v2 **P003**).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61107 · अमि पूर्वः
+              padaccheda: अमि पूर्वः
+              anuvṛtti:   61072: संहितायाम् | 61084: एकः पूर्वपरयोः | 61101: अकः
+  Source #2 — Kāśikā 6.1.107 udāharaṇa:
+                वृक्षम्
+                प्लक्षम्
+                अग्निम्
+  Cross-check — surface pinned by: tests/regression/test_anya_pullinga_gold.py, tests/unit/test_Amalakam.py, tests/unit/test_Bavitavyam_split_prakriyas.py
+  Reference record: sutra_ref_out/6_1_107.json
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State

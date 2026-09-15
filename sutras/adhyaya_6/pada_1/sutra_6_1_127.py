@@ -13,6 +13,19 @@ v3 narrow slice (P023: दिव् + काम → दिउ + काम):
 
 This structure allows **6.1.77** (*iko yaṇ aci*) to apply across Terms when
 recipe-arrested via ``6_1_77_ik_yan_aci_general_arm``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61127 · इकोऽसवर्णे शाकल्यस्य ह्रस्वश्च
+              padaccheda: इकः अ-सवर्णे शाकल्यस्य ह्रस्वः च
+              anuvṛtti:   61072: संहितायाम् | 61125: अचि | 61115: प्रकृत्या
+              adhikāra:   6.1.72
+  Source #2 — Kāśikā 6.1.127 udāharaṇa:
+                दधि अत्र (पक्षे: दध्यत्र)
+                मधु अत्र (पक्षे: मध्वत्र)
+                कुमारि अत्र (पक्षे: कुमार्यत्र)
+  Gloss (sa) — In saṃhitā at a pada boundary, if the left ends in ik (i/ī/u/ū/ṛ/ṝ/ḷ/ḹ) and the next begins with a vowel that is not savarṇa, Śākalya allows prakṛtibhāva (no yaṇ substitution) and sets the ik to hrasva; alternative derivation applies 6.1.77 (yaṇ).
+  Cross-check — surface pinned by: tests/unit/test_dyukAmA_bahuvrihi_paribhasha.py
+  Reference record: sutra_ref_out/6_1_127.json
 """
 from __future__ import annotations
 

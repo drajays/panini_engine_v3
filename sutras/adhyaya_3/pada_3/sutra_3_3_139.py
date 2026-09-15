@@ -5,6 +5,17 @@ Two operational paths:
   1. ``corrected_v2_P019_3_3_139_lRG_arm``: P019 path for *vṛt* dhātu only.
   2. ``3_3_139_lRG_arm``: general glass-box path — attach *lṛṅ* for any dhātu
      (counterfactual / *kriyātipatti* mood, e.g. bhū → abhavaṣyat).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 33139 · लिङ्निमित्ते लृङ् क्रियाऽतिपत्तौ
+              padaccheda: लिङ्-निमित्ते लृङ् क्रिया-अतिपत्तौ
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 33136: भविष्यति
+  Source #2 — Kāśikā 3.3.139 udāharaṇa:
+                दक्षिणेन चेदायास्यन्न शकटं पर्याभविष्यत्
+                यदि कमलकमाह्वास्यन्न शकटं पर्याभविष्यत्
+                अभोक्ष्यत भवान् घृतेन यदि मत्समीपमागमिष्यत्
+  Cross-check — surface pinned by: tests/unit/test_tinanta_abhavisyat_lrg.py
+  Reference record: sutra_ref_out/3_3_139.json
 """
 from __future__ import annotations
 

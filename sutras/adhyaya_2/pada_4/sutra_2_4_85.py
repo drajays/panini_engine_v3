@@ -13,6 +13,16 @@ so ``cond`` remains blind to *puruṣa* / *vacana* coordinates (CONSTITUTION Art
 
 For backward-compat, when ``luT_adesha_form`` is absent, defaults to *ti* → *qA*
 (the legacy single-cell path).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 24085 · लुटः प्रथमस्य डारौरसः
+              padaccheda: लुटः प्रथमस्य डा-रौ-रसः
+  Source #2 — Kāśikā 2.4.85 udāharaṇa:
+                कर्ता
+                आत्मनेपदस्य — अध्येता
+                प्रथमस्येति किम्? श्वः कर्तासि
+  Cross-check — surface pinned by: tests/unit/test_tinanta_ad_lut_kartari.py
+  Reference record: sutra_ref_out/2_4_85.json
 """
 from __future__ import annotations
 

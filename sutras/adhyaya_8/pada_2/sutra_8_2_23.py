@@ -7,6 +7,18 @@ Three operational paths — all phonologically discriminated:
   2. ``8_2_23_dyauH_v_lopa_arm`` (dyauḥ-specific): first term ends in ``…Ov``,
      followed by a ``su`` sup → drop final ``v``.
   3. ``8_2_23_asmad_ns_arm`` (asmad dvitīyā bahu): pada ends in ``ns`` → drop final ``s``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 82023 · संयोगान्तस्य लोपः
+              padaccheda: संयोग-अन्तस्य ६/१ लोपः १/१
+              anuvṛtti:   81016: पदस्य
+  Source #2 — Kāśikā 8.2.23 udāharaṇa:
+                गोमान्
+                यवमान्
+                कृतवान्
+  Gloss (sa) — पदान्ते संयोगान्तस्य वर्णस्य लोपः।
+  Cross-check — surface pinned by: tests/unit/test_dyOH_div_subanta.py, tests/unit/test_gomAn_pipeline.py
+  Reference record: sutra_ref_out/8_2_23.json
 """
 from __future__ import annotations
 

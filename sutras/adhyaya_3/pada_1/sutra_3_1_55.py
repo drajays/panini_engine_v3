@@ -9,6 +9,17 @@ substitution resolves ``luG``.
 Engine:
   • ``state.meta['corrected_v2_P018_A_3_1_55_arm']`` (cleared in ``act``).
   • detects ``cli`` ``Term`` and a **``dyut``** *dhātu* (flat **or** ``upadesha_slp1``).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31055 · पुषादिद्युताद्यॢदितः परस्मैपदेषु
+              padaccheda: पुषादि-द्युतादि-ऌदितः परस्मैपदेषु
+              anuvṛtti:   31022: धातोः | 31043: लुङि | 31044: च्लेः | 31048: कर्तरि | 31052: अङ्
+  Source #2 — Kāśikā 3.1.55 udāharaṇa:
+                पुष — अपुषत्
+                द्युतादि — अद्युतत्
+                अश्वितत्
+  Cross-check — surface pinned by: tests/unit/test_tinanta_ad_lug_kartari.py
+  Reference record: sutra_ref_out/3_1_55.json
 """
 from __future__ import annotations
 

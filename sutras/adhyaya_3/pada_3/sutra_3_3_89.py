@@ -11,6 +11,17 @@ Implemented rows (recipe arms only; CONSTITUTION Art. 7):
   **6.1.78** before *pada* merge in the pipeline).
 
 General *ṭvit* scope is **not** implemented.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 33089 · ट्वितोऽथुच्
+              padaccheda: टु-इतः अथुच्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 33018: भावे | 33019: अकर्तरि च कारके संज्ञायाम्
+  Source #2 — Kāśikā 3.3.89 udāharaṇa:
+                — वेपथुः
+                — श्वयथुः
+                — क्षवथुः
+  Cross-check — surface pinned by: tests/unit/test_corrected_prakriyas_v2_bundle.py, tests/unit/test_vepathuH_athuc_wuvepf.py, tests/unit/test_zvayathuH_athuc_wzvi.py
+  Reference record: sutra_ref_out/3_3_89.json
 """
 from __future__ import annotations
 

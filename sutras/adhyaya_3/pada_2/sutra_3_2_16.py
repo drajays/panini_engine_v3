@@ -6,6 +6,17 @@ introduced.
 
 Engine: armed ``corrected_v2_P005_A_3_2_16_arm`` — insert **wa** (ट् + अ) after the
 ``car`` *dhātu* ``Term`` as a ``kṛt`` *pratyaya* (SLP1 ``w`` = ट्).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 32016 · चरेष्टः
+              padaccheda: चरेः टः
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 32004: सुपि | 32015: अधिकरणे
+  Source #2 — Kāśikā 3.2.16 udāharaṇa:
+                चरेर्धातोरधिकरणे सुबन्त उपपदे टप्रत्ययो भवति
+                कुरुषु चरतीति कुरुचरः
+                मद्रचरः
+  Cross-check — surface pinned by: tests/unit/test_bhaNguram_Ghurac.py
+  Reference record: sutra_ref_out/3_2_16.json
 """
 from __future__ import annotations
 

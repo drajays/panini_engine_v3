@@ -24,6 +24,17 @@ the locative scopes the **ṅit** pratyaya itself because this sūtra has no
 
 Blindness: ``cond`` reads only tags, ``upadesha_slp1``, and final varṇa letters
 — no ``vibhakti`` / ``vacana``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73114 · सर्वनाम्नः स्याड्ढ्रस्वश्च
+              padaccheda: सर्वनाम्नः स्याट् ह्रस्वः च
+              anuvṛtti:   64001: अङ्गस्य | 73111: ङिति | 73113: आपः
+  Source #2 — Kāśikā 7.3.114 udāharaṇa:
+                सर्वस्यै
+                विश्वस्यै
+                यस्यै
+  Cross-check — surface pinned by: tests/unit/test_sutra_7_3_113_yadap_ne.py, tests/unit/test_sutra_7_3_114_sarvanamnah_syat_hrasvas_ca.py
+  Reference record: sutra_ref_out/7_3_114.json
 """
 from __future__ import annotations
 

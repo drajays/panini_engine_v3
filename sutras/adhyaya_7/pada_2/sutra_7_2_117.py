@@ -17,6 +17,17 @@ When a following **taddhita** pratyaya is **ṇit** or **ñit**, the **first vow
 - Detects **ñit/ṇit** via `pratyaya.meta['it_markers']` containing one of:
   `'Y'` (ñ), `'N'` or `'R'` (ṇ/ṇi-like markers as carried by it-lopa 1.3.9).
 - Applies to an `anga` term followed by a `taddhita` pratyaya term.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 72117 · तद्धितेष्वचामादेः
+              padaccheda: तद्धितेषु अचाम् आदेः
+              anuvṛtti:   64001: अङ्गस्य | 72114: वृद्धिः | 72115: अचो ञ्णिति
+  Source #2 — Kāśikā 7.2.117 udāharaṇa:
+                गार्ग्यः
+                वात्स्यः
+                दाक्षिः
+  Cross-check — surface pinned by: tests/unit/test_AraRya_pipeline.py, tests/unit/test_SANDikyaH_Yya_SRqika.py, tests/unit/test_aupAgava_pipeline.py
+  Reference record: sutra_ref_out/7_2_117.json
 """
 from __future__ import annotations
 

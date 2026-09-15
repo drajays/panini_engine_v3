@@ -13,6 +13,17 @@ We implement the minimal mechanical transformation:
 
 Blindness:
   - cond() reads only tags + upadeśa identity.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73119 · अच्च घेः
+              padaccheda: अत् च घेः
+              anuvṛtti:   64001: अङ्गस्य | 73116: ङेः | 73117: इदुद्भ्याम्
+  Source #2 — Kāśikā 7.3.119 udāharaṇa:
+                अग्नौ
+                वायौ
+                कृतौ
+  Cross-check — surface pinned by: tests/unit/test_SamBu_subanta.py
+  Reference record: sutra_ref_out/7_3_119.json
 """
 from __future__ import annotations
 

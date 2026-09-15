@@ -8,6 +8,18 @@ Demo slice (पृष्ट्वा):
 Engine:
   - detects a dhātu in the narrow list and a following kṛt pratyaya whose
     ``upadesha_slp1_original`` is `ktvA`, and tags that pratyaya with ``kngiti``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 12008 · रुदविदमुषग्रहिस्वपिप्रच्छः सँश्च
+              padaccheda: रुद-विद-मुष-ग्रहि-स्वपि-प्रच्छः · सन् · च
+              anuvṛtti:   12005: कित् | 12007: क्त्वा
+  Source #2 — Kāśikā 1.2.8 udāharaṇa:
+                ग्रहेर्विध्यर्थमेव
+                स्वपिप्रच्छ्योः सन्नर्थं ग्रहणम्
+                किदेव हि क्त्वा
+  Gloss (sa) — रुदादिभ्यः सनि कित् संज्ञा।
+  Cross-check — surface pinned by: tests/unit/test_cicIzati_ci_san_desiderative.py, tests/unit/test_jiGfkSati_grah_san_desiderative.py, tests/unit/test_pfzwvA_pracch_ktvA.py
+  Reference record: sutra_ref_out/1_2_8.json
 """
 from __future__ import annotations
 

@@ -13,6 +13,17 @@ the operational *vṛddhi* pair is the **A** immediately before **e** in the
 pratyaya slice).
 
 Mutually exclusive with **7.3.114** (*sarvanāmnaḥ syāṭ* …).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73113 · याडापः
+              padaccheda: याट् आपः
+              anuvṛtti:   64001: अङ्गस्य | 73111: ङिति
+  Source #2 — Kāśikā 7.3.113 udāharaṇa:
+                खट्वायै
+                बहुराजायै
+                कारीषगन्ध्यायै
+  Cross-check — surface pinned by: tests/unit/test_sutra_7_3_113_yadap_ne.py
+  Reference record: sutra_ref_out/7_3_113.json
 """
 from __future__ import annotations
 

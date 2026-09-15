@@ -9,6 +9,17 @@ Narrow v3:
   - ``state.meta['P035_6_1_2_ekaca_dve_arm']`` and ``state.meta['lakara_liT']``.
   - First *dhātu* ``Term`` is exactly ``p`` (single *hal*), followed by the *liṭ*
     *atus* pratyaya (``lit_atus`` / ``upadesha_slp1 == 'atus'``).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61002 · अजादेर्द्वितीयस्य
+              padaccheda: अच्-आदेः द्वितीयस्य
+              anuvṛtti:   61001: एकाचः द्वे
+  Source #2 — Kāśikā 6.1.2 udāharaṇa:
+                अजादेर्द्वितीयस्यैकाचो द्विर्वचनमधिक्रियते
+                अटिटिषति
+                अशिशिषति
+  Cross-check — surface pinned by: tests/unit/test_papatuH_lit_pA.py, tests/unit/test_prakriya_sAmanyas_taddhita.py
+  Reference record: sutra_ref_out/6_1_2.json
 """
 from __future__ import annotations
 

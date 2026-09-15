@@ -8,6 +8,17 @@ the vowel immediately before that cluster (upadhā) lengthens: a→ā, i→ī, u
 Handles all short-vowel upadehas:
   yasas → yasan+s → yasāns → yasāṃsi  (a→ā)
   dhanus → dhanun+s → dhanūns → dhanūṃṣi  (u→ū)
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64010 · सान्तमहतः संयोगस्य
+              padaccheda: सान्त (लुप्तषष्ठ्यन्तनिर्देशः) महतः संयोगस्य
+              anuvṛtti:   63111: दीर्घः | 64001: अङ्गस्य | 64007: नोपधायाः | 64008: सर्वनामस्थाने असम्बुद्धौ
+  Source #2 — Kāśikā 6.4.10 udāharaṇa:
+                श्रेयान्
+                श्रेयांसि
+                पयांसि
+  Cross-check — surface pinned by: tests/unit/test_jakzatuH_lit_ad_gas.py, tests/unit/test_paceran_vidhi_liG_pac_Ja.py, tests/unit/test_tinanta_bhavatu_lot.py
+  Reference record: sutra_ref_out/6_4_10.json
 """
 from __future__ import annotations
 

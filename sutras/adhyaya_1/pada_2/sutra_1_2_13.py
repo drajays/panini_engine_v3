@@ -9,6 +9,18 @@ Engine:
   - recipe arms via ``state.meta['1_2_13_va_gam_kit_arm']``.
   - requires preceding *dhātu* ``upadesha_slp1=='gam'``.
   - requires a ``ling_sIyuw`` pratyaya and a *taṅ* *tiṅ* termination (ātmanepada).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 12013 · वा गमः
+              padaccheda: वा · गमः
+              anuvṛtti:   12005: कित् | 12009: झल् | 12011: लिङ्-सिचौ आत्मनेपदेषु | 12012: उः
+  Source #2 — Kāśikā 1.2.13 udāharaṇa:
+                संगंसीष्ट
+                सिचः खल्वपि — समगंस्त
+                कित्त्वपक्षेऽनुनासिकलोपो भवति —  (६.४.३७) इति
+  Gloss (sa) — लिङ्सिचात्मनेपदेषु गम्धातोर्विभाषा उकारान्तवत् झल्त्वम्।
+  Cross-check — surface pinned by: tests/unit/test_saGgasIzwa_sam_gam_ashir_ling.py
+  Reference record: sutra_ref_out/1_2_13.json
 """
 from __future__ import annotations
 

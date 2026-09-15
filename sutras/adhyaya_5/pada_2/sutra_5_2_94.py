@@ -7,6 +7,17 @@ Glass-box: when a recipe arms ``state.meta["matup_recipe"]`` and the tape is
 *taddhita* ``Term``.
 
 Cross-check *pāṭha*: ``data/sutrANi.tsv`` / machine row *i*=50294.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 52094 · तदस्यास्त्यस्मिन्निति मतुप्
+              padaccheda: तत् अस्य अस्ति (क्रियापदम्) अस्मिन् इति मतुप्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः
+  Source #2 — Kāśikā 5.2.94 udāharaṇa:
+                अस्यास्मिन्निति प्रत्ययार्थौ
+                अस्तीति प्रकृतिविशेषणम्
+                इतिकरणो विवक्षार्थः
+  Cross-check — surface pinned by: tests/unit/test_gomAn_pipeline.py
+  Reference record: sutra_ref_out/5_2_94.json
 """
 from __future__ import annotations
 

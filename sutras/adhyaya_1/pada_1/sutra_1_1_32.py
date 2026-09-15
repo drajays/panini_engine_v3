@@ -13,6 +13,18 @@ Engine (glass-box):
 Mechanical blindness (CONSTITUTION Art. 2):
   - ``cond`` reads only structural tags + *sup* identity (``upadesha_slp1``).
   - No paradigm coordinate reads.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 11032 · विभाषा जसि
+              padaccheda: विभाषा १/१ जसि ७/१
+              anuvṛtti:   11027: सर्वादीनि सर्वनामानि | 11029: न | 11031: द्वन्द्वे
+  Source #2 — Kāśikā 1.1.32 udāharaṇa:
+                सर्वे
+                ते
+                के
+  Gloss (sa) — सर्वनामशब्देषु जस्प्रत्यये विभाषा प्रवृत्तिः।
+  Cross-check — surface pinned by: tests/unit/test_sutra_1_1_32_vibhASa_jasi.py
+  Reference record: sutra_ref_out/1_1_32.json
 """
 from __future__ import annotations
 

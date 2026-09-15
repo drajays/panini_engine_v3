@@ -10,6 +10,17 @@ Operational intent for v3.4 (hari-like i-stems):
 
 Blindness:
   - cond() reads only the pratyaya's 'sambuddhi' tag + aṅga tags/phoneme.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73108 · ह्रस्वस्य गुणः
+              padaccheda: ह्रस्वस्य गुणः
+              anuvṛtti:   64001: अङ्गस्य | 73106: सम्बुद्धौ
+  Source #2 — Kāśikā 7.3.108 udāharaṇa:
+                ह्रस्वान्तस्याङ्गस्य गुणो भवति संबुद्धौ परतः
+                हे अग्ने
+                हे वायो
+  Cross-check — surface pinned by: tests/unit/test_SamBu_subanta.py
+  Reference record: sutra_ref_out/7_3_108.json
 """
 from __future__ import annotations
 

@@ -8,6 +8,17 @@ Operational role (v3.6, demo slice):
 
 Example (1145.md):
   u a c + t  → u c + t
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61108 · सम्प्रसारणाच्च
+              padaccheda: सम्प्रसारणात् च
+              anuvṛtti:   61072: संहितायाम् | 61077: अचि | 61084: एकः पूर्वपरयोः | 61107: पूर्वः
+  Source #2 — Kāśikā 6.1.108 udāharaṇa:
+                यजि — इष्टम्
+                वपि — उप्तम्
+                ग्रहि — गृहीतम्
+  Cross-check — surface pinned by: tests/unit/test_jiGfkSati_grah_san_desiderative.py, tests/unit/test_pfzwvA_pracch_ktvA.py, tests/unit/test_uditvA_uzitvA_ktvA_samprasaraNa.py
+  Reference record: sutra_ref_out/6_1_108.json
 """
 from __future__ import annotations
 

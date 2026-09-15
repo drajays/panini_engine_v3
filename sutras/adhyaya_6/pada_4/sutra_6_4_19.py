@@ -8,6 +8,17 @@ Demo slice (पृष्ट्वा):
 Engine:
   - requires a following pratyaya tagged ``kngiti``.
   - narrow: operates only on the primary dhātu term with upadeśa `pfcC`.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64019 · च्छ्वोः शूडनुनासिके च
+              padaccheda: च्छ्-वोः श्-ऊठ् अनुनासिके च
+              anuvṛtti:   64001: अङ्गस्य | 64015: क्विझलोः क्ङिति
+  Source #2 — Kāśikā 6.4.19 udāharaṇa:
+                प्रश्नः
+                विश्नः
+                अन्तरङ्गत्वाच्    इति तुकि कृते सतुक्कस्य शादेशः
+  Cross-check — surface pinned by: tests/unit/test_pfzwvA_pracch_ktvA.py
+  Reference record: sutra_ref_out/6_4_19.json
 """
 from __future__ import annotations
 

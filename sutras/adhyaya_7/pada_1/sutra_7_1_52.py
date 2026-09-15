@@ -12,6 +12,17 @@ We implement:
   - prepend varṇas: s, w (ṭ)
   - update pratyaya.meta['upadesha_slp1'] to 'sAm' so downstream rules
     can key off identity without reading paradigm coords.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71052 · आमि सर्वनाम्नः सुट्
+              padaccheda: आमि सर्वनाम्नः सुट्
+              anuvṛtti:   64001: अङ्गस्य | 71050: आत्
+  Source #2 — Kāśikā 7.1.52 udāharaṇa:
+                अवर्णात् सर्वनाम्न उत्तरस्यामः सुडागमो भवति
+                सर्वेषाम्
+                विश्वेषाम्
+  Cross-check — surface pinned by: tests/unit/test_pUrvaparANAm_dvandva.py, tests/unit/test_sarva_unified_subanta.py, tests/unit/test_sutra_1_1_31_dvandve_ca.py
+  Reference record: sutra_ref_out/7_1_52.json
 """
 from __future__ import annotations
 

@@ -9,6 +9,17 @@ Two operational paths:
 
 The yāsuṭ Term is tagged ``yasut_agama`` (not ``upadesha``) so that 1.3.3 does
 not mis-mark its 's' as halantyam-it before 7.2.79 drops it.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34103 · यासुट् परस्मैपदेषूदात्तो ङिच्च
+              padaccheda: यासुट् परस्मैपदेषु उदात्तः ङित् च
+              anuvṛtti:   34102: लिङः
+  Source #2 — Kāśikā 3.4.103 udāharaṇa:
+                सीयुटोऽपवादः
+                कुर्यात्
+                अचिनवम्
+  Cross-check — surface pinned by: tests/unit/test_tinanta_ad_lig_kartari.py, tests/unit/test_tinanta_bhavet_ling.py
+  Reference record: sutra_ref_out/3_4_103.json
 """
 from __future__ import annotations
 

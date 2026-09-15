@@ -8,6 +8,17 @@ In loṭ context (arm ``3_4_89_loT_arm``): replaces the 1sg tiṅ ādeśa 'mi'
   the 'n' of 'ni' (yañ), giving: bhav + ā + ni = bhavāni.
 
 Apavāda to 3.4.101 (which would give mi→am for laṅ) — call 3.4.89 first.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34089 · मेर्निः
+              padaccheda: मेः निः
+              anuvṛtti:   34085: लोटः
+  Source #2 — Kāśikā 3.4.89 udāharaṇa:
+                लोडादेशस्य मेर्निरादेशो भवति
+                उत्वलोपयोरपवादः
+                पचानि
+  Cross-check — surface pinned by: tests/unit/test_tinanta_bhavatu_lot.py
+  Reference record: sutra_ref_out/3_4_89.json
 """
 from __future__ import annotations
 

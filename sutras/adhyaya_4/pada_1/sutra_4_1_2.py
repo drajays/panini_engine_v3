@@ -16,6 +16,17 @@ NOTE: The ONLY place (vibhakti, vacana) may be read is inside THIS
 sūtra's act().  This is the single exception granted by the
 Constitution because the sup-attachment is itself the rule that maps
 paradigm-coordinates to upadeśa.  Downstream cond()s never see them.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 41002 · स्वौजसमौट्छष्टाभ्याम्भिस्ङेभ्याम्भ्यस्ङसिभ्याम्भ्यस्ङसोसाम्ङ्योस्सुप्
+              padaccheda: सुँ-औ-जस्-अम्-औट्-शस्-टा-भ्याम्-भिस्-ङे-भ्याम्-भ्यस्-ङसिँ-भ्याम्-भ्यस्-ङस्-ओस्-आम्-ङि-ओस्-सुप्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात्
+  Source #2 — Kāśikā 4.1.2 udāharaṇa:
+                ङ्याप्प्रातिपदिकात् स्वादयः प्रत्यया भवन्ति
+                उकारादयोऽनुबन्धा यथायोगमुच्चारणविशेषणार्थाः
+                औटष्टकारःसुडिति प्रत्याहारग्रहणार्थः
+  Cross-check — surface pinned by: tests/constitutional/test_no_vibhakti_read_in_cond.py, tests/constitutional/test_subanta_recipe_sequential_only.py, tests/unit/test_Amalakam.py
+  Reference record: sutra_ref_out/4_1_2.json
 """
 import json
 from pathlib import Path

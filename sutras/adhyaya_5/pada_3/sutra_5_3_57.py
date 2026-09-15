@@ -4,6 +4,17 @@
 Full *Aṣṭādhyāyī* *prayoga* needs the **5.3.2** *adhikāra*, *samarthya* …; v3 *glass-box* only
 *appends* a **tara**+**p**-upadeśa *taddhita* *Term* for *kumArI*+… *śāstra* demos
 (``kumari.md``: *kumAritarA*).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 53057 · द्विवचनविभज्योपपदे तरबीयसुनौ
+              padaccheda: द्विवचन-विभज्य-उपपदे तरप्-ईयसुनौ
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 53055: अतिशायने | 53056: तिङः
+  Source #2 — Kāśikā 5.3.57 udāharaṇa:
+                विभक्तव्यो विभज्यः
+                निपातनाद् यद् भवति
+                तमबिष्ठनोरपवादौ यथासंख्यमत्र नेष्यते
+  Cross-check — surface pinned by: tests/unit/test_kumAri_taddhita_pipeline.py
+  Reference record: sutra_ref_out/5_3_57.json
 """
 from __future__ import annotations
 

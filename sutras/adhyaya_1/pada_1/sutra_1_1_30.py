@@ -13,6 +13,18 @@ rule *removes* that tag when the aṅga carries the structural tag ``tRtIyA_tatp
 not *gold*.
 
 *Cross-check* *pāṭha* (row *i* = 11030, *ashtadhyayi-com* *sutraani*) or local *sutr*āṇi TSV.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 11030 · तृतीयासमासे
+              padaccheda: तृतीया-समासे ७/१
+              anuvṛtti:   11027: सर्वादीनि सर्वनामानि | 11029: न
+  Source #2 — Kāśikā 1.1.30 udāharaṇa:
+                पाण्डुना रङ्गः
+                गङ्गया पतिः
+                मासपूर्वाय
+  Gloss (sa) — तृतीयातत्पुरुषसमासे सर्वादयः सर्वनामसंज्ञां न लभन्ते।
+  Cross-check — surface pinned by: tests/unit/test_tRtIyA_samAse_1_1_30.py
+  Reference record: sutra_ref_out/1_1_30.json
 """
 from __future__ import annotations
 

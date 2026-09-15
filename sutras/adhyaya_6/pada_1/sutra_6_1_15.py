@@ -8,6 +8,17 @@ Operational role (v3.6, demo slice for `1145.md`):
 
 This file is a **trigger / scheduler** in our glass-box demos. It records the
 target index in `state.meta` and is form-identity-exempt by design.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61015 · वचिस्वपियजादीनां किति
+              padaccheda: वचि-स्वपि-यज्-आदीनाम् किति
+              anuvṛtti:   61013: सम्प्रसारणम्
+  Source #2 — Kāśikā 6.1.15 udāharaṇa:
+                ष्यङ इति निवृत्तम्
+                वचि —     इति च
+                स्वपि —
+  Cross-check — surface pinned by: tests/unit/test_EdaviDa_jWilaka_aDyApaka.py, tests/unit/test_corrected_prakriyas_v2_bundle.py, tests/unit/test_devam_krt.py
+  Reference record: sutra_ref_out/6_1_15.json
 """
 from __future__ import annotations
 

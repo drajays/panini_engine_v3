@@ -4,6 +4,17 @@
 Glass-box slice: *nuṃ* (*n*) after the last *ac* of a non-dhātu *aṅga* tagged
 ``ugit`` when a *sarvanāmasthāna* *sup* follows (**1.1.43**), and the recipe
 arms ``state.meta["7_1_70_arm"]``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71070 · उगिदचां सर्वनामस्थानेऽधातोः
+              padaccheda: उक्-इत्-अचाम् सर्वनामस्थाने अ-धातोः
+              anuvṛtti:   64001: अङ्गस्य | 71058: नुम्
+  Source #2 — Kāśikā 7.1.70 udāharaṇa:
+                भवतु — भवान्
+                ईयसुन् — श्रेयान् श्रेयांसौ
+                शतृ — पचन्
+  Cross-check — surface pinned by: tests/unit/test_gomAn_pipeline.py
+  Reference record: sutra_ref_out/7_1_70.json
 """
 from __future__ import annotations
 

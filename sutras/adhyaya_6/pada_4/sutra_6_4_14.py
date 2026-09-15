@@ -5,6 +5,17 @@ Narrow v3: under **6.4.1**, when ``state.meta["6_4_14_arm"]`` and the *aṅga*
 ends in ``…vant`` or ``…mant`` (after **7.1.70** *nuṃ*) before a
 *sarvanāmasthāna* *sup*, lengthen the short ``a`` sandwiched between ``v``/``m``
 and ``n`` (the *upadhā* *a* of the *atvasanta* / *matup* shape) to ``A`` (``ā``).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64014 · अत्वसन्तस्य चाधातोः
+              padaccheda: अतु-अस्-असन्तस्य च अ-धातोः
+              anuvṛtti:   63111: दीर्घः | 64001: अङ्गस्य | 64007: उपधायाः | 64008: असम्बुद्धौ | 64013: सौ
+  Source #2 — Kāśikā 6.4.14 udāharaṇa:
+                डवतुभवान्
+                क्तवतु — कृतवान्
+                मतुप् — गोमान्
+  Cross-check — surface pinned by: tests/unit/test_SANDikyaH_Yya_SRqika.py, tests/unit/test_SamBu_subanta.py, tests/unit/test_dADikam_taddhita_split_prakriyas.py
+  Reference record: sutra_ref_out/6_4_14.json
 """
 from __future__ import annotations
 

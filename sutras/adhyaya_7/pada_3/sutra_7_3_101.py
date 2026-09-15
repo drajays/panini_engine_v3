@@ -9,6 +9,17 @@ the ā (dīrgha) substitutes."
 Fires whenever an a-ending term is followed by a yañ-initial pratyaya term
 (``"pratyaya" in t2.tags``).  No arm needed — the phonological predicate is
 complete and the ``7_3_101_done`` flag on the term prevents re-firing.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73101 · अतो दीर्घो यञि
+              padaccheda: अतः दीर्घः यञि
+              anuvṛtti:   64001: अङ्गस्य | 73087: सार्वधातुके
+  Source #2 — Kāśikā 7.3.101 udāharaṇa:
+                पचामि
+                पक्ष्यामि
+                अत इति किम् ? चिनुवः
+  Cross-check — surface pinned by: tests/unit/test_tinanta_abhavat_lang.py, tests/unit/test_tinanta_abhavisyat_lrg.py, tests/unit/test_tinanta_bhavatu_lot.py
+  Reference record: sutra_ref_out/7_3_101.json
 """
 from __future__ import annotations
 

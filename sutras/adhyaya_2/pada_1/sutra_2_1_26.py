@@ -10,6 +10,17 @@ v3 narrow slice (P025 only):
   • witness: ``[prātipadika paTu, sup am]`` as two ``Term`` objects
   • *act*: remove the *sup* ``Term`` and append *ṇic* as ``upadesha_slp1 = "Nic"``
     (parsed with *it* markers; **1.3.7** / **1.3.9** elide ``N`` / ``c``).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 21026 · खट्वा क्षेपे
+              padaccheda: खट्वा क्षेपे
+              anuvṛtti:   21002: सुप् | 21003: समासः | 21004: सह सुपा | 21022: तत्पुरुषः | 21024: द्वितीया | 21025: क्तेन
+  Source #2 — Kāśikā 2.1.26 udāharaṇa:
+                खट्वारोहणं चेह विमार्गप्रस्थानस्योपलक्षणम्
+                सर्व एवाविनीतः खट्वारूढ इत्युच्यते
+                खट्वारूढो जाल्मः
+  Cross-check — surface pinned by: tests/unit/test_paTayati_paTu_Nic.py
+  Reference record: sutra_ref_out/2_1_26.json
 """
 from __future__ import annotations
 

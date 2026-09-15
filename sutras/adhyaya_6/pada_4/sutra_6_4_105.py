@@ -7,6 +7,17 @@ Two operational paths:
      it follows an aṅga term whose final varṇa is short 'a'.
      Rule: "atō heḥ" = after short 'a', 'hi' (= heḥ) is deleted (luk).
      Effect: bhav + a(śap) + hi → bhav + a(śap)  →  bhava (2sg loṭ).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64105 · अतो हेः
+              padaccheda: अतः हेः
+              anuvṛtti:   64001: अङ्गस्य | 64104: लुक्
+  Source #2 — Kāśikā 6.4.105 udāharaṇa:
+                पच
+                पठ
+                गच्छ
+  Cross-check — surface pinned by: tests/unit/test_paceran_vidhi_liG_pac_Ja.py, tests/unit/test_tinanta_bhavatu_lot.py
+  Reference record: sutra_ref_out/6_4_105.json
 """
 from __future__ import annotations
 

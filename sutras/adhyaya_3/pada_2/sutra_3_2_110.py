@@ -4,6 +4,17 @@
 Engine scope (v3 glass-box): attach the lakāra upadeśa placeholder ``luG`` when
 the recipe sets ``state.meta['lakara'] == 'luG'`` (lūṅ).  Actual tiṅ substitution
 is performed by **3.4.77** + **3.4.78** using ``state.meta['tin_adesha_*']``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 32110 · लुङ्
+              padaccheda: लुङ्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 32084: भूते
+  Source #2 — Kāśikā 3.2.110 udāharaṇa:
+                भूतेऽर्थ वर्तमानाद् धातोर्लुङ् प्रत्ययो भवति
+                अकार्षीत्
+                अहार्षीत्
+  Cross-check — surface pinned by: tests/unit/test_acaEzIt_pipeline.py, tests/unit/test_adita_luN_dAda_ghu.py, tests/unit/test_tinanta_abhut_lung.py
+  Reference record: sutra_ref_out/3_2_110.json
 """
 from __future__ import annotations
 

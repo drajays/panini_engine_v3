@@ -7,6 +7,18 @@ Demo slice (रुणद्धि .md):
   (here: d).
 
 So: ... D D ... → ... d D ...
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 84053 · झलां जश् झशि
+              padaccheda: झलाम् ६/३ जश् १/१ झशि ७/१
+              anuvṛtti:   82108: संहितायाम्
+  Source #2 — Kāśikā 8.4.53 udāharaṇa:
+                दधि + अत्र → दध्यत्र → दध्ध्यत्र → दद्ध्यत्र
+                मधु + अत्र → मध्वत्र → मध्ध्वत्र → मद्ध्वत्र
+                लब्धा
+  Gloss (sa) — झल्-वर्णः झशि परे जशादेशं भवति।
+  Cross-check — surface pinned by: tests/unit/test_corrected_prakriyas_v2_bundle.py, tests/unit/test_iddhaH_kta_YiinDI.py
+  Reference record: sutra_ref_out/8_4_53.json
 """
 from __future__ import annotations
 

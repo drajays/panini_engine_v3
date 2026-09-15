@@ -3,6 +3,17 @@
 
 Engine: in luṅ/laṅ/lṛṅ contexts, prepend 'a' to the dhātu term as aṭ-āgama
 (ṭ-it handled by 1.3.3/1.3.9 elsewhere). No pipeline-side forcing flag.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64071 · लुङ्लङ्लृङ्क्ष्वडुदात्तः
+              padaccheda: लुङ्-लङ्-ल्रुक्षु अट् उदात्तः
+              anuvṛtti:   64001: अङ्गस्य
+  Source #2 — Kāśikā 6.4.71 udāharaṇa:
+                लुङ् — अकार्षीत्
+                अहार्षीत्
+                लङ् — अकरोत्
+  Cross-check — surface pinned by: tests/unit/test_AwIwat_luN_aT_Nic_caN_tip.py, tests/unit/test_aBavatAm_split_prakriyas.py, tests/unit/test_adita_luN_dAda_ghu.py
+  Reference record: sutra_ref_out/6_4_71.json
 """
 from __future__ import annotations
 

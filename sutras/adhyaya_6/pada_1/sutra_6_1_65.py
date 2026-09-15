@@ -7,6 +7,17 @@ is replaced by ``n`` (न्) in the stated contexts (ṇaḥ → na).
 Narrow engine use (``RIY`` / णीञ् → ``nI``): fires once on the dhātu Term
 when its first Varṇa is ``R``, **before** kṛt-pratyaya attachment (see
 ``pipelines/krdanta.derive_nAyaka_pratipadika`` ordering).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61065 · णो नः
+              padaccheda: णः नः
+              anuvṛtti:   61045: उपदेशस्य ६/१/skip=1 | 61064: धात्वादेः
+  Source #2 — Kāśikā 6.1.65 udāharaṇa:
+                धातोरादेर्णकारस्य नकार आदेशो भवति
+                णीञ् — नयति
+                णम — नमति
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_nayaka.py, tests/forward/test_forward_krdanta_pacaka.py
+  Reference record: sutra_ref_out/6_1_65.json
 """
 from __future__ import annotations
 

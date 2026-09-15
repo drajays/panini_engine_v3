@@ -6,6 +6,16 @@
 
 Engine: ``state.meta['eka_des_recipe']`` + ``P042_gArgya_stem`` tag on the stem
 ``Term`` before *jas* — registers ``samjna_registry['4.1.162_gotra_P042']``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 41162 · अपत्यं पौत्रप्रभृति गोत्रम्
+              padaccheda: अपत्यम् पौत्र-प्रभृति गोत्रम्
+  Source #2 — Kāśikā 4.1.162 udāharaṇa:
+                गर्गस्यापत्यं पौत्रप्रभृति गार्ग्यः
+                वात्स्यः
+                अपत्यमिति व्यपदेशाय पौत्रप्रभृतेः
+  Cross-check — surface pinned by: tests/unit/test_gArgyAH_garga_yaY_luk.py
+  Reference record: sutra_ref_out/4_1_162.json
 """
 from __future__ import annotations
 

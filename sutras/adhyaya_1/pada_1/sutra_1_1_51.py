@@ -115,6 +115,18 @@ English (one-line): Any (a, ā, i, ī, u, ū) ordained as an ādeśa in place of
 v3 note: This sūtra is implemented as a concrete VIDHI step (it must change
 the form to satisfy the R1 invariant). Selection/triggering is still kept
 mechanically blind via pre-set flags on the aṅga.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 11051 · उरँण् रपरः
+              padaccheda: उः · अण् · रपरः
+              anuvṛtti:   11049: स्थाने
+  Source #2 — Kāśikā 1.1.51 udāharaṇa:
+                कर्ता
+                हर्ता
+                किरति
+  Gloss (sa) — अण्परकयोर् उकारऋकारयोः रकारः परः।
+  Cross-check — surface pinned by: tests/constitutional/test_no_new_duplicates.py, tests/unit/test_akurvAtAm_laG_tanadi_kf.py, tests/unit/test_hotAram.py
+  Reference record: sutra_ref_out/1_1_51.json
 """
 from __future__ import annotations
 

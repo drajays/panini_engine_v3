@@ -10,6 +10,17 @@ Narrow v3 (``prakriya_21`` *hotāram*):
     ``sarvanamasthana`` (from **1.1.43**).
   • ``act`` — replace final ``f``/``F`` with short ``a`` and arm **1.1.51**
     *uraṇ-rapara* (same hook as **7.3.84**).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73110 · ऋतो ङिसर्वनामस्थानयोः
+              padaccheda: ऋतः ङि-सर्वनामस्थानयोः
+              anuvṛtti:   64001: अङ्गस्य | 73108: गुणः
+  Source #2 — Kāśikā 7.3.110 udāharaṇa:
+                ङौ — मातरि
+                पितरि
+                भ्रातरि
+  Cross-check — surface pinned by: tests/unit/test_hotAram.py, tests/unit/test_sutra_7_3_110_hotf_am.py
+  Reference record: sutra_ref_out/7_3_110.json
 """
 from __future__ import annotations
 

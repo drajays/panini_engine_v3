@@ -11,6 +11,16 @@ substitution before *sup*:
 General *rad*-classes / full *niṣṭhā* scope are **not** attempted (Art. 7).
 
 CONSTITUTION Art. 2: ``cond`` reads tags / tape shape / recipe meta only.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 82042 · रदाभ्यां निष्ठातो नः पूर्वस्य च दः
+              padaccheda: र-दाभ्याम् निष्ठा-तः नः पूर्वस्य च दः
+  Source #2 — Kāśikā 8.2.42 udāharaṇa:
+                विस्तीर्णम्
+                विशीर्णम्
+                निगीर्णम्
+  Cross-check — surface pinned by: tests/unit/test_bhinnaH_kta_Bidi.py, tests/unit/test_corrected_prakriyas_v2_bundle.py, tests/unit/test_svinnaH_kta_YizvidA.py
+  Reference record: sutra_ref_out/8_2_42.json
 """
 from __future__ import annotations
 

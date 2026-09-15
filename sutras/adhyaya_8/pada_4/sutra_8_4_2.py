@@ -24,6 +24,17 @@ For our corpus:
 Tripādī.  Implemented narrowly: scan the flat varṇa sequence.  If
 we find an 'r' followed later by an 'n' with ONLY 'vowels + k-varga
 + p-varga + m' between them (no s/c/ṭ/t-varga), replace the n with R.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 84002 · अट्कुप्वाङ्नुम्व्यवायेऽपि
+              padaccheda: अट्‍-कु-पु-आङ्‍-नुम्-व्यवाये अपि
+              anuvṛtti:   82108: संहितायाम् | 84001: रषाभ्यां नः णः
+  Source #2 — Kāśikā 8.4.2 udāharaṇa:
+                अड्व्यवाये तावत् — करणम्
+                हरणम्
+                किरिणा
+  Cross-check — surface pinned by: tests/unit/test_pUrvaparANAm_dvandva.py, tests/unit/test_sthanivat_al_ashrita_exceptions.py, tests/unit/test_sutra_8_4_1_raSAnatva_samAnapade.py
+  Reference record: sutra_ref_out/8_4_2.json
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State

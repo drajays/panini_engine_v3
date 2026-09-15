@@ -10,6 +10,17 @@ Engine (narrow, recipe-armed):
   - inserts a taddhita pratyaya ``tyup`` (final p = it by **1.3.3**; lopa by **1.3.9**).
 
 No semantic selection beyond arming.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 43023 · सायंचिरम्प्राह्णेप्रगेऽव्ययेभ्यष्ट्युट्युलौ तुट् च
+              padaccheda: सायं-चिरम्-प्राह्णे-प्रगे-अव्ययेभ्यः ट्यु-ट्युलौ तुट् च
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 42092: शेषे | 43011: कालात्
+  Source #2 — Kāśikā 4.3.23 udāharaṇa:
+                सायंतनम्
+                चिरंतनम्
+                प्राह्णेतनम्
+  Cross-check — surface pinned by: tests/unit/test_adyatanam_taddhita_split_prakriyas.py
+  Reference record: sutra_ref_out/4_3_23.json
 """
 from __future__ import annotations
 

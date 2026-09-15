@@ -17,6 +17,16 @@ Engine:
   - recipe arms via ``state.meta['sIyuw_recipe']``.
   - inserts a pratyaya Term tagged ``ling_sIyuw`` immediately before the final
     *tiṅ* term (``ashir_liG``) **or** before ``liG`` (``vidhi_liG``).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34102 · लिङस्सीयुट्
+              padaccheda: लिङः सीयुट्
+  Source #2 — Kāśikā 3.4.102 udāharaṇa:
+                टकारो देशविध्यर्थः
+                उकार उच्चारणार्थः
+                पचेत
+  Cross-check — surface pinned by: tests/unit/test_BitzIzwa_ashir_ling.py, tests/unit/test_paceran_vidhi_liG_pac_Ja.py, tests/unit/test_saGgasIzwa_sam_gam_ashir_ling.py
+  Reference record: sutra_ref_out/3_4_102.json
 """
 from __future__ import annotations
 

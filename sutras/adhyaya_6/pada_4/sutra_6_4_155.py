@@ -12,6 +12,17 @@ v3 narrow slice:
   • second ``Term`` is the *ṇic* ``pratyaya`` (``meta["P025_Nic_pratyaya"]``),
     which after **1.3.9** surfaces as ``i``
   • *act*: delete the final ``u`` of the stem (``paTu`` → ``paT``).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64155 · टेः
+              padaccheda: टेः
+              anuvṛtti:   64001: अङ्गस्य | 64129: भस्य | 64147: लोपः | 64154: इष्ठेमेयस्सु
+  Source #2 — Kāśikā 6.4.155 udāharaṇa:
+                पटु — पटिष्ठः
+                पटिमा
+                पटीयान्
+  Cross-check — surface pinned by: tests/unit/test_paTayati_paTu_Nic.py
+  Reference record: sutra_ref_out/6_4_155.json
 """
 from __future__ import annotations
 

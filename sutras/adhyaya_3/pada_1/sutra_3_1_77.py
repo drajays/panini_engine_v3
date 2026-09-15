@@ -4,6 +4,17 @@
   For tudādi (gaṇa 6) dhātu, use vikaraṇa `Sa` instead of `Sap`.
 
 cond: dhātu.meta["gana"] == 6 AND no existing Śa term on tape.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31077 · तुदादिभ्यः शः
+              padaccheda: तुदादिभ्यः शः
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31022: धातोः | 31067: सार्वधातुके | 31068: कर्तरि
+  Source #2 — Kāśikā 3.1.77 udāharaṇa:
+                शपोऽपवादः
+                शकारः सार्वधातुकसंज्ञार्थः
+                तुदति
+  Cross-check — surface pinned by: tests/unit/test_kirati_karati_split_prakriyas.py
+  Reference record: sutra_ref_out/3_1_77.json
 """
 from __future__ import annotations
 

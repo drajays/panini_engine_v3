@@ -14,6 +14,18 @@ This blocks downstream *sarvanāma*-only paths such as **7.1.52** *suṭ* on ``A
 Mechanical blindness (CONSTITUTION Art. 2):
   - ``cond`` reads only structural ``tags`` / allowed ``meta`` (no vibhakti/vacana,
     no gold, no surface-Devanāgarī).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 11031 · द्वन्द्वे च
+              padaccheda: द्वन्द्वे ७/१ च ०/०
+              anuvṛtti:   11027: सर्वादीनि सर्वनामानि | 11029: न | 11030: तृतीयासमासे
+  Source #2 — Kāśikā 1.1.31 udāharaṇa:
+                रामकृष्णौ
+                मातापितरौ
+                चन्द्रसूर्यौ
+  Gloss (sa) — द्वन्द्वसमासे सर्वादयः सर्वनामसंज्ञां न लभन्ते।
+  Cross-check — surface pinned by: tests/unit/test_pUrvaparANAm_dvandva.py, tests/unit/test_sutra_1_1_31_dvandve_ca.py, tests/unit/test_sutra_1_1_32_vibhASa_jasi.py
+  Reference record: sutra_ref_out/1_1_31.json
 """
 from __future__ import annotations
 

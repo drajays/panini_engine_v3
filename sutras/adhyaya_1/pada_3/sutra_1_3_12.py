@@ -9,6 +9,17 @@
 *Engine:* ``cond`` reads ``ekac_dhatu`` on the primary *dhātu* *Term* (from dhātupāṭha /
 ``_build_dhatu_term``), not *puruṣa* / *vacana* (Art. 2).  Sets ``kartari_atmanepada_licensed``
 so **1.3.78** does not force *parasmaipada*.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 13012 · अनुदात्तङित आत्मनेपदम्
+              padaccheda: अनुदात्तङितः · आत्मनेपदम्
+  Source #2 — Kāśikā 1.3.12 udāharaṇa:
+                अनुदात्तेद्भ्यः — आस् — आस्ते
+                वस् — वस्ते
+                ङिद्भ्यः खल्वपि — षूङ् — सूते
+  Gloss (sa) — अनुदात्त-ङितः आत्मनेपदम्।
+  Cross-check — surface pinned by: tests/unit/test_prakriya_integrity.py, tests/unit/test_tinanta_pathati_lat.py
+  Reference record: sutra_ref_out/1_3_12.json
 """
 from __future__ import annotations
 

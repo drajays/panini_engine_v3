@@ -9,6 +9,17 @@ Engine:
   - recipe arms via ``state.meta['shasi_vasi_recipe']``.
   - narrow: applies only when the primary dhātu upadeśa is `vas` and the dhātu
     term currently contains `s` as its final varṇa.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 83060 · शासिवसिघसीनां च
+              padaccheda: शासि-वसि-घसीनाम् च
+              anuvṛtti:   82108: संहितायाम् | 83055: अपदान्तस्य मूर्धन्यः | 83056: सः | 83057: इण्कोः
+  Source #2 — Kāśikā 8.3.60 udāharaṇa:
+                अन्वशिषत्
+                शिष्टः
+                शिष्टवान्
+  Cross-check — surface pinned by: tests/unit/test_uditvA_uzitvA_ktvA_samprasaraNa.py
+  Reference record: sutra_ref_out/8_3_60.json
 """
 from __future__ import annotations
 

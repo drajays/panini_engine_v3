@@ -9,6 +9,17 @@ Engine representation:
   - pipelines must arm via ``state.meta['2_4_45_iNo_ga_luG_arm']``.
   - we rewrite term[0] varṇas to SLP1 ``gAN`` (ga + A + N) and set
     meta['upadesha_slp1'] = 'gAN' so **1.2.1** can see it.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 24045 · इणो गा लुङि
+              padaccheda: इणः गा (लुप्तप्रथमान्तनिर्देशः) लुङि
+              anuvṛtti:   24035: आर्धधातुके
+  Source #2 — Kāśikā 2.4.45 udāharaṇa:
+                अगात्
+                इह त्वविशेषेण नित्यं च भवति
+                अगात्
+  Cross-check — surface pinned by: tests/unit/test_adhyagIzwa.py
+  Reference record: sutra_ref_out/2_4_45.json
 """
 from __future__ import annotations
 

@@ -8,6 +8,16 @@ v3 narrow slice:
   • recipe arms ``state.meta['P027_7_4_15_Ap_hrasva_arm']``
   • expects the second samāsa member to have upadeśa snapshot ``KaTvA`` and end
     in long ``A``; replace that final ``A`` with ``a``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 74015 · आपोऽन्यतरस्याम्
+              padaccheda: आपः अन्यतरस्याम्
+              anuvṛtti:   64001: अङ्गस्य | 74012: ह्रस्वः | 74014: न कपि
+  Source #2 — Kāśikā 7.4.15 udāharaṇa:
+                बहुखट्वाकः
+                बहुमाल कः बहुमालकः
+  Cross-check — surface pinned by: tests/unit/test_bahuKaTvakaH_bahuvrihi.py
+  Reference record: sutra_ref_out/7_4_15.json
 """
 from __future__ import annotations
 

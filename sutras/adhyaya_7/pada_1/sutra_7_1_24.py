@@ -8,6 +8,17 @@ Operational role (v3.6, napuṃsaka a-stems):
 We implement as: if aṅga is tagged `napuṃsaka` and ends in 'a', and the
 pratyaya upadeśa is either 's~' (su) or 'am', replace the pratyaya varṇas
 with 'a' 'm' and set upadeśa identity to 'am'.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71024 · अतोऽम्
+              padaccheda: अतः अम्
+              anuvṛtti:   64001: अङ्गस्य | 71023: स्वमोर्नपुंसकात्
+  Source #2 — Kāśikā 7.1.24 udāharaṇa:
+                कुण्डं तिष्ठति
+                कुण्डं पश्य
+                वनम्
+  Cross-check — surface pinned by: tests/unit/test_Amalakam.py, tests/unit/test_Bavitavyam_split_prakriyas.py, tests/unit/test_adyatanam_taddhita_split_prakriyas.py
+  Reference record: sutra_ref_out/7_1_24.json
 """
 from __future__ import annotations
 

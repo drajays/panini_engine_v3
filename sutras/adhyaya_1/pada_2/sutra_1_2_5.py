@@ -8,6 +8,18 @@ Demo slice (विभिदतुः):
 
 Engine:
   - tags the relevant pratyaya Term with ``kngiti``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 12005 · असंयोगाल्लिट् कित्
+              padaccheda: असंयोगात् · लिट् · कित्
+              anuvṛtti:   12004: अपित्
+  Source #2 — Kāśikā 1.2.5 udāharaṇa:
+                बिभिदतुः
+                चिच्छिदतुः
+                ईजतुः
+  Gloss (sa) — असंयोगाद् अङ्गात् लिट् प्रत्ययः कित् संज्ञकः।
+  Cross-check — surface pinned by: tests/unit/test_godau.py, tests/unit/test_jakzatuH_lit_ad_gas.py, tests/unit/test_paYcAlAH.py
+  Reference record: sutra_ref_out/1_2_5.json
 """
 from __future__ import annotations
 

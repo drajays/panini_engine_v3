@@ -27,6 +27,17 @@ See ``engine/lopa_ghost.py``.
 
 Mechanical blindness:
   - ``cond()`` reads only tags + ``state.meta`` keys (never vibhakti/vacana).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 24071 · सुपो धातुप्रातिपदिकयोः
+              padaccheda: सुपः धातु-प्रातिपदिकयोः
+              anuvṛtti:   24058: लुक्
+  Source #2 — Kāśikā 2.4.71 udāharaṇa:
+                तदन्तर्गतास्तद्ग्रहणेन गृह्यन्ते
+                धातोस्तावत् — पुत्रीयति
+                घटीयति
+  Cross-check — surface pinned by: tests/backward/test_replay_integrity.py, tests/unit/test_SANDikyaH_Yya_SRqika.py, tests/unit/test_gomAn_pipeline.py
+  Reference record: sutra_ref_out/2_4_71.json
 """
 from __future__ import annotations
 

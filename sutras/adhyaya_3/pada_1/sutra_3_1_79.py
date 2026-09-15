@@ -11,6 +11,17 @@ Structural trigger (CONSTITUTION Art. 13):
 - no ``u`` vikaraṇa already inserted
 
 No arm flag required (Art. 13).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31079 · तनादिकृञ्भ्य उः
+              padaccheda: तनादि-कृञ्भ्यः उः
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31022: धातोः | 31067: सार्वधातुके | 31068: कर्तरि
+  Source #2 — Kāśikā 3.1.79 udāharaṇa:
+                शपोऽपवादः
+                तनोति
+                सनोति
+  Cross-check — surface pinned by: tests/constitutional/test_no_new_duplicates.py, tests/unit/test_akurvAtAm_laG_tanadi_kf.py, tests/unit/test_kurutaH_lat_tanadi_u.py
+  Reference record: sutra_ref_out/3_1_79.json
 """
 from __future__ import annotations
 

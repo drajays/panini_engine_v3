@@ -10,6 +10,17 @@ Teaching **corrected_prakriyas_v2**:
 Engine:
   • ``state.meta['corrected_v2_P016_3_1_13_arm']`` or **P017** arm (both cleared).
   • expects lone stem *prātipadika* (no separate *kyaz* ``Term`` yet).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31013 · लोहितादिडाज्भ्यः क्यष्।
+              padaccheda: लोहित-आदि-डाज्भ्यः क्यष्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31007: वा | 31012: भुवि अच्वेः
+  Source #2 — Kāśikā 3.1.13 udāharaṇa:
+                लोहितायति
+                लोहितायते
+                डाजन्तेभ्यः — पटपटायति
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_pacaka.py, tests/unit/test_cayanam_ciY_lyuw.py, tests/unit/test_devam_krt.py
+  Reference record: sutra_ref_out/3_1_13.json
 """
 from __future__ import annotations
 

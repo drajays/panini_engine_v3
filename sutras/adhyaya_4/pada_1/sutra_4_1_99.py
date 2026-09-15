@@ -12,6 +12,17 @@ fires when:
 
 This avoids pipeline-level “arming” meta and keeps the suffix insertion inside
 the sūtra's own `act()`.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 41099 · नडादिभ्यः फक्
+              padaccheda: नड-आदिभ्यः फक्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 41092: तस्यापत्यम् | 41098: गोत्रे
+  Source #2 — Kāśikā 4.1.99 udāharaṇa:
+                नाडायनः
+                चारायणः
+                शलङ्कु शलङ्कं च (ग०सू० ६३) इत्यत्र पठ्यते
+  Cross-check — surface pinned by: tests/unit/test_taddhita_itika_etikAyana.py
+  Reference record: sutra_ref_out/4_1_99.json
 """
 from __future__ import annotations
 

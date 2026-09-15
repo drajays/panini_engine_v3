@@ -5,6 +5,17 @@ Engine scope: in luṅ glass-box spines, when an iṭ-āgama 'i' has been insert
 immediately before the sic marker 's', delete that 's'. This models the
 classical rule that sic disappears in the presence of iṭ (as described in the
 user's अलावीत् notes).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 82028 · इट ईटि
+              padaccheda: इटः ईटि
+              anuvṛtti:   82023: लोपः | 82024: सस्य
+  Source #2 — Kāśikā 8.2.28 udāharaṇa:
+                अदेवीत्
+                असेवीत्
+                अकोषीत्
+  Cross-check — surface pinned by: tests/unit/test_avadhIt_han_lun_ekavacana.py
+  Reference record: sutra_ref_out/8_2_28.json
 """
 from __future__ import annotations
 

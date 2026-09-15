@@ -23,6 +23,17 @@ affixes are in scope.  *Kṛt* affixes beginning with **K** / **G** (*kha*, *kha
 
 **English (one line):** the consonants **Ph–Ḍh–Kh–Ch–Gh** at the start of a qualifying
 *taddhita* *pratyaya* are replaced, in order, by **āyan–ey–īn–īy–iy** respectively.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71002 · आयनेयीनीयियः फढखच्छघां प्रत्ययादीनाम्
+              padaccheda: आयन्-एय्-ईन्-ईय्-इयः फ-ढ-ख-छ-घाम् प्रत्यय-आदीनाम्
+              anuvṛtti:   64001: अङ्गस्य
+  Source #2 — Kāśikā 7.1.2 udāharaṇa:
+                फ इत्येतस्यायनादेशो भवति
+                — नाडायनः
+                चारायणः
+  Cross-check — surface pinned by: tests/unit/test_Amalakam.py, tests/unit/test_Bavitavyam_split_prakriyas.py, tests/unit/test_adyatanam_taddhita_split_prakriyas.py
+  Reference record: sutra_ref_out/7_1_2.json
 """
 from __future__ import annotations
 

@@ -2,6 +2,17 @@
 6.1.9  सन्‍यङोः  —  VIDHI (narrow)
 
 Glass-box: marks yaG term as reduplication-trigger so later rules can operate.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61009 · सन्यङोः
+              padaccheda: सन्-यङोः
+              anuvṛtti:   61008: धातोः अनभ्यासस्य | 61001: एकाचः द्वे प्रथमस्य | 61002: अजादेः द्वितीयस्य
+  Source #2 — Kāśikā 6.1.9 udāharaṇa:
+                सन्यङोरिति च षष्ठ्यन्तमेतत्
+                पिपक्षति
+                पिपतिषति
+  Cross-check — surface pinned by: tests/unit/test_aabhyam_idam_7_2_113.py, tests/unit/test_mAtApitarO_dvandva_split_prakriyas.py, tests/unit/test_tinanta_abhavisyat_lrg.py
+  Reference record: sutra_ref_out/6_1_9.json
 """
 from __future__ import annotations
 

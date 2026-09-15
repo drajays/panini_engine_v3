@@ -8,6 +8,17 @@ Demo slice (भिनत्ति .md):
 Engine:
   - Tripāḍī zone only.
   - Looks for the sequence `d` followed by a varṇa in KHAR, within the final pada.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 84055 · खरि च
+              padaccheda: खरि । च
+              anuvṛtti:   82108: संहितायाम् | 84053: झलाम् | 84054: चर्
+  Source #2 — Kāśikā 8.4.55 udāharaṇa:
+                भेद् + ता → भेत्ता
+                भेद् + तुम् → भेत्तुम्
+                भेद् + तव्यम् → भेत्तव्यम्
+  Cross-check — surface pinned by: tests/unit/test_BitzIzwa_ashir_ling.py, tests/unit/test_jakzatuH_lit_ad_gas.py
+  Reference record: sutra_ref_out/8_4_55.json
 """
 from __future__ import annotations
 

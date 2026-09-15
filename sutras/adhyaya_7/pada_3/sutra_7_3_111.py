@@ -12,6 +12,17 @@ We implement the minimal guṇa mapping for hrasva i/u (generalizable later):
 
 Blindness:
   - cond() reads tags, aṅga-final phoneme, and pratyaya.meta['upadesha_slp1'] only.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73111 · घेर्ङिति
+              padaccheda: घेः ङिति
+              anuvṛtti:   64001: अङ्गस्य | 73108: गुणः | 73102: सुपि
+  Source #2 — Kāśikā 7.3.111 udāharaṇa:
+                अग्नये
+                वायवे
+                अग्नेरागच्छति
+  Cross-check — surface pinned by: tests/unit/test_SamBu_subanta.py
+  Reference record: sutra_ref_out/7_3_111.json
 """
 from __future__ import annotations
 

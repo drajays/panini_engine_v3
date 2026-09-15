@@ -12,6 +12,17 @@ Engine (recipe-armed only):
   - inserts a ``Slu`` *pratyaya* ``Term`` (``S`` + ``l`` + ``u`` in SLP1) tagged
     ``P040_slu_placeholder`` so the recipe can apply **1.1.60**/**1.1.61** and then
     remove the placeholder structurally (JSON ``hu+0+ti``).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 24075 · जुहोत्यादिभ्यः श्लुः
+              padaccheda: जुहोत्यादिभ्यः श्लुः
+              anuvṛtti:   24072: शपः
+  Source #2 — Kāśikā 2.4.75 udāharaṇa:
+                जुहोत्यादिभ्य उत्तरस्य शपः श्लुर्भवति
+                लुकि प्रकृते श्लुविधानं द्विर्वचनार्थम्
+                जुहोति
+  Cross-check — surface pinned by: tests/unit/test_juhoti_hu_lat_tip_Slu.py
+  Reference record: sutra_ref_out/2_4_75.json
 """
 from __future__ import annotations
 

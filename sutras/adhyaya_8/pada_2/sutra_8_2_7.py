@@ -8,6 +8,17 @@ Operational role (v3.6):
 Legacy slice:
   Also supports the existing **tṛc** nominal output path (``krt_tfc`` on the
   pada), which is treated as always-armed within that narrow demo family.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 82007 · नलोपः प्रातिपदिकान्तस्य
+              padaccheda: न (लुप्तषष्ठ्यन्तः) लोपः प्रातिपदिक (इति लुप्तषष्ठीकम्) अन्तस्य
+              anuvṛtti:   81016: पदस्य
+  Source #2 — Kāśikā 8.2.7 udāharaṇa:
+                राजा
+                राजभ्याम्
+                राजभिः
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_trc.py, tests/unit/test_audit_pipeline_auditor.py, tests/unit/test_paYcagoRiH_dvigu_split_prakriyas.py
+  Reference record: sutra_ref_out/8_2_7.json
 """
 from __future__ import annotations
 

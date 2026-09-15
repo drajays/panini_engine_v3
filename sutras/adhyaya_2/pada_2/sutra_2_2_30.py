@@ -5,6 +5,17 @@ Narrow v3 slice: in a samāsa, the upasarjana member is placed first.
 
 Engine: reorder ``state.terms`` so that any term tagged ``upasarjana`` precedes
 other samāsa members (stable among upasarjanas).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 22030 · उपसर्जनं पूर्वम्
+              padaccheda: उपसर्जनम् पूर्वम्
+              anuvṛtti:   21003: समासः
+  Source #2 — Kāśikā 2.2.30 udāharaṇa:
+                उपसर्जनसंज्ञकं समासे पूर्वं प्रयोक्तव्यम्
+                पूर्ववचनं परप्रयोगनिवृत्त्यर्थम्
+                अनियमो हि स्यात्
+  Cross-check — surface pinned by: tests/unit/test_yUpadAru_vfkaBhaya.py
+  Reference record: sutra_ref_out/2_2_30.json
 """
 from __future__ import annotations
 

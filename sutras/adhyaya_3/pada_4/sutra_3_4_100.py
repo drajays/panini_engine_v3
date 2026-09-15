@@ -6,6 +6,17 @@ Drops the final 'i' of a tiṅ ādeśa in laṅ / luṅ / lṛṅ contexts:
 
 Note: mip→mi is handled by 3.4.101 (apavāda); 3.4.100 naturally skips 'mi'
 when 3.4.101 has already converted it to 'am' (varnas end in 'm' not 'i').
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34100 · इतश्च
+              padaccheda: इतः च
+              anuvṛtti:   34077: लस्य | 34097: लोपः | 34099: नित्यम् ङितः
+  Source #2 — Kāśikā 3.4.100 udāharaṇa:
+                ङिल्लकारसंबन्धिन इकारस्य नित्यं लोपो भवति
+                अपचत्
+                अपाक्षीत्
+  Cross-check — surface pinned by: tests/unit/test_avadhIt_han_lun_ekavacana.py, tests/unit/test_tinanta_abhavat_lang.py, tests/unit/test_tinanta_bhavatu_lot.py
+  Reference record: sutra_ref_out/3_4_100.json
 """
 from __future__ import annotations
 

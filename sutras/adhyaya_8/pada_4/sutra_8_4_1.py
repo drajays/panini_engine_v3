@@ -16,6 +16,17 @@ final varṇa of the *State* (8.4.2-style *pada-final* opt-out for *n*), *n* →
 (ण्) and tag *natva_done* so 8.4.2 will not re-apply.
 
 *Anuvṛtti (metadata):* *pūrvatrāsiddham* 8.2.1; 8.2.108 *saṃhitā* *adhikāra*.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 84001 · रषाभ्यां नो णः समानपदे
+              padaccheda: र-षाभ्याम् नः णः समान-पदे
+              anuvṛtti:   82108: संहितायाम्
+  Source #2 — Kāśikā 8.4.1 udāharaṇa:
+                आस्तीर्णम्
+                विशीर्णम्
+                अवगूर्णम्
+  Cross-check — surface pinned by: tests/unit/test_praNidadAti_8_4_17.py, tests/unit/test_sutra_8_4_1_raSAnatva_samAnapade.py
+  Reference record: sutra_ref_out/8_4_1.json
 """
 from __future__ import annotations
 

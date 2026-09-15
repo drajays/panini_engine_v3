@@ -6,6 +6,17 @@ machine ``Yya``) is appended after the internal *śabda-linguistic* *su* host.
 
 Engine: recipe arms ``corrected_v2_P004_B_4_3_92_arm`` + stem witness ``SaRqika``
 (शण्डिक — explicit ``a`` after श्/ण्); inserts ``Yya`` after the live internal **su**.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 43092 · शण्डिकादिभ्यो ञ्यः
+              padaccheda: शण्डिक-आदिभ्यः ञ्यः
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 42092: शेषे | 43089: सोऽस्य | 43090: अभिजनः
+  Source #2 — Kāśikā 4.3.92 udāharaṇa:
+                अणादेरपवादः
+                शाण्डिक्यः
+                सार्वसेन्यः
+  Cross-check — surface pinned by: tests/unit/test_SANDikyaH_Yya_SRqika.py
+  Reference record: sutra_ref_out/4_3_92.json
 """
 from __future__ import annotations
 

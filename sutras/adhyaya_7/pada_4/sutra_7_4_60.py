@@ -12,6 +12,17 @@ abhyāsa trim (``marj`` → ``m``).
 **P030** (*vac*+*san*): when ``state.meta['P030_7_4_60_abhyasa_vowel_only_arm']``,
 an *abhyāsa* shaped ``u``/``U`` + ``c`` keeps only the vowel — gate for **7.4.59**
 *hrasva* (when ``U``) then **6.1.77** with the non-*abhyāsa* ``U``… *dhātu*.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 74060 · हलादिः शेषः
+              padaccheda: हलादिः शेषः
+              anuvṛtti:   64001: अङ्गस्य | 74058: अभ्यासस्य
+  Source #2 — Kāśikā 7.4.60 udāharaṇa:
+                जग्लौ
+                मम्लौ
+                पपाच
+  Cross-check — surface pinned by: tests/unit/test_AwIwat_luN_aT_Nic_caN_tip.py, tests/unit/test_jakzatuH_lit_ad_gas.py, tests/unit/test_jiGfkSati_grah_san_desiderative.py
+  Reference record: sutra_ref_out/7_4_60.json
 """
 from __future__ import annotations
 

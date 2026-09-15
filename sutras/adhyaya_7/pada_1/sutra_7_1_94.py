@@ -4,6 +4,17 @@
 Narrow v3: for a **tṛc** prātipadika (``krt_tfc`` on the aṅga) whose final
 is **f** (vocalic ṛ), substitute **an** for that **f** before **su**
 (single ``s`` after it-prakaraṇa).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71094 · ऋदुशनस्पुरुदंसोऽनेहसां च
+              padaccheda: ऋत्-उशनस्-पुरुदंस्-अनेहसाम् च
+              anuvṛtti:   64001: अङ्गस्य | 71092: असम्बुद्धौ | 71093: अनङ् सौ
+  Source #2 — Kāśikā 7.1.94 udāharaṇa:
+                कर्ता
+                हर्ता
+                माता
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_trc.py, tests/unit/test_vaktA_split_prakriyas.py
+  Reference record: sutra_ref_out/7_1_94.json
 """
 from __future__ import annotations
 

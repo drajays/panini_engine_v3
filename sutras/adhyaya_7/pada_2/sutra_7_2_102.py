@@ -7,6 +7,17 @@ Operational role (v3.7, for `tad`-like tyadādi pronouns):
 
 This is a narrow implementation sufficient for तद्:
   tad (t-a-d) → ta (t-a-a) and 6.1.97 will collapse the double 'a'.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 72102 · त्यदादीनामः
+              padaccheda: त्यद्-आदीनाम् अः
+              anuvṛtti:   64001: अङ्गस्य | 72084: विभक्तौ
+  Source #2 — Kāśikā 7.2.102 udāharaṇa:
+                त्यद् — स्यः
+                तद् — सः
+                यद् — यः
+  Cross-check — surface pinned by: tests/unit/test_ye_yad_jas.py
+  Reference record: sutra_ref_out/7_2_102.json
 """
 from __future__ import annotations
 

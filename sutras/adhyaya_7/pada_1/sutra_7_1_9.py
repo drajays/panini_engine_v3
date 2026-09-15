@@ -24,6 +24,17 @@ branch below.
 
 So the classical pipeline: run 7.1.9 EARLY in stage 4 (before 7.3.103
 and before 7.3.102), so pratyaya becomes 'Es' and later rules see that.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71009 · अतो भिस ऐस्
+              padaccheda: अतः भिस ऐस्
+              anuvṛtti:   64001: अङ्गस्य
+  Source #2 — Kāśikā 7.1.9 udāharaṇa:
+                वृक्षैः
+                प्लक्षैः
+                अतिजरसैः
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_trc.py, tests/regression/test_anya_pullinga_gold.py, tests/unit/test_gArgyAH_garga_yaY_luk.py
+  Reference record: sutra_ref_out/7_1_9.json
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.gates  import adhikara_in_effect

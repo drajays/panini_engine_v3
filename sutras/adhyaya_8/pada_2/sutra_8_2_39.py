@@ -16,6 +16,18 @@ Engine implementation:
   act:
     • replace final 't' with 'd'
     • add "8_2_39_done" to term tags
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 82039 · झलां जशोऽन्ते
+              padaccheda: झलाम् जशः अन्ते
+              anuvṛtti:   81016: पदस्य
+              adhikāra:   8.2.1
+  Source #2 — Kāśikā 8.2.39 udāharaṇa:
+                वाक् → वाग् (k → g)
+                श्वलिट् → श्वलिड् (ṭ → ḍ)
+                अग्निचित् → अग्निचिद् (t → d)
+  Cross-check — surface pinned by: tests/unit/test_tinanta_abhavat_lang.py
+  Reference record: sutra_ref_out/8_2_39.json
 """
 from __future__ import annotations
 

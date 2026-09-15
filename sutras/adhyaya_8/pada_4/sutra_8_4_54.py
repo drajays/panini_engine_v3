@@ -7,6 +7,17 @@ Demo slice (विभिदतुः):
 
 Engine:
   - applies only to the first varṇa of an `abhyasa` term (after 7.4.60 trim).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 84054 · अभ्यासे चर्च्च
+              padaccheda: अभ्यासे चर् च
+              anuvṛtti:   82108: संहितायाम् | 84053: झलाम् जश्
+  Source #2 — Kāśikā 8.4.54 udāharaṇa:
+                चिखनिषति
+                चिच्छित्सति
+                टिठकारयिषति
+  Cross-check — surface pinned by: tests/unit/test_kf_lit_karmani_bhave.py, tests/unit/test_kf_lit_kartari.py, tests/unit/test_vibhidatuH_lit.py
+  Reference record: sutra_ref_out/8_4_54.json
 """
 from __future__ import annotations
 

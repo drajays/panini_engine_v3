@@ -8,6 +8,18 @@ is licensed in *kartari* (P010 *āyacchate*).
 
 *Engine:* reads prefix ``upasarga`` tag + following *dhātu* stem ``yam``; sets
 ``kartari_atmanepada_licensed`` (Art. 2 safe).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 13028 · आङो यमहनः
+              padaccheda: आङः · यम-हनः
+              anuvṛtti:   13012: आत्मनेपदम् | 13026: अकर्मकात्
+  Source #2 — Kāśikā 1.3.28 udāharaṇa:
+                इति परस्मैपदिनौ
+                आयच्छते
+                हनः खल्वपि — आहते
+  Gloss (sa) — आङो यमहनः आत्मनेपदम्।
+  Cross-check — surface pinned by: tests/unit/test_prakriya_integrity.py
+  Reference record: sutra_ref_out/1_3_28.json
 """
 from __future__ import annotations
 

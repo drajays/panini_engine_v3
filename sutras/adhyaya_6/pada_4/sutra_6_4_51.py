@@ -11,6 +11,17 @@ residue ``t`` similarly drops (``6_4_51`` + ``P037_6_4_51_arm``).
 
 Sets ``sthānivat_nic_block_guna`` so **7.3.86** guṇa does not re-apply (1.1.57
 interaction; see note’s “ghost ṇic” story).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64051 · णेरनिटि
+              padaccheda: णेः अन्-इटि
+              anuvṛtti:   64001: अङ्गस्य | 64046: आर्धधातुके | 64048: लोपः
+  Source #2 — Kāśikā 6.4.51 udāharaṇa:
+                इयङ्यण्गुणवृद्धिदीर्घाणामपवादः
+                अततक्षत्
+                अररक्षत्
+  Cross-check — surface pinned by: tests/unit/test_AwIwat_luN_aT_Nic_caN_tip.py
+  Reference record: sutra_ref_out/6_4_51.json
 """
 from __future__ import annotations
 

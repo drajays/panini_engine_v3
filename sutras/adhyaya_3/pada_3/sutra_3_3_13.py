@@ -4,6 +4,17 @@
 Padaccheda: लृट् शेषे च
 
 krt-suffix rule: लृट् शेषे च
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 33013 · लृट् शेषे च
+              padaccheda: लृट् शेषे च
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 33003: भविष्यति | 33010: क्रियायाम्  क्रियार्थायाम्
+  Source #2 — Kāśikā 3.3.13 udāharaṇa:
+                शेषः क्रियार्थोपपदादन्यः
+                करिष्यामीति व्रजति
+                हरिष्यामीति व्रजति
+  Cross-check — surface pinned by: tests/unit/test_tinanta_abhavisyat_lrg.py
+  Reference record: sutra_ref_out/3_3_13.json
 """
 from __future__ import annotations
 

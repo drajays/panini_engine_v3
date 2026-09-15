@@ -3,6 +3,17 @@
 
 Glass-box scope for `mArzwi`:
   When the stem contains "...rj" (from mFj vṛddhi), replace that final 'j' with 'z' (ष्).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 82036 · व्रश्चभ्रस्जसृजमृजयजराजभ्राजच्छशां षः
+              padaccheda: व्रश्च-भ्रस्ज-सृज-मृज-यज-राज-भ्राज-छ-शाम् षः
+              anuvṛtti:   81016: पदस्य | 82026: झलि | 82029: अन्ते च | 82032: धातोः
+  Source #2 — Kāśikā 8.2.36 udāharaṇa:
+                व्रश्च — व्रष्टा
+                व्रष्टुम्
+                व्रष्टव्यम्
+  Cross-check — surface pinned by: tests/unit/test_pfzwvA_pracch_ktvA.py
+  Reference record: sutra_ref_out/8_2_36.json
 """
 from __future__ import annotations
 

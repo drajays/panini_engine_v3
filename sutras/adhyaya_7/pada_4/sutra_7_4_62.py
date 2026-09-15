@@ -11,6 +11,17 @@ Teaching **P040** (*juhoti*): *abhyāsa* initial **h** (``hu``) → **j**
 Engine:
   - recipe arms via ``state.meta['7_4_62_kuhoscu_abhyasa_arm']``.
   - **P040** via ``state.meta['P040_7_4_62_abhyasa_arm']``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 74062 · कुहोश्चुः
+              padaccheda: कु-होः चुः
+              anuvṛtti:   64001: अङ्गस्य | 74058: अभ्यासस्य
+  Source #2 — Kāśikā 7.4.62 udāharaṇa:
+                चकार
+                चखान
+                जगाम
+  Cross-check — surface pinned by: tests/unit/test_jakzatuH_lit_ad_gas.py, tests/unit/test_jiGfkSati_grah_san_desiderative.py, tests/unit/test_juhoti_hu_lat_tip_Slu.py
+  Reference record: sutra_ref_out/7_4_62.json
 """
 from __future__ import annotations
 

@@ -11,6 +11,17 @@ Engine (v3):
 
 Mechanical blindness:
   ``cond`` reads tags + ``state.meta`` only (never *vibhakti* / gold surface).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 32076 · क्विप् च
+              padaccheda: क्विँप् च
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ्
+  Source #2 — Kāśikā 3.2.76 udāharaṇa:
+                उखायाः स्रंसते उखास्रत्
+                पर्णध्वत्
+                वाहाद् भ्रश्यति वाहाभ्रट्
+  Cross-check — surface pinned by: tests/unit/test_agnicit_agni_ci_kvip.py, tests/unit/test_ratnaDAtamam.py
+  Reference record: sutra_ref_out/3_2_76.json
 """
 from __future__ import annotations
 

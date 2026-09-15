@@ -6,6 +6,17 @@ adhikāra, attach the *luṭ* *lac* placeholder (``luT``) after the *dhātu*.
 
 ``cond`` does not read *lakāra* names from paradigm metadata beyond the
 allowlisted ``state.meta`` key (CONSTITUTION Art. 2).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 33015 · अनद्यतने लुट्
+              padaccheda: अन्-अद्यतने लुट्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 33003: भविष्यति
+  Source #2 — Kāśikā 3.3.15 udāharaṇa:
+                लृटोऽपवादः
+                श्वःकर्ता
+                श्वो भोक्ता
+  Cross-check — surface pinned by: tests/unit/test_Bavitum_split_prakriyas.py, tests/unit/test_sutra_3_3_141_vA_lfN_adhikAra.py, tests/unit/test_sutra_3_3_3_bhavizyadadhikAra.py
+  Reference record: sutra_ref_out/3_3_15.json
 """
 from __future__ import annotations
 

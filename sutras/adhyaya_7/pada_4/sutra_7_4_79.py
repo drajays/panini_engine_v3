@@ -6,6 +6,17 @@ Demo slice (जिघृक्षति):
 
 Engine:
   - recipe arms via ``state.meta['7_4_79_sanyatah_abhyasa_arm']``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 74079 · सन्यतः
+              padaccheda: सनि अतः
+              anuvṛtti:   64001: अङ्गस्य | 74058: अभ्यासस्य | 74076: इत्
+  Source #2 — Kāśikā 7.4.79 udāharaṇa:
+                पिपक्षति
+                यियक्षति
+                तिष्ठासति
+  Cross-check — surface pinned by: tests/unit/test_jiGfkSati_grah_san_desiderative.py
+  Reference record: sutra_ref_out/7_4_79.json
 """
 from __future__ import annotations
 

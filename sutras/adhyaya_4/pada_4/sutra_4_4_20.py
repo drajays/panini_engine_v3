@@ -6,6 +6,17 @@ yielding ``ktrim`` upadeśa (**P003-A/B/C**).
 
 Machine slice: ``state.meta['corrected_v2_P003_mam_augment_arm']`` + trailing *ktri*
 ``Term`` → rewrite to ``ktrim``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 44020 · क्त्रेर्मम् नित्यं
+              padaccheda: क्‍त्रेः मप् नित्यम्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 44002: तेन | 44019: निर्वृत्ते
+  Source #2 — Kāśikā 4.4.20 udāharaṇa:
+                इत्ययं त्रिशब्दो गृह्यते
+                — पक्त्रिमम्
+                डुवप् — उप्त्रिमम्
+  Cross-check — surface pinned by: tests/unit/test_kRtrimam_ktri_kf.py, tests/unit/test_paktrimam_ktri_qupac.py, tests/unit/test_uptrimam_ktri_quvap.py
+  Reference record: sutra_ref_out/4_4_20.json
 """
 from __future__ import annotations
 

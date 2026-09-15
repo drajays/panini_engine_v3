@@ -18,6 +18,18 @@ The *i* / *u* stems are untouched (*hari + au → harī*, *vāyu + au → vāyū
 because their *pūrva* is not *āt*.
 
 R1-exempt: a प्रतिषेध writes ``state.blocked_sutras``; the form never changes.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61104 · नादिचि
+              padaccheda: न · आदिचि
+              anuvṛtti:   61072: संहितायाम् | 61084: एकः पूर्वपरयोः | 61101: दीर्घः |  61102: पूर्वसवर्णः
+              adhikāra:   6.1.72
+  Source #2 — Kāśikā 6.1.104 udāharaṇa:
+                वृक्षौ
+                प्लक्षौ
+                खट्वे
+  Cross-check — surface pinned by: tests/unit/test_6_1_104_nadici_ramau.py
+  Reference record: sutra_ref_out/6_1_104.json
 """
 from __future__ import annotations
 

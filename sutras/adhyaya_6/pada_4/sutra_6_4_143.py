@@ -13,6 +13,17 @@ replace with a single *prātipadika* ``kati`` (``6_4_143_kim_qati_done``).
 **(C)** corrected-v2 **P005-B**: *jan* before *ḍit* residue ``a`` — *ṭi* (*an*) *lopa*
 of ``jan`` → ``j`` only (``corrected_v2_P005_B_6_4_143_arm``), matching the
 vārttika on **6.4.143** in the bundle note for *upasarajaḥ*.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64143 · टेः
+              padaccheda: टेः
+              anuvṛtti:   64001: अङ्गस्य | 64129: भस्य | 64134: लोपः | 64142: डिति
+  Source #2 — Kāśikā 6.4.143 udāharaṇa:
+                कुमुद्वान्
+                नड्वान्
+                वेतस्वान्
+  Cross-check — surface pinned by: tests/unit/test_kftvas_sankhya_pipelines.py
+  Reference record: sutra_ref_out/6_4_143.json
 """
 from __future__ import annotations
 

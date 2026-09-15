@@ -8,6 +8,17 @@
 
 (C) **corrected-v2 P001-B** (*dhṛṣṭaḥ*): ``z``+``t`` → ``z``+``w`` **before**
     **8.2.1** so **4.1.2** can attach *sup* (Tripāḍī firewall).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 84041 · ष्टुना ष्टुः
+              padaccheda: ष्टुना · ष्टुः
+              anuvṛtti:   82108: संहितायाम् | 84040: स्तोः
+  Source #2 — Kāśikā 8.4.41 udāharaṇa:
+                वृक्षष्षण्डे
+                प्लक्षष्षण्डे
+                वृक्षष्टीकते
+  Cross-check — surface pinned by: tests/unit/test_BitzIzwa_ashir_ling.py, tests/unit/test_adhyagIzwa.py, tests/unit/test_dhRSTaH_kta_YiDfzf.py
+  Reference record: sutra_ref_out/8_4_41.json
 """
 from __future__ import annotations
 

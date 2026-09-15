@@ -4,6 +4,16 @@
 Engine: when `lakara == luG` and a dhātu is present, insert a pratyaya Term
 with upadeśa "cli" before the lakāra placeholder. This is a glass-box
 implementation used for the aorist (luṅ) sic path.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31043 · च्लि लुङि
+              padaccheda: च्लि (लुप्तप्रथमान्तनिर्देशः) लुङि
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31022: धातोः
+  Source #2 — Kāśikā 3.1.43 udāharaṇa:
+                इकार उच्चारणार्थः
+                तत्रैवोदाहरिष्यामः
+  Cross-check — surface pinned by: tests/unit/test_acaEzIt_pipeline.py, tests/unit/test_tinanta_abhut_lung.py
+  Reference record: sutra_ref_out/3_1_43.json
 """
 from __future__ import annotations
 

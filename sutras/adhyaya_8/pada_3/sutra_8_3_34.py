@@ -12,6 +12,19 @@ v3 narrow slice (vakya illustration P021):
     grAmaH + tava  →  grAmas + tava
 
 Tripāḍī: requires ``state.tripadi_zone`` (8.2.1).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 83034 · विसर्जनीयस्य सः
+              padaccheda: विसर्जनीयस्य सः
+              anuvṛtti:   82108: संहितायाम्
+              adhikāra:   8.3.15
+  Source #2 — Kāśikā 8.3.34 udāharaṇa:
+                वृक्षश्छादयति
+                वृक्षस्थकारः
+                वृक्षश्चिनोति
+  Gloss (sa) — खरि परतः विसर्जनीयस्य सकार आदेशः।
+  Cross-check — surface pinned by: tests/unit/test_grAmas_tava_svam_vakya.py
+  Reference record: sutra_ref_out/8_3_34.json
 """
 from __future__ import annotations
 

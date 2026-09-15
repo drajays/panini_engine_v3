@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T00:26:05+00:00",
+  "generated_at": "2026-09-15T03:47:01+00:00",
   "source": "the full pytest suite via tools.firing_coverage",
   "totals": {
     "sutras_invoked": 569,

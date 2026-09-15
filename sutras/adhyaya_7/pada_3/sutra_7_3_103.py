@@ -18,6 +18,17 @@ We achieve that by running 7.3.103 earlier in the pipeline.
 
 How does the engine know bahuvacana?  Via upadesha_slp1 of the
 pratyaya — only plural sup pratyayas are in the set {Bis, Byas, sup}.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73103 · बहुवचने झल्येत्
+              padaccheda: बहुवचने झलि एत्
+              anuvṛtti:   64001: अङ्गस्य | 73101: अतः | 73102: सुपि
+  Source #2 — Kāśikā 7.3.103 udāharaṇa:
+                वृक्षेभ्यः
+                प्लक्षेभ्यः
+                वृक्षेषु
+  Cross-check — surface pinned by: tests/unit/test_sarva_unified_subanta.py
+  Reference record: sutra_ref_out/7_3_103.json
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.gates  import adhikara_in_effect

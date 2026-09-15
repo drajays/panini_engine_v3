@@ -8,6 +8,17 @@ Engine (glass-box):
   It appends a pratyaya ``Term`` whose surface tape is modelled as ``itvA`` with
   ancestry marker ``upadesha_slp1_original='ktvA'`` (same convention as existing
   ktvā demos).  It does not handle full semantic eligibility.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34021 · समानकर्तृकयोः पूर्वकाले
+              padaccheda: समान-कर्त्तृकयोः पूर्व-काले
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 34018: क्त्वा
+  Source #2 — Kāśikā 3.4.21 udāharaṇa:
+                शक्तिशक्तिमतोर्भेदस्याविवक्षितत्वात् समानकर्तृकता
+                भुक्त्वा व्रजति
+                पीत्वा व्रजति
+  Cross-check — surface pinned by: tests/unit/test_agaty_gam_lyap_acah_lesson.py, tests/unit/test_prakftya_lyap_split_prakriyas.py
+  Reference record: sutra_ref_out/3_4_21.json
 """
 from __future__ import annotations
 

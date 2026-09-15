@@ -17,6 +17,17 @@ Two operational paths:
      This produces DanurByAm, DanurBiH, DanurByaH (tṛtīyā/caturthī/pañcamī).
      Restricted to HAL-initial pratyaya so that AC-initial pratyayas (ṭā→A,
      ṅi→i) go through ṣatvaṁ (8.3.59) post-merge instead.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 82066 · ससजुषो रुँः
+              padaccheda: सस् · सजुषोः · रुः
+              anuvṛtti:   81016: पदस्य
+  Source #2 — Kāśikā 8.2.66 udāharaṇa:
+                अग्निरत्र
+                वायुरत्र
+                सजूर्ऋतुभिः
+  Cross-check — surface pinned by: tests/regression/test_anya_pullinga_gold.py, tests/regression/test_rADA_strilinga_gold.py, tests/unit/test_SANDikyaH_Yya_SRqika.py
+  Reference record: sutra_ref_out/8_2_66.json
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State

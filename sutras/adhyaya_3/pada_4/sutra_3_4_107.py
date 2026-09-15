@@ -10,6 +10,17 @@ Does NOT fire for: 3pl (us), 2sg (s), 1sg (am), 1du (va), 1pl (ma).
 Engine:
   - arm ``state.meta['suw_recipe']`` + ``state.meta['ashir_liG']``.
   - suṭ Term tagged ``suw_agama``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34107 · सुट् तिथोः
+              padaccheda: सुट् ति-थोः
+              anuvṛtti:   34102: लिङः
+  Source #2 — Kāśikā 3.4.107 udāharaṇa:
+                लिङ्संबन्धिनोस्तकारथकारयोः सुडागमो भवति
+                तकारथकारावागमिनौ
+                सीयुटस्तु लिङेवागमी
+  Cross-check — surface pinned by: tests/unit/test_BitzIzwa_ashir_ling.py, tests/unit/test_saGgasIzwa_sam_gam_ashir_ling.py, tests/unit/test_tinanta_bhuyat_ashirling.py
+  Reference record: sutra_ref_out/3_4_107.json
 """
 from __future__ import annotations
 

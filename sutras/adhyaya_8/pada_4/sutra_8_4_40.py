@@ -6,6 +6,16 @@
 
 (B) Older glass-box shard modelled elsewhere as ṭuṇā (``z``+``t`` → ``z``+``w``)
     for ``mArzwi``, etc.—unchanged behaviour.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 84040 · स्तोः श्चुना श्चुः
+              padaccheda: स्तोः · श्चुना · श्चुः
+              anuvṛtti:   82108: संहितायाम्
+  Source #2 — Kāśikā 8.4.40 udāharaṇa:
+                वृक्षश्शेते
+                तच्शेते
+  Cross-check — surface pinned by: tests/unit/test_dadhiccChatram_samasa.py
+  Reference record: sutra_ref_out/8_4_40.json
 """
 from __future__ import annotations
 

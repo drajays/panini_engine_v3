@@ -9,6 +9,17 @@ Phonological predicate: merged pada (single term) ends in a jaś consonant
 
 Jaś→car map (subset relevant to laṅ/luṅ):  d→t, g→k, j→c, b→p, etc.
 For laṅ 3sg, 8.2.39 converts final 't'→'d', then 8.4.56 converts 'd'→'t'.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 84056 · वाऽवसाने
+              padaccheda: वा अवसाने
+              anuvṛtti:   82108: संहितायाम् | 84053: झलाम् | 84054: चर्
+  Source #2 — Kāśikā 8.4.56 udāharaṇa:
+                अवसाने वर्तमानानां झलां वा चरादेशो भवति
+                वाक्
+                त्वक्
+  Cross-check — surface pinned by: tests/unit/test_tinanta_abhavat_lang.py
+  Reference record: sutra_ref_out/8_4_56.json
 """
 from __future__ import annotations
 

@@ -10,6 +10,17 @@ the recipe re-fires the it-prakaraṇa after this substitution.
 
 After S is deleted, the boundary a + I is resolved by 6.1.87 (guṇa) to
 produce final 'e' (sarve).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71017 · जसः शी
+              padaccheda: जसः शी (लुप्तप्रथमान्तनिर्देशः)
+              anuvṛtti:   64001: अङ्गस्य | 71009: अतः | 71014: सर्वनाम्नः
+  Source #2 — Kāśikā 7.1.17 udāharaṇa:
+                सर्वे
+                विश्वे
+                ये
+  Cross-check — surface pinned by: tests/regression/test_anya_pullinga_gold.py, tests/unit/test_sarva_unified_subanta.py, tests/unit/test_sutra_1_1_32_vibhASa_jasi.py
+  Reference record: sutra_ref_out/7_1_17.json
 """
 from __future__ import annotations
 

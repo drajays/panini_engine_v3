@@ -8,6 +8,17 @@ Engine (recipe-armed only):
   - **P042:** ``state.meta['P042_4_1_105_yaY_arm']`` + ``garga`` stem (+ demo tag).
   - **corrected-v2 P004-A:** ``state.meta['corrected_v2_P004_A_stage2_yaY_arm']``
     + merged stem ``upadesha_slp1 == 'kauYjAyana'`` (*Kauñjāyana*).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 41105 · गर्गादिभ्यो यञ्
+              padaccheda: गर्ग-आदिभ्यः यञ्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 41092: तस्यापत्यम् | 41098: गोत्रे
+  Source #2 — Kāśikā 4.1.105 udāharaṇa:
+                गर्गादिभ्यो गोत्रापत्ये यञ् प्रत्ययो भवति
+                गार्ग्यः
+                वात्स्यः
+  Cross-check — surface pinned by: tests/unit/test_gArgyAH_garga_yaY_luk.py
+  Reference record: sutra_ref_out/4_1_105.json
 """
 from __future__ import annotations
 

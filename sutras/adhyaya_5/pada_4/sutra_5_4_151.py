@@ -13,6 +13,17 @@ v3 narrow slice (P024 महोरस्केन):
   • ``state.meta["P024_5_4_151_kap_arm"] == True``
   • ``terms[0].meta["upadesha_slp1"] == "mahat"`` and ``terms[1]… == "uras"``
   • both tagged ``samasa_member``
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 54151 · उरःप्रभृतिभ्यः कप्
+              padaccheda: उरः-प्रभृतिभ्यः कप्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 54068: समासान्ताः | 54113: बहुव्रीहौ
+  Source #2 — Kāśikā 5.4.151 udāharaṇa:
+                व्यूढमुरोऽस्य व्यूढोरस्कः
+                प्रियसर्पिष्कः
+                अवमुक्तोपानत्कः
+  Cross-check — surface pinned by: tests/unit/test_mahoraskena_bahuvrihi.py
+  Reference record: sutra_ref_out/5_4_151.json
 """
 from __future__ import annotations
 

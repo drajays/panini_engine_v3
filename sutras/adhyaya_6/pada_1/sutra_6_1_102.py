@@ -24,6 +24,18 @@ Applies only to prathamā-plural (1-3) and sambuddhi-plural (8-3)
 — both use the 'jas' upadeśa.  Dvitīyā-plural uses 'Sas' which is
 handled by the sister rule 6.1.102b (our sutra_6_1_102_sas.py, or
 treated here with target upadesha 'Sas' → 'An' variant).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61102 · प्रथमयोः पूर्वसवर्णः
+              padaccheda: प्रथमयोः · पूर्वसवर्णः
+              anuvṛtti:   61072: संहितायाम् | 61077: अचि | 61084: एकः पूर्वपरयोः | 61101: अकः दीर्घः
+              adhikāra:   6.1.72
+  Source #2 — Kāśikā 6.1.102 udāharaṇa:
+                अग्नी
+                वायू
+                वृक्षाः
+  Cross-check — surface pinned by: tests/unit/test_6_1_104_nadici_ramau.py, tests/unit/test_agnI_pragRhya_pipeline.py
+  Reference record: sutra_ref_out/6_1_102.json
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State

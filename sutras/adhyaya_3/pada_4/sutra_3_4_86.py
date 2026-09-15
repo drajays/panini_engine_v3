@@ -8,6 +8,17 @@ of a tiṅ ādeśa with 'u' ("uḥ"):
 
 Guards: skip if upadesha_slp1 is "hi" (from 3.4.87 sip→hi) or "ni" (from 3.4.89
 mi→ni) — those substitutions are apavāda and their 'i' must not become 'u'.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34086 · एरुः
+              padaccheda: एः उः
+              anuvṛtti:   34085: लोटः
+  Source #2 — Kāśikā 3.4.86 udāharaṇa:
+                लोडादेशानामिकारस्योकारादेशो भवति
+                पचतु
+                पचन्तु
+  Cross-check — surface pinned by: tests/unit/test_tinanta_bhavatu_lot.py
+  Reference record: sutra_ref_out/3_4_86.json
 """
 from __future__ import annotations
 

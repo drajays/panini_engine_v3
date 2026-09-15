@@ -7,6 +7,17 @@ after the dhātu.
 Structural trigger (CONSTITUTION Art. 13): ``state.meta["san_recipe"] == "san"``
 coordination key (like ``krtya_recipe``).  No arm flag needed.
 Backward-compat: ``3_1_7_san_arm`` still accepted so existing pipelines continue.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31007 · धातोः कर्मणः समानकर्तृकादिच्छायां वा
+              padaccheda: धातोः कर्मणः समान-कर्तृकात् इच्छायाम् वा
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31005: सन्
+  Source #2 — Kāśikā 3.1.7 udāharaṇa:
+                कर्मत्वं समानकर्तृकत्वं च धातोरर्थद्वारकम्
+                कर्तुमिच्छति
+                जिहीर्षति
+  Cross-check — surface pinned by: tests/constitutional/test_no_new_duplicates.py, tests/unit/test_akurvAtAm_laG_tanadi_kf.py, tests/unit/test_cicIzati_ci_san_desiderative.py
+  Reference record: sutra_ref_out/3_1_7.json
 """
 from __future__ import annotations
 

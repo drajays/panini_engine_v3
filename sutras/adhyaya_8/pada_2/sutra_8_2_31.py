@@ -4,6 +4,17 @@
 Demo slice (जिघृक्षति):
   In the grah-desiderative base, replace final `h` with `D` before following `s`
   (of san term).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 82031 · हो ढः
+              padaccheda: हः ढः
+              anuvṛtti:   81016: पदस्य | 82026: झलि | 82029: अन्ते च
+  Source #2 — Kāśikā 8.2.31 udāharaṇa:
+                सोढा
+                सोढुम्
+                सोढव्यम्
+  Cross-check — surface pinned by: tests/unit/test_jiGfkSati_grah_san_desiderative.py
+  Reference record: sutra_ref_out/8_2_31.json
 """
 from __future__ import annotations
 

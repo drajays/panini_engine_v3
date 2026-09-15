@@ -14,6 +14,17 @@ Architecture notes:
 Blindness:
   - cond() reads only tags and allowlisted meta ('krt_upadesha_slp1'), not
     paradigm coordinates.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31133 · ण्वुल्तृचौ
+              padaccheda: ण्वुल्-तृचौ
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ्
+  Source #2 — Kāśikā 3.1.133 udāharaṇa:
+                सर्वधातुभ्यो ण्वुल्तृचौ प्रत्ययौ भवतः
+                कारकः
+                कर्ता
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_pacaka.py, tests/unit/test_cayanam_ciY_lyuw.py, tests/unit/test_hotAram.py
+  Reference record: sutra_ref_out/3_1_133.json
 """
 from __future__ import annotations
 

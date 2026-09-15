@@ -10,6 +10,17 @@ Glass-box paths:
     existing 'ti' in the *vṛt* context.
 
 ``cond`` is mechanically blind to *puruṣa* / *vacana* (CONSTITUTION Art. 2).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31033 · स्यतासी लृलुटोः
+              padaccheda: स्य-तासी लृ-लुटोः
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31022: धातोः
+  Source #2 — Kāśikā 3.1.33 udāharaṇa:
+                करिष्यति
+                अकरिष्यत्
+                श्वः कर्ता
+  Cross-check — surface pinned by: tests/unit/test_tinanta_abhavisyat_lrg.py, tests/unit/test_tinanta_ad_lrg_kartari.py, tests/unit/test_tinanta_ad_lrt_kartari.py
+  Reference record: sutra_ref_out/3_1_33.json
 """
 from __future__ import annotations
 

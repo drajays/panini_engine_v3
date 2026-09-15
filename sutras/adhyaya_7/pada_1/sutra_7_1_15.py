@@ -7,6 +7,17 @@ For adant sarvanāma aṅgas (e.g. sarva):
       ṅi   (Ni)   → smin
 
 We implement as a direct pratyaya replacement based on upadeśa identity.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71015 · ङसिङ्योः स्मात्स्मिनौ
+              padaccheda: ङसि-ङ्योः स्मात्-स्मिनौ
+              anuvṛtti:   64001: अङ्गस्य | 71009: अतः | 71014: सर्वनाम्नः
+  Source #2 — Kāśikā 7.1.15 udāharaṇa:
+                ङसीत्येतस्य स्मात् — सर्वस्मात्
+                विश्वस्मात्
+                यस्मात्
+  Cross-check — surface pinned by: tests/regression/test_anya_pullinga_gold.py, tests/unit/test_sarvasmai_smat_smin_prakriya.py
+  Reference record: sutra_ref_out/7_1_15.json
 """
 from __future__ import annotations
 

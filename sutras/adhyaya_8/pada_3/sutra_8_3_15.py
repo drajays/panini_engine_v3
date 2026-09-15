@@ -11,6 +11,17 @@ ONLY when:
 
 Before voiced consonants (e.g. bh of bhyām) the ru stays as 'r'
 (→ dhanurbhyām, not dhanuḥbhyām).  In those cases 8.3.16 applies.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 83015 · खरवसानयोर्विसर्जनीयः
+              padaccheda: खर्-अवसानयोः विसर्जनीयः
+              anuvṛtti:   81016: पदस्य | 82108: संहितायाम् | 83014: रः
+  Source #2 — Kāśikā 8.3.15 udāharaṇa:
+                रामः (rāma-s → rāmaḥ at pause)
+                वृक्ष+तरति → वृक्षस्तरति (r/s → ḥ before t)
+                वृक्षश्छादयति
+  Cross-check — surface pinned by: tests/regression/test_anya_pullinga_gold.py, tests/regression/test_rADA_strilinga_gold.py, tests/unit/test_SANDikyaH_Yya_SRqika.py
+  Reference record: sutra_ref_out/8_3_15.json
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State

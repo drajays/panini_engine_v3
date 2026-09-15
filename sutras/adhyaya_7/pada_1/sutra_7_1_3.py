@@ -6,6 +6,17 @@ Replaces the jh (jha) sound with anta:
   • laṅ after 3.4.100 drops i   jh  (j+h):   jh  → ant
   • karmani (ātmanepada) 3pl:   Ja  (J single-char jha, after 3.4.79 → Je):
                                   Je  → ante   (J+rest → ant+rest)
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71003 · झोऽन्तः
+              padaccheda: झः अन्तः
+              anuvṛtti:   64001: अङ्गस्य | 71002: प्रत्ययस्यादेः
+  Source #2 — Kāśikā 7.1.3 udāharaṇa:
+                प्रत्ययावयवस्य झस्य अन्त इत्ययमादेशो भवति
+                कुर्वन्ति
+                सुन्वन्ति
+  Cross-check — surface pinned by: tests/unit/test_agaty_gam_lyap_acah_lesson.py, tests/unit/test_cinvanti_pipeline.py, tests/unit/test_phalAni_santi_as_lat_padanta_lesson.py
+  Reference record: sutra_ref_out/7_1_3.json
 """
 from __future__ import annotations
 

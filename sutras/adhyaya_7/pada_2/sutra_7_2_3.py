@@ -4,6 +4,17 @@
 Padaccheda: वद-व्रज-हल्-अन्तस्य अचः
 
 वदव्रजहलन्तस्याचः (7.2.3)
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 72003 · वदव्रजहलन्तस्याचः
+              padaccheda: वद-व्रज-हल्-अन्तस्य अचः
+              anuvṛtti:   64001: अङ्गस्य | 72001: सिचि वृद्धिः परस्मैपदेषु
+  Source #2 — Kāśikā 7.2.3 udāharaṇa:
+                अवादीत्
+                अव्राजीत्
+                विकल्पबाधनार्थं वदिव्रजिग्रहणम्
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_trc.py, tests/unit/test_Bavitavyam_split_prakriyas.py, tests/unit/test_Bavitum_split_prakriyas.py
+  Reference record: sutra_ref_out/7_2_3.json
 """
 from __future__ import annotations
 

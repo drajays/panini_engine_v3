@@ -14,6 +14,17 @@ We model *Tak* as a taddhita ``Term`` with:
   - ``meta['it_markers']`` includes `'N'` so **7.2.117** (ñ/ṇit) can trigger.
 
 No semantic selection beyond the explicit arming.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 44135 · सहस्रेण संमितौ घः
+              padaccheda: सहस्रेण संमितौ घः
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 44110: छन्दसि
+  Source #2 — Kāśikā 4.4.135 udāharaṇa:
+                सम्मितस्तुल्यः सदृशः
+                अ॒यम॒ग्निः स॑ह॒स्रियः॑ (तै०सं०४.७.१३.४)
+                सहस्रतुल्य इत्यर्थः
+  Cross-check — surface pinned by: tests/unit/test_dADikam_taddhita_split_prakriyas.py
+  Reference record: sutra_ref_out/4_4_135.json
 """
 from __future__ import annotations
 

@@ -8,6 +8,19 @@ Teaching **P014** step **19** (with **8.4.58** *parasavarṇa*): on the merged
 Engine:
   • ``state.meta['corrected_v2_P014_8_3_7_arm']`` (cleared in ``act``)
   • **Tripāḍī**: ``state.tripadi_zone`` must be True (**8.2.1**).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 83007 · नश्छव्यप्रशान्
+              padaccheda: नः छवि अप्रशान् (षष्ठ्यर्थे प्रथमा)
+              anuvṛtti:   81016: पदस्य | 82108: संहितायाम् | 83001: रु | 83006: अम्परे
+              adhikāra:   8.3.2
+  Source #2 — Kāśikā 8.3.7 udāharaṇa:
+                भवाम्̐श्छादयति / भवांश्छादयति
+                भवाम्̐स्तरति / भवांस्तरति
+                प्रशान् छाव्यति; भवान् करोति
+  Gloss (sa) — रुप्रकरणे नकारान्तस्य पदस्य (प्रशान्वर्जितस्य) अम्परे छवि परतः रुः विधीयते।
+  Cross-check — surface pinned by: tests/unit/test_kf_lit_karmani_bhave.py
+  Reference record: sutra_ref_out/8_3_7.json
 """
 from __future__ import annotations
 

@@ -8,6 +8,17 @@ Narrow v3:
   • ``cond`` — ``state.meta['prakriya_18_4_4_98_arm']``; exactly two ``Term``s:
     *aṅga* ``sAman`` + ``Ni`` *sup* (``upadesha_slp1`` ``Ni``).
   • ``act`` — append ``yat`` *taddhita* ``Term`` (``y`` ``a`` ``t``); clear the arm.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 44098 · तत्र साधुः
+              padaccheda: तत्र साधुः
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 44075: यत्
+  Source #2 — Kāśikā 4.4.98 udāharaṇa:
+                सामसु साधुः सामन्यः
+                वेमन्यः
+                कर्मण्यः
+  Cross-check — surface pinned by: tests/unit/test_prakriya_sAmanyas_taddhita.py
+  Reference record: sutra_ref_out/4_4_98.json
 """
 from __future__ import annotations
 

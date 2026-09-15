@@ -18,6 +18,18 @@ optional when the fruit may or may not benefit the agent. cond checks
 "Atmanepada_1_3_72" is absent, (c) a dhātu Term carries the tag
 "svaritaYit" or "Yit_dhatu" AND "kartfBiprAya_usage". No arm flags.
 r1_form_identity_exempt=True.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 13072 · स्वरितञितः कर्त्रभिप्राये क्रियाफले
+              padaccheda: स्वरित-ञितः · कर्त्रभिप्राये · क्रियाफले
+              anuvṛtti:   13012: आत्मनेपदम्
+  Source #2 — Kāśikā 1.3.72 udāharaṇa:
+                यजते
+                पचते
+                ञितः खल्वपि — सुनुते
+  Gloss (sa) — स्वरितञितः कर्त्रभिप्राये क्रियाफले आत्मनेपदम्।
+  Cross-check — surface pinned by: tests/unit/test_sthanivat_it_samjna.py
+  Reference record: sutra_ref_out/1_3_72.json
 """
 from __future__ import annotations
 

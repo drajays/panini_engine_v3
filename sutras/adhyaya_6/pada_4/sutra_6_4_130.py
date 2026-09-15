@@ -7,6 +7,17 @@ is replaced by *pad* (पद्) before a following affix — operational slice 
 
 Engine: locate contiguous ``p`` + long ``A`` + ``d`` in the *aṅga* and
 shorten ``A`` → ``a`` (same consonantal frame).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64130 · पादः पत्
+              padaccheda: पादः पत्
+              anuvṛtti:   64001: अङ्गस्य | 64129: भस्य
+  Source #2 — Kāśikā 6.4.130 udāharaṇa:
+                तदन्तस्याङ्गस्य भस्य पदित्ययमादेशो भवति
+                स च  इति पाच्छब्दस्यैव भवति
+                द्विपदःपश्य
+  Cross-check — surface pinned by: tests/unit/test_sutra_6_4_bhAdhikAra_vidhis.py
+  Reference record: sutra_ref_out/6_4_130.json
 """
 from __future__ import annotations
 

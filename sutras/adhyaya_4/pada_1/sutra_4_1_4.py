@@ -33,6 +33,17 @@ Engine (modular, mechanically blind):
 
 This is a narrow slice: no full **wAp** it-lopa simulation here; ``meta`` records
 the canonical upadeśa id ``wAp``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 41004 · अजाद्यतष्टाप्
+              padaccheda: अच्-आदि-अतः टाप्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: प्रातिपदिकात् | 41003: स्त्रियाम्
+  Source #2 — Kāśikā 4.1.4 udāharaṇa:
+                पकारः सामान्यग्रहणार्थः
+                टकारः सामान्यग्रहणाविघातार्थः
+                अजा
+  Cross-check — surface pinned by: tests/unit/test_dyukAmA_bahuvrihi_paribhasha.py, tests/unit/test_sutra_4_1_4_ajadyataSTAp.py, tests/unit/test_taddhita_salIya.py
+  Reference record: sutra_ref_out/4_1_4.json
 """
 from __future__ import annotations
 

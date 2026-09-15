@@ -9,6 +9,17 @@ cover this consonantal k+s locus.
 So we provide a **recipe-armed** narrow slice:
   - after pada-merge, if the single term contains the sequence `k s`, replace
     that `s` by `S` (ष).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 83046 · अतः कृकमिकंसकुम्भपात्रकुशाकर्णीष्वनव्ययस्य
+              padaccheda: अतः · कृ-कमि-कंस-कुम्भ-पात्र-कुशाकर्णीषु · अनव्ययस्य
+              anuvṛtti:   82108: संहितायाम् | 83034: विसर्जनीयस्य | 83038: सः | 83045: नित्यं समासेऽनुत्तरपदस्थस्य
+  Source #2 — Kāśikā 8.3.46 udāharaṇa:
+                अयस्कारः
+                पयस्कारः
+                अयस्कामः
+  Cross-check — surface pinned by: tests/unit/test_jiGfkSati_grah_san_desiderative.py
+  Reference record: sutra_ref_out/8_3_46.json
 """
 from __future__ import annotations
 

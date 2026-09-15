@@ -9,12 +9,25 @@ Two contexts:
      Example: pracC → insert t after 'a': pratC → by 8.4.40 ścutva: pracC
      Used in: pracchhanīya (pracC + anīya), etc.
 
-  B. Cross-term (arm-gated, existing demo): term[0][-1] = 'i', term[1][0] = 'C'.
+  B. Cross-term (saṃhitā at a pada boundary): hrasva at term[0][-1], C at term[1][0].
      Example: dadhi + Catram → dadhit + Catram → by 8.4.40: dadhic + Catram
-     Arm: state.meta['6_1_73_che_ca_arm'] = True
+     Structural — no arm (Art. 13 §1).
 
 By 1.1.46 (āntaṭakitau): tuk is kit, so it is placed after the preceding element
 (the hrasva vowel).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61073 · छे च
+              padaccheda: छे च
+              anuvṛtti:   61071: ह्रस्वस्य तुक् | 61072: संहितायाम्
+              adhikāra:   6.1.72
+  Source #2 — Kāśikā 6.1.73 udāharaṇa:
+                इच्छति; यच्छति
+                शिवच्छाया
+                छकारे परतः संहितायां विषये ह्रस्वस्य तुगागमो भवति
+  Gloss (sa) — संहितायां छकारे परतः ह्रस्वस्य तुगागमो भवति। (छे इत्यत्र अकारः उच्चारणार्थः।)
+  Cross-check — surface pinned by: tests/unit/test_dadhiccChatram_samasa.py
+  Reference record: sutra_ref_out/6_1_73.json
 """
 from __future__ import annotations
 
@@ -36,9 +49,12 @@ def _find_within_hrasva_C(state: State):
 
 
 def _cross_term_match(state: State) -> bool:
-    """Arm-gated cross-term check: term[0] ends in 'i', term[1] starts with 'C'."""
-    if not state.meta.get("6_1_73_che_ca_arm"):
-        return False
+    """Saṃhitā across the pada boundary: hrasva at the end of one term, C at the
+    start of the next (*dadhi* + *Catram*).
+
+    Structural, not arm-gated: छे च says ह्रस्वस्य तुक्, so the trigger is the
+    hrasva itself, exactly as within a single term (Art. 13 §1).
+    """
     if len(state.terms) < 2:
         return False
     a, b = state.terms[0], state.terms[1]
@@ -46,7 +62,7 @@ def _cross_term_match(state: State) -> bool:
         return False
     if not a.varnas or not b.varnas:
         return False
-    return a.varnas[-1].slp1 == "i" and b.varnas[0].slp1 == "C"
+    return is_hrasva(a.varnas[-1].slp1) and b.varnas[0].slp1 == "C"
 
 
 def cond(state: State) -> bool:
@@ -61,12 +77,11 @@ def act(state: State) -> State:
         state.terms[ti].varnas.insert(j + 1, mk("t"))
         state.terms[ti].meta["6_1_73_within_done"] = True
         return state
-    # Cross-term (arm) path
+    # Cross-term path (pada boundary in saṃhitā)
     if _cross_term_match(state):
         t0 = state.terms[0]
         t0.varnas.append(mk("t"))
         t0.meta["6_1_73_che_ca_done"] = True
-        state.meta["6_1_73_che_ca_arm"] = False
     return state
 
 

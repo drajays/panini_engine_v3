@@ -7,6 +7,16 @@
 
 Engine: recipe-only audit — no phoneme rewrite; registers
 ``samjna_registry['3.2.91_agnau_ce_P041']`` when ``state.meta['P041_3_2_91_arm']``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 32091 · अग्नौ चेः
+              padaccheda: अग्नौ चेः
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 32084: भूते | 32086: कर्मणि | 32087: क्विँप्
+  Source #2 — Kāśikā 3.2.91 udāharaṇa:
+                अग्निचित्
+                अत्रापि पूर्ववच्चतुर्विधो नियम इष्यते
+  Cross-check — surface pinned by: tests/unit/test_agnicit_agni_ci_kvip.py
+  Reference record: sutra_ref_out/3_2_91.json
 """
 from __future__ import annotations
 

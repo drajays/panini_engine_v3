@@ -6,6 +6,16 @@ In liṭ:
   - ātmanepada 3pl `Ja` (jha) → `irec` (iReC after IT-lopa = ire)
 
 Engine: recipe arms via ``state.meta['liT_esh_recipe']``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34081 · लिटस्तझयोरेशिरेच्
+              padaccheda: लिटः त-झयोः एश्-इरेच्
+  Source #2 — Kāśikā 3.4.81 udāharaṇa:
+                शकारः सर्वादेशार्थः
+                चकारः स्वरार्थः
+                पेचे
+  Cross-check — surface pinned by: tests/unit/test_IDe_lit_indh.py
+  Reference record: sutra_ref_out/3_4_81.json
 """
 from __future__ import annotations
 

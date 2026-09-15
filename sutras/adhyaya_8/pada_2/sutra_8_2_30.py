@@ -7,6 +7,17 @@ Operational role (v3.6, demo slice for `1145.md`):
 
 Example:
   u c + t  → u k + t
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 82030 · चोः कुः
+              padaccheda: चोः कुः
+              anuvṛtti:   81016: पदस्य | 82026: झलि | 82029: अन्ते च
+  Source #2 — Kāśikā 8.2.30 udāharaṇa:
+                पक्ता
+                पक्तुम्
+                पक्तव्यम्
+  Cross-check — surface pinned by: tests/unit/test_agnicit_agni_ci_kvip.py, tests/unit/test_corrected_prakriyas_v2_bundle.py, tests/unit/test_gArgyAH_garga_yaY_luk.py
+  Reference record: sutra_ref_out/8_2_30.json
 """
 from __future__ import annotations
 

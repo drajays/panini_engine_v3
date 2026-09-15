@@ -4,6 +4,17 @@
 Engine scope: for glass-box aorist (luṅ) derivations, when a dhātu with an
 *ik* vowel is followed by a sic-pratyaya and a parasmaipada tiṅ, apply vṛddhi
 to that dhātu vowel. This supports चि → चै in अचैषीत्.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 72001 · सिचि वृद्धिः परस्मैपदेषु
+              padaccheda: सिचि वृद्धिः परस्मैपदेषु
+              anuvṛtti:   64001: अङ्गस्य
+  Source #2 — Kāśikā 7.2.1 udāharaṇa:
+                अचैषीत्
+                अनैषीत्
+                अलावीत्
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_nayaka.py, tests/forward/test_forward_krdanta_pacaka.py, tests/forward/test_forward_krdanta_trc.py
+  Reference record: sutra_ref_out/7_2_1.json
 """
 from __future__ import annotations
 

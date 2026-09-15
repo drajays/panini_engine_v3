@@ -10,6 +10,17 @@ Engine:
   - looks for an aṅga (dhātu term) containing the sequence ``k a r`` at the end
     (after urṇ r-para completion), and a following pratyaya Term tagged
     ``kngiti``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64110 · अत उत् सार्वधातुके
+              padaccheda: अतः उत् सार्वधातुके
+              anuvṛtti:   64001: अङ्गस्य | 64098: क्ङिति | 64106: उतः प्रत्ययात् | 64108: करोतेः
+  Source #2 — Kāśikā 6.4.110 udāharaṇa:
+                कुरुतः
+                तपरकरणं लघूपधस्य गुणनिवृत्त्यर्थम्
+                क्ङितीत्येव — करोति
+  Cross-check — surface pinned by: tests/unit/test_akurvAtAm_laG_tanadi_kf.py, tests/unit/test_kurutaH_lat_tanadi_u.py
+  Reference record: sutra_ref_out/6_4_110.json
 """
 from __future__ import annotations
 

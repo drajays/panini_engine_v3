@@ -14,6 +14,19 @@ the *sup-saṃjñā*.
 check this gate before assigning *vibhakti* tags via **1.4.104**.
 ``cond`` never reads vibhakti/vacana/lakāra/surface or any gold corpus.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 14103 · सुपः
+              padaccheda: सुपः ६/१
+              anuvṛtti:   14101:  त्रीणि त्रीणि | 14102: एकवचनद्विवचनबहुवचनानि एकशः
+              adhikāra:   4.1.2
+  Source #2 — Kāśikā 1.4.103 udāharaṇa:
+                सु इत्येकवचनम्
+                औ इति द्विवचनम्
+                जसिति बहुवचनम्
+  Gloss (sa) — सुपः प्रत्ययाः तिङवत् त्रैष्टुभेन एकवचनादिभिश्च संज्ञकाः भवन्ति।
+  Cross-check — surface pinned by: tests/unit/test_sutra_1_4_104_vibhakti.py
+  Reference record: sutra_ref_out/1_4_103.json
 """
 from __future__ import annotations
 

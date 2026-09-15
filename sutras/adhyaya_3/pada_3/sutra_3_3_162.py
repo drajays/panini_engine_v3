@@ -6,6 +6,17 @@ Two operational paths:
   2. ``loT_recipe``: glass-box loṭ pipeline — fires as a trace marker;
      the loT placeholder Term is appended inline in the calling pipeline
      (following the same pattern as 3.3.13 for lṛṭ).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 33162 · लोट् च
+              padaccheda: लोट् च
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 33161: विधिनिमन्‍त्रणामन्‍त्रणाधीष्‍टसंप्रश्‍नप्रार्थनेषु लिङ्
+  Source #2 — Kāśikā 3.3.162 udāharaṇa:
+                योगविभाग उत्तरार्थः
+                विधौ तावत् — कटं तावद् भवान् करोतु
+                ग्रामं भवानागच्छतु
+  Cross-check — surface pinned by: tests/unit/test_tinanta_bhavatu_lot.py
+  Reference record: sutra_ref_out/3_3_162.json
 """
 from __future__ import annotations
 

@@ -12,6 +12,17 @@ Operational slice (strī · *ā*-banta *prātipadika* + सम्बुद्ध
 
 Blindness: ``strīliṅga`` / ``sambuddhi`` / ``sup`` tags + final ``A`` + ``s``
 residue only — no ``vibhakti`` / ``vacana`` / gold reads.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73106 · सम्बुद्धौ च
+              padaccheda: सम्बुद्धौ च
+              anuvṛtti:   64001: अङ्गस्य | 73103: एत् | 73105: आपः
+  Source #2 — Kāśikā 7.3.106 udāharaṇa:
+                संबुद्धौ च परत आबन्तस्याङ्गस्य एत्वं भवति
+                हे खट्वे
+                हे बहुराजे
+  Cross-check — surface pinned by: tests/regression/test_rADA_strilinga_gold.py
+  Reference record: sutra_ref_out/7_3_106.json
 """
 from __future__ import annotations
 

@@ -7,6 +7,19 @@ Narrow v3 (संगसीष्ट / ``saGgasIzwa``):
 
 Engine:
   - recipe arms ``state.meta['8_3_23_m_o_anuswara_arm']``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 83023 · मोऽनुस्वारः
+              padaccheda: मः अनुस्वारः
+              anuvṛtti:   81016: पदस्य | 82108: संहितायाम् | 83022: हलि
+              adhikāra:   8.2.1
+  Source #2 — Kāśikā 8.3.23 udāharaṇa:
+                कुण्डं हसति
+                वनं याति
+                वनं हसति
+  Gloss (sa) — पदान्तस्य मकारस्य अनुस्वारः आदेशः भवति, परे हलि।
+  Cross-check — surface pinned by: tests/unit/test_saGgasIzwa_sam_gam_ashir_ling.py
+  Reference record: sutra_ref_out/8_3_23.json
 """
 from __future__ import annotations
 

@@ -17,6 +17,17 @@ The *lakāra* *pratyaya* ``Term`` is recognised by ``meta['upadesha_slp1']`` ∈
 
 **Cross-refs:** 1.4.99, 1.4.100 (pada), 1.4.101 / 1.4.102 (*puruṣa* / *vacana*), 1.4.104
 (*vibhakti* of *tiẖ*) — separate sūtras; 1.3.3/1.3.4 (*it* on *p*, *m* in *tip* etc., *tu-smāḥ*).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34078 · तिप्तस्झिसिप्थस्थमिब्वस्मस् तातांझथासाथांध्वमिड्वहिमहिङ्
+              padaccheda: तिप्-तस्-झि-सिप्-थस्-थ-मिप्-वस्-मस्-त-आताम्-झ-थास्-आथाम्-ध्वम्-इट्-वहि-महिङ्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 34077: लस्य
+  Source #2 — Kāśikā 3.4.78 udāharaṇa:
+                तिप्सिप्मिपां पकारः स्वरार्थः
+                महिङो ङकारस्तिङ् इति प्रत्याहारग्रहणार्थः
+                पचति
+  Cross-check — surface pinned by: tests/test_bhavati_glassbox.py, tests/unit/test_BitzIzwa_ashir_ling.py, tests/unit/test_aBavatAm_split_prakriyas.py
+  Reference record: sutra_ref_out/3_4_78.json
 """
 from __future__ import annotations
 

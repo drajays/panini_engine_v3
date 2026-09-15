@@ -19,6 +19,17 @@ We implement minimal mapping:
 Blindness:
   - cond() keys off pratyaya.meta['upadesha_slp1'] == 'jas' (identity),
     not paradigm coordinates.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73109 · जसि च
+              padaccheda: जसि च
+              anuvṛtti:   64001: अङ्गस्य | 73108: ह्रस्वस्य गुणः
+  Source #2 — Kāśikā 7.3.109 udāharaṇa:
+                अग्नयः
+                वायवः
+                पटवः
+  Cross-check — surface pinned by: tests/unit/test_SamBu_subanta.py, tests/unit/test_vAyavaH.py
+  Reference record: sutra_ref_out/7_3_109.json
 """
 from __future__ import annotations
 

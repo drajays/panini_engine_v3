@@ -8,6 +8,17 @@ Narrow v3 (संगसीष्ट / ``saGgasIzwa``):
 
 Engine:
   - recipe arms ``state.meta['gam_anunasika_recipe']``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64037 · अनुदात्तोपदेशवनतितनोत्यादीनामनुनासिकलोपो झलि क्ङिति
+              padaccheda: अनुदात्त-उपदेश-वनति-तनोति-आदीनाम् अनुनासिक (लुप्तषष्ठ्यन्तनिर्देशः) लोपः झलि क्ङिति
+              anuvṛtti:   64001: अङ्गस्य
+  Source #2 — Kāśikā 6.4.37 udāharaṇa:
+                यमु — यत्वा
+                यतः
+                यतवान्
+  Cross-check — surface pinned by: tests/unit/test_saGgasIzwa_sam_gam_ashir_ling.py
+  Reference record: sutra_ref_out/6_4_37.json
 """
 from __future__ import annotations
 

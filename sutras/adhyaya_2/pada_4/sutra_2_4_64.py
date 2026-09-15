@@ -7,6 +7,17 @@ JSON ``split_prakriyas_11/P042.json`` cites **2.4.64** for *luk* of **yañ** in 
 Engine: recipe-only **luk** marker — no separate **yañ** ``Term`` remains once
 ``gArgya`` is already fused (**P042** structural merge before *sup*); this slice
 registers audit keys for **1.1.60**/**1.1.61** follow-up in the recipe.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 24064 · यञञोश्च
+              padaccheda: यञ्-अञोः च
+              anuvṛtti:   24058: लुक् | 24062: बहुषु तेन एव अस्त्रियाम् | 24063: गोत्रे
+  Source #2 — Kāśikā 2.4.64 udāharaṇa:
+                — गर्गाः
+                वत्साः
+                अञः खल्वपि —   — बिदाः
+  Cross-check — surface pinned by: tests/unit/test_gArgyAH_garga_yaY_luk.py
+  Reference record: sutra_ref_out/2_4_64.json
 """
 from __future__ import annotations
 

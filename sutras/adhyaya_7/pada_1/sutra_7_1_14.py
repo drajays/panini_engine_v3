@@ -6,6 +6,17 @@ is replaced by **smai** (smE in SLP1).
 
 v3 encoding: we replace the pratyaya varṇas with s + m + E and update
 its upadeśa identity so that 7.1.13 (ṅe → ya) will not fire.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71014 · सर्वनाम्नः स्मै
+              padaccheda: सर्वनाम्नः स्मै
+              anuvṛtti:   64001: अङ्गस्य | 71009: अतः | 71013: ङेः
+  Source #2 — Kāśikā 7.1.14 udāharaṇa:
+                सर्वस्मै
+                विश्वस्मै
+                यस्मै
+  Cross-check — surface pinned by: tests/regression/test_anya_pullinga_gold.py, tests/unit/test_priyaviSva_bahuvrIhi_1_1_29.py, tests/unit/test_sarvasmai_smat_smin_prakriya.py
+  Reference record: sutra_ref_out/7_1_14.json
 """
 from __future__ import annotations
 

@@ -12,6 +12,16 @@ General liṭ-tiṅ arm (``state.meta["7_2_35_arm"] is True``):
   Inserts iṭ before the rightmost pratyaya/agama/tin term (the liṭ ādeśa
   residue), regardless of whether it is val-initial, for the consonant-initial
   liṭ ādeśa cells (Tal→ta, va, ma).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 72035 · आर्धधातुकस्येड् वलादेः
+              padaccheda: आर्धधातुकस्य इट् वल्-आदेः
+  Source #2 — Kāśikā 7.2.35 udāharaṇa:
+                आर्धधातुकस्य वलादेरिडागमो भवति
+                लविता
+                लवितुम्
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_trc.py, tests/unit/test_Bavitavyam_split_prakriyas.py, tests/unit/test_Bavitum_split_prakriyas.py
+  Reference record: sutra_ref_out/7_2_35.json
 """
 from __future__ import annotations
 

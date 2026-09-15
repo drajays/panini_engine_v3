@@ -12,6 +12,17 @@ Engine:
   - tape is ``[dhātu hu][ti]`` (no ``Slu`` placeholder — removed after **1.1.61**).
   - inserts an *abhyāsa* copy **without** the ``dhatu`` tag (only ``abhyasa``, ``anga``,
     ``P040_juhoti_abhyasa``) so **7.3.84** still targets the true *dhātu* ``Term``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61010 · श्लौ
+              padaccheda: श्लौ
+              anuvṛtti:   61008: धातोः अनभ्यासस्य | 61001: एकाचः द्वे प्रथमस्य | 61002: अजादेः द्वितीयस्य
+  Source #2 — Kāśikā 6.1.10 udāharaṇa:
+                जुहोति
+                बिभेति
+                जिह्रेति
+  Cross-check — surface pinned by: tests/regression/test_anya_pullinga_gold.py, tests/regression/test_rADA_strilinga_gold.py, tests/unit/test_6_1_104_nadici_ramau.py
+  Reference record: sutra_ref_out/6_1_10.json
 """
 from __future__ import annotations
 

@@ -6,6 +6,17 @@ Teaching **P037** step 14: lengthen the *hrasva* onset of the *abhyāsa* after
 
 Narrow: ``state.meta['P037_7_4_94_dirgha_arm']`` + first ``abhyasa`` with
 leading ``i`` before ``w`` → ``I`` + ``w``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 74094 · दीर्घो लघोः
+              padaccheda: दीर्घः लघोः
+              anuvṛtti:   64001: अङ्गस्य | 74058: अभ्यासस्य | 74093: लघुनि चङ्परेऽनग्लोपे
+  Source #2 — Kāśikā 7.4.94 udāharaṇa:
+                अचीकरत्
+                अजीहरत्
+                अलीलवत्
+  Cross-check — surface pinned by: tests/unit/test_AwIwat_luN_aT_Nic_caN_tip.py
+  Reference record: sutra_ref_out/7_4_94.json
 """
 from __future__ import annotations
 

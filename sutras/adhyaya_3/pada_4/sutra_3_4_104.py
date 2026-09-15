@@ -7,6 +7,17 @@ Two operational paths:
      [y,A,s] (after u~/T it-lopa) immediately before the tiṅ ādeśa, tagged
      as KIT.  The kit-mark on yāsuṭ causes 1.1.5 (kṅiti ca) to block guṇa
      on the dhātu (hence bhūyāt not bhaveyāt).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34104 · किदाशिषि
+              padaccheda: कित् आशिषि
+              anuvṛtti:   34102: लिङः | 34103: यासुट् परस्मैपदेषूदात्तः
+  Source #2 — Kāśikā 3.4.104 udāharaṇa:
+                ङित्त्वे प्राप्ते कित्त्वं विधीयते
+                उच्यात्
+                जागर्यात्
+  Cross-check — surface pinned by: tests/unit/test_tinanta_ad_ashir_lig_kartari.py, tests/unit/test_tinanta_bhuyat_ashirling.py
+  Reference record: sutra_ref_out/3_4_104.json
 """
 from __future__ import annotations
 

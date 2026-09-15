@@ -9,6 +9,17 @@ hit the *asiddha* gate once ``tripadi_zone`` is true):
   #. replace cluster ``dh`` before ``I`` with retroflex ``D`` (SLP1 ``D``).
 
 Pipelines must set ``state.meta['6_4_114_P026_arm']`` before applying.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64114 · इद्दरिद्रस्य
+              padaccheda: इत् दरिद्रस्य
+              anuvṛtti:   64001: अङ्गस्य | 64098: क्ङिति | 64110: सार्वधातुके | 64112: आतः | 64113: हलि
+  Source #2 — Kāśikā 6.4.114 udāharaṇa:
+                दरिद्रितः
+                दरिद्रिथः
+                दरिद्रिवः
+  Cross-check — surface pinned by: tests/unit/test_avaDIt_luN_han.py
+  Reference record: sutra_ref_out/6_4_114.json
 """
 from __future__ import annotations
 

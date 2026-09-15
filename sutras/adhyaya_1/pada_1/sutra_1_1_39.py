@@ -14,6 +14,18 @@ Engine (glass-box):
 
 Mechanical blindness (CONSTITUTION Art. 2):
   - ``cond`` reads only Term tags + current varṇas.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 11039 · कृन्मेजन्तः
+              padaccheda: कृन् · म्-एच्-अन्तः
+              anuvṛtti:   11037: अव्ययम्
+  Source #2 — Kāśikā 1.1.39 udāharaṇa:
+                गन्तुम्
+                भोक्तुम्
+                स्वादुंकारं भुङ्क्ते
+  Gloss (sa) — कृदन्ताः मकारेण एच्-वर्णान्तेन वा अव्ययसंज्ञकाः।
+  Cross-check — surface pinned by: tests/unit/test_sutra_1_1_39_krnmejanta.py
+  Reference record: sutra_ref_out/1_1_39.json
 """
 from __future__ import annotations
 

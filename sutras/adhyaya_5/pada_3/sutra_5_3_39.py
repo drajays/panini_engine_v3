@@ -11,6 +11,17 @@ Narrow v3 (``prakriya_19`` *puras* leg):
     ``asarva_vibhakti_taddhita`` (``1.1.38`` meta).
   • ``act`` — rewrite the first ``Term``’s *upadeśa* surface to ``pur``;
     clear the arm.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 53039 · पूर्वाधरावराणामसि पुरधवश्चैषाम्
+              padaccheda: पूर्व-अधर-अवराणाम् असि (लुप्तप्रथमान्तनिर्देशः) पुर्-अध्-अवः च एषाम्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 53027: दिक्शब्देभ्यः सप्तमीपञ्चमीप्रथमाभ्यः दिग्देशकालेषु
+  Source #2 — Kāśikā 5.3.39 udāharaṇa:
+                तिसृणां विभक्तीनामिह ग्रहणम्
+                असीत्यविभक्तिको निर्देशः
+                पुरो वसति
+  Cross-check — surface pinned by: tests/unit/test_puras_avyaya.py
+  Reference record: sutra_ref_out/5_3_39.json
 """
 from __future__ import annotations
 

@@ -4,6 +4,17 @@
 Engine: when a sic-derived 's' pratyaya is followed by an apṛkta single-hal
 tiṅ residue 't', insert 'I' between them (at start of the tiṅ term).
 This supports glass-box aorist forms like अचैषीत्.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73096 · अस्तिसिचोऽपृक्ते
+              padaccheda: अस्ति-सिचः अपृक्ते
+              anuvṛtti:   64001: अङ्गस्य | 73087: सार्वधातुके | 73089: हलि | 73093: ईट्
+  Source #2 — Kāśikā 7.3.96 udāharaṇa:
+                अस्तेः — आसीत्
+                आसीः
+                सिजन्तात् — अकार्षीत्
+  Cross-check — surface pinned by: tests/unit/test_avadhIt_han_lun_ekavacana.py
+  Reference record: sutra_ref_out/7_3_96.json
 """
 from __future__ import annotations
 

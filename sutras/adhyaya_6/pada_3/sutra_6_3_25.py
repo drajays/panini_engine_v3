@@ -12,6 +12,17 @@ Engine (narrow v3):
 
 This is kept as a single VIDHI step (not NIPATANA) so downstream sup attachment
 is not frozen.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 63025 · आनङ् ऋतो द्वंद्वे
+              padaccheda: आनङ् ऋतः द्वन्द्वे
+              anuvṛtti:   63001: अलुगुत्तरपदे | 63023: विद्यायोनिसम्बन्धेभ्यः
+  Source #2 — Kāśikā 6.3.25 udāharaṇa:
+                होतापोतारौ
+                नेष्टोद्गातारौ
+                प्रशास्ताप्रतिहर्तारौ
+  Cross-check — surface pinned by: tests/unit/test_mAtApitarO_dvandva_split_prakriyas.py
+  Reference record: sutra_ref_out/6_3_25.json
 """
 from __future__ import annotations
 

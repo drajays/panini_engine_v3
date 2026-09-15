@@ -32,6 +32,17 @@ REPRESENTATIVE SIMPLIFICATION:
     (c) the pratyaya contains 's' followed by anunāsika 'u'.
   Action: drop the 's' and the 'u(anunasika)', leaving the pratyaya
   empty — which then dissolves into the stem's inherent a.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61069 · एङ्ह्रस्वात् सम्बुद्धेः
+              padaccheda: एङ्-ह्रस्वात् सम्बुद्धेः
+              anuvṛtti:   61066: लोपः | 61068: हल्
+  Source #2 — Kāśikā 6.1.69 udāharaṇa:
+                अपृक्त मिति नाधिक्रियते
+                तथा च पूर्वसूत्रे पुनरपृक्त ग्रहणं कृतम्
+                एङन्तात् — हे अग्ने
+  Cross-check — surface pinned by: tests/regression/test_anya_pullinga_gold.py, tests/regression/test_rADA_strilinga_gold.py, tests/unit/test_SamBu_subanta.py
+  Reference record: sutra_ref_out/6_1_69.json
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State

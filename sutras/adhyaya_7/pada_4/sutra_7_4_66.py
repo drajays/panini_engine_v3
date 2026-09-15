@@ -7,6 +7,17 @@ abhyāsa *Term* (same mechanism as **6.1.87** / **7.2.114**).
 
 Recipes must set ``state.meta["7_4_66_urat_abhyasa_arm"]`` before ``apply_rule``
 so unrelated reduplication frames do not pick this up.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 74066 · उरत्
+              padaccheda: उः अत्
+              anuvṛtti:   64001: अङ्गस्य | 74058: अभ्यासस्य
+  Source #2 — Kāśikā 7.4.66 udāharaṇa:
+                ववृते
+                ववृधे
+                शशृधे
+  Cross-check — surface pinned by: tests/unit/test_kf_lit_karmani_bhave.py, tests/unit/test_kf_lit_kartari.py
+  Reference record: sutra_ref_out/7_4_66.json
 """
 from __future__ import annotations
 

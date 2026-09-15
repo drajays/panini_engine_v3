@@ -12,6 +12,17 @@ Engine:
   - requires atideśa map entry set by **1.2.1**:
       state.atidesha_map[('pratyaya_after_gaN_or_kutAdi','pratyaya')] == 'ṅit'
   - performs the concrete rewrite A→I on the dhātu term.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64066 · घुमास्थागापाजहातिसां हलि
+              padaccheda: घु-मा-स्था-गा-पा-जहाति-साम् हलि
+              anuvṛtti:   64001: अङ्गस्य | 64046: आर्धधातुके | 64063: क्ङिति | 64065: ईत्
+  Source #2 — Kāśikā 6.4.66 udāharaṇa:
+                दीयते
+                धीयते
+                देदीयते
+  Cross-check — surface pinned by: tests/unit/test_adhyagIzwa.py
+  Reference record: sutra_ref_out/6_4_66.json
 """
 from __future__ import annotations
 

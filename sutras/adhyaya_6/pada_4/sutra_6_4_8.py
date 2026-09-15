@@ -11,6 +11,17 @@ Minimal implementation (v3.6):
     before that final consonant (e.g. ... a n → ... A n).
 
 This yields: jYAna + n + i → jYAnAn + i → ज्ञानानि (after joiner).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64008 · सर्वनामस्थाने चासम्बुद्धौ
+              padaccheda: सर्वनामस्थाने च अ-सम्बुद्धौ
+              anuvṛtti:   63111: दीर्घः | 64001: अङ्गस्य | 64003: नामि | 64007: नोपधायाः
+  Source #2 — Kāśikā 6.4.8 udāharaṇa:
+                राजा
+                राजानम्
+                सामानि तिष्ठन्ति
+  Cross-check — surface pinned by: tests/unit/test_tinanta_abhut_lung.py
+  Reference record: sutra_ref_out/6_4_8.json
 """
 from __future__ import annotations
 

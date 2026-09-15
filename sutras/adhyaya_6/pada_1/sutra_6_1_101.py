@@ -6,6 +6,18 @@
 
   a + a = A    i + i = I    u + u = U    f + f = F    x + x = X
   a + A = A    A + a = A    (etc.)
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61101 · अकः सवर्णे दीर्घः
+              padaccheda: अकः सवर्णे दीर्घः
+              anuvṛtti:   61072: संहितायाम् | 61077: अचि | 61084: एकः पूर्वपरयोः
+              adhikāra:   6.1.72
+  Source #2 — Kāśikā 6.1.101 udāharaṇa:
+                दण्ड + अग्रम् → दण्डाग्रम् (a + a → ā)
+                दधि + इन्द्रः → दधीन्द्रः (i + i → ī)
+                मधु + उदके → मधूदके (u + u → ū)
+  Cross-check — surface pinned by: tests/regression/test_rADA_strilinga_gold.py, tests/unit/test_AwIwat_luN_aT_Nic_caN_tip.py, tests/unit/test_Bavitavyam_split_prakriyas.py
+  Reference record: sutra_ref_out/6_1_101.json
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State, Term

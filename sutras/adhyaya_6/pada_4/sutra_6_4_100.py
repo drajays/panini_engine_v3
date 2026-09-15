@@ -14,6 +14,17 @@ Narrow v3:
   • **P034**: ``state.meta['P034_6_4_100_gas_upadha_atus_arm']`` + same ``Gas`` *dhātu*,
     following ``Term`` begins with **a** and is the *liṭ* *atus* slice (``lit_atus`` /
     ``upadesha_slp1 == 'atus'``).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64100 · घसिभसोर्हलि च
+              padaccheda: घसि-भसोः हलि च
+              anuvṛtti:   64001: अङ्गस्य | 64089: उपधायाः | 64077: अचि | 64098: लोपः क्ङिति | 64099: छन्दसि
+  Source #2 — Kāśikā 6.4.100 udāharaṇa:
+                सग्धि॑श्च मे॒ सपी॑तिश्च मे (मा०सं० १८.९)
+                ब॒ब्धां ते॒ हरी॑ धा॒नाः (निरु० ५.१२)
+                धत्वं तकारस्य
+  Cross-check — surface pinned by: tests/unit/test_jakzatuH_lit_ad_gas.py
+  Reference record: sutra_ref_out/6_4_100.json
 """
 from __future__ import annotations
 

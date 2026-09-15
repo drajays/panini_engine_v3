@@ -6,6 +6,17 @@ Full *Aṣṭādhyāyī* *prayoga* needs **5.3.2**–**5.3.26** *adhikāra* and 
 *glass-box* *corpus* appends a **tama**+**p**-shaped taddhita *Term* when either
 ``5_3_55_tamap_arm`` (*strīliṅga*, e.g. *kumārī* → *kumāritamā* in ``kumari.md``)
 or ``5_3_55_tamap_pullinga_arm`` (*pulliṅga*, ``prakriya_22`` *ratnadhātama*-) is set.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 53055 · अतिशायने तमबिष्ठनौ
+              padaccheda: अतिशायने तमप्-इष्ठनौ
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः
+  Source #2 — Kāśikā 5.3.55 udāharaṇa:
+                निपातनाद् दीर्घत्वम्
+                प्रकृत्यर्थविशेषणं चैतत्
+                प्रकृत्यर्थविशेषणं च स्वार्थिकानां द्योत्यं भवति
+  Cross-check — surface pinned by: tests/unit/test_kumAri_taddhita_pipeline.py, tests/unit/test_ratnaDAtamam.py
+  Reference record: sutra_ref_out/5_3_55.json
 """
 from __future__ import annotations
 

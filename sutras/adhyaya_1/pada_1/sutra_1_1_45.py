@@ -9,6 +9,17 @@ Operational role (v3.6, demo slice):
 This file intentionally models the *deterministic mapping* described in the
 note `1145.md`:
   y → i, v → u, r → f, l → x
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 11045 · इग्यणः सम्प्रसारणम्
+              padaccheda: इक् · यणः · सम्प्रसारणम्
+  Source #2 — Kāśikā 1.1.45 udāharaṇa:
+                यज् — इष्टम्
+                वप् — उप्तम्
+                ग्रह — गृहीतम्
+  Gloss (sa) — इक्स्थाने यणादेशो यः स सम्प्रसारणसंज्ञकः।
+  Cross-check — surface pinned by: tests/unit/test_jiGfkSati_grah_san_desiderative.py, tests/unit/test_pfzwvA_pracch_ktvA.py, tests/unit/test_uditvA_uzitvA_ktvA_samprasaraNa.py
+  Reference record: sutra_ref_out/1_1_45.json
 """
 from __future__ import annotations
 

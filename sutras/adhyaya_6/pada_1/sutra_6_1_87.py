@@ -13,6 +13,19 @@ corresponding guṇa vowel.
     a + i → e
     a + u → o
     a + f → af   (ar) — handled with 1.1.51 later
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61087 · आद्गुणः
+              padaccheda: आत् गुणः
+              anuvṛtti:   61072: संहितायाम् | 61077: अचि | 61084: एकः पूर्वपरयोः
+              adhikāra:   6.1.72
+  Source #2 — Kāśikā 6.1.87 udāharaṇa:
+                तव + इदम् → तवेदम्
+                खट्वा + इन्द्रः → खट्वेन्द्रः
+                माला + इन्द्रः → मालेन्द्रः
+  Gloss (sa) — संहितायाम् (एकादेशाधिकारे) अवर्णात् परे इक्-स्वरे पूर्वपरयोः स्थाने एकः गुणादेशः भवति।
+  Cross-check — surface pinned by: tests/regression/test_anya_pullinga_gold.py, tests/regression/test_rADA_strilinga_gold.py, tests/unit/test_mahoraskena_bahuvrihi.py
+  Reference record: sutra_ref_out/6_1_87.json
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State

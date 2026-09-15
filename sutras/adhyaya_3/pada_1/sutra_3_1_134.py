@@ -10,6 +10,17 @@ Narrow v3 (``prakriya_20`` *devam* leg):
     yet.
   • ``act`` — append **ac** *kṛt* ``Term`` (``a`` + ``c`` *it*); ``dit_pratyaya``
     meta for **7.3.86**; ``citi_krt_ac`` for **6.1.163**; clear the arm.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31134 · नन्दिग्रहिपचादिभ्यो ल्युणिन्यचः
+              padaccheda: नन्दि-ग्रहि-पच्-आदिभ्यः ल्यु-णिनिँ-अचः
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ्
+  Source #2 — Kāśikā 3.1.134 udāharaṇa:
+                त्रिभ्यो गणेभ्यस्त्रयः प्रत्यया यथासंख्यं भवन्ति
+                नन्दनः
+                वाशनः
+  Cross-check — surface pinned by: tests/unit/test_devam_krt.py, tests/unit/test_sutra_3_1_134_nandi_pacadi_ac.py
+  Reference record: sutra_ref_out/3_1_134.json
 """
 from __future__ import annotations
 

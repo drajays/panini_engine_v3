@@ -9,6 +9,17 @@ the first *i* in the *aṅga* (*itika* …) is replaced by *E* (SLP1 *vṛddhi* 
 
 *Scope:* *not* the full **7.2.118** *śāstra* — only this *yoga*; does not
 compete with **7.2.116** (ṇit *upadhā*) or **7.2.117** (ñit).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 72118 · किति च
+              padaccheda: किति च
+              anuvṛtti:   64001: अङ्गस्य | 72114: वृद्धिः | 72115: अचः | 72117: तद्धितेष्वचामादेः
+  Source #2 — Kāśikā 7.2.118 udāharaṇa:
+                — नाडायनः
+                चारायणः
+                — आक्षिकः
+  Cross-check — surface pinned by: tests/unit/test_taddhita_itika_etikAyana.py
+  Reference record: sutra_ref_out/7_2_118.json
 """
 from __future__ import annotations
 

@@ -7,6 +7,18 @@ Demo slice (ईधे):
 
 Engine:
   - recipe arms via ``state.meta['1_2_6_indhi_bhavati_arm']``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 12006 · ईन्धिभवतिभ्यां च
+              padaccheda: इन्धि-भवतिभ्याम् · च
+              anuvṛtti:   12005: लिट् कित्
+  Source #2 — Kāśikā 1.2.6 udāharaṇa:
+                समी॑धे दस्यु॒हन्त॑मम् (ऋ० ६.१६.१५)
+                पु॒त्र ई॑धे॒ अथ॑र्वणः (ऋ० ६.१६.१४)
+                भवतेः खल्वपि — बभूव
+  Gloss (sa) — लिटः इन्धि-भवतिभ्याम् अपि कित् संज्ञा।
+  Cross-check — surface pinned by: tests/unit/test_IDe_lit_indh.py
+  Reference record: sutra_ref_out/1_2_6.json
 """
 from __future__ import annotations
 

@@ -15,6 +15,16 @@ Engine (glass-box):
     **1.3.3**; lopa by **1.3.9**).
 
 This is intentionally narrow (CONSTITUTION: avoid speculative bundles).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 41077 · यूनस्तिः
+              padaccheda: यूनः तिः
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: प्रातिपदिकात् | 41003: स्त्रियाम् | 41014: अनुपसर्जनात् | 41076: तद्धिताः
+  Source #2 — Kāśikā 4.1.77 udāharaṇa:
+                ङीपोऽपवादः
+                युवतिः
+  Cross-check — surface pinned by: tests/unit/test_yuvatiH_stri_split_prakriyas.py
+  Reference record: sutra_ref_out/4_1_77.json
 """
 from __future__ import annotations
 

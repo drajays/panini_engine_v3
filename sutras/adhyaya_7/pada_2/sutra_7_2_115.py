@@ -7,6 +7,17 @@ in SLP1).
 
 Narrow use: kṛt ``Nvul`` path where upadhā-vṛddhi (**7.2.116**) does not
 apply (e.g. ``nI`` + ``ak`` → ``nE`` + ``ak`` for नायक).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 72115 · अचो ञ्णिति
+              padaccheda: अन्त्य&अचः ञ्णिति
+              anuvṛtti:   64001: अङ्गस्य | 72114: वृद्धिः
+  Source #2 — Kāśikā 7.2.115 udāharaṇa:
+                ञिति — एकस्तण्डुलनिश्चायः
+                द्वौ शूर्पनिष्पावौ
+                कारः
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_nayaka.py, tests/forward/test_forward_krdanta_pacaka.py, tests/unit/test_sthanivat_it_samjna.py
+  Reference record: sutra_ref_out/7_2_115.json
 """
 from __future__ import annotations
 

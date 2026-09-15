@@ -7,6 +7,17 @@
 v3 *glass-box*: ``state.meta['5_4_17_kftvasuT_arm']``; exactly one *prātipadika* *Term*;
 ``upadesha_slp1`` (or flat) must satisfy ``pratipadika_slp1_in_sankhya_samjna`` after **1.1.23**;
 appends *kṛtvasuṭ* *taddhita* (``kftvasT`` *upadeśa* — ``T`` *it* for *ṭ*); pops the arm.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 54017 · संख्यायाः क्रियाऽभ्यावृत्तिगणने कृत्वसुच्
+              padaccheda: संख्यायाः क्रिया-अभ्यावृत्तिगणने कृत्वसुच्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः
+  Source #2 — Kāśikā 5.4.17 udāharaṇa:
+                पौनःपुन्यम् अभ्यावृत्तिः
+                पञ्च वारान् भुङ्क्ते पञ्चकृत्वः
+                सप्तकृत्वः
+  Cross-check — surface pinned by: tests/unit/test_kftvas_sankhya_pipelines.py
+  Reference record: sutra_ref_out/5_4_17.json
 """
 from __future__ import annotations
 

@@ -4,6 +4,17 @@
 Glass-box: after ``BaYj`` (from ``BaYjo`` + *it*), append *kṛt* upadeśa **Gurc**
 (घुरच् → **G** + **u** + **r** + **c**; **G**/**c** *it*) tagged ``ghiti`` for
 **7.3.52** *cajoḥ ku …*.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 32161 · भञ्जभासमिदो घुरच्
+              padaccheda: भञ्ज-भास-मिदः घुरच्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 32123: वर्त्तमाने | 32134: तच्छीलतद्धर्मतत्साधुकारिषु
+  Source #2 — Kāśikā 3.2.161 udāharaṇa:
+                भङ्गुरं काष्ठम्
+                घित्त्वात् कुत्वम्
+                भासुरं ज्योतिः
+  Cross-check — surface pinned by: tests/unit/test_bhaNguram_Ghurac.py
+  Reference record: sutra_ref_out/3_2_161.json
 """
 from __future__ import annotations
 

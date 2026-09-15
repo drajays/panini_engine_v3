@@ -23,6 +23,17 @@
 
 • **Tags:** Only deletions listed in ``IT_LOPA_TAGS``; ``nut_agama_inserted``
   etc. are deliberately excluded (see 7.1.54 notes in repo).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 13009 · तस्य लोपः
+              padaccheda: तस्य · लोपः
+  Source #2 — Kāśikā 1.3.9 udāharaṇa:
+                हुँ (उँ इत्) → हु
+                दिवुँ (उँ इत्) → दिव्
+                तथा चैवोदाहृतम्
+  Gloss (sa) — तस्य (इत्संज्ञकस्य) लोपः।
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_pacaka.py, tests/unit/test_Bavitavyam_split_prakriyas.py, tests/unit/test_Bavitum_split_prakriyas.py
+  Reference record: sutra_ref_out/1_3_9.json
 """
 from __future__ import annotations
 

@@ -10,6 +10,18 @@ Engine contract:
     recording ``samjna_registry['1.2.4_sarvadhatukam_apit'] = True``.
   - This is a narrow glass-box slice: we treat tiṅ-ādeśa `tas` (3rd dual
     parasmaipada) as the qualifying target in the demo.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 12004 · सार्वधातुकमपित्
+              padaccheda: सार्वधातुकम् · अपित्
+              anuvṛtti:   12001: ङित्
+  Source #2 — Kāśikā 1.2.4 udāharaṇa:
+                कुरुतः
+                चिनुतः
+                सार्वधातुकमिति किम्? कर्ता
+  Gloss (sa) — सार्वधातुकं प्रत्ययम् अपित् संज्ञकम् — पकारो न इत्।
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_nayaka.py, tests/forward/test_forward_krdanta_pacaka.py, tests/unit/test_Amalakam.py
+  Reference record: sutra_ref_out/1_2_4.json
 """
 from __future__ import annotations
 

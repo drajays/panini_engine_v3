@@ -11,6 +11,17 @@ cond (structural — no lakāra read):
   - luṅ context: dhātu has ``aT_agama_context`` tag (set by 3.2.110)
     OR liṭ context: an abhyāsa term is on the tape (set by 6.1.4 dvitva)
   - vuk not already inserted
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64088 · भुवो वुग्लुङ्लिटोः
+              padaccheda: भुवः वुक् लुङ्-लिटोः
+              anuvṛtti:   64001: अङ्गस्य | 64077: अचि
+  Source #2 — Kāśikā 6.4.88 udāharaṇa:
+                अभूवन्
+                अभूवम्
+                लिटि — बभूव
+  Cross-check — surface pinned by: tests/unit/test_tinanta_abhut_lung.py
+  Reference record: sutra_ref_out/6_4_88.json
 """
 from __future__ import annotations
 

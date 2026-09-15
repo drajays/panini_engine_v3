@@ -5,6 +5,16 @@ Padaccheda: अ · अ · इति
 
 Acts as a tripāḍī zone marker. No phonemic transformation — sets a gate and
 sandhi_kind meta. Fires whenever the gate has not yet fired for this derivation.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 84068 · अ अ इति
+              padaccheda: अ · अ · इति
+  Source #2 — Kāśikā 8.4.68 udāharaṇa:
+                अअ
+                अआ
+                आअ
+  Cross-check — surface pinned by: tests/constitutional/test_astadhyayi_kram_respected.py, tests/test_bhavati_glassbox.py, tests/unit/test_autonomous_vs_recipe.py
+  Reference record: sutra_ref_out/8_4_68.json
 """
 from __future__ import annotations
 

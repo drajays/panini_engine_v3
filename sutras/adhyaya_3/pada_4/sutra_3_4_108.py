@@ -10,6 +10,17 @@ Two operational paths:
 cond (phonological path): state.meta["lakara"] ∈ {"liG","AsIrliG"} OR
   (lakāra=="luG" AND dhātu is seṭ, i.e. not anit_dhatu) — AND jhi ādeśa
   tagged tin_adesha_3_4_78 is on the tape.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34108 · झेर्जुस्
+              padaccheda: झेः जुस्
+              anuvṛtti:   34102: लिङः
+  Source #2 — Kāśikā 3.4.108 udāharaṇa:
+                लिङादेशस्य झेर्जुसादेशो भवति
+                झोऽन्तापवादः
+                पचेयुः
+  Cross-check — surface pinned by: tests/unit/test_tinanta_bhavet_ling.py, tests/unit/test_tinanta_bhuyat_ashirling.py
+  Reference record: sutra_ref_out/3_4_108.json
 """
 from __future__ import annotations
 

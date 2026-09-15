@@ -3,6 +3,16 @@
 
 Demo slice (जिघृक्षति):
   Replace final `D` with `k` when `s` follows: ...D + s... → ...k + s...
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 82041 · षढोः कः सि
+              padaccheda: ष-ढोः कः सि
+  Source #2 — Kāśikā 8.2.41 udāharaṇa:
+                षकारस्य — पिष् — पेक्ष्यति
+                अपेक्ष्यत्
+                पिपिक्षति
+  Cross-check — surface pinned by: tests/unit/test_jiGfkSati_grah_san_desiderative.py
+  Reference record: sutra_ref_out/8_2_41.json
 """
 from __future__ import annotations
 

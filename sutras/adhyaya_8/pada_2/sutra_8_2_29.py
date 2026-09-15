@@ -17,6 +17,17 @@ Step B — suṭ 's' before final pure-consonant tiṅ (saṃyoga at pada-end):
   varṇas are all consonants (no vowels).  Drop the suṭ term.
   This fires only for 3sg (tiṅ = [t], pure consonant) — giving bhūyāt.
   Does NOT fire for 3du/2du/2pl (tiṅ = tāṃ/tam/ta, all contain vowels).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 82029 · स्कोः संयोगाद्योरन्ते च
+              padaccheda: स्-कोः संयोग-आद्योः अन्ते च
+              anuvṛtti:   81016: पदस्य | 82023: लोपः | 82026: झलि
+  Source #2 — Kāśikā 8.2.29 udāharaṇa:
+                लस्जेः — लग्नः
+                लग्नवान्
+                साधुलक्
+  Cross-check — surface pinned by: tests/unit/test_tinanta_ad_ashir_lig_kartari.py, tests/unit/test_tinanta_bhuyat_ashirling.py
+  Reference record: sutra_ref_out/8_2_29.json
 """
 from __future__ import annotations
 

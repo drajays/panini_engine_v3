@@ -7,6 +7,17 @@ removes the **aṇ** *pratyaya* Term inserted for **P039**, matching the JSON
 
 Actual *pratyaya-lopa* is structural removal here; **1.1.60**/**1.1.61** in the
 recipe then supply the *lopa* / *luk*-saṃjñā spine cited in the JSON.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 43034 · श्रविष्ठाफल्गुन्यनुराधास्वातितिष्यपुनर्वसुहस्तविशाखाऽषाढाबहुलाल्लुक्
+              padaccheda: श्रविष्ठा-फल्गुनी-अनुराधा-स्वाति-तिष्य-पुनर्वसु-हस्त-विशाखा-अषाढा-बहुलात् लुक्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 42092: शेषे | 43025: तत्र जातः
+  Source #2 — Kāśikā 4.3.34 udāharaṇa:
+                तस्मिन् स्त्रीप्रत्ययस्यापि   इति लुग् भवति
+                श्रविष्ठासु जातः श्रविष्ठः
+                फल्गुनः
+  Cross-check — surface pinned by: tests/unit/test_viSAKaH_taddhita_luk_aR_paribhasha.py
+  Reference record: sutra_ref_out/4_3_34.json
 """
 from __future__ import annotations
 

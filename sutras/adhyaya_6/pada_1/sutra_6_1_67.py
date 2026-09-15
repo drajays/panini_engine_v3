@@ -11,6 +11,17 @@ Engine (*prakriya_22* / *kvip* residue):
   ``krit_pratyaya.json`` *kvip* note).
 
 ``cond`` does not read *vibhakti* / gold forms.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61067 · वेरपृक्तस्य
+              padaccheda: वेः अपृक्तस्य
+              anuvṛtti:   61066: लोपः
+  Source #2 — Kāśikā 6.1.67 udāharaṇa:
+                वेरपृक्त स्य लोपो भवति
+                — ब्रह्महा
+                भ्रूणहा
+  Cross-check — surface pinned by: tests/unit/test_agnicit_agni_ci_kvip.py, tests/unit/test_ratnaDAtamam.py
+  Reference record: sutra_ref_out/6_1_67.json
 """
 from __future__ import annotations
 

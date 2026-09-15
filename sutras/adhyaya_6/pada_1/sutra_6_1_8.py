@@ -12,6 +12,17 @@ with **1.1.59** *sthānivat* the guṇa vowel **e** of **nī** is treated as pre
 Engine:
   • default: ``state.meta['liT_dvitva_recipe']`` — copy *dhātu*.
   • **P036**: ``state.meta['P036_6_1_8_lit_sthanivat_ne_arm']``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61008 · लिटि धातोरनभ्यासस्य
+              padaccheda: लिटि धातोः अन्-अभ्यासस्य
+              anuvṛtti:   61001: एकाचः द्वे प्रथमस्य | 61002: अजादेः द्वितीयस्य
+  Source #2 — Kāśikā 6.1.8 udāharaṇa:
+                पपाच
+                पपाठ प्रोर्णुनाव
+                (का० ३.१.३६) इति वचनाद् ऊर्णोतेः   इत्याम् न भवति
+  Cross-check — surface pinned by: tests/regression/test_anya_pullinga_gold.py, tests/regression/test_rADA_strilinga_gold.py, tests/unit/test_6_1_104_nadici_ramau.py
+  Reference record: sutra_ref_out/6_1_8.json
 """
 from __future__ import annotations
 

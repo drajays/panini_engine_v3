@@ -11,6 +11,17 @@ Engine (*vā* + *uṇ* residue):
   ``Term`` (tape ``vA`` + ``y`` + ``u`` → ``vAyu`` after merge).
 
 ``cond`` does not read *vibhakti* / paradigm coordinates.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73033 · आतो युक् चिण्कृतोः
+              padaccheda: आतः युक् चिण्-कृतोः
+              anuvṛtti:   64001: अङ्गस्य | 72115: ञ्णिति
+  Source #2 — Kāśikā 7.3.33 udāharaṇa:
+                अदायि
+                अधायि
+                कृति — दायः
+  Cross-check — surface pinned by: tests/unit/test_vAyavaH.py
+  Reference record: sutra_ref_out/7_3_33.json
 """
 from __future__ import annotations
 

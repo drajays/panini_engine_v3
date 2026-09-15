@@ -10,6 +10,18 @@ Engine:
   - looks for a dhātu in the narrow demo list and a following kṛt pratyaya whose
     ``upadesha_slp1_original`` is `ktvA` (we model surface as `tvA`).
   - tags that pratyaya with ``kngiti``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 12007 · मृडमृदगुधकुषक्लिशवदवसः क्त्वा
+              padaccheda: मृड-मृद-गुध-कुष-क्लिश-वद-वसः · क्त्वा
+              anuvṛtti:   12005: कित्
+  Source #2 — Kāśikā 1.2.7 udāharaṇa:
+                मृडित्वा
+                मृदित्वा
+                गुधित्वा
+  Gloss (sa) — मृडादिभ्यः धातुभ्यः क्त्वा प्रत्ययः कित् संज्ञकः।
+  Cross-check — surface pinned by: tests/unit/test_mfqitvA_ktvA_avyaya.py
+  Reference record: sutra_ref_out/1_2_7.json
 """
 from __future__ import annotations
 

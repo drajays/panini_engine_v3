@@ -7,6 +7,17 @@ Operational role (v3.6, napuṃsaka a-stems):
 
 We represent 'Si' as varṇas [S, i]. The initial S is cuṭu-it (1.3.7)
 and will be removed by 1.3.9 when the recipe re-fires the it-prakaraṇa.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71020 · जश्शसोः शिः
+              padaccheda: जस्-शसोः शिः
+              anuvṛtti:   64001: अङ्गस्य | 71019: नपुंसकात्
+  Source #2 — Kāśikā 7.1.20 udāharaṇa:
+                कुण्डानि तिष्ठन्ति
+                कुण्डानि पश्य
+                दधीनि
+  Cross-check — surface pinned by: tests/unit/test_anekAlSit_sarvasya_paribhasha.py
+  Reference record: sutra_ref_out/7_1_20.json
 """
 from __future__ import annotations
 

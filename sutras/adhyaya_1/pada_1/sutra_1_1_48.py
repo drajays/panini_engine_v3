@@ -10,6 +10,17 @@ Engine:
   - Arms via ``state.meta['1_1_48_ec_ig_hrasva_arm']``.
   - Target term: ``state.meta['1_1_48_target_term_index']`` (default ``0``).
   - Optional vowel row: ``state.meta['1_1_48_target_varna_index']`` (default: last).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 11048 · एच इग्घ्रस्वादेशे
+              padaccheda: एचः · इक् · ह्रस्वादेशे
+  Source #2 — Kāśikā 1.1.48 udāharaṇa:
+                रै — अतिरि
+                नौ — अतिनु
+                गो — उपगु
+  Gloss (sa) — ह्रस्वादेशे एचः इक्संज्ञकाः।
+  Cross-check — surface pinned by: tests/unit/test_pramANakRtAntarye_paribhasha.py
+  Reference record: sutra_ref_out/1_1_48.json
 """
 from __future__ import annotations
 

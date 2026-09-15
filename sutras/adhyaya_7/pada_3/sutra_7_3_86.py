@@ -11,6 +11,17 @@ If the upadhā vowel is actually an iṭ-āgama vowel (tagged ``it_agama`` by
 
 This file intentionally models only the “iṭ-āgama guṇa-niṣedha” hook and is
 not a full implementation of Pāṇini’s 7.3.86 ecosystem.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 73086 · पुगन्तलघूपधस्य च
+              padaccheda: पुक्&अन्त-लघु&()उपधायाः च
+              anuvṛtti:   64001: अङ्गस्य | 73082: गुणः | 73084: सार्वधातुकार्धधातुकयोः | 11003: इकः ६/१/seq=1
+  Source #2 — Kāśikā 7.3.86 udāharaṇa:
+                पुगन्तस्य — व्लेपयति
+                ह्रेपयति
+                क्नोपयति
+  Cross-check — surface pinned by: tests/unit/test_agnicit_agni_ci_kvip.py, tests/unit/test_devam_krt.py, tests/unit/test_hiqanIya_heq_nic.py
+  Reference record: sutra_ref_out/7_3_86.json
 """
 from __future__ import annotations
 

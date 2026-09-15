@@ -7,6 +7,17 @@ Teaching **P038** (*paceran*): in *vidhi* / *nimantraṇa* / … senses, introdu
 Engine:
   - recipe arms ``state.meta['liG_vidhi_recipe']``.
   - appends ``liG`` like **3.3.173**, but sets ``vidhi_liG`` (not ``ashir_liG``).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 33161 · विधिनिमन्त्रणामन्त्रणाधीष्टसंप्रश्नप्रार्थनेषु लिङ्
+              padaccheda: विधि-निमन्त्रण-आमन्त्रण-अधीष्ट-सम्प्रश्न-प्रार्थनेषु लिङ्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ्
+  Source #2 — Kāśikā 3.3.161 udāharaṇa:
+                निमन्त्रणं नियोगकरणम्
+                आमन्त्रणं कामचारकरणम्
+                अधीष्टः सत्कारपूर्वको व्यापारः
+  Cross-check — surface pinned by: tests/unit/test_paceran_vidhi_liG_pac_Ja.py, tests/unit/test_tinanta_bhavet_ling.py
+  Reference record: sutra_ref_out/3_3_161.json
 """
 from __future__ import annotations
 

@@ -7,6 +7,17 @@ liṅ placeholder has yet been appended (idempotency guard).
 
 cond: ``state.meta["ashir_liG"]`` is set (recipe coordination key, not an arm)
   AND no liG lakāra placeholder is already on the tape.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 33173 · आशिषि लिङ्लोटौ
+              padaccheda: आशिषि लिङ्-लोटौ
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ्
+  Source #2 — Kāśikā 3.3.173 udāharaṇa:
+                प्रकृत्यर्थविशेषणं चैतत्
+                चिरं जीव्याद् भवान्
+                चिरं जीवतु भवान्
+  Cross-check — surface pinned by: tests/unit/test_BitzIzwa_ashir_ling.py, tests/unit/test_saGgasIzwa_sam_gam_ashir_ling.py, tests/unit/test_tinanta_bhuyat_ashirling.py
+  Reference record: sutra_ref_out/3_3_173.json
 """
 from __future__ import annotations
 

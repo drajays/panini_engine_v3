@@ -6,6 +6,17 @@ Teaching JSON **P037** (*āṭīṭat*, *aṭ* + *ṇic* + *luṅ* + *caṅ* + *
   ``Term`` on the tape.
 
 Blindness: fires only when ``state.meta['P037_3_1_48_caN_arm']`` is set.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31048 · णिश्रिद्रुस्रुभ्यः कर्तरि चङ्
+              padaccheda: णि-श्रि-द्रु-स्रुभ्यः कर्तरि चङ्
+              anuvṛtti:   31022: धातोः | 31043: लुङि | 31044: च्लेः
+  Source #2 — Kāśikā 3.1.48 udāharaṇa:
+                अचीकरत्
+                अजीहरत्
+                अशिश्रियत्
+  Cross-check — surface pinned by: tests/unit/test_AwIwat_luN_aT_Nic_caN_tip.py
+  Reference record: sutra_ref_out/3_1_48.json
 """
 from __future__ import annotations
 

@@ -8,6 +8,17 @@ Demo slice (ईधे):
 Engine:
   - narrowly searches for the first dhātu term and removes `n` if it is the
     penultimate varṇa.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64024 · अनिदितां हल उपधायाः क्ङिति
+              padaccheda: अन्-इद्-इताम् हलः उपधायाः क्ङिति
+              anuvṛtti:   64001: अङ्गस्य | 64023: नलोपः
+  Source #2 — Kāśikā 6.4.24 udāharaṇa:
+                स्रस्तः
+                ध्वस्तः
+                स्रस्यते
+  Cross-check — surface pinned by: tests/unit/test_IDe_lit_indh.py, tests/unit/test_corrected_prakriyas_v2_bundle.py
+  Reference record: sutra_ref_out/6_4_24.json
 """
 from __future__ import annotations
 

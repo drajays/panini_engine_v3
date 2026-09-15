@@ -11,6 +11,17 @@ This implementation follows the v3.1 “zero-width ghost” contract:
 
 Mechanical blindness (CONSTITUTION Art. 2):
   - ``cond`` reads only tags/meta (``avyaya`` tag, ``upadesha_slp1`` for *sup* id).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 24082 · अव्ययादाप्सुपः
+              padaccheda: अव्ययात् आप्-सुपः
+              anuvṛtti:   24058: लुक्
+  Source #2 — Kāśikā 2.4.82 udāharaṇa:
+                तत्र शालायाम्
+                यत्र शालायाम्
+                सुपः खल्वपि — कृत्वा
+  Cross-check — surface pinned by: tests/unit/test_Bavitum_split_prakriyas.py, tests/unit/test_mfqitvA_ktvA_avyaya.py, tests/unit/test_pfzwvA_pracch_ktvA.py
+  Reference record: sutra_ref_out/2_4_82.json
 """
 from __future__ import annotations
 

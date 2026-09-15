@@ -8,6 +8,17 @@ Engine representation:
   - By default ṇic is a single ``i`` ``Term`` (``upadesha_slp1`` still ``Ric``).
   - When the stem carries tag ``emit_Ric_tape`` (e.g. **P015** before **7.3.37**),
     the tape is the full ``Ric`` letters so **1.3.7** *cuṭū* can target initial ``R``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31026 · हेतुमति च
+              padaccheda: हेतु-मति च
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31025: णिच्
+  Source #2 — Kāśikā 3.1.26 udāharaṇa:
+                कटं कारयति
+                ओदनं पाचयति
+                तत्करोतीत्युपसंख्यानं सूत्रयतीत्याद्यर्थम्
+  Cross-check — surface pinned by: tests/unit/test_kathi_kath_nic.py
+  Reference record: sutra_ref_out/3_1_26.json
 """
 from __future__ import annotations
 

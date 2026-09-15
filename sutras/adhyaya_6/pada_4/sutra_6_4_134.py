@@ -14,6 +14,17 @@ Narrow extension (split_prakriyas_11 P006 only):
   while avoiding global behavior changes, we provide an **armed** alternate
   branch that deletes the **final n** of an ``an``-stem when
   ``state.meta['6_4_134_an_final_n_lopa_arm']`` is True.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64134 · अल्लोपोऽनः
+              padaccheda: अत्-लोपः अनः
+              anuvṛtti:   64001: अङ्गस्य | 64129: भस्य
+  Source #2 — Kāśikā 6.4.134 udāharaṇa:
+                राज्ञः पश्य
+                राज्ञा
+                राज्ञे
+  Cross-check — surface pinned by: tests/unit/test_sutra_6_4_bhAdhikAra_vidhis.py, tests/unit/test_yuvatiH_stri_split_prakriyas.py
+  Reference record: sutra_ref_out/6_4_134.json
 """
 from __future__ import annotations
 

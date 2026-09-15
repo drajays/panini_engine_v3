@@ -7,6 +7,17 @@ Teaching **P037** step 13: before the non-geminate *caṅ* context, the *laghu*
 
 Narrow: ``state.meta['P037_7_4_93_sanvat_arm']`` + first ``abhyasa`` ``Term``
 with varṇas ``a`` + ``w`` (*aṭ* segment) → ``i`` + ``w``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 74093 · सन्वल्लघुनि चङ्परेऽनग्लोपे
+              padaccheda: सन्-वत् लघुनि चङ्‍-परे अन्-अक्-लोपे
+              anuvṛtti:   64001: अङ्गस्य | 74058: अभ्यासस्य
+  Source #2 — Kāśikā 7.4.93 udāharaṇa:
+                इत्युक्तम्
+                अचीकरत्
+                अपीपचत्
+  Cross-check — surface pinned by: tests/unit/test_AwIwat_luN_aT_Nic_caN_tip.py
+  Reference record: sutra_ref_out/7_4_93.json
 """
 from __future__ import annotations
 

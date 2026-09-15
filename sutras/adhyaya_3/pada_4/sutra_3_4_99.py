@@ -9,6 +9,17 @@ Two operational paths:
 
 In laṅ, 'vas' and 'mas' are ṅit (mandatorily applied); 3.4.99 deletes their
 final 's' so the tiṅ ādeśa ends with the prātipadika consonant alone.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34099 · नित्यं ङितः
+              padaccheda: नित्यम् ङितः
+              anuvṛtti:   34077: लस्य | 34097: लोपः | 34098: स उत्तमस्य
+  Source #2 — Kāśikā 3.4.99 udāharaṇa:
+                अपचाव
+                अपचाम
+                नित्यग्रहणं विकल्पनिवृत्त्यर्थम्
+  Cross-check — surface pinned by: tests/unit/test_tinanta_abhavat_lang.py, tests/unit/test_tinanta_abhavisyat_lrg.py, tests/unit/test_tinanta_bhavatu_lot.py
+  Reference record: sutra_ref_out/3_4_99.json
 """
 from __future__ import annotations
 

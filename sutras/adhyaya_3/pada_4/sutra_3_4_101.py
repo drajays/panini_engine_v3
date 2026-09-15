@@ -12,6 +12,17 @@ Engine: after **3.4.78** replaces the lac placeholder and the recipe sets
 
 The last case (mi→am) is apavāda to 3.4.100 (which would drop 'i').
 Call 3.4.101 BEFORE 3.4.100 in the pipeline to respect this priority.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34101 · तस्थस्थमिपां तांतंतामः
+              padaccheda: तस्-थस्-थ-मिपाम् ताम्-तम्-त-अम्
+              anuvṛtti:   34077: लस्य | 34099: ङितः
+  Source #2 — Kāśikā 3.4.101 udāharaṇa:
+                अपचताम्
+                अपचतम्
+                अपचत
+  Cross-check — surface pinned by: tests/unit/test_aBavatAm_split_prakriyas.py, tests/unit/test_sthanivat_anal_ashrita.py, tests/unit/test_tinanta_abhavat_lang.py
+  Reference record: sutra_ref_out/3_4_101.json
 """
 from __future__ import annotations
 

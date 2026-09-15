@@ -11,6 +11,18 @@ Engine (glass-box):
 
 Mechanical blindness (CONSTITUTION Art. 2):
   - ``cond`` reads only structural tags/meta on Terms, not vibhakti/vacana, not gold.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 11038 · तद्धितश्चासर्वविभक्तिः
+              padaccheda: तद्धितः · च · असर्वविभक्तिः
+              anuvṛtti:   11037: अव्ययम्
+  Source #2 — Kāśikā 1.1.38 udāharaṇa:
+                तया
+                तदा
+                यस्माद् न सर्वविभक्तेरुत्पत्तिः सोऽसर्वविभक्तिः
+  Gloss (sa) — तद्धितान्तोऽसर्वविभक्तिकश्च अव्ययसंज्ञकः।
+  Cross-check — surface pinned by: tests/unit/test_puras_avyaya.py, tests/unit/test_sutra_1_1_38_taddhita_asarvavibhakti.py
+  Reference record: sutra_ref_out/1_1_38.json
 """
 from __future__ import annotations
 

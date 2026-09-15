@@ -9,6 +9,17 @@ Two operational paths:
      ends in HAL) and the tiṅ 'us' starts with u/U, drop the 'A' → [y].
      This gives ad+y+us → adyuḥ.  For bhvādi (śap-a before yasut), rule
      7.2.80 handles yā+us → iy+us via a separate transformation.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 72079 · लिङः सलोपोऽनन्त्यस्य
+              padaccheda: लिङः स-लोपः अनन्त्यस्य
+              anuvṛtti:   64001: अङ्गस्य | 72076: सार्वधातुके
+  Source #2 — Kāśikā 7.2.79 udāharaṇa:
+                कः पुनरनन्त्यो लिङः सकारः? यो यासुट्सुट्सीयुटाम्
+                कुर्यात्
+                कुर्वीत
+  Cross-check — surface pinned by: tests/unit/test_paceran_vidhi_liG_pac_Ja.py, tests/unit/test_tinanta_bhavet_ling.py
+  Reference record: sutra_ref_out/7_2_79.json
 """
 from __future__ import annotations
 

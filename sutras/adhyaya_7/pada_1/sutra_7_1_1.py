@@ -8,6 +8,17 @@ We implement narrowly:
   - last term is a kṛt pratyaya whose original upadeśa was Nvul and whose
     recorded it-markers include 'N' (ṇit), and whose current surface is 'vu'
   - replace pratyaya varṇas with 'a','k' and update its identity to 'ak'
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71001 · युवोरनाकौ
+              padaccheda: यु-वोः अन-अकौ
+              anuvṛtti:   64001: प्रत्ययस्य ६/१
+  Source #2 — Kāśikā 7.1.1 udāharaṇa:
+                योरनः
+                नन्द्यादिभ्यो  ल्युः — नन्दनः
+                रमणः
+  Cross-check — surface pinned by: tests/forward/test_forward_krdanta_pacaka.py, tests/regression/test_anya_pullinga_gold.py, tests/regression/test_rADA_strilinga_gold.py
+  Reference record: sutra_ref_out/7_1_1.json
 """
 from __future__ import annotations
 

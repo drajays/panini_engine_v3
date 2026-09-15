@@ -7,6 +7,17 @@ Glass-box scope for `maharsiH`:
 
 This models the ān-ādeśa of *mahat* in the specified semantic condition, without
 attempting a general samāsa engine.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 63046 · आन्महतः समानाधिकरणजातीययोः
+              padaccheda: आत् महतः समानाधिकरण-जातीययोः
+              anuvṛtti:   63001: उत्तरपदे
+  Source #2 — Kāśikā 6.3.46 udāharaṇa:
+                महादेवः
+                महाब्राह्मणः
+                महाबाहुः
+  Cross-check — surface pinned by: tests/unit/test_mahoraskena_bahuvrihi.py
+  Reference record: sutra_ref_out/6_3_46.json
 """
 from __future__ import annotations
 

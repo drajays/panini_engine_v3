@@ -7,6 +7,17 @@ Two operational paths:
      (after 7.2.79 s-lopa) is replaced by [i,y] when the preceding term
      ends in 'a'.  This creates the 'i' that undergoes 6.1.87 ādguṇaḥ
      (a + i → e), producing the characteristic 'e' of vidhi-liṅ forms.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 72080 · अतो येयः
+              padaccheda: अतः या (लुप्तषष्ठ्यन्तनिर्देशः) इयः
+              anuvṛtti:   64001: अङ्गस्य | 72076: सार्वधातुके
+  Source #2 — Kāśikā 7.2.80 udāharaṇa:
+                अत इति किम्? चिनुयात्
+                सुनुयात्
+                तपरकरणं किम्? यायात्
+  Cross-check — surface pinned by: tests/unit/test_tinanta_bhavet_ling.py
+  Reference record: sutra_ref_out/7_2_80.json
 """
 from __future__ import annotations
 

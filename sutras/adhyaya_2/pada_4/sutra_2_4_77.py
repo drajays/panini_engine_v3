@@ -6,6 +6,17 @@ Two operational paths:
   2. Arm ``2_4_77_luG_sic_lopa_arm``: luṅ — luk (total deletion) of the siC
      pratyaya term for bhū in parasmaipada.  After 3.1.44 cli→sic, this arm
      removes the sic term entirely so only dhātu + tiṅ remain.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 24077 · गातिस्थाघुपाभूभ्यः सिचः परस्मैपदेषु
+              padaccheda: गाति-स्था-घु-पा-भूभ्यः सिचः परस्मैपदेषु
+              anuvṛtti:   24058: लुक्
+  Source #2 — Kāśikā 2.4.77 udāharaṇa:
+                अगात्
+                अस्थात्
+                अदात्
+  Cross-check — surface pinned by: tests/unit/test_tinanta_abhut_lung.py
+  Reference record: sutra_ref_out/2_4_77.json
 """
 from __future__ import annotations
 

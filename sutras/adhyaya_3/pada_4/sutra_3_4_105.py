@@ -5,6 +5,17 @@ Teaching **P038** (*paceran*): in the *vidhi-liṅ* frame, *tiṅ* *ādeśa* ``J
 replaced by ``ran`` (SLP1 ``r`` ``a`` ``n``).
 
 Narrow: ``state.meta['Ja_ran_recipe']`` + ``vidhi_liG`` + ``Ja`` *tiṅ* term.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34105 · झस्य रन्
+              padaccheda: झस्य रन्
+              anuvṛtti:   34102: लिङः
+  Source #2 — Kāśikā 3.4.105 udāharaṇa:
+                झस्य लिङादेशस्य रन्नित्ययमादेशो भवति
+                झोऽन्तापवादः
+                पचेरन्
+  Cross-check — surface pinned by: tests/unit/test_paceran_vidhi_liG_pac_Ja.py
+  Reference record: sutra_ref_out/3_4_105.json
 """
 from __future__ import annotations
 

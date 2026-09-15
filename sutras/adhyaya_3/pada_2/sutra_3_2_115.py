@@ -8,6 +8,17 @@ Engine:
   - recipe arms via ``state.meta['liT_lakara_recipe']``.
   - sets ``state.meta['lakara_liT'] = True`` and appends a placeholder pratyaya
     Term with ``upadesha_slp1 = 'liT'``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 32115 · परोक्षे लिट्
+              padaccheda: परोक्षे लिट्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 32084: भूते | 32111: अनद्यतने
+  Source #2 — Kāśikā 3.2.115 udāharaṇa:
+                तस्य विशेषणं परोक्षग्रहणम्
+                ननु च धात्वर्थः सर्वः परोक्ष एव? सत्यमेतत्
+                स यत्र नास्ति
+  Cross-check — surface pinned by: tests/unit/test_IDe_lit_indh.py, tests/unit/test_jakzatuH_lit_ad_gas.py, tests/unit/test_kf_lit_kartari.py
+  Reference record: sutra_ref_out/3_2_115.json
 """
 from __future__ import annotations
 

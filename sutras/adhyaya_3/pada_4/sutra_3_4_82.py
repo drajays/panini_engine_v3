@@ -16,6 +16,17 @@ Engine:
   • *atus*: ``state.meta['liT_atus_recipe']`` + ``tas`` from **3.4.78**.
   • **P036**: ``state.meta['liT_Nal_recipe']`` + ``tip``/``ti`` *tiṅ* row.
   • **General liṭ**: ``state.meta['liT_82_recipe']`` + ``state.meta['liT_82_adesha_form']``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34082 · परस्मैपदानां णलतुसुस्थलथुसणल्वमाः
+              padaccheda: परस्मैपदानाम् णल्-अतुस्-उस्-थल्-अथुस्-अ-णल्-व-माः
+              anuvṛtti:   34081: लिटः
+  Source #2 — Kāśikā 3.4.82 udāharaṇa:
+                लकारः स्वरार्थः
+                णकारो वृद्ध्यर्थः
+                पपाच
+  Cross-check — surface pinned by: tests/unit/test_jakzatuH_lit_ad_gas.py, tests/unit/test_ninAya_lit_nI.py, tests/unit/test_papatuH_lit_pA.py
+  Reference record: sutra_ref_out/3_4_82.json
 """
 from __future__ import annotations
 

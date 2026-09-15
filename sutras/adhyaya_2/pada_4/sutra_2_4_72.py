@@ -7,6 +7,17 @@
 
 *Engine:* ``cond`` reads *dhātu* ``gana`` meta (gaṇa 2) and a following ``Sap`` *Term*;
 no demo ``_arm`` (Art. 13).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 24072 · अदिप्रभृतिभ्यः शपः
+              padaccheda: अदिप्रभृतिभ्यः शपः
+              anuvṛtti:   24058: लुक्
+  Source #2 — Kāśikā 2.4.72 udāharaṇa:
+                अत्ति
+                हन्ति
+                द्वेष्टि
+  Cross-check — surface pinned by: tests/unit/test_dIdhye_dIdhi_lat_parasmin_lesson.py
+  Reference record: sutra_ref_out/2_4_72.json
 """
 from __future__ import annotations
 

@@ -20,6 +20,17 @@ Engine:
   - recipe arms ``state.meta['6_4_16_sani_dirgha_arm']`` (and optionally
     ``corrected_v2_P013_sani_dirgha_arm`` for ``Sru``).
   - applies to ``upadesha_slp1`` in ``{"ci", "vac"}`` or ``Sru`` (P013 only).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64016 · अज्झनगमां सनि
+              padaccheda: अच्-हन-गमाम् सनि
+              anuvṛtti:   63111: दीर्घः | 64001: अङ्गस्य | 64015: झलि
+  Source #2 — Kāśikā 6.4.16 udāharaṇa:
+                अजन्तानाम् — विवीषति
+                तुष्टूषति
+                चिकीर्षति
+  Cross-check — surface pinned by: tests/unit/test_cicIzati_ci_san_desiderative.py, tests/unit/test_prakriya_sAmanyas_taddhita.py, tests/unit/test_sutra_6_4_16_ci_san.py
+  Reference record: sutra_ref_out/6_4_16.json
 """
 from __future__ import annotations
 

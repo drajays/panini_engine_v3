@@ -4,6 +4,17 @@
 Engine scope (v3 glass-box): attach the lakāra upadeśa placeholder ``laG`` when
 the recipe sets ``state.meta['3_2_111_laG_arm']`` and records ``state.meta['lakara'] == 'laG'``.
 Tiṅ substitution is performed by **3.4.77** + **3.4.78** using ``state.meta['tin_adesha_*']``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 32111 · अनद्यतने लङ्
+              padaccheda: अन्-अद्यतने लङ्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ् | 32084: भूते
+  Source #2 — Kāśikā 3.2.111 udāharaṇa:
+                अनद्यतन अति बहुव्रीहिनिर्देशः
+                अकरोत्
+                अहरत्
+  Cross-check — surface pinned by: tests/unit/test_aBavatAm_split_prakriyas.py, tests/unit/test_akurvAtAm_laG_tanadi_kf.py
+  Reference record: sutra_ref_out/3_2_111.json
 """
 from __future__ import annotations
 

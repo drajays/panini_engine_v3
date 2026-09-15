@@ -9,6 +9,17 @@ We implement minimally:
   - *एच्* finals → *इक्* replacements via ``phonology.ec_ig_hrasva`` — the same
     resolver bundle used by **1.1.48** (*एच इग्घ्रस्वादेशे*) when another rule
     requests *hrasva* on an *एच्* vowel (अतिरै / अतिनौ demos).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 12047 · ह्रस्वो नपुंसके प्रातिपदिकस्य
+              padaccheda: ह्रस्वः · नपुंसके · प्रातिपदिकस्य
+  Source #2 — Kāśikā 1.2.47 udāharaṇa:
+                अतिरि कुलम्
+                अतिनु कुलम्
+                नपुंसक इति किम्? ग्रामणीः
+  Gloss (sa) — नपुंसके प्रातिपदिकस्य ह्रस्वभावः (संक्षेप-संस्कारेषु) विधीयते।
+  Cross-check — surface pinned by: tests/unit/test_atinu_md_neuter.py, tests/unit/test_sutra_1_2_48_gostriyor_upasarjanasya.py
+  Reference record: sutra_ref_out/1_2_47.json
 """
 from __future__ import annotations
 

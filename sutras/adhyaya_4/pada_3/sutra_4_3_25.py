@@ -10,6 +10,17 @@ Engine (recipe-armed only):
   - witness ``prakriti`` tagged ``anga``, ``prātipadika``, ``P039_viSAKA_demo``.
   - inserts taddhita ``aR`` (``a`` + ``R`` per upadeśa parsing; **1.3** *it* path
     is left to the usual *prakriyā* hooks if the recipe fires **1.3.2**/**1.3.9**).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 43025 · तत्र जातः
+              padaccheda: तत्र जातः
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 41001: ङ्याप्प्रातिपदिकात् | 41076: तद्धिताः | 42092: शेषे
+  Source #2 — Kāśikā 4.3.25 udāharaṇa:
+                स्रुघ्ने जातः स्रौघ्नः
+                माथुरः
+                औत्सः
+  Cross-check — surface pinned by: tests/unit/test_viSAKaH_taddhita_luk_aR_paribhasha.py
+  Reference record: sutra_ref_out/4_3_25.json
 """
 from __future__ import annotations
 

@@ -21,6 +21,17 @@ Narrow v3:
     exactly **j** → append **a**.
   • **P036**: ``state.meta['P036_7_4_59_abhyasa_ne_to_ni_arm']`` and the *abhyāsa* is
     exactly **ne** → **ni**.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 74059 · ह्रस्वः
+              padaccheda: ह्रस्वः
+              anuvṛtti:   64001: अङ्गस्य | 74058: अभ्यासस्य | 12028: अचः
+  Source #2 — Kāśikā 7.4.59 udāharaṇa:
+                दुढौकिषते
+                तुत्रौकिषते
+                डुढौके
+  Cross-check — surface pinned by: tests/unit/test_jakzatuH_lit_ad_gas.py, tests/unit/test_juhoti_hu_lat_tip_Slu.py, tests/unit/test_kf_lit_karmani_bhave.py
+  Reference record: sutra_ref_out/7_4_59.json
 """
 from __future__ import annotations
 

@@ -9,6 +9,17 @@ Engine:
     is `s~` (su) or `am`.
   - performs luk by turning the sup Term into a zero-width ghost (varnas cleared,
     tag luk_lopa).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 71023 · स्वमोर्नपुंसकात्
+              padaccheda: सु-अमोः नपुंसकात्
+              anuvṛtti:   64001: अङ्गस्य | 71022: लुक्
+  Source #2 — Kāśikā 7.1.23 udāharaṇa:
+                दधि तिष्ठति
+                दधि पश्य
+                मधु तिष्ठति
+  Cross-check — surface pinned by: tests/unit/test_atinu_md_neuter.py, tests/unit/test_yUpadAru_vfkaBhaya.py
+  Reference record: sutra_ref_out/7_1_23.json
 """
 from __future__ import annotations
 

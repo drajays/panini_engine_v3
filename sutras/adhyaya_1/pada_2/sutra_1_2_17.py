@@ -7,6 +7,18 @@ substituted by **इच्** — phonemic ``i`` + hal **c** (it). Re-tag **``upa
 
 Demo path for *da~da* + luṅ: ``sic`` Term still has ``upadesha_slp1='sic'`` for lookup;
 recipe arms ``meta['1_2_17_ghu_sici_ic_arm']``.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 12017 · स्था घ्वोरिच्च
+              padaccheda: स्था-घ्वोः · इत् · च
+              anuvṛtti:   12005: कित् | 12009: झल् | 12011: आत्मनेपदेषु | 12014: सिच्
+  Source #2 — Kāśikā 1.2.17 udāharaṇa:
+                उपास्थित
+                घुसंज्ञकानाम् — अदित
+                अधित
+  Gloss (sa) — स्थाधातोः घुसंज्ञकेभ्यश्च सिचि आत्मनेपदे कित्प्रकरणे झल्त्वम्।
+  Cross-check — surface pinned by: tests/unit/test_adita_luN_dAda_ghu.py
+  Reference record: sutra_ref_out/1_2_17.json
 """
 from __future__ import annotations
 

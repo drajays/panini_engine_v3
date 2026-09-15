@@ -7,6 +7,17 @@ yi*, etc., in fuller prakriyā).
 
 Engine: if *bha* *aṅga* ends in ``o`` and the following pratyaya's first
 phoneme is ``y``, replace final ``o`` with ``a`` (*guṇa* substitute anchor).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64146 · ओर्गुणः
+              padaccheda: ओः गुणः
+              anuvṛtti:   64001: अङ्गस्य | 64129: भस्य | 64144: तद्धिते
+  Source #2 — Kāśikā 6.4.146 udāharaṇa:
+                बाभ्रव्यः
+                माण्डव्यः
+                शङ्कव्यं दारु
+  Cross-check — surface pinned by: tests/unit/test_SamBu_subanta.py, tests/unit/test_sutra_6_4_bhAdhikAra_vidhis.py
+  Reference record: sutra_ref_out/6_4_146.json
 """
 from __future__ import annotations
 
