@@ -11,6 +11,7 @@ Pure view code — it never touches ``State`` internals and is never imported by
 from __future__ import annotations
 
 import sutras  # noqa: F401 — fills SUTRA_REGISTRY
+from core.i18n_hi import hint_for_sutra
 from engine import SUTRA_REGISTRY
 
 # ─────────────────────────────────────────────────────────────────
@@ -91,5 +92,7 @@ def enrich_trace(raw_trace: list[dict]) -> list[dict]:
             "_sutra_text_dev" : getattr(rec, "text_dev",       None),
             "_padaccheda_dev" : getattr(rec, "padaccheda_dev", None),
             "_anuvritti_from" : list(getattr(rec, "anuvritti_from", ()) or ()),
+            # Learner aid, not the sūtra's meaning — see core/i18n_hi (UNREVIEWED).
+            "_hint_hi"        : hint_for_sutra(sid) if sid else "",
         })
     return out

@@ -254,8 +254,11 @@ implemented and the first agreement rate are both committed.
 | B4 | asiddha strata — a visibility matrix (8.2.1 · 6.4.22 · 6.1.86) replacing the `tripadi_zone` flag | the 8.2.66 ⇄ 8.3.34 cycle stays broken for a stated reason |
 | B5 | vibhāṣā forks returned as outputs, every branch tested | optional rules produce branches, not a silent choice |
 
-**Gate B:** BLOCKED steps rise from 24 into the hundreds; no `cond` contains a narrowing that
-belongs to another sūtra; the autonomous-loop xfails turn green for laṭ kartari.
+**Gate B:** measured on `sig/suite_sig.json` — today the whole suite produces **229 BLOCKED
+firings against 164,048 SKIPPED**, and only **six sūtras are ever blocked at all** (101 of those
+blocks are the 6.1.102 repair of 2026-09-15). The gate is an order-of-magnitude rise in blocked
+firings and in distinct blocking sūtras; no `cond` may contain a narrowing that belongs to another
+sūtra; the autonomous-loop xfails turn green for laṭ kartari.
 
 ### Phase C — Dissolve the pipelines
 

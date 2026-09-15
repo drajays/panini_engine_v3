@@ -27,9 +27,13 @@ if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
 LEDGER_PATH = _ROOT / "sig" / "firing_coverage.json"
+SUITE_SIG_PATH = _ROOT / "sig" / "suite_sig.json"
 
 INVOKED: set[str] = set()
 MOVED: set[str] = set()
+# Suite-wide sūtra interaction graph: what fired, with what outcome, after what.
+STATUS: dict[str, dict[str, int]] = {}
+EDGES: dict[str, int] = {}
 
 
 def _surface(state: Any) -> str | None:
@@ -52,10 +56,64 @@ def install() -> None:
         INVOKED.add(sutra_id)
         if _surface(result) != before:
             MOVED.add(sutra_id)
+        _record_interaction(sutra_id, result)
         return result
 
     dispatcher.apply_rule = recording_apply_rule
     engine.apply_rule = recording_apply_rule
+
+
+def _record_interaction(sutra_id: str, result: Any) -> None:
+    """Outcome of this firing, and which sūtra it followed in the same derivation."""
+    trace = getattr(result, "trace", None)
+    if not trace:
+        return
+    last = trace[-1]
+    if last.get("sutra_id") != sutra_id:      # the rule appended nothing of its own
+        return
+    bucket = STATUS.setdefault(sutra_id, {})
+    status = last.get("status", "UNKNOWN")
+    bucket[status] = bucket.get(status, 0) + 1
+    if len(trace) >= 2:
+        prev = trace[-2].get("sutra_id")
+        if prev:
+            key = f"{prev}>{sutra_id}"
+            EDGES[key] = EDGES.get(key, 0) + 1
+
+
+def write_suite_sig(path: Path = SUITE_SIG_PATH) -> dict[str, Any]:
+    """The interaction graph as the *whole suite* exercises it.
+
+    ``sig/`` also holds a curated, timed graph built from the gold corpora
+    (``make sig``). This one is wider and untimed: every rule firing in every
+    test, with its outcome and its predecessor. Art. 15's health shows up here
+    directly — a grammar that settles conflicts by rule has BLOCKED rows.
+    """
+    totals: dict[str, int] = {}
+    for bucket in STATUS.values():
+        for status, n in bucket.items():
+            totals[status] = totals.get(status, 0) + n
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "source": "the full pytest suite via tools.firing_coverage",
+        "totals": {
+            "sutras_invoked": len(INVOKED),
+            "sutras_moving": len(MOVED),
+            "edges": len(EDGES),
+            "status": totals,
+        },
+        "nodes": {
+            sid: {
+                "status": STATUS.get(sid, {}),
+                "moves": sid in MOVED,
+            }
+            for sid in sorted(INVOKED)
+        },
+        "edges": dict(sorted(EDGES.items(), key=lambda kv: (-kv[1], kv[0]))),
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return payload
 
 
 def write_ledger(path: Path = LEDGER_PATH) -> dict[str, Any]:
@@ -78,9 +136,12 @@ def pytest_configure(config: Any) -> None:  # noqa: ARG001
 
 def pytest_sessionfinish(session: Any, exitstatus: int) -> None:  # noqa: ARG001
     payload = write_ledger()
+    sig = write_suite_sig()
     print(
         f"\n[firing_coverage] invoked={payload['counts']['invoked']} "
         f"moved={payload['counts']['moved']} → {LEDGER_PATH.relative_to(_ROOT)}"
+        f"\n[suite_sig] edges={sig['totals']['edges']} "
+        f"status={sig['totals']['status']} → {SUITE_SIG_PATH.relative_to(_ROOT)}"
     )
 
 

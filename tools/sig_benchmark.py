@@ -78,7 +78,7 @@ def _ingest_jayati_gold(col: SIGCollector) -> None:
     Add the full *jayati* gold *tin*anta prakriyā (steps 1–9) so SIG edges
     include tripāḍī / *it* paths not exercised by *rāma* *subanta* alone.
     """
-    from pipelines.tinanta_jayati_gold import run_jayati_gold_through_step
+    from tools.tinanta_jayati_gold import run_jayati_gold_through_step
 
     s = run_jayati_gold_through_step(9)
     col.ingest("jayati:gold-1-9", s.trace)
@@ -112,7 +112,7 @@ def _is_jayati_tinanta_shape(gpath: Path, d: Dict[str, Any]) -> bool:
 
 
 def _ingest_tinanta_jayati_synthetic(col: SIGCollector, gpath: Path) -> None:
-    from pipelines.tinanta_jayati_gold import run_jayati_gold_through_step
+    from tools.tinanta_jayati_gold import run_jayati_gold_through_step
 
     s = run_jayati_gold_through_step(9)
     if gpath.name == "jayati_prakriya.json":
@@ -124,6 +124,14 @@ def _ingest_tinanta_jayati_synthetic(col: SIGCollector, gpath: Path) -> None:
             rel = gpath.as_posix()
         cell = f"{rel}:jayati-1-9"
     col.ingest(cell, s.trace)
+
+
+class RecipeUnavailable(RuntimeError):
+    """A gold file names a driver that is not importable — reported, never fatal.
+
+    CONSTITUTION Art. 18: a corpus we cannot ingest is a gap that must be named,
+    not a crash that hides the other corpora.
+    """
 
 
 def _call_top_level_recipe(
@@ -140,8 +148,26 @@ def _call_top_level_recipe(
     if ":" not in recipe:
         raise ValueError(f"recipe {recipe!r} must look like 'module:callable'")
     mod_name, fn_name = recipe.rsplit(":", 1)
-    m = importlib.import_module(mod_name)
-    fn = getattr(m, fn_name)
+    try:
+        m = importlib.import_module(mod_name)
+    except ModuleNotFoundError as first:
+        # Legacy gold files name `pipelines.x` for drivers that now live in
+        # `tools/`. Try the sibling before giving up, then report a gap.
+        head, _, tail = mod_name.partition(".")
+        alt = f"tools.{tail}" if head == "pipelines" and tail else None
+        try:
+            m = importlib.import_module(alt) if alt else None
+        except ModuleNotFoundError:
+            m = None
+        if m is None:
+            raise RecipeUnavailable(
+                f"recipe module {mod_name!r} not importable"
+                + (f" (also tried {alt!r})" if alt else "")
+            ) from first
+    try:
+        fn = getattr(m, fn_name)
+    except AttributeError as ex:
+        raise RecipeUnavailable(f"{m.__name__} has no {fn_name!r}") from ex
     if recipe_args is None:
         return fn()
     return fn(*tuple(recipe_args))
@@ -246,7 +272,7 @@ def _process_gold_file(
             "id"    : f"tinanta:{gpath.parent.name}/{gpath.stem}_jayati",
             "file"  : rel,
             "cells" : 1,
-            "recipe": "pipelines.tinanta_jayati_gold.run_jayati_gold_through_step(9)",
+            "recipe": "tools.tinanta_jayati_gold.run_jayati_gold_through_step(9)",
         }, gpath.name == "jayati_prakriya.json"
     return None, False
 
@@ -257,18 +283,23 @@ def _write_sig_manifest(
     cov: Dict[str, Any],
     corpora: List[Dict[str, Any]],
     file_names: List[str],
+    gaps: Optional[List[Dict[str, str]]] = None,
 ) -> None:
     """Index file so `sig/` is self-describing in CI and clones."""
     payload = {
         "generated_utc"    : datetime.now(timezone.utc).isoformat(),
         "generator"        : "panini_engine_v3.tools.sig_benchmark",
         "total_derivations": col.test_count,
+        # Art. 16: registered and implemented are different numbers, and the
+        # registered count is never presented as coverage.
         "sutra_coverage"   : {
+            "registered"    : cov.get("registered", cov.get("total")),
             "implemented"   : cov.get("implemented"),
-            "total_registry": cov.get("total"),
             "coverage_pct"  : cov.get("coverage_pct"),
+            "conditions"    : cov.get("conditions"),
         },
         "corpora"          : corpora,
+        "gaps"             : gaps or [],
         "artifacts"        : sorted(file_names),
     }
     p = out_dir / "sig_manifest.json"
@@ -331,6 +362,7 @@ def main(argv=None) -> int:
 
     col = SIGCollector()
     corpora: List[Dict[str, Any]] = []
+    gaps: List[Dict[str, str]] = []
 
     if args.subanta_corpus is not None:
         gfile = args.subanta_corpus.resolve()
@@ -360,7 +392,12 @@ def main(argv=None) -> int:
         canonical_jayati_done = False
         n_recognized = 0
         for gpath in gold_paths:
-            rec, jn = _process_gold_file(col, gpath)
+            try:
+                rec, jn = _process_gold_file(col, gpath)
+            except RecipeUnavailable as gap:
+                gaps.append({"file": str(gpath), "reason": str(gap)})
+                print(f"gap: {gpath.name} not ingested — {gap}", file=sys.stderr)
+                continue
             if jn:
                 canonical_jayati_done = True
             if rec is not None:
@@ -381,7 +418,7 @@ def main(argv=None) -> int:
             {
                 "id"   : "tinanta:jayati_gold",
                 "cells": 1,
-                "recipe": "pipelines.tinanta_jayati_gold.run_jayati_gold_through_step(9)",
+                "recipe": "tools.tinanta_jayati_gold.run_jayati_gold_through_step(9)",
             }
         )
 
@@ -416,7 +453,7 @@ def main(argv=None) -> int:
     files["coverage.json"] = args.out / "coverage.json"
 
     manifest_names = sorted(list(files.keys()) + ["sig_manifest.json"])
-    _write_sig_manifest(args.out, col, cov, corpora, manifest_names)
+    _write_sig_manifest(args.out, col, cov, corpora, manifest_names, gaps)
     files["sig_manifest.json"] = args.out / "sig_manifest.json"
 
     # On --freeze, also write the applied-paths baseline that

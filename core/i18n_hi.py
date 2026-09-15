@@ -1,5 +1,22 @@
 """
-हिन्दी सहायक पाठ — केवल Streamlit UI हेतु (इन्जिन् में नहीं जाता)।
+core/i18n_hi.py — हिन्दी सहायक पाठ (विद्यार्थि-हितम्)।
+
+Learner-facing Hindi glosses: vibhakti and vacana in plain Hindi, and a
+one-line Hindi hint for 145 sūtras, shown under the step in a trace.
+
+**Presentation only.** Nothing here is ever read by a sūtra's ``cond()`` or
+``act()`` — Art. 2 (mechanical blindness) and Art. 6 (input/reference
+firewall). The engine does not know these strings exist; only
+``core/trace_view.py`` and the interfaces above it do.
+
+Salvaged 2026-09-15 from the retired Streamlit prototype, which is otherwise
+superseded by ``webui/`` and ``api/``.
+
+**UNREVIEWED.** These 145 hints predate Art. 14 and none has been checked
+against a roster source. Some are loose — the 6.1.88 hint calls the vṛddhi
+ekādeśa "दीर्घ ए/ओ" where the result is ऐ/औ. Interfaces must label this text as
+a learner aid, not as the sūtra's meaning, until a scholar has reviewed it.
+Reviewed entries should record their source the way sūtra files do.
 """
 from __future__ import annotations
 

@@ -72,6 +72,8 @@ def _derivation(state: Any, **inputs: Any) -> dict[str, Any]:
             "after": {"slp1": s.get("form_after", ""), "dev": s.get("form_after_dev", "")},
             "changed": s.get("form_before") != s.get("form_after"),
             "why_dev": s.get("why_dev", ""),
+            # Hindi learner aid; UNREVIEWED (core/i18n_hi) — label it as such.
+            "hint_hi": s.get("_hint_hi", ""),
             "anuvritti_from": s.get("_anuvritti_from", []),
         }
         for i, s in enumerate(enrich_trace(trace))

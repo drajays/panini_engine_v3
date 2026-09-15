@@ -52,6 +52,10 @@ main{padding:1rem;max-width:1100px;margin:0 auto}
 .editor{padding:.6rem .8rem .8rem 3rem;background:var(--subtle);border-bottom:1px solid var(--soft)}
 .editor .full{font-family:var(--dev);font-size:.9rem;color:var(--dim);margin-bottom:.5rem}
 .editor .fields{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.editor .hint{font-family:var(--dev);font-size:.86rem;color:var(--dim);margin-bottom:.5rem;
+  padding-left:.6rem;border-left:2px solid var(--warn)}
+.editor .hint em{font-family:var(--mono);font-style:normal;font-size:.62rem;
+  color:var(--faint);margin-left:.5rem;text-transform:uppercase;letter-spacing:.06em}
 .editor input{width:11rem}
 .note{padding:.3rem .5rem .5rem 3rem;font-size:.82rem;color:var(--bad);border-bottom:1px solid var(--soft)}
 .note b{font-family:var(--dev);font-weight:600}
@@ -176,6 +180,8 @@ function edit(n){
   const s = DERIV.steps[n - 1];
   box.innerHTML = `<div class="editor">
       <div class="full">${esc(s.sutra_id)} ${esc(s.text_dev || "")} — ${esc(s.why_dev)}</div>
+      ${s.hint_hi ? `<div class="hint">विद्यार्थि-सङ्केतः <span>${esc(s.hint_hi)}</span>
+        <em>learner aid — unreviewed</em></div>` : ""}
       <div class="fields">
         <input type="text" id="ef${n}" placeholder="अपेक्षितं रूपम् (after)">
         <input type="text" id="es${n}" placeholder="अपेक्षितं सूत्रम्" style="width:7rem">

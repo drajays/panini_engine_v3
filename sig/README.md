@@ -2,6 +2,21 @@
 
 This directory is **regenerated** from the live engine. Do not hand-edit JSON here.
 
+Two graphs live here, built from different corpora and answering different
+questions:
+
+| graph | corpus | built by | good for |
+|---|---|---|---|
+| **curated** — `sig_*.json`, `sutra_*.json`, `global_*.json` | the gold corpora under `data/reference/` (11 corpora · 192 derivations) | `make sig` | timings, baselines, anomaly and critical-path analysis on known-good paradigms |
+| **suite-wide** — `suite_sig.json` | every rule firing in the whole pytest suite (19k tests) | `make coverage` | the real interaction picture: 1,619 edges, per-sūtra outcome mix, and the BLOCKED count that measures Art. 15 |
+
+`firing_coverage.json` is the Art. 16 ledger (which sūtras are invoked, which
+move the tape); `engine/coverage.py` reads it.
+
+**Gaps are reported, not fatal** (Art. 18). A gold file naming a driver that is
+not importable is listed under `gaps` in `sig_manifest.json` and skipped; the
+other corpora still ingest.
+
 ## Contents
 
 | File | Role |
@@ -11,7 +26,9 @@ This directory is **regenerated** from the live engine. Do not hand-edit JSON he
 | `global_sutra_edges.json` | **Chronological** A→B edges (every consecutive pair in the trace, all outcomes). |
 | `global_markov_transitions.json` | Empirical transition probabilities (row-normalized from `global_sutra_edges`). |
 | `coverage.json` | Sūtra registry coverage snapshot from `engine.coverage_report`. |
-| `sig_manifest.json` | **Index:** UTC time, generator id, total derivations ingested, coverage summary, corpora list, and the full artifact filename list. |
+| `sig_manifest.json` | **Index:** UTC time, generator id, total derivations ingested, Art. 16 coverage split (registered vs implemented), corpora list, **gaps**, and the artifact filename list. |
+| `suite_sig.json` | Suite-wide interaction graph: nodes with their APPLIED/SKIPPED/AUDIT/BLOCKED mix, and chronological A→B edge counts. |
+| `firing_coverage.json` | Art. 16 ledger: `invoked` and `moved` sets from the whole suite. |
 
 **Corpus (default `make sig` / `regenerate_sig_artifacts`):** every `*.json` in `data/reference/subanta_gold/` (all paradigm cells; timed replay of the real `derive` trace) plus, by default, a single *jayati* *tin*anta gold path (steps 1–9) so tripāḍī / *tin*anta edges not hit by *subanta* alone appear in SIG.
 
