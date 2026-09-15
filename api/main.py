@@ -174,10 +174,61 @@ class SubantaReq(BaseModel):
 
 
 @app.post("/v1/subanta", tags=["subanta"])
-def subanta(req: SubantaReq) -> dict[str, Any]:
+def subanta(req: SubantaReq, reading: bool = False) -> dict[str, Any]:
+    """Derive one nominal cell.
+
+    ``?reading=true`` adds the traditional shape — the form after each change
+    with the sūtras that made it (राम + टा → राम + आ → … → रामेण). It is built
+    from *this* derivation, never from a stored copy: a page that replays a
+    cached prakriyā is showing yesterday's grammar (Art. 17).
+    """
+    from core.prakriya_view import TermRecorder, reading as build_reading
     from pipelines.subanta import derive
-    state = _run(derive, req.stem, req.vibhakti, req.vacana, linga=req.linga)
-    return _derivation(state, **req.model_dump())
+
+    if not reading:
+        state = _run(derive, req.stem, req.vibhakti, req.vacana, linga=req.linga)
+        return _derivation(state, **req.model_dump())
+
+    # The recorder rebinds apply_rule while the derivation runs, so this path
+    # is deliberately serial — it is a reading aid for one request at a time.
+    with TermRecorder() as recorder:
+        state = _run(derive, req.stem, req.vibhakti, req.vacana, linga=req.linga)
+    out = _derivation(state, **req.model_dump())
+    out["reading"] = build_reading(state, recorder)
+    return out
+
+
+@app.get("/v1/shabda", tags=["subanta"])
+def shabda_index() -> dict[str, Any]:
+    """The attested paradigms vendored under data/reference/shabda_gold/."""
+    from tools.shabda_table import paradigms
+
+    return {
+        "words": [
+            {"stem_slp1": stem, "word": data["word"], "linga": data["linga"],
+             "artha": data.get("artha", "")}
+            for stem, data in paradigms().items()
+        ]
+    }
+
+
+@app.get("/v1/shabda/{stem}", tags=["subanta"])
+def shabda_paradigm(stem: str) -> dict[str, Any]:
+    """One attested paradigm: 24 cells, each a list of accepted forms."""
+    from tools.shabda_table import paradigms
+
+    known = paradigms()
+    if stem not in known:
+        raise HTTPException(404, f"no vendored paradigm for {stem!r}")
+    data = known[stem]
+    return {"stem_slp1": stem, "word": data["word"], "linga": data["linga"],
+            "artha": data.get("artha", ""), "cells": data["cells"]}
+
+
+@app.get("/shabda", response_class=HTMLResponse, include_in_schema=False)
+def shabda_page() -> str:
+    """The paradigm table, deriving every cell live."""
+    return (Path(__file__).parent / "shabda.html").read_text(encoding="utf-8")
 
 
 @app.get("/v1/subanta/paradigm", tags=["subanta"])

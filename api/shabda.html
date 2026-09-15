@@ -1,0 +1,328 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>शब्दरूप — live</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@400;600&display=swap">
+<style>
+:root{
+  --ground:#f3ece0; --panel:#fbf7ef; --band:#d8c49a; --band-soft:#e7d9bb;
+  --row:#fdfbf7; --row-alt:#f6f0e4; --ink:#241d12; --ink-soft:#5d5140;
+  --ink-faint:#8d8069; --rule:#d9ccb2; --indigo:#2c4a7c; --madder:#9c3822;
+  --moss:#3f6b4a; --amber:#8a6a1f; --select:#f6e6a8;
+  --dev:"Noto Serif Devanagari","Noto Sans Devanagari",serif;
+  --mono:"IBM Plex Mono",Menlo,monospace; --body:"Spectral",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#17140f; --panel:#201b14; --band:#3d3325; --band-soft:#2b2419;
+    --row:#1d1811; --row-alt:#221d15; --ink:#ece3d2; --ink-soft:#b0a58f;
+    --ink-faint:#857a66; --rule:#3a3125; --indigo:#8fb0e2; --madder:#e08a6e;
+    --moss:#87bd91; --amber:#d6ab4d; --select:#4a3f20;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#17140f; --panel:#201b14; --band:#3d3325; --band-soft:#2b2419;
+  --row:#1d1811; --row-alt:#221d15; --ink:#ece3d2; --ink-soft:#b0a58f;
+  --ink-faint:#857a66; --rule:#3a3125; --indigo:#8fb0e2; --madder:#e08a6e;
+  --moss:#87bd91; --amber:#d6ab4d; --select:#4a3f20;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 var(--body)}
+.dev{font-family:var(--dev)}
+header{display:flex;flex-wrap:wrap;gap:.7rem 1.4rem;align-items:baseline;
+  padding:.9rem 1.2rem;background:var(--band);border-bottom:1px solid var(--rule)}
+header h1{font-family:var(--dev);font-size:1.1rem;margin:0;font-weight:600}
+header .sub{font-size:.84rem;color:var(--ink-soft)}
+header .live{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--moss);border:1px solid var(--moss);
+  border-radius:99px;padding:.1rem .5rem}
+header .count{margin-left:auto;font-family:var(--mono);font-size:.74rem;color:var(--ink-soft)}
+select,button,input{font:inherit;color:var(--ink)}
+select{font-size:.9rem;padding:.3rem .5rem;border:1px solid var(--rule);
+  border-radius:3px;background:var(--panel);font-family:var(--dev)}
+main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media (max-width:900px){main{grid-template-columns:1fr}}
+.tablewrap{padding:1.2rem;overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:30rem}
+caption{text-align:left;font-family:var(--dev);font-size:1.3rem;font-weight:600;padding-bottom:.5rem}
+caption small{display:block;font-family:var(--body);font-size:.78rem;font-weight:400;
+  color:var(--ink-soft);margin-top:.15rem}
+th{background:var(--band);font-family:var(--dev);font-weight:600;font-size:.94rem;
+  text-align:left;padding:.5rem .75rem;border:1px solid var(--rule)}
+th.rowhead{background:var(--band-soft);width:8.5rem}
+td{border:1px solid var(--rule);padding:0;background:var(--row)}
+tr:nth-child(even) td{background:var(--row-alt)}
+td button{width:100%;text-align:left;border:0;background:none;cursor:pointer;
+  font-family:var(--dev);font-size:1.05rem;padding:.5rem .75rem;display:flex;
+  align-items:baseline;gap:.5rem}
+td button:hover{background:var(--band-soft)}
+td button:focus-visible{outline:2px solid var(--indigo);outline-offset:-2px}
+td.selected button{background:var(--select);font-weight:600}
+td .mark{font-family:var(--mono);font-size:.7rem;color:var(--moss)}
+td .mark.bad{color:var(--madder)}
+td .mark.wait{color:var(--ink-faint)}
+.detail{padding:1.2rem 1.2rem 3rem;border-left:1px solid var(--rule);
+  background:var(--panel);min-height:70vh}
+@media (max-width:900px){.detail{border-left:0;border-top:1px solid var(--rule)}}
+.detail h2{font-family:var(--dev);font-size:1.45rem;margin:0 0 .1rem;color:var(--madder)}
+.cellname{font-family:var(--dev);color:var(--ink-soft);font-size:.94rem;margin-bottom:.8rem}
+.tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.tabs button{border:1px solid var(--rule);background:var(--row);border-radius:3px;
+  padding:.25rem .7rem;font-size:.82rem;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--band);font-weight:600}
+.step{display:grid;grid-template-columns:1.1rem 1fr;gap:.5rem;margin-bottom:.85rem}
+.step .arrow{color:var(--madder);font-family:var(--mono)}
+.step .form{font-family:var(--dev);font-size:1.12rem;color:var(--madder);font-weight:500}
+.step .cites{font-family:var(--dev);font-size:.9rem;color:var(--ink-soft);line-height:1.7}
+.step .sutra{color:var(--indigo)}
+.step .num{font-family:var(--mono);font-size:.78rem;color:var(--indigo)}
+.step .why,.step .hint{display:block;color:var(--ink-faint);font-size:.84rem}
+.rows{font-size:.86rem}
+.rowline{display:grid;grid-template-columns:2.2rem 4.4rem 1fr 5.4rem 1.4rem;gap:.5rem;
+  align-items:baseline;padding:.3rem .4rem;border-bottom:1px solid var(--rule)}
+.rowline:hover{background:var(--band-soft)}
+.rowline.changed{border-left:3px solid var(--madder)}
+.rowline .n{font-family:var(--mono);font-size:.7rem;color:var(--ink-faint)}
+.rowline .sid{font-family:var(--mono);font-size:.76rem;color:var(--indigo)}
+.rowline .forms{font-family:var(--dev)}
+.rowline .st{font-family:var(--mono);font-size:.64rem}
+.APPLIED,.APPLIED_VACUOUS{color:var(--moss)}.BLOCKED{color:var(--madder)}
+.SKIPPED{color:var(--ink-faint)}.AUDIT{color:var(--amber)}
+.flag{border:0;background:none;cursor:pointer;opacity:.35;font-size:.9rem}
+.rowline:hover .flag{opacity:1}
+.note{color:var(--madder);font-size:.82rem;padding:.2rem 0 .4rem 3rem}
+.editor{background:var(--band-soft);padding:.5rem .7rem;margin:.3rem 0;display:flex;
+  gap:.4rem;flex-wrap:wrap;align-items:center}
+.editor input{padding:.25rem .4rem;border:1px solid var(--rule);border-radius:3px;
+  background:var(--panel);font-size:.85rem}
+.final{margin-top:1.1rem;padding-top:.8rem;border-top:1px solid var(--rule);
+  font-family:var(--dev);font-size:1.22rem}
+.final .ok{font-family:var(--mono);font-size:.74rem;color:var(--moss);margin-left:.5rem}
+.final .no{color:var(--madder)}
+.empty{color:var(--ink-faint);margin-top:3rem;text-align:center}
+footer{padding:.9rem 1.2rem;border-top:1px solid var(--rule);font-size:.78rem;
+  color:var(--ink-faint);background:var(--band-soft)}
+</style>
+
+<header>
+  <h1 class="dev">शब्दरूपाणि</h1>
+  <span class="live">live</span>
+  <span class="sub">every cell derived by the engine on click — nothing stored</span>
+  <label class="sub">शब्दः <select id="word"></select></label>
+  <span class="count" id="count"></span>
+</header>
+
+<main>
+  <div class="tablewrap"><table id="grid"></table></div>
+  <section class="detail" id="detail"><p class="empty dev">रूपं चिनु — pick a form.</p></section>
+</main>
+
+<footer>
+  Forms derived now, by this engine. Attested paradigms from ashtadhyayi-com/data;
+  ✓ means the derived form is one the attested table gives. Flag any step to file a
+  correction in <code>data/reviews/corrections.jsonl</code>.
+</footer>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => (s ?? "").toString().replace(/[&<>"]/g, (c) =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const VIBHAKTI = ["प्रथमा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","सम्बोधनम्"];
+const VACANA = ["एकवचनम्","द्विवचनम्","बहुवचनम्"];
+
+let paradigm = null, derived = {}, selected = null, mode = "reading", notes = {};
+
+async function api(path, options) {
+  const r = await fetch(path, options);
+  if (!r.ok) throw new Error((await r.json()).detail || r.statusText);
+  return r.json();
+}
+
+async function boot() {
+  const index = await api("/v1/shabda");
+  $("#word").innerHTML = index.words.map((w) =>
+    `<option value="${esc(w.stem_slp1)}">${esc(w.word)} — ${esc(w.linga)}</option>`).join("");
+  $("#word").onchange = (e) => load(e.target.value);
+  load(index.words.some((w) => w.stem_slp1 === "rAma") ? "rAma" : index.words[0].stem_slp1);
+}
+
+async function load(stem) {
+  paradigm = await api(`/v1/shabda/${encodeURIComponent(stem)}`);
+  derived = {}; selected = null; notes = {};
+  $("#word").value = stem;
+  $("#detail").innerHTML = `<p class="empty dev">रूपं चिनु — pick a form.</p>`;
+  drawGrid();
+  // One at a time: the reading recorder rebinds the dispatcher, so the server
+  // serialises these anyway — sending 24 at once would just block 24 threads.
+  for (let vibhakti = 1; vibhakti <= 8; vibhakti++) {
+    for (let vacana = 1; vacana <= 3; vacana++) {
+      if (paradigm.stem_slp1 !== stem) return;      // the reader moved on
+      await deriveCell(vibhakti, vacana);
+    }
+  }
+}
+
+function drawGrid() {
+  $("#grid").innerHTML =
+    `<caption>${esc(paradigm.word)}<small>${esc(paradigm.linga)}${
+      paradigm.artha ? " · " + esc(paradigm.artha) : ""}</small></caption>
+     <tr><th></th>${VACANA.map((v) => `<th>${esc(v)}</th>`).join("")}</tr>` +
+    VIBHAKTI.map((label, vi) => `<tr><th class="rowhead">${esc(label)}</th>` +
+      VACANA.map((_, vn) => {
+        const key = `${vi + 1}-${vn + 1}`;
+        return `<td id="cell-${key}"><button onclick="pick('${key}')">
+          <span class="form dev">…</span><span class="mark wait">·</span></button></td>`;
+      }).join("") + "</tr>").join("");
+}
+
+async function deriveCell(vibhakti, vacana) {
+  const key = `${vibhakti}-${vacana}`;
+  const body = { stem: paradigm.stem_slp1, vibhakti, vacana, linga: paradigm.linga };
+  try {
+    const data = await api("/v1/subanta?reading=true", {
+      method: "POST", headers: { "content-type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const attested = paradigm.cells[key] || [];
+    derived[key] = { data, attested, agrees: attested.includes(data.surface.dev), body };
+  } catch (err) {
+    derived[key] = { error: String(err.message || err), attested: paradigm.cells[key] || [] };
+  }
+  paintCell(key);
+  const done = Object.keys(derived).length;
+  const ok = Object.values(derived).filter((c) => c.agrees).length;
+  $("#count").textContent = `${ok}/${done} derived match the attested paradigm`;
+  if (selected === key) pick(key);
+}
+
+function paintCell(key) {
+  const cell = derived[key], td = document.getElementById(`cell-${key}`);
+  if (!td) return;
+  // Update in place: replacing the cell's innerHTML while the reader is
+  // clicking swallows the click, because the button they hit is gone.
+  td.querySelector(".form").textContent = cell.error ? "—" : cell.data.surface.dev;
+  const mark = td.querySelector(".mark");
+  mark.textContent = cell.agrees ? "✓" : "✗";
+  mark.className = "mark" + (cell.agrees ? "" : " bad");
+}
+
+function pick(key) {
+  if (selected) document.getElementById(`cell-${selected}`)?.classList.remove("selected");
+  selected = key;
+  document.getElementById(`cell-${key}`)?.classList.add("selected");
+  render();
+  loadNotes(key);
+}
+
+function targetOf(cell) {
+  return "subanta:" + JSON.stringify(cell.body, Object.keys(cell.body).sort());
+}
+
+async function loadNotes(key) {
+  const cell = derived[key];
+  if (!cell || cell.error || notes[key]) return;
+  const { reviews } = await api("/v1/reviews?target=" + encodeURIComponent(targetOf(cell)));
+  notes[key] = reviews;
+  if (selected === key) render();
+}
+
+function render() {
+  const cell = derived[selected];
+  const [vi, vn] = selected.split("-").map(Number);
+  const name = `${VIBHAKTI[vi - 1]} ${VACANA[vn - 1]}`;
+  if (!cell) { $("#detail").innerHTML = `<p class="empty">deriving…</p>`; return; }
+  if (cell.error) {
+    $("#detail").innerHTML = `<h2>${esc(paradigm.word)}</h2>
+      <p class="cellname">${esc(name)}</p><p class="note">${esc(cell.error)}</p>`;
+    return;
+  }
+  const data = cell.data;
+  $("#detail").innerHTML = `
+    <h2>${esc(paradigm.word)}</h2>
+    <p class="cellname">${esc(name)} · अपेक्षितम् ${esc(cell.attested.join(", "))}</p>
+    <div class="tabs">
+      <button aria-pressed="${mode === "reading"}" onclick="setMode('reading')">प्रक्रिया</button>
+      <button aria-pressed="${mode === "all"}" onclick="setMode('all')">every step (${data.stats.total})</button>
+      <span class="sub" style="margin-left:.4rem;color:var(--ink-faint);font-size:.78rem">
+        ${data.stats.applied} applied · ${data.stats.audit} audit ·
+        ${data.stats.blocked} blocked · ${data.stats.skipped} skipped</span>
+    </div>
+    ${mode === "reading" ? readingView(data) : stepView(data)}
+    <p class="final">${esc(data.surface.dev)}
+      <span class="ok ${cell.agrees ? "" : "no"}">${cell.agrees
+        ? "✓ matches the attested form"
+        : "✗ differs from " + esc(cell.attested.join(", "))}</span></p>`;
+}
+
+function setMode(next) { mode = next; render(); }
+
+function readingView(data) {
+  return (data.reading || []).map((step) => `
+    <div class="step"><span class="arrow">→</span><div>
+      <span class="form">${esc(step.form_dev)}</span>
+      <span class="cites">[ ${step.sutras.map(citation).join(" · ")} ]</span>
+      ${step.sutras.filter((s) => s.acts).map(gloss).join("")}
+    </div></div>`).join("") || `<p class="empty">no changes recorded</p>`;
+}
+
+// The bracket holds the citation; the gloss sits under it, so the closing
+// bracket never ends up orphaned below a block of prose.
+function citation(s) {
+  const text = s.text_dev ? `<span class="sutra">${esc(s.text_dev)}</span> ` : "";
+  return `${text}<span class="num">${esc(s.id)}</span> इति`;
+}
+
+function gloss(s) {
+  return (s.why_dev ? `<span class="why">${esc(s.why_dev)}</span>` : "")
+       + (s.hint_hi ? `<span class="hint">${esc(s.hint_hi)}</span>` : "");
+}
+
+function stepView(data) {
+  return `<div class="rows">` + data.steps.map((s) => `
+    <div class="rowline ${s.changed ? "changed" : ""}">
+      <span class="n">${s.n}</span>
+      <span class="sid" title="${esc(s.text_dev || "")}">${esc(s.sutra_id)}</span>
+      <span class="forms">${esc(s.before.dev)} → ${esc(s.after.dev)}</span>
+      <span class="st ${esc(s.status)}">${esc(s.status)}</span>
+      <button class="flag" title="flag this step" onclick="flag(${s.n})">⚑</button>
+    </div>
+    <div id="ed${s.n}"></div>${noteFor(s.n)}`).join("") + `</div>`;
+}
+
+function noteFor(n) {
+  return (notes[selected] || []).filter((c) => c.step_n === n).map((c) =>
+    `<div class="note">⚑ ${esc(c.expected_form || "")} ${esc(c.expected_sutra || "")}
+     ${esc(c.note || "")}</div>`).join("");
+}
+
+function flag(n) {
+  const box = document.getElementById(`ed${n}`);
+  if (box.innerHTML) { box.innerHTML = ""; return; }
+  const step = derived[selected].data.steps[n - 1];
+  box.innerHTML = `<div class="editor">
+    <input id="ef${n}" placeholder="अपेक्षितं रूपम्">
+    <input id="es${n}" placeholder="सूत्रम्" style="width:6rem">
+    <input id="en${n}" placeholder="टिप्पणी" style="width:16rem">
+    <button onclick="saveFlag(${n}, '${esc(step.sutra_id)}')">save</button></div>`;
+  document.getElementById(`ef${n}`).focus();
+}
+
+async function saveFlag(n, sutraId) {
+  const val = (id) => (document.getElementById(id)?.value || "").trim();
+  const cell = derived[selected];
+  const payload = {
+    target: targetOf(cell), step_n: n, sutra_id: sutraId,
+    observed_form: cell.data.surface.dev,
+    expected_form: val(`ef${n}`), expected_sutra: val(`es${n}`), note: val(`en${n}`),
+  };
+  if (!payload.expected_form && !payload.expected_sutra && !payload.note) return;
+  const saved = await api("/v1/reviews", {
+    method: "POST", headers: { "content-type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  (notes[selected] ||= []).push(saved);
+  render();
+}
+
+boot();
+</script>

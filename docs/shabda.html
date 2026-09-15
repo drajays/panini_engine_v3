@@ -48,6 +48,9 @@ header{
 }
 header h1{font-family:var(--dev);font-size:1.15rem;margin:0;font-weight:600}
 header .sub{font-size:.85rem;color:var(--ink-soft)}
+header .snap{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--ink-faint);
+  border-radius:99px;padding:.1rem .5rem}
 header .count{margin-left:auto;font-family:var(--mono);font-size:.76rem;color:var(--ink-soft)}
 select{font:inherit;font-size:.9rem;padding:.3rem .5rem;border:1px solid var(--rule);
   border-radius:3px;background:var(--panel);color:var(--ink);font-family:var(--dev)}
@@ -104,7 +107,9 @@ footer a{color:var(--indigo)}
 
 <header>
   <h1 class="dev">शब्दरूपाणि</h1>
-  <span class="sub">every form derived by the engine — click one to read its prakriyā</span>
+  <span class="snap" id="snap">snapshot</span>
+  <span class="sub">a dated snapshot — the engine itself derives on click, locally at
+    <code>/shabda</code></span>
   <label class="sub">शब्दः <select id="word"></select></label>
   <span class="count" id="count"></span>
 </header>
@@ -115,9 +120,11 @@ footer a{color:var(--indigo)}
 </main>
 
 <footer>
-  Forms derived by <strong>panini_engine_v3</strong>; attested paradigms from
-  <a href="https://github.com/ashtadhyayi-com/data">ashtadhyayi-com/data</a>.
-  A ✓ means the derived form matches the attested one.
+  These prakriyās were derived by <strong>panini_engine_v3</strong> on the date above and
+  stored, because a static host has no engine to run. Running the API locally serves the
+  same table at <code>/shabda</code>, where every click derives the form afresh.
+  Attested paradigms from <a href="https://github.com/ashtadhyayi-com/data">ashtadhyayi-com/data</a>;
+  a ✓ means the derived form matches the attested one.
 </footer>
 
 <script>
@@ -128,6 +135,7 @@ let DATA = null, current = null, selected = null;
 
 fetch("data/shabda.json").then((r) => r.json()).then((d) => {
   DATA = d;
+  if (d.built_at) $("#snap").textContent = "snapshot · " + d.built_at;
   $("#word").innerHTML = d.words.map((w, i) =>
     `<option value="${i}">${esc(w.word)} — ${esc(w.linga)}</option>`).join("");
   $("#word").onchange = (e) => show(d.words[+e.target.value]);

@@ -22,8 +22,11 @@ from __future__ import annotations
 
 import json
 import sys
+from datetime import date
 from pathlib import Path
 from typing import Any
+
+from core.prakriya_view import TermRecorder, reading  # noqa: E402
 
 _ROOT = Path(__file__).resolve().parent.parent
 if str(_ROOT) not in sys.path:
@@ -31,117 +34,13 @@ if str(_ROOT) not in sys.path:
 
 OUT = _ROOT / "docs" / "data" / "shabda.json"
 
+# This writes the *snapshot* the public GitHub Pages copy reads, because a
+# static host has no engine. The live table is served by api/ and derives on
+# every click; see api/shabda.html.
+
 VIBHAKTI_DEV = ("प्रथमा", "द्वितीया", "तृतीया", "चतुर्थी",
                 "पञ्चमी", "षष्ठी", "सप्तमी", "सम्बोधनम्")
 VACANA_DEV = ("एकवचनम्", "द्विवचनम्", "बहुवचनम्")
-
-# Rows that describe rather than act: keep them as citations, never as steps.
-QUIET_STATUSES = {"SKIPPED", "BLOCKED"}
-# An adhikāra row is bookkeeping, not a reason; and only the few saṃjñās just
-# before a change are worth citing with it. Without this the page is 6 MB of
-# preamble repeated 312 times.
-LICENSING_STATUSES = {"APPLIED"}
-MAX_LICENSING = 2
-
-
-class TermRecorder:
-    """Capture the tape's *term split* after each rule.
-
-    The trace stores the flat form, so a step reads रामटा where the tradition
-    writes राम + टा. The split is what makes a derivation legible, so it is
-    recorded alongside — by wrapping the dispatcher, the way the coverage
-    ledger does, rather than by changing the trace schema.
-    """
-
-    def __init__(self) -> None:
-        self.rows: list[tuple[str, str]] = []
-        self._restore = None
-
-    def __enter__(self) -> "TermRecorder":
-        import engine
-        import engine.dispatcher as dispatcher
-        from phonology.joiner import slp1_to_devanagari
-
-        original = dispatcher.apply_rule
-
-        def recording(sutra_id: str, state: Any, *args: Any, **kwargs: Any) -> Any:
-            result = original(sutra_id, state, *args, **kwargs)
-            try:
-                parts = [
-                    slp1_to_devanagari(term.varnas)
-                    for term in result.terms if term.varnas
-                ]
-                self.rows.append((sutra_id, " + ".join(p for p in parts if p)))
-            except Exception:
-                self.rows.append((sutra_id, ""))
-            return result
-
-        # Pipelines bind `apply_rule` at import time, so patching the
-        # dispatcher alone is invisible to them: rebind every module that is
-        # already holding the original.
-        import sys as _sys
-
-        patched = [dispatcher, engine]
-        for module in list(_sys.modules.values()):
-            if getattr(module, "apply_rule", None) is original:
-                module.apply_rule = recording
-                patched.append(module)
-        dispatcher.apply_rule = recording
-        engine.apply_rule = recording
-
-        def restore() -> None:
-            for module in patched:
-                module.apply_rule = original
-
-        self._restore = restore
-        return self
-
-    def __exit__(self, *exc: Any) -> None:
-        if self._restore:
-            self._restore()
-
-    def split_for(self, index: int, sutra_id: str) -> str:
-        if index < len(self.rows) and self.rows[index][0] == sutra_id:
-            return self.rows[index][1]
-        for recorded_id, text in self.rows[index:]:
-            if recorded_id == sutra_id:
-                return text
-        return ""
-
-
-def reading(state: Any, recorder: "TermRecorder | None" = None) -> list[dict[str, Any]]:
-    """The derivation as a sequence of forms, each with the sūtras behind it."""
-    from core.trace_view import enrich_trace
-
-    out: list[dict[str, Any]] = []
-    pending: list[dict[str, str]] = []
-    for index, step in enumerate(enrich_trace(state.trace)):
-        sutra_id = step.get("sutra_id") or ""
-        if sutra_id.startswith("__"):
-            continue
-        text_dev = step.get("_sutra_text_dev") or ""
-        status = step.get("status", "")
-        if step.get("form_before") == step.get("form_after"):
-            if status in LICENSING_STATUSES and text_dev:
-                pending.append({"id": sutra_id, "text_dev": text_dev})
-                pending[:] = pending[-MAX_LICENSING:]
-            continue
-        acting = {
-            "id": sutra_id,
-            "text_dev": text_dev,
-            "why_dev": step.get("why_dev") or "",
-            "acts": True,
-        }
-        if step.get("_hint_hi"):
-            acting["hint_hi"] = step["_hint_hi"]
-        out.append({
-            "form_dev": (recorder.split_for(index, sutra_id) if recorder else "")
-                        or step.get("form_after_dev", ""),
-            "form_slp1": step.get("form_after", ""),
-            "sutras": [*pending, acting],
-        })
-        pending = []
-    return out
 
 
 def build() -> dict[str, Any]:
@@ -179,6 +78,7 @@ def build() -> dict[str, Any]:
     return {
         "labels": {"vibhakti": VIBHAKTI_DEV, "vacana": VACANA_DEV},
         "source": "derived by this engine; attested forms from ashtadhyayi-com/data",
+        "built_at": date.today().isoformat(),
         "words": sorted(words, key=lambda w: w["stem_slp1"].lower()),
     }
 
