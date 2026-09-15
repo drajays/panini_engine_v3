@@ -77,3 +77,6 @@ prakriya:
 
 autonomy:
 	python3 -m tools.autonomy_report
+
+shabda:
+	python3 -m tools.shabda_table --check

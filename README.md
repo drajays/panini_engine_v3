@@ -19,6 +19,7 @@ Measured, not asserted. Every number here comes from a command
   rāma paradigm cells      :  24/24   full classical match
   tests                    : 19,136 passing, 1 skipped
   agreement vs Vidyut      :  81.1 %   (338 of 417 grid cells; nominals 192/192)
+  attested śabda tables    : 288/312   (12 of 13 paradigms complete; नदी 17/24)
   arm-gated conds          :     33   (Art. 13 §1 — ratcheted, was 155)
   coordinate reads in cond :     29   (Art. 2 §2c — 11 owed back, see the lint)
   open gaps                :    281   (202 unscheduled rules · 79 disagreements)
@@ -31,6 +32,7 @@ make lint            # constitutional lint (Art. 2 · 13 · 15 · 16)
 make bench           # differential report card against Vidyut (Art. 19)
 make gaps            # the ranked worklist of what is missing (Art. 18, ~10 min)
 make index           # rebuild the generated-forms index and verify a sample (Art. 17)
+make shabda          # every vendored paradigm against its attested table
 make test-all        # the suite
 ```
 

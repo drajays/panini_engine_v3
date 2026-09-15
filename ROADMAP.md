@@ -330,7 +330,7 @@ autonomous loop, with traces a scholar can read.
 | # | deliverable | check |
 |---|---|---|
 | E1 | dhātupāṭha completed for gaṇas 2–10 (today: 986 roots, 971 of them gaṇa 1) | शास्ति derives |
-| E2 | śabda / prātipadika list loaded with provenance | the 28-stem closed world opens |
+| E2 ◐ | śabda / prātipadika list loaded with provenance | **started**: 13 attested paradigms vendored from ashtadhyayi.com (`data/reference/shabda_gold/`), 288/312 cells derive correctly, and `make shabda` shows any of them as a table with `--cell V-N` for that cell's prakriyā. नदी is 17/24 — the ī-stem gap, itemised |
 | E3 | form index v2 — every vibhāṣā branch, with derivation ids so the forward journey is reproducible on demand | |
 | E4 | sandhi splitting: the saṃhitā/tripādī stratum compiled to an invertible relation → over-generating lattice | दण्ड एवाभिरक्षति → दण्डः + एव + अभिरक्षति, each cut citing its sūtra |
 | E5 | generate-and-test verification (Art. 17) | a candidate is accepted only if re-generation reproduces the input exactly |
