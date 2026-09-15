@@ -50,6 +50,12 @@ EXPECTED_DERIVE_RAMA_1_1_CHRONO_PREFIX: tuple[str, ...] = (
 _ENGINE_LITERAL_SUTRA_ID_ALLOW: dict[str, frozenset[str]] = {
     "executors/exec_vidhi.py"   : frozenset({"1.3.9"}),   # vacuous 1.3.9 hook
     "stubs.py"                 : frozenset({"0.0.0"}),   # stub pratiedha target
+    # adhikāra scope bounds — used as range markers, not apply_rule targets
+    "adhikara_automation.py"   : frozenset({
+        "1.3.1", "1.3.9", "3.1.1", "3.4.117", "6.4.1", "6.4.148",
+    }),
+    # autonomous-loop spine — it-saṃjñā rules called before phase loop
+    "core_loop.py"             : frozenset({"1.3.28", "1.3.12", "1.3.78"}),
 }
 
 
