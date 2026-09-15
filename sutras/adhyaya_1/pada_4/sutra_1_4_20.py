@@ -13,10 +13,11 @@ from __future__ import annotations
 
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
+from engine.subanta_eligibility import chandasi_gate_eligible
 
 
 def cond(state: State) -> bool:
-    return state.paribhasha_gates.get("1_4_20_ayasmayAdi_chandasi") is not True
+    return chandasi_gate_eligible(state, "1_4_20_ayasmayAdi_chandasi")
 
 
 def act(state: State) -> State:

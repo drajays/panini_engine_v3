@@ -19,13 +19,14 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.subanta_eligibility import nominal_paribhasha_gate_eligible
 
 _GATE_KEY     = "1_4_105_yuzmad_maDyama"
 _REGISTRY_KEY = "maDyama_puruzA"
 
 
 def cond(state: State) -> bool:
-    return state.paribhasha_gates.get(_GATE_KEY) is not True
+    return nominal_paribhasha_gate_eligible(state, _GATE_KEY)
 
 
 def act(state: State) -> State:

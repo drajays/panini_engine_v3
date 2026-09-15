@@ -1,22 +1,24 @@
 """
-2.4.43  हन् लुङि च  —  VIDHI (narrow demo)
+2.4.43  हन् लुङि च  —  VIDHI (narrow)
 
-*Han* is replaced by *vadh* in *luṅ* (glass-box **avaDIt** spine).
+Sources consulted:
+- ashtadhyayi.com data.txt row i=204043
+- Kāśikā: हन् लुङि च (वध-आदेशः)
+- Cross-validation: tests/unit/test_avaDIt_luN_han.py,
+  tests/unit/test_avadhIt_han_lun_ekavacana.py
 
-Pipelines must arm ``state.meta['2_4_43_han_vadh_luG_arm']`` and keep
-``state.meta['lakara'] == 'luG'``.  The primary *dhātu* ``Term`` must carry
-``upadesha_slp1 == 'han'`` (per input recipe, not inferred from surface).
+*Han* is replaced by *vadh* (अकारान्त आदेश) in *luṅ*. Recipe arms
+``2_4_43_han_vadh_luG_arm`` with ``lakara == luG`` and *dhātu*
+``upadesha_slp1 == han``.
 """
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from phonology.varna import parse_slp1_upadesha_sequence
+from engine.sthanivat import DHATUTVA, adesha_substitute_varnas
 
 
 def _matches(state: State) -> bool:
-    if not state.meta.get("2_4_43_han_vadh_luG_arm"):
-        return False
     if (state.meta.get("lakara") or "").strip() != "luG":
         return False
     if not state.terms:
@@ -39,10 +41,12 @@ def act(state: State) -> State:
     if not _matches(state):
         return state
     dh = state.terms[0]
-    dh.varnas = list(parse_slp1_upadesha_sequence("vadh"))
-    dh.meta["upadesha_slp1"] = "vadh"
+    adesha_substitute_varnas(
+        dh, "vadha", state,
+        sutra_id="2.4.43",
+        gunadharmas=frozenset({DHATUTVA}),
+    )
     dh.meta["2_4_43_han_vadh_done"] = True
-    state.meta["2_4_43_han_vadh_luG_arm"] = False
     return state
 
 

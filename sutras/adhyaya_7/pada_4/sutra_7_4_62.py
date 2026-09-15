@@ -8,9 +8,7 @@ Demo slice (जिघृक्षति):
 Teaching **P040** (*juhoti*): *abhyāsa* initial **h** (``hu``) → **j**
 (``P040_juhoti_abhyasa`` + ``state.meta['P040_7_4_62_abhyasa_arm']``).
 
-Engine:
-  - recipe arms via ``state.meta['7_4_62_kuhoscu_abhyasa_arm']``.
-  - **P040** via ``state.meta['P040_7_4_62_abhyasa_arm']``.
+Engine: structural — abhyāsa initial guttural → palatal; P040 via `P040_juhoti_abhyasa` tag.
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 74062 · कुहोश्चुः
@@ -41,9 +39,26 @@ def _find_p014_k(state: State):
     return None
 
 
-def _find(state: State):
-    if not state.meta.get("7_4_62_kuhoscu_abhyasa_arm"):
+def _find_lit_ghas_abhyasa(state: State):
+    """Structural *liṭ* *ghas*: *abhyāsa* initial *g*/*G* → *j*."""
+    if not state.meta.get("lakara_liT"):
         return None
+    if not state.meta.get("2_4_40_ad_to_gas"):
+        return None
+    for ti, t in enumerate(state.terms):
+        if "abhyasa" not in t.tags:
+            continue
+        if t.meta.get("7_4_62_done"):
+            continue
+        if t.varnas and t.varnas[0].slp1 in {"g", "G"}:
+            return ti
+    return None
+
+
+def _find(state: State):
+    hit = _find_lit_ghas_abhyasa(state)
+    if hit is not None:
+        return hit
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags:
             continue
@@ -51,15 +66,14 @@ def _find(state: State):
             continue
         if not t.varnas:
             continue
-        # **g** or **G** (घ) → **j** (P034 *jakṣatuḥ* abhyāsa, *kuhoścuḥ* narrow).
+        # Initial guttural **g**/**G** in abhyāsa → palatal **j** (7.4.62 kuhoścuḥ).
         if t.varnas[0].slp1 in {"g", "G"}:
             return ti
     return None
 
 
 def _find_p040_juhoti(state: State):
-    if not state.meta.get("P040_7_4_62_abhyasa_arm"):
-        return None
+    """hu-abhyāsa h→j: structural via `P040_juhoti_abhyasa` tag."""
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags:
             continue
@@ -94,7 +108,6 @@ def act(state: State) -> State:
         t = state.terms[ti_p]
         t.varnas[0] = mk("j")
         t.meta["7_4_62_done"] = True
-        state.meta.pop("P040_7_4_62_abhyasa_arm", None)
         return state
     ti = _find(state)
     if ti is None:
@@ -102,7 +115,6 @@ def act(state: State) -> State:
     t = state.terms[ti]
     t.varnas[0] = mk("j")
     t.meta["7_4_62_done"] = True
-    state.meta["7_4_62_kuhoscu_abhyasa_arm"] = False
     return state
 
 

@@ -19,6 +19,13 @@ def cond(state: State) -> bool:
         return False
     if "7.2.35" in state.blocked_sutras:
         return False
+    # *Luṭ* *tāsi* / *lṛṭ* *sya* spine (अद् … अत्ता / अत्स्यति): block iṭ on ekāc *ad*.
+    if (
+        state.meta.get("luT_ad_ekac_spine")
+        or state.meta.get("lRT_ad_ekac_spine")
+        or state.meta.get("lRG_ad_ekac_spine")
+    ):
+        return True
     # Default narrow v3: kṛt ārdhadhātuka.
     if any("krt" in t.tags and "ardhadhatuka" in t.tags for t in state.terms):
         return True

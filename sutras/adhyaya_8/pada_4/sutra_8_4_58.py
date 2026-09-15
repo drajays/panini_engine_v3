@@ -26,6 +26,7 @@ from phonology import mk
 _MAP = {
     "c": "Y", "C": "Y", "j": "Y", "J": "Y",  # c-varga → ñ
     "g": "G",  # velar varga → ङ (सङ्ग…)
+    "t": "n", "T": "n", "d": "n", "D": "n",  # dental: M → न् (अत्स्यन्ति clip)
 }
 
 

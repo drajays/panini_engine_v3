@@ -26,8 +26,6 @@ from phonology    import mk
 
 
 def _hit(state: State):
-    if not state.meta.get("6_4_14_arm"):
-        return None
     if not adhikara_in_effect("6.4.14", state, "6.4.1"):
         return None
     if len(state.terms) < 2:

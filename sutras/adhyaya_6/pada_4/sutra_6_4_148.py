@@ -210,27 +210,26 @@ def _find_target(state: State):
     hit_p05 = _p005_a_kurucara_final_a_before_I(state)
     if hit_p05 is not None:
         return hit_p05
-    # Narrow P018 arm: drop final short i before ika taddhita.
-    if state.meta.get("prakriya_P018_6_4_148_i_lopa_before_ika_arm"):
-        for j in range(1, len(state.terms)):
-            nxt = state.terms[j]
-            if term_is_sup_luk_ghost(nxt):
-                continue
-            k = j - 1
-            while k >= 0 and term_is_sup_luk_ghost(state.terms[k]):
-                k -= 1
-            if k < 0:
-                continue
-            anga = state.terms[k]
-            if "anga" not in anga.tags or not anga.varnas or not nxt.varnas:
-                continue
-            if anga.varnas[-1].slp1 != "i":
-                continue
-            if "taddhita" not in nxt.tags:
-                continue
-            if (nxt.meta.get("upadesha_slp1") or "").strip() != "ika":
-                continue
-            return (k, len(anga.varnas) - 1)
+    # Drop final short i before ika taddhita (6.4.148 narrow structural).
+    for j in range(1, len(state.terms)):
+        nxt = state.terms[j]
+        if term_is_sup_luk_ghost(nxt):
+            continue
+        k = j - 1
+        while k >= 0 and term_is_sup_luk_ghost(state.terms[k]):
+            k -= 1
+        if k < 0:
+            continue
+        anga = state.terms[k]
+        if "anga" not in anga.tags or not anga.varnas or not nxt.varnas:
+            continue
+        if anga.varnas[-1].slp1 != "i":
+            continue
+        if "taddhita" not in nxt.tags:
+            continue
+        if (nxt.meta.get("upadesha_slp1") or "").strip() != "ika":
+            continue
+        return (k, len(anga.varnas) - 1)
     hit_p04_1 = _p004_a_caPhaya_ayana_anga_a_lopa(state)
     if hit_p04_1 is not None:
         return hit_p04_1
@@ -288,7 +287,6 @@ def act(state: State) -> State:
     hit_p05 = _p005_a_kurucara_final_a_before_I(state)
     ti, vi = hit
     del state.terms[ti].varnas[vi]
-    state.meta.pop("prakriya_P018_6_4_148_i_lopa_before_ika_arm", None)
     if hit_s2 is not None and hit_s2 == hit:
         state.meta.pop(META_P004_A_STAGE2_148, None)
     return state

@@ -41,7 +41,11 @@ def act(state: State) -> State:
         kind="pratyaya",
         varnas=list(parse_slp1_upadesha_sequence("itvA")),
         tags={"pratyaya", "krt", "ardhadhatuka"},
-        meta={"upadesha_slp1": "itvA", "upadesha_slp1_original": "ktvA"},
+        meta={
+            "upadesha_slp1": "itvA",
+            "upadesha_slp1_original": "ktvA",
+            "it_markers": {"k"},
+        },
     )
     state.terms.append(pr)
     state.meta["ktvA_recipe"] = False

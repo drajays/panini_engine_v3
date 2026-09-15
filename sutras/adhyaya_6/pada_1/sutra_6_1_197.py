@@ -19,8 +19,6 @@ from engine.state import State
 
 
 def _prakriya_29_site(state: State) -> bool:
-    if not state.meta.get("prakriya_29_6_1_197_arm"):
-        return False
     if not state.terms:
         return False
     t0 = state.terms[0]
@@ -36,8 +34,6 @@ def _prakriya_29_site(state: State) -> bool:
 
 
 def _prakriya_31_imam_site(state: State) -> bool:
-    if not state.meta.get("prakriya_31_6_1_197_arm"):
-        return False
     if not state.terms:
         return False
     t0 = state.terms[0]
@@ -59,11 +55,9 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if _prakriya_31_imam_site(state):
         state.terms[0].meta["prakriya_31_imam_first_udAtta_note"] = True
-        state.meta.pop("prakriya_31_6_1_197_arm", None)
         return state
     if _prakriya_29_site(state):
         state.terms[0].meta["prakriya_29_YiRityAdi_first_udAtta_note"] = True
-        state.meta.pop("prakriya_29_6_1_197_arm", None)
         return state
     return state
 

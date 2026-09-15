@@ -58,8 +58,6 @@ def _find_p017_te_lopa(state: State) -> int | None:
 
 
 def _find_lut(state: State) -> int | None:
-    if not state.meta.get("6_4_143_lut_tasi_arm"):
-        return None
     for i, t in enumerate(state.terms[:-1]):
         if not t.meta.get("tAsi_vikaraṇa"):
             continue
@@ -78,8 +76,6 @@ def _find_lut(state: State) -> int | None:
 
 
 def _find_kim_qati(state: State) -> bool:
-    if not state.meta.get("6_4_143_kim_qati_arm"):
-        return False
     if len(state.terms) != 2:
         return False
     t0, t1 = state.terms[0], state.terms[1]
@@ -162,7 +158,6 @@ def act(state: State) -> State:
             meta={"upadesha_slp1": "kati"},
         )
         state.terms = [kati]
-        state.meta.pop("6_4_143_kim_qati_arm", None)
         state.meta["6_4_143_kim_qati_done"] = True
         return state
     return state

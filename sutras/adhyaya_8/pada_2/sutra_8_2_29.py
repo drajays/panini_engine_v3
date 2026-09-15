@@ -33,9 +33,29 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_eligibility import tripadi_gate_eligible
 from phonology    import HAL
 
 _GATE_KEY: str = "8_2_29_skoH_29"
+
+
+def _find_lig_ad_suw(state: State) -> int | None:
+    """*Ad* vidhi-liṅ*: drop *suṭ* after **7.2.79** (``yās``→``yā``) before *tiṅ*."""
+    if not state.meta.get("liG_ad_8_2_29_suw_recipe"):
+        return None
+    for i, t in enumerate(state.terms):
+        if "suw_agama" not in t.tags:
+            continue
+        if t.meta.get("8_2_29_suw_done"):
+            continue
+        if i == 0:
+            continue
+        prev = state.terms[i - 1]
+        if "yasut_agama" not in prev.tags:
+            continue
+        if prev.varnas and prev.varnas[-1].slp1 == "A":
+            return i
+    return None
 
 
 def _find_yasut_suw_pair(state: State):
@@ -61,15 +81,20 @@ def _all_hal(t) -> bool:
 
 
 def cond(state: State) -> bool:
-    if state.meta.get("ashir_8_2_29_recipe"):
-        return _find_yasut_suw_pair(state) is not None
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if state.tripadi_zone and any("anga" in t.tags or t.varnas for t in state.terms):
-        return True
+    # Recipe paths fire pre-merge (before tripadi zone opens).
+    if state.meta.get("ashir_8_2_29_recipe") or state.meta.get("liG_ad_8_2_29_suw_recipe"):
+        return bool(state.terms)
+    return tripadi_gate_eligible(state, "8.2.29", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:
+    j = _find_lig_ad_suw(state)
+    if j is not None:
+        state.terms.pop(j)
+        state.meta.pop("liG_ad_8_2_29_suw_recipe", None)
+        state.samjna_registry["8.2.29_lig_ad_suw_lopa"] = True
+        return state
+
     if state.meta.get("ashir_8_2_29_recipe"):
         j = _find_yasut_suw_pair(state)
         if j is None:

@@ -21,8 +21,6 @@ from engine.state import State
 
 
 def _site_26(state: State) -> bool:
-    if not state.meta.get("prakriya_26_2_3_48_arm"):
-        return False
     if not state.terms:
         return False
     t0 = state.terms[0]
@@ -36,8 +34,6 @@ def _site_26(state: State) -> bool:
 
 
 def _site_29(state: State) -> bool:
-    if not state.meta.get("prakriya_29_2_3_48_arm"):
-        return False
     if not state.terms:
         return False
     t0 = state.terms[0]
@@ -51,8 +47,6 @@ def _site_29(state: State) -> bool:
 
 
 def _site_30(state: State) -> bool:
-    if not state.meta.get("prakriya_30_2_3_48_arm"):
-        return False
     if not state.terms:
         return False
     t0 = state.terms[0]
@@ -66,8 +60,6 @@ def _site_30(state: State) -> bool:
 
 
 def _site_32(state: State) -> bool:
-    if not state.meta.get("prakriya_32_2_3_48_arm"):
-        return False
     if len(state.terms) != 3:
         return False
     ups = [state.terms[i].meta.get("upadesha_slp1") for i in range(3)]
@@ -117,7 +109,6 @@ def act(state: State) -> State:
         for t in state.terms:
             t.tags.add("sAmantrita")
         state.samjna_registry["2.3.48_sAmantrita_triplet_prakriya_32"] = True
-        state.meta.pop("prakriya_32_2_3_48_arm", None)
         return state
     if _site_34(state):
         state.terms[0].tags.add("sAmantrita")
@@ -126,17 +117,14 @@ def act(state: State) -> State:
     if _site_30(state):
         state.terms[0].tags.add("sAmantrita")
         state.samjna_registry["2.3.48_sAmantrita_maGavan"] = True
-        state.meta.pop("prakriya_30_2_3_48_arm", None)
         return state
     if _site_29(state):
         state.terms[0].tags.add("sAmantrita")
         state.samjna_registry["2.3.48_sAmantrita_gaurAvaskandin"] = True
-        state.meta.pop("prakriya_29_2_3_48_arm", None)
         return state
     if _site_26(state):
         state.terms[0].tags.add("sAmantrita")
         state.samjna_registry["2.3.48_sAmantrita_indra"] = True
-        state.meta.pop("prakriya_26_2_3_48_arm", None)
         return state
     return state
 

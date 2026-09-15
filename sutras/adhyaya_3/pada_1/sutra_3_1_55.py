@@ -30,6 +30,27 @@ from phonology import mk
 _META_ARM = "corrected_v2_P018_A_3_1_55_arm"
 
 
+def _ghas_luG_aG_site(state: State) -> bool:
+    """*luṅ* *ghas* (2.4.37) + *cli* → *aṅ* (अघसत् clip).
+    2_4_37_ad_to_gas flag (set by 2.4.37 act) implies luṅ structurally."""
+    if not state.meta.get("2_4_37_ad_to_gas"):
+        return False
+    has_cli = False
+    has_gas = False
+    for t in state.terms:
+        if (t.meta.get("upadesha_slp1") or "").strip() == "cli":
+            has_cli = True
+        if "dhatu" not in t.tags:
+            continue
+        flat = "".join(v.slp1 for v in t.varnas)
+        if flat in {"Gas", "ghas"}:
+            has_gas = True
+        up = (t.meta.get("upadesha_slp1") or "").strip().rstrip("~")
+        if up in {"Gas", "Gasx", "Gasx~"}:
+            has_gas = True
+    return has_cli and has_gas
+
+
 def _dyut_site(state: State) -> bool:
     flat_ok = False
     for t in state.terms:
@@ -52,11 +73,11 @@ def _dyut_site(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    return _dyut_site(state)
+    return _dyut_site(state) or _ghas_luG_aG_site(state)
 
 
 def act(state: State) -> State:
-    if not _dyut_site(state):
+    if not (_dyut_site(state) or _ghas_luG_aG_site(state)):
         return state
     for i, t in enumerate(state.terms):
         if (t.meta.get("upadesha_slp1") or "").strip() != "cli":

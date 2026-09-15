@@ -32,8 +32,6 @@ _ATMANEPADA_TIN = frozenset({"ta", "AtAm", "Ja", "TAs", "ATAm", "Dvam", "iw", "v
 
 
 def _find(state: State) -> int | None:
-    if not state.meta.get("1_2_13_va_gam_kit_arm"):
-        return None
     if not state.meta.get("ashir_liG"):
         return None
     if len(state.terms) < 2:
@@ -67,7 +65,6 @@ def act(state: State) -> State:
         return state
     state.terms[i].tags.add("kngiti")
     state.samjna_registry["1.2.13_va_gam_kit"] = True
-    state.meta["1_2_13_va_gam_kit_arm"] = False
     return state
 
 

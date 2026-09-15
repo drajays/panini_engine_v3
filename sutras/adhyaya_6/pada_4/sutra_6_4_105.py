@@ -26,8 +26,6 @@ from engine.state import State
 
 
 def _find_sIyuw(state: State) -> int | None:
-    if not state.meta.get("P038_6_4_105_uw_trim_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if "ling_sIyuw" not in t.tags:
             continue
@@ -43,8 +41,6 @@ def _find_sIyuw(state: State) -> int | None:
 
 def _find_loT_hi(state: State) -> int | None:
     """Find 'hi' tiṅ term preceded by a term ending in short 'a'."""
-    if not state.meta.get("6_4_105_loT_hi_lopa_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
             continue
@@ -71,7 +67,6 @@ def act(state: State) -> State:
         t = state.terms[idx]
         t.varnas = t.varnas[:-2]
         t.meta["P038_6_4_105_done"] = True
-        state.meta.pop("P038_6_4_105_uw_trim_arm", None)
         return state
     j = _find_loT_hi(state)
     if j is not None:

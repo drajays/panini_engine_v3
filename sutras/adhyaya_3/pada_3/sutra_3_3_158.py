@@ -18,8 +18,6 @@ from engine.state import State
 
 
 def _site(state: State) -> bool:
-    if not state.meta.get("prakriya_P001_3_3_158_arm"):
-        return False
     if not state.meta.get("prakriya_P001_samAnakartRk_tumun_note"):
         return False
     if not state.terms:
@@ -39,7 +37,6 @@ def act(state: State) -> State:
     if not _site(state):
         return state
     state.samjna_registry["3.3.158_samAnakartruka_tumun_prakriya_P001"] = True
-    state.meta.pop("prakriya_P001_3_3_158_arm", None)
     return state
 
 

@@ -55,7 +55,6 @@ def act(state: State) -> State:
     for i in reversed(idxs):
         del state.terms[i]
     state.meta["2_4_72_sap_luk"] = True
-    state.meta.pop("2_4_72_sap_luk_arm", None)
     return state
 
 

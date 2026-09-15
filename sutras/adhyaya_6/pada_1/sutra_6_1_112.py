@@ -16,8 +16,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _matches(state: State) -> bool:
-    if not state.meta.get("P030_6_1_112_vivakSa_stem_arm"):
-        return False
     if len(state.terms) != 1:
         return False
     vs = state.terms[0].varnas
@@ -42,7 +40,6 @@ def act(state: State) -> State:
     if not _matches(state):
         return state
     state.terms[0].varnas = list(parse_slp1_upadesha_sequence("vivacs"))
-    state.meta.pop("P030_6_1_112_vivakSa_stem_arm", None)
     return state
 
 

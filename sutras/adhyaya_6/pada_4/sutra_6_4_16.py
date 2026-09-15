@@ -116,7 +116,6 @@ def act(state: State) -> State:
         san.varnas = san.varnas[1:]
         san.meta["upadesha_slp1"] = "s"
         san.meta["6_4_16_san_initial_i_lopa_done"] = True
-    state.meta.pop("6_4_16_sani_dirgha_arm", None)
     return state
 
 

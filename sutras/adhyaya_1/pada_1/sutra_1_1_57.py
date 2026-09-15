@@ -1,11 +1,16 @@
 """
-1.1.57  अचः परस्मिन् पूर्वविधौ  —  PARIBHASHA (narrow P025)
+1.1.57  अचः परस्मिन् पूर्वविधौ  —  PARIBHASHA
+
+Sources consulted:
+- ashtadhyayi.com data.txt row i=101057
+- Kāśikā: अचः परस्मिन् पूर्वविधौ (लोपितस्य अचः स्थानिवत्-भावः)
+- Cross-validation: tests/unit/test_kathi_kath_nic.py (lupta *a* blocks **7.2.116**);
+  tests/unit/test_agaty_gam_lyap_acah_lesson.py (lupta *m* does **not** block **6.1.71**);
+  tests/unit/test_dIdhye_dIdhi_lat_parasmin_lesson.py (**3.4.79** *sva-nimitta* ``e``)
 
 *Acaḥ parasmin pūrvavidhau* — an *ac* (vowel) elided by a *pūrva-vidhi* is
-*sthānivat* for purposes of a following *para* rule.
-
-v3: installs ``paribhasha_gates["1.1.57_aca_parasmin_purvavidhau"]`` once for the
-P025 *ṇic* / *upadhā* blocking illustration.
+*sthānivat* for a following *para* rule. **Hal** lopa and **sva-nimitta** *ac* ādeśa
+(e.g. **3.4.79** ``i``→``e``) are not covered — **6.1.71** / **7.4.53** lessons.
 """
 from __future__ import annotations
 

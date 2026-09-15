@@ -60,7 +60,7 @@ def _find_pratyaya(state: State) -> int | None:
             if "kngiti" in t.tags:
                 return None
             return i
-        if up in {"atus", "Ralatus"} or t.meta.get("lit_atus") is True:
+        if up in {"atus", "Ralatus", "us", "aTus", "va", "ma", "th", "a"} or t.meta.get("lit_atus") is True:
             if "kngiti" in t.tags:
                 return None
             return i

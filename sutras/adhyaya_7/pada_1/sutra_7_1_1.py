@@ -24,6 +24,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.sthanivat import adesha_substitute_varnas
 from phonology    import mk
 
 
@@ -86,10 +87,9 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if _matches_nvul(state):
         pr = state.terms[-1]
-        pr.varnas = [mk("a"), mk("k")]
+        adesha_substitute_varnas(pr, "ak", state, sutra_id="7.1.1")
         pr.meta["vu_to_ak_done"] = True
         pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "Nvul")
-        pr.meta["upadesha_slp1"] = "ak"
         return state
     if _matches_lyuw(state):
         pr = state.terms[-1]

@@ -14,6 +14,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_eligibility import tin_pratyaya_gate_eligible
 from phonology     import mk
 
 _GATE_KEY: str = "3_4_106_iwot_106"
@@ -35,13 +36,7 @@ def _find_it_i(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not state.meta.get("iT_a_recipe"):
-        return False
-    if not state.meta.get("ashir_liG"):
-        return False
-    return _find_it_i(state) is not None
+    return tin_pratyaya_gate_eligible(state, "3.4.106", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:

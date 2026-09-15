@@ -40,7 +40,6 @@ def act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY] = True
     state.meta["krt_kind"] = "3.1.67"
-    state.meta.pop("3_1_67_arm", None)
     return state
 
 
@@ -58,3 +57,8 @@ SUTRA = SutraRecord(
 )
 
 register_sutra(SUTRA)
+
+# SOI: yaK is the general karmani/bhāve vikaraṇa (beaten by gana-specific apavādas).
+from engine.specificity_registry import register_specificity as _rs
+_rs("3.1.67", lambda state: 3)
+del _rs

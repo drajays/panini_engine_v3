@@ -17,7 +17,7 @@ Citation (CONSTITUTION Art. 14)
   Source #2 — Kāśikā 1.1.64 udāharaṇa:
                 Kāśikā: अचां सन्निविष्टानां योऽन्त्योऽच् तदादि शब्दरूपं टिसंज्ञं भवति।
                 Example: अग्निचित् / सोमसुत् — अन्त्य अच् (इ/उ) से आरभ्य भाग = टि।
-                Example: पचेते
+                Example: पचेते, पचेथे — “टित आत्मनेपदानां टेरे” इत्यादि टि-प्रदेशार्थः।
   Gloss (sa) — अचः अन्त्यादिः टि-संज्ञकः।
   Cross-check — surface pinned by: tests/unit/test_Ti_samjna_acontyAdi_paribhasha_note.py
   Reference record: sutra_ref_out/1_1_64.json

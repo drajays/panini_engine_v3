@@ -33,8 +33,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _site(state: State):
-    if not state.meta.get("P024_5_4_151_kap_arm"):
-        return None
     if state.meta.get("P024_5_4_151_kap_done"):
         return None
     if len(state.terms) != 2:

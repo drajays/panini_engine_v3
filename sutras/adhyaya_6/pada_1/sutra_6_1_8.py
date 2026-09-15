@@ -41,8 +41,6 @@ def _first_dhatu_index(state: State) -> int | None:
 
 
 def _site_p036(state: State) -> bool:
-    if not state.meta.get("P036_6_1_8_lit_sthanivat_ne_arm"):
-        return False
     if not state.meta.get("lakara_liT"):
         return False
     di = _first_dhatu_index(state)
@@ -87,7 +85,6 @@ def act(state: State) -> State:
         )
         state.terms.insert(di, ab)
         state.terms[di + 1].meta["P036_6_1_8_done"] = True
-        state.meta.pop("P036_6_1_8_lit_sthanivat_ne_arm", None)
         return state
     if not state.meta.get("liT_dvitva_recipe"):
         return state

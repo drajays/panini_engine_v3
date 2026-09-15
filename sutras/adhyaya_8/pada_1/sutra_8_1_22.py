@@ -18,8 +18,6 @@ from engine.state import State
 
 
 def _site(state: State) -> bool:
-    if not state.meta.get("prakriya_31_8_1_22_arm"):
-        return False
     if len(state.terms) < 2:
         return False
     t1 = state.terms[1]
@@ -40,7 +38,6 @@ def act(state: State) -> State:
     if not _site(state):
         return state
     state.terms[1].meta["prakriya_31_me_anudAtta_from_8122"] = True
-    state.meta.pop("prakriya_31_8_1_22_arm", None)
     return state
 
 

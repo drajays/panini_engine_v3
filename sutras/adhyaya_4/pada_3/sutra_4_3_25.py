@@ -30,8 +30,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _site(state: State) -> int | None:
-    if not state.meta.get("P039_4_3_25_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if t.kind != "prakriti":
             continue
@@ -65,7 +63,6 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "aR"},
     )
     state.terms.insert(i + 1, pr)
-    state.meta.pop("P039_4_3_25_arm", None)
     return state
 
 

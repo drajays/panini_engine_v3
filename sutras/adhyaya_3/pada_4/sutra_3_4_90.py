@@ -26,7 +26,7 @@ _EXCLUDED_STARTS = frozenset({"v", "m", "D", "s"})
 
 
 def _find_target(state: State):
-    if not state.meta.get("3_4_90_loT_karmani_arm"):
+    if not any("yak" in t.tags for t in state.terms):
         return None
     for ti, t in enumerate(state.terms):
         if t.kind != "pratyaya":
@@ -61,7 +61,6 @@ def act(state: State) -> State:
     t.varnas = list(t.varnas[:-1]) + [_mk("A"), _mk("m")]
     t.meta["upadesha_slp1"] = "".join(v.slp1 for v in t.varnas)
     t.meta["3_4_90_done"] = True
-    state.meta.pop("3_4_90_loT_karmani_arm", None)
     state.samjna_registry["3.4.90_ameta_loT"] = True
     return state
 

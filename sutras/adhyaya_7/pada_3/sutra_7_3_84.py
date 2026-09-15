@@ -99,6 +99,67 @@ def _sarvadhatuka_or_ardhadhatuka_following_dhatu(state: State, di: int) -> bool
     return False
 
 
+def _tanadi_vikarana_ik_eligible(state: State, di: int) -> bool:
+    """True when next term is the tanādi u-vikaraṇa (upadesha='u') and no kṅit follows.
+
+    Narrower than _vikarana_ik_eligible: requires upadesha_slp1 == 'u' so iṭ, sya,
+    or other vikaraṇas are excluded.
+
+    Returns False for vidhiliṅ (liG_yasut_expected): yāsuṭ (3.4.103) is ṅit
+    and will be inserted after vikaraṇa, blocking guṇa. We pre-block here to
+    avoid guṇa before yāsuṭ arrives. Flag is set around _apply_vikarana call
+    in _derive_liG and cleared after 3.4.103 inserts yāsuṭ.
+    """
+    if state.meta.get("liG_yasut_expected"):
+        return False
+    if di + 1 >= len(state.terms):
+        return False
+    vik = state.terms[di + 1]
+    if "vikarana" not in vik.tags:
+        return False
+    if (vik.meta.get("upadesha_slp1") or "").strip() != "u":
+        return False
+    if vik.meta.get("anga_guna_7_3_84"):
+        return False
+    if not vik.varnas or vik.varnas[0].slp1 != "u":
+        return False
+    if not _sarvadhatuka_or_ardhadhatuka_following_dhatu(state, di + 1):
+        return False
+    for j in range(di + 2, len(state.terms)):
+        if "kngiti" in state.terms[j].tags:
+            return False
+    return True
+
+
+def _vikarana_ik_eligible(state: State, di: int) -> bool:
+    """True when the vikaraṇa term at di+1 has an IK vowel before sārvadhatuka,
+    AND no kṅit term follows beyond the vikaraṇa.
+
+    Second 7.3.84 firing (karoti trace):
+      कर् + उ + ति [७.३.८४] → कर् + ओ + ति   (tiP is pit → NOT kṅit → fire)
+    Blocked for weak forms (kurutaḥ trace):
+      कर् + उ + तस् [१.१.५]                    (taS is kṅit → 1.1.5 blocks)
+    """
+    if di + 1 >= len(state.terms):
+        return False
+    vik = state.terms[di + 1]
+    if "vikarana" not in vik.tags:
+        return False
+    if vik.meta.get("anga_guna_7_3_84"):
+        return False
+    if not vik.varnas:
+        return False
+    if not _sarvadhatuka_or_ardhadhatuka_following_dhatu(state, di + 1):
+        return False
+    # Block when any term AFTER the vikaraṇa is kṅit tagged (1.2.4 marks apit tiṅ).
+    # For tiP (pit, strong): 1.2.4 does NOT add kngiti → second 7.3.84 fires → u→o (karoti)
+    # For taS (apit, weak): 1.2.4 adds kngiti → blocked → 6.4.110 fires → a→u (kurutaḥ)
+    for j in range(di + 2, len(state.terms)):
+        if "kngiti" in state.terms[j].tags:
+            return False
+    return _last_ik_index(vik) is not None
+
+
 def _p040_eligible(state: State) -> bool:
     di = _p040_non_abhyasa_hu_dhatu_index(state)
     if di is None:
@@ -129,9 +190,13 @@ def _liT_strong_eligible(state: State) -> bool:
         return False
     if d0.meta.get("anga_guna_7_3_84") or d0.meta.get("upadha_vrddhi_done"):
         return False  # 7.2.116 already applied vṛddhi (a-upadha case)
-    # Only for consonant-final dhātus: vowel-final ones (e.g. BU) get vuk (6.4.88)
-    # which intervenes between dhātu and suffix, blocking guṇa.
-    if not d0.varnas or d0.varnas[-1].slp1 not in HAL:
+    if not d0.varnas:
+        return False
+    last = d0.varnas[-1].slp1
+    # Consonant-final: guṇa targets internal IK vowel (e.g. cit → c-i-t → cet).
+    # ṛ/ḷ-final (e.g. kṛ = k-ṛ): guṇa targets the ṛ/ḷ itself (ṛ → ar).
+    # Other vowel-final (U, u, I, i, a): vuk (6.4.88) intervenes → block guṇa.
+    if last not in HAL and last not in ("f", "F", "x", "X"):
         return False
     return _last_ik_index(d0) is not None
 
@@ -156,10 +221,15 @@ def cond(state: State) -> bool:
     if not _sarvadhatuka_or_ardhadhatuka_following_dhatu(state, di):
         return False
     if d0.meta.get("anga_guna_7_3_84"):
-        return False
+        # Dhātu already guṇified — second firing: check vikaraṇa IK (e.g. u→o in karoti)
+        return _vikarana_ik_eligible(state, di)
     if not d0.varnas:
         return False
-    return _last_ik_index(d0) is not None
+    if _last_ik_index(d0) is not None:
+        return True
+    # No IK in dhātu (consonant-final tanādi like van, tan): fire on vikaraṇa u.
+    # Guard: only the tanādi u-vikaraṇa (upadesha 'u', sarvadhatuka+vikarana tags).
+    return _tanadi_vikarana_ik_eligible(state, di)
 
 
 def _apply_guna_to_dhatu(d0) -> None:
@@ -190,6 +260,15 @@ def act(state: State) -> State:
     di = _first_dhatu_index(state)
     assert di is not None
     d0 = state.terms[di]
+    if d0.meta.get("anga_guna_7_3_84") and _vikarana_ik_eligible(state, di):
+        # Second firing: guṇa on the vikaraṇa IK (e.g. u→o before sārvadhatuka tiṅ)
+        _apply_guna_to_dhatu(state.terms[di + 1])
+        return state
+    if _last_ik_index(d0) is None:
+        # No IK in dhātu (e.g. van, tan): fire on tanādi u-vikaraṇa directly
+        if _tanadi_vikarana_ik_eligible(state, di):
+            _apply_guna_to_dhatu(state.terms[di + 1])
+        return state
     _apply_guna_to_dhatu(d0)
     return state
 

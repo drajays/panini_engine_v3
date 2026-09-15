@@ -16,10 +16,19 @@ from engine.state import State
 TAG = "sarvanamasthana"
 
 
+def _is_napumsaka_stem(state) -> bool:
+    for t in state.terms:
+        if "prātipadika" in t.tags or t.kind == "prakriti":
+            if "napuṃsaka" in t.tags:
+                return True
+    return False
+
+
 def _eligible_s_sup(state: State) -> bool:
-    if not state.meta.get("1_1_43_arm"):
-        return False
+    """'s'-initial sup (su/sos cells) on non-napuṃsaka stem — sarvanamasthana."""
     if not state.terms:
+        return False
+    if _is_napumsaka_stem(state):
         return False
     pr = state.terms[-1]
     if pr.kind != "pratyaya" or "sup" not in pr.tags:
@@ -34,9 +43,10 @@ def _eligible_s_sup(state: State) -> bool:
 
 
 def _eligible_prakriya_21_am(state: State) -> bool:
-    if not state.meta.get("prakriya_21_1_1_43_am_arm"):
-        return False
+    """krt_tfc stem + am sup on non-napuṃsaka — structural identity."""
     if len(state.terms) < 2:
+        return False
+    if _is_napumsaka_stem(state):
         return False
     ang = state.terms[-2]
     pr = state.terms[-1]

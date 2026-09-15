@@ -79,8 +79,6 @@ def _lut_tasi_vikaranha_index(state: State) -> int | None:
     begins with a val consonant receives iṭ.  The initial letter of the tāsi
     term is ``t`` (val) always, regardless of what the following tiṅ starts with.
     """
-    if not state.meta.get("7_2_35_lut_tAsi_it_arm"):
-        return None
     for j in range(len(state.terms) - 1):
         t = state.terms[j]
         if not t.meta.get("tAsi_vikaraṇa"):
@@ -102,11 +100,12 @@ def _lut_tasi_vikaranha_index(state: State) -> int | None:
 
 def _lit_tin_index(state: State) -> int | None:
     """
-    General liṭ-tiṅ arm: find the rightmost pratyaya/tin term after dhātu
-    that hasn't had iṭ inserted yet. Used for consonant-initial liṭ ādeśas
-    (ta from Tal, va, ma) where iṭ must be inserted even if not val-initial.
+    General liṭ-tiṅ path: rightmost pratyaya/tiṅ term in liṭ context.
+    Used for consonant-initial liṭ ādeśas (ta/Tal, va, ma) where iṭ must
+    be inserted even when the ādeśa is not val-initial (v ∈ YAN).
+    Structural gate: `lakara_liT` (set by recipe for all liṭ derivations).
     """
-    if not state.meta.get("7_2_35_arm"):
+    if not state.meta.get("lakara_liT"):
         return None
     # Find rightmost pratyaya term not yet done
     for i in range(len(state.terms) - 1, -1, -1):
@@ -185,7 +184,6 @@ def act(state: State) -> State:
         it_v.tags.add("it_agama")
         t.varnas.insert(0, it_v)
         t.meta["it_agama_7_2_35_done"] = True
-        state.meta["7_2_35_arm"] = False
         return state
     pr = _target_term(state)
     if pr is None:

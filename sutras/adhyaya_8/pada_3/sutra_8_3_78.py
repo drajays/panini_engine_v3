@@ -19,7 +19,7 @@ from phonology.varna import mk as _mk
 
 def _find_i_before_D(state: State):
     """Find i+D (iṭ-vowel followed by dh) within any term or at cross-term boundary."""
-    if not state.meta.get("8_3_78_arm"):
+    if not state.meta.get("liT_lakara_recipe"):
         return None
     # Scan within each term (dvitva may have merged iṭ+tiṅ into one term)
     for ti, t in enumerate(state.terms):
@@ -56,7 +56,6 @@ def act(state: State) -> State:
     else:  # cross
         state.terms[ti + 1].varnas[0] = _mk("Q")
         state.terms[ti + 1].meta["8_3_78_done"] = True
-    state.meta.pop("8_3_78_arm", None)
     state.samjna_registry["8.3.78_dha_dhva"] = True
     return state
 

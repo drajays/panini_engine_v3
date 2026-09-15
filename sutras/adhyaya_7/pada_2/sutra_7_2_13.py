@@ -17,6 +17,7 @@ _GATE_KEY: str = "7_2_13_kfsfBfvfst_13"
 
 _KRSRBHR_ROOTS = frozenset({
     "kf", "sf", "Bf", "vf", "stu", "dru", "sru", "Sru",
+    "Gas", "Gasx", "gs",  # *ghas* *liṭ* (2.4.40 *ad* → *ghas*)
     # normalised forms (after it-lopa):
     "kfN", "sfp", "BfY", "vfṃj",  # fallback raw keys
 })

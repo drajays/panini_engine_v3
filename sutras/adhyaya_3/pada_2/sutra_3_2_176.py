@@ -1,11 +1,15 @@
 """
-3.2.176  रदादिभ्यो वरच्  —  VIDHI (narrow: P029 *yāyāvara*)
+3.2.176  रदादिभ्यो वरच्  —  VIDHI
 
-Teaching JSON **P029** step 9: after the *yaṅ* *abhyāsa* frame, attach the *kṛt*
-*varac* (surface *vara*) to form the agent noun of the intensive.
+Sources consulted:
+- ashtadhyayi.com data.txt row i=302176
+- Kāśikā: रदादिभ्यो वरच् (यायावरः — यङन्तात् कर्तृ-कृदन्तम्)
+- Cross-validation: tests/unit/test_yAyAvaraH_yang_varac.py,
+  tests/unit/test_yAyAvar_yang_varac_purvavidhau_lesson.py
 
-Narrow v3: ``state.meta['varac_recipe']`` appends an upadeśa Term
-``varac`` tagged ``krt`` / ``pratyaya`` / ``upadesha`` for the **1.3** *it* chain.
+After the *yaṅ* *abhyāsa* frame, attach *kṛt* *varac* (surface *vara*), tagged
+*kṅiti* (``c`` *it*) for downstream **6.4.64** / **1.3** chains.
+``state.meta['varac_recipe']`` arms append of upadeśa ``varac``.
 """
 from __future__ import annotations
 
@@ -26,8 +30,8 @@ def act(state: State) -> State:
     varac = Term(
         kind="pratyaya",
         varnas=list(parse_slp1_upadesha_sequence("varac")),
-        tags={"pratyaya", "krt", "upadesha"},
-        meta={"upadesha_slp1": "varac"},
+        tags={"pratyaya", "krt", "upadesha", "kngiti"},
+        meta={"upadesha_slp1": "varac", "it_markers": {"c"}},
     )
     state.terms.append(varac)
     state.meta.pop("varac_recipe", None)

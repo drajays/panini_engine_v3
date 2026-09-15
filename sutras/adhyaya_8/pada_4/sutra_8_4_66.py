@@ -43,8 +43,6 @@ def _stem(state: State):
 
 
 def _EdaviDa_prakriya_32(state: State) -> bool:
-    if not state.meta.get("prakriya_32_8_4_66_arm"):
-        return False
     if not state.tripadi_zone:
         return False
     if not state.terms:
@@ -60,8 +58,6 @@ def _EdaviDa_prakriya_32(state: State) -> bool:
 
 
 def _indra_prakriya_26(state: State) -> bool:
-    if not state.meta.get("prakriya_26_8_4_66_arm"):
-        return False
     if not state.tripadi_zone:
         return False
     if not state.terms:
@@ -69,14 +65,14 @@ def _indra_prakriya_26(state: State) -> bool:
     t0 = state.terms[0]
     if t0.meta.get("upadesha_slp1") != "indra":
         return False
+    if not t0.meta.get("prakriya_26_AdyudAtta_note"):
+        return False
     if state.samjna_registry.get("prakriya_26_svarita_locus"):
         return False
     return True
 
 
 def _imam_me_prakriya_31(state: State) -> bool:
-    if not state.meta.get("prakriya_31_8_4_66_arm"):
-        return False
     if not state.tripadi_zone:
         return False
     if len(state.terms) < 2:
@@ -96,8 +92,6 @@ def _imam_me_prakriya_31(state: State) -> bool:
 
 
 def _gaurAvaskandin_prakriya_29(state: State) -> bool:
-    if not state.meta.get("prakriya_29_8_4_66_arm"):
-        return False
     if not state.tripadi_zone:
         return False
     if not state.terms:
@@ -115,8 +109,6 @@ def _gaurAvaskandin_prakriya_29(state: State) -> bool:
 
 
 def _meghAtithe_prakriya_28(state: State) -> bool:
-    if not state.meta.get("prakriya_28_8_4_66_arm"):
-        return False
     if not state.tripadi_zone:
         return False
     if len(state.terms) < 2:
@@ -134,8 +126,6 @@ def _meghAtithe_prakriya_28(state: State) -> bool:
 
 
 def _agaccha_prakriya_27(state: State) -> bool:
-    if not state.meta.get("prakriya_27_8_4_66_arm"):
-        return False
     if not state.tripadi_zone:
         return False
     if not state.terms:
@@ -181,27 +171,21 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if _EdaviDa_prakriya_32(state):
         state.samjna_registry["prakriya_32_EdaviDa_svarita_locus"] = True
-        state.meta.pop("prakriya_32_8_4_66_arm", None)
         return state
     if _imam_me_prakriya_31(state):
         state.samjna_registry["prakriya_31_me_svarita_locus"] = True
-        state.meta.pop("prakriya_31_8_4_66_arm", None)
         return state
     if _gaurAvaskandin_prakriya_29(state):
         state.samjna_registry["prakriya_29_svarita_locus"] = True
-        state.meta.pop("prakriya_29_8_4_66_arm", None)
         return state
     if _meghAtithe_prakriya_28(state):
         state.samjna_registry["prakriya_28_svarita_locus"] = True
-        state.meta.pop("prakriya_28_8_4_66_arm", None)
         return state
     if _agaccha_prakriya_27(state):
         state.samjna_registry["prakriya_27_svarita_locus"] = True
-        state.meta.pop("prakriya_27_8_4_66_arm", None)
         return state
     if _indra_prakriya_26(state):
         state.samjna_registry["prakriya_26_svarita_locus"] = True
-        state.meta.pop("prakriya_26_8_4_66_arm", None)
         return state
     up = _stem(state)
     if up is None:

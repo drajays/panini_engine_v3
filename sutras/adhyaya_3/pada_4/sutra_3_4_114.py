@@ -21,12 +21,23 @@ def _krt_term(state: State):
     return None
 
 
+def _aG_luG_term(state: State):
+    """*luṅ* *aṅ* vikaraṇa — ārdhadhātuka *śeṣa* per clip.
+    Structural: upadeśa 'aG' only appears as the luṅ cli vikaraṇa."""
+    for t in state.terms:
+        if t.kind != "pratyaya":
+            continue
+        if (t.meta.get("upadesha_slp1") or "").strip() != "aG":
+            continue
+        if "ardhadhatuka" in t.tags:
+            return None
+        return t
+    return None
+
+
 def _sic_luG_term(state: State):
-    """
-    luṅ *sic* vikaraṇa (P026): recipe arms ``3_4_114_luN_sic_samjna_arm`` so
-    ``cond`` does not infer *lakāra* from string goals (CONSTITUTION Art. 2).
-    """
-    if not state.meta.get("3_4_114_luN_sic_samjna_arm"):
+    """luṅ *sic* vikaraṇa — structural gate: `cli_luG_recipe` set by all luṅ recipes."""
+    if not state.meta.get("cli_luG_recipe"):
         return None
     for t in state.terms:
         if t.kind != "pratyaya":
@@ -38,12 +49,7 @@ def _sic_luG_term(state: State):
 
 
 def _sya_lrt_term(state: State):
-    """
-    lṛṭ *sya* vikaraṇa: recipe arms ``3_4_114_lrt_sy_arm``; marks 'sya' as
-    ārdhadhātuka so 7.2.35 can find it natively (val-initial, not kṛt).
-    """
-    if not state.meta.get("3_4_114_lrt_sy_arm"):
-        return None
+    """lṛṭ *sya* vikaraṇa: `lrt_vikarana` meta key is the structural signal."""
     for t in state.terms:
         if t.kind != "pratyaya":
             continue
@@ -56,12 +62,7 @@ def _sya_lrt_term(state: State):
 
 
 def _sya_lRG_term(state: State):
-    """
-    lṛṅ *sya* vikaraṇa: recipe arms ``3_4_114_lRG_sy_arm``; marks 'sya' as
-    ārdhadhātuka so 7.2.35 can find it natively (val-initial, not kṛt).
-    """
-    if not state.meta.get("3_4_114_lRG_sy_arm"):
-        return None
+    """lṛṅ *sya* vikaraṇa: `lRG_vikarana` meta key is the structural signal."""
     for t in state.terms:
         if t.kind != "pratyaya":
             continue
@@ -73,12 +74,24 @@ def _sya_lRG_term(state: State):
     return None
 
 
+def _tasi_lut_term(state: State):
+    """*Luṭ* *tāsi* *vikaraṇa* — structural: `tAsi_vikaraṇa` key is only set in luṭ."""
+    for t in state.terms:
+        if t.meta.get("tAsi_vikaraṇa") and "ardhadhatuka" not in t.tags:
+            return t
+    return None
+
+
 def cond(state: State) -> bool:
+    if _tasi_lut_term(state) is not None:
+        return True
     pr = _krt_term(state)
     if pr is not None and "ardhadhatuka" not in pr.tags:
         upa = (pr.meta.get("upadesha_slp1") or "").strip()
         if upa in {"tfc", "gsnuC", "snu", "kta", "ktavatu~", "lyuw", "athuc", "ktri", "ktrim"}:
             return True
+    if _aG_luG_term(state) is not None:
+        return True
     pr2 = _sic_luG_term(state)
     if pr2 is not None and "ardhadhatuka" not in pr2.tags:
         return True
@@ -90,12 +103,21 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    pr_tasi = _tasi_lut_term(state)
+    if pr_tasi is not None:
+        pr_tasi.tags.add("ardhadhatuka")
+        state.samjna_registry["3.4.114_ardhadhatuka_tasi_lut"] = True
+        return state
     pr = _krt_term(state)
     if pr is not None and "ardhadhatuka" not in pr.tags:
         upa = (pr.meta.get("upadesha_slp1") or "").strip()
         if upa in {"tfc", "gsnuC", "snu", "kta", "ktavatu~", "lyuw", "athuc", "ktri", "ktrim"}:
             pr.tags.add("ardhadhatuka")
             state.samjna_registry["3.4.114_ardhadhatuka"] = True
+    pr_aG = _aG_luG_term(state)
+    if pr_aG is not None:
+        pr_aG.tags.add("ardhadhatuka")
+        state.samjna_registry["3.4.114_ardhadhatuka_aG_luG"] = True
     pr2 = _sic_luG_term(state)
     if pr2 is not None and "ardhadhatuka" not in pr2.tags:
         pr2.tags.add("ardhadhatuka")

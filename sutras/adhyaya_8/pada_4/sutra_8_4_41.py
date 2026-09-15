@@ -52,8 +52,6 @@ def _find_p036_Na_to_a(state: State) -> bool:
     (Glass-box completion row for JSON’s *it*/augment step — folded under **8.4.41**
     demo namespace to avoid a fake *sūtra* id.)
     """
-    if not state.meta.get("P036_8_4_41_Na_to_augment_a_arm"):
-        return False
     if len(state.terms) != 2:
         return False
     a, b = state.terms[0], state.terms[1]
@@ -115,7 +113,6 @@ def act(state: State) -> State:
             tags={"pratyaya", "tin", "ardhadhatuka"},
             meta={"upadesha_slp1": "a", "P036_lit_augment_a": True},
         )
-        state.meta.pop("P036_8_4_41_Na_to_augment_a_arm", None)
         return state
     p = _find_p031(state)
     if p is not None:

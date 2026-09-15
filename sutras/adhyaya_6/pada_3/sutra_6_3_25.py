@@ -32,8 +32,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _site(state: State) -> bool:
-    if not state.meta.get("prakriya_P013_6_3_25_arm"):
-        return False
     if len(state.terms) < 2:
         return False
     t0, t1 = state.terms[0], state.terms[1]
@@ -66,7 +64,6 @@ def act(state: State) -> State:
     # Drop both members and replace with the composite base.
     state.terms = [t] + state.terms[2:]
     state.samjna_registry["6.3.25_mAtApitar_base_done"] = True
-    state.meta.pop("prakriya_P013_6_3_25_arm", None)
     return state
 
 

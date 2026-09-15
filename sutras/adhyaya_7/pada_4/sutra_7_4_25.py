@@ -62,7 +62,6 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if _karmani_vacuous_dirgha(state) and not state.meta.get("ashir_7_4_25_recipe"):
         state.meta["7_4_25_karmani_done"] = True
-        state.meta.pop("7_4_25_karmani_yak_arm", None)
         state.samjna_registry["7.4.25_karmani_vacuous"] = True
         return state
     if state.meta.get("ashir_7_4_25_recipe"):

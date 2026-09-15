@@ -28,8 +28,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _eligible(state: State) -> bool:
-    if not state.meta.get("prakriya_18_4_4_98_arm"):
-        return False
     if len(state.terms) != 2:
         return False
     t0, t1 = state.terms[0], state.terms[1]
@@ -58,7 +56,6 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "yat"},
     )
     state.terms.append(yat)
-    state.meta.pop("prakriya_18_4_4_98_arm", None)
     return state
 
 

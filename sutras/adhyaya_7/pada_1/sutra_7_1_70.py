@@ -25,8 +25,6 @@ from phonology.varna import AC_DEV
 
 
 def _eligible(state: State) -> bool:
-    if not state.meta.get("7_1_70_arm"):
-        return False
     if len(state.terms) < 2:
         return False
     anga, pr = state.terms[-2], state.terms[-1]

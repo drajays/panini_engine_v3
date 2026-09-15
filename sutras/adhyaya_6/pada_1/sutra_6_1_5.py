@@ -14,18 +14,13 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_eligibility import samhita_gate_eligible
 
 _GATE_KEY: str = "6_1_5_uBe_5"
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    # Structural: dvitva has placed an abhyāsa term on the tape (6.1.8)
-    if any("abhyasa" in t.tags for t in state.terms):
-        return True
-    # Legacy arm path (backward-compat)
-    return bool(state.meta.get("sandhi_6_1_5_recipe"))
+    return samhita_gate_eligible(state, "6.1.5", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:

@@ -81,32 +81,15 @@ def _find(state: State):
             and vs[2].slp1 == "u"
         ):
             return ti
-    if state.meta.get("P037_7_4_60_Iw_trim_arm"):
-        for ti, t in enumerate(state.terms):
-            if "abhyasa" not in t.tags:
-                continue
-            if t.meta.get("7_4_60_haladi_done"):
-                continue
-            if (
-                len(t.varnas) == 2
-                and t.varnas[0].slp1 == "I"
-                and t.varnas[1].slp1 == "w"
-            ):
-                return ti
-        return None
-    if state.meta.get("P030_7_4_60_abhyasa_vowel_only_arm"):
-        for ti, t in enumerate(state.terms):
-            if "abhyasa" not in t.tags:
-                continue
-            if t.meta.get("7_4_60_haladi_done"):
-                continue
-            if (
-                len(t.varnas) == 2
-                and t.varnas[1].slp1 == "c"
-                and t.varnas[0].slp1 in {"u", "U"}
-            ):
-                return ti
-        return None
+    for ti, t in enumerate(state.terms):
+        if "abhyasa" not in t.tags or t.meta.get("7_4_60_haladi_done"):
+            continue
+        # P037 structural: abhyāsa exactly [I, w] → trim to [I]
+        if len(t.varnas) == 2 and t.varnas[0].slp1 == "I" and t.varnas[1].slp1 == "w":
+            return ti
+        # P030 structural: abhyāsa exactly [u/U, c] → trim to vowel
+        if len(t.varnas) == 2 and t.varnas[1].slp1 == "c" and t.varnas[0].slp1 in {"u", "U"}:
+            return ti
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags:
             continue
@@ -144,32 +127,6 @@ def act(state: State) -> State:
             t.varnas = [vs[0], vs[2]]
             t.meta["7_4_60_haladi_done"] = True
             return state
-    if state.meta.get("P037_7_4_60_Iw_trim_arm"):
-        for ti, t in enumerate(state.terms):
-            if "abhyasa" not in t.tags or t.meta.get("7_4_60_haladi_done"):
-                continue
-            if (
-                len(t.varnas) == 2
-                and t.varnas[0].slp1 == "I"
-                and t.varnas[1].slp1 == "w"
-            ):
-                t.varnas = [t.varnas[0]]
-                t.meta["7_4_60_haladi_done"] = True
-                state.meta.pop("P037_7_4_60_Iw_trim_arm", None)
-                return state
-    if state.meta.get("P030_7_4_60_abhyasa_vowel_only_arm"):
-        for ti, t in enumerate(state.terms):
-            if "abhyasa" not in t.tags or t.meta.get("7_4_60_haladi_done"):
-                continue
-            if (
-                len(t.varnas) == 2
-                and t.varnas[1].slp1 == "c"
-                and t.varnas[0].slp1 in {"u", "U"}
-            ):
-                t.varnas = [t.varnas[0]]
-                t.meta["7_4_60_haladi_done"] = True
-                state.meta.pop("P030_7_4_60_abhyasa_vowel_only_arm", None)
-                return state
     ti = _find(state)
     if ti is None:
         return state

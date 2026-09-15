@@ -26,8 +26,6 @@ from engine.state import State
 
 
 def _find_aR_idx(state: State) -> int | None:
-    if not state.meta.get("P039_4_3_34_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
             continue
@@ -47,7 +45,6 @@ def act(state: State) -> State:
     if j is None:
         return state
     state.terms.pop(j)
-    state.meta.pop("P039_4_3_34_arm", None)
     state.samjna_registry["P039_4_3_34_aR_luk_structural"] = True
     return state
 

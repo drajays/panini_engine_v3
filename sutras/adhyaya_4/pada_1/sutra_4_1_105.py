@@ -31,8 +31,6 @@ _UPA_KAU_YJ_AYANA = "kauYjAyana"
 
 
 def _site_p042(state: State) -> int | None:
-    if not state.meta.get("P042_4_1_105_yaY_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if t.kind != "prakriti":
             continue
@@ -84,7 +82,6 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "yaY"},
     )
     state.terms.insert(i + 1, yaY)
-    state.meta.pop("P042_4_1_105_yaY_arm", None)
     return state
 
 

@@ -22,8 +22,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _site(state: State):
-    if not state.meta.get("P022_7_1_84_div_aut_arm"):
-        return None
     if len(state.terms) < 2:
         return None
     if state.meta.get("P022_7_1_84_div_aut_done"):

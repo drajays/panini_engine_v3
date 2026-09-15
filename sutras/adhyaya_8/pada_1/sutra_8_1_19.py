@@ -28,15 +28,13 @@ def _adhikara_8_1_18_open(state: State) -> bool:
 
 
 def _site_prakriya_30(state: State) -> bool:
-    if not state.meta.get("prakriya_30_8_1_19_arm"):
-        return False
     if not _adhikara_8_1_18_open(state):
+        return False
+    if not state.samjna_registry.get("2.3.48_sAmantrita_maGavan"):
         return False
     if not state.terms:
         return False
     t0 = state.terms[0]
-    if "sAmantrita" not in t0.tags:
-        return False
     if t0.meta.get("upadesha_slp1") != "maGavan":
         return False
     if t0.meta.get("prakriya_30_sarvAnudAtta_note"):
@@ -45,8 +43,6 @@ def _site_prakriya_30(state: State) -> bool:
 
 
 def _site_prakriya_32_jWilaka(state: State) -> bool:
-    if not state.meta.get("prakriya_32_8_1_19_jWilaka_arm"):
-        return False
     if not _adhikara_8_1_18_open(state):
         return False
     if len(state.terms) < 2:
@@ -64,8 +60,6 @@ def _site_prakriya_32_jWilaka(state: State) -> bool:
 
 
 def _site_prakriya_32_aDyApaka(state: State) -> bool:
-    if not state.meta.get("prakriya_32_8_1_19_aDyApaka_arm"):
-        return False
     if not _adhikara_8_1_18_open(state):
         return False
     if len(state.terms) < 3:
@@ -111,18 +105,15 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if _site_prakriya_32_jWilaka(state):
         state.terms[1].meta["prakriya_32_jWilaka_sarvAnudAtta_note"] = True
-        state.meta.pop("prakriya_32_8_1_19_jWilaka_arm", None)
         return state
     if _site_prakriya_32_aDyApaka(state):
         state.terms[2].meta["prakriya_32_aDyApaka_sarvAnudAtta_note"] = True
-        state.meta.pop("prakriya_32_8_1_19_aDyApaka_arm", None)
         return state
     if _site_prakriya_34_aDyApaka_kv(state):
         state.terms[0].meta["prakriya_34_aDyApaka_sarvAnudAtta_note"] = True
         return state
     if _site_prakriya_30(state):
         state.terms[0].meta["prakriya_30_sarvAnudAtta_note"] = True
-        state.meta.pop("prakriya_30_8_1_19_arm", None)
         return state
     return state
 

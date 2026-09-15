@@ -25,15 +25,16 @@ Citation (CONSTITUTION Art. 14)
   Source #2 — Kāśikā 3.4.78 udāharaṇa:
                 तिप्सिप्मिपां पकारः स्वरार्थः
                 महिङो ङकारस्तिङ् इति प्रत्याहारग्रहणार्थः
-                पचति
+                पचति, पचतः, पचन्ति
   Cross-check — surface pinned by: tests/test_bhavati_glassbox.py, tests/unit/test_BitzIzwa_ashir_ling.py, tests/unit/test_aBavatAm_split_prakriyas.py
   Reference record: sutra_ref_out/3_4_78.json
 """
 from __future__ import annotations
 
-from engine         import SutraType, SutraRecord, register_sutra
-from engine.gates   import adhikara_in_effect
-from engine.state   import State, Term
+from engine import SutraType, SutraRecord, register_sutra
+from engine.gates import adhikara_in_effect
+from engine.state import State
+from engine.sthanivat import TING_PRATYAYATVA, adesha_substitute_varnas
 from phonology.varna import parse_slp1_upadesha_sequence
 
 from sutras.adhyaya_3.pada_4.tin_adesha_3_4_78 import (
@@ -75,8 +76,13 @@ def act(state: State) -> State:
     source_lak = (t.meta.get("upadesha_slp1") or "").strip()
     if source_lak:
         t.meta["source_lakara_upadesha"] = source_lak
-    t.varnas = parse_slp1_upadesha_sequence(adesha)
-    t.meta["upadesha_slp1"] = adesha
+    adesha_substitute_varnas(
+        t,
+        adesha,
+        state,
+        sutra_id="3.4.78",
+        gunadharmas=frozenset({TING_PRATYAYATVA}),
+    )
     t.tags.add("tin_adesha_3_4_78")
     t.tags.discard("lakAra_pratyaya_placeholder")
     state.meta["tin_adesha_pending"] = False

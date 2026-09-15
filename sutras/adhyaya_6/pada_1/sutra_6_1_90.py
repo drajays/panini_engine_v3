@@ -21,9 +21,21 @@ from engine.state import State
 _EC = frozenset({"E", "e", "O", "o"})
 
 
-def _find_at_ec(state: State):
-    if not state.meta.get("6_1_90_loT_karmani_arm"):
+def _find_lRG_ad_Aq_merge(state: State):
+    """*lṛṅ* *ad*: ``A`` + ``a`` (आट् + अद्) → ``A`` + ``d`` (आद्) per clip."""
+    if not state.meta.get("lRG_ad_spine"):
         return None
+    for t in state.terms:
+        if "dhatu" not in t.tags or not t.varnas:
+            continue
+        if len(t.varnas) >= 2 and t.varnas[0].slp1 == "A" and t.varnas[1].slp1 == "a":
+            if t.meta.get("6_1_90_lRG_ad_done"):
+                return None
+            return t
+    return None
+
+
+def _find_at_ec(state: State):
     for i in range(len(state.terms) - 1):
         t1 = state.terms[i]
         t2 = state.terms[i + 1]
@@ -38,16 +50,22 @@ def _find_at_ec(state: State):
 
 
 def cond(state: State) -> bool:
-    return _find_at_ec(state) is not None
+    return _find_at_ec(state) is not None or _find_lRG_ad_Aq_merge(state) is not None
 
 
 def act(state: State) -> State:
+    t_lrg = _find_lRG_ad_Aq_merge(state)
+    if t_lrg is not None:
+        del t_lrg.varnas[1]
+        t_lrg.meta["6_1_90_lRG_ad_done"] = True
+        state.samjna_registry["6.1.90_lRG_ad_Aq_merge"] = True
+        return state
+
     i = _find_at_ec(state)
     if i is None:
         return state
     # Delete the ā varṇa from the āṭ-derived term (it merges into the ec)
     del state.terms[i].varnas[0]
-    state.meta.pop("6_1_90_loT_karmani_arm", None)
     state.samjna_registry["6.1.90_AT_ec_merge"] = True
     return state
 

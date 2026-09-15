@@ -27,8 +27,6 @@ from phonology import mk
 
 
 def _site(state: State) -> int | None:
-    if not state.meta.get("P027_7_4_15_Ap_hrasva_arm"):
-        return None
     if len(state.terms) < 2:
         return None
     b = state.terms[1]
@@ -54,7 +52,6 @@ def act(state: State) -> State:
     b = state.terms[i]
     b.varnas[-1] = mk("a")
     b.meta["P027_7_4_15_hrasva_done"] = True
-    state.meta.pop("P027_7_4_15_Ap_hrasva_arm", None)
     return state
 
 

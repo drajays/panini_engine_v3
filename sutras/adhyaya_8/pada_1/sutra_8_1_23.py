@@ -23,8 +23,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _site(state: State) -> int | None:
-    if not state.meta.get("prakriya_23_8_1_23_arm"):
-        return None
     if not state.meta.get("prakriya_23_apAda_adau_arm"):
         return None
     if len(state.terms) != 1:
@@ -53,7 +51,6 @@ def act(state: State) -> State:
     t.meta["8_1_23_tvA_adesha"] = True
     if any(e.get("id") == "8.1.18" for e in state.adhikara_stack):
         t.meta["sarva_anudAtta_8_1_18"] = True
-    state.meta.pop("prakriya_23_8_1_23_arm", None)
     state.meta.pop("prakriya_23_apAda_adau_arm", None)
     return state
 

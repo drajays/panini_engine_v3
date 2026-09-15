@@ -31,8 +31,6 @@ from engine.state import State
 
 def _matches_p037(state: State) -> bool:
     """ṇic ``i``-lopa before empty *caṅ* marker + *tin* (**P037** teaching row)."""
-    if not state.meta.get("P037_6_4_51_arm"):
-        return False
     if len(state.terms) < 3:
         return False
     for i in range(len(state.terms) - 2):
@@ -97,7 +95,6 @@ def act(state: State) -> State:
             anga.meta["sthānivat_nic_block_guna"] = True
             anga.meta["P037_6_4_51_done"] = True
             state.meta["6_4_51_Reraniwi"] = True
-            state.meta.pop("P037_6_4_51_arm", None)
             return state
         return state
     if not _matches(state):

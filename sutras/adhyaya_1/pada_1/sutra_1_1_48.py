@@ -33,7 +33,7 @@ from phonology.ec_ig_hrasva import ec_ig_replacement_slp1
 
 
 def _target_pair(state: State) -> Optional[Tuple[int, int]]:
-    if not state.meta.get("1_1_48_ec_ig_hrasva_arm"):
+    if "1_1_48_target_varna_index" not in state.meta:
         return None
     ti = state.meta.get("1_1_48_target_term_index", 0)
     if not isinstance(ti, int) or ti < 0 or ti >= len(state.terms):
@@ -73,7 +73,6 @@ def act(state: State) -> State:
     t.varnas[vi] = mk(rep)
     t.meta["1_1_48_done"] = True
     state.paribhasha_gates["1.1.48_ec_ig_hrasva"] = True
-    state.meta["1_1_48_ec_ig_hrasva_arm"] = False
     state.meta.pop("1_1_48_target_term_index", None)
     state.meta.pop("1_1_48_target_varna_index", None)
     return state

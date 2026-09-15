@@ -29,8 +29,6 @@ from engine.state import State
 def _find(state: State) -> int | None:
     if not state.meta.get("lakara_liT"):
         return None
-    if not state.meta.get("1_2_6_indhi_bhavati_arm"):
-        return None
     if not state.terms or "dhatu" not in state.terms[0].tags:
         return None
     up = (state.terms[0].meta.get("upadesha_slp1") or "").strip()
@@ -55,7 +53,6 @@ def act(state: State) -> State:
     if i is None:
         return state
     state.terms[i].tags.add("kngiti")
-    state.meta["1_2_6_indhi_bhavati_arm"] = False
     state.samjna_registry["1.2.6_indhi_bhavati_kngiti"] = True
     return state
 

@@ -33,8 +33,6 @@ _AK = frozenset({"a", "A", "i", "I", "u", "U", "f", "F", "x", "X"})
 
 def _p036_ninaya_bridge(state: State) -> bool:
     """Teaching **P036** step 15: merged ``ninaya`` → ``ninAya`` (*ā* in *ṇal* reflex)."""
-    if not state.meta.get("P036_6_1_101_ninaya_dirgha_arm"):
-        return False
     if len(state.terms) != 1 or "pada" not in state.terms[0].tags:
         return False
     return state.flat_slp1() == "ninaya"
@@ -45,8 +43,6 @@ def _p037_awiw_cluster(state: State) -> bool:
     **P037** reduplication-contact: ``[ī][Aw]`` tape → reorder to ``AwIw`` stem
     (``आ`` + ``ṭ`` + ``ī`` + ``ṭ`` on one *dhātu* ``Term``, JSON step **n16**).
     """
-    if not state.meta.get("P037_6_1_101_awIw_cluster_arm"):
-        return False
     if len(state.terms) < 2:
         return False
     t0, t1 = state.terms[0], state.terms[1]
@@ -88,7 +84,6 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if _p036_ninaya_bridge(state):
         state.terms[0].varnas = list(parse_slp1_upadesha_sequence("ninAya"))
-        state.meta.pop("P036_6_1_101_ninaya_dirgha_arm", None)
         return state
     if _p037_awiw_cluster(state):
         t0, t1 = state.terms[0], state.terms[1]
@@ -100,7 +95,6 @@ def act(state: State) -> State:
         )
         rest = state.terms[2:]
         state.terms = [merged] + rest
-        state.meta.pop("P037_6_1_101_awIw_cluster_arm", None)
         return state
     hit = _find_pair(state)
     if hit is None:

@@ -27,8 +27,6 @@ from engine.state import State
 
 
 def _site_prakriya_45(state: State) -> bool:
-    if not state.meta.get("prakriya_45_1_2_51_arm"):
-        return False
     if not state.meta.get("prakriya_45_lupi_yuktavad_note"):
         return False
     if not state.meta.get("prakriya_45_janapade_luk_context_note"):
@@ -43,8 +41,6 @@ def _site_prakriya_45(state: State) -> bool:
 
 
 def _site_prakriya_46(state: State) -> bool:
-    if not state.meta.get("prakriya_46_1_2_51_arm"):
-        return False
     if not state.meta.get("prakriya_46_lupi_yuktavad_note"):
         return False
     if not state.meta.get("prakriya_46_varaNAdi_luk_context_note"):
@@ -65,11 +61,9 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if _site_prakriya_45(state):
         state.samjna_registry["1.2.51_lupi_yuktavad_prakriya_45"] = True
-        state.meta.pop("prakriya_45_1_2_51_arm", None)
         return state
     if _site_prakriya_46(state):
         state.samjna_registry["1.2.51_lupi_yuktavad_prakriya_46"] = True
-        state.meta.pop("prakriya_46_1_2_51_arm", None)
         return state
     return state
 

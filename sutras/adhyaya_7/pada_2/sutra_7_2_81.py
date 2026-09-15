@@ -47,7 +47,6 @@ def act(state: State) -> State:
     t.varnas = [_mk("i"), _mk("y")] + list(t.varnas[1:])
     t.meta["upadesha_slp1"] = "".join(v.slp1 for v in t.varnas)
     t.meta["7_2_81_done"] = True
-    state.meta.pop("7_2_81_Atam_arm", None)
     state.samjna_registry["7.2.81_Ate_iy"] = True
     return state
 

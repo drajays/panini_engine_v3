@@ -56,8 +56,6 @@ def _find_upadhā_a(state: State):
 
 
 def _find_final_n_arm(state: State):
-    if not state.meta.get("6_4_134_an_final_n_lopa_arm"):
-        return None
     if len(state.terms) < 2:
         return None
     for ti in range(len(state.terms) - 1):

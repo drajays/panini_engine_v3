@@ -30,8 +30,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _site(state: State):
-    if not state.meta.get("P025_2_1_26_Nic_arm"):
-        return None
     if len(state.terms) != 2:
         return None
     a, b = state.terms[0], state.terms[1]
@@ -63,7 +61,6 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "Nic", "P025_Nic_pratyaya": True},
     )
     state.terms.append(nic)
-    state.meta["P025_2_1_26_Nic_arm"] = False
     return state
 
 

@@ -9,18 +9,17 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_eligibility import krt_insertion_eligible
 
 _GATE_KEY: str = "3_2_171_Adfgamahan_171"
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
+    if not krt_insertion_eligible(state, "3.2.171", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
         return False
-    # Structural: kṛt context — dhātu present, no kṛt pratyaya yet
-    if (any("dhatu" in t.tags for t in state.terms)
-            and not any("krt" in t.tags and "pratyaya" in t.tags
-                        for t in state.terms)):
-        return True
+    return not any(
+        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
+    )
 
 
 def act(state: State) -> State:

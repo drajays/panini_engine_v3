@@ -32,8 +32,6 @@ from sutras.adhyaya_1.pada_1.sutra_1_1_43 import TAG as SARVANAMASTHANA_TAG
 
 
 def _eligible(state: State) -> bool:
-    if not state.meta.get("prakriya_21_7_3_110_arm"):
-        return False
     if len(state.terms) < 2:
         return False
     ang = state.terms[-2]
@@ -63,7 +61,6 @@ def act(state: State) -> State:
     ang.meta["urN_rapara_pending"] = "r"
     ang.meta["urN_rapara_after_index"] = len(ang.varnas) - 1
     ang.meta["Rta_guna_7_3_110_done"] = True
-    state.meta.pop("prakriya_21_7_3_110_arm", None)
     return state
 
 

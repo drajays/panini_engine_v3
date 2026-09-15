@@ -46,41 +46,28 @@ def _gas_dhatu(state: State) -> tuple[int, int] | None:
     return None
 
 
-def _site_p033(state: State) -> bool:
-    if not state.meta.get("P033_6_4_100_gas_upadha_arm"):
+def _site_structural_lit(state: State) -> bool:
+    """*Liṭ* + *Gas* *dhātu* before a *hal*-initial or *atus*/*va*/*ma* tiṅ slice."""
+    if not state.meta.get("lakara_liT"):
         return False
     hit = _gas_dhatu(state)
     if hit is None:
         return False
     di, ni = hit
     dh, nxt = state.terms[di], state.terms[ni]
-    if dh.meta.get("P033_6_4_100_done"):
+    if dh.meta.get("6_4_100_structural_done"):
         return False
-    if not nxt.varnas or nxt.varnas[0].slp1 not in HAL:
+    if not nxt.varnas:
         return False
-    return True
-
-
-def _site_p034(state: State) -> bool:
-    if not state.meta.get("P034_6_4_100_gas_upadha_atus_arm"):
-        return False
-    hit = _gas_dhatu(state)
-    if hit is None:
-        return False
-    di, ni = hit
-    dh, nxt = state.terms[di], state.terms[ni]
-    if dh.meta.get("P034_6_4_100_done"):
-        return False
-    if not nxt.varnas or nxt.varnas[0].slp1 != "a":
-        return False
+    first = nxt.varnas[0].slp1
+    if first in HAL:
+        return True
     up = (nxt.meta.get("upadesha_slp1") or "").strip()
-    if not (nxt.meta.get("lit_atus") is True or up == "atus"):
-        return False
-    return True
+    return up in {"atus", "aTus", "us", "va", "ma", "th", "a"} or nxt.meta.get("lit_atus") is True
 
 
 def _site(state: State) -> bool:
-    return _site_p033(state) or _site_p034(state)
+    return _site_structural_lit(state)
 
 
 def cond(state: State) -> bool:
@@ -88,9 +75,7 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    p033 = _site_p033(state)
-    p034 = _site_p034(state)
-    if not (p033 or p034):
+    if not _site_structural_lit(state):
         return state
     hit = _gas_dhatu(state)
     if hit is None:
@@ -102,12 +87,7 @@ def act(state: State) -> State:
     if dh.varnas[0].slp1 != "G" or dh.varnas[1].slp1 != "a" or dh.varnas[2].slp1 != "s":
         return state
     del dh.varnas[1]
-    if p033:
-        dh.meta["P033_6_4_100_done"] = True
-        state.meta.pop("P033_6_4_100_gas_upadha_arm", None)
-    else:
-        dh.meta["P034_6_4_100_done"] = True
-        state.meta.pop("P034_6_4_100_gas_upadha_atus_arm", None)
+    dh.meta["6_4_100_structural_done"] = True
     return state
 
 

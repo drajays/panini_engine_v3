@@ -17,8 +17,6 @@ from engine.state import State
 
 
 def _site_prakriya_35_spfSa(state: State) -> bool:
-    if not state.meta.get("prakriya_35_1_3_1_arm"):
-        return False
     if not state.terms:
         return False
     t0 = state.terms[0]
@@ -49,7 +47,6 @@ def act(state: State) -> State:
         state.samjna_registry["1.3.1_prakriya_35_spfSa"] = True
         state.samjna_registry["1.3.1_bhuvadi_dhatu"] = True
         state.samjna_registry["dhatu"] = frozenset({"1.3.1"})
-        state.meta.pop("prakriya_35_1_3_1_arm", None)
         return state
     if _site_bhuvadi_generic(state):
         state.samjna_registry["1.3.1_bhuvadi_dhatu"] = True

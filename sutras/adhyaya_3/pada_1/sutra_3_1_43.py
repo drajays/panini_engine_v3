@@ -29,23 +29,32 @@ def _lakara_index(state: State) -> int | None:
     return None
 
 
+def _cli_insert_index(state: State) -> int | None:
+    """Before *luG* placeholder, or before *tiṅ* when *luG* was already resolved (*अघसत्*).
+    Note: lakāra coordinate not read here — caller's cond() gates on cli_luG_recipe."""
+    li = _lakara_index(state)
+    if li is not None:
+        return li
+    for i, t in enumerate(state.terms):
+        if t.kind != "pratyaya" or "tin_adesha_3_4_78" not in t.tags:
+            continue
+        if i > 0 and (state.terms[i - 1].meta.get("upadesha_slp1") or "").strip() == "cli":
+            return None
+        return i
+    return None
+
+
 def cond(state: State) -> bool:
     # Glass-box arming: pipelines must opt-in (CONSTITUTION: cond() may not read paradigm selectors).
     if not state.meta.get("cli_luG_recipe", False):
         return False
     if not any("dhatu" in t.tags for t in state.terms):
         return False
-    li = _lakara_index(state)
-    if li is None:
-        return False
-    # Already inserted?
-    if li > 0 and (state.terms[li - 1].meta.get("upadesha_slp1") == "cli"):
-        return False
-    return True
+    return _cli_insert_index(state) is not None
 
 
 def act(state: State) -> State:
-    li = _lakara_index(state)
+    li = _cli_insert_index(state)
     assert li is not None
     pr = Term(
         kind="pratyaya",

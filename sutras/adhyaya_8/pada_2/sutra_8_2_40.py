@@ -63,8 +63,6 @@ def _find_p001_d_pre_tripadi(state: State):
 
 def _find_p033_Gta(state: State):
     """P033 **8.2.40**: *jhazi* *t*→*d* (द्) after **G** (घ्)."""
-    if not state.meta.get("P033_8_2_40_G_to_d_arm"):
-        return None
     if len(state.terms) != 1:
         return None
     t = state.terms[0]
@@ -97,7 +95,6 @@ def act(state: State) -> State:
         t = state.terms[0]
         t.varnas[j3] = mk("d")
         t.meta["P033_8_2_40_Gta_done"] = True
-        state.meta.pop("P033_8_2_40_G_to_d_arm", None)
         return state
     j = _find(state)
     if j is None:

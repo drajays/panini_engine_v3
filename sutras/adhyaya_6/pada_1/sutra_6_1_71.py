@@ -1,6 +1,12 @@
 """
 6.1.71  ह्रस्वस्य पिति कृति तुक्  —  VIDHI (narrow: insert t before ya of lyap)
 
+Sources consulted:
+- ashtadhyayi.com data.txt row i=601071
+- Kāśikā: ह्रस्वस्य पिति कृति तुक्
+- Cross-validation: tests/unit/test_agaty_gam_lyap_acah_lesson.py (*tuk* after **6.4.38** *m*-lopa;
+  **1.1.57** does not block — lupta *hal* is not *ac*).
+
 Engine (narrow v3):
   For lyap outputs in ``split_prakriyas_11/P017.json`` we model *tuk* as insertion
   of a single ``t`` varṇa immediately before the ``ya`` residue (after it-lopa on
@@ -40,8 +46,6 @@ def _find_site(state: State):
 
 
 def _find_p041_agnicit_tuk(state: State):
-    if not state.meta.get("P041_6_1_71_tuk_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags or "P041_ci_dhatu" not in t.tags:
             continue
@@ -71,7 +75,6 @@ def act(state: State) -> State:
         t = state.terms[p041_i]
         t.varnas.append(mk("t"))
         t.meta["6_1_71_P041_tuk_done"] = True
-        state.meta.pop("P041_6_1_71_tuk_arm", None)
         return state
     hit = _find_site(state)
     if hit is None:

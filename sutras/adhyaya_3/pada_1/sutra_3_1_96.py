@@ -26,10 +26,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _wants_aniyar(state: State) -> bool:
-    if state.meta.get("krtya_recipe") == "anIyar":
-        return True
-    # backward-compat: legacy arm flag
-    return bool(state.meta.get("3_1_96_anIyar_arm"))
+    return state.meta.get("krtya_recipe") == "anIyar"
 
 
 def _matches_aniyar(state: State) -> bool:
@@ -45,17 +42,11 @@ def _matches_aniyar(state: State) -> bool:
 
 
 def _matches_tavyat(state: State) -> bool:
-    recipe = state.meta.get("krtya_recipe")
-    if recipe == "tavyat":
-        pass  # new coordination key path
-    elif not state.meta.get("prakriya_P002_3_1_96_tavyat_arm"):
+    if state.meta.get("krtya_recipe") != "tavyat":
         return False
     if not state.terms:
         return False
     if state.meta.get("prakriya_P002_3_1_96_tavyat_done"):
-        return False
-    # For the legacy arm path, require the P002 demo tag
-    if not recipe and not any("prakriya_P002_Bavitavyam_demo" in t.tags for t in state.terms):
         return False
     if any((t.meta.get("upadesha_slp1") or "").strip() == "tavyat" for t in state.terms):
         return False
@@ -80,7 +71,6 @@ def act(state: State) -> State:
         )
         state.terms.append(pr)
         state.meta["3_1_96_anIyar_done"] = True
-        state.meta.pop("3_1_96_anIyar_arm", None)
         state.meta.pop("krtya_recipe", None)
         return state
     if _matches_tavyat(state):
@@ -96,7 +86,6 @@ def act(state: State) -> State:
         )
         state.terms.append(pr)
         state.meta["prakriya_P002_3_1_96_tavyat_done"] = True
-        state.meta.pop("prakriya_P002_3_1_96_tavyat_arm", None)
         state.meta.pop("krtya_recipe", None)
         return state
     return state

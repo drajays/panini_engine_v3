@@ -43,8 +43,6 @@ from phonology     import mk
 
 
 def _matches_p042_jas_to_as(state: State) -> bool:
-    if not state.meta.get("P042_7_1_9_jas_to_as_arm"):
-        return False
     if len(state.terms) < 2:
         return False
     anga = state.terms[-2]
@@ -95,7 +93,6 @@ def act(state: State) -> State:
         pratyaya.meta["upadesha_slp1_original"] = "jas"
         pratyaya.meta["upadesha_slp1"] = "as"
         pratyaya.meta["P042_jas_to_as_done"] = True
-        state.meta.pop("P042_7_1_9_jas_to_as_arm", None)
         return state
     if not _matches(state):
         return state

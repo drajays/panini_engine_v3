@@ -23,9 +23,10 @@ Citation (CONSTITUTION Art. 14)
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
-from engine.state import State, Term
-from phonology    import mk
+from engine                import SutraType, SutraRecord, register_sutra
+from engine.krt_eligibility import tin_pratyaya_gate_eligible
+from engine.state          import State, Term
+from phonology             import mk
 
 _GATE_KEY: str = "3_4_103_yAsuw_103"
 
@@ -42,14 +43,7 @@ def _find_tin_index(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    # Structural path: yāsuṭ insertion in vidhi-liṅ before the tiṅ ādeśa.
-    # (The legacy gate-setter arm path is dead — no caller sets ``3_4_103_arm``
-    # and the gate it produced is read by no other sūtra.  Art.7: no arm read.)
-    if state.meta.get("yasut_recipe"):
-        if state.meta.get("3_4_103_yasut_done"):
-            return False
-        return _find_tin_index(state) is not None
-    return False
+    return tin_pratyaya_gate_eligible(state, "3.4.103", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:
@@ -62,7 +56,7 @@ def act(state: State) -> State:
         yasut = Term(
             kind="pratyaya",
             varnas=[mk("y"), mk("A"), mk("s")],
-            tags={"pratyaya", "yasut_agama"},
+            tags={"pratyaya", "yasut_agama", "kngiti"},
             meta={"upadesha_slp1": "yAsuT", "yasut_agama": True},
         )
         state.terms.insert(idx, yasut)

@@ -42,8 +42,6 @@ def _hit(state: State):
 
 def _hit_asmad_ns(state: State):
     """Asmad dvitīyā bahu: pada ends in 'ns' → drop final 's'."""
-    if not state.meta.get("8_2_23_asmad_ns_arm"):
-        return None
     if len(state.terms) != 1:
         return None
     vs = state.terms[0].varnas
@@ -55,8 +53,6 @@ def _hit_asmad_ns(state: State):
 
 
 def _hit_P022_final_v(state: State):
-    if not state.meta.get("8_2_23_dyauH_v_lopa_arm"):
-        return None
     if not state.tripadi_zone:
         return None
     if len(state.terms) < 2:
@@ -90,7 +86,6 @@ def act(state: State) -> State:
     if hit is not None:
         ti, vi = hit
         del state.terms[ti].varnas[vi]
-        state.meta["8_2_23_dyauH_v_lopa_arm"] = False
         state.samjna_registry["8.2.23_samyoganta_lopa"] = True
         return state
 
@@ -98,7 +93,6 @@ def act(state: State) -> State:
     ji_ns = _hit_asmad_ns(state)
     if ji_ns is not None:
         del state.terms[0].varnas[ji_ns]
-        state.meta["8_2_23_asmad_ns_arm"] = False
         state.samjna_registry["8.2.23_samyoganta_lopa_asmad"] = True
         return state
 

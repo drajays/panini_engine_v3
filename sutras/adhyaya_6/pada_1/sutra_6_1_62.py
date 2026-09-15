@@ -21,8 +21,6 @@ from phonology import mk
 
 
 def _matches(state: State) -> bool:
-    if not state.meta.get("prakriya_25_6_1_62_pararupa_arm"):
-        return False
     if len(state.terms) != 2:
         return False
     t0, t1 = state.terms[0], state.terms[1]
@@ -53,7 +51,6 @@ def act(state: State) -> State:
     del t1.varnas[0]
     t0.varnas.append(mk("o"))
     t0.meta["prakriya_25_6_1_62_done"] = True
-    state.meta.pop("prakriya_25_6_1_62_pararupa_arm", None)
     return state
 
 

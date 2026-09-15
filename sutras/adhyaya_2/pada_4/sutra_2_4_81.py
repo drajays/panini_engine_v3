@@ -16,8 +16,6 @@ from engine.state import State, Term
 
 
 def _site(state: State) -> bool:
-    if not state.meta.get("2_4_81_lit_luk_arm"):
-        return False
     if len(state.terms) < 3:
         return False
     a, b, c = state.terms[-3], state.terms[-2], state.terms[-1]
@@ -48,7 +46,6 @@ def act(state: State) -> State:
         meta={},
     )
     state.terms.append(merged)
-    state.meta.pop("2_4_81_lit_luk_arm", None)
     return state
 
 

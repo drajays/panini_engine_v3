@@ -30,8 +30,6 @@ def _sanadi_present(state: State) -> bool:
 
 
 def _find(state: State):
-    if not state.meta.get("7_4_79_sanyatah_abhyasa_arm"):
-        return None
     if not _sanadi_present(state):
         return None
     for ti, t in enumerate(state.terms):
@@ -57,7 +55,6 @@ def act(state: State) -> State:
     t = state.terms[ti]
     t.varnas[j] = mk("i")
     t.meta["7_4_79_done"] = True
-    state.meta["7_4_79_sanyatah_abhyasa_arm"] = False
     return state
 
 

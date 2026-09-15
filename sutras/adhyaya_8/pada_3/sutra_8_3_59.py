@@ -64,10 +64,14 @@ def _find_target(state: State):
         prev = t.varnas[i - 1]
         if prev.slp1 in _IN_KUK_PREV:
             return i
-        # Lookahead (… hal s IK …) for luṅ sic+Īṭ pattern
+        # Lookahead (… hal s IK hal…) for luṅ sic+Īṭ pattern (avātsīt).
+        # Guard: IK must NOT be word-final — that would match the 2sg suffix
+        # "si" pattern (d+s+i at word-end, e.g. laṭ ad 2sg "adsi") which must
+        # NOT get ṣatva.
         if prev.slp1 in HAL:
-            if i + 1 < len(t.varnas) and t.varnas[i + 1].slp1 in _IN_KUK_PREV:
-                # Exclude vowel-a before sīyuṭ-s (gasI context)
+            if (i + 1 < len(t.varnas)
+                    and t.varnas[i + 1].slp1 in _IN_KUK_PREV
+                    and i + 2 < len(t.varnas)):   # IK must not be word-final
                 return i
         # Scan back through semivowels to find iK (for suṭ-s after sīy-y)
         j = i - 1

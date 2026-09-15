@@ -28,7 +28,7 @@ from phonology import mk
 
 
 def _find(state: State) -> int | None:
-    if not state.meta.get("3_4_89_loT_arm"):
+    if state.meta.get("lakara") != "loT":
         return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":

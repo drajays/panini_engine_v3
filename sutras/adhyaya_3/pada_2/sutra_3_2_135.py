@@ -19,8 +19,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _matches(state: State) -> bool:
-    if not state.meta.get("prakriya_P003_3_2_135_tRn_arm"):
-        return False
     if state.meta.get("prakriya_P003_3_2_135_done"):
         return False
     if not state.terms:
@@ -51,7 +49,6 @@ def act(state: State) -> State:
     )
     state.terms.append(pr)
     state.meta["prakriya_P003_3_2_135_done"] = True
-    state.meta["prakriya_P003_3_2_135_tRn_arm"] = False
     return state
 
 

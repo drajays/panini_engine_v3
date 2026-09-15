@@ -34,8 +34,6 @@ def _abhyasa_index(state: State) -> int | None:
 
 
 def _site(state: State) -> bool:
-    if not state.meta.get("P037_7_4_93_sanvat_arm"):
-        return False
     i = _abhyasa_index(state)
     if i is None:
         return False
@@ -59,7 +57,6 @@ def act(state: State) -> State:
     t = state.terms[i]
     t.varnas[0] = mk("i")
     t.meta["P037_7_4_93_done"] = True
-    state.meta.pop("P037_7_4_93_sanvat_arm", None)
     return state
 
 

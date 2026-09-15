@@ -16,8 +16,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _find_tasi(state: State):
-    if not state.meta.get("6_4_62_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if t.meta.get("tAsi_vikaraṇa") and not t.meta.get("6_4_62_done"):
             return i
@@ -44,7 +42,6 @@ def act(state: State) -> State:
     )
     state.terms.insert(i, it_v)
     state.terms[i + 1].meta["6_4_62_done"] = True
-    state.meta.pop("6_4_62_arm", None)
     state.meta["7_2_115_karmani_lut_arm"] = True  # signal vṛddhi via ciṇvat
     state.samjna_registry["6.4.62_cinvat_it"] = True
     return state

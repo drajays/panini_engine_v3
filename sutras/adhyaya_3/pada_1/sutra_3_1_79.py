@@ -30,7 +30,7 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 # Post-it-lopa stems of tanādi roots currently exercised in this repository.
-_TANADI_STEMS: frozenset[str] = frozenset({"kf", "tan", "man", "san", "van", "kan"})
+_TANADI_STEMS: frozenset[str] = frozenset({"kf", "tan", "man", "san", "van", "kan", "kzaR"})
 
 
 def _find_dhatu_for_u(state: State) -> int | None:
@@ -71,7 +71,6 @@ def act(state: State) -> State:
     )
     state.terms.insert(di + 1, u)
     state.terms[di].meta["3_1_79_u_done"] = True
-    state.meta.pop("3_1_79_tanadi_u_arm", None)
     return state
 
 
@@ -89,3 +88,9 @@ SUTRA = SutraRecord(
 
 register_sutra(SUTRA)
 
+# SOI: tanAdi (gana 8) u — apavāda to śap; score 10 when gana matches, else 0.
+from engine.specificity_registry import register_specificity as _rs
+_rs("3.1.79", lambda state, _g=8: (
+    10 if next((t.meta.get("gana") for t in state.terms if "dhatu" in t.tags), None) == _g else 0
+))
+del _rs

@@ -10,16 +10,13 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.subanta_eligibility import sarvanama_paribhasha_gate_eligible
 
 _GATE_KEY: str = "1_4_107_asmad_uttama"
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    # Structural: relevant term present
-    if any(t.varnas for t in state.terms):
-        return True
+    return sarvanama_paribhasha_gate_eligible(state, _GATE_KEY)
 
 
 def act(state: State) -> State:

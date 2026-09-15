@@ -25,8 +25,6 @@ def _is_ac(ch: str) -> bool:
 
 
 def _matches(state: State) -> bool:
-    if not state.meta.get("3_1_78_snam_arm"):
-        return False
     if not state.terms:
         return False
     dh = state.terms[0]
@@ -77,3 +75,9 @@ SUTRA = SutraRecord(
 
 register_sutra(SUTRA)
 
+# SOI: rudhAdi (gana 7) śnam — apavāda to śap; score 10 when gana matches, else 0.
+from engine.specificity_registry import register_specificity as _rs
+_rs("3.1.78", lambda state, _g=7: (
+    10 if next((t.meta.get("gana") for t in state.terms if "dhatu" in t.tags), None) == _g else 0
+))
+del _rs

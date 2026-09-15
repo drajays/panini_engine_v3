@@ -29,8 +29,7 @@ from phonology import mk
 
 
 def _matches(state: State) -> bool:
-    if not state.meta.get("6_4_114_P026_arm"):
-        return False
+    """Structural: pada term with I+s+t or d+h+I phoneme cluster."""
     if len(state.terms) != 1:
         return False
     t = state.terms[0]
@@ -38,7 +37,13 @@ def _matches(state: State) -> bool:
         return False
     if t.meta.get("6_4_114_P026_done"):
         return False
-    return True
+    slp1s = [v.slp1 for v in t.varnas]
+    for i in range(len(slp1s) - 2):
+        if slp1s[i] == "I" and slp1s[i + 1] == "s" and slp1s[i + 2] == "t":
+            return True
+        if slp1s[i] == "d" and slp1s[i + 1] == "h" and slp1s[i + 2] == "I":
+            return True
+    return False
 
 
 def cond(state: State) -> bool:
@@ -62,7 +67,6 @@ def act(state: State) -> State:
             del vs[i + 1]
             break
     t.meta["6_4_114_P026_done"] = True
-    state.meta["6_4_114_P026_arm"] = False
     return state
 
 

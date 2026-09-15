@@ -17,8 +17,6 @@ from phonology.varna import mk as _mk
 
 
 def _find_tasi_s_before_e(state: State):
-    if not state.meta.get("7_4_52_arm"):
-        return None
     for i in range(len(state.terms) - 1):
         t1, t2 = state.terms[i], state.terms[i + 1]
         if not t1.meta.get("tAsi_vikaraṇa"):
@@ -44,7 +42,6 @@ def act(state: State) -> State:
     t = state.terms[i]
     t.varnas[-1] = _mk("h")  # s → h
     t.meta["7_4_52_done"] = True
-    state.meta.pop("7_4_52_arm", None)
     state.samjna_registry["7.4.52_ha_eti"] = True
     return state
 

@@ -9,16 +9,13 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_eligibility import tripadi_gate_eligible
 
 _GATE_KEY: str = "8_4_23_vamorvA_23"
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    # Structural: relevant term present
-    if any(t.varnas for t in state.terms):
-        return True
+    return tripadi_gate_eligible(state, "8.4.23", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:

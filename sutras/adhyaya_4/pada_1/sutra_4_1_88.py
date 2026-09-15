@@ -23,8 +23,6 @@ def _taddhita_adhikara_open(state: State) -> bool:
 
 
 def _site(state: State) -> bool:
-    if not state.meta.get("prakriya_42_4_1_88_arm"):
-        return False
     if not _taddhita_adhikara_open(state):
         return False
     if not state.meta.get("prakriya_42_dvigu_anapatye_note"):
@@ -46,7 +44,6 @@ def act(state: State) -> State:
     if not _site(state):
         return state
     state.samjna_registry["4.1.88_dvigor_lug_anapatye_prakriya_42"] = True
-    state.meta.pop("prakriya_42_4_1_88_arm", None)
     return state
 
 

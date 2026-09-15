@@ -29,8 +29,6 @@ from phonology import HAL
 
 
 def _find_sIyuw(state: State) -> int | None:
-    if not state.meta.get("7_2_79_sIyuw_s_lopa_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if "ling_sIyuw" not in t.tags:
             continue
@@ -44,8 +42,6 @@ def _find_sIyuw(state: State) -> int | None:
 
 def _find_yasut(state: State) -> int | None:
     """Find the yāsuṭ augment term ending in 's' for vidhi-liṅ s-lopa."""
-    if not state.meta.get("7_2_79_liG_yasut_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if "yasut_agama" not in t.tags:
             continue
@@ -67,7 +63,6 @@ def act(state: State) -> State:
         t = state.terms[idx]
         del t.varnas[0]
         t.meta["7_2_79_sIyuw_done"] = True
-        state.meta.pop("7_2_79_sIyuw_s_lopa_arm", None)
         return state
 
     idx = _find_yasut(state)
@@ -91,7 +86,6 @@ def act(state: State) -> State:
                 del t.varnas[-1]  # drop 'A' from [y,A] → [y]
                 state.samjna_registry["7.2.79_yasut_A_lopa"] = True
         t.meta["7_2_79_yasut_done"] = True
-        state.meta.pop("7_2_79_liG_yasut_arm", None)
         state.samjna_registry["7.2.79_yasut_s_lopa"] = True
         return state
 

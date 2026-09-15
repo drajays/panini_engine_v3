@@ -57,8 +57,6 @@ def _lrng_dhatu_ṛ_guna_index(state: State) -> int | None:
 
 
 def _p019_vft_guna_index(state: State) -> int | None:
-    if not state.meta.get("corrected_v2_P019_vRt_guNa_arm"):
-        return None
     return _lrng_dhatu_ṛ_guna_index(state)
 
 
@@ -154,7 +152,6 @@ def act(state: State) -> State:
         t = state.terms[ti]
         t.varnas[ui] = mk("o")
         t.meta["P018_B_guna_dyot_done"] = True
-        state.meta.pop("corrected_v2_P018_B_7_3_86_arm", None)
         return state
     ṛ_i = _lrng_dhatu_ṛ_guna_index(state)
     if ṛ_i is not None:

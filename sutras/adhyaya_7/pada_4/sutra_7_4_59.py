@@ -17,10 +17,8 @@ Narrow v3:
   • **P029** / **P030** / **P035**: ``…_abhyasa_hrasva_arm`` on the first ``abhyasa``-
     tagged ``Term`` with a *dīrgha* *ak* vowel → replace the **leftmost** such vowel
     with its *hrasva* mate.
-  • **P034**: ``state.meta['P034_7_4_59_abhyasa_pad_a_arm']`` and the *abhyāsa* is
-    exactly **j** → append **a**.
-  • **P036**: ``state.meta['P036_7_4_59_abhyasa_ne_to_ni_arm']`` and the *abhyāsa* is
-    exactly **ne** → **ni**.
+  • **P034**: abhyāsa is exactly **j** (single varṇa) → append **a**.
+  • **P036**: abhyāsa is exactly **ne** → **ni**.
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 74059 · ह्रस्वः
@@ -57,33 +55,18 @@ def _first_dirgha_ak_index(t) -> int | None:
     return None
 
 
-def _armed_dirgha_abhyasa(state: State) -> bool:
-    return bool(
-        state.meta.get("7_4_59_abhyasa_hrasva_arm")
-        or state.meta.get("P030_7_4_59_abhyasa_hrasva_arm")
-        or state.meta.get("P035_7_4_59_abhyasa_hrasva_arm")
-    )
-
-
 def _site_dirgha(state: State) -> bool:
-    if not _armed_dirgha_abhyasa(state):
-        return False
     i = _abhyasa_index(state)
     if i is None:
         return False
     t = state.terms[i]
-    if (
-        t.meta.get("7_4_59_abhyasa_hrasva_done")
-        or t.meta.get("P030_7_4_59_hrasva_done")
-        or t.meta.get("P035_7_4_59_hrasva_done")
-    ):
+    if t.meta.get("7_4_59_hrasva_done"):
         return False
     return _first_dirgha_ak_index(t) is not None
 
 
 def _site_p034(state: State) -> bool:
-    if not state.meta.get("P034_7_4_59_abhyasa_pad_a_arm"):
-        return False
+    """Abhyāsa is exactly ``j`` (single varṇa) — structural; j-abhyāsa only in jakzatuḥ."""
     i = _abhyasa_index(state)
     if i is None:
         return False
@@ -94,8 +77,7 @@ def _site_p034(state: State) -> bool:
 
 
 def _site_p036(state: State) -> bool:
-    if not state.meta.get("P036_7_4_59_abhyasa_ne_to_ni_arm"):
-        return False
+    """Abhyāsa is exactly ``ne`` — structural; ne-abhyāsa only in nināya."""
     i = _abhyasa_index(state)
     if i is None:
         return False
@@ -106,9 +88,7 @@ def _site_p036(state: State) -> bool:
 
 
 def _site_p037(state: State) -> bool:
-    """Teaching **P037**: *abhyāsa* ``Aw`` (*āṭ*) → laghu ``aw``."""
-    if not state.meta.get("P037_7_4_59_abhyasa_Aw_arm"):
-        return False
+    """Abhyāsa is exactly ``Aw`` — structural; Aw-abhyāsa only in āṭ context."""
     i = _abhyasa_index(state)
     if i is None:
         return False
@@ -133,7 +113,6 @@ def act(state: State) -> State:
         t = state.terms[i]
         t.varnas.append(mk("a"))
         t.meta["P034_7_4_59_hrasva_done"] = True
-        state.meta.pop("P034_7_4_59_abhyasa_pad_a_arm", None)
         return state
     if _site_p037(state):
         i = _abhyasa_index(state)
@@ -141,7 +120,6 @@ def act(state: State) -> State:
         t = state.terms[i]
         t.varnas[0] = mk("a")
         t.meta["P037_7_4_59_hrasva_done"] = True
-        state.meta.pop("P037_7_4_59_abhyasa_Aw_arm", None)
         return state
     if _site_p036(state):
         i = _abhyasa_index(state)
@@ -149,7 +127,6 @@ def act(state: State) -> State:
         t = state.terms[i]
         t.varnas[1] = mk("i")
         t.meta["P036_7_4_59_ne_to_ni_done"] = True
-        state.meta.pop("P036_7_4_59_abhyasa_ne_to_ni_arm", None)
         return state
     if not _site_dirgha(state):
         return state
@@ -160,15 +137,7 @@ def act(state: State) -> State:
     if j is None:
         return state
     t.varnas[j] = mk(_D2H[t.varnas[j].slp1])
-    if state.meta.get("P030_7_4_59_abhyasa_hrasva_arm"):
-        t.meta["P030_7_4_59_hrasva_done"] = True
-        state.meta.pop("P030_7_4_59_abhyasa_hrasva_arm", None)
-    elif state.meta.get("P035_7_4_59_abhyasa_hrasva_arm"):
-        t.meta["P035_7_4_59_hrasva_done"] = True
-        state.meta.pop("P035_7_4_59_abhyasa_hrasva_arm", None)
-    else:
-        t.meta["7_4_59_abhyasa_hrasva_done"] = True
-        state.meta.pop("7_4_59_abhyasa_hrasva_arm", None)
+    t.meta["7_4_59_hrasva_done"] = True
     return state
 
 

@@ -10,22 +10,23 @@ drop the halantyam T, leaving just ā (A).
   1du: [vahE]   → [āṭ][vahE]  → after IT-lopa → [A][vahE]
   1pl: [mahE]   → [āṭ][mahE]  → after IT-lopa → [A][mahE]
 
-Arm: state.meta["3_4_92_loT_karmani_arm"] must be True.
+Arms:
+  - ``3_4_92_loT_karmani_arm``: ātmanepada uttama (terminal *E* / *ai*).
+  - ``3_4_92_loT_uttama_arm``: parasmaipada uttama (*ni*, *vas*→*v*, *mas*→*m*).
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
-from engine.state import State, Term
-from phonology.varna import parse_slp1_upadesha_sequence
+from engine              import SutraType, SutraRecord, register_sutra
+from engine.state        import State, Term
+from engine.nimitta_predicates import is_tin_adesha
+from phonology.varna     import parse_slp1_upadesha_sequence
 
 
-def _find_uttama_tin(state: State):
-    if not state.meta.get("3_4_92_loT_karmani_arm"):
-        return None
+def _find_uttama_tin_karmani(state: State):
     for ti, t in enumerate(state.terms):
         if t.kind != "pratyaya":
             continue
-        if "tin_adesha_3_4_78" not in t.tags:
+        if not is_tin_adesha(t):
             continue
         if t.meta.get("3_4_92_done"):
             continue
@@ -35,12 +36,36 @@ def _find_uttama_tin(state: State):
     return None
 
 
+def _find_uttama_tin_parasmaipada(state: State):
+    """*Ad* *loṭ* clip: *ni* / post-**3.4.99** *vas*→*v*, *mas*→*m*."""
+    for ti, t in enumerate(state.terms):
+        if t.kind != "pratyaya":
+            continue
+        if not is_tin_adesha(t):
+            continue
+        if t.meta.get("3_4_92_done"):
+            continue
+        up = (t.meta.get("upadesha_slp1") or "").strip()
+        if up == "ni":
+            return ti
+        if up == "vas" and t.varnas and t.varnas[0].slp1 == "v":
+            return ti
+        if up == "mas" and t.varnas and t.varnas[0].slp1 == "m":
+            return ti
+    return None
+
+
 def cond(state: State) -> bool:
-    return _find_uttama_tin(state) is not None
+    return (
+        _find_uttama_tin_karmani(state) is not None
+        or _find_uttama_tin_parasmaipada(state) is not None
+    )
 
 
 def act(state: State) -> State:
-    ti = _find_uttama_tin(state)
+    ti = _find_uttama_tin_karmani(state)
+    if ti is None:
+        ti = _find_uttama_tin_parasmaipada(state)
     if ti is None:
         return state
     # Insert āṭ (A+T) before the tiṅ ādeśa term; pipeline will run 1.3.3+1.3.9
@@ -52,7 +77,6 @@ def act(state: State) -> State:
     )
     state.terms.insert(ti, at_term)
     state.terms[ti + 1].meta["3_4_92_done"] = True
-    state.meta.pop("3_4_92_loT_karmani_arm", None)
     state.samjna_registry["3.4.92_AT_uttama"] = True
     return state
 

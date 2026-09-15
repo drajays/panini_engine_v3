@@ -32,8 +32,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _site(state: State) -> int | None:
-    if not state.meta.get("P040_2_4_75_arm"):
-        return None
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags:
             continue
@@ -71,7 +69,6 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "Slu"},
     )
     state.terms.insert(i + 1, slu)
-    state.meta.pop("P040_2_4_75_arm", None)
     return state
 
 

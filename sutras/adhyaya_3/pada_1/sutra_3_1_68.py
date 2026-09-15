@@ -18,7 +18,7 @@ Citation (CONSTITUTION Art. 14)
               padaccheda: कर्तरि शप्
               anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31022: धातोः | 31067: सार्वधातुके
   Source #2 — Kāśikā 3.1.68 udāharaṇa:
-                पकारः स्वरार्थः
+                पकारः स्वरार्थः, शकारः सार्वधातुकसंज्ञार्थः
                 भवति
                 पचति
   Cross-check — surface pinned by: tests/test_bhavati_glassbox.py, tests/unit/test_aBavatAm_split_prakriyas.py, tests/unit/test_autonomous_vs_recipe.py
@@ -71,3 +71,9 @@ SUTRA = SutraRecord(
 )
 
 register_sutra(SUTRA)
+
+# SOI specificity score: śap is the general vikaraṇa (utsarga); apavādas 3.1.69+
+# are more specific, but śap beats the even-more-general yaK (3.1.67).
+from engine.specificity_registry import register_specificity as _rs
+_rs("3.1.68", lambda state: 5)
+del _rs

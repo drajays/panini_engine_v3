@@ -25,6 +25,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_eligibility import tripadi_gate_eligible
 from phonology.varna import parse_slp1_upadesha_sequence
 
 _GATE_KEY: str = "8_4_56_vAvasAne_56"
@@ -53,9 +54,7 @@ def _find_jas_final(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return _find_jas_final(state) is not None
+    return tripadi_gate_eligible(state, "8.4.56", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:

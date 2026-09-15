@@ -27,9 +27,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _wants_san(state: State) -> bool:
-    if state.meta.get("san_recipe") == "san":
-        return True
-    return bool(state.meta.get("3_1_7_san_arm"))
+    return state.meta.get("san_recipe") == "san"
 
 
 def cond(state: State) -> bool:
@@ -51,7 +49,6 @@ def act(state: State) -> State:
     )
     state.terms.append(san)
     state.meta.pop("san_recipe", None)
-    state.meta["3_1_7_san_arm"] = False
     return state
 
 

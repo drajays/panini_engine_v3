@@ -1,19 +1,20 @@
 """
 7.1.37  समासेऽनञ्पूर्वे क्त्वो ल्यप्  —  VIDHI (narrow: ktvā → lyap)
 
-Engine (glass-box):
-  When a ktvā-pratyaya is present and the recipe arms this substitution
-  (typically because an upasarga precedes), replace it with ``lyap``.
+Sources consulted:
+- ashtadhyayi.com data.txt row i=701037
+- Kāśikā: क्त्वा → ल्यप् (उपसर्ग-पूर्वे समासे)
+- Cross-validation: pipelines/prakftya_lyap_split_prakriyas.py,
+  tests/unit/test_agaty_gam_lyap_acah_lesson.py
 
-Representation convention:
-  - We model the upadeśa as ``lyap`` (initial l and final p are *it* via
-    **1.3.8** / **1.3.3**, lopa by **1.3.9**), leaving surface ``ya``.
+**1.1.56** extends *kṛt-pratyayatva*, *kit* it-saṃjñā (from *ktvā*), and *avyayatva* to *lyap*.
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from phonology.varna import parse_slp1_upadesha_sequence
+from phonology import mk
+from engine.sthanivat import AVYAYATVA, KRT_PRATYAYATVA, adesha_substitute_varnas
 
 
 def _find_ktva(state: State) -> int | None:
@@ -43,11 +44,22 @@ def act(state: State) -> State:
     if i is None:
         return state
     pr = state.terms[i]
-    pr.varnas = list(parse_slp1_upadesha_sequence("lyap"))
+    adesha_substitute_varnas(
+        pr,
+        "lyap",
+        state,
+        sutra_id="7.1.37",
+        gunadharmas=frozenset({KRT_PRATYAYATVA, AVYAYATVA}),
+    )
     pr.tags.add("upadesha")
-    pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "ktvA")
-    pr.meta["upadesha_slp1"] = "lyap"
     pr.meta["7_1_37_ktvA_to_lyap_done"] = True
+    if state.meta.get("7_1_37_insert_lyap_matu"):
+        for vi, v in enumerate(pr.varnas):
+            if v.slp1 == "l":
+                pr.varnas.insert(vi + 1, mk("m"))
+                pr.varnas[vi + 1].tags.add("it_marker")
+                break
+        state.meta.pop("7_1_37_insert_lyap_matu", None)
     state.meta["lyap_recipe"] = False
     return state
 

@@ -20,12 +20,15 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
+from engine.subanta_eligibility import tinanta_lakara_placeholder_eligible
 from phonology.varna import parse_slp1_upadesha_sequence
 
 AT_AGAMA_CONTEXT_TAG = "aT_agama_context"
 
 
 def cond(state: State) -> bool:
+    if not tinanta_lakara_placeholder_eligible(state, "laG"):
+        return False
     return not any(
         t.kind == "pratyaya" and (t.meta.get("upadesha_slp1") or "").strip() == "laG"
         for t in state.terms

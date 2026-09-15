@@ -35,7 +35,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 _PRATHAMA_MAP: dict[str, tuple[str, ...]] = {
     "qA" : ("ti", "ta"),         # tip→ti (parasmai) / ta (ātmanepada) → qA (ḍā)
     "rO" : ("tas", "AtAm"),      # tas (parasmai) / AtAm (ātmanepada) → rO (rau)
-    "ras": ("jhi", "Ja"),        # jhi (parasmai) / Ja (ātmanepada) → ras
+    "ras": ("jhi", "Ja", "tas"),  # jhi/Ja (3pl) or tas (3du peric. fut. clip)
 }
 
 

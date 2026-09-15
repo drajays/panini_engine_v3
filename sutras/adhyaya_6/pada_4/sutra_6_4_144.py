@@ -18,8 +18,6 @@ from engine.state import State
 
 
 def _eligible(state: State) -> bool:
-    if not state.meta.get("prakriya_18_6_4_144_attempt_arm"):
-        return False
     if "6_4_168_yat_prakritibhava_sAman" in state.samjna_registry:
         return False
     if not state.terms:

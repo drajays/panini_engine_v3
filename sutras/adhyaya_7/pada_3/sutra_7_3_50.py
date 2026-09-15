@@ -1,22 +1,18 @@
 """
 7.3.50  ठस्येकः  —  VIDHI (narrow: Tak → ika)
 
-The JSON ``split_prakriyas_11/P018.json`` uses **7.3.50** to realise the surface
-for the taddhita **ठक्** as **इक** (ika).
+Sources consulted:
+- ashtadhyayi.com data.txt row i=703050
+- Kāśikā: ठञ् → इक (संवत्सरिक-प्रयोगः)
+- Cross-validation: pipelines/dADikam_taddhita_split_prakriyas.py
 
-Engine (narrow):
-  - If a following taddhita pratyaya has ``upadesha_slp1 == 'Tak'``, replace that
-    pratyaya tape with ``ika`` and update ``upadesha_slp1`` to ``ika`` while
-    preserving ``upadesha_slp1_original``.
-
-This is intentionally narrow and does not attempt to cover the full *śāstra*
-inventory beyond the demo need.
+**1.1.56** extends *taddhita-pratyayatva* to *ika* for **7.2.117** *ādi-vṛddhi*.
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from phonology.varna import parse_slp1_upadesha_sequence
+from engine.sthanivat import TADDHITA_PRATYAYATVA, adesha_substitute_varnas
 
 
 def _find(state: State) -> int | None:
@@ -40,9 +36,13 @@ def act(state: State) -> State:
     if i is None:
         return state
     pr = state.terms[i]
-    pr.varnas = list(parse_slp1_upadesha_sequence("ika"))
-    pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "Tak")
-    pr.meta["upadesha_slp1"] = "ika"
+    adesha_substitute_varnas(
+        pr,
+        "ika",
+        state,
+        sutra_id="7.3.50",
+        gunadharmas=frozenset({TADDHITA_PRATYAYATVA}),
+    )
     pr.meta["7_3_50_Tak_to_ika_done"] = True
     return state
 

@@ -13,6 +13,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_eligibility import tin_pratyaya_gate_eligible
 
 _GATE_KEY: str = "3_4_116_liNASizi_116"
 
@@ -30,12 +31,7 @@ def _find_tin(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    # Phonological path: in āśīr-liṅ, mark the tiṅ ādeśa ārdhadhātuka.
-    # (The legacy gate-setter arm path is dead — no caller sets ``3_4_116_arm``
-    # and the gate it produced is read by no other sūtra.  Art.7: no arm read.)
-    if state.meta.get("ashir_liG"):
-        return _find_tin(state) is not None
-    return False
+    return tin_pratyaya_gate_eligible(state, "3.4.116", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:

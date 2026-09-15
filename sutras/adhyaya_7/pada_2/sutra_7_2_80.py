@@ -30,8 +30,6 @@ _GATE_KEY: str = "7_2_80_ato_80"
 
 def _find_yasut_ya(state: State) -> int | None:
     """Find the yāsuṭ term [y,A] preceded by a term ending in 'a'."""
-    if not state.meta.get("7_2_80_liG_yasut_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if "yasut_agama" not in t.tags:
             continue
@@ -63,7 +61,6 @@ def act(state: State) -> State:
         # [y, A] → [i, y]
         t.varnas = [mk("i"), mk("y")]
         t.meta["7_2_80_yasut_iy_done"] = True
-        state.meta.pop("7_2_80_liG_yasut_arm", None)
         state.samjna_registry["7.2.80_yasut_iya"] = True
         return state
 

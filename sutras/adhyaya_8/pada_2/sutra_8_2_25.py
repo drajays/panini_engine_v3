@@ -17,8 +17,6 @@ from engine.state import State
 
 
 def _find_s_before_D(state: State):
-    if not state.meta.get("8_2_25_arm"):
-        return None
     # Cross-term scan: tāsi-s before D-initial tiṅ
     for i in range(len(state.terms) - 1):
         t1, t2 = state.terms[i], state.terms[i + 1]
@@ -59,7 +57,6 @@ def act(state: State) -> State:
         t = state.terms[hit]
         del t.varnas[-1]  # drop final s
         t.meta["8_2_25_done"] = True
-    state.meta.pop("8_2_25_arm", None)
     state.samjna_registry["8.2.25_dhi_ca"] = True
     return state
 

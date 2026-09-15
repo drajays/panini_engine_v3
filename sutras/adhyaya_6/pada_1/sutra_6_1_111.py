@@ -17,8 +17,6 @@ from engine.state import State
 
 
 def _eligible(state: State) -> bool:
-    if not state.meta.get("6_1_111_nn_t_lopa_arm"):
-        return False
     if len(state.terms) != 2:
         return False
     a0, pr = state.terms[0], state.terms[1]
@@ -47,7 +45,6 @@ def act(state: State) -> State:
     del pr.varnas[0]
     pr.meta["6_1_111_t_lopa_done"] = True
     state.samjna_registry["6.1.111_nn_t_lopa"] = True
-    state.meta.pop("6_1_111_nn_t_lopa_arm", None)
     return state
 
 

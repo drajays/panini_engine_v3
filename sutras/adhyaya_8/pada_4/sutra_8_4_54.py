@@ -1,9 +1,11 @@
 """
-8.4.54  अभ्यासे चर्च  —  VIDHI (narrow demo)
+8.4.54  अभ्यासे चर्च  —  VIDHI
 
-Demo slice (विभिदतुः):
-  In the abhyāsa, replace a jhaś consonant with its jaś counterpart.
-  Here: भि- → बि- (B → b).
+In the abhyāsa (reduplicant), the initial jhal consonant becomes its carc
+(unaspirated / palatal-shift) equivalent:
+  - Voiced aspirates (jhaṣ) → voiced unaspirated (jaś): bh→b, dh→d, gh→j, jh→j
+  - Velar unvoiced → palatal unvoiced: k→c, kh→c
+  - Velar voiced → palatal voiced: g→j, gh→j
 
 Engine:
   - applies only to the first varṇa of an `abhyasa` term (after 7.4.60 trim).
@@ -27,7 +29,16 @@ from phonology import mk
 
 
 _JHAS_TO_JAS = {
-    "B": "b",  # bh -> b (narrow demo)
+    # Velar → palatal (kavar → cavar)
+    "k": "c",  # kṛ → cakṛ (cakāra)
+    "K": "c",  # kha-initial → ca (rare, e.g. khyā)
+    "g": "j",  # gam → jagāma
+    "G": "j",  # gha → ja
+    # Voiced aspirates → voiced unaspirated (jhaṣ → jaś)
+    "B": "b",  # bhū → babhūva
+    "D": "d",  # dhāv → dadhāva; dhṛ → dadhre
+    "G": "j",  # gh → j (above handles this too)
+    "J": "j",  # jha → ja (rare)
 }
 
 

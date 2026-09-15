@@ -17,8 +17,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _matches(state: State) -> bool:
-    if not state.meta.get("7_3_40_zuk_arm"):
-        return False
     if len(state.terms) < 2:
         return False
     dh = state.terms[0]

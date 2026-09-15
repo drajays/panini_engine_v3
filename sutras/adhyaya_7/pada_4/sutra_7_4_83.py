@@ -23,7 +23,7 @@ def _abhyasa_index(state: State) -> int | None:
 
 
 def _site(state: State) -> bool:
-    if not state.meta.get("P029_7_4_83_abhyasa_dirgha_arm"):
+    if not state.samjna_registry.get("6.1.9_sanyango"):
         return False
     i = _abhyasa_index(state)
     if i is None:
@@ -52,7 +52,6 @@ def act(state: State) -> State:
     t = state.terms[i]
     t.varnas[1] = mk("A")
     t.meta["P029_7_4_83_dirgha_done"] = True
-    state.meta.pop("P029_7_4_83_abhyasa_dirgha_arm", None)
     return state
 
 

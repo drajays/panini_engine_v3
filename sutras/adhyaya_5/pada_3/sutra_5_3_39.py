@@ -33,8 +33,6 @@ from sutras.adhyaya_1.pada_1.sutra_1_1_38 import META_ASARVA_VIBHAKTI_TADDHITA
 
 
 def _eligible(state: State) -> bool:
-    if not state.meta.get("prakriya_19_puras_5_3_39_arm"):
-        return False
     if len(state.terms) != 3:
         return False
     t0, t1, t2 = state.terms
@@ -65,7 +63,6 @@ def act(state: State) -> State:
     t0 = state.terms[0]
     t0.varnas = list(parse_slp1_upadesha_sequence("pur"))
     t0.meta["upadesha_slp1"] = "pur"
-    state.meta.pop("prakriya_19_puras_5_3_39_arm", None)
     return state
 
 

@@ -83,7 +83,9 @@ def _apply_uum_adesha(state: State) -> None:
 def cond(state: State) -> bool:
     if state.meta.get(UUM_ADESA_ARM_META):
         return bool(state.meta.get(ANARSHA_META_KEY))
-    return GATE_KEY not in state.paribhasha_gates
+    if _find_u_before_iti(state) is not None:
+        return GATE_KEY not in state.paribhasha_gates
+    return False
 
 
 def act(state: State) -> State:

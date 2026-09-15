@@ -71,21 +71,17 @@ def _find_target(state: State):
 
         # au / auT dvivacana path (prathamā and dvitīyā dvivacana)
         # enabled by arm flag "7_1_28_au_arm"
-        if state.meta.get("7_1_28_au_arm") and vs[0].slp1 == "O":
+        if vs[0].slp1 == "O":
             return (stem_idx, j)
 
         # jas (→ as after j-it lopa) path for bahuvacana prathamā
-        # enabled by arm flag "7_1_28_as_arm"
-        if state.meta.get("7_1_28_as_arm"):
-            upd = (t.meta.get("upadesha_slp1") or "").strip()
-            if upd == "jas" and len(vs) == 2 and vs[0].slp1 == "a" and vs[1].slp1 == "s":
-                return (stem_idx, j)
+        upd = (t.meta.get("upadesha_slp1") or "").strip()
+        if upd == "jas" and len(vs) == 2 and vs[0].slp1 == "a" and vs[1].slp1 == "s":
+            return (stem_idx, j)
 
         # Ne / ṅe (→ e after N-it lopa) dative singular path
-        # enabled by arm flag "7_1_28_e_arm"
-        if state.meta.get("7_1_28_e_arm"):
-            if len(vs) == 1 and vs[0].slp1 == "e":
-                return (stem_idx, j)
+        if len(vs) == 1 and vs[0].slp1 == "e":
+            return (stem_idx, j)
 
     return None
 

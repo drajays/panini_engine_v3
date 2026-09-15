@@ -86,7 +86,12 @@ def act(state: State) -> State:
         # Nvul (upadeśa): ण् + व् + उ + ल् — SLP1 ``R`` = ण् (see ``HAL_DEV``).
         varnas = [mk("R"), mk("v"), mk("u"), mk("l")]
         tags = {"pratyaya", "krt", "upadesha", "has_initial_n_it"}
-        pr = Term(kind="pratyaya", varnas=varnas, tags=tags, meta={"upadesha_slp1": upa})
+        pr = Term(
+            kind="pratyaya",
+            varnas=varnas,
+            tags=tags,
+            meta={"upadesha_slp1": upa, "it_markers": {"N", "l"}},
+        )
         state.terms.append(pr)
         return state
     if upa == "lyuw":

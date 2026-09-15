@@ -25,6 +25,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_eligibility import tin_pratyaya_gate_eligible
 
 _GATE_KEY: str = "3_4_99_nityaM_99"
 
@@ -54,7 +55,7 @@ def _find_ngit_s_term(state: State):
 
 
 def cond(state: State) -> bool:
-    return _find_ngit_s_term(state) is not None
+    return tin_pratyaya_gate_eligible(state, "3.4.99", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:

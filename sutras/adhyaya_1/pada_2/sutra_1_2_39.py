@@ -25,11 +25,11 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.subanta_eligibility import accent_paribhasha_gate_eligible
 
 
 def cond(state: State) -> bool:
-    """Idempotent guard — fire only if the svarita-saṃhitā gate is not yet set."""
-    return state.paribhasha_gates.get("1_2_39_svaritAt_saMhitAyAm") is not True
+    return accent_paribhasha_gate_eligible(state, "1_2_39_svaritAt_saMhitAyAm")
 
 
 def act(state: State) -> State:

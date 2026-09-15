@@ -27,8 +27,6 @@ from phonology    import mk
 
 
 def _find(state: State):
-    if not state.meta.get("7_4_66_urat_abhyasa_arm"):
-        return None
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags:
             continue

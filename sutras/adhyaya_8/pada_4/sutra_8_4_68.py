@@ -20,12 +20,13 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_eligibility import tripadi_gate_eligible
 
 _GATE_KEY: str = "8_4_68_a_68"
 
 
 def cond(state: State) -> bool:
-    return not state.paribhasha_gates.get(_GATE_KEY, False)
+    return tripadi_gate_eligible(state, "8.4.68", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:

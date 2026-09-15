@@ -2,9 +2,9 @@
 3.3.139  लिङ्निमित्ते लृङ् क्रियातिपत्तौ  —  VIDHI (narrow: *lṛṅ* placeholder)
 
 Two operational paths:
-  1. ``corrected_v2_P019_3_3_139_lRG_arm``: P019 path for *vṛt* dhātu only.
-  2. ``3_3_139_lRG_arm``: general glass-box path — attach *lṛṅ* for any dhātu
-     (counterfactual / *kriyātipatti* mood, e.g. bhū → abhavaṣyat).
+  1. P019 path — fires when dhātu upadeśa is ``vft`` (structural).
+  2. General path — fires when ``meta["lakara"] == "lRG"`` (structural; all lṛṅ pipelines
+     set this before calling the rule).
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 33139 · लिङ्निमित्ते लृङ् क्रियाऽतिपत्तौ
@@ -40,7 +40,7 @@ def _site_p019(state: State) -> bool:
 
 
 def _site_general(state: State) -> bool:
-    if not state.meta.get("3_3_139_lRG_arm"):
+    if (state.meta.get("lakara") or "").strip() != "lRG":
         return False
     if _already_has_lRG(state):
         return False
@@ -73,7 +73,6 @@ def act(state: State) -> State:
         return state
     if _site_general(state):
         _attach_lRG(state)
-        state.meta.pop("3_3_139_lRG_arm", None)
         return state
     return state
 

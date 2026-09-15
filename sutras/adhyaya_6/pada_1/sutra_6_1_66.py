@@ -1,17 +1,30 @@
 """
 6.1.66  हल्ङ्याब्भ्यो दीर्घात् सुतिपृक्तं हल्  —  VIDHI
 
-Five operational paths — all arm-free, phonemic/tag-based:
+Sources consulted:
+- ashtadhyayi.com data.txt row i=601066
+- Kāśikā: हल्ङ्याब्भ्यो दीर्घात् सुतिपृक्तं हल्; लोपो व्योर्वलि (यकारलोपार्थम्)
+- Cross-validation: tests/unit/test_kaNDUti_ktic_vareya_yalopa_lesson.py;
+  tests/unit/test_yAyAvar_yang_varac_purvavidhau_lesson.py
+
+Six operational paths — arm-free, phonemic/tag-based:
   1. Original narrow path: elide apṛkta s after long-vowel upadhā tṛc stem.
   2. vidhi-liṅ y-lopa: Term tagged "yasut_agama" ends in 'y' before HAL.
   3. āśīr-liṅ 2sg sip-derived s lopa: single 's' tiṅ-ādeśa after yasut_agama term.
   4. luṅ vuk v-lopa: Term with meta["vuk_6_4_88"] ends in 'v' before HAL.
   5. karmani vidhi-liṅ sīyuṭ y-lopa: Term tagged "ling_sIyuw" ends in 'y' before HAL.
+  6. *Lopo vyor vali* (pedagogy cites **6.1.66**): final ``y`` before ``v``/``l``/``r``/``t``
+     when **1.1.58** blocks *sthānivat* on **6.4.48** lupta ``a`` (*yāyāvar*, *kaṇḍūti*).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.vareya_1_1_58 import (
+    aca_sthanivat_blocks_yakaralopa,
+    is_vyor_vali_following,
+    vyor_vali_initial_of_following,
+)
 from phonology    import HAL
 from phonology.pratyahara import is_dirgha
 
@@ -119,6 +132,53 @@ def _find_karmani_iy(state: State):
     return None
 
 
+def _find_luG_a_before_hal_tin(state: State) -> int | None:
+    """*luṅ* *ghas* (2.4.37): isolated *aṅ*-``a`` before HAL-initial *tiṅ* (``ant``, ``am``, …)."""
+    if (state.meta.get("lakara") or "").strip() != "luG":
+        return None
+    has_ghas = any(
+        "dhatu" in t.tags and "".join(v.slp1 for v in t.varnas) in {"Gas", "ghas"}
+        for t in state.terms
+    )
+    if not has_ghas:
+        return None
+    for i, t in enumerate(state.terms):
+        if t.kind != "pratyaya" or len(t.varnas) != 1:
+            continue
+        if t.varnas[0].slp1 != "a":
+            continue
+        if i + 1 >= len(state.terms):
+            continue
+        nxt = state.terms[i + 1]
+        if nxt.kind != "pratyaya" or not nxt.varnas:
+            continue
+        nflat = "".join(v.slp1 for v in nxt.varnas)
+        if nflat in {"ant", "am"} or nflat.startswith("ant"):
+            return i
+    return None
+
+
+def _find_vyor_vali_y(state: State) -> int | None:
+    """*Vyor vali*: ``y``-lopa before *val* / *l* / *r* / *t* (incl. *ktic* → *ti*)."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags and "anga" not in t.tags:
+            continue
+        if t.meta.get("6_1_66_vyor_vali_y_lopa_done"):
+            continue
+        if aca_sthanivat_blocks_yakaralopa(state, t):
+            continue
+        if not t.varnas or t.varnas[-1].slp1 != "y":
+            continue
+        nxt = state.terms[i + 1]
+        if not nxt.varnas:
+            continue
+        ini = vyor_vali_initial_of_following(nxt)
+        if ini is None or not is_vyor_vali_following(ini):
+            continue
+        return i
+    return None
+
+
 def _find_siyuw_y(state: State):
     """karmani vidhi-liṅ: drop y from sīyuṭ-remnant [I,y] (ling_sIyuw term)
     before HAL-initial next term."""
@@ -148,10 +208,22 @@ def cond(state: State) -> bool:
         or _find_vuk_v(state) is not None
         or _find_karmani_iy(state) is not None
         or _find_siyuw_y(state) is not None
+        or _find_luG_a_before_hal_tin(state) is not None
+        or _find_vyor_vali_y(state) is not None
     )
 
 
 def act(state: State) -> State:
+    idx = _find_vyor_vali_y(state)
+    if idx is not None:
+        t = state.terms[idx]
+        del t.varnas[-1]
+        t.meta["6_1_66_vyor_vali_y_lopa_done"] = True
+        base = "".join(v.slp1 for v in t.varnas)
+        t.meta["upadesha_slp1"] = base
+        state.samjna_registry["6.1.66_vyor_vali_y_lopa"] = True
+        return state
+
     if _find_tfc_aprkta(state) is not None:
         state.terms.pop()
         state.meta["apṛkta_hal_lopa_6_1_66_done"] = True
@@ -198,6 +270,12 @@ def act(state: State) -> State:
         state.samjna_registry["6.1.66_siyuw_y_lopa"] = True
         return state
 
+    idx = _find_luG_a_before_hal_tin(state)
+    if idx is not None:
+        state.terms.pop(idx)
+        state.samjna_registry["6.1.66_luG_a_before_hal_tin"] = True
+        return state
+
     return state
 
 
@@ -212,7 +290,8 @@ SUTRA = SutraRecord(
         "विधि-लिङ्-पथ: यासुट्-अवशेष [i,y] में य्-लोपः हल्-पूर्वे। "
         "आशीर्-लिङ्-पथ (२मध्यम-एक): यासुट्-पश्चात् सिप्-जन्य-स्-लोपः। "
         "कर्मणि-पथ: ७.२.८१-जन्य इय् में य्-लोपः हल्-पूर्वे (इय्ते→इते)। "
-        "कर्मणि-विधिलिङ्-पथ: सीयुट्-अवशेष [I,y] में य्-लोपः हल्-पूर्वे।"
+        "कर्मणि-विधिलिङ्-पथ: सीयुट्-अवशेष [I,y] में य्-लोपः हल्-पूर्वे। "
+        "व्योः-वलि-पथ: य्-लोपः व/ल/र/त्-पूर्वम् (**1.1.58**+**6.4.48** पाठ)।"
     ),
     anuvritti_from = ("6.1.65",),
     cond           = cond,

@@ -43,8 +43,7 @@ def _find_zt(state: State):
 
 
 def _find_sto_t_ch(state: State):
-    if not state.meta.get("8_4_40_sto_tCh_arm"):
-        return None
+    """t+C (→c) in tripadi. t immediately before C is a structural signal."""
     if not (state.tripadi_zone or state.meta.get("8_4_40_pre_tripadi_arm")):
         return None
     if not state.terms:
@@ -75,7 +74,6 @@ def act(state: State) -> State:
     t0 = state.terms[0]
     t0.varnas[idx] = mk("c")
     t0.meta["8_4_40_sto_done"] = True
-    state.meta.pop("8_4_40_sto_tCh_arm", None)
     return state
 
 

@@ -2,12 +2,13 @@
 3.1.33  स्यतासी लृलुटोः  —  VIDHI (narrow)
 
 Glass-box paths:
-  • ``3_1_33_lrt_sy_arm``: lṛṭ — insert *sya* vikaraṇa (s+y+a) after the
-    dhātu, before the tiṅ ādeśa.  The final 'a' is the inherent vowel of 'ya'
-    and is essential for 7.3.101 (ato dīrgho yañi) in uttama forms.
+  • lṛṭ (``meta["lakara"] == "lRT"``): insert *sya* vikaraṇa (s+y+a) after
+    the dhātu, before the tiṅ ādeśa.  The final 'a' is essential for 7.3.101
+    (ato dīrgho yañi) in uttama forms.
   • ``tasi_luT_recipe``: luṭ — insert *tāsi* vikaraṇa before luṭ placeholder.
   • ``luN_sy_recipe``: luṅ P019 — insert *sy* (no 'a') before
     existing 'ti' in the *vṛt* context.
+  • lṛṅ (``meta["lakara"] == "lRG"``): insert *sya* vikaraṇa after dhātu.
 
 ``cond`` is mechanically blind to *puruṣa* / *vacana* (CONSTITUTION Art. 2).
 
@@ -67,7 +68,7 @@ def _luT_index(state: State) -> int | None:
 
 def _lrt_dhatu_index(state: State) -> int | None:
     """For lṛṭ: find dhātu position to insert *sya* immediately after it."""
-    if not state.meta.get("3_1_33_lrt_sy_arm"):
+    if (state.meta.get("lakara") or "").strip() != "lRT":
         return None
     if state.meta.get("3_1_33_lrt_sy_done"):
         return None
@@ -79,7 +80,7 @@ def _lrt_dhatu_index(state: State) -> int | None:
 
 def _lRG_dhatu_index(state: State) -> int | None:
     """For lṛṅ: find dhātu position to insert *sya* immediately after it."""
-    if not state.meta.get("3_1_33_lRG_sy_arm"):
+    if (state.meta.get("lakara") or "").strip() != "lRG":
         return None
     if state.meta.get("3_1_33_lRG_sy_done"):
         return None
@@ -143,7 +144,6 @@ def act(state: State) -> State:
         )
         state.terms.insert(j_lrt, sya)
         state.meta["3_1_33_lrt_sy_done"] = True
-        state.meta.pop("3_1_33_lrt_sy_arm", None)
         return state
     j_lRG = _lRG_dhatu_index(state)
     if j_lRG is not None:
@@ -156,7 +156,6 @@ def act(state: State) -> State:
         )
         state.terms.insert(j_lRG, sya)
         state.meta["3_1_33_lRG_sy_done"] = True
-        state.meta.pop("3_1_33_lRG_sy_arm", None)
         return state
     j = _luT_index(state)
     if j is None:

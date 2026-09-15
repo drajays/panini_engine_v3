@@ -25,8 +25,6 @@ from engine.state import State
 
 
 def _witness(state: State) -> bool:
-    if not state.meta.get("P041_3_2_91_arm"):
-        return False
     has_agni = any((t.meta.get("upadesha_slp1") or "").strip() == "agni" for t in state.terms)
     has_ci = any(
         "dhatu" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() == "ci"
@@ -44,7 +42,6 @@ def act(state: State) -> State:
     if not _witness(state):
         return state
     state.samjna_registry["3.2.91_agnau_ce_P041"] = True
-    state.meta.pop("P041_3_2_91_arm", None)
     return state
 
 

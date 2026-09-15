@@ -26,6 +26,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_eligibility import tin_pratyaya_gate_eligible
 from phonology    import mk
 
 _GATE_KEY: str = "3_4_108_Jerjus_108"
@@ -61,7 +62,7 @@ def _find_jhi_tin(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    return _find_jhi_tin(state) is not None
+    return tin_pratyaya_gate_eligible(state, "3.4.108", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:

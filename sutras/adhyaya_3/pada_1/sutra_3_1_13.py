@@ -53,8 +53,6 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "kyaz"},
     )
     state.terms.append(ky)
-    state.meta.pop("corrected_v2_P016_3_1_13_arm", None)
-    state.meta.pop("corrected_v2_P017_3_1_13_arm", None)
     return state
 
 

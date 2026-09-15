@@ -30,8 +30,6 @@ from engine.state import State
 
 
 def _target_index(state: State) -> int | None:
-    if not state.meta.get("prakriya_22_kvip_residue_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if "krt" not in t.tags:
             continue
@@ -52,7 +50,6 @@ def act(state: State) -> State:
     if j is None:
         return state
     state.terms[j].varnas.clear()
-    state.meta.pop("prakriya_22_kvip_residue_arm", None)
     return state
 
 

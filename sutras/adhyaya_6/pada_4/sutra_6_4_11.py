@@ -48,8 +48,6 @@ def _eligible_cetan_path(state: State) -> bool:
 
 
 def _eligible_hotr_prakriya_21(state: State) -> bool:
-    if not state.meta.get("prakriya_21_6_4_11_arm"):
-        return False
     if len(state.terms) < 2:
         return False
     ang = state.terms[-2]
@@ -95,7 +93,6 @@ def act(state: State) -> State:
         rep = long_map.get(v, v)
         ang.varnas[i] = mk(rep)
         ang.meta["upadha_dirgha_6_4_11_hotr_done"] = True
-        state.meta.pop("prakriya_21_6_4_11_arm", None)
         return state
     return state
 

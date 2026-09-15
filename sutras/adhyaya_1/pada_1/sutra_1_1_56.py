@@ -4,9 +4,9 @@
 "The substitute (ādeśa) behaves like the substituend (sthānin) —
  except for rules involving al (phoneme-based substitution itself)."
 
-PARIBHASHA sets an interpretive gate.  Other sūtras consult
-state.paribhasha_gates['sthanivadbhava'] to decide whether to treat
-an ādeśa as its sthānin for scope purposes.
+PARIBHASHA sets an interpretive gate.  Substitution sūtras call
+``engine.sthanivat.adesha_substitute_varnas`` to copy the eight
+*anal-āśrita* *guṇa-dharma* types onto the *ādeśa* when the gate is on.
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State

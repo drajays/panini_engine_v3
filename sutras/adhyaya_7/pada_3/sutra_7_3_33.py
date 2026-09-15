@@ -31,8 +31,6 @@ from phonology import mk
 
 
 def _matches(state: State) -> bool:
-    if not state.meta.get("prakriya_24_7_3_33_arm"):
-        return False
     if len(state.terms) != 2:
         return False
     anga, pr = state.terms[0], state.terms[1]
@@ -61,7 +59,6 @@ def act(state: State) -> State:
     anga = state.terms[0]
     anga.varnas.append(mk("y"))
     anga.meta["7_3_33_yuk_inserted"] = True
-    state.meta.pop("prakriya_24_7_3_33_arm", None)
     return state
 
 

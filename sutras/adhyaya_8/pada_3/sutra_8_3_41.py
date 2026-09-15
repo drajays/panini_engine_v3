@@ -26,8 +26,6 @@ from phonology import mk
 def _find(state: State):
     if not state.tripadi_zone:
         return None
-    if not state.meta.get("prakriya_40_8_3_41_arm"):
-        return None
     if state.meta.get("prakriya_40_8_3_41_done"):
         return None
     for t in state.terms:
@@ -53,7 +51,6 @@ def act(state: State) -> State:
         return state
     t, i = hit
     t.varnas[i] = mk("z")
-    state.meta["prakriya_40_8_3_41_arm"] = False
     state.meta["prakriya_40_8_3_41_done"] = True
     return state
 

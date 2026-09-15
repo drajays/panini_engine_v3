@@ -17,8 +17,6 @@ from engine.state import State
 
 
 def _site(state: State) -> bool:
-    if not state.meta.get("prakriya_28_2_1_2_arm"):
-        return False
     if len(state.terms) < 2:
         return False
     t0, t1 = state.terms[0], state.terms[1]
@@ -43,7 +41,6 @@ def act(state: State) -> State:
     if not _site(state):
         return state
     state.samjna_registry["2.1.2_subAmantrite_parA~ggavat_28"] = frozenset({"meGAtithe", "manmahe"})
-    state.meta.pop("prakriya_28_2_1_2_arm", None)
     return state
 
 

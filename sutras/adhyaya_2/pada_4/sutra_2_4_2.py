@@ -12,12 +12,13 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.subanta_eligibility import samasa_lakara_gate_eligible
 
 _GATE = "2_4_2_dvandva_pranituryasena_ekavacana"
 
 
 def cond(state: State) -> bool:
-    return state.paribhasha_gates.get(_GATE) is not True
+    return samasa_lakara_gate_eligible(state, _GATE)
 
 
 def act(state: State) -> State:

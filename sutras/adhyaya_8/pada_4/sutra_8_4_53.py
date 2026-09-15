@@ -34,12 +34,12 @@ _JHAL_TO_JAS = {
 
 
 def _find_p033_Gd(state: State):
-    if not state.meta.get("P033_8_4_53_jashtva_arm"):
-        return None
     if len(state.terms) != 1:
         return None
     t = state.terms[0]
     if "pada" not in t.tags or t.meta.get("P033_8_4_53_Gd_done"):
+        return None
+    if not t.meta.get("P033_8_2_40_Gta_done"):
         return None
     vs = t.varnas
     for i in range(len(vs) - 1):
@@ -68,8 +68,6 @@ def _find_p001_d_pre_tripadi(state: State):
     **P001-D**: after pre–**8.2.1** **8.2.40**, ``iDDa`` — run **8.4.53** on the
     first ``D`` before *jhac* ``D`` while ``tripadi_zone`` is still false.
     """
-    if not state.meta.get("corrected_v2_P001_D_pre_tripadi_cluster_arm"):
-        return None
     if state.tripadi_zone:
         return None
     if len(state.terms) != 1:
@@ -102,14 +100,12 @@ def act(state: State) -> State:
         t = state.terms[0]
         t.varnas[ipd] = mk(_JHAL_TO_JAS[t.varnas[ipd].slp1])
         t.meta["corrected_v2_P001_D_pre_8453_done"] = True
-        state.meta.pop("corrected_v2_P001_D_pre_tripadi_cluster_arm", None)
         return state
     ip = _find_p033_Gd(state)
     if ip is not None:
         t = state.terms[0]
         t.varnas[ip] = mk(_JHAL_TO_JAS[t.varnas[ip].slp1])
         t.meta["P033_8_4_53_Gd_done"] = True
-        state.meta.pop("P033_8_4_53_jashtva_arm", None)
         return state
     i = _find(state)
     if i is None:

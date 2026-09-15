@@ -1,6 +1,11 @@
 """
 3.4.79  टित आत्मनेपदानां टेरे  —  VIDHI
 
+Sources consulted:
+- ashtadhyayi.com data.txt row i=304079
+- Kāśikā: टित आत्मनेपदानां टेरे (प्रत्ययस्थ-इकारस्य ए-आदेशः)
+- Cross-validation: tests/unit/test_dIdhye_dIdhi_lat_parasmin_lesson.py
+
 For every ātmanepada tiṅ ādeśa (tagged tin_adesha_3_4_78), replace the
 ṭi (last vowel + whatever follows it) with the single vowel `e`.
 
@@ -68,6 +73,7 @@ def act(state: State) -> State:
     # Update upadesha to reflect new form
     t.meta["upadesha_slp1"] = "".join(v.slp1 for v in t.varnas)
     t.meta["3_4_79_ter_done"] = True
+    t.meta["3_4_79_sva_nimitta_adesha"] = True
     return state
 
 

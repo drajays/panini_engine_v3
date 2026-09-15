@@ -28,8 +28,6 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _site(state: State):
-    if not state.meta.get("P027_5_4_154_kap_arm"):
-        return None
     if state.meta.get("P027_5_4_154_kap_done"):
         return None
     if not state.samjna_registry.get("2.2.24_anekam_anyapadartha"):
@@ -63,7 +61,6 @@ def act(state: State) -> State:
     )
     state.terms.append(kap)
     state.meta["P027_5_4_154_kap_done"] = True
-    state.meta.pop("P027_5_4_154_kap_arm", None)
     return state
 
 

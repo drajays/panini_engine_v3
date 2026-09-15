@@ -1,52 +1,62 @@
 """
-7.2.103  किमः कः  —  VIDHI (narrow for P028)
+7.2.103  किमः कः  —  VIDHI
 
-P028: in ``kim`` + nominative dual sup ``O`` (au), replace the prātipadika
-``kim`` with ``ka`` so sandhi yields **kO**.
+Sources consulted:
+- ashtadhyayi.com data.txt row i=702103
+- Kāśikā: किम् + औ → क + औ (कौ)
+- Cross-validation: pipelines/kO_staH_vakya.py; sthanivat_anal_ashrita_lesson.py
 
-v3 narrow slice:
-  • recipe arms ``state.meta['P028_7_2_103_kim_kah_arm']``
-  • expects term[0] prātipadika with upadeśa snapshot ``kim``
-  • expects a following sup pratyaya (from **4.1.2**) whose tape begins with ``O``
+*Kim* is replaced by *ka* before a *sup* beginning with *au*; **1.1.56** extends *aṅgatva*
+so **7.3.102** *sūpi ca* can lengthen the *ādeśa* *aṅga*.
 """
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from phonology.varna import parse_slp1_upadesha_sequence
+from engine.sthanivat import ANGATVA, adesha_substitute_varnas
 
 
-def _site(state: State) -> bool:
-    if not state.meta.get("P028_7_2_103_kim_kah_arm"):
-        return False
+def _site(state: State) -> int | None:
     if len(state.terms) < 2:
-        return False
+        return None
     a, b = state.terms[0], state.terms[1]
     if "prātipadika" not in a.tags:
-        return False
+        return None
     if (a.meta.get("upadesha_slp1") or "").strip() != "kim":
-        return False
+        return None
     if b.kind != "pratyaya" or "sup" not in b.tags:
-        return False
-    if not b.varnas or b.varnas[0].slp1 != "O":
-        return False
+        return None
+    if not b.varnas:
+        return None
+    first = b.varnas[0].slp1
+    up = (b.meta.get("upadesha_slp1") or "").strip()
+    # Nom. du. ``O`` (कौ) or inst. du. ``ByAm`` (काभ्याम्) per lesson / P028.
+    if first not in {"O", "B"} and up not in {"O", "ByAm"}:
+        return None
     if a.meta.get("7_2_103_kim_kah_done"):
-        return False
-    return True
+        return None
+    return 0
 
 
 def cond(state: State) -> bool:
-    return _site(state)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    if not _site(state):
+    i = _site(state)
+    if i is None:
         return state
-    a = state.terms[0]
-    a.varnas = list(parse_slp1_upadesha_sequence("ka"))
-    a.meta["upadesha_slp1"] = "ka"
+    a = state.terms[i]
+    if "anga" not in a.tags:
+        a.tags.add("anga")
+    adesha_substitute_varnas(
+        a,
+        "ka",
+        state,
+        sutra_id="7.2.103",
+        gunadharmas=frozenset({ANGATVA}),
+    )
     a.meta["7_2_103_kim_kah_done"] = True
-    state.meta.pop("P028_7_2_103_kim_kah_arm", None)
     return state
 
 
@@ -56,11 +66,10 @@ SUTRA = SutraRecord(
     text_slp1="kimaH kaH",
     text_dev="किमः कः",
     padaccheda_dev="किमः / कः",
-    why_dev="किम्-शब्दस्य क-आदेशः (P028 — किम्+औ → कौ)।",
+    why_dev="किम्-शब्दस्य क-आदेशः; स्थानिवद्भावेन अङ्गत्वम् (७.३.१०२ सुपि च)।",
     anuvritti_from=("7.2.102",),
     cond=cond,
     act=act,
 )
 
 register_sutra(SUTRA)
-

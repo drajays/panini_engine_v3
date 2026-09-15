@@ -22,7 +22,7 @@ from phonology.varna import mk as _mk
 
 
 def _find_target(state: State):
-    if not state.meta.get("3_4_93_loT_karmani_arm"):
+    if not any("yak" in t.tags for t in state.terms):
         return None
     for ti, t in enumerate(state.terms):
         if t.kind != "pratyaya":
@@ -53,7 +53,6 @@ def act(state: State) -> State:
     t.varnas = list(t.varnas[:-1]) + [_mk("E")]
     t.meta["upadesha_slp1"] = "".join(v.slp1 for v in t.varnas)
     t.meta["3_4_93_done"] = True
-    state.meta.pop("3_4_93_loT_karmani_arm", None)
     state.samjna_registry["3.4.93_eta_ai"] = True
     return state
 

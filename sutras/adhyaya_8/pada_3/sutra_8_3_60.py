@@ -28,7 +28,27 @@ from engine.state import State
 from phonology import mk
 
 
+def _find_lit_ghas_s(state: State):
+    """*Liṭ* *ghas* pada: *s* of *ghas*/*ghs* before following *hal* → *ṣ* (*z*)."""
+    if not state.meta.get("lakara_liT"):
+        return None
+    if len(state.terms) != 1 or "pada" not in state.terms[0].tags:
+        return None
+    t = state.terms[0]
+    if t.meta.get("8_3_60_satva_done"):
+        return None
+    vs = t.varnas
+    for i in range(len(vs) - 1):
+        if vs[i].slp1 != "s":
+            continue
+        if i > 0 and vs[i - 1].slp1 in {"G", "g", "h"}:
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
+    if _find_lit_ghas_s(state) is not None:
+        return True
     if not state.meta.get("shasi_vasi_recipe"):
         return False
     if not state.terms:
@@ -46,7 +66,12 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    if not cond(state):
+    i = _find_lit_ghas_s(state)
+    if i is not None:
+        state.terms[0].varnas[i] = mk("z")
+        state.terms[0].meta["8_3_60_satva_done"] = True
+        return state
+    if not state.meta.get("shasi_vasi_recipe"):
         return state
     dh = state.terms[0]
     dh.varnas[-1] = mk("z")

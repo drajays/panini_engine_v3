@@ -30,8 +30,6 @@ from phonology import mk
 
 
 def _eligible(state: State) -> bool:
-    if not state.meta.get("prakriya_20_3_1_134_arm"):
-        return False
     if not state.meta.get("prakriya_20_nandi_pacadi"):
         return False
     if len(state.terms) != 1:
@@ -64,7 +62,6 @@ def act(state: State) -> State:
         },
     )
     state.terms.append(pr)
-    state.meta.pop("prakriya_20_3_1_134_arm", None)
     return state
 
 

@@ -23,10 +23,6 @@ def _taddhita_adhikara_open(state: State) -> bool:
 
 
 def _site(state: State) -> bool:
-    armed_43 = bool(state.meta.get("prakriya_43_5_1_28_arm"))
-    armed_11 = bool(state.meta.get("prakriya_P011_5_1_28_arm"))
-    if not (armed_43 or armed_11):
-        return False
     if not _taddhita_adhikara_open(state):
         return False
     note_ok = bool(state.meta.get("prakriya_43_dvigu_Tak_luk_note")) or bool(
@@ -56,8 +52,6 @@ def act(state: State) -> State:
     if not _site(state):
         return state
     state.samjna_registry["5.1.28_advigu_Tak_luk_prakriya_43"] = True
-    state.meta.pop("prakriya_43_5_1_28_arm", None)
-    state.meta.pop("prakriya_P011_5_1_28_arm", None)
     return state
 
 

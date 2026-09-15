@@ -20,15 +20,13 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_eligibility import krt_insertion_eligible
 
 _GATE_KEY: str = "3_3_13_lfw_13"
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if any("dhatu" in t.tags for t in state.terms):
-        return True
+    return krt_insertion_eligible(state, "3.3.13", gate_key=_GATE_KEY, adhikara_id="3.1.1")
     return bool(state.meta.get("lfT_recipe"))
 
 

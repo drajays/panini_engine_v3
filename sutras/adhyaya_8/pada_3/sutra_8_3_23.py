@@ -35,8 +35,6 @@ def _find(state: State):
     t = state.terms[0]
     if "pada" not in t.tags:
         return None
-    if not state.meta.get("8_3_23_m_o_anuswara_arm"):
-        return None
     if t.meta.get("8_3_23_mo_done"):
         return None
     vs = t.varnas
@@ -61,7 +59,6 @@ def act(state: State) -> State:
     t = state.terms[0]
     t.varnas[i] = mk("M")
     t.meta["8_3_23_mo_done"] = True
-    state.meta["8_3_23_m_o_anuswara_arm"] = False
     return state
 
 

@@ -1,6 +1,11 @@
 """
 7.2.116  अतो उपधायाः  —  VIDHI
 
+Sources consulted:
+- ashtadhyayi.com data.txt row i=702116
+- Kāśikā: अत उपधायाः (णिति-परे)
+- Cross-validation: tests/unit/test_kathi_kath_nic.py, test_paTayati_paTu_Nic.py
+
 Operational role (v3.8, kṛt Nvul agent nouns like पाचक):
   When a dhātu has upadhā 'a' and the following pratyaya is **ṇit**,
   apply vṛddhi to that upadhā:
@@ -19,15 +24,28 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology    import mk, HAL
 
+_GATE_1_1_57 = "1.1.57_aca_parasmin_purvavidhau"
+
+
+def _upadha_vrddhi_blocked(state: State, dhatu) -> bool:
+    """**6.4.48** *a*-lopa (para-nimitta) destroys upadhā — no **7.2.116**."""
+    if state.paribhasha_gates.get(_GATE_1_1_57) is True:
+        return True
+    if dhatu.meta.get("6_4_48_a_lopa_done"):
+        return True
+    if dhatu.meta.get("upadha_blocked_para_nimitta"):
+        return True
+    return False
+
 
 def _find_upadha_a_nic_p037(state: State):
     """Narrow **P037**: *aṭ* + *ṇic* residue ``i`` (``Ric`` ``Term`` still *para*)."""
-    if not state.meta.get("P037_7_2_116_arm"):
-        return None
     if len(state.terms) < 2:
         return None
     dhatu = next((t for t in state.terms if "dhatu" in t.tags), None)
     if dhatu is None:
+        return None
+    if _upadha_vrddhi_blocked(state, dhatu):
         return None
     di = state.terms.index(dhatu)
     if di + 1 >= len(state.terms):
@@ -48,9 +66,8 @@ def _find_upadha_a_nic_p037(state: State):
 
 def _find_upadha_a_liT_strong(state: State):
     """liṭ strong form (3sg/1sg Ral): vṛddhi of root upadhā 'a' → 'ā'.
-    Armed by ``7_2_116_liT_upadha_vrddhi_arm``; fires on the root dhātu term
-    (not the abhyāsa) when its upadhā is 'a' + final consonant."""
-    if not state.meta.get("7_2_116_liT_upadha_vrddhi_arm"):
+    Structural: fires when meta["lakara"] == "liT" and abhyāsa is on tape."""
+    if (state.meta.get("lakara") or "").strip() != "liT":
         return None
     # Find the NON-abhyāsa dhātu term (root = second copy after dvitva).
     dhatu = None
@@ -84,6 +101,8 @@ def _find_upadha_a(state: State):
     dhatu = next((t for t in state.terms if "dhatu" in t.tags), None)
     if dhatu is None:
         return None
+    if _upadha_vrddhi_blocked(state, dhatu):
+        return None
     pr    = state.terms[-1]
     if "krt" not in pr.tags:
         return None
@@ -114,8 +133,6 @@ def act(state: State) -> State:
     ti, vi = hit
     state.terms[ti].varnas[vi] = mk("A")
     state.terms[ti].meta["upadha_vrddhi_done"] = True
-    state.meta.pop("P037_7_2_116_arm", None)
-    state.meta.pop("7_2_116_liT_upadha_vrddhi_arm", None)
     return state
 
 

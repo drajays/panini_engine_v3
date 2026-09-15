@@ -64,3 +64,9 @@ SUTRA = SutraRecord(
 
 register_sutra(SUTRA)
 
+# SOI: divAdi (gana 4) śyan — apavāda to śap; score 10 when gana matches, else 0.
+from engine.specificity_registry import register_specificity as _rs
+_rs("3.1.69", lambda state, _g=4: (
+    10 if next((t.meta.get("gana") for t in state.terms if "dhatu" in t.tags), None) == _g else 0
+))
+del _rs

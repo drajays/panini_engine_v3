@@ -51,7 +51,10 @@ def _find_tin_t_initial(state: State) -> int | None:
 def cond(state: State) -> bool:
     if not state.meta.get("suw_recipe"):
         return False
-    if not state.meta.get("ashir_liG"):
+    if not (
+        state.meta.get("ashir_liG")
+        or state.meta.get("_liG_ad_spine")
+    ):
         return False
     return _find_tin_t_initial(state) is not None
 

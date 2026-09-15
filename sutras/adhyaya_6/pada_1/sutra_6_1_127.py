@@ -35,8 +35,6 @@ from phonology import mk
 
 
 def _site(state: State):
-    if not state.meta.get("P023_6_1_127_div_v_to_u_arm"):
-        return None
     if len(state.terms) < 2:
         return None
     if state.meta.get("P023_6_1_127_done"):

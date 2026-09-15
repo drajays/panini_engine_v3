@@ -22,27 +22,23 @@ from engine.state import State
 
 
 def _prakriya_26_site(state: State) -> bool:
-    if not state.meta.get("prakriya_26_6_1_198_arm"):
+    if not state.samjna_registry.get("2.3.48_sAmantrita_indra"):
         return False
     if not state.terms:
         return False
     t0 = state.terms[0]
-    if "sAmantrita" not in t0.tags:
-        return False
     if t0.meta.get("prakriya_26_AdyudAtta_note"):
         return False
     return True
 
 
 def _prakriya_32_site(state: State) -> bool:
-    if not state.meta.get("prakriya_32_6_1_198_arm"):
-        return False
     if len(state.terms) < 3:
         return False
     t0 = state.terms[0]
-    if "sAmantrita" not in t0.tags:
-        return False
     if t0.meta.get("upadesha_slp1") != "EdaviDa":
+        return False
+    if not state.samjna_registry.get("2.3.48_sAmantrita_triplet_prakriya_32"):
         return False
     if t0.meta.get("prakriya_32_EdaviDa_AdyudAtta_note"):
         return False
@@ -50,8 +46,6 @@ def _prakriya_32_site(state: State) -> bool:
 
 
 def _prakriya_28_site(state: State) -> bool:
-    if not state.meta.get("prakriya_28_6_1_198_arm"):
-        return False
     if len(state.terms) < 2:
         return False
     if not state.samjna_registry.get("2.1.2_subAmantrite_parA~ggavat_28"):
@@ -65,13 +59,9 @@ def _prakriya_28_site(state: State) -> bool:
 
 
 def _prakriya_29_site(state: State) -> bool:
-    if not state.meta.get("prakriya_29_6_1_198_arm"):
-        return False
     if not state.terms:
         return False
     t0 = state.terms[0]
-    if "sAmantrita" not in t0.tags:
-        return False
     if t0.meta.get("upadesha_slp1") != "gaurAvaskandin":
         return False
     if not t0.meta.get("prakriya_29_YiRityAdi_first_udAtta_note"):
@@ -93,19 +83,15 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if _prakriya_32_site(state):
         state.terms[0].meta["prakriya_32_EdaviDa_AdyudAtta_note"] = True
-        state.meta.pop("prakriya_32_6_1_198_arm", None)
         return state
     if _prakriya_28_site(state):
         state.terms[0].meta["prakriya_28_AdyudAtta_note"] = True
-        state.meta.pop("prakriya_28_6_1_198_arm", None)
         return state
     if _prakriya_29_site(state):
         state.terms[0].meta["prakriya_29_AdyudAtta_note"] = True
-        state.meta.pop("prakriya_29_6_1_198_arm", None)
         return state
     if _prakriya_26_site(state):
         state.terms[0].meta["prakriya_26_AdyudAtta_note"] = True
-        state.meta.pop("prakriya_26_6_1_198_arm", None)
         return state
     return state
 

@@ -92,14 +92,13 @@ def _terms_sup_or_primary(state: State):
             nic_ric.append(t)
     if nic_ric:
         return nic_ric
-    # *luṭ* *ḍā* residue (**qA**): *cuṭ* *it* on ``q`` (recipe ``1_3_7_lut_qA_arm``).
-    if state.meta.get("1_3_7_lut_qA_arm"):
-        qa = [
-            t for t in state.terms
-            if "upadesha" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() == "qA"
-        ]
-        if qa:
-            return qa
+    # *luṭ* *ḍā* residue (**qA**): *cuṭ* *it* on ``q``.
+    qa = [
+        t for t in state.terms
+        if "upadesha" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() == "qA"
+    ]
+    if qa:
+        return qa
     # dit_pratyaya qAc (डाच्) must win over preceding prātipadika so 1.3.7 cuṭū
     # tags initial q, not p (structural: dit_pratyaya tag on qAc term).
     qac = [

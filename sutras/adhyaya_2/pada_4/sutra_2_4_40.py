@@ -1,12 +1,12 @@
 """
-2.4.40  लिट्यन्यतरस्याम्  —  VIDHI (narrow: *ad* → *ghas* in *liṭ*)
+2.4.40  लिट्यन्यतरस्याम्  —  VIDHI
 
-Teaching JSON **P034** (*jakṣatuḥ*): in *liṭ*, the root **ad** is replaced by **ghas**
-(machine shape **Gas**).
+Sources consulted:
+- ashtadhyayi.com data.txt row i=20440
+- Kāśikā: «लिटि अदः घसः अन्यतरस्याम्» (अद्भक्षणे → घस्)
+- Cross-validation: tests/unit/test_tinanta_ad_lit_kartari.py
 
-Engine:
-  - ``state.meta['lakara_liT']`` must already be True (**3.2.115**).
-  - recipe arms via ``state.meta['P034_2_4_40_ad_to_gas_arm']``.
+In *liṭ*, the root *ad* (to eat) is optionally replaced by *ghas* (tape: **Gas**).
 """
 from __future__ import annotations
 
@@ -30,13 +30,19 @@ def _dhatu_flat(state: State) -> str | None:
 
 
 def _site(state: State) -> bool:
-    if not state.meta.get("P034_2_4_40_ad_to_gas_arm"):
-        return False
     if not state.meta.get("lakara_liT"):
         return False
     if _first_dhatu_index(state) is None:
         return False
-    return _dhatu_flat(state) == "ad"
+    flat = _dhatu_flat(state)
+    if flat == "ad":
+        return True
+    up = ""
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            up = (t.meta.get("upadesha_slp1") or "").strip().replace("~", "")
+            break
+    return up in {"ada", "ad", "ada~", "ad~"}
 
 
 def cond(state: State) -> bool:
@@ -51,7 +57,7 @@ def act(state: State) -> State:
     t = state.terms[i]
     t.varnas = list(parse_slp1_upadesha_sequence("Gas"))
     t.meta["upadesha_slp1"] = "Gas"
-    state.meta.pop("P034_2_4_40_ad_to_gas_arm", None)
+    state.meta["2_4_40_ad_to_gas"] = True
     return state
 
 

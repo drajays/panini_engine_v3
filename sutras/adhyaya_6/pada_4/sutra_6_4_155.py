@@ -31,8 +31,6 @@ from engine.state import State
 
 
 def _site(state: State):
-    if not state.meta.get("P025_6_4_155_Ti_lopa_arm"):
-        return None
     if len(state.terms) < 2:
         return None
     ang, nic = state.terms[0], state.terms[1]
@@ -64,7 +62,6 @@ def act(state: State) -> State:
     ang = state.terms[ti]
     del ang.varnas[-1]
     ang.meta["upadesha_slp1"] = "paT"
-    state.meta["P025_6_4_155_Ti_lopa_arm"] = False
     return state
 
 

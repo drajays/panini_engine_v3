@@ -24,24 +24,18 @@ from engine.state import State
 
 
 def _p044_nighata_cond(state: State) -> bool:
-    if not state.meta.get("paribhasha_recipe"):
-        return False
-    if not state.meta.get("P044_8_1_28_nighata_illustration_arm"):
+    if not any("P044_tin_position_pada" in t.tags for t in state.terms):
         return False
     return not bool(state.meta.get("P044_8_1_28_nighata_note_done"))
 
 
 def _p044_tin_context_cond(state: State) -> bool:
-    if not state.meta.get("paribhasha_recipe"):
-        return False
-    if not state.meta.get("P044_8_1_28_tin_context_arm"):
+    if not any("P044_atiNa_position_pada" in t.tags for t in state.terms):
         return False
     return not bool(state.meta.get("P044_8_1_28_tin_atina_note_done"))
 
 
 def _prakriya_27_cond(state: State) -> bool:
-    if not state.meta.get("prakriya_27_8_1_28_arm"):
-        return False
     if not state.samjna_registry.get("prakriya_27_phit481_upasarga_A_udAtta"):
         return False
     if not state.terms:
@@ -68,16 +62,13 @@ def act(state: State) -> State:
     if _p044_nighata_cond(state):
         state.meta["P044_8_1_28_nighata_note_done"] = True
         state.meta["P044_nighata_on_following_tin_demo"] = True
-        state.meta.pop("P044_8_1_28_nighata_illustration_arm", None)
         return state
     if _p044_tin_context_cond(state):
         state.meta["P044_8_1_28_tin_atina_note_done"] = True
-        state.meta.pop("P044_8_1_28_tin_context_arm", None)
         return state
     if not _prakriya_27_cond(state):
         return state
     state.terms[0].meta["prakriya_27_gaccha_base_anudAtta_note"] = True
-    state.meta.pop("prakriya_27_8_1_28_arm", None)
     return state
 
 

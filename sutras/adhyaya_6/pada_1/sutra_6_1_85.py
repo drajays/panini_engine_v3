@@ -9,12 +9,13 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_eligibility import samhita_gate_eligible
 
 _GATE_KEY: str = "6_1_85_gate"
 
 
 def cond(state: State) -> bool:
-    return state.paribhasha_gates.get(_GATE_KEY) is not True
+    return samhita_gate_eligible(state, "6.1.85", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:

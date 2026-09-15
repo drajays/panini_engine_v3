@@ -32,6 +32,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.sthanivat import angas_halantatva_blocked
 from phonology.pratyahara import HAL
 
 from sutras.adhyaya_1.pada_2.sutra_1_2_41 import TAG_APRKTA
@@ -84,6 +85,8 @@ def _find_eligible_boundary(state: State) -> int | None:
         if "anga" not in anga.tags:
             continue
         if not anga.varnas:
+            continue
+        if angas_halantatva_blocked(anga):
             continue
         final = anga.varnas[-1].slp1
         if final not in HAL and final not in _DIRGHA_STRĪ_FINALS:

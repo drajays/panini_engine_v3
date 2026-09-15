@@ -9,15 +9,13 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.subanta_eligibility import karaka_gate_eligible
 
 _GATE_KEY: str = "2_3_22_samjna_karmani"
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return True
+    return karaka_gate_eligible(state, _GATE_KEY)
 
 
 def act(state: State) -> State:

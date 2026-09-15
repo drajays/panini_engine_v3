@@ -1,43 +1,61 @@
 """
-6.4.38  वा ल्यपि  —  VIDHI
+6.4.38  वा ल्यपि  —  VIBHASHA
 
-Padaccheda: वा ल्यपि
+Sources consulted:
+- ashtadhyayi.com data.txt row i=604038
+- Kāśikā: वा ल्यपि (ल्यप्-प्रत्ययस्य मकारस्य वैकल्पिको लोपः)
+- Cross-validation: tests/unit/test_agaty_gam_lyap_acah_lesson.py
 
-वा ल्यपि (6.4.38)
+Optional *m*-lopa on *lyap* (``l + ṃ + y + …``). The lupta **hal** ``m`` is **not**
+*sthānivat* under **1.1.57** (*acaḥ* only) — **6.1.71** *tuk* must still apply
+(दलकृत्यम् / आगत्य lesson).
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-_GATE_KEY: str = "6_4_38_vA_38"
+
+def _find_lyap_m(state: State) -> tuple[int, int] | None:
+    for ti, t in enumerate(state.terms):
+        if t.kind != "pratyaya":
+            continue
+        if (t.meta.get("upadesha_slp1") or "").strip() != "lyap":
+            continue
+        if t.meta.get("6_4_38_m_lopa_done"):
+            continue
+        for vi, v in enumerate(t.varnas):
+            if v.slp1 == "m":
+                return (ti, vi)
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return adhikara_in_effect("6.4.38", state, "6.4.1")
+    return _find_lyap_m(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.4.38"
+    hit = _find_lyap_m(state)
+    if hit is None:
+        return state
+    ti, vi = hit
+    t = state.terms[ti]
+    t.varnas.pop(vi)
+    t.meta["6_4_38_m_lopa_done"] = True
+    t.meta["hal_lupta_not_ac_sthanivat"] = True
     return state
 
 
 SUTRA = SutraRecord(
-    sutra_id              = "6.4.38",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
-    text_slp1             = "vA lyapi",
-    text_dev              = "वा ल्यपि",
-    padaccheda_dev        = "वा ल्यपि",
-    why_dev               = "(सूत्रम् 6.4.38) वा ल्यपि।",
-    anuvritti_from        = ('6.1.1',),
-    cond                  = cond,
-    act                   = act,
+    sutra_id="6.4.38",
+    sutra_type=SutraType.VIBHASHA,
+    text_slp1="vA lyapi",
+    text_dev="वा ल्यपि",
+    padaccheda_dev="वा / ल्यपि",
+    why_dev="ल्यप्-प्रत्यये मकारस्य वैकल्पिको लोपः; लुप्त-हल् स्थानिवत् न (१.१.५७)।",
+    anuvritti_from=("6.1.1",),
+    cond=cond,
+    act=act,
 )
 
 register_sutra(SUTRA)

@@ -31,8 +31,6 @@ from engine.state import State, Term
 
 
 def _site(state: State) -> int | None:
-    if not state.meta.get("P040_6_1_10_slau_arm"):
-        return None
     if state.samjna_registry.get("6.1.10_P040_slau_dvitva_done"):
         return None
     for i, t in enumerate(state.terms):
@@ -72,7 +70,6 @@ def act(state: State) -> State:
     )
     state.terms.insert(i, abhy)
     state.samjna_registry["6.1.10_P040_slau_dvitva_done"] = True
-    state.meta.pop("P040_6_1_10_slau_arm", None)
     return state
 
 

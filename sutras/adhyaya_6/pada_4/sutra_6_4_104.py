@@ -9,17 +9,13 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_eligibility import samhita_gate_eligible
 
 _GATE_KEY: str = "6_4_104_ciRo_104"
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    # Structural: ciṇ luk fires in karmani/bhāva context (dhātu tagged by pipeline)
-    if any("bhava_karma_usage" in t.tags for t in state.terms):
-        return True
-    return bool(state.meta.get("hal_na_lopa_recipe"))
+    return samhita_gate_eligible(state, "6.4.104", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:

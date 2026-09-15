@@ -1,17 +1,19 @@
 """
 7.1.13  ङेर्यः  —  VIDHI
 
-"After an अ-ending aṅga (= ato'ṅga, anuvṛtti from 7.1.9), the ṅe
- (dative-singular) pratyaya is replaced by ya."
+Sources consulted:
+- ashtadhyayi.com data.txt row i=701013
+- Kāśikā: ङे → य (अदन्त-अङ्गात्) → रामाय
+- Cross-validation: pipelines/sthanivat_anal_ashrita_lesson.py — ``derive_rAmAya``
 
-  cell 4-1:  rAma + Ne → rAma + ya → ... → rAmAya (after 7.3.102)
-
-Mirrors 7.1.12 in shape — but replacing Ne → ya only.
+**1.1.56** extends *sup-pratyayatva* to *ya* so **7.3.102** *sūpi ca* applies.
 """
-from engine        import SutraType, SutraRecord, register_sutra
-from engine.gates  import adhikara_in_effect
-from engine.state  import State
-from phonology     import mk
+from __future__ import annotations
+
+from engine import SutraType, SutraRecord, register_sutra
+from engine.gates import adhikara_in_effect
+from engine.state import State
+from engine.sthanivat import SUP_PRATYAYATVA, adesha_substitute_varnas
 
 
 def _find_target(state: State):
@@ -51,10 +53,14 @@ def act(state: State) -> State:
     if idx is None:
         return state
     pratyaya = state.terms[idx]
-    pratyaya.varnas = [mk("y"), mk("a")]
+    adesha_substitute_varnas(
+        pratyaya,
+        "ya",
+        state,
+        sutra_id="7.1.13",
+        gunadharmas=frozenset({SUP_PRATYAYATVA}),
+    )
     pratyaya.meta["ne_to_ya_done"] = True
-    pratyaya.meta["upadesha_slp1_original"] = pratyaya.meta.get("upadesha_slp1")
-    pratyaya.meta["upadesha_slp1"] = "ya"
     return state
 
 

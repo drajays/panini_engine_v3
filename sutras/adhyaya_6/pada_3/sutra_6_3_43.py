@@ -35,8 +35,6 @@ def _rightmost_map_index(anga: Term) -> int | None:
 
 
 def _site(state: State) -> int | None:
-    if not state.meta.get("6_3_43_NGy_hrasva_arm"):
-        return None
     if len(state.terms) < 2:
         return None
     an, td = state.terms[0], state.terms[1]
@@ -81,7 +79,6 @@ def act(state: State) -> State:
         return state
     an.varnas[i] = mk(h)
     an.meta["6_3_43_hrasva_done"] = True
-    state.meta.pop("6_3_43_NGy_hrasva_arm", None)
     return state
 
 

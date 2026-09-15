@@ -10,13 +10,11 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.sthanivat import TING_PRATYAYATVA, adesha_substitute_varnas
 from phonology.pratyahara import JHAL
-from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _find_hi(state: State) -> int | None:
-    if not state.meta.get("P031_6_4_101_hi_to_Qi_arm"):
-        return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
             continue
@@ -51,11 +49,22 @@ def act(state: State) -> State:
     if hi_i is None or not _anga_jhal_final(state, hi_i):
         return state
     t = state.terms[hi_i]
-    t.varnas = list(parse_slp1_upadesha_sequence("Qi"))
-    t.meta["upadesha_slp1"] = "Qi"
+    ang_final = state.terms[hi_i - 1].varnas[-1].slp1
+    # Dental *aṅga* (*ad* … अद्धि): *Dhi*; else P031 *Qi* (ढि, *viśiṇḍhi*).
+    if ang_final == "d":
+        adesha_substitute_varnas(
+            t, "Di", state,
+            sutra_id="6.4.101",
+            gunadharmas=frozenset({TING_PRATYAYATVA}),
+        )
+    else:
+        adesha_substitute_varnas(
+            t, "Qi", state,
+            sutra_id="6.4.101",
+            gunadharmas=frozenset({TING_PRATYAYATVA}),
+        )
     t.tags.add("tin_adesha_3_4_78")
     t.meta["P031_6_4_101_done"] = True
-    state.meta.pop("P031_6_4_101_hi_to_Qi_arm", None)
     return state
 
 
