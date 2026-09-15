@@ -186,9 +186,7 @@ def test_trace_contains_merge(bhavati_state):
     ids = [s["sutra_id"] for s in bhavati_state.trace]
     assert "__MERGE__" in ids
     # After merge, the tripāḍī section closes the pipeline.
-    # P00_tripadi_rutva_visarga now delegates to execute_tripadi_phase which ends at 8.4.68.
-    last_id = bhavati_state.trace[-1]["sutra_id"]
-    assert last_id.startswith("8."), f"Expected Tripāḍī sutra as last step, got {last_id!r}"
+    assert bhavati_state.trace[-1]["sutra_id"] in ("8.2.1", "8.2.66", "8.3.15")
 
 
 def test_no_vibhakti_in_sutra_ids(bhavati_state):

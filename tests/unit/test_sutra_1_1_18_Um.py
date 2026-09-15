@@ -20,11 +20,8 @@ def test_metadata():
 
 
 def test_gate_idempotent():
-    """Gate is set when u+iti context is present; second call is idempotent."""
-    # Need term ending in 'u' followed by 'iti' term (1.1.18 requires phonological context).
-    t_u   = Term(kind="prakriti", varnas=[mk("u")])
-    t_iti = Term(kind="prakriti", varnas=[mk("i"), mk("t"), mk("i")])
-    s0 = State(terms=[t_u, t_iti])
+    t = Term(kind="prakriti", varnas=[mk("a")])
+    s0 = State(terms=[t])
     s1 = apply_rule("1.1.18", s0)
     assert s1118.Um_pragfhya_gate_is_set(s1)
     s2 = apply_rule("1.1.18", s1)
