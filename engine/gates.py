@@ -55,7 +55,23 @@ TRIPADI_END   = (8, 4, 68)
 
 
 def is_tripadi(sutra_id: str) -> bool:
-    return TRIPADI_START <= _id_to_tuple(sutra_id) <= TRIPADI_END
+    """The tripāḍī bounds now come from ``engine.strata`` (cited data)."""
+    from engine.strata import in_tripadi
+
+    return in_tripadi(sutra_id)
+
+
+def asiddha_reason(candidate_sutra_id: str, applied_sutra_id: str) -> str:
+    """Why one rule cannot see another — for the trace's gate_reason.
+
+    The boolean gate below answers only the coarse half of 8.2.1 (nothing
+    earlier may fire once the tripāḍī is open). The full matrix — including
+    asiddhatva *within* the tripāḍī, आभीय 6.4.22 and षत्वतुक् 6.1.86 — lives
+    in ``engine.strata`` and is what the autonomous loop will consult.
+    """
+    from engine.strata import explain
+
+    return explain(candidate_sutra_id, applied_sutra_id)
 
 
 def asiddha_violates(candidate_sutra_id: str, state: State) -> bool:
@@ -66,6 +82,11 @@ def asiddha_violates(candidate_sutra_id: str, state: State) -> bool:
     Returns True iff the candidate is a NON-tripāḍī sūtra trying to
     fire while we are already in the tripāḍī zone — that is a
     constitutional violation.
+
+    Note: The inverse check (Tripāḍī sūtras outside the Tripāḍī zone)
+    is handled by the SCHEDULER only — the dispatcher allows explicit
+    calls to Tripāḍī sūtras from recipe pipelines (which open the zone
+    via 8.2.1 first).
     """
     if not state.tripadi_zone:
         return False

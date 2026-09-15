@@ -1,0 +1,60 @@
+{
+  "_doc": "Asiddha domains — where the effect of one rule is invisible to another. Sūtra texts come from sutra_ref_out/ (ashtadhyayi corpus); the ranges are structural and each one says below what authorises it.",
+  "domains": {
+    "tripadi": {
+      "sutra": "8.2.1",
+      "dev": "पूर्वत्रासिद्धम्",
+      "padaccheda_dev": "पूर्वत्र · असिद्धम्",
+      "range": [
+        "8.2.1",
+        "8.4.68"
+      ],
+      "kind": "asiddha",
+      "range_authority": "The tripāḍī is the standard closing section 8.2.1–8.4.68; the same bounds already govern engine/gates.py and engine/phase.py.",
+      "reading": "पूर्वत्र असिद्धम् — what a tripāḍī rule does is asiddha for everything earlier, including earlier tripāḍī rules."
+    },
+    "abhiya": {
+      "sutra": "6.4.22",
+      "dev": "असिद्धवदत्राभात्",
+      "padaccheda_dev": "असिद्ध-वत् अत्र आ भात्",
+      "range": [
+        "6.4.22",
+        "6.4.129"
+      ],
+      "kind": "asiddhavat",
+      "range_authority": "आ भात् — up to भस्य (6.4.129), which this engine already registers as the ADHIKARA that opens the bha section.",
+      "reading": "असिद्धवत् अत्र आ भात् — inside this section the rules are asiddhavat to one another."
+    },
+    "ekadesha_for_satva_tuk": {
+      "sutra": "6.1.86",
+      "dev": "षत्वतुकोरसिद्धः",
+      "padaccheda_dev": "षत्व-तुकोः असिद्धः",
+      "range": [
+        "6.1.84",
+        "6.1.111"
+      ],
+      "kind": "asiddha",
+      "observers": {
+        "satva": [
+          "8.3.59",
+          "8.3.60",
+          "8.3.57"
+        ],
+        "tuk": [
+          "6.1.71",
+          "6.1.72",
+          "6.1.73",
+          "6.1.74",
+          "6.1.75",
+          "6.1.76"
+        ]
+      },
+      "range_authority": "The ekādeśa section opened by एकः पूर्वपरयोः (6.1.84). The observer sets are the ṣatva and tuk rules THIS ENGINE models, not an exhaustive reading of the śāstra.",
+      "reading": "षत्व-तुकोः असिद्धः — the ekādeśa is asiddha for ṣatva and for tuk."
+    }
+  },
+  "not_modelled": [
+    "6.1.86's observer sets are those the engine implements; more ṣatva/tuk rules will need adding as they land.",
+    "Asiddhatva inside the ābhīya section is modelled as full mutual invisibility; the tradition's exceptions (e.g. for a rule's own nimitta) are not yet distinguished."
+  ]
+}
