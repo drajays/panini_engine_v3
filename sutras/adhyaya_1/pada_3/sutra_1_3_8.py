@@ -76,6 +76,7 @@ SUTRA = SutraRecord(
         "अतद्धिते प्रत्ययादौ ल्-श्-कु-वर्णानाम् इत्-संज्ञा; लोपः १.३.९। "
         "सुप्-पङ्क्तिषु ङ्-आदिर् अपि (*N* ∈ *ku*)।"
     ),
+    apavada_of     = ("1.3.7",),   # अपवाद of 1.3.7 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("1.3.2",),
     cond           = cond,
     act            = act,

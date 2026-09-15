@@ -47,6 +47,7 @@ SUTRA = SutraRecord(
         "अधि-पूर्वक-शीङ्-स्था-आस्-धातूनां यः आधारः स कर्म-कारक-संज्ञकः। "
         "चिह्नम्: aDiSIN_sTa_As_karma इति।"
     ),
+    apavada_of     = ("1.4.45",),   # अपवाद of 1.4.45 — sutra_ref_out resolver.apavada_of
     anuvritti_from       = ("1.4.23",),
     cond                 = cond,
     act                  = act,

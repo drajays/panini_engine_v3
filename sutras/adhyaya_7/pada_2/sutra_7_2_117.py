@@ -124,6 +124,7 @@ SUTRA = SutraRecord(
         "णित्/ञित्-तद्धित-प्रत्यये परे अङ्गस्य आद्य-अचः वृद्धिः "
         "(दक्ष+इञ्→दाक्ष, शीत+ष्यञ्→शैत, सोम+ट्यण्→सौम)।"
     ),
+    apavada_of     = ("7.2.115",),   # अपवाद of 7.2.115 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("6.4.1", "7.2.114", "7.2.115"),
     cond           = cond,
     act            = act,

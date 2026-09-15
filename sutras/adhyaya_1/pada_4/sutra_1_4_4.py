@@ -43,6 +43,7 @@ SUTRA = SutraRecord(
     text_dev               = "नेयङुवङ्स्थानावस्त्री",
     padaccheda_dev         = "न / इयङ्-उवङ्-स्थानौ / अस्त्री",
     why_dev                = "इयङ्-उवङ्-स्थानभूतस्य अथवा स्त्री-भिन्नस्य नदीसंज्ञा न।",
+    apavada_of     = ("1.4.3",),   # अपवाद of 1.4.3 — sutra_ref_out resolver.apavada_of
     anuvritti_from         = ("1.4.1", "1.4.3"),
     r1_form_identity_exempt= True,
     cond                   = cond,

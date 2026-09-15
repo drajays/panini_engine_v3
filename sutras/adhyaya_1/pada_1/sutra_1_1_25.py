@@ -79,6 +79,7 @@ SUTRA = SutraRecord(
     text_dev       = "डति च",
     padaccheda_dev = "डति / च (षट्-संज्ञा)",
     why_dev        = "डति (कति-आदि) च षट्-संज्ञकम् — १.१.२३-२४-अनुवृत्त्या।",
+    apavada_of     = ("1.1.24",),   # अपवाद of 1.1.24 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("1.1.23", "1.1.24"),
     cond           = cond,
     act            = act,

@@ -65,6 +65,7 @@ SUTRA = SutraRecord(
         "अङ्गस्य (षष्ठी-एकवचनम्) / प्रत्ययलक्षणम् (प्रथमा-एकवचनम्, अन्वा. १.१.६२)"
     ),
     why_dev        = _WHY,
+    apavada_of     = ("1.1.62",),   # अपवाद of 1.1.62 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("1.1.62",),
     cond           = cond,
     act            = act,

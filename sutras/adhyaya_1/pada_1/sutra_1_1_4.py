@@ -81,6 +81,7 @@ SUTRA = SutraRecord(
     text_dev       = "न धातुलोप आर्धधातुके",
     padaccheda_dev = "न धातु-लोपे आर्धधातुके",
     why_dev        = _WHY,
+    apavada_of     = ("1.1.3",),   # अपवाद of 1.1.3 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("1.1.3",),
     cond           = cond,
     act            = act,

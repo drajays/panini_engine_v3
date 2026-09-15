@@ -59,6 +59,7 @@ SUTRA = SutraRecord(
     text_dev       = "सिति च",
     padaccheda_dev = "सिति च",
     why_dev        = "सिति परे प्रातिपदिकस्य पदसंज्ञा; भसंज्ञां बाधते।",
+    apavada_of     = ("1.4.18",),   # अपवाद of 1.4.18 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("1.4.1", "1.4.14"),
     cond           = cond,
     act            = act,

@@ -216,6 +216,7 @@ SUTRA = SutraRecord(
     text_dev="अतो गुणे",
     padaccheda_dev="अतः गुणे",
     why_dev="गुणे पररूप-एकादेशः — अकार-द्वय-संयोगे प्रथमम् अकारं लोपयति।",
+    apavada_of     = ("6.1.101",),   # अपवाद of 6.1.101 — sutra_ref_out resolver.apavada_of
     anuvritti_from=("6.1.84",),
     cond=cond,
     act=act,

@@ -118,6 +118,7 @@ SUTRA = SutraRecord(
     text_dev       = "क्ङिति",
     padaccheda_dev = "क्‍ङ् इति",
     why_dev        = _WHY,
+    apavada_of     = ("7.3.84",),   # अपवाद of 7.3.84 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("1.1.4", "1.1.3"),
     cond           = cond,
     act            = act,

@@ -192,6 +192,7 @@ SUTRA = SutraRecord(
         "स्वादि-प्रत्यये असर्वनामस्थानके यकारादौ वा अजादौ आदौ च परे "
         "प्रकृतेः भ-संज्ञा; पद-संज्ञां (१.४.१७) बाधते।"
     ),
+    apavada_of     = ("1.4.17",),   # अपवाद of 1.4.17 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("1.4.1", "1.4.17"),
     cond           = cond,
     act            = act,

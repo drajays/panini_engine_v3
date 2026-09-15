@@ -46,6 +46,7 @@ SUTRA = SutraRecord(
     text_dev               = "षष्ठीयुक्तश्छन्दसि वा",
     padaccheda_dev         = "षष्ठी-युक्तः / छन्दसि / वा",
     why_dev                = "षष्ठीसमासे पतिशब्दस्य छन्दसि वा नदीसंज्ञा।",
+    apavada_of     = ("1.4.8",),   # अपवाद of 1.4.8 — sutra_ref_out resolver.apavada_of
     anuvritti_from         = ("1.4.1", "1.4.3", "1.4.8"),
     r1_form_identity_exempt= True,
     vibhasha_default       = False,

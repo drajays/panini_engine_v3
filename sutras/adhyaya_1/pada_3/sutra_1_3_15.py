@@ -80,6 +80,7 @@ SUTRA = SutraRecord(
         "गति-हिंसा-अर्थकेभ्यो धातुभ्यः आत्मनेपदं न भवति; "
         "ते परस्मैपद-विषया एव — १.३.१३–१४ इत्यतः प्रतिषेधः।"
     ),
+    apavada_of     = ("1.3.14",),   # अपवाद of 1.3.14 — sutra_ref_out resolver.apavada_of
     anuvritti_from=("1.3.12", "1.3.13"),
     cond=cond,
     act=act,

@@ -126,6 +126,7 @@ SUTRA = SutraRecord(
     text_dev       = "अतो उपधायाः",
     padaccheda_dev = "अतः उपधायाः",
     why_dev        = "णित्-प्रत्यये परे धातोः उपधास्थ-अकारस्य वृद्धि (पच् → पाच्)।",
+    apavada_of     = ("7.2.115",),   # अपवाद of 7.2.115 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("1.1.1",),
     cond           = cond,
     act            = act,

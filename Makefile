@@ -71,3 +71,6 @@ gaps:
 index:
 	python3 -m tools.build_form_index
 	python3 -m tools.build_form_index --verify 300
+
+prakriya:
+	python3 -m tools.show_prakriya --check

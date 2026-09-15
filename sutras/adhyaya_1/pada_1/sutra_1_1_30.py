@@ -68,6 +68,7 @@ SUTRA = SutraRecord(
     text_dev       = "तृतीयासमासे",
     padaccheda_dev = "तृतीया-समासे (न सर्वनाम) — १.१.२७ अनुवृत्ति",
     why_dev        = "तृतीया-तत्पुरुष-समासे *सर्वनाम*-*सञ्ज्ञा* न, अतः ७.१.१४ *स्मै* *प्रसङ्गो* *न* — ७.१.१३ *य* *पथः*।",
+    apavada_of     = ("1.1.27",),   # अपवाद of 1.1.27 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("1.1.27",),
     cond           = cond,
     act            = act,

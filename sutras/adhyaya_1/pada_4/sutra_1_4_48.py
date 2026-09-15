@@ -46,6 +46,7 @@ SUTRA = SutraRecord(
         "उप-अनु-अधि-आङ्-पूर्वक-वस्-धातोः यः आवासस्थानम् तत् कर्म-कारक-संज्ञकम्। "
         "चिह्नम्: upa_anu_aDi_A_vas_karma इति।"
     ),
+    apavada_of     = ("1.4.45",),   # अपवाद of 1.4.45 — sutra_ref_out resolver.apavada_of
     anuvritti_from       = ("1.4.23",),
     cond                 = cond,
     act                  = act,

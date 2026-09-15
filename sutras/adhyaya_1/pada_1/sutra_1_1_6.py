@@ -63,6 +63,7 @@ SUTRA = SutraRecord(
     text_dev         = "दीधीवेवीटाम्",
     padaccheda_dev   = "दीधी-वेवी-इटाम्",
     why_dev          = "इडागम-इकारस्य गुणनिषेधः (परिभाषा-गेट)।",
+    apavada_of     = ("1.1.3",),   # अपवाद of 1.1.3 — sutra_ref_out resolver.apavada_of
     anuvritti_from   = (),
     cond             = cond,
     act              = act,

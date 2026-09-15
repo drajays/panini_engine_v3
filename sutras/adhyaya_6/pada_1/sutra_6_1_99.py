@@ -36,6 +36,7 @@ SUTRA = SutraRecord(
     text_dev              = "नाम्रेडितस्यान्त्यस्य तु वा",
     padaccheda_dev        = "न आम्रेडितस्य अन्त्यस्य तु वा",
     why_dev               = "(सूत्रम् 6.1.99) नाम्रेडितस्यान्त्यस्य तु वा।",
+    apavada_of     = ("6.1.98",),   # अपवाद of 6.1.98 — sutra_ref_out resolver.apavada_of
     anuvritti_from        = ('6.1.1',),
     cond                  = cond,
     act                   = act,

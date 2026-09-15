@@ -32,6 +32,7 @@ SUTRA = SutraRecord(
     text_dev               = "नः क्ये",
     padaccheda_dev         = "नः / क्ये",
     why_dev                = "क्य-प्रत्यये परे नस्य विशेष-कार्यं प्रवर्तते।",
+    apavada_of     = ("1.4.14",),   # अपवाद of 1.4.14 — sutra_ref_out resolver.apavada_of
     anuvritti_from         = ("1.4.1",),
     r1_form_identity_exempt= True,
     cond                   = cond,

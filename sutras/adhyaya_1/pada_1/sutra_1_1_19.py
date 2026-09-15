@@ -86,6 +86,7 @@ SUTRA = SutraRecord(
     text_dev       = _TEXT_DEV,
     padaccheda_dev = " / ".join(_TEXT_DEV.split()),  # three *padas* as in index ``pc``
     why_dev        = _WHY,
+    apavada_of     = ("1.1.11",),   # अपवाद of 1.1.11 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("1.1.11",),
     cond           = cond,
     act            = act,

@@ -71,6 +71,7 @@ SUTRA = SutraRecord(
     text_dev       = "द्वन्द्वे च",
     padaccheda_dev = "द्वन्द्वे च (न सर्वनाम) — १.१.२७ अनुवृत्ति",
     why_dev        = "द्वन्द्व-समासे सर्वनाम-संज्ञा न (१.१.२७-प्रसङ्गे निषेधः)।",
+    apavada_of     = ("1.1.27",),   # अपवाद of 1.1.27 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("1.1.27",),
     cond           = cond,
     act            = act,

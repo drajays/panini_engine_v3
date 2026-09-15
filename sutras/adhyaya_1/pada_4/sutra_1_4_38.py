@@ -47,6 +47,7 @@ SUTRA = SutraRecord(
         "क्रुध्-द्रुह्-धात्वोः उपसर्गसहितयोः यत् कर्म तत् कर्म-कारक-संज्ञकम्। "
         "चिह्नम्: kruDa_druha_karma इति।"
     ),
+    apavada_of     = ("1.4.37",),   # अपवाद of 1.4.37 — sutra_ref_out resolver.apavada_of
     anuvritti_from       = ("1.4.23",),
     cond                 = cond,
     act                  = act,

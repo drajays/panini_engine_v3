@@ -46,6 +46,7 @@ SUTRA = SutraRecord(
     text_dev               = "वाऽऽमि",
     padaccheda_dev         = "वा / आमि",
     why_dev                = "आमि परे स्त्री-प्रातिपदिकस्य वा नदीसंज्ञा।",
+    apavada_of     = ("1.4.4",),   # अपवाद of 1.4.4 — sutra_ref_out resolver.apavada_of
     anuvritti_from         = ("1.4.1", "1.4.3"),
     r1_form_identity_exempt= True,
     vibhasha_default       = True,

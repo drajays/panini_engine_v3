@@ -72,6 +72,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "न विभक्तौ तु-स्माः",
     why_dev        = "विभक्ति-प्रत्यये अन्त्यौ तु-स्म-वर्णौ हलन्त्य-इत् संज्ञां न लभेते; "
                      "विधिः १.३.३ एव न प्रवर्तते (तुस्मान्त-निषेधः)।",
+    apavada_of     = ("1.3.3",),   # अपवाद of 1.3.3 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("1.3.2", "1.3.3"),
     cond           = cond,
     act            = act,

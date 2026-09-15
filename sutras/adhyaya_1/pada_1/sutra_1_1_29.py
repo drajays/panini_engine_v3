@@ -61,6 +61,7 @@ SUTRA = SutraRecord(
     text_dev       = "न बहुव्रीहौ",
     padaccheda_dev = "न / बहुव्रीहौ (सर्वनाम-संज्ञा)",
     why_dev        = "बहुव्रीहि-समासे सर्वादि-सर्वनाम-संज्ञा न (अपवादः) — अतः ७.१.१४ादयः प्रबद्धा न।",
+    apavada_of     = ("1.1.27",),   # अपवाद of 1.1.27 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("1.1.27",),
     cond           = cond,
     act            = act,

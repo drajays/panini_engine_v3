@@ -66,6 +66,7 @@ SUTRA = SutraRecord(
     text_dev="अदिप्रभृतिभ्यः शपः",
     padaccheda_dev="अदिप्रभृतिभ्यः / शपः",
     why_dev="अदादिगणीय-धातोः परे शप्-विकरणस्य लुक् (P008 आस्ते)।",
+    apavada_of     = ("3.1.68",),   # अपवाद of 3.1.68 — sutra_ref_out resolver.apavada_of
     anuvritti_from=("2.4.58",),
     cond=cond,
     act=act,

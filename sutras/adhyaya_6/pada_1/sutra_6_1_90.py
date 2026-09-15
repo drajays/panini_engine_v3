@@ -64,6 +64,7 @@ SUTRA = SutraRecord(
         "आ + ऐ → ऐ (आटाश्च वृद्धिः); "
         "आट्-पद विलुप्तः।"
     ),
+    apavada_of     = ("6.1.87",),   # अपवाद of 6.1.87 — sutra_ref_out resolver.apavada_of
     anuvritti_from        = ('6.1.88',),
     cond                  = cond,
     act                   = act,
