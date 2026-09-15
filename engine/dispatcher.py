@@ -156,7 +156,16 @@ def apply_rule(
 
     # ── Gate 4: Vibhāṣā recipe choice ────────────────────────────────
     if stype is SutraType.VIBHASHA:
-        choice = recipe_step.get("vibhasha_choice", rec.vibhasha_default)
+        # Precedence: the recipe step, then an explicit exploration policy
+        # (engine.vikalpa.choose), then the sūtra's own default. A विभाषा is
+        # one rule with two legitimate readings, so the engine must be able to
+        # take either on request — Art. 15, and ROADMAP B5.
+        from engine.vikalpa import policy_choice
+
+        choice = recipe_step.get(
+            "vibhasha_choice",
+            policy_choice(sutra_id, rec.vibhasha_default),
+        )
         if not choice:
             new_state.vibhasha_forks.append({
                 "sutra_id"    : sutra_id,

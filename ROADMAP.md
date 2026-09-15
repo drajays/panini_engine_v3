@@ -264,11 +264,13 @@ real: the 79 cells where Vidyut disagrees need exactly the rules the gap list ra
 | B2 | apavāda graph — `apavada_of` / `blocks_sutra_ids` seeded from the corpus's own pointers; declaration mandatory for new rules | no new rule merges without its conflicts declared |
 | B3 | convert every engineered conflict; 6.1.104 ↔ 6.1.102 is the template | **Measured: none of the 87 निषेधs typed VIDHI ever fires, and the corpus names a block target for exactly one of them.** So this is not a sweep — it is 87 unimplemented rules with the wrong label, listed in `docs/NISEDHA_REVIEW.md` with text, padaccheda, adhikāra, Kāśikā udāharaṇa and a *proposed* target for a scholar to confirm. The lint now separates the dangerous case (a निषेध typed VIDHI that **fires** — an error, zero today) from the backlog (87, ratcheted) |
 | B4 ✅ | `engine/strata.py` — असिद्धत्व as a matrix: **8.2.1** पूर्वत्रासिद्धम् (including *within* the tripāḍī, which the flag never modelled), **6.4.22** असिद्धवदत्राभात्, **6.1.86** षत्वतुकोरसिद्धः; ranges and their authority in `data/inputs/asiddha_strata.json` with a `not_modelled` list | the 8.2.66 ⇄ 8.3.34 cycle is now broken by an **asymmetry that can be stated**: 8.2.66 cannot see 8.3.34, 8.3.34 can see 8.2.66. `explain()` names the sūtra that hides it. The gate's bounds come from the matrix; wiring the loop's *visibility* to it belongs with Phase C |
-| B5 | vibhāṣā forks returned as outputs, every branch tested | optional rules produce branches, not a silent choice |
+| B5 ✅ | `engine/vikalpa.py` — `choose()` fixes the reading of named विभाषा rules and the dispatcher consults it (after a recipe step, before the sūtra's default); `explore()` replays a derivation down every combination and returns the distinct completed branches, bounded at 2⁶ | **6.4.38 वा ल्यपि यields आगत्य् and आगय् from the same pipeline, unmodified** — the policy is read by the dispatcher, so no pipeline has to be parameterised to be explored |
 
 Phase B's worklist is now enumerated: `make lint` reports **87 sūtras whose padaccheda carries the
 standalone word न — निषेधs typed VIDHI with no declared block**, exactly the shape 6.1.104 had. Only
 *one* PRATISHEDHA in the registry has न in its padaccheda. Converting those 87 is the bulk of B3.
+
+**Phase B status:** B1 ✅ B2 ✅ B3 → review (see the row) B4 ✅ B5 ✅.
 
 **Gate B:** measured on `sig/suite_sig.json` — today the whole suite produces **229 BLOCKED
 firings against 164,048 SKIPPED**, and only **six sūtras are ever blocked at all** (101 of those
