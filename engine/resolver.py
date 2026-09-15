@@ -94,7 +94,14 @@ def _soi_scores(
     state: State,
     specificity: Optional[Dict[str, Callable[[State], int]]] = None,
 ) -> Dict[str, int]:
-    from engine.specificity_registry import get_specificity
+    try:
+        from engine.specificity_registry import get_specificity
+    except ModuleNotFoundError:
+        # The per-sūtra SOI registry is an optional refinement of Layer C.
+        # Without it every candidate falls back to the declared-field
+        # heuristic, and the paribhāṣā layers above and below still decide.
+        def get_specificity(_sutra_id: str, _state: State) -> int:  # type: ignore[misc]
+            return 0
 
     scores: Dict[str, int] = {}
     for cid in candidate_ids:

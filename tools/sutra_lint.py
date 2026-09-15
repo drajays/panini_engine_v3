@@ -83,14 +83,33 @@ def _sutra_id(path: Path) -> str:
 
 
 def _cond_source(tree: ast.Module) -> str:
-    """Source of `cond` and every helper it calls at module level, roughly."""
-    chunks = []
-    for node in ast.walk(tree):
-        if isinstance(node, ast.FunctionDef) and (
-            node.name == "cond" or node.name.startswith("_")
-        ):
-            chunks.append(ast.unparse(node))
-    return "\n".join(chunks)
+    """Source of ``cond`` and the helpers ``cond`` actually reaches.
+
+    Scanning every ``_``-prefixed function instead would charge a file for
+    what its ``act`` does: 1.1.11 reads ``vibhakti_vacana`` in a helper used
+    only by ``act``, which Art. 2 permits and Art. 2 §2c does not.
+    """
+    functions = {
+        node.name: node for node in ast.walk(tree)
+        if isinstance(node, ast.FunctionDef)
+    }
+    if "cond" not in functions:
+        return ""
+
+    reached: set[str] = set()
+    frontier = ["cond"]
+    while frontier:
+        name = frontier.pop()
+        if name in reached or name not in functions:
+            continue
+        reached.add(name)
+        for call in ast.walk(functions[name]):
+            if isinstance(call, ast.Call):
+                target = call.func
+                called = getattr(target, "id", None) or getattr(target, "attr", None)
+                if called in functions:
+                    frontier.append(called)
+    return "\n".join(ast.unparse(functions[name]) for name in sorted(reached))
 
 
 def scan_files() -> dict[str, dict[str, Any]]:
