@@ -1,4 +1,4 @@
-from webui.display import filter_surface_changed as filter_steps_surface_changed
+from core.trace_view import filter_surface_changed as filter_steps_surface_changed
 
 
 def test_filter_keeps_only_changed():

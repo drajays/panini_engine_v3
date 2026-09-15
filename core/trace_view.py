@@ -96,3 +96,13 @@ def enrich_trace(raw_trace: list[dict]) -> list[dict]:
             "_hint_hi"        : hint_for_sutra(sid) if sid else "",
         })
     return out
+
+
+def filter_surface_changed(trace: list[dict]) -> list[dict]:
+    """Only the steps that actually changed the form.
+
+    The reading a scholar usually wants: saṃjñā and adhikāra rows are real
+    applications, but they leave the tape untouched, so a surface-only view
+    shows the derivation's operations.
+    """
+    return [s for s in trace if s.get("form_before") != s.get("form_after")]
