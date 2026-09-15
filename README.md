@@ -17,11 +17,14 @@ Measured, not asserted. Every number here comes from a command
     tested                 :    528
   worklist                 :    296   move the tape but are not yet cited
   rāma paradigm cells      :  24/24   full classical match
-  tests                    : 19,125 passing, 1 skipped
+  tests                    : 19,136 passing, 1 skipped
+  agreement vs Vidyut      :  81.1 %   (338 of 417 grid cells; nominals 192/192)
 ```
 
 ```bash
 make coverage        # regenerates the ledger and prints the block above
+make lint            # constitutional lint (Art. 2 · 13 · 15 · 16)
+make bench           # differential report card against Vidyut (Art. 19)
 make test-all        # the suite
 ```
 

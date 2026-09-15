@@ -61,3 +61,6 @@ coverage:
 
 lint:
 	python3 -m tools.sutra_lint
+
+bench:
+	python3 -m bench.run --show-disagreements --write
