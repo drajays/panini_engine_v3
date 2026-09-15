@@ -64,3 +64,6 @@ lint:
 
 bench:
 	python3 -m bench.run --show-disagreements --write
+
+gaps:
+	python3 -m tools.gaps_report

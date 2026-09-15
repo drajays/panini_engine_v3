@@ -236,13 +236,18 @@ numbers being real.*
 |---|---|---|
 | A1 | `coverage_report()` returns **registered** and **implemented** separately (invoked · moved · cited · tested); the honest number is committed | the number drops 3,985 → ~296 and the README is corrected |
 | A2 ✅ | `sutra_lint` (`make lint`) — seven checks, three of them ratcheted; `why_not` explains any sūtra's fate in one derivation | ratchet frozen at arm-in-cond 33 · coordinate-in-cond 34 · **nisedha-as-vidhi 87**; enforced by `tests/constitutional/test_sutra_lint_ratchet.py` |
-| A3 | `gaps.py` — an unmodelled context emits a named gap; gaps aggregate into a frequency-ranked list | the 6,496 silent SKIPPEDs become a queryable worklist |
+| A3 ✅ | `engine/gaps.py` + `make gaps` — three typed gap kinds, each dry-run verified | **281 gaps on the 417-cell grid**: 202 unscheduled (a rule whose cond was true, that would have changed the form, and that no pipeline asked) + 79 oracle disagreements. The dry-run filter is the whole design: without it the same grid reports 17,285 |
 | A4 ✅ | `bench/` — 417-cell grid, Vidyut oracle committed as CSV so the comparison reproduces without installing it (`make bench`) | **81.1 % agreement (338/417)**: all 192 nominal cells agree; every one of the 79 disagreements is verbal — पा 45, कृ 25, गम् liṭ 6, नी liṭ 3. Pinned by `tests/regression/test_bench_agreement.py` |
 | A5 | form index v1 — `build_form_index()` generalised over the whole dhātupāṭha and a śabda list, verbs included, stored as a regenerable artifact | CI rebuilds it and re-derives a sample; drift is a build failure |
 
 **Gate A:** one command prints the report card; every README number is reproducible; registered vs
-implemented and the first agreement rate are both committed. **A1, A2, A4 are done; A3 (`gaps.py`)
-and A5 (the form index) remain.**
+implemented and the first agreement rate are both committed. **A1–A4 are done; A5 (the form index)
+remains.**
+
+The two instruments corroborate, which is the strongest evidence either is measuring something
+real: the 79 cells where Vidyut disagrees need exactly the rules the gap list ranks highest —
+कृ needs 6.4.110 (*karuvas → kuruvas*), गम् liṭ needs 7.4.62 (*gamgama → jamgama*), पा needs
+6.4.64 (*pAi → pi*). Phase B and Phase F now share one worklist.
 
 ### Phase B — Execute the metatheory
 *The layer whose absence blocks everything else.*

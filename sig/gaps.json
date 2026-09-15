@@ -1,0 +1,841 @@
+{
+  "generated_at": "2026-09-15T05:35:40+00:00",
+  "cells": 417,
+  "derived": 417,
+  "refused": 0,
+  "gaps": 281,
+  "worklist": [
+    {
+      "kind": "unscheduled",
+      "subject": "6.4.62",
+      "count": 45,
+      "detail": "after step 26 it would have written BUsyami → BUiwsyami, and no pipeline asked it",
+      "seen_in": [
+        "tinanta:BU:lRT:1:1",
+        "tinanta:BU:lRT:1:2",
+        "tinanta:BU:lRT:1:3"
+      ]
+    },
+    {
+      "kind": "unscheduled",
+      "subject": "6.4.77",
+      "count": 32,
+      "detail": "after step 28 it would have written BUami → Buvami, and no pipeline asked it",
+      "seen_in": [
+        "tinanta:BU:laT:1:1",
+        "tinanta:BU:laT:1:2",
+        "tinanta:BU:laT:1:3"
+      ]
+    },
+    {
+      "kind": "unscheduled",
+      "subject": "7.2.35",
+      "count": 30,
+      "detail": "after step 15 it would have written BUli → BUili, and no pipeline asked it",
+      "seen_in": [
+        "tinanta:BU:liT:1:1",
+        "tinanta:BU:liT:2:2",
+        "tinanta:BU:liT:2:3"
+      ]
+    },
+    {
+      "kind": "unscheduled",
+      "subject": "7.3.84",
+      "count": 21,
+      "detail": "after step 20 it would have written BUvas → Bovas, and no pipeline asked it",
+      "seen_in": [
+        "tinanta:BU:liT:1:2",
+        "tinanta:BU:liT:1:3",
+        "tinanta:BU:liT:2:1"
+      ]
+    },
+    {
+      "kind": "unscheduled",
+      "subject": "7.4.62",
+      "count": 18,
+      "detail": "after step 33 it would have written gamgama → jamgama, and no pipeline asked it",
+      "seen_in": [
+        "tinanta:gamx~:liT:1:1",
+        "tinanta:gamx~:liT:1:2",
+        "tinanta:gamx~:liT:1:3"
+      ]
+    },
+    {
+      "kind": "unscheduled",
+      "subject": "7.3.101",
+      "count": 16,
+      "detail": "after step 35 it would have written rAmaNe → rAmANe, and no pipeline asked it",
+      "seen_in": [
+        "subanta:rAma:pum:4:1",
+        "subanta:rAma:pum:5:1",
+        "subanta:rAma:pum:6:1"
+      ]
+    },
+    {
+      "kind": "unscheduled",
+      "subject": "6.4.110",
+      "count": 12,
+      "detail": "after step 28 it would have written karuvas → kuruvas, and no pipeline asked it",
+      "seen_in": [
+        "tinanta:qukfY:laG:1:2",
+        "tinanta:qukfY:laG:1:3",
+        "tinanta:qukfY:laG:2:2"
+      ]
+    },
+    {
+      "kind": "unscheduled",
+      "subject": "6.4.88",
+      "count": 9,
+      "detail": "after step 15 it would have written BUla → BUvukla, and no pipeline asked it",
+      "seen_in": [
+        "tinanta:BU:laG:1:1",
+        "tinanta:BU:laG:1:2",
+        "tinanta:BU:laG:1:3"
+      ]
+    },
+    {
+      "kind": "unscheduled",
+      "subject": "7.2.116",
+      "count": 7,
+      "detail": "after step 7 it would have written gam → gAm, and no pipeline asked it",
+      "seen_in": [
+        "tinanta:gamx~:liT:1:2",
+        "tinanta:gamx~:liT:1:3",
+        "tinanta:gamx~:liT:2:1"
+      ]
+    },
+    {
+      "kind": "unscheduled",
+      "subject": "6.4.64",
+      "count": 7,
+      "detail": "after step 23 it would have written pAi → pi, and no pipeline asked it",
+      "seen_in": [
+        "tinanta:pA:laT:1:1",
+        "tinanta:pA:laG:1:1",
+        "tinanta:pA:liT:1:2"
+      ]
+    },
+    {
+      "kind": "unscheduled",
+      "subject": "7.1.3",
+      "count": 5,
+      "detail": "after step 20 it would have written BUjhi → BUanti, and no pipeline asked it",
+      "seen_in": [
+        "tinanta:BU:liT:3:3",
+        "tinanta:gamx~:liT:3:3",
+        "tinanta:pA:liT:3:3"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:gamx~:liT:1:2",
+      "count": 1,
+      "detail": "we derive jagamiva, the oracle derives jagmiva",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:gamx~:liT:1:3",
+      "count": 1,
+      "detail": "we derive jagamima, the oracle derives jagmima",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:gamx~:liT:2:2",
+      "count": 1,
+      "detail": "we derive jagamaTuH, the oracle derives jagmaTuH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:gamx~:liT:2:3",
+      "count": 1,
+      "detail": "we derive jagama, the oracle derives jagma",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:gamx~:liT:3:2",
+      "count": 1,
+      "detail": "we derive jagamatuH, the oracle derives jagmatuH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:gamx~:liT:3:3",
+      "count": 1,
+      "detail": "we derive jagamuH, the oracle derives jagmuH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laT:1:1",
+      "count": 1,
+      "detail": "we derive pAai, the oracle derives pAmi",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laT:1:2",
+      "count": 1,
+      "detail": "we derive pAAvahi, the oracle derives pAvaH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laT:1:3",
+      "count": 1,
+      "detail": "we derive pAAmahi, the oracle derives pAmaH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laT:2:1",
+      "count": 1,
+      "detail": "we derive pAaTAH, the oracle derives pAsi",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laT:2:2",
+      "count": 1,
+      "detail": "we derive pAaATAm, the oracle derives pATaH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laT:2:3",
+      "count": 1,
+      "detail": "we derive pAaDvam, the oracle derives pATa",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laT:3:1",
+      "count": 1,
+      "detail": "we derive pAata, the oracle derives pAti",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laT:3:2",
+      "count": 1,
+      "detail": "we derive pAaAtAm, the oracle derives pAtaH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laT:3:3",
+      "count": 1,
+      "detail": "we derive pAanta, the oracle derives pAnti",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laG:1:1",
+      "count": 1,
+      "detail": "we derive apAa, the oracle derives apAm",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laG:1:2",
+      "count": 1,
+      "detail": "we derive apAAva, the oracle derives apAva",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laG:1:3",
+      "count": 1,
+      "detail": "we derive apAAma, the oracle derives apAma",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laG:2:1",
+      "count": 1,
+      "detail": "we derive apAaTAH, the oracle derives apAH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laG:2:2",
+      "count": 1,
+      "detail": "we derive apAaATAm, the oracle derives apAtam",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laG:2:3",
+      "count": 1,
+      "detail": "we derive apAaDvam, the oracle derives apAta",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laG:3:1",
+      "count": 1,
+      "detail": "we derive apAata, the oracle derives apAd|apAt",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laG:3:2",
+      "count": 1,
+      "detail": "we derive apAaAtAm, the oracle derives apAtAm",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:laG:3:3",
+      "count": 1,
+      "detail": "we derive apAanta, the oracle derives apAn",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:liT:1:1",
+      "count": 1,
+      "detail": "we derive papAa, the oracle derives papO",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:liT:1:2",
+      "count": 1,
+      "detail": "we derive papAiva, the oracle derives papiva",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:liT:1:3",
+      "count": 1,
+      "detail": "we derive papAima, the oracle derives papima",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:liT:2:1",
+      "count": 1,
+      "detail": "we derive papAiTa, the oracle derives papiTa",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:liT:2:2",
+      "count": 1,
+      "detail": "we derive papAaTuH, the oracle derives papaTuH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:liT:2:3",
+      "count": 1,
+      "detail": "we derive papAa, the oracle derives papa",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:liT:3:1",
+      "count": 1,
+      "detail": "we derive papAa, the oracle derives papO",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:liT:3:2",
+      "count": 1,
+      "detail": "we derive papAatuH, the oracle derives papatuH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:liT:3:3",
+      "count": 1,
+      "detail": "we derive papAuH, the oracle derives papuH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:lRT:1:1",
+      "count": 1,
+      "detail": "we derive pAizyai, the oracle derives pizyAmi",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:lRT:1:2",
+      "count": 1,
+      "detail": "we derive pAizyAvahi, the oracle derives pizyAvaH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:lRT:1:3",
+      "count": 1,
+      "detail": "we derive pAizyAmahi, the oracle derives pizyAmaH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:lRT:2:1",
+      "count": 1,
+      "detail": "we derive pAizyaTAH, the oracle derives pizyasi",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:lRT:2:2",
+      "count": 1,
+      "detail": "we derive pAizyaATAm, the oracle derives pizyaTaH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:lRT:2:3",
+      "count": 1,
+      "detail": "we derive pAizyaDvam, the oracle derives pizyaTa",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:lRT:3:1",
+      "count": 1,
+      "detail": "we derive pAizyata, the oracle derives pizyati",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:lRT:3:2",
+      "count": 1,
+      "detail": "we derive pAizyaAtAm, the oracle derives pizyataH",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:lRT:3:3",
+      "count": 1,
+      "detail": "we derive pAizyanta, the oracle derives pizyanti",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:loT:1:1",
+      "count": 1,
+      "detail": "we derive pAau, the oracle derives pAni",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:loT:1:2",
+      "count": 1,
+      "detail": "we derive pAAvahu, the oracle derives pAva",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:loT:1:3",
+      "count": 1,
+      "detail": "we derive pAAmahu, the oracle derives pAma",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:loT:2:1",
+      "count": 1,
+      "detail": "we derive pAaTAH, the oracle derives pA|pAtAd|pAtAt",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:loT:2:2",
+      "count": 1,
+      "detail": "we derive pAaATAm, the oracle derives pAtam",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:loT:2:3",
+      "count": 1,
+      "detail": "we derive pAaDvam, the oracle derives pAta",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:loT:3:1",
+      "count": 1,
+      "detail": "we derive pAata, the oracle derives pAtAd|pAtAt|pAtu",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:loT:3:2",
+      "count": 1,
+      "detail": "we derive pAaAtAm, the oracle derives pAtAm",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:pA:loT:3:3",
+      "count": 1,
+      "detail": "we derive pAanta, the oracle derives pAntu",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:nIY:liT:1:1",
+      "count": 1,
+      "detail": "we derive ninya, the oracle derives ninAya|ninaya|ninye",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:nIY:liT:2:1",
+      "count": 1,
+      "detail": "we derive ninyiTa, the oracle derives ninayiTa|ninyize",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:nIY:liT:3:1",
+      "count": 1,
+      "detail": "we derive ninya, the oracle derives ninAya|ninye",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:laT:1:2",
+      "count": 1,
+      "detail": "we derive kurvaH, the oracle derives karvaH|karvahe",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:laT:1:3",
+      "count": 1,
+      "detail": "we derive kurmaH, the oracle derives karmaH|karmahe",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:laT:2:2",
+      "count": 1,
+      "detail": "we derive kuruTaH, the oracle derives karuTaH|karvATe",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:laT:2:3",
+      "count": 1,
+      "detail": "we derive kuruTa, the oracle derives karuDve|karuTa",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:laT:3:2",
+      "count": 1,
+      "detail": "we derive kurutaH, the oracle derives karutaH|karvAte",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:laT:3:3",
+      "count": 1,
+      "detail": "we derive kurvanti, the oracle derives karvanti|karvate",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:laG:1:1",
+      "count": 1,
+      "detail": "we derive akaroam, the oracle derives akaravam|akarvi",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:laG:1:2",
+      "count": 1,
+      "detail": "we derive akaruva, the oracle derives akarva|akarvahi",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:laG:1:3",
+      "count": 1,
+      "detail": "we derive akaruma, the oracle derives akarma|akarmahi",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:liT:1:2",
+      "count": 1,
+      "detail": "we derive cakriva, the oracle derives cakfva|cakfvahe",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:liT:1:3",
+      "count": 1,
+      "detail": "we derive cakrima, the oracle derives cakfma|cakfmahe",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:liT:2:1",
+      "count": 1,
+      "detail": "we derive cakriTa, the oracle derives cakarTa|cakfze",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:lRT:1:1",
+      "count": 1,
+      "detail": "we derive kaizyAmi, the oracle derives karizyAmi|karizye",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:lRT:1:2",
+      "count": 1,
+      "detail": "we derive kaizyAvaH, the oracle derives karizyAvaH|karizyAvahe",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:lRT:1:3",
+      "count": 1,
+      "detail": "we derive kaizyAmaH, the oracle derives karizyAmaH|karizyAmahe",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:lRT:2:1",
+      "count": 1,
+      "detail": "we derive kaizyasi, the oracle derives karizyase|karizyasi",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:lRT:2:2",
+      "count": 1,
+      "detail": "we derive kaizyaTaH, the oracle derives karizyaTaH|karizyeTe",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:lRT:2:3",
+      "count": 1,
+      "detail": "we derive kaizyaTa, the oracle derives karizyaDve|karizyaTa",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:lRT:3:1",
+      "count": 1,
+      "detail": "we derive kaizyati, the oracle derives karizyate|karizyati",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:lRT:3:2",
+      "count": 1,
+      "detail": "we derive kaizyataH, the oracle derives karizyataH|karizyete",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:lRT:3:3",
+      "count": 1,
+      "detail": "we derive kaizyanti, the oracle derives karizyante|karizyanti",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:loT:1:1",
+      "count": 1,
+      "detail": "we derive karoni, the oracle derives karavARi|karavE",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:loT:1:2",
+      "count": 1,
+      "detail": "we derive karuva, the oracle derives karavAva|karavAvahE",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:loT:1:3",
+      "count": 1,
+      "detail": "we derive karuma, the oracle derives karavAma|karavAmahE",
+      "seen_in": [
+        "bench"
+      ]
+    },
+    {
+      "kind": "oracle_disagreement",
+      "subject": "tinanta:qukfY:loT:2:1",
+      "count": 1,
+      "detail": "we derive karohi, the oracle derives karu|karutAd|karutAt|karuzva",
+      "seen_in": [
+        "bench"
+      ]
+    }
+  ]
+}
