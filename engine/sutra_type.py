@@ -226,6 +226,10 @@ class SutraRecord:
 
     # Type-specific fields.
     blocks_sutra_ids : Tuple[str, ...]                = field(default_factory=tuple)
+    # अपवाद — the general rules this sūtra is the exception to. Declaring the
+    # relation is the ONLY sanctioned way to win a conflict (Art. 15): a cond
+    # may never be narrowed to dodge the utsarga it displaces.
+    apavada_of       : Tuple[str, ...]                = field(default_factory=tuple)
     adhikara_scope   : Tuple[str, str]                = field(default=("", ""))
     vibhasha_default : bool                           = True
     atidesha_target  : Optional[str]                  = None

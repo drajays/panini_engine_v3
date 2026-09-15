@@ -121,6 +121,7 @@ SUTRA = SutraRecord(
         "अक् वर्णस्य परस्मिन् सवर्णे एकादेशः सवर्ण-दीर्घः भवति; "
         "प०३६ ``ninaya``→``ninAya`` (णल्-परिणाम)।"
     ),
+    apavada_of     = ("6.1.77",),   # अकः सवर्णे दीर्घः is the अपवाद of इको यणचि: before a savarṇa the ekādeśa is dīrgha, not yaṇ.
     anuvritti_from = ("6.1.84",),
     cond           = cond,
     act            = act,

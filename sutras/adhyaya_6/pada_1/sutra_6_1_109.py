@@ -36,6 +36,7 @@ SUTRA = SutraRecord(
     text_dev              = "एङः पदान्तादति",
     padaccheda_dev        = "एङः पदान्तात् अति",
     why_dev               = "(सूत्रम् 6.1.109) एङः पदान्तादति।",
+    apavada_of     = ("6.1.78",),   # एङः पदान्तादति is the अपवाद of एचोऽयवायावः: pada-final eṅ before short a gives pūrvarūpa.
     anuvritti_from        = ('6.1.1',),
     cond                  = cond,
     act                   = act,

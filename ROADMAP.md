@@ -260,7 +260,7 @@ real: the 79 cells where Vidyut disagrees need exactly the rules the gap list ra
 
 | # | deliverable | check |
 |---|---|---|
-| B1 | 1.4.2 विप्रतिषेधे परं कार्यम् as the resolver's basis — order by Aṣṭādhyāyī position, record the loser in the step | a trace names the rule that was beaten and why |
+| B1 ✅ | the resolver's layers are **paribhāṣās, cited** from a vendored Paribhāṣenduśekhara slice: PŚ 38 पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः is the ladder, PŚ 57 gives अपवाद, and *para* carries its Aṣṭādhyāyī id **from the data**, never from a literal in engine code | `Decision(winner, layer, reason_dev, losers)`; `record_decision()` writes each beaten rule into the trace as BLOCKED, naming the winner and the paribhāṣā. नित्य and अन्तरङ्ग are declared `not_modelled` rather than silently skipped |
 | B2 | apavāda graph — `apavada_of` / `blocks_sutra_ids` seeded from the corpus's own pointers; declaration mandatory for new rules | no new rule merges without its conflicts declared |
 | B3 | convert every engineered conflict (Art. 15 test); 6.1.104 ↔ 6.1.102 is the template, already repaired | Art. 15's enforcement test green, site by site, none silenced |
 | B4 | asiddha strata — a visibility matrix (8.2.1 · 6.4.22 · 6.1.86) replacing the `tripadi_zone` flag | the 8.2.66 ⇄ 8.3.34 cycle stays broken for a stated reason |

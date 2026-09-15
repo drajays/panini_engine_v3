@@ -85,6 +85,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "वृद्धिः एचि",
     why_dev        = "अ-वर्णात् परस्मिन् एच्-वर्णे (ए/ऐ/ओ/औ) एकादेश-रूपेण "
                      "वृद्धिः।",
+    apavada_of     = ("6.1.87",),   # वृद्धिरेचि is the अपवाद of आद्गुणः: before एच् the ekādeśa is vṛddhi, not guṇa.
     anuvritti_from = ("6.1.84",),
     cond           = cond,
     act            = act,

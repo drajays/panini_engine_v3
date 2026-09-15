@@ -1,0 +1,94 @@
+{
+  "_provenance": {
+    "work": "परिभाषेन्दुशेखरः — Paribhāṣenduśekhara of Nāgeśa Bhaṭṭa",
+    "source_repo": "github.com/ashtadhyayi-com/data",
+    "source_path": "paribhashendushekhar/data.txt",
+    "fetched": "2026-09-15",
+    "entries_upstream": 133,
+    "slice_reason": "Only the paribhāṣās the resolver cites or defers to are vendored. Upstream publishes no licence file, so bulk data stays out of this repository (CONSTITUTION Art. 6); the work itself is classical and public domain, the digitisation is community curation.",
+    "commentary_omitted": "Nāgeśa's vyākhyā is not vendored — only the paribhāṣā text, which is what the engine cites."
+  },
+  "resolver_layers": {
+    "apavada": {
+      "label_dev": "अपवाद",
+      "ps_num": "57",
+      "strength_ladder": "38",
+      "astadhyayi_sutra": null,
+      "status": "modelled",
+      "note": "A declared exception defeats the general rule it names."
+    },
+    "para": {
+      "label_dev": "पर",
+      "ps_num": "38",
+      "strength_ladder": "38",
+      "astadhyayi_sutra": "1.4.2",
+      "status": "modelled",
+      "note": "Of rules of equal strength, the later in the Aṣṭādhyāyī wins."
+    },
+    "nitya": {
+      "label_dev": "नित्य",
+      "ps_num": "38",
+      "strength_ladder": "38",
+      "astadhyayi_sutra": null,
+      "status": "not_modelled",
+      "note": "A conflict that turns on nityatva is decided by the layers below and recorded as such — never silently (Art. 18)."
+    },
+    "antaranga": {
+      "label_dev": "अन्तरङ्ग",
+      "ps_num": "38",
+      "strength_ladder": "38",
+      "astadhyayi_sutra": null,
+      "status": "not_modelled",
+      "note": "See also PŚ 52, 54 (luk and lyap defeat antaraṅga) and PŚ 66 (an apavāda already carita-artha elsewhere yields)."
+    },
+    "once_beaten": {
+      "label_dev": "सकृद्गति",
+      "ps_num": "40",
+      "astadhyayi_sutra": null,
+      "status": "modelled",
+      "note": "What has once been set aside stays set aside — the reason state.blocked_sutras persists for the rest of a derivation."
+    }
+  },
+  "entries": [
+    {
+      "num": "13",
+      "paribhasha": "यत्रानेकविधमान्तर्यं तत्र स्थानत आन्तर्यं बलीयः",
+      "prelude": "ननु 'चेता' इत्यादौ ह्रस्वस्येकारस्य प्रमाणत आन्तर्यादकारोऽपि स्यादत आह —"
+    },
+    {
+      "num": "38",
+      "paribhasha": "पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः",
+      "prelude": ""
+    },
+    {
+      "num": "40",
+      "paribhasha": "सकृद्गतौ विप्रतिषेधे यद् बाधितं तद् बाधितमेव",
+      "prelude": "नन्वेवम् 'तिसृणाम्' इत्यत्र परत्वात् तिस्रादेशे पुनस्त्रयादेशः स्यादत आह —"
+    },
+    {
+      "num": "52",
+      "paribhasha": "अन्तरङ्गानपि विधीन् बहिरङ्गो लुग् बाधते",
+      "prelude": "नन्वेवम् 'गोमत्प्रियः' इत्यादौ पदद्वयनिमित्तकसमाश्रितत्वेन बहिरङ्गं लुकं बाधित्वाऽन्तरङ्गत्वाद्धल्ङ्यादिलोपे नुमादयः स्युः, अत आह —"
+    },
+    {
+      "num": "54",
+      "paribhasha": "अन्तरङ्गानपि विधीन् बहिरङ्गो ल्यब्बाधते",
+      "prelude": "नन्वेवमपि 'प्रधाय, प्रस्थाय' इत्यादावन्तरङ्गत्वाद्वित्वादिषु कृतेषु ल्यप् स्यादत आह —"
+    },
+    {
+      "num": "55",
+      "paribhasha": "वार्णादाङ्गं बलीयो भवति",
+      "prelude": "नन्वेवमपीयायेत्यादौ द्वित्वे कृतेऽन्तरङ्गत्वात् सवर्णदीर्घत्वेन तदसिद्धिरत आह —"
+    },
+    {
+      "num": "57",
+      "paribhasha": "अन्तरङ्गादप्यवादो बलवान्",
+      "prelude": ""
+    },
+    {
+      "num": "66",
+      "paribhasha": "अपवादो यद्यन्यत्र चरितार्थस्तर्ह्यन्तरङ्गेण बाध्यते",
+      "prelude": "ननु 'अयजे इन्द्रम्' इत्यादावन्तरङ्गस्यापि गुणस्यापवादेन सवर्णदीर्घेण बाधः स्यात्, अत आह —"
+    }
+  ]
+}
