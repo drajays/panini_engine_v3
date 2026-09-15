@@ -74,3 +74,6 @@ index:
 
 prakriya:
 	python3 -m tools.show_prakriya --check
+
+autonomy:
+	python3 -m tools.autonomy_report

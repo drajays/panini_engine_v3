@@ -282,10 +282,34 @@ sūtra; the autonomous-loop xfails turn green for laṭ kartari.
 
 | # | deliverable | check |
 |---|---|---|
-| C1 | scheduler proposes candidates from the rule base, not from an ordered list | candidate counts and timings recorded |
+| C1 ✅ | `tools/autonomy_report.py` + `make autonomy` — drives scheduler → resolver → apply_rule with no recipe and classifies the outcome as **reached · halted · diverged** | **All 11 certain subanta cases halt at step 0: 126 candidates offered, 0 effective.** Two findings, both measured — see below |
 | C2 | resolver decides using Phase B; `specificity_score` retired in favour of declared relations | no pipeline supplies ordering |
 | C3 | `derive()` becomes a thin router onto the loop (`final_plan.md` Phase 4/5) | |
 | C4 | the 187 pipelines become regression fixtures — kept as tests, removed from the engine | |
+
+**What C1 found, and what C2 must therefore do.**
+
+*Without* a vacuity filter the loop **diverges**: ~2,400 registry records have a permissive `cond`
+and an `act` that does nothing, and *para* picks them in descending sūtra order — 6.4.167, 6.4.166,
+6.4.165 … — rewriting रामसुँ as रामसुँ until the 500-iteration budget dies. So:
+
+1. **A candidate that would not change the tape is not a candidate.** The same dry-run idea that
+   took the gap report from 17,285 findings to 4 belongs in the scheduler.
+
+2. With that filter the divergence becomes an honest halt, and the real blocker shows: every case
+   stops at *stem + raw upadeśa* — रामसुँ, रामजस्, रामटा, हरिऔ, नदीऔ — where the next rule needed is
+   **it-saṃjñā and it-lopa (1.3.2 · 1.3.7 · 1.3.8 · 1.3.9)**. The scheduler cannot offer them: they
+   sit in the `upadesha` phase pool, the state is past that phase, and the chain is forward-only.
+   **The phase model contradicts उपदेशे** — 1.3.2's condition is the presence of an upadeśa on the
+   tape, which 4.1.2 creates *after* the upadeśa phase has closed. A phase chain is a pipeline in
+   disguise (Art. 7), and this is where it bites.
+
+3. *para* is also being asked the wrong question. विप्रतिषेधे परं कार्यम् settles two rules contending
+   for **the same site**; the loop hands it every applicable rule at once. C2 must apply the
+   non-conflicting ones and reserve para for genuine same-site contention.
+
+`tests/regression/test_autonomy_baseline.py` pins all of this: it fails the day a candidate advances
+रामसुँ, which is the day C2 starts working.
 
 **Gate C:** every rāma cell, every bhū cell and all 364 shipped derivations reproduce through the
 autonomous loop, with traces a scholar can read.

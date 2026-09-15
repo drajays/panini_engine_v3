@@ -1,0 +1,121 @@
+{
+  "cases": 11,
+  "outcomes": {
+    "halted": 11
+  },
+  "runs": [
+    {
+      "case": "ramah",
+      "outcome": "halted",
+      "surface": "rAmasu",
+      "expected": "rAmaH",
+      "offered": 126,
+      "effective": 0,
+      "steps": []
+    },
+    {
+      "case": "ramau",
+      "outcome": "halted",
+      "surface": "rAmaO",
+      "expected": "rAmO",
+      "offered": 126,
+      "effective": 0,
+      "steps": []
+    },
+    {
+      "case": "ramah_pl",
+      "outcome": "halted",
+      "surface": "rAmajas",
+      "expected": "rAmAH",
+      "offered": 126,
+      "effective": 0,
+      "steps": []
+    },
+    {
+      "case": "ramena",
+      "outcome": "halted",
+      "surface": "rAmawA",
+      "expected": "rAmeRa",
+      "offered": 126,
+      "effective": 0,
+      "steps": []
+    },
+    {
+      "case": "ramasya",
+      "outcome": "halted",
+      "surface": "rAmANas",
+      "expected": "rAmasya",
+      "offered": 126,
+      "effective": 0,
+      "steps": [
+        [
+          "7.3.101",
+          "rAmaNas",
+          "rAmANas",
+          "sole-candidate"
+        ]
+      ]
+    },
+    {
+      "case": "hari",
+      "outcome": "halted",
+      "surface": "hariO",
+      "expected": "harI",
+      "offered": 126,
+      "effective": 0,
+      "steps": []
+    },
+    {
+      "case": "vayu",
+      "outcome": "halted",
+      "surface": "vAyuO",
+      "expected": "vAyU",
+      "offered": 126,
+      "effective": 0,
+      "steps": []
+    },
+    {
+      "case": "agni",
+      "outcome": "halted",
+      "surface": "agniO",
+      "expected": "agnI",
+      "offered": 126,
+      "effective": 0,
+      "steps": []
+    },
+    {
+      "case": "nadyau",
+      "outcome": "halted",
+      "surface": "nadIO",
+      "expected": "nadyO",
+      "offered": 126,
+      "effective": 0,
+      "steps": []
+    },
+    {
+      "case": "radhe",
+      "outcome": "halted",
+      "surface": "rADAO",
+      "expected": "rADe",
+      "offered": 126,
+      "effective": 0,
+      "steps": []
+    },
+    {
+      "case": "jnanam",
+      "outcome": "halted",
+      "surface": "jYAnaam",
+      "expected": "jYAnam",
+      "offered": 126,
+      "effective": 0,
+      "steps": [
+        [
+          "7.1.24",
+          "jYAnasu",
+          "jYAnaam",
+          "sole-candidate"
+        ]
+      ]
+    }
+  ]
+}
