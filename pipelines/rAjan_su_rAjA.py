@@ -34,13 +34,17 @@ def derive_rAjA() -> State:
     stem = Term(
         kind="prakriti",
         varnas=list(parse_slp1_upadesha_sequence("rAjan")),
-        tags={"anga", "krt"},
+        tags={"anga", "krt", "an_pratipadika"},
         meta={"upadesha_slp1": "rAjan"},
     )
     stem.tags.add("pulliṅga")
     s = State(terms=[stem], meta={"linga": "pulliṅga"}, trace=[])
 
     s = apply_rule("1.2.46", s)
+    # 1.2.46's samāsa-merge branch rebuilds the Term with only
+    # {prātipadika, anga}, dropping custom tags — re-mark it so 8.2.7 knows
+    # this प्रातिपदिक is न्-अन्त (see pipelines.subanta.build_initial_state).
+    s.terms[0].tags.add("an_pratipadika")
     s.meta["vibhakti_vacana"] = "1-1"
     s = P00_sup_it_lopa(s)
 
@@ -53,9 +57,7 @@ def derive_rAjA() -> State:
 
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
-    s.meta["n_lopa_recipe"] = True
     s = apply_rule("8.2.7", s)
-    s.meta.pop("n_lopa_recipe", None)
     return s
 
 

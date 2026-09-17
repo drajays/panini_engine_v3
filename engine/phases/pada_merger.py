@@ -54,6 +54,9 @@ def pada_merge(state: State) -> None:
     keep_pratipadika = any("prātipadika" in t.tags for t in terms)
     keep_anga = any("anga" in t.tags for t in terms)
     keep_krt_tfc = any("krt_tfc" in t.tags for t in terms)
+    keep_an_pratipadika = any("an_pratipadika" in t.tags for t in terms)
+    keep_sambuddhi = any("sambuddhi" in t.tags for t in terms)
+    keep_ngi = any("ngi" in t.tags for t in terms)
     keep_linga = (
         "strīliṅga" if any("strīliṅga" in t.tags for t in terms)
         else "napuṃsaka" if any("napuṃsaka" in t.tags for t in terms)
@@ -81,6 +84,12 @@ def pada_merge(state: State) -> None:
         tags.add("anga")
     if keep_krt_tfc:
         tags.add("krt_tfc")
+    if keep_an_pratipadika:
+        tags.add("an_pratipadika")
+    if keep_sambuddhi:
+        tags.add("sambuddhi")
+    if keep_ngi:
+        tags.add("ngi")
     if keep_linga:
         tags.add(keep_linga)
 

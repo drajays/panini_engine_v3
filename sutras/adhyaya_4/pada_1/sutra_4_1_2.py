@@ -118,8 +118,17 @@ def act(state: State) -> State:
     # these paradigm coordinates may be read (Constitution Art. 2
     # exception granted to the sup-attacher).
     tags = {"sup", "upadesha", "pratyaya"}
-    if vv == "8-1":
-        tags.add("sambuddhi")
+    # 7-1 == ङि (saptamī ekavacana); 8-1 == सम्बुद्धि — also mirrored onto the
+    # anga/prātipadika term, because an अपृक्त pratyaya (single हल्) is
+    # *deleted outright* by 6.1.68 (not just emptied), which would otherwise
+    # carry the tag out of state.terms before a later Tripāḍī rule (8.2.7,
+    # gated by 8.2.8 न ङिसम्बुद्ध्योः) needs to read it off the surviving term.
+    if vv in ("7-1", "8-1"):
+        marker = "ngi" if vv == "7-1" else "sambuddhi"
+        tags.add(marker)
+        for t in state.terms:
+            if "anga" in t.tags or "prātipadika" in t.tags:
+                t.tags.add(marker)
 
     # v3.1: tag pratyaya with it-candidate hints derived from _meta in
     # sup_upadesha.json.  These tags are read by the 1.3.x prakaraṇa.

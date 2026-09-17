@@ -213,6 +213,11 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
         tags   = {"prātipadika", "anga"},
         meta   = {"upadesha_slp1": stem_slp1},
     )
+    if stem_slp1.endswith("n"):
+        # न्-अन्त प्रातिपदिक (राजन्, आत्मन् …) — lets 8.2.7 tell a stem-final
+        # n (प्रातिपदिकान्तस्य) from a sup-derived one (रामान्, सर्वान्); a tag,
+        # not state.meta, since meta does not survive sup attachment/merge.
+        stem.tags.add("an_pratipadika")
     # Encode liṅga as a Term tag so sūtra cond() can remain blind to
     # state.meta (CONSTITUTION Art. 2).
     if linga == "napuṃsaka":

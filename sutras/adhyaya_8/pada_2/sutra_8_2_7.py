@@ -2,8 +2,8 @@
 8.2.7  नलोपः प्रातिपदिकान्तस्य  —  VIDHI
 
 Operational role (v3.6):
-  In Tripāḍī zone, for a pada that ends in final ``n``, elide that ``n`` when
-  the caller arms this rule for a specific demo slice (e.g. ``rAjAn`` → ``rAjA``).
+  In Tripāḍī zone, for a single-term pada that ends in final ``n``, elide
+  that ``n`` structurally (e.g. ``rAjAn`` → ``rAjA``) — no caller arming.
 
 Legacy slice:
   Also supports the existing **tṛc** nominal output path (``krt_tfc`` on the
@@ -27,17 +27,20 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    # Branch A (default): Tripāḍī, pada-final n-lopa.
+    # Branch A (default): Tripāḍī, pada-final n-lopa — but only when that
+    # final n *belongs to the prātipadika* (राजन्, आत्मन् … — प्रातिपदिकान्तस्य,
+    # tagged ``an_pratipadika`` at subanta tape-init), not when it is a sup
+    # ending that happens to surface as n after sandhi (रामान्, सर्वान् —
+    # अकारान्त स्तेम + अम्-द्वितीया).
     if state.tripadi_zone and len(state.terms) == 1 and "pada" in state.terms[0].tags:
         t0 = state.terms[0]
-        armed = ("krt_tfc" in t0.tags) or bool(state.meta.get("n_lopa_recipe"))
-        if not armed:
-            return False
         if t0.meta.get("nalopa_8_2_7_done"):
             return False
-        if not t0.varnas:
+        if not t0.varnas or t0.varnas[-1].slp1 != "n":
             return False
-        return t0.varnas[-1].slp1 == "n"
+        if "sambuddhi" in t0.tags or "ngi" in t0.tags:
+            return False  # 8.2.8 न ङिसम्बुद्ध्योः — blocks this very rule there
+        return "krt_tfc" in t0.tags or "an_pratipadika" in t0.tags
 
     # Branch B (narrow demo): samāsa boundary n-lopa on the prior member (P011 dvigu).
     if not state.meta.get("purvapada_n_lopa_recipe"):
