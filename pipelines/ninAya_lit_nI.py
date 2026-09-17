@@ -3,13 +3,15 @@ pipelines/ninAya_lit_nI.py — **निनाय** (*nināya*, *liṭ* pra. eka,
 
 Source JSON: ``/Users/dr.ajayshukla/my_scripts/final/split_prakriyas_11/P036.json``
 
-Spine (``apply_rule`` + recipe meta; **7.2.115** *vṛddhi* pakṣa omitted — JSON **PAKṢA-2**
-**7.3.84** *guṇa* path):
+Spine (**vṛddhi** pakṣa — णल् is ṇit, so **7.2.115** *अचो ञ्णिति* pre-empts the
+default guṇa of **7.3.84**; this is what actually derives the ``A`` of निनाय,
+not a savarṇa-dīrgha merge):
 
   • *nī* (**nI**) + *liṭ* → **tip** row → **3.4.82** ``tip``→``Nal`` (``P00_lit_tip_to_Nal``)
-  • **1.3.3**/**1.3.9** on ``Nal`` → ``Na`` → **7.3.84** → **6.1.78** (*e*+*a* of ``ṇal``)
-  • **8.4.41** (**P036**) ``Na``→augment ``a`` → **6.1.8** (*sthānivat* **ne**) → **7.4.59** → **7.4.60**
-  • *pada* merge → **6.1.101** (**P036**) ``ninaya``→``ninAya``
+  • **1.3.3** (final ``l`` it) → **1.3.7** (initial ``N`` it, चुटु) → **1.3.9** it-lopa → ``Nal``→``a``
+  • **7.2.115** (*vṛddhi* of ``I``→``E`` before the ṇit affix) → **6.1.78** (``E``+``a``→``Aya``)
+  • **6.1.8** (*sthānivat* reduplication basis) → **7.4.59** → **7.4.60** → *pada* merge → ``ninAya``
+    directly (no savarṇa-dīrgha needed: **6.1.101** correctly SKIPs).
 """
 # ── Claude Code review 2026-05-07 ──────────────────────────────────
 # CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   
@@ -24,7 +26,7 @@ from core.canonical_pipelines import (
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
     P00_lit_lakara_scope,
-    P00_hal_anit_guna,
+    P00_hal_it_lopa,
 )
 from engine import apply_rule
 from engine.state import State, Term
@@ -46,10 +48,9 @@ def derive_ninAya_lit_nI_P036() -> State:
     s = P00_lit_lakara_scope(s)
     s = P00_lit_tip_to_Nal(s)
 
-    s = P00_hal_anit_guna(s)
+    s = P00_hal_it_lopa(s)
+    s = apply_rule("7.2.115", s)
     s = apply_rule("6.1.78", s)
-
-    s = apply_rule("8.4.41", s)
 
     s = apply_rule("6.1.8", s)
 

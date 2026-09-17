@@ -23,19 +23,11 @@ from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State, Term
 from phonology     import mk
 from phonology.savarna import is_savarna, dirgha_of
-from phonology.varna import parse_slp1_upadesha_sequence
 
 from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
 
 
 _AK = frozenset({"a", "A", "i", "I", "u", "U", "f", "F", "x", "X"})
-
-
-def _p036_ninaya_bridge(state: State) -> bool:
-    """Teaching **P036** step 15: merged ``ninaya`` → ``ninAya`` (*ā* in *ṇal* reflex)."""
-    if len(state.terms) != 1 or "pada" not in state.terms[0].tags:
-        return False
-    return state.flat_slp1() == "ninaya"
 
 
 def _p037_awiw_cluster(state: State) -> bool:
@@ -75,16 +67,12 @@ def _find_pair(state: State):
 
 def cond(state: State) -> bool:
     return (
-        _p036_ninaya_bridge(state)
-        or _p037_awiw_cluster(state)
+        _p037_awiw_cluster(state)
         or _find_pair(state) is not None
     )
 
 
 def act(state: State) -> State:
-    if _p036_ninaya_bridge(state):
-        state.terms[0].varnas = list(parse_slp1_upadesha_sequence("ninAya"))
-        return state
     if _p037_awiw_cluster(state):
         t0, t1 = state.terms[0], state.terms[1]
         merged = Term(
@@ -111,10 +99,7 @@ SUTRA = SutraRecord(
     text_slp1      = "akaH savarRe dIrghaH",
     text_dev       = "अकः सवर्णे दीर्घः",
     padaccheda_dev = "अकः सवर्णे दीर्घः",
-    why_dev        = (
-        "अक् वर्णस्य परस्मिन् सवर्णे एकादेशः सवर्ण-दीर्घः भवति; "
-        "प०३६ ``ninaya``→``ninAya`` (णल्-परिणाम)।"
-    ),
+    why_dev        = "अक् वर्णस्य परस्मिन् सवर्णे एकादेशः सवर्ण-दीर्घः भवति।",
     apavada_of     = ("6.1.77",),   # अकः सवर्णे दीर्घः is the अपवाद of इको यणचि: before a savarṇa the ekādeśa is dīrgha, not yaṇ.
     anuvritti_from = ("6.1.84",),
     cond           = cond,

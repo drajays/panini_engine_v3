@@ -110,6 +110,16 @@ def _terms_sup_or_primary(state: State):
     ]
     if qac:
         return qac
+    # tiṅ ādeśa (e.g. Ral/Nal 3.4.82) still carrying its raw upadeśa: the affix's
+    # own initial cuṭ-class hal (e.g. the ण् of णल्) is a candidate too — CUTU
+    # membership is re-checked by the caller, so this never fires for the vast
+    # majority of tiṅ substitutes (tip, tas, jhi, ...) whose first letter isn't cuṭ.
+    tin_upadesha = [
+        t for t in state.terms
+        if "tin" in t.tags and "upadesha" in t.tags and "dhatu" not in t.tags
+    ]
+    if tin_upadesha:
+        return tin_upadesha
     if state.terms:
         return [state.terms[0]]
     return []

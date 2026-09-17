@@ -63,14 +63,15 @@ def _find(state: State):
         di = state.terms.index(dhatu)
         return (di, len(dhatu.varnas) - 1, rep)
 
-    # Original kṛt path
+    # General path: ñit/ṇit pratyaya (kṛt, tiṅ, ...) after the dhātu — the mūla
+    # sūtra names no pada-class, only the it-marker, so any pratyaya qualifies.
     if len(state.terms) < 2:
         return None
     dhatu = next((t for t in state.terms if "dhatu" in t.tags), None)
     if dhatu is None:
         return None
     pr = state.terms[-1]
-    if "krt" not in pr.tags:
+    if "pratyaya" not in pr.tags:
         return None
     if dhatu.meta.get("aco_nniti_vrddhi_done"):
         return None

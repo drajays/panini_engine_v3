@@ -28,11 +28,12 @@ def test_ninAya_lit_nI_P036_spine() -> None:
     for sid in (
         "3.2.115",
         "3.4.82",
-        "7.3.84",
+        "7.2.115",  # vṛddhi (ṇal is ṇit) — not 7.3.84 guṇa
         "6.1.78",
-        "8.4.41",
         "6.1.8",
         "7.4.59",
-        "6.1.101",
     ):
         assert _fired(s.trace, sid), f"missing trace for {sid}"
+    # No savarṇa-dīrgha is needed to reach निनाय (7.2.115+6.1.78 already produce
+    # the ā); 6.1.101 must correctly SKIP, not paper over a missing step.
+    assert not _fired(s.trace, "6.1.101")

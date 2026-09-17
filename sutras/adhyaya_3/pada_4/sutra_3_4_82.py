@@ -135,16 +135,16 @@ def act(state: State) -> State:
         ti = _find_lit_tip(state)
         if ti is None:
             return state
+        # णल् = R (ण्, cuṭu-it) + a + l (halantyam-it); SLP1 ``R`` maps to ण्,
+        # NOT ``N`` (ङ्) — the affix's own name is "Ral" for that reason.
+        varnas = list(parse_slp1_upadesha_sequence("Ral"))
+        _mark_it_candidates("Ral", varnas)
         nal = Term(
             kind="pratyaya",
-            varnas=list(parse_slp1_upadesha_sequence("Nal")),
+            varnas=varnas,
             tags={"pratyaya", "tin", "ardhadhatuka", "upadesha"},
-            meta={"upadesha_slp1": "Nal", "lit_Nal": True},
+            meta={"upadesha_slp1": "Ral", "lit_Nal": True},
         )
-        # **1.3.9** *it*-lopa on ``ṇal`` requires the final ``l`` to carry an *it* tag
-        # (``parse_slp1_upadesha_sequence`` does not mark ``Nal`` like ``tip``).
-        if nal.varnas and nal.varnas[-1].slp1 == "l":
-            nal.varnas[-1].tags.add("it_candidate_halantyam")
         state.terms[ti] = nal
         state.meta["liT_Nal_recipe"] = False
         return state

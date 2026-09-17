@@ -49,7 +49,7 @@ def _site_p036(state: State) -> bool:
     dh, nxt = state.terms[di], state.terms[di + 1]
     if dh.meta.get("P036_6_1_8_done"):
         return False
-    if "".join(v.slp1 for v in dh.varnas) != "nay":
+    if "".join(v.slp1 for v in dh.varnas) != "nAy":
         return False
     if len(nxt.varnas) != 1 or nxt.varnas[0].slp1 != "a":
         return False
