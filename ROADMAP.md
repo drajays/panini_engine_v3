@@ -329,7 +329,7 @@ autonomous loop, with traces a scholar can read.
 
 | # | deliverable | check |
 |---|---|---|
-| E1 | dhātupāṭha completed for gaṇas 2–10 (today: 986 roots, 971 of them gaṇa 1) | शास्ति derives |
+| E1 ◐ | dhātupāṭha completed for gaṇas 2–10 (was: 986 roots, 971 of them gaṇa 1) | **started (2026-09-17)**: 1,060 roots bulk-imported from `ashtadhyayi-com/data` (`scripts/build_dhatupatha_upadesha_v3.py`), **986 → 2,046 entries**, all gaṇas now populated. शास् (अनुशिष्टौ) is in the data, but शास्ति itself does not yet derive: it shares its plain upadeśa `SAsu~` with शासु (इच्छायाम्), and the two are traditionally distinguished only by svara (udātta/anudātta iṭ) — invisible to `pipelines.tinanta.derive()`, which reads the bare SLP1 string. That is an accent-modeling gap, not a data gap; correctly deferred to Phase G |
 | E2 ◐ | śabda / prātipadika list loaded with provenance | **started**: 13 attested paradigms vendored from ashtadhyayi.com (`data/reference/shabda_gold/`), **312/312 cells derive correctly** — नदी went 17/24 → 24/24 the same day, by implementing 7.3.112 आण् नद्याः, 7.3.116 ङेराम्, 7.3.107 अम्बार्थनद्योर्ह्रस्वः, scheduling the स्त्री saṃjñās (1.4.3–1.4.5) and restricting 6.1.103 to its own पुंसि. `make shabda` shows any paradigm as a table; `--cell V-N` shows that cell's prakriyā |
 | E3 | form index v2 — every vibhāṣā branch, with derivation ids so the forward journey is reproducible on demand | |
 | E4 | sandhi splitting: the saṃhitā/tripādī stratum compiled to an invertible relation → over-generating lattice | दण्ड एवाभिरक्षति → दण्डः + एव + अभिरक्षति, each cut citing its sūtra |
