@@ -9,7 +9,13 @@ Resolved from, in order: ``<repo>/panini_engine_v2/data`` if present, else
 ``~/Documents/panini_engine_v2/data`` (see ``_v2_data_dir()``).
 
 Plus **curated extensions** for dhātus outside that Bhvādi slice (other gaṇas) used by
-pipelines/tests (tṛc examples, णीञ्, etc.).
+pipelines/tests (tṛc examples, णीञ्, etc.), plus a bulk import of **gaṇas 2–10** from
+``ashtadhyayi-com/data`` (``dhatu/data.txt``, cached at ``data/upstream/`` and fetched on
+first run) — Phase E1 of ``ROADMAP.md``. That source already carries the post-it-lopa
+``dhatu`` form alongside the ``aupadeshik`` (upadeśa) form, so no it-lopa is guessed here;
+``it_markers`` is left ``[]`` for imported rows since ``aupadeshik → dhatu`` sometimes
+involves n-āgama/samprasāraṇa, not pure substring removal, and the field is not
+consumed by the live 1.3.2–1.3.9 it-saṃjñā sūtras (those read ``upadesha_slp1`` directly).
 
 Reference documentation: ``~/Documents/my panini notes/dhatupath.md`` (full pāṭha text).
 
@@ -20,6 +26,7 @@ Run from repo root::
 from __future__ import annotations
 
 import json
+import urllib.request
 from copy import deepcopy
 from pathlib import Path
 
@@ -27,6 +34,24 @@ from phonology.pratyahara import is_ekac_upadesha
 from phonology.tokenizer import devanagari_to_slp1_flat
 
 ROOT = Path(__file__).resolve().parents[1]
+
+ASHTADHYAYI_DHATU_URL = "https://raw.githubusercontent.com/ashtadhyayi-com/data/master/dhatu/data.txt"
+ASHTADHYAYI_DHATU_CACHE = ROOT / "data" / "upstream" / "ashtadhyayi_dhatu_data.json"
+
+_GANA_META = {
+    2: ("Adadi", "अदादिः", "adadi"),
+    3: ("JuhotyAdi", "जुहोत्यादिः", "juhotyadi"),
+    4: ("divAdi", "दिवादिः", "divadi"),
+    5: ("svAdi", "स्वादिः", "svadi"),
+    6: ("tudAdi", "तुदादिः", "tudadi"),
+    7: ("ruDAdi", "रुधादिः", "rudhadi"),
+    8: ("tanAdi", "तनादिः", "tanadi"),
+    9: ("kryAdi", "क्र्यादिः", "kryadi"),
+    10: ("curAdi", "चुरादिः", "curadi"),
+}
+_PADA_LABEL = {"P": "परस्मैपदी", "A": "आत्मनेपदी", "U": "उभयपदी"}
+_KARMA_LABEL = {"S": "सकर्मकः", "A": "अकर्मकः", "D": "द्विकर्मकः"}
+_SETTVA_LABEL = {"S": "सेट्", "A": "अनिट्", "V": "वेट्"}
 
 
 def _v2_data_dir() -> Path:
@@ -120,6 +145,80 @@ def _merge_bvadi_rows() -> list[dict]:
             "notes": None,
         }
         out.append(row)
+    return out
+
+
+def _load_ashtadhyayi_dhatu_source() -> list[dict]:
+    """All dhātupāṭha rows from ashtadhyayi-com/data; cached locally after first fetch."""
+    if not ASHTADHYAYI_DHATU_CACHE.is_file():
+        ASHTADHYAYI_DHATU_CACHE.parent.mkdir(parents=True, exist_ok=True)
+        with urllib.request.urlopen(ASHTADHYAYI_DHATU_URL, timeout=30) as resp:
+            ASHTADHYAYI_DHATU_CACHE.write_bytes(resp.read())
+    payload = json.loads(ASHTADHYAYI_DHATU_CACHE.read_text(encoding="utf-8"))
+    return payload["data"]
+
+
+def _merge_ganas_2_10_rows(existing_keys: set[tuple[int, str]]) -> list[dict]:
+    """Gaṇas 2–10 bulk-imported from ashtadhyayi-com/data, skipping ids already curated."""
+    out: list[dict] = []
+    skipped_existing = skipped_unspecified = 0
+    for e in _load_ashtadhyayi_dhatu_source():
+        gana_raw = str(e.get("gana", ""))
+        if not gana_raw.isdigit():
+            continue
+        gana = int(gana_raw)
+        if not (2 <= gana <= 10):
+            continue
+        did = e["baseindex"]
+        if (gana, did) in existing_keys:
+            skipped_existing += 1
+            continue
+        pada, settva, karma = e.get("pada"), e.get("settva"), e.get("karma")
+        if pada not in _PADA_LABEL or settva not in _SETTVA_LABEL or karma not in _KARMA_LABEL:
+            skipped_unspecified += 1
+            continue
+        prefix, gana_label, tier = _GANA_META[gana]
+        up_dev, after_dev = e["aupadeshik"], e["dhatu"]
+        up_slp = _safe_slp1_from_deva(did, up_dev)
+        after_slp = _safe_slp1_from_deva(f"{did}_after", after_dev)
+        artha_dev = e.get("artha") or None
+        row = {
+            "id": f"{prefix}_{did.replace('.', '_')}",
+            "tier": f"{tier}_v3_import",
+            "dhatupatha_id": did,
+            "gana": gana,
+            "gana_number": gana,
+            "serial_in_gana": int(did.split(".")[1]),
+            "sutra_ref": did,
+            "upadesha_dev": up_dev,
+            "upadesha_slp1": up_slp,
+            "mula_dhatu_dev": after_dev,
+            "raw_dhatu_after_it_lopa_dev": after_dev,
+            "raw_dhatu_after_it_lopa_slp1": after_slp,
+            "artha_dev": artha_dev,
+            "artha_slp1": _safe_slp1_from_deva(f"{did}_artha", artha_dev) if artha_dev else None,
+            "artha_en": e.get("artha_english") or None,
+            "artha_hi": e.get("artha_hindi") or None,
+            "gana_label_dev": gana_label,
+            "pada_label_dev": _PADA_LABEL[pada],
+            "karmatva_label_dev": _KARMA_LABEL[karma],
+            "it_class_label_dev": _SETTVA_LABEL[settva],
+            "it_markers": [],
+            "flags": {
+                "anit": settva == "A",
+                "set": settva == "S",
+                "vet": settva == "V",
+                "ekac": bool(after_slp and is_ekac_upadesha(after_slp)),
+                "udatta": "उदात्त" in (e.get("tags") or ""),
+            },
+            "notes": f"ashtadhyayi-com/data dhatu/data.txt i={e.get('i')}.",
+        }
+        out.append(row)
+    out.sort(key=lambda r: (r["gana"], r["serial_in_gana"]))
+    print(
+        f"ganas 2-10 import: {len(out)} new, {skipped_existing} already curated, "
+        f"{skipped_unspecified} unspecified pada/settva/karma skipped"
+    )
     return out
 
 
@@ -284,10 +383,26 @@ _CURATED_EXTENSIONS: list[dict] = [
 ]
 
 
+def _merged_and_extensions_base() -> tuple[list[dict], list[dict]]:
+    """(merged, extensions) — rebuilt from v2 sources when available, else the rows
+    already committed in ``OUT`` are treated as an opaque, trusted base."""
+    if POST_IT.is_file() and ASH.is_file():
+        return _merge_bvadi_rows(), deepcopy(_CURATED_EXTENSIONS)
+    if OUT.is_file():
+        existing = json.loads(OUT.read_text(encoding="utf-8"))
+        return existing.get("entries", []), []
+    return [], []
+
+
 def _payload() -> dict:
-    merged = _merge_bvadi_rows()
-    extensions = deepcopy(_CURATED_EXTENSIONS)
-    entries = merged + extensions
+    merged, extensions = _merged_and_extensions_base()
+    existing_keys = {
+        (r["gana"], r["dhatupatha_id"])
+        for r in merged + extensions
+        if r.get("dhatupatha_id") is not None
+    }
+    ganas_2_10 = _merge_ganas_2_10_rows(existing_keys)
+    entries = merged + extensions + ganas_2_10
 
     # Aliases for stable short ids used in pipelines/tests.
     id_aliases = {
@@ -299,16 +414,18 @@ def _payload() -> dict:
     }
 
     return {
-        "_schema_version": "2",
-        "_title": "Dhātupāṭha — merged Bhvādi (v2) + curated extensions",
+        "_schema_version": "3",
+        "_title": "Dhātupāṭha — merged Bhvādi (v2) + curated extensions + gaṇas 2-10 (ashtadhyayi-com/data)",
         "_sources": {
             "post_it_lopa": str(POST_IT.relative_to(ROOT)),
             "ashtadhyayi_txt": str(ASH.relative_to(ROOT)),
             "notes_md": "~/Documents/my panini notes/dhatupath.md (reference text, not machine-imported)",
+            "ashtadhyayi_com_dhatu": f"{ASHTADHYAYI_DHATU_URL} (cached: {ASHTADHYAYI_DHATU_CACHE.relative_to(ROOT)})",
         },
         "_stats": {
             "bvadi_merged": len(merged),
             "curated_extensions": len(extensions),
+            "ganas_2_10_imported": len(ganas_2_10),
             "total_entries": len(entries),
         },
         "id_aliases": id_aliases,
