@@ -1373,8 +1373,8 @@ def P14_tripadi_purvakhya_visarga(s: State) -> State:
 
 
 def P15_tripadi_shesha_sibilant_n(s: State) -> State:
-    """8.3.59 + 8.4.1 + 8.4.2 (sheṣa tripāḍī in this subanta block)."""
-    for sid in ("8.3.59", "8.4.1", "8.4.2"):
+    """8.3.59 + 8.4.1 + 8.4.2 + 8.4.40 (sheṣa tripāḍī in this subanta block)."""
+    for sid in ("8.3.59", "8.4.1", "8.4.2", "8.4.40"):
         s = apply_rule(sid, s)
     return s
 

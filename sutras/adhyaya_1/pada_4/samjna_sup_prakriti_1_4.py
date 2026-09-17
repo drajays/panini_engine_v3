@@ -11,6 +11,12 @@ from phonology.varna import HAL_DEV
 
 # Same loose *yaci* onset as **1.4.18** (*ac* ∪ *yaṭ* ∪ śaṭ sparśa in SLP1).
 _YACI_HAL = frozenset(YAN) | frozenset({"S", "z", "s", "h"})
+# phonology.pratyahara.AC only lists the short अच् members (माहेश्वर सूत्र
+# text); 1.1.69 अणुदित् सवर्णस्य चाप्रत्ययः extends every प्रत्याहार to the
+# savarṇa (here: dīrgha) forms too — e.g. आ (rājan+A → rājYA) is yaci just
+# as अ is. Widening AC itself is out of scope here (shared by many rules);
+# this mirrors the same workaround _taddhite_yaci_anga_ok already uses.
+_DIRGHA_AC = frozenset({"A", "I", "U", "F", "X"})
 
 _PU_STRI_SARVANAMASTHANA = frozenset({"s~", "O", "jas", "am", "Ow"})
 _NAPUMS_SARVANAMASTHANA = frozenset({"jas", "Sas"})
@@ -34,7 +40,7 @@ def yaci_onset_loose(pr: Term) -> bool:
     if not pr.varnas:
         return False
     ch = pr.varnas[0].slp1
-    return ch in AC or ch in _YACI_HAL
+    return ch in AC or ch in _DIRGHA_AC or ch in _YACI_HAL
 
 
 def raw_upadesha_first_slp1(raw: str) -> str | None:

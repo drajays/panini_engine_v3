@@ -57,8 +57,33 @@ def _find_sto_t_ch(state: State):
     return None
 
 
+def _find_j_n(state: State):
+    """
+    j immediately before n → n becomes Y (ñ), e.g. rAjan-derived rAj+n+A
+    → rAjYA (राज्ञा). श्चुना श्चुः reads either member adjacent to a श्चु
+    letter, so a दन्त्य *after* ज् (a श्चु letter) palatalises the same as
+    one *before* it (8.4.40's own udāharaṇa pair, वृक्षश्शेते/तच्शेते, is
+    the दन्त्य-before-श्चु direction; राज्ञा is the reverse).
+    """
+    if not (state.tripadi_zone or state.meta.get("8_4_40_pre_tripadi_arm")):
+        return None
+    if not state.terms:
+        return None
+    t = state.terms[0]
+    if t.meta.get("8_4_40_jn_done"):
+        return None
+    for i in range(len(t.varnas) - 1):
+        if t.varnas[i].slp1 == "j" and t.varnas[i + 1].slp1 == "n":
+            return i + 1
+    return None
+
+
 def cond(state: State) -> bool:
-    return _find_zt(state) is not None or _find_sto_t_ch(state) is not None
+    return (
+        _find_zt(state) is not None
+        or _find_sto_t_ch(state) is not None
+        or _find_j_n(state) is not None
+    )
 
 
 def act(state: State) -> State:
@@ -69,11 +94,17 @@ def act(state: State) -> State:
         state.terms[ti].meta["8_4_40_zw_done"] = True
         return state
     idx = _find_sto_t_ch(state)
+    if idx is not None:
+        t0 = state.terms[0]
+        t0.varnas[idx] = mk("c")
+        t0.meta["8_4_40_sto_done"] = True
+        return state
+    idx = _find_j_n(state)
     if idx is None:
         return state
     t0 = state.terms[0]
-    t0.varnas[idx] = mk("c")
-    t0.meta["8_4_40_sto_done"] = True
+    t0.varnas[idx] = mk("Y")
+    t0.meta["8_4_40_jn_done"] = True
     return state
 
 
