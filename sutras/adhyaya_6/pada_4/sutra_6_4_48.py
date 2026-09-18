@@ -87,7 +87,7 @@ def _han_vadh_site(state: State) -> int | None:
         if "dhatu" not in ang.tags:
             continue
         up = (ang.meta.get("upadesha_slp1") or "").strip()
-        if up not in ("vadh", "vadha"):
+        if up not in ("vaD", "vaDa"):
             continue
         if _final_a_pop_index(ang) is None:
             continue

@@ -42,7 +42,7 @@ def act(state: State) -> State:
         return state
     dh = state.terms[0]
     adesha_substitute_varnas(
-        dh, "vadha", state,
+        dh, "vaDa", state,
         sutra_id="2.4.43",
         gunadharmas=frozenset({DHATUTVA}),
     )
