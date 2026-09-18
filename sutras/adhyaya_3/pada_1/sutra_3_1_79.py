@@ -66,7 +66,11 @@ def act(state: State) -> State:
     u = Term(
         kind="pratyaya",
         varnas=list(parse_slp1_upadesha_sequence("u")),
-        tags={"pratyaya", "vikarana", "sarvadhatuka"},
+        # "anga" too: 6.4.1 aṅgasya adhikāra covers the vikaraṇa-attached
+        # stem, not just the bare dhātu — needed so a downstream aṅga-vs-ac
+        # boundary rule (6.1.78, when guṇa turns this u into o and a vowel
+        # follows) can see this term as the aṅga side of that boundary.
+        tags={"anga", "pratyaya", "vikarana", "sarvadhatuka"},
         meta={"upadesha_slp1": "u"},
     )
     state.terms.insert(di + 1, u)

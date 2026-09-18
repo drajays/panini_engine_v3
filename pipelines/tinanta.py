@@ -1659,28 +1659,63 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # 6.4.105: delete 'hi' after short 'a' of aṅga (2sg: bhava+hi → bhava)
     state = apply_rule("6.4.105", state)
 
-    # ── Stage: aṅgakārya ────────────────────────────────────────────────────
-    state = apply_rule("1.4.13", state)
-    state = apply_rule("1.1.5",  state)
+    # ── Stage: aṅgakārya + guṇa (1.4.13 → 1.1.5 → 7.3.84) ────────────────────
+    # Must run BEFORE 3.4.92 below: the aṅga-final vowel that takes guṇa here
+    # (śap-a for gaṇa 1, vikaraṇa-u for gaṇa 8) has to be settled before
+    # āḍ-āgama inserts a new term after it.
+    state = P00_anga_guna_audit_1_4_13_1_1_5_7_3_84(state)
 
-    # 7.3.101: a→ā before yañ-initial tiṅ (n of ni for 1sg; v of va for 1du; m of ma for 1pl)
+    # 3.4.92: āḍ-āgama before the uttama-puruṣa tiṅ (ni/va/ma) — karavāṇi.
+    # Placed after guṇa (so gaṇa-8's u→o has already happened; the āṭ vowel
+    # then meets o, not bare u — 6.1.78 below turns o+ac into av, giving
+    # kar-o + A → kar-av-A = karavā) and before 7.3.101 (so 7.3.101, which
+    # only fires when the term directly before ni/va/ma still ends in 'a',
+    # correctly declines once āṭ sits between them — a-vikaraṇa gaṇas were
+    # reaching bhavāni only by 7.3.101 coincidentally producing the same
+    # dīrgha; the real mechanism for *every* gaṇa is this āgama).
+    state = apply_rule("3.4.92", state)
+    state = apply_rule("1.3.3", state)
+    state = apply_rule("1.3.9", state)
+
+    # 7.3.101: a→ā before yañ-initial tiṅ — harmless/no-op for uttama-puruṣa
+    # now that 3.4.92 has already inserted āṭ between aṅga and ni/va/ma;
+    # kept for any other yañ-initial tiṅ-ādeśa this spine might see.
     state = apply_rule("7.3.101", state)
-
-    # 7.3.84: guṇa (bhū → bho; śap is sārvadhatuka trigger)
-    state = apply_rule("7.3.84", state)
 
     # ── Stage: pada + sandhi ─────────────────────────────────────────────────
     state = apply_rule("1.4.14", state)
     # 6.1.77 iko yaṇ aci — only for tanādi (gana 8): vikaraṇa-u + antu (tanu+antu → tanvantu)
     if gana == 8:
         state = apply_rule("6.1.77", state)
+    # 6.1.78 (eco'yavAyAvaH) must run BEFORE 6.1.97 below: it needs the śap
+    # term's own 'a' still present to find the dhātu+śap boundary (bho+a →
+    # bhav); 6.1.97 empties that term's varnas as its ekādeśa, which would
+    # make 6.1.78's adjacent-term scan skip straight past it.
     state = apply_rule("6.1.78", state)
-    # 6.1.97: a+a → a (3pl: śap-a + antu-a → bhavantu)
+    # 6.1.97: a+a → a (3pl: śap-a + antu-a → bhavantu) — tried BEFORE 6.1.101
+    # below: both structurally match plain a+a, but 6.1.97's ekādeśa (single
+    # a) is what's attested here, not 6.1.101's dīrgha. Emptying śap's 'a'
+    # here also removes it from 6.1.101's flat phoneme scan, so 6.1.101
+    # correctly finds nothing left to merge on this junction afterward.
     state = apply_rule("6.1.97", state)
+    # 6.1.101 akaH savarRe dIrghaH — a-vikaraṇa gaṇas' śap-a meeting āṭ's A
+    # (bhava + A → bhavā, savarṇa-dīrgha; also 6.1.77's own apavāda).
+    state = apply_rule("6.1.101", state)
 
     # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
     _pada_merge(state)
     state = P00_tripadi_rutva_visarga(state)
+    # 8.4.1/8.4.2 rashAByAM no RaH (+ its aw-kupvAN-vyavAya extension) — only
+    # relevant to a cell that actually took 3.4.92's āṭ-āgama (uttama-puruṣa
+    # ni/va/ma; karavāNi's r...n crosses the vikaraṇa's yaṇ-v + āṭ's A).
+    # Gated on that, not called unconditionally: 8.4.2's existing vyavāya
+    # scan doesn't treat yaṇ letters as blockers, so calling it for every
+    # cell would also wrongly ṇ-ify gaṇa-8's *other* r...v...n words (e.g.
+    # 3pl karvantu, where no āgama is involved and the yaṇ-v genuinely
+    # should block — a real gap in 8.4.2 itself, out of this fix's scope).
+    if state.samjna_registry.get("3.4.92_AT_uttama"):
+        state = apply_rule("8.4.1", state)
+        state = apply_rule("8.4.2", state)
     state = apply_rule("8.4.68", state)
 
     return state

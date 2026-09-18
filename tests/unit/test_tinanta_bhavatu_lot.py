@@ -92,10 +92,16 @@ def test_bhu_lot_1sg_3489_mi_ni():
 
 
 def test_bhu_lot_1sg_dirgha():
-    """7.3.101 (dīrgha before yañ n) must fire for 1sg: a→ā before ni."""
+    """bhavAni's A comes from 3.4.92's AT-Agama + 6.1.101 savarRa-dIrgha
+    (a-vikaraRa gaRas were only reaching bhavAni by 7.3.101 coincidentally
+    firing on the same a+yaJ shape; once AT sits between Sap-a and ni,
+    7.3.101 correctly declines — see Prakriyotsava sweep bug #19)."""
     state = derive("BU", "loT", "kartari", 1, 1)
     applied = [t["sutra_id"] for t in state.trace if t.get("status") == "APPLIED"]
-    assert "7.3.101" in applied, "7.3.101 (dīrgha) must fire for loṭ 1sg"
+    assert "3.4.92" in applied, "3.4.92 (AT-Agama) must fire for loT 1sg"
+    assert "6.1.101" in applied, "6.1.101 (savarRa-dIrgha) must fire for loT 1sg"
+    assert "7.3.101" not in applied, "7.3.101 should decline once 3.4.92 has inserted AT"
+    assert state.flat_slp1() == "BavAni"
 
 
 def test_bhu_lot_1du_3499_s_lopa():
