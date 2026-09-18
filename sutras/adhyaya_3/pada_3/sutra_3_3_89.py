@@ -55,9 +55,9 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     pr = Term(
         kind="pratyaya",
-        varnas=list(parse_slp1_upadesha_sequence("athuc")),
+        varnas=list(parse_slp1_upadesha_sequence("aTuc")),
         tags={"krt", "upadesha"},
-        meta={"upadesha_slp1": "athuc"},
+        meta={"upadesha_slp1": "aTuc"},
     )
     state.terms.append(pr)
     state.samjna_registry["3.3.89_athuc_attached"] = True

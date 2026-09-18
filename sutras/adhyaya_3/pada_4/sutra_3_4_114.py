@@ -88,7 +88,7 @@ def cond(state: State) -> bool:
     pr = _krt_term(state)
     if pr is not None and "ardhadhatuka" not in pr.tags:
         upa = (pr.meta.get("upadesha_slp1") or "").strip()
-        if upa in {"tfc", "gsnuC", "snu", "kta", "ktavatu~", "lyuw", "athuc", "ktri", "ktrim"}:
+        if upa in {"tfc", "gsnuC", "snu", "kta", "ktavatu~", "lyuw", "aTuc", "ktri", "ktrim"}:
             return True
     if _aG_luG_term(state) is not None:
         return True
@@ -111,7 +111,7 @@ def act(state: State) -> State:
     pr = _krt_term(state)
     if pr is not None and "ardhadhatuka" not in pr.tags:
         upa = (pr.meta.get("upadesha_slp1") or "").strip()
-        if upa in {"tfc", "gsnuC", "snu", "kta", "ktavatu~", "lyuw", "athuc", "ktri", "ktrim"}:
+        if upa in {"tfc", "gsnuC", "snu", "kta", "ktavatu~", "lyuw", "aTuc", "ktri", "ktrim"}:
             pr.tags.add("ardhadhatuka")
             state.samjna_registry["3.4.114_ardhadhatuka"] = True
     pr_aG = _aG_luG_term(state)

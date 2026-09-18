@@ -8,7 +8,7 @@ from pipelines.krdanta import derive_vepathuH
 
 
 def test_P002_A_render_vepathuH():
-    assert derive_vepathuH().flat_slp1() == "vepathuH"
+    assert derive_vepathuH().flat_slp1() == "vepaTuH"
 
 
 def test_P002_A_spine_core_order():
