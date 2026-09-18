@@ -17,14 +17,14 @@ repro, still broken) · ALREADY-FIXED (re-ran repro, now correct — prior
 commit covered it) · FIXED (fixed this pass, commit `<hash>`) · WONTFIX (with
 reason).
 
-1. पथिन्/पन्थाः SLP1 typo (`pipelines/sthanivat_al_ashrita_exceptions_lesson.py`) — OPEN
-2. किरति/करति wrong branch (`pipelines/kirati_karati_split_prakriyas.py`) — OPEN
-3. व्यूढोरस्केन sandhi never run (same file as #1) — OPEN
-4. sutra_2_4_43.py हन्→वध् SLP1 typo — OPEN
-5. sutra_6_1_2.py text_dev citation bug — OPEN
+1. पथिन्/पन्थाः SLP1 typo (`pipelines/sthanivat_al_ashrita_exceptions_lesson.py`) — **FIXED** (commit 7bf5f91)
+2. किरति/करति wrong branch (`pipelines/kirati_karati_split_prakriyas.py`) — **VERIFIED-OPEN, deeper than filed.** Root cause is NOT a wrong branch choice — it's that `sutras/adhyaya_7/pada_1/sutra_7_1_100.py` (ॠत इद्धातोः, the real apavāda that should block 7.3.84 guṇa and substitute इ for ॠ on कॄ) is an unimplemented stub: `cond()`/`act()` only set paribhāṣā gate flags, no actual phoneme substitution, and it's called by zero pipelines/tests anywhere in the repo (`sutra_7_4_10.py`, the neighbouring rule the pipeline's docstring also names, is the same stub shape). Implementing it is straightforward mechanically (substitute इ for ॠ, set `urN_rapara_pending="r"` so 1.1.51 completes इर्, block 7.3.84 from re-firing on that term) — the part that needs verification, not guessing, is the correct root/gaṇa-specific conditioning: कॄ (तुदादि गण 6) → किरति but तॄ (भ्वादि गण 1, "तरति") ends in the same ॠ and must NOT take this substitution. Hardcoding "if root is कॄ" would itself be a constitutional violation (not a structural/phonological distinction). Needs real Aṣṭādhyāyī-kram verification of what distinguishes the two root classes before implementing — comparable in scope to the mechanism-family backlog, not a quick dispatch fix.
+3. व्यूढोरस्केन sandhi never run (`pipelines/sthanivat_al_ashrita_exceptions_lesson.py::derive_vyUDhoraska`) — **VERIFIED-OPEN, structural conflict found.** Tried completing it the महोरस्केन way (guṇa-sandhi 6.1.87 अ+उ→ओ + 5.4.151 कप् + subanta तृतीया). Can't: the function's existing (correct, test-covered) demonstration point inserts a literal स् phoneme where the विसर्ग of `vyUDhaH` was (8.3.38 sthānivad-exception #4 illustration — `test_4_vyUDhoraska_no_natva_after_visarga_s` pins this). That स् is a real consonant sitting between व्यूढ's final अ and उरस्'s initial उ, which structurally blocks the अ+उ vowel-sandhi महोरस्केन's route depends on — the two halves of what this function is supposed to do are mutually exclusive as currently modeled. Either (a) the existing visarga/8.3.38 illustration is testing the wrong thing for a word named "vyUDhoraska" and should be replaced with a bare-stem (no visarga) कप्-समास route matching महोरस्केन exactly, or (b) it's deliberately a separate two-word-phrase visarga-sandhi illustration that was mis-named and shouldn't be expected to reach the compound surface form at all. Needs the actual page-655 source text (not just the crosscheck doc's paraphrase) to resolve which reading is correct — not attempted blind.
+4. sutra_2_4_43.py हन्→वध् SLP1 typo — **FIXED** (commit d628dfd)
+5. sutra_6_1_2.py text_dev citation bug — **FIXED** (commit 98711b7)
 6. अस् general tiṅanta gives अस्ते not अस्ति, pada= override ignored — OPEN
 7. ऋ-stem kinship/agent nouns (मातृ/पितृ/भ्रातृ/कर्तृ) general subanta wrong — OPEN
-8. sutra_3_3_89.py अथुच् SLP1 typo — OPEN
+8. sutra_3_3_89.py अथुच् SLP1 typo — **FIXED** (commit 868c48c, plus a ripple fix in `sutra_3_4_114.py` which independently hardcoded the same typo'd string as its ārdhadhātuka-krt allowlist — fixing 3.3.89 alone would have silently broken 7.3.84/6.1.78 downstream for वेपथुः/श्वयथुः)
 9. उन्नयते wrong pada + missing gemination — OPEN
 10. नदी-saṃjñā (1.4.3) missing from subanta schedule — **ALREADY-FIXED** (commit 6ea98f1, verified 2026-09-18: `1.4.3/1.4.4/1.4.5` now called in `P01_subanta_bootstrap`, `core/canonical_pipelines.py:1270-1272`)
 11. `_derive_lRT` missing `apply_rule("1.1.51")` after 7.3.84 guṇa — OPEN
@@ -95,3 +95,14 @@ specifically (वच्'s लट्/लोट्/लङ्/विधिलिङ
 - Run full suite before/after each fix; do not regress the 18,543-test
   passing baseline (per constitution memory, as of 2026-05-28 snapshot —
   re-check current count, it has grown since).
+- Clean-baseline full-suite run before this batch of fixes: 19250 passed,
+  4 skipped. If you see ~35 failures in `test_sig_baseline.py[8-*]`,
+  `test_sarva_unified_subanta.py`, `test_sarvasmai_smat_smin_prakriya.py` —
+  that's another fork's uncommitted WIP on `pipelines/subanta.py`/8.2.x
+  sutras sharing this working tree, not a regression from this batch
+  (verified: reverting only this batch's files still shows the same
+  failures). Multiple forks are working the *same* git checkout
+  concurrently in this sweep, not isolated worktrees — always isolate a
+  suspected regression to your own changed files before assuming you broke
+  something, and only `git add`/commit your own files explicitly (never
+  `git add -A`/`git commit -a`, never `git stash` with no pathspec).
