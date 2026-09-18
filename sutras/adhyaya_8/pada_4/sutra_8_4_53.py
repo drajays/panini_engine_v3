@@ -27,10 +27,18 @@ from engine.state import State
 from phonology import mk
 
 
+# झल् (source) -> जश् (3rd/jaś letter of its own varga).
 _JHAL_TO_JAS = {
-    "D": "d",  # dh -> d (for this demo)
-    "G": "g",  # P033: gh -> g before jaś d
+    "k": "g", "K": "g", "g": "g", "G": "g",
+    "c": "j", "C": "j", "j": "j", "J": "j",
+    "w": "q", "W": "q", "q": "q", "Q": "q",
+    "t": "d", "T": "d", "d": "d", "D": "d",
+    "p": "b", "P": "b", "b": "b", "B": "b",
 }
+
+# झष् (4th/voiced-aspirate letter of each varga) — the trigger environment
+# for the general (non-P001/P033) branch of this rule.
+_JHASH = frozenset({"G", "J", "Q", "D", "B"})
 
 
 def _find_p033_Gd(state: State):
@@ -58,7 +66,7 @@ def _find(state: State):
         return None
     vs = t.varnas
     for i in range(len(vs) - 1):
-        if vs[i].slp1 in _JHAL_TO_JAS and vs[i + 1].slp1 == "D":
+        if vs[i].slp1 in _JHAL_TO_JAS and vs[i + 1].slp1 in _JHASH:
             return i
     return None
 

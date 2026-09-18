@@ -459,6 +459,9 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     PADA_MERGE_STEP,
     "1.4.110",
     "8.2.1",
+    "8.2.7",    # nalopaH prAtipadikAntasya — rAjan/Atman-final n-lopa at pada-end
+    "8.2.30",   # coH kuH — c/j-vargIya pada-final -> k-vargIya before jhal (vAc+Bis)
+    "8.2.39",   # JalAM jaSo'nte — jhal pada-final -> jaS (vAk -> vAg, etc.)
     "8.2.66",
     "8.3.15",   # ru → visarga at avasāna or before khar
     "8.3.16",   # roḥ supi (trace/ANUVADA; structural work done by 8.3.15)
@@ -609,7 +612,7 @@ def run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
     _scan_pool(sandhi_ids)
     # Pre-merge rutva: enter tripāḍī zone and convert stem-final s→r before HAL-initial sup
     # (8.2.66 _target_premerge requires len(terms)≥2, so must run before _pada_merge)
-    _scan_pool(["8.2.1", "8.2.66"])
+    _scan_pool(["8.2.1", "8.2.7", "8.2.66"])
 
     if len(s.terms) > 1:
         _pada_merge(s)

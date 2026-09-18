@@ -1359,6 +1359,14 @@ def P13_subanta_iti_anga_sandhi_to_pada(s: State) -> State:
     i8 = t.index("8.2.1")
     for rid in t[:i8]:
         if rid == PADA_MERGE_STEP:
+            # 8.2.7 n-lopa (rAjan+Bis -> rAj+Bis) needs two live terms to see
+            # the stem+sup boundary the merge is about to erase — run it here,
+            # before the merge. (Doesn't need tripadi_zone open first: unlike
+            # 8.2.66's shared premerge branch, this one's own signature
+            # — an_pratipadika stem + sup HAL-initial — is narrow enough to
+            # stay safe pre-zone, and 1.4.110 right after this still needs
+            # the zone closed, so 8.2.1 itself must not fire yet.)
+            s = apply_rule("8.2.7", s)
             _pada_merge(s)
         else:
             s = apply_rule(rid, s)
@@ -1366,15 +1374,18 @@ def P13_subanta_iti_anga_sandhi_to_pada(s: State) -> State:
 
 
 def P14_tripadi_purvakhya_visarga(s: State) -> State:
-    """8.2.1 *pūrvatrāsiddham* + 8.2.7 (narrow *krt_tfc*) + 8.2.66 *ru* + 8.3.15 *visarga*."""
-    for sid in ("8.2.1", "8.2.7", "8.2.66", "8.3.15"):
+    """8.2.1 *pūrvatrāsiddham* + 8.2.7 *nalopaḥ* + 8.2.30 *coḥ kuḥ* +
+    8.2.39 *jhalāṃ jaśo'nte* + 8.2.66 *ru* + 8.3.15 *visarga*."""
+    for sid in ("8.2.1", "8.2.7", "8.2.30", "8.2.39", "8.2.66", "8.3.15"):
         s = apply_rule(sid, s)
     return s
 
 
 def P15_tripadi_shesha_sibilant_n(s: State) -> State:
-    """8.3.59 + 8.4.1 + 8.4.2 + 8.4.40 (sheṣa tripāḍī in this subanta block)."""
-    for sid in ("8.3.59", "8.4.1", "8.4.2", "8.4.40"):
+    """8.3.59 + 8.4.1 + 8.4.2 + 8.4.40 + 8.4.53 (jhal-jhaṣ pada-medial voicing,
+    vAc+Bis -> vAgBiH) + 8.4.56 (jaś->car at avasāna, vAk not vAg) —
+    sheṣa tripāḍī in this subanta block."""
+    for sid in ("8.3.59", "8.4.1", "8.4.2", "8.4.40", "8.4.53", "8.4.56"):
         s = apply_rule(sid, s)
     return s
 

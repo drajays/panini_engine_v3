@@ -49,6 +49,17 @@ def _find(state: State):
         if not right.varnas or right.varnas[0].slp1 not in JHAL:
             continue
         return (i, len(left.varnas) - 1)
+    # 3) पदान्ते (anuvṛtti अन्ते च, 8.2.29): merged pada ends in c with nothing
+    #    following (avasāna) — वाच् -> वाक्.
+    if len(state.terms) == 1:
+        t = state.terms[0]
+        if (
+            "pada" in t.tags
+            and not t.meta.get("8_2_30_cutuku_done")
+            and t.varnas
+            and t.varnas[-1].slp1 == "c"
+        ):
+            return (0, len(t.varnas) - 1)
     return None
 
 

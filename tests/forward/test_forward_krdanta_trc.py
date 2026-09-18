@@ -58,4 +58,12 @@ def test_trc_subanta_nom_order():
     path = [e.get("sutra_id") for e in s.trace if isinstance(e, dict)]
     assert path.index("7.1.94") < path.index("6.4.11")
     assert path.index("6.4.11") < path.index("6.1.66")
-    assert path.index("8.2.1") < path.index("8.2.7")
+    # 8.2.7 is now also probed pre-merge (a no-op here, for its new n-lopa-
+    # before-HAL-sup branch — see pipelines/subanta.py P13), so its *first*
+    # trace occurrence can precede 8.2.1. What must still hold is that 8.2.1
+    # (tripāḍī open) precedes the occurrence where 8.2.7 actually fires.
+    applied_8_2_7 = next(
+        i for i, e in enumerate(s.trace)
+        if e.get("sutra_id") == "8.2.7" and e.get("status") == "APPLIED"
+    )
+    assert path.index("8.2.1") < applied_8_2_7

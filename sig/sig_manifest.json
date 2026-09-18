@@ -18,6 +18,84 @@
   "corpora": [
     {
       "cells": 24,
+      "file": "data/reference/shabda_gold/Pala_napuṃsaka.json",
+      "id": "subanta:shabda_gold/Pala_napuṃsaka",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/shabda_gold/SamBu_pulliṅga.json",
+      "id": "subanta:shabda_gold/SamBu_pulliṅga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/shabda_gold/agni_pulliṅga.json",
+      "id": "subanta:shabda_gold/agni_pulliṅga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/shabda_gold/anya_pulliṅga.json",
+      "id": "subanta:shabda_gold/anya_pulliṅga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/shabda_gold/guru_pulliṅga.json",
+      "id": "subanta:shabda_gold/guru_pulliṅga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/shabda_gold/hari_pulliṅga.json",
+      "id": "subanta:shabda_gold/hari_pulliṅga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/shabda_gold/jYAna_napuṃsaka.json",
+      "id": "subanta:shabda_gold/jYAna_napuṃsaka",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/shabda_gold/latA_strīliṅga.json",
+      "id": "subanta:shabda_gold/latA_strīliṅga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/shabda_gold/nadI_strīliṅga.json",
+      "id": "subanta:shabda_gold/nadI_strīliṅga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/shabda_gold/rADA_strīliṅga.json",
+      "id": "subanta:shabda_gold/rADA_strīliṅga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/shabda_gold/rAma_pulliṅga.json",
+      "id": "subanta:shabda_gold/rAma_pulliṅga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/shabda_gold/sarva_pulliṅga.json",
+      "id": "subanta:shabda_gold/sarva_pulliṅga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
+      "file": "data/reference/shabda_gold/vAyu_pulliṅga.json",
+      "id": "subanta:shabda_gold/vAyu_pulliṅga",
+      "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
+    },
+    {
+      "cells": 24,
       "file": "data/reference/subanta_gold/SamBu_pullinga.json",
       "id": "subanta:subanta_gold/SamBu_pullinga",
       "recipe": "pipelines.subanta.derive + engine.sig.replay_subanta_trace (timed)"
@@ -89,18 +167,18 @@
       "reason": "recipe module 'pipelines.tinanta_tarati_gold' not importable (also tried 'tools.tinanta_tarati_gold')"
     }
   ],
-  "generated_utc": "2026-09-15T00:24:54.737207+00:00",
+  "generated_utc": "2026-09-18T04:21:50.740413+00:00",
   "generator": "panini_engine_v3.tools.sig_benchmark",
   "sutra_coverage": {
     "conditions": {
-      "cited": 182,
-      "invoked": 568,
-      "moved": 350,
-      "tested": 528
+      "cited": 393,
+      "invoked": 698,
+      "moved": 480,
+      "tested": 532
     },
-    "coverage_pct": 1.33,
-    "implemented": 53,
+    "coverage_pct": 6.45,
+    "implemented": 257,
     "registered": 3985
   },
-  "total_derivations": 192
+  "total_derivations": 504
 }

@@ -35,6 +35,16 @@ from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
 from phonology.varna import parse_slp1_upadesha_sequence
 
+# झल् (stop) → जश् (3rd letter of its own varga), at pada-end. Sibilants/ha
+# have no jaś target under this rule and are left alone.
+_JHAL_TO_JAS: dict = {
+    "k": "g", "K": "g", "g": "g", "G": "g",
+    "c": "j", "C": "j", "j": "j", "J": "j",
+    "w": "q", "W": "q", "q": "q", "Q": "q",
+    "t": "d", "T": "d", "d": "d", "D": "d",
+    "p": "b", "P": "b", "b": "b", "B": "b",
+}
+
 
 def _find_target(state: State):
     for i, t in enumerate(state.terms):
@@ -45,7 +55,7 @@ def _find_target(state: State):
             continue
         if not t.varnas:
             continue
-        if t.varnas[-1].slp1 != "t":
+        if t.varnas[-1].slp1 not in _JHAL_TO_JAS:
             continue
         return i
     return None
@@ -60,8 +70,9 @@ def act(state: State) -> State:
     if i is None:
         return state
     t = state.terms[i]
-    d_varna = parse_slp1_upadesha_sequence("d")
-    t.varnas[-1] = d_varna[0]
+    jas_slp1 = _JHAL_TO_JAS[t.varnas[-1].slp1]
+    jas_varna = parse_slp1_upadesha_sequence(jas_slp1)
+    t.varnas[-1] = jas_varna[0]
     t.tags.add("8_2_39_done")
     state.samjna_registry["8_2_39_t_to_d"] = True
     return state

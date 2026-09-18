@@ -5,6 +5,12 @@ Operational role (v3.6):
   In Tripāḍī zone, for a single-term pada that ends in final ``n``, elide
   that ``n`` structurally (e.g. ``rAjAn`` → ``rAjA``) — no caller arming.
 
+  Also fires pre-merge: an ``an_pratipadika``-tagged stem ending in ``n``,
+  immediately followed by a HAL-initial sup, loses that ``n`` before merge
+  (राजन्+भिस् → राज्+भिस् → राजभिः). A vowel-initial sup (राजन्+औ → राजानौ,
+  राजन्+अस् → राज्ञः) does not trigger this branch — the न् survives and
+  combines under 6.4.8 / 8.4.40 instead.
+
 Legacy slice:
   Also supports the existing **tṛc** nominal output path (``krt_tfc`` on the
   pada), which is treated as always-armed within that narrow demo family.
@@ -24,6 +30,27 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from phonology.pratyahara import HAL
+
+
+def _target_premerge(state: State):
+    """PRE-MERGE: an_pratipadika stem ending in 'n', followed by a HAL-initial sup."""
+    if len(state.terms) < 2:
+        return None
+    for i in range(len(state.terms) - 1):
+        stem, pratyaya = state.terms[i], state.terms[i + 1]
+        if "an_pratipadika" not in stem.tags:
+            continue
+        if stem.meta.get("nalopa_8_2_7_done"):
+            continue
+        if not stem.varnas or stem.varnas[-1].slp1 != "n":
+            continue
+        if "sup" not in pratyaya.tags or not pratyaya.varnas:
+            continue
+        if pratyaya.varnas[0].slp1 not in HAL:
+            continue
+        return i
+    return None
 
 
 def cond(state: State) -> bool:
@@ -43,19 +70,26 @@ def cond(state: State) -> bool:
         return "krt_tfc" in t0.tags or "an_pratipadika" in t0.tags
 
     # Branch B (narrow demo): samāsa boundary n-lopa on the prior member (P011 dvigu).
-    if not state.meta.get("purvapada_n_lopa_recipe"):
-        return False
-    if len(state.terms) < 2:
-        return False
-    t0 = state.terms[0]
-    if t0.meta.get("nalopa_8_2_7_done"):
-        return False
-    if not t0.varnas:
-        return False
-    return t0.varnas[-1].slp1 == "n"
+    if state.meta.get("purvapada_n_lopa_recipe") and len(state.terms) >= 2:
+        t0 = state.terms[0]
+        if not t0.meta.get("nalopa_8_2_7_done") and t0.varnas and t0.varnas[-1].slp1 == "n":
+            return True
+
+    # Branch C: pre-merge, HAL-initial sup after an an_pratipadika stem-final न्.
+    # Runs just before pada-merge (subanta P13), one step ahead of 8.2.1
+    # opening the Tripāḍī zone — narrow enough (an_pratipadika + sup HAL-
+    # initial) to stay safe firing there; see pipelines/subanta.py P13.
+    return _target_premerge(state) is not None
 
 
 def act(state: State) -> State:
+    hit = _target_premerge(state)
+    if hit is not None and not state.meta.get("purvapada_n_lopa_recipe"):
+        stem = state.terms[hit]
+        stem.varnas.pop()
+        stem.meta["nalopa_8_2_7_done"] = True
+        return state
+
     t0 = state.terms[0]
     t0.varnas.pop()
     t0.meta["nalopa_8_2_7_done"] = True
