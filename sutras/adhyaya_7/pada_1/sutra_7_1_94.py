@@ -1,9 +1,13 @@
 """
 7.1.94  ऋदुशनस्पुरुदंसोऽनेहसां च  —  VIDHI
 
-Narrow v3: for a **tṛc** prātipadika (``krt_tfc`` on the aṅga) whose final
-is **f** (vocalic ṛ), substitute **an** for that **f** before **su**
-(single ``s`` after it-prakaraṇa).
+For any ṛ-final (vocalic **f**) prātipadika before **su** — not just tṛc
+agent nouns (kartā, hartā) but the inherited ṛ-stem kinship/agent nouns too
+(mātṛ→mātā, pitṛ→pitā, bhrātṛ→bhrātā, svasṛ→svasā, ...) — substitute **an**
+for that **f**. The rule's own text has no kṛt-vs-non-kṛt restriction; the
+earlier ``krt_tfc``-only ``cond()`` was too narrow and silently left every
+non-kṛt ṛ-stem noun undeclined through the general subanta pipeline (see
+Prakriyotsava sweep bug #7).
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 71094 · ऋदुशनस्पुरुदंसोऽनेहसां च
@@ -28,7 +32,7 @@ def cond(state: State) -> bool:
         return False
     ang = state.terms[0]
     sup = state.terms[-1]
-    if "krt_tfc" not in ang.tags or "prātipadika" not in ang.tags or "sup" not in sup.tags:
+    if "prātipadika" not in ang.tags or "sup" not in sup.tags:
         return False
     if ang.meta.get("anaN_7_1_94_done"):
         return False
