@@ -9,9 +9,9 @@
   },
   "_stats": {
     "bvadi_merged": 986,
-    "curated_extensions": 0,
+    "curated_extensions": 2,
     "ganas_2_10_imported": 1060,
-    "total_entries": 2046
+    "total_entries": 2048
   },
   "id_aliases": {
     "BvAdi_BU": "BvAdi_01_0001"
@@ -65405,6 +65405,70 @@
         "udatta": true
       },
       "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100492."
+    },
+    {
+      "id": "BvAdi_dfSir",
+      "tier": "curated_extension",
+      "dhatupatha_id": null,
+      "gana": 1,
+      "gana_number": 1,
+      "serial_in_gana": 1143,
+      "sutra_ref": null,
+      "upadesha_dev": "दृशिर्",
+      "upadesha_slp1": "dfSir",
+      "mula_dhatu_dev": "दृश्",
+      "raw_dhatu_after_it_lopa_dev": "दृश्",
+      "raw_dhatu_after_it_lopa_slp1": "dfS",
+      "artha_dev": "प्रेक्षणे",
+      "artha_slp1": "prekzaRe",
+      "artha_en": "to see, to look at",
+      "artha_hi": "देखना",
+      "gana_label_dev": "भ्वादिः",
+      "pada_label_dev": "परस्मैपदी",
+      "karmatva_label_dev": "सकर्मकः",
+      "it_class_label_dev": "अनिट्",
+      "it_markers": [
+        "र्"
+      ],
+      "flags": {
+        "anit": true,
+        "set": false,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "दृशिर् प्रेक्षणे — Prakriyotsava cross-check gap fill (docs/PRAKRIYOTSAVA_CROSSCHECK.md). लट्/लोट्/लङ्/विधिलिङ् take the पश्य् आदेश (3.1.137-family suppletion, not yet general-dispatched); लृट्/लुङ्/लिट्/निष्ठा use this root's own forms (द्रक्ष्यति, अदर्शत्/अद्राक्षीत्, ददर्श, दृष्ट)."
+    },
+    {
+      "id": "BvAdi_zWA",
+      "tier": "curated_extension",
+      "dhatupatha_id": null,
+      "gana": 1,
+      "gana_number": 1,
+      "serial_in_gana": 977,
+      "sutra_ref": null,
+      "upadesha_dev": "ष्ठा",
+      "upadesha_slp1": "zWA",
+      "mula_dhatu_dev": "स्था",
+      "raw_dhatu_after_it_lopa_dev": "स्था",
+      "raw_dhatu_after_it_lopa_slp1": "zWA",
+      "artha_dev": "गतिनिवृत्तौ",
+      "artha_slp1": "gatinivftO",
+      "artha_en": "to stand, to stay",
+      "artha_hi": "खड़ा होना, ठहरना",
+      "gana_label_dev": "भ्वादिः",
+      "pada_label_dev": "परस्मैपदी",
+      "karmatva_label_dev": "अकर्मकः",
+      "it_class_label_dev": "अनिट्",
+      "it_markers": [],
+      "flags": {
+        "anit": true,
+        "set": false,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "ष्ठा गतिनिवृत्तौ — Prakriyotsava cross-check gap fill. Upादेश-initial ष् (SLP1 z) kept in raw_dhatu_after_it_lopa_slp1 per this corpus's convention (cf. zvada~/स्वद्); 6.1.64 converts it at derivation time. लट् takes the तिष्ठ आदेश (7.3.78-family श्नु-vikaraṇa, not yet general-dispatched)."
     }
   ]
 }
