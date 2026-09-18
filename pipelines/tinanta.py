@@ -396,6 +396,15 @@ def _run_lat_kartari_bhuvadi_spine(
     state = apply_rule("6.1.78", state)
     state = apply_rule("6.1.97", state)
 
+    # 3.4.79 टित आत्मनेपदानां टेरे — ātmanepada tiṅ-ādeśas need their ṭi
+    # replaced by e (ta → te, giving pacate); self-excludes parasmaipada
+    # ādeśas via the 1.4.99 tag, so safe to call unconditionally here.
+    # This general bhvādi-kartari spine never called it at all: any plain
+    # gaṇa-1 root resolved ātmanepada (not one of the special-cased roots
+    # with their own dedicated spine above) silently kept the bare tiṅ
+    # vowel — pacate came out pacata (Prakriyotsava sweep bug #14).
+    state = apply_rule("3.4.79", state)
+
     _pada_merge(state)
     state = P00_tripadi_rutva_visarga(state)
     return state

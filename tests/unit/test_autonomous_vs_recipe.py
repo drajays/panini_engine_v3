@@ -253,7 +253,11 @@ class TestAutonomousVsRecipe:
 
         recipe_state = derive("pac", "laT", "kartari", 3, 1)
         auto_state = derive_autonomous_tinanta("pac", "laT", "kartari")
-        assert recipe_state.flat_dev() == auto_state.flat_dev() == "पचत"
+        # This dhātupātha row (pac, gaṇa 1) is labeled ātmanepadī, so 3.4.79
+        # (ṭit ātmanepadānāṃ ṭere) belongs on its tiṅ-ādeśa — पचते, not the
+        # bare-tiṅ पचत this test used to pin (Prakriyotsava sweep bug #14:
+        # the general bhvādi-kartari spine never called 3.4.79 at all).
+        assert recipe_state.flat_dev() == auto_state.flat_dev() == "पचते"
 
 
 class TestAutonomousAdadi:
