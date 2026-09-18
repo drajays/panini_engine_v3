@@ -1,5 +1,7 @@
 """
-Four *al-āśrita* exceptions to **1.1.56** *sthānivadādeśa* (pedagogy).
+Three *al-āśrita* exceptions to **1.1.56** *sthānivadādeśa*, plus व्यूढोरस्केन
+(a same-mechanism सिद्धि sibling of महोरस्केन, not itself a fourth अल्-आश्रित
+exception — see PDF p.655 / `derive_vyUDhoraska`'s own docstring).
 """
 from __future__ import annotations
 
@@ -9,7 +11,6 @@ from engine.sthanivat import (
     BLOCK_AL_AFTER_STHANIN,
     BLOCK_AL_BEFORE_STHANIN,
     BLOCK_AL_SAME_SITE,
-    BLOCK_NIMITTA_ELSEWHERE,
     sthanivat_blocked,
 )
 from pipelines.sthanivat_al_ashrita_exceptions_lesson import (
@@ -63,9 +64,15 @@ def test_3_rAma_izwaH_no_yanaditva_u_on_izwa() -> None:
     assert "u" not in flat.split("izwa")[-1][:2]
 
 
-def test_4_vyUDhoraska_no_natva_after_visarga_s() -> None:
+def test_4_vyUDhoraska_bahuvrihi_kap_trtiya() -> None:
+    """व्यूढ + उरस् (बहुव्रीहि) + कप् (5.4.151) + तृतीया एकवचन → व्यूढोरस्केन.
+
+    PDF p.655: "इसी प्रकार व्यूढोरस्केन...की सिद्धि भी जानें" — same
+    mechanism as महोरस्केन (pipelines/mahoraskena_bahuvrihi.py), minus its
+    महत्→महा-specific 6.3.46 step (व्यूढ needs no पूर्वपद-आदेश)."""
     s = derive_vyUDhoraska()
-    assert s.terms[0].varnas[-1].slp1 == "s"
-    assert sthanivat_blocked(s.terms[0], BLOCK_NIMITTA_ELSEWHERE)
-    assert not _applied(s, "8.4.2")
-    assert "R" not in s.flat_slp1()
+    assert _applied(s, "2.2.24")
+    assert _applied(s, "5.4.151")
+    assert _applied(s, "6.1.87")   # A/a + u -> o: vyUDha+uras -> vyUDhoras
+    assert _applied(s, "7.1.12")   # TA -> ina after a-ending anga
+    assert s.flat_slp1() == "vyUDhoraskena"

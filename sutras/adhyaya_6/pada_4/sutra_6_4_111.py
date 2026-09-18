@@ -41,11 +41,13 @@ def _find_as_al_lopa(state: State) -> int | None:
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags:
             continue
-        if (t.meta.get("upadesha_slp1") or "").strip() != "as":
-            continue
         if t.meta.get("6_4_111_as_al_lopa_done"):
             continue
-        if not t.varnas or t.varnas[0].slp1 != "a":
+        # Post-it-lopa phonetic content, not the raw upadeśa meta (which the
+        # general it-lopa act() never resyncs — "asa~" stays "asa~" in meta
+        # even after 1.3.2/1.3.9 strip the anunāsika it off the tape). Same
+        # convention _adadi_dhatu_stem_slp1() already uses for root identity.
+        if "".join(v.slp1 for v in t.varnas) != "as":
             continue
         if not _apit_sarvadhatuka_tin_after(state, i):
             continue

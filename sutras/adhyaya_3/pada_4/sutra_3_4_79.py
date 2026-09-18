@@ -40,6 +40,10 @@ def _find(state: State):
             continue
         if "tin_adesha_3_4_78" not in t.tags:
             continue
+        # आत्मनेपदानाम् — 1.4.99 tags a genuinely parasmaipada ādeśa (tip,
+        # sip, mip, tas, …) "parasmaipada"; ṭeḥ-e never touches those.
+        if "parasmaipada" in t.tags:
+            continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
         if up in _THAS:
             continue

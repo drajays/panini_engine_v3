@@ -42,8 +42,9 @@ def _site(state: State):
         return None
     if "samasa_member" not in a.tags or "samasa_member" not in b.tags:
         return None
-    if (a.meta.get("upadesha_slp1") or "").strip() != "mahat":
-        return None
+    # उरः प्रभृतिभ्यः: the condition is on the *uttarapada* (uras and its
+    # class) — not on which pūrvapada precedes it. मह्/व्यूढ both attested
+    # in the Kāśikā udāharaṇa above (महोरस्कः, व्यूढोरस्कः).
     if (b.meta.get("upadesha_slp1") or "").strip() != "uras":
         return None
     return True

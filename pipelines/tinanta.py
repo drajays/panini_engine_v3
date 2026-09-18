@@ -1860,6 +1860,11 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
     state = apply_rule("2.4.72", state)
+    # 6.4.111 श्नसोरल्लोपः — अस् root's own initial a before an apit
+    # sārvadhātuka tiṅ (tas/jhi/vas/mas…). Scoped to upadesha_slp1=="as"
+    # in the sūtra's own cond(); a vacuous no-op for every other root
+    # (अद्, दुह्, ब्रू…) sharing this spine.
+    state = apply_rule("6.4.111", state)
     state = apply_rule("7.1.3", state)
     state = apply_rule("1.4.13", state)
     state = apply_rule("1.4.14", state)
@@ -1873,8 +1878,11 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
 
 def _derive_laT_adadi(state: State, purusha: int, vacana: int) -> State:
     """
-    Adādi laṭ spine (P008 *āste*): *śap* insertion, **2.4.72** *luk*, **3.4.79** *ṭere*,
-    no *guṇa* / *tripāḍī* block (matches corrected-v2 P008).
+    Adādi laṭ ātmanepada spine (P008 *āste*): *śap* insertion, **2.4.72** *luk*,
+    **3.4.79** *ṭere*, no *guṇa* / *tripāḍī* block (matches corrected-v2 P008).
+
+    Only for gaṇa-2 roots resolved *ātmanepadī* — the dispatcher routes a
+    *parasmaipadī* gaṇa-2 root to ``_derive_laT_adadi_kartari`` instead.
     """
     state.meta["lakara"] = "laT"
     state = apply_rule("3.2.123", state)
@@ -3925,7 +3933,10 @@ def _dispatch_tinanta_spine(
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_loT(state, pada_key, purusha, vacana)
 
-    if lakara in ("laT",) and _is_adadi_dhatu(state) and _adadi_dhatu_stem_slp1(state) == "ad":
+    if lakara in ("laT",) and _is_adadi_dhatu(state) and pada_key == "parasmai":
+        # P008's 2sg spine was proven only via अद् (stem=="ad"); 2.4.72 अदः
+        # शपः is itself root-scoped so it stays a correct no-op for every
+        # other gaṇa-2 root (अस्, दुह्, ब्रू…) resolved parasmaipada.
         state = apply_rule("3.1.91", state)
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_laT_adadi_kartari(state, purusha, vacana)

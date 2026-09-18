@@ -1452,6 +1452,15 @@ def P00_bha_vidhi_6_4_148_1_1_60(s: State) -> State:
     return s
 
 
+def P00_kap_bahuvrihi_head(s: State) -> State:
+    """uraH-prabhṛti bahuvrīhi opening shared by महोरस्केन/व्यूढोरस्केन:
+    1.1.68 (svarūpa) → 2.2.24 (bahuvrīhi samāsa) → 5.4.151 (uraḥ-prabhṛtibhyaḥ kap)."""
+    s = apply_rule("1.1.68", s)
+    s = apply_rule("2.2.24", s)
+    s = apply_rule("5.4.151", s)
+    return s
+
+
 def P00_mahat_An_samasa_sandhi(s: State) -> State:
     """Bahuvṛīhi mahat-An sandhi: 1.2.46 → (An_mahat) 1.1.52 → 6.3.46 → 6.1.101 → (guṇa) 6.1.87."""
     s = apply_rule("1.2.46", s)

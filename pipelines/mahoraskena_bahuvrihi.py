@@ -26,7 +26,10 @@ from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from core.canonical_pipelines import P00_guna_prayoga_readiness, P00_mahat_An_samasa_sandhi
+from core.canonical_pipelines import (
+    P00_kap_bahuvrihi_head,
+    P00_mahat_An_samasa_sandhi,
+)
 from pipelines.subanta import derive_from_state
 
 
@@ -45,11 +48,7 @@ def derive_mahoraskena_bahuvrihi_P024() -> State:
     )
     s = State(terms=[mahat, uras], meta={}, trace=[], samjna_registry={})
 
-    s = apply_rule("1.1.68", s)
-
-    s = apply_rule("2.2.24", s)
-
-    s = apply_rule("5.4.151", s)
+    s = P00_kap_bahuvrihi_head(s)
 
     s = P00_mahat_An_samasa_sandhi(s)
 
