@@ -79,9 +79,9 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.2",
     sutra_type=SutraType.VIDHI,
-    text_slp1="ekAco dve prathamasya",
-    text_dev="एकाचो द्वे प्रथमस्य",
-    padaccheda_dev="एकाचः / द्वे / प्रथमस्य",
+    text_slp1="ajAderdvitIyasya",
+    text_dev="अजादेर्द्वितीयस्य",
+    padaccheda_dev="अच्-आदेः / द्वितीयस्य",
     why_dev="लिटि स्थानिवद्-आ-सहितस्य पा-इकाचो द्वित्वम् — प०३५।",
     anuvritti_from=("6.1.1",),
     cond=cond,
