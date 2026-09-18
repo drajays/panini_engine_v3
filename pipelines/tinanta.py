@@ -1471,6 +1471,10 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # 7.3.84 guṇa: IK-vowel of dhātu (Ū of BU) → guṇa (o).
     if not state.meta.get("_lRT_skip_guna"):
         state = apply_rule("7.3.84", state)
+        # 1.1.51 uraṇ raparaḥ: guṇa of ṛ/ḷ (→ a) is always followed by r/l
+        # (kf → kar, not bare ka) — 7.3.84 sets urN_rapara_pending, sibling
+        # _derive_lRG already completes it; _derive_lRT was missing this call.
+        state = apply_rule("1.1.51", state)
 
     # ── Stage: pada saṃjñā + sandhi ─────────────────────────────────────────
     state = apply_rule("1.4.14", state)
