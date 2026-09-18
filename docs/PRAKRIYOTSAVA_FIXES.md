@@ -27,7 +27,7 @@ reason).
 8. sutra_3_3_89.py अथुच् SLP1 typo — **FIXED** (commit 868c48c, plus a ripple fix in `sutra_3_4_114.py` which independently hardcoded the same typo'd string as its ārdhadhātuka-krt allowlist — fixing 3.3.89 alone would have silently broken 7.3.84/6.1.78 downstream for वेपथुः/श्वयथुः)
 9. उन्नयते wrong pada + missing gemination — OPEN
 10. नदी-saṃjñā (1.4.3) missing from subanta schedule — **ALREADY-FIXED** (commit 6ea98f1, verified 2026-09-18: `1.4.3/1.4.4/1.4.5` now called in `P01_subanta_bootstrap`, `core/canonical_pipelines.py:1270-1272`)
-11. `_derive_lRT` missing `apply_rule("1.1.51")` after 7.3.84 guṇa — OPEN
+11. `_derive_lRT` missing `apply_rule("1.1.51")` after 7.3.84 guṇa — **FIXED** (commit 72e5456 — कृ लृट् 3sg now `karizyati` = करिष्यति, was `kaizyati`)
 12. `derive_denominative_laT()` silent no-op for न्-stem nominals — OPEN
 13. General subanta missing 8.2.7/8.2.30/8.2.39 — **FIXED** (commit baef3fc — राजभिः/वाग्भिः/वाक् all verified correct; 8.2.7 gained a pre-merge branch, 8.2.30 gained पदान्ते branch, 8.2.39/8.4.53 generalized from single-letter demo maps to full jhal-vargas)
 14. पच् general tiṅanta gives `pacata` not पचति/पचते — OPEN
