@@ -29,7 +29,7 @@ reason).
 10. नदी-saṃjñā (1.4.3) missing from subanta schedule — **ALREADY-FIXED** (commit 6ea98f1, verified 2026-09-18: `1.4.3/1.4.4/1.4.5` now called in `P01_subanta_bootstrap`, `core/canonical_pipelines.py:1270-1272`)
 11. `_derive_lRT` missing `apply_rule("1.1.51")` after 7.3.84 guṇa — OPEN
 12. `derive_denominative_laT()` silent no-op for न्-stem nominals — OPEN
-13. General subanta missing 8.2.7/8.2.30/8.2.39 — **PARTIALLY FIXED** (8.2.7 landed commit cb16261 — verify 8.2.30/8.2.39 still missing)
+13. General subanta missing 8.2.7/8.2.30/8.2.39 — **FIXED** (commit baef3fc — राजभिः/वाग्भिः/वाक् all verified correct; 8.2.7 gained a pre-merge branch, 8.2.30 gained पदान्ते branch, 8.2.39/8.4.53 generalized from single-letter demo maps to full jhal-vargas)
 14. पच् general tiṅanta gives `pacata` not पचति/पचते — OPEN
 15. दिव् (दिवादि) gives देव्यति not दीव्यति (श्यन् ङित् guṇa-block missing) — OPEN
 16. कृ विधिलिङ् gives करुयात् not कुर्यात् — OPEN
