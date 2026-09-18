@@ -35,7 +35,7 @@ reason).
 16. कृ विधिलिङ् gives करुयात् not कुर्यात् — OPEN
 17. दुह् गण-2 कर्तरि लट् gives दुह्ते not दुग्धे (8.2.31 not wired) — OPEN
 18. ब्रू गण-2 कर्तरि लट् gives ब्रूते not ब्रवीति, pada override ignored — OPEN
-19. कृ लोट् उत्तमपुरुष gives करोणि not करवाणि (3.4.92 आडुत्तम missing) — OPEN
+19. कृ लोट् उत्तमपुरुष gives करोणि not करवाणि (3.4.92 आडुत्तम missing) — **FIXED** (commit 7ba00f6). Deeper than a one-line scheduling fix — required reordering guṇa/6.1.97/6.1.101/6.1.78 relative to the new āgama, tagging gaṇa-8's u-vikaraṇa "anga" so 6.1.78 can see the o+A boundary, and gating 8.4.1/8.4.2 on 3.4.92 having fired (8.4.2's existing vyavāya scan doesn't treat yaṇ as a blocker — calling it unconditionally regressed 3pl karvantu→karvaṇtu; flagged as a real pre-existing gap in `sutras/adhyaya_8/pada_4/sutra_8_4_2.py` itself, not fixed here). Verified karavāṇi/karvāva/karvāma (kṛ) and bhavāni/bhavāva/bhavāma (bhū), all other cells unchanged.
 
 ## Missing dhātu entries (3)
 
