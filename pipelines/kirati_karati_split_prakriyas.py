@@ -1,16 +1,21 @@
 """
-pipelines/kirati_karati_split_prakriyas.py — **P009** (*kirati* note; JSON spine yields **karati**).
+pipelines/kirati_karati_split_prakriyas.py — **P009** (kF/gF → kirati/girati).
 
 Source: ``…/my_scripts/final/split_prakriyas_11/P009.json``.
 
-The JSON explicitly notes the classical target **kirati** (via 7.4.10 etc.), but the
-recorded steps demonstrate the **7.3.84** guṇa path on **kF** yielding **karati**.
-This pipeline implements that recorded spine (rule-based, apply_rule-only).
+Yudhiṣṭhira Mīmāṃsaka's Aṣṭādhyāyī-Bhāṣya (pariśiṣṭa, PDF p.643-644, 1.1.51
+उरण् रपरः section) derives कॄ (विक्षेपे, तुदादिः) + श + ति to **किरति**, not
+**करति**: the तुदादि *vikaraṇa* **श** is *a-pit* (śit-class सार्वधातुक), so
+**7.3.84**'s guṇa is blocked and **7.1.100** (ॠत इद्धातोः, ॠ→इ) fires instead,
+with **1.1.51** inserting the following *r*. गृ (निगरणे) gives गिरति by the
+identical mechanism — both are regression siblings here.
 
 Spine:
   **3.1.91** → **3.1.1–3** → **3.2.123** → (structural +laT) → **3.4.77** → **3.4.78** (*tip*) →
   **3.1.77** (*Sa* vikaraṇa, recipe-armed) → **1.3.8** → **1.3.9** →
-  **7.3.84** → **1.1.51** → **1.3.3** → **1.3.9** → (flat concat = karati).
+  **7.1.100** (ॠ→इ, kF/gF only — short *ṛ* dhātus are untouched) →
+  **7.3.84** (guṇa; no-op once 7.1.100 has fired) → **1.1.51** → **1.3.3** →
+  **1.3.9** → (flat concat = kirati / girati).
 
 CONSTITUTION Art. 7 / 11: ``apply_rule`` only (plus structural lakāra placeholder insertion).
 """
@@ -28,13 +33,12 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
-def derive_kirati_karati_split_prakriyas_P009() -> State:
-    # Dhātu witness (kF) for the recorded guṇa demonstration — treated as tudādi (gana 6).
+def _derive_tudadi_F_root(upadesha_slp1: str) -> State:
     dhatu = Term(
         kind="prakriti",
-        varnas=list(parse_slp1_upadesha_sequence("kF")),
+        varnas=list(parse_slp1_upadesha_sequence(upadesha_slp1)),
         tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": "kF", "gana": 6},
+        meta={"upadesha_slp1": upadesha_slp1, "gana": 6},
     )
     s = State(terms=[dhatu], meta={}, trace=[])
     s.meta["prakriya_P009_kirati_note_karati_spine"] = True
@@ -47,7 +51,10 @@ def derive_kirati_karati_split_prakriyas_P009() -> State:
     # tudādi vikaraṇa Sa + it-lopa (3.1.77 → 1.3.8 → 1.3.9)
     s = P00_snam_it_lopa_chain(s)
 
-    # guṇa on kF (F → a, then 1.1.51 inserts r) before the following sārvadhātuka Sa.
+    # 7.1.100 (F→i, kF/gF only) fires before 7.3.84's guṇa gets a chance —
+    # 7.3.84 declines once 7.1.100 has marked the aṅga done. 1.1.51 then
+    # inserts r after the substituted i (urN_rapara_pending, set by 7.1.100).
+    s = apply_rule("7.1.100", s)
     s = apply_rule("7.3.84", s)
     s = apply_rule("1.1.51", s)
     # After uRaN-rapara, the dhātu is no longer in upadeśa-state; otherwise the
@@ -61,5 +68,18 @@ def derive_kirati_karati_split_prakriyas_P009() -> State:
     return s
 
 
-__all__ = ["derive_kirati_karati_split_prakriyas_P009"]
+def derive_kirati_karati_split_prakriyas_P009() -> State:
+    """कॄ (विक्षेपे, तुदादिः) + तिप् → किरति (7.1.100 + 1.1.51, not 7.3.84's guṇa)."""
+    return _derive_tudadi_F_root("kF")
+
+
+def derive_girati_P009_sibling() -> State:
+    """गॄ (निगरणे, तुदादिः) + तिप् → गिरति — same mechanism, regression sibling."""
+    return _derive_tudadi_F_root("gF")
+
+
+__all__ = [
+    "derive_kirati_karati_split_prakriyas_P009",
+    "derive_girati_P009_sibling",
+]
 
