@@ -44,9 +44,9 @@ def derive_div_byAm_dyubhyAm() -> State:
 def derive_pathin_su_panTAH() -> State:
     pathin = Term(
         kind="prakriti",
-        varnas=list(parse_slp1_upadesha_sequence("pathin")),
+        varnas=list(parse_slp1_upadesha_sequence("paTin")),
         tags={"anga", "prātipadika"},
-        meta={"upadesha_slp1": "pathin"},
+        meta={"upadesha_slp1": "paTin"},
     )
     s = State(
         terms=[pathin],
