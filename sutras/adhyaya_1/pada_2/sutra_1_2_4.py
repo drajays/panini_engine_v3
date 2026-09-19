@@ -1,15 +1,23 @@
 """
-1.2.4  सार्वधातुकमपित्  —  SAMJNA (narrow demo)
+1.2.4  सार्वधातुकमपित्  —  SAMJNA
 
-Demo slice (कुरुतः prakriyā):
-  A *sārvadhātuka* tiṅ-pratyaya that is **a-pit** behaves as *kṅit* for the
-  purpose of blocking guṇa/vṛddhi under **1.1.5 kṅiti**.
+  A *sārvadhātuka* pratyaya (tiṅ-ādeśa **or** vikaraṇa — 3.4.113 makes both
+  sārvadhātuka) that is **a-pit** (its own upadeśa does *not* end in the
+  इत् letter प्) behaves as *kṅit* for the purpose of blocking guṇa/vṛddhi
+  under **1.1.5 kṅiti**. This is why शप् ("Sap", प्-इत्, पित्) never blocks
+  guṇa (भवति) while श्यन् ("Syan", no प्-इत्, अपित्) always does (दीव्यति,
+  not देव्यति) — the पित्/अपित् split is phonological (does the upadeśa end
+  in प्/फ्, i.e. SLP1 ``p``/``P``), not a hardcoded name list.
 
 Engine contract:
   - We model this by tagging the qualifying pratyaya Term with ``kngiti`` and
     recording ``samjna_registry['1.2.4_sarvadhatukam_apit'] = True``.
-  - This is a narrow glass-box slice: we treat tiṅ-ādeśa `tas` (3rd dual
-    parasmaipada) as the qualifying target in the demo.
+  - ``_find`` returns the *first* untagged qualifying term still on the tape;
+    callers that introduce a new sārvadhātuka pratyaya later (e.g. a
+    vikaraṇa inserted after the tiṅ-ādeśa is already on the tape) re-call
+    **1.2.4** after popping the registry key (see e.g.
+    ``pipelines/tinanta.py``'s upasarga+kṛ ātmanepada spine) so it can find
+    and tag that new term too.
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 12004 · सार्वधातुकमपित्
@@ -30,12 +38,13 @@ from engine.state import State
 
 from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import is_sarvadhatuka_upadesha_slp1
 
-# The three tiṅ ādeśa that genuinely carry प् as an इत् letter (तिप्, सिप्,
-# मिप् — see phonology/pratyaya_pratyahara.py's _TIN_ORDERED anubandha
-# column, the authoritative source for this). अपित्, not this set, is what
-# 1.2.4 is actually about — a "pit" meta key that no pipeline ever set was
-# silently treating every sārvadhātuka affix (पित् included) as अपित्.
-_PIT_TIN_UPADESHA: frozenset = frozenset({"tip", "sip", "mip"})
+# पित् = the upadeśa's own trailing letter is प् (an इत्, dropped later by
+# 1.3.3 हलन्त्यम्). तिप्/सिप्/मिप् are the three tiṅ ādeśa with this; शप्
+# ("Sap") carries it too — by design, the very reason गण-1/6/10 roots take
+# guṇa under शप् while श्यन् ("Syan", no प्) does not. Phonological, not a
+# hardcoded name list: any sārvadhātuka upadeśa ending "p"/"P" is पित्.
+def _is_pit_upadesha(up: str) -> bool:
+    return up.endswith(("p", "P"))
 
 
 def _find(state: State) -> int | None:
@@ -47,7 +56,7 @@ def _find(state: State) -> int | None:
         up = (t.meta.get("upadesha_slp1") or "").strip()
         if not is_sarvadhatuka_upadesha_slp1(up):
             continue
-        if up in _PIT_TIN_UPADESHA:
+        if _is_pit_upadesha(up):
             continue
         if "kngiti" in t.tags:
             continue

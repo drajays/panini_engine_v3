@@ -304,6 +304,19 @@ def _apply_vikarana(state: State, gana: int) -> State:
         state = apply_rule("3.1.69", state)   # apavāda: Śap → Śyan
         state = apply_rule("3.4.113", state)
         state = P00_lashakvataddhite_it_lopa_chain(state)
+        # 1.2.4 already ran once against the bare tiṅ-ādeśa (before śyan
+        # existed on the tape) earlier in the spine; re-run it now that
+        # śyan (a-pit — "Syan" carries no प्-इत्, unlike śap's "Sap") is on
+        # the tape, so 1.1.5 sees it and blocks 7.3.84's guṇa: दीव्यति, not
+        # देव्यति. Pop-then-recall is this repo's existing idiom for a
+        # second 1.2.4 pass (see the upasarga+kṛ ātmanepada spine above).
+        state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
+        state = apply_rule("1.2.4", state)
+        # 7.3.82 मिदेर्गुणः — apavāda for मिद् specifically: guṇa still fires
+        # (मेद्यति) even though श्यन् now blocks it generally per 1.2.4/1.1.5
+        # above. Glass-box, scoped to मिद्'s own upadeśa in its cond() — a
+        # no-op for every other divādi root.
+        state = apply_rule("7.3.82", state)
         return state
 
     if gana == 6:
