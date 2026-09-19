@@ -80,7 +80,7 @@ specifically (वच्'s लट्/लोट्/लङ्/विधिलिङ
 
 ## Unimplemented mechanism families (7) — build backlog
 
-1. यङ्लुक् frequentatives (9 attested, 2 already work via `P00_yang_luk_2_4_74_and_1_1_4`) — OPEN
+1. यङ्लुक् frequentatives (9 attested) — **IN PROGRESS, 3/9.** लोलुवः/मरीमृजः already worked; added पोपुवः (commit ca2ae49, पू — same ऊ-अंत class as लू, reused लोलुवः's recipe verbatim once the shared middle span was extracted into `core/canonical_pipelines.py::P00_yang_luk_simple_dvitva_to_guna`). Remaining 6: सरीसृप् (सृप् root is **entirely absent from the dhātupāṭha** — needs a data entry first, same shape as the दृश्/स्था gaps above), पापठीति/लालपीति (पठ्/लप्, full derivation cited in crosscheck doc pp.759 — 1.3.1/3.1.22/6.1.9/6.1.4/1.1.59/7.4.83), बिभर्ति/नेनेक्ति (भृ/निज्, p.760), दाति/धाति (दा/धा, Vedic बहुलम् variant — यङ् itself takes लुक् without श्लु, no द्वित्व — a distinct sub-mechanism, not just a new root on the same recipe).
 2. शतृ/शानच् present participles (11 attested; `derive_krt()` rejects Satf/SAnac) — OPEN
 3. माङ्-लुङ् prohibitive aorist (sūtras 2.4.80/81/82 exist, zero pipeline) — OPEN
 4. गण-2/गण-5 vikaraṇa general dispatch (`NotImplementedError`) — OPEN
