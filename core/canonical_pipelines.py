@@ -452,6 +452,20 @@ def P00_yang_luk_2_4_74_and_1_1_4(s: State) -> State:
     return s
 
 
+def P00_yang_luk_simple_dvitva_to_guna(s: State) -> State:
+    """Shared यङ्लुक् tail for a plain (no root-specific अभ्यास surgery) root:
+    **7.4.60** → **7.4.82** → aC three-term frame → **2.4.74**/**1.1.4**
+    यङ्-लुक् → **7.3.84** guṇa → **6.4.77** उवङ्. Used by e.g. लोलुवः/पोपुवः
+    (लू/पू) — roots whose अभ्यास needs no दीर्घ/इत्व augment of its own."""
+    s = apply_rule("7.4.60", s)
+    s = apply_rule("7.4.82", s)
+    s = P00_yang_ac_three_term_frame(s)
+    s = P00_yang_luk_2_4_74_and_1_1_4(s)
+    s = apply_rule("7.3.84", s)
+    s = apply_rule("6.4.77", s)
+    return s
+
+
 def P00_subanta_prathama_su_tripadi_visarga(s: State) -> State:
     """Structural *pada* merge + *su* *it* + **8.2.66** / **8.3.15** (*r* / visarga)."""
     from pipelines.subanta import _pada_merge
