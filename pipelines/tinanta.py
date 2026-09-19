@@ -1904,12 +1904,24 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
     state = apply_rule("2.4.72", state)
+    # 7.3.93 ब्रुव ईट् (ब्रू-specific ī āgama on tip/sip/mip) → 7.3.84 guṇa
+    # (ऊ→ओ) → 6.1.78 एचोऽयवायावः (ओ+ī → av+ī). All three scope themselves
+    # to their own structural condition (brU root; ik-final dhātu; ec+ac
+    # boundary) and are no-ops for अद्/अस्/दुह् — none of those roots end
+    # in an ik vowel, so 7.3.84 (and downstream 6.1.78) simply decline.
+    state = apply_rule("7.3.93", state)
+    state = apply_rule("7.3.84", state)
+    state = apply_rule("6.1.78", state)
     # 6.4.111 श्नसोरल्लोपः — अस् root's own initial a before an apit
     # sārvadhātuka tiṅ (tas/jhi/vas/mas…). Scoped to upadesha_slp1=="as"
     # in the sūtra's own cond(); a vacuous no-op for every other root
     # (अद्, दुह्, ब्रू…) sharing this spine.
     state = apply_rule("6.4.111", state)
     state = apply_rule("7.1.3", state)
+    # 6.4.77 अचि श्नु धातुभ्रुवां य्वोरियुवङौ — ū-final dhātu + a-initial
+    # affix → uv (ब्रू+अन्ति → ब्रुव्+अन्ति, after 7.1.3 turns jhi → anti).
+    # General (any ū-final dhātu), decisively a no-op for अद्/अस्/दुह्.
+    state = apply_rule("6.4.77", state)
     state = apply_rule("1.4.13", state)
     state = apply_rule("1.4.14", state)
     _pada_merge(state)

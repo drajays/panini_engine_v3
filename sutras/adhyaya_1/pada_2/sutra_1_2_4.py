@@ -30,6 +30,13 @@ from engine.state import State
 
 from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import is_sarvadhatuka_upadesha_slp1
 
+# The three tiṅ ādeśa that genuinely carry प् as an इत् letter (तिप्, सिप्,
+# मिप् — see phonology/pratyaya_pratyahara.py's _TIN_ORDERED anubandha
+# column, the authoritative source for this). अपित्, not this set, is what
+# 1.2.4 is actually about — a "pit" meta key that no pipeline ever set was
+# silently treating every sārvadhātuka affix (पित् included) as अपित्.
+_PIT_TIN_UPADESHA: frozenset = frozenset({"tip", "sip", "mip"})
+
 
 def _find(state: State) -> int | None:
     if state.samjna_registry.get("1.2.4_sarvadhatukam_apit") is True:
@@ -40,8 +47,7 @@ def _find(state: State) -> int | None:
         up = (t.meta.get("upadesha_slp1") or "").strip()
         if not is_sarvadhatuka_upadesha_slp1(up):
             continue
-        # Narrow demo: treat missing pit marker as a-pit.
-        if t.meta.get("pit") is True:
+        if up in _PIT_TIN_UPADESHA:
             continue
         if "kngiti" in t.tags:
             continue
