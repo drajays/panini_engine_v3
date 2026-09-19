@@ -226,6 +226,13 @@ def cond(state: State) -> bool:
     if not d0.varnas:
         return False
     if _last_ik_index(d0) is not None:
+        # Same यासुट् pre-block as _tanadi_vikarana_ik_eligible below: गण-8
+        # कृ+विधिलिङ् inserts यासुट् (ङित्, 3.4.103 उदात्तो ङिच्च) only
+        # *after* this first (root-vowel) guṇa site would otherwise fire —
+        # कुर्यात्, not करुयात्/कर्+उ+यात्. Flag set/cleared around
+        # _apply_vikarana in _derive_liG.
+        if state.meta.get("liG_yasut_expected"):
+            return False
         return True
     # No IK in dhātu (consonant-final tanādi like van, tan): fire on vikaraṇa u.
     # Guard: only the tanādi u-vikaraṇa (upadesha 'u', sarvadhatuka+vikarana tags).
