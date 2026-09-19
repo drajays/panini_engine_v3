@@ -1,13 +1,17 @@
 """
-7.3.110  ऋतो ङिसर्वनामस्थानयोः  —  VIDHI (narrow)
+7.3.110  ऋतो ङिसर्वनामस्थानयोः  —  VIDHI
 
 **Pāṭha:** *ṛtaḥ ṅi-sarvanāmasthānayoḥ* — *guṇa* of stem-final **ṛ** before a
 *ṅit* or *sarvanāmasthāna* affix.
 
-Narrow v3 (``prakriya_21`` *hotāram*):
-  • ``state.meta['prakriya_21_7_3_110_arm']``; penultimate ``Term`` *aṅga* with
-    ``krt_tfc`` whose last Varṇa is ``f`` (ऋ); final ``Term`` *sup* bears
-    ``sarvanamasthana`` (from **1.1.43**).
+Any ṛ-final prātipadika (not just tṛc agent nouns — the inherited ṛ-stem
+kinship nouns too: mātṛ, pitṛ, bhrātṛ, ...) before ṅi or sarvanāmasthāna. The
+rule's own text has no kṛt-vs-non-kṛt restriction; the earlier
+``krt_tfc``-only ``cond()`` was too narrow (same shape as 7.1.94's fix for
+Prakriyotsava sweep bug #7 — mātaraḥ/mātarau/mātari etc. all fell through
+undeclined via the general subanta pipeline).
+  • penultimate ``Term`` *aṅga*, ``prātipadika``, last Varṇa ``f``/``F``;
+    final ``Term`` *sup* bears ``sarvanamasthana`` (from **1.1.43**).
   • ``act`` — replace final ``f``/``F`` with short ``a`` and arm **1.1.51**
     *uraṇ-rapara* (same hook as **7.3.84**).
 
@@ -36,9 +40,12 @@ def _eligible(state: State) -> bool:
         return False
     ang = state.terms[-2]
     sup = state.terms[-1]
-    if "krt_tfc" not in ang.tags or "prātipadika" not in ang.tags:
+    if "prātipadika" not in ang.tags:
         return False
-    if SARVANAMASTHANA_TAG not in sup.tags:
+    # ङि specifically (saptamī ekavacana) — not the whole ṅit-sup class (ङे/
+    # ङसि/ङस् take उत्व by 6.1.111 instead, not this guṇa: पित्रे/पितुः).
+    is_ni = (sup.meta.get("upadesha_slp1") or "") == "Ni"
+    if not is_ni and SARVANAMASTHANA_TAG not in sup.tags:
         return False
     if not ang.varnas:
         return False

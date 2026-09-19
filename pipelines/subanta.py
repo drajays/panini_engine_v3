@@ -394,6 +394,8 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.1.68",
     "6.4.1",
     "7.1.94",
+    "7.3.110",  # ऋतो ङिसर्वनामस्थानयोः — guṇa for ṛ-stems before ṅi/sarvanāmasthāna (mātari, mātarau, mātaraḥ...)
+    "1.1.51",   # uraṇ rapara — consumes 7.3.110's pending r (and 7.1.100's, if either fired)
     "6.4.11",
     "6.1.66",
     "7.1.2",
@@ -428,6 +430,14 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.1.72",
     "6.4.10",   # upadhā dīrgha after num insertion (dhanuṣ bahu: u→U before n+s)
     "6.4.8",
+    # Second 6.1.68 attempt (idempotent, same pattern as 6.4.8's own second
+    # occurrence above): ṛ-stem kinship/agent nouns (mAtf, pitf, bhrAtf...)
+    # only become hal-final *here*, after 7.1.94's ṛ→an substitution — the
+    # earlier 6.1.68 slot (before 7.1.94) permanently skips them since this
+    # is a single linear walk, not a scan-to-fixpoint. Already-resolved
+    # stems (rAjan, kumArI...) re-check harmlessly: their sup term is gone,
+    # so _find_eligible_boundary has nothing to match.
+    "6.1.68",
     "6.4.3",
     "7.3.103",
     "7.3.112",  # आट् for ṅit sups after नदी — नद्यै · नद्याः

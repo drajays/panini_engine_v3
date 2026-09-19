@@ -48,6 +48,11 @@ def act(state: State) -> State:
     ang.varnas[-1] = mk("a")
     ang.varnas.append(mk("n"))
     ang.meta["anaN_7_1_94_done"] = True
+    # The अन्-आदेश just made this a genuine न्-final अङ्ग (part of the
+    # प्रातिपदिक itself, not a न्-आगम) — 8.2.7 needs this tag to see it
+    # (mirrors what pipelines/subanta.py does at tape-init for stems that
+    # already end in "n", e.g. राजन्).
+    ang.tags.add("an_pratipadika")
     return state
 
 
