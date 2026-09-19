@@ -1,10 +1,9 @@
 """
-8.2.40  झषस्तथोर्धोऽधः  —  VIDHI (narrow demo)
+8.2.40  झषस्तथोर्धोऽधः  —  VIDHI
 
-Demo slice (रुणद्धि .md):
-  When a jhaṣ phoneme (here: 'D' = ध्) precedes 't' (from ti), change that 't'
-  to 'D' (ध्). This creates the trigger for 8.4.53 (jhalām jaś jhaśi) on the
-  preceding consonant.
+Any झष् (voiced aspirate — घ्/झ्/ढ्/ध्/भ्) immediately before त्/थ् turns
+that त्/थ् into ध् — general across the whole झष् class (लब्ध, दुग्ध+ति→
+दुग्ध्+धि both go through this same branch), not just a ध्+त् literal.
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 82040 · झषस्तथोर्धोऽधः
@@ -22,6 +21,10 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology import mk
 
+# झष् (4th/voiced-aspirate letter of each varga) — the trigger consonant.
+_JHASH = frozenset({"G", "J", "Q", "D", "B"})
+_TA_THA = frozenset({"t", "T"})
+
 
 def _find(state: State):
     if len(state.terms) != 1:
@@ -33,7 +36,7 @@ def _find(state: State):
         return None
     vs = t.varnas
     for i in range(len(vs) - 1):
-        if vs[i].slp1 == "D" and vs[i + 1].slp1 == "t":
+        if vs[i].slp1 in _JHASH and vs[i + 1].slp1 in _TA_THA:
             return i + 1
     return None
 
@@ -62,7 +65,18 @@ def _find_p001_d_pre_tripadi(state: State):
 
 
 def _find_p033_Gta(state: State):
-    """P033 **8.2.40**: *jhazi* *t*→*d* (द्) after **G** (घ्)."""
+    """P033 **8.2.40**: *jhazi* *t*→*d* (द्) after **G** (घ्).
+
+    Scoped to its own pipeline's recipe key (``P033_agda_recipe``, set only
+    by ``pipelines/agda_lit_ghas.py`` — NOT ``jhalo_jhali_recipe``, which
+    8.2.26 pops after its own use and would already be gone by the time this
+    rule runs) now that the general branch below also matches G+t — without
+    this gate a generalized caller (e.g. दुह्→दुघ्+ति) would collide with
+    this one-word legacy demo and get द् instead of the real ध् the general
+    झषस्तथोर्धः text gives.
+    """
+    if not state.meta.get("P033_agda_recipe"):
+        return None
     if len(state.terms) != 1:
         return None
     t = state.terms[0]

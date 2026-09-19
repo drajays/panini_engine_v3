@@ -45,6 +45,11 @@ def _build_state() -> State:
 def derive_agda_lit_ghas_P033() -> State:
     s = _build_state()
     s.meta["pada"] = "parasmaipada"
+    # 8.2.40's own recipe key, distinct from 8.2.26's jhalo_jhali_recipe
+    # (which 8.2.26 pops after its own use) — persists so 8.2.40's P033
+    # branch (G+t → G+d) still fires for this word once 8.2.40's general
+    # branch was generalized to also match G+t for other callers (दुह्).
+    s.meta["P033_agda_recipe"] = True
 
     s = apply_rule("1.1.68", s)
     s = apply_rule("1.3.1", s)

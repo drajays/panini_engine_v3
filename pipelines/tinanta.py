@@ -1937,10 +1937,19 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.4.77", state)
     state = apply_rule("1.4.13", state)
     state = apply_rule("1.4.14", state)
+    # 8.2.32 दादेर्धातोर्घः — द्-initial ह्-final dhātu (दुह्, दिह्…) → घ् before
+    # a झल्-initial affix (दुह्+ति → दुघ्+ति, apavāda to 8.2.31 हो ढः). Needs
+    # the still-separate dhātu/tiṅ terms, so it runs pre-merge like 8.2.7's
+    # own pre-merge branch; a no-op for अद्/अस्/ब्रू (none start with द्).
+    state = apply_rule("8.2.32", state)
     _pada_merge(state)
     state = apply_rule("8.2.1", state)
     state = P00_tripadi_8_4_55_visarga(state)
     state = P00_tripadi_anusvara_parasavarna(state)
+    # 8.4.53 झलां जश् झशि — jhal→jaś before jhaṣ (दुघ्+धि→दुग्धि). Not in
+    # the universal tripadi spine (over-broad there, see core/phases/tripadi.py);
+    # scoped here explicitly, a no-op for अद्/अस्/ब्रू (no jhal-before-jhaṣ site).
+    state = apply_rule("8.4.53", state)
     state = apply_rule("8.4.68", state)
     return state
 
@@ -1969,7 +1978,19 @@ def _derive_laT_adadi(state: State, purusha: int, vacana: int) -> State:
     state = P00_tin_adesha_base(state, _tin)
     state.meta["3_1_68_kartari_recipe"] = True
     state = P00_adadi_sap_luk_tere(state)
+    # 8.2.32 दादेर्धातोर्घः — द्-initial ह्-final dhātu (दुह्→दुग्धे) needs the
+    # same pre-merge tripadi entry the kartari-parasmai spine already has;
+    # a no-op for आस्/अद् etc. (this function's original P008 आस्ते case),
+    # none of which are द्-initial ह्-final.
+    state = apply_rule("8.2.32", state)
     _pada_merge(state)
+    state = apply_rule("8.2.1", state)
+    state = P00_tripadi_8_4_55_visarga(state)
+    state = P00_tripadi_anusvara_parasavarna(state)
+    # 8.4.53 झलां जश् झशि — jhal→jaś before jhaṣ (दुघ्+धे→दुग्धे). Not in
+    # the universal tripadi spine (over-broad there, see core/phases/tripadi.py);
+    # scoped here explicitly, a no-op for आस्/अद् (no jhal-before-jhaṣ site).
+    state = apply_rule("8.4.53", state)
     return state
 
 
