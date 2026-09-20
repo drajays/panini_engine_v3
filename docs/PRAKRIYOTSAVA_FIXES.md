@@ -5,6 +5,44 @@ dhātu entries, 7 unimplemented mechanism families). This file tracks status
 as fixes land. Update it as you go; it is the source of truth for resuming
 this sweep across sessions — do not restate full findings in chat.
 
+## Session status (as of 2026-09-20) — resume here
+
+**15/19 numbered bugs FIXED, 2 PARTIALLY FIXED, 2 still OPEN.** Full suite
+clean: 19255 passed, 4 skipped, zero regressions across the whole sweep.
+All 3 missing dhātu entries done. यङ्लुक् backlog started (3/9).
+
+Still open, next-highest-leverage first:
+- **#12** (denominative क्यच् — राजीयति/राजायते/चर्मयति) — fully
+  source-grounded, exact 5-piece plan written out at its own line below.
+  Not attempted yet because it needs a new branch on shared `8.2.7`
+  (judged too high a regression-risk without dedicated budget). This is
+  the best-specified open item — start here.
+- **#16 second half** (कृ विधिलिङ् — कुर्यात्) — गुण-block landed; needs a
+  उ↔ऋ साम्प्रसारण-shaped transposition with zero existing implementation
+  anywhere in the repo. Needs the real sūtra identified from source first.
+- **#15 second half** (दिव् — दीव्यति) — गुण-block landed; needs a दीर्घ
+  (इ→ई) mechanism, sūtra not yet identified.
+- **#9** (उन्नयते) — two gaps, both diagnosed: 8.4.45 (यरोऽनुनासिके...) is
+  a pure stub needing real general implementation (careful — other
+  उपसर्ग+nasal-root combos likely depend on it too), plus a separate
+  आत्मनेपद-licensing rule not yet identified from source.
+- **7 unimplemented mechanism families** (यङ्लुक् 3/9 done, 6 to go;
+  शतृ/शानच्, माङ्-लुङ्, गण-2/5 vikaraṇa dispatch, वैदिक लेट्, periphrastic
+  लिट् परस्मैपद, अञ्च् nasal declension — all untouched, see below).
+- दृश्/स्था root suppletion (7.3.78, not wired) — flagged, not fixed.
+
+**Working method that worked well this sweep, keep using it:** fork per
+batch, each fork re-verifies its repro against current HEAD before fixing
+(commits land continuously, findings go stale fast), fixes constitutionally
+(structural Term tags, no `_arm` flags), runs the full suite (not just the
+target repro) before every commit, commits small and often (infra hiccups —
+rate limits, network drops — have cut off several forks mid-session; small
+frequent commits meant almost nothing was ever lost), and updates this file
+in the same commit as the code fix. When two forks share the working tree
+concurrently (no worktree isolation used in this sweep), give each a
+disjoint file list up front and tell them to isolate any suspected
+regression to their own changed files before assuming they broke something.
+
 Since the crosscheck sweep finished, 4 commits landed that overlap with some
 numbered bugs (नदी paradigm, 8.2.7 नलोपः, 8.4.40, 7.2.115 निनाय). **Always
 re-verify a bug against current HEAD before fixing it** — it may already be
@@ -45,7 +83,7 @@ reason).
 14. पच् general tiṅanta gives `pacata` not पचति/पचते — **FIXED** (commit 5f22a6e — `_run_lat_kartari_bhuvadi_spine`, the fallback every plain gaṇa-1 root without its own dedicated spine uses, never called 3.4.79; wired in, now gives पचते by this row's own आत्मनेपदी label, and पचति with `pada='parasmai'` override — the "missing vowel" bug was purely rule-scheduling, unrelated to whether this specific dhātupātha row's आत्मनेपदी label is itself correct data for the canonical "पच् भर्जने" root, which is a separate, unexamined data question)
 15. दिव् (दिवादि) gives देव्यति not दीव्यति — **PARTIALLY FIXED** (commit c2e51f3). Generalized 1.2.4's पित्-detection from a hardcoded 3-name set to the real phonological test (upadeśa's own trailing letter ends in प्/फ् — this is why शप्/"Sap" doesn't block गुण while श्यन्/"Syan" does), and added a second 1.2.4 call in गण-4's `_apply_vikarana` branch after श्यन् is inserted (pop-then-recall, an idiom this repo already uses elsewhere). गुण is now correctly blocked: `derive('divAdi_04_0001','laT','kartari',3,1)` gives `divyati` (was `devyati`) — matches the source text's own citation ("इयन् के ङित् होने से... नहीं हुआ है"). This re-exposed that मिद् needs its own अपवाद — `sutras/adhyaya_7/pada_3/sutra_7_3_82.py` (मिदेर्गुणः) already existed, glass-box-correct, but was never wired in (मेद्यति was only "correct" before by the same accident that made दिव् wrong — गुण fired unconditionally for every गण-4 root); wired it in right after 1.2.4, verified मेद्यति/भवति unaffected. Still open: दिव् itself needs a separate दीर्घ (इ→ई) — currently `divyati` (short इ), not दीव्यति. Mechanism not yet identified (the original sweep's own page reading only confirmed the गुण-block, calling the दीर्घ "a separate [thing]" without naming a सूत्र) — needs source-grounded identification, not guessed at.
 16. कृ विधिलिङ् gives करुयात् not कुर्यात् — **PARTIALLY FIXED** (commit d3d7d21). Same shape as #15's guṇa-block, different firing site: `sutras/adhyaya_7/pada_3/sutra_7_3_84.py`'s root-vowel guṇa branch (कृ's own ऋ) had no check for `liG_yasut_expected` (the existing flag that already correctly pre-blocks the vikaraṇa-IK branch, e.g. उ→ओ in करोति) — extended the same guard to this branch. `derive('BvAdi_DukfY','liG','kartari',3,1)` no longer guṇas ऋ→अर्; करोति/कुरुतः/करवाणि (लट्/लोट्, where the flag is never set) verified unaffected. Still open: output is now `kauyAt`, not कुर्यात् — गुण-blocking alone isn't the whole mechanism. कुर्यात् needs a उ↔ऋ transposition (गण-8's उ ending up before ऋ's consonantal र्-remnant, a साम्प्रसारण-like step) this codebase has no existing implementation of anywhere (grepped, zero hits, confirmed again this pass) — needs the real सूत्र identified from source before implementing, not guessed at.
-17. दुह् गण-2 कर्तरि लट् gives दुह्ते not दुग्धे (8.2.31 not wired) — **VERIFIED-OPEN, source-checked, root mechanism identified, exact rule-ids still uncertain.** Current repro: `derive('Adadi_02_0004','laT','kartari',3,1)` gives `dukti` (आत्मनेपद तिङ् now resolves correctly per #6's fix, but the general dispatcher currently picks परस्मैपद तिप्-shape "ति" here for a row this dhātupāṭha marks — check pada resolution for this specific row before assuming आत्मनेपद "ते" is even the right target purusha-ending to chase). Read the actual PDF (pp.784-785, परि॰ न दुहस्नुनमां॰ 3.1.89 section — NOTE: this specific page's दुग्धे example is under a **कर्मवत्-कर्तरि भाव** construction (कर्मवत् कर्मणा 3.1.87 + 1.3.13 भावकर्मणोः आत्मनेपद), not necessarily plain कर्तरि लट् — the two might share the same सन्धि tail but verify the opening is the same before reusing this exact derivation for a plain "सः दुग्धे" repro). Confirmed direct from the scan: **8.2.40 झषस्तथोर्धोऽधः is genuinely in the chain** (upgrades the prior "likely 8.2.40-family, not located" guess to source-confirmed). Also visible but NOT reliably legible at 300dpi even after multiple targeted crops: an earlier step converting ह्→घ् (a root-class-specific rule for द्-initial ह्-final roots — दुह्/दिह्/लिह्/गुह्/ऊह् — likely distinct from the general 8.2.31 हो ढः, which gives ढ् not घ् and wouldn't explain दुग्धे's ग् — 8.2.31 is a red herring for this specific word, keep it scoped to its existing जिघृक्षति caller), and a final deaspiration step घ्+ध्→ग्+ध् whose id I could not pin down with confidence. **Not implemented — needs a cleaner high-res re-read of PDF p.784-785's left-margin term-progression column (small glyphs, this pass's crops were still ambiguous on 2 of the ~4 rule citations) before coding, to avoid implementing a wrong rule-id under the right-shaped fix.**
+17. दुह् गण-2 कर्तरि लट् gives दुह्ते not दुग्धे (8.2.31 not wired) — **FIXED** (commit 9dfb0cd). Cleaner PDF re-read (p.784) found the earlier-elusive step: 8.2.32 दादेर्धातोर्घः was a pure gate stub, zero phoneme logic — implemented as the द्-initial-ह्-final (दुह्/दिह्…) apavāda to 8.2.31 हो ढः, ह्→घ् before झल्-initial affix, firing pre-merge (same shape as 8.2.7's pre-merge branch). Also generalized 8.2.40 झषस्तथोर्धोऽधः off a literal-"D"-only trigger to the full झष् class (needed for घ्+त्→घ्+ध्) — this collided with a legacy one-word demo (अग्द, P033) that hardcoded the same phonetic shape for a different root; re-scoped that demo to its own persistent recipe key rather than let it ride the newly-general trigger. 8.4.53 scoped to दुह्'s own spines in tinanta.py rather than the universal tripadi phase — adding it there regressed अपच्ध्वे (false-positive च्+ध् match), reverted that part. Verified: दोग्धि/दुग्धः/दुहन्ति (कर्तरि), दुग्धे (आत्मनेपद).
 18. ब्रू गण-2 कर्तरि लट् gives ब्रूते not ब्रवीति, pada override ignored — **FIXED** (commit 2a369a9). Read PDF p.809-810 directly: 7.3.93 ब्रुव ईट् (ब्रू-specific दीर्घ ई augment before हल्-आदि पित् तिप्/सिप्/मिप्), combined with 7.3.84 guṇa (ऊ→ओ) and 6.1.78 एचोऽयवायावः (ओ+ई→अव्+ई), give ब्रवीति/ब्रवीषि/ब्रवीमि; 3pl needed 6.4.77 उवङ्-आदेश (already implemented, general, just unwired) for ब्रुवन्ति. Along the way found and fixed a second, wider bug: `sutra_1_2_4.py` (सार्वधातुकमपित्) checked a `meta["pit"]` key no pipeline ever sets, so it was treating every सार्वधातुक affix (including genuinely-पित् तिप्/सिप्/मिप्) as अपित् and wrongly blocking guṇa via 1.1.5 — fixed using the पित्-anubandha list phonology/pratyaya_pratyahara.py's TIN pratyāhāra already documents. All verified: ब्रवीति/ब्रवीषि/ब्रवीमि/ब्रूतः/ब्रुवन्ति, full suite clean (19251/4 skipped), अद्/अस्/दुह् unaffected.
 19. कृ लोट् उत्तमपुरुष gives करोणि not करवाणि (3.4.92 आडुत्तम missing) — **FIXED** (commit 7ba00f6). Deeper than a one-line scheduling fix — required reordering guṇa/6.1.97/6.1.101/6.1.78 relative to the new āgama, tagging gaṇa-8's u-vikaraṇa "anga" so 6.1.78 can see the o+A boundary, and gating 8.4.1/8.4.2 on 3.4.92 having fired (8.4.2's existing vyavāya scan doesn't treat yaṇ as a blocker — calling it unconditionally regressed 3pl karvantu→karvaṇtu; flagged as a real pre-existing gap in `sutras/adhyaya_8/pada_4/sutra_8_4_2.py` itself, not fixed here). Verified karavāṇi/karvāva/karvāma (kṛ) and bhavāni/bhavāva/bhavāma (bhū), all other cells unchanged.
 
