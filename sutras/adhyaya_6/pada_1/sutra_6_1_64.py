@@ -37,12 +37,23 @@ def cond(state: State) -> bool:
         return False
     if t0.meta.get("corrected_v2_P001_C_6_1_64_done"):
         return False
+    # vārttika सुब्धातुष्ठिवुष्वष्कतीनां प्रतिषेधः: ष्ठिव्, ष्वष्क् keep ṣ.
+    if (t0.meta.get("upadesha_slp1") or "").strip() in _PRATISHEDHA:
+        return False
     return True
+
+
+_PRATISHEDHA = {"zWivu~", "zvazka~"}
+# The ṭ-varga after ṣ was ṣ's doing (8.4.41 ष्टुना ष्टुः); with ṣ gone it reverts
+# (निमित्तापाये नैमित्तिकस्याप्यपायः): ष्टुच् → स्तुच्, ष्णा → स्ना.
+_TU_TO_TU = {"w": "t", "W": "T", "q": "d", "Q": "D", "R": "n"}
 
 
 def act(state: State) -> State:
     t0 = state.terms[0]
     t0.varnas[0] = mk("s")
+    if len(t0.varnas) > 1 and t0.varnas[1].slp1 in _TU_TO_TU:
+        t0.varnas[1] = mk(_TU_TO_TU[t0.varnas[1].slp1])
     t0.meta["corrected_v2_P001_C_6_1_64_done"] = True
     return state
 

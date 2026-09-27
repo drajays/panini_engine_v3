@@ -397,6 +397,10 @@ def P00_bhuvadi_dhatu_it_anunasik_hal(s: State) -> State:
         s = apply_rule(sid, s)
     if s.terms:
         s.terms[0].tags.discard("upadesha")
+    # 6.1.64 धात्वादेः षः सः / 6.1.65 णो नः: the dhātu's own initial, before
+    # anything else sees it (षद् → सद्, णी → नी). Each self-gates.
+    s = apply_rule("6.1.64", s)
+    s = apply_rule("6.1.65", s)
     # 7.1.58 इदितो नुम् धातोः is nitya for an idit dhātu (वद् → वन्द्), so it
     # belongs to the dhātu itself, before any vikaraṇa or lakāra rule sees it.
     if any("idit" in t.tags and "dhatu" in t.tags for t in s.terms):

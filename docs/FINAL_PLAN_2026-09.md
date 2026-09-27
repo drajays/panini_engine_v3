@@ -84,7 +84,7 @@ by sūtra** from the engine's own derivation, with LSK pages.
 | 7,639 | 172 | ✅ **FIXED 2026-09-28** 7.1.58 इदितो नुम् धातोः not applied — 1.3.9 now tags *idit* structurally; 7.1.58 runs after dhātu it-lopa | skudi~ → स्कुन्दते |
 | 2,818 | 312 | ◐ **PARTLY FIXED 2026-09-28** ātmanepada endings — laṭ 9/9 and lṛṭ now correct (एधते…एधामहे, एधिष्यते); loṭ (3.4.90/91/93), liṭ ātmane, laṅ āṭ-vṛddhi still open. *Oracle fixed too: it now gets svara-marked upadeśas.* | eDa~ → एधे |
 | 2,577 | 74 | ✅ **FIXED 2026-09-28** guṇa on non-laghu upadhā — 7.3.84 target limited to final ik or laghu upadhā ik | SIkf~ → शीकावहे |
-| 1,726 | 40 | 6.1.64 धात्वादेः षः सः | zvada~ zvadai → svad- |
+| 1,726 | 40 | ✅ **FIXED 2026-09-28** 6.1.64 धात्वादेः षः सः / 6.1.65 णो नः — scheduled with the dhātu (after it-lopa); vārttika pratiṣedha for ष्ठिव्/ष्वष्क्; ṭ-varga reverts after ṣ→s (स्तोचते) | zvada~ → स्वदते |
 | 313 | 35 | ām-liṭ (3.1.35–40) | eDa~ eDeDa → eDAYcakre |
 | 12,319 | 704 | unclassified — classify next | |
 
@@ -131,6 +131,7 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
 - **loṭ ātmanepada**: 3.4.90 आमेतः, 3.4.91, 3.4.93 एत ऐ not wired; 3.4.79 must
   run after śap (it rewrites the ādeśa upadeśa, hiding it from 3.1.68).
 - **laṅ āṭ vṛddhi**: अएधत for ऐधत (6.1.90 आटश्च).
+- **8.2.77 हलि च**: ष्ठिव् → ष्ठेवति for ष्ठीवति.
 - **aniṭ ignored** in luṭ/liṭ/luṅ: डुपचँष् gives पचिता (→ पक्ता), पपचिषे,
   अपच्त (→ अपक्त / अपाचि). `test_tinanta_pac_karmani_bhave.py` is a snapshot
   of old output, not gold — 9 luṅ cells xfail(strict) until fixed.
@@ -163,8 +164,8 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | Metric | Now | Target |
 |---|---|---|
 | Sūtras with LSK page | 1,895 | 1,900 |
-| forms.db cells verified vs Vidyut (form) | 40,551 / 77,317 (52 %) | 90 % |
-| … of those, sūtra path also agrees | 27,669 | all verified |
+| forms.db cells verified vs Vidyut (form) | 43,297 / 77,317 (56 %) | 90 % |
+| … of those, sūtra path also agrees | 29,101 | all verified |
 | Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
 | Gītā tagged-word coverage | 8.8 % | 50 % → 80 % |
 | LSK prakriyā order agreement | — | measured per part, rising |
