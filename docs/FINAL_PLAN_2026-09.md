@@ -66,8 +66,12 @@ by sūtra** from the engine's own derivation, with LSK pages.
   each `[LSK]` block; the sūtra sequence comes from the clean text layer, the
   form from OCR reconciled against our own derivation. Diff our trace's
   sūtra order vs LSK's; each disagreement is a ticket.
-- **B2 Gītā coverage metric.** `bench/gita_coverage.py`: % of tagged Gītā
-  words `forms.db` derives. Baseline **12 % (144/1,157)**. Tracked per session.
+- **B2 Gītā coverage metric. ✅ DONE 2026-09-28** — `tools/build_gita_words.py`
+  → `data/reference/gita/words.jsonl` (2,309 words, 208 verses, ch. 1–6; verse +
+  word + tag only). `bench/gita_coverage.py [--write]`. Baseline: **8.6 % tagged**
+  (174/2,034), 8.3 % tagged + Vidyut-verified. Misses mix grammar gaps (pronouns,
+  n/s-stems, liṭ, karmaṇi) with lexicon gaps (only 72 noun stems indexed; pārtha,
+  bhārata absent; `karma` is indexed as an a-stem, not karman).
 
 ## Track C — coverage, ordered by real frequency
 
@@ -108,7 +112,7 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 
 ## Order
 
-1. ✅ A1, ✅ D (MVP), ✅ A2. Next: B2, then C0 families largest-first
+1. ✅ A1, ✅ D (MVP), ✅ A2, ✅ B2. Next: C0 families largest-first (7.1.58 first)
 2. A3, then C driven by B2's miss list, B1 per LSK part alongside C
 3. Phase 5 thinning continues as the ratchet allows (unchanged rules)
 
@@ -120,6 +124,6 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | forms.db cells verified vs Vidyut (form) | 25,187 / 77,317 (33 %) | 90 % |
 | … of those, sūtra path also agrees | 15,480 | all verified |
 | Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
-| Gītā tagged-word coverage | 12 % | 50 % → 80 % |
+| Gītā tagged-word coverage | 8.6 % | 50 % → 80 % |
 | LSK prakriyā order agreement | — | measured per part, rising |
 | Full suite | 19,255 passed | zero regressions every commit |
