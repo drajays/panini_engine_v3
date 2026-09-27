@@ -78,7 +78,7 @@ _VA_NAME  = {1: "एक", 2: "द्वि", 3: "बहु"}
 #   _NGIT_PENDING — old pin and new output are both wrong (the karmaṇi/bhāve
 #                   ṅit-lakāra spine has no yak / sīyuṭ: भवेत for भूयेत).
 #                   xfail(strict) until that spine exists.
-_NGIT_FIXED = {('bhave', 'lRG', 2, 3): 'अभविष्यध्वम्', ('bhave', 'lRG', 3, 1): 'अभविष्यत', ('bhave', 'lRG', 3, 3): 'अभविष्यन्त'}
+_NGIT_FIXED = {('bhave', 'lRG', 2, 3): 'अभविष्यध्वम्', ('bhave', 'lRG', 3, 1): 'अभविष्यत', ('bhave', 'lRG', 3, 3): 'अभविष्यन्त', ('bhave', 'lRT', 2, 2): 'भविष्येथे', ('bhave', 'lRT', 3, 2): 'भविष्येते'}  # lRT duals: Vidyut Bavizyete/BavizyeTe
 _NGIT_PENDING = {('bhave', 'lRG', 1, 1), ('bhave', 'lRG', 1, 2), ('bhave', 'lRG', 1, 3), ('bhave', 'lRG', 2, 2), ('bhave', 'lRG', 3, 2), ('bhave', 'laG', 1, 1), ('bhave', 'laG', 1, 2), ('bhave', 'laG', 1, 3), ('bhave', 'laG', 2, 2), ('bhave', 'laG', 2, 3), ('bhave', 'laG', 3, 1), ('bhave', 'laG', 3, 2), ('bhave', 'laG', 3, 3), ('bhave', 'liG', 1, 1), ('bhave', 'liG', 1, 2), ('bhave', 'liG', 1, 3), ('bhave', 'liG', 2, 2), ('bhave', 'liG', 2, 3), ('bhave', 'liG', 3, 1), ('bhave', 'liG', 3, 2), ('bhave', 'liG', 3, 3)}
 _NGIT_XFAIL = pytest.mark.xfail(strict=True, reason="karmaṇi/bhāve ṅit-lakāra spine: no yak/sīyuṭ yet")
 

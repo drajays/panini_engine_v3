@@ -1522,6 +1522,11 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.1.78", state)
     # 6.1.97 ato guṇe: a + a → a (fires for 3pl after jhi→anti: sya+anti).
     state = apply_rule("6.1.97", state)
+    # ātmanepada duals, as in the laṭ spine: sya + आते → स्य + इय्ते (7.2.81)
+    # → इते (6.1.66) → स्येते (6.1.87) — एधिष्येते, not एधिष्यआते.
+    state = apply_rule("7.2.81", state)
+    state = apply_rule("6.1.66", state)
+    state = apply_rule("6.1.87", state)
 
     # ── Merge + Tripāḍī ──────────────────────────────────────────────────────
     _pada_merge(state)

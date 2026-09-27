@@ -82,7 +82,7 @@ by sūtra** from the engine's own derivation, with LSK pages.
 | cells | roots | family | example (ours → Vidyut) |
 |---|---|---|---|
 | 7,639 | 172 | ✅ **FIXED 2026-09-28** 7.1.58 इदितो नुम् धातोः not applied — 1.3.9 now tags *idit* structurally; 7.1.58 runs after dhātu it-lopa | skudi~ → स्कुन्दते |
-| 2,818 | 312 | ◐ **PARTLY FIXED 2026-09-28** ātmanepada endings — laṭ 9/9 and lṛṭ now correct (एधते…एधामहे, एधिष्यते); loṭ (3.4.90/91/93), liṭ ātmane, laṅ āṭ-vṛddhi still open. *Oracle fixed too: it now gets svara-marked upadeśas.* | eDa~ → एधे |
+| 2,818 | 312 | ◐ **PARTLY FIXED 2026-09-28** ātmanepada endings — laṭ 9/9 and lṛṭ 9/9 now correct (एधते…एधामहे, एधिष्यते); loṭ (3.4.90/91/93), liṭ ātmane, laṅ āṭ-vṛddhi still open. *Oracle fixed too: it now gets svara-marked upadeśas.* | eDa~ → एधे |
 | 2,577 | 74 | ✅ **FIXED 2026-09-28** guṇa on non-laghu upadhā — 7.3.84 target limited to final ik or laghu upadhā ik | SIkf~ → शीकावहे |
 | 1,726 | 40 | ✅ **FIXED 2026-09-28** 6.1.64 धात्वादेः षः सः / 6.1.65 णो नः — scheduled with the dhātu (after it-lopa); vārttika pratiṣedha for ष्ठिव्/ष्वष्क्; ṭ-varga reverts after ṣ→s (स्तोचते) | zvada~ → स्वदते |
 | 313 | 35 | ām-liṭ (3.1.35–40) | eDa~ eDeDa → eDAYcakre |
@@ -124,7 +124,9 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
   bug: 8 now match Vidyut (pins corrected), 56 are wrong both before and after
   (the karmaṇi/bhāve ṅit spine has no yak/sīyuṭ — भवेत for भूयेत) →
   xfail(strict) `_NGIT_PENDING` in the three test files.
-- Verified 35,601 → 39,525 → **40,551** (with 1.1.51); path-ok 27,669.
+- Verified 35,601 → 39,525 → 40,551 (1.1.51) → 43,297 (6.1.64) → **44,109**
+  (3.4.113 inventory: ṭi-replaced taṅ ādeśas te/Ate/se/… stay sārvadhātuka by
+  1.1.56, so 1.2.4 marks them ṅit and 7.2.81 fires — एधिष्येते).
 
 **New leads found while fixing** (next C0 items, not yet fixed):
 - **karmaṇi/bhāve ṅit lakāras** (laṅ, liṅ, lṛṅ): no yak / sīyuṭ path.
@@ -164,9 +166,9 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | Metric | Now | Target |
 |---|---|---|
 | Sūtras with LSK page | 1,895 | 1,900 |
-| forms.db cells verified vs Vidyut (form) | 43,297 / 77,317 (56 %) | 90 % |
-| … of those, sūtra path also agrees | 29,101 | all verified |
+| forms.db cells verified vs Vidyut (form) | 44,109 / 77,317 (57 %) | 90 % |
+| … of those, sūtra path also agrees | 29,779 | all verified |
 | Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
 | Gītā tagged-word coverage | 8.8 % | 50 % → 80 % |
 | LSK prakriyā order agreement | — | measured per part, rising |
-| Full suite | 19,198 passed, 65 xfail | zero regressions every commit |
+| Full suite | 19,196 passed, 67 xfail | zero regressions every commit |

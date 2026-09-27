@@ -45,8 +45,15 @@ SIT_KRT_SARVADHATUKA_SLP1: Final[FrozenSet[str]] = frozenset(_SIT_KRT)
 SIT_SARVADHATUKA_SLP1: Final[FrozenSet[str]] = SIT_VIK_SARVADHATUKA_SLP1 | SIT_KRT_SARVADHATUKA_SLP1
 # *anti* (**7.1.3** *ādeśa* for *jhi*) — *sārvadhātuka* *tiṅ*-class for narrow inventory checks.
 _TIN_713_EXTRA: Final[Tuple[str, ...]] = ("anti",)
+# **3.4.79** टेरे / **3.4.80** थासः से rewrite a taṅ ādeśa's upadeśa (ta → te,
+# AtAm → Ate, TAs → se …); by **1.1.56** स्थानिवत् it stays sārvadhātuka. Without
+# these, 1.2.4 missed Ate (no ṅit → no 7.2.81: एधिष्यआते) and 3.1.68 missed te.
+_TIN_3_4_79_EXTRA: Final[Tuple[str, ...]] = (
+    "te", "Ate", "Je", "se", "ATe", "Dve", "e", "vahe", "mahe",
+)
 SARVADHATUKA_UPADESHA_SLP1: Final[FrozenSet[str]] = (
-    TIN_ADESHA_SET | SIT_SARVADHATUKA_SLP1 | frozenset(_TIN_713_EXTRA) | TIN_SURFACE_AADESHA_SLP1_EXTRA
+    TIN_ADESHA_SET | SIT_SARVADHATUKA_SLP1 | frozenset(_TIN_713_EXTRA)
+    | frozenset(_TIN_3_4_79_EXTRA) | TIN_SURFACE_AADESHA_SLP1_EXTRA
 )
 
 TIN_COUNT: Final[int] = len(TIN_ADESHA_18)
