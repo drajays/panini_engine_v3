@@ -9,9 +9,9 @@ from phonology.varna import parse_slp1_upadesha_sequence
 def test_3_1_134_appends_ac_after_divi() -> None:
     d = Term(
         kind="prakriti",
-        varnas=list(parse_slp1_upadesha_sequence("divi~")),
+        varnas=list(parse_slp1_upadesha_sequence("divu~")),
         tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": "divi~"},
+        meta={"upadesha_slp1": "divu~"},
     )
     s = State(terms=[d], meta={}, trace=[])
     s.meta["prakriya_20_nandi_pacadi"] = True

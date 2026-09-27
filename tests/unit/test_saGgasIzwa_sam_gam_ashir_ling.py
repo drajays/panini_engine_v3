@@ -15,7 +15,10 @@ def _fired(trace: list, sid: str) -> bool:
 
 def test_saGgasIzwa_surface() -> None:
     s = derive_saGgasIzwa()
-    assert s.flat_slp1() == "saGgasIzwa"
+    # सङ्गसीष्ट: ङ् is SLP1 ``N`` (``G`` is घ्). The file keeps its historical
+    # name; the surface used to pin 8.4.58's old k-varga → घ् bug.
+    assert s.flat_slp1() == "saNgasIzwa"
+    assert s.flat_dev() == "सङ्गसीष्ट"
 
 
 def test_saGgasIzwa_key_spine() -> None:

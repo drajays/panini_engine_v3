@@ -81,9 +81,9 @@ by sūtra** from the engine's own derivation, with LSK pages.
 
 | cells | roots | family | example (ours → Vidyut) |
 |---|---|---|---|
-| 7,639 | 172 | 7.1.58 इदितो नुम् धातोः not applied | skudi~ skodai → skundAmi |
+| 7,639 | 172 | ✅ **FIXED 2026-09-28** 7.1.58 इदितो नुम् धातोः not applied — 1.3.9 now tags *idit* structurally; 7.1.58 runs after dhātu it-lopa | skudi~ → स्कुन्दते |
 | 2,818 | 312 | pada: ātmanepada endings wrong (3.4.79 टित आत्मनेपदानां टेरे) — *oracle also lacks svara, so parasmai is not proof* | eDa~ eDai → एधे |
-| 2,577 | 74 | guṇa on non-laghu upadhā (7.3.86 scope) | SIkf~ SekAvahi → SIkAvaH |
+| 2,577 | 74 | ✅ **FIXED 2026-09-28** guṇa on non-laghu upadhā — 7.3.84 target limited to final ik or laghu upadhā ik | SIkf~ → शीकावहे |
 | 1,726 | 40 | 6.1.64 धात्वादेः षः सः | zvada~ zvadai → svad- |
 | 313 | 35 | ām-liṭ (3.1.35–40) | eDa~ eDeDa → eDAYcakre |
 | 12,319 | 704 | unclassified — classify next | |
@@ -99,7 +99,28 @@ now also checks that every sūtra that changed our surface is in Vidyut's path
 | 1,129 | 8.4.54 | vacuous abhyāsa step? | गाधृ लिट् |
 | 3 cells/stem | 7.1.12 | 7.3.105 → 6.1.78; 7.3.113 → 6.1.101 (7.3.105 fires in **0**) | लतया, लतायाः |
 
-The index also shows **7.1.58 fires in 0 of 77k derivations** — the idit family above.
+The index showed **7.1.58 fired in 0 of 77k derivations**; after the fix it fires in 11,578.
+
+**C0 session log 2026-09-28** (branch `lsk-practice`): verified forms
+25,187 → **35,280** (+10,093); path-verified 15,480 → **24,465**. Changes:
+1.3.9 `idit` tag · 7.1.58 in `P00_bhuvadi_dhatu_it_anunasik_hal` · 7.3.84
+target (final / laghu upadhā only) · 8.4.58 full varga table (k→ङ्, was घ्;
+ṭ, p added) · dhātupāṭha: **डुपचँष् पाके (01.1151) was missing** — 'pac' had
+resolved to पचिँ; resolver now prefers the root whose mūla-dhātu *is* the name
+· 3.1.134 narrow gate: दिवुँ, not दिविँ (idit). Tests that pinned buggy output
+corrected with comments (सङ्गसीष्ट ङ्, पचति, devam).
+
+**New leads found while fixing** (next C0 items, not yet fixed):
+- **aniṭ ignored** in luṭ/liṭ/luṅ: डुपचँष् gives पचिता (→ पक्ता), पपचिषे,
+  अपच्त (→ अपक्त / अपाचि). `test_tinanta_pac_karmani_bhave.py` is a snapshot
+  of old output, not gold — 9 luṅ cells xfail(strict) until fixed.
+- **1.1.51 उरण् रपरः missing** on the laṭ spine: वृतुँ → वतते (→ वर्तते).
+- **ātmanepada लृट्**: पिडिँ → पिण्डिष्यत (final ए missing, 3.4.79).
+- **टुओँश्वि (01.1165)** imported as `Svi~` (nasal on the wrong vowel); the
+  correct `wuo~Svi` needs 1.3.9 to treat a non-final anunāsika vowel after
+  ādi ṭu as *it*. 45 cells refused (were wrong `Sv…` forms before).
+- Ratchet rule note: sūtra files touched (1.3.9, 7.3.84, 8.4.58, 3.1.134)
+  added no arms (tags / upadeśa identity only) but did not remove one either.
 
 Every fix moves cells into the verified set, which grows the practice pool —
 the two tracks share one metric.
@@ -112,7 +133,7 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 
 ## Order
 
-1. ✅ A1, ✅ D (MVP), ✅ A2, ✅ B2. Next: C0 families largest-first (7.1.58 first)
+1. ✅ A1, ✅ D (MVP), ✅ A2, ✅ B2, ✅ C0 idit + guṇa-scope. Next C0: aniṭ, 1.1.51, 6.1.64, ātmane endings, 7.3.84→7.3.86
 2. A3, then C driven by B2's miss list, B1 per LSK part alongside C
 3. Phase 5 thinning continues as the ratchet allows (unchanged rules)
 
@@ -121,9 +142,9 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | Metric | Now | Target |
 |---|---|---|
 | Sūtras with LSK page | 1,895 | 1,900 |
-| forms.db cells verified vs Vidyut (form) | 25,187 / 77,317 (33 %) | 90 % |
-| … of those, sūtra path also agrees | 15,480 | all verified |
+| forms.db cells verified vs Vidyut (form) | 35,280 / 77,317 (46 %) | 90 % |
+| … of those, sūtra path also agrees | 24,465 | all verified |
 | Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
-| Gītā tagged-word coverage | 8.6 % | 50 % → 80 % |
+| Gītā tagged-word coverage | 8.7 % | 50 % → 80 % |
 | LSK prakriyā order agreement | — | measured per part, rising |
-| Full suite | 19,255 passed | zero regressions every commit |
+| Full suite | 19,254 passed, 9 xfail | zero regressions every commit |

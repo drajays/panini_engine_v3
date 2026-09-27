@@ -23,10 +23,14 @@ from engine.state import State
 from phonology import mk
 
 
+# parasavarṇa of a sparśa is its varga's nasal (a nasal is its own savarṇa).
+# ponytail: y/l/v (anunāsika y̐ l̐ v̐) not covered — add when a derivation needs it.
 _MAP = {
-    "c": "Y", "C": "Y", "j": "Y", "J": "Y",  # c-varga → ñ
-    "g": "G",  # velar varga → ङ (सङ्ग…)
-    "t": "n", "T": "n", "d": "n", "D": "n",  # dental: M → न् (अत्स्यन्ति clip)
+    **dict.fromkeys("kKgGN", "N"),   # k-varga → ङ्  (सङ्ग, वुङ्गतु)
+    **dict.fromkeys("cCjJY", "Y"),   # c-varga → ञ्
+    **dict.fromkeys("wWqQR", "R"),   # ṭ-varga → ण्  (लुण्ठति, पिण्डति)
+    **dict.fromkeys("tTdDn", "n"),   # t-varga → न्  (अत्स्यन्ति)
+    **dict.fromkeys("pPbBm", "m"),   # p-varga → म्
 }
 
 

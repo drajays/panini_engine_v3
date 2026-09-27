@@ -87,12 +87,12 @@ def resolve_dhatu_identifier(ref: str) -> dict:
             if eid2:
                 return get_dhatu_row(eid2)
     # Also accept raw post-IT-lopa form (e.g. 'paW' for upadeśa 'paWa~').
-    for e in iter_dhatu_entries():
-        post_lopa = e.get("raw_dhatu_after_it_lopa_slp1") or ""
-        if post_lopa == key:
-            eid3 = e.get("id")
-            if eid3:
-                return get_dhatu_row(eid3)
+    # Prefer a root whose mūla-dhātu *is* that form: 'pac' is डुपचँष् (पच्),
+    # not पचिँ, whose mūla-dhātu is पञ्च् (idit, 7.1.58).
+    hits = [e for e in iter_dhatu_entries()
+            if (e.get("raw_dhatu_after_it_lopa_slp1") or "") == key and e.get("id")]
+    for e in sorted(hits, key=lambda e: e.get("mula_dhatu_dev") != e.get("raw_dhatu_after_it_lopa_dev")):
+        return get_dhatu_row(e["id"])
     raise KeyError(
         f"unknown dhātu reference {ref!r}; use upadeśa SLP1 (BU), "
         f"path id (01.0001), or id (BvAdi_01_0001)"

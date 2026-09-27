@@ -257,7 +257,10 @@ class TestAutonomousVsRecipe:
         # (ṭit ātmanepadānāṃ ṭere) belongs on its tiṅ-ādeśa — पचते, not the
         # bare-tiṅ पचत this test used to pin (Prakriyotsava sweep bug #14:
         # the general bhvādi-kartari spine never called 3.4.79 at all).
-        assert recipe_state.flat_dev() == auto_state.flat_dev() == "पचते"
+        # 2026-09-28: 'pac' used to resolve to 01.0198 पचिँ व्यक्तीकरणे (ātmanepadī,
+        # idit → पञ्चते once 7.1.58 fires). It now resolves to 01.1151 डुपचँष्
+        # पाके, ubhayapadī — parasmaipada by default, so पचति (ātmane: पचते).
+        assert recipe_state.flat_dev() == auto_state.flat_dev() == "पचति"
 
 
 class TestAutonomousAdadi:

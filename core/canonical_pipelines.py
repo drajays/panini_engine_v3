@@ -391,12 +391,16 @@ def P00_upadesha_it_anunasik_hal_lopa(s: State) -> State:
 
 
 def P00_bhuvadi_dhatu_it_anunasik_hal(s: State) -> State:
-    """1.3.1 → anunāsika/hal it → **1.3.5** ādi ñi/ṭu/ḍu → 1.3.9 → drop upadesha."""
+    """1.3.1 → anunāsika/hal it → **1.3.5** ādi ñi/ṭu/ḍu → 1.3.9 → drop upadesha → (idit) 7.1.58."""
     s = apply_rule("1.3.1", s)
     for sid in ("1.3.2", "1.3.3", "1.3.5", "1.3.9"):
         s = apply_rule(sid, s)
     if s.terms:
         s.terms[0].tags.discard("upadesha")
+    # 7.1.58 इदितो नुम् धातोः is nitya for an idit dhātu (वद् → वन्द्), so it
+    # belongs to the dhātu itself, before any vikaraṇa or lakāra rule sees it.
+    if any("idit" in t.tags and "dhatu" in t.tags for t in s.terms):
+        s = P00_idit_num_3_1_91(s)
     return s
 
 

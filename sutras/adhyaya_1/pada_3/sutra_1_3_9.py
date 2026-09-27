@@ -88,6 +88,11 @@ def act(state: State) -> State:
                 and v.slp1 in AC_DEV
             ):
                 removed.append(v.slp1)
+                # An anunāsika *i* that is *it* makes the dhātu *idit* (वदिँ → वद्),
+                # the condition of 7.1.58. The *i* of ādi ñi (1.3.5) and of इँर्
+                # (irit, above) never reach this branch.
+                if v.slp1 == "i":
+                    t.tags.add("idit")
                 # Final anunāsika vowel (e.g. "…A~") or vowel whose only tail material
                 # is *it* (e.g. ``mFjU~z``: ``U`` before hal-it ``z``) — full elision.
                 if j == len(t.varnas) - 1 or _only_it_varnas_after(t, j):

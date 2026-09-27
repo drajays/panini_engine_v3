@@ -65,9 +65,16 @@ def _last_ik_index(d0) -> int | None:
     For consonant-final dhātus with an IK penultimate vowel (e.g. cit = [c,i,t])
     this returns the index of that vowel so guṇa targets it correctly.
     """
-    for j in range(len(d0.varnas) - 1, -1, -1):
-        if _ik_letter(d0.varnas[j].slp1):
-            return j
+    vs = d0.varnas
+    if vs and _ik_letter(vs[-1].slp1):
+        return len(vs) - 1
+    # Upadhā ik only when laghu (short, one consonant after it): 7.3.86
+    # पुगन्तलघूपधस्य च. Never an ik further in — स्कुन्द् (after 7.1.58
+    # num) and शीक् (dīrgha upadhā) take no guṇa.
+    # ponytail: still credited to 7.3.84 in the trace; moving it to 7.3.86
+    # is the "7.3.84 misattribution" item in docs/FINAL_PLAN_2026-09.md.
+    if len(vs) >= 2 and vs[-2].slp1 in IK and vs[-2].slp1 in "iufx":
+        return len(vs) - 2
     return None
 
 

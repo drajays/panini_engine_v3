@@ -6,7 +6,7 @@ roots, *lyu*, *ṇini*, *ac*, …
 
 Narrow v3 (``prakriya_20`` *devam* leg):
   • ``state.meta['prakriya_20_3_1_134_arm']`` and ``state.meta['prakriya_20_nandi_pacadi']``.
-  • Exactly one ``Term``: *dhātu* ``divi~`` (``upadesha_slp1`` ``divi~``), no *kṛt*
+  • Exactly one ``Term``: *dhātu* ``divu~`` (``upadesha_slp1`` ``divu~``), no *kṛt*
     yet.
   • ``act`` — append **ac** *kṛt* ``Term`` (``a`` + ``c`` *it*); ``dit_pratyaya``
     meta for **7.3.86**; ``citi_krt_ac`` for **6.1.163**; clear the arm.
@@ -37,7 +37,7 @@ def _eligible(state: State) -> bool:
     t0 = state.terms[0]
     if "dhatu" not in t0.tags:
         return False
-    if (t0.meta.get("upadesha_slp1") or "").strip() != "divi~":
+    if (t0.meta.get("upadesha_slp1") or "").strip() != "divu~":   # दिवुँ; divi~ is idit (→ दिन्व्)
         return False
     if any("krt" in t.tags for t in state.terms):
         return False

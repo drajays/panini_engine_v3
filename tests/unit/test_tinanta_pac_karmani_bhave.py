@@ -5,6 +5,14 @@ Glass-box gold for pac (tudādi/bhvādi, gaṇa 1) + karmaṇi and bhāve —
 9 cells × 10 lakāras (180 total cells, 90 per prayoga).
 
 T5 — second dhātu gold extension.  Baseline locked 2026-05-31.
+
+⚠ 2026-09-28: this is a *snapshot* of engine output, not attested gold. It was
+locked while 'pac' resolved to 01.0198 पचिँ (seṭ); 'pac' is now डुपचँष् पाके
+(01.1151, aniṭ). Several pinned cells are seṭ forms that are wrong for an aniṭ
+root (Vidyut: luṭ पक्ता, karmaṇi luṅ अपाचि/अपक्षाताम्/अपक्षत, bhāve luṅ अपक्त).
+They still pass only because the engine ignores aniṭ in these lakāras — see
+docs/FINAL_PLAN_2026-09.md (C0, "aniṭ ignored"). Replace with Vidyut/attested
+values as that bug is fixed.
 """
 from __future__ import annotations
 
@@ -128,10 +136,18 @@ def _cases_karmani():
             yield pytest.param(lak, pu, va, expected, id=f"karmani_{lak}_{pu}_{va}")
 
 
+_ANIT_LUN = pytest.mark.xfail(
+    strict=True,
+    reason="aniṭ डुपचँष्: pinned seṭ luṅ (अपचिष्ट…) belonged to पचिँ; engine gives "
+           "अपच्त…, Vidyut अपक्त/अपक्षाताम्/अपक्षत — aniṭ luṅ not yet derived",
+)
+
+
 def _cases_bhave():
     for lak, cells in _PAC_BHAVE.items():
         for (pu, va), expected in cells.items():
-            yield pytest.param(lak, pu, va, expected, id=f"bhave_{lak}_{pu}_{va}")
+            marks = (_ANIT_LUN,) if lak == "luG" else ()
+            yield pytest.param(lak, pu, va, expected, id=f"bhave_{lak}_{pu}_{va}", marks=marks)
 
 
 @pytest.mark.parametrize("lakara,purusha,vacana,expected", _cases_karmani())

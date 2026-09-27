@@ -2,7 +2,7 @@
 pipelines/devam_krt.py — ``prakriya_20`` **Part 1** (*devam*).
 
 Glass-box spine (``panini_engine_pipeline`` in the JSON):
-  ``divi~`` + **3.1.134** (*nandi-grahi-pacādibhyo …* **ac**) → *it* (**1.3.x**)
+  ``divu~`` + **3.1.134** (*nandi-grahi-pacādibhyo …* **ac**) → *it* (**1.3.x**)
   → **7.3.86** *guṇa* → ``deva`` → **1.2.46** → **6.1.163** / **6.1.158** (*anuvāda*)
   → **subanta** preflight + **4.1.2** + **3.1.4** (``suppita``; not in the default
   P13–P15 tuple) + ``subanta_post_4_1_2`` (**6.1.107**, Tripāḍī) → **8.2.5**.
@@ -25,11 +25,13 @@ from pipelines.subanta import build_initial_state, run_subanta_preflight_through
 
 
 def _mk_divi_dhatu() -> Term:
+    # देव is दिवुँ (udit) + ac. The source JSON's ``divi~`` would be *idit*, and
+    # 7.1.58 इदितो नुम् धातोः would then give दिन्व् — so the recipe uses divu~.
     return Term(
         kind="prakriti",
-        varnas=list(parse_slp1_upadesha_sequence("divi~")),
+        varnas=list(parse_slp1_upadesha_sequence("divu~")),
         tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": "divi~"},
+        meta={"upadesha_slp1": "divu~"},
     )
 
 

@@ -9,9 +9,9 @@
   },
   "_stats": {
     "bvadi_merged": 986,
-    "curated_extensions": 2,
+    "curated_extensions": 3,
     "ganas_2_10_imported": 1060,
-    "total_entries": 2048
+    "total_entries": 2049
   },
   "id_aliases": {
     "BvAdi_BU": "BvAdi_01_0001"
@@ -65469,6 +65469,41 @@
         "udatta": false
       },
       "notes": "ष्ठा गतिनिवृत्तौ — Prakriyotsava cross-check gap fill. Upादेश-initial ष् (SLP1 z) kept in raw_dhatu_after_it_lopa_slp1 per this corpus's convention (cf. zvada~/स्वद्); 6.1.64 converts it at derivation time. लट् takes the तिष्ठ आदेश (7.3.78-family श्नु-vikaraṇa, not yet general-dispatched)."
+    },
+    {
+      "id": "BvAdi_01_1151",
+      "tier": "curated_extension",
+      "dhatupatha_id": "01.1151",
+      "gana": 1,
+      "gana_number": 1,
+      "serial_in_gana": 1151,
+      "sutra_ref": "1.1151",
+      "upadesha_dev": "डुपचँष्",
+      "upadesha_slp1": "qupaca~z",
+      "mula_dhatu_dev": "पच्",
+      "raw_dhatu_after_it_lopa_dev": "पच्",
+      "raw_dhatu_after_it_lopa_slp1": "pac",
+      "artha_dev": "पाके",
+      "artha_slp1": "pAke",
+      "artha_en": "to cook",
+      "artha_hi": "पकाना",
+      "gana_label_dev": "भ्वादिः",
+      "pada_label_dev": "उभयपदी",
+      "karmatva_label_dev": "सकर्मकः",
+      "it_class_label_dev": "अनिट्",
+      "it_markers": [
+        "डु",
+        "अँ",
+        "ष्"
+      ],
+      "flags": {
+        "anit": true,
+        "set": false,
+        "vet": false,
+        "ekac": true,
+        "udatta": false
+      },
+      "notes": "डुपचँष् पाके — missing from the bhvādi merge; ashtadhyayi-com/data dhatu i=1011151 (baseindex 01.1151, pada U, aniṭ, LSK sūtra 543). Without it, 'pac' resolved to 01.0198 पचिँ व्यक्तीकरणे (idit → पञ्च्)."
     }
   ]
 }

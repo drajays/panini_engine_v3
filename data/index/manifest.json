@@ -1,14 +1,14 @@
 {
   "forms": 77317,
-  "distinct_surfaces": 52368,
+  "distinct_surfaces": 56272,
   "lemmas": 1708,
-  "gaps": 16571,
+  "gaps": 16616,
   "meta": {
-    "generated_at": "2026-09-27T19:28:00+00:00",
+    "generated_at": "2026-09-27T19:49:47+00:00",
     "stems": "72",
-    "dhatus": "2048",
-    "cells": "93888",
-    "seconds": "202.5"
+    "dhatus": "2049",
+    "cells": "93933",
+    "seconds": "186.5"
   },
   "fingerprint": [
     {
