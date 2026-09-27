@@ -34,9 +34,11 @@ Lives in `core/` + `api/`; `engine/ sutras/ phonology/ pipelines/` never read it
   1,895 sūtras; `data/reference/lsk/sutra_pages.json`
   (sūtra → [[part, pdf_page], …]) surfaced in `GET /v1/sutras/{id}` and on
   every trace step (`_lsk`).
-- **A2 Engine examples per sūtra.** `tools/build_form_index` also writes a
+- **A2 Engine examples per sūtra. ✅ DONE 2026-09-28** — `tools/build_form_index` also writes a
   `firings(sutra_id, cell_key)` table while it derives, so a sūtra answers
   "which of our forms does this fire in" (e.g. 7.1.15 → सर्वस्मिन्, विश्वस्मात्).
+  Shown in `GET /v1/sutras/{id}` → `examples` and in practice ("यही सूत्र और कहाँ?"),
+  one per paradigm cell first. Only **path-verified** cells are shown (below).
 - **A3 Attested examples.** `data/reference/gita/words.jsonl`
   (verse, IAST, SLP1, tag). A sūtra example that is also a Gītā word is shown
   as attested ("BG 2.33").
@@ -82,6 +84,19 @@ by sūtra** from the engine's own derivation, with LSK pages.
 | 313 | 35 | ām-liṭ (3.1.35–40) | eDa~ eDeDa → eDAYcakre |
 | 12,319 | 704 | unclassified — classify next | |
 
+**C0b — right form, wrong sūtra (9,707 verified cells).** `bench/practice_key`
+now also checks that every sūtra that changed our surface is in Vidyut's path
+(`path_extra`). Vidyut records only its first branch, so treat each as a lead:
+
+| cells | sūtra we credit | likely correct | example |
+|---|---|---|---|
+| 4,838 | 7.3.84 | 7.3.86 पुगन्तलघूपधस्य (7.3.86 fires in **0** derivations) | मुद् लङ् |
+| 1,765 | 3.1.68 | gaṇa-specific vikaraṇa | अक्षू लट् |
+| 1,129 | 8.4.54 | vacuous abhyāsa step? | गाधृ लिट् |
+| 3 cells/stem | 7.1.12 | 7.3.105 → 6.1.78; 7.3.113 → 6.1.101 (7.3.105 fires in **0**) | लतया, लतायाः |
+
+The index also shows **7.1.58 fires in 0 of 77k derivations** — the idit family above.
+
 Every fix moves cells into the verified set, which grows the practice pool —
 the two tracks share one metric.
 
@@ -93,7 +108,7 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 
 ## Order
 
-1. ✅ A1, ✅ D (MVP). Next: A2 → B2, and C0 families largest-first
+1. ✅ A1, ✅ D (MVP), ✅ A2. Next: B2, then C0 families largest-first
 2. A3, then C driven by B2's miss list, B1 per LSK part alongside C
 3. Phase 5 thinning continues as the ratchet allows (unchanged rules)
 
@@ -102,8 +117,9 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | Metric | Now | Target |
 |---|---|---|
 | Sūtras with LSK page | 1,895 | 1,900 |
-| forms.db cells verified vs Vidyut | 18,057 / 45,936 (39 %) | 90 % |
-| Sūtras with ≥1 derived example | 0 | every sūtra that fires in forms.db |
+| forms.db cells verified vs Vidyut (form) | 25,187 / 77,317 (33 %) | 90 % |
+| … of those, sūtra path also agrees | 15,480 | all verified |
+| Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
 | Gītā tagged-word coverage | 12 % | 50 % → 80 % |
 | LSK prakriyā order agreement | — | measured per part, rising |
 | Full suite | 19,255 passed | zero regressions every commit |

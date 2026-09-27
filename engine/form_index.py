@@ -46,6 +46,14 @@ CREATE TABLE IF NOT EXISTS forms (
 CREATE INDEX IF NOT EXISTS forms_by_surface ON forms (surface_slp1);
 CREATE INDEX IF NOT EXISTS forms_by_lemma   ON forms (lemma);
 
+-- Which sūtras changed the surface in which cell: "show me this rule at work".
+-- Still a cache of cell keys: the example's journey is re-derived on demand.
+CREATE TABLE IF NOT EXISTS firings (
+    sutra_id TEXT NOT NULL,
+    cell_key TEXT NOT NULL,
+    PRIMARY KEY (sutra_id, cell_key)
+) WITHOUT ROWID;
+
 CREATE TABLE IF NOT EXISTS gaps (
     cell_key TEXT PRIMARY KEY,
     kind     TEXT NOT NULL,
@@ -93,6 +101,32 @@ def lookup(surface_slp1: str, path: Path | None = None) -> list[dict[str, Any]]:
             (surface_slp1,),
         ).fetchall()
     return [{**dict(row), "features": json.loads(row["features"])} for row in rows]
+
+
+def examples(sutra_id: str, limit: int = 12, path: Path | None = None,
+             keep: frozenset[str] | None = None) -> list[dict[str, Any]]:
+    """Forms in whose derivation this sūtra changed the surface, one per lemma
+    first so the list shows the rule's range rather than one paradigm.
+    ``keep``: restrict to these cell keys (e.g. cross-checked ones)."""
+    with closing(connect(path)) as conn:
+        rows = conn.execute(
+            "SELECT f.surface_slp1, f.surface_dev, f.kind, f.lemma, f.features, f.cell_key "
+            "FROM firings x JOIN forms f ON f.cell_key = x.cell_key AND f.branch = 0 "
+            "WHERE x.sutra_id = ? ORDER BY f.kind DESC, f.lemma, f.cell_key",
+            (sutra_id,),
+        ).fetchall()
+    if keep is not None:
+        rows = [r for r in rows if r["cell_key"] in keep]
+    total = len(rows)
+    # One per paradigm cell first (7.1.12 shows -एन, -आत्, -स्य), then one per
+    # lemma (the rule's range), then the rest.
+    order: list[Any] = []
+    for key in ("features", "lemma"):
+        seen: set[str] = set()
+        order += [r for r in rows if r not in order and not (r[key] in seen or seen.add(r[key]))]
+    order += [r for r in rows if r not in order]
+    return [{**dict(r), "features": json.loads(r["features"]), "total": total}
+            for r in order[:limit]]
 
 
 def stats(path: Path | None = None) -> dict[str, Any]:

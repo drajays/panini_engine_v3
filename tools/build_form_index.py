@@ -127,6 +127,13 @@ def build(dhatu_limit: int | None, stem_limit: int | None,
                     (state.flat_slp1(), state.flat_dev(), cell["kind"], cell["lemma"],
                      json.dumps(cell["features"], ensure_ascii=False), cell["cell_key"]),
                 )
+                conn.executemany(
+                    "INSERT OR IGNORE INTO firings (sutra_id, cell_key) VALUES (?,?)",
+                    [(st["sutra_id"], cell["cell_key"]) for st in state.trace
+                     if isinstance(st, dict) and st.get("sutra_id")
+                     and not st["sutra_id"].startswith("__")
+                     and st.get("form_before") != st.get("form_after")],
+                )
                 written += 1
             except Exception as ex:
                 conn.execute(

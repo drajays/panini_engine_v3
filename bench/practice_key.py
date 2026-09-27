@@ -9,7 +9,12 @@ Vidyut's forms for the same cell. Runs under the venv that has ``vidyut``:
     .venv/bin/python -m bench.practice_key
 
 Writes ``bench/oracle/practice_verified.json``:
-    {"generated_at": ..., "verified": [cell_key, ...], "disagree": {cell_key: [ours, vidyut]}}
+    {"generated_at": ..., "verified": [cell_key, ...], "disagree": {cell_key: [ours, vidyut]},
+     "path_ok": [cell_key, ...], "path_extra": {cell_key: [sūtra, ...]}}
+``verified``  — our surface is among Vidyut's (safe for form questions).
+``path_ok``   — additionally, every sūtra that changed our surface appears in
+                Vidyut's path (safe for "which sūtra?" and sūtra examples).
+``path_extra``— right form, sūtra Vidyut never used: a glass-box bug.
 The disagreements double as a bug list for the engine.
 """
 from __future__ import annotations
@@ -25,7 +30,7 @@ if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
 from bench.oracle_vidyut import _derive  # noqa: E402
-from engine.form_index import iter_rows  # noqa: E402
+from engine.form_index import connect, iter_rows  # noqa: E402
 
 OUT_PATH = _ROOT / "bench" / "oracle" / "practice_verified.json"
 _LINGA = {"pulliṅga": "pum", "strīliṅga": "stri", "napuṃsaka": "napumsaka"}
@@ -47,26 +52,39 @@ def main() -> int:
     for row in iter_rows():
         ours[row["cell_key"]].add(row["surface_slp1"])
         rows[row["cell_key"]] = row
+    fired: dict[str, set[str]] = defaultdict(set)
+    conn = connect()
+    for sid, key in conn.execute("SELECT sutra_id, cell_key FROM firings"):
+        fired[key].add(sid)
+    conn.close()
     verified, disagree, declined = [], {}, 0
+    path_ok, path_extra = [], {}
     for key, row in rows.items():
         try:
-            forms, _ = _derive(oracle_cell(row))
+            forms, path = _derive(oracle_cell(row))
         except Exception:
-            forms = ""
+            forms, path = "", ""
         if not forms:
             declined += 1
             continue
         theirs = set(forms.split("|"))
         if ours[key] <= theirs:
             verified.append(key)
+            extra = sorted(fired[key] - set(path.split()))
+            if extra:
+                path_extra[key] = extra
+            else:
+                path_ok.append(key)
         else:
             disagree[key] = [sorted(ours[key]), sorted(theirs)]
     OUT_PATH.write_text(json.dumps({
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "verified": sorted(verified), "disagree": disagree,
+        "path_ok": sorted(path_ok), "path_extra": path_extra,
     }, ensure_ascii=False, indent=0) + "\n")
     print(f"[practice_key] {len(rows)} cells: {len(verified)} verified, "
-          f"{len(disagree)} disagree, {declined} oracle-declined → {OUT_PATH.relative_to(_ROOT)}")
+          f"{len(disagree)} disagree, {declined} oracle-declined; of verified: "
+          f"{len(path_ok)} path-ok, {len(path_extra)} wrong-sūtra → {OUT_PATH.relative_to(_ROOT)}")
     return 0
 
 

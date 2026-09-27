@@ -68,6 +68,16 @@ def verified_keys() -> frozenset[str]:
         return frozenset()
 
 
+@cache
+def path_ok_keys() -> frozenset[str]:
+    """Verified cells whose every surface-changing sūtra is also in Vidyut's path:
+    the only cells a "which sūtra?" question or a sūtra example may come from."""
+    try:
+        return frozenset(json.loads(VERIFIED_PATH.read_text()).get("path_ok", ()))
+    except FileNotFoundError:
+        return frozenset()
+
+
 def _rows(kind: str, lemma: str | None, linga: str | None) -> list[dict[str, Any]]:
     q = "SELECT surface_slp1, surface_dev, lemma, features, cell_key FROM forms WHERE kind = ?"
     args: list[Any] = [kind]
@@ -82,6 +92,18 @@ def _rows(kind: str, lemma: str | None, linga: str | None) -> list[dict[str, Any
     ok = verified_keys()
     return [r for r in rows if r["cell_key"] in ok
             and (kind != "subanta" or _gold_ok(r["lemma"], r["features"], r["surface_dev"]))]
+
+
+def sutra_examples(sutra_id: str, limit: int = 12) -> dict[str, Any]:
+    """Cross-checked forms in which this sūtra changed the surface."""
+    from engine.form_index import examples
+
+    rows = examples(sutra_id, limit, keep=path_ok_keys())
+    return {"total": rows[0]["total"] if rows else 0,
+            "forms": [{"dev": r["surface_dev"], "slp1": r["surface_slp1"], "kind": r["kind"],
+                       "lemma": r["lemma"], "lemma_dev": _lemma_dev(r["kind"], r["lemma"]),
+                       "cell_label": cell_label(r["kind"], r["features"]),
+                       "features": r["features"]} for r in rows]}
 
 
 def lemmas(kind: str) -> list[dict[str, Any]]:
@@ -121,9 +143,10 @@ def question(kind: str = "subanta", qtype: str = "mcq", *, lemma: str | None = N
     or lakāra/puruṣa with the answer — the near misses learners actually make)."""
     rng = random.Random(seed)
     rows = _rows(kind, lemma, linga)
-    if not rows:
+    pool = [r for r in rows if r["cell_key"] in path_ok_keys()] if qtype == "sutra" else rows
+    if not pool:
         raise LookupError(f"no derived {kind} forms for lemma={lemma!r} linga={linga!r}")
-    target = rng.choice(rows)
+    target = rng.choice(pool)
     paradigm = [r for r in rows if r["lemma"] == target["lemma"]]
     accepted = sorted({r["surface_dev"] for r in paradigm if r["cell_key"] == target["cell_key"]})
     others = [r for r in paradigm if r["surface_dev"] not in accepted]

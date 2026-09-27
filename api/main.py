@@ -158,7 +158,17 @@ def get_sutra(sutra_id: str) -> dict[str, Any]:
         "adhikara_scope": list(rec.adhikara_scope or ()),
         "blocks_sutra_ids": list(rec.blocks_sutra_ids or ()),
         "lsk": lsk_pages(rec.sutra_id),
+        "examples": _sutra_examples(rec.sutra_id),
     }
+
+
+def _sutra_examples(sutra_id: str) -> dict[str, Any]:
+    """Verified forms this sūtra shapes; empty (not an error) when the index is unbuilt."""
+    from core.practice import sutra_examples
+    try:
+        return sutra_examples(sutra_id)
+    except FileNotFoundError:
+        return {"total": 0, "forms": []}
 
 
 # ─────────────────────────────────────────────────────────────────

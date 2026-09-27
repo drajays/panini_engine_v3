@@ -74,6 +74,10 @@ main{max-width:52rem;margin:0 auto;padding:1.2rem 16px 4rem}
 .step .sid{font-family:var(--mono);font-size:.8rem;color:var(--indigo)}
 .step .hint,.step .lsk{display:block;color:var(--ink-faint);font-size:.84rem;font-family:var(--dev)}
 .step.focus{background:var(--select);border-radius:3px;padding:.3rem}
+.ex{border:0;background:none;color:var(--indigo);font-family:var(--dev);font-size:.84rem;
+  padding:0;text-decoration:underline dotted;margin-top:.15rem}
+.exlist{font-family:var(--dev);font-size:.92rem;color:var(--ink-soft);margin-top:.25rem}
+.exlist b{color:var(--ink);font-weight:500}
 .muted{color:var(--ink-faint);font-size:.85rem}
 .err{color:var(--madder);font-family:var(--mono);font-size:.85rem}
 </style>
@@ -221,9 +225,23 @@ async function explain(){
           <span class="sid">${esc(s.sutra_id)}</span> <span class="sutra">${esc(s.text_dev || "")}</span>
           ${s.hint_hi ? `<span class="hint">${esc(s.hint_hi)} <i>(unreviewed)</i></span>` : ""}
           ${s.lsk && s.lsk.length ? `<span class="lsk">LSK Study Guide: ${s.lsk.slice(0, 3).map(p => `भाग ${p.part} पृ. ${p.page}`).join(", ")}</span>` : ""}
+          <button class="ex" data-sid="${esc(s.sutra_id)}">यही सूत्र और कहाँ? — उदाहरण</button><div class="exlist"></div>
         </div>
       </div>`).join("");
+    $("why").querySelectorAll(".ex").forEach(b => b.onclick = () => examples(b));
   } catch (e) { $("why").innerHTML = `<p class="err">${esc(e.message)}</p>`; }
+}
+
+async function examples(btn){
+  const out = btn.nextElementSibling;
+  out.textContent = "…";
+  try {
+    const {examples: e} = await api(`/v1/sutras/${encodeURIComponent(btn.dataset.sid)}`);
+    out.innerHTML = e.forms.length
+      ? e.forms.map(f => `<b>${esc(f.dev)}</b> (${esc(f.lemma_dev)}, ${esc(f.cell_label)})`).join(" · ")
+        + (e.total > e.forms.length ? ` <span class="muted">— कुल ${e.total} सत्यापित रूप</span>` : "")
+      : `<span class="muted">कोई सत्यापित उदाहरण नहीं</span>`;
+  } catch (err) { out.innerHTML = `<span class="err">${esc(err.message)}</span>`; }
 }
 
 $("next").onclick = next;
