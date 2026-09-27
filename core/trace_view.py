@@ -10,9 +10,28 @@ Pure view code — it never touches ``State`` internals and is never imported by
 """
 from __future__ import annotations
 
+import json
+from functools import cache
+from pathlib import Path
+
 import sutras  # noqa: F401 — fills SUTRA_REGISTRY
 from core.i18n_hi import hint_for_sutra
 from engine import SUTRA_REGISTRY
+
+_LSK_PAGES = Path(__file__).resolve().parent.parent / "data" / "reference" / "lsk" / "sutra_pages.json"
+
+
+@cache
+def _lsk_index() -> dict[str, list[list[int]]]:
+    try:
+        return json.loads(_LSK_PAGES.read_text())
+    except FileNotFoundError:   # built by tools/build_lsk_index from local PDFs
+        return {}
+
+
+def lsk_pages(sutra_id: str) -> list[dict[str, int]]:
+    """Where Michika's LSK Study Guide (Parts 1–12) cites this sūtra: [{part, page}]."""
+    return [{"part": a, "page": b} for a, b in _lsk_index().get(sutra_id, ())]
 
 # ─────────────────────────────────────────────────────────────────
 # Presentation-layer transliteration helpers
@@ -94,6 +113,7 @@ def enrich_trace(raw_trace: list[dict]) -> list[dict]:
             "_anuvritti_from" : list(getattr(rec, "anuvritti_from", ()) or ()),
             # Learner aid, not the sūtra's meaning — see core/i18n_hi (UNREVIEWED).
             "_hint_hi"        : hint_for_sutra(sid) if sid else "",
+            "_lsk"            : lsk_pages(sid) if rec else [],
         })
     return out
 

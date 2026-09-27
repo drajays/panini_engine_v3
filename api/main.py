@@ -32,7 +32,7 @@ if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
 import sutras  # noqa: F401 — fills SUTRA_REGISTRY
-from core.trace_view import enrich_trace, slp1_str_to_dev
+from core.trace_view import enrich_trace, lsk_pages, slp1_str_to_dev
 from engine import SUTRA_REGISTRY, coverage_report
 from engine.sig import extract_applied_path
 
@@ -75,6 +75,7 @@ def _derivation(state: Any, **inputs: Any) -> dict[str, Any]:
             # Hindi learner aid; UNREVIEWED (core/i18n_hi) — label it as such.
             "hint_hi": s.get("_hint_hi", ""),
             "anuvritti_from": s.get("_anuvritti_from", []),
+            "lsk": s.get("_lsk", []),
         }
         for i, s in enumerate(enrich_trace(trace))
     ]
@@ -156,6 +157,7 @@ def get_sutra(sutra_id: str) -> dict[str, Any]:
         "anuvritti_from": list(rec.anuvritti_from or ()),
         "adhikara_scope": list(rec.adhikara_scope or ()),
         "blocks_sutra_ids": list(rec.blocks_sutra_ids or ()),
+        "lsk": lsk_pages(rec.sutra_id),
     }
 
 
@@ -229,6 +231,36 @@ def shabda_paradigm(stem: str) -> dict[str, Any]:
 def shabda_page() -> str:
     """The paradigm table, deriving every cell live."""
     return (Path(__file__).parent / "shabda.html").read_text(encoding="utf-8")
+
+
+@app.get("/v1/practice", tags=["abhyāsa"])
+def practice(
+    kind: Literal["subanta", "tinanta"] = "subanta",
+    type: Literal["mcq", "recall", "tf", "sutra"] = "mcq",
+    lemma: str | None = None,
+    linga: Linga | None = None,
+    level: Literal["easy", "hard"] = "easy",
+    seed: int | None = None,
+) -> dict[str, Any]:
+    """One practice question drawn from forms the engine derives (core/practice)."""
+    from core.practice import question
+    try:
+        return question(kind, type, lemma=lemma, linga=linga, level=level, seed=seed)
+    except LookupError as ex:
+        raise HTTPException(404, str(ex))
+
+
+@app.get("/v1/practice/lemmas", tags=["abhyāsa"])
+def practice_lemmas(kind: Literal["subanta", "tinanta"] = "subanta") -> dict[str, Any]:
+    """Lemmas a practice question can be drawn from (verified cells only)."""
+    from core.practice import lemmas
+    return {"lemmas": lemmas(kind)}
+
+
+@app.get("/practice", response_class=HTMLResponse, include_in_schema=False)
+def practice_page() -> str:
+    """अभ्यास — practice with a sūtra-by-sūtra explanation of every answer."""
+    return (Path(__file__).parent / "practice.html").read_text(encoding="utf-8")
 
 
 @app.get("/v1/subanta/paradigm", tags=["subanta"])
