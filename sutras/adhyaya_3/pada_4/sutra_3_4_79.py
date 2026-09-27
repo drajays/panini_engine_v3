@@ -44,6 +44,12 @@ def _find(state: State):
         # sip, mip, tas, …) "parasmaipada"; ṭeḥ-e never touches those.
         if "parasmaipada" in t.tags:
             continue
+        # टितः — the ādeśa is ṭit only through its sthānī (1.1.56): the lakāra
+        # upadeśa must carry the ṭ it-marker (laṭ, liṭ, luṭ, lṛṭ, loṭ), not ṅ
+        # (laṅ, liṅ, luṅ, lṛṅ keep ta: ऐधत, not *ऐधते).
+        sthani = (t.meta.get("source_lakara_upadesha") or "").strip()
+        if sthani and not sthani.endswith("T"):
+            continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
         if up in _THAS:
             continue

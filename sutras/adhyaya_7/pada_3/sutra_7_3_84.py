@@ -257,6 +257,9 @@ def _apply_guna_to_dhatu(d0) -> None:
         d0.meta["urN_rapara_pending"] = "r"
     elif last in ("x", "X"):
         d0.meta["urN_rapara_pending"] = "l"
+    if last in ("f", "F", "x", "X") and ik_i != len(d0.varnas) - 1:
+        # upadhā ṛ (वृत् → वत्): tell 1.1.51 where the r goes (→ वर्त्)
+        d0.meta["urN_rapara_after_index"] = ik_i
 
 
 def act(state: State) -> State:

@@ -20,8 +20,6 @@ def _bhava_karma_dhatu(state: State) -> bool:
 
 
 def _find_Ate(state: State):
-    if not _bhava_karma_dhatu(state):
-        return None
     for ti, t in enumerate(state.terms):
         if t.kind != "pratyaya":
             continue
@@ -30,6 +28,15 @@ def _find_Ate(state: State):
         if "tin_adesha_3_4_78" not in t.tags:
             continue
         if not t.varnas or t.varnas[0].slp1 != "A":
+            continue
+        # अतः (7.2.80): the preceding aṅga ends in a — śap (एध + आते) or yak
+        # (भूय + आते). Once gated to yak (bhāva/karma) only, which left
+        # kartari ātmanepada duals as एधआते for एधेते.
+        prev = next((u for u in reversed(state.terms[:ti]) if u.varnas), None)
+        if prev is None or prev.varnas[-1].slp1 != "a":
+            continue
+        # ङितः — ātām/āthām are ṅit through 1.2.4 (sārvadhātukam apit).
+        if "kngiti" not in t.tags and not _bhava_karma_dhatu(state):
             continue
         return ti
     return None

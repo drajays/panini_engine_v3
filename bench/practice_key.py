@@ -41,9 +41,28 @@ def oracle_cell(row: dict) -> dict:
     if row["kind"] == "subanta":
         return {"kind": "subanta", "stem": row["lemma"], "linga": _LINGA[f["linga"]],
                 "vibhakti": f["vibhakti"], "vacana": f["vacana"]}
-    gana = int(row["cell_key"].split("@")[1].split(".")[0])     # tinanta:BU@01.0001:laT:1:1
-    return {"kind": "tinanta", "dhatu": row["lemma"], "gana": gana, "lakara": f["lakara"],
+    path_id = row["cell_key"].split("@")[1].split(":")[0]         # tinanta:BU@01.0001:laT:1:1
+    return {"kind": "tinanta", "dhatu": accented(row["lemma"], path_id),
+            "gana": int(path_id.split(".")[0]), "lakara": f["lakara"],
             "purusha": f["purusha"], "vacana": f["vacana"]}
+
+
+def accented(upadesha: str, path_id: str) -> str:
+    """Vidyut reads pada from svara, which our upadeśas omit — without it every
+    ātmanepadī root is derived as parasmaipadī (एधामि for एधे). Mark the
+    anunāsika it-vowel anudātta (आत्मनेपदी) or svarita (उभयपदी), as Vidyut's
+    own dhātupāṭha writes it (``eDa~\\``, ``qupa\\ca~^z``). A ṅit/ñit root
+    already carries its pada in the final it-consonant."""
+    from pipelines.dhatupatha import resolve_dhatu_identifier
+    try:
+        label = resolve_dhatu_identifier(path_id).get("pada_label_dev")
+    except KeyError:
+        return upadesha
+    mark = {"आत्मनेपदी": "\\", "उभयपदी": "^"}.get(label)
+    if not mark or upadesha.endswith(("N", "Y")) or "~" not in upadesha:
+        return upadesha
+    i = upadesha.rindex("~") + 1
+    return upadesha[:i] + mark + upadesha[i:]
 
 
 def main() -> int:

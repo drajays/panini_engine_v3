@@ -68,11 +68,25 @@ _PU_NAME  = {3: "प्रथम", 2: "मध्यम", 1: "उत्तम"}
 _VA_NAME  = {1: "एक", 2: "द्वि", 3: "बहु"}
 
 
+# 2026-09-28 — 3.4.79 टित आत्मनेपदानां टेरे now requires a ṭit sthānī, so it no
+# longer turns ta → te in ṅit lakāras (laṅ, liṅ, lṛṅ). The pins below were
+# "baseline locked" engine output that relied on that bug:
+#   _NGIT_FIXED   — our new form is among Vidyut's; pin corrected.
+#   _NGIT_PENDING — old pin and new output are both wrong (the karmaṇi/bhāve
+#                   ṅit-lakāra spine has no yak / sīyuṭ: भवेत for भूयेत).
+#                   xfail(strict) until that spine exists.
+_NGIT_FIXED = {('karmani', 'lRG', 2, 2): 'अभाविष्येथाम्', ('karmani', 'lRG', 2, 3): 'अभाविष्यध्वम्', ('karmani', 'lRG', 3, 1): 'अभाविष्यत', ('karmani', 'lRG', 3, 2): 'अभाविष्येताम्', ('karmani', 'lRG', 3, 3): 'अभाविष्यन्त'}
+_NGIT_PENDING = {('karmani', 'lRG', 1, 1), ('karmani', 'lRG', 1, 2), ('karmani', 'lRG', 1, 3)}
+_NGIT_XFAIL = pytest.mark.xfail(strict=True, reason="karmaṇi/bhāve ṅit-lakāra spine: no yak/sīyuṭ yet")
+
+
 def _cases():
     for lak, cells in _BHU_KARMANI.items():
         for (pu, va), expected in cells.items():
-            yield pytest.param(lak, pu, va, expected,
-                               id=f"{lak}_{pu}_{va}")
+            k = ("karmani", lak, pu, va)
+            yield pytest.param(lak, pu, va, _NGIT_FIXED.get(k, expected),
+                               id=f"{lak}_{pu}_{va}",
+                               marks=(_NGIT_XFAIL,) if k in _NGIT_PENDING else ())
 
 
 @pytest.mark.parametrize("lakara,purusha,vacana,expected", _cases())

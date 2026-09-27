@@ -261,9 +261,15 @@ def _karmani_apply_yak(state: State) -> State:
     return _karmani_yak_it_and_ngiti(state)
 
 
-def _bhave_atmanepada_tin_after_lopa(state: State) -> State:
-    """After ``P00_tin_tusma`` on bhāve paths: 1.4.100 + 3.4.79/80."""
-    if state.meta.get("prayoga") != "bhave":
+def _bhave_atmanepada_tin_after_lopa(state: State, *, kartari_atmane: bool = False) -> State:
+    """After ``P00_tin_tusma``: 1.4.100 + 3.4.79/80 on bhāve paths, and on
+    kartari ātmanepada where the caller opts in.
+
+    Opt-in because 3.4.79 rewrites the ādeśa's upadeśa (ta → te), which hides
+    it from later identity checks: a spine that inserts its vikaraṇa *after*
+    this point loses śap (loṭ: एध्धे). lṛṭ inserts sya without such a check, so
+    it opts in (एधिष्यते); the loṭ spine still needs 3.4.90/91/93 first."""
+    if state.meta.get("prayoga") != "bhave" and not kartari_atmane:
         return state
     state = apply_rule("1.4.100", state)
     state = apply_rule("3.4.79", state)
@@ -398,6 +404,9 @@ def _run_lat_kartari_bhuvadi_spine(
     state = apply_rule("1.1.5", state)
     state = apply_rule("7.3.101", state)
     state = apply_rule("7.3.84", state)
+    # 1.1.51 उरण् रपरः: guṇa of ṛ is ar, not a (वृत् → वर्तते, not वतते) —
+    # the lṛṭ/lṛṅ spines already complete it; this laṭ spine did not.
+    state = apply_rule("1.1.51", state)
     # 6.4.110 ata ut sārvadhatuke — tanādi weak forms: upadha a→u (kar→kur before kṅit tiṅ)
     state = apply_rule("6.4.110", state)
     # 6.4.108 nityaṃ karoteḥ — kṛ: drop u-vikaraṇa before non-val suffix (kurvaḥ, kurmaḥ)
@@ -417,6 +426,15 @@ def _run_lat_kartari_bhuvadi_spine(
     # with their own dedicated spine above) silently kept the bare tiṅ
     # vowel — pacate came out pacata (Prakriyotsava sweep bug #14).
     state = apply_rule("3.4.79", state)
+    # 3.4.80 थासः से (एधथाः → एधसे) and 6.1.97 अतो गुणे for the ए that 3.4.79
+    # just made (एध + ए → एधे, not एधए); both self-gate, vacuous otherwise.
+    state = apply_rule("3.4.80", state)
+    state = apply_rule("6.1.97", state)
+    # आतो ङितः for the duals: एध + आते → एध + इय्ते (7.2.81) → इते (6.1.66
+    # लोपो व्योर्वलि) → एधेते (6.1.87 आद्गुणः).
+    state = apply_rule("7.2.81", state)
+    state = apply_rule("6.1.66", state)
+    state = apply_rule("6.1.87", state)
 
     _pada_merge(state)
     state = P00_tripadi_rutva_visarga(state)
@@ -1458,7 +1476,7 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # IT on tiṅ ādeśa (1.3.4 tusma guard + 1.3.3 halantyam + 1.3.9 lopa)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
-    state = _bhave_atmanepada_tin_after_lopa(state)
+    state = _bhave_atmanepada_tin_after_lopa(state, kartari_atmane=True)
 
     # ── Stage: 3.4.113 tiṅ is sārvadhatuka ─────────────────────────────────
     state = apply_rule("3.4.113", state)

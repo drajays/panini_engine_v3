@@ -82,7 +82,7 @@ by sūtra** from the engine's own derivation, with LSK pages.
 | cells | roots | family | example (ours → Vidyut) |
 |---|---|---|---|
 | 7,639 | 172 | ✅ **FIXED 2026-09-28** 7.1.58 इदितो नुम् धातोः not applied — 1.3.9 now tags *idit* structurally; 7.1.58 runs after dhātu it-lopa | skudi~ → स्कुन्दते |
-| 2,818 | 312 | pada: ātmanepada endings wrong (3.4.79 टित आत्मनेपदानां टेरे) — *oracle also lacks svara, so parasmai is not proof* | eDa~ eDai → एधे |
+| 2,818 | 312 | ◐ **PARTLY FIXED 2026-09-28** ātmanepada endings — laṭ 9/9 and lṛṭ now correct (एधते…एधामहे, एधिष्यते); loṭ (3.4.90/91/93), liṭ ātmane, laṅ āṭ-vṛddhi still open. *Oracle fixed too: it now gets svara-marked upadeśas.* | eDa~ → एधे |
 | 2,577 | 74 | ✅ **FIXED 2026-09-28** guṇa on non-laghu upadhā — 7.3.84 target limited to final ik or laghu upadhā ik | SIkf~ → शीकावहे |
 | 1,726 | 40 | 6.1.64 धात्वादेः षः सः | zvada~ zvadai → svad- |
 | 313 | 35 | ām-liṭ (3.1.35–40) | eDa~ eDeDa → eDAYcakre |
@@ -110,12 +110,33 @@ resolved to पचिँ; resolver now prefers the root whose mūla-dhātu *is* 
 · 3.1.134 narrow gate: दिवुँ, not दिविँ (idit). Tests that pinned buggy output
 corrected with comments (सङ्गसीष्ट ङ्, पचति, devam).
 
+**C0 session 2 (2026-09-28):**
+- **Oracle fix:** Vidyut reads pada from svara, which our upadeśas omit, so
+  every ātmanepadī root was derived parasmaipadī (एधामि). `bench/practice_key`
+  now marks the it-vowel anudātta/svarita from our pada label (`eDa~\`).
+- **3.4.79** now requires a ṭit sthānī (1.1.56; `source_lakara_upadesha`
+  ends in ṭ) — it had turned ta→te in ṅit laṅ/liṅ/lṛṅ.
+- **7.2.81 आतो ङितः** generalised from yak-only to any ṅit ā-ādeśa after an
+  a-aṅga (एधेते, पचेते).
+- laṭ spine: 1.1.51 after guṇa; 3.4.80 + 6.1.97 + 7.2.81/6.1.66/6.1.87 after
+  3.4.79. lṛṭ opts into the ātmanepada tail (1.4.100/3.4.79/3.4.80).
+- 64 "baseline locked" karmaṇi/bhāve ṅit-lakāra pins relied on the 3.4.79
+  bug: 8 now match Vidyut (pins corrected), 56 are wrong both before and after
+  (the karmaṇi/bhāve ṅit spine has no yak/sīyuṭ — भवेत for भूयेत) →
+  xfail(strict) `_NGIT_PENDING` in the three test files.
+- Verified 35,601 → 39,525 → **40,551** (with 1.1.51); path-ok 27,669.
+
 **New leads found while fixing** (next C0 items, not yet fixed):
+- **karmaṇi/bhāve ṅit lakāras** (laṅ, liṅ, lṛṅ): no yak / sīyuṭ path.
+- **loṭ ātmanepada**: 3.4.90 आमेतः, 3.4.91, 3.4.93 एत ऐ not wired; 3.4.79 must
+  run after śap (it rewrites the ādeśa upadeśa, hiding it from 3.1.68).
+- **laṅ āṭ vṛddhi**: अएधत for ऐधत (6.1.90 आटश्च).
 - **aniṭ ignored** in luṭ/liṭ/luṅ: डुपचँष् gives पचिता (→ पक्ता), पपचिषे,
   अपच्त (→ अपक्त / अपाचि). `test_tinanta_pac_karmani_bhave.py` is a snapshot
   of old output, not gold — 9 luṅ cells xfail(strict) until fixed.
-- **1.1.51 उरण् रपरः missing** on the laṭ spine: वृतुँ → वतते (→ वर्तते).
-- **ātmanepada लृट्**: पिडिँ → पिण्डिष्यत (final ए missing, 3.4.79).
+- ~~1.1.51 उरण् रपरः~~ — fixed: 7.3.84 now records the upadhā ṛ index for
+  1.1.51 (वर्तते, कर्षति), and the laṭ spine calls 1.1.51.
+- ~~ātmanepada लृट्~~ — fixed (एधिष्यते).
 - **टुओँश्वि (01.1165)** imported as `Svi~` (nasal on the wrong vowel); the
   correct `wuo~Svi` needs 1.3.9 to treat a non-final anunāsika vowel after
   ādi ṭu as *it*. 45 cells refused (were wrong `Sv…` forms before).
@@ -142,9 +163,9 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | Metric | Now | Target |
 |---|---|---|
 | Sūtras with LSK page | 1,895 | 1,900 |
-| forms.db cells verified vs Vidyut (form) | 35,280 / 77,317 (46 %) | 90 % |
-| … of those, sūtra path also agrees | 24,465 | all verified |
+| forms.db cells verified vs Vidyut (form) | 40,551 / 77,317 (52 %) | 90 % |
+| … of those, sūtra path also agrees | 27,669 | all verified |
 | Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
-| Gītā tagged-word coverage | 8.7 % | 50 % → 80 % |
+| Gītā tagged-word coverage | 8.8 % | 50 % → 80 % |
 | LSK prakriyā order agreement | — | measured per part, rising |
-| Full suite | 19,254 passed, 9 xfail | zero regressions every commit |
+| Full suite | 19,198 passed, 65 xfail | zero regressions every commit |

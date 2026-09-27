@@ -45,4 +45,6 @@ def test_bhu_kartari_3sg_gold(lakara: str, expected: str) -> None:
 def test_bhu_karmani_lrg_no_not_implemented(lakara: str) -> None:
     if lakara != "lRG":
         return
-    assert derive("BU", "lRG", "karmani", 3, 1).flat_dev() == "अभाविष्यते"
+    # अभाविष्यत (Vidyut: aBAvizyata / aBavizyata). The old pin ended in ए —
+    # 3.4.79 applied in ṅit lṛṅ, fixed 2026-09-28.
+    assert derive("BU", "lRG", "karmani", 3, 1).flat_dev() == "अभाविष्यत"
