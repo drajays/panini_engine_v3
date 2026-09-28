@@ -36,19 +36,29 @@ def _kngiti_present(state: State) -> bool:
     )
 
 
+_NASAL = frozenset("NYRnmM")
+_HAL = frozenset("kKgGNcCjJYwWqQRtTdDnpPbBmyrlvSzsh")
+
+
 def cond(state: State) -> bool:
     if not _kngiti_present(state):
         return False
     if not state.terms or "dhatu" not in state.terms[0].tags:
         return False
     dh = state.terms[0]
-    if (dh.meta.get("upadesha_slp1") or "").strip() != "inD":
+    # अनिदितां हल उपधायाः क्ङिति: a hal-final root that is not idit, with a
+    # nasal upadhā, loses it before a kṅit affix (स्कुन्भ् → स्कुभ्नाति, इन्ध् → इद्ध)
+    if "idit" in dh.tags or dh.meta.get("7_1_58_num_done"):
+        return False
+    if len(dh.varnas) < 2 or dh.varnas[-1].slp1 not in _HAL:
+        return False
+    if dh.varnas[-2].slp1 not in _NASAL:
         return False
     if dh.meta.get("6_4_24_n_lopa_done"):
         return False
     if len(dh.varnas) < 2:
         return False
-    return dh.varnas[-2].slp1 == "n"
+    return True
 
 
 def act(state: State) -> State:

@@ -325,6 +325,9 @@ def _apply_vikarana(state: State, gana: int) -> State:
         # second 1.2.4 pass (see the upasarga+kṛ ātmanepada spine above).
         state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
         state = apply_rule("1.2.4", state)
+        # 6.4.24 अनिदितां हल उपधायाः क्ङिति: nasal upadhā drops before the ṅit
+        # vikaraṇa (स्कुभ्नाति, रज्यति)
+        state = apply_rule("6.4.24", state)
         # 7.3.82 मिदेर्गुणः — apavāda for मिद् specifically: guṇa still fires
         # (मेद्यति) even though श्यन् now blocks it generally per 1.2.4/1.1.5
         # above. Glass-box, scoped to मिद्'s own upadeśa in its cond() — a
@@ -341,6 +344,9 @@ def _apply_vikarana(state: State, gana: int) -> State:
         # guṇa: तुदति, पुरति, कृषति — not *तोदति. Same second 1.2.4 pass as śyan.
         state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
         state = apply_rule("1.2.4", state)
+        # 6.4.24 अनिदितां हल उपधायाः क्ङिति: nasal upadhā drops before the ṅit
+        # vikaraṇa (स्कुभ्नाति, रज्यति)
+        state = apply_rule("6.4.24", state)
         # 7.4.28 रिङ् शयग्लिङ्क्षु: ṛ-final aṅga before śa (मृ → म्रियते)
         state = apply_rule("7.4.28", state)
         return state
@@ -354,6 +360,22 @@ def _apply_vikarana(state: State, gana: int) -> State:
         state = P00_lashakvataddhite_it_lopa_chain(state)
         state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
         state = apply_rule("1.2.4", state)
+        return state
+
+    if gana == 9:
+        # 3.1.81 क्र्यादिभ्यः श्ना; śnā is apit → ṅit by a second 1.2.4 pass (root
+        # keeps no guṇa). Weak endings: 6.4.113 ई हल्यघोः (क्रीणीतः), 6.4.112
+        # श्नाभ्यस्तयोरातः (क्रीणन्ति); strong pit ones keep nā (क्रीणाति).
+        state = apply_rule("3.1.81", state)
+        state = apply_rule("3.4.113", state)
+        state = P00_lashakvataddhite_it_lopa_chain(state)
+        state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
+        state = apply_rule("1.2.4", state)
+        # 6.4.24 अनिदितां हल उपधायाः क्ङिति: nasal upadhā drops before the ṅit
+        # vikaraṇa (स्कुभ्नाति, रज्यति)
+        state = apply_rule("6.4.24", state)
+        state = apply_rule("6.4.113", state)
+        state = apply_rule("6.4.112", state)
         return state
 
     if gana == 8:
@@ -1080,6 +1102,7 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.1.78", state)
     # 6.1.97: a+a → a (3pl: śap-a + ant-a; 1sg: śap-a + am-a)
     state = apply_rule("6.1.97", state)
+    state = apply_rule("6.1.101", state)   # अकः सवर्णे दीर्घः: क्रीणा + अम् → अक्रीणाम्
     # ātmanepada: ṅit आताम्/आथाम् after a (7.2.81 → 6.1.66 → 6.1.87: ऐधेताम्),
     # and a + इ of iṭ → ए (6.1.87: ऐधे). All self-gate; parasmaipada untouched.
     state = apply_rule("7.2.81", state)
@@ -1851,6 +1874,7 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("3.4.93", state)
 
     # 6.4.105: delete 'hi' after short 'a' of aṅga (2sg: bhava+hi → bhava)
+    state = apply_rule("3.1.83", state)   # हलः श्नः शानज्झौ (स्कुभान)
     state = apply_rule("6.4.105", state)
     # 6.4.106 उतश्च प्रत्ययादसंयोगपूर्वात्: हि drops after a pratyaya-u (सुनु, तनु)
     state = apply_rule("6.4.106", state)

@@ -219,8 +219,11 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
 2. ✅ **ṇatva** (8.4.1/8.4.2) in the universal Tripāḍī, conservatively: the
    n must be followed by a vowel or y/v/m/n (स्तृणोति, स्तृण्वन्ति; चरन्ति
    untouched); 8.4.39 क्षुभ्नादिषु च (तृप्नोति); 6.1.64 also reverts a ṣ-caused ṇ
-   (षण् → सनति). Vidyut check: 0 over- and 0 under-application in the index.
-3. **gaṇa 9 (śnā)**: 3.1.81 general, 6.4.112/113 (क्रीणन्ति, क्रीणीतः).
+   (षण् → सनति). Vidyut check: 0 over-applications, 3 missed cells in the index.
+3. ✅ **gaṇa 9 (śnā)**: 3.1.81 general; 6.4.112 and 3.1.83 real (were
+   stubs); 6.4.113 general; jh counts as vowel-initial (7.1.3); 6.4.24 general
+   (was इन्ध्-only) after ṅit vikaraṇas; laṅ savarṇa-dīrgha. क्रीणाति/क्रीणीतः/
+   क्रीणन्ति, स्कुभ्नाति, स्कुभान — laṭ/loṭ/laṅ 9/9.
 4. **gaṇa 2 (luk), 3 (ślu + dvitva), 7 (śnam)** — the remaining refusals.
 5. 7.3.84 → 7.3.86 attribution (largest wrong-sūtra lead).
 6. 7.2.61–63 (जहर्थ), 3.4.110 (अस्थुः), 7.3.78 (पिबति, तिष्ठति).

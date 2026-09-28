@@ -29,10 +29,18 @@ def _hit(state: State) -> tuple[int, int] | None:
             continue
         if "SnA_vikaraṇa" not in t.tags:
             continue
-        nxt = state.terms[i + 1]
-        if not nxt.varnas or nxt.varnas[0].slp1 != "t":
+        nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
+        if nxt is None:
             continue
-        return (i, 1)
+        if nxt.varnas[0].slp1 == "t" and "kngiti" not in nxt.tags and not nxt.meta.get("is_apit"):
+            if (nxt.meta.get("upadesha_slp1") or "").strip() == "ta":
+                return (i, 1)                       # legacy P009 (परिक्रीणीते)
+        # ई हल्यघोः: before a hal-initial kṅit (weak) sārvadhātuka — क्रीणीतः, क्रीणीहि
+        weak = "kngiti" in nxt.tags or nxt.meta.get("is_apit")
+        # jh (झि/झ) is vowel-initial once 7.1.3 झोऽन्तः applies — 6.4.112's case
+        jh = (nxt.meta.get("upadesha_slp1") or "").strip() in {"jhi", "Ji", "Ja", "jha"}
+        if weak and not jh and nxt.varnas[0].slp1 not in "aAiIuUfFxXeEoO":
+            return (i, 1)
     return None
 
 

@@ -43,11 +43,30 @@ def _ta_idx_kryadi_snA(state: State) -> int | None:
     return None
 
 
+def _kryadi_dhatu(state: State) -> int | None:
+    """क्र्यादिभ्यः श्ना: a kryādi (gaṇa-9) dhātu before a sārvadhātuka tiṅ with no
+    vikaraṇa yet — returns the insertion index (right after the dhātu)."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("gana") != 9:
+            continue
+        if any("vikarana" in u.tags or "vikaraṇa" in u.tags for u in state.terms[i + 1:]):
+            return None
+        if any("tin_adesha_3_4_78" in u.tags for u in state.terms[i + 1:]):
+            return i + 1
+    return None
+
+
 def cond(state: State) -> bool:
-    return _ta_idx_kryadi_snA(state) is not None
+    return _ta_idx_kryadi_snA(state) is not None or _kryadi_dhatu(state) is not None
 
 
 def act(state: State) -> State:
+    j = _kryadi_dhatu(state) if _ta_idx_kryadi_snA(state) is None else None
+    if j is not None:
+        state.terms.insert(j, Term(kind="pratyaya", varnas=list(parse_slp1_upadesha_sequence("SnA")),
+                                   tags={"pratyaya", "upadesha", "vikarana", "SnA_vikaraṇa"},
+                                   meta={"upadesha_slp1": "SnA"}))
+        return state
     i = _ta_idx_kryadi_snA(state)
     if i is None:
         return state
