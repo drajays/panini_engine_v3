@@ -57,7 +57,9 @@ def _find_eco_aci_boundary(state: State):
     for i, j in pairs:
         anga = state.terms[i]
         nxt = state.terms[j]
-        if "anga" not in anga.tags:
+        # a vikaraṇa ending in ec is part of the aṅga for what follows (1.4.13):
+        # सुनो + आनि → सुनव् + आनि, असुनो + अम् → असुनवम्
+        if "anga" not in anga.tags and "vikarana" not in anga.tags:
             continue
         if not anga.varnas or not nxt.varnas:
             continue

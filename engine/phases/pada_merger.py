@@ -96,7 +96,9 @@ def pada_merge(state: State) -> None:
     if keep_linga:
         tags.add(keep_linga)
 
-    pada = Term(kind="pada", varnas=all_varnas, tags=tags, meta={})
+    dh = next((t for t in terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+    pada = Term(kind="pada", varnas=all_varnas, tags=tags,
+                meta={"dhatu_upadesha": (dh.meta.get("upadesha_slp1") or "") if dh else ""})
     state.terms = [pada]
 
     state.emit_structural(

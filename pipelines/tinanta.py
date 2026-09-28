@@ -1069,6 +1069,8 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("7.3.101", state)
     # 7.3.84: guṇa (IK-vowel of dhātu; BU(Ū) → Bo)
     state = apply_rule("7.3.84", state)
+    state = apply_rule("6.4.110", state)   # अकुरुताम्, अकुर्वन्
+    state = apply_rule("6.4.108", state)
 
     # ── Stage: pada + sandhi ─────────────────────────────────────────────────
     state = apply_rule("1.4.14", state)
@@ -1457,6 +1459,7 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("6.1.96", state)
     # 6.1.87: a + i → e  (śap-a + yāsuṭ-i remnant)
     state = apply_rule("6.1.87", state)
+    state = apply_rule("6.1.101", state)   # अकः सवर्णे दीर्घः: या + अम् → याम्
     # 7.3.84: guṇa (IK-vowel of dhātu → guṇa; tanādi vikaraṇa blocked by yāsuṭ kṅit)
     state = apply_rule("7.3.84", state)
 
@@ -1816,6 +1819,9 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # ── Stage: śap vikaraṇa (3.1.68 for bhvādi gaṇa 1) ──────────────────────
     gana: int = state.terms[0].meta.get("gana", 1)
+    # 3.4.87 सेर्ह्यपिच्च belongs to the tiṅ-ādeśa stage: हि (apit) must exist
+    # before the vikaraṇa's aṅga operations look at the ending (तनु, कुरु).
+    state = apply_rule("3.4.87", state)
     state = _apply_vikarana(state, gana)
 
     # ── Stage: loṭ-specific tiṅ substitutions ────────────────────────────────
@@ -1846,12 +1852,17 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # 6.4.105: delete 'hi' after short 'a' of aṅga (2sg: bhava+hi → bhava)
     state = apply_rule("6.4.105", state)
+    # 6.4.106 उतश्च प्रत्ययादसंयोगपूर्वात्: हि drops after a pratyaya-u (सुनु, तनु)
+    state = apply_rule("6.4.106", state)
 
     # ── Stage: aṅgakārya + guṇa (1.4.13 → 1.1.5 → 7.3.84) ────────────────────
     # Must run BEFORE 3.4.92 below: the aṅga-final vowel that takes guṇa here
     # (śap-a for gaṇa 1, vikaraṇa-u for gaṇa 8) has to be settled before
     # āḍ-āgama inserts a new term after it.
     state = P00_anga_guna_audit_1_4_13_1_1_5_7_3_84(state)
+    # kṛ weak forms: 6.4.110 अत उत् सार्वधातुके (कर् → कुर्), 6.4.108 नित्यं करोतेः
+    state = apply_rule("6.4.110", state)
+    state = apply_rule("6.4.108", state)
 
     # 3.4.92: āḍ-āgama before the uttama-puruṣa tiṅ (ni/va/ma) — karavāṇi.
     # Placed after guṇa (so gaṇa-8's u→o has already happened; the āṭ vowel

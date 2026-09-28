@@ -89,6 +89,11 @@ def _find_ashir_sip_s(state: State):
         prev = state.terms[i - 1]
         if "yasut_agama" not in prev.tags:
             continue
+        # only while yāsuṭ still ends in its own s (āśīr: भूयास् + स्). In
+        # vidhiliṅ 7.2.79 has already dropped that s, and the sip s is the
+        # word's only s (सुनुयाः, not *सुनुया).
+        if not prev.varnas or prev.varnas[-1].slp1 != "s":
+            continue
         return i
     return None
 

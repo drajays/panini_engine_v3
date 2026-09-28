@@ -1,5 +1,5 @@
 {
-"generated_at": "2026-09-28T18:22:13+00:00",
+"generated_at": "2026-09-28T19:21:18+00:00",
 "verified": [
 "subanta:BAnu:pum:1:1",
 "subanta:BAnu:pum:1:2",
@@ -1595,6 +1595,7 @@
 "tinanta:Apx~@05.0016:lRT:3:1",
 "tinanta:Apx~@05.0016:lRT:3:2",
 "tinanta:Apx~@05.0016:lRT:3:3",
+"tinanta:Apx~@05.0016:laG:1:1",
 "tinanta:Apx~@05.0016:laG:1:2",
 "tinanta:Apx~@05.0016:laG:1:3",
 "tinanta:Apx~@05.0016:laG:2:1",
@@ -1610,6 +1611,10 @@
 "tinanta:Apx~@05.0016:laT:2:3",
 "tinanta:Apx~@05.0016:laT:3:1",
 "tinanta:Apx~@05.0016:laT:3:2",
+"tinanta:Apx~@05.0016:loT:1:1",
+"tinanta:Apx~@05.0016:loT:1:2",
+"tinanta:Apx~@05.0016:loT:1:3",
+"tinanta:Apx~@05.0016:loT:2:1",
 "tinanta:Apx~@05.0016:loT:2:2",
 "tinanta:Apx~@05.0016:loT:2:3",
 "tinanta:Apx~@05.0016:loT:3:1",
@@ -4248,6 +4253,7 @@
 "tinanta:DUY@05.0010:lRT:3:1",
 "tinanta:DUY@05.0010:lRT:3:2",
 "tinanta:DUY@05.0010:lRT:3:3",
+"tinanta:DUY@05.0010:laG:1:1",
 "tinanta:DUY@05.0010:laG:1:2",
 "tinanta:DUY@05.0010:laG:1:3",
 "tinanta:DUY@05.0010:laG:2:1",
@@ -4265,6 +4271,10 @@
 "tinanta:DUY@05.0010:laT:3:1",
 "tinanta:DUY@05.0010:laT:3:2",
 "tinanta:DUY@05.0010:laT:3:3",
+"tinanta:DUY@05.0010:loT:1:1",
+"tinanta:DUY@05.0010:loT:1:2",
+"tinanta:DUY@05.0010:loT:1:3",
+"tinanta:DUY@05.0010:loT:2:1",
 "tinanta:DUY@05.0010:loT:2:2",
 "tinanta:DUY@05.0010:loT:2:3",
 "tinanta:DUY@05.0010:loT:3:1",
@@ -5402,6 +5412,7 @@
 "tinanta:DuY@05.0009:lRT:3:1",
 "tinanta:DuY@05.0009:lRT:3:2",
 "tinanta:DuY@05.0009:lRT:3:3",
+"tinanta:DuY@05.0009:laG:1:1",
 "tinanta:DuY@05.0009:laG:1:2",
 "tinanta:DuY@05.0009:laG:1:3",
 "tinanta:DuY@05.0009:laG:2:1",
@@ -5419,6 +5430,10 @@
 "tinanta:DuY@05.0009:laT:3:1",
 "tinanta:DuY@05.0009:laT:3:2",
 "tinanta:DuY@05.0009:laT:3:3",
+"tinanta:DuY@05.0009:loT:1:1",
+"tinanta:DuY@05.0009:loT:1:2",
+"tinanta:DuY@05.0009:loT:1:3",
+"tinanta:DuY@05.0009:loT:2:1",
 "tinanta:DuY@05.0009:loT:2:2",
 "tinanta:DuY@05.0009:loT:2:3",
 "tinanta:DuY@05.0009:loT:3:1",
@@ -6451,6 +6466,9 @@
 "tinanta:GfRu~@08.0007:liT:3:2",
 "tinanta:GfRu~@08.0007:liT:3:3",
 "tinanta:GfRu~@08.0007:loT:1:1",
+"tinanta:GfRu~@08.0007:loT:1:2",
+"tinanta:GfRu~@08.0007:loT:1:3",
+"tinanta:GfRu~@08.0007:loT:2:1",
 "tinanta:GfRu~@08.0007:loT:2:2",
 "tinanta:GfRu~@08.0007:loT:2:3",
 "tinanta:GfRu~@08.0007:loT:3:1",
@@ -11162,6 +11180,7 @@
 "tinanta:Sakx~@05.0017:lRT:3:1",
 "tinanta:Sakx~@05.0017:lRT:3:2",
 "tinanta:Sakx~@05.0017:lRT:3:3",
+"tinanta:Sakx~@05.0017:laG:1:1",
 "tinanta:Sakx~@05.0017:laG:1:2",
 "tinanta:Sakx~@05.0017:laG:1:3",
 "tinanta:Sakx~@05.0017:laG:2:1",
@@ -11179,6 +11198,10 @@
 "tinanta:Sakx~@05.0017:laT:3:2",
 "tinanta:Sakx~@05.0017:liT:1:1",
 "tinanta:Sakx~@05.0017:liT:3:1",
+"tinanta:Sakx~@05.0017:loT:1:1",
+"tinanta:Sakx~@05.0017:loT:1:2",
+"tinanta:Sakx~@05.0017:loT:1:3",
+"tinanta:Sakx~@05.0017:loT:2:1",
 "tinanta:Sakx~@05.0017:loT:2:2",
 "tinanta:Sakx~@05.0017:loT:2:3",
 "tinanta:Sakx~@05.0017:loT:3:1",
@@ -12091,6 +12114,7 @@
 "tinanta:SiY@05.0003:lRT:3:1",
 "tinanta:SiY@05.0003:lRT:3:2",
 "tinanta:SiY@05.0003:lRT:3:3",
+"tinanta:SiY@05.0003:laG:1:1",
 "tinanta:SiY@05.0003:laG:1:2",
 "tinanta:SiY@05.0003:laG:1:3",
 "tinanta:SiY@05.0003:laG:2:1",
@@ -12114,6 +12138,10 @@
 "tinanta:SiY@05.0003:liT:2:3",
 "tinanta:SiY@05.0003:liT:3:2",
 "tinanta:SiY@05.0003:liT:3:3",
+"tinanta:SiY@05.0003:loT:1:1",
+"tinanta:SiY@05.0003:loT:1:2",
+"tinanta:SiY@05.0003:loT:1:3",
+"tinanta:SiY@05.0003:loT:2:1",
 "tinanta:SiY@05.0003:loT:2:2",
 "tinanta:SiY@05.0003:loT:2:3",
 "tinanta:SiY@05.0003:loT:3:1",
@@ -15286,6 +15314,9 @@
 "tinanta:YiDfzA~@05.0025:liT:3:1",
 "tinanta:YiDfzA~@05.0025:liT:3:2",
 "tinanta:YiDfzA~@05.0025:liT:3:3",
+"tinanta:YiDfzA~@05.0025:loT:1:1",
+"tinanta:YiDfzA~@05.0025:loT:1:2",
+"tinanta:YiDfzA~@05.0025:loT:1:3",
 "tinanta:YiPalA~@01.0594:lRT:1:1",
 "tinanta:YiPalA~@01.0594:lRT:1:2",
 "tinanta:YiPalA~@01.0594:lRT:1:3",
@@ -15574,15 +15605,6 @@
 "tinanta:YitvarA~@01.0884:lRT:3:1",
 "tinanta:YitvarA~@01.0884:lRT:3:2",
 "tinanta:YitvarA~@01.0884:lRT:3:3",
-"tinanta:YitvarA~@01.0884:laG:1:1",
-"tinanta:YitvarA~@01.0884:laG:1:2",
-"tinanta:YitvarA~@01.0884:laG:1:3",
-"tinanta:YitvarA~@01.0884:laG:2:1",
-"tinanta:YitvarA~@01.0884:laG:2:2",
-"tinanta:YitvarA~@01.0884:laG:2:3",
-"tinanta:YitvarA~@01.0884:laG:3:1",
-"tinanta:YitvarA~@01.0884:laG:3:2",
-"tinanta:YitvarA~@01.0884:laG:3:3",
 "tinanta:YitvarA~@01.0884:liT:1:1",
 "tinanta:YitvarA~@01.0884:liT:1:2",
 "tinanta:YitvarA~@01.0884:liT:1:3",
@@ -15592,15 +15614,6 @@
 "tinanta:YitvarA~@01.0884:liT:3:1",
 "tinanta:YitvarA~@01.0884:liT:3:2",
 "tinanta:YitvarA~@01.0884:liT:3:3",
-"tinanta:YitvarA~@01.0884:loT:1:1",
-"tinanta:YitvarA~@01.0884:loT:1:2",
-"tinanta:YitvarA~@01.0884:loT:1:3",
-"tinanta:YitvarA~@01.0884:loT:2:1",
-"tinanta:YitvarA~@01.0884:loT:2:2",
-"tinanta:YitvarA~@01.0884:loT:2:3",
-"tinanta:YitvarA~@01.0884:loT:3:1",
-"tinanta:YitvarA~@01.0884:loT:3:2",
-"tinanta:YitvarA~@01.0884:loT:3:3",
 "tinanta:YizvidA~@01.0845:lRT:1:1",
 "tinanta:YizvidA~@01.0845:lRT:1:2",
 "tinanta:YizvidA~@01.0845:lRT:1:3",
@@ -16117,6 +16130,7 @@
 "tinanta:aha~@05.0029:lRT:3:1",
 "tinanta:aha~@05.0029:lRT:3:2",
 "tinanta:aha~@05.0029:lRT:3:3",
+"tinanta:aha~@05.0029:laG:1:1",
 "tinanta:aha~@05.0029:laG:1:2",
 "tinanta:aha~@05.0029:laG:1:3",
 "tinanta:aha~@05.0029:laG:2:1",
@@ -16132,6 +16146,10 @@
 "tinanta:aha~@05.0029:laT:2:3",
 "tinanta:aha~@05.0029:laT:3:1",
 "tinanta:aha~@05.0029:laT:3:2",
+"tinanta:aha~@05.0029:loT:1:1",
+"tinanta:aha~@05.0029:loT:1:2",
+"tinanta:aha~@05.0029:loT:1:3",
+"tinanta:aha~@05.0029:loT:2:1",
 "tinanta:aha~@05.0029:loT:2:2",
 "tinanta:aha~@05.0029:loT:2:3",
 "tinanta:aha~@05.0029:loT:3:1",
@@ -19982,6 +20000,7 @@
 "tinanta:camu~@05.0031:lRT:3:1",
 "tinanta:camu~@05.0031:lRT:3:2",
 "tinanta:camu~@05.0031:lRT:3:3",
+"tinanta:camu~@05.0031:laG:1:1",
 "tinanta:camu~@05.0031:laG:1:2",
 "tinanta:camu~@05.0031:laG:1:3",
 "tinanta:camu~@05.0031:laG:2:1",
@@ -19999,6 +20018,10 @@
 "tinanta:camu~@05.0031:laT:3:2",
 "tinanta:camu~@05.0031:liT:1:1",
 "tinanta:camu~@05.0031:liT:3:1",
+"tinanta:camu~@05.0031:loT:1:1",
+"tinanta:camu~@05.0031:loT:1:2",
+"tinanta:camu~@05.0031:loT:1:3",
+"tinanta:camu~@05.0031:loT:2:1",
 "tinanta:camu~@05.0031:loT:2:2",
 "tinanta:camu~@05.0031:loT:2:3",
 "tinanta:camu~@05.0031:loT:3:1",
@@ -20269,14 +20292,8 @@
 "tinanta:cara~@01.0640:lRT:3:2",
 "tinanta:cara~@01.0640:lRT:3:3",
 "tinanta:cara~@01.0640:laG:1:1",
-"tinanta:cara~@01.0640:laG:1:2",
-"tinanta:cara~@01.0640:laG:1:3",
 "tinanta:cara~@01.0640:laG:2:1",
-"tinanta:cara~@01.0640:laG:2:2",
-"tinanta:cara~@01.0640:laG:2:3",
 "tinanta:cara~@01.0640:laG:3:1",
-"tinanta:cara~@01.0640:laG:3:2",
-"tinanta:cara~@01.0640:laG:3:3",
 "tinanta:cara~@01.0640:laT:1:1",
 "tinanta:cara~@01.0640:laT:2:1",
 "tinanta:cara~@01.0640:laT:3:1",
@@ -20286,11 +20303,7 @@
 "tinanta:cara~@01.0640:loT:1:2",
 "tinanta:cara~@01.0640:loT:1:3",
 "tinanta:cara~@01.0640:loT:2:1",
-"tinanta:cara~@01.0640:loT:2:2",
-"tinanta:cara~@01.0640:loT:2:3",
 "tinanta:cara~@01.0640:loT:3:1",
-"tinanta:cara~@01.0640:loT:3:2",
-"tinanta:cara~@01.0640:loT:3:3",
 "tinanta:carba~@01.0491:lRT:1:1",
 "tinanta:carba~@01.0491:lRT:1:2",
 "tinanta:carba~@01.0491:lRT:1:3",
@@ -20869,6 +20882,7 @@
 "tinanta:ciY@05.0005:lRT:3:1",
 "tinanta:ciY@05.0005:lRT:3:2",
 "tinanta:ciY@05.0005:lRT:3:3",
+"tinanta:ciY@05.0005:laG:1:1",
 "tinanta:ciY@05.0005:laG:1:2",
 "tinanta:ciY@05.0005:laG:1:3",
 "tinanta:ciY@05.0005:laG:2:1",
@@ -20892,6 +20906,10 @@
 "tinanta:ciY@05.0005:liT:2:3",
 "tinanta:ciY@05.0005:liT:3:2",
 "tinanta:ciY@05.0005:liT:3:3",
+"tinanta:ciY@05.0005:loT:1:1",
+"tinanta:ciY@05.0005:loT:1:2",
+"tinanta:ciY@05.0005:loT:1:3",
+"tinanta:ciY@05.0005:loT:2:1",
 "tinanta:ciY@05.0005:loT:2:2",
 "tinanta:ciY@05.0005:loT:2:3",
 "tinanta:ciY@05.0005:loT:3:1",
@@ -20996,6 +21014,9 @@
 "tinanta:ciri@05.0034:lRT:3:1",
 "tinanta:ciri@05.0034:lRT:3:2",
 "tinanta:ciri@05.0034:lRT:3:3",
+"tinanta:ciri@05.0034:loT:1:1",
+"tinanta:ciri@05.0034:loT:1:2",
+"tinanta:ciri@05.0034:loT:1:3",
 "tinanta:citI~@01.0039:lRT:1:1",
 "tinanta:citI~@01.0039:lRT:1:2",
 "tinanta:citI~@01.0039:lRT:1:3",
@@ -22130,6 +22151,7 @@
 "tinanta:dASa~@05.0036:lRT:3:1",
 "tinanta:dASa~@05.0036:lRT:3:2",
 "tinanta:dASa~@05.0036:lRT:3:3",
+"tinanta:dASa~@05.0036:laG:1:1",
 "tinanta:dASa~@05.0036:laG:1:2",
 "tinanta:dASa~@05.0036:laG:1:3",
 "tinanta:dASa~@05.0036:laG:2:1",
@@ -22154,6 +22176,10 @@
 "tinanta:dASa~@05.0036:liT:3:1",
 "tinanta:dASa~@05.0036:liT:3:2",
 "tinanta:dASa~@05.0036:liT:3:3",
+"tinanta:dASa~@05.0036:loT:1:1",
+"tinanta:dASa~@05.0036:loT:1:2",
+"tinanta:dASa~@05.0036:loT:1:3",
+"tinanta:dASa~@05.0036:loT:2:1",
 "tinanta:dASa~@05.0036:loT:2:2",
 "tinanta:dASa~@05.0036:loT:2:3",
 "tinanta:dASa~@05.0036:loT:3:1",
@@ -23018,6 +23044,9 @@
 "tinanta:df@05.0037:liT:3:1",
 "tinanta:df@05.0037:liT:3:2",
 "tinanta:df@05.0037:liT:3:3",
+"tinanta:df@05.0037:loT:1:1",
+"tinanta:df@05.0037:loT:1:2",
+"tinanta:df@05.0037:loT:1:3",
 "tinanta:dfBI~@06.0048:lRT:1:1",
 "tinanta:dfBI~@06.0048:lRT:1:2",
 "tinanta:dfBI~@06.0048:lRT:1:3",
@@ -24769,6 +24798,7 @@
 "tinanta:fDu~@05.0027:lRT:3:1",
 "tinanta:fDu~@05.0027:lRT:3:2",
 "tinanta:fDu~@05.0027:lRT:3:3",
+"tinanta:fDu~@05.0027:laG:1:1",
 "tinanta:fDu~@05.0027:laG:1:2",
 "tinanta:fDu~@05.0027:laG:1:3",
 "tinanta:fDu~@05.0027:laG:2:1",
@@ -24784,6 +24814,10 @@
 "tinanta:fDu~@05.0027:laT:2:3",
 "tinanta:fDu~@05.0027:laT:3:1",
 "tinanta:fDu~@05.0027:laT:3:2",
+"tinanta:fDu~@05.0027:loT:1:1",
+"tinanta:fDu~@05.0027:loT:1:2",
+"tinanta:fDu~@05.0027:loT:1:3",
+"tinanta:fDu~@05.0027:loT:2:1",
 "tinanta:fDu~@05.0027:loT:2:2",
 "tinanta:fDu~@05.0027:loT:2:3",
 "tinanta:fDu~@05.0027:loT:3:1",
@@ -24852,6 +24886,9 @@
 "tinanta:fRu~@08.0005:laT:3:2",
 "tinanta:fRu~@08.0005:laT:3:3",
 "tinanta:fRu~@08.0005:loT:1:1",
+"tinanta:fRu~@08.0005:loT:1:2",
+"tinanta:fRu~@08.0005:loT:1:3",
+"tinanta:fRu~@08.0005:loT:2:1",
 "tinanta:fRu~@08.0005:loT:2:2",
 "tinanta:fRu~@08.0005:loT:2:3",
 "tinanta:fRu~@08.0005:loT:3:1",
@@ -25010,6 +25047,9 @@
 "tinanta:fkzi@05.0038:lRT:3:1",
 "tinanta:fkzi@05.0038:lRT:3:2",
 "tinanta:fkzi@05.0038:lRT:3:3",
+"tinanta:fkzi@05.0038:loT:1:1",
+"tinanta:fkzi@05.0038:loT:1:2",
+"tinanta:fkzi@05.0038:loT:1:3",
 "tinanta:fnPa~@06.0041:lRT:1:1",
 "tinanta:fnPa~@06.0041:lRT:1:2",
 "tinanta:fnPa~@06.0041:lRT:1:3",
@@ -28857,6 +28897,7 @@
 "tinanta:hi@05.0012:lRT:3:1",
 "tinanta:hi@05.0012:lRT:3:2",
 "tinanta:hi@05.0012:lRT:3:3",
+"tinanta:hi@05.0012:laG:1:1",
 "tinanta:hi@05.0012:laG:1:2",
 "tinanta:hi@05.0012:laG:1:3",
 "tinanta:hi@05.0012:laG:2:1",
@@ -28874,6 +28915,10 @@
 "tinanta:hi@05.0012:laT:3:1",
 "tinanta:hi@05.0012:laT:3:2",
 "tinanta:hi@05.0012:laT:3:3",
+"tinanta:hi@05.0012:loT:1:1",
+"tinanta:hi@05.0012:loT:1:2",
+"tinanta:hi@05.0012:loT:1:3",
+"tinanta:hi@05.0012:loT:2:1",
 "tinanta:hi@05.0012:loT:2:2",
 "tinanta:hi@05.0012:loT:2:3",
 "tinanta:hi@05.0012:loT:3:1",
@@ -31463,6 +31508,9 @@
 "tinanta:jiri@05.0035:lRT:3:1",
 "tinanta:jiri@05.0035:lRT:3:2",
 "tinanta:jiri@05.0035:lRT:3:3",
+"tinanta:jiri@05.0035:loT:1:1",
+"tinanta:jiri@05.0035:loT:1:2",
+"tinanta:jiri@05.0035:loT:1:3",
 "tinanta:jivi~@01.0678:lRT:1:1",
 "tinanta:jivi~@01.0678:lRT:1:2",
 "tinanta:jivi~@01.0678:lRT:1:3",
@@ -32103,14 +32151,8 @@
 "tinanta:jvara~@01.0885:lRT:3:2",
 "tinanta:jvara~@01.0885:lRT:3:3",
 "tinanta:jvara~@01.0885:laG:1:1",
-"tinanta:jvara~@01.0885:laG:1:2",
-"tinanta:jvara~@01.0885:laG:1:3",
 "tinanta:jvara~@01.0885:laG:2:1",
-"tinanta:jvara~@01.0885:laG:2:2",
-"tinanta:jvara~@01.0885:laG:2:3",
 "tinanta:jvara~@01.0885:laG:3:1",
-"tinanta:jvara~@01.0885:laG:3:2",
-"tinanta:jvara~@01.0885:laG:3:3",
 "tinanta:jvara~@01.0885:laT:1:1",
 "tinanta:jvara~@01.0885:laT:2:1",
 "tinanta:jvara~@01.0885:laT:3:1",
@@ -32127,11 +32169,7 @@
 "tinanta:jvara~@01.0885:loT:1:2",
 "tinanta:jvara~@01.0885:loT:1:3",
 "tinanta:jvara~@01.0885:loT:2:1",
-"tinanta:jvara~@01.0885:loT:2:2",
-"tinanta:jvara~@01.0885:loT:2:3",
 "tinanta:jvara~@01.0885:loT:3:1",
-"tinanta:jvara~@01.0885:loT:3:2",
-"tinanta:jvara~@01.0885:loT:3:3",
 "tinanta:jyA@09.0034:lRT:1:1",
 "tinanta:jyA@09.0034:lRT:1:2",
 "tinanta:jyA@09.0034:lRT:1:3",
@@ -34917,6 +34955,9 @@
 "tinanta:kfY@05.0007:liT:3:1",
 "tinanta:kfY@05.0007:liT:3:2",
 "tinanta:kfY@05.0007:liT:3:3",
+"tinanta:kfY@05.0007:loT:1:1",
+"tinanta:kfY@05.0007:loT:1:2",
+"tinanta:kfY@05.0007:loT:1:3",
 "tinanta:kfpa~@10.0278:lRT:1:1",
 "tinanta:kfpa~@10.0278:lRT:1:2",
 "tinanta:kfpa~@10.0278:lRT:1:3",
@@ -35788,14 +35829,8 @@
 "tinanta:kmara~@01.0636:lRT:3:2",
 "tinanta:kmara~@01.0636:lRT:3:3",
 "tinanta:kmara~@01.0636:laG:1:1",
-"tinanta:kmara~@01.0636:laG:1:2",
-"tinanta:kmara~@01.0636:laG:1:3",
 "tinanta:kmara~@01.0636:laG:2:1",
-"tinanta:kmara~@01.0636:laG:2:2",
-"tinanta:kmara~@01.0636:laG:2:3",
 "tinanta:kmara~@01.0636:laG:3:1",
-"tinanta:kmara~@01.0636:laG:3:2",
-"tinanta:kmara~@01.0636:laG:3:3",
 "tinanta:kmara~@01.0636:laT:1:1",
 "tinanta:kmara~@01.0636:laT:2:1",
 "tinanta:kmara~@01.0636:laT:3:1",
@@ -35812,11 +35847,7 @@
 "tinanta:kmara~@01.0636:loT:1:2",
 "tinanta:kmara~@01.0636:loT:1:3",
 "tinanta:kmara~@01.0636:loT:2:1",
-"tinanta:kmara~@01.0636:loT:2:2",
-"tinanta:kmara~@01.0636:loT:2:3",
 "tinanta:kmara~@01.0636:loT:3:1",
-"tinanta:kmara~@01.0636:loT:3:2",
-"tinanta:kmara~@01.0636:loT:3:3",
 "tinanta:knUY@09.0012:lRT:1:1",
 "tinanta:knUY@09.0012:lRT:1:2",
 "tinanta:knUY@09.0012:lRT:1:3",
@@ -38433,6 +38464,9 @@
 "tinanta:kzaRu~@08.0003:liT:3:2",
 "tinanta:kzaRu~@08.0003:liT:3:3",
 "tinanta:kzaRu~@08.0003:loT:1:1",
+"tinanta:kzaRu~@08.0003:loT:1:2",
+"tinanta:kzaRu~@08.0003:loT:1:3",
+"tinanta:kzaRu~@08.0003:loT:2:1",
 "tinanta:kzaRu~@08.0003:loT:2:2",
 "tinanta:kzaRu~@08.0003:loT:2:3",
 "tinanta:kzaRu~@08.0003:loT:3:1",
@@ -38771,6 +38805,9 @@
 "tinanta:kzi@05.0033:lRT:3:1",
 "tinanta:kzi@05.0033:lRT:3:2",
 "tinanta:kzi@05.0033:lRT:3:3",
+"tinanta:kzi@05.0033:loT:1:1",
+"tinanta:kzi@05.0033:loT:1:2",
+"tinanta:kzi@05.0033:loT:1:3",
 "tinanta:kzi@06.0143:lRT:1:1",
 "tinanta:kzi@06.0143:lRT:1:2",
 "tinanta:kzi@06.0143:lRT:1:3",
@@ -38814,6 +38851,9 @@
 "tinanta:kziRu~@08.0004:liT:3:2",
 "tinanta:kziRu~@08.0004:liT:3:3",
 "tinanta:kziRu~@08.0004:loT:1:1",
+"tinanta:kziRu~@08.0004:loT:1:2",
+"tinanta:kziRu~@08.0004:loT:1:3",
+"tinanta:kziRu~@08.0004:loT:2:1",
 "tinanta:kziRu~@08.0004:loT:2:2",
 "tinanta:kziRu~@08.0004:loT:2:3",
 "tinanta:kziRu~@08.0004:loT:3:1",
@@ -50321,6 +50361,9 @@
 "tinanta:pf@05.0013:liT:3:1",
 "tinanta:pf@05.0013:liT:3:2",
 "tinanta:pf@05.0013:liT:3:3",
+"tinanta:pf@05.0013:loT:1:1",
+"tinanta:pf@05.0013:loT:1:2",
+"tinanta:pf@05.0013:loT:1:3",
 "tinanta:pfN@06.0138:lRT:1:1",
 "tinanta:pfN@06.0138:lRT:1:2",
 "tinanta:pfN@06.0138:lRT:1:3",
@@ -53189,8 +53232,14 @@
 "tinanta:qukfY@08.0010:lRT:3:2",
 "tinanta:qukfY@08.0010:lRT:3:3",
 "tinanta:qukfY@08.0010:laG:1:1",
+"tinanta:qukfY@08.0010:laG:1:2",
+"tinanta:qukfY@08.0010:laG:1:3",
 "tinanta:qukfY@08.0010:laG:2:1",
+"tinanta:qukfY@08.0010:laG:2:2",
+"tinanta:qukfY@08.0010:laG:2:3",
 "tinanta:qukfY@08.0010:laG:3:1",
+"tinanta:qukfY@08.0010:laG:3:2",
+"tinanta:qukfY@08.0010:laG:3:3",
 "tinanta:qukfY@08.0010:laT:1:1",
 "tinanta:qukfY@08.0010:laT:1:2",
 "tinanta:qukfY@08.0010:laT:1:3",
@@ -53210,7 +53259,15 @@
 "tinanta:qukfY@08.0010:liT:3:2",
 "tinanta:qukfY@08.0010:liT:3:3",
 "tinanta:qukfY@08.0010:loT:1:1",
+"tinanta:qukfY@08.0010:loT:1:2",
+"tinanta:qukfY@08.0010:loT:1:3",
+"tinanta:qukfY@08.0010:loT:2:1",
+"tinanta:qukfY@08.0010:loT:2:2",
+"tinanta:qukfY@08.0010:loT:2:3",
 "tinanta:qukfY@08.0010:loT:3:1",
+"tinanta:qukfY@08.0010:loT:3:2",
+"tinanta:qukfY@08.0010:loT:3:3",
+"tinanta:qumiY@05.0004:laG:1:1",
 "tinanta:qumiY@05.0004:laG:1:2",
 "tinanta:qumiY@05.0004:laG:1:3",
 "tinanta:qumiY@05.0004:laG:2:1",
@@ -53234,6 +53291,10 @@
 "tinanta:qumiY@05.0004:liT:2:3",
 "tinanta:qumiY@05.0004:liT:3:2",
 "tinanta:qumiY@05.0004:liT:3:3",
+"tinanta:qumiY@05.0004:loT:1:1",
+"tinanta:qumiY@05.0004:loT:1:2",
+"tinanta:qumiY@05.0004:loT:1:3",
+"tinanta:qumiY@05.0004:loT:2:1",
 "tinanta:qumiY@05.0004:loT:2:2",
 "tinanta:qumiY@05.0004:loT:2:3",
 "tinanta:qumiY@05.0004:loT:3:1",
@@ -53348,6 +53409,7 @@
 "tinanta:rADa~@05.0018:lRT:3:1",
 "tinanta:rADa~@05.0018:lRT:3:2",
 "tinanta:rADa~@05.0018:lRT:3:3",
+"tinanta:rADa~@05.0018:laG:1:1",
 "tinanta:rADa~@05.0018:laG:1:2",
 "tinanta:rADa~@05.0018:laG:1:3",
 "tinanta:rADa~@05.0018:laG:2:1",
@@ -53365,6 +53427,10 @@
 "tinanta:rADa~@05.0018:laT:3:2",
 "tinanta:rADa~@05.0018:liT:1:1",
 "tinanta:rADa~@05.0018:liT:3:1",
+"tinanta:rADa~@05.0018:loT:1:1",
+"tinanta:rADa~@05.0018:loT:1:2",
+"tinanta:rADa~@05.0018:loT:1:3",
+"tinanta:rADa~@05.0018:loT:2:1",
 "tinanta:rADa~@05.0018:loT:2:2",
 "tinanta:rADa~@05.0018:loT:2:3",
 "tinanta:rADa~@05.0018:loT:3:1",
@@ -55085,6 +55151,9 @@
 "tinanta:ri@05.0032:liT:2:3",
 "tinanta:ri@05.0032:liT:3:2",
 "tinanta:ri@05.0032:liT:3:3",
+"tinanta:ri@05.0032:loT:1:1",
+"tinanta:ri@05.0032:loT:1:2",
+"tinanta:ri@05.0032:loT:1:3",
 "tinanta:ri@06.0140:lRT:1:1",
 "tinanta:ri@06.0140:lRT:1:2",
 "tinanta:ri@06.0140:lRT:1:3",
@@ -56504,6 +56573,7 @@
 "tinanta:sADa~@05.0019:lRT:3:1",
 "tinanta:sADa~@05.0019:lRT:3:2",
 "tinanta:sADa~@05.0019:lRT:3:3",
+"tinanta:sADa~@05.0019:laG:1:1",
 "tinanta:sADa~@05.0019:laG:1:2",
 "tinanta:sADa~@05.0019:laG:1:3",
 "tinanta:sADa~@05.0019:laG:2:1",
@@ -56528,6 +56598,10 @@
 "tinanta:sADa~@05.0019:liT:3:1",
 "tinanta:sADa~@05.0019:liT:3:2",
 "tinanta:sADa~@05.0019:liT:3:3",
+"tinanta:sADa~@05.0019:loT:1:1",
+"tinanta:sADa~@05.0019:loT:1:2",
+"tinanta:sADa~@05.0019:loT:1:3",
+"tinanta:sADa~@05.0019:loT:2:1",
 "tinanta:sADa~@05.0019:loT:2:2",
 "tinanta:sADa~@05.0019:loT:2:3",
 "tinanta:sADa~@05.0019:loT:3:1",
@@ -58076,6 +58150,9 @@
 "tinanta:sanu~@08.0002:liT:3:2",
 "tinanta:sanu~@08.0002:liT:3:3",
 "tinanta:sanu~@08.0002:loT:1:1",
+"tinanta:sanu~@08.0002:loT:1:2",
+"tinanta:sanu~@08.0002:loT:1:3",
+"tinanta:sanu~@08.0002:loT:2:1",
 "tinanta:sanu~@08.0002:loT:2:2",
 "tinanta:sanu~@08.0002:loT:2:3",
 "tinanta:sanu~@08.0002:loT:3:1",
@@ -58466,6 +58543,9 @@
 "tinanta:smf@05.0015:lRT:3:3",
 "tinanta:smf@05.0015:liT:1:1",
 "tinanta:smf@05.0015:liT:3:1",
+"tinanta:smf@05.0015:loT:1:1",
+"tinanta:smf@05.0015:loT:1:2",
+"tinanta:smf@05.0015:loT:1:3",
 "tinanta:smiwa~@10.0057:lRT:1:1",
 "tinanta:smiwa~@10.0057:lRT:1:2",
 "tinanta:smiwa~@10.0057:lRT:1:3",
@@ -58612,6 +58692,9 @@
 "tinanta:spf@05.0014:lRT:3:3",
 "tinanta:spf@05.0014:liT:1:1",
 "tinanta:spf@05.0014:liT:3:1",
+"tinanta:spf@05.0014:loT:1:1",
+"tinanta:spf@05.0014:loT:1:2",
+"tinanta:spf@05.0014:loT:1:3",
 "tinanta:spfSa~@06.0158:laG:1:1",
 "tinanta:spfSa~@06.0158:laG:1:2",
 "tinanta:spfSa~@06.0158:laG:1:3",
@@ -59130,6 +59213,9 @@
 "tinanta:stfY@05.0006:lRT:3:3",
 "tinanta:stfY@05.0006:liT:1:1",
 "tinanta:stfY@05.0006:liT:3:1",
+"tinanta:stfY@05.0006:loT:1:1",
+"tinanta:stfY@05.0006:loT:1:2",
+"tinanta:stfY@05.0006:loT:1:3",
 "tinanta:stfhU~@06.0076:lRT:1:1",
 "tinanta:stfhU~@06.0076:lRT:1:2",
 "tinanta:stfhU~@06.0076:lRT:1:3",
@@ -60533,6 +60619,9 @@
 "tinanta:tanu~@08.0001:liT:3:2",
 "tinanta:tanu~@08.0001:liT:3:3",
 "tinanta:tanu~@08.0001:loT:1:1",
+"tinanta:tanu~@08.0001:loT:1:2",
+"tinanta:tanu~@08.0001:loT:1:3",
+"tinanta:tanu~@08.0001:loT:2:1",
 "tinanta:tanu~@08.0001:loT:2:2",
 "tinanta:tanu~@08.0001:loT:2:3",
 "tinanta:tanu~@08.0001:loT:3:1",
@@ -61224,6 +61313,9 @@
 "tinanta:tfRu~@08.0006:liT:3:2",
 "tinanta:tfRu~@08.0006:liT:3:3",
 "tinanta:tfRu~@08.0006:loT:1:1",
+"tinanta:tfRu~@08.0006:loT:1:2",
+"tinanta:tfRu~@08.0006:loT:1:3",
+"tinanta:tfRu~@08.0006:loT:2:1",
 "tinanta:tfRu~@08.0006:loT:2:2",
 "tinanta:tfRu~@08.0006:loT:2:3",
 "tinanta:tfRu~@08.0006:loT:3:1",
@@ -61553,6 +61645,7 @@
 "tinanta:tfpa~@05.0028:lRT:3:1",
 "tinanta:tfpa~@05.0028:lRT:3:2",
 "tinanta:tfpa~@05.0028:lRT:3:3",
+"tinanta:tfpa~@05.0028:laG:1:1",
 "tinanta:tfpa~@05.0028:laG:1:2",
 "tinanta:tfpa~@05.0028:laG:1:3",
 "tinanta:tfpa~@05.0028:laG:2:1",
@@ -61577,6 +61670,7 @@
 "tinanta:tfpa~@05.0028:liT:3:1",
 "tinanta:tfpa~@05.0028:liT:3:2",
 "tinanta:tfpa~@05.0028:liT:3:3",
+"tinanta:tfpa~@05.0028:loT:2:1",
 "tinanta:tfpa~@05.0028:loT:2:2",
 "tinanta:tfpa~@05.0028:loT:2:3",
 "tinanta:tfpa~@05.0028:loT:3:1",
@@ -61725,6 +61819,7 @@
 "tinanta:tiga~@05.0023:lRT:3:1",
 "tinanta:tiga~@05.0023:lRT:3:2",
 "tinanta:tiga~@05.0023:lRT:3:3",
+"tinanta:tiga~@05.0023:laG:1:1",
 "tinanta:tiga~@05.0023:laG:1:2",
 "tinanta:tiga~@05.0023:laG:1:3",
 "tinanta:tiga~@05.0023:laG:2:1",
@@ -61749,6 +61844,10 @@
 "tinanta:tiga~@05.0023:liT:3:1",
 "tinanta:tiga~@05.0023:liT:3:2",
 "tinanta:tiga~@05.0023:liT:3:3",
+"tinanta:tiga~@05.0023:loT:1:1",
+"tinanta:tiga~@05.0023:loT:1:2",
+"tinanta:tiga~@05.0023:loT:1:3",
+"tinanta:tiga~@05.0023:loT:2:1",
 "tinanta:tiga~@05.0023:loT:2:2",
 "tinanta:tiga~@05.0023:loT:2:3",
 "tinanta:tiga~@05.0023:loT:3:1",
@@ -61807,6 +61906,7 @@
 "tinanta:tika~@05.0022:lRT:3:1",
 "tinanta:tika~@05.0022:lRT:3:2",
 "tinanta:tika~@05.0022:lRT:3:3",
+"tinanta:tika~@05.0022:laG:1:1",
 "tinanta:tika~@05.0022:laG:1:2",
 "tinanta:tika~@05.0022:laG:1:3",
 "tinanta:tika~@05.0022:laG:2:1",
@@ -61831,6 +61931,10 @@
 "tinanta:tika~@05.0022:liT:3:1",
 "tinanta:tika~@05.0022:liT:3:2",
 "tinanta:tika~@05.0022:liT:3:3",
+"tinanta:tika~@05.0022:loT:1:1",
+"tinanta:tika~@05.0022:loT:1:2",
+"tinanta:tika~@05.0022:loT:1:3",
+"tinanta:tika~@05.0022:loT:2:1",
 "tinanta:tika~@05.0022:loT:2:2",
 "tinanta:tika~@05.0022:loT:2:3",
 "tinanta:tika~@05.0022:loT:3:1",
@@ -62823,14 +62927,8 @@
 "tinanta:tsara~@01.0635:lRT:3:2",
 "tinanta:tsara~@01.0635:lRT:3:3",
 "tinanta:tsara~@01.0635:laG:1:1",
-"tinanta:tsara~@01.0635:laG:1:2",
-"tinanta:tsara~@01.0635:laG:1:3",
 "tinanta:tsara~@01.0635:laG:2:1",
-"tinanta:tsara~@01.0635:laG:2:2",
-"tinanta:tsara~@01.0635:laG:2:3",
 "tinanta:tsara~@01.0635:laG:3:1",
-"tinanta:tsara~@01.0635:laG:3:2",
-"tinanta:tsara~@01.0635:laG:3:3",
 "tinanta:tsara~@01.0635:laT:1:1",
 "tinanta:tsara~@01.0635:laT:2:1",
 "tinanta:tsara~@01.0635:laT:3:1",
@@ -62847,11 +62945,7 @@
 "tinanta:tsara~@01.0635:loT:1:2",
 "tinanta:tsara~@01.0635:loT:1:3",
 "tinanta:tsara~@01.0635:loT:2:1",
-"tinanta:tsara~@01.0635:loT:2:2",
-"tinanta:tsara~@01.0635:loT:2:3",
 "tinanta:tsara~@01.0635:loT:3:1",
-"tinanta:tsara~@01.0635:loT:3:2",
-"tinanta:tsara~@01.0635:loT:3:3",
 "tinanta:tu@02.0029:lRT:1:1",
 "tinanta:tu@02.0029:lRT:1:2",
 "tinanta:tu@02.0029:lRT:1:3",
@@ -66654,6 +66748,9 @@
 "tinanta:vanu~@08.0008:liT:1:1",
 "tinanta:vanu~@08.0008:liT:3:1",
 "tinanta:vanu~@08.0008:loT:1:1",
+"tinanta:vanu~@08.0008:loT:1:2",
+"tinanta:vanu~@08.0008:loT:1:3",
+"tinanta:vanu~@08.0008:loT:2:1",
 "tinanta:vanu~@08.0008:loT:2:2",
 "tinanta:vanu~@08.0008:loT:2:3",
 "tinanta:vanu~@08.0008:loT:3:1",
@@ -68089,6 +68186,9 @@
 "tinanta:vfY@05.0008:liT:3:1",
 "tinanta:vfY@05.0008:liT:3:2",
 "tinanta:vfY@05.0008:liT:3:3",
+"tinanta:vfY@05.0008:loT:1:1",
+"tinanta:vfY@05.0008:loT:1:2",
+"tinanta:vfY@05.0008:loT:1:3",
 "tinanta:vfY@10.0345:lRT:1:1",
 "tinanta:vfY@10.0345:lRT:1:2",
 "tinanta:vfY@10.0345:lRT:1:3",
@@ -69880,6 +69980,7 @@
 "tinanta:wudu@05.0011:lRT:3:1",
 "tinanta:wudu@05.0011:lRT:3:2",
 "tinanta:wudu@05.0011:lRT:3:3",
+"tinanta:wudu@05.0011:laG:1:1",
 "tinanta:wudu@05.0011:laG:1:2",
 "tinanta:wudu@05.0011:laG:1:3",
 "tinanta:wudu@05.0011:laG:2:1",
@@ -69897,6 +69998,10 @@
 "tinanta:wudu@05.0011:laT:3:1",
 "tinanta:wudu@05.0011:laT:3:2",
 "tinanta:wudu@05.0011:laT:3:3",
+"tinanta:wudu@05.0011:loT:1:1",
+"tinanta:wudu@05.0011:loT:1:2",
+"tinanta:wudu@05.0011:loT:1:3",
+"tinanta:wudu@05.0011:loT:2:1",
 "tinanta:wudu@05.0011:loT:2:2",
 "tinanta:wudu@05.0011:loT:2:3",
 "tinanta:wudu@05.0011:loT:3:1",
@@ -72293,6 +72398,7 @@
 "tinanta:ziY@05.0002:lRT:3:1",
 "tinanta:ziY@05.0002:lRT:3:2",
 "tinanta:ziY@05.0002:lRT:3:3",
+"tinanta:ziY@05.0002:laG:1:1",
 "tinanta:ziY@05.0002:laG:1:2",
 "tinanta:ziY@05.0002:laG:1:3",
 "tinanta:ziY@05.0002:laG:2:1",
@@ -72316,6 +72422,10 @@
 "tinanta:ziY@05.0002:liT:2:3",
 "tinanta:ziY@05.0002:liT:3:2",
 "tinanta:ziY@05.0002:liT:3:3",
+"tinanta:ziY@05.0002:loT:1:1",
+"tinanta:ziY@05.0002:loT:1:2",
+"tinanta:ziY@05.0002:loT:1:3",
+"tinanta:ziY@05.0002:loT:2:1",
 "tinanta:ziY@05.0002:loT:2:2",
 "tinanta:ziY@05.0002:loT:2:3",
 "tinanta:ziY@05.0002:loT:3:1",
@@ -72638,6 +72748,7 @@
 "tinanta:zuY@05.0001:lRT:3:1",
 "tinanta:zuY@05.0001:lRT:3:2",
 "tinanta:zuY@05.0001:lRT:3:3",
+"tinanta:zuY@05.0001:laG:1:1",
 "tinanta:zuY@05.0001:laG:1:2",
 "tinanta:zuY@05.0001:laG:1:3",
 "tinanta:zuY@05.0001:laG:2:1",
@@ -72655,6 +72766,10 @@
 "tinanta:zuY@05.0001:laT:3:1",
 "tinanta:zuY@05.0001:laT:3:2",
 "tinanta:zuY@05.0001:laT:3:3",
+"tinanta:zuY@05.0001:loT:1:1",
+"tinanta:zuY@05.0001:loT:1:2",
+"tinanta:zuY@05.0001:loT:1:3",
+"tinanta:zuY@05.0001:loT:2:1",
 "tinanta:zuY@05.0001:loT:2:2",
 "tinanta:zuY@05.0001:loT:2:3",
 "tinanta:zuY@05.0001:loT:3:1",
@@ -93058,6 +93173,86 @@
 "tsaranti"
 ]
 ],
+"tinanta:tsara~@01.0635:laG:1:2": [
+[
+"atsurAva"
+],
+[
+"atsarAva"
+]
+],
+"tinanta:tsara~@01.0635:laG:1:3": [
+[
+"atsurAma"
+],
+[
+"atsarAma"
+]
+],
+"tinanta:tsara~@01.0635:laG:2:2": [
+[
+"atsuratam"
+],
+[
+"atsaratam"
+]
+],
+"tinanta:tsara~@01.0635:laG:2:3": [
+[
+"atsurata"
+],
+[
+"atsarata"
+]
+],
+"tinanta:tsara~@01.0635:laG:3:2": [
+[
+"atsuratAm"
+],
+[
+"atsaratAm"
+]
+],
+"tinanta:tsara~@01.0635:laG:3:3": [
+[
+"atsuran"
+],
+[
+"atsaran"
+]
+],
+"tinanta:tsara~@01.0635:loT:2:2": [
+[
+"tsuratam"
+],
+[
+"tsaratam"
+]
+],
+"tinanta:tsara~@01.0635:loT:2:3": [
+[
+"tsurata"
+],
+[
+"tsarata"
+]
+],
+"tinanta:tsara~@01.0635:loT:3:2": [
+[
+"tsuratAm"
+],
+[
+"tsaratAm"
+]
+],
+"tinanta:tsara~@01.0635:loT:3:3": [
+[
+"tsurantu"
+],
+[
+"tsarantu"
+]
+],
 "tinanta:kmara~@01.0636:laT:1:2": [
 [
 "kmurAvaH"
@@ -93104,6 +93299,86 @@
 ],
 [
 "kmaranti"
+]
+],
+"tinanta:kmara~@01.0636:laG:1:2": [
+[
+"akmurAva"
+],
+[
+"akmarAva"
+]
+],
+"tinanta:kmara~@01.0636:laG:1:3": [
+[
+"akmurAma"
+],
+[
+"akmarAma"
+]
+],
+"tinanta:kmara~@01.0636:laG:2:2": [
+[
+"akmuratam"
+],
+[
+"akmaratam"
+]
+],
+"tinanta:kmara~@01.0636:laG:2:3": [
+[
+"akmurata"
+],
+[
+"akmarata"
+]
+],
+"tinanta:kmara~@01.0636:laG:3:2": [
+[
+"akmuratAm"
+],
+[
+"akmaratAm"
+]
+],
+"tinanta:kmara~@01.0636:laG:3:3": [
+[
+"akmuran"
+],
+[
+"akmaran"
+]
+],
+"tinanta:kmara~@01.0636:loT:2:2": [
+[
+"kmuratam"
+],
+[
+"kmaratam"
+]
+],
+"tinanta:kmara~@01.0636:loT:2:3": [
+[
+"kmurata"
+],
+[
+"kmarata"
+]
+],
+"tinanta:kmara~@01.0636:loT:3:2": [
+[
+"kmuratAm"
+],
+[
+"kmaratAm"
+]
+],
+"tinanta:kmara~@01.0636:loT:3:3": [
+[
+"kmurantu"
+],
+[
+"kmarantu"
 ]
 ],
 "tinanta:aBra~@01.0637:liT:1:1": [
@@ -93226,6 +93501,54 @@
 "caranti"
 ]
 ],
+"tinanta:cara~@01.0640:laG:1:2": [
+[
+"acurAva"
+],
+[
+"acarAva"
+]
+],
+"tinanta:cara~@01.0640:laG:1:3": [
+[
+"acurAma"
+],
+[
+"acarAma"
+]
+],
+"tinanta:cara~@01.0640:laG:2:2": [
+[
+"acuratam"
+],
+[
+"acaratam"
+]
+],
+"tinanta:cara~@01.0640:laG:2:3": [
+[
+"acurata"
+],
+[
+"acarata"
+]
+],
+"tinanta:cara~@01.0640:laG:3:2": [
+[
+"acuratAm"
+],
+[
+"acaratAm"
+]
+],
+"tinanta:cara~@01.0640:laG:3:3": [
+[
+"acuran"
+],
+[
+"acaran"
+]
+],
 "tinanta:cara~@01.0640:liT:1:2": [
 [
 "cacariva"
@@ -93280,6 +93603,38 @@
 ],
 [
 "ceruH"
+]
+],
+"tinanta:cara~@01.0640:loT:2:2": [
+[
+"curatam"
+],
+[
+"caratam"
+]
+],
+"tinanta:cara~@01.0640:loT:2:3": [
+[
+"curata"
+],
+[
+"carata"
+]
+],
+"tinanta:cara~@01.0640:loT:3:2": [
+[
+"curatAm"
+],
+[
+"caratAm"
+]
+],
+"tinanta:cara~@01.0640:loT:3:3": [
+[
+"curantu"
+],
+[
+"carantu"
 ]
 ],
 "tinanta:zWivu~@01.0641:laT:1:1": [
@@ -99940,6 +100295,150 @@
 "tvarante"
 ]
 ],
+"tinanta:YitvarA~@01.0884:laG:1:1": [
+[
+"atvure"
+],
+[
+"atvare"
+]
+],
+"tinanta:YitvarA~@01.0884:laG:1:2": [
+[
+"atvurAvahi"
+],
+[
+"atvarAvahi"
+]
+],
+"tinanta:YitvarA~@01.0884:laG:1:3": [
+[
+"atvurAmahi"
+],
+[
+"atvarAmahi"
+]
+],
+"tinanta:YitvarA~@01.0884:laG:2:1": [
+[
+"atvuraTAH"
+],
+[
+"atvaraTAH"
+]
+],
+"tinanta:YitvarA~@01.0884:laG:2:2": [
+[
+"atvureTAm"
+],
+[
+"atvareTAm"
+]
+],
+"tinanta:YitvarA~@01.0884:laG:2:3": [
+[
+"atvuraDvam"
+],
+[
+"atvaraDvam"
+]
+],
+"tinanta:YitvarA~@01.0884:laG:3:1": [
+[
+"atvurata"
+],
+[
+"atvarata"
+]
+],
+"tinanta:YitvarA~@01.0884:laG:3:2": [
+[
+"atvuretAm"
+],
+[
+"atvaretAm"
+]
+],
+"tinanta:YitvarA~@01.0884:laG:3:3": [
+[
+"atvuranta"
+],
+[
+"atvaranta"
+]
+],
+"tinanta:YitvarA~@01.0884:loT:1:1": [
+[
+"tvurE"
+],
+[
+"tvarE"
+]
+],
+"tinanta:YitvarA~@01.0884:loT:1:2": [
+[
+"tvurAvahE"
+],
+[
+"tvarAvahE"
+]
+],
+"tinanta:YitvarA~@01.0884:loT:1:3": [
+[
+"tvurAmahE"
+],
+[
+"tvarAmahE"
+]
+],
+"tinanta:YitvarA~@01.0884:loT:2:1": [
+[
+"tvurasva"
+],
+[
+"tvarasva"
+]
+],
+"tinanta:YitvarA~@01.0884:loT:2:2": [
+[
+"tvureTAm"
+],
+[
+"tvareTAm"
+]
+],
+"tinanta:YitvarA~@01.0884:loT:2:3": [
+[
+"tvuraDvam"
+],
+[
+"tvaraDvam"
+]
+],
+"tinanta:YitvarA~@01.0884:loT:3:1": [
+[
+"tvuratAm"
+],
+[
+"tvaratAm"
+]
+],
+"tinanta:YitvarA~@01.0884:loT:3:2": [
+[
+"tvuretAm"
+],
+[
+"tvaretAm"
+]
+],
+"tinanta:YitvarA~@01.0884:loT:3:3": [
+[
+"tvurantAm"
+],
+[
+"tvarantAm"
+]
+],
 "tinanta:jvara~@01.0885:laT:1:2": [
 [
 "jvurAvaH"
@@ -99986,6 +100485,86 @@
 ],
 [
 "jvaranti"
+]
+],
+"tinanta:jvara~@01.0885:laG:1:2": [
+[
+"ajvurAva"
+],
+[
+"ajvarAva"
+]
+],
+"tinanta:jvara~@01.0885:laG:1:3": [
+[
+"ajvurAma"
+],
+[
+"ajvarAma"
+]
+],
+"tinanta:jvara~@01.0885:laG:2:2": [
+[
+"ajvuratam"
+],
+[
+"ajvaratam"
+]
+],
+"tinanta:jvara~@01.0885:laG:2:3": [
+[
+"ajvurata"
+],
+[
+"ajvarata"
+]
+],
+"tinanta:jvara~@01.0885:laG:3:2": [
+[
+"ajvuratAm"
+],
+[
+"ajvaratAm"
+]
+],
+"tinanta:jvara~@01.0885:laG:3:3": [
+[
+"ajvuran"
+],
+[
+"ajvaran"
+]
+],
+"tinanta:jvara~@01.0885:loT:2:2": [
+[
+"jvuratam"
+],
+[
+"jvaratam"
+]
+],
+"tinanta:jvara~@01.0885:loT:2:3": [
+[
+"jvurata"
+],
+[
+"jvarata"
+]
+],
+"tinanta:jvara~@01.0885:loT:3:2": [
+[
+"jvuratAm"
+],
+[
+"jvaratAm"
+]
+],
+"tinanta:jvara~@01.0885:loT:3:3": [
+[
+"jvurantu"
+],
+[
+"jvarantu"
 ]
 ],
 "tinanta:Rawa~@01.0890:liT:1:2": [
@@ -104415,7 +104994,7 @@
 ],
 "tinanta:Ksara~@01.0986:laG:1:2": [
 [
-"aKsarAva"
+"aKsurAva"
 ],
 [
 "aksarAva"
@@ -104423,7 +105002,7 @@
 ],
 "tinanta:Ksara~@01.0986:laG:1:3": [
 [
-"aKsarAma"
+"aKsurAma"
 ],
 [
 "aksarAma"
@@ -104439,7 +105018,7 @@
 ],
 "tinanta:Ksara~@01.0986:laG:2:2": [
 [
-"aKsaratam"
+"aKsuratam"
 ],
 [
 "aksaratam"
@@ -104447,7 +105026,7 @@
 ],
 "tinanta:Ksara~@01.0986:laG:2:3": [
 [
-"aKsarata"
+"aKsurata"
 ],
 [
 "aksarata"
@@ -104464,7 +105043,7 @@
 ],
 "tinanta:Ksara~@01.0986:laG:3:2": [
 [
-"aKsaratAm"
+"aKsuratAm"
 ],
 [
 "aksaratAm"
@@ -104472,7 +105051,7 @@
 ],
 "tinanta:Ksara~@01.0986:laG:3:3": [
 [
-"aKsaran"
+"aKsuran"
 ],
 [
 "aksaran"
@@ -104659,7 +105238,7 @@
 ],
 "tinanta:Ksara~@01.0986:loT:2:2": [
 [
-"Ksaratam"
+"Ksuratam"
 ],
 [
 "ksaratam"
@@ -104667,7 +105246,7 @@
 ],
 "tinanta:Ksara~@01.0986:loT:2:3": [
 [
-"Ksarata"
+"Ksurata"
 ],
 [
 "ksarata"
@@ -104685,7 +105264,7 @@
 ],
 "tinanta:Ksara~@01.0986:loT:3:2": [
 [
-"KsaratAm"
+"KsuratAm"
 ],
 [
 "ksaratAm"
@@ -104693,7 +105272,7 @@
 ],
 "tinanta:Ksara~@01.0986:loT:3:3": [
 [
-"Ksarantu"
+"Ksurantu"
 ],
 [
 "ksarantu"
@@ -105092,15 +105671,6 @@
 "hAmbaBUvuH"
 ]
 ],
-"tinanta:zuY@05.0001:laG:1:1": [
-[
-"asunoam"
-],
-[
-"asunavam",
-"asunvi"
-]
-],
 "tinanta:zuY@05.0001:liT:1:1": [
 [
 "suzva"
@@ -105185,221 +105755,6 @@
 "suzuvuH"
 ]
 ],
-"tinanta:zuY@05.0001:loT:1:1": [
-[
-"sunoAni"
-],
-[
-"sunavAni",
-"sunavE"
-]
-],
-"tinanta:zuY@05.0001:loT:1:2": [
-[
-"sunvAva"
-],
-[
-"sunavAva",
-"sunavAvahE"
-]
-],
-"tinanta:zuY@05.0001:loT:1:3": [
-[
-"sunvAma"
-],
-[
-"sunavAma",
-"sunavAmahE"
-]
-],
-"tinanta:zuY@05.0001:loT:2:1": [
-[
-"sunohi"
-],
-[
-"sunu",
-"sunutAd",
-"sunutAt",
-"sunuzva"
-]
-],
-"tinanta:qukfY@08.0010:laG:1:2": [
-[
-"akaruva"
-],
-[
-"akurva",
-"akurvahi"
-]
-],
-"tinanta:qukfY@08.0010:laG:1:3": [
-[
-"akaruma"
-],
-[
-"akurma",
-"akurmahi"
-]
-],
-"tinanta:qukfY@08.0010:laG:2:2": [
-[
-"akarutam"
-],
-[
-"akurutam",
-"akurvATAm"
-]
-],
-"tinanta:qukfY@08.0010:laG:2:3": [
-[
-"akaruta"
-],
-[
-"akuruDvam",
-"akuruta"
-]
-],
-"tinanta:qukfY@08.0010:laG:3:2": [
-[
-"akarutAm"
-],
-[
-"akurutAm",
-"akurvAtAm"
-]
-],
-"tinanta:qukfY@08.0010:laG:3:3": [
-[
-"akarvan"
-],
-[
-"akurvan",
-"akurvata"
-]
-],
-"tinanta:qukfY@08.0010:loT:1:2": [
-[
-"karvAva"
-],
-[
-"karavAva",
-"karavAvahE"
-]
-],
-"tinanta:qukfY@08.0010:loT:1:3": [
-[
-"karvAma"
-],
-[
-"karavAma",
-"karavAmahE"
-]
-],
-"tinanta:qukfY@08.0010:loT:2:1": [
-[
-"karohi"
-],
-[
-"kuru",
-"kurutAd",
-"kurutAt",
-"kuruzva"
-]
-],
-"tinanta:qukfY@08.0010:loT:2:2": [
-[
-"karutam"
-],
-[
-"kurutam",
-"kurvATAm"
-]
-],
-"tinanta:qukfY@08.0010:loT:2:3": [
-[
-"karuta"
-],
-[
-"kuruDvam",
-"kuruta"
-]
-],
-"tinanta:qukfY@08.0010:loT:3:2": [
-[
-"karutAm"
-],
-[
-"kurutAm",
-"kurvAtAm"
-]
-],
-"tinanta:qukfY@08.0010:loT:3:3": [
-[
-"karvantu"
-],
-[
-"kurvantu",
-"kurvatAm"
-]
-],
-"tinanta:tanu~@08.0001:loT:1:2": [
-[
-"tanvAva"
-],
-[
-"tanavAva",
-"tanavAvahE"
-]
-],
-"tinanta:tanu~@08.0001:loT:1:3": [
-[
-"tanvAma"
-],
-[
-"tanavAma",
-"tanavAmahE"
-]
-],
-"tinanta:tanu~@08.0001:loT:2:1": [
-[
-"tanohi"
-],
-[
-"tanu",
-"tanutAd",
-"tanutAt",
-"tanuzva"
-]
-],
-"tinanta:sanu~@08.0002:loT:1:2": [
-[
-"sanvAva"
-],
-[
-"sanavAva",
-"sanavAvahE"
-]
-],
-"tinanta:sanu~@08.0002:loT:1:3": [
-[
-"sanvAma"
-],
-[
-"sanavAma",
-"sanavAmahE"
-]
-],
-"tinanta:sanu~@08.0002:loT:2:1": [
-[
-"sanohi"
-],
-[
-"sanu",
-"sanutAd",
-"sanutAt",
-"sanuzva"
-]
-],
 "tinanta:kzaRu~@08.0003:liT:3:1": [
 [
 "cakzaRa"
@@ -105407,35 +105762,6 @@
 [
 "cakzARa",
 "cakzaRe"
-]
-],
-"tinanta:kzaRu~@08.0003:loT:1:2": [
-[
-"kzaRvAva"
-],
-[
-"kzaRavAva",
-"kzaRavAvahE"
-]
-],
-"tinanta:kzaRu~@08.0003:loT:1:3": [
-[
-"kzaRvAma"
-],
-[
-"kzaRavAma",
-"kzaRavAmahE"
-]
-],
-"tinanta:kzaRu~@08.0003:loT:2:1": [
-[
-"kzaRohi"
-],
-[
-"kzaRu",
-"kzaRutAd",
-"kzaRutAt",
-"kzaRuzva"
 ]
 ],
 "tinanta:vanu~@08.0008:liT:1:2": [
@@ -105499,35 +105825,6 @@
 [
 "vavanire",
 "vavanuH"
-]
-],
-"tinanta:vanu~@08.0008:loT:1:2": [
-[
-"vanvAva"
-],
-[
-"vanavAva",
-"vanavAvahE"
-]
-],
-"tinanta:vanu~@08.0008:loT:1:3": [
-[
-"vanvAma"
-],
-[
-"vanavAma",
-"vanavAmahE"
-]
-],
-"tinanta:vanu~@08.0008:loT:2:1": [
-[
-"vanohi"
-],
-[
-"vanu",
-"vanutAd",
-"vanutAt",
-"vanuzva"
 ]
 ],
 "tinanta:krIY@09.0001:liT:1:1": [
@@ -122527,15 +122824,6 @@
 "AnfDuH"
 ]
 ],
-"tinanta:ziY@05.0002:laG:1:1": [
-[
-"asinoam"
-],
-[
-"asinavam",
-"asinvi"
-]
-],
 "tinanta:ziY@05.0002:liT:1:1": [
 [
 "sizya"
@@ -122565,53 +122853,6 @@
 "sizye"
 ]
 ],
-"tinanta:ziY@05.0002:loT:1:1": [
-[
-"sinoAni"
-],
-[
-"sinavAni",
-"sinavE"
-]
-],
-"tinanta:ziY@05.0002:loT:1:2": [
-[
-"sinvAva"
-],
-[
-"sinavAva",
-"sinavAvahE"
-]
-],
-"tinanta:ziY@05.0002:loT:1:3": [
-[
-"sinvAma"
-],
-[
-"sinavAma",
-"sinavAmahE"
-]
-],
-"tinanta:ziY@05.0002:loT:2:1": [
-[
-"sinohi"
-],
-[
-"sinu",
-"sinutAd",
-"sinutAt",
-"sinuzva"
-]
-],
-"tinanta:SiY@05.0003:laG:1:1": [
-[
-"aSinoam"
-],
-[
-"aSinavam",
-"aSinvi"
-]
-],
 "tinanta:SiY@05.0003:liT:1:1": [
 [
 "SiSya"
@@ -122639,53 +122880,6 @@
 [
 "SiSAya",
 "SiSye"
-]
-],
-"tinanta:SiY@05.0003:loT:1:1": [
-[
-"SinoAni"
-],
-[
-"SinavAni",
-"SinavE"
-]
-],
-"tinanta:SiY@05.0003:loT:1:2": [
-[
-"SinvAva"
-],
-[
-"SinavAva",
-"SinavAvahE"
-]
-],
-"tinanta:SiY@05.0003:loT:1:3": [
-[
-"SinvAma"
-],
-[
-"SinavAma",
-"SinavAmahE"
-]
-],
-"tinanta:SiY@05.0003:loT:2:1": [
-[
-"Sinohi"
-],
-[
-"Sinu",
-"SinutAd",
-"SinutAt",
-"Sinuzva"
-]
-],
-"tinanta:qumiY@05.0004:laG:1:1": [
-[
-"aminoam"
-],
-[
-"aminavam",
-"aminvi"
 ]
 ],
 "tinanta:qumiY@05.0004:liT:1:1": [
@@ -122797,53 +122991,6 @@
 "mAsyanti"
 ]
 ],
-"tinanta:qumiY@05.0004:loT:1:1": [
-[
-"minoAni"
-],
-[
-"minavAni",
-"minavE"
-]
-],
-"tinanta:qumiY@05.0004:loT:1:2": [
-[
-"minvAva"
-],
-[
-"minavAva",
-"minavAvahE"
-]
-],
-"tinanta:qumiY@05.0004:loT:1:3": [
-[
-"minvAma"
-],
-[
-"minavAma",
-"minavAmahE"
-]
-],
-"tinanta:qumiY@05.0004:loT:2:1": [
-[
-"minohi"
-],
-[
-"minu",
-"minutAd",
-"minutAt",
-"minuzva"
-]
-],
-"tinanta:ciY@05.0005:laG:1:1": [
-[
-"acinoam"
-],
-[
-"acinavam",
-"acinvi"
-]
-],
 "tinanta:ciY@05.0005:liT:1:1": [
 [
 "cicya"
@@ -122879,44 +123026,6 @@
 "cicye",
 "cikAya",
 "cikye"
-]
-],
-"tinanta:ciY@05.0005:loT:1:1": [
-[
-"cinoAni"
-],
-[
-"cinavAni",
-"cinavE"
-]
-],
-"tinanta:ciY@05.0005:loT:1:2": [
-[
-"cinvAva"
-],
-[
-"cinavAva",
-"cinavAvahE"
-]
-],
-"tinanta:ciY@05.0005:loT:1:3": [
-[
-"cinvAma"
-],
-[
-"cinavAma",
-"cinavAmahE"
-]
-],
-"tinanta:ciY@05.0005:loT:2:1": [
-[
-"cinohi"
-],
-[
-"cinu",
-"cinutAd",
-"cinutAt",
-"cinuzva"
 ]
 ],
 "tinanta:stfY@05.0006:laT:1:1": [
@@ -123006,7 +123115,7 @@
 ],
 "tinanta:stfY@05.0006:laG:1:1": [
 [
-"astfnoam"
+"astfnavam"
 ],
 [
 "astfRavam",
@@ -123154,36 +123263,9 @@
 "tastaruH"
 ]
 ],
-"tinanta:stfY@05.0006:loT:1:1": [
-[
-"stfRoAni"
-],
-[
-"stfRavAni",
-"stfRavE"
-]
-],
-"tinanta:stfY@05.0006:loT:1:2": [
-[
-"stfRvAva"
-],
-[
-"stfRavAva",
-"stfRavAvahE"
-]
-],
-"tinanta:stfY@05.0006:loT:1:3": [
-[
-"stfRvAma"
-],
-[
-"stfRavAma",
-"stfRavAmahE"
-]
-],
 "tinanta:stfY@05.0006:loT:2:1": [
 [
-"stfnohi"
+"stfnu"
 ],
 [
 "stfRu",
@@ -123326,7 +123408,7 @@
 ],
 "tinanta:kfY@05.0007:laG:1:1": [
 [
-"akfnoam"
+"akfnavam"
 ],
 [
 "akfRavam",
@@ -123410,36 +123492,9 @@
 "akfRvata"
 ]
 ],
-"tinanta:kfY@05.0007:loT:1:1": [
-[
-"kfRoAni"
-],
-[
-"kfRavAni",
-"kfRavE"
-]
-],
-"tinanta:kfY@05.0007:loT:1:2": [
-[
-"kfRvAva"
-],
-[
-"kfRavAva",
-"kfRavAvahE"
-]
-],
-"tinanta:kfY@05.0007:loT:1:3": [
-[
-"kfRvAma"
-],
-[
-"kfRavAma",
-"kfRavAmahE"
-]
-],
 "tinanta:kfY@05.0007:loT:2:1": [
 [
-"kfnohi"
+"kfnu"
 ],
 [
 "kfRu",
@@ -123582,7 +123637,7 @@
 ],
 "tinanta:vfY@05.0008:laG:1:1": [
 [
-"avfnoam"
+"avfnavam"
 ],
 [
 "avfRavam",
@@ -123675,36 +123730,9 @@
 "vavfze"
 ]
 ],
-"tinanta:vfY@05.0008:loT:1:1": [
-[
-"vfRoAni"
-],
-[
-"vfRavAni",
-"vfRavE"
-]
-],
-"tinanta:vfY@05.0008:loT:1:2": [
-[
-"vfRvAva"
-],
-[
-"vfRavAva",
-"vfRavAvahE"
-]
-],
-"tinanta:vfY@05.0008:loT:1:3": [
-[
-"vfRvAma"
-],
-[
-"vfRavAma",
-"vfRavAmahE"
-]
-],
 "tinanta:vfY@05.0008:loT:2:1": [
 [
-"vfnohi"
+"vfnu"
 ],
 [
 "vfRu",
@@ -123758,15 +123786,6 @@
 [
 "vfRvantu",
 "vfRvatAm"
-]
-],
-"tinanta:DuY@05.0009:laG:1:1": [
-[
-"aDunoam"
-],
-[
-"aDunavam",
-"aDunvi"
 ]
 ],
 "tinanta:DuY@05.0009:liT:1:1": [
@@ -123853,53 +123872,6 @@
 "duDuvuH"
 ]
 ],
-"tinanta:DuY@05.0009:loT:1:1": [
-[
-"DunoAni"
-],
-[
-"DunavAni",
-"DunavE"
-]
-],
-"tinanta:DuY@05.0009:loT:1:2": [
-[
-"DunvAva"
-],
-[
-"DunavAva",
-"DunavAvahE"
-]
-],
-"tinanta:DuY@05.0009:loT:1:3": [
-[
-"DunvAma"
-],
-[
-"DunavAma",
-"DunavAmahE"
-]
-],
-"tinanta:DuY@05.0009:loT:2:1": [
-[
-"Dunohi"
-],
-[
-"Dunu",
-"DunutAd",
-"DunutAt",
-"Dunuzva"
-]
-],
-"tinanta:DUY@05.0010:laG:1:1": [
-[
-"aDUnoam"
-],
-[
-"aDUnavam",
-"aDUnvi"
-]
-],
 "tinanta:DUY@05.0010:liT:1:1": [
 [
 "duDva"
@@ -123984,52 +123956,6 @@
 "duDuvuH"
 ]
 ],
-"tinanta:DUY@05.0010:loT:1:1": [
-[
-"DUnoAni"
-],
-[
-"DUnavAni",
-"DUnavE"
-]
-],
-"tinanta:DUY@05.0010:loT:1:2": [
-[
-"DUnvAva"
-],
-[
-"DUnavAva",
-"DUnavAvahE"
-]
-],
-"tinanta:DUY@05.0010:loT:1:3": [
-[
-"DUnvAma"
-],
-[
-"DUnavAma",
-"DUnavAmahE"
-]
-],
-"tinanta:DUY@05.0010:loT:2:1": [
-[
-"DUnohi"
-],
-[
-"DUnu",
-"DUnutAd",
-"DUnutAt",
-"DUnuzva"
-]
-],
-"tinanta:wudu@05.0011:laG:1:1": [
-[
-"adunoam"
-],
-[
-"adunavam"
-]
-],
 "tinanta:wudu@05.0011:liT:1:1": [
 [
 "dudva"
@@ -124104,48 +124030,6 @@
 "duduvuH"
 ]
 ],
-"tinanta:wudu@05.0011:loT:1:1": [
-[
-"dunoAni"
-],
-[
-"dunavAni"
-]
-],
-"tinanta:wudu@05.0011:loT:1:2": [
-[
-"dunvAva"
-],
-[
-"dunavAva"
-]
-],
-"tinanta:wudu@05.0011:loT:1:3": [
-[
-"dunvAma"
-],
-[
-"dunavAma"
-]
-],
-"tinanta:wudu@05.0011:loT:2:1": [
-[
-"dunohi"
-],
-[
-"dunu",
-"dunutAd",
-"dunutAt"
-]
-],
-"tinanta:hi@05.0012:laG:1:1": [
-[
-"ahinoam"
-],
-[
-"ahinavam"
-]
-],
 "tinanta:hi@05.0012:liT:1:1": [
 [
 "jihya"
@@ -124218,40 +124102,6 @@
 ],
 [
 "jiGyuH"
-]
-],
-"tinanta:hi@05.0012:loT:1:1": [
-[
-"hinoAni"
-],
-[
-"hinavAni"
-]
-],
-"tinanta:hi@05.0012:loT:1:2": [
-[
-"hinvAva"
-],
-[
-"hinavAva"
-]
-],
-"tinanta:hi@05.0012:loT:1:3": [
-[
-"hinvAma"
-],
-[
-"hinavAma"
-]
-],
-"tinanta:hi@05.0012:loT:2:1": [
-[
-"hinohi"
-],
-[
-"hinu",
-"hinutAd",
-"hinutAt"
 ]
 ],
 "tinanta:pf@05.0013:laT:1:1": [
@@ -124330,7 +124180,7 @@
 ],
 "tinanta:pf@05.0013:laG:1:1": [
 [
-"apfnoam"
+"apfnavam"
 ],
 [
 "apfRavam"
@@ -124411,33 +124261,9 @@
 "paparTa"
 ]
 ],
-"tinanta:pf@05.0013:loT:1:1": [
-[
-"pfRoAni"
-],
-[
-"pfRavAni"
-]
-],
-"tinanta:pf@05.0013:loT:1:2": [
-[
-"pfRvAva"
-],
-[
-"pfRavAva"
-]
-],
-"tinanta:pf@05.0013:loT:1:3": [
-[
-"pfRvAma"
-],
-[
-"pfRavAma"
-]
-],
 "tinanta:pf@05.0013:loT:2:1": [
 [
-"pfnohi"
+"pfnu"
 ],
 [
 "pfRu",
@@ -124563,7 +124389,7 @@
 ],
 "tinanta:spf@05.0014:laG:1:1": [
 [
-"aspfnoam"
+"aspfnavam"
 ],
 [
 "aspfRavam"
@@ -124692,33 +124518,9 @@
 "pasparuH"
 ]
 ],
-"tinanta:spf@05.0014:loT:1:1": [
-[
-"spfRoAni"
-],
-[
-"spfRavAni"
-]
-],
-"tinanta:spf@05.0014:loT:1:2": [
-[
-"spfRvAva"
-],
-[
-"spfRavAva"
-]
-],
-"tinanta:spf@05.0014:loT:1:3": [
-[
-"spfRvAma"
-],
-[
-"spfRavAma"
-]
-],
 "tinanta:spf@05.0014:loT:2:1": [
 [
-"spfnohi"
+"spfnu"
 ],
 [
 "spfRu",
@@ -124844,7 +124646,7 @@
 ],
 "tinanta:smf@05.0015:laG:1:1": [
 [
-"asmfnoam"
+"asmfnavam"
 ],
 [
 "asmfRavam"
@@ -124973,33 +124775,9 @@
 "sasmaruH"
 ]
 ],
-"tinanta:smf@05.0015:loT:1:1": [
-[
-"smfRoAni"
-],
-[
-"smfRavAni"
-]
-],
-"tinanta:smf@05.0015:loT:1:2": [
-[
-"smfRvAva"
-],
-[
-"smfRavAva"
-]
-],
-"tinanta:smf@05.0015:loT:1:3": [
-[
-"smfRvAma"
-],
-[
-"smfRavAma"
-]
-],
 "tinanta:smf@05.0015:loT:2:1": [
 [
-"smfnohi"
+"smfnu"
 ],
 [
 "smfRu",
@@ -125055,14 +124833,6 @@
 ],
 [
 "Apnuvanti"
-]
-],
-"tinanta:Apx~@05.0016:laG:1:1": [
-[
-"Apnoam"
-],
-[
-"Apnavam"
 ]
 ],
 "tinanta:Apx~@05.0016:laG:3:3": [
@@ -125145,40 +124915,6 @@
 "ApuH"
 ]
 ],
-"tinanta:Apx~@05.0016:loT:1:1": [
-[
-"ApnoAni"
-],
-[
-"ApnavAni"
-]
-],
-"tinanta:Apx~@05.0016:loT:1:2": [
-[
-"ApnvAva"
-],
-[
-"ApnavAva"
-]
-],
-"tinanta:Apx~@05.0016:loT:1:3": [
-[
-"ApnvAma"
-],
-[
-"ApnavAma"
-]
-],
-"tinanta:Apx~@05.0016:loT:2:1": [
-[
-"Apnohi"
-],
-[
-"Apnuhi",
-"ApnutAd",
-"ApnutAt"
-]
-],
 "tinanta:Apx~@05.0016:loT:3:3": [
 [
 "Apnvantu"
@@ -125193,14 +124929,6 @@
 ],
 [
 "Saknuvanti"
-]
-],
-"tinanta:Sakx~@05.0017:laG:1:1": [
-[
-"aSaknoam"
-],
-[
-"aSaknavam"
 ]
 ],
 "tinanta:Sakx~@05.0017:laG:3:3": [
@@ -125268,40 +124996,6 @@
 "SekuH"
 ]
 ],
-"tinanta:Sakx~@05.0017:loT:1:1": [
-[
-"SaknoAni"
-],
-[
-"SaknavAni"
-]
-],
-"tinanta:Sakx~@05.0017:loT:1:2": [
-[
-"SaknvAva"
-],
-[
-"SaknavAva"
-]
-],
-"tinanta:Sakx~@05.0017:loT:1:3": [
-[
-"SaknvAma"
-],
-[
-"SaknavAma"
-]
-],
-"tinanta:Sakx~@05.0017:loT:2:1": [
-[
-"Saknohi"
-],
-[
-"Saknuhi",
-"SaknutAd",
-"SaknutAt"
-]
-],
 "tinanta:Sakx~@05.0017:loT:3:3": [
 [
 "Saknvantu"
@@ -125316,14 +125010,6 @@
 ],
 [
 "rADnuvanti"
-]
-],
-"tinanta:rADa~@05.0018:laG:1:1": [
-[
-"arADnoam"
-],
-[
-"arADnavam"
 ]
 ],
 "tinanta:rADa~@05.0018:laG:3:3": [
@@ -125390,40 +125076,6 @@
 "reDuH"
 ]
 ],
-"tinanta:rADa~@05.0018:loT:1:1": [
-[
-"rADnoAni"
-],
-[
-"rADnavAni"
-]
-],
-"tinanta:rADa~@05.0018:loT:1:2": [
-[
-"rADnvAva"
-],
-[
-"rADnavAva"
-]
-],
-"tinanta:rADa~@05.0018:loT:1:3": [
-[
-"rADnvAma"
-],
-[
-"rADnavAma"
-]
-],
-"tinanta:rADa~@05.0018:loT:2:1": [
-[
-"rADnohi"
-],
-[
-"rADnuhi",
-"rADnutAd",
-"rADnutAt"
-]
-],
 "tinanta:rADa~@05.0018:loT:3:3": [
 [
 "rADnvantu"
@@ -125440,54 +125092,12 @@
 "sADnuvanti"
 ]
 ],
-"tinanta:sADa~@05.0019:laG:1:1": [
-[
-"asADnoam"
-],
-[
-"asADnavam"
-]
-],
 "tinanta:sADa~@05.0019:laG:3:3": [
 [
 "asADnvan"
 ],
 [
 "asADnuvan"
-]
-],
-"tinanta:sADa~@05.0019:loT:1:1": [
-[
-"sADnoAni"
-],
-[
-"sADnavAni"
-]
-],
-"tinanta:sADa~@05.0019:loT:1:2": [
-[
-"sADnvAva"
-],
-[
-"sADnavAva"
-]
-],
-"tinanta:sADa~@05.0019:loT:1:3": [
-[
-"sADnvAma"
-],
-[
-"sADnavAma"
-]
-],
-"tinanta:sADa~@05.0019:loT:2:1": [
-[
-"sADnohi"
-],
-[
-"sADnuhi",
-"sADnutAd",
-"sADnutAt"
 ]
 ],
 "tinanta:sADa~@05.0019:loT:3:3": [
@@ -125814,54 +125424,12 @@
 "tiknuvanti"
 ]
 ],
-"tinanta:tika~@05.0022:laG:1:1": [
-[
-"atiknoam"
-],
-[
-"atiknavam"
-]
-],
 "tinanta:tika~@05.0022:laG:3:3": [
 [
 "atiknvan"
 ],
 [
 "atiknuvan"
-]
-],
-"tinanta:tika~@05.0022:loT:1:1": [
-[
-"tiknoAni"
-],
-[
-"tiknavAni"
-]
-],
-"tinanta:tika~@05.0022:loT:1:2": [
-[
-"tiknvAva"
-],
-[
-"tiknavAva"
-]
-],
-"tinanta:tika~@05.0022:loT:1:3": [
-[
-"tiknvAma"
-],
-[
-"tiknavAma"
-]
-],
-"tinanta:tika~@05.0022:loT:2:1": [
-[
-"tiknohi"
-],
-[
-"tiknuhi",
-"tiknutAd",
-"tiknutAt"
 ]
 ],
 "tinanta:tika~@05.0022:loT:3:3": [
@@ -125880,54 +125448,12 @@
 "tignuvanti"
 ]
 ],
-"tinanta:tiga~@05.0023:laG:1:1": [
-[
-"atignoam"
-],
-[
-"atignavam"
-]
-],
 "tinanta:tiga~@05.0023:laG:3:3": [
 [
 "atignvan"
 ],
 [
 "atignuvan"
-]
-],
-"tinanta:tiga~@05.0023:loT:1:1": [
-[
-"tignoAni"
-],
-[
-"tignavAni"
-]
-],
-"tinanta:tiga~@05.0023:loT:1:2": [
-[
-"tignvAva"
-],
-[
-"tignavAva"
-]
-],
-"tinanta:tiga~@05.0023:loT:1:3": [
-[
-"tignvAma"
-],
-[
-"tignavAma"
-]
-],
-"tinanta:tiga~@05.0023:loT:2:1": [
-[
-"tignohi"
-],
-[
-"tignuhi",
-"tignutAd",
-"tignutAt"
 ]
 ],
 "tinanta:tiga~@05.0023:loT:3:3": [
@@ -126012,7 +125538,7 @@
 ],
 "tinanta:YiDfzA~@05.0025:laG:1:1": [
 [
-"aDfznoam"
+"aDfznavam"
 ],
 [
 "aDfzRavam"
@@ -126083,33 +125609,9 @@
 "aDfzRuvan"
 ]
 ],
-"tinanta:YiDfzA~@05.0025:loT:1:1": [
-[
-"DfzRoAni"
-],
-[
-"DfzRavAni"
-]
-],
-"tinanta:YiDfzA~@05.0025:loT:1:2": [
-[
-"DfzRvAva"
-],
-[
-"DfzRavAva"
-]
-],
-"tinanta:YiDfzA~@05.0025:loT:1:3": [
-[
-"DfzRvAma"
-],
-[
-"DfzRavAma"
-]
-],
 "tinanta:YiDfzA~@05.0025:loT:2:1": [
 [
-"Dfznohi"
+"Dfznuhi"
 ],
 [
 "DfzRuhi",
@@ -126233,7 +125735,7 @@
 ],
 "tinanta:danBu~@05.0026:laG:1:1": [
 [
-"adamBnoam"
+"adamBnavam"
 ],
 [
 "adaBnavam"
@@ -126306,7 +125808,7 @@
 ],
 "tinanta:danBu~@05.0026:loT:1:1": [
 [
-"damBnoAni"
+"damBnavAni"
 ],
 [
 "daBnavAni"
@@ -126314,7 +125816,7 @@
 ],
 "tinanta:danBu~@05.0026:loT:1:2": [
 [
-"damBnvAva"
+"damBnavAva"
 ],
 [
 "daBnavAva"
@@ -126322,7 +125824,7 @@
 ],
 "tinanta:danBu~@05.0026:loT:1:3": [
 [
-"damBnvAma"
+"damBnavAma"
 ],
 [
 "daBnavAma"
@@ -126330,7 +125832,7 @@
 ],
 "tinanta:danBu~@05.0026:loT:2:1": [
 [
-"damBnohi"
+"damBnuhi"
 ],
 [
 "daBnuhi",
@@ -126386,14 +125888,6 @@
 ],
 [
 "fDnuvanti"
-]
-],
-"tinanta:fDu~@05.0027:laG:1:1": [
-[
-"ArDnoam"
-],
-[
-"ArDnavam"
 ]
 ],
 "tinanta:fDu~@05.0027:laG:3:3": [
@@ -126476,40 +125970,6 @@
 "AnfDuH"
 ]
 ],
-"tinanta:fDu~@05.0027:loT:1:1": [
-[
-"fDnoAni"
-],
-[
-"fDnavAni"
-]
-],
-"tinanta:fDu~@05.0027:loT:1:2": [
-[
-"fDnvAva"
-],
-[
-"fDnavAva"
-]
-],
-"tinanta:fDu~@05.0027:loT:1:3": [
-[
-"fDnvAma"
-],
-[
-"fDnavAma"
-]
-],
-"tinanta:fDu~@05.0027:loT:2:1": [
-[
-"fDnohi"
-],
-[
-"fDnuhi",
-"fDnutAd",
-"fDnutAt"
-]
-],
 "tinanta:fDu~@05.0027:loT:3:3": [
 [
 "fDnvantu"
@@ -126526,14 +125986,6 @@
 "tfpnuvanti"
 ]
 ],
-"tinanta:tfpa~@05.0028:laG:1:1": [
-[
-"atfpnoam"
-],
-[
-"atfpnavam"
-]
-],
 "tinanta:tfpa~@05.0028:laG:3:3": [
 [
 "atfpnvan"
@@ -126544,7 +125996,7 @@
 ],
 "tinanta:tfpa~@05.0028:loT:1:1": [
 [
-"tfpRoAni"
+"tfpRavAni"
 ],
 [
 "tfpnavAni"
@@ -126552,7 +126004,7 @@
 ],
 "tinanta:tfpa~@05.0028:loT:1:2": [
 [
-"tfpRvAva"
+"tfpRavAva"
 ],
 [
 "tfpnavAva"
@@ -126560,20 +126012,10 @@
 ],
 "tinanta:tfpa~@05.0028:loT:1:3": [
 [
-"tfpRvAma"
+"tfpRavAma"
 ],
 [
 "tfpnavAma"
-]
-],
-"tinanta:tfpa~@05.0028:loT:2:1": [
-[
-"tfpnohi"
-],
-[
-"tfpnuhi",
-"tfpnutAd",
-"tfpnutAt"
 ]
 ],
 "tinanta:tfpa~@05.0028:loT:3:3": [
@@ -126590,14 +126032,6 @@
 ],
 [
 "ahnuvanti"
-]
-],
-"tinanta:aha~@05.0029:laG:1:1": [
-[
-"Ahnoam"
-],
-[
-"Ahnavam"
 ]
 ],
 "tinanta:aha~@05.0029:laG:3:3": [
@@ -126680,40 +126114,6 @@
 "AhuH"
 ]
 ],
-"tinanta:aha~@05.0029:loT:1:1": [
-[
-"ahnoAni"
-],
-[
-"ahnavAni"
-]
-],
-"tinanta:aha~@05.0029:loT:1:2": [
-[
-"ahnvAva"
-],
-[
-"ahnavAva"
-]
-],
-"tinanta:aha~@05.0029:loT:1:3": [
-[
-"ahnvAma"
-],
-[
-"ahnavAma"
-]
-],
-"tinanta:aha~@05.0029:loT:2:1": [
-[
-"ahnohi"
-],
-[
-"ahnuhi",
-"ahnutAd",
-"ahnutAt"
-]
-],
 "tinanta:aha~@05.0029:loT:3:3": [
 [
 "ahnvantu"
@@ -126728,14 +126128,6 @@
 ],
 [
 "camnuvanti"
-]
-],
-"tinanta:camu~@05.0031:laG:1:1": [
-[
-"acamnoam"
-],
-[
-"acamnavam"
 ]
 ],
 "tinanta:camu~@05.0031:laG:3:3": [
@@ -126800,40 +126192,6 @@
 ],
 [
 "cemuH"
-]
-],
-"tinanta:camu~@05.0031:loT:1:1": [
-[
-"camnoAni"
-],
-[
-"camnavAni"
-]
-],
-"tinanta:camu~@05.0031:loT:1:2": [
-[
-"camnvAva"
-],
-[
-"camnavAva"
-]
-],
-"tinanta:camu~@05.0031:loT:1:3": [
-[
-"camnvAma"
-],
-[
-"camnavAma"
-]
-],
-"tinanta:camu~@05.0031:loT:2:1": [
-[
-"camnohi"
-],
-[
-"camnuhi",
-"camnutAd",
-"camnutAt"
 ]
 ],
 "tinanta:camu~@05.0031:loT:3:3": [
@@ -126920,7 +126278,7 @@
 ],
 "tinanta:ri@05.0032:laG:1:1": [
 [
-"arinoam"
+"arinavam"
 ],
 [
 "ariRavam"
@@ -127019,33 +126377,9 @@
 "rirAya"
 ]
 ],
-"tinanta:ri@05.0032:loT:1:1": [
-[
-"riRoAni"
-],
-[
-"riRavAni"
-]
-],
-"tinanta:ri@05.0032:loT:1:2": [
-[
-"riRvAva"
-],
-[
-"riRavAva"
-]
-],
-"tinanta:ri@05.0032:loT:1:3": [
-[
-"riRvAma"
-],
-[
-"riRavAma"
-]
-],
 "tinanta:ri@05.0032:loT:2:1": [
 [
-"rinohi"
+"rinu"
 ],
 [
 "riRu",
@@ -127171,7 +126505,7 @@
 ],
 "tinanta:kzi@05.0033:laG:1:1": [
 [
-"akzinoam"
+"akzinavam"
 ],
 [
 "akziRavam"
@@ -127318,33 +126652,9 @@
 "cikziyuH"
 ]
 ],
-"tinanta:kzi@05.0033:loT:1:1": [
-[
-"kziRoAni"
-],
-[
-"kziRavAni"
-]
-],
-"tinanta:kzi@05.0033:loT:1:2": [
-[
-"kziRvAva"
-],
-[
-"kziRavAva"
-]
-],
-"tinanta:kzi@05.0033:loT:1:3": [
-[
-"kziRvAma"
-],
-[
-"kziRavAma"
-]
-],
 "tinanta:kzi@05.0033:loT:2:1": [
 [
-"kzinohi"
+"kzinu"
 ],
 [
 "kziRu",
@@ -127470,7 +126780,7 @@
 ],
 "tinanta:ciri@05.0034:laG:1:1": [
 [
-"acirinoam"
+"acirinavam"
 ],
 [
 "aciriRavam"
@@ -127634,33 +126944,9 @@
 "cirayAmbaBUvuH"
 ]
 ],
-"tinanta:ciri@05.0034:loT:1:1": [
-[
-"ciriRoAni"
-],
-[
-"ciriRavAni"
-]
-],
-"tinanta:ciri@05.0034:loT:1:2": [
-[
-"ciriRvAva"
-],
-[
-"ciriRavAva"
-]
-],
-"tinanta:ciri@05.0034:loT:1:3": [
-[
-"ciriRvAma"
-],
-[
-"ciriRavAma"
-]
-],
 "tinanta:ciri@05.0034:loT:2:1": [
 [
-"cirinohi"
+"cirinu"
 ],
 [
 "ciriRu",
@@ -127786,7 +127072,7 @@
 ],
 "tinanta:jiri@05.0035:laG:1:1": [
 [
-"ajirinoam"
+"ajirinavam"
 ],
 [
 "ajiriRavam"
@@ -127950,33 +127236,9 @@
 "jirayAmbaBUvuH"
 ]
 ],
-"tinanta:jiri@05.0035:loT:1:1": [
-[
-"jiriRoAni"
-],
-[
-"jiriRavAni"
-]
-],
-"tinanta:jiri@05.0035:loT:1:2": [
-[
-"jiriRvAva"
-],
-[
-"jiriRavAva"
-]
-],
-"tinanta:jiri@05.0035:loT:1:3": [
-[
-"jiriRvAma"
-],
-[
-"jiriRavAma"
-]
-],
 "tinanta:jiri@05.0035:loT:2:1": [
 [
-"jirinohi"
+"jirinu"
 ],
 [
 "jiriRu",
@@ -128034,54 +127296,12 @@
 "dASnuvanti"
 ]
 ],
-"tinanta:dASa~@05.0036:laG:1:1": [
-[
-"adASnoam"
-],
-[
-"adASnavam"
-]
-],
 "tinanta:dASa~@05.0036:laG:3:3": [
 [
 "adASnvan"
 ],
 [
 "adASnuvan"
-]
-],
-"tinanta:dASa~@05.0036:loT:1:1": [
-[
-"dASnoAni"
-],
-[
-"dASnavAni"
-]
-],
-"tinanta:dASa~@05.0036:loT:1:2": [
-[
-"dASnvAva"
-],
-[
-"dASnavAva"
-]
-],
-"tinanta:dASa~@05.0036:loT:1:3": [
-[
-"dASnvAma"
-],
-[
-"dASnavAma"
-]
-],
-"tinanta:dASa~@05.0036:loT:2:1": [
-[
-"dASnohi"
-],
-[
-"dASnuhi",
-"dASnutAd",
-"dASnutAt"
 ]
 ],
 "tinanta:dASa~@05.0036:loT:3:3": [
@@ -128168,7 +127388,7 @@
 ],
 "tinanta:df@05.0037:laG:1:1": [
 [
-"adfnoam"
+"adfnavam"
 ],
 [
 "adfRavam"
@@ -128249,33 +127469,9 @@
 "dadarTa"
 ]
 ],
-"tinanta:df@05.0037:loT:1:1": [
-[
-"dfRoAni"
-],
-[
-"dfRavAni"
-]
-],
-"tinanta:df@05.0037:loT:1:2": [
-[
-"dfRvAva"
-],
-[
-"dfRavAva"
-]
-],
-"tinanta:df@05.0037:loT:1:3": [
-[
-"dfRvAma"
-],
-[
-"dfRavAma"
-]
-],
 "tinanta:df@05.0037:loT:2:1": [
 [
-"dfnohi"
+"dfnu"
 ],
 [
 "dfRu",
@@ -128401,7 +127597,7 @@
 ],
 "tinanta:fkzi@05.0038:laG:1:1": [
 [
-"Arkzinoam"
+"Arkzinavam"
 ],
 [
 "ArkziRavam"
@@ -128565,33 +127761,9 @@
 "fkzayAmbaBUvuH"
 ]
 ],
-"tinanta:fkzi@05.0038:loT:1:1": [
-[
-"fkziRoAni"
-],
-[
-"fkziRavAni"
-]
-],
-"tinanta:fkzi@05.0038:loT:1:2": [
-[
-"fkziRvAva"
-],
-[
-"fkziRavAva"
-]
-],
-"tinanta:fkzi@05.0038:loT:1:3": [
-[
-"fkziRvAma"
-],
-[
-"fkziRavAma"
-]
-],
 "tinanta:fkzi@05.0038:loT:2:1": [
 [
-"fkzinohi"
+"fkzinu"
 ],
 [
 "fkziRu",
@@ -144301,43 +143473,6 @@
 "cikziRe"
 ]
 ],
-"tinanta:kziRu~@08.0004:loT:1:2": [
-[
-"kzeRvAva"
-],
-[
-"kzeRavAva",
-"kzeRavAvahE",
-"kziRavAva",
-"kziRavAvahE"
-]
-],
-"tinanta:kziRu~@08.0004:loT:1:3": [
-[
-"kzeRvAma"
-],
-[
-"kzeRavAma",
-"kzeRavAmahE",
-"kziRavAma",
-"kziRavAmahE"
-]
-],
-"tinanta:kziRu~@08.0004:loT:2:1": [
-[
-"kzeRohi"
-],
-[
-"kzeRu",
-"kzeRutAd",
-"kzeRutAt",
-"kzeRuzva",
-"kziRu",
-"kziRutAd",
-"kziRutAt",
-"kziRuzva"
-]
-],
 "tinanta:fRu~@08.0005:liT:1:1": [
 [
 "aRfRa"
@@ -144419,43 +143554,6 @@
 "AnfRuH"
 ]
 ],
-"tinanta:fRu~@08.0005:loT:1:2": [
-[
-"arRvAva"
-],
-[
-"arRavAva",
-"arRavAvahE",
-"fRavAva",
-"fRavAvahE"
-]
-],
-"tinanta:fRu~@08.0005:loT:1:3": [
-[
-"arRvAma"
-],
-[
-"arRavAma",
-"arRavAmahE",
-"fRavAma",
-"fRavAmahE"
-]
-],
-"tinanta:fRu~@08.0005:loT:2:1": [
-[
-"arRohi"
-],
-[
-"arRuhi",
-"arRutAd",
-"arRutAt",
-"arRuzva",
-"fRu",
-"fRutAd",
-"fRutAt",
-"fRuzva"
-]
-],
 "tinanta:tfRu~@08.0006:liT:1:1": [
 [
 "tatfRa"
@@ -144483,43 +143581,6 @@
 "tatfRe"
 ]
 ],
-"tinanta:tfRu~@08.0006:loT:1:2": [
-[
-"tarRvAva"
-],
-[
-"tarRavAva",
-"tarRavAvahE",
-"tfRavAva",
-"tfRavAvahE"
-]
-],
-"tinanta:tfRu~@08.0006:loT:1:3": [
-[
-"tarRvAma"
-],
-[
-"tarRavAma",
-"tarRavAmahE",
-"tfRavAma",
-"tfRavAmahE"
-]
-],
-"tinanta:tfRu~@08.0006:loT:2:1": [
-[
-"tarRohi"
-],
-[
-"tarRuhi",
-"tarRutAd",
-"tarRutAt",
-"tarRuzva",
-"tfRu",
-"tfRutAd",
-"tfRutAt",
-"tfRuzva"
-]
-],
 "tinanta:GfRu~@08.0007:liT:1:1": [
 [
 "jaGfRa"
@@ -144545,43 +143606,6 @@
 [
 "jaGarRa",
 "jaGfRe"
-]
-],
-"tinanta:GfRu~@08.0007:loT:1:2": [
-[
-"GarRvAva"
-],
-[
-"GarRavAva",
-"GarRavAvahE",
-"GfRavAva",
-"GfRavAvahE"
-]
-],
-"tinanta:GfRu~@08.0007:loT:1:3": [
-[
-"GarRvAma"
-],
-[
-"GarRavAma",
-"GarRavAmahE",
-"GfRavAma",
-"GfRavAmahE"
-]
-],
-"tinanta:GfRu~@08.0007:loT:2:1": [
-[
-"GarRohi"
-],
-[
-"GarRuhi",
-"GarRutAd",
-"GarRutAt",
-"GarRuzva",
-"GfRu",
-"GfRutAd",
-"GfRutAt",
-"GfRuzva"
 ]
 ],
 "tinanta:manu~@08.0009:laT:3:3": [
@@ -166120,6 +165144,7 @@
 "tinanta:Apx~@05.0016:lRT:3:1",
 "tinanta:Apx~@05.0016:lRT:3:2",
 "tinanta:Apx~@05.0016:lRT:3:3",
+"tinanta:Apx~@05.0016:laG:1:1",
 "tinanta:Apx~@05.0016:laG:1:2",
 "tinanta:Apx~@05.0016:laG:1:3",
 "tinanta:Apx~@05.0016:laG:2:1",
@@ -166135,6 +165160,10 @@
 "tinanta:Apx~@05.0016:laT:2:3",
 "tinanta:Apx~@05.0016:laT:3:1",
 "tinanta:Apx~@05.0016:laT:3:2",
+"tinanta:Apx~@05.0016:loT:1:1",
+"tinanta:Apx~@05.0016:loT:1:2",
+"tinanta:Apx~@05.0016:loT:1:3",
+"tinanta:Apx~@05.0016:loT:2:1",
 "tinanta:Apx~@05.0016:loT:2:2",
 "tinanta:Apx~@05.0016:loT:2:3",
 "tinanta:Apx~@05.0016:loT:3:2",
@@ -172466,6 +171495,7 @@
 "tinanta:Sakx~@05.0017:lRT:3:1",
 "tinanta:Sakx~@05.0017:lRT:3:2",
 "tinanta:Sakx~@05.0017:lRT:3:3",
+"tinanta:Sakx~@05.0017:laG:1:1",
 "tinanta:Sakx~@05.0017:laG:1:2",
 "tinanta:Sakx~@05.0017:laG:1:3",
 "tinanta:Sakx~@05.0017:laG:2:1",
@@ -172482,6 +171512,10 @@
 "tinanta:Sakx~@05.0017:laT:3:1",
 "tinanta:Sakx~@05.0017:laT:3:2",
 "tinanta:Sakx~@05.0017:liT:3:1",
+"tinanta:Sakx~@05.0017:loT:1:1",
+"tinanta:Sakx~@05.0017:loT:1:2",
+"tinanta:Sakx~@05.0017:loT:1:3",
+"tinanta:Sakx~@05.0017:loT:2:1",
 "tinanta:Sakx~@05.0017:loT:2:2",
 "tinanta:Sakx~@05.0017:loT:2:3",
 "tinanta:Sakx~@05.0017:loT:3:2",
@@ -175127,6 +174161,9 @@
 "tinanta:YiBI@03.0002:lRT:3:1",
 "tinanta:YiBI@03.0002:lRT:3:2",
 "tinanta:YiBI@03.0002:lRT:3:3",
+"tinanta:YiDfzA~@05.0025:loT:1:1",
+"tinanta:YiDfzA~@05.0025:loT:1:2",
+"tinanta:YiDfzA~@05.0025:loT:1:3",
 "tinanta:YiPalA~@01.0594:lRT:1:1",
 "tinanta:YiPalA~@01.0594:lRT:1:2",
 "tinanta:YiPalA~@01.0594:lRT:1:3",
@@ -175210,15 +174247,6 @@
 "tinanta:YitvarA~@01.0884:lRT:3:1",
 "tinanta:YitvarA~@01.0884:lRT:3:2",
 "tinanta:YitvarA~@01.0884:lRT:3:3",
-"tinanta:YitvarA~@01.0884:laG:1:1",
-"tinanta:YitvarA~@01.0884:laG:1:2",
-"tinanta:YitvarA~@01.0884:laG:1:3",
-"tinanta:YitvarA~@01.0884:laG:2:1",
-"tinanta:YitvarA~@01.0884:laG:2:2",
-"tinanta:YitvarA~@01.0884:laG:2:3",
-"tinanta:YitvarA~@01.0884:laG:3:1",
-"tinanta:YitvarA~@01.0884:laG:3:2",
-"tinanta:YitvarA~@01.0884:laG:3:3",
 "tinanta:YitvarA~@01.0884:liT:1:1",
 "tinanta:YitvarA~@01.0884:liT:1:2",
 "tinanta:YitvarA~@01.0884:liT:1:3",
@@ -175228,14 +174256,6 @@
 "tinanta:YitvarA~@01.0884:liT:3:1",
 "tinanta:YitvarA~@01.0884:liT:3:2",
 "tinanta:YitvarA~@01.0884:liT:3:3",
-"tinanta:YitvarA~@01.0884:loT:1:2",
-"tinanta:YitvarA~@01.0884:loT:1:3",
-"tinanta:YitvarA~@01.0884:loT:2:1",
-"tinanta:YitvarA~@01.0884:loT:2:2",
-"tinanta:YitvarA~@01.0884:loT:2:3",
-"tinanta:YitvarA~@01.0884:loT:3:1",
-"tinanta:YitvarA~@01.0884:loT:3:2",
-"tinanta:YitvarA~@01.0884:loT:3:3",
 "tinanta:YizvidA~@01.0845:liT:1:1",
 "tinanta:YizvidA~@01.0845:liT:1:2",
 "tinanta:YizvidA~@01.0845:liT:1:3",
@@ -175627,6 +174647,7 @@
 "tinanta:aha~@05.0029:lRT:3:1",
 "tinanta:aha~@05.0029:lRT:3:2",
 "tinanta:aha~@05.0029:lRT:3:3",
+"tinanta:aha~@05.0029:laG:1:1",
 "tinanta:aha~@05.0029:laG:1:2",
 "tinanta:aha~@05.0029:laG:1:3",
 "tinanta:aha~@05.0029:laG:2:1",
@@ -175642,6 +174663,10 @@
 "tinanta:aha~@05.0029:laT:2:3",
 "tinanta:aha~@05.0029:laT:3:1",
 "tinanta:aha~@05.0029:laT:3:2",
+"tinanta:aha~@05.0029:loT:1:1",
+"tinanta:aha~@05.0029:loT:1:2",
+"tinanta:aha~@05.0029:loT:1:3",
+"tinanta:aha~@05.0029:loT:2:1",
 "tinanta:aha~@05.0029:loT:2:2",
 "tinanta:aha~@05.0029:loT:2:3",
 "tinanta:aha~@05.0029:loT:3:2",
@@ -177760,6 +176785,7 @@
 "tinanta:camu~@05.0031:lRT:3:1",
 "tinanta:camu~@05.0031:lRT:3:2",
 "tinanta:camu~@05.0031:lRT:3:3",
+"tinanta:camu~@05.0031:laG:1:1",
 "tinanta:camu~@05.0031:laG:1:2",
 "tinanta:camu~@05.0031:laG:1:3",
 "tinanta:camu~@05.0031:laG:2:1",
@@ -177776,6 +176802,10 @@
 "tinanta:camu~@05.0031:laT:3:1",
 "tinanta:camu~@05.0031:laT:3:2",
 "tinanta:camu~@05.0031:liT:3:1",
+"tinanta:camu~@05.0031:loT:1:1",
+"tinanta:camu~@05.0031:loT:1:2",
+"tinanta:camu~@05.0031:loT:1:3",
+"tinanta:camu~@05.0031:loT:2:1",
 "tinanta:camu~@05.0031:loT:2:2",
 "tinanta:camu~@05.0031:loT:2:3",
 "tinanta:camu~@05.0031:loT:3:2",
@@ -177949,14 +176979,8 @@
 "tinanta:cara~@01.0640:lRT:3:2",
 "tinanta:cara~@01.0640:lRT:3:3",
 "tinanta:cara~@01.0640:laG:1:1",
-"tinanta:cara~@01.0640:laG:1:2",
-"tinanta:cara~@01.0640:laG:1:3",
 "tinanta:cara~@01.0640:laG:2:1",
-"tinanta:cara~@01.0640:laG:2:2",
-"tinanta:cara~@01.0640:laG:2:3",
 "tinanta:cara~@01.0640:laG:3:1",
-"tinanta:cara~@01.0640:laG:3:2",
-"tinanta:cara~@01.0640:laG:3:3",
 "tinanta:cara~@01.0640:laT:1:1",
 "tinanta:cara~@01.0640:laT:2:1",
 "tinanta:cara~@01.0640:laT:3:1",
@@ -177964,11 +176988,7 @@
 "tinanta:cara~@01.0640:loT:1:1",
 "tinanta:cara~@01.0640:loT:1:2",
 "tinanta:cara~@01.0640:loT:1:3",
-"tinanta:cara~@01.0640:loT:2:2",
-"tinanta:cara~@01.0640:loT:2:3",
 "tinanta:cara~@01.0640:loT:3:1",
-"tinanta:cara~@01.0640:loT:3:2",
-"tinanta:cara~@01.0640:loT:3:3",
 "tinanta:carba~@01.0491:lRT:1:1",
 "tinanta:carba~@01.0491:lRT:1:2",
 "tinanta:carba~@01.0491:lRT:1:3",
@@ -178480,6 +177500,9 @@
 "tinanta:ciri@05.0034:lRT:3:1",
 "tinanta:ciri@05.0034:lRT:3:2",
 "tinanta:ciri@05.0034:lRT:3:3",
+"tinanta:ciri@05.0034:loT:1:1",
+"tinanta:ciri@05.0034:loT:1:2",
+"tinanta:ciri@05.0034:loT:1:3",
 "tinanta:citI~@01.0039:liT:1:2",
 "tinanta:citI~@01.0039:liT:1:3",
 "tinanta:citI~@01.0039:liT:2:2",
@@ -178948,6 +177971,7 @@
 "tinanta:dASa~@05.0036:lRT:3:1",
 "tinanta:dASa~@05.0036:lRT:3:2",
 "tinanta:dASa~@05.0036:lRT:3:3",
+"tinanta:dASa~@05.0036:laG:1:1",
 "tinanta:dASa~@05.0036:laG:1:2",
 "tinanta:dASa~@05.0036:laG:1:3",
 "tinanta:dASa~@05.0036:laG:2:1",
@@ -178972,6 +177996,10 @@
 "tinanta:dASa~@05.0036:liT:3:1",
 "tinanta:dASa~@05.0036:liT:3:2",
 "tinanta:dASa~@05.0036:liT:3:3",
+"tinanta:dASa~@05.0036:loT:1:1",
+"tinanta:dASa~@05.0036:loT:1:2",
+"tinanta:dASa~@05.0036:loT:1:3",
+"tinanta:dASa~@05.0036:loT:2:1",
 "tinanta:dASa~@05.0036:loT:2:2",
 "tinanta:dASa~@05.0036:loT:2:3",
 "tinanta:dASa~@05.0036:loT:3:2",
@@ -179400,6 +178428,9 @@
 "tinanta:devf~@01.0573:loT:3:1",
 "tinanta:devf~@01.0573:loT:3:2",
 "tinanta:devf~@01.0573:loT:3:3",
+"tinanta:df@05.0037:loT:1:1",
+"tinanta:df@05.0037:loT:1:2",
+"tinanta:df@05.0037:loT:1:3",
 "tinanta:dfBI~@06.0048:laG:1:1",
 "tinanta:dfBI~@06.0048:laG:1:2",
 "tinanta:dfBI~@06.0048:laG:1:3",
@@ -180273,6 +179304,7 @@
 "tinanta:fCa~@06.0016:laG:3:1",
 "tinanta:fCa~@06.0016:laG:3:2",
 "tinanta:fCa~@06.0016:laG:3:3",
+"tinanta:fDu~@05.0027:laG:1:1",
 "tinanta:fDu~@05.0027:laG:1:2",
 "tinanta:fDu~@05.0027:laG:1:3",
 "tinanta:fDu~@05.0027:laG:2:1",
@@ -180288,6 +179320,10 @@
 "tinanta:fDu~@05.0027:laT:2:3",
 "tinanta:fDu~@05.0027:laT:3:1",
 "tinanta:fDu~@05.0027:laT:3:2",
+"tinanta:fDu~@05.0027:loT:1:1",
+"tinanta:fDu~@05.0027:loT:1:2",
+"tinanta:fDu~@05.0027:loT:1:3",
+"tinanta:fDu~@05.0027:loT:2:1",
 "tinanta:fDu~@05.0027:loT:2:2",
 "tinanta:fDu~@05.0027:loT:2:3",
 "tinanta:fDu~@05.0027:loT:3:2",
@@ -180422,6 +179458,9 @@
 "tinanta:fkzi@05.0038:lRT:3:1",
 "tinanta:fkzi@05.0038:lRT:3:2",
 "tinanta:fkzi@05.0038:lRT:3:3",
+"tinanta:fkzi@05.0038:loT:1:1",
+"tinanta:fkzi@05.0038:loT:1:2",
+"tinanta:fkzi@05.0038:loT:1:3",
 "tinanta:fnPa~@06.0041:lRT:1:1",
 "tinanta:fnPa~@06.0041:lRT:1:2",
 "tinanta:fnPa~@06.0041:lRT:1:3",
@@ -182952,6 +181991,7 @@
 "tinanta:hi@05.0012:lRT:3:1",
 "tinanta:hi@05.0012:lRT:3:2",
 "tinanta:hi@05.0012:lRT:3:3",
+"tinanta:hi@05.0012:laG:1:1",
 "tinanta:hi@05.0012:laG:1:2",
 "tinanta:hi@05.0012:laG:1:3",
 "tinanta:hi@05.0012:laG:2:1",
@@ -182967,6 +182007,9 @@
 "tinanta:hi@05.0012:laT:2:3",
 "tinanta:hi@05.0012:laT:3:1",
 "tinanta:hi@05.0012:laT:3:2",
+"tinanta:hi@05.0012:loT:1:1",
+"tinanta:hi@05.0012:loT:1:2",
+"tinanta:hi@05.0012:loT:1:3",
 "tinanta:hi@05.0012:loT:2:2",
 "tinanta:hi@05.0012:loT:2:3",
 "tinanta:hi@05.0012:loT:3:2",
@@ -184773,6 +183816,9 @@
 "tinanta:jiri@05.0035:lRT:3:1",
 "tinanta:jiri@05.0035:lRT:3:2",
 "tinanta:jiri@05.0035:lRT:3:3",
+"tinanta:jiri@05.0035:loT:1:1",
+"tinanta:jiri@05.0035:loT:1:2",
+"tinanta:jiri@05.0035:loT:1:3",
 "tinanta:jivi~@01.0678:lRT:1:1",
 "tinanta:jivi~@01.0678:lRT:1:2",
 "tinanta:jivi~@01.0678:lRT:1:3",
@@ -185159,14 +184205,8 @@
 "tinanta:jvara~@01.0885:lRT:3:2",
 "tinanta:jvara~@01.0885:lRT:3:3",
 "tinanta:jvara~@01.0885:laG:1:1",
-"tinanta:jvara~@01.0885:laG:1:2",
-"tinanta:jvara~@01.0885:laG:1:3",
 "tinanta:jvara~@01.0885:laG:2:1",
-"tinanta:jvara~@01.0885:laG:2:2",
-"tinanta:jvara~@01.0885:laG:2:3",
 "tinanta:jvara~@01.0885:laG:3:1",
-"tinanta:jvara~@01.0885:laG:3:2",
-"tinanta:jvara~@01.0885:laG:3:3",
 "tinanta:jvara~@01.0885:laT:1:1",
 "tinanta:jvara~@01.0885:laT:2:1",
 "tinanta:jvara~@01.0885:laT:3:1",
@@ -185181,11 +184221,7 @@
 "tinanta:jvara~@01.0885:loT:1:1",
 "tinanta:jvara~@01.0885:loT:1:2",
 "tinanta:jvara~@01.0885:loT:1:3",
-"tinanta:jvara~@01.0885:loT:2:2",
-"tinanta:jvara~@01.0885:loT:2:3",
 "tinanta:jvara~@01.0885:loT:3:1",
-"tinanta:jvara~@01.0885:loT:3:2",
-"tinanta:jvara~@01.0885:loT:3:3",
 "tinanta:jyA@09.0034:lRT:1:1",
 "tinanta:jyA@09.0034:lRT:1:2",
 "tinanta:jyA@09.0034:lRT:1:3",
@@ -187775,14 +186811,8 @@
 "tinanta:kmara~@01.0636:lRT:3:2",
 "tinanta:kmara~@01.0636:lRT:3:3",
 "tinanta:kmara~@01.0636:laG:1:1",
-"tinanta:kmara~@01.0636:laG:1:2",
-"tinanta:kmara~@01.0636:laG:1:3",
 "tinanta:kmara~@01.0636:laG:2:1",
-"tinanta:kmara~@01.0636:laG:2:2",
-"tinanta:kmara~@01.0636:laG:2:3",
 "tinanta:kmara~@01.0636:laG:3:1",
-"tinanta:kmara~@01.0636:laG:3:2",
-"tinanta:kmara~@01.0636:laG:3:3",
 "tinanta:kmara~@01.0636:laT:1:1",
 "tinanta:kmara~@01.0636:laT:2:1",
 "tinanta:kmara~@01.0636:laT:3:1",
@@ -187797,11 +186827,7 @@
 "tinanta:kmara~@01.0636:loT:1:1",
 "tinanta:kmara~@01.0636:loT:1:2",
 "tinanta:kmara~@01.0636:loT:1:3",
-"tinanta:kmara~@01.0636:loT:2:2",
-"tinanta:kmara~@01.0636:loT:2:3",
 "tinanta:kmara~@01.0636:loT:3:1",
-"tinanta:kmara~@01.0636:loT:3:2",
-"tinanta:kmara~@01.0636:loT:3:3",
 "tinanta:knUY@09.0012:lRT:2:1",
 "tinanta:knUY@09.0012:lRT:2:3",
 "tinanta:knUY@09.0012:lRT:3:1",
@@ -189507,6 +188533,9 @@
 "tinanta:kzi@05.0033:lRT:3:1",
 "tinanta:kzi@05.0033:lRT:3:2",
 "tinanta:kzi@05.0033:lRT:3:3",
+"tinanta:kzi@05.0033:loT:1:1",
+"tinanta:kzi@05.0033:loT:1:2",
+"tinanta:kzi@05.0033:loT:1:3",
 "tinanta:kzi@06.0143:lRT:1:1",
 "tinanta:kzi@06.0143:lRT:1:2",
 "tinanta:kzi@06.0143:lRT:1:3",
@@ -196209,6 +195238,9 @@
 "tinanta:pezf~@01.0700:loT:3:1",
 "tinanta:pezf~@01.0700:loT:3:2",
 "tinanta:pezf~@01.0700:loT:3:3",
+"tinanta:pf@05.0013:loT:1:1",
+"tinanta:pf@05.0013:loT:1:2",
+"tinanta:pf@05.0013:loT:1:3",
 "tinanta:pfRa~@06.0055:laG:1:1",
 "tinanta:pfRa~@06.0055:laG:1:2",
 "tinanta:pfRa~@06.0055:laG:1:3",
@@ -197300,6 +196332,7 @@
 "tinanta:rADa~@05.0018:lRT:3:1",
 "tinanta:rADa~@05.0018:lRT:3:2",
 "tinanta:rADa~@05.0018:lRT:3:3",
+"tinanta:rADa~@05.0018:laG:1:1",
 "tinanta:rADa~@05.0018:laG:1:2",
 "tinanta:rADa~@05.0018:laG:1:3",
 "tinanta:rADa~@05.0018:laG:2:1",
@@ -197317,6 +196350,10 @@
 "tinanta:rADa~@05.0018:laT:3:2",
 "tinanta:rADa~@05.0018:liT:1:1",
 "tinanta:rADa~@05.0018:liT:3:1",
+"tinanta:rADa~@05.0018:loT:1:1",
+"tinanta:rADa~@05.0018:loT:1:2",
+"tinanta:rADa~@05.0018:loT:1:3",
+"tinanta:rADa~@05.0018:loT:2:1",
 "tinanta:rADa~@05.0018:loT:2:2",
 "tinanta:rADa~@05.0018:loT:2:3",
 "tinanta:rADa~@05.0018:loT:3:2",
@@ -198693,6 +197730,9 @@
 "tinanta:ri@05.0032:lRT:3:1",
 "tinanta:ri@05.0032:lRT:3:2",
 "tinanta:ri@05.0032:lRT:3:3",
+"tinanta:ri@05.0032:loT:1:1",
+"tinanta:ri@05.0032:loT:1:2",
+"tinanta:ri@05.0032:loT:1:3",
 "tinanta:ri@06.0140:lRT:1:1",
 "tinanta:ri@06.0140:lRT:1:2",
 "tinanta:ri@06.0140:lRT:1:3",
@@ -199320,6 +198360,7 @@
 "tinanta:sADa~@05.0019:lRT:3:1",
 "tinanta:sADa~@05.0019:lRT:3:2",
 "tinanta:sADa~@05.0019:lRT:3:3",
+"tinanta:sADa~@05.0019:laG:1:1",
 "tinanta:sADa~@05.0019:laG:1:2",
 "tinanta:sADa~@05.0019:laG:1:3",
 "tinanta:sADa~@05.0019:laG:2:1",
@@ -199344,6 +198385,10 @@
 "tinanta:sADa~@05.0019:liT:3:1",
 "tinanta:sADa~@05.0019:liT:3:2",
 "tinanta:sADa~@05.0019:liT:3:3",
+"tinanta:sADa~@05.0019:loT:1:1",
+"tinanta:sADa~@05.0019:loT:1:2",
+"tinanta:sADa~@05.0019:loT:1:3",
+"tinanta:sADa~@05.0019:loT:2:1",
 "tinanta:sADa~@05.0019:loT:2:2",
 "tinanta:sADa~@05.0019:loT:2:3",
 "tinanta:sADa~@05.0019:loT:3:2",
@@ -200418,6 +199463,9 @@
 "tinanta:smIla~@01.0597:loT:3:1",
 "tinanta:smIla~@01.0597:loT:3:2",
 "tinanta:smIla~@01.0597:loT:3:3",
+"tinanta:smf@05.0015:loT:1:1",
+"tinanta:smf@05.0015:loT:1:2",
+"tinanta:smf@05.0015:loT:1:3",
 "tinanta:smiwa~@10.0057:lRT:2:1",
 "tinanta:smiwa~@10.0057:lRT:2:3",
 "tinanta:smiwa~@10.0057:lRT:3:1",
@@ -200496,6 +199544,9 @@
 "tinanta:sparDa~@01.0003:loT:3:1",
 "tinanta:sparDa~@01.0003:loT:3:2",
 "tinanta:sparDa~@01.0003:loT:3:3",
+"tinanta:spf@05.0014:loT:1:1",
+"tinanta:spf@05.0014:loT:1:2",
+"tinanta:spf@05.0014:loT:1:3",
 "tinanta:spfSa~@06.0158:laG:1:1",
 "tinanta:spfSa~@06.0158:laG:1:2",
 "tinanta:spfSa~@06.0158:laG:1:3",
@@ -202246,6 +201297,7 @@
 "tinanta:tfnhU~@06.0077:loT:3:1",
 "tinanta:tfnhU~@06.0077:loT:3:2",
 "tinanta:tfnhU~@06.0077:loT:3:3",
+"tinanta:tfpa~@05.0028:laG:1:1",
 "tinanta:tfpa~@05.0028:laG:1:2",
 "tinanta:tfpa~@05.0028:laG:1:3",
 "tinanta:tfpa~@05.0028:laG:2:1",
@@ -202261,6 +201313,7 @@
 "tinanta:tfpa~@05.0028:laT:2:3",
 "tinanta:tfpa~@05.0028:laT:3:1",
 "tinanta:tfpa~@05.0028:laT:3:2",
+"tinanta:tfpa~@05.0028:loT:2:1",
 "tinanta:tfpa~@05.0028:loT:2:2",
 "tinanta:tfpa~@05.0028:loT:2:3",
 "tinanta:tfpa~@05.0028:loT:3:2",
@@ -202290,6 +201343,7 @@
 "tinanta:tfpa~@06.0028:loT:3:1",
 "tinanta:tfpa~@06.0028:loT:3:2",
 "tinanta:tfpa~@06.0028:loT:3:3",
+"tinanta:tiga~@05.0023:laG:1:1",
 "tinanta:tiga~@05.0023:laG:1:2",
 "tinanta:tiga~@05.0023:laG:1:3",
 "tinanta:tiga~@05.0023:laG:2:1",
@@ -202311,6 +201365,10 @@
 "tinanta:tiga~@05.0023:liT:2:3",
 "tinanta:tiga~@05.0023:liT:3:2",
 "tinanta:tiga~@05.0023:liT:3:3",
+"tinanta:tiga~@05.0023:loT:1:1",
+"tinanta:tiga~@05.0023:loT:1:2",
+"tinanta:tiga~@05.0023:loT:1:3",
+"tinanta:tiga~@05.0023:loT:2:1",
 "tinanta:tiga~@05.0023:loT:2:2",
 "tinanta:tiga~@05.0023:loT:2:3",
 "tinanta:tiga~@05.0023:loT:3:2",
@@ -202322,6 +201380,7 @@
 "tinanta:tija~@10.0154:laT:2:3",
 "tinanta:tija~@10.0154:laT:3:1",
 "tinanta:tija~@10.0154:laT:3:3",
+"tinanta:tika~@05.0022:laG:1:1",
 "tinanta:tika~@05.0022:laG:1:2",
 "tinanta:tika~@05.0022:laG:1:3",
 "tinanta:tika~@05.0022:laG:2:1",
@@ -202343,6 +201402,10 @@
 "tinanta:tika~@05.0022:liT:2:3",
 "tinanta:tika~@05.0022:liT:3:2",
 "tinanta:tika~@05.0022:liT:3:3",
+"tinanta:tika~@05.0022:loT:1:1",
+"tinanta:tika~@05.0022:loT:1:2",
+"tinanta:tika~@05.0022:loT:1:3",
+"tinanta:tika~@05.0022:loT:2:1",
 "tinanta:tika~@05.0022:loT:2:2",
 "tinanta:tika~@05.0022:loT:2:3",
 "tinanta:tika~@05.0022:loT:3:2",
@@ -202914,14 +201977,8 @@
 "tinanta:tsara~@01.0635:lRT:3:2",
 "tinanta:tsara~@01.0635:lRT:3:3",
 "tinanta:tsara~@01.0635:laG:1:1",
-"tinanta:tsara~@01.0635:laG:1:2",
-"tinanta:tsara~@01.0635:laG:1:3",
 "tinanta:tsara~@01.0635:laG:2:1",
-"tinanta:tsara~@01.0635:laG:2:2",
-"tinanta:tsara~@01.0635:laG:2:3",
 "tinanta:tsara~@01.0635:laG:3:1",
-"tinanta:tsara~@01.0635:laG:3:2",
-"tinanta:tsara~@01.0635:laG:3:3",
 "tinanta:tsara~@01.0635:laT:1:1",
 "tinanta:tsara~@01.0635:laT:2:1",
 "tinanta:tsara~@01.0635:laT:3:1",
@@ -202936,11 +201993,7 @@
 "tinanta:tsara~@01.0635:loT:1:1",
 "tinanta:tsara~@01.0635:loT:1:2",
 "tinanta:tsara~@01.0635:loT:1:3",
-"tinanta:tsara~@01.0635:loT:2:2",
-"tinanta:tsara~@01.0635:loT:2:3",
 "tinanta:tsara~@01.0635:loT:3:1",
-"tinanta:tsara~@01.0635:loT:3:2",
-"tinanta:tsara~@01.0635:loT:3:3",
 "tinanta:tu@02.0029:lRT:1:1",
 "tinanta:tu@02.0029:lRT:1:2",
 "tinanta:tu@02.0029:lRT:1:3",
@@ -206833,6 +205886,7 @@
 "tinanta:wudu@05.0011:lRT:3:1",
 "tinanta:wudu@05.0011:lRT:3:2",
 "tinanta:wudu@05.0011:lRT:3:3",
+"tinanta:wudu@05.0011:laG:1:1",
 "tinanta:wudu@05.0011:laG:1:2",
 "tinanta:wudu@05.0011:laG:1:3",
 "tinanta:wudu@05.0011:laG:2:1",
@@ -206848,6 +205902,9 @@
 "tinanta:wudu@05.0011:laT:2:3",
 "tinanta:wudu@05.0011:laT:3:1",
 "tinanta:wudu@05.0011:laT:3:2",
+"tinanta:wudu@05.0011:loT:1:1",
+"tinanta:wudu@05.0011:loT:1:2",
+"tinanta:wudu@05.0011:loT:1:3",
 "tinanta:wudu@05.0011:loT:2:2",
 "tinanta:wudu@05.0011:loT:2:3",
 "tinanta:wudu@05.0011:loT:3:2",
@@ -229976,9 +229033,6 @@
 "tinanta:klada~@01.0883:loT:1:1": [
 "6.1.101"
 ],
-"tinanta:YitvarA~@01.0884:loT:1:1": [
-"6.1.101"
-],
 "tinanta:jvara~@01.0885:liT:1:1": [
 "7.2.116"
 ],
@@ -231755,6 +230809,11 @@
 "8.3.24",
 "8.4.58"
 ],
+"tinanta:zuY@05.0001:laG:1:1": [
+"3.4.101",
+"6.1.78",
+"7.3.84"
+],
 "tinanta:zuY@05.0001:laG:1:2": [
 "3.4.99"
 ],
@@ -231804,6 +230863,19 @@
 "tinanta:zuY@05.0001:lRT:3:2": [
 "8.2.66",
 "8.3.15"
+],
+"tinanta:zuY@05.0001:loT:1:1": [
+"3.4.89"
+],
+"tinanta:zuY@05.0001:loT:1:2": [
+"3.4.99"
+],
+"tinanta:zuY@05.0001:loT:1:3": [
+"3.4.99"
+],
+"tinanta:zuY@05.0001:loT:2:1": [
+"3.4.87",
+"6.4.106"
 ],
 "tinanta:zuY@05.0001:loT:2:2": [
 "3.4.101"
@@ -232091,15 +231163,41 @@
 "3.4.101",
 "6.1.78"
 ],
+"tinanta:qukfY@08.0010:laG:1:2": [
+"1.1.51",
+"3.4.99"
+],
+"tinanta:qukfY@08.0010:laG:1:3": [
+"1.1.51",
+"3.4.99"
+],
 "tinanta:qukfY@08.0010:laG:2:1": [
 "1.1.51",
 "3.4.100"
+],
+"tinanta:qukfY@08.0010:laG:2:2": [
+"1.1.51",
+"3.4.101"
+],
+"tinanta:qukfY@08.0010:laG:2:3": [
+"1.1.51",
+"3.4.101"
 ],
 "tinanta:qukfY@08.0010:laG:3:1": [
 "1.1.51",
 "3.4.100",
 "8.2.39",
 "8.4.56"
+],
+"tinanta:qukfY@08.0010:laG:3:2": [
+"1.1.51",
+"3.4.101"
+],
+"tinanta:qukfY@08.0010:laG:3:3": [
+"1.1.51",
+"3.4.100",
+"7.1.3",
+"8.2.23"
 ],
 "tinanta:qukfY@08.0010:liT:1:1": [
 "1.1.51",
@@ -232202,9 +231300,41 @@
 "3.4.89",
 "8.4.2"
 ],
+"tinanta:qukfY@08.0010:loT:1:2": [
+"1.1.51",
+"3.4.99"
+],
+"tinanta:qukfY@08.0010:loT:1:3": [
+"1.1.51",
+"3.4.99"
+],
+"tinanta:qukfY@08.0010:loT:2:1": [
+"1.1.51",
+"3.4.87",
+"6.4.106"
+],
+"tinanta:qukfY@08.0010:loT:2:2": [
+"1.1.51",
+"3.4.101"
+],
+"tinanta:qukfY@08.0010:loT:2:3": [
+"1.1.51",
+"3.4.101"
+],
 "tinanta:qukfY@08.0010:loT:3:1": [
 "1.1.51",
 "3.4.86"
+],
+"tinanta:qukfY@08.0010:loT:3:2": [
+"1.1.51",
+"3.4.101"
+],
+"tinanta:qukfY@08.0010:loT:3:3": [
+"1.1.51",
+"3.4.86",
+"7.1.3",
+"8.3.24",
+"8.4.58"
 ],
 "tinanta:tanu~@08.0001:laT:1:1": [
 "7.3.84"
@@ -232327,6 +231457,16 @@
 ],
 "tinanta:tanu~@08.0001:loT:1:1": [
 "3.4.89"
+],
+"tinanta:tanu~@08.0001:loT:1:2": [
+"3.4.99"
+],
+"tinanta:tanu~@08.0001:loT:1:3": [
+"3.4.99"
+],
+"tinanta:tanu~@08.0001:loT:2:1": [
+"3.4.87",
+"6.4.106"
 ],
 "tinanta:tanu~@08.0001:loT:2:2": [
 "3.4.101"
@@ -232469,6 +231609,16 @@
 "tinanta:sanu~@08.0002:loT:1:1": [
 "3.4.89"
 ],
+"tinanta:sanu~@08.0002:loT:1:2": [
+"3.4.99"
+],
+"tinanta:sanu~@08.0002:loT:1:3": [
+"3.4.99"
+],
+"tinanta:sanu~@08.0002:loT:2:1": [
+"3.4.87",
+"6.4.106"
+],
 "tinanta:sanu~@08.0002:loT:2:2": [
 "3.4.101"
 ],
@@ -232605,6 +231755,16 @@
 "tinanta:kzaRu~@08.0003:loT:1:1": [
 "3.4.89"
 ],
+"tinanta:kzaRu~@08.0003:loT:1:2": [
+"3.4.99"
+],
+"tinanta:kzaRu~@08.0003:loT:1:3": [
+"3.4.99"
+],
+"tinanta:kzaRu~@08.0003:loT:2:1": [
+"3.4.87",
+"6.4.106"
+],
 "tinanta:kzaRu~@08.0003:loT:2:2": [
 "3.4.101"
 ],
@@ -232718,6 +231878,16 @@
 ],
 "tinanta:vanu~@08.0008:loT:1:1": [
 "3.4.89"
+],
+"tinanta:vanu~@08.0008:loT:1:2": [
+"3.4.99"
+],
+"tinanta:vanu~@08.0008:loT:1:3": [
+"3.4.99"
+],
+"tinanta:vanu~@08.0008:loT:2:1": [
+"3.4.87",
+"6.4.106"
 ],
 "tinanta:vanu~@08.0008:loT:2:2": [
 "3.4.101"
@@ -249854,6 +249024,11 @@
 "8.3.24",
 "8.4.58"
 ],
+"tinanta:ziY@05.0002:laG:1:1": [
+"3.4.101",
+"6.1.78",
+"7.3.84"
+],
 "tinanta:ziY@05.0002:laG:1:2": [
 "3.4.99"
 ],
@@ -249934,6 +249109,19 @@
 "8.2.66",
 "8.3.15"
 ],
+"tinanta:ziY@05.0002:loT:1:1": [
+"3.4.89"
+],
+"tinanta:ziY@05.0002:loT:1:2": [
+"3.4.99"
+],
+"tinanta:ziY@05.0002:loT:1:3": [
+"3.4.99"
+],
+"tinanta:ziY@05.0002:loT:2:1": [
+"3.4.87",
+"6.4.106"
+],
 "tinanta:ziY@05.0002:loT:2:2": [
 "3.4.101"
 ],
@@ -249984,6 +249172,11 @@
 "7.1.3",
 "8.3.24",
 "8.4.58"
+],
+"tinanta:SiY@05.0003:laG:1:1": [
+"3.4.101",
+"6.1.78",
+"7.3.84"
 ],
 "tinanta:SiY@05.0003:laG:1:2": [
 "3.4.99"
@@ -250065,6 +249258,19 @@
 "8.2.66",
 "8.3.15"
 ],
+"tinanta:SiY@05.0003:loT:1:1": [
+"3.4.89"
+],
+"tinanta:SiY@05.0003:loT:1:2": [
+"3.4.99"
+],
+"tinanta:SiY@05.0003:loT:1:3": [
+"3.4.99"
+],
+"tinanta:SiY@05.0003:loT:2:1": [
+"3.4.87",
+"6.4.106"
+],
 "tinanta:SiY@05.0003:loT:2:2": [
 "3.4.101"
 ],
@@ -250115,6 +249321,11 @@
 "7.1.3",
 "8.3.24",
 "8.4.58"
+],
+"tinanta:qumiY@05.0004:laG:1:1": [
+"3.4.101",
+"6.1.78",
+"7.3.84"
 ],
 "tinanta:qumiY@05.0004:laG:1:2": [
 "3.4.99"
@@ -250177,6 +249388,19 @@
 "8.2.66",
 "8.3.15"
 ],
+"tinanta:qumiY@05.0004:loT:1:1": [
+"3.4.89"
+],
+"tinanta:qumiY@05.0004:loT:1:2": [
+"3.4.99"
+],
+"tinanta:qumiY@05.0004:loT:1:3": [
+"3.4.99"
+],
+"tinanta:qumiY@05.0004:loT:2:1": [
+"3.4.87",
+"6.4.106"
+],
 "tinanta:qumiY@05.0004:loT:2:2": [
 "3.4.101"
 ],
@@ -250227,6 +249451,11 @@
 "7.1.3",
 "8.3.24",
 "8.4.58"
+],
+"tinanta:ciY@05.0005:laG:1:1": [
+"3.4.101",
+"6.1.78",
+"7.3.84"
 ],
 "tinanta:ciY@05.0005:laG:1:2": [
 "3.4.99"
@@ -250308,6 +249537,19 @@
 "8.2.66",
 "8.3.15"
 ],
+"tinanta:ciY@05.0005:loT:1:1": [
+"3.4.89"
+],
+"tinanta:ciY@05.0005:loT:1:2": [
+"3.4.99"
+],
+"tinanta:ciY@05.0005:loT:1:3": [
+"3.4.99"
+],
+"tinanta:ciY@05.0005:loT:2:1": [
+"3.4.87",
+"6.4.106"
+],
 "tinanta:ciY@05.0005:loT:2:2": [
 "3.4.101"
 ],
@@ -250388,6 +249630,15 @@
 "tinanta:stfY@05.0006:lRT:3:3": [
 "1.1.51",
 "7.2.35"
+],
+"tinanta:stfY@05.0006:loT:1:1": [
+"3.4.89"
+],
+"tinanta:stfY@05.0006:loT:1:2": [
+"3.4.99"
+],
+"tinanta:stfY@05.0006:loT:1:3": [
+"3.4.99"
 ],
 "tinanta:kfY@05.0007:liT:1:1": [
 "1.1.51",
@@ -250485,6 +249736,15 @@
 "1.1.51",
 "7.2.35"
 ],
+"tinanta:kfY@05.0007:loT:1:1": [
+"3.4.89"
+],
+"tinanta:kfY@05.0007:loT:1:2": [
+"3.4.99"
+],
+"tinanta:kfY@05.0007:loT:1:3": [
+"3.4.99"
+],
 "tinanta:vfY@05.0008:liT:1:1": [
 "1.1.51",
 "3.4.82",
@@ -250575,6 +249835,15 @@
 "1.1.51",
 "7.2.35"
 ],
+"tinanta:vfY@05.0008:loT:1:1": [
+"3.4.89"
+],
+"tinanta:vfY@05.0008:loT:1:2": [
+"3.4.99"
+],
+"tinanta:vfY@05.0008:loT:1:3": [
+"3.4.99"
+],
 "tinanta:DuY@05.0009:laT:1:1": [
 "7.3.84"
 ],
@@ -250605,6 +249874,11 @@
 "7.1.3",
 "8.3.24",
 "8.4.58"
+],
+"tinanta:DuY@05.0009:laG:1:1": [
+"3.4.101",
+"6.1.78",
+"7.3.84"
 ],
 "tinanta:DuY@05.0009:laG:1:2": [
 "3.4.99"
@@ -250656,6 +249930,19 @@
 "8.2.66",
 "8.3.15"
 ],
+"tinanta:DuY@05.0009:loT:1:1": [
+"3.4.89"
+],
+"tinanta:DuY@05.0009:loT:1:2": [
+"3.4.99"
+],
+"tinanta:DuY@05.0009:loT:1:3": [
+"3.4.99"
+],
+"tinanta:DuY@05.0009:loT:2:1": [
+"3.4.87",
+"6.4.106"
+],
 "tinanta:DuY@05.0009:loT:2:2": [
 "3.4.101"
 ],
@@ -250706,6 +249993,11 @@
 "7.1.3",
 "8.3.24",
 "8.4.58"
+],
+"tinanta:DUY@05.0010:laG:1:1": [
+"3.4.101",
+"6.1.78",
+"7.3.84"
 ],
 "tinanta:DUY@05.0010:laG:1:2": [
 "3.4.99"
@@ -250783,6 +250075,19 @@
 "6.1.78",
 "7.2.35"
 ],
+"tinanta:DUY@05.0010:loT:1:1": [
+"3.4.89"
+],
+"tinanta:DUY@05.0010:loT:1:2": [
+"3.4.99"
+],
+"tinanta:DUY@05.0010:loT:1:3": [
+"3.4.99"
+],
+"tinanta:DUY@05.0010:loT:2:1": [
+"3.4.87",
+"6.4.106"
+],
 "tinanta:DUY@05.0010:loT:2:2": [
 "3.4.101"
 ],
@@ -250809,6 +250114,9 @@
 "tinanta:wudu@05.0011:laG:3:3": [
 "6.1.77"
 ],
+"tinanta:wudu@05.0011:loT:2:1": [
+"6.4.106"
+],
 "tinanta:wudu@05.0011:loT:3:1": [
 "7.3.84"
 ],
@@ -250820,6 +250128,9 @@
 ],
 "tinanta:hi@05.0012:laG:3:3": [
 "6.1.77"
+],
+"tinanta:hi@05.0012:loT:2:1": [
+"6.4.106"
 ],
 "tinanta:hi@05.0012:loT:3:1": [
 "7.3.84"
@@ -259138,6 +258449,17 @@
 "tinanta:kziRu~@08.0004:loT:1:1": [
 "3.4.89"
 ],
+"tinanta:kziRu~@08.0004:loT:1:2": [
+"3.4.99"
+],
+"tinanta:kziRu~@08.0004:loT:1:3": [
+"3.4.99"
+],
+"tinanta:kziRu~@08.0004:loT:2:1": [
+"3.4.87",
+"6.4.106",
+"7.3.84"
+],
 "tinanta:kziRu~@08.0004:loT:2:2": [
 "3.4.101",
 "7.3.84"
@@ -259306,6 +258628,19 @@
 "tinanta:fRu~@08.0005:loT:1:1": [
 "1.1.51",
 "3.4.89"
+],
+"tinanta:fRu~@08.0005:loT:1:2": [
+"1.1.51",
+"3.4.99"
+],
+"tinanta:fRu~@08.0005:loT:1:3": [
+"1.1.51",
+"3.4.99"
+],
+"tinanta:fRu~@08.0005:loT:2:1": [
+"1.1.51",
+"3.4.87",
+"7.3.84"
 ],
 "tinanta:fRu~@08.0005:loT:2:2": [
 "1.1.51",
@@ -259511,6 +258846,19 @@
 "1.1.51",
 "3.4.89"
 ],
+"tinanta:tfRu~@08.0006:loT:1:2": [
+"1.1.51",
+"3.4.99"
+],
+"tinanta:tfRu~@08.0006:loT:1:3": [
+"1.1.51",
+"3.4.99"
+],
+"tinanta:tfRu~@08.0006:loT:2:1": [
+"1.1.51",
+"3.4.87",
+"7.3.84"
+],
 "tinanta:tfRu~@08.0006:loT:2:2": [
 "1.1.51",
 "3.4.101",
@@ -259714,6 +259062,19 @@
 "tinanta:GfRu~@08.0007:loT:1:1": [
 "1.1.51",
 "3.4.89"
+],
+"tinanta:GfRu~@08.0007:loT:1:2": [
+"1.1.51",
+"3.4.99"
+],
+"tinanta:GfRu~@08.0007:loT:1:3": [
+"1.1.51",
+"3.4.99"
+],
+"tinanta:GfRu~@08.0007:loT:2:1": [
+"1.1.51",
+"3.4.87",
+"7.3.84"
 ],
 "tinanta:GfRu~@08.0007:loT:2:2": [
 "1.1.51",

@@ -58,6 +58,12 @@ def _find(state: State) -> int | None:
             continue
         if _is_pit_upadesha(up):
             continue
+        # 3.4.92 आडुत्तमस्य पिच्च: the loṭ uttama endings are pit (सुनवाव, करवाम)
+        if ((t.meta.get("source_lakara_upadesha") or "").strip() == "loT"
+                and up in {"mip", "vas", "mas", "ni", "va", "ma"}):
+            continue
+        if t.meta.get("is_apit") is False:
+            continue
         if "kngiti" in t.tags:
             continue
         return i

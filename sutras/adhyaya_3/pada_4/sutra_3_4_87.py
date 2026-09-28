@@ -40,6 +40,7 @@ def act(state: State) -> State:
         return state
     t = state.terms[i]
     t.meta.setdefault("is_apit", True)
+    t.tags.add("kngiti")          # apit sārvadhātuka → ṅit (1.2.4): कुरु, सुनु
     adesha_substitute_varnas(t, "hi", state, sutra_id="3.4.87")
     t.tags.add("tin_adesha_3_4_78")
     t.meta["P031_3_4_87_hi_done"] = True

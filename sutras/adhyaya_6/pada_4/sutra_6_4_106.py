@@ -15,21 +15,45 @@ from engine.krt_eligibility import samhita_gate_eligible
 _GATE_KEY: str = "6_4_106_utaSca_106"
 
 
+_HAL = frozenset("kKgGNcCjJYwWqQRtTdDnpPbBmyrlvSzsh")
+
+
+def _find(state: State) -> int | None:
+    """उतश्च प्रत्ययादसंयोगपूर्वात् (हेः, 6.4.105): हि drops after the u that ends a
+    pratyaya (the vikaraṇa u / nu), unless a saṃyoga precedes that u —
+    सुनु, तनु, कुरु; but आप्नुहि."""
+    for i, t in enumerate(state.terms):
+        if "tin_adesha_3_4_78" not in t.tags or "".join(v.slp1 for v in t.varnas) != "hi":
+            continue
+        prev_i = next((k for k in range(i - 1, -1, -1) if state.terms[k].varnas), None)
+        if prev_i is None:
+            return None
+        prev = state.terms[prev_i]
+        if "vikarana" not in prev.tags or prev.varnas[-1].slp1 != "u":
+            return None
+        flat = [v.slp1 for u in state.terms[:prev_i + 1] for v in u.varnas]
+        if len(flat) >= 3 and flat[-2] in _HAL and flat[-3] in _HAL:
+            return None                               # asaṃyogapūrvāt
+        return i
+    return None
+
+
 def cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.4.106", gate_key=_GATE_KEY)
+    return _find(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.4.106"
+    i = _find(state)
+    if i is None:
+        return state
+    state.terms[i].varnas = []                          # लोपः
+    state.terms[i].meta["6_4_106_hi_lopa"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "6.4.106",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "utaSca pratyayAdasaMyogapUrvAt",
     text_dev              = "उतश्च प्रत्ययादसंयोगपूर्वात्",
     padaccheda_dev        = "उतः च प्रत्ययात् अ-संयोग-पूर्वात्",

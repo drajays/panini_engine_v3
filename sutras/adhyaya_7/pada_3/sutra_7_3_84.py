@@ -133,8 +133,8 @@ def _tanadi_vikarana_ik_eligible(state: State, di: int) -> bool:
     if not _sarvadhatuka_or_ardhadhatuka_following_dhatu(state, di + 1):
         return False
     for j in range(di + 2, len(state.terms)):
-        if "kngiti" in state.terms[j].tags:
-            return False
+        if "kngiti" in state.terms[j].tags or state.terms[j].meta.get("is_apit"):
+            return False          # kṅit, or हि (3.4.87 सेर्ह्यपिच्च: apit → ṅit)
     return True
 
 
@@ -162,8 +162,8 @@ def _vikarana_ik_eligible(state: State, di: int) -> bool:
     # For tiP (pit, strong): 1.2.4 does NOT add kngiti → second 7.3.84 fires → u→o (karoti)
     # For taS (apit, weak): 1.2.4 adds kngiti → blocked → 6.4.110 fires → a→u (kurutaḥ)
     for j in range(di + 2, len(state.terms)):
-        if "kngiti" in state.terms[j].tags:
-            return False
+        if "kngiti" in state.terms[j].tags or state.terms[j].meta.get("is_apit"):
+            return False          # kṅit, or हि (3.4.87 सेर्ह्यपिच्च: apit → ṅit)
     return _last_ik_index(vik) is not None
 
 
@@ -224,7 +224,11 @@ def _ngit_vikarana_own_guna(state: State) -> int | None:
     if tin is None:
         return None
     up = (tin.meta.get("upadesha_slp1") or "").strip()
-    if not (up.endswith(("p", "P")) or tin.meta.get("pit")):
+    if tin.meta.get("is_apit"):                  # 3.4.87 सेर्ह्यपिच्च: हि is apit
+        return None
+    loT_uttama = ((tin.meta.get("source_lakara_upadesha") or "").strip() == "loT"
+                  and up in {"mip", "vas", "mas", "ni", "va", "ma"})   # 3.4.92 आडुत्तमस्य पिच्च
+    if not (up.endswith(("p", "P")) or tin.meta.get("pit") or loT_uttama):
         return None
     return di if _vikarana_ik_eligible(state, di) else None
 

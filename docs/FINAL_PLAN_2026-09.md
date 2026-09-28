@@ -211,9 +211,11 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
   Derivable 84,858, refused 9,075, verified 73,736.
 
 ## Remaining work queue (in order)
-1. **loṭ/laṅ/liṅ for u-vikaraṇa gaṇas** (5, 8): हि ṅit + 6.4.106 लोप (सुनु,
-   तनु); 3.4.92 uttama pit (सुनवाव); ayādi before āṭ/am (सुनवानि, असुनवम्);
-   liṅ 2/1 s and 1/1 yām.
+1. ✅ **loṭ/laṅ/liṅ for u-vikaraṇa gaṇas** (2026-09-29): 6.4.106 real (was a
+   stub); 3.4.87 at the tiṅ stage, हि apit → ṅit; 1.2.4 honours 3.4.92's pit
+   for loṭ uttama; 6.1.78 sees an ec-final vikaraṇa (1.4.13 aṅga); 6.1.66's
+   āśīr branch no longer eats vidhiliṅ's only s; liṅ savarṇa-dīrgha; 6.4.110/108
+   in loṭ and laṅ; 8.2.79 by upadeśa. loṭ 9/9 in gaṇas 1/4/5/6/8.
 2. **ṇatva** (8.4.1/8.4.2) in the universal Tripāḍī — needs its vyavāya and
    pratiṣedha conditions stated exactly first (स्तृणोति, क्रीणाति).
 3. **gaṇa 9 (śnā)**: 3.1.81 general, 6.4.112/113 (क्रीणन्ति, क्रीणीतः).

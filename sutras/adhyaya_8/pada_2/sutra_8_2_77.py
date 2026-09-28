@@ -24,7 +24,10 @@ def _find(state: State):
     if not state.tripadi_zone or len(state.terms) != 1:
         return None
     vs = state.terms[0].varnas
-    if _dhatu_flat(vs) in _NA_BHA_KUR_CHUR:
+    # 8.2.79 न भकुर्छुराम्: कुर् (कृ, 6.4.110) and छुर् — by the dhātu's upadeśa,
+    # since the pada may begin with the aṭ (अकुर्वन्)
+    up = (state.terms[0].meta.get("dhatu_upadesha") or "").strip()
+    if _dhatu_flat(vs) in _NA_BHA_KUR_CHUR or up in {"qukfY", "kfY", "Cura~"}:
         return None
     for i in range(len(vs) - 2):
         a, rv, nxt = vs[i], vs[i + 1], vs[i + 2]
