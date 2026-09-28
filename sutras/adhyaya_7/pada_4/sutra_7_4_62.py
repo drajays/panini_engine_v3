@@ -66,8 +66,8 @@ def _find(state: State):
             continue
         if not t.varnas:
             continue
-        # Initial guttural **g**/**G** in abhyāsa → palatal **j** (7.4.62 kuhoścuḥ).
-        if t.varnas[0].slp1 in {"g", "G"}:
+        # कुहोश्चुः: an abhyāsa-initial ku-varga or ह → its cu-varga counterpart.
+        if t.varnas[0].slp1 in _KU_H_TO_CU:
             return ti
     return None
 
@@ -113,9 +113,15 @@ def act(state: State) -> State:
     if ti is None:
         return state
     t = state.terms[ti]
-    t.varnas[0] = mk("j")
+    # by sthāna/prayatna (1.1.50): k→c kh→ch g→j gh→jh ṅ→ñ h→jh; 8.4.54
+    # (अभ्यासे चर्च) then de-aspirates in the abhyāsa: जहार, जघान.
+    ghas = _find_lit_ghas_abhyasa(state) is not None   # legacy घस् recipe: j directly
+    t.varnas[0] = mk("j" if ghas else _KU_H_TO_CU.get(t.varnas[0].slp1, "j"))
     t.meta["7_4_62_done"] = True
     return state
+
+
+_KU_H_TO_CU = {"k": "c", "K": "C", "g": "j", "G": "J", "N": "Y", "h": "J"}
 
 
 SUTRA = SutraRecord(

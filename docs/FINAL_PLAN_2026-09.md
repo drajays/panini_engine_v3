@@ -178,7 +178,18 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
   general (sic's s tagged at 3.1.44; in the universal Tripāḍī); 1.1.51 after
   sici-vṛddhi; 6.1.78 after vṛddhi+iṭ; ṣatva after r/l (iṆ). अनैषीत्,
   अपाक्षीत्/अपाक्ताम्, अहार्षीत्/अहार्ष्टाम्, अलावीत्.
-- **Next**: ā-final sic-luk 3pl (3.4.110: अस्थुः); 7.3.78 पिबति/तिष्ठति.
+- ✅ **tudādi** (4.7k cells): second 1.2.4 pass after śa (apit → ṅit →
+  1.1.5 blocks guṇa: पुरति, कृषति) + 7.4.28 before śa.
+- ✅ **liṭ abhyāsa**: 7.4.60/61 śar = श ष स only and only before a khay
+  (शश्रङ्के, जह्राग); 7.4.62 कुहोश्चुः general (ku-varga + ह → cu; जहार) and
+  wired into the liṭ spines; 7.4.59 ec → i/u (1.1.48: तितेपे). The चकार test
+  now credits 7.4.62, not 8.4.54, for क → च.
+- ✅ **8.2.77 हलि च / 8.2.78 उपधायां च** were stubs; now real (dhātu varṇas
+  tagged at the pada merge; 8.2.79 कुर्/छुर् excepted): दीव्यति (tracker #15
+  closed), मूर्वति, ऊर्दते.
+- Verified 51,422 → **55,698**.
+- **Next**: 6.4.98 गमहन… (जग्मतुः), 7.2.63 (जहर्थ), ā-final sic-luk 3pl
+  (3.4.110: अस्थुः), 7.3.78 पिबति/तिष्ठति, curādi ṇic.
 - **Guard**: `tests/constitutional/test_engine_is_rule_based.py` — the rule
   path may never import Vidyut, bench/, the verified list or practice/lab.
 - **curādi / ṇic (3.1.25)** — gaṇa 10 is the largest remaining family
@@ -222,8 +233,8 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | Metric | Now | Target |
 |---|---|---|
 | Sūtras with LSK page | 1,895 | 1,900 |
-| forms.db cells verified vs Vidyut (form) | 51,422 / 77,317 (67 %) — stricter oracle | 90 % |
-| … of those, sūtra path also agrees | 35,232 | all verified |
+| forms.db cells verified vs Vidyut (form) | 55,698 / 77,317 (72 %) | 90 % |
+| … of those, sūtra path also agrees | 40,241 | all verified |
 | Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
 | Gītā tagged-word coverage | 9.1 % | 50 % → 80 % |
 | LSK prakriyā order agreement | — | measured per part, rising |

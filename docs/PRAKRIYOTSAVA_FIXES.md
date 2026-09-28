@@ -20,7 +20,7 @@ Still open, next-highest-leverage first:
 - **#16 second half** (कृ विधिलिङ् — कुर्यात्) — गुण-block landed; needs a
   उ↔ऋ साम्प्रसारण-shaped transposition with zero existing implementation
   anywhere in the repo. Needs the real sūtra identified from source first.
-- **#15 second half** (दिव् — दीव्यति) — गुण-block landed; needs a दीर्घ
+- ~~**#15 second half** (दिव् — दीव्यति)~~ **FIXED 2026-09-28** by real 8.2.77 हलि च (branch lsk-practice). — गुण-block landed; needs a दीर्घ
   (इ→ई) mechanism, sūtra not yet identified.
 - **#9** (उन्नयते) — two gaps, both diagnosed: 8.4.45 (यरोऽनुनासिके...) is
   a pure stub needing real general implementation (careful — other

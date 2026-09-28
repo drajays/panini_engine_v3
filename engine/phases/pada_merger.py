@@ -68,6 +68,9 @@ def pada_merge(state: State) -> None:
     form_before = state.flat_slp1()
     all_varnas: List = []
     for t in terms:
+        if "dhatu" in t.tags and "abhyasa" not in t.tags:
+            for v in t.varnas:           # 8.2.76–79 need "the dhātu's r/v" after the merge
+                v.tags.add("dhatu_v")
         all_varnas.extend(t.varnas)
 
     # ── Build merged Term ─────────────────────────────────────────────────────

@@ -32,7 +32,8 @@ from phonology.varna import Varna
 
 # SLP1 sets used by the halādi-trim helper
 _AC  = frozenset("aAiIuUeEoOfFxX")   # AC pratyāhāra (all vowels)
-_SAR = frozenset("SzshLr")            # śar consonants (ś=S ṣ=z s h ḻ=L r)
+_SAR = frozenset("Szs")               # śar = श ष स (the pratyāhāra; not ह/र)
+_KHAY = frozenset("kKcCwWtTpP")        # khay: voiceless stops
 
 
 def _haladi_trim(varnas: list[Varna]) -> list[Varna]:
@@ -62,8 +63,10 @@ def _haladi_trim(varnas: list[Varna]) -> list[Varna]:
     if len(onset) == 1:
         return [onset[0], vowel] # exactly one onset consonant — keep as is
     # Multiple onset consonants: apply 7.4.61 if first is śar
-    if onset[0].slp1 in _SAR:
-        onset = onset[1:]        # drop the leading śar consonant
+    # 7.4.61 शर्पूर्वाः खयः: only a śar *followed by a khay* yields (स्था → तस्थौ,
+    # श्च्युत् → चुश्च्योत); श्र keeps श (शश्रङ्के), ह्र keeps ह (जह्राग).
+    if onset[0].slp1 in _SAR and onset[1].slp1 in _KHAY:
+        onset = onset[1:]
     return [onset[0], vowel]     # keep first remaining consonant + vowel
 
 

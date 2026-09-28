@@ -331,6 +331,12 @@ def _apply_vikarana(state: State, gana: int) -> State:
         state = apply_rule("3.1.77", state)
         state = apply_rule("3.4.113", state)
         state = P00_lashakvataddhite_it_lopa_chain(state)
+        # śa is apit, so 1.2.4 सार्वधातुकमपित् makes it ṅit and 1.1.5 blocks
+        # guṇa: तुदति, पुरति, कृषति — not *तोदति. Same second 1.2.4 pass as śyan.
+        state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
+        state = apply_rule("1.2.4", state)
+        # 7.4.28 रिङ् शयग्लिङ्क्षु: ṛ-final aṅga before śa (मृ → म्रियते)
+        state = apply_rule("7.4.28", state)
         return state
 
     if gana == 8:
@@ -606,6 +612,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("6.1.5", state)
         # 7.4.60 halādiḥ śeṣaḥ — trim CVC abhyāsa to CV (e.g. paW → pa)
         state = apply_rule("7.4.60", state)
+        state = apply_rule("7.4.62", state)   # कुहोश्चुः (जहार, जघ्रौ)
         # 6.4.88 vuk (abhyāsa now present → liṭ context confirmed)
         state = apply_rule("6.4.88", state)
         # IT on vuk (u and k are it-marked)
@@ -627,6 +634,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("6.1.5", state)
         # 7.4.60 halādiḥ śeṣaḥ — trim CVC abhyāsa to CV (e.g. paW → pa)
         state = apply_rule("7.4.60", state)
+        state = apply_rule("7.4.62", state)   # कुहोश्चुः (जहार, जघ्रौ)
         if lit_adesha == "Ral":
             # liṭ strong: guṇa first (IK-upadha: cit→cet, kṛ ṛ→a+rapara_pending)
             state.meta["liT_strong_recipe"] = True
@@ -3424,6 +3432,7 @@ def _derive_karmani_lit(state: State, purusha: int, vacana: int) -> State:
         state.meta["sandhi_6_1_5_recipe"] = True
         state = apply_rule("6.1.5", state)
         state = apply_rule("7.4.60", state)
+        state = apply_rule("7.4.62", state)   # कुहोश्चुः (जहार, जघ्रौ)
         state = apply_rule("6.4.88", state)
         state = apply_rule("1.3.2", state)
         state = apply_rule("1.3.3", state)
@@ -3436,6 +3445,7 @@ def _derive_karmani_lit(state: State, purusha: int, vacana: int) -> State:
         state.meta["sandhi_6_1_5_recipe"] = True
         state = apply_rule("6.1.5", state)
         state = apply_rule("7.4.60", state)
+        state = apply_rule("7.4.62", state)   # कुहोश्चुः (जहार, जघ्रौ)
         state = apply_rule("1.4.13", state)
         state = apply_rule("6.4.88", state)
         state = apply_rule("1.3.2", state)

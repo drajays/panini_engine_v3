@@ -48,9 +48,13 @@ def _abhyasa_index(state: State) -> int | None:
     return None
 
 
+# 1.1.48 एच इग्घ्रस्वादेशे: the hrasva of an ec vowel is i/u (तेप् → तितेप).
+_EC_HRASVA = {"e": "i", "E": "i", "o": "u", "O": "u"}
+
+
 def _first_dirgha_ak_index(t) -> int | None:
     for j, v in enumerate(t.varnas):
-        if is_dirgha(v.slp1) and v.slp1 in _D2H:
+        if (is_dirgha(v.slp1) and v.slp1 in _D2H) or v.slp1 in _EC_HRASVA:
             return j
     return None
 
@@ -136,7 +140,7 @@ def act(state: State) -> State:
     j = _first_dirgha_ak_index(t)
     if j is None:
         return state
-    t.varnas[j] = mk(_D2H[t.varnas[j].slp1])
+    t.varnas[j] = mk(_D2H.get(t.varnas[j].slp1) or _EC_HRASVA[t.varnas[j].slp1])
     t.meta["7_4_59_hrasva_done"] = True
     return state
 

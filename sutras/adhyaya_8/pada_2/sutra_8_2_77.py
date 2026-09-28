@@ -1,41 +1,65 @@
 """
 8.2.77  हलि च  —  VIDHI
 
-Padaccheda: हलि च
-
-हलि च (8.2.77)
+र्वोरुपधाया दीर्घ इकः (8.2.76) continues: the ik before a dhātu's र्/व् is
+lengthened when an affix-initial hal follows (दिव् + य → दीव्यति). 8.2.79 न भकुर्छुराम् excepts कुर्/छुर् (कुर्वः).
+Operates on the merged pada; dhātu varṇas carry ``dhatu_v`` (pada_merger).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tripadi_gate_eligible
+from phonology    import mk
 
-_GATE_KEY: str = "8_2_77_hali_77"
+_IK_DIRGHA = {"i": "I", "u": "U", "f": "F", "x": "X"}
+_HAL = frozenset("kKgGNcCjJYwWqQRtTdDnpPbBmyrlvSzsh")
+_NA_BHA_KUR_CHUR = {"kur", "Cur"}
+
+
+def _dhatu_flat(vs) -> str:
+    return "".join(v.slp1 for v in vs if "dhatu_v" in v.tags)
+
+
+def _find(state: State):
+    if not state.tripadi_zone or len(state.terms) != 1:
+        return None
+    vs = state.terms[0].varnas
+    if _dhatu_flat(vs) in _NA_BHA_KUR_CHUR:
+        return None
+    for i in range(len(vs) - 2):
+        a, rv, nxt = vs[i], vs[i + 1], vs[i + 2]
+        if a.slp1 not in _IK_DIRGHA or rv.slp1 not in "rv" or "dhatu_v" not in rv.tags:
+            continue
+        if "dhatu_v" not in a.tags or nxt.slp1 not in _HAL:
+            continue
+        # हलि: the r/v is the dhātu's last varṇa and a hal (of the affix) follows
+        if "dhatu_v" not in nxt.tags:
+            return i
+    return None
 
 
 def cond(state: State) -> bool:
-    return tripadi_gate_eligible(state, "8.2.77", gate_key=_GATE_KEY)
+    return _find(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"]             = "8.2.77"
+    i = _find(state)
+    if i is None:
+        return state
+    state.terms[0].varnas[i] = mk(_IK_DIRGHA[state.terms[0].varnas[i].slp1])
     return state
 
 
 SUTRA = SutraRecord(
-    sutra_id              = "8.2.77",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
-    text_slp1             = "hali ca",
-    text_dev              = "हलि च",
-    padaccheda_dev        = "हलि च",
-    why_dev               = "(सूत्रम् 8.2.77) हलि च।",
-    anuvritti_from        = ('8.1.1',),
-    cond                  = cond,
-    act                   = act,
+    sutra_id       = "8.2.77",
+    sutra_type     = SutraType.VIDHI,
+    text_slp1      = "hali ca",
+    text_dev       = "हलि च",
+    padaccheda_dev = "हलि च",
+    why_dev        = "धातोः र्वोः पूर्वस्य इकः दीर्घः हलि परे (दीव्यति)।",
+    anuvritti_from = ("8.2.76",),
+    cond           = cond,
+    act            = act,
 )
 
 register_sutra(SUTRA)

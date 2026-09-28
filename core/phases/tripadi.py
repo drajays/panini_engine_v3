@@ -38,6 +38,8 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     "8.2.39",   # jhal padānte → jaś (t→d at word-end)
     "8.2.40",   # jhaṣ+t/th → dh (लब्ध, दुग्ध+ति→दुग्ध्धि; idempotent gate)
     "8.2.66",   # sasajuṣo ruḥ — s→r at word-end
+    "8.2.77",   # hali ca — dhātu r/v + hal: दीव्यति
+    "8.2.78",   # upadhāyāṃ ca — upadhā r/v: मूर्वति, ऊर्दते
     # ── 8.3 — visarga, ṣatva ────────────────────────────────────────────────
     "8.3.15",   # khari visarjanīyaḥ — r→ḥ
     "8.3.24",   # naścopādhā anusvāraḥ — n→M before consonant

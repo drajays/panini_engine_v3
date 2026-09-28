@@ -49,7 +49,9 @@ def test_kf_lit_kartari_surface(purusha: int, vacana: int, expected: str) -> Non
 
 def test_cakAra_spine() -> None:
     s = derive("kf", "liT", "kartari", 3, 1, pada="parasmai")
-    for sid in ("3.2.115", "6.1.8", "8.4.54", "7.3.84", "1.1.51", "7.2.116", "7.4.66", "7.4.59"):
+    # abhyāsa क → च is 7.4.62 कुहोश्चुः (was credited to 8.4.54, which only
+    # de-aspirates/de-voices and is vacuous for क)
+    for sid in ("3.2.115", "6.1.8", "7.4.62", "7.3.84", "1.1.51", "7.2.116", "7.4.66", "7.4.59"):
         assert _fired(s.trace, sid), f"missing trace for {sid}"
 
 
