@@ -188,8 +188,11 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
   tagged at the pada merge; 8.2.79 कुर्/छुर् excepted): दीव्यति (tracker #15
   closed), मूर्वति, ऊर्दते.
 - Verified 51,422 → **55,698**.
-- **Next**: 6.4.98 गमहन… (जग्मतुः), 7.2.63 (जहर्थ), ā-final sic-luk 3pl
-  (3.4.110: अस्थुः), 7.3.78 पिबति/तिष्ठति, curādi ṇic.
+- ✅ 6.4.98 गमहनजनखनघसां लोपः generalised (was घस्-only; cond kept
+  coordinate-free): जग्मतुः, जघ्नुः. 8.4.40 स्तोः श्चुना श्चुः in the universal
+  Tripāḍī: जज्ञे.
+- **Next**: curādi ṇic (largest family), 7.2.61–63 thal iṭ options (जहर्थ),
+  ā-final sic-luk 3pl (3.4.110: अस्थुः), 7.3.78 पिबति/तिष्ठति.
 - **Guard**: `tests/constitutional/test_engine_is_rule_based.py` — the rule
   path may never import Vidyut, bench/, the verified list or practice/lab.
 - **curādi / ṇic (3.1.25)** — gaṇa 10 is the largest remaining family

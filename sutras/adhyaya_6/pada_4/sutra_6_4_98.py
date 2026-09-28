@@ -39,12 +39,41 @@ def _find_gas_upadha_lopa(state: State) -> int | None:
     return None
 
 
+_GAMAHANA = frozenset({"gam", "han", "jan", "Kan", "Gas"})
+_AC = frozenset("aAiIuUfFxXeEoO")
+
+
+def _find_general(state: State) -> int | None:
+    """गमहनजनखनघसां लोपः क्ङित्यनङि: the upadhā a of these five dhātus drops before
+    a kit/ṅit vowel-initial affix other than aṅ — जग्मतुः, जघ्नुः, जज्ञे."""
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("6_4_98_gas_upadha_done"):
+            continue
+        flat = "".join(v.slp1 for v in t.varnas)
+        if flat not in _GAMAHANA:
+            return None
+        nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
+        if nxt is None or nxt.varnas[0].slp1 not in _AC:
+            return None
+        if (nxt.meta.get("upadesha_slp1") or "").strip() == "aN":
+            return None
+        if not any("kngiti" in u.tags for u in state.terms[i + 1:]):
+            return None
+        return i
+    return None
+
+
 def cond(state: State) -> bool:
+    # structural only in cond (Art. 2): the legacy घस् branch lives in act
+    if _find_general(state) is not None:
+        return True
     return samhita_gate_eligible(state, "6.4.98", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:
     i = _find_gas_upadha_lopa(state)
+    if i is None:
+        i = _find_general(state)
     if i is not None:
         t = state.terms[i]
         del t.varnas[1]

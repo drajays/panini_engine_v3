@@ -46,6 +46,7 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     "8.3.59",   # ādeśasya — ṣatva after IK in pratyaya-s (fixed: IK not word-final guard)
     "8.3.60",   # śāsi/vasi/ghasi ṣatva (idempotent: 8_3_60_satva_done flag)
     # ── 8.4 — assimilation ──────────────────────────────────────────────────
+    "8.4.40",   # stoḥ ścunā ścuḥ — dental next to a palatal → palatal (जज्ञे, राज्ञा)
     "8.4.41",   # ṣṭunā ṣṭuḥ — ṣ+t→ṣ+ṭ (structural; arm-guarded for edge cases)
     "8.4.54",   # abhyāse carc — jhal→jaś in abhyāsa (idempotent: 8_4_54_carc_done)
     "8.4.55",   # khari ca — jhal→car before khar (idempotent: 8_4_55_khari_ca_done)

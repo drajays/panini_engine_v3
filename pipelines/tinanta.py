@@ -668,6 +668,8 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # ── 6.4.120 ata ekahalmadhye — weak liṭ: a→e for CVC roots (tan→ten, etc.) ─
     state = apply_rule("6.4.120", state)
+    # 6.4.98 गमहनजनखनघसां लोपः क्ङित्यनङि — जग्मतुः, जघ्नुः (self-gates)
+    state = apply_rule("6.4.98", state)
 
     # ── 7.4.73 bhavateraḥ (abhyāsa u→a) — only for bhū ─────────────────────────
     _dht = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
