@@ -91,6 +91,7 @@ from core.canonical_pipelines import (
     P00_lac_lat_attach,
     P00_tanadi_u_guna,
     P00_hal_it_lopa,
+    P00_guna_rapara_ayadi,
     P00_tripadi_8_4_55_visarga,
     P00_luk_samjna_60_62,
     P00_stri_4_1_wap,
@@ -486,7 +487,8 @@ def _needs_am_lit(state: State) -> bool:
     """3.1.36 इजादेश्च गुरुमतोऽनृच्छः — decided on the dhātu's own varṇas."""
     from sutras.adhyaya_3.pada_1.sutra_3_1_36 import ijadi_gurumat_anrcchah
     d = next((t for t in state.terms if "dhatu" in t.tags), None)
-    return d is not None and ijadi_gurumat_anrcchah("".join(v.slp1 for v in d.varnas))
+    return d is not None and (bool(d.meta.get("sanadi_pratyayanta"))      # 3.1.35
+                              or ijadi_gurumat_anrcchah("".join(v.slp1 for v in d.varnas)))
 
 
 def _derive_lit_am(state: State, pada_key: str, purusha: int, vacana: int) -> State:
@@ -505,7 +507,9 @@ def _derive_lit_am(state: State, pada_key: str, purusha: int, vacana: int) -> St
     state.meta["lakara"] = "liT"
     state.meta["liT_lakara_recipe"] = True
     state = apply_rule("3.2.115", state)
-    state = apply_rule("3.1.36", state)
+    state = apply_rule("3.1.35", state)      # pratyayānta: चोरि + आम्
+    state = apply_rule("3.1.36", state)      # ijādi gurumān: एध + आम्
+    state = apply_rule("6.4.55", state)      # णेः अय् before ām: चोरयाम्
     state = apply_rule("2.4.81", state)
     stem = state.terms[-1]
     before = state.flat_slp1()
@@ -2410,6 +2414,31 @@ def derive_periphrastic_lit(
     return _derive_lit_am_kf_atmane(state, purusha, vacana)
 
 
+def _curadi_nic(state: State) -> State:
+    """3.1.25 …चुरादिभ्यो णिच् → it-lopa (1.3.7/1.3.3/1.3.9) → aṅga before the
+    ārdhadhātuka ṇic (7.2.116 अत उपधायाः: तड् → ताड्; 7.3.84/86 guṇa: चुर् → चोर्)
+    → 3.1.32 सनाद्यन्ता धातवः: dhātu + इ is one dhātu (चोरि)."""
+    state = apply_rule("3.1.25", state)
+    state = P00_hal_it_lopa(state)          # Ṇ (1.3.7 cuṭū) + c (1.3.3) of ṇic
+    state = apply_rule("6.4.48", state)    # अतो लोपः: adanta कथ/गण/वेल (1.1.57 then bars 7.2.116)
+    state = apply_rule("7.2.115", state)   # अचो ञ्णिति: च्यु → च्यौ (च्यावयति)
+    state = apply_rule("7.2.116", state)   # अत उपधायाः: तड् → ताड्
+    # laghūpadha guṇa (चुर् → चोर्), r of ṛ-vṛddhi (पार्), ayādi (च्याव्+इ)
+    state = P00_guna_rapara_ayadi(state)
+    dh = next(t for t in state.terms if "dhatu" in t.tags)
+    keep = {k: dh.meta[k] for k in ("kartari_atmanepada_licensed",) if k in dh.meta}
+    before = state.flat_slp1()
+    stem = [v for t in state.terms for v in t.varnas]
+    state.terms = [Term(kind="prakriti", varnas=stem, tags={"dhatu", "anga", "kartari"},
+                        meta={**keep, "upadesha_slp1": "".join(v.slp1 for v in stem), "gana": 1,
+                              "nijanta": True, "sanadi_pratyayanta": True,
+                              "anit_dhatu": False, "set_dhatu": True})]
+    state.emit_structural("__MERGE__", form_before=before, form_after=state.flat_slp1(),
+                          why_dev="३.१.३२ सनाद्यन्ता धातवः — धातु + णिच् = नूतनधातुः।",
+                          type_label="धातु-मेलनम्")
+    return apply_rule("3.1.32", state)
+
+
 def _nic_merge(state: State) -> None:
     """Merge dhātu + ṇic residue (``i``) + yuk(y) → secondary dhātu."""
     # After 3.1.26 inserts ṇic as "i" or "Ric" and 7.3.37 inserts yuk (y),
@@ -3993,6 +4022,11 @@ def _bootstrap_tinanta_derivation(
     state = build_tinanta_recipe_state(row, lakara, prayoga)
     state = P01_samjna_dhatu_class(state)
     state = P00_bhuvadi_dhatu_it_anunasik_hal(state)
+    if gana == 10:
+        # curādi: 3.1.25 ṇic svārthe, then the ṇijanta is a new dhātu (3.1.32)
+        # conjugated with śap like any bhvādi root: चोरयति, ताडयति.
+        state = _curadi_nic(state)
+        gana = 1
     state = _attach_upasargas(state, upasargas)
 
     if nic_recipe and lakara == "laT":

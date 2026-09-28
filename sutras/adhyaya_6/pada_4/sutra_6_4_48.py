@@ -67,9 +67,10 @@ def _final_a_pop_index(ang) -> int | None:
 
 
 def _kath_site(state: State) -> int | None:
-    """Curādi/ṇic: prātipadika ending in a before nic-i. Structural, no arm."""
+    """Curādi/ṇic: an a-final aṅga — prātipadika (कथ) or adanta curādi dhātu
+    (वेल, मिश्र) — before nic-i. Structural, no arm."""
     for i, ang in enumerate(state.terms):
-        if "prātipadika" not in ang.tags:
+        if "prātipadika" not in ang.tags and not ("dhatu" in ang.tags and "abhyasa" not in ang.tags):
             continue
         if _final_a_pop_index(ang) is None:
             continue

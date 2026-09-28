@@ -89,6 +89,8 @@ def _find(state: State):
     if not (is_hrasva(last) or is_dirgha(last)):
         return None
     rep = _vrddhi_vowel(last, state)
+    if rep is None and last in ("f", "F", "x", "X"):
+        rep = "A"          # vṛddhi of ṛ/ḷ is ā + r/l (1.1.51): पॄ → पार् (पारयति)
     if rep is None:
         return None
     di = state.terms.index(dhatu)
@@ -104,8 +106,12 @@ def act(state: State) -> State:
     if hit is None:
         return state
     ti, vi, rep = hit
+    old = state.terms[ti].varnas[vi].slp1
     state.terms[ti].varnas[vi] = mk(rep)
     state.terms[ti].meta["aco_nniti_vrddhi_done"] = True
+    if old in ("f", "F", "x", "X"):          # hand the r/l to 1.1.51 उरण् रपरः
+        state.terms[ti].meta["urN_rapara_pending"] = "r" if old in ("f", "F") else "l"
+        state.terms[ti].meta["urN_rapara_after_index"] = vi
     state.meta.pop("7_2_115_karmani_lut_arm", None)
     return state
 

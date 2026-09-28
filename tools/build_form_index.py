@@ -100,7 +100,15 @@ def derive_cell(cell: dict[str, Any]) -> Any:
     f = cell["features"]
     if cell["kind"] == "subanta":
         return sub_derive(cell["lemma"], f["vibhakti"], f["vacana"], linga=f["linga"])
-    return tin_derive(cell["lemma"], f["lakara"], f["prayoga"], f["purusha"], f["vacana"])
+    # derive by the pāṭha id carried in the cell key: an upadeśa shared by two
+    # gaṇas (पूरी 4 / 10) would otherwise resolve to the first row.
+    ref = cell.get("cell_key", "").split("@")[1].split(":")[0] if "@" in cell.get("cell_key", "") else ""
+    from pipelines.dhatupatha import resolve_dhatu_identifier
+    try:
+        resolve_dhatu_identifier(ref)
+    except KeyError:
+        ref = cell["lemma"]
+    return tin_derive(ref or cell["lemma"], f["lakara"], f["prayoga"], f["purusha"], f["vacana"])
 
 
 def build(dhatu_limit: int | None, stem_limit: int | None,

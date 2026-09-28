@@ -159,6 +159,8 @@ def question(kind: str = "subanta", qtype: str = "mcq", *, lemma: str | None = N
 
     base = {
         "kind": kind, "type": qtype, "lemma": target["lemma"],
+        # the pāṭha id disambiguates homonymous upadeśas for the explanation
+        "dhatu_ref": target["cell_key"].split("@")[1].split(":")[0] if kind == "tinanta" else None,
         "lemma_dev": _lemma_dev(kind, target["lemma"]),
         "features": tf, "cell_label": cell_label(kind, tf),
         "source": {"dev": source["surface_dev"],

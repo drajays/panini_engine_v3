@@ -65,6 +65,10 @@ def _find_target(state: State):
         if "satva_done" in v.tags:
             continue
         prev = t.varnas[i - 1]
+        # आदेशप्रत्यययोः: the dhātu's own upadeśa s is neither ādeśa nor pratyaya
+        # (च्योसयति). A 6.1.64 ādeśa s is a new varṇa without the tag (सिषेव).
+        if "mula_dhatu_v" in v.tags:
+            continue
         if prev.slp1 in _IN_KUK_PREV:
             return i
         # Lookahead (… hal s IK hal…) for luṅ sic+Īṭ pattern (avātsīt).

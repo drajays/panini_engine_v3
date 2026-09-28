@@ -35,6 +35,7 @@ from engine       import apply_rule
 from engine.state import State, Term, Varna
 from pipelines.preflight_lopa_samjna import apply_preflight_luk_samjna_block
 from core.canonical_pipelines import (
+    P00_guna_rapara_ayadi,
     P01_samjna_1_1_15_to_1_1_24,
     P01_samjna_1_1_3_to_1_1_100,
     P01_samjna_dhatu_class,
@@ -276,9 +277,7 @@ def derive_tfc_pratipadika(
     s = apply_rule("3.1.133", s)
     s = P00_krt_it_lopa(s)
     s = P00_anit_iT_tfc_chain(s)
-    s = apply_rule("7.3.84", s)
-    s = apply_rule("1.1.51", s)
-    s = apply_rule("6.1.78", s)
+    s = P00_guna_rapara_ayadi(s)
     s = apply_rule("1.2.45", s)
     s = apply_rule("1.2.46", s)
     s = _structural_merge_trc_pratipadika(s, upadesha_slp1="tfc")

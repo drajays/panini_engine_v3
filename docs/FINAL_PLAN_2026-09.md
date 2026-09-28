@@ -191,8 +191,21 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
 - ✅ 6.4.98 गमहनजनखनघसां लोपः generalised (was घस्-only; cond kept
   coordinate-free): जग्मतुः, जघ्नुः. 8.4.40 स्तोः श्चुना श्चुः in the universal
   Tripāḍī: जज्ञे.
-- **Next**: curādi ṇic (largest family), 7.2.61–63 thal iṭ options (जहर्थ),
-  ā-final sic-luk 3pl (3.4.110: अस्थुः), 7.3.78 पिबति/तिष्ठति.
+- ✅ **curādi / ṇic** (2026-09-28): 3.1.25, 3.1.35, 6.4.55 were stubs →
+  real rules. Bootstrap: gaṇa 10 → 3.1.25 ṇic → it-lopa → 6.4.48 (adanta) /
+  7.2.115 (ac-final vṛddhi, ṛ → ār) / 7.2.116 (a-upadhā) / guṇa → 3.1.32 new
+  dhātu, conjugated with śap; liṭ = ām-liṭ (3.1.35 + 6.4.55 ṇi → ay):
+  चोरयति, अचोरयत्, चोरयिष्यति, चोरयतु, चोरयाञ्चकार, पारयति, वेलयति, च्यावयति.
+  Index/Lab/practice now derive by pāṭha **id** (an upadeśa can repeat across
+  gaṇas: पूरी 4/10). 8.3.59 आदेशप्रत्यययोः: a dhātu's own upadeśa s (tagged
+  at tape init) never takes ṣatva (च्योसयति; सिषेवे still ṣ). Duplicate
+  block collapsed into `P00_guna_rapara_ayadi`.
+  Derivable 77,317 → **83,859**; refused 16,616 → 10,074; verified
+  55,713 → **73,303 (87 %)**.
+- Data: 4 curādi upadeśas imported with the nasal on the wrong vowel
+  (`ya~ta`, `la~ga`, `pa~Sa`, `ma~da`) → R1 refusals.
+- **Next**: 7.3.84 → 7.3.86 attribution (largest wrong-sūtra lead, now incl.
+  curādi), 7.2.61–63 thal iṭ (जहर्थ), 3.4.110 (अस्थुः), 7.3.78 (पिबति, तिष्ठति).
 - **Guard**: `tests/constitutional/test_engine_is_rule_based.py` — the rule
   path may never import Vidyut, bench/, the verified list or practice/lab.
 - **curādi / ṇic (3.1.25)** — gaṇa 10 is the largest remaining family
@@ -236,9 +249,9 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | Metric | Now | Target |
 |---|---|---|
 | Sūtras with LSK page | 1,895 | 1,900 |
-| forms.db cells verified vs Vidyut (form) | 55,698 / 77,317 (72 %) | 90 % |
-| … of those, sūtra path also agrees | 40,241 | all verified |
+| forms.db cells verified vs Vidyut (form) | 73,303 / 83,859 (87 %) | 90 % |
+| … of those, sūtra path also agrees | 43,661 | all verified |
 | Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
-| Gītā tagged-word coverage | 9.1 % | 50 % → 80 % |
+| Gītā tagged-word coverage | 9.6 % | 50 % → 80 % |
 | LSK prakriyā order agreement | — | measured per part, rising |
 | Full suite | 19,145 passed, 118 xfail (each pinned to Vidyut) | zero regressions every commit |

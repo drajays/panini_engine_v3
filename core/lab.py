@@ -45,14 +45,15 @@ def grid(kind: str, lemma: str, *, lakara: str = "laT", prayoga: str = "kartari"
         from pipelines.tinanta import derive
         row = resolve_dhatu_identifier(lemma)
         up, path_id = row["upadesha_slp1"], row.get("dhatupatha_id") or ""
-        meta = {"upadesha": up, "mula_dev": row.get("mula_dhatu_dev", ""), "path_id": path_id,
+        ref = row.get("id") or up                       # unique; an upadeśa may repeat across gaṇas
+        meta = {"upadesha": up, "ref": ref, "mula_dev": row.get("mula_dhatu_dev", ""), "path_id": path_id,
                 "gana": row.get("gana"), "artha_dev": row.get("artha_dev", ""),
                 "pada_dev": row.get("pada_label_dev", "")}
         kw = {"pada": pada} if pada else {}
         for purusha in (3, 2, 1):
             for vacana in (1, 2, 3):
                 f = {"lakara": lakara, "prayoga": prayoga, "purusha": purusha, "vacana": vacana}
-                cells.append((f, lambda f=f: derive(up, lakara, prayoga, f["purusha"], f["vacana"], **kw)))
+                cells.append((f, lambda f=f: derive(ref, lakara, prayoga, f["purusha"], f["vacana"], **kw)))
                 oracle_cells.append({"kind": "tinanta", "dhatu": up, "path_id": path_id, **f})
     else:
         from pipelines.subanta import derive

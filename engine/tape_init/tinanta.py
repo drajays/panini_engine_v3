@@ -57,9 +57,14 @@ def dhatu_term_from_row(row: dict, prayoga: str, lakara: str) -> Term:
     if lak_tag:
         tags.add(lak_tag)
 
+    varnas = parse_slp1_upadesha_sequence(upadesha)
+    for v in varnas:
+        # the dhātu's own upadeśa sounds; an ādeśa (6.1.64 ṣ→s …) replaces the
+        # varṇa and so drops this — 8.3.59 आदेशप्रत्यययोः reads the difference
+        v.tags.add("mula_dhatu_v")
     return Term(
         kind="prakriti",
-        varnas=parse_slp1_upadesha_sequence(upadesha),
+        varnas=varnas,
         tags=tags,
         meta=meta,
     )

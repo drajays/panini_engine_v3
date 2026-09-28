@@ -212,7 +212,7 @@ async function explain(){
   const f = Q.features;
   const [path, body] = Q.kind === "subanta"
     ? ["/v1/subanta", {stem: Q.lemma, vibhakti: f.vibhakti, vacana: f.vacana, linga: f.linga}]
-    : ["/v1/tinanta", {dhatu: Q.lemma, lakara: f.lakara, prayoga: f.prayoga, purusha: f.purusha, vacana: f.vacana}];
+    : ["/v1/tinanta", {dhatu: Q.dhatu_ref || Q.lemma, lakara: f.lakara, prayoga: f.prayoga, purusha: f.purusha, vacana: f.vacana}];
   try {
     const mine = ticket;
     const d = await api(path, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body)});

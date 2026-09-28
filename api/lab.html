@@ -209,7 +209,7 @@ async function detail(i){
   if (c.error){ $("detail").innerHTML = head + `<p class="err">${esc(c.error)}</p>`; return; }
   $("detail").innerHTML = head + `<p class="muted">deriving…</p>`;
   const [path, body] = G.kind === "tinanta"
-    ? ["/v1/tinanta", {dhatu: G.meta.upadesha, lakara: f.lakara, prayoga: f.prayoga, purusha: f.purusha, vacana: f.vacana, pada: G.input.pada || null}]
+    ? ["/v1/tinanta", {dhatu: G.meta.ref || G.meta.upadesha, lakara: f.lakara, prayoga: f.prayoga, purusha: f.purusha, vacana: f.vacana, pada: G.input.pada || null}]
     : ["/v1/subanta", {stem: G.input.lemma, vibhakti: f.vibhakti, vacana: f.vacana, linga: f.linga}];
   try {
     const d = await api(path, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body)});

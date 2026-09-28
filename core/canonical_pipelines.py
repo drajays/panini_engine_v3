@@ -1743,6 +1743,15 @@ def P00_as_lat_adadi_2_4_72(s: State) -> State:
     return s
 
 
+def P00_guna_rapara_ayadi(s: State) -> State:
+    """Guṇa/vṛddhi of the aṅga, its r/l (1.1.51), then ayādi: 7.3.84 → 1.1.51 → 6.1.78.
+    (कर्तृ: कृ+तृ → कर्+तृ; curādi: चोरि, च्याव्+इ.)"""
+    s = apply_rule("7.3.84", s)
+    s = apply_rule("1.1.51", s)
+    s = apply_rule("6.1.78", s)
+    return s
+
+
 def P00_guna_sandhi_7_3_84_6_1_78(s: State) -> State:
     """Guṇa + sandhi: 7.3.84 → 6.1.78."""
     s = apply_rule("7.3.84", s)
