@@ -39,6 +39,9 @@ def _find_at_agama_site(state: State):
         return None
     if AT_AGAMA_CONTEXT_TAG not in dh.tags:
         return None
+    # 6.4.72 आडजादीनाम् is the apavāda: an ajādi dhātu takes āṭ, not aṭ.
+    if dh.varnas and dh.varnas[0].slp1 in "aAiIuUfFxXeEoO":
+        return None
     return dh
 
 

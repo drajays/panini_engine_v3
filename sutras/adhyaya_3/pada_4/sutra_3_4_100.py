@@ -25,6 +25,10 @@ from engine.state import State, Term
 from phonology import mk
 
 
+# 1.4.100 तङानावात्मनेपदम् — the nine taṅ ādeśas (upadeśa identity).
+_TAN = frozenset({"ta", "AtAm", "Ja", "TAs", "ATAm", "Dvam", "iw", "vahi", "mahiG", "mahiN"})   # engine spells ṅ-it G (laG, mahiG)
+
+
 def _find_i_final_tin(state: State):
     """Find a tiṅ ādeśa term ending in 'i' in laṅ/luṅ/lṛṅ context."""
     lk = (state.meta.get("lakara") or "").strip()
@@ -36,6 +40,10 @@ def _find_i_final_tin(state: State):
         if "tin_adesha_3_4_78" not in t.tags:
             continue
         if t.meta.get("3_4_100_itasca_done"):
+            continue
+        # परस्मैपदेषु (from 3.4.97): ātmanepada iṭ / vahi / mahi keep their i
+        # (ऐधे, ऐधावहि — not ऐध, ऐधाव).
+        if "atmanepada" in t.tags or (t.meta.get("upadesha_slp1") or "").strip() in _TAN:
             continue
         vs = t.varnas
         if not vs or vs[-1].slp1 != "i":

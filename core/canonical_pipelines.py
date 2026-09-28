@@ -1611,8 +1611,10 @@ def P00_mRj_abhyasa_hrasva(s: State, *, first_hal_only: bool = False) -> State:
 # ── Round-3 deduplication canonicals ─────────────────────────────────────────
 
 def P00_at_agama_it_lopa(s: State) -> State:
-    """aṭ-āgama + it-lopa: 6.4.71 → 1.3.3 → 1.3.9."""
+    """aṭ-āgama + it-lopa: 6.4.71 (or, ajādi, 6.4.72 āṭ + 6.1.90 vṛddhi) → 1.3.3 → 1.3.9."""
     s = apply_rule("6.4.71", s)
+    s = apply_rule("6.4.72", s)
+    s = apply_rule("6.1.90", s)
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
     return s

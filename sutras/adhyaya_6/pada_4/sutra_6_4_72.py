@@ -22,7 +22,19 @@ def _dhatu_term(state: State):
     return None
 
 
+def _ajadi_site(state: State) -> bool:
+    """General case: an ajādi dhātu in the aṭ context (laṅ/luṅ/lṛṅ) — एध् → आएध्."""
+    from sutras.adhyaya_3.pada_2.sutra_3_2_111 import AT_AGAMA_CONTEXT_TAG
+    dh = _dhatu_term(state)
+    if dh is None or dh.meta.get("Aq_agama_6_4_72_done") or dh.meta.get("aT_agama_6_4_71_done"):
+        return False
+    return (AT_AGAMA_CONTEXT_TAG in dh.tags and bool(dh.varnas)
+            and dh.varnas[0].slp1 in "aAiIuUfFxXeEoO")
+
+
 def _site(state: State) -> bool:
+    if _ajadi_site(state):
+        return True
     if not state.meta.get("lRG_ad_spine"):
         return False
     if (state.meta.get("lakara") or "").strip() != "lRG":
@@ -47,8 +59,10 @@ def act(state: State) -> State:
     dh = _dhatu_term(state)
     if dh is None or not _site(state):
         return state
+    from sutras.adhyaya_3.pada_2.sutra_3_2_111 import AT_AGAMA_CONTEXT_TAG
     dh.varnas.insert(0, mk("A"))
     dh.tags.add("aTa_agama")
+    dh.tags.discard(AT_AGAMA_CONTEXT_TAG)
     dh.meta["Aq_agama_6_4_72_done"] = True
     return state
 

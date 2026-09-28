@@ -17,6 +17,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from phonology import mk
 
 _EC = frozenset({"E", "e", "O", "o"})
 
@@ -49,8 +50,26 @@ def _find_at_ec(state: State):
     return None
 
 
+# vṛddhi (1.1.1) of आ + the following vowel; ṛ/ḷ take r/l (1.1.51).
+_VRDDHI = {**dict.fromkeys("aA", "A"), **dict.fromkeys("iIeE", "E"),
+           **dict.fromkeys("uUoO", "O"), "f": "Ar", "F": "Ar", "x": "Al", "X": "Al"}
+
+
+def _find_aq_ac(state: State):
+    """आट् inside the dhātu term (6.4.72) followed by its first vowel: आ+ए → ऐ."""
+    for t in state.terms:
+        if "dhatu" not in t.tags or not t.meta.get("Aq_agama_6_4_72_done"):
+            continue
+        if t.meta.get("6_1_90_Aq_done") or t.meta.get("6_1_90_lRG_ad_done"):
+            continue
+        if len(t.varnas) >= 2 and t.varnas[0].slp1 == "A" and t.varnas[1].slp1 in _VRDDHI:
+            return t
+    return None
+
+
 def cond(state: State) -> bool:
-    return _find_at_ec(state) is not None or _find_lRG_ad_Aq_merge(state) is not None
+    return (_find_at_ec(state) is not None or _find_lRG_ad_Aq_merge(state) is not None
+            or _find_aq_ac(state) is not None)
 
 
 def act(state: State) -> State:
@@ -59,6 +78,13 @@ def act(state: State) -> State:
         del t_lrg.varnas[1]
         t_lrg.meta["6_1_90_lRG_ad_done"] = True
         state.samjna_registry["6.1.90_lRG_ad_Aq_merge"] = True
+        return state
+
+    t_aq = _find_aq_ac(state) if _find_at_ec(state) is None else None
+    if t_aq is not None:
+        v = _VRDDHI[t_aq.varnas[1].slp1]
+        t_aq.varnas[0:2] = [mk(c) for c in v]
+        t_aq.meta["6_1_90_Aq_done"] = True
         return state
 
     i = _find_at_ec(state)

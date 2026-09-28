@@ -968,6 +968,11 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.1.78", state)
     # 6.1.97: a+a → a (3pl: śap-a + ant-a; 1sg: śap-a + am-a)
     state = apply_rule("6.1.97", state)
+    # ātmanepada: ṅit आताम्/आथाम् after a (7.2.81 → 6.1.66 → 6.1.87: ऐधेताम्),
+    # and a + इ of iṭ → ए (6.1.87: ऐधे). All self-gate; parasmaipada untouched.
+    state = apply_rule("7.2.81", state)
+    state = apply_rule("6.1.66", state)
+    state = apply_rule("6.1.87", state)
 
     # ── Merge + Tripāḍī ──────────────────────────────────────────────────────
     _pada_merge(state)

@@ -132,7 +132,11 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
 - **karmaṇi/bhāve ṅit lakāras** (laṅ, liṅ, lṛṅ): no yak / sīyuṭ path.
 - **loṭ ātmanepada**: 3.4.90 आमेतः, 3.4.91, 3.4.93 एत ऐ not wired; 3.4.79 must
   run after śap (it rewrites the ādeśa upadeśa, hiding it from 3.1.68).
-- **laṅ āṭ vṛddhi**: अएधत for ऐधत (6.1.90 आटश्च).
+- ~~laṅ āṭ vṛddhi~~ — ✅ fixed: 6.4.71 yields to 6.4.72 for ajādi dhātus,
+  6.4.72 generalised (was अद्-in-लृङ् only), 6.1.90 does vṛddhi (ऐधत, आवत्, आर्चत्).
+  laṅ ātmanepada 9/9: 3.4.100 इतश्च limited to parasmaipada (taṅ upadeśa
+  identity), 7.2.81/6.1.66/6.1.87 tail (ऐधेताम्, ऐधे, ऐधावहि, ऐधामहि).
+- **6.1.73 छे च**: उछ् → औछत् for औच्छत् (tuk missing).
 - **8.2.77 हलि च**: ष्ठिव् → ष्ठेवति for ष्ठीवति.
 - **aniṭ ignored** in luṭ/liṭ/luṅ: डुपचँष् gives पचिता (→ पक्ता), पपचिषे,
   अपच्त (→ अपक्त / अपाचि). `test_tinanta_pac_karmani_bhave.py` is a snapshot
@@ -157,7 +161,10 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 
 ## Order
 
-1. ✅ A1, ✅ D (MVP), ✅ A2, ✅ B2, ✅ C0 idit + guṇa-scope. Next C0: aniṭ, 1.1.51, 6.1.64, ātmane endings, 7.3.84→7.3.86
+1. ✅ A1, ✅ D (MVP), ✅ A2, ✅ B2, ✅ C0: idit, guṇa scope, 8.4.58, 6.1.64/65, 1.1.51, ātmane laṭ/lṛṭ/laṅ, āṭ.
+   Next C0: ām-liṭ, loṭ/liṭ ātmane, aniṭ, karmaṇi/bhāve ṅit spine (yak/sīyuṭ), 7.3.84→7.3.86.
+   Test policy: every snapshot cell that is known-wrong is pinned to Vidyut's
+   form and xfail(strict) — fixing the spine turns it into a pass.
 2. A3, then C driven by B2's miss list, B1 per LSK part alongside C
 3. Phase 5 thinning continues as the ratchet allows (unchanged rules)
 
@@ -166,9 +173,9 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | Metric | Now | Target |
 |---|---|---|
 | Sūtras with LSK page | 1,895 | 1,900 |
-| forms.db cells verified vs Vidyut (form) | 44,109 / 77,317 (57 %) | 90 % |
-| … of those, sūtra path also agrees | 29,779 | all verified |
+| forms.db cells verified vs Vidyut (form) | 46,437 / 77,317 (60 %) | 90 % |
+| … of those, sūtra path also agrees | 31,802 | all verified |
 | Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
 | Gītā tagged-word coverage | 8.8 % | 50 % → 80 % |
 | LSK prakriyā order agreement | — | measured per part, rising |
-| Full suite | 19,196 passed, 67 xfail | zero regressions every commit |
+| Full suite | 19,188 passed, 75 xfail | zero regressions every commit |
