@@ -84,25 +84,13 @@ def devanagari_to_varnas(text: str) -> List[Varna]:
             out.append(Varna(slp1="M", dev="ं", tags=set()))
             i += 1
             continue
-        # Chandrabindu (ँ) = same *anunasika* signal as SLP1 '~' on a vowel.
-        # Orthography often places ँ after the second consonant of a cluster
-        # (e.g. डुपचँष्) while SLP1 writes ~ on the interconsonantal vowel
-        # (qupac~z).  When we see … Hal–inherent-a, Hal–inherent-a + ँ, the
-        # nasalization belongs to the *first* inherent-a (the पच् vowel).
+        # Chandrabindu (ँ) = same *anunasika* signal as SLP1 '~' on a vowel —
+        # the vowel it is written on, i.e. the one just read: दधँ → daDa~,
+        # डुपचँष् → qupaca~z, ञिष्वपँ → Yizvapa~. (A former heuristic moved it
+        # one syllable left for C-a-C-a+ँ and mis-imported 106 upadeśas.)
         if ch == _CHANDRABINDU:
             if out:
-                if (
-                    len(out) >= 4
-                    and out[-1].slp1 == "a"
-                    and out[-1].dev == ""
-                    and out[-2].slp1 in HAL_SET
-                    and out[-3].slp1 == "a"
-                    and out[-3].dev == ""
-                    and out[-4].slp1 in HAL_SET
-                ):
-                    out[-3].tags.add("anunasika")
-                else:
-                    out[-1].tags.add("anunasika")
+                out[-1].tags.add("anunasika")
             i += 1
             continue
         if ch == "ः":

@@ -56,7 +56,8 @@ def test_anunasika_chandrabindu_matches_slp1_tilde():
     vs_s = parse_slp1_upadesha_sequence("qupac~z")
     assert slp1_to_devanagari(vs_d) == deva
     assert slp1_to_devanagari(vs_s) == deva
-    assert devanagari_to_slp1_flat(deva) == "qupa~caz"
+    # ँ marks the vowel it is written on: the it-vowel after च (पच + अँ + ष्)
+    assert devanagari_to_slp1_flat(deva) == "qupaca~z"
     assert any("anunasika" in v.tags for v in vs_d)
     assert any("anunasika" in v.tags for v in vs_s)
 
