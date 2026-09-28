@@ -35,17 +35,22 @@ def _find_it_i(state: State) -> int | None:
     return None
 
 
+def _ling_sthani(state: State, idx: int) -> bool:
+    """लिङः (from 3.4.102): the iṭ's sthānī is vidhi- or āśīr-liṅ (1.1.56)."""
+    t = state.terms[idx]
+    return (t.meta.get("source_lakara_upadesha") or "").strip() in {"liG", "AsIrliG"} \
+        or bool(state.meta.get("ashir_liG"))
+
+
 def cond(state: State) -> bool:
-    return tin_pratyaya_gate_eligible(state, "3.4.106", gate_key=_GATE_KEY)
+    idx = _find_it_i(state)
+    return idx is not None and _ling_sthani(state, idx)
 
 
 def act(state: State) -> State:
-    if not state.meta.get("ashir_liG"):
-        state.paribhasha_gates[_GATE_KEY] = True
-        state.samjna_registry[_GATE_KEY]  = True
-        state.meta["krt_kind"] = "3.4.106"
-        return state
     idx = _find_it_i(state)
+    if idx is None or not _ling_sthani(state, idx):
+        return state
     if idx is None:
         return state
     state.terms[idx].varnas = [mk("a")]

@@ -12,9 +12,33 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
 
+# ārdhadhātuka val-initial affixes that would take iṭ by 7.2.35 (sya, tās,
+# sic, sīyuṭ); liṭ endings are not here — there 7.2.13 (krādi-niyama) decides.
+_VALADI_ARDHADHATUKA = frozenset({"sya", "tAs", "tAsi", "tAsi~", "sic", "sIyuw", "sIy"})
+
+
+def _anudatta_ekac_before_valadi(state: State) -> bool:
+    """एकाच उपदेशेऽनुदात्तात् — from the dhātu's own upadeśa properties (the
+    dhātupāṭha's anudātta/aniṭ flag, one vowel), before a val-ādi ārdhadhātuka.
+    7.2.70 ऋद्धनोः स्ये is its apavāda: ṛ-final roots and हन् take iṭ before sya."""
+    dh = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+    if dh is None or not dh.meta.get("anit_dhatu"):
+        return False
+    if sum(v.slp1 in "aAiIuUfFxXeEoO" for v in dh.varnas) != 1:
+        return False
+    after = [(t.meta.get("upadesha_slp1") or "").strip() for t in state.terms[state.terms.index(dh) + 1:]]
+    hit = next((u for u in after if u in _VALADI_ARDHADHATUKA), None)
+    if hit is None:
+        return False
+    if hit == "sya" and (dh.varnas[-1].slp1 == "f"
+                         or (dh.meta.get("upadesha_slp1") or "").strip() == "hana~"):
+        return False                                   # 7.2.70: करिष्यति, हनिष्यति
+    return True
+
+
 def cond(state: State) -> bool:
     if not state.meta.get("ekac_dhatu"):
-        return False
+        return _anudatta_ekac_before_valadi(state) and "7.2.35" not in state.blocked_sutras
     if state.meta.get("udatta_dhatu"):
         return False
     if "7.2.35" in state.blocked_sutras:
@@ -32,7 +56,7 @@ def cond(state: State) -> bool:
     # Opt-in luṅ: treat sic as ārdhadhātuka locus (glass-box).
     if state.meta.get("7_2_10_allow_sic") and state.meta.get("luN_sic_ardhadhatuka"):
         return any((t.meta.get("upadesha_slp1") or "").strip() == "sic" for t in state.terms)
-    return False
+    return _anudatta_ekac_before_valadi(state)
 
 
 def act(state: State) -> State:

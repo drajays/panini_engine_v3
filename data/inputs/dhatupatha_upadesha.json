@@ -43,11 +43,11 @@
       "gana_label_dev": "भ्वादिः",
       "pada_label_dev": "परस्मैपदी",
       "karmatva_label_dev": "अकर्मकः",
-      "it_class_label_dev": "अनिट्",
+      "it_class_label_dev": "सेट्",
       "it_markers": [],
       "flags": {
-        "anit": true,
-        "set": false,
+        "anit": false,
+        "set": true,
         "vet": false,
         "ekac": true,
         "udatta": false
@@ -32473,11 +32473,11 @@
       "gana_label_dev": "भ्वादिः",
       "pada_label_dev": "परस्मैपदी",
       "karmatva_label_dev": "अकर्मकः",
-      "it_class_label_dev": "अनिट्",
+      "it_class_label_dev": "सेट्",
       "it_markers": [],
       "flags": {
-        "anit": true,
-        "set": false,
+        "anit": false,
+        "set": true,
         "vet": false,
         "ekac": true,
         "udatta": false
@@ -32518,11 +32518,11 @@
     {
       "id": "BvAdi_pA",
       "tier": "bvadi_merged",
-      "dhatupatha_id": "01.0468",
+      "dhatupatha_id": "01.1074",
       "gana": 1,
       "gana_number": 1,
-      "serial_in_gana": 468,
-      "sutra_ref": "1.0468",
+      "serial_in_gana": 1074,
+      "sutra_ref": "1.1074",
       "upadesha_dev": "पा",
       "upadesha_slp1": "pA",
       "mula_dhatu_dev": "पा",
@@ -32533,7 +32533,7 @@
       "artha_en": "to drink",
       "artha_hi": "पीना",
       "gana_label_dev": "भ्वादिः",
-      "pada_label_dev": "आत्मनेपदी",
+      "pada_label_dev": "परस्मैपदी",
       "karmatva_label_dev": "सकर्मकः",
       "it_class_label_dev": "अनिट्",
       "it_markers": [],
@@ -32544,7 +32544,7 @@
         "ekac": true,
         "udatta": false
       },
-      "notes": "pā (to drink) — added for P015 Ṇic causative"
+      "notes": "pā (to drink) — added for P015 Ṇic causative | 2026-09-28: id/pada per ashtadhyayi-com/data (01.1074, P); was 01.0468 (= लपँ) and आत्मनेपदी."
     },
     {
       "id": "Adadi_02_0003",

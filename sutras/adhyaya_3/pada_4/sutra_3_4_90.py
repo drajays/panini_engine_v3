@@ -25,8 +25,14 @@ from phonology.varna import mk as _mk
 _EXCLUDED_STARTS = frozenset({"v", "m", "D", "s"})
 
 
+def _lot_sthani(state: State) -> bool:
+    """लोटः — an ending whose sthānī is loṭ (1.1.56)."""
+    return any((t.meta.get("source_lakara_upadesha") or "").strip() == "loT" for t in state.terms)
+
+
 def _find_target(state: State):
-    if not any("yak" in t.tags for t in state.terms):
+    # आमेतः (लोटः): any loṭ ending in e — kartari (एधताम्) as well as yak paths
+    if not (_lot_sthani(state) or any("yak" in t.tags for t in state.terms)):
         return None
     for ti, t in enumerate(state.terms):
         if t.kind != "pratyaya":

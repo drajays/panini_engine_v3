@@ -17,7 +17,8 @@ def test_P042_json_spine_and_surface_gArgyAH():
     assert ids.index("1.1.61") < ids.index("1.1.62") < ids.index("1.1.63")
     assert ids.index("1.1.63") < ids.index("7.1.9") < ids.index("6.1.101")
     assert ids.index("6.1.101") < ids.index("8.2.1") < ids.index("8.2.66") < ids.index("8.3.15")
-    assert ids.index("8.3.15") < ids.index("8.2.30")
+    # Tripāḍī runs in sūtra order (8.2.1 पूर्वत्रासिद्धम्): 8.2.30 before 8.2.66.
+    assert ids.index("8.2.1") < ids.index("8.2.30") < ids.index("8.2.66")
 
     assert s.samjna_registry.get("4.1.162_gotra_P042") is True
     assert s.samjna_registry.get("2.4.64_P042_yanna_luk_audit") is True

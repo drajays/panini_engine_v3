@@ -36,11 +36,29 @@ def _find_sic_index(state: State) -> int | None:
     return None
 
 
+# गाति-स्था-घु-पा-भू (upadeśa identity): इण् (→ गा, 2.4.45), ष्ठा, the ghu roots
+# (1.1.20 दाधा घ्वदाप् — dā/dhā-rūpa, not दाप्/दैप्), पा पाने, भू.
+SIC_LUK_UPADESHA = frozenset({"iR", "zWA", "qudAY", "quDAY", "do", "dAR", "deN", "DeW", "pA", "BU"})
+
+
+def sic_luk_dhatu(state: State) -> bool:
+    dh = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+    return dh is not None and (dh.meta.get("upadesha_slp1") or "").strip() in SIC_LUK_UPADESHA
+
+
+def _parasmaipada(state: State) -> bool:
+    """परस्मैपदेषु — the tiṅ ādeśa is a parasmaipada one (1.4.99 tag)."""
+    return any("tin_adesha_3_4_78" in t.tags and "atmanepada" not in t.tags
+               and (t.meta.get("upadesha_slp1") or "").strip() not in _TAN for t in state.terms)
+
+
+_TAN = frozenset({"ta", "AtAm", "Ja", "TAs", "ATAm", "Dvam", "iw", "vahi", "mahiG", "mahiN"})
+
+
 def cond(state: State) -> bool:
-    # Structural path: luṅ siC-luk for the matched siC pratyaya term.
-    # (The legacy gate-setter arm path is dead — no caller sets ``2_4_77_arm``
-    # and the gate it produced is read by no other sūtra.  Art.7: no arm read.)
-    return _find_sic_index(state) is not None
+    # sic-luk only after these roots, only in parasmaipada (अभूत्, अस्थात्,
+    # अदात्, अपात्); every other root keeps sic (अनैषीत्, अपाक्षीत्).
+    return _find_sic_index(state) is not None and sic_luk_dhatu(state) and _parasmaipada(state)
 
 
 def act(state: State) -> State:

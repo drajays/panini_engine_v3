@@ -16,6 +16,11 @@ from engine.state import State
 from phonology.varna import parse_slp1_upadesha_sequence, mk as _mk
 
 
+def _lot_sthani(state: State) -> bool:
+    """लोटः — an ending whose sthānī is loṭ (1.1.56)."""
+    return any((t.meta.get("source_lakara_upadesha") or "").strip() == "loT" for t in state.terms)
+
+
 def _find_se(state: State):
     for ti, t in enumerate(state.terms):
         if t.kind != "pratyaya":
@@ -46,13 +51,13 @@ def _find_dhve(state: State):
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("loT_karmani_recipe"):
+    if not (state.meta.get("loT_karmani_recipe") or _lot_sthani(state)):
         return False
     return _find_se(state) is not None or _find_dhve(state) is not None
 
 
 def act(state: State) -> State:
-    if not state.meta.get("loT_karmani_recipe"):
+    if not (state.meta.get("loT_karmani_recipe") or _lot_sthani(state)):
         return state
 
     hit = _find_se(state)

@@ -56,9 +56,11 @@ def _sap_trigger_next_pratyaya(up: str) -> bool:
         return False
     if k in SIT_VIK_SARVADHATUKA_SLP1:
         return False
+    from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import TIN_3_4_79_ADESHA
     return (
         k in TIN_ADESHA_SET
         or k in TIN_SURFACE_AADESHA_SLP1_EXTRA
+        or k in TIN_3_4_79_ADESHA        # te/Ate/se/… stay tiṅ by 1.1.56 (एधताम्)
         or k in SIT_KRT_SARVADHATUKA_SLP1
     )
 

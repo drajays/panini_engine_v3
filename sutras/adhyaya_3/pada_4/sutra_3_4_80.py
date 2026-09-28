@@ -22,6 +22,11 @@ def _find_thas(state: State):
             continue
         if "tin_adesha_3_4_78" not in t.tags:
             continue
+        # टितः (anuvṛtti from 3.4.79): only a ṭit sthānī — laṅ/liṅ/lṛṅ keep
+        # थाः (अभविष्यथाः, ऐधथाः).
+        sthani = (t.meta.get("source_lakara_upadesha") or "").strip()
+        if sthani and not sthani.endswith("T"):
+            continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
         if up == "TAs":
             return ti

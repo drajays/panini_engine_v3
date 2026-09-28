@@ -154,6 +154,26 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
   removed from its list). thal is pit (1.1.56) → guṇa, no kit: चकर्थ, चिचेतिथ.
   8.3.78 after any iṆ at the aṅga|ending boundary (चकृढ्वे); after iṭ left to
   8.3.79 (optional). 3.4.82 ādeśas keep their sthānī (1.1.56).
+- ✅ **C0 session 3 (2026-09-28)** — loṭ ātmanepada 9/9 (3.4.90/91/93
+  generalised from yak-only to any loṭ sthānī; śap trigger + 3.4.113 share
+  one list of ṭi-replaced ādeśas). **bhāve = karmaṇi**: one route (yak in
+  sārvadhātuka lakāras, 3.1.67 भावकर्मणोः); karmaṇi/bhāve lṛṭ = general lṛṭ
+  (sya is ārdhadhātuka). **7.4.28** was a stub → real vidhi (क्रियते).
+  **3.4.105/106** structural on the liṅ sthānī (एधेरन्, एधेय, क्रियेय).
+  **3.4.80** ṭit-only. **aniṭ**: 7.2.10 now decides from the dhātu's own
+  anudātta flag before any val-ādi ārdhadhātuka (sya/tās/sic/sīyuṭ), with
+  7.2.70 as apavāda (करिष्यति); one `_it_agama` helper at every non-liṭ iṭ
+  site → पक्ता, पक्ष्यति, नेष्यति. **8.2.30** added to the universal Tripāḍī
+  phase; **8.3.59** after ku (8.3.57 इण्कोः). **2.4.77** sic-luk decided by
+  its own root list + parasmaipada (was proxied by "aniṭ" — अभूत् only
+  worked because भू was mis-flagged aniṭ).
+- **Data fixes** (vs ashtadhyayi-com/data): भू, मू seṭ; पा पाने id 01.1074
+  and परस्मैपदी (was लप्'s id and आत्मनेपदी).
+- **Oracle fix**: Vidyut also reads seṭ/aniṭ from svara — `accented()` now
+  marks the aniṭ root vowel (qupa\ca~^z). The पच् snapshot table was
+  recomputed from the corrected oracle: 90/180 agree, 90 pinned + xfail.
+- **Next**: aniṭ luṅ with sic kept (7.2.1 सिचि वृद्धिः, 7.2.3, 7.3.96:
+  अनैषीत्, अपाक्षीत्); ā-final sic-luk 3pl (3.4.110: अस्थुः); 7.3.78 पिबति.
 - **curādi / ṇic (3.1.25)** — gaṇa 10 is the largest remaining family
   (ām-liṭ alone: 3,054 cells); laṭ etc. raise NotImplementedError.
 - **6.4.78 अभ्यासस्यासवर्णे**: इष् → इषेष for इयेष. **8.2.78**: उर्द् → ऊर्द्.
@@ -195,9 +215,9 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | Metric | Now | Target |
 |---|---|---|
 | Sūtras with LSK page | 1,895 | 1,900 |
-| forms.db cells verified vs Vidyut (form) | 48,926 / 77,317 (63 %) | 90 % |
-| … of those, sūtra path also agrees | 33,133 | all verified |
+| forms.db cells verified vs Vidyut (form) | 51,422 / 77,317 (67 %) — stricter oracle | 90 % |
+| … of those, sūtra path also agrees | 35,232 | all verified |
 | Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
-| Gītā tagged-word coverage | 8.8 % | 50 % → 80 % |
+| Gītā tagged-word coverage | 9.1 % | 50 % → 80 % |
 | LSK prakriyā order agreement | — | measured per part, rising |
-| Full suite | 19,188 passed, 75 xfail | zero regressions every commit |
+| Full suite | 19,145 passed, 118 xfail (each pinned to Vidyut) | zero regressions every commit |

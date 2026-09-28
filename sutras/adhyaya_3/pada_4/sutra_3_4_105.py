@@ -39,11 +39,14 @@ def _find_ja_index(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("Ja_ran_recipe"):
+    idx = _find_ja_index(state)
+    if idx is None:
         return False
-    if not (state.meta.get("vidhi_liG") or state.meta.get("ashir_liG")):
-        return False
-    return _find_ja_index(state) is not None
+    # लिङः (from 3.4.102): the jha's sthānī is liṅ (1.1.56) — or a legacy
+    # recipe that set the flags before the sthānī was recorded.
+    sthani = (state.terms[idx].meta.get("source_lakara_upadesha") or "").strip()
+    return sthani in {"liG", "AsIrliG"} or bool(
+        state.meta.get("Ja_ran_recipe") and (state.meta.get("vidhi_liG") or state.meta.get("ashir_liG")))
 
 
 def act(state: State) -> State:

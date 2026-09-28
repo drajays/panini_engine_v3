@@ -33,6 +33,7 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     # ── 8.2 — Asiddha gate + pada-final operations ──────────────────────────
     "8.2.1",    # pūrvatrāsiddham — opens Tripāḍī zone (idempotent gate)
     "8.2.23",   # saṃyogāntalopa — drops final cluster (ant→an)
+    "8.2.30",   # coḥ kuḥ — c/j → k/g before jhal or at pada-end (पच्+ता → पक्ता)
     "8.2.39",   # jhal padānte → jaś (t→d at word-end)
     "8.2.40",   # jhaṣ+t/th → dh (लब्ध, दुग्ध+ति→दुग्ध्धि; idempotent gate)
     "8.2.66",   # sasajuṣo ruḥ — s→r at word-end

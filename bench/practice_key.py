@@ -48,21 +48,29 @@ def oracle_cell(row: dict) -> dict:
 
 
 def accented(upadesha: str, path_id: str) -> str:
-    """Vidyut reads pada from svara, which our upadeśas omit — without it every
-    ātmanepadī root is derived as parasmaipadī (एधामि for एधे). Mark the
-    anunāsika it-vowel anudātta (आत्मनेपदी) or svarita (उभयपदी), as Vidyut's
-    own dhātupāṭha writes it (``eDa~\\``, ``qupa\\ca~^z``). A ṅit/ñit root
-    already carries its pada in the final it-consonant."""
+    """Vidyut reads pada *and* seṭ/aniṭ from svara, which our upadeśas omit.
+    Mark them as Vidyut's own dhātupāṭha does:
+      - aniṭ (anudātta upadeśa, 7.2.10): ``\\`` after the root vowel — qupa\\ca~^z, RI\\Y
+      - ātmanepadī: the anunāsika it-vowel anudātta — eDa~\\
+      - ubhayapadī: the it-vowel svarita — qupa\\ca~^z
+    A ṅit/ñit root already carries its pada in the final it-consonant."""
     from pipelines.dhatupatha import resolve_dhatu_identifier
     try:
-        label = resolve_dhatu_identifier(path_id).get("pada_label_dev")
+        row = resolve_dhatu_identifier(path_id)
     except KeyError:
         return upadesha
-    mark = {"आत्मनेपदी": "\\", "उभयपदी": "^"}.get(label)
-    if not mark or upadesha.endswith(("N", "Y")) or "~" not in upadesha:
-        return upadesha
-    i = upadesha.rindex("~") + 1
-    return upadesha[:i] + mark + upadesha[i:]
+    out = upadesha
+    if (row.get("flags") or {}).get("anit"):
+        start = 2 if out.startswith(("qu", "wu", "Yi")) else 0   # skip ādi ñi/ṭu/ḍu
+        for i in range(start, len(out)):
+            if out[i] in "aAiIuUfFxXeEoO" and not out[i + 1:i + 2] == "~":
+                out = out[:i + 1] + "\\" + out[i + 1:]
+                break
+    mark = {"आत्मनेपदी": "\\", "उभयपदी": "^"}.get(row.get("pada_label_dev"))
+    if mark and not out.endswith(("N", "Y")) and "~" in out:
+        i = out.rindex("~") + 1
+        out = out[:i] + mark + out[i:]
+    return out
 
 
 def main() -> int:
