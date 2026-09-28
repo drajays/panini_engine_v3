@@ -6,6 +6,7 @@ Padaccheda: पू-आदीनाम् ह्रस्वः
 प्वादीनां ह्रस्वः (7.3.80)
 """
 from __future__ import annotations
+from phonology import mk
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
@@ -14,23 +15,43 @@ from engine.state import State
 _GATE_KEY: str = "7_3_80_pvAdInAM_80"
 
 
+_HRASVA = {"U": "u", "I": "i", "F": "f", "X": "x"}
+
+
+def _find(state: State) -> int | None:
+    """प्वादीनां ह्रस्वः (शिति, 7.3.75): a pvādi root's long final vowel shortens
+    before a śit affix — लू + श्ना → लुनाति, स्तॄ → स्तृणाति."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("7_3_80_done"):
+            continue
+        if "प्वादिः" not in (t.meta.get("antarganas") or ()):
+            return None
+        if not t.varnas or t.varnas[-1].slp1 not in _HRASVA:
+            return None
+        nxt = next((u for u in state.terms[i + 1:] if u.varnas or u.meta.get("upadesha_slp1")), None)
+        if nxt is not None and (nxt.meta.get("upadesha_slp1") or "").startswith("S"):
+            return i                                      # śit: श्ना, शप् …
+        return None
+    return None
+
+
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.3.80", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _find(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.3.80"
+    i = _find(state)
+    if i is None:
+        return state
+    t = state.terms[i]
+    t.varnas[-1] = mk(_HRASVA[t.varnas[-1].slp1])
+    t.meta["7_3_80_done"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.3.80",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "pvAdInAM hrasvaH",
     text_dev              = "प्वादीनां ह्रस्वः",
     padaccheda_dev        = "पू-आदीनाम् ह्रस्वः",

@@ -367,6 +367,7 @@ def _apply_vikarana(state: State, gana: int) -> State:
         # keeps no guṇa). Weak endings: 6.4.113 ई हल्यघोः (क्रीणीतः), 6.4.112
         # श्नाभ्यस्तयोरातः (क्रीणन्ति); strong pit ones keep nā (क्रीणाति).
         state = apply_rule("3.1.81", state)
+        state = apply_rule("7.3.80", state)    # प्वादीनां ह्रस्वः: लू → लु (लुनाति)
         state = apply_rule("3.4.113", state)
         state = P00_lashakvataddhite_it_lopa_chain(state)
         state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)

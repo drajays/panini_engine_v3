@@ -46,6 +46,8 @@ def dhatu_term_from_row(row: dict, prayoga: str, lakara: str) -> Term:
         "udatta_dhatu": bool(row.get("flags", {}).get("udatta", False)),
         "anit_dhatu": bool(row.get("flags", {}).get("anit", False)),
         "set_dhatu": bool(row.get("flags", {}).get("set", True)),
+        # antargaṇa membership (प्वादिः, घटादिः …) — lexical, like the gaṇa
+        "antarganas": tuple(row.get("antarganas") or ()),
     }
     if atmane:
         meta["kartari_atmanepada_licensed"] = True
