@@ -224,10 +224,25 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
    stubs); 6.4.113 general; jh counts as vowel-initial (7.1.3); 6.4.24 general
    (was इन्ध्-only) after ṅit vikaraṇas; laṅ savarṇa-dīrgha. क्रीणाति/क्रीणीतः/
    क्रीणन्ति, स्कुभ्नाति, स्कुभान — laṭ/loṭ/laṅ 9/9.
-4. **gaṇa 2 (luk), 3 (ślu + dvitva), 7 (śnam)** — the remaining refusals.
+4. ◐ **gaṇa 2 (adādi)** ✅: vikaraṇa stage = 3.1.68 śap → 2.4.72 luk
+   (`P00_sap_luk`), then 7.3.89 उतो वृद्धिर्लुकि हलि, 7.2.76 रुदादिभ्यः, 7.3.98
+   रुदश्च पञ्चभ्यः — all three were stubs; āgamas are their own terms and share
+   their affix's sārvadhātuka/kṅit status (1.1.46). 7.1.5 आत्मनेपदेष्वनतः real,
+   with 7.1.3 in one canonical `P00_jha_adesha`. रोदिति/रुदितः/रुदन्ति/अरोदीत्,
+   स्वपिति, श्वसिति, वक्ति. Still open for gaṇa 2: consonant sandhi at the root|
+   ending junction (द्वेक्षि, ईट्टे), जक्ष् abhyasta (जक्षति), 6.1.16 (गृह्णाति).
+   **gaṇa 3 (ślu), 7 (śnam)** remain.
+- **Data**: 106 upadeśas had the anunāsika one syllable too early (वच् `va~ca`,
+  स्वप् `Yizva~pa`, जन्, पद्, ग्रह्…) — a transliterator bug at import
+  (`dev_to_slp1('दधँ')` gives `da~Da`); fixed from the upstream Devanāgarī.
+  The transliterator itself still has the bug (item 8).
+- Derivable **92,499**, refused **1,434**, verified **80,010**.
 5. 7.3.84 → 7.3.86 attribution (largest wrong-sūtra lead).
 6. 7.2.61–63 (जहर्थ), 3.4.110 (अस्थुः), 7.3.78 (पिबति, तिष्ठति).
-7. data: 4 curādi upadeśas with the nasal on the wrong vowel.
+7. ~~data: nasal on the wrong vowel~~ — fixed (106 entries).
+8. `core/transliterate.dev_to_slp1` puts a final candrabindu one syllable early
+   (दधँ → da~Da); fix it so future imports can't reintroduce the data bug.
+9. 6.1.16 saṃprasāraṇa (ग्रह् → गृह्णाति), 3.4.110, 7.3.78, 7.2.61–63.
 - **Guard**: `tests/constitutional/test_engine_is_rule_based.py` — the rule
   path may never import Vidyut, bench/, the verified list or practice/lab.
 - **curādi / ṇic (3.1.25)** — gaṇa 10 is the largest remaining family
@@ -271,9 +286,9 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | Metric | Now | Target |
 |---|---|---|
 | Sūtras with LSK page | 1,895 | 1,900 |
-| forms.db cells verified vs Vidyut (form) | 73,736 / 84,858 (87 %) | 90 % |
+| forms.db cells verified vs Vidyut (form) | 80,010 / 92,499 (86.5 %) | 90 % |
 | … of those, sūtra path also agrees | 43,661 | all verified |
 | Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
-| Gītā tagged-word coverage | 9.9 % | 50 % → 80 % |
+| Gītā tagged-word coverage | 10.5 % | 50 % → 80 % |
 | LSK prakriyā order agreement | — | measured per part, rising |
 | Full suite | 19,145 passed, 118 xfail (each pinned to Vidyut) | zero regressions every commit |

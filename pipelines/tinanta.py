@@ -91,6 +91,8 @@ from core.canonical_pipelines import (
     P00_lac_lat_attach,
     P00_tanadi_u_guna,
     P00_hal_it_lopa,
+    P00_jha_adesha,
+    P00_sap_luk,
     P00_guna_rapara_ayadi,
     P00_tripadi_8_4_55_visarga,
     P00_luk_samjna_60_62,
@@ -351,6 +353,16 @@ def _apply_vikarana(state: State, gana: int) -> State:
         state = apply_rule("7.4.28", state)
         return state
 
+    if gana == 2:
+        # 3.1.68 kartari śap, then 2.4.72 अदिप्रभृतिभ्यः शपः: luk — the ending
+        # attaches to the root itself (याति, एति, अयात्).
+        state.meta["3_1_68_kartari_recipe"] = True
+        state = apply_rule("3.1.68", state)
+        state = apply_rule("3.4.113", state)
+        state = P00_lashakvataddhite_it_lopa_chain(state)
+        state = P00_sap_luk(state)             # 2.4.72 → 7.3.89 (क्षौति) → 7.2.76 (रोदिति)
+        return state
+
     if gana == 5:
         # 3.1.73 स्वादिभ्यः श्नुः: nu after the dhātu; śnu is apit, so a second
         # 1.2.4 pass makes it ṅit (1.1.5: no guṇa of the root). Strong forms
@@ -445,7 +457,7 @@ def _run_lat_kartari_bhuvadi_spine(
     state = apply_rule("1.2.4", state)
 
     state = _apply_vikarana(state, gana)
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
 
     state = apply_rule("1.4.13", state)
     state = apply_rule("1.1.5", state)
@@ -1080,7 +1092,7 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("3.4.99", state)
 
     # 7.1.3: jh (2 varnas after 3.4.100) → ant  (vacuous for non-3pl cells)
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
 
     # ── Stage: aṅgakārya ────────────────────────────────────────────────────
     state = apply_rule("1.4.13", state)
@@ -1158,7 +1170,7 @@ def _derive_luG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
     state = apply_rule("3.4.101", state)
     state = apply_rule("3.4.100", state)
     if purusha == 3 and vacana == 3:
-        state = apply_rule("7.1.3", state)
+        state = P00_jha_adesha(state)
     state = apply_rule("3.4.99", state)
     state = apply_rule("6.1.66", state)
     state = apply_rule("1.2.4", state)
@@ -1265,7 +1277,7 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("3.4.100", state)   # ti→t, si→s, jhi→jh
 
     if _is_anit:
-        state = apply_rule("7.1.3", state)     # jh→ant (3pl, aniṭ only)
+        state = P00_jha_adesha(state)     # jh→ant (3pl, aniṭ only)
 
     state = apply_rule("3.4.99", state)    # vas→va, mas→ma
 
@@ -1525,7 +1537,7 @@ def _derive_liG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
 
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
-    state = apply_rule("2.4.72", state)
+    state = P00_sap_luk(state)
 
     state = apply_rule("3.4.101", state)
     state = apply_rule("3.4.108", state)
@@ -1662,7 +1674,7 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("1.2.4", state)
 
     # ── Stage: 7.1.3 jhi → anti (3pl only; vacuous for other cells) ─────────
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
 
     # ── Stage: aṅgakārya ────────────────────────────────────────────────────
     state = apply_rule("1.4.13", state)
@@ -1749,7 +1761,7 @@ def _derive_lRG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
 
     state = apply_rule("3.4.101", state)
     state = apply_rule("3.4.100", state)
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
     state = apply_rule("3.4.99", state)
     state = apply_rule("1.2.4", state)
     state = apply_rule("1.4.13", state)
@@ -1860,7 +1872,7 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("3.4.87", state)
 
     # 7.1.3: jhi→anti (has_i=True — loṭ retains 'i', unlike laṅ which drops it first)
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
 
     # 3.4.86: i→u (ti→tu for 3sg; anti→antu for 3pl; skip hi from 3.4.87, ni from 3.4.89)
     state = apply_rule("3.4.86", state)
@@ -1989,7 +2001,7 @@ def _derive_loT_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
 
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
-    state = apply_rule("2.4.72", state)
+    state = P00_sap_luk(state)
 
     if purusha == 1 and vacana == 1:
         state = apply_rule("3.4.89", state)
@@ -1999,7 +2011,7 @@ def _derive_loT_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
     if purusha == 2 and vacana == 1:
         state = apply_rule("3.4.87", state)
 
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
 
     state = apply_rule("3.4.86", state)
 
@@ -2125,7 +2137,7 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.2.4", state)
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
-    state = apply_rule("2.4.72", state)
+    state = P00_sap_luk(state)
     # 7.3.93 ब्रुव ईट् (ब्रू-specific ī āgama on tip/sip/mip) → 7.3.84 guṇa
     # (ऊ→ओ) → 6.1.78 एचोऽयवायावः (ओ+ī → av+ī). All three scope themselves
     # to their own structural condition (brU root; ik-final dhātu; ec+ac
@@ -2139,7 +2151,7 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     # in the sūtra's own cond(); a vacuous no-op for every other root
     # (अद्, दुह्, ब्रू…) sharing this spine.
     state = apply_rule("6.4.111", state)
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
     # 6.4.77 अचि श्नु धातुभ्रुवां य्वोरियुवङौ — ū-final dhātu + a-initial
     # affix → uv (ब्रू+अन्ति → ब्रुव्+अन्ति, after 7.1.3 turns jhi → anti).
     # General (any ū-final dhātu), decisively a no-op for अद्/अस्/दुह्.
@@ -2777,7 +2789,7 @@ def _derive_lRG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: tiṅ substitutions (laṅ-style) ────────────────────────────────
     state = apply_rule("3.4.101", state)   # tas→tām, Tas→tam, Ta→ta, mi→am (apavāda)
     state = apply_rule("3.4.100", state)   # ti→t, si→s, jhi→jh
-    state = apply_rule("7.1.3", state)     # jh→ant (3pl)
+    state = P00_jha_adesha(state)     # jh→ant (3pl)
     state = apply_rule("3.4.99", state)    # vas→va, mas→ma
 
     # ── Stage: aṅgakārya ────────────────────────────────────────────────────
@@ -2859,7 +2871,7 @@ def _derive_karmani_laG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("7.4.25", state)
 
     # 7.1.3 jho'ntaḥ: karmani 3pl Ja → anta (no prior 3.4.79, so just J→ant+a)
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
 
     state = apply_rule("7.2.81", state)
 
@@ -2947,7 +2959,7 @@ def _derive_karmani_liG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("7.4.25", state)
 
     # 7.1.3 jho'ntaḥ: 3pl ran already substituted (3.4.105), vacuous here
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
 
     # 7.3.101 ato dīrgho yañi (1du/1pl: a of ya → ā before v/m of sīyuṭ or tiṅ)
     state = apply_rule("7.3.101", state)
@@ -3625,7 +3637,7 @@ def _derive_bhave_laT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("3.4.80", state)
     state = apply_rule("1.2.4", state)
     state = P00_anga_guna_audit_1_4_13_1_1_5_7_3_84(state)
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
     state = apply_rule("7.2.81", state)
     state = apply_rule("6.1.66", state)
     state = apply_rule("7.3.101", state)
@@ -3710,7 +3722,7 @@ def _derive_karmani_laT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("7.4.25", state)
 
     # ── 7.1.3: jho'ntaḥ (karmani 3pl: Je → ante) ─────────────────────────
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
 
     state = apply_rule("7.2.81", state)
 
@@ -3820,7 +3832,7 @@ def _derive_karmani_lRT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.2.4", state)
 
     # ── 7.1.3 Ja→ante (3pl: Je→ante; vacuous for other cells) ────────────
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
 
     state = apply_rule("7.2.81", state)
 
@@ -3896,7 +3908,7 @@ def _derive_karmani_lRG(state: State, purusha: int, vacana: int) -> State:
 
     state = apply_rule("3.4.101", state)
     state = apply_rule("3.4.100", state)
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
     state = apply_rule("3.4.99", state)
 
     state = apply_rule("1.4.13", state)
@@ -4017,7 +4029,7 @@ def _derive_karmani_loT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("7.4.25", state)
 
     # ── 7.1.3: jho'ntaḥ (karmani 3pl: JAm → antAm) ───────────────────────
-    state = apply_rule("7.1.3", state)
+    state = P00_jha_adesha(state)
 
     state = apply_rule("7.2.81", state)
 

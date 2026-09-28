@@ -1028,7 +1028,7 @@ def P00_ciY_lat_jhi_snu_tripadi_tail(s: State) -> State:
     s = apply_rule("3.1.73", s)
     s.meta.pop("snu_recipe", None)
     s = P00_lashakvataddhite_it_lopa_chain(s)
-    s = apply_rule("7.1.3", s)
+    s = P00_jha_adesha(s)
     s = apply_rule("3.4.113", s)
     s = P00_anga_guna_audit_1_4_13_1_1_5_7_3_84(s)
     s = apply_rule("6.1.72", s)
@@ -1740,6 +1740,24 @@ def P00_as_lat_adadi_2_4_72(s: State) -> State:
     s = apply_rule("2.4.72", s)
     s = apply_rule("1.2.4", s)
     s = apply_rule("6.4.111", s)
+    return s
+
+
+def P00_sap_luk(s: State) -> State:
+    """adādi: 2.4.72 अदिप्रभृतिभ्यः शपः (śap-luk), then the luk-conditioned aṅga
+    rules — 7.3.89 उतो वृद्धिर्लुकि हलि (क्षौति), 7.2.76 रुदादिभ्यः (रोदिति)."""
+    s = apply_rule("2.4.72", s)
+    s = apply_rule("7.3.89", s)
+    s = apply_rule("7.2.76", s)
+    s = apply_rule("7.3.98", s)       # रुदश्च पञ्चभ्यः: īṭ before apṛkta (अरोदीत्)
+    return s
+
+
+def P00_jha_adesha(s: State) -> State:
+    """jh of the 3pl ending: 7.1.5 आत्मनेपदेष्वनतः (at, after a non-a aṅga) is the
+    apavāda, then 7.1.3 झोऽन्तः (ant) — आसते / भवन्ति."""
+    s = apply_rule("7.1.5", s)
+    s = apply_rule("7.1.3", s)
     return s
 
 

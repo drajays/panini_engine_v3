@@ -33220,7 +33220,7 @@
       "serial_in_gana": 13,
       "sutra_ref": "02.0013",
       "upadesha_dev": "वसँ",
-      "upadesha_slp1": "va~sa",
+      "upadesha_slp1": "vasa~",
       "mula_dhatu_dev": "वस्",
       "raw_dhatu_after_it_lopa_dev": "वस्",
       "raw_dhatu_after_it_lopa_slp1": "vas",
@@ -33240,7 +33240,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020013."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020013. | 2026-09-29: upadeśa va~sa → vasa~ (anunāsika on the final a, per वसँ)."
     },
     {
       "id": "Adadi_02_0014",
@@ -33282,7 +33282,7 @@
       "serial_in_gana": 15,
       "sutra_ref": "02.0015",
       "upadesha_dev": "कसँ",
-      "upadesha_slp1": "ka~sa",
+      "upadesha_slp1": "kasa~",
       "mula_dhatu_dev": "कस्",
       "raw_dhatu_after_it_lopa_dev": "कस्",
       "raw_dhatu_after_it_lopa_slp1": "kas",
@@ -33302,7 +33302,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020015."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020015. | 2026-09-29: upadeśa ka~sa → kasa~ (anunāsika on the final a, per कसँ)."
     },
     {
       "id": "Adadi_02_0016",
@@ -33313,7 +33313,7 @@
       "serial_in_gana": 16,
       "sutra_ref": "02.0016",
       "upadesha_dev": "कशँ",
-      "upadesha_slp1": "ka~Sa",
+      "upadesha_slp1": "kaSa~",
       "mula_dhatu_dev": "कश्",
       "raw_dhatu_after_it_lopa_dev": "कश्",
       "raw_dhatu_after_it_lopa_slp1": "kaS",
@@ -33333,7 +33333,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020016."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020016. | 2026-09-29: upadeśa ka~Sa → kaSa~ (anunāsika on the final a, per कशँ)."
     },
     {
       "id": "Adadi_02_0017",
@@ -34615,7 +34615,7 @@
       "serial_in_gana": 58,
       "sutra_ref": "02.0058",
       "upadesha_dev": "वचँ",
-      "upadesha_slp1": "va~ca",
+      "upadesha_slp1": "vaca~",
       "mula_dhatu_dev": "वच्",
       "raw_dhatu_after_it_lopa_dev": "वच्",
       "raw_dhatu_after_it_lopa_slp1": "vac",
@@ -34635,7 +34635,7 @@
         "ekac": true,
         "udatta": false
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020058."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020058. | 2026-09-29: upadeśa va~ca → vaca~ (anunāsika on the final a, per वचँ)."
     },
     {
       "id": "Adadi_02_0059",
@@ -34773,7 +34773,7 @@
       "serial_in_gana": 63,
       "sutra_ref": "02.0063",
       "upadesha_dev": "ञिष्वपँ",
-      "upadesha_slp1": "Yizva~pa",
+      "upadesha_slp1": "Yizvapa~",
       "mula_dhatu_dev": "स्वप्",
       "raw_dhatu_after_it_lopa_dev": "स्वप्",
       "raw_dhatu_after_it_lopa_slp1": "svap",
@@ -34793,7 +34793,7 @@
         "ekac": true,
         "udatta": false
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020063.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020063. | 2026-09-29: upadeśa Yizva~pa → Yizvapa~ (anunāsika on the final a, per ञिष्वपँ).",
       "antarganas": [
         "रुदादिः"
       ]
@@ -34807,7 +34807,7 @@
       "serial_in_gana": 64,
       "sutra_ref": "02.0064",
       "upadesha_dev": "श्वसँ",
-      "upadesha_slp1": "Sva~sa",
+      "upadesha_slp1": "Svasa~",
       "mula_dhatu_dev": "श्वस्",
       "raw_dhatu_after_it_lopa_dev": "श्वस्",
       "raw_dhatu_after_it_lopa_slp1": "Svas",
@@ -34827,7 +34827,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020064.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020064. | 2026-09-29: upadeśa Sva~sa → Svasa~ (anunāsika on the final a, per श्वसँ).",
       "antarganas": [
         "रुदादिः"
       ]
@@ -35114,7 +35114,7 @@
       "serial_in_gana": 73,
       "sutra_ref": "02.0073",
       "upadesha_dev": "षसँ",
-      "upadesha_slp1": "za~sa",
+      "upadesha_slp1": "zasa~",
       "mula_dhatu_dev": "सस्",
       "raw_dhatu_after_it_lopa_dev": "सस्",
       "raw_dhatu_after_it_lopa_slp1": "sas",
@@ -35134,7 +35134,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020073."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020073. | 2026-09-29: upadeśa za~sa → zasa~ (anunāsika on the final a, per षसँ)."
     },
     {
       "id": "Adadi_02_0074",
@@ -35176,7 +35176,7 @@
       "serial_in_gana": 75,
       "sutra_ref": "02.0075",
       "upadesha_dev": "वशँ",
-      "upadesha_slp1": "va~Sa",
+      "upadesha_slp1": "vaSa~",
       "mula_dhatu_dev": "वश्",
       "raw_dhatu_after_it_lopa_dev": "वश्",
       "raw_dhatu_after_it_lopa_slp1": "vaS",
@@ -35196,7 +35196,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020075."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1020075. | 2026-09-29: upadeśa va~Sa → vaSa~ (anunāsika on the final a, per वशँ)."
     },
     {
       "id": "Adadi_02_0077",
@@ -35789,7 +35789,7 @@
       "serial_in_gana": 19,
       "sutra_ref": "03.0019",
       "upadesha_dev": "भसँ",
-      "upadesha_slp1": "Ba~sa",
+      "upadesha_slp1": "Basa~",
       "mula_dhatu_dev": "भस्",
       "raw_dhatu_after_it_lopa_dev": "भस्",
       "raw_dhatu_after_it_lopa_slp1": "Bas",
@@ -35809,7 +35809,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1030019."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1030019. | 2026-09-29: upadeśa Ba~sa → Basa~ (anunāsika on the final a, per भसँ)."
     },
     {
       "id": "JuhotyAdi_03_0020",
@@ -35944,7 +35944,7 @@
       "serial_in_gana": 24,
       "sutra_ref": "03.0024",
       "upadesha_dev": "धनँ",
-      "upadesha_slp1": "Da~na",
+      "upadesha_slp1": "Dana~",
       "mula_dhatu_dev": "धन्",
       "raw_dhatu_after_it_lopa_dev": "धन्",
       "raw_dhatu_after_it_lopa_slp1": "Dan",
@@ -35964,7 +35964,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1030024."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1030024. | 2026-09-29: upadeśa Da~na → Dana~ (anunāsika on the final a, per धनँ)."
     },
     {
       "id": "JuhotyAdi_03_0025",
@@ -35975,7 +35975,7 @@
       "serial_in_gana": 25,
       "sutra_ref": "03.0025",
       "upadesha_dev": "जनँ",
-      "upadesha_slp1": "ja~na",
+      "upadesha_slp1": "jana~",
       "mula_dhatu_dev": "जन्",
       "raw_dhatu_after_it_lopa_dev": "जन्",
       "raw_dhatu_after_it_lopa_slp1": "jan",
@@ -35995,7 +35995,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1030025."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1030025. | 2026-09-29: upadeśa ja~na → jana~ (anunāsika on the final a, per जनँ)."
     },
     {
       "id": "JuhotyAdi_03_0026",
@@ -36688,7 +36688,7 @@
       "serial_in_gana": 23,
       "sutra_ref": "04.0023",
       "upadesha_dev": "षहँ",
-      "upadesha_slp1": "za~ha",
+      "upadesha_slp1": "zaha~",
       "mula_dhatu_dev": "सह्",
       "raw_dhatu_after_it_lopa_dev": "सह्",
       "raw_dhatu_after_it_lopa_slp1": "sah",
@@ -36708,7 +36708,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040023."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040023. | 2026-09-29: upadeśa za~ha → zaha~ (anunāsika on the final a, per षहँ)."
     },
     {
       "id": "divAdi_04_0024",
@@ -37676,7 +37676,7 @@
       "serial_in_gana": 54,
       "sutra_ref": "04.0054",
       "upadesha_dev": "तपँ",
-      "upadesha_slp1": "ta~pa",
+      "upadesha_slp1": "tapa~",
       "mula_dhatu_dev": "तप्",
       "raw_dhatu_after_it_lopa_dev": "तप्",
       "raw_dhatu_after_it_lopa_slp1": "tap",
@@ -37696,7 +37696,7 @@
         "ekac": true,
         "udatta": false
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040054."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040054. | 2026-09-29: upadeśa ta~pa → tapa~ (anunāsika on the final a, per तपँ)."
     },
     {
       "id": "divAdi_04_0055",
@@ -37986,7 +37986,7 @@
       "serial_in_gana": 64,
       "sutra_ref": "04.0064",
       "upadesha_dev": "शपँ",
-      "upadesha_slp1": "Sa~pa",
+      "upadesha_slp1": "Sapa~",
       "mula_dhatu_dev": "शप्",
       "raw_dhatu_after_it_lopa_dev": "शप्",
       "raw_dhatu_after_it_lopa_slp1": "Sap",
@@ -38006,7 +38006,7 @@
         "ekac": true,
         "udatta": false
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040064."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040064. | 2026-09-29: upadeśa Sa~pa → Sapa~ (anunāsika on the final a, per शपँ)."
     },
     {
       "id": "divAdi_04_0065",
@@ -38017,7 +38017,7 @@
       "serial_in_gana": 65,
       "sutra_ref": "04.0065",
       "upadesha_dev": "पदँ",
-      "upadesha_slp1": "pa~da",
+      "upadesha_slp1": "pada~",
       "mula_dhatu_dev": "पद्",
       "raw_dhatu_after_it_lopa_dev": "पद्",
       "raw_dhatu_after_it_lopa_slp1": "pad",
@@ -38037,7 +38037,7 @@
         "ekac": true,
         "udatta": false
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040065."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040065. | 2026-09-29: upadeśa pa~da → pada~ (anunāsika on the final a, per पदँ)."
     },
     {
       "id": "divAdi_04_0066",
@@ -38265,7 +38265,7 @@
       "serial_in_gana": 73,
       "sutra_ref": "04.0073",
       "upadesha_dev": "मनँ",
-      "upadesha_slp1": "ma~na",
+      "upadesha_slp1": "mana~",
       "mula_dhatu_dev": "मन्",
       "raw_dhatu_after_it_lopa_dev": "मन्",
       "raw_dhatu_after_it_lopa_slp1": "man",
@@ -38285,7 +38285,7 @@
         "ekac": true,
         "udatta": false
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040073."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040073. | 2026-09-29: upadeśa ma~na → mana~ (anunāsika on the final a, per मनँ)."
     },
     {
       "id": "divAdi_04_0074",
@@ -38420,7 +38420,7 @@
       "serial_in_gana": 78,
       "sutra_ref": "04.0078",
       "upadesha_dev": "व्यधँ",
-      "upadesha_slp1": "vya~Da",
+      "upadesha_slp1": "vyaDa~",
       "mula_dhatu_dev": "व्यध्",
       "raw_dhatu_after_it_lopa_dev": "व्यध्",
       "raw_dhatu_after_it_lopa_slp1": "vyaD",
@@ -38440,7 +38440,7 @@
         "ekac": true,
         "udatta": false
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040078."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040078. | 2026-09-29: upadeśa vya~Da → vyaDa~ (anunāsika on the final a, per व्यधँ)."
     },
     {
       "id": "divAdi_04_0079",
@@ -38621,7 +38621,7 @@
       "serial_in_gana": 84,
       "sutra_ref": "04.0084",
       "upadesha_dev": "शकँ",
-      "upadesha_slp1": "Sa~ka",
+      "upadesha_slp1": "Saka~",
       "mula_dhatu_dev": "शक्",
       "raw_dhatu_after_it_lopa_dev": "शक्",
       "raw_dhatu_after_it_lopa_slp1": "Sak",
@@ -38641,7 +38641,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040084.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040084. | 2026-09-29: upadeśa Sa~ka → Saka~ (anunāsika on the final a, per शकँ).",
       "antarganas": [
         "पुषादिः"
       ]
@@ -38825,7 +38825,7 @@
       "serial_in_gana": 90,
       "sutra_ref": "04.0090",
       "upadesha_dev": "रधँ",
-      "upadesha_slp1": "ra~Da",
+      "upadesha_slp1": "raDa~",
       "mula_dhatu_dev": "रध्",
       "raw_dhatu_after_it_lopa_dev": "रध्",
       "raw_dhatu_after_it_lopa_slp1": "raD",
@@ -38845,7 +38845,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040090.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1040090. | 2026-09-29: upadeśa ra~Da → raDa~ (anunāsika on the final a, per रधँ).",
       "antarganas": [
         "पुषादिः",
         "रधादिः"
@@ -41970,7 +41970,7 @@
       "serial_in_gana": 24,
       "sutra_ref": "05.0024",
       "upadesha_dev": "षघँ",
-      "upadesha_slp1": "za~Ga",
+      "upadesha_slp1": "zaGa~",
       "mula_dhatu_dev": "सघ्",
       "raw_dhatu_after_it_lopa_dev": "सघ्",
       "raw_dhatu_after_it_lopa_slp1": "saG",
@@ -41990,7 +41990,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1050024."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1050024. | 2026-09-29: upadeśa za~Ga → zaGa~ (anunāsika on the final a, per षघँ)."
     },
     {
       "id": "svAdi_05_0025",
@@ -42156,7 +42156,7 @@
       "serial_in_gana": 30,
       "sutra_ref": "05.0030",
       "upadesha_dev": "दघँ",
-      "upadesha_slp1": "da~Ga",
+      "upadesha_slp1": "daGa~",
       "mula_dhatu_dev": "दघ्",
       "raw_dhatu_after_it_lopa_dev": "दघ्",
       "raw_dhatu_after_it_lopa_slp1": "daG",
@@ -42176,7 +42176,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1050030."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1050030. | 2026-09-29: upadeśa da~Ga → daGa~ (anunāsika on the final a, per दघँ)."
     },
     {
       "id": "svAdi_05_0031",
@@ -42776,7 +42776,7 @@
       "serial_in_gana": 13,
       "sutra_ref": "06.0013",
       "upadesha_dev": "व्यचँ",
-      "upadesha_slp1": "vya~ca",
+      "upadesha_slp1": "vyaca~",
       "mula_dhatu_dev": "व्यच्",
       "raw_dhatu_after_it_lopa_dev": "व्यच्",
       "raw_dhatu_after_it_lopa_slp1": "vyac",
@@ -42796,7 +42796,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060013."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060013. | 2026-09-29: upadeśa vya~ca → vyaca~ (anunāsika on the final a, per व्यचँ)."
     },
     {
       "id": "tudAdi_06_0014",
@@ -43024,7 +43024,7 @@
       "serial_in_gana": 21,
       "sutra_ref": "06.0021",
       "upadesha_dev": "त्वचँ",
-      "upadesha_slp1": "tva~ca",
+      "upadesha_slp1": "tvaca~",
       "mula_dhatu_dev": "त्वच्",
       "raw_dhatu_after_it_lopa_dev": "त्वच्",
       "raw_dhatu_after_it_lopa_slp1": "tvac",
@@ -43044,7 +43044,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060021."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060021. | 2026-09-29: upadeśa tva~ca → tvaca~ (anunāsika on the final a, per त्वचँ)."
     },
     {
       "id": "tudAdi_06_0022",
@@ -44964,7 +44964,7 @@
       "serial_in_gana": 83,
       "sutra_ref": "06.0083",
       "upadesha_dev": "चलँ",
-      "upadesha_slp1": "ca~la",
+      "upadesha_slp1": "cala~",
       "mula_dhatu_dev": "चल्",
       "raw_dhatu_after_it_lopa_dev": "चल्",
       "raw_dhatu_after_it_lopa_slp1": "cal",
@@ -44984,7 +44984,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060083."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060083. | 2026-09-29: upadeśa ca~la → cala~ (anunāsika on the final a, per चलँ)."
     },
     {
       "id": "tudAdi_06_0084",
@@ -45787,7 +45787,7 @@
       "serial_in_gana": 108,
       "sutra_ref": "06.0108",
       "upadesha_dev": "कडँ",
-      "upadesha_slp1": "ka~qa",
+      "upadesha_slp1": "kaqa~",
       "mula_dhatu_dev": "कड्",
       "raw_dhatu_after_it_lopa_dev": "कड्",
       "raw_dhatu_after_it_lopa_slp1": "kaq",
@@ -45807,7 +45807,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060108.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060108. | 2026-09-29: upadeśa ka~qa → kaqa~ (anunāsika on the final a, per कडँ).",
       "antarganas": [
         "कुटादिः"
       ]
@@ -45889,7 +45889,7 @@
       "serial_in_gana": 111,
       "sutra_ref": "06.0111",
       "upadesha_dev": "कडँ",
-      "upadesha_slp1": "ka~qa",
+      "upadesha_slp1": "kaqa~",
       "mula_dhatu_dev": "कड्",
       "raw_dhatu_after_it_lopa_dev": "कड्",
       "raw_dhatu_after_it_lopa_slp1": "kaq",
@@ -45909,7 +45909,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060111.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060111. | 2026-09-29: upadeśa ka~qa → kaqa~ (anunāsika on the final a, per कडँ).",
       "antarganas": [
         "कुटादिः"
       ]
@@ -46297,7 +46297,7 @@
       "serial_in_gana": 123,
       "sutra_ref": "06.0123",
       "upadesha_dev": "स्फरँ",
-      "upadesha_slp1": "sPa~ra",
+      "upadesha_slp1": "sPara~",
       "mula_dhatu_dev": "स्फर्",
       "raw_dhatu_after_it_lopa_dev": "स्फर्",
       "raw_dhatu_after_it_lopa_slp1": "sPar",
@@ -46317,7 +46317,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060123.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060123. | 2026-09-29: upadeśa sPa~ra → sPara~ (anunāsika on the final a, per स्फरँ).",
       "antarganas": [
         "कुटादिः"
       ]
@@ -46331,7 +46331,7 @@
       "serial_in_gana": 124,
       "sutra_ref": "06.0124",
       "upadesha_dev": "स्फलँ",
-      "upadesha_slp1": "sPa~la",
+      "upadesha_slp1": "sPala~",
       "mula_dhatu_dev": "स्फल्",
       "raw_dhatu_after_it_lopa_dev": "स्फल्",
       "raw_dhatu_after_it_lopa_slp1": "sPal",
@@ -46351,7 +46351,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060124.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060124. | 2026-09-29: upadeśa sPa~la → sPala~ (anunāsika on the final a, per स्फलँ).",
       "antarganas": [
         "कुटादिः"
       ]
@@ -47160,7 +47160,7 @@
       "serial_in_gana": 149,
       "sutra_ref": "06.0149",
       "upadesha_dev": "प्रछँ",
-      "upadesha_slp1": "pra~Ca",
+      "upadesha_slp1": "praCa~",
       "mula_dhatu_dev": "प्रच्छ्",
       "raw_dhatu_after_it_lopa_dev": "प्रच्छ्",
       "raw_dhatu_after_it_lopa_slp1": "pracC",
@@ -47180,7 +47180,7 @@
         "ekac": true,
         "udatta": false
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060149.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1060149. | 2026-09-29: upadeśa pra~Ca → praCa~ (anunāsika on the final a, per प्रछँ).",
       "antarganas": [
         "किरादिः"
       ]
@@ -50827,7 +50827,7 @@
       "serial_in_gana": 60,
       "sutra_ref": "09.0060",
       "upadesha_dev": "उँध्रसँ",
-      "upadesha_slp1": "u~Dra~sa",
+      "upadesha_slp1": "u~Drasa~",
       "mula_dhatu_dev": "ध्रस्",
       "raw_dhatu_after_it_lopa_dev": "ध्रस्",
       "raw_dhatu_after_it_lopa_slp1": "Dras",
@@ -50847,7 +50847,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1090060."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1090060. | 2026-09-29: upadeśa u~Dra~sa → u~Drasa~ (anunāsika on the final a, per उँध्रसँ)."
     },
     {
       "id": "kryAdi_09_0061",
@@ -51044,7 +51044,7 @@
       "serial_in_gana": 67,
       "sutra_ref": "09.0067",
       "upadesha_dev": "खचँ",
-      "upadesha_slp1": "Ka~ca",
+      "upadesha_slp1": "Kaca~",
       "mula_dhatu_dev": "खच्",
       "raw_dhatu_after_it_lopa_dev": "खच्",
       "raw_dhatu_after_it_lopa_slp1": "Kac",
@@ -51064,7 +51064,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1090067."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1090067. | 2026-09-29: upadeśa Ka~ca → Kaca~ (anunāsika on the final a, per खचँ)."
     },
     {
       "id": "kryAdi_09_0068",
@@ -51075,7 +51075,7 @@
       "serial_in_gana": 68,
       "sutra_ref": "09.0068",
       "upadesha_dev": "खवँ",
-      "upadesha_slp1": "Ka~va",
+      "upadesha_slp1": "Kava~",
       "mula_dhatu_dev": "खव्",
       "raw_dhatu_after_it_lopa_dev": "खव्",
       "raw_dhatu_after_it_lopa_slp1": "Kav",
@@ -51095,7 +51095,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1090068."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1090068. | 2026-09-29: upadeśa Ka~va → Kava~ (anunāsika on the final a, per खवँ)."
     },
     {
       "id": "kryAdi_09_0069",
@@ -51175,7 +51175,7 @@
       "serial_in_gana": 71,
       "sutra_ref": "09.0071",
       "upadesha_dev": "ग्रहँ",
-      "upadesha_slp1": "gra~ha",
+      "upadesha_slp1": "graha~",
       "mula_dhatu_dev": "ग्रह्",
       "raw_dhatu_after_it_lopa_dev": "ग्रह्",
       "raw_dhatu_after_it_lopa_slp1": "grah",
@@ -51195,7 +51195,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1090071."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1090071. | 2026-09-29: upadeśa gra~ha → graha~ (anunāsika on the final a, per ग्रहँ)."
     },
     {
       "id": "curAdi_10_0001",
@@ -51485,7 +51485,7 @@
       "serial_in_gana": 10,
       "sutra_ref": "10.0010",
       "upadesha_dev": "लडँ",
-      "upadesha_slp1": "la~qa",
+      "upadesha_slp1": "laqa~",
       "mula_dhatu_dev": "लड्",
       "raw_dhatu_after_it_lopa_dev": "लड्",
       "raw_dhatu_after_it_lopa_slp1": "laq",
@@ -51505,7 +51505,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100010."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100010. | 2026-09-29: upadeśa la~qa → laqa~ (anunāsika on the final a, per लडँ)."
     },
     {
       "id": "curAdi_10_0011",
@@ -51640,7 +51640,7 @@
       "serial_in_gana": 15,
       "sutra_ref": "10.0015",
       "upadesha_dev": "जलँ",
-      "upadesha_slp1": "ja~la",
+      "upadesha_slp1": "jala~",
       "mula_dhatu_dev": "जल्",
       "raw_dhatu_after_it_lopa_dev": "जल्",
       "raw_dhatu_after_it_lopa_slp1": "jal",
@@ -51660,7 +51660,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100015."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100015. | 2026-09-29: upadeśa ja~la → jala~ (anunāsika on the final a, per जलँ)."
     },
     {
       "id": "curAdi_10_0016",
@@ -51671,7 +51671,7 @@
       "serial_in_gana": 16,
       "sutra_ref": "10.0016",
       "upadesha_dev": "लजँ",
-      "upadesha_slp1": "la~ja",
+      "upadesha_slp1": "laja~",
       "mula_dhatu_dev": "लज्",
       "raw_dhatu_after_it_lopa_dev": "लज्",
       "raw_dhatu_after_it_lopa_slp1": "laj",
@@ -51691,7 +51691,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100016."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100016. | 2026-09-29: upadeśa la~ja → laja~ (anunāsika on the final a, per लजँ)."
     },
     {
       "id": "curAdi_10_0017",
@@ -51736,7 +51736,7 @@
       "serial_in_gana": 18,
       "sutra_ref": "10.0018",
       "upadesha_dev": "नटँ",
-      "upadesha_slp1": "na~wa",
+      "upadesha_slp1": "nawa~",
       "mula_dhatu_dev": "नट्",
       "raw_dhatu_after_it_lopa_dev": "नट्",
       "raw_dhatu_after_it_lopa_slp1": "naw",
@@ -51756,7 +51756,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100018."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100018. | 2026-09-29: upadeśa na~wa → nawa~ (anunāsika on the final a, per नटँ)."
     },
     {
       "id": "curAdi_10_0019",
@@ -51767,7 +51767,7 @@
       "serial_in_gana": 19,
       "sutra_ref": "10.0019",
       "upadesha_dev": "श्रथँ",
-      "upadesha_slp1": "Sra~Ta",
+      "upadesha_slp1": "SraTa~",
       "mula_dhatu_dev": "श्रथ्",
       "raw_dhatu_after_it_lopa_dev": "श्रथ्",
       "raw_dhatu_after_it_lopa_slp1": "SraT",
@@ -51787,7 +51787,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100019."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100019. | 2026-09-29: upadeśa Sra~Ta → SraTa~ (anunāsika on the final a, per श्रथँ)."
     },
     {
       "id": "curAdi_10_0020",
@@ -51798,7 +51798,7 @@
       "serial_in_gana": 20,
       "sutra_ref": "10.0020",
       "upadesha_dev": "बधँ",
-      "upadesha_slp1": "ba~Da",
+      "upadesha_slp1": "baDa~",
       "mula_dhatu_dev": "बध्",
       "raw_dhatu_after_it_lopa_dev": "बध्",
       "raw_dhatu_after_it_lopa_slp1": "baD",
@@ -51818,7 +51818,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100020."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100020. | 2026-09-29: upadeśa ba~Da → baDa~ (anunāsika on the final a, per बधँ)."
     },
     {
       "id": "curAdi_10_0021",
@@ -52015,7 +52015,7 @@
       "serial_in_gana": 27,
       "sutra_ref": "10.0027",
       "upadesha_dev": "प्रथँ",
-      "upadesha_slp1": "pra~Ta",
+      "upadesha_slp1": "praTa~",
       "mula_dhatu_dev": "प्रथ्",
       "raw_dhatu_after_it_lopa_dev": "प्रथ्",
       "raw_dhatu_after_it_lopa_slp1": "praT",
@@ -52035,7 +52035,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100027."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100027. | 2026-09-29: upadeśa pra~Ta → praTa~ (anunāsika on the final a, per प्रथँ)."
     },
     {
       "id": "curAdi_10_0028",
@@ -52077,7 +52077,7 @@
       "serial_in_gana": 29,
       "sutra_ref": "10.0029",
       "upadesha_dev": "पथँ",
-      "upadesha_slp1": "pa~Ta",
+      "upadesha_slp1": "paTa~",
       "mula_dhatu_dev": "पथ्",
       "raw_dhatu_after_it_lopa_dev": "पथ्",
       "raw_dhatu_after_it_lopa_slp1": "paT",
@@ -52097,7 +52097,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100029."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100029. | 2026-09-29: upadeśa pa~Ta → paTa~ (anunāsika on the final a, per पथँ)."
     },
     {
       "id": "curAdi_10_0030",
@@ -52449,7 +52449,7 @@
       "serial_in_gana": 41,
       "sutra_ref": "10.0041",
       "upadesha_dev": "शठँ",
-      "upadesha_slp1": "Sa~Wa",
+      "upadesha_slp1": "SaWa~",
       "mula_dhatu_dev": "शठ्",
       "raw_dhatu_after_it_lopa_dev": "शठ्",
       "raw_dhatu_after_it_lopa_slp1": "SaW",
@@ -52469,7 +52469,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100041."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100041. | 2026-09-29: upadeśa Sa~Wa → SaWa~ (anunāsika on the final a, per शठँ)."
     },
     {
       "id": "curAdi_10_0042",
@@ -52480,7 +52480,7 @@
       "serial_in_gana": 42,
       "sutra_ref": "10.0042",
       "upadesha_dev": "श्वठँ",
-      "upadesha_slp1": "Sva~Wa",
+      "upadesha_slp1": "SvaWa~",
       "mula_dhatu_dev": "श्वठ्",
       "raw_dhatu_after_it_lopa_dev": "श्वठ्",
       "raw_dhatu_after_it_lopa_slp1": "SvaW",
@@ -52500,7 +52500,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100042."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100042. | 2026-09-29: upadeśa Sva~Wa → SvaWa~ (anunāsika on the final a, per श्वठँ)."
     },
     {
       "id": "curAdi_10_0043",
@@ -53165,7 +53165,7 @@
       "serial_in_gana": 64,
       "sutra_ref": "10.0064",
       "upadesha_dev": "तडँ",
-      "upadesha_slp1": "ta~qa",
+      "upadesha_slp1": "taqa~",
       "mula_dhatu_dev": "तड्",
       "raw_dhatu_after_it_lopa_dev": "तड्",
       "raw_dhatu_after_it_lopa_slp1": "taq",
@@ -53185,7 +53185,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100064."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100064. | 2026-09-29: upadeśa ta~qa → taqa~ (anunāsika on the final a, per तडँ)."
     },
     {
       "id": "curAdi_10_0065",
@@ -53196,7 +53196,7 @@
       "serial_in_gana": 65,
       "sutra_ref": "10.0065",
       "upadesha_dev": "खडँ",
-      "upadesha_slp1": "Ka~qa",
+      "upadesha_slp1": "Kaqa~",
       "mula_dhatu_dev": "खड्",
       "raw_dhatu_after_it_lopa_dev": "खड्",
       "raw_dhatu_after_it_lopa_slp1": "Kaq",
@@ -53216,7 +53216,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100065."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100065. | 2026-09-29: upadeśa Ka~qa → Kaqa~ (anunāsika on the final a, per खडँ)."
     },
     {
       "id": "curAdi_10_0066",
@@ -53850,7 +53850,7 @@
       "serial_in_gana": 86,
       "sutra_ref": "10.0086",
       "upadesha_dev": "क्षलँ",
-      "upadesha_slp1": "kza~la",
+      "upadesha_slp1": "kzala~",
       "mula_dhatu_dev": "क्षल्",
       "raw_dhatu_after_it_lopa_dev": "क्षल्",
       "raw_dhatu_after_it_lopa_slp1": "kzal",
@@ -53870,7 +53870,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100086."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100086. | 2026-09-29: upadeśa kza~la → kzala~ (anunāsika on the final a, per क्षलँ)."
     },
     {
       "id": "curAdi_10_0087",
@@ -53881,7 +53881,7 @@
       "serial_in_gana": 87,
       "sutra_ref": "10.0087",
       "upadesha_dev": "तलँ",
-      "upadesha_slp1": "ta~la",
+      "upadesha_slp1": "tala~",
       "mula_dhatu_dev": "तल्",
       "raw_dhatu_after_it_lopa_dev": "तल्",
       "raw_dhatu_after_it_lopa_slp1": "tal",
@@ -53901,7 +53901,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100087."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100087. | 2026-09-29: upadeśa ta~la → tala~ (anunāsika on the final a, per तलँ)."
     },
     {
       "id": "curAdi_10_0088",
@@ -54067,7 +54067,7 @@
       "serial_in_gana": 93,
       "sutra_ref": "10.0093",
       "upadesha_dev": "कलँ",
-      "upadesha_slp1": "ka~la",
+      "upadesha_slp1": "kala~",
       "mula_dhatu_dev": "कल्",
       "raw_dhatu_after_it_lopa_dev": "कल्",
       "raw_dhatu_after_it_lopa_slp1": "kal",
@@ -54087,7 +54087,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100093."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100093. | 2026-09-29: upadeśa ka~la → kala~ (anunāsika on the final a, per कलँ)."
     },
     {
       "id": "curAdi_10_0094",
@@ -54191,7 +54191,7 @@
       "serial_in_gana": 97,
       "sutra_ref": "10.0097",
       "upadesha_dev": "चलँ",
-      "upadesha_slp1": "ca~la",
+      "upadesha_slp1": "cala~",
       "mula_dhatu_dev": "चल्",
       "raw_dhatu_after_it_lopa_dev": "चल्",
       "raw_dhatu_after_it_lopa_slp1": "cal",
@@ -54211,7 +54211,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100097."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100097. | 2026-09-29: upadeśa ca~la → cala~ (anunāsika on the final a, per चलँ)."
     },
     {
       "id": "curAdi_10_0098",
@@ -54253,7 +54253,7 @@
       "serial_in_gana": 99,
       "sutra_ref": "10.0099",
       "upadesha_dev": "पलँ",
-      "upadesha_slp1": "pa~la",
+      "upadesha_slp1": "pala~",
       "mula_dhatu_dev": "पल्",
       "raw_dhatu_after_it_lopa_dev": "पल्",
       "raw_dhatu_after_it_lopa_slp1": "pal",
@@ -54273,7 +54273,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100099."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100099. | 2026-09-29: upadeśa pa~la → pala~ (anunāsika on the final a, per पलँ)."
     },
     {
       "id": "curAdi_10_0100",
@@ -54563,7 +54563,7 @@
       "serial_in_gana": 109,
       "sutra_ref": "10.0109",
       "upadesha_dev": "व्रजँ",
-      "upadesha_slp1": "vra~ja",
+      "upadesha_slp1": "vraja~",
       "mula_dhatu_dev": "व्रज्",
       "raw_dhatu_after_it_lopa_dev": "व्रज्",
       "raw_dhatu_after_it_lopa_slp1": "vraj",
@@ -54583,7 +54583,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100109."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100109. | 2026-09-29: upadeśa vra~ja → vraja~ (anunāsika on the final a, per व्रजँ)."
     },
     {
       "id": "curAdi_10_0110",
@@ -54842,7 +54842,7 @@
       "serial_in_gana": 118,
       "sutra_ref": "10.0118",
       "upadesha_dev": "ज्ञपँ",
-      "upadesha_slp1": "jYa~pa",
+      "upadesha_slp1": "jYapa~",
       "mula_dhatu_dev": "ज्ञप्",
       "raw_dhatu_after_it_lopa_dev": "ज्ञप्",
       "raw_dhatu_after_it_lopa_slp1": "jYap",
@@ -54862,7 +54862,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100118.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100118. | 2026-09-29: upadeśa jYa~pa → jYapa~ (anunāsika on the final a, per ज्ञपँ).",
       "antarganas": [
         "ज्ञपादिः"
       ]
@@ -54876,7 +54876,7 @@
       "serial_in_gana": 119,
       "sutra_ref": "10.0119",
       "upadesha_dev": "यमँ",
-      "upadesha_slp1": "ya~ma",
+      "upadesha_slp1": "yama~",
       "mula_dhatu_dev": "यम्",
       "raw_dhatu_after_it_lopa_dev": "यम्",
       "raw_dhatu_after_it_lopa_slp1": "yam",
@@ -54896,7 +54896,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100119.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100119. | 2026-09-29: upadeśa ya~ma → yama~ (anunāsika on the final a, per यमँ).",
       "antarganas": [
         "ज्ञपादिः"
       ]
@@ -54910,7 +54910,7 @@
       "serial_in_gana": 120,
       "sutra_ref": "10.0120",
       "upadesha_dev": "चहँ",
-      "upadesha_slp1": "ca~ha",
+      "upadesha_slp1": "caha~",
       "mula_dhatu_dev": "चह्",
       "raw_dhatu_after_it_lopa_dev": "चह्",
       "raw_dhatu_after_it_lopa_slp1": "cah",
@@ -54930,7 +54930,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100120.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100120. | 2026-09-29: upadeśa ca~ha → caha~ (anunāsika on the final a, per चहँ).",
       "antarganas": [
         "ज्ञपादिः"
       ]
@@ -54944,7 +54944,7 @@
       "serial_in_gana": 121,
       "sutra_ref": "10.0121",
       "upadesha_dev": "चपँ",
-      "upadesha_slp1": "ca~pa",
+      "upadesha_slp1": "capa~",
       "mula_dhatu_dev": "चप्",
       "raw_dhatu_after_it_lopa_dev": "चप्",
       "raw_dhatu_after_it_lopa_slp1": "cap",
@@ -54964,7 +54964,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100121.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100121. | 2026-09-29: upadeśa ca~pa → capa~ (anunāsika on the final a, per चपँ).",
       "antarganas": [
         "ज्ञपादिः"
       ]
@@ -54978,7 +54978,7 @@
       "serial_in_gana": 122,
       "sutra_ref": "10.0122",
       "upadesha_dev": "रहँ",
-      "upadesha_slp1": "ra~ha",
+      "upadesha_slp1": "raha~",
       "mula_dhatu_dev": "रह्",
       "raw_dhatu_after_it_lopa_dev": "रह्",
       "raw_dhatu_after_it_lopa_slp1": "rah",
@@ -54998,7 +54998,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100122.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100122. | 2026-09-29: upadeśa ra~ha → raha~ (anunāsika on the final a, per रहँ).",
       "antarganas": [
         "ज्ञपादिः"
       ]
@@ -55012,7 +55012,7 @@
       "serial_in_gana": 123,
       "sutra_ref": "10.0123",
       "upadesha_dev": "बलँ",
-      "upadesha_slp1": "ba~la",
+      "upadesha_slp1": "bala~",
       "mula_dhatu_dev": "बल्",
       "raw_dhatu_after_it_lopa_dev": "बल्",
       "raw_dhatu_after_it_lopa_slp1": "bal",
@@ -55032,7 +55032,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100123.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100123. | 2026-09-29: upadeśa ba~la → bala~ (anunāsika on the final a, per बलँ).",
       "antarganas": [
         "ज्ञपादिः"
       ]
@@ -55421,7 +55421,7 @@
       "serial_in_gana": 136,
       "sutra_ref": "10.0136",
       "upadesha_dev": "व्यपँ",
-      "upadesha_slp1": "vya~pa",
+      "upadesha_slp1": "vyapa~",
       "mula_dhatu_dev": "व्यप्",
       "raw_dhatu_after_it_lopa_dev": "व्यप्",
       "raw_dhatu_after_it_lopa_slp1": "vyap",
@@ -55441,7 +55441,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100136."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100136. | 2026-09-29: upadeśa vya~pa → vyapa~ (anunāsika on the final a, per व्यपँ)."
     },
     {
       "id": "curAdi_10_0137",
@@ -55452,7 +55452,7 @@
       "serial_in_gana": 137,
       "sutra_ref": "10.0137",
       "upadesha_dev": "व्ययँ",
-      "upadesha_slp1": "vya~ya",
+      "upadesha_slp1": "vyaya~",
       "mula_dhatu_dev": "व्यय्",
       "raw_dhatu_after_it_lopa_dev": "व्यय्",
       "raw_dhatu_after_it_lopa_slp1": "vyay",
@@ -55472,7 +55472,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100137."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100137. | 2026-09-29: upadeśa vya~ya → vyaya~ (anunāsika on the final a, per व्ययँ)."
     },
     {
       "id": "curAdi_10_0138",
@@ -55824,7 +55824,7 @@
       "serial_in_gana": 149,
       "sutra_ref": "10.0149",
       "upadesha_dev": "गजँ",
-      "upadesha_slp1": "ga~ja",
+      "upadesha_slp1": "gaja~",
       "mula_dhatu_dev": "गज्",
       "raw_dhatu_after_it_lopa_dev": "गज्",
       "raw_dhatu_after_it_lopa_slp1": "gaj",
@@ -55844,7 +55844,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100149."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100149. | 2026-09-29: upadeśa ga~ja → gaja~ (anunāsika on the final a, per गजँ)."
     },
     {
       "id": "curAdi_10_0150",
@@ -56196,7 +56196,7 @@
       "serial_in_gana": 161,
       "sutra_ref": "10.0161",
       "upadesha_dev": "ह्लपँ",
-      "upadesha_slp1": "hla~pa",
+      "upadesha_slp1": "hlapa~",
       "mula_dhatu_dev": "ह्लप्",
       "raw_dhatu_after_it_lopa_dev": "ह्लप्",
       "raw_dhatu_after_it_lopa_slp1": "hlap",
@@ -56216,7 +56216,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100161."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100161. | 2026-09-29: upadeśa hla~pa → hlapa~ (anunāsika on the final a, per ह्लपँ)."
     },
     {
       "id": "curAdi_10_0162",
@@ -56227,7 +56227,7 @@
       "serial_in_gana": 162,
       "sutra_ref": "10.0162",
       "upadesha_dev": "क्लपँ",
-      "upadesha_slp1": "kla~pa",
+      "upadesha_slp1": "klapa~",
       "mula_dhatu_dev": "क्लप्",
       "raw_dhatu_after_it_lopa_dev": "क्लप्",
       "raw_dhatu_after_it_lopa_slp1": "klap",
@@ -56247,7 +56247,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100162."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100162. | 2026-09-29: upadeśa kla~pa → klapa~ (anunāsika on the final a, per क्लपँ)."
     },
     {
       "id": "curAdi_10_0163",
@@ -56258,7 +56258,7 @@
       "serial_in_gana": 163,
       "sutra_ref": "10.0163",
       "upadesha_dev": "ह्रपँ",
-      "upadesha_slp1": "hra~pa",
+      "upadesha_slp1": "hrapa~",
       "mula_dhatu_dev": "ह्रप्",
       "raw_dhatu_after_it_lopa_dev": "ह्रप्",
       "raw_dhatu_after_it_lopa_slp1": "hrap",
@@ -56278,7 +56278,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100163."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100163. | 2026-09-29: upadeśa hra~pa → hrapa~ (anunāsika on the final a, per ह्रपँ)."
     },
     {
       "id": "curAdi_10_0164",
@@ -57262,7 +57262,7 @@
       "serial_in_gana": 195,
       "sutra_ref": "10.0195",
       "upadesha_dev": "दसँ",
-      "upadesha_slp1": "da~sa",
+      "upadesha_slp1": "dasa~",
       "mula_dhatu_dev": "दस्",
       "raw_dhatu_after_it_lopa_dev": "दस्",
       "raw_dhatu_after_it_lopa_slp1": "das",
@@ -57282,7 +57282,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100195.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100195. | 2026-09-29: upadeśa da~sa → dasa~ (anunāsika on the final a, per दसँ).",
       "antarganas": [
         "आकुस्मीयः"
       ]
@@ -57296,7 +57296,7 @@
       "serial_in_gana": 196,
       "sutra_ref": "10.0196",
       "upadesha_dev": "डपँ",
-      "upadesha_slp1": "qa~pa",
+      "upadesha_slp1": "qapa~",
       "mula_dhatu_dev": "डप्",
       "raw_dhatu_after_it_lopa_dev": "डप्",
       "raw_dhatu_after_it_lopa_slp1": "qap",
@@ -57316,7 +57316,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100196.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100196. | 2026-09-29: upadeśa qa~pa → qapa~ (anunāsika on the final a, per डपँ).",
       "antarganas": [
         "आकुस्मीयः"
       ]
@@ -57432,7 +57432,7 @@
       "serial_in_gana": 200,
       "sutra_ref": "10.0200",
       "upadesha_dev": "स्पशँ",
-      "upadesha_slp1": "spa~Sa",
+      "upadesha_slp1": "spaSa~",
       "mula_dhatu_dev": "स्पश्",
       "raw_dhatu_after_it_lopa_dev": "स्पश्",
       "raw_dhatu_after_it_lopa_slp1": "spaS",
@@ -57452,7 +57452,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100200.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100200. | 2026-09-29: upadeśa spa~Sa → spaSa~ (anunāsika on the final a, per स्पशँ).",
       "antarganas": [
         "आकुस्मीयः"
       ]
@@ -57766,7 +57766,7 @@
       "serial_in_gana": 210,
       "sutra_ref": "10.0210",
       "upadesha_dev": "ललँ",
-      "upadesha_slp1": "la~la",
+      "upadesha_slp1": "lala~",
       "mula_dhatu_dev": "लल्",
       "raw_dhatu_after_it_lopa_dev": "लल्",
       "raw_dhatu_after_it_lopa_slp1": "lal",
@@ -57786,7 +57786,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100210.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100210. | 2026-09-29: upadeśa la~la → lala~ (anunāsika on the final a, per ललँ).",
       "antarganas": [
         "आकुस्मीयः"
       ]
@@ -57902,7 +57902,7 @@
       "serial_in_gana": 214,
       "sutra_ref": "10.0214",
       "upadesha_dev": "शठँ",
-      "upadesha_slp1": "Sa~Wa",
+      "upadesha_slp1": "SaWa~",
       "mula_dhatu_dev": "शठ्",
       "raw_dhatu_after_it_lopa_dev": "शठ्",
       "raw_dhatu_after_it_lopa_slp1": "SaW",
@@ -57922,7 +57922,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100214.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100214. | 2026-09-29: upadeśa Sa~Wa → SaWa~ (anunāsika on the final a, per शठँ).",
       "antarganas": [
         "आकुस्मीयः"
       ]
@@ -57970,7 +57970,7 @@
       "serial_in_gana": 216,
       "sutra_ref": "10.0216",
       "upadesha_dev": "स्यमँ",
-      "upadesha_slp1": "sya~ma",
+      "upadesha_slp1": "syama~",
       "mula_dhatu_dev": "स्यम्",
       "raw_dhatu_after_it_lopa_dev": "स्यम्",
       "raw_dhatu_after_it_lopa_slp1": "syam",
@@ -57990,7 +57990,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100216.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100216. | 2026-09-29: upadeśa sya~ma → syama~ (anunāsika on the final a, per स्यमँ).",
       "antarganas": [
         "आकुस्मीयः"
       ]
@@ -58038,7 +58038,7 @@
       "serial_in_gana": 218,
       "sutra_ref": "10.0218",
       "upadesha_dev": "शमँ",
-      "upadesha_slp1": "Sa~ma",
+      "upadesha_slp1": "Sama~",
       "mula_dhatu_dev": "शम्",
       "raw_dhatu_after_it_lopa_dev": "शम्",
       "raw_dhatu_after_it_lopa_slp1": "Sam",
@@ -58058,7 +58058,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100218.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100218. | 2026-09-29: upadeśa Sa~ma → Sama~ (anunāsika on the final a, per शमँ).",
       "antarganas": [
         "आकुस्मीयः"
       ]
@@ -58208,7 +58208,7 @@
       "serial_in_gana": 223,
       "sutra_ref": "10.0223",
       "upadesha_dev": "गलँ",
-      "upadesha_slp1": "ga~la",
+      "upadesha_slp1": "gala~",
       "mula_dhatu_dev": "गल्",
       "raw_dhatu_after_it_lopa_dev": "गल्",
       "raw_dhatu_after_it_lopa_slp1": "gal",
@@ -58228,7 +58228,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100223.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100223. | 2026-09-29: upadeśa ga~la → gala~ (anunāsika on the final a, per गलँ).",
       "antarganas": [
         "आकुस्मीयः"
       ]
@@ -58242,7 +58242,7 @@
       "serial_in_gana": 224,
       "sutra_ref": "10.0224",
       "upadesha_dev": "भलँ",
-      "upadesha_slp1": "Ba~la",
+      "upadesha_slp1": "Bala~",
       "mula_dhatu_dev": "भल्",
       "raw_dhatu_after_it_lopa_dev": "भल्",
       "raw_dhatu_after_it_lopa_slp1": "Bal",
@@ -58262,7 +58262,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100224.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100224. | 2026-09-29: upadeśa Ba~la → Bala~ (anunāsika on the final a, per भलँ).",
       "antarganas": [
         "आकुस्मीयः"
       ]
@@ -58412,7 +58412,7 @@
       "serial_in_gana": 229,
       "sutra_ref": "10.0229",
       "upadesha_dev": "मदँ",
-      "upadesha_slp1": "ma~da",
+      "upadesha_slp1": "mada~",
       "mula_dhatu_dev": "मद्",
       "raw_dhatu_after_it_lopa_dev": "मद्",
       "raw_dhatu_after_it_lopa_slp1": "mad",
@@ -58432,7 +58432,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100229.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100229. | 2026-09-29: upadeśa ma~da → mada~ (anunāsika on the final a, per मदँ).",
       "antarganas": [
         "आकुस्मीयः"
       ]
@@ -58582,7 +58582,7 @@
       "serial_in_gana": 234,
       "sutra_ref": "10.0234",
       "upadesha_dev": "मनँ",
-      "upadesha_slp1": "ma~na",
+      "upadesha_slp1": "mana~",
       "mula_dhatu_dev": "मन्",
       "raw_dhatu_after_it_lopa_dev": "मन्",
       "raw_dhatu_after_it_lopa_slp1": "man",
@@ -58602,7 +58602,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100234.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100234. | 2026-09-29: upadeśa ma~na → mana~ (anunāsika on the final a, per मनँ).",
       "antarganas": [
         "आकुस्मीयः"
       ]
@@ -58904,7 +58904,7 @@
       "serial_in_gana": 244,
       "sutra_ref": "10.0244",
       "upadesha_dev": "पशँ",
-      "upadesha_slp1": "pa~Sa",
+      "upadesha_slp1": "paSa~",
       "mula_dhatu_dev": "पश्",
       "raw_dhatu_after_it_lopa_dev": "पश्",
       "raw_dhatu_after_it_lopa_slp1": "paS",
@@ -58924,7 +58924,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100244."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100244. | 2026-09-29: upadeśa pa~Sa → paSa~ (anunāsika on the final a, per पशँ)."
     },
     {
       "id": "curAdi_10_0245",
@@ -58966,7 +58966,7 @@
       "serial_in_gana": 246,
       "sutra_ref": "10.0246",
       "upadesha_dev": "चटँ",
-      "upadesha_slp1": "ca~wa",
+      "upadesha_slp1": "cawa~",
       "mula_dhatu_dev": "चट्",
       "raw_dhatu_after_it_lopa_dev": "चट्",
       "raw_dhatu_after_it_lopa_slp1": "caw",
@@ -58986,7 +58986,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100246."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100246. | 2026-09-29: upadeśa ca~wa → cawa~ (anunāsika on the final a, per चटँ)."
     },
     {
       "id": "curAdi_10_0247",
@@ -59028,7 +59028,7 @@
       "serial_in_gana": 248,
       "sutra_ref": "10.0248",
       "upadesha_dev": "घटँ",
-      "upadesha_slp1": "Ga~wa",
+      "upadesha_slp1": "Gawa~",
       "mula_dhatu_dev": "घट्",
       "raw_dhatu_after_it_lopa_dev": "घट्",
       "raw_dhatu_after_it_lopa_slp1": "Gaw",
@@ -59048,7 +59048,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100248."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100248. | 2026-09-29: upadeśa Ga~wa → Gawa~ (anunāsika on the final a, per घटँ)."
     },
     {
       "id": "curAdi_10_0249",
@@ -59183,7 +59183,7 @@
       "serial_in_gana": 253,
       "sutra_ref": "10.0253",
       "upadesha_dev": "लसँ",
-      "upadesha_slp1": "la~sa",
+      "upadesha_slp1": "lasa~",
       "mula_dhatu_dev": "लस्",
       "raw_dhatu_after_it_lopa_dev": "लस्",
       "raw_dhatu_after_it_lopa_slp1": "las",
@@ -59203,7 +59203,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100253."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100253. | 2026-09-29: upadeśa la~sa → lasa~ (anunāsika on the final a, per लसँ)."
     },
     {
       "id": "curAdi_10_0254",
@@ -59369,7 +59369,7 @@
       "serial_in_gana": 259,
       "sutra_ref": "10.0259",
       "upadesha_dev": "भजँ",
-      "upadesha_slp1": "Ba~ja",
+      "upadesha_slp1": "Baja~",
       "mula_dhatu_dev": "भज्",
       "raw_dhatu_after_it_lopa_dev": "भज्",
       "raw_dhatu_after_it_lopa_slp1": "Baj",
@@ -59389,7 +59389,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100259."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100259. | 2026-09-29: upadeśa Ba~ja → Baja~ (anunāsika on the final a, per भजँ)."
     },
     {
       "id": "curAdi_10_0260",
@@ -59431,7 +59431,7 @@
       "serial_in_gana": 261,
       "sutra_ref": "10.0261",
       "upadesha_dev": "यतँ",
-      "upadesha_slp1": "ya~ta",
+      "upadesha_slp1": "yata~",
       "mula_dhatu_dev": "यत्",
       "raw_dhatu_after_it_lopa_dev": "यत्",
       "raw_dhatu_after_it_lopa_slp1": "yat",
@@ -59451,7 +59451,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100261."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100261. | 2026-09-29: upadeśa ya~ta → yata~ (anunāsika on the final a, per यतँ)."
     },
     {
       "id": "curAdi_10_0262",
@@ -59462,7 +59462,7 @@
       "serial_in_gana": 262,
       "sutra_ref": "10.0262",
       "upadesha_dev": "रकँ",
-      "upadesha_slp1": "ra~ka",
+      "upadesha_slp1": "raka~",
       "mula_dhatu_dev": "रक्",
       "raw_dhatu_after_it_lopa_dev": "रक्",
       "raw_dhatu_after_it_lopa_slp1": "rak",
@@ -59482,7 +59482,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100262."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100262. | 2026-09-29: upadeśa ra~ka → raka~ (anunāsika on the final a, per रकँ)."
     },
     {
       "id": "curAdi_10_0263",
@@ -59493,7 +59493,7 @@
       "serial_in_gana": 263,
       "sutra_ref": "10.0263",
       "upadesha_dev": "लगँ",
-      "upadesha_slp1": "la~ga",
+      "upadesha_slp1": "laga~",
       "mula_dhatu_dev": "लग्",
       "raw_dhatu_after_it_lopa_dev": "लग्",
       "raw_dhatu_after_it_lopa_slp1": "lag",
@@ -59513,7 +59513,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100263."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100263. | 2026-09-29: upadeśa la~ga → laga~ (anunāsika on the final a, per लगँ)."
     },
     {
       "id": "curAdi_10_0264",
@@ -59524,7 +59524,7 @@
       "serial_in_gana": 264,
       "sutra_ref": "10.0264",
       "upadesha_dev": "रघँ",
-      "upadesha_slp1": "ra~Ga",
+      "upadesha_slp1": "raGa~",
       "mula_dhatu_dev": "रघ्",
       "raw_dhatu_after_it_lopa_dev": "रघ्",
       "raw_dhatu_after_it_lopa_slp1": "raG",
@@ -59544,7 +59544,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100264."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100264. | 2026-09-29: upadeśa ra~Ga → raGa~ (anunāsika on the final a, per रघँ)."
     },
     {
       "id": "curAdi_10_0265",
@@ -59555,7 +59555,7 @@
       "serial_in_gana": 265,
       "sutra_ref": "10.0265",
       "upadesha_dev": "रगँ",
-      "upadesha_slp1": "ra~ga",
+      "upadesha_slp1": "raga~",
       "mula_dhatu_dev": "रग्",
       "raw_dhatu_after_it_lopa_dev": "रग्",
       "raw_dhatu_after_it_lopa_slp1": "rag",
@@ -59575,7 +59575,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100265."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100265. | 2026-09-29: upadeśa ra~ga → raga~ (anunāsika on the final a, per रगँ)."
     },
     {
       "id": "curAdi_10_0266",
@@ -59679,7 +59679,7 @@
       "serial_in_gana": 269,
       "sutra_ref": "10.0269",
       "upadesha_dev": "त्रसँ",
-      "upadesha_slp1": "tra~sa",
+      "upadesha_slp1": "trasa~",
       "mula_dhatu_dev": "त्रस्",
       "raw_dhatu_after_it_lopa_dev": "त्रस्",
       "raw_dhatu_after_it_lopa_slp1": "tras",
@@ -59699,7 +59699,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100269."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100269. | 2026-09-29: upadeśa tra~sa → trasa~ (anunāsika on the final a, per त्रसँ)."
     },
     {
       "id": "curAdi_10_0270",
@@ -59710,7 +59710,7 @@
       "serial_in_gana": 270,
       "sutra_ref": "10.0270",
       "upadesha_dev": "उँध्रसँ",
-      "upadesha_slp1": "u~Dra~sa",
+      "upadesha_slp1": "u~Drasa~",
       "mula_dhatu_dev": "ध्रस्",
       "raw_dhatu_after_it_lopa_dev": "ध्रस्",
       "raw_dhatu_after_it_lopa_slp1": "Dras",
@@ -59730,7 +59730,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100270."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100270. | 2026-09-29: upadeśa u~Dra~sa → u~Drasa~ (anunāsika on the final a, per उँध्रसँ)."
     },
     {
       "id": "curAdi_10_0271",
@@ -59741,7 +59741,7 @@
       "serial_in_gana": 271,
       "sutra_ref": "10.0271",
       "upadesha_dev": "उध्रसँ",
-      "upadesha_slp1": "uDra~sa",
+      "upadesha_slp1": "uDrasa~",
       "mula_dhatu_dev": "उध्रस्",
       "raw_dhatu_after_it_lopa_dev": "उध्रस्",
       "raw_dhatu_after_it_lopa_slp1": "uDras",
@@ -59761,7 +59761,7 @@
         "ekac": false,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100271."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100271. | 2026-09-29: upadeśa uDra~sa → uDrasa~ (anunāsika on the final a, per उध्रसँ)."
     },
     {
       "id": "curAdi_10_0272",
@@ -59803,7 +59803,7 @@
       "serial_in_gana": 273,
       "sutra_ref": "10.0273",
       "upadesha_dev": "वसँ",
-      "upadesha_slp1": "va~sa",
+      "upadesha_slp1": "vasa~",
       "mula_dhatu_dev": "वस्",
       "raw_dhatu_after_it_lopa_dev": "वस्",
       "raw_dhatu_after_it_lopa_slp1": "vas",
@@ -59823,7 +59823,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100273."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100273. | 2026-09-29: upadeśa va~sa → vasa~ (anunāsika on the final a, per वसँ)."
     },
     {
       "id": "curAdi_10_0274",
@@ -59834,7 +59834,7 @@
       "serial_in_gana": 274,
       "sutra_ref": "10.0274",
       "upadesha_dev": "चरँ",
-      "upadesha_slp1": "ca~ra",
+      "upadesha_slp1": "cara~",
       "mula_dhatu_dev": "चर्",
       "raw_dhatu_after_it_lopa_dev": "चर्",
       "raw_dhatu_after_it_lopa_slp1": "car",
@@ -59854,7 +59854,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100274."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100274. | 2026-09-29: upadeśa ca~ra → cara~ (anunāsika on the final a, per चरँ)."
     },
     {
       "id": "curAdi_10_0275",
@@ -59989,7 +59989,7 @@
       "serial_in_gana": 279,
       "sutra_ref": "10.0279",
       "upadesha_dev": "ग्रसँ",
-      "upadesha_slp1": "gra~sa",
+      "upadesha_slp1": "grasa~",
       "mula_dhatu_dev": "ग्रस्",
       "raw_dhatu_after_it_lopa_dev": "ग्रस्",
       "raw_dhatu_after_it_lopa_slp1": "gras",
@@ -60009,7 +60009,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100279.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100279. | 2026-09-29: upadeśa gra~sa → grasa~ (anunāsika on the final a, per ग्रसँ).",
       "antarganas": [
         "आस्वदीयः"
       ]
@@ -60057,7 +60057,7 @@
       "serial_in_gana": 281,
       "sutra_ref": "10.0281",
       "upadesha_dev": "दलँ",
-      "upadesha_slp1": "da~la",
+      "upadesha_slp1": "dala~",
       "mula_dhatu_dev": "दल्",
       "raw_dhatu_after_it_lopa_dev": "दल्",
       "raw_dhatu_after_it_lopa_slp1": "dal",
@@ -60077,7 +60077,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100281.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100281. | 2026-09-29: upadeśa da~la → dala~ (anunāsika on the final a, per दलँ).",
       "antarganas": [
         "आस्वदीयः"
       ]
@@ -60091,7 +60091,7 @@
       "serial_in_gana": 282,
       "sutra_ref": "10.0282",
       "upadesha_dev": "पटँ",
-      "upadesha_slp1": "pa~wa",
+      "upadesha_slp1": "pawa~",
       "mula_dhatu_dev": "पट्",
       "raw_dhatu_after_it_lopa_dev": "पट्",
       "raw_dhatu_after_it_lopa_slp1": "paw",
@@ -60111,7 +60111,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100282.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100282. | 2026-09-29: upadeśa pa~wa → pawa~ (anunāsika on the final a, per पटँ).",
       "antarganas": [
         "आस्वदीयः"
       ]
@@ -60295,7 +60295,7 @@
       "serial_in_gana": 288,
       "sutra_ref": "10.0288",
       "upadesha_dev": "लकँ",
-      "upadesha_slp1": "la~ka",
+      "upadesha_slp1": "laka~",
       "mula_dhatu_dev": "लक्",
       "raw_dhatu_after_it_lopa_dev": "लक्",
       "raw_dhatu_after_it_lopa_slp1": "lak",
@@ -60315,7 +60315,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100288."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100288. | 2026-09-29: upadeśa la~ka → laka~ (anunāsika on the final a, per लकँ)."
     },
     {
       "id": "curAdi_10_0289",
@@ -60598,7 +60598,7 @@
       "serial_in_gana": 297,
       "sutra_ref": "10.0297",
       "upadesha_dev": "घटँ",
-      "upadesha_slp1": "Ga~wa",
+      "upadesha_slp1": "Gawa~",
       "mula_dhatu_dev": "घट्",
       "raw_dhatu_after_it_lopa_dev": "घट्",
       "raw_dhatu_after_it_lopa_slp1": "Gaw",
@@ -60618,7 +60618,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100297.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100297. | 2026-09-29: upadeśa Ga~wa → Gawa~ (anunāsika on the final a, per घटँ).",
       "antarganas": [
         "आस्वदीयः"
       ]
@@ -61788,7 +61788,7 @@
       "serial_in_gana": 332,
       "sutra_ref": "10.0332",
       "upadesha_dev": "तडँ",
-      "upadesha_slp1": "ta~qa",
+      "upadesha_slp1": "taqa~",
       "mula_dhatu_dev": "तड्",
       "raw_dhatu_after_it_lopa_dev": "तड्",
       "raw_dhatu_after_it_lopa_slp1": "taq",
@@ -61808,7 +61808,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100332.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100332. | 2026-09-29: upadeśa ta~qa → taqa~ (anunāsika on the final a, per तडँ).",
       "antarganas": [
         "आस्वदीयः"
       ]
@@ -61822,7 +61822,7 @@
       "serial_in_gana": 333,
       "sutra_ref": "10.0333",
       "upadesha_dev": "नलँ",
-      "upadesha_slp1": "na~la",
+      "upadesha_slp1": "nala~",
       "mula_dhatu_dev": "नल्",
       "raw_dhatu_after_it_lopa_dev": "नल्",
       "raw_dhatu_after_it_lopa_slp1": "nal",
@@ -61842,7 +61842,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100333.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100333. | 2026-09-29: upadeśa na~la → nala~ (anunāsika on the final a, per नलँ).",
       "antarganas": [
         "आस्वदीयः"
       ]
@@ -61924,7 +61924,7 @@
       "serial_in_gana": 336,
       "sutra_ref": "10.0336",
       "upadesha_dev": "ष्वदँ",
-      "upadesha_slp1": "zva~da",
+      "upadesha_slp1": "zvada~",
       "mula_dhatu_dev": "स्वद्",
       "raw_dhatu_after_it_lopa_dev": "स्वद्",
       "raw_dhatu_after_it_lopa_slp1": "svad",
@@ -61944,7 +61944,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100336.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100336. | 2026-09-29: upadeśa zva~da → zvada~ (anunāsika on the final a, per ष्वदँ).",
       "antarganas": [
         "आस्वदीयः"
       ]
@@ -62094,7 +62094,7 @@
       "serial_in_gana": 341,
       "sutra_ref": "10.0341",
       "upadesha_dev": "षहँ",
-      "upadesha_slp1": "za~ha",
+      "upadesha_slp1": "zaha~",
       "mula_dhatu_dev": "सह्",
       "raw_dhatu_after_it_lopa_dev": "सह्",
       "raw_dhatu_after_it_lopa_slp1": "sah",
@@ -62114,7 +62114,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100341.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100341. | 2026-09-29: upadeśa za~ha → zaha~ (anunāsika on the final a, per षहँ).",
       "antarganas": [
         "आधृषीयः"
       ]
@@ -62400,7 +62400,7 @@
       "serial_in_gana": 350,
       "sutra_ref": "10.0350",
       "upadesha_dev": "तपँ",
-      "upadesha_slp1": "ta~pa",
+      "upadesha_slp1": "tapa~",
       "mula_dhatu_dev": "तप्",
       "raw_dhatu_after_it_lopa_dev": "तप्",
       "raw_dhatu_after_it_lopa_slp1": "tap",
@@ -62420,7 +62420,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100350.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100350. | 2026-09-29: upadeśa ta~pa → tapa~ (anunāsika on the final a, per तपँ).",
       "antarganas": [
         "आधृषीयः"
       ]
@@ -62706,7 +62706,7 @@
       "serial_in_gana": 359,
       "sutra_ref": "10.0359",
       "upadesha_dev": "लटँ",
-      "upadesha_slp1": "la~wa",
+      "upadesha_slp1": "lawa~",
       "mula_dhatu_dev": "लट्",
       "raw_dhatu_after_it_lopa_dev": "लट्",
       "raw_dhatu_after_it_lopa_slp1": "law",
@@ -62726,7 +62726,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100359."
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100359. | 2026-09-29: upadeśa la~wa → lawa~ (anunāsika on the final a, per लटँ)."
     },
     {
       "id": "curAdi_10_0360",
@@ -62737,7 +62737,7 @@
       "serial_in_gana": 360,
       "sutra_ref": "10.0360",
       "upadesha_dev": "श्रथँ",
-      "upadesha_slp1": "Sra~Ta",
+      "upadesha_slp1": "SraTa~",
       "mula_dhatu_dev": "श्रथ्",
       "raw_dhatu_after_it_lopa_dev": "श्रथ्",
       "raw_dhatu_after_it_lopa_slp1": "SraT",
@@ -62757,7 +62757,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100360.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100360. | 2026-09-29: upadeśa Sra~Ta → SraTa~ (anunāsika on the final a, per श्रथँ).",
       "antarganas": [
         "आधृषीयः"
       ]
@@ -63009,7 +63009,7 @@
       "serial_in_gana": 368,
       "sutra_ref": "10.0368",
       "upadesha_dev": "षदँ",
-      "upadesha_slp1": "za~da",
+      "upadesha_slp1": "zada~",
       "mula_dhatu_dev": "सद्",
       "raw_dhatu_after_it_lopa_dev": "सद्",
       "raw_dhatu_after_it_lopa_slp1": "sad",
@@ -63029,7 +63029,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100368.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100368. | 2026-09-29: upadeśa za~da → zada~ (anunāsika on the final a, per षदँ).",
       "antarganas": [
         "आधृषीयः"
       ]
@@ -63077,7 +63077,7 @@
       "serial_in_gana": 370,
       "sutra_ref": "10.0370",
       "upadesha_dev": "छदँ",
-      "upadesha_slp1": "Ca~da",
+      "upadesha_slp1": "Cada~",
       "mula_dhatu_dev": "छद्",
       "raw_dhatu_after_it_lopa_dev": "छद्",
       "raw_dhatu_after_it_lopa_slp1": "Cad",
@@ -63097,7 +63097,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100370.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100370. | 2026-09-29: upadeśa Ca~da → Cada~ (anunāsika on the final a, per छदँ).",
       "antarganas": [
         "आधृषीयः"
       ]
@@ -63349,7 +63349,7 @@
       "serial_in_gana": 378,
       "sutra_ref": "10.0378",
       "upadesha_dev": "चनँ",
-      "upadesha_slp1": "ca~na",
+      "upadesha_slp1": "cana~",
       "mula_dhatu_dev": "चन्",
       "raw_dhatu_after_it_lopa_dev": "चन्",
       "raw_dhatu_after_it_lopa_slp1": "can",
@@ -63369,7 +63369,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100378.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100378. | 2026-09-29: upadeśa ca~na → cana~ (anunāsika on the final a, per चनँ).",
       "antarganas": [
         "आधृषीयः"
       ]
@@ -63383,7 +63383,7 @@
       "serial_in_gana": 379,
       "sutra_ref": "10.0379",
       "upadesha_dev": "वदँ",
-      "upadesha_slp1": "va~da",
+      "upadesha_slp1": "vada~",
       "mula_dhatu_dev": "वद्",
       "raw_dhatu_after_it_lopa_dev": "वद्",
       "raw_dhatu_after_it_lopa_slp1": "vad",
@@ -63403,7 +63403,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100379.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100379. | 2026-09-29: upadeśa va~da → vada~ (anunāsika on the final a, per वदँ).",
       "antarganas": [
         "आधृषीयः"
       ]
@@ -63417,7 +63417,7 @@
       "serial_in_gana": 380,
       "sutra_ref": "10.0380",
       "upadesha_dev": "वचँ",
-      "upadesha_slp1": "va~ca",
+      "upadesha_slp1": "vaca~",
       "mula_dhatu_dev": "वच्",
       "raw_dhatu_after_it_lopa_dev": "वच्",
       "raw_dhatu_after_it_lopa_slp1": "vac",
@@ -63437,7 +63437,7 @@
         "ekac": true,
         "udatta": true
       },
-      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100380.",
+      "notes": "ashtadhyayi-com/data dhatu/data.txt i=1100380. | 2026-09-29: upadeśa va~ca → vaca~ (anunāsika on the final a, per वचँ).",
       "antarganas": [
         "आधृषीयः"
       ]

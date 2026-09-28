@@ -6,6 +6,7 @@ Padaccheda: उतः वृद्धिः लुकि हलि
 उतो वृद्धिर्लुकि हलि (7.3.89)
 """
 from __future__ import annotations
+from phonology import mk
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
@@ -14,23 +15,44 @@ from engine.state import State
 _GATE_KEY: str = "7_3_89_uto_89"
 
 
+_AC = frozenset("aAiIuUfFxXeEoO")
+
+
+def _find(state: State) -> int | None:
+    """उतो वृद्धिर्लुकि हलि (नाभ्यस्तस्य): after śap-luk, a root ending in short u
+    takes vṛddhi before a hal-initial pit ending — क्षौति, यौति, स्तौति."""
+    if not state.meta.get("2_4_72_sap_luk"):
+        return None
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("7_3_89_done"):
+            continue
+        if not t.varnas or t.varnas[-1].slp1 != "u":
+            return None
+        tin = next((u for u in state.terms[i + 1:] if u.varnas), None)
+        if tin is None or tin.varnas[0].slp1 in _AC or "kngiti" in tin.tags or tin.meta.get("is_apit"):
+            return None
+        up = (tin.meta.get("upadesha_slp1") or "").strip()
+        return i if up.endswith(("p", "P")) else None
+    return None
+
+
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.3.89", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _find(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.3.89"
+    i = _find(state)
+    if i is None:
+        return state
+    t = state.terms[i]
+    t.varnas[-1] = mk("O")
+    t.meta["7_3_89_done"] = True
+    t.meta["anga_guna_7_3_84"] = True        # the ik has had its vṛddhi; no guṇa after
     return state
-
 
 SUTRA = SutraRecord(
     sutra_id              = "7.3.89",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "uto vfdDirluki hali",
     text_dev              = "उतो वृद्धिर्लुकि हलि",
     padaccheda_dev        = "उतः वृद्धिः लुकि हलि",
