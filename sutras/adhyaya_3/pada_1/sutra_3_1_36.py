@@ -37,12 +37,25 @@ def cond(state: State) -> bool:
     prev = state.terms[li - 1]
     if "dhatu" not in prev.tags:
         return False
-    if (prev.meta.get("upadesha_slp1") or "").strip() != "Ikz":
+    return ijadi_gurumat_anrcchah("".join(v.slp1 for v in prev.varnas))
+
+
+_IC = set("iIuUfFxXeEoO")          # ic: every vowel but a/ā
+_DIRGHA_ETC = set("AIUFXeEoO")     # guru by itself (1.4.12 दीर्घं च)
+_AC = set("aAiIuUfFxXeEoO")
+
+
+def ijadi_gurumat_anrcchah(flat: str) -> bool:
+    """इजादेः गुरुमतः अनृच्छः — ic-initial, has a guru vowel (long, or short before
+    a saṃyoga: 1.4.11/12), and not ऋच्छ्. एध्, ईक्ष्, ऊह् → yes; इष्, उष्, ऋच्छ् → no."""
+    if not flat or flat[0] not in _IC or flat == "fcC":
         return False
-    flat = "".join(v.slp1 for v in prev.varnas)
-    if flat != "Ikz":
-        return False
-    return True
+    for i, c in enumerate(flat):
+        if c in _DIRGHA_ETC:
+            return True
+        if c in _AC and len(flat) - i - 1 >= 2 and not (set(flat[i + 1:i + 3]) & _AC):
+            return True
+    return False
 
 
 def act(state: State) -> State:

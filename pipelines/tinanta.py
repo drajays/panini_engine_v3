@@ -468,6 +468,48 @@ def _lit_needs_it(purusha: int, vacana: int) -> bool:
     return (purusha, vacana) in {(2, 1), (1, 2), (1, 3)}
 
 
+def _needs_am_lit(state: State) -> bool:
+    """3.1.36 इजादेश्च गुरुमतोऽनृच्छः — decided on the dhātu's own varṇas."""
+    from sutras.adhyaya_3.pada_1.sutra_3_1_36 import ijadi_gurumat_anrcchah
+    d = next((t for t in state.terms if "dhatu" in t.tags), None)
+    return d is not None and ijadi_gurumat_anrcchah("".join(v.slp1 for v in d.varnas))
+
+
+def _derive_lit_am(state: State, pada_key: str, purusha: int, vacana: int) -> State:
+    """
+    Periphrastic liṭ for any ijādi gurumān dhātu: एध् → एधाञ्चक्रे / -चकार.
+
+      3.2.115 liṭ → 3.1.36 ām → 2.4.81 āmaḥ (liṭ-luk; एध + आम् → एधाम्)
+      → 3.1.40 कृञ्चानुप्रयुज्यते लिटि: कृ's own liṭ, derived by this engine in
+        the main root's pada (1.3.63 आम्प्रत्ययवत् कृञोऽनुप्रयोगस्य)
+      → join → 8.3.23 मोऽनुस्वारः → 8.4.58 परसवर्णः (म् → ञ् before च).
+
+    ponytail: only the kṛ anuprayoga; the as/bhū variants (एधामास) are not
+    generated, and 3.1.35/37/38/39 (kās-pratyaya, day-ay-ās, optional uṣ/vid/
+    jāgṛ, bhī/hrī/bhṛ/hu) are not routed here yet.
+    """
+    state.meta["lakara"] = "liT"
+    state.meta["liT_lakara_recipe"] = True
+    state = apply_rule("3.2.115", state)
+    state = apply_rule("3.1.36", state)
+    state = apply_rule("2.4.81", state)
+    stem = state.terms[-1]
+    before = state.flat_slp1()
+    kf = derive("qukfY", "liT", "kartari", purusha, vacana, pada=pada_key)
+    state.trace.extend(kf.trace)             # कृ's own prakriyā, step by step
+    state.terms = [Term(kind="prakriti", varnas=list(stem.varnas) + [v for t in kf.terms for v in t.varnas],
+                        tags={"pada", "anga"}, meta={"upadesha_slp1": stem.meta.get("upadesha_slp1", "")})]
+    state.emit_structural(
+        "__ANUPRAYOGA_3_1_40__", form_before=before, form_after=state.flat_slp1(),
+        why_dev="३.१.४० कृञ्चानुप्रयुज्यते लिटि — आमन्तात् परं कृञो लिडन्तम् (पदं १.३.६३ आम्प्रत्ययवत्)।",
+        type_label="अनुप्रयोगः")
+    state = apply_rule("8.2.1", state)
+    state = apply_rule("8.3.23", state)
+    state = apply_rule("8.3.24", state)      # num of an idit root: उन्ख् → उंख्
+    state = apply_rule("8.4.58", state)
+    return state
+
+
 def _lit_thal_guna(state: State) -> State:
     """Guṇa before liṭ thal, which is pit through its sthānī sip (1.1.56) and so
     not kit (1.2.5) — but not ṇit, so no 7.2.116 vṛddhi: चकर्थ, चिचेतिथ."""
@@ -4000,6 +4042,11 @@ def _dispatch_tinanta_spine(
         state = apply_rule("3.1.91", state)
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_lit_ad_gas(state, pada_key, purusha, vacana)
+
+    if lakara in ("liT",) and _needs_am_lit(state):
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        return _derive_lit_am(state, pada_key, purusha, vacana)
 
     if lakara in ("liT",):
         state = apply_rule("3.1.91", state)

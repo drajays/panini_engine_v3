@@ -21,8 +21,6 @@ def _site(state: State) -> bool:
     a, b, c = state.terms[-3], state.terms[-2], state.terms[-1]
     if "dhatu" not in a.tags:
         return False
-    if (a.meta.get("upadesha_slp1") or "").strip() != "Ikz":
-        return False
     if (b.meta.get("upadesha_slp1") or "").strip() != "Am":
         return False
     if (c.meta.get("upadesha_slp1") or "").strip() != "liT":

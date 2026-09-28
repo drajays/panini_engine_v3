@@ -95,7 +95,7 @@ rows). `core/lab.py` + `bench/oracle_batch.py` (Vidyut via `.venv`),
 | 2,818 | 312 | ◐ **PARTLY FIXED 2026-09-28** ātmanepada endings — laṭ 9/9 and lṛṭ 9/9 now correct (एधते…एधामहे, एधिष्यते); loṭ (3.4.90/91/93), liṭ ātmane, laṅ āṭ-vṛddhi still open. *Oracle fixed too: it now gets svara-marked upadeśas.* | eDa~ → एधे |
 | 2,577 | 74 | ✅ **FIXED 2026-09-28** guṇa on non-laghu upadhā — 7.3.84 target limited to final ik or laghu upadhā ik | SIkf~ → शीकावहे |
 | 1,726 | 40 | ✅ **FIXED 2026-09-28** 6.1.64 धात्वादेः षः सः / 6.1.65 णो नः — scheduled with the dhātu (after it-lopa); vārttika pratiṣedha for ष्ठिव्/ष्वष्क्; ṭ-varga reverts after ṣ→s (स्तोचते) | zvada~ → स्वदते |
-| 313 | 35 | ām-liṭ (3.1.35–40) | eDa~ eDeDa → eDAYcakre |
+| 313 | 35 | ✅ **FIXED 2026-09-28** ām-liṭ — 3.1.36 / 2.4.81 generalised (were ईक्ष्-only); `_derive_lit_am` derives the कृ anuprayoga with the engine's own liṭ in the main root's pada (1.3.63): एधाञ्चक्रे…, उक्षाञ्चकार…. 3,054 of the 3,440 remaining ām cells are **gaṇa 10 (ṇic not implemented)** | eDa~ → एधाञ्चक्रे |
 | 12,319 | 704 | unclassified — classify next | |
 
 **C0b — right form, wrong sūtra (9,707 verified cells).** `bench/practice_key`
@@ -154,6 +154,9 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
   removed from its list). thal is pit (1.1.56) → guṇa, no kit: चकर्थ, चिचेतिथ.
   8.3.78 after any iṆ at the aṅga|ending boundary (चकृढ्वे); after iṭ left to
   8.3.79 (optional). 3.4.82 ādeśas keep their sthānī (1.1.56).
+- **curādi / ṇic (3.1.25)** — gaṇa 10 is the largest remaining family
+  (ām-liṭ alone: 3,054 cells); laṭ etc. raise NotImplementedError.
+- **6.4.78 अभ्यासस्यासवर्णे**: इष् → इषेष for इयेष. **8.2.78**: उर्द् → ऊर्द्.
 - **abhyāsa bugs**: स्मृ → मस्मार (7.4.60 keeps the wrong consonant), हृ → हहार
   (7.4.62 kuhoś cuḥ missing: जहार).
 - **8.2.77 हलि च**: ष्ठिव् → ष्ठेवति for ष्ठीवति.
@@ -192,7 +195,7 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | Metric | Now | Target |
 |---|---|---|
 | Sūtras with LSK page | 1,895 | 1,900 |
-| forms.db cells verified vs Vidyut (form) | 48,575 / 77,317 (63 %) | 90 % |
+| forms.db cells verified vs Vidyut (form) | 48,926 / 77,317 (63 %) | 90 % |
 | … of those, sūtra path also agrees | 33,133 | all verified |
 | Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
 | Gītā tagged-word coverage | 8.8 % | 50 % → 80 % |

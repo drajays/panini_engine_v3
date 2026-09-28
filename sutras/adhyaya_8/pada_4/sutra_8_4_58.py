@@ -62,8 +62,11 @@ def act(state: State) -> State:
     if i is None:
         return state
     t = state.terms[0]
-    nxt = t.varnas[i + 1].slp1
-    t.varnas[i] = mk(_MAP[nxt])
+    # every site in the pada at once — the done-flag below would otherwise
+    # leave a second anusvāra (उंखांचकार → उङ्खाञ्चकार) untouched
+    for j in range(i, len(t.varnas) - 1):
+        if t.varnas[j].slp1 == "M" and t.varnas[j + 1].slp1 in _MAP:
+            t.varnas[j] = mk(_MAP[t.varnas[j + 1].slp1])
     t.meta["8_4_58_parasavarna_done"] = True
     return state
 
