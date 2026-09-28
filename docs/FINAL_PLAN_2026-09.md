@@ -60,6 +60,16 @@ by sūtra** from the engine's own derivation, with LSK pages.
 - Next: सही मेल (match), असमान पद (odd one out), per-learner weak-cell review,
   sandhi practice once sandhi is exposed via API, Gītā-word mode (A3).
 
+## Track E — Pāṇini Lab (`/lab`) ✅ 2026-09-28
+
+Local test panel: pick any dhātu (all 2,049 dhātupāṭha roots) × lakāra ×
+prayoga × pada, or any indexed noun stem × liṅga; see the whole paradigm with
+Vidyut's forms under each cell (green agree / red differ / error), and click a
+cell for its full prakriyā (sūtra text, LSK pages, optional saṃjñā/skipped
+rows). `core/lab.py` + `bench/oracle_batch.py` (Vidyut via `.venv`),
+`GET /v1/lab/grid`, `/v1/lab/lemmas`, `api/lab.html`. Start: double-click
+`Panini Engine.command` (opens /lab) or `make lab`.
+
 ## Track B — verify against LSK
 
 - **B1 LSK prakriyā gold, Parts 2 → 3 → 4 first.** OCR (tesseract `san`)

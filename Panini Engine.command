@@ -3,6 +3,7 @@
 # Pāṇini Engine — double-click launcher (macOS).
 #
 # Starts both local UIs and opens the browser:
+#   :8000/lab     — test panel: paradigm vs Vidyut, click a cell for its prakriyā
 #   :8000/review  — derive a form and correct the prakriyā (+ /docs for the API)
 #   :5050         — the full Flask UI (paradigms, dhātupāṭha, SIG, tests)
 #
@@ -48,6 +49,8 @@ cat <<EOF
 
   पाणिनि-यन्त्रम् — running locally
 
+  Lab       http://127.0.0.1:${API_PORT}/lab      paradigm vs Vidyut, click for prakriyā
+  अभ्यास    http://127.0.0.1:${API_PORT}/practice practice with sūtra explanations
   संशोधनम्  http://127.0.0.1:${API_PORT}/review   derive + correct
   API docs  http://127.0.0.1:${API_PORT}/docs
   पूर्ण-UI   http://127.0.0.1:${WEB_PORT}/        paradigms · धातुपाठ · SIG
@@ -62,6 +65,6 @@ i=0
 while [ "$i" -lt 60 ] && ! curl -sf -o /dev/null "http://127.0.0.1:${API_PORT}/v1/health"; do
   i=$((i + 1)); sleep 1
 done
-open "http://127.0.0.1:${API_PORT}/review"
+open "http://127.0.0.1:${API_PORT}/lab"
 
 wait

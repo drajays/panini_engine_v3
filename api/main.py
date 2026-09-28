@@ -273,6 +273,48 @@ def practice_page() -> str:
     return (Path(__file__).parent / "practice.html").read_text(encoding="utf-8")
 
 
+@app.get("/v1/lab/grid", tags=["lab"])
+def lab_grid(
+    kind: Literal["subanta", "tinanta"] = "tinanta",
+    lemma: str = "BU",
+    lakara: str = "laT",
+    prayoga: Literal["kartari", "karmani", "bhave"] = "kartari",
+    pada: Literal["parasmai", "atmane"] | None = None,
+    linga: Linga = "pulliṅga",
+) -> dict[str, Any]:
+    """Whole paradigm, engine vs Vidyut per cell (core/lab)."""
+    from core.lab import grid
+    if kind == "tinanta":
+        lemma = _resolve_dhatu(lemma)
+    try:
+        return grid(kind, lemma, lakara=lakara, prayoga=prayoga, pada=pada, linga=linga)
+    except KeyError as ex:
+        raise HTTPException(404, str(ex))
+
+
+@app.get("/v1/lab/lemmas", tags=["lab"])
+def lab_lemmas(kind: Literal["subanta", "tinanta"] = "tinanta") -> dict[str, Any]:
+    """Every lemma the engine can be asked about: all dhātupāṭha roots, or indexed stems."""
+    if kind == "tinanta":
+        from pipelines.dhatupatha import _envelope, _payload
+        rows = [{"lemma": e["upadesha_slp1"], "dev": e.get("mula_dhatu_dev") or e.get("upadesha_dev", ""),
+                 "id": e.get("dhatupatha_id") or "", "pada": e.get("pada_label_dev") or ""}
+                for e in _envelope(_payload())["entries"]]
+        return {"lemmas": sorted(rows, key=lambda r: (r["id"] or "99", r["lemma"]))}
+    from contextlib import closing
+    from engine.form_index import connect
+    with closing(connect()) as conn:
+        rows = conn.execute("SELECT DISTINCT lemma, json_extract(features, '$.linga') FROM forms "
+                            "WHERE kind = 'subanta' ORDER BY 1").fetchall()
+    return {"lemmas": [{"lemma": l, "dev": slp1_str_to_dev(l), "linga": g} for l, g in rows]}
+
+
+@app.get("/lab", response_class=HTMLResponse, include_in_schema=False)
+def lab_page() -> str:
+    """Local test panel: pick a paradigm, compare with Vidyut, open any derivation."""
+    return (Path(__file__).parent / "lab.html").read_text(encoding="utf-8")
+
+
 @app.get("/v1/subanta/paradigm", tags=["subanta"])
 def subanta_paradigm(stem: str = "rAma", linga: Linga = "pulliṅga") -> dict[str, Any]:
     """All 24 cells. Per-cell failures are reported, never fatal."""
@@ -300,6 +342,7 @@ class TinantaReq(BaseModel):
     prayoga: Literal["kartari", "karmani", "bhave"] = "kartari"
     purusha: int = Field(3, ge=1, le=3)
     vacana: int = Field(1, ge=1, le=3)
+    pada: Literal["parasmai", "atmane"] | None = Field(None, description="override the dhātu's pada")
 
 
 def _resolve_dhatu(dhatu: str) -> str:
@@ -318,7 +361,8 @@ def tinanta(req: TinantaReq) -> dict[str, Any]:
     from pipelines.tinanta import _dhatu_row_by_upadesha, derive
     upadesha = _resolve_dhatu(req.dhatu)
     row = _run(_dhatu_row_by_upadesha, upadesha)
-    state = _run(derive, upadesha, req.lakara, req.prayoga, req.purusha, req.vacana)
+    kw = {"pada": req.pada} if req.pada else {}
+    state = _run(derive, upadesha, req.lakara, req.prayoga, req.purusha, req.vacana, **kw)
     out = _derivation(state, **{**req.model_dump(), "dhatu": upadesha})
     out["dhatu"] = {
         "upadesha_slp1": row.get("upadesha_slp1", upadesha),

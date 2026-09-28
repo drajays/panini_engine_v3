@@ -1,0 +1,243 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pāṇini Lab</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@400;600&display=swap">
+<style>
+:root{
+  --ground:#f3ece0; --panel:#fbf7ef; --band:#d8c49a; --band-soft:#e7d9bb;
+  --row:#fdfbf7; --ink:#241d12; --ink-soft:#5d5140; --ink-faint:#8d8069;
+  --rule:#d9ccb2; --indigo:#2c4a7c; --madder:#9c3822; --moss:#3f6b4a; --amber:#8a6a1f; --select:#f6e6a8;
+  --ok-bg:#e6efe3; --bad-bg:#f5e1da;
+  --dev:"Noto Serif Devanagari","Noto Sans Devanagari",serif;
+  --mono:"IBM Plex Mono",Menlo,monospace; --body:"Spectral",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#17140f; --panel:#201b14; --band:#3d3325; --band-soft:#2b2419;
+    --row:#1d1811; --ink:#ece3d2; --ink-soft:#b0a58f; --ink-faint:#857a66;
+    --rule:#3a3125; --indigo:#8fb0e2; --madder:#e08a6e; --moss:#87bd91; --amber:#d6ab4d; --select:#4a3f20;
+    --ok-bg:#1f2e22; --bad-bg:#3a221b;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#17140f; --panel:#201b14; --band:#3d3325; --band-soft:#2b2419;
+  --row:#1d1811; --ink:#ece3d2; --ink-soft:#b0a58f; --ink-faint:#857a66;
+  --rule:#3a3125; --indigo:#8fb0e2; --madder:#e08a6e; --moss:#87bd91; --amber:#d6ab4d; --select:#4a3f20;
+  --ok-bg:#1f2e22; --bad-bg:#3a221b;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.55 var(--body)}
+header{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;align-items:baseline;padding:.9rem 16px;
+  background:var(--band);border-bottom:1px solid var(--rule)}
+header h1{font-size:1.1rem;margin:0}
+header .sub{font-size:.84rem;color:var(--ink-soft)}
+header nav{margin-left:auto;font-size:.85rem;display:flex;gap:.9rem}
+header a{color:var(--indigo)}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem .9rem;align-items:flex-end;padding:.8rem 16px;
+  background:var(--panel);border-bottom:1px solid var(--rule)}
+.controls label{display:flex;flex-direction:column;font-size:.74rem;color:var(--ink-soft);gap:.15rem}
+select,input,button{font:inherit;color:var(--ink)}
+select,input{font-size:.95rem;padding:.3rem .5rem;border:1px solid var(--rule);border-radius:3px;
+  background:var(--row);font-family:var(--dev);max-width:100%}
+input#lemma{width:9rem}
+.btn{border:1px solid var(--indigo);background:var(--indigo);color:var(--ground);border-radius:3px;
+  padding:.4rem .9rem;cursor:pointer}
+main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+@media (max-width:980px){main{grid-template-columns:1fr}}
+.left{padding:1rem 16px 3rem}
+.right{padding:1rem 16px 3rem;border-left:1px solid var(--rule);background:var(--panel);min-height:70vh}
+@media (max-width:980px){.right{border-left:0;border-top:1px solid var(--rule)}}
+.meta{font-family:var(--dev);margin-bottom:.6rem}
+.meta b{color:var(--madder);font-size:1.2rem}
+.meta .m{color:var(--ink-soft);font-size:.88rem}
+.tally{display:flex;flex-wrap:wrap;gap:.4rem;margin:.4rem 0 .9rem;font-family:var(--mono);font-size:.78rem}
+.tally span{border:1px solid var(--rule);border-radius:99px;padding:.1rem .6rem;background:var(--row)}
+.tally .agree{color:var(--moss)} .tally .disagree{color:var(--madder)} .tally .error{color:var(--amber)}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:32rem}
+th{background:var(--band);font-family:var(--dev);font-weight:600;font-size:.9rem;text-align:left;
+  padding:.4rem .6rem;border:1px solid var(--rule)}
+th.rh{background:var(--band-soft);width:7rem}
+td{border:1px solid var(--rule);padding:0;vertical-align:top}
+td button{width:100%;text-align:left;border:0;background:none;cursor:pointer;padding:.45rem .6rem;
+  font-family:var(--dev);font-size:1.02rem;display:block}
+td button:focus-visible{outline:2px solid var(--indigo);outline-offset:-2px}
+td.agree{background:var(--ok-bg)} td.disagree{background:var(--bad-bg)}
+td.error{background:var(--bad-bg)} td.sel button{box-shadow:inset 0 0 0 2px var(--indigo)}
+td .v{display:block;font-size:.82rem;color:var(--ink-soft)}
+td .mark{font-family:var(--mono);font-size:.72rem;margin-left:.3rem}
+td.agree .mark{color:var(--moss)} td.disagree .mark,td.error .mark{color:var(--madder)}
+.legend{font-size:.8rem;color:var(--ink-faint);margin-top:.6rem}
+.right h2{font-family:var(--dev);font-size:1.3rem;margin:0;color:var(--madder)}
+.right .cell{font-family:var(--dev);color:var(--ink-soft);margin-bottom:.6rem}
+.cmp{font-family:var(--dev);margin:.3rem 0 .8rem;font-size:.95rem}
+.cmp .no{color:var(--madder)} .cmp .ok{color:var(--moss)}
+.opts{display:flex;gap:.8rem;font-size:.82rem;color:var(--ink-soft);margin-bottom:.6rem}
+.step{display:grid;grid-template-columns:2rem 1fr;gap:.4rem;padding:.45rem 0;border-bottom:1px dashed var(--rule)}
+.step .n{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint)}
+.step .f{font-family:var(--dev);color:var(--madder)}
+.step .sid{font-family:var(--mono);font-size:.8rem;color:var(--indigo)}
+.step .t{font-family:var(--dev);color:var(--indigo)}
+.step .x{display:block;font-family:var(--dev);font-size:.82rem;color:var(--ink-faint)}
+.step.quiet .f{color:var(--ink-faint)}
+.err{color:var(--madder);font-family:var(--mono);font-size:.85rem;white-space:pre-wrap}
+.muted{color:var(--ink-faint);font-size:.88rem}
+</style>
+
+<header>
+  <h1>Pāṇini Lab</h1>
+  <span class="sub">Engine vs Vidyut, cell by cell · click a form for its prakriyā</span>
+  <nav><a href="/practice">अभ्यास</a><a href="/shabda">शब्दरूप</a><a href="/docs">API</a></nav>
+</header>
+
+<form class="controls" id="f">
+  <label>प्रकार <select id="kind"><option value="tinanta">तिङन्त</option><option value="subanta">सुबन्त</option></select></label>
+  <label>धातु / शब्द (SLP1, Devanāgarī, or 01.0001)
+    <input id="lemma" list="lemmas" value="BU" autocomplete="off" spellcheck="false">
+    <datalist id="lemmas"></datalist></label>
+  <label class="tin">लकार <select id="lakara">
+    <option value="laT">लट्</option><option value="liT">लिट्</option><option value="luT">लुट्</option>
+    <option value="lRT">लृट्</option><option value="loT">लोट्</option><option value="laG">लङ्</option>
+    <option value="liG">विधिलिङ्</option><option value="AsIrliG">आशीर्लिङ्</option>
+    <option value="luG">लुङ्</option><option value="lRG">लृङ्</option></select></label>
+  <label class="tin">प्रयोग <select id="prayoga"><option value="kartari">कर्तरि</option><option value="karmani">कर्मणि</option><option value="bhave">भावे</option></select></label>
+  <label class="tin">पद <select id="pada"><option value="">धातु का अपना</option><option value="parasmai">परस्मैपद</option><option value="atmane">आत्मनेपद</option></select></label>
+  <label class="sub" hidden>लिङ्ग <select id="linga"><option value="pulliṅga">पुंलिङ्ग</option><option value="strīliṅga">स्त्रीलिङ्ग</option><option value="napuṃsaka">नपुंसकलिङ्ग</option></select></label>
+  <button class="btn" type="submit">Run</button>
+</form>
+
+<main>
+  <section class="left">
+    <div id="meta"></div>
+    <div class="tally" id="tally"></div>
+    <div class="wrap" id="grid"><p class="muted">Pick a paradigm and press Run.</p></div>
+    <p class="legend">Green = our form is among Vidyut's · red = differs or engine error · grey = Vidyut silent. The Vidyut forms under each cell are the reference.</p>
+  </section>
+  <section class="right" id="detail"><p class="muted">Click any cell to see how the engine derives it.</p></section>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const store = {
+  get(k){ try { return JSON.parse(localStorage.getItem(k)) } catch { return null } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)) } catch {} },
+};
+const PU = {3:"प्रथम",2:"मध्यम",1:"उत्तम"}, VA = ["","एकवचन","द्विवचन","बहुवचन"];
+const VI = ["","प्रथमा","द्वितीया","तृतीया","चतुर्थी","पञ्चमी","षष्ठी","सप्तमी","सम्बोधन"];
+let G = null, ticket = 0;
+
+async function api(path, opts){
+  const r = await fetch(path, opts);
+  if (!r.ok) throw new Error(`${r.status} ${(await r.text()).slice(0, 300)}`);
+  return r.json();
+}
+
+function syncKind(){
+  const tin = $("kind").value === "tinanta";
+  document.querySelectorAll(".tin").forEach(e => e.hidden = !tin);
+  document.querySelector(".sub").hidden = tin;
+}
+
+async function loadLemmas(){
+  const {lemmas} = await api(`/v1/lab/lemmas?kind=${$("kind").value}`);
+  $("lemmas").innerHTML = lemmas.map(l =>
+    `<option value="${esc(l.lemma)}">${esc(l.dev)}${l.id ? " · " + esc(l.id) : ""}${l.pada ? " · " + esc(l.pada) : ""}${l.linga ? " · " + esc(l.linga) : ""}</option>`).join("");
+}
+
+function params(){
+  const p = new URLSearchParams({kind: $("kind").value, lemma: $("lemma").value.trim()});
+  if ($("kind").value === "tinanta"){
+    p.set("lakara", $("lakara").value); p.set("prayoga", $("prayoga").value);
+    if ($("pada").value) p.set("pada", $("pada").value);
+  } else p.set("linga", $("linga").value);
+  return p;
+}
+
+async function run(e){
+  e && e.preventDefault();
+  const p = params(); store.set("lab.last", Object.fromEntries(p));
+  history.replaceState(null, "", "?" + p);
+  const mine = ++ticket;
+  $("grid").innerHTML = `<p class="muted">Deriving and asking Vidyut…</p>`; $("tally").innerHTML = "";
+  try {
+    const g = await api(`/v1/lab/grid?${p}`);
+    if (mine !== ticket) return;
+    G = g; render();
+  } catch (err) { $("grid").innerHTML = `<p class="err">${esc(err.message)}</p>`; }
+}
+
+function cellHtml(c, i){
+  const mark = {agree:"✓", disagree:"✗", error:"!", "oracle-silent":"?", "no-oracle":""}[c.status];
+  const v = c.vidyut.length ? c.vidyut.map(x => x.dev).join(" / ") : (c.status === "no-oracle" ? "" : "—");
+  return `<td class="${c.status}" data-i="${i}"><button type="button">${esc(c.dev || "(error)")}<span class="mark">${mark}</span>
+    <span class="v">Vidyut: ${esc(v)}</span></button></td>`;
+}
+
+function render(){
+  const m = G.meta;
+  $("meta").innerHTML = G.kind === "tinanta"
+    ? `<div class="meta"><b>${esc(m.mula_dev)}</b> <span class="m">${esc(m.upadesha)} · ${esc(m.path_id)} · गण ${esc(m.gana)} · ${esc(m.pada_dev)} · ${esc(m.artha_dev)}</span></div>`
+    : `<div class="meta"><b>${esc(m.stem_dev)}</b> <span class="m">${esc(m.stem)} · ${esc(m.linga)}</span></div>`;
+  const t = G.tally;
+  $("tally").innerHTML = `<span class="agree">agree ${t.agree}</span><span class="disagree">differ ${t.disagree}</span><span class="error">error ${t.error}</span>`
+    + (t["oracle-silent"] ? `<span>Vidyut silent ${t["oracle-silent"]}</span>` : "")
+    + (G.oracle ? "" : `<span class="error">Vidyut unavailable (.venv)</span>`);
+  let h;
+  if (G.kind === "tinanta"){
+    h = `<table><tr><th></th>${[1,2,3].map(v => `<th>${VA[v]}</th>`).join("")}</tr>`;
+    for (let r = 0; r < 3; r++)
+      h += `<tr><th class="rh">${PU[3 - r]}पुरुष</th>${[0,1,2].map(c => cellHtml(G.cells[r*3+c], r*3+c)).join("")}</tr>`;
+  } else {
+    h = `<table><tr><th></th>${[1,2,3].map(v => `<th>${VA[v]}</th>`).join("")}</tr>`;
+    for (let r = 0; r < 8; r++)
+      h += `<tr><th class="rh">${VI[r+1]}</th>${[0,1,2].map(c => cellHtml(G.cells[r*3+c], r*3+c)).join("")}</tr>`;
+  }
+  $("grid").innerHTML = h + "</table>";
+  $("grid").querySelectorAll("td[data-i]").forEach(td => td.querySelector("button").onclick = () => detail(+td.dataset.i));
+}
+
+async function detail(i){
+  document.querySelectorAll("td.sel").forEach(td => td.classList.remove("sel"));
+  document.querySelector(`td[data-i="${i}"]`).classList.add("sel");
+  const c = G.cells[i], f = c.features;
+  const head = `<h2>${esc(c.dev || "—")}</h2><div class="cell">${esc(c.label)}</div>
+    <div class="cmp">Vidyut: ${c.vidyut.length ? c.vidyut.map(x => `<span class="${x.slp1 === c.slp1 ? "ok" : "no"}">${esc(x.dev)}</span>`).join(" / ") : "—"}</div>
+    <div class="opts"><label><input type="checkbox" id="all"> show every step (saṃjñā, skipped)</label></div>`;
+  if (c.error){ $("detail").innerHTML = head + `<p class="err">${esc(c.error)}</p>`; return; }
+  $("detail").innerHTML = head + `<p class="muted">deriving…</p>`;
+  const [path, body] = G.kind === "tinanta"
+    ? ["/v1/tinanta", {dhatu: G.meta.upadesha, lakara: f.lakara, prayoga: f.prayoga, purusha: f.purusha, vacana: f.vacana, pada: G.input.pada || null}]
+    : ["/v1/subanta", {stem: G.input.lemma, vibhakti: f.vibhakti, vacana: f.vacana, linga: f.linga}];
+  try {
+    const d = await api(path, {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(body)});
+    const draw = () => {
+      const all = $("all") && $("all").checked;
+      const steps = d.steps.filter(s => all || (s.changed && s.sutra_id && !s.sutra_id.startsWith("__")));
+      $("steps").innerHTML = steps.map(s => `<div class="step${s.changed ? "" : " quiet"}"><span class="n">${s.n}</span><div>
+        <span class="f">${esc(s.before.dev)} → ${esc(s.after.dev)}</span><br>
+        <span class="sid">${esc(s.sutra_id)}</span> <span class="t">${esc(s.text_dev || s.type_dev || "")}</span>
+        ${all ? `<span class="x">${esc(s.status)}</span>` : ""}
+        ${s.hint_hi ? `<span class="x">${esc(s.hint_hi)} (unreviewed)</span>` : ""}
+        ${s.lsk && s.lsk.length ? `<span class="x">LSK: ${s.lsk.slice(0,3).map(p => `भाग ${p.part} पृ. ${p.page}`).join(", ")}</span>` : ""}
+      </div></div>`).join("");
+    };
+    $("detail").innerHTML = head + `<p class="muted">${d.stats.applied} applied of ${d.stats.total} trace rows</p><div id="steps"></div>`;
+    $("all").onchange = draw; draw();
+  } catch (err) { $("detail").innerHTML = head + `<p class="err">${esc(err.message)}</p>`; }
+}
+
+$("f").onsubmit = run;
+$("kind").onchange = async () => {
+  syncKind(); $("lemma").value = $("kind").value === "tinanta" ? "BU" : "rAma";
+  await loadLemmas(); run();
+};
+(async () => {
+  const q = new URLSearchParams(location.search), last = store.get("lab.last") || {};
+  const src = q.has("lemma") ? Object.fromEntries(q) : last;
+  for (const k of ["kind","lemma","lakara","prayoga","pada","linga"]) if (src[k] != null) $(k).value = src[k];
+  syncKind(); await loadLemmas(); run();
+})();
+</script>

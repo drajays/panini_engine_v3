@@ -52,6 +52,9 @@ pages:
 api:
 	uvicorn api.main:app --reload --port 8000
 
+lab:   ## local test panel → http://127.0.0.1:8000/lab (Vidyut column needs .venv)
+	@(sleep 3; open http://127.0.0.1:8000/lab) & uvicorn api.main:app --port 8000
+
 ui:
 	./"Panini Engine.command"
 
