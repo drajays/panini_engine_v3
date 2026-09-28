@@ -54,6 +54,12 @@ def act(state: State) -> State:
     t0.varnas[0] = mk("s")
     if len(t0.varnas) > 1 and t0.varnas[1].slp1 in _TU_TO_TU:
         t0.varnas[1] = mk(_TU_TO_TU[t0.varnas[1].slp1])
+    # a ṇ further on was ṣ's doing too (8.4.1/2 in the upadeśa): षण् → सन्
+    # (सनति), by the same निमित्तापाये नैमित्तिकस्याप्यपायः.
+    for j in range(2, len(t0.varnas)):
+        if t0.varnas[j].slp1 == "R":
+            t0.varnas[j] = mk("n")
+            break
     t0.meta["corrected_v2_P001_C_6_1_64_done"] = True
     return state
 

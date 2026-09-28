@@ -111,14 +111,25 @@ def _find_target(state: State):
                 if m == len(flat) - 1:
                     # Pada-final *n*; representative exemption (see 8.4.1).
                     continue
+                # only an n followed by a vowel or y/v/m/n (स्तृणोति, स्तृण्वन्ति,
+                # क्रीणाति); before a jhal it stays (चरन्ति, कुर्वन्ति).
+                if flat[m + 1][2].slp1 not in "aAiIuUfFxXeEoOyvmn":
+                    continue
                 return (ti2, vi2)
             if vm.slp1 in _BLOCKERS:
                 break
     return None
 
 
+# kṣubhnādi (8.4.39) roots, by upadeśa: क्षुभ् (kṣubhnā), तृप् (tṛpnu)
+_KSUBHNADI = frozenset({"kzuBa~", "tfpa~", "tfpA~", "tfpa"})
+
+
 def cond(state: State) -> bool:
     if not state.tripadi_zone:
+        return False
+    # 8.4.39 क्षुभ्नादिषु च: no ṇatva in the kṣubhnādi forms (क्षुभ्नाति, तृप्नोति)
+    if any((t.meta.get("dhatu_upadesha") or "").strip() in _KSUBHNADI for t in state.terms):
         return False
     if _find_p009_natva(state) is not None:
         return True

@@ -216,8 +216,10 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
    for loṭ uttama; 6.1.78 sees an ec-final vikaraṇa (1.4.13 aṅga); 6.1.66's
    āśīr branch no longer eats vidhiliṅ's only s; liṅ savarṇa-dīrgha; 6.4.110/108
    in loṭ and laṅ; 8.2.79 by upadeśa. loṭ 9/9 in gaṇas 1/4/5/6/8.
-2. **ṇatva** (8.4.1/8.4.2) in the universal Tripāḍī — needs its vyavāya and
-   pratiṣedha conditions stated exactly first (स्तृणोति, क्रीणाति).
+2. ✅ **ṇatva** (8.4.1/8.4.2) in the universal Tripāḍī, conservatively: the
+   n must be followed by a vowel or y/v/m/n (स्तृणोति, स्तृण्वन्ति; चरन्ति
+   untouched); 8.4.39 क्षुभ्नादिषु च (तृप्नोति); 6.1.64 also reverts a ṣ-caused ṇ
+   (षण् → सनति). Vidyut check: 0 over- and 0 under-application in the index.
 3. **gaṇa 9 (śnā)**: 3.1.81 general, 6.4.112/113 (क्रीणन्ति, क्रीणीतः).
 4. **gaṇa 2 (luk), 3 (ślu + dvitva), 7 (śnam)** — the remaining refusals.
 5. 7.3.84 → 7.3.86 attribution (largest wrong-sūtra lead).

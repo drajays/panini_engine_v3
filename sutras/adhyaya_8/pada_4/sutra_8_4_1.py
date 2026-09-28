@@ -67,12 +67,22 @@ def _find_adjacent_natva(state: State) -> tuple[int, int] | None:
             last = _last_flat_index(state)
             if last is not None and (ti, vi) == last:
                 continue
+            # as in 8.4.2: only an n followed by a vowel or y/v/m/n
+            if vi + 1 >= len(t.varnas) or t.varnas[vi + 1].slp1 not in "aAiIuUfFxXeEoOyvmn":
+                continue
             return (ti, vi)
     return None
 
 
+# kṣubhnādi (8.4.39) roots, by upadeśa: क्षुभ् (kṣubhnā), तृप् (tṛpnu)
+_KSUBHNADI = frozenset({"kzuBa~", "tfpa~", "tfpA~", "tfpa"})
+
+
 def cond(state: State) -> bool:
     if not state.tripadi_zone:
+        return False
+    # 8.4.39 क्षुभ्नादिषु च: no ṇatva in the kṣubhnādi forms (क्षुभ्नाति, तृप्नोति)
+    if any((t.meta.get("dhatu_upadesha") or "").strip() in _KSUBHNADI for t in state.terms):
         return False
     return _find_adjacent_natva(state) is not None
 
