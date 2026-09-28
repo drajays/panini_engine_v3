@@ -208,11 +208,32 @@ def _liT_strong_eligible(state: State) -> bool:
     return _last_ik_index(d0) is not None
 
 
+def _ngit_vikarana_own_guna(state: State) -> int | None:
+    """1.1.5 bars the *root* when the next term is a kṅit vikaraṇa (śnu, śnā…),
+    but the vikaraṇa's own final ik is a separate site: before a pit ending it
+    takes guṇa (सु + नु + ति → सुनोति). Returns the dhātu index when so."""
+    di = _first_dhatu_index(state)
+    if di is None or di + 1 >= len(state.terms):
+        return None
+    vik = state.terms[di + 1]
+    if "vikarana" not in vik.tags or "kngiti" not in vik.tags:
+        return None
+    # only before a *pit* ending — every apit sārvadhātuka is ṅit by 1.2.4,
+    # tagged or not (सुनोति, but सुनुतः, सुन्वन्ति)
+    tin = next((u for u in state.terms[di + 2:] if "tin_adesha_3_4_78" in u.tags), None)
+    if tin is None:
+        return None
+    up = (tin.meta.get("upadesha_slp1") or "").strip()
+    if not (up.endswith(("p", "P")) or tin.meta.get("pit")):
+        return None
+    return di if _vikarana_ik_eligible(state, di) else None
+
+
 def cond(state: State) -> bool:
     if ik_guna_vriddhi_blocked_by_1_1_4(state):
         return False
     if ik_guna_vriddhi_blocked_by_1_1_5(state):
-        return False
+        return _ngit_vikarana_own_guna(state) is not None
     if state.meta.get("juhoti_guna_recipe"):
         return _p040_eligible(state)
     if state.meta.get("liT_strong_recipe"):
@@ -273,6 +294,11 @@ def act(state: State) -> State:
         d0 = state.terms[di]
         _apply_guna_to_dhatu(d0)
         state.meta.pop("juhoti_guna_recipe", None)
+        return state
+    if ik_guna_vriddhi_blocked_by_1_1_5(state):
+        dv = _ngit_vikarana_own_guna(state)
+        if dv is not None:
+            _apply_guna_to_dhatu(state.terms[dv + 1])       # सुनोति
         return state
     di = _first_dhatu_index(state)
     assert di is not None

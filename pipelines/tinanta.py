@@ -283,6 +283,11 @@ def _bhave_atmanepada_tin_after_lopa(state: State, *, kartari_atmane: bool = Fal
 # VIKARAṆA STAGE (gaṇa-specific)
 # ─────────────────────────────────────────────────────────────────────────────
 
+# gaṇas whose vikaraṇa is a u (śnu 3.1.73, u 3.1.79): the spines' yaṇ/ayādi
+# and yāsuṭ steps key on this, not on "gaṇa 8" alone (सुन्वन्तु, असुन्वन्).
+_U_VIKARANA_GANAS = (5, 8)
+
+
 def _apply_vikarana(state: State, gana: int) -> State:
     """
     Insert and process the vikaraṇa pratyaya based on gaṇa.
@@ -338,6 +343,17 @@ def _apply_vikarana(state: State, gana: int) -> State:
         state = apply_rule("1.2.4", state)
         # 7.4.28 रिङ् शयग्लिङ्क्षु: ṛ-final aṅga before śa (मृ → म्रियते)
         state = apply_rule("7.4.28", state)
+        return state
+
+    if gana == 5:
+        # 3.1.73 स्वादिभ्यः श्नुः: nu after the dhātu; śnu is apit, so a second
+        # 1.2.4 pass makes it ṅit (1.1.5: no guṇa of the root). Strong forms
+        # take guṇa of nu's u later (सुनोति); 6.1.77 gives सुन्वन्ति.
+        state = apply_rule("3.1.73", state)
+        state = apply_rule("3.4.113", state)
+        state = P00_lashakvataddhite_it_lopa_chain(state)
+        state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
+        state = apply_rule("1.2.4", state)
         return state
 
     if gana == 8:
@@ -1057,7 +1073,7 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: pada + sandhi ─────────────────────────────────────────────────
     state = apply_rule("1.4.14", state)
     # 6.1.77 iko yaṇ aci — tanādi gana 8: vikaraṇa-u + AC-initial tiṅ (tan+u+ant → tanvant)
-    if gana == 8:
+    if gana in _U_VIKARANA_GANAS:
         state = apply_rule("6.1.77", state)
     state = apply_rule("6.1.78", state)
     # 6.1.97: a+a → a (3pl: śap-a + ant-a; 1sg: śap-a + am-a)
@@ -1402,7 +1418,7 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     gana: int = state.terms[0].meta.get("gana", 1)
     # For tanādi gana 8: block early guṇa of vikaraṇa u until yāsuṭ (ṅit) arrives.
     # 3.3.161's act pops liG_vidhi_recipe, so we use a persistent guard flag.
-    if gana == 8:
+    if gana in _U_VIKARANA_GANAS:
         state.meta["liG_yasut_expected"] = True
     state = _apply_vikarana(state, gana)
 
@@ -1437,7 +1453,7 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: aṅgakārya ────────────────────────────────────────────────────
     state = apply_rule("1.4.13", state)
     # 6.1.96 usy apadāntāt — tanādi gana 8: yā + us → y + us (drop ā before 3pl us)
-    if gana == 8:
+    if gana in _U_VIKARANA_GANAS:
         state = apply_rule("6.1.96", state)
     # 6.1.87: a + i → e  (śap-a + yāsuṭ-i remnant)
     state = apply_rule("6.1.87", state)
@@ -1447,7 +1463,7 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: pada + sandhi ────────────────────────────────────────────────
     state = apply_rule("1.4.14", state)
     # 6.1.77 iko yaṇ aci — tanādi gana 8: vikaraṇa-u + AC-initial tiṅ
-    if gana == 8:
+    if gana in _U_VIKARANA_GANAS:
         state = apply_rule("6.1.77", state)
     state = apply_rule("6.1.78", state)
 
@@ -1857,7 +1873,7 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: pada + sandhi ─────────────────────────────────────────────────
     state = apply_rule("1.4.14", state)
     # 6.1.77 iko yaṇ aci — only for tanādi (gana 8): vikaraṇa-u + antu (tanu+antu → tanvantu)
-    if gana == 8:
+    if gana in _U_VIKARANA_GANAS:
         state = apply_rule("6.1.77", state)
     # 6.1.78 (eco'yavAyAvaH) must run BEFORE 6.1.97 below: it needs the śap
     # term's own 'a' still present to find the dhātu+śap boundary (bho+a →

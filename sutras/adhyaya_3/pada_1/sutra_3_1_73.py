@@ -24,13 +24,32 @@ def _find_sap(state: State) -> int | None:
     return None
 
 
+def _svadi_dhatu(state: State) -> int | None:
+    """स्वादिभ्यः श्नुः: a svādi (gaṇa-5) dhātu before a sārvadhātuka tiṅ, no
+    vikaraṇa yet — returns the insertion index (right after the dhātu)."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("gana") != 5:
+            continue
+        if any("vikarana" in u.tags for u in state.terms[i + 1:]):
+            return None
+        if any("tin_adesha_3_4_78" in u.tags for u in state.terms[i + 1:]):
+            return i + 1
+    return None
+
+
 def cond(state: State) -> bool:
-    if not state.meta.get("snu_recipe"):
-        return False
-    return _find_sap(state) is not None
+    if state.meta.get("snu_recipe"):
+        return _find_sap(state) is not None
+    return _svadi_dhatu(state) is not None
 
 
 def act(state: State) -> State:
+    j = _svadi_dhatu(state)
+    if j is not None and not state.meta.get("snu_recipe"):
+        state.terms.insert(j, Term(kind="pratyaya", varnas=parse_slp1_upadesha_sequence("Snu"),
+                                   tags={"pratyaya", "vikarana", "upadesha"},
+                                   meta={"upadesha_slp1": "Snu"}))
+        return state
     i = _find_sap(state)
     if i is None:
         return state
