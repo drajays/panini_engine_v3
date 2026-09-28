@@ -137,6 +137,15 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
   laṅ ātmanepada 9/9: 3.4.100 इतश्च limited to parasmaipada (taṅ upadeśa
   identity), 7.2.81/6.1.66/6.1.87 tail (ऐधेताम्, ऐधे, ऐधावहि, ऐधामहि).
 - **6.1.73 छे च**: उछ् → औछत् for औच्छत् (tuk missing).
+- ✅ **liṭ ātmanepada** (2026-09-28): the liṭ spine had only parasmaipada
+  endings. Now 3.4.81 (e / ire) + 3.4.79/80 + iṭ before se/dhve/vahe/mahe:
+  पस्पर्धे … पस्पर्धिमहे, चक्रे … चकृमहे. 7.2.13 made effective (it fired for
+  every root and blocked nothing; now structural, and 7.2.35 obeys it; घस्
+  removed from its list). thal is pit (1.1.56) → guṇa, no kit: चकर्थ, चिचेतिथ.
+  8.3.78 after any iṆ at the aṅga|ending boundary (चकृढ्वे); after iṭ left to
+  8.3.79 (optional). 3.4.82 ādeśas keep their sthānī (1.1.56).
+- **abhyāsa bugs**: स्मृ → मस्मार (7.4.60 keeps the wrong consonant), हृ → हहार
+  (7.4.62 kuhoś cuḥ missing: जहार).
 - **8.2.77 हलि च**: ष्ठिव् → ष्ठेवति for ष्ठीवति.
 - **aniṭ ignored** in luṭ/liṭ/luṅ: डुपचँष् gives पचिता (→ पक्ता), पपचिषे,
   अपच्त (→ अपक्त / अपाचि). `test_tinanta_pac_karmani_bhave.py` is a snapshot
@@ -173,8 +182,8 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | Metric | Now | Target |
 |---|---|---|
 | Sūtras with LSK page | 1,895 | 1,900 |
-| forms.db cells verified vs Vidyut (form) | 46,437 / 77,317 (60 %) | 90 % |
-| … of those, sūtra path also agrees | 31,802 | all verified |
+| forms.db cells verified vs Vidyut (form) | 48,575 / 77,317 (63 %) | 90 % |
+| … of those, sūtra path also agrees | 33,133 | all verified |
 | Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
 | Gītā tagged-word coverage | 8.8 % | 50 % → 80 % |
 | LSK prakriyā order agreement | — | measured per part, rising |

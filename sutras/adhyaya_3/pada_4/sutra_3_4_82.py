@@ -123,7 +123,10 @@ def act(state: State) -> State:
             kind="pratyaya",
             varnas=varnas,
             tags={"pratyaya", "tin", "ardhadhatuka", "upadesha"},
-            meta={"upadesha_slp1": adesha, "3_4_82_done": True},
+            meta={"upadesha_slp1": adesha, "3_4_82_done": True,
+                  # 1.1.56 स्थानिवत्: the ādeśa keeps its sthānī (liṭ) for
+                  # rules that ask "लिटि" (7.2.13 → चकृव, not चक्रिव).
+                  "source_lakara_upadesha": state.terms[ti].meta.get("source_lakara_upadesha", "liT")},
         )
         state.terms[ti] = new_term
         state.meta["liT_82_recipe"] = False

@@ -9,7 +9,7 @@ Weak arm no-iṭ forms (ṛ-final root + vowel suffix):
   6.1.77 yaṇ sandhi fires at root+suffix boundary: ṛ→r → cakratuH/cakruH/cakra.
 
 Weak arm iṭ forms (ṛ + iṭ 'i'):
-  6.1.77 fires at root kṛ + iṭ boundary: ṛ→r → cakriTa/cakriva/cakrima.
+  7.2.13 blocks iṭ in liṭ for kṛ: cakarTa/cakfva/cakfma (was cakriTa… — 7.2.13 had no effect).
 """
 from __future__ import annotations
 
@@ -30,12 +30,12 @@ _KF_LIT_KARTARI_PARASMAI = {
     (3, 1): "cakAra",    # Nal strong: guṇa+rapara+vṛddhi → cakāra
     (3, 2): "cakratuH",  # atuH: 6.1.77 ṛ→r
     (3, 3): "cakruH",    # uH: 6.1.77 ṛ→r
-    (2, 1): "cakriTa",   # iṭ+TaL: 6.1.77 ṛ+i→r; cakritha
+    (2, 1): "cakarTa",   # 7.2.13: no iṭ; thal pit → guṇa: चकर्थ (Vidyut)
     (2, 2): "cakraTuH",  # aTuH: 6.1.77 ṛ→r
     (2, 3): "cakra",     # a: 6.1.77 ṛ→r
     (1, 1): "cakAra",    # Nal strong (same as 3sg)
-    (1, 2): "cakriva",   # iṭ+va: 6.1.77 ṛ+i→r; cakriva
-    (1, 3): "cakrima",   # iṭ+ma: 6.1.77 ṛ+i→r; cakrima
+    (1, 2): "cakfva",    # 7.2.13 कृसृभृ… लिटि: no iṭ — चकृव (Vidyut)
+    (1, 3): "cakfma",    # 7.2.13: no iṭ — चकृम (Vidyut)
 }
 
 

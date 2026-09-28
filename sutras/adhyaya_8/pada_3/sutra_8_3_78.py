@@ -17,9 +17,16 @@ from engine.state import State
 from phonology.varna import mk as _mk
 
 
+# इणः — pratyāhāra iṆ (vowels but a/ā, plus h y v r l): चकृढ्वे after ṛ,
+# not only after the i of iṭ.
+_IN = frozenset("iIuUfFxXeEoOhyvrl")
+
+
 def _find_i_before_D(state: State):
     """Find i+D (iṭ-vowel followed by dh) within any term or at cross-term boundary."""
-    if not state.meta.get("liT_lakara_recipe"):
+    # लिटाम् — the ending's sthānī is liṭ (1.1.56), or the liṭ recipe is live.
+    if not (state.meta.get("liT_lakara_recipe") or any(
+            (t.meta.get("source_lakara_upadesha") or "").strip() == "liT" for t in state.terms)):
         return None
     # Scan within each term (dvitva may have merged iṭ+tiṅ into one term)
     for ti, t in enumerate(state.terms):
@@ -27,6 +34,10 @@ def _find_i_before_D(state: State):
         if t.meta.get("8_3_78_done"):
             continue
         for vi in range(len(vs) - 1):
+            # merged iṭ + dhve: really 8.3.79 विभाषेटः (optional) — kept only
+            # for the legacy recipes that still hold liT_lakara_recipe
+            if not state.meta.get("liT_lakara_recipe"):
+                break
             if vs[vi].slp1 == "i" and vs[vi + 1].slp1 == "D":
                 return ("intra", ti, vi + 1)
     # Also scan cross-term boundary
@@ -36,7 +47,13 @@ def _find_i_before_D(state: State):
             continue
         if t1.meta.get("8_3_78_done"):
             continue
-        if t1.varnas[-1].slp1 == "i" and t2.varnas[0].slp1 == "D":
+        # aṅga | ending boundary only — never a dh inside the root (स्पर्ध्)
+        if "pratyaya" not in t2.tags:
+            continue
+        # after iṭ it is optional — 8.3.79 विभाषेटः, not this rule (बभूविध्वे/-ढ्वे)
+        if t1.meta.get("it_agama_7_2_35") or "it_agama" in t1.tags or t1.meta.get("upadesha_slp1") == "iw":
+            continue
+        if t1.varnas[-1].slp1 in _IN and t2.varnas[0].slp1 == "D":
             return ("cross", i, 0)
     return None
 

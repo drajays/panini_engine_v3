@@ -468,6 +468,15 @@ def _lit_needs_it(purusha: int, vacana: int) -> bool:
     return (purusha, vacana) in {(2, 1), (1, 2), (1, 3)}
 
 
+def _lit_thal_guna(state: State) -> State:
+    """Guṇa before liṭ thal, which is pit through its sthānī sip (1.1.56) and so
+    not kit (1.2.5) — but not ṇit, so no 7.2.116 vṛddhi: चकर्थ, चिचेतिथ."""
+    state.meta["liT_strong_recipe"] = True
+    state = apply_rule("7.3.84", state)
+    state.meta.pop("liT_strong_recipe", None)
+    return apply_rule("1.1.51", state)
+
+
 def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State:
     """
     Derive a liṭ (perfect / parokṣa) form starting from the post-1.3.78 state.
@@ -494,14 +503,24 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state.meta["liT_115_recipe"] = True
     state = apply_rule("3.4.115", state)
 
-    lit_adesha = _LIT_PARASMAI_ADESHA[(purusha, vacana)]
-    state.meta["liT_82_adesha_form"] = lit_adesha
-    state.meta["liT_82_recipe"] = True
-    state = apply_rule("3.4.82", state)
+    if pada_key == "atmane":
+        # ātmanepada liṭ: 3.4.81 लिटस्तझयोरेशिरेच् (ta → e, jha → ire); the
+        # rest by 3.4.79 टेरे (liṭ is ṭit) and 3.4.80 थासः से:
+        #   पस्पर्धे पस्पर्धाते पस्पर्धिरे · पस्पर्धिषे … · पस्पर्धे …महे
+        lit_adesha = None
+        state.meta["liT_esh_recipe"] = True
+        state = P00_lit_ta_esh_it_lopa(state)
+        state = apply_rule("3.4.79", state)
+        state = apply_rule("3.4.80", state)
+    else:
+        lit_adesha = _LIT_PARASMAI_ADESHA[(purusha, vacana)]
+        state.meta["liT_82_adesha_form"] = lit_adesha
+        state.meta["liT_82_recipe"] = True
+        state = apply_rule("3.4.82", state)
 
-    # IT on liṭ ādeśa (1.3.4 tusma, 1.3.3 halantyam, 1.3.7 cuṭū, 1.3.9 lopa)
-    state = apply_rule("1.3.4", state)
-    state = P00_hal_it_lopa(state)
+        # IT on liṭ ādeśa (1.3.4 tusma, 1.3.3 halantyam, 1.3.7 cuṭū, 1.3.9 lopa)
+        state = apply_rule("1.3.4", state)
+        state = P00_hal_it_lopa(state)
 
     # ── 3.4.115 (2nd audit) + optional 7.1.91 ────────────────────────────────
     # Reset gate for second call
@@ -509,15 +528,18 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state.meta["liT_115_recipe"] = True
     state = apply_rule("3.4.115", state)
 
-    if purusha == 1 and vacana == 1:
+    if purusha == 1 and vacana == 1 and lit_adesha == "Ral":
         state.meta["Nal_uttama_recipe"] = True
         state = apply_rule("7.1.91", state)
 
-    needs_it = _lit_needs_it(purusha, vacana)
+    # iṭ before a val-initial ending: parasmai tha/va/ma, ātmane se/dhve/vahe/mahe
+    needs_it = ((purusha, vacana) in {(2, 1), (2, 3), (1, 2), (1, 3)} if pada_key == "atmane"
+                else _lit_needs_it(purusha, vacana))
 
     if needs_it:
         # ── iṭ path: iṭ → dvitva → vuk (6.4.88 needs abhyāsa for liṭ context) ──
-        state = apply_rule("1.2.5", state)
+        if lit_adesha != "Tal":          # thal is pit (1.1.56), not kit
+            state = apply_rule("1.2.5", state)
         state.meta["liT_krsrbhr_recipe"] = True
         state = apply_rule("7.2.13", state)
         state = apply_rule("7.2.35", state)
@@ -540,9 +562,13 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("1.3.2", state)
         state = apply_rule("1.3.3", state)
         state = apply_rule("1.3.9", state)
+        if lit_adesha == "Tal":
+            state = _lit_thal_guna(state)   # चिचेतिथ
     else:
         # ── NO-iṭ path: dvitva FIRST, then 1.4.13, vuk ───────────────────────
-        if lit_adesha not in ("Ral",):
+        # ṇal and thal are pit through their sthānī (tip/sip/mip, 1.1.56), so
+        # 1.2.5 असंयोगाल्लिट् कित् does not make them kit.
+        if lit_adesha not in ("Ral", "Tal"):
             state = apply_rule("1.2.5", state)
         state.meta["liT_dvitva_recipe"] = True
         state = apply_rule("6.1.8", state)
@@ -560,6 +586,8 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
             state = apply_rule("1.1.51", state)
             # 7.2.116 ato upadhāyāḥ — vṛddhi of a-upadha (paṭh→pāṭh; kṛ now kar→kār)
             state = apply_rule("7.2.116", state)
+        elif lit_adesha == "Tal":
+            state = _lit_thal_guna(state)   # चकर्थ (kṛ: no iṭ, 7.2.13)
         # 1.4.13 aṅga saṃjñā
         state = apply_rule("1.4.13", state)
         # 6.4.88 vuk
@@ -599,6 +627,8 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # ── TRIPĀḌĪ: 8.2.1 + 8.4.54 must fire pre-merge (abhyāsa term visible) ──
     state = apply_rule("8.2.1", state)    # opens tripadi_zone
+    # 8.3.78 इणः षीध्वंलुङ्लिटां धोऽङ्गात् — dhve after an iṆ-final aṅga: चकृढ्वे
+    state = apply_rule("8.3.78", state)
     state = apply_rule("8.4.54", state)   # carc on abhyāsa term
 
     # ── MERGE then full post-merge Tripāḍī spine ──────────────────────────────

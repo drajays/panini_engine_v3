@@ -19,12 +19,12 @@ _KF_LIT_KARMANI = {
     (3, 1): "cakre",      # eS: ca+kr+e
     (3, 2): "cakrAte",    # Ate: ca+kr+āte
     (3, 3): "cakrire",    # irec: ca+kr+ire (iṭ+re)
-    (2, 1): "cakrize",    # iṭ+se → ṣe (8.3.59 ṣatvam)
+    (2, 1): "cakfze",     # 7.2.13 no iṭ; se → ṣe (8.3.59) — चकृषे (Vidyut)
     (2, 2): "cakrATe",    # ATe: ca+kr+āthe
-    (2, 3): "cakriDve",   # iṭ+dhve (8.3.78 dh→ḍh)
+    (2, 3): "cakfQve",    # 7.2.13 no iṭ; 8.3.78 dh→ḍh — चकृढ्वे (Vidyut)
     (1, 1): "cakre",      # same as 3sg
-    (1, 2): "cakrivahe",  # iṭ+vahe
-    (1, 3): "cakrimahe",  # iṭ+mahe
+    (1, 2): "cakfvahe",   # 7.2.13 no iṭ — चकृवहे
+    (1, 3): "cakfmahe",   # 7.2.13 no iṭ — चकृमहे
 }
 
 # bhāve liṭ uses the same forms as karmaṇi (no yaḳ difference for kṛ here)

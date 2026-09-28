@@ -17,7 +17,9 @@ _GATE_KEY: str = "7_2_13_kfsfBfvfst_13"
 
 _KRSRBHR_ROOTS = frozenset({
     "kf", "sf", "Bf", "vf", "stu", "dru", "sru", "Sru",
-    "Gas", "Gasx", "gs",  # *ghas* *liṭ* (2.4.40 *ad* → *ghas*)
+    # (घस् was listed here, but the sūtra names only कृ सृ भृ वृ स्तु द्रु स्रु श्रु;
+    #  घस् takes iṭ in liṭ — जघसिथ, जक्षिव. Harmless while 7.2.35 ignored this
+    #  gate; removed 2026-09-28 when the gate became effective.)
     # normalised forms (after it-lopa):
     "kfN", "sfp", "BfY", "vfṃj",  # fallback raw keys
 })
@@ -30,6 +32,8 @@ def _dhatu_in_group(state: State) -> bool:
         raw = (t.meta.get("upadesha_slp1") or "").replace("~", "").strip()
         # strip trailing it-markers (N, Y, R, etc.)
         base = raw.rstrip("NYRzZ")
+        if base.startswith(("qu", "wu", "Yi")):   # ādi ñi/ṭu/ḍu (1.3.5): डुकृञ् → kf
+            base = base[2:]
         if base in _KRSRBHR_ROOTS or raw.split("~")[0] in _KRSRBHR_ROOTS:
             return True
         # Also check flat form
@@ -42,11 +46,18 @@ def _dhatu_in_group(state: State) -> bool:
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    # Structural: liṭ dvitva context (abhyāsa on tape) + dhātu is in kṛsṛ… group
-    if any("abhyasa" in t.tags for t in state.terms) and _dhatu_in_group(state):
-        return True
-    # Legacy arm path
-    return bool(state.meta.get("liT_krsrbhr_recipe"))
+    # Structural: liṭ context + dhātu in the kṛ-sṛ-bhṛ… group. (The old legacy
+    # arm ``liT_krsrbhr_recipe`` was set by the liṭ spine for *every* root, so
+    # this fired vacuously everywhere and blocked nothing.)
+    return _lit_sthani(state) and _dhatu_in_group(state)
+
+
+def _lit_sthani(state: State) -> bool:
+    """लिटि — a term whose sthānī upadeśa is liṭ (the lakāra itself, or its
+    tiṅ ādeśa through 1.1.56)."""
+    return any((t.meta.get("upadesha_slp1") or "").strip() == "liT"
+               or (t.meta.get("source_lakara_upadesha") or "").strip() == "liT"
+               for t in state.terms)
 
 
 def act(state: State) -> State:
