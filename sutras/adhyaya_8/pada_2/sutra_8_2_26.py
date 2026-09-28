@@ -20,9 +20,25 @@ def _flat_pada(state: State) -> str:
     return "".join(v.slp1 for v in state.terms[0].varnas)
 
 
+_JHAL = frozenset("kKgGcCjJwWqQtTdDpPbBSzsh")
+
+
+def _sic_s_between_jhal(state: State) -> int | None:
+    """झलो झलि (सिचः लोपः, 8.2.25): sic's s between two jhal — अपाक्ताम्, अपक्त."""
+    if len(state.terms) != 1:
+        return None
+    vs = state.terms[0].varnas
+    for i in range(1, len(vs) - 1):
+        if "sic_s" in vs[i].tags and vs[i - 1].slp1 in _JHAL and vs[i + 1].slp1 in _JHAL:
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
     if not state.tripadi_zone:
         return False
+    if _sic_s_between_jhal(state) is not None:
+        return True
     if not state.meta.get("jhalo_jhali_recipe"):
         return False
     if state.terms[0].meta.get("P033_8_2_26_done"):
@@ -32,6 +48,10 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     if not cond(state):
+        return state
+    i = _sic_s_between_jhal(state)
+    if i is not None:
+        del state.terms[0].varnas[i]
         return state
     t = state.terms[0]
     vs = t.varnas

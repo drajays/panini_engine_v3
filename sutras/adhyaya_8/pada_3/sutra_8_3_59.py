@@ -36,6 +36,7 @@ from phonology.pratyahara import HAL
 # Preceding vowels that trigger ṣatva (simplified "in+kuk").
 # 8.3.57 इण्कोः: after an iṆ vowel *or a ku-varga consonant* (पक्+स्यति → पक्ष्यति).
 _IN_KUK_PREV = frozenset({"i", "I", "u", "U", "f", "F", "e", "E", "o", "O",
+                          "r", "l",                      # iṆ consonants (अहार्षीत्)
                           "k", "K", "g", "G", "N"})
 
 

@@ -44,7 +44,10 @@ def _dhatu_is_anit(state: State) -> bool:
 def _find_jhi_tin(state: State) -> int | None:
     """Find jhi tiṅ ādeśa — fires from lakāra context, no arm needed."""
     lakara = state.meta.get("lakara", "")
-    is_lug_set = lakara == "luG" and not _dhatu_is_anit(state)
+    # luṅ: jus after sic (3.4.109 सिजभ्यस्तविदिभ्यश्च) — whenever sic is on the
+    # tape (not luk'd by 2.4.77), seṭ or aniṭ alike (अपठिषुः, अनैषुः).
+    is_lug_set = lakara == "luG" and any(
+        (t.meta.get("upadesha_slp1") or "").strip() == "sic" for t in state.terms)
     if lakara not in _JUS_LAKARA and not is_lug_set:
         return None
     if state.meta.get("3_4_108_liG_done"):

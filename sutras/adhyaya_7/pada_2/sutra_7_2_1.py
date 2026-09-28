@@ -53,10 +53,19 @@ def _find(state: State):
         return None
     if dh.meta.get("7_2_1_sici_vrddhi_done"):
         return None
+    # 1.1.57 अचः परस्मिन् पूर्वविधौ: a vowel deleted by 6.4.48 (वध → वध्) stands in
+    # for the aṅga's final — no vṛddhi (अवधीत्).
+    if dh.meta.get("6_4_48_a_lopa_done"):
+        return None
+    # a hal-final aṅga is 7.2.3's (वदव्रजहलन्तस्याचः), not this rule's
+    if dh.varnas and not (is_hrasva(dh.varnas[-1].slp1) or is_dirgha(dh.varnas[-1].slp1)
+                          or dh.varnas[-1].slp1 in ("e", "E", "o", "O")):
+        return None
     if (sic.meta.get("upadesha_slp1") or "").strip() != "sic":
         return None
     # Parasmaipada signal: either recipe meta or pratyaya tag by 1.4.99.
-    if not (state.meta.get("pada") == "parasmaipada" or "parasmaipada_1_4_99" in tin.tags):
+    if not (state.meta.get("pada") == "parasmaipada" or "parasmaipada_1_4_99" in tin.tags
+            or "parasmaipada" in tin.tags):
         return None
     # Find target vowel in dhātu. If aṭ-āgama was inserted (6.4.71),
     # skip that leading 'a' and target the dhātu's own vowel (ci → cE).

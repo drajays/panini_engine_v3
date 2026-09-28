@@ -44,6 +44,7 @@ def act(state: State) -> State:
     # Keep ``upadesha_slp1`` as "sic" for downstream identification (e.g. 7.2.1),
     # but place only ``s`` + ``c`` on the tape so the standard it-chain yields just ``s``.
     t.varnas = parse_slp1_upadesha_sequence("sc")
+    t.varnas[0].tags.add("sic_s")      # lets 8.2.26 find sic's s after the pada merge
     t.meta["upadesha_slp1"] = "sic"
     t.tags.add("upadesha")
     return state

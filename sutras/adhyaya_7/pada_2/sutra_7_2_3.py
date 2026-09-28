@@ -19,22 +19,51 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology import mk
 
 _GATE_KEY: str = "7_2_3_vadavrajah_3"
 
 
+_VRDDHI = {"a": "A", "i": "E", "I": "E", "u": "O", "U": "O", "e": "E", "o": "O"}
+_AC = set("aAiIuUfFxXeEoO")
+
+
+def _find(state: State):
+    """वदव्रजहलन्तस्याचः (सिचि वृद्धिः परस्मैपदेषु, 7.2.1): the vowel of a
+    hal-final aṅga before sic, in parasmaipada. 7.2.4 नेटि (not before iṭ) is the
+    caller's condition: the luṅ spine asks only after 7.2.10 blocked iṭ."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or t.meta.get("7_2_3_done") or not t.varnas:
+            continue
+        if t.meta.get("6_4_48_a_lopa_done"):
+            return None                       # 1.1.57 sthānivat: अवधीत्
+        if t.varnas[-1].slp1 in _AC:
+            return None                       # ac-final: 7.2.1's case
+        nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
+        if nxt is None or (nxt.meta.get("upadesha_slp1") or "").strip() != "sic":
+            return None
+        tin = state.terms[-1]
+        if "atmanepada" in tin.tags:
+            return None
+        for j in range(len(t.varnas) - 1, -1, -1):
+            if t.varnas[j].slp1 in _VRDDHI:
+                return (i, j)
+    return None
+
+
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.3", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _find(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.3"
+    hit = _find(state)
+    if hit is None:
+        return state
+    i, j = hit
+    t = state.terms[i]
+    t.varnas[j] = mk(_VRDDHI[t.varnas[j].slp1])      # पच् → पाच् (अपाक्षीत्)
+    t.meta["7_2_3_done"] = True
     return state
 
 

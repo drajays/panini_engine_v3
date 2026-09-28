@@ -1188,6 +1188,13 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state.meta.pop("luN_sic_ardhadhatuka", None)
         # 7.3.86 laghūpadha guṇa before sic+iṭ (structural: dyut+i → dyot+i)
         state = apply_rule("7.3.86", state)
+        # sici vṛddhi (parasmaipada): 7.2.1 for a vowel-final aṅga (नी → नै);
+        # 7.2.3 for a hal-final one, only when iṭ was blocked (7.2.4 नेटि):
+        # पच् → पाच् (अपाक्षीत्). Both self-gate on sic + parasmaipada.
+        state = apply_rule("7.2.1", state)
+        state = apply_rule("1.1.51", state)   # ṛ-vṛddhi is ār (अहार्षीत्)
+        if "7.2.35" in state.blocked_sutras:
+            state = apply_rule("7.2.3", state)
 
     # ── Stage: 1.2.4 apit sārvadhatuka → kṅit ───────────────────────────────
     state = apply_rule("1.2.4", state)
@@ -1221,6 +1228,11 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
                 break
         state = _it_agama(state)
 
+    # aniṭ sic before an apṛkta t/s: 7.3.96 अस्तिसिचोऽपृक्ते (īṭ) — अनैषीत्, अपाक्षीः.
+    # (The seṭ path above reaches ī through iṭ + 8.2.28.)
+    if not _is_anit and "7.2.35" in state.blocked_sutras:
+        state = apply_rule("7.3.96", state)
+
     # ── Stage: aṅgakārya ────────────────────────────────────────────────────
     state = apply_rule("1.4.13", state)
 
@@ -1243,6 +1255,8 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # e.g. vi+a → vy+a in vyadyutat). Must run AFTER vuk so that ū of bhū is
     # separated from anti by vuk-v (preventing spurious ū→v change in abhūvant).
     state = apply_rule("6.1.77", state)
+    # vṛddhi vowel + iṭ: 6.1.78 एचोऽयवायावः (अलौ + इ → अलाव् + इ: अलावीत्)
+    state = apply_rule("6.1.78", state)
 
     state = apply_rule("1.4.14", state)
 

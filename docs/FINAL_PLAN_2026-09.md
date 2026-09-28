@@ -172,8 +172,15 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
 - **Oracle fix**: Vidyut also reads seṭ/aniṭ from svara — `accented()` now
   marks the aniṭ root vowel (qupa\ca~^z). The पच् snapshot table was
   recomputed from the corrected oracle: 90/180 agree, 90 pinned + xfail.
-- **Next**: aniṭ luṅ with sic kept (7.2.1 सिचि वृद्धिः, 7.2.3, 7.3.96:
-  अनैषीत्, अपाक्षीत्); ā-final sic-luk 3pl (3.4.110: अस्थुः); 7.3.78 पिबति.
+- ✅ **aniṭ luṅ with sic** (2026-09-28): 7.2.3 real (was a stub), 7.2.1
+  vowel-final only, both blocked by 1.1.57 after 6.4.48 (अवधीत्); 7.3.96 īṭ
+  when 7.2.10 blocked iṭ; jus (3.4.109) whenever sic is present; 8.2.26
+  general (sic's s tagged at 3.1.44; in the universal Tripāḍī); 1.1.51 after
+  sici-vṛddhi; 6.1.78 after vṛddhi+iṭ; ṣatva after r/l (iṆ). अनैषीत्,
+  अपाक्षीत्/अपाक्ताम्, अहार्षीत्/अहार्ष्टाम्, अलावीत्.
+- **Next**: ā-final sic-luk 3pl (3.4.110: अस्थुः); 7.3.78 पिबति/तिष्ठति.
+- **Guard**: `tests/constitutional/test_engine_is_rule_based.py` — the rule
+  path may never import Vidyut, bench/, the verified list or practice/lab.
 - **curādi / ṇic (3.1.25)** — gaṇa 10 is the largest remaining family
   (ām-liṭ alone: 3,054 cells); laṭ etc. raise NotImplementedError.
 - **6.4.78 अभ्यासस्यासवर्णे**: इष् → इषेष for इयेष. **8.2.78**: उर्द् → ऊर्द्.
