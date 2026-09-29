@@ -25,7 +25,8 @@ def _site(state: State):
             continue
         if not nxt.varnas or nxt.varnas[0].slp1 not in _AC:
             continue
-        if not any(t.startswith("sarvadhatuka") for t in nxt.tags):
+        # सार्वधातुके: a tiṅ is sārvadhātuka by 3.4.113 even when its ādeśa lost the tag
+        if not (any(t.startswith("sarvadhatuka") for t in nxt.tags) or "tin_adesha_3_4_78" in nxt.tags):
             continue
         prev = ts[k - 1].varnas
         if prev and prev[-1].slp1 in _AC:           # न् is the only consonant before उ

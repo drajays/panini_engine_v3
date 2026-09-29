@@ -251,6 +251,43 @@ Open, by size (from the gold): curādi caṅ-luṅ (अचूचुरत्, re
 optional ciṇvad-iṭ, adanta curādi (मृग्यते), ādi-it anunāsika in 1.3.9 (ओँलजीँ),
 gaṇa 3, and the prakriyā worklist (7.3.104/7.3.105/8.2.2 attribution).
 
+## Track G — rule accuracy and Pāṇinian fidelity ✅ 2026-09-30 (handover)
+
+**Numbers (ashtadhyayi.com, pinned):** verbs 84.0 → **93.5 %** (455k forms);
+nouns 90.4 % (no form changed by the fidelity work); prakriyā sūtra recall
+79.2 % (was 81.8 — definitional saṃjñās no longer count as "applied").
+Tests: 19,563 pass.
+
+**Fidelity (engine-wide, enforced by `tests/constitutional/test_prakriya_fidelity.py`):**
+- Every sūtra quotes the pāṭha (`tools/sync_sutrapatha.py`, 768 texts fixed) and
+  has its lakṣaṇa (`--types`: 158 core-class errors; all न-sūtras are
+  pratiṣedha; cited `TYPE_OVERRIDES` where the tradition differs). Non-Pāṇinian
+  1.1.100 / 1.3.200 removed.
+- Trace status is honest (dispatcher): APPLIED = something changed; DEFINED =
+  saṃjñā only registered; VACUOUS = fired with no site (incl. ~3,100 stub files).
+- Order: 1.2.45 before 4.1.1; saṃjñās attach to what they name (1.2.45, 1.4.13,
+  1.4.14, 1.4.110); ekā saṃjñā (1.4.17 vs 1.4.18); 1.4.103 for sup vacana;
+  1.3.7 (not 1.3.5) for टा. **Tripādī gate**: no 8.2.2–8.4.68 rule before 8.2.1.
+- Real (were stubs/narrow): 7.3.74–78, 6.1.15/16 samprasāraṇa, 7.1.59, 6.4.66/77/82/87,
+  7.4.1/10/11/70/71/93/94, 6.4.78, 7.1.34, 6.4.64, 7.2.63, 3.1.48 caṅ, 6.1.11, 6.4.109,
+  8.2.31/32/34/36/37/41/42, 8.4.40 (ścutva only), 8.4.41, 8.4.53, 8.4.54.
+- Foundation: ṇ was missing from Māheśvara-sūtra 7.
+
+**Reference notes:** `tools/notes_audit.py "<notes dir>"` → `docs/NOTES_AUDIT.md`
+compares the user's hand prakriyās with engine traces (notes are reference, not gold).
+
+**Next session, in order:**
+1. 6.4.19 छ्वोः शूडनुनासिके च (प्रच्छ् → प्रष्टा/प्रक्ष्यति; tuk now left in: प्रत्क्ष्यति).
+2. Remaining luṅ (87.5 %): kṣa aorist 3.1.45 (अशिक्षत्), optional iṭ in sic
+   (अश्रासिषुः), अगुडीत् (कुटादि ङित्त्व 1.2.1).
+3. Gaṇa 3 juhotyādi (ślu, abhyāsa) — ~290 errors per lakāra.
+4. Tiṅanta bootstrap: attach the lakāra before 1.3.78/1.4.108 (then lower
+   `VIDHI_FP_RAW_BASELINE` back to 0).
+5. Notes audit: map the unmatched notes (सर्वे, सर्वस्मै, नायकः …) to general
+   derivations; review note-only sūtras (skip accent rules).
+6. Optional forms (vikalpa) are still single-output.
+7. Publish: `Panini Engine.command` → 9 (rebuild, test, commit, push → site).
+
 ## Remaining work queue (in order)
 1. ✅ **loṭ/laṅ/liṅ for u-vikaraṇa gaṇas** (2026-09-29): 6.4.106 real (was a
    stub); 3.4.87 at the tiṅ stage, हि apit → ṅit; 1.2.4 honours 3.4.92's pit

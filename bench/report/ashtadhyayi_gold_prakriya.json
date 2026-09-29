@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-09-29T04:45:21+00:00",
+ "generated_at": "2026-09-29T19:54:39+00:00",
  "sample": null,
  "forms": {
-  "agree": 2898,
-  "differ": 1923
+  "agree": 2922,
+  "differ": 1899
  },
- "sutra_recall_pct": 81.8,
+ "sutra_recall_pct": 79.2,
  "note": "share of ashtadhyayi.com's sūtras (on forms we derive identically) that our trace also applies",
  "most_missed": [
   {
@@ -20,12 +20,22 @@
   },
   {
    "sutra": "8.2.39",
-   "forms": 103,
+   "forms": 121,
    "examples": [
     "ftvij pulliṅga 3/2 ऋत्विग्भ्याम्",
     "ftvij pulliṅga 3/3 ऋत्विग्भिः",
     "ftvij pulliṅga 4/2 ऋत्विग्भ्याम्",
     "ftvij pulliṅga 4/3 ऋत्विग्भ्यः"
+   ]
+  },
+  {
+   "sutra": "1.3.9",
+   "forms": 118,
+   "examples": [
+    "a pulliṅga 3/3 ऐः",
+    "a pulliṅga 4/3 एभ्यः",
+    "a pulliṅga 5/3 एभ्यः",
+    "a pulliṅga 6/2 अयोः"
    ]
   },
   {
@@ -169,6 +179,16 @@
    ]
   },
   {
+   "sutra": "6.4.137",
+   "forms": 18,
+   "examples": [
+    "yajvan pulliṅga 2/3 यज्वनः",
+    "yajvan pulliṅga 3/1 यज्वना",
+    "yajvan pulliṅga 4/1 यज्वने",
+    "yajvan pulliṅga 5/1 यज्वनः"
+   ]
+  },
+  {
    "sutra": "4.1.4",
    "forms": 18,
    "examples": [
@@ -216,6 +236,16 @@
     "vAri napuṃsaka 2/3 वारीणि",
     "vAri napuṃsaka 8/3 वारीणि",
     "daDi napuṃsaka 1/3 दधीनि"
+   ]
+  },
+  {
+   "sutra": "8.2.62",
+   "forms": 14,
+   "examples": [
+    "ftvij pulliṅga 1/1 ऋत्विक्",
+    "ftvij pulliṅga 3/2 ऋत्विग्भ्याम्",
+    "ftvij pulliṅga 3/3 ऋत्विग्भिः",
+    "ftvij pulliṅga 4/2 ऋत्विग्भ्याम्"
    ]
   },
   {
@@ -299,16 +329,6 @@
    ]
   },
   {
-   "sutra": "8.2.62",
-   "forms": 8,
-   "examples": [
-    "ftvij pulliṅga 1/1 ऋत्विक्",
-    "ftvij pulliṅga 3/2 ऋत्विग्भ्याम्",
-    "ftvij pulliṅga 3/3 ऋत्विग्भिः",
-    "ftvij pulliṅga 4/2 ऋत्विग्भ्याम्"
-   ]
-  },
-  {
    "sutra": "8.4.37",
    "forms": 7,
    "examples": [
@@ -359,16 +379,6 @@
    ]
   },
   {
-   "sutra": "6.3.94",
-   "forms": 6,
-   "examples": [
-    "tiryaYc pulliṅga 1/2 तिर्यञ्चौ",
-    "tiryaYc pulliṅga 1/3 तिर्यञ्चः",
-    "tiryaYc pulliṅga 2/1 तिर्यञ्चम्",
-    "tiryaYc pulliṅga 2/2 तिर्यञ्चौ"
-   ]
-  },
-  {
    "sutra": "6.1.68",
    "forms": 6,
    "examples": [
@@ -379,33 +389,23 @@
    ]
   },
   {
-   "sutra": "6.4.13",
-   "forms": 5,
+   "sutra": "6.3.94",
+   "forms": 6,
    "examples": [
-    "aryaman pulliṅga 1/1 अर्यमा",
-    "SArNgin pulliṅga 1/1 शार्ङ्गी",
-    "yaSasvin pulliṅga 1/1 यशस्वी",
-    "vftrahan pulliṅga 1/1 वृत्रहा"
+    "tiryaYc pulliṅga 1/2 तिर्यञ्चौ",
+    "tiryaYc pulliṅga 1/3 तिर्यञ्चः",
+    "tiryaYc pulliṅga 2/1 तिर्यञ्चम्",
+    "tiryaYc pulliṅga 2/2 तिर्यञ्चौ"
    ]
   },
   {
-   "sutra": "1.3.3",
-   "forms": 4,
+   "sutra": "8.2.72",
+   "forms": 6,
    "examples": [
-    "a pulliṅga 6/3 आनाम्",
-    "deva pulliṅga 6/3 देवानाम्",
-    "rAma pulliṅga 6/3 रामाणाम्",
-    "priyaviSva pulliṅga 6/3 प्रियविश्वानाम्"
-   ]
-  },
-  {
-   "sutra": "1.1.33",
-   "forms": 4,
-   "examples": [
-    "nema pulliṅga 1/3 नेमे",
-    "nema pulliṅga 8/3 नेमे",
-    "praTama pulliṅga 1/3 प्रथमे",
-    "praTama pulliṅga 8/3 प्रथमे"
+    "vidvas pulliṅga 3/2 विद्वद्भ्याम्",
+    "vidvas pulliṅga 3/3 विद्वद्भिः",
+    "vidvas pulliṅga 4/2 विद्वद्भ्याम्",
+    "vidvas pulliṅga 4/3 विद्वद्भ्यः"
    ]
   }
  ]

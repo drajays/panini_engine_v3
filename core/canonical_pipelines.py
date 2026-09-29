@@ -1022,8 +1022,8 @@ def P00_ciY_lat_jhi_snu_tripadi_tail(s: State) -> State:
       (``6_1_77_ik_yan_aci_general_arm``: *nu* + *anti* → *nv*) → **1.4.14** →
       *pada* merge → ``P00_tripadi_rutva_visarga`` (*cinvanti*).
 
-    *Śāstra note:* **6.4.77** / **6.4.87** (*śnu* + *aca* + *sārvadhātuke*) are not
-    split here; the recipe arms only the **6.1.77** *yaṇ* outcome (*cinvanti*).
+    *Śāstra note:* the yaṇ of śnu's u before अन्ति is **6.4.87** हुश्नुवोः
+    सार्वधातुके (apavāda of 6.4.77 uvaṅ) — चिनु+अन्ति → चिन्वन्ति.
     """
     s.meta["snu_recipe"] = True
     s = apply_rule("3.1.73", s)
@@ -1033,7 +1033,7 @@ def P00_ciY_lat_jhi_snu_tripadi_tail(s: State) -> State:
     s = apply_rule("3.4.113", s)
     s = P00_anga_guna_audit_1_4_13_1_1_5_7_3_84(s)
     s = apply_rule("6.1.72", s)
-    s = apply_rule("6.1.77", s)
+    s = apply_rule("6.4.87", s)
     s = apply_rule("1.4.14", s)
     from pipelines.subanta import _pada_merge
 

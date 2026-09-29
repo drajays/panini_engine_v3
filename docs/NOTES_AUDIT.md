@@ -60,7 +60,7 @@ engine: `cinutaH_dvivacana_lat_ciY.derive_cinutaH` · shared: 12
 
 ## चिन्वन्ति.md — `cinvanti`
 engine: `cinvanti_lat_ciY.derive_cinvanti` · shared: 12
-- note-only: 1.1.5, 1.2.4, 1.3.1, 1.3.78, 1.4.13, 3.2.123, 6.1.64, 6.1.74, 6.4.77, 6.4.87, 7.3.84
+- note-only: 1.1.5, 1.2.4, 1.3.1, 1.3.78, 1.4.13, 3.2.123, 6.1.64, 6.1.74, 6.1.77, 6.4.77, 7.3.84
 - engine-only: 3.4.113, 8.3.24, 8.4.58
 
 ## जिष्णु.md — `jizRu`

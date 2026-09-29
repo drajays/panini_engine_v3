@@ -3,9 +3,9 @@
   "cascade_slow_cells": [],
   "cell_cpu_profile": {
     "derivations_timed": 501,
-    "max_total_ns": 10768912,
-    "median_total_ns": 4785754,
-    "min_total_ns": 4309154
+    "max_total_ns": 5187749,
+    "median_total_ns": 4800326,
+    "min_total_ns": 4330586
   },
   "run_test_count": 504
 }
