@@ -2,50 +2,50 @@
 # ─────────────────────────────────────────────────────────────────
 # Pāṇini Engine — double-click launcher (macOS).
 #
-# Starts both local UIs and opens the browser:
-#   :8000/lab     — test panel: paradigm vs Vidyut, click a cell for its prakriyā
-#   :8000/review  — derive a form and correct the prakriyā (+ /docs for the API)
-#   :5050         — the full Flask UI (paradigms, dhātupāṭha, SIG, tests)
-#
-# Closing this Terminal window stops both servers.
+# A menu for everything the project does. Press Enter for option 1
+# (start the local apps, as before).
 # ─────────────────────────────────────────────────────────────────
 cd "$(dirname "$0")" || exit 1
 
 API_PORT=8000
 WEB_PORT=5050
+LIVE_URL="https://drajays.github.io/panini_engine_v3/"
 
 # Pick a python that already has the deps; else install into the first one.
 PY=""
 for cand in .venv/bin/python3 python3; do
   command -v "$cand" >/dev/null 2>&1 || [ -x "$cand" ] || continue
-  if "$cand" -c 'import flask, fastapi, uvicorn' 2>/dev/null; then PY="$cand"; break; fi
+  if "$cand" -c 'import flask, fastapi, uvicorn, pytest' 2>/dev/null; then PY="$cand"; break; fi
   [ -z "$PY" ] && PY="$cand"          # remember the first usable interpreter
 done
 [ -z "$PY" ] && { echo "python3 not found — install it from python.org"; read -r _; exit 1; }
 
-if ! "$PY" -c 'import flask, fastapi, uvicorn' 2>/dev/null; then
+if ! "$PY" -c 'import flask, fastapi, uvicorn, pytest' 2>/dev/null; then
   echo "Installing dependencies into $PY …"
-  "$PY" -m pip install -q -r requirements-api.txt flask || {
+  "$PY" -m pip install -q -r requirements-api.txt flask pytest || {
     echo "install failed — see the errors above"; read -r _; exit 1; }
 fi
 
-busy() { lsof -ti "tcp:$1" >/dev/null 2>&1; }
+pause() { printf '\n  Press Enter to return to the menu… '; read -r _; }
 
-trap 'kill 0' EXIT INT TERM       # closing this window stops the servers
+# ashtadhyayi.com data (test gold) is gitignored; fetch it once when a bench needs it.
+need_gold() {
+  [ -f data/reference/ashtadhyayi_com/dhatu__data.txt ] && return 0
+  echo "Downloading the ashtadhyayi.com data (once, ~50 MB) …"
+  "$PY" -m tools.fetch_ashtadhyayi_data
+}
 
-if busy "$API_PORT"; then
-  echo "Port $API_PORT already serving — reusing it."
-else
-  "$PY" -m uvicorn api.main:app --port "$API_PORT" &
-fi
+start_apps() {
+  busy() { lsof -ti "tcp:$1" >/dev/null 2>&1; }
+  trap 'kill 0' EXIT INT TERM       # closing this window stops the servers
 
-if busy "$WEB_PORT"; then
-  echo "Port $WEB_PORT already serving — reusing it."
-else
-  PANINI_PORT="$WEB_PORT" "$PY" -m webui.app &
-fi
+  if busy "$API_PORT"; then echo "Port $API_PORT already serving — reusing it."
+  else "$PY" -m uvicorn api.main:app --port "$API_PORT" & fi
 
-cat <<EOF
+  if busy "$WEB_PORT"; then echo "Port $WEB_PORT already serving — reusing it."
+  else PANINI_PORT="$WEB_PORT" "$PY" -m webui.app & fi
+
+  cat <<EOF
 
   पाणिनि-यन्त्रम् — running locally
 
@@ -56,15 +56,67 @@ cat <<EOF
   पूर्ण-UI   http://127.0.0.1:${WEB_PORT}/        paradigms · धातुपाठ · SIG
 
   Close this window (or press Ctrl-C) to stop.
-  (the engine loads 3985 sūtras — the full UI needs a few more seconds)
+  (the engine loads ~4000 sūtras — the full UI needs a few more seconds)
 
 EOF
+  i=0
+  while [ "$i" -lt 60 ] && ! curl -sf -o /dev/null "http://127.0.0.1:${API_PORT}/v1/health"; do
+    i=$((i + 1)); sleep 1
+  done
+  open "http://127.0.0.1:${API_PORT}/lab"
+  wait
+  exit 0
+}
 
-# Open the browser only once the API actually answers.
-i=0
-while [ "$i" -lt 60 ] && ! curl -sf -o /dev/null "http://127.0.0.1:${API_PORT}/v1/health"; do
-  i=$((i + 1)); sleep 1
+publish() {
+  echo "Rebuilding the website data from the current engine …"
+  "$PY" -m tools.build_pages && "$PY" -m tools.build_shabda_page || { echo "build failed"; return; }
+  echo; echo "Running the test suite before publishing …"
+  "$PY" -m pytest -q -p no:cacheprovider || { echo; echo "Tests failed — not publishing."; return; }
+  git add -A
+  git diff --cached --quiet || git commit -qm "Update engine and website data" || return
+  branch=$(git branch --show-current)
+  printf '\n  Push %s to GitHub main (updates %s)? [y/N] ' "$branch" "$LIVE_URL"
+  read -r ok
+  case "$ok" in y|Y|yes) ;; *) echo "  Not published (committed locally)."; return;; esac
+  git push origin "$branch:main" "$branch" && {
+    echo; echo "  Pushed. The site updates in about a minute: $LIVE_URL"; }
+}
+
+while :; do
+  clear
+  cat <<'EOF'
+
+   पाणिनि-यन्त्रम् — Pāṇini Engine
+
+   1  Start the apps          Lab · Practice · Review · API · full UI   [Enter]
+   2  Open the live website
+
+   3  Run all tests
+   4  Verb accuracy          vs ashtadhyayi.com (455k forms, ~2 min)
+   5  Noun accuracy          vs ashtadhyayi.com (215k forms)
+   6  Derivation paths       our sūtras vs theirs (4.8k noun forms)
+   7  Download ashtadhyayi.com data   (needed once for 4–6)
+
+   8  Rebuild website data   (docs/data, local only)
+   9  Publish                rebuild → test → commit → push → site updates
+
+   0  Quit
+
+EOF
+  printf '   Choose: '
+  read -r choice
+  case "${choice:-1}" in
+    1) start_apps ;;
+    2) open "$LIVE_URL" ;;
+    3) "$PY" -m pytest -q -p no:cacheprovider; pause ;;
+    4) need_gold && "$PY" -m bench.ashtadhyayi_gold; pause ;;
+    5) need_gold && "$PY" -m bench.ashtadhyayi_gold --kind subanta; pause ;;
+    6) need_gold && "$PY" -m bench.ashtadhyayi_gold --kind prakriya; pause ;;
+    7) "$PY" -m tools.fetch_ashtadhyayi_data; pause ;;
+    8) "$PY" -m tools.build_pages && "$PY" -m tools.build_shabda_page; pause ;;
+    9) publish; pause ;;
+    0|q|Q) exit 0 ;;
+    *) ;;
+  esac
 done
-open "http://127.0.0.1:${API_PORT}/lab"
-
-wait
