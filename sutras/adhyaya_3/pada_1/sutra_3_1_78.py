@@ -32,8 +32,9 @@ def _matches(state: State) -> bool:
         return False
     if dh.meta.get("3_1_78_snam_done"):
         return False
+    # रुधादिभ्यः श्नम् — any rudhādi (gaṇa-7) root (was four named roots)
     up = (dh.meta.get("upadesha_slp1") or "").strip()
-    if up not in {"Bid", "Cid", "ruD", "viS"}:
+    if dh.meta.get("gana") != 7 and up not in {"Bid", "Cid", "ruD", "viS"}:
         return False
     return any(_is_ac(v.slp1) for v in dh.varnas)
 
@@ -55,8 +56,10 @@ def act(state: State) -> State:
     assert j is not None
     # śnam-remainder: classical teaching treats the resulting tape as ... n + a ...
     # before the final consonant (e.g. Binad + ti → Binatti via 8.4.55).
-    dh.varnas.insert(j + 1, mk("n"))
-    dh.varnas.insert(j + 2, mk_inherent_a())
+    n, a = mk("n"), mk_inherent_a()
+    n.tags.add("snam"); a.tags.add("snam")      # 6.4.111 finds śnam's a by this
+    dh.varnas.insert(j + 1, n)
+    dh.varnas.insert(j + 2, a)
     dh.meta["3_1_78_snam_done"] = True
     return state
 

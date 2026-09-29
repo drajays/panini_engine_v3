@@ -363,6 +363,15 @@ def _apply_vikarana(state: State, gana: int) -> State:
         state = P00_sap_luk(state)             # 2.4.72 → 7.3.89 (क्षौति) → 7.2.76 (रोदिति)
         return state
 
+    if gana == 7:
+        # 3.1.78 रुधादिभ्यः श्नम्: na after the root's last vowel (1.1.47 mit);
+        # 6.4.111 श्नसोरल्लोपः drops its a before a weak ending (रुन्धः).
+        state = apply_rule("1.1.47", state)
+        state = apply_rule("3.1.78", state)
+        state = apply_rule("6.4.23", state)    # श्नान्नलोपः: हिनस्ति, भनक्ति
+        state = apply_rule("6.4.111", state)
+        return state
+
     if gana == 5:
         # 3.1.73 स्वादिभ्यः श्नुः: nu after the dhātu; śnu is apit, so a second
         # 1.2.4 pass makes it ṅit (1.1.5: no guṇa of the root). Strong forms
@@ -1088,6 +1097,8 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("3.4.101", state)
     # 3.4.100: ti→t, si→s, jhi→jh (final 'i' dropped in laṅ/luṅ/lṛṅ)
     state = apply_rule("3.4.100", state)
+    # 6.1.68 हल्ङ्याब्भ्यो…सुतिस्यपृक्तं हल्: the apṛkta t/s after a hal-final aṅga
+    state = apply_rule("6.1.68", state)
     # 3.4.99: vas→v, mas→m (ṅit final 's' dropped)
     state = apply_rule("3.4.99", state)
 
@@ -1115,12 +1126,13 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.1.78", state)
     # 6.1.97: a+a → a (3pl: śap-a + ant-a; 1sg: śap-a + am-a)
     state = apply_rule("6.1.97", state)
-    state = apply_rule("6.1.101", state)   # अकः सवर्णे दीर्घः: क्रीणा + अम् → अक्रीणाम्
     # ātmanepada: ṅit आताम्/आथाम् after a (7.2.81 → 6.1.66 → 6.1.87: ऐधेताम्),
     # and a + इ of iṭ → ए (6.1.87: ऐधे). All self-gate; parasmaipada untouched.
     state = apply_rule("7.2.81", state)
     state = apply_rule("6.1.66", state)
     state = apply_rule("6.1.87", state)
+    # after the ātmanepada dual trio, so ā-initial endings reach 7.2.81 first
+    state = apply_rule("6.1.101", state)   # अकः सवर्णे दीर्घः: क्रीणा + अम् → अक्रीणाम्
 
     # ── Merge + Tripāḍī ──────────────────────────────────────────────────────
     _pada_merge(state)

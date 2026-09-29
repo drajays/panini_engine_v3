@@ -122,11 +122,32 @@ def _find_eligible_boundary(state: State) -> int | None:
     return None
 
 
+def _find_tin_aprkta(state: State) -> int | None:
+    """…सुतिस्यपृक्तं हल् — the ti / si branch: an apṛkta t or s (tip/sip after
+    3.4.100 इतश्च) drops after a hal-final aṅga — अरुणध् (अरुणत्), अभनक्."""
+    for j, pr in enumerate(state.terms):
+        if "tin_adesha_3_4_78" not in pr.tags or len(pr.varnas) != 1:
+            continue
+        if pr.varnas[0].slp1 not in ("t", "s"):
+            continue
+        if (pr.meta.get("upadesha_slp1") or "").strip() not in ("tip", "sip"):
+            continue
+        prev = next((u for u in reversed(state.terms[:j]) if u.varnas), None)
+        if prev is not None and prev.varnas[-1].slp1 in HAL:
+            return j
+    return None
+
+
 def cond(state: State) -> bool:
-    return _find_eligible_boundary(state) is not None
+    return _find_eligible_boundary(state) is not None or _find_tin_aprkta(state) is not None
 
 
 def act(state: State) -> State:
+    j = _find_tin_aprkta(state) if _find_eligible_boundary(state) is None else None
+    if j is not None:
+        state.terms[j].varnas = []                  # लोपः of the apṛkta ti/si
+        state.terms[j].meta["6_1_68_tin_lopa"] = True
+        return state
     i = _find_eligible_boundary(state)
     if i is None:
         return state

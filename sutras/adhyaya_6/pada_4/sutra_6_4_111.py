@@ -68,8 +68,23 @@ def _site_p031(state: State) -> bool:
     return False
 
 
+def _snam_a(state: State):
+    """श्नसोरल्लोपः (क्ङिति सार्वधातुके): the a of śnam drops before a weak
+    ending — रुन्धः, भिन्दन्ति (but रुणद्धि before pit ti)."""
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags or t.meta.get("6_4_111_snam_done"):
+            continue
+        k = next((j for j, v in enumerate(t.varnas) if v.slp1 == "a" and "snam" in v.tags), None)
+        if k is None:
+            continue
+        tin = next((u for u in state.terms[i + 1:] if "tin_adesha_3_4_78" in u.tags), None)
+        if tin is not None and ("kngiti" in tin.tags or tin.meta.get("is_apit")):
+            return (i, k)
+    return None
+
+
 def cond(state: State) -> bool:
-    return _site_p031(state) or _find_as_al_lopa(state) is not None
+    return _site_p031(state) or _find_as_al_lopa(state) is not None or _snam_a(state) is not None
 
 
 def act(state: State) -> State:
@@ -83,6 +98,12 @@ def act(state: State) -> State:
                     del t.varnas[j + 1]
                     t.meta["P031_6_4_111_sna_done"] = True
                     return state
+    hit = _snam_a(state)
+    if hit is not None:
+        i, k = hit
+        del state.terms[i].varnas[k]
+        state.terms[i].meta["6_4_111_snam_done"] = True
+        return state
     di = _find_as_al_lopa(state)
     if di is None:
         return state

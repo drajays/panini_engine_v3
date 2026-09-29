@@ -66,7 +66,8 @@ def _find(state: State):
         return None
     vs = t.varnas
     for i in range(len(vs) - 1):
-        if vs[i].slp1 in _JHAL_TO_JAS and vs[i + 1].slp1 in _JHASH:
+        if (vs[i].slp1 in _JHAL_TO_JAS and vs[i + 1].slp1 in _JHASH
+                and _JHAL_TO_JAS[vs[i].slp1] != vs[i].slp1):   # not already jaś
             return i
     return None
 

@@ -29,6 +29,10 @@ from phonology.pratyahara import JHAL
 META_PRE_TRIPADI_P003_A = "corrected_v2_P003_A_8_2_30_arm"
 
 
+# चोः कुः — the whole cu-varga (by sthāna/prayatna, 1.1.50)
+_CU = {"c": "k", "C": "K", "j": "g", "J": "G"}
+
+
 def _find(state: State):
     # 1) Intra-term: ... c + JHAL ...
     for ti, t in enumerate(state.terms):
@@ -36,7 +40,7 @@ def _find(state: State):
             continue
         vs = t.varnas
         for vi in range(len(vs) - 1):
-            if vs[vi].slp1 == "c" and vs[vi + 1].slp1 in JHAL:
+            if vs[vi].slp1 in _CU and vs[vi + 1].slp1 in JHAL:
                 return (ti, vi)
     # 2) Cross-term boundary: X ends with c, next begins with JHAL.
     for i in range(len(state.terms) - 1):
@@ -44,7 +48,7 @@ def _find(state: State):
         right = state.terms[i + 1]
         if left.meta.get("8_2_30_cutuku_done"):
             continue
-        if not left.varnas or left.varnas[-1].slp1 != "c":
+        if not left.varnas or left.varnas[-1].slp1 not in _CU:
             continue
         if not right.varnas or right.varnas[0].slp1 not in JHAL:
             continue
@@ -57,7 +61,7 @@ def _find(state: State):
             "pada" in t.tags
             and not t.meta.get("8_2_30_cutuku_done")
             and t.varnas
-            and t.varnas[-1].slp1 == "c"
+            and t.varnas[-1].slp1 in _CU
         ):
             return (0, len(t.varnas) - 1)
     return None
@@ -85,7 +89,7 @@ def act(state: State) -> State:
         return state
     ti, vi = hit
     t = state.terms[ti]
-    t.varnas[vi] = mk("k")
+    t.varnas[vi] = mk(_CU[t.varnas[vi].slp1])     # c→k, ch→kh, j→g, jh→gh
     t.meta["8_2_30_cutuku_done"] = True
     return state
 

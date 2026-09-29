@@ -231,7 +231,13 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
    with 7.1.3 in one canonical `P00_jha_adesha`. रोदिति/रुदितः/रुदन्ति/अरोदीत्,
    स्वपिति, श्वसिति, वक्ति. Still open for gaṇa 2: consonant sandhi at the root|
    ending junction (द्वेक्षि, ईट्टे), जक्ष् abhyasta (जक्षति), 6.1.16 (गृह्णाति).
-   **gaṇa 3 (ślu), 7 (śnam)** remain.
+   ✅ **gaṇa 7 (śnam)**: 3.1.78 general (was four roots); śnam varṇas tagged;
+   6.4.111 śnam-a lopa, 6.4.23 श्नान्नलोपः (was a stub), 8.2.30 for the whole
+   cu-varga, 8.4.53 jaśtva in the universal Tripāḍī (no-op firings guarded),
+   6.1.68 tiṅ branch (अरुणत्). रुणद्धि/रुन्धः, भनक्ति, अरुणत्.
+   **gaṇa 3 (ślu)** remains. Regression file `test_c0_regressions_2026_09.py`
+   pins one Vidyut-confirmed form per family fixed in this sweep (38).
+   Derivable **93,186**, refused **747**, verified **81,452**.
 - **Data**: 106 upadeśas had the anunāsika one syllable too early (वच् `va~ca`,
   स्वप् `Yizva~pa`, जन्, पद्, ग्रह्…) — a transliterator bug at import
   (`dev_to_slp1('दधँ')` gives `da~Da`); fixed from the upstream Devanāgarī.
