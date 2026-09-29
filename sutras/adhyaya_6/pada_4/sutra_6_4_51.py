@@ -114,6 +114,7 @@ def act(state: State) -> State:
         if i is not None:
             state.terms[i].varnas.pop()
             state.terms[i].meta["nijanta"] = False      # the ṇi is gone (sthānivat 1.1.57 aside)
+            state.terms[i].meta["ni_lopa_done"] = True  # …but sthānivat for 7.4.1 णौ, 7.4.93
             state.terms[i].meta["sthānivat_nic_block_guna"] = True
         return state
     anga = state.terms[-2]

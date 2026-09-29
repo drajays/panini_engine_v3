@@ -16,13 +16,39 @@ from engine.state import State
 GATE_KEY = "P037_6_1_11_lugi_dvitva"
 
 
+def _general(state: State):
+    """चङि: the dhātu before caṅ is doubled (its first ekāc part; 7.4.60 trims the
+    abhyāsa) — चुर् → चुचुर्. Hal-initial dhātus only here."""
+    if not any((t.meta.get("upadesha_slp1") or "").strip() == "caG" for t in state.terms):
+        return None
+    for i, t in enumerate(state.terms):
+        if "dhatu" in t.tags and "abhyasa" not in t.tags:
+            if i and "abhyasa" in state.terms[i - 1].tags:
+                return None
+            if not t.varnas or t.varnas[0].slp1 in "aAiIuUfFxeEoO":
+                return None
+            return i
+    return None
+
 def cond(state: State) -> bool:
+    if _general(state) is not None:
+        return True
     if GATE_KEY in state.paribhasha_gates:
         return False
     return bool(state.meta.get("lugi_recipe"))
 
 
 def act(state: State) -> State:
+    gi = _general(state)
+    if gi is not None:
+        from copy import deepcopy
+        from engine.state import Term
+        dh = state.terms[gi]
+        ab = Term(kind=dh.kind, varnas=[deepcopy(v) for v in dh.varnas],
+                  tags=(set(dh.tags) | {"abhyasa"}) - {"dhatu"}, meta={})
+        state.terms.insert(gi, ab)
+        state.paribhasha_gates["6_1_11_cani_dvitva"] = True
+        return state
     state.paribhasha_gates[GATE_KEY] = True
     state.meta.pop("lugi_recipe", None)
     return state

@@ -8,33 +8,43 @@ Padaccheda: णौ चङि उपधायाः ह्रस्वः
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology    import mk
 
-_GATE_KEY: str = "7_4_1_RO_1"
+_SHORT = {"A": "a", "I": "i", "U": "u", "F": "f", "X": "x", "e": "i", "E": "i", "o": "u", "O": "u"}
+
+
+def _find(state: State):
+    """णौ चङ्युपधाया ह्रस्वः: the upadhā of the aṅga before a caṅ-para ṇi is
+    shortened — चोर् → चुर् (अचूचुरत्), भाल् → भल् (अबीभलत्); not after ak-lopa."""
+    if not any((t.meta.get("upadesha_slp1") or "").strip() == "caG" for t in state.terms):
+        return None
+    dh = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+    if dh is None or not (dh.meta.get("nijanta") or dh.meta.get("ni_lopa_done")) or dh.meta.get("aglopa") or dh.meta.get("7_4_1_done"):
+        return None
+    if len(dh.varnas) < 2 or dh.varnas[-2].slp1 not in _SHORT:
+        return None
+    return dh
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.4.1", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _find(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.4.1"
+    dh = _find(state)
+    dh.varnas[-2] = mk(_SHORT[dh.varnas[-2].slp1])
+    dh.meta["7_4_1_done"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.4.1",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "RO caNyupaDAyA hrasvaH",
     text_dev              = "णौ चङ्युपधाया ह्रस्वः",
     padaccheda_dev        = "णौ चङि उपधायाः ह्रस्वः",
-    why_dev               = "(सूत्रम् 7.4.1) णौ चङ्युपधाया ह्रस्वः।",
+    why_dev               = "चङ्परे णौ अङ्गस्य उपधायाः ह्रस्वः (अचूचुरत्)।",
     anuvritti_from        = ('7.1.1',),
     cond                  = cond,
     act                   = act,

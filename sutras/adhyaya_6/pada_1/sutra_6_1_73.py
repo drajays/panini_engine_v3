@@ -55,14 +55,18 @@ def _cross_term_match(state: State) -> bool:
     Structural, not arm-gated: छे च says ह्रस्वस्य तुक्, so the trigger is the
     hrasva itself, exactly as within a single term (Art. 13 §1).
     """
-    if len(state.terms) < 2:
-        return False
-    a, b = state.terms[0], state.terms[1]
-    if a.meta.get("6_1_73_che_ca_done"):
-        return False
-    if not a.varnas or not b.varnas:
-        return False
-    return is_hrasva(a.varnas[-1].slp1) and b.varnas[0].slp1 == "C"
+    return _cross_pair(state) is not None
+
+
+def _cross_pair(state: State):
+    """First adjacent (a, b) with a hrasva-final a and a छ-initial b — any pair on
+    the tape (दधि + छत्रम्, abhyāsa च + छन्द् → चच्छन्द्)."""
+    for a, b in zip(state.terms, state.terms[1:]):
+        if a.meta.get("6_1_73_che_ca_done") or not a.varnas or not b.varnas:
+            continue
+        if is_hrasva(a.varnas[-1].slp1) and b.varnas[0].slp1 == "C":
+            return a
+    return None
 
 
 def cond(state: State) -> bool:
@@ -79,7 +83,7 @@ def act(state: State) -> State:
         return state
     # Cross-term path (pada boundary in saṃhitā)
     if _cross_term_match(state):
-        t0 = state.terms[0]
+        t0 = _cross_pair(state)
         t0.varnas.append(mk("t"))
         t0.meta["6_1_73_che_ca_done"] = True
     return state

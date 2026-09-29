@@ -44,11 +44,35 @@ def _matches(state: State) -> bool:
     return True
 
 
+_CAN_STEMS = frozenset({"Sri", "dru", "sru"})
+
+
+def _general(state: State):
+    """णिश्रिद्रुस्रुभ्यः कर्तरि चङ्: cli after a ṇijanta (or श्रि, द्रु, स्रु) in kartari
+    becomes caṅ (ṅit, aniṭ): अचूचुरत्, अशिश्रियत्."""
+    cli = next((t for t in state.terms if (t.meta.get("upadesha_slp1") or "").strip() == "cli"), None)
+    dh = next((t for t in state.terms if "dhatu" in t.tags), None)
+    if cli is None or dh is None or "kartari" not in dh.tags:
+        return None
+    if dh.meta.get("nijanta") or "".join(v.slp1 for v in dh.varnas) in _CAN_STEMS:
+        return cli
+    return None
+
 def cond(state: State) -> bool:
+    if _general(state) is not None:
+        return True
     return _matches(state)
 
 
 def act(state: State) -> State:
+    g = _general(state)
+    if g is not None:
+        g.varnas = [mk("a")]
+        g.meta["upadesha_slp1"] = "caG"
+        g.meta["it_markers"] = {"c", "G"}
+        g.kind = "pratyaya"
+        g.tags |= {"pratyaya", "vikarana", "kngiti", "ardhadhatuka", "anit_ardhadhatuka"}
+        return state
     if not _matches(state):
         return state
     li = _luG_index(state)

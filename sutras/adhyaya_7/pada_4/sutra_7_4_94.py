@@ -44,11 +44,36 @@ def _site(state: State) -> bool:
     return t.varnas[0].slp1 == "i" and t.varnas[1].slp1 == "w"
 
 
+_AC = frozenset("aAiIuUfFxXeEoO")
+_LONG = {"a": "A", "i": "I", "u": "U", "f": "F", "x": "X"}
+
+
+def _general(state: State):
+    """दीर्घो लघोः: a laghu abhyāsa vowel (sanvat) is lengthened — चुचुर् → चूचुर्;
+    not before a conjunct (अचिक्षलत्)."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "abhyasa" not in t.tags or not t.meta.get("sanvat") or t.meta.get("7_4_94_done"):
+            continue
+        if not t.varnas or t.varnas[-1].slp1 not in _LONG:
+            return None
+        dh = state.terms[i + 1].varnas
+        if len(dh) >= 2 and dh[0].slp1 not in _AC and dh[1].slp1 not in _AC:
+            return None
+        return t
+    return None
+
 def cond(state: State) -> bool:
+    if _general(state) is not None:
+        return True
     return _site(state)
 
 
 def act(state: State) -> State:
+    g = _general(state)
+    if g is not None:
+        g.varnas[-1] = mk(_LONG[g.varnas[-1].slp1])
+        g.meta["7_4_94_done"] = True
+        return state
     if not _site(state):
         return state
     i = _abhyasa_index(state)

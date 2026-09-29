@@ -30,10 +30,9 @@ def _sanadi_present(state: State) -> bool:
 
 
 def _find(state: State):
-    if not _sanadi_present(state):
-        return None
+    sanadi = _sanadi_present(state)
     for ti, t in enumerate(state.terms):
-        if "abhyasa" not in t.tags:
+        if "abhyasa" not in t.tags or not (sanadi or t.meta.get("sanvat")):
             continue
         if t.meta.get("7_4_79_done"):
             continue

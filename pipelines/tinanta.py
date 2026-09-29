@@ -1270,6 +1270,23 @@ def _derive_luG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
     return state
 
 
+def _can_anga(state: State, pada_key: str) -> State:
+    """caṅ-luṅ aṅga: 6.4.51 णेरनिटि (चोरि → चोर्), 7.4.1 णौ चङ्युपधाया ह्रस्वः (चुर्),
+    6.1.11 चङि (चुचुर्), the abhyāsa (7.4.60/62/59/66, 8.4.54), 7.4.93 सन्वद्भाव →
+    7.4.79 सन्यतः, 7.4.94 दीर्घो लघोः (चूचुर्). Ātmanepada: आतो ङितः (अचूचुरेताम्)."""
+    for sid in ("6.4.51", "7.4.1", "6.1.11", "7.4.60", "7.4.62", "7.4.66", "7.4.59",
+                "7.4.93", "7.4.79", "7.4.94", "8.4.54", "6.1.73", "6.4.77"):
+        state = apply_rule(sid, state)
+    for t in state.terms:                     # 7.4.66's rapara belongs to yaṅ only
+        if "abhyasa" in t.tags:
+            t.meta.pop("urN_rapara_pending", None)
+            t.meta.pop("urN_rapara_after_index", None)
+    if pada_key == "atmane":
+        state = apply_rule("6.1.97", state)
+        state = P00_ngit_At_iy_guna(state)
+    return state
+
+
 def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State:
     """
     Derive a luṅ (aorist / adyatana bhūta) form from the post-1.3.78 state.
@@ -1306,6 +1323,7 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: cli/sic chain (before lakāra substitution: 3.1.43 needs luG) ──
     state.meta["cli_luG_recipe"] = True
     state = apply_rule("3.1.43", state)   # inserts cli before luG placeholder
+    state = apply_rule("3.1.48", state)   # णिश्रिद्रुस्रुभ्यः कर्तरि चङ् (अचूचुरत्)
     # 3.1.55 cli→aṅ for puṣyādi/dyutādi (parasmaipada only); structural cond (dyut+cli)
     if pada_key == "parasmai":
         state = apply_rule("3.1.55", state)
@@ -1325,8 +1343,11 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # seṭ/aniṭ — that is 7.2.10's question, asked inside _it_agama below.
     from sutras.adhyaya_2.pada_4.sutra_2_4_77 import cond as _sic_luk_cond
     _is_anit = _sic_luk_cond(state)       # name kept: this branch = the sic-luk spine
+    _caN = any((t.meta.get("upadesha_slp1") or "").strip() == "caG" for t in state.terms)
 
-    if _is_anit:
+    if _caN:
+        pass                              # caṅ is aniṭ and ṅit: no iṭ, guṇa or sic-vṛddhi
+    elif _is_anit:
         # ── aniṭ path: 2.4.77 luk of sic (gāti-sthā-ghu-pā-bhū) ─────────────
         state = apply_rule("2.4.77", state)
     else:
@@ -1365,16 +1386,18 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: tiṅ substitutions ─────────────────────────────────────────────
     state = apply_rule("3.4.101", state)   # tas→tām, Tas→tam, Ta→ta, mi→am
 
-    if not _is_anit and (purusha, vacana) == (3, 3):
+    if not _is_anit and not _caN and (purusha, vacana) == (3, 3):
         # seṭ 3pl: jher jus (3.4.108) → [u, s] instead of 7.1.3 jh→anti
         state = apply_rule("3.4.108", state)
 
     state = apply_rule("3.4.100", state)   # ti→t, si→s, jhi→jh
 
-    _aG = any((t.meta.get("upadesha_slp1") or "").strip() == "aG" for t in state.terms)
+    _aG = any((t.meta.get("upadesha_slp1") or "").strip() in ("aG", "caG") for t in state.terms)
     if _is_anit or pada_key == "atmane" or _aG:
         state = P00_jha_adesha(state)     # jh→ant; ātmane after sic: 7.1.5 → at (ऐधिषत)
 
+    if _caN:
+        state = _can_anga(state, pada_key)
     state = apply_rule("3.4.99", state)    # vas→va, mas→ma
     if _aG:
         state = apply_rule("7.3.101", state)  # अतो दीर्घो यञि: अपुषाव, अपुषाम
@@ -1388,7 +1411,7 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
         None,
     )
     _tin_up = (_tin_t.meta.get("upadesha_slp1") or "").strip() if _tin_t else ""
-    if not _is_anit and _tin_up in {"tip", "sip"}:
+    if not _is_anit and not _caN and _tin_up in {"tip", "sip"}:
         for _t in state.terms:
             if (_t.meta.get("upadesha_slp1") or "").strip() == "sic":
                 _t.tags.add("seT_sic_it_lopa_context")
@@ -1397,7 +1420,7 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # aniṭ sic before an apṛkta t/s: 7.3.96 अस्तिसिचोऽपृक्ते (īṭ) — अनैषीत्, अपाक्षीः.
     # (The seṭ path above reaches ī through iṭ + 8.2.28.)
-    if not _is_anit and "7.2.35" in state.blocked_sutras:
+    if not _is_anit and not _caN and "7.2.35" in state.blocked_sutras:
         state = apply_rule("7.3.96", state)
 
     # ── Stage: aṅgakārya ────────────────────────────────────────────────────
@@ -2556,26 +2579,11 @@ def derive_periphrastic_lit(
     vacana: int,
 ) -> State:
     """
-    Periphrastic liṭ (ām + kṛñ anuprayoga) — P014 *īkṣāñcakre*.
-
-    For ijādi gurumad ātmanepada dhātus (e.g. 'Ikz').
+    Periphrastic liṭ (ām + kṛñ anuprayoga) — P014 *īkṣāñcakre*: the general liṭ
+    spine, which takes the ām path (3.1.36) for an ijādi gurumān root.
     e.g. derive_periphrastic_lit('Ikz', 3, 1) → 'IkzAYcakre'
     """
-    import sutras  # noqa: F401
-
-    row = _dhatu_row_by_upadesha(dhatu_slp1)
-    dhatu_term = _build_dhatu_term(row)
-    state = State(terms=[dhatu_term], meta={}, trace=[], samjna_registry={})
-    state = P01_samjna_dhatu_class(state)
-    state = P00_bhuvadi_dhatu_it_anunasik_hal(state)
-    # After it-lopa the varnas are the clean post-IT form ("Ikz"), but
-    # upadesha_slp1 in meta still holds the raw form ("Ikza~").
-    # 3.1.36 and 2.4.81 check upadesha_slp1 == "Ikz", so normalize here.
-    for t in state.terms:
-        if "dhatu" in t.tags:
-            t.meta["upadesha_slp1"] = "".join(v.slp1 for v in t.varnas)
-            break
-    return _derive_lit_am_kf_atmane(state, purusha, vacana)
+    return derive(dhatu_slp1, "liT", "kartari", purusha, vacana, pada="atmane")
 
 
 def _curadi_nic(state: State) -> State:
@@ -2592,9 +2600,12 @@ def _curadi_nic(state: State) -> State:
     state = apply_rule("6.4.92", state)    # मितां ह्रस्वः: ज्ञाप् → ज्ञप् (ज्ञपयति)
     dh = next(t for t in state.terms if "dhatu" in t.tags)
     keep = {k: dh.meta[k] for k in ("kartari_atmanepada_licensed",) if k in dh.meta}
+    if dh.meta.get("6_4_48_a_lopa_done"):
+        keep["aglopa"] = True               # अनग्लोपे (7.4.93): कथ् → अचकथत्
     before = state.flat_slp1()
     stem = [v for t in state.terms for v in t.varnas]
-    state.terms = [Term(kind="prakriti", varnas=stem, tags={"dhatu", "anga", "kartari"},
+    prayoga = dh.tags & {"kartari", "karmani", "bhave"} or {"kartari"}
+    state.terms = [Term(kind="prakriti", varnas=stem, tags={"dhatu", "anga"} | prayoga,
                         meta={**keep, "upadesha_slp1": "".join(v.slp1 for v in stem), "gana": 1,
                               "nijanta": True, "sanadi_pratyayanta": True,
                               "anit_dhatu": False, "set_dhatu": True})]
@@ -3424,70 +3435,6 @@ def _derive_luT_atmane(state: State, purusha: int, vacana: int) -> State:
     # ── Merge + Tripāḍī (full phase: 8.2.25 tāsdhve → tādhve, 8.4.58 अङ्किता …)
     _pada_merge(state)
     return P00_tripadi_rutva_visarga(state)
-
-
-def _derive_lit_am_kf_atmane(state: State, purusha: int, vacana: int) -> State:
-    """
-    Periphrastic liṭ (ām + kṛñ anuprayoga) ātmanepada — P014 *īkṣāñcakre*.
-
-    Sūtra order:
-      3.2.115 (liṭ) → 3.1.36 (ām) → 2.4.81 (luk+merge→IkzAm) →
-      3.1.40 (kṛñ) → scope (3.1.91/P06a/3.4.77) → 3.4.78 (ta) →
-      3.4.81 (ta→e) → IT-lopa → 1.2.5 → 6.1.8 (dvitva) →
-      7.4.66 (ṛ→a+rapara) → 1.1.51 → 7.4.60 (trim) → 7.4.62 (k→c) →
-      6.1.77 (ṛ+e→re) → 6.4.71 (aT) → merge → 8.3.7 → 8.4.58
-    """
-    # ── 3.2.115 liṭ attachment; sets lakara_liT ──────────────────────────────
-    state.meta["liT_lakara_recipe"] = True
-    state = apply_rule("3.2.115", state)
-    # ── 3.1.36 ām insertion (structural: reads lakara_liT + Ikz identity) ────
-    state = apply_rule("3.1.36", state)
-    # ── 2.4.81 liṭ-luk + merge Ikz+ām → IkzAm prātipadika ───────────────────
-    state = apply_rule("2.4.81", state)
-    # ── 3.1.40 kṛñ anuprayoga (structural: fires on IkzAm prātipadika) ───────
-    state = apply_rule("3.1.40", state)
-    # ── Scope ────────────────────────────────────────────────────────────────
-    state = apply_rule("3.1.91", state)
-    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
-    state = apply_rule("3.4.77", state)
-    state = apply_rule("1.3.12", state)
-    # ── tiṅ selection: ātmanepada ─────────────────────────────────────────────
-    tin_adesha = _select_tin_adesha("liT", "atmane", purusha, vacana)
-    state.meta["tin_adesha_pending"] = True
-    state.meta["tin_adesha_form"] = tin_adesha
-    state = apply_rule("3.4.78", state)
-    # ── 3.4.81 ta → eś  (3sg ātmanepada liṭ) ────────────────────────────────
-    state.meta["liT_esh_recipe"] = True
-    state = P00_lit_ta_esh_it_lopa(state)
-    if state.terms and "pratyaya" in state.terms[-1].tags:
-        state.terms[-1].meta["upadesha_slp1"] = "e"
-    # ── 1.2.5 asaṃyogāl liṭ kit ──────────────────────────────────────────────
-    state = apply_rule("1.2.5", state)
-    # ── 6.1.8 dvitva of kṛ + 6.1.4 abhyāsa gate ─────────────────────────────
-    state.meta["liT_dvitva_recipe"] = True
-    state = apply_rule("6.1.8", state)
-    state = apply_rule("6.1.4", state)
-    # ── 7.4.66 ṛ→a (uRaṇ) in kṛ abhyāsa; trim to first hal; k→c ─────────────
-    for i, t in enumerate(state.terms):
-        if "abhyasa" in t.tags:
-            state.terms[i].meta["7_4_60_first_hal_only"] = True
-            break
-    state = P00_mRj_abhyasa_hrasva(state)
-    state = apply_rule("7.4.62", state)
-    # ── 6.1.77 iko yaṇ aci: dhātu-final ṛ(f) + e → r+e ─────────────────────
-    state = apply_rule("6.1.77", state)
-    # ── 6.4.71 aT augment on kṛ dhātu ───────────────────────────────────────
-    for term in state.terms:
-        if "dhatu" in term.tags:
-            term.tags.add("aT_agama_context")
-            break
-    state = apply_rule("6.4.71", state)
-    # ── Merge + tripāḍī sandhi ────────────────────────────────────────────────
-    _pada_merge(state)
-    state = apply_rule("8.2.1", state)
-    state = apply_rule("8.3.7", state)
-    state = apply_rule("8.4.58", state)
-    return state
 
 
 def _derive_bhave_laT(state: State, purusha: int, vacana: int) -> State:
