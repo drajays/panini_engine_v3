@@ -1294,6 +1294,9 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("1.1.51", state)   # ṛ-vṛddhi is ār (अहार्षीत्)
         if "7.2.35" in state.blocked_sutras:
             state = apply_rule("7.2.3", state)
+        if pada_key != "atmane":
+            # 7.2.4 नेटि kept vṛddhi off a seṭ hal-final aṅga: plain guṇa (अमोटीत्, अमर्दीत्)
+            state = P00_guna_rapara_ayadi(state)
 
     # ── Stage: 1.2.4 apit sārvadhatuka → kṅit ───────────────────────────────
     state = apply_rule("1.2.4", state)
@@ -1307,10 +1310,14 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     state = apply_rule("3.4.100", state)   # ti→t, si→s, jhi→jh
 
-    if _is_anit or pada_key == "atmane":
+    _aG = any((t.meta.get("upadesha_slp1") or "").strip() == "aG" for t in state.terms)
+    if _is_anit or pada_key == "atmane" or _aG:
         state = P00_jha_adesha(state)     # jh→ant; ātmane after sic: 7.1.5 → at (ऐधिषत)
 
     state = apply_rule("3.4.99", state)    # vas→va, mas→ma
+    if _aG:
+        state = apply_rule("7.3.101", state)  # अतो दीर्घो यञि: अपुषाव, अपुषाम
+        state = apply_rule("6.1.97", state)   # अतो गुणे: aṅ-a + an/am → अपुषन्, अपुषम्
 
     # ── seṭ: for tip/sip-derived cells, sic-s + iṭ-i → ī via 7.2.35 ───────────
     # Discriminate by tiṅ upadesha (Art.2§2c: upadesha identity is allowed).

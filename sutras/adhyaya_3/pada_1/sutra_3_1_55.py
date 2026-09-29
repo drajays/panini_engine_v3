@@ -72,12 +72,25 @@ def _dyut_site(state: State) -> bool:
     return False
 
 
+def _pusadi_dyutadi_ldit(state: State) -> bool:
+    """पुषादिद्युताद्य्ऌदितः परस्मैपदेषु: the root is in the पुषादि (divādi) or
+    द्युतादि (bhvādi) antargaṇa, or is ḷdit (गमॢँ → अगमत्). The caller asks only
+    in parasmaipada."""
+    if not any((t.meta.get("upadesha_slp1") or "").strip() == "cli" for t in state.terms):
+        return False
+    dh = next((t for t in state.terms if "dhatu" in t.tags), None)
+    if dh is None:
+        return False
+    ag = dh.meta.get("antarganas") or ()
+    return "पुषादिः" in ag or "द्युतादिः" in ag or "x~" in (dh.meta.get("upadesha_slp1") or "")
+
+
 def cond(state: State) -> bool:
-    return _dyut_site(state) or _ghas_luG_aG_site(state)
+    return _dyut_site(state) or _ghas_luG_aG_site(state) or _pusadi_dyutadi_ldit(state)
 
 
 def act(state: State) -> State:
-    if not (_dyut_site(state) or _ghas_luG_aG_site(state)):
+    if not (_dyut_site(state) or _ghas_luG_aG_site(state) or _pusadi_dyutadi_ldit(state)):
         return state
     for i, t in enumerate(state.terms):
         if (t.meta.get("upadesha_slp1") or "").strip() != "cli":
@@ -88,6 +101,7 @@ def act(state: State) -> State:
         t.kind = "pratyaya"
         # *aṅ* is **ङित्** — **1.1.5** *kṅiti ca* blocks **7.3.86** (P018-A note).
         t.tags.add("kngiti")
+        t.tags.add("vikarana")      # cli's ādeśa: sandhi with the tiṅ as a vikaraṇa-a (अपुषन्)
         break
     return state
 
