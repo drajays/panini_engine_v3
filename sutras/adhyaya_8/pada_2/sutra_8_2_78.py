@@ -16,6 +16,10 @@ _HAL = frozenset("kKgGNcCjJYwWqQRtTdDnpPbBmyrlvSzsh")
 _NA_BHA_KUR_CHUR = {"kur", "Cur"}
 
 
+def _dh(v) -> bool:
+    return "dhatu_v" in v.tags or "mula_dhatu_v" in v.tags
+
+
 def _dhatu_flat(vs) -> str:
     return "".join(v.slp1 for v in vs if "dhatu_v" in v.tags)
 
@@ -31,13 +35,13 @@ def _find(state: State):
         return None
     for i in range(len(vs) - 2):
         a, rv, nxt = vs[i], vs[i + 1], vs[i + 2]
-        if a.slp1 not in _IK_DIRGHA or rv.slp1 not in "rv" or "dhatu_v" not in rv.tags:
+        if a.slp1 not in _IK_DIRGHA or rv.slp1 not in "rv" or not _dh(rv):
             continue
-        if "dhatu_v" not in a.tags or nxt.slp1 not in _HAL:
+        if not _dh(a) or nxt.slp1 not in _HAL:
             continue
         # उपधायाम्: the r/v is in upadhā — the following hal is the dhātu's own final
         # (of the mūla dhātu: ऊर्ज्+इ, चूर्ण्+इ — ṇic's इ is not the root's)
-        if "dhatu_v" in nxt.tags and (i + 3 == len(vs) or "dhatu_v" not in vs[i + 3].tags
+        if _dh(nxt) and (i + 3 == len(vs) or not _dh(vs[i + 3])
                                       or ("mula_dhatu_v" in nxt.tags
                                           and "mula_dhatu_v" not in vs[i + 3].tags)):
             return i

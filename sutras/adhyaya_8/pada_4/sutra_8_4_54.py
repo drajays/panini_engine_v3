@@ -39,6 +39,10 @@ _JHAS_TO_JAS = {
     "D": "d",  # dhāv → dadhāva; dhṛ → dadhre
     "G": "j",  # gh → j (above handles this too)
     "J": "j",  # jha → ja (rare)
+    "Q": "q",  # ḍha → ḍa (डुढौके)
+    # चर् for the voiceless aspirates: छ → च (चखाद, after 7.4.62), फ → प
+    # (पुस्फूर्ज), ठ → ट, थ → त
+    "C": "c", "P": "p", "W": "w", "T": "t",
 }
 
 

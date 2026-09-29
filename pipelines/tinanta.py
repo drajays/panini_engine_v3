@@ -628,10 +628,10 @@ def _derive_lit_am(state: State, pada_key: str, purusha: int, vacana: int) -> St
         why_dev="३.१.४० कृञ्चानुप्रयुज्यते लिटि — आमन्तात् परं कृञो लिडन्तम् (पदं १.३.६३ आम्प्रत्ययवत्)।",
         type_label="अनुप्रयोगः")
     state = apply_rule("8.2.1", state)
-    state = apply_rule("8.3.23", state)
-    state = apply_rule("8.3.24", state)      # num of an idit root: उन्ख् → उंख्
-    state = apply_rule("8.4.58", state)
-    return state
+    state = apply_rule("8.3.23", state)      # मोऽनुस्वारः: आम् + चकार
+    # full tripādī over the joined pada: 8.3.24/8.4.58 (उंख् → उङ्ख्), 8.4.40
+    # (उत्छ → उच्छ), 8.2.78 (ऊर्दाञ्चक्रे) …
+    return P00_tripadi_rutva_visarga(state)
 
 
 def _lit_thal_guna(state: State) -> State:
@@ -787,6 +787,11 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     if _dht_up in {"BU", "BU~"}:
         state.meta["bhU_abhyasa_recipe"] = True
         state = apply_rule("7.4.73", state)
+
+    # ── ajādi dhātus: 7.4.70 अत आदेः, 7.4.71 नुट्, 6.4.78 इयङ्/उवङ्, then the
+    #    abhyāsa + dhātu savarṇa merge (6.1.101): आट, आनर्द, इयेख, ईखतुः
+    for sid in ("7.4.70", "7.4.71", "6.4.78", "6.1.101"):
+        state = apply_rule(sid, state)
 
     # ── 1.4.14 pada saṃjñā ───────────────────────────────────────────────────
     state = apply_rule("1.4.14", state)
@@ -3397,15 +3402,9 @@ def _derive_luT_atmane(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule("1.4.14", state)
         state = apply_rule("6.1.78", state)
 
-    # ── Merge + Tripāḍī ───────────────────────────────────────────────────
+    # ── Merge + Tripāḍī (full phase: 8.2.25 tāsdhve → tādhve, 8.4.58 अङ्किता …)
     _pada_merge(state)
-    state = apply_rule("8.2.1", state)
-    # 8.2.25: s-lopa before dh (2pl: tāsdhve → tādhve)
-    state = apply_rule("8.2.25", state)
-    state = apply_rule("8.2.66", state)
-    state = apply_rule("8.3.15", state)
-
-    return state
+    return P00_tripadi_rutva_visarga(state)
 
 
 def _derive_lit_am_kf_atmane(state: State, purusha: int, vacana: int) -> State:

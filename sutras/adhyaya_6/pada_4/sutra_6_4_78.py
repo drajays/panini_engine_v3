@@ -8,32 +8,55 @@ Padaccheda: अभ्यासस्य असवर्णे
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
-from engine.krt_eligibility import samhita_gate_eligible
+from phonology    import mk
 
-_GATE_KEY: str = "6_4_78_aByAsasyAs_78"
+_AC = frozenset("aAiIuUfFxXeEoO")
+
+
+def _abhyasa_dhatu(state: State):
+    """(abhyāsa, dhātu) adjacent on the tape, or None."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "abhyasa" in t.tags and "dhatu" in state.terms[i + 1].tags:
+            return t, state.terms[i + 1]
+    return None
+
+_IYUV = {"i": "iy", "I": "iy", "u": "uv", "U": "uv"}
+_SAVARNA = {"i": "iI", "I": "iI", "u": "uU", "U": "uU"}
+
+
+def _find(state: State):
+    """अभ्यासस्यासवर्णे: an इ/उ abhyāsa before a non-savarṇa vowel takes इयङ्/उवङ्
+    (इ+एख → इयेख, उ+ओख → उवोख)."""
+    hit = _abhyasa_dhatu(state)
+    if hit is None:
+        return None
+    ab, dh = hit
+    if ab.meta.get("6_4_78_done") or len(ab.varnas) != 1 or ab.varnas[0].slp1 not in _IYUV:
+        return None
+    if not dh.varnas or dh.varnas[0].slp1 not in _AC or dh.varnas[0].slp1 in _SAVARNA[ab.varnas[0].slp1]:
+        return None
+    return ab
 
 
 def cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.4.78", gate_key=_GATE_KEY)
+    return _find(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.4.78"
+    ab = _find(state)
+    a, b = _IYUV[ab.varnas[0].slp1]
+    ab.varnas = [mk(a), mk(b)]
+    ab.meta["6_4_78_done"] = True
     return state
-
 
 SUTRA = SutraRecord(
     sutra_id              = "6.4.78",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "aByAsasyAsavarRe",
     text_dev              = "अभ्यासस्यासवर्णे",
     padaccheda_dev        = "अभ्यासस्य असवर्णे",
-    why_dev               = "(सूत्रम् 6.4.78) अभ्यासस्यासवर्णे।",
+    why_dev               = "अभ्यासस्य इवर्णोवर्णयोः असवर्णे अचि परे इयङुवङौ (इयेख, उवोख)।",
     anuvritti_from        = ('6.1.1',),
     cond                  = cond,
     act                   = act,

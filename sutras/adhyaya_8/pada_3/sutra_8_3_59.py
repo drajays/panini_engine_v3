@@ -64,6 +64,8 @@ def _find_target(state: State):
             continue
         if "satva_done" in v.tags:
             continue
+        if i == len(t.varnas) - 1:
+            continue        # pada-final s is 8.2.66's ru (पूर्वत्रासिद्धम्: 8.2.66 < 8.3.59)
         prev = t.varnas[i - 1]
         # आदेशप्रत्यययोः: the dhātu's own upadeśa s is neither ādeśa nor pratyaya
         # (च्योसयति). A 6.1.64 ādeśa s is a new varṇa without the tag (सिषेव).
@@ -87,12 +89,10 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    i = _find_target(state)
-    if i is None:
-        return state
-    new_varna = mk("z")
-    new_varna.tags.add("satva_done")
-    state.terms[0].varnas[i] = new_varna
+    while (i := _find_target(state)) is not None:     # every s it reaches (सुषूदिषे)
+        new_varna = mk("z")
+        new_varna.tags.add("satva_done")
+        state.terms[0].varnas[i] = new_varna
     return state
 
 

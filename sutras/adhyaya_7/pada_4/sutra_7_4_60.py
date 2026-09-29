@@ -105,7 +105,7 @@ def _find(state: State):
         if len(t.varnas) < 2:
             continue
         # Already exactly hal + vowel — no trim (avoids R1 no-op, e.g. *ci* abhyāsa).
-        if len(t.varnas) == 2:
+        if len(t.varnas) == 2 and t.varnas[0].slp1 not in _AC and t.varnas[1].slp1 in _AC:
             continue
         # Keep first two varṇas (hal + vowel expected).
         return ti

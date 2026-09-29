@@ -8,33 +8,46 @@ Padaccheda: अतः आदेः
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology    import mk
 
-_GATE_KEY: str = "7_4_70_ata_70"
+_AC = frozenset("aAiIuUfFxXeEoO")
+
+
+def _abhyasa_dhatu(state: State):
+    """(abhyāsa, dhātu) adjacent on the tape, or None."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "abhyasa" in t.tags and "dhatu" in state.terms[i + 1].tags:
+            return t, state.terms[i + 1]
+    return None
+
+
+def _find(state: State):
+    """अत आदेः: the abhyāsa's initial अ becomes आ (अट् → आ+अट् → आट)."""
+    hit = _abhyasa_dhatu(state)
+    if hit is None or hit[0].meta.get("7_4_70_done"):
+        return None
+    ab, _ = hit
+    return ab if ab.varnas and ab.varnas[0].slp1 == "a" else None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.4.70", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _find(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.4.70"
+    ab = _find(state)
+    ab.varnas[0] = mk("A")
+    ab.meta["7_4_70_done"] = True
     return state
-
 
 SUTRA = SutraRecord(
     sutra_id              = "7.4.70",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "ata AdeH",
     text_dev              = "अत आदेः",
     padaccheda_dev        = "अतः आदेः",
-    why_dev               = "(सूत्रम् 7.4.70) अत आदेः।",
+    why_dev               = "अभ्यासस्य आदेः अकारस्य दीर्घः (आट, आनर्द)।",
     anuvritti_from        = ('7.1.1',),
     cond                  = cond,
     act                   = act,
