@@ -8,33 +8,51 @@ Padaccheda: ऋच्छति-ऋ-ॠताम्
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology    import mk
 
-_GATE_KEY: str = "7_4_11_fcCatyFtAm_11"
+_AC = frozenset("aAiIuUfFxXeEoO")
+
+
+def _lit_dhatu(state: State):
+    """The non-abhyāsa dhātu of a liṭ derivation, or None."""
+    if not any("abhyasa" in t.tags for t in state.terms):
+        return None
+    return next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+
+
+def _guna_ar(t, j: int) -> None:
+    t.varnas[j:j + 1] = [mk("a"), mk("r")]          # गुण + उरण् रपरः (1.1.51)
+
+
+def _find(state: State):
+    """ऋच्छत्यॄताम् (लिटि गुणः): ऋच्छ्, ऋ and ॠ-final roots — आनर्च्छ, आरतुः,
+    ननरे (नॄ), जगरतुः (गॄ)."""
+    t = _lit_dhatu(state)
+    if t is None or not t.varnas:
+        return None
+    st = "".join(v.slp1 for v in t.varnas)
+    if st in ("f", "fcC", "ftC") or t.varnas[-1].slp1 == "F":
+        return t, (0 if st != "f" and st.startswith("f") else len(t.varnas) - 1)
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.4.11", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _find(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.4.11"
+    t, j = _find(state)
+    _guna_ar(t, j)
     return state
-
 
 SUTRA = SutraRecord(
     sutra_id              = "7.4.11",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "fcCatyFtAm",
     text_dev              = "ऋच्छत्यॄताम्",
     padaccheda_dev        = "ऋच्छति-ऋ-ॠताम्",
-    why_dev               = "(सूत्रम् 7.4.11) ऋच्छत्यॄताम्।",
+    why_dev               = "ऋच्छ्-ऋ-ॠदन्तानां लिटि गुणः (ननरे, आरतुः)।",
     anuvritti_from        = ('7.1.1',),
     cond                  = cond,
     act                   = act,

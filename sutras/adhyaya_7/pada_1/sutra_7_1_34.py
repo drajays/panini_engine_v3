@@ -8,33 +8,40 @@ Padaccheda: आतः औ (लुप्तप्रथमान्तनिर�
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology    import mk
 
-_GATE_KEY: str = "7_1_34_Ata_34"
+
+def _find(state: State):
+    """आत औ णलः: णल् after an आ-final aṅga becomes औ (ददा+अ → ददा+औ → ददौ, 6.1.88)."""
+    for i, dh in enumerate(state.terms[:-1]):
+        if "dhatu" not in dh.tags or "abhyasa" in dh.tags:
+            continue
+        nxt = state.terms[i + 1]
+        if dh.varnas and dh.varnas[-1].slp1 == "A" \
+                and (nxt.meta.get("upadesha_slp1") or "").strip() == "Ral" \
+                and [v.slp1 for v in nxt.varnas] == ["a"]:
+            return nxt
+        return None
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.1.34", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _find(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.1.34"
+    _find(state).varnas = [mk("O")]
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.1.34",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "Ata O RalaH",
     text_dev              = "आत औ णलः",
     padaccheda_dev        = "आतः औ (लुप्तप्रथमान्तनिर्देशः) णलः",
-    why_dev               = "(सूत्रम् 7.1.34) आत औ णलः।",
+    why_dev               = "आदन्तात् अङ्गात् परस्य णलः औकारादेशः (ददौ, जग्लौ)।",
     anuvritti_from        = ('7.1.1',),
     cond                  = cond,
     act                   = act,

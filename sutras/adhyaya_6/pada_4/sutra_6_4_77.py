@@ -29,6 +29,12 @@ def _find(state: State):
             continue
         if len(dh.varnas) == 1 and dh.varnas[0].slp1 == "i":
             continue                                   # 6.4.81 इणो यण्
+        # 6.4.82 एरनेकाचोऽसंयोगपूर्वस्य: an अनेकाच् aṅga (here: after its abhyāsa)
+        # ending in इ-varṇa not after a conjunct takes yaṇ (निन्युः, निन्यिरे)
+        if dh.varnas[-1].slp1 in "iI" and i > 0 and "abhyasa" in state.terms[i - 1].tags \
+                and not (len(dh.varnas) >= 3 and dh.varnas[-2].slp1 not in _AC
+                         and dh.varnas[-3].slp1 not in _AC):
+            continue
         return i
     return None
 

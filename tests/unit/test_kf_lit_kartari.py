@@ -1,8 +1,8 @@
 """Gold tests for kṛ (qukfY, tanādi gana 8) liṭ kartari parasmaipada — full 9-cell.
 
 Strong arm (Ral / Nal ādeśa, 3sg and 1sg):
-  kṛ → dvitva (6.1.8) → 7.3.84 guṇa (ṛ→a) → 1.1.51 rapara (→ar)
-  → 7.2.116 vṛddhi of a-upadha (→ār) → 7.4.66 abhyāsa ṛ→ā
+  kṛ → dvitva (6.1.8) → 7.2.115 अचो ञ्णिति vṛddhi (ṛ→ā) → 1.1.51 rapara (→ār)
+  → 7.4.66 abhyāsa ṛ→ā
   → 7.4.59 hrasva (ā→a) → 8.4.54 carc (k→c) → cakāra.
 
 Weak arm no-iṭ forms (ṛ-final root + vowel suffix):
@@ -51,7 +51,8 @@ def test_cakAra_spine() -> None:
     s = derive("kf", "liT", "kartari", 3, 1, pada="parasmai")
     # abhyāsa क → च is 7.4.62 कुहोश्चुः (was credited to 8.4.54, which only
     # de-aspirates/de-voices and is vacuous for क)
-    for sid in ("3.2.115", "6.1.8", "7.4.62", "7.3.84", "1.1.51", "7.2.116", "7.4.66", "7.4.59"):
+    # ṇal is ṇit: 7.2.115 अचो ञ्णिति gives the vṛddhi directly (कृ → कार्)
+    for sid in ("3.2.115", "6.1.8", "7.4.62", "7.2.115", "1.1.51", "7.4.66", "7.4.59"):
         assert _fired(s.trace, sid), f"missing trace for {sid}"
 
 

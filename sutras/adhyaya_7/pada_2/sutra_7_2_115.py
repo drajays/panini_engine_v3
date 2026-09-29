@@ -67,7 +67,7 @@ def _find(state: State):
     # sūtra names no pada-class, only the it-marker, so any pratyaya qualifies.
     if len(state.terms) < 2:
         return None
-    dhatu = next((t for t in state.terms if "dhatu" in t.tags), None)
+    dhatu = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
     if dhatu is None:
         return None
     pr = state.terms[-1]

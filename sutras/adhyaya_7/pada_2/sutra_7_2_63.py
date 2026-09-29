@@ -8,22 +8,28 @@ Padaccheda: ऋतः भारद्वाजस्य
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
 
-_GATE_KEY: str = "7_2_63_fto_63"
+_GATE_KEY = "7_2_63_no_thal_it"
+
+
+def _hit(state: State) -> bool:
+    """ऋतो भारद्वाजस्य (7.2.61 अचस्तास्वत् थल्यनिटो नित्यम् continues): an aniṭ
+    ऋ-final root takes no iṭ before थल् — जहर्थ, सस्मर्थ, दधर्थ (7.2.66 keeps it for ऋ)."""
+    if not any((t.meta.get("upadesha_slp1") or "").strip() == "Tal" for t in state.terms):
+        return False
+    dh = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+    if dh is None or not dh.meta.get("anit_dhatu") or not dh.varnas:
+        return False
+    return dh.varnas[-1].slp1 == "f" and len(dh.varnas) > 1
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.63", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return not state.paribhasha_gates.get(_GATE_KEY) and _hit(state)
+
 
 def act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.63"
     return state
 
 
@@ -34,7 +40,7 @@ SUTRA = SutraRecord(
     text_slp1             = "fto BAradvAjasya",
     text_dev              = "ऋतो भारद्वाजस्य",
     padaccheda_dev        = "ऋतः भारद्वाजस्य",
-    why_dev               = "(सूत्रम् 7.2.63) ऋतो भारद्वाजस्य।",
+    why_dev               = "अनिटः ऋदन्तात् थलि इडभावः (जहर्थ, सस्मर्थ)।",
     anuvritti_from        = ('7.1.1',),
     cond                  = cond,
     act                   = act,

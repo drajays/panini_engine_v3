@@ -141,8 +141,34 @@ def _site_varac(state: State) -> bool:
     return _varac_kngiti_idx(state, dhi) is not None
 
 
+_AC = frozenset("aAiIuUfFxXeEoO")
+
+
+def _site_general(state: State):
+    """आतो लोप इटि च: the (non-abhyāsa) dhātu's final आ drops before a vowel-initial
+    kit/ṅit ārdhadhātuka, or before iṭ — ददतुः, ददे, ददिथ, जग्ले."""
+    for i, dh in enumerate(state.terms[:-1]):
+        if "dhatu" not in dh.tags or "abhyasa" in dh.tags:
+            continue
+        if not dh.varnas or dh.varnas[-1].slp1 != "A" or dh.meta.get("6_4_64_lopa_blocked"):
+            return None
+        if _blocked_by_1_1_58_vareya_after_6_4_48(state, dh):
+            return None
+        nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
+        if nxt is None or "pratyaya" not in nxt.tags or nxt.varnas[0].slp1 not in _AC:
+            return None
+        if any(t.startswith("sarvadhatuka") for t in nxt.tags):
+            return None
+        marks = nxt.meta.get("it_markers") or set()
+        kngit = "kngiti" in nxt.tags or "k" in marks or "N" in marks or nxt.meta.get("kit")
+        if kngit or "it_agama" in nxt.varnas[0].tags:
+            return dh
+        return None
+    return None
+
+
 def cond(state: State) -> bool:
-    return _site_ic(state) or _site_p035(state) or _site_varac(state)
+    return _site_ic(state) or _site_p035(state) or _site_varac(state) or _site_general(state) is not None
 
 
 def act(state: State) -> State:
@@ -171,6 +197,9 @@ def act(state: State) -> State:
         dh.varnas.pop()
         state.terms[j].meta["6_4_64_target_done"] = True
         return state
+    g = _site_general(state)
+    if g is not None:
+        g.varnas.pop()
     return state
 
 

@@ -708,6 +708,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
             state = apply_rule("1.2.5", state)
         state.meta["liT_krsrbhr_recipe"] = True
         state = apply_rule("7.2.13", state)
+        state = apply_rule("7.2.63", state)   # ऋतो भारद्वाजस्य: जहर्थ
         state = apply_rule("7.2.35", state)
         # IT on iṭ: iṭ has T as halantyam-it
         state = apply_rule("1.3.3", state)
@@ -716,6 +717,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("1.4.13", state)
         # dvitva BEFORE vuk: 6.4.88 requires abhyāsa present to detect liṭ context
         state.meta["liT_dvitva_recipe"] = True
+        state = apply_rule("6.1.45", state)   # आदेच उपदेशेऽशिति: ग्लै → ग्ला, धे → धा
         state = apply_rule("6.1.8", state)
         state = apply_rule("6.1.4", state)
         state.meta["sandhi_6_1_5_recipe"] = True
@@ -738,6 +740,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         if lit_adesha not in ("Ral", "Tal"):
             state = apply_rule("1.2.5", state)
         state.meta["liT_dvitva_recipe"] = True
+        state = apply_rule("6.1.45", state)   # आदेच उपदेशेऽशिति: ग्लै → ग्ला, धे → धा
         state = apply_rule("6.1.8", state)
         state = apply_rule("6.1.4", state)
         state.meta["sandhi_6_1_5_recipe"] = True
@@ -746,6 +749,11 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("7.4.60", state)
         state = apply_rule("7.4.62", state)   # कुहोश्चुः (जहार, जघ्रौ)
         if lit_adesha == "Ral":
+            # 7.2.115 अचो ञ्णिति: a vowel-final root before ṇal — नी → नै (निनाय);
+            # not भू, whose vuk (6.4.88) makes it hal-final (बभूव)
+            _d = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+            if _d is not None and "".join(v.slp1 for v in _d.varnas) != "BU":
+                state = apply_rule("7.2.115", state)
             # liṭ strong: guṇa first (IK-upadha: cit→cet, kṛ ṛ→a+rapara_pending)
             state.meta["liT_strong_recipe"] = True
             state = apply_rule("7.3.84", state)
@@ -788,10 +796,20 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state.meta["bhU_abhyasa_recipe"] = True
         state = apply_rule("7.4.73", state)
 
+    # ── आदन्त: 7.1.34 आत औ णलः (ददौ), 6.4.64 आतो लोप इटि च (ददतुः, ददिथ, ददे)
+    for sid in ("7.4.10", "7.4.11", "7.1.34", "6.1.88", "6.4.64"):
+        state = apply_rule(sid, state)
+
     # ── ajādi dhātus: 7.4.70 अत आदेः, 7.4.71 नुट्, 6.4.78 इयङ्/उवङ्, then the
     #    abhyāsa + dhātu savarṇa merge (6.1.101): आट, आनर्द, इयेख, ईखतुः
-    for sid in ("7.4.70", "7.4.71", "6.4.78", "6.1.101"):
+    for sid in ("7.4.70", "7.4.71", "6.4.78"):
         state = apply_rule(sid, state)
+    _ab = next((k for k, t in enumerate(state.terms[:-1]) if "abhyasa" in t.tags), None)
+    if _ab is not None and state.terms[_ab].varnas and state.terms[_ab + 1].varnas \
+            and state.terms[_ab].varnas[-1].slp1 in "aAiIuU" \
+            and state.terms[_ab + 1].varnas[0].slp1 in "aAiIuU":
+        state = apply_rule("6.1.101", state)          # आ+अट् → आट, इ+इख् → ईख्
+    state = apply_rule("6.4.77", state)               # शिश्रिये; 6.4.82: निन्यिरे
 
     # ── 1.4.14 pada saṃjñā ───────────────────────────────────────────────────
     state = apply_rule("1.4.14", state)
@@ -799,6 +817,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── 6.1.77 iko yaṇ aci — IK-final root + vowel-initial suffix/iṭ ────────
     # (fires at term boundary before merge; resolves kṛ ṛ→r before atuH/uH/iṭ)
     state = apply_rule("6.1.77", state)
+    state = apply_rule("6.1.78", state)   # एचोऽयवायावः: निनै+अ → निनाय, निने+इथ → निनयिथ
 
     # ── TRIPĀḌĪ: 8.2.1 + 8.4.54 must fire pre-merge (abhyāsa term visible) ──
     state = apply_rule("8.2.1", state)    # opens tripadi_zone

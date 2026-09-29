@@ -204,7 +204,10 @@ def _liT_strong_eligible(state: State) -> bool:
     # ṛ/ḷ-final (e.g. kṛ = k-ṛ): guṇa targets the ṛ/ḷ itself (ṛ → ar).
     # Other vowel-final (U, u, I, i, a): vuk (6.4.88) intervenes → block guṇa.
     if last not in HAL and last not in ("f", "F", "x", "X"):
-        return False
+        # i/u-final roots take guṇa before thal (निनेथ, दुदोथ); only भू's vuk
+        # (6.4.88) intervenes (बभूविथ)
+        if last not in ("i", "I", "u", "U") or "".join(v.slp1 for v in d0.varnas) == "BU":
+            return False
     return _last_ik_index(d0) is not None
 
 

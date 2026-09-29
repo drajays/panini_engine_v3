@@ -107,8 +107,9 @@ def _lit_tin_index(state: State) -> int | None:
     """
     if not state.meta.get("lakara_liT"):
         return None
-    # 7.2.13 कृसृभृवृस्तुद्रुस्रुश्रुवो लिटि: no iṭ in liṭ for these (चकृषे, चकृव).
-    if state.paribhasha_gates.get("7_2_13_kfsfBfvfst_13"):
+    # 7.2.13 कृसृभृवृस्तुद्रुस्रुश्रुवो लिटि: no iṭ in liṭ for these (चकृषे, चकृव);
+    # 7.2.63 ऋतो भारद्वाजस्य: none in thal after an aniṭ ṛ-final root (जहर्थ).
+    if state.paribhasha_gates.get("7_2_13_kfsfBfvfst_13") or state.paribhasha_gates.get("7_2_63_no_thal_it"):
         return None
     # Find rightmost pratyaya term not yet done
     for i in range(len(state.terms) - 1, -1, -1):
@@ -129,6 +130,8 @@ def cond(state: State) -> bool:
     # 7.2.13 कृसृभृवृस्तुद्रुस्रुश्रुवो लिटि is a niyama on this iṭ: once it has
     # fired (liṭ, kṛ-group), no branch below may add iṭ (चकृम, चकर्थ).
     if state.paribhasha_gates.get("7_2_13_kfsfBfvfst_13"):
+        return False
+    if state.paribhasha_gates.get("7_2_63_no_thal_it"):
         return False
     j = _lut_tasi_vikaranha_index(state)
     if j is not None:
