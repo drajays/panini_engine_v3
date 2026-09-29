@@ -94,6 +94,7 @@ from core.canonical_pipelines import (
     P00_jha_adesha,
     P00_sap_luk,
     P00_guna_rapara_ayadi,
+    P00_ngit_At_iy_guna,
     P00_tripadi_8_4_55_visarga,
     P00_luk_samjna_60_62,
     P00_stri_4_1_wap,
@@ -507,9 +508,7 @@ def _run_lat_kartari_bhuvadi_spine(
     state = apply_rule("6.1.97", state)
     # आतो ङितः for the duals: एध + आते → एध + इय्ते (7.2.81) → इते (6.1.66
     # लोपो व्योर्वलि) → एधेते (6.1.87 आद्गुणः).
-    state = apply_rule("7.2.81", state)
-    state = apply_rule("6.1.66", state)
-    state = apply_rule("6.1.87", state)
+    state = P00_ngit_At_iy_guna(state)
 
     _pada_merge(state)
     state = P00_tripadi_rutva_visarga(state)
@@ -1140,9 +1139,7 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.1.97", state)
     # ātmanepada: ṅit आताम्/आथाम् after a (7.2.81 → 6.1.66 → 6.1.87: ऐधेताम्),
     # and a + इ of iṭ → ए (6.1.87: ऐधे). All self-gate; parasmaipada untouched.
-    state = apply_rule("7.2.81", state)
-    state = apply_rule("6.1.66", state)
-    state = apply_rule("6.1.87", state)
+    state = P00_ngit_At_iy_guna(state)
     # after the ātmanepada dual trio, so ā-initial endings reach 7.2.81 first
     state = apply_rule("6.1.101", state)   # अकः सवर्णे दीर्घः: क्रीणा + अम् → अक्रीणाम्
 
@@ -1722,9 +1719,7 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.1.97", state)
     # ātmanepada duals, as in the laṭ spine: sya + आते → स्य + इय्ते (7.2.81)
     # → इते (6.1.66) → स्येते (6.1.87) — एधिष्येते, not एधिष्यआते.
-    state = apply_rule("7.2.81", state)
-    state = apply_rule("6.1.66", state)
-    state = apply_rule("6.1.87", state)
+    state = P00_ngit_At_iy_guna(state)
 
     # ── Merge + Tripāḍī ──────────────────────────────────────────────────────
     _pada_merge(state)
@@ -1954,9 +1949,7 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.1.78", state)
     # ātmanepada duals, before any a + ā sandhi can swallow the ā:
     # 7.2.81 आतो ङितः → 6.1.66 → 6.1.87 (एध + आताम् → एधेताम्).
-    state = apply_rule("7.2.81", state)
-    state = apply_rule("6.1.66", state)
-    state = apply_rule("6.1.87", state)
+    state = P00_ngit_At_iy_guna(state)
     # 6.1.97: a+a → a (3pl: śap-a + antu-a → bhavantu) — tried BEFORE 6.1.101
     # below: both structurally match plain a+a, but 6.1.97's ekādeśa (single
     # a) is what's attested here, not 6.1.101's dīrgha. Emptying śap's 'a'
@@ -2832,6 +2825,7 @@ def _derive_lRG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: pada saṃjñā + sandhi ─────────────────────────────────────────
     state = apply_rule("1.4.14", state)
     state = apply_rule("6.1.78", state)    # bho+i(ṭ) → bhav+i
+    state = P00_ngit_At_iy_guna(state)     # ātmane: ऐधिष्येताम्, ऐधिष्ये
     state = apply_rule("6.1.97", state)    # a+a → a (3pl: sya+ant; 1sg: sya+am)
 
     # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
@@ -3687,68 +3681,6 @@ def _derive_karmani_lRT(state: State, purusha: int, vacana: int) -> State:
     return state
 
 
-def _derive_karmani_lRG(state: State, purusha: int, vacana: int) -> State:
-    """
-    Karmani lṛṅ (passive conditional) — sya vikaraṇa + ātmanepada tiṅ + aṭ augment.
-
-    Example: bhū + lṛṅ karmaṇi 3sg → अभाविष्यते (parallel to lṛṭ karmaṇi भाविष्यते).
-    """
-    for t in state.terms:
-        if "dhatu" in t.tags:
-            t.tags.add("bhava_karma_usage")
-            break
-
-    state = apply_rule("1.3.13", state)
-
-    state.meta["lakara"] = "lRG"
-    state = apply_rule("3.3.139", state)
-    state = apply_rule("1.3.2", state)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
-
-    tin_adesha = _select_tin_adesha("lRG", "atmane", purusha, vacana)
-    state = P00_parasmai_tin_adesha(state, tin_adesha)
-    state = apply_rule("1.4.100", state)
-    state = apply_rule("3.4.113", state)
-
-    state = apply_rule("3.1.33", state)
-    state = apply_rule("3.4.114", state)
-
-    state = P00_tin_tusma_audit_halantyam_lopa(state)
-    state = apply_rule("3.4.79", state)
-    state = apply_rule("3.4.80", state)
-    state = apply_rule("6.4.62", state)
-    state = apply_rule("1.3.3", state)
-    state = apply_rule("1.3.9", state)
-    state = apply_rule("1.2.4", state)
-
-    state = apply_rule("3.4.101", state)
-    state = apply_rule("3.4.100", state)
-    state = P00_jha_adesha(state)
-    state = apply_rule("3.4.99", state)
-
-    state = apply_rule("1.4.13", state)
-    state = apply_rule("1.1.5", state)
-    state = P00_at_agama_it_lopa(state)
-
-    state = apply_rule("7.2.81", state)
-    state = apply_rule("6.1.66", state)
-    state = apply_rule("7.2.115", state)
-    state = apply_rule("7.3.101", state)
-    state = apply_rule("1.4.14", state)
-    state = apply_rule("6.1.78", state)
-    state = apply_rule("6.1.87", state)
-    state = apply_rule("6.1.97", state)
-    _pada_merge(state)
-    state = apply_rule("8.2.1", state)
-    state = apply_rule("8.2.39", state)
-    state = apply_rule("8.4.56", state)
-    state = P00_tripadi_samyoganta_ru_visarga(state)
-    state = apply_rule("8.3.59", state)
-    state = apply_rule("8.4.68", state)
-    return state
-
-
 def _derive_karmani_loT(state: State, purusha: int, vacana: int) -> State:
     """
     Karmani loṭ (passive imperative) for bhvādi dhātus.
@@ -3994,7 +3926,8 @@ def _dispatch_tinanta_spine(
         if lakara == "lRG":
             state = apply_rule("3.1.91", state)
             state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
-            return _derive_karmani_lRG(state, purusha, vacana)
+            # sya is ārdhadhātuka: no yak — general lṛṅ in ātmanepada (अपक्ष्यत)
+            return _derive_lRG(state, "atmane", purusha, vacana)
         if prayoga == "karmani":
             raise NotImplementedError(f"karmani prayoga for lakāra {lakara!r} not yet implemented")
 

@@ -1761,6 +1761,15 @@ def P00_jha_adesha(s: State) -> State:
     return s
 
 
+def P00_ngit_At_iy_guna(s: State) -> State:
+    """Ātmanepada ṅit endings after a: 7.2.81 आतो ङितः (ā → iy) → 6.1.66 लोपो व्योर्वलि
+    → 6.1.87 आद्गुणः — एधेताम्, and a + iṭ-ending i → e (ऐधे). All self-gate."""
+    s = apply_rule("7.2.81", s)
+    s = apply_rule("6.1.66", s)
+    s = apply_rule("6.1.87", s)
+    return s
+
+
 def P00_guna_rapara_ayadi(s: State) -> State:
     """Guṇa/vṛddhi of the aṅga, its r/l (1.1.51), then ayādi: 7.3.84 → 1.1.51 → 6.1.78.
     (कर्तृ: कृ+तृ → कर्+तृ; curādi: चोरि, च्याव्+इ.)"""

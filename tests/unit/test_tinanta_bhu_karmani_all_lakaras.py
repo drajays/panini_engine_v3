@@ -57,10 +57,10 @@ _BHU_KARMANI = {
         (2, 1): "अभूयथाः",  (2, 2): "अभूयेथाम्",  (2, 3): "अभूयध्वम्",
         (1, 1): "अभूये",    (1, 2): "अभूयावहि",   (1, 3): "अभूयामहि",
     },
-    "lRG": {
-        (3, 1): "अभाविष्यते",    (3, 2): "अभाविष्येते",   (3, 3): "अभाविष्यन्ते",
-        (2, 1): "अभाविष्यसे",    (2, 2): "अभाविष्येथे",   (2, 3): "अभाविष्यध्वे",
-        (1, 1): "अभाविष्ये",     (1, 2): "अभाविष्यावहे",  (1, 3): "अभाविष्यामहे",
+    "lRG": {  # ashtadhyayi.com first form (6.4.62 ciṇvad-iṭ अभाविष्यत is the optional other)
+        (3, 1): "अभविष्यत",     (3, 2): "अभविष्येताम्",  (3, 3): "अभविष्यन्त",
+        (2, 1): "अभविष्यथाः",   (2, 2): "अभविष्येथाम्",  (2, 3): "अभविष्यध्वम्",
+        (1, 1): "अभविष्ये",     (1, 2): "अभविष्यावहि",   (1, 3): "अभविष्यामहि",
     },
 }
 
@@ -75,8 +75,8 @@ _VA_NAME  = {1: "एक", 2: "द्वि", 3: "बहु"}
 #   _NGIT_PENDING — old pin and new output are both wrong (the karmaṇi/bhāve
 #                   ṅit-lakāra spine has no yak / sīyuṭ: भवेत for भूयेत).
 #                   xfail(strict) until that spine exists.
-_NGIT_FIXED = {('karmani', 'lRG', 1, 1): 'अभाविष्ये', ('karmani', 'lRG', 2, 1): 'अभाविष्यथाः', ('karmani', 'lRG', 2, 2): 'अभाविष्येथाम्', ('karmani', 'lRG', 2, 3): 'अभाविष्यध्वम्', ('karmani', 'lRG', 3, 1): 'अभाविष्यत', ('karmani', 'lRG', 3, 2): 'अभाविष्येताम्', ('karmani', 'lRG', 3, 3): 'अभाविष्यन्त', ('karmani', 'lRT', 1, 1): 'भविष्ये', ('karmani', 'lRT', 1, 2): 'भविष्यावहे', ('karmani', 'lRT', 1, 3): 'भविष्यामहे', ('karmani', 'lRT', 2, 1): 'भविष्यसे', ('karmani', 'lRT', 2, 2): 'भविष्येथे', ('karmani', 'lRT', 2, 3): 'भविष्यध्वे', ('karmani', 'lRT', 3, 1): 'भविष्यते', ('karmani', 'lRT', 3, 2): 'भविष्येते', ('karmani', 'lRT', 3, 3): 'भविष्यन्ते', ('karmani', 'liG', 1, 1): 'भूयेय', ('karmani', 'loT', 1, 1): 'भूयै', ('karmani', 'loT', 1, 2): 'भूयावहै', ('karmani', 'loT', 1, 3): 'भूयामहै', ('karmani', 'loT', 2, 2): 'भूयेथाम्', ('karmani', 'loT', 3, 1): 'भूयताम्', ('karmani', 'loT', 3, 2): 'भूयेताम्', ('karmani', 'loT', 3, 3): 'भूयन्ताम्'}  # pending cells pinned to Vidyut's form
-_NGIT_PENDING = {('karmani', 'lRG', 1, 2), ('karmani', 'lRG', 1, 3)}
+_NGIT_FIXED = {('karmani', 'lRT', 1, 1): 'भविष्ये', ('karmani', 'lRT', 1, 2): 'भविष्यावहे', ('karmani', 'lRT', 1, 3): 'भविष्यामहे', ('karmani', 'lRT', 2, 1): 'भविष्यसे', ('karmani', 'lRT', 2, 2): 'भविष्येथे', ('karmani', 'lRT', 2, 3): 'भविष्यध्वे', ('karmani', 'lRT', 3, 1): 'भविष्यते', ('karmani', 'lRT', 3, 2): 'भविष्येते', ('karmani', 'lRT', 3, 3): 'भविष्यन्ते', ('karmani', 'liG', 1, 1): 'भूयेय', ('karmani', 'loT', 1, 1): 'भूयै', ('karmani', 'loT', 1, 2): 'भूयावहै', ('karmani', 'loT', 1, 3): 'भूयामहै', ('karmani', 'loT', 2, 2): 'भूयेथाम्', ('karmani', 'loT', 3, 1): 'भूयताम्', ('karmani', 'loT', 3, 2): 'भूयेताम्', ('karmani', 'loT', 3, 3): 'भूयन्ताम्'}  # pending cells pinned to Vidyut's form
+_NGIT_PENDING = set()
 _NGIT_XFAIL = pytest.mark.xfail(strict=True, reason="karmaṇi/bhāve ṅit-lakāra spine: no yak/sīyuṭ yet")
 
 
