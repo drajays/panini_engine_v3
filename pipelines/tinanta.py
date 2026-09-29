@@ -2864,7 +2864,10 @@ def _derive_lRG(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     Ṛ-dhātus (``vftu~`` …): use ``_derive_lRG_ṛ_dhatu`` (P019 spine).
     """
-    if _dhatu_has_ṛ_anga(state):
+    _dh = next((t for t in state.terms if "dhatu" in t.tags), None)
+    if _dh is not None and "वृतादिः" in (_dh.meta.get("antarganas") or ()) and _dhatu_has_ṛ_anga(state) \
+            and "karmani" not in _dh.tags:
+        # वृतादि (1.3.92 वृद्भ्यः स्यसनोः parasmaipada, 7.2.59 no iṭ): अवर्त्स्यत्
         return _derive_lRG_ṛ_dhatu(state, pada_key, purusha, vacana)
 
     state.meta["lakara"] = "lRG"
@@ -2916,6 +2919,7 @@ def _derive_lRG(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # 7.3.84 guṇa (bhū → bho; ārdhadhātuka sya triggers)
     state = apply_rule("7.3.84", state)
+    state = apply_rule("1.1.51", state)    # उरण् रपरः: अवर्किष्यत, अदरिष्यत्
 
     # ── Stage: pada saṃjñā + sandhi ─────────────────────────────────────────
     state = apply_rule("1.4.14", state)
@@ -2925,12 +2929,8 @@ def _derive_lRG(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
     _pada_merge(state)
-    state = apply_rule("8.2.1",  state)
-    state = apply_rule("8.2.39", state)    # t→d at pada-end (3sg)
-    state = apply_rule("8.4.56", state)    # d→t at avasāna (3sg)
-    state = P00_tripadi_samyoganta_ru_visarga(state)
+    state = P00_tripadi_rutva_visarga(state)   # full phase (8.4.40 अच्छेत्स्यत …)
     state = apply_rule("8.3.59", state)    # s→ṣ after IK (sya→ṣya)
-    state = apply_rule("8.4.68", state)
 
     return state
 
