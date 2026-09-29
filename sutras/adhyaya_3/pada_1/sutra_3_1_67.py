@@ -33,7 +33,7 @@ def act(state: State) -> State:
     yak = Term(
         kind="pratyaya",
         varnas=list(parse_slp1_upadesha_sequence("yak")),
-        tags={"pratyaya", "vikarana", "upadesha", YAK_INSERT_TAG},
+        tags={"pratyaya", "vikarana", "upadesha", YAK_INSERT_TAG, "ardhadhatuka"},  # 3.4.114
         meta={"upadesha_slp1": "yak"},
     )
     state.terms.insert(i + 1, yak)

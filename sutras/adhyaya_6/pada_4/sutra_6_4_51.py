@@ -71,8 +71,20 @@ def _matches(state: State) -> bool:
     return True
 
 
+def _nijanta_before_anit(state: State) -> int | None:
+    """A ṇijanta dhātu (3.1.32) whose ṇi-residue ``i`` meets an ārdhadhātuka
+    that took no iṭ — yak (कूण्यते), kṛtya, … — index of the dhātu, else None."""
+    for i, t in enumerate(state.terms[:-1]):
+        nxt = state.terms[i + 1]
+        if (t.meta.get("nijanta") and "dhatu" in t.tags and t.varnas and t.varnas[-1].slp1 == "i"
+                and "ardhadhatuka" in nxt.tags and nxt.varnas
+                and "it_agama" not in nxt.varnas[0].tags):
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
-    return _matches_p037(state) or _matches(state)
+    return _matches_p037(state) or _matches(state) or _nijanta_before_anit(state) is not None
 
 
 def act(state: State) -> State:
@@ -98,6 +110,11 @@ def act(state: State) -> State:
             return state
         return state
     if not _matches(state):
+        i = _nijanta_before_anit(state)
+        if i is not None:
+            state.terms[i].varnas.pop()
+            state.terms[i].meta["nijanta"] = False      # the ṇi is gone (sthānivat 1.1.57 aside)
+            state.terms[i].meta["sthānivat_nic_block_guna"] = True
         return state
     anga = state.terms[-2]
     pr = state.terms[-1]

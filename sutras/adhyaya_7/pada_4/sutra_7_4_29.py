@@ -8,33 +8,50 @@ Padaccheda: गुणः अर्ति-संयोग-आद्योः
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology import mk
 
-_GATE_KEY: str = "7_4_29_guRortisa_29"
+_VOWELS = frozenset("aAiIuUfFxXeEoO")
+
+
+def _yak_or_ashir_ling(t) -> bool:
+    """The two loci carried from 7.4.28 that 7.4.29 overrides for these roots."""
+    return ("3_1_67_yak" in t.tags
+            or (t.meta.get("source_lakara_upadesha") == "liG" and "ardhadhatuka" in t.tags))
+
+
+def _find(state: State) -> int | None:
+    """ṛ-final dhātu that is ṛ itself (अर्ति) or begins with a saṃyoga, before yak/āśīrliṅ."""
+    for i, t in enumerate(state.terms[:-1]):
+        vs = [v.slp1 for v in t.varnas]
+        if "dhatu" not in t.tags or not vs or vs[-1] != "f":
+            continue
+        if not (vs == ["f"] or (len(vs) >= 3 and vs[0] not in _VOWELS and vs[1] not in _VOWELS)):
+            continue
+        if _yak_or_ashir_ling(state.terms[i + 1]):
+            return i
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.4.29", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _find(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.4.29"
+    i = _find(state)
+    if i is not None:
+        t = state.terms[i]
+        t.varnas[-1:] = [mk("a"), mk("r")]      # guṇa + 1.1.51 rapara: स्मृ → स्मर् (स्मर्यते)
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.4.29",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "guRo'rtisaMyogAdyoH",
     text_dev              = "गुणोऽर्तिसंयोगाद्योः",
     padaccheda_dev        = "गुणः अर्ति-संयोग-आद्योः",
-    why_dev               = "(सूत्रम् 7.4.29) गुणोऽर्तिसंयोगाद्योः।",
+    why_dev               = "ऋ-धातोः संयोगादेः ऋदन्तस्य च यकि आशीर्लिङि च गुणः (स्मर्यते, अर्यते) — रिङोऽपवादः।",
     anuvritti_from        = ('7.1.1',),
     cond                  = cond,
     act                   = act,

@@ -255,6 +255,13 @@ def _karmani_yak_it_and_ngiti(state: State) -> State:
             t.tags.add("kngiti")
             t.tags.add("ngiti_vikaraṇa")
             break
+    # 6.4.51 णेरनिटि — the ṇijanta's ṇi drops before aniṭ yak: चोरि → चोर् (चोर्यते)
+    state = apply_rule("6.4.51", state)
+    state = apply_rule("6.4.24", state)    # अनिदितां हल उपधायाः क्ङिति: तुम्फ् → तुफ्यते
+    state = apply_rule("7.1.100", state)   # ॠत इद्धातोः: नॄ → निर् (+8.2.77 नीर्यते)
+    state = apply_rule("1.1.51", state)
+    state = apply_rule("7.4.25", state)    # अकृत्सार्वधातुकयोर्दीर्घः: क्षु → क्षूयते
+    state = apply_rule("7.4.29", state)    # गुणोऽर्तिसंयोगाद्योः: स्मृ → स्मर्यते (before riṅ)
     # 7.4.28 रिङ् शयग्लिङ्क्षु — ṛ-final aṅga before yak: कृ → क्रि (क्रियते)
     return apply_rule("7.4.28", state)
 

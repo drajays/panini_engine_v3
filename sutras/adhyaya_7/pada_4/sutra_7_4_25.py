@@ -51,7 +51,28 @@ def _karmani_vacuous_dirgha(state: State) -> bool:
     return False
 
 
+_SHORT_IU = {"i": "I", "u": "U"}
+
+
+def _ajanta_before_kngit_y(state: State) -> int | None:
+    """अकृत्सार्वधातुकयोर्दीर्घः (with 7.4.22 यि क्ङिति): a final i/u of the aṅga
+    lengthens before a y-ādi kṅit that is neither kṛt nor sārvadhātuka — yak
+    (क्षूयते), āśīrliṅ yāsuṭ (चीयात्). ṛ is left to riṅ/guṇa (7.4.28/29): riṅ is
+    taught short, so क्रियते keeps its i."""
+    for i, t in enumerate(state.terms[:-1]):
+        nxt = state.terms[i + 1]
+        if ("dhatu" in t.tags and t.varnas and t.varnas[-1].slp1 in _SHORT_IU
+                and not t.meta.get("7_4_28_riN_done")      # riṅ is taught short
+                and "kngiti" in nxt.tags and nxt.varnas and nxt.varnas[0].slp1 == "y"
+                and "krt" not in nxt.tags and "sarvadhatuka" not in nxt.tags
+                and "sarvadhatuka_3_4_113" not in nxt.tags):
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
+    if _ajanta_before_kngit_y(state) is not None:
+        return True
     if state.meta.get("ashir_7_4_25_recipe"):
         return not state.meta.get("7_4_25_ashir_done")
     if _karmani_vacuous_dirgha(state):
@@ -60,6 +81,11 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    i = _ajanta_before_kngit_y(state)
+    if i is not None:
+        t = state.terms[i]
+        t.varnas[-1] = mk(_SHORT_IU[t.varnas[-1].slp1])
+        return state
     if _karmani_vacuous_dirgha(state) and not state.meta.get("ashir_7_4_25_recipe"):
         state.meta["7_4_25_karmani_done"] = True
         state.samjna_registry["7.4.25_karmani_vacuous"] = True
