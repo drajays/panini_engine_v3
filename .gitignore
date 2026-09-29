@@ -40,3 +40,4 @@ data/upstream/
 # ashtadhyayi-com/data files (large; fetched at a pinned commit by tools/fetch_ashtadhyayi_data)
 data/reference/ashtadhyayi_com/*
 !data/reference/ashtadhyayi_com/SOURCE.json
+data/reference/samsaadhanii/raw/

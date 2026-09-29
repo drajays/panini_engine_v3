@@ -1,0 +1,12 @@
+{
+ "source": "Saṃsādhanī e-readers (IIIT-H / University of Hyderabad)",
+ "url": "http://ereaders.samsaadhanii.in/books/ereaders/",
+ "api": "http://ereaders.samsaadhanii.in/books/data/books/<book>/analysis.json",
+ "book": "श्रीमद्भगवद्गीता",
+ "fetched": "2026-09-30",
+ "kept": "tiṅanta tags + attested word only; no glosses or verse text",
+ "stats": {
+  "tinanta_rows": 1373,
+  "resolved": 1316
+ }
+}

@@ -67,7 +67,7 @@ def derive_mArzwi() -> State:
     _pada_merge(s)
     s = apply_rule("8.2.1", s)
     s = apply_rule("8.2.36", s)
-    s = apply_rule("8.4.40", s)
+    s = apply_rule("8.4.41", s)      # ष्टुना ष्टुः: मार्ष्+ति → मार्ष्टि
     return s
 
 

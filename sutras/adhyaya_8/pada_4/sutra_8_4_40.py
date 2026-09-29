@@ -68,16 +68,11 @@ def _find_stu(state: State):
 
 
 def cond(state: State) -> bool:
-    return _find_zt(state) is not None or _find_stu(state) is not None
+    # ścutva only — ṣ+t (ṣṭutva) is 8.4.41 ष्टुना ष्टुः
+    return _find_stu(state) is not None
 
 
 def act(state: State) -> State:
-    hit = _find_zt(state)
-    if hit is not None:
-        ti, i = hit
-        state.terms[ti].varnas[i] = mk("w")
-        state.terms[ti].meta["8_4_40_zw_done"] = True
-        return state
     while (hit := _find_stu(state)) is not None:
         t, i = hit
         t.varnas[i] = mk(_STU_TO_SCU[t.varnas[i].slp1])

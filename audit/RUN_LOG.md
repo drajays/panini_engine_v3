@@ -152,7 +152,7 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-05-31 (session) | cursor | VIDHI cond discipline macro-plan (1235 FP) — research + plan only | `.cursor/plans/vidhi_cond_discipline_73076532.plan.md`, `audit/RUN_LOG.md` | released |
 | 2026-05-31 (session) | cursor | Phase 5e — derive() delegates to derive_autonomous_tinanta | pipelines/tinanta.py, tests/unit/test_autonomous_vs_recipe.py, audit/RUN_LOG.md | released |
 | 2026-05-31 (session) | cursor | VIDHI cond discipline — full plan implementation | `audit/cond_discipline_auditor.py`, `engine/phase.py`, `engine/scheduler.py`, `engine/krt_eligibility.py`, `engine/tape_init/`, `engine/nimitta_predicates.py`, `engine/adhikara_automation.py`, `sutras/adhyaya_3/**`, `tests/`, `audit/RUN_LOG.md` | released |
-| 2026-09-30 (session) | cursor | P2 Saṃsādhanī e-reader oracle — Gītā tiṅanta round-trip + coverage (tests/tools only, Art. 6) | tools/fetch_samsaadhanii_ereaders.py, tools/samsaadhanii_coverage.py, tools/gold_corpora.py, data/reference/samsaadhanii/, tests/regression/test_samsaadhanii_gita_tinanta.py, audit/RUN_LOG.md | in-progress |
+| 2026-09-30 (session) | cursor | P2 Saṃsādhanī e-reader oracle — Gītā tiṅanta round-trip + coverage (tests/tools only, Art. 6) | tools/fetch_samsaadhanii_ereaders.py, tools/samsaadhanii_tags.py, tools/samsaadhanii_coverage.py, tools/gold_corpora.py, data/reference/samsaadhanii/, .gitignore, tests/regression/test_samsaadhanii_gita_tinanta.py, tests/regression/samsaadhanii_gita_tinanta_baseline.json, audit/RUN_LOG.md | released |
 
 ---
 
@@ -185,6 +185,24 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ---
 
 ## C. Action history (newest at top)
+
+### 2026-09-30 (session)  [cursor]  Saṃsādhanī e-reader oracle — Gītā tiṅanta coverage
+
+**Goal:** Use Saṃsādhanī's e-reader word analyses (source #17) as a real-text gold corpus for tiṅanta.
+
+**Shipped (tests/tools only — no engine/sūtra/pipeline change):**
+- `tools/fetch_samsaadhanii_ereaders.py` — pulls `/books/data/books/<book>/analysis.json` into `data/reference/samsaadhanii/raw/` (gitignored); builds committed `gita_tinanta.jsonl` (tags + attested word only, no glosses) + `SOURCE.json`.
+- `tools/samsaadhanii_tags.py` — tag → `derive()` inputs; dhātu matched on (`upadesha_dev`, gaṇa) in `dhatupatha_upadesha.json`; upasargas, ṇic/san, māṅ-yoga `X(Y)` surfaces handled.
+- `tools/samsaadhanii_coverage.py` — runs all cells (~3 s), summary by prayoga × lakāra and failing dhātus; `--write-baseline` ratchet.
+- `tests/regression/test_samsaadhanii_gita_tinanta.py` + baseline JSON — 301 cells locked.
+
+**Numbers:** 1373 tiṅanta occurrences → 512 unique cells; 301 match (970 occ., 71%), 161 mismatch, 11 error, 39 unresolved.
+
+**Leads (triage against Kāśikā first):** gaṇa 3 vikaraṇa NotImplemented (all 11 errors: juhoti, dadāti, dadhāti, jahāti, bibharti); upasarga+dhātu ac-sandhi missing (ava+Apnoti → avaApnoti, 6.1.101); 6.4.111 (as → syAt); 6.4.42 jan → jA (jAyate); brū → vac/Aha (2.4.53, 3.4.84); vid laṭ 7.2 alternates (veda/viduH, 3.4.83); ṇic spines weak. Data: duplicate dhātupāṭha rows with conflicting flags leave `श्रु`, `दृश्`, `हृञ्` ambiguous (18+7+5 occ.).
+
+**Tests:** `pytest tests/regression/test_samsaadhanii_gita_tinanta.py tests/constitutional` → 17264 passed.
+
+**Next:** gaṇa 3 (2.4.75 juhotyādibhyaḥ śluḥ + 6.1.10 ślau dvitva) is the biggest single unlock; dedupe dhātupāṭha rows; extend builder to subanta/kṛdanta and Raghuvaṃśa/Rāmāyaṇa.
 
 ### 2026-05-31 (session)  [claude]  kṛ liṭ strong fix — cakāra derivation
 

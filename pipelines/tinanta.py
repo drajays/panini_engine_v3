@@ -530,6 +530,7 @@ def _run_lat_kartari_bhuvadi_spine(
 
     state = apply_rule("1.4.14", state)
     # 6.1.77 iko yaṇ aci — IK-final vikaraṇa + AC-initial suffix (kuru+anti → kurv+anti)
+    state = apply_rule("6.4.87", state)   # हुश्नुवोः सार्वधातुके (apavāda of 6.4.77)
     state = apply_rule("6.1.77", state)
     state = apply_rule("6.1.78", state)
     state = apply_rule("6.1.97", state)
@@ -817,6 +818,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # ── 6.1.77 iko yaṇ aci — IK-final root + vowel-initial suffix/iṭ ────────
     # (fires at term boundary before merge; resolves kṛ ṛ→r before atuH/uH/iṭ)
+    state = apply_rule("6.4.87", state)   # हुश्नुवोः सार्वधातुके (apavāda of 6.4.77)
     state = apply_rule("6.1.77", state)
     state = apply_rule("6.1.78", state)   # एचोऽयवायावः: निनै+अ → निनाय, निने+इथ → निनयिथ
 
@@ -1198,6 +1200,7 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("1.4.14", state)
     # 6.1.77 iko yaṇ aci — tanādi gana 8: vikaraṇa-u + AC-initial tiṅ (tan+u+ant → tanvant)
     if gana in _U_VIKARANA_GANAS:
+        state = apply_rule("6.4.87", state)   # हुश्नुवोः सार्वधातुके (apavāda of 6.4.77)
         state = apply_rule("6.1.77", state)
     state = apply_rule("6.1.78", state)
     # 6.1.97: a+a → a (3pl: śap-a + ant-a; 1sg: śap-a + am-a)
@@ -1445,6 +1448,7 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # 6.1.77 iko yaṇ aci — IK→yaṇ before AC (fires for upasarga+aṭ junctions,
     # e.g. vi+a → vy+a in vyadyutat). Must run AFTER vuk so that ū of bhū is
     # separated from anti by vuk-v (preventing spurious ū→v change in abhūvant).
+    state = apply_rule("6.4.87", state)   # हुश्नुवोः सार्वधातुके (apavāda of 6.4.77)
     state = apply_rule("6.1.77", state)
     # vṛddhi vowel + iṭ: 6.1.78 एचोऽयवायावः (अलौ + इ → अलाव् + इ: अलावीत्)
     state = apply_rule("6.1.78", state)
@@ -1650,6 +1654,7 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: pada + sandhi ────────────────────────────────────────────────
     state = apply_rule("1.4.14", state)
     # 6.1.77 iko yaṇ aci — tanādi gana 8: vikaraṇa-u + AC-initial tiṅ
+    state = apply_rule("6.4.87", state)   # हुश्नुवोः सार्वधातुके (apavāda of 6.4.77)
     state = apply_rule("6.1.77", state)    # सुनु+ईत → सुन्वीत; तनु+यात् untouched
     state = apply_rule("6.1.78", state)
 
@@ -2067,6 +2072,7 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("1.4.14", state)
     # 6.1.77 iko yaṇ aci — only for tanādi (gana 8): vikaraṇa-u + antu (tanu+antu → tanvantu)
     if gana in _U_VIKARANA_GANAS:
+        state = apply_rule("6.4.87", state)   # हुश्नुवोः सार्वधातुके (apavāda of 6.4.77)
         state = apply_rule("6.1.77", state)
     # 6.1.78 (eco'yavAyAvaH) must run BEFORE 6.1.97 below: it needs the śap
     # term's own 'a' still present to find the dhātu+śap boundary (bho+a →

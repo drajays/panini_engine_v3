@@ -26,6 +26,10 @@ def tinanta_gold_dir() -> Path:
     return _ROOT / "data" / "reference" / "tinanta_gold"
 
 
+def samsaadhanii_dir() -> Path:
+    return _ROOT / "data" / "reference" / "samsaadhanii"
+
+
 def list_subanta_gold_jsons(base: Path | None = None) -> List[Path]:
     d = base or subanta_gold_dir()
     return sorted(p for p in d.glob("*.json") if p.is_file())
