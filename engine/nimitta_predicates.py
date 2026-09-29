@@ -250,3 +250,14 @@ def adhikara_and_nimitta(
     if not adhikara_in_effect(sutra_id, state, adhikara_id):
         return False
     return site_fn(state) is not None
+
+
+def dhatu_before_sit(state: State) -> Optional[int]:
+    """Index of a dhātu immediately followed by a *śit* pratyaya (शप्, श्यन्, श…) —
+    the nimitta of 7.3.74–7.3.78 (शिति)."""
+    for i, t in enumerate(state.terms[:-1]):
+        nxt = state.terms[i + 1]
+        if "dhatu" in t.tags and "pratyaya" in nxt.tags and \
+                (nxt.meta.get("upadesha_slp1") or "").startswith("S"):
+            return i
+    return None

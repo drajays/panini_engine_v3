@@ -250,6 +250,10 @@ def cond(state: State) -> bool:
         return False
     if dhatu_blocked_by_1_1_6(d0.meta.get("upadesha_slp1")):
         return False
+    if d0.meta.get("6_1_85_antadivat_a"):
+        # 6.1.97 merged its final a into the vikaraṇa; by 6.1.85 अन्तादिवच्च the
+        # dhātu is still a-final, so no upadhā guṇa (पिबति, not *पेबति)
+        return False
     if not _sarvadhatuka_or_ardhadhatuka_following_dhatu(state, di):
         return False
     if d0.meta.get("anga_guna_7_3_84"):

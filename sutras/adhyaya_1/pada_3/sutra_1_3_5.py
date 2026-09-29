@@ -69,10 +69,15 @@ def _eligible(state: State):
             continue
         vs = term.varnas
         j = _first_hal_idx(vs)
-        if j is None:
+        if j != 0:                       # आदिः — the upadeśa's very first sound
             continue
         v = vs[j]
         if v.slp1 not in NI_TU_DU:
+            continue
+        # a dhātu's marker is the unit ञि / टु / डु (टिकृँ, अटँ keep their ṭ)
+        if "dhatu" in term.tags and (
+            len(vs) < 2 or vs[1].slp1 != {"Y": "i", "w": "u", "q": "u"}[v.slp1]
+        ):
             continue
         if v.tags & IT_LOPA_TAGS:
             continue

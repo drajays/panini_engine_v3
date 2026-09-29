@@ -1,43 +1,48 @@
 """
 7.3.76  क्रमः परस्मैपदेषु  —  VIDHI
 
-Padaccheda: क्रमः परस्मैपदेषु
-
-क्रमः परस्मैपदेषु (7.3.76)
+क्रम् lengthens before a śit when a parasmaipada ending follows: क्रामति (but क्रमते).
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine import SutraType, SutraRecord, register_sutra
+from engine.nimitta_predicates import dhatu_before_sit
 from engine.state import State
+from phonology import mk
+from phonology.varna import parse_slp1_upadesha_sequence
 
-_GATE_KEY: str = "7_3_76_kramaH_76"
+
+def _stem(t) -> str:
+    return "".join(v.slp1 for v in t.varnas)
+
+
+def _hit(state: State):
+    i = dhatu_before_sit(state)
+    if i is None or _stem(state.terms[i]) != "kram":
+        return None
+    return i if any("parasmaipada" in t.tags for t in state.terms[i + 1:]) else None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.3.76", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _hit(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.3.76"
+    t = state.terms[_hit(state)]
+    t.varnas[2] = mk("A")
     return state
 
 
 SUTRA = SutraRecord(
-    sutra_id              = "7.3.76",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
-    text_slp1             = "kramaH parasmEpadezu",
-    text_dev              = "क्रमः परस्मैपदेषु",
-    padaccheda_dev        = "क्रमः परस्मैपदेषु",
-    why_dev               = "(सूत्रम् 7.3.76) क्रमः परस्मैपदेषु।",
-    anuvritti_from        = ('7.1.1',),
-    cond                  = cond,
-    act                   = act,
+    sutra_id="7.3.76",
+    sutra_type=SutraType.VIDHI,
+    text_slp1="kramaH parasmEpadezu",
+    text_dev="क्रमः परस्मैपदेषु",
+    padaccheda_dev="क्रमः परस्मैपदेषु",
+    why_dev="क्रम्-धातोः दीर्घः शिति परस्मैपदे परे (क्रामति)।",
+    anuvritti_from=("7.3.73",),
+    cond=cond,
+    act=act,
 )
 
 register_sutra(SUTRA)

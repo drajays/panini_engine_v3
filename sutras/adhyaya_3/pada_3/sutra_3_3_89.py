@@ -10,7 +10,7 @@ Implemented rows (recipe arms only; CONSTITUTION Art. 7):
   is *ṭit* (**1.3.5**); surviving stem ``zvi`` + *athuc* → *śvayathuḥ* (**7.3.84**,
   **6.1.78** before *pada* merge in the pipeline).
 
-General *ṭvit* scope is **not** implemented.
+Scope: any *ṭvit* dhātu, read from 1.3.5's it-saṃjñā on the initial ṭu.
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 33089 · ट्वितोऽथुच्
@@ -32,7 +32,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 META_ARM_A = "corrected_v2_P002_A_3_3_89_arm"
 META_ARM_B = "corrected_v2_P002_B_3_3_89_arm"
 _UPADESHA_A = "wuvepf~"
-_UPADESHA_B = "wzvi"
+_UPADESHA_B = "wuzvi"
 
 
 def cond(state: State) -> bool:
@@ -43,13 +43,8 @@ def cond(state: State) -> bool:
     t0 = state.terms[0]
     if "dhatu" not in t0.tags:
         return False
-    up = (t0.meta.get("upadesha_slp1") or "").strip()
-    stem = "".join(v.slp1 for v in t0.varnas)
-    if up == _UPADESHA_A and stem == "vep":
-        return True
-    if up == _UPADESHA_B and stem == "zvi":
-        return True
-    return False
+    # ṭvit: 1.3.5 marked the upadeśa's initial ṭu as it (वेपथुः, श्वयथुः, क्षवथुः)
+    return ("it_nit_tu_du", 0, 0, "w") in state.samjna_registry
 
 
 def act(state: State) -> State:

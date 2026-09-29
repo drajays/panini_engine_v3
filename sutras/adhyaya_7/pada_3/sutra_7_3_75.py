@@ -1,43 +1,56 @@
 """
 7.3.75  ष्ठिवुक्लम्याचमां शिति  —  VIDHI
 
-Padaccheda: ष्ठिवु-क्लमु-चमाम् शिति
-
-ष्ठिवुक्लम्याचमां शिति (7.3.75)
+ष्ठिव्, क्लम् and आङ्+चम् lengthen their vowel before a śit: ष्ठीवति, क्लामति, आचामति.
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine import SutraType, SutraRecord, register_sutra
+from engine.nimitta_predicates import dhatu_before_sit
 from engine.state import State
+from phonology import mk
+from phonology.varna import parse_slp1_upadesha_sequence
 
-_GATE_KEY: str = "7_3_75_zWivuklamy_75"
+
+def _stem(t) -> str:
+    return "".join(v.slp1 for v in t.varnas)
+
+_LONG = {"a": "A", "i": "I"}
+
+
+def _hit(state: State):
+    i = dhatu_before_sit(state)
+    if i is None:
+        return None
+    st = _stem(state.terms[i])
+    if st in ("zWiv", "sWiv", "klam"):
+        return i
+    if st == "cam" and i and "".join(v.slp1 for v in state.terms[i - 1].varnas) == "A":
+        return i
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.3.75", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _hit(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.3.75"
+    t = state.terms[_hit(state)]
+    j = max(k for k, v in enumerate(t.varnas) if v.slp1 in _LONG)
+    t.varnas[j] = mk(_LONG[t.varnas[j].slp1])
     return state
 
 
 SUTRA = SutraRecord(
-    sutra_id              = "7.3.75",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
-    text_slp1             = "zWivuklamyAcamAM Siti",
-    text_dev              = "ष्ठिवुक्लम्याचमां शिति",
-    padaccheda_dev        = "ष्ठिवु-क्लमु-चमाम् शिति",
-    why_dev               = "(सूत्रम् 7.3.75) ष्ठिवुक्लम्याचमां शिति।",
-    anuvritti_from        = ('7.1.1',),
-    cond                  = cond,
-    act                   = act,
+    sutra_id="7.3.75",
+    sutra_type=SutraType.VIDHI,
+    text_slp1="zWivuklamyAcamAM Siti",
+    text_dev="ष्ठिवुक्लम्याचमां शिति",
+    padaccheda_dev="ष्ठिवु-क्लमि-आचमाम् शिति",
+    why_dev="ष्ठिव्-क्लम्-आङ्पूर्वचम्-धातूनाम् अचः दीर्घः शिति परे (ष्ठीवति, क्लामति, आचामति)।",
+    anuvritti_from=("7.3.73",),
+    cond=cond,
+    act=act,
 )
 
 register_sutra(SUTRA)

@@ -42,48 +42,33 @@ def _find_zt(state: State):
     return None
 
 
-def _find_sto_t_ch(state: State):
-    """t+C (→c) in tripadi. t immediately before C is a structural signal."""
-    if not (state.tripadi_zone or state.meta.get("8_4_40_pre_tripadi_arm")):
-        return None
-    if not state.terms:
-        return None
-    t = state.terms[0]
-    if t.meta.get("8_4_40_sto_done"):
-        return None
-    for i in range(len(t.varnas) - 1):
-        if t.varnas[i].slp1 == "t" and t.varnas[i + 1].slp1 == "C":
-            return i
-    return None
+_STU_TO_SCU = {"s": "S", "t": "c", "T": "C", "d": "j", "D": "J", "n": "Y"}
+_SCU = frozenset("ScCjJY")
 
 
-def _find_j_n(state: State):
+def _find_stu(state: State):
     """
-    j immediately before n → n becomes Y (ñ), e.g. rAjan-derived rAj+n+A
-    → rAjYA (राज्ञा). श्चुना श्चुः reads either member adjacent to a श्चु
-    letter, so a दन्त्य *after* ज् (a श्चु letter) palatalises the same as
-    one *before* it (8.4.40's own udāharaṇa pair, वृक्षश्शेते/तच्शेते, is
-    the दन्त्य-before-श्चु direction; राज्ञा is the reverse).
+    स्तोः श्चुना श्चुः — a स्/तवर्ग letter next to a श्/चवर्ग letter (either
+    side) becomes the matching श्/चवर्ग letter: षस्ज् → सश्ज् (→ 8.4.53 सज्ज्),
+    उत्+छ → उच्छ, राज्+ना → राज्ञा. **8.4.44 शात्**: not a तवर्ग after श् (प्रश्नः).
+    Scans the whole tape in order, across term boundaries (saṃhitā).
     """
     if not (state.tripadi_zone or state.meta.get("8_4_40_pre_tripadi_arm")):
         return None
-    if not state.terms:
-        return None
-    t = state.terms[0]
-    if t.meta.get("8_4_40_jn_done"):
-        return None
-    for i in range(len(t.varnas) - 1):
-        if t.varnas[i].slp1 == "j" and t.varnas[i + 1].slp1 == "n":
-            return i + 1
+    flat = [(t, i) for t in state.terms for i in range(len(t.varnas))]
+    for k, (t, i) in enumerate(flat):
+        c = t.varnas[i].slp1
+        if c not in _STU_TO_SCU:
+            continue
+        prev = flat[k - 1][0].varnas[flat[k - 1][1]].slp1 if k else ""
+        nxt = flat[k + 1][0].varnas[flat[k + 1][1]].slp1 if k + 1 < len(flat) else ""
+        if nxt in _SCU or (prev in _SCU and not (prev == "S" and c != "s")):
+            return t, i
     return None
 
 
 def cond(state: State) -> bool:
-    return (
-        _find_zt(state) is not None
-        or _find_sto_t_ch(state) is not None
-        or _find_j_n(state) is not None
-    )
+    return _find_zt(state) is not None or _find_stu(state) is not None
 
 
 def act(state: State) -> State:
@@ -93,18 +78,9 @@ def act(state: State) -> State:
         state.terms[ti].varnas[i] = mk("w")
         state.terms[ti].meta["8_4_40_zw_done"] = True
         return state
-    idx = _find_sto_t_ch(state)
-    if idx is not None:
-        t0 = state.terms[0]
-        t0.varnas[idx] = mk("c")
-        t0.meta["8_4_40_sto_done"] = True
-        return state
-    idx = _find_j_n(state)
-    if idx is None:
-        return state
-    t0 = state.terms[0]
-    t0.varnas[idx] = mk("Y")
-    t0.meta["8_4_40_jn_done"] = True
+    while (hit := _find_stu(state)) is not None:
+        t, i = hit
+        t.varnas[i] = mk(_STU_TO_SCU[t.varnas[i].slp1])
     return state
 
 

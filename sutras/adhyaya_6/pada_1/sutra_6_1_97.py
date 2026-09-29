@@ -93,13 +93,17 @@ def _find_tinganta_cross(state: State) -> int | None:
     for i in range(len(state.terms) - 1):
         t1 = state.terms[i]
         t2 = state.terms[i + 1]
-        if "vikarana" not in t1.tags:
+        # vikaraṇa + tiṅ (भव+अ+अन्ति), or an a-final dhātu + pratyaya
+        # (पिब+अ, कथ+अ, कक्ख+अ) — अपदान्त अ before a guṇa vowel
+        if "vikarana" not in t1.tags and not (
+                "dhatu" in t1.tags and "pratyaya" in t2.tags
+                and t2.varnas and t2.varnas[0].slp1 in {"a", "e", "o"}):
             continue
         if not t1.varnas or not t2.varnas:
             continue
         if t1.varnas[-1].slp1 != "a":
             continue
-        if t2.varnas[0].slp1 not in {"a", "e"}:
+        if t2.varnas[0].slp1 not in {"a", "e", "o"}:
             continue
         if t1.meta.get("6_1_97_tinganta_done"):
             continue

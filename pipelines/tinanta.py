@@ -300,6 +300,24 @@ def _bhave_atmanepada_tin_after_lopa(state: State, *, kartari_atmane: bool = Fal
 _U_VIKARANA_GANAS = (5, 8)
 
 
+def _sit_adesha(state: State) -> State:
+    """शिति: the dhātu before a śit vikaraṇa — 7.3.74 शमामष्टानां दीर्घः श्यनि,
+    7.3.75 ष्ठिवुक्लम्याचमां शिति, 7.3.76 क्रमः परस्मैपदेषु, 7.3.77 इषुगमियमां छः,
+    7.3.78 पाघ्रा… (पिब, जिघ्र, तिष्ठ, सीद …), then 6.1.73 छे च (गछ → गत्छ; 8.4.40 → गच्छ).
+    Each self-gates on its own roots."""
+    for sid in ("7.3.74", "7.3.75", "7.3.76", "7.3.77", "7.3.78", "6.1.73"):
+        state = apply_rule(sid, state)
+    # 6.1.97 अतो गुणे at once for an a-final dhātu + the vikaraṇa's a (पिब+अ → पिब,
+    # कक्ख+अ); the spine's own 6.1.97 then still has vikaraṇa + tiṅ (अपिबन्).
+    i = next((k for k, t in enumerate(state.terms[:-1]) if "dhatu" in t.tags), None)
+    if i is not None and state.terms[i].varnas and state.terms[i].varnas[-1].slp1 == "a" \
+            and state.terms[i + 1].varnas[:1] and state.terms[i + 1].varnas[0].slp1 == "a":
+        state = apply_rule("6.1.97", state)
+        state.terms[i].meta.pop("6_1_97_tinganta_done", None)
+        state.terms[i].meta["6_1_85_antadivat_a"] = True
+    return state
+
+
 def _apply_vikarana(state: State, gana: int) -> State:
     """
     Insert and process the vikaraṇa pratyaya based on gaṇa.
@@ -320,7 +338,7 @@ def _apply_vikarana(state: State, gana: int) -> State:
         state = apply_rule("3.4.113", state)
         # Process śap it-markers: 1.3.3 (p→it) + 1.3.8 (ś→it) + 1.3.9 (lopa) + 1.3.10
         state = P00_lashakvataddhite_it_lopa_chain(state)
-        return state
+        return _sit_adesha(state)
 
     if gana == 4:
         # 3.1.68 utsarga (inserts Śap), then 3.1.69 apavāda (Śap→Śyan)
@@ -329,6 +347,7 @@ def _apply_vikarana(state: State, gana: int) -> State:
         state = apply_rule("3.1.69", state)   # apavāda: Śap → Śyan
         state = apply_rule("3.4.113", state)
         state = P00_lashakvataddhite_it_lopa_chain(state)
+        state = _sit_adesha(state)
         # 1.2.4 already ran once against the bare tiṅ-ādeśa (before śyan
         # existed on the tape) earlier in the spine; re-run it now that
         # śyan (a-pit — "Syan" carries no प्-इत्, unlike śap's "Sap") is on
@@ -352,6 +371,7 @@ def _apply_vikarana(state: State, gana: int) -> State:
         state = apply_rule("3.1.77", state)
         state = apply_rule("3.4.113", state)
         state = P00_lashakvataddhite_it_lopa_chain(state)
+        state = _sit_adesha(state)
         # śa is apit, so 1.2.4 सार्वधातुकमपित् makes it ṅit and 1.1.5 blocks
         # guṇa: तुदति, पुरति, कृषति — not *तोदति. Same second 1.2.4 pass as śyan.
         state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
@@ -2255,7 +2275,7 @@ def _derive_laT_adadi(state: State, purusha: int, vacana: int) -> State:
 
 def _derive_laT_yam_Anga(state: State, purusha: int, vacana: int) -> State:
     """
-    ``A~N`` + ``yam`` laṭ (P010 *āyacchate*): **1.3.28**, *śap*, **7.3.78**, *ṅ*-lopa, **3.4.79**.
+    ``A~N`` + ``yam`` laṭ (P010 *āyacchate*): **1.3.28**, *śap*, **7.3.77**, *ṅ*-lopa, **3.4.79**.
     """
     state.meta["lakara"] = "laT"
     state = apply_rule("1.3.28", state)
@@ -2284,13 +2304,14 @@ def _derive_laT_yam_Anga(state: State, purusha: int, vacana: int) -> State:
             t.tags.discard("upadesha")
     for sid in ("1.3.8", "1.3.3", "1.3.9"):
         state = apply_rule(sid, state)
-    state = apply_rule("7.3.78", state)
+    state = apply_rule("7.3.77", state)     # इषुगमियमां छः: यम् → यछ्
+    state = apply_rule("6.1.73", state)     # छे च: यत्छ् (8.4.40 → यच्छ्)
     for sid in ("1.3.3", "1.3.9"):
         state = apply_rule(sid, state)
     state = apply_rule("1.1.64", state)
     state = apply_rule("3.4.79", state)
     _pada_merge(state)
-    return state
+    return P00_tripadi_rutva_visarga(state)     # 8.4.40: यत्छ → यच्छ
 
 
 def _jYA_apa_check(state: State) -> bool:

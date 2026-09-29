@@ -34,11 +34,12 @@ _JHAL_TO_JAS = {
     "w": "q", "W": "q", "q": "q", "Q": "q",
     "t": "d", "T": "d", "d": "d", "D": "d",
     "p": "b", "P": "b", "b": "b", "B": "b",
+    "S": "j", "z": "q", "s": "d", "h": "g",   # the śal members of jhal, by sthāna
 }
 
 # झष् (4th/voiced-aspirate letter of each varga) — the trigger environment
 # for the general (non-P001/P033) branch of this rule.
-_JHASH = frozenset({"G", "J", "Q", "D", "B"})
+_JHASH = frozenset({"G", "J", "Q", "D", "B", "g", "j", "q", "d", "b"})   # झश्
 
 
 def _find_p033_Gd(state: State):
@@ -61,8 +62,6 @@ def _find(state: State):
         return None
     t = state.terms[0]
     if "pada" not in t.tags:
-        return None
-    if t.meta.get("8_4_53_jhalam_jash_done"):
         return None
     vs = t.varnas
     for i in range(len(vs) - 1):
@@ -116,12 +115,9 @@ def act(state: State) -> State:
         t.varnas[ip] = mk(_JHAL_TO_JAS[t.varnas[ip].slp1])
         t.meta["P033_8_4_53_Gd_done"] = True
         return state
-    i = _find(state)
-    if i is None:
-        return state
     t = state.terms[0]
-    t.varnas[i] = mk(_JHAL_TO_JAS[t.varnas[i].slp1])
-    t.meta["8_4_53_jhalam_jash_done"] = True
+    while (i := _find(state)) is not None:          # every jhal before a jhaś
+        t.varnas[i] = mk(_JHAL_TO_JAS[t.varnas[i].slp1])
     return state
 
 

@@ -1,43 +1,53 @@
 """
 7.3.77  इषुगमियमां छः  —  VIDHI
 
-Padaccheda: इषु-गमि-यमाम् छः अलः अन्त्यस्य
-
-इषुगमियमां छः (7.3.77)
+The final of इषुँ (tudādi), गम्, यम् becomes छ् before a śit; 6.1.73 then adds
+tuk: इच्छति, गच्छति, यच्छति.
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine import SutraType, SutraRecord, register_sutra
+from engine.nimitta_predicates import dhatu_before_sit
 from engine.state import State
+from phonology import mk
+from phonology.varna import parse_slp1_upadesha_sequence
 
-_GATE_KEY: str = "7_3_77_izugamiyam_77"
+
+def _stem(t) -> str:
+    return "".join(v.slp1 for v in t.varnas)
+
+
+def _hit(state: State):
+    i = dhatu_before_sit(state)
+    if i is None:
+        return None
+    t = state.terms[i]
+    st = _stem(t)
+    if st in ("gam", "yam") or (st == "iz" and "उँ" in (t.meta.get("dhatu_it") or ())):
+        return i
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.3.77", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _hit(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.3.77"
+    t = state.terms[_hit(state)]
+    t.varnas[-1] = mk("C")                  # अलोऽन्त्यस्य
     return state
 
 
 SUTRA = SutraRecord(
-    sutra_id              = "7.3.77",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
-    text_slp1             = "izugamiyamAM CaH",
-    text_dev              = "इषुगमियमां छः",
-    padaccheda_dev        = "इषु-गमि-यमाम् छः अलः अन्त्यस्य",
-    why_dev               = "(सूत्रम् 7.3.77) इषुगमियमां छः।",
-    anuvritti_from        = ('7.1.1',),
-    cond                  = cond,
-    act                   = act,
+    sutra_id="7.3.77",
+    sutra_type=SutraType.VIDHI,
+    text_slp1="izugamiyamAM CaH",
+    text_dev="इषुगमियमां छः",
+    padaccheda_dev="इषु-गमि-यमाम् छः",
+    why_dev="इषु-गम्-यम्-धातूनाम् अन्त्यस्य छकारः शिति परे (इच्छति, गच्छति, यच्छति)।",
+    anuvritti_from=("7.3.73",),
+    cond=cond,
+    act=act,
 )
 
 register_sutra(SUTRA)

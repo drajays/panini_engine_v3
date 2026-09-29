@@ -476,9 +476,9 @@ def derive_zvayathuH() -> State:
 
     dhatu = Term(
         kind="prakriti",
-        varnas=list(parse_slp1_upadesha_sequence("wzvi")),
+        varnas=list(parse_slp1_upadesha_sequence("wuzvi")),
         tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": "wzvi"},
+        meta={"upadesha_slp1": "wuzvi"},
     )
     s = State(terms=[dhatu], meta={}, trace=[])
     s.meta["pada"] = "parasmaipada"
