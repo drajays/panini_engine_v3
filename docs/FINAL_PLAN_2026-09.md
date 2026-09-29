@@ -210,6 +210,47 @@ corrected with comments (सङ्गसीष्ट ङ्, पचति, devam
   the spines' u-vikaraṇa steps key on gaṇa 5 and 8, not 8 alone. laṭ 9/9.
   Derivable 84,858, refused 9,075, verified 73,736.
 
+## Track F — ashtadhyayi.com data: test gold, lexicon, real usage ✅ 2026-09-29
+
+Source: github.com/ashtadhyayi-com/data, pinned at `5744762f`
+(`tools/fetch_ashtadhyayi_data.py` → `data/reference/ashtadhyayi_com/`, gitignored;
+`SOURCE.json` holds commit + credit). Free to use with credit.
+
+The engine is never *trained* on it. Three uses, each firewalled
+(`test_engine_is_rule_based.py` forbids `ashtadhyayi_com` / `core.trace_view` in
+the rule path):
+
+1. **Lexical input** (the dhātupāṭha is Pāṇini's own input): +193 missing bhvādi
+   roots and हन् (02.0002) imported through the existing importer's row builder;
+   curated ids that collided with pāṭha ids fixed (अद् 02.0001; invented gaṇa-1
+   धू/मू and a duplicate आस् dropped). 2,240 roots.
+2. **Test gold**, `bench/ashtadhyayi_gold.py`:
+   - `--kind tinanta`: every root × 10 lakāras × kartari (both padas) +
+     karmaṇi, 455k cells → `bench/report/ashtadhyayi_gold.json`
+   - `--kind subanta`: 9,007 nouns × 24 cells → `…_subanta.json`
+   - `--kind prakriya`: our applied sūtras vs theirs on 4,863 noun forms →
+     `…_prakriya.json` (most-missed sūtras = "right form, wrong rule" worklist)
+   - `--sample N`, `--lakara`, `--prayoga`, `--dump FILE` for fix loops.
+3. **Real usage** (display only, credited): kāvya uses per sūtra
+   (`/v1/sutras/{id}.attested`, practice "examples"), and per tiṅanta cell
+   (Lab detail pane, practice verdict) from `dhatuprayogas.txt`.
+
+What the gold found and fixed this session (each a real rule, not a lookup):
+kartari ātmane luṭ/āśīrliṅ/luṅ/lṛṅ spines; karmaṇi liṭ/lṛṅ = general spine in
+ātmanepada; karmaṇi luṅ = ciṇ (3sg) + ātmane luṅ; 6.4.51 structural (ṇijanta
+before aniṭ: चोर्यते, छोट्यात्, अचोरि); 6.4.120/121/122/126 (पेचतुः, पेचिथ);
+7.2.10 for āśīrliṅ; 1.2.11/1.2.12, 7.4.25, 7.4.29, 6.1.45, 6.4.137, 8.2.27
+(were stubs or wrong); 7.2.116/7.3.33/8.4.41/3.1.55 generalised (3.1.55 now
+reads the पुषादि/द्युतादि antargaṇa from the dhātupāṭha); 8.3.59 lookahead
+removed; n-stem nominal bugs (राज्ञः, कर्मणा, कर्माणि, मरुतः, कर्मसु).
+Optional forms: where Pāṇini allows two (6.4.62 ciṇvad-iṭ अभाविष्यत), the engine
+gives the one ashtadhyayi.com lists first; the other is not generated yet.
+
+Open, by size (from the gold): curādi caṅ-luṅ (अचूचुरत्, reduplicating aorist),
+3.1.45 ksa (अरुक्षत्), 3.1.52 (आस्थत्), 8.3.78 for luṅ (अकृढ्वम्), 6.4.62
+optional ciṇvad-iṭ, adanta curādi (मृग्यते), ādi-it anunāsika in 1.3.9 (ओँलजीँ),
+gaṇa 3, and the prakriyā worklist (7.3.104/7.3.105/8.2.2 attribution).
+
 ## Remaining work queue (in order)
 1. ✅ **loṭ/laṅ/liṅ for u-vikaraṇa gaṇas** (2026-09-29): 6.4.106 real (was a
    stub); 3.4.87 at the tiṅ stage, हि apit → ṅit; 1.2.4 honours 3.4.92's pit
@@ -297,4 +338,7 @@ pārtha). Each fix: cite LSK part/page in the sūtra docstring's Source list.
 | Sūtras that change a surface in forms.db | 102 | grows as coverage grows |
 | Gītā tagged-word coverage | 10.5 % | 50 % → 80 % |
 | LSK prakriyā order agreement | — | measured per part, rising |
-| Full suite | 19,145 passed, 118 xfail (each pinned to Vidyut) | zero regressions every commit |
+| ashtadhyayi.com tiṅanta gold (all roots × 10 lakāras × kartari/karmaṇi) | 382,291 / 455,346 (84.0 %; was 66.7 % at first run) | 95 % |
+| ashtadhyayi.com subanta gold (9,007 nouns × 24) | 194,264 / 215,155 (90.3 %) | 97 % |
+| ashtadhyayi.com prakriyā: their sūtras our trace also applies | 81.8 % (on 2,898 identical forms) | 95 % |
+| Full suite | 19,269 passed, 35 xfail (each pinned to Vidyut) | zero regressions every commit |
