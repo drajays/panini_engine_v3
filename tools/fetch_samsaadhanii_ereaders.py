@@ -60,17 +60,37 @@ def _slug(*parts: str | None) -> str:
     return "__".join(p for p in parts if p).replace("/", "_").replace(" ", "_")
 
 
-def raw_path(book: str, part1: str | None = None, part2: str | None = None) -> Path:
-    return RAW / f"{_slug(book, part1, part2)}.analysis.json"
+def raw_path(book: str, part1: str | None = None, part2: str | None = None,
+             kind: str = "analysis") -> Path:
+    return RAW / f"{_slug(book, part1, part2)}.{kind}.json"
 
 
 def fetch(book: str, part1: str | None = None, part2: str | None = None) -> Path:
+    """Download analysis.json + slokas.json for one text unit; returns the analysis path."""
     rel = "/".join(p for p in (book, part1, part2) if p)
     RAW.mkdir(parents=True, exist_ok=True)
-    dest = raw_path(book, part1, part2)
-    dest.write_bytes(_get(rel + "/analysis.json"))
-    print(f"  {dest.name}  {dest.stat().st_size:,} B")
-    return dest
+    for kind in ("analysis", "slokas"):
+        dest = raw_path(book, part1, part2, kind)
+        dest.write_bytes(_get(f"{rel}/{kind}.json"))
+        print(f"  {dest.name}  {dest.stat().st_size:,} B")
+    return raw_path(book, part1, part2)
+
+
+def units(cat: list[dict]) -> list[tuple[str, str | None, str | None]]:
+    """(book, part1, part2) for every text unit in the catalogue."""
+    return [(b["book"], p1["part"] or None, p2["part"] or None)
+            for b in cat for p1 in b["part1"] for p2 in p1["part2"]]
+
+
+def fetch_all() -> None:
+    cat = catalogue()
+    RAW.mkdir(parents=True, exist_ok=True)
+    (RAW / "books.json").write_text(json.dumps(cat, ensure_ascii=False), encoding="utf-8")
+    for u in units(cat):
+        try:
+            fetch(*u)
+        except Exception as e:  # noqa: BLE001 — a missing unit must not stop the rest
+            print(f"  ✗ {' / '.join(p for p in u if p)}: {e}")
 
 
 def _clean(word: str) -> tuple[str, str | None]:
@@ -132,14 +152,17 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--part2")
     ap.add_argument("--no-fetch", action="store_true", help="rebuild from raw/ only")
     ap.add_argument("--raw-only", action="store_true", help="download without building")
+    ap.add_argument("--all", action="store_true",
+                    help="download every book in the catalogue (for the /reader page)")
     a = ap.parse_args(argv)
 
     if a.list:
-        for b in catalogue():
-            for p1 in b["part1"]:
-                for p2 in p1["part2"]:
-                    print(" / ".join(x for x in (b["book"], p1["part"], p2["part"]) if x))
+        for u in units(catalogue()):
+            print(" / ".join(x for x in u if x))
         return 0
+    if a.all:
+        fetch_all()
+        a.no_fetch = True
     raw = raw_path(a.book, a.part1, a.part2) if a.no_fetch else fetch(a.book, a.part1, a.part2)
     if a.raw_only:
         return 0

@@ -139,6 +139,78 @@ def _resolve_dhatu(upadesha_dev: str | None, stem_dev: str, gana: int) -> tuple[
     return None, f"ambiguous dhātu {upadesha_dev or stem_dev} in gaṇa {gana} ({len(hits)} rows)"
 
 
+LINGA = {"पुं": "pulliṅga", "स्त्री": "strīliṅga", "नपुं": "napuṃsaka"}
+
+
+@dataclass
+class SubantaCell:
+    tag: str
+    stem_dev: str = ""
+    stem_slp1: str = ""
+    linga: str | None = None
+    vibhakti: int | None = None
+    vacana: int | None = None
+    unresolved: str | None = None
+
+    def key(self) -> str:
+        return f"{self.stem_slp1}|{self.linga}|{self.vibhakti}{self.vacana}"
+
+    def as_dict(self) -> dict:
+        return asdict(self)
+
+
+def parse_subanta_tag(tag: str) -> SubantaCell:
+    """``क्षेत्र{नपुं;7;एक}`` · ``एतद्{स्त्री}{2;एक}`` · ``युष्मद्{6;एक}`` ·
+    ``भवत्{सर्वनाम;पुं;1;एक}``. Pronouns without a liṅga (yuṣmad/asmad) take
+    pulliṅga — their paradigm does not vary by liṅga."""
+    cell = SubantaCell(tag=tag)
+    head = tag.split("{", 1)[0]
+    groups = re.findall(r"\{([^{}]*)\}", tag)
+    if "(" in tag or not groups:
+        cell.unresolved = "kṛdanta/taddhita stem" if "(" in tag else "no sup tag"
+        return cell
+    fields = [f.strip() for g in groups for f in g.split(";")]
+    if any(f.startswith("कृत्_प्रत्ययः") for f in fields):
+        cell.unresolved = "kṛdanta stem"
+        return cell
+    if any(f in ("मतुप्", "तद्धित") or f.startswith("तद्धित") for f in fields):
+        cell.unresolved = "taddhita stem"
+        return cell
+    cell.stem_dev = re.sub(r"\d+$", "", head.strip())
+    cell.stem_slp1 = dev_to_slp1(cell.stem_dev)
+    for f in fields:
+        if f in LINGA:
+            cell.linga = LINGA[f]
+        elif f.isdigit() and 1 <= int(f) <= 8:
+            cell.vibhakti = int(f)
+        elif f in VACANA:
+            cell.vacana = VACANA[f]
+    if cell.vibhakti is None or cell.vacana is None:
+        cell.unresolved = "no vibhakti/vacana"
+        return cell
+    cell.linga = cell.linga or "pulliṅga"
+    return cell
+
+
+def classify_morph(morph: str) -> tuple[str, str]:
+    """(kind, tag) for the first reading: tinanta · subanta · avyaya · krdanta ·
+    samasa_member (bare pūrvapada stem) · none."""
+    m = (morph or "").strip()
+    if m in ("", "-"):
+        return "none", m
+    tin = tinanta_alternative(m)
+    if tin:
+        return "tinanta", tin
+    first = m.strip("()").split("/")[0].strip()
+    if "{अव्य}" in first:
+        return "avyaya", first
+    if "{" not in first:
+        return ("krdanta" if "(" in first else "samasa_member"), first
+    if "कृत्_प्रत्ययः" in first or "(" in first:
+        return "krdanta", first
+    return "subanta", first
+
+
 def tinanta_alternative(morph: str) -> str | None:
     """The first tiṅanta reading in a (possibly ``/``-joined) morph string."""
     for alt in morph.strip().strip("()").split("/"):
