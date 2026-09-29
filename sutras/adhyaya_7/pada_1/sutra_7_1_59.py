@@ -21,20 +21,31 @@ def _is_ac(ch: str) -> bool:
     return bool(is_hrasva(ch) or is_dirgha(ch) or ch in {"e", "E", "o", "O"})
 
 
+def _tudadi_nasal_upadha(dh) -> bool:
+    """तृम्फादि read structurally: a tudādi upadeśa with a nasal upadhā (तृन्फँ,
+    तुन्पँ, शुन्भँ, तृन्हूँ) — 6.4.24 drops it before श, the vārttika's num restores it."""
+    if dh.meta.get("gana") != 6:
+        return False
+    up = (dh.meta.get("upadesha_slp1") or "").rstrip("~").rstrip("aAiIuUfFxeEoO~")
+    return len(up) >= 2 and up[-2] in "nYRNmM"
+
+
+def _dhatu(state: State):
+    """मुचादि (मुच्, लुप्, विद्, लिप्, सिच्, कृत्, खिद्, पिश्) and, by the vārttika
+    शे तृम्फादीनां नुम् वाच्यः, तृम्फादि — before the vikaraṇa श."""
+    for i, dh in enumerate(state.terms[:-1]):
+        if "dhatu" not in dh.tags or dh.meta.get("7_1_59_num_done"):
+            continue
+        if not ({"मुचादिः", "तुम्फादिः"} & set(dh.meta.get("antarganas") or ())
+                or _tudadi_nasal_upadha(dh)):
+            continue
+        if (state.terms[i + 1].meta.get("upadesha_slp1") or "").strip() == "Sa":
+            return dh
+    return None
+
+
 def _matches(state: State) -> bool:
-    if len(state.terms) < 2:
-        return False
-    dh = state.terms[0]
-    sa = state.terms[1]
-    if "dhatu" not in dh.tags:
-        return False
-    if (dh.meta.get("upadesha_slp1") or "").strip() != "muc":
-        return False
-    if (sa.meta.get("upadesha_slp1") or "").strip() != "Sa":
-        return False
-    if dh.meta.get("7_1_59_num_done"):
-        return False
-    return True
+    return _dhatu(state) is not None
 
 
 def cond(state: State) -> bool:
@@ -44,7 +55,7 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if not _matches(state):
         return state
-    dh = state.terms[0]
+    dh = _dhatu(state)
     j = None
     for i in range(len(dh.varnas) - 1, -1, -1):
         if _is_ac(dh.varnas[i].slp1):

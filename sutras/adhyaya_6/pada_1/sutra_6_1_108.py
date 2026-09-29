@@ -35,6 +35,11 @@ def _find(state: State):
     if dh.meta.get("6_1_108_purvarupa_done"):
         return None
     vs = dh.varnas
+    at = dh.meta.get("samprasarana_at")
+    if at is not None:                      # सम्प्रसारणाच्च: पूर्वरूप of the next ac
+        if at + 1 < len(vs) and vs[at + 1].slp1 in "aAiIuUfFxeEoO":
+            return (dh_i, at + 1)
+        return None
     for i in range(len(vs) - 1):
         if vs[i].slp1 in IK and vs[i + 1].slp1 == "a":
             return (dh_i, i + 1)

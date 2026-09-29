@@ -67,6 +67,7 @@ def act(state: State) -> State:
         if not dst:
             continue
         t.varnas[vi] = mk(dst)
+        t.meta["samprasarana_at"] = vi       # for 6.1.108 / 6.4.2
         changed = True
     if changed:
         state.meta["1_1_45_samprasaran_done"] = True

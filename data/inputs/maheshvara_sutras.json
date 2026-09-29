@@ -5,7 +5,7 @@
   { "index":  4, "devanagari": "ऐऔच्",       "phonemes": ["E", "O"],                    "it": "c" },
   { "index":  5, "devanagari": "हयवरट्",     "phonemes": ["h", "y", "v", "r"],          "it": "w" },
   { "index":  6, "devanagari": "लण्",         "phonemes": ["l"],                         "it": "R" },
-  { "index":  7, "devanagari": "ञमङणनम्",    "phonemes": ["Y", "m", "N", "n"],          "it": "m" },
+  { "index":  7, "devanagari": "ञमङणनम्",    "phonemes": ["Y", "m", "N", "R", "n"],     "it": "m" },
   { "index":  8, "devanagari": "झभञ्",       "phonemes": ["J", "B"],                    "it": "Y" },
   { "index":  9, "devanagari": "घढधष्",      "phonemes": ["G", "Q", "D"],               "it": "z" },
   { "index": 10, "devanagari": "जबगडदश्",    "phonemes": ["j", "b", "g", "q", "d"],     "it": "S" },

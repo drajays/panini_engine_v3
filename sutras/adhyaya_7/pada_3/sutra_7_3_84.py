@@ -250,6 +250,11 @@ def cond(state: State) -> bool:
         return False
     if dhatu_blocked_by_1_1_6(d0.meta.get("upadesha_slp1")):
         return False
+    if d0.meta.get("6_4_48_a_lopa_done") and _last_ik_index(d0) is not None \
+            and _last_ik_index(d0) < len(d0.varnas) - 1:
+        # 1.1.57 अचः परस्मिन् पूर्वविधौ: the a dropped by 6.4.48 is sthānivat —
+        # मृग(अ)+णिच्: no upadhā guṇa (मृगयते, not *मर्गयते)
+        return False
     if d0.meta.get("6_1_85_antadivat_a"):
         # 6.1.97 merged its final a into the vikaraṇa; by 6.1.85 अन्तादिवच्च the
         # dhātu is still a-final, so no upadhā guṇa (पिबति, not *पेबति)

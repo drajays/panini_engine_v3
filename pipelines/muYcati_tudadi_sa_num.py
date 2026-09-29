@@ -31,7 +31,7 @@ def derive_muYcati() -> State:
         kind="prakriti",
         varnas=parse_slp1_upadesha_sequence("muci~"),
         tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": "muci~", "gana": 6},
+        meta={"upadesha_slp1": "muci~", "gana": 6, "antarganas": ("मुचादिः",)},
     )
     s = State(terms=[dhatu], meta={}, trace=[])
 

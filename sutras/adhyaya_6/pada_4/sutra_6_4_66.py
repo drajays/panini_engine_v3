@@ -68,12 +68,40 @@ def _find(state: State):
     return None
 
 
+# stems after 6.1.45 (दे/धे/मे/गै/षो → दा/धा/मा/गा/सा); घु by 1.1.20 दाधा घ्वदाप्
+_STEMS = frozenset({"dA", "DA", "mA", "sTA", "gA", "pA", "hA", "sA"})
+_NOT = frozenset({"dAp", "dEp", "o~hAN"})     # अदाप्; ओहाङ् (only जहाति = ओहाक्)
+
+
+def _find_general(state: State):
+    """घु-मा-स्था-गा-पा-जहाति-सां हलि: before a hal-initial kit/ṅit ārdhadhātuka
+    (yak …) the ā becomes ī — दीयते, धीयते, पीयते, स्थीयते, गीयते, हीयते."""
+    for i, dh in enumerate(state.terms[:-1]):
+        if "dhatu" not in dh.tags or dh.meta.get("6_4_66_iitva_done"):
+            continue
+        up = (dh.meta.get("upadesha_slp1") or "").strip()
+        if "".join(v.slp1 for v in dh.varnas) not in _STEMS or up in _NOT:
+            continue
+        if up == "pA" and dh.meta.get("gana") == 2:          # पा रक्षणे
+            continue
+        pr = state.terms[i + 1]
+        marks = pr.meta.get("it_markers") or set()
+        if "pratyaya" not in pr.tags or not pr.varnas or pr.varnas[0].slp1 not in HAL:
+            return None
+        if any(t.startswith("sarvadhatuka") for t in pr.tags):
+            return None
+        if "k" in marks or "N" in marks or "kngiti" in pr.tags or pr.meta.get("kit"):
+            return dh, len(dh.varnas) - 1
+        return None
+    return None
+
+
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    return _find(state) is not None or _find_general(state) is not None
 
 
 def act(state: State) -> State:
-    result = _find(state)
+    result = _find(state) or _find_general(state)
     if result is None:
         return state
     dh, i = result

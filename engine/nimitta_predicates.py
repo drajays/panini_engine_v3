@@ -261,3 +261,28 @@ def dhatu_before_sit(state: State) -> Optional[int]:
                 (nxt.meta.get("upadesha_slp1") or "").startswith("S"):
             return i
     return None
+
+
+def samprasarana_site(state: State, stems: frozenset, *, ngit: bool,
+                      antargana: str | None = None) -> Optional[tuple[int, int]]:
+    """(term, varṇa) of the yaṇ a samprasāraṇa rule (6.1.15/6.1.16) replaces, or None.
+
+    The dhātu (by its stem, or ``antargana`` membership) must be followed by a
+    *kit* pratyaya (or *ṅit* too when ``ngit``). 6.1.37 न सम्प्रसारणे सम्प्रसारणम्:
+    of two yaṇs only the one before the vowel changes (व्यध् → विध्, ह्वे → हु)."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("samprasarana_done"):
+            continue
+        stem = "".join(v.slp1 for v in t.varnas)
+        if stem not in stems and not (antargana and antargana in (t.meta.get("antarganas") or ())):
+            continue
+        nxt = state.terms[i + 1]
+        marks = nxt.meta.get("it_markers") or set()
+        kit = "k" in marks or nxt.meta.get("kit") is True or "kit" in nxt.tags
+        if not (kit or (ngit and ("N" in marks or "kngiti" in nxt.tags))):
+            return None
+        for j in range(len(t.varnas) - 1):
+            if t.varnas[j].slp1 in "yvrl" and t.varnas[j + 1].slp1 in "aAiIuUfFxeEoO":
+                return i, j
+        return None
+    return None

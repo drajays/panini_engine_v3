@@ -53,6 +53,11 @@ def _find(state: State):
             break
     if kng_pr is None:
         return None
+    # उतश्च प्रत्ययात् … कृञः (6.4.106–108 anuvṛtti): the aṅga is कृ before the
+    # u-vikaraṇa — not any ar-final aṅga (हरतः, not *हुरतः)
+    if di + 1 >= len(state.terms) or \
+            (state.terms[di + 1].meta.get("upadesha_slp1") or "").strip() != "u":
+        return None
     if dh.meta.get("6_4_110_at_ut_done"):
         return None
     vs = dh.varnas

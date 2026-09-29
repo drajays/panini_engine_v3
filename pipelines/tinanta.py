@@ -257,9 +257,12 @@ def _karmani_yak_it_and_ngiti(state: State) -> State:
             t.tags.add("kngiti")
             t.tags.add("ngiti_vikaraṇa")
             break
+    state = _samprasarana(state)           # वच् → उच्यते, यज् → इज्यते, ग्रह् → गृह्यते
     # 6.4.51 णेरनिटि — the ṇijanta's ṇi drops before aniṭ yak: चोरि → चोर् (चोर्यते)
     state = apply_rule("6.4.51", state)
     state = apply_rule("6.1.45", state)    # ग्लायते
+    state = apply_rule("6.4.48", state)    # अतो लोपः: कक्ख+य → कक्ख्यते
+    state = apply_rule("6.4.66", state)    # घुमास्था…हलि: पीयते, स्थीयते, दीयते
     state = apply_rule("6.4.24", state)    # अनिदितां हल उपधायाः क्ङिति: तुम्फ् → तुफ्यते
     state = apply_rule("7.1.100", state)   # ॠत इद्धातोः: नॄ → निर् (+8.2.77 नीर्यते)
     state = apply_rule("1.1.51", state)
@@ -298,6 +301,15 @@ def _bhave_atmanepada_tin_after_lopa(state: State, *, kartari_atmane: bool = Fal
 # gaṇas whose vikaraṇa is a u (śnu 3.1.73, u 3.1.79): the spines' yaṇ/ayādi
 # and yāsuṭ steps key on this, not on "gaṇa 8" alone (सुन्वन्तु, असुन्वन्).
 _U_VIKARANA_GANAS = (5, 8)
+
+
+def _samprasarana(state: State) -> State:
+    """6.1.15 वचिस्वपियजादीनां किति / 6.1.16 ग्रहिज्या… ङिति च mark the yaṇ;
+    1.1.45 makes it ik, 6.1.108 सम्प्रसारणाच्च takes the next vowel, 6.4.2 हलः
+    lengthens an aṅga-final one after a hal. Each self-gates."""
+    for sid in ("6.1.15", "6.1.16", "1.1.45", "6.1.108", "6.4.2"):
+        state = apply_rule(sid, state)
+    return state
 
 
 def _sit_adesha(state: State) -> State:
@@ -376,11 +388,16 @@ def _apply_vikarana(state: State, gana: int) -> State:
         # guṇa: तुदति, पुरति, कृषति — not *तोदति. Same second 1.2.4 pass as śyan.
         state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
         state = apply_rule("1.2.4", state)
+        state = _samprasarana(state)       # 6.1.16 ङिति: वृश्चति, पृच्छति, विचति
         # 6.4.24 अनिदितां हल उपधायाः क्ङिति: nasal upadhā drops before the ṅit
         # vikaraṇa (स्कुभ्नाति, रज्यति)
         state = apply_rule("6.4.24", state)
+        state = apply_rule("7.1.59", state)    # शे मुचादीनाम्: मुञ्चति, लिम्पति, तृम्फति
         # 7.4.28 रिङ् शयग्लिङ्क्षु: ṛ-final aṅga before śa (मृ → म्रियते)
         state = apply_rule("7.4.28", state)
+        state = apply_rule("7.1.100", state)   # ॠत इद्धातोः: कॄ → किर् (किरति)
+        state = apply_rule("1.1.51", state)
+        state = apply_rule("6.4.77", state)    # अचि…इयङुवङौ: नुवति, म्रियते, धियति
         return state
 
     if gana == 2:
@@ -2548,6 +2565,7 @@ def _curadi_nic(state: State) -> State:
     state = apply_rule("7.2.116", state)   # अत उपधायाः: तड् → ताड्
     # laghūpadha guṇa (चुर् → चोर्), r of ṛ-vṛddhi (पार्), ayādi (च्याव्+इ)
     state = P00_guna_rapara_ayadi(state)
+    state = apply_rule("6.4.92", state)    # मितां ह्रस्वः: ज्ञाप् → ज्ञप् (ज्ञपयति)
     dh = next(t for t in state.terms if "dhatu" in t.tags)
     keep = {k: dh.meta[k] for k in ("kartari_atmanepada_licensed",) if k in dh.meta}
     before = state.flat_slp1()

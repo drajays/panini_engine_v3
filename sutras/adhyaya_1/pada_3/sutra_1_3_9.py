@@ -95,6 +95,10 @@ def act(state: State) -> State:
                     t.tags.add("idit")
                 # Final anunāsika vowel (e.g. "…A~") or vowel whose only tail material
                 # is *it* (e.g. ``mFjU~z``: ``U`` before hal-it ``z``) — full elision.
+                # An upadeśa-initial anunāsika vowel is a whole marker (ओँविजीँ → विज्,
+                # टुओँश्वि → श्वि: only markers precede it).
+                if j < len(t.varnas) - 1 and all(x.tags & IT_LOPA_TAGS for x in t.varnas[:j]):
+                    continue
                 if j == len(t.varnas) - 1 or _only_it_varnas_after(t, j):
                     # ``dIDI~N``-class dhātus: dīrgha ``I``/``U``/``F`` before final
                     # ``N`` (halantyam it) — keep the vowel, drop only anunāsika

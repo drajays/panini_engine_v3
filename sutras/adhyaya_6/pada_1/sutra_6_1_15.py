@@ -25,6 +25,7 @@ from __future__ import annotations
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology.pratyahara import YAN
+from engine.nimitta_predicates import samprasarana_site
 from sutras.adhyaya_1.pada_1.sutra_1_1_45 import META_TARGETS
 
 
@@ -41,7 +42,18 @@ def _is_kit_pratyaya(pr) -> bool:
     return "kngiti" in pr.tags and "sanadi" in pr.tags
 
 
+_STEMS = frozenset({"vac", "svap"})
+
+
 def _find_target(state: State):
+    # वचि, स्वपि and the यजादि antargaṇa (यज्, वप्, वह्, वस्, वे, व्ये, ह्वे, वद्, श्वि)
+    hit = samprasarana_site(state, _STEMS, ngit=False, antargana="यजादिः")
+    if hit is not None:
+        return hit
+    return _find_target_krt(state)
+
+
+def _find_target_krt(state: State):
     if len(state.terms) < 2:
         return None
     dh = next((t for t in state.terms if "dhatu" in t.tags), None)
@@ -73,6 +85,7 @@ def act(state: State) -> State:
     ti, vi = hit
     state.meta[META_TARGETS] = [(ti, vi)]
     state.terms[ti].meta["6_1_15_samprasaran_armed"] = True
+    state.terms[ti].meta["samprasarana_done"] = True
     return state
 
 

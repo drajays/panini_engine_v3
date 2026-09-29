@@ -23,7 +23,7 @@ def _hit(state: State):
         return None
     t = state.terms[i]
     st = _stem(t)
-    if st in ("gam", "yam") or (st == "iz" and "उँ" in (t.meta.get("dhatu_it") or ())):
+    if st in ("gam", "yam") or (st == "iz" and (t.meta.get("upadesha_slp1") or "").startswith("izu")):
         return i
     return None
 

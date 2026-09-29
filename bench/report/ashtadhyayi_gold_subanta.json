@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-09-29T04:41:58+00:00",
+ "generated_at": "2026-09-29T08:46:41+00:00",
  "sample": null,
  "cells": 215155,
- "agree": 194264,
- "differ": 20891,
- "agree_pct": 90.3,
+ "agree": 194529,
+ "differ": 20626,
+ "agree_pct": 90.4,
  "words": {
-  "full paradigm": 6952,
-  "partial": 2053
+  "full paradigm": 6957,
+  "partial": 2048
  },
  "by_linga": {
   "pulliṅga": {
-   "agree": 102803,
-   "differ": 11631,
+   "agree": 102925,
+   "differ": 11509,
    "absent": 550
   },
   "strīliṅga": {
-   "agree": 46111,
-   "differ": 4171,
+   "agree": 46153,
+   "differ": 4129,
    "absent": 310
   },
   "napuṃsaka": {
-   "agree": 45350,
-   "differ": 5089,
+   "agree": 45451,
+   "differ": 4988,
    "absent": 105
   }
  },

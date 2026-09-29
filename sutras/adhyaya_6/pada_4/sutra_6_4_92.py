@@ -32,7 +32,7 @@ def _find(state: State):
         return None
     # Upadhā = penultimate phoneme row (see note: ए → इ).
     pen = vs[-2].slp1
-    if ec_ig_replacement_slp1(pen) is None:
+    if pen != "A" and ec_ig_replacement_slp1(pen) is None:
         return None
     return 0
 
@@ -47,7 +47,7 @@ def act(state: State) -> State:
         return state
     dh = state.terms[ti]
     pen = dh.varnas[-2].slp1
-    rep = ec_ig_replacement_slp1(pen)
+    rep = "a" if pen == "A" else ec_ig_replacement_slp1(pen)   # ज्ञाप् → ज्ञप्
     if rep is None:
         return state
     dh.varnas[-2] = mk(rep)

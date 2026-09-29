@@ -55,6 +55,9 @@ def dhatu_term_from_row(row: dict, prayoga: str, lakara: str) -> Term:
         meta["kartari_atmanepada_licensed"] = "ubhaya"
 
     tags = {"dhatu", "anga", "upadesha", prayoga}
+    # घटादयो मितः / ज्ञपादयो मितः (gaṇasūtras): mit — 6.4.92 मितां ह्रस्वः before ṇic
+    if {"घटादिः", "ज्ञपादिः"} & set(row.get("antarganas") or ()):
+        tags.add("mit")
     lak_tag = _LAKARA_TAG.get(lakara)
     if lak_tag:
         tags.add(lak_tag)

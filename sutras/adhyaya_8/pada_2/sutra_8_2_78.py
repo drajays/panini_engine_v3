@@ -36,7 +36,10 @@ def _find(state: State):
         if "dhatu_v" not in a.tags or nxt.slp1 not in _HAL:
             continue
         # उपधायाम्: the r/v is in upadhā — the following hal is the dhātu's own final
-        if "dhatu_v" in nxt.tags and (i + 3 == len(vs) or "dhatu_v" not in vs[i + 3].tags):
+        # (of the mūla dhātu: ऊर्ज्+इ, चूर्ण्+इ — ṇic's इ is not the root's)
+        if "dhatu_v" in nxt.tags and (i + 3 == len(vs) or "dhatu_v" not in vs[i + 3].tags
+                                      or ("mula_dhatu_v" in nxt.tags
+                                          and "mula_dhatu_v" not in vs[i + 3].tags)):
             return i
     return None
 

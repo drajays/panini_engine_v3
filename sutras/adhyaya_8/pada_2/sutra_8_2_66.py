@@ -48,10 +48,6 @@ def _target_postmerge(state: State):
         last = t.varnas[-1]
         if last.slp1 == "s" and "ru_intermediate" not in last.tags:
             return (i, len(t.varnas) - 1)
-        if last.slp1 == "a" and last.dev == "" and len(t.varnas) >= 2:
-            prev = t.varnas[-2]
-            if prev.slp1 == "s" and "ru_intermediate" not in prev.tags:
-                return (i, len(t.varnas) - 2)
         return None
     return None
 
