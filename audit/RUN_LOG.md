@@ -152,6 +152,7 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-05-31 (session) | cursor | VIDHI cond discipline macro-plan (1235 FP) — research + plan only | `.cursor/plans/vidhi_cond_discipline_73076532.plan.md`, `audit/RUN_LOG.md` | released |
 | 2026-05-31 (session) | cursor | Phase 5e — derive() delegates to derive_autonomous_tinanta | pipelines/tinanta.py, tests/unit/test_autonomous_vs_recipe.py, audit/RUN_LOG.md | released |
 | 2026-05-31 (session) | cursor | VIDHI cond discipline — full plan implementation | `audit/cond_discipline_auditor.py`, `engine/phase.py`, `engine/scheduler.py`, `engine/krt_eligibility.py`, `engine/tape_init/`, `engine/nimitta_predicates.py`, `engine/adhikara_automation.py`, `sutras/adhyaya_3/**`, `tests/`, `audit/RUN_LOG.md` | released |
+| 2026-09-30 (session) | cursor | P2 Saṃsādhanī e-reader oracle — Gītā tiṅanta round-trip + coverage (tests/tools only, Art. 6) | tools/fetch_samsaadhanii_ereaders.py, tools/samsaadhanii_coverage.py, tools/gold_corpora.py, data/reference/samsaadhanii/, tests/regression/test_samsaadhanii_gita_tinanta.py, audit/RUN_LOG.md | in-progress |
 
 ---
 
