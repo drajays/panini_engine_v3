@@ -12,6 +12,7 @@ The engine is only *tested* here — nothing in the rule path reads this file
     python3 -m bench.ashtadhyayi_gold                  # all roots (parallel)
     python3 -m bench.ashtadhyayi_gold --sample 200     # a random slice
     python3 -m bench.ashtadhyayi_gold --lakara laT --prayoga karmani
+    python3 -m bench.ashtadhyayi_gold --kind subanta   # shabda/data2.txt: 9,007 nouns × 24
 """
 from __future__ import annotations
 
@@ -32,6 +33,9 @@ if str(_ROOT) not in sys.path:
 from tools.fetch_ashtadhyayi_data import path as ref_path  # noqa: E402
 
 REPORT = _ROOT / "bench" / "report" / "ashtadhyayi_gold.json"
+SUB_REPORT = _ROOT / "bench" / "report" / "ashtadhyayi_gold_subanta.json"
+LINGA = {"P": "pulliṅga", "S": "strīliṅga", "N": "napuṃsaka"}
+SUB_CELLS = [(vi, va) for vi in (1, 2, 3, 4, 5, 6, 7, 8) for va in (1, 2, 3)]   # 8 = sambodhana
 LAKARA = {"lat": "laT", "lit": "liT", "lut": "luT", "lrut": "lRT", "lot": "loT", "lang": "laG",
           "vidhiling": "liG", "ashirling": "AsIrliG", "lung": "luG", "lrung": "lRG"}
 CELLS = [(3, 1), (3, 2), (3, 3), (2, 1), (2, 2), (2, 3), (1, 1), (1, 2), (1, 3)]
@@ -70,6 +74,64 @@ def _run(job):
     return did, prayoga, pada, lak, out, [sorted(g) for g in alts]
 
 
+def subanta_jobs(sample: int | None, seed: int):
+    """(stem SLP1, liṅga, [24 alternative-sets]) — sambodhana without its हे."""
+    from phonology.tokenizer import devanagari_to_slp1_flat
+    rows = [r for r in json.loads(ref_path("shabda/data2.txt").read_text())["data"]
+            if r.get("linga") in LINGA and r.get("forms")]
+    if sample:
+        rows = random.Random(seed).sample(rows, min(sample, len(rows)))
+    for r in rows:
+        cells = r["forms"].split(";")
+        if len(cells) != 24:
+            continue
+        try:
+            stem = devanagari_to_slp1_flat(r["word"])
+        except Exception:
+            continue
+        yield stem, LINGA[r["linga"]], [{a.removeprefix("हे ").strip() for a in c.split("-")} for c in cells]
+
+
+def _run_sub(job):
+    stem, linga, alts = job
+    from pipelines.subanta import derive
+    out = []
+    for (vi, va), gold in zip(SUB_CELLS, alts):
+        if gold <= {""}:                     # no such form (e.g. a plural-only noun)
+            out.append(("absent", ""))
+            continue
+        try:
+            ours = derive(stem, vi, va, linga=linga).flat_dev()
+            out.append(("agree" if ours in gold else "differ", ours))
+        except Exception as ex:
+            out.append(("error", type(ex).__name__))
+    return stem, linga, out, [sorted(g) for g in alts]
+
+
+def main_subanta(a) -> int:
+    by, words, examples = Counter(), Counter(), []
+    per_linga = defaultdict(Counter)
+    with ProcessPoolExecutor(max_workers=a.workers) as ex:
+        for stem, linga, out, gold in ex.map(_run_sub, subanta_jobs(a.sample, a.seed), chunksize=16):
+            st = Counter(x for x, _ in out)
+            by.update(st - Counter({"absent": st["absent"]})); per_linga[linga].update(st)
+            words["full paradigm" if st["agree"] + st["absent"] == 24 else "some error" if st["error"] else "partial"] += 1
+            for (status, ours), (vi, va), g in zip(out, SUB_CELLS, gold):
+                if status == "differ" and len(examples) < 40:
+                    examples.append([stem, linga, f"{vi}/{va}", ours, g])
+    n = sum(by.values())
+    summary = {"generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+               "sample": a.sample, "cells": n, **by, "agree_pct": round(100 * by["agree"] / max(n, 1), 1),
+               "words": dict(words), "by_linga": {k: dict(v) for k, v in per_linga.items()},
+               "examples": examples}
+    print(f"ashtadhyayi.com subanta gold — {n} cells: agree {by['agree']} ({summary['agree_pct']} %), "
+          f"differ {by['differ']}, error {by['error']}; words {dict(words)}")
+    if not a.sample:
+        SUB_REPORT.write_text(json.dumps(summary, ensure_ascii=False, indent=1) + "\n")
+        print(f"→ {SUB_REPORT.relative_to(_ROOT)}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--sample", type=int)
@@ -78,7 +140,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--prayoga", action="append", choices=["kartari", "karmani"])
     ap.add_argument("--workers", type=int, default=os.cpu_count())
     ap.add_argument("--dump", type=Path, help="write every non-agreeing cell as JSONL")
+    ap.add_argument("--kind", choices=["tinanta", "subanta"], default="tinanta")
     a = ap.parse_args(argv)
+    if a.kind == "subanta":
+        return main_subanta(a)
     jobs = list(gold_jobs(set(a.prayoga or ["kartari", "karmani"]), set(a.lakara or []) or None,
                           a.sample, a.seed))
     by = defaultdict(Counter)

@@ -31,6 +31,7 @@ from __future__ import annotations
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.gates  import adhikara_in_effect
 from engine.state  import State
+from sutras.adhyaya_6.pada_4.sutra_6_4_137 import samyogad_vamanta
 
 
 def _find_upadhā_a(state: State):
@@ -51,6 +52,8 @@ def _find_upadhā_a(state: State):
             continue
         if vs[-2].slp1 != "a":
             continue
+        if samyogad_vamanta([v.slp1 for v in vs]):
+            continue                              # 6.4.137 न संयोगाद्वमन्तात्
         return (ti, len(vs) - 2)
     return None
 

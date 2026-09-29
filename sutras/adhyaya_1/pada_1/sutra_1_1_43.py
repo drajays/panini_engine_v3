@@ -37,6 +37,8 @@ def _eligible_s_sup(state: State) -> bool:
         return False
     if pr.varnas[0].slp1 != "s":
         return False
+    if (pr.meta.get("upadesha_slp1") or "").strip() == "sup":
+        return False                     # 7/3 सुप् is not in सुट् (सु औ जस् अम् औट्)
     if TAG in pr.tags:
         return False
     return True

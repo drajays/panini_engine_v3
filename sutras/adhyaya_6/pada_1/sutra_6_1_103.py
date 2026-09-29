@@ -50,6 +50,10 @@ def _matches(state: State) -> bool:
     # (structural, not a paradigm coordinate). Feminine and neuter stems keep
     # whatever 6.1.102 gave them: नदी + अस् → नदीस् → नदीः, and the old
     # unconditional As-substitution here overwrote exactly that.
+    # तस्मात्: after the 6.1.102 pūrvasavarṇa dīrgha — an ak-final aṅga (राम, हरि, गुरु,
+    # पितृ); a hal-final one (राजन्) keeps शस् as अस् (राज्ञः)
+    if not anga.varnas or anga.varnas[-1].slp1 not in "aiufx":
+        return False
     return bool({"pulliṅga", "pum"} & anga.tags)
 
 
@@ -76,6 +80,10 @@ def act(state: State) -> State:
         elif anga.varnas and anga.varnas[-1].slp1 == "u":
             # u-stem: u + śas → ūn (śambhu → śambhūn) via pūrva-savarṇa dīrgha
             anga.varnas[-1] = mk("U")
+            pratyaya.varnas = [mk("n")]
+            new_upa = "n"
+        elif anga.varnas and anga.varnas[-1].slp1 in "fx":
+            anga.varnas[-1] = mk(anga.varnas[-1].slp1.upper())   # पितॄन्
             pratyaya.varnas = [mk("n")]
             new_upa = "n"
         else:

@@ -34,7 +34,8 @@ def _matches(state: State) -> bool:
         return False
     if not anga.varnas:
         return False
-    return True
+    # नपुंसकस्य झलचः: only a jhal- or ac-final aṅga (कर्मन् + शि: no num → कर्माणि)
+    return anga.varnas[-1].slp1 not in "NYRnmyrlv"
 
 
 def cond(state: State) -> bool:

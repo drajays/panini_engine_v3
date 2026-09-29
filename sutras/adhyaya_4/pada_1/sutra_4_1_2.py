@@ -111,6 +111,9 @@ def act(state: State) -> State:
 
     # 'sup' varṇas (WITH it-markers preserved; 1.3.* will remove them)
     varnas = _upadesha_to_varnas(upadesha)
+    if upadesha == "Nasi":
+        # ङसि's इ is an it by pratijñā-anunāsikya (1.3.2): मरुतः, कर्मणः
+        varnas[-1].tags.add("anunasika")
 
     # Pratyaya tags.  v3.1 addition: tag sambuddhi-ekavacana (8-1) so
     # 6.1.69 (su-lopa at sambuddhi) can fire without reading
