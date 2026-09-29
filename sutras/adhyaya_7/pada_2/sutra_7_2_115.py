@@ -42,7 +42,7 @@ def _vrddhi_vowel(ch: str, state: State) -> Optional[str]:
     if ch in ("u", "U"):
         return "O"
     if ch in ("f", "F", "x", "X"):
-        return None
+        return "A"                            # + 1.1.51 rapara: कृ → कार् (अकारि, कारक)
     if ch in ("e", "E", "o", "O"):
         return ch
     return None

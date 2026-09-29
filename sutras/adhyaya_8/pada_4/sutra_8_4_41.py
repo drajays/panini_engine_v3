@@ -67,18 +67,22 @@ def _find_p001_b_zt_pre_tripadi(state: State):
     return None
 
 
+_STU = {"s": "z", "t": "w", "T": "W", "d": "q", "D": "Q", "n": "R"}   # s + tu-varga → ṣ + ṭu-varga
+_ZTU = frozenset("zwWqQR")                                             # ṣ + ṭu-varga
+
+
 def _find_zt(state: State):
-    if not state.tripadi_zone:
+    """ष्टुना ष्टुः: s/tu next to ṣ/ṭu becomes ṣ/ṭu (ष्ठाः, पेष्टा); 8.4.43 तोः षि:
+    a tu before ṣ stays. Index of the varṇa to change, in the merged pada."""
+    if not state.tripadi_zone or not state.terms:
         return None
-    if not state.terms:
-        return None
-    t = state.terms[0]
-    if "8_4_41_done" in t.meta:
-        return None
-    vs = t.varnas
+    vs = state.terms[0].varnas
     for i in range(len(vs) - 1):
-        if vs[i].slp1 == "z" and vs[i + 1].slp1 == "t":
+        a, b = vs[i].slp1, vs[i + 1].slp1
+        if a in _ZTU and b in _STU:
             return i + 1
+        if b in _ZTU and a in _STU and not (b == "z" and a != "s"):
+            return i
     return None
 
 
@@ -104,12 +108,9 @@ def act(state: State) -> State:
         t.varnas[i_pre] = mk("w")
         t.meta["corrected_v2_P001_B_zt_done"] = True
         return state
-    i = _find_zt(state)
-    if i is None:
-        return state
     t = state.terms[0]
-    t.varnas[i] = mk("w")
-    t.meta["8_4_41_done"] = True
+    while (i := _find_zt(state)) is not None:
+        t.varnas[i] = mk(_STU[t.varnas[i].slp1])
     return state
 
 

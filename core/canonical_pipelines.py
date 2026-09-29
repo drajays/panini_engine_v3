@@ -1610,11 +1610,17 @@ def P00_mRj_abhyasa_hrasva(s: State, *, first_hal_only: bool = False) -> State:
 
 # ── Round-3 deduplication canonicals ─────────────────────────────────────────
 
-def P00_at_agama_it_lopa(s: State) -> State:
-    """aṭ-āgama + it-lopa: 6.4.71 (or, ajādi, 6.4.72 āṭ + 6.1.90 vṛddhi) → 1.3.3 → 1.3.9."""
+def P00_at_or_At_agama(s: State) -> State:
+    """luṅ/laṅ/lṛṅ augment: 6.4.71 aṭ, or for an ajādi aṅga 6.4.72 āṭ + 6.1.90 vṛddhi (ऐधत)."""
     s = apply_rule("6.4.71", s)
     s = apply_rule("6.4.72", s)
     s = apply_rule("6.1.90", s)
+    return s
+
+
+def P00_at_agama_it_lopa(s: State) -> State:
+    """aṭ/āṭ-āgama + it-lopa: P00_at_or_At_agama → 1.3.3 → 1.3.9."""
+    s = P00_at_or_At_agama(s)
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
     return s

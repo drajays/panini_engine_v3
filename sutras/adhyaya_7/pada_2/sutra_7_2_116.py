@@ -103,9 +103,10 @@ def _find_upadha_a(state: State):
         return None
     if _upadha_vrddhi_blocked(state, dhatu):
         return None
-    pr    = state.terms[-1]
-    if "krt" not in pr.tags:
+    di = state.terms.index(dhatu)
+    if di + 1 >= len(state.terms):
         return None
+    pr = state.terms[di + 1]              # ñit/ṇit pratyaya right after the aṅga (kṛt, ciṇ, …)
     itm = pr.meta.get("it_markers", set())
     if not isinstance(itm, set) or not ("N" in itm or "R" in itm):
         return None

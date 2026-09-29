@@ -95,6 +95,7 @@ from core.canonical_pipelines import (
     P00_sap_luk,
     P00_guna_rapara_ayadi,
     P00_ngit_At_iy_guna,
+    P00_at_or_At_agama,
     P00_tripadi_8_4_55_visarga,
     P00_luk_samjna_60_62,
     P00_stri_4_1_wap,
@@ -1251,6 +1252,7 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     tin_adesha = _select_tin_adesha("luG", pada_key, purusha, vacana)
     state = P00_parasmai_tin_adesha(state, tin_adesha)
     state = P00_tin_tusma_audit_halantyam_lopa(state)  # drops p-it of tiṅ; c-it of sic
+    state = apply_rule("1.4.100", state)   # taṅ-ādeśa → ātmanepada (gates 7.2.1/7.2.3, 1.2.11)
 
     # ── Stage: 3.4.113 tiṅ is sārvadhatuka ──────────────────────────────────
     state = apply_rule("3.4.113", state)
@@ -1277,6 +1279,12 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state.meta.pop("luN_sic_ardhadhatuka", None)
         # 7.3.86 laghūpadha guṇa before sic+iṭ (structural: dyut+i → dyot+i)
         state = apply_rule("7.3.86", state)
+        if pada_key == "atmane":
+            # jhal-ādi sic is kit after ik-near hal / ṛ (1.2.11/12: अतुत्त, अकृत);
+            # otherwise guṇa (अमोदिष्ट, अभविष्ट). No sic-vṛddhi: 7.2.1 is parasmaipada.
+            state = apply_rule("1.2.11", state)
+            state = apply_rule("1.2.12", state)
+            state = P00_guna_rapara_ayadi(state)
         # sici vṛddhi (parasmaipada): 7.2.1 for a vowel-final aṅga (नी → नै);
         # 7.2.3 for a hal-final one, only when iṭ was blocked (7.2.4 नेटि):
         # पच् → पाच् (अपाक्षीत्). Both self-gate on sic + parasmaipada.
@@ -1297,8 +1305,8 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     state = apply_rule("3.4.100", state)   # ti→t, si→s, jhi→jh
 
-    if _is_anit:
-        state = P00_jha_adesha(state)     # jh→ant (3pl, aniṭ only)
+    if _is_anit or pada_key == "atmane":
+        state = P00_jha_adesha(state)     # jh→ant; ātmane after sic: 7.1.5 → at (ऐधिषत)
 
     state = apply_rule("3.4.99", state)    # vas→va, mas→ma
 
@@ -1326,7 +1334,7 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("1.4.13", state)
 
     # 6.4.71 aṭ augment; skip it-lopa for seṭ to avoid re-processing sic 's'
-    state = apply_rule("6.4.71", state)
+    state = P00_at_or_At_agama(state)     # ajādi: āṭ + vṛddhi (ऐधिष्ट)
     if _is_anit:
         state = P00_hal_it_lopa(state)
 
@@ -3123,11 +3131,17 @@ def _derive_karmani_luG(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.4.13", state)
 
     # 7.2.115 vṛddhi: ciṇ is ṅit → dhātu final vowel → vṛddhi (BU: U→O=au)
+    # the pre-encoded "i" is ciṇ's residue: ṇit (c, Ṇ its), ārdhadhātuka, no iṭ
+    tin = state.terms[-1]
+    tin.meta["it_markers"] = {"c", "R"}
+    tin.tags.add("ardhadhatuka")
+    state = apply_rule("6.4.51", state)    # णेरनिटि: चोरि + इ → अचोरि
     state.meta["7_2_115_karmani_lut_arm"] = True
     state = apply_rule("7.2.115", state)
+    state = apply_rule("7.2.116", state)   # अत उपधायाः before ṇit ciṇ: अपाचि, अदाधि
+    state = P00_guna_rapara_ayadi(state)   # laghūpadha guṇa: अमोदि, अतोदि
 
-    # 6.4.71 aṭ augment (a- prepended to dhātu via aT_agama_context from 3.2.110)
-    state = apply_rule("6.4.71", state)
+    state = P00_at_or_At_agama(state)      # aṭ; ajādi āṭ + vṛddhi: ऐधि
 
     state = apply_rule("1.4.14", state)
 
@@ -3922,7 +3936,15 @@ def _dispatch_tinanta_spine(
         if lakara == "luG":
             state = apply_rule("3.1.91", state)
             state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
-            return _derive_karmani_luG(state, purusha, vacana)
+            if (purusha, vacana) == (3, 1):
+                return _derive_karmani_luG(state, purusha, vacana)   # 3.1.66 ciṇ (त only)
+            # every other cell: sic, as in kartari — luṅ in ātmanepada (1.3.13)
+            for t in state.terms:
+                if "dhatu" in t.tags:
+                    t.tags.add("bhava_karma_usage")
+                    break
+            state = apply_rule("1.3.13", state)
+            return _derive_luG(state, "atmane", purusha, vacana)
         if lakara == "lRG":
             state = apply_rule("3.1.91", state)
             state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
