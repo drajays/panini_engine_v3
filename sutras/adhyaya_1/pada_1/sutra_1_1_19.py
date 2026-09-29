@@ -1,5 +1,5 @@
 """
-1.1.19  (IdU tau ca saptamyarthe)  —  SAMJNA; *devanāgarī* = ``_TEXT_DEV`` (ashtadhyayi *i* 11019 *s* line).
+1.1.19  ईदूतौ च सप्तम्यर्थे  —  SAMJNA; *devanāgarī* = ``_TEXT_DEV`` (ashtadhyayi *i* 11019 *s* line).
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=11019):** *ī* and *ū* in the *dvivacana* (*tau*), with *ca*
 (in addition to the **1.1.11** block), in the *saptamī* / locative *artha* *prayoga*, receive the
@@ -82,8 +82,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.19",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "IdU tau ca saptamyarthe",
-    text_dev       = _TEXT_DEV,
+    text_slp1      = 'IdUtO ca saptamyarTe',
+    text_dev       = 'ईदूतौ च सप्तम्यर्थे',
     padaccheda_dev = " / ".join(_TEXT_DEV.split()),  # three *padas* as in index ``pc``
     why_dev        = _WHY,
     apavada_of     = ("1.1.11",),   # अपवाद of 1.1.11 — sutra_ref_out resolver.apavada_of

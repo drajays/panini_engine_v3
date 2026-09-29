@@ -63,8 +63,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.1.20",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "jasSasoH SiH (napuMsake)",
-    text_dev       = "जश्शसोः शिः",
+    text_slp1      = 'jaSSasoH SiH',
+    text_dev       = 'जश्शसोः शिः',
     padaccheda_dev = "जस्-शसोः शिः",
     why_dev        = "नपुंसक-अङ्गात् परयोः जस्/शस्-प्रत्यययोः ‘शि’-आदेशः (ज्ञानानि)।",
     anuvritti_from = ("6.4.1",),

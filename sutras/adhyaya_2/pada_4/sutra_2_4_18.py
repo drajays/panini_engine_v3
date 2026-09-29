@@ -1,5 +1,5 @@
 """
-2.4.18  (avyayībhāva napuṃsaka)  —  SAMJNA (narrow v3 demo slice)
+2.4.18  अव्ययीभावश्च  —  SAMJNA (narrow v3 demo slice)
 
 User requirement for the *adhistri* derivation: avyayībhāva samāsa is
 napuṃsaka, which then licenses **1.2.47** hrasva.
@@ -36,8 +36,8 @@ SUTRA = SutraRecord(
     sutra_id       = "2.4.18",
     sutra_type     = SutraType.SAMJNA,
     r1_form_identity_exempt=True,
-    text_slp1      = "avyayIBAvasya napuMsakam",
-    text_dev       = "अव्ययीभावस्य नपुंसकम्",
+    text_slp1      = 'avyayIBAvaSca',
+    text_dev       = 'अव्ययीभावश्च',
     padaccheda_dev = "अव्ययीभावस्य / नपुंसकम्",
     why_dev        = "अव्ययीभाव-समासः नपुंसकलिङ्गः (१.२.४७ ह्रस्व-प्रसङ्गः)।",
     anuvritti_from = ("2.1.5",),

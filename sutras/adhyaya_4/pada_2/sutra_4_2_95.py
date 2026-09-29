@@ -1,5 +1,5 @@
 """
-4.2.95  कत्त्र्यादिभ्यो ढकञ्  —  VIDHI
+4.2.95  कत्र्यादिभ्यो ढकञ्  —  VIDHI
 
 Padaccheda: कत्त्रि-आदिभ्यः ढकञ्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.2.95",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "kattryAdiByo QakaY",
-    text_dev              = "कत्त्र्यादिभ्यो ढकञ्",
+    text_slp1             = 'katryAdiByo QakaY',
+    text_dev              = 'कत्र्यादिभ्यो ढकञ्',
     padaccheda_dev        = "कत्त्रि-आदिभ्यः ढकञ्",
     why_dev               = "(सूत्रम् 4.2.95) कत्त्र्यादिभ्यो ढकञ्।",
     anuvritti_from        = ('4.1.1',),

@@ -58,8 +58,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.18",
     sutra_type=SutraType.VIDHI,
-    text_slp1="pari-vi-aveByaH kriyaH",
-    text_dev="परिव्यवेभ्यः क्रियः",
+    text_slp1='parivyaveByaH kriyaH',
+    text_dev='परिव्यवेभ्यः क्रियः',
     padaccheda_dev="परि-वि-अवेभ्यः (पञ्चमी-बहुवचन) / क्रियः (षष्ठी)",
     why_dev=(
         "परि-, वि-, अव-पूर्वस्य कृ-धातोः प्रयोगे आत्मनेपदम् — "

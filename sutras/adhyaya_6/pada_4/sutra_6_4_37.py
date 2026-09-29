@@ -1,5 +1,5 @@
 """
-6.4.37  अनुदात्तोपदेशवनतितनोत्यादीनाम् अनुनासिकलोपो झलि क्ङिति  —  VIDHI (narrow demo)
+6.4.37  अनुदात्तोपदेशवनतितनोत्यादीनामनुनासिक लोपो झलि क्ङिति  —  VIDHI (narrow demo)
 
 Narrow v3 (संगसीष्ट / ``saGgasIzwa``):
   When the *dhātu* ``gam`` retains a final *anunāsika* ``m`` before a *jhal*‑initial
@@ -69,9 +69,9 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.4.37",
     sutra_type=SutraType.VIDHI,
-    text_slp1="anudAttopadeza vanatitanotyAdInAm anunAsika lopaH Jali kNiti",
+    text_slp1='anudAttopadeSavanatitanotyAdInAmanunAsika lopo Jali kNiti',
     text_dev=(
-        "अनुदात्तोपदेशवनतितनोत्यादीनामनुनासिकलोप झलि क्ङिति (डेमो-खण्डः)"
+        'अनुदात्तोपदेशवनतितनोत्यादीनामनुनासिक लोपो झलि क्ङिति'
     ),
     padaccheda_dev=(
         "अनुदात्तोपदेश-… / अनुनासिकस्य / लोपः / झलि / क्ङिति"

@@ -1,5 +1,5 @@
 """
-5.2.31  नते नासिकायाः संज्ञायां टीटञ्नाटज्भ्राटचः  —  VIDHI
+5.2.31  नते नासिकायाः संज्ञायां टीटञ्नाटज्भ्रटचः  —  VIDHI
 
 Padaccheda: नते नासिकायाः संज्ञायाम् टीटच्-नाटच्-भ्रटचः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.31",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "nate nAsikAyAH saMjYAyAM wIwaYnAwajBrAwacaH",
-    text_dev              = "नते नासिकायाः संज्ञायां टीटञ्नाटज्भ्राटचः",
+    text_slp1             = 'nate nAsikAyAH saMjYAyAM wIwaYnAwajBrawacaH',
+    text_dev              = 'नते नासिकायाः संज्ञायां टीटञ्नाटज्भ्रटचः',
     padaccheda_dev        = "नते नासिकायाः संज्ञायाम् टीटच्-नाटच्-भ्रटचः",
     why_dev               = "(सूत्रम् 5.2.31) नते नासिकायाः संज्ञायां टीटञ्नाटज्भ्राटचः।",
     anuvritti_from        = ('5.1.1',),

@@ -169,8 +169,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.4.82",
     sutra_type=SutraType.VIDHI,
-    text_slp1="parasmaipadAnAm Ralatusu... (narrow)",
-    text_dev="परस्मैपदानां णलतुसुस्थलथुसणल्वमाः",
+    text_slp1='parasmEpadAnAM RalatususTalaTusaRalvamAH',
+    text_dev='परस्मैपदानां णलतुसुस्थलथुसणल्वमाः',
     padaccheda_dev="परस्मैपदानाम् / णल-तुसु-स्थ-लथुस्-णल्-वमाः",
     why_dev="लिटि परस्मैपदे तस् → अतुस्; एकवचने तिप् → णल् (प०३६); सामान्य-लिट्-आदेशः।",
     anuvritti_from=("3.4.78",),

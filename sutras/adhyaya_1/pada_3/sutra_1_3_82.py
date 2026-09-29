@@ -57,8 +57,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.82",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="parerMfzaH",
-    text_dev="परेर्मृषः",
+    text_slp1='parermfzaH',
+    text_dev='परेर्मृषः',
     padaccheda_dev="परेः (पञ्चमी-एकवचन) / मृषः (षष्ठी-एकवचन)",
     why_dev=(
         "परि-पूर्वकस्य मृष्-धातोः आत्मनेपदम् — "

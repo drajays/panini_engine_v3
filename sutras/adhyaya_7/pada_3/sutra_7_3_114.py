@@ -1,5 +1,5 @@
 """
-7.3.114  सर्वनाम्नः स्याट् ह्रस्वश्च  —  VIDHI
+7.3.114  सर्वनाम्नः स्याड्ढ्रस्वश्च  —  VIDHI
 
 पदच्छेदः  सर्वनाम्नः (पञ्चमी-एकवचनम्), स्याट् (प्रथमा-एकवचनम्),
           ह्रस्वः (प्रथमा-एकवचनम्), च (अव्ययम्)
@@ -117,8 +117,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.3.114",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "sarvanAmnaH ApaH Niti supi syAw aNgasya hrasvaH ca",
-    text_dev       = "सर्वनाम्नः आप ङिति सुपि स्याट् अङ्गस्य ह्रस्वश्च",
+    text_slp1      = 'sarvanAmnaH syAqQrasvaSca',
+    text_dev       = 'सर्वनाम्नः स्याड्ढ्रस्वश्च',
     padaccheda_dev = (
         "सर्वनाम्नः (पञ्चमी-एकवचनम्), स्याट् (प्रथमा-एकवचनम्), "
         "ह्रस्वः (प्रथमा-एकवचनम्), च (अव्ययम्)"

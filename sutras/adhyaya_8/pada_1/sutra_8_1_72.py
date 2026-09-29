@@ -46,8 +46,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.1.72",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="AmantritaM pUrvam avidyamAnavat",
-    text_dev="आमन्त्रितं पूर्वमविद्यमानवत्",
+    text_slp1='AmantritaM pUrvamavidyamAnavat',
+    text_dev='आमन्त्रितं पूर्वमविद्यमानवत्',
     padaccheda_dev="आमन्त्रितम् / पूर्वम् / अविद्यमानवत्",
     why_dev="पूर्वम् आमन्त्रितम् अविद्यमानवत् (*prakriya_32*; separated JSON **८।१।८२** → शास्त्रीय **८.१.७२**)।",
     anuvritti_from=(),

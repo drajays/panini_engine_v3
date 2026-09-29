@@ -67,8 +67,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.1.37",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "samAse ananyapUrve ktvo lyap",
-    text_dev       = "समासेऽनञ्पूर्वे क्त्वो ल्यप्",
+    text_slp1      = 'samAsenaYpUrve ktvo lyap',
+    text_dev       = 'समासेऽनञ्पूर्वे क्त्वो ल्यप्',
     padaccheda_dev = "समासे / अनञ्-पूर्वे / क्त्वः / ल्यप्",
     why_dev        = "उपसर्गादि-पूर्वे क्त्वा-प्रत्ययस्य ल्यप्-आदेशः (नरूप्य-डेमो)।",
     anuvritti_from = ("7.1.12",),

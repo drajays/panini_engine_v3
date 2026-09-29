@@ -1,5 +1,5 @@
 """
-6.2.106  बहुव्रीहौ विश्वं संज्ञयाम्  —  VIDHI
+6.2.106  बहुव्रीहौ विश्वं संज्ञायाम्  —  VIDHI
 
 Padaccheda: बहुव्रीहौ विश्वम् संज्ञायाम्
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.2.106",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "bahuvrIhO viSvaM saMjYayAm",
-    text_dev              = "बहुव्रीहौ विश्वं संज्ञयाम्",
+    text_slp1             = 'bahuvrIhO viSvaM saMjYAyAm',
+    text_dev              = 'बहुव्रीहौ विश्वं संज्ञायाम्',
     padaccheda_dev        = "बहुव्रीहौ विश्वम् संज्ञायाम्",
     why_dev               = "(सूत्रम् 6.2.106) बहुव्रीहौ विश्वं संज्ञयाम्।",
     anuvritti_from        = ('6.1.1',),

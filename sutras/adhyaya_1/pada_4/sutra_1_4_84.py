@@ -1,5 +1,5 @@
 """
-1.4.84  अनुर्लक्षणे  (anur lakṣaṇe)  —  VIDHI
+1.4.84  अनुर्लक्षणे  —  VIDHI
 
 *Padaccheda:* *anuḥ* (prathamā), *lakṣaṇe* (saptamī).
 
@@ -32,8 +32,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.84",
     sutra_type           = SutraType.VIDHI,
-    text_slp1            = "anur lakzaRe",
-    text_dev             = "अनुर्लक्षणे",
+    text_slp1            = 'anurlakzaRe',
+    text_dev             = 'अनुर्लक्षणे',
     padaccheda_dev       = "अनुः / लक्षणे",
     why_dev              = (
         "लक्षण-अर्थे वर्तमानः 'अनु' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

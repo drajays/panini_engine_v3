@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id         = "1.2.1",
     sutra_type       = SutraType.ATIDESHA,
-    text_slp1        = "gANkuwAdibhyo aY-Rin-Nit",
-    text_dev         = "गाङ्कुटादिभ्योऽञ्णिन्ङित्",
+    text_slp1        = 'gANkuwAdiByoYRinNit',
+    text_dev         = 'गाङ्कुटादिभ्योऽञ्णिन्ङित्',
     padaccheda_dev   = "गाङ्-कुटादिभ्यः अञ्-णित्-ङित्",
     why_dev          = "गाङ्/कुटादि धातोः परस्य प्रत्ययस्य (अञ्-णित्-भिन्नस्य) "
                        "ङित्वम् अतिदिश्यते।",

@@ -1,5 +1,5 @@
 """
-6.4.114  दद्धस्य च  —  VIDHI (narrow demo: *sic* residue after *iṭ* + *dh* → *ḍ*)
+6.4.114  इद्दरिद्रस्य  —  VIDHI (narrow demo: *sic* residue after *iṭ* + *dh* → *ḍ*)
 
 Engine scope (**P026** *avaDIt*): after *pada* merge, **before** **8.2.1**
 (*Tripāḍī* — *aṣṭādhyāyī* 6.* rules are not ``is_tripadi`` and would otherwise
@@ -73,8 +73,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.4.114",
     sutra_type=SutraType.VIDHI,
-    text_slp1="dadDasya ca (P026 narrow)",
-    text_dev="दद्धस्य च",
+    text_slp1='iddaridrasya',
+    text_dev='इद्दरिद्रस्य',
     padaccheda_dev="दद्धस्य / च",
     why_dev="सिच्-सकारस्य लोपः, धकारस्य ठत्वं च (अवधीत्-ट्रिपादी-डेमो)।",
     anuvritti_from=("6.4.1",),

@@ -27,8 +27,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="2.2.24",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="anekam anyapadArTe",
-    text_dev="अनेकमन्यपदार्थे",
+    text_slp1='anekamanyapadArTe',
+    text_dev='अनेकमन्यपदार्थे',
     padaccheda_dev="अनेकम् / अन्य-पद-अर्थे",
     why_dev="बहुव्रीहौ अनेकेन अन्य-पदार्थे (P024 डेमो) — संज्ञा-चिह्ननम्।",
     anuvritti_from=("2.2.23",),

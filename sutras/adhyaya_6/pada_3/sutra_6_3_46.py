@@ -69,8 +69,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.3.46",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "An mahatH samAnADikaraRajAtIyayoH",
-    text_dev       = "आन्महतः समानाधिकरणजातीययोः",
+    text_slp1      = 'AnmahataH samAnADikaraRajAtIyayoH',
+    text_dev       = 'आन्महतः समानाधिकरणजातीययोः',
     padaccheda_dev = "आन् / महतः / समानाधिकरणजातीययोः",
     why_dev        = "समानाधिकरणे (कर्मधारयादौ) महत्-शब्दस्य अन्त्य-तकारस्थाने आकारादेशः।",
     anuvritti_from = (),

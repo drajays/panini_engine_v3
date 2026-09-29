@@ -1,5 +1,5 @@
 """
-3.1.48  णिश्रिद्रुस्रुभ्यः कर्त्रि चङ्  —  VIDHI (narrow: P037 *caṅ* before *luṅ*)
+3.1.48  णिश्रिद्रुस्रुभ्यः कर्तरि चङ्  —  VIDHI (narrow: P037 *caṅ* before *luṅ*)
 
 Teaching JSON **P037** (*āṭīṭat*, *aṭ* + *ṇic* + *luṅ* + *caṅ* + *tip*):
   insert a *caṅ* *vikaraṇa* placeholder immediately before the *lakāra* ``luG``
@@ -92,8 +92,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.1.48",
     sutra_type=SutraType.VIDHI,
-    text_slp1="RiSridruguroByaH kartari zi caY",
-    text_dev="णिश्रिद्रुस्रुभ्यः कर्तरि चङ्",
+    text_slp1='RiSridrusruByaH kartari caN',
+    text_dev='णिश्रिद्रुस्रुभ्यः कर्तरि चङ्',
     padaccheda_dev="णि-श्रि-द्रु-स्रु-भ्यः कर्तरि चङ्",
     why_dev=(
         "ण्यन्त-आदिषु धातुषु कर्तरि लुङि चङावागमः (ग्लास-बॉक्स्: P३७ — "

@@ -32,8 +32,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.4.110",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "virAmo avasAnam",
-    text_dev       = "विरामोऽवसानम्",
+    text_slp1      = 'virAmovasAnam',
+    text_dev       = 'विरामोऽवसानम्',
     padaccheda_dev = "विरामः अवसानम्",
     why_dev        = "विरामः अवसान-संज्ञकः — खर्-अवसानयोः विसर्जनीये प्रसङ्गः।",
     anuvritti_from = ("1.4.1",),

@@ -1,5 +1,5 @@
 """
-5.2.3  यवयवकषष्टिकादत्  —  VIDHI
+5.2.3  यवयवकषष्टिकाद्यत्  —  VIDHI
 
 Padaccheda: यव-यवक-षष्टिकात् यत्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.3",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "yavayavakazazwikAdat",
-    text_dev              = "यवयवकषष्टिकादत्",
+    text_slp1             = 'yavayavakazazwikAdyat',
+    text_dev              = 'यवयवकषष्टिकाद्यत्',
     padaccheda_dev        = "यव-यवक-षष्टिकात् यत्",
     why_dev               = "(सूत्रम् 5.2.3) यवयवकषष्टिकादत्।",
     anuvritti_from        = ('5.1.1',),

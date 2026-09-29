@@ -122,8 +122,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "4.1.4",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "ajAdi ataH prAtipadikAt striyAm wAp pratyayaH",
-    text_dev       = "अजाद्यतः प्रातिपदिकात् स्त्रियाम् टाप् प्रत्ययः",
+    text_slp1      = 'ajAdyatazwAp',
+    text_dev       = 'अजाद्यतष्टाप्',
     padaccheda_dev = (
         "अजादि-अतः (पञ्चमी-एकवचनम्) / टाप् (प्रथमा-एकवचनम्)"
     ),

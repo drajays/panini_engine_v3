@@ -1,5 +1,5 @@
 """
-3.4.69  लः कर्तरि कर्मणि च, भावे कर्तरि च अकर्मकेभ्यः धातोः परश्च  —  PARIBHASHA
+3.4.69  लः कर्मणि च भावे चाकर्मकेभ्यः  —  PARIBHASHA
 
 *Padaccheda* (Kāśikā order, teaching layout):
 
@@ -58,8 +58,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "3.4.69",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "laH kartrA karmaRi ca BAve kartrA ca akarmakAByaH DAtoH paraH",
-    text_dev       = "लः कर्तरि कर्मणि च, भावे कर्तरि च अकर्मकेभ्यः धातोः परः",
+    text_slp1      = 'laH karmaRi ca BAve cAkarmakeByaH',
+    text_dev       = 'लः कर्मणि च भावे चाकर्मकेभ्यः',
     padaccheda_dev = (
         "लः (प्रथमा-बहुवचनम्) · कर्मणि (सप्तमी) · च · भावे (सप्तमी) · च · "
         "अकर्मकेभ्यः (पञ्चमी-बहुवचनम्) · (अन्वितम्) कर्तरि (सप्तमी) — धातोः · परः"

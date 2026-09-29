@@ -51,8 +51,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.42",
     sutra_type=SutraType.VIDHI,
-    text_slp1="propAByAM samArTAByAm",
-    text_dev="प्रोपाभ्यां समर्थाभ्याम्",
+    text_slp1='propAByAM samarTAByAm',
+    text_dev='प्रोपाभ्यां समर्थाभ्याम्',
     padaccheda_dev="प्र-उपाभ्याम् (पञ्चमी-द्विवचन) / समर्थाभ्याम् (पञ्चमी-द्विवचन)",
     why_dev=(
         "प्र-पूर्वकस्य वा उप-पूर्वकस्य धातोः समर्थ-प्रयोगे आत्मनेपदम् — "

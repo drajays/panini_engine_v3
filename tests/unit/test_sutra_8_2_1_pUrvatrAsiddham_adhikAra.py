@@ -16,8 +16,8 @@ def test_sutra_metadata():
     assert r.sutra_id == "8.2.1"
     assert r.sutra_type is SutraType.ADHIKARA
     assert r.adhikara_scope == ("8.2.1", "8.4.68")
-    assert r.text_slp1 == "pUrvatrAsiddham"
-    assert r.text_dev == "पूर्वत्रासिद्धम्"
+    assert r.text_slp1 == 'pUrvatrAsidDam'
+    assert r.text_dev == 'पूर्वत्रासिद्धम्'
 
 
 def test_act_sets_tripadi_zone_and_pushes_once():

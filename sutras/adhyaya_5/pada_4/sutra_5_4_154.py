@@ -67,8 +67,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="5.4.154",
     sutra_type=SutraType.VIDHI,
-    text_slp1="SezAd viBAzA",
-    text_dev="शेषाद्विभाषा",
+    text_slp1='SezAdviBAzA',
+    text_dev='शेषाद्विभाषा',
     padaccheda_dev="शेषात् / विभाषा",
     why_dev="समासान्ते शेष-विषये कप्-प्रत्ययः विभाषा (P027 — बहु+खट्वा)।",
     anuvritti_from=("5.4.1",),

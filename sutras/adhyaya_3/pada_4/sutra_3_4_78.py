@@ -1,5 +1,5 @@
 """
-3.4.78  लस्य तिप्-तस्-…-महिङ् —  VIDHI
+3.4.78  तिप्तस्झिसिप्थस्थमिब्वस्मस् तातांझथासाथांध्वमिड्वहिमहिङ् —  VIDHI
 
 **Padaccheda (teaching):** *tip* (1.1) … *mahiṅ* (1.1) — the eighteen *tiṅ* *ādeśa* items.
 
@@ -102,10 +102,9 @@ SUTRA = SutraRecord(
     sutra_id       = "3.4.78",
     sutra_type     = SutraType.VIDHI,
     text_slp1      = (
-        "pratyayaH, paraScA, AdyudAttaz ca, DAtA, lasaH — "
-        f"lasaH {_TIN_LIST_SLP1} pratyayaH DAtoH paraH"
+        'tiptasJisipTasTamibvasmas tAtAMJaTAsATAMDvamiqvahimahiN'
     ),
-    text_dev       = "लस्य तिप्-तस्-झि-…-महिङ् प्रत्ययः धातोः परः",
+    text_dev       = 'तिप्तस्झिसिप्थस्थमिब्वस्मस् तातांझथासाथांध्वमिड्वहिमहिङ्',
     padaccheda_dev = "लः / तिप्-तस्-झि-… (परस्मैपदादि) / प्रत्ययः / धातोः / परः",
     why_dev        = _WHY,
     anuvritti_from = ("3.1.1", "3.1.2", "3.1.3", "3.1.91", "3.4.77"),

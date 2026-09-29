@@ -1,5 +1,5 @@
 """
-1.1.21  (ādyantavad ekasmin)  —  PARIBHĀṢĀ; *devanāgarī* = ``_TEXT_DEV`` (ashtadhyayi *i* 11021 *s* line).
+1.1.21  आद्यन्तवदेकस्मिन्  —  PARIBHĀṢĀ; *devanāgarī* = ``_TEXT_DEV`` (ashtadhyayi *i* 11021 *s* line).
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=11021):** in a single locus (*ekasmin*), (treat) as *ādi*–*anta*-
 *vat* for *vyapadeśa* / *atideśa* *prayoga* — the *jñāpaka* *paribhāṣā* that underwrites *ādyantavad*
@@ -43,8 +43,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.21",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "Adyantavad ekasmin",
-    text_dev       = _TEXT_DEV,
+    text_slp1      = 'Adyantavadekasmin',
+    text_dev       = 'आद्यन्तवदेकस्मिन्',
     padaccheda_dev = "आदि-अन्तवत् / एकस्मिन्",
     why_dev        = _WHY,
     anuvritti_from = (),

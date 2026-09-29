@@ -1,5 +1,5 @@
 """
-1.4.1  आ कडारादेका संज्ञा  (ā kaḍārād ekā saṃjñā)  —  ADHIKARA
+1.4.1  आ कडारादेका संज्ञा  —  ADHIKARA
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=14001):** this is the traditional
 *eka-saṃjñā* adhikāra: “from here up to 2.2.38, (certain items) have one
@@ -26,7 +26,7 @@ def act(state: State) -> State:
     state.adhikara_stack.append({
         "id"        : "1.4.1",
         "scope_end" : "2.2.38",
-        "text_dev"  : "आ कडारादेका संज्ञा",
+        "text_dev"  : 'आ कडारादेका संज्ञा',
     })
     return state
 
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id        = "1.4.1",
     sutra_type      = SutraType.ADHIKARA,
-    text_slp1       = "A kaDArAd ekA saMjYA",
-    text_dev        = "आ कडारादेका संज्ञा",
+    text_slp1       = 'A kaqArAdekA saMjYA',
+    text_dev        = 'आ कडारादेका संज्ञा',
     padaccheda_dev  = "आ / कडारात् / एका / संज्ञा",
     why_dev         = "१.४.१ इत्यतः २.२.३८ पर्यन्तम् 'एकसंज्ञा' अधिकारः प्रवर्तते।",
     anuvritti_from  = (),

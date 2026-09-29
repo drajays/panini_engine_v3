@@ -295,8 +295,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.4.148",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "yasyeti ca (aNgasya)",
-    text_dev       = "यस्येति च (अङ्गस्य)",
+    text_slp1      = 'yasyeti ca',
+    text_dev       = 'यस्येति च',
     padaccheda_dev = "यस्य इति च — अङ्गस्य",
     why_dev        = "भाधिकारे इत्यादौ परे अङ्गान्त्यस्य अ/इ-वर्णस्य लोपः।",
     anuvritti_from = ("6.4.1", "6.4.129"),

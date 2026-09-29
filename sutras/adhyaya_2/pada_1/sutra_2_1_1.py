@@ -31,8 +31,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "2.1.1",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "samarthaH padavidhiH",
-    text_dev       = "समर्थः पदविधिः",
+    text_slp1      = 'samarTaH padaviDiH',
+    text_dev       = 'समर्थः पदविधिः',
     padaccheda_dev = "समर्थः / पदविधिः",
     why_dev        = (
         "पदविधि-प्रसङ्गे सामर्थ्य-अपेक्षा — इह यन्त्रे अर्थ-अन्धत्वात् "

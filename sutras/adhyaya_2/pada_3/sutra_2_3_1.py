@@ -1,5 +1,5 @@
 """
-2.3.1  अनभिहिते  (anabhihite)  —  ADHIKARA
+2.3.1  अनभिहिते  —  ADHIKARA
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=23001):** opens the traditional
 *anabhihita* adhikāra in vibhakti-prakaraṇa.
@@ -26,7 +26,7 @@ def act(state: State) -> State:
     state.adhikara_stack.append({
         "id"        : "2.3.1",
         "scope_end" : "2.3.73",
-        "text_dev"  : "अनभिहिते",
+        "text_dev"  : 'अनभिहिते',
     })
     return state
 
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id        = "2.3.1",
     sutra_type      = SutraType.ADHIKARA,
-    text_slp1       = "anabhihite",
-    text_dev        = "अनभिहिते",
+    text_slp1       = 'anaBihite',
+    text_dev        = 'अनभिहिते',
     padaccheda_dev  = "अनभिहिते",
     why_dev         = "२.३.१ इत्यतः २.३.७३ पर्यन्तं 'अनभिहित' अधिकारः प्रवर्तते।",
     anuvritti_from  = (),

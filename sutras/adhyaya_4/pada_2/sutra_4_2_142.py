@@ -1,5 +1,5 @@
 """
-4.2.142  कन्थापलदनगरग्रामह्रदोत्तरपदात्  —  VIDHI
+4.2.142  कन्थापलदनगरग्रामहृदोत्तरपदात्  —  VIDHI
 
 Padaccheda: कन्था-पलद-नगर-ग्राम-ह्रद-उत्तरपदात्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.2.142",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "kanTApaladanagaragrAmahradottarapadAt",
-    text_dev              = "कन्थापलदनगरग्रामह्रदोत्तरपदात्",
+    text_slp1             = 'kanTApaladanagaragrAmahfdottarapadAt',
+    text_dev              = 'कन्थापलदनगरग्रामहृदोत्तरपदात्',
     padaccheda_dev        = "कन्था-पलद-नगर-ग्राम-ह्रद-उत्तरपदात्",
     why_dev               = "(सूत्रम् 4.2.142) कन्थापलदनगरग्रामह्रदोत्तरपदात्।",
     anuvritti_from        = ('4.1.1',),

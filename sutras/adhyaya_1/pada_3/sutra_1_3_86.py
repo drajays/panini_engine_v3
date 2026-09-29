@@ -68,8 +68,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.86",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="buDayuDanaSajaneNprudrustByo NeH",
-    text_dev="बुधयुधनशजनेङ्प्रुद्रुस्रुभ्यो णेः",
+    text_slp1='buDayuDanaSajaneNprudrusruByo ReH',
+    text_dev='बुधयुधनशजनेङ्प्रुद्रुस्रुभ्यो णेः',
     padaccheda_dev="बुध-युध-नश-जन-इङ्-प्रु-द्रु-स्रुभ्यः (पञ्चमी-बहुवचन) / णेः (षष्ठी-एकवचन)",
     why_dev=(
         "बुध-युध-नश-जन-इङ्-प्रु-द्रु-स्रु-धातूनां णि-प्रत्यये परे आत्मनेपदम् — "

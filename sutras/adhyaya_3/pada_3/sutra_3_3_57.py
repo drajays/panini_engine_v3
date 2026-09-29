@@ -1,5 +1,5 @@
 """
-3.3.57  ऋदोरप्  —  VIDHI
+3.3.57  ॠदोरप्  —  VIDHI
 
 Padaccheda: ॠत्-ओः अप्
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.3.57",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "fdorap",
-    text_dev              = "ऋदोरप्",
+    text_slp1             = 'Fdorap',
+    text_dev              = 'ॠदोरप्',
     padaccheda_dev        = "ॠत्-ओः अप्",
     why_dev               = "धातोः प्रत्ययः (३.3.57)।",
     anuvritti_from        = ('3.1.1',),

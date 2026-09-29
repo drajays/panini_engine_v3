@@ -1,5 +1,5 @@
 """
-1.2.72  त्यदादिगणः  —  SAMJNA
+1.2.72  त्यदादीनि सर्वैर्नित्यम्  —  SAMJNA
 
 Operational role (v3.7):
   - Tag a prātipadika aṅga as `tyadadi` when its upadeśa is in the
@@ -59,8 +59,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.2.72",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "tyadAdi gaRaH",
-    text_dev       = "त्यदादिगणः",
+    text_slp1      = 'tyadAdIni sarvErnityam',
+    text_dev       = 'त्यदादीनि सर्वैर्नित्यम्',
     padaccheda_dev = "त्यदादि-गणः",
     why_dev        = "त्यदादि-गण-पठित-शब्दाः ‘त्यदादि’ संज्ञकाः (तद्-प्रकारे)।",
     anuvritti_from = (),

@@ -1,5 +1,5 @@
 """
-4.2.24  साऽस्य देवता  —  VIDHI
+4.2.24  सास्य देवता  —  VIDHI
 
 Padaccheda: सा अस्य देवता
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.2.24",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "sA'sya devatA",
-    text_dev              = "साऽस्य देवता",
+    text_slp1             = 'sAsya devatA',
+    text_dev              = 'सास्य देवता',
     padaccheda_dev        = "सा अस्य देवता",
     why_dev               = "(सूत्रम् 4.2.24) साऽस्य देवता।",
     anuvritti_from        = ('4.1.1',),

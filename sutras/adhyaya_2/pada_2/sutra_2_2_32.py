@@ -1,5 +1,5 @@
 """
-2.2.32  द्वंद्वे घि  —  VIDHI
+2.2.32  द्वन्द्वे घि  —  VIDHI
 
 Padaccheda: द्वन्द्वे घि
 
@@ -30,8 +30,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.2.32",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "dvaMdve Gi",
-    text_dev              = "द्वंद्वे घि",
+    text_slp1             = 'dvandve Gi',
+    text_dev              = 'द्वन्द्वे घि',
     padaccheda_dev        = "द्वन्द्वे घि",
     why_dev               = "द्वन्द्वे घि-संज्ञा (२.२.३२)।",
     anuvritti_from        = ('2.2.1',),

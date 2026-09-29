@@ -127,8 +127,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.1.43",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "suDanapuMsakasya",
-    text_dev       = "सुडनपुंसकस्य",
+    text_slp1      = 'suqanapuMsakasya',
+    text_dev       = 'सुडनपुंसकस्य',
     padaccheda_dev = "सुड्-अनपुंसकस्य",
     why_dev        = "सु-प्रत्ययः (नपुंसकाद् भिन्नः) सर्वनामस्थान-संज्ञकः।",
     anuvritti_from = (),

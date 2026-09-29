@@ -1,5 +1,5 @@
 """
-1.4.102  तानि त्रीणि त्रीणि तिङः एकवचन-द्विवचन-बहुवचनानि एकशः  —  SAMJNA
+1.4.102  तान्येकवचनद्विवचनबहुवचनान्येकशः  —  SAMJNA
 
 *Padaccheda:* *tāni* (prathamā *bahuvacanam*), *trīṇi trīṇi* (dvis), *tiṅaḥ* (ṣaṣṭhī),
 *ekavacana-dvivacana-bahuvacanāni* (prathamā *bahuvacanam*), *ekaśaḥ* (avyaya).
@@ -89,10 +89,10 @@ SUTRA = SutraRecord(
     sutra_id       = "1.4.102",
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = (
-        "tAni trIRi trIRi tiNgaH ekavacana-dvivacana-bahuvacanAni ekaSaH"
+        'tAnyekavacanadvivacanabahuvacanAnyekaSaH'
     ),
     text_dev       = (
-        "तानि त्रीणि त्रीणि तिङः एकवचन-द्विवचन-बहुवचनानि एकशः (१.४.१०१-अनुवृत्ति, एकसंज्ञा)"
+        'तान्येकवचनद्विवचनबहुवचनान्येकशः'
     ),
     padaccheda_dev = "तानि / त्रीणि-त्रीणि / तिङ् / एकवचन-द्विवचन-बहुवचनानि / एकशः",
     why_dev        = (

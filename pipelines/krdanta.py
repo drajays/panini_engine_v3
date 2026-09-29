@@ -7,7 +7,7 @@ explicitly scheduling sūtras (no inline bundles).
 Recipes (step order aligned with pedagogical write-ups ``pachak.md`` /
 ``nayak.md``):
 
-  • **qupac~z** + **Nvul** → **pAcaka**: saṃjñā / paribhāṣā (1.1.1, 1.1.3, 1.1.7, 1.1.8, 1.1.9, 1.1.10, 1.1.11, 1.1.12, 1.1.13, 1.1.14, 1.1.100, 1.1.15, 1.1.16, 1.1.17, 1.1.18, 1.1.19, 1.1.20, 1.1.21, 1.1.46, 1.1.22, 1.1.23, 1.1.24, 1.1.50) → dhātu
+  • **qupac~z** + **Nvul** → **pAcaka**: saṃjñā / paribhāṣā (1.1.1, 1.1.3, 1.1.7, 1.1.8, 1.1.9, 1.1.10, 1.1.11, 1.1.12, 1.1.13, 1.1.14, 1.1.15, 1.1.16, 1.1.17, 1.1.18, 1.1.19, 1.1.20, 1.1.21, 1.1.46, 1.1.22, 1.1.23, 1.1.24, 1.1.50) → dhātu
     it‑prakaraṇa → **6.1.65** (no-op) → kṛt adhikāra (**3.1.1**, **3.1.2**,
     **3.1.3**, **3.1.91**) → ``kartari`` meta + **3.4.67** → **3.1.133** → kṛt it →
     **7.1.1** → saṃjñā (**1.4.13**, **1.1.65**) → **6.4.1** → **7.2.116** →
@@ -391,13 +391,13 @@ def derive_bhaNguram() -> State:
         run_subanta_sup_attach_and_finish,
     )
 
-    s = build_dhatu_state("BaYjo")
+    s = build_dhatu_state("BaYjo~")          # भञ्जोँ: the ओँ is an anunāsika it (1.3.2)
     s = apply_rule("1.1.1", s)
     s = apply_rule("1.1.73", s)
     s = P01_samjna_1_1_3_to_1_1_100(s=s, include_luk_block=True)
     s = P01_samjna_1_1_15_to_1_1_24(s)
     s = apply_rule("1.1.50", s)
-    for sid in ("1.3.1", "1.3.2", "1.3.5", "1.3.200"):
+    for sid in ("1.3.1", "1.3.2", "1.3.5"):
         s = apply_rule(sid, s)
     s = P00_it_halantyam_lopa_yathasankhyam(s)
     for t in s.terms:

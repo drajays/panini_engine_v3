@@ -1,5 +1,5 @@
 """
-2.1.6  अव्ययं विभक्तिसमीपसमृद्धि...  —  VIDHI (narrow v3 demo slice)
+2.1.6  अव्ययं विभक्तिसमीपसमृद्धिव्यृद्ध्यर्थाभावात्ययासम्प्रतिशब्दप्रादुर्भावपश्चाद्यथानुपूर्व्ययौगपद्यसादृश्यसम्पत्तिसाकल्यान्तवचनेषु  —  VIDHI (narrow v3 demo slice)
 
 This engine uses 2.1.5 as the avyayībhāva adhikāra opener.  This file provides
 a minimal, auditable *samāsa* assignment used by demos like **adhistri**:
@@ -36,8 +36,8 @@ SUTRA = SutraRecord(
     sutra_id       = "2.1.6",
     sutra_type     = SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1      = "avyayaM vibhaktisamIpasamfdDhi...",
-    text_dev       = "अव्ययं विभक्तिसमीपसमृद्धि…",
+    text_slp1      = 'avyayaM viBaktisamIpasamfdDivyfdDyarTABAvAtyayAsampratiSabdaprAdurBAvapaScAdyaTAnupUrvyayOgapadyasAdfSyasampattisAkalyAntavacanezu',
+    text_dev       = 'अव्ययं विभक्तिसमीपसमृद्धिव्यृद्ध्यर्थाभावात्ययासम्प्रतिशब्दप्रादुर्भावपश्चाद्यथानुपूर्व्ययौगपद्यसादृश्यसम्पत्तिसाकल्यान्तवचनेषु',
     padaccheda_dev = "अव्ययम् / विभक्ति-समीप-समृद्धि…",
     why_dev        = "अव्यय-पूर्वकः समासः (अव्ययीभाव) — demo arm meta.",
     anuvritti_from = ("2.1.5",),

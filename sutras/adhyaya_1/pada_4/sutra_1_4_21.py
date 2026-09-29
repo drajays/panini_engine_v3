@@ -1,5 +1,5 @@
 """
-1.4.21  बहुषु बहुवचनम्  (bahuṣu bahuvacana)  —  NIYAMA
+1.4.21  बहुषु बहुवचनम्  —  NIYAMA
 
 **Pāṭha:** In the case of many (*bahuṣu*), [the affix used is] the plural
 (*bahuvacana*).
@@ -28,8 +28,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id               = "1.4.21",
     sutra_type             = SutraType.NIYAMA,
-    text_slp1              = "bahu zu bahuvacanaM",
-    text_dev               = "बहुषु बहुवचनम्",
+    text_slp1              = 'bahuzu bahuvacanam',
+    text_dev               = 'बहुषु बहुवचनम्',
     padaccheda_dev         = "बहुषु / बहुवचनम्",
     why_dev                = "बहुषु (त्रयेषु वा अधिकेषु) बहुवचनं प्रयुज्यते।",
     anuvritti_from         = ("1.4.1",),

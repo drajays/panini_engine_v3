@@ -45,8 +45,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.65",
     sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1               = "vfdDo yUnA tallakzaRazcedeva vizezaH",
-    text_dev                = "वृद्धो यूना तल्लक्षणश्चेदेव विशेषः",
+    text_slp1               = 'vfdDo yUnA tallakzaRaScedeva viSezaH',
+    text_dev                = 'वृद्धो यूना तल्लक्षणश्चेदेव विशेषः',
     padaccheda_dev          = "वृद्धः / यूना / तत्-लक्षणः / चेत् / एव / विशेषः",
     why_dev                 = (
         "वृद्धस्य यूना सह एकशेषे तल्लक्षण एव विशेषो यदा भवति तदा एकशेषः सिध्यति — "

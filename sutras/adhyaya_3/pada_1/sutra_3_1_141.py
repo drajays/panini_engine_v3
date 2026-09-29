@@ -1,5 +1,5 @@
 """
-3.1.141  श्याऽऽद्व्यधास्रुसंस्र्वतीणवसाऽवहृलिहश्लिषश्वसश्च  —  VIDHI
+3.1.141  श्याद्व्यधास्रुसंस्र्वतीणवसाऽवहृलिहश्लिषश्वसश्च  —  VIDHI
 
 Padaccheda: श्या-आत्-व्यध-आस्रु-संस्रु-अतीण्-अवसा-अवहृ-लिह-श्लिष-श्वसः च
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.1.141",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "SyA''dvyaDAsrusaMsrvatIRavasA'vahflihaSlizaSvasaSca",
-    text_dev              = "श्याऽऽद्व्यधास्रुसंस्र्वतीणवसाऽवहृलिहश्लिषश्वसश्च",
+    text_slp1             = 'SyAdvyaDAsrusaMsrvatIRavasAvahflihaSlizaSvasaSca',
+    text_dev              = 'श्याद्व्यधास्रुसंस्र्वतीणवसाऽवहृलिहश्लिषश्वसश्च',
     padaccheda_dev        = "श्या-आत्-व्यध-आस्रु-संस्रु-अतीण्-अवसा-अवहृ-लिह-श्लिष-श्वसः च",
     why_dev               = "धातोः [श्याऽऽद्व्यधास्रुसंस्र्वतीणवसाऽवहृलिहश्लिषश्वसश्च]-प्रत्ययः विहितः (३.१.141)।",
     anuvritti_from        = ('3.1.1',),

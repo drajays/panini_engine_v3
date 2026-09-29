@@ -1,5 +1,5 @@
 """
-8.1.21  बहुवचने वस्नसौ  —  VIDHI
+8.1.21  बहुवचनस्य वस्नसौ  —  VIDHI
 
 Sources consulted:
 - ashtadhyayi.com data.txt row i=801021
@@ -60,8 +60,8 @@ SUTRA = SutraRecord(
     sutra_id="8.1.21",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="bahuvacane vasnasO",
-    text_dev="बहुवचने वस्नसौ",
+    text_slp1='bahuvacanasya vasnasO',
+    text_dev='बहुवचनस्य वस्नसौ',
     padaccheda_dev="बहुवचनस्य वस्-नसौ",
     why_dev="बहुवचन-पदस्य वस्-आदेशः; स्थानिवद्भावेन पदत्वम् (८.२.६६)।",
     anuvritti_from=("8.1.1",),

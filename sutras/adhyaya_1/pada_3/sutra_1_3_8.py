@@ -1,5 +1,5 @@
 """
-1.3.8  उपदेशे लशक्वतद्धिते  —  SAMJNA
+1.3.8  लशक्वतद्धिते  —  SAMJNA
 
 Śāstra / engine role (CONSTITUTION Arts. 1–2, 4, 7)
 ──────────────────────────────────────────────────
@@ -69,8 +69,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.3.8",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "upadeSe laSakv ataddhite it",
-    text_dev       = "उपदेशे लशक्वतद्धिते इत्",
+    text_slp1      = 'laSakvatadDite',
+    text_dev       = 'लशक्वतद्धिते',
     padaccheda_dev = "उपदेशे लशकु-अतद्धिते इत्",
     why_dev        = (
         "अतद्धिते प्रत्ययादौ ल्-श्-कु-वर्णानाम् इत्-संज्ञा; लोपः १.३.९। "

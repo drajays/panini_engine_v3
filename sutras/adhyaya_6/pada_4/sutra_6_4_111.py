@@ -117,8 +117,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.4.111",
     sutra_type=SutraType.VIDHI,
-    text_slp1="Snasor allopaH",
-    text_dev="श्नसोरल्लोपः",
+    text_slp1='SnasorallopaH',
+    text_dev='श्नसोरल्लोपः',
     padaccheda_dev="श्नसोः / अल्-लोपः",
     why_dev="अस्-आद्यचः लोपः अपित्-सार्वधातुके (फलानि सन्ति, कौ स्तः)।",
     anuvritti_from=("6.4.1",),

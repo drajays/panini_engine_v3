@@ -1,5 +1,5 @@
 """
-1.4.62  अनुकरणं चानितिपरम्  (anukараṇaṃ cānitiрaram)  —  SAMJNA
+1.4.62  अनुकरणं चानितिपरम्  —  SAMJNA
 
 An onomatopoeic word (anukаraṇa) that is not followed by the particle "iti"
 also gets the gati-saṃjñā.
@@ -30,8 +30,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.62",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="anukAraRaM cAnitiрaram",
-    text_dev="अनुकरणं चानितिपरम्",
+    text_slp1='anukaraRaM cAnitiparam',
+    text_dev='अनुकरणं चानितिपरम्',
     padaccheda_dev="अनुकरणम् / च / अनिति-परम्",
     why_dev="इतिशब्दपरं न भवति यत् अनुकरणं तत् गति-संज्ञकम् — गति-संज्ञाप्रयोजनार्थं द्वारं स्थाप्यते।",
     anuvritti_from=("1.4.60",),

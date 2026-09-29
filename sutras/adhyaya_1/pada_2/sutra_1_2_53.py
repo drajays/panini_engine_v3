@@ -40,8 +40,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.53",
     sutra_type              = SutraType.PARIBHASHA,
     r1_form_identity_exempt = True,
-    text_slp1               = "tad aSizyaM saMjYApramARatvAt",
-    text_dev                = "तदशिष्यं संज्ञाप्रमाणत्वात्",
+    text_slp1               = 'tadaSizyaM saMjYApramARatvAt',
+    text_dev                = 'तदशिष्यं संज्ञाप्रमाणत्वात्',
     padaccheda_dev          = "तत् / अशिष्यम् / संज्ञा-प्रमाणत्वात्",
     why_dev                 = (
         "संज्ञैव प्रमाणम् इति कृत्वा तस्य पुनः शासनम् अनावश्यकम् — "

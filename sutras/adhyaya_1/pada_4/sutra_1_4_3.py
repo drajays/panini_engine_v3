@@ -1,5 +1,5 @@
 """
-1.4.3  यू स्त्र्याख्यौ नदी  (yū strīyākhyau nadī)  —  SAMJNA
+1.4.3  यू स्त्र्याख्यौ नदी  —  SAMJNA
 
 **Pāṭha:** The sounds *ī* and *ū* (specifically: feminine prātipadikas
 ending in long SLP1 *I* or *U*) receive the technical designation *nadī*.
@@ -54,8 +54,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id               = "1.4.3",
     sutra_type             = SutraType.SAMJNA,
-    text_slp1              = "yU strIyAKyO nadI",
-    text_dev               = "यू स्त्र्याख्यौ नदी",
+    text_slp1              = 'yU stryAKyO nadI',
+    text_dev               = 'यू स्त्र्याख्यौ नदी',
     padaccheda_dev         = "यू / स्त्री-आख्यौ / नदी",
     why_dev                = "ई-उ-अन्तं स्त्रीलिङ्गं प्रातिपदिकं नदीसंज्ञकम् (हरी-वध्वादि)।",
     anuvritti_from         = ("1.4.1",),

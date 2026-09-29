@@ -50,8 +50,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.43",
     sutra_type=SutraType.VIBHASHA,
     vibhasha_default=True,
-    text_slp1="anupasargAd vA",
-    text_dev="अनुपसर्गाद्वा",
+    text_slp1='anupasargAdvA',
+    text_dev='अनुपसर्गाद्वा',
     padaccheda_dev="अनुपसर्गात् (पञ्चमी-एकवचन) / वा (अव्यय)",
     why_dev=(
         "उपसर्गरहितस्य धातोः प्रयोगे वा आत्मनेपदम् — "

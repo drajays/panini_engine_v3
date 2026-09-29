@@ -48,8 +48,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.35",
     sutra_type=SutraType.VIDHI,
-    text_slp1="akarmakAc ca",
-    text_dev="अकर्मकाच्च",
+    text_slp1='akarmakAcca',
+    text_dev='अकर्मकाच्च',
     padaccheda_dev="अकर्मकात् (पञ्चमी-एकवचन) / च (अव्यय)",
     why_dev=(
         "वि-पूर्वकस्य अकर्मकस्य धातोः प्रयोगे आत्मनेपदम् — "

@@ -1,5 +1,5 @@
 """
-5.4.151  उरः प्रभृतिभ्यः कप्  —  VIDHI (narrow for P024)
+5.4.151  उरःप्रभृतिभ्यः कप्  —  VIDHI (narrow for P024)
 
 Pāṭha (cross-check: ``sutrANi.tsv`` / ashtadhyayi-com ``data.txt`` i=504151):
   *uraḥ prabhṛtibhyaḥ kap* — *kap* after stems like *uras-* in the stated class.
@@ -71,8 +71,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="5.4.151",
     sutra_type=SutraType.VIDHI,
-    text_slp1="uraH prabhftiByaH kap",
-    text_dev="उरः प्रभृतिभ्यः कप्",
+    text_slp1='uraHpraBftiByaH kap',
+    text_dev='उरःप्रभृतिभ्यः कप्',
     padaccheda_dev="उरः / प्रभृतिभ्यः / कप्",
     why_dev="उर-आदिभ्यः कप्-प्रत्ययः (P024 — महत्+उरस्)।",
     anuvritti_from=("5.4.1",),

@@ -1,5 +1,5 @@
 """
-1.1.63  लुमता प्रत्ययलोपे अङ्गस्य प्रत्ययलक्षणं न  —  PARIBHASHA (*apavāda* to **1.1.62**)
+1.1.63  न लुमताङ्गस्य  —  PARIBHASHA (*apavāda* to **1.1.62**)
 
 **Padaccheda:** *na* (avyayam), *lumatā* (tṛtīyā ekavacanam), *aṅgasya*
 (ṣaṣṭhī ekavacanam); *pratyayalope* and *pratyayalakṣaṇam* by *anuvṛtti* from
@@ -58,8 +58,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.63",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "lumatA pratyayalope aNgasya pratyayalakzaRaM na",
-    text_dev       = "लुमता प्रत्ययलोपे अङ्गस्य प्रत्ययलक्षणं न",
+    text_slp1      = 'na lumatANgasya',
+    text_dev       = 'न लुमताङ्गस्य',
     padaccheda_dev = (
         "न (अव्ययम्) / लुमता (तृतीया-एकवचनम्) / प्रत्ययलोपे (सप्तमी-एकवचनम्, अन्वा. १.१.६२) / "
         "अङ्गस्य (षष्ठी-एकवचनम्) / प्रत्ययलक्षणम् (प्रथमा-एकवचनम्, अन्वा. १.१.६२)"

@@ -1,5 +1,5 @@
 """
-7.3.21  देवताद्वंद्वे च  —  VIDHI
+7.3.21  देवताद्वन्द्वे च  —  VIDHI
 
 Padaccheda: देवताद्वन्द्वे च
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.3.21",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "devatAdvaMdve ca",
-    text_dev              = "देवताद्वंद्वे च",
+    text_slp1             = 'devatAdvandve ca',
+    text_dev              = 'देवताद्वन्द्वे च',
     padaccheda_dev        = "देवताद्वन्द्वे च",
     why_dev               = "(सूत्रम् 7.3.21) देवताद्वंद्वे च।",
     anuvritti_from        = ('7.1.1',),

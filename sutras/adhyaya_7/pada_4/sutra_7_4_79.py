@@ -60,8 +60,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="7.4.79",
     sutra_type=SutraType.VIDHI,
-    text_slp1="sanyataH (narrow)",
-    text_dev="सन्यतः",
+    text_slp1='sanyataH',
+    text_dev='सन्यतः',
     padaccheda_dev="सन्यतः",
     why_dev="सन्-प्रत्यये परे अभ्यासस्य अकारः इकारः (जि-)।",
     anuvritti_from=("7.4.60",),

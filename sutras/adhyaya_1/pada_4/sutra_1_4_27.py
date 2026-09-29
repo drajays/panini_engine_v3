@@ -49,8 +49,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id              = "1.4.27",
     sutra_type            = SutraType.SAMJNA,
-    text_slp1             = "vAraRArTAnAm IpsitaH",
-    text_dev              = "वारणार्थानामीप्सितः",
+    text_slp1             = 'vAraRArTAnAmIpsitaH',
+    text_dev              = 'वारणार्थानामीप्सितः',
     padaccheda_dev        = "वारणार्थानाम् / ईप्सितः",
     why_dev               = (
         "वारणार्थ-धातूनाम् प्रयोगे योऽभीप्सितः (यस्माद् वारयति) स "

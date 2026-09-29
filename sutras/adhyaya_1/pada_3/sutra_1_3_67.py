@@ -61,8 +61,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.67",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="ReRaRau yatkarma Rau cet sa kartAnADyAne",
-    text_dev="णेरणौ यत्कर्म णौ चेत् स कर्ताऽनाध्याने",
+    text_slp1='ReraRO yatkarma RO cet sa kartAnADyAne',
+    text_dev='णेरणौ यत्कर्म णौ चेत् स कर्ताऽनाध्याने',
     padaccheda_dev=(
         "णेः (षष्ठी-एकवचन) / णौ (सप्तमी-एकवचन) / यत्-कर्म / णौ / चेत् "
         "/ सः / कर्ता / अनाध्याने (सप्तमी-एकवचन)"

@@ -1,5 +1,5 @@
 """
-7.4.95  अत् स्मृदृत्वरप्रथम्रदस्तॄस्पशाम्  —  VIDHI
+7.4.95  अत् स्मृदॄत्वरप्रथम्रदस्तॄस्पशाम्  —  VIDHI
 
 Padaccheda: अत् स्मृ-दृ-त्वर-प्रथ-म्रद-स्तॄ-स्पशाम्
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.4.95",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "at smfdftvarapraTamradastFspaSAm",
-    text_dev              = "अत् स्मृदृत्वरप्रथम्रदस्तॄस्पशाम्",
+    text_slp1             = 'at smfdFtvarapraTamradastFspaSAm',
+    text_dev              = 'अत् स्मृदॄत्वरप्रथम्रदस्तॄस्पशाम्',
     padaccheda_dev        = "अत् स्मृ-दृ-त्वर-प्रथ-म्रद-स्तॄ-स्पशाम्",
     why_dev               = "(सूत्रम् 7.4.95) अत् स्मृदृत्वरप्रथम्रदस्तॄस्पशाम्।",
     anuvritti_from        = ('7.1.1',),

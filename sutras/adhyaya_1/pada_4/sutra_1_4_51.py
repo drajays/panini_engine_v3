@@ -40,8 +40,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.51",
     sutra_type           = SutraType.SAMJNA,
-    text_slp1            = "akaTitaM ca",
-    text_dev             = "अकथितं च — karman",
+    text_slp1            = 'akaTitaM ca',
+    text_dev             = 'अकथितं च',
     padaccheda_dev       = "अकथितम् / च",
     why_dev              = (
         "अकथितम् (द्विकर्मक-धातोः अनभिधेयं यत् कारकम्) तत् कर्म-कारक-संज्ञकम्। "

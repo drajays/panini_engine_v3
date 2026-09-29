@@ -36,8 +36,8 @@ SUTRA = SutraRecord(
     sutra_id="2.2.4",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="prApta-Apanne ca dvitIyayA",
-    text_dev="प्राप्तापन्ने च द्वितीयया",
+    text_slp1='prAptApanne ca dvitIyayA',
+    text_dev='प्राप्तापन्ने च द्वितीयया',
     padaccheda_dev="प्राप्त-आपन्ने / च / द्वितीयया",
     why_dev=(
         "प्राप्त-आपन्नौ द्वितीयान्तेन समस्येते — ग्रामप्राप्तः, आपदापन्नः इत्यादि।"

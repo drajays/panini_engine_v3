@@ -41,8 +41,8 @@ SUTRA = SutraRecord(
     sutra_id="2.2.3",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="dvitIya-tftIya-caturTa-turyARi anyatarasyfm",
-    text_dev="द्वितीयतृतीयचतुर्थतुर्याण्यन्यतरस्याम्",
+    text_slp1='dvitIyatftIyacaturTaturyARyanyatarasyAm',
+    text_dev='द्वितीयतृतीयचतुर्थतुर्याण्यन्यतरस्याम्',
     padaccheda_dev="द्वितीय-तृतीय-चतुर्थ-तुर्याणि / अन्यतरस्याम्",
     why_dev=(
         "द्वितीयादयः एकदेशिनैकाधिकरणे विभाषा समस्यन्ते — "

@@ -42,8 +42,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.1.26",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="kta-ktavatu~ nisThA",
-    text_dev="क्तक्तवतू निष्ठा",
+    text_slp1='ktaktavatU nizWA',
+    text_dev='क्तक्तवतू निष्ठा',
     padaccheda_dev="क्त-क्तवतु निष्ठा",
     why_dev="क्त/क्तवतु-प्रत्यययोः निष्ठा-संज्ञा।",
     anuvritti_from=(),

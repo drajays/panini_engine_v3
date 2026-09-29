@@ -1,5 +1,5 @@
 """
-2.1.7  यथासादृश्ये  (yathā-sādṛśye)  —  VIDHI
+2.1.7  यथासादृश्ये  —  VIDHI
 
 **Pāṭha:** The avyaya *yathā* combines with a subanta to form an
 avyayībhāva samāsa when the meaning is sādṛśya (resemblance).
@@ -39,8 +39,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.1.7",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "yaTA sAdqSye",
-    text_dev              = "यथासादृश्ये",
+    text_slp1             = 'yaTAsAdfSye',
+    text_dev              = 'यथासादृश्ये',
     padaccheda_dev        = "यथा / सादृश्ये",
     why_dev               = "यथा-अव्यय-पूर्वकः सादृश्यार्थे अव्ययीभावः (२.१.७)।",
     anuvritti_from        = ("2.1.5",),

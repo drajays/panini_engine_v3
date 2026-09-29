@@ -1,5 +1,5 @@
 """
-1.4.80  ते प्राग्धातोः  (te prāg dhātoḥ)  —  SAMJNA
+1.4.80  ते प्राग्धातोः  —  SAMJNA
 
 Those (gatis enumerated in the preceding sūtras 1.4.60–1.4.79) occur
 before (prāk) the dhātu (verb root).  This sūtra restricts the domain
@@ -27,8 +27,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.80",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="te prAg DAtoH",
-    text_dev="ते प्राग्धातोः",
+    text_slp1='te prAgDAtoH',
+    text_dev='ते प्राग्धातोः',
     padaccheda_dev="ते / प्राक् / धातोः",
     why_dev="गति-संज्ञकाः धातोः प्राक् भवन्ति — स्थान-नियमः संज्ञारजिस्ट्रीयां नोद्यते।",
     anuvritti_from=("1.4.60",),

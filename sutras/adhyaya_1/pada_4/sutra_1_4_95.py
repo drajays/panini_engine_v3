@@ -1,5 +1,5 @@
 """
-1.4.95  अतिरतिक्रमणे च  (atir atikramaṇe ca)  —  VIDHI
+1.4.95  अतिरतिक्रमणे च  —  VIDHI
 
 *Padaccheda:* *atiḥ* (prathamā), *atikramaṇe* (saptamī), *ca* (avyaya).
 
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.95",
     sutra_type           = SutraType.VIDHI,
-    text_slp1            = "atir atikramaRe ca",
-    text_dev             = "अतिरतिक्रमणे च",
+    text_slp1            = 'atiratikramaRe ca',
+    text_dev             = 'अतिरतिक्रमणे च',
     padaccheda_dev       = "अतिः / अतिक्रमणे / च",
     why_dev              = (
         "अतिक्रमण-अर्थे (पूजायां च) वर्तमानः 'अति' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

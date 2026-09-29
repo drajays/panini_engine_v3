@@ -1,5 +1,5 @@
 """
-8.3.46  (narrow demo) — k+s → k+ṣ in desideratives.
+8.3.46  अतः कृकमिकंसकुम्भपात्रकुशाकर्णीष्वनव्ययस्य — k+s → k+ṣ in desideratives.
 
 The source JSON for *jighṛkṣati* references 8.3.46 as the ṣatva step on the `s`
 of the san-pratyaya after `k` (from 8.2.41).  This repository already has a
@@ -62,8 +62,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.3.46",
     sutra_type=SutraType.VIDHI,
-    text_slp1="(narrow) k+s -> k+z (desiderative)",
-    text_dev="(डेमो) क्स-प्रसङ्गे षत्वम्",
+    text_slp1='ataH kfkamikaMsakumBapAtrakuSAkarRIzvanavyayasya',
+    text_dev='अतः कृकमिकंसकुम्भपात्रकुशाकर्णीष्वनव्ययस्य',
     padaccheda_dev="(डेमो) क् + स् → क् + ष्",
     why_dev="जिघृक्षति-प्रसङ्गे क्+स् → क्+ष् (डेमो-slice)।",
     anuvritti_from=("8.2.1",),

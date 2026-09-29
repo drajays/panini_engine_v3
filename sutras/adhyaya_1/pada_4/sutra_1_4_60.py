@@ -1,5 +1,5 @@
 """
-1.4.60  गतिश्च  (gatiś ca)  —  SAMJNA
+1.4.60  गतिश्च  —  SAMJNA
 
 The upasargas (enumerated in 1.4.58 prādayaḥ) also get the gati-saṃjñā
 (in addition to being nipātas). The word "ca" includes other kriyā-viśeṣaṇas
@@ -39,8 +39,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.60",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="gatiS ca",
-    text_dev="गतिश्च",
+    text_slp1='gatiSca',
+    text_dev='गतिश्च',
     padaccheda_dev="गतिः / च",
     why_dev="उपसर्गाश्च गति-संज्ञकाः — गति-सूचिः संज्ञारजिस्ट्रीयां स्थाप्यते।",
     anuvritti_from=("1.4.58", "1.4.59"),

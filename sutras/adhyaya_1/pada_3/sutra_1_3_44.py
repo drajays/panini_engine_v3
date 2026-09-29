@@ -1,5 +1,5 @@
 """
-1.3.44  विभाषा स्मरतिहृद्यभावयोः  —  VIBHASHA
+1.3.44  अपह्नवे ज्ञः  —  VIBHASHA
 
 *Padaccheda:* *vibhāṣā* (अव्यय) / *smarati-hṛdyabhāvayoḥ* (सप्तमी-द्विवचन).
 
@@ -58,8 +58,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIBHASHA,
     vibhasha_default=True,
     r1_form_identity_exempt=True,
-    text_slp1="vibhASA smaratihfdyaBAvayoH",
-    text_dev="विभाषा स्मरतिहृद्यभावयोः",
+    text_slp1='apahnave jYaH',
+    text_dev='अपह्नवे ज्ञः',
     padaccheda_dev="विभाषा (अव्यय) / स्मरति-हृद्यभावयोः (सप्तमी-द्विवचन)",
     why_dev=(
         "स्मृति-अर्थे हृद्यभाव-अर्थे च धातोः प्रयोगे विभाषा आत्मनेपदम् — "

@@ -1,5 +1,5 @@
 """
-5.2.101  प्रज्ञाश्रद्धाऽर्चावृत्तिभ्यो णः  —  VIDHI
+5.2.101  प्रज्ञाश्रद्धार्चाभ्यो णः  —  VIDHI
 
 Padaccheda: प्रज्ञा-श्रद्धा-अर्चा-वृत्तिभ्यः णः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.101",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "prajYASradDA'rcAvfttiByo RaH",
-    text_dev              = "प्रज्ञाश्रद्धाऽर्चावृत्तिभ्यो णः",
+    text_slp1             = 'prajYASradDArcAByo RaH',
+    text_dev              = 'प्रज्ञाश्रद्धार्चाभ्यो णः',
     padaccheda_dev        = "प्रज्ञा-श्रद्धा-अर्चा-वृत्तिभ्यः णः",
     why_dev               = "(सूत्रम् 5.2.101) प्रज्ञाश्रद्धाऽर्चावृत्तिभ्यो णः।",
     anuvritti_from        = ('5.1.1',),

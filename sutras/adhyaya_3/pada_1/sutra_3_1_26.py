@@ -68,8 +68,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.1.26",
     sutra_type=SutraType.VIDHI,
-    text_slp1="hetumati ca (Ric)",
-    text_dev="हेतुमति च",
+    text_slp1='hetumati ca',
+    text_dev='हेतुमति च',
     padaccheda_dev="हेतुमति च",
     why_dev="हेतु-अर्थे (प्रेरणार्थके) धातोः परे णिच्-प्रत्ययः।",
     anuvritti_from=("3.1.23",),

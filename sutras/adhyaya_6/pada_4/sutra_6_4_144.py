@@ -47,8 +47,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.4.144",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "nas taddhite",
-    text_dev       = "नस्तद्धिते",
+    text_slp1      = 'nastadDite',
+    text_dev       = 'नस्तद्धिते',
     padaccheda_dev = "नः तद्धिते",
     why_dev        = "अन्-ान्ताद् यत्-परे टि-लोपः (प्रकृतिभावेन बाध्यते इति अङ्कनम्)।",
     anuvritti_from = (),

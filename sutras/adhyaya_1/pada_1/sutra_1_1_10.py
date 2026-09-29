@@ -1,5 +1,5 @@
 """
-1.1.10  नाज्झलौ  (nAjjhalau)  —  PARIBHASHA
+1.1.10  नाज्झलौ  —  PARIBHASHA
 
 **Śāstra (GRETIL pāṭha):** *a* in the *aç* ( *a* + *it* ) sequence of a *upadeśa* and
 the *jhal* consonants are **out of the scope** of a preceding *aś* ( *a* + *c*
@@ -58,8 +58,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.10",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "nAjjhalau",
-    text_dev       = "नाज्झलौ",
+    text_slp1      = 'nAjJalO',
+    text_dev       = 'नाज्झलौ',
     padaccheda_dev = "न अज्-झलौ",
     why_dev        = _WHY,
     apavada_of     = ("1.1.9",),   # अपवाद of 1.1.9 — sutra_ref_out resolver.apavada_of

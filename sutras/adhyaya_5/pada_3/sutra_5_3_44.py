@@ -1,5 +1,5 @@
 """
-5.3.44  एकाद्धो ध्यमुञन्यारयाम्  —  VIDHI
+5.3.44  एकाद्धो ध्यमुञन्यतरस्याम्  —  VIDHI
 
 Padaccheda: एकात् धः ध्यमुञ् अन्यतरस्याम्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.3.44",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "ekAdDo DyamuYanyArayAm",
-    text_dev              = "एकाद्धो ध्यमुञन्यारयाम्",
+    text_slp1             = 'ekAdDo DyamuYanyatarasyAm',
+    text_dev              = 'एकाद्धो ध्यमुञन्यतरस्याम्',
     padaccheda_dev        = "एकात् धः ध्यमुञ् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 5.3.44) एकाद्धो ध्यमुञन्यारयाम्।",
     anuvritti_from        = ('5.1.1',),

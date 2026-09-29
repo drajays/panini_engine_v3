@@ -20,7 +20,7 @@ def test_sutra_metadata():
     assert r.sutra_id == "1.1.24"
     assert r.sutra_type is SutraType.SAMJNA
     assert r.anuvritti_from == ("1.1.23",)
-    assert "zaW" in r.text_slp1
+    assert r.text_slp1 == 'zRAntA zaw'
 
 
 def test_pATha_bytes_match_ashtadhyayi_s():

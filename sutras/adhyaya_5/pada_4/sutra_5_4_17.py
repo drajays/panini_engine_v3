@@ -1,5 +1,5 @@
 """
-5.4.17  सङ्ख्यायाः क्रियाभ्यावृत्तिगणने कृत्वसुच्  —  VIDHI (narrow *corpus*)
+5.4.17  संख्यायाः क्रियाभ्यावृत्तिगणने कृत्वसुच्  —  VIDHI (narrow *corpus*)
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` *i*≈54017):** *kṛtvasuṭ* after a *saṅkhyā*-class
 *prātipadika* when counting repetitions of an action.
@@ -72,8 +72,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="5.4.17",
     sutra_type=SutraType.VIDHI,
-    text_slp1="saMkhyAyAH kriyAByAvfttigaRane kftvasuC",
-    text_dev="सङ्ख्यायाः क्रियाभ्यावृत्तिगणने कृत्वसुच्",
+    text_slp1='saMKyAyAH kriyAByAvfttigaRane kftvasuc',
+    text_dev='संख्यायाः क्रियाभ्यावृत्तिगणने कृत्वसुच्',
     padaccheda_dev="सङ्ख्यायाः / क्रियाभ्यावृत्तिगणने / कृत्वसुच्",
     why_dev="संख्यावाचिनः क्रियावृत्तौ गणने कृत्वसुट्-प्रत्ययः (आर्म्ड-मेटा)।",
     anuvritti_from=("5.4.1",),

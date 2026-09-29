@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id              = "2.3.12",
     sutra_type            = SutraType.VIDHI,
-    text_slp1             = "gatyarTakarmaRi dvitIyAcaturTyO cesTAyAm anaDvani",
-    text_dev              = "गत्यर्थकर्मणि द्वितीयाचतुर्थ्यौ चेष्टायामनध्वनि",
+    text_slp1             = 'gatyarTakarmaRi dvitIyAcaturTyO cezwAyAmanaDvani',
+    text_dev              = 'गत्यर्थकर्मणि द्वितीयाचतुर्थ्यौ चेष्टायामनध्वनि',
     padaccheda_dev        = "गत्यर्थ-कर्मणि / द्वितीया-चतुर्थ्यौ / च / इष्टायाम् / अन-अध्वनि",
     why_dev               = (
         "गत्यर्थ-कर्मणि (इष्टे, अनध्वनि) द्वितीया चतुर्थी च — "

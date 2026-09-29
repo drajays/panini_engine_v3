@@ -76,8 +76,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.1.36",
     sutra_type=SutraType.VIDHI,
-    text_slp1="ijAdeS ca gurumato'nfcCaH",
-    text_dev="इजादेश्च गुरुमतोऽनृच्छः",
+    text_slp1='ijAdeSca gurumatonfcCaH',
+    text_dev='इजादेश्च गुरुमतोऽनृच्छः',
     padaccheda_dev="इजादेः / च / गुरुमतः / अनृच्छः",
     why_dev="इजादि-गुरुमत्-धातोः (ईक्ष्) लिट्-पूर्वम् आम्-आगमः — P014।",
     anuvritti_from=("3.1.35",),

@@ -45,8 +45,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="4.2.70",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="adUrabhavaSca",
-    text_dev="अदूरभवश्च",
+    text_slp1='adUraBavaSca',
+    text_dev='अदूरभवश्च',
     padaccheda_dev="अदूरभवः / च",
     why_dev=(
         "अदूरभवार्थे अण् (*prakriya_46*, **गोदौ ग्रामः** विग्रहादेशः) — संज्ञा-चिह्नम्।"

@@ -1,5 +1,5 @@
 """
-1.3.29  समो गम्यृच्छिभ्याम् …  —  SAMJNA (narrow demo)
+1.3.29  समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः  —  SAMJNA (narrow demo)
 
 Narrow demo (संगसीष्ट / ``saGgasIzwa``):
   When ``sam``‑pūrvā *gam* participates in kartāri *ātmanepada* licences in this repo,
@@ -56,8 +56,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.29",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="samH gamyfCIBhyAm (...)",
-    text_dev="समो गम्यृच्छिभ्याम् (संकीर्ण)",
+    text_slp1='samo gamyfcCipracCisvaratyartiSruvidiByaH',
+    text_dev='समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः',
     padaccheda_dev="समः / गमेः …",
     why_dev=(
         "\"सम्\"पूर्वात् धातुर् \"\"गम्\" आत्मनेपद-पथे जातुः (आशिषि; डेमो-संज्ञा सूत्रस्थ।"

@@ -1,5 +1,5 @@
 """
-3.1.15  कर्मणः रोमन्थतपोभ्यां वर्तिचरोः  —  VIDHI
+3.1.15  कर्मणो रोमन्थतपोभ्यां वर्तिचरोः  —  VIDHI
 
 Padaccheda: कर्मणः रोमन्थ-तपोभ्याम् वर्ति-चरोः
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.1.15",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "karmaRaH romanTatapoByAM varticaroH",
-    text_dev              = "कर्मणः रोमन्थतपोभ्यां वर्तिचरोः",
+    text_slp1             = 'karmaRo romanTatapoByAM varticaroH',
+    text_dev              = 'कर्मणो रोमन्थतपोभ्यां वर्तिचरोः',
     padaccheda_dev        = "कर्मणः रोमन्थ-तपोभ्याम् वर्ति-चरोः",
     why_dev               = "धातोः [कर्मणः रोमन्थतपोभ्यां वर्तिचरोः]-प्रत्ययः विहितः (३.१.15)।",
     anuvritti_from        = ('3.1.1',),

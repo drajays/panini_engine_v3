@@ -1,5 +1,5 @@
 """
-1.4.91  अभिरभागे  (abhir abhāge)  —  VIDHI
+1.4.91  अभिरभागे  —  VIDHI
 
 *Padaccheda:* *abhiḥ* (prathamā), *abhāge* (saptamī).
 
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.91",
     sutra_type           = SutraType.VIDHI,
-    text_slp1            = "aBir aBAGe",
-    text_dev             = "अभिरभागे",
+    text_slp1            = 'aBiraBAge',
+    text_dev             = 'अभिरभागे',
     padaccheda_dev       = "अभिः / अभागे",
     why_dev              = (
         "अभाग-अर्थे वर्तमानः 'अभि' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

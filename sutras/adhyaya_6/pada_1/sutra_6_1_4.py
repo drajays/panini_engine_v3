@@ -24,8 +24,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.4",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "pUrvo abhyAsaH",
-    text_dev       = "पूर्वोऽभ्यासः",
+    text_slp1      = 'pUrvoByAsaH',
+    text_dev       = 'पूर्वोऽभ्यासः',
     padaccheda_dev = "पूर्वः / अभ्यासः",
     why_dev        = "द्वित्व-प्रसङ्गे पूर्वभागः अभ्यास-संज्ञकः (ग्लास-बॉक्स् gate)।",
     anuvritti_from = (),

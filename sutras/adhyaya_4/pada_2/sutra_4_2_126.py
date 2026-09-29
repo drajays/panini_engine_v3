@@ -1,5 +1,5 @@
 """
-4.2.126  क्अच्छाग्निवक्त्रगर्त्तोत्तरपदात्  —  VIDHI
+4.2.126  कच्छाग्निवक्त्रवर्त्तोत्तरपदात्  —  VIDHI
 
 Padaccheda: कच्छ-अग्नि-वक्‍त्र-गर्त्त-उत्तरपदात्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.2.126",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "kacCAgnivaktragarttottarapadAt",
-    text_dev              = "क्अच्छाग्निवक्त्रगर्त्तोत्तरपदात्",
+    text_slp1             = 'kacCAgnivaktravarttottarapadAt',
+    text_dev              = 'कच्छाग्निवक्त्रवर्त्तोत्तरपदात्',
     padaccheda_dev        = "कच्छ-अग्नि-वक्‍त्र-गर्त्त-उत्तरपदात्",
     why_dev               = "(सूत्रम् 4.2.126) क्अच्छाग्निवक्त्रगर्त्तोत्तरपदात्।",
     anuvritti_from        = ('4.1.1',),

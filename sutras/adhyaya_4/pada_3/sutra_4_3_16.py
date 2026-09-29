@@ -1,5 +1,5 @@
 """
-4.3.16  संधिवेलाऽऽद्यृतुनक्षत्रेभ्योऽण्  —  VIDHI
+4.3.16  संधिवेलाद्यृतुनक्षत्रेभ्योऽण्  —  VIDHI
 
 Padaccheda: संधिवेला-आदि-ऋतु-नक्षत्रेभ्यः अण्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.3.16",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "saMDivelA''dyftunakzatreByo'R",
-    text_dev              = "संधिवेलाऽऽद्यृतुनक्षत्रेभ्योऽण्",
+    text_slp1             = 'saMDivelAdyftunakzatreByoR',
+    text_dev              = 'संधिवेलाद्यृतुनक्षत्रेभ्योऽण्',
     padaccheda_dev        = "संधिवेला-आदि-ऋतु-नक्षत्रेभ्यः अण्",
     why_dev               = "(सूत्रम् 4.3.16) संधिवेलाऽऽद्यृतुनक्षत्रेभ्योऽण्।",
     anuvritti_from        = ('4.1.1',),

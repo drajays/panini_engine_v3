@@ -1,5 +1,5 @@
 """
-4.3.25  तत्र भवः  —  VIDHI (narrow: **aṇ** on *viśākhā* stem) — P039
+4.3.25  तत्र जातः  —  VIDHI (narrow: **aṇ** on *viśākhā* stem) — P039
 
 JSON ``split_prakriyas_11/P039.json``: *tatra bhavaḥ* licenses **aṇ** after the
 nakṣatra stem *viśākhā-* in the *jāta* sense (“born there / under that
@@ -69,8 +69,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "4.3.25",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "tatra BavaH (aR) (narrow P039)",
-    text_dev       = "तत्र भवः (अण्) — P039 संक्षेपः",
+    text_slp1      = 'tatra jAtaH',
+    text_dev       = 'तत्र जातः',
     padaccheda_dev = "तत्र / भवः",
     why_dev        = "विशाखायां जात इति प्रसङ्गे अण् (४.३.२५) — P039।",
     anuvritti_from = ("4.3.1",),

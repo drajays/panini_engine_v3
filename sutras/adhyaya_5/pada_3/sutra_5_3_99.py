@@ -1,5 +1,5 @@
 """
-5.3.99  जीविकाऽर्थे चापण्ये  —  VIDHI
+5.3.99  जीविकार्थे चापण्ये  —  VIDHI
 
 Padaccheda: जीविका-अर्थे च अपण्ये
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.3.99",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "jIvikA'rTe cApaRye",
-    text_dev              = "जीविकाऽर्थे चापण्ये",
+    text_slp1             = 'jIvikArTe cApaRye',
+    text_dev              = 'जीविकार्थे चापण्ये',
     padaccheda_dev        = "जीविका-अर्थे च अपण्ये",
     why_dev               = "(सूत्रम् 5.3.99) जीविकाऽर्थे चापण्ये।",
     anuvritti_from        = ('5.1.1',),

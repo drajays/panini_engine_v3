@@ -48,8 +48,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.41",
     sutra_type=SutraType.VIDHI,
-    text_slp1="veH pAdaviharaNe",
-    text_dev="वेः पादविहरणे",
+    text_slp1='veH pAdaviharaRe',
+    text_dev='वेः पादविहरणे',
     padaccheda_dev="वेः (पञ्चमी-एकवचन) / पादविहरणे (सप्तमी-एकवचन)",
     why_dev=(
         "वि-पूर्वकस्य धातोः पादविहरण-अर्थे प्रयोगे आत्मनेपदम् — "

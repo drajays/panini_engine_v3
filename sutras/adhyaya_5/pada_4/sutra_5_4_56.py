@@ -1,5 +1,5 @@
 """
-5.4.56  देवमनुष्यपुरुषमर्त्येभ्यो द्वितीयासप्तम्योर्बहुलम्  —  VIDHI
+5.4.56  देवमनुष्यपुरुषपुरुमर्त्येभ्यो द्वितीयासप्तम्योर्बहुलम्  —  VIDHI
 
 Padaccheda: देव-मनुष्य-पुरुष-मर्त्येभ्यः द्वितीया-सप्तम्योः बहुलम्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.4.56",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "devamanuzyapuruzamartyeByo dvitIyAsaptamyorbahulam",
-    text_dev              = "देवमनुष्यपुरुषमर्त्येभ्यो द्वितीयासप्तम्योर्बहुलम्",
+    text_slp1             = 'devamanuzyapuruzapurumartyeByo dvitIyAsaptamyorbahulam',
+    text_dev              = 'देवमनुष्यपुरुषपुरुमर्त्येभ्यो द्वितीयासप्तम्योर्बहुलम्',
     padaccheda_dev        = "देव-मनुष्य-पुरुष-मर्त्येभ्यः द्वितीया-सप्तम्योः बहुलम्",
     why_dev               = "(सूत्रम् 5.4.56) देवमनुष्यपुरुषमर्त्येभ्यो द्वितीयासप्तम्योर्बहुलम्।",
     anuvritti_from        = ('5.1.1',),

@@ -1,5 +1,5 @@
 """
-2.4.69  उपकादिभ्योऽन्यतरस्यामद्वंद्वे  —  VIDHI
+2.4.69  उपकादिभ्योऽन्यतरस्यामद्वन्द्वे  —  VIDHI
 
 Padaccheda: उपक-आदिभ्यः अन्यतरस्याम् अ-द्वन्द्वे
 
@@ -30,8 +30,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.4.69",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "upakAdiByo'nyatarasyAmadvaMdve",
-    text_dev              = "उपकादिभ्योऽन्यतरस्यामद्वंद्वे",
+    text_slp1             = 'upakAdiByonyatarasyAmadvandve',
+    text_dev              = 'उपकादिभ्योऽन्यतरस्यामद्वन्द्वे',
     padaccheda_dev        = "उपक-आदिभ्यः अन्यतरस्याम् अ-द्वन्द्वे",
     why_dev               = "उपक-आदिभ्यः अन्यतरस्याम् अ-द्वन्द्वे (२.४.६९)।",
     anuvritti_from        = ('2.4.68',),

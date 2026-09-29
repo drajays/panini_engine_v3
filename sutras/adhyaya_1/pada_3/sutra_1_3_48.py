@@ -54,8 +54,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.48",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="vyaktavAcAM samuccArane",
-    text_dev="व्यक्तवाचां समुच्चारणे",
+    text_slp1='vyaktavAcAM samuccAraRe',
+    text_dev='व्यक्तवाचां समुच्चारणे',
     padaccheda_dev="व्यक्त-वाचाम् (षष्ठी-बहुवचन) / समुच्चारणे (सप्तमी-एकवचन)",
     why_dev=(
         "व्यक्तवाचां समुच्चारणे वद्-धातोः आत्मनेपदम् — "

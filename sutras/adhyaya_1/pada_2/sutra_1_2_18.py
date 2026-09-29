@@ -62,8 +62,8 @@ SUTRA = SutraRecord(
     sutra_id              = "1.2.18",
     sutra_type            = SutraType.NIYAMA,
     r1_form_identity_exempt = True,
-    text_slp1             = "na ktvA seT",
-    text_dev              = "न क्त्वा सेट्",
+    text_slp1             = 'na ktvA sew',
+    text_dev              = 'न क्त्वा सेट्',
     padaccheda_dev        = "न / क्त्वा / सेट्",
     why_dev               = ("क्त्वा-प्रत्ययस्य पूर्वं सेट्-धातुः अपि अनिट् भवति — "
                              "क्त्वान्तरूपे इडागमो न।"),

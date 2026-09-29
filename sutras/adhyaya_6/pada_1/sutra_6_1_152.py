@@ -28,8 +28,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.152",
     sutra_type=SutraType.ANUVADA,
-    text_slp1="pratizkaSaH ca kaSeH",
-    text_dev="प्रतिष्कशश्च कशेः",
+    text_slp1='pratizkaSaSca kaSeH',
+    text_dev='प्रतिष्कशश्च कशेः',
     padaccheda_dev="प्रतिष्कशः च / कशेः",
     why_dev="कश-प्रकरणे शीर्षादेश-अनुवादः (*prakriya_25* मध्ये पदच्छेद-स्मरणार्थम्)।",
     anuvritti_from=(),

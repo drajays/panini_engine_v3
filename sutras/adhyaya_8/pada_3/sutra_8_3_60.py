@@ -83,8 +83,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.3.60",
     sutra_type=SutraType.VIDHI,
-    text_slp1="SAsi-vasi-Gasi-nAm ca (narrow)",
-    text_dev="शासिवसिघसीनां च",
+    text_slp1='SAsivasiGasInAM ca',
+    text_dev='शासिवसिघसीनां च',
     padaccheda_dev="शासि-वसि-घसि-नाम् / च",
     why_dev="वसादौ (सम्प्रसारणोत्तरं) सस्य षत्वं (उषित्वा)।",
     anuvritti_from=("8.3.57",),

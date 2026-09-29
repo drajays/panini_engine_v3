@@ -1,5 +1,5 @@
 """
-5.4.74  ऋक्पूरप्धूःपथामानक्षे  —  VIDHI
+5.4.74  ऋक्पूरब्धूःपथामानक्षे  —  VIDHI
 
 Padaccheda: ऋक्-पूः-अप्-धूह्-पथाम् अ (लुप्तप्रथमान्तनिर्देशः) अनक्षे
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.4.74",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "fkpUrapDUHpaTAmAnakze",
-    text_dev              = "ऋक्पूरप्धूःपथामानक्षे",
+    text_slp1             = 'fkpUrabDUHpaTAmAnakze',
+    text_dev              = 'ऋक्पूरब्धूःपथामानक्षे',
     padaccheda_dev        = "ऋक्-पूः-अप्-धूह्-पथाम् अ (लुप्तप्रथमान्तनिर्देशः) अनक्षे",
     why_dev               = "(सूत्रम् 5.4.74) ऋक्पूरप्धूःपथामानक्षे।",
     anuvritti_from        = ('5.1.1',),

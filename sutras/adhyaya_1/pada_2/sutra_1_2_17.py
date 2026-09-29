@@ -72,8 +72,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.2.17",
     sutra_type=SutraType.VIDHI,
-    text_slp1="stAdgoH ric ca",
-    text_dev="स्थाद्वो रिच्च",
+    text_slp1='sTA Gvoricca',
+    text_dev='स्था घ्वोरिच्च',
     padaccheda_dev="स्थाद्वोः / रिच्च",
     why_dev="गु-स्थानिके सिचोऽपेक्षया इच्संनिधानं (लुङ्-डेमो: सिच् आदेशश्च)।",
     anuvritti_from=(),

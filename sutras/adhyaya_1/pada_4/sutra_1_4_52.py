@@ -41,8 +41,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.52",
     sutra_type           = SutraType.SAMJNA,
-    text_slp1            = "gatibudDipratyavasAnArTaSabdakarmAkarmakARAm aRi kartA sa Ro",
-    text_dev             = "गतिबुद्धिप्रत्यवसानार्थशब्दकर्माकर्मकाणामणि कर्ता स णौ",
+    text_slp1            = 'gatibudDipratyavasAnArTaSabdakarmAkarmakARAmaRi kartA sa RO',
+    text_dev             = 'गतिबुद्धिप्रत्यवसानार्थशब्दकर्माकर्मकाणामणि कर्ता स णौ',
     padaccheda_dev       = "गति-बुद्धि-प्रत्यवसान-अर्थ-शब्द-कर्म-अकर्मकाणाम् / अणि / कर्ता / सः / णौ",
     why_dev              = (
         "गति-बुद्धि-आदि-धातूनां णि-प्रयोगे यः कर्ता (प्रयोज्यः) स कर्तृ-कारक-संज्ञकः। "

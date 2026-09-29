@@ -1,5 +1,5 @@
 """
-4.1.37  वृषाकप्यग्निकुसितकुसीदानामुदात्तः  —  VIDHI
+4.1.37  वृषाकप्यग्निकुसितकुसिदानामुदात्तः  —  VIDHI
 
 Padaccheda: वृषाकपी-अग्नि-कुसित-कुसीदानाम् उदात्तः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.1.37",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "vfzAkapyagnikusitakusIdAnAmudAttaH",
-    text_dev              = "वृषाकप्यग्निकुसितकुसीदानामुदात्तः",
+    text_slp1             = 'vfzAkapyagnikusitakusidAnAmudAttaH',
+    text_dev              = 'वृषाकप्यग्निकुसितकुसिदानामुदात्तः',
     padaccheda_dev        = "वृषाकपी-अग्नि-कुसित-कुसीदानाम् उदात्तः",
     why_dev               = "(सूत्रम् 4.1.37) वृषाकप्यग्निकुसितकुसीदानामुदात्तः।",
     anuvritti_from        = ('4.1.1',),

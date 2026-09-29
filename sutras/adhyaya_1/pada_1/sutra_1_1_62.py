@@ -49,8 +49,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.62",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "pratyayalope pratyayalakzaNam",
-    text_dev       = "प्रत्ययलोपे प्रत्ययलक्षणम्",
+    text_slp1      = 'pratyayalope pratyayalakzaRam',
+    text_dev       = 'प्रत्ययलोपे प्रत्ययलक्षणम्',
     padaccheda_dev = (
         "प्रत्ययलोपे (सप्तमी-एकवचनम्) / प्रत्ययलक्षणम् (प्रथमा-एकवचनम्)"
     ),

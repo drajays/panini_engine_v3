@@ -24,7 +24,7 @@ def act(state: State) -> State:
     state.adhikara_stack.append({
         "id"        : "4.1.1",
         "scope_end" : "5.4.160",
-        "text_dev"  : "ङ्याप्प्रातिपदिकात्",
+        "text_dev"  : 'ङ्याप्प्रातिपदिकात्',
     })
     # Audit key for strī *subanta* demos (adhikāra itself is not a morphological *vidhi*).
     if any("strīliṅga" in t.tags for t in state.terms):
@@ -35,8 +35,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "4.1.1",
     sutra_type     = SutraType.ADHIKARA,
-    text_slp1      = "NyAp prAtipadikAt",
-    text_dev       = "ङ्याप्प्रातिपदिकात्",
+    text_slp1      = 'NyApprAtipadikAt',
+    text_dev       = 'ङ्याप्प्रातिपदिकात्',
     padaccheda_dev = "ङी-आप्-प्रातिपदिकात्",
     why_dev        = "प्रातिपदिकाधिकारः — ४.१.१ तः ५.४.१६० पर्यन्तम्।",
     anuvritti_from = (),

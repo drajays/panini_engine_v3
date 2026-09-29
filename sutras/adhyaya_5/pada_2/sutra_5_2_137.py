@@ -1,5 +1,5 @@
 """
-5.2.137  संज्ञायां मन्माभ्याम्.ह्  —  VIDHI
+5.2.137  संज्ञायां मन्माभ्याम्  —  VIDHI
 
 Padaccheda: संज्ञायाम् मन्-मभ्याम्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.137",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "saMjYAyAM manmAByAm.h",
-    text_dev              = "संज्ञायां मन्माभ्याम्.ह्",
+    text_slp1             = 'saMjYAyAM manmAByAm',
+    text_dev              = 'संज्ञायां मन्माभ्याम्',
     padaccheda_dev        = "संज्ञायाम् मन्-मभ्याम्",
     why_dev               = "(सूत्रम् 5.2.137) संज्ञायां मन्माभ्याम्.ह्।",
     anuvritti_from        = ('5.1.1',),

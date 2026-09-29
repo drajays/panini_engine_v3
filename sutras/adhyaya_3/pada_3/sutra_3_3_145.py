@@ -1,5 +1,5 @@
 """
-3.3.145  अनवकॢप्त्यमर्षयोरकिंवृत्ते अपि  —  VIDHI
+3.3.145  अनवकॢप्त्यमर्षयोरकिंवृत्तेऽपि  —  VIDHI
 
 Padaccheda: अनवकॢप्ति-अमर्षयोः अ-किंवृत्ते अपि
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.3.145",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "anavakxptyamarzayorakiMvftte api",
-    text_dev              = "अनवकॢप्त्यमर्षयोरकिंवृत्ते अपि",
+    text_slp1             = 'anavakxptyamarzayorakiMvfttepi',
+    text_dev              = 'अनवकॢप्त्यमर्षयोरकिंवृत्तेऽपि',
     padaccheda_dev        = "अनवकॢप्ति-अमर्षयोः अ-किंवृत्ते अपि",
     why_dev               = "धातोः प्रत्ययः (३.3.145)।",
     anuvritti_from        = ('3.1.1',),

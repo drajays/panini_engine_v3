@@ -1,5 +1,5 @@
 """
-5.3.41  विभाषाऽवरस्य  —  VIDHI
+5.3.41  विभाषावरस्य  —  VIDHI
 
 Padaccheda: विभाषा अवरस्य
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.3.41",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "viBAzA'varasya",
-    text_dev              = "विभाषाऽवरस्य",
+    text_slp1             = 'viBAzAvarasya',
+    text_dev              = 'विभाषावरस्य',
     padaccheda_dev        = "विभाषा अवरस्य",
     why_dev               = "(सूत्रम् 5.3.41) विभाषाऽवरस्य।",
     anuvritti_from        = ('5.1.1',),

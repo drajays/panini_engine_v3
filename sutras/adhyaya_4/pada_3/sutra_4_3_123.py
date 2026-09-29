@@ -1,5 +1,5 @@
 """
-4.3.123  पत्त्राध्वर्युपरिषदश्च  —  VIDHI
+4.3.123  पत्राध्वर्युपरिषदश्च  —  VIDHI
 
 Padaccheda: पत्त्र-अध्वर्यु-परिषदः च
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.3.123",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "pattrADvaryuparizadaSca",
-    text_dev              = "पत्त्राध्वर्युपरिषदश्च",
+    text_slp1             = 'patrADvaryuparizadaSca',
+    text_dev              = 'पत्राध्वर्युपरिषदश्च',
     padaccheda_dev        = "पत्त्र-अध्वर्यु-परिषदः च",
     why_dev               = "(सूत्रम् 4.3.123) पत्त्राध्वर्युपरिषदश्च।",
     anuvritti_from        = ('4.1.1',),

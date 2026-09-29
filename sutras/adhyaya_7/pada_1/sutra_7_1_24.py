@@ -79,8 +79,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.1.24",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "ataH am (napuMsake)",
-    text_dev       = "अतोऽम्",
+    text_slp1      = 'atom',
+    text_dev       = 'अतोऽम्',
     padaccheda_dev = "अतः अम्",
     why_dev        = "अकारान्त-नपुंसक-अङ्गात् परस्य सुँ/अम्-प्रत्ययस्य ‘अम्’-आदेशः (ज्ञानम्)।",
     anuvritti_from = ("6.4.1",),

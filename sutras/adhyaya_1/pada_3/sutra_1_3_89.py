@@ -75,8 +75,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.89",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="na pAdamyANyamANyasaparimuhrucinftivadavasaH",
-    text_dev="न पादम्याङ्यमाङ्यसपरिमुहरुचिनृतिवदवसः",
+    text_slp1='na pAdamyANyamANyasaparimuharucinftivadavasaH',
+    text_dev='न पादम्याङ्यमाङ्यसपरिमुहरुचिनृतिवदवसः',
     padaccheda_dev="न / पात् / अम्याङ् / यमाङ् / यस-परि-मुह-रुचि-नृति-वद-वसः",
     why_dev=(
         "पा-अम्-यम्-यस्-मुह्-रुच्-नृत्-वद्-वस्-धातूनां आत्मनेपदं न — "

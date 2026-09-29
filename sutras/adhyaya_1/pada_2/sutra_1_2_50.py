@@ -41,8 +41,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.50",
     sutra_type              = SutraType.SAMJNA,
     r1_form_identity_exempt = True,
-    text_slp1               = "id goRyAH",
-    text_dev                = "इद्गोण्याः",
+    text_slp1               = 'idgoRyAH',
+    text_dev                = 'इद्गोण्याः',
     padaccheda_dev          = "इत् / गोण्याः",
     why_dev                 = (
         "इत्-संज्ञकं गोणी-शब्दं मुख्य-वाचकवद् उपचर्यते — "

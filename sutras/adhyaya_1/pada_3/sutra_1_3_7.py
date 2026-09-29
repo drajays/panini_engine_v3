@@ -1,5 +1,5 @@
 """
-1.3.7  चुटु  —  SAMJNA
+1.3.7  चुटू  —  SAMJNA
 
 Śāstra / engine role (CONSTITUTION Arts. 1–2, 4, 7)
 ──────────────────────────────────────────────────
@@ -191,8 +191,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.3.7",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "cuwu",
-    text_dev       = "चुटु",
+    text_slp1      = 'cuwU',
+    text_dev       = 'चुटू',
     padaccheda_dev = "चुटु",
     why_dev        = "चवर्ग-टवर्गीयः प्रथमः हल् ‘इत्’ संज्ञकः; लोपः १.३.९।",
     anuvritti_from = ("1.3.2",),

@@ -61,8 +61,8 @@ SUTRA = SutraRecord(
     sutra_id              = "1.2.24",
     sutra_type            = SutraType.NIYAMA,
     r1_form_identity_exempt = True,
-    text_slp1             = "vaYci-luYcy-ftaS ca",
-    text_dev              = "वञ्चिलुञ्च्यृतश्च",
+    text_slp1             = 'vaYciluYcyftaSca',
+    text_dev              = 'वञ्चिलुञ्च्यृतश्च',
     padaccheda_dev        = "वञ्चि-लुञ्चि-ऋतः / च",
     why_dev               = ("वञ्च्-लुञ्च्-ऋत्-धातवः अपि सेट् भवन्ति — "
                              "एतेभ्यः इडागमो नित्यं भवति।"),

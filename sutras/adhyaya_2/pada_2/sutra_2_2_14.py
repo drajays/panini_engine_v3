@@ -1,5 +1,5 @@
 """
-2.2.14  कर्तरि च  —  SAMJNA (narrow for P023 bahuvrīhi)
+2.2.14  कर्मणि च  —  SAMJNA (narrow for P023 bahuvrīhi)
 
 Context (as used in split_prakriyas_11/P023.json):
   Bahuvrīhi intent (*anekam anyapadārthe*) is asserted, yielding a compound
@@ -32,8 +32,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="2.2.14",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="kartari ca",
-    text_dev="कर्तरि च",
+    text_slp1='karmaRi ca',
+    text_dev='कर्मणि च',
     padaccheda_dev="कर्तरि / च",
     why_dev="बहुव्रीहौ अनेकेन अन्यपदार्थे (P023 डेमो) — संज्ञा-चिह्ननम्।",
     anuvritti_from=("2.2.13",),

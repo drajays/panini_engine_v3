@@ -42,8 +42,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.60",
     sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1               = "PalgUnI-proWTapadAnAM ca nakzatre",
-    text_dev                = "फल्गुनीप्रोष्ठपदानां च नक्षत्रे",
+    text_slp1               = 'PalgunIprozWapadAnAM ca nakzatre',
+    text_dev                = 'फल्गुनीप्रोष्ठपदानां च नक्षत्रे',
     padaccheda_dev          = "फल्गुनी-प्रोष्ठपदानाम् / च / नक्षत्रे",
     why_dev                 = (
         "फल्गुनी-प्रोष्ठपदयोः नक्षत्रनाम्नोः युगलविवक्षायां बहुवचनम् एकशेषश्च — "

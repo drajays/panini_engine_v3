@@ -18,8 +18,8 @@ def test_sutra_metadata():
     assert r.sutra_type is SutraType.SAMJNA
     assert r.anuvritti_from == ("1.1.11",)
     # CONSTITUTION Art. 4: *anuvṛtti*-*sahita* pāṭha (ashtadhyayi ``ss``) is canonical in ``SUTRA`` .
-    assert r.text_dev == s1114.ANUVRITTI_SAHITA_DEV
-    assert r.text_slp1 == "ekAc anA~G nipAtaH pragfhyam"
+    assert r.text_dev == 'निपात एकाजनाङ्'
+    assert r.text_slp1 == 'nipAta ekAjanAN'
     # Index *s* (short) vs *ss* (baked) — both exposed on the sūtra module.
     assert s1114.SANKSIPTA_PATHA_DEV == "निपात एकाजनाङ्"
     assert "निपातः" in r.padaccheda_dev

@@ -64,8 +64,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="4.1.98",
     sutra_type=SutraType.VIDHI,
-    text_slp1="gotre kuYjAdibhyaH caPaY",
-    text_dev="गोत्रे कुञ्जादिभ्यश्च्फञ्",
+    text_slp1='gotre kuYjAdiByaScPaY',
+    text_dev='गोत्रे कुञ्जादिभ्यश्च्फञ्',
     padaccheda_dev="गोत्रे / कुञ्जादिभ्यः / च्फञ्",
     why_dev="कुञ्जादिगणे गोत्रापत्ये च्फञ् — प००४-अ।",
     anuvritti_from=("4.1.92",),

@@ -1,5 +1,5 @@
 """
-1.4.54  स्वतन्त्रः कर्ता  (svataṃtraḥ kartā)  —  SAMJNA (kāraka-saṃjñā)
+1.4.54  स्वतन्त्रः कर्ता  —  SAMJNA (kāraka-saṃjñā)
 
 **Pāṭha (baked anuvṛtti):** *kārake svataṃtraḥ kartā* — **1.4.23** *kārake*.
 
@@ -45,8 +45,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.54",
     sutra_type           = SutraType.SAMJNA,
-    text_slp1            = "svataṃtraH kartA",
-    text_dev             = "स्वतन्त्रः कर्ता",
+    text_slp1            = 'svatantraH kartA',
+    text_dev             = 'स्वतन्त्रः कर्ता',
     padaccheda_dev       = "स्वतन्त्रः / कर्ता",
     why_dev              = (
         "यः क्रियायां स्वतन्त्रः (स्वेच्छया प्रवर्तते) स कर्तृ-कारक-संज्ञकः। "

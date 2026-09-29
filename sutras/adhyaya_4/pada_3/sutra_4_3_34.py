@@ -1,5 +1,5 @@
 """
-4.3.34  श्रवणाद्द्विवचनाच्च  —  VIDHI (narrow: **luk** of **aṇ** after *viśākhā*) — P039
+4.3.34  श्रविष्ठाफल्गुन्यनुराधास्वातितिष्यपुनर्वसुहस्तविशाखाषाढाबहुलाल्लुक्  —  VIDHI (narrow: **luk** of **aṇ** after *viśākhā*) — P039
 
 The full *gaṇa* (“*śravaṇā* … *viśākhā* …”) is not modelled; this slice only
 removes the **aṇ** *pratyaya* Term inserted for **P039**, matching the JSON
@@ -52,8 +52,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "4.3.34",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "zravaRAd dvivacanAcca (luk aR) (narrow P039)",
-    text_dev       = "श्रवणाद्द्विवचनाच्च (लुक्-अण्) — P039 संक्षेपः",
+    text_slp1      = 'SravizWAPalgunyanurADAsvAtitizyapunarvasuhastaviSAKAzAQAbahulAlluk',
+    text_dev       = 'श्रविष्ठाफल्गुन्यनुराधास्वातितिष्यपुनर्वसुहस्तविशाखाषाढाबहुलाल्लुक्',
     padaccheda_dev = "श्रवणात् / द्विवचनात् / च",
     why_dev        = "विशाखायाः अण्-प्रत्ययस्य लुक् (४.३.३४) — P039 संक्षेप-छेदः।",
     anuvritti_from = ("4.3.1",),

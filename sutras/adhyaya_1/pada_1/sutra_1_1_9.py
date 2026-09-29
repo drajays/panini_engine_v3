@@ -1,5 +1,5 @@
 """
-1.1.9  तुल्यास्यप्रयत्नं सवर्णम्  (tulyAsyaprayatnaM savarNam)  —  SAMJNA
+1.1.9  तुल्यास्यप्रयत्नं सवर्णम्  —  SAMJNA
 
 **Śāstra-artha:** ययोः वर्णयोः मुखस्थितम् उच्चारणस्थानम् आभ्यन्तरप्रयत्नश्च समानौ स्तः,
 तौ वर्णौ परस्परयोः **सवर्णौ** उच्येते।
@@ -135,8 +135,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.9",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "tulyAsyaprayatnaM savarNam",
-    text_dev       = "तुल्यास्यप्रयत्नं सवर्णम्",
+    text_slp1      = 'tulyAsyaprayatnaM savarRam',
+    text_dev       = 'तुल्यास्यप्रयत्नं सवर्णम्',
     padaccheda_dev = "तुल्य-आस्य-प्रयत्नम् / सवर्णम्",
     why_dev        = _WHY,
     anuvritti_from = (),

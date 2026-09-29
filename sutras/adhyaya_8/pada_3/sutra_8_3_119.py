@@ -1,5 +1,5 @@
 """
-8.3.119  निव्यभिभ्योऽड्व्यावये वा छन्दसि  —  VIDHI
+8.3.119  निव्यभिभ्योऽड्व्यवाये वा छन्दसि  —  VIDHI
 
 Padaccheda: नि-वि-अभिभ्यः अट्-व्यवाये वा छन्दसि
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "8.3.119",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "nivyaBiByo'qvyAvaye vA Candasi",
-    text_dev              = "निव्यभिभ्योऽड्व्यावये वा छन्दसि",
+    text_slp1             = 'nivyaBiByoqvyavAye vA Candasi',
+    text_dev              = 'निव्यभिभ्योऽड्व्यवाये वा छन्दसि',
     padaccheda_dev        = "नि-वि-अभिभ्यः अट्-व्यवाये वा छन्दसि",
     why_dev               = "(सूत्रम् 8.3.119) निव्यभिभ्योऽड्व्यावये वा छन्दसि।",
     anuvritti_from        = ('8.1.1',),

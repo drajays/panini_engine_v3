@@ -1,5 +1,5 @@
 """
-2.4.43  हन् लुङि च  —  VIDHI (narrow)
+2.4.43  लुङि च  —  VIDHI (narrow)
 
 Sources consulted:
 - ashtadhyayi.com data.txt row i=204043
@@ -54,8 +54,8 @@ SUTRA = SutraRecord(
     sutra_id="2.4.43",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="han luGi ca",
-    text_dev="हन् लुङि च",
+    text_slp1='luNi ca',
+    text_dev='लुङि च',
     padaccheda_dev="हन् / लुङि / च",
     why_dev="लुङ्-लकारे हन्-धातोः स्थाने वध्-आदेशः (अवधीत्-प्रक्रिया)।",
     anuvritti_from=("2.4.1",),

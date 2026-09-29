@@ -1,5 +1,5 @@
 """
-4.4.135  (narrow) दधि-आदि-प्रसङ्गे ठक्  —  VIDHI (P018)
+4.4.135  सहस्रेण संमितौ घः  —  VIDHI (P018)
 
 The JSON ``split_prakriyas_11/P018.json`` uses sūtra id **4.4.135** to attach
 the taddhita pratyaya **ठक्** (*Tak*) in the sense “prepared with / by means of”.
@@ -69,8 +69,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "4.4.135",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "tena saMskftam (Tak) (narrow)",
-    text_dev       = "तेन संस्कृतम् (ठक्) — संक्षेपः",
+    text_slp1      = 'sahasreRa saMmitO GaH',
+    text_dev       = 'सहस्रेण संमितौ घः',
     padaccheda_dev = "तेन / संस्कृतम्",
     why_dev        = "दध्ना संस्कृतम् इत्याद्यर्थे ठक्-प्रत्ययः (P018 narrow demo).",
     anuvritti_from = ("4.1.76",),

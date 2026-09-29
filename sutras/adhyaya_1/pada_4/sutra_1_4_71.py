@@ -1,5 +1,5 @@
 """
-1.4.71  तिरोऽन्तर्द्धौ  (tiro 'ntarddho)  —  SAMJNA
+1.4.71  तिरोऽन्तर्द्धौ  —  SAMJNA
 
 The word "tiras" gets the gati-saṃjñā specifically when used in the sense
 of antardhāna (concealment/disappearance), e.g., "tiras-dhā" (to conceal),
@@ -29,8 +29,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.71",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="tiro 'ntardDAv",
-    text_dev="तिरोऽन्तर्द्धौ",
+    text_slp1='tirontardDO',
+    text_dev='तिरोऽन्तर्द्धौ',
     padaccheda_dev="तिरः / अन्तर्द्धौ",
     why_dev="अन्तर्द्धौ 'तिरस्' गति-संज्ञकः — 'tiras' गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

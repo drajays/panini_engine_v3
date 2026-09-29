@@ -86,8 +86,8 @@ SUTRA = SutraRecord(
     sutra_id       = "1.1.14",
     sutra_type     = SutraType.SAMJNA,
     # Spaced SLP1 to match ``ANUVRITTI_SAHITA_DEV``; compact index ``e`` = ``nipaatekaajanaang``.
-    text_slp1      = "ekAc anA~G nipAtaH pragfhyam",
-    text_dev       = ANUVRITTI_SAHITA_DEV,
+    text_slp1      = 'nipAta ekAjanAN',
+    text_dev       = 'निपात एकाजनाङ्',
     padaccheda_dev = (
         "निपातः (प्र. ए.) / एकाच् (प्र. ए.) / अनाङ् (प्र. ए.); "
         "अन्वितं प्रगृह्यम् (१.१.११)"

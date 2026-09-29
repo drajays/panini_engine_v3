@@ -1,5 +1,5 @@
 """
-6.1.93  ओमाङोश्च  —  ANUVADA (placeholder audit)
+6.1.93  औतोऽम्शसोः  —  ANUVADA (placeholder audit)
 
 The JSON spine for ``split_prakriyas_11/P013.json`` includes **6.1.93** as a
 no-op placeholder step.  This repository does not currently implement the full
@@ -31,8 +31,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.93",
     sutra_type     = SutraType.ANUVADA,
-    text_slp1      = "om ANgoH ca",
-    text_dev       = "ओमाङोश्च",
+    text_slp1      = 'OtomSasoH',
+    text_dev       = 'औतोऽम्शसोः',
     padaccheda_dev = "ओम् / आङोः / च",
     why_dev        = "P013 JSON placeholder (no mutation in this narrow demo).",
     anuvritti_from = ("6.1.84",),

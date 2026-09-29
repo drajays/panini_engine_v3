@@ -39,8 +39,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.47",
     sutra_type           = SutraType.SAMJNA,
-    text_slp1            = "aBiniviSaS ca",
-    text_dev             = "अभिनिविशश्च — karman",
+    text_slp1            = 'aBiniviSaSca',
+    text_dev             = 'अभिनिविशश्च',
     padaccheda_dev       = "अभि-नि-विशः / च",
     why_dev              = (
         "अभि-नि-पूर्वक-विश्-धातोः यत् गन्तव्यस्थानम् तत् कर्म-कारक-संज्ञकम्। "

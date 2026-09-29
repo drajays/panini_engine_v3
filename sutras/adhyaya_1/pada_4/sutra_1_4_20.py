@@ -1,5 +1,5 @@
 """
-1.4.20  अयस्मयादीनि च्छन्दसि  (ayasmayādīni chandasi)  —  VIDHI
+1.4.20  अयस्मयादीनि च्छन्दसि  —  VIDHI
 
 **Pāṭha:** *Ayasmaya* and similar forms [are used / treated specially] in
 the Vedic register (*chandas*).
@@ -29,8 +29,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id               = "1.4.20",
     sutra_type             = SutraType.VIDHI,
-    text_slp1              = "ayasmayAdIni chandasi",
-    text_dev               = "अयस्मयादीनि च्छन्दसि",
+    text_slp1              = 'ayasmayAdIni cCandasi',
+    text_dev               = 'अयस्मयादीनि च्छन्दसि',
     padaccheda_dev         = "अयस्मय-आदीनि / छन्दसि",
     why_dev                = "छन्दसि अयस्मयादि-शब्दानां विशेष-विधिः प्रवर्तते।",
     anuvritti_from         = ("1.4.1",),

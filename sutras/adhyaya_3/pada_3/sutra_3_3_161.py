@@ -1,5 +1,5 @@
 """
-3.3.161  विधिनिमन्त्रणामन्त्रणाधीष्टसम्प्रश्नप्रार्थनेषु लिङ्  —  VIDHI (narrow: *vidhi-liṅ*)
+3.3.161  विधिनिमन्त्रणामन्त्रणाधीष्टसंप्रश्नप्रार्थनेषु लिङ्  —  VIDHI (narrow: *vidhi-liṅ*)
 
 Teaching **P038** (*paceran*): in *vidhi* / *nimantraṇa* / … senses, introduce the
 *lakāra* placeholder ``liG`` (*liṅ*).
@@ -50,8 +50,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.3.161",
     sutra_type=SutraType.VIDHI,
-    text_slp1="vidhinimantraRAmantraRAxISwasampraSnaprArTanezu liG",
-    text_dev="विधिनिमन्त्रणामन्त्रणाधीष्टसम्प्रश्नप्रार्थनेषु लिङ्",
+    text_slp1='viDinimantraRAmantraRADIzwasaMpraSnaprArTanezu liN',
+    text_dev='विधिनिमन्त्रणामन्त्रणाधीष्टसंप्रश्नप्रार्थनेषु लिङ्',
     padaccheda_dev="विधि-निमन्त्रणा-मन्त्रणा-अधीष्ट-सम्प्रश्न-प्रार्थनेषु लिङ्",
     why_dev="विधि-मन्त्रणादिषु लिङ्-लकारः (ग्लास-बॉक्स्: P038)।",
     anuvritti_from=("3.3.157",),

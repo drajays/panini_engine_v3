@@ -113,8 +113,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.4.66",
     sutra_type=SutraType.VIDHI,
-    text_slp1="GumA-sTA-gA-pA-jahAti-sAM hali",
-    text_dev="घुमास्थागापाजहातिसां हलि",
+    text_slp1='GumAsTAgApAjahAtisAM hali',
+    text_dev='घुमास्थागापाजहातिसां हलि',
     padaccheda_dev="घु-मा-स्था-गा-पा-जहतिसाम् / हलि",
     why_dev="ङित्-हलादि-प्रत्यये परे घुमा-स्था-गा-पा-जहि-धातूनां ईत्वादि-आदेशः (अध्यगीष्ट)।",
     anuvritti_from=("6.4.1",),

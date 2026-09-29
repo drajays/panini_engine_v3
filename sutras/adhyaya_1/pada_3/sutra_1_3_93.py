@@ -58,8 +58,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.93",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="luTi ca kFpaH",
-    text_dev="लुटि च कॢपः",
+    text_slp1='luwi ca kxpaH',
+    text_dev='लुटि च कॢपः',
     padaccheda_dev="लुटि (सप्तमी-एकवचन) / च / कॢपः (षष्ठी-एकवचन)",
     why_dev=(
         "कॢप्-धातोः लुटि-लकारे आत्मनेपदम् — "

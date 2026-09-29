@@ -55,8 +55,8 @@ SUTRA = SutraRecord(
     sutra_id              = "1.1.35",
     sutra_type            = SutraType.SAMJNA,
     r1_form_identity_exempt = True,
-    text_slp1             = "svam ajJAtiDanAKyAyAm",
-    text_dev              = "स्वमज्ञातिधनाख्यायाम्",
+    text_slp1             = 'svamajYAtiDanAKyAyAm',
+    text_dev              = 'स्वमज्ञातिधनाख्यायाम्',
     padaccheda_dev        = "स्वम् / अज्ञाति-धन-आख्यायाम्",
     why_dev               = (
         "«स्व»-शब्दस्य सर्वनाम-संज्ञा, अज्ञाति-धन-वाचके तु न।"

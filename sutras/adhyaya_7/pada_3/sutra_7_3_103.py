@@ -88,8 +88,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.3.103",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "bahuvacane Jalyet (aNgasya ataH)",
-    text_dev       = "बहुवचने झल्येत्",
+    text_slp1      = 'bahuvacane Jalyet',
+    text_dev       = 'बहुवचने झल्येत्',
     padaccheda_dev = "बहुवचने झलि एत् — अङ्गस्य अतः",
     why_dev        = "झल्-आदि-बहुवचन-सुप्-प्रत्यये परे अदन्त-अङ्गस्य "
                      "अन्त्य-अ-कारस्य 'ए'-आदेशः।",

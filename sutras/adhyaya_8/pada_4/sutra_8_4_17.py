@@ -1,5 +1,5 @@
 """
-8.4.17  नेर्गदनदपतपदघुमास्य…  —  VIDHI (narrow: *neḥ* of *ni* → *ṇ* + *ghu*)
+8.4.17  नेर्गदनदपतपदघुमास्यतिहन्तियातिवातिद्रातिप्सातिवपतिवहतिशाम्यतिचिनोतिदेग्धिषु च  —  VIDHI (narrow: *neḥ* of *ni* → *ṇ* + *ghu*)
 
 *Śāstra-pāṭha (machine index i=34017; SLP1 row on ashtadhyayi-com):* **neH**
 before the listed ārya-roots, including **घु**-dhātus.  This engine implements
@@ -106,8 +106,8 @@ _TEXT_SLP1 = (
 SUTRA = SutraRecord(
     sutra_id         = "8.4.17",
     sutra_type       = SutraType.VIDHI,
-    text_slp1        = _TEXT_SLP1,
-    text_dev         = "नेर्गदनदपतपदघुमास्य…चिनो…देग्धिषु च",
+    text_slp1        = 'nergadanadapatapadaGumAsyatihantiyAtivAtidrAtipsAtivapativahatiSAmyaticinotidegDizu ca',
+    text_dev         = 'नेर्गदनदपतपदघुमास्यतिहन्तियातिवातिद्रातिप्सातिवपतिवहतिशाम्यतिचिनोतिदेग्धिषु च',
     padaccheda_dev   = "नेः / गद-… / च",
     why_dev          = (
         "उपसर्ग-स्थानिकस्य नि-उपसर्गे नकारं गदादिघोः परतः णादेशो "

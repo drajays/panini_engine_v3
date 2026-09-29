@@ -1,5 +1,5 @@
 """
-8.4.44  स्तोः श्चुना श्चुः  —  VIBHASHA (representative)
+8.4.44  शात्  —  VIBHASHA (representative)
 
 Classical reading: "An s-series or t-varga letter followed by S/c-varga
  is OPTIONALLY replaced by the corresponding ś-series / c-varga letter."
@@ -47,8 +47,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id         = "8.4.44",
     sutra_type       = SutraType.VIBHASHA,
-    text_slp1        = "sto: zcunA zcuH",
-    text_dev         = "स्तोः श्चुना श्चुः",
+    text_slp1        = 'SAt',
+    text_dev         = 'शात्',
     padaccheda_dev   = "स्तोः श्चुना श्चुः",
     why_dev          = "स्-तवर्गयोः श्च्वर्ग-परे विकल्पेन श्चुः (श्-चवर्ग)।",
     anuvritti_from   = ("8.4.40",),

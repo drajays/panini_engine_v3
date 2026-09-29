@@ -39,8 +39,8 @@ SUTRA = SutraRecord(
     sutra_id="1.4.106",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="prahAse ca manyopapade manyateruttama ekavac ca",
-    text_dev="प्रहासे च मन्योपपदे मन्यतेरुत्तम एकवच्च",
+    text_slp1='prahAse ca manyopapade manyateruttama ekavacca',
+    text_dev='प्रहासे च मन्योपपदे मन्यतेरुत्तम एकवच्च',
     padaccheda_dev=(
         "प्रहासे (सप्तमी-एकवचन) / च (अव्यय) / मन्य-उपापदे (सप्तमी-एकवचन) "
         "/ मन्यतेः (षष्ठी-एकवचन) / उत्तमः (प्रथमा-एकवचन) "

@@ -41,8 +41,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.54",
     sutra_type              = SutraType.PARIBHASHA,
     r1_form_identity_exempt = True,
-    text_slp1               = "lup yogAprakhyAnAt",
-    text_dev                = "लुब्योगाप्रख्यानात्",
+    text_slp1               = 'lubyogApraKyAnAt',
+    text_dev                = 'लुब्योगाप्रख्यानात्',
     padaccheda_dev          = "लुप् / योग-अप्रख्यानात्",
     why_dev                 = (
         "लुपि कृते अपि योगसम्बन्धान्न प्रख्यानहानिः — "

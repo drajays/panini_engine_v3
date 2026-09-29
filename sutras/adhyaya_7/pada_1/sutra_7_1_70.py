@@ -70,8 +70,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.1.70",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "ugidacAM sarvanAmasthAne adhAtoH",
-    text_dev       = "उगिदचां सर्वनामस्थानेऽधातोः",
+    text_slp1      = 'ugidacAM sarvanAmasTAneDAtoH',
+    text_dev       = 'उगिदचां सर्वनामस्थानेऽधातोः',
     padaccheda_dev = "उगिद्-अचाम् / सर्वनामस्थाने / अधातोः",
     why_dev        = "उगित्-अङ्गस्य सर्वनामस्थाने परे नुम्-आगमः (चितवन्त्)।",
     anuvritti_from = (),

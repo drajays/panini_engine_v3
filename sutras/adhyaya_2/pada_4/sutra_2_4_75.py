@@ -75,8 +75,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "2.4.75",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "juhotyAdibhyaH SluH (narrow P040)",
-    text_dev       = "जुहोत्यादिभ्यः श्लुः — P040 संक्षेपः",
+    text_slp1      = 'juhotyAdiByaH SluH',
+    text_dev       = 'जुहोत्यादिभ्यः श्लुः',
     padaccheda_dev = "जुहोत्यादिभ्यः / श्लुः",
     why_dev        = "जुहोत्यादि-गणात् शप्-स्थाने श्लुः (२.४.७५) — P040।",
     apavada_of     = ("3.1.68",),   # अपवाद of 3.1.68 — sutra_ref_out resolver.apavada_of

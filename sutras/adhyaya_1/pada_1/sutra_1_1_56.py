@@ -26,8 +26,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.1.56",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "sTAnivad AdezоnalviDO",
-    text_dev       = "स्थानिवदादेशोऽनल्विधौ",
+    text_slp1      = 'sTAnivadAdeSonalviDO',
+    text_dev       = 'स्थानिवदादेशोऽनल्विधौ',
     padaccheda_dev = "स्थानिवत् आदेशः अनल्विधौ",
     why_dev        = "आदेशः स्थानिनः समानधर्मा भवति, परम् अल्-विधिं विहाय।",
     anuvritti_from = (),

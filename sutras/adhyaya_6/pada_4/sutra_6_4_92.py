@@ -59,8 +59,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.4.92",
     sutra_type=SutraType.VIDHI,
-    text_slp1="mitAm hrasvaH",
-    text_dev="मितां ह्रस्वः",
+    text_slp1='mitAM hrasvaH',
+    text_dev='मितां ह्रस्वः',
     padaccheda_dev="मिताम् / ह्रस्वः",
     why_dev="मित्-धातोः उपधायाः ह्रस्वः णिचि परे (हेड्→हिड्)।",
     anuvritti_from=("6.4.1",),

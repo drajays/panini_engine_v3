@@ -40,8 +40,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="4.1.15",
     sutra_type=SutraType.VIDHI,
-    text_slp1="tiqqARaYdvayasaj... (narrow P005-A NIp)",
-    text_dev="टिड्ढाणञ्… — प००५-अ ङीप्",
+    text_slp1='wiqQARaYdvayasajdaGnaYmAtractayapWakWaYkaYkvarapaH',
+    text_dev='टिड्ढाणञ्द्वयसज्दघ्नञ्मात्रच्तयप्ठक्ठञ्कञ्क्वरपः',
     padaccheda_dev="टि-इति / ङीप्",
     why_dev="टितः कृतः स्त्रियां ङीप् (प००५-अ, संक्षिप्तम्)।",
     anuvritti_from=("4.1.4",),

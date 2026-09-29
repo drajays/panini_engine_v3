@@ -41,8 +41,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.63",
     sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1               = "tizya-punarvasvornakzatra-dvandve bahuvacanasya dvivacanam nityam",
-    text_dev                = "तिष्यपुनर्वस्वोर्नक्षत्रद्वन्द्वे बहुवचनस्य द्विवचनं नित्यम्",
+    text_slp1               = 'tizyapunarvasvornakzatradvandve bahuvacanasya dvivacanaM nityam',
+    text_dev                = 'तिष्यपुनर्वस्वोर्नक्षत्रद्वन्द्वे बहुवचनस्य द्विवचनं नित्यम्',
     padaccheda_dev          = "तिष्यपुनर्वस्वोः / नक्षत्रद्वन्द्वे / बहुवचनस्य / द्विवचनम् / नित्यम्",
     why_dev                 = (
         "तिष्य-पुनर्वसु-नक्षत्रयोः द्वन्द्वे बहुवचनस्य स्थाने द्विवचनं नित्यं भवति — "

@@ -92,8 +92,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.73",
     sutra_type=SutraType.VIDHI,
-    text_slp1="CeH ca",
-    text_dev="छे च",
+    text_slp1='Ce ca',
+    text_dev='छे च',
     padaccheda_dev="छे / च",
     why_dev=(
         "ह्रस्वस्वरात् परः अव्यवहितः छकारः विद्यते चेत् तस्य ह्रस्वस्य 'तुक्' आगमः।"

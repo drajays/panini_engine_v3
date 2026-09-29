@@ -1,5 +1,5 @@
 """
-7.3.78  पाघ्राध्मास्थाम्नादाण्दृश्यर्तिसर्तिशदसदां पिबजिघ्रधमतिष्ठमनयच्छपश्यर्च्छधौशीयसीदाः  —  VIDHI
+7.3.78  पाघ्राध्मास्थाम्नादाण्दृश्यर्त्तिसर्त्तिशदसदां पिबजिघ्रधमतिष्ठमनयच्छपश्यर्च्छधौशीयसीदाः  —  VIDHI
 
 Before a śit, eleven roots are replaced wholesale (यथासंख्यम्): पिबति, जिघ्रति,
 धमति, तिष्ठति, मनति, यच्छति, पश्यति, ऋच्छति, शीयते, सीदति. सर्ति→धौ (शीघ्रगतौ) is
@@ -44,8 +44,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="7.3.78",
     sutra_type=SutraType.VIDHI,
-    text_slp1="pAGrADmAsTAmnAdARdfSyartisartiSadasadAM pibajiGraDamatizWamanayacCapaSyarcCaDOSIyasIdAH",
-    text_dev="पाघ्राध्मास्थाम्नादाण्दृश्यर्तिसर्तिशदसदां पिबजिघ्रधमतिष्ठमनयच्छपश्यर्च्छधौशीयसीदाः",
+    text_slp1='pAGrADmAsTAmnAdARdfSyarttisarttiSadasadAM pibajiGraDamatizWamanayacCapaSyarcCaDOSIyasIdAH',
+    text_dev='पाघ्राध्मास्थाम्नादाण्दृश्यर्त्तिसर्त्तिशदसदां पिबजिघ्रधमतिष्ठमनयच्छपश्यर्च्छधौशीयसीदाः',
     padaccheda_dev="पा-घ्रा-ध्मा-स्था-म्ना-दाण्-दृशि-अर्ति-सर्ति-शद-सदाम् / पिब-जिघ्र-धम-तिष्ठ-मन-यच्छ-पश्य-ऋच्छ-धौ-शीय-सीदाः",
     why_dev="शिति परे पा→पिब, घ्रा→जिघ्र, ध्मा→धम, स्था→तिष्ठ, म्ना→मन, दाण्→यच्छ, दृश्→पश्य, ऋ→ऋच्छ, शद्→शीय, सद्→सीद।",
     anuvritti_from=("7.3.73",),

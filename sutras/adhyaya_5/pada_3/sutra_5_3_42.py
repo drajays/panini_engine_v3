@@ -1,5 +1,5 @@
 """
-5.3.42  संख्याया विधाऽर्थे धा  —  VIDHI
+5.3.42  संख्याया विधार्थे धा  —  VIDHI
 
 Padaccheda: संख्यायाः विधा-अर्थे धा
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.3.42",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "saMKyAyA viDA'rTe DA",
-    text_dev              = "संख्याया विधाऽर्थे धा",
+    text_slp1             = 'saMKyAyA viDArTe DA',
+    text_dev              = 'संख्याया विधार्थे धा',
     padaccheda_dev        = "संख्यायाः विधा-अर्थे धा",
     why_dev               = "(सूत्रम् 5.3.42) संख्याया विधाऽर्थे धा।",
     anuvritti_from        = ('5.1.1',),

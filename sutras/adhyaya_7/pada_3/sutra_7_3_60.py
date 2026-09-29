@@ -1,5 +1,5 @@
 """
-7.3.60  अजिवृज्योश्च  —  VIDHI
+7.3.60  अजिव्रज्योश्च  —  VIDHI
 
 Padaccheda: अजि-वृज्योः च
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.3.60",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "ajivfjyoSca",
-    text_dev              = "अजिवृज्योश्च",
+    text_slp1             = 'ajivrajyoSca',
+    text_dev              = 'अजिव्रज्योश्च',
     padaccheda_dev        = "अजि-वृज्योः च",
     why_dev               = "(सूत्रम् 7.3.60) अजिवृज्योश्च।",
     anuvritti_from        = ('7.1.1',),

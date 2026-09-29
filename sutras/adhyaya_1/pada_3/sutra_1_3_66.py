@@ -60,8 +60,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.66",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="BujoanavAne",
-    text_dev="भुजोऽनवने",
+    text_slp1='Bujonavane',
+    text_dev='भुजोऽनवने',
     padaccheda_dev="भुजः (षष्ठी-एकवचन) / अनवने (सप्तमी-एकवचन)",
     why_dev=(
         "भुज्-धातोः अवन-अर्थव्यतिरिक्त-विषये आत्मनेपदम् — "

@@ -64,8 +64,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.3.89",
     sutra_type=SutraType.VIDHI,
-    text_slp1="wvitoaTuc",
-    text_dev="ट्वितोऽथुच्",
+    text_slp1='wvitoTuc',
+    text_dev='ट्वितोऽथुच्',
     padaccheda_dev="ट्वितः / अथुच्",
     why_dev="ट्वित्-धातोः अथुच्-प्रत्ययः (भावः — प००२-ए / प००२-ब आर्म्)।",
     anuvritti_from=("3.1.91",),

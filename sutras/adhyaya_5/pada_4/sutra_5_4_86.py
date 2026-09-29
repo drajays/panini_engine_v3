@@ -1,5 +1,5 @@
 """
-5.4.86  तत्पुरुषस्याङ्गुलेः संख्याऽव्ययादेः  —  VIDHI
+5.4.86  तत्पुरुषस्याङ्गुलेः संख्याव्ययादेः  —  VIDHI
 
 Padaccheda: तत्पुरुषस्य अङ्‍गुलेः सङ्‍ख्या-अव्यय-आदेः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.4.86",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "tatpuruzasyANguleH saMKyA'vyayAdeH",
-    text_dev              = "तत्पुरुषस्याङ्गुलेः संख्याऽव्ययादेः",
+    text_slp1             = 'tatpuruzasyANguleH saMKyAvyayAdeH',
+    text_dev              = 'तत्पुरुषस्याङ्गुलेः संख्याव्ययादेः',
     padaccheda_dev        = "तत्पुरुषस्य अङ्‍गुलेः सङ्‍ख्या-अव्यय-आदेः",
     why_dev               = "(सूत्रम् 5.4.86) तत्पुरुषस्याङ्गुलेः संख्याऽव्ययादेः।",
     anuvritti_from        = ('5.1.1',),

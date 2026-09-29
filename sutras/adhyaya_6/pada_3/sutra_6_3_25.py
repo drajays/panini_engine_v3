@@ -1,5 +1,5 @@
 """
-6.3.25  (narrow) मातापितरौ — special dvandva base (glass-box)
+6.3.25  आनङ् ऋतो द्वन्द्वे — special dvandva base (glass-box)
 
 The classical dvandva **mātā-pitarau** has special behavior in traditional
 commentary; the JSON ``split_prakriyas_11/P013.json`` explicitly flags this as a
@@ -70,8 +70,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.3.25",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "mAtA pitarO (narrow)",
-    text_dev       = "मातापितरौ (नैपातिक-न्यायः; संक्षेपः)",
+    text_slp1      = 'AnaN fto dvandve',
+    text_dev       = 'आनङ् ऋतो द्वन्द्वे',
     padaccheda_dev = "माता / पितरौ",
     why_dev        = "विशिष्ट-द्वन्द्वे 'मातापितर-' आधारः (P013 narrow glass-box).",
     anuvritti_from = ("6.3.1",),

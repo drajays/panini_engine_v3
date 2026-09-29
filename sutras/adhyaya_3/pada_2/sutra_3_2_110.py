@@ -1,5 +1,5 @@
 """
-3.2.110  अद्यतने लुङ्  —  VIDHI (narrow: lakāra placeholder attach)
+3.2.110  लुङ्  —  VIDHI (narrow: lakāra placeholder attach)
 
 Engine scope (v3 glass-box): attach the lakāra upadeśa placeholder ``luG`` when
 the recipe sets ``state.meta['lakara'] == 'luG'`` (lūṅ).  Actual tiṅ substitution
@@ -53,8 +53,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "3.2.110",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "adyatane luG",
-    text_dev       = "अद्यतने लुङ्",
+    text_slp1      = 'luN',
+    text_dev       = 'लुङ्',
     padaccheda_dev = "अद्यतने / लुङ्",
     why_dev        = "अद्यतन-भूते लुङ्-लकार-स्थापनम् (इह 'luG' प्लेसहोल्डर्) ।",
     anuvritti_from = ("3.1.91",),

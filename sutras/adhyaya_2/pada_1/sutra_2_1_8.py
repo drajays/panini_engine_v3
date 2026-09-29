@@ -1,5 +1,5 @@
 """
-2.1.8  यावदवधारणे  (yāvad-avadhāraṇe)  —  VIDHI
+2.1.8  यावदवधारणे  —  VIDHI
 
 **Pāṭha:** The avyaya *yāvat* combines with a subanta to form an
 avyayībhāva samāsa when the meaning is avadhāraṇa (delimitation/extent).
@@ -39,8 +39,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.1.8",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "yAvad avaDAraNe",
-    text_dev              = "यावदवधारणे",
+    text_slp1             = 'yAvadavaDAraRe',
+    text_dev              = 'यावदवधारणे',
     padaccheda_dev        = "यावत् / अवधारणे",
     why_dev               = "यावत्-अव्यय-पूर्वकः अवधारणार्थे अव्ययीभावः (२.१.८)।",
     anuvritti_from        = ("2.1.5",),

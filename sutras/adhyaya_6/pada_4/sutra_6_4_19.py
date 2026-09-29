@@ -1,5 +1,5 @@
 """
-6.4.19  छ्छ्वोः शूडनुनासिके च  —  VIDHI (narrow demo)
+6.4.19  च्छ्वोः शूडनुनासिके च  —  VIDHI (narrow demo)
 
 Demo slice (पृष्ट्वा):
   After samprasāraṇa, for dhātu `pfcC` (pracch), replace final `cC` (cch) by `S`
@@ -61,8 +61,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.4.19",
     sutra_type=SutraType.VIDHI,
-    text_slp1="cCvoH SUq anunAsike ca (narrow)",
-    text_dev="च्छ्वोः शूडनुनासिके च",
+    text_slp1='cCvoH SUqanunAsike ca',
+    text_dev='च्छ्वोः शूडनुनासिके च',
     padaccheda_dev="च्छ्वोः / शूड् / अनुनासिके / च",
     why_dev="क्ङिति परे (पृच्छ्) अन्त्य-च्छ् → श् (पृष्ट्वा-पूर्वम्)।",
     anuvritti_from=("6.4.1",),

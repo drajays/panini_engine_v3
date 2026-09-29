@@ -1,5 +1,5 @@
 """
-1.1.55  अनेकाल्शित् सर्वस्य  —  PARIBHASHA (narrow demo)
+1.1.55  अनेकाल्शित्सर्वस्य  —  PARIBHASHA (narrow demo)
 
 Demo slice (ईधे):
   When an ādeśa is multi-lettered and marked with it (śit), replace the whole
@@ -41,8 +41,8 @@ SUTRA = SutraRecord(
     sutra_id="1.1.55",
     sutra_type=SutraType.PARIBHASHA,
     r1_form_identity_exempt=True,
-    text_slp1="anekAlSit sarvasya",
-    text_dev="अनेकाल्शित् सर्वस्य",
+    text_slp1='anekAlSitsarvasya',
+    text_dev='अनेकाल्शित्सर्वस्य',
     padaccheda_dev="अनेकाल्-शित् / सर्वस्य",
     why_dev="अनेकाल्-शित्-आदेशः सम्पूर्ण-स्थानिनः (ईधे: त→एश्)।",
     anuvritti_from=(),

@@ -1,5 +1,5 @@
 """
-2.1.65  पोटायुवतिस्तोककतिपयगृष्टिधेनुवशावेहत्बष्कयणीप्रवक्तॄश्रोत्रियाध्यापकधूर्तैर्जातिः  —  VIDHI
+2.1.65  पोटायुवतिस्तोककतिपयगृष्टिधेनुवशावेहत्बष्कयणीप्रवक्तृश्रोत्रियाध्यापकधूर्तैर्जातिः  —  VIDHI
 
 Padaccheda: पोटा-युवति-स्तोक-कतिपय-गृष्टि-धेनु-वशा-वेहद्-बष्कयणी-प्रवक्तॄ-श्रोत्रिय-अध्यापक-धूर्तैः जातिः
 
@@ -30,8 +30,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.1.65",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "powAyuvatistokakatipayagfzwiDenuvaSAvehatbazkayaRIpravaktFSrotriyADyApakaDUrtErjAtiH",
-    text_dev              = "पोटायुवतिस्तोककतिपयगृष्टिधेनुवशावेहत्बष्कयणीप्रवक्तॄश्रोत्रियाध्यापकधूर्तैर्जातिः",
+    text_slp1             = 'powAyuvatistokakatipayagfzwiDenuvaSAvehatbazkayaRIpravaktfSrotriyADyApakaDUrtErjAtiH',
+    text_dev              = 'पोटायुवतिस्तोककतिपयगृष्टिधेनुवशावेहत्बष्कयणीप्रवक्तृश्रोत्रियाध्यापकधूर्तैर्जातिः',
     padaccheda_dev        = "पोटा-युवति-स्तोक-कतिपय-गृष्टि-धेनु-वशा-वेहद्-बष्कयणी-प्रवक्तॄ-श्रोत्रिय-अध्यापक-धूर्तैः जातिः",
     why_dev               = "पोटा-युवति-आदिभिः जाति-वाचिभिः सह कर्मधारयः (२.१.६५)।",
     anuvritti_from        = ('2.1.3',),

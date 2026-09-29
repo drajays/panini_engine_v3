@@ -1,5 +1,5 @@
 """
-3.4.109  सिजभ्यस्तविदिभ्यः च  —  VIDHI
+3.4.109  सिजभ्यस्तविदिभ्यश्च  —  VIDHI
 
 Padaccheda: सिच्-अभ्यस्त-विदिभ्यः च
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.4.109",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "sijaByastavidiByaH ca",
-    text_dev              = "सिजभ्यस्तविदिभ्यः च",
+    text_slp1             = 'sijaByastavidiByaSca',
+    text_dev              = 'सिजभ्यस्तविदिभ्यश्च',
     padaccheda_dev        = "सिच्-अभ्यस्त-विदिभ्यः च",
     why_dev               = "धातोः प्रत्ययः (३.4.109)।",
     anuvritti_from        = ('3.1.1',),

@@ -1,5 +1,5 @@
 """
-3.1.42  अभ्युत्सादयांप्रजनयांचिकयांरमयामकः  —  VIDHI
+3.1.42  अभ्युत्सादयांप्रजनयांचिकयांरमयामकः पावयांक्रियाद्विदामक्रन्निति च्छन्दसि  —  VIDHI
 
 Padaccheda: अभ्युत्सादयाम् प्रजनयाम् चिकयाम् रमयाम् अकः (तिङ्) पावयांक्रियात् (तिङ्) विदामक्रन् (तिङ्) इति छन्दसि
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.1.42",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "aByutsAdayAMprajanayAMcikayAMramayAmakaH",
-    text_dev              = "अभ्युत्सादयांप्रजनयांचिकयांरमयामकः",
+    text_slp1             = 'aByutsAdayAMprajanayAMcikayAMramayAmakaH pAvayAMkriyAdvidAmakranniti cCandasi',
+    text_dev              = 'अभ्युत्सादयांप्रजनयांचिकयांरमयामकः पावयांक्रियाद्विदामक्रन्निति च्छन्दसि',
     padaccheda_dev        = "अभ्युत्सादयाम् प्रजनयाम् चिकयाम् रमयाम् अकः (तिङ्) पावयांक्रियात् (तिङ्) विदामक्रन् (तिङ्) इति छन्दसि",
     why_dev               = "धातोः [अभ्युत्सादयांप्रजनयांचिकयांरमयामकः]-प्रत्ययः विहितः (३.१.42)।",
     anuvritti_from        = ('3.1.1',),

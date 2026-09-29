@@ -1,5 +1,5 @@
 """
-5.2.128  द्वंद्वोपतापगर्ह्यात् प्राणिस्थादिनिः  —  VIDHI
+5.2.128  द्वन्द्वोपतापगर्ह्यात् प्राणिस्थादिनिः  —  VIDHI
 
 Padaccheda: द्वन्द्व-उपताप-गर्ह्यात् प्राणि-स्थात् इनिः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.128",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "dvaMdvopatApagarhyAt prARisTAdiniH",
-    text_dev              = "द्वंद्वोपतापगर्ह्यात् प्राणिस्थादिनिः",
+    text_slp1             = 'dvandvopatApagarhyAt prARisTAdiniH',
+    text_dev              = 'द्वन्द्वोपतापगर्ह्यात् प्राणिस्थादिनिः',
     padaccheda_dev        = "द्वन्द्व-उपताप-गर्ह्यात् प्राणि-स्थात् इनिः",
     why_dev               = "(सूत्रम् 5.2.128) द्वंद्वोपतापगर्ह्यात् प्राणिस्थादिनिः।",
     anuvritti_from        = ('5.1.1',),

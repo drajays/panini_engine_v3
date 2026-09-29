@@ -1,5 +1,5 @@
 """
-4.1.35  नित्यं सपत्न्य्आदिषु  —  VIDHI
+4.1.35  नित्यं सपत्न्यादिषु  —  VIDHI
 
 Padaccheda: नित्यम् सपत्नी-आदिषु
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.1.35",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "nityaM sapatnyAdizu",
-    text_dev              = "नित्यं सपत्न्य्आदिषु",
+    text_slp1             = 'nityaM sapatnyAdizu',
+    text_dev              = 'नित्यं सपत्न्यादिषु',
     padaccheda_dev        = "नित्यम् सपत्नी-आदिषु",
     why_dev               = "(सूत्रम् 4.1.35) नित्यं सपत्न्य्आदिषु।",
     anuvritti_from        = ('4.1.1',),

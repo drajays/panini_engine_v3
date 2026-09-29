@@ -1,5 +1,5 @@
 """
-6.3.121  इकः वहे अपीलोः  —  VIDHI
+6.3.121  इकः वहेऽपीलोः  —  VIDHI
 
 Padaccheda: इकः वहे अपीलोः
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.3.121",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "ikaH vahe apIloH",
-    text_dev              = "इकः वहे अपीलोः",
+    text_slp1             = 'ikaH vahepIloH',
+    text_dev              = 'इकः वहेऽपीलोः',
     padaccheda_dev        = "इकः वहे अपीलोः",
     why_dev               = "(सूत्रम् 6.3.121) इकः वहे अपीलोः।",
     anuvritti_from        = ('6.1.1',),

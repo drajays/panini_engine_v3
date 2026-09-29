@@ -1,5 +1,5 @@
 """
-2.4.23  सभा राजाऽमनुष्यपूर्वा  —  VIDHI
+2.4.23  सभा राजामनुष्यपूर्वा  —  VIDHI
 
 Padaccheda: सभा राजा-अमनुष्यपूर्वा
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.4.23",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "saBA rAjA'manuzyapUrvA",
-    text_dev              = "सभा राजाऽमनुष्यपूर्वा",
+    text_slp1             = 'saBA rAjAmanuzyapUrvA',
+    text_dev              = 'सभा राजामनुष्यपूर्वा',
     padaccheda_dev        = "सभा राजा-अमनुष्यपूर्वा",
     why_dev               = "राजा-अमनुष्यपूर्वा सभा (२.४.२३)।",
     anuvritti_from        = ('2.4.18',),

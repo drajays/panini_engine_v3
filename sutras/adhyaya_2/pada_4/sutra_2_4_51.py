@@ -1,5 +1,5 @@
 """
-2.4.51  णौ च सँश्चङोः  —  VIDHI
+2.4.51  णौ च संश्चङोः  —  VIDHI
 
 Padaccheda: णौ च सन्-चङोः
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.4.51",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "RO ca sa~ScaNoH",
-    text_dev              = "णौ च सँश्चङोः",
+    text_slp1             = 'RO ca saMScaNoH',
+    text_dev              = 'णौ च संश्चङोः',
     padaccheda_dev        = "णौ च सन्-चङोः",
     why_dev               = "णौ च सन्-चङोः (२.४.५१)।",
     anuvritti_from        = ('2.4.49',),

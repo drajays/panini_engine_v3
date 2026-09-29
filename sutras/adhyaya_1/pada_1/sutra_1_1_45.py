@@ -79,8 +79,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.1.45",
     sutra_type=SutraType.PARIBHASHA,
-    text_slp1="igyaNaH saMprasAraNam",
-    text_dev="इग्यणः सम्प्रसारणम्",
+    text_slp1='igyaRaH samprasAraRam',
+    text_dev='इग्यणः सम्प्रसारणम्',
     padaccheda_dev="इक्-यणः सम्प्रसारणम्",
     why_dev="यण्-वर्णस्य (य्/व्/र्/ल्) इक्-वर्णे (इ/उ/ऋ/ऌ) सम्प्रसारणम् — यथासंख्येन।",
     anuvritti_from=(),

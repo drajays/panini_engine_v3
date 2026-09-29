@@ -51,8 +51,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id              = "1.4.35",
     sutra_type            = SutraType.SAMJNA,
-    text_slp1             = "DAreH uttamarRaH",
-    text_dev              = "धारेरुत्तमर्णः",
+    text_slp1             = 'DAreruttamarRaH',
+    text_dev              = 'धारेरुत्तमर्णः',
     padaccheda_dev        = "धारेः / उत्तमर्णः",
     why_dev               = (
         "धारि-धातोः (ऋणे प्रयुक्तस्य) प्रसङ्गे उत्तमर्णः (ऋणदाता) "

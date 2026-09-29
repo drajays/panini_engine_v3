@@ -1,5 +1,5 @@
 """
-1.4.101  तिङः त्रीणि त्रीणि प्रथम-मध्यम-उत्तमाः  —  SAMJNA
+1.4.101  तिङस्त्रीणि त्रीणि प्रथममध्यमोत्तमाः  —  SAMJNA
 
 *Padaccheda:* *tiṅaḥ* (ṣaṣṭhī), *trīṇi trīṇi* (dva prathamā *bahuvacanam*), *prathama-madhyam-ottamāḥ* (pl.).
 
@@ -49,8 +49,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.4.101",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "tiNgaH trIRi trIRi prathama-madhyama-uttamAH",
-    text_dev       = "तिङः त्रीणि त्रीणि प्रथम-मध्यम-उत्तमाः (एकसंज्ञाधिकारे)",
+    text_slp1      = 'tiNastrIRi trIRi praTamamaDyamottamAH',
+    text_dev       = 'तिङस्त्रीणि त्रीणि प्रथममध्यमोत्तमाः',
     padaccheda_dev = "तिङ् / त्रीணि-त्रीणि (द्वि-वारम) / प्रथम-मध्यम-उत्तमाः (प्रथमा-बहु)",
     why_dev        = (
         "तिङादेश-अष्टादशानां क्रमेण षड्-त्र्यायाः, प्रथम-मध्यम-उत्तम-संज्ञा (पर-आत्म-नव-नव)।"

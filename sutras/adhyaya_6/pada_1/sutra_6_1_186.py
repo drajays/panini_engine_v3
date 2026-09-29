@@ -1,5 +1,5 @@
 """
-6.1.186  तास्यनुदात्तेन्ङिददुपदेशाल्लसार्वधातुकमनुदात्तमहन्विङोः  —  VIDHI
+6.1.186  तास्यनुदात्तेन्ङिददुपदेशाल्लसार्वधातुकमनुदात्तमह्न्विङोः  —  VIDHI
 
 Padaccheda: तासि-अनुदात्त-इत्-ङित्-अत्-उपदेशात् ल-सार्वधातुकम् अनुदात्तम् अ-ह्नु-इङोः
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.1.186",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "tAsyanudAttenNidadupadeSAllasArvaDAtukamanudAttamahanviNoH",
-    text_dev              = "तास्यनुदात्तेन्ङिददुपदेशाल्लसार्वधातुकमनुदात्तमहन्विङोः",
+    text_slp1             = 'tAsyanudAttenNidadupadeSAllasArvaDAtukamanudAttamahnviNoH',
+    text_dev              = 'तास्यनुदात्तेन्ङिददुपदेशाल्लसार्वधातुकमनुदात्तमह्न्विङोः',
     padaccheda_dev        = "तासि-अनुदात्त-इत्-ङित्-अत्-उपदेशात् ल-सार्वधातुकम् अनुदात्तम् अ-ह्नु-इङोः",
     why_dev               = "(सूत्रम् 6.1.186) तास्यनुदात्तेन्ङिददुपदेशाल्लसार्वधातुकमनुदात्तमहन्विङोः।",
     anuvritti_from        = ('6.1.1',),

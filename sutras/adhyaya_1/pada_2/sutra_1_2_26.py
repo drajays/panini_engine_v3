@@ -71,8 +71,8 @@ SUTRA = SutraRecord(
     sutra_id              = "1.2.26",
     sutra_type            = SutraType.NIYAMA,
     r1_form_identity_exempt = True,
-    text_slp1             = "ralo vyupaDAdDalAdeH saMS ca",
-    text_dev              = "रलो व्युपधाद्धलादेः संश्च",
+    text_slp1             = 'ralo vyupaDAdDalAdeH saMSca',
+    text_dev              = 'रलो व्युपधाद्धलादेः संश्च',
     padaccheda_dev        = "रलः / व्युपधात् / हलादेः / संश्च (अनिट्)",
     why_dev               = ("र-ल-उपधाकस्य हलादे-र्धातोः सम्-पूर्वकस्य "
                              "अनिट्त्वम् — इडागमो न भवति।"),

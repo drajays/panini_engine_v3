@@ -54,8 +54,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.4.99",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "lasaH parasmaipadam",
-    text_dev       = "लः परस्मैपदम् (आकडारादेकाः संज्ञाऽधिकारे)",
+    text_slp1      = 'laH parasmEpadam',
+    text_dev       = 'लः परस्मैपदम्',
     padaccheda_dev = "लः (षष्ठी) / परस्मैपदम् (प्रथमा)",
     why_dev        = (
         "लकार-स्थानि तिङादेशादिषु अन्त्यैकादश-प्रकारेषु परस्मैपद-संज्ञा; "

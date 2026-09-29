@@ -75,8 +75,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id         = "5.3.71",
     sutra_type       = SutraType.VIDHI,
-    text_slp1        = "avyaya-sarvanAmanAm kac prAk deH",
-    text_dev         = "अव्ययसर्वनाम्नामकच् प्राक् टेः",
+    text_slp1        = 'avyayasarvanAmnAmakac prAk weH',
+    text_dev         = 'अव्ययसर्वनाम्नामकच् प्राक् टेः',
     padaccheda_dev   = "अव्यय-सर्वनाम्नाम् / कच् / प्राक् / टेः",
     why_dev          = (
         "सर्वनाम-अव्यय-विषये *अकच्* प्रत्ययः (च्-इत्संज्ञकलोपे *क्* शिष्यते) "

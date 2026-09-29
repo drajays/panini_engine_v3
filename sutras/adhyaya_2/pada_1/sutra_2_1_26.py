@@ -1,5 +1,5 @@
 """
-2.1.26  स्वयं क्तेन  —  VIDHI (narrow P025 *vārttika* frame)
+2.1.26  खट्वा क्षेपे  —  VIDHI (narrow P025 *vārttika* frame)
 
 The JSON cites **2.1.26** together with the *vārttika* *tat-karoti tad-ācaṣṭe*
 as the locus for replacing an internal *sup* with the causative *ṇic* in the
@@ -67,8 +67,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="2.1.26",
     sutra_type=SutraType.VIDHI,
-    text_slp1="svayaM ktena",
-    text_dev="स्वयं क्तेन",
+    text_slp1='KawvA kzepe',
+    text_dev='खट्वा क्षेपे',
     padaccheda_dev="स्वयम् / क्तेन",
     why_dev="पटु-प्रातिपदिकात् परे णिच्-प्रत्ययः (P025 *tat-karoti tad-ācaṣṭe* डेमो)।",
     anuvritti_from=("2.1.1",),

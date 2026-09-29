@@ -1,5 +1,5 @@
 """
-6.2.3  वर्णः वर्णेष्वनेते  —  VIDHI
+6.2.3  वर्णो वर्णेष्वनेते  —  VIDHI
 
 Padaccheda: वर्णः वर्णेषु अनेते
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.2.3",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "varRaH varRezvanete",
-    text_dev              = "वर्णः वर्णेष्वनेते",
+    text_slp1             = 'varRo varRezvanete',
+    text_dev              = 'वर्णो वर्णेष्वनेते',
     padaccheda_dev        = "वर्णः वर्णेषु अनेते",
     why_dev               = "(सूत्रम् 6.2.3) वर्णः वर्णेष्वनेते।",
     anuvritti_from        = ('6.1.1',),

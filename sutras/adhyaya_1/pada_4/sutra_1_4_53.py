@@ -41,8 +41,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.53",
     sutra_type           = SutraType.SAMJNA,
-    text_slp1            = "hfkror anyatarasyAm",
-    text_dev             = "हृक्रोरन्यतरस्याम् — karman/kartṛ (vibhāṣā)",
+    text_slp1            = 'hfkroranyatarasyAm',
+    text_dev             = 'हृक्रोरन्यतरस्याम्',
     padaccheda_dev       = "हृ-क्रोः / अन्यतरस्याम्",
     why_dev              = (
         "हृ-कृ-धात्वोः णि-प्रयोगे प्रयोज्यः कर्म वा कर्ता वा विकल्पेन। "

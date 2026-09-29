@@ -162,8 +162,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.68",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "hal~yAbbhyo dIrghAt sutisyapfktaM hal",
-    text_dev       = "हल्ङ्याब्भ्यो दीर्घात् सुतिस्यपृक्तं हल्",
+    text_slp1      = 'halNyAbByo dIrGAt sutisyapfktaM hal',
+    text_dev       = 'हल्ङ्याब्भ्यो दीर्घात् सुतिस्यपृक्तं हल्',
     padaccheda_dev = "हल्-ङि-आभ्यः / दीर्घात् / सु-तिसि-अपृक्तम् / हल्",
     why_dev        = "हल्-अन्तात् / ङी-आभ्-अन्तात् दीर्घात् अङ्गात् परस्य अपृक्त-सु-हल्-लोपः।",
     anuvritti_from = (),

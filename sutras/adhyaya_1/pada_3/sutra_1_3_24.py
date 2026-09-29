@@ -47,8 +47,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.24",
     sutra_type=SutraType.VIDHI,
-    text_slp1="udo'nUrDvakarmaRi",
-    text_dev="उदोऽनूर्ध्वकर्मणि",
+    text_slp1='udonUrDvakarmaRi',
+    text_dev='उदोऽनूर्ध्वकर्मणि',
     padaccheda_dev="उदः (पञ्चमी) / अनु / ऊर्ध्व-कर्मणि (सप्तमी)",
     why_dev=(
         "उद्-अनु-पूर्वकस्य धातोः ऊर्ध्व-कर्म-विषये आत्मनेपदं भवति; "

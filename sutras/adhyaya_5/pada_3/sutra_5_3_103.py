@@ -1,5 +1,5 @@
 """
-5.3.103  शाखाऽऽदिभ्यो यत्  —  VIDHI
+5.3.103  शाखादिभ्यो यत्  —  VIDHI
 
 Padaccheda: शाखा-आदिभ्यः यत्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.3.103",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "SAKA''diByo yat",
-    text_dev              = "शाखाऽऽदिभ्यो यत्",
+    text_slp1             = 'SAKAdiByo yat',
+    text_dev              = 'शाखादिभ्यो यत्',
     padaccheda_dev        = "शाखा-आदिभ्यः यत्",
     why_dev               = "(सूत्रम् 5.3.103) शाखाऽऽदिभ्यो यत्।",
     anuvritti_from        = ('5.1.1',),

@@ -67,8 +67,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.2.89",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "yo'ci",
-    text_dev              = "योऽचि",
+    text_slp1             = 'yoci',
+    text_dev              = 'योऽचि',
     padaccheda_dev        = "यः अचि",
     why_dev               = "अस्मद्-शब्दस्य अन्त्य-दकारस्य स्थाने यकारः "
                             "अचि परे (सूत्रम् ७.२.८९ योऽचि)।",

@@ -1,5 +1,5 @@
 """
-8.3.99  ऐति संज्ञायामगात्  —  VIDHI
+8.3.99  एति संज्ञायामगात्  —  VIDHI
 
 Padaccheda: एति संज्ञायाम् अ-गात्
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "8.3.99",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "Eti saMjYAyAmagAt",
-    text_dev              = "ऐति संज्ञायामगात्",
+    text_slp1             = 'eti saMjYAyAmagAt',
+    text_dev              = 'एति संज्ञायामगात्',
     padaccheda_dev        = "एति संज्ञायाम् अ-गात्",
     why_dev               = "(सूत्रम् 8.3.99) ऐति संज्ञायामगात्।",
     anuvritti_from        = ('8.1.1',),

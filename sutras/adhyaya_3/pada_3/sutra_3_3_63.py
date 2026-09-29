@@ -1,5 +1,5 @@
 """
-3.3.63  यमः समुपनिविषु  —  VIDHI
+3.3.63  यमः समुपनिविषु च  —  VIDHI
 
 Padaccheda: यमः सम्-उप-नि-विषु
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.3.63",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "yamaH samupanivizu",
-    text_dev              = "यमः समुपनिविषु",
+    text_slp1             = 'yamaH samupanivizu ca',
+    text_dev              = 'यमः समुपनिविषु च',
     padaccheda_dev        = "यमः सम्-उप-नि-विषु",
     why_dev               = "धातोः प्रत्ययः (३.3.63)।",
     anuvritti_from        = ('3.1.1',),

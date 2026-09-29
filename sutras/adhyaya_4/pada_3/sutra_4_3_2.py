@@ -1,5 +1,5 @@
 """
-4.3.2  तस्मिन् नणि च युष्माकास्माकौ  —  VIDHI
+4.3.2  तस्मिन्नणि च युष्माकास्माकौ  —  VIDHI
 
 Padaccheda: तस्मिन् अणि च युष्माक-अस्माकौ
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.3.2",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "tasmin naRi ca yuzmAkAsmAkO",
-    text_dev              = "तस्मिन् नणि च युष्माकास्माकौ",
+    text_slp1             = 'tasminnaRi ca yuzmAkAsmAkO',
+    text_dev              = 'तस्मिन्नणि च युष्माकास्माकौ',
     padaccheda_dev        = "तस्मिन् अणि च युष्माक-अस्माकौ",
     why_dev               = "(सूत्रम् 4.3.2) तस्मिन् नणि च युष्माकास्माकौ।",
     anuvritti_from        = ('4.1.1',),

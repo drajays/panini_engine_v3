@@ -1,5 +1,5 @@
 """
-4.2.6  द्वंद्वाच्छः  —  VIDHI
+4.2.6  द्वन्द्वाच्छः  —  VIDHI
 
 Padaccheda: द्वन्द्वात् छः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.2.6",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "dvaMdvAcCaH",
-    text_dev              = "द्वंद्वाच्छः",
+    text_slp1             = 'dvandvAcCaH',
+    text_dev              = 'द्वन्द्वाच्छः',
     padaccheda_dev        = "द्वन्द्वात् छः",
     why_dev               = "(सूत्रम् 4.2.6) द्वंद्वाच्छः।",
     anuvritti_from        = ('4.1.1',),

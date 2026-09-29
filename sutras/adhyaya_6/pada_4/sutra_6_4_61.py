@@ -1,5 +1,5 @@
 """
-6.4.61  वाऽऽक्रोशदैन्ययोः  —  VIDHI
+6.4.61  वाक्रोशदैन्ययोः  —  VIDHI
 
 Padaccheda: वा आक्रोश-दैन्ययोः
 
@@ -30,8 +30,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.4.61",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "vA''kroSadEnyayoH",
-    text_dev              = "वाऽऽक्रोशदैन्ययोः",
+    text_slp1             = 'vAkroSadEnyayoH',
+    text_dev              = 'वाक्रोशदैन्ययोः',
     padaccheda_dev        = "वा आक्रोश-दैन्ययोः",
     why_dev               = "(सूत्रम् 6.4.61) वाऽऽक्रोशदैन्ययोः।",
     anuvritti_from        = ('6.1.1',),

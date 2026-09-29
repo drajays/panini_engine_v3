@@ -1,5 +1,5 @@
 """
-6.3.43  घ्यप्कल्पचेलड्… ङ्योऽनेकाचो ह्रस्वः  —  VIDHI (narrow *ṅy*ant + *anekāca* + *gha*)
+6.3.43  घरूपकल्पचेलड्ब्रुवगोत्रमतहतेषु ङ्योऽनेकाचो ह्रस्वः  —  VIDHI (narrow *ṅy*ant + *anekāca* + *gha*)
 
 *Kāśikā* *prayoga* (``kumari.md``): *kumArI* + *tar*/*tam* (***gha***, **1.1.22**) → *ī* → *i*.
 
@@ -85,8 +85,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.3.43",
     sutra_type=SutraType.VIDHI,
-    text_slp1="Ghyapkalpacelaq bruvagotrImatahatezy Nyor anekAco hrasvaH",
-    text_dev="घ…ङ्यो… अनेकाचो ह्रस्वः",
+    text_slp1='GarUpakalpacelaqbruvagotramatahatezu NyonekAco hrasvaH',
+    text_dev='घरूपकल्पचेलड्ब्रुवगोत्रमतहतेषु ङ्योऽनेकाचो ह्रस्वः',
     padaccheda_dev="घ-प्रत्यय-औ / ङि-अनिक / ह्रस्वः",
     why_dev="घ-संज्ञक-तद्धिते *ङ्य*न्त-अनेकाच-अङ्गे अन्त्य-दीर्घस्य ह्रस्वः (अ।)",
     anuvritti_from=("6.3.1", "6.3.114"),

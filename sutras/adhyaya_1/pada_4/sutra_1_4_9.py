@@ -1,5 +1,5 @@
 """
-1.4.9  षष्ठीयुक्तश्छन्दसि वा  (ṣaṣṭhīyuktaś chandasi vā)  —  VIBHASHA
+1.4.9  षष्ठीयुक्तश्छन्दसि वा  —  VIBHASHA
 
 **Pāṭha:** [*Pati*] associated with a genitive (*ṣaṣṭhī*) compound member
 optionally [receives the *ghi*/*nadī* designation] in Vedic (*chandas*).
@@ -42,8 +42,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id               = "1.4.9",
     sutra_type             = SutraType.VIBHASHA,
-    text_slp1              = "SaSTIyuktaS chandasi vA",
-    text_dev               = "षष्ठीयुक्तश्छन्दसि वा",
+    text_slp1              = 'zazWIyuktaSCandasi vA',
+    text_dev               = 'षष्ठीयुक्तश्छन्दसि वा',
     padaccheda_dev         = "षष्ठी-युक्तः / छन्दसि / वा",
     why_dev                = "षष्ठीसमासे पतिशब्दस्य छन्दसि वा नदीसंज्ञा।",
     apavada_of     = ("1.4.8",),   # अपवाद of 1.4.8 — sutra_ref_out resolver.apavada_of

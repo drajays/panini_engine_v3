@@ -1,5 +1,5 @@
 """
-3.1.31  आयादय आर्धद्धातुके वा  —  VIDHI
+3.1.31  आयादय आर्धधातुके वा  —  VIDHI
 
 Padaccheda: आय्-आदयः आर्धधातुके वा
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.1.31",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "AyAdaya ArDadDAtuke vA",
-    text_dev              = "आयादय आर्धद्धातुके वा",
+    text_slp1             = 'AyAdaya ArDaDAtuke vA',
+    text_dev              = 'आयादय आर्धधातुके वा',
     padaccheda_dev        = "आय्-आदयः आर्धधातुके वा",
     why_dev               = "धातोः [आयादय आर्धद्धातुके वा]-प्रत्ययः विहितः (३.१.31)।",
     anuvritti_from        = ('3.1.1',),

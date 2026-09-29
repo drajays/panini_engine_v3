@@ -33,8 +33,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id              = "2.3.9",
     sutra_type            = SutraType.VIDHI,
-    text_slp1             = "yasmAd aXikam yasya ca ISvaravacanaM tatra saptamI",
-    text_dev              = "यस्मादधिकं यस्य चेश्वरवचनं तत्र सप्तमी",
+    text_slp1             = 'yasmAdaDikaM yasya ceSvaravacanaM tatra saptamI',
+    text_dev              = 'यस्मादधिकं यस्य चेश्वरवचनं तत्र सप्तमी',
     padaccheda_dev        = "यस्मात् / अधिकम् / यस्य / च / ईश्वरवचनम् / तत्र / सप्तमी",
     why_dev               = (
         "अधिकत्वे ईश्वरवचने च सप्तमी-विभक्तिः — "

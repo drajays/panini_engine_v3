@@ -58,8 +58,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.1.23",
     sutra_type=SutraType.VIDHI,
-    text_slp1="tvAmau dvitIyAyAH",
-    text_dev="त्वामौ द्वितीयायाः",
+    text_slp1='tvAmO dvitIyAyAH',
+    text_dev='त्वामौ द्वितीयायाः',
     padaccheda_dev="त्वामौ / द्वितीयायाः",
     why_dev="अपादादौ त्वाम्-पदस्य त्वा-आदेशः (प्रक्रिया-२३, ग्लास-बॉक्स्)।",
     anuvritti_from=("8.1.17",),

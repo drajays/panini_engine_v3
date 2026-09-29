@@ -1,5 +1,5 @@
 """
-2.1.9  सुप्प्रतिना मात्रार्थे  (sup + prati in mātrārtha)  —  VIDHI
+2.1.9  सुप्प्रतिना मात्रार्थे  —  VIDHI
 
 **Pāṭha:** A subanta (*sup*-ending) combines with the avyaya *prati*
 when the sense is mātrārtha (mere measure / proportion).
@@ -39,8 +39,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.1.9",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "suB pratinA mAtrArTe",
-    text_dev              = "सुप्प्रतिना मात्रार्थे",
+    text_slp1             = 'suppratinA mAtrArTe',
+    text_dev              = 'सुप्प्रतिना मात्रार्थे',
     padaccheda_dev        = "सुप् / प्रतिना / मात्रार्थे",
     why_dev               = "सुप्-प्रति-योगे मात्रार्थे अव्ययीभावः (२.१.९)।",
     anuvritti_from        = ("2.1.5",),

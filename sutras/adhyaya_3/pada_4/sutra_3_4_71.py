@@ -1,5 +1,5 @@
 """
-3.4.71  अदिकर्मणि क्तः कर्तरि च  —  VIDHI
+3.4.71  आदिकर्मणि क्तः कर्तरि च  —  VIDHI
 
 Padaccheda: आदिकर्मणि क्तः कर्तरि च
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.4.71",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "adikarmaRi ktaH kartari ca",
-    text_dev              = "अदिकर्मणि क्तः कर्तरि च",
+    text_slp1             = 'AdikarmaRi ktaH kartari ca',
+    text_dev              = 'आदिकर्मणि क्तः कर्तरि च',
     padaccheda_dev        = "आदिकर्मणि क्तः कर्तरि च",
     why_dev               = "धातोः प्रत्ययः (३.4.71)।",
     anuvritti_from        = ('3.1.1',),

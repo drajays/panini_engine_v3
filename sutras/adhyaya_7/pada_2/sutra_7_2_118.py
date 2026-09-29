@@ -1,5 +1,5 @@
 """
-7.2.118  ङिति च  (kiti ca)  —  VIDHI (narrow: *aṅgā* *ādi*-*vṛddhi* before *kit* *taddhite*)
+7.2.118  किति च  —  VIDHI (narrow: *aṅgā* *ādi*-*vṛddhi* before *kit* *taddhite*)
 
 **Narrow v3 glass-box (``pipelines/taddhita_itika_etikAyana`` only):** when
 ``State.meta['prakriya_itika_phak']`` and the *taddhite* *pratyaya* carries
@@ -104,8 +104,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id        = "7.2.118",
     sutra_type      = SutraType.VIDHI,
-    text_slp1       = "Niti ca (aNge taddhite~kiti~ parize)",
-    text_dev        = "ङिति च (अङ्गे तद्धिते-कि-तद्धित-परिक्षे)।",
+    text_slp1       = 'kiti ca',
+    text_dev        = 'किति च',
     padaccheda_dev  = "ङिति / च (अङ्गे किति)",
     why_dev         = "तद्धित-कि-तद्धित-परिक्षे *इतिक* आदौ *इ*→*E* (वृद्धि)।",
     anuvritti_from  = ("6.4.1", "6.1.1"),

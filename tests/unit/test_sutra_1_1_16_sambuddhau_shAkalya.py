@@ -14,8 +14,8 @@ def test_metadata():
     r = SUTRA_REGISTRY["1.1.16"]
     assert r.sutra_id == "1.1.16"
     assert r.sutra_type is SutraType.SAMJNA
-    assert r.text_slp1 == s1116.TEXT_SLP1
-    assert "शाकल्य" in r.text_dev
+    assert r.text_slp1 == 'sambudDO SAkalyasyetAvanArze'
+    assert r.text_dev == 'सम्बुद्धौ शाकल्यस्येतावनार्षे'
 
 
 def test_samjna_idempotent():

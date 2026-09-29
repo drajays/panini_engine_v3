@@ -87,8 +87,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "3.4.101",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "tasthasthamipAM tAMtaMtAmaH",
-    text_dev       = "तस्थस्थमिपां तांतंतामः",
+    text_slp1      = 'tasTasTamipAM tAMtaMtAmaH',
+    text_dev       = 'तस्थस्थमिपां तांतंतामः',
     padaccheda_dev = "तस्थस्थमिपाम् / तांतंतामः",
     why_dev        = (
         "लङि: तस्→ताम् (प्रथम-द्विवचन), थस्→तम् (मध्यम-द्वि), "

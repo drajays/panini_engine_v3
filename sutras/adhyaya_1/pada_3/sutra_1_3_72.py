@@ -75,8 +75,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
     vibhasha_default=True,
-    text_slp1="svaritaYitaH kartfBiprAye kriyABale",
-    text_dev="स्वरितञितः कर्त्रभिप्राये क्रियाफले",
+    text_slp1='svaritaYitaH kartraBiprAye kriyAPale',
+    text_dev='स्वरितञितः कर्त्रभिप्राये क्रियाफले',
     padaccheda_dev=(
         "स्वरित-ञितः (षष्ठी-एकवचन) / कर्तृ-अभिप्राये (सप्तमी-एकवचन) "
         "/ क्रिया-फले (सप्तमी-एकवचन)"

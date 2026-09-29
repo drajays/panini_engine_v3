@@ -36,8 +36,8 @@ def _state(anga_slp1: str, *, it_markers: set[str]) -> State:
 def test_registry():
     r = SUTRA_REGISTRY["7.2.117"]
     assert r.sutra_type is SutraType.VIDHI
-    assert "taddhitezu" in r.text_slp1
-    assert "अचामादेः" in r.text_dev
+    assert r.text_slp1 == 'tadDitezvacAmAdeH'
+    assert r.text_dev == 'तद्धितेष्वचामादेः'
     assert "6.4.1" in r.anuvritti_from
 
 

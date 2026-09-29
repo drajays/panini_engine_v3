@@ -527,8 +527,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.2.46",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "kft-taddhita-samAsAH ca",
-    text_dev       = "कृत्तद्धितसमासाश्च",
+    text_slp1      = 'kfttadDitasamAsASca',
+    text_dev       = 'कृत्तद्धितसमासाश्च',
     padaccheda_dev = "कृत्-तद्धित-समासाः च (प्रातिपदिकम्)",
     why_dev        = "कृत्-तद्धित-समासान्ताः शब्दाः प्रातिपदिक-संज्ञकाः।",
     anuvritti_from = ("1.2.45",),

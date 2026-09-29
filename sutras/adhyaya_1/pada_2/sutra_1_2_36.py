@@ -1,5 +1,5 @@
 """
-1.2.36  विभाषा छन्दसि  (vibhāṣā chandasi)  —  VIBHASHA
+1.2.36  विभाषा छन्दसि  —  VIBHASHA
 
 Meaning: [These accent rules apply] optionally (vibhāṣā) in Vedic / chandas
 usage. This is a meta-vibhāṣā: it makes the preceding accent-assignment
@@ -54,8 +54,8 @@ SUTRA = SutraRecord(
     sutra_type              = SutraType.VIBHASHA,
     r1_form_identity_exempt = True,
     vibhasha_default        = True,
-    text_slp1               = "vibASA Candasi",
-    text_dev                = "विभाषा छन्दसि",
+    text_slp1               = 'viBAzA Candasi',
+    text_dev                = 'विभाषा छन्दसि',
     padaccheda_dev          = "विभाषा / छन्दसि",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.29",),

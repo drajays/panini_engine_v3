@@ -1,5 +1,5 @@
 """
-3.2.91  अग्नौ चे  —  VIDHI (narrow: **P041** *agnicit* *upapada* frame)
+3.2.91  अग्नौ चेः  —  VIDHI (narrow: **P041** *agnicit* *upapada* frame)
 
 *Śāstra (laghu):* in the *agni*-*upapada* context with *√ci* + *kvip* (*agnicid*),
 **3.2.91** *agnau ce* is cited in the JSON spine as licensing the *kṛt* frame
@@ -48,8 +48,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "3.2.91",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "agnO ce (narrow P041)",
-    text_dev       = "अग्नौ चे — P041 संक्षेपः",
+    text_slp1      = 'agnO ceH',
+    text_dev       = 'अग्नौ चेः',
     padaccheda_dev = "अग्नौ / चे",
     why_dev        = "अग्नि-उपपद-प्रसङ्गे च-आर्थे क्विप्-उपसंहारः (३.२.९१) — P041।",
     anuvritti_from = ("3.2.84",),

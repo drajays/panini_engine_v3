@@ -62,8 +62,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.91",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="dyudByolUNi",
-    text_dev="द्युद्भ्यो लुङि",
+    text_slp1='dyudByo luNi',
+    text_dev='द्युद्भ्यो लुङि',
     padaccheda_dev="द्युद्भ्यः (पञ्चमी-बहुवचन) / लुङि (सप्तमी-एकवचन)",
     why_dev=(
         "द्यु-गण-धातूनां लुङि-लकारे आत्मनेपदम् — "

@@ -43,8 +43,8 @@ SUTRA = SutraRecord(
     sutra_type              = SutraType.VIBHASHA,
     vibhasha_default        = True,
     r1_form_identity_exempt = True,
-    text_slp1               = "jAtyAKyAyAm ekasmin bahuvacanam anyatarasyAm",
-    text_dev                = "जात्याख्यायामेकस्मिन् बहुवचनमन्यतरस्याम्",
+    text_slp1               = 'jAtyAKyAyAmekasmin bahuvacanamanyatarasyAm',
+    text_dev                = 'जात्याख्यायामेकस्मिन् बहुवचनमन्यतरस्याम्',
     padaccheda_dev          = "जाति-आख्यायाम् / एकस्मिन् / बहुवचनम् / अन्यतरस्याम्",
     why_dev                 = (
         "जातिवाचिनि शब्दे एकस्मिन् अर्थे विवक्षिते बहुवचनम् अन्यतरस्याम् — "

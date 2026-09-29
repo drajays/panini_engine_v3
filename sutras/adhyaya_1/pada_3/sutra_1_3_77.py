@@ -58,8 +58,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
     vibhasha_default=True,
-    text_slp1="vibhAzOpapadeana pratIyamAne",
-    text_dev="विभाषोपपदेन प्रतीयमाने",
+    text_slp1='viBAzopapadena pratIyamAne',
+    text_dev='विभाषोपपदेन प्रतीयमाने',
     padaccheda_dev=(
         "विभाषा (प्रथमा-एकवचन) / उपापदेन (तृतीया-एकवचन) "
         "/ प्रतीयमाने (सप्तमी-एकवचन)"

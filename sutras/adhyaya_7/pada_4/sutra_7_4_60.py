@@ -146,8 +146,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.4.60",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "halAdi SezaH",
-    text_dev       = "हलादिः शेषः",
+    text_slp1      = 'halAdiH SezaH',
+    text_dev       = 'हलादिः शेषः',
     padaccheda_dev = "हलादिः / शेषः",
     why_dev        = (
         "अभ्यासे हलादिः एव शेषः (ग्लास-बॉक्स्: द्वित्व-प्रकरणे); प०३७ च ``Iw``→``I``।"

@@ -1,5 +1,5 @@
 """
-7.1.2  प्रत्ययादीनां फढखछघाम् आयन्-एय्-ईन्-ईय्-इयः  —  VIDHI
+7.1.2  आयनेयीनीयियः फढखच्छघां प्रत्ययादीनाम्  —  VIDHI
 
 **Padaccheda:** *āyan*-*ey*-*īn*-*īy*-*iyaḥ* (prathamā bahuvacanam),
 *pha-ḍha-kha-cha-ghām* (ṣaṣṭhī bahuvacanam), *pratyayādīnām* (ṣaṣṭhī bahuvacanam).
@@ -178,8 +178,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.1.2",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "pratyayAdInAm PaQaKacaGAm AyaneyInIyiyaH",
-    text_dev       = "प्रत्ययादीनां फढखछघाम् आयन्-एय्-ईन्-ईय्-इयः",
+    text_slp1      = 'AyaneyInIyiyaH PaQaKacCaGAM pratyayAdInAm',
+    text_dev       = 'आयनेयीनीयियः फढखच्छघां प्रत्ययादीनाम्',
     padaccheda_dev = (
         "आयन्-एय्-ईन्-ईय्-इयः (प्रथमा-बहुवचनम्) / "
         "फ-ढ-ख-छ-घाम् (षष्ठी-बहुवचनम्) / प्रत्ययादीनाम् (षष्ठी-बहुवचनम्)"

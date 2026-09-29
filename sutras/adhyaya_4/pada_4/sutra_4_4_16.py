@@ -1,5 +1,5 @@
 """
-4.4.16  भस्त्राऽऽदिभ्यः ष्ठन्  —  VIDHI
+4.4.16  भस्त्रादिभ्यः ष्ठन्  —  VIDHI
 
 Padaccheda: भस्त्रा-आदिभ्यः ष्ठन्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.4.16",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "BastrA''diByaH zWan",
-    text_dev              = "भस्त्राऽऽदिभ्यः ष्ठन्",
+    text_slp1             = 'BastrAdiByaH zWan',
+    text_dev              = 'भस्त्रादिभ्यः ष्ठन्',
     padaccheda_dev        = "भस्त्रा-आदिभ्यः ष्ठन्",
     why_dev               = "(सूत्रम् 4.4.16) भस्त्राऽऽदिभ्यः ष्ठन्।",
     anuvritti_from        = ('4.1.1',),

@@ -38,8 +38,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.3.42",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="puMvaw karmaDArayajAtIyadeSIyezu",
-    text_dev="पुंवत् कर्मधारयजातीयदेशीयेषु",
+    text_slp1='puMvat karmaDArayajAtIyadeSIyezu',
+    text_dev='पुंवत् कर्मधारयजातीयदेशीयेषु',
     padaccheda_dev="पुंवत् / कर्मधारय-जातीय-देशीयेषु",
     why_dev="कर्मधारये पूर्वपदस्य पुंवद्भावः (*prakriya_37*, संक्षेप-अङ्कनम्)।",
     anuvritti_from=(),

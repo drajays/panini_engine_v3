@@ -34,5 +34,5 @@ def test_P006_json_spine_order_and_surface():
 def test_P006_registers_new_4_1_77():
     r = SUTRA_REGISTRY["4.1.77"]
     assert r.sutra_id == "4.1.77"
-    assert "यङश्चाप्" in r.text_dev
+    assert r.text_dev == 'यूनस्तिः'
 

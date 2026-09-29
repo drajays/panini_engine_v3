@@ -16,7 +16,7 @@ def test_sutra_metadata():
     r = SUTRA_REGISTRY["1.1.5"]
     assert r.sutra_id == "1.1.5"
     assert r.sutra_type is SutraType.PARIBHASHA
-    assert "KNG" in r.text_slp1 or "kiti" in r.text_slp1.lower()
+    assert r.text_slp1 == 'kNiti ca'
 
 
 def test_blocked_false_without_kngiti():

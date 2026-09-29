@@ -1,5 +1,5 @@
 """
-1.1.24  (ṣṇāntā ṣaṭ)  —  SAMJNA; *devanāgarī* = ``_TEXT_DEV`` (ashtadhyayi *i* 11024 *s* line).
+1.1.24  ष्णान्ता षट्  —  SAMJNA; *devanāgarī* = ``_TEXT_DEV`` (ashtadhyayi *i* 11024 *s* line).
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=11024):** under *anuvṛtti* of *saṅkhyā* from **1.1.23**
 (``an`` = ``संख्या``), a numeral (*saṅkhyā*) that is *ṣ*-ending or *ṇ*-ending (*ṣṇānta*) receives
@@ -58,8 +58,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.24",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "zRAntA zaW",
-    text_dev       = _TEXT_DEV,
+    text_slp1      = 'zRAntA zaw',
+    text_dev       = 'ष्णान्ता षट्',
     padaccheda_dev = "ष्णान्ता / षट्",
     why_dev        = _WHY,
     anuvritti_from = ("1.1.23",),

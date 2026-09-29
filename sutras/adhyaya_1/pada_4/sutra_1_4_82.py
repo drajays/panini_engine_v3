@@ -1,5 +1,5 @@
 """
-1.4.82  व्यवहिताश्च  (vyavahitāś ca)  —  SAMJNA
+1.4.82  व्यवहिताश्च  —  SAMJNA
 
 In the Vedic language (anuvritti from 1.4.81 chandasi), gatis that are
 separated (vyavahita) from the dhātu by intervening elements also retain
@@ -26,8 +26,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.82",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="vyavahitAS ca",
-    text_dev="व्यवहिताश्च",
+    text_slp1='vyavahitASca',
+    text_dev='व्यवहिताश्च',
     padaccheda_dev="व्यवहिताः / च",
     why_dev="छन्दसि व्यवहितेऽपि गति-संज्ञा — व्यवहित-गति-द्वारं स्थाप्यते।",
     anuvritti_from=("1.4.60", "1.4.81"),

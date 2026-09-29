@@ -1,5 +1,5 @@
 """
-2.1.12  अपपरिबहिरञ्चवः पञ्चम्या  (apa-pari-bahis-añcavaḥ pañcamyā)  —  VIDHI
+2.1.12  अपपरिबहिरञ्चवः पञ्चम्या  —  VIDHI
 
 **Pāṭha:** The avyayas *apa*, *pari*, *bahis*, and *añcu* (and related
 forms) combine with a pañcamī-ending subanta to form an avyayībhāva samāsa.
@@ -41,8 +41,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.1.12",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "apa pari bAhir aYcavaH paYcamyA",
-    text_dev              = "अपपरिबहिरञ्चवः पञ्चम्या",
+    text_slp1             = 'apaparibahiraYcavaH paYcamyA',
+    text_dev              = 'अपपरिबहिरञ्चवः पञ्चम्या',
     padaccheda_dev        = "अप-परि-बहिः-अञ्चवः / पञ्चम्या",
     why_dev               = "अप-परि-बहिस्-अञ्च्-शब्दानां पञ्चम्यन्तेन सह अव्ययीभावः (२.१.१२)।",
     anuvritti_from        = ("2.1.5",),

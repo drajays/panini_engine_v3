@@ -60,8 +60,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.2.114",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "mfjeH vRddhiH",
-    text_dev       = "मृजेर्वृद्धिः",
+    text_slp1      = 'mfjervfdDiH',
+    text_dev       = 'मृजेर्वृद्धिः',
     padaccheda_dev = "मृजेः / वृद्धिः",
     why_dev        = "मृज्-धातोः सार्वधातुके परे ऋ-स्थाने वृद्धि (आर्) — ग्लास-बॉक्स्।",
     anuvritti_from = ("1.1.1", "1.1.3", "1.1.50", "1.1.51"),

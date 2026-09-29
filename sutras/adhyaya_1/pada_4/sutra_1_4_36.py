@@ -1,5 +1,5 @@
 """
-1.4.36  स्पृहेरीप्सितः  (spṛher īpsitaḥ)  —  SAMJNA (kāraka-saṃjñā)
+1.4.36  स्पृहेरीप्सितः  —  SAMJNA (kāraka-saṃjñā)
 
 **Pāṭha (baked anuvṛtti):** *kārake spṛheḥ īpsitaḥ sampradānam* —
 **1.4.23** *kārake*; **1.4.32** *sampradānam* (anuvṛtti).
@@ -41,8 +41,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.36",
     sutra_type           = SutraType.SAMJNA,
-    text_slp1            = "spfher Ipsitaḥ",
-    text_dev             = "स्पृहेरीप्सितः — sampradāna-kāraka",
+    text_slp1            = 'spfherIpsitaH',
+    text_dev             = 'स्पृहेरीप्सितः',
     padaccheda_dev       = "स्पृहेः / ईप्सितः",
     why_dev              = (
         "स्पृह्-धातोः ईप्सितः (यं प्रति स्पृहा) सम्प्रदान-कारक-संज्ञकः। "

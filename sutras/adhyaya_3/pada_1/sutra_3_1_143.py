@@ -1,5 +1,5 @@
 """
-3.1.143  विभाषा ग्रहेः  —  VIDHI
+3.1.143  विभाषा ग्रहः  —  VIDHI
 
 Padaccheda: विभाषा ग्रहः
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.1.143",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "viBAzA graheH",
-    text_dev              = "विभाषा ग्रहेः",
+    text_slp1             = 'viBAzA grahaH',
+    text_dev              = 'विभाषा ग्रहः',
     padaccheda_dev        = "विभाषा ग्रहः",
     why_dev               = "धातोः [विभाषा ग्रहेः]-प्रत्ययः विहितः (३.१.143)।",
     anuvritti_from        = ('3.1.1',),

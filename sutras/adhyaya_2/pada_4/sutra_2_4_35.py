@@ -1,5 +1,5 @@
 """
-2.4.35  आर्धधातुके  (ārdhadhātuke)  —  ADHIKARA
+2.4.35  आर्धधातुके  —  ADHIKARA
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=24035):** opens the first
 *ārdhadhātuka* adhikāra.
@@ -26,7 +26,7 @@ def act(state: State) -> State:
     state.adhikara_stack.append({
         "id"        : "2.4.35",
         "scope_end" : "2.4.57",
-        "text_dev"  : "आर्धधातुके",
+        "text_dev"  : 'आर्धधातुके',
     })
     return state
 
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id        = "2.4.35",
     sutra_type      = SutraType.ADHIKARA,
-    text_slp1       = "ArDadhAtuke",
-    text_dev        = "आर्धधातुके",
+    text_slp1       = 'ArDaDAtuke',
+    text_dev        = 'आर्धधातुके',
     padaccheda_dev  = "आर्धधातुके",
     why_dev         = "२.४.३५ इत्यतः २.४.५७ पर्यन्तम् 'आर्धधातुके' अधिकारः (प्रथमः) प्रवर्तते।",
     anuvritti_from  = (),

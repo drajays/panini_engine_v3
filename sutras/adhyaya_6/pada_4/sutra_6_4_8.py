@@ -73,8 +73,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.4.8",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "sarvanAmasthAne ca asambuddhau",
-    text_dev       = "सर्वनामस्थाने चासम्बुद्धौ",
+    text_slp1      = 'sarvanAmasTAne cAsambudDO',
+    text_dev       = 'सर्वनामस्थाने चासम्बुद्धौ',
     padaccheda_dev = "सर्वनामस्थाने च असम्बुद्धौ",
     why_dev        = "असम्बुद्धि-सर्वनामस्थाने परे नपुंसक-अङ्गस्य उपधा-अकारस्य दीर्घः (ज्ञानानि)।",
     anuvritti_from = ("6.4.1",),

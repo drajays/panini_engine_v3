@@ -18,8 +18,8 @@ def test_sutra_metadata():
     assert r.sutra_id == "3.2.123"
     assert r.sutra_type is SutraType.ADHIKARA
     assert r.adhikara_scope == ("3.2.123", "3.3.1")
-    assert r.text_slp1 == "vartamAne laT"
-    assert "वर्तमाने" in r.text_dev
+    assert r.text_slp1 == 'vartamAne law'
+    assert r.text_dev == 'वर्तमाने लट्'
 
 
 def test_act_pushes_scope_once():

@@ -35,7 +35,7 @@ def test_registry_metadata():
     r = SUTRA_REGISTRY["1.1.73"]
     assert r.sutra_type is SutraType.SAMJNA
     assert "1.1.1" in r.anuvritti_from
-    assert "yasya" in r.text_slp1
+    assert r.text_slp1 == 'vfdDiryasyAcAmAdistad vfdDam'
     assert "वृद्धम्" in r.padaccheda_dev
 
 

@@ -1,5 +1,5 @@
 """
-2.4.1  द्विगुरेकवचनम्  (dvigur ekavacanam)  —  VIDHI
+2.4.1  द्विगुरेकवचनम्  —  VIDHI
 
 Padaccheda: द्विगुः / एकवचनम्
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id       = "2.4.1",
     sutra_type     = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1      = "dvigur ekavacanam",
-    text_dev       = "द्विगुरेकवचनम्",
+    text_slp1      = 'dvigurekavacanam',
+    text_dev       = 'द्विगुरेकवचनम्',
     padaccheda_dev = "द्विगुः / एकवचनम्",
     why_dev        = "द्विगु-समासः एकवचने भवति।",
     anuvritti_from = (),

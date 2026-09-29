@@ -51,8 +51,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.38",
     sutra_type=SutraType.VIDHI,
-    text_slp1="vfttisar gatAyaneSu kramaH",
-    text_dev="वृत्तिसर्गतायनेषु क्रमः",
+    text_slp1='vfttisargatAyanezu kramaH',
+    text_dev='वृत्तिसर्गतायनेषु क्रमः',
     padaccheda_dev="वृत्ति-सर्ग-तायनेषु (सप्तमी-बहुवचन) / क्रमः (प्रथमा-एकवचन)",
     why_dev=(
         "वृत्ति-सर्ग-तायन-अर्थेषु क्रम्-धातोः प्रयोगे आत्मनेपदम् — "

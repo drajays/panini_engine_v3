@@ -1,5 +1,5 @@
 """
-1.2.51  लुपि युक्तवद् व्यक्तिवचने  —  SAMJNA (narrow ``prakriya_45`` / ``prakriya_46``)
+1.2.51  लुपि युक्तवद्व्यक्तिवचने  —  SAMJNA (narrow ``prakriya_45`` / ``prakriya_46``)
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=10251):** *lupi yuktavad vyaktivacane* — when an affix is
 removed by *luk*, the derived expression keeps the *liṅga* and *vacana* behaviour “as if” the
@@ -71,8 +71,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.2.51",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="lupi yuktavad vyaktivacane",
-    text_dev="लुपि युक्तवद् व्यक्तिवचने",
+    text_slp1='lupi yuktavadvyaktivacane',
+    text_dev='लुपि युक्तवद्व्यक्तिवचने',
     padaccheda_dev="लुपि / युक्तवत् / व्यक्ति-वचने",
     why_dev="लुपि लिङ्ग-वचने प्रकृतिवत् (*prakriya_45* **पञ्चालाः**, *prakriya_46* **गोदौ**)।",
     anuvritti_from=(),

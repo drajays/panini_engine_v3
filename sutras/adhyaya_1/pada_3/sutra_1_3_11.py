@@ -31,8 +31,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.11",
     sutra_type=SutraType.ADHIKARA,
-    text_slp1="svaritena aDikAraH",
-    text_dev="स्वरितेनाधिकारः",
+    text_slp1='svaritenADikAraH',
+    text_dev='स्वरितेनाधिकारः',
     padaccheda_dev="स्वरितेन (तृतीया) / अधिकारः (प्रथमा)",
     why_dev=(
         "स्वरितेन चिह्नितस्य अधिकारस्य विषयः १.३.१२–१.३.९३ इत्येषु आत्मनेपद-नियमेषु।"

@@ -1,5 +1,5 @@
 """
-2.1.13  लक्षणेनाभिप्रती आभिमुख्ये  —  VIDHI (narrow v3 demo slice)
+2.1.13  आङ् मर्यादाभिविध्योः  —  VIDHI (narrow v3 demo slice)
 
 Used in the user's *pratyagni* derivation: agnim prati → pratyagni (avyayībhāva).
 
@@ -41,8 +41,8 @@ SUTRA = SutraRecord(
     sutra_id       = "2.1.13",
     sutra_type     = SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1      = "lakzaNenABhipratI ABimuKye",
-    text_dev       = "लक्षणेनाभिप्रती आभिमुख्ये",
+    text_slp1      = 'AN maryAdABiviDyoH',
+    text_dev       = 'आङ् मर्यादाभिविध्योः',
     padaccheda_dev = "लक्षणेन / अभिप्रती / आभिमुख्ये",
     why_dev        = "प्रति-प्रत्यय-योगे आभिमुख्ये अव्ययीभावः (demo arm meta).",
     anuvritti_from = ("2.1.5",),

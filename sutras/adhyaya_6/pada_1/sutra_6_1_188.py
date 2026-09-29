@@ -1,5 +1,5 @@
 """
-6.1.188  स्वपादिर्हिंसामच्यनिटि  —  VIDHI
+6.1.188  स्वपादिहिंसामच्यनिटि  —  VIDHI
 
 Padaccheda: स्वप्-आदि-र्हिंसाम् अचि अन्-इटि
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.1.188",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "svapAdirhiMsAmacyaniwi",
-    text_dev              = "स्वपादिर्हिंसामच्यनिटि",
+    text_slp1             = 'svapAdihiMsAmacyaniwi',
+    text_dev              = 'स्वपादिहिंसामच्यनिटि',
     padaccheda_dev        = "स्वप्-आदि-र्हिंसाम् अचि अन्-इटि",
     why_dev               = "(सूत्रम् 6.1.188) स्वपादिर्हिंसामच्यनिटि।",
     anuvritti_from        = ('6.1.1',),

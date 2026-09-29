@@ -1,5 +1,5 @@
 """
-1.4.93  अधिपरी अनर्थकौ  (adhi-parī anarthakau)  —  VIDHI
+1.4.93  अधिपरी अनर्थकौ  —  VIDHI
 
 *Padaccheda:* *adhi-parī* (prathamā-dvivacana), *anarthakau* (prathamā-dvivacana).
 
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.93",
     sutra_type           = SutraType.VIDHI,
-    text_slp1            = "aDi-parI anarTakau",
-    text_dev             = "अधिपरी अनर्थकौ",
+    text_slp1            = 'aDiparI anarTakO',
+    text_dev             = 'अधिपरी अनर्थकौ',
     padaccheda_dev       = "अधि-परी / अनर्थकौ",
     why_dev              = (
         "अनर्थक-रूपेण वर्तमानौ 'अधि' 'परि' कर्मप्रवचनीय-संज्ञकौ (१.४.८३-अधिकार)।"

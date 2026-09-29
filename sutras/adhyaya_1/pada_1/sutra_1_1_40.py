@@ -69,8 +69,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.1.40",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "ktvA-tosun-kasunoH",
-    text_dev       = "क्त्वातोसुन्कसुनः",
+    text_slp1      = 'ktvAtosunkasunaH',
+    text_dev       = 'क्त्वातोसुन्कसुनः',
     padaccheda_dev = "क्त्वा / तोसुन् / कसुनः",
     why_dev        = "क्त्वा-तोसुन्-कसुन्-प्रत्ययान्तस्य अव्ययत्वम् (२.४.८२ सुप्-लुक्-प्रसङ्गः)।",
     anuvritti_from = (),

@@ -57,8 +57,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.49",
     sutra_type=SutraType.NIYAMA,
     r1_form_identity_exempt=True,
-    text_slp1="anorAkarmakAt",
-    text_dev="अनोरकर्मकात्",
+    text_slp1='anorakarmakAt',
+    text_dev='अनोरकर्मकात्',
     padaccheda_dev="अनोः (पञ्चमी-एकवचन) / अकर्मकात् (पञ्चमी-एकवचन)",
     why_dev=(
         "अनु-पूर्वकस्य अकर्मक-धातोः प्रयोगे आत्मनेपदं न — "

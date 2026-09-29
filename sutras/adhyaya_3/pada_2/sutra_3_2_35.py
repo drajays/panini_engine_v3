@@ -1,5 +1,5 @@
 """
-3.2.35  विध्वरुषोः तुदः  —  VIDHI
+3.2.35  विध्वरुषोस्तुदः  —  VIDHI
 
 Padaccheda: विधु-अरुषोः तुदः
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.2.35",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "viDvaruzoH tudaH",
-    text_dev              = "विध्वरुषोः तुदः",
+    text_slp1             = 'viDvaruzostudaH',
+    text_dev              = 'विध्वरुषोस्तुदः',
     padaccheda_dev        = "विधु-अरुषोः तुदः",
     why_dev               = "धातोः कृत्-प्रत्ययः [विध्वरुषोः तुदः] विहितः (३.२.35)।",
     anuvritti_from        = ('3.1.1',),

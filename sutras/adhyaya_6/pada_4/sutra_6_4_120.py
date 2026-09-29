@@ -89,8 +89,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.4.120",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "ata ekahalmaDye'nAdeSAderliwi",
-    text_dev              = "अत एकहल्मध्येऽनादेशादेर्लिटि",
+    text_slp1             = 'ata ekahalmaDyenAdeSAderliwi',
+    text_dev              = 'अत एकहल्मध्येऽनादेशादेर्लिटि',
     padaccheda_dev        = "अतः एक-हल्-मध्ये अन्-आदेश-आदेः लिटि",
     why_dev               = (
         "लिटि अनाभ्यास-धातोः एकहल्मध्यस्थ 'अ' → 'ए' — "

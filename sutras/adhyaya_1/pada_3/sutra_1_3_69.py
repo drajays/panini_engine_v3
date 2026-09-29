@@ -59,8 +59,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.69",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="gfDivaYcyoH prAlambhane",
-    text_dev="गृधिवञ्च्योः प्रलम्भने",
+    text_slp1='gfDivaYcyoH pralamBane',
+    text_dev='गृधिवञ्च्योः प्रलम्भने',
     padaccheda_dev="गृधि-वञ्च्योः (षष्ठी-द्विवचन) / प्रलम्भने (सप्तमी-एकवचन)",
     why_dev=(
         "गृध्/वञ्च्-धात्वोः प्रलम्भन-अर्थे आत्मनेपदम् — "

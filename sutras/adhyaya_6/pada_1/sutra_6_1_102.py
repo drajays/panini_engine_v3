@@ -135,8 +135,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.102",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "prathamayoH pUrvasavarRaH",
-    text_dev       = "प्रथमयोः पूर्वसवर्णः",
+    text_slp1      = 'praTamayoH pUrvasavarRaH',
+    text_dev       = 'प्रथमयोः पूर्वसवर्णः',
     padaccheda_dev = "प्रथमयोः पूर्व-सवर्णः",
     why_dev        = "प्रथमा-द्वितीययोः सुप्-सीमायाम् अक्+अच्-योः पूर्व-सवर्ण-दीर्घ-एकादेशः "
                      "(जस्-प्रत्यये परे 'ज'-वर्णोऽपि पूर्वयोगेन अन्तर्भवति); "

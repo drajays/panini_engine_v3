@@ -1,5 +1,5 @@
 """
-4.1.77  यङश्चाप्  —  VIDHI (narrow: *yuvan* → strī-pratyaya *tip*)
+4.1.77  यूनस्तिः  —  VIDHI (narrow: *yuvan* → strī-pratyaya *tip*)
 
 Śāstra: within the *strī* domain (**4.1.3**), certain bases take specific
 feminine suffixes.  This repository needs only a narrow slice to support
@@ -76,8 +76,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "4.1.77",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "yaGaz cAp",
-    text_dev       = "यङश्चाप्",
+    text_slp1      = 'yUnastiH',
+    text_dev       = 'यूनस्तिः',
     padaccheda_dev = "यङः / च / आप्",
     why_dev        = "युवन्-प्रातिपदिकात् स्त्रियाम् ति(प्) प्रत्ययः (नर-नारी-निर्देशे; narrow demo)।",
     anuvritti_from = ("4.1.3",),

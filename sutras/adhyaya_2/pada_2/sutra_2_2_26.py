@@ -299,8 +299,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "2.2.26",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "diN-nAmAny antarAle",
-    text_dev       = "दिङ्नामान्यन्तराले",
+    text_slp1      = 'diNnAmAnyantarAle',
+    text_dev       = 'दिङ्नामान्यन्तराले',
     padaccheda_dev = (
         "दिङ्-नामानि (प्रथमा-बहुवचनम्) / अन्तराले (सप्तमी-एकवचनम्)"
     ),

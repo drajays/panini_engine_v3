@@ -1,5 +1,5 @@
 """
-2.2.37  वाऽऽहिताग्न्यादिषु  —  VIDHI
+2.2.37  वाहिताग्न्यादिषु  —  VIDHI
 
 Padaccheda: वा आहित-अग्नि-आदिषु
 
@@ -30,8 +30,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.2.37",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "vA''hitAgnyAdizu",
-    text_dev              = "वाऽऽहिताग्न्यादिषु",
+    text_slp1             = 'vAhitAgnyAdizu',
+    text_dev              = 'वाहिताग्न्यादिषु',
     padaccheda_dev        = "वा आहित-अग्नि-आदिषु",
     why_dev               = "आहित-अग्नि-आदिषु वा (२.२.३७)।",
     anuvritti_from        = ('2.2.36',),

@@ -1,5 +1,5 @@
 """
-5.2.114  ज्योत्स्नातमिस्राशृङ्गिणोजस्विन्नूर्जस्वलगोमिन्मलिनमलीमसाः  —  VIDHI
+5.2.114  ज्योत्स्नातमिस्राशृङ्गिणोर्जस्विन्नूर्जस्वलगोमिन्मलिनमलीमसाः  —  VIDHI
 
 Padaccheda: ज्योत्स्ना-तमिस्रा-शृङ्गिण-ऊजस्विन्-ऊर्जस्वल-गोमिन्-मलिन-मलीमसाः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.114",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "jyotsnAtamisrASfNgiRojasvinnUrjasvalagominmalinamalImasAH",
-    text_dev              = "ज्योत्स्नातमिस्राशृङ्गिणोजस्विन्नूर्जस्वलगोमिन्मलिनमलीमसाः",
+    text_slp1             = 'jyotsnAtamisrASfNgiRorjasvinnUrjasvalagominmalinamalImasAH',
+    text_dev              = 'ज्योत्स्नातमिस्राशृङ्गिणोर्जस्विन्नूर्जस्वलगोमिन्मलिनमलीमसाः',
     padaccheda_dev        = "ज्योत्स्ना-तमिस्रा-शृङ्गिण-ऊजस्विन्-ऊर्जस्वल-गोमिन्-मलिन-मलीमसाः",
     why_dev               = "(सूत्रम् 5.2.114) ज्योत्स्नातमिस्राशृङ्गिणोजस्विन्नूर्जस्वलगोमिन्मलिनमलीमसाः।",
     anuvritti_from        = ('5.1.1',),

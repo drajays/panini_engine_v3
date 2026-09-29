@@ -1,5 +1,5 @@
 """
-7.2.65  विभाषा सृजिदृषोः  —  VIDHI
+7.2.65  विभाषा सृजिदृशोः  —  VIDHI
 
 Padaccheda: विभाषा सृजि-दृषोः
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.2.65",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "viBAzA sfjidfzoH",
-    text_dev              = "विभाषा सृजिदृषोः",
+    text_slp1             = 'viBAzA sfjidfSoH',
+    text_dev              = 'विभाषा सृजिदृशोः',
     padaccheda_dev        = "विभाषा सृजि-दृषोः",
     why_dev               = "(सूत्रम् 7.2.65) विभाषा सृजिदृषोः।",
     anuvritti_from        = ('7.1.1',),

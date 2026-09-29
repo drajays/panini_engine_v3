@@ -1,5 +1,5 @@
 """
-6.1.9  सन्‍यङोः  —  VIDHI (narrow)
+6.1.9  सन्यङोः  —  VIDHI (narrow)
 
 Glass-box: marks yaG term as reduplication-trigger so later rules can operate.
 
@@ -47,8 +47,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.9",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "sanyangoH",
-    text_dev       = "सन्‍यङोः",
+    text_slp1      = 'sanyaNoH',
+    text_dev       = 'सन्यङोः',
     padaccheda_dev = "सन्-यङोः",
     why_dev        = "यङ्-प्रसङ्गे द्वित्व-प्रवृत्तिः (ग्लास-बॉक्स् marker)।",
     anuvritti_from = ("6.1.1",),

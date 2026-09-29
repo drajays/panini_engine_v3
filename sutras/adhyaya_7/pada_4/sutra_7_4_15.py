@@ -58,8 +58,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="7.4.15",
     sutra_type=SutraType.VIDHI,
-    text_slp1="Apo 'nyatarasyAm",
-    text_dev="आपोऽन्यतरस्याम्",
+    text_slp1='AponyatarasyAm',
+    text_dev='आपोऽन्यतरस्याम्',
     padaccheda_dev="आपः / अन्यतरस्याम्",
     why_dev="समासान्त-कप्-पूर्वं आप्-अन्तस्य ह्रस्वः विभाषा (P027 — खट्वा→खट्व)।",
     anuvritti_from=("7.4.14",),

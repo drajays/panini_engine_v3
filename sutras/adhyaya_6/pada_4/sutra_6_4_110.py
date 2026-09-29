@@ -90,8 +90,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.4.110",
     sutra_type=SutraType.VIDHI,
-    text_slp1="ataH ut sArvaDAtuke",
-    text_dev="अत उत् सार्वधातुके",
+    text_slp1='ata ut sArvaDAtuke',
+    text_dev='अत उत् सार्वधातुके',
     padaccheda_dev="अतः / उत् / सार्वधातुके",
     why_dev="कङिति सार्वधातुके परे 'अ' का 'उ' आदेशः (कुरुतः)।",
     anuvritti_from=("6.4.1",),

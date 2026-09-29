@@ -68,8 +68,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.110",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "NasiNasos ca",
-    text_dev       = "ङसिङसोश्च",
+    text_slp1      = 'NasiNasoSca',
+    text_dev       = 'ङसिङसोश्च',
     padaccheda_dev = "ङसि-ङसोः च",
     why_dev        = "एङन्त-अङ्गात् परे ङसि/ङस्-प्रत्यययोः आद्य-अकारस्य लोपः (हरेऽसि/हरेऽस् → हरेसि/हरेस् → हरेः)।",
     anuvritti_from = ("6.1.84",),

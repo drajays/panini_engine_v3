@@ -59,8 +59,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="2.1.51",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="taddhitArthottarapadasamAhAre ca",
-    text_dev="तद्धितार्थोत्तरपदसमाहारे च",
+    text_slp1='tadDitArTottarapadasamAhAre ca',
+    text_dev='तद्धितार्थोत्तरपदसमाहारे च',
     padaccheda_dev="तद्धितार्थ-उत्तरपद-समाहारे च",
     why_dev="तद्धितार्थे सुबन्त-समाहारः (*prakriya_42*, **पञ्चेन्द्र**)।",
     anuvritti_from=(),

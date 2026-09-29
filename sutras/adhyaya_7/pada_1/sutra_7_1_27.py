@@ -75,8 +75,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.1.27",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "yuzmadasmadByAM Naso'S",
-    text_dev              = "युष्मदस्मद्भ्यां ङसोऽश्",
+    text_slp1             = 'yuzmadasmadByAM NasoS',
+    text_dev              = 'युष्मदस्मद्भ्यां ङसोऽश्',
     padaccheda_dev        = "युष्मद्-अस्मद्भ्याम् ङसः अश्",
     why_dev               = "अस्मद्-शब्दयोः ङस्-प्रत्ययस्य स्थाने अश् आदेशः "
                             "(सूत्रम् ७.१.२७ युष्मदस्मद्भ्यां ङसोऽश्)।",

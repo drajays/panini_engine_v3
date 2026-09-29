@@ -92,8 +92,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.69",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "eN hrasvAt sambuddheH (haloH)",
-    text_dev       = "एङ्ह्रस्वात् सम्बुद्धेः",
+    text_slp1      = 'eNhrasvAt sambudDeH',
+    text_dev       = 'एङ्ह्रस्वात् सम्बुद्धेः',
     padaccheda_dev = "एङ्-ह्रस्वात् सम्बुद्धेः — हलोः",
     why_dev        = "एङ्-अन्त / ह्रस्व-अन्त अङ्गात् परस्य सम्बुद्धि-एकवचन-"
                      "सु-प्रत्ययस्य हल्-वर्णस्य लोपः।",

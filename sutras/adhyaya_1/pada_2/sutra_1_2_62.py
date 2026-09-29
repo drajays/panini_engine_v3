@@ -42,8 +42,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.62",
     sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1               = "vizAKayoH ca",
-    text_dev                = "विशाखयोश्च",
+    text_slp1               = 'viSAKayoSca',
+    text_dev                = 'विशाखयोश्च',
     padaccheda_dev          = "विशाखयोः / च",
     why_dev                 = (
         "विशाखा-नक्षत्रयुगलस्यापि एकशेष-बहुवचन-विधिः अनुवर्तते — "

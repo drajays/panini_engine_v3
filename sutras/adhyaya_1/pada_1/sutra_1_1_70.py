@@ -1,5 +1,5 @@
 """
-1.1.70  तपरस्तत्कालस्य  (taparas tatkAlasya)  —  PARIBHASHA
+1.1.70  तपरस्तत्कालस्य  —  PARIBHASHA
 
 Classical role:
   "A phoneme followed by the marker 't' (e.g., 'at', 'it', 'ut') stands
@@ -42,8 +42,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.1.70",
     sutra_type              = SutraType.PARIBHASHA,
     r1_form_identity_exempt = True,
-    text_slp1               = "taparas tatkAlasya",
-    text_dev                = "तपरस्तत्कालस्य",
+    text_slp1               = 'taparastatkAlasya',
+    text_dev                = 'तपरस्तत्कालस्य',
     padaccheda_dev          = "त-परः / तत्-कालस्य",
     why_dev                 = (
         "त-परो वर्णः (यथा अत्, इत्, उत्) तत्-कालस्यैव — "

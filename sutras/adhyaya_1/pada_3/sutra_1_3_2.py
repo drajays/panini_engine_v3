@@ -99,8 +99,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.3.2",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "upadeSe ajanunAsika it",
-    text_dev       = "उपदेशेऽजनुनासिक इत्",
+    text_slp1      = 'upadeSejanunAsika it',
+    text_dev       = 'उपदेशेऽजनुनासिक इत्',
     padaccheda_dev = "उपदेशे अज् अनुनासिकः इत्",
     why_dev        = "उपदेशावस्थायाम् अज् वर्णः अनुनासिकः चेद् इत्-संज्ञकः; "
                      "इँर्-वार्तिके पुनः द्वयोः संयुक्तः इत्। लोपः १.३.९।",

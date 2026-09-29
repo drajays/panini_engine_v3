@@ -1,5 +1,5 @@
 """
-5.2.24  तस्य पाकमूले पील्वदिकर्णादिभ्यः कुणब्जाहचौ  —  VIDHI
+5.2.24  तस्य पाकमूले पील्वादिकर्णादिभ्यः कुणब्जाहचौ  —  VIDHI
 
 Padaccheda: तस्य पाकमूले पीलु-आदि-कर्ण-आदिभ्यः कुणप्-जाहचौ
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.24",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "tasya pAkamUle pIlvadikarRAdiByaH kuRabjAhacO",
-    text_dev              = "तस्य पाकमूले पील्वदिकर्णादिभ्यः कुणब्जाहचौ",
+    text_slp1             = 'tasya pAkamUle pIlvAdikarRAdiByaH kuRabjAhacO',
+    text_dev              = 'तस्य पाकमूले पील्वादिकर्णादिभ्यः कुणब्जाहचौ',
     padaccheda_dev        = "तस्य पाकमूले पीलु-आदि-कर्ण-आदिभ्यः कुणप्-जाहचौ",
     why_dev               = "(सूत्रम् 5.2.24) तस्य पाकमूले पील्वदिकर्णादिभ्यः कुणब्जाहचौ।",
     anuvritti_from        = ('5.1.1',),

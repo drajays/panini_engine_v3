@@ -1,5 +1,5 @@
 """
-2.3.29  अन्यारादितरर्त्तेदिक्शब्दाञ्चूत्तरपदाजाहियुक्ते  —  VIDHI
+2.3.29  अन्यारादितरर्तेदिक्छब्दाञ्चूत्तरपदाजाहियुक्ते  —  VIDHI
 
 Padaccheda: अन्य-आरात्-इतर-ऋते-दिक्शब्द-अञ्चु-उत्तरपद-आच्-आहियुक्ते
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.3.29",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "anyArAditararttedikSabdAYcUttarapadAjAhiyukte",
-    text_dev              = "अन्यारादितरर्त्तेदिक्शब्दाञ्चूत्तरपदाजाहियुक्ते",
+    text_slp1             = 'anyArAditarartedikCabdAYcUttarapadAjAhiyukte',
+    text_dev              = 'अन्यारादितरर्तेदिक्छब्दाञ्चूत्तरपदाजाहियुक्ते',
     padaccheda_dev        = "अन्य-आरात्-इतर-ऋते-दिक्शब्द-अञ्चु-उत्तरपद-आच्-आहियुक्ते",
     why_dev               = "अन्य-आरात्-इतर-ऋते-दिक्-अञ्चु-आच्-आहियुक्ते पञ्चमी (२.३.२९)।",
     anuvritti_from        = ('2.3.28',),

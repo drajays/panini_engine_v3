@@ -31,6 +31,7 @@ FILES = (
     "shabda/data2.txt",                              # noun paradigms
     "shabda/shabdaprakriya.txt",                     # noun derivation paths (sūtras)
     "sutraani/sutra_prayogas.txt",                   # attested usages per sūtra
+    "sutraani/data.txt",                             # the sūtrapāṭha: text + type (संज्ञा/विधि/…)
 )
 
 

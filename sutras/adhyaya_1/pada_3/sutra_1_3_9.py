@@ -1,5 +1,5 @@
 """
-1.3.9  उपदेशे इतस्य लोपः  —  VIDHI
+1.3.9  तस्य लोपः  —  VIDHI
 
 Śāstra / engine role (CONSTITUTION Arts. 1, 2, 5 (R1), 7)
 ──────────────────────────────────────────────────────────
@@ -147,8 +147,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.3.9",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "upadeSe itasya lopaH",
-    text_dev       = "उपदेशे इतस्य लोपः",
+    text_slp1      = 'tasya lopaH',
+    text_dev       = 'तस्य लोपः',
     padaccheda_dev = "उपदेशे इतस्य लोपः",
     why_dev        = "ये वर्णाः ‘इत्’ संज्ञकाः (१.३.२–१.३.८), तेषां लोपः। "
                      "अयम् एव ध्वनि-अपगमः — संज्ञा-निर्देशो न।",

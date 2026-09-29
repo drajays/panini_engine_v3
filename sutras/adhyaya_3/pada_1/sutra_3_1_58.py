@@ -1,5 +1,5 @@
 """
-3.1.58  जृस्तम्भुम्रुचुम्लुचुग्रुचुग्लुचुग्लुञ्चुश्विभ्यश्च  —  VIDHI
+3.1.58  जॄस्तम्भुम्रुचुम्लुचुग्रुचुग्लुचुग्लुञ्चुश्विभ्यश्च  —  VIDHI
 
 Padaccheda: जॄ-स्तम्भु-म्रुचु-म्लुचु-ग्रुचु-ग्लुचु-ग्लुञ्चु-श्विभ्यः च
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.1.58",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "jfstamBumrucumlucugrucuglucugluYcuSviByaSca",
-    text_dev              = "जृस्तम्भुम्रुचुम्लुचुग्रुचुग्लुचुग्लुञ्चुश्विभ्यश्च",
+    text_slp1             = 'jFstamBumrucumlucugrucuglucugluYcuSviByaSca',
+    text_dev              = 'जॄस्तम्भुम्रुचुम्लुचुग्रुचुग्लुचुग्लुञ्चुश्विभ्यश्च',
     padaccheda_dev        = "जॄ-स्तम्भु-म्रुचु-म्लुचु-ग्रुचु-ग्लुचु-ग्लुञ्चु-श्विभ्यः च",
     why_dev               = "धातोः [जृस्तम्भुम्रुचुम्लुचुग्रुचुग्लुचुग्लुञ्चुश्विभ्यश्च]-प्रत्ययः विहितः (३.१.58)।",
     anuvritti_from        = ('3.1.1',),

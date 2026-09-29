@@ -56,8 +56,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.67",
     sutra_type=SutraType.VIDHI,
-    text_slp1="ver apRktasya",
-    text_dev="वेरपृक्तस्य",
+    text_slp1='verapfktasya',
+    text_dev='वेरपृक्तस्य',
     padaccheda_dev="वेः / अपृक्तस्य",
     why_dev="क्विप्-शेष-वि-लोपः (*prakriya_22*, ग्लास-बॉक्स्)।",
     anuvritti_from=("6.1.66",),

@@ -72,8 +72,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "4.1.99",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "naDAdibhyaH Pak",
-    text_dev       = "नडादिभ्यः फक्",
+    text_slp1      = 'naqAdiByaH Pak',
+    text_dev       = 'नडादिभ्यः फक्',
     padaccheda_dev = "नड-आदिभ्यः / फक्",
     why_dev        = "नडादि-गण-आधारेण (अपत्याधिकारः ४.१.९२) *फक्* तद्धित-प्रत्यय-विधानम्।",
     anuvritti_from = (),

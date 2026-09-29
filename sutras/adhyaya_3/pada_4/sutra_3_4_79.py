@@ -90,8 +90,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.4.79",
     sutra_type=SutraType.VIDHI,
-    text_slp1="Tita AtmanepAdAnAM were",
-    text_dev="टित आत्मनेपदानां टेरे",
+    text_slp1='wita AtmanepadAnAM were',
+    text_dev='टित आत्मनेपदानां टेरे',
     padaccheda_dev="टित् / आत्मनेपदानाम् / टेरे",
     why_dev=(
         "आत्मनेपद-प्रत्ययस्य टि-भागे (अन्तिम-स्वर + अनन्तर) ‘ए’-आदेशः — "

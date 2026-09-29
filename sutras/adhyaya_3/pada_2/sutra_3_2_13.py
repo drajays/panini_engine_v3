@@ -1,5 +1,5 @@
 """
-3.2.13  स्तम्बकर्णयोः रमिजपोः  —  VIDHI
+3.2.13  स्तम्बकर्णयो रमिजपोः  —  VIDHI
 
 Padaccheda: स्तम्ब-कर्णयोः रमि-जपोः
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.2.13",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "stambakarRayoH ramijapoH",
-    text_dev              = "स्तम्बकर्णयोः रमिजपोः",
+    text_slp1             = 'stambakarRayo ramijapoH',
+    text_dev              = 'स्तम्बकर्णयो रमिजपोः',
     padaccheda_dev        = "स्तम्ब-कर्णयोः रमि-जपोः",
     why_dev               = "धातोः कृत्-प्रत्ययः [स्तम्बकर्णयोः रमिजपोः] विहितः (३.२.13)।",
     anuvritti_from        = ('3.1.1',),

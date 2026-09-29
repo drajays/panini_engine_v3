@@ -109,8 +109,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.1.55",
     sutra_type=SutraType.VIDHI,
-    text_slp1="puzAdidyutAdyaRqfitaH parasmaipadaizu",
-    text_dev="पुषादिद्युताद्यॢदितः परस्मैपदेषु",
+    text_slp1='puzAdidyutAdyxditaH parasmEpadezu',
+    text_dev='पुषादिद्युताद्यॢदितः परस्मैपदेषु',
     padaccheda_dev="पुषादि-द्युतादि-ॢदितः / परस्मैपदेषु",
     why_dev=(
         "द्युत्-आदेर् धातोः परस्मैपद-लुङि च्लि-स्थाने अङादेशः (अङ् इति; P018-A)।"

@@ -1,5 +1,5 @@
 """
-1.4.22  द्वि-एकयोः द्विवचन-एकवचने  —  PARIBHASHA
+1.4.22  द्व्येकयोर्द्विवचनैकवचने  —  PARIBHASHA
 
 *Padaccheda:* *dvi-ekayoḥ* (saptamī *dvivacanam* of *dvi* and *eka* in compound), *dvivacana-ekavacane* (nominative dual).
 
@@ -42,8 +42,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.4.22",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "dvi-ekayoH divivacana-ekavacane",
-    text_dev       = "द्वि-एकयोः द्विवचन-एकवचने (एकसंज्ञा १.४.१, तिङ्-१.४.१०२, सुप्-१.४.१०३)",
+    text_slp1      = 'dvyekayordvivacanEkavacane',
+    text_dev       = 'द्व्येकयोर्द्विवचनैकवचने',
     padaccheda_dev = "द्वि-एकयोः (सप्तमी-द्वि) / द्विवचन-एकवचने (प्रथमा-द्वि)",
     why_dev        = (
         "द्वित्व-विवक्षायां द्वि-वचनिय-प्रत्ययः, एकत्व-विवक्षायाम् एक-वचनियः; "

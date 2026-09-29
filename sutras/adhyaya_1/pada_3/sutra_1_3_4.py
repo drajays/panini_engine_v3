@@ -67,8 +67,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.3.4",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "na vibhaktO tusmAH",
-    text_dev       = "न विभक्तौ तुस्माः",
+    text_slp1      = 'na viBaktO tusmAH',
+    text_dev       = 'न विभक्तौ तुस्माः',
     padaccheda_dev = "न विभक्तौ तु-स्माः",
     why_dev        = "विभक्ति-प्रत्यये अन्त्यौ तु-स्म-वर्णौ हलन्त्य-इत् संज्ञां न लभेते; "
                      "विधिः १.३.३ एव न प्रवर्तते (तुस्मान्त-निषेधः)।",

@@ -1,5 +1,5 @@
 """
-5.2.120  रूपादाहतप्रशंसयोरप्  —  VIDHI
+5.2.120  रूपादाहतप्रशंसयोर्यप्  —  VIDHI
 
 Padaccheda: रूपात् आहत-प्रशंसयोः यप्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.120",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "rUpAdAhatapraSaMsayorap",
-    text_dev              = "रूपादाहतप्रशंसयोरप्",
+    text_slp1             = 'rUpAdAhatapraSaMsayoryap',
+    text_dev              = 'रूपादाहतप्रशंसयोर्यप्',
     padaccheda_dev        = "रूपात् आहत-प्रशंसयोः यप्",
     why_dev               = "(सूत्रम् 5.2.120) रूपादाहतप्रशंसयोरप्।",
     anuvritti_from        = ('5.1.1',),

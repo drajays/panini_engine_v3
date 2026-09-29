@@ -134,8 +134,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.1.73",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "yasya acAm AdiH vfdDiH tat vfdDam",
-    text_dev       = "यस्य अचामादिः वृद्धिः, तत् वृद्धम्",
+    text_slp1      = 'vfdDiryasyAcAmAdistad vfdDam',
+    text_dev       = 'वृद्धिर्यस्याचामादिस्तद् वृद्धम्',
     padaccheda_dev = (
         "वृद्धिः (प्रथमा-एकवचनम्) / यस्य (षष्ठी-एकवचनम्) / "
         "अचाम् (षष्ठी-बहुवचनम्) / आदिः (प्रथमा-एकवचनम्) / "

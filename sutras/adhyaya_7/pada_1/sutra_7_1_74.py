@@ -1,5 +1,5 @@
 """
-7.1.74  तृतीयाऽऽदिषु भाषितपुंस्कं पुंवद्गालवस्य  —  VIDHI
+7.1.74  तृतीयादिषु भाषितपुंस्कं पुंवद्गालवस्य  —  VIDHI
 
 Padaccheda: तृतीया-आदिषु भाषितपुंस्कम् पुंवत् गालवस्य
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.1.74",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "tftIyA''dizu BAzitapuMskaM puMvadgAlavasya",
-    text_dev              = "तृतीयाऽऽदिषु भाषितपुंस्कं पुंवद्गालवस्य",
+    text_slp1             = 'tftIyAdizu BAzitapuMskaM puMvadgAlavasya',
+    text_dev              = 'तृतीयादिषु भाषितपुंस्कं पुंवद्गालवस्य',
     padaccheda_dev        = "तृतीया-आदिषु भाषितपुंस्कम् पुंवत् गालवस्य",
     why_dev               = "(सूत्रम् 7.1.74) तृतीयाऽऽदिषु भाषितपुंस्कं पुंवद्गालवस्य।",
     anuvritti_from        = ('7.1.1',),

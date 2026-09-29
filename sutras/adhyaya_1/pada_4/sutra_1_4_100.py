@@ -1,5 +1,5 @@
 """
-1.4.100  लः तङानौ आत्मनेपदम्  —  SAMJNA
+1.4.100  तङानावात्मनेपदम्  —  SAMJNA
 
 *Padaccheda:* *taṅānau* (prathamā *dvivacanam* — *taṅ* + *ānau*), *ātmanepadam* (prathamā).
 
@@ -50,8 +50,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.4.100",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "lasaH taNAnO Atmanepadam",
-    text_dev       = "लः तङानौ आत्मनेपदम् (आकडारादेकाः, लः १.४.९९)",
+    text_slp1      = 'taNAnAvAtmanepadam',
+    text_dev       = 'तङानावात्मनेपदम्',
     padaccheda_dev = "तङ्-आनौ (प्रथमा-द्विवचनम्) / आत्मनेपदम् (प्रथमा)",
     why_dev        = (
         "लकार-स्थाने तङ्-आदेशाः शानच्-कानच् च आत्मनेपद-संज्ञकाः; "

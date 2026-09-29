@@ -1,5 +1,5 @@
 """
-1.1.7  हलोऽनन्तराः संयोगः  (halo anantarAH saMyogaH)  —  SAMJNA
+1.1.7  हलोऽनन्तराः संयोगः  —  SAMJNA
 
 **Śāstra:** consecutive *hal* (no intervening *ac*) receive the saṃjñā *saṃyoga* (a
 consonant cluster, one phonological place for certain operations).
@@ -70,8 +70,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.7",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "halo anantarAH saMyogaH",
-    text_dev       = "हलोऽनन्तराः संयोगः",
+    text_slp1      = 'halonantarAH saMyogaH',
+    text_dev       = 'हलोऽनन्तराः संयोगः',
     padaccheda_dev = "हलः अनन्तराः संयोगः",
     why_dev        = _WHY,
     anuvritti_from = (),

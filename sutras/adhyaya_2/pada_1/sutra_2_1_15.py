@@ -1,5 +1,5 @@
 """
-2.1.15  अनुर्यत्समया  (anur yat samayā)  —  VIDHI
+2.1.15  अनुर्यत्समया  —  VIDHI
 
 **Pāṭha:** The avyaya *anu* combines with a subanta to form an
 avyayībhāva samāsa when the sense is *samaya* (along with / following).
@@ -39,8 +39,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.1.15",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "anur yat samayA",
-    text_dev              = "अनुर्यत्समया",
+    text_slp1             = 'anuryatsamayA',
+    text_dev              = 'अनुर्यत्समया',
     padaccheda_dev        = "अनुः / यत् / समया",
     why_dev               = "अनु-अव्यय-पूर्वकः समयार्थे अव्ययीभावः (२.१.१५)।",
     anuvritti_from        = ("2.1.5",),

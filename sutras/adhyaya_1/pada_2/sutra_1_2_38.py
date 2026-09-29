@@ -1,5 +1,5 @@
 """
-1.2.38  देवब्रह्मणोरनुदात्तः  (devabrahmaṇor anudāttaḥ)  —  SAMJNA
+1.2.38  देवब्रह्मणोरनुदात्तः  —  SAMJNA
 
 Meaning: The words "deva" and "brahman" [in certain Vedic/ritual contexts]
 have anudātta (grave) accent. This sūtra assigns the anudātta saṃjñā
@@ -47,8 +47,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.38",
     sutra_type              = SutraType.SAMJNA,
     r1_form_identity_exempt = True,
-    text_slp1               = "devabrahmaNoH anudAttaH",
-    text_dev                = "देवब्रह्मणोरनुदात्तः",
+    text_slp1               = 'devabrahmaRoranudAttaH',
+    text_dev                = 'देवब्रह्मणोरनुदात्तः',
     padaccheda_dev          = "देव-ब्रह्मणोः / अनुदात्तः",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.30",),

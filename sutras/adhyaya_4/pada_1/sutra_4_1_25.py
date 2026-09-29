@@ -1,5 +1,5 @@
 """
-4.1.25  बहुव्रीहेरूधसो ङीष्।  —  VIDHI
+4.1.25  बहुव्रीहेरूधसो ङीष्  —  VIDHI
 
 Padaccheda: बहुव्रीहेः ऊधसः ङीष्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.1.25",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "bahuvrIherUDaso NIz.",
-    text_dev              = "बहुव्रीहेरूधसो ङीष्।",
+    text_slp1             = 'bahuvrIherUDaso NIz',
+    text_dev              = 'बहुव्रीहेरूधसो ङीष्',
     padaccheda_dev        = "बहुव्रीहेः ऊधसः ङीष्",
     why_dev               = "(सूत्रम् 4.1.25) बहुव्रीहेरूधसो ङीष्।।",
     anuvritti_from        = ('4.1.1',),

@@ -55,8 +55,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
     vibhasha_default=True,
-    text_slp1="viBazAkarmakAt",
-    text_dev="विभाषाऽकर्मकात्",
+    text_slp1='viBAzAkarmakAt',
+    text_dev='विभाषाऽकर्मकात्',
     padaccheda_dev="विभाषा / अकर्मकात् (पञ्चमी-एकवचन)",
     why_dev=(
         "अकर्मक-धातोः विकल्पेन आत्मनेपदम् — "

@@ -1,5 +1,5 @@
 """
-3.2.74  आतो मनिन्क्वनिप्वनिपश्च  —  VIDHI
+3.2.74  आतो मनिन्क्वनिब्वनिपश्च  —  VIDHI
 
 Padaccheda: आतः मनिन्-क्वनिप्-वनिपः च
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.2.74",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "Ato maninkvanipvanipaSca",
-    text_dev              = "आतो मनिन्क्वनिप्वनिपश्च",
+    text_slp1             = 'Ato maninkvanibvanipaSca',
+    text_dev              = 'आतो मनिन्क्वनिब्वनिपश्च',
     padaccheda_dev        = "आतः मनिन्-क्वनिप्-वनिपः च",
     why_dev               = "धातोः कृत्-प्रत्ययः [आतो मनिन्क्वनिप्वनिपश्च] विहितः (३.२.74)।",
     anuvritti_from        = ('3.1.1',),

@@ -1,5 +1,5 @@
 """
-7.2.116  अतो उपधायाः  —  VIDHI
+7.2.116  अत उपधायाः  —  VIDHI
 
 Sources consulted:
 - ashtadhyayi.com data.txt row i=702116
@@ -140,8 +140,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.2.116",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "ata upadhAyAH (Nit pare)",
-    text_dev       = "अतो उपधायाः",
+    text_slp1      = 'ata upaDAyAH',
+    text_dev       = 'अत उपधायाः',
     padaccheda_dev = "अतः उपधायाः",
     why_dev        = "णित्-प्रत्यये परे धातोः उपधास्थ-अकारस्य वृद्धि (पच् → पाच्)।",
     apavada_of     = ("7.2.115",),   # अपवाद of 7.2.115 — sutra_ref_out resolver.apavada_of

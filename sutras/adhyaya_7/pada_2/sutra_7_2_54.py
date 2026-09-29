@@ -1,5 +1,5 @@
 """
-7.2.54  लुभो विमोचने  —  VIDHI
+7.2.54  लुभो विमोहने  —  VIDHI
 
 Padaccheda: लुभः विमोहने
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.2.54",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "luBo vimocane",
-    text_dev              = "लुभो विमोचने",
+    text_slp1             = 'luBo vimohane',
+    text_dev              = 'लुभो विमोहने',
     padaccheda_dev        = "लुभः विमोहने",
     why_dev               = "(सूत्रम् 7.2.54) लुभो विमोचने।",
     anuvritti_from        = ('7.1.1',),

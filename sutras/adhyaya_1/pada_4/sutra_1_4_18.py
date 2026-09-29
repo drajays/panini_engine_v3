@@ -1,5 +1,5 @@
 """
-1.4.18  असर्वनामस्थाने सुँ-आदिषु यचि भम्  —  SAMJNA (*bha*)
+1.4.18  यचि भम्  —  SAMJNA (*bha*)
 
 *Padaccheda (śāstra):* **यचि** (saptamī-ekavacana), **भम्**
 (prathamā-ekavacana).
@@ -185,8 +185,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.4.18",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "asarvanAmasthAne su~Adizu yaci Bham",
-    text_dev       = "असर्वनामस्थाने सुँआदिषु यचि भम्",
+    text_slp1      = 'yaci Bam',
+    text_dev       = 'यचि भम्',
     padaccheda_dev = "असर्वनामस्थाने सुँ-आदिषु यचि भम्",
     why_dev        = (
         "स्वादि-प्रत्यये असर्वनामस्थानके यकारादौ वा अजादौ आदौ च परे "

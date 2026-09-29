@@ -1,5 +1,5 @@
 """
-7.2.117  तद्धितेषु अचामादेः  —  VIDHI
+7.2.117  तद्धितेष्वचामादेः  —  VIDHI
 
 **Padaccheda:** तद्धितेषु / अचाम् / आदेः
 
@@ -117,8 +117,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.2.117",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "aNgasya acAm AdeH acaH Riti Yiti taddhitezu vRddhiH",
-    text_dev       = "अङ्गस्य अचामादेः अचः णिति ञिति तद्धितेषु वृद्धिः",
+    text_slp1      = 'tadDitezvacAmAdeH',
+    text_dev       = 'तद्धितेष्वचामादेः',
     padaccheda_dev = "तद्धितेषु / अचाम् / आदेः",
     why_dev        = (
         "णित्/ञित्-तद्धित-प्रत्यये परे अङ्गस्य आद्य-अचः वृद्धिः "

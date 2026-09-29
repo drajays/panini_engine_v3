@@ -1,5 +1,5 @@
 """
-6.1.169  अन्तोदत्तादुत्तरपदादन्यतरस्यामनित्यसमासे  —  VIDHI
+6.1.169  अन्तोदात्तादुत्तरपदादन्यतरस्यामनित्यसमासे  —  VIDHI
 
 Padaccheda: अन्त-उदात्तात् उत्तरपदात् अन्यतरस्याम् अनित्य-समासे
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.1.169",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "antodattAduttarapadAdanyatarasyAmanityasamAse",
-    text_dev              = "अन्तोदत्तादुत्तरपदादन्यतरस्यामनित्यसमासे",
+    text_slp1             = 'antodAttAduttarapadAdanyatarasyAmanityasamAse',
+    text_dev              = 'अन्तोदात्तादुत्तरपदादन्यतरस्यामनित्यसमासे',
     padaccheda_dev        = "अन्त-उदात्तात् उत्तरपदात् अन्यतरस्याम् अनित्य-समासे",
     why_dev               = "(सूत्रम् 6.1.169) अन्तोदत्तादुत्तरपदादन्यतरस्यामनित्यसमासे।",
     anuvritti_from        = ('6.1.1',),

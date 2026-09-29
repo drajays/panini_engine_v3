@@ -1,5 +1,5 @@
 """
-1.1.72  येन विधिस्तदन्तस्य  (yena viDis tadantasya)  —  PARIBHASHA
+1.1.72  येन विधिस्तदन्तस्य  —  PARIBHASHA
 
 Classical role:
   "When a rule is expressed using a term X, it applies to [words/stems]
@@ -43,8 +43,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.1.72",
     sutra_type              = SutraType.PARIBHASHA,
     r1_form_identity_exempt = True,
-    text_slp1               = "yena viDis tadantasya",
-    text_dev                = "येन विधिस्तदन्तस्य",
+    text_slp1               = 'yena viDistadantasya',
+    text_dev                = 'येन विधिस्तदन्तस्य',
     padaccheda_dev          = "येन / विधिः / तद्-अन्तस्य",
     why_dev                 = (
         "यस्मिन् शब्दे (येन) विधिः (नियमः) उच्यते, "

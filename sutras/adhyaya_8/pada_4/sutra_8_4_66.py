@@ -198,8 +198,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "8.4.66",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "udAttAd anudAttasya svaritaH",
-    text_dev       = "उदात्तादनुदात्तस्य स्वरितः",
+    text_slp1      = 'udAttAdanudAttasya svaritaH',
+    text_dev       = 'उदात्तादनुदात्तस्य स्वरितः',
     padaccheda_dev = "उदात्तात् अनुदात्तस्य स्वरितः",
     why_dev        = "फिट् १.१ (*फिषोऽन्त उदात्तः*) इत उत्सर्ग-अङ्कनम् — पूर्णं ८.४.६६-विधिं नास्ति।",
     anuvritti_from = ("8.4.65",),

@@ -176,8 +176,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "8.4.2",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "awkupvANnumvyavAye api",
-    text_dev       = "अट्कुप्वाङ्नुम्व्यवायेऽपि",
+    text_slp1      = 'awkupvANnumvyavAyepi',
+    text_dev       = 'अट्कुप्वाङ्नुम्व्यवायेऽपि',
     padaccheda_dev = "अट्-कु-प्-वाङ्-नुम्-व्यवाये अपि",
     why_dev        = "र-ष-वर्णात् परस्य न-कारस्य णत्वम् — अट्-कु-पु-आङ्-नुम् "
                      "व्यवधाने अपि (त्रिपादी)।",

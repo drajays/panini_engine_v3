@@ -1,5 +1,5 @@
 """
-5.1.54  द्विगोष्ठंश्च  —  VIDHI
+5.1.54  द्विगोः ष्ठंश्च  —  VIDHI
 
 Padaccheda: द्विगोः ष्ठन् च
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.1.54",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "dvigozWaMSca",
-    text_dev              = "द्विगोष्ठंश्च",
+    text_slp1             = 'dvigoH zWaMSca',
+    text_dev              = 'द्विगोः ष्ठंश्च',
     padaccheda_dev        = "द्विगोः ष्ठन् च",
     why_dev               = "(सूत्रम् 5.1.54) द्विगोष्ठंश्च।",
     anuvritti_from        = ('5.1.1',),

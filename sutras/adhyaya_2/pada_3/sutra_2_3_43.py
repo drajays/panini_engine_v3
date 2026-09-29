@@ -1,5 +1,5 @@
 """
-2.3.43  साधुनिपुणाभ्याम् अर्चायां सप्तम्यप्रतेः  —  VIDHI
+2.3.43  साधुनिपुणाभ्यामर्चायां सप्तम्यप्रतेः  —  VIDHI
 
 Padaccheda: साधु-निपुणाभ्याम् अर्चायाम् सप्तमी अ-प्रतेः
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.3.43",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "sADunipuRAByAm arcAyAM saptamyaprateH",
-    text_dev              = "साधुनिपुणाभ्याम् अर्चायां सप्तम्यप्रतेः",
+    text_slp1             = 'sADunipuRAByAmarcAyAM saptamyaprateH',
+    text_dev              = 'साधुनिपुणाभ्यामर्चायां सप्तम्यप्रतेः',
     padaccheda_dev        = "साधु-निपुणाभ्याम् अर्चायाम् सप्तमी अ-प्रतेः",
     why_dev               = "साधु-निपुणाभ्याम् अर्चायाम् सप्तमी (२.३.४३)।",
     anuvritti_from        = ('2.3.36',),

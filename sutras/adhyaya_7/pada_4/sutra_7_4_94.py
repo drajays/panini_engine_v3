@@ -87,8 +87,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="7.4.94",
     sutra_type=SutraType.VIDHI,
-    text_slp1="dIrgho laghoH",
-    text_dev="दीर्घो लघोः",
+    text_slp1='dIrGo laGoH',
+    text_dev='दीर्घो लघोः',
     padaccheda_dev="दीर्घः / लघोः",
     why_dev="अभ्यास-laghu-वर्णस्य दीर्घः (प०३७: ``iw``→``Iw``)।",
     anuvritti_from=("7.4.93",),

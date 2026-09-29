@@ -49,8 +49,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id              = "1.4.24",
     sutra_type            = SutraType.SAMJNA,
-    text_slp1             = "DruvamapAye apAdAnam",
-    text_dev              = "ध्रुवमपायेऽपादानम्",
+    text_slp1             = 'DruvamapAyepAdAnam',
+    text_dev              = 'ध्रुवमपायेऽपादानम्',
     padaccheda_dev        = "ध्रुवम् / अपाये / अपादानम्",
     why_dev               = (
         "यस्मादपाय: तद् ध्रुवम् अपादान-कारक-संज्ञकम् — यथा 'ग्रामादागच्छति' "

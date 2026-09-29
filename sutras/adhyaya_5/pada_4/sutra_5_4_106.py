@@ -1,5 +1,5 @@
 """
-5.4.106  द्वंद्वाच्चुदषहान्तात् समाहारे  —  VIDHI
+5.4.106  द्वन्द्वाच्चुदषहान्तात् समाहारे  —  VIDHI
 
 Padaccheda: द्वन्द्वात् चु-द-ष-हान्तात् समाहारे
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.4.106",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "dvaMdvAccudazahAntAt samAhAre",
-    text_dev              = "द्वंद्वाच्चुदषहान्तात् समाहारे",
+    text_slp1             = 'dvandvAccudazahAntAt samAhAre',
+    text_dev              = 'द्वन्द्वाच्चुदषहान्तात् समाहारे',
     padaccheda_dev        = "द्वन्द्वात् चु-द-ष-हान्तात् समाहारे",
     why_dev               = "(सूत्रम् 5.4.106) द्वंद्वाच्चुदषहान्तात् समाहारे।",
     anuvritti_from        = ('5.1.1',),

@@ -1,5 +1,5 @@
 """
-4.4.102  कथाऽऽदिभ्यष्ठक्  —  VIDHI
+4.4.102  कथादिभ्यष्ठक्  —  VIDHI
 
 Padaccheda: कथा-आदिभ्यः ठक्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.4.102",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "kaTA''diByazWak",
-    text_dev              = "कथाऽऽदिभ्यष्ठक्",
+    text_slp1             = 'kaTAdiByazWak',
+    text_dev              = 'कथादिभ्यष्ठक्',
     padaccheda_dev        = "कथा-आदिभ्यः ठक्",
     why_dev               = "(सूत्रम् 4.4.102) कथाऽऽदिभ्यष्ठक्।",
     anuvritti_from        = ('4.1.1',),

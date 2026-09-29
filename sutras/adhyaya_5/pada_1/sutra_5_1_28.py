@@ -58,8 +58,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="5.1.28",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="adhyardhapUrvadvigorlugasaFjJAyAm",
-    text_dev="अध्यर्धपूर्वद्विगोर्लुगसंज्ञायाम्",
+    text_slp1='aDyarDapUrvadvigorlugasaMjYAyAm',
+    text_dev='अध्यर्धपूर्वद्विगोर्लुगसंज्ञायाम्',
     padaccheda_dev="अध्यर्ध-पूर्व-द्विगोः / लुक् / संज्ञायाम्",
     why_dev="द्विगोः परस्य ठकि लुक् (*saṃjñā*, *prakriya_43*)।",
     anuvritti_from=(),

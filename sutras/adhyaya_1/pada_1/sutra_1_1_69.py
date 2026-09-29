@@ -1,5 +1,5 @@
 """
-1.1.69  अणुदित् सवर्णस्य चाप्रत्ययः  (aNudit savarNasya cApratyayaH)  —  SAMJNA
+1.1.69  अणुदित् सवर्णस्य चाप्रत्ययः  —  SAMJNA
 
 Classical role:
   "An aṇ-phoneme (a, i, u — the pratyāhāra aṇ) or a ud-it term (one whose
@@ -49,8 +49,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.1.69",
     sutra_type              = SutraType.SAMJNA,
     r1_form_identity_exempt = True,
-    text_slp1               = "aNudit savarNasya cApratyayaH",
-    text_dev                = "अणुदित् सवर्णस्य चाप्रत्ययः",
+    text_slp1               = 'aRudit savarRasya cApratyayaH',
+    text_dev                = 'अणुदित् सवर्णस्य चाप्रत्ययः',
     padaccheda_dev          = "अण्-उदित् / सवर्णस्य / च / अप्रत्ययः",
     why_dev                 = (
         "अण्-प्रत्याहार-वर्णाः (अ, इ, उ) तथा उदित्-संज्ञकाः वर्णाः "

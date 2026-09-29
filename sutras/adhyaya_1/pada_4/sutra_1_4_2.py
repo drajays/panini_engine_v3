@@ -1,5 +1,5 @@
 """
-1.4.2  विप्रतिषेधे परं कार्यम्  (vipratiṣedhe paraṃ kāryam)  —  PARIBHASHA
+1.4.2  विप्रतिषेधे परं कार्यम्  —  PARIBHASHA
 
 **Pāṭha:** In a conflict between two rules of equal strength (*vipratiṣedha*),
 the later (*para*) rule wins.
@@ -27,8 +27,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id               = "1.4.2",
     sutra_type             = SutraType.PARIBHASHA,
-    text_slp1              = "vipratiSeDe paraM kAryam",
-    text_dev               = "विप्रतिषेधे परं कार्यम्",
+    text_slp1              = 'vipratizeDe paraM kAryam',
+    text_dev               = 'विप्रतिषेधे परं कार्यम्',
     padaccheda_dev         = "विप्रतिषेधे परम् कार्यम्",
     why_dev                = "विप्रतिषेधे — समबलयोः सूत्रयोः संघर्षे — परं (उत्तरं) सूत्रं कार्यं भवति।",
     anuvritti_from         = ("1.4.1",),

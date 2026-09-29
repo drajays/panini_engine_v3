@@ -60,8 +60,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.71",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="miTyopapadAtkfYoByAse",
-    text_dev="मिथ्योपपदात् कृञोऽभ्यासे",
+    text_slp1='miTyopapadAt kfYoByAse',
+    text_dev='मिथ्योपपदात् कृञोऽभ्यासे',
     padaccheda_dev=(
         "मिथ्या-उपपदात् (पञ्चमी-एकवचन) / कृञः (षष्ठी-एकवचन) / अभ्यासे (सप्तमी-एकवचन)"
     ),

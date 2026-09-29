@@ -57,7 +57,6 @@ Recipe (Aṣṭādhyāyī order; one step per apply_rule call):
         1.1.12  *adaso māt* ( *it* / *upadeśa* paribhāṣā: *aś* in *sarvān.* *adas* / *māt* )
         1.1.13  *śe* ( *pragṛhya* *prayoga* off in *aś* / *ś* *locus*; *Kāśikā* *vṛtti* )
         1.1.14  *nipāta ekājanāṅ* ( *pragṛhya* for *ekāc* *nipāta*; ashtadhyayi *i* 11014)
-        1.1.100  *na mātrā samāse* ( *Kāśikā* *vṛtti*; not the Pāṇini *1.1.14* pāṭha)
         1.1.15  *ot* ( *O* in *nipāta*; *i* 11015)
         1.1.16  *sambuddhau śākalyasya* … ( *Kāśikā*; *i* 11016)
         1.1.17  *uÞ* *aḥ* ( *i* 11017)

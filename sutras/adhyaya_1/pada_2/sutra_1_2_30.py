@@ -1,5 +1,5 @@
 """
-1.2.30  नीचैरनुदात्तः  (nīcair anudāttaḥ)  —  SAMJNA
+1.2.30  नीचैरनुदात्तः  —  SAMJNA
 
 Meaning: [A phoneme pronounced] low (nīcaiḥ) is called anudātta (grave
 accent). This sūtra defines the technical name "anudātta" for phonemes
@@ -45,8 +45,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.30",
     sutra_type              = SutraType.SAMJNA,
     r1_form_identity_exempt = True,
-    text_slp1               = "nIcEr anudAttaH",
-    text_dev                = "नीचैरनुदात्तः",
+    text_slp1               = 'nIcEranudAttaH',
+    text_dev                = 'नीचैरनुदात्तः',
     padaccheda_dev          = "नीचैः अनुदात्तः",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.29",),

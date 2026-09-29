@@ -55,8 +55,8 @@ SUTRA = SutraRecord(
     sutra_id              = "1.1.36",
     sutra_type            = SutraType.SAMJNA,
     r1_form_identity_exempt = True,
-    text_slp1             = "antaram bahiryogopasaMvyAnayoH",
-    text_dev              = "अन्तरं बहिर्योगोपसंव्यानयोः",
+    text_slp1             = 'antaraM bahiryogopasaMvyAnayoH',
+    text_dev              = 'अन्तरं बहिर्योगोपसंव्यानयोः',
     padaccheda_dev        = "अन्तरम् / बहिर्-योग-उपसंव्यानयोः",
     why_dev               = (
         "बहिर्योगे उपसंव्याने च «अन्तर»-शब्दस्य सर्वनाम-संज्ञा।"

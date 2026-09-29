@@ -1,5 +1,5 @@
 """
-8.3.118  सदिष्वञ्जोः परस्य लिटि  —  VIDHI
+8.3.118  सदेः परस्य लिटि  —  VIDHI
 
 Padaccheda: सदेः परस्य लिटि
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "8.3.118",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "sadizvaYjoH parasya liwi",
-    text_dev              = "सदिष्वञ्जोः परस्य लिटि",
+    text_slp1             = 'sadeH parasya liwi',
+    text_dev              = 'सदेः परस्य लिटि',
     padaccheda_dev        = "सदेः परस्य लिटि",
     why_dev               = "(सूत्रम् 8.3.118) सदिष्वञ्जोः परस्य लिटि।",
     anuvritti_from        = ('8.1.1',),

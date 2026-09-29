@@ -33,8 +33,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.1.66",
     sutra_type=SutraType.PARIBHASHA,
-    text_slp1="tasmmin iti nirdizwe pUrvasya",
-    text_dev="तस्मिन्निति निर्दिष्टे पूर्वस्य",
+    text_slp1='tasminniti nirdizwe pUrvasya',
+    text_dev='तस्मिन्निति निर्दिष्टे पूर्वस्य',
     padaccheda_dev="तस्मिनि / इति / निर्दिष्टे / पूर्वस्य",
     why_dev="परिभाषा-गेट: सप्तमी-निर्देशे पूर्व-ग्रहणम् (१.१.६६) — P044।",
     anuvritti_from=(),

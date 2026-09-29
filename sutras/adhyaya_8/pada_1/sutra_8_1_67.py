@@ -1,5 +1,5 @@
 """
-8.1.67  पूजनात् पूजितमनुदात्तम् (काष्ठादिभ्यः)  —  VIDHI
+8.1.67  पूजनात् पूजितमनुदात्तं काष्ठादिभ्यः  —  VIDHI
 
 Padaccheda: पूजनात् पूजितम् अनुदात्तम् (काष्ठादिभ्यः)
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "8.1.67",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "pUjanAt pUjitamanudAttam (kAzWAdiByaH)",
-    text_dev              = "पूजनात् पूजितमनुदात्तम् (काष्ठादिभ्यः)",
+    text_slp1             = 'pUjanAt pUjitamanudAttaM kAzWAdiByaH',
+    text_dev              = 'पूजनात् पूजितमनुदात्तं काष्ठादिभ्यः',
     padaccheda_dev        = "पूजनात् पूजितम् अनुदात्तम् (काष्ठादिभ्यः)",
     why_dev               = "(सूत्रम् 8.1.67) पूजनात् पूजितमनुदात्तम् (काष्ठादिभ्यः)।",
     anuvritti_from        = ('8.1.1',),

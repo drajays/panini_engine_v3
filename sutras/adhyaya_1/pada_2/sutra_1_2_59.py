@@ -42,8 +42,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.59",
     sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1               = "asmado dvayoS ca",
-    text_dev                = "अस्मदो द्वयोश्च",
+    text_slp1               = 'asmado dvayoSca',
+    text_dev                = 'अस्मदो द्वयोश्च',
     padaccheda_dev          = "अस्मदः / द्वयोः / च",
     why_dev                 = (
         "अस्मच्छब्दात् द्वयोः सन्दर्भे च एकशेषः — "

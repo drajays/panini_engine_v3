@@ -58,8 +58,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.1.67",
     sutra_type=SutraType.PARIBHASHA,
-    text_slp1="tasmAd iti uttarasya",
-    text_dev="तस्मादित्युत्तरस्य",
+    text_slp1='tasmAdityuttarasya',
+    text_dev='तस्मादित्युत्तरस्य',
     padaccheda_dev="तस्मात् / इति / उत्तरस्य",
     why_dev="परिभाषा-गेट: पञ्चम्यर्थे पर-ग्रहणम् (१.१.६७) — P044।",
     anuvritti_from=(),

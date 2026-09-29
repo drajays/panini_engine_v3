@@ -42,8 +42,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.55",
     sutra_type              = SutraType.PARIBHASHA,
     r1_form_identity_exempt = True,
-    text_slp1               = "yogapramARe ca tadaBAve'darzanaM syAt",
-    text_dev                = "योगप्रमाणे च तदभावेऽदर्शनं स्यात्",
+    text_slp1               = 'yogapramARe ca tadaBAvedarSanaM syAt',
+    text_dev                = 'योगप्रमाणे च तदभावेऽदर्शनं स्यात्',
     padaccheda_dev          = "योग-प्रमाणे / च / तत्-अभावे / अदर्शनम् / स्यात्",
     why_dev                 = (
         "योगः प्रमाणं यस्य तस्मिन् विषये तस्य योगस्य अभावे रूपस्य अदर्शनम् — "

@@ -1,5 +1,5 @@
 """
-1.2.33  एकश्रुति दूरात् सम्बुद्धौ  (ekaśruti dūrāt sambuddhau)  —  SAMJNA
+1.2.33  एकश्रुति दूरात् सम्बुद्धौ  —  SAMJNA
 
 Meaning: [The vowels used] in calling from a distance (dūrāt) in the
 vocative (sambuddhi) [have] ekaśruti (monotone / single-pitch) accent.
@@ -54,8 +54,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.33",
     sutra_type              = SutraType.SAMJNA,
     r1_form_identity_exempt = True,
-    text_slp1               = "ekazruti dUrAt sambudDAv",
-    text_dev                = "एकश्रुति दूरात् सम्बुद्धौ",
+    text_slp1               = 'ekaSruti dUrAt sambudDO',
+    text_dev                = 'एकश्रुति दूरात् सम्बुद्धौ',
     padaccheda_dev          = "एकश्रुतिः / दूरात् / सम्बुद्धौ",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.29",),

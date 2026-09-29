@@ -94,8 +94,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.1.96",
     sutra_type=SutraType.VIDHI,
-    text_slp1="tavyat-tavyA-nIyar",
-    text_dev="तव्यत्तव्यानीयरः",
+    text_slp1='tavyattavyAnIyaraH',
+    text_dev='तव्यत्तव्यानीयरः',
     padaccheda_dev="तव्यत्-तव्य-अनीयर्",
     why_dev=(
         "कृत्य-प्रत्ययाः तव्यत्/तव्य/अनीयर् — 'krtya_recipe' संयोजन-कुञ्जिकया चित्यते।"

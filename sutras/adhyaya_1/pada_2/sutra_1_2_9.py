@@ -69,8 +69,8 @@ SUTRA = SutraRecord(
     sutra_id              = "1.2.9",
     sutra_type            = SutraType.NIYAMA,
     r1_form_identity_exempt = True,
-    text_slp1             = "iko jhal",
-    text_dev              = "इको झल्",
+    text_slp1             = 'iko Jal',
+    text_dev              = 'इको झल्',
     padaccheda_dev        = "इकः / झल् (अनिट्)",
     why_dev               = ("इक्-अन्त-धातुः झल्-आदि-प्रत्यये परे अनिट् — "
                              "इडागमः न भवति (नियम-संज्ञा)।"),

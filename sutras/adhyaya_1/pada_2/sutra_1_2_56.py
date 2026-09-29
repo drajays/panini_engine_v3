@@ -43,8 +43,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.56",
     sutra_type              = SutraType.PARIBHASHA,
     r1_form_identity_exempt = True,
-    text_slp1               = "praDAnapratyayArTavacanaM arTasya anyapramARatvAt",
-    text_dev                = "प्रधानप्रत्ययार्थवचनमर्थस्यान्यप्रमाणत्वात्",
+    text_slp1               = 'praDAnapratyayArTavacanamarTasyAnyapramARatvAt',
+    text_dev                = 'प्रधानप्रत्ययार्थवचनमर्थस्यान्यप्रमाणत्वात्',
     padaccheda_dev          = "प्रधान-प्रत्यय-अर्थ-वचनम् / अर्थस्य / अन्य-प्रमाणत्वात्",
     why_dev                 = (
         "प्रधानस्य प्रत्ययस्य अर्थवचनम् प्रामाणिकम् — अर्थस्य अन्यप्रमाणत्वात् "

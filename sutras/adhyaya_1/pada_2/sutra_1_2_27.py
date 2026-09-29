@@ -1,5 +1,5 @@
 """
-1.2.27  ऊकालोऽज्झ्रस्वदीर्घप्लुतः  (ūkālo'j jhrasvadīrghaplutaḥ)  —  SAMJNA
+1.2.27  ऊकालोऽज्झ्रस्वदीर्घप्लुतः  —  SAMJNA
 
 Full parsing: "ūkālaḥ — ac — hrasva-dīrgha-plutaḥ"
 
@@ -60,8 +60,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.27",
     sutra_type              = SutraType.SAMJNA,
     r1_form_identity_exempt = True,
-    text_slp1               = "UkAlo'j JrasvadIrgaplutaH",
-    text_dev                = "ऊकालोऽज्झ्रस्वदीर्घप्लुतः",
+    text_slp1               = 'UkAlojJrasvadIrGaplutaH',
+    text_dev                = 'ऊकालोऽज्झ्रस्वदीर्घप्लुतः',
     padaccheda_dev          = "ऊकालः अच् ह्रस्व-दीर्घ-प्लुतः",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = (),

@@ -1,5 +1,5 @@
 """
-6.1.70  लोपो व्योर्वलि  —  VIDHI (narrow slice for P029; JSON mislabels as **6.1.66**)
+6.1.70  शेश्छन्दसि बहुलम्  —  VIDHI (narrow slice for P029; JSON mislabels as **6.1.66**)
 
 Sources consulted:
 - ashtadhyayi.com data.txt row i=601070
@@ -103,8 +103,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.70",
     sutra_type=SutraType.VIDHI,
-    text_slp1="lopo vyor vali (P029 narrow)",
-    text_dev="लोपो व्योर्वलि",
+    text_slp1='SeSCandasi bahulam',
+    text_dev='शेश्छन्दसि बहुलम्',
     padaccheda_dev="लोपः / व्योः / वलि",
     why_dev="यङ्-अन्त्य-य्-लोपः वर-पूर्वः (P029); य्-लोपः र्-पूर्वः (P038)।",
     anuvritti_from=("6.1.64",),

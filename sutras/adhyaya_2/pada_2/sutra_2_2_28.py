@@ -1,5 +1,5 @@
 """
-2.2.28  तेन सह इति तुल्ययोगे  —  VIDHI
+2.2.28  तेन सहेति तुल्ययोगे  —  VIDHI
 
 पदच्छेदः  तेन (तृतीया-एकवचनम्), सह (अव्ययम्), इति (अव्ययम्),
           तुल्ययोगे (सप्तमी-एकवचनम्)
@@ -136,8 +136,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "2.2.28",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "tena saha iti tulyayoge",
-    text_dev       = "तेन सह इति तुल्ययोगे",
+    text_slp1      = 'tena saheti tulyayoge',
+    text_dev       = 'तेन सहेति तुल्ययोगे',
     padaccheda_dev = (
         "तेन (तृतीया-एकवचनम्), सह (अव्ययम्), इति (अव्ययम्), "
         "तुल्ययोगे (सप्तमी-एकवचनम्)"

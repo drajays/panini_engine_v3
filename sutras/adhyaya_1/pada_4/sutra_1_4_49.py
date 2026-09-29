@@ -40,8 +40,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.49",
     sutra_type           = SutraType.SAMJNA,
-    text_slp1            = "kartur IpsitatamaM karma",
-    text_dev             = "कर्तुरीप्सिततमं कर्म",
+    text_slp1            = 'karturIpsitatamaM karma',
+    text_dev             = 'कर्तुरीप्सिततमं कर्म',
     padaccheda_dev       = "कर्तुः / ईप्सिततमम् / कर्म",
     why_dev              = (
         "कर्तुः यत् ईप्सिततमम् (अत्यन्त-ऐच्छिकम्) तत् कर्म-कारक-संज्ञकम्। "

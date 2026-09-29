@@ -1,5 +1,5 @@
 """
-3.3.154  सम्भवानेऽलमिति चेत् सिद्धाप्रयोगे  —  VIDHI
+3.3.154  सम्भावनेऽलमिति चेत् सिद्धाप्रयोगे  —  VIDHI
 
 Padaccheda: सम्भवाने अलम् इति चेत् सिद्ध-अप्रयोगे
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.3.154",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "samBavAne'lamiti cet sidDAprayoge",
-    text_dev              = "सम्भवानेऽलमिति चेत् सिद्धाप्रयोगे",
+    text_slp1             = 'samBAvanelamiti cet sidDAprayoge',
+    text_dev              = 'सम्भावनेऽलमिति चेत् सिद्धाप्रयोगे',
     padaccheda_dev        = "सम्भवाने अलम् इति चेत् सिद्ध-अप्रयोगे",
     why_dev               = "धातोः प्रत्ययः (३.3.154)।",
     anuvritti_from        = ('3.1.1',),

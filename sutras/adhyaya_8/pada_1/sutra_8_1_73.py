@@ -46,8 +46,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.1.73",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="nAmantrite samAnAdhikaraRe sAmAnyavacanam",
-    text_dev="नामन्त्रिते समानाधिकरणे सामान्यवचनम्",
+    text_slp1='nAmantrite samAnADikaraRe sAmAnyavacanam',
+    text_dev='नामन्त्रिते समानाधिकरणे सामान्यवचनम्',
     padaccheda_dev="न आमन्त्रिते / समानाधिकरणे / सामान्यवचनम्",
     why_dev="समानाधिकरणे आमन्त्रितेषु **८.१.७२** अप्रवृत्तिः (*prakriya_32*)।",
     anuvritti_from=(),

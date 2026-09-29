@@ -1,5 +1,5 @@
 """
-1.4.81  छन्दसि परेऽपि  (chandasi pare 'pi)  —  SAMJNA
+1.4.81  छन्दसि परेऽपि  —  SAMJNA
 
 In the Vedic language (chandas), the gati may also follow (pare) the dhātu,
 not only precede it.  This relaxes the positional requirement of 1.4.80 for
@@ -26,8 +26,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.81",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="Candasi pare 'pi",
-    text_dev="छन्दसि परेऽपि",
+    text_slp1='Candasi parepi',
+    text_dev='छन्दसि परेऽपि',
     padaccheda_dev="छन्दसि / परे / अपि",
     why_dev="छन्दसि धातोः परेऽपि गतिर्भवति — छन्दसि-अपवाद-द्वारं स्थाप्यते।",
     anuvritti_from=("1.4.60", "1.4.80"),

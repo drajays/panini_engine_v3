@@ -1,5 +1,5 @@
 """
-1.3.10  समानामनुदेशः यथासङ्ख्यम्  —  PARIBHASHA (*anudeśa-paddhati*)
+1.3.10  यथासंख्यमनुदेशः समानाम्  —  PARIBHASHA (*anudeśa-paddhati*)
 
 **Padaccheda:** *yathāsaṅkhyam* (avyayam), *anudeśaḥ* (prathamā ekavacanam),
 *samānām* (ṣaṣṭhī bahuvacanam).
@@ -50,8 +50,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.3.10",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "samAnAm anudeSaH yathAsaNKyam",
-    text_dev       = "समानामनुदेशः यथासङ्ख्यम्",
+    text_slp1      = 'yaTAsaMKyamanudeSaH samAnAm',
+    text_dev       = 'यथासंख्यमनुदेशः समानाम्',
     padaccheda_dev = (
         "यथासङ्ख्यम् (अव्ययम्) / अनुदेशः (प्रथमा-एकवचनम्) / समानाम् (षष्ठी-बहुवचनम्)"
     ),

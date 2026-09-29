@@ -1,5 +1,5 @@
 """
-1.4.70  अदोऽनुपदेशे  (ado 'nupadeśe)  —  SAMJNA
+1.4.70  अदोऽनुपदेशे  —  SAMJNA
 
 The word "adas" (that) gets the gati-saṃjñā when not used in formal
 grammatical upadeśa (teaching/citation).  When "adas" functions as
@@ -30,8 +30,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.70",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="ado 'nupadeśe",
-    text_dev="अदोऽनुपदेशे",
+    text_slp1='adonupadeSe',
+    text_dev='अदोऽनुपदेशे',
     padaccheda_dev="अदः / अनुपदेशे",
     why_dev="अनुपदेशे 'अदस्' गति-संज्ञकः — 'adas' गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

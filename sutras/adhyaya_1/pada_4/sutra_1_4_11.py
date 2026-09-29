@@ -1,5 +1,5 @@
 """
-1.4.11  संयोगे गुरु  (saṃyoge guru)  —  SAMJNA
+1.4.11  संयोगे गुरु  —  SAMJNA
 
 **Pāṭha:** [A syllable] followed by a conjunct consonant (*saṃyoga*) is
 called *guru*.
@@ -28,8 +28,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id               = "1.4.11",
     sutra_type             = SutraType.SAMJNA,
-    text_slp1              = "saMYoge guru",
-    text_dev               = "संयोगे गुरु",
+    text_slp1              = 'saMyoge guru',
+    text_dev               = 'संयोगे गुरु',
     padaccheda_dev         = "संयोगे / गुरु",
     why_dev                = "संयोग-पूर्वो ह्रस्वः स्वरो गुरु-संज्ञकः।",
     anuvritti_from         = ("1.4.1", "1.4.10"),

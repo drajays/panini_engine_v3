@@ -43,8 +43,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.2.42",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="tatpuruzaH samAnAdhikaraRaH karmadhArayaH",
-    text_dev="तत्पुरुषः समानाधिकरणः कर्मधारयः",
+    text_slp1='tatpuruzaH samAnADikaraRaH karmaDArayaH',
+    text_dev='तत्पुरुषः समानाधिकरणः कर्मधारयः',
     padaccheda_dev="तत्पुरुषः / समानाधिकरणः / कर्मधारयः",
     why_dev="समानाधिकरण-तत्पुरुषः कर्मधारयः (*prakriya_37*, **पाचिका**/**वृन्दारिका**)।",
     anuvritti_from=(),

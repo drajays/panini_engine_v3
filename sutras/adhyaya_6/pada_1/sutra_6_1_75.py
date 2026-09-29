@@ -57,8 +57,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.75",
     sutra_type=SutraType.VIDHI,
-    text_slp1="dIrGAt (tuk Cet)",
-    text_dev="दीर्घात्",
+    text_slp1='dIrGAt',
+    text_dev='दीर्घात्',
     padaccheda_dev="दीर्घात्",
     why_dev=(
         "दीर्घस्वरात् परः अव्यवहितः छकारः विद्यते चेत् दीर्घस्वरस्य 'तुक्' आगमः।"

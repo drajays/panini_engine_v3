@@ -1,5 +1,5 @@
 """
-7.3.119  (घि-अङ्गात्) ङि परे ...  —  VIDHI
+7.3.119  अच्च घेः  —  VIDHI
 
 Operational intent for v3.4 (hari-like i-stems):
   - When a **ghi** aṅga is followed by sup upadeśa **ṅi** (SLP1: Ni),
@@ -72,8 +72,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.3.119",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "Gi-aNgAt Ni pare aNgasya a, NyaH au",
-    text_dev       = "घि-अङ्गात् ङि परे (अङ्गस्य अ, ङ्यः औ)",
+    text_slp1      = 'acca GeH',
+    text_dev       = 'अच्च घेः',
     padaccheda_dev = "घि-अङ्गात् ङि परे — अङ्ग-परिवर्तनम् + प्रत्यय-आदेशः",
     why_dev        = "घि-अङ्गात् ङि-प्रत्यये परे ‘हरौ’ इत्यादि-रूपसिद्ध्यर्थम् (अन्तिम-इक् → अ, ङि → औ)।",
     anuvritti_from = ("7.3.111",),

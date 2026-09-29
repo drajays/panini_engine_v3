@@ -1,5 +1,5 @@
 """
-6.4.11  अप्तृन्तृच्…  —  VIDHI
+6.4.11  अप्तृन्तृच्स्वसृनप्तृनेष्टृत्वष्टृक्षत्तृहोतृपोतृप्रशास्तॄणाम्  —  VIDHI
 
 Narrow v3:
   • ``…an`` + ``s``-initial *sup* (``cetan`` → ``cetAn`` before ``su``).
@@ -100,8 +100,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.4.11",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "aptfntfc svf... (narrow)",
-    text_dev       = "अप्तृन्तृच्…",
+    text_slp1      = 'aptfntfcsvasfnaptfnezwftvazwfkzattfhotfpotfpraSAstFRAm',
+    text_dev       = 'अप्तृन्तृच्स्वसृनप्तृनेष्टृत्वष्टृक्षत्तृहोतृपोतृप्रशास्तॄणाम्',
     padaccheda_dev = "अप्तृन्-तृच्-…",
     why_dev        = "तृण्-विषये उपधा-दीर्घः सर्वनामस्थाने (चेता-पथ)।",
     anuvritti_from = ("6.4.10",),

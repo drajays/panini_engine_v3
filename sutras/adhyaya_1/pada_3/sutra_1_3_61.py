@@ -61,8 +61,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.61",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="mriyaterlufNliNgoSca",
-    text_dev="म्रियतेर्लुङ्लिङोश्च",
+    text_slp1='mriyaterluNliNoSca',
+    text_dev='म्रियतेर्लुङ्लिङोश्च',
     padaccheda_dev="म्रियतेः (षष्ठी-एकवचन) / लुङ्-लिङोः (सप्तमी-द्विवचन) / च",
     why_dev=(
         "मृ-धातोः लुङ्-लिङ्-लकारयोः आत्मनेपदम् — "

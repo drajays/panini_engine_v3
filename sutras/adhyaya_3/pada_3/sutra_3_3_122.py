@@ -1,5 +1,5 @@
 """
-3.3.122  अध्यायन्यायोद्यावसंहाराधारावयाश्च  —  VIDHI
+3.3.122  अध्यायन्यायोद्यावसंहाराधारावायाश्च  —  VIDHI
 
 Padaccheda: अध्याय-न्याय-उद्याव-संहाराः च
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.3.122",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "aDyAyanyAyodyAvasaMhArADArAvayASca",
-    text_dev              = "अध्यायन्यायोद्यावसंहाराधारावयाश्च",
+    text_slp1             = 'aDyAyanyAyodyAvasaMhArADArAvAyASca',
+    text_dev              = 'अध्यायन्यायोद्यावसंहाराधारावायाश्च',
     padaccheda_dev        = "अध्याय-न्याय-उद्याव-संहाराः च",
     why_dev               = "धातोः प्रत्ययः (३.3.122)।",
     anuvritti_from        = ('3.1.1',),

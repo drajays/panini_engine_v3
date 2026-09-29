@@ -1,5 +1,5 @@
 """
-1.4.109  परः संनिकर्षः संहिता  —  SAMJNA
+1.4.109  परः सन्निकर्षः संहिता  —  SAMJNA
 
 Padaccheda: परः १/१ सन्निकर्षः १/१ संहिता १/१
 
@@ -27,8 +27,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id              = "1.4.109",
     sutra_type            = SutraType.SAMJNA,
-    text_slp1             = "paraH saMnikarzaH saMhitA",
-    text_dev              = "परः संनिकर्षः संहिता",
+    text_slp1             = 'paraH sannikarzaH saMhitA',
+    text_dev              = 'परः सन्निकर्षः संहिता',
     padaccheda_dev        = "परः १/१ सन्निकर्षः १/१ संहिता १/१",
     why_dev               = "परः सन्निकर्षः (अत्यन्त-सामीप्यम्) संहिता-संज्ञा (१.४.१०९)।",
     anuvritti_from        = (),

@@ -1,5 +1,5 @@
 """
-3.1.109  एतिस्तुशस्वृदृजुषः क्यप्  —  VIDHI
+3.1.109  एतिस्तुशास्वृदृजुषः क्यप्  —  VIDHI
 
 Padaccheda: एति-स्तु-शास्-वृ-दृ-जुषः क्यप्
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.1.109",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "etistuSasvfdfjuzaH kyap",
-    text_dev              = "एतिस्तुशस्वृदृजुषः क्यप्",
+    text_slp1             = 'etistuSAsvfdfjuzaH kyap',
+    text_dev              = 'एतिस्तुशास्वृदृजुषः क्यप्',
     padaccheda_dev        = "एति-स्तु-शास्-वृ-दृ-जुषः क्यप्",
     why_dev               = "धातोः [एतिस्तुशस्वृदृजुषः क्यप्]-प्रत्ययः विहितः (३.१.109)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

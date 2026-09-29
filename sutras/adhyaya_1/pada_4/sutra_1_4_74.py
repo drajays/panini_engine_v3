@@ -1,5 +1,5 @@
 """
-1.4.74  साक्षात्प्रभृतीनि च  (sākṣāt-prabhṛtīni ca)  —  SAMJNA
+1.4.74  साक्षात्प्रभृतीनि च  —  SAMJNA
 
 The words sākṣāt and others like it (sākṣāt-prabhṛti gaṇa) also get the
 gati-saṃjñā.  This gaṇa includes: sākṣāt, vyarthā, āvis, āvir-bhāva,
@@ -33,8 +33,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.74",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="sAkzAtpraBArtIni ca",
-    text_dev="साक्षात्प्रभृतीनि च",
+    text_slp1='sAkzAtpraBftIni ca',
+    text_dev='साक्षात्प्रभृतीनि च',
     padaccheda_dev="साक्षात्-प्रभृतीनि / च",
     why_dev="साक्षात्प्रभृतयः गति-संज्ञकाः — साक्षाद्-गण-सूचिः गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

@@ -1,5 +1,5 @@
 """
-7.2.96  त्वमावेकवचने / तवममौ ङसि  —  VIDHI
+7.2.96  तवममौ ङसि  —  VIDHI
 
 Padaccheda: त्व-मौ एकवचने / तव-ममौ ङसि
 
@@ -97,8 +97,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.2.96",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "tvamAvekavacane",
-    text_dev              = "त्वमावेकवचने",
+    text_slp1             = 'tavamamO Nasi',
+    text_dev              = 'तवममौ ङसि',
     padaccheda_dev        = "त्व-मौ एकवचने",
     why_dev               = "अस्मद्-शब्दस्य आदि-भागस्य [अ,स्,म्] स्थाने [म,अ] (एकवचने) "
                             "वा [म,म,अ] (ङसि) आदेशः (सूत्रम् ७.२.९६)।",

@@ -1,5 +1,5 @@
 """
-1.4.88  अपपरी वर्जने  (apa-parī varjane)  —  VIDHI
+1.4.88  अपपरी वर्जने  —  VIDHI
 
 *Padaccheda:* *apa-parī* (prathamā *dvivacana*), *varjane* (saptamī).
 
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.88",
     sutra_type           = SutraType.VIDHI,
-    text_slp1            = "apa-parI varjane",
-    text_dev             = "अपपरी वर्जने",
+    text_slp1            = 'apaparI varjane',
+    text_dev             = 'अपपरी वर्जने',
     padaccheda_dev       = "अप-परी / वर्जने",
     why_dev              = (
         "वर्जन-अर्थे वर्तमानौ 'अप' 'परि' कर्मप्रवचनीय-संज्ञकौ (१.४.८३-अधिकार)।"

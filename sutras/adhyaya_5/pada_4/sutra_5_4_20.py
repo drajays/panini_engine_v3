@@ -1,5 +1,5 @@
 """
-5.4.20  विभाषा बहोर्धाऽविप्रकृष्टकाले  —  VIDHI
+5.4.20  विभाषा बहोर्धाविप्रकृष्टकाले  —  VIDHI
 
 Padaccheda: विभाषा बहोः धा अविप्रकृष्टकाले
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.4.20",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "viBAzA bahorDA'viprakfzwakAle",
-    text_dev              = "विभाषा बहोर्धाऽविप्रकृष्टकाले",
+    text_slp1             = 'viBAzA bahorDAviprakfzwakAle',
+    text_dev              = 'विभाषा बहोर्धाविप्रकृष्टकाले',
     padaccheda_dev        = "विभाषा बहोः धा अविप्रकृष्टकाले",
     why_dev               = "(सूत्रम् 5.4.20) विभाषा बहोर्धाऽविप्रकृष्टकाले।",
     anuvritti_from        = ('5.1.1',),

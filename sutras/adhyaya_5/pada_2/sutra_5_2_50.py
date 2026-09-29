@@ -1,5 +1,5 @@
 """
-5.2.50  थट् च च्छन्दसि  —  VIDHI
+5.2.50  थट् चच्छन्दसि  —  VIDHI
 
 Padaccheda: थट् च छन्दसि
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.50",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "Taw ca cCandasi",
-    text_dev              = "थट् च च्छन्दसि",
+    text_slp1             = 'Taw cacCandasi',
+    text_dev              = 'थट् चच्छन्दसि',
     padaccheda_dev        = "थट् च छन्दसि",
     why_dev               = "(सूत्रम् 5.2.50) थट् च च्छन्दसि।",
     anuvritti_from        = ('5.1.1',),

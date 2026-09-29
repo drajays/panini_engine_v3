@@ -55,8 +55,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "3.4.21",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "samAnakartrukayoH pUrvakAle (ktvA)",
-    text_dev       = "समानकर्तृकयोः पूर्वकाले (क्त्वा)",
+    text_slp1      = 'samAnakartfkayoH pUrvakAle',
+    text_dev       = 'समानकर्तृकयोः पूर्वकाले',
     padaccheda_dev = "समानकर्तृकयोः / पूर्वकाले",
     why_dev        = "समानकर्तृक-पूर्वकाले क्त्वा-प्रत्यय-स्थापनम् (नैरोप्य-डेमो)।",
     anuvritti_from = ("3.1.1", "3.1.2", "3.1.3", "3.1.91"),

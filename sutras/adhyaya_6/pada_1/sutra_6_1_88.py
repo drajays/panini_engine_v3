@@ -80,8 +80,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.88",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "vfddhir eci",
-    text_dev       = "वृद्धिरेचि",
+    text_slp1      = 'vfdDireci',
+    text_dev       = 'वृद्धिरेचि',
     padaccheda_dev = "वृद्धिः एचि",
     why_dev        = "अ-वर्णात् परस्मिन् एच्-वर्णे (ए/ऐ/ओ/औ) एकादेश-रूपेण "
                      "वृद्धिः।",

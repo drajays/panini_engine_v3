@@ -100,8 +100,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.103",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "tasmAc CasaH naH puMsi",
-    text_dev       = "तस्माच्छसो नः पुंसि",
+    text_slp1      = 'tasmAcCaso naH puMsi',
+    text_dev       = 'तस्माच्छसो नः पुंसि',
     padaccheda_dev = "तस्मात् शसः नः पुंसि",
     why_dev        = "पुंलिङ्ग-अदन्त-प्रातिपदिकात् परस्य 'शस्'-प्रत्ययस्य "
                      "पूर्वसवर्ण-दीर्घानन्तरं स-कारस्य न-कारादेशः।",

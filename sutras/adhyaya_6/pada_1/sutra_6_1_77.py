@@ -124,8 +124,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.77",
     sutra_type=SutraType.VIDHI,
-    text_slp1="iko yaR aci",
-    text_dev="इको यणचि",
+    text_slp1='iko yaRaci',
+    text_dev='इको यणचि',
     padaccheda_dev="इकः यण् अचि",
     why_dev=(
         "इक्-समाप्तेः परे अच्-आदौ यण्-आदेशः — सार्वत्रिकः उत्सर्गः; "

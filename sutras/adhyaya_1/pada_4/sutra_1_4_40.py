@@ -40,8 +40,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.40",
     sutra_type           = SutraType.SAMJNA,
-    text_slp1            = "pratyAGByAM SruvaH pUrvasya kartA",
-    text_dev             = "प्रत्याङ्भ्यां श्रुवः पूर्वस्य कर्ता",
+    text_slp1            = 'pratyANByAM SruvaH pUrvasya kartA',
+    text_dev             = 'प्रत्याङ्भ्यां श्रुवः पूर्वस्य कर्ता',
     padaccheda_dev       = "प्रति-आङ्भ्याम् / श्रुवः / पूर्वस्य / कर्ता",
     why_dev              = (
         "प्रति-आङ्-पूर्वक-श्रु-धातोः पूर्वकर्ता (यः पूर्वं श्रुतवान्) "

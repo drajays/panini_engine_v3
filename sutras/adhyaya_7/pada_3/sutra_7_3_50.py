@@ -50,8 +50,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.3.50",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "Thasya ekaH (Tak→ika) (narrow)",
-    text_dev       = "ठस्येकः (ठक्→इक) — संक्षेपः",
+    text_slp1      = 'WasyekaH',
+    text_dev       = 'ठस्येकः',
     padaccheda_dev = "ठस्य / एकः",
     why_dev        = "ठक्-प्रत्ययस्य ‘इक’ आदेशः (P018 narrow demo).",
     anuvritti_from = ("7.3.45",),

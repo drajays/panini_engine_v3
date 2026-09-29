@@ -40,12 +40,10 @@ SUTRA = SutraRecord(
     sutra_id        = "4.2.113",
     sutra_type      = SutraType.SAMJNA,
     text_slp1       = (
-        "samarthAnAm prathamAt NyAp prAtipadikAt paraH AdyudAttaH "
-        "taddhitaH vA prAg dIvyataH aR Seze na dvyacaH prAcya-bharatezu"
+        'na dvyacaH prAcyaBaratezu'
     ),
     text_dev        = (
-        "समर्थानां प्रथमात् ङ्याप्प्रातिपदिकात् परः आद्युदात्तस्तद्धितो वा "
-        "प्राग्दीव्यतोऽण् शेषे न द्व्यचः प्राच्यभरतेषु"
+        'न द्व्यचः प्राच्यभरतेषु'
     ),
     padaccheda_dev  = "न / द्व्यचः / प्राच्यभरतेषु (सप्तमी-बहुवचनम्)",
     why_dev         = (

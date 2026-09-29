@@ -1,5 +1,5 @@
 """
-5.3.107  शर्कराऽऽदिभ्योऽण्  —  VIDHI
+5.3.107  शर्करादिभ्योऽण्  —  VIDHI
 
 Padaccheda: शर्करा-आदिभ्यः अण्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.3.107",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "SarkarA''diByo'R",
-    text_dev              = "शर्कराऽऽदिभ्योऽण्",
+    text_slp1             = 'SarkarAdiByoR',
+    text_dev              = 'शर्करादिभ्योऽण्',
     padaccheda_dev        = "शर्करा-आदिभ्यः अण्",
     why_dev               = "(सूत्रम् 5.3.107) शर्कराऽऽदिभ्योऽण्।",
     anuvritti_from        = ('5.1.1',),

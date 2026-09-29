@@ -68,8 +68,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.47",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="BAsanopasaMBAzAjYAnayatnavimatiupAmantraneSu vadaH",
-    text_dev="भासनोपसम्भाषाज्ञानयत्नविमत्युपमन्त्रणेषु वदः",
+    text_slp1='BAsanopasamBAzAjYAnayatnavimatyupamantraRezu vadaH',
+    text_dev='भासनोपसम्भाषाज्ञानयत्नविमत्युपमन्त्रणेषु वदः',
     padaccheda_dev=(
         "भासन-उपसम्भाषा-ज्ञान-यत्न-विमति-उपमन्त्रणेषु (सप्तमी-बहुवचन) / "
         "वदः (षष्ठी-एकवचन)"

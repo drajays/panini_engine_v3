@@ -1,5 +1,5 @@
 """
-7.3.75  ष्ठिवुक्लम्याचमां शिति  —  VIDHI
+7.3.75  ष्ठिवुक्लमुचमां शिति  —  VIDHI
 
 ष्ठिव्, क्लम् and आङ्+चम् lengthen their vowel before a śit: ष्ठीवति, क्लामति, आचामति.
 """
@@ -44,8 +44,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="7.3.75",
     sutra_type=SutraType.VIDHI,
-    text_slp1="zWivuklamyAcamAM Siti",
-    text_dev="ष्ठिवुक्लम्याचमां शिति",
+    text_slp1='zWivuklamucamAM Siti',
+    text_dev='ष्ठिवुक्लमुचमां शिति',
     padaccheda_dev="ष्ठिवु-क्लमि-आचमाम् शिति",
     why_dev="ष्ठिव्-क्लम्-आङ्पूर्वचम्-धातूनाम् अचः दीर्घः शिति परे (ष्ठीवति, क्लामति, आचामति)।",
     anuvritti_from=("7.3.73",),

@@ -50,8 +50,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id              = "1.4.34",
     sutra_type            = SutraType.SAMJNA,
-    text_slp1             = "SlAgahnuNsTASapAM jYIpsyamAnaH",
-    text_dev              = "श्लाघह्नुङ्स्थाशपां ज्ञीप्स्यमानः",
+    text_slp1             = 'SlAGahnuNsTASapAM jYIpsyamAnaH',
+    text_dev              = 'श्लाघह्नुङ्स्थाशपां ज्ञीप्स्यमानः',
     padaccheda_dev        = "श्लाघ-ह्नुङ्-स्था-शपाम् / ज्ञीप्स्यमानः",
     why_dev               = (
         "श्लाघ-ह्नु-स्था-शप्-धातूनां प्रयोगे यो ज्ञीप्स्यमानः (यस्मै ज्ञापयितुम् "

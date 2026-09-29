@@ -1,5 +1,5 @@
 """
-7.4.41  शाछोरन्यतरस्याम्  —  VIDHI
+7.4.41  शाच्छोरन्यतरस्याम्  —  VIDHI
 
 Padaccheda: शा-छोः अन्यतरस्याम्
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.4.41",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "SACoranyatarasyAm",
-    text_dev              = "शाछोरन्यतरस्याम्",
+    text_slp1             = 'SAcCoranyatarasyAm',
+    text_dev              = 'शाच्छोरन्यतरस्याम्',
     padaccheda_dev        = "शा-छोः अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 7.4.41) शाछोरन्यतरस्याम्।",
     anuvritti_from        = ('7.1.1',),

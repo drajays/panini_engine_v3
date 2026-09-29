@@ -70,8 +70,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "2.4.71",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "DhAtu-prAtipadikayoH supaH luk",
-    text_dev       = "धातुप्रातिपदिकयोः सुपः लुक्",
+    text_slp1      = 'supo DAtuprAtipadikayoH',
+    text_dev       = 'सुपो धातुप्रातिपदिकयोः',
     padaccheda_dev = "सुपः / धातु-प्रातिपदिकयोः",
     why_dev        = "धातु/प्रातिपदिक-अवयवे विद्यमानस्य सुपः लुक् (आर्म्ड-मेटा)।",
     anuvritti_from = ("2.4.58", "2.4.70"),

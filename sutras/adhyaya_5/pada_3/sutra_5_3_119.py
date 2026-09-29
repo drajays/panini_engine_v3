@@ -1,5 +1,5 @@
 """
-5.3.119  ञ्य्आदयस्तद्राजाः  —  VIDHI
+5.3.119  ञ्यादयस्तद्राजाः  —  VIDHI
 
 Padaccheda: ञ्य-आदयः तद्राजाः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.3.119",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "YyAdayastadrAjAH",
-    text_dev              = "ञ्य्आदयस्तद्राजाः",
+    text_slp1             = 'YyAdayastadrAjAH',
+    text_dev              = 'ञ्यादयस्तद्राजाः',
     padaccheda_dev        = "ञ्य-आदयः तद्राजाः",
     why_dev               = "(सूत्रम् 5.3.119) ञ्य्आदयस्तद्राजाः।",
     anuvritti_from        = ('5.1.1',),

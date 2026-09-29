@@ -63,8 +63,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.3.7",
     sutra_type=SutraType.VIDHI,
-    text_slp1="naS chavy aprASAn",
-    text_dev="नश्छव्यप्रशान्",
+    text_slp1='naSCavyapraSAn',
+    text_dev='नश्छव्यप्रशान्',
     padaccheda_dev="नः / छवि / अप्रशान्",
     why_dev="छवि परे नकारस्य अनुस्वारः (P014: म्→ं पूर्वं ययि-परसवर्णे)।",
     anuvritti_from=("8.3.6",),

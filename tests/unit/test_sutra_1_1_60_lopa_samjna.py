@@ -12,7 +12,7 @@ from sutras.adhyaya_1.pada_1.lopa_samjna_1_1_60 import LOPA_REGISTER_VALUE, lopa
 def test_registry() -> None:
     r = SUTRA_REGISTRY["1.1.60"]
     assert r.sutra_id == "1.1.60"
-    assert r.text_slp1 == "sTAne adarSanam lopaH"
+    assert r.text_slp1 == 'adarSanaM lopaH'
     assert "1.1.50" in r.anuvritti_from
 
 

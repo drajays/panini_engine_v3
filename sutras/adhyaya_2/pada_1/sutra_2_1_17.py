@@ -1,5 +1,5 @@
 """
-2.1.17  तिष्ठद्गुप्रभृतीनि च  (tiṣṭhadgu-prabhṛtīni ca)  —  VIDHI
+2.1.17  तिष्ठद्गुप्रभृतीनि च  —  VIDHI
 
 **Pāṭha:** The *gaṇa* words beginning with *tiṣṭhadgu* are also treated
 as avyayībhāva compounds (listed by tradition as a *gaṇapāṭha*).
@@ -44,8 +44,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.1.17",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "tizWadgu praBftIni ca",
-    text_dev              = "तिष्ठद्गुप्रभृतीनि च",
+    text_slp1             = 'tizWadgupraBftIni ca',
+    text_dev              = 'तिष्ठद्गुप्रभृतीनि च',
     padaccheda_dev        = "तिष्ठद्गु-प्रभृतीनि / च",
     why_dev               = "तिष्ठद्गु-गणपाठस्थानां च अव्ययीभावसंज्ञा (२.१.१७)।",
     anuvritti_from        = ("2.1.5",),

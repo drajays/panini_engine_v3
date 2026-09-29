@@ -96,8 +96,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.101",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "akaH savarRe dIrghaH",
-    text_dev       = "अकः सवर्णे दीर्घः",
+    text_slp1      = 'akaH savarRe dIrGaH',
+    text_dev       = 'अकः सवर्णे दीर्घः',
     padaccheda_dev = "अकः सवर्णे दीर्घः",
     why_dev        = "अक् वर्णस्य परस्मिन् सवर्णे एकादेशः सवर्ण-दीर्घः भवति।",
     apavada_of     = ("6.1.77",),   # अकः सवर्णे दीर्घः is the अपवाद of इको यणचि: before a savarṇa the ekādeśa is dīrgha, not yaṇ.

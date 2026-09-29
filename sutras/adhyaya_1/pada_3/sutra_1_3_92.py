@@ -69,8 +69,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.92",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="vfDByaH syasanoH",
-    text_dev="वृद्भ्यः स्यसनोः",
+    text_slp1='vfdByaH syasanoH',
+    text_dev='वृद्भ्यः स्यसनोः',
     padaccheda_dev="वृद्भ्यः (पञ्चमी-बहुवचन) / स्य-सनोः (षष्ठी-द्विवचन)",
     why_dev=(
         "वृद्-गण-धातूनां स्य-प्रत्यये सन्-प्रत्यये च परे आत्मनेपदम् — "

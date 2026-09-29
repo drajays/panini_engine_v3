@@ -1,5 +1,5 @@
 """
-6.1.112  (narrow P030 — *vac*+*san* stem shaping → *vivakṣ*-)
+6.1.112  ख्यत्यात् परस्य — *vac*+*san* stem shaping → *vivakṣ*-)
 
 Teaching JSON **P030** collapses several śāstrīya replacements into “*vivakṣa-*”.
 Here the engine tape after **6.1.77** + *pada*-merge is ``v`` + ``U`` + ``c`` + ``s``
@@ -46,8 +46,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.112",
     sutra_type=SutraType.VIDHI,
-    text_slp1="(P030 vivakSa stem collapse)",
-    text_dev="(प०३० विवक्षा-प्रकृतिः)",
+    text_slp1='KyatyAt parasya',
+    text_dev='ख्यत्यात् परस्य',
     padaccheda_dev="—",
     why_dev="वच्+सन्-मध्यावस्था → विवक्ष्-प्रत्यया-pूर्व आकारः (प०३०)।",
     anuvritti_from=("6.1.72",),

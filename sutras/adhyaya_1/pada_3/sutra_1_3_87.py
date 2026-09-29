@@ -57,8 +57,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.87",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="nigaraNacalanArTeBYaSca",
-    text_dev="निगरणचलनार्थेभ्यश्च",
+    text_slp1='nigaraRacalanArTeByaSca',
+    text_dev='निगरणचलनार्थेभ्यश्च',
     padaccheda_dev="निगरण-चलन-अर्थेभ्यः (पञ्चमी-बहुवचन) / च",
     why_dev=(
         "निगरण-चलन-अर्थक-धातूनां णि-प्रत्यये परे आत्मनेपदम् — "

@@ -52,7 +52,7 @@ def act(state: State) -> State:
         state.adhikara_stack.append({
             "id"        : "6.1.1",
             "scope_end" : "6.1.12",
-            "text_dev"  : "एकाचो द्वे प्रथमस्य",
+            "text_dev"  : 'एकाचो द्वे प्रथमस्य',
         })
     if not state.samjna_registry.get("6.1.1_p017_dvitva_done"):
         for i, t in enumerate(state.terms):
@@ -85,8 +85,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.1",
     sutra_type     = SutraType.ADHIKARA,
-    text_slp1      = "ekAco dve prathamasya",
-    text_dev       = "एकाचो द्वे प्रथमस्य",
+    text_slp1      = 'ekAco dve praTamasya',
+    text_dev       = 'एकाचो द्वे प्रथमस्य',
     padaccheda_dev = "एकाचः / द्वे / प्रथमस्य",
     why_dev        = "द्वित्वाधिकारः — ६.१.१ तः ६.१.१२ पर्यन्तम्।",
     anuvritti_from = (),

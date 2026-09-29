@@ -36,8 +36,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.96",
     sutra_type           = SutraType.VIDHI,
-    text_slp1            = "apiH padArTa-saMBAvanA-anvavasarga-garhA-samuccayezwu",
-    text_dev             = "अपिः पदार्थसम्भावनान्ववसर्गगर्हासमुच्चयेषु",
+    text_slp1            = 'apiH padArTasamBAvanAnvavasargagarhAsamuccayezu',
+    text_dev             = 'अपिः पदार्थसम्भावनान्ववसर्गगर्हासमुच्चयेषु',
     padaccheda_dev       = "अपिः / पदार्थ-सम्भावना-अन्ववसर्ग-गर्हा-समुच्चयेषु",
     why_dev              = (
         "पदार्थ-सम्भावना-अन्ववसर्ग-गर्हा-समुच्चय-अर्थेषु वर्तमानः 'अपि' "

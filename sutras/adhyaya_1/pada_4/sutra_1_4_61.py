@@ -1,5 +1,5 @@
 """
-1.4.61  ऊर्यादिच्विडाचश्च  (ūryādi-cvi-ḍācaś ca)  —  SAMJNA
+1.4.61  ऊर्यादिच्विडाचश्च  —  SAMJNA
 
 The ūry-ādi words (a gaṇa), the cvi-suffix forms, and the ḍāc-suffix forms
 also get the gati-saṃjñā.
@@ -37,8 +37,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.61",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="UryAdicviDAcaS ca",
-    text_dev="ऊर्यादिच्विडाचश्च",
+    text_slp1='UryAdicviqAcaSca',
+    text_dev='ऊर्यादिच्विडाचश्च',
     padaccheda_dev="ऊर्य-आदि / च्वि / डाच् / च",
     why_dev="ऊर्यादयः, च्व्यन्ताः, डाचन्ताश्च गति-संज्ञकाः — ऊर्यादि-सूचिः गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

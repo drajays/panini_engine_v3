@@ -1,5 +1,5 @@
 """
-5.1.110  विशाखाऽऽषाढादण् मन्थदण्डयोः  —  VIDHI
+5.1.110  विशाखाषाढादण् मन्थदण्डयोः  —  VIDHI
 
 Padaccheda: विशाखा-आषाढात् अण् मन्थ-दण्डयोः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.1.110",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "viSAKA''zAQAdaR manTadaRqayoH",
-    text_dev              = "विशाखाऽऽषाढादण् मन्थदण्डयोः",
+    text_slp1             = 'viSAKAzAQAdaR manTadaRqayoH',
+    text_dev              = 'विशाखाषाढादण् मन्थदण्डयोः',
     padaccheda_dev        = "विशाखा-आषाढात् अण् मन्थ-दण्डयोः",
     why_dev               = "(सूत्रम् 5.1.110) विशाखाऽऽषाढादण् मन्थदण्डयोः।",
     anuvritti_from        = ('5.1.1',),

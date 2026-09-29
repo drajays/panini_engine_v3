@@ -1,5 +1,5 @@
 """
-4.3.23  तत्र भवः  —  VIDHI (narrow: attach tyup to kāla-vācī stems) — P019
+4.3.23  सायंचिरम्प्राह्णेप्रगेऽव्ययेभ्यष्ट्युट्युलौ तुट् च  —  VIDHI (narrow: attach tyup to kāla-vācī stems) — P019
 
 The JSON ``split_prakriyas_11/P019.json`` attaches **tyup** to the time-word
 *adya* to derive **adyatana**.
@@ -65,8 +65,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "4.3.23",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "tatra BavaH (tyup) (narrow)",
-    text_dev       = "तत्र भवः (त्युप्) — संक्षेपः",
+    text_slp1      = 'sAyaMciramprAhRepragevyayeByazwyuwyulO tuw ca',
+    text_dev       = 'सायंचिरम्प्राह्णेप्रगेऽव्ययेभ्यष्ट्युट्युलौ तुट् च',
     padaccheda_dev = "तत्र / भवः",
     why_dev        = "कालवाचक-शब्देभ्यः त्युप् (अद्य→अद्यतन) — P019 narrow demo.",
     anuvritti_from = ("4.3.1",),

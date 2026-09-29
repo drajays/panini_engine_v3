@@ -1,5 +1,5 @@
 """
-4.1.2  स्वौजसमौट्छष्टाभ्याम्भिस्ङेभ्याम्भ्यस्ङसिभ्याम्भ्यस्ङसोसाम्ङ्योस्सुप्  — ADHIKARA
+4.1.2  स्वौजसमौट्छष्टाभ्याम्भिस्ङेभ्याम्भ्यस्ङसिभ्याम्भ्यस्ङसोसाङ्ङ्योस्सुप्  — ADHIKARA
 
 Lists the 21 sup upadeśas in a fixed order (the 24 cells collapse
 to 21 distinct pratyayas).  Acts as:
@@ -97,7 +97,7 @@ def act(state: State) -> State:
     state.adhikara_stack.append({
         "id"        : "4.1.2",
         "scope_end" : "5.4.160",
-        "text_dev"  : "स्वौजसमौट्छष्टा...सुप्",
+        "text_dev"  : 'स्वौजसमौट्छष्टाभ्याम्भिस्ङेभ्याम्भ्यस्ङसिभ्याम्भ्यस्ङसोसाङ्ङ्योस्सुप्',
     })
 
     vv = state.meta.get("vibhakti_vacana")
@@ -166,9 +166,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "4.1.2",
     sutra_type     = SutraType.ADHIKARA,
-    text_slp1      = "svaujasamauTchazwABhyAmBhisNeByAmByas-NasiByAmByasNasosAmNyossuP",
-    text_dev       = "स्वौजसमौट्छष्टाभ्याम्भिस्ङेभ्याम्भ्यस्ङसिभ्याम्"
-                     "भ्यस्ङसोसाम्ङ्योस्सुप्",
+    text_slp1      = 'svOjasamOwCazwAByAmBisNeByAmByasNasiByAmByasNasosANNyossup',
+    text_dev       = 'स्वौजसमौट्छष्टाभ्याम्भिस्ङेभ्याम्भ्यस्ङसिभ्याम्भ्यस्ङसोसाङ्ङ्योस्सुप्',
     padaccheda_dev = "सु-औ-जस्, अम्-औट्-शस्, टा-भ्याम्-भिस्, ङे-भ्याम्-भ्यस्, "
                      "ङसि-भ्याम्-भ्यस्, ङस्-ओस्-आम्, ङि-ओस्-सुप्",
     why_dev        = "एकविंशति सुप्-प्रत्ययाः क्रमेण प्रातिपदिकात् विधीयन्ते; "

@@ -58,8 +58,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.3.1",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "bhUvAdayo dhAtavaH",
-    text_dev       = "भूवादयो धातवः",
+    text_slp1      = 'BUvAdayo DAtavaH',
+    text_dev       = 'भूवादयो धातवः',
     padaccheda_dev = "भू-आदयः धातवः",
     why_dev        = "भू आदि गणे पठितानां धातूनां धातु-संज्ञा (उपदेश एव अधिकृतः)।",
     anuvritti_from = (),

@@ -1,5 +1,5 @@
 """
-6.3.92  विष्वग्देवयोश्च टेरद्र्यञ्चतौ वप्रत्यये  —  VIDHI
+6.3.92  विष्वग्देवयोश्च टेरद्र्यञ्चतावप्रत्यये  —  VIDHI
 
 Padaccheda: विष्वक्-देवयोः च टेः अद्रि (लुप्तप्रथमान्तनिर्देशः) अञ्चतौ व-प्रत्यये
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.3.92",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "vizvagdevayoSca weradryaYcatO vapratyaye",
-    text_dev              = "विष्वग्देवयोश्च टेरद्र्यञ्चतौ वप्रत्यये",
+    text_slp1             = 'vizvagdevayoSca weradryaYcatAvapratyaye',
+    text_dev              = 'विष्वग्देवयोश्च टेरद्र्यञ्चतावप्रत्यये',
     padaccheda_dev        = "विष्वक्-देवयोः च टेः अद्रि (लुप्तप्रथमान्तनिर्देशः) अञ्चतौ व-प्रत्यये",
     why_dev               = "(सूत्रम् 6.3.92) विष्वग्देवयोश्च टेरद्र्यञ्चतौ वप्रत्यये।",
     anuvritti_from        = ('6.1.1',),

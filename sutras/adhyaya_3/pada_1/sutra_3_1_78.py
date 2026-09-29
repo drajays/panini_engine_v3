@@ -67,8 +67,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.1.78",
     sutra_type=SutraType.VIDHI,
-    text_slp1="ruDAdibhyaH Snam",
-    text_dev="रुधादिभ्यः श्नम्",
+    text_slp1='ruDAdiByaH Snam',
+    text_dev='रुधादिभ्यः श्नम्',
     padaccheda_dev="रुधादिभ्यः श्नम्",
     why_dev="रुधादि-गणेभ्यः धातुभ्यः श्नम्-विकरणः (मित्—१.१.४७ अनुसारम् अन्त्य-अच् परः)।",
     anuvritti_from=("3.1.1", "3.1.2", "3.1.3", "3.1.67", "3.1.91"),

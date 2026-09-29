@@ -1,5 +1,5 @@
 """
-1.4.19  तसौ मत्वर्थे  (tasau matvārthe)  —  SAMJNA
+1.4.19  तसौ मत्वर्थे  —  SAMJNA
 
 **Pāṭha:** The suffixes *ta* and *su* (in *matvārtha* — possessive context)
 [are called …].
@@ -28,8 +28,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id               = "1.4.19",
     sutra_type             = SutraType.SAMJNA,
-    text_slp1              = "tasO matvArTe",
-    text_dev               = "तसौ मत्वर्थे",
+    text_slp1              = 'tasO matvarTe',
+    text_dev               = 'तसौ मत्वर्थे',
     padaccheda_dev         = "तसौ / मत्वर्थे",
     why_dev                = "मत्वर्थे 'त' 'स' इति द्वयोः प्रत्यययोः संज्ञा।",
     anuvritti_from         = ("1.4.1",),

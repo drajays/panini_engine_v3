@@ -40,8 +40,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.39",
     sutra_type           = SutraType.SAMJNA,
-    text_slp1            = "rADIkSyor yasya vipraznaH",
-    text_dev             = "राधीक्ष्योर्यस्य विप्रश्नः — karman",
+    text_slp1            = 'rADIkzyoryasya vipraSnaH',
+    text_dev             = 'राधीक्ष्योर्यस्य विप्रश्नः',
     padaccheda_dev       = "राध-ईक्ष्योः / यस्य / विप्रश्नः",
     why_dev              = (
         "राध्-ईक्ष्-धात्वोः यस्य विप्रश्नः (जिज्ञासा/साधनम्) तत् कर्म-कारक-संज्ञकम्। "

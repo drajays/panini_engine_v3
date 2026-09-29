@@ -1,5 +1,5 @@
 """
-3.1.95  कृत्याः प्राङ् ण्वुलः  —  VIDHI
+3.1.95  कृत्याः  —  VIDHI
 
 Padaccheda: कृत्याः प्राङ् ण्वुलः
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.1.95",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "kftyAH prAN RvulaH",
-    text_dev              = "कृत्याः प्राङ् ण्वुलः",
+    text_slp1             = 'kftyAH',
+    text_dev              = 'कृत्याः',
     padaccheda_dev        = "कृत्याः प्राङ् ण्वुलः",
     why_dev               = "धातोः [कृत्याः प्राङ् ण्वुलः]-प्रत्ययः विहितः (३.१.95)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

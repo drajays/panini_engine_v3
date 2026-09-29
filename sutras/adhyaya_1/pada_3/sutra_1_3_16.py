@@ -52,8 +52,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.16",
     sutra_type=SutraType.VIDHI,
-    text_slp1="itaretara-anyonyopapAdAc ca",
-    text_dev="इतरेतरान्योन्योपपदाच्च",
+    text_slp1='itaretarAnyonyopapadAcca',
+    text_dev='इतरेतरान्योन्योपपदाच्च',
     padaccheda_dev="इतरेतर-अन्योन्य-उपपदात् (षष्ठी) / च (अव्यय)",
     why_dev=(
         "इतरेतर-अन्योन्य-उपेतोक्ते प्रयोगे परस्परक्रिया-बोधकत्वात् "

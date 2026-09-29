@@ -1,5 +1,5 @@
 """
-6.1.11  लुङि  —  PARIBHASHA (narrow gate: *luṅ* reduplication frame)
+6.1.11  चङि  —  PARIBHASHA (narrow gate: *luṅ* reduplication frame)
 
 Operational JSON **P037** cites *dvitva* under *luṅ*(*i*): this engine slice
 records eligibility and arms the existing **6.1.1** *dvitva* hook (recipe must
@@ -57,8 +57,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.11",
     sutra_type=SutraType.PARIBHASHA,
-    text_slp1="luGi",
-    text_dev="लुङि",
+    text_slp1='caNi',
+    text_dev='चङि',
     padaccheda_dev="लुङि",
     why_dev="लुङ-प्रकरणे द्वित्व-प्रवृतौ ग्लास-बॉक्स् द्वारः (P037)।",
     anuvritti_from=("6.1.1",),

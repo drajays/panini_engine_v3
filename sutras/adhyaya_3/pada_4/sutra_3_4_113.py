@@ -1,5 +1,5 @@
 """
-3.4.113  तिङ्-शित् सार्वधातुकम्  —  SAMJNA
+3.4.113  तिङ्शित्सार्वधातुकम्  —  SAMJNA
 
 *Padaccheda:* *tiṅ-śit* (prathamā = compound *pratyāhāra*), *sārvadhātukam* (nominative).
 
@@ -66,9 +66,9 @@ SUTRA = SutraRecord(
     sutra_id       = "3.4.113",
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = (
-        "pratyayaH, para z ca, AdyudAttaz ca, DAtA — DAtA paraH tiG-Sit pratya YaH sArvadhAtukam"
+        'tiNSitsArvaDAtukam'
     ),
-    text_dev       = "तिङ्-शित् सार्वधातुकम् (३.१.१–३, ३.१.९१)",
+    text_dev       = 'तिङ्शित्सार्वधातुकम्',
     padaccheda_dev = "धातोः (३.१.९१) / परः / तिङ्-शित्-प्रत्ययः / सार्वधातुकम्",
     why_dev        = (
         "तिङ्-तथा-शित्-प्रत्ययः सार्वधातुक-संज्ञकः, आर्धधातुकानि ३.४.११४-अग्रे।"

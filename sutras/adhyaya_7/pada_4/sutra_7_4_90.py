@@ -67,8 +67,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.4.90",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "rIgf-dupadhasya ca",
-    text_dev       = "रीगृदुपधस्य च",
+    text_slp1      = 'rIgfdupaDasya ca',
+    text_dev       = 'रीगृदुपधस्य च',
     padaccheda_dev = "रीक् / गृदुपधस्य / च",
     why_dev        = "यङ्लुगन्ते गृदुपध-ऋकारे अभ्यासस्य री-आगमः (ग्लास-बॉक्स्)।",
     anuvritti_from = ("7.4.1",),

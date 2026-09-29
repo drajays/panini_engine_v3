@@ -59,8 +59,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.2.31",
     sutra_type=SutraType.VIDHI,
-    text_slp1="ho QaH (narrow)",
-    text_dev="हो ढः",
+    text_slp1='ho QaH',
+    text_dev='हो ढः',
     padaccheda_dev="हो / ढः",
     why_dev="सकारपरे हकारस्य ढकारादेशः (जिघृक्षति)।",
     anuvritti_from=("8.2.1",),

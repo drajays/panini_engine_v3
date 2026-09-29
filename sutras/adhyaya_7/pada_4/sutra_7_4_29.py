@@ -48,8 +48,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id              = "7.4.29",
     sutra_type            = SutraType.VIDHI,
-    text_slp1             = "guRo'rtisaMyogAdyoH",
-    text_dev              = "गुणोऽर्तिसंयोगाद्योः",
+    text_slp1             = 'guRortisaMyogAdyoH',
+    text_dev              = 'गुणोऽर्तिसंयोगाद्योः',
     padaccheda_dev        = "गुणः अर्ति-संयोग-आद्योः",
     why_dev               = "ऋ-धातोः संयोगादेः ऋदन्तस्य च यकि आशीर्लिङि च गुणः (स्मर्यते, अर्यते) — रिङोऽपवादः।",
     anuvritti_from        = ('7.1.1',),

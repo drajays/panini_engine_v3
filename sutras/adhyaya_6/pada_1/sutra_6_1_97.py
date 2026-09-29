@@ -216,8 +216,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.97",
     sutra_type=SutraType.VIDHI,
-    text_slp1="ataH guRe",
-    text_dev="अतो गुणे",
+    text_slp1='ato guRe',
+    text_dev='अतो गुणे',
     padaccheda_dev="अतः गुणे",
     why_dev="गुणे पररूप-एकादेशः — अकार-द्वय-संयोगे प्रथमम् अकारं लोपयति।",
     apavada_of     = ("6.1.101",),   # अपवाद of 6.1.101 — sutra_ref_out resolver.apavada_of

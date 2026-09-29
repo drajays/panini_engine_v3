@@ -1,5 +1,5 @@
 """
-1.4.5  वाऽऽमि  (vā'mi)  —  VIBHASHA
+1.4.5  वाऽऽमि  —  VIBHASHA
 
 **Pāṭha:** Optionally (*vā*) [the prātipadika is treated as *nadī*] before
 the suffix *āmi* (*āmi* — genitive plural marker).
@@ -47,8 +47,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id               = "1.4.5",
     sutra_type             = SutraType.VIBHASHA,
-    text_slp1              = "vA~Ami",
-    text_dev               = "वाऽऽमि",
+    text_slp1              = 'vAmi',
+    text_dev               = 'वाऽऽमि',
     padaccheda_dev         = "वा / आमि",
     why_dev                = "आमि परे स्त्री-प्रातिपदिकस्य वा नदीसंज्ञा।",
     apavada_of     = ("1.4.4",),   # अपवाद of 1.4.4 — sutra_ref_out resolver.apavada_of

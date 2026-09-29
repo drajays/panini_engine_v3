@@ -1,5 +1,5 @@
 """
-3.3.95  स्थागापापचां भावे  —  VIDHI
+3.3.95  स्थागापापचो भावे  —  VIDHI
 
 Padaccheda: स्था-गा-पा-पचः भावे
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.3.95",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "sTAgApApacAM BAve",
-    text_dev              = "स्थागापापचां भावे",
+    text_slp1             = 'sTAgApApaco BAve',
+    text_dev              = 'स्थागापापचो भावे',
     padaccheda_dev        = "स्था-गा-पा-पचः भावे",
     why_dev               = "धातोः प्रत्ययः (३.3.95)।",
     anuvritti_from        = ('3.1.1',),

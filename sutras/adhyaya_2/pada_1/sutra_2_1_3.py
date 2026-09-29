@@ -1,5 +1,5 @@
 """
-2.1.3  प्राक् कडारात् समासः  (prāk kaḍārāt samāsaḥ)  —  ADHIKARA
+2.1.3  प्राक् कडारात् समासः  —  ADHIKARA
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=21003):** opens the traditional
 *samāsa* adhikāra.  The classical anchor phrase is “from here up to 2.2.38,
@@ -27,7 +27,7 @@ def act(state: State) -> State:
     state.adhikara_stack.append({
         "id"        : "2.1.3",
         "scope_end" : "2.2.38",
-        "text_dev"  : "प्राक् कडारात् समासः",
+        "text_dev"  : 'प्राक् कडारात् समासः',
     })
     return state
 
@@ -35,8 +35,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id        = "2.1.3",
     sutra_type      = SutraType.ADHIKARA,
-    text_slp1       = "prAk kaDArAt samAsaH",
-    text_dev        = "प्राक् कडारात् समासः",
+    text_slp1       = 'prAk kaqArAt samAsaH',
+    text_dev        = 'प्राक् कडारात् समासः',
     padaccheda_dev  = "प्राक् / कडारात् / समासः",
     why_dev         = "२.१.३ इत्यतः २.२.३८ पर्यन्तं 'समास' अधिकारः प्रवर्तते।",
     anuvritti_from  = (),

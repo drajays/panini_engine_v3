@@ -1,5 +1,5 @@
 """
-3.1.79  तनादिकृञ्भ्यः उः  —  VIDHI
+3.1.79  तनादिकृञ्भ्य उः  —  VIDHI
 
 For tanādi (gaṇa 8) and kṛñ roots, insert vikaraṇa ``u`` after the dhātu,
 displacing śap (3.1.68 apavāda). The ``u`` is sārvadhatuka-tagged so 7.3.84
@@ -81,8 +81,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.1.79",
     sutra_type=SutraType.VIDHI,
-    text_slp1="tanAdi-kfYByaH uH",
-    text_dev="तनादिकृञ्भ्यः उः",
+    text_slp1='tanAdikfYBya uH',
+    text_dev='तनादिकृञ्भ्य उः',
     padaccheda_dev="तनादि-कृञ्भ्यः / उः",
     why_dev="तनादि-गणे कृञ्-आदिभ्यः शप्-अपवादरूपेण उ-विकरणः (कुरुतः)।",
     anuvritti_from=("3.1.68",),

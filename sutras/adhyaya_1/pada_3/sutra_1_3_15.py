@@ -73,8 +73,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.15",
     sutra_type=SutraType.NIYAMA,
-    text_slp1="na gati-hiMsArTeByaH",
-    text_dev="न गतिहिंसार्थेभ्यः",
+    text_slp1='na gatihiMsArTeByaH',
+    text_dev='न गतिहिंसार्थेभ्यः',
     padaccheda_dev="न / गति-हिंसा-अर्थेभ्यः (पञ्चमी-बहुवचन)",
     why_dev=(
         "गति-हिंसा-अर्थकेभ्यो धातुभ्यः आत्मनेपदं न भवति; "

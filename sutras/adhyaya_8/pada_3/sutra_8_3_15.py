@@ -69,8 +69,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "8.3.15",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "Kara avasAnayor visarjanIyaH",
-    text_dev       = "खरवसानयोर्विसर्जनीयः",
+    text_slp1      = 'KaravasAnayorvisarjanIyaH',
+    text_dev       = 'खरवसानयोर्विसर्जनीयः',
     padaccheda_dev = "खर्-अवसानयोः विसर्जनीयः",
     why_dev        = "खर्-वर्णे परे अवसाने च रु-आदेशस्य विसर्गः।",
     anuvritti_from = ("8.2.1",),

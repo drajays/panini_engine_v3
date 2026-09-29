@@ -1305,7 +1305,7 @@ def P01_samjna_1_1_3_to_1_1_100(s: State, *, include_luk_block: bool) -> State:
     """
     Shared saṃjñā/paribhāṣā slice (used by multiple recipes):
 
-    1.1.3 → 1.1.7 → (optional 1.1.60–1.1.63) → 1.1.8 → … → 1.1.14 → 1.1.100
+    1.1.3 → 1.1.7 → (optional 1.1.60–1.1.63) → 1.1.8 → … → 1.1.14
     """
     s = apply_rule("1.1.3",  s)
     s = apply_rule("1.1.7",  s)
@@ -1318,7 +1318,6 @@ def P01_samjna_1_1_3_to_1_1_100(s: State, *, include_luk_block: bool) -> State:
     s = apply_rule("1.1.12", s)
     s = apply_rule("1.1.13", s)
     s = apply_rule("1.1.14", s)
-    s = apply_rule("1.1.100", s)
     return s
 
 

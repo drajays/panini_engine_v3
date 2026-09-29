@@ -13,7 +13,7 @@ def test_metadata():
     r = SUTRA_REGISTRY["2.4.71"]
     assert r.sutra_id == "2.4.71"
     assert r.sutra_type is SutraType.VIDHI
-    assert "luk" in r.text_slp1.lower()
+    assert r.text_slp1 == 'supo DAtuprAtipadikayoH'
 
 
 def test_zero_width_ghost_internal_sup_when_armed():

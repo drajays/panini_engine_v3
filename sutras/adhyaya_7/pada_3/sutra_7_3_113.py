@@ -1,5 +1,5 @@
 """
-7.3.113  आपः  —  VIDHI (narrow slice: *yāṭ* before **ṅe** when **not** sarvanāma)
+7.3.113  याडापः  —  VIDHI (narrow slice: *yāṭ* before **ṅe** when **not** sarvanāma)
 
 अनुवृत्तिः  ङिति 7.3.111 (engine: same *ṅit* *sup* set as **7.3.114**).
 
@@ -95,8 +95,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.3.113",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "ApaH Niti supi",
-    text_dev       = "आपः ङिति सुपि",
+    text_slp1      = 'yAqApaH',
+    text_dev       = 'याडापः',
     padaccheda_dev = "आपः (सप्तम्येकवचनम्), ङिति (सप्तम्येकवचनम्), सुपि (सप्तम्येकवचनम्)",
     why_dev        = (
         "आबन्तात् न-सर्वनाम्नः परे ङिति ङे याट्-आगमः; अङ्गे ह्रस्वो न भवति।"

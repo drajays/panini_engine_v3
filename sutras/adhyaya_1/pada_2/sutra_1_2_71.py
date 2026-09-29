@@ -46,8 +46,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.71",
     sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1               = "zvazuraH zvazrvA",
-    text_dev                = "श्वशुरः श्वश्र्वा",
+    text_slp1               = 'SvaSuraH SvaSrvA',
+    text_dev                = 'श्वशुरः श्वश्र्वा',
     padaccheda_dev          = "श्वशुरः / श्वश्र्वा",
     why_dev                 = (
         "श्वशुर-श्वश्रू-युगले एकशेषे श्वशुर एव शिष्यते — "

@@ -132,8 +132,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="2.3.48",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="saamantritam",
-    text_dev="सामन्त्रितम्",
+    text_slp1='sAmantritam',
+    text_dev='सामन्त्रितम्',
     padaccheda_dev="सामन्त्रितम्",
     why_dev="सम्बोधन-प्रयोगस्य सामन्त्रित-संज्ञा (*prakriya_26* / *29* / *30* / *32* / *34*)।",
     anuvritti_from=(),

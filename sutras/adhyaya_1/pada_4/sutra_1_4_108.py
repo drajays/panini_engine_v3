@@ -1,5 +1,5 @@
 """
-1.4.108  शेषे प्रथमः  (full *anuvṛtti* of **1.4.105** baked)  —  PARIBHASHA
+1.4.108  शेषे प्रथमः  —  PARIBHASHA
 
 *Padaccheda:* *śeṣe* (saptamī), *prathamaḥ* (prathamā) — *puruṣa* of *tiṅ*.
 
@@ -44,9 +44,9 @@ SUTRA = SutraRecord(
     sutra_id       = "1.4.108",
     sutra_type     = SutraType.PARIBHASHA,
     text_slp1      = (
-        "Seze upapade samAnADhikaraRe sthAnin api prathamaH"
+        'Seze praTamaH'
     ),
-    text_dev       = "शेषे उपपदे समानाधिकरणे स्थानिनि अपि प्रथमः (एकसंज्ञा, १.४.१०१)",
+    text_dev       = 'शेषे प्रथमः',
     padaccheda_dev = "शेषे (सप्तमी) / उपपदे (समानाधिकरण-चर्चा) / प्रथमः (विकल्पित-पठितम्)",
     why_dev        = (
         "मध्यमोत्तम-निमित्ते १.४.१०५, १.४.१०७ — अन्येभ्यो वाक्येभ्यः "

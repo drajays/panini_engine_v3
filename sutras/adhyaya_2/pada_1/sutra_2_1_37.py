@@ -50,8 +50,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="2.1.37",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="paYcamI bhayena",
-    text_dev="पञ्चमी भयेन",
+    text_slp1='paYcamI Bayena',
+    text_dev='पञ्चमी भयेन',
     padaccheda_dev="पञ्चमी / भयेन",
     why_dev="पञ्चम्यन्तैः भयेन सह तत्पुरुषः (*prakriya_39*, **वृकभयम्**)।",
     anuvritti_from=("2.1.36",),

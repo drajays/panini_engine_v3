@@ -1,5 +1,5 @@
 """
-5.4.91  राजाऽहस्सखिभ्यष्टच्  —  VIDHI
+5.4.91  राजाहस्सखिभ्यष्टच्  —  VIDHI
 
 Padaccheda: राज-अहः-सखिभ्यः टच्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.4.91",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "rAjA'hassaKiByazwac",
-    text_dev              = "राजाऽहस्सखिभ्यष्टच्",
+    text_slp1             = 'rAjAhassaKiByazwac',
+    text_dev              = 'राजाहस्सखिभ्यष्टच्',
     padaccheda_dev        = "राज-अहः-सखिभ्यः टच्",
     why_dev               = "(सूत्रम् 5.4.91) राजाऽहस्सखिभ्यष्टच्।",
     anuvritti_from        = ('5.1.1',),

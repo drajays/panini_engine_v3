@@ -56,8 +56,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="5.4.57",
     sutra_type=SutraType.VIDHI,
-    text_slp1="avyaktAnukaraRAd dvyajarArdhAd anitO qAc",
-    text_dev="अव्यक्तानुकरणाद्द्व्यजवरार्धादनितौ डाच्",
+    text_slp1='avyaktAnukaraRAddvyajavarArDAdanitO qAc',
+    text_dev='अव्यक्तानुकरणाद्द्व्यजवरार्धादनितौ डाच्',
     padaccheda_dev="अव्यक्त-अनुकरणात् / द्व्यज्-अवरार्धात् / अनितौ / डाच्",
     why_dev="अव्यक्तानुकरण-``pawat``-द्वित्वे परे ``qAc`` (डाच्) — P017।",
     anuvritti_from=("5.4.1",),

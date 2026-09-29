@@ -1,5 +1,5 @@
 """
-1.4.56  प्राग्रीश्वरान्निपाताः  (prāg rīśvarān nipātāḥ)  —  ADHIKARA
+1.4.56  प्राग्रीश्वरान्निपाताः  —  ADHIKARA
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=14056):** opens the traditional
 *nipāta-saṃjñā* adhikāra (“before *rīśvara*, (these) are nipātas”).
@@ -26,7 +26,7 @@ def act(state: State) -> State:
     state.adhikara_stack.append({
         "id"        : "1.4.56",
         "scope_end" : "1.4.97",
-        "text_dev"  : "प्राग्रीश्वरान्निपाताः",
+        "text_dev"  : 'प्राग्रीश्वरान्निपाताः',
     })
     return state
 
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id        = "1.4.56",
     sutra_type      = SutraType.ADHIKARA,
-    text_slp1       = "prAg rISvarAt nipAtAH",
-    text_dev        = "प्राग्रीश्वरान्निपाताः",
+    text_slp1       = 'prAgrISvarAnnipAtAH',
+    text_dev        = 'प्राग्रीश्वरान्निपाताः',
     padaccheda_dev  = "प्राक् / रीश्वरात् / निपाताः",
     why_dev         = "१.४.५६ इत्यतः १.४.९७ पर्यन्तं 'निपात' संज्ञाधिकारः प्रवर्तते।",
     anuvritti_from  = (),

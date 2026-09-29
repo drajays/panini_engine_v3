@@ -1,5 +1,5 @@
 """
-1.4.10  ह्रस्वं लघु  (hrasvaṃ laghu)  —  SAMJNA
+1.4.10  ह्रस्वं लघु  —  SAMJNA
 
 **Pāṭha:** A short (*hrasva*) vowel [syllable] is called *laghu*.
 
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id               = "1.4.10",
     sutra_type             = SutraType.SAMJNA,
-    text_slp1              = "hrasvaM laghu",
-    text_dev               = "ह्रस्वं लघु",
+    text_slp1              = 'hrasvaM laGu',
+    text_dev               = 'ह्रस्वं लघु',
     padaccheda_dev         = "ह्रस्वम् / लघु",
     why_dev                = "ह्रस्व-स्वरः लघु-संज्ञकः (अ-इ-उ-ऋ-ऌ)।",
     anuvritti_from         = ("1.4.1",),

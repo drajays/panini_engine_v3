@@ -74,8 +74,8 @@ SUTRA = SutraRecord(
     sutra_id       = "2.3.36",
     sutra_type     = SutraType.SAMJNA,
     # Short *pāṭha* head; *anuvṛtti* of **2.3.1** *kārake* is metalinguistic here.
-    text_slp1      = "kArake saptamI adhikaraRe ca",
-    text_dev       = "कारके सप्तम्यधिकरणे च",
+    text_slp1      = 'saptamyaDikaraRe ca',
+    text_dev       = 'सप्तम्यधिकरणे च',
     padaccheda_dev = "सप्तमी / अधिकरणे / च",
     why_dev        = (
         "अधिकरणे कारके सप्तमी-स्मरणम् — *śālīya* प्रक्रियायां केवल ऑडिट्; "

@@ -57,8 +57,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id         = "5.3.57",
     sutra_type       = SutraType.VIDHI,
-    text_slp1        = "dvivacanavibhajyopapade tarabIyasunO",
-    text_dev         = "द्विवचनविभज्योपपदे तरबीयसुनौ",
+    text_slp1        = 'dvivacanaviBajyopapade tarabIyasunO',
+    text_dev         = 'द्विवचनविभज्योपपदे तरबीयसुनौ',
     padaccheda_dev   = "द्विवचन-विभज्य-उपपदे / तर-बी-यसु-नौ",
     why_dev          = "उपमान-तुल्यार्थे *तरप*/*ईयसुन्* (ग्लास-बॉक्स्)।",
     anuvritti_from   = ("5.3.2",),

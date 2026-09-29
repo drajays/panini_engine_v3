@@ -65,8 +65,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.3.96",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "asti-sico apfkTe (Iw)",
-    text_dev       = "अस्तिसिचोऽपृक्ते",
+    text_slp1      = 'astisicopfkte',
+    text_dev       = 'अस्तिसिचोऽपृक्ते',
     padaccheda_dev = "अस्ति-सिचोः / अपृक्ते",
     why_dev        = "सिच्-परस्य अपृक्त-तिङ्-प्रत्ययस्य पूर्वं ईट्-आगमः (अचैषीत्-प्रक्रिया)।",
     anuvritti_from = (),

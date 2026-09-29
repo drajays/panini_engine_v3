@@ -19,7 +19,7 @@ def test_sutra_metadata():
     r = SUTRA_REGISTRY["1.1.20"]
     assert r.sutra_id == "1.1.20"
     assert r.sutra_type is SutraType.SAMJNA
-    assert "ghv" in r.text_slp1
+    assert r.text_slp1 == 'dADA GvadAp'
     assert r.anuvritti_from == ()
 
 

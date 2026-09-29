@@ -50,8 +50,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.1.2",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="tasya param AmreDitam",
-    text_dev="तस्य परमाम्रेडितम्",
+    text_slp1='tasya paramAmreqitam',
+    text_dev='तस्य परमाम्रेडितम्',
     padaccheda_dev="तस्य / परमाम्रेडितम्",
     why_dev="द्वितीय ``pawat`` आम्रेडित-स्मरणम् (P017)।",
     anuvritti_from=("8.1.1",),

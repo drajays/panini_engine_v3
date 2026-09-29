@@ -1,5 +1,5 @@
 """
-6.4.60  निष्ठायां अण्यदर्थे  —  VIDHI
+6.4.60  निष्ठायामण्यदर्थे  —  VIDHI
 
 Padaccheda: निष्ठायाम् अ-ण्यत्-अर्थे
 
@@ -30,8 +30,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.4.60",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "nizWAyAM aRyadarTe",
-    text_dev              = "निष्ठायां अण्यदर्थे",
+    text_slp1             = 'nizWAyAmaRyadarTe',
+    text_dev              = 'निष्ठायामण्यदर्थे',
     padaccheda_dev        = "निष्ठायाम् अ-ण्यत्-अर्थे",
     why_dev               = "(सूत्रम् 6.4.60) निष्ठायां अण्यदर्थे।",
     anuvritti_from        = ('6.1.1',),

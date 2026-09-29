@@ -50,8 +50,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIBHASHA,
     vibhasha_default=True,
     r1_form_identity_exempt=True,
-    text_slp1="vibhASA viprAlApe",
-    text_dev="विभाषा विप्रलापे",
+    text_slp1='viBAzA vipralApe',
+    text_dev='विभाषा विप्रलापे',
     padaccheda_dev="विभाषा (अव्यय) / विप्रलापे (सप्तमी-एकवचन)",
     why_dev=(
         "विप्रलाप-अर्थे धातोः प्रयोगे विभाषा आत्मनेपदम् — "

@@ -166,8 +166,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.4.143",
     sutra_type=SutraType.VIDHI,
-    text_slp1="weH DiTi pare Ti-lopa (narrow lut | kim-qati)",
-    text_dev="टेः (डिति परे टि-लोपः)",
+    text_slp1='weH',
+    text_dev='टेः',
     padaccheda_dev="टेः / डिति / परे / टि-लोपः",
     why_dev=(
         "डित्-परे टि-लोपः — *luṭ*-*vikaraṇ*, *kim*+*qati*→*kati*, अथवा प००५-ब *जन्*।"

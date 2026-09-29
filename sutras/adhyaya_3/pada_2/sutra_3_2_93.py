@@ -1,5 +1,5 @@
 """
-3.2.93  कर्मणीनिर्विक्रियः  —  VIDHI
+3.2.93  कर्मणीनिविक्रियः  —  VIDHI
 
 Padaccheda: कर्मणि इनि (लुप्तप्रथमान्तनिर्देशः) विक्रियः
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.2.93",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "karmaRInirvikriyaH",
-    text_dev              = "कर्मणीनिर्विक्रियः",
+    text_slp1             = 'karmaRInivikriyaH',
+    text_dev              = 'कर्मणीनिविक्रियः',
     padaccheda_dev        = "कर्मणि इनि (लुप्तप्रथमान्तनिर्देशः) विक्रियः",
     why_dev               = "धातोः कृत्-प्रत्ययः [कर्मणीनिर्विक्रियः] विहितः (३.२.93)।",
     anuvritti_from        = ('3.1.1',),

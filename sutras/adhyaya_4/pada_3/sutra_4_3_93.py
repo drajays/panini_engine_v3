@@ -1,5 +1,5 @@
 """
-4.3.93  सिन्धुतक्षशिलाऽऽदिभ्योऽणञौ  —  VIDHI
+4.3.93  सिन्धुतक्षशिलादिभ्योऽणञौ  —  VIDHI
 
 Padaccheda: सिन्धु-तक्षशिला-आदिभ्यः अण्-अञौ
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.3.93",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "sinDutakzaSilA''diByo'RaYO",
-    text_dev              = "सिन्धुतक्षशिलाऽऽदिभ्योऽणञौ",
+    text_slp1             = 'sinDutakzaSilAdiByoRaYO',
+    text_dev              = 'सिन्धुतक्षशिलादिभ्योऽणञौ',
     padaccheda_dev        = "सिन्धु-तक्षशिला-आदिभ्यः अण्-अञौ",
     why_dev               = "(सूत्रम् 4.3.93) सिन्धुतक्षशिलाऽऽदिभ्योऽणञौ।",
     anuvritti_from        = ('4.1.1',),

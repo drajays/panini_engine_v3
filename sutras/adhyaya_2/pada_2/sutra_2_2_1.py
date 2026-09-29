@@ -53,8 +53,8 @@ SUTRA = SutraRecord(
     sutra_id="2.2.1",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="pUrva-apara-aDara-uttaram ekadeSinA ekADikaraRe",
-    text_dev="पूर्वापराधरोत्तरमेकदेशिनैकाधिकरणे",
+    text_slp1='pUrvAparADarottaramekadeSinEkADikaraRe',
+    text_dev='पूर्वापराधरोत्तरमेकदेशिनैकाधिकरणे',
     padaccheda_dev="पूर्व-अपर-अधर-उत्तरम् / एकदेशिना / एकाधिकरणे",
     why_dev=(
         "पूर्वादयः एकदेशिनैकाधिकरणे वर्तमानाः समस्यन्ते — "

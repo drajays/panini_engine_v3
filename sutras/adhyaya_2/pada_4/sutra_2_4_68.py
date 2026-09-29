@@ -1,5 +1,5 @@
 """
-2.4.68  तिककितवादिभ्यो द्वंद्वे  —  VIDHI
+2.4.68  तिककितवादिभ्यो द्वन्द्वे  —  VIDHI
 
 Padaccheda: तिक-कितव-आदिभ्यः द्वन्द्वे
 
@@ -30,8 +30,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.4.68",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "tikakitavAdiByo dvaMdve",
-    text_dev              = "तिककितवादिभ्यो द्वंद्वे",
+    text_slp1             = 'tikakitavAdiByo dvandve',
+    text_dev              = 'तिककितवादिभ्यो द्वन्द्वे',
     padaccheda_dev        = "तिक-कितव-आदिभ्यः द्वन्द्वे",
     why_dev               = "तिक-कितव-आदिभ्यः द्वन्द्वे (२.४.६८)।",
     anuvritti_from        = ('2.4.1',),

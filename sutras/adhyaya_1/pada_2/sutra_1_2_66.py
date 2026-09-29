@@ -41,8 +41,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.66",
     sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1               = "strI puMvac ca",
-    text_dev                = "स्त्री पुंवच्च",
+    text_slp1               = 'strI puMvacca',
+    text_dev                = 'स्त्री पुंवच्च',
     padaccheda_dev          = "स्त्री / पुंवत् / च",
     why_dev                 = (
         "एकशेषे स्त्री पुंवत् भवति — पुंलिङ्गः एव शिष्यते स्त्रीलिङ्गेन सह युगले। "

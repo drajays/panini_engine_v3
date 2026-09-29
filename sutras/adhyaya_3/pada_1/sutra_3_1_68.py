@@ -1,5 +1,5 @@
 """
-3.1.68  सार्वधातुके कर्तरि धातोः शप्  —  VIDHI
+3.1.68  कर्तरि शप्  —  VIDHI
 
 *Padaccheda:* *kartari* (saptamī), *śap* (prathamā); *sārvadhātake* **3.1.67** *anuvṛtti*.
 
@@ -57,10 +57,9 @@ SUTRA = SutraRecord(
     sutra_id       = "3.1.68",
     sutra_type     = SutraType.VIDHI,
     text_slp1      = (
-        "pratyayaH, para z ca, AdyudAttaz ca, DAtA — "
-        "sArvadhAtuke kartrA DAtaH Sap"
+        'kartari Sap'
     ),
-    text_dev       = "सार्वधातुके कर्तरि धातोः शप् (३.१.६७, ३.१.९१-अधिकारे)",
+    text_dev       = 'कर्तरि शप्',
     padaccheda_dev = "सार्वधातुके (३.१.६७) / कर्तरि / धातोः / शप्",
     why_dev        = (
         "कर्तरि सार्वधातुके परे विकरण-शप्-आगमः; अपवादाः ३.१.६९ इत्यादौ पृथक्।"

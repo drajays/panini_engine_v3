@@ -1,5 +1,5 @@
 """
-1.4.98  विभाषा कृञि  (vibhāṣā kṛñi)  —  VIDHI
+1.4.98  विभाषा कृञि  —  VIDHI
 
 *Padaccheda:* *vibhāṣā* (prathamā), *kṛñi* (saptamī).
 
@@ -35,8 +35,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.98",
     sutra_type           = SutraType.VIDHI,
-    text_slp1            = "viBazA kfYi",
-    text_dev             = "विभाषा कृञि",
+    text_slp1            = 'viBAzA kfYi',
+    text_dev             = 'विभाषा कृञि',
     padaccheda_dev       = "विभाषा / कृञि",
     why_dev              = (
         "विभाषा — कृञ्-योगे 'अधि' ऐच्छिकरूपेण कर्मप्रवचनीय-संज्ञकः (१.४.८३-१.४.९८-अधिकार-अन्तः)।"

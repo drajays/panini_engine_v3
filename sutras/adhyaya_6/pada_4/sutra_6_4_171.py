@@ -1,5 +1,5 @@
 """
-6.4.171  ब्राह्मोअजातौ  —  VIDHI
+6.4.171  ब्राह्मोऽजातौ  —  VIDHI
 
 Padaccheda: ब्राह्मः अजातौ
 
@@ -30,8 +30,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.4.171",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "brAhmoajAtO",
-    text_dev              = "ब्राह्मोअजातौ",
+    text_slp1             = 'brAhmojAtO',
+    text_dev              = 'ब्राह्मोऽजातौ',
     padaccheda_dev        = "ब्राह्मः अजातौ",
     why_dev               = "(सूत्रम् 6.4.171) ब्राह्मोअजातौ।",
     anuvritti_from        = ('6.1.1',),

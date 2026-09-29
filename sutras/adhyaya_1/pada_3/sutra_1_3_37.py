@@ -52,8 +52,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.37",
     sutra_type=SutraType.VIDHI,
-    text_slp1="kartfsTE cASarIre karmaRi",
-    text_dev="कर्तृस्थे चाशरीरे कर्मणि",
+    text_slp1='kartfsTe cASarIre karmaRi',
+    text_dev='कर्तृस्थे चाशरीरे कर्मणि',
     padaccheda_dev=(
         "कर्तृस्थे (सप्तमी-एकवचन) / च (अव्यय) / "
         "अशरीरे (सप्तमी-एकवचन) / कर्मणि (सप्तमी-एकवचन)"

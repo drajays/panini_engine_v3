@@ -1,5 +1,5 @@
 """
-6.4.64  आतोऽर्थलोप इटि च  —  VIDHI
+6.4.64  आतो लोप इटि च  —  VIDHI
 
 Sources consulted:
 - ashtadhyayi.com data.txt row i=604064
@@ -206,8 +206,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.4.64",
     sutra_type=SutraType.VIDHI,
-    text_slp1="Ato arthalopa iw ca",
-    text_dev="आतोऽर्थलोप इटि च",
+    text_slp1='Ato lopa iwi ca',
+    text_dev='आतो लोप इटि च',
     padaccheda_dev="आतः · अर्थ-लोपः · इटि · च",
     why_dev="आकारस्य लोपः क्ङिति-परे (इटि-मार्गः, अतुस्-मार्गः प०३५, वरच्-मार्गः)।",
     anuvritti_from=("6.4.1",),

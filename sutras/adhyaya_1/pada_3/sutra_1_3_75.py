@@ -65,8 +65,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.75",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="samudANByoyamogrante",
-    text_dev="समुदाङ्भ्यो यमोऽग्रन्थे",
+    text_slp1='samudANByo yamogranTe',
+    text_dev='समुदाङ्भ्यो यमोऽग्रन्थे',
     padaccheda_dev=(
         "सम्-उत्-आङ्भ्यः (पञ्चमी-बहुवचन) / यमः (षष्ठी-एकवचन) "
         "/ अग्रन्थे (सप्तमी-एकवचन)"

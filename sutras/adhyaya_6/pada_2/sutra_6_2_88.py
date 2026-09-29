@@ -1,5 +1,5 @@
 """
-6.2.88  मालाऽऽदीनां च  —  VIDHI
+6.2.88  मालादीनां च  —  VIDHI
 
 Padaccheda: माला-आदीनाम् च
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.2.88",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "mAlA''dInAM ca",
-    text_dev              = "मालाऽऽदीनां च",
+    text_slp1             = 'mAlAdInAM ca',
+    text_dev              = 'मालादीनां च',
     padaccheda_dev        = "माला-आदीनाम् च",
     why_dev               = "(सूत्रम् 6.2.88) मालाऽऽदीनां च।",
     anuvritti_from        = ('6.1.1',),

@@ -48,8 +48,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.20",
     sutra_type=SutraType.VIDHI,
-    text_slp1="ANo do'nAsyaviharaRe",
-    text_dev="आङो दोऽनास्यविहरणे",
+    text_slp1='ANo donAsyaviharaRe',
+    text_dev='आङो दोऽनास्यविहरणे',
     padaccheda_dev="आङः (षष्ठी) / दः (षष्ठी) / अनास्य-विहरणे (सप्तमी)",
     why_dev=(
         "आङ्-पूर्वकस्य दा-धातोः आत्मनेपदं भवति — आस्य-विहरण-अर्थे तु न; "

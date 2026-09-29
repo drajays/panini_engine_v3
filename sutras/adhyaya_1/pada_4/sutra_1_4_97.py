@@ -1,5 +1,5 @@
 """
-1.4.97  अधिरीश्वरे  (adhir īśvare)  —  VIDHI
+1.4.97  अधिरीश्वरे  —  VIDHI
 
 *Padaccheda:* *adhiḥ* (prathamā), *īśvare* (saptamī).
 
@@ -35,8 +35,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.97",
     sutra_type           = SutraType.VIDHI,
-    text_slp1            = "aDir ISvare",
-    text_dev             = "अधिरीश्वरे",
+    text_slp1            = 'aDirISvare',
+    text_dev             = 'अधिरीश्वरे',
     padaccheda_dev       = "अधिः / ईश्वरे",
     why_dev              = (
         "ईश्वर-अर्थे वर्तमानः 'अधि' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

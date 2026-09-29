@@ -23,7 +23,7 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 META_ARM = "corrected_v2_P007_3_2_161_arm"
-_DHATU_UPA = "BaYjo"
+_ROOTS = frozenset({"BaYj", "BAs", "mid"})   # भञ्ज-भास-मिदः (after it-lopa)
 _REG = "3.2.161_ghurac_attached"
 
 
@@ -37,9 +37,7 @@ def cond(state: State) -> bool:
     t0 = state.terms[0]
     if "dhatu" not in t0.tags:
         return False
-    if (t0.meta.get("upadesha_slp1") or "").strip() != _DHATU_UPA:
-        return False
-    if _stem_slp1(t0) != "BaYj":
+    if _stem_slp1(t0) not in _ROOTS:
         return False
     if state.samjna_registry.get(_REG):
         return False
@@ -52,9 +50,7 @@ def act(state: State) -> State:
     t0 = state.terms[0]
     if "dhatu" not in t0.tags:
         return state
-    if (t0.meta.get("upadesha_slp1") or "").strip() != _DHATU_UPA:
-        return state
-    if _stem_slp1(t0) != "BaYj":
+    if _stem_slp1(t0) not in _ROOTS:
         return state
     if state.samjna_registry.get(_REG):
         return state
@@ -72,8 +68,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.2.161",
     sutra_type=SutraType.VIDHI,
-    text_slp1="BaYja-BAsa-mido Gurac",
-    text_dev="भञ्जभासमिदो घुरच्",
+    text_slp1='BaYjaBAsamido Gurac',
+    text_dev='भञ्जभासमिदो घुरच्',
     padaccheda_dev="भञ्ज-भास-मिदः / घुरच्",
     why_dev="भञ्जादिभ्यो घुरच् — प००७ (*भङ्गुर*).",
     anuvritti_from=("3.2.1",),

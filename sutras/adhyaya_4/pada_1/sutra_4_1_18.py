@@ -1,5 +1,5 @@
 """
-4.1.18  सर्वत्र लोहितादिकतान्तेभ्यः  —  VIDHI
+4.1.18  सर्वत्र लोहितादिकतन्तेभ्यः  —  VIDHI
 
 Padaccheda: सर्वत्र लोहित-आदि-कत-अन्तेभ्यः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.1.18",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "sarvatra lohitAdikatAnteByaH",
-    text_dev              = "सर्वत्र लोहितादिकतान्तेभ्यः",
+    text_slp1             = 'sarvatra lohitAdikatanteByaH',
+    text_dev              = 'सर्वत्र लोहितादिकतन्तेभ्यः',
     padaccheda_dev        = "सर्वत्र लोहित-आदि-कत-अन्तेभ्यः",
     why_dev               = "(सूत्रम् 4.1.18) सर्वत्र लोहितादिकतान्तेभ्यः।",
     anuvritti_from        = ('4.1.1',),

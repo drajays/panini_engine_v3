@@ -1,5 +1,5 @@
 """
-1.4.85  तृतीयार्थे  (tṛtīyārthe)  —  VIDHI
+1.4.85  तृतीयार्थे  —  VIDHI
 
 *Padaccheda:* *tṛtīyā-arthe* (saptamī-tatpuruṣa).
 
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.85",
     sutra_type           = SutraType.VIDHI,
-    text_slp1            = "tfwIyArTe",
-    text_dev             = "तृतीयार्थे",
+    text_slp1            = 'tftIyArTe',
+    text_dev             = 'तृतीयार्थे',
     padaccheda_dev       = "तृतीया-अर्थे",
     why_dev              = (
         "तृतीया-अर्थे वर्तमानः 'अनु' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

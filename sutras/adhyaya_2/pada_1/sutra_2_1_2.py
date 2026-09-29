@@ -47,8 +47,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="2.1.2",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="subAmantrite parA~ggavat svare",
-    text_dev="सुबामन्त्रिते पराङ्गवत् स्वरे",
+    text_slp1='subAmantrite parANgavat svare',
+    text_dev='सुबामन्त्रिते पराङ्गवत् स्वरे',
     padaccheda_dev="सुबान्तम् आमन्त्रिते / पराङ्गवत् / स्वरे",
     why_dev="आमन्त्रित-सुबन्तस्य पराङ्गवत् स्वर-संज्ञा (*prakriya_28*, मेघातिथे-मन्महे)।",
     anuvritti_from=(),

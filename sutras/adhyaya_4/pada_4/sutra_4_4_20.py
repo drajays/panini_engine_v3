@@ -48,8 +48,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="4.4.20",
     sutra_type=SutraType.VIDHI,
-    text_slp1="ktrem mam nityam",
-    text_dev="क्त्रेर्मम् नित्यम्",
+    text_slp1='ktrermam nityam',
+    text_dev='क्त्रेर्मम् नित्यम्',
     padaccheda_dev="क्त्रेः मम् नित्यम्",
     why_dev="क्त्रि-प्रत्ययस्य नित्यं मम् आगमः (प००३ आर्म्)।",
     anuvritti_from=(),

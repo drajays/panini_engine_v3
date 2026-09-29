@@ -1,5 +1,5 @@
 """
-1.1.23  (bahuganavatuḍati saṅkhyā)  —  SAMJNA; *devanāgarī* = ``_TEXT_DEV`` (ashtadhyayi *i* 11023 *s* line).
+1.1.23  बहुगणवतुडति संख्या  —  SAMJNA; *devanāgarī* = ``_TEXT_DEV`` (ashtadhyayi *i* 11023 *s* line).
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=11023):** *bahu*–*gaṇa*–*vatu*–*ḍa*+**ti** (four *śāstrīya* loci) receive the
 technical name *saṅkhyā* (as per index ``type``: *संख्यासंज्ञा*).  *Padaccheda* follows ``pc``:
@@ -78,8 +78,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.23",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "bahuganavatuqati saMkhyA",
-    text_dev       = _TEXT_DEV,
+    text_slp1      = 'bahugaRavatuqati saMKyA',
+    text_dev       = 'बहुगणवतुडति संख्या',
     padaccheda_dev = "बहु-गण-वतु-डति / संख्या",
     why_dev        = _WHY,
     anuvritti_from = (),

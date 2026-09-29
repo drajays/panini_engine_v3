@@ -1,5 +1,5 @@
 """
-2.1.23  द्वितीया श्रितातीतपतितगतात्यस्तप्राप्तापन्नैः  —  SAMJNA (narrow ``prakriya_38``)
+2.1.23  द्विगुश्च  —  SAMJNA (narrow ``prakriya_38``)
 
 **Pāṭha (cross-check: ``sutrANi.tsv`` / vyākhyā):** *dvitīyā śritātīta-patita-gatātyasta-prāptāpannaiḥ* —
 ``tat-puruṣa`` compounding with prior member bearing the second-case affix (*dvitīyā*) together with
@@ -54,8 +54,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="2.1.23",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="dvitIyA zritAtItapatitagatAtyastaprAptApannaiH",
-    text_dev="द्वितीया श्रितातीतपतितगतात्यस्तप्राप्तापन्नैः",
+    text_slp1='dviguSca',
+    text_dev='द्विगुश्च',
     padaccheda_dev="द्वितीया / श्रित-आतीत-पतित-गत-अत्यस्त-प्राप्त-आपन्नैः",
     why_dev="द्वितीयान्तैः श्रितादिभिः तत्पुरुषः (*prakriya_38*, **कष्टश्रितः**)।",
     anuvritti_from=("2.1.22",),

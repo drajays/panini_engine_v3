@@ -1,5 +1,5 @@
 """
-8.2.91  ब्रूहिप्रेस्यश्रौषड्वौषडावहानामादेः  —  VIDHI
+8.2.91  ब्रूहिप्रेष्यश्रौषड्वौषडावहानामादेः  —  VIDHI
 
 Padaccheda: ब्रूहि-प्रेष्य-श्रौषतट्-वौषट्-आवहानाम् आदेः
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "8.2.91",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "brUhipresyaSrOzaqvOzaqAvahAnAmAdeH",
-    text_dev              = "ब्रूहिप्रेस्यश्रौषड्वौषडावहानामादेः",
+    text_slp1             = 'brUhiprezyaSrOzaqvOzaqAvahAnAmAdeH',
+    text_dev              = 'ब्रूहिप्रेष्यश्रौषड्वौषडावहानामादेः',
     padaccheda_dev        = "ब्रूहि-प्रेष्य-श्रौषतट्-वौषट्-आवहानाम् आदेः",
     why_dev               = "(सूत्रम् 8.2.91) ब्रूहिप्रेस्यश्रौषड्वौषडावहानामादेः।",
     anuvritti_from        = ('8.1.1',),

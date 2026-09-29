@@ -95,8 +95,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.2.48",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "go-striyor upasarjanasya",
-    text_dev       = "गोस्त्रियोरुपसर्जनस्य",
+    text_slp1      = 'gostriyorupasarjanasya',
+    text_dev       = 'गोस्त्रियोरुपसर्जनस्य',
     padaccheda_dev = (
         "गो-स्त्रियोः (षष्ठी-द्विवचनम्) / उपसर्जनस्य (षष्ठी-एकवचनम्)"
     ),

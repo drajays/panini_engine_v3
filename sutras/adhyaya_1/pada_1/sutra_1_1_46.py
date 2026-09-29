@@ -40,8 +40,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.1.46",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "AdyantO TakitO",
-    text_dev       = "आद्यन्तौ टकितौ",
+    text_slp1      = 'AdyantO wakitO',
+    text_dev       = 'आद्यन्तौ टकितौ',
     padaccheda_dev = "आदि-अन्तौ (प्रथमा-द्विवचनम्), टकितौ (प्रथमा-द्विवचनम्)",
     why_dev        = (
         "टित्-आगमः आगमिनः पूर्वम्, कित्-आगमः आगमिनः अनन्तरम् इति स्थाननिर्णयः।"

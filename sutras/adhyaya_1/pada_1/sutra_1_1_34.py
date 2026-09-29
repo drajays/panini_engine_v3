@@ -1,5 +1,5 @@
 """
-1.1.34  pūrvaparāvaradakṣiṇottarāparādharāṇi vyavasthāyām asaṃjñāyām  —  NIYAMA
+1.1.34  पूर्वपरावरदक्षिणोत्तरापराधराणि व्यवस्थायामसंज्ञायाम्  —  NIYAMA
 
 *Anuvṛtti*: sarvanāma from **1.1.27**.
 
@@ -89,8 +89,8 @@ SUTRA = SutraRecord(
     sutra_id       = "1.1.34",
     sutra_type     = SutraType.NIYAMA,
     r1_form_identity_exempt = True,
-    text_slp1      = "pUrvaparAvaradakziRottarAparADarARi vyavasTA yaM asaMjJAyAm",
-    text_dev       = "पूर्वपरावरदक्षिणोत्तरापराधराणि व्यवस्थायामसंज्ञायाम्",
+    text_slp1      = 'pUrvaparAvaradakziRottarAparADarARi vyavasTAyAmasaMjYAyAm',
+    text_dev       = 'पूर्वपरावरदक्षिणोत्तरापराधराणि व्यवस्थायामसंज्ञायाम्',
     padaccheda_dev = "पूर्व-पर-अवर-दक्षिण-उत्तर-अपर-अधराणि / व्यवस्थायाम् / असंज्ञायाम्",
     why_dev        = "दिशावाचि-शब्दानाम् (पूर्वादि-सप्तानाम्) सर्वनाम-संज्ञा व्यवस्थायाम् एव, "
                      "न तु संज्ञा-शब्देषु (नियमः)।",

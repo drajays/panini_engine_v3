@@ -1,5 +1,5 @@
 """
-3.2.133  अर्हः पूजायाम्  —  VIDHI
+3.2.133  अर्हः प्रशंसायाम्  —  VIDHI
 
 Padaccheda: अर्हः पूजायाम् (or प्रशंसायाम् )
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.2.133",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "arhaH pUjAyAm",
-    text_dev              = "अर्हः पूजायाम्",
+    text_slp1             = 'arhaH praSaMsAyAm',
+    text_dev              = 'अर्हः प्रशंसायाम्',
     padaccheda_dev        = "अर्हः पूजायाम् (or प्रशंसायाम् )",
     why_dev               = "धातोः कृत्-प्रत्ययः [अर्हः पूजायाम्] विहितः (३.२.133)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

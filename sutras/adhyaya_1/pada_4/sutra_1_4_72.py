@@ -1,5 +1,5 @@
 """
-1.4.72  विभाषा कृञि  (vibhāṣā kṛñi)  —  VIBHASHA
+1.4.72  विभाषा कृञि  —  VIBHASHA
 
 The word "tiras" optionally (vibhāṣā) gets the gati-saṃjñā when used with
 the root kṛ (kṛñ, do/make).  Thus "tiras-kṛ" may or may not be treated
@@ -30,8 +30,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.72",
     sutra_type=SutraType.VIBHASHA,
-    text_slp1="viBAzA kRRi",
-    text_dev="विभाषा कृञि",
+    text_slp1='viBAzA kfYi',
+    text_dev='विभाषा कृञि',
     padaccheda_dev="विभाषा / कृञि",
     why_dev="कृञि 'तिरस्' विभाषया गति-संज्ञकः — ऐच्छिकः पक्षः।",
     anuvritti_from=("1.4.60", "1.4.71"),

@@ -87,8 +87,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "8.4.40",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "stoH ScunA ScuH // zwunA zwuH (engine shard)",
-    text_dev       = "स्तोः श्चुना श्चुः",
+    text_slp1      = 'stoH ScunA ScuH',
+    text_dev       = 'स्तोः श्चुना श्चुः',
     padaccheda_dev = "स्तोः / श्चुना / श्चुः",
     why_dev        = "चवर्गे परे स्तोः श्चुनेन श्चुः (डेमो: दधि+छत्रम्); ष्टुणा-शाखा पुरातन-मार्ज्वि-मार्गे।",
     anuvritti_from = ("8.2.1",),

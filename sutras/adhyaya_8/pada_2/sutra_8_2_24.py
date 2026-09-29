@@ -1,5 +1,5 @@
 """
-8.2.24  रात् सस्य  —  VIDHI
+8.2.24  रात्सस्य  —  VIDHI
 
 Padaccheda: रात् सस्य
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "8.2.24",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "rAt sasya",
-    text_dev              = "रात् सस्य",
+    text_slp1             = 'rAtsasya',
+    text_dev              = 'रात्सस्य',
     padaccheda_dev        = "रात् सस्य",
     why_dev               = "(सूत्रम् 8.2.24) रात् सस्य।",
     anuvritti_from        = ('8.1.1',),

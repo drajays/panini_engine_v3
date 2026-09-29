@@ -47,8 +47,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.64",
     sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1               = "sarUpARAm ekazeza ekaviBaktO",
-    text_dev                = "सरूपाणामेकशेष एकविभक्तौ",
+    text_slp1               = 'sarUpARAmekaSeza ekaviBaktO',
+    text_dev                = 'सरूपाणामेकशेष एकविभक्तौ',
     padaccheda_dev          = "सरूपाणाम् / एकशेषः / एकविभक्तौ",
     why_dev                 = (
         "एकविभक्तौ सरूपाणां शब्दानाम् एकः एव शिष्यते — "

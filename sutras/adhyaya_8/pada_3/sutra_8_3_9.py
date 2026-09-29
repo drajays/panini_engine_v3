@@ -1,5 +1,5 @@
 """
-8.3.9  दीर्घादटि समानपदे  —  VIDHI
+8.3.9  दीर्घादटि समानपादे  —  VIDHI
 
 Padaccheda: दीर्घात् अटि समानपादे
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "8.3.9",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "dIrGAdawi samAnapade",
-    text_dev              = "दीर्घादटि समानपदे",
+    text_slp1             = 'dIrGAdawi samAnapAde',
+    text_dev              = 'दीर्घादटि समानपादे',
     padaccheda_dev        = "दीर्घात् अटि समानपादे",
     why_dev               = "(सूत्रम् 8.3.9) दीर्घादटि समानपदे।",
     anuvritti_from        = ('8.1.1',),

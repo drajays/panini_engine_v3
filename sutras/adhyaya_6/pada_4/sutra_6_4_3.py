@@ -75,8 +75,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.4.3",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "nAmi (aNgasya)",
-    text_dev       = "नामि (अङ्गस्य)",
+    text_slp1      = 'nAmi',
+    text_dev       = 'नामि',
     padaccheda_dev = "नामि — अङ्गस्य",
     why_dev        = "नुट्-आगमेन नामि-पर्याये अङ्गस्य अन्त्य-स्वरस्य दीर्घः (हरि → हरी; हरिणाम् → हरीणाम्)।",
     anuvritti_from = ("6.4.1",),

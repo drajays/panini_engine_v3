@@ -58,8 +58,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.88",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="aNAvakarmakAccittvatkartrfkAt",
-    text_dev="अणावकर्मकाच्चित्तवत्कर्तृकात्",
+    text_slp1='aRAvakarmakAccittavatkartfkAt',
+    text_dev='अणावकर्मकाच्चित्तवत्कर्तृकात्',
     padaccheda_dev="अणौ (सप्तमी-एकवचन) / अकर्मकात् (पञ्चमी-एकवचन) / चित्तवत्-कर्तृकात् (पञ्चमी-एकवचन)",
     why_dev=(
         "अणि-परे (न णि-प्रत्यये) अकर्मक-धातोः चित्तवत्-कर्तृके आत्मनेपदम् — "

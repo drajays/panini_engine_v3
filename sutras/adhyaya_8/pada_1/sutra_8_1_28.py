@@ -75,8 +75,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.1.28",
     sutra_type=SutraType.ANUVADA,
-    text_slp1="tiNgatiNg",
-    text_dev="तिङ्ङतिङः",
+    text_slp1='tiNNatiNaH',
+    text_dev='तिङ्ङतिङः',
     padaccheda_dev="तिङन्तं पदम् / अतिङन्तात् / पदात् / परम् / अनुदात्तम्",
     why_dev="तिङन्त-पदे अनुदात्त-अनुवादः — *gaccha* भागः (*prakriya_27*) / P044 टिप्पणी।",
     anuvritti_from=(),

@@ -1,5 +1,5 @@
 """
-8.3.37  कुप्वोः XकXपौ च  —  VIDHI
+8.3.37  कुप्वोः ≍क≍पौ च  —  VIDHI
 
 Padaccheda: कुप्वोः । XकXपौ । च
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "8.3.37",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "kupvoH XkaXpO ca",
-    text_dev              = "कुप्वोः XकXपौ च",
+    text_slp1             = 'kupvoH kapO ca',
+    text_dev              = 'कुप्वोः ≍क≍पौ च',
     padaccheda_dev        = "कुप्वोः । XकXपौ । च",
     why_dev               = "(सूत्रम् 8.3.37) कुप्वोः XकXपौ च।",
     anuvritti_from        = ('8.1.1',),

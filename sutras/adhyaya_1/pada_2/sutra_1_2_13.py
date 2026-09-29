@@ -1,5 +1,5 @@
 """
-1.2.13  वा गमहनविदविशām  …  —  VIDHI (narrow demo fragment)
+1.2.13  वा गमः  —  VIDHI (narrow demo fragment)
 
 Operational narrow demo (संगसीष्ट / ``saGgasIzwa`` fragment):
   For *√gam*, optionally treat the ``sīyuṭ``‑block (**3.4.102** ``ling_sIyuw``) as
@@ -72,8 +72,8 @@ SUTRA = SutraRecord(
     sutra_id="1.2.13",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="vA gamahana (...)",
-    text_dev="वा गमहन… (आशीर्लिङ्गे डेमो-खण्डम्)",
+    text_slp1='vA gamaH',
+    text_dev='वा गमः',
     padaccheda_dev="वा /* गम्-आश्रितः सीयुट् / च",
     why_dev=(
         "\\\"√गम्\\\"-परे आशिषि \\\"वा\\\" इति सीयुट्‌ आगमे किद्वन्-आचरणम् (संज्ञा-मात्रम्)।"

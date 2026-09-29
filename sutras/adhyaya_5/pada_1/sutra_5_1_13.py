@@ -1,5 +1,5 @@
 """
-5.1.13  छदिरुपधिबलेः ढञ्  —  VIDHI
+5.1.13  छदिरुपधिबलेर्ढञ्  —  VIDHI
 
 Padaccheda: छदिः-उपधि-बलेः ढञ्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.1.13",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "CadirupaDibaleH QaY",
-    text_dev              = "छदिरुपधिबलेः ढञ्",
+    text_slp1             = 'CadirupaDibalerQaY',
+    text_dev              = 'छदिरुपधिबलेर्ढञ्',
     padaccheda_dev        = "छदिः-उपधि-बलेः ढञ्",
     why_dev               = "(सूत्रम् 5.1.13) छदिरुपधिबलेः ढञ्।",
     anuvritti_from        = ('5.1.1',),

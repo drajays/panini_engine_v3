@@ -62,8 +62,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.4.45",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "kArake ADhAraH adhikaraRam",
-    text_dev       = "कारके आधारः अधिकरणम् (एकसंज्ञा १.४.१)",
+    text_slp1      = 'ADAroDikaraRam',
+    text_dev       = 'आधारोऽधिकरणम्',
     padaccheda_dev = "कारके / आधारः / अधिकरणम्",
     why_dev        = (
         "क्रियायाः कर्तुः कर्मणो वा यः पदार्थ आधारः, स अधिकरण-कारक-संज्ञकः "

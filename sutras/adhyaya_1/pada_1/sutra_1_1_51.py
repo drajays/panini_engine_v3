@@ -183,8 +183,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.1.51",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "uH aR raparaH",
-    text_dev       = "उः अण् रपरः",
+    text_slp1      = 'uraR raparaH',
+    text_dev       = 'उरण् रपरः',
     padaccheda_dev = "उः / अण् / रपरः",
     why_dev        = "ऋ/ऌ-प्रसङ्गे अण्-आदेशानन्तरं र्/ल्-आगमः (यथासङ्ख्यम्) — "
                      "उरण् रपरः (कृ→कर्, हृ→हर्)।",

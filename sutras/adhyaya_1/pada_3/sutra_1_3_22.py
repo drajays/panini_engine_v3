@@ -47,8 +47,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.22",
     sutra_type=SutraType.VIDHI,
-    text_slp1="samavapraviBya(H) sTaH",
-    text_dev="समवप्रविभ्यः स्थः",
+    text_slp1='samavapraviByaH sTaH',
+    text_dev='समवप्रविभ्यः स्थः',
     padaccheda_dev="सम्-अव-प्र-वि-भ्यः (पञ्चमी) / स्थः (षष्ठी)",
     why_dev=(
         "सम्-अव-प्र-वि-पूर्वकस्य स्था-धातोः आत्मनेपदं भवति; "

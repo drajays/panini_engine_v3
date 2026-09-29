@@ -1,5 +1,5 @@
 """
-5.1.69  कडङ्गरदक्षिणाच्छ च  —  VIDHI
+5.1.69  कडङ्करदक्षिणाच्छ च  —  VIDHI
 
 Padaccheda: कडङ्गर-दक्षिणात् छ (लुप्तप्रथमान्तनिर्देशः) च
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.1.69",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "kaqaNgaradakziRAcCa ca",
-    text_dev              = "कडङ्गरदक्षिणाच्छ च",
+    text_slp1             = 'kaqaNkaradakziRAcCa ca',
+    text_dev              = 'कडङ्करदक्षिणाच्छ च',
     padaccheda_dev        = "कडङ्गर-दक्षिणात् छ (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 5.1.69) कडङ्गरदक्षिणाच्छ च।",
     anuvritti_from        = ('5.1.1',),

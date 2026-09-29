@@ -77,8 +77,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.1.28",
     sutra_type     = SutraType.VIBHASHA,
-    text_slp1      = "diksamAse bahuvrIhau sarvAdIni vibhasA sarvanAmAni",
-    text_dev       = "दिक्समासे बहुव्रीहौ सर्वादीनि विभाषा सर्वनामानि",
+    text_slp1      = 'viBAzA diksamAse bahuvrIhO',
+    text_dev       = 'विभाषा दिक्समासे बहुव्रीहौ',
     padaccheda_dev = "विभाषा / दिक्समासे / बहुव्रीहौ",
     why_dev        = "दिक्समास-बहुव्रीहौ सर्वादि-शब्दाः विकल्पेन सर्वनाम-संज्ञकाः।",
     anuvritti_from = ("1.1.27",),

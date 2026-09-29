@@ -1,5 +1,5 @@
 """
-1.1.1  वृद्धिरादैच्  (vfdDiH Adaic)  —  SAMJNA
+1.1.1  वृद्धिरादैच्  —  SAMJNA
 
 Important facts (engine + śāstra alignment)
 ──────────────────────────────────────────
@@ -84,8 +84,8 @@ _WHY_DEV = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.1",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "vfdDiH Adaic",
-    text_dev       = "वृद्धिरादैच्",
+    text_slp1      = 'vfdDirAdEc',
+    text_dev       = 'वृद्धिरादैच्',
     padaccheda_dev = "वृद्धिः आत्-ऐच्",
     why_dev        = _WHY_DEV,
     anuvritti_from = (),

@@ -24,8 +24,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.213",
     sutra_type     = SutraType.ANUVADA,
-    text_slp1      = "yato nAvaH",
-    text_dev       = "यतोऽनावः",
+    text_slp1      = 'yatonAvaH',
+    text_dev       = 'यतोऽनावः',
     padaccheda_dev = "यतः अनावः",
     why_dev        = "यत्-प्रत्यये आद्य्-उदात्त-न्यायः (श्रुति-स्तरः)।",
     anuvritti_from = (),

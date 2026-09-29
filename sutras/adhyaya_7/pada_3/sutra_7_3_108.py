@@ -1,5 +1,5 @@
 """
-7.3.108  ह्रस्व-घि-अङ्गस्य सम्बुद्धौ गुणः  —  VIDHI
+7.3.108  ह्रस्वस्य गुणः  —  VIDHI
 
 Operational intent for v3.4 (hari-like i-stems):
   - In sambuddhi-ekavacana (tagged on the sup pratyaya by 4.1.2 as
@@ -70,8 +70,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.3.108",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "hrasva-Gi-aNgasya sambuddhau guRaH",
-    text_dev       = "ह्रस्व-घि-अङ्गस्य सम्बुद्धौ गुणः",
+    text_slp1      = 'hrasvasya guRaH',
+    text_dev       = 'ह्रस्वस्य गुणः',
     padaccheda_dev = "ह्रस्व-घि-अङ्गस्य सम्बुद्धौ गुणः",
     why_dev        = "सम्बुद्धौ (८-१) ह्रस्व-घि-अङ्गस्य गुणः (हरि → हरे)।",
     anuvritti_from = ("7.3.1",),

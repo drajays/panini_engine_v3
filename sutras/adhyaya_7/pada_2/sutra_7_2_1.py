@@ -107,8 +107,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.2.1",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "sici vRddhiH parasmaipadezu",
-    text_dev       = "सिचि वृद्धिः परस्मैपदेषु",
+    text_slp1      = 'sici vfdDiH parasmEpadezu',
+    text_dev       = 'सिचि वृद्धिः परस्मैपदेषु',
     padaccheda_dev = "सिचि / वृद्धिः / परस्मैपदेषु",
     why_dev        = "लुङ्-सिच्-परस्मैपदे धातोः स्वरस्य वृद्धिः (चि→चै) ।",
     anuvritti_from = ("1.1.1", "1.1.3", "1.1.50"),

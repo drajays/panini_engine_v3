@@ -1,5 +1,5 @@
 """
-8.3.64  स्थाऽऽदिष्वभ्यासेन चाभ्यासय  —  VIDHI
+8.3.64  स्थाऽऽदिष्वभ्यासेन चाभ्यासस्य  —  VIDHI
 
 Padaccheda: स्था-आदिषु अभ्यासेन च अभ्यासस्य
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "8.3.64",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "sTA''dizvaByAsena cAByAsaya",
-    text_dev              = "स्थाऽऽदिष्वभ्यासेन चाभ्यासय",
+    text_slp1             = 'sTAdizvaByAsena cAByAsasya',
+    text_dev              = 'स्थाऽऽदिष्वभ्यासेन चाभ्यासस्य',
     padaccheda_dev        = "स्था-आदिषु अभ्यासेन च अभ्यासस्य",
     why_dev               = "(सूत्रम् 8.3.64) स्थाऽऽदिष्वभ्यासेन चाभ्यासय।",
     anuvritti_from        = ('8.1.1',),

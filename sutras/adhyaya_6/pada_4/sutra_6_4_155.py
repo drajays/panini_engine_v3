@@ -1,5 +1,5 @@
 """
-6.4.155  इष्ठवद्भावः  —  VIDHI (narrow P025 *ṭi*-lopa)
+6.4.155  टेः  —  VIDHI (narrow P025 *ṭi*-lopa)
 
 Pāṭha (cross-check: ``sutrANi.tsv`` / ashtadhyayi-com ``data.txt`` i=604155):
   *iṣṭhavadbhāvaḥ* — *ṭi*-portion behaviour like *iṣṭha*; in P025 the final ``u``
@@ -68,8 +68,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.4.155",
     sutra_type=SutraType.VIDHI,
-    text_slp1="izWavadbhAvaH",
-    text_dev="इष्ठवद्भावः",
+    text_slp1='weH',
+    text_dev='टेः',
     padaccheda_dev="इष्ठवत्-भावः",
     why_dev="पटु-अन्त्य-उ-कार-लोपः णिच्-पूर्वम् (P025)।",
     anuvritti_from=("6.4.1",),

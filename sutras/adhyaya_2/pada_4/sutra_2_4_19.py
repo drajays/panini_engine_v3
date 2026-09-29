@@ -1,5 +1,5 @@
 """
-2.4.19  तत्पुरुषोऽनञ् कर्मधारयः  (tatpuruṣo'nañ karmadhārayaḥ)  —  ADHIKARA
+2.4.19  तत्पुरुषोऽनञ् कर्मधारयः  —  ADHIKARA
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=24019):** opens the traditional
 *tatpuruṣe napuṃsaka* adhikāra (span for certain napuṃsaka behaviour in
@@ -27,7 +27,7 @@ def act(state: State) -> State:
     state.adhikara_stack.append({
         "id"        : "2.4.19",
         "scope_end" : "2.4.25",
-        "text_dev"  : "तत्पुरुषोऽनञ् कर्मधारयः",
+        "text_dev"  : 'तत्पुरुषोऽनञ् कर्मधारयः',
     })
     return state
 
@@ -35,8 +35,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id        = "2.4.19",
     sutra_type      = SutraType.ADHIKARA,
-    text_slp1       = "tatpuruzo'naY karmadhArayaH",
-    text_dev        = "तत्पुरुषोऽनञ् कर्मधारयः",
+    text_slp1       = 'tatpuruzonaY karmaDArayaH',
+    text_dev        = 'तत्पुरुषोऽनञ् कर्मधारयः',
     padaccheda_dev  = "तत्पुरुषः / अ-नञ् / कर्मधारयः",
     why_dev         = "२.४.१९ इत्यतः २.४.२५ पर्यन्तं 'तत्पुरुषे नपुंसक' अधिकारः प्रवर्तते।",
     anuvritti_from  = (),

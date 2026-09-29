@@ -1,5 +1,5 @@
 """
-7.4.12  शृदॄप्रां ह्रस्वो वा  —  VIDHI
+7.4.12  शॄदॄप्रां ह्रस्वो वा  —  VIDHI
 
 Padaccheda: शॄ-दॄ-प्राम् ह्रस्वः वा
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.4.12",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "SfdFprAM hrasvo vA",
-    text_dev              = "शृदॄप्रां ह्रस्वो वा",
+    text_slp1             = 'SFdFprAM hrasvo vA',
+    text_dev              = 'शॄदॄप्रां ह्रस्वो वा',
     padaccheda_dev        = "शॄ-दॄ-प्राम् ह्रस्वः वा",
     why_dev               = "(सूत्रम् 7.4.12) शृदॄप्रां ह्रस्वो वा।",
     anuvritti_from        = ('7.1.1',),

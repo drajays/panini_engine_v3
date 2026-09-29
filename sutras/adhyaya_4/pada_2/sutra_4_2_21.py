@@ -1,5 +1,5 @@
 """
-4.2.21  साऽस्मिन् पौर्णमासीति (संज्ञायाम्)  —  VIDHI
+4.2.21  सास्मिन् पौर्णमासीति संज्ञायाम्  —  VIDHI
 
 Padaccheda: सा अस्मिन् पौर्णमासि इति (संज्ञायाम्)
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.2.21",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "sA'smin pOrRamAsIti (saMjYAyAm)",
-    text_dev              = "साऽस्मिन् पौर्णमासीति (संज्ञायाम्)",
+    text_slp1             = 'sAsmin pOrRamAsIti saMjYAyAm',
+    text_dev              = 'सास्मिन् पौर्णमासीति संज्ञायाम्',
     padaccheda_dev        = "सा अस्मिन् पौर्णमासि इति (संज्ञायाम्)",
     why_dev               = "(सूत्रम् 4.2.21) साऽस्मिन् पौर्णमासीति (संज्ञायाम्)।",
     anuvritti_from        = ('4.1.1',),

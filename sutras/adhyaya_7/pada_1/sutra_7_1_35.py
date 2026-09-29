@@ -1,5 +1,5 @@
 """
-7.1.35  तुह्योस्तातङाशिष्यन्यतरस्याम्  —  VIDHI
+7.1.35  तुह्योस्तातङ्ङाशिष्यन्यतरस्याम्  —  VIDHI
 
 Padaccheda: तु-ह्योः तातङ् आशिषि अन्यतरस्याम्
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.1.35",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "tuhyostAtaNASizyanyatarasyAm",
-    text_dev              = "तुह्योस्तातङाशिष्यन्यतरस्याम्",
+    text_slp1             = 'tuhyostAtaNNASizyanyatarasyAm',
+    text_dev              = 'तुह्योस्तातङ्ङाशिष्यन्यतरस्याम्',
     padaccheda_dev        = "तु-ह्योः तातङ् आशिषि अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 7.1.35) तुह्योस्तातङाशिष्यन्यतरस्याम्।",
     anuvritti_from        = ('7.1.1',),

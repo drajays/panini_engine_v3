@@ -1,5 +1,5 @@
 """
-1.4.87  उपोऽधिके च  (upo 'dhike ca)  —  VIDHI
+1.4.87  उपोऽधिके च  —  VIDHI
 
 *Padaccheda:* *upaḥ* (prathamā), *adhike* (saptamī), *ca* (avyaya).
 
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.87",
     sutra_type           = SutraType.VIDHI,
-    text_slp1            = "upo aDike ca",
-    text_dev             = "उपोऽधिके च",
+    text_slp1            = 'upoDike ca',
+    text_dev             = 'उपोऽधिके च',
     padaccheda_dev       = "उपः / अधिके / च",
     why_dev              = (
         "अधिक-अर्थे (हीन-अर्थे च) वर्तमानः 'उप' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

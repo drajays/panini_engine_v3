@@ -1,5 +1,5 @@
 """
-4.1.172  कुरुणादिभ्यो ण्यः  —  VIDHI
+4.1.172  कुरुनादिभ्यो ण्यः  —  VIDHI
 
 Padaccheda: कुरु-नादिभ्यः ण्यः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.1.172",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "kuruRAdiByo RyaH",
-    text_dev              = "कुरुणादिभ्यो ण्यः",
+    text_slp1             = 'kurunAdiByo RyaH',
+    text_dev              = 'कुरुनादिभ्यो ण्यः',
     padaccheda_dev        = "कुरु-नादिभ्यः ण्यः",
     why_dev               = "(सूत्रम् 4.1.172) कुरुणादिभ्यो ण्यः।",
     anuvritti_from        = ('4.1.1',),

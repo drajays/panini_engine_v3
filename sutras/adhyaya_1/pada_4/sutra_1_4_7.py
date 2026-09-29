@@ -1,5 +1,5 @@
 """
-1.4.7  शेषो घि  —  SAMJNA
+1.4.7  शेषो घ्यसखि  —  SAMJNA
 
 Scope for v3.4:
 ───────────────
@@ -55,8 +55,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.4.7",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "Sezo Gi",
-    text_dev       = "शेषो घि",
+    text_slp1      = 'Sezo GyasaKi',
+    text_dev       = 'शेषो घ्यसखि',
     padaccheda_dev = "शेषः घि",
     why_dev        = "ह्रस्व-इक्-अन्तस्य अङ्गस्य घि-संज्ञा (हरि-प्रकारे प्रयोगाय)।",
     anuvritti_from = ("1.4.1",),

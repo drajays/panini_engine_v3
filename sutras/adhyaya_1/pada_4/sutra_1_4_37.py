@@ -40,8 +40,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.37",
     sutra_type           = SutraType.SAMJNA,
-    text_slp1            = "kruDadruhersyA asUyArTAnAM yaM prati kopaH",
-    text_dev             = "क्रुधद्रुहेर्ष्याऽसूयार्थानां यं प्रति कोपः — sampradāna",
+    text_slp1            = 'kruDadruherzyAsUyArTAnAM yaM prati kopaH',
+    text_dev             = 'क्रुधद्रुहेर्ष्याऽसूयार्थानां यं प्रति कोपः',
     padaccheda_dev       = "क्रुध-द्रुह-ईर्ष्या-असूया-अर्थानाम् / यम् / प्रति / कोपः",
     why_dev              = (
         "क्रुध्-द्रुह्-ईर्ष्या-असूया-अर्थक-धातूनां यस्मिन् कोपः स सम्प्रदान-संज्ञकः। "

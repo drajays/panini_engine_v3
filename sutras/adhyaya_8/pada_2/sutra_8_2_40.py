@@ -122,8 +122,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.2.40",
     sutra_type=SutraType.VIDHI,
-    text_slp1="Jhazastatho rDho aDaH",
-    text_dev="झषस्तथोर्धोऽधः",
+    text_slp1='JazastaTorDoDaH',
+    text_dev='झषस्तथोर्धोऽधः',
     padaccheda_dev="झषः / त-थोः / (र्धः) / अधः",
     why_dev="झष्-पूर्वे त्/थ् का ध्-आदेशः (डेमो: रुणद्धि; प००१-डि पूर्व-त्रिपादी)।",
     anuvritti_from=("8.2.1",),

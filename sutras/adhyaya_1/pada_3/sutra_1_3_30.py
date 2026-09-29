@@ -57,8 +57,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.30",
     sutra_type=SutraType.VIDHI,
-    text_slp1="ni-sam-upa-vi-ByaH hvaH",
-    text_dev="निसमुपविभ्यो ह्वः",
+    text_slp1='nisamupaviByo hvaH',
+    text_dev='निसमुपविभ्यो ह्वः',
     padaccheda_dev="नि-सम्-उप-वि-भ्यः (पञ्चमी-बहुवचन) / ह्वः (षष्ठी-एकवचन)",
     why_dev=(
         "नि-, सम्-, उप-, वि-पूर्वस्य ह्वे-धातोः प्रयोगे आत्मनेपदम् — "

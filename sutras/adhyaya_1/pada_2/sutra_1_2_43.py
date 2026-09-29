@@ -53,8 +53,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.2.43",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "prathamAnirdizwam samAsa upasarjanam",
-    text_dev       = "प्रथमानिर्दिष्टं समास उपसर्जनम्",
+    text_slp1      = 'praTamAnirdizwaM samAsa upasarjanam',
+    text_dev       = 'प्रथमानिर्दिष्टं समास उपसर्जनम्',
     padaccheda_dev = "प्रथमा-निर्दिष्टम् / समासे / उपसर्जनम्",
     why_dev        = "समासे प्रथमानिर्दिष्टं पदम् उपसर्जन-संज्ञकं (अव्ययीभावे अव्ययः)।",
     anuvritti_from = ("1.2.42",),

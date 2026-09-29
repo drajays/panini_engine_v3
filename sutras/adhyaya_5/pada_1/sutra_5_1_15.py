@@ -1,5 +1,5 @@
 """
-5.1.15  चर्म्मणोऽञ्  —  VIDHI
+5.1.15  चर्मणोऽञ्  —  VIDHI
 
 Padaccheda: चर्म्मणः अञ्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.1.15",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "carmmaRo'Y",
-    text_dev              = "चर्म्मणोऽञ्",
+    text_slp1             = 'carmaRoY',
+    text_dev              = 'चर्मणोऽञ्',
     padaccheda_dev        = "चर्म्मणः अञ्",
     why_dev               = "(सूत्रम् 5.1.15) चर्म्मणोऽञ्।",
     anuvritti_from        = ('5.1.1',),

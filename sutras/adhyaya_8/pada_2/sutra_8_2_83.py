@@ -1,5 +1,5 @@
 """
-8.2.83  प्रत्यभिवादेअशूद्रे  —  VIDHI
+8.2.83  प्रत्यभिवादेऽशूद्रे  —  VIDHI
 
 Padaccheda: प्रत्यभिवादे अशूद्रे
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "8.2.83",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "pratyaBivAdeaSUdre",
-    text_dev              = "प्रत्यभिवादेअशूद्रे",
+    text_slp1             = 'pratyaBivAdeSUdre',
+    text_dev              = 'प्रत्यभिवादेऽशूद्रे',
     padaccheda_dev        = "प्रत्यभिवादे अशूद्रे",
     why_dev               = "(सूत्रम् 8.2.83) प्रत्यभिवादेअशूद्रे।",
     anuvritti_from        = ('8.1.1',),

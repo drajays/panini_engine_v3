@@ -1,5 +1,5 @@
 """
-5.3.5  एतदोऽश्  —  VIDHI
+5.3.5  एतदोऽन्  —  VIDHI
 
 Padaccheda: एतदः अन्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.3.5",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "etado'S",
-    text_dev              = "एतदोऽश्",
+    text_slp1             = 'etadon',
+    text_dev              = 'एतदोऽन्',
     padaccheda_dev        = "एतदः अन्",
     why_dev               = "(सूत्रम् 5.3.5) एतदोऽश्।",
     anuvritti_from        = ('5.1.1',),

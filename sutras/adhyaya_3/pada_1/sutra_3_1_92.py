@@ -73,8 +73,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.1.92",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="tatro papadaM saptamIsTam",
-    text_dev="तत्रोपपदं सप्तमीस्थम्",
+    text_slp1='tatropapadaM saptamIsTam',
+    text_dev='तत्रोपपदं सप्तमीस्थम्',
     padaccheda_dev="तत्र / उपपदम् / सप्तमीस्थम्",
     why_dev="उपपद-प्रकरणे सप्तम्यर्थक-पदस्य उपपद-संज्ञा (प००५-अ/ब)।",
     anuvritti_from=("3.1.88",),

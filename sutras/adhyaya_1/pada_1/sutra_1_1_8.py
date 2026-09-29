@@ -1,5 +1,5 @@
 """
-1.1.8  मुखनासिकावचनोऽनुनासिकः  (mukhanAsikAvacano anunAsikaH)  —  SAMJNA
+1.1.8  मुखनासिकावचनोऽनुनासिकः  —  SAMJNA
 
 **Śāstra-artha:** यस्य वर्णस्य उच्चारणे मुखेन सह नासिकायाः अपि प्रयोगः भवति,
 सः वर्णः **अनुनासिक-संज्ञकः**।  'अनुनासिकः' इति पृथक् वर्णः नास्ति; विद्यमानस्य
@@ -77,8 +77,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.8",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "mukhanAsikAvacano anunAsikaH",
-    text_dev       = "मुखनासिकावचनोऽनुनासिकः",
+    text_slp1      = 'muKanAsikAvacanonunAsikaH',
+    text_dev       = 'मुखनासिकावचनोऽनुनासिकः',
     padaccheda_dev = "मुख-नासिका-वचनः / अनुनासिकः",
     why_dev        = _WHY,
     anuvritti_from = (),

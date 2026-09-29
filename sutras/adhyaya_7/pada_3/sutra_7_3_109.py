@@ -1,5 +1,5 @@
 """
-7.3.109  ह्रस्व-अङ्गस्य जसि गुणः  —  VIDHI
+7.3.109  जसि च  —  VIDHI
 
 Operational intent for v3.4 (hari-like i-stems):
   - Before the pratyaya **jas** (prathamā-pl / sambuddhi-pl),
@@ -78,8 +78,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.3.109",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "hrasva-aNgasya jasi guRaH",
-    text_dev       = "ह्रस्व-अङ्गस्य जसि गुणः",
+    text_slp1      = 'jasi ca',
+    text_dev       = 'जसि च',
     padaccheda_dev = "ह्रस्व-अङ्गस्य जसि गुणः",
     why_dev        = "जस्-प्रत्यये परे ह्रस्व-इक्-अन्त-अङ्गस्य गुणः (हरि → हरे)।",
     anuvritti_from = ("7.3.1",),

@@ -1,5 +1,5 @@
 """
-7.2.2  अतो र्लान्तस्य  —  VIDHI
+7.2.2  अतो ल्रान्तस्य  —  VIDHI
 
 Padaccheda: अतः ल (लुप्तषष्ठ्यन्तनिर्देशः) अन्तस्य
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.2.2",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "ato rlAntasya",
-    text_dev              = "अतो र्लान्तस्य",
+    text_slp1             = 'ato lrAntasya',
+    text_dev              = 'अतो ल्रान्तस्य',
     padaccheda_dev        = "अतः ल (लुप्तषष्ठ्यन्तनिर्देशः) अन्तस्य",
     why_dev               = "(सूत्रम् 7.2.2) अतो र्लान्तस्य।",
     anuvritti_from        = ('7.1.1',),

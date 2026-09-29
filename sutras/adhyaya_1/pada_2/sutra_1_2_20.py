@@ -70,8 +70,8 @@ SUTRA = SutraRecord(
     sutra_id              = "1.2.20",
     sutra_type            = SutraType.NIYAMA,
     r1_form_identity_exempt = True,
-    text_slp1             = "mfzas titikzAyAm",
-    text_dev              = "मृषस्तितिक्षायाम्",
+    text_slp1             = 'mfzastitikzAyAm',
+    text_dev              = 'मृषस्तितिक्षायाम्',
     padaccheda_dev        = "मृषः / तितिक्षायाम्",
     why_dev               = ("मृष्-धातुः तितिक्षार्थे निष्ठा-प्रत्ययस्य पूर्वं सेट् भवति — "
                              "१.२.१८-अपवादः; मृषित इति रूपम्।"),

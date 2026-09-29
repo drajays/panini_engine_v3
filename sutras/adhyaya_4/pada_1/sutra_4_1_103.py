@@ -1,5 +1,5 @@
 """
-4.1.103  द्रोणपर्वतजीवन्तादन्यतरयाम्  —  VIDHI
+4.1.103  द्रोणपर्वतजीवन्तादन्यतरस्याम्  —  VIDHI
 
 Padaccheda: द्रोण-पर्वत-जीवन्तात् अन्यतरस्याम्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.1.103",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "droRaparvatajIvantAdanyatarayAm",
-    text_dev              = "द्रोणपर्वतजीवन्तादन्यतरयाम्",
+    text_slp1             = 'droRaparvatajIvantAdanyatarasyAm',
+    text_dev              = 'द्रोणपर्वतजीवन्तादन्यतरस्याम्',
     padaccheda_dev        = "द्रोण-पर्वत-जीवन्तात् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 4.1.103) द्रोणपर्वतजीवन्तादन्यतरयाम्।",
     anuvritti_from        = ('4.1.1',),

@@ -61,8 +61,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "8.2.36",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "vrazca-Brasja-sfja-mfja-yaja-rAja-BrAja-cCa-SAM zaH",
-    text_dev       = "व्रश्चभ्रस्जसृजमृजयजराजभ्राजच्छशां षः",
+    text_slp1      = 'vraScaBrasjasfjamfjayajarAjaBrAjacCaSAM zaH',
+    text_dev       = 'व्रश्चभ्रस्जसृजमृजयजराजभ्राजच्छशां षः',
     padaccheda_dev = "व्रश्च-भ्रस्ज-सृज-मृज-यज-राज-भ्राज-च्छ-शाम् / षः",
     why_dev        = "एतेषु धातुषु अन्त्य-जकारस्य षकारादेशः (ग्लास-बॉक्स् narrow)।",
     anuvritti_from = ("8.2.1",),

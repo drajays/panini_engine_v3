@@ -1,5 +1,5 @@
 """
-5.2.49  नान्तादसंख्याऽऽदेर्मट्  —  VIDHI
+5.2.49  नान्तादसंख्यादेर्मट्  —  VIDHI
 
 Padaccheda: न-अन्तात् अ-सङ्‍ख्या-आदेः मट्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.49",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "nAntAdasaMKyA''dermaw",
-    text_dev              = "नान्तादसंख्याऽऽदेर्मट्",
+    text_slp1             = 'nAntAdasaMKyAdermaw',
+    text_dev              = 'नान्तादसंख्यादेर्मट्',
     padaccheda_dev        = "न-अन्तात् अ-सङ्‍ख्या-आदेः मट्",
     why_dev               = "(सूत्रम् 5.2.49) नान्तादसंख्याऽऽदेर्मट्।",
     anuvritti_from        = ('5.1.1',),

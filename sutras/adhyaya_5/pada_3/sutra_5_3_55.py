@@ -1,5 +1,5 @@
 """
-5.3.55  अतिशयने तमपिष्ठनौ  —  VIDHI (narrow: *tama*+**p** / *iṣṭha*+**n** after
+5.3.55  अतिशायने तमबिष्ठनौ  —  VIDHI (narrow: *tama*+**p** / *iṣṭha*+**n** after
 *atiśayana* when ``5_3_55_tamap_arm`` *meta*)
 
 Full *Aṣṭādhyāyī* *prayoga* needs **5.3.2**–**5.3.26** *adhikāra* and *samarthya*; v3
@@ -66,8 +66,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id         = "5.3.55",
     sutra_type       = SutraType.VIDHI,
-    text_slp1        = "atiSayanI tamapizWanO",
-    text_dev         = "अतिशयने तमपिष्ठनौ",
+    text_slp1        = 'atiSAyane tamabizWanO',
+    text_dev         = 'अतिशायने तमबिष्ठनौ',
     padaccheda_dev   = "अतिशयने / तमप्-इष्ठनौ",
     why_dev          = "सर्वश्रेष्ठार्थे तमप्-प्रत्ययः (ग्लास-बॉक्स्, *meta*-आर्म्ड)।",
     anuvritti_from   = ("5.3.2",),

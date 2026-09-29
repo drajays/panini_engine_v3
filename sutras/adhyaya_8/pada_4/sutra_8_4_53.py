@@ -124,8 +124,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.4.53",
     sutra_type=SutraType.VIDHI,
-    text_slp1="JhalAM jaS JhaSi",
-    text_dev="झलां जश् झशि",
+    text_slp1='JalAM jaS JaSi',
+    text_dev='झलां जश् झशि',
     padaccheda_dev="झलाम् / जश् / झशि",
     why_dev="झशि परे झल्-वर्णस्य जश्-आदेशः (डेमो: ध् → द्; प००१-डि पूर्व-त्रिपादी)।",
     anuvritti_from=("8.2.1",),

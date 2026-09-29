@@ -1,5 +1,5 @@
 """
-1.3.5  आदिरञिटुडवः  —  SAMJNA
+1.3.5  आदिर्ञिटुडवः  —  SAMJNA
 
 Śāstra / engine role (CONSTITUTION Arts. 1–2, 4, 7)
 ──────────────────────────────────────────────────
@@ -111,8 +111,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.3.5",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "AdiraYiTuDavAH",
-    text_dev       = "आदिरञिटुडवः",
+    text_slp1      = 'AdirYiwuqavaH',
+    text_dev       = 'आदिर्ञिटुडवः',
     padaccheda_dev = "आदिः ञि-टु-ड-वः",
     why_dev        = "ञ्-इट्-डु-वर्णेषु प्रथमः हल् ‘इत्’ संज्ञकः; लोपः १.३.९।",
     anuvritti_from = ("1.3.2",),

@@ -50,8 +50,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.2.37",
     sutra_type=SutraType.VIDHI,
-    text_slp1="ekAco baSo Baz jhazantasya sDvoH (narrow)",
-    text_dev="एकाचो बशो भष् झषन्तस्य स्ध्वोः",
+    text_slp1='ekAco baSo Baz Jazantasya sDvoH',
+    text_dev='एकाचो बशो भष् झषन्तस्य स्ध्वोः',
     padaccheda_dev="एकाचः / बशः / भष् / झषन्तस्य / स्ध्वोः",
     why_dev="सकारपरे झषन्त-एकाच्-धातोः बश् → भष् (ग→घ) — जिघृक्षति।",
     anuvritti_from=("8.2.1",),

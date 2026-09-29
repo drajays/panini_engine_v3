@@ -59,8 +59,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.57",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="jYASrusmfdftSAM sanaH",
-    text_dev="ज्ञाश्रुस्मृदृशां सनः",
+    text_slp1='jYASrusmfdfSAM sanaH',
+    text_dev='ज्ञाश्रुस्मृदृशां सनः',
     padaccheda_dev="ज्ञा-श्रु-स्मृ-दृशाम् (षष्ठी-बहुवचन) / सनः (षष्ठी-एकवचन)",
     why_dev=(
         "ज्ञा-श्रु-स्मृ-दृश्-धातूनां सन्-प्रत्यये परे आत्मनेपदम् — "

@@ -1,5 +1,5 @@
 """
-2.3.16  नमःस्वस्तिस्वाहास्वधालंवषड्योगाच्च  —  VIDHI
+2.3.16  नमःस्वस्तिस्वाहास्वधालम्वषड्योगाच्च  —  VIDHI
 
 Padaccheda: नमःस्वस्ति-स्वाहा-स्वधा-अलं-वषट्-योगात् च
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.3.16",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "namaHsvastisvAhAsvaDAlaMvazaqyogAcca",
-    text_dev              = "नमःस्वस्तिस्वाहास्वधालंवषड्योगाच्च",
+    text_slp1             = 'namaHsvastisvAhAsvaDAlamvazaqyogAcca',
+    text_dev              = 'नमःस्वस्तिस्वाहास्वधालम्वषड्योगाच्च',
     padaccheda_dev        = "नमःस्वस्ति-स्वाहा-स्वधा-अलं-वषट्-योगात् च",
     why_dev               = "नमः-स्वस्ति-स्वाहा-आदिभिः योगे चतुर्थी (२.३.१६)।",
     anuvritti_from        = ('2.3.13',),

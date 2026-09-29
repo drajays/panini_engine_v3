@@ -1,5 +1,5 @@
 """
-1.1.71  आदिरन्त्येन सहेता  (Adir antyena sahetA)  —  PARIBHASHA
+1.1.71  आदिरन्त्येन सहेता  —  PARIBHASHA
 
 Classical role:
   "The first [member of a pratyāhāra-list] together with the last
@@ -53,8 +53,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.1.71",
     sutra_type              = SutraType.PARIBHASHA,
     r1_form_identity_exempt = True,
-    text_slp1               = "Adir antyena sahetA",
-    text_dev                = "आदिरन्त्येन सहेता",
+    text_slp1               = 'Adirantyena sahetA',
+    text_dev                = 'आदिरन्त्येन सहेता',
     padaccheda_dev          = "आदिः / अन्त्येन / सह / इता",
     why_dev                 = (
         "प्रत्याहारे प्रथमः वर्णः अन्त्येन इत्-संज्ञकेन सह मिलित्वा "

@@ -51,8 +51,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.111",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "nn-t-lopa ktavatu-bhin-glass",
-    text_dev       = "ण्ण्-त-लोपः (भिद्+क्तवतु, यन्त्र-सङ्केतः)",
+    text_slp1      = 'fta ut',
+    text_dev       = 'ऋत उत्',
     padaccheda_dev = "ण्ण् / त् / लोपः",
     why_dev        = "भिन्न्-अन्ताद् अग्रिमः तकारः लुप्यते (क्तवतु-शेषे अवदेशाय)।",
     anuvritti_from = (),

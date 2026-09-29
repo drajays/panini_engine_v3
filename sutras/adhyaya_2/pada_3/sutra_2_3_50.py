@@ -56,8 +56,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "2.3.50",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "anabhihite zazWI Seze",
-    text_dev       = "अनभिहिते षष्ठी शेषे",
+    text_slp1      = 'zazWI Seze',
+    text_dev       = 'षष्ठी शेषे',
     padaccheda_dev = "अनभिहिते / षष्ठी / शेषे",
     why_dev        = (
         "कर्मादिभ्योऽन्यः (स्वस्वामिसंबन्धादिः) शेषः; तत्र षष्ठी विभक्तिः। "

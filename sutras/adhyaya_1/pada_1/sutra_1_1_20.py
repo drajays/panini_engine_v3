@@ -1,5 +1,5 @@
 """
-1.1.20  (dādhā ghv adāp)  —  SAMJNA; *devanāgarī* = ``_TEXT_DEV`` (ashtadhyayi *i* 11020 *s* line).
+1.1.20  दाधा घ्वदाप्  —  SAMJNA; *devanāgarī* = ``_TEXT_DEV`` (ashtadhyayi *i* 11020 *s* line).
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=11020):** the dhātus **dā** and **dhā**, and **ad** with
 the 2nd-gaṇa **āp** marker (**ad**+**āp**), are termed **ghu** by anuvṛtti of the name *ghu* (see
@@ -82,8 +82,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.20",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "dADhA ghv adA~p",
-    text_dev       = _TEXT_DEV,
+    text_slp1      = 'dADA GvadAp',
+    text_dev       = 'दाधा घ्वदाप्',
     padaccheda_dev = "दा-धा / घु / अदाप्",
     why_dev        = _WHY,
     anuvritti_from = (),

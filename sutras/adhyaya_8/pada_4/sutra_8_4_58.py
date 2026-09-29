@@ -74,8 +74,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.4.58",
     sutra_type=SutraType.VIDHI,
-    text_slp1="anusvArasya yayi parasavarNaH",
-    text_dev="अनुस्वारस्य ययि परसवर्णः",
+    text_slp1='anusvArasya yayi parasavarRaH',
+    text_dev='अनुस्वारस्य ययि परसवर्णः',
     padaccheda_dev="अनुस्वारस्य / ययि / परसवर्णः",
     why_dev="ययि परे अनुस्वारस्य परसवर्णः (डेमो: मुञ्चति)।",
     anuvritti_from=("8.2.1",),

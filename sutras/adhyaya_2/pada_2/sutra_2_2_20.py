@@ -1,5 +1,5 @@
 """
-2.2.20  अमेवाव्ययेन  —  VIDHI (narrow v3 demo slice)
+2.2.20  अमैवाव्ययेन  —  VIDHI (narrow v3 demo slice)
 
 User note (``कृन्मेजन्तः.md``): when a kṛn/mejanta-derived avyaya is **am-anta**,
 it forms a samāsa with its upapada (here, saptamī-stha upapada) to yield a single
@@ -74,8 +74,8 @@ SUTRA = SutraRecord(
     sutra_id       = "2.2.20",
     sutra_type     = SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1      = "ameva avyayena",
-    text_dev       = "अमेवाव्ययेन",
+    text_slp1      = 'amEvAvyayena',
+    text_dev       = 'अमैवाव्ययेन',
     padaccheda_dev = "अम् एव / अव्ययेन",
     why_dev        = "अमन्त-अव्ययेन सह उपपदस्य समासः (कृन्मेजन्त-प्रसङ्गे)।",
     anuvritti_from = ("2.2.19",),

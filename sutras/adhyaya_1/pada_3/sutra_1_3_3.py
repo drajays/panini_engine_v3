@@ -1,5 +1,5 @@
 """
-1.3.3  उपदेशेऽन्त्यं हलन्त्यम्  —  SAMJNA
+1.3.3  हलन्त्यम्  —  SAMJNA
 
 Śāstra / engine role (CONSTITUTION Arts. 1–2, 4, 7)
 ──────────────────────────────────────────────────
@@ -122,8 +122,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.3.3",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "upadeSe hal antyam it",
-    text_dev       = "उपदेशेऽन्त्यं हलन्त्यम् इत्",
+    text_slp1      = 'halantyam',
+    text_dev       = 'हलन्त्यम्',
     padaccheda_dev = "उपदेशे अन्त्यं हलन्त्यम्",
     why_dev        = "उपदेशे अन्त्यः हल् वर्णः ‘इत्’ संज्ञां लभते; "
                      "तुस्मान्त-विभक्तौ निषेधः १.३.४। लोपः १.३.९।",

@@ -1,5 +1,5 @@
 """
-1.2.32  तस्यादित उदात्तमर्धह्रस्वम्  (tasyādita udāttam ardhahrsvam)  —  PARIBHASHA
+1.2.32  तस्यादित उदात्तमर्धह्रस्वम्  —  PARIBHASHA
 
 Meaning: Of a pluta vowel (prolonged, 3-mātrā), the udātta portion occupies
 the first half — ardha-hrasva (half short = 1.5 mātrā). This sūtra defines
@@ -54,8 +54,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.32",
     sutra_type              = SutraType.PARIBHASHA,
     r1_form_identity_exempt = True,
-    text_slp1               = "tasyAdita udAttam ardDahrasvam",
-    text_dev                = "तस्यादित उदात्तमर्धह्रस्वम्",
+    text_slp1               = 'tasyAdita udAttamarDahrasvam',
+    text_dev                = 'तस्यादित उदात्तमर्धह्रस्वम्',
     padaccheda_dev          = "तस्य / आदितः / उदात्तम् / अर्धह्रस्वम्",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.29", "1.2.31"),

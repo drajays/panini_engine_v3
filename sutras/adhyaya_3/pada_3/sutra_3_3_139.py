@@ -80,8 +80,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.3.139",
     sutra_type=SutraType.VIDHI,
-    text_slp1="liN-nimitte lRG kriyAtipattO",
-    text_dev="लिङ्निमित्ते लृङ् क्रियातिपत्तौ",
+    text_slp1='liNnimitte lfN kriyAtipattO',
+    text_dev='लिङ्निमित्ते लृङ् क्रियातिपत्तौ',
     padaccheda_dev="लिङ्निमित्ते / लृङ् / क्रियातिपत्तौ",
     why_dev="क्रियातिपत्तौ लृङ्-लकार-स्थापनम् (P019)।",
     anuvritti_from=("3.3.138",),

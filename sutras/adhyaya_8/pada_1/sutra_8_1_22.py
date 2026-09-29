@@ -44,8 +44,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.1.22",
     sutra_type=SutraType.ANUVADA,
-    text_slp1="temayAvekavacasya",
-    text_dev="तेमयावेकवचनस्य",
+    text_slp1='temayAvekavacanasya',
+    text_dev='तेमयावेकवचनस्य',
     padaccheda_dev="ते / मे / एकवचनस्य",
     why_dev="युष्मदस्मदोः एकवचनान्तयोः ते-मे-आदेशः (*prakriya_31*, मे-श्रुति)।",
     anuvritti_from=(),

@@ -1,5 +1,5 @@
 """
-5.1.134  गोत्रचरणाच्श्लाघाऽत्याकारतदवेतेषु  —  VIDHI
+5.1.134  गोत्रचरणाच्श्लाघात्याकारतदवेतेषु  —  VIDHI
 
 Padaccheda: गोत्र-चरणात् श्लाघा-अत्याकार-तदवेतेषु
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.1.134",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "gotracaraRAcSlAGA'tyAkAratadavetezu",
-    text_dev              = "गोत्रचरणाच्श्लाघाऽत्याकारतदवेतेषु",
+    text_slp1             = 'gotracaraRAcSlAGAtyAkAratadavetezu',
+    text_dev              = 'गोत्रचरणाच्श्लाघात्याकारतदवेतेषु',
     padaccheda_dev        = "गोत्र-चरणात् श्लाघा-अत्याकार-तदवेतेषु",
     why_dev               = "(सूत्रम् 5.1.134) गोत्रचरणाच्श्लाघाऽत्याकारतदवेतेषु।",
     anuvritti_from        = ('5.1.1',),

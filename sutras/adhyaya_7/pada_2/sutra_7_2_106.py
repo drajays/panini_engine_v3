@@ -59,8 +59,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.2.106",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "tadoH saH sAu anantyayoH (suP pare)",
-    text_dev       = "तदोः सः सावनन्त्ययोः",
+    text_slp1      = 'tadoH saH sAvanantyayoH',
+    text_dev       = 'तदोः सः सावनन्त्ययोः',
     padaccheda_dev = "त-दोः सः सौ अनन्त्ययोः",
     why_dev        = "तद्/त्यद्-शब्दयोः सुँ-प्रत्यये परे आद्य-तकारस्य सकारादेशः (सः)।",
     anuvritti_from = (),

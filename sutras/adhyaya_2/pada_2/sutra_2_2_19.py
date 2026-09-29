@@ -1,5 +1,5 @@
 """
-2.2.19  उपपदमतिङ्खि  —  SAMJNA (upapada compound)
+2.2.19  उपपदमतिङ्  —  SAMJNA (upapada compound)
 
 Śāstra summary: an *upapada* is compounded with a related *pada* that does not end
 in a *tiṅ* affix — licensing *samāsa* of the *upapada* frame (e.g. *ratna* + *śas*
@@ -28,8 +28,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="2.2.19",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="upapadam atiNgi",
-    text_dev="उपपदमतिङ्खि",
+    text_slp1='upapadamatiN',
+    text_dev='उपपदमतिङ्',
     padaccheda_dev="उपपदम् / अतिङ्खि",
     why_dev="उपपद-समासार्थं संज्ञा-अनुमोदनम् (प्रक्रिया-२२)।",
     anuvritti_from=("2.1.3",),

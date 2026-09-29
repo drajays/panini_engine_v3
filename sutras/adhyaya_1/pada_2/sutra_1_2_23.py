@@ -63,8 +63,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIBHASHA,
     vibhasha_default      = True,
     r1_form_identity_exempt = True,
-    text_slp1             = "na upaDAt TaPAntAt vA",
-    text_dev              = "नोपधात्थफान्ताद्वा",
+    text_slp1             = 'nopaDAtTaPAntAdvA',
+    text_dev              = 'नोपधात्थफान्ताद्वा',
     padaccheda_dev        = "न / उपधात् / थ-फ-अन्तात् / वा",
     why_dev               = ("थ-फ-अन्त-धातोः विभाषा सेट् भवति — "
                              "विकल्पेन इडागमो भवति (वा इत्यनेन)।"),

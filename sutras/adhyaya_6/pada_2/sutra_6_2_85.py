@@ -1,5 +1,5 @@
 """
-6.2.85  घोषादिषु  —  VIDHI
+6.2.85  घोषादिषु च  —  VIDHI
 
 Padaccheda: घोष-आदिषु शालायाम्
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.2.85",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "GozAdizu",
-    text_dev              = "घोषादिषु",
+    text_slp1             = 'GozAdizu ca',
+    text_dev              = 'घोषादिषु च',
     padaccheda_dev        = "घोष-आदिषु शालायाम्",
     why_dev               = "(सूत्रम् 6.2.85) घोषादिषु।",
     anuvritti_from        = ('6.1.1',),

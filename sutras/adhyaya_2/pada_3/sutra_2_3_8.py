@@ -33,8 +33,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id              = "2.3.8",
     sutra_type            = SutraType.VIDHI,
-    text_slp1             = "karmapravachanIyayukte dvitIyA",
-    text_dev              = "कर्मप्रवचनीययुक्ते द्वितीया",
+    text_slp1             = 'karmapravacanIyayukte dvitIyA',
+    text_dev              = 'कर्मप्रवचनीययुक्ते द्वितीया',
     padaccheda_dev        = "कर्मप्रवचनीय-युक्ते / द्वितीया",
     why_dev               = (
         "कर्मप्रवचनीय-युक्ते द्वितीया-विभक्तिः — "

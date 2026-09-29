@@ -41,9 +41,9 @@ SUTRA = SutraRecord(
     sutra_id       = "2.3.46",
     sutra_type     = SutraType.ANUVADA,
     text_slp1      = (
-        "anabhihite prAtipadikArTa-liFga-parimARa-vacanamAtre prathamA"
+        'prAtipadikArTaliNgaparimARavacanamAtre praTamA'
     ),
-    text_dev       = "अनभिहिते प्रातिपदिकार्थलिङ्गपरिमाणवचनमात्रे प्रथमा",
+    text_dev       = 'प्रातिपदिकार्थलिङ्गपरिमाणवचनमात्रे प्रथमा',
     padaccheda_dev = (
         "अनभिहिते / प्रातिपदिकार्थ-लिङ्ग-परिमाण-वचनमात्रे / प्रथमा"
     ),

@@ -41,8 +41,8 @@ SUTRA = SutraRecord(
     sutra_id="2.2.9",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="yAjakAdiBiS ca",
-    text_dev="याजकादिभिश्च",
+    text_slp1='yAjakAdiBiSca',
+    text_dev='याजकादिभिश्च',
     padaccheda_dev="याजक-आदिभिः / च",
     why_dev=(
         "याजकादयः षष्ठ्यन्तेन च समस्यन्ते — ब्राह्मणयाजकः इत्यादि।"

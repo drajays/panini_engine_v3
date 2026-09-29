@@ -35,8 +35,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.1.52",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "alo antyasya",
-    text_dev       = "अलोऽन्त्यस्य",
+    text_slp1      = 'alontyasya',
+    text_dev       = 'अलोऽन्त्यस्य',
     padaccheda_dev = "अलः / अन्त्यस्य",
     why_dev        = "परिभाषा-गेट: अल्-आदेश-प्रसङ्गे अन्त्य-अल्-ग्रहणम्।",
     anuvritti_from = ("1.1.49",),

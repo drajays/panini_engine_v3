@@ -1,5 +1,5 @@
 """
-3.4.102  लिङः सीयुट्  —  VIDHI (narrow demo)
+3.4.102  लिङस्सीयुट्  —  VIDHI (narrow demo)
 
 Demo slice (भित्सीष्ट / BitzIzwa):
   For āśīr-liṅ, insert the augment **sīyut** before the *tiṅ* ādeśa.
@@ -106,8 +106,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.4.102",
     sutra_type=SutraType.VIDHI,
-    text_slp1="liGaH sIyuw",
-    text_dev="लिङः सीयुट्",
+    text_slp1='liNassIyuw',
+    text_dev='लिङस्सीयुट्',
     padaccheda_dev="लिङः / सीयुट्",
     why_dev="लिङि सीयुट्-आगमः — आशीर्लिङ् (भित्सीष्ट) अथवा विधि-लिङ् (P038)।",
     anuvritti_from=("3.4.77", "3.4.78"),

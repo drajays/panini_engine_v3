@@ -1,5 +1,5 @@
 """
-2.4.32  इदमोऽन्वादेशेऽशनुदात्तस्तृतीयाऽऽदौ  —  VIDHI
+2.4.32  इदमोऽन्वादेशेऽशनुदात्तस्तृतीयादौ  —  VIDHI
 
 Padaccheda: इदमः अन्वादेशे अश् अनुदात्तः तृतीया-आदौ
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.4.32",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "idamo'nvAdeSe'SanudAttastftIyA''dO",
-    text_dev              = "इदमोऽन्वादेशेऽशनुदात्तस्तृतीयाऽऽदौ",
+    text_slp1             = 'idamonvAdeSeSanudAttastftIyAdO',
+    text_dev              = 'इदमोऽन्वादेशेऽशनुदात्तस्तृतीयादौ',
     padaccheda_dev        = "इदमः अन्वादेशे अश् अनुदात्तः तृतीया-आदौ",
     why_dev               = "अन्वादेशे अश् अनुदात्तः तृतीया-आदौ (२.४.३२)।",
     anuvritti_from        = ('2.4.31',),

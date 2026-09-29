@@ -1,5 +1,5 @@
 """
-6.2.9  शारदेअनार्तवे  —  VIDHI
+6.2.9  शारदेऽनार्तवे  —  VIDHI
 
 Padaccheda: शारदे अनार्तवे
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.2.9",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "SAradeanArtave",
-    text_dev              = "शारदेअनार्तवे",
+    text_slp1             = 'SAradenArtave',
+    text_dev              = 'शारदेऽनार्तवे',
     padaccheda_dev        = "शारदे अनार्तवे",
     why_dev               = "(सूत्रम् 6.2.9) शारदेअनार्तवे।",
     anuvritti_from        = ('6.1.1',),

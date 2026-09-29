@@ -1,5 +1,5 @@
 """
-5.2.58  षष्ट्यादेश्चासंख्याऽऽदेः  —  VIDHI
+5.2.58  षष्ट्यादेश्चासंख्यादेः  —  VIDHI
 
 Padaccheda: षष्टि-आदेः च अ-सङ्‍ख्या-आदेः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.58",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "zazwyAdeScAsaMKyA''deH",
-    text_dev              = "षष्ट्यादेश्चासंख्याऽऽदेः",
+    text_slp1             = 'zazwyAdeScAsaMKyAdeH',
+    text_dev              = 'षष्ट्यादेश्चासंख्यादेः',
     padaccheda_dev        = "षष्टि-आदेः च अ-सङ्‍ख्या-आदेः",
     why_dev               = "(सूत्रम् 5.2.58) षष्ट्यादेश्चासंख्याऽऽदेः।",
     anuvritti_from        = ('5.1.1',),

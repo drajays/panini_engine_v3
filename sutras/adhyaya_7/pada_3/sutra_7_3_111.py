@@ -1,5 +1,5 @@
 """
-7.3.111  घि-अङ्गस्य ङिति गुणः  —  VIDHI
+7.3.111  घेर्ङिति  —  VIDHI
 
 Operational intent for v3.4 (hari-like i-stems):
   - If the aṅga is tagged **ghi** and the following sup upadeśa is one of
@@ -73,8 +73,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.3.111",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "Gi-aNgasya Niti guRaH",
-    text_dev       = "घि-अङ्गस्य ङिति गुणः",
+    text_slp1      = 'GerNiti',
+    text_dev       = 'घेर्ङिति',
     padaccheda_dev = "घि-अङ्गस्य ङिति गुणः",
     why_dev        = "घि-संज्ञक-अङ्गात् परे ङिति-सुप्-प्रत्यये गुणः (हरि → हरे ...)।",
     anuvritti_from = ("7.3.1",),

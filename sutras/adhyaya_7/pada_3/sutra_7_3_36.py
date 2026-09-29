@@ -1,5 +1,5 @@
 """
-7.3.36  अर्त्तिह्रीब्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ  —  VIDHI
+7.3.36  अर्तिह्रीव्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ  —  VIDHI
 
 Padaccheda: अर्त्ति-ह्री-व्ली-री-क्नूयी-क्ष्मायी-आताम् पुक् णौ
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.3.36",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "arttihrIblIrIknUyIkzmAyyAtAM puNRO",
-    text_dev              = "अर्त्तिह्रीब्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ",
+    text_slp1             = 'artihrIvlIrIknUyIkzmAyyAtAM puNRO',
+    text_dev              = 'अर्तिह्रीव्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ',
     padaccheda_dev        = "अर्त्ति-ह्री-व्ली-री-क्नूयी-क्ष्मायी-आताम् पुक् णौ",
     why_dev               = "(सूत्रम् 7.3.36) अर्त्तिह्रीब्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ।",
     anuvritti_from        = ('7.1.1',),

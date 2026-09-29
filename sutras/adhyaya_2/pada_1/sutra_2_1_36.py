@@ -51,8 +51,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="2.1.36",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="caturTI tadarthArthabalihitasukharakSitaiH",
-    text_dev="चतुर्थी तदर्थार्थबलिहितसुखरक्षितैः",
+    text_slp1='caturTI tadarTArTabalihitasuKarakzitEH',
+    text_dev='चतुर्थी तदर्थार्थबलिहितसुखरक्षितैः',
     padaccheda_dev="चतुर्थी / तदर्थ-अर्थ-बलि-हित-सुख-रक्षितैः",
     why_dev="चतुर्थ्यन्तैः तदर्थादिभिः तत्पुरुषः (*prakriya_39*, **यूपदारु**)।",
     anuvritti_from=("2.1.35",),

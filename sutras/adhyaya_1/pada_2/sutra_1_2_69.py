@@ -46,8 +46,8 @@ SUTRA = SutraRecord(
     sutra_type              = SutraType.VIBHASHA,
     vibhasha_default        = True,
     r1_form_identity_exempt = True,
-    text_slp1               = "napuMsakam anapuMsakena ekavac cAsyAnyatarasyAm",
-    text_dev                = "नपुंसकमनपुंसकेनैकवच्चास्यान्यतरस्याम्",
+    text_slp1               = 'napuMsakamanapuMsakenEkavaccAsyAnyatarasyAm',
+    text_dev                = 'नपुंसकमनपुंसकेनैकवच्चास्यान्यतरस्याम्',
     padaccheda_dev          = "नपुंसकम् / अनपुंसकेन / एकवत् / च / अस्य / अन्यतरस्याम्",
     why_dev                 = (
         "नपुंसकस्य अनपुंसकेन सह एकशेषे नपुंसकं रूपम् अन्यतरस्याम् एकवद् भवति — "

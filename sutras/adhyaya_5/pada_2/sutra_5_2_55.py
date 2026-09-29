@@ -1,5 +1,5 @@
 """
-5.2.55  त्रेः सम्प्रसारणम् च  —  VIDHI
+5.2.55  त्रेः सम्प्रसारणं च  —  VIDHI
 
 Padaccheda: त्रेः सम्प्रसारणम् च
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.55",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "treH samprasAraRam ca",
-    text_dev              = "त्रेः सम्प्रसारणम् च",
+    text_slp1             = 'treH samprasAraRaM ca',
+    text_dev              = 'त्रेः सम्प्रसारणं च',
     padaccheda_dev        = "त्रेः सम्प्रसारणम् च",
     why_dev               = "(सूत्रम् 5.2.55) त्रेः सम्प्रसारणम् च।",
     anuvritti_from        = ('5.1.1',),

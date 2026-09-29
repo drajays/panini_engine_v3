@@ -1,5 +1,5 @@
 """
-3.2.71  मन्त्रे श्वेतवहौक्थशस्पुरोडाशो ण्विन्  —  VIDHI
+3.2.71  मन्त्रे श्वेतवहोक्थशस्पुरोडाशो ण्विन्  —  VIDHI
 
 Padaccheda: मन्त्रे श्वेतवह-उक्थशस्-पुरोडाशः ण्विन्
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.2.71",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "mantre SvetavahOkTaSaspuroqASo Rvin",
-    text_dev              = "मन्त्रे श्वेतवहौक्थशस्पुरोडाशो ण्विन्",
+    text_slp1             = 'mantre SvetavahokTaSaspuroqASo Rvin',
+    text_dev              = 'मन्त्रे श्वेतवहोक्थशस्पुरोडाशो ण्विन्',
     padaccheda_dev        = "मन्त्रे श्वेतवह-उक्थशस्-पुरोडाशः ण्विन्",
     why_dev               = "धातोः कृत्-प्रत्ययः [मन्त्रे श्वेतवहौक्थशस्पुरोडाशो ण्विन्] विहितः (३.२.71)।",
     anuvritti_from        = ('3.1.1',),

@@ -1,5 +1,5 @@
 """
-6.1.197  ञ्णित्यादिर्नित्यम्  —  ANUVADA (narrow demos)
+6.1.197  ञ्नित्यादिर्नित्यम्  —  ANUVADA (narrow demos)
 
 **Pāṭha (Kāśikā on *Aṣṭ*. 6.1.197):** *ñaṇityādir nityam* — for *ṇit* / *ñit*
 suffixes the first syllable is *udātta* (*ādyudātta*).
@@ -65,8 +65,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.197",
     sutra_type=SutraType.ANUVADA,
-    text_slp1="YiRityAdir nityam",
-    text_dev="ञ्णित्यादिर्नित्यम्",
+    text_slp1='YnityAdirnityam',
+    text_dev='ञ्नित्यादिर्नित्यम्',
     padaccheda_dev="ञ्णित्यादिः / नित्यम्",
     why_dev="ञिति-निति-प्रत्यये आदिरुदात्तः (*prakriya_29* / *31*)।",
     anuvritti_from=(),

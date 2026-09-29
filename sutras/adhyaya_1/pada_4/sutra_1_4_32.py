@@ -49,8 +49,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id              = "1.4.32",
     sutra_type            = SutraType.SAMJNA,
-    text_slp1             = "karmaRA yam aByaprEti sa sampradAnam",
-    text_dev              = "कर्मणा यमभिप्रैति स सम्प्रदानम्",
+    text_slp1             = 'karmaRA yamaBiprEti sa sampradAnam',
+    text_dev              = 'कर्मणा यमभिप्रैति स सम्प्रदानम्',
     padaccheda_dev        = "कर्मणा / यम् / अभिप्रैति / सः / सम्प्रदानम्",
     why_dev               = (
         "कर्मणा यं पदार्थम् अभिप्रैति (अभिलक्षयति) कर्ता, स सम्प्रदान-कारक-संज्ञकः — "

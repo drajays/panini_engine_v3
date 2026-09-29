@@ -1,5 +1,5 @@
 """
-4.3.122  पत्त्रपूर्वादञ्  —  VIDHI
+4.3.122  पत्रपूर्वादञ्  —  VIDHI
 
 Padaccheda: पत्त्र-पूर्वात् अञ्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.3.122",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "pattrapUrvAdaY",
-    text_dev              = "पत्त्रपूर्वादञ्",
+    text_slp1             = 'patrapUrvAdaY',
+    text_dev              = 'पत्रपूर्वादञ्',
     padaccheda_dev        = "पत्त्र-पूर्वात् अञ्",
     why_dev               = "(सूत्रम् 4.3.122) पत्त्रपूर्वादञ्।",
     anuvritti_from        = ('4.1.1',),

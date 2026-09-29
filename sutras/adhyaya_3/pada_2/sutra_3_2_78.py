@@ -1,5 +1,5 @@
 """
-3.2.78  सुप्यजातौ णिनिस्ताच्छिल्ये  —  VIDHI
+3.2.78  सुप्यजातौ णिनिस्ताच्छील्ये  —  VIDHI
 
 Padaccheda: सुपि अ-जातौ णिनिः ताच्छील्ये
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.2.78",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "supyajAtO RinistAcCilye",
-    text_dev              = "सुप्यजातौ णिनिस्ताच्छिल्ये",
+    text_slp1             = 'supyajAtO RinistAcCIlye',
+    text_dev              = 'सुप्यजातौ णिनिस्ताच्छील्ये',
     padaccheda_dev        = "सुपि अ-जातौ णिनिः ताच्छील्ये",
     why_dev               = "धातोः कृत्-प्रत्ययः [सुप्यजातौ णिनिस्ताच्छिल्ये] विहितः (३.२.78)।",
     anuvritti_from        = ('3.1.1',),

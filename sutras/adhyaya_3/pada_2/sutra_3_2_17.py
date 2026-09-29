@@ -1,5 +1,5 @@
 """
-3.2.17  भिक्षासेनाऽऽदायेषु च  —  VIDHI
+3.2.17  भिक्षासेनादायेषु च  —  VIDHI
 
 Padaccheda: भिक्षा-सेना-आदायेषु च
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.2.17",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "BikzAsenA''dAyezu ca",
-    text_dev              = "भिक्षासेनाऽऽदायेषु च",
+    text_slp1             = 'BikzAsenAdAyezu ca',
+    text_dev              = 'भिक्षासेनादायेषु च',
     padaccheda_dev        = "भिक्षा-सेना-आदायेषु च",
     why_dev               = "धातोः कृत्-प्रत्ययः [भिक्षासेनाऽऽदायेषु च] विहितः (३.२.17)।",
     anuvritti_from        = ('3.1.1',),

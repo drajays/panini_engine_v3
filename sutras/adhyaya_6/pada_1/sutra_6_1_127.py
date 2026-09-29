@@ -75,8 +75,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.127",
     sutra_type=SutraType.VIDHI,
-    text_slp1="iko'savarRe zAkalyasya hrasvaz ca",
-    text_dev="इकोऽसवर्णे शाकल्यस्य ह्रस्वश्च",
+    text_slp1='ikosavarRe SAkalyasya hrasvaSca',
+    text_dev='इकोऽसवर्णे शाकल्यस्य ह्रस्वश्च',
     padaccheda_dev="इकः-असवर्णे / शाकल्यस्य / ह्रस्वः / च",
     why_dev="P023: दिव्-शब्दस्य 'v' स्थाने 'u' (दिउ) — ६.१.७७ हेतु-रचना।",
     anuvritti_from=(),

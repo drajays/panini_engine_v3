@@ -57,8 +57,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.81",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="prAdvAhaH",
-    text_dev="प्राद्वहः",
+    text_slp1='prAdvahaH',
+    text_dev='प्राद्वहः',
     padaccheda_dev="प्रात् (पञ्चमी-एकवचन) / वहः (षष्ठी-एकवचन)",
     why_dev=(
         "प्र-पूर्वकस्य वह्-धातोः आत्मनेपदम् — "

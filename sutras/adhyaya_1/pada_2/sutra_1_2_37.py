@@ -39,8 +39,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.2.37",
     sutra_type=SutraType.ANUVADA,
-    text_slp1="na subrahmaNyAyAM svaritasya tUdAttaH",
-    text_dev="न सुब्रह्मण्यायां स्वरितस्य तूदात्तः",
+    text_slp1='na subrahmaRyAyAM svaritasya tUdAttaH',
+    text_dev='न सुब्रह्मण्यायां स्वरितस्य तूदात्तः',
     padaccheda_dev="न / सुब्रह्मण्यायाम् / स्वरितस्य / तूदात्तः",
     why_dev="सुब्रह्मण्याह्वान-सन्दर्भे स्वरितोदात्त-अनुवादः (*prakriya_26*)।",
     anuvritti_from=(),

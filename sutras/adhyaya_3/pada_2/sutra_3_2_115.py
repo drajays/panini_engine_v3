@@ -52,8 +52,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.2.115",
     sutra_type=SutraType.VIDHI,
-    text_slp1="parokze liT",
-    text_dev="परोक्षे लिट्",
+    text_slp1='parokze liw',
+    text_dev='परोक्षे लिट्',
     padaccheda_dev="परोक्षे / लिट्",
     why_dev="परोक्ष-भूते लिट्-लकार-प्रत्ययः विधीयते (विभिदतुः)।",
     anuvritti_from=("3.2.1",),

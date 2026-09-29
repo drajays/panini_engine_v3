@@ -1,5 +1,5 @@
 """
-2.1.14  लक्षणेनाभिप्रती आभिमुख्ये  (lakṣaṇenābhipratī ābhimukhye)  —  VIDHI
+2.1.14  लक्षणेनाभिप्रती आभिमुख्ये  —  VIDHI
 
 **Pāṭha:** The avyayas *abhi* and *prati* (when they convey locus/mark
 + direction = ābhimukhya, "facing towards") combine with a subanta to
@@ -45,8 +45,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.1.14",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "lakzaNeBABipratI ABimuKye",
-    text_dev              = "लक्षणेनाभिप्रती आभिमुख्ये",
+    text_slp1             = 'lakzaRenABipratI ABimuKye',
+    text_dev              = 'लक्षणेनाभिप्रती आभिमुख्ये',
     padaccheda_dev        = "लक्षणेन / अभि-प्रती / आभिमुख्ये",
     why_dev               = "लक्षण-योगे अभि/प्रति-अव्ययानां आभिमुख्ये अव्ययीभावः (२.१.१४)।",
     anuvritti_from        = ("2.1.5",),

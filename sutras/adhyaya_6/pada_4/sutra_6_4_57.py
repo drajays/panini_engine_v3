@@ -1,5 +1,5 @@
 """
-6.4.57  विभाषाऽऽपः  —  VIDHI
+6.4.57  विभाषापः  —  VIDHI
 
 Padaccheda: विभाषा आपः
 
@@ -30,8 +30,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.4.57",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "viBAzA''paH",
-    text_dev              = "विभाषाऽऽपः",
+    text_slp1             = 'viBAzApaH',
+    text_dev              = 'विभाषापः',
     padaccheda_dev        = "विभाषा आपः",
     why_dev               = "(सूत्रम् 6.4.57) विभाषाऽऽपः।",
     anuvritti_from        = ('6.1.1',),

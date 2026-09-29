@@ -1,5 +1,5 @@
 """
-5.1.53  आढकाचितपात्रात् खोऽन्यतरयाम्  —  VIDHI
+5.1.53  आढकाचितपात्रात् खोऽन्यतरस्याम्  —  VIDHI
 
 Padaccheda: आढक-आचित-पात्रात् खः अन्यतरयाम्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.1.53",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "AQakAcitapAtrAt Ko'nyatarayAm",
-    text_dev              = "आढकाचितपात्रात् खोऽन्यतरयाम्",
+    text_slp1             = 'AQakAcitapAtrAt KonyatarasyAm',
+    text_dev              = 'आढकाचितपात्रात् खोऽन्यतरस्याम्',
     padaccheda_dev        = "आढक-आचित-पात्रात् खः अन्यतरयाम्",
     why_dev               = "(सूत्रम् 5.1.53) आढकाचितपात्रात् खोऽन्यतरयाम्।",
     anuvritti_from        = ('5.1.1',),

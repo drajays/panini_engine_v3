@@ -62,8 +62,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.63",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="AmpratyayavatkfYonuprayogasya",
-    text_dev="आम्प्रत्ययवत् कृञोऽनुप्रयोगस्य",
+    text_slp1='Ampratyayavat kfYonuprayogasya',
+    text_dev='आम्प्रत्ययवत् कृञोऽनुप्रयोगस्य',
     padaccheda_dev=(
         "आम्-प्रत्ययवत् / कृञः (षष्ठी-एकवचन) / अनुप्रयोगस्य (षष्ठी-एकवचन)"
     ),

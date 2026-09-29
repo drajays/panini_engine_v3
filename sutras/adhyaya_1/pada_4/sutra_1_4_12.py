@@ -1,5 +1,5 @@
 """
-1.4.12  दीर्घं च  (dīrghaṃ ca)  —  SAMJNA
+1.4.12  दीर्घं च  —  SAMJNA
 
 **Pāṭha:** A long (*dīrgha*) vowel is also (*ca*) *guru* [by anuvritti from
 1.4.11].
@@ -40,8 +40,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id               = "1.4.12",
     sutra_type             = SutraType.SAMJNA,
-    text_slp1              = "dIrghaM ca",
-    text_dev               = "दीर्घं च",
+    text_slp1              = 'dIrGaM ca',
+    text_dev               = 'दीर्घं च',
     padaccheda_dev         = "दीर्घम् / च",
     why_dev                = "दीर्घ-स्वरोऽपि गुरु-संज्ञकः (आ-ई-ऊ-ॠ-ॡ-ए-ऐ-ओ-औ)।",
     anuvritti_from         = ("1.4.1", "1.4.10", "1.4.11"),

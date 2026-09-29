@@ -1,5 +1,5 @@
 """
-1.1.61  प्रत्ययस्यादर्शनं लुक्श्लुलुपः  —  SAMJNA (*luk* / *ślu* / *lup*)
+1.1.61  प्रत्ययस्य लुक्श्लुलुपः  —  SAMJNA (*luk* / *ślu* / *lup*)
 
 **Pāṭha (baked *anuvṛtti* from **1.1.60** *adarśanam*):**
 *pratyayasyādarśanaṃ luk-ślu-lupaḥ*.
@@ -101,8 +101,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.61",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "pratyayasya adarSanam luk slu lupAH",
-    text_dev       = "प्रत्ययस्य अदर्शनं लुक्श्लुलुपः",
+    text_slp1      = 'pratyayasya lukSlulupaH',
+    text_dev       = 'प्रत्ययस्य लुक्श्लुलुपः',
     padaccheda_dev = (
         "प्रत्ययस्य (षष्ठी-एकवचनम्) / अदर्शनम् (अन्वा. १.१.६०) / "
         "लुक्-श्लु-लुपः (प्रथमा-बहुवचनम्)"

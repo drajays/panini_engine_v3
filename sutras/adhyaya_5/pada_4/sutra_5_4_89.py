@@ -1,5 +1,5 @@
 """
-5.4.89  न संख्याऽऽदेः समाहारे  —  VIDHI
+5.4.89  न संख्यादेः समाहारे  —  VIDHI
 
 Padaccheda: न सङ्‍ख्या-आदेः समाहारे
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.4.89",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "na saMKyA''deH samAhAre",
-    text_dev              = "न संख्याऽऽदेः समाहारे",
+    text_slp1             = 'na saMKyAdeH samAhAre',
+    text_dev              = 'न संख्यादेः समाहारे',
     padaccheda_dev        = "न सङ्‍ख्या-आदेः समाहारे",
     why_dev               = "(सूत्रम् 5.4.89) न संख्याऽऽदेः समाहारे।",
     anuvritti_from        = ('5.1.1',),

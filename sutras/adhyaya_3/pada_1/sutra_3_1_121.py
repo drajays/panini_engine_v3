@@ -1,5 +1,5 @@
 """
-3.1.121  युग्यं च पत्त्रे  —  VIDHI
+3.1.121  युग्यं च पत्रे  —  VIDHI
 
 Padaccheda: युग्यम् च पत्रे
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.1.121",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "yugyaM ca pattre",
-    text_dev              = "युग्यं च पत्त्रे",
+    text_slp1             = 'yugyaM ca patre',
+    text_dev              = 'युग्यं च पत्रे',
     padaccheda_dev        = "युग्यम् च पत्रे",
     why_dev               = "धातोः [युग्यं च पत्त्रे]-प्रत्ययः विहितः (३.१.121)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

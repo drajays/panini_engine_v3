@@ -1,5 +1,5 @@
 """
-4.3.36  वत्सशालाऽभिजिदश्वयुक्छतभिषजो वा  —  VIDHI
+4.3.36  वत्सशालाभिजिदश्वयुक्छतभिषजो वा  —  VIDHI
 
 Padaccheda: वत्सशाला-अभिजित्-अश्वयुक्-शतभिषजः वा
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.3.36",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "vatsaSAlA'BijidaSvayukCataBizajo vA",
-    text_dev              = "वत्सशालाऽभिजिदश्वयुक्छतभिषजो वा",
+    text_slp1             = 'vatsaSAlABijidaSvayukCataBizajo vA',
+    text_dev              = 'वत्सशालाभिजिदश्वयुक्छतभिषजो वा',
     padaccheda_dev        = "वत्सशाला-अभिजित्-अश्वयुक्-शतभिषजः वा",
     why_dev               = "(सूत्रम् 4.3.36) वत्सशालाऽभिजिदश्वयुक्छतभिषजो वा।",
     anuvritti_from        = ('4.1.1',),

@@ -1,5 +1,5 @@
 """
-4.4.133  पूर्वैः कृतमिनियौ च  —  VIDHI
+4.4.133  पूर्वैः कृतमिनयौ च  —  VIDHI
 
 Padaccheda: पूर्वैः कृतम् इनि-यौ च
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.4.133",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "pUrvEH kftaminiyO ca",
-    text_dev              = "पूर्वैः कृतमिनियौ च",
+    text_slp1             = 'pUrvEH kftaminayO ca',
+    text_dev              = 'पूर्वैः कृतमिनयौ च',
     padaccheda_dev        = "पूर्वैः कृतम् इनि-यौ च",
     why_dev               = "(सूत्रम् 4.4.133) पूर्वैः कृतमिनियौ च।",
     anuvritti_from        = ('4.1.1',),

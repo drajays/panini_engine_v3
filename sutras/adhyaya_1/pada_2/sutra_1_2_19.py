@@ -80,8 +80,8 @@ SUTRA = SutraRecord(
     sutra_id              = "1.2.19",
     sutra_type            = SutraType.NIYAMA,
     r1_form_identity_exempt = True,
-    text_slp1             = "niSTA SIN-zvid-mid-ikzvid-Dfz",
-    text_dev              = "निष्ठा शीङ्स्विदिमिदिक्ष्विदिधृषः",
+    text_slp1             = 'nizWA SINsvidimidikzvidiDfzaH',
+    text_dev              = 'निष्ठा शीङ्स्विदिमिदिक्ष्विदिधृषः',
     padaccheda_dev        = "निष्ठा / शीङ्-स्विदि-मिदि-क्ष्विदि-धृषः",
     why_dev               = ("निष्ठा-प्रत्ययस्य (क्त-क्तवतु) पूर्वं शीङ्-स्विदि-मिदि-"
                              "क्ष्विदि-धृष्-धातवः सेट् भवन्ति — एतेभ्यः इडागमो भवति।"),

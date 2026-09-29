@@ -35,7 +35,7 @@ def act(state: State) -> State:
     state.adhikara_stack.append({
         "id"        : "4.1.82",
         "scope_end" : "5.2.140",
-        "text_dev"  : "समर्थानां प्रथमाद्वा",
+        "text_dev"  : 'समर्थानां प्रथमाद्वा',
     })
     return state
 
@@ -44,11 +44,10 @@ SUTRA = SutraRecord(
     sutra_id        = "4.1.82",
     sutra_type      = SutraType.ADHIKARA,
     text_slp1       = (
-        "samarthAnAm prathamAt NyAp prAtipadikAt paraH "
-        "AdyudAttaH taddhitaH vA"
+        'samarTAnAM praTamAdvA'
     ),
     text_dev        = (
-        "समर्थानां प्रथमात् ङ्याप्प्रातिपदिकात् परः आद्युदात्तः तद्धितः वा"
+        'समर्थानां प्रथमाद्वा'
     ),
     padaccheda_dev  = (
         "समर्थानाम् (षष्ठी-बहुवचनम्) / प्रथमात् (पञ्चमी-एकवचनम्) / "

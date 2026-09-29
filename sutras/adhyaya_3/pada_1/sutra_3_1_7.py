@@ -55,8 +55,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.1.7",
     sutra_type=SutraType.VIDHI,
-    text_slp1="DAtoH karmaNaH samAnakartfka-icchAyAm vA (narrow)",
-    text_dev="धातोः कर्मणः समानकर्तृकादिच्छायां वा",
+    text_slp1='DAtoH karmaRaH samAnakartfkAdicCAyAM vA',
+    text_dev='धातोः कर्मणः समानकर्तृकादिच्छायां वा',
     padaccheda_dev="धातोः / कर्मणः / समानकर्तृकात् / इच्छायाम् / वा",
     why_dev="इच्छार्थे धातोः सन्-प्रत्ययः (रुरुदिषति)।",
     anuvritti_from=("3.1.1", "3.1.2"),

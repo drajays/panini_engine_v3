@@ -47,12 +47,10 @@ SUTRA = SutraRecord(
     sutra_id       = "4.3.53",
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = (
-        "samarthAnAm prathamAt NyAp prAtipadikAt paraH AdyudAttaH "
-        "taddhitaH vA prAg dIvyataH aR saptamyArTAt tatra bhavaH"
+        'tatra BavaH'
     ),
     text_dev       = (
-        "समर्थानां प्रथमात् ङ्याप्प्रातिपदिकात् परः आद्युदात्तस्तद्धितो वा "
-        "प्राग्दीव्यतोऽण् सप्तम्यर्थात् तत्र भवः"
+        'तत्र भवः'
     ),
     padaccheda_dev = "तत्र (अव्ययम्) / भवः (प्रथमा-एकवचनम्)",
     why_dev        = (

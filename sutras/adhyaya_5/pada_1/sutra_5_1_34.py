@@ -1,5 +1,5 @@
 """
-5.1.34  पणपादमाषशतादत्  —  VIDHI
+5.1.34  पणपादमाषशताद्यत्  —  VIDHI
 
 Padaccheda: पण-पाद-माष-शतात् यत्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.1.34",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "paRapAdamAzaSatAdat",
-    text_dev              = "पणपादमाषशतादत्",
+    text_slp1             = 'paRapAdamAzaSatAdyat',
+    text_dev              = 'पणपादमाषशताद्यत्',
     padaccheda_dev        = "पण-पाद-माष-शतात् यत्",
     why_dev               = "(सूत्रम् 5.1.34) पणपादमाषशतादत्।",
     anuvritti_from        = ('5.1.1',),

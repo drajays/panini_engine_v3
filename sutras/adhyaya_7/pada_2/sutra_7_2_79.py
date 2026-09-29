@@ -1,5 +1,5 @@
 """
-7.2.79  लोपः सीयुट्स्योऽनिटि  —  VIDHI
+7.2.79  लिङः सलोपोऽनन्त्यस्य  —  VIDHI
 
 Two operational paths:
   1. Arm ``7_2_79_sIyuw_s_lopa_arm``: original ātmanepada sīyuṭ s-lopa.
@@ -95,8 +95,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="7.2.79",
     sutra_type=SutraType.VIDHI,
-    text_slp1="lopaH sIyutsyo'niwi",
-    text_dev="लोपः सीयुट्स्योऽनिटि",
+    text_slp1='liNaH saloponantyasya',
+    text_dev='लिङः सलोपोऽनन्त्यस्य',
     padaccheda_dev="लोपः / सीयुट्स्यः / अनिटि",
     why_dev="सीयुटः/यासुटः सकारस्य लोपः — विधि-लिङ्-पथः।",
     anuvritti_from=("7.2.76",),

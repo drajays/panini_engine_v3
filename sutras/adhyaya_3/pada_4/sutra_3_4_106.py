@@ -65,8 +65,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.4.106",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "iwo't",
-    text_dev              = "इटोऽत्",
+    text_slp1             = 'iwot',
+    text_dev              = 'इटोऽत्',
     padaccheda_dev        = "इटः अत्",
     why_dev               = (
         "आशीर्-लिङि आत्मनेपदे १-एक-वचने इट्-जन्य-इकारस्य अकारादेशः — "

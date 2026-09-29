@@ -212,8 +212,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.1.50",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "sTAne antaratamaH",
-    text_dev       = "स्थानेऽन्तरतमः",
+    text_slp1      = 'sTAnentaratamaH',
+    text_dev       = 'स्थानेऽन्तरतमः',
     padaccheda_dev = "स्थाने / अन्तरतमः",
     why_dev        = "आदेश-चयनस्य परिभाषा — स्थाने (उच्चारण-स्थान-प्रयत्नादि-साम्ये) "
                      "अन्तरतमः विकल्प्यते।",

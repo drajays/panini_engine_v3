@@ -1,5 +1,5 @@
 """
-6.3.35  तसिलादिषु आकृत्वसुचः  —  VIDHI
+6.3.35  तसिलादिष्वाकृत्वसुचः  —  VIDHI
 
 Padaccheda: तसिलादिषु आ कृत्वसुचः
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.3.35",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "tasilAdizu AkftvasucaH",
-    text_dev              = "तसिलादिषु आकृत्वसुचः",
+    text_slp1             = 'tasilAdizvAkftvasucaH',
+    text_dev              = 'तसिलादिष्वाकृत्वसुचः',
     padaccheda_dev        = "तसिलादिषु आ कृत्वसुचः",
     why_dev               = "(सूत्रम् 6.3.35) तसिलादिषु आकृत्वसुचः।",
     anuvritti_from        = ('6.1.1',),

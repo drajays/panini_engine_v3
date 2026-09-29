@@ -17,7 +17,7 @@ def act(state: State) -> State:
     state.adhikara_stack.append({
         "id"        : "3.1.2",
         "scope_end" : "5.4.160",
-        "text_dev"  : "परश्च",
+        "text_dev"  : 'परश्च',
     })
     return state
 
@@ -25,8 +25,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "3.1.2",
     sutra_type     = SutraType.ADHIKARA,
-    text_slp1      = "paraS ca",
-    text_dev       = "परश्च",
+    text_slp1      = 'paraSca',
+    text_dev       = 'परश्च',
     padaccheda_dev = "परः च",
     why_dev        = "प्रत्ययः निमित्तात् परः।",
     anuvritti_from = ("3.1.1",),

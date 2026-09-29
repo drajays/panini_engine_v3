@@ -81,8 +81,8 @@ SUTRA = SutraRecord(
     sutra_id              = "8.3.78",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = False,
-    text_slp1             = "iRaH zIDvaMluNliwAM Do'NgAt",
-    text_dev              = "इणः षीध्वंलुङ्लिटां धोऽङ्गात्",
+    text_slp1             = 'iRaH zIDvaMluNliwAM DoNgAt',
+    text_dev              = 'इणः षीध्वंलुङ्लिटां धोऽङ्गात्',
     padaccheda_dev        = "इणः षीध्वं-लुङ्-लिटाम् धः अङ्गात्",
     why_dev               = (
         "इट्-जन्य-इ-परे लिटि ध्वम्/ध्वे-आदि-प्रत्यये ध् → ढ् — "

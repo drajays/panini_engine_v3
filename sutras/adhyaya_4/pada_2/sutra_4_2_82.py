@@ -45,8 +45,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="4.2.82",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="varaRAdibhyaSca",
-    text_dev="वरणादिभ्यश्च",
+    text_slp1='varaRAdiByaSca',
+    text_dev='वरणादिभ्यश्च',
     padaccheda_dev="वरणादिभ्यः / च",
     why_dev=(
         "वरणाद्यन्ताद् अण्-लुपि चिह्नम् (*prakriya_46*); **4.2.81** इत्यत्र *जनपदे लुप्* पृथक्।"

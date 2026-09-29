@@ -1,5 +1,5 @@
 """
-1.1.18  ऊँ  (U.N)  —  VIDHI (+ śāstrīya gate)
+1.1.18  ऊँ  —  VIDHI (+ śāstrīya gate)
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=11018):** *ūṃ* — *Śākalya*’s optional *pragṛhya*
 *ādeśa* for the *uÞ* (*uñ*) *nipāta* (continuing **1.1.11**, **1.1.16**, **1.1.17**) before
@@ -111,8 +111,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.18",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "U.N",
-    text_dev       = "ऊँ",
+    text_slp1      = 'U~',
+    text_dev       = 'ऊँ',
     padaccheda_dev = "ऊँ",
     why_dev        = _WHY,
     apavada_of     = ("1.1.17",),   # अपवाद of 1.1.17 — sutra_ref_out resolver.apavada_of

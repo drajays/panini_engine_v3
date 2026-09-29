@@ -1,5 +1,5 @@
 """
-6.1.66  हल्ङ्याब्भ्यो दीर्घात् सुतिपृक्तं हल्  —  VIDHI
+6.1.66  लोपो व्योर्वलि  —  VIDHI
 
 Sources consulted:
 - ashtadhyayi.com data.txt row i=601066
@@ -287,8 +287,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.66",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "halNyAByo dIrGAt suti pfktam hal",
-    text_dev       = "हल्ङ्याब्भ्यो दीर्घात् सुतिपृक्तं हल्",
+    text_slp1      = 'lopo vyorvali',
+    text_dev       = 'लोपो व्योर्वलि',
     padaccheda_dev = "हल्-ङि-आप्-भ्यः दीर्घात् सुति पृक्तं हल्",
     why_dev        = (
         "तृच्-पथ: दीर्घात् परस्य अपृक्त हल्-लोपः (सु→स्)। "

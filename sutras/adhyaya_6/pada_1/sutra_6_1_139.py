@@ -1,5 +1,5 @@
 """
-6.1.139  उपात्प्रतियत्नवैकृतवाक्याध्याहारेषु  —  VIDHI (narrow)
+6.1.139  उपात् प्रतियत्नवैकृतवाक्याध्याहारेषु  —  VIDHI (narrow)
 
 *Pāṭha (teaching source:* `ashtadhyayi.github.io` *6.1 section; cross-check*
 ``ashtadhyayi-com/data`` *``data.txt`` i-key)*.
@@ -64,8 +64,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.139",
     sutra_type=SutraType.VIDHI,
-    text_slp1="upAt pratiyatnavaikftavAkyAdhyAhArezu",
-    text_dev="उपात्प्रतियत्नवैकृतवाक्याध्याहारेषु",
+    text_slp1='upAt pratiyatnavEkftavAkyADyAhArezu',
+    text_dev='उपात् प्रतियत्नवैकृतवाक्याध्याहारेषु',
     padaccheda_dev="उपात् / प्रतियत्न-वैकृत-वाक्याध्याहारेषु",
     why_dev="उप-पूर्वक-कृञि सुट्-आगमः (डेमो: उपस्कुरुते) — षष्ठ्यर्थानुवृत्तौ।",
     anuvritti_from=("6.1.135",),

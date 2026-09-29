@@ -1,5 +1,5 @@
 """
-4.3.125  द्वंद्वाद्वुन् वैरमैथुनिकयोः  —  VIDHI
+4.3.125  द्वन्द्वाद्वुन् वैरमैथुनिकयोः  —  VIDHI
 
 Padaccheda: द्वन्द्वात् वुन् वैर-मैथुनिकयोः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.3.125",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "dvaMdvAdvun vEramETunikayoH",
-    text_dev              = "द्वंद्वाद्वुन् वैरमैथुनिकयोः",
+    text_slp1             = 'dvandvAdvun vEramETunikayoH',
+    text_dev              = 'द्वन्द्वाद्वुन् वैरमैथुनिकयोः',
     padaccheda_dev        = "द्वन्द्वात् वुन् वैर-मैथुनिकयोः",
     why_dev               = "(सूत्रम् 4.3.125) द्वंद्वाद्वुन् वैरमैथुनिकयोः।",
     anuvritti_from        = ('4.1.1',),

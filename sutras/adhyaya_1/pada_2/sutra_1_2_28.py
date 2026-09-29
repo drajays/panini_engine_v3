@@ -1,5 +1,5 @@
 """
-1.2.28  अचश्च  (acaś ca)  —  SAMJNA
+1.2.28  अचश्च  —  SAMJNA
 
 Anuvṛtti: ūkāla (vowel-quantity classification) from 1.2.27.
 
@@ -47,8 +47,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.28",
     sutra_type              = SutraType.SAMJNA,
     r1_form_identity_exempt = True,
-    text_slp1               = "acaS ca",
-    text_dev                = "अचश्च",
+    text_slp1               = 'acaSca',
+    text_dev                = 'अचश्च',
     padaccheda_dev          = "अचः / च",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.27",),

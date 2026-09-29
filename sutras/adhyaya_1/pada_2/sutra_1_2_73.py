@@ -47,8 +47,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.73",
     sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1               = "grAmyapazusaMGezv ataruRezv strI",
-    text_dev                = "ग्राम्यपशुसंघेष्वतरुणेषु स्त्री",
+    text_slp1               = 'grAmyapaSusaMGezvataruRezu strI',
+    text_dev                = 'ग्राम्यपशुसंघेष्वतरुणेषु स्त्री',
     padaccheda_dev          = "ग्राम्य-पशु-संघेषु / अतरुणेषु / स्त्री",
     why_dev                 = (
         "ग्राम्यपशूनां संघे अतरुणेषु एकशेषे स्त्रीशब्द एव शिष्यते — "

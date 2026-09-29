@@ -40,7 +40,7 @@ def act(state: State) -> State:
     state.adhikara_stack.append({
         "id": "3.3.162",
         "scope_end": "3.3.162",
-        "text_dev": "लोट् च",
+        "text_dev": 'लोट् च',
     })
     state.meta.pop("loT_adhikara_recipe", None)
     return state
@@ -50,8 +50,8 @@ SUTRA = SutraRecord(
     sutra_id="3.3.162",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="loT ca",
-    text_dev="लोट् च",
+    text_slp1='low ca',
+    text_dev='लोट् च',
     padaccheda_dev="लोट् / च",
     why_dev="आज्ञार्थे धातोः लोट्-लकारः (आज्ञा/अनुज्ञा/प्रार्थना-पक्षे)।",
     anuvritti_from=("3.3.161",),

@@ -1,5 +1,5 @@
 """
-6.4.25  दन्शसञ्जस्वञ्जां शपि  —  VIDHI
+6.4.25  दंशसञ्जस्वञ्जां शपि  —  VIDHI
 
 Padaccheda: दंश-सञ्ज-स्वञ्जाम् शपि
 
@@ -30,8 +30,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.4.25",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "danSasaYjasvaYjAM Sapi",
-    text_dev              = "दन्शसञ्जस्वञ्जां शपि",
+    text_slp1             = 'daMSasaYjasvaYjAM Sapi',
+    text_dev              = 'दंशसञ्जस्वञ्जां शपि',
     padaccheda_dev        = "दंश-सञ्ज-स्वञ्जाम् शपि",
     why_dev               = "(सूत्रम् 6.4.25) दन्शसञ्जस्वञ्जां शपि।",
     anuvritti_from        = ('6.1.1',),

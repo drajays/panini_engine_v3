@@ -94,8 +94,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.4.100",
     sutra_type=SutraType.VIDHI,
-    text_slp1="Gasi-Bhasor hali ca",
-    text_dev="घसिभसोर्हलि च",
+    text_slp1='GasiBasorhali ca',
+    text_dev='घसिभसोर्हलि च',
     padaccheda_dev="घसेः-भसेः / हलि च",
     why_dev="घस्-उपधा-अकार-लोपः (हलि / अतुस्-परः) — प०३३–प०३४।",
     anuvritti_from=("6.4.1",),

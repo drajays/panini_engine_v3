@@ -64,8 +64,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.64",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="propAByAM yujeryajYapAtrezu",
-    text_dev="प्रोपाभ्यां युजेरयज्ञपात्रेषु",
+    text_slp1='propAByAM yujerayajYapAtrezu',
+    text_dev='प्रोपाभ्यां युजेरयज्ञपात्रेषु',
     padaccheda_dev=(
         "प्र-उपाभ्याम् (पञ्चमी-द्विवचन) / युजेः (षष्ठी-एकवचन) "
         "/ अयज्ञपात्रेषु (सप्तमी-बहुवचन)"

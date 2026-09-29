@@ -119,8 +119,8 @@ SUTRA = SutraRecord(
     sutra_id="7.4.25",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="akftsArvadhAtukayor dIrGaH",
-    text_dev="अकृत्सार्वधातुकयोर्दीर्घः",
+    text_slp1='akftsArvaDAtukayordIrGaH',
+    text_dev='अकृत्सार्वधातुकयोर्दीर्घः',
     padaccheda_dev="अकृतः / सार्वधातुकयोः / दीर्घः",
     why_dev=(
         "आर्धधातुके (आशीर्-लिङ्-यासुट्) परे अङ्गान्त-स्वरस्य दीर्घः "

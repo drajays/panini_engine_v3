@@ -1,5 +1,5 @@
 """
-4.2.7  दृष्ट्अं साम  —  VIDHI
+4.2.7  दृष्टं साम  —  VIDHI
 
 Padaccheda: दृष्टम् साम
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.2.7",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "dfzwaM sAma",
-    text_dev              = "दृष्ट्अं साम",
+    text_slp1             = 'dfzwaM sAma',
+    text_dev              = 'दृष्टं साम',
     padaccheda_dev        = "दृष्टम् साम",
     why_dev               = "(सूत्रम् 4.2.7) दृष्ट्अं साम।",
     anuvritti_from        = ('4.1.1',),

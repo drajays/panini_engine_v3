@@ -70,8 +70,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id         = "7.2.10",
     sutra_type       = SutraType.PRATISHEDHA,
-    text_slp1        = "ekAc upadeSe anudAttAt",
-    text_dev         = "एकाच उपदेशेऽनुदात्तात्",
+    text_slp1        = 'ekAca upadeSenudAttAt',
+    text_dev         = 'एकाच उपदेशेऽनुदात्तात्',
     padaccheda_dev   = "एकाच् उपदेशे अनुदात्तात्",
     why_dev          = "एकाच् धातौ आर्धधातुके इट्-प्रतिषेधः (त्रिच्-पथ)।",
     anuvritti_from   = (),

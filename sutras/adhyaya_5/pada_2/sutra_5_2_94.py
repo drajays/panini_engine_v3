@@ -1,5 +1,5 @@
 """
-5.2.94  तदस्यास्त्यर्थे मतुप्  —  VIDHI (narrow)
+5.2.94  तदस्यास्त्यस्मिन्निति मतुप्  —  VIDHI (narrow)
 
 Glass-box: when a recipe arms ``state.meta["matup_recipe"]`` and the tape is
 ``[prātipadika, internal sup]`` (second ``Term`` tagged ``sup``), append the
@@ -60,8 +60,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "5.2.94",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "tad asyAsti-arthe matup",
-    text_dev       = "तदस्यास्त्यर्थे मतुप्",
+    text_slp1      = 'tadasyAstyasminniti matup',
+    text_dev       = 'तदस्यास्त्यस्मिन्निति मतुप्',
     padaccheda_dev = "तद्-अस्य / अस्ति-अर्थे / मतुप्",
     why_dev        = "‘तदस्य अस्ति’ इत्यर्थे मतुप्-प्रत्ययः (गोमान्-प्रक्रिया)।",
     anuvritti_from = (),

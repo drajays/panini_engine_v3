@@ -1,5 +1,5 @@
 """
-7.3.120  (घि-अङ्गस्य) टा → ना  —  VIDHI
+7.3.120  आङो नाऽस्त्रियाम्  —  VIDHI
 
 Operational intent for v3.4 (hari-like i-stems):
   - When a **ghi** aṅga is followed by sup upadeśa **ṭā** (SLP1: wA),
@@ -52,8 +52,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.3.120",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "Gi-aNgasya wA nA",
-    text_dev       = "घि-अङ्गस्य टा ना",
+    text_slp1      = 'ANo nAstriyAm',
+    text_dev       = 'आङो नाऽस्त्रियाम्',
     padaccheda_dev = "घि-अङ्गस्य टा → ना",
     why_dev        = "घि-संज्ञक-अङ्गात् परे टा-प्रत्यये ‘ना’ आदेशः (हरि-इत्यादौ हरिणा)।",
     anuvritti_from = ("7.3.111",),

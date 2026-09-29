@@ -149,8 +149,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.78",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "eco ayavAyAvaH",
-    text_dev       = "एचोऽयवायावः",
+    text_slp1      = 'ecoyavAyAvaH',
+    text_dev       = 'एचोऽयवायावः',
     padaccheda_dev = "एचः अय्-अव्-आय्-आवः",
     why_dev        = "एचः (ए, ऐ, ओ, औ) स्थाने परे अचि "
                      "क्रमेण अय्, अव्, आय्, आव् आदेशः (एचोऽयवायावः) — "

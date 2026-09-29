@@ -76,8 +76,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIBHASHA,
     vibhasha_default      = True,
     r1_form_identity_exempt = True,
-    text_slp1             = "udupaDAt BAva-Adi-karmaNoH anyatarasyAm",
-    text_dev              = "उदुपधाद्भावादिकर्मणोरन्यतरस्याम्",
+    text_slp1             = 'udupaDAdBAvAdikarmaRoranyatarasyAm',
+    text_dev              = 'उदुपधाद्भावादिकर्मणोरन्यतरस्याम्',
     padaccheda_dev        = "उदुपधात् / भाव-आदि-कर्मणोः / अन्यतरस्याम्",
     why_dev               = ("उ-उपध-धातोः भाव-कर्मणोः निष्ठा-प्रत्ययस्य पूर्वं "
                              "विभाषा सेट् भवति — विकल्पेन इडागमो भवति।"),

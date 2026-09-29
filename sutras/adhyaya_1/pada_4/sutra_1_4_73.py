@@ -1,5 +1,5 @@
 """
-1.4.73  उपाजेऽन्वाजे  (upāje 'nvāje)  —  SAMJNA
+1.4.73  उपाजेऽन्वाजे  —  SAMJNA
 
 The words "upāje" and "anvāje" (vocatives/forms related to certain compound
 structures) get the gati-saṃjñā.  These are specialised Vedic/grammatical
@@ -29,8 +29,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.73",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="upAje 'nvAje",
-    text_dev="उपाजेऽन्वाजे",
+    text_slp1='upAjenvAje',
+    text_dev='उपाजेऽन्वाजे',
     padaccheda_dev="उपाजे / अन्वाजे",
     why_dev="'उपाजे' 'अन्वाजे' इत्येते गति-संज्ञकौ — गति-सेटे योज्येते।",
     anuvritti_from=("1.4.60",),

@@ -41,8 +41,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.55",
     sutra_type           = SutraType.SAMJNA,
-    text_slp1            = "tatprayojako hetuS ca",
-    text_dev             = "तत्प्रयोजको हेतुश्च — kartṛ",
+    text_slp1            = 'tatprayojako hetuSca',
+    text_dev             = 'तत्प्रयोजको हेतुश्च',
     padaccheda_dev       = "तत्-प्रयोजकः / हेतुः / च",
     why_dev              = (
         "यः कर्तारं प्रयोजयति (हेतुः/प्रेरकः) स अपि कर्तृ-कारक-संज्ञकः। "

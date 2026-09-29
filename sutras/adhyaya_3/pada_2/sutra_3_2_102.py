@@ -75,8 +75,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "3.2.102",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "nisthA",
-    text_dev       = "निष्ठा",
+    text_slp1      = 'nizWA',
+    text_dev       = 'निष्ठा',
     padaccheda_dev = "निष्ठा",
     why_dev        = "भूतकालादौ धातोः क्त/क्तवतु-प्रत्ययः (ग्लास-बॉक्स्: चि+क्त → चित; चि+क्तवतु → चितवत्)।",
     anuvritti_from = ("3.1.91",),

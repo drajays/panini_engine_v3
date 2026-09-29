@@ -1,5 +1,5 @@
 """
-1.1.5  क्ङिति  (KNGiti)  —  PARIBHASHA
+1.1.5  क्ङिति च  —  PARIBHASHA
 
 **Paribhāṣā (niyama on 1.1.3, with *na* carried from 1.1.4):** in the scope of
 a *kit* pratyāhāra affix (the *k* … *it* family), the *ik* *sthāyin* convention
@@ -114,8 +114,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.5",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "KNGiti",
-    text_dev       = "क्ङिति",
+    text_slp1      = 'kNiti ca',
+    text_dev       = 'क्ङिति च',
     padaccheda_dev = "क्‍ङ् इति",
     why_dev        = _WHY,
     apavada_of     = ("7.3.84",),   # अपवाद of 7.3.84 — sutra_ref_out resolver.apavada_of

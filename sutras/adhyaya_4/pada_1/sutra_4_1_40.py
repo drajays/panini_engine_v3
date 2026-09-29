@@ -1,5 +1,5 @@
 """
-4.1.40  अन्यतो ङीष्।  —  VIDHI
+4.1.40  अन्यतो ङीष्  —  VIDHI
 
 Padaccheda: अन्यतः ङीष्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.1.40",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "anyato NIz.",
-    text_dev              = "अन्यतो ङीष्।",
+    text_slp1             = 'anyato NIz',
+    text_dev              = 'अन्यतो ङीष्',
     padaccheda_dev        = "अन्यतः ङीष्",
     why_dev               = "(सूत्रम् 4.1.40) अन्यतो ङीष्।।",
     anuvritti_from        = ('4.1.1',),

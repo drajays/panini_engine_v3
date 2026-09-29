@@ -39,8 +39,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.1.42",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "Si sarvanAmasthAnam",
-    text_dev       = "शि सर्वनामस्थानम्",
+    text_slp1      = 'Si sarvanAmasTAnam',
+    text_dev       = 'शि सर्वनामस्थानम्',
     padaccheda_dev = "शि सर्वनामस्थानम्",
     why_dev        = "शि-प्रत्ययः सर्वनामस्थान-संज्ञकः।",
     anuvritti_from = (),

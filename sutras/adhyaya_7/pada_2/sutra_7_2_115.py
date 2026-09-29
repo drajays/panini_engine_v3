@@ -119,8 +119,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.2.115",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "acaH YRiti",
-    text_dev       = "अचो ञ्णिति",
+    text_slp1      = 'aco YRiti',
+    text_dev       = 'अचो ञ्णिति',
     padaccheda_dev = "अचः ञ्-णिति",
     why_dev        = "ञित्/णिति-परे अङ्गान्त्यचः वृद्धिः (णीञ्+ण्वुल् → नै/नायक)।",
     anuvritti_from = ("7.2.114",),

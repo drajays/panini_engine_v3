@@ -1,5 +1,5 @@
 """
-4.2.38  भिक्षाऽऽदिभ्योऽण्  —  VIDHI
+4.2.38  भिक्षादिभ्योऽण्  —  VIDHI
 
 Padaccheda: भिक्षा-आदिभ्यः अण्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.2.38",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "BikzA''diByo'R",
-    text_dev              = "भिक्षाऽऽदिभ्योऽण्",
+    text_slp1             = 'BikzAdiByoR',
+    text_dev              = 'भिक्षादिभ्योऽण्',
     padaccheda_dev        = "भिक्षा-आदिभ्यः अण्",
     why_dev               = "(सूत्रम् 4.2.38) भिक्षाऽऽदिभ्योऽण्।",
     anuvritti_from        = ('4.1.1',),

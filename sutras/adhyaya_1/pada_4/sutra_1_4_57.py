@@ -1,5 +1,5 @@
 """
-1.4.57  चादयोऽसत्त्वे  (cādayo 'sattve)  —  SAMJNA
+1.4.57  चादयोऽसत्त्वे  —  SAMJNA
 
 The ca-ādi particles (ca, vā, ha, aha, eva, evam, nūnam, śaśvat, yugapat,
 bhūyas, kila, khalu, bata, nanu, u, ut, tū, pātam, hanta, aho, aṭo, are,
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.57",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="cAdayo 'sattve",
-    text_dev="चादयोऽसत्त्वे",
+    text_slp1='cAdayosattve',
+    text_dev='चादयोऽसत्त्वे',
     padaccheda_dev="च-आदयः / असत्त्वे",
     why_dev="असत्त्वे (अद्रव्यवृत्तौ) चकारादयो निपात-संज्ञाः प्राप्नुवन्ति।",
     anuvritti_from=("1.4.56",),

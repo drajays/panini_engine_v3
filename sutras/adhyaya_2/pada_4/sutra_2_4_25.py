@@ -1,5 +1,5 @@
 """
-2.4.25  विभाषा सेनासुराछायाशालानिशानाम्  —  VIDHI
+2.4.25  विभाषा सेनासुराच्छायाशालानिशानाम्  —  VIDHI
 
 Padaccheda: विभाषा सेना-सुरा-छाया-शाला-निशानाम्
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.4.25",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "viBAzA senAsurACAyASAlAniSAnAm",
-    text_dev              = "विभाषा सेनासुराछायाशालानिशानाम्",
+    text_slp1             = 'viBAzA senAsurAcCAyASAlAniSAnAm',
+    text_dev              = 'विभाषा सेनासुराच्छायाशालानिशानाम्',
     padaccheda_dev        = "विभाषा सेना-सुरा-छाया-शाला-निशानाम्",
     why_dev               = "सेना-सुरा-छाया-शाला-निशानाम् विभाषा (२.४.२५)।",
     anuvritti_from        = ('2.4.18',),

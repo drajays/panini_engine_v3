@@ -62,8 +62,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.70",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="liyaH sammAnanaZAlInIkaraNayoSca",
-    text_dev="लियः सम्माननशालीनीकरणयोश्च",
+    text_slp1='liyaH sammAnanaSAlInIkaraRayoSca',
+    text_dev='लियः सम्माननशालीनीकरणयोश्च',
     padaccheda_dev=(
         "लियः (षष्ठी-एकवचन) / सम्मानन-शालीनीकरणयोः (सप्तमी-द्विवचन) / च"
     ),

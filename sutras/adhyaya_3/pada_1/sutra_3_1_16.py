@@ -1,5 +1,5 @@
 """
-3.1.16  बाष्पोष्माभ्यां उद्वमने  —  VIDHI
+3.1.16  बाष्पोष्मभ्यामुद्वमने  —  VIDHI
 
 Padaccheda: बाष्प-ऊष्माभ्याम् उद्वमने
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.1.16",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "bAzpozmAByAM udvamane",
-    text_dev              = "बाष्पोष्माभ्यां उद्वमने",
+    text_slp1             = 'bAzpozmaByAmudvamane',
+    text_dev              = 'बाष्पोष्मभ्यामुद्वमने',
     padaccheda_dev        = "बाष्प-ऊष्माभ्याम् उद्वमने",
     why_dev               = "धातोः [बाष्पोष्माभ्यां उद्वमने]-प्रत्ययः विहितः (३.१.16)।",
     anuvritti_from        = ('3.1.1',),

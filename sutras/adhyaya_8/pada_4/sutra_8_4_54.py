@@ -79,8 +79,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="8.4.54",
     sutra_type=SutraType.VIDHI,
-    text_slp1="aByAse carc",
-    text_dev="अभ्यासे चर्च",
+    text_slp1='aByAse carca',
+    text_dev='अभ्यासे चर्च',
     padaccheda_dev="अभ्यासे / चर्च",
     why_dev="अभ्यास-स्थिते झश्-वर्णस्य जश्-आदेशः (भि→बि) — विभिदतुः।",
     anuvritti_from=("8.4.53",),

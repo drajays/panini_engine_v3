@@ -23,7 +23,7 @@ from pipelines.subanta import (
 def test_registry_anuvada_cond():
     r = SUTRA_REGISTRY["2.3.46"]
     assert r.sutra_type.name == "ANUVADA"
-    assert "anabhihite" in r.text_slp1
+    assert r.text_slp1 == 'prAtipadikArTaliNgaparimARavacanamAtre praTamA'
 
 
 def test_preflight_schedules_2_3_1_and_2_3_46_when_eligible():

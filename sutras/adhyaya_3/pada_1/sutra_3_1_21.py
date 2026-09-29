@@ -1,5 +1,5 @@
 """
-3.1.21  मुण्डमिश्रश्लक्ष्णलवणव्रतवस्त्रहलकलकृततूस्तेभ्यो  —  VIDHI
+3.1.21  मुण्डमिश्रश्लक्ष्णलवणव्रतवस्त्रहलकलकृततूस्तेभ्यो णिच्  —  VIDHI
 
 Padaccheda: मुण्ड-मिश्र-श्लक्ष्ण-लवण-व्रत-वस्त्र-हल-कल-कृत-तूस्तेभ्यः णिच्
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.1.21",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "muRqamiSraSlakzRalavaRavratavastrahalakalakftatUsteByo",
-    text_dev              = "मुण्डमिश्रश्लक्ष्णलवणव्रतवस्त्रहलकलकृततूस्तेभ्यो",
+    text_slp1             = 'muRqamiSraSlakzRalavaRavratavastrahalakalakftatUsteByo Ric',
+    text_dev              = 'मुण्डमिश्रश्लक्ष्णलवणव्रतवस्त्रहलकलकृततूस्तेभ्यो णिच्',
     padaccheda_dev        = "मुण्ड-मिश्र-श्लक्ष्ण-लवण-व्रत-वस्त्र-हल-कल-कृत-तूस्तेभ्यः णिच्",
     why_dev               = "धातोः [मुण्डमिश्रश्लक्ष्णलवणव्रतवस्त्रहलकलकृततूस्तेभ्यो]-प्रत्ययः विहितः (३.१.21)।",
     anuvritti_from        = ('3.1.1',),

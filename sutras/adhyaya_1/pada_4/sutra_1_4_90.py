@@ -36,8 +36,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.90",
     sutra_type           = SutraType.VIDHI,
-    text_slp1            = "lakzaRe-tTamBUtAKyAnaBAgavIpsAsu prati-pary-anavaH",
-    text_dev             = "लक्षणेत्थम्भूताख्यानभागवीप्सासु प्रतिपर्यनवः",
+    text_slp1            = 'lakzaRetTamBUtAKyAnaBAgavIpsAsu pratiparyanavaH',
+    text_dev             = 'लक्षणेत्थम्भूताख्यानभागवीप्सासु प्रतिपर्यनवः',
     padaccheda_dev       = "लक्षण-इत्थम्भूत-आख्यान-भाग-वीप्सासु / प्रति-परि-अनवः",
     why_dev              = (
         "लक्षण-इत्थम्भूत-आख्यान-भाग-वीप्सा-अर्थेषु 'प्रति' 'परि' 'अनु' "

@@ -1,5 +1,5 @@
 """
-1.1.22  (tarap-tamapau ghaḥ)  —  SAMJNA; *devanāgarī* = ``_TEXT_DEV`` (ashtadhyayi *i* 11022 *s* line).
+1.1.22  तरप्तमपौ घः  —  SAMJNA; *devanāgarī* = ``_TEXT_DEV`` (ashtadhyayi *i* 11022 *s* line).
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=11022):** the taddhita pratyāyas *tar* + *p* and *tama* + *p*
 (***tarap***, ***tamap***) are termed *gha* (घ) — distinct from the **1.1.20** *ghu* (घु) *dhātu* *set*.
@@ -71,8 +71,8 @@ SUTRA = SutraRecord(
     sutra_id       = "1.1.22",
     sutra_type     = SutraType.SAMJNA,
     # Readable Velthuis; *e* compact: ``taraptamapaughah``
-    text_slp1      = "tarap-tamapO ghaH",
-    text_dev       = _TEXT_DEV,
+    text_slp1      = 'taraptamapO GaH',
+    text_dev       = 'तरप्तमपौ घः',
     padaccheda_dev = "तरप्-तमपौ / घः",
     why_dev        = _WHY,
     anuvritti_from = (),

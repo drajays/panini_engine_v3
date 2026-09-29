@@ -1,5 +1,5 @@
 """
-6.1.150  विष्किरः शकुनिर्विकरो वा  —  VIDHI
+6.1.150  विष्किरः शकुनौ वा  —  VIDHI
 
 Padaccheda: विष्किरः शकुनौ वा
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.1.150",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "vizkiraH Sakunirvikaro vA",
-    text_dev              = "विष्किरः शकुनिर्विकरो वा",
+    text_slp1             = 'vizkiraH SakunO vA',
+    text_dev              = 'विष्किरः शकुनौ वा',
     padaccheda_dev        = "विष्किरः शकुनौ वा",
     why_dev               = "(सूत्रम् 6.1.150) विष्किरः शकुनिर्विकरो वा।",
     anuvritti_from        = ('6.1.1',),

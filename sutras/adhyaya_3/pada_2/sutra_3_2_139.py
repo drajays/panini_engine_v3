@@ -1,5 +1,5 @@
 """
-3.2.139  ग्लाजिस्थश्च ग्स्नुः  —  VIDHI (narrow: *gsnuC* on *ji* / *glā* / *sthā*)
+3.2.139  ग्लाजिस्थश्च क्स्नुः  —  VIDHI (narrow: *gsnuC* on *ji* / *glā* / *sthā*)
 
 **Pāṭha:** *glājiṣṭhaś ca gsnūḥ* — *tācchīlye* *gsnuC* after **3.2.134**
 (*ākv…* *adhikāra*).
@@ -47,8 +47,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "3.2.139",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "glAji-zWaS ca gsnuH",
-    text_dev       = "ग्लाजिस्थश्च ग्स्नुः",
+    text_slp1      = 'glAjisTaSca ksnuH',
+    text_dev       = 'ग्लाजिस्थश्च क्स्नुः',
     padaccheda_dev = "ग्ला-जि-स्थः / च / ग्स्नुः",
     why_dev        = "ताच्छील्ये जि-धातोः ग्स्नुच्-प्रत्ययः (ग्लास-बॉक्स्)।",
     anuvritti_from = ("3.2.134",),

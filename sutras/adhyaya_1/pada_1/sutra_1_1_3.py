@@ -1,5 +1,5 @@
 """
-1.1.3  इको गुणवृद्धी  (iko guNavfdDI)  —  PARIBHASHA
+1.1.3  इको गुणवृद्धी  —  PARIBHASHA
 
 **Paribhāṣā (sthāniniyama):** when a later *vidhi* names the operation *guṇa* or
 *vṛddhi* but does **not** already name the *sthāyin* in ṣaṣṭhī, the replacement
@@ -78,8 +78,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.3",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "iko guNavfdDI",
-    text_dev       = "इको गुणवृद्धी",
+    text_slp1      = 'iko guRavfdDI',
+    text_dev       = 'इको गुणवृद्धी',
     padaccheda_dev = "इकः गुणवृद्धी",
     why_dev        = _WHY,
     anuvritti_from = (),

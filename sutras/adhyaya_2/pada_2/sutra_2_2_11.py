@@ -48,9 +48,9 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     r1_form_identity_exempt=True,
     text_slp1=(
-        "pUraRa-guRa-suhitArTa-sat-avyaya-tavya-samAnADikaraRena"
+        'pUraRaguRasuhitArTasadavyayatavyasamAnADikaraRena'
     ),
-    text_dev="पूरणगुणसुहितार्थसदव्ययतव्यसमानाधिकरणेन",
+    text_dev='पूरणगुणसुहितार्थसदव्ययतव्यसमानाधिकरणेन',
     padaccheda_dev=(
         "पूरण-गुण-सुहित-अर्थ-सत्-अव्यय-तव्य-समान-अधिकरणेन"
     ),

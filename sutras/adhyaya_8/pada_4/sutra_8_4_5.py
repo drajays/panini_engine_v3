@@ -1,5 +1,5 @@
 """
-8.4.5  प्रनिरन्तःशरेक्षुप्लक्षाम्रकार्ष्यखदिरपियूक्षाभ्योऽसंज्ञायामपि  —  VIDHI
+8.4.5  प्रनिरन्तःशरेक्षुप्लक्षाम्रकार्ष्यखदिरपीयूक्षाभ्योऽसंज्ञायामपि  —  VIDHI
 
 Padaccheda: प्र-निः-अन्तः-शर-इक्षु-प्लक्ष-आम्र-कार्ष्य-खदिर-पियूक्षाभ्यः अ-संज्ञायाम् अपि
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "8.4.5",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "pranirantaHSarekzuplakzAmrakArzyaKadirapiyUkzAByo'saMjYAyAmapi",
-    text_dev              = "प्रनिरन्तःशरेक्षुप्लक्षाम्रकार्ष्यखदिरपियूक्षाभ्योऽसंज्ञायामपि",
+    text_slp1             = 'pranirantaHSarekzuplakzAmrakArzyaKadirapIyUkzAByosaMjYAyAmapi',
+    text_dev              = 'प्रनिरन्तःशरेक्षुप्लक्षाम्रकार्ष्यखदिरपीयूक्षाभ्योऽसंज्ञायामपि',
     padaccheda_dev        = "प्र-निः-अन्तः-शर-इक्षु-प्लक्ष-आम्र-कार्ष्य-खदिर-पियूक्षाभ्यः अ-संज्ञायाम् अपि",
     why_dev               = "(सूत्रम् 8.4.5) प्रनिरन्तःशरेक्षुप्लक्षाम्रकार्ष्यखदिरपियूक्षाभ्योऽसंज्ञायामपि।",
     anuvritti_from        = ('8.1.1',),

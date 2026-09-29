@@ -1,5 +1,5 @@
 """
-1.4.67  पुरोऽव्ययम्  (puro 'vyayam)  —  SAMJNA
+1.4.67  पुरोऽव्ययम्  —  SAMJNA
 
 The word "puras" (in front) is an avyaya (indeclinable) and gets the
 gati-saṃjñā.  E.g., "puro-kṛ" (to place in front), "puro-dhā" (to keep
@@ -29,8 +29,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.67",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="puro 'vyayam",
-    text_dev="पुरोऽव्ययम्",
+    text_slp1='purovyayam',
+    text_dev='पुरोऽव्ययम्',
     padaccheda_dev="पुरः / अव्ययम्",
     why_dev="'पुरस्' अव्ययं गति-संज्ञकम् — 'puras' गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

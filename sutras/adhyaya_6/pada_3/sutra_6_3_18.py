@@ -1,5 +1,5 @@
 """
-6.3.18  शयवासवासिषु अकालात्  —  VIDHI
+6.3.18  शयवासवासिष्वकालात्  —  VIDHI
 
 Padaccheda: शय-वास-वासिषु अकालात्
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.3.18",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "SayavAsavAsizu akAlAt",
-    text_dev              = "शयवासवासिषु अकालात्",
+    text_slp1             = 'SayavAsavAsizvakAlAt',
+    text_dev              = 'शयवासवासिष्वकालात्',
     padaccheda_dev        = "शय-वास-वासिषु अकालात्",
     why_dev               = "(सूत्रम् 6.3.18) शयवासवासिषु अकालात्।",
     anuvritti_from        = ('6.1.1',),

@@ -64,8 +64,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.36",
     sutra_type=SutraType.VIDHI,
-    text_slp1="sammAnanotsaYjanAcAryakaraRajYAnaBftivigaNanavyayezu niyaH",
-    text_dev="सम्माननोत्सञ्जनाचार्यकरणज्ञानभृतिविगणनव्ययेषु नियः",
+    text_slp1='sammAnanotsaYjanAcAryakaraRajYAnaBftivigaRanavyayezu niyaH',
+    text_dev='सम्माननोत्सञ्जनाचार्यकरणज्ञानभृतिविगणनव्ययेषु नियः',
     padaccheda_dev=(
         "सम्मानन-उत्सञ्जन-आचार्यकरण-ज्ञान-भृति-विगणन-व्ययेषु (सप्तमी-बहुवचन) "
         "/ नियः (षष्ठी-एकवचन)"

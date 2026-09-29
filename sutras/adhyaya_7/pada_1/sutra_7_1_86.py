@@ -58,8 +58,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="7.1.86",
     sutra_type=SutraType.VIDHI,
-    text_slp1="ito't sarvanAmasTAne",
-    text_dev="इतोऽत् सर्वनामस्थाने",
+    text_slp1='itot sarvanAmasTAne',
+    text_dev='इतोऽत् सर्वनामस्थाने',
     padaccheda_dev="इतः अत् सर्वनामस्थाने",
     why_dev="सर्वनामस्थाने इकारस्य अ-आदेशः (पथिन्-श्रेणिः)।",
     anuvritti_from=("7.1.1",),

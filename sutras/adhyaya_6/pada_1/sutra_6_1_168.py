@@ -1,5 +1,5 @@
 """
-6.1.168  सावेकाचस्तृतीयाऽऽदिविभक्तिः  —  VIDHI
+6.1.168  सावेकाचस्तृतीयादिर्विभक्तिः  —  VIDHI
 
 Padaccheda: सौ एक-अचः तृतीया-आदिः विभक्तिः
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.1.168",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "sAvekAcastftIyA''diviBaktiH",
-    text_dev              = "सावेकाचस्तृतीयाऽऽदिविभक्तिः",
+    text_slp1             = 'sAvekAcastftIyAdirviBaktiH',
+    text_dev              = 'सावेकाचस्तृतीयादिर्विभक्तिः',
     padaccheda_dev        = "सौ एक-अचः तृतीया-आदिः विभक्तिः",
     why_dev               = "(सूत्रम् 6.1.168) सावेकाचस्तृतीयाऽऽदिविभक्तिः।",
     anuvritti_from        = ('6.1.1',),

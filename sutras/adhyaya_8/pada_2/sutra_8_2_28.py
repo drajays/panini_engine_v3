@@ -1,5 +1,5 @@
 """
-8.2.28  इडादेशे  —  VIDHI (narrow: delete sic 's' after iṭ)
+8.2.28  इट ईटि  —  VIDHI (narrow: delete sic 's' after iṭ)
 
 Engine scope: in luṅ glass-box spines, when an iṭ-āgama 'i' has been inserted
 immediately before the sic marker 's', delete that 's'. This models the
@@ -71,8 +71,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "8.2.28",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "iD-AdeSe (sici~ s-lopaH)",
-    text_dev       = "इडादेशे",
+    text_slp1      = 'iwa Iwi',
+    text_dev       = 'इट ईटि',
     padaccheda_dev = "इडादेशे",
     why_dev        = "इट्-आगमे सति सिच्-स्थ-सकारस्य लोपः (लुङ्-प्रक्रिया, अलावीत्)।",
     anuvritti_from = ("8.2.1",),

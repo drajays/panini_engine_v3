@@ -1,5 +1,5 @@
 """
-2.1.20  नदीभिश्च  (nadībhiś ca)  —  VIDHI
+2.1.20  नदीभिश्च  —  VIDHI
 
 **Pāṭha:** River (*nadī*) names also combine (with *saṃkhyā* words —
 anuvṛtti from 2.1.19, *ca* extends the scope) to form avyayībhāva
@@ -42,8 +42,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.1.20",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "nadIBiS ca",
-    text_dev              = "नदीभिश्च",
+    text_slp1             = 'nadIBiSca',
+    text_dev              = 'नदीभिश्च',
     padaccheda_dev        = "नदीभिः / च",
     why_dev               = "नदी-शब्दैः सह संख्यायाश्च अव्ययीभावः (२.१.२०)।",
     anuvritti_from        = ("2.1.5", "2.1.19"),

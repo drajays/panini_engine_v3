@@ -1,5 +1,5 @@
 """
-4.3.88  शिशुक्रन्दयमसभद्वंद्वेन्द्रजननादिभ्यश्छः  —  VIDHI
+4.3.88  शिशुक्रन्दयमसभद्वन्द्वेन्द्रजननादिभ्यश्छः  —  VIDHI
 
 Padaccheda: शिशु-क्रन्द-यमसभ-द्वन्द्व-इन्द्रजनन-आदिभ्यः छः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "4.3.88",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "SiSukrandayamasaBadvaMdvendrajananAdiByaSCaH",
-    text_dev              = "शिशुक्रन्दयमसभद्वंद्वेन्द्रजननादिभ्यश्छः",
+    text_slp1             = 'SiSukrandayamasaBadvandvendrajananAdiByaSCaH',
+    text_dev              = 'शिशुक्रन्दयमसभद्वन्द्वेन्द्रजननादिभ्यश्छः',
     padaccheda_dev        = "शिशु-क्रन्द-यमसभ-द्वन्द्व-इन्द्रजनन-आदिभ्यः छः",
     why_dev               = "(सूत्रम् 4.3.88) शिशुक्रन्दयमसभद्वंद्वेन्द्रजननादिभ्यश्छः।",
     anuvritti_from        = ('4.1.1',),

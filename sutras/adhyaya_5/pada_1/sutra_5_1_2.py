@@ -1,5 +1,5 @@
 """
-5.1.2  उगवादिभ्योऽत्  —  VIDHI
+5.1.2  उगवादिभ्यो यत्  —  VIDHI
 
 Padaccheda: उ-गवादिभ्यः यत्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.1.2",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "ugavAdiByo't",
-    text_dev              = "उगवादिभ्योऽत्",
+    text_slp1             = 'ugavAdiByo yat',
+    text_dev              = 'उगवादिभ्यो यत्',
     padaccheda_dev        = "उ-गवादिभ्यः यत्",
     why_dev               = "(सूत्रम् 5.1.2) उगवादिभ्योऽत्।",
     anuvritti_from        = ('5.1.1',),

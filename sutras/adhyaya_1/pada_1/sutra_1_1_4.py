@@ -1,5 +1,5 @@
 """
-1.1.4  न धातुलोप आर्धधातुके  (naDAtulopa ArDADAtuke)  —  PARIBHASHA
+1.1.4  न धातुलोप आर्धधातुके  —  PARIBHASHA
 
 **Paribhāṣā (niyama on 1.1.3):** when an *ārdhadhātuka* pratyāya is in play
 and a **dhātu lopa** has applied to the aṅga, the 1.1.3 *ik*–*guṇa* / *vṛddhi*
@@ -77,8 +77,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.4",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "naDAtulopa ArDADAtuke",
-    text_dev       = "न धातुलोप आर्धधातुके",
+    text_slp1      = 'na DAtulopa ArDaDAtuke',
+    text_dev       = 'न धातुलोप आर्धधातुके',
     padaccheda_dev = "न धातु-लोपे आर्धधातुके",
     why_dev        = _WHY,
     apavada_of     = ("1.1.3",),   # अपवाद of 1.1.3 — sutra_ref_out resolver.apavada_of

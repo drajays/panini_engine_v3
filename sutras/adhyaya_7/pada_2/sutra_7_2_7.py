@@ -89,8 +89,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="7.2.7",
     sutra_type=SutraType.VIDHI,
-    text_slp1="ato halAder laghoH",
-    text_dev="अतो हलादेर्लघोः",
+    text_slp1='ato halAderlaGoH',
+    text_dev='अतो हलादेर्लघोः',
     padaccheda_dev="अतः / हलादेः / लघोः",
     why_dev="लुङ्-सिच्-पथे इट्-कार्यम् (इ→ई, P026); हलादेः पूर्वस्य अ-विकल्प-वृद्धिः (हन्-लुङ्)।",
     anuvritti_from=("7.2.6",),

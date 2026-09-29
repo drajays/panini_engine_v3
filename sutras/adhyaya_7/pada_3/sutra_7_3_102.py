@@ -90,8 +90,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.3.102",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "supi ca (aNgasya ataH)",
-    text_dev       = "सुपि च",
+    text_slp1      = 'supi ca',
+    text_dev       = 'सुपि च',
     padaccheda_dev = "सुपि च — अङ्गस्य अतः",
     why_dev        = "यञादि-सुप्-प्रत्यये परे अदन्त-अङ्गस्य अन्त्य-अ-कारस्य "
                      "दीर्घः आ-कारः भवति।",

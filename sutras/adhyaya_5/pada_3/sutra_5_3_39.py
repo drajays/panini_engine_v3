@@ -1,5 +1,5 @@
 """
-5.3.39  पूर्वाधरावराणामसि पुरधवां चैषाम्  —  VIDHI (narrow)
+5.3.39  पूर्वाधरावराणामसि पुरधवश्चैषाम्  —  VIDHI (narrow)
 
 **Pāṭha:** *pūrvādhara-varāṇām asi puradhavāṃ caiṣām* — with **asi**, the stems
 *pūrva*, *adhara*, *vara* (and cognates) take **pur-**, **adhar-**, **var-**
@@ -69,8 +69,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "5.3.39",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "pUrvA-dharA-varARAm asi pura-dhavAM cEzAm",
-    text_dev       = "पूर्वाधरावराणामसि पुरधवां चैषाम्",
+    text_slp1      = 'pUrvADarAvarARAmasi puraDavaScEzAm',
+    text_dev       = 'पूर्वाधरावराणामसि पुरधवश्चैषाम्',
     padaccheda_dev = "पूर्व-अधर-अवराणाम् / असि / पुर-धवां / च / एषाम्",
     why_dev        = "असि-प्रत्यये पूर्वादीनां पुरादेशः (प्रक्रिया-१९)।",
     anuvritti_from = ("5.3.2",),

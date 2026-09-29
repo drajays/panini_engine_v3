@@ -57,8 +57,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.2.102",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "tyadAdInAm aH",
-    text_dev       = "त्यदादीनामः",
+    text_slp1      = 'tyadAdInAmaH',
+    text_dev       = 'त्यदादीनामः',
     padaccheda_dev = "त्यदादीनाम् अः",
     why_dev        = "त्यदादि-गण-शब्दानां विभक्ति-प्रत्यये परे अन्त्य-हल्-स्थानि अकार-आदेशः।",
     anuvritti_from = (),

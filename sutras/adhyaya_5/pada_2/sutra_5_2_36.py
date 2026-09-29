@@ -1,5 +1,5 @@
 """
-5.2.36  तदस्य संजातं तारकाऽऽदिभ्य इतच्  —  VIDHI
+5.2.36  तदस्य संजातं तारकादिभ्य इतच्  —  VIDHI
 
 Padaccheda: तत् अस्य संजातम् तारका-आदिभ्यः इतच्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.36",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "tadasya saMjAtaM tArakA''diBya itac",
-    text_dev              = "तदस्य संजातं तारकाऽऽदिभ्य इतच्",
+    text_slp1             = 'tadasya saMjAtaM tArakAdiBya itac',
+    text_dev              = 'तदस्य संजातं तारकादिभ्य इतच्',
     padaccheda_dev        = "तत् अस्य संजातम् तारका-आदिभ्यः इतच्",
     why_dev               = "(सूत्रम् 5.2.36) तदस्य संजातं तारकाऽऽदिभ्य इतच्।",
     anuvritti_from        = ('5.1.1',),

@@ -1,5 +1,5 @@
 """
-3.4.68  भावे  —  ADHIKARA
+3.4.68  भव्यगेयप्रवचनीयोपस्थानीयजन्याप्लाव्यापात्या वा  —  ADHIKARA
 
 Narrow v3 use: opens the *bhāve* scope for *kṛt* affixation (e.g. *lyuṭ* in
 ``pipelines/krdanta``) when ``state.meta['krt_artha'] == 'bhave'``.
@@ -20,7 +20,7 @@ def act(state: State) -> State:
     state.adhikara_stack.append({
         "id"        : "3.4.68",
         "scope_end" : "3.4.117",
-        "text_dev"  : "भावे",
+        "text_dev"  : 'भव्यगेयप्रवचनीयोपस्थानीयजन्याप्लाव्यापात्या वा',
     })
     return state
 
@@ -28,8 +28,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "3.4.68",
     sutra_type     = SutraType.ADHIKARA,
-    text_slp1      = "BAve",
-    text_dev       = "भावे",
+    text_slp1      = 'BavyageyapravacanIyopasTAnIyajanyAplAvyApAtyA vA',
+    text_dev       = 'भव्यगेयप्रवचनीयोपस्थानीयजन्याप्लाव्यापात्या वा',
     padaccheda_dev = "भावे",
     why_dev        = "भाव-अर्थे कृत्-प्रत्ययानां विधानम् — अधिकारः।",
     anuvritti_from = ("3.4.67",),

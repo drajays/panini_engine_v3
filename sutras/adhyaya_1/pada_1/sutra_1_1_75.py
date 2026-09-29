@@ -1,5 +1,5 @@
 """
-1.1.75  एङ् प्राचां देशे  (eN prAcAm deSe)  —  SAMJNA
+1.1.75  एङ् प्राचां देशे  —  SAMJNA
 
 Classical role:
   "EṄ (e, o) [is treated as pragṛhya] in the region/dialect of the
@@ -47,8 +47,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.1.75",
     sutra_type              = SutraType.SAMJNA,
     r1_form_identity_exempt = True,
-    text_slp1               = "eN prAcAm deSe",
-    text_dev                = "एङ् प्राचां देशे",
+    text_slp1               = 'eN prAcAM deSe',
+    text_dev                = 'एङ् प्राचां देशे',
     padaccheda_dev          = "एङ् / प्राचाम् / देशे",
     why_dev                 = (
         "प्राचां देशे — पूर्वदेशीय-वैयाकरणानां मते — "

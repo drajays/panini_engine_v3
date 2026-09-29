@@ -67,8 +67,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.1.64",
     sutra_type=SutraType.VIDHI,
-    text_slp1="dhAtvAdeH zaH saH",
-    text_dev="धात्वादेः षः सः",
+    text_slp1='DAtvAdeH zaH saH',
+    text_dev='धात्वादेः षः सः',
     padaccheda_dev="धात्वादेः / षः / सः",
     why_dev="धात्वादौ षकारस्य सकारः (P001-C ञिष्विदाँ → स्विद्, आर्म्-सीमितम्)।",
     anuvritti_from=(),

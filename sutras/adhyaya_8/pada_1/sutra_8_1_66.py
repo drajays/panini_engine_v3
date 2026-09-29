@@ -1,5 +1,5 @@
 """
-8.1.66  यद्वृत्तान्नित्यं  —  VIDHI
+8.1.66  यद्वृत्तान्नित्यम्  —  VIDHI
 
 Padaccheda: यद्वृतात् नित्यम्
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "8.1.66",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "yadvfttAnnityaM",
-    text_dev              = "यद्वृत्तान्नित्यं",
+    text_slp1             = 'yadvfttAnnityam',
+    text_dev              = 'यद्वृत्तान्नित्यम्',
     padaccheda_dev        = "यद्वृतात् नित्यम्",
     why_dev               = "(सूत्रम् 8.1.66) यद्वृत्तान्नित्यं।",
     anuvritti_from        = ('8.1.1',),

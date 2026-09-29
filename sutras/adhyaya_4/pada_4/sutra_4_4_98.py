@@ -62,8 +62,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "4.4.98",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "tatra sAdhuH",
-    text_dev       = "तत्र साधुः",
+    text_slp1      = 'tatra sADuH',
+    text_dev       = 'तत्र साधुः',
     padaccheda_dev = "तत्र साधुः",
     why_dev        = "तत्रार्थे साधौ यत्-प्रत्ययः (सामसु साधुः → सामन्यः)।",
     anuvritti_from = ("4.4.75",),

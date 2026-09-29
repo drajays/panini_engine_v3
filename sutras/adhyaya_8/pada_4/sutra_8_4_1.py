@@ -1,5 +1,5 @@
 """
-8.4.1  रषाभ्यां नो णः समानपदे संहितायाम्  —  VIDHI
+8.4.1  रषाभ्यां नो णः समानपदे  —  VIDHI
 
 "Of 'na' and 'ṇa' (standing for the repha / ṣa-letters), in *samānapada*,
 *saṃhitāyāṃ*, *ṇ* replaces the *n* (that follows) *r* or *ṣ*; (the *ṛ* extension
@@ -101,8 +101,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "8.4.1",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "samAnapade raSAByAm no RaH saMhitAyAm",
-    text_dev       = "समानपदे रषाभ्यां नो णः संहितायाम्",
+    text_slp1      = 'razAByAM no RaH samAnapade',
+    text_dev       = 'रषाभ्यां नो णः समानपदे',
     padaccheda_dev = "समानपदे / रषाभ्याम् / नो / णः / संहितायाम्",
     why_dev        = "समानपदे रेफ-ष-वर्णाभ्यां (ऋवर्णाद् अपि) ऋणे परस्य न-कारस्य "
                      "सन्निहिते णादेशः (१०८ संहितायाम्, त्रिपादी)।",

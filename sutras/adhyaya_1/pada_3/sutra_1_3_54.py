@@ -61,8 +61,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.54",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="samastatRtIyAyuktAt",
-    text_dev="समस्तृतीयायुक्तात्",
+    text_slp1='samastftIyAyuktAt',
+    text_dev='समस्तृतीयायुक्तात्',
     padaccheda_dev="समः (पञ्चमी-एकवचन) / तृतीया-युक्तात् (पञ्चमी-एकवचन)",
     why_dev=(
         "सम्-पूर्वकस्य चर-धातोः तृतीया-युक्त-प्रयोगे आत्मनेपदम् — "

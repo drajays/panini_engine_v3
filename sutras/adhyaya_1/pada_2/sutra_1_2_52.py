@@ -46,8 +46,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.52",
     sutra_type              = SutraType.NIYAMA,
     r1_form_identity_exempt = True,
-    text_slp1               = "viSezaRARAM cAjAteH",
-    text_dev                = "विशेषणानां चाजातेः",
+    text_slp1               = 'viSezaRAnAM cAjAteH',
+    text_dev                = 'विशेषणानां चाजातेः',
     padaccheda_dev          = "विशेषणानाम् / च / अजातेः",
     why_dev                 = (
         "विशेषणानां जातिवाचित्वं विना एकशेषो विधीयते — "

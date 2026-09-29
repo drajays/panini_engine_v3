@@ -1,5 +1,5 @@
 """
-1.4.63  आदरानादरयोः सदसती  (ādarānādarayoḥ sad-asatī)  —  SAMJNA
+1.4.63  आदरानादरयोः सदसती  —  SAMJNA
 
 The words sat (सत्) and asat (असत्) get the gati-saṃjñā when used in the
 sense of ādarа (respect) or anādara (disrespect).
@@ -31,8 +31,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.63",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="AdarAnAdarayoH sadасаtI",
-    text_dev="आदरानादरयोः सदसती",
+    text_slp1='AdarAnAdarayoH sadasatI',
+    text_dev='आदरानादरयोः सदसती',
     padaccheda_dev="आदर-अनादरयोः / सत्-असती",
     why_dev="आदरानादरयोः 'सत्' 'असत्' शब्दौ गति-संज्ञकौ — सत्-सूचिः गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

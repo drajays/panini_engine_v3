@@ -1,5 +1,5 @@
 """
-3.2.56  आढ्यसुभगस्थूलपलितनग्नान्धप्रियेषु च्व्य्र्थेष्वच्वौ कृञः करणे ख्युन्  —  VIDHI
+3.2.56  आढ्यसुभगस्थूलपलितनग्नान्धप्रियेषु च्व्यर्थेष्वच्वौ कृञः करणे ख्युन्  —  VIDHI
 
 Padaccheda: आढ्य-सुभग-स्थूल-पलित-नग्न-अन्ध-प्रियेषु च्वि-अर्थेषु अ-च्वौ कृञः करणे ख्युन्
 
@@ -33,8 +33,8 @@ SUTRA = SutraRecord(
     sutra_id              = "3.2.56",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "AQyasuBagasTUlapalitanagnAnDapriyezu cvyrTezvacvO kfYaH karaRe Kyun",
-    text_dev              = "आढ्यसुभगस्थूलपलितनग्नान्धप्रियेषु च्व्य्र्थेष्वच्वौ कृञः करणे ख्युन्",
+    text_slp1             = 'AQyasuBagasTUlapalitanagnAnDapriyezu cvyarTezvacvO kfYaH karaRe Kyun',
+    text_dev              = 'आढ्यसुभगस्थूलपलितनग्नान्धप्रियेषु च्व्यर्थेष्वच्वौ कृञः करणे ख्युन्',
     padaccheda_dev        = "आढ्य-सुभग-स्थूल-पलित-नग्न-अन्ध-प्रियेषु च्वि-अर्थेषु अ-च्वौ कृञः करणे ख्युन्",
     why_dev               = "धातोः कृत्-प्रत्ययः [आढ्यसुभगस्थूलपलितनग्नान्धप्रियेषु च्व्य्र्थेष्वच्वौ कृञः करणे ख्युन्] विहितः (३.२.56)।",
     anuvritti_from        = ('3.1.1',),

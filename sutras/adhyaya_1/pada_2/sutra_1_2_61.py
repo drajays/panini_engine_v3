@@ -42,8 +42,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.61",
     sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1               = "Candasi punarvasvorekacanam",
-    text_dev                = "छन्दसि पुनर्वस्वोरेकवचनम्",
+    text_slp1               = 'Candasi punarvasvorekavacanam',
+    text_dev                = 'छन्दसि पुनर्वस्वोरेकवचनम्',
     padaccheda_dev          = "छन्दसि / पुनर्वस्वोः / एकवचनम्",
     why_dev                 = (
         "छन्दसि विषये पुनर्वसु-नक्षत्रस्य द्विवचनस्थाने एकवचनं विधीयते — "

@@ -1,5 +1,5 @@
 """
-1.4.75  अनत्याधान उरसिमनसी  (anatyādhāna urasi-manasī)  —  SAMJNA
+1.4.75  अनत्याधान उरसिमनसी  —  SAMJNA
 
 The words "urasi" (on the chest) and "manasi" (in the mind) get the
 gati-saṃjñā when used without the meaning of anatyādhāna (excessive
@@ -31,8 +31,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.4.75",
     sutra_type=SutraType.SAMJNA,
-    text_slp1="anatyADAna urasi-manasI",
-    text_dev="अनत्याधान उरसिमनसी",
+    text_slp1='anatyADAna urasimanasI',
+    text_dev='अनत्याधान उरसिमनसी',
     padaccheda_dev="अनत्याधाने / उरसि-मनसी",
     why_dev="अनत्याधाने 'उरसि' 'मनसि' गति-संज्ञकौ — गति-सेटे योज्येते।",
     anuvritti_from=("1.4.60",),

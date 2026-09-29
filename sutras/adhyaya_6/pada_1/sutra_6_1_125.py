@@ -1,5 +1,5 @@
 """
-6.1.125  प्लुतप्रगृह्याच्च नित्यम् अचि  —  SAMJNA (operational core)
+6.1.125  प्लुतप्रगृह्या अचि नित्यम्  —  SAMJNA (operational core)
 
 *Pluta* or *pragṛhya* before an *ac*-initial following *pada* / *term*:
 *prakṛti-bhāva* is *nitya* at that boundary (no *savarna-dīrgha* / *yaṇ* across it).
@@ -59,8 +59,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.125",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "plutapragfhyAc ca nityam aci",
-    text_dev       = "प्लुतप्रगृह्याच्च नित्यम् अचि",
+    text_slp1      = 'plutapragfhyA aci nityam',
+    text_dev       = 'प्लुतप्रगृह्या अचि नित्यम्',
     padaccheda_dev = "प्लुत-प्रगृह्यात् च नित्यम् अचि",
     why_dev        = (
         "प्रगृह्यान्तात् परस्य अच्-आदौ प्रकृतिभावो नित्यः; "

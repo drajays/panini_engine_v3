@@ -16,8 +16,8 @@ def test_registry() -> None:
     r = SUTRA_REGISTRY["1.1.63"]
     assert r.sutra_type.name == "PARIBHASHA"
     assert r.sutra_id == "1.1.63"
-    assert r.text_slp1 == "lumatA pratyayalope aNgasya pratyayalakzaRaM na"
-    assert r.text_dev == "लुमता प्रत्ययलोपे अङ्गस्य प्रत्ययलक्षणं न"
+    assert r.text_slp1 == 'na lumatANgasya'
+    assert r.text_dev == 'न लुमताङ्गस्य'
     assert "अव्ययम्" in r.padaccheda_dev
     assert r.anuvritti_from == ("1.1.62",)
 

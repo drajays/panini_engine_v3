@@ -73,8 +73,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="6.4.24",
     sutra_type=SutraType.VIDHI,
-    text_slp1="aniditAm hal upaDAyAH kNgiti",
-    text_dev="अनिदितां हल उपधायाः क्ङिति",
+    text_slp1='aniditAM hala upaDAyAH kNiti',
+    text_dev='अनिदितां हल उपधायाः क्ङिति',
     padaccheda_dev="अनिदिताम् / हल् / उपधायाः / क्‍ङिति",
     why_dev="क्ङिति परे अनिदित्-धातोः उपधा-हल्-लोपः (इन्ध्→इध्; ईधे)।",
     anuvritti_from=("6.4.1",),

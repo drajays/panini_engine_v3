@@ -45,8 +45,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.3.25",
     sutra_type=SutraType.VIDHI,
-    text_slp1="upAnmantrakaraNe",
-    text_dev="उपान्मन्त्रकरणे",
+    text_slp1='upAnmantrakaraRe',
+    text_dev='उपान्मन्त्रकरणे',
     padaccheda_dev="उपात् (पञ्चमी) / मन्त्र-करणे (सप्तमी)",
     why_dev=(
         "उप-पूर्वकस्य धातोः मन्त्र-करण-अर्थे आत्मनेपदं भवति; "

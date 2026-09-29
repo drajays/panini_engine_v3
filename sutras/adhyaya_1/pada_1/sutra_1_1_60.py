@@ -1,5 +1,5 @@
 """
-1.1.60  स्थाने अदर्शनं लोपः  —  SAMJNA
+1.1.60  अदर्शनं लोपः  —  SAMJNA
 
 पदच्छेदः  **अदर्शनम्** (प्रथमा-एकवचनम्) , **लोपः** (प्रथमा-एकवचनम्)
 
@@ -52,8 +52,8 @@ _WHY = (
 SUTRA = SutraRecord(
     sutra_id       = "1.1.60",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "sTAne adarSanam lopaH",
-    text_dev       = "स्थाने अदर्शनं लोपः",
+    text_slp1      = 'adarSanaM lopaH',
+    text_dev       = 'अदर्शनं लोपः',
     padaccheda_dev = "स्थाने / अदर्शनं / लोपः",
     why_dev        = _WHY,
     anuvritti_from = ("1.1.50",),

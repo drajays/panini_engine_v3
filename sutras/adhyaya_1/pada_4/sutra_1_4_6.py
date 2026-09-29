@@ -1,5 +1,5 @@
 """
-1.4.6  ङिति ह्रस्वश्च  (ṅiti hrasvaś ca)  —  NIYAMA
+1.4.6  ङिति ह्रस्वश्च  —  NIYAMA
 
 **Pāṭha:** Before a *ṅit* suffix (one marked with the *it* marker *ṅ*), the
 stem also undergoes *hrasva* (shortening, if applicable).
@@ -29,8 +29,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id               = "1.4.6",
     sutra_type             = SutraType.NIYAMA,
-    text_slp1              = "Ngiti hrasvaSca",
-    text_dev               = "ङिति ह्रस्वश्च",
+    text_slp1              = 'Niti hrasvaSca',
+    text_dev               = 'ङिति ह्रस्वश्च',
     padaccheda_dev         = "ङिति / ह्रस्वः च",
     why_dev                = "ङित्-प्रत्यये परे नदीसंज्ञकस्य ह्रस्वश्च भवति।",
     anuvritti_from         = ("1.4.1", "1.4.3"),

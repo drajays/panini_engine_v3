@@ -1,5 +1,5 @@
 """
-2.1.11  विभाषा  (vibhāṣā)  —  ADHIKARA
+2.1.11  विभाषा  —  ADHIKARA
 
 **Pāṭha (ashtadhyayi-com ``data.txt`` i=21011):** opens the traditional
 *vibhāṣā* adhikāra within the samāsa-prakaraṇa.
@@ -26,7 +26,7 @@ def act(state: State) -> State:
     state.adhikara_stack.append({
         "id"        : "2.1.11",
         "scope_end" : "2.2.38",
-        "text_dev"  : "विभाषा",
+        "text_dev"  : 'विभाषा',
     })
     return state
 
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id        = "2.1.11",
     sutra_type      = SutraType.ADHIKARA,
-    text_slp1       = "viBASA",
-    text_dev        = "विभाषा",
+    text_slp1       = 'viBAzA',
+    text_dev        = 'विभाषा',
     padaccheda_dev  = "विभाषा",
     why_dev         = "२.१.११ इत्यतः २.२.३८ पर्यन्तं 'विभाषा' अधिकारः प्रवर्तते।",
     anuvritti_from  = (),

@@ -1,5 +1,5 @@
 """
-2.1.10  अक्षशलाकासंख्याः परिणा  (akṣa-śalākā-saṃkhyāḥ pariṇā)  —  VIDHI
+2.1.10  अक्षशलाकासंख्याः परिणा  —  VIDHI
 
 **Pāṭha:** The words *akṣa* (die), *śalākā* (stick/splinter), and
 *saṃkhyā* (number) combine with the avyaya *pari* to form an
@@ -42,8 +42,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.1.10",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "akzaSalAkAsaMKyAH pariNA",
-    text_dev              = "अक्षशलाकासंख्याः परिणा",
+    text_slp1             = 'akzaSalAkAsaMKyAH pariRA',
+    text_dev              = 'अक्षशलाकासंख्याः परिणा',
     padaccheda_dev        = "अक्ष-शलाका-संख्याः / परिणा",
     why_dev               = "अक्ष-शलाका-संख्या-शब्दानां परि-अव्ययेन सह अव्ययीभावः (२.१.१०)।",
     anuvritti_from        = ("2.1.5",),

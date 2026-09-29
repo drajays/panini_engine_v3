@@ -40,8 +40,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "4.1.162",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "apatyaM pautraprabhfti gotram (narrow P042)",
-    text_dev       = "अपत्यं पौत्रप्रभृति गोत्रम् — P042 संक्षेपः",
+    text_slp1      = 'apatyaM pOtrapraBfti gotram',
+    text_dev       = 'अपत्यं पौत्रप्रभृति गोत्रम्',
     padaccheda_dev = "अपत्यम् / पौत्रप्रभृति / गोत्रम्",
     why_dev        = "यञन्त-अपत्यं गोत्र-संज्ञकम् (४.१.१६२) — P042।",
     anuvritti_from = ("4.1.1",),

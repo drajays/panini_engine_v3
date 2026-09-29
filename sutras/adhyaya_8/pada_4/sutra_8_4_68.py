@@ -1,5 +1,5 @@
 """
-8.4.68  अ अ इति  —  ANUVADA
+8.4.68  अ अ  —  ANUVADA
 
 Padaccheda: अ · अ · इति
 
@@ -40,8 +40,8 @@ SUTRA = SutraRecord(
     sutra_id                = "8.4.68",
     sutra_type              = SutraType.ANUVADA,
     r1_form_identity_exempt = True,
-    text_slp1               = "a a iti",
-    text_dev                = "अ अ इति",
+    text_slp1               = 'a a',
+    text_dev                = 'अ अ',
     padaccheda_dev          = "अ · अ · इति",
     why_dev                 = "(सूत्रम् 8.4.68) अ अ इति।",
     anuvritti_from          = ('8.1.1',),

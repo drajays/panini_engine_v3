@@ -1,5 +1,5 @@
 """
-5.4.1  पादशतस्य संख्याऽऽदेर्वीप्सायां वुन् लोपश्च  —  VIDHI
+5.4.1  पादशतस्य संख्यादेर्वीप्सायां वुन् लोपश्च  —  VIDHI
 
 Padaccheda: पादशतस्य संख्या-आदेः वीप्सायाम् वुन् लोपः च
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.4.1",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "pAdaSatasya saMKyA''dervIpsAyAM vun lopaSca",
-    text_dev              = "पादशतस्य संख्याऽऽदेर्वीप्सायां वुन् लोपश्च",
+    text_slp1             = 'pAdaSatasya saMKyAdervIpsAyAM vun lopaSca',
+    text_dev              = 'पादशतस्य संख्यादेर्वीप्सायां वुन् लोपश्च',
     padaccheda_dev        = "पादशतस्य संख्या-आदेः वीप्सायाम् वुन् लोपः च",
     why_dev               = "(सूत्रम् 5.4.1) पादशतस्य संख्याऽऽदेर्वीप्सायां वुन् लोपश्च।",
     anuvritti_from        = ('5.1.1',),

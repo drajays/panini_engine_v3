@@ -1,5 +1,5 @@
 """
-3.2.176  रदादिभ्यो वरच्  —  VIDHI
+3.2.176  यश्च यङः  —  VIDHI
 
 Sources consulted:
 - ashtadhyayi.com data.txt row i=302176
@@ -41,8 +41,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="3.2.176",
     sutra_type=SutraType.VIDHI,
-    text_slp1="rad-Adibhyo varac",
-    text_dev="रदादिभ्यो वरच्",
+    text_slp1='yaSca yaNaH',
+    text_dev='यश्च यङः',
     padaccheda_dev="रदादिभ्यः / वरच्",
     why_dev="इत्यादेभ्यो वरच् — प०२९ (*यायावर*)।",
     anuvritti_from=("3.2.1",),

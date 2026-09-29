@@ -113,8 +113,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "3.1.133",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "Nvul-tfcau (kartari)",
-    text_dev       = "ण्वुल्तृचौ",
+    text_slp1      = 'RvultfcO',
+    text_dev       = 'ण्वुल्तृचौ',
     padaccheda_dev = "ण्वुल् तृचौ",
     why_dev        = "कर्तरि अर्थे धातोः ण्वुल्-प्रत्ययः (पाचक इत्यादि)।",
     anuvritti_from = ("3.1.91",),

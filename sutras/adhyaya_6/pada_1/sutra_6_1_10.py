@@ -76,8 +76,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.1.10",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "Slau (narrow P040)",
-    text_dev       = "श्लौ — P040 संक्षेपः",
+    text_slp1      = 'SlO',
+    text_dev       = 'श्लौ',
     padaccheda_dev = "श्लौ",
     why_dev        = "श्लौ-प्रसङ्गे धातोः द्वित्वम् (जुहोति) — P040।",
     anuvritti_from = ("6.1.1",),

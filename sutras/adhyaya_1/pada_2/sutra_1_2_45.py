@@ -94,8 +94,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.2.45",
     sutra_type     = SutraType.SAMJNA,
-    text_slp1      = "arthavadadhAturapratyayaH prAtipadikam",
-    text_dev       = "अर्थवदधातुरप्रत्ययः प्रातिपदिकम्",
+    text_slp1      = 'arTavadaDAturapratyayaH prAtipadikam',
+    text_dev       = 'अर्थवदधातुरप्रत्ययः प्रातिपदिकम्',
     padaccheda_dev = "अर्थवत् अधातुः अप्रत्ययः प्रातिपदिकम्",
     why_dev        = (
         "धातु-प्रत्यय-प्रत्ययान्त-वर्जितम् अर्थवच्छब्दरूपं प्रातिपदिकसंज्ञकम्।"

@@ -59,8 +59,8 @@ SUTRA = SutraRecord(
     sutra_id="1.3.80",
     sutra_type=SutraType.VIDHI,
     r1_form_identity_exempt=True,
-    text_slp1="aBipratyatiBYaH kzipaH",
-    text_dev="अभिप्रत्यतिभ्यः क्षिपः",
+    text_slp1='aBipratyatiByaH kzipaH',
+    text_dev='अभिप्रत्यतिभ्यः क्षिपः',
     padaccheda_dev="अभि-प्रति-अतिभ्यः (पञ्चमी-बहुवचन) / क्षिपः (षष्ठी-एकवचन)",
     why_dev=(
         "अभि-प्रति-अति-पूर्वकस्य क्षिप्-धातोः आत्मनेपदम् — "

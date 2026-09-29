@@ -1,5 +1,5 @@
 """
-5.3.69  प्रकारवचने जातीयर्।  —  VIDHI
+5.3.69  प्रकारवचने जातीयर्  —  VIDHI
 
 Padaccheda: प्रकारवचने जातीयर्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.3.69",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "prakAravacane jAtIyar.",
-    text_dev              = "प्रकारवचने जातीयर्।",
+    text_slp1             = 'prakAravacane jAtIyar',
+    text_dev              = 'प्रकारवचने जातीयर्',
     padaccheda_dev        = "प्रकारवचने जातीयर्",
     why_dev               = "(सूत्रम् 5.3.69) प्रकारवचने जातीयर्।।",
     anuvritti_from        = ('5.1.1',),

@@ -1,5 +1,5 @@
 """
-5.2.59  मतौ च्छः सूक्तसाम्नोः  —  VIDHI
+5.2.59  मतौ छः सूक्तसाम्नोः  —  VIDHI
 
 Padaccheda: मतौ छः सूक्त-साम्नोः
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.2.59",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "matO cCaH sUktasAmnoH",
-    text_dev              = "मतौ च्छः सूक्तसाम्नोः",
+    text_slp1             = 'matO CaH sUktasAmnoH',
+    text_dev              = 'मतौ छः सूक्तसाम्नोः',
     padaccheda_dev        = "मतौ छः सूक्त-साम्नोः",
     why_dev               = "(सूत्रम् 5.2.59) मतौ च्छः सूक्तसाम्नोः।",
     anuvritti_from        = ('5.1.1',),

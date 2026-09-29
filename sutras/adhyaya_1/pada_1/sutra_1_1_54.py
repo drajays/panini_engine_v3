@@ -1,5 +1,5 @@
 """
-1.1.54  आदेशः परस्य  —  PARIBHASHA
+1.1.54  आदेः परस्य  —  PARIBHASHA
 
 Interpretive gate: when a later rule speaks of an “ādi/ādeśa” substitution,
 the substitution is understood to apply to the **following** element (*para*),
@@ -33,8 +33,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "1.1.54",
     sutra_type     = SutraType.PARIBHASHA,
-    text_slp1      = "AdeH parasya",
-    text_dev       = "आदेशः परस्य",
+    text_slp1      = 'AdeH parasya',
+    text_dev       = 'आदेः परस्य',
     padaccheda_dev = "आदेशः / परस्य",
     why_dev        = "परिभाषा-गेट: आदेश-नियोजनम् पर-स्थाने।",
     anuvritti_from = ("1.1.49",),

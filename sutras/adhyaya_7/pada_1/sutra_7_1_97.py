@@ -1,5 +1,5 @@
 """
-7.1.97  विभाषा तृतीयाऽऽदिष्वचि  —  VIDHI
+7.1.97  विभाषा तृतीयादिष्वचि  —  VIDHI
 
 Padaccheda: विभाषा तृतीया-आदिषु अचि
 
@@ -31,8 +31,8 @@ SUTRA = SutraRecord(
     sutra_id              = "7.1.97",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "viBAzA tftIyA''dizvaci",
-    text_dev              = "विभाषा तृतीयाऽऽदिष्वचि",
+    text_slp1             = 'viBAzA tftIyAdizvaci',
+    text_dev              = 'विभाषा तृतीयादिष्वचि',
     padaccheda_dev        = "विभाषा तृतीया-आदिषु अचि",
     why_dev               = "(सूत्रम् 7.1.97) विभाषा तृतीयाऽऽदिष्वचि।",
     anuvritti_from        = ('7.1.1',),

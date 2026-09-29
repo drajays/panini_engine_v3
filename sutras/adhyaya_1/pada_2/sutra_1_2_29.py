@@ -1,5 +1,5 @@
 """
-1.2.29  उच्चैरुदात्तः  (uccair udāttaḥ)  —  SAMJNA
+1.2.29  उच्चैरुदात्तः  —  SAMJNA
 
 Meaning: [A phoneme pronounced] high (uccaiḥ) is called udātta (acute
 accent). This sūtra defines the technical name "udātta" for phonemes that
@@ -43,8 +43,8 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.29",
     sutra_type              = SutraType.SAMJNA,
     r1_form_identity_exempt = True,
-    text_slp1               = "uccEr udAttaH",
-    text_dev                = "उच्चैरुदात्तः",
+    text_slp1               = 'uccErudAttaH',
+    text_dev                = 'उच्चैरुदात्तः',
     padaccheda_dev          = "उच्चैः उदात्तः",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = (),

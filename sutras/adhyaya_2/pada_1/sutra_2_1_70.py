@@ -1,5 +1,5 @@
 """
-2.1.70  कुमारः श्रमणाऽऽदिभिः  —  VIDHI
+2.1.70  कुमारः श्रमणादिभिः  —  VIDHI
 
 Padaccheda: कुमारः श्रमणा-आदिभिः
 
@@ -30,8 +30,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.1.70",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "kumAraH SramaRA''diBiH",
-    text_dev              = "कुमारः श्रमणाऽऽदिभिः",
+    text_slp1             = 'kumAraH SramaRAdiBiH',
+    text_dev              = 'कुमारः श्रमणादिभिः',
     padaccheda_dev        = "कुमारः श्रमणा-आदिभिः",
     why_dev               = "कुमारः श्रमण-आदिभिः सह कर्मधारयः (२.१.७०)।",
     anuvritti_from        = ('2.1.3',),

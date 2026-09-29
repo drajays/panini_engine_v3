@@ -17,8 +17,8 @@ def test_sutra_metadata():
     assert r.sutra_id == "8.3.55"
     assert r.sutra_type is SutraType.ADHIKARA
     assert r.adhikara_scope == ("8.3.55", "8.3.119")
-    assert "mUrdhanyaH" in r.text_slp1
-    assert "मूर्धन्य" in r.text_dev
+    assert r.text_slp1 == 'apadAntasya mUrDanyaH'
+    assert r.text_dev == 'अपदान्तस्य मूर्धन्यः'
 
 
 def test_act_pushes_scope_once():

@@ -1,5 +1,5 @@
 """
-6.2.34  राजन्यबहुवचनद्वंद्वेऽन्धकवृष्णिषु  —  VIDHI
+6.2.34  राजन्यबहुवचनद्वन्द्वेऽन्धकवृष्णिषु  —  VIDHI
 
 Padaccheda: राजन्य-बहुवचन-द्वन्द्वे अन्धक-वृष्णिषु
 
@@ -29,8 +29,8 @@ SUTRA = SutraRecord(
     sutra_id              = "6.2.34",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "rAjanyabahuvacanadvaMdve'nDakavfzRizu",
-    text_dev              = "राजन्यबहुवचनद्वंद्वेऽन्धकवृष्णिषु",
+    text_slp1             = 'rAjanyabahuvacanadvandvenDakavfzRizu',
+    text_dev              = 'राजन्यबहुवचनद्वन्द्वेऽन्धकवृष्णिषु',
     padaccheda_dev        = "राजन्य-बहुवचन-द्वन्द्वे अन्धक-वृष्णिषु",
     why_dev               = "(सूत्रम् 6.2.34) राजन्यबहुवचनद्वंद्वेऽन्धकवृष्णिषु।",
     anuvritti_from        = ('6.1.1',),

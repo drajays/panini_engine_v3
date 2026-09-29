@@ -174,8 +174,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "3.1.33",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "syatAsI lRluwoH",
-    text_dev       = "स्यतासी लृलुटोः",
+    text_slp1      = 'syatAsI lfluwoH',
+    text_dev       = 'स्यतासी लृलुटोः',
     padaccheda_dev = "स्य-तासी / लृ-लुटोः",
     why_dev        = "लुट्-परे तासि-आगमः; P019: लृङि ``sy``-विकरणः।",
     anuvritti_from = ("3.1.22",),

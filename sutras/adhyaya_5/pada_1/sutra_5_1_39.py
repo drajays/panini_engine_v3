@@ -1,5 +1,5 @@
 """
-5.1.39  गोद्व्यचोरसंख्यापरिमाणाश्वादेर्यत्  —  VIDHI
+5.1.39  गोद्व्यचोऽसंख्यापरिमाणाश्वादेर्यत्  —  VIDHI
 
 Padaccheda: गो-द्वि-अचः अ-संख्या-परिमाण-अश्व-आदेः यत्
 
@@ -37,8 +37,8 @@ SUTRA = SutraRecord(
     sutra_id              = "5.1.39",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "godvyacorasaMKyAparimARASvAderyat",
-    text_dev              = "गोद्व्यचोरसंख्यापरिमाणाश्वादेर्यत्",
+    text_slp1             = 'godvyacosaMKyAparimARASvAderyat',
+    text_dev              = 'गोद्व्यचोऽसंख्यापरिमाणाश्वादेर्यत्',
     padaccheda_dev        = "गो-द्वि-अचः अ-संख्या-परिमाण-अश्व-आदेः यत्",
     why_dev               = "(सूत्रम् 5.1.39) गोद्व्यचोरसंख्यापरिमाणाश्वादेर्यत्।",
     anuvritti_from        = ('5.1.1',),

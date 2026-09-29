@@ -99,8 +99,8 @@ SUTRA = SutraRecord(
     sutra_id              = "1.1.37",
     sutra_type            = SutraType.SAMJNA,
     r1_form_identity_exempt = True,
-    text_slp1             = "svarAdinipatam avyayam",
-    text_dev              = "स्वरादिनिपातमव्ययम्",
+    text_slp1             = 'svarAdinipAtamavyayam',
+    text_dev              = 'स्वरादिनिपातमव्ययम्',
     padaccheda_dev        = "स्वर-आदि-निपातम् / अव्ययम्",
     why_dev               = (
         "स्वरादि-निपाताः अव्यय-संज्ञकाः; ततो २.४.८२ सुप्-लुक्।"

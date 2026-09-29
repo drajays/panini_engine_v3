@@ -57,8 +57,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="7.1.84",
     sutra_type=SutraType.VIDHI,
-    text_slp1="diva Out",
-    text_dev="दिव औत्",
+    text_slp1='diva Ot',
+    text_dev='दिव औत्',
     padaccheda_dev="दिवः / औत्",
     why_dev="दिव्-शब्दस्य सर्वनामस्थान-सुपि औट्-आदेशः (द्यौः, P022)।",
     anuvritti_from=("7.1.1",),

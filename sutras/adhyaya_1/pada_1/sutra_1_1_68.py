@@ -28,8 +28,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id="1.1.68",
     sutra_type=SutraType.ANUVADA,
-    text_slp1="svaM rUpaM SabdasyASabdasamjYA",
-    text_dev="स्वं रूपं शब्दस्याशब्दसंज्ञा",
+    text_slp1='svaM rUpaM SabdasyASabdasaMjYA',
+    text_dev='स्वं रूपं शब्दस्याशब्दसंज्ञा',
     padaccheda_dev="स्वम् / रूपम् / शब्दस्य / अशब्द-संज्ञा",
     why_dev="शब्दः स्व-रूप-पर्यायः (अशब्द-संज्ञा-अपवादः) — डेमो-आडिट्।",
     anuvritti_from=(),

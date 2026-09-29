@@ -58,8 +58,8 @@ SUTRA = SutraRecord(
     sutra_id              = "1.2.10",
     sutra_type            = SutraType.NIYAMA,
     r1_form_identity_exempt = True,
-    text_slp1             = "halantAc ca",
-    text_dev              = "हलन्ताच्च",
+    text_slp1             = 'halantAcca',
+    text_dev              = 'हलन्ताच्च',
     padaccheda_dev        = "हलन्तात् / च (अनिट्)",
     why_dev               = ("हलन्त-धातुः (सेट्-भिन्नः) अनिट् — "
                              "इडागमः न भवति (१.२.९-अनुवृत्ति-विस्तारः)।"),

@@ -1,5 +1,5 @@
 """
-1.4.92  प्रतिः प्रतिनिधिप्रतिदानयोः  (pratiḥ pratinidhipradānayoḥ)  —  VIDHI
+1.4.92  प्रतिः प्रतिनिधिप्रतिदानयोः  —  VIDHI
 
 *Padaccheda:* *pratiḥ* (prathamā), *pratinidhi-pratidānayoḥ* (saptamī-dvivacana).
 
@@ -34,8 +34,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id             = "1.4.92",
     sutra_type           = SutraType.VIDHI,
-    text_slp1            = "pratiH pratiniDi-pratidAnayoH",
-    text_dev             = "प्रतिः प्रतिनिधिप्रतिदानयोः",
+    text_slp1            = 'pratiH pratiniDipratidAnayoH',
+    text_dev             = 'प्रतिः प्रतिनिधिप्रतिदानयोः',
     padaccheda_dev       = "प्रतिः / प्रतिनिधि-प्रतिदानयोः",
     why_dev              = (
         "प्रतिनिधि-प्रतिदान-अर्थयोः वर्तमानः 'प्रति' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

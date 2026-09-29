@@ -1,5 +1,5 @@
 """
-2.2.16  कर्त्तरि च  —  VIDHI
+2.2.16  कर्तरि  च  —  VIDHI
 
 Padaccheda: कर्तरि च
 
@@ -30,8 +30,8 @@ SUTRA = SutraRecord(
     sutra_id              = "2.2.16",
     sutra_type            = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1             = "karttari ca",
-    text_dev              = "कर्त्तरि च",
+    text_slp1             = 'kartari ca',
+    text_dev              = 'कर्तरि  च',
     padaccheda_dev        = "कर्तरि च",
     why_dev               = "कर्तरि च तत्पुरुषः (२.२.१६)।",
     anuvritti_from        = ('2.2.15',),

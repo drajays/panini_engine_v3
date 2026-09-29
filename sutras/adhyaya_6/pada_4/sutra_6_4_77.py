@@ -1,5 +1,5 @@
 """
-6.4.77  अचि श्नु धातुभ्रुवां य्वोरियुवङौ  —  VIDHI 
+6.4.77  अचि श्नुधातुभ्रुवां य्वोरियङुवङौ  —  VIDHI 
 
 Glass-box scope for `loluv`:
   When a dhātu ends in ū (U) and an a-initial pratyaya follows, replace that U
@@ -58,8 +58,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "6.4.77",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "aci SnU-DAtuBruvAM yvor iyuvaNgO",
-    text_dev       = "अचि श्नु धातुभ्रुवां य्वोरियुवङौ",
+    text_slp1      = 'aci SnuDAtuBruvAM yvoriyaNuvaNO',
+    text_dev       = 'अचि श्नुधातुभ्रुवां य्वोरियङुवङौ',
     padaccheda_dev = "अचि / श्नु-धातु-भ्रुवाम् / य्वोः / इयु-वङौ",
     why_dev        = "धातोः इवर्ण-उवर्णयोः अचि परे इयङ्-उवङौ (नुवति, म्रियते)।",
     anuvritti_from = ("6.4.1",),

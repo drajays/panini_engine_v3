@@ -175,8 +175,8 @@ def act(state: State) -> State:
 SUTRA = SutraRecord(
     sutra_id       = "7.3.86",
     sutra_type     = SutraType.VIDHI,
-    text_slp1      = "puganta-laghUpadhasya ca",
-    text_dev       = "पुगन्तलघूपधस्य च",
+    text_slp1      = 'pugantalaGUpaDasya ca',
+    text_dev       = 'पुगन्तलघूपधस्य च',
     padaccheda_dev = "पुगन्त-लघु-उपधस्य च",
     why_dev        = (
         "पुगन्त/लघूपध-अङ्गस्य उपधायाः गुणः (इडागम-इकारे तु 1.1.6 निषेधः); "

@@ -31,7 +31,7 @@ def test_registry():
     r = SUTRA_REGISTRY["4.2.114"]
     assert r.sutra_type is SutraType.SAMJNA
     assert "4.2.92" in r.anuvritti_from
-    assert "vfdDAt" in r.text_slp1
+    assert r.text_slp1 == 'vfdDAcCaH'
     assert "छः" in r.padaccheda_dev
 
 
