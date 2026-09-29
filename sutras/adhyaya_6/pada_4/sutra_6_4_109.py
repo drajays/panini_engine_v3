@@ -8,28 +8,35 @@ Padaccheda: ये च
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
-from engine.krt_eligibility import samhita_gate_eligible
 
-_GATE_KEY: str = "6_4_109_ye_109"
+
+def _find(state: State):
+    """ये च (उतश्च प्रत्ययात्… करोतेः 6.4.106/108): कृ's u-vikaraṇa drops before a
+    y-initial pratyaya — कुरु+यात् → कुर्यात्."""
+    for i in range(1, len(state.terms) - 1):
+        u, nxt = state.terms[i], state.terms[i + 1]
+        dh = state.terms[i - 1]
+        if (u.meta.get("upadesha_slp1") or "").strip() != "u" or [v.slp1 for v in u.varnas] != ["u"]:
+            continue
+        if "dhatu" in dh.tags and "".join(v.slp1 for v in dh.varnas) == "kur" \
+                and nxt.varnas and nxt.varnas[0].slp1 == "y":
+            return u
+    return None
 
 
 def cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.4.109", gate_key=_GATE_KEY)
+    return _find(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.4.109"
+    _find(state).varnas = []
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "6.4.109",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "ye ca",
     text_dev              = "ये च",
     padaccheda_dev        = "ये च",

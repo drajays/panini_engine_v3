@@ -95,6 +95,8 @@ def act(state: State) -> State:
         tags={"pratyaya", "ling_sIyuw"},
         meta={"upadesha_slp1": slp},
     )
+    if "kngiti" in state.terms[idx].tags:      # ṭit āgama: part of the (ṅit) tiṅ, 1.1.46
+        sI.tags.add("kngiti")
     state.terms.insert(idx, sI)
     state.meta["sIyuw_recipe"] = False
     state.meta.pop("karmani_liG_recipe", None)

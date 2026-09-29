@@ -443,8 +443,9 @@ def _apply_vikarana(state: State, gana: int) -> State:
         # 6.4.24 अनिदितां हल उपधायाः क्ङिति: nasal upadhā drops before the ṅit
         # vikaraṇa (स्कुभ्नाति, रज्यति)
         state = apply_rule("6.4.24", state)
-        state = apply_rule("6.4.113", state)
-        state = apply_rule("6.4.112", state)
+        if not state.meta.get("liG_yasut_expected"):   # liṅ: after yāsuṭ/sīyuṭ
+            state = apply_rule("6.4.113", state)
+            state = apply_rule("6.4.112", state)
         return state
 
     if gana == 8:
@@ -1582,7 +1583,7 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     gana: int = state.terms[0].meta.get("gana", 1)
     # For tanādi gana 8: block early guṇa of vikaraṇa u until yāsuṭ (ṅit) arrives.
     # 3.3.161's act pops liG_vidhi_recipe, so we use a persistent guard flag.
-    if gana in _U_VIKARANA_GANAS:
+    if gana in _U_VIKARANA_GANAS or gana == 9:
         state.meta["liG_yasut_expected"] = True
     state = _apply_vikarana(state, gana)
 
@@ -1600,36 +1601,55 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # 3.4.99: vas→va, mas→ma  (s-lopa for uttama 1du/1pl)
     state = apply_rule("3.4.99", state)
 
-    # ── Stage: 3.4.103 yāsuṭ insertion ─────────────────────────────────────
-    state.meta["yasut_recipe"] = True
-    state = apply_rule("3.4.103", state)
-    # yāsuṭ is now present with kngiti tag — lift the pre-block flag
-    state.meta.pop("liG_yasut_expected", None)
+    if pada_key == "atmane":
+        # ── 3.4.102 लिङः सीयुट् (ātmanepada): सीय् before the tiṅ, 7.2.79 drops its s,
+        #    6.1.66 its y before a hal — एधेत, द्विषीत, सुन्वीत, क्रीणीत
+        state.meta["vidhi_liG"] = True
+        state.meta["sIyuw_recipe"] = True
+        state.meta["karmani_liG_recipe"] = True      # = "sīyuṭ before the tiṅ ādeśa"
+        state = apply_rule("3.4.102", state)
+        state.meta.pop("liG_yasut_expected", None)
+        state = apply_rule("7.2.79", state)
+        state = apply_rule("6.1.66", state)
+    else:
+        # ── Stage: 3.4.103 yāsuṭ insertion ─────────────────────────────────────
+        state.meta["yasut_recipe"] = True
+        state = apply_rule("3.4.103", state)
+        # yāsuṭ is now present with kngiti tag — lift the pre-block flag
+        state.meta.pop("liG_yasut_expected", None)
 
-    # ── Stage: yāsuṭ processing ──────────────────────────────────────────────
-    # 7.2.79: [y,A,s] → [y,A]  (drop final 's' of yāsuṭ)
-    state = apply_rule("7.2.79", state)
-    # 7.2.80: [y,A] → [i,y]  (when preceded by 'a')
-    state = apply_rule("7.2.80", state)
-    # 6.1.66: 'y' of [i,y] drops before HAL-initial tiṅ (t,s,m,v,…)
-    state = apply_rule("6.1.66", state)
+        # ── Stage: yāsuṭ processing ──────────────────────────────────────────────
+        # 7.2.79: [y,A,s] → [y,A]  (drop final 's' of yāsuṭ)
+        state = apply_rule("7.2.79", state)
+        # 7.2.80: [y,A] → [i,y]  (when preceded by 'a')
+        state = apply_rule("7.2.80", state)
+        # 6.1.66: 'y' of [i,y] drops before HAL-initial tiṅ (t,s,m,v,…)
+        state = apply_rule("6.1.66", state)
+
+    if gana == 9:
+        # the ṅit yāsuṭ / sīyuṭ is now next to श्ना: 6.4.113 ई हल्यघोः (क्रीणीयात्),
+        # 6.4.112 श्नाभ्यस्तयोरातः before a vowel (क्रीणीत)
+        state = apply_rule("6.4.113", state)
+        state = apply_rule("6.4.112", state)
 
     # ── Stage: aṅgakārya ────────────────────────────────────────────────────
     state = apply_rule("1.4.13", state)
     # 6.1.96 usy apadāntāt — tanādi gana 8: yā + us → y + us (drop ā before 3pl us)
-    if gana in _U_VIKARANA_GANAS:
-        state = apply_rule("6.1.96", state)
+    state = apply_rule("6.1.96", state)   # उस्यपदान्तात्: या+उस् → य्+उस् (कुर्युः, क्रीणीयुः)
     # 6.1.87: a + i → e  (śap-a + yāsuṭ-i remnant)
     state = apply_rule("6.1.87", state)
     state = apply_rule("6.1.101", state)   # अकः सवर्णे दीर्घः: या + अम् → याम्
     # 7.3.84: guṇa (IK-vowel of dhātu → guṇa; tanādi vikaraṇa blocked by yāsuṭ kṅit)
     state = apply_rule("7.3.84", state)
+    state = apply_rule("1.1.51", state)    # उरण् रपरः: स्मरेत्, भर्षेत्
+    if gana in _U_VIKARANA_GANAS:
+        state = apply_rule("6.4.110", state)   # अत उत् सार्वधातुके: कर् → कुर् (ṅit yāsuṭ)
+        state = apply_rule("6.4.109", state)   # ये च: कुरु+यात् → कुर्यात्
 
     # ── Stage: pada + sandhi ────────────────────────────────────────────────
     state = apply_rule("1.4.14", state)
     # 6.1.77 iko yaṇ aci — tanādi gana 8: vikaraṇa-u + AC-initial tiṅ
-    if gana in _U_VIKARANA_GANAS:
-        state = apply_rule("6.1.77", state)
+    state = apply_rule("6.1.77", state)    # सुनु+ईत → सुन्वीत; तनु+यात् untouched
     state = apply_rule("6.1.78", state)
 
     # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
