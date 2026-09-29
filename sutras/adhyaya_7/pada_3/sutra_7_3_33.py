@@ -49,12 +49,28 @@ def _matches(state: State) -> bool:
     return True
 
 
+def _cin_krt_after_A(state: State) -> int | None:
+    """आतो युक् चिण्कृतोः: an ā-final aṅga before ciṇ or a ñit/ṇit kṛt (अग्लायि, दायक)."""
+    for i, t in enumerate(state.terms[:-1]):
+        nxt = state.terms[i + 1]
+        itm = nxt.meta.get("it_markers") or set()
+        if ("dhatu" in t.tags and t.varnas and t.varnas[-1].slp1 == "A"
+                and not t.meta.get("7_3_33_yuk_inserted")
+                and ("Y" in itm or "R" in itm) and ("c" in itm or "krt" in nxt.tags)):
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
-    return _matches(state)
+    return _matches(state) or _cin_krt_after_A(state) is not None
 
 
 def act(state: State) -> State:
     if not _matches(state):
+        i = _cin_krt_after_A(state)
+        if i is not None:
+            state.terms[i].varnas.append(mk("y"))
+            state.terms[i].meta["7_3_33_yuk_inserted"] = True
         return state
     anga = state.terms[0]
     anga.varnas.append(mk("y"))

@@ -259,6 +259,7 @@ def _karmani_yak_it_and_ngiti(state: State) -> State:
             break
     # 6.4.51 णेरनिटि — the ṇijanta's ṇi drops before aniṭ yak: चोरि → चोर् (चोर्यते)
     state = apply_rule("6.4.51", state)
+    state = apply_rule("6.1.45", state)    # ग्लायते
     state = apply_rule("6.4.24", state)    # अनिदितां हल उपधायाः क्ङिति: तुम्फ् → तुफ्यते
     state = apply_rule("7.1.100", state)   # ॠत इद्धातोः: नॄ → निर् (+8.2.77 नीर्यते)
     state = apply_rule("1.1.51", state)
@@ -546,6 +547,7 @@ def _lit_needs_it(purusha: int, vacana: int) -> bool:
 def _it_agama(state: State) -> State:
     """7.2.35 आर्धधातुकस्येड् वलादेः, preceded by its pratiṣedha 7.2.10 एकाच
     उपदेशेऽनुदात्तात् (which, when it holds, blocks 7.2.35: पक्ता, पक्ष्यते)."""
+    state = apply_rule("6.1.45", state)   # आदेच उपदेशेऽशिति: ग्लै → ग्ला (ग्लाता)
     state = apply_rule("7.2.10", state)
     return apply_rule("7.2.35", state)
 
@@ -1406,8 +1408,12 @@ def _derive_ashir_liG(state: State, pada_key: str, purusha: int, vacana: int) ->
 
     state = apply_rule("1.4.13", state)
     state = apply_rule("1.1.5",  state)
+    state = apply_rule("6.4.51", state)    # णेरनिटि before aniṭ yāsuṭ: छोट्यात्, चोर्यात्
+    state = apply_rule("6.1.45", state)    # ग्लायात्
     state.meta["ashir_7_4_25_recipe"] = True
-    state = apply_rule("7.4.25", state)
+    state = apply_rule("7.4.25", state)    # ज्रीयात्, चीयात्
+    state = apply_rule("7.4.29", state)    # स्मर्यात्
+    state = apply_rule("7.4.28", state)    # रिङ् … लिङ्क्षु: घ्रियात्, क्रियात्
     state = apply_rule("1.4.14", state)
 
     state = apply_rule("6.1.66", state)
@@ -3136,6 +3142,8 @@ def _derive_karmani_luG(state: State, purusha: int, vacana: int) -> State:
     tin.meta["it_markers"] = {"c", "R"}
     tin.tags.add("ardhadhatuka")
     state = apply_rule("6.4.51", state)    # णेरनिटि: चोरि + इ → अचोरि
+    state = apply_rule("6.1.45", state)    # ग्लै → ग्ला
+    state = apply_rule("7.3.33", state)    # आतो युक् चिण्कृतोः: अग्लायि, अदायि
     state.meta["7_2_115_karmani_lut_arm"] = True
     state = apply_rule("7.2.115", state)
     state = apply_rule("7.2.116", state)   # अत उपधायाः before ṇit ciṇ: अपाचि, अदाधि

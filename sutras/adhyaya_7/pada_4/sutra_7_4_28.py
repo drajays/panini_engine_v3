@@ -26,7 +26,8 @@ def _find(state: State) -> int | None:
         nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
         if nxt is None:
             continue
-        if (nxt.meta.get("upadesha_slp1") or "").strip() in _NIMITTA or "yak" in nxt.tags:
+        if ((nxt.meta.get("upadesha_slp1") or "").strip() in _NIMITTA or "yak" in nxt.tags
+                or "yasut_agama" in nxt.tags):
             return i
     return None
 

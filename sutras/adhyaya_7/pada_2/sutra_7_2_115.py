@@ -58,7 +58,7 @@ def _find(state: State):
             return None
         last = dhatu.varnas[-1].slp1
         rep = _vrddhi_vowel(last, state)
-        if rep is None:
+        if rep is None or rep == last:          # already vṛddhi (ऐ, औ, आ)
             return None
         di = state.terms.index(dhatu)
         return (di, len(dhatu.varnas) - 1, rep)

@@ -53,7 +53,7 @@ def act(state: State) -> State:
         yasut = Term(
             kind="pratyaya",
             varnas=[mk("y"), mk("A"), mk("s")],
-            tags={"pratyaya", "yasut_agama", "kit"},
+            tags={"pratyaya", "yasut_agama", "kit", "kngiti", "ardhadhatuka"},  # किदाशिषि; 3.4.116
             meta={"upadesha_slp1": "yAsuT", "yasut_agama": True, "kit": True},
         )
         state.terms.insert(idx, yasut)

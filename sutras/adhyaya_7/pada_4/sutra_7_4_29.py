@@ -16,7 +16,7 @@ _VOWELS = frozenset("aAiIuUfFxXeEoO")
 
 def _yak_or_ashir_ling(t) -> bool:
     """The two loci carried from 7.4.28 that 7.4.29 overrides for these roots."""
-    return ("3_1_67_yak" in t.tags
+    return ("3_1_67_yak" in t.tags or "yasut_agama" in t.tags
             or (t.meta.get("source_lakara_upadesha") == "liG" and "ardhadhatuka" in t.tags))
 
 
