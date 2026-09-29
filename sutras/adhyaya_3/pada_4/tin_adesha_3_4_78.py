@@ -56,7 +56,7 @@ TIN_ADESHA_18: Final[Tuple[str, ...]] = (
     "sIzwa",
     "sIyAstAm",
     "sIran",
-    "sIzwAH",
+    "sIzWAH",
     "sIyAsTAm",
     "sIDvam",
     "sIya",

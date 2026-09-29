@@ -12,7 +12,8 @@ def _fired(trace: list, sid: str) -> bool:
 
 def test_BitzIzwa_surface() -> None:
     s = derive_BitzIzwa()
-    assert s.flat_slp1() == "BitzIzwa"
+    # भित्सीष्ट: no ṣatva after त् (8.3.59 needs iṆ/ku before s); ashtadhyayi.com + Vidyut agree
+    assert s.flat_slp1() == "BitsIzwa"
 
 
 def test_BitzIzwa_key_spine() -> None:

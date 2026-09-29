@@ -26,8 +26,12 @@ def _anudatta_ekac_before_valadi(state: State) -> bool:
         return False
     if sum(v.slp1 in "aAiIuUfFxXeEoO" for v in dh.varnas) != 1:
         return False
-    after = [(t.meta.get("upadesha_slp1") or "").strip() for t in state.terms[state.terms.index(dh) + 1:]]
+    rest = state.terms[state.terms.index(dh) + 1:]
+    after = [(t.meta.get("upadesha_slp1") or "").strip() for t in rest]
     hit = next((u for u in after if u in _VALADI_ARDHADHATUKA), None)
+    if hit is None and any(t.meta.get("source_lakara_upadesha") == "liG" and "ardhadhatuka" in t.tags and t.varnas
+                           and t.varnas[0].slp1 not in "aAiIuUfFxXeEoOy" for t in rest):
+        hit = "sIyuw"                                  # āśīrliṅ is ārdhadhātuka (3.4.116): कृषीष्ट
     if hit is None:
         return False
     if hit == "sya" and (dh.varnas[-1].slp1 == "f"

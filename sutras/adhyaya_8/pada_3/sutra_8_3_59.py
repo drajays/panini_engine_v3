@@ -36,7 +36,7 @@ from phonology.pratyahara import HAL
 # Preceding vowels that trigger ṣatva (simplified "in+kuk").
 # 8.3.57 इण्कोः: after an iṆ vowel *or a ku-varga consonant* (पक्+स्यति → पक्ष्यति).
 _IN_KUK_PREV = frozenset({"i", "I", "u", "U", "f", "F", "e", "E", "o", "O",
-                          "r", "l",                      # iṆ consonants (अहार्षीत्)
+                          "y", "v", "r", "l", "h",       # iṆ consonants (अहार्षीत्)
                           "k", "K", "g", "G", "N"})
 
 
@@ -71,15 +71,6 @@ def _find_target(state: State):
             continue
         if prev.slp1 in _IN_KUK_PREV:
             return i
-        # Lookahead (… hal s IK hal…) for luṅ sic+Īṭ pattern (avātsīt).
-        # Guard: IK must NOT be word-final — that would match the 2sg suffix
-        # "si" pattern (d+s+i at word-end, e.g. laṭ ad 2sg "adsi") which must
-        # NOT get ṣatva.
-        if prev.slp1 in HAL:
-            if (i + 1 < len(t.varnas)
-                    and t.varnas[i + 1].slp1 in _IN_KUK_PREV
-                    and i + 2 < len(t.varnas)):   # IK must not be word-final
-                return i
         # Scan back through semivowels to find iK (for suṭ-s after sīy-y)
         j = i - 1
         while j >= 1 and t.varnas[j].slp1 in _SEMIVOWELS:

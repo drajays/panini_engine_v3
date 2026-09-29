@@ -947,6 +947,7 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("1.4.13", state)
         if not state.meta.get("_luT_skip_guna"):
             state = apply_rule("7.3.84", state)
+            state = apply_rule("1.1.51", state)  # uraṇ raparaḥ (कर्ता)
         # 6.4.143: tāsi (i+t+A+s) → (i+t) before A (ḍit) — ṭi-lopa
         state = apply_rule("6.4.143", state)
         state = apply_rule("1.4.14", state)
@@ -965,6 +966,7 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("1.4.13", state)
         if not state.meta.get("_luT_skip_guna"):
             state = apply_rule("7.3.84", state)
+            state = apply_rule("1.1.51", state)  # uraṇ raparaḥ (कर्ता)
         # 7.4.51: drop s from tāsi before r (rO starts with r)
         state.meta["ri_ca_recipe"] = True
         state = apply_rule("7.4.51", state)
@@ -984,6 +986,7 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("1.4.13", state)
         if not state.meta.get("_luT_skip_guna"):
             state = apply_rule("7.3.84", state)
+            state = apply_rule("1.1.51", state)  # uraṇ raparaḥ (कर्ता)
         # 7.4.51: drop s from tāsi before r (ras starts with r)
         state.meta["ri_ca_recipe"] = True
         state = apply_rule("7.4.51", state)
@@ -997,6 +1000,7 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("1.4.13", state)
         if not state.meta.get("_luT_skip_guna"):
             state = apply_rule("7.3.84", state)
+            state = apply_rule("1.1.51", state)  # uraṇ raparaḥ (कर्ता)
         # 7.4.50: drop s from tāsi before si (si starts with s)
         state.meta["tasa_lopa_recipe"] = True
         state = apply_rule("7.4.50", state)
@@ -1013,6 +1017,7 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("1.4.13", state)
         if not state.meta.get("_luT_skip_guna"):
             state = apply_rule("7.3.84", state)
+            state = apply_rule("1.1.51", state)  # uraṇ raparaḥ (कर्ता)
         state = apply_rule("1.4.14", state)
         state = apply_rule("6.1.78", state)
 
@@ -3013,7 +3018,14 @@ def _derive_karmani_ashir_liG(state: State, purusha: int, vacana: int) -> State:
             break
 
     state = apply_rule("1.3.13", state)
+    return _derive_ashir_liG_atmane(state, purusha, vacana)
 
+
+def _derive_ashir_liG_atmane(state: State, purusha: int, vacana: int) -> State:
+    """Āśīrliṅ in ātmanepada (एधिषीष्ट) — kartari and karmaṇi share it: the
+    liṅ is ārdhadhātuka here (3.4.116), so no yak; sīyuṭ (3.4.102) not yāsuṭ."""
+    state.meta["lakara"]    = "AsIrliG"
+    state.meta["ashir_liG"] = True
     state = apply_rule("3.3.173", state)
     state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
@@ -3035,7 +3047,10 @@ def _derive_karmani_ashir_liG(state: State, purusha: int, vacana: int) -> State:
             t.tags.add("ardhadhatuka")
             break
     state = _it_agama(state)
+    state = apply_rule("1.2.11", state)
+    state = apply_rule("1.2.12", state)
     state = P00_hal_anit_guna(state)
+    state = apply_rule("1.1.51", state)
 
     state = apply_rule("1.4.14", state)
 
@@ -3145,7 +3160,12 @@ def _derive_karmani_luT(state: State, purusha: int, vacana: int) -> State:
 
     # ── 1.3.13 bhāvakarmaṇoḥ: ātmanepada ─────────────────────────────────
     state = apply_rule("1.3.13", state)
+    return _derive_luT_atmane(state, purusha, vacana)
 
+
+def _derive_luT_atmane(state: State, purusha: int, vacana: int) -> State:
+    """Luṭ in ātmanepada — kartari (एधिता, एधितासे) and karmaṇi alike: tāsi is
+    ārdhadhātuka, so no yak intervenes and one spine serves both prayogas."""
     # ── 3.3.3 + 3.3.15: luṭ attachment ───────────────────────────────────
     state = apply_rule("3.3.3", state)
     state.meta["luT_recipe"] = True
@@ -3190,6 +3210,7 @@ def _derive_karmani_luT(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule("1.2.4", state)
         state = apply_rule("1.4.13", state)
         state = apply_rule("7.3.84", state)  # guṇa: bhū→bho
+        state = apply_rule("1.1.51", state)  # uraṇ raparaḥ (कर्ता)
         state = apply_rule("6.4.143", state)
         state = apply_rule("1.4.14", state)
         state = apply_rule("6.1.78", state)  # bho→bhav
@@ -3208,6 +3229,7 @@ def _derive_karmani_luT(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule("3.4.114", state)
         state = apply_rule("1.4.13", state)
         state = apply_rule("7.3.84", state)
+        state = apply_rule("1.1.51", state)  # uraṇ raparaḥ (कर्ता)
         state.meta["ri_ca_recipe"] = True
         state = apply_rule("7.4.51", state)
         state = apply_rule("1.4.14", state)
@@ -3227,6 +3249,7 @@ def _derive_karmani_luT(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule("3.4.114", state)
         state = apply_rule("1.4.13", state)
         state = apply_rule("7.3.84", state)
+        state = apply_rule("1.1.51", state)  # uraṇ raparaḥ (कर्ता)
         state.meta["ri_ca_recipe"] = True
         state = apply_rule("7.4.51", state)
         state = apply_rule("1.4.14", state)
@@ -3242,6 +3265,7 @@ def _derive_karmani_luT(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule("1.2.4", state)
         state = apply_rule("1.4.13", state)
         state = apply_rule("7.3.84", state)
+        state = apply_rule("1.1.51", state)  # uraṇ raparaḥ (कर्ता)
         state.meta["tasa_lopa_recipe"] = True
         state = apply_rule("7.4.50", state)
         state = apply_rule("1.4.14", state)
@@ -3257,6 +3281,7 @@ def _derive_karmani_luT(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule("1.2.4", state)
         state = apply_rule("1.4.13", state)
         state = apply_rule("7.3.84", state)
+        state = apply_rule("1.1.51", state)  # uraṇ raparaḥ (कर्ता)
         state = apply_rule("1.4.14", state)
         state = apply_rule("6.1.78", state)
 
@@ -3270,6 +3295,7 @@ def _derive_karmani_luT(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule("1.2.4", state)
         state = apply_rule("1.4.13", state)
         state = apply_rule("7.3.84", state)
+        state = apply_rule("1.1.51", state)  # uraṇ raparaḥ (कर्ता)
         state = apply_rule("1.4.14", state)
         state = apply_rule("6.1.78", state)
 
@@ -3283,6 +3309,7 @@ def _derive_karmani_luT(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule("1.2.4", state)
         state = apply_rule("1.4.13", state)
         state = apply_rule("7.3.84", state)
+        state = apply_rule("1.1.51", state)  # uraṇ raparaḥ (कर्ता)
         state = apply_rule("7.4.52", state)
         state = apply_rule("1.4.14", state)
         state = apply_rule("6.1.78", state)
@@ -3297,6 +3324,7 @@ def _derive_karmani_luT(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule("1.2.4", state)
         state = apply_rule("1.4.13", state)
         state = apply_rule("7.3.84", state)
+        state = apply_rule("1.1.51", state)  # uraṇ raparaḥ (कर्ता)
         state = apply_rule("1.4.14", state)
         state = apply_rule("6.1.78", state)
 
@@ -4221,6 +4249,8 @@ def _dispatch_tinanta_spine(
     if lakara in ("luT",):
         state = apply_rule("3.1.91", state)
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        if pada_key == "atmane":
+            return _derive_luT_atmane(state, purusha, vacana)
         return _derive_luT(state, pada_key, purusha, vacana)
 
     if lakara in ("AsIrliG",) and _adadi_dhatu_stem_slp1(state) == "ad":
@@ -4231,6 +4261,8 @@ def _dispatch_tinanta_spine(
     if lakara in ("AsIrliG",):
         state = apply_rule("3.1.91", state)
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        if pada_key == "atmane":
+            return _derive_ashir_liG_atmane(state, purusha, vacana)
         return _derive_ashir_liG(state, pada_key, purusha, vacana)
 
     if lakara in ("liG",) and _adadi_dhatu_stem_slp1(state) == "ad":
