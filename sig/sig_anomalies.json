@@ -1,11 +1,19 @@
 {
   "anomalies": [],
-  "cascade_slow_cells": [],
+  "cascade_slow_cells": [
+    {
+      "cell_id": "nadI_strīliṅga:nadI:1-2",
+      "median_ns": 4906364,
+      "severity": "WARN",
+      "total_ns": 12951745,
+      "vs_median": 2.64
+    }
+  ],
   "cell_cpu_profile": {
     "derivations_timed": 501,
-    "max_total_ns": 5456877,
-    "median_total_ns": 4661836,
-    "min_total_ns": 4173368
+    "max_total_ns": 12951745,
+    "median_total_ns": 4906364,
+    "min_total_ns": 4385086
   },
   "run_test_count": 504
 }

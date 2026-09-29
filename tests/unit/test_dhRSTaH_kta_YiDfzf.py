@@ -17,6 +17,6 @@ def test_P001_B_spine_has_tripadi_and_pratipadika():
     assert "8.2.1" in ids
     assert "8.4.41" in ids
     assert "1.2.46" in ids
-    assert ids.index("8.4.41") < ids.index("1.2.46")
+    assert ids.index("1.2.46") < ids.index("8.2.1") < ids.index("8.4.41")   # tripādī last
     assert "4.1.2" in ids
-    assert ids.index("8.4.41") < ids.index("4.1.2") < ids.index("8.2.1")
+    assert ids.index("4.1.2") < ids.index("8.2.1") < ids.index("8.4.41")   # सु, then the tripādī

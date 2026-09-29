@@ -83,8 +83,11 @@ def cond(state: State) -> bool:
     Fire if ANY term is tagged 'prātipadika' and no sup pratyaya Term
     has been attached yet.
     """
+    from engine.lopa_ghost import term_is_sup_luk_ghost
     has_prat = any("prātipadika" in t.tags for t in state.terms)
-    has_sup  = any(t.kind == "pratyaya" and "sup" in t.tags for t in state.terms)
+    # a live sup already attached — a samāsa member's luk-ed sup (2.4.71) is not
+    has_sup  = any(t.kind == "pratyaya" and "sup" in t.tags and not term_is_sup_luk_ghost(t)
+                   and t.varnas for t in state.terms)
     return has_prat and not has_sup
 
 

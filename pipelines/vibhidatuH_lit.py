@@ -60,7 +60,6 @@ def derive_vibhidatuH() -> State:
     # dvitva & abhyāsa operations
     s.meta["liT_dvitva_recipe"] = True
     s = P00_lit_dvitva_abhyasa_hrasva(s)
-    s = apply_rule("8.4.54", s)
 
     # upasarga vi-
     vi = Term(
@@ -74,6 +73,8 @@ def derive_vibhidatuH() -> State:
     # merge + ru/visarga
     from pipelines.subanta import _pada_merge  # noqa: PLC0415
 
+    s = apply_rule("8.2.1", s)       # tripādī: 8.4.54 अभ्यासे चर्च on the abhyāsa term
+    s = apply_rule("8.4.54", s)
     _pada_merge(s)
     s = P00_tripadi_rutva_visarga(s)
     return s

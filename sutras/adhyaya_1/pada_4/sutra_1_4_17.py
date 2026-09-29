@@ -14,6 +14,7 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state  import State
 from sutras.adhyaya_1.pada_4.samjna_sup_prakriti_1_4 import (
+    yaci_onset_loose,
     is_asarvanamasthana_svadi_sup,
 )
 
@@ -31,6 +32,10 @@ def _eligible(state: State):
         if "pada_1_4_16" in anga.tags:
             continue
         if "bha" in anga.tags:  # 1.4.18 is apavāda: bha blocks pada re-entry
+            continue
+        # आ कडारादेका संज्ञा (1.4.1) + विप्रतिषेधे परं कार्यम् (1.4.2): before a
+        # yac-initial pratyaya 1.4.18 भ is the one saṃjñā — pada never applies
+        if yaci_onset_loose(pr):
             continue
         yield i
 

@@ -504,8 +504,8 @@
         "vAyu_pulliṅga:vAyu:8-2",
         "vAyu_pulliṅga:vAyu:8-3"
       ],
-      "source": "1.4.13",
-      "target": "1.4.14",
+      "source": "1.4.103",
+      "target": "1.4.13",
       "weight": 501
     },
     {
@@ -1012,8 +1012,8 @@
         "vAyu_pulliṅga:vAyu:8-2",
         "vAyu_pulliṅga:vAyu:8-3"
       ],
-      "source": "4.1.2",
-      "target": "1.4.102",
+      "source": "1.4.13",
+      "target": "1.4.14",
       "weight": 501
     },
     {
@@ -1413,8 +1413,8 @@
         "vAyu_pulliṅga:vAyu:8-2",
         "vAyu_pulliṅga:vAyu:8-3"
       ],
-      "source": "1.4.102",
-      "target": "1.4.13",
+      "source": "4.1.2",
+      "target": "1.4.103",
       "weight": 394
     },
     {
@@ -1615,197 +1615,6 @@
       "source": "1.2.45",
       "target": "4.1.2",
       "weight": 192
-    },
-    {
-      "paradigms": [
-        "Pala_napuṃsaka:Pala:1-1",
-        "Pala_napuṃsaka:Pala:1-2",
-        "Pala_napuṃsaka:Pala:2-1",
-        "Pala_napuṃsaka:Pala:2-2",
-        "Pala_napuṃsaka:Pala:3-1",
-        "Pala_napuṃsaka:Pala:4-1",
-        "Pala_napuṃsaka:Pala:5-1",
-        "Pala_napuṃsaka:Pala:6-1",
-        "Pala_napuṃsaka:Pala:6-3",
-        "Pala_napuṃsaka:Pala:7-1",
-        "Pala_napuṃsaka:Pala:7-3",
-        "Pala_napuṃsaka:Pala:8-2",
-        "SamBu_pullinga:SamBu:2-3",
-        "SamBu_pullinga:SamBu:3-1",
-        "SamBu_pullinga:SamBu:4-1",
-        "SamBu_pullinga:SamBu:5-1",
-        "SamBu_pullinga:SamBu:6-1",
-        "SamBu_pullinga:SamBu:6-3",
-        "SamBu_pullinga:SamBu:7-1",
-        "SamBu_pullinga:SamBu:7-3",
-        "SamBu_pulliṅga:SamBu:2-3",
-        "SamBu_pulliṅga:SamBu:3-1",
-        "SamBu_pulliṅga:SamBu:4-1",
-        "SamBu_pulliṅga:SamBu:5-1",
-        "SamBu_pulliṅga:SamBu:6-1",
-        "SamBu_pulliṅga:SamBu:6-3",
-        "SamBu_pulliṅga:SamBu:7-1",
-        "SamBu_pulliṅga:SamBu:7-3",
-        "agni_pulliṅga:agni:2-3",
-        "agni_pulliṅga:agni:3-1",
-        "agni_pulliṅga:agni:4-1",
-        "agni_pulliṅga:agni:5-1",
-        "agni_pulliṅga:agni:6-1",
-        "agni_pulliṅga:agni:6-3",
-        "agni_pulliṅga:agni:7-1",
-        "agni_pulliṅga:agni:7-3",
-        "anya_pullinga:anya:2-3",
-        "anya_pullinga:anya:3-1",
-        "anya_pullinga:anya:4-1",
-        "anya_pullinga:anya:5-1",
-        "anya_pullinga:anya:6-1",
-        "anya_pullinga:anya:6-3",
-        "anya_pullinga:anya:7-1",
-        "anya_pullinga:anya:7-3",
-        "anya_pullinga:anya:8-3",
-        "anya_pulliṅga:anya:2-3",
-        "anya_pulliṅga:anya:3-1",
-        "anya_pulliṅga:anya:4-1",
-        "anya_pulliṅga:anya:5-1",
-        "anya_pulliṅga:anya:6-1",
-        "anya_pulliṅga:anya:6-3",
-        "anya_pulliṅga:anya:7-1",
-        "anya_pulliṅga:anya:7-3",
-        "anya_pulliṅga:anya:8-3",
-        "guru_pulliṅga:guru:2-3",
-        "guru_pulliṅga:guru:3-1",
-        "guru_pulliṅga:guru:4-1",
-        "guru_pulliṅga:guru:5-1",
-        "guru_pulliṅga:guru:6-1",
-        "guru_pulliṅga:guru:6-3",
-        "guru_pulliṅga:guru:7-1",
-        "guru_pulliṅga:guru:7-3",
-        "hari_pullinga:hari:2-3",
-        "hari_pullinga:hari:3-1",
-        "hari_pullinga:hari:4-1",
-        "hari_pullinga:hari:5-1",
-        "hari_pullinga:hari:6-1",
-        "hari_pullinga:hari:6-3",
-        "hari_pullinga:hari:7-1",
-        "hari_pullinga:hari:7-3",
-        "hari_pulliṅga:hari:2-3",
-        "hari_pulliṅga:hari:3-1",
-        "hari_pulliṅga:hari:4-1",
-        "hari_pulliṅga:hari:5-1",
-        "hari_pulliṅga:hari:6-1",
-        "hari_pulliṅga:hari:6-3",
-        "hari_pulliṅga:hari:7-1",
-        "hari_pulliṅga:hari:7-3",
-        "jYAna_napuṃsaka:jYAna:1-1",
-        "jYAna_napuṃsaka:jYAna:1-2",
-        "jYAna_napuṃsaka:jYAna:2-1",
-        "jYAna_napuṃsaka:jYAna:2-2",
-        "jYAna_napuṃsaka:jYAna:3-1",
-        "jYAna_napuṃsaka:jYAna:4-1",
-        "jYAna_napuṃsaka:jYAna:5-1",
-        "jYAna_napuṃsaka:jYAna:6-1",
-        "jYAna_napuṃsaka:jYAna:6-3",
-        "jYAna_napuṃsaka:jYAna:7-1",
-        "jYAna_napuṃsaka:jYAna:7-3",
-        "jYAna_napuṃsaka:jYAna:8-2",
-        "jnana_napumsaka:jYAna:1-1",
-        "jnana_napumsaka:jYAna:1-2",
-        "jnana_napumsaka:jYAna:2-1",
-        "jnana_napumsaka:jYAna:2-2",
-        "jnana_napumsaka:jYAna:3-1",
-        "jnana_napumsaka:jYAna:4-1",
-        "jnana_napumsaka:jYAna:5-1",
-        "jnana_napumsaka:jYAna:6-1",
-        "jnana_napumsaka:jYAna:6-3",
-        "jnana_napumsaka:jYAna:7-1",
-        "jnana_napumsaka:jYAna:7-3",
-        "jnana_napumsaka:jYAna:8-2",
-        "latA_strīliṅga:latA:2-3",
-        "latA_strīliṅga:latA:3-1",
-        "latA_strīliṅga:latA:4-1",
-        "latA_strīliṅga:latA:5-1",
-        "latA_strīliṅga:latA:6-1",
-        "latA_strīliṅga:latA:6-3",
-        "latA_strīliṅga:latA:7-1",
-        "latA_strīliṅga:latA:7-3",
-        "nadI_strīliṅga:nadI:2-3",
-        "nadI_strīliṅga:nadI:3-1",
-        "nadI_strīliṅga:nadI:4-1",
-        "nadI_strīliṅga:nadI:5-1",
-        "nadI_strīliṅga:nadI:6-1",
-        "nadI_strīliṅga:nadI:6-3",
-        "nadI_strīliṅga:nadI:7-1",
-        "nadI_strīliṅga:nadI:7-3",
-        "rADA_strilinga:rADA:2-3",
-        "rADA_strilinga:rADA:3-1",
-        "rADA_strilinga:rADA:4-1",
-        "rADA_strilinga:rADA:5-1",
-        "rADA_strilinga:rADA:6-1",
-        "rADA_strilinga:rADA:6-3",
-        "rADA_strilinga:rADA:7-1",
-        "rADA_strilinga:rADA:7-3",
-        "rADA_strīliṅga:rADA:2-3",
-        "rADA_strīliṅga:rADA:3-1",
-        "rADA_strīliṅga:rADA:4-1",
-        "rADA_strīliṅga:rADA:5-1",
-        "rADA_strīliṅga:rADA:6-1",
-        "rADA_strīliṅga:rADA:6-3",
-        "rADA_strīliṅga:rADA:7-1",
-        "rADA_strīliṅga:rADA:7-3",
-        "rAma_pulliṅga:rAma:2-3",
-        "rAma_pulliṅga:rAma:3-1",
-        "rAma_pulliṅga:rAma:4-1",
-        "rAma_pulliṅga:rAma:5-1",
-        "rAma_pulliṅga:rAma:6-1",
-        "rAma_pulliṅga:rAma:6-3",
-        "rAma_pulliṅga:rAma:7-1",
-        "rAma_pulliṅga:rAma:7-3",
-        "rama_pullinga:rAma:2-3",
-        "rama_pullinga:rAma:3-1",
-        "rama_pullinga:rAma:4-1",
-        "rama_pullinga:rAma:5-1",
-        "rama_pullinga:rAma:6-1",
-        "rama_pullinga:rAma:6-3",
-        "rama_pullinga:rAma:7-1",
-        "rama_pullinga:rAma:7-3",
-        "sarva_pullinga:sarva:2-3",
-        "sarva_pullinga:sarva:3-1",
-        "sarva_pullinga:sarva:4-1",
-        "sarva_pullinga:sarva:5-1",
-        "sarva_pullinga:sarva:6-1",
-        "sarva_pullinga:sarva:6-3",
-        "sarva_pullinga:sarva:7-1",
-        "sarva_pullinga:sarva:7-3",
-        "sarva_pullinga:sarva:8-3",
-        "sarva_pulliṅga:sarva:2-3",
-        "sarva_pulliṅga:sarva:3-1",
-        "sarva_pulliṅga:sarva:4-1",
-        "sarva_pulliṅga:sarva:5-1",
-        "sarva_pulliṅga:sarva:6-1",
-        "sarva_pulliṅga:sarva:6-3",
-        "sarva_pulliṅga:sarva:7-1",
-        "sarva_pulliṅga:sarva:7-3",
-        "sarva_pulliṅga:sarva:8-3",
-        "tad_pullinga:tad:2-3",
-        "tad_pullinga:tad:3-1",
-        "tad_pullinga:tad:4-1",
-        "tad_pullinga:tad:5-1",
-        "tad_pullinga:tad:6-1",
-        "tad_pullinga:tad:6-3",
-        "tad_pullinga:tad:7-1",
-        "tad_pullinga:tad:7-3",
-        "vAyu_pulliṅga:vAyu:2-3",
-        "vAyu_pulliṅga:vAyu:3-1",
-        "vAyu_pulliṅga:vAyu:4-1",
-        "vAyu_pulliṅga:vAyu:5-1",
-        "vAyu_pulliṅga:vAyu:6-1",
-        "vAyu_pulliṅga:vAyu:6-3",
-        "vAyu_pulliṅga:vAyu:7-1",
-        "vAyu_pulliṅga:vAyu:7-3"
-      ],
-      "source": "1.4.17",
-      "target": "1.4.18",
-      "weight": 184
     },
     {
       "paradigms": [
@@ -2503,124 +2312,6 @@
     },
     {
       "paradigms": [
-        "Pala_napuṃsaka:Pala:2-1",
-        "Pala_napuṃsaka:Pala:3-2",
-        "Pala_napuṃsaka:Pala:4-2",
-        "Pala_napuṃsaka:Pala:4-3",
-        "Pala_napuṃsaka:Pala:5-2",
-        "Pala_napuṃsaka:Pala:5-3",
-        "Pala_napuṃsaka:Pala:6-2",
-        "Pala_napuṃsaka:Pala:6-3",
-        "Pala_napuṃsaka:Pala:7-2",
-        "anya_pullinga:anya:3-2",
-        "anya_pullinga:anya:4-2",
-        "anya_pullinga:anya:4-3",
-        "anya_pullinga:anya:5-2",
-        "anya_pullinga:anya:5-3",
-        "anya_pullinga:anya:6-2",
-        "anya_pullinga:anya:6-3",
-        "anya_pullinga:anya:7-2",
-        "anya_pulliṅga:anya:3-2",
-        "anya_pulliṅga:anya:4-2",
-        "anya_pulliṅga:anya:4-3",
-        "anya_pulliṅga:anya:5-2",
-        "anya_pulliṅga:anya:5-3",
-        "anya_pulliṅga:anya:6-2",
-        "anya_pulliṅga:anya:6-3",
-        "anya_pulliṅga:anya:7-2",
-        "jYAna_napuṃsaka:jYAna:2-1",
-        "jYAna_napuṃsaka:jYAna:3-2",
-        "jYAna_napuṃsaka:jYAna:4-2",
-        "jYAna_napuṃsaka:jYAna:4-3",
-        "jYAna_napuṃsaka:jYAna:5-2",
-        "jYAna_napuṃsaka:jYAna:5-3",
-        "jYAna_napuṃsaka:jYAna:6-2",
-        "jYAna_napuṃsaka:jYAna:6-3",
-        "jYAna_napuṃsaka:jYAna:7-2",
-        "jnana_napumsaka:jYAna:2-1",
-        "jnana_napumsaka:jYAna:3-2",
-        "jnana_napumsaka:jYAna:4-2",
-        "jnana_napumsaka:jYAna:4-3",
-        "jnana_napumsaka:jYAna:5-2",
-        "jnana_napumsaka:jYAna:5-3",
-        "jnana_napumsaka:jYAna:6-2",
-        "jnana_napumsaka:jYAna:6-3",
-        "jnana_napumsaka:jYAna:7-2",
-        "latA_strīliṅga:latA:3-2",
-        "latA_strīliṅga:latA:3-3",
-        "latA_strīliṅga:latA:4-2",
-        "latA_strīliṅga:latA:4-3",
-        "latA_strīliṅga:latA:5-2",
-        "latA_strīliṅga:latA:5-3",
-        "latA_strīliṅga:latA:6-2",
-        "latA_strīliṅga:latA:6-3",
-        "latA_strīliṅga:latA:7-2",
-        "nadI_strīliṅga:nadI:3-2",
-        "nadI_strīliṅga:nadI:3-3",
-        "nadI_strīliṅga:nadI:4-2",
-        "nadI_strīliṅga:nadI:4-3",
-        "nadI_strīliṅga:nadI:5-2",
-        "nadI_strīliṅga:nadI:5-3",
-        "nadI_strīliṅga:nadI:6-2",
-        "nadI_strīliṅga:nadI:6-3",
-        "nadI_strīliṅga:nadI:7-2",
-        "rADA_strilinga:rADA:3-2",
-        "rADA_strilinga:rADA:3-3",
-        "rADA_strilinga:rADA:4-2",
-        "rADA_strilinga:rADA:4-3",
-        "rADA_strilinga:rADA:5-2",
-        "rADA_strilinga:rADA:5-3",
-        "rADA_strilinga:rADA:6-2",
-        "rADA_strilinga:rADA:6-3",
-        "rADA_strilinga:rADA:7-2",
-        "rADA_strīliṅga:rADA:3-2",
-        "rADA_strīliṅga:rADA:3-3",
-        "rADA_strīliṅga:rADA:4-2",
-        "rADA_strīliṅga:rADA:4-3",
-        "rADA_strīliṅga:rADA:5-2",
-        "rADA_strīliṅga:rADA:5-3",
-        "rADA_strīliṅga:rADA:6-2",
-        "rADA_strīliṅga:rADA:6-3",
-        "rADA_strīliṅga:rADA:7-2",
-        "rAma_pulliṅga:rAma:3-2",
-        "rAma_pulliṅga:rAma:4-2",
-        "rAma_pulliṅga:rAma:4-3",
-        "rAma_pulliṅga:rAma:5-2",
-        "rAma_pulliṅga:rAma:5-3",
-        "rAma_pulliṅga:rAma:6-2",
-        "rAma_pulliṅga:rAma:6-3",
-        "rAma_pulliṅga:rAma:7-2",
-        "rama_pullinga:rAma:3-2",
-        "rama_pullinga:rAma:4-2",
-        "rama_pullinga:rAma:4-3",
-        "rama_pullinga:rAma:5-2",
-        "rama_pullinga:rAma:5-3",
-        "rama_pullinga:rAma:6-2",
-        "rama_pullinga:rAma:6-3",
-        "rama_pullinga:rAma:7-2",
-        "sarva_pullinga:sarva:3-2",
-        "sarva_pullinga:sarva:4-2",
-        "sarva_pullinga:sarva:4-3",
-        "sarva_pullinga:sarva:5-2",
-        "sarva_pullinga:sarva:5-3",
-        "sarva_pullinga:sarva:6-2",
-        "sarva_pullinga:sarva:6-3",
-        "sarva_pullinga:sarva:7-2",
-        "sarva_pulliṅga:sarva:3-2",
-        "sarva_pulliṅga:sarva:4-2",
-        "sarva_pulliṅga:sarva:4-3",
-        "sarva_pulliṅga:sarva:5-2",
-        "sarva_pulliṅga:sarva:5-3",
-        "sarva_pulliṅga:sarva:6-2",
-        "sarva_pulliṅga:sarva:6-3",
-        "sarva_pulliṅga:sarva:7-2"
-      ],
-      "source": "1.4.14",
-      "target": "1.4.17",
-      "weight": 111
-    },
-    {
-      "paradigms": [
         "Pala_napuṃsaka:Pala:2-3",
         "Pala_napuṃsaka:Pala:4-1",
         "Pala_napuṃsaka:Pala:5-1",
@@ -2845,7 +2536,7 @@
         "vAyu_pulliṅga:vAyu:8-1"
       ],
       "source": "1.1.43",
-      "target": "1.4.13",
+      "target": "1.4.103",
       "weight": 107
     },
     {
@@ -2958,7 +2649,7 @@
         "vAyu_pulliṅga:vAyu:2-2",
         "vAyu_pulliṅga:vAyu:8-1"
       ],
-      "source": "1.4.102",
+      "source": "4.1.2",
       "target": "1.1.43",
       "weight": 107
     },
@@ -3170,101 +2861,84 @@
     },
     {
       "paradigms": [
-        "SamBu_pullinga:SamBu:2-3",
-        "SamBu_pullinga:SamBu:3-2",
-        "SamBu_pullinga:SamBu:3-3",
-        "SamBu_pullinga:SamBu:4-2",
-        "SamBu_pullinga:SamBu:4-3",
-        "SamBu_pullinga:SamBu:5-1",
-        "SamBu_pullinga:SamBu:5-2",
-        "SamBu_pullinga:SamBu:5-3",
-        "SamBu_pullinga:SamBu:6-1",
-        "SamBu_pullinga:SamBu:6-2",
-        "SamBu_pullinga:SamBu:6-3",
-        "SamBu_pullinga:SamBu:7-2",
-        "SamBu_pullinga:SamBu:7-3",
-        "SamBu_pulliṅga:SamBu:2-3",
-        "SamBu_pulliṅga:SamBu:3-2",
-        "SamBu_pulliṅga:SamBu:3-3",
-        "SamBu_pulliṅga:SamBu:4-2",
-        "SamBu_pulliṅga:SamBu:4-3",
-        "SamBu_pulliṅga:SamBu:5-1",
-        "SamBu_pulliṅga:SamBu:5-2",
-        "SamBu_pulliṅga:SamBu:5-3",
-        "SamBu_pulliṅga:SamBu:6-1",
-        "SamBu_pulliṅga:SamBu:6-2",
-        "SamBu_pulliṅga:SamBu:6-3",
-        "SamBu_pulliṅga:SamBu:7-2",
-        "SamBu_pulliṅga:SamBu:7-3",
-        "agni_pulliṅga:agni:2-3",
-        "agni_pulliṅga:agni:3-2",
-        "agni_pulliṅga:agni:3-3",
-        "agni_pulliṅga:agni:4-2",
-        "agni_pulliṅga:agni:4-3",
-        "agni_pulliṅga:agni:5-1",
-        "agni_pulliṅga:agni:5-2",
-        "agni_pulliṅga:agni:5-3",
-        "agni_pulliṅga:agni:6-1",
-        "agni_pulliṅga:agni:6-2",
-        "agni_pulliṅga:agni:6-3",
-        "agni_pulliṅga:agni:7-2",
-        "agni_pulliṅga:agni:7-3",
-        "guru_pulliṅga:guru:2-3",
-        "guru_pulliṅga:guru:3-2",
-        "guru_pulliṅga:guru:3-3",
-        "guru_pulliṅga:guru:4-2",
-        "guru_pulliṅga:guru:4-3",
-        "guru_pulliṅga:guru:5-1",
-        "guru_pulliṅga:guru:5-2",
-        "guru_pulliṅga:guru:5-3",
-        "guru_pulliṅga:guru:6-1",
-        "guru_pulliṅga:guru:6-2",
-        "guru_pulliṅga:guru:6-3",
-        "guru_pulliṅga:guru:7-2",
-        "guru_pulliṅga:guru:7-3",
-        "hari_pullinga:hari:2-3",
-        "hari_pullinga:hari:3-2",
-        "hari_pullinga:hari:3-3",
-        "hari_pullinga:hari:4-2",
-        "hari_pullinga:hari:4-3",
-        "hari_pullinga:hari:5-1",
-        "hari_pullinga:hari:5-2",
-        "hari_pullinga:hari:5-3",
-        "hari_pullinga:hari:6-1",
-        "hari_pullinga:hari:6-2",
-        "hari_pullinga:hari:6-3",
-        "hari_pullinga:hari:7-2",
-        "hari_pullinga:hari:7-3",
-        "hari_pulliṅga:hari:2-3",
-        "hari_pulliṅga:hari:3-2",
-        "hari_pulliṅga:hari:3-3",
-        "hari_pulliṅga:hari:4-2",
-        "hari_pulliṅga:hari:4-3",
-        "hari_pulliṅga:hari:5-1",
-        "hari_pulliṅga:hari:5-2",
-        "hari_pulliṅga:hari:5-3",
-        "hari_pulliṅga:hari:6-1",
-        "hari_pulliṅga:hari:6-2",
-        "hari_pulliṅga:hari:6-3",
-        "hari_pulliṅga:hari:7-2",
-        "hari_pulliṅga:hari:7-3",
-        "vAyu_pulliṅga:vAyu:2-3",
-        "vAyu_pulliṅga:vAyu:3-2",
-        "vAyu_pulliṅga:vAyu:3-3",
-        "vAyu_pulliṅga:vAyu:4-2",
-        "vAyu_pulliṅga:vAyu:4-3",
-        "vAyu_pulliṅga:vAyu:5-1",
-        "vAyu_pulliṅga:vAyu:5-2",
-        "vAyu_pulliṅga:vAyu:5-3",
-        "vAyu_pulliṅga:vAyu:6-1",
-        "vAyu_pulliṅga:vAyu:6-2",
-        "vAyu_pulliṅga:vAyu:6-3",
-        "vAyu_pulliṅga:vAyu:7-2",
-        "vAyu_pulliṅga:vAyu:7-3"
+        "Pala_napuṃsaka:Pala:1-2",
+        "Pala_napuṃsaka:Pala:1-3",
+        "Pala_napuṃsaka:Pala:2-2",
+        "Pala_napuṃsaka:Pala:2-3",
+        "Pala_napuṃsaka:Pala:3-1",
+        "Pala_napuṃsaka:Pala:8-2",
+        "Pala_napuṃsaka:Pala:8-3",
+        "SamBu_pullinga:SamBu:1-3",
+        "SamBu_pullinga:SamBu:3-1",
+        "SamBu_pullinga:SamBu:8-3",
+        "SamBu_pulliṅga:SamBu:1-3",
+        "SamBu_pulliṅga:SamBu:3-1",
+        "SamBu_pulliṅga:SamBu:8-3",
+        "agni_pulliṅga:agni:1-3",
+        "agni_pulliṅga:agni:3-1",
+        "agni_pulliṅga:agni:8-3",
+        "anya_pullinga:anya:1-3",
+        "anya_pullinga:anya:3-1",
+        "anya_pullinga:anya:8-3",
+        "anya_pulliṅga:anya:1-3",
+        "anya_pulliṅga:anya:3-1",
+        "anya_pulliṅga:anya:8-3",
+        "guru_pulliṅga:guru:1-3",
+        "guru_pulliṅga:guru:3-1",
+        "guru_pulliṅga:guru:8-3",
+        "hari_pullinga:hari:1-3",
+        "hari_pullinga:hari:3-1",
+        "hari_pullinga:hari:8-3",
+        "hari_pulliṅga:hari:1-3",
+        "hari_pulliṅga:hari:3-1",
+        "hari_pulliṅga:hari:8-3",
+        "jYAna_napuṃsaka:jYAna:1-2",
+        "jYAna_napuṃsaka:jYAna:1-3",
+        "jYAna_napuṃsaka:jYAna:2-2",
+        "jYAna_napuṃsaka:jYAna:2-3",
+        "jYAna_napuṃsaka:jYAna:3-1",
+        "jYAna_napuṃsaka:jYAna:8-2",
+        "jYAna_napuṃsaka:jYAna:8-3",
+        "jnana_napumsaka:jYAna:1-2",
+        "jnana_napumsaka:jYAna:1-3",
+        "jnana_napumsaka:jYAna:2-2",
+        "jnana_napumsaka:jYAna:2-3",
+        "jnana_napumsaka:jYAna:3-1",
+        "jnana_napumsaka:jYAna:8-2",
+        "jnana_napumsaka:jYAna:8-3",
+        "latA_strīliṅga:latA:1-3",
+        "latA_strīliṅga:latA:3-1",
+        "latA_strīliṅga:latA:8-3",
+        "nadI_strīliṅga:nadI:1-3",
+        "nadI_strīliṅga:nadI:3-1",
+        "nadI_strīliṅga:nadI:8-3",
+        "rADA_strilinga:rADA:1-3",
+        "rADA_strilinga:rADA:3-1",
+        "rADA_strilinga:rADA:8-3",
+        "rADA_strīliṅga:rADA:1-3",
+        "rADA_strīliṅga:rADA:3-1",
+        "rADA_strīliṅga:rADA:8-3",
+        "rAma_pulliṅga:rAma:1-3",
+        "rAma_pulliṅga:rAma:3-1",
+        "rAma_pulliṅga:rAma:8-3",
+        "rama_pullinga:rAma:1-3",
+        "rama_pullinga:rAma:3-1",
+        "rama_pullinga:rAma:8-3",
+        "sarva_pullinga:sarva:1-3",
+        "sarva_pullinga:sarva:3-1",
+        "sarva_pullinga:sarva:8-3",
+        "sarva_pulliṅga:sarva:1-3",
+        "sarva_pulliṅga:sarva:3-1",
+        "sarva_pulliṅga:sarva:8-3",
+        "tad_pullinga:tad:1-3",
+        "tad_pullinga:tad:3-1",
+        "vAyu_pulliṅga:vAyu:1-3",
+        "vAyu_pulliṅga:vAyu:3-1",
+        "vAyu_pulliṅga:vAyu:8-3"
       ],
-      "source": "1.4.7",
-      "target": "1.4.17",
-      "weight": 91
+      "source": "1.3.7",
+      "target": "1.3.9",
+      "weight": 89
     },
     {
       "paradigms": [
@@ -3540,6 +3214,172 @@
     },
     {
       "paradigms": [
+        "Pala_napuṃsaka:Pala:1-3",
+        "Pala_napuṃsaka:Pala:2-3",
+        "Pala_napuṃsaka:Pala:3-1",
+        "Pala_napuṃsaka:Pala:8-3",
+        "SamBu_pullinga:SamBu:1-3",
+        "SamBu_pullinga:SamBu:2-3",
+        "SamBu_pullinga:SamBu:3-1",
+        "SamBu_pullinga:SamBu:8-3",
+        "SamBu_pulliṅga:SamBu:1-3",
+        "SamBu_pulliṅga:SamBu:2-3",
+        "SamBu_pulliṅga:SamBu:3-1",
+        "SamBu_pulliṅga:SamBu:8-3",
+        "agni_pulliṅga:agni:1-3",
+        "agni_pulliṅga:agni:2-3",
+        "agni_pulliṅga:agni:3-1",
+        "agni_pulliṅga:agni:8-3",
+        "anya_pullinga:anya:1-3",
+        "anya_pullinga:anya:2-3",
+        "anya_pullinga:anya:3-1",
+        "anya_pullinga:anya:8-3",
+        "anya_pulliṅga:anya:1-3",
+        "anya_pulliṅga:anya:2-3",
+        "anya_pulliṅga:anya:3-1",
+        "anya_pulliṅga:anya:8-3",
+        "guru_pulliṅga:guru:1-3",
+        "guru_pulliṅga:guru:2-3",
+        "guru_pulliṅga:guru:3-1",
+        "guru_pulliṅga:guru:8-3",
+        "hari_pullinga:hari:1-3",
+        "hari_pullinga:hari:2-3",
+        "hari_pullinga:hari:3-1",
+        "hari_pullinga:hari:8-3",
+        "hari_pulliṅga:hari:1-3",
+        "hari_pulliṅga:hari:2-3",
+        "hari_pulliṅga:hari:3-1",
+        "hari_pulliṅga:hari:8-3",
+        "jYAna_napuṃsaka:jYAna:1-3",
+        "jYAna_napuṃsaka:jYAna:2-3",
+        "jYAna_napuṃsaka:jYAna:3-1",
+        "jYAna_napuṃsaka:jYAna:8-3",
+        "jnana_napumsaka:jYAna:1-3",
+        "jnana_napumsaka:jYAna:2-3",
+        "jnana_napumsaka:jYAna:3-1",
+        "jnana_napumsaka:jYAna:8-3",
+        "latA_strīliṅga:latA:1-3",
+        "latA_strīliṅga:latA:2-3",
+        "latA_strīliṅga:latA:3-1",
+        "latA_strīliṅga:latA:8-3",
+        "nadI_strīliṅga:nadI:1-3",
+        "nadI_strīliṅga:nadI:2-3",
+        "nadI_strīliṅga:nadI:3-1",
+        "nadI_strīliṅga:nadI:8-3",
+        "rADA_strilinga:rADA:1-3",
+        "rADA_strilinga:rADA:2-3",
+        "rADA_strilinga:rADA:3-1",
+        "rADA_strilinga:rADA:8-3",
+        "rADA_strīliṅga:rADA:1-3",
+        "rADA_strīliṅga:rADA:2-3",
+        "rADA_strīliṅga:rADA:3-1",
+        "rADA_strīliṅga:rADA:8-3",
+        "rAma_pulliṅga:rAma:1-3",
+        "rAma_pulliṅga:rAma:2-3",
+        "rAma_pulliṅga:rAma:3-1",
+        "rAma_pulliṅga:rAma:8-3",
+        "rama_pullinga:rAma:1-3",
+        "rama_pullinga:rAma:2-3",
+        "rama_pullinga:rAma:3-1",
+        "rama_pullinga:rAma:8-3",
+        "sarva_pullinga:sarva:1-3",
+        "sarva_pullinga:sarva:2-3",
+        "sarva_pullinga:sarva:3-1",
+        "sarva_pullinga:sarva:8-3",
+        "sarva_pulliṅga:sarva:1-3",
+        "sarva_pulliṅga:sarva:2-3",
+        "sarva_pulliṅga:sarva:3-1",
+        "sarva_pulliṅga:sarva:8-3",
+        "tad_pullinga:tad:1-3",
+        "tad_pullinga:tad:2-3",
+        "tad_pullinga:tad:3-1",
+        "vAyu_pulliṅga:vAyu:1-3",
+        "vAyu_pulliṅga:vAyu:2-3",
+        "vAyu_pulliṅga:vAyu:3-1",
+        "vAyu_pulliṅga:vAyu:8-3"
+      ],
+      "source": "1.4.14",
+      "target": "1.3.7",
+      "weight": 83
+    },
+    {
+      "paradigms": [
+        "Pala_napuṃsaka:Pala:3-2",
+        "Pala_napuṃsaka:Pala:4-2",
+        "Pala_napuṃsaka:Pala:4-3",
+        "Pala_napuṃsaka:Pala:5-2",
+        "Pala_napuṃsaka:Pala:5-3",
+        "anya_pullinga:anya:3-2",
+        "anya_pullinga:anya:4-2",
+        "anya_pullinga:anya:4-3",
+        "anya_pullinga:anya:5-2",
+        "anya_pullinga:anya:5-3",
+        "anya_pulliṅga:anya:3-2",
+        "anya_pulliṅga:anya:4-2",
+        "anya_pulliṅga:anya:4-3",
+        "anya_pulliṅga:anya:5-2",
+        "anya_pulliṅga:anya:5-3",
+        "jYAna_napuṃsaka:jYAna:3-2",
+        "jYAna_napuṃsaka:jYAna:4-2",
+        "jYAna_napuṃsaka:jYAna:4-3",
+        "jYAna_napuṃsaka:jYAna:5-2",
+        "jYAna_napuṃsaka:jYAna:5-3",
+        "jnana_napumsaka:jYAna:3-2",
+        "jnana_napumsaka:jYAna:4-2",
+        "jnana_napumsaka:jYAna:4-3",
+        "jnana_napumsaka:jYAna:5-2",
+        "jnana_napumsaka:jYAna:5-3",
+        "latA_strīliṅga:latA:3-2",
+        "latA_strīliṅga:latA:3-3",
+        "latA_strīliṅga:latA:4-2",
+        "latA_strīliṅga:latA:4-3",
+        "latA_strīliṅga:latA:5-2",
+        "latA_strīliṅga:latA:5-3",
+        "nadI_strīliṅga:nadI:3-2",
+        "nadI_strīliṅga:nadI:3-3",
+        "nadI_strīliṅga:nadI:4-2",
+        "nadI_strīliṅga:nadI:4-3",
+        "nadI_strīliṅga:nadI:5-2",
+        "nadI_strīliṅga:nadI:5-3",
+        "rADA_strilinga:rADA:3-2",
+        "rADA_strilinga:rADA:3-3",
+        "rADA_strilinga:rADA:4-2",
+        "rADA_strilinga:rADA:4-3",
+        "rADA_strilinga:rADA:5-2",
+        "rADA_strilinga:rADA:5-3",
+        "rADA_strīliṅga:rADA:3-2",
+        "rADA_strīliṅga:rADA:3-3",
+        "rADA_strīliṅga:rADA:4-2",
+        "rADA_strīliṅga:rADA:4-3",
+        "rADA_strīliṅga:rADA:5-2",
+        "rADA_strīliṅga:rADA:5-3",
+        "rAma_pulliṅga:rAma:3-2",
+        "rAma_pulliṅga:rAma:4-2",
+        "rAma_pulliṅga:rAma:4-3",
+        "rAma_pulliṅga:rAma:5-2",
+        "rAma_pulliṅga:rAma:5-3",
+        "rama_pullinga:rAma:3-2",
+        "rama_pullinga:rAma:4-2",
+        "rama_pullinga:rAma:4-3",
+        "rama_pullinga:rAma:5-2",
+        "rama_pullinga:rAma:5-3",
+        "sarva_pullinga:sarva:3-2",
+        "sarva_pullinga:sarva:4-2",
+        "sarva_pullinga:sarva:4-3",
+        "sarva_pullinga:sarva:5-2",
+        "sarva_pullinga:sarva:5-3",
+        "sarva_pulliṅga:sarva:3-2",
+        "sarva_pulliṅga:sarva:4-2",
+        "sarva_pulliṅga:sarva:4-3",
+        "sarva_pulliṅga:sarva:5-2",
+        "sarva_pulliṅga:sarva:5-3"
+      ],
+      "source": "1.4.14",
+      "target": "1.4.17",
+      "weight": 69
+    },
+    {
+      "paradigms": [
         "Pala_napuṃsaka:Pala:8-1",
         "SamBu_pullinga:SamBu:3-2",
         "SamBu_pullinga:SamBu:3-3",
@@ -3613,66 +3453,6 @@
       "source": "1.4.17",
       "target": "1.4.110",
       "weight": 69
-    },
-    {
-      "paradigms": [
-        "Pala_napuṃsaka:Pala:1-2",
-        "Pala_napuṃsaka:Pala:1-3",
-        "Pala_napuṃsaka:Pala:2-2",
-        "Pala_napuṃsaka:Pala:2-3",
-        "Pala_napuṃsaka:Pala:8-2",
-        "Pala_napuṃsaka:Pala:8-3",
-        "SamBu_pullinga:SamBu:1-3",
-        "SamBu_pullinga:SamBu:8-3",
-        "SamBu_pulliṅga:SamBu:1-3",
-        "SamBu_pulliṅga:SamBu:8-3",
-        "agni_pulliṅga:agni:1-3",
-        "agni_pulliṅga:agni:8-3",
-        "anya_pullinga:anya:1-3",
-        "anya_pullinga:anya:8-3",
-        "anya_pulliṅga:anya:1-3",
-        "anya_pulliṅga:anya:8-3",
-        "guru_pulliṅga:guru:1-3",
-        "guru_pulliṅga:guru:8-3",
-        "hari_pullinga:hari:1-3",
-        "hari_pullinga:hari:8-3",
-        "hari_pulliṅga:hari:1-3",
-        "hari_pulliṅga:hari:8-3",
-        "jYAna_napuṃsaka:jYAna:1-2",
-        "jYAna_napuṃsaka:jYAna:1-3",
-        "jYAna_napuṃsaka:jYAna:2-2",
-        "jYAna_napuṃsaka:jYAna:2-3",
-        "jYAna_napuṃsaka:jYAna:8-2",
-        "jYAna_napuṃsaka:jYAna:8-3",
-        "jnana_napumsaka:jYAna:1-2",
-        "jnana_napumsaka:jYAna:1-3",
-        "jnana_napumsaka:jYAna:2-2",
-        "jnana_napumsaka:jYAna:2-3",
-        "jnana_napumsaka:jYAna:8-2",
-        "jnana_napumsaka:jYAna:8-3",
-        "latA_strīliṅga:latA:1-3",
-        "latA_strīliṅga:latA:8-3",
-        "nadI_strīliṅga:nadI:1-3",
-        "nadI_strīliṅga:nadI:8-3",
-        "rADA_strilinga:rADA:1-3",
-        "rADA_strilinga:rADA:8-3",
-        "rADA_strīliṅga:rADA:1-3",
-        "rADA_strīliṅga:rADA:8-3",
-        "rAma_pulliṅga:rAma:1-3",
-        "rAma_pulliṅga:rAma:8-3",
-        "rama_pullinga:rAma:1-3",
-        "rama_pullinga:rAma:8-3",
-        "sarva_pullinga:sarva:1-3",
-        "sarva_pullinga:sarva:8-3",
-        "sarva_pulliṅga:sarva:1-3",
-        "sarva_pulliṅga:sarva:8-3",
-        "tad_pullinga:tad:1-3",
-        "vAyu_pulliṅga:vAyu:1-3",
-        "vAyu_pulliṅga:vAyu:8-3"
-      ],
-      "source": "1.3.7",
-      "target": "1.3.9",
-      "weight": 68
     },
     {
       "paradigms": [
@@ -3815,75 +3595,6 @@
     },
     {
       "paradigms": [
-        "Pala_napuṃsaka:Pala:1-3",
-        "Pala_napuṃsaka:Pala:2-3",
-        "Pala_napuṃsaka:Pala:8-3",
-        "SamBu_pullinga:SamBu:1-3",
-        "SamBu_pullinga:SamBu:2-3",
-        "SamBu_pullinga:SamBu:8-3",
-        "SamBu_pulliṅga:SamBu:1-3",
-        "SamBu_pulliṅga:SamBu:2-3",
-        "SamBu_pulliṅga:SamBu:8-3",
-        "agni_pulliṅga:agni:1-3",
-        "agni_pulliṅga:agni:2-3",
-        "agni_pulliṅga:agni:8-3",
-        "anya_pullinga:anya:1-3",
-        "anya_pullinga:anya:2-3",
-        "anya_pullinga:anya:8-3",
-        "anya_pulliṅga:anya:1-3",
-        "anya_pulliṅga:anya:2-3",
-        "anya_pulliṅga:anya:8-3",
-        "guru_pulliṅga:guru:1-3",
-        "guru_pulliṅga:guru:2-3",
-        "guru_pulliṅga:guru:8-3",
-        "hari_pullinga:hari:1-3",
-        "hari_pullinga:hari:2-3",
-        "hari_pullinga:hari:8-3",
-        "hari_pulliṅga:hari:1-3",
-        "hari_pulliṅga:hari:2-3",
-        "hari_pulliṅga:hari:8-3",
-        "jYAna_napuṃsaka:jYAna:1-3",
-        "jYAna_napuṃsaka:jYAna:2-3",
-        "jYAna_napuṃsaka:jYAna:8-3",
-        "jnana_napumsaka:jYAna:1-3",
-        "jnana_napumsaka:jYAna:2-3",
-        "jnana_napumsaka:jYAna:8-3",
-        "latA_strīliṅga:latA:1-3",
-        "latA_strīliṅga:latA:2-3",
-        "latA_strīliṅga:latA:8-3",
-        "nadI_strīliṅga:nadI:1-3",
-        "nadI_strīliṅga:nadI:2-3",
-        "nadI_strīliṅga:nadI:8-3",
-        "rADA_strilinga:rADA:1-3",
-        "rADA_strilinga:rADA:2-3",
-        "rADA_strilinga:rADA:8-3",
-        "rADA_strīliṅga:rADA:1-3",
-        "rADA_strīliṅga:rADA:2-3",
-        "rADA_strīliṅga:rADA:8-3",
-        "rAma_pulliṅga:rAma:1-3",
-        "rAma_pulliṅga:rAma:2-3",
-        "rAma_pulliṅga:rAma:8-3",
-        "rama_pullinga:rAma:1-3",
-        "rama_pullinga:rAma:2-3",
-        "rama_pullinga:rAma:8-3",
-        "sarva_pullinga:sarva:1-3",
-        "sarva_pullinga:sarva:2-3",
-        "sarva_pullinga:sarva:8-3",
-        "sarva_pulliṅga:sarva:1-3",
-        "sarva_pulliṅga:sarva:2-3",
-        "sarva_pulliṅga:sarva:8-3",
-        "tad_pullinga:tad:1-3",
-        "tad_pullinga:tad:2-3",
-        "vAyu_pulliṅga:vAyu:1-3",
-        "vAyu_pulliṅga:vAyu:2-3",
-        "vAyu_pulliṅga:vAyu:8-3"
-      ],
-      "source": "1.4.14",
-      "target": "1.3.7",
-      "weight": 62
-    },
-    {
-      "paradigms": [
         "SamBu_pullinga:SamBu:1-1",
         "SamBu_pullinga:SamBu:1-2",
         "SamBu_pullinga:SamBu:2-2",
@@ -3944,65 +3655,6 @@
       "source": "1.4.7",
       "target": "1.2.41",
       "weight": 56
-    },
-    {
-      "paradigms": [
-        "Pala_napuṃsaka:Pala:3-3",
-        "Pala_napuṃsaka:Pala:6-2",
-        "Pala_napuṃsaka:Pala:7-2",
-        "SamBu_pullinga:SamBu:6-2",
-        "SamBu_pullinga:SamBu:7-2",
-        "SamBu_pulliṅga:SamBu:6-2",
-        "SamBu_pulliṅga:SamBu:7-2",
-        "agni_pulliṅga:agni:6-2",
-        "agni_pulliṅga:agni:7-2",
-        "anya_pullinga:anya:3-3",
-        "anya_pullinga:anya:6-2",
-        "anya_pullinga:anya:7-2",
-        "anya_pulliṅga:anya:3-3",
-        "anya_pulliṅga:anya:6-2",
-        "anya_pulliṅga:anya:7-2",
-        "guru_pulliṅga:guru:6-2",
-        "guru_pulliṅga:guru:7-2",
-        "hari_pullinga:hari:6-2",
-        "hari_pullinga:hari:7-2",
-        "hari_pulliṅga:hari:6-2",
-        "hari_pulliṅga:hari:7-2",
-        "jYAna_napuṃsaka:jYAna:3-3",
-        "jYAna_napuṃsaka:jYAna:6-2",
-        "jYAna_napuṃsaka:jYAna:7-2",
-        "jnana_napumsaka:jYAna:3-3",
-        "jnana_napumsaka:jYAna:6-2",
-        "jnana_napumsaka:jYAna:7-2",
-        "latA_strīliṅga:latA:6-2",
-        "latA_strīliṅga:latA:7-2",
-        "nadI_strīliṅga:nadI:6-2",
-        "nadI_strīliṅga:nadI:7-2",
-        "rADA_strilinga:rADA:6-2",
-        "rADA_strilinga:rADA:7-2",
-        "rADA_strīliṅga:rADA:6-2",
-        "rADA_strīliṅga:rADA:7-2",
-        "rAma_pulliṅga:rAma:3-3",
-        "rAma_pulliṅga:rAma:6-2",
-        "rAma_pulliṅga:rAma:7-2",
-        "rama_pullinga:rAma:3-3",
-        "rama_pullinga:rAma:6-2",
-        "rama_pullinga:rAma:7-2",
-        "sarva_pullinga:sarva:3-3",
-        "sarva_pullinga:sarva:6-2",
-        "sarva_pullinga:sarva:7-2",
-        "sarva_pulliṅga:sarva:3-3",
-        "sarva_pulliṅga:sarva:6-2",
-        "sarva_pulliṅga:sarva:7-2",
-        "tad_pullinga:tad:3-3",
-        "tad_pullinga:tad:6-2",
-        "tad_pullinga:tad:7-2",
-        "vAyu_pulliṅga:vAyu:6-2",
-        "vAyu_pulliṅga:vAyu:7-2"
-      ],
-      "source": "1.4.17",
-      "target": "1.4.16",
-      "weight": 52
     },
     {
       "paradigms": [
@@ -4217,6 +3869,55 @@
     },
     {
       "paradigms": [
+        "SamBu_pullinga:SamBu:3-2",
+        "SamBu_pullinga:SamBu:3-3",
+        "SamBu_pullinga:SamBu:4-2",
+        "SamBu_pullinga:SamBu:4-3",
+        "SamBu_pullinga:SamBu:5-2",
+        "SamBu_pullinga:SamBu:5-3",
+        "SamBu_pulliṅga:SamBu:3-2",
+        "SamBu_pulliṅga:SamBu:3-3",
+        "SamBu_pulliṅga:SamBu:4-2",
+        "SamBu_pulliṅga:SamBu:4-3",
+        "SamBu_pulliṅga:SamBu:5-2",
+        "SamBu_pulliṅga:SamBu:5-3",
+        "agni_pulliṅga:agni:3-2",
+        "agni_pulliṅga:agni:3-3",
+        "agni_pulliṅga:agni:4-2",
+        "agni_pulliṅga:agni:4-3",
+        "agni_pulliṅga:agni:5-2",
+        "agni_pulliṅga:agni:5-3",
+        "guru_pulliṅga:guru:3-2",
+        "guru_pulliṅga:guru:3-3",
+        "guru_pulliṅga:guru:4-2",
+        "guru_pulliṅga:guru:4-3",
+        "guru_pulliṅga:guru:5-2",
+        "guru_pulliṅga:guru:5-3",
+        "hari_pullinga:hari:3-2",
+        "hari_pullinga:hari:3-3",
+        "hari_pullinga:hari:4-2",
+        "hari_pullinga:hari:4-3",
+        "hari_pullinga:hari:5-2",
+        "hari_pullinga:hari:5-3",
+        "hari_pulliṅga:hari:3-2",
+        "hari_pulliṅga:hari:3-3",
+        "hari_pulliṅga:hari:4-2",
+        "hari_pulliṅga:hari:4-3",
+        "hari_pulliṅga:hari:5-2",
+        "hari_pulliṅga:hari:5-3",
+        "vAyu_pulliṅga:vAyu:3-2",
+        "vAyu_pulliṅga:vAyu:3-3",
+        "vAyu_pulliṅga:vAyu:4-2",
+        "vAyu_pulliṅga:vAyu:4-3",
+        "vAyu_pulliṅga:vAyu:5-2",
+        "vAyu_pulliṅga:vAyu:5-3"
+      ],
+      "source": "1.4.7",
+      "target": "1.4.17",
+      "weight": 42
+    },
+    {
+      "paradigms": [
         "Pala_napuṃsaka:Pala:1-1",
         "Pala_napuṃsaka:Pala:8-1",
         "SamBu_pullinga:SamBu:1-1",
@@ -4361,6 +4062,48 @@
     },
     {
       "paradigms": [
+        "SamBu_pullinga:SamBu:2-3",
+        "SamBu_pullinga:SamBu:5-1",
+        "SamBu_pullinga:SamBu:6-1",
+        "SamBu_pullinga:SamBu:6-3",
+        "SamBu_pullinga:SamBu:7-3",
+        "SamBu_pulliṅga:SamBu:2-3",
+        "SamBu_pulliṅga:SamBu:5-1",
+        "SamBu_pulliṅga:SamBu:6-1",
+        "SamBu_pulliṅga:SamBu:6-3",
+        "SamBu_pulliṅga:SamBu:7-3",
+        "agni_pulliṅga:agni:2-3",
+        "agni_pulliṅga:agni:5-1",
+        "agni_pulliṅga:agni:6-1",
+        "agni_pulliṅga:agni:6-3",
+        "agni_pulliṅga:agni:7-3",
+        "guru_pulliṅga:guru:2-3",
+        "guru_pulliṅga:guru:5-1",
+        "guru_pulliṅga:guru:6-1",
+        "guru_pulliṅga:guru:6-3",
+        "guru_pulliṅga:guru:7-3",
+        "hari_pullinga:hari:2-3",
+        "hari_pullinga:hari:5-1",
+        "hari_pullinga:hari:6-1",
+        "hari_pullinga:hari:6-3",
+        "hari_pullinga:hari:7-3",
+        "hari_pulliṅga:hari:2-3",
+        "hari_pulliṅga:hari:5-1",
+        "hari_pulliṅga:hari:6-1",
+        "hari_pulliṅga:hari:6-3",
+        "hari_pulliṅga:hari:7-3",
+        "vAyu_pulliṅga:vAyu:2-3",
+        "vAyu_pulliṅga:vAyu:5-1",
+        "vAyu_pulliṅga:vAyu:6-1",
+        "vAyu_pulliṅga:vAyu:6-3",
+        "vAyu_pulliṅga:vAyu:7-3"
+      ],
+      "source": "1.4.7",
+      "target": "1.4.18",
+      "weight": 35
+    },
+    {
+      "paradigms": [
         "Pala_napuṃsaka:Pala:3-2",
         "Pala_napuṃsaka:Pala:4-1",
         "Pala_napuṃsaka:Pala:4-2",
@@ -4481,7 +4224,7 @@
         "tad_pullinga:tad:6-1"
       ],
       "source": "7.1.12",
-      "target": "1.4.17",
+      "target": "1.4.18",
       "weight": 34
     },
     {
@@ -4554,7 +4297,7 @@
         "vAyu_pulliṅga:vAyu:7-1"
       ],
       "source": "1.2.41",
-      "target": "1.4.17",
+      "target": "1.4.18",
       "weight": 29
     },
     {
@@ -4661,6 +4404,39 @@
     },
     {
       "paradigms": [
+        "Pala_napuṃsaka:Pala:6-2",
+        "Pala_napuṃsaka:Pala:7-2",
+        "anya_pullinga:anya:6-2",
+        "anya_pullinga:anya:7-2",
+        "anya_pulliṅga:anya:6-2",
+        "anya_pulliṅga:anya:7-2",
+        "jYAna_napuṃsaka:jYAna:6-2",
+        "jYAna_napuṃsaka:jYAna:7-2",
+        "jnana_napumsaka:jYAna:6-2",
+        "jnana_napumsaka:jYAna:7-2",
+        "latA_strīliṅga:latA:6-2",
+        "latA_strīliṅga:latA:7-2",
+        "nadI_strīliṅga:nadI:6-2",
+        "nadI_strīliṅga:nadI:7-2",
+        "rADA_strilinga:rADA:6-2",
+        "rADA_strilinga:rADA:7-2",
+        "rADA_strīliṅga:rADA:6-2",
+        "rADA_strīliṅga:rADA:7-2",
+        "rAma_pulliṅga:rAma:6-2",
+        "rAma_pulliṅga:rAma:7-2",
+        "rama_pullinga:rAma:6-2",
+        "rama_pullinga:rAma:7-2",
+        "sarva_pullinga:sarva:6-2",
+        "sarva_pullinga:sarva:7-2",
+        "sarva_pulliṅga:sarva:6-2",
+        "sarva_pulliṅga:sarva:7-2"
+      ],
+      "source": "1.4.14",
+      "target": "1.4.16",
+      "weight": 26
+    },
+    {
+      "paradigms": [
         "Pala_napuṃsaka:Pala:7-3",
         "anya_pullinga:anya:2-3",
         "anya_pullinga:anya:7-3",
@@ -4688,7 +4464,7 @@
         "sarva_pulliṅga:sarva:7-3"
       ],
       "source": "1.3.9",
-      "target": "1.4.17",
+      "target": "1.4.18",
       "weight": 25
     },
     {
@@ -4986,34 +4762,6 @@
     },
     {
       "paradigms": [
-        "Pala_napuṃsaka:Pala:3-1",
-        "SamBu_pullinga:SamBu:3-1",
-        "SamBu_pulliṅga:SamBu:3-1",
-        "agni_pulliṅga:agni:3-1",
-        "anya_pullinga:anya:3-1",
-        "anya_pulliṅga:anya:3-1",
-        "guru_pulliṅga:guru:3-1",
-        "hari_pullinga:hari:3-1",
-        "hari_pulliṅga:hari:3-1",
-        "jYAna_napuṃsaka:jYAna:3-1",
-        "jnana_napumsaka:jYAna:3-1",
-        "latA_strīliṅga:latA:3-1",
-        "nadI_strīliṅga:nadI:3-1",
-        "rADA_strilinga:rADA:3-1",
-        "rADA_strīliṅga:rADA:3-1",
-        "rAma_pulliṅga:rAma:3-1",
-        "rama_pullinga:rAma:3-1",
-        "sarva_pullinga:sarva:3-1",
-        "sarva_pulliṅga:sarva:3-1",
-        "tad_pullinga:tad:3-1",
-        "vAyu_pulliṅga:vAyu:3-1"
-      ],
-      "source": "1.3.5",
-      "target": "1.3.9",
-      "weight": 21
-    },
-    {
-      "paradigms": [
         "Pala_napuṃsaka:Pala:2-3",
         "SamBu_pullinga:SamBu:2-3",
         "SamBu_pulliṅga:SamBu:2-3",
@@ -5038,34 +4786,6 @@
       ],
       "source": "1.3.7",
       "target": "1.3.8",
-      "weight": 21
-    },
-    {
-      "paradigms": [
-        "Pala_napuṃsaka:Pala:3-1",
-        "SamBu_pullinga:SamBu:3-1",
-        "SamBu_pulliṅga:SamBu:3-1",
-        "agni_pulliṅga:agni:3-1",
-        "anya_pullinga:anya:3-1",
-        "anya_pulliṅga:anya:3-1",
-        "guru_pulliṅga:guru:3-1",
-        "hari_pullinga:hari:3-1",
-        "hari_pulliṅga:hari:3-1",
-        "jYAna_napuṃsaka:jYAna:3-1",
-        "jnana_napumsaka:jYAna:3-1",
-        "latA_strīliṅga:latA:3-1",
-        "nadI_strīliṅga:nadI:3-1",
-        "rADA_strilinga:rADA:3-1",
-        "rADA_strīliṅga:rADA:3-1",
-        "rAma_pulliṅga:rAma:3-1",
-        "rama_pullinga:rAma:3-1",
-        "sarva_pullinga:sarva:3-1",
-        "sarva_pulliṅga:sarva:3-1",
-        "tad_pullinga:tad:3-1",
-        "vAyu_pulliṅga:vAyu:3-1"
-      ],
-      "source": "1.4.14",
-      "target": "1.3.5",
       "weight": 21
     },
     {
@@ -5255,6 +4975,29 @@
     },
     {
       "paradigms": [
+        "Pala_napuṃsaka:Pala:2-1",
+        "Pala_napuṃsaka:Pala:6-3",
+        "anya_pullinga:anya:6-3",
+        "anya_pulliṅga:anya:6-3",
+        "jYAna_napuṃsaka:jYAna:2-1",
+        "jYAna_napuṃsaka:jYAna:6-3",
+        "jnana_napumsaka:jYAna:2-1",
+        "jnana_napumsaka:jYAna:6-3",
+        "latA_strīliṅga:latA:6-3",
+        "nadI_strīliṅga:nadI:6-3",
+        "rADA_strilinga:rADA:6-3",
+        "rADA_strīliṅga:rADA:6-3",
+        "rAma_pulliṅga:rAma:6-3",
+        "rama_pullinga:rAma:6-3",
+        "sarva_pullinga:sarva:6-3",
+        "sarva_pulliṅga:sarva:6-3"
+      ],
+      "source": "1.4.14",
+      "target": "1.4.18",
+      "weight": 16
+    },
+    {
+      "paradigms": [
         "SamBu_pullinga:SamBu:6-2",
         "SamBu_pullinga:SamBu:7-2",
         "SamBu_pulliṅga:SamBu:6-2",
@@ -5340,6 +5083,27 @@
       ],
       "source": "1.4.18",
       "target": "6.1.103",
+      "weight": 14
+    },
+    {
+      "paradigms": [
+        "SamBu_pullinga:SamBu:6-2",
+        "SamBu_pullinga:SamBu:7-2",
+        "SamBu_pulliṅga:SamBu:6-2",
+        "SamBu_pulliṅga:SamBu:7-2",
+        "agni_pulliṅga:agni:6-2",
+        "agni_pulliṅga:agni:7-2",
+        "guru_pulliṅga:guru:6-2",
+        "guru_pulliṅga:guru:7-2",
+        "hari_pullinga:hari:6-2",
+        "hari_pullinga:hari:7-2",
+        "hari_pulliṅga:hari:6-2",
+        "hari_pulliṅga:hari:7-2",
+        "vAyu_pulliṅga:vAyu:6-2",
+        "vAyu_pulliṅga:vAyu:7-2"
+      ],
+      "source": "1.4.7",
+      "target": "1.4.16",
       "weight": 14
     },
     {
@@ -5686,23 +5450,6 @@
     },
     {
       "paradigms": [
-        "tad_pullinga:tad:2-3",
-        "tad_pullinga:tad:3-2",
-        "tad_pullinga:tad:4-2",
-        "tad_pullinga:tad:4-3",
-        "tad_pullinga:tad:5-2",
-        "tad_pullinga:tad:5-3",
-        "tad_pullinga:tad:6-2",
-        "tad_pullinga:tad:6-3",
-        "tad_pullinga:tad:7-2",
-        "tad_pullinga:tad:7-3"
-      ],
-      "source": "6.1.97",
-      "target": "1.4.17",
-      "weight": 10
-    },
-    {
-      "paradigms": [
         "anya_pullinga:anya:5-1",
         "anya_pullinga:anya:7-1",
         "anya_pulliṅga:anya:5-1",
@@ -5715,7 +5462,7 @@
         "tad_pullinga:tad:7-1"
       ],
       "source": "7.1.15",
-      "target": "1.4.17",
+      "target": "1.4.18",
       "weight": 10
     },
     {
@@ -5732,7 +5479,7 @@
         "tad_pullinga:tad:3-3"
       ],
       "source": "7.1.9",
-      "target": "1.4.17",
+      "target": "1.4.16",
       "weight": 10
     },
     {
@@ -5877,7 +5624,7 @@
         "jnana_napumsaka:jYAna:8-2"
       ],
       "source": "7.1.19",
-      "target": "1.4.17",
+      "target": "1.4.18",
       "weight": 9
     },
     {
@@ -6159,7 +5906,7 @@
         "rADA_strīliṅga:rADA:7-1"
       ],
       "source": "7.3.113",
-      "target": "1.4.17",
+      "target": "1.4.18",
       "weight": 6
     },
     {
@@ -6248,6 +5995,18 @@
     },
     {
       "paradigms": [
+        "tad_pullinga:tad:3-2",
+        "tad_pullinga:tad:4-2",
+        "tad_pullinga:tad:4-3",
+        "tad_pullinga:tad:5-2",
+        "tad_pullinga:tad:5-3"
+      ],
+      "source": "6.1.97",
+      "target": "1.4.17",
+      "weight": 5
+    },
+    {
+      "paradigms": [
         "Pala_napuṃsaka:Pala:4-1",
         "jYAna_napuṃsaka:jYAna:4-1",
         "jnana_napumsaka:jYAna:4-1",
@@ -6255,7 +6014,7 @@
         "rama_pullinga:rAma:4-1"
       ],
       "source": "7.1.13",
-      "target": "1.4.17",
+      "target": "1.4.18",
       "weight": 5
     },
     {
@@ -6267,7 +6026,7 @@
         "tad_pullinga:tad:4-1"
       ],
       "source": "7.1.14",
-      "target": "1.4.17",
+      "target": "1.4.18",
       "weight": 5
     },
     {
@@ -6362,24 +6121,13 @@
     },
     {
       "paradigms": [
-        "latA_strīliṅga:latA:1-1",
-        "nadI_strīliṅga:nadI:1-1",
-        "rADA_strilinga:rADA:1-1",
-        "rADA_strīliṅga:rADA:1-1"
-      ],
-      "source": "6.1.68",
-      "target": "1.4.110",
-      "weight": 4
-    },
-    {
-      "paradigms": [
         "anya_pullinga:anya:8-3",
         "anya_pulliṅga:anya:8-3",
         "sarva_pullinga:sarva:8-3",
         "sarva_pulliṅga:sarva:8-3"
       ],
       "source": "7.1.17",
-      "target": "1.4.17",
+      "target": "1.4.18",
       "weight": 4
     },
     {
@@ -6555,12 +6303,22 @@
     },
     {
       "paradigms": [
+        "tad_pullinga:tad:2-3",
+        "tad_pullinga:tad:6-3",
+        "tad_pullinga:tad:7-3"
+      ],
+      "source": "6.1.97",
+      "target": "1.4.18",
+      "weight": 3
+    },
+    {
+      "paradigms": [
         "Pala_napuṃsaka:Pala:1-1",
         "jYAna_napuṃsaka:jYAna:1-1",
         "jnana_napumsaka:jYAna:1-1"
       ],
       "source": "7.1.24",
-      "target": "1.4.17",
+      "target": "1.4.18",
       "weight": 3
     },
     {
@@ -6609,6 +6367,15 @@
       ],
       "source": "6.1.77",
       "target": "6.1.101",
+      "weight": 2
+    },
+    {
+      "paradigms": [
+        "tad_pullinga:tad:6-2",
+        "tad_pullinga:tad:7-2"
+      ],
+      "source": "6.1.97",
+      "target": "1.4.16",
       "weight": 2
     },
     {
@@ -6766,406 +6533,406 @@
   },
   "nodes": [
     {
-      "avg_time_ns": 33050,
-      "fire_count": 504,
-      "id": "1.4.102",
-      "total_time_ns": 16657597
-    },
-    {
-      "avg_time_ns": 20594,
+      "avg_time_ns": 23439,
       "fire_count": 501,
       "id": "1.2.45",
-      "total_time_ns": 10317783
+      "total_time_ns": 11743302
     },
     {
-      "avg_time_ns": 41860,
+      "avg_time_ns": 34004,
       "fire_count": 501,
-      "id": "1.4.110",
-      "total_time_ns": 20972318
+      "id": "1.4.103",
+      "total_time_ns": 17036169
     },
     {
-      "avg_time_ns": 32956,
+      "avg_time_ns": 35481,
       "fire_count": 501,
       "id": "1.4.13",
-      "total_time_ns": 16511291
+      "total_time_ns": 17776364
     },
     {
-      "avg_time_ns": 32217,
+      "avg_time_ns": 34711,
       "fire_count": 501,
       "id": "1.4.14",
-      "total_time_ns": 16140910
+      "total_time_ns": 17390287
     },
     {
-      "avg_time_ns": 30023,
+      "avg_time_ns": 33638,
       "fire_count": 501,
       "id": "4.1.2",
-      "total_time_ns": 15041741
+      "total_time_ns": 16852743
     },
     {
-      "avg_time_ns": 55178,
-      "fire_count": 355,
-      "id": "1.4.17",
-      "total_time_ns": 19588332
+      "avg_time_ns": 49474,
+      "fire_count": 497,
+      "id": "1.4.110",
+      "total_time_ns": 24588758
     },
     {
-      "avg_time_ns": 127315,
+      "avg_time_ns": 136922,
       "fire_count": 289,
       "id": "1.3.9",
-      "total_time_ns": 36794070
+      "total_time_ns": 39570644
     },
     {
-      "avg_time_ns": 104650,
+      "avg_time_ns": 111084,
       "fire_count": 184,
       "id": "1.4.18",
-      "total_time_ns": 19255648
+      "total_time_ns": 20439619
     },
     {
-      "avg_time_ns": 55675,
+      "avg_time_ns": 62051,
       "fire_count": 168,
       "id": "1.1.73",
-      "total_time_ns": 9353447
+      "total_time_ns": 10424718
     },
     {
-      "avg_time_ns": 91911,
+      "avg_time_ns": 97567,
       "fire_count": 168,
       "id": "1.4.7",
-      "total_time_ns": 15441171
+      "total_time_ns": 16391415
     },
     {
-      "avg_time_ns": 94393,
+      "avg_time_ns": 100489,
       "fire_count": 166,
       "id": "1.2.41",
-      "total_time_ns": 15669296
+      "total_time_ns": 16681212
     },
     {
-      "avg_time_ns": 130091,
+      "avg_time_ns": 142501,
       "fire_count": 165,
       "id": "8.2.66",
-      "total_time_ns": 21465128
+      "total_time_ns": 23512718
     },
     {
-      "avg_time_ns": 129771,
+      "avg_time_ns": 139647,
       "fire_count": 165,
       "id": "8.3.15",
-      "total_time_ns": 21412326
+      "total_time_ns": 23041809
     },
     {
-      "avg_time_ns": 143578,
+      "avg_time_ns": 165981,
+      "fire_count": 119,
+      "id": "1.4.17",
+      "total_time_ns": 19751846
+    },
+    {
+      "avg_time_ns": 348922,
+      "fire_count": 110,
+      "id": "1.3.7",
+      "total_time_ns": 38381470
+    },
+    {
+      "avg_time_ns": 154197,
       "fire_count": 108,
       "id": "1.3.8",
-      "total_time_ns": 15506513
+      "total_time_ns": 16653372
     },
     {
-      "avg_time_ns": 142133,
+      "avg_time_ns": 151099,
       "fire_count": 107,
       "id": "1.1.43",
-      "total_time_ns": 15208284
+      "total_time_ns": 16167666
     },
     {
-      "avg_time_ns": 104442,
+      "avg_time_ns": 113180,
       "fire_count": 96,
       "id": "1.1.27",
-      "total_time_ns": 10026504
+      "total_time_ns": 10865290
     },
     {
-      "avg_time_ns": 401613,
-      "fire_count": 89,
-      "id": "1.3.7",
-      "total_time_ns": 35743584
-    },
-    {
-      "avg_time_ns": 253975,
+      "avg_time_ns": 279262,
       "fire_count": 62,
       "id": "1.3.2",
-      "total_time_ns": 15746502
+      "total_time_ns": 17314283
     },
     {
-      "avg_time_ns": 355167,
+      "avg_time_ns": 372233,
       "fire_count": 52,
       "id": "1.4.16",
-      "total_time_ns": 18468706
+      "total_time_ns": 19356118
     },
     {
-      "avg_time_ns": 308325,
+      "avg_time_ns": 331825,
       "fire_count": 49,
       "id": "1.3.3",
-      "total_time_ns": 15107953
+      "total_time_ns": 16259438
     },
     {
-      "avg_time_ns": 473004,
+      "avg_time_ns": 504178,
       "fire_count": 48,
       "id": "6.1.87",
-      "total_time_ns": 22704218
+      "total_time_ns": 24200588
     },
     {
-      "avg_time_ns": 501553,
+      "avg_time_ns": 539172,
       "fire_count": 44,
       "id": "6.1.78",
-      "total_time_ns": 22068336
+      "total_time_ns": 23723588
     },
     {
-      "avg_time_ns": 538711,
+      "avg_time_ns": 589276,
       "fire_count": 41,
       "id": "6.1.88",
-      "total_time_ns": 22087165
+      "total_time_ns": 24160324
     },
     {
-      "avg_time_ns": 571350,
+      "avg_time_ns": 611779,
       "fire_count": 36,
       "id": "6.1.104",
-      "total_time_ns": 20568634
+      "total_time_ns": 22024044
     },
     {
-      "avg_time_ns": 580234,
+      "avg_time_ns": 622508,
       "fire_count": 35,
       "id": "7.3.102",
-      "total_time_ns": 20308212
+      "total_time_ns": 21787803
     },
     {
-      "avg_time_ns": 568420,
+      "avg_time_ns": 620868,
       "fire_count": 35,
       "id": "7.3.103",
-      "total_time_ns": 19894705
+      "total_time_ns": 21730407
     },
     {
-      "avg_time_ns": 527523,
+      "avg_time_ns": 565921,
       "fire_count": 34,
       "id": "7.1.12",
-      "total_time_ns": 17935785
+      "total_time_ns": 19241332
     },
     {
-      "avg_time_ns": 701048,
+      "avg_time_ns": 752291,
       "fire_count": 29,
       "id": "6.1.102",
-      "total_time_ns": 20330419
+      "total_time_ns": 21816462
     },
     {
-      "avg_time_ns": 815384,
+      "avg_time_ns": 864727,
       "fire_count": 26,
       "id": "6.1.77",
-      "total_time_ns": 21200006
+      "total_time_ns": 22482920
     },
     {
-      "avg_time_ns": 419589,
+      "avg_time_ns": 463758,
       "fire_count": 24,
       "id": "1.4.3",
-      "total_time_ns": 10070142
+      "total_time_ns": 11130209
     },
     {
-      "avg_time_ns": 869303,
+      "avg_time_ns": 937015,
       "fire_count": 24,
       "id": "6.1.107",
-      "total_time_ns": 20863288
+      "total_time_ns": 22488378
     },
     {
-      "avg_time_ns": 909290,
+      "avg_time_ns": 1006579,
       "fire_count": 23,
       "id": "8.3.59",
-      "total_time_ns": 20913670
+      "total_time_ns": 23151338
     },
     {
-      "avg_time_ns": 1483104,
+      "avg_time_ns": 1622176,
       "fire_count": 21,
       "id": "1.1.11",
-      "total_time_ns": 31145193
+      "total_time_ns": 34065701
     },
     {
-      "avg_time_ns": 468670,
+      "avg_time_ns": 504531,
       "fire_count": 21,
       "id": "1.2.72",
-      "total_time_ns": 9842077
+      "total_time_ns": 10595169
     },
     {
-      "avg_time_ns": 1654217,
-      "fire_count": 21,
-      "id": "1.3.5",
-      "total_time_ns": 34738566
-    },
-    {
-      "avg_time_ns": 847692,
+      "avg_time_ns": 929329,
       "fire_count": 21,
       "id": "6.1.97",
-      "total_time_ns": 17801545
+      "total_time_ns": 19515924
     },
     {
-      "avg_time_ns": 708900,
+      "avg_time_ns": 762701,
       "fire_count": 21,
       "id": "7.2.102",
-      "total_time_ns": 14886907
+      "total_time_ns": 16016736
     },
     {
-      "avg_time_ns": 821896,
+      "avg_time_ns": 865137,
       "fire_count": 20,
       "id": "6.1.69",
-      "total_time_ns": 16437924
+      "total_time_ns": 17302744
     },
     {
-      "avg_time_ns": 1194593,
+      "avg_time_ns": 1263726,
       "fire_count": 16,
       "id": "7.1.54",
-      "total_time_ns": 19113499
+      "total_time_ns": 20219630
     },
     {
-      "avg_time_ns": 1461428,
+      "avg_time_ns": 1614472,
       "fire_count": 14,
       "id": "6.1.103",
-      "total_time_ns": 20460005
+      "total_time_ns": 22602616
     },
     {
-      "avg_time_ns": 1506489,
+      "avg_time_ns": 1612899,
       "fire_count": 14,
       "id": "6.1.110",
-      "total_time_ns": 21090846
+      "total_time_ns": 22580592
     },
     {
-      "avg_time_ns": 1425407,
+      "avg_time_ns": 1513757,
       "fire_count": 14,
       "id": "7.3.109",
-      "total_time_ns": 19955702
+      "total_time_ns": 21192609
     },
     {
-      "avg_time_ns": 1681923,
+      "avg_time_ns": 1778932,
       "fire_count": 13,
       "id": "6.1.101",
-      "total_time_ns": 21865004
+      "total_time_ns": 23126127
     },
     {
-      "avg_time_ns": 1531298,
+      "avg_time_ns": 1615044,
       "fire_count": 13,
       "id": "7.3.111",
-      "total_time_ns": 19906880
+      "total_time_ns": 20995583
     },
     {
-      "avg_time_ns": 1656774,
+      "avg_time_ns": 1931429,
       "fire_count": 12,
       "id": "6.4.3",
-      "total_time_ns": 19881293
+      "total_time_ns": 23177159
     },
     {
-      "avg_time_ns": 1825511,
+      "avg_time_ns": 2000937,
       "fire_count": 12,
       "id": "8.4.2",
-      "total_time_ns": 21906136
+      "total_time_ns": 24011246
     },
     {
-      "avg_time_ns": 1641517,
+      "avg_time_ns": 1721308,
       "fire_count": 10,
       "id": "7.1.15",
-      "total_time_ns": 16415173
+      "total_time_ns": 17213084
     },
     {
-      "avg_time_ns": 1816400,
+      "avg_time_ns": 1927829,
       "fire_count": 10,
       "id": "7.1.9",
-      "total_time_ns": 18164001
+      "total_time_ns": 19278296
     },
     {
-      "avg_time_ns": 2082451,
+      "avg_time_ns": 2262456,
       "fire_count": 10,
       "id": "8.2.39",
-      "total_time_ns": 20824515
+      "total_time_ns": 22624567
     },
     {
-      "avg_time_ns": 2139208,
+      "avg_time_ns": 2317658,
       "fire_count": 10,
       "id": "8.4.56",
-      "total_time_ns": 21392088
+      "total_time_ns": 23176588
     },
     {
-      "avg_time_ns": 1955144,
+      "avg_time_ns": 2054050,
       "fire_count": 9,
       "id": "1.1.42",
-      "total_time_ns": 17596296
+      "total_time_ns": 18486457
     },
     {
-      "avg_time_ns": 3725865,
+      "avg_time_ns": 3955685,
       "fire_count": 9,
       "id": "6.4.8",
-      "total_time_ns": 33532785
+      "total_time_ns": 35601172
     },
     {
-      "avg_time_ns": 1898824,
+      "avg_time_ns": 1994687,
       "fire_count": 9,
       "id": "7.1.17",
-      "total_time_ns": 17089422
+      "total_time_ns": 17952191
     },
     {
-      "avg_time_ns": 1918184,
+      "avg_time_ns": 2032072,
       "fire_count": 9,
       "id": "7.1.19",
-      "total_time_ns": 17263661
+      "total_time_ns": 18288649
     },
     {
-      "avg_time_ns": 1928263,
+      "avg_time_ns": 2041840,
       "fire_count": 9,
       "id": "7.1.20",
-      "total_time_ns": 17354372
+      "total_time_ns": 18376567
     },
     {
-      "avg_time_ns": 2065968,
+      "avg_time_ns": 2204801,
       "fire_count": 9,
       "id": "7.1.72",
-      "total_time_ns": 18593720
+      "total_time_ns": 19843217
     },
     {
-      "avg_time_ns": 2810177,
+      "avg_time_ns": 3038227,
       "fire_count": 8,
       "id": "6.4.146",
-      "total_time_ns": 22481416
+      "total_time_ns": 24305823
     },
     {
-      "avg_time_ns": 2913093,
+      "avg_time_ns": 3190703,
       "fire_count": 7,
       "id": "7.3.108",
-      "total_time_ns": 20391657
+      "total_time_ns": 22334921
     },
     {
-      "avg_time_ns": 2846636,
+      "avg_time_ns": 3096298,
       "fire_count": 7,
       "id": "7.3.119",
-      "total_time_ns": 19926458
+      "total_time_ns": 21674090
     },
     {
-      "avg_time_ns": 2873934,
+      "avg_time_ns": 3051351,
       "fire_count": 7,
       "id": "7.3.120",
-      "total_time_ns": 20117540
+      "total_time_ns": 21359461
     },
     {
-      "avg_time_ns": 3007859,
+      "avg_time_ns": 3193588,
       "fire_count": 6,
       "id": "7.3.113",
-      "total_time_ns": 18047158
+      "total_time_ns": 19161530
     },
     {
-      "avg_time_ns": 3592227,
+      "avg_time_ns": 3827180,
       "fire_count": 5,
       "id": "7.1.13",
-      "total_time_ns": 17961136
+      "total_time_ns": 19135904
     },
     {
-      "avg_time_ns": 3320961,
+      "avg_time_ns": 3511410,
       "fire_count": 5,
       "id": "7.1.14",
-      "total_time_ns": 16604808
+      "total_time_ns": 17557053
     },
     {
-      "avg_time_ns": 3598174,
+      "avg_time_ns": 3802256,
       "fire_count": 5,
       "id": "7.1.52",
-      "total_time_ns": 17990874
+      "total_time_ns": 19011283
     },
     {
-      "avg_time_ns": 8701573,
+      "avg_time_ns": 9324090,
       "fire_count": 4,
       "id": "6.1.68",
-      "total_time_ns": 34806294
+      "total_time_ns": 37296363
     },
     {
       "avg_time_ns": 0,
       "fire_count": 3,
       "id": "1.4.101",
       "total_time_ns": 0
+    },
+    {
+      "avg_time_ns": 5309654,
+      "fire_count": 3,
+      "id": "1.4.102",
+      "total_time_ns": 15928963
     },
     {
       "avg_time_ns": 0,
@@ -7198,22 +6965,22 @@
       "total_time_ns": 0
     },
     {
-      "avg_time_ns": 5716877,
+      "avg_time_ns": 6012708,
       "fire_count": 3,
       "id": "7.1.24",
-      "total_time_ns": 17150633
+      "total_time_ns": 18038125
     },
     {
-      "avg_time_ns": 5782419,
+      "avg_time_ns": 6200237,
       "fire_count": 3,
       "id": "7.3.106",
-      "total_time_ns": 17347259
+      "total_time_ns": 18600712
     },
     {
-      "avg_time_ns": 6281128,
+      "avg_time_ns": 6799110,
       "fire_count": 3,
       "id": "7.3.112",
-      "total_time_ns": 18843386
+      "total_time_ns": 20397332
     },
     {
       "avg_time_ns": 0,
@@ -7228,142 +6995,142 @@
       "total_time_ns": 0
     },
     {
-      "avg_time_ns": 14990137,
+      "avg_time_ns": 16278498,
       "fire_count": 1,
       "id": "7.2.106",
-      "total_time_ns": 14990137
+      "total_time_ns": 16278498
     },
     {
-      "avg_time_ns": 16205833,
+      "avg_time_ns": 17231081,
       "fire_count": 1,
       "id": "7.3.107",
-      "total_time_ns": 16205833
+      "total_time_ns": 17231081
     },
     {
-      "avg_time_ns": 18819337,
+      "avg_time_ns": 20361077,
       "fire_count": 1,
       "id": "7.3.116",
-      "total_time_ns": 18819337
+      "total_time_ns": 20361077
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.1",
-      "total_time_ns": 11248506
+      "total_time_ns": 12314284
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.10",
-      "total_time_ns": 12252546
+      "total_time_ns": 13096894
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.12",
-      "total_time_ns": 12467292
+      "total_time_ns": 13375630
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.13",
-      "total_time_ns": 12703578
+      "total_time_ns": 13421913
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.14",
-      "total_time_ns": 8975706
+      "total_time_ns": 9828125
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.15",
-      "total_time_ns": 8874358
+      "total_time_ns": 9543666
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.16",
-      "total_time_ns": 8871667
+      "total_time_ns": 9709616
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.17",
-      "total_time_ns": 13065005
+      "total_time_ns": 14165954
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.18",
-      "total_time_ns": 9119125
+      "total_time_ns": 10004367
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.19",
-      "total_time_ns": 9195176
+      "total_time_ns": 9851893
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.2",
-      "total_time_ns": 11189090
+      "total_time_ns": 11923872
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.20",
-      "total_time_ns": 9099762
+      "total_time_ns": 9687083
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.21",
-      "total_time_ns": 13434857
+      "total_time_ns": 14188794
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.22",
-      "total_time_ns": 9427907
+      "total_time_ns": 10106211
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.23",
-      "total_time_ns": 9533509
+      "total_time_ns": 10189323
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.24",
-      "total_time_ns": 9419241
+      "total_time_ns": 10200208
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.29",
-      "total_time_ns": 9775912
+      "total_time_ns": 10375959
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.3",
-      "total_time_ns": 11265936
+      "total_time_ns": 12124670
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.30",
-      "total_time_ns": 9814585
+      "total_time_ns": 10341260
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.46",
-      "total_time_ns": 13712490
+      "total_time_ns": 14435507
     },
     {
       "avg_time_ns": 0,
@@ -7375,67 +7142,73 @@
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.51",
-      "total_time_ns": 15678164
+      "total_time_ns": 16670341
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.60",
-      "total_time_ns": 11275575
+      "total_time_ns": 12145626
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.61",
-      "total_time_ns": 11411653
+      "total_time_ns": 12194410
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.62",
-      "total_time_ns": 11664336
+      "total_time_ns": 12594191
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.63",
-      "total_time_ns": 11796509
+      "total_time_ns": 12911495
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.7",
-      "total_time_ns": 11205946
+      "total_time_ns": 12059622
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.8",
-      "total_time_ns": 11867922
+      "total_time_ns": 12787326
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.1.9",
-      "total_time_ns": 11914869
+      "total_time_ns": 12742776
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.3.10",
-      "total_time_ns": 22928544
+      "total_time_ns": 24869241
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.3.4",
-      "total_time_ns": 18631678
+      "total_time_ns": 20233371
+    },
+    {
+      "avg_time_ns": 0,
+      "fire_count": 0,
+      "id": "1.3.5",
+      "total_time_ns": 37066879
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.3.6",
-      "total_time_ns": 15298704
+      "total_time_ns": 16790255
     },
     {
       "avg_time_ns": 0,
@@ -7446,32 +7219,26 @@
     {
       "avg_time_ns": 0,
       "fire_count": 0,
-      "id": "1.4.103",
-      "total_time_ns": 19207208
-    },
-    {
-      "avg_time_ns": 0,
-      "fire_count": 0,
       "id": "1.4.4",
-      "total_time_ns": 9953985
+      "total_time_ns": 10588202
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "1.4.5",
-      "total_time_ns": 10526674
+      "total_time_ns": 11385166
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "3.1.1",
-      "total_time_ns": 16609559
+      "total_time_ns": 17879290
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "3.1.2",
-      "total_time_ns": 16488213
+      "total_time_ns": 18461530
     },
     {
       "avg_time_ns": 0,
@@ -7495,31 +7262,31 @@
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "4.1.1",
-      "total_time_ns": 9932423
+      "total_time_ns": 11070423
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "4.1.3",
-      "total_time_ns": 1904956
+      "total_time_ns": 2078705
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "4.1.4",
-      "total_time_ns": 1878422
+      "total_time_ns": 2108166
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "6.1.125",
-      "total_time_ns": 20739204
+      "total_time_ns": 22191521
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "6.1.66",
-      "total_time_ns": 17336401
+      "total_time_ns": 18505042
     },
     {
       "avg_time_ns": 0,
@@ -7531,97 +7298,97 @@
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "6.4.1",
-      "total_time_ns": 18357163
+      "total_time_ns": 19698078
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "6.4.10",
-      "total_time_ns": 18473042
+      "total_time_ns": 19687339
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "6.4.11",
-      "total_time_ns": 15757925
+      "total_time_ns": 16812158
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "6.4.129",
-      "total_time_ns": 22859303
+      "total_time_ns": 25081836
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "6.4.130",
-      "total_time_ns": 20675607
+      "total_time_ns": 23287584
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "6.4.134",
-      "total_time_ns": 20730164
+      "total_time_ns": 22147885
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "6.4.137",
-      "total_time_ns": 19923244
+      "total_time_ns": 21623033
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "6.4.148",
-      "total_time_ns": 23545876
+      "total_time_ns": 25183954
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "7.1.2",
-      "total_time_ns": 16362130
+      "total_time_ns": 17508706
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "7.1.23",
-      "total_time_ns": 17315841
+      "total_time_ns": 18282707
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "7.1.92",
-      "total_time_ns": 20348175
+      "total_time_ns": 21989002
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "7.1.93",
-      "total_time_ns": 16503421
+      "total_time_ns": 17804127
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "7.1.94",
-      "total_time_ns": 15695915
+      "total_time_ns": 16817577
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "7.2.113",
-      "total_time_ns": 16296951
+      "total_time_ns": 17410028
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "7.3.110",
-      "total_time_ns": 15631658
+      "total_time_ns": 16743330
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "7.3.114",
-      "total_time_ns": 17964375
+      "total_time_ns": 19308326
     },
     {
       "avg_time_ns": 0,
@@ -7633,37 +7400,37 @@
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "8.2.1",
-      "total_time_ns": 22208498
+      "total_time_ns": 50489249
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "8.2.30",
-      "total_time_ns": 21161715
+      "total_time_ns": 23547010
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "8.2.7",
-      "total_time_ns": 42587572
+      "total_time_ns": 48152281
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "8.4.1",
-      "total_time_ns": 21500918
+      "total_time_ns": 23374914
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "8.4.40",
-      "total_time_ns": 22137212
+      "total_time_ns": 24226529
     },
     {
       "avg_time_ns": 0,
       "fire_count": 0,
       "id": "8.4.53",
-      "total_time_ns": 21456795
+      "total_time_ns": 23175661
     }
   ]
 }

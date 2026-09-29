@@ -18,51 +18,41 @@ Citation (CONSTITUTION Art. 14)
 """
 from __future__ import annotations
 
-from engine import SutraType, SutraRecord, register_sutra
+from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from phonology import mk
+from phonology    import mk
+from sutras.adhyaya_8.pada_2._tape import (
+    AC, BAS_TO_BHAS, JHAS, dhatu_span, flat, followed_by_jhal_or_end, slp, substitute,
+)
 
 
-def _find(state: State):
-    # Look for [dhatu-like term ending in h] + [pratyaya containing s].
-    for i in range(len(state.terms) - 1):
-        t = state.terms[i]
-        nxt = state.terms[i + 1]
-        if "dhatu" not in t.tags and "anga" not in t.tags:
-            continue
-        if t.meta.get("8_2_31_ho_dha_done"):
-            continue
-        if not t.varnas:
-            continue
-        if t.varnas[-1].slp1 != "h":
-            continue
-        if not nxt.varnas or not any(v.slp1 == "s" for v in nxt.varnas):
-            continue
-        return i
+def _site(state: State):
+    if not state.tripadi_zone:
+        return None
+    c = flat(state)
+    for k in range(len(c)):
+        if slp(c[k]) == "h" and followed_by_jhal_or_end(c, k):
+            return c[k]
     return None
 
 
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    i = _find(state)
-    if i is None:
-        return state
-    t = state.terms[i]
-    t.varnas[-1] = mk("D")
-    t.meta["8_2_31_ho_dha_done"] = True
+    while (hit := _site(state)) is not None:
+        substitute(hit, "Q")
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id="8.2.31",
-    sutra_type=SutraType.VIDHI,
+    sutra_type= SutraType.VIDHI,
     text_slp1='ho QaH',
     text_dev='हो ढः',
     padaccheda_dev="हो / ढः",
-    why_dev="सकारपरे हकारस्य ढकारादेशः (जिघृक्षति)।",
+    why_dev= "हो ढः: ह् → ढ् before a jhal or at the pada end — लिह्+स्य → लिढ्+स्य.",
     anuvritti_from=("8.2.1",),
     cond=cond,
     act=act,

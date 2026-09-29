@@ -17,7 +17,8 @@ from engine.state import State
 def cond(state: State) -> bool:
     if state.samjna_registry.get("1.4.110_avasana") is not None:
         return False
-    return any("pada" in t.tags for t in state.terms)
+    # a pada exists: merged, or marked pada-final by 1.4.14 (सुप्तिङन्तं पदम्)
+    return any("pada" in t.tags or "suptinanta_pada" in t.tags for t in state.terms)
 
 
 def act(state: State) -> State:

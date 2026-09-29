@@ -20,41 +20,38 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology    import mk
-from phonology.pratyahara import JHAL
+from sutras.adhyaya_8.pada_2._tape import (
+    AC, BAS_TO_BHAS, JHAS, dhatu_span, flat, followed_by_jhal_or_end, slp, substitute,
+)
 
 
-def _find(state: State):
-    if not state.terms:
+_J_ROOTS = frozenset({"sfj", "mfj", "mArj", "yaj", "rAj", "BrAj"})
+
+
+def _site(state: State):
+    if not state.tripadi_zone:
         return None
-    t = state.terms[0]
-    if t.meta.get("8_2_36_sha_done"):
-        return None
-    if state.meta.get("P031_8_2_36_S_before_jhal_arm"):
-        for i in range(len(t.varnas) - 1):
-            if t.varnas[i].slp1 == "S" and t.varnas[i + 1].slp1 in JHAL:
-                return (0, i)
-    # Narrow demo: allow final S (ś) → z (ṣ) when recipe-armed (pRSTvA).
-    if state.meta.get("8_2_36_sh_to_sh_arm") and t.varnas and t.varnas[-1].slp1 == "S":
-        return (0, len(t.varnas) - 1)
-    for i in range(1, len(t.varnas)):
-        if t.varnas[i - 1].slp1 == "r" and t.varnas[i].slp1 == "j":
-            return (0, i)
+    c = flat(state)
+    for k in range(len(c)):
+        ch = slp(c[k])
+        if ch not in ("S", "C", "j") or not followed_by_jhal_or_end(c, k):
+            continue
+        span = dhatu_span(c, k)
+        if not span or span[1] != k:
+            continue
+        root = "".join(slp(x) for x in c[span[0]:span[1] + 1])
+        if ch in ("S", "C") or root in _J_ROOTS:
+            return c[k]
     return None
 
 
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    hit = _find(state)
-    if hit is None:
-        return state
-    ti, i = hit
-    state.terms[ti].varnas[i] = mk("z")
-    state.terms[ti].meta["8_2_36_sha_done"] = True
-    state.meta.pop("8_2_36_sh_to_sh_arm", None)
-    state.meta.pop("P031_8_2_36_S_before_jhal_arm", None)
+    while (hit := _site(state)) is not None:
+        substitute(hit, "z")
     return state
 
 
@@ -64,7 +61,7 @@ SUTRA = SutraRecord(
     text_slp1      = 'vraScaBrasjasfjamfjayajarAjaBrAjacCaSAM zaH',
     text_dev       = 'व्रश्चभ्रस्जसृजमृजयजराजभ्राजच्छशां षः',
     padaccheda_dev = "व्रश्च-भ्रस्ज-सृज-मृज-यज-राज-भ्राज-च्छ-शाम् / षः",
-    why_dev        = "एतेषु धातुषु अन्त्य-जकारस्य षकारादेशः (ग्लास-बॉक्स् narrow)।",
+    why_dev        = "व्रश्चभ्रस्ज…च्छशां षः: a dhātu-final श्/छ् (and सृज्, मृज्, यज्, राज्, भ्राज्) → ष् before a jhal or at the pada end (apavāda of 8.2.30) — दंश्+स्य, सृज्+त → सृष्ट.",
     anuvritti_from = ("8.2.1",),
     cond           = cond,
     act            = act,

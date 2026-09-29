@@ -757,9 +757,7 @@ def P00_ugit_pratipadika_prathama_sup_tail(s: State) -> State:
     s = apply_rule("1.4.14", s)
     s = apply_rule("1.1.7", s)
     _pada_merge(s)
-    s = apply_rule("8.2.1", s)
-    s = apply_rule("8.2.23", s)
-    return s
+    return P00_tripadi_rutva_visarga(s)     # the whole tripādī (8.2.23, 8.4.41 ष्टुत्व …)
 
 
 def P00_lashakvataddhite_anunasikanta_it_lopa_chain(s: State) -> State:
@@ -793,10 +791,7 @@ def P00_ciY_ktavatu_nistha_prathama_tail(s: State) -> State:
 
     s = apply_rule("6.1.111", s)
     _pada_merge(s)
-    if s.meta.pop("ktavatu_mfz_stuta_arm", None):
-        s.meta["8_4_40_pre_tripadi_arm"] = True
-        s = apply_rule("8.4.40", s)
-        s.meta.pop("8_4_40_pre_tripadi_arm", None)
+    s.meta.pop("ktavatu_mfz_stuta_arm", None)   # ष्टुत्व now comes in the tripādī (8.4.41)
     return P00_ugit_pratipadika_prathama_sup_tail(s)
 
 
@@ -1044,6 +1039,14 @@ def P00_ciY_lat_jhi_snu_tripadi_tail(s: State) -> State:
 
     _pada_merge(s)
     s = P00_tripadi_rutva_visarga(s)
+    return s
+
+
+def P00_ktva_avyaya_then_tripadi(s: State) -> State:
+    """*ktvānta*: 1.1.40 क्त्वातोसुन्कसुनः (avyaya) → 2.4.82 अव्ययादाप्सुपः (sup-luk),
+    then 8.2.1 opens the tripādī."""
+    for sid in ("1.1.40", "2.4.82", "8.2.1"):
+        s = apply_rule(sid, s)
     return s
 
 
@@ -1385,19 +1388,15 @@ def P13_subanta_iti_anga_sandhi_to_pada(s: State) -> State:
     )
     t = SUBANTA_RULE_IDS_POST_4_1_2
     i8 = t.index("8.2.1")
-    for rid in t[:i8]:
-        if rid == PADA_MERGE_STEP:
-            # 8.2.7 n-lopa (rAjan+Bis -> rAj+Bis) needs two live terms to see
-            # the stem+sup boundary the merge is about to erase — run it here,
-            # before the merge. (Doesn't need tripadi_zone open first: unlike
-            # 8.2.66's shared premerge branch, this one's own signature
-            # — an_pratipadika stem + sup HAL-initial — is narrow enough to
-            # stay safe pre-zone, and 1.4.110 right after this still needs
-            # the zone closed, so 8.2.1 itself must not fire yet.)
-            s = apply_rule("8.2.7", s)
-            _pada_merge(s)
-        else:
-            s = apply_rule(rid, s)
+    head = [rid for rid in t[:i8] if rid != PADA_MERGE_STEP]
+    for rid in head:                       # the whole sapādasaptādhyāyī part first
+        s = apply_rule(rid, s)
+    # then पूर्वत्रासिद्धम्: 8.2.7 n-lopa (राजन्+भिस् → राज+भिस्) is tripādī — asiddha to
+    # every rule above (so 7.1.9 never sees an a-final राज). It still needs the
+    # stem+sup boundary, so it runs before the pada merge.
+    s = apply_rule("8.2.1", s)
+    s = apply_rule("8.2.7", s)
+    _pada_merge(s)
     return s
 
 

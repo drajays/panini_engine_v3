@@ -158,10 +158,11 @@ def test_siti_pada_1_4_16_blocks_bha_yus():
 
 
 def test_bha_badhas_pada_1_4_17_Sas_order():
-    """**1.4.17** *pada* on stem, then **1.4.18** *bha* removes ``pada_1_4_17``."""
+    """आ कडारादेका संज्ञा (1.4.1) + विप्रतिषेधे परं कार्यम् (1.4.2): before a
+    yac-initial ending only **1.4.18** *bha* applies — **1.4.17** *pada* never does."""
     s0 = State(terms=[_anga_pullinga(), _sup_Sas_first_S()])
     s1 = apply_rule("1.4.17", s0)
-    assert "pada_1_4_17" in s1.terms[0].tags
+    assert "pada_1_4_17" not in s1.terms[0].tags
     s2 = apply_rule("1.4.16", s1)
     assert "pada_1_4_16" not in s2.terms[0].tags
     s3 = apply_rule("1.4.18", s2)

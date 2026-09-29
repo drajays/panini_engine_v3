@@ -36,9 +36,15 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     "8.2.25",   # dhi ca — s drops before dh (ऐधिध्वम्, भविताध्वे)
     "8.2.27",   # hrasvād aṅgāt — sic-s drops after a short aṅga before jhal (अकृत)
     "8.2.26",   # jhalo jhali — sic's s between jhals drops (अपाक्ताम्, अपक्त)
+    "8.2.36",   # व्रश्च…च्छशां षः — dhātu-final श्/छ्/(सृज्…) → ष् (apavāda of 8.2.30)
     "8.2.30",   # coḥ kuḥ — c/j → k/g before jhal or at pada-end (पच्+ता → पक्ता)
+    "8.2.32",   # दादेर्धातोर्घः — द्-initial dhātu's ह् → घ् (apavāda of 8.2.31)
+    "8.2.34",   # नहो धः — नह्'s ह् → ध् (apavāda of 8.2.31)
+    "8.2.31",   # हो ढः — ह् → ढ् before jhal / at pada-end
+    "8.2.37",   # एकाचो बशो भष्… — दुघ्+स् → धुघ्+स्
     "8.2.39",   # jhal padānte → jaś (t→d at word-end)
     "8.2.40",   # jhaṣ+t/th → dh (लब्ध, दुग्ध+ति→दुग्ध्धि; idempotent gate)
+    "8.2.41",   # षढोः कः सि — ष्/ढ् before स् → क् (लेक्ष्यति, दंक्ष्यति)
     "8.2.66",   # sasajuṣo ruḥ — s→r at word-end
     "8.2.77",   # hali ca — dhātu r/v + hal: दीव्यति
     "8.2.78",   # upadhāyāṃ ca — upadhā r/v: मूर्वति, ऊर्दते

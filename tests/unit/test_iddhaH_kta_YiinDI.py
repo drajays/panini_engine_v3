@@ -17,7 +17,7 @@ def test_P001_D_spine_pre_tripadi_cluster_then_subanta():
     assert "8.2.40" in ids
     assert "8.4.53" in ids
     assert "1.2.46" in ids
-    assert ids.index("8.2.40") < ids.index("8.4.53") < ids.index("1.2.46")
+    assert ids.index("1.2.46") < ids.index("8.2.1") < ids.index("8.2.40") < ids.index("8.4.53")   # tripādī last
     assert "4.1.2" in ids
     assert "8.2.1" in ids
-    assert ids.index("8.4.53") < ids.index("4.1.2") < ids.index("8.2.1")
+    assert ids.index("4.1.2") < ids.index("8.2.1") < ids.index("8.4.53")   # सु, then the tripādī

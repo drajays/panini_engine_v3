@@ -23,8 +23,10 @@ def test_8_4_17_does_not_apply_without_tripadi_or_meta_arm() -> None:
     s1 = apply_rule("8.4.17", s0)
     # No arm, no *Tripāḍī* — rule does not run
     assert s1.terms[1].varnas[0].slp1 == "n"
+    # no arm can pull a tripādī rule forward: it applies once 8.2.1 has opened the zone
     s1.meta["8_4_17_pre_tripadi_arm"] = True
-    s2 = apply_rule("8.4.17", s1)
+    assert apply_rule("8.4.17", s1).terms[1].varnas[0].slp1 == "n"
+    s2 = apply_rule("8.4.17", apply_rule("8.2.1", s1))
     assert s2.terms[1].varnas[0].slp1 == "R"
 
 

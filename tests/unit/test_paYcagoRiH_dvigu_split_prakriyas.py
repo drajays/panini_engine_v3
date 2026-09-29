@@ -19,7 +19,7 @@ def test_P011_json_spine_order_and_surface():
 
     assert ids.index("2.1.3") < ids.index("2.1.51")
     assert ids.index("2.1.51") < ids.index("8.2.7")
-    assert ids.index("8.2.7") < ids.index("4.1.76")
+    assert ids.index("4.1.76") < ids.index("8.2.1") < ids.index("8.2.7")   # tripādī last
     assert ids.index("4.1.76") < ids.index("5.1.37") < ids.index("5.1.28")
     assert ids.index("5.1.28") < ids.index("2.4.71") < ids.index("1.2.48")
     assert ids.index("1.2.48") < ids.index("4.1.2") < ids.index("8.2.66") < ids.index("8.3.15")

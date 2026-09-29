@@ -47,7 +47,8 @@ def _terms_needing_sup_102_vacana(state: State) -> list[Term]:
 
 
 def cond(state: State) -> bool:
-    return bool(terms_needing_tin_102_vacana(state)) or bool(_terms_needing_sup_102_vacana(state))
+    # tiṅ only — the sup triplets get their vacana by 1.4.103 सुपः
+    return bool(terms_needing_tin_102_vacana(state))
 
 
 def _apply_vacana_102(t: Term) -> None:
@@ -72,7 +73,7 @@ def _apply_sup_vacana_102(t: Term) -> None:
 
 def act(state: State) -> State:
     tin_pending = terms_needing_tin_102_vacana(state)
-    sup_pending = _terms_needing_sup_102_vacana(state)
+    sup_pending: list[Term] = []
     state.samjna_registry["1.4.102_tin_vacana"] = TIN_102_VACANA_ORDER
     for t in tin_pending:
         _apply_vacana_102(t)

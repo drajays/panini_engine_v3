@@ -74,10 +74,9 @@ def _eligible(state: State):
         v = vs[j]
         if v.slp1 not in NI_TU_DU:
             continue
-        # a dhātu's marker is the unit ञि / टु / डु (टिकृँ, अटँ keep their ṭ)
-        if "dhatu" in term.tags and (
-            len(vs) < 2 or vs[1].slp1 != {"Y": "i", "w": "u", "q": "u"}[v.slp1]
-        ):
+        # the marker is the unit ञि / टु / डु (टिकृँ, अटँ keep their ṭ); a pratyaya's
+        # initial ट् / ञ् alone (टा, ञ्य) is 1.3.7 चुटू's, not this sūtra's
+        if len(vs) < 2 or vs[1].slp1 != {"Y": "i", "w": "u", "q": "u"}[v.slp1]:
             continue
         if v.tags & IT_LOPA_TAGS:
             continue

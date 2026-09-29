@@ -355,7 +355,7 @@ def test_P001_A_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P001-A")
     assert hit["target"]["iast"] == "bhinnaḥ"
-    assert derive_bhinnaH().flat_slp1() == "bhinnaH"
+    assert derive_bhinnaH().flat_slp1() == "BinnaH"
 
 
 def test_P001_B_bundle_target_matches_pipeline(corrected_v2: dict) -> None:

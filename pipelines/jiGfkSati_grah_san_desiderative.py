@@ -61,10 +61,6 @@ def derive_jiGfkSati() -> State:
     s = apply_rule("7.4.62", s)
     s = apply_rule("7.4.79", s)
 
-    # h->D then g->G then D->k before s of san.
-    s = apply_rule("8.2.31", s)
-    s = apply_rule("8.2.37", s)
-    s = apply_rule("8.2.41", s)
     # Narrow cleanup for this demo: treat the san residue as bare `s` so k+s→k+ṣ can fire.
     for t in s.terms:
         if "sanadi" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() == "is":
@@ -87,8 +83,19 @@ def derive_jiGfkSati() -> State:
         s = apply_rule(sid, s)
     # final merge to one pada
     _pada_merge(s)
-    # Enter tripāḍī and apply ks->kS.
+    # this demo merges abhyāsa + root + san by hand, so it marks the ekāc root
+    # (गृह्) that 8.2.37 एकाचो बशो भष्… reads
+    vs = s.terms[0].varnas
+    flat_ = "".join(v.slp1 for v in vs)
+    at = flat_.find("gfh")
+    for v in vs[at:at + 3] if at >= 0 else []:
+        v.tags.add("mula_dhatu_v")
+    # Tripāḍī last (8.2.1 पूर्वत्रासिद्धम्): h → ḍh (8.2.31), g → gh (8.2.37),
+    # ḍh → k before s (8.2.41), then s → ṣ.
     s = apply_rule("8.2.1", s)
+    s = apply_rule("8.2.31", s)
+    s = apply_rule("8.2.37", s)
+    s = apply_rule("8.2.41", s)
     s.meta["8_3_46_ksatva_arm"] = True
     s = apply_rule("8.3.46", s)
     return s

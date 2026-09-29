@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_ktva_avyaya_then_tripadi
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -82,10 +83,9 @@ def derive_uzitvA() -> State:
     s = State(terms=[dhatu, _ktvA_with_sup(), _sup_su()], meta={}, trace=[])
     s = _samprasaran_v_to_u_on_first_term(s)
     s = apply_rule("6.1.108", s)
+    s = P00_ktva_avyaya_then_tripadi(s)  # tripādī last: 8.3.60 शासिवसिघसीनां च
     s.meta["shasi_vasi_recipe"] = True
     s = apply_rule("8.3.60", s)
-    s = apply_rule("1.1.40", s)
-    s = apply_rule("2.4.82", s)
     return s
 
 

@@ -59,9 +59,6 @@ def derive_paYcagoRiH_dvigu_split_prakriyas_P011() -> State:
     s = apply_rule("2.1.3", s)
     s = apply_rule("2.1.51", s)
 
-    # paYcan-goRI boundary: drop final n of paYcan (JSON cites 8.2.7).
-    s.meta["purvapada_n_lopa_recipe"] = True
-    s = apply_rule("8.2.7", s)
 
     # taddhita “tena krītam” stamps and luk-note stamp (no varṇa mutation here).
     s.meta["prakriya_P011_tena_krItam_note"] = True
@@ -82,9 +79,18 @@ def derive_paYcagoRiH_dvigu_split_prakriyas_P011() -> State:
     s.meta["1_2_48_arm"] = True
     s = apply_rule("1.2.48", s)
 
-    # Finish as a subanta nom.sg: merge + su + ru + ḥ.
-    s = P00_subanta_prathama_su_tripadi_visarga(s)
-    return s
+    # Finish as a subanta nom.sg: सु on the samāsa (members still separate), then
+    # the tripādī — 8.2.7 drops पञ्चन्'s n at the pūrvapada's end — then the merge.
+    from core.canonical_pipelines import P00_attach_su_it_lopa, P00_tripadi_rutva_visarga
+    from pipelines.subanta import _pada_merge
+
+    s.meta["vibhakti_vacana"] = "1-1"
+    s = P00_attach_su_it_lopa(s)
+    s = apply_rule("8.2.1", s)
+    s.meta["purvapada_n_lopa_recipe"] = True
+    s = apply_rule("8.2.7", s)
+    _pada_merge(s)
+    return P00_tripadi_rutva_visarga(s)
 
 
 __all__ = ["derive_paYcagoRiH_dvigu_split_prakriyas_P011"]

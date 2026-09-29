@@ -122,6 +122,14 @@ def _only_self_announced(before, after) -> bool:
             and all(k.endswith("_kind") for k in meta_diff))
 
 
+def _is_tripadi(sutra_id: str) -> bool:
+    """8.2.2 … 8.4.68 (8.2.1 itself opens the zone)."""
+    parts = sutra_id.split(".")
+    if len(parts) != 3 or parts[0] != "8" or not all(p.isdigit() for p in parts):
+        return False
+    return int(parts[1]) >= 3 or (parts[1] == "2" and int(parts[2]) >= 2)
+
+
 def _tape_marks(state: State):
     """The saṃjñās/marks carried on the tape: term kinds and tags, varṇa tags."""
     return tuple(
@@ -170,6 +178,20 @@ def apply_rule(
             make_skipped_step(
                 sutra_id, stype.name, contract["dev_label"], form_before,
                 rec.why_dev, "ASIDDHA-GATE (cannot fire outside Tripāḍī once entered)",
+            ),
+            prev_sutra, sutra_id,
+        )
+        return _finish_apply_rule(prev_sutra, sutra_id, new_state)
+
+    # ── Gate 1b: the Tripāḍī is not open yet ─────────────────────────
+    # 8.2.2–8.4.68 apply only after the sapādasaptādhyāyī, once 8.2.1
+    # पूर्वत्रासिद्धम् has opened the zone; consulted earlier they have no say.
+    if _is_tripadi(sutra_id) and not new_state.tripadi_zone:
+        _append_traced_step(
+            new_state,
+            make_skipped_step(
+                sutra_id, stype.name, contract["dev_label"], form_before,
+                rec.why_dev, "TRIPADI-NOT-OPEN",
             ),
             prev_sutra, sutra_id,
         )

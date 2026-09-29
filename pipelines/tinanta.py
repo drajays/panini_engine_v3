@@ -1510,6 +1510,7 @@ def _derive_ashir_liG(state: State, pada_key: str, purusha: int, vacana: int) ->
 
     state = apply_rule("6.1.66", state)
 
+    state = apply_rule("8.2.1", state)     # पूर्वत्रासिद्धम्: 8.2.29 is tripādī
     state.meta["ashir_8_2_29_recipe"] = True
     state = apply_rule("8.2.29", state)
     state.meta.pop("ashir_8_2_29_recipe", None)
@@ -1699,14 +1700,14 @@ def _derive_liG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
     state = apply_rule("3.4.107", state)
     state.meta.pop("suw_recipe", None)
 
-    state.meta["liG_ad_8_2_29_suw_recipe"] = True
-    state = apply_rule("8.2.29", state)
-    state.meta.pop("liG_ad_8_2_29_suw_recipe", None)
-
     state = apply_rule("1.4.13", state)
     state = apply_rule("1.1.5", state)
     state = apply_rule("1.4.14", state)
     state = apply_rule("6.1.101", state)
+    state = apply_rule("8.2.1", state)     # पूर्वत्रासिद्धम्: 8.2.29 is tripādī
+    state.meta["liG_ad_8_2_29_suw_recipe"] = True
+    state = apply_rule("8.2.29", state)
+    state.meta.pop("liG_ad_8_2_29_suw_recipe", None)
 
     _pada_merge(state)
     if purusha == 3 and vacana == 1:

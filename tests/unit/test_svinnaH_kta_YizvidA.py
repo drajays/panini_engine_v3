@@ -17,4 +17,4 @@ def test_P001_C_spine_bundle_order():
     assert "6.1.64" in ids
     assert "8.2.42" in ids
     assert "1.2.46" in ids
-    assert ids.index("6.1.64") < ids.index("8.2.42") < ids.index("1.2.46")
+    assert ids.index("6.1.64") < ids.index("1.2.46") < ids.index("8.2.1") < ids.index("8.2.42")   # tripādī last

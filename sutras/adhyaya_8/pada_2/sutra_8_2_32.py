@@ -23,51 +23,44 @@ Citation (CONSTITUTION Art. 14)
 """
 from __future__ import annotations
 
-from engine        import SutraType, SutraRecord, register_sutra
-from engine.state  import State
-from phonology     import mk
-from phonology.pratyahara import JHAL
+from engine       import SutraType, SutraRecord, register_sutra
+from engine.state import State
+from phonology    import mk
+from sutras.adhyaya_8.pada_2._tape import (
+    AC, BAS_TO_BHAS, JHAS, dhatu_span, flat, followed_by_jhal_or_end, slp, substitute,
+)
 
 
-def _find(state: State):
-    if len(state.terms) < 2:
+def _site(state: State):
+    if not state.tripadi_zone:
         return None
-    for i in range(len(state.terms) - 1):
-        t, nxt = state.terms[i], state.terms[i + 1]
-        if "dhatu" not in t.tags and "anga" not in t.tags:
+    c = flat(state)
+    for k in range(len(c)):
+        if slp(c[k]) != "h" or not followed_by_jhal_or_end(c, k):
             continue
-        if t.meta.get("8_2_32_dader_Gah_done"):
-            continue
-        if not t.varnas or t.varnas[0].slp1 != "d" or t.varnas[-1].slp1 != "h":
-            continue
-        if not nxt.varnas or nxt.varnas[0].slp1 not in JHAL:
-            continue
-        return i
+        span = dhatu_span(c, k)
+        if span and span[1] == k and slp(c[span[0]]) == "d":
+            return c[k]
     return None
 
 
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    i = _find(state)
-    if i is None:
-        return state
-    t = state.terms[i]
-    t.varnas[-1] = mk("G")
-    t.meta["8_2_32_dader_Gah_done"] = True
+    while (hit := _site(state)) is not None:
+        substitute(hit, "G")
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "8.2.32",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "dAderDAtorGaH",
     text_dev              = "दादेर्धातोर्घः",
     padaccheda_dev        = "द्-आदेः धातोः घः",
-    why_dev               = "द्-आदि धातोः हकारस्य झलि घकारादेशः (दुह्→दुघ्, अपवादः 8.2.31)।",
+    why_dev               = "दादेर्धातोर्घः: the ह् of a द्-initial dhātu → घ् (apavāda of 8.2.31) — दुह् → दुघ्, दह् → दघ्.",
     anuvritti_from        = ('8.2.31',),
     cond                  = cond,
     act                   = act,

@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
+from core.canonical_pipelines import P00_ktva_avyaya_then_tripadi
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -67,19 +68,15 @@ def derive_pfzwvA() -> State:
     s = apply_rule("1.1.45", s)
     s = apply_rule("6.1.108", s)
 
-    # cch->ś then ś->ṣ then ṭutva.
+    # 6.4.19 छ्वोः शूडनुनासिके च: cch → ś
     s = apply_rule("6.4.19", s)
-    s.meta["8_2_36_sh_to_sh_arm"] = True
-    s = apply_rule("8.2.36", s)
     # avyaya + sup-luk ghost (must happen while sup is a separate term).
-    s = apply_rule("1.1.40", s)
-    s = apply_rule("2.4.82", s)
-
-    # Merge to a single pada so z+t become adjacent; then open tripāḍī.
+    # Tripāḍī last: 8.2.36 ś → ṣ (before the jhal t), then 8.4.41 ṣṭutva.
     from pipelines.subanta import _pada_merge  # noqa: PLC0415
 
+    s = P00_ktva_avyaya_then_tripadi(s)
+    s = apply_rule("8.2.36", s)
     _pada_merge(s)
-    s = apply_rule("8.2.1", s)
     s = apply_rule("8.4.41", s)
     return s
 

@@ -24,6 +24,7 @@ def test_sutra_metadata():
 def test_act_pushes_scope_once():
     t = Term(kind="prakriti", varnas=[mk("a")])
     s0 = State(terms=[t])
+    s0.tripadi_zone = True           # tripādī adhikāras live after 8.2.1 पूर्वत्रासिद्धम्
     s1 = apply_rule("8.3.2", s0)
     assert any(e.get("id") == "8.3.2" for e in s1.adhikara_stack)
     s2 = apply_rule("8.3.2", s1)

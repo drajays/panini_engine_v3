@@ -16,50 +16,41 @@ Citation (CONSTITUTION Art. 14)
 """
 from __future__ import annotations
 
-from engine import SutraType, SutraRecord, register_sutra
+from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from phonology import mk
+from phonology    import mk
+from sutras.adhyaya_8.pada_2._tape import (
+    AC, BAS_TO_BHAS, JHAS, dhatu_span, flat, followed_by_jhal_or_end, slp, substitute,
+)
 
 
-def _find(state: State):
-    for i in range(len(state.terms) - 1):
-        t = state.terms[i]
-        nxt = state.terms[i + 1]
-        if "dhatu" not in t.tags and "anga" not in t.tags:
-            continue
-        if t.meta.get("8_2_41_shadhoh_done"):
-            continue
-        if not t.varnas or not nxt.varnas:
-            continue
-        if not any(v.slp1 == "s" for v in nxt.varnas):
-            continue
-        if t.varnas[-1].slp1 != "D":
-            continue
-        return i
+def _site(state: State):
+    if not state.tripadi_zone:
+        return None
+    c = flat(state)
+    for k in range(len(c) - 1):
+        if slp(c[k]) in ("z", "Q") and slp(c[k + 1]) == "s":
+            return c[k]
     return None
 
 
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    i = _find(state)
-    if i is None:
-        return state
-    t = state.terms[i]
-    t.varnas[-1] = mk("k")
-    t.meta["8_2_41_shadhoh_done"] = True
+    while (hit := _site(state)) is not None:
+        substitute(hit, "k")
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id="8.2.41",
-    sutra_type=SutraType.VIDHI,
+    sutra_type= SutraType.VIDHI,
     text_slp1='zaQoH kaH si',
     text_dev='षढोः कः सि',
     padaccheda_dev="षढोः / कः / सि",
-    why_dev="सकारपरे ढकारस्य ककारादेशः (जिघृक्षति)।",
+    why_dev= "षढोः कः सि: ष्/ढ् before स् → क् — लेढ्+स्य → लेक्+स्य.",
     anuvritti_from=("8.2.1",),
     cond=cond,
     act=act,

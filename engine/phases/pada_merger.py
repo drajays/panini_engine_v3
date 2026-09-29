@@ -71,6 +71,9 @@ def pada_merge(state: State) -> None:
         if "dhatu" in t.tags and "abhyasa" not in t.tags:
             for v in t.varnas:           # 8.2.76–79 need "the dhātu's r/v" after the merge
                 v.tags.add("dhatu_v")
+        if "abhyasa" in t.tags:          # the abhyāsa is not the dhātu (8.2.37 एकाचो…)
+            for v in t.varnas:
+                v.tags.add("abhyasa_v")
         all_varnas.extend(t.varnas)
 
     # ── Build merged Term ─────────────────────────────────────────────────────

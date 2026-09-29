@@ -35,6 +35,7 @@ from engine       import apply_rule
 from engine.state import State, Term, Varna
 from pipelines.preflight_lopa_samjna import apply_preflight_luk_samjna_block
 from core.canonical_pipelines import (
+    P00_attach_su_it_lopa,
     P00_guna_rapara_ayadi,
     P01_samjna_1_1_15_to_1_1_24,
     P01_samjna_1_1_3_to_1_1_100,
@@ -607,6 +608,22 @@ def _derive_kta_manual_it_chain(dhatu_upadesha: str) -> State:
     return s
 
 
+def _nistha_prathama_then_tripadi(s: State) -> State:
+    """The kṛdanta is a prātipadika (1.2.46), takes सु, and only then does the
+    Tripāḍī run on the whole pada (8.2.1 पूर्वत्रासिद्धम्): 8.2.42 न for त,
+    8.2.40 ध, 8.4.41 ष्टुत्व, 8.4.53 जश्, 8.2.66/8.3.15 visarga."""
+    from pipelines.subanta import _pada_merge
+
+    s = apply_rule("1.2.46", s)            # dhātu + niṣṭhā: a kṛdanta prātipadika
+    s.meta["linga"] = "pulliṅga"
+    s.meta["vibhakti_vacana"] = "1-1"
+    s = P00_attach_su_it_lopa(s)
+    s = apply_rule("8.2.1", s)
+    s = apply_rule("8.2.42", s)
+    _pada_merge(s)
+    return P00_tripadi_rutva_visarga(s)
+
+
 def derive_bhinnaH() -> State:
     """P001-A: bhid (Bidi~) + kta → bhinnaḥ — pulliṅga prathamā ekavacana."""
     dhatu = Term(
@@ -625,12 +642,7 @@ def derive_bhinnaH() -> State:
     s = apply_rule("3.2.102", s)
     s = P00_lashakvataddhite_it_lopa_chain(s)
     s = P00_krt_ardhadhatuka_ekac_it_and_guna_audit(s)
-    s = apply_rule("8.2.42", s)
-    s = apply_rule("1.2.46", s)
-    s.meta["linga"] = "pulliṅga"
-    s = P00_pratipadika_prathama_sup_after_stem_merge(s)
-    s = P00_tripadi_rutva_visarga(s)
-    return s
+    return _nistha_prathama_then_tripadi(s)
 
 
 def derive_DfzwaH() -> State:
@@ -638,28 +650,14 @@ def derive_DfzwaH() -> State:
     from pipelines.subanta import _pada_merge
 
     s = _derive_kta_manual_it_chain("YiDfzf~")
-    _pada_merge(s)
-    s = apply_rule("8.4.41", s)
-    stem = s.terms[0]
-    stem.kind = "prakriti"
-    stem.tags.discard("pada")
-    s = apply_rule("1.2.46", s)
-    s.meta["linga"] = "pulliṅga"
-    s = P00_pratipadika_prathama_sup_after_stem_merge(s)
-    s = P00_tripadi_rutva_visarga(s)
-    return s
+    return _nistha_prathama_then_tripadi(s)       # 8.4.41 ष्टुना ष्टुः in the tripādī
 
 
 def derive_svinnaH() -> State:
     """P001-C: ñiṣvid (YizvidA~) + kta → svinnaḥ — pulliṅga prathamā ekavacana."""
     s = _derive_kta_manual_it_chain("YizvidA~")
     s = apply_rule("6.1.64", s)
-    s = apply_rule("8.2.42", s)
-    s = apply_rule("1.2.46", s)
-    s.meta["linga"] = "pulliṅga"
-    s = P00_pratipadika_prathama_sup_after_stem_merge(s)
-    s = P00_tripadi_rutva_visarga(s)
-    return s
+    return _nistha_prathama_then_tripadi(s)
 
 
 def derive_idDaH() -> State:
@@ -670,15 +668,4 @@ def derive_idDaH() -> State:
     if s.terms:
         s.terms[0].meta["upadesha_slp1"] = "inD"
     s = apply_rule("6.4.24", s)
-    _pada_merge(s)
-    s.meta["corrected_v2_P001_D_pre_tripadi_cluster_arm"] = True
-    s = apply_rule("8.2.40", s)
-    s = apply_rule("8.4.53", s)
-    stem = s.terms[0]
-    stem.kind = "prakriti"
-    stem.tags.discard("pada")
-    s = apply_rule("1.2.46", s)
-    s.meta["linga"] = "pulliṅga"
-    s = P00_pratipadika_prathama_sup_after_stem_merge(s)
-    s = P00_tripadi_rutva_visarga(s)
-    return s
+    return _nistha_prathama_then_tripadi(s)       # 8.2.40 / 8.4.53 in the tripādī
