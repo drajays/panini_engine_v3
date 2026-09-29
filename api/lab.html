@@ -205,6 +205,8 @@ async function detail(i){
   const c = G.cells[i], f = c.features;
   const head = `<h2>${esc(c.dev || "—")}</h2><div class="cell">${esc(c.label)}</div>
     <div class="cmp">Vidyut: ${c.vidyut.length ? c.vidyut.map(x => `<span class="${x.slp1 === c.slp1 ? "ok" : "no"}">${esc(x.dev)}</span>`).join(" / ") : "—"}</div>
+    ${c.ashtadhyayi ? `<div class="cmp">ashtadhyayi.com: ${c.ashtadhyayi.map(x => `<span class="${x === c.dev ? "ok" : "no"}">${esc(x)}</span>`).join(" / ")}</div>` : ""}
+    ${c.attested && c.attested.length ? `<div class="cmp">प्रयोगाः: ${c.attested.map(a => `<span class="x">${esc(a.text)} — ${esc(a.book || "")} ${esc(a.num || "")}</span>`).join("<br>")}<br><span class="muted">${esc(G.credit)}</span></div>` : ""}
     <div class="opts"><label><input type="checkbox" id="all"> show every step (saṃjñā, skipped)</label></div>`;
   if (c.error){ $("detail").innerHTML = head + `<p class="err">${esc(c.error)}</p>`; return; }
   $("detail").innerHTML = head + `<p class="muted">deriving…</p>`;

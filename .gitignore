@@ -36,3 +36,7 @@ panini_engine_v2--git/
 # The committed fingerprint is data/index/manifest.json.
 data/index/forms.db
 data/upstream/
+
+# ashtadhyayi-com/data files (large; fetched at a pinned commit by tools/fetch_ashtadhyayi_data)
+data/reference/ashtadhyayi_com/*
+!data/reference/ashtadhyayi_com/SOURCE.json

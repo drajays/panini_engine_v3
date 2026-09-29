@@ -33,6 +33,37 @@ def lsk_pages(sutra_id: str) -> list[dict[str, int]]:
     """Where Michika's LSK Study Guide (Parts 1–12) cites this sūtra: [{part, page}]."""
     return [{"part": a, "page": b} for a, b in _lsk_index().get(sutra_id, ())]
 
+
+_ASHT = Path(__file__).resolve().parent.parent / "data" / "reference" / "ashtadhyayi_com"
+ASHT_CREDIT = "Data © ashtadhyayi.com (github.com/ashtadhyayi-com/data)"
+
+
+@cache
+def _asht(name: str) -> dict:
+    try:
+        return json.loads((_ASHT / name).read_text())
+    except FileNotFoundError:   # fetched by tools/fetch_ashtadhyayi_data
+        return {}
+
+
+def attested_for_sutra(sutra_id: str, limit: int = 8) -> dict:
+    """Uses of this sūtra in kāvya, as ashtadhyayi.com annotates them (display only)."""
+    rows = _asht("sutraani__sutra_prayogas.txt").get("data", {}).get(sutra_id, [])
+    keep = ("word", "text", "loc", "url", "pada", "ref")
+    return {"total": len(rows), "items": [{k: r.get(k) for k in keep} for r in rows[:limit]],
+            "credit": ASHT_CREDIT if rows else None}
+
+
+def attested_for_dhatu(dhatu_id: str) -> dict[str, list[dict]]:
+    """dhātu pāṭha id → {"<pada><lakāra>_<puruṣa>_<vacana>": [{book, num, text, external}]}.
+
+    ashtadhyayi.com keys are like ``plang_1_1_अभवत्`` (puruṣa 1 = prathama).
+    """
+    out: dict[str, list[dict]] = {}
+    for key, rows in _asht("dhatu__dhatuprayogas.txt").get(dhatu_id, {}).items():
+        out.setdefault(key.rsplit("_", 1)[0], []).extend(rows)
+    return out
+
 # ─────────────────────────────────────────────────────────────────
 # Presentation-layer transliteration helpers
 # (pure view code — never touches State internals)

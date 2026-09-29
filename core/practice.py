@@ -168,6 +168,7 @@ def question(kind: str = "subanta", qtype: str = "mcq", *, lemma: str | None = N
         "labels": {d: label(d) for d in cells_of},
         "accepted": accepted,
     }
+    base["attested"] = _attested(base["dhatu_ref"], tf)
     if qtype in ("mcq", "recall"):
         if level == "hard":
             near = [r for r in others if any(r["features"].get(k) == tf.get(k)
@@ -184,6 +185,16 @@ def question(kind: str = "subanta", qtype: str = "mcq", *, lemma: str | None = N
     if qtype == "sutra":
         return {**base, **_sutra_step(kind, target, rng)}
     raise ValueError(f"unknown question type {qtype!r}; one of {KINDS}")
+
+
+def _attested(dhatu_id: str | None, f: dict[str, Any]) -> list[dict[str, Any]]:
+    """Kāvya lines using this very tiṅanta cell (ashtadhyayi.com; display only)."""
+    if not dhatu_id or f.get("prayoga", "kartari") != "kartari":
+        return []
+    from core.lab import _ASHT_LAKARA
+    from core.trace_view import attested_for_dhatu
+    a, tail = attested_for_dhatu(dhatu_id), f"{_ASHT_LAKARA[f['lakara']]}_{4 - f['purusha']}_{f['vacana']}"
+    return (a.get("p" + tail) or a.get("a" + tail) or [])[:2]
 
 
 def _sutra_step(kind: str, row: dict[str, Any], rng: random.Random) -> dict[str, Any]:

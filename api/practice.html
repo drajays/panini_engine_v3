@@ -203,7 +203,7 @@ function answer(btn, typed){
   }
   buttons.forEach(b => b.disabled = true);
   tally(ok);
-  $("result").innerHTML = `<div class="verdict ${ok ? "ok" : "no"}">${ok ? "✓ शुद्ध" : "✗ अशुद्ध"} — ${esc(Q.lemma_dev)}, ${esc(Q.cell_label)}: <b>${esc(Q.accepted.join(" / "))}</b>${note ? `<span class="note">${esc(note)}</span>` : ""}</div>`;
+  $("result").innerHTML = `<div class="verdict ${ok ? "ok" : "no"}">${ok ? "✓ शुद्ध" : "✗ अशुद्ध"} — ${esc(Q.lemma_dev)}, ${esc(Q.cell_label)}: <b>${esc(Q.accepted.join(" / "))}</b>${note ? `<span class="note">${esc(note)}</span>` : ""}${(Q.attested || []).length ? `<span class="note">प्रयोगः: ${Q.attested.map(a => `${esc(a.text)} — ${esc(a.book)} ${esc(a.num)}`).join(" · ")} <span class="muted">(ashtadhyayi.com)</span></span>` : ""}</div>`;
   explain();
 }
 
@@ -236,11 +236,14 @@ async function examples(btn){
   const out = btn.nextElementSibling;
   out.textContent = "…";
   try {
-    const {examples: e} = await api(`/v1/sutras/${encodeURIComponent(btn.dataset.sid)}`);
-    out.innerHTML = e.forms.length
+    const {examples: e, attested: a} = await api(`/v1/sutras/${encodeURIComponent(btn.dataset.sid)}`);
+    out.innerHTML = (e.forms.length
       ? e.forms.map(f => `<b>${esc(f.dev)}</b> (${esc(f.lemma_dev)}, ${esc(f.cell_label)})`).join(" · ")
         + (e.total > e.forms.length ? ` <span class="muted">— कुल ${e.total} सत्यापित रूप</span>` : "")
-      : `<span class="muted">कोई सत्यापित उदाहरण नहीं</span>`;
+      : `<span class="muted">कोई सत्यापित उदाहरण नहीं</span>`)
+      + (a && a.items.length ? `<br>काव्ये: ` + a.items.slice(0, 3).map(x =>
+          `<b>${esc(x.word)}</b> (${esc(x.text)} ${esc(x.loc)}) ${esc(x.ref || "")}`).join(" · ")
+          + ` <span class="muted">— ${esc(a.credit)}</span>` : "");
   } catch (err) { out.innerHTML = `<span class="err">${esc(err.message)}</span>`; }
 }
 

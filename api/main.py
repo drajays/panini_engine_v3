@@ -32,7 +32,7 @@ if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
 import sutras  # noqa: F401 — fills SUTRA_REGISTRY
-from core.trace_view import enrich_trace, lsk_pages, slp1_str_to_dev
+from core.trace_view import attested_for_sutra, enrich_trace, lsk_pages, slp1_str_to_dev
 from engine import SUTRA_REGISTRY, coverage_report
 from engine.sig import extract_applied_path
 
@@ -159,6 +159,7 @@ def get_sutra(sutra_id: str) -> dict[str, Any]:
         "blocks_sutra_ids": list(rec.blocks_sutra_ids or ()),
         "lsk": lsk_pages(rec.sutra_id),
         "examples": _sutra_examples(rec.sutra_id),
+        "attested": attested_for_sutra(rec.sutra_id),
     }
 
 

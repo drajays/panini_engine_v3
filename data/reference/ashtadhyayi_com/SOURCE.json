@@ -1,0 +1,14 @@
+{
+ "repo": "https://github.com/ashtadhyayi-com/data",
+ "commit": "5744762f010d677cfb43f347a42d02796cf615d6",
+ "files": [
+  "dhatu/data.txt",
+  "dhatu/dhatuforms_vidyut_shuddha_kartari.txt",
+  "dhatu/dhatuforms_vidyut_shuddha_karmani.txt",
+  "dhatu/dhatuprayogas.txt",
+  "shabda/data2.txt",
+  "shabda/shabdaprakriya.txt",
+  "sutraani/sutra_prayogas.txt"
+ ],
+ "credit": "Data \u00a9 ashtadhyayi.com \u2014 used with credit per its README"
+}

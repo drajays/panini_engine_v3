@@ -27,7 +27,7 @@ RULE_PATH = [
 ]
 FORBIDDEN = re.compile(
     r"^\s*(?:from|import)\s+(?:vidyut|bench|core\.practice|core\.lab)\b"
-    r"|practice_verified|oracle_vidyut|oracle_batch",
+    r"|practice_verified|oracle_vidyut|oracle_batch|ashtadhyayi_com|fetch_ashtadhyayi_data|core\.trace_view",
     re.M,
 )
 

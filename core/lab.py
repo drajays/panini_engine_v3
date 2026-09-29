@@ -21,6 +21,20 @@ _ROOT = Path(__file__).resolve().parent.parent
 _VENV_PY = _ROOT / ".venv" / "bin" / "python"
 _LINGA = {"pulliṅga": "pum", "strīliṅga": "stri", "napuṃsaka": "napumsaka"}
 LAKARAS = ["laT", "liT", "luT", "lRT", "loT", "laG", "liG", "AsIrliG", "luG", "lRG"]
+_ASHT_LAKARA = {"laT": "lat", "liT": "lit", "luT": "lut", "lRT": "lrut", "loT": "lot", "laG": "lang",
+                "liG": "vidhiling", "AsIrliG": "ashirling", "luG": "lung", "lRG": "lrung"}
+
+
+def _asht_tinanta(path_id: str, lakara: str, prayoga: str, pada: str | None):
+    """ashtadhyayi.com's 9 cells (alternatives each) + key prefix, or (None, None)."""
+    from core.trace_view import _asht
+    table = _asht(f"dhatu__dhatuforms_vidyut_shuddha_{'karmani' if prayoga != 'kartari' else 'kartari'}.txt")
+    row = table.get(path_id) or {}
+    for p in ([pada[0]] if pada and prayoga == "kartari" else ["p", "a"]):
+        key = p + _ASHT_LAKARA[lakara]
+        if key in row:
+            return [c.split(",") for c in row[key].split(";")], key
+    return None, None
 
 
 def _oracle(cells: list[dict]) -> list[list[str]] | None:
@@ -66,9 +80,18 @@ def grid(kind: str, lemma: str, *, lakara: str = "laT", prayoga: str = "kartari"
                                      "vibhakti": vibhakti, "vacana": vacana})
 
     theirs = _oracle(oracle_cells)
+    gold, gold_key, attested = None, None, {}
+    if kind == "tinanta":
+        from core.trace_view import attested_for_dhatu
+        gold, gold_key = _asht_tinanta(meta["path_id"], lakara, prayoga, pada)
+        attested = attested_for_dhatu(meta["path_id"]) if prayoga == "kartari" else {}
     out = []
     for i, (f, run) in enumerate(cells):
         c: dict[str, Any] = {"features": f, "label": cell_label(kind, f)}
+        if gold and len(gold) == 9:
+            c["ashtadhyayi"] = gold[i]
+            # their puruṣa 1 = prathama (ours 3)
+            c["attested"] = attested.get(f"{gold_key}_{4 - f['purusha']}_{f['vacana']}", [])[:3]
         try:
             s = run()
             c |= {"slp1": s.flat_slp1(), "dev": s.flat_dev(), "steps": len(s.trace)}
@@ -83,7 +106,8 @@ def grid(kind: str, lemma: str, *, lakara: str = "laT", prayoga: str = "kartari"
              for k in ("agree", "disagree", "error", "oracle-silent", "no-oracle")}
     return {"kind": kind, "input": {"lemma": lemma, "lakara": lakara, "prayoga": prayoga,
                                     "pada": pada, "linga": linga},
-            "meta": meta, "cells": out, "tally": tally, "oracle": theirs is not None}
+            "meta": meta, "cells": out, "tally": tally, "oracle": theirs is not None,
+            "credit": "Data © ashtadhyayi.com (github.com/ashtadhyayi-com/data)" if gold else None}
 
 
 if __name__ == "__main__":   # smoke check
