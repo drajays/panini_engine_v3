@@ -13,6 +13,7 @@ The engine is only *tested* here — nothing in the rule path reads this file
     python3 -m bench.ashtadhyayi_gold --sample 200     # a random slice
     python3 -m bench.ashtadhyayi_gold --lakara laT --prayoga karmani
     python3 -m bench.ashtadhyayi_gold --kind subanta   # shabda/data2.txt: 9,007 nouns × 24
+    python3 -m bench.ashtadhyayi_gold --kind prakriya  # shabdaprakriya.txt: sūtra paths
 """
 from __future__ import annotations
 
@@ -34,6 +35,7 @@ from tools.fetch_ashtadhyayi_data import path as ref_path  # noqa: E402
 
 REPORT = _ROOT / "bench" / "report" / "ashtadhyayi_gold.json"
 SUB_REPORT = _ROOT / "bench" / "report" / "ashtadhyayi_gold_subanta.json"
+PATH_REPORT = _ROOT / "bench" / "report" / "ashtadhyayi_gold_prakriya.json"
 LINGA = {"P": "pulliṅga", "S": "strīliṅga", "N": "napuṃsaka"}
 SUB_CELLS = [(vi, va) for vi in (1, 2, 3, 4, 5, 6, 7, 8) for va in (1, 2, 3)]   # 8 = sambodhana
 LAKARA = {"lat": "laT", "lit": "liT", "lut": "luT", "lrut": "lRT", "lot": "loT", "lang": "laG",
@@ -132,6 +134,69 @@ def main_subanta(a) -> int:
     return 0
 
 
+def _norm_index(ix: str) -> str:
+    return ".".join(str(int(x)) for x in ix.split("."))
+
+
+def prakriya_jobs(sample: int | None, seed: int):
+    """(stem SLP1, liṅga, vibhakti, vacana, gold form, gold sūtra set) — liṅga via data2."""
+    from phonology.tokenizer import devanagari_to_slp1_flat
+    linga = {_norm_index(r["zbaseindex"]): LINGA.get(r.get("linga"))
+             for r in json.loads(ref_path("shabda/data2.txt").read_text())["data"] if r.get("zbaseindex")}
+    rows = json.loads(ref_path("shabda/shabdaprakriya.txt").read_text())["data"]
+    if sample:
+        rows = random.Random(seed).sample(rows, min(sample, len(rows)))
+    for r in rows:
+        lg = linga.get(_norm_index(r["baseindex"]))
+        try:
+            stem = devanagari_to_slp1_flat(r["word"])
+        except Exception:
+            continue
+        if lg:
+            yield (stem, lg, int(r["vibhakti"]), int(r["vachan"]), r["form"].removeprefix("हे ").strip(),
+                   sorted({x for st in r["steps"] for x in st["sutras"]}))
+
+
+def _run_path(job):
+    stem, linga, vi, va, form, theirs = job
+    from pipelines.subanta import derive
+    try:
+        st = derive(stem, vi, va, linga=linga)
+    except Exception as ex:
+        return job, "error", type(ex).__name__, []
+    ours = sorted({r.get("sutra_id") for r in st.trace
+                   if (r.get("status") or "").upper().startswith("APPLIED") and r.get("sutra_id")})
+    return job, ("agree" if st.flat_dev() == form else "differ"), st.flat_dev(), ours
+
+
+def main_prakriya(a) -> int:
+    status, missed, extra, hits, tot = Counter(), Counter(), Counter(), 0, 0
+    examples = defaultdict(list)
+    with ProcessPoolExecutor(max_workers=a.workers) as ex:
+        for job, stt, ours_form, ours in ex.map(_run_path, prakriya_jobs(a.sample, a.seed), chunksize=16):
+            status[stt] += 1
+            if stt != "agree":
+                continue                       # a path is only comparable on a matching surface
+            theirs, mine = set(job[5]), set(ours)
+            hits += len(theirs & mine); tot += len(theirs)
+            for x in theirs - mine:
+                missed[x] += 1
+                if len(examples[x]) < 4:
+                    examples[x].append(f"{job[0]} {job[1]} {job[2]}/{job[3]} {job[4]}")
+    recall = round(100 * hits / max(tot, 1), 1)
+    summary = {"generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+               "sample": a.sample, "forms": dict(status), "sutra_recall_pct": recall,
+               "note": "share of ashtadhyayi.com's sūtras (on forms we derive identically) that our trace also applies",
+               "most_missed": [{"sutra": k, "forms": n, "examples": examples[k]} for k, n in missed.most_common(40)]}
+    print(f"ashtadhyayi.com prakriyā paths — forms {dict(status)}; sūtra recall on agreeing forms {recall} %")
+    for r in summary["most_missed"][:15]:
+        print(f"  {r['sutra']:9} missed on {r['forms']:4} forms  e.g. {r['examples'][0]}")
+    if not a.sample:
+        PATH_REPORT.write_text(json.dumps(summary, ensure_ascii=False, indent=1) + "\n")
+        print(f"→ {PATH_REPORT.relative_to(_ROOT)}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--sample", type=int)
@@ -140,10 +205,12 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--prayoga", action="append", choices=["kartari", "karmani"])
     ap.add_argument("--workers", type=int, default=os.cpu_count())
     ap.add_argument("--dump", type=Path, help="write every non-agreeing cell as JSONL")
-    ap.add_argument("--kind", choices=["tinanta", "subanta"], default="tinanta")
+    ap.add_argument("--kind", choices=["tinanta", "subanta", "prakriya"], default="tinanta")
     a = ap.parse_args(argv)
     if a.kind == "subanta":
         return main_subanta(a)
+    if a.kind == "prakriya":
+        return main_prakriya(a)
     jobs = list(gold_jobs(set(a.prayoga or ["kartari", "karmani"]), set(a.lakara or []) or None,
                           a.sample, a.seed))
     by = defaultdict(Counter)
