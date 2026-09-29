@@ -38,7 +38,7 @@ def _site(state: State) -> bool:
     if not state.terms:
         return False
     t0 = state.terms[0]
-    if "anga" not in t0.tags:
+    if "prātipadika" not in t0.tags:   # a prātipadika saṃjñā, not aṅga
         return False
     if not t0.varnas or t0.varnas[-1].slp1 != "a":
         return False

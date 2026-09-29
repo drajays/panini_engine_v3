@@ -54,7 +54,8 @@ def _find_jas_final(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    return tripadi_gate_eligible(state, "8.4.56", gate_key=_GATE_KEY)
+    # वाऽवसाने: only a jhal (here a jaś) at the pada's end in pause has work to do
+    return tripadi_gate_eligible(state, "8.4.56", gate_key=_GATE_KEY) and _find_jas_final(state) is not None
 
 
 def act(state: State) -> State:

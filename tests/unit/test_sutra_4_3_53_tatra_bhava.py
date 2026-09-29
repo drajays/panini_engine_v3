@@ -24,7 +24,7 @@ def _state(**meta) -> State:
 
 def test_registry():
     r = SUTRA_REGISTRY["4.3.53"]
-    assert r.sutra_type is SutraType.SAMJNA
+    assert r.sutra_type is SutraType.VIDHI
     assert "4.1.83" in r.anuvritti_from
     assert "4.1.82" in r.anuvritti_from
     assert "तत्र" in r.padaccheda_dev

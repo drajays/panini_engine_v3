@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from engine.trace import TRACE_STATUSES_FIRED
+
 import sutras  # noqa: F401
 
 from pipelines.gomAn_prathamA_go_matup import derive_gomAn
@@ -11,7 +13,7 @@ def test_gomAn_surface_and_spine_order():
     s = derive_gomAn()
     assert s.flat_slp1() == "gomAn"
 
-    tids = [r["sutra_id"] for r in s.trace if r.get("status") in ("APPLIED", "AUDIT")]
+    tids = [r["sutra_id"] for r in s.trace if r.get("status") in TRACE_STATUSES_FIRED]
 
     assert "5.2.94" in tids
     assert "1.2.46" in tids

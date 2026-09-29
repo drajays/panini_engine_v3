@@ -33,7 +33,7 @@ def _site(state: State) -> int | None:
     for i, t in enumerate(state.terms):
         if t.kind != "prakriti":
             continue
-        if "anga" not in t.tags or "prātipadika" not in t.tags:
+        if "prātipadika" not in t.tags:
             continue
         if "P039_viSAKA_demo" not in t.tags:
             continue

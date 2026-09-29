@@ -276,16 +276,19 @@ class SutraRecord:
             # unconditional for the stage the recipe schedules it in).
             if st is SutraType.ANUVADA:
                 return
-            if st is SutraType.PRATISHEDHA and not self.blocks_sutra_ids:
+            if st is SutraType.PRATISHEDHA and not self.blocks_sutra_ids and self.act is None:
                 raise ValueError(
                     f"[{self.sutra_id}] PRATISHEDHA must set blocks_sutra_ids"
                 )
-            if st is SutraType.ADHIKARA:
+            # An ADHIKARA / ATIDESHA with its own act() needs no static fields —
+            # the executors run act() when it exists (the static fields are the
+            # fallback for a table-driven record).
+            if st is SutraType.ADHIKARA and self.act is None:
                 if self.adhikara_scope == ("", ""):
                     raise ValueError(
                         f"[{self.sutra_id}] ADHIKARA must set adhikara_scope=(start,end)"
                     )
-            if st is SutraType.ATIDESHA:
+            if st is SutraType.ATIDESHA and self.act is None:
                 if not all([self.atidesha_target,
                             self.atidesha_source,
                             self.atidesha_dest]):

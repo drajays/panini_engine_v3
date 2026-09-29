@@ -62,10 +62,12 @@ def _subanta_cases() -> list[dict[str, Any]]:
 _SUBANTA_CASES = _subanta_cases()
 
 
-def test_sequence_group_baseline_is_not_empty():
+def test_sequence_group_baseline_is_well_formed():
+    # May be empty: since saṃjñā definitions and site-less stubs no longer count as
+    # APPLIED (2026-09-30), no run of real applications is shared by *every*
+    # derivation — the old universal group was that mislabelled prefix.
     baseline = _load_json(_BASELINE_PATH)
     assert baseline["schema_version"] == 1
-    assert baseline["groups"]
     for group in baseline["groups"]:
         assert group["layer"] == "applied_only"
         assert len(group["sequence"]) >= 3

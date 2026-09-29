@@ -21,10 +21,7 @@ from engine.state import State
 def _eligible(state: State) -> bool:
     if len(state.terms) < 2:
         return False
-    anga = state.terms[-2]
-    sup_t = state.terms[-1]
-    if "anga" not in anga.tags:
-        return False
+    sup_t = state.terms[-1]            # the sup itself is anudātta — no aṅga condition
     if "sup" not in sup_t.tags or "upadesha" not in sup_t.tags:
         return False
     if sup_t.meta.get("3_1_4_suppita_registered"):
@@ -50,7 +47,7 @@ def act(state: State) -> State:
 
 SUTRA = SutraRecord(
     sutra_id       = "3.1.4",
-    sutra_type     = SutraType.SAMJNA,
+    sutra_type     = SutraType.VIDHI,
     text_slp1      = 'anudAttO suppitO',
     text_dev       = 'अनुदात्तौ सुप्पितौ',
     padaccheda_dev = "अनुदात्तौ सुप्पितौ",

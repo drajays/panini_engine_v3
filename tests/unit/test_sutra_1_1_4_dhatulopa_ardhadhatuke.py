@@ -14,7 +14,7 @@ from sutras.adhyaya_1.pada_1 import sutra_1_1_4 as s114
 
 def test_metadata():
     r = SUTRA_REGISTRY["1.1.4"]
-    assert r.sutra_type is SutraType.PARIBHASHA
+    assert r.sutra_type is SutraType.PRATISHEDHA
     assert "na" in r.text_slp1 or "DAt" in r.text_slp1
 
 

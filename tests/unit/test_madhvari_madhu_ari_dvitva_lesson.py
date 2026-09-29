@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from engine.trace import TRACE_STATUSES_FIRED
+
 from sutras.adhyaya_6.pada_1.sutra_6_1_77 import IKO_YANACI_ADESHA_TAG
 
 
@@ -11,7 +13,7 @@ def test_maddhvari_flat_and_spine_order():
     s = derive_madhvari_madhu_ari_dvitva_lesson()
     assert s.flat_slp1() == "maddhvari"
 
-    ids = [e.get("sutra_id") for e in s.trace if e.get("status") == "APPLIED"]
+    ids = [e.get("sutra_id") for e in s.trace if e.get("status") in TRACE_STATUSES_FIRED]
     assert ids.index("6.1.77") < ids.index("1.1.58")
     assert ids.index("1.1.58") < ids.index("8.4.47")
 

@@ -51,7 +51,7 @@ def _load_tyadadi() -> Set[str]:
 def _eligible(state: State):
     tyadadi = _load_tyadadi()
     for t in state.terms:
-        if "anga" not in t.tags:
+        if "prātipadika" not in t.tags:   # a prātipadika saṃjñā, not aṅga
             continue
         if "prātipadika" not in t.tags:
             continue

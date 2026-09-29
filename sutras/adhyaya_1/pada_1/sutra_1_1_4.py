@@ -76,7 +76,7 @@ _WHY = (
 
 SUTRA = SutraRecord(
     sutra_id       = "1.1.4",
-    sutra_type     = SutraType.PARIBHASHA,
+    sutra_type     = SutraType.PRATISHEDHA,
     text_slp1      = 'na DAtulopa ArDaDAtuke',
     text_dev       = 'न धातुलोप आर्धधातुके',
     padaccheda_dev = "न धातु-लोपे आर्धधातुके",

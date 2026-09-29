@@ -14,7 +14,7 @@ from sutras.adhyaya_2.pada_3.sutra_2_3_36 import META_LOCATIVE, REGISTRY_KEY
 
 def test_registry() -> None:
     r = SUTRA_REGISTRY["2.3.36"]
-    assert r.sutra_type is SutraType.SAMJNA
+    assert r.sutra_type is SutraType.VIDHI
     assert "2.3.1" in r.anuvritti_from
 
 

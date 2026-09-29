@@ -25,7 +25,7 @@ from engine.state import State
 
 def _eligible(state: State):
     for t in state.terms:
-        if "anga" not in t.tags:
+        if "prātipadika" not in t.tags:   # a prātipadika saṃjñā, not aṅga
             continue
         if "prātipadika" not in t.tags:
             continue

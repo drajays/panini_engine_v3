@@ -1,3 +1,4 @@
+from engine.trace import TRACE_STATUSES_FIRED
 import sutras  # noqa: F401
 
 from pipelines.adita_luN_dAda_ghu import derive_adita
@@ -10,7 +11,7 @@ def _fired_ids(state) -> list[str]:
         if not sid or not isinstance(sid, str):
             continue
         st = (e.get("status") or "").upper()
-        if st in {"APPLIED", "AUDIT"}:
+        if st in TRACE_STATUSES_FIRED:
             out.append(sid)
     return out
 

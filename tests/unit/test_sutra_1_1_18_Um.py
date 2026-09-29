@@ -13,7 +13,7 @@ from sutras.adhyaya_1.pada_1 import sutra_1_1_18 as s1118
 def test_metadata():
     r = SUTRA_REGISTRY["1.1.18"]
     assert r.sutra_id == "1.1.18"
-    assert r.sutra_type is SutraType.VIDHI
+    assert r.sutra_type is SutraType.SAMJNA
     assert r.text_slp1 == 'U~'
     assert r.text_dev == 'ऊँ'
     assert r.anuvritti_from == ("1.1.11", "1.1.16", "1.1.17")

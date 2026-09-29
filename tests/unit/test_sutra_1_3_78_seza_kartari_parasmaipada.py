@@ -29,7 +29,7 @@ def _dhatu_paT(**meta) -> Term:
 def test_sutra_metadata() -> None:
     r = SUTRA_REGISTRY["1.3.78"]
     assert r.sutra_id == "1.3.78"
-    assert r.sutra_type is SutraType.PARIBHASHA
+    assert r.sutra_type is SutraType.VIDHI
     assert "1.3.14" in r.anuvritti_from
 
 

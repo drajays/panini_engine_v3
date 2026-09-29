@@ -47,7 +47,7 @@ REGISTRY_KEY: str = "1_1_33_praTamAdi"
 def _eligible(state: State):
     """Yield aṅga+prātipadika Terms in the prathamādi set not yet tagged sarvanama."""
     for t in state.terms:
-        if "anga" not in t.tags:
+        if "prātipadika" not in t.tags:   # a prātipadika saṃjñā, not aṅga
             continue
         if "prātipadika" not in t.tags:
             continue

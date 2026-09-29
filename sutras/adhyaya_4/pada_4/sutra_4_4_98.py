@@ -31,7 +31,7 @@ def _eligible(state: State) -> bool:
     if len(state.terms) != 2:
         return False
     t0, t1 = state.terms[0], state.terms[1]
-    if "anga" not in t0.tags:
+    if "prātipadika" not in t0.tags:   # a prātipadika before its taddhita
         return False
     if (t0.meta.get("upadesha_slp1") or "").strip() != "sAman":
         return False

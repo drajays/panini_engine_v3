@@ -34,10 +34,15 @@ from phonology import mk  # noqa: E402
 
 # Baselines pinned 2026-05-31 after phase pools + krt/samhita/tripadi migration
 # + B2 subanta/kāraka gate scope (111 → 0 on bare BU dhātu probe).
-VIDHI_FP_RAW_BASELINE = 0
+# 2 (2026-09-30): 1.3.78 शेषात्कर्तरि परस्मैपदम् and 1.4.108 शेषे प्रथमः became
+# VIDHI when sūtra types were synced to the pāṭha. Their conditions (a śeṣa
+# dhātu) hold on any bare root because the tiṅanta bootstrap decides pada and
+# puruṣa before the lakāra is attached — their true locus. Lower to 0 once the
+# bootstrap attaches the lakāra first.
+VIDHI_FP_RAW_BASELINE = 2
 VIDHI_FP_FILTERED_BASELINE = 0
 # Tinanta tape-init probe (post Phase 5 tin_pratyaya chain gate).
-TINANTA_INIT_RAW_BASELINE = 0
+TINANTA_INIT_RAW_BASELINE = 2   # same two, same reason
 
 REPORT_PATH = ROOT / "docs" / "cond_discipline_audit.md"
 

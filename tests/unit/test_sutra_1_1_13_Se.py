@@ -15,7 +15,7 @@ from sutras.adhyaya_1.pada_1 import sutra_1_1_13 as s1113
 def test_sutra_metadata():
     r = SUTRA_REGISTRY["1.1.13"]
     assert r.sutra_id == "1.1.13"
-    assert r.sutra_type is SutraType.PARIBHASHA
+    assert r.sutra_type is SutraType.SAMJNA
     assert r.text_slp1 == "Se"
     assert r.text_dev == "शे"
 

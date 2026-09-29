@@ -1,42 +1,16 @@
 {
   "extraction_policy": {
     "layer": "applied_only",
-    "min_count": 24,
+    "min_count": 504,
     "min_length": 3,
     "min_probability": 1.0
   },
-  "groups": [
-    {
-      "applies_to": {
-        "files": [
-          "data/reference/subanta_gold/rama_pullinga.json"
-        ],
-        "kind": "subanta_gold_manifest"
-      },
-      "description": "Deterministic applied-only sūtra spine extracted from SIG high-confidence transitions.",
-      "edge_count_min": 24,
-      "id": "common_applied_spine_001",
-      "layer": "applied_only",
-      "probability_min": 1.0,
-      "sequence": [
-        "1.1.1",
-        "1.1.73",
-        "1.1.2",
-        "1.1.7",
-        "1.1.60",
-        "1.1.61",
-        "1.1.8",
-        "1.1.9",
-        "1.2.45",
-        "1.4.102"
-      ]
-    }
-  ],
+  "groups": [],
   "schema_version": 1,
   "source": {
-    "manifest_generated_utc": "2026-05-27T19:56:33.769262+00:00",
+    "manifest_generated_utc": "2026-09-29T18:56:37.014765+00:00",
     "sig_dir": "sig",
-    "total_derivations": 24,
+    "total_derivations": 504,
     "transition_file": "sig_transitions.json"
   }
 }

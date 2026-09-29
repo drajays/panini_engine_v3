@@ -42,7 +42,7 @@ def act(state: State) -> State:
 
 SUTRA = SutraRecord(
     sutra_id       = "1.3.78",
-    sutra_type     = SutraType.PARIBHASHA,
+    sutra_type     = SutraType.VIDHI,
     text_slp1      = 'SezAt kartari parasmEpadam',
     text_dev       = 'शेषात् कर्तरि परस्मैपदम्',
     padaccheda_dev = "शेषात् (पञ्चमी) / कर्तरि (सप्तमी) / परस्मैपदम् (प्रथमा)",

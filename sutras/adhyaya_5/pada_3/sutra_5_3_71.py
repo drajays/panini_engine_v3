@@ -42,7 +42,7 @@ def _site_akac_infix(state: State) -> int | None:
     if len(state.terms) != 1:
         return None
     t = state.terms[0]
-    if "anga" not in t.tags or "prātipadika" not in t.tags:
+    if "prātipadika" not in t.tags:
         return None
     if "sarvanama" not in t.tags:
         return None

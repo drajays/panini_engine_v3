@@ -59,14 +59,9 @@ def _indices_to_add(state: State) -> frozenset[int]:
     for i in _eligible_terms(state):
         if i in prev:
             continue
-        t = state.terms[i]
-        slp1 = (t.meta.get("upadesha_slp1") or "").strip() or term_phonetic_slp1(t)
-        # adhātu: neither tagged as dhātu, nor present in dhātupāṭha registry
-        if is_in_dhatupatha(slp1):
-            continue
-        # apratyaya: neither tagged as pratyaya, nor present in pratyaya inventory
-        if is_known_pratyaya(slp1):
-            continue
+        # अधातुः / अप्रत्ययः are what the term *is* on this tape (its dhātu /
+        # pratyaya saṃjñā, checked in _term_eligible) — not whether its spelling
+        # also occurs in the dhātupāṭha (वर्ण, व्यय are nouns here)
         add.add(i)
     return frozenset(add)
 

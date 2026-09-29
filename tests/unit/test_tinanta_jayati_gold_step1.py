@@ -87,7 +87,7 @@ def test_step1_1_3_9_vacuous_when_dhatu_has_no_it() -> None:
     """
     s = run_jayati_gold_step1()
     e19 = [e for e in s.trace if e.get("sutra_id") == "1.3.9"][-1]
-    assert e19.get("status") == "APPLIED_VACUOUS"
+    assert e19.get("status") == "VACUOUS"
     assert e19.get("lopa_count") == 0
     assert e19.get("form_before") == e19.get("form_after") == "ji"
     assert e19.get("skip_reason") is None

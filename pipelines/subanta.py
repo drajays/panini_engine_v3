@@ -158,8 +158,13 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
                         matra_prathama_2_3_46: bool = False,
                         sheSa_shashthi_2_3_50: bool = False,
                         nAmadheya_vrddha_term_indices: tuple[int, ...] | frozenset[int] | None = None,
+                        derived_pratipadika: bool = False,
                         ) -> State:
     """Build the initial state for a subanta derivation.
+
+    ``derived_pratipadika`` — the stem was derived upstream (kṛt/taddhita/samāsa)
+    and already holds the prātipadika saṃjñā by **1.2.46**; it carries that
+    saṃjñā over (1.2.45 rightly refuses a vyutpanna stem).
 
     ``matra_prathama_2_3_46`` — when True, sets
     ``state.meta['2_3_46_matra_prathama_eligible']`` so the subanta recipe
@@ -209,9 +214,13 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
         # The stem is NOT a pratyaya upadeśa; do not tag it 'upadesha'.
         # This prevents it-prakaraṇa rules like 1.3.3 from wrongly stripping
         # stem-final consonants (critical for consonant-ending stems like `tad`).
-        tags   = {"prātipadika", "anga"},
+        # no saṃjñā yet: 1.2.45 makes it a prātipadika, 1.4.13 an aṅga
+        tags   = set(),
         meta   = {"upadesha_slp1": stem_slp1},
     )
+    if derived_pratipadika:
+        stem.tags.add("prātipadika")
+        stem.meta["vyutpanna"] = True
     if stem_slp1.endswith("n"):
         # न्-अन्त प्रातिपदिक (राजन्, आत्मन् …) — lets 8.2.7 tell a stem-final
         # n (प्रातिपदिकान्तस्य) from a sup-derived one (रामान्, सर्वान्); a tag,

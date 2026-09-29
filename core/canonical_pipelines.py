@@ -41,7 +41,7 @@ def build_salIya_initial_state() -> State:
     stem = Term(
         kind="prakriti",
         varnas=parse_slp1_upadesha_sequence("SAlA"),
-        tags={"anga"},
+        tags=set(),                # no saṃjñā yet: 1.2.45 prātipadika, 1.4.13 aṅga
         meta={"upadesha_slp1": "SAlA"},
     )
     stem.tags.add("strīliṅga")
@@ -1246,7 +1246,7 @@ def derive_salIyaH() -> State:
     from pipelines.subanta import build_initial_state, run_subanta_pipeline  # noqa: PLC0415
 
     taddh = derive_salIya(pada_merge=False)
-    s = build_initial_state(taddh.flat_slp1().strip(), 1, 1, "pulliṅga")
+    s = build_initial_state(taddh.flat_slp1().strip(), 1, 1, "pulliṅga", derived_pratipadika=True)
     s.trace = [dict(st) for st in taddh.trace]
     s.samjna_registry = dict(taddh.samjna_registry)
     s.paribhasha_gates = dict(taddh.paribhasha_gates)
@@ -1275,6 +1275,8 @@ def P01_subanta_bootstrap(s: State) -> State:
         s = apply_rule("2.3.46", s)
     if s.meta.get("2_3_50_sheSa_shashthi_eligible"):
         s = P00_anabhihite_shashthi_shese_2_3_50(s)
+    # 1.2.45 first: 4.1.1 ङ्याप्प्रातिपदिकात् presupposes the prātipadika saṃjñā
+    s = apply_rule("1.2.45", s)
     s = apply_rule("4.1.1",  s)
     if any("strīliṅga" in t.tags for t in s.terms):
         s = P00_stri_4_1_wap(s)
@@ -1287,7 +1289,6 @@ def P01_subanta_bootstrap(s: State) -> State:
     )
     s = P01_samjna_1_1_15_to_1_1_24(s)
     s = apply_rule("1.2.72", s)
-    s = apply_rule("1.2.45", s)
     s = apply_rule("1.1.27", s)
     s = apply_rule("1.1.29", s)  # *na bahuvrīhau* — strip **1.1.27** *sarvanama* on *bahuvrīhi* *aṅga*
     s = apply_rule("1.1.30", s)  # *tṛtīyā-samāse* — strip *sarvanāma* on *tṛtīyā*-*tatpuruṣa* *aṅga* (**1.1.30**)

@@ -26,7 +26,7 @@ def _stem_idx(state: State) -> int | None:
     for i, t in enumerate(state.terms):
         if t.kind != "prakriti":
             continue
-        if "anga" not in t.tags:
+        if "prātipadika" not in t.tags:   # a prātipadika saṃjñā, not aṅga
             continue
         if (t.meta.get("upadesha_slp1") or "").strip() != _STEM_UPA:
             continue

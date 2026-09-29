@@ -73,7 +73,7 @@ def act(state: State) -> State:
 
 SUTRA = SutraRecord(
     sutra_id             = "1.4.103",
-    sutra_type           = SutraType.PARIBHASHA,
+    sutra_type           = SutraType.SAMJNA,
     text_slp1            = "supaH",
     text_dev             = "सुपः",
     padaccheda_dev       = "सुपः (षष्ठी — सुप्-प्रत्ययानाम्)",

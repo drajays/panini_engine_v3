@@ -41,7 +41,7 @@ def _eligible_pairs(state: State):
     for i in range(len(state.terms) - 1):
         anga = state.terms[i]
         pr = state.terms[i + 1]
-        if "anga" not in anga.tags or "prātipadika" not in anga.tags:
+        if "prātipadika" not in anga.tags:
             continue
         if TAG_DVANDVA_SAMASA not in anga.tags:
             continue

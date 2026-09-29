@@ -35,7 +35,7 @@ def _load_tyadadi() -> Set[str]:
 def _eligible(state: State):
     ty = _load_tyadadi()
     for t in state.terms:
-        if "anga" not in t.tags or "prātipadika" not in t.tags:
+        if "prātipadika" not in t.tags:
             continue
         if "tyadadi" in t.tags:
             continue
@@ -58,7 +58,7 @@ def act(state: State) -> State:
 
 SUTRA = SutraRecord(
     sutra_id       = "1.2.72",
-    sutra_type     = SutraType.SAMJNA,
+    sutra_type     = SutraType.VIDHI,
     text_slp1      = 'tyadAdIni sarvErnityam',
     text_dev       = 'त्यदादीनि सर्वैर्नित्यम्',
     padaccheda_dev = "त्यदादि-गणः",

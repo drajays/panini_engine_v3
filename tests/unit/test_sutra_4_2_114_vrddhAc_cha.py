@@ -29,7 +29,7 @@ def _rAma_stem() -> Term:
 
 def test_registry():
     r = SUTRA_REGISTRY["4.2.114"]
-    assert r.sutra_type is SutraType.SAMJNA
+    assert r.sutra_type is SutraType.VIDHI
     assert "4.2.92" in r.anuvritti_from
     assert r.text_slp1 == 'vfdDAcCaH'
     assert "छः" in r.padaccheda_dev

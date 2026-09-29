@@ -26,7 +26,7 @@ def _matches(state: State) -> bool:
         return False
     t0 = state.terms[0]
     t1 = state.terms[1]
-    if "anga" not in t0.tags or "prātipadika" not in t0.tags:
+    if "prātipadika" not in t0.tags:
         return False
     if t0.meta.get("upadesha_slp1") not in {"trapu", "jatu"}:
         return False

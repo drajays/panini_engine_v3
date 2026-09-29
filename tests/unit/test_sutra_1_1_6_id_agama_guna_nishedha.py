@@ -10,7 +10,7 @@ from phonology         import mk
 
 def test_metadata_type():
     r = SUTRA_REGISTRY["1.1.6"]
-    assert r.sutra_type is SutraType.PARIBHASHA
+    assert r.sutra_type is SutraType.PRATISHEDHA
     assert "dIdhI" in r.text_slp1 or "vevI" in r.text_slp1
 
 

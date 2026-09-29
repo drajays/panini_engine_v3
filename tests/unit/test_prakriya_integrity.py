@@ -32,17 +32,8 @@ _SUTRA_ID_FULLMATCH = re.compile(r"^\d+\.\d+\.\d+$")
 # (after 4.1.2 attaches sup); 1.4.7 similarly moved post-it-chain.  Preflight now
 # starts directly with 4.1.1.
 EXPECTED_DERIVE_RAMA_1_1_CHRONO_PREFIX: tuple[str, ...] = (
-    "4.1.1",
-    "1.1.1",
-    "1.1.73",
-    "1.1.2",
-    "1.1.3",
-    "1.1.7",
-    "1.1.60",
-    "1.1.61",
-    "1.1.62",
-    "1.1.63",
-    "1.1.8",
+    # 1.2.45 first: 4.1.1 ङ्याप्प्रातिपदिकात् presupposes the prātipadika saṃjñā
+    '1.2.45', '4.1.1', '1.1.1', '1.1.73', '1.1.2', '1.1.3', '1.1.7', '1.1.60', '1.1.61', '1.1.62', '1.1.63',
 )
 
 # engine/*.py may contain a bare ``x.x.x`` string only in these allowlisted

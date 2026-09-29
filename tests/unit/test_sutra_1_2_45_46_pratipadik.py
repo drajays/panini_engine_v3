@@ -39,7 +39,7 @@ def test_1_2_45_bu_is_dhatu_cond_false():
     t = Term(
         kind="prakriti",
         varnas=parse_slp1_upadesha_sequence("BU"),
-        tags={"anga"},
+        tags={"dhatu"},                      # भू as a dhātu (1.3.1): अधातुः fails
         meta={"upadesha_slp1": "BU"},
     )
     s0 = State(terms=[t])

@@ -214,7 +214,7 @@ def derive_EtikAyana_subanta() -> State:
     Backward-compatible wrapper: start from a fresh initial state for
     ``EtikAyana`` and derive ``EtikAyanaH``.
     """
-    s = build_initial_state("EtikAyana", 1, 1, "pulliṅga")
+    s = build_initial_state("EtikAyana", 1, 1, "pulliṅga", derived_pratipadika=True)
     return derive_EtikAyana_subanta_from_state(s)
 
 

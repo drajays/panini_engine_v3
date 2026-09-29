@@ -72,7 +72,7 @@ def act(state: State) -> State:
 
 SUTRA = SutraRecord(
     sutra_id="1.2.8",
-    sutra_type=SutraType.VIDHI,
+    sutra_type=SutraType.ATIDESHA,
     r1_form_identity_exempt=True,
     text_slp1='rudavidamuzagrahisvapipracCaH sa~Sca',
     text_dev='रुदविदमुषग्रहिस्वपिप्रच्छः सँश्च',

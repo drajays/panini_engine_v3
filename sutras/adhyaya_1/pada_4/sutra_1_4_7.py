@@ -27,7 +27,7 @@ GHI_HRASVA_IK = frozenset({"i", "u"})
 
 def _eligible_angas(state: State):
     for t in state.terms:
-        if "anga" not in t.tags:
+        if "prātipadika" not in t.tags:   # a prātipadika saṃjñā, not aṅga
             continue
         if not t.varnas:
             continue

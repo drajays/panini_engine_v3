@@ -1,3 +1,4 @@
+from engine.trace import TRACE_STATUSES_FIRED
 """``prakriya_20`` Part 1 — *devam* (``pipelines/devam_krt_prakriya_20_demo``)."""
 import sutras  # noqa: F401
 
@@ -14,7 +15,7 @@ def _fired_or_audit_ids(state: State) -> list[str]:
         if not sid or not isinstance(sid, str):
             continue
         st = (e.get("status") or "").upper()
-        if st in {"APPLIED", "AUDIT"}:
+        if st in TRACE_STATUSES_FIRED:
             out.append(sid)
     return out
 
@@ -46,7 +47,7 @@ def test_devam_prakriya_20_spine_order() -> None:
     assert ids.index("6.1.107") < ids.index("8.2.5")
     assert any(
         e.get("sutra_id") == "__KRDANTA_DEVA_MERGE__"
-        and (e.get("status") or "").upper() == "APPLIED"
+        and e.get("status") in TRACE_STATUSES_FIRED
         for e in s.trace
     )
 

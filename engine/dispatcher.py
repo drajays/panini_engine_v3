@@ -41,6 +41,8 @@ from engine.trace        import (
     make_applied_vacuous_step,
     make_audit_step,
     make_skipped_step,
+    TRACE_STATUS_DEFINED,
+    TRACE_STATUS_VACUOUS,
 )
 
 
@@ -87,6 +89,47 @@ def _finish_apply_rule(
     return new_state
 
 
+_BOOKKEEPING_META = frozenset({"__why_now_dev__"})
+
+
+def _state_effect(state: State):
+    """Everything a rule can decide besides the tape: saṃjñās registered, gates,
+    blocks, atideśas, adhikāras, pada/lakāra decisions recorded in meta."""
+    return (
+        dict(state.samjna_registry), dict(state.paribhasha_gates), set(state.blocked_sutras),
+        dict(state.niyama_gates), dict(state.atidesha_map), len(state.adhikara_stack),
+        {k: v for k, v in state.meta.items() if k not in _BOOKKEEPING_META},
+        tuple(t.meta for t in state.terms),
+    )
+
+
+def _only_self_announced(before, after) -> bool:
+    """True when a firing changed nothing but its own announcement: a gate and a
+    registry entry under one key, and a ``*_kind`` label in meta — the shape of a
+    sūtra that is scheduled but found no site on this tape."""
+    if before == after:
+        return True
+    (sr0, pg0, bl0, ng0, am0, ad0, me0, tm0) = before
+    (sr1, pg1, bl1, ng1, am1, ad1, me1, tm1) = after
+    if (bl0, ng0, am0, ad0, tm0) != (bl1, ng1, am1, ad1, tm1):
+        return False
+    new_gates = {k for k in pg1 if pg0.get(k, object()) != pg1[k]}
+    new_reg = {k for k in sr1 if sr0.get(k, object()) != sr1[k]}
+    if set(pg0) - set(pg1) or set(sr0) - set(sr1):
+        return False
+    meta_diff = {k for k in set(me0) | set(me1) if me0.get(k, object()) != me1.get(k, object())}
+    return (len(new_gates) <= 1 and new_reg <= new_gates
+            and all(k.endswith("_kind") for k in meta_diff))
+
+
+def _tape_marks(state: State):
+    """The saṃjñās/marks carried on the tape: term kinds and tags, varṇa tags."""
+    return tuple(
+        (t.kind, frozenset(t.tags), tuple((v.slp1, frozenset(v.tags)) for v in t.varnas))
+        for t in state.terms
+    )
+
+
 def apply_rule(
     sutra_id    : str,
     state       : State,
@@ -113,6 +156,8 @@ def apply_rule(
 
     new_state   = state.clone()
     purge_closed_adhikaras(sutra_id, new_state)
+    marks_before = _tape_marks(new_state)
+    effect_before = _state_effect(new_state)
 
     form_before   = new_state.render()
     samjna_before = dict(new_state.samjna_registry)
@@ -211,24 +256,45 @@ def apply_rule(
     # *lop*; executor signals vacuous *prayoga* (not *COND-FALSE* *skip*).
     if new_state.meta.pop(META_1_3_9_VACUOUS, None):
         w_v = getattr(rec, "why_dev_vacuous", None) or rec.why_dev
-        _append_traced_step(
-            new_state,
-            make_applied_vacuous_step(
-                sutra_id, stype.name, contract["dev_label"],
-                form_before, form_after, w_v, lopa_count=0,
-            ),
-            prev_sutra, sutra_id,
+        _step = make_applied_vacuous_step(
+            sutra_id, stype.name, contract["dev_label"],
+            form_before, form_after, w_v, lopa_count=0,
         )
+        _step["status"] = TRACE_STATUS_VACUOUS          # no it on the tape: nothing done
+        _append_traced_step(new_state, _step, prev_sutra, sutra_id)
         return _finish_apply_rule(prev_sutra, sutra_id, new_state)
 
+    # What the step did to the tape itself (varṇas, and the saṃjñās/marks on
+    # terms and varṇas) — the trace status reports exactly that.
+    form_changed  = form_before != form_after
+    marks_changed = _tape_marks(new_state) != marks_before
+
     # ── Invariant checks on APPLIED step ─────────────────────────────
-    check_r1(rec, form_before, form_after)
-    check_r2(rec, samjna_before, new_state.samjna_registry)
-    check_r3(rec, parib_before,  new_state.paribhasha_gates)
+    # R1–R3: a rule that reported firing but changed *nothing at all* is a bug.
+    # Any other firing is legitimate; the status below says what it did.
+    if not form_changed and not marks_changed and _state_effect(new_state) == effect_before:
+        check_r1(rec, form_before, form_after)
+        check_r2(rec, samjna_before, new_state.samjna_registry)
+        check_r3(rec, parib_before,  new_state.paribhasha_gates)
 
     # *अधिकार* / *paribhāṣā* / *anuvāda* — *prayoga* without surface *pariṇāma*:
     # trace as AUDIT, not *vidhi* *APPLIED* (UI / analytics).
-    if stype in (SutraType.ADHIKARA, SutraType.PARIBHASHA, SutraType.ANUVADA):
+    changed_any = (form_changed or marks_changed
+                   or not _only_self_announced(effect_before, _state_effect(new_state)))
+    if not form_changed and not marks_changed and (
+            not changed_any or stype is SutraType.SAMJNA):
+        # fired but left no mark: nothing changed at all → VACUOUS; a saṃjñā
+        # that only registered its definition (1.1.1 vṛddhi = ā ai au, and
+        # 1.1.7 on a word with no conjunct) → DEFINED. Never "APPLIED".
+        _step = make_applied_step(
+            sutra_id, stype.name, contract["dev_label"],
+            form_before, form_after, rec.why_dev,
+        )
+        _step["status"] = (TRACE_STATUS_DEFINED if changed_any and stype is SutraType.SAMJNA
+                           else TRACE_STATUS_VACUOUS)
+        new_state.meta.pop("__why_now_dev__", None)
+        _append_traced_step(new_state, _step, prev_sutra, sutra_id)
+    elif stype in (SutraType.ADHIKARA, SutraType.PARIBHASHA, SutraType.ANUVADA) and not form_changed:
         _append_traced_step(
             new_state,
             make_audit_step(

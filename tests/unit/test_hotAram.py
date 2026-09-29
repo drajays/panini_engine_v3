@@ -1,3 +1,4 @@
+from engine.trace import TRACE_STATUSES_FIRED
 """``prakriya_21`` — *hotāram* / ``hotAram`` (``pipelines/hotAram_prakriya_21_demo``)."""
 import sutras  # noqa: F401
 
@@ -15,7 +16,7 @@ def _fired_or_audit_ids(state: State) -> list[str]:
         if not sid or not isinstance(sid, str):
             continue
         st = (e.get("status") or "").upper()
-        if st in {"APPLIED", "AUDIT"}:
+        if st in TRACE_STATUSES_FIRED:
             out.append(sid)
     return out
 

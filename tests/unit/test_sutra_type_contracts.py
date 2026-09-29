@@ -69,6 +69,8 @@ def test_adhikara_has_scope():
 
 def test_atidesha_has_triple():
     for r in _by_type(SutraType.ATIDESHA):
+        if r.act is not None:          # an atideśa with its own act() extends by act
+            continue
         assert r.atidesha_target
         assert r.atidesha_source
         assert r.atidesha_dest

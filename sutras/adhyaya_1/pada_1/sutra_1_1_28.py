@@ -48,7 +48,7 @@ def _load_sarvadi() -> Set[str]:
 def _eligible_terms(state: State):
     for t in state.terms:
         # Must be a prātipadika aṅga in a dik-samāsa bahuvrīhi context.
-        if "anga" not in t.tags or "prātipadika" not in t.tags:
+        if "prātipadika" not in t.tags:
             continue
         if "diksamasa" not in t.tags or "bahuvrihi" not in t.tags:
             continue

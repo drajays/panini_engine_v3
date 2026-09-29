@@ -30,7 +30,7 @@ META_1_1_29_BAHUVRHITA_STRIPPED = "1_1_29_na_bahuvrIhau_sarvanama_stripped"
 
 def _eligible_angas(state: State):
     for t in state.terms:
-        if "anga" not in t.tags or "prātipadika" not in t.tags:
+        if "prātipadika" not in t.tags:
             continue
         if "bahuvrihi" not in t.tags:
             continue

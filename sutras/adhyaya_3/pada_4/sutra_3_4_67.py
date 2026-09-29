@@ -29,7 +29,7 @@ def act(state: State) -> State:
 
 SUTRA = SutraRecord(
     sutra_id       = "3.4.67",
-    sutra_type     = SutraType.ADHIKARA,
+    sutra_type     = SutraType.VIDHI,
     text_slp1      = "kartari kft",
     text_dev       = "कर्तरि कृत्",
     padaccheda_dev = "कर्तरि कृत्",

@@ -45,7 +45,7 @@ _WHY_DEV = (
 
 SUTRA = SutraRecord(
     sutra_id                = "1.2.28",
-    sutra_type              = SutraType.SAMJNA,
+    sutra_type              = SutraType.PARIBHASHA,
     r1_form_identity_exempt = True,
     text_slp1               = 'acaSca',
     text_dev                = 'अचश्च',

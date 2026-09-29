@@ -36,7 +36,7 @@ def _eligible(state: State) -> bool:
     if len(state.terms) != 3:
         return False
     t0, t1, t2 = state.terms
-    if "anga" not in t0.tags or "prātipadika" not in t0.tags:
+    if "prātipadika" not in t0.tags:
         return False
     if (t0.meta.get("upadesha_slp1") or "").strip() != "pUrva":
         return False

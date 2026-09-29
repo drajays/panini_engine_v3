@@ -80,7 +80,7 @@ def derive_sAmanyas() -> State:
     s = P00_taddhita_it_lopa_chain(s)
     s = _structural_sAmanya_merge(s)
 
-    s_sub = build_initial_state("sAmanya", 1, 1, "pulliṅga")
+    s_sub = build_initial_state("sAmanya", 1, 1, "pulliṅga", derived_pratipadika=True)
     s_sub.trace = list(s.trace) + list(s_sub.trace)
     s_sub.meta["sama_6_1_213_recipe"] = True
     s_sub = apply_rule("6.1.213", s_sub)

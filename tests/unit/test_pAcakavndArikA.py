@@ -1,6 +1,8 @@
 """Unit tests for ``prakriya_37`` — **पाचकवृन्दारिका** spine (narrow slices)."""
 from __future__ import annotations
 
+from engine.trace import TRACE_STATUSES_FIRED
+
 import sutras  # noqa: F401
 
 from pipelines.pAcakavndArikA import (
@@ -16,7 +18,7 @@ def _fired_ids(state) -> list[str]:
         if not sid or not isinstance(sid, str):
             continue
         st = (e.get("status") or "").upper()
-        if st in {"APPLIED", "APPLIED_VACUOUS", "AUDIT"}:
+        if st in TRACE_STATUSES_FIRED:
             out.append(sid)
     return out
 

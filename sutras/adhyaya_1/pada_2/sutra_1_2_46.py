@@ -63,7 +63,6 @@ def cond(state: State) -> bool:
         t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
         if (
             "dhatu" not in t0.tags
-            and "anga" in t0.tags
             and "prātipadika" in t0.tags
             and "sup" in t1.tags
             and "pratyaya" in t2.tags
@@ -79,7 +78,6 @@ def cond(state: State) -> bool:
         t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
         if (
             "dhatu" not in t0.tags
-            and "anga" in t0.tags
             and "prātipadika" in t0.tags
             and "sup" in t1.tags
             and "pratyaya" in t2.tags
@@ -128,7 +126,6 @@ def cond(state: State) -> bool:
         t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
         if (
             "dhatu" not in t0.tags
-            and "anga" in t0.tags
             and "prātipadika" in t0.tags
             and "sup" in t1.tags
             and "pratyaya" in t2.tags
@@ -146,7 +143,6 @@ def cond(state: State) -> bool:
         t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
         if (
             "dhatu" not in t0.tags
-            and "anga" in t0.tags
             and "prātipadika" in t0.tags
             and "sup" in t1.tags
             and "pratyaya" in t2.tags
@@ -422,7 +418,6 @@ def act(state: State) -> State:
         t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
         if (
             "dhatu" not in t0.tags
-            and "anga" in t0.tags
             and "prātipadika" in t0.tags
             and "sup" in t1.tags
             and "pratyaya" in t2.tags
@@ -437,7 +432,6 @@ def act(state: State) -> State:
         t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
         if (
             "dhatu" not in t0.tags
-            and "anga" in t0.tags
             and "prātipadika" in t0.tags
             and "sup" in t1.tags
             and "pratyaya" in t2.tags
@@ -452,7 +446,6 @@ def act(state: State) -> State:
         t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
         if (
             "dhatu" not in t0.tags
-            and "anga" in t0.tags
             and "prātipadika" in t0.tags
             and "sup" in t1.tags
             and "pratyaya" in t2.tags
@@ -467,7 +460,6 @@ def act(state: State) -> State:
         t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
         if (
             "dhatu" not in t0.tags
-            and "anga" in t0.tags
             and "prātipadika" in t0.tags
             and "sup" in t1.tags
             and "pratyaya" in t2.tags

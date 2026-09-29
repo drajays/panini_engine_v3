@@ -37,7 +37,7 @@ META_1_1_30_TRTIYA_STRIPPED: str = "1_1_30_tRtIyA_samAse_sarvanama_stripped"
 
 def _eligible_angas(state: State):
     for t in state.terms:
-        if "anga" not in t.tags or "prātipadika" not in t.tags:
+        if "prātipadika" not in t.tags:
             continue
         if "tRtIyA_tatpurusha" not in t.tags:
             continue

@@ -113,7 +113,7 @@ _WHY = (
 
 SUTRA = SutraRecord(
     sutra_id       = "1.1.5",
-    sutra_type     = SutraType.PARIBHASHA,
+    sutra_type     = SutraType.VIDHI,
     text_slp1      = 'kNiti ca',
     text_dev       = 'क्ङिति च',
     padaccheda_dev = "क्‍ङ् इति",

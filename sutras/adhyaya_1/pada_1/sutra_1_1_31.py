@@ -40,7 +40,7 @@ META_1_1_31_DVANDVA_STRIPPED: str = "1_1_31_dvandve_ca_sarvanama_stripped"
 
 def _eligible_angas(state: State):
     for t in state.terms:
-        if "anga" not in t.tags or "prātipadika" not in t.tags:
+        if "prātipadika" not in t.tags:
             continue
         if TAG_DVANDVA_SAMASA not in t.tags:
             continue

@@ -37,7 +37,7 @@ _WHY = (
 
 SUTRA = SutraRecord(
     sutra_id       = "1.1.17",
-    sutra_type     = SutraType.PARIBHASHA,
+    sutra_type     = SutraType.SAMJNA,
     text_slp1      = "uYaH",
     text_dev       = "उञः",
     padaccheda_dev = "उञः",

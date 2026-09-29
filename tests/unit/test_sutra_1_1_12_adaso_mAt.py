@@ -26,7 +26,7 @@ def _slp1_compact(slp1: str) -> str:
 def test_sutra_metadata():
     r = SUTRA_REGISTRY["1.1.12"]
     assert r.sutra_id == "1.1.12"
-    assert r.sutra_type is SutraType.PARIBHASHA
+    assert r.sutra_type is SutraType.SAMJNA
     assert "adaso" in r.text_slp1
     assert "mAt" in r.text_slp1
 

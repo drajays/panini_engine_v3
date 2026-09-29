@@ -31,8 +31,9 @@ from engine.state import State
 
 
 def cond(state: State) -> bool:
-    """Idempotent guard — fire only if ekaśruti is not yet registered."""
-    return state.samjna_registry.get("1_2_33_ekazruti") is not True
+    """एकश्रुति दूरात्सम्बुद्धौ: only where there is a sambuddhi (calling out)."""
+    return (state.samjna_registry.get("1_2_33_ekazruti") is not True
+            and any("sambuddhi" in t.tags for t in state.terms))
 
 
 def act(state: State) -> State:
@@ -52,7 +53,7 @@ _WHY_DEV = (
 
 SUTRA = SutraRecord(
     sutra_id                = "1.2.33",
-    sutra_type              = SutraType.SAMJNA,
+    sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
     text_slp1               = 'ekaSruti dUrAt sambudDO',
     text_dev                = 'एकश्रुति दूरात् सम्बुद्धौ',

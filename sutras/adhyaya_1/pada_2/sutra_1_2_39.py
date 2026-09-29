@@ -48,7 +48,7 @@ _WHY_DEV = (
 
 SUTRA = SutraRecord(
     sutra_id                = "1.2.39",
-    sutra_type              = SutraType.PARIBHASHA,
+    sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
     text_slp1               = 'svaritAt saMhitAyAmanudAttAnAm',
     text_dev                = 'स्वरितात् संहितायामनुदात्तानाम्',

@@ -34,7 +34,7 @@ def _site_p042(state: State) -> int | None:
     for i, t in enumerate(state.terms):
         if t.kind != "prakriti":
             continue
-        if "anga" not in t.tags:
+        if "prātipadika" not in t.tags:   # a prātipadika saṃjñā, not aṅga
             continue
         if "P042_garga_demo" not in t.tags:
             continue
@@ -48,7 +48,7 @@ def _site_p004_a(state: State) -> int | None:
     for i, t in enumerate(state.terms):
         if t.kind != "prakriti":
             continue
-        if "anga" not in t.tags:
+        if "prātipadika" not in t.tags:   # a prātipadika saṃjñā, not aṅga
             continue
         if (t.meta.get("upadesha_slp1") or "").strip() != _UPA_KAU_YJ_AYANA:
             continue

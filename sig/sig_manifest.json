@@ -167,18 +167,18 @@
       "reason": "recipe module 'pipelines.tinanta_tarati_gold' not importable (also tried 'tools.tinanta_tarati_gold')"
     }
   ],
-  "generated_utc": "2026-09-18T04:21:50.740413+00:00",
+  "generated_utc": "2026-09-29T18:56:37.014765+00:00",
   "generator": "panini_engine_v3.tools.sig_benchmark",
   "sutra_coverage": {
     "conditions": {
-      "cited": 393,
-      "invoked": 698,
-      "moved": 480,
-      "tested": 532
+      "cited": 395,
+      "invoked": 696,
+      "moved": 472,
+      "tested": 554
     },
     "coverage_pct": 6.45,
     "implemented": 257,
-    "registered": 3985
+    "registered": 3983
   },
   "total_derivations": 504
 }

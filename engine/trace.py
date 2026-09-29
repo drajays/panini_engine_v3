@@ -33,10 +33,17 @@ TRACE_STATUS_APPLIED_VACUOUS = "APPLIED_VACUOUS"
 TRACE_STATUS_AUDIT = "AUDIT"
 TRACE_STATUS_SKIPPED = "SKIPPED"
 TRACE_STATUS_BLOCKED = "BLOCKED"
+# The rule's condition held but it left no mark on the tape: a vidhi with nothing
+# to change (8.4.56 on a vowel-final pada), 1.3.9 with no it to drop.
+TRACE_STATUS_VACUOUS = "VACUOUS"
+# A saṃjñā that only registered its definition (1.1.1 vṛddhi = ā ai au) and
+# attached to nothing on this tape — it is defined, not applied.
+TRACE_STATUS_DEFINED = "DEFINED"
 
 # Cond passed and the sūtra ran (excludes gate-*skip* and COND-false only).
 TRACE_STATUSES_FIRED: frozenset[str] = frozenset((
     TRACE_STATUS_APPLIED, TRACE_STATUS_APPLIED_VACUOUS, TRACE_STATUS_AUDIT,
+    TRACE_STATUS_VACUOUS, TRACE_STATUS_DEFINED,
 ))
 
 # Dispatcher-only: *vidhi* ran (cond satisfied vacuously) for **1.3.9** when there is

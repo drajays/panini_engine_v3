@@ -105,10 +105,84 @@ def sync(write: bool) -> int:
     return 0
 
 
+def patha_classes() -> dict[str, set[str]]:
+    """Sūtra id → its lakṣaṇa classes in the pāṭha: V, S, P, AT, AD."""
+    rows = json.loads(ref_path("sutraani/data.txt").read_text())["data"]
+    return {f"{r['a']}.{r['p']}.{r['n']}": {t.split("$")[0] for t in r["type"].split("##")} for r in rows}
+
+
+# Where the tradition classes a sūtra differently from ashtadhyayi.com's type
+# field, the tradition wins; each entry names its source.
+TYPE_OVERRIDES = {
+    "1.1.6":  ("PRATISHEDHA", "न from 1.1.4 by anuvṛtti — Kāśikā: दीधीवेवीटां गुणवृद्धी न भवतः"),
+    "1.1.69": ("PARIBHASHA", "Siddhānta Kaumudī, paribhāṣā-prakaraṇa"),
+    "1.1.70": ("PARIBHASHA", "Siddhānta Kaumudī, paribhāṣā-prakaraṇa"),
+    "1.1.72": ("PARIBHASHA", "Siddhānta Kaumudī, paribhāṣā-prakaraṇa (तदन्तविधि)"),
+    "4.2.92": ("ADHIKARA", "Kāśikā: शेष इत्यधिकारोऽयम् (to 4.3.134)"),
+}
+
+
+def _is_nisedha(sid, rec) -> bool:
+    from tools.sutra_lint import _is_nisedha as f
+    return f(sid, rec)
+
+
+def type_mismatches():
+    """(sid, record, wanted SutraType) where the engine's core class contradicts
+    the pāṭha. Niyama/pratiṣedha/vibhāṣā/nipātana/anuvāda are refinements of any
+    class and are left alone."""
+    import sutras  # noqa: F401
+    from engine.registry import SUTRA_REGISTRY as REG
+    from engine.sutra_type import SutraType as T
+    core = {"V": T.VIDHI, "S": T.SAMJNA, "P": T.PARIBHASHA, "AT": T.ATIDESHA, "AD": T.ADHIKARA}
+    modal = {T.NIYAMA, T.PRATISHEDHA, T.VIBHASHA, T.NIPATANA, T.ANUVADA}
+    out = []
+    for sid, cs in sorted(patha_classes().items()):
+        rec = REG.get(sid)
+        if rec is None:
+            continue
+        if sid in TYPE_OVERRIDES:
+            want = T[TYPE_OVERRIDES[sid][0]]
+            if rec.sutra_type is not want:
+                out.append((sid, rec, want))
+            continue
+        if rec.sutra_type in modal:
+            continue
+        allowed = {core[c] for c in cs}
+        if rec.sutra_type not in allowed:
+            order = ("V", "S", "AT", "P", "AD")
+            want = core[next(c for c in order if c in cs)]
+            if want is T.VIDHI and _is_nisedha(sid, rec):
+                want = T.PRATISHEDHA          # a न-sūtra is a pratiṣedha, not a plain vidhi
+            out.append((sid, rec, want))
+        elif rec.sutra_type is T.VIDHI and _is_nisedha(sid, rec) and not rec.blocks_sutra_ids:
+            out.append((sid, rec, T.PRATISHEDHA))
+    return out
+
+
+def sync_types(write: bool) -> int:
+    n = 0
+    for sid, rec, want in type_mismatches():
+        f = Path(inspect.getsourcefile(rec.cond or rec.act))
+        src = f.read_text()
+        nodes = list(_field_nodes(ast.parse(src), "sutra_type"))
+        if len(nodes) != 1:
+            print(f"  ? {sid}: {len(nodes)} sutra_type fields")
+            continue
+        print(f"  {sid}: {rec.sutra_type.name} → {want.name}")
+        n += 1
+        if write:
+            f.write_text(_replace_nodes(src, [(nodes[0], f"SutraType.{want.name}")]))
+    print(f"{n} sūtra types {'rewritten' if write else 'differ'}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--write", action="store_true")
-    return sync(ap.parse_args(argv).write)
+    ap.add_argument("--types", action="store_true", help="sync sūtra types instead of texts")
+    a = ap.parse_args(argv)
+    return sync_types(a.write) if a.types else sync(a.write)
 
 
 if __name__ == "__main__":

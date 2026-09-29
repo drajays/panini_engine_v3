@@ -52,7 +52,7 @@ _WHY_DEV = (
 
 SUTRA = SutraRecord(
     sutra_id                = "1.2.32",
-    sutra_type              = SutraType.PARIBHASHA,
+    sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
     text_slp1               = 'tasyAdita udAttamarDahrasvam',
     text_dev                = 'तस्यादित उदात्तमर्धह्रस्वम्',

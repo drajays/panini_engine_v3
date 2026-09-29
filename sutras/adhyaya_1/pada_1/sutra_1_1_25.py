@@ -40,7 +40,7 @@ def _zat_qati_registered(state: State) -> bool:
 def _eligible(state: State):
     """Yield Terms that are saṃkhyā-aṅga with upadesha_slp1 'kati' not yet tagged."""
     for t in state.terms:
-        if "anga" not in t.tags:
+        if "prātipadika" not in t.tags:   # a prātipadika saṃjñā, not aṅga
             continue
         upa = t.meta.get("upadesha_slp1")
         if upa not in QATI_SET_SLP1:

@@ -110,7 +110,7 @@ _WHY = (
 
 SUTRA = SutraRecord(
     sutra_id       = "1.1.18",
-    sutra_type     = SutraType.VIDHI,
+    sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'U~',
     text_dev       = 'ऊँ',
     padaccheda_dev = "ऊँ",

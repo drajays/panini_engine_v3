@@ -44,7 +44,6 @@ def cond(state: State) -> bool:
         # *śālīya* taddhita: *aṅga* = *prakriti* (not *dhātu*) *nimitta* of *taddhita*.
         if (
             state.meta.get("prakriya_sAlIya")
-            and "anga" in t0.tags
             and "prātipadika" in t0.tags
             and "dhatu" not in t0.tags
             and "taddhita" in t1.tags
@@ -52,7 +51,6 @@ def cond(state: State) -> bool:
             return True
         if (
             state.meta.get("prakriya_itika_phak")
-            and "anga" in t0.tags
             and "prātipadika" in t0.tags
             and "dhatu" not in t0.tags
             and "taddhita" in t1.tags
@@ -60,7 +58,6 @@ def cond(state: State) -> bool:
             return True
         if (
             state.meta.get("prakriya_matup_asti")
-            and "anga" in t0.tags
             and "prātipadika" in t0.tags
             and "dhatu" not in t0.tags
             and "taddhita" in t1.tags
@@ -71,6 +68,14 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     state.samjna_registry[("1.4.13_anga", 0)] = frozenset({"active"})
+    # the saṃjñā attaches to the part before the pratyaya (यस्मात् प्रत्ययविधिः)
+    for j in range(1, len(state.terms)):
+        if "pratyaya" in state.terms[j].tags and not term_is_sup_luk_ghost(state.terms[j]):
+            k = j - 1
+            while k >= 0 and term_is_sup_luk_ghost(state.terms[k]):
+                k -= 1
+            if k >= 0 and "pratyaya" not in state.terms[k].tags:
+                state.terms[k].tags.add("anga")
     state.meta["__why_now_dev__"] = (
         "प्रत्ययात् पूर्वं स्थितः अवयवः अङ्ग-संज्ञकः (प्रत्यये परतः अङ्गम्); "
         "अनेन अङ्ग-अधिकार-कार्याणि (६.४.१ आदि) प्रसजन्ति। (१.४.१३)"

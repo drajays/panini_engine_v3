@@ -7,7 +7,7 @@
       "SKIPPED": 990,
       "apply_rule_invocations": 1011,
       "sutra_id": "1.3.5",
-      "total_time_ns": 16133889
+      "total_time_ns": 34738566
     },
     {
       "APPLIED": 89,
@@ -15,23 +15,31 @@
       "SKIPPED": 922,
       "apply_rule_invocations": 1011,
       "sutra_id": "1.3.7",
-      "total_time_ns": 16676424
+      "total_time_ns": 35743584
     },
     {
-      "APPLIED": 1011,
+      "APPLIED": 289,
       "BLOCKED": 0,
       "SKIPPED": 0,
       "apply_rule_invocations": 1011,
       "sutra_id": "1.3.9",
-      "total_time_ns": 17113568
+      "total_time_ns": 36794070
     },
     {
-      "APPLIED": 133,
+      "APPLIED": 21,
       "BLOCKED": 0,
       "SKIPPED": 869,
       "apply_rule_invocations": 1002,
       "sutra_id": "1.1.11",
-      "total_time_ns": 13836614
+      "total_time_ns": 31145193
+    },
+    {
+      "APPLIED": 4,
+      "BLOCKED": 0,
+      "SKIPPED": 998,
+      "apply_rule_invocations": 1002,
+      "sutra_id": "6.1.68",
+      "total_time_ns": 34806294
     },
     {
       "APPLIED": 9,
@@ -39,7 +47,7 @@
       "SKIPPED": 993,
       "apply_rule_invocations": 1002,
       "sutra_id": "6.4.8",
-      "total_time_ns": 15665266
+      "total_time_ns": 33532785
     },
     {
       "APPLIED": 0,
@@ -47,15 +55,15 @@
       "SKIPPED": 1002,
       "apply_rule_invocations": 1002,
       "sutra_id": "8.2.7",
-      "total_time_ns": 20035207
+      "total_time_ns": 42587572
     },
     {
-      "APPLIED": 41,
+      "APPLIED": 62,
       "BLOCKED": 0,
-      "SKIPPED": 469,
+      "SKIPPED": 448,
       "apply_rule_invocations": 510,
       "sutra_id": "1.3.2",
-      "total_time_ns": 7248168
+      "total_time_ns": 15746502
     },
     {
       "APPLIED": 49,
@@ -63,15 +71,15 @@
       "SKIPPED": 461,
       "apply_rule_invocations": 510,
       "sutra_id": "1.3.3",
-      "total_time_ns": 6929884
+      "total_time_ns": 15107953
     },
     {
-      "APPLIED": 293,
+      "APPLIED": 0,
       "BLOCKED": 0,
       "SKIPPED": 217,
       "apply_rule_invocations": 510,
       "sutra_id": "1.3.4",
-      "total_time_ns": 7128000
+      "total_time_ns": 18631678
     },
     {
       "APPLIED": 0,
@@ -79,7 +87,7 @@
       "SKIPPED": 510,
       "apply_rule_invocations": 510,
       "sutra_id": "1.3.6",
-      "total_time_ns": 7073299
+      "total_time_ns": 15298704
     },
     {
       "APPLIED": 108,
@@ -87,15 +95,15 @@
       "SKIPPED": 402,
       "apply_rule_invocations": 510,
       "sutra_id": "1.3.8",
-      "total_time_ns": 7092873
+      "total_time_ns": 15506513
     },
     {
-      "APPLIED": 504,
+      "APPLIED": 0,
       "BLOCKED": 0,
       "SKIPPED": 0,
       "apply_rule_invocations": 504,
       "sutra_id": "1.1.2",
-      "total_time_ns": 3686922
+      "total_time_ns": 11189090
     },
     {
       "APPLIED": 0,
@@ -103,15 +111,23 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 504,
       "sutra_id": "1.1.3",
-      "total_time_ns": 3556129
+      "total_time_ns": 11265936
     },
     {
-      "APPLIED": 504,
+      "APPLIED": 0,
+      "BLOCKED": 0,
+      "SKIPPED": 504,
+      "apply_rule_invocations": 504,
+      "sutra_id": "1.1.51",
+      "total_time_ns": 15678164
+    },
+    {
+      "APPLIED": 0,
       "BLOCKED": 0,
       "SKIPPED": 0,
       "apply_rule_invocations": 504,
       "sutra_id": "1.1.60",
-      "total_time_ns": 3659421
+      "total_time_ns": 11275575
     },
     {
       "APPLIED": 0,
@@ -119,7 +135,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 504,
       "sutra_id": "1.3.10",
-      "total_time_ns": 7964071
+      "total_time_ns": 22928544
     },
     {
       "APPLIED": 504,
@@ -127,15 +143,15 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 504,
       "sutra_id": "1.4.102",
-      "total_time_ns": 7382129
+      "total_time_ns": 16657597
     },
     {
-      "APPLIED": 504,
+      "APPLIED": 501,
       "BLOCKED": 0,
       "SKIPPED": 0,
       "apply_rule_invocations": 504,
       "sutra_id": "1.4.13",
-      "total_time_ns": 7079167
+      "total_time_ns": 16511291
     },
     {
       "APPLIED": 0,
@@ -143,7 +159,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 504,
       "sutra_id": "3.1.1",
-      "total_time_ns": 6347654
+      "total_time_ns": 16609559
     },
     {
       "APPLIED": 0,
@@ -151,7 +167,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 504,
       "sutra_id": "3.1.2",
-      "total_time_ns": 6386212
+      "total_time_ns": 16488213
     },
     {
       "APPLIED": 26,
@@ -159,7 +175,7 @@
       "SKIPPED": 478,
       "apply_rule_invocations": 504,
       "sutra_id": "6.1.77",
-      "total_time_ns": 9953330
+      "total_time_ns": 21200006
     },
     {
       "APPLIED": 44,
@@ -167,7 +183,7 @@
       "SKIPPED": 460,
       "apply_rule_invocations": 504,
       "sutra_id": "6.1.78",
-      "total_time_ns": 10408743
+      "total_time_ns": 22068336
     },
     {
       "APPLIED": 0,
@@ -175,7 +191,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 504,
       "sutra_id": "6.4.1",
-      "total_time_ns": 7180489
+      "total_time_ns": 18357163
     },
     {
       "APPLIED": 0,
@@ -183,7 +199,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 504,
       "sutra_id": "8.2.1",
-      "total_time_ns": 9247246
+      "total_time_ns": 22208498
     },
     {
       "APPLIED": 165,
@@ -191,15 +207,15 @@
       "SKIPPED": 339,
       "apply_rule_invocations": 504,
       "sutra_id": "8.2.66",
-      "total_time_ns": 10129164
+      "total_time_ns": 21465128
     },
     {
-      "APPLIED": 501,
+      "APPLIED": 0,
       "BLOCKED": 0,
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.1",
-      "total_time_ns": 3555645
+      "total_time_ns": 11248506
     },
     {
       "APPLIED": 0,
@@ -207,15 +223,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.10",
-      "total_time_ns": 3797576
-    },
-    {
-      "APPLIED": 0,
-      "BLOCKED": 0,
-      "SKIPPED": 0,
-      "apply_rule_invocations": 501,
-      "sutra_id": "1.1.100",
-      "total_time_ns": 3991892
+      "total_time_ns": 12252546
     },
     {
       "APPLIED": 0,
@@ -223,7 +231,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.12",
-      "total_time_ns": 3851414
+      "total_time_ns": 12467292
     },
     {
       "APPLIED": 0,
@@ -231,7 +239,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.13",
-      "total_time_ns": 3887500
+      "total_time_ns": 12703578
     },
     {
       "APPLIED": 0,
@@ -239,7 +247,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.14",
-      "total_time_ns": 4665882
+      "total_time_ns": 8975706
     },
     {
       "APPLIED": 0,
@@ -247,7 +255,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.15",
-      "total_time_ns": 4039683
+      "total_time_ns": 8874358
     },
     {
       "APPLIED": 0,
@@ -255,7 +263,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.16",
-      "total_time_ns": 4020299
+      "total_time_ns": 8871667
     },
     {
       "APPLIED": 0,
@@ -263,7 +271,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.17",
-      "total_time_ns": 4118752
+      "total_time_ns": 13065005
     },
     {
       "APPLIED": 0,
@@ -271,15 +279,15 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.18",
-      "total_time_ns": 4130125
+      "total_time_ns": 9119125
     },
     {
-      "APPLIED": 24,
+      "APPLIED": 0,
       "BLOCKED": 0,
       "SKIPPED": 477,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.19",
-      "total_time_ns": 4096591
+      "total_time_ns": 9195176
     },
     {
       "APPLIED": 0,
@@ -287,7 +295,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.20",
-      "total_time_ns": 4143588
+      "total_time_ns": 9099762
     },
     {
       "APPLIED": 0,
@@ -295,7 +303,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.21",
-      "total_time_ns": 4259051
+      "total_time_ns": 13434857
     },
     {
       "APPLIED": 0,
@@ -303,7 +311,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.22",
-      "total_time_ns": 4247424
+      "total_time_ns": 9427907
     },
     {
       "APPLIED": 0,
@@ -311,7 +319,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.23",
-      "total_time_ns": 4363338
+      "total_time_ns": 9533509
     },
     {
       "APPLIED": 0,
@@ -319,7 +327,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.24",
-      "total_time_ns": 4275492
+      "total_time_ns": 9419241
     },
     {
       "APPLIED": 96,
@@ -327,7 +335,7 @@
       "SKIPPED": 405,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.27",
-      "total_time_ns": 4736590
+      "total_time_ns": 10026504
     },
     {
       "APPLIED": 0,
@@ -335,7 +343,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.29",
-      "total_time_ns": 4607953
+      "total_time_ns": 9775912
     },
     {
       "APPLIED": 0,
@@ -343,7 +351,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.30",
-      "total_time_ns": 4569126
+      "total_time_ns": 9814585
     },
     {
       "APPLIED": 9,
@@ -351,15 +359,15 @@
       "SKIPPED": 492,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.42",
-      "total_time_ns": 8218910
+      "total_time_ns": 17596296
     },
     {
-      "APPLIED": 125,
+      "APPLIED": 107,
       "BLOCKED": 0,
-      "SKIPPED": 376,
+      "SKIPPED": 394,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.43",
-      "total_time_ns": 7035300
+      "total_time_ns": 15208284
     },
     {
       "APPLIED": 0,
@@ -367,15 +375,15 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.46",
-      "total_time_ns": 4329076
+      "total_time_ns": 13712490
     },
     {
-      "APPLIED": 501,
+      "APPLIED": 0,
       "BLOCKED": 0,
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.61",
-      "total_time_ns": 3705173
+      "total_time_ns": 11411653
     },
     {
       "APPLIED": 0,
@@ -383,7 +391,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.62",
-      "total_time_ns": 3633204
+      "total_time_ns": 11664336
     },
     {
       "APPLIED": 0,
@@ -391,15 +399,15 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.63",
-      "total_time_ns": 3762929
+      "total_time_ns": 11796509
     },
     {
-      "APPLIED": 501,
+      "APPLIED": 0,
       "BLOCKED": 0,
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.7",
-      "total_time_ns": 3612962
+      "total_time_ns": 11205946
     },
     {
       "APPLIED": 168,
@@ -407,23 +415,23 @@
       "SKIPPED": 333,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.73",
-      "total_time_ns": 4159242
+      "total_time_ns": 9353447
     },
     {
-      "APPLIED": 501,
+      "APPLIED": 0,
       "BLOCKED": 0,
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.8",
-      "total_time_ns": 3811881
+      "total_time_ns": 11867922
     },
     {
-      "APPLIED": 501,
+      "APPLIED": 0,
       "BLOCKED": 0,
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.1.9",
-      "total_time_ns": 3798697
+      "total_time_ns": 11914869
     },
     {
       "APPLIED": 166,
@@ -431,7 +439,7 @@
       "SKIPPED": 335,
       "apply_rule_invocations": 501,
       "sutra_id": "1.2.41",
-      "total_time_ns": 7168664
+      "total_time_ns": 15669296
     },
     {
       "APPLIED": 501,
@@ -439,7 +447,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.2.45",
-      "total_time_ns": 6001334
+      "total_time_ns": 10317783
     },
     {
       "APPLIED": 21,
@@ -447,7 +455,7 @@
       "SKIPPED": 480,
       "apply_rule_invocations": 501,
       "sutra_id": "1.2.72",
-      "total_time_ns": 4516537
+      "total_time_ns": 9842077
     },
     {
       "APPLIED": 0,
@@ -455,7 +463,7 @@
       "SKIPPED": 90,
       "apply_rule_invocations": 501,
       "sutra_id": "1.4.103",
-      "total_time_ns": 6779083
+      "total_time_ns": 19207208
     },
     {
       "APPLIED": 501,
@@ -463,7 +471,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.4.110",
-      "total_time_ns": 9321881
+      "total_time_ns": 20972318
     },
     {
       "APPLIED": 501,
@@ -471,7 +479,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "1.4.14",
-      "total_time_ns": 6775675
+      "total_time_ns": 16140910
     },
     {
       "APPLIED": 52,
@@ -479,23 +487,23 @@
       "SKIPPED": 449,
       "apply_rule_invocations": 501,
       "sutra_id": "1.4.16",
-      "total_time_ns": 8694419
+      "total_time_ns": 18468706
     },
     {
-      "APPLIED": 337,
+      "APPLIED": 355,
       "BLOCKED": 0,
-      "SKIPPED": 164,
+      "SKIPPED": 146,
       "apply_rule_invocations": 501,
       "sutra_id": "1.4.17",
-      "total_time_ns": 8948690
+      "total_time_ns": 19588332
     },
     {
-      "APPLIED": 166,
+      "APPLIED": 184,
       "BLOCKED": 0,
-      "SKIPPED": 335,
+      "SKIPPED": 317,
       "apply_rule_invocations": 501,
       "sutra_id": "1.4.18",
-      "total_time_ns": 8859955
+      "total_time_ns": 19255648
     },
     {
       "APPLIED": 24,
@@ -503,7 +511,7 @@
       "SKIPPED": 477,
       "apply_rule_invocations": 501,
       "sutra_id": "1.4.3",
-      "total_time_ns": 4635548
+      "total_time_ns": 10070142
     },
     {
       "APPLIED": 0,
@@ -511,7 +519,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "1.4.4",
-      "total_time_ns": 4641035
+      "total_time_ns": 9953985
     },
     {
       "APPLIED": 0,
@@ -519,7 +527,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "1.4.5",
-      "total_time_ns": 4877366
+      "total_time_ns": 10526674
     },
     {
       "APPLIED": 168,
@@ -527,7 +535,7 @@
       "SKIPPED": 333,
       "apply_rule_invocations": 501,
       "sutra_id": "1.4.7",
-      "total_time_ns": 6993745
+      "total_time_ns": 15441171
     },
     {
       "APPLIED": 0,
@@ -535,15 +543,15 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "4.1.1",
-      "total_time_ns": 3683832
+      "total_time_ns": 9932423
     },
     {
-      "APPLIED": 0,
+      "APPLIED": 501,
       "BLOCKED": 0,
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "4.1.2",
-      "total_time_ns": 6665158
+      "total_time_ns": 15041741
     },
     {
       "APPLIED": 13,
@@ -551,7 +559,7 @@
       "SKIPPED": 464,
       "apply_rule_invocations": 501,
       "sutra_id": "6.1.101",
-      "total_time_ns": 10326047
+      "total_time_ns": 21865004
     },
     {
       "APPLIED": 29,
@@ -559,7 +567,7 @@
       "SKIPPED": 436,
       "apply_rule_invocations": 501,
       "sutra_id": "6.1.102",
-      "total_time_ns": 9563782
+      "total_time_ns": 20330419
     },
     {
       "APPLIED": 14,
@@ -567,7 +575,7 @@
       "SKIPPED": 487,
       "apply_rule_invocations": 501,
       "sutra_id": "6.1.103",
-      "total_time_ns": 9612596
+      "total_time_ns": 20460005
     },
     {
       "APPLIED": 36,
@@ -575,7 +583,7 @@
       "SKIPPED": 465,
       "apply_rule_invocations": 501,
       "sutra_id": "6.1.104",
-      "total_time_ns": 9620378
+      "total_time_ns": 20568634
     },
     {
       "APPLIED": 24,
@@ -583,7 +591,7 @@
       "SKIPPED": 477,
       "apply_rule_invocations": 501,
       "sutra_id": "6.1.107",
-      "total_time_ns": 9861555
+      "total_time_ns": 20863288
     },
     {
       "APPLIED": 14,
@@ -591,7 +599,7 @@
       "SKIPPED": 487,
       "apply_rule_invocations": 501,
       "sutra_id": "6.1.110",
-      "total_time_ns": 9925089
+      "total_time_ns": 21090846
     },
     {
       "APPLIED": 0,
@@ -599,7 +607,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "6.1.125",
-      "total_time_ns": 9789543
+      "total_time_ns": 20739204
     },
     {
       "APPLIED": 0,
@@ -607,15 +615,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "6.1.66",
-      "total_time_ns": 8150958
-    },
-    {
-      "APPLIED": 4,
-      "BLOCKED": 0,
-      "SKIPPED": 497,
-      "apply_rule_invocations": 501,
-      "sutra_id": "6.1.68",
-      "total_time_ns": 7173967
+      "total_time_ns": 17336401
     },
     {
       "APPLIED": 20,
@@ -623,7 +623,7 @@
       "SKIPPED": 481,
       "apply_rule_invocations": 501,
       "sutra_id": "6.1.69",
-      "total_time_ns": 7597616
+      "total_time_ns": 16437924
     },
     {
       "APPLIED": 48,
@@ -631,7 +631,7 @@
       "SKIPPED": 453,
       "apply_rule_invocations": 501,
       "sutra_id": "6.1.87",
-      "total_time_ns": 10793701
+      "total_time_ns": 22704218
     },
     {
       "APPLIED": 41,
@@ -639,7 +639,7 @@
       "SKIPPED": 460,
       "apply_rule_invocations": 501,
       "sutra_id": "6.1.88",
-      "total_time_ns": 10451279
+      "total_time_ns": 22087165
     },
     {
       "APPLIED": 21,
@@ -647,7 +647,7 @@
       "SKIPPED": 480,
       "apply_rule_invocations": 501,
       "sutra_id": "6.1.97",
-      "total_time_ns": 8340539
+      "total_time_ns": 17801545
     },
     {
       "APPLIED": 0,
@@ -655,7 +655,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "6.4.10",
-      "total_time_ns": 8795289
+      "total_time_ns": 18473042
     },
     {
       "APPLIED": 0,
@@ -663,7 +663,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "6.4.11",
-      "total_time_ns": 7377465
+      "total_time_ns": 15757925
     },
     {
       "APPLIED": 0,
@@ -671,7 +671,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 501,
       "sutra_id": "6.4.129",
-      "total_time_ns": 9379080
+      "total_time_ns": 22859303
     },
     {
       "APPLIED": 0,
@@ -679,7 +679,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "6.4.130",
-      "total_time_ns": 9684838
+      "total_time_ns": 20675607
     },
     {
       "APPLIED": 0,
@@ -687,7 +687,15 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "6.4.134",
-      "total_time_ns": 9735508
+      "total_time_ns": 20730164
+    },
+    {
+      "APPLIED": 0,
+      "BLOCKED": 0,
+      "SKIPPED": 501,
+      "apply_rule_invocations": 501,
+      "sutra_id": "6.4.137",
+      "total_time_ns": 19923244
     },
     {
       "APPLIED": 8,
@@ -695,7 +703,7 @@
       "SKIPPED": 493,
       "apply_rule_invocations": 501,
       "sutra_id": "6.4.146",
-      "total_time_ns": 10683332
+      "total_time_ns": 22481416
     },
     {
       "APPLIED": 0,
@@ -703,7 +711,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "6.4.148",
-      "total_time_ns": 11195552
+      "total_time_ns": 23545876
     },
     {
       "APPLIED": 12,
@@ -711,7 +719,7 @@
       "SKIPPED": 489,
       "apply_rule_invocations": 501,
       "sutra_id": "6.4.3",
-      "total_time_ns": 9349208
+      "total_time_ns": 19881293
     },
     {
       "APPLIED": 34,
@@ -719,7 +727,7 @@
       "SKIPPED": 467,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.12",
-      "total_time_ns": 8363663
+      "total_time_ns": 17935785
     },
     {
       "APPLIED": 5,
@@ -727,7 +735,7 @@
       "SKIPPED": 496,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.13",
-      "total_time_ns": 8379446
+      "total_time_ns": 17961136
     },
     {
       "APPLIED": 5,
@@ -735,7 +743,7 @@
       "SKIPPED": 496,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.14",
-      "total_time_ns": 7717786
+      "total_time_ns": 16604808
     },
     {
       "APPLIED": 10,
@@ -743,7 +751,7 @@
       "SKIPPED": 491,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.15",
-      "total_time_ns": 7567825
+      "total_time_ns": 16415173
     },
     {
       "APPLIED": 9,
@@ -751,7 +759,7 @@
       "SKIPPED": 492,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.17",
-      "total_time_ns": 7949333
+      "total_time_ns": 17089422
     },
     {
       "APPLIED": 9,
@@ -759,7 +767,7 @@
       "SKIPPED": 492,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.19",
-      "total_time_ns": 8085879
+      "total_time_ns": 17263661
     },
     {
       "APPLIED": 0,
@@ -767,7 +775,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.2",
-      "total_time_ns": 7595109
+      "total_time_ns": 16362130
     },
     {
       "APPLIED": 9,
@@ -775,7 +783,7 @@
       "SKIPPED": 492,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.20",
-      "total_time_ns": 8085418
+      "total_time_ns": 17354372
     },
     {
       "APPLIED": 0,
@@ -783,7 +791,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.23",
-      "total_time_ns": 8086139
+      "total_time_ns": 17315841
     },
     {
       "APPLIED": 3,
@@ -791,7 +799,7 @@
       "SKIPPED": 498,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.24",
-      "total_time_ns": 8147660
+      "total_time_ns": 17150633
     },
     {
       "APPLIED": 5,
@@ -799,7 +807,7 @@
       "SKIPPED": 496,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.52",
-      "total_time_ns": 8464667
+      "total_time_ns": 17990874
     },
     {
       "APPLIED": 16,
@@ -807,7 +815,7 @@
       "SKIPPED": 485,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.54",
-      "total_time_ns": 9060292
+      "total_time_ns": 19113499
     },
     {
       "APPLIED": 9,
@@ -815,7 +823,7 @@
       "SKIPPED": 492,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.72",
-      "total_time_ns": 8723199
+      "total_time_ns": 18593720
     },
     {
       "APPLIED": 10,
@@ -823,7 +831,7 @@
       "SKIPPED": 491,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.9",
-      "total_time_ns": 8520266
+      "total_time_ns": 18164001
     },
     {
       "APPLIED": 0,
@@ -831,7 +839,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.92",
-      "total_time_ns": 9593710
+      "total_time_ns": 20348175
     },
     {
       "APPLIED": 0,
@@ -839,7 +847,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.93",
-      "total_time_ns": 7578670
+      "total_time_ns": 16503421
     },
     {
       "APPLIED": 0,
@@ -847,7 +855,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "7.1.94",
-      "total_time_ns": 7208710
+      "total_time_ns": 15695915
     },
     {
       "APPLIED": 21,
@@ -855,7 +863,7 @@
       "SKIPPED": 480,
       "apply_rule_invocations": 501,
       "sutra_id": "7.2.102",
-      "total_time_ns": 6929367
+      "total_time_ns": 14886907
     },
     {
       "APPLIED": 1,
@@ -863,7 +871,7 @@
       "SKIPPED": 500,
       "apply_rule_invocations": 501,
       "sutra_id": "7.2.106",
-      "total_time_ns": 6964745
+      "total_time_ns": 14990137
     },
     {
       "APPLIED": 0,
@@ -871,7 +879,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "7.2.113",
-      "total_time_ns": 7578447
+      "total_time_ns": 16296951
     },
     {
       "APPLIED": 35,
@@ -879,7 +887,7 @@
       "SKIPPED": 466,
       "apply_rule_invocations": 501,
       "sutra_id": "7.3.102",
-      "total_time_ns": 9581505
+      "total_time_ns": 20308212
     },
     {
       "APPLIED": 35,
@@ -887,7 +895,7 @@
       "SKIPPED": 466,
       "apply_rule_invocations": 501,
       "sutra_id": "7.3.103",
-      "total_time_ns": 9476593
+      "total_time_ns": 19894705
     },
     {
       "APPLIED": 3,
@@ -895,7 +903,7 @@
       "SKIPPED": 498,
       "apply_rule_invocations": 501,
       "sutra_id": "7.3.106",
-      "total_time_ns": 8101839
+      "total_time_ns": 17347259
     },
     {
       "APPLIED": 1,
@@ -903,7 +911,7 @@
       "SKIPPED": 500,
       "apply_rule_invocations": 501,
       "sutra_id": "7.3.107",
-      "total_time_ns": 7562807
+      "total_time_ns": 16205833
     },
     {
       "APPLIED": 7,
@@ -911,7 +919,7 @@
       "SKIPPED": 494,
       "apply_rule_invocations": 501,
       "sutra_id": "7.3.108",
-      "total_time_ns": 9526995
+      "total_time_ns": 20391657
     },
     {
       "APPLIED": 14,
@@ -919,7 +927,15 @@
       "SKIPPED": 487,
       "apply_rule_invocations": 501,
       "sutra_id": "7.3.109",
-      "total_time_ns": 9418626
+      "total_time_ns": 19955702
+    },
+    {
+      "APPLIED": 0,
+      "BLOCKED": 0,
+      "SKIPPED": 501,
+      "apply_rule_invocations": 501,
+      "sutra_id": "7.3.110",
+      "total_time_ns": 15631658
     },
     {
       "APPLIED": 13,
@@ -927,7 +943,7 @@
       "SKIPPED": 488,
       "apply_rule_invocations": 501,
       "sutra_id": "7.3.111",
-      "total_time_ns": 9324515
+      "total_time_ns": 19906880
     },
     {
       "APPLIED": 3,
@@ -935,7 +951,7 @@
       "SKIPPED": 498,
       "apply_rule_invocations": 501,
       "sutra_id": "7.3.112",
-      "total_time_ns": 8883451
+      "total_time_ns": 18843386
     },
     {
       "APPLIED": 6,
@@ -943,7 +959,7 @@
       "SKIPPED": 495,
       "apply_rule_invocations": 501,
       "sutra_id": "7.3.113",
-      "total_time_ns": 8432757
+      "total_time_ns": 18047158
     },
     {
       "APPLIED": 0,
@@ -951,7 +967,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "7.3.114",
-      "total_time_ns": 8400756
+      "total_time_ns": 17964375
     },
     {
       "APPLIED": 1,
@@ -959,7 +975,7 @@
       "SKIPPED": 500,
       "apply_rule_invocations": 501,
       "sutra_id": "7.3.116",
-      "total_time_ns": 8878080
+      "total_time_ns": 18819337
     },
     {
       "APPLIED": 7,
@@ -967,7 +983,7 @@
       "SKIPPED": 494,
       "apply_rule_invocations": 501,
       "sutra_id": "7.3.119",
-      "total_time_ns": 9334295
+      "total_time_ns": 19926458
     },
     {
       "APPLIED": 7,
@@ -975,7 +991,7 @@
       "SKIPPED": 494,
       "apply_rule_invocations": 501,
       "sutra_id": "7.3.120",
-      "total_time_ns": 9471783
+      "total_time_ns": 20117540
     },
     {
       "APPLIED": 0,
@@ -983,7 +999,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "8.2.30",
-      "total_time_ns": 10047955
+      "total_time_ns": 21161715
     },
     {
       "APPLIED": 10,
@@ -991,7 +1007,7 @@
       "SKIPPED": 491,
       "apply_rule_invocations": 501,
       "sutra_id": "8.2.39",
-      "total_time_ns": 9922003
+      "total_time_ns": 20824515
     },
     {
       "APPLIED": 165,
@@ -999,7 +1015,7 @@
       "SKIPPED": 336,
       "apply_rule_invocations": 501,
       "sutra_id": "8.3.15",
-      "total_time_ns": 10155952
+      "total_time_ns": 21412326
     },
     {
       "APPLIED": 23,
@@ -1007,7 +1023,7 @@
       "SKIPPED": 478,
       "apply_rule_invocations": 501,
       "sutra_id": "8.3.59",
-      "total_time_ns": 9978198
+      "total_time_ns": 20913670
     },
     {
       "APPLIED": 0,
@@ -1015,7 +1031,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "8.4.1",
-      "total_time_ns": 10028751
+      "total_time_ns": 21500918
     },
     {
       "APPLIED": 12,
@@ -1023,7 +1039,7 @@
       "SKIPPED": 489,
       "apply_rule_invocations": 501,
       "sutra_id": "8.4.2",
-      "total_time_ns": 10347116
+      "total_time_ns": 21906136
     },
     {
       "APPLIED": 0,
@@ -1031,7 +1047,7 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "8.4.40",
-      "total_time_ns": 10314953
+      "total_time_ns": 22137212
     },
     {
       "APPLIED": 0,
@@ -1039,15 +1055,15 @@
       "SKIPPED": 501,
       "apply_rule_invocations": 501,
       "sutra_id": "8.4.53",
-      "total_time_ns": 10186465
+      "total_time_ns": 21456795
     },
     {
-      "APPLIED": 501,
+      "APPLIED": 10,
       "BLOCKED": 0,
-      "SKIPPED": 0,
+      "SKIPPED": 491,
       "apply_rule_invocations": 501,
       "sutra_id": "8.4.56",
-      "total_time_ns": 10414749
+      "total_time_ns": 21392088
     },
     {
       "APPLIED": 0,
@@ -1055,7 +1071,7 @@
       "SKIPPED": 0,
       "apply_rule_invocations": 96,
       "sutra_id": "4.1.3",
-      "total_time_ns": 669547
+      "total_time_ns": 1904956
     },
     {
       "APPLIED": 0,
@@ -1063,7 +1079,7 @@
       "SKIPPED": 96,
       "apply_rule_invocations": 96,
       "sutra_id": "4.1.4",
-      "total_time_ns": 847459
+      "total_time_ns": 1878422
     },
     {
       "APPLIED": 0,
@@ -1076,21 +1092,13 @@
     {
       "APPLIED": 0,
       "BLOCKED": 0,
-      "SKIPPED": 3,
-      "apply_rule_invocations": 3,
-      "sutra_id": "1.1.51",
-      "total_time_ns": 0
-    },
-    {
-      "APPLIED": 0,
-      "BLOCKED": 0,
       "SKIPPED": 0,
       "apply_rule_invocations": 3,
       "sutra_id": "1.1.56",
       "total_time_ns": 0
     },
     {
-      "APPLIED": 3,
+      "APPLIED": 0,
       "BLOCKED": 0,
       "SKIPPED": 0,
       "apply_rule_invocations": 3,
@@ -1178,7 +1186,7 @@
       "total_time_ns": 0
     },
     {
-      "APPLIED": 0,
+      "APPLIED": 3,
       "BLOCKED": 0,
       "SKIPPED": 0,
       "apply_rule_invocations": 3,

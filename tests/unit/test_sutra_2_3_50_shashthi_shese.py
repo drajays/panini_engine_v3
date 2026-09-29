@@ -20,7 +20,7 @@ from sutras.adhyaya_2.pada_3.sutra_2_3_50 import META_OVERRIDE_VV, META_SHESE_EL
 
 def test_registry():
     r = SUTRA_REGISTRY["2.3.50"]
-    assert r.sutra_type is SutraType.SAMJNA
+    assert r.sutra_type is SutraType.VIDHI
     assert "zazWI" in r.text_slp1
     assert "शेषे" in r.text_dev
     assert "2.3.1" in r.anuvritti_from
