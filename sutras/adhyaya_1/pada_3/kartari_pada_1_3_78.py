@@ -57,6 +57,11 @@ def seza_parasmaipada_gate_needs_update(state: State) -> bool:
     d = find_primary_dhatu(state)
     if d is None:
         return False
+    # gaṇa-nirṇaya (P01_samjna_dhatu_class) has already run by the time the
+    # real tiṅanta bootstrap reaches pada-nirṇaya — a tape-init-only probe
+    # (build_tinanta_initial_state, pre-P01) never sets this.
+    if "gana" not in d.meta:
+        return False
     desired = _desired_gate_active(d)
     cur = state.paribhasha_gates.get(GATE_KEY, {}).get("active")
     return cur is None or cur is not desired

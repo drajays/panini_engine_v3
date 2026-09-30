@@ -46,12 +46,12 @@ VIDHI_FP_RAW_BASELINE = 0
 VIDHI_FP_FILTERED_BASELINE = 0
 # Tinanta tape-init probe (post Phase 5 tin_pratyaya chain gate): this probe
 # *does* set derivation_class="tinanta" (real tiṅanta tape-init shape), so
-# the meta-only guard above doesn't distinguish it from a genuine derivation
-# — both sūtras correctly still fire here. Lowering this to 0 needs the
-# lakāra itself (not just the derivation_class label) attached as a Term
-# before 1.3.78/1.4.108 run, which is the real bootstrap-reordering the
-# 2026-05-31 note anticipated; not done in this session.
-TINANTA_INIT_RAW_BASELINE = 2
+# the meta-only guard alone didn't distinguish it from a genuine derivation.
+# 0 (2026-09-30, same session): both sūtras also now require "gana" in the
+# primary dhātu's meta — set by P01_samjna_dhatu_class, which the real
+# bootstrap always runs before pada-/puruṣa-nirṇaya, but this probe (built
+# straight from build_tinanta_initial_state, pre-P01) never reaches.
+TINANTA_INIT_RAW_BASELINE = 0
 
 REPORT_PATH = ROOT / "docs" / "cond_discipline_audit.md"
 

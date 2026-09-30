@@ -22,7 +22,7 @@ def _dhatu_paT(**meta) -> Term:
         kind="prakriti",
         varnas=[mk("p"), mk("a"), mk("T")],
         tags={"dhatu"},
-        meta={"karmakatva": "sakarmaka", **meta},
+        meta={"karmakatva": "sakarmaka", "gana": 1, **meta},
     )
 
 
