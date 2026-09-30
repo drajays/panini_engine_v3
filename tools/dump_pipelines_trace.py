@@ -42,6 +42,7 @@ if str(_ROOT) not in sys.path:
 _SKIP_NAMES: frozenset[str] = frozenset(
     {
         "derive_demo",
+        "derive_all_readings",  # wrapper around derive(); needs args
         "derive_kumAri_taddhita_core",
         "derive_uttarapurva_from_vigraha",
     }

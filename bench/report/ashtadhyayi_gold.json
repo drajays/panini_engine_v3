@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T19:37:37+00:00",
+ "generated_at": "2026-09-30T12:36:54+00:00",
  "source": {
   "repo": "https://github.com/ashtadhyayi-com/data",
   "commit": "5744762f010d677cfb43f347a42d02796cf615d6",
@@ -10,16 +10,16 @@
    "dhatu/dhatuprayogas.txt",
    "shabda/data2.txt",
    "shabda/shabdaprakriya.txt",
-   "sutraani/sutra_prayogas.txt"
+   "sutraani/sutra_prayogas.txt",
+   "sutraani/data.txt"
   ],
   "credit": "Data © ashtadhyayi.com — used with credit per its README"
  },
  "sample": null,
  "cells": 455346,
- "agree": 425615,
- "differ": 28579,
- "error": 1152,
- "agree_pct": 93.5,
+ "agree": 426421,
+ "differ": 28925,
+ "agree_pct": 93.6,
  "by": [
   {
    "prayoga": "karmani",
@@ -41,8 +41,8 @@
    "prayoga": "karmani",
    "lakara": "lRT",
    "cells": 20061,
-   "agree": 19095,
-   "differ": 966,
+   "agree": 19104,
+   "differ": 957,
    "agree_pct": 95.2
   },
   {
@@ -89,9 +89,9 @@
    "prayoga": "karmani",
    "lakara": "luG",
    "cells": 20061,
-   "agree": 18581,
-   "differ": 1480,
-   "agree_pct": 92.6
+   "agree": 18618,
+   "differ": 1443,
+   "agree_pct": 92.8
   },
   {
    "prayoga": "karmani",
@@ -121,36 +121,33 @@
    "prayoga": "kartari",
    "lakara": "lRT",
    "cells": 25497,
-   "agree": 24246,
-   "differ": 1251,
+   "agree": 24255,
+   "differ": 1242,
    "agree_pct": 95.1
   },
   {
    "prayoga": "kartari",
    "lakara": "laG",
    "cells": 25425,
-   "agree": 23523,
-   "differ": 1614,
-   "error": 288,
-   "agree_pct": 92.5
+   "agree": 23639,
+   "differ": 1786,
+   "agree_pct": 93.0
   },
   {
    "prayoga": "kartari",
    "lakara": "laT",
    "cells": 25425,
-   "agree": 24203,
-   "differ": 934,
-   "error": 288,
-   "agree_pct": 95.2
+   "agree": 24426,
+   "differ": 999,
+   "agree_pct": 96.1
   },
   {
    "prayoga": "kartari",
    "lakara": "liG",
    "cells": 25425,
-   "agree": 24136,
-   "differ": 1001,
-   "error": 288,
-   "agree_pct": 94.9
+   "agree": 24259,
+   "differ": 1166,
+   "agree_pct": 95.4
   },
   {
    "prayoga": "kartari",
@@ -164,26 +161,25 @@
    "prayoga": "kartari",
    "lakara": "loT",
    "cells": 25425,
-   "agree": 23608,
-   "differ": 1529,
-   "error": 288,
-   "agree_pct": 92.9
+   "agree": 23714,
+   "differ": 1711,
+   "agree_pct": 93.3
   },
   {
    "prayoga": "kartari",
    "lakara": "luG",
    "cells": 25677,
-   "agree": 21592,
-   "differ": 4085,
-   "agree_pct": 84.1
+   "agree": 21766,
+   "differ": 3911,
+   "agree_pct": 84.8
   },
   {
    "prayoga": "kartari",
    "lakara": "luT",
    "cells": 25461,
-   "agree": 24218,
-   "differ": 1243,
-   "agree_pct": 95.1
+   "agree": 24227,
+   "differ": 1234,
+   "agree_pct": 95.2
   }
  ],
  "examples": {
