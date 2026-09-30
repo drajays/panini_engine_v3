@@ -750,9 +750,10 @@ def api_tinanta():
     if prayoga not in ("kartari", "karmani", "bhave"):
         return jsonify({"error": "prayoga must be kartari/karmani/bhave"}), 400
 
-    # Normalize Devanāgarī input via core.transliterate (Art.6 clean: tools layer).
-    from core.transliterate import dev_to_slp1 as _dev_to_slp1
-    if _dev_to_slp1(dhatu) != dhatu:           # non-trivial → input is Devanāgarī
+    # Devanāgarī input only when the string actually contains Devanāgarī.
+    # Do not use ``dev_to_slp1(x) != x`` — SLP1 ``qukfY`` (डुकृञ्) is ASCII
+    # but is not a fixed point of the Devanāgarī tokenizer.
+    if any("\u0900" <= c <= "\u097f" for c in dhatu):
         from pipelines.dhatupatha import _payload, _envelope
         env = _envelope(_payload())
         match = next(
@@ -1342,6 +1343,93 @@ def api_dik_glass():
         })
     except Exception as ex:
         return jsonify({"error": f"{type(ex).__name__}: {ex}"}), 500
+
+
+# ─────────────────────────────────────────────────────────────────
+# ग्रन्थ-पाठकः — e-reader: Saṃsādhanī annotation, engine verification
+# ─────────────────────────────────────────────────────────────────
+
+@app.route("/reader")
+def reader_page():
+    from tools import samsaadhanii_reader as rd
+    return render_template(
+        "reader.html",
+        nav_active="reader",
+        cov=coverage_report(SUTRA_REGISTRY),
+        available=rd.available(),
+        attribution=rd.ATTRIBUTION,
+    )
+
+
+@app.route("/api/reader/catalogue")
+def api_reader_catalogue():
+    from tools import samsaadhanii_reader as rd
+    return jsonify({"available": rd.available(), "units": rd.catalogue()})
+
+
+@app.route("/api/reader/verses")
+def api_reader_verses():
+    from tools import samsaadhanii_reader as rd
+    try:
+        return jsonify(rd.verses(request.args["unit"], request.args["chapter"]))
+    except KeyError as e:
+        return jsonify({"error": f"not found: {e}"}), 404
+
+
+@app.route("/api/reader/verse")
+def api_reader_verse():
+    from tools import samsaadhanii_reader as rd
+    a = request.args
+    try:
+        return jsonify(rd.verse(a["unit"], a["chapter"], a["sloka"]))
+    except KeyError as e:
+        return jsonify({"error": f"not found: {e}"}), 404
+
+
+@app.route("/api/reader/trace", methods=["POST"])
+def api_reader_trace():
+    from tools import samsaadhanii_reader as rd
+    req = request.get_json(force=True) or {}
+    try:
+        state = rd.derive_request(req)
+    except NotImplementedError as e:
+        return jsonify({"error": f"Not implemented: {e}"}), 501
+    except Exception as ex:
+        return jsonify({"error": f"{type(ex).__name__}: {ex}"}), 500
+    return jsonify({
+        "request": req,
+        "surface_dev": state.flat_dev(),
+        "surface_slp1": state.flat_slp1(),
+        "trace": _enrich_trace(state.trace),
+    })
+
+
+@app.route("/api/reader/search")
+def api_reader_search():
+    from tools import samsaadhanii_reader as rd
+    try:
+        limit = min(int(request.args.get("limit", 80)), 200)
+        return jsonify(rd.search(request.args["unit"], request.args.get("q", ""), limit=limit))
+    except KeyError as e:
+        return jsonify({"error": f"not found: {e}"}), 404
+
+
+@app.route("/api/reader/export.xlsx")
+def api_reader_export():
+    from flask import Response
+    from tools import samsaadhanii_reader as rd
+    a = request.args
+    try:
+        v = rd.verse(a["unit"], a["chapter"], a["sloka"])
+    except KeyError as e:
+        return jsonify({"error": f"not found: {e}"}), 404
+    name = f"{a['unit']}_{a['chapter']}_S_{a['sloka']}.xlsx"
+    from urllib.parse import quote
+    return Response(
+        rd.export_xlsx(v),
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": f"attachment; filename*=UTF-8''{quote(name)}"},
+    )
 
 
 # ─────────────────────────────────────────────────────────────────

@@ -18,9 +18,11 @@ It is a tools-layer reader (CONSTITUTION Art. 6): nothing in ``engine/``,
 """
 from __future__ import annotations
 
+import json
 import re
 from dataclasses import asdict, dataclass, field
 from functools import lru_cache
+from pathlib import Path
 
 from core.transliterate import dev_to_slp1
 
@@ -189,6 +191,48 @@ def parse_subanta_tag(tag: str) -> SubantaCell:
         cell.unresolved = "no vibhakti/vacana"
         return cell
     cell.linga = cell.linga or "pulliṅga"
+    return cell
+
+
+@dataclass
+class KrdantaCell:
+    """Indeclinable kṛt (क्त्वा, ल्यप्, तुमुन्, …) — sūtra from ``krit_pratyaya.json``."""
+    tag: str
+    krt_dev: str = ""
+    krt_slp1: str = ""
+    vidhana_sutra: str | None = None
+    unresolved: str | None = None
+
+    def as_dict(self) -> dict:
+        return asdict(self)
+
+
+@lru_cache(maxsize=1)
+def _krt_index() -> dict[str, dict]:
+    path = Path(__file__).resolve().parent.parent / "data" / "inputs" / "krit_pratyaya.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    out: dict[str, dict] = {}
+    for key, v in data.items():
+        if not isinstance(v, dict) or "upadesha_devanagari" not in v:
+            continue
+        out[v["upadesha_devanagari"]] = v
+        out[key] = v
+    return out
+
+
+def parse_krdanta_tag(tag: str) -> KrdantaCell:
+    cell = KrdantaCell(tag=tag)
+    m = re.search(r"कृत्_प्रत्ययः:([^;}]+)", tag)
+    if not m:
+        cell.unresolved = "no kṛt pratyaya field"
+        return cell
+    cell.krt_dev = m.group(1).strip()
+    row = _krt_index().get(cell.krt_dev)
+    if not row:
+        cell.unresolved = f"kṛt {cell.krt_dev} not in krit_pratyaya.json"
+        return cell
+    cell.krt_slp1 = row.get("upadesha_slp1") or ""
+    cell.vidhana_sutra = row.get("vidhana_sutra")
     return cell
 
 

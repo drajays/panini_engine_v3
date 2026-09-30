@@ -83,6 +83,11 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("derive-btn").addEventListener("click", runDerive);
+  const p = new URLSearchParams(location.search);
+  if (p.get("stem")) document.getElementById("stem").value = p.get("stem");
+  if (p.get("vibhakti")) document.getElementById("vibhakti").value = p.get("vibhakti");
+  if (p.get("vacana")) document.getElementById("vacana").value = p.get("vacana");
+  if (p.get("linga")) document.getElementById("linga").value = p.get("linga");
   runDerive();
 });
 

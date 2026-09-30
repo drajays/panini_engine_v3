@@ -134,6 +134,9 @@
 <script>
 let _trace = [];
 let _lastResult = null;
+const LAK_TO_ENGINE = {laN:"laG", liN:"liG", luN:"luG", lfN:"lRG", AsIrliN:"AsIrliG"};
+const LAK_TO_UI = {laG:"laN", liG:"liN", luG:"luN", lRG:"lfN", AsIrliG:"AsIrliN"};
+function engineLakara(k) { return LAK_TO_ENGINE[k] || k; }
 
 // ── Transliteration helpers ────────────────────────────────────────────────
 function getScheme() {
@@ -181,7 +184,7 @@ function quickFill(dhatu, lakara, prayoga) {
 async function deriveTin() {
   const body = {
     dhatu:   getDhatuSLP1(),
-    lakara:  document.getElementById('lakara').value,
+    lakara:  engineLakara(document.getElementById('lakara').value),
     prayoga: document.getElementById('prayoga').value,
     purusha: +document.getElementById('purusha').value,
     vacana:  +document.getElementById('vacana').value,
@@ -209,7 +212,7 @@ async function deriveTin() {
 async function derivePara() {
   const body = {
     dhatu:   getDhatuSLP1(),
-    lakara:  document.getElementById('lakara').value,
+    lakara:  engineLakara(document.getElementById('lakara').value),
     prayoga: document.getElementById('prayoga').value,
   };
   const r = await fetch('/api/tinanta/paradigm', {
@@ -391,9 +394,12 @@ const SUTRA_REGISTRY_STUB = {};
 
 // Pre-fill from URL param
 const _urlTin = new URL(window.location.href);
-if (_urlTin.searchParams.get('dhatu')) {
-  document.getElementById('dhatu').value = _urlTin.searchParams.get('dhatu');
-  deriveTin();
-}
+["dhatu", "lakara", "prayoga", "purusha", "vacana"].forEach(k => {
+  let v = _urlTin.searchParams.get(k);
+  if (!v || !document.getElementById(k)) return;
+  if (k === "lakara") v = LAK_TO_UI[v] || v;
+  document.getElementById(k).value = v;
+});
+if (_urlTin.searchParams.get("dhatu")) deriveTin();
 </script>
 {% endblock %}

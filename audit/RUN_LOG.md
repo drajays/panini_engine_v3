@@ -153,6 +153,8 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-05-31 (session) | cursor | Phase 5e — derive() delegates to derive_autonomous_tinanta | pipelines/tinanta.py, tests/unit/test_autonomous_vs_recipe.py, audit/RUN_LOG.md | released |
 | 2026-05-31 (session) | cursor | VIDHI cond discipline — full plan implementation | `audit/cond_discipline_auditor.py`, `engine/phase.py`, `engine/scheduler.py`, `engine/krt_eligibility.py`, `engine/tape_init/`, `engine/nimitta_predicates.py`, `engine/adhikara_automation.py`, `sutras/adhyaya_3/**`, `tests/`, `audit/RUN_LOG.md` | released |
 | 2026-09-30 (session) | cursor | P2 Saṃsādhanī e-reader oracle — Gītā tiṅanta round-trip + coverage (tests/tools only, Art. 6) | tools/fetch_samsaadhanii_ereaders.py, tools/samsaadhanii_tags.py, tools/samsaadhanii_coverage.py, tools/gold_corpora.py, data/reference/samsaadhanii/, .gitignore, tests/regression/test_samsaadhanii_gita_tinanta.py, tests/regression/samsaadhanii_gita_tinanta_baseline.json, audit/RUN_LOG.md | released |
+| 2026-09-30 (session) | cursor | P2 /reader — Saṃsādhanī e-reader features, engine-verified (analysis-by-synthesis) | tools/samsaadhanii_reader.py, tools/samsaadhanii_tags.py, tools/fetch_samsaadhanii_ereaders.py, webui/app.py, webui/templates/reader.html, webui/templates/base.html, webui/templates/home.html, webui/templates/derive.html, webui/templates/tinanta.html, tests/unit/test_samsaadhanii_reader.py, requirements.txt, audit/RUN_LOG.md | released |
+| 2026-09-30 (session) | cursor | P2 /reader kāraka tree — SCL-style hierarchical सम्बन्ध-चित्रम् | tools/samsaadhanii_reader.py, webui/templates/reader.html, tests/unit/test_samsaadhanii_reader.py, audit/RUN_LOG.md | released |
 
 ---
 
@@ -185,6 +187,35 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ---
 
 ## C. Action history (newest at top)
+
+### 2026-09-30 (session)  [cursor]  सम्बन्ध-चित्रम् — SCL nested kāraka tree
+
+**Goal:** `/reader` tab सम्बन्ध-चित्रम् should show the same relation geometry as Saṃsādhanī's ViewGraph (verb on top, blue sentence cluster, yellow samāsa box) without calling `ViewGraph_Sentno.cgi`.
+
+**Shipped:**
+- `karaka_tree()` already skips the verb's `अभिहित_*` so the tiṅanta is the root; dependents hang by `kaaraka_sambandha`.
+- `treeSvg` now draws SCL nested boxes: pink verb above, blue rect around kāraka, dashed yellow around samāsa, orthogonal labelled edges (1.4 / 2.1–2.3).
+- Click a node → engine prakriyā (Gītā 1.1 अकुर्वत → 1.3.9 … 6.1.77).
+
+**Verified:** Gītā 1.1 tree `9.1 → {2.2 अधिकरणम्, 6.1 कर्ता, 8.1 कर्म, 10.1 सम्बोध्यः}`; yellow `धर्म-क्षेत्रे` / `कुरु-क्षेत्रे`. `pytest tests/unit/test_samsaadhanii_reader.py` → 10 passed. Browser: `http://127.0.0.1:5092/reader#श्रीमद्भगवद्गीता/01/001`.
+
+**Next:** gaṇa 3 vikaraṇa (juhoti/dadāti in the reader); kṛt spine for ktvā.
+
+### 2026-09-30 (session)  [cursor]  ग्रन्थ-पाठकः — all Saṃsādhanī e-reader surfaces, engine-judged
+
+**Goal:** Put every e-reader feature (catalogue, verse, analysis table, anvaya, kāraka graph, gloss, XLSX, search) in `/reader`, with morphology verified by `derive()` — no SCL CGI as linguistic engine (Art. 0, 6, 11).
+
+**Shipped:**
+- Clickable sandhied-word spans in the śloka; analysis table + hindi/samāsa; anvaya chips; local kāraka graph (not ViewGraph_Sentno.cgi); कोश tab (lexical notes labelled as such); gavēṣikā search; XLSX export; filters; prakriyā pane via `/api/reader/trace`.
+- Kāraka → saṃjñā/vibhakti sūtras (1.4.x / 2.3.x); 2.3.1 अनभिहिते check of tagged vibhakti against the verb's prayoga.
+- Kṛt tags cite `krit_pratyaya.json` vidhāyaka (क्त्वा → 3.4.21) without pretending the kṛt spine is complete.
+- Deep-link to `/tinanta` and `/derive`; tinanta UI now maps laN→laG on the API (लङ् was sending `laN` and producing कृल); Devanāgarī detect is script-range, so SLP1 `qukfY` is not misread.
+
+**Verified:** Gītā 1.1 → 8/9 engine-derived; click अकुर्वत → 1.3.9…6.1.77 अकुर्वत; search "अकुर्वत" hits 01.001. `pytest tests/unit/test_samsaadhanii_reader.py tests/regression/test_samsaadhanii_gita_tinanta.py tests/constitutional/test_no_reference_import_from_engine.py` → 4608 passed.
+
+**Not copied (on purpose):** SCL CGI analyser, Graphviz CGI, Flutter/CanvasKit. Those are a different engine.
+
+**Next:** gaṇa 3 vikaraṇa (unlocks juhoti/dadāti in the reader); kṛt spine for ktvā/lyap; pada override on `/tinanta`.
 
 ### 2026-09-30 (session)  [cursor]  Saṃsādhanī e-reader oracle — Gītā tiṅanta coverage
 
@@ -948,6 +979,14 @@ with the `cond()` invariants and verification commands documented.
 > recently. Cross-check §B before editing the same files.
 >
 > Columns: `file` | `Δ` (`new` / `mod`) | `task` (short) | `notes`
+
+### 2026-09-30 [cursor] — /reader SCL kāraka tree
+
+| file | Δ | task | notes |
+|------|---|------|-------|
+| `webui/templates/reader.html` | mod | nested treeSvg | verb / blue cluster / yellow samāsa |
+| `tests/unit/test_samsaadhanii_reader.py` | mod | Gītā 1.1 children | 9.1 / 6.1 / 2.2 locked |
+| `audit/RUN_LOG.md` | mod | coordination | §B released + §C |
 
 ### 2026-05-31 [cursor] — Phase 5e derive consolidation
 
