@@ -36,13 +36,22 @@ from phonology import mk  # noqa: E402
 # + B2 subanta/kāraka gate scope (111 → 0 on bare BU dhātu probe).
 # 2 (2026-09-30): 1.3.78 शेषात्कर्तरि परस्मैपदम् and 1.4.108 शेषे प्रथमः became
 # VIDHI when sūtra types were synced to the pāṭha. Their conditions (a śeṣa
-# dhātu) hold on any bare root because the tiṅanta bootstrap decides pada and
-# puruṣa before the lakāra is attached — their true locus. Lower to 0 once the
-# bootstrap attaches the lakāra first.
-VIDHI_FP_RAW_BASELINE = 2
+# dhātu) held on any bare root because they never checked they were even in a
+# tiṅanta derivation (a kṛdanta/subanta probe over the same dhātu tripped
+# them too). 0 (2026-09-30, gaṇa-3 session): both now require
+# state.meta["derivation_class"] == "tinanta" (already set at tiṅanta
+# bootstrap, before either sūtra runs) — the bu_dhatu probe (empty meta)
+# no longer trips them.
+VIDHI_FP_RAW_BASELINE = 0
 VIDHI_FP_FILTERED_BASELINE = 0
-# Tinanta tape-init probe (post Phase 5 tin_pratyaya chain gate).
-TINANTA_INIT_RAW_BASELINE = 2   # same two, same reason
+# Tinanta tape-init probe (post Phase 5 tin_pratyaya chain gate): this probe
+# *does* set derivation_class="tinanta" (real tiṅanta tape-init shape), so
+# the meta-only guard above doesn't distinguish it from a genuine derivation
+# — both sūtras correctly still fire here. Lowering this to 0 needs the
+# lakāra itself (not just the derivation_class label) attached as a Term
+# before 1.3.78/1.4.108 run, which is the real bootstrap-reordering the
+# 2026-05-31 note anticipated; not done in this session.
+TINANTA_INIT_RAW_BASELINE = 2
 
 REPORT_PATH = ROOT / "docs" / "cond_discipline_audit.md"
 

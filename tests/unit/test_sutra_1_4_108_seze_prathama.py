@@ -35,22 +35,25 @@ def test_sutra_metadata() -> None:
     assert "1.4.1" in r.anuvritti_from
 
 
+_TINANTA_META = {"derivation_class": "tinanta"}
+
+
 def test_prathama_tin_default_śeṣa() -> None:
-    s0 = State(terms=[_dhatu()], meta={})
+    s0 = State(terms=[_dhatu()], meta=dict(_TINANTA_META))
     s1 = apply_rule("1.4.108", s0)
     assert s1.paribhasha_gates[GATE_KEY]["active"] is True
     assert seza_108_licences_prathama_tin(s1) is True
 
 
 def test_out_when_105_107_block() -> None:
-    s0 = State(terms=[_dhatu(**{MADHYAMOTTAMA_105_107_BLOCK_META_KEY: True})], meta={})
+    s0 = State(terms=[_dhatu(**{MADHYAMOTTAMA_105_107_BLOCK_META_KEY: True})], meta=dict(_TINANTA_META))
     s1 = apply_rule("1.4.108", s0)
     assert s1.paribhasha_gates[GATE_KEY]["active"] is False
     assert seza_108_licences_prathama_tin(s1) is False
 
 
 def test_second_apply_r3() -> None:
-    s0 = State(terms=[_dhatu()], meta={})
+    s0 = State(terms=[_dhatu()], meta=dict(_TINANTA_META))
     s1 = apply_rule("1.4.108", s0)
     s2 = apply_rule("1.4.108", s1)
     assert s1.paribhasha_gates == s2.paribhasha_gates
@@ -58,6 +61,14 @@ def test_second_apply_r3() -> None:
 
 def test_no_dhatu_skips() -> None:
     t = Term(kind="prakriti", varnas=[mk("a")], tags=set(), meta={})
-    s0 = State(terms=[t], meta={})
+    s0 = State(terms=[t], meta=dict(_TINANTA_META))
+    s1 = apply_rule("1.4.108", s0)
+    assert GATE_KEY not in s1.paribhasha_gates
+
+
+def test_non_tinanta_context_skips() -> None:
+    """1.4.108's true locus is tiṅanta puruṣa-nirṇaya — a bare dhātu Term
+    outside that context (e.g. a kṛdanta/subanta probe) must not trip the gate."""
+    s0 = State(terms=[_dhatu()], meta={})
     s1 = apply_rule("1.4.108", s0)
     assert GATE_KEY not in s1.paribhasha_gates

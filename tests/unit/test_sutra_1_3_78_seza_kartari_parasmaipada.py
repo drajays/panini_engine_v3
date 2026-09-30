@@ -33,22 +33,25 @@ def test_sutra_metadata() -> None:
     assert "1.3.14" in r.anuvritti_from
 
 
+_TINANTA_META = {"derivation_class": "tinanta"}
+
+
 def test_default_parasmaipada_when_no_atmane_license() -> None:
-    s0 = State(terms=[_dhatu_paT()], meta={})
+    s0 = State(terms=[_dhatu_paT()], meta=dict(_TINANTA_META))
     s1 = apply_rule("1.3.78", s0)
     assert s1.paribhasha_gates[GATE_KEY]["active"] is True
     assert kartari_parasmaipada_seza_active(s1) is True
 
 
 def test_no_parasmaipada_default_when_atmane_licensed() -> None:
-    s0 = State(terms=[_dhatu_paT(**{ATMANE_LICENSE_META_KEY: True})], meta={})
+    s0 = State(terms=[_dhatu_paT(**{ATMANE_LICENSE_META_KEY: True})], meta=dict(_TINANTA_META))
     s1 = apply_rule("1.3.78", s0)
     assert s1.paribhasha_gates[GATE_KEY]["active"] is False
     assert kartari_parasmaipada_seza_active(s1) is False
 
 
 def test_second_apply_skipped_r3_safe() -> None:
-    s0 = State(terms=[_dhatu_paT()], meta={})
+    s0 = State(terms=[_dhatu_paT()], meta=dict(_TINANTA_META))
     s1 = apply_rule("1.3.78", s0)
     s2 = apply_rule("1.3.78", s1)
     assert s2.paribhasha_gates[GATE_KEY]["active"] is True
@@ -56,6 +59,14 @@ def test_second_apply_skipped_r3_safe() -> None:
 
 def test_no_dhatu_skips() -> None:
     t = Term(kind="prakriti", varnas=[mk("a")], tags=set(), meta={})
-    s0 = State(terms=[t], meta={})
+    s0 = State(terms=[t], meta=dict(_TINANTA_META))
+    s1 = apply_rule("1.3.78", s0)
+    assert GATE_KEY not in s1.paribhasha_gates
+
+
+def test_non_tinanta_context_skips() -> None:
+    """1.3.78's true locus is tiṅanta pada-nirṇaya — a bare dhātu Term outside
+    that context (e.g. a kṛdanta/subanta probe) must not trip the gate."""
+    s0 = State(terms=[_dhatu_paT()], meta={})
     s1 = apply_rule("1.3.78", s0)
     assert GATE_KEY not in s1.paribhasha_gates

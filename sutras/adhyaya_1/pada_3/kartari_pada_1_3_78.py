@@ -49,6 +49,11 @@ def _desired_gate_active(dhatu: Term) -> bool:
 
 
 def seza_parasmaipada_gate_needs_update(state: State) -> bool:
+    # 1.3.78's true locus is tiṅanta pada-nirṇaya, not any bare dhātu Term
+    # (a kṛdanta/subanta derivation over the same dhātu never reaches this
+    # gate). cond() false-positive audit: audit/cond_discipline_auditor.py.
+    if state.meta.get("derivation_class") != "tinanta":
+        return False
     d = find_primary_dhatu(state)
     if d is None:
         return False

@@ -39,6 +39,10 @@ def _desired_108_active(d: Term) -> bool:
 
 
 def seza_prathama_108_gate_needs_update(state: State) -> bool:
+    # 1.4.108's true locus is tiṅanta puruṣa-nirṇaya, not any bare dhātu Term.
+    # cond() false-positive audit: audit/cond_discipline_auditor.py.
+    if state.meta.get("derivation_class") != "tinanta":
+        return False
     d = find_primary_dhatu(state)
     if d is None:
         return False
