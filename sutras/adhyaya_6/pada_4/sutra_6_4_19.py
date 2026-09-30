@@ -1,13 +1,22 @@
 """
-6.4.19  च्छ्वोः शूडनुनासिके च  —  VIDHI (narrow demo)
+6.4.19  च्छ्वोः शूडनुनासिके च  —  VIDHI
 
-Demo slice (पृष्ट्वा):
-  After samprasāraṇa, for dhātu `pfcC` (pracch), replace final `cC` (cch) by `S`
-  (ś) before a kṅit/kitvat suffix (tagged ``kngiti``).
+For धातु प्रच्छ् (upadeśa praCa~ — a single छ्, no separate च्; the familiar
+written "प्रच्छ्" is itself तुक् (6.1.73) + श्चुत्व (8.4.40), already applied),
+replace the final छ् — together with any तुक् त् immediately before it — by
+श्. Kāśikā: "अन्तरङ्गत्वात् इति तुकि कृते सतुक्कस्य शादेशः" — तुक् (antaraṅga,
+so it fires first) inserts त् before छ्; 6.4.19's शादेश then replaces that
+whole [त्, छ्] pair (सतुक्कस्य = "of छ् together with its तुक्"), not छ् alone.
 
-Engine:
-  - requires a following pratyaya tagged ``kngiti``.
-  - narrow: operates only on the primary dhātu term with upadeśa `pfcC`.
+Two call sites, two aṅga states:
+  - क्त्वा/क्नु (कित्/ङित् affixes; प्रश्नः, पृष्ट्वा/प्रष्ट्वा): called before
+    तुक् has been through श्चुत्व, so the dhātu still ends bare-छ् or तुक्+छ्.
+  - लृट्/लुट्/लुङ् (स्य/तास्/सिच्, आर्धधातुक — प्रक्ष्यति, प्रष्टा, अप्राक्षीत्):
+    same aṅga shape (तुक्+छ् at the end); called from each lakāra's own
+    pipeline right before the Tripādī merge, mirroring how 7.3.93 (ब्रुव ईट्)
+    is scoped per-lakāra rather than gated by a shared affix tag.
+  Not called at all from सार्वधातुक (शप्) lakāras (लट्/लिट्/लोट्/लङ्) — there
+  तुक्+छ् survives to 8.4.40 श्चुत्व instead, giving पृच्छति.
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 64019 · च्छ्वोः शूडनुनासिके च
@@ -17,7 +26,8 @@ Citation (CONSTITUTION Art. 14)
                 प्रश्नः
                 विश्नः
                 अन्तरङ्गत्वाच्    इति तुकि कृते सतुक्कस्य शादेशः
-  Cross-check — surface pinned by: tests/unit/test_pfzwvA_pracch_ktvA.py
+  Cross-check — surface pinned by: tests/unit/test_pfzwvA_pracch_ktvA.py;
+                dhātu 06.0149 lṛṭ/luṭ/luṅ vs ashtadhyayi.com (प्रक्ष्यति/प्रष्टा/अप्राक्षीत्)
   Reference record: sutra_ref_out/6_4_19.json
 """
 from __future__ import annotations
@@ -26,34 +36,44 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology import mk
 
+_ROOT_UPADESHAS = frozenset({"praCa", "pfcC"})
 
-def _kngiti_present(state: State) -> bool:
-    return any("kngiti" in t.tags for t in state.terms if "pratyaya" in t.tags)
+
+def _site(state: State):
+    """(dhātu_term, cut_index) for a trailing [c|t, C] pair on the प्रच्छ् root."""
+    if not state.terms:
+        return None
+    dh = state.terms[0]
+    if "dhatu" not in dh.tags:
+        return None
+    if (dh.meta.get("upadesha_slp1") or "").strip().rstrip("~") not in _ROOT_UPADESHAS:
+        return None
+    if dh.meta.get("6_4_19_cch_to_sh_done"):
+        return None
+    vs = dh.varnas
+    if len(vs) < 2 or vs[-1].slp1 != "C" or vs[-2].slp1 not in ("c", "t"):
+        return None
+    return dh, len(vs) - 2
 
 
 def cond(state: State) -> bool:
-    if not _kngiti_present(state):
-        return False
-    if not state.terms:
-        return False
-    dh = state.terms[0]
-    if "dhatu" not in dh.tags:
-        return False
-    if (dh.meta.get("upadesha_slp1") or "").strip() != "pfcC":
-        return False
-    if dh.meta.get("6_4_19_cch_to_sh_done"):
-        return False
-    if len(dh.varnas) < 2:
-        return False
-    return dh.varnas[-2].slp1 == "c" and dh.varnas[-1].slp1 == "C"
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    if not cond(state):
+    hit = _site(state)
+    if hit is None:
         return state
-    dh = state.terms[0]
-    # Replace final cC by S.
-    dh.varnas = dh.varnas[:-2] + [mk("S")]
+    dh, cut = hit
+    # Replace the trailing [c|t, C] pair — छ् and any तुक् त् before it — by श्,
+    # carrying over छ्'s own dhātु-varṇa tags (else the Tripāḍī tape-scanner
+    # in sutras/adhyaya_8/pada_2/_tape.py stops treating this letter as part
+    # of the dhātु, per the same convention as that module's substitute()).
+    new_S = mk("S")
+    old_tags = dh.varnas[-1].tags & {"dhatu_v", "mula_dhatu_v", "dhatu_adesha_v"}
+    if old_tags:
+        new_S.tags |= old_tags | {"dhatu_adesha_v"}
+    dh.varnas = dh.varnas[:cut] + [new_S]
     dh.meta["6_4_19_cch_to_sh_done"] = True
     return state
 

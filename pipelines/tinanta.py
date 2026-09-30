@@ -1094,6 +1094,10 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("1.4.14", state)
         state = apply_rule("6.1.78", state)
 
+    # 6.4.19 च्छ्वोः शूडनुनासिके च: प्रच्छ्-specific तुक्+छ् → श् before the
+    # ārdhadhātuka तास् (प्रष्टा). Vacuous for every other root.
+    state = apply_rule("6.4.19", state)
+
     # ── Merge + Tripāḍī ──────────────────────────────────────────────────────
     _pada_merge(state)
     if state.meta.get("_luT_ad_spine"):
@@ -1458,6 +1462,10 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.1.78", state)
 
     state = apply_rule("1.4.14", state)
+
+    # 6.4.19 च्छ्वोः शूडनुनासिके च: प्रच्छ्-specific तुक्+छ् → श् before the
+    # ārdhadhātuka सिच् (अप्राक्षीत्). Vacuous for every other root.
+    state = apply_rule("6.4.19", state)
 
     # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
     _pada_merge(state)
@@ -1855,6 +1863,10 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ātmanepada duals, as in the laṭ spine: sya + आते → स्य + इय्ते (7.2.81)
     # → इते (6.1.66) → स्येते (6.1.87) — एधिष्येते, not एधिष्यआते.
     state = P00_ngit_At_iy_guna(state)
+
+    # 6.4.19 च्छ्वोः शूडनुनासिके च: प्रच्छ्-specific तुक्+छ् → श् before the
+    # ārdhadhātuka स्य (प्रक्ष्यति). Vacuous for every other root.
+    state = apply_rule("6.4.19", state)
 
     # ── Merge + Tripāḍī ──────────────────────────────────────────────────────
     _pada_merge(state)
