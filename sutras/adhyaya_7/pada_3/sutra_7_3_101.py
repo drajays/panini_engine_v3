@@ -47,6 +47,8 @@ def _find(state: State) -> int | None:
         t2 = state.terms[i + 1]
         if not t1.varnas or not t2.varnas:
             continue
+        if t1.kind == "upasarga" or t2.kind == "upasarga":
+            continue   # upasargas carry a "pratyaya" tag but are never the aṅga / ending here
         if t1.varnas[-1].slp1 != "a":
             continue
         if t2.varnas[0].slp1 not in _YAJ:

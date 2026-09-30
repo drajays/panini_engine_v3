@@ -41,3 +41,19 @@ def test_audit_reports_sarva_notes_as_matched(tmp_path) -> None:
     assert "no engine recipe for sarvasmE" not in report
     assert "subanta.derive('sarva', 1, 3, 'pulliṅga')" in report
     assert "subanta.derive('sarva', 4, 1, 'pulliṅga')" in report
+
+
+def test_tinanta_fallback_strips_upasargas_and_needs_exact_surface() -> None:
+    from tools.notes_audit import general_tinanta_match
+
+    for key in ("praRidadAti", "praRidayate", "praRiyacCati"):
+        assert general_tinanta_match(key) is not None, key
+    assert "upasargas=['pra', 'ni']" in general_tinanta_match("praRidadAti")[0]
+    assert general_tinanta_match("kumArI") is None
+
+
+def test_upasarga_a_is_not_lengthened_by_7_3_101() -> None:
+    """Regression: upasargas carry a 'pratyaya' tag; pra+ni must not become prAni."""
+    from pipelines.tinanta import derive
+
+    assert derive("03.0010", "laT", "kartari", 3, 1, upasargas=["pra", "ni"]).flat_slp1() == "praRidadAti"

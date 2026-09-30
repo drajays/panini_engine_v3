@@ -111,6 +111,51 @@ def general_subanta_match(key: str) -> tuple[str, set[str]] | None:
     return None
 
 
+_UPASARGAS = ("pra", "parA", "apa", "sam", "anu", "ava", "nis", "nir", "dus", "dur", "vi", "A",
+              "ni", "aDi", "api", "ati", "su", "ut", "aBi", "prati", "pari", "upa")
+
+
+def _upasarga_splits(key: str):
+    """(prefix list, remainder) for 0–2 leading upasargas; ṇatva tolerated (praRi = pra+ni)."""
+    yield [], key
+    for a in _UPASARGAS:
+        for b in (None, *_UPASARGAS):
+            ups = [a] if b is None else [a, b]
+            joined = "".join(ups)
+            for pre in {joined, joined.replace("n", "R")}:
+                if key.startswith(pre) and len(key) > len(pre):
+                    yield ups, key[len(pre):]
+
+
+def general_tinanta_match(key: str) -> tuple[str, set[str]] | None:
+    """Look the verb form up in the generated-forms index (after stripping leading
+    upasargas), re-derive that exact cell, and accept only an exact surface match."""
+    from engine.form_index import lookup
+    from pipelines.dhatupatha import resolve_dhatu_identifier
+    from pipelines.tinanta import derive as tin_derive
+
+    for ups, rest in _upasarga_splits(key):
+        for hit in lookup(rest):
+            if hit["kind"] != "tinanta":
+                continue
+            f = hit["features"]
+            ref = hit["cell_key"].split("@")[1].split(":")[0]
+            try:
+                resolve_dhatu_identifier(ref)
+            except KeyError:
+                ref = hit["lemma"]
+            try:
+                st = tin_derive(ref, f["lakara"], f["prayoga"], f["purusha"], f["vacana"],
+                                upasargas=ups or None)
+            except Exception:
+                continue
+            if st.flat_slp1() == key:
+                label = (f"tinanta.derive({ref!r}, {f['lakara']!r}, {f['prayoga']!r}, "
+                         f"{f['purusha']}, {f['vacana']}, upasargas={ups!r})")
+                return label, _applied_from_state(st)
+    return None
+
+
 def audit(notes_dir: Path) -> str:
     from phonology.tokenizer import devanagari_to_slp1_flat
     from tools.sync_sutrapatha import patha
@@ -127,7 +172,7 @@ def audit(notes_dir: Path) -> str:
         cands = forms.get(key) or forms.get(key.rstrip("H") + "H") or forms.get(key.rstrip("H"))
         note = cited_sutras(f.read_text(encoding="utf-8"), ref)
         if not cands:
-            general = general_subanta_match(key) if key else None
+            general = (general_subanta_match(key) or general_tinanta_match(key)) if key else None
             if general is None:
                 unmatched.append((f.name, f"no engine recipe for {key}"))
                 continue
