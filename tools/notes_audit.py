@@ -62,6 +62,51 @@ def applied(module: str, fn: str) -> set[str]:
             if e.get("status") == "APPLIED" and not (e.get("sutra_id") or "").startswith("__")}
 
 
+# सर्वादि/त्यादि: closed, well-known pronoun stems whose declined surface forms
+# (सर्वे, सर्वस्मै, अमी, अमू, …) never equal the stem itself, so a note's key
+# can't be tried as its own stem the way an ordinary prātipadika can. Same set
+# pipelines.subanta.derive() already special-cases for sambodhana exclusion,
+# plus सर्व (handled separately there, but an ordinary derive() call).
+_PRONOUN_STEMS = ("sarva", "tad", "yad", "etad", "idam", "adas")
+_LINGAS = ("pulliṅga", "strīliṅga", "napuṃsaka")
+
+
+def _applied_from_state(st) -> set[str]:
+    return {e["sutra_id"] for e in st.trace
+            if e.get("status") == "APPLIED" and not (e.get("sutra_id") or "").startswith("__")}
+
+
+def general_subanta_match(key: str) -> tuple[str, set[str]] | None:
+    """Try the *generic* subanta pipeline (not a curated one-off recipe) as a
+    सर्वादि/त्यादि pronoun declension — covers notes like सर्वे/सर्वस्मै (सर्व)
+    or अमी/अमू (अदस्) that a curated index of hand-written recipes was never
+    going to list by name.
+
+    Deliberately does **not** try ``stem == key`` (the note's own surface
+    form) as a candidate stem: subanta.derive() doesn't validate that a
+    string is a real prātipadika, and most stems produce a bare-visarga
+    prathamā-ekavacana by default — trying the surface form against itself
+    at (1,1) would "match" almost anything, verifying nothing.
+    """
+    from pipelines.subanta import derive as subanta_derive
+
+    targets = {key, key.rstrip("H") + "H", key.rstrip("H")}
+    for stem in _PRONOUN_STEMS:
+        for linga in _LINGAS:
+            for vibhakti in range(1, 9):
+                if vibhakti == 8 and stem in {"tad", "yad", "etad", "idam", "adas"}:
+                    continue   # subanta.derive() raises: tyadādi take no sambodhana
+                for vacana in (1, 2, 3):
+                    try:
+                        st = subanta_derive(stem, vibhakti, vacana, linga)
+                    except Exception:
+                        continue
+                    if st.flat_slp1() in targets:
+                        label = f"subanta.derive({stem!r}, {vibhakti}, {vacana}, {linga!r})"
+                        return label, _applied_from_state(st)
+    return None
+
+
 def audit(notes_dir: Path) -> str:
     from phonology.tokenizer import devanagari_to_slp1_flat
     from tools.sync_sutrapatha import patha
@@ -78,7 +123,13 @@ def audit(notes_dir: Path) -> str:
         cands = forms.get(key) or forms.get(key.rstrip("H") + "H") or forms.get(key.rstrip("H"))
         note = cited_sutras(f.read_text(encoding="utf-8"), ref)
         if not cands:
-            unmatched.append((f.name, f"no engine recipe for {key}"))
+            general = general_subanta_match(key) if key else None
+            if general is None:
+                unmatched.append((f.name, f"no engine recipe for {key}"))
+                continue
+            where, eng = general
+            rows.append((f.name, key, where, sorted(note - eng, key=_k), sorted(eng - note, key=_k),
+                         len(note & eng)))
             continue
         mod, fn = cands[0]
         try:
