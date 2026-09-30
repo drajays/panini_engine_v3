@@ -1,14 +1,14 @@
 {
-  "forms": 93186,
-  "distinct_surfaces": 81894,
-  "lemmas": 1773,
-  "gaps": 747,
+  "forms": 101826,
+  "distinct_surfaces": 88730,
+  "lemmas": 1913,
+  "gaps": 702,
   "meta": {
-    "generated_at": "2026-09-29T03:14:11+00:00",
+    "generated_at": "2026-09-30T05:16:42+00:00",
     "stems": "72",
-    "dhatus": "2049",
-    "cells": "93933",
-    "seconds": "3491.9"
+    "dhatus": "2240",
+    "cells": "102528",
+    "seconds": "851.0"
   },
   "fingerprint": [
     {
@@ -157,7 +157,7 @@
       "cell": "subanta:BU:pum:2:2"
     },
     {
-      "surface": "BvAn",
+      "surface": "BUH",
       "lemma": "BU",
       "cell": "subanta:BU:pum:2:3"
     },
@@ -192,7 +192,7 @@
       "cell": "subanta:BU:pum:4:3"
     },
     {
-      "surface": "Bvasi",
+      "surface": "BvaH",
       "lemma": "BU",
       "cell": "subanta:BU:pum:5:1"
     },
