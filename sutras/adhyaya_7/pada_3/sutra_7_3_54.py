@@ -1,40 +1,84 @@
 """
 7.3.54  हो हन्तेर्ञ्णिन्नेषु  —  VIDHI
 
-Padaccheda: हः हन्तेः ञ्णित्-नेषु
+Sources consulted:
+- ashtadhyayi.com data.txt row i=73054
+- Kāśikā: "घातः, घातकः, घातनम्।"
+- Cross-validation: tests/unit/test_bhattikavya_1_2.py (समूलघातम्)
 
-हो हन्तेर्ञ्णिन्नेषु (7.3.54)
+ञित्/णित् परे हन्-धातोः हकारस्य घकारः।
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology    import mk
 
 _GATE_KEY: str = "7_3_54_ho_54"
 
 
-def cond(state: State) -> bool:
+def _nit_follows(state: State, di: int) -> bool:
+    for j in range(di + 1, len(state.terms)):
+        pr = state.terms[j]
+        if pr.kind != "pratyaya":
+            continue
+        itm = pr.meta.get("it_markers") or set()
+        if "N" in itm or "R" in itm:
+            return True
+        if "nit" in pr.tags:
+            return True
+        up = (pr.meta.get("upadesha_slp1") or "").strip()
+        if up in {"Ramul", "Namul", "Nvul", "Rvul"}:
+            return True
+    return False
+
+
+def _site(state: State):
     if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.3.54", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+        return None
+    if not adhikara_in_effect("7.3.54", state, "6.4.1"):
+        return None
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags or not t.varnas:
+            continue
+        up = (t.meta.get("upadesha_slp1") or "").strip()
+        if up not in {"han", "vaDa", "vaD"} and "".join(v.slp1 for v in t.varnas) not in {"han", "Gan", "han"}:
+            if t.varnas[0].slp1 != "h":
+                continue
+            if up not in {"han", "han~"}:
+                continue
+        if t.varnas[0].slp1 != "h":
+            continue
+        if not _nit_follows(state, i):
+            continue
+        return i
+    return None
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
+    i = _site(state)
+    if i is None:
+        return state
+    t = state.terms[i]
+    t.varnas[0] = mk("G")
+    t.meta["7_3_54_gh_done"] = True
     state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.3.54"
+    state.samjna_registry[_GATE_KEY] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.3.54",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "ho hanterYRinnezu",
     text_dev              = "हो हन्तेर्ञ्णिन्नेषु",
     padaccheda_dev        = "हः हन्तेः ञ्णित्-नेषु",
-    why_dev               = "(सूत्रम् 7.3.54) हो हन्तेर्ञ्णिन्नेषु।",
+    why_dev               = "ञिति णिति च परे हन्तेर् हकारस्य घकारः (घातम्)।",
     anuvritti_from        = ('7.1.1',),
     cond                  = cond,
     act                   = act,

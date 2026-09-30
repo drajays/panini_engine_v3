@@ -155,7 +155,9 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-09-30 (session) | cursor | P2 Saṃsādhanī e-reader oracle — Gītā tiṅanta round-trip + coverage (tests/tools only, Art. 6) | tools/fetch_samsaadhanii_ereaders.py, tools/samsaadhanii_tags.py, tools/samsaadhanii_coverage.py, tools/gold_corpora.py, data/reference/samsaadhanii/, .gitignore, tests/regression/test_samsaadhanii_gita_tinanta.py, tests/regression/samsaadhanii_gita_tinanta_baseline.json, audit/RUN_LOG.md | released |
 | 2026-09-30 (session) | cursor | P2 /reader — Saṃsādhanī e-reader features, engine-verified (analysis-by-synthesis) | tools/samsaadhanii_reader.py, tools/samsaadhanii_tags.py, tools/fetch_samsaadhanii_ereaders.py, webui/app.py, webui/templates/reader.html, webui/templates/base.html, webui/templates/home.html, webui/templates/derive.html, webui/templates/tinanta.html, tests/unit/test_samsaadhanii_reader.py, requirements.txt, audit/RUN_LOG.md | released |
 | 2026-09-30 (session) | cursor | P2 /reader kāraka tree — SCL-style hierarchical सम्बन्ध-चित्रम् | tools/samsaadhanii_reader.py, webui/templates/reader.html, tests/unit/test_samsaadhanii_reader.py, audit/RUN_LOG.md | released |
-| 2026-09-30 (session) | cursor | P2 भट्टिकाव्य १.१ जयमङ्गला prakriyā (अभूत्…उपागमत्) | pipelines/tinanta.py, pipelines/bhattikavya_1_1.py, sutras/adhyaya_3/pada_2/sutra_3_2_3.py, sutras/adhyaya_3/pada_2/sutra_3_2_39.py, sutras/adhyaya_3/pada_1/sutra_3_1_135.py, sutras/adhyaya_3/pada_3/sutra_3_3_58.py, sutras/adhyaya_4/pada_3/sutra_4_3_23.py, sutras/adhyaya_5/pada_4/sutra_5_4_91.py, sutras/adhyaya_6/pada_3/sutra_6_3_67.py, sutras/adhyaya_6/pada_4/sutra_6_4_94.py, sutras/adhyaya_6/pada_4/sutra_6_4_148.py, tests/unit/test_bhattikavya_1_1.py, webui/app.py, webui/templates/bhatti.html, webui/templates/base.html, webui/templates/home.html, audit/RUN_LOG.md | in-progress |
+| 2026-09-30 (session) | cursor | P2 भट्टिकाव्य १.१ जयमङ्गला prakriyā (अभूत्…उपागमत्) | pipelines/tinanta.py, pipelines/bhattikavya_1_1.py, sutras/adhyaya_1/pada_3/sutra_1_3_7.py, sutras/adhyaya_3/pada_2/sutra_3_2_3.py, sutras/adhyaya_3/pada_2/sutra_3_2_39.py, sutras/adhyaya_3/pada_1/sutra_3_1_135.py, sutras/adhyaya_3/pada_3/sutra_3_3_16.py, sutras/adhyaya_3/pada_3/sutra_3_3_58.py, sutras/adhyaya_4/pada_3/sutra_4_3_23.py, sutras/adhyaya_5/pada_4/sutra_5_4_91.py, sutras/adhyaya_6/pada_3/sutra_6_3_67.py, sutras/adhyaya_6/pada_4/sutra_6_4_94.py, sutras/adhyaya_6/pada_4/sutra_6_4_148.py, tests/unit/test_bhattikavya_1_1.py, webui/app.py, webui/templates/bhatti.html, webui/templates/base.html, webui/templates/home.html, audit/RUN_LOG.md | released |
+| 2026-09-30 (session) | cursor | P2 भट्टिकाव्य १.२ जयमङ्गला (वेदाः…न्यवधीत्) | pipelines/tinanta.py, pipelines/bhattikavya_1_1.py, sutras/adhyaya_1/pada_3/sutra_1_3_3.py, sutras/adhyaya_2/pada_4/sutra_2_4_43.py, sutras/adhyaya_3/pada_1/sutra_3_1_134.py, sutras/adhyaya_3/pada_4/sutra_3_4_36.py, sutras/adhyaya_7/pada_3/sutra_7_3_32.py, sutras/adhyaya_7/pada_3/sutra_7_3_54.py, core/phases/tripadi.py, tests/unit/test_bhattikavya_1_2.py, webui/app.py, webui/templates/bhatti.html, audit/RUN_LOG.md | released |
+| 2026-09-30 (session) | cursor | P2 integrate Bhaṭṭikāvya + Gītā 15.3–4 yantra + publish | engine/krt_eligibility.py, pipelines/bhattikavya_1_1.py, pipelines/subanta.py, sutras/adhyaya_3/pada_1/sutra_3_1_134.py, sutras/adhyaya_3/pada_1/sutra_3_1_135.py, sutras/adhyaya_3/pada_2/sutra_3_2_3.py, sutras/adhyaya_3/pada_2/sutra_3_2_39.py, sutras/adhyaya_3/pada_3/sutra_3_3_58.py, sutras/adhyaya_3/pada_4/sutra_3_4_36.py, sutras/adhyaya_5/pada_4/sutra_5_4_91.py, sutras/adhyaya_6/pada_1/sutra_6_1_68.py, sutras/adhyaya_7/pada_1/sutra_7_1_25.py, sutras/adhyaya_7/pada_2/sutra_7_2_90.py, sutras/adhyaya_7/pada_2/sutra_7_2_106.py, tools/samsaadhanii_tags.py, tools/samsaadhanii_reader.py, tests/unit/test_gita_15_3_4_yantra.py, tests/unit/test_samsaadhanii_reader.py, audit/RUN_LOG.md | released |
 
 ---
 
@@ -188,6 +190,61 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ---
 
 ## C. Action history (newest at top)
+
+### 2026-09-30 (session)  [cursor]  Integrate Bhaṭṭikāvya १.१–१.२ + Gītā 15.3–4 yantra
+
+**Goal:** Commit the Jayamaṅgalā padāni, clear the four CI gates they tripped, and fix the five Gītā 15.3–4 generator errors (अस्य, एनम्-tag, पदम्, तत्, अहम्).
+
+**Shipped:**
+- Bhaṭṭikāvya `/bhatti` 1.1–1.2; luṅ २.४.४३ `hana~`; tripāḍī ८.२.२८.
+- Art. 13: `requested_krt_upadesha()` so `krt_upadesha_slp1` is not scanned as a P### arm; kṛt it-lopa via `P00_vikarana_it_lopa`.
+- ५.४.९१ `text_dev` matches pāṭha `राजाहस्सखिभ्यष्टच्`.
+- **अस्य:** ७.२.११३ after ७.१.१२ (स्य is hāl-ādi).
+- **तत्:** ७.२.१०६ skipped on napuṃsaka; ७.१.२५ अद्.
+- **अहम्:** ६.१.६८ skips asmad/yuṣmad; ७.१.२८ + ७.२.९४ + ७.२.९०.
+- **पदम्:** reader `align_subanta_linga`; engine ७.१.२४ already correct given नपुं.
+- Adhyāhṛta `(अस्मद्{1;एक})` parses. **एनम्** (२.४.३४ अन्वादेश) not yet a real ādeśa.
+
+**Tests:** `test_bhattikavya_1_1/1_2`, `test_gita_15_3_4_yantra`, arm-gate 0, duplicate groups 0, pāṭha fidelity, notes_audit praRidadAti.
+
+### 2026-09-30 (session)  [cursor]  भट्टिकाव्य १.२ जयमङ्गला — nine padāni
+
+**Goal:** Engine-derive the nine words of Jayamaṅgalā on Bhaṭṭikāvya 1.2 (`सोऽध्यैष्ट वेदांस्त्रिदशानयष्ट…`) as glass-box Aṣṭādhyāyī prakriyā (Art. 0, 7, 11, 12). No new `_arm` gates.
+
+**Shipped:**
+- **वेदाः** — ३.१.१३४ अच् on pacādi `vid` + ७.३.८६ गुण.
+- **अध्यैष्ट** — अधि+इङ् लुङ् ātmanepada: ६.४.७२ आट्, ६.१.९० वृद्धि, सिच्, ८.३.५९/८.४.४१, ६.१.७७ (गाङ्-अभावपक्ष).
+- **अयष्ट** — यज् लुङ् ātmanepada (`pada=atmane`): ८.२.३६ षत्व, ८.२.२६ सिच्-लोप, ८.४.४१.
+- **अपारीत्** — पृ लुङ्: ७.२.१ सिचि वृद्धि.
+- **सममंस्त** — सम्+मन्: १.३.३ skips upasarga-final म्; ७.२.१० इट्-निषेध.
+- **व्यजेष्ट** — वि+जि: १.३.१९ आत्मनेपद + सिच्/षत्व/ष्टुत्व.
+- **अरंस्त** — रम् लुङ् + ८.३.२३ मोऽनुस्वारः after derive.
+- **समूलघातम्** — ३.४.३६ णमुल् + ७.३.५४ घत्व + ७.२.११६ वृद्धि + ७.३.३२ तत्व.
+- **न्यवधीत्** — २.४.४३ हन्→वध matches Dhātupāṭha `hana~`; ६.४.४८ अतो लोपः; ८.२.२८ इट ईटि; ६.१.७७ यण्. Luṅ spine calls २.४.४३ after १.३.९; seṭ path ६.४.४८ before ७.२.१. Tripāḍī includes ८.२.२८.
+
+**Gold (pytest 9 passed):** वेदाः, अध्यैष्ट, अयष्ट, अपारीत्, सममंस्त, व्यजेष्ट, अरंस्त, समूलघातम्, न्यवधीत्.
+
+**Note:** ७.२.३५ may BLOCK on अध्यैष्ट/व्यजेष्ट (net ṣṭ still from ८.३.५९/८.४.४१). १.३.१२ SKIPPED when recipe sets `pada=atmane` (१.३.७२ likewise for यज्). ७.३.८८ still stub.
+
+**Next:** optional ṭīkā pakṣa अतर्सीत्/अतार्सीत् (तृप् वार्तिक); remaining Jayamaṅgalā pads.
+
+### 2026-09-30 (session)  [cursor]  भट्टिकाव्य १.१ जयमङ्गला — eight padāni
+
+**Goal:** Engine-derive the eight words named in Jayamaṅgalā on Bhaṭṭikāvya 1.1, with Aṣṭādhyāyī-ordered prakriyā in the app (Art. 0, 7, 11, 12).
+
+**Shipped:**
+- Canonical luṅ: `_derive_luG` now loops **6.1.101** so उप+आङ्+अट्+गम् → **उपागमत्**; भू लुङ् already **अभूत्** (३.२.११०, च्लि/सिच्, २.४.७७, ३.४.१००, ६.४.७१).
+- Vidhāyakas actually insert: ३.२.३ क, ३.२.३९ खच्, ३.१.१३५ क, ३.३.५८ अप्, ३.३.१६ घञ् via `krt_upadesha_slp1`; ४.३.२३ ट्यु on `sanA`; ५.४.९१ टच्; ६.४.९४ ह्रस्व; ६.३.६७ मुम्; ६.४.१४८ before `wac`.
+- १.३.७ चुटू targets taddhita `wac` (टच्) so विबुधसखः does not keep ट्.
+- Recipe `pipelines/bhattikavya_1_1.py`; UI `/bhatti` (nav **भट्टिः**, home card); `/pipelines` category भट्टिकाव्य १.१.
+
+**Gold (pytest 8 passed):** अभूत्, नृपः, विबुधसखः, परंतपः, गुणाः, वरः, सनातनः, उपागमत्.
+
+**Note:** अभूत् blocks guna via ६.४.८८ वुक् + ६.१.६६, not APPLIED ७.३.८८ (stub). ३.२.८४ is the भूते adhikāra; लुङ् vidhi is ३.२.११०.
+
+**Verified:** `http://127.0.0.1:5095/bhatti` — eight buttons, traces (e.g. नृपः ३.२.३→६.४.६४→८.३.१५; विबुधसखः ३.१.१३५/५.४.९१/६.४.१४८).
+
+**Next:** ७.३.८८ as real pratishedha; ३.३.५६ अच् pakṣa for गुण; optional remaining Jayamaṅgalā pads (युक्तः, प्रथितः).
 
 ### 2026-09-30 (session)  [cursor]  सम्बन्ध-चित्रम् — SCL nested kāraka tree
 
@@ -980,6 +1037,61 @@ with the `cond()` invariants and verification commands documented.
 > recently. Cross-check §B before editing the same files.
 >
 > Columns: `file` | `Δ` (`new` / `mod`) | `task` (short) | `notes`
+
+### 2026-09-30 [cursor] — integrate + Gītā 15.3–4 yantra
+
+| file | Δ | task | notes |
+|------|---|------|-------|
+| `engine/krt_eligibility.py` | mod | requested_krt_upadesha | Art. 13 scanner |
+| `pipelines/bhattikavya_1_1.py` | mod | P00_vikarana_it_lopa | no duplicate blocks |
+| `pipelines/subanta.py` | mod | 7.2.113 after 7.1.12; 7.1.25/28 | अस्य अहम् तत् |
+| `sutras/adhyaya_7/pada_1/sutra_7_1_25.py` | mod | real अद् | तत् |
+| `sutras/adhyaya_6/pada_1/sutra_6_1_68.py` | mod | skip asmad | 7.1.28 |
+| `tools/samsaadhanii_tags.py` | mod | parens + linga repair | अध्याहार पदम् तत् |
+| `tests/unit/test_gita_15_3_4_yantra.py` | new | four golds | अस्य पदम् तत् अहम् |
+| `audit/RUN_LOG.md` | mod | §B released + §C | |
+
+### 2026-09-30 [cursor] — भट्टिकाव्य १.२ जयमङ्गला
+
+| file | Δ | task | notes |
+|------|---|------|-------|
+| `pipelines/tinanta.py` | mod | luṅ 2.4.43 + 6.4.48; 1.3.19/1.3.72 | न्यवधीत् / व्यजेष्ट / अयष्ट |
+| `pipelines/bhattikavya_1_1.py` | mod | nine derive_* + WORDS 1.2 | Jayamaṅgalā padāni |
+| `sutras/adhyaya_1/pada_3/sutra_1_3_3.py` | mod | skip upasarga it | सम्-म् not anubandha |
+| `sutras/adhyaya_2/pada_4/sutra_2_4_43.py` | mod | हन् anywhere; `hana~` | लुङि च वध |
+| `sutras/adhyaya_3/pada_1/sutra_3_1_134.py` | mod | pacādi ac | वेदाः |
+| `sutras/adhyaya_3/pada_4/sutra_3_4_36.py` | mod | णमुल् insert | समूलघातम् |
+| `sutras/adhyaya_7/pada_3/sutra_7_3_54.py` | mod | ह→घ | हो हन्तेः |
+| `sutras/adhyaya_7/pada_3/sutra_7_3_32.py` | mod | न→त | हनस्तः |
+| `core/phases/tripadi.py` | mod | 8.2.28 | इट ईटि |
+| `tests/unit/test_bhattikavya_1_2.py` | new | 9 gold surfaces | 9 passed |
+| `webui/app.py` | mod | `/bhatti` 1.2 | 4-tuple WORDS |
+| `webui/templates/bhatti.html` | mod | two śloka sections | click-to-prakriyā |
+| `audit/RUN_LOG.md` | mod | §B released + §C | |
+
+### 2026-09-30 [cursor] — भट्टिकाव्य १.१ जयमङ्गला
+
+| file | Δ | task | notes |
+|------|---|------|-------|
+| `pipelines/tinanta.py` | mod | luṅ 6.1.101 loop | उपागमत् savarṇa-dīrgha |
+| `pipelines/bhattikavya_1_1.py` | new | eight derive_* | Jayamaṅgalā padāni |
+| `sutras/adhyaya_1/pada_3/sutra_1_3_7.py` | mod | चुटू on wac | टच् it, not stem |
+| `sutras/adhyaya_3/pada_2/sutra_3_2_3.py` | mod | insert ka | krt_upadesha_slp1 |
+| `sutras/adhyaya_3/pada_2/sutra_3_2_39.py` | mod | insert Kac | परंतपः |
+| `sutras/adhyaya_3/pada_1/sutra_3_1_135.py` | mod | insert ka | विबुध |
+| `sutras/adhyaya_3/pada_3/sutra_3_3_16.py` | mod | GaY when asked | गुणाः |
+| `sutras/adhyaya_3/pada_3/sutra_3_3_58.py` | mod | insert ap | वरः |
+| `sutras/adhyaya_4/pada_3/sutra_4_3_23.py` | mod | sanA + ट्यु | सनातनः |
+| `sutras/adhyaya_5/pada_4/sutra_5_4_91.py` | mod | टच् | विबुधसखः |
+| `sutras/adhyaya_6/pada_3/sutra_6_3_67.py` | mod | मुम् | परंतपः |
+| `sutras/adhyaya_6/pada_4/sutra_6_4_94.py` | mod | खचि ह्रस्वः | ताप्→तप् |
+| `sutras/adhyaya_6/pada_4/sutra_6_4_148.py` | mod | i-lopa before wac | सखि→सख |
+| `tests/unit/test_bhattikavya_1_1.py` | new | 8 gold surfaces | 8 passed |
+| `webui/app.py` | mod | `/bhatti` | pipeline category |
+| `webui/templates/bhatti.html` | new | eight pads + trace | click-to-prakriyā |
+| `webui/templates/base.html` | mod | nav भट्टिः | |
+| `webui/templates/home.html` | mod | home card | |
+| `audit/RUN_LOG.md` | mod | §B released + §C | |
 
 ### 2026-09-30 [cursor] — /reader SCL kāraka tree
 

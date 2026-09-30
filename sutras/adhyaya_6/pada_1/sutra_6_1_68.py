@@ -118,6 +118,9 @@ def _find_eligible_boundary(state: State) -> int | None:
             )
             if not has_tap_arm:
                 continue
+        up = (anga.meta.get("upadesha_slp1") or "").strip()
+        if up in {"asmad", "yuzmad"}:
+            continue  # 7.1.28 अम्, not su-lopa
         return i
     return None
 

@@ -1348,6 +1348,7 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("1.3.2", state)
     state = apply_rule("1.3.3", state)
     state = apply_rule("1.3.9", state)
+    state = apply_rule("2.4.43", state)  # हन् → वध (न्यवधीत् / अवधीत्)
 
     # ── Stage: cli/sic chain (before lakāra substitution: 3.1.43 needs luG) ──
     state.meta["cli_luG_recipe"] = True
@@ -1402,6 +1403,9 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
             state = apply_rule("1.2.11", state)
             state = apply_rule("1.2.12", state)
             state = P00_guna_rapara_ayadi(state)
+        # वध (2.4.43) is a-anta: 6.4.48 before sici vṛddhi / 7.2.7.
+        state = apply_rule("6.4.48", state)
+        state = apply_rule("1.1.56", state)
         # sici vṛddhi (parasmaipada): 7.2.1 for a vowel-final aṅga (नी → नै);
         # 7.2.3 for a hal-final one, only when iṭ was blocked (7.2.4 नेटि):
         # पच् → पाच् (अपाक्षीत्). Both self-gate on sic + parasmaipada.
@@ -2272,7 +2276,18 @@ def _attach_upasargas(state: State, upasargas: list[str] | None) -> State:
             )
         )
     state.terms = prefix + state.terms
-    return apply_rule("1.4.59", state)
+    state = apply_rule("1.4.59", state)
+    dh = next((t for t in state.terms if "dhatu" in t.tags), None)
+    if dh is not None:
+        for t in state.terms:
+            if "upasarga" not in t.tags:
+                continue
+            up = (t.meta.get("upadesha_slp1") or "").strip()
+            if up == "vi":
+                dh.tags.add("vi_prefix")
+            elif up in {"parA", "para"}:
+                dh.tags.add("parA_prefix")
+    return state
 
 
 def _yam_with_A_upasarga(state: State) -> bool:
@@ -3946,6 +3961,8 @@ def _bootstrap_tinanta_derivation(
     if prayoga == "kartari":
         state = apply_rule("1.3.28", state)
         state = apply_rule("1.3.12", state)
+        state = apply_rule("1.3.19", state)  # विपराभ्यां जेः
+        state = apply_rule("1.3.72", state)  # स्वरितञितः कर्त्रभिप्राये
         state = apply_rule("1.3.78", state)
 
     pada_key = pada if pada in ("parasmai", "atmane") else _resolve_pada_from_gate(state)

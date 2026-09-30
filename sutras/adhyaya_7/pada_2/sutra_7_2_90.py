@@ -50,8 +50,8 @@ def _find_target(state: State):
         if not t.varnas:
             continue
 
-        # Mode A: stem-replacement done + 6.1.97 merger done
-        if (t.tags & _ASMAD_DONE_TAGS) and t.meta.get("asmad_ato_gune_done"):
+        # Mode A: after त्वाहौ सौ (7.2.94) the śeṣa is the final हल् (द्)
+        if t.tags & _ASMAD_DONE_TAGS:
             if t.varnas[-1].slp1 in HAL:
                 return i
 

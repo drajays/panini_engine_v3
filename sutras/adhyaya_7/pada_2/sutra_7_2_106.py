@@ -36,6 +36,8 @@ def _matches(state: State) -> bool:
     upa = anga.meta.get("upadesha_slp1")
     if upa not in _TARGET_STEMS:
         return False
+    if "napuṃsaka" in anga.tags:
+        return False  # 7.1.25 अद्; not पुं सुँ → सः
     if not anga.varnas:
         return False
     if upa == "adas":   # d is non-final (adas → ada after 7.2.107): d → s

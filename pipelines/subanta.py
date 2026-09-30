@@ -409,7 +409,6 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.1.66",
     "7.1.2",
     "6.1.97",
-    "7.2.113",
     "7.3.106",
     # 7.3.107 must precede 6.1.69: the सु is dropped *after* a hrasva,
     # and it is this rule that makes नदी short in सम्बुद्धि.
@@ -417,6 +416,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.1.69",
     "7.1.15",
     "7.1.12",
+    "7.2.113",  # हलि लोपः — after 7.1.12 so ङस्→स्य is hāl-ādi (अस्य, not इदस्य)
     "7.1.14",
     "7.3.113",
     "7.3.114",
@@ -424,6 +424,12 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.1.9",
     "7.1.17",
     "7.1.24",
+    "7.1.25",  # अद्ड् for tyadādi napuṃsaka (तत्, not पदवत् अम्)
+    "6.1.97",  # अतो गुणे after अद् (त + अत् → तत्)
+    "7.1.28",  # ङे प्रथमयोरम् — asmad/yuṣmad su→am
+    "7.2.94",  # त्वाहौ सौ — asmad→aha
+    "6.1.97",  # अह + अम् leftover a-pair after 7.2.94
+    "7.2.90",  # शेषे लोपः
     "7.1.19",
     "7.1.20",
     "7.1.23",

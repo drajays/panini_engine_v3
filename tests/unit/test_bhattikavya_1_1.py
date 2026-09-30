@@ -46,6 +46,7 @@ def test_vibuDasaKaH():
     assert s.flat_slp1() == "vibuDasaKaH"
     ids = _applied(s)
     assert "3.1.135" in ids and "5.4.91" in ids and "6.4.148" in ids
+    assert "1.3.7" in ids
 
 
 def test_paraMtapaH():
@@ -53,6 +54,7 @@ def test_paraMtapaH():
     assert s.flat_slp1() in {"paraMtapaH", "parentapaH"}
     ids = _applied(s)
     assert "3.2.39" in ids and "6.4.94" in ids and "6.3.67" in ids
+    assert "8.3.23" in ids
 
 
 def test_guNAH():

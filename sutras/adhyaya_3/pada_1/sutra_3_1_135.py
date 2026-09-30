@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
-from engine.krt_eligibility import krt_insertion_eligible
+from engine.krt_eligibility import krt_insertion_eligible, requested_krt_upadesha
 from phonology.pratyahara import IK
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -40,7 +40,7 @@ def _ig_upadha(dh) -> bool:
 def cond(state: State) -> bool:
     if not krt_insertion_eligible(state, "3.1.135", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
         return False
-    if state.meta.get("krt_upadesha_slp1") != "ka":
+    if requested_krt_upadesha(state) != "ka":
         return False
     if any("krt" in t.tags and "pratyaya" in t.tags for t in state.terms):
         return False

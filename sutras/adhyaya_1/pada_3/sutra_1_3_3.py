@@ -53,6 +53,10 @@ def _eligible_terms(state: State):
     for i, t in enumerate(state.terms):
         if "upadesha" not in t.tags:
             continue
+        # Upasarga (1.4.59) is not an upadeśa for हलन्त्यम् — सम्'s म् is the
+        # real nasal, not an anubandha (सममंस्त, not सामंस्त).
+        if "upasarga" in t.tags:
+            continue
         if "sup" in t.tags and "has_halant_it" not in t.tags:
             continue
         if not t.varnas:

@@ -163,13 +163,17 @@ class SubantaCell:
 
 def parse_subanta_tag(tag: str) -> SubantaCell:
     """``क्षेत्र{नपुं;7;एक}`` · ``एतद्{स्त्री}{2;एक}`` · ``युष्मद्{6;एक}`` ·
-    ``भवत्{सर्वनाम;पुं;1;एक}``. Pronouns without a liṅga (yuṣmad/asmad) take
-    pulliṅga — their paradigm does not vary by liṅga."""
+    ``भवत्{सर्वनाम;पुं;1;एक}`` · ``(अस्मद्{1;एक})`` (adhyāhṛta). Pronouns
+    without a liṅga (yuṣmad/asmad) take pulliṅga — their paradigm does not
+    vary by liṅga."""
     cell = SubantaCell(tag=tag)
-    head = tag.split("{", 1)[0]
-    groups = re.findall(r"\{([^{}]*)\}", tag)
-    if "(" in tag or not groups:
-        cell.unresolved = "kṛdanta/taddhita stem" if "(" in tag else "no sup tag"
+    raw = (tag or "").strip()
+    if raw.startswith("(") and raw.endswith(")") and raw.count("(") == 1:
+        raw = raw[1:-1].strip()
+    head = raw.split("{", 1)[0]
+    groups = re.findall(r"\{([^{}]*)\}", raw)
+    if "(" in raw or not groups:
+        cell.unresolved = "kṛdanta/taddhita stem" if "(" in raw else "no sup tag"
         return cell
     fields = [f.strip() for g in groups for f in g.split(";")]
     if any(f.startswith("कृत्_प्रत्ययः") for f in fields):
@@ -191,6 +195,21 @@ def parse_subanta_tag(tag: str) -> SubantaCell:
         cell.unresolved = "no vibhakti/vacana"
         return cell
     cell.linga = cell.linga or "pulliṅga"
+    return cell
+
+
+def align_subanta_linga(cell: SubantaCell, word_slp1: str) -> SubantaCell:
+    """Repair SCL liṅga when the attested pada is unambiguously napuṃsaka.
+
+    Gītā 15.3–4: पदम् / तत् tagged पुं, which yields पदः / सः.
+    """
+    w = (word_slp1 or "").strip()
+    if cell.unresolved or cell.vibhakti != 1 or cell.vacana != 1:
+        return cell
+    if cell.stem_slp1 == "pada" and w in {"padam", "padaM"}:
+        cell.linga = "napuṃsaka"
+    if cell.stem_slp1 == "tad" and w == "tat":
+        cell.linga = "napuṃsaka"
     return cell
 
 

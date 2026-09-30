@@ -26,10 +26,18 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
+from engine.krt_eligibility import krt_insertion_eligible, requested_krt_upadesha
 from phonology import mk
 
+_PACADI = frozenset({"vid", "vida", "vida~", "pac", "div", "divu", "divu~"})
+_GATE_KEY = "3_1_134_nandi_pacadi_ac"
 
-def _eligible(state: State) -> bool:
+
+def _dhatu(state: State):
+    return next((t for t in state.terms if "dhatu" in t.tags), None)
+
+
+def _eligible_prakriya_20(state: State) -> bool:
     if not state.meta.get("prakriya_20_nandi_pacadi"):
         return False
     if len(state.terms) != 1:
@@ -37,11 +45,30 @@ def _eligible(state: State) -> bool:
     t0 = state.terms[0]
     if "dhatu" not in t0.tags:
         return False
-    if (t0.meta.get("upadesha_slp1") or "").strip() != "divu~":   # दिवुँ; divi~ is idit (→ दिन्व्)
+    if (t0.meta.get("upadesha_slp1") or "").strip() != "divu~":
         return False
     if any("krt" in t.tags for t in state.terms):
         return False
     return True
+
+
+def _eligible_pacadi_ac(state: State) -> bool:
+    if not krt_insertion_eligible(state, "3.1.134", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
+        return False
+    if requested_krt_upadesha(state) != "ac":
+        return False
+    if any("krt" in t.tags and "pratyaya" in t.tags for t in state.terms):
+        return False
+    dh = _dhatu(state)
+    if dh is None:
+        return False
+    up = (dh.meta.get("upadesha_slp1") or "").strip()
+    flat = "".join(v.slp1 for v in dh.varnas)
+    return up in _PACADI or flat in _PACADI or up.rstrip("~") in _PACADI
+
+
+def _eligible(state: State) -> bool:
+    return _eligible_prakriya_20(state) or _eligible_pacadi_ac(state)
 
 
 def cond(state: State) -> bool:
@@ -54,14 +81,17 @@ def act(state: State) -> State:
     pr = Term(
         kind="pratyaya",
         varnas=[mk("a"), mk("c")],
-        tags={"pratyaya", "krt", "upadesha"},
+        tags={"pratyaya", "krt", "upadesha", "ardhadhatuka"},
         meta={
             "upadesha_slp1": "ac",
-            "dit_pratyaya" : True,
-            "citi_krt_ac"  : True,
+            "dit_pratyaya": True,
+            "citi_krt_ac": True,
         },
     )
     state.terms.append(pr)
+    state.paribhasha_gates[_GATE_KEY] = True
+    state.samjna_registry[_GATE_KEY] = True
+    state.meta["krt_kind"] = "3.1.134"
     return state
 
 

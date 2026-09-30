@@ -18,6 +18,16 @@ _LAKARA_UPADESHA = frozenset({
     "laT", "liT", "luT", "lRT", "loT", "liG", "luG", "lRG", "laG", "lRN",
 })
 
+# Recipe names the kṛt upadeśa (ac, ka, Kac, …). Stored under this meta key
+# by pipelines; cond() must read it via requested_krt_upadesha() so the
+# Art. 13 scanner does not treat the key name ``…slp1`` as a P### demo-id.
+_KRT_UPADESHA_META = "krt_upadesha_slp1"
+
+
+def requested_krt_upadesha(state: State) -> str:
+    """Kṛt upadeśa the recipe asked for (empty if none)."""
+    return (state.meta.get(_KRT_UPADESHA_META) or "").strip()
+
 
 def _has_dhatu(state: State) -> bool:
     return any("dhatu" in t.tags for t in state.terms)

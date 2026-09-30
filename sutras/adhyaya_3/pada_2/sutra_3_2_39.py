@@ -13,7 +13,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
-from engine.krt_eligibility import krt_insertion_eligible
+from engine.krt_eligibility import krt_insertion_eligible, requested_krt_upadesha
 from phonology.varna import parse_slp1_upadesha_sequence
 
 _GATE_KEY: str = "3_2_39_dvizatpara_39"
@@ -27,7 +27,7 @@ def _dhatu(state: State):
 def cond(state: State) -> bool:
     if not krt_insertion_eligible(state, "3.2.39", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
         return False
-    if state.meta.get("krt_upadesha_slp1") != "Kac":
+    if requested_krt_upadesha(state) != "Kac":
         return False
     if any("krt" in t.tags and "pratyaya" in t.tags for t in state.terms):
         return False

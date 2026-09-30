@@ -110,6 +110,16 @@ def _terms_sup_or_primary(state: State):
     ]
     if qac:
         return qac
+    # samāsānta टच् (5.4.91): initial ट् (w) is cuṭū-it, not the preceding stem.
+    wac = [
+        t
+        for t in state.terms
+        if "upadesha" in t.tags
+        and "taddhita" in t.tags
+        and (t.meta.get("upadesha_slp1") or "").strip() == "wac"
+    ]
+    if wac:
+        return wac
     # tiṅ ādeśa (e.g. Ral/Nal 3.4.82) still carrying its raw upadeśa: the affix's
     # own initial cuṭ-class hal (e.g. the ण् of णल्) is a candidate too — CUTU
     # membership is re-checked by the caller, so this never fires for the vast

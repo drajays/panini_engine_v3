@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block title %}भट्टिकाव्य १.१–१.२ — जयमङ्गला — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block content %}
+<div class="panel">
+  <h1>भट्टिकाव्य १.१–१.२ <span class="muted" style="font-size:14px;font-weight:400;">जयमङ्गला-टीका</span></h1>
+  <p class="muted" style="font-size:13px;margin:0 0 12px;">
+    भट्टि-काव्यस्य प्रथम-सर्गस्य प्रथम-द्वितीय-श्लोकयोः जयमङ्गला-पदानी —
+    प्रत्येकं अष्टाध्यायी-क्रम-आधारित काचपेटिका-प्रक्रियया सिद्धम्। पदे क्लिक् करुत।
+  </p>
+  {% for sloka, title in (("1.1", "श्लोक १"), ("1.2", "श्लोक २ — सोऽध्यैष्ट वेदान्…")) %}
+  <h2 style="font-size:14px;margin:12px 0 8px;color:var(--ink-dim);">{{ title }}</h2>
+  <div class="bhatti-words">
+    {% for w in words if w.sloka == sloka %}
+    <button type="button" class="bhatti-word" data-key="{{ w.key }}"
+            data-dev="{{ w.dev }}" data-hint="{{ w.hint }}" data-note="{{ w.note }}">
+      <span class="dev bhatti-word-dev">{{ w.dev }}</span>
+      <span class="bhatti-word-hint">{{ w.hint }}</span>
+    </button>
+    {% endfor %}
+  </div>
+  {% endfor %}
+  <p class="muted" style="font-size:12px;margin:12px 0 0;">
+    प्रक्रियाः पृष्ठे श्रेण्यां <em>भट्टिकाव्य १.१</em> अपि दृश्यते।
+    <a href="/pipelines">सर्व-प्रक्रियाः ↗</a>
+  </p>
+</div>
+
+<div class="panel" id="result-panel" style="display:none;">
+  <div class="result">
+    <div>
+      <div id="result-dev" class="big-dev dev"></div>
+      <div id="result-slp1" class="slp1"></div>
+      <div id="result-note" class="muted" style="font-size:12px;margin-top:6px;"></div>
+    </div>
+    <div id="result-stats" class="stats"></div>
+  </div>
+
+  <div class="two-pane">
+    <div>
+      <h2>प्रक्रिया</h2>
+      <div class="trace-filter" id="trace-filter">
+        <label><input type="checkbox" value="RUPA_PARIVARTANA_ONLY" checked> रूप-परिवर्तन-मात्रम्</label>
+        <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
+        <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
+        <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
+        <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
+        <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
+      </div>
+      <ol class="trace" id="trace"></ol>
+    </div>
+    <div class="sutra-detail" id="sutra-detail">
+      <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" id="error-panel" style="display:none;">
+  <div class="pl-error-msg" id="error-msg"></div>
+</div>
+{% endblock %}
+
+{% block body_extra %}
+<style>
+.bhatti-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.bhatti-word {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg-panel);
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  min-width: 8.5rem;
+}
+.bhatti-word:hover { border-color: var(--accent); background: var(--bg-subtle); }
+.bhatti-word.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+.bhatti-word.active .bhatti-word-hint { color: rgba(255,255,255,.8); }
+.bhatti-word-dev { font-size: 22px; line-height: 1.2; }
+.bhatti-word-hint { font-size: 11px; color: var(--ink-faint); }
+</style>
+<script src="{{ url_for('static', filename='trace.js') }}"></script>
+<script>
+document.querySelectorAll(".bhatti-word").forEach(btn => {
+  btn.addEventListener("click", () => runWord(btn));
+});
+const first = document.querySelector(".bhatti-word");
+if (first) runWord(first);
+
+async function runWord(btn) {
+  document.querySelectorAll(".bhatti-word").forEach(b => b.classList.toggle("active", b === btn));
+  const key  = btn.dataset.key;
+  const note = btn.dataset.note || "";
+  document.getElementById("result-panel").style.display = "none";
+  document.getElementById("error-panel").style.display  = "none";
+
+  try {
+    const r = await fetch("/api/pipeline/" + encodeURIComponent(key), { method: "POST" });
+    const data = await r.json();
+    if (!r.ok || data.error) {
+      document.getElementById("error-panel").style.display = "";
+      document.getElementById("error-msg").textContent =
+        (data.error || r.statusText) + (data.traceback ? "\n\n" + data.traceback : "");
+      return;
+    }
+    document.getElementById("result-panel").style.display = "";
+    document.getElementById("result-dev").textContent  = data.surface_dev || btn.dataset.dev;
+    document.getElementById("result-slp1").textContent = data.surface_slp1 ? "SLP1: " + data.surface_slp1 : "";
+    document.getElementById("result-note").textContent = note;
+    const st = data.stats || {};
+    document.getElementById("result-stats").innerHTML =
+      `<div>${st.total_steps || 0} चरणाः</div>
+       <div><span>${st.applied_count || 0} प्रयुक्तानि</span>
+            <span>${st.blocked_count || 0} निवारितानि</span></div>`;
+    renderTrace(data.trace || []);
+    document.getElementById("sutra-detail").innerHTML =
+      '<div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>';
+  } catch (e) {
+    document.getElementById("error-panel").style.display = "";
+    document.getElementById("error-msg").textContent = "दोषः: " + e.message;
+  }
+}
+</script>
+{% endblock %}

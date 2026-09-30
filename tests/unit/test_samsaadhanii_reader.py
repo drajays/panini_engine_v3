@@ -32,6 +32,12 @@ def test_subanta_tag_reads_linga_vibhakti_vacana():
     assert c.unresolved is None
 
 
+def test_subanta_tag_strips_adhyahrta_parens():
+    c = parse_subanta_tag("(अस्मद्{1;एक})")
+    assert c.unresolved is None
+    assert c.stem_slp1 == "asmad"
+
+
 def test_krdanta_ktva_cites_3_4_21():
     c = parse_krdanta_tag("दृश्1{कृत्_प्रत्ययः:क्त्वा;दृशिँर्;भ्वादिः}")
     assert c.krt_dev == "क्त्वा" and c.vidhana_sutra == "3.4.21"

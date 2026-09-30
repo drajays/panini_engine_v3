@@ -519,7 +519,7 @@ _EXCLUDED_PIPELINE_STEMS = frozenset({
 })
 
 _CATEGORY_ORDER = [
-    "Corrected", "Kṛdanta", "Tiṅanta", "Taddhita", "Samāsa", "Paribhāṣā", "Demo",
+    "भट्टिकाव्य", "भट्टिकाव्य १.१", "Corrected", "Kṛdanta", "Tiṅanta", "Taddhita", "Samāsa", "Paribhāṣā", "Demo",
 ]
 
 _PIPELINE_CATALOG: list[dict[str, Any]] | None = None
@@ -1343,6 +1343,32 @@ def api_dik_glass():
         })
     except Exception as ex:
         return jsonify({"error": f"{type(ex).__name__}: {ex}"}), 500
+
+
+# ─────────────────────────────────────────────────────────────────
+# भट्टिकाव्य १.१–१.२ — जयमङ्गला padāni (glass-box prakriyā)
+# ─────────────────────────────────────────────────────────────────
+
+@app.route("/bhatti")
+def bhatti_page():
+    from pipelines.bhattikavya_1_1 import NOTES, WORDS
+    words = [
+        {
+            "dev": dev,
+            "fn": fn,
+            "key": f"bhattikavya_1_1__{fn}",
+            "hint": hint,
+            "note": NOTES.get(fn, ""),
+            "sloka": sloka,
+        }
+        for dev, fn, hint, sloka in WORDS
+    ]
+    return render_template(
+        "bhatti.html",
+        nav_active="bhatti",
+        cov=coverage_report(SUTRA_REGISTRY),
+        words=words,
+    )
 
 
 # ─────────────────────────────────────────────────────────────────

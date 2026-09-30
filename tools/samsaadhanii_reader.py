@@ -32,7 +32,7 @@ from core.transliterate import dev_to_slp1
 from tools.fetch_samsaadhanii_ereaders import RAW, _clean, _slug, units
 from tools.samsaadhanii_tags import (
     SubantaCell, TinantaCell, classify_morph, parse_krdanta_tag,
-    parse_subanta_tag, parse_tinanta_tag,
+    parse_subanta_tag, parse_tinanta_tag, align_subanta_linga,
 )
 
 ATTRIBUTION = (
@@ -196,6 +196,7 @@ def verify(kind: str, tag: str, word_slp1: str) -> dict:
         out["inputs"] = c.as_dict()
     elif kind == "subanta":
         c = parse_subanta_tag(tag)
+        c = align_subanta_linga(c, word_slp1)
         out["inputs"] = c.as_dict()
     else:
         out["note"] = {"avyaya": "avyaya — sup is attached and elided (2.4.82)",
