@@ -37,8 +37,6 @@ def _site(state: State) -> int | None:
             continue
         if "P040_juhotyadi" not in t.tags:
             continue
-        if (t.meta.get("upadesha_slp1") or "").strip() != "hu":
-            continue
         nxt = state.terms[i + 1]
         if nxt.kind != "pratyaya":
             continue
