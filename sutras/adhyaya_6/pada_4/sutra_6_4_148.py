@@ -227,9 +227,9 @@ def _find_target(state: State):
             continue
         if "taddhita" not in nxt.tags:
             continue
-        if (nxt.meta.get("upadesha_slp1") or "").strip() != "ika":
-            continue
-        return (k, len(anga.varnas) - 1)
+        up = (nxt.meta.get("upadesha_slp1") or "").strip()
+        if up in {"ika", "wac"}:
+            return (k, len(anga.varnas) - 1)
     hit_p04_1 = _p004_a_caPhaya_ayana_anga_a_lopa(state)
     if hit_p04_1 is not None:
         return hit_p04_1

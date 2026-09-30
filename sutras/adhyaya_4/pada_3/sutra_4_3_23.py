@@ -29,15 +29,20 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
+_KALA_AVYAYA = frozenset({"adya", "sAyam", "ciram", "prAhRe", "prage", "sanA"})
+
+
 def _site(state: State) -> int | None:
+    """सायम्/चिरम्/प्राह्णे/प्रगे and other kāla-avyayas (सना), plus the P019 adya demo."""
     for i, t in enumerate(state.terms):
         if t.kind != "prakriti":
             continue
-        if "prātipadika" not in t.tags:
+        if "prātipadika" not in t.tags and "avyaya" not in t.tags:
             continue
-        if "prakriya_P019_adyatanam_demo" not in t.tags:
-            continue
-        return i
+        up = (t.meta.get("upadesha_slp1") or "").strip()
+        surface = "".join(v.slp1 for v in t.varnas)
+        if "prakriya_P019_adyatanam_demo" in t.tags or up in _KALA_AVYAYA or surface in _KALA_AVYAYA:
+            return i
     return None
 
 

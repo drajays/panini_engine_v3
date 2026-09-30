@@ -1457,7 +1457,7 @@ def P15_tripadi_shesha_sibilant_n(s: State) -> State:
     """8.3.59 + 8.4.1 + 8.4.2 + 8.4.40 + 8.4.53 (jhal-jhaṣ pada-medial voicing,
     vAc+Bis -> vAgBiH) + 8.4.56 (jaś->car at avasāna, vAk not vAg) —
     sheṣa tripāḍī in this subanta block."""
-    for sid in ("8.3.59", "8.4.1", "8.4.2", "8.4.40", "8.4.53", "8.4.56"):
+    for sid in ("8.3.24", "8.3.59", "8.4.1", "8.4.2", "8.4.58", "8.4.40", "8.4.53", "8.4.56"):
         s = apply_rule(sid, s)
     return s
 

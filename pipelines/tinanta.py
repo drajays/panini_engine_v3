@@ -1478,7 +1478,13 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # 6.1.77 iko yaṇ aci — IK→yaṇ before AC (fires for upasarga+aṭ junctions,
     # e.g. vi+a → vy+a in vyadyutat). Must run AFTER vuk so that ū of bhū is
     # separated from anti by vuk-v (preventing spurious ū→v change in abhūvant).
+    # 6.1.101 (अकः सवर्णे दीर्घः) is the apavāda: आङ्+अट् → आ (उपागमत्, not उपआअगमत्).
     state = apply_rule("6.4.87", state)   # हुश्नुवोः सार्वधातुके (apavāda of 6.4.77)
+    for _ in range(4):
+        before = state.flat_slp1()
+        state = apply_rule("6.1.101", state)
+        if state.flat_slp1() == before:
+            break
     state = apply_rule("6.1.77", state)
     # vṛddhi vowel + iṭ: 6.1.78 एचोऽयवायावः (अलौ + इ → अलाव् + इ: अलावीत्)
     state = apply_rule("6.1.78", state)

@@ -22,6 +22,17 @@ def act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["krt_kind"] = "3.3.16"
+    if state.meta.get("krt_upadesha_slp1") == "GaY" and not any(
+        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
+    ):
+        from engine.state import Term
+        from phonology.varna import parse_slp1_upadesha_sequence
+        state.terms.append(Term(
+            kind="pratyaya",
+            varnas=list(parse_slp1_upadesha_sequence("GaY")),
+            tags={"pratyaya", "krt", "upadesha", "ardhadhatuka"},
+            meta={"upadesha_slp1": "GaY", "it_markers": {"G", "Y"}},
+        ))
     return state
 
 
