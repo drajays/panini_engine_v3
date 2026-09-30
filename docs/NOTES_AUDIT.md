@@ -1,6 +1,6 @@
 # Notes vs engine — sūtra paths
 
-29 notes matched to an engine recipe; 47 not matched.
+32 notes matched to an engine recipe; 44 not matched.
 note-only: the note applies it, the engine never does. engine-only: the engine applies it, the note does not cite it (often a saṃjñā the note assumes).
 
 ## अकार्षीत् .md — `akArzIt`
@@ -143,6 +143,21 @@ engine: `sarvaka_subanta.derive_sarvakaha` · shared: 8
 - note-only: 1.1.64, 1.3.3, 3.1.1, 6.2.35
 - engine-only: 1.1.43, 1.2.41, 1.2.46, 1.4.14, 1.4.103, 1.4.110
 
+## सर्वस्मै and other.md — `sarvasmE`
+engine: `subanta.derive('sarva', 4, 1, 'pulliṅga')` · shared: 6
+- note-only: 1.1.55, 1.3.2, 1.3.3, 1.3.10, 1.4.2, 1.4.20, 1.4.24, 1.4.32, 1.4.45, 2.2.8, 2.3.13, 2.3.28, 2.3.36, 3.1.1, 3.1.2, 4.1.1, 5.3.32, 6.2.35, 7.1.12, 7.1.15, 7.1.17, 8.3.23
+- engine-only: 1.2.41, 1.3.8, 1.4.14, 1.4.18, 1.4.103, 1.4.110
+
+## सर्वे .md — `sarve`
+engine: `subanta.derive('sarva', 1, 3, 'pulliṅga')` · shared: 7
+- note-only: 1.1.2, 1.1.55, 1.3.8, 1.4.21, 3.1.1, 3.1.2, 4.1.1, 6.1.68, 6.1.75, 6.1.84, 6.2.35, 7.1.1
+- engine-only: 1.1.43, 1.3.7, 1.4.14, 1.4.103, 1.4.110
+
+## सर्वेषाम्.md — `sarvezAm`
+engine: `subanta.derive('sarva', 6, 3, 'pulliṅga')` · shared: 8
+- note-only: 1.1.46, 1.1.52, 1.3.2, 1.3.3, 1.3.4, 1.4.21, 2.2.8, 2.3.50, 3.1.1, 3.1.2, 4.1.1, 5.3.32, 6.2.35, 8.3.57
+- engine-only: 1.4.14, 1.4.18, 1.4.103, 1.4.110
+
 ## हिडनीय.md — `hiqanIya`
 engine: `hiqanIya_heq_nic_anIyar.derive_hiqanIya` · shared: 4
 - note-only: 1.1.48, 1.1.57, 3.1.32, 7.3.86, 7.4.59
@@ -193,7 +208,4 @@ engine: `hiqanIya_heq_nic_anIyar.derive_hiqanIya` · shared: 4
 - वायो इति.md: no engine recipe for vAyo
 - विभाषा जसि and derivation.md: no engine recipe for viBAzA
 - शुश्लोके.md: no engine recipe for SuSloke
-- सर्वस्मै and other.md: no engine recipe for sarvasmE
-- सर्वे .md: no engine recipe for sarve
-- सर्वेषाम्.md: no engine recipe for sarvezAm
 - ‘माले इति’.md: no engine recipe for mAle

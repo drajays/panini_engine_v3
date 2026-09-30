@@ -9,26 +9,30 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tripadi_gate_eligible
-
-_GATE_KEY: str = "8_2_81_eta_81"
-
+from phonology    import mk
 
 def cond(state: State) -> bool:
-    return tripadi_gate_eligible(state, "8.2.81", gate_key=_GATE_KEY)
+    if not (state.tripadi_zone or state.phase == "tripadi"):
+        return False
+    if not state.meta.get("adas_stem") or state.meta.get("adas_dm_done"):
+        return False
+    if not state.meta.get("adas_bahuvacana") or not state.terms:
+        return False
+    v = state.terms[0].varnas
+    return len(v) > 2 and v[0].slp1 == "a" and v[1].slp1 == "d" and v[2].slp1 == "e"
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"]             = "8.2.81"
+    v = state.terms[0].varnas
+    v[2] = mk("I")   # e → ī in bahuvacana, then d → m
+    v[1] = mk("m")
+    state.meta["adas_dm_done"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "8.2.81",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "eta Idbahuvacane",
     text_dev              = "एत ईद्बहुवचने",
     padaccheda_dev        = "एतः ईत् बहुवचने",

@@ -397,6 +397,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.4.8",   # dīrgha before sarvananāmasthāna (fires here for anang; idempotent)
     "1.4.7",
     "1.2.41",
+    "7.2.107",  # adas + su: s → au (then 7.2.106 d→s, 6.1.88 → asau)
     "7.2.106",  # tad/tyad t→s before su (must precede 6.1.68 su-lopa; 7.2.106 checks sup still present)
     "7.2.102",  # tyadādi final hal→a (must precede 6.1.68; after substitution stem is vowel-final)
     "6.1.68",
@@ -480,6 +481,8 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "8.2.1",
     "8.2.7",    # nalopaH prAtipadikAntasya — rAjan/Atman-final n-lopa at pada-end
     "8.2.30",   # coH kuH — c/j-vargIya pada-final -> k-vargIya before jhal (vAc+Bis)
+    "8.2.80",   # adaso'ser dAd u do maH — d → m, following vowel → u/U
+    "8.2.81",   # eta Id bahuvacane — e → I (amI), d → m
     "8.2.39",   # JalAM jaSo'nte — jhal pada-final -> jaS (vAk -> vAg, etc.)
     "8.2.66",
     "8.3.15",   # ru → visarga at avasāna or before khar

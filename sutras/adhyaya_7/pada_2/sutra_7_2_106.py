@@ -17,7 +17,7 @@ from engine.state import State
 from phonology    import mk
 
 
-_TARGET_STEMS = frozenset({"tad", "tyad"})
+_TARGET_STEMS = frozenset({"tad", "tyad", "adas"})
 
 
 def _matches(state: State) -> bool:
@@ -38,6 +38,8 @@ def _matches(state: State) -> bool:
         return False
     if not anga.varnas:
         return False
+    if upa == "adas":   # d is non-final (adas → ada after 7.2.107): d → s
+        return state.meta.get("adas_sau_au") and len(anga.varnas) > 1 and anga.varnas[1].slp1 == "d"
     if anga.varnas[0].slp1 != "t":
         return False
     return True
@@ -51,7 +53,7 @@ def act(state: State) -> State:
     if not _matches(state):
         return state
     anga = state.terms[0]
-    anga.varnas[0] = mk("s")
+    anga.varnas[1 if anga.meta.get("upadesha_slp1") == "adas" else 0] = mk("s")
     anga.meta["tad_to_sa_done"] = True
     return state
 

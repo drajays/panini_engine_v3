@@ -49,6 +49,10 @@ def act(state: State) -> State:
     if not _matches(state):
         return state
     anga = state.terms[0]
+    if "".join(v.slp1 for v in anga.varnas) == "adas":
+        state.meta["adas_stem"] = True   # read by 7.1.11 / 7.2.106-107 / 8.2.80-81
+        if any("bahuvacana" in t.tags for t in state.terms[1:]):
+            state.meta["adas_bahuvacana"] = True   # the sup's own saṃjñā, for 8.2.81
     anga.varnas[-1] = mk("a")
     anga.meta["tyadadi_a_adesha_done"] = True
     return state

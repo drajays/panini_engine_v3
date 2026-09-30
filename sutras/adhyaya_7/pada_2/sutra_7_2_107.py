@@ -10,27 +10,31 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology    import mk
 
 _GATE_KEY: str = "7_2_107_adasa_107"
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
+    """अदस् + su (prathamā-ekavacana): s → au, su-lopa (then 7.2.106 d→s, 6.1.88 → असौ)."""
+    if state.meta.get("adas_sau_au") or len(state.terms) < 2:
         return False
-    if adhikara_in_effect("7.2.107", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    if state.terms[0].meta.get("upadesha_slp1") != "adas":
+        return False
+    pr = state.terms[1]
+    return "sup" in pr.tags and pr.meta.get("upadesha_slp1") == "s~"
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.107"
+    state.terms[1].varnas = [mk("O")]   # au replaces the su; the stem's final 'a' stays for 6.1.88
+    state.meta["adas_sau_au"] = True
+    state.meta["adas_stem"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.2.107",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "adasa O sulopaSca",
     text_dev              = "अदस औ सुलोपश्च",
     padaccheda_dev        = "अदसः औ (लुप्तप्रथमान्तनिर्देशः) सु-लोपः च",

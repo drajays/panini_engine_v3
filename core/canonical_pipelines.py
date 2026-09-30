@@ -1447,8 +1447,8 @@ def P13_subanta_iti_anga_sandhi_to_pada(s: State) -> State:
 
 def P14_tripadi_purvakhya_visarga(s: State) -> State:
     """8.2.1 *pūrvatrāsiddham* + 8.2.7 *nalopaḥ* + 8.2.30 *coḥ kuḥ* +
-    8.2.39 *jhalāṃ jaśo'nte* + 8.2.66 *ru* + 8.3.15 *visarga*."""
-    for sid in ("8.2.1", "8.2.7", "8.2.30", "8.2.39", "8.2.66", "8.3.15"):
+    8.2.39 *jhalāṃ jaśo'nte* + 8.2.66 *ru* + 8.2.80/81 (*adas* d→m) + 8.3.15 *visarga*."""
+    for sid in ("8.2.1", "8.2.7", "8.2.30", "8.2.39", "8.2.66", "8.2.80", "8.2.81", "8.3.15"):
         s = apply_rule(sid, s)
     return s
 

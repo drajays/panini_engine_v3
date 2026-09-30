@@ -83,6 +83,8 @@ def _matches(state: State) -> bool:
 def cond(state: State) -> bool:
     if not adhikara_in_effect("7.1.9", state, "6.4.1"):
         return False
+    if state.meta.get("adas_stem") and not _matches_p042_jas_to_as(state):
+        return False   # 7.1.11 नेदमदसोरकोः — adas: no bhis → ais
     return _matches_p042_jas_to_as(state) or _matches(state)
 
 
