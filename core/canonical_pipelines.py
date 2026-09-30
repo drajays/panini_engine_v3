@@ -234,13 +234,23 @@ def P00_juhotyadi_slu_dvitva_abhyasakarya(s: State) -> State:
     """Gaṇa 3 (*juhotyādi*) vikaraṇa: **2.4.75** *śluḥ* (*śap* → zero) →
     **1.1.60**/**1.1.61** (*ślu* counts as *pratyaya-lopa*) → structural removal
     of the *ślu* placeholder → **6.1.10** *ślau dvitva* (reduplication) →
-    *abhyāsa-kārya* (**7.4.59** *hrasvaḥ*, **7.4.60** *halādiḥ śeṣaḥ*, **7.4.62**
-    *kuhoścuḥ*)."""
+    abhyāsa ṛ-vowel treatment (**7.4.76** भृञामित्/**7.4.77** अर्तिपिपर्त्योश्च,
+    the इत्-apavādas for भृ/ऋ/पॄ/पृ, before the general **7.4.66** उरत् ऋ→ā for
+    every other ṛ-root — rapara cleared, यङ्-only per **7.4.66**'s own liṭ use) →
+    *abhyāsa-kārya* (**7.4.59** *hrasvaḥ* shortens that ā back to a, **7.4.60**
+    *halādiḥ śeṣaḥ*, **7.4.62** *kuhoścuḥ*)."""
     s = apply_rule("2.4.75", s)
     s = apply_rule("1.1.60", s)
     s = apply_rule("1.1.61", s)
     _juhotyadi_remove_slu_placeholder(s)
     s = apply_rule("6.1.10", s)
+    s = apply_rule("7.4.76", s)
+    s = apply_rule("7.4.77", s)
+    s = apply_rule("7.4.66", s)
+    for t in s.terms:
+        if "abhyasa" in t.tags:
+            t.meta.pop("urN_rapara_pending", None)
+            t.meta.pop("urN_rapara_after_index", None)
     s = apply_rule("7.4.59", s)
     s = apply_rule("7.4.60", s)
     s = apply_rule("7.4.62", s)

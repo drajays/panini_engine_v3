@@ -33,17 +33,46 @@ def _find(state: State) -> int | None:
     return None
 
 
+_GHU_ROOTS = {"dA", "DA"}   # 1.1.20 दाधा घु सञ्ज्ञके — the "aghoḥ" exception 6.4.113 carves out
+
+
+def _find_ghu_abhyasta(state: State) -> int | None:
+    """गण-3 घु (दा/धा) अभ्यस्त: the dhātu's own final ā drops before a weak
+    (kṅit) sārvadhātuka tiṅ — दत्तः, दद्वः, ददति — whether that tiṅ is
+    hal-initial or vowel/jhi-initial (6.4.113's "aghoḥ" carve-out routes
+    every *other* abhyasta root's hal-initial case to ī instead; घु has no
+    such carve-out, so both cases fall to this लोप)."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags:
+            continue
+        if "".join(v.slp1 for v in t.varnas) not in _GHU_ROOTS:
+            continue
+        if not any("abhyasa" in u.tags for u in state.terms):
+            continue
+        nxt = state.terms[i + 1]
+        if "kngiti" not in nxt.tags and not nxt.meta.get("is_apit"):
+            continue
+        if not t.varnas or t.varnas[-1].slp1 != "A":
+            continue
+        return i
+    return None
+
+
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    return _find(state) is not None or _find_ghu_abhyasta(state) is not None
 
 
 def act(state: State) -> State:
     i = _find(state)
-    if i is None:
+    if i is not None:
+        state.terms[i].varnas = state.terms[i].varnas[:-1]
+        # no longer an upadeśa: its new final न् must not be read as halantyam it
+        state.terms[i].tags.discard("upadesha")
         return state
-    state.terms[i].varnas = state.terms[i].varnas[:-1]
-    # no longer an upadeśa: its new final न् must not be read as halantyam it
-    state.terms[i].tags.discard("upadesha")
+    i = _find_ghu_abhyasta(state)
+    if i is not None:
+        state.terms[i].varnas = state.terms[i].varnas[:-1]
+        return state
     return state
 
 

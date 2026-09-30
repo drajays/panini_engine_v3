@@ -556,6 +556,18 @@ def _run_lat_kartari_bhuvadi_spine(
     # लोपो व्योर्वलि) → एधेते (6.1.87 आद्गुणः).
     state = P00_ngit_At_iy_guna(state)
 
+    if gana == 3:
+        # 6.4.112 श्नाऽभ्यस्तयोरातः (घु अभ्यस्त branch): दा/धा's own ā drops
+        # before a weak (kṅit) sārvadhātuka tiṅ — दत्तः, दद्वः, ददति.
+        state = apply_rule("6.4.112", state)
+        # 8.4.54 अभ्यासे चर्च (जश्त्व of a jhaṣ-initial abhyāsa: भृ → बिभर्ति,
+        # not भिभर्ति) is asiddhavat tripāḍī and needs the abhyāsa Term still
+        # distinct — must fire before _pada_merge collapses the terms, same
+        # placement _derive_lit() uses (8.2.1 opens the zone; execute_tripadi_
+        # phase() below skips both as already-done via their gates).
+        state = apply_rule("8.2.1", state)
+        state = apply_rule("8.4.54", state)
+
     _pada_merge(state)
     state = P00_tripadi_rutva_visarga(state)
     return state
