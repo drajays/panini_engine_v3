@@ -102,7 +102,20 @@ def _site_p037(state: State) -> bool:
     return len(t.varnas) == 2 and t.varnas[0].slp1 == "A" and t.varnas[1].slp1 == "w"
 
 
+def _blocked_by_7_4_75(state: State) -> bool:
+    """7.4.75 निजां त्रयाणां गुणः श्लौ grants निज्/विज्/विष् a *permanent* guṇa
+    abhyāsa (नेनेक्ति *and* नेनिक्तः) — 7.4.59's general ec-hrasva (and the
+    narrow P036 नी-लिट् shortcut below, which would otherwise also match a
+    bare ``ne`` abhyāsa) must not revert it."""
+    i = _abhyasa_index(state)
+    if i is None:
+        return False
+    return bool(state.terms[i].meta.get("7_4_75_nijadi_guna_done"))
+
+
 def _site(state: State) -> bool:
+    if _blocked_by_7_4_75(state):
+        return False
     return _site_dirgha(state) or _site_p034(state) or _site_p036(state) or _site_p037(state)
 
 

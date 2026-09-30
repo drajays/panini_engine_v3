@@ -244,6 +244,7 @@ def P00_juhotyadi_slu_dvitva_abhyasakarya(s: State) -> State:
     s = apply_rule("1.1.61", s)
     _juhotyadi_remove_slu_placeholder(s)
     s = apply_rule("6.1.10", s)
+    s = apply_rule("7.4.75", s)
     s = apply_rule("7.4.76", s)
     s = apply_rule("7.4.77", s)
     s = apply_rule("7.4.66", s)
