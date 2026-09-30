@@ -1,12 +1,27 @@
 # Notes vs engine — sūtra paths
 
-32 notes matched to an engine recipe; 44 not matched.
+46 notes matched to an engine recipe; 30 not matched.
 note-only: the note applies it, the engine never does. engine-only: the engine applies it, the note does not cite it (often a saṃjñā the note assumes).
+
+## kumari.md — `kumArI`
+engine: `subanta.derive('kumArI', 1, 1, 'strīliṅga')` · shared: 2
+- note-only: 1.1.22, 1.2.46, 1.3.3, 3.1.1, 3.1.2, 4.1.1, 4.1.4, 5.3.55, 5.3.57, 6.1.75, 6.1.101, 6.2.35, 6.3.43, 7.4.59
+- engine-only: 1.1.43, 1.2.41, 1.2.45, 1.3.2, 1.4.3, 1.4.13, 1.4.14, 1.4.103, 4.1.2
+
+## nayak.md — `nAyakaH`
+engine: `krdanta.derive_nAyakaH` · shared: 16
+- note-only: 1.1.1, 1.1.50, 1.3.1, 1.4.13, 3.1.1, 3.1.2, 3.1.91, 3.4.76, 3.4.117, 5.4.160, 6.1.162, 8.2.1
+- engine-only: 1.1.43, 1.1.73, 1.2.41, 1.4.103
 
 ## अकार्षीत् .md — `akArzIt`
 engine: `akArzIt_luN_dukrY.derive_akArzIt` · shared: 16
 - note-only: 1.1.1, 1.1.3, 1.1.46, 1.1.50, 1.3.1, 1.3.2, 1.4.22, 1.4.101, 1.4.102, 1.4.108, 2.2.14, 3.1.1, 3.1.2, 3.1.91, 3.4.69, 3.4.77, 3.4.113, 3.4.114, 4.4.144, 5.3.32, 6.1.162, 7.2.7, 7.2.35, 7.4.59
 - engine-only: —
+
+## अग्नी.md — `agnI`
+engine: `subanta.derive('agni', 1, 2, 'pulliṅga')` · shared: 4
+- note-only: 3.1.1, 6.1.77, 6.1.78, 6.1.101, 6.1.125
+- engine-only: 1.1.43, 1.2.41, 1.4.7, 1.4.13, 1.4.14, 1.4.103, 1.4.110
 
 ## अचैषीत्.md — `acEzIt`
 engine: `acaEzIt_luN_ciY.derive_acaEzIt` · shared: 14
@@ -22,6 +37,16 @@ engine: `atinu_neuter.derive_atinu` · shared: 2
 engine: `atiri_atinu_kulam.derive_atiri` · shared: 2
 - note-only: 1.1.48, 1.1.50, 1.1.61, 1.1.62, 1.2.28, 1.2.43, 1.2.46, 1.3.2, 1.3.9, 2.2.30, 2.4.71
 - engine-only: 4.1.2
+
+## अमी अत्र.md — `amI`
+engine: `subanta.derive('adas', 1, 3, 'pulliṅga')` · shared: 9
+- note-only: 1.1.2, 1.1.11, 1.1.12, 1.1.52, 1.1.55, 3.1.1, 6.1.77, 6.1.102, 6.1.104, 6.1.125, 6.2.35
+- engine-only: 1.1.43, 1.2.72, 1.4.13, 1.4.14, 1.4.103, 1.4.110
+
+## अमू अत्र’.md — `amU`
+engine: `subanta.derive('adas', 1, 2, 'pulliṅga')` · shared: 7
+- note-only: 1.1.11, 1.1.12, 1.1.50, 1.1.52, 1.4.23, 3.1.1, 5.3.32, 6.1.77, 6.1.102, 6.1.125, 6.2.35
+- engine-only: 1.1.43, 1.2.41, 1.2.72, 1.4.13, 1.4.14, 1.4.103, 1.4.110
 
 ## अलावीत्.md — `alAvIt`
 engine: `alAvIt_luN_lUY.derive_alAvIt` · shared: 14
@@ -42,6 +67,11 @@ engine: `kuRqa_ni_prathama_bahu_napuMsaka.derive_kuRqAni` · shared: 7
 engine: `gomAn_prathamA_go_matup.derive_gomAn` · shared: 14
 - note-only: 1.1.7, 1.1.62, 1.1.65, 1.4.11, 1.4.14, 3.1.1, 3.1.91, 6.1.75, 6.1.162, 6.2.35, 8.2.86
 - engine-only: —
+
+## गौरी अधिश्रितः.md — `gOrI`
+engine: `subanta.derive('gOrI', 1, 1, 'strīliṅga')` · shared: 2
+- note-only: 1.1.19, 1.1.62, 3.1.1, 6.1.77, 6.1.125, 7.1.39
+- engine-only: 1.1.43, 1.1.73, 1.2.41, 1.3.2, 1.3.9, 1.4.3, 1.4.13, 1.4.14, 1.4.103, 6.1.68
 
 ## चितः.md — `citaH`
 engine: `citaH_prathamA_ciY.derive_citaH` · shared: 10
@@ -77,6 +107,26 @@ engine: `kftvas_sankhya_avyaya.derive_tAvatkftvaH` · shared: 3
 engine: `trApuSam_jAtuSam_taddhita.derive_trApuSam` · shared: 6
 - note-only: 1.1.1, 1.1.46, 2.2.8, 3.1.1, 3.1.2, 4.1.76, 4.1.82, 4.3.134
 - engine-only: 1.3.2, 1.3.3, 1.3.8, 1.3.9, 4.1.2
+
+## पचेते इति.md — `pacete`
+engine: `tinanta.derive('01.1151', 'laT', 'kartari', 3, 2, pada='atmane', upasargas=[])` · shared: 0
+- note-only: —
+- engine-only: 1.2.4, 1.3.2, 1.3.3, 1.3.5, 1.3.8, 1.3.9, 1.4.14, 3.1.68, 3.4.78, 3.4.79, 3.4.113, 6.1.66, 6.1.87, 7.2.81
+
+## प्रणिददाति’.md — `praRidadAti`
+engine: `tinanta.derive('03.0010', 'laT', 'kartari', 3, 1, upasargas=['pra', 'ni'])` · shared: 8
+- note-only: 1.1.20, 1.1.52, 1.1.64, 1.3.13, 1.4.23, 2.2.14, 3.1.1, 3.1.2, 3.1.67, 3.1.68, 3.1.133, 3.2.123, 3.4.69, 3.4.79, 4.4.144, 6.1.1, 6.1.4, 6.4.66, 8.4.17, 8.4.54
+- engine-only: 1.4.14, 1.4.59, 1.4.99, 8.4.2
+
+## प्रणिदयते’.md — `praRidayate`
+engine: `tinanta.derive('01.0553', 'laT', 'kartari', 3, 1, upasargas=['pra', 'ni'])` · shared: 5
+- note-only: 1.1.20, 1.3.12, 1.3.78, 3.2.123, 6.1.45, 6.1.78, 8.4.17
+- engine-only: 1.2.4, 1.3.2, 1.3.8, 1.4.14, 1.4.59, 3.4.113, 8.4.2
+
+## प्रणियच्छति .md — `praRiyacCati`
+engine: `tinanta.derive('01.0930', 'laT', 'kartari', 3, 1, upasargas=['pra', 'ni'])` · shared: 1
+- note-only: 1.1.20, 1.1.52, 1.1.55, 1.1.56, 1.4.13, 3.1.1, 3.1.2, 3.1.69, 3.2.123, 6.1.45, 7.3.71, 7.3.78, 8.4.17
+- engine-only: 1.3.2, 1.3.3, 1.3.8, 1.3.9, 1.4.14, 1.4.59, 1.4.99, 3.4.78, 3.4.113, 6.1.73, 7.3.77, 8.4.2, 8.4.40
 
 ## प्रियविश्वाय.md — `priyaviSvAya`
 engine: `priyaviSva_bahuvrIhi_subanta.derive_priyaviSvAya_caturthI_eka` · shared: 6
@@ -123,6 +173,11 @@ engine: `medyati_lat_mid.derive_medyati` · shared: 8
 - note-only: 1.1.2, 1.1.3, 1.1.5, 1.1.50, 1.1.65, 1.2.4, 1.3.1, 1.4.10, 1.4.13, 3.2.123, 3.4.113, 7.3.86
 - engine-only: 1.3.3, 1.4.99
 
+## यशांसि.md — `yaSAMsi`
+engine: `subanta.derive('yaSas', 1, 3, 'napuṃsaka')` · shared: 4
+- note-only: 8.4.37
+- engine-only: 1.1.42, 1.2.45, 1.3.7, 1.3.9, 1.4.13, 1.4.14, 1.4.103, 1.4.110, 4.1.2
+
 ## रुणद्धि .md — `ruRadDi`
 engine: `ruNaddhi_rudhadi_snam.derive_ruRadDi` · shared: 5
 - note-only: —
@@ -133,10 +188,20 @@ engine: `vande_vad_num_atmanepada.derive_vande` · shared: 7
 - note-only: 1.3.1, 1.3.12, 3.1.91, 6.1.97, 6.1.162, 6.4.10, 7.1.20, 8.3.24, 8.4.37
 - engine-only: 1.3.3, 1.3.8, 3.4.78
 
+## वायो इति.md — `vAyo`
+engine: `subanta.derive('vAyu', 8, 1, 'pulliṅga')` · shared: 8
+- note-only: 1.1.16, 2.3.47, 2.3.49, 3.1.1, 3.2.125, 6.1.78, 6.1.125, 7.3.105
+- engine-only: 1.1.43, 1.1.73, 1.4.7, 1.4.14, 1.4.103, 1.4.110
+
 ## वैपाशः.md — `vEpASaH`
 engine: `vaipASaH_vipAS_tatra_bhava.derive_vaipASaH` · shared: 3
 - note-only: 1.1.1, 1.1.10, 1.1.50, 4.1.76, 4.1.83, 4.3.154, 6.4.148
 - engine-only: 1.1.43, 1.1.73, 1.2.41, 1.2.46, 1.3.2, 1.3.3, 1.3.9, 1.4.14, 1.4.45, 1.4.103, 1.4.110, 2.3.36, 2.4.71, 4.1.2, 8.2.66, 8.3.15
+
+## शुश्लोके.md — `SuSloke`
+engine: `tinanta.derive('01.0081', 'liT', 'kartari', 1, 1, upasargas=[])` · shared: 6
+- note-only: 1.1.48, 1.1.55, 3.4.81, 6.1.4
+- engine-only: 1.2.5, 1.3.3, 1.3.9, 1.4.14, 3.4.79
 
 ## सर्वकः.md — `sarvakaH`
 engine: `sarvaka_subanta.derive_sarvakaha` · shared: 8
@@ -163,49 +228,40 @@ engine: `hiqanIya_heq_nic_anIyar.derive_hiqanIya` · shared: 4
 - note-only: 1.1.48, 1.1.57, 3.1.32, 7.3.86, 7.4.59
 - engine-only: 1.3.3, 1.3.9
 
+## ‘माले इति’.md — `mAle`
+engine: `subanta.derive('mAlA', 1, 2, 'strīliṅga')` · shared: 3
+- note-only: 1.1.2, 1.1.11, 1.1.55, 1.3.8, 1.3.9, 3.1.1, 6.1.78, 6.1.125, 7.1.18
+- engine-only: 1.1.43, 1.1.73, 1.2.41, 1.4.13, 1.4.14, 1.4.103, 1.4.110, 6.1.104
+
 ## Not matched
 
 -  तृतीयासमासे निषेध.md: no engine recipe for tftIyAsamAse
-- 1.1.30.md: no engine recipe for 
-- 1.1.38.md: no engine recipe for 
-- 1145.md: no engine recipe for 
-- 132.md: no engine recipe for 
-- 1_1_40.md: no engine recipe for 
-- 1_1_43.md: no engine recipe for 
-- Complete Adhikāra Mapping of All 88 Saṃjñā Sūtras.md: no engine recipe for 
-- Saṃjñā Sūtras — Complete Adhikāra Mapping.md: no engine recipe for 
-- aabhyam.md: no engine recipe for 
-- cheta.md: no engine recipe for 
-- cheta1.md: no engine recipe for 
-- devendra.md: no engine recipe for 
-- dhatupath.md: no engine recipe for 
-- kumari.md: no engine recipe for 
-- loluv.md: no engine recipe for 
-- nayak.md: no engine recipe for 
-- pachak.md: no engine recipe for 
-- pathita.md: no engine recipe for 
-- sangya2.md: no engine recipe for 
-- sutra_ref.md: no engine recipe for 
-- taddhati.md: no engine recipe for 
-- uttarpoorva.md: no engine recipe for 
-- अग्नी.md: no engine recipe for agnI
-- अमी अत्र.md: no engine recipe for amI
-- अमू अत्र’.md: no engine recipe for amU
+- 1.1.30.md: not a Devanāgarī form
+- 1.1.38.md: not a Devanāgarī form
+- 1145.md: not a Devanāgarī form
+- 132.md: not a Devanāgarī form
+- 1_1_40.md: not a Devanāgarī form
+- 1_1_43.md: not a Devanāgarī form
+- Complete Adhikāra Mapping of All 88 Saṃjñā Sūtras.md: not a Devanāgarī form
+- Saṃjñā Sūtras — Complete Adhikāra Mapping.md: not a Devanāgarī form
+- aabhyam.md: not a Devanāgarī form
+- cheta.md: not a Devanāgarī form
+- cheta1.md: not a Devanāgarī form
+- devendra.md: not a Devanāgarī form
+- dhatupath.md: not a Devanāgarī form
+- loluv.md: not a Devanāgarī form
+- pachak.md: not a Devanāgarī form
+- pathita.md: not a Devanāgarī form
+- sangya2.md: not a Devanāgarī form
+- sutra_ref.md: not a Devanāgarī form
+- taddhati.md: not a Devanāgarī form
+- uttarpoorva.md: not a Devanāgarī form
 - अस्मे इन्द्राबृहस्पती.md: no engine recipe for asme
 - आदीध्यकः.md: no engine recipe for AdIDyakaH
 - आदीध्यनम्.md: no engine recipe for AdIDyanam
 - आरण्यः .md: no engine recipe for AraRyaH
 - उपगु .md: no engine recipe for upagu
 - कृन्मेजन्तः.md: no engine recipe for kfnmejantaH
-- गौरी अधिश्रितः.md: no engine recipe for gOrI
 - दण्डहस्त.md: no engine recipe for daRqahasta
-- पचेते इति.md: no engine recipe for pacete
-- प्रणिददाति’.md: no engine recipe for praRidadAti
-- प्रणिदयते’.md: no engine recipe for praRidayate
-- प्रणियच्छति .md: no engine recipe for praRiyacCati
 - प्रारम्भिक विवरण.md: no engine recipe for prAramBika
-- यशांसि.md: no engine recipe for yaSAMsi
-- वायो इति.md: no engine recipe for vAyo
 - विभाषा जसि and derivation.md: no engine recipe for viBAzA
-- शुश्लोके.md: no engine recipe for SuSloke
-- ‘माले इति’.md: no engine recipe for mAle

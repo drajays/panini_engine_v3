@@ -277,16 +277,14 @@ Tests: 19,563 pass.
 compares the user's hand prakriyās with engine traces (notes are reference, not gold).
 
 **Next session, in order:**
-1. 6.4.19 छ्वोः शूडनुनासिके च (प्रच्छ् → प्रष्टा/प्रक्ष्यति; tuk now left in: प्रत्क्ष्यति).
-2. Remaining luṅ (87.5 %): kṣa aorist 3.1.45 (अशिक्षत्), optional iṭ in sic
-   (अश्रासिषुः), अगुडीत् (कुटादि ङित्त्व 1.2.1).
+1. ✅ **6.4.19** च्छ्वोः शूडनुनासिके च — `06.0149` lṛṭ/luṭ now **प्रक्ष्यति / प्रष्टा** (not प्रत्क्ष्यति); laṭ still **पृच्छति**. Pinned: `tests/unit/test_pracch_ksa_surfaces.py`.
+2. ◐ **luṅ**: ✅ kṣa aorist 3.1.45 **अशिक्षत्** (`Siza~` luṅ 3sg). Still open: optional iṭ in sic (अश्रासिषुः), अगुडीत् (कुटादि ङित्त्व 1.2.1).
 3. Gaṇa 3 juhotyādi (ślu, abhyāsa) — ~290 errors per lakāra.
 4. Tiṅanta bootstrap: attach the lakāra before 1.3.78/1.4.108 (then lower
    `VIDHI_FP_RAW_BASELINE` back to 0).
-5. Notes audit: map the unmatched notes (सर्वे, सर्वस्मै, नायकः …) to general
-   derivations; review note-only sūtras (skip accent rules).
+5. ✅ **Notes audit** (2026-10-01): `general_tinanta_match` maps ātmanepada endings onto the index's parasmaipada cell (`पचेते` ← `पचतः` + `pada='atmane'`); latin filenames (`nayak.md` → नायकः, `kumari.md` → कुमारी) alias onto existing recipes; `docs/NOTES_AUDIT.md` regenerated. Remaining unmatched notes are non-forms (saṃjñā essays) or kṛdanta not yet generic (पाचकः).
 6. Optional forms (vikalpa) are still single-output.
-7. Publish: `Panini Engine.command` → 9 (rebuild, test, commit, push → site).
+7. ✅ **Publish** (2026-09-30): origin/main at `fd901aad`. Re-publish after this notes-audit pass.
 
 ## Remaining work queue (in order)
 1. ✅ **loṭ/laṅ/liṅ for u-vikaraṇa gaṇas** (2026-09-29): 6.4.106 real (was a

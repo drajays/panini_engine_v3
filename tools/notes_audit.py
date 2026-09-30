@@ -70,8 +70,22 @@ def applied(module: str, fn: str) -> set[str]:
 _PRONOUN_STEMS = ("sarva", "tad", "yad", "etad", "idam", "adas")
 # Ordinary paradigm stems the notes decline (अग्नी, वायो, गौरी, यशांसि, माले): the same
 # "key must equal a declined form, never the stem itself" discipline applies.
-_COMMON_STEMS = ("agni", "vAyu", "gOrI", "yaSas", "mAlA")
+_COMMON_STEMS = ("agni", "vAyu", "gOrI", "yaSas", "mAlA", "kumArI")
 _LINGAS = ("pulliṅga", "strīliṅga", "napuṃsaka")
+# Roman note filenames that are the same form as a declined/kṛdanta surface.
+_KEY_ALIASES = {"nayak": "nAyakaH", "kumari": "kumArI"}
+# Longest-first: ātmanepada laṭ (etc.) tails → the parasmaipada cell the index stores.
+_ATMANE_TO_PARASMAI = (
+    ("Avahe", "AvaH"),
+    ("Amahe", "AmaH"),
+    ("ante", "anti"),
+    ("eTe", "aTaH"),
+    ("ete", "ataH"),
+    ("Dve", "Ta"),
+    ("se", "si"),
+    ("te", "ti"),
+    ("e", "Ami"),
+)
 
 
 def _applied_from_state(st) -> set[str]:
@@ -127,32 +141,63 @@ def _upasarga_splits(key: str):
                     yield ups, key[len(pre):]
 
 
+def _tinanta_lookup_surfaces(rest: str):
+    """(index surface, pada override). Index stores the default-pada cell only."""
+    yield rest, None
+    for atm, para in _ATMANE_TO_PARASMAI:
+        if rest.endswith(atm) and len(rest) > len(atm):
+            yield rest[: -len(atm)] + para, "atmane"
+
+
+def general_krt_match(key: str) -> tuple[str, set[str]] | None:
+    """Named kṛdanta recipes the curated index may list under a different slug."""
+    from pipelines.krdanta import derive_nAyakaH
+
+    try:
+        st = derive_nAyakaH()
+    except Exception:
+        return None
+    if st.flat_slp1() == key:
+        return "krdanta.derive_nAyakaH()", _applied_from_state(st)
+    return None
+
+
 def general_tinanta_match(key: str) -> tuple[str, set[str]] | None:
     """Look the verb form up in the generated-forms index (after stripping leading
-    upasargas), re-derive that exact cell, and accept only an exact surface match."""
+    upasargas), re-derive that exact cell, and accept only an exact surface match.
+
+    The index stores one pada per cell (usually parasmaipada). Ātmanepada notes
+    such as पचेते are found by mapping the ātmane ending onto the stored
+    parasmai surface, then re-deriving with ``pada='atmane'``.
+    """
     from engine.form_index import lookup
     from pipelines.dhatupatha import resolve_dhatu_identifier
     from pipelines.tinanta import derive as tin_derive
 
     for ups, rest in _upasarga_splits(key):
-        for hit in lookup(rest):
-            if hit["kind"] != "tinanta":
-                continue
-            f = hit["features"]
-            ref = hit["cell_key"].split("@")[1].split(":")[0]
-            try:
-                resolve_dhatu_identifier(ref)
-            except KeyError:
-                ref = hit["lemma"]
-            try:
-                st = tin_derive(ref, f["lakara"], f["prayoga"], f["purusha"], f["vacana"],
-                                upasargas=ups or None)
-            except Exception:
-                continue
-            if st.flat_slp1() == key:
-                label = (f"tinanta.derive({ref!r}, {f['lakara']!r}, {f['prayoga']!r}, "
-                         f"{f['purusha']}, {f['vacana']}, upasargas={ups!r})")
-                return label, _applied_from_state(st)
+        for surface, pada in _tinanta_lookup_surfaces(rest):
+            for hit in lookup(surface):
+                if hit["kind"] != "tinanta":
+                    continue
+                f = hit["features"]
+                ref = hit["cell_key"].split("@")[1].split(":")[0]
+                try:
+                    resolve_dhatu_identifier(ref)
+                except KeyError:
+                    ref = hit["lemma"]
+                kwargs: dict = {"upasargas": ups or None}
+                if pada:
+                    kwargs["pada"] = pada
+                try:
+                    st = tin_derive(ref, f["lakara"], f["prayoga"], f["purusha"], f["vacana"],
+                                    **kwargs)
+                except Exception:
+                    continue
+                if st.flat_slp1() == key:
+                    extra = f", pada={pada!r}" if pada else ""
+                    label = (f"tinanta.derive({ref!r}, {f['lakara']!r}, {f['prayoga']!r}, "
+                             f"{f['purusha']}, {f['vacana']}{extra}, upasargas={ups!r})")
+                    return label, _applied_from_state(st)
     return None
 
 
@@ -165,14 +210,24 @@ def audit(notes_dir: Path) -> str:
     for f in sorted(notes_dir.glob("*.md")):
         name = f.stem.strip(" ‘’'\"")
         try:
-            key = devanagari_to_slp1_flat(name.split()[0])
+            raw = name.split()[0]
+            key = devanagari_to_slp1_flat(raw)
         except Exception:
             unmatched.append((f.name, "not a form"))
             continue
+        if not key:
+            # Latin filenames are not SLP1; only known aliases (nayak.md → नायकः).
+            key = _KEY_ALIASES.get(raw)
+            if not key:
+                unmatched.append((f.name, "not a Devanāgarī form"))
+                continue
+        else:
+            key = _KEY_ALIASES.get(key, key)
         cands = forms.get(key) or forms.get(key.rstrip("H") + "H") or forms.get(key.rstrip("H"))
         note = cited_sutras(f.read_text(encoding="utf-8"), ref)
         if not cands:
-            general = (general_subanta_match(key) or general_tinanta_match(key)) if key else None
+            general = ((general_subanta_match(key) or general_tinanta_match(key)
+                        or general_krt_match(key)) if key else None)
             if general is None:
                 unmatched.append((f.name, f"no engine recipe for {key}"))
                 continue

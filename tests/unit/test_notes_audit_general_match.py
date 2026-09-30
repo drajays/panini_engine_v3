@@ -22,7 +22,7 @@ def test_unrelated_surface_forms_do_not_spuriously_match() -> None:
     subanta.derive() doesn't validate its input is a real prātipadika, and a
     bare-visarga prathamā-ekavacana default made every surface form "match"
     itself. None of these is a declined form of a listed stem, so none matches."""
-    for key in ("kumArI", "jizRu", "muYcati"):
+    for key in ("jizRu", "muYcati"):
         assert general_subanta_match(key) is None, key
 
 
@@ -31,6 +31,20 @@ def test_common_stems_match_by_their_declined_forms() -> None:
     assert general_subanta_match("vAyo")[0] == "subanta.derive('vAyu', 8, 1, 'pulliṅga')"
     assert general_subanta_match("gOrI")[0] == "subanta.derive('gOrI', 1, 1, 'strīliṅga')"
     assert general_subanta_match("yaSAMsi")[0] == "subanta.derive('yaSas', 1, 3, 'napuṃsaka')"
+    assert general_subanta_match("kumArI")[0] == "subanta.derive('kumArI', 1, 1, 'strīliṅga')"
+
+
+def test_audit_reports_pacete_nayak_kumari(tmp_path) -> None:
+    (tmp_path / "पचेते.md").write_text("पचेते इति पचधातोः प्रथमद्विवचनम् आत्मनेपदम्।\n", encoding="utf-8")
+    (tmp_path / "nayak.md").write_text("नायकः ण्वुल्।\n", encoding="utf-8")
+    (tmp_path / "kumari.md").write_text("कुमारी प्रथमैकवचनम्।\n", encoding="utf-8")
+    report = audit(tmp_path)
+    assert "no engine recipe for pacete" not in report
+    assert "pada='atmane'" in report
+    assert "no engine recipe for nAyakaH" not in report
+    assert "krdanta.derive_nAyakaH" in report
+    assert "no engine recipe for kumArI" not in report
+    assert "subanta.derive('kumArI'" in report
 
 
 def test_audit_reports_sarva_notes_as_matched(tmp_path) -> None:
@@ -50,6 +64,22 @@ def test_tinanta_fallback_strips_upasargas_and_needs_exact_surface() -> None:
         assert general_tinanta_match(key) is not None, key
     assert "upasargas=['pra', 'ni']" in general_tinanta_match("praRidadAti")[0]
     assert general_tinanta_match("kumArI") is None
+
+
+def test_tinanta_fallback_retries_atmanepada_for_ubhayapadi() -> None:
+    """Index stores parasmaipada पचतः; पचेते is the ātmanepada 3du of the same cell."""
+    from tools.notes_audit import general_tinanta_match
+
+    hit = general_tinanta_match("pacete")
+    assert hit is not None
+    assert "pada='atmane'" in hit[0]
+
+
+def test_krt_and_kumari_aliases() -> None:
+    from tools.notes_audit import general_krt_match, general_subanta_match
+
+    assert general_krt_match("nAyakaH") is not None
+    assert general_subanta_match("kumArI")[0] == "subanta.derive('kumArI', 1, 1, 'strīliṅga')"
 
 
 def test_upasarga_a_is_not_lengthened_by_7_3_101() -> None:

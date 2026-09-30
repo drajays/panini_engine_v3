@@ -158,6 +158,8 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-09-30 (session) | cursor | P2 भट्टिकाव्य १.१ जयमङ्गला prakriyā (अभूत्…उपागमत्) | pipelines/tinanta.py, pipelines/bhattikavya_1_1.py, sutras/adhyaya_1/pada_3/sutra_1_3_7.py, sutras/adhyaya_3/pada_2/sutra_3_2_3.py, sutras/adhyaya_3/pada_2/sutra_3_2_39.py, sutras/adhyaya_3/pada_1/sutra_3_1_135.py, sutras/adhyaya_3/pada_3/sutra_3_3_16.py, sutras/adhyaya_3/pada_3/sutra_3_3_58.py, sutras/adhyaya_4/pada_3/sutra_4_3_23.py, sutras/adhyaya_5/pada_4/sutra_5_4_91.py, sutras/adhyaya_6/pada_3/sutra_6_3_67.py, sutras/adhyaya_6/pada_4/sutra_6_4_94.py, sutras/adhyaya_6/pada_4/sutra_6_4_148.py, tests/unit/test_bhattikavya_1_1.py, webui/app.py, webui/templates/bhatti.html, webui/templates/base.html, webui/templates/home.html, audit/RUN_LOG.md | released |
 | 2026-09-30 (session) | cursor | P2 भट्टिकाव्य १.२ जयमङ्गला (वेदाः…न्यवधीत्) | pipelines/tinanta.py, pipelines/bhattikavya_1_1.py, sutras/adhyaya_1/pada_3/sutra_1_3_3.py, sutras/adhyaya_2/pada_4/sutra_2_4_43.py, sutras/adhyaya_3/pada_1/sutra_3_1_134.py, sutras/adhyaya_3/pada_4/sutra_3_4_36.py, sutras/adhyaya_7/pada_3/sutra_7_3_32.py, sutras/adhyaya_7/pada_3/sutra_7_3_54.py, core/phases/tripadi.py, tests/unit/test_bhattikavya_1_2.py, webui/app.py, webui/templates/bhatti.html, audit/RUN_LOG.md | released |
 | 2026-09-30 (session) | cursor | P2 integrate Bhaṭṭikāvya + Gītā 15.3–4 yantra + publish | engine/krt_eligibility.py, pipelines/bhattikavya_1_1.py, pipelines/subanta.py, sutras/adhyaya_3/pada_1/sutra_3_1_134.py, sutras/adhyaya_3/pada_1/sutra_3_1_135.py, sutras/adhyaya_3/pada_2/sutra_3_2_3.py, sutras/adhyaya_3/pada_2/sutra_3_2_39.py, sutras/adhyaya_3/pada_3/sutra_3_3_58.py, sutras/adhyaya_3/pada_4/sutra_3_4_36.py, sutras/adhyaya_5/pada_4/sutra_5_4_91.py, sutras/adhyaya_6/pada_1/sutra_6_1_68.py, sutras/adhyaya_7/pada_1/sutra_7_1_25.py, sutras/adhyaya_7/pada_2/sutra_7_2_90.py, sutras/adhyaya_7/pada_2/sutra_7_2_106.py, tools/samsaadhanii_tags.py, tools/samsaadhanii_reader.py, tests/unit/test_gita_15_3_4_yantra.py, tests/unit/test_samsaadhanii_reader.py, audit/RUN_LOG.md | released |
+| 2026-10-01 (session) | cursor | P2 FINAL_PLAN remaining: 6.4.19 + notes-audit pacete/unmatched | tools/notes_audit.py, docs/NOTES_AUDIT.md, docs/FINAL_PLAN_2026-09.md, tests/unit/test_notes_audit_general_match.py, tests/unit/test_pracch_ksa_surfaces.py, audit/RUN_LOG.md | released |
+| 2026-10-01 01:10 | cursor | P2 oracle accent fix + 7.2.58 गमेरिट् + learn.html stepper (plan: docs/LEARN_AND_ORACLE_PLAN.md) | bench/oracle_vidyut.py, bench/grids.py, bench/oracle/vidyut.csv, bench/report/2026-10-01.json, sutras/adhyaya_7/pada_2/sutra_7_2_58.py, tests/unit/test_gam_lrt_7_2_58.py, tools/build_pages.py, docs/learn.html, docs/index.html, docs/data/sutras.json, docs/LEARN_AND_ORACLE_PLAN.md, audit/RUN_LOG.md | in-progress |
 
 ---
 
@@ -190,6 +192,18 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ---
 
 ## C. Action history (newest at top)
+
+### 2026-10-01 (session)  [cursor]  FINAL_PLAN remaining — 6.4.19 + notes audit
+
+**Goal:** Close `docs/FINAL_PLAN_2026-09.md` next-session items 1, 2 (ksa), 5; leave gaṇa 3 / vikalpa / lakāra-bootstrap.
+
+**Shipped:**
+- Confirmed ६.४.१९ already yields **प्रक्ष्यति / प्रष्टा** (not प्रत्क्ष्यति); ३.१.४५ **अशिक्षत्**. Pins in `tests/unit/test_pracch_ksa_surfaces.py`.
+- Notes audit: ātmanepada cells via parasmai-index mapping (`पचेते`); `nayak.md`/`kumari.md` aliases; latin non-forms skipped. `docs/NOTES_AUDIT.md` regenerated: **46 matched / 30 unmatched** (was pacete, praRidadAti, agnI unmatched).
+
+**Tests:** `test_notes_audit_general_match` + `test_pracch_ksa_surfaces` (11 passed).
+
+**Next:** gaṇa 3 ślu; optional sic-iṭ / कुटादि 1.2.1; vikalpa multi-output; publish if requested.
 
 ### 2026-09-30 (session)  [cursor]  Integrate Bhaṭṭikāvya १.१–१.२ + Gītā 15.3–4 yantra
 
@@ -1037,6 +1051,17 @@ with the `cond()` invariants and verification commands documented.
 > recently. Cross-check §B before editing the same files.
 >
 > Columns: `file` | `Δ` (`new` / `mod`) | `task` (short) | `notes`
+
+### 2026-10-01 [cursor] — FINAL_PLAN notes audit + 6.4.19 pins
+
+| file | Δ | task | notes |
+|------|---|------|-------|
+| `tools/notes_audit.py` | mod | ātmane map + aliases | पचेते नायकः कुमारी |
+| `docs/NOTES_AUDIT.md` | mod | regenerated | 46 matched |
+| `docs/FINAL_PLAN_2026-09.md` | mod | next-session ticks | items 1/2/5/7 |
+| `tests/unit/test_notes_audit_general_match.py` | mod | pacete nAyakaH | |
+| `tests/unit/test_pracch_ksa_surfaces.py` | new | प्रक्ष्यति अशिक्षत् | |
+| `audit/RUN_LOG.md` | mod | §B released + §C | |
 
 ### 2026-09-30 [cursor] — integrate + Gītā 15.3–4 yantra
 
