@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_vikarana_it_lopa
+from core.canonical_pipelines import P00_lyap_krt
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -60,20 +60,7 @@ def _trim_agaty_tape(state: State) -> None:
 def derive_agaty_gam_lyap_acah_lesson() -> State:
     s = State(terms=[_upasarga_a(), _dhatu_gam()], meta={}, trace=[])
 
-    s.meta["ktvA_recipe"] = True
-    s = apply_rule("3.4.21", s)
-
-    s.meta["lyap_recipe"] = True
-    s.meta["7_1_37_insert_lyap_matu"] = True
-    s = apply_rule("7.1.37", s)
-
-    s = apply_rule("6.4.38", s)
-
-    s = P00_vikarana_it_lopa(s)
-
-    s = apply_rule("6.1.71", s)
-
-    s = apply_rule("1.1.57", s)
+    s = P00_lyap_krt(s)
 
     _trim_agaty_tape(s)
 

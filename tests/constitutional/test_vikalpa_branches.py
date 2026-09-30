@@ -118,3 +118,18 @@ def test_a_derivation_with_no_optional_rule_has_exactly_one_branch():
 def test_the_branch_count_is_bounded():
     """2**20 silently explored paths would not be auditable."""
     assert MAX_OPTIONAL_RULES <= 6
+
+
+def test_generic_derive_krt_lyap_yields_both_readings():
+    """derive_krt(krt='lyap') reaches 6.4.38 with no lesson-specific scaffolding."""
+    from engine.state import Term
+    from phonology.varna import parse_slp1_upadesha_sequence
+    from pipelines.krdanta import derive_krt
+
+    def run(pre):
+        up = Term(kind="upasarga", varnas=list(parse_slp1_upadesha_sequence(pre)),
+                  tags={"upasarga"}, meta={"upadesha_slp1": pre})
+        return derive_krt("gam", krt_upadesha_slp1="lyap", prefix_terms=[up], dhatu_meta={"gana": 1})
+
+    for pre, want in (("A", {"Agatya", "Agamya"}), ("pra", {"pragatya", "pragamya"})):
+        assert {b.state.flat_slp1() for b in explore(lambda: run(pre))} == want

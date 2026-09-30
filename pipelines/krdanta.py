@@ -35,6 +35,7 @@ from engine       import apply_rule
 from engine.state import State, Term, Varna
 from pipelines.preflight_lopa_samjna import apply_preflight_luk_samjna_block
 from core.canonical_pipelines import (
+    P00_lyap_krt,
     P00_attach_su_it_lopa,
     P00_guna_rapara_ayadi,
     P01_samjna_1_1_15_to_1_1_24,
@@ -235,6 +236,9 @@ def derive_krt(
         s = P00_krt_guna_sandhi_tail(s)
         s = _structural_merge_to_pratipadika(s, upadesha_slp1=merge_pratipadika_label)
         return s
+
+    if krt_upadesha_slp1 == "lyap":
+        return P00_lyap_krt(s)
 
     raise ValueError(f"unsupported kṛt pratyaya: {krt_upadesha_slp1!r}")
 

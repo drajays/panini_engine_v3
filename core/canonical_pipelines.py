@@ -1684,6 +1684,20 @@ def P00_vikarana_it_lopa(s: State) -> State:
     return s
 
 
+def P00_lyap_krt(s: State) -> State:
+    """ल्यप् kṛt: ktvā → lyap (3.4.21, 7.1.37) → वा ल्यपि 6.4.38 → it-lopa → 6.1.71 → 1.1.57."""
+    s.meta["ktvA_recipe"] = True
+    s = apply_rule("3.4.21", s)
+    s.meta["lyap_recipe"] = True
+    s.meta["7_1_37_insert_lyap_matu"] = True
+    s = apply_rule("7.1.37", s)
+    s = apply_rule("6.4.38", s)  # optional (vikalpa)
+    s = P00_vikarana_it_lopa(s)
+    s = apply_rule("6.1.71", s)
+    s = apply_rule("1.1.57", s)
+    return s
+
+
 def P00_avyaya_sup_luk(s: State) -> State:
     """Avyaya sup-luk: 1.1.40 → 4.1.2 → 2.4.82."""
     s = apply_rule("1.1.40", s)
@@ -1851,6 +1865,7 @@ def P00_a_lopa_sthanivat_1_1_58(s: State) -> State:
 
 
 __all__ = [
+    "P00_lyap_krt",
     "P01_subanta_bootstrap",
     "P01_taddhita_bootstrap_idle",
     "P02_pratipadika_1_2_46_taddhita_anga",
