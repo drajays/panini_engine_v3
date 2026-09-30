@@ -237,6 +237,8 @@ def _ngit_vikarana_own_guna(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
+    if state.meta.get("_3_1_45_ksa_recipe"):
+        return False   # 3.1.45 क्स अपवाद: उपधा unchanged (अशिक्षत्, not अशेक्षत्)
     if ik_guna_vriddhi_blocked_by_1_1_4(state):
         return False
     if ik_guna_vriddhi_blocked_by_1_1_5(state):

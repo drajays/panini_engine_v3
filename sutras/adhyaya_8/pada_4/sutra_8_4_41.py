@@ -73,7 +73,14 @@ _ZTU = frozenset("zwWqQR")                                             # ṣ + �
 
 def _find_zt(state: State):
     """ष्टुना ष्टुः: s/tu next to ṣ/ṭu becomes ṣ/ṭu (ष्ठाः, पेष्टा); 8.4.43 तोः षि:
-    a tu before ṣ stays. Index of the varṇa to change, in the merged pada."""
+    a tu before ṣ stays. Index of the varṇa to change, in the merged pada.
+
+    3.1.45's क्स recipe (अशिक्षत्, not अशिक्षट्): the ष् that 8.3.59 just made
+    of सिच्'s स् (इण्कोः, after क्) doesn't retroflex the following तिङ् त्/द् —
+    pinned by all 10 शल्-इगुपध-अनिट् roots' ashtadhyayi.com output.
+    """
+    if state.meta.get("_3_1_45_ksa_recipe"):
+        return None
     if not state.tripadi_zone or not state.terms:
         return None
     vs = state.terms[0].varnas

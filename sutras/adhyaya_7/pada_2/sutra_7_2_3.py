@@ -33,6 +33,8 @@ def _find(state: State):
     """वदव्रजहलन्तस्याचः (सिचि वृद्धिः परस्मैपदेषु, 7.2.1): the vowel of a
     hal-final aṅga before sic, in parasmaipada. 7.2.4 नेटि (not before iṭ) is the
     caller's condition: the luṅ spine asks only after 7.2.10 blocked iṭ."""
+    if state.meta.get("_3_1_45_ksa_recipe"):
+        return None            # 3.1.45 अपवाद: no वृद्धि for शल्-इगुपध-अनिट् roots
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags or t.meta.get("7_2_3_done") or not t.varnas:
             continue

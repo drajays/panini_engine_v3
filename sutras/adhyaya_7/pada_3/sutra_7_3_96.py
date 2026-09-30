@@ -24,6 +24,8 @@ from phonology    import mk, HAL
 
 
 def _find(state: State):
+    if state.meta.get("_3_1_45_ksa_recipe"):
+        return None            # 3.1.45 अपवाद: no ईट् either (अशिक्षत्, not अशिक्षीत्)
     if len(state.terms) < 3:
         return None
     # Expect [... dhātu, sic_term, tin_term]

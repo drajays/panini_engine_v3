@@ -1340,6 +1340,10 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     if pada_key == "parasmai":
         state = apply_rule("3.1.55", state)
     state = apply_rule("3.1.44", state)   # cli → sic; vacuous if 3.1.55 already fired
+    # 3.1.45 शल इगुपधादनिटः क्सः (apavāda of 3.1.44 for शल्-अंत इक्-उपधा अनिट्
+    # roots): marks the recipe so 7.2.3/7.3.96 skip वृद्धि/ईट् below (अशिक्षत्,
+    # not अशैक्षीत्). Vacuous for every other root shape.
+    state = apply_rule("3.1.45", state)
 
     # ── Stage: 3.4.77 + 3.4.78 tiṅ ādeśa ────────────────────────────────────
     tin_adesha = _select_tin_adesha("luG", pada_key, purusha, vacana)
@@ -1405,14 +1409,15 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("3.4.100", state)   # ti→t, si→s, jhi→jh
 
     _aG = any((t.meta.get("upadesha_slp1") or "").strip() in ("aG", "caG") for t in state.terms)
-    if _is_anit or pada_key == "atmane" or _aG:
-        state = P00_jha_adesha(state)     # jh→ant; ātmane after sic: 7.1.5 → at (ऐधिषत)
+    if _is_anit or pada_key == "atmane" or _aG or state.meta.get("_3_1_45_ksa_recipe"):
+        state = P00_jha_adesha(state)     # jh→ant; ātmane after sic: 7.1.5 → at (ऐधिषत); क्स is अनिट् too (अशिक्षन्)
 
     if _caN:
         state = _can_anga(state, pada_key)
     state = apply_rule("3.4.99", state)    # vas→va, mas→ma
+    if _aG or state.meta.get("_3_1_45_ksa_recipe"):
+        state = apply_rule("7.3.101", state)  # अतो दीर्घो यञि: अपुषाव, अपुषाम; क्स: अशिक्षाव, अशिक्षाम
     if _aG:
-        state = apply_rule("7.3.101", state)  # अतो दीर्घो यञि: अपुषाव, अपुषाम
         state = apply_rule("6.1.97", state)   # अतो गुणे: aṅ-a + an/am → अपुषन्, अपुषम्
 
     # ── seṭ: for tip/sip-derived cells, sic-s + iṭ-i → ī via 7.2.35 ───────────
@@ -1460,6 +1465,10 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.1.77", state)
     # vṛddhi vowel + iṭ: 6.1.78 एचोऽयवायावः (अलौ + इ → अलाव् + इ: अलावीत्)
     state = apply_rule("6.1.78", state)
+    # 6.1.97 अतो गुणे: क्स (3.1.45) is the first सिच्-family recipe whose own
+    # vikaraṇa ends in अ, so 1sg मि→अम् (3.4.101) collides with it (अशिक्षअम्
+    # → अशिक्षम्). Vacuous for सिच् itself (no vowel to collide).
+    state = apply_rule("6.1.97", state)
 
     state = apply_rule("1.4.14", state)
 
