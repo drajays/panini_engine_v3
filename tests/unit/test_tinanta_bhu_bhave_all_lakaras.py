@@ -92,7 +92,7 @@ def _cases():
                                marks=(_NGIT_XFAIL,) if k in _NGIT_PENDING else ())
 
 
-@pytest.mark.parametrize("lakara,purusha,vacana,expected", _cases())
+@pytest.mark.parametrize("lakara,purusha,vacana,expected", list(_cases()))
 def test_bhu_bhave(lakara: str, purusha: int, vacana: int, expected: str) -> None:
     state = derive("BU", lakara, "bhave", purusha, vacana)
     assert state.flat_dev() == expected, (

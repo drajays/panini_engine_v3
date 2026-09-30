@@ -18,26 +18,14 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_tip_to_ti, P06a_pratyaya_adhikara_3_1_1_to_3
+from core.canonical_pipelines import (
+    P00_tip_to_ti,
+    P00_lac_lat_attach,
+    P00_juhotyadi_slu_dvitva_abhyasakarya,
+)
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
-
-
-def _p040_remove_slu_placeholder(state: State) -> None:
-    """Drop ``P040_slu_placeholder`` after **1.1.61** (*ślu*-saṃjñā spine)."""
-    idxs = [i for i, t in enumerate(state.terms) if "P040_slu_placeholder" in t.tags]
-    if not idxs:
-        return
-    for i in reversed(idxs):
-        state.terms.pop(i)
-        state.emit_structural(
-        "__MERGE__",
-        form_before=state.flat_slp1(),
-        form_after=state.flat_slp1(),
-        why_dev="१.१.६१-अनन्तरं श्लु-प्रत्ययस्य संरचनात्मक-अपसारणम् (P040)।",
-        type_label="श्लु-अवशेष-लोपः",
-    )
 
 
 def derive_juhoti_hu_lat_tip_Slu_P040() -> State:
@@ -52,32 +40,11 @@ def derive_juhoti_hu_lat_tip_Slu_P040() -> State:
 
     s = apply_rule("1.1.68", s)
 
-    s = apply_rule("3.1.91", s)
-    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s = apply_rule("3.2.123", s)
-    laT = Term(
-        kind="pratyaya",
-        varnas=list(parse_slp1_upadesha_sequence("laT")),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-    if laT.varnas and laT.varnas[-1].slp1 == "T":
-        del laT.varnas[-1]
-    s.terms.append(laT)
+    s = P00_lac_lat_attach(s)
 
     s = P00_tip_to_ti(s)
 
-    s = apply_rule("2.4.75", s)
-
-    s = apply_rule("1.1.60", s)
-    s = apply_rule("1.1.61", s)
-    _p040_remove_slu_placeholder(s)
-
-    s = apply_rule("6.1.10", s)
-
-    s = apply_rule("7.4.59", s)
-
-    s = apply_rule("7.4.62", s)
+    s = P00_juhotyadi_slu_dvitva_abhyasakarya(s)
 
     s = apply_rule("3.4.113", s)
 

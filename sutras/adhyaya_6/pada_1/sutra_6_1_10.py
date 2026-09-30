@@ -31,12 +31,13 @@ from engine.state import State, Term
 
 
 def _site(state: State) -> int | None:
+    # Gaṇa-scoped by call-site only (pipelines/tinanta.py's gaṇa==3 branch,
+    # after 2.4.75 śluḥ has removed śap): any dhātu directly followed by the
+    # tiṅ-ādeśa, not just P040's hu.
     if state.samjna_registry.get("6.1.10_P040_slau_dvitva_done"):
         return None
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags:
-            continue
-        if "P040_juhotyadi" not in t.tags:
             continue
         if i + 1 >= len(state.terms):
             return None

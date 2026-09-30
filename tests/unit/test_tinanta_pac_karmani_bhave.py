@@ -166,7 +166,7 @@ def _cases_bhave():
             yield pytest.param(lak, pu, va, _NGIT_FIXED.get(k, expected), id=f"bhave_{lak}_{pu}_{va}", marks=marks)
 
 
-@pytest.mark.parametrize("lakara,purusha,vacana,expected", _cases_karmani())
+@pytest.mark.parametrize("lakara,purusha,vacana,expected", list(_cases_karmani()))
 def test_pac_karmani(lakara: str, purusha: int, vacana: int, expected: str) -> None:
     state = derive("pac", lakara, "karmani", purusha, vacana)
     assert state.flat_dev() == expected, (
@@ -175,7 +175,7 @@ def test_pac_karmani(lakara: str, purusha: int, vacana: int, expected: str) -> N
     )
 
 
-@pytest.mark.parametrize("lakara,purusha,vacana,expected", _cases_bhave())
+@pytest.mark.parametrize("lakara,purusha,vacana,expected", list(_cases_bhave()))
 def test_pac_bhave(lakara: str, purusha: int, vacana: int, expected: str) -> None:
     state = derive("pac", lakara, "bhave", purusha, vacana)
     assert state.flat_dev() == expected, (

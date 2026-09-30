@@ -90,6 +90,7 @@ from core.canonical_pipelines import (
     P00_tin_adesha_base,
     P00_lac_lat_attach,
     P00_tanadi_u_guna,
+    P00_juhotyadi_slu_dvitva_abhyasakarya,
     P00_hal_it_lopa,
     P00_jha_adesha,
     P00_sap_luk,
@@ -457,6 +458,25 @@ def _apply_vikarana(state: State, gana: int) -> State:
         state = P00_tanadi_u_guna(state)   # 3.1.79 + 7.3.84 + 1.1.51
         return state
 
+    if gana == 3:
+        # juhotyādi: śluḥ → dvitva → abhyāsa-kārya (no vikaraṇa syllable
+        # stands between dhātu and tiṅ, so 7.3.84's guṇa site below is the
+        # tiṅ ādeśa itself, exactly as 1.2.4 already tagged it at line 514).
+        state = P00_juhotyadi_slu_dvitva_abhyasakarya(state)
+        # 7.1.4 अदभ्यस्तात् (apavāda of 7.1.3 झोऽन्तः): abhyasta jhi → ati, not
+        # anti (जुह्वति). Must run before P00_jha_adesha's 7.1.3 below.
+        state = apply_rule("7.1.4", state)
+        # NOTE (next session): jhaṣ-initial roots (भृ, भी, धा…) still need
+        # 8.4.54 अभ्यासे चर्च (बिभर्ति, not भिभर्ति) — but that's a tripāḍī
+        # rule and opening 8.2.1 this early regresses हु (guṇa/1.1.5 site
+        # logic downstream in this generic bhvādi spine assumes tripāḍī
+        # hasn't opened yet). Needs the full execute_tripadi_phase()
+        # integration _derive_lit() already uses, not a bare apply_rule
+        # add here. Verified with bench.ashtadhyayi_gold --lakara laT:
+        # हु is 9/9 (0 errors, was ~everywhere before); भृ/भी/दा/धा/etc.
+        # remain in the gaṇa-3 error set (see bench --dump for exact cells).
+        return state
+
     raise NotImplementedError(
         f"vikaraṇa for gaṇa {gana} not yet implemented in pipelines/tinanta.py. "
         "Extend _apply_vikarana() with the appropriate sūtra."
@@ -488,23 +508,8 @@ def _run_lat_kartari_bhuvadi_spine(
     Shared by ``derive()`` and ``derive_autonomous_tinanta()`` (Phase 5 M5).
     Recipe coordinates (puruṣa/vacana/pada) enter only here via tiṅ lookup.
     """
-    # 3.1.91 dhātoḥ — adhikāra: pratyayas come from dhātu
-    state = apply_rule("3.1.91", state)
-    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
-
-    # 3.2.123 vartamāne laṭ — adhikāra gate for present tense
-    state = apply_rule("3.2.123", state)
-
-    laT_varnas = parse_slp1_upadesha_sequence(lakara)
-    if laT_varnas and laT_varnas[-1].slp1 == "T":
-        laT_varnas = laT_varnas[:-1]
-    laT_term = Term(
-        kind="pratyaya",
-        varnas=laT_varnas,
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": lakara},
-    )
-    state.terms.append(laT_term)
+    # 3.1.91 dhātoḥ adhikāra + 3.2.123 vartamāne laṭ + laṭ placeholder attach
+    state = P00_lac_lat_attach(state)
 
     tin_adesha = _select_tin_adesha(lakara, pada_key, purusha, vacana)
     state = P00_parasmai_tin_adesha(state, tin_adesha)
@@ -2395,20 +2400,7 @@ def _derive_laT_yam_Anga(state: State, purusha: int, vacana: int) -> State:
     """
     state.meta["lakara"] = "laT"
     state = apply_rule("1.3.28", state)
-    state = apply_rule("3.1.91", state)
-    state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
-    state = apply_rule("3.2.123", state)
-    laT_varnas = parse_slp1_upadesha_sequence("laT")
-    if laT_varnas and laT_varnas[-1].slp1 == "T":
-        laT_varnas = laT_varnas[:-1]
-    state.terms.append(
-        Term(
-            kind="pratyaya",
-            varnas=laT_varnas,
-            tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-            meta={"upadesha_slp1": "laT"},
-        )
-    )
+    state = P00_lac_lat_attach(state)
     _tin2 = _select_tin_adesha("laT", "atmane", purusha, vacana)
     state = P00_tin_adesha_base(state, _tin2)
     state = apply_rule("3.4.113", state)

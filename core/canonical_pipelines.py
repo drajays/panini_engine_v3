@@ -213,6 +213,40 @@ def P00_samhita_iko_yanaci_spine(s: State) -> State:
     return run_to_fixed_point(["6.1.125", "6.1.101", "6.1.77"], s)
 
 
+def _juhotyadi_remove_slu_placeholder(state: State) -> None:
+    """Drop the ``Slu`` placeholder ``Term`` **2.4.75** inserts, once **1.1.60**/
+    **1.1.61** have let it count as *pratyaya-lopa* (structural, JSON ``hu+0+ti``)."""
+    idxs = [i for i, t in enumerate(state.terms) if "P040_slu_placeholder" in t.tags]
+    if not idxs:
+        return
+    for i in reversed(idxs):
+        state.terms.pop(i)
+        state.emit_structural(
+            "__MERGE__",
+            form_before=state.flat_slp1(),
+            form_after=state.flat_slp1(),
+            why_dev="१.१.६१-अनन्तरं श्लु-प्रत्ययस्य संरचनात्मक-अपसारणम्।",
+            type_label="श्लु-अवशेष-लोपः",
+        )
+
+
+def P00_juhotyadi_slu_dvitva_abhyasakarya(s: State) -> State:
+    """Gaṇa 3 (*juhotyādi*) vikaraṇa: **2.4.75** *śluḥ* (*śap* → zero) →
+    **1.1.60**/**1.1.61** (*ślu* counts as *pratyaya-lopa*) → structural removal
+    of the *ślu* placeholder → **6.1.10** *ślau dvitva* (reduplication) →
+    *abhyāsa-kārya* (**7.4.59** *hrasvaḥ*, **7.4.60** *halādiḥ śeṣaḥ*, **7.4.62**
+    *kuhoścuḥ*)."""
+    s = apply_rule("2.4.75", s)
+    s = apply_rule("1.1.60", s)
+    s = apply_rule("1.1.61", s)
+    _juhotyadi_remove_slu_placeholder(s)
+    s = apply_rule("6.1.10", s)
+    s = apply_rule("7.4.59", s)
+    s = apply_rule("7.4.60", s)
+    s = apply_rule("7.4.62", s)
+    return s
+
+
 def P00_tanadi_u_guna(s: State) -> State:
     """Tanādi-u guṇa prefix: 3.1.79 (u-vikaraṇa) → 7.3.84 (guṇa) → 1.1.51 (r-para)."""
     s = apply_rule("3.1.79", s)

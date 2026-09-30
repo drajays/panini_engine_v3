@@ -32,17 +32,14 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _site(state: State) -> int | None:
+    # Gaṇa-scoped by call-site only (pipelines/tinanta.py's gaṇa==3 branch);
+    # any dhātu immediately followed by the tiṅ-ādeśa (no vikaraṇa yet on the
+    # tape) is a juhotyādi site — not just P040's hu.
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags:
             continue
-        if "P040_juhotyadi" not in t.tags:
-            continue
         nxt = state.terms[i + 1]
         if nxt.kind != "pratyaya":
-            continue
-        up = (nxt.meta.get("upadesha_slp1") or "").strip()
-        # After **3.4.78** + *it*-*lopa*, *upadeśa* id may remain ``tip`` while *varṇa*s are ``t``+``i``.
-        if up not in {"ti", "tip"}:
             continue
         return i
     return None
