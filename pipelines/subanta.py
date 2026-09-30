@@ -710,6 +710,21 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     return run_subanta_pipeline(s)
 
 
+def derive_all_readings(*args, **kwargs) -> list:
+    """Every legitimate surface this cell can produce, one per वा/विभाषा
+    combination actually reached (``engine.vikalpa.explore``) — same
+    arguments as ``derive()``. ``derive()`` itself still returns exactly one
+    reading, so existing callers are unaffected; this is the opt-in for a
+    caller that wants every branch (docs/FINAL_PLAN_2026-09.md item 6,
+    "optional forms are still single-output").
+
+    Returns a list of ``engine.vikalpa.Branch``; exactly one element when no
+    वा rule was reached, matching ``derive()``'s own shape in that case.
+    """
+    from engine.vikalpa import explore
+    return explore(lambda: derive(*args, **kwargs))
+
+
 def _pada_merge(state: State) -> None:
     """Structural merge. Delegates to engine.phases.pada_merger.pada_merge."""
     from engine.phases.pada_merger import pada_merge

@@ -4215,6 +4215,23 @@ def derive(
     )
 
 
+def derive_all_readings(*args, **kwargs) -> list:
+    """Every legitimate surface this cell can produce, one per वा/विभाषा
+    combination actually reached (``engine.vikalpa.explore``) — same
+    arguments as ``derive()``. ``derive()`` itself still returns exactly one
+    reading (the sūtras' own ``vibhasha_default``), so existing callers are
+    unaffected; this is the opt-in for a caller that wants every branch, not
+    just the default one (docs/FINAL_PLAN_2026-09.md item 6, "optional forms
+    are still single-output").
+
+    Returns a list of ``engine.vikalpa.Branch`` (``.surface_dev``,
+    ``.surface_slp1``, ``.choices``, ``.state``); exactly one element when no
+    वा rule was reached, matching ``derive()``'s own shape in that case.
+    """
+    from engine.vikalpa import explore
+    return explore(lambda: derive(*args, **kwargs))
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # CONVENIENCE WRAPPERS — imported from tests/fixtures for backward compat.
 # Phase 5: new tests should import from tests.fixtures.tinanta_paradigms.
