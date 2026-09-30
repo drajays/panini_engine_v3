@@ -29,7 +29,10 @@ def _target(state: State):
     dhatu, affix = state.terms[-2], state.terms[-1]
     if "dhatu" not in dhatu.tags:
         return None
-    if "".join(v.slp1 for v in dhatu.varnas) != "brU":
+    # Identify by upadeśa, not current surface: 6.4.71's aṭ āgama (लङ्/लुङ्)
+    # prepends to the dhātu term itself, so the post-guṇa/post-aṭ surface is
+    # "abrU"/"brU"-with-guṇa, never a bare "brU" — but the upadeśa is stable.
+    if (dhatu.meta.get("upadesha_slp1") or "").rstrip("Y") != "brU":
         return None
     if "pratyaya" not in affix.tags or not affix.varnas:
         return None

@@ -1191,6 +1191,10 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("1.1.5", state)
     # 7.3.101: 'a' of śap → 'ā' before yañ-initial tiṅ ādeśa (v of 'v', m of 'm')
     state = apply_rule("7.3.101", state)
+    # 7.3.93 ब्रुव ईट् must precede 7.3.84's guṇa (ब्रू-specific ī āgama on
+    # tip/sip/mip; see _derive_laT_adadi_kartari for the same ordering).
+    # Vacuous for every other root — cond() requires dhātu surface == "brU".
+    state = apply_rule("7.3.93", state)
     # 7.3.84: guṇa (IK-vowel of dhātu; BU(Ū) → Bo)
     state = apply_rule("7.3.84", state)
     state = apply_rule("6.4.110", state)   # अकुरुताम्, अकुर्वन्
