@@ -21,9 +21,16 @@ def test_unrelated_surface_forms_do_not_spuriously_match() -> None:
     """Regression: trying a note's own surface form as its stem is unsound —
     subanta.derive() doesn't validate its input is a real prātipadika, and a
     bare-visarga prathamā-ekavacana default made every surface form "match"
-    itself. None of these are सर्वादि/त्यादि, so none should match."""
-    for key in ("agnI", "kumArI", "gOrI", "yaSAMsi", "jizRu", "muYcati"):
+    itself. None of these is a declined form of a listed stem, so none matches."""
+    for key in ("kumArI", "jizRu", "muYcati"):
         assert general_subanta_match(key) is None, key
+
+
+def test_common_stems_match_by_their_declined_forms() -> None:
+    assert general_subanta_match("agnI")[0] == "subanta.derive('agni', 1, 2, 'pulliṅga')"
+    assert general_subanta_match("vAyo")[0] == "subanta.derive('vAyu', 8, 1, 'pulliṅga')"
+    assert general_subanta_match("gOrI")[0] == "subanta.derive('gOrI', 1, 1, 'strīliṅga')"
+    assert general_subanta_match("yaSAMsi")[0] == "subanta.derive('yaSas', 1, 3, 'napuṃsaka')"
 
 
 def test_audit_reports_sarva_notes_as_matched(tmp_path) -> None:

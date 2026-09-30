@@ -68,6 +68,9 @@ def applied(module: str, fn: str) -> set[str]:
 # pipelines.subanta.derive() already special-cases for sambodhana exclusion,
 # plus सर्व (handled separately there, but an ordinary derive() call).
 _PRONOUN_STEMS = ("sarva", "tad", "yad", "etad", "idam", "adas")
+# Ordinary paradigm stems the notes decline (अग्नी, वायो, गौरी, यशांसि, माले): the same
+# "key must equal a declined form, never the stem itself" discipline applies.
+_COMMON_STEMS = ("agni", "vAyu", "gOrI", "yaSas", "mAlA")
 _LINGAS = ("pulliṅga", "strīliṅga", "napuṃsaka")
 
 
@@ -90,20 +93,21 @@ def general_subanta_match(key: str) -> tuple[str, set[str]] | None:
     """
     from pipelines.subanta import derive as subanta_derive
 
-    targets = {key, key.rstrip("H") + "H", key.rstrip("H")}
-    for stem in _PRONOUN_STEMS:
-        for linga in _LINGAS:
-            for vibhakti in range(1, 9):
-                if vibhakti == 8 and stem in {"tad", "yad", "etad", "idam", "adas"}:
-                    continue   # subanta.derive() raises: tyadādi take no sambodhana
-                for vacana in (1, 2, 3):
-                    try:
-                        st = subanta_derive(stem, vibhakti, vacana, linga)
-                    except Exception:
-                        continue
-                    if st.flat_slp1() in targets:
-                        label = f"subanta.derive({stem!r}, {vibhakti}, {vacana}, {linga!r})"
-                        return label, _applied_from_state(st)
+    for targets in ({key}, {key.rstrip("H") + "H", key.rstrip("H")}):   # exact surface first
+        for stem in _PRONOUN_STEMS + _COMMON_STEMS:
+            lingas = ("strīliṅga", "pulliṅga", "napuṃsaka") if stem[-1] in "IA" else _LINGAS   # ī/ā stems: strī first
+            for linga in lingas:
+                for vibhakti in range(1, 9):
+                    if vibhakti == 8 and stem in {"tad", "yad", "etad", "idam", "adas"}:
+                        continue   # subanta.derive() raises: tyadādi take no sambodhana
+                    for vacana in (1, 2, 3):
+                        try:
+                            st = subanta_derive(stem, vibhakti, vacana, linga)
+                        except Exception:
+                            continue
+                        if st.flat_slp1() in targets:
+                            label = f"subanta.derive({stem!r}, {vibhakti}, {vacana}, {linga!r})"
+                            return label, _applied_from_state(st)
     return None
 
 
