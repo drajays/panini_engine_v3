@@ -36,7 +36,7 @@ def _is_asmad_anga(term: Term) -> bool:
     """Asmad aṅga: stem-change done and/or ``asmad_stem`` from ``asmad_subanta``."""
     if "anga" not in term.tags:
         return False
-    return bool(term.tags & _ASMAD_DONE_TAGS) or "asmad_stem" in term.tags
+    return bool(term.tags & _ASMAD_DONE_TAGS) or "asmad_stem" in term.tags or "yuzmad_stem" in term.tags
 
 
 def _find_p017_pararupa(state: State) -> bool:

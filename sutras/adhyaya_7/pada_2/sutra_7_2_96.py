@@ -21,6 +21,7 @@ from __future__ import annotations
 
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
+from engine.pronoun_stem import PRONOUN_PREFIX, prefix_len, stem_key
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
@@ -29,16 +30,13 @@ def _find_target_ma(state: State):
     if not state.meta.get("7_2_96_ma_arm"):
         return None
     for i, t in enumerate(state.terms):
-        if (t.meta.get("upadesha_slp1") or "").strip() != "asmad":
+        if stem_key(t) not in PRONOUN_PREFIX:
             continue
         if "anga" not in t.tags:
             continue
         if "7_2_96_done" in t.tags:
             continue
-        vs = t.varnas
-        if len(vs) < 3:
-            continue
-        if vs[0].slp1 != "a" or vs[1].slp1 != "s" or vs[2].slp1 != "m":
+        if not prefix_len(t):
             continue
         return i
     return None
@@ -49,16 +47,13 @@ def _find_target_mama(state: State):
     if not state.meta.get("7_2_96_mama_arm"):
         return None
     for i, t in enumerate(state.terms):
-        if (t.meta.get("upadesha_slp1") or "").strip() != "asmad":
+        if stem_key(t) not in PRONOUN_PREFIX:
             continue
         if "anga" not in t.tags:
             continue
         if "7_2_96_done" in t.tags:
             continue
-        vs = t.varnas
-        if len(vs) < 3:
-            continue
-        if vs[0].slp1 != "a" or vs[1].slp1 != "s" or vs[2].slp1 != "m":
+        if not prefix_len(t):
             continue
         return i
     return None
@@ -73,8 +68,8 @@ def act(state: State) -> State:
     i_mama = _find_target_mama(state)
     if i_mama is not None:
         stem = state.terms[i_mama]
-        replacement = parse_slp1_upadesha_sequence("mama")
-        stem.varnas = replacement + list(stem.varnas[3:])
+        replacement = parse_slp1_upadesha_sequence({"asmad": "mama", "yuzmad": "tava"}[stem_key(stem)])
+        stem.varnas = replacement + list(stem.varnas[prefix_len(stem):])
         # result: [m, a, m, a, a, d]
         stem.tags.add("7_2_96_done")
         state.samjna_registry["7_2_96_asm_to_mama"] = True
@@ -83,8 +78,8 @@ def act(state: State) -> State:
     i_ma = _find_target_ma(state)
     if i_ma is not None:
         stem = state.terms[i_ma]
-        replacement = parse_slp1_upadesha_sequence("ma")
-        stem.varnas = replacement + list(stem.varnas[3:])
+        replacement = parse_slp1_upadesha_sequence({"asmad": "ma", "yuzmad": "tva"}[stem_key(stem)])
+        stem.varnas = replacement + list(stem.varnas[prefix_len(stem):])
         # result: [m, a, a, d]
         stem.tags.add("7_2_96_done")
         state.samjna_registry["7_2_96_asm_to_ma"] = True

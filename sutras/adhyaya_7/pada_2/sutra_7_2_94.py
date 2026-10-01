@@ -22,6 +22,7 @@ from __future__ import annotations
 
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
+from engine.pronoun_stem import PRONOUN_PREFIX, prefix_len, stem_key
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
@@ -36,16 +37,13 @@ def _find_target(state: State):
     Returns stem_idx or None.
     """
     for i, t in enumerate(state.terms):
-        if (t.meta.get("upadesha_slp1") or "").strip() != "asmad":
+        if stem_key(t) not in PRONOUN_PREFIX:
             continue
         if "anga" not in t.tags:
             continue
         if "7_2_94_done" in t.tags:
             continue
-        vs = t.varnas
-        if len(vs) < 3:
-            continue
-        if vs[0].slp1 != "a" or vs[1].slp1 != "s" or vs[2].slp1 != "m":
+        if not prefix_len(t):
             continue
         # Check there is a sup pratyaya following
         has_sup = any(
@@ -68,13 +66,13 @@ def act(state: State) -> State:
         return state
     stem = state.terms[i]
     # Parse "aha" in SLP1: a, h (consonant with inherent a), a
-    # parse_slp1_upadesha_sequence("aha") → [mk('a'), mk_inherent_a(), mk('a')]
+    # parse_slp1_upadesha_sequence({"asmad": "aha", "yuzmad": "tva"}[stem_key(stem)]) → [mk('a'), mk_inherent_a(), mk('a')]
     # i.e. 3 varnas: a(standalone) + h(consonant) + a(inherent after h)
     # But in SLP1 "aha": a=vowel, h=consonant, a=inherent-a after h
-    replacement = parse_slp1_upadesha_sequence("aha")
+    replacement = parse_slp1_upadesha_sequence({"asmad": "aha", "yuzmad": "tva"}[stem_key(stem)])
     # replacement should be [Varna(a), Varna(h), Varna(a-inherent)]
     # Replace first 3 varnas with the replacement
-    stem.varnas = replacement + list(stem.varnas[3:])
+    stem.varnas = replacement + list(stem.varnas[prefix_len(stem):])
     stem.tags.add("7_2_94_done")
     state.samjna_registry["7_2_94_asm_to_ah"] = True
     return state

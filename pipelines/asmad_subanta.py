@@ -42,12 +42,12 @@ from pipelines.subanta import build_initial_state, _pada_merge
 from core.canonical_pipelines import P01_subanta_bootstrap as run_subanta_preflight_through_1_4_7
 
 
-def _build_base(vibhakti: int, vacana: int) -> State:
+def _build_base(vibhakti: int, vacana: int, stem_slp1: str = "asmad") -> State:
     """Build initial state and run standard preflight + sup attach + it-lopa."""
-    s = build_initial_state("asmad", vibhakti, vacana, linga="pulliṅga")
+    s = build_initial_state(stem_slp1, vibhakti, vacana, linga="pulliṅga")
     stem = s.terms[0]
     stem.tags.add("sarvanama")
-    stem.tags.add("asmad_stem")
+    stem.tags.add(f"{stem_slp1}_stem")
     s = run_subanta_preflight_through_1_4_7(s)
     s = apply_rule("4.1.2", s)
     for sid in ("3.1.1", "3.1.2", "1.4.102", "1.1.43", "1.4.13", "1.4.14"):
@@ -355,6 +355,12 @@ _CELL_MAP = {
 }
 
 
+def derive_yuzmad(vibhakti: int, vacana: int) -> State:
+    """युष्मद् — same 7.1.27–33 / 7.2.86–97 machinery as अस्मद्, with the yuzmad ādeśas
+    (tva/tava/tubhya/yUya/yuva …)."""
+    return _derive("yuzmad", vibhakti, vacana)
+
+
 def derive_asmad(vibhakti: int, vacana: int) -> State:
     """
     Derive अस्मद् subanta form.
@@ -377,17 +383,21 @@ def derive_asmad(vibhakti: int, vacana: int) -> State:
         6-1 मम        6-2 आवयोः    6-3 अस्माकम्
         7-1 मयि       7-2 आवयोः    7-3 अस्मासु
     """
+    return _derive("asmad", vibhakti, vacana)
+
+
+def _derive(stem_slp1: str, vibhakti: int, vacana: int) -> State:
     cell = (vibhakti, vacana)
     if cell not in _CELL_MAP:
         raise ValueError(
             f"अस्मद् हेतु vibhakti={vibhakti}, vacana={vacana} अमान्य। "
             f"1≤vibhakti≤7, 1≤vacana≤3।"
         )
-    s = _build_base(vibhakti, vacana)
+    s = _build_base(vibhakti, vacana, stem_slp1)
     return _CELL_MAP[cell](s)
 
 
-__all__ = ["derive_asmad"]
+__all__ = ["derive_asmad", "derive_yuzmad"]
 
 
 if __name__ == "__main__":

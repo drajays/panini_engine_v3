@@ -22,6 +22,7 @@ from __future__ import annotations
 
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
+from engine.pronoun_stem import PRONOUN_PREFIX, stem_key
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
@@ -29,7 +30,7 @@ def _find_target(state: State):
     if not state.meta.get("7_2_86_arm"):
         return None
     for i, t in enumerate(state.terms):
-        if (t.meta.get("upadesha_slp1") or "").strip() != "asmad":
+        if stem_key(t) not in PRONOUN_PREFIX:
             continue
         if "anga" not in t.tags:
             continue

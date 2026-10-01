@@ -58,7 +58,7 @@ def _find_target(state: State):
         # Mode B: arm-driven direct deletion
         if state.meta.get("7_2_90_direct_arm"):
             up = (t.meta.get("upadesha_slp1") or "").strip()
-            if up == "asmad" and t.varnas[-1].slp1 == "d":
+            if up in ("asmad", "yuzmad") and t.varnas[-1].slp1 == "d":
                 return i
 
     return None
