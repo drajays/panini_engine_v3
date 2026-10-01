@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}पाठ-अर्थः — पाणिनि-यन्त्रम्{% endblock %}
+{% block content %}
+<h2>पाठ-अर्थः — any Sanskrit text → kośa meanings with reference</h2>
+<p class="muted">Paste Devanāgarī text or load a .txt file (read in your browser, not stored). Stems are
+<b>guessed</b> from word endings and looked up in the kośas — a hypothesis, not a prakriyā. Sandhi is not split.</p>
+<textarea id="t" rows="6" style="width:100%;font-family:var(--dev);font-size:18px"></textarea>
+<p><input type="file" id="f" accept=".txt"> <button id="go">अर्थान् दर्शय</button></p>
+<div id="out"></div>
+<script>
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+f.onchange = async () => { t.value = await f.files[0].text(); };
+go.onclick = async () => {
+  const r = await (await fetch("/api/text/meanings", {method: "POST", body: JSON.stringify({text: t.value})})).json();
+  let h = `<table class="rd-table"><tr><th>पदम्</th><th>प्रातिपदिकम्?</th><th>कोशः · पर्यायाः · सन्दर्भः</th></tr>`;
+  r.words.forEach(w => {
+    const e = w.entries.map(k => `<div><b>${esc(k.headword)}</b>${k.linga ? " (" + esc(k.linga) + ")" : ""}: ${esc(k.synonyms.slice(0, 8).join(", "))}
+      <span class="muted">[${esc(k.kosha)} ${esc(k.ref)}]</span><br><small>${esc(k.verse).replace(/\n/g, " / ")}</small></div>`).join("");
+    h += `<tr><td class="dev">${esc(w.word)}${w.part_of ? `<br><small class="muted">↳ ${esc(w.part_of)} (guessed split)</small>` : ""}</td><td class="dev">${esc(w.stem || "—")}</td><td class="dev">${e || '<span class="muted">not in loaded kośas</span>'}</td></tr>`;
+  });
+  out.innerHTML = h + "</table><p class=\"muted\">Source: " + esc(r.source) + "</p>";
+};
+</script>
+{% endblock %}

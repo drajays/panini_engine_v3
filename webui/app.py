@@ -1387,6 +1387,18 @@ def reader_page():
     )
 
 
+@app.route("/text")
+def text_page():
+    return render_template("text.html", nav_active="text")
+
+
+@app.route("/api/text/meanings", methods=["POST"])
+def api_text_meanings():
+    from tools import kosha
+    text = (request.get_json(force=True) or {}).get("text", "")[:20000]
+    return jsonify({"words": kosha.analyze(text), "source": "kosha (sanskrit-kosha/kosha, GPL v3)"})
+
+
 @app.route("/api/reader/catalogue")
 def api_reader_catalogue():
     from tools import samsaadhanii_reader as rd
