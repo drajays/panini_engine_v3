@@ -40,7 +40,7 @@ def test_tinanta_accepts_slp1_and_devanagari():
 
 def test_krdanta_both_pratyayas():
     assert api.krdanta(api.KrdantaReq(dhatu_id="BU", krt="tfc"))["surface"]["dev"] == "भविता"
-    assert api.krdanta(api.KrdantaReq(dhatu_id="BU", krt="Nvul"))["surface"]["dev"] == "भावक"
+    assert api.krdanta(api.KrdantaReq(dhatu_id="BU", krt="Rvul"))["surface"]["dev"] == "भावक"
 
 
 def test_sutra_lookup_and_404():

@@ -30,7 +30,7 @@ def _nit_follows(state: State, di: int) -> bool:
         itm = pr.meta.get("it_markers") or set()
         if "N" in itm or "R" in itm or "nit" in pr.tags:
             return True
-        if up in {"Ramul", "Namul", "Nvul"}:
+        if up in {"Ramul", "Namul", "Rvul"}:
             return True
     return False
 

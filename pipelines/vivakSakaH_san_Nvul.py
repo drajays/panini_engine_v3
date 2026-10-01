@@ -97,7 +97,7 @@ def derive_vivakSakaH_san_Nvul_P030() -> State:
     s.meta["krt_artha"] = "kartari"
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
     s = apply_rule("3.1.91", s)
-    s.meta["krt_upadesha_slp1"] = "Nvul"
+    s.meta["krt_upadesha_slp1"] = "Rvul"
     s = P00_nvul_krt_prefix(s)
     # JSON **P030** step 16: *acaḥ ñṇiti* does not further strengthen this stem
     # (cf. *sthānivat* / teaching note); **7.2.116** would wrongly vṛddhi the

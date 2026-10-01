@@ -442,7 +442,7 @@ def get_dhatu(dhatu_id: str) -> dict[str, Any]:
 
 class KrdantaReq(BaseModel):
     dhatu_id: str = Field("BU", description="upadeśa SLP1, pāṭha id (01.0001), or row id")
-    krt: Literal["tfc", "Nvul"] = "tfc"
+    krt: Literal["tfc", "Rvul", "Nvul"] = Field("tfc", description="तृच् or ण्वुल् (Rvul; Nvul kept as an alias)")
 
 
 @app.post("/v1/krdanta", tags=["krdanta"])
@@ -461,7 +461,7 @@ def krdanta(req: KrdantaReq) -> dict[str, Any]:
     else:
         from pipelines.krdanta import derive_krt
         label = row.get("raw_dhatu_after_it_lopa_slp1") or upadesha.rstrip("~").rstrip("\\")
-        state = _run(derive_krt, upadesha, krt_upadesha_slp1="Nvul",
+        state = _run(derive_krt, upadesha, krt_upadesha_slp1="Rvul",
                      merge_pratipadika_label=label)
     return _derivation(state, **req.model_dump())
 

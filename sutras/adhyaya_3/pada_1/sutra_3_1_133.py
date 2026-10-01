@@ -69,7 +69,7 @@ def _matches(state: State) -> bool:
     upa = state.meta.get("krt_upadesha_slp1")
     if upa not in _load_krit():
         return False
-    if upa in ("Nvul", "lyuw", "tfc"):
+    if upa in ("Rvul", "lyuw", "tfc"):
         return True
     return False
 
@@ -82,15 +82,15 @@ def act(state: State) -> State:
     if not _matches(state):
         return state
     upa = state.meta.get("krt_upadesha_slp1")
-    if upa == "Nvul":
-        # Nvul (upadeśa): ण् + व् + उ + ल् — SLP1 ``R`` = ण् (see ``HAL_DEV``).
+    if upa == "Rvul":
+        # Rvul (upadeśa): ण् + व् + उ + ल् — SLP1 ``R`` = ण् (see ``HAL_DEV``).
         varnas = [mk("R"), mk("v"), mk("u"), mk("l")]
         tags = {"pratyaya", "krt", "upadesha", "has_initial_n_it"}
         pr = Term(
             kind="pratyaya",
             varnas=varnas,
             tags=tags,
-            meta={"upadesha_slp1": upa, "it_markers": {"N", "l"}},
+            meta={"upadesha_slp1": upa, "it_markers": {"R", "l"}},
         )
         state.terms.append(pr)
         return state

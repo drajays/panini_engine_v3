@@ -34,7 +34,7 @@ def _matches_nvul(state: State) -> bool:
     pr = state.terms[-1]
     if "krt" not in pr.tags:
         return False
-    if pr.meta.get("upadesha_slp1") != "Nvul":
+    if pr.meta.get("upadesha_slp1") != "Rvul":
         return False
     itm = pr.meta.get("it_markers", set())
     if not isinstance(itm, set) or not ("N" in itm or "R" in itm):
@@ -89,7 +89,7 @@ def act(state: State) -> State:
         pr = state.terms[-1]
         adesha_substitute_varnas(pr, "ak", state, sutra_id="7.1.1")
         pr.meta["vu_to_ak_done"] = True
-        pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "Nvul")
+        pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "Rvul")
         return state
     if _matches_lyuw(state):
         pr = state.terms[-1]

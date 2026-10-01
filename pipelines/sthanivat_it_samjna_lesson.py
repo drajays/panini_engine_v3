@@ -95,7 +95,7 @@ def derive_bhU_Nvul_ak_vrddhi() -> State:
     s.meta["krt_artha"] = "kartari"
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
     s = apply_rule("3.1.91", s)
-    s.meta["krt_upadesha_slp1"] = "Nvul"
+    s.meta["krt_upadesha_slp1"] = "Rvul"
     s = _with_sthanivat(s)
     s = P00_nvul_133_7_1_1(s)
     s = apply_rule("7.2.115", s)

@@ -35,7 +35,7 @@ def derive_AdIDhyaka_pratipadika() -> State:
     """``A`` + ``dIDhI`` + *ṇvul* → ``AdIDhyaka`` (``6.1.77`` *ī*+*a* → *y*)."""
     return derive_krt(
         "dIDIN",
-        krt_upadesha_slp1="Nvul",
+        krt_upadesha_slp1="Rvul",
         merge_pratipadika_label="AdIDhyaka",
         prefix_terms=[_A_upasarga()],
     )

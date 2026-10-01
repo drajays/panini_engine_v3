@@ -1246,7 +1246,7 @@ def api_krdanta():
             label = row.get("raw_dhatu_after_it_lopa_slp1") or upadesha.rstrip("~").rstrip("\\")
             nvul_state = derive_krt(
                 upadesha,
-                krt_upadesha_slp1="Nvul",
+                krt_upadesha_slp1="Rvul",
                 merge_pratipadika_label=label,
             )
             surface  = nvul_state.flat_dev() if hasattr(nvul_state, "flat_dev") else ""

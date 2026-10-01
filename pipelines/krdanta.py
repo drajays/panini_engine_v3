@@ -188,7 +188,7 @@ def build_dhatu_state_from_varnas(dhatu_varnas: List[Varna], *, upadesha_slp1: s
 def derive_krt(
     dhatu_upadesha_slp1: str,
     *,
-    krt_upadesha_slp1: str = "Nvul",
+    krt_upadesha_slp1: str = "Rvul",
     dhatu_varnas: List[Varna] | None = None,
     merge_pratipadika_label: str = "pAcaka",
     prefix_terms: List[Term] | None = None,
@@ -250,7 +250,7 @@ def derive_krt(
     s = apply_rule("3.1.91", s)
 
     s.meta["krt_upadesha_slp1"] = krt_upadesha_slp1
-    if krt_upadesha_slp1 == "Nvul":
+    if krt_upadesha_slp1 == "Rvul":
         s = P00_nvul_krt_prefix(s)
         s = apply_rule("7.2.116", s)
         s = P00_krt_guna_sandhi_tail(s)
@@ -348,7 +348,7 @@ def derive_pAcaka_pratipadika() -> State:
     Derive the prātipadika 'pAcaka' from dhātu डुपचँष् + ण्वुल्.
     Returns State whose last term is the derived prātipadika (anga).
     """
-    return derive_krt("qupaca~z", krt_upadesha_slp1="Nvul", merge_pratipadika_label="pAcaka")
+    return derive_krt("qupaca~z", krt_upadesha_slp1="Rvul", merge_pratipadika_label="pAcaka")
 
 
 def derive_pAcakaH() -> State:
@@ -375,7 +375,7 @@ def derive_pAcakaH() -> State:
 
 def derive_nAyaka_pratipadika() -> State:
     """Derive prātipadika ``nAyaka`` from dhātu णीञ् (``RIY``) + ण्वुल्."""
-    return derive_krt("RIY", krt_upadesha_slp1="Nvul", merge_pratipadika_label="nAyaka")
+    return derive_krt("RIY", krt_upadesha_slp1="Rvul", merge_pratipadika_label="nAyaka")
 
 
 def derive_nAyakaH() -> State:

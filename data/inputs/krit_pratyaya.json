@@ -447,9 +447,9 @@
     "special_interactions": "Works with 7.1.94 (anaṅ), 6.4.11 (upadhā-dīrgha), 6.1.66 (apṛkta s-lopa), 8.2.7 (n-lopa).",
     "effects": "cit → antodata accent (6.1.163). guṇa by 7.3.84. iṭ: veṭ (set/anit by dhātu). Produces agent nouns with ṛ-declension."
   },
-  "Nvul": {
+  "Rvul": {
     "upadesha_devanagari": "ण्वुल्",
-    "upadesha_slp1": "Nvul",
+    "upadesha_slp1": "Rvul",
     "vidhana_sutra": "3.1.133",
     "vidhana_sutra_dev": "ण्वुल्तृचौ",
     "vidhana_sutra_range": "3.1.133",
@@ -458,7 +458,7 @@
     ],
     "artha_dev": "कर्तरि",
     "it_varna_slp1": [
-      "N",
+      "R",
       "l"
     ],
     "prakriya_base_slp1": "vu",
@@ -482,7 +482,7 @@
     "accent_rule": "udātta on aṅga's last vowel",
     "linga_default": "masculine (a-anta: -aka)",
     "stem_type": "a-anta after vu→aka substitution",
-    "adesha_process": "Nvul → [N=it by 1.3.7; l=it by 1.3.3; lopa by 1.3.9] → vu → [7.1.1 yuvor anākau] → aka",
+    "adesha_process": "Rvul → [R=it by 1.3.7; l=it by 1.3.3; lopa by 1.3.9] → vu → [7.1.1 yuvor anākau] → aka",
     "nishedhaka_sutras": [
       "7.2.10 for anit ekāc"
     ],
@@ -1602,7 +1602,7 @@
       "tfc"
     ],
     "vu": [
-      "Nvul"
+      "Rvul"
     ],
     "ti": [
       "ktic"
@@ -1633,7 +1633,7 @@
   "_lookup_by_artha": {
     "kartari": [
       "tfc",
-      "Nvul",
+      "Rvul",
       "Rini",
       "Satf~",
       "SAnac",
@@ -1711,7 +1711,7 @@
     ],
     "vet_depends": [
       "tfc",
-      "Nvul",
+      "Rvul",
       "kta",
       "ktavatu~",
       "tumun",
@@ -1737,7 +1737,7 @@
       "kvip"
     ],
     "Rit": [
-      "Nvul",
+      "Rvul",
       "Ryat",
       "Rini",
       "Ra",
@@ -1766,7 +1766,7 @@
       "aDikaraRa_ac"
     ],
     "lit": [
-      "Nvul",
+      "Rvul",
       "lyuw"
     ],
     "nit": [
@@ -1795,7 +1795,7 @@
     "ardhadhatuka": [
       "GaY",
       "tfc",
-      "Nvul",
+      "Rvul",
       "tavyat",
       "tavya",
       "anIyar",
@@ -1834,7 +1834,7 @@
       "condition": "dhātu is ekāc (single vowel) AND anudātta (anit flag in JSON)",
       "blocked_for": [
         "tfc",
-        "Nvul",
+        "Rvul",
         "kta",
         "ktavatu~",
         "ktvA",
@@ -1886,7 +1886,7 @@
     ],
     "no": [
       "tfc",
-      "Nvul",
+      "Rvul",
       "GaY",
       "tavyat",
       "yat",
@@ -1904,7 +1904,7 @@
     ],
     "ubhaya": [
       "tfc",
-      "Nvul",
+      "Rvul",
       "GaY",
       "kta",
       "ktvA",
@@ -1914,7 +1914,7 @@
   "_stem_declension_class": {
     "a_anta_masc": [
       "GaY",
-      "Nvul",
+      "Rvul",
       "Ra",
       "ap",
       "Ramu (am-type)"

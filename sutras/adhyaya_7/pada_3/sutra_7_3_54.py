@@ -29,7 +29,7 @@ def _nit_follows(state: State, di: int) -> bool:
         if "nit" in pr.tags:
             return True
         up = (pr.meta.get("upadesha_slp1") or "").strip()
-        if up in {"Ramul", "Namul", "Nvul", "Rvul"}:
+        if up in {"Ramul", "Namul", "Rvul"}:
             return True
     return False
 
