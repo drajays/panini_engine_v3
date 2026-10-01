@@ -1414,6 +1414,15 @@ def api_reader_verses():
         return jsonify({"error": f"not found: {e}"}), 404
 
 
+@app.route("/api/reader/coverage")
+def api_reader_coverage():
+    from tools import samsaadhanii_reader as rd
+    try:
+        return jsonify(rd.coverage(request.args["unit"], request.args["chapter"]))
+    except KeyError as e:
+        return jsonify({"error": f"not found: {e}"}), 404
+
+
 @app.route("/api/reader/verse")
 def api_reader_verse():
     from tools import samsaadhanii_reader as rd

@@ -364,6 +364,22 @@ def verse(uid: str, chapter: str, sloka: str) -> dict:
             "sentences": out_sents, "counts": counts, "attribution": ATTRIBUTION}
 
 
+def coverage(uid: str, chapter: str) -> dict:
+    """Whole-chapter tally + gap list (differs/error/unresolved), for the learner's gap view."""
+    counts = {"derived": 0, "differs": 0, "error": 0, "unresolved": 0, "not_attempted": 0}
+    gaps = []
+    for v in verses(uid, chapter):
+        r = verse(uid, chapter, v["sloka"])
+        for s in r["sentences"]:
+            for w in s["words"]:
+                st = w["engine"]["status"]
+                counts[st] += 1
+                if st in ("differs", "error", "unresolved"):
+                    gaps.append({"sloka": v["sloka"], "word": w["word_dev"], "status": st,
+                                 "produced": w["engine"].get("produced_dev"), "note": w["engine"].get("note")})
+    return {"counts": counts, "gaps": gaps}
+
+
 def _verse_spans(padas: list[str], sentences: list[dict]) -> list[list[dict]]:
     """Split each pāda into clickable sandhied-word spans (keys = ``sent|anvaya_no``)."""
     by: dict[str, list[str]] = {}

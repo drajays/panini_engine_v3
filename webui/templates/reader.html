@@ -98,6 +98,9 @@
     </div>
     <div class="rd-text" id="rd-text"></div>
     <div class="rd-stats" id="rd-stats"></div>
+    <div id="rd-gaps" style="font-size:13px;margin:6px 0"></div>
+    <p><button class="secondary" id="rd-cov-btn">अध्याय-कवरेज (whole-chapter gaps)</button></p>
+    <div id="rd-cov" style="font-size:13px"></div>
     <div class="rd-filter" id="rd-filter">
       <button class="secondary active" data-f="all">सर्वाणि</button>
       <button class="secondary" data-f="tinanta">तिङन्तम्</button>
@@ -257,7 +260,31 @@ function render() {
     `<span class="st-derived">✓ ${c.derived}/${tried} यन्त्र-सिद्धानि</span>` +
     `<span class="st-differs">✗ ${c.differs}</span><span class="st-error">! ${c.error}</span>` +
     `<span class="st-unresolved">? ${c.unresolved}</span><span class="st-not_attempted">· ${c.not_attempted}</span>`;
+  renderGaps(c);
   renderTable(); renderAnvaya(); renderGraph(); renderKosha();
+}
+
+$("rd-cov-btn").onclick = async () => {
+  const q = new URLSearchParams({unit: cur.unit, chapter: cur.chapter});
+  const r = await getJSON("/api/reader/coverage?" + q);
+  const c = r.counts, tried = c.derived + c.differs + c.error;
+  $("rd-cov").innerHTML = `<b>${c.derived}/${tried}</b> derived · ${c.differs} differ · ${c.error} error · ${c.unresolved} unresolved<ul style="margin:2px 0 0 18px">` +
+    r.gaps.map(g => `<li>${esc(g.sloka)}: <span class="dev">${esc(g.word)}</span> — ${esc(g.status)}${g.produced ? " → " + esc(g.produced) : ""}${g.note ? " (" + esc(g.note) + ")" : ""}</li>`).join("") + "</ul>";
+};
+
+function renderGaps(c) {
+  const all = data.sentences.flatMap((s, si) => s.words.map(w => [wkey(si, w), w])).filter(([, w]) => w.kind !== "none");
+  const gaps = all.filter(([, w]) => ["differs", "error", "unresolved"].includes(w.engine.status));
+  const ok = all.filter(([, w]) => w.engine.status === "derived");
+  const chip = ([k, w]) => `<a href="#" data-k="${esc(k)}" class="dev">${esc(w.word_dev)}</a>`;
+  const why = ([k, w]) => `<li>${chip([k, w])} — ${esc(ST[w.engine.status][1])}` +
+    (w.engine.produced_dev ? `: यन्त्रम् <b class="dev">${esc(w.engine.produced_dev)}</b> ≠ पाठः <b class="dev">${esc(w.word_dev)}</b>` : "") +
+    (w.engine.note ? ` <span class="muted">(${esc(w.engine.note)})</span>` : "") + "</li>";
+  $("rd-gaps").innerHTML =
+    `<div><b>यन्त्रेण सिद्धम् (सूत्रैः, no shortcut):</b> ${ok.map(chip).join(" · ") || "—"}</div>` +
+    (gaps.length ? `<div><b>अन्तराणि (engine gaps — not yet reproduced):</b><ul style="margin:2px 0 0 18px">${gaps.map(why).join("")}</ul></div>`
+                 : `<div class="st-derived">no gaps in this verse</div>`);
+  $("rd-gaps").querySelectorAll("a[data-k]").forEach(a => a.onclick = e => { e.preventDefault(); selectWord(a.dataset.k); });
 }
 
 function passFilter(w) {
