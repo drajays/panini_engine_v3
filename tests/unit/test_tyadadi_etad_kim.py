@@ -20,3 +20,10 @@ def test_kim_pulliṅga_21_cells():  # 7.2.103 किमः कः is the apavā
 
 def test_kim_neuter_singular_keeps_stem():  # su/am luk'd (7.1.23) → no vibhakti for 7.2.102/103
     assert [derive("kim", v, 1, linga="napuṃsaka").flat_dev() for v in (1, 2)] == ["किम्", "किम्"]
+
+
+def test_dhatu_homonym_rows_resolve_by_pada_and_numbered_row():
+    from tools.samsaadhanii_tags import _resolve_dhatu
+    assert _resolve_dhatu("श्रु", "श्रु", 1, "parasmai")[0]["id"] == "BvAdi_01_1092"
+    assert _resolve_dhatu("श्रु", "श्रु", 1, "atmane")[0]["id"] == "BvAdi_Sru"
+    assert _resolve_dhatu("दृश्", "दृश्", 1, "parasmai")[0]["id"] == "BvAdi_01_1143"

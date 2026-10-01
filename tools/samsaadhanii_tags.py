@@ -129,13 +129,27 @@ def _pick(hits: list[dict]) -> dict:
     return next((e for e in hits if e["id"] == default), hits[0])
 
 
-def _resolve_dhatu(upadesha_dev: str | None, stem_dev: str, gana: int) -> tuple[dict | None, str | None]:
+_PADA_LABEL = {"parasmai": "परस्मैपदी", "atmane": "आत्मनेपदी"}
+
+
+def _narrow(hits: list[dict], pada: str | None) -> list[dict]:
+    """Disambiguate homonym rows: the tag's pada, then the numbered dhātupāṭha row over a curated duplicate."""
+    by_pada = [e for e in hits if e.get("pada_label_dev") in (_PADA_LABEL.get(pada or ""), "उभयपदी")]
+    hits = by_pada or hits
+    numbered = [e for e in hits if re.search(r"_\d\d_\d{4}$", e["id"])]
+    return numbered if numbered and len({e["upadesha_slp1"].rstrip("~") for e in hits}) == 1 else hits
+
+
+def _resolve_dhatu(upadesha_dev: str | None, stem_dev: str, gana: int,
+                   pada: str | None = None) -> tuple[dict | None, str | None]:
     by_upadesha, by_raw = _dhatu_index()
     hits = by_upadesha.get((upadesha_dev, gana), []) if upadesha_dev else []
     if not hits:
         hits = by_raw.get((stem_dev, gana), [])
     if not hits:
         return None, f"no dhātupāṭha row for {upadesha_dev or stem_dev} in gaṇa {gana}"
+    if len(hits) > 1:
+        hits = _narrow(hits, pada)
     if len(hits) == 1 or _derivationally_same(hits):
         return _pick(hits), None
     return None, f"ambiguous dhātu {upadesha_dev or stem_dev} in gaṇa {gana} ({len(hits)} rows)"
@@ -345,7 +359,7 @@ def parse_tinanta_tag(tag: str) -> TinantaCell:
         return cell
     cell.upasargas = ups
 
-    row, why = _resolve_dhatu(upadesha_dev, stem_dev, cell.gana)
+    row, why = _resolve_dhatu(upadesha_dev, stem_dev, cell.gana, cell.pada)
     if row is None:
         cell.unresolved = why
         return cell
