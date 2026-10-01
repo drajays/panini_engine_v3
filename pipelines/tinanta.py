@@ -4164,7 +4164,7 @@ from tests.fixtures.tinanta_paradigms import (  # noqa: E402,F401
     derive_bhavisyami, derive_bhavisyavah, derive_bhavisyamah,
     derive_abhavat, derive_abhavataM, derive_abhavan,
     derive_abhavaH, derive_abhavataM2, derive_abhavata,
-    derive_abhavam, derive_abhavaV, derive_abhavaM,
+    derive_abhavam, derive_abhavaV, derive_abhavAma,
     derive_bhavet, derive_bhavetam, derive_bhaveyuH,
     derive_bhaveH, derive_bhavetam2, derive_bhaveta,
     derive_bhaveyam, derive_bhaveva, derive_bhavema,

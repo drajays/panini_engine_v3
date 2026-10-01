@@ -72,8 +72,11 @@ def build() -> int:
         stale.unlink()
 
     index = []
+    seen: dict[str, str] = {}
     for rec in payload["records"]:
         s = slug(rec)
+        # macOS/Windows filesystems are case-insensitive: two slugs differing only by case clobber each other.
+        assert seen.setdefault(s.lower(), s) == s, f"case-colliding trace slug: {s} vs {seen[s.lower()]}"
         (traces / f"{s}.json").write_text(
             json.dumps(rec, ensure_ascii=False, default=str)
         )

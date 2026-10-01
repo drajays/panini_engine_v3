@@ -97,7 +97,7 @@ def derive_abhavam() -> State:
 def derive_abhavaV() -> State:
     return derive("BU", "laG", "kartari", 1, 2)
 
-def derive_abhavaM() -> State:
+def derive_abhavAma() -> State:
     return derive("BU", "laG", "kartari", 1, 3)
 
 
