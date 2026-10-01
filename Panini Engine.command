@@ -2,14 +2,13 @@
 # ─────────────────────────────────────────────────────────────────
 # Pāṇini Engine — double-click launcher (macOS).
 #
-# A menu for everything the project does. Press Enter for option 1
-# (start the local apps, as before).
+# Double-click starts the full local system (offline after first
+# dependency install).  Pass `menu` for tests / benches / publish.
 # ─────────────────────────────────────────────────────────────────
 cd "$(dirname "$0")" || exit 1
 
 API_PORT=8000
 WEB_PORT=5050
-LIVE_URL="https://drajays.github.io/panini_engine_v3/"
 
 # Pick a python that already has the deps; else install into the first one.
 PY=""
@@ -21,7 +20,7 @@ done
 [ -z "$PY" ] && { echo "python3 not found — install it from python.org"; read -r _; exit 1; }
 
 if ! "$PY" -c 'import flask, fastapi, uvicorn, pytest' 2>/dev/null; then
-  echo "Installing dependencies into $PY …"
+  echo "Installing dependencies into $PY (once; afterwards this is fully offline) …"
   "$PY" -m pip install -q -r requirements-api.txt flask pytest || {
     echo "install failed — see the errors above"; read -r _; exit 1; }
 fi
@@ -40,30 +39,36 @@ start_apps() {
   trap 'kill 0' EXIT INT TERM       # closing this window stops the servers
 
   if busy "$API_PORT"; then echo "Port $API_PORT already serving — reusing it."
-  else "$PY" -m uvicorn api.main:app --port "$API_PORT" & fi
+  else "$PY" -m uvicorn api.main:app --host 127.0.0.1 --port "$API_PORT" & fi
 
   if busy "$WEB_PORT"; then echo "Port $WEB_PORT already serving — reusing it."
   else PANINI_PORT="$WEB_PORT" "$PY" -m webui.app & fi
 
   cat <<EOF
 
-  पाणिनि-यन्त्रम् — running locally
+  पाणिनि-यन्त्रम् — local (offline)
 
-  Lab       http://127.0.0.1:${API_PORT}/lab      paradigm vs Vidyut, click for prakriyā
-  अभ्यास    http://127.0.0.1:${API_PORT}/practice practice with sūtra explanations
-  संशोधनम्  http://127.0.0.1:${API_PORT}/review   derive + correct
+  Home      http://127.0.0.1:${API_PORT}/
+  Lab       http://127.0.0.1:${API_PORT}/lab
+  अभ्यास    http://127.0.0.1:${API_PORT}/practice
+  संशोधनम्  http://127.0.0.1:${API_PORT}/review
+  पाठः      http://127.0.0.1:${API_PORT}/pages/learn.html
   API docs  http://127.0.0.1:${API_PORT}/docs
-  पूर्ण-UI   http://127.0.0.1:${WEB_PORT}/        paradigms · धातुपाठ · SIG
+  पूर्ण-UI   http://127.0.0.1:${WEB_PORT}/
 
   Close this window (or press Ctrl-C) to stop.
   (the engine loads ~4000 sūtras — the full UI needs a few more seconds)
 
 EOF
   i=0
-  while [ "$i" -lt 60 ] && ! curl -sf -o /dev/null "http://127.0.0.1:${API_PORT}/v1/health"; do
+  while [ "$i" -lt 90 ] && ! curl -sf -o /dev/null "http://127.0.0.1:${API_PORT}/v1/health"; do
     i=$((i + 1)); sleep 1
   done
-  open "http://127.0.0.1:${API_PORT}/lab"
+  j=0
+  while [ "$j" -lt 90 ] && ! curl -sf -o /dev/null "http://127.0.0.1:${WEB_PORT}/"; do
+    j=$((j + 1)); sleep 1
+  done
+  open "http://127.0.0.1:${API_PORT}/"
   wait
   exit 0
 }
@@ -76,21 +81,22 @@ publish() {
   git add -A
   git diff --cached --quiet || git commit -qm "Update engine and website data" || return
   branch=$(git branch --show-current)
-  printf '\n  Push %s to GitHub main (updates %s)? [y/N] ' "$branch" "$LIVE_URL"
+  printf '\n  Push %s to GitHub main (updates the live site)? [y/N] ' "$branch"
   read -r ok
   case "$ok" in y|Y|yes) ;; *) echo "  Not published (committed locally)."; return;; esac
   git push origin "$branch:main" "$branch" && {
-    echo; echo "  Pushed. The site updates in about a minute: $LIVE_URL"; }
+    echo; echo "  Pushed. The site updates in about a minute."; }
 }
 
+show_menu() {
 while :; do
   clear
   cat <<'EOF'
 
    पाणिनि-यन्त्रम् — Pāṇini Engine
 
-   1  Start the apps          Lab · Practice · Review · API · full UI   [Enter]
-   2  Open the live website
+   1  Start the local apps    Lab · Practice · Review · Learn · full UI   [Enter]
+   2  Open the local home     (servers must already be running)
 
    3  Run all tests
    4  Verb accuracy          vs ashtadhyayi.com (455k forms, ~2 min)
@@ -109,7 +115,7 @@ EOF
   read -r choice
   case "${choice:-1}" in
     1) start_apps ;;
-    2) open "$LIVE_URL" ;;
+    2) open "http://127.0.0.1:${API_PORT}/" ;;
     3) "$PY" -m pytest -q -p no:cacheprovider; pause ;;
     4) need_gold && "$PY" -m bench.ashtadhyayi_gold; pause ;;
     5) need_gold && "$PY" -m bench.ashtadhyayi_gold --kind subanta; pause ;;
@@ -130,3 +136,9 @@ EOF
     *) ;;
   esac
 done
+}
+
+case "${1:-}" in
+  menu|--menu|-m) show_menu ;;
+  *) start_apps ;;
+esac

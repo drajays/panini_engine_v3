@@ -6,6 +6,10 @@
       "url": "https://cs.rkmvu.ac.in/~tamal/learn/sanskrit/Grammar/site/abhyasa.html",
       "role": "Teaching UI over ashtadhyayi.com corpus + vidyut_prakriya.wasm. Provenance-tag convention (engine-computed / corpus-quoted / editorial). Not a second pāṭha and not a runtime resolver. Generated JSON (index/sutras.json etc.) is often unpublished; the database behind it is ashtadhyayi-com/data."
     },
+    "practice_front_end": {
+      "url": "https://sanskritabhyas.in/en",
+      "role": "Independent अभ्यास by Sharath Kotian (2016): declension, conjugation, kṛt, taddhita, nāmadhātu, sandhi lists and drills, built from Aṣṭādhyāyī sūtras and crediting ashtadhyayi.com. Distinct from RKMVU (not Vidyut wasm) and from the data repo (not a pāṭha). Pedagogical model for /practice. Art. 19 surface gold only — can prove a form wrong, never prove a rule right, never copied into cond()."
+    },
     "local_checkout": "ashtadhyayi.com data-master (iCloud Panini_sanskrit) — mirror of the GitHub repo",
     "note": "Catalog of granthas the engine is allowed to *cite*. Only paribhāṣā granthas may decide a runtime conflict (Art. 21). Ārthika granthas never pick a winner."
   },
@@ -35,6 +39,13 @@
       "kind": "learner_front_end",
       "runtime": false,
       "role": "Abhyāsa / pāṭha / prakriyā UI. Uses ashtadhyayi-com/data + Vidyut wasm. Copy provenance tags, not rule logic (Art. 0, Art. 19)."
+    },
+    {
+      "id": "sanskritabhyas",
+      "url": "https://sanskritabhyas.in/en",
+      "kind": "learner_practice",
+      "runtime": false,
+      "role": "Independent अभ्यास (subanta, tinanta, kṛt, taddhita, nāmadhātu, sandhi). Surface gold + drill UX for /practice. Not a second pāṭha; never copied into cond() (Art. 0, Art. 19 T10)."
     }
   ],
   "paribhasha_granthas": [

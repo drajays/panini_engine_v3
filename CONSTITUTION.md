@@ -377,7 +377,7 @@ docstring. It does **not** decide what a rule means — that is Art. 22.
 Tier 2 (paribhāṣā: Paribhāṣenduśekhara, Vyāḍi, Śākaṭāyana;
 ancillaries: Liṅgānuśāsana, Phiṭ-sūtras, Uṇādi-sūtras), Tier 3
 (Dhātupāṭha, Gaṇapāṭha), Tier 4 (Vidyut, Saṃsādhanī, Sanskrit
-Heritage), and Tier 5 (Cardona, Kiparsky, Sharma, Vasu, Joshi &
+Heritage, Sanskrit Abhyas), and Tier 5 (Cardona, Kiparsky, Sharma, Vasu, Joshi &
 Roodbergen) are cited as supporting evidence per the full roster.
 
 **Forbidden as sources:** unverified blog posts, LLM output without
@@ -621,7 +621,10 @@ a higher pramāṇa than T2.
 (ashtadhyayi.com's own data repo). The RKMVU Grammar site
 (`cs.rkmvu.ac.in/~tamal/learn/sanskrit/Grammar/site`) is a learner front-end
 over that corpus plus Vidyut; it is not a second pāṭha and it is never copied
-into `cond()`. See `data/inputs/grantha_catalog.json`.
+into `cond()`. Sanskrit Abhyas ([`sanskritabhyas.in/en`](https://sanskritabhyas.in/en))
+is an independent अभ्यास (declension, conjugation, kṛt, taddhita, nāmadhātu,
+sandhi); it is pedagogical surface gold (Art. 19), not a pāṭha, and never
+copied into `cond()`. See `data/inputs/grantha_catalog.json`.
 
 *Enforcement:* `tests/constitutional/test_vipratisedha_resolver.py`
 (`runtime_granthas` is PŚ only; LŚ excerpts are quoted, not executed).

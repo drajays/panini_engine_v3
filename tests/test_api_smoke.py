@@ -16,6 +16,12 @@ def test_health_sees_the_registry():
     assert api.health()["sutras"] > 3000
 
 
+def test_hub_lists_local_pages():
+    html = api.hub()
+    for path in ("/lab", "/practice", "/review", "/pages/learn.html"):
+        assert path in html
+
+
 def test_subanta_rama_nom_sg():
     out = api.subanta(api.SubantaReq(stem="rAma", vibhakti=1, vacana=1))
     assert out["surface"] == {"slp1": "rAmaH", "dev": "रामः"}

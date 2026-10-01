@@ -60,6 +60,10 @@ def test_source_databases_are_named():
     assert ash["paths"]["paribhashendushekhar"] == "paribhashendushekhar/data.txt"
     rkm = next(d for d in cat["databases"] if d["id"] == "rkmvu-grammar-site")
     assert rkm["runtime"] is False
+    abhyas = next(d for d in cat["databases"] if d["id"] == "sanskritabhyas")
+    assert abhyas["url"] == "https://sanskritabhyas.in/en"
+    assert abhyas["runtime"] is False
+    assert abhyas["kind"] == "learner_practice"
     assert runtime_granthas() == ["paribhashendushekhar"]
     cat = grantha_catalog()
     for g in cat["arthika_granthas"] + cat["sk_tika_granthas"]:

@@ -148,6 +148,8 @@ abandoned. **Never** start work on a file path that appears under
 
 | timestamp | agent | task | files | status |
 |---|---|---|---|---|
+| 2026-10-01 15:15 | cursor | Commit session + full offline .command hub | api/hub.html, api/main.py, Panini Engine.command, tests/test_api_smoke.py, README.md, data/inputs/grantha_catalog.json, CONSTITUTION.md, docs/CURSOR_HANDOVER.md, audit/RUN_LOG.md | released |
+| 2026-10-01 15:00 | cursor | Catalog sanskritabhyas.in if it adds value (Ajay) | data/inputs/grantha_catalog.json, CONSTITUTION.md, tests/constitutional/test_vipratisedha_resolver.py, .cursorrules, audit_cursor.md, audit_claude.md, .cursor/rules/panini-authoritative-sources.mdc, audit/RUN_LOG.md | released |
 | 2026-10-01 14:30 | cursor | P0 AMENDMENT 17: two ladders (vipratipatti + prāmāṇya); demote SOI; Art. 21/22 | CONSTITUTION.md, docs/AMENDMENT_17.md, engine/resolver.py, engine/paribhasha.py, engine/specificity_registry.py, data/inputs/paribhasha_shekhara.json, tests/constitutional/test_vipratisedha_resolver.py, tests/unit/test_prakriya_integrity.py, tests/unit/test_audit_pipeline_auditor.py, sutras/adhyaya_3/pada_1/sutra_3_1_{67,68,69,73,77,78,79,81}.py, audit/conflict_resolver.py, audit/RUN_LOG.md, .cursorrules | released |
 | 2026-05-22 09:42 | claude | P0 + P1a + P1b + P2 (full subanta cleanup chain) | webui/static/trace.js, webui/templates/*.html, sutras/adhyaya_1/pada_1/sutra_1_1_{11,12,13,14,15,16,17,18,19,20,22,23,24}.py, core/canonical_pipelines.py | released (5-day stale; released 2026-05-27) |
 | 2026-05-27 (session) | claude | P3 6.1.97 arm cleanup + P5 why_now_dev + regression fix | engine/dispatcher.py, sutras/adhyaya_7/pada_1/sutra_7_1_54.py, sutras/adhyaya_6/pada_4/sutra_6_4_3.py, sutras/adhyaya_8/pada_4/sutra_8_4_2.py, sutras/adhyaya_1/pada_3/sutra_1_3_12.py, pipelines/dhatupatha.py, pipelines/tinanta.py, tests/regression/sig_*, tests/*, webui/static/trace.js | released |
@@ -234,6 +236,22 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ---
 
 ## C. Action history (newest at top)
+
+### 2026-10-01 15:20  [cursor]  Offline local hub on Panini Engine.command
+
+Double-click starts both servers on 127.0.0.1 (API 8000, Flask 5050), waits for health, opens `/` hub covering Lab, Practice, Review, learn.html (`/pages/…`), shabda, and the full UI. `menu` keeps tests/benches. Sanskrit Abhyas catalogued as 18b surface gold. Claude handover `docs/CURSOR_HANDOVER.md` committed. Not committed: `.claude/` (agent internals), `.audit/gold_*` (bench dumps).
+
+**Tests:** CI gate + `test_api_smoke` + catalog: 85 passed, 1 skipped.
+
+### 2026-10-01 15:05  [cursor]  Named sanskritabhyas.in as practice gold (not a pāṭha)
+
+Ajay: add https://sanskritabhyas.in/en if it adds value. It does: independent अभ्यास by Sharath Kotian (2016) — declension, conjugation, kṛt, taddhita, nāmadhātu, sandhi lists and drills, built from Aṣṭādhyāyī and crediting ashtadhyayi.com. Distinct from ashtadhyayi-com/data (not a pāṭha) and from RKMVU (not Vidyut wasm). Already the pedagogical model for `/practice` (`docs/FINAL_PLAN_2026-09.md`).
+
+Catalogued as `sanskritabhyas` (`kind: learner_practice`, `runtime: false`) in `data/inputs/grantha_catalog.json`. Art. 22 digitised-sources paragraph and Art. 14 Tier 4 mention it. Roster slot **18b** (surface gold only, Art. 19). `cond()` never reads it.
+
+**Tests:** `test_vipratisedha_resolver.py` 17 passed. Runtime granthas still PŚ only.
+
+**Next:** optional later harvest of its tables as an Art. 19 oracle; do not scrape into `sutras/`.
 
 ### 2026-10-01 (session)  [cursor]  ṇvul labelled `Rvul` (was `Nvul` = ङ्वुल्)
 
@@ -1186,6 +1204,18 @@ with the `cond()` invariants and verification commands documented.
 > recently. Cross-check §B before editing the same files.
 >
 > Columns: `file` | `Δ` (`new` / `mod`) | `task` (short) | `notes`
+
+### 2026-10-01 [cursor] — catalog sanskritabhyas.in
+
+| file | Δ | task | notes |
+|------|---|------|-------|
+| data/inputs/grantha_catalog.json | mod | sanskritabhyas | databases + provenance; runtime false |
+| CONSTITUTION.md | mod | sanskritabhyas | Art. 14 T4 name; Art. 22 digitised sources |
+| tests/constitutional/test_vipratisedha_resolver.py | mod | sanskritabhyas | asserts url, runtime false, kind |
+| .cursorrules | mod | sanskritabhyas | roster 18b |
+| audit_cursor.md | mod | sanskritabhyas | §0.4 18b |
+| audit_claude.md | mod | sanskritabhyas | §A.4 18b |
+| .cursor/rules/panini-authoritative-sources.mdc | mod | sanskritabhyas | Tier 4 oracle list |
 
 ### 2026-10-01 [cursor] — FINAL_PLAN notes audit + 6.4.19 pins
 

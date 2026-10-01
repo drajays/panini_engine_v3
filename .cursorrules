@@ -45,6 +45,7 @@ Do not treat “lower number wins” as a prāmāṇya rule — that inverted
 16. **Vidyut** (`github.com/ambuda-org/vidyut`) — Rust prakriyā engine; oracle for surface forms; **never copy code logic**.
 17. **Saṃsādhanī (IIIT-H Hyderabad)** — `sanskrit.uohyd.ac.in/scl/` — subanta/tinanta/kṛdanta analyzers + tag taxonomy + gold paradigms.
 18. **Sanskrit Heritage Platform (INRIA)** — `sanskrit.inria.fr/` — finite-state morphology; independent surface oracle.
+18b. **Sanskrit Abhyas** (`sanskritabhyas.in/en`) — independent अभ्यास: subanta / tinanta / kṛt / taddhita / nāmadhātu / sandhi tables and drills. Pedagogical model for `/practice`. Surface gold only (Art. 19); never rule logic, never a second pāṭha.
 19. JNU SCL group; 20. DCS (annotated corpus); 21. GRETIL; 22. SARIT.
 
 ### Tier 5 — methodology (engine design)

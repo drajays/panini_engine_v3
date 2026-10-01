@@ -154,19 +154,27 @@ Launch the web UI:
 ./run_web.sh          # http://127.0.0.1:5050/
 ```
 
-## Run it locally
+## Run it locally (offline)
 
-Double-click **`Panini Engine.command`** in Finder (or `make ui`).  It starts
-both local servers, waits for the engine to load, and opens the browser:
+Double-click **`Panini Engine.command`** in Finder (or `make ui`).  That starts
+both local servers on this machine, waits until they answer, and opens a hub
+at `http://127.0.0.1:8000/`.  No internet is required after the first
+dependency install.
 
 ```
-  संशोधनम्  http://127.0.0.1:8000/review   derive a form, correct the prakriyā
-  API docs  http://127.0.0.1:8000/docs
-  पूर्ण-UI   http://127.0.0.1:5050/        paradigms · धातुपाठ · SIG · tests
+  Home      http://127.0.0.1:8000/               hub of every local page
+  Lab       http://127.0.0.1:8000/lab            paradigm vs Vidyut
+  अभ्यास    http://127.0.0.1:8000/practice       drills with sūtra explanations
+  संशोधनम्  http://127.0.0.1:8000/review         derive + correct a step
+  पाठः      http://127.0.0.1:8000/pages/learn.html  exported-trace stepper
+  पूर्ण-UI   http://127.0.0.1:5050/              paradigms · धातुपाठ · भट्टिः
 ```
 
-Closing the Terminal window stops both.  Dependencies install themselves on
-first run; a port already in use is reused rather than fought over.
+Closing the Terminal window stops both.  For tests / benches / publish:
+
+```bash
+./"Panini Engine.command" menu
+```
 
 ## HTTP API
 

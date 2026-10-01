@@ -56,6 +56,7 @@ inline as a docstring comment. The **full** rationale lives in
 | 16 | **Vidyut** (Ambuda-org) | `github.com/ambuda-org/vidyut` | Rust prakriyā engine. Oracle for surface verification. **Never copy code logic** — independent verification only. |
 | 17 | **Saṃsādhanī (IIIT-H Hyderabad)** | `sanskrit.uohyd.ac.in/scl/` (analyzer + sandhi + segmenter) | Subanta/tinanta/kṛdanta analyzer + morphological-tag taxonomy + gold paradigm corpora. |
 | 18 | **Sanskrit Heritage Platform (INRIA)** | `sanskrit.inria.fr/` | Wide-coverage finite-state Sanskrit reader. Independent surface oracle. |
+| 18b | **Sanskrit Abhyas** (Sharath Kotian) | `sanskritabhyas.in/en` | Independent अभ्यास: subanta / tinanta / kṛt / taddhita / nāmadhātu / sandhi tables and drills. Pedagogical model for `/practice`. Surface gold only — never rule logic, never a second pāṭha. |
 | 19 | JNU SCL group | scl-jnu.in | Subanta/tinanta tables. |
 | 20 | DCS (Digital Corpus of Sanskrit) | `www.sanskrit-linguistics.org/dcs/` | Surface-form attestation in real texts. |
 | 21 | GRETIL | `gretil.sub.uni-goettingen.de/` | Ancillary editions, hard-to-find texts. |

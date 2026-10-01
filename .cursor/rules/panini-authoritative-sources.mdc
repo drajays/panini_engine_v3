@@ -51,6 +51,7 @@ Use these to verify surface output, NOT to derive rule logic:
 - **Vidyut** (`github.com/ambuda-org/vidyut`) — Rust prakriyā engine.
 - **Saṃsādhanī (IIIT-H Hyderabad)** — `sanskrit.uohyd.ac.in/scl/`.
 - **Sanskrit Heritage Platform (INRIA)** — `sanskrit.inria.fr/`.
+- **Sanskrit Abhyas** — `sanskritabhyas.in/en`. Independent अभ्यास tables and drills (kṛt / taddhita / nāmadhātu included). Surface gold only.
 
 When Vidyut or Saṃsādhanī disagrees with the engine's surface
 output, the engine is **suspect** — investigate before merging. Do

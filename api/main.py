@@ -24,7 +24,8 @@ from uuid import uuid4
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 _ROOT = Path(__file__).resolve().parent.parent
@@ -543,6 +544,12 @@ def review_page() -> str:
     return (Path(__file__).parent / "review.html").read_text(encoding="utf-8")
 
 
-@app.get("/", include_in_schema=False)
-def root() -> RedirectResponse:
-    return RedirectResponse("/review")
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
+def hub() -> str:
+    """Local home: every page this machine serves, with no live-site link."""
+    return (Path(__file__).parent / "hub.html").read_text(encoding="utf-8")
+
+
+_DOCS = _ROOT / "docs"
+if _DOCS.is_dir():
+    app.mount("/pages", StaticFiles(directory=str(_DOCS), html=True), name="pages")

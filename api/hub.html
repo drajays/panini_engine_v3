@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>पाणिनि-यन्त्रम् — local</title>
+<style>
+:root{
+  --bg:#fafaf7;--panel:#fff;--subtle:#f1ede3;--ink:#1b1a17;--dim:#5b574d;--faint:#8b8578;
+  --accent:#8b2e00;--line:#d7d2c4;--soft:#ece8dc;
+  --dev:"Noto Serif Devanagari","Noto Sans Devanagari","Sanskrit Text",serif;
+  --body:Charter,"Iowan Old Style",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#16150f;--panel:#1e1d16;--subtle:#262418;--ink:#ece7d8;--dim:#b0a894;--faint:#837c6c;
+  --accent:#e08a55;--line:#3a382c;--soft:#2a281e;
+}}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.5 var(--body);color:var(--ink);background:var(--bg)}
+.dev{font-family:var(--dev)}
+header{padding:1.4rem 1.5rem .8rem;border-bottom:1px solid var(--line);background:var(--panel)}
+h1{margin:0;font-size:1.15rem}
+h1 .dev{color:var(--accent);font-size:1.45rem}
+.sub{color:var(--dim);font-size:.9rem;margin-top:.25rem}
+main{max-width:52rem;margin:0 auto;padding:1.2rem 1.4rem 3rem}
+h2{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:1.4rem 0 .6rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:.7rem}
+a.card{display:block;padding:.85rem .95rem;background:var(--panel);border:1px solid var(--line);
+  border-radius:8px;text-decoration:none;color:inherit}
+a.card:hover{border-color:var(--accent);background:var(--subtle)}
+a.card b{display:block;font-family:var(--dev);font-size:1.05rem;color:var(--accent)}
+a.card span{display:block;color:var(--dim);font-size:.82rem;margin-top:.2rem}
+.note{margin-top:1.6rem;font-size:.82rem;color:var(--faint)}
+code{font-size:.85em}
+</style>
+</head>
+<body>
+<header>
+  <h1><span class="dev">पाणिनि-यन्त्रम्</span> — local</h1>
+  <p class="sub">Offline on this machine. Close the Terminal window to stop the servers.</p>
+</header>
+<main>
+  <h2>Derive · drill · correct</h2>
+  <div class="grid">
+    <a class="card" href="/lab"><b>प्रयोगशाला</b><span>Lab — paradigm vs Vidyut, click a cell for prakriyā</span></a>
+    <a class="card" href="/practice"><b>अभ्यासः</b><span>Practice with sūtra-by-sūtra explanations</span></a>
+    <a class="card" href="/review"><b>संशोधनम्</b><span>Derive a form and correct a step</span></a>
+    <a class="card" href="/shabda"><b>शब्द-सारणी</b><span>Live 24-cell noun paradigm</span></a>
+    <a class="card" href="/pages/learn.html"><b>प्रक्रिया-पाठः</b><span>Step-through exported traces</span></a>
+    <a class="card" href="/docs"><b>API</b><span>OpenAPI — every derivation ships its sūtra chain</span></a>
+  </div>
+  <h2>Full UI · धातुपाठ · भट्टिः</h2>
+  <div class="grid">
+    <a class="card" href="http://127.0.0.1:5050/"><b>पूर्ण-UI</b><span>Paradigms, dhātupāṭha, Bhaṭṭi, Gītā reader, SIG</span></a>
+    <a class="card" href="http://127.0.0.1:5050/tinanta"><b>तिङन्तम्</b><span>Dhātu × lakāra glass-box</span></a>
+    <a class="card" href="http://127.0.0.1:5050/dhatufilters"><b>धातु-छन्दकः</b><span>Gaṇa / pada / iṭ / karma grid</span></a>
+    <a class="card" href="http://127.0.0.1:5050/bhatti"><b>भट्टिः</b><span>Bhaṭṭikāvya 1.1–1.2 Jayamaṅgalā</span></a>
+    <a class="card" href="http://127.0.0.1:5050/reader"><b>ग्रन्थ-पाठकः</b><span>Gītā · Raghuvamśa · Rāmāyaṇa</span></a>
+    <a class="card" href="http://127.0.0.1:5050/sutras"><b>सूत्राणि</b><span>Browse the registered Aṣṭādhyāyī</span></a>
+  </div>
+  <p class="note">127.0.0.1:8000 is this API. 127.0.0.1:5050 is the Flask UI. No internet is required after the first dependency install. Tools menu: <code>./Panini\ Engine.command menu</code></p>
+</main>
+</body>
+</html>
