@@ -2358,6 +2358,8 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     # in the sūtra's own cond(); a vacuous no-op for every other root
     # (अद्, दुह्, ब्रू…) sharing this spine.
     state = apply_rule("6.4.111", state)
+    # 7.4.50 तासस्त्योर्लोपः — अस्+सि → असि (s of the root before s-initial sip)
+    state = apply_rule("7.4.50", state)
     state = P00_jha_adesha(state)
     # 6.4.77 अचि श्नु धातुभ्रुवां य्वोरियुवङौ — ū-final dhātu + a-initial
     # affix → uv (ब्रू+अन्ति → ब्रुव्+अन्ति, after 7.1.3 turns jhi → anti).
@@ -4031,7 +4033,7 @@ def _dispatch_tinanta_spine(
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_lRG(state, pada_key, purusha, vacana)
 
-    if lakara in ("loT",) and _adadi_dhatu_stem_slp1(state) == "ad":
+    if lakara in ("loT",) and _is_adadi_dhatu(state) and pada_key == "parasmai":
         state = apply_rule("3.1.91", state)
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         return _derive_loT_ad(state, pada_key, purusha, vacana)

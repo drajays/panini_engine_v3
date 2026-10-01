@@ -23,7 +23,8 @@ def _find_tasi_before_si(state: State) -> int | None:
     """Find tAsi_vikaraṇa term ending in …A+s where next term starts with s."""
     for i in range(len(state.terms) - 1):
         t = state.terms[i]
-        if not t.meta.get("tAsi_vikaraṇa"):
+        # tāsi vikaraṇa (…A+s) or the root as (upadeśa "as"): both are named by the sūtra
+        if not (t.meta.get("tAsi_vikaraṇa") or (t.meta.get("upadesha_slp1") or "").strip() in ("as", "asa~")):
             continue
         vs = t.varnas
         if len(vs) < 2:
@@ -40,8 +41,6 @@ def _find_tasi_before_si(state: State) -> int | None:
 
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not state.meta.get("tasa_lopa_recipe"):
         return False
     return _find_tasi_before_si(state) is not None
 
@@ -66,7 +65,7 @@ SUTRA = SutraRecord(
     text_slp1             = "tAsastyorlopaH",
     text_dev              = "तासस्त्योर्लोपः",
     padaccheda_dev        = "तास्-अस्त्योः लोपः",
-    why_dev               = "तासि-विकरणस्य स्-लोपः सि-परे — लुट् २sg कोशः।",
+    why_dev               = "तासि-विकरणस्य अस्-धातोश्च स्-लोपः सकारादौ प्रत्यये (भवितासि, असि)।",
     anuvritti_from        = ('7.1.1',),
     cond                  = cond,
     act                   = act,

@@ -174,7 +174,11 @@ def _derive_subanta(stem: str, v: int, vac: int, linga: str) -> tuple[str, str, 
 
     try:
         with _quiet():
-            s = derive(stem, v, vac, linga=linga)
+            if stem == "asmad" and 1 <= v <= 7:  # dedicated glass-box paradigm (7.1.27–7.2.97)
+                from pipelines.asmad_subanta import derive_asmad
+                s = derive_asmad(v, vac)
+            else:
+                s = derive(stem, v, vac, linga=linga)
         return "ok", s.flat_slp1(), s.flat_dev()
     except Exception as e:  # noqa: BLE001
         return "error", "", f"{type(e).__name__}: {e}"[:200]
