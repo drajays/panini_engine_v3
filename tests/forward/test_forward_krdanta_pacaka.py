@@ -15,7 +15,7 @@ def test_pacaka_vrddhi_example():
 
 def test_pachak_md_step_sutras_appear_in_trace():
     """Extended recipe: saṃjñā/paribhāṣā → dhātu IT → 6.1.65 (no-op) → kṛt adhikāra → 3.4.67 → … → merge."""
-    state = derive_krt("qupac~z", krt_upadesha_slp1="Nvul")
+    state = derive_krt("qupaca~z", krt_upadesha_slp1="Nvul")
     path = [e.get("sutra_id") for e in state.trace if isinstance(e, dict)]
     for sid in (
         "1.1.1",

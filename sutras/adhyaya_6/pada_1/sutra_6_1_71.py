@@ -2,10 +2,10 @@
 6.1.71  ह्रस्वस्य पिति कृति तुक्  —  VIDHI (narrow: insert t before ya of lyap)
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=601071
-- Kāśikā: ह्रस्वस्य पिति कृति तुक्
-- Cross-validation: tests/unit/test_agaty_gam_lyap_acah_lesson.py (*tuk* after **6.4.38** *m*-lopa;
-  **1.1.57** does not block — lupta *hal* is not *ac*).
+- ashtadhyayi.com data.txt row i=61071
+- Kāśikā: "अग्निचित्, सोमसुत्, प्रकृत्य, प्रहृत्य"
+- Cross-validation: tests/unit/test_agaty_gam_lyap_acah_lesson.py (*tuk* after **6.4.38** *m*-lopa
+  — आगत्य; no *tuk* in the declined branch आगम्य, where the aṅga ends in म्).
 
 Engine (narrow v3):
   For lyap outputs in ``split_prakriyas_11/P017.json`` we model *tuk* as insertion
@@ -41,6 +41,9 @@ def _find_site(state: State):
             continue
         if not t.varnas or t.varnas[0].slp1 != "y":
             continue
+        prev = next((u for u in reversed(state.terms[:i]) if u.varnas), None)
+        if prev is None or not is_hrasva(prev.varnas[-1].slp1):
+            continue                            # ह्रस्वस्य: आगम्य has no तुक्
         return (i, 0)
     return None
 

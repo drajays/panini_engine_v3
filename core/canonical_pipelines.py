@@ -261,8 +261,7 @@ def P00_juhotyadi_slu_dvitva_abhyasakarya(s: State) -> State:
 def P00_tanadi_u_guna(s: State) -> State:
     """Tanādi-u guṇa prefix: 3.1.79 (u-vikaraṇa) → 7.3.84 (guṇa) → 1.1.51 (r-para)."""
     s = apply_rule("3.1.79", s)
-    s = apply_rule("7.3.84", s)
-    s = apply_rule("1.1.51", s)
+    s = P00_guna_7_3_84(s)
     return s
 
 
@@ -421,6 +420,18 @@ def P00_dhatu_upadesha_it_lopa(s: State) -> State:
     return s
 
 
+def P00_ashir_atmane_suw_yalopa_merge(s: State) -> State:
+    """Āśīrliṅ ātmanepada tail after सीयुट्: 3.4.107 सुट् → 6.1.66 य्-लोप
+    (सीय् + स्त → सीस्त) → pada merge → 8.2.1 tripāḍī gate."""
+    from pipelines.subanta import _pada_merge  # noqa: PLC0415
+
+    s.meta["suw_recipe"] = True
+    s = apply_rule("3.4.107", s)
+    s = apply_rule("6.1.66", s)
+    _pada_merge(s)
+    return apply_rule("8.2.1", s)
+
+
 def P00_upadesha_it_1_3_1_2_5(s: State) -> State:
     """Small it-slice used by some dhātu rows: 1.3.1 → 1.3.2 → 1.3.5."""
     for sid in ("1.3.1", "1.3.2", "1.3.5"):
@@ -520,7 +531,7 @@ def P00_yang_luk_simple_dvitva_to_guna(s: State) -> State:
     s = apply_rule("7.4.82", s)
     s = P00_yang_ac_three_term_frame(s)
     s = P00_yang_luk_2_4_74_and_1_1_4(s)
-    s = apply_rule("7.3.84", s)
+    s = P00_guna_7_3_84(s)
     s = apply_rule("6.4.77", s)
     return s
 
@@ -618,7 +629,7 @@ def P00_anga_guna_audit_1_4_13_1_1_5_7_3_84(s: State) -> State:
     """Shared *aṅga* + *guṇa* audit: **1.4.13** → **1.1.5** → **7.3.84**."""
     s = apply_rule("1.4.13", s)
     s = apply_rule("1.1.5", s)
-    s = apply_rule("7.3.84", s)
+    s = P00_guna_7_3_84(s)
     return s
 
 
@@ -887,16 +898,14 @@ def P00_lac_lat_attach(s: State) -> State:
     """laṭ-pratyaya scope: 3.1.91 → (P06a 3.1.1–3) → 3.2.123 → append laṭ placeholder."""
     s = apply_rule("3.1.91", s)
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
+    return P00_lat_vartamane(s)
+
+
+def P00_lat_vartamane(s: State) -> State:
+    """3.2.123 वर्तमाने लट् — opens the scope and attaches the laṭ placeholder."""
+    s.meta["laT_recipe"] = True
     s = apply_rule("3.2.123", s)
-    laT = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("laT"),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-    if laT.varnas and laT.varnas[-1].slp1 == "T":
-        del laT.varnas[-1]
-    s.terms.append(laT)
+    s.meta.pop("laT_recipe", None)
     return s
 
 
@@ -980,7 +989,7 @@ def P00_tin_jhi_adesh_full(s: State) -> State:
 
     Do **not** set ``1_4_22_affix_class`` for *bahuvacana* (*1.4.22* *cond* false).
     """
-    s = P00_tin_adesha_base(s, "jhi")
+    s = P00_tin_adesha_base(s, "Ji")
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
         s = apply_rule(sid, s)
     s = apply_rule("1.3.3", s)
@@ -1477,11 +1486,12 @@ def run_subanta_sup_attach_and_finish(s: State) -> State:
 # ── Batch-extracted canonicals (2026-05-30) ──────────────────────────────────
 
 def P00_jas_si_num_napumsaka(s: State) -> State:
-    """Napuṃsaka prathama-bahu jas→Śi chain: 4.1.2 → 7.1.20 → 1.3.7 → 1.3.9 → 1.1.42 → 7.1.72."""
+    """Napuṃsaka prathama-bahu jas→Śi chain: 4.1.2 → 7.1.20 → it-prakaraṇa (Ś by 1.3.8) → 1.1.42 → 7.1.72."""
+    from pipelines.it_prakarana import run_it_prakarana  # noqa: PLC0415
+
     s = apply_rule("4.1.2", s)
     s = apply_rule("7.1.20", s)
-    s = apply_rule("1.3.7", s)
-    s = apply_rule("1.3.9", s)
+    s = run_it_prakarana(s)
     s = apply_rule("1.1.42", s)
     s = apply_rule("7.1.72", s)
     return s
@@ -1546,10 +1556,11 @@ def P00_mahat_An_samasa_sandhi(s: State) -> State:
 
 
 def P00_jas_7_1_17_it_lopa_6_1_87(s: State) -> State:
-    """Sarvanāma jas chain: 7.1.17 → 1.3.7 → 1.3.9 → 6.1.87."""
+    """Sarvanāma jas chain: 7.1.17 → it-prakaraṇa (Ś by 1.3.8) → 6.1.87."""
+    from pipelines.it_prakarana import run_it_prakarana  # noqa: PLC0415
+
     s = apply_rule("7.1.17", s)
-    s = apply_rule("1.3.7", s)
-    s = apply_rule("1.3.9", s)
+    s = run_it_prakarana(s)
     s = apply_rule("6.1.87", s)
     return s
 
@@ -1558,7 +1569,7 @@ def P00_hal_anit_guna(s: State) -> State:
     """Hal anit it-lopa + guṇa: 1.3.3 → 1.3.9 → 7.3.84."""
     s = apply_rule("1.3.3", s)
     s = apply_rule("1.3.9", s)
-    s = apply_rule("7.3.84", s)
+    s = P00_guna_7_3_84(s)
     return s
 
 
@@ -1584,7 +1595,7 @@ def P00_idit_num_3_1_91(s: State) -> State:
 def P00_bhavati_guna_yav(s: State) -> State:
     """Bhvādi guṇa + yavāy sandhi: 7.2.35 → 7.3.84 → 6.1.78."""
     s = apply_rule("7.2.35", s)
-    s = apply_rule("7.3.84", s)
+    s = P00_guna_7_3_84(s)
     s = apply_rule("6.1.78", s)
     return s
 
@@ -1660,11 +1671,33 @@ def P00_mRj_abhyasa_hrasva(s: State, *, first_hal_only: bool = False) -> State:
 
 # ── Round-3 deduplication canonicals ─────────────────────────────────────────
 
+def P00_guna_7_3_84(s: State) -> State:
+    """aṅga guṇa: 1.2.1 (kuṭādi/गाङ् → ṅit, 1.1.5 blocks guṇa) → 7.3.84 सार्वधातुकार्धधातुकयोः
+    → 1.1.51 उरण् रपरः (ṛ → ar: स्मरतु)."""
+    s = apply_rule("1.2.1", s)
+    s = apply_rule("7.3.84", s)
+    s = apply_rule("1.1.51", s)
+    return s
+
+
+def P00_guna_7_3_86(s: State) -> State:
+    """laghūpadha guṇa: 1.2.1 (kuṭādi → ṅit) → 7.3.86 पुगन्तलघूपधस्य च (कुटिता, not कोटिता)."""
+    s = apply_rule("1.2.1", s)
+    s = apply_rule("7.3.86", s)
+    return s
+
+
 def P00_at_or_At_agama(s: State) -> State:
-    """luṅ/laṅ/lṛṅ augment: 6.4.71 aṭ, or for an ajādi aṅga 6.4.72 āṭ + 6.1.90 vṛddhi (ऐधत)."""
+    """luṅ/laṅ/lṛṅ augment: 6.4.71 aṭ, or for an ajādi aṅga 6.4.72 āṭ + 6.1.90 vṛddhi (ऐधत);
+    6.1.73 छे च gives aṭ + छ् its tuk (अच्छिनत्).
+
+    Not before a caṅ abhyāsa: the ashtadhyayi.com tables read अचच्छन्दत्, not
+    अच्चच्छन्दत् (open question in docs/LEARN_AND_ORACLE_PLAN.md)."""
     s = apply_rule("6.4.71", s)
     s = apply_rule("6.4.72", s)
     s = apply_rule("6.1.90", s)
+    if not any("abhyasa" in t.tags for t in s.terms):
+        s = apply_rule("6.1.73", s)
     return s
 
 
@@ -1689,7 +1722,6 @@ def P00_lyap_krt(s: State) -> State:
     s.meta["ktvA_recipe"] = True
     s = apply_rule("3.4.21", s)
     s.meta["lyap_recipe"] = True
-    s.meta["7_1_37_insert_lyap_matu"] = True
     s = apply_rule("7.1.37", s)
     s = apply_rule("6.4.38", s)  # optional (vikalpa)
     s = P00_vikarana_it_lopa(s)
@@ -1843,15 +1875,14 @@ def P00_ngit_At_iy_guna(s: State) -> State:
 def P00_guna_rapara_ayadi(s: State) -> State:
     """Guṇa/vṛddhi of the aṅga, its r/l (1.1.51), then ayādi: 7.3.84 → 1.1.51 → 6.1.78.
     (कर्तृ: कृ+तृ → कर्+तृ; curādi: चोरि, च्याव्+इ.)"""
-    s = apply_rule("7.3.84", s)
-    s = apply_rule("1.1.51", s)
+    s = P00_guna_7_3_84(s)
     s = apply_rule("6.1.78", s)
     return s
 
 
 def P00_guna_sandhi_7_3_84_6_1_78(s: State) -> State:
     """Guṇa + sandhi: 7.3.84 → 6.1.78."""
-    s = apply_rule("7.3.84", s)
+    s = P00_guna_7_3_84(s)
     s = apply_rule("6.1.78", s)
     return s
 

@@ -51,9 +51,9 @@ _TU_TO_TU = {"w": "t", "W": "T", "q": "d", "Q": "D", "R": "n"}
 
 def act(state: State) -> State:
     t0 = state.terms[0]
-    t0.varnas[0] = mk("s")
+    t0.varnas[0] = mk("s", "dhatu_adesha_v")
     if len(t0.varnas) > 1 and t0.varnas[1].slp1 in _TU_TO_TU:
-        t0.varnas[1] = mk(_TU_TO_TU[t0.varnas[1].slp1])
+        t0.varnas[1] = mk(_TU_TO_TU[t0.varnas[1].slp1], "dhatu_adesha_v")
     # a ṇ further on was ṣ's doing too (8.4.1/2 in the upadeśa): षण् → सन्
     # (सनति), by the same निमित्तापाये नैमित्तिकस्याप्यपायः.
     for j in range(2, len(t0.varnas)):

@@ -70,6 +70,29 @@ class TraceStep(Dict[str, Any]):
     pass
 
 
+_PART_ROLES = (
+    ("upasarga", "upasarga"), ("abhyasa", "abhyasa"), ("dhatu", "dhatu"),
+    ("vikarana", "vikarana"), ("tin", "tin"), ("parasmaipada", "tin"),
+    ("atmanepada", "tin"), ("sup", "sup"), ("krt", "krt"),
+    ("taddhita", "taddhita"), ("pratipadika", "pratipadika"),
+)
+
+
+def term_parts(state) -> list:
+    """[[phonetic slp1, role, upadeśa], …] per Term — display metadata only,
+    so a reader can see which morpheme a step touched (भू + शप् + तिप्)."""
+    from engine.it_phonetic import term_phonetic_slp1
+
+    out = []
+    for t in state.terms:
+        role = next((r for tag, r in _PART_ROLES if tag in t.tags), t.kind)
+        if role == "prakriti" and any(tag.startswith("tin_adesha") for tag in t.tags):
+            role = "tin"
+        up = t.meta.get("upadesha_slp1") or t.meta.get("dhatu_upadesha") or ""
+        out.append([term_phonetic_slp1(t), role, up])
+    return out
+
+
 def make_applied_step(sutra_id, sutra_type, type_label,
                       form_before, form_after, why_dev):
     return {

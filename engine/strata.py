@@ -71,6 +71,18 @@ def in_tripadi(sutra_id: str) -> bool:
     return _in_range(sutra_id, domains()["tripadi"])
 
 
+@lru_cache(maxsize=1)
+def tripadi_nimitta_exceptions() -> list[dict[str, Any]]:
+    return json.loads(_DATA.read_text(encoding="utf-8")).get("tripadi_nimitta_exceptions", [])
+
+
+def sees_tripadi_nimitta(observer: str, effect_of: str | None = None) -> bool:
+    """A pre-tripāḍī rule whose own condition is a tripāḍī operation (6.3.111
+    ढ्रलोपे …) — it may run inside the tripāḍī and see that operation."""
+    return any(observer in ex["observers"] and (effect_of is None or effect_of in ex["sees"])
+               for ex in tripadi_nimitta_exceptions())
+
+
 def visible(observer: str, effect_of: str) -> Visibility:
     """Can ``observer`` see what ``effect_of`` did?
 
@@ -81,6 +93,8 @@ def visible(observer: str, effect_of: str) -> Visibility:
         return Visibility(True)
 
     tripadi = domains()["tripadi"]
+    if sees_tripadi_nimitta(observer, effect_of):
+        return Visibility(True)
     if _in_range(effect_of, tripadi) and (
         not _in_range(observer, tripadi) or _tuple(observer) < _tuple(effect_of)
     ):

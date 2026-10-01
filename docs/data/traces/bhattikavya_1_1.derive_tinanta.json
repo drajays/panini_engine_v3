@@ -1,0 +1,1 @@
+{"module": "pipelines.bhattikavya_1_1", "callable": "derive_tinanta", "ok": false, "skip": true, "reason": "could not infer smoke arguments from signature"}

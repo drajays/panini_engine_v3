@@ -59,6 +59,11 @@ _TRIPADI_SPINE: tuple[str, ...] = (
     "8.4.2",    # aṭkupvāṅnumvyavāye'pi — the same across aṭ/ku/pu (स्तृणोति, क्रीणाति)
     "8.4.40",   # stoḥ ścunā ścuḥ — dental next to a palatal → palatal (जज्ञे, राज्ञा)
     "8.4.41",   # ṣṭunā ṣṭuḥ — ṣ+t→ṣ+ṭ (structural; arm-guarded for edge cases)
+    # ढो ढे लोपः after ṣṭutva: Kāśikā 8.3.13 "ष्टुत्वस्यात्र सिद्धत्वमाश्रयाद् द्रष्टव्यम्";
+    # 6.3.112 / 6.3.111 are conditioned on that lopa itself (सोढा, लीढः).
+    "8.3.13",
+    "6.3.112",
+    "6.3.111",
     "8.4.53",   # jhalāṃ jaś jhaśi — jhal → jaś before jhaś (रुणद्धि, दुग्धे)
     "8.4.54",   # abhyāse carc — jhal→jaś in abhyāsa (idempotent: 8_4_54_carc_done)
     "8.4.55",   # khari ca — jhal→car before khar (idempotent: 8_4_55_khari_ca_done)

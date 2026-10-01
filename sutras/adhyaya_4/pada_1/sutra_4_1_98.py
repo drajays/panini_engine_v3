@@ -1,8 +1,16 @@
 """
 4.1.98  गोत्रे कुञ्जादिभ्यश्च्फञ्  —  VIDHI (narrow: corrected-v2 **P004-A**)
 
-Glass-box: after **4.1.92** *apatya* *adhikāra*, append *taddhita* **caPaY** (च्फञ्)
-to the frame ``kuYja`` + internal **6-1** *Nas* (*ṣaṣṭhī* proviso).
+Sources consulted:
+- ashtadhyayi.com data.txt row i=41098
+- Kāśikā: "चकारो विशेषणार्थः … ञकारो वृद्ध्यर्थः — कौञ्जायन्यः, कौञ्जायन्यौ, कौञ्जायनाः"
+- Cross-validation: regression test tests/unit/test_corrected_prakriyas_v2_bundle.py
+  (P004-A कौञ्जायन्यः)
+
+Glass-box: after **4.1.92** *apatya* *adhikāra*, append the *taddhita* upadeśa
+**cPaY** (च्फञ्) to the frame ``kuYja`` + internal **6-1** *Nas* (*ṣaṣṭhī* proviso).
+The it-prakaraṇa then names च् *it* (1.3.7) and ञ् *it* (1.3.3); the residue फ
+is 7.1.2's sthānin (→ आयन).
 
 Recipe arms ``corrected_v2_P004_A_4_1_98_arm`` (CONSTITUTION Art. 7).
 """
@@ -15,7 +23,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 META_ARM = "corrected_v2_P004_A_4_1_98_arm"
 _STEM_UPA = "kuYja"
-_TAD_UPA = "caPaY"
+_TAD_UPA = "cPaY"
 
 
 def _has_caPaY(state: State) -> bool:

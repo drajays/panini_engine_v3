@@ -1,200 +1,69 @@
 """
 1.3.7  चुटू  —  SAMJNA
 
+Sources consulted:
+- ashtadhyayi.com data.txt row i=13007
+- Kāśikā: "कौञ्जायन्यः (ञ्य), जस् — ब्राह्मणाः, शाण्डिक्यः, टवर्गः — कुरुचरी (ट)"
+- Cross-validation: regression tests tests/unit/test_it_prakarana.py
+  (णिच् → इ with ṇit, जस् → अस्, ण्वुल् → वु, चिण् → इ; झि / छ / ठक् / ढक् keep
+  their first sound), tests/unit/test_dASaraThi_apatya_iY.py
+
 Śāstra / engine role (CONSTITUTION Arts. 1–2, 4, 7)
 ──────────────────────────────────────────────────
-• **Type:** SAMJNA — first **hal** belonging to **cuṭ** (``CUTU``) in the
-  upadeśa is *it*.
+• **Type:** SAMJNA — the **first sound** (*ādiḥ*, from 1.3.5; *pratyayasya*,
+  from 1.3.6) of a **pratyaya** upadeśa, if it is a **cu**-varga (च छ ज झ ञ) or
+  **ṭu**-varga (ट ठ ड ढ ण) consonant, is *it*.  Every pratyaya Term on the tape
+  is examined (``is_pratyaya_upadesha``) — sup, tiṅ ādeśa, kṛt, taddhita,
+  vikaraṇa, sanādi alike; never a dhātu, āgama or upasarga.
 
-• **Scope:** Non-**dhātu**, **sup**-primary term list (same as **1.3.5**).
-
-• **v2 reference:** ``~/Documents/panini_engine_v2/core/it_rules.py``
-  ``cond_1_3_7`` /
-  ``act_1_3_7``.
+• **Sounds that are sthānin of a later vidhi are not *it*:** 7.1.2
+  *āyaneyīnīyiyaḥ phaḍhakhachaghāṃ pratyayādīnām* (Kāśikā: "फ इत्येतस्यायनादेशो
+  भवति … ढस्य एयादेशो भवति"), 7.1.3 *jho 'ntaḥ* ("प्रत्ययावयवस्य झस्य अन्त
+  इत्ययमादेशो भवति") and 7.3.50 *ṭhasyekaḥ* replace the pratyaya-initial छ् / ढ्
+  / झ् / ठ्.  Those vidhis would have no sthānin if 1.3.7 deleted it, so by
+  their very teaching (*vacana-sāmarthya*) the four sounds stay
+  (``_STHANIN_OF_LATER_ADESHA``): झि → अन्ति, छ → ईय, ढक् → एय, ठक् → इक.
 """
 from __future__ import annotations
 
-from typing import Optional
-
 from engine        import SutraType, SutraRecord, register_sutra
-from engine.lopa_ghost import term_is_sup_luk_ghost
+from engine.it_phonetic import IT_LOPA_TAGS
+from engine.it_samjna import TAG_CUTU, is_pratyaya_upadesha, it_lopa_already_done, register_candidate_tag
 from engine.state  import State
-from phonology     import CUTU
-from phonology.varna import HAL_DEV
 
-from sutras.adhyaya_1.pada_3.sutra_1_3_9 import IT_LOPA_TAGS
-
-# **corrected-v2 P004-B:** *ñya* ``Yya`` — initial ``Y`` (ञ्) is *cuṭ*-class *it*; must
-# win over *prātipadika*-initial ``S`` (श्) on the stem (also *cuṭ*).
-META_P004_B_Yya_CUTU = "corrected_v2_P004_B_Yya_cuTu_arm"
-_UPA_Yya = "Yya"
+# चु (च छ ज झ ञ) ∪ टु (ट ठ ड ढ ण), SLP1.
+_CU_TU = frozenset({"c", "C", "j", "J", "Y", "w", "W", "q", "Q", "R"})
+# छ् ढ् (7.1.2), झ् (7.1.3), ठ् (7.3.50).
+_STHANIN_OF_LATER_ADESHA = frozenset({"C", "Q", "J", "W"})
 
 
-def _eligible_p004_b_yya(state: State):
-    for ti, t in enumerate(state.terms):
-        if "taddhita" not in t.tags:
-            continue
-        if (t.meta.get("upadesha_slp1") or "").strip() != _UPA_Yya:
-            continue
-        vs = t.varnas
-        j = _first_hal_idx(vs)
-        if j is None:
-            continue
-        v = vs[j]
-        if v.slp1 not in CUTU:
-            continue
-        if v.tags & IT_LOPA_TAGS:
-            continue
-        yield ti, t, j
-
-
-def _terms_sup_or_primary(state: State):
-    # P025 *ṇic* ``Term`` (``meta['P025_Nic_pratyaya']``) must win over a leading
-    # *prātipadika* stem so **1.3.7** *cuṭu* tags the initial ``N`` of ``Nic``.
-    nic_p025 = [
-        t
-        for t in state.terms
-        if t.kind == "pratyaya" and t.meta.get("P025_Nic_pratyaya")
-    ]
-    if nic_p025:
-        return nic_p025
-    cand = [
-        t
-        for t in state.terms
-        if "sup" in t.tags
-        and "taddhita" not in t.tags
-        and not term_is_sup_luk_ghost(t)
-    ]
-    if cand:
-        return cand
-    krt = [
-        t for t in state.terms
-        if "krt" in t.tags and "upadesha" in t.tags
-    ]
-    if krt:
-        return krt
-    # **3.1.26** *ṇic* ``Ric`` / **2.1.26** *Nic*: *cuṭū* must target the affix’s
-    # initial ``R`` (ण्), not the preceding *dhātu*’s first *hal* (e.g. ``p`` of ``pA``).
-    # Restrict to pratyayas whose **first** upadeśa *hal* is ``R`` so other *nic* frames
-    # (e.g. *śuk* augment paths) keep the legacy *cuṭū* competition logic.
-    nic_ric: list = []
-    for t in state.terms:
-        if t.kind != "pratyaya" or "nic" not in t.tags:
-            continue
-        up = (t.meta.get("upadesha_slp1") or "").strip()
-        if up.endswith("~"):
-            up = up[:-1]
-        if up not in {"Ric", "Nic"}:
-            continue
-        vs = t.varnas
-        j = _first_hal_idx(vs)
-        if j is not None and vs[j].slp1 == "R":
-            nic_ric.append(t)
-    if nic_ric:
-        return nic_ric
-    # *luṭ* *ḍā* residue (**qA**): *cuṭ* *it* on ``q``.
-    qa = [
-        t for t in state.terms
-        if "upadesha" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() == "qA"
-    ]
-    if qa:
-        return qa
-    # dit_pratyaya qAc (डाच्) must win over preceding prātipadika so 1.3.7 cuṭū
-    # tags initial q, not p (structural: dit_pratyaya tag on qAc term).
-    qac = [
-        t
-        for t in state.terms
-        if "upadesha" in t.tags
-        and "dit_pratyaya" in t.tags
-        and (t.meta.get("upadesha_slp1") or "").strip() == "qAc"
-    ]
-    if qac:
-        return qac
-    # samāsānta टच् (5.4.91): initial ट् (w) is cuṭū-it, not the preceding stem.
-    wac = [
-        t
-        for t in state.terms
-        if "upadesha" in t.tags
-        and "taddhita" in t.tags
-        and (t.meta.get("upadesha_slp1") or "").strip() == "wac"
-    ]
-    if wac:
-        return wac
-    # tiṅ ādeśa (e.g. Ral/Nal 3.4.82) still carrying its raw upadeśa: the affix's
-    # own initial cuṭ-class hal (e.g. the ण् of णल्) is a candidate too — CUTU
-    # membership is re-checked by the caller, so this never fires for the vast
-    # majority of tiṅ substitutes (tip, tas, jhi, ...) whose first letter isn't cuṭ.
-    tin_upadesha = [
-        t for t in state.terms
-        if "tin" in t.tags and "upadesha" in t.tags and "dhatu" not in t.tags
-    ]
-    if tin_upadesha:
-        return tin_upadesha
-    if state.terms:
-        return [state.terms[0]]
-    return []
-
-
-def _first_hal_idx(varnas) -> Optional[int]:
-    # Use canonical hal inventory (includes ``R`` = ण्), not only ``pratyahara.HAL``.
-    for j, v in enumerate(varnas):
-        if v.slp1 in HAL_DEV:
-            return j
-    return None
-
-
-def _eligible(state: State):
-    if not any("upadesha" in t.tags for t in state.terms):
-        return
-    p04 = next(_eligible_p004_b_yya(state), None)
-    if p04 is not None:
-        yield p04
-        return
-    for term in _terms_sup_or_primary(state):
-        if "dhatu" in term.tags:
-            continue
-        try:
-            ti = state.terms.index(term)
-        except ValueError:
-            continue
-        vs = term.varnas
-        j = _first_hal_idx(vs)
-        if j is None:
-            continue
-        v = vs[j]
-        if v.slp1 not in CUTU:
-            continue
-        if v.tags & IT_LOPA_TAGS:
-            continue
-        yield ti, term, j
+def term_candidates(state: State, ti: int) -> list[int]:
+    t = state.terms[ti]
+    if not is_pratyaya_upadesha(t) or it_lopa_already_done(t) or not t.varnas:
+        return []
+    v = t.varnas[0]
+    if v.slp1 not in _CU_TU or v.slp1 in _STHANIN_OF_LATER_ADESHA:
+        return []
+    if v.tags & IT_LOPA_TAGS:
+        return []
+    return [0]
 
 
 def cond(state: State) -> bool:
-    return next(_eligible(state), None) is not None
+    return any(term_candidates(state, ti) for ti in range(len(state.terms)))
 
 
 def act(state: State) -> State:
-    got = next(_eligible(state), None)
-    if got is None:
-        return state
-    ti, term, j = got
-    v = term.varnas[j]
-    v.tags.add("it_candidate_cutu")
-    # Include current upadeśa identity in the key so a later pratyaya-substitution
-    # that reintroduces a cuṭu-initial hal at the same (ti,j) still records a
-    # distinct saṃjñā event (avoids R2 false-positive on re-fires).
-    upa = term.meta.get("upadesha_slp1")
-    state.samjna_registry[("it_cutu", ti, j, upa)] = frozenset({v.slp1})
+    for ti, t in enumerate(state.terms):
+        for j in term_candidates(state, ti):
+            v = t.varnas[j]
+            v.tags.add("it_candidate_cutu")
+            upa = t.meta.get("upadesha_slp1")
+            state.samjna_registry[("it_cutu", ti, j, upa)] = frozenset({v.slp1})
     state.meta["__why_now_dev__"] = (
-        "उपदेशे प्रत्ययस्य आदौ चवर्ग-टवर्गीयः प्रथमः हल् 'इत्'-संज्ञां प्राप्नोति; "
-        "अयं वर्णः अनन्तरं १.३.९ इति लुप्यते (यथा ण्यत्, ण्वुल्, ण्यन्तर्गत-ण्)। (१.३.७)"
+        "उपदेशे प्रत्ययस्य आदौ चवर्ग-टवर्गीयः वर्णः 'इत्'-संज्ञां प्राप्नोति; "
+        "अयं वर्णः अनन्तरं १.३.९ इति लुप्यते (यथा णिच्, ण्वुल्, जस्, चिण्)। (१.३.७)"
     )
-    if (
-        state.meta.get(META_P004_B_Yya_CUTU)
-        and "taddhita" in term.tags
-        and (term.meta.get("upadesha_slp1") or "").strip() == _UPA_Yya
-    ):
-        state.meta.pop(META_P004_B_Yya_CUTU, None)
     return state
 
 
@@ -204,10 +73,11 @@ SUTRA = SutraRecord(
     text_slp1      = 'cuwU',
     text_dev       = 'चुटू',
     padaccheda_dev = "चुटु",
-    why_dev        = "चवर्ग-टवर्गीयः प्रथमः हल् ‘इत्’ संज्ञकः; लोपः १.३.९।",
-    anuvritti_from = ("1.3.2",),
+    why_dev        = "प्रत्ययस्य आदौ चवर्ग-टवर्गीयः वर्णः ‘इत्’ संज्ञकः; लोपः १.३.९।",
+    anuvritti_from = ("1.3.2", "1.3.5", "1.3.6"),
     cond           = cond,
     act            = act,
 )
 
 register_sutra(SUTRA)
+register_candidate_tag(TAG_CUTU, SUTRA.sutra_id)

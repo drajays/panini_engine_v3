@@ -1,109 +1,59 @@
 """
 1.3.5  आदिर्ञिटुडवः  —  SAMJNA
 
+Sources consulted:
+- ashtadhyayi.com data.txt row i=13005
+- Kāśikā: "आदिशब्दः प्रत्येकमभिसंबध्यते। ञिमिदा — मिन्नः। ञिधृषा — धृष्टः। ञिक्ष्विदा — क्ष्विण्णः"
+- Cross-validation: regression tests tests/unit/test_it_prakarana.py
+  (डुपचँष् → पच् with ḍvit, ञिमिदाँ → मिद् with ñīt, टुओँश्वि → श्वि with ṭvit)
+
 Śāstra / engine role (CONSTITUTION Arts. 1–2, 4, 7)
 ──────────────────────────────────────────────────
-• **Type:** SAMJNA — first **hal** in **ñi∪ṭu∪ḍu** (``NI_TU_DU``) in the
-  upadeśa gets *it* (candidate tag → **1.3.9** lopa).
+• **Type:** SAMJNA — the **unit** ञि / टु / डु standing at the very beginning
+  (*ādiḥ*) of a **dhātu** upadeśa is *it*.  Only dhātus are taught with these
+  (``is_dhatu_upadesha``); a pratyaya's initial ट् / ञ् alone (टा, ञ्य) is **1.3.7**'s.
 
-• **Scope:** Non-taddhita **sup** rows when present; else the primary upadeśa
-  term (``terms[0]``), matching v2 ``_terms_sup_or_primary_upadesha``.
-
-• **v2 reference:** ``~/Documents/panini_engine_v2/core/it_rules.py``
-  ``cond_1_3_5`` /
-  ``act_1_3_5``.
+• **Unit, not letter:** both Varṇas get ``it_candidate_nit_tu_du``; **1.3.9**
+  records one *it* named *ñīt* / *ṭvit* / *ḍvit* — the nimitta of 3.2.187
+  *ñītaḥ ktaḥ*, 3.3.89 *ṭvito 'thuc*, 3.3.88 *ḍvitaḥ ktriḥ*.  A plain initial
+  ट् (टिकृँ, अटँ) is untouched.
 """
 from __future__ import annotations
 
-from typing import Optional
-
 from engine        import SutraType, SutraRecord, register_sutra
+from engine.it_phonetic import IT_LOPA_TAGS
+from engine.it_samjna import TAG_NIT_TU_DU, is_dhatu_upadesha, it_lopa_already_done, register_candidate_tag
 from engine.state  import State
-from phonology     import NI_TU_DU
-from phonology.varna import HAL_DEV
 
-from sutras.adhyaya_1.pada_3.sutra_1_3_9 import IT_LOPA_TAGS
-
-
-def _terms_sup_or_primary(state: State):
-    cand = [
-        t for t in state.terms
-        if "sup" in t.tags and "taddhita" not in t.tags
-    ]
-    if cand:
-        return cand
-    # Taddhita upadeśas also participate in 1.3.5 (e.g. ñya, ñi, ṭu, ḍu markers).
-    # v3 previously skipped these, which blocked it-markers like initial 'Y' (ñ)
-    # from being recorded in `it_markers` by 1.3.9 — needed for 7.2.117.
-    taddhita = [
-        t for t in state.terms
-        if "taddhita" in t.tags and "upadesha" in t.tags
-    ]
-    if taddhita:
-        return taddhita
-    krt = [
-        t for t in state.terms
-        if "krt" in t.tags and "upadesha" in t.tags
-    ]
-    if krt:
-        return krt
-    if state.terms:
-        return [state.terms[0]]
-    return []
+# ञि · टु · डु — the hal and the vowel that together form the marker (SLP1).
+_ADI_UNITS = {"Y": "i", "w": "u", "q": "u"}
 
 
-def _first_hal_idx(varnas) -> Optional[int]:
-    for j, v in enumerate(varnas):
-        if v.slp1 in HAL_DEV:
-            return j
-    return None
-
-
-def _eligible(state: State):
-    if not any("upadesha" in t.tags for t in state.terms):
-        return
-    for term in _terms_sup_or_primary(state):
-        try:
-            ti = state.terms.index(term)
-        except ValueError:
-            continue
-        vs = term.varnas
-        j = _first_hal_idx(vs)
-        if j != 0:                       # आदिः — the upadeśa's very first sound
-            continue
-        v = vs[j]
-        if v.slp1 not in NI_TU_DU:
-            continue
-        # the marker is the unit ञि / टु / डु (टिकृँ, अटँ keep their ṭ); a pratyaya's
-        # initial ट् / ञ् alone (टा, ञ्य) is 1.3.7 चुटू's, not this sūtra's
-        if len(vs) < 2 or vs[1].slp1 != {"Y": "i", "w": "u", "q": "u"}[v.slp1]:
-            continue
-        if v.tags & IT_LOPA_TAGS:
-            continue
-        yield ti, term, j
+def term_candidates(state: State, ti: int) -> list[int]:
+    t = state.terms[ti]
+    if not is_dhatu_upadesha(t) or it_lopa_already_done(t):
+        return []
+    vs = t.varnas
+    if len(vs) < 2 or vs[0].slp1 not in _ADI_UNITS or vs[1].slp1 != _ADI_UNITS[vs[0].slp1]:
+        return []
+    if vs[0].tags & IT_LOPA_TAGS:
+        return []
+    return [0, 1]
 
 
 def cond(state: State) -> bool:
-    return next(_eligible(state), None) is not None
+    return any(term_candidates(state, ti) for ti in range(len(state.terms)))
 
 
 def act(state: State) -> State:
-    got = next(_eligible(state), None)
-    if got is None:
-        return state
-    ti, term, j = got
-    v = term.varnas[j]
-    v.tags.add("it_candidate_nit_tu_du")
-    # In dhātu upadeśas like "qupac~z", the anubandha is "qu" (डु) —
-    # both the initial hal (q) and the following vowel (u) are part of the marker.
-    # We tag the following vowel as it-candidate too for the classical digraph
-    # markers **ñi** / **ṭu** / **ḍu** (and qu- in SLP1).
-    if j + 1 < len(term.varnas) and term.varnas[j + 1].slp1 in {"u", "i"}:
-        nxt = term.varnas[j + 1]
-        nxt.tags.add("it_candidate_nit_tu_du")
-        state.samjna_registry[("it_nit_tu_du", ti, j, v.slp1)] = frozenset({v.slp1, nxt.slp1})
-    else:
-        state.samjna_registry[("it_nit_tu_du", ti, j)] = frozenset({v.slp1})
+    for ti, t in enumerate(state.terms):
+        cands = term_candidates(state, ti)
+        if not cands:
+            continue
+        for j in cands:
+            t.varnas[j].tags.add("it_candidate_nit_tu_du")
+        h, a = t.varnas[0].slp1, t.varnas[1].slp1
+        state.samjna_registry[("it_nit_tu_du", ti, 0, h)] = frozenset({h, a})
     return state
 
 
@@ -113,10 +63,11 @@ SUTRA = SutraRecord(
     text_slp1      = 'AdirYiwuqavaH',
     text_dev       = 'आदिर्ञिटुडवः',
     padaccheda_dev = "आदिः ञि-टु-ड-वः",
-    why_dev        = "ञ्-इट्-डु-वर्णेषु प्रथमः हल् ‘इत्’ संज्ञकः; लोपः १.३.९।",
+    why_dev        = "धातोः आदौ ञि-टु-डु इति समुदायः ‘इत्’ संज्ञकः; लोपः १.३.९।",
     anuvritti_from = ("1.3.2",),
     cond           = cond,
     act            = act,
 )
 
 register_sutra(SUTRA)
+register_candidate_tag(TAG_NIT_TU_DU, SUTRA.sutra_id)

@@ -6,6 +6,8 @@ that begins with dental **t** or **tha** (= SLP1 't' or 'T') in āśīr-liṅ.
 
 This fires for: 3sg (t), 3du (tāṃ), 2du (tam), 2pl (ta) — all t-initial.
 Does NOT fire for: 3pl (us), 2sg (s), 1sg (am), 1du (va), 1pl (ma).
+Ātmanepada: त, थास् take सुट् before them (सीष्ट, सीष्ठाः); in आताम्, आथाम्
+the सुट् goes before the inner त/थ (सीयास्ताम्, सीयास्थाम्).
 
 Engine:
   - arm ``state.meta['suw_recipe']`` + ``state.meta['ashir_liG']``.
@@ -48,6 +50,21 @@ def _find_tin_t_initial(state: State) -> int | None:
     return None
 
 
+def _find_tin_t_medial(state: State) -> tuple[int, int] | None:
+    """(term, varṇa) of a non-initial t/T inside an ātmanepada tiṅ (आताम्, आथाम्):
+    the सुट् is an āgama of the t/th itself (Kāśikā: तकारथकारावागमिनौ)."""
+    for i in range(len(state.terms) - 1, -1, -1):
+        t = state.terms[i]
+        if t.kind != "pratyaya" or "tin_adesha_3_4_78" not in t.tags:
+            continue
+        if t.meta.get("suw_3_4_107_done"):
+            continue
+        for j, v in enumerate(t.varnas[1:], start=1):
+            if v.slp1 in ("t", "T"):
+                return i, j
+    return None
+
+
 def cond(state: State) -> bool:
     if not state.meta.get("suw_recipe"):
         return False
@@ -56,12 +73,24 @@ def cond(state: State) -> bool:
         or state.meta.get("_liG_ad_spine")
     ):
         return False
-    return _find_tin_t_initial(state) is not None
+    if _find_tin_t_initial(state) is not None:
+        return True
+    return bool(state.meta.get("ashir_liG")) and _find_tin_t_medial(state) is not None
 
 
 def act(state: State) -> State:
     idx = _find_tin_t_initial(state)
     if idx is None:
+        hit = _find_tin_t_medial(state)
+        if hit is None:
+            return state
+        i, j = hit
+        s_v = mk("s")
+        s_v.tags.add("suw_agama")
+        state.terms[i].varnas.insert(j, s_v)
+        state.terms[i].meta["suw_3_4_107_done"] = True
+        state.meta["suw_recipe"] = False
+        state.samjna_registry["3.4.107_suw_inserted"] = True
         return state
     suw = Term(
         kind="pratyaya",

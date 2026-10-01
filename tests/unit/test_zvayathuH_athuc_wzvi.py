@@ -8,7 +8,7 @@ from pipelines.krdanta import derive_zvayathuH
 
 
 def test_P002_B_render_zvayathuH():
-    assert derive_zvayathuH().flat_slp1() == "zvayaTuH"
+    assert derive_zvayathuH().flat_slp1() == "SvayaTuH"
 
 
 def test_P002_B_spine_core_order():

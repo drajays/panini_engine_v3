@@ -31,12 +31,11 @@ def _find(state: State) -> tuple[int, int] | None:
     if not state.terms:
         return None
     t = state.terms[0]
-    # After structural merge, varṇa tags may be normalized away; so we key off
-    # the phonemic neighborhood directly. In our luṅ glass-box spines the sic
-    # residue is "si" (after halantyam removes final 'c'), and Īṭ adds leading I
-    # to the following apṛkta t, giving "... i + s + i + I + t ...".
+    # इटः (iṭ) + स् + ईटि: the ई must be the īṭ āgama of 7.3.96, not any ī/i —
+    # the sīyuṭ ī of भविषीष्ट and the 1sg ending इ of अभविषि keep their स्.
     for i in range(1, len(t.varnas) - 1):
-        if t.varnas[i].slp1 == "s" and t.varnas[i - 1].slp1 == "i" and t.varnas[i + 1].slp1 in {"i", "I"}:
+        if (t.varnas[i].slp1 == "s" and t.varnas[i - 1].slp1 == "i"
+                and "Iw_agama" in t.varnas[i + 1].tags):
             return (0, i)
     return None
 

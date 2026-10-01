@@ -73,7 +73,7 @@ class TestTIN:
         assert len(TIN) == 18
 
     def test_parasmaipada_members(self):
-        for upa in ("tip", "tas", "jhi", "sip", "Tas", "Ta", "mip", "vas", "mas"):
+        for upa in ("tip", "tas", "Ji", "sip", "Tas", "Ta", "mip", "vas", "mas"):
             assert upa in TIN, f"{upa!r} should be in TIN"
 
     def test_atmanepada_members(self):
@@ -96,7 +96,7 @@ class TestTAN:
             assert upa in TAN, f"{upa!r} should be in TAN"
 
     def test_excludes_parasmaipada(self):
-        for upa in ("tip", "tas", "jhi", "sip", "Tas", "Ta", "mip", "vas", "mas"):
+        for upa in ("tip", "tas", "Ji", "sip", "Tas", "Ta", "mip", "vas", "mas"):
             assert upa not in TAN, f"{upa!r} should NOT be in TAN"
 
     def test_tan_subset_of_tin(self):

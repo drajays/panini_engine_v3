@@ -61,7 +61,7 @@ def derive_viSinanti_laT_rudhadi_P032() -> State:
 
     s = P00_lac_lat_attach(s)
 
-    s = P00_tin_adesha_base(s, "jhi")
+    s = P00_tin_adesha_base(s, "Ji")
     for sid in ("1.4.99", "1.4.100", "1.3.78", "1.4.101", "1.4.108", "1.4.102", "1.4.22"):
         s = apply_rule(sid, s)
     for sid in ("1.3.3", "1.3.9"):

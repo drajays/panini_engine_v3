@@ -1,8 +1,8 @@
 """
 3.2.161  भञ्जभासमिदो घुरच्  —  VIDHI (narrow: corrected-v2 **P007** *bhaṅguram*)
 
-Glass-box: after ``BaYj`` (from ``BaYjo`` + *it*), append *kṛt* upadeśa **Gurc**
-(घुरच् → **G** + **u** + **r** + **c**; **G**/**c** *it*) tagged ``ghiti`` for
+Glass-box: after भन्ज् (भन्जोँ + *it*-lopa), भास् or मिद्, append the *kṛt*
+upadeśa घुरच् (``Gurac``: घ् by 1.3.8, च् by 1.3.3 are *it*) tagged ``ghiti`` for
 **7.3.52** *cajoḥ ku …*.
 
 Citation (CONSTITUTION Art. 14)
@@ -23,7 +23,7 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 META_ARM = "corrected_v2_P007_3_2_161_arm"
-_ROOTS = frozenset({"BaYj", "BAs", "mid"})   # भञ्ज-भास-मिदः (after it-lopa)
+_ROOTS = frozenset({"Banj", "BAs", "mid"})   # भञ्ज-भास-मिदः (after it-lopa; भन्जोँ)
 _REG = "3.2.161_ghurac_attached"
 
 
@@ -56,9 +56,9 @@ def act(state: State) -> State:
         return state
     pr = Term(
         kind="pratyaya",
-        varnas=list(parse_slp1_upadesha_sequence("Gurc")),
+        varnas=list(parse_slp1_upadesha_sequence("Gurac")),
         tags={"pratyaya", "krt", "upadesha", "ghiti"},
-        meta={"upadesha_slp1": "Gurc"},
+        meta={"upadesha_slp1": "Gurac"},
     )
     state.terms.append(pr)
     state.samjna_registry[_REG] = True

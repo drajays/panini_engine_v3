@@ -20,6 +20,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 from core.canonical_pipelines import (
     P00_upadesha_it_1_3_1_2_5,
     P06a_pratyaya_adhikara_3_1_1_to_3,
+    P00_lat_vartamane,
     P00_tin_adesha_base,
     P00_hal_anit_it_lopa,
 )
@@ -46,16 +47,7 @@ def derive_vande() -> State:
 
     # laṭ + ātmanepada 1sg i
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s = apply_rule("3.2.123", s)
-    laT = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("laT"),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-    if laT.varnas and laT.varnas[-1].slp1 == "T":
-        del laT.varnas[-1]
-    s.terms.append(laT)
+    s = P00_lat_vartamane(s)
 
     s = apply_rule("1.3.12", s)
 

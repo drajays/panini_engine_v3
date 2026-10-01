@@ -3,7 +3,10 @@
 
 Padaccheda: लृट् शेषे च
 
-krt-suffix rule: लृट् शेषे च
+Glass-box: under the **3.3.3** *bhaviṣyati* adhikāra, when the recipe arms
+``lfT_recipe`` (future, not *anadyatana*-restricted — the *śeṣa* of 3.3.15),
+attach the *lṛṭ* *lac* placeholder (``lf``, halantya ṭ pre-stripped) after the
+*dhātu*. Idempotent: no second *lṛṭ* term is added.
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 33013 · लृट् शेषे च
@@ -13,41 +16,51 @@ Citation (CONSTITUTION Art. 14)
                 शेषः क्रियार्थोपपदादन्यः
                 करिष्यामीति व्रजति
                 हरिष्यामीति व्रजति
-  Cross-check — surface pinned by: tests/unit/test_tinanta_abhavisyat_lrg.py
+  Cross-check — Vidyut surface ✓ भविष्यति / गमिष्यति; surface pinned by
+                tests/unit/test_tinanta_abhavisyat_lrg.py, tests/unit/test_gam_lrt_7_2_58.py
   Reference record: sutra_ref_out/3_3_13.json
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from engine.gates import adhikara_in_effect
+from engine.state import State, Term
+from phonology.varna import parse_slp1_upadesha_sequence
 
-_GATE_KEY: str = "3_3_13_lfw_13"
+
+def _has_lfT(state: State) -> bool:
+    return any((t.meta.get("upadesha_slp1") or "").strip() == "lRT" for t in state.terms)
 
 
 def cond(state: State) -> bool:
-    return krt_insertion_eligible(state, "3.3.13", gate_key=_GATE_KEY, adhikara_id="3.1.1")
-    return bool(state.meta.get("lfT_recipe"))
+    if not state.meta.get("lfT_recipe") or _has_lfT(state):
+        return False
+    return adhikara_in_effect("3.3.13", state, "3.3.3")
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.3.13"
+    vs = parse_slp1_upadesha_sequence("lRT")
+    if vs and vs[-1].slp1 == "T":
+        vs = vs[:-1]
+    state.terms.append(Term(
+        kind="pratyaya",
+        varnas=vs,
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        meta={"upadesha_slp1": "lRT"},
+    ))
     return state
 
 
 SUTRA = SutraRecord(
-    sutra_id              = "3.3.13",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
-    text_slp1             = "lfw Seze ca",
-    text_dev              = "लृट् शेषे च",
-    padaccheda_dev        = "लृट् शेषे च",
-    why_dev               = "धातोः प्रत्ययः (३.3.13)।",
-    anuvritti_from        = ('3.1.1',),
-    cond                  = cond,
-    act                   = act,
+    sutra_id       = "3.3.13",
+    sutra_type     = SutraType.VIDHI,
+    text_slp1      = "lfw Seze ca",
+    text_dev       = "लृट् शेषे च",
+    padaccheda_dev = "लृट् शेषे च",
+    why_dev        = "भविष्यति काले (अनद्यतनात् शेषे च) धातोः लृट्-लकारः।",
+    anuvritti_from = ("3.3.3", "3.3.10"),
+    cond           = cond,
+    act            = act,
 )
 
 register_sutra(SUTRA)

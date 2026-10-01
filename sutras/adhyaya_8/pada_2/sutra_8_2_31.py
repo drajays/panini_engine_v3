@@ -1,9 +1,9 @@
 """
-8.2.31  हो ढः  —  VIDHI (narrow demo)
+8.2.31  हो ढः  —  VIDHI
 
-Demo slice (जिघृक्षति):
-  In the grah-desiderative base, replace final `h` with `D` before following `s`
-  (of san term).
+ह् → ढ् before a jhal or at the pada end. Utsarga: it yields to its apavādas
+8.2.32 दादेर्धातोर्घः (the ह् of a द्-initial dhātu — दोग्धा) and 8.2.34 नहो धः
+(नद्धा), whose sites are skipped here.
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 82031 · हो ढः
@@ -13,7 +13,8 @@ Citation (CONSTITUTION Art. 14)
                 सोढा
                 सोढुम्
                 सोढव्यम्
-  Cross-check — surface pinned by: tests/unit/test_jiGfkSati_grah_san_desiderative.py
+  Cross-check — surface pinned by: tests/unit/test_jiGfkSati_grah_san_desiderative.py;
+                ashtadhyayi.com gold दोग्धा / नद्धा (bench/ashtadhyayi_gold.py luṭ)
   Reference record: sutra_ref_out/8_2_31.json
 """
 from __future__ import annotations
@@ -31,9 +32,17 @@ def _site(state: State):
         return None
     c = flat(state)
     for k in range(len(c)):
-        if slp(c[k]) == "h" and followed_by_jhal_or_end(c, k):
+        if slp(c[k]) == "h" and followed_by_jhal_or_end(c, k) and not _apavada_site(c, k):
             return c[k]
     return None
+
+
+def _apavada_site(c, k: int) -> bool:
+    span = dhatu_span(c, k)
+    if not span or span[1] != k:
+        return False
+    root = "".join(slp(x) for x in c[span[0]:k + 1])
+    return root.startswith("d") or root == "nah"
 
 
 def cond(state: State) -> bool:

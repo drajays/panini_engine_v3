@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_tin_adesha_base, P00_adadi_sap_luk_tere
+from core.canonical_pipelines import P00_lat_vartamane, P00_tin_adesha_base, P00_adadi_sap_luk_tere
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -27,24 +27,11 @@ def _dhatu_dIdhI() -> Term:
     )
 
 
-def _laT_placeholder() -> Term:
-    varnas = list(parse_slp1_upadesha_sequence("laT"))
-    if varnas and varnas[-1].slp1 == "T":
-        varnas = varnas[:-1]
-    return Term(
-        kind="pratyaya",
-        varnas=varnas,
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-
-
 def derive_dIdhye_dIdhi_lat_parasmin_lesson() -> State:
     s = State(terms=[_dhatu_dIdhI()], meta={}, trace=[])
 
     s.meta["lakara"] = "laT"
-    s = apply_rule("3.2.123", s)
-    s.terms.append(_laT_placeholder())
+    s = P00_lat_vartamane(s)
 
     s = P00_tin_adesha_base(s, "i")
     s.meta["3_1_68_kartari_recipe"] = True

@@ -24,6 +24,14 @@
 • **Tags:** Only deletions listed in ``IT_LOPA_TAGS``; ``nut_agama_inserted``
   etc. are deliberately excluded (see 7.1.54 notes in repo).
 
+• **What the lopa leaves behind (``engine.it_samjna.record_it_lopa``):** one
+  record per *it* — letter(s), the sūtra that named it, ādi/antya position and
+  the class name (*kit*, *ṅit*, *pit*, *śit*, *ḍvit*, *irit*, *udit* …) — in
+  ``Term.meta["it_records"]``, the Term tag ``it:<name>``, and the derivation-wide
+  ``state.meta["it_lopa_log"]``.  The trace row's ``why_now_dev`` lists them.
+  When no sūtra of 1.3.2–1.3.8 has an unmarked candidate left on a Term, the
+  Term is stamped ``it_lopa_done`` so its residue is never re-analysed.
+
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 13009 · तस्य लोपः
               padaccheda: तस्य · लोपः
@@ -39,7 +47,9 @@ from __future__ import annotations
 
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.it_phonetic import IT_LOPA_TAGS
+from engine.it_samjna import META_IT_LOPA_LOG, META_LOPA_DONE, record_it_lopa
 from engine.state  import State
+from phonology.joiner import slp1_to_devanagari
 from phonology.pratyahara import is_dirgha
 from phonology.varna     import AC_DEV, mk as v_mk, mk_inherent_a
 
@@ -65,14 +75,34 @@ def cond(state: State) -> bool:
     return any(_has_it_varna(t) for t in state.terms)
 
 
+def _it_samjna_exhausted(state: State, ti: int) -> bool:
+    """No sūtra of 1.3.2–1.3.8 still has an unmarked *it* candidate in ``terms[ti]``."""
+    from sutras.adhyaya_1.pada_3 import (
+        sutra_1_3_2, sutra_1_3_3, sutra_1_3_5, sutra_1_3_6, sutra_1_3_7, sutra_1_3_8,
+    )
+    return not any(
+        m.term_candidates(state, ti)
+        for m in (sutra_1_3_2, sutra_1_3_3, sutra_1_3_5, sutra_1_3_6, sutra_1_3_7, sutra_1_3_8)
+    )
+
+
 def act(state: State) -> State:
-    for t in state.terms:
+    exhausted = {
+        ti for ti, t in enumerate(state.terms)
+        if "upadesha" in t.tags and _it_samjna_exhausted(state, ti)
+    }
+    new_log: list[dict] = []
+    summary: list[str] = []
+    for ti, t in enumerate(state.terms):
         removed: list[str] = []
+        removed_at: list[tuple[int, object]] = []
+        n_before = len(t.varnas)
         new_varnas = []
         for j, v in enumerate(t.varnas):
             if not (v.tags & IT_LOPA_TAGS):
                 new_varnas.append(v)
                 continue
+            removed_at.append((j, v))
             # Dhātu upadeśa: anunāsika vowel (१.३.२) — *it* is the nasal
             # feature; the vowel letter remains (e.g. डुपचँष् → पच्, not प्-च्).
             # Sup / other pratyayas: vowel marked anunāsika is fully elided
@@ -136,12 +166,32 @@ def act(state: State) -> State:
             # mark it "irit" so 3.1.57 can fire and 7.1.58 (idit num) stays silent.
             if "dhatu" in t.tags and "i" in removed and "r" in removed:
                 t.tags.add("irit")
+            upadesha_dev = slp1_to_devanagari(t.varnas)
+            recs = record_it_lopa(t, removed_at, n_before)
+            new_log.extend(dict(r, term_index=ti) for r in recs)
+            summary.append(upadesha_dev + " — " + ", ".join(
+                f"{r['letters_dev']} → {r['name_dev'] or 'इत्'} ({_dev_digits(r['sutra'] or '')})"
+                for r in recs
+            ))
         t.varnas = new_varnas
+        if ti in exhausted:
+            t.meta[META_LOPA_DONE] = (
+                (t.meta.get("upadesha_slp1") or "").strip(),
+                "".join(v.slp1 for v in new_varnas),
+            )
+    if new_log:
+        state.meta[META_IT_LOPA_LOG] = list(state.meta.get(META_IT_LOPA_LOG) or ()) + new_log
     state.meta["__why_now_dev__"] = (
-        "इत्-संज्ञक-वर्णानां लोपः उपदेशावस्थायाम् (इतस्य लोपः); "
-        "एते वर्णाः १.३.२–१.३.८ इति सूत्रैः ‘इत्’-संज्ञां प्राप्ताः। (१.३.९)"
+        "इत्-संज्ञक-वर्णानां लोपः (तस्य लोपः): " + "; ".join(summary) + "। (१.३.९)"
     )
     return state
+
+
+_DEV_DIGITS = str.maketrans("0123456789", "०१२३४५६७८९")
+
+
+def _dev_digits(s: str) -> str:
+    return s.replace("-vārttika", " वार्तिकम्").translate(_DEV_DIGITS)
 
 
 SUTRA = SutraRecord(

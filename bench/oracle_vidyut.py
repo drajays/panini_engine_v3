@@ -42,6 +42,17 @@ _GANA = {
 }
 _LAKARA = {"laT": "Lat", "laG": "Lan", "liT": "Lit", "lRT": "Lrt", "loT": "Lot"}
 
+# Vidyut reads svara from the aupadeśika string (``\`` anudātta). Unmarked, an
+# anudātta root is taken as udātta — seṭ, and not the pāṭha entry that rules
+# like 7.3.78 पाघ्रा… or 6.4.110 key on — which yields पाति/पिष्यति for पा पाने
+# and करिष्यति-less कर्वः for कृ. Our spelling → the dhātupāṭha's accented one.
+_VIDYUT_AUPADESHIKA = {
+    "gamx~": "ga\\mx~",
+    "pA": "pA\\",
+    "nIY": "RI\\Y",
+    "qukfY": "qukf\\Y",
+}
+
 
 def _derive(cell: dict) -> tuple[str, str]:
     """(forms, sūtra path) from Vidyut, or ("", "") when it declines.
@@ -73,7 +84,7 @@ def _derive(cell: dict) -> tuple[str, str]:
         )
     else:
         args = Pada.Tinanta(
-            dhatu=Dhatu.mula(aupadeshika=cell["dhatu"],
+            dhatu=Dhatu.mula(aupadeshika=_VIDYUT_AUPADESHIKA.get(cell["dhatu"], cell["dhatu"]),
                              gana=getattr(Gana, _GANA[cell["gana"]])),
             prayoga=Prayoga.Kartari,
             lakara=getattr(Lakara, _LAKARA[cell["lakara"]]),

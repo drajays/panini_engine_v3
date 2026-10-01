@@ -1,0 +1,3893 @@
+{
+  "generated_at": "2026-09-30T19:33:30+00:00",
+  "oracle": "vidyut (MIT) via bench/oracle/vidyut.csv",
+  "cells": 417,
+  "we_derived": 417,
+  "oracle_derived": 417,
+  "comparable": 417,
+  "agree": 417,
+  "disagree": 0,
+  "agreement": 1.0,
+  "disagreements": [],
+  "rows": [
+    {
+      "key": "subanta:rAma:pum:1:1",
+      "ours": "rAmaH",
+      "error": "",
+      "theirs": [
+        "rAmaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:1:2",
+      "ours": "rAmO",
+      "error": "",
+      "theirs": [
+        "rAmO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:1:3",
+      "ours": "rAmAH",
+      "error": "",
+      "theirs": [
+        "rAmAH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:2:1",
+      "ours": "rAmam",
+      "error": "",
+      "theirs": [
+        "rAmam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:2:2",
+      "ours": "rAmO",
+      "error": "",
+      "theirs": [
+        "rAmO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:2:3",
+      "ours": "rAmAn",
+      "error": "",
+      "theirs": [
+        "rAmAn"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:3:1",
+      "ours": "rAmeRa",
+      "error": "",
+      "theirs": [
+        "rAmeRa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:3:2",
+      "ours": "rAmAByAm",
+      "error": "",
+      "theirs": [
+        "rAmAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:3:3",
+      "ours": "rAmEH",
+      "error": "",
+      "theirs": [
+        "rAmEH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:4:1",
+      "ours": "rAmAya",
+      "error": "",
+      "theirs": [
+        "rAmAya"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:4:2",
+      "ours": "rAmAByAm",
+      "error": "",
+      "theirs": [
+        "rAmAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:4:3",
+      "ours": "rAmeByaH",
+      "error": "",
+      "theirs": [
+        "rAmeByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:5:1",
+      "ours": "rAmAt",
+      "error": "",
+      "theirs": [
+        "rAmAd",
+        "rAmAt"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:5:2",
+      "ours": "rAmAByAm",
+      "error": "",
+      "theirs": [
+        "rAmAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:5:3",
+      "ours": "rAmeByaH",
+      "error": "",
+      "theirs": [
+        "rAmeByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:6:1",
+      "ours": "rAmasya",
+      "error": "",
+      "theirs": [
+        "rAmasya"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:6:2",
+      "ours": "rAmayoH",
+      "error": "",
+      "theirs": [
+        "rAmayoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:6:3",
+      "ours": "rAmARAm",
+      "error": "",
+      "theirs": [
+        "rAmARAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:7:1",
+      "ours": "rAme",
+      "error": "",
+      "theirs": [
+        "rAme"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:7:2",
+      "ours": "rAmayoH",
+      "error": "",
+      "theirs": [
+        "rAmayoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:7:3",
+      "ours": "rAmezu",
+      "error": "",
+      "theirs": [
+        "rAmezu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:8:1",
+      "ours": "rAma",
+      "error": "",
+      "theirs": [
+        "rAma"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:8:2",
+      "ours": "rAmO",
+      "error": "",
+      "theirs": [
+        "rAmO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rAma:pum:8:3",
+      "ours": "rAmAH",
+      "error": "",
+      "theirs": [
+        "rAmAH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:1:1",
+      "ours": "hariH",
+      "error": "",
+      "theirs": [
+        "hariH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:1:2",
+      "ours": "harI",
+      "error": "",
+      "theirs": [
+        "harI"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:1:3",
+      "ours": "harayaH",
+      "error": "",
+      "theirs": [
+        "harayaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:2:1",
+      "ours": "harim",
+      "error": "",
+      "theirs": [
+        "harim"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:2:2",
+      "ours": "harI",
+      "error": "",
+      "theirs": [
+        "harI"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:2:3",
+      "ours": "harIn",
+      "error": "",
+      "theirs": [
+        "harIn"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:3:1",
+      "ours": "hariRA",
+      "error": "",
+      "theirs": [
+        "hariRA"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:3:2",
+      "ours": "hariByAm",
+      "error": "",
+      "theirs": [
+        "hariByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:3:3",
+      "ours": "hariBiH",
+      "error": "",
+      "theirs": [
+        "hariBiH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:4:1",
+      "ours": "haraye",
+      "error": "",
+      "theirs": [
+        "haraye"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:4:2",
+      "ours": "hariByAm",
+      "error": "",
+      "theirs": [
+        "hariByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:4:3",
+      "ours": "hariByaH",
+      "error": "",
+      "theirs": [
+        "hariByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:5:1",
+      "ours": "hareH",
+      "error": "",
+      "theirs": [
+        "hareH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:5:2",
+      "ours": "hariByAm",
+      "error": "",
+      "theirs": [
+        "hariByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:5:3",
+      "ours": "hariByaH",
+      "error": "",
+      "theirs": [
+        "hariByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:6:1",
+      "ours": "hareH",
+      "error": "",
+      "theirs": [
+        "hareH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:6:2",
+      "ours": "haryoH",
+      "error": "",
+      "theirs": [
+        "haryoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:6:3",
+      "ours": "harIRAm",
+      "error": "",
+      "theirs": [
+        "harIRAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:7:1",
+      "ours": "harO",
+      "error": "",
+      "theirs": [
+        "harO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:7:2",
+      "ours": "haryoH",
+      "error": "",
+      "theirs": [
+        "haryoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:7:3",
+      "ours": "harizu",
+      "error": "",
+      "theirs": [
+        "harizu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:8:1",
+      "ours": "hare",
+      "error": "",
+      "theirs": [
+        "hare"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:8:2",
+      "ours": "harI",
+      "error": "",
+      "theirs": [
+        "harI"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:hari:pum:8:3",
+      "ours": "harayaH",
+      "error": "",
+      "theirs": [
+        "harayaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:1:1",
+      "ours": "SamBuH",
+      "error": "",
+      "theirs": [
+        "SamBuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:1:2",
+      "ours": "SamBU",
+      "error": "",
+      "theirs": [
+        "SamBU"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:1:3",
+      "ours": "SamBavaH",
+      "error": "",
+      "theirs": [
+        "SamBavaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:2:1",
+      "ours": "SamBum",
+      "error": "",
+      "theirs": [
+        "SamBum"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:2:2",
+      "ours": "SamBU",
+      "error": "",
+      "theirs": [
+        "SamBU"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:2:3",
+      "ours": "SamBUn",
+      "error": "",
+      "theirs": [
+        "SamBUn"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:3:1",
+      "ours": "SamBunA",
+      "error": "",
+      "theirs": [
+        "SamBunA"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:3:2",
+      "ours": "SamBuByAm",
+      "error": "",
+      "theirs": [
+        "SamBuByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:3:3",
+      "ours": "SamBuBiH",
+      "error": "",
+      "theirs": [
+        "SamBuBiH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:4:1",
+      "ours": "SamBave",
+      "error": "",
+      "theirs": [
+        "SamBave"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:4:2",
+      "ours": "SamBuByAm",
+      "error": "",
+      "theirs": [
+        "SamBuByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:4:3",
+      "ours": "SamBuByaH",
+      "error": "",
+      "theirs": [
+        "SamBuByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:5:1",
+      "ours": "SamBoH",
+      "error": "",
+      "theirs": [
+        "SamBoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:5:2",
+      "ours": "SamBuByAm",
+      "error": "",
+      "theirs": [
+        "SamBuByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:5:3",
+      "ours": "SamBuByaH",
+      "error": "",
+      "theirs": [
+        "SamBuByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:6:1",
+      "ours": "SamBoH",
+      "error": "",
+      "theirs": [
+        "SamBoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:6:2",
+      "ours": "SamBvoH",
+      "error": "",
+      "theirs": [
+        "SamBvoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:6:3",
+      "ours": "SamBUnAm",
+      "error": "",
+      "theirs": [
+        "SamBUnAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:7:1",
+      "ours": "SamBO",
+      "error": "",
+      "theirs": [
+        "SamBO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:7:2",
+      "ours": "SamBvoH",
+      "error": "",
+      "theirs": [
+        "SamBvoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:7:3",
+      "ours": "SamBuzu",
+      "error": "",
+      "theirs": [
+        "SamBuzu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:8:1",
+      "ours": "SamBo",
+      "error": "",
+      "theirs": [
+        "SamBo"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:8:2",
+      "ours": "SamBU",
+      "error": "",
+      "theirs": [
+        "SamBU"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:SamBu:pum:8:3",
+      "ours": "SamBavaH",
+      "error": "",
+      "theirs": [
+        "SamBavaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:1:1",
+      "ours": "guruH",
+      "error": "",
+      "theirs": [
+        "guruH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:1:2",
+      "ours": "gurU",
+      "error": "",
+      "theirs": [
+        "gurU"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:1:3",
+      "ours": "guravaH",
+      "error": "",
+      "theirs": [
+        "guravaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:2:1",
+      "ours": "gurum",
+      "error": "",
+      "theirs": [
+        "gurum"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:2:2",
+      "ours": "gurU",
+      "error": "",
+      "theirs": [
+        "gurU"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:2:3",
+      "ours": "gurUn",
+      "error": "",
+      "theirs": [
+        "gurUn"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:3:1",
+      "ours": "guruRA",
+      "error": "",
+      "theirs": [
+        "guruRA"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:3:2",
+      "ours": "guruByAm",
+      "error": "",
+      "theirs": [
+        "guruByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:3:3",
+      "ours": "guruBiH",
+      "error": "",
+      "theirs": [
+        "guruBiH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:4:1",
+      "ours": "gurave",
+      "error": "",
+      "theirs": [
+        "gurave"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:4:2",
+      "ours": "guruByAm",
+      "error": "",
+      "theirs": [
+        "guruByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:4:3",
+      "ours": "guruByaH",
+      "error": "",
+      "theirs": [
+        "guruByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:5:1",
+      "ours": "guroH",
+      "error": "",
+      "theirs": [
+        "guroH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:5:2",
+      "ours": "guruByAm",
+      "error": "",
+      "theirs": [
+        "guruByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:5:3",
+      "ours": "guruByaH",
+      "error": "",
+      "theirs": [
+        "guruByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:6:1",
+      "ours": "guroH",
+      "error": "",
+      "theirs": [
+        "guroH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:6:2",
+      "ours": "gurvoH",
+      "error": "",
+      "theirs": [
+        "gurvoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:6:3",
+      "ours": "gurURAm",
+      "error": "",
+      "theirs": [
+        "gurURAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:7:1",
+      "ours": "gurO",
+      "error": "",
+      "theirs": [
+        "gurO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:7:2",
+      "ours": "gurvoH",
+      "error": "",
+      "theirs": [
+        "gurvoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:7:3",
+      "ours": "guruzu",
+      "error": "",
+      "theirs": [
+        "guruzu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:8:1",
+      "ours": "guro",
+      "error": "",
+      "theirs": [
+        "guro"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:8:2",
+      "ours": "gurU",
+      "error": "",
+      "theirs": [
+        "gurU"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:guru:pum:8:3",
+      "ours": "guravaH",
+      "error": "",
+      "theirs": [
+        "guravaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:1:1",
+      "ours": "sarvaH",
+      "error": "",
+      "theirs": [
+        "sarvaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:1:2",
+      "ours": "sarvO",
+      "error": "",
+      "theirs": [
+        "sarvO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:1:3",
+      "ours": "sarve",
+      "error": "",
+      "theirs": [
+        "sarve"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:2:1",
+      "ours": "sarvam",
+      "error": "",
+      "theirs": [
+        "sarvam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:2:2",
+      "ours": "sarvO",
+      "error": "",
+      "theirs": [
+        "sarvO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:2:3",
+      "ours": "sarvAn",
+      "error": "",
+      "theirs": [
+        "sarvAn"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:3:1",
+      "ours": "sarveRa",
+      "error": "",
+      "theirs": [
+        "sarveRa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:3:2",
+      "ours": "sarvAByAm",
+      "error": "",
+      "theirs": [
+        "sarvAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:3:3",
+      "ours": "sarvEH",
+      "error": "",
+      "theirs": [
+        "sarvEH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:4:1",
+      "ours": "sarvasmE",
+      "error": "",
+      "theirs": [
+        "sarvasmE"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:4:2",
+      "ours": "sarvAByAm",
+      "error": "",
+      "theirs": [
+        "sarvAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:4:3",
+      "ours": "sarveByaH",
+      "error": "",
+      "theirs": [
+        "sarveByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:5:1",
+      "ours": "sarvasmAt",
+      "error": "",
+      "theirs": [
+        "sarvasmAd",
+        "sarvasmAt"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:5:2",
+      "ours": "sarvAByAm",
+      "error": "",
+      "theirs": [
+        "sarvAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:5:3",
+      "ours": "sarveByaH",
+      "error": "",
+      "theirs": [
+        "sarveByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:6:1",
+      "ours": "sarvasya",
+      "error": "",
+      "theirs": [
+        "sarvasya"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:6:2",
+      "ours": "sarvayoH",
+      "error": "",
+      "theirs": [
+        "sarvayoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:6:3",
+      "ours": "sarvezAm",
+      "error": "",
+      "theirs": [
+        "sarvezAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:7:1",
+      "ours": "sarvasmin",
+      "error": "",
+      "theirs": [
+        "sarvasmin"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:7:2",
+      "ours": "sarvayoH",
+      "error": "",
+      "theirs": [
+        "sarvayoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:7:3",
+      "ours": "sarvezu",
+      "error": "",
+      "theirs": [
+        "sarvezu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:8:1",
+      "ours": "sarva",
+      "error": "",
+      "theirs": [
+        "sarva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:8:2",
+      "ours": "sarvO",
+      "error": "",
+      "theirs": [
+        "sarvO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:sarva:pum:8:3",
+      "ours": "sarve",
+      "error": "",
+      "theirs": [
+        "sarve"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:1:1",
+      "ours": "anyaH",
+      "error": "",
+      "theirs": [
+        "anyaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:1:2",
+      "ours": "anyO",
+      "error": "",
+      "theirs": [
+        "anyO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:1:3",
+      "ours": "anye",
+      "error": "",
+      "theirs": [
+        "anye"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:2:1",
+      "ours": "anyam",
+      "error": "",
+      "theirs": [
+        "anyam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:2:2",
+      "ours": "anyO",
+      "error": "",
+      "theirs": [
+        "anyO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:2:3",
+      "ours": "anyAn",
+      "error": "",
+      "theirs": [
+        "anyAn"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:3:1",
+      "ours": "anyena",
+      "error": "",
+      "theirs": [
+        "anyena"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:3:2",
+      "ours": "anyAByAm",
+      "error": "",
+      "theirs": [
+        "anyAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:3:3",
+      "ours": "anyEH",
+      "error": "",
+      "theirs": [
+        "anyEH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:4:1",
+      "ours": "anyasmE",
+      "error": "",
+      "theirs": [
+        "anyasmE"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:4:2",
+      "ours": "anyAByAm",
+      "error": "",
+      "theirs": [
+        "anyAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:4:3",
+      "ours": "anyeByaH",
+      "error": "",
+      "theirs": [
+        "anyeByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:5:1",
+      "ours": "anyasmAt",
+      "error": "",
+      "theirs": [
+        "anyasmAd",
+        "anyasmAt"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:5:2",
+      "ours": "anyAByAm",
+      "error": "",
+      "theirs": [
+        "anyAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:5:3",
+      "ours": "anyeByaH",
+      "error": "",
+      "theirs": [
+        "anyeByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:6:1",
+      "ours": "anyasya",
+      "error": "",
+      "theirs": [
+        "anyasya"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:6:2",
+      "ours": "anyayoH",
+      "error": "",
+      "theirs": [
+        "anyayoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:6:3",
+      "ours": "anyezAm",
+      "error": "",
+      "theirs": [
+        "anyezAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:7:1",
+      "ours": "anyasmin",
+      "error": "",
+      "theirs": [
+        "anyasmin"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:7:2",
+      "ours": "anyayoH",
+      "error": "",
+      "theirs": [
+        "anyayoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:7:3",
+      "ours": "anyezu",
+      "error": "",
+      "theirs": [
+        "anyezu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:8:1",
+      "ours": "anya",
+      "error": "",
+      "theirs": [
+        "anya"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:8:2",
+      "ours": "anyO",
+      "error": "",
+      "theirs": [
+        "anyO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:anya:pum:8:3",
+      "ours": "anye",
+      "error": "",
+      "theirs": [
+        "anye"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:1:1",
+      "ours": "jYAnam",
+      "error": "",
+      "theirs": [
+        "jYAnam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:1:2",
+      "ours": "jYAne",
+      "error": "",
+      "theirs": [
+        "jYAne"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:1:3",
+      "ours": "jYAnAni",
+      "error": "",
+      "theirs": [
+        "jYAnAni"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:2:1",
+      "ours": "jYAnam",
+      "error": "",
+      "theirs": [
+        "jYAnam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:2:2",
+      "ours": "jYAne",
+      "error": "",
+      "theirs": [
+        "jYAne"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:2:3",
+      "ours": "jYAnAni",
+      "error": "",
+      "theirs": [
+        "jYAnAni"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:3:1",
+      "ours": "jYAnena",
+      "error": "",
+      "theirs": [
+        "jYAnena"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:3:2",
+      "ours": "jYAnAByAm",
+      "error": "",
+      "theirs": [
+        "jYAnAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:3:3",
+      "ours": "jYAnEH",
+      "error": "",
+      "theirs": [
+        "jYAnEH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:4:1",
+      "ours": "jYAnAya",
+      "error": "",
+      "theirs": [
+        "jYAnAya"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:4:2",
+      "ours": "jYAnAByAm",
+      "error": "",
+      "theirs": [
+        "jYAnAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:4:3",
+      "ours": "jYAneByaH",
+      "error": "",
+      "theirs": [
+        "jYAneByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:5:1",
+      "ours": "jYAnAt",
+      "error": "",
+      "theirs": [
+        "jYAnAd",
+        "jYAnAt"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:5:2",
+      "ours": "jYAnAByAm",
+      "error": "",
+      "theirs": [
+        "jYAnAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:5:3",
+      "ours": "jYAneByaH",
+      "error": "",
+      "theirs": [
+        "jYAneByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:6:1",
+      "ours": "jYAnasya",
+      "error": "",
+      "theirs": [
+        "jYAnasya"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:6:2",
+      "ours": "jYAnayoH",
+      "error": "",
+      "theirs": [
+        "jYAnayoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:6:3",
+      "ours": "jYAnAnAm",
+      "error": "",
+      "theirs": [
+        "jYAnAnAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:7:1",
+      "ours": "jYAne",
+      "error": "",
+      "theirs": [
+        "jYAne"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:7:2",
+      "ours": "jYAnayoH",
+      "error": "",
+      "theirs": [
+        "jYAnayoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:7:3",
+      "ours": "jYAnezu",
+      "error": "",
+      "theirs": [
+        "jYAnezu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:8:1",
+      "ours": "jYAna",
+      "error": "",
+      "theirs": [
+        "jYAna"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:8:2",
+      "ours": "jYAne",
+      "error": "",
+      "theirs": [
+        "jYAne"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:jYAna:napumsaka:8:3",
+      "ours": "jYAnAni",
+      "error": "",
+      "theirs": [
+        "jYAnAni"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:1:1",
+      "ours": "rADA",
+      "error": "",
+      "theirs": [
+        "rADA"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:1:2",
+      "ours": "rADe",
+      "error": "",
+      "theirs": [
+        "rADe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:1:3",
+      "ours": "rADAH",
+      "error": "",
+      "theirs": [
+        "rADAH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:2:1",
+      "ours": "rADAm",
+      "error": "",
+      "theirs": [
+        "rADAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:2:2",
+      "ours": "rADe",
+      "error": "",
+      "theirs": [
+        "rADe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:2:3",
+      "ours": "rADAH",
+      "error": "",
+      "theirs": [
+        "rADAH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:3:1",
+      "ours": "rADayA",
+      "error": "",
+      "theirs": [
+        "rADayA"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:3:2",
+      "ours": "rADAByAm",
+      "error": "",
+      "theirs": [
+        "rADAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:3:3",
+      "ours": "rADABiH",
+      "error": "",
+      "theirs": [
+        "rADABiH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:4:1",
+      "ours": "rADAyE",
+      "error": "",
+      "theirs": [
+        "rADAyE"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:4:2",
+      "ours": "rADAByAm",
+      "error": "",
+      "theirs": [
+        "rADAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:4:3",
+      "ours": "rADAByaH",
+      "error": "",
+      "theirs": [
+        "rADAByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:5:1",
+      "ours": "rADAyAH",
+      "error": "",
+      "theirs": [
+        "rADAyAH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:5:2",
+      "ours": "rADAByAm",
+      "error": "",
+      "theirs": [
+        "rADAByAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:5:3",
+      "ours": "rADAByaH",
+      "error": "",
+      "theirs": [
+        "rADAByaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:6:1",
+      "ours": "rADAyAH",
+      "error": "",
+      "theirs": [
+        "rADAyAH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:6:2",
+      "ours": "rADayoH",
+      "error": "",
+      "theirs": [
+        "rADayoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:6:3",
+      "ours": "rADAnAm",
+      "error": "",
+      "theirs": [
+        "rADAnAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:7:1",
+      "ours": "rADAyAm",
+      "error": "",
+      "theirs": [
+        "rADAyAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:7:2",
+      "ours": "rADayoH",
+      "error": "",
+      "theirs": [
+        "rADayoH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:7:3",
+      "ours": "rADAsu",
+      "error": "",
+      "theirs": [
+        "rADAsu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:8:1",
+      "ours": "rADe",
+      "error": "",
+      "theirs": [
+        "rADe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:8:2",
+      "ours": "rADe",
+      "error": "",
+      "theirs": [
+        "rADe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "subanta:rADA:stri:8:3",
+      "ours": "rADAH",
+      "error": "",
+      "theirs": [
+        "rADAH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laT:1:1",
+      "ours": "BavAmi",
+      "error": "",
+      "theirs": [
+        "BavAmi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laT:1:2",
+      "ours": "BavAvaH",
+      "error": "",
+      "theirs": [
+        "BavAvaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laT:1:3",
+      "ours": "BavAmaH",
+      "error": "",
+      "theirs": [
+        "BavAmaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laT:2:1",
+      "ours": "Bavasi",
+      "error": "",
+      "theirs": [
+        "Bavasi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laT:2:2",
+      "ours": "BavaTaH",
+      "error": "",
+      "theirs": [
+        "BavaTaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laT:2:3",
+      "ours": "BavaTa",
+      "error": "",
+      "theirs": [
+        "BavaTa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laT:3:1",
+      "ours": "Bavati",
+      "error": "",
+      "theirs": [
+        "Bavati"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laT:3:2",
+      "ours": "BavataH",
+      "error": "",
+      "theirs": [
+        "BavataH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laT:3:3",
+      "ours": "Bavanti",
+      "error": "",
+      "theirs": [
+        "Bavanti"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laG:1:1",
+      "ours": "aBavam",
+      "error": "",
+      "theirs": [
+        "aBavam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laG:1:2",
+      "ours": "aBavAva",
+      "error": "",
+      "theirs": [
+        "aBavAva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laG:1:3",
+      "ours": "aBavAma",
+      "error": "",
+      "theirs": [
+        "aBavAma"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laG:2:1",
+      "ours": "aBavaH",
+      "error": "",
+      "theirs": [
+        "aBavaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laG:2:2",
+      "ours": "aBavatam",
+      "error": "",
+      "theirs": [
+        "aBavatam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laG:2:3",
+      "ours": "aBavata",
+      "error": "",
+      "theirs": [
+        "aBavata"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laG:3:1",
+      "ours": "aBavat",
+      "error": "",
+      "theirs": [
+        "aBavad",
+        "aBavat"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laG:3:2",
+      "ours": "aBavatAm",
+      "error": "",
+      "theirs": [
+        "aBavatAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:laG:3:3",
+      "ours": "aBavan",
+      "error": "",
+      "theirs": [
+        "aBavan"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:liT:1:1",
+      "ours": "baBUva",
+      "error": "",
+      "theirs": [
+        "baBUva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:liT:1:2",
+      "ours": "baBUviva",
+      "error": "",
+      "theirs": [
+        "baBUviva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:liT:1:3",
+      "ours": "baBUvima",
+      "error": "",
+      "theirs": [
+        "baBUvima"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:liT:2:1",
+      "ours": "baBUviTa",
+      "error": "",
+      "theirs": [
+        "baBUviTa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:liT:2:2",
+      "ours": "baBUvaTuH",
+      "error": "",
+      "theirs": [
+        "baBUvaTuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:liT:2:3",
+      "ours": "baBUva",
+      "error": "",
+      "theirs": [
+        "baBUva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:liT:3:1",
+      "ours": "baBUva",
+      "error": "",
+      "theirs": [
+        "baBUva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:liT:3:2",
+      "ours": "baBUvatuH",
+      "error": "",
+      "theirs": [
+        "baBUvatuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:liT:3:3",
+      "ours": "baBUvuH",
+      "error": "",
+      "theirs": [
+        "baBUvuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:lRT:1:1",
+      "ours": "BavizyAmi",
+      "error": "",
+      "theirs": [
+        "BavizyAmi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:lRT:1:2",
+      "ours": "BavizyAvaH",
+      "error": "",
+      "theirs": [
+        "BavizyAvaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:lRT:1:3",
+      "ours": "BavizyAmaH",
+      "error": "",
+      "theirs": [
+        "BavizyAmaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:lRT:2:1",
+      "ours": "Bavizyasi",
+      "error": "",
+      "theirs": [
+        "Bavizyasi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:lRT:2:2",
+      "ours": "BavizyaTaH",
+      "error": "",
+      "theirs": [
+        "BavizyaTaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:lRT:2:3",
+      "ours": "BavizyaTa",
+      "error": "",
+      "theirs": [
+        "BavizyaTa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:lRT:3:1",
+      "ours": "Bavizyati",
+      "error": "",
+      "theirs": [
+        "Bavizyati"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:lRT:3:2",
+      "ours": "BavizyataH",
+      "error": "",
+      "theirs": [
+        "BavizyataH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:lRT:3:3",
+      "ours": "Bavizyanti",
+      "error": "",
+      "theirs": [
+        "Bavizyanti"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:loT:1:1",
+      "ours": "BavAni",
+      "error": "",
+      "theirs": [
+        "BavAni"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:loT:1:2",
+      "ours": "BavAva",
+      "error": "",
+      "theirs": [
+        "BavAva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:loT:1:3",
+      "ours": "BavAma",
+      "error": "",
+      "theirs": [
+        "BavAma"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:loT:2:1",
+      "ours": "Bava",
+      "error": "",
+      "theirs": [
+        "Bava",
+        "BavatAd",
+        "BavatAt"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:loT:2:2",
+      "ours": "Bavatam",
+      "error": "",
+      "theirs": [
+        "Bavatam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:loT:2:3",
+      "ours": "Bavata",
+      "error": "",
+      "theirs": [
+        "Bavata"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:loT:3:1",
+      "ours": "Bavatu",
+      "error": "",
+      "theirs": [
+        "BavatAd",
+        "BavatAt",
+        "Bavatu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:loT:3:2",
+      "ours": "BavatAm",
+      "error": "",
+      "theirs": [
+        "BavatAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:BU:loT:3:3",
+      "ours": "Bavantu",
+      "error": "",
+      "theirs": [
+        "Bavantu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laT:1:1",
+      "ours": "gacCAmi",
+      "error": "",
+      "theirs": [
+        "gacCAmi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laT:1:2",
+      "ours": "gacCAvaH",
+      "error": "",
+      "theirs": [
+        "gacCAvaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laT:1:3",
+      "ours": "gacCAmaH",
+      "error": "",
+      "theirs": [
+        "gacCAmaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laT:2:1",
+      "ours": "gacCasi",
+      "error": "",
+      "theirs": [
+        "gacCasi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laT:2:2",
+      "ours": "gacCaTaH",
+      "error": "",
+      "theirs": [
+        "gacCaTaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laT:2:3",
+      "ours": "gacCaTa",
+      "error": "",
+      "theirs": [
+        "gacCaTa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laT:3:1",
+      "ours": "gacCati",
+      "error": "",
+      "theirs": [
+        "gacCati"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laT:3:2",
+      "ours": "gacCataH",
+      "error": "",
+      "theirs": [
+        "gacCataH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laT:3:3",
+      "ours": "gacCanti",
+      "error": "",
+      "theirs": [
+        "gacCanti"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laG:1:1",
+      "ours": "agacCam",
+      "error": "",
+      "theirs": [
+        "agacCam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laG:1:2",
+      "ours": "agacCAva",
+      "error": "",
+      "theirs": [
+        "agacCAva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laG:1:3",
+      "ours": "agacCAma",
+      "error": "",
+      "theirs": [
+        "agacCAma"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laG:2:1",
+      "ours": "agacCaH",
+      "error": "",
+      "theirs": [
+        "agacCaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laG:2:2",
+      "ours": "agacCatam",
+      "error": "",
+      "theirs": [
+        "agacCatam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laG:2:3",
+      "ours": "agacCata",
+      "error": "",
+      "theirs": [
+        "agacCata"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laG:3:1",
+      "ours": "agacCat",
+      "error": "",
+      "theirs": [
+        "agacCad",
+        "agacCat"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laG:3:2",
+      "ours": "agacCatAm",
+      "error": "",
+      "theirs": [
+        "agacCatAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:laG:3:3",
+      "ours": "agacCan",
+      "error": "",
+      "theirs": [
+        "agacCan"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:liT:1:1",
+      "ours": "jagAma",
+      "error": "",
+      "theirs": [
+        "jagAma",
+        "jagama"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:liT:1:2",
+      "ours": "jagmiva",
+      "error": "",
+      "theirs": [
+        "jagmiva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:liT:1:3",
+      "ours": "jagmima",
+      "error": "",
+      "theirs": [
+        "jagmima"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:liT:2:1",
+      "ours": "jagamiTa",
+      "error": "",
+      "theirs": [
+        "jagamiTa",
+        "jaganTa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:liT:2:2",
+      "ours": "jagmaTuH",
+      "error": "",
+      "theirs": [
+        "jagmaTuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:liT:2:3",
+      "ours": "jagma",
+      "error": "",
+      "theirs": [
+        "jagma"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:liT:3:1",
+      "ours": "jagAma",
+      "error": "",
+      "theirs": [
+        "jagAma"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:liT:3:2",
+      "ours": "jagmatuH",
+      "error": "",
+      "theirs": [
+        "jagmatuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:liT:3:3",
+      "ours": "jagmuH",
+      "error": "",
+      "theirs": [
+        "jagmuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:lRT:1:1",
+      "ours": "gamizyAmi",
+      "error": "",
+      "theirs": [
+        "gamizyAmi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:lRT:1:2",
+      "ours": "gamizyAvaH",
+      "error": "",
+      "theirs": [
+        "gamizyAvaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:lRT:1:3",
+      "ours": "gamizyAmaH",
+      "error": "",
+      "theirs": [
+        "gamizyAmaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:lRT:2:1",
+      "ours": "gamizyasi",
+      "error": "",
+      "theirs": [
+        "gamizyasi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:lRT:2:2",
+      "ours": "gamizyaTaH",
+      "error": "",
+      "theirs": [
+        "gamizyaTaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:lRT:2:3",
+      "ours": "gamizyaTa",
+      "error": "",
+      "theirs": [
+        "gamizyaTa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:lRT:3:1",
+      "ours": "gamizyati",
+      "error": "",
+      "theirs": [
+        "gamizyati"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:lRT:3:2",
+      "ours": "gamizyataH",
+      "error": "",
+      "theirs": [
+        "gamizyataH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:lRT:3:3",
+      "ours": "gamizyanti",
+      "error": "",
+      "theirs": [
+        "gamizyanti"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:loT:1:1",
+      "ours": "gacCAni",
+      "error": "",
+      "theirs": [
+        "gacCAni"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:loT:1:2",
+      "ours": "gacCAva",
+      "error": "",
+      "theirs": [
+        "gacCAva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:loT:1:3",
+      "ours": "gacCAma",
+      "error": "",
+      "theirs": [
+        "gacCAma"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:loT:2:1",
+      "ours": "gacCa",
+      "error": "",
+      "theirs": [
+        "gacCa",
+        "gacCatAd",
+        "gacCatAt"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:loT:2:2",
+      "ours": "gacCatam",
+      "error": "",
+      "theirs": [
+        "gacCatam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:loT:2:3",
+      "ours": "gacCata",
+      "error": "",
+      "theirs": [
+        "gacCata"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:loT:3:1",
+      "ours": "gacCatu",
+      "error": "",
+      "theirs": [
+        "gacCatAd",
+        "gacCatAt",
+        "gacCatu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:loT:3:2",
+      "ours": "gacCatAm",
+      "error": "",
+      "theirs": [
+        "gacCatAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:gamx~:loT:3:3",
+      "ours": "gacCantu",
+      "error": "",
+      "theirs": [
+        "gacCantu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laT:1:1",
+      "ours": "pibAmi",
+      "error": "",
+      "theirs": [
+        "pibAmi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laT:1:2",
+      "ours": "pibAvaH",
+      "error": "",
+      "theirs": [
+        "pibAvaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laT:1:3",
+      "ours": "pibAmaH",
+      "error": "",
+      "theirs": [
+        "pibAmaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laT:2:1",
+      "ours": "pibasi",
+      "error": "",
+      "theirs": [
+        "pibasi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laT:2:2",
+      "ours": "pibaTaH",
+      "error": "",
+      "theirs": [
+        "pibaTaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laT:2:3",
+      "ours": "pibaTa",
+      "error": "",
+      "theirs": [
+        "pibaTa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laT:3:1",
+      "ours": "pibati",
+      "error": "",
+      "theirs": [
+        "pibati"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laT:3:2",
+      "ours": "pibataH",
+      "error": "",
+      "theirs": [
+        "pibataH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laT:3:3",
+      "ours": "pibanti",
+      "error": "",
+      "theirs": [
+        "pibanti"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laG:1:1",
+      "ours": "apibam",
+      "error": "",
+      "theirs": [
+        "apibam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laG:1:2",
+      "ours": "apibAva",
+      "error": "",
+      "theirs": [
+        "apibAva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laG:1:3",
+      "ours": "apibAma",
+      "error": "",
+      "theirs": [
+        "apibAma"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laG:2:1",
+      "ours": "apibaH",
+      "error": "",
+      "theirs": [
+        "apibaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laG:2:2",
+      "ours": "apibatam",
+      "error": "",
+      "theirs": [
+        "apibatam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laG:2:3",
+      "ours": "apibata",
+      "error": "",
+      "theirs": [
+        "apibata"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laG:3:1",
+      "ours": "apibat",
+      "error": "",
+      "theirs": [
+        "apibad",
+        "apibat"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laG:3:2",
+      "ours": "apibatAm",
+      "error": "",
+      "theirs": [
+        "apibatAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:laG:3:3",
+      "ours": "apiban",
+      "error": "",
+      "theirs": [
+        "apiban"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:liT:1:1",
+      "ours": "papO",
+      "error": "",
+      "theirs": [
+        "papO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:liT:1:2",
+      "ours": "papiva",
+      "error": "",
+      "theirs": [
+        "papiva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:liT:1:3",
+      "ours": "papima",
+      "error": "",
+      "theirs": [
+        "papima"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:liT:2:1",
+      "ours": "papiTa",
+      "error": "",
+      "theirs": [
+        "papATa",
+        "papiTa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:liT:2:2",
+      "ours": "papaTuH",
+      "error": "",
+      "theirs": [
+        "papaTuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:liT:2:3",
+      "ours": "papa",
+      "error": "",
+      "theirs": [
+        "papa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:liT:3:1",
+      "ours": "papO",
+      "error": "",
+      "theirs": [
+        "papO"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:liT:3:2",
+      "ours": "papatuH",
+      "error": "",
+      "theirs": [
+        "papatuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:liT:3:3",
+      "ours": "papuH",
+      "error": "",
+      "theirs": [
+        "papuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:lRT:1:1",
+      "ours": "pAsyAmi",
+      "error": "",
+      "theirs": [
+        "pAsyAmi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:lRT:1:2",
+      "ours": "pAsyAvaH",
+      "error": "",
+      "theirs": [
+        "pAsyAvaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:lRT:1:3",
+      "ours": "pAsyAmaH",
+      "error": "",
+      "theirs": [
+        "pAsyAmaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:lRT:2:1",
+      "ours": "pAsyasi",
+      "error": "",
+      "theirs": [
+        "pAsyasi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:lRT:2:2",
+      "ours": "pAsyaTaH",
+      "error": "",
+      "theirs": [
+        "pAsyaTaH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:lRT:2:3",
+      "ours": "pAsyaTa",
+      "error": "",
+      "theirs": [
+        "pAsyaTa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:lRT:3:1",
+      "ours": "pAsyati",
+      "error": "",
+      "theirs": [
+        "pAsyati"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:lRT:3:2",
+      "ours": "pAsyataH",
+      "error": "",
+      "theirs": [
+        "pAsyataH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:lRT:3:3",
+      "ours": "pAsyanti",
+      "error": "",
+      "theirs": [
+        "pAsyanti"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:loT:1:1",
+      "ours": "pibAni",
+      "error": "",
+      "theirs": [
+        "pibAni"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:loT:1:2",
+      "ours": "pibAva",
+      "error": "",
+      "theirs": [
+        "pibAva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:loT:1:3",
+      "ours": "pibAma",
+      "error": "",
+      "theirs": [
+        "pibAma"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:loT:2:1",
+      "ours": "piba",
+      "error": "",
+      "theirs": [
+        "piba",
+        "pibatAd",
+        "pibatAt"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:loT:2:2",
+      "ours": "pibatam",
+      "error": "",
+      "theirs": [
+        "pibatam"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:loT:2:3",
+      "ours": "pibata",
+      "error": "",
+      "theirs": [
+        "pibata"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:loT:3:1",
+      "ours": "pibatu",
+      "error": "",
+      "theirs": [
+        "pibatAd",
+        "pibatAt",
+        "pibatu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:loT:3:2",
+      "ours": "pibatAm",
+      "error": "",
+      "theirs": [
+        "pibatAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:pA:loT:3:3",
+      "ours": "pibantu",
+      "error": "",
+      "theirs": [
+        "pibantu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laT:1:1",
+      "ours": "nayAmi",
+      "error": "",
+      "theirs": [
+        "nayAmi",
+        "naye"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laT:1:2",
+      "ours": "nayAvaH",
+      "error": "",
+      "theirs": [
+        "nayAvaH",
+        "nayAvahe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laT:1:3",
+      "ours": "nayAmaH",
+      "error": "",
+      "theirs": [
+        "nayAmaH",
+        "nayAmahe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laT:2:1",
+      "ours": "nayasi",
+      "error": "",
+      "theirs": [
+        "nayase",
+        "nayasi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laT:2:2",
+      "ours": "nayaTaH",
+      "error": "",
+      "theirs": [
+        "nayaTaH",
+        "nayeTe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laT:2:3",
+      "ours": "nayaTa",
+      "error": "",
+      "theirs": [
+        "nayaDve",
+        "nayaTa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laT:3:1",
+      "ours": "nayati",
+      "error": "",
+      "theirs": [
+        "nayate",
+        "nayati"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laT:3:2",
+      "ours": "nayataH",
+      "error": "",
+      "theirs": [
+        "nayataH",
+        "nayete"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laT:3:3",
+      "ours": "nayanti",
+      "error": "",
+      "theirs": [
+        "nayante",
+        "nayanti"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laG:1:1",
+      "ours": "anayam",
+      "error": "",
+      "theirs": [
+        "anayam",
+        "anaye"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laG:1:2",
+      "ours": "anayAva",
+      "error": "",
+      "theirs": [
+        "anayAva",
+        "anayAvahi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laG:1:3",
+      "ours": "anayAma",
+      "error": "",
+      "theirs": [
+        "anayAma",
+        "anayAmahi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laG:2:1",
+      "ours": "anayaH",
+      "error": "",
+      "theirs": [
+        "anayaH",
+        "anayaTAH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laG:2:2",
+      "ours": "anayatam",
+      "error": "",
+      "theirs": [
+        "anayatam",
+        "anayeTAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laG:2:3",
+      "ours": "anayata",
+      "error": "",
+      "theirs": [
+        "anayaDvam",
+        "anayata"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laG:3:1",
+      "ours": "anayat",
+      "error": "",
+      "theirs": [
+        "anayad",
+        "anayat",
+        "anayata"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laG:3:2",
+      "ours": "anayatAm",
+      "error": "",
+      "theirs": [
+        "anayatAm",
+        "anayetAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:laG:3:3",
+      "ours": "anayan",
+      "error": "",
+      "theirs": [
+        "anayan",
+        "anayanta"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:liT:1:1",
+      "ours": "ninAya",
+      "error": "",
+      "theirs": [
+        "ninAya",
+        "ninaya",
+        "ninye"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:liT:1:2",
+      "ours": "ninyiva",
+      "error": "",
+      "theirs": [
+        "ninyiva",
+        "ninyivahe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:liT:1:3",
+      "ours": "ninyima",
+      "error": "",
+      "theirs": [
+        "ninyima",
+        "ninyimahe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:liT:2:1",
+      "ours": "ninayiTa",
+      "error": "",
+      "theirs": [
+        "ninayiTa",
+        "nineTa",
+        "ninyize"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:liT:2:2",
+      "ours": "ninyaTuH",
+      "error": "",
+      "theirs": [
+        "ninyATe",
+        "ninyaTuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:liT:2:3",
+      "ours": "ninya",
+      "error": "",
+      "theirs": [
+        "ninya",
+        "ninyiDve",
+        "ninyiQve"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:liT:3:1",
+      "ours": "ninAya",
+      "error": "",
+      "theirs": [
+        "ninAya",
+        "ninye"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:liT:3:2",
+      "ours": "ninyatuH",
+      "error": "",
+      "theirs": [
+        "ninyAte",
+        "ninyatuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:liT:3:3",
+      "ours": "ninyuH",
+      "error": "",
+      "theirs": [
+        "ninyire",
+        "ninyuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:lRT:1:1",
+      "ours": "nezyAmi",
+      "error": "",
+      "theirs": [
+        "nezyAmi",
+        "nezye"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:lRT:1:2",
+      "ours": "nezyAvaH",
+      "error": "",
+      "theirs": [
+        "nezyAvaH",
+        "nezyAvahe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:lRT:1:3",
+      "ours": "nezyAmaH",
+      "error": "",
+      "theirs": [
+        "nezyAmaH",
+        "nezyAmahe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:lRT:2:1",
+      "ours": "nezyasi",
+      "error": "",
+      "theirs": [
+        "nezyase",
+        "nezyasi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:lRT:2:2",
+      "ours": "nezyaTaH",
+      "error": "",
+      "theirs": [
+        "nezyaTaH",
+        "nezyeTe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:lRT:2:3",
+      "ours": "nezyaTa",
+      "error": "",
+      "theirs": [
+        "nezyaDve",
+        "nezyaTa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:lRT:3:1",
+      "ours": "nezyati",
+      "error": "",
+      "theirs": [
+        "nezyate",
+        "nezyati"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:lRT:3:2",
+      "ours": "nezyataH",
+      "error": "",
+      "theirs": [
+        "nezyataH",
+        "nezyete"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:lRT:3:3",
+      "ours": "nezyanti",
+      "error": "",
+      "theirs": [
+        "nezyante",
+        "nezyanti"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:loT:1:1",
+      "ours": "nayAni",
+      "error": "",
+      "theirs": [
+        "nayAni",
+        "nayE"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:loT:1:2",
+      "ours": "nayAva",
+      "error": "",
+      "theirs": [
+        "nayAva",
+        "nayAvahE"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:loT:1:3",
+      "ours": "nayAma",
+      "error": "",
+      "theirs": [
+        "nayAma",
+        "nayAmahE"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:loT:2:1",
+      "ours": "naya",
+      "error": "",
+      "theirs": [
+        "naya",
+        "nayasva",
+        "nayatAd",
+        "nayatAt"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:loT:2:2",
+      "ours": "nayatam",
+      "error": "",
+      "theirs": [
+        "nayatam",
+        "nayeTAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:loT:2:3",
+      "ours": "nayata",
+      "error": "",
+      "theirs": [
+        "nayaDvam",
+        "nayata"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:loT:3:1",
+      "ours": "nayatu",
+      "error": "",
+      "theirs": [
+        "nayatAd",
+        "nayatAm",
+        "nayatAt",
+        "nayatu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:loT:3:2",
+      "ours": "nayatAm",
+      "error": "",
+      "theirs": [
+        "nayatAm",
+        "nayetAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:nIY:loT:3:3",
+      "ours": "nayantu",
+      "error": "",
+      "theirs": [
+        "nayantAm",
+        "nayantu"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laT:1:1",
+      "ours": "karomi",
+      "error": "",
+      "theirs": [
+        "karomi",
+        "kurve"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laT:1:2",
+      "ours": "kurvaH",
+      "error": "",
+      "theirs": [
+        "kurvaH",
+        "kurvahe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laT:1:3",
+      "ours": "kurmaH",
+      "error": "",
+      "theirs": [
+        "kurmaH",
+        "kurmahe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laT:2:1",
+      "ours": "karozi",
+      "error": "",
+      "theirs": [
+        "karozi",
+        "kuruze"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laT:2:2",
+      "ours": "kuruTaH",
+      "error": "",
+      "theirs": [
+        "kuruTaH",
+        "kurvATe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laT:2:3",
+      "ours": "kuruTa",
+      "error": "",
+      "theirs": [
+        "kuruDve",
+        "kuruTa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laT:3:1",
+      "ours": "karoti",
+      "error": "",
+      "theirs": [
+        "karoti",
+        "kurute"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laT:3:2",
+      "ours": "kurutaH",
+      "error": "",
+      "theirs": [
+        "kurutaH",
+        "kurvAte"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laT:3:3",
+      "ours": "kurvanti",
+      "error": "",
+      "theirs": [
+        "kurvanti",
+        "kurvate"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laG:1:1",
+      "ours": "akaravam",
+      "error": "",
+      "theirs": [
+        "akaravam",
+        "akurvi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laG:1:2",
+      "ours": "akurva",
+      "error": "",
+      "theirs": [
+        "akurva",
+        "akurvahi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laG:1:3",
+      "ours": "akurma",
+      "error": "",
+      "theirs": [
+        "akurma",
+        "akurmahi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laG:2:1",
+      "ours": "akaroH",
+      "error": "",
+      "theirs": [
+        "akaroH",
+        "akuruTAH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laG:2:2",
+      "ours": "akurutam",
+      "error": "",
+      "theirs": [
+        "akurutam",
+        "akurvATAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laG:2:3",
+      "ours": "akuruta",
+      "error": "",
+      "theirs": [
+        "akuruDvam",
+        "akuruta"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laG:3:1",
+      "ours": "akarot",
+      "error": "",
+      "theirs": [
+        "akarod",
+        "akarot",
+        "akuruta"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laG:3:2",
+      "ours": "akurutAm",
+      "error": "",
+      "theirs": [
+        "akurutAm",
+        "akurvAtAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:laG:3:3",
+      "ours": "akurvan",
+      "error": "",
+      "theirs": [
+        "akurvan",
+        "akurvata"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:liT:1:1",
+      "ours": "cakAra",
+      "error": "",
+      "theirs": [
+        "cakAra",
+        "cakara",
+        "cakre"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:liT:1:2",
+      "ours": "cakfva",
+      "error": "",
+      "theirs": [
+        "cakfva",
+        "cakfvahe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:liT:1:3",
+      "ours": "cakfma",
+      "error": "",
+      "theirs": [
+        "cakfma",
+        "cakfmahe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:liT:2:1",
+      "ours": "cakarTa",
+      "error": "",
+      "theirs": [
+        "cakarTa",
+        "cakfze"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:liT:2:2",
+      "ours": "cakraTuH",
+      "error": "",
+      "theirs": [
+        "cakrATe",
+        "cakraTuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:liT:2:3",
+      "ours": "cakra",
+      "error": "",
+      "theirs": [
+        "cakfQve",
+        "cakra"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:liT:3:1",
+      "ours": "cakAra",
+      "error": "",
+      "theirs": [
+        "cakAra",
+        "cakre"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:liT:3:2",
+      "ours": "cakratuH",
+      "error": "",
+      "theirs": [
+        "cakrAte",
+        "cakratuH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:liT:3:3",
+      "ours": "cakruH",
+      "error": "",
+      "theirs": [
+        "cakrire",
+        "cakruH"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:lRT:1:1",
+      "ours": "karizyAmi",
+      "error": "",
+      "theirs": [
+        "karizyAmi",
+        "karizye"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:lRT:1:2",
+      "ours": "karizyAvaH",
+      "error": "",
+      "theirs": [
+        "karizyAvaH",
+        "karizyAvahe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:lRT:1:3",
+      "ours": "karizyAmaH",
+      "error": "",
+      "theirs": [
+        "karizyAmaH",
+        "karizyAmahe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:lRT:2:1",
+      "ours": "karizyasi",
+      "error": "",
+      "theirs": [
+        "karizyase",
+        "karizyasi"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:lRT:2:2",
+      "ours": "karizyaTaH",
+      "error": "",
+      "theirs": [
+        "karizyaTaH",
+        "karizyeTe"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:lRT:2:3",
+      "ours": "karizyaTa",
+      "error": "",
+      "theirs": [
+        "karizyaDve",
+        "karizyaTa"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:lRT:3:1",
+      "ours": "karizyati",
+      "error": "",
+      "theirs": [
+        "karizyate",
+        "karizyati"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:lRT:3:2",
+      "ours": "karizyataH",
+      "error": "",
+      "theirs": [
+        "karizyataH",
+        "karizyete"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:lRT:3:3",
+      "ours": "karizyanti",
+      "error": "",
+      "theirs": [
+        "karizyante",
+        "karizyanti"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:loT:1:1",
+      "ours": "karavARi",
+      "error": "",
+      "theirs": [
+        "karavARi",
+        "karavE"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:loT:1:2",
+      "ours": "karavAva",
+      "error": "",
+      "theirs": [
+        "karavAva",
+        "karavAvahE"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:loT:1:3",
+      "ours": "karavAma",
+      "error": "",
+      "theirs": [
+        "karavAma",
+        "karavAmahE"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:loT:2:1",
+      "ours": "kuru",
+      "error": "",
+      "theirs": [
+        "kuru",
+        "kurutAd",
+        "kurutAt",
+        "kuruzva"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:loT:2:2",
+      "ours": "kurutam",
+      "error": "",
+      "theirs": [
+        "kurutam",
+        "kurvATAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:loT:2:3",
+      "ours": "kuruta",
+      "error": "",
+      "theirs": [
+        "kuruDvam",
+        "kuruta"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:loT:3:1",
+      "ours": "karotu",
+      "error": "",
+      "theirs": [
+        "karotu",
+        "kurutAd",
+        "kurutAm",
+        "kurutAt"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:loT:3:2",
+      "ours": "kurutAm",
+      "error": "",
+      "theirs": [
+        "kurutAm",
+        "kurvAtAm"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "key": "tinanta:qukfY:loT:3:3",
+      "ours": "kurvantu",
+      "error": "",
+      "theirs": [
+        "kurvantu",
+        "kurvatAm"
+      ],
+      "verdict": "agree"
+    }
+  ]
+}

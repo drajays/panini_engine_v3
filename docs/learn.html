@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>प्रक्रिया-पाठः — learn Pāṇini step by step</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafaf7; --panel:#fff; --subtle:#f1ede3; --ink:#1b1a17; --dim:#5b574d;
+  --faint:#8b8578; --accent:#8b2e00; --ok:#196b1a; --warn:#b07600; --bad:#a02020;
+  --line:#d7d2c4; --soft:#ece8dc; --hl:#ffe9a8;
+  --r-dhatu:#b3541e; --r-vikarana:#2f6f9f; --r-tin:#6a3d9a; --r-sup:#6a3d9a;
+  --r-krt:#1f7a5a; --r-taddhita:#1f7a5a; --r-upasarga:#7a6a1f; --r-agama:#9a3d6a;
+  --r-abhyasa:#b3541e; --r-pratipadika:#b3541e; --r-other:#5b574d;
+  --mono:"SF Mono",Menlo,Consolas,monospace;
+  --dev:"Noto Serif Devanagari","Noto Sans Devanagari","Sanskrit Text",serif;
+  --body:Charter,"Iowan Old Style",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#16150f; --panel:#1e1d16; --subtle:#262418; --ink:#ece7d8; --dim:#b0a894;
+  --faint:#837c6c; --accent:#e08a55; --ok:#7fc07f; --warn:#d8ab4a; --bad:#e07676;
+  --line:#3a382c; --soft:#2a281e; --hl:#5a4a10;
+  --r-dhatu:#e0864f; --r-vikarana:#6fb0e0; --r-tin:#b08ae0; --r-sup:#b08ae0;
+  --r-krt:#5fc09a; --r-taddhita:#5fc09a; --r-upasarga:#d0c060; --r-agama:#e07fb0;
+  --r-abhyasa:#e0864f; --r-pratipadika:#e0864f; --r-other:#b0a894;
+}}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;font:15px/1.5 var(--body);color:var(--ink);background:var(--bg)}
+.dev{font-family:var(--dev)}
+code,.mono{font-family:var(--mono);font-size:.86em}
+a{color:var(--accent)}
+header{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:baseline;
+  padding:.7rem 1rem;border-bottom:1px solid var(--line);background:var(--panel)}
+header h1{margin:0;font-size:1.05rem}
+header h1 span{color:var(--accent)}
+header label{font-size:.8rem;color:var(--dim)}
+header nav a{font-size:.85rem;margin-right:.8rem}
+select,input,button{font:inherit;font-size:.85rem;padding:.25rem .5rem;border:1px solid var(--line);
+  border-radius:4px;background:var(--panel);color:var(--ink)}
+button{cursor:pointer} button:hover{background:var(--subtle)} button:disabled{opacity:.4;cursor:default}
+main{display:flex;height:calc(100% - 3.1rem)}
+#list{width:17rem;flex:none;border-right:1px solid var(--line);overflow:auto;background:var(--panel)}
+#list .search{position:sticky;top:0;padding:.5rem;background:var(--panel);border-bottom:1px solid var(--soft)}
+#list input{width:100%}
+#list a{display:block;padding:.35rem .6rem;border-bottom:1px solid var(--soft);text-decoration:none;color:var(--ink)}
+#list a:hover{background:var(--subtle)}
+#list a.sel{background:var(--subtle);box-shadow:inset 3px 0 0 var(--accent)}
+#list .form{font-family:var(--dev);font-size:1.05rem}
+#list .sub{color:var(--faint);font-size:.7rem;font-family:var(--mono);word-break:break-all}
+#pane{flex:1;overflow:auto;padding:1rem 1.4rem 5rem}
+.empty{color:var(--faint);margin-top:18vh;text-align:center}
+.title{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.title h2{margin:0;font-family:var(--dev);font-size:2.1rem;font-weight:600}
+.src{font-size:.65rem;font-family:var(--mono);color:var(--faint);border:1px dashed var(--line);
+  border-radius:3px;padding:0 .3rem;vertical-align:middle;white-space:nowrap}
+
+/* phase ribbon */
+.ribbon{display:flex;margin:1rem 0 .8rem;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.ribbon div{flex:1;padding:.35rem .4rem;text-align:center;font-size:.78rem;color:var(--faint);
+  border-right:1px solid var(--line);background:var(--panel);cursor:pointer}
+.ribbon div:last-child{border-right:none}
+.ribbon div b{display:block;font-family:var(--dev);font-size:.95rem;font-weight:600}
+.ribbon div.seen{color:var(--dim);background:var(--subtle)}
+.ribbon div.now{color:var(--panel);background:var(--accent)}
+.ribbon div.none{opacity:.45;cursor:default}
+
+/* equation bar */
+.eq{display:flex;flex-wrap:wrap;align-items:flex-end;gap:.4rem;padding:.9rem 1rem;
+  background:var(--panel);border:1px solid var(--line);border-radius:6px;min-height:5.2rem}
+.eq .plus{color:var(--faint);font-size:1.3rem;padding-bottom:1.1rem}
+.chip{display:flex;flex-direction:column;align-items:center;min-width:2.6rem}
+.chip .v{font-family:var(--dev);font-size:1.9rem;line-height:1.2;padding:0 .35rem;border-radius:4px;
+  border-bottom:3px solid var(--c,var(--r-other))}
+.chip.touched .v{background:var(--hl)}
+.chip .u{font-family:var(--dev);font-size:.8rem;color:var(--c,var(--r-other))}
+.chip .r{font-size:.62rem;color:var(--faint);letter-spacing:.04em;text-transform:uppercase}
+.eq .eqsign{font-size:1.5rem;color:var(--faint);padding:0 .3rem 1.1rem}
+.eq .result{font-family:var(--dev);font-size:1.9rem;padding-bottom:1.05rem;font-weight:600}
+
+/* controls */
+.ctl{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:.8rem 0}
+.ctl .count{font-size:.85rem;color:var(--dim);margin:0 .4rem}
+.ctl label{font-size:.82rem;color:var(--dim);margin-left:.6rem}
+
+/* step card */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:.9rem 1.1rem}
+.card .head{display:flex;flex-wrap:wrap;gap:.6rem;align-items:baseline}
+.card .sid{font-family:var(--mono);color:var(--accent);font-size:1rem}
+.card .stext{font-family:var(--dev);font-size:1.35rem;font-weight:600}
+.card .pc{font-family:var(--dev);color:var(--dim);font-size:.9rem;margin:.15rem 0 .5rem}
+.tag{font-size:.7rem;padding:.08rem .45rem;border:1px solid var(--line);border-radius:99px;color:var(--dim)}
+.tag.APPLIED{color:var(--ok);border-color:var(--ok)}
+.tag.SKIPPED,.tag.VACUOUS{color:var(--faint)}
+.tag.BLOCKED{color:var(--bad);border-color:var(--bad)}
+.tag.AUDIT,.tag.DEFINED{color:var(--warn);border-color:var(--warn)}
+.tag.ph{color:var(--bad);border-color:var(--bad);border-style:dashed}
+.diff{font-family:var(--dev);font-size:1.5rem;margin:.5rem 0}
+.diff .arrow{color:var(--faint);padding:0 .5rem}
+.diff mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 .1rem}
+.diff del{text-decoration:line-through;text-decoration-color:var(--bad);background:none}
+.why{font-family:var(--dev);line-height:1.7;margin:.35rem 0}
+.why .k{font-family:var(--body);font-size:.72rem;color:var(--faint);text-transform:uppercase;letter-spacing:.05em;margin-right:.4rem}
+.ex{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.4rem}
+.ex span{font-family:var(--dev);font-size:.9rem;background:var(--subtle);border-radius:4px;padding:.05rem .45rem}
+.considered{margin-top:.7rem;font-size:.85rem;color:var(--dim)}
+.considered summary{cursor:pointer}
+.considered li{margin:.15rem 0}
+
+/* quiz */
+.quiz{background:var(--panel);border:1px solid var(--accent);border-radius:6px;padding:.9rem 1.1rem}
+.quiz .q{font-size:.95rem;margin-bottom:.5rem}
+.quiz button{display:block;width:100%;text-align:left;margin:.3rem 0;padding:.45rem .7rem}
+.quiz button .stext{font-family:var(--dev);font-size:1.05rem}
+.quiz button.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,var(--panel))}
+.quiz button.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 10%,var(--panel))}
+
+/* timeline */
+table{border-collapse:collapse;width:100%;font-size:.86rem;margin-top:1.2rem}
+td{border-bottom:1px solid var(--soft);padding:.3rem .45rem;vertical-align:top}
+tr{cursor:pointer} tr:hover td{background:var(--subtle)}
+tr.cur td{background:var(--subtle);box-shadow:inset 3px 0 0 var(--accent)}
+tr.minor td{color:var(--faint)}
+td.n{font-family:var(--mono);font-size:.72rem;color:var(--faint);width:2.2rem}
+td.sid{font-family:var(--mono);color:var(--accent);white-space:nowrap}
+td.f{font-family:var(--dev);white-space:nowrap}
+td.t{font-family:var(--dev);color:var(--dim)}
+@media (max-width:760px){main{flex-direction:column;height:auto}
+  #list{width:100%;max-height:35vh;border-right:none;border-bottom:1px solid var(--line)}
+  .chip .v,.eq .result{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<header>
+  <h1><span class="dev">प्रक्रिया-पाठः</span> — learn Pāṇini step by step</h1>
+  <nav><a href="index.html">audit view</a><a href="shabda.html">शब्दरूपाणि</a></nav>
+  <label>script
+    <select id="scheme">
+      <option value="devanagari">देवनागरी</option>
+      <option value="iast">IAST</option>
+      <option value="slp1">SLP1</option>
+    </select>
+  </label>
+</header>
+<main>
+  <nav id="list"><div class="search"><input id="q" placeholder="search derivations…" autocomplete="off"></div><div id="items"></div></nav>
+  <section id="pane"><p class="empty">Pick a derivation on the left.<br>Every step shown is computed by the engine, one sūtra at a time.</p></section>
+</main>
+<script src="transliterate.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const tr = t => Transliterate.fromSLP1(t || "", $("#scheme").value);
+const esc = s => (s ?? "").toString().replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dev = n => String(n).replace(/\d/g, d => "०१२३४५६७८९"[d]);
+
+// Stations follow the Aṣṭādhyāyī's own layout, read from the sūtra number.
+const STAGES = [
+  {k:"samjna",  dev:"संज्ञा-परिभाषा", en:"definitions · it", test:(a,p)=>a===1||a===2},
+  {k:"pratyaya",dev:"प्रत्ययविधिः",   en:"affixes · 3.1–5.4", test:(a,p)=>a>=3&&a<=5},
+  {k:"sandhi",  dev:"६.१ द्वित्व-सन्धिः", en:"reduplication · vowel sandhi", test:(a,p)=>a===6&&p<=3},
+  {k:"anga",    dev:"अङ्गकार्यम्",     en:"stem operations · 6.4–7.4", test:(a,p)=>(a===6&&p===4)||a===7},
+  {k:"tripadi", dev:"त्रिपादी",         en:"8.2–8.4 (asiddha)", test:(a,p)=>a===8},
+];
+const ROLE_DEV = {dhatu:"धातुः", vikarana:"विकरणम्", tin:"तिङ्", sup:"सुप्", krt:"कृत्",
+  taddhita:"तद्धितः", upasarga:"उपसर्गः", agama:"आगमः", abhyasa:"अभ्यासः",
+  pratipadika:"प्रातिपदिकम्", prakriti:"प्रकृतिः", pratyaya:"प्रत्ययः", pada:"पदम्"};
+const MINOR = new Set(["SKIPPED","VACUOUS","AUDIT","DEFINED","BLOCKED"]);
+
+let INDEX = [], SUTRAS = {}, cache = {};
+let cur = null;          // {meta, rec, steps, story, pos}
+let timer = null, quizOn = false;
+
+Promise.all([fetch("data/index.json").then(r=>r.json()), fetch("data/sutras.json").then(r=>r.json()).catch(()=>({}))])
+  .then(([idx, sut]) => {
+    INDEX = idx.derivations.filter(r => r.ok); SUTRAS = sut;
+    renderList();
+    if (location.hash) route();
+  });
+
+function renderList() {
+  const q = $("#q").value.trim().toLowerCase();
+  const hits = INDEX.filter(r => !q || (r.slug + " " + (r.form||"") + " " + tr(r.form)).toLowerCase().includes(q));
+  $("#items").innerHTML = hits.map(r => `
+    <a href="#${esc(r.slug)}" class="${cur && r.slug === cur.meta.slug ? "sel" : ""}">
+      <div class="form">${esc(tr(r.form))}</div>
+      <div class="sub">${esc(r.module)} · ${r.steps||0} steps</div>
+    </a>`).join("") || `<p class="empty">no match</p>`;
+}
+
+function route() {
+  const [slug, st] = decodeURIComponent(location.hash.slice(1)).split("/");
+  const meta = INDEX.find(r => r.slug === slug);
+  if (!meta) return;
+  const go = rec => {
+    if (!cur || cur.meta.slug !== slug) load(meta, rec);
+    const n = st && st.startsWith("step") ? parseInt(st.slice(4), 10) : null;
+    if (n != null && !isNaN(n)) cur.pos = Math.max(-1, Math.min(n - 1, cur.story.length - 1));
+    render();
+  };
+  if (cache[slug]) return go(cache[slug]);
+  $("#pane").innerHTML = `<p class="empty">loading…</p>`;
+  fetch(`data/traces/${encodeURIComponent(slug)}.json`).then(r => r.json())
+    .then(rec => { cache[slug] = rec; go(rec); });
+}
+
+function stageOf(sid) {
+  const m = /^(\d)\.(\d)\./.exec(sid || "");
+  if (!m) return null;
+  const a = +m[1], p = +m[2];
+  const i = STAGES.findIndex(s => s.test(a, p));
+  return i < 0 ? null : i;
+}
+
+// The story: steps that changed the form, plus a "gap" entry wherever the
+// form changed with no sūtra step recorded (a pipeline mutation that bypassed
+// apply_rule) — shown, never smoothed over.
+function load(meta, rec) {
+  stop();
+  const steps = (rec.trace || []).map((s, i) => ({...s, i}));
+  const story = [];
+  let last = steps.length ? steps[0].form_before : "";
+  for (const s of steps) {
+    if (s.form_before !== last) story.push({gap: true, at: s.i, before: last, after: s.form_before});
+    if (s.status === "APPLIED" && s.form_before !== s.form_after) story.push({gap: false, i: s.i});
+    else if (s.form_before !== s.form_after) story.push({gap: true, at: s.i + 1, before: s.form_before, after: s.form_after, row: s});
+    last = s.form_after;
+  }
+  cur = {meta, rec, steps, story, pos: -1};
+  renderList();
+}
+
+const stepIdx = e => e.gap ? e.at - 1 : e.i;      // trace row whose state the entry shows
+const storyOf = i => cur.story.findIndex(e => !e.gap && e.i === i);
+
+function partsAt(i) {
+  for (let k = i; k >= 0; k--) if (cur.steps[k].parts) return cur.steps[k].parts;
+  return null;
+}
+
+function graphemes(s) {
+  if (window.Intl && Intl.Segmenter) return [...new Intl.Segmenter("sa", {granularity:"grapheme"}).segment(s)].map(x => x.segment);
+  return [...s];
+}
+
+// before/after with the changed middle marked (common prefix + suffix kept).
+function diffHTML(a, b) {
+  const A = graphemes(tr(a)), B = graphemes(tr(b));
+  let p = 0; while (p < A.length && p < B.length && A[p] === B[p]) p++;
+  let s = 0; while (s < A.length - p && s < B.length - p && A[A.length-1-s] === B[B.length-1-s]) s++;
+  const mid = (X) => X.slice(p, X.length - s).join("");
+  const pre = A.slice(0, p).join(""), sufA = A.slice(A.length - s).join(""), sufB = B.slice(B.length - s).join("");
+  const del = mid(A), ins = mid(B);
+  return `${esc(pre)}${del ? `<del>${esc(del)}</del>` : ""}${esc(sufA)}<span class="arrow">→</span>`
+       + `${esc(pre)}${ins ? `<mark>${esc(ins)}</mark>` : ""}${esc(sufB)}`;
+}
+
+function eqHTML() {
+  const pos = cur.pos, e = pos < 0 ? null : cur.story[pos];
+  const parts = !e || e.gap ? null : partsAt(e.i);
+  const prev = pos <= 0 ? null : partsAt(stepIdx(cur.story[pos - 1]));
+  const shown = !e ? (cur.steps.length ? cur.steps[0].form_before : "") : e.gap ? e.after : cur.steps[e.i].form_after;
+  if (!parts) return `<div class="eq"><div class="chip touched"><span class="v">${esc(tr(shown))}</span>
+      <span class="r">${e ? "form" : "upadeśa"}</span></div>
+      <span class="eqsign">…</span><span class="result" style="color:var(--faint)">${esc(tr(cur.rec.final_flat_slp1))}</span></div>`;
+  const chips = parts.map(([v, role, up], k) => {
+    const touched = prev && (!prev[k] || prev[k][0] !== v || prev.length !== parts.length);
+    const c = `var(--r-${ROLE_DEV[role] ? role : "other"})`;
+    const upd = up && up !== v ? tr(up) : "";
+    return `<div class="chip ${touched ? "touched" : ""}" style="--c:${c}">
+      <span class="v">${esc(tr(v)) || "∅"}</span>
+      <span class="u">${esc(upd)}</span>
+      <span class="r">${esc(ROLE_DEV[role] || role)}</span></div>`;
+  }).join(`<span class="plus">+</span>`);
+  return `<div class="eq">${chips}<span class="eqsign">=</span>
+    <span class="result">${esc(tr(shown))}</span></div>`;
+}
+
+const stageAt = e => stageOf((cur.steps[e.gap ? Math.min(e.at, cur.steps.length - 1) : e.i] || {}).sutra_id);
+
+function ribbonHTML() {
+  const now = cur.pos < 0 ? -1 : stageAt(cur.story[cur.pos]);
+  const have = new Set(cur.story.map(stageAt));
+  const seen = new Set(cur.story.slice(0, cur.pos + 1).map(stageAt));
+  return `<div class="ribbon">${STAGES.map((s, k) =>
+    `<div data-stage="${k}" class="${k === now ? "now" : seen.has(k) ? "seen" : ""} ${have.has(k) ? "" : "none"}"
+      title="${esc(s.en)}"><b>${esc(s.dev)}</b>${esc(s.en)}</div>`).join("")}</div>`;
+}
+
+function sutraLine(sid) {
+  const S = SUTRAS[sid] || {};
+  return `<span class="sid">${esc(sid)}</span> <span class="stext">${esc(S.t || "")}</span>`;
+}
+
+// Rules the engine tried between the previous story step and this one.
+function consideredBetween(pos) {
+  const lo = pos <= 0 ? 0 : stepIdx(cur.story[pos - 1]) + 1, hi = stepIdx(cur.story[pos]);
+  return cur.steps.slice(lo, Math.max(lo, hi)).filter(s => /^\d\.\d\.\d+$/.test(s.sutra_id));
+}
+
+function cardHTML() {
+  const nGap = cur.story.filter(e => e.gap).length;
+  if (cur.pos < 0) {
+    const first = cur.steps[0] || {};
+    return `<div class="card"><div class="why">Start: the <b>upadeśa</b> as taught —
+      <span class="dev" style="font-size:1.3rem">${esc(tr(first.form_before))}</span>.
+      Press <b>Next</b> (or →) to apply the first sūtra that changes the form.
+      <span class="src">${cur.story.length - nGap} form-changing steps of ${cur.steps.length} rule checks</span>
+      ${nGap ? `<span class="tag ph">${nGap} unrecorded change${nGap > 1 ? "s" : ""}</span>` : ""}</div></div>`;
+  }
+  const e = cur.story[cur.pos];
+  if (e.gap) return `<div class="card">
+    <div class="head"><span class="tag ph">unrecorded change</span><span class="src">engine glass-box gap</span></div>
+    <div class="diff">${diffHTML(e.before, e.after)}</div>
+    <div class="why">The engine changed the form here ${e.row ? `while recording <span class="mono">${esc(e.row.sutra_id)}</span> as ${esc(e.row.status)}` : "without recording a sūtra step"}.
+      In a glass-box derivation every change is one sūtra; this one is a known gap in the engine, listed so it can be fixed — not a step of Pāṇini's grammar.</div></div>`;
+  const s = cur.steps[e.i], S = SUTRAS[s.sutra_id] || {};
+  const tried = consideredBetween(cur.pos);
+  return `<div class="card">
+    <div class="head">${sutraLine(s.sutra_id)}
+      <span class="tag">${esc(s.type_label || s.sutra_type)}</span>
+      <span class="tag ${esc(s.status)}">${esc(s.status)}</span>
+      ${S.ph ? `<span class="tag ph" title="this sūtra file is registered but does not yet implement its operation">placeholder</span>` : ""}
+      ${s.sutra_type === "STRUCTURAL" ? `<span class="tag" title="assembling the input or joining terms — not a sūtra">structural step</span>` : ""}
+      <span class="src">pāṭha: ashtadhyayi.com</span></div>
+    ${S.p && S.p !== S.t ? `<div class="pc">${esc(S.p)}</div>` : ""}
+    <div class="diff">${diffHTML(s.form_before, s.form_after)} <span class="src">engine</span></div>
+    <div class="why"><span class="k">rule</span>${esc(s.why_dev)}</div>
+    ${s.why_now_dev ? `<div class="why"><span class="k">why here</span>${esc(s.why_now_dev)}</div>` : ""}
+    ${S.ex ? `<div class="ex"><span class="src" style="background:none">Kāśikā udāharaṇa</span>${S.ex.map(e => `<span>${esc(e)}</span>`).join("")}</div>` : ""}
+    ${tried.length ? `<details class="considered"><summary>${tried.length} other rule${tried.length>1?"s":""} checked before this one</summary><ul>
+      ${tried.map(t => `<li><span class="mono" style="color:var(--accent)">${esc(t.sutra_id)}</span>
+        <span class="dev">${esc((SUTRAS[t.sutra_id]||{}).t || "")}</span>
+        — <span class="tag ${esc(t.status)}">${esc(t.status)}</span>
+        ${t.skip_reason ? `<span class="mono" style="font-size:.72rem">${esc(t.skip_reason)}</span>` : ""}</li>`).join("")}
+    </ul></details>` : ""}
+  </div>`;
+}
+
+function quizHTML() {
+  const pos = cur.pos + 1, e = cur.story[pos];
+  if (e.gap) return null;
+  const s = cur.steps[e.i];
+  if (!/^\d\.\d\.\d+$/.test(s.sutra_id)) return null;
+  const decoys = [...new Set(consideredBetween(pos)
+      .filter(t => (t.status === "SKIPPED" || t.status === "BLOCKED") && !/ADHIKARA|PARIBHASHA|ANUVADA|SAMJNA/.test(t.sutra_type))
+      .map(t => t.sutra_id))]
+    .filter(id => id !== s.sutra_id && SUTRAS[id]).slice(-3);
+  if (!decoys.length) return null;
+  const opts = [s.sutra_id, ...decoys].sort(() => Math.random() - .5);
+  return `<div class="quiz"><div class="q">Form now: <span class="dev" style="font-size:1.2rem">${esc(tr(s.form_before))}</span>.
+      Which sūtra applies next? <span class="src">decoys = rules the engine checked here and rejected</span></div>
+    ${opts.map(id => `<button data-ans="${esc(id)}">${sutraLine(id)}</button>`).join("")}</div>`;
+}
+
+function render() {
+  const {rec, steps, story, pos} = cur;
+  const quiz = quizOn && pos + 1 < story.length ? quizHTML() : null;
+  const expert = $("#expert") ? $("#expert").checked : false;
+  const rows = steps.filter(s => expert || storyOf(s.i) >= 0);
+  const nSteps = story.length;
+  $("#pane").innerHTML = `
+    <div class="title"><h2>${esc(tr(rec.final_flat_slp1))}</h2>
+      <span class="mono" style="color:var(--faint)">${esc(rec.final_flat_slp1)} · ${esc(cur.meta.module)}</span>
+      <span class="src">computed by the engine</span></div>
+    ${ribbonHTML()}
+    ${eqHTML()}
+    <div class="ctl">
+      <button id="b0" title="start (Home)">⏮</button>
+      <button id="bp" title="previous (←)">◀ Prev</button>
+      <button id="bn" title="next (→)">Next ▶</button>
+      <button id="be" title="end (End)">⏭</button>
+      <button id="bplay">${timer ? "❚❚ Pause" : "▶ Play"}</button>
+      <span class="count">step ${dev(Math.max(pos + 1, 0))} / ${dev(nSteps)}</span>
+      <label><input type="checkbox" id="quiz" ${quizOn ? "checked" : ""}> predict the next sūtra</label>
+      <label><input type="checkbox" id="expert" ${expert ? "checked" : ""}> show every rule checked (${steps.length})</label>
+    </div>
+    ${quiz || cardHTML()}
+    <table><tbody>${rows.map(s => {
+      const k = storyOf(s.i);
+      return `<tr data-i="${s.i}" class="${k >= 0 && k === pos ? "cur" : ""} ${MINOR.has(s.status) || k < 0 ? "minor" : ""}">
+        <td class="n">${s.i + 1}</td><td class="sid">${esc(s.sutra_id)}</td>
+        <td class="t">${esc((SUTRAS[s.sutra_id]||{}).t || s.type_label || "")}</td>
+        <td class="f">${s.form_before !== s.form_after ? `${esc(tr(s.form_before))} → <b>${esc(tr(s.form_after))}</b>` : esc(tr(s.form_after))}</td>
+        <td><span class="tag ${esc(s.status)}">${esc(s.status)}</span></td></tr>`;
+    }).join("")}</tbody></table>`;
+  $("#b0").disabled = $("#bp").disabled = pos < 0;
+  $("#bn").disabled = $("#be").disabled = pos >= nSteps - 1;
+  $("#b0").onclick = () => goto(-1);
+  $("#bp").onclick = () => goto(pos - 1);
+  $("#bn").onclick = () => goto(pos + 1);
+  $("#be").onclick = () => goto(nSteps - 1);
+  $("#bplay").onclick = () => timer ? stop() : play();
+  $("#quiz").onchange = e => { quizOn = e.target.checked; stop(); render(); };
+  $("#expert").onchange = render;
+  document.querySelectorAll(".ribbon div[data-stage]").forEach(d => d.onclick = () => {
+    const k = story.findIndex(e => stageAt(e) === +d.dataset.stage);
+    if (k >= 0) goto(k);
+  });
+  document.querySelectorAll("tr[data-i]").forEach(r => r.onclick = () => {
+    const i = +r.dataset.i, k = storyOf(i);
+    goto(k >= 0 ? k : story.filter(e => stepIdx(e) < i).length - 1);
+  });
+  document.querySelectorAll(".quiz button").forEach(b => b.onclick = () => {
+    const right = cur.steps[cur.story[pos + 1].i].sutra_id;
+    document.querySelectorAll(".quiz button").forEach(x => {
+      x.disabled = true;
+      if (x.dataset.ans === right) x.classList.add("right");
+      else if (x === b) x.classList.add("wrong");
+    });
+    setTimeout(() => goto(pos + 1), b.dataset.ans === right ? 700 : 1800);
+  });
+}
+
+function goto(p) {
+  if (!cur) return;
+  cur.pos = Math.max(-1, Math.min(p, cur.story.length - 1));
+  const step = cur.pos < 0 ? "" : `/step${cur.pos + 1}`;
+  history.replaceState(null, "", `#${encodeURIComponent(cur.meta.slug)}${step}`);
+  render();
+}
+function play() { timer = setInterval(() => cur.pos >= cur.story.length - 1 ? stop() : goto(cur.pos + 1), 1600); render(); }
+function stop() { if (timer) { clearInterval(timer); timer = null; if (cur) render(); } }
+
+addEventListener("keydown", e => {
+  if (!cur || e.target.tagName === "INPUT") return;
+  if (e.key === "ArrowRight") goto(cur.pos + 1);
+  else if (e.key === "ArrowLeft") goto(cur.pos - 1);
+  else if (e.key === "Home") goto(-1);
+  else if (e.key === "End") goto(cur.story.length - 1);
+});
+$("#q").oninput = renderList;
+$("#scheme").onchange = () => { renderList(); if (cur) render(); };
+addEventListener("hashchange", route);
+</script>
+</body>
+</html>

@@ -7,11 +7,9 @@ Demo slice (भित्सीष्ट / BitzIzwa):
 **P038** (*vidhi-liṅ*, *paceran*): when ``vidhi_liG`` is set, insert full ``sIyuw``
 before the ``liG`` *lakāra* placeholder (then **3.4.78** replaces ``liG``).
 
-Narrow v3 representation (*āśīr* path):
-  We model the augment as surface ``sI`` (dropping ``y`` in this demo slice),
-  because this repository currently does not carry an operational *vyor-lopa*
-  rule in 6.1.x for that path. The key observable effect for downstream
-  tripāḍī is: a long vowel ``I`` followed by ``s`` from suṭ (3.4.107).
+*Āśīr* path: the augment is सीय् (``sIy``; ṭ and उ removed as anubandhas),
+ārdhadhātuka by 3.4.116. 6.1.66 लोपो व्योर्वलि drops its य् before a val
+(एधिषीष्ट, एधिषीरन्) and keeps it before a vowel (एधिषीयास्ताम्, एधिषीय).
 
 Engine:
   - recipe arms via ``state.meta['sIyuw_recipe']``.
@@ -78,7 +76,7 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if state.meta.get("ashir_liG"):
         idx = _find_tin_index(state)
-        slp = "sI"
+        slp = "sIy"
     elif state.meta.get("vidhi_liG"):
         if state.meta.get("karmani_liG_recipe"):
             idx = _find_tin_index(state)
@@ -97,6 +95,8 @@ def act(state: State) -> State:
     )
     if "kngiti" in state.terms[idx].tags:      # ṭit āgama: part of the (ṅit) tiṅ, 1.1.46
         sI.tags.add("kngiti")
+    if state.meta.get("ashir_liG"):            # 3.4.116 लिङाशिषि: ārdhadhātuka
+        sI.tags.add("ardhadhatuka")
     state.terms.insert(idx, sI)
     state.meta["sIyuw_recipe"] = False
     state.meta.pop("karmani_liG_recipe", None)

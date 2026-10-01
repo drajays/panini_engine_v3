@@ -126,7 +126,7 @@ TAP: FrozenSet[str] = build_pratyaya_pratyahara("TAp", "p", _TAP_ORDERED, last_o
 _TIN_ORDERED: List[Tuple[str, str]] = [
     ("tip",   "p"),   # 1.3: parasmaipada 3sg
     ("tas",   ""),    # 1.3: 3du
-    ("jhi",   ""),    # 1.3: 3pl  (jh- marker → 3.4.108 etc.)
+    ("Ji",    ""),    # 1.3: 3pl  झि (झ् → 7.1.3 / 3.4.108 etc.)
     ("sip",   "p"),   # 2.3: 2sg
     ("Tas",   ""),    # 2.3: 2du
     ("Ta",    ""),    # 2.3: 2pl

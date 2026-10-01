@@ -49,7 +49,8 @@ def act(state: State) -> State:
             break
     if j is None:
         return state
-    dh.varnas.insert(j + 1, mk("n"))
+    # the mark outlives the sanādi merge: 6.4.24 अनिदिताम् must still see it
+    dh.varnas.insert(j + 1, mk("n", "num_agama"))
     dh.meta["7_1_58_num_done"] = True
     return state
 

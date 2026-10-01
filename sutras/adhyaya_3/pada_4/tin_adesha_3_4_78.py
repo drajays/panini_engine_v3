@@ -36,7 +36,7 @@ LAKAARA_UPADESHA_SLP1: Final[FrozenSet[str]] = frozenset(
 TIN_ADESHA_18: Final[Tuple[str, ...]] = (
     "tip",
     "tas",
-    "jhi",
+    "Ji",
     "sip",
     "Tas",
     "Ta",

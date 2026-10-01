@@ -39,7 +39,7 @@ def test_sutra_metadata() -> None:
 def test_map_parasmai_block() -> None:
     assert vacana_102_tag_for_tin_adesha("tip") == TIN_102_TAG_EKA
     assert vacana_102_tag_for_tin_adesha("tas") == TIN_102_TAG_DVI
-    assert vacana_102_tag_for_tin_adesha("jhi") == TIN_102_TAG_BAHU
+    assert vacana_102_tag_for_tin_adesha("Ji") == TIN_102_TAG_BAHU
 
 
 def test_map_atmane_block() -> None:

@@ -7,7 +7,7 @@ Operational narrow demo (संगसीष्ट / ``saGgasIzwa`` fragment):
 
 Engine:
   - recipe arms via ``state.meta['1_2_13_va_gam_kit_arm']``.
-  - requires preceding *dhātu* ``upadesha_slp1=='gam'``.
+  - requires the *dhātu* गमॢँ (``upadesha_slp1=='gamx~'``).
   - requires a ``ling_sIyuw`` pratyaya and a *taṅ* *tiṅ* termination (ātmanepada).
 
 Citation (CONSTITUTION Art. 14)
@@ -28,6 +28,7 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
 
+_GAM_UPADESHA = frozenset({"gamx~"})   # गमॢँ गतौ (01.1137)
 _ATMANEPADA_TIN = frozenset({"ta", "AtAm", "Ja", "TAs", "ATAm", "Dvam", "iw", "vahi", "mahiG"})
 
 
@@ -44,7 +45,7 @@ def _find(state: State) -> int | None:
     for t in state.terms:
         if "dhatu" not in t.tags:
             continue
-        if (t.meta.get("upadesha_slp1") or "").strip() != "gam":
+        if (t.meta.get("upadesha_slp1") or "").strip() not in _GAM_UPADESHA:
             continue
         for i, pr in enumerate(state.terms):
             if "ling_sIyuw" not in pr.tags:

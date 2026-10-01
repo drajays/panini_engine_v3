@@ -8,6 +8,7 @@ from __future__ import annotations
 import sutras  # noqa: F401
 
 from engine import apply_rule
+from pipelines.it_prakarana import run_it_prakarana
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -32,8 +33,6 @@ from sutras.adhyaya_2.pada_3.sutra_2_3_50 import (
     META_OVERRIDE_VV as META_2_3_50_OVERRIDE_VV,
     META_SHESE_ELIGIBLE as META_2_3_50_ELIGIBLE,
 )
-from sutras.adhyaya_1.pada_3.sutra_1_3_7 import META_P004_B_Yya_CUTU
-
 
 def _normalize_merged_pratipadika(s: State, *, upadesha_slp1: str) -> None:
     if not s.terms:
@@ -67,8 +66,8 @@ def derive_kauYjAyanyaH() -> State:
     s = apply_rule("4.1.98", s)
 
     s = P00_taddhita_1_1_scope(s)
-    for sid in ("1.3.7", "1.3.3", "1.3.8", "1.3.9", "1.3.10"):
-        s = apply_rule(sid, s)
+    s = run_it_prakarana(s)
+    s = apply_rule("1.3.10", s)
 
     s = apply_rule("7.1.2", s)
     s = P00_taddhita_it_lopa_chain(s)
@@ -83,8 +82,8 @@ def derive_kauYjAyanyaH() -> State:
     s = apply_rule("4.1.105", s)
 
     s = apply_rule("6.4.1", s)
-    for sid in ("1.3.3", "1.3.9", "1.3.10"):
-        s = apply_rule(sid, s)
+    s = run_it_prakarana(s)
+    s = apply_rule("1.3.10", s)
     s = P00_bha_avakasha_6_4_148(s)
 
     _pada_merge(s)
@@ -120,9 +119,8 @@ def derive_SANqikyaH() -> State:
     s = apply_rule("4.3.92", s)
 
     s = P00_taddhita_1_1_scope(s)
-    s.meta[META_P004_B_Yya_CUTU] = True
-    for sid in ("1.3.7", "1.3.3", "1.3.8", "1.3.9", "1.3.10"):
-        s = apply_rule(sid, s)
+    s = run_it_prakarana(s)
+    s = apply_rule("1.3.10", s)
 
     s = P00_taddhita_it_lopa_to_6_4(s)
 

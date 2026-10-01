@@ -13,6 +13,11 @@ This is implemented as a PARIBHASHA that sets a gate in
 ``state.paribhasha_gates``. Vidhis that would otherwise guṇa a vowel
 must consult this gate and skip when the target vowel carries the
 ``it_agama`` tag (inserted by 7.2.35 iṭ-āgama).
+
+Sources consulted:
+- ashtadhyayi.com data.txt row i=11006 · दीधी-वेवी-इटाम् (anuvṛtti: इकः, गुण-वृद्धी 1.1.3, न 1.1.4)
+- Kāśikā: "आदीध्यनम्, आदीध्यकः, आवेव्यनम्, आवेव्यकः; कणिता श्वः, रणिता श्वः"
+- Cross-validation: regression tests tests/unit/test_AdIDhyakaH*.py (आदीध्यकः)
 """
 from __future__ import annotations
 
@@ -23,14 +28,14 @@ from engine.state import State
 # In practice, the classical paribhāṣā is invoked by name for a small
 # fixed dhātu set (दीधी / वेवी / ईट्).  We expose a helper so vidhis can
 # block guṇa/vṛddhi by **dhātu identity** rather than pipeline-injected meta.
-_DIDHI_VEVI_IT_BASES: frozenset[str] = frozenset({"dIDhI", "vevI", "iw"})
+_DIDHI_VEVI_IT_BASES: frozenset[str] = frozenset({"dIDI", "vevI", "iw"})   # दीधीङ्, वेवीङ्
 
 
 def _normalize_upadesha_base(up: str | None) -> str:
     """
     Best-effort normalizer for dhātu identity checks.
     Examples:
-      'dIDhI~N' → 'dIDhI'
+      'dIDIN'   → 'dIDI'
       'iw'      → 'iw'
     """
     if not up:

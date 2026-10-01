@@ -43,7 +43,8 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     t0 = state.terms[0]
-    t0.varnas[0] = mk("n")
+    # an ādeśa, not the upadeśa sound — but still the dhātu's (नह्+ता → नद्धा, 8.2.34)
+    t0.varnas[0] = mk("n", "dhatu_adesha_v")
     t0.meta["no_naH_6_1_65_done"] = True
     return state
 

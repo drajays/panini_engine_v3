@@ -23,7 +23,7 @@ from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_tin_tas_adesh_full, P00_tripadi_rutva_visarga, P00_as_lat_adadi_2_4_72
+from core.canonical_pipelines import P00_lac_lat_attach, P00_tin_tas_adesh_full, P00_tripadi_rutva_visarga, P00_as_lat_adadi_2_4_72
 from pipelines.subanta import (
     SUBANTA_RULE_IDS_POST_4_1_2,
     PADA_MERGE_STEP,
@@ -63,18 +63,7 @@ def _derive_staH() -> str:
     s.terms[0].tags.discard("upadesha")
 
     # Pratyaya adhikāra + laṭ placeholder + tas.
-    s = apply_rule("3.1.91", s)
-    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s = apply_rule("3.2.123", s)
-    laT = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("laT"),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-    if laT.varnas and laT.varnas[-1].slp1 == "T":
-        del laT.varnas[-1]
-    s.terms.append(laT)
+    s = P00_lac_lat_attach(s)
     s = P00_tin_tas_adesh_full(s)
 
     # Add Sap then luk it by 2.4.72 (adādi).

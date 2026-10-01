@@ -20,6 +20,7 @@ from core.canonical_pipelines import P00_tripadi_rutva_visarga, P00_jas_7_1_17_i
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
+from pipelines.it_prakarana import run_it_prakarana
 
 from sutras.adhyaya_1.pada_1.sutra_1_1_31 import TAG_DVANDVA_SAMASA
 
@@ -87,8 +88,7 @@ def derive_katarakatame(*, vibhasha_choice: bool) -> State:
     s = P00_jas_7_1_17_it_lopa_6_1_87(s)
 
     # Else-path: jas opener j is cuṭu-it and will be loped, then 6.1.102 handles a+a.
-    s = apply_rule("1.3.7", s)
-    s = apply_rule("1.3.9", s)
+    s = run_it_prakarana(s)
     s = apply_rule("6.1.102", s)
 
     # Merge to one pada and apply ru + visarga tail (8.2.66 / 8.3.15) if applicable.

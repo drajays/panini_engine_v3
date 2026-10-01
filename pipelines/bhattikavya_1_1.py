@@ -14,6 +14,7 @@ import sutras  # noqa: F401
 
 from core.canonical_pipelines import (
     P00_anga_samjna_6_4_1,
+    P00_dhatu_upadesha_it_lopa,
     P00_guna_rapara_ayadi,
     P00_krt_it_lopa,
     P00_vikarana_it_lopa,
@@ -74,6 +75,16 @@ def derive_aBUt() -> State:
     return derive_tinanta("BU", "luG", "kartari", 3, 1)
 
 
+def _dhatu(ref: str, *before: Term) -> State:
+    """Dhātu from the dhātupāṭha in upadeśa form, then its it-lopa (1.3.1–1.3.9).
+
+    ``before`` terms (upapada / upasarga) are on the tape from the start, so
+    no form change escapes the trace.
+    """
+    s = build_dhatu_state(ref)
+    s.terms = list(before) + s.terms
+    return P00_dhatu_upadesha_it_lopa(s)
+
 def derive_upAgamat() -> State:
     """उप+आङ्+गम् + लुङ् 3sg → उपागमत् (३.१.५५ अङ्, ६.४.७१ अट्, ६.१.१०१)."""
     return derive_tinanta("gam", "luG", "kartari", 3, 1, upasargas=["upa", "A"])
@@ -84,7 +95,7 @@ def derive_upAgamat() -> State:
 
 def derive_vedAH() -> State:
     """विद् + अच् (३.१.१३४) → वेदाः (७.३.८६ गुण)."""
-    s = build_dhatu_state("vid")
+    s = _dhatu("Adadi_02_0059")          # विदँ ज्ञाने
     s.meta["derivation_class"] = "krdanta"
     s.meta["krt_upadesha_slp1"] = "ac"
     s.meta["krt_artha"] = "kartari"
@@ -133,14 +144,13 @@ def derive_araMsta() -> State:
 
 def derive_samUlaGAtam() -> State:
     """समूल + हन् + णमुल् (३.४.३६) → समूलघातम्."""
-    s = build_dhatu_state("han")
     upa = Term(
         kind="prakriti",
         varnas=list(parse_slp1_upadesha_sequence("samUla")),
         tags={"upapada", "anga", "prātipadika"},
         meta={"upadesha_slp1": "samUla"},
     )
-    s.terms = [upa] + s.terms
+    s = _dhatu("Adadi_02_0002", upa)          # हनँ हिंसागत्योः
     s.meta["derivation_class"] = "krdanta"
     s.meta["krt_upadesha_slp1"] = "Ramul"
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
@@ -166,14 +176,13 @@ def derive_nyavaDIt() -> State:
 
 def derive_nfpaH() -> State:
     """नृ + पा + क (३.२.३) → नृपः."""
-    s = build_dhatu_state("pA")
     nf = Term(
         kind="prakriti",
         varnas=list(parse_slp1_upadesha_sequence("nf")),
         tags={"upapada", "anga", "prātipadika"},
         meta={"upadesha_slp1": "nf"},
     )
-    s.terms = [nf] + s.terms
+    s = _dhatu("Adadi_02_0051", nf)          # पा रक्षणे
     s.meta["derivation_class"] = "krdanta"
     s.meta["krt_upadesha_slp1"] = "ka"
     s.meta["krt_artha"] = "kartari"
@@ -191,14 +200,13 @@ def derive_nfpaH() -> State:
 
 def derive_vibuDasaKaH() -> State:
     """वि+बुध+क (३.१.१३५) and सखि+टच् (५.४.९१, ६.४.१४८) → विबुधसखः."""
-    s = build_dhatu_state("buD")
     vi = Term(
         kind="upasarga",
         varnas=list(parse_slp1_upadesha_sequence("vi")),
         tags={"upasarga", "pratyaya"},
         meta={"upadesha_slp1": "vi"},
     )
-    s.terms = [vi] + s.terms
+    s = _dhatu("BvAdi_01_0994", vi)          # बुधँ अवगमने
     s.meta["derivation_class"] = "krdanta"
     s.meta["krt_upadesha_slp1"] = "ka"
     s = apply_rule("1.4.59", s)
@@ -272,7 +280,7 @@ def derive_guNAH() -> State:
 
 def derive_varaH() -> State:
     """वृ + अप् (३.३.५८) → वरः."""
-    s = build_dhatu_state("vfY")
+    s = build_dhatu_state("svAdi_05_0008")  # वृञ् वरणे
     s.meta["derivation_class"] = "krdanta"
     s.meta["krt_upadesha_slp1"] = "ap"
     s.meta["krt_artha"] = "karmani"

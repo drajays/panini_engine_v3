@@ -2,7 +2,7 @@
 6.4.37  अनुदात्तोपदेशवनतितनोत्यादीनामनुनासिक लोपो झलि क्ङिति  —  VIDHI (narrow demo)
 
 Narrow v3 (संगसीष्ट / ``saGgasIzwa``):
-  When the *dhātu* ``gam`` retains a final *anunāsika* ``m`` before a *jhal*‑initial
+  When the *dhātu* गमॢँ (upadeśa ``gamx~``, it-lopa → ``gam``) retains a final *anunāsika* ``m`` before a *jhal*‑initial
   *kṅiti* pratyaya (here: **3.4.102** ``ling_sIyuw`` tagged ``kngiti``), drop that
   trailing ``m``.
 
@@ -26,6 +26,8 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology.pratyahara import JHAL
 
+_GAM_UPADESHA = frozenset({"gamx~"})   # गमॢँ गतौ (01.1137), anudātta-upadeśa
+
 
 def cond(state: State) -> bool:
     if not state.meta.get("gam_anunasika_recipe"):
@@ -33,7 +35,7 @@ def cond(state: State) -> bool:
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags:
             continue
-        if (t.meta.get("upadesha_slp1") or "").strip() != "gam":
+        if (t.meta.get("upadesha_slp1") or "").strip() not in _GAM_UPADESHA:
             continue
         if not t.varnas or t.varnas[-1].slp1 != "m":
             continue
@@ -56,7 +58,7 @@ def act(state: State) -> State:
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags:
             continue
-        if (t.meta.get("upadesha_slp1") or "").strip() != "gam":
+        if (t.meta.get("upadesha_slp1") or "").strip() not in _GAM_UPADESHA:
             continue
         if t.varnas and t.varnas[-1].slp1 == "m":
             t.varnas.pop()

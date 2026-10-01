@@ -12,9 +12,9 @@ deterministic spine for this *prayoga* follows ``samo gamyṛcchibhyām`` → **
 block), plus **8.3.23**/**8.4.58** interacting with **suṭ**/tripāḍī.
 
 Narrow spine:
-  ``sam`` (upasarga) + ``gam`` dhātu → **1.3.29**
+  ``sam`` (upasarga) + गमॢँ (dhātupāṭha 01.1137) → it-lopa → **1.3.29**
   āśīr-liṅ: **3.3.173** → **3.4.77**/**3.4.78**(``ta``) → **3.4.102** → **1.2.13** →
-  **6.4.37** → **3.4.107** → *pada* merge → **8.2.1**
+  **6.4.37** → **3.4.107** → **6.1.66** → *pada* merge → **8.2.1**
   **8.3.23** → **8.3.59** (twice) → **8.4.58** → **8.4.41**
 """
 # ── Claude Code review 2026-05-07 ──────────────────────────────────
@@ -25,11 +25,17 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_tin_adesha_base
+from core.canonical_pipelines import (
+    P00_ashir_atmane_suw_yalopa_merge,
+    P00_dhatu_upadesha_it_lopa,
+    P00_tin_adesha_base,
+)
 
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
+from pipelines.dhatupatha import resolve_dhatu_identifier
+from pipelines.tinanta import _build_dhatu_term
 
 
 def derive_saGgasIzwa() -> State:
@@ -39,13 +45,9 @@ def derive_saGgasIzwa() -> State:
         tags={"upasarga"},
         meta={},
     )
-    dhatu = Term(
-        kind="prakriti",
-        varnas=parse_slp1_upadesha_sequence("gam"),
-        tags={"dhatu", "anga"},
-        meta={"upadesha_slp1": "gam"},
-    )
+    dhatu = _build_dhatu_term(resolve_dhatu_identifier("gamx~"), "kartari", "AsIrliG")
     s = State(terms=[sam, dhatu], meta={}, trace=[])
+    s = P00_dhatu_upadesha_it_lopa(s)           # गमॢँ → गम्
 
     s.meta["samo_recipe"] = True
     s = apply_rule("1.3.29", s)
@@ -60,13 +62,7 @@ def derive_saGgasIzwa() -> State:
     s = apply_rule("1.2.13", s)
     s.meta["gam_anunasika_recipe"] = True
     s = apply_rule("6.4.37", s)
-    s.meta["suw_recipe"] = True
-    s = apply_rule("3.4.107", s)
-
-    from pipelines.subanta import _pada_merge  # noqa: PLC0415
-
-    _pada_merge(s)
-    s = apply_rule("8.2.1", s)
+    s = P00_ashir_atmane_suw_yalopa_merge(s)
     s = apply_rule("8.3.23", s)
     s = apply_rule("8.3.59", s)
     s = apply_rule("8.3.59", s)

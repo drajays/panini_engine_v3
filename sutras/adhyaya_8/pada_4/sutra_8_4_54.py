@@ -8,7 +8,8 @@ In the abhyāsa (reduplicant), the initial jhal consonant becomes its carc
   - Velar voiced → palatal voiced: g→j, gh→j
 
 Engine:
-  - applies only to the first varṇa of an `abhyasa` term (after 7.4.60 trim).
+  - applies to the first varṇa of an `abhyasa` term (after 7.4.60 trim), or —
+    once the pada is merged — to the first consonant of the ``abhyasa_v`` run.
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 84054 · अभ्यासे चर्च्च
@@ -62,17 +63,40 @@ def _find(state: State):
     return None
 
 
+_AC = frozenset("aAiIuUfFxXeEoO")
+
+
+def _find_merged(state: State):
+    """After the pada merge the abhyāsa survives only as ``abhyasa_v`` varṇas
+    (अभभक्षत् ← caṅ): its first consonant, before any root varṇa."""
+    for t in state.terms:
+        if "abhyasa" in t.tags:
+            continue
+        run = [i for i, v in enumerate(t.varnas) if "abhyasa_v" in v.tags]
+        if not run or any("carc_done" in t.varnas[i].tags for i in run):
+            continue
+        i = next((i for i in run if t.varnas[i].slp1 not in _AC), None)
+        if i is not None and t.varnas[i].slp1 in _JHAS_TO_JAS:
+            return t, i
+    return None
+
+
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    return _find(state) is not None or _find_merged(state) is not None
 
 
 def act(state: State) -> State:
     hit = _find(state)
-    if hit is None:
+    if hit is not None:
+        ti, rep = hit
+        state.terms[ti].varnas[0] = mk(rep)
+        state.terms[ti].meta["8_4_54_carc_done"] = True
         return state
-    ti, rep = hit
-    state.terms[ti].varnas[0] = mk(rep)
-    state.terms[ti].meta["8_4_54_carc_done"] = True
+    m = _find_merged(state)
+    if m is not None:
+        t, i = m
+        old = t.varnas[i]
+        t.varnas[i] = mk(_JHAS_TO_JAS[old.slp1], *(old.tags - {"mula_dhatu_v"}), "carc_done")
     return state
 
 

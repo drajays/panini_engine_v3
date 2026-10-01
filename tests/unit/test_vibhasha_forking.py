@@ -17,31 +17,32 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
-def _make_lyap_term_with_m() -> Term:
-    """Build a lyap pratyaya with an inserted m: l+m+y+a+p."""
-    from phonology import mk
+def _gam_lyap_terms() -> list[Term]:
+    """गम् (anudāttopadeśa गमॢँ) + ल्यप् — the 6.4.38 वा ल्यपि site (आगत्य / आगम्य)."""
+    dh = Term(
+        kind="prakriti",
+        varnas=list(parse_slp1_upadesha_sequence("gam")),
+        tags={"dhatu", "anga"},
+        meta={"upadesha_slp1": "gamx~", "udatta_dhatu": False},
+    )
     pr = Term(
         kind="pratyaya",
         varnas=list(parse_slp1_upadesha_sequence("lyap")),
         tags={"pratyaya", "krt"},
         meta={"upadesha_slp1": "lyap"},
     )
-    for i, v in enumerate(pr.varnas):
-        if v.slp1 == "l":
-            pr.varnas.insert(i + 1, mk("m"))
-            break
-    return pr
+    return [dh, pr]
 
 
 class TestForkTapeIsolation:
     def test_mutating_primary_varnas_does_not_affect_fork(self):
-        s = State(terms=[_make_lyap_term_with_m()], meta={}, trace=[])
+        s = State(terms=_gam_lyap_terms(), meta={}, trace=[])
         fork = s.fork()
 
         fork_slp1_before = fork.flat_slp1()
 
         # Mutate primary tape
-        s.terms[0].varnas.pop(1)  # remove the m
+        s.terms[0].varnas.pop()  # remove the m
 
         fork_slp1_after = fork.flat_slp1()
         assert fork_slp1_before == fork_slp1_after, (
@@ -49,11 +50,11 @@ class TestForkTapeIsolation:
         )
 
     def test_mutating_fork_varnas_does_not_affect_primary(self):
-        s = State(terms=[_make_lyap_term_with_m()], meta={}, trace=[])
+        s = State(terms=_gam_lyap_terms(), meta={}, trace=[])
         primary_before = s.flat_slp1()
 
         fork = s.fork()
-        fork.terms[0].varnas.pop(1)
+        fork.terms[0].varnas.pop()
 
         assert s.flat_slp1() == primary_before, (
             "primary tape was affected by fork mutation"
@@ -101,8 +102,7 @@ class TestForkMetaIsolation:
 
 class TestExecVibhashaStoresForkState:
     def test_vibhasha_fork_stored_as_state(self):
-        pr = _make_lyap_term_with_m()
-        s = State(terms=[pr], meta={}, trace=[])
+        s = State(terms=_gam_lyap_terms(), meta={}, trace=[])
 
         # 6.4.38 is VIBHASHA with vibhasha_default=True — will apply and store fork
         s_after = apply_rule("6.4.38", s)
@@ -116,8 +116,7 @@ class TestExecVibhashaStoresForkState:
         )
 
     def test_fork_tape_is_pre_lopa(self):
-        pr = _make_lyap_term_with_m()
-        s = State(terms=[pr], meta={}, trace=[])
+        s = State(terms=_gam_lyap_terms(), meta={}, trace=[])
         s_after = apply_rule("6.4.38", s)
 
         fork = s_after.vibhasha_forks[0]
@@ -127,8 +126,7 @@ class TestExecVibhashaStoresForkState:
         )
 
     def test_primary_tape_is_post_lopa(self):
-        pr = _make_lyap_term_with_m()
-        s = State(terms=[pr], meta={}, trace=[])
+        s = State(terms=_gam_lyap_terms(), meta={}, trace=[])
         s_after = apply_rule("6.4.38", s)
 
         # Primary derivation has m removed
@@ -138,8 +136,7 @@ class TestExecVibhashaStoresForkState:
         )
 
     def test_applied_and_skipped_meta_flags(self):
-        pr = _make_lyap_term_with_m()
-        s = State(terms=[pr], meta={}, trace=[])
+        s = State(terms=_gam_lyap_terms(), meta={}, trace=[])
         s_after = apply_rule("6.4.38", s)
 
         fork = s_after.vibhasha_forks[0]
@@ -147,8 +144,7 @@ class TestExecVibhashaStoresForkState:
         assert fork.meta.get("6.4.38_skipped_vibhasha") is True
 
     def test_clone_survives_state_in_vibhasha_forks(self):
-        pr = _make_lyap_term_with_m()
-        s = State(terms=[pr], meta={}, trace=[])
+        s = State(terms=_gam_lyap_terms(), meta={}, trace=[])
         s_after = apply_rule("6.4.38", s)
 
         cloned = s_after.clone()

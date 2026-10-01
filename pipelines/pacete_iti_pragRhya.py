@@ -32,7 +32,7 @@ def _pacete_iti_state() -> State:
         kind="prakriti",
         varnas=parse_slp1_upadesha_sequence("pacete"),
         tags={"anga", "prātipadika", PRAGHYA_TERM_TAG},
-        meta={"upadesha_slp1": "qupac~z"},
+        meta={"upadesha_slp1": "qupaca~z"},
     )
     right = Term(
         kind="prakriti",

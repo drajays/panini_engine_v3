@@ -20,6 +20,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, FrozenSet, Iterable
 
+from engine.it_samjna import META_RECORDS, inherit_it_records
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -74,7 +75,8 @@ ALL_AL_ASHRITA_GUNADHARMAS: frozenset[str] = frozenset({
 
 # It-saṃjñā keys (always extend to ādeśa per स्थानिवद्भाव).
 KIT_SAMJNA = "kit_samjna"
-NIT_SAMJNA = "nit_samjna"
+NIT_SAMJNA = "nit_samjna"          # ñit or ṇit — the vṛddhi nimitta of 7.2.115
+NGIT_SAMJNA = "ngit_samjna"        # ṅit (1.1.5 kṅiti ca, 3.4.99 nityaṃ ṅitaḥ)
 ANIT_SAMJNA = "anit_samjna"
 PIT_SAMJNA = "pit_samjna"
 APIT_SAMJNA = "apit_samjna"
@@ -82,6 +84,7 @@ APIT_SAMJNA = "apit_samjna"
 ALL_IT_SAMJNAS: frozenset[str] = frozenset({
     KIT_SAMJNA,
     NIT_SAMJNA,
+    NGIT_SAMJNA,
     ANIT_SAMJNA,
     PIT_SAMJNA,
     APIT_SAMJNA,
@@ -89,12 +92,10 @@ ALL_IT_SAMJNAS: frozenset[str] = frozenset({
 
 _MARKER_TO_IT_SAMJNA: dict[str, str] = {
     "k": KIT_SAMJNA,
-    "K": KIT_SAMJNA,
     "Y": NIT_SAMJNA,
-    "N": NIT_SAMJNA,
     "R": NIT_SAMJNA,
+    "N": NGIT_SAMJNA,
     "p": PIT_SAMJNA,
-    "P": PIT_SAMJNA,
 }
 
 
@@ -166,7 +167,13 @@ def apply_it_samjna_sthanivat(
     markers = snap.meta.get("it_markers")
     if not isinstance(markers, set):
         markers = set()
-    is_apit = snap.meta.get("is_apit") is True
+    is_apit = snap.meta.get("is_apit") is True or adesha.meta.get("is_apit") is True
+    inherit_it_records(
+        adesha,
+        snap.meta.get(META_RECORDS) or (),
+        sutra_id=sutra_id,
+        drop=frozenset({"pit"}) if is_apit else frozenset(),
+    )
     samjnas = it_samjnas_from_markers(markers, is_apit=is_apit)
     if not samjnas and "kngiti" not in snap.tags:
         return
@@ -181,7 +188,7 @@ def apply_it_samjna_sthanivat(
     adesha.meta["it_samjnas"] = samjnas
     if KIT_SAMJNA in samjnas:
         adesha.tags.add("kngiti")
-    if NIT_SAMJNA in samjnas:
+    if NIT_SAMJNA in samjnas and "Y" in markers:
         adesha.tags.update({"Yit", "svaritaYit"})
     if APIT_SAMJNA in samjnas:
         adesha.meta["is_apit"] = True
@@ -259,6 +266,7 @@ def snapshot_sthanin(term: Term, *, gunadharmas: Iterable[str] | None = None) ->
             "is_apit",
             "pit",
             "it_samjnas",
+            META_RECORDS,
         )
         if k in term.meta
     }

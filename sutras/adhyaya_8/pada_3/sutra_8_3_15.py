@@ -20,6 +20,8 @@ Citation (CONSTITUTION Art. 14)
                 रामः (rāma-s → rāmaḥ at pause)
                 वृक्ष+तरति → वृक्षस्तरति (r/s → ḥ before t)
                 वृक्षश्छादयति
+              Plain repha (anuvṛtti रः, not only ru): प्रातः, पुनः; laṅ 2sg
+              अजागः (जागृ + सिप्, 6.1.68 स्-lopa).
   Cross-check — surface pinned by: tests/regression/test_anya_pullinga_gold.py, tests/regression/test_rADA_strilinga_gold.py, tests/unit/test_SANDikyaH_Yya_SRqika.py
   Reference record: sutra_ref_out/8_3_15.json
 """
@@ -30,6 +32,12 @@ from phonology.pratyahara import KHAR
 
 
 def _find(state: State):
+    # anuvṛtti रः (8.3.14) is any repha, not only ru: a plain pada-final र् in
+    # avasāna also becomes visarga (अजागर् → अजागः, प्रातर् → प्रातः).
+    if state.terms and state.terms[-1].varnas:
+        last = state.terms[-1]
+        if last.varnas[-1].slp1 == "r":
+            return (len(state.terms) - 1, len(last.varnas) - 1)
     for ti in range(len(state.terms) - 1, -1, -1):
         t = state.terms[ti]
         for vi in range(len(t.varnas) - 1, -1, -1):

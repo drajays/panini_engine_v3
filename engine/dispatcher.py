@@ -41,6 +41,7 @@ from engine.trace        import (
     make_applied_vacuous_step,
     make_audit_step,
     make_skipped_step,
+    term_parts,
     TRACE_STATUS_DEFINED,
     TRACE_STATUS_VACUOUS,
 )
@@ -336,5 +337,6 @@ def apply_rule(
         _why_now = new_state.meta.pop("__why_now_dev__", None)
         if _why_now:
             _applied_step["why_now_dev"] = _why_now
+        _applied_step["parts"] = term_parts(new_state)
         _append_traced_step(new_state, _applied_step, prev_sutra, sutra_id)
     return _finish_apply_rule(prev_sutra, sutra_id, new_state)

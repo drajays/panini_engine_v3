@@ -17,7 +17,7 @@ _GATE_KEY: str = "5_1_51_vasnadravy_51"
 def cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
-    if not adhikara_in_effect("5.1.51", state, "5.1.1"):
+    if not adhikara_in_effect("5.1.51", state, "5.1.19"):
         return False
     if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
         return False
@@ -41,7 +41,7 @@ SUTRA = SutraRecord(
     text_dev              = "वस्नद्रव्याभ्यां ठन्कनौ",
     padaccheda_dev        = "वस्न-द्रव्याभ्याम् ठन्-कनौ",
     why_dev               = "(सूत्रम् 5.1.51) वस्नद्रव्याभ्यां ठन्कनौ।",
-    anuvritti_from        = ('5.1.1',),
+    anuvritti_from        = ('5.1.19',),
     cond                  = cond,
     act                   = act,
 )

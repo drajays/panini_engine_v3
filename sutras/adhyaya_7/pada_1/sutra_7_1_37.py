@@ -2,8 +2,8 @@
 7.1.37  समासेऽनञ्पूर्वे क्त्वो ल्यप्  —  VIDHI (narrow: ktvā → lyap)
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=701037
-- Kāśikā: क्त्वा → ल्यप् (उपसर्ग-पूर्वे समासे)
+- ashtadhyayi.com data.txt row i=71037
+- Kāśikā: "प्रकृत्य, प्रहृत्य"
 - Cross-validation: pipelines/prakftya_lyap_split_prakriyas.py,
   tests/unit/test_agaty_gam_lyap_acah_lesson.py
 
@@ -13,7 +13,6 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from phonology import mk
 from engine.sthanivat import AVYAYATVA, KRT_PRATYAYATVA, adesha_substitute_varnas
 
 
@@ -53,13 +52,6 @@ def act(state: State) -> State:
     )
     pr.tags.add("upadesha")
     pr.meta["7_1_37_ktvA_to_lyap_done"] = True
-    if state.meta.get("7_1_37_insert_lyap_matu"):
-        for vi, v in enumerate(pr.varnas):
-            if v.slp1 == "l":
-                pr.varnas.insert(vi + 1, mk("m"))
-                pr.varnas[vi + 1].tags.add("it_marker")
-                break
-        state.meta.pop("7_1_37_insert_lyap_matu", None)
     state.meta["lyap_recipe"] = False
     return state
 

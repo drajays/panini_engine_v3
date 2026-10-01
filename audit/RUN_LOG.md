@@ -159,7 +159,10 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-09-30 (session) | cursor | P2 भट्टिकाव्य १.२ जयमङ्गला (वेदाः…न्यवधीत्) | pipelines/tinanta.py, pipelines/bhattikavya_1_1.py, sutras/adhyaya_1/pada_3/sutra_1_3_3.py, sutras/adhyaya_2/pada_4/sutra_2_4_43.py, sutras/adhyaya_3/pada_1/sutra_3_1_134.py, sutras/adhyaya_3/pada_4/sutra_3_4_36.py, sutras/adhyaya_7/pada_3/sutra_7_3_32.py, sutras/adhyaya_7/pada_3/sutra_7_3_54.py, core/phases/tripadi.py, tests/unit/test_bhattikavya_1_2.py, webui/app.py, webui/templates/bhatti.html, audit/RUN_LOG.md | released |
 | 2026-09-30 (session) | cursor | P2 integrate Bhaṭṭikāvya + Gītā 15.3–4 yantra + publish | engine/krt_eligibility.py, pipelines/bhattikavya_1_1.py, pipelines/subanta.py, sutras/adhyaya_3/pada_1/sutra_3_1_134.py, sutras/adhyaya_3/pada_1/sutra_3_1_135.py, sutras/adhyaya_3/pada_2/sutra_3_2_3.py, sutras/adhyaya_3/pada_2/sutra_3_2_39.py, sutras/adhyaya_3/pada_3/sutra_3_3_58.py, sutras/adhyaya_3/pada_4/sutra_3_4_36.py, sutras/adhyaya_5/pada_4/sutra_5_4_91.py, sutras/adhyaya_6/pada_1/sutra_6_1_68.py, sutras/adhyaya_7/pada_1/sutra_7_1_25.py, sutras/adhyaya_7/pada_2/sutra_7_2_90.py, sutras/adhyaya_7/pada_2/sutra_7_2_106.py, tools/samsaadhanii_tags.py, tools/samsaadhanii_reader.py, tests/unit/test_gita_15_3_4_yantra.py, tests/unit/test_samsaadhanii_reader.py, audit/RUN_LOG.md | released |
 | 2026-10-01 (session) | cursor | P2 FINAL_PLAN remaining: 6.4.19 + notes-audit pacete/unmatched | tools/notes_audit.py, docs/NOTES_AUDIT.md, docs/FINAL_PLAN_2026-09.md, tests/unit/test_notes_audit_general_match.py, tests/unit/test_pracch_ksa_surfaces.py, audit/RUN_LOG.md | released |
-| 2026-10-01 01:10 | cursor | P2 oracle accent fix + 7.2.58 गमेरिट् + learn.html stepper (plan: docs/LEARN_AND_ORACLE_PLAN.md) | bench/oracle_vidyut.py, bench/grids.py, bench/oracle/vidyut.csv, bench/report/2026-10-01.json, sutras/adhyaya_7/pada_2/sutra_7_2_58.py, tests/unit/test_gam_lrt_7_2_58.py, tools/build_pages.py, docs/learn.html, docs/index.html, docs/data/sutras.json, docs/LEARN_AND_ORACLE_PLAN.md, audit/RUN_LOG.md | in-progress |
+| 2026-10-01 01:10 | cursor | P2 oracle accent fix + 7.2.58 गमेरिट् + 8.3.24 मकार + learn.html stepper (plan: docs/LEARN_AND_ORACLE_PLAN.md) | bench/oracle_vidyut.py, bench/oracle/vidyut.csv, bench/report/2026-09-30.json, sutras/adhyaya_7/pada_2/sutra_7_2_58.py, sutras/adhyaya_8/pada_3/sutra_8_3_24.py, pipelines/tinanta.py (`_it_agama` only), engine/trace.py, engine/dispatcher.py, tests/unit/test_gam_lrt_7_2_58.py, tests/unit/test_bhattikavya_1_2.py, tools/build_pages.py, docs/learn.html, docs/index.html, docs/data/**, docs/LEARN_AND_ORACLE_PLAN.md, audit/RUN_LOG.md | released |
+| 2026-10-01 08:30 | cursor | P1 upadeśa-form inputs: āśīrliṅ ātmane + karmaṇi luṅ start from ta/jha (not pre-encoded sIzwa/isAtAm); kṛdanta dhātu via dhātupāṭha upadeśa; dhātupāṭha ँ fixes; झि=Ji; lyap 6.4.38 on the dhātu | pipelines/{tinanta,krdanta,bhattikavya_1_1,BitzIzwa_ashir_ling,saGgasIzwa_sam_gam_ashir_ling,agaty_gam_lyap_acah_lesson,AdIDhyakaH,AdIDhyanam,pacete_iti_pragRhya,viSinanti_laT_rudhadi}.py, core/canonical_pipelines.py, phonology/pratyaya_pratyahara.py, data/inputs/{tin_upadesha,dhatupatha_upadesha}.json, sutras: 1.1.6, 1.2.13, 1.3.29, 2.4.85, 3.1.66, 3.2.161, 3.4.78 (tin_adesha), 3.4.102, 3.4.107, 3.4.108, 6.1.71, 6.4.37, 6.4.38, 6.4.104, 7.1.3, 7.1.4, 7.1.5, 7.1.37, 7.3.52; tests/unit/test_upadesha_inputs.py (new) + updated unit/constitutional tests, audit/RUN_LOG.md | released |
+| 2026-10-01 08:45 | cursor | P1 it-prakaraṇa 1.3.2–1.3.9: full ordered sequence + structured it-records (kit/ṅit/ñīt/irit…) | sutras/adhyaya_1/pada_3/sutra_1_3_{2,3,4,5,6,7,8,9}.py, engine/it_samjna.py (new), engine/it_phonetic.py, engine/sthanivat.py, pipelines/it_prakarana.py (new), pipelines/taddhita.py, pipelines/subanta.py, pipelines/katarakatamA_vibhASa_jasi.py, core/canonical_pipelines.py (only P00_jas_si_num_napumsaka + P00_jas_7_1_17_it_lopa_6_1_87), sutras/adhyaya_4/pada_1/sutra_4_1_98.py, sutras/adhyaya_7/pada_1/sutra_7_1_2.py, tests/unit/test_it_prakarana.py (new), tests/unit/test_corrected_prakriyas_v2_bundle.py, tests/unit/test_zvayathuH_athuc_wzvi.py, tests/regression/sig_applied_paths_baseline.json, audit/RUN_LOG.md | released |
+| 2026-10-01 07:25 | cursor | P1 fix 20 failing tests (BU bhāve/karmaṇi āśīrliṅ+luṅ, आयच्छते) + glass-box ratchets + work queue | pipelines/tinanta.py, sutras/**, engine/**, tests/**, tools/**, docs/LEARN_AND_ORACLE_PLAN.md, audit/RUN_LOG.md | released |
 
 ---
 
@@ -192,6 +195,82 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ---
 
 ## C. Action history (newest at top)
+
+### 2026-10-01 (session)  [cursor]  It-prakaraṇa 1.3.2–1.3.9 as one ordered procedure + structured it-records
+
+**Goal (user):** the it-saṃjñā / lopa procedure (N. Bodas, इत्संज्ञाप्रकरणम्) must run the Pāṇinian way on every upadeśa — not a one-step cleanup — and leave data on which it each Term had (kit, ṅit, ñīt, irit …) for later rules to read.
+
+**Changes (by linguistic content):**
+- Each saṃjñā sūtra scans **every** upadeśa Term in its own scope: 1.3.2 (anunāsika ac + vārttika इर्), 1.3.3 (antya hal, minus 1.3.4), 1.3.4 (vibhakti-final tu-varga/स्/म्; now records the pratiṣedha → appears in SIG paths), 1.3.5 (dhātu-ādi ञि/टु/डु), 1.3.6–1.3.8 (pratyaya-ādi ष्, cu/ṭu, l/ś/ku outside taddhita). Āgamas, upasargas and luk ghosts are excluded from the pratyaya scope. Art. 14 blocks rewritten with Kāśikā udāharaṇa.
+- 1.3.7 uses the true cu/ṭu set (old `phonology.CUTU` included श, so 1.3.7 was doing 1.3.8's job). छ/ढ/झ/ठ at pratyaya-ādi are not it because 7.1.2/7.1.3/7.3.50 replace them (vacana-sāmarthya; inferred from those vidhis). P004-B arm + priority hacks removed.
+- 1.3.9 writes per-Term records `{letters, sutra, position, name, name_dev, upadesha}`, tags `it:<name>`, keeps a state-level `it_lopa_log`, and stamps a done-marker so a residue (गम् of गमॢँ, वस् of क्वसु) is never re-analysed. `why_now_dev` lists each it with its sūtra.
+- `engine/it_samjna.py` (new): predicates, names, records, `has_it(t, "kit")`; no sūtra-id literals — each sūtra registers its candidate tag. `pipelines/it_prakarana.py` (new) is the scheduler (`run_it_prakarana`).
+- 1.1.56 (`engine/sthanivat.py`): ādeśa inherits records as `sthanivat_it:<name>` (kept apart from its own); marker map fixed (ṅ → ṅit, removed bogus K/P).
+- Recipes: taddhita, subanta (linear list + scanner second pass), `P00_jas_si_num_napumsaka`, `P00_jas_7_1_17_it_lopa_6_1_87`, katarakatamA now run the full sequence after śī/śi substitution → सर्वे, ज्ञाने, कुण्डानि, यशांसि, कतरकतमे, ये restored.
+- 4.1.98 teaches च्फञ् as `cPaY` (was `caPaY` with an extra अ; Kāśikā "चकारो विशेषणार्थः … ञकारो वृद्ध्यर्थः"); 7.1.2's `caPa` workaround branch deleted. Art. 14 block added to 4.1.98.
+- श्वयथुः tests now pin `SvayaTuH` (was `zvayaTuH` = ष्वयथुः, contradicting the IAST target).
+
+**Tests:** new `tests/unit/test_it_prakarana.py` (dhātu/pratyaya/vibhakti/taddhita cases from the Kāśikā, trace order, residue not re-analysed, record fields). SIG applied-path baseline refreshed (15 rāma cells: +1.3.4; शस् loses the wrong 1.3.7). Full suite: 19750 passed, 5 skipped, 0 failed.
+
+**Open (not touched — other claim / data):** tinanta & krdanta recipes still call partial it-subsets (claimed by 08:30 row); dhātupāṭha `it_markers` field is unreliable (e.g. टुओँश्वि → only अँ, भिदिँर् → empty) and copied into `dhatu_it` by tape_init — derive from records instead; no accent data so anudāttet/svaritet are not derivable; 5.3.1 taddhita-vibhakti tag hook exists but nothing sets it.
+
+**Next:** migrate tinanta/krdanta it-slices to `run_it_prakarana` once the 08:30 claim is released; switch consumers of `dhatu_it` to `has_it`.
+
+### 2026-10-01 (session)  [cursor]  Inputs in aupadeśika form — no finished products
+
+**Goal (user):** dhātu, pratyaya and ādeśa enter in upadeśa form with their it-markers and anunāsika (ashtadhyayi.com/dhatu "औपदेशिकः"); the sūtras make the finished form.
+
+**Changes (by linguistic content):**
+- tiṅ: `data/inputs/tin_upadesha.json` now holds only the 3.4.78 eighteen for every lakāra. Pre-built loṭ/liṅ/āśīrliṅ/karmaṇi-luṅ rows removed. झि is SLP1 `Ji` (was `jhi` = ज्+ह्+इ) throughout code and sūtras 2.4.85, 3.4.108, 7.1.3, 7.1.4.
+- āśīrliṅ ātmanepada derives from त/आताम्/झ …: 3.4.105, 3.4.106, 3.4.102 सीयुट् (ārdhadhātuka by 3.4.116), 3.4.107 सुट् on the medial त/थ too (Kāśikā "तकारथकारावागमिनौ"), 6.1.66, 7.2.35, tripāḍī. karmaṇi luṅ 3sg via 3.1.66 चिण् + 6.4.104.
+- 7.1.5 restricted to ātmanepada (parasmaipada via 1.4.99), with an Art. 14 block.
+- dhātupāṭha: missing ँ restored on 01.0961/0962/0965/0966/0968/0969/0974/0975/0976; duplicate BvAdi_01_0381 id fixed; eight raw-after-it-lopa forms fixed. Now equal to ashtadhyayi.com aupadeshik except 01.0208 पेबृँ and 01.0925 छदँ (documented).
+- kṛdanta and Bhaṭṭi builders resolve the dhātupāṭha row (`build_dhatu_state` → `resolve_dhatu_identifier`). This exposed and fixed: श्वयथुः (was ष्वयथुः), आदीध्यकः/आदीध्यनम् (was ध्ह्; 1.1.6 set dIDI/vevI/iw — Kāśikā 11006 udāharaṇa), भङ्गुरम् via भन्जोँ+घुरच् (3.2.161, 7.3.52 generic c/j→k/g), √गम् matched by upadeśa `gamx~` in 1.2.13/1.3.29/6.4.37.
+- lyap: planted-म् in 7.1.37 removed; 6.4.38 वा ल्यपि deletes the dhātu's म् (Kāśikā: मकारान्तानां विकल्पः — आगत्य, आगम्य); 6.1.71 tuk needs a hrasva (pratyudāharaṇa आलूय). The vikalpa explorer now yields {Agatya, Agamya}.
+- Every Kāśikā quote added was checked against ashtadhyayi-com/data `sutraani/kashika.txt`.
+
+**Tests:** new `tests/unit/test_upadesha_inputs.py` (tiṅ table uniform, no `jhi`, no karmaṇi shortcut rows, full dhātupāṭha ratchet vs ashtadhyayi.com, kṛdanta tapes start from upadeśa). Āśīr/karmaṇi-luṅ probe unchanged; glass-box ratchet green; constitutional suite green except the शी item below.
+
+**Open — belongs to the 08:45 it-prakaraṇa claim (not touched here):** 1.3.8 currently leaves श् of शी/शि (सर्वशी, ज्ञानशी, ज्ञानांशि, अमुशी, कतरकतमशी), 1.3.4 now appears in subanta SIG paths, `pipelines/taddhita.py` imports a removed `META_P004_B_Yya_CUTU` from 1.3.7, and `engine/it_samjna.py` hard-codes sūtra strings. Vidyut bench 407/417 — all 10 disagreements are these शी cells. Earlier in this task I also edited 1.3.3 (upadeśa-final check, since absorbed by that claim) and 1.3.7 (ciṇ branch).
+
+**Next:** Bhaṭṭi `tAp` (तपँ+णिच्) and `guRa` (गुणँ+णिच्) still start from finished stems; न्-final नित्य lopa of 6.4.38 (आहत्य) not modelled.
+
+### 2026-10-01 (session)  [cursor]  Gold bench 93.8 → 96.0 % · glass-box ratchets · 0 failing tests
+
+**Goal:** "complete the engine, remove the error". Fix failing tests, then raise gold-bench agreement and record the steps that used to change forms silently.
+
+**Changes (by linguistic content):**
+- 3.2.123 / 3.3.13 attach laṭ / lṛṭ themselves (`P00_lat_vartamane`; 3.3.3 adhikāra precedes 3.3.13). Upasarga attachment is a `__UPASARGA__` structural row.
+- 1.2.1 गाङ्कुटादिभ्योऽञ्णिन्ङित् is now a real rule (kuṭādi antargaṇa → next non-ñit/ṇit affix ṅit). It runs inside `P00_guna_7_3_84` / `P00_guna_7_3_86`, which also apply 1.1.51 after guṇa.
+- 8.3.13 ढो ढे लोपः, 6.3.111, and 6.3.112 are real rules (rows 83013/63111/63112). The asiddha gate lets 6.3.111/112 see 8.3.13 through `tripadi_nimitta_exceptions` in `data/inputs/asiddha_strata.json`, citing Kāśikā 6.3.111.
+- 8.2.31 yields to 8.2.32/8.2.34. In `_tape.flat`, a guṇa ādeśa inside the root is sthānivat. 6.1.64/6.1.65 substitutes carry `dhatu_adesha_v`.
+- 8.4.54 works on the merged caṅ pada. 7.1.58 num is tagged so 6.4.24 skips it. 6.1.73 runs after aṭ and on the liṭ abhyāsa. 6.4.64 runs before 6.1.88 in ā-final liṭ.
+- laṅ: 6.1.68 runs after guṇa + raparatva. 8.3.15 takes any pada-final repha at avasāna (anuvṛtti रः), giving अजागः, अपिपः, अजहः, अससः.
+- Data: 01.0925 छदँ; 01.0208 पेबृँ ṛdit (`pebf~`); 06.0174 removed from kuṭādi.
+- New `tools/glassbox_gaps.py` + `tests/constitutional/test_glassbox_ratchet.py`. Trace gaps 93 → 48 (ceiling 48); placeholders 917 → 915 (ceiling 915).
+
+**Tests:** full pytest **19697 passed, 5 skipped**. Gold bench **437,070 / 455,346 (96.0 %)**, 0 errors, 0 regressions against `.audit/gold_diff_baseline.jsonl`. New unit tests: `test_dho_dhe_lopa_8_3_13.py`, `test_kutadi_1_2_1.py`.
+
+**Open:** अचच्छन्दत् vs strict-order अच्चच्छन्दत् (6.1.73 skipped when a caṅ abhyāsa follows; needs a Kāśikā/Bhāṣya source). The 18 `dump_pipelines_trace` errors predate this session: lesson pipelines called with mismatched demo inputs.
+
+**Next:** clusters listed in `docs/LEARN_AND_ORACLE_PLAN.md` §5: curādi adanta liṭ ām, luṅ 7.2.7, nitya-san 3.1.5–6, 2.4.52/53 scheduling, āśīrliṅ 6.4.24, 7.1.100, 7.1.61.
+
+### 2026-10-01 (session)  [cursor]  Oracle accent fix · 7.2.58 · 8.3.24 म् · learn.html
+
+**Goal:** Review openpathshala / rkmvu Grammar sites; use oracle + corpus to improve engine; build a teaching UI. Plan: `docs/LEARN_AND_ORACLE_PLAN.md`.
+
+**Shipped:**
+- `bench/oracle_vidyut.py`: Vidyut needs accented aupadeśika (`pA\`, `ga\mx~`, `RI\Y`, `qukf\Y`); 62/71 "disagreements" were oracle input errors. Bench **83.0% → 100%** (417/417).
+- **7.2.58** real vidhi (was gate-flag placeholder) after 7.2.10/7.2.35 in `_it_agama` (one-line touch in claimed `pipelines/tinanta.py`): गमिष्यति, अगमिष्यत्; संगंस्यते keeps niṣedha.
+- **8.3.24** covers dhātu म् (anuvṛtti मः; Kāśikā आक्रंस्यते): गन्ता. Pūrvapada म् (परंतपः) left to 8.3.23. `test_araMsta` now expects 8.3.24 (apadānta म्).
+- `engine/trace.py:term_parts` → `parts` on form-changing APPLIED steps (display only).
+- `tools/build_pages.py --sutras` → `docs/data/sutras.json` (pāṭha, padaccheda, Kāśikā ex, placeholder flag); `docs/learn.html` stepper/equation bar/quiz; pages rebuilt.
+
+**Findings (queued in plan):** 917 placeholder sūtra files (6.x/7.x, `anga_kind` only); 93 silent form mutations across 386 traces (Art. 11 gaps; 30 at lakāra attach 3.2.123); luṅ kartari 84.8% on ashtadhyayi.com bench.
+
+**Tests:** full suite 19632 passed, **20 failed — all pre-existing** (BU bhāve/karmaṇi āśīrliṅ+luṅ1sg भवीष्ट; आयच्छते→ANyacCate), verified by reverting this session's sūtra edits. New: `test_gam_lrt_7_2_58.py` (14). Constitutional 16965 green.
+
+**Next:** placeholder-count + silent-mutation ratchet tests; luṅ diff clustering; fix the 20 pre-existing failures.
 
 ### 2026-10-01 (session)  [cursor]  FINAL_PLAN remaining — 6.4.19 + notes audit
 

@@ -52,7 +52,7 @@ def cond(state: State) -> bool:
         return False
     if len(dh.varnas) < 2 or dh.varnas[-1].slp1 not in _HAL:
         return False
-    if dh.varnas[-2].slp1 not in _NASAL:
+    if dh.varnas[-2].slp1 not in _NASAL or "num_agama" in dh.varnas[-2].tags:
         return False
     if dh.meta.get("6_4_24_n_lopa_done"):
         return False

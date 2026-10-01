@@ -32,11 +32,11 @@ def _find_jh_term(state: State):
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
         vs = t.varnas
-        # Parasmai (kartari): upadesha jhi, varnas j+h+i or j+h
-        if up == "jhi":
-            if len(vs) == 3 and vs[0].slp1 in {"j","J"} and vs[1].slp1 == "h" and vs[2].slp1 == "i":
+        # Parasmai: झि (``Ji``), or झ् after 3.4.100 इतश्च
+        if up == "Ji":
+            if len(vs) == 2 and vs[0].slp1 == "J" and vs[1].slp1 == "i":
                 return (i, "jhi")
-            if len(vs) == 2 and vs[0].slp1 in {"j","J"} and vs[1].slp1 == "h":
+            if len(vs) == 1 and vs[0].slp1 == "J":
                 return (i, "jh")
         # Ātmanepada (karmani): upadesha Ja/Je (laT) or JAm (loṭ after 3.4.90), varnas start with J
         if len(vs) >= 1 and vs[0].slp1 == "J" and "tin_adesha_3_4_78" in t.tags:

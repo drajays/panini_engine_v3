@@ -73,15 +73,6 @@ def _phadi_replacement(varnas: List[Varna], state: Optional[State] = None) -> Op
         and varnas[1].slp1 == "a"
     ):
         return ("Ayana", parse_slp1_upadesha_sequence("Ayana"))
-    # After *it*-slice the opener **ca** remains → surface **caPa**.
-    if (
-        len(varnas) == 4
-        and varnas[0].slp1 == "c"
-        and varnas[1].slp1 == "a"
-        and varnas[2].slp1 == "P"
-        and varnas[3].slp1 == "a"
-    ):
-        return ("Ayana", parse_slp1_upadesha_sequence("Ayana"))
     # phak
     if (
         c0 == "P"

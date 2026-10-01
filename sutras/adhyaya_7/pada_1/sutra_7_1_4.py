@@ -49,11 +49,11 @@ def _find_jh_term(state: State):
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
         vs = t.varnas
-        if up != "jhi":
+        if up != "Ji":
             continue
-        if len(vs) == 3 and vs[0].slp1 in {"j", "J"} and vs[1].slp1 == "h" and vs[2].slp1 == "i":
+        if len(vs) == 2 and vs[0].slp1 == "J" and vs[1].slp1 == "i":
             return (i, "jhi")
-        if len(vs) == 2 and vs[0].slp1 in {"j", "J"} and vs[1].slp1 == "h":
+        if len(vs) == 1 and vs[0].slp1 == "J":
             return (i, "jh")
     return None
 

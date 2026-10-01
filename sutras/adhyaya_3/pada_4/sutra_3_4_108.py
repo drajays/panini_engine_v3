@@ -59,7 +59,7 @@ def _find_jhi_tin(state: State) -> int | None:
             continue
         up  = (t.meta.get("upadesha_slp1") or "").strip()
         cur = "".join(v.slp1 for v in t.varnas)
-        if up == "jhi" and cur in {"jhi", "jh", "j"}:
+        if up == "Ji" and cur in {"Ji", "J"}:
             return i
     return None
 

@@ -21,11 +21,14 @@ def flat(state: State) -> list[tuple]:
     for t in state.terms:
         # varṇa-level marks, when the term has them, are finer than its tag (a
         # merged sanādyanta or pada holds abhyāsa + root + pratyaya together)
-        mula = any("mula_dhatu_v" in v.tags for v in t.varnas)   # the root itself
+        mula_ix = [i for i, v in enumerate(t.varnas) if "mula_dhatu_v" in v.tags]   # the root itself
+        mula = bool(mula_ix)
         fine = mula or any("dhatu_v" in v.tags for v in t.varnas)
         in_dhatu = "dhatu" in t.tags and "abhyasa" not in t.tags and not fine
         for i, v in enumerate(t.varnas):
-            mine = ("dhatu_adesha_v" in v.tags
+            # a guṇa/vṛddhi ādeśa inside the root (दोह् ← दुह्) is sthānivat (1.1.56)
+            inner = mula and mula_ix[0] < i < mula_ix[-1] and "dhatu_v" in v.tags
+            mine = ("dhatu_adesha_v" in v.tags or inner
                     or (("mula_dhatu_v" in v.tags) if mula else ("dhatu_v" in v.tags)))
             out.append((t, i, "abhyasa" not in t.tags and "abhyasa_v" not in v.tags
                         and (in_dhatu or mine)))

@@ -7,7 +7,7 @@ explicitly scheduling sūtras (no inline bundles).
 Recipes (step order aligned with pedagogical write-ups ``pachak.md`` /
 ``nayak.md``):
 
-  • **qupac~z** + **Nvul** → **pAcaka**: saṃjñā / paribhāṣā (1.1.1, 1.1.3, 1.1.7, 1.1.8, 1.1.9, 1.1.10, 1.1.11, 1.1.12, 1.1.13, 1.1.14, 1.1.15, 1.1.16, 1.1.17, 1.1.18, 1.1.19, 1.1.20, 1.1.21, 1.1.46, 1.1.22, 1.1.23, 1.1.24, 1.1.50) → dhātu
+  • **qupaca~z** + **Nvul** → **pAcaka**: saṃjñā / paribhāṣā (1.1.1, 1.1.3, 1.1.7, 1.1.8, 1.1.9, 1.1.10, 1.1.11, 1.1.12, 1.1.13, 1.1.14, 1.1.15, 1.1.16, 1.1.17, 1.1.18, 1.1.19, 1.1.20, 1.1.21, 1.1.46, 1.1.22, 1.1.23, 1.1.24, 1.1.50) → dhātu
     it‑prakaraṇa → **6.1.65** (no-op) → kṛt adhikāra (**3.1.1**, **3.1.2**,
     **3.1.3**, **3.1.91**) → ``kartari`` meta + **3.4.67** → **3.1.133** → kṛt it →
     **7.1.1** → saṃjñā (**1.4.13**, **1.1.65**) → **6.4.1** → **7.2.116** →
@@ -131,12 +131,44 @@ def _structural_merge_trc_pratipadika(state: State, *, upadesha_slp1: str) -> St
     return s
 
 
-def build_dhatu_state(dhatu_upadesha_slp1: str) -> State:
+def _dhatu_meta_from_row(row: dict) -> dict:
+    flags = row.get("flags") or {}
+    return {
+        "upadesha_slp1": row["upadesha_slp1"],
+        "dhatu_id": row.get("id"),
+        "gana": row.get("gana", 1),
+        "dhatu_it": set(row.get("it_markers") or []),
+        "ekac_dhatu": bool(flags.get("ekac", False)),
+        "udatta_dhatu": bool(flags.get("udatta", False)),
+        "anit_dhatu": bool(flags.get("anit", False)),
+        "set_dhatu": bool(flags.get("set", True)),
+        "antarganas": tuple(row.get("antarganas") or ()),
+    }
+
+
+def build_dhatu_state(dhatu_ref: str) -> State:
+    """Dhātu Term in aupadeśika form (डुपचँष्, गमॢँ, विदँ …) with its it-markers.
+
+    ``dhatu_ref`` is a dhātupāṭha id (``Adadi_02_0059``), path id (``02.0059``)
+    or upadeśa SLP1; a bare root (``gam``) resolves to its row, so the tape
+    still starts from the upadeśa (गमॢँ). Only a form absent from the
+    dhātupāṭha is taken literally.
+    """
+    from pipelines.dhatupatha import resolve_dhatu_identifier  # noqa: PLC0415
+
+    try:
+        row = resolve_dhatu_identifier(dhatu_ref)
+    except KeyError:
+        row = None
+    if row is not None:
+        meta = _dhatu_meta_from_row(row)
+    else:
+        meta = {"upadesha_slp1": dhatu_ref}
     dhatu = Term(
         kind="prakriti",
-        varnas=parse_slp1_upadesha_sequence(dhatu_upadesha_slp1),
+        varnas=parse_slp1_upadesha_sequence(meta["upadesha_slp1"]),
         tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": dhatu_upadesha_slp1},
+        meta=meta,
     )
     return State(terms=[dhatu])
 
@@ -314,7 +346,7 @@ def derive_pAcaka_pratipadika() -> State:
     Derive the prātipadika 'pAcaka' from dhātu डुपचँष् + ण्वुल्.
     Returns State whose last term is the derived prātipadika (anga).
     """
-    return derive_krt("qupac~z", krt_upadesha_slp1="Nvul", merge_pratipadika_label="pAcaka")
+    return derive_krt("qupaca~z", krt_upadesha_slp1="Nvul", merge_pratipadika_label="pAcaka")
 
 
 def derive_pAcakaH() -> State:
@@ -396,7 +428,7 @@ def derive_bhaNguram() -> State:
         run_subanta_sup_attach_and_finish,
     )
 
-    s = build_dhatu_state("BaYjo~")          # भञ्जोँ: the ओँ is an anunāsika it (1.3.2)
+    s = build_dhatu_state("ruDAdi_07_0016")  # भन्जोँ: the ओँ is an anunāsika it (1.3.2)
     s = apply_rule("1.1.1", s)
     s = apply_rule("1.1.73", s)
     s = P01_samjna_1_1_3_to_1_1_100(s=s, include_luk_block=True)
@@ -437,13 +469,7 @@ def _derive_athuc_stem(dhatu_upadesha: str) -> State:
     """Build kṛdanta stem from ṭvit dhātu + athuc (3.3.89, structural)."""
     from pipelines.subanta import _pada_merge
 
-    dhatu = Term(
-        kind="prakriti",
-        varnas=list(parse_slp1_upadesha_sequence(dhatu_upadesha)),
-        tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": dhatu_upadesha},
-    )
-    s = State(terms=[dhatu], meta={}, trace=[])
+    s = build_dhatu_state(dhatu_upadesha)
     s.meta["pada"] = "parasmaipada"
     s.meta["ekac_dhatu"] = True
     for sid in ("1.3.1", "1.3.5", "1.3.2", "1.3.9"):
@@ -475,17 +501,11 @@ def derive_vepathuH() -> State:
 
 
 def derive_zvayathuH() -> State:
-    """P002-B: wzvi (ṭuoñśvi) + athuc → zvayathuḥ — pulliṅga prathamā ekavacana."""
+    """P002-B: टुओँश्वि (wuo~Svi) + athuc → श्वयथुः — pulliṅga prathamā ekavacana."""
     from pipelines.subanta import _pada_merge
     from core.canonical_pipelines import P00_guna_prayoga_readiness
 
-    dhatu = Term(
-        kind="prakriti",
-        varnas=list(parse_slp1_upadesha_sequence("wuzvi")),
-        tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": "wuzvi"},
-    )
-    s = State(terms=[dhatu], meta={}, trace=[])
+    s = build_dhatu_state("BvAdi_01_1165")   # टुओँश्वि गतिवृद्ध्योः
     s.meta["pada"] = "parasmaipada"
     s.meta["ekac_dhatu"] = True
     for sid in ("1.3.1", "1.3.5", "1.3.2", "1.3.9"):
@@ -518,13 +538,7 @@ def derive_zvayathuH() -> State:
 
 def _derive_ktri_stem(dhatu_upadesha: str) -> State:
     """Build ktri kṛt attachment for ḍvit dhātus (3.3.88, structural: pac/kf/vap)."""
-    dhatu = Term(
-        kind="prakriti",
-        varnas=list(parse_slp1_upadesha_sequence(dhatu_upadesha)),
-        tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": dhatu_upadesha},
-    )
-    s = State(terms=[dhatu], meta={}, trace=[])
+    s = build_dhatu_state(dhatu_upadesha)
     s.meta["ekac_dhatu"] = True
     for sid in ("1.3.1", "1.3.5", "1.3.2", "1.3.3", "1.3.9"):
         s = apply_rule(sid, s)
@@ -563,23 +577,23 @@ def _ktri_subanta_tail(s: State) -> State:
 
 
 def derive_paktrimam() -> State:
-    """P003-A: qupac~z (ḍupacāṣ) + ktri + mam → paktrimam — napuṃsaka prathamā eka."""
-    s = _derive_ktri_stem("qupac~z")
+    """P003-A: डुपचँष् (qupaca~z) + ktri + mam → paktrimam — napuṃsaka prathamā eka."""
+    s = _derive_ktri_stem("qupaca~z")
     s = apply_rule("8.2.30", s)
     return _ktri_subanta_tail(s)
 
 
 def derive_krtrimam() -> State:
-    """P003-B: kf (ḍukṛñ) + ktri + mam → kṛtrimam — napuṃsaka prathamā ekavacana."""
-    s = _derive_ktri_stem("kf")
+    """P003-B: डुकृञ् (qukfY) + ktri + mam → kṛtrimam — napuṃsaka prathamā ekavacana."""
+    s = _derive_ktri_stem("BvAdi_DukfY")   # डुकृञ्
     s = apply_rule("7.3.84", s)
     s = apply_rule("1.1.5", s)
     return _ktri_subanta_tail(s)
 
 
 def derive_uptrimam() -> State:
-    """P003-C: quvap~z (ḍuvapāṣ) + ktri + mam → uptrimam — napuṃsaka prathamā eka."""
-    s = _derive_ktri_stem("quvap~z")
+    """P003-C: डुवपँ (quvapa~) + ktri + mam → uptrimam — napuṃsaka prathamā eka."""
+    s = _derive_ktri_stem("quvapa~")
     s = P00_samprasarana_dirgha(s)
     return _ktri_subanta_tail(s)
 
@@ -589,13 +603,7 @@ def derive_uptrimam() -> State:
 
 def _derive_kta_manual_it_chain(dhatu_upadesha: str) -> State:
     """Shared niṣṭhā prefix for P001-B/C/D (manual it-chain, not P00_anunasikadi)."""
-    dhatu = Term(
-        kind="prakriti",
-        varnas=list(parse_slp1_upadesha_sequence(dhatu_upadesha)),
-        tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": dhatu_upadesha},
-    )
-    s = State(terms=[dhatu], meta={}, trace=[])
+    s = build_dhatu_state(dhatu_upadesha)
     s.meta["pada"] = "parasmaipada"
     s.meta["ekac_dhatu"] = True
     for sid in ("1.3.1", "1.3.5", "1.3.2", "1.3.9"):
@@ -604,7 +612,7 @@ def _derive_kta_manual_it_chain(dhatu_upadesha: str) -> State:
         s.terms[0].tags.discard("upadesha")
     s = apply_rule("1.3.1", s)
     s = P00_ciY_kartari_krt_nistha_adhikara_prefix(s)
-    s.meta["3_2_102_target_upadesha_slp1"] = dhatu_upadesha
+    s.meta["3_2_102_target_upadesha_slp1"] = s.terms[0].meta["upadesha_slp1"]
     s.meta["kta_recipe"] = True
     s = apply_rule("3.2.102", s)
     s = P00_lashakvataddhite_it_lopa_chain(s)
@@ -629,19 +637,13 @@ def _nistha_prathama_then_tripadi(s: State) -> State:
 
 
 def derive_bhinnaH() -> State:
-    """P001-A: bhid (Bidi~) + kta → bhinnaḥ — pulliṅga prathamā ekavacana."""
-    dhatu = Term(
-        kind="prakriti",
-        varnas=list(parse_slp1_upadesha_sequence("Bidi~")),
-        tags={"dhatu", "anga", "upadesha"},
-        meta={"upadesha_slp1": "Bidi~"},
-    )
-    s = State(terms=[dhatu], meta={}, trace=[])
+    """P001-A: भिदिँर् (Bidi~r) + kta → bhinnaḥ — pulliṅga prathamā ekavacana."""
+    s = build_dhatu_state("ruDAdi_07_0002")  # भिदिँर् विदारणे
     s.meta["pada"] = "parasmaipada"
     s.meta["ekac_dhatu"] = True
     s = P00_anunasikadi_bhuvadi_dhatu_it_chain(s)
     s = P00_ciY_kartari_krt_nistha_adhikara_prefix(s)
-    s.meta["3_2_102_target_upadesha_slp1"] = "Bidi~"
+    s.meta["3_2_102_target_upadesha_slp1"] = s.terms[0].meta["upadesha_slp1"]
     s.meta["kta_recipe"] = True
     s = apply_rule("3.2.102", s)
     s = P00_lashakvataddhite_it_lopa_chain(s)
@@ -650,16 +652,16 @@ def derive_bhinnaH() -> State:
 
 
 def derive_DfzwaH() -> State:
-    """P001-B: ñidhṛṣ (YiDfzf~) + kta → dhṛṣṭaḥ — pulliṅga prathamā ekavacana."""
+    """P001-B: ञिधृषाँ (YiDfzA~) + kta → dhṛṣṭaḥ — pulliṅga prathamā ekavacana."""
     from pipelines.subanta import _pada_merge
 
-    s = _derive_kta_manual_it_chain("YiDfzf~")
+    s = _derive_kta_manual_it_chain("svAdi_05_0025")   # ञिधृषाँ
     return _nistha_prathama_then_tripadi(s)       # 8.4.41 ष्टुना ष्टुः in the tripādī
 
 
 def derive_svinnaH() -> State:
     """P001-C: ñiṣvid (YizvidA~) + kta → svinnaḥ — pulliṅga prathamā ekavacana."""
-    s = _derive_kta_manual_it_chain("YizvidA~")
+    s = _derive_kta_manual_it_chain("divAdi_04_0127")  # ञिष्विदाँ गात्रप्रक्षरणे
     s = apply_rule("6.1.64", s)
     return _nistha_prathama_then_tripadi(s)
 

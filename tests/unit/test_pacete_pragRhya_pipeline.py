@@ -20,7 +20,7 @@ def test_pacete_iti_eco_78_applies_without_pragrahya_tag():
         kind="prakriti",
         varnas=parse_slp1_upadesha_sequence("pacete"),
         tags={"anga", "prātipadika"},
-        meta={"upadesha_slp1": "qupac~z"},
+        meta={"upadesha_slp1": "qupaca~z"},
     )
     right = Term(
         kind="prakriti",

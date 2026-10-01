@@ -58,7 +58,7 @@ def act(state: State) -> State:
     if j is None:
         return state
     tin = state.terms[j]
-    tin.varnas.insert(0, mk("I"))
+    tin.varnas.insert(0, mk("I", "Iw_agama"))
     # Record on sic term for idempotency.
     state.terms[j - 1].meta["7_3_96_Iw_done"] = True
     return state

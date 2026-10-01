@@ -90,7 +90,9 @@ def asiddha_violates(candidate_sutra_id: str, state: State) -> bool:
     """
     if not state.tripadi_zone:
         return False
-    return not is_tripadi(candidate_sutra_id)
+    from engine.strata import sees_tripadi_nimitta
+
+    return not is_tripadi(candidate_sutra_id) and not sees_tripadi_nimitta(candidate_sutra_id)
 
 
 # ═════════════════════════════════════════════════════════════════════════

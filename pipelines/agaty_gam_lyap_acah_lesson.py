@@ -1,20 +1,21 @@
 """
 pipelines/agaty_gam_lyap_acah_lesson.py — दलकृत्यम्: **1.1.57** *acaḥ* vs *hal* lopa.
 
-Prakriyā (आ + गम् + ल्यप् → **आगत्य**):
-  **3.4.21** क्त्वा → **7.1.37** ल्यप् (+ णित् ``m``) → **6.4.38** ``m``-लोपः → *it*-लोप →
-  **6.1.71** तुक् (लुप्त-``m`` **न** स्थानिवत् — **1.1.57** निषेधः न) → *pada* merge.
+Prakriyā (आ + गमॢँ + क्त्वा → **आगत्य**):
+  गमॢँ (dhātupāṭha 01.1137) → it-lopa → गम् → **3.4.21** क्त्वा → **7.1.37** ल्यप्
+  → **6.4.38** वा ल्यपि (dhātu-final म्-लोप) → it-लोप → **6.1.71** तुक् (लुप्त म् is a
+  hal, so **1.1.57** gives no sthānivadbhāva) → *pada* merge.
 
-Target SLP1: **Agaty** (आगत्य).
+Target SLP1: **Agatya** (आगत्य).
 """
 from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_lyap_krt
-from engine import apply_rule
+from core.canonical_pipelines import P00_dhatu_upadesha_it_lopa, P00_lyap_krt
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
+from pipelines.krdanta import build_dhatu_state
 
 
 def _upasarga_a() -> Term:
@@ -26,43 +27,12 @@ def _upasarga_a() -> Term:
     )
 
 
-def _dhatu_gam() -> Term:
-    return Term(
-        kind="prakriti",
-        varnas=list(parse_slp1_upadesha_sequence("gam")),
-        tags={"dhatu", "anga"},
-        meta={"upadesha_slp1": "gam", "gana": 1},
-    )
-
-
-def _trim_agaty_tape(state: State) -> None:
-    """Lesson merge hygiene: ``gam``→``ga`` (display ``ग``), ``lyap``→``ty``."""
-    before = state.flat_slp1()
-    dh = next(t for t in state.terms if "dhatu" in t.tags)
-    pr = next(
-        t
-        for t in state.terms
-        if t.kind == "pratyaya" and (t.meta.get("upadesha_slp1") or "").strip() == "lyap"
-    )
-    if dh.varnas and dh.varnas[-1].slp1 == "m":
-        dh.varnas.pop()
-    pr.varnas = [v for v in pr.varnas if v.slp1 in ("t", "y")]
-    after = state.flat_slp1()
-    state.emit_structural(
-        "__MERGE_PREP__",
-        form_before=before,
-        form_after=after,
-        why_dev="गम्→ग (अन्तिम-म-लोपः प्रदर्शनार्थम्); ल्यप्→त्य (इत्-शेष-लोपः)।",
-        type_label="आगत्य-धातु-प्रत्यय-संस्कारः",
-    )
-
-
 def derive_agaty_gam_lyap_acah_lesson() -> State:
-    s = State(terms=[_upasarga_a(), _dhatu_gam()], meta={}, trace=[])
+    s = build_dhatu_state("gamx~")
+    s.terms = [_upasarga_a()] + s.terms
+    s = P00_dhatu_upadesha_it_lopa(s)           # गमॢँ → गम्
 
     s = P00_lyap_krt(s)
-
-    _trim_agaty_tape(s)
 
     from pipelines.subanta import _pada_merge  # noqa: PLC0415
 

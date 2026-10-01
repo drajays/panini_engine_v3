@@ -405,7 +405,7 @@ def test_P002_B_bundle_target_matches_pipeline(corrected_v2: dict) -> None:
 
     hit = next(p for p in corrected_v2["prakriyas"] if p["id"] == "P002-B")
     assert hit["target"]["iast"] == "śvayathuḥ"
-    assert derive_zvayathuH().flat_slp1() == "zvayaTuH"
+    assert derive_zvayathuH().flat_slp1() == "SvayaTuH"
 
 
 def test_P003_A_bundle_target_matches_pipeline(corrected_v2: dict) -> None:

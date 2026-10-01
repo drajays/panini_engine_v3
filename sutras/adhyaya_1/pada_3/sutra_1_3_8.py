@@ -1,26 +1,29 @@
 """
 1.3.8  लशक्वतद्धिते  —  SAMJNA
 
+Sources consulted:
+- ashtadhyayi.com data.txt row i=13008
+- Kāśikā: "लकार — चयनम्, जयनम् (ल्युट्)। शकार — भवति, पचति (शप्)"
+- Cross-validation: regression tests tests/unit/test_it_prakarana.py
+  (क्त्वा → त्वा with kit, शप् → अ with śit, ल्युट् → यु, ङीष् → ई; taddhita
+  कन् keeps क्)
+
 Śāstra / engine role (CONSTITUTION Arts. 1–2, 4, 7)
 ──────────────────────────────────────────────────
-• **Type:** SAMJNA — initial **ḷ**-**ś**-**ku** (ल्·श्·कवर्ग) of a **non-taddhita**
-  pratyaya in upadeśa gets *it* (then **1.3.9** deletes).
+• **Type:** SAMJNA — the **first sound** (*ādiḥ*, *pratyayasya*) of a pratyaya
+  that is **not a taddhita**, if it is ल्, श् or a **ku**-varga consonant
+  (क ख ग घ ङ), is *it*.  Never a dhātu, āgama or upasarga
+  (``is_pratyaya_upadesha``).
 
-• **v3 encoding:** **Non-taddhita**, **non-dhātu** ``Term`` with ``upadesha`` whose **first**
-  Varṇa is **ल्·श्·कु** (SLP1 ``l``, ``S``, or ``KU_VARGA``) gets ``it_candidate_lasaku`` —
-  covers *śap* ``Sap``, **sup** *Ne*, etc.  Terms tagged ``lakAra_pratyaya_placeholder`` are
-  skipped so abstract ``laT`` keeps **1.3.3**-only *it* on ``T`` (gold *tin*anta spine).
-
-• **v2 reference:** ``~/Documents/panini_engine_v2/core/sutra_1_3_8.py`` +
-  ``it_rules.py``
-  ``_terms_sup_or_primary_upadesh`` family — different Term model; same idea:
-  first-hal it for eligible affixes.
-
-• **Blindness:** ``cond`` reads tags / first Varṇa only — not paradigm coords.
+• **Lakāra:** the ल् of an abstract *lakāra* (``lakAra_pratyaya_placeholder``) is
+  the sthānin of 3.4.77 *lasya*, so it is not *it* here; its टित् / ङित् marker
+  is **1.3.3**'s.
 """
 from __future__ import annotations
 
 from engine        import SutraType, SutraRecord, register_sutra
+from engine.it_phonetic import IT_LOPA_TAGS
+from engine.it_samjna import TAG_LASAKU, is_pratyaya_upadesha, it_lopa_already_done, register_candidate_tag
 from engine.state  import State
 from phonology      import KU_VARGA
 
@@ -28,37 +31,27 @@ from phonology      import KU_VARGA
 _LASAKU_INITIAL_SLP1 = frozenset({"l", "S"}) | KU_VARGA
 
 
-def _eligible_terms(state: State):
-    for i, t in enumerate(state.terms):
-        if not t.varnas:
-            continue
-        first = t.varnas[0]
-        if "it" in first.tags or "it_candidate_lasaku" in first.tags:
-            continue
-        # Abstract *lakāra* spine (``laT`` …) — initial ``l`` is not *laśakavataddhite* *it* here;
-        # **1.3.3** *halantyam* on the final ``T`` / *lac* collapse handles the *lakāra* row.
-        if "lakAra_pratyaya_placeholder" in t.tags:
-            continue
-        # Classical *laśakavataddhite* on *pratyaya* / affix *upadeśa* (not *dhātu*).
-        # Covers **sup** *Ne*-type rows (*ṅ* ∈ *ku*) and *śap* ``Sap`` (*ś* = ``S``), etc.
-        if (
-            "upadesha" in t.tags
-            and "dhatu" not in t.tags
-            and "taddhita" not in t.tags
-            and first.slp1 in _LASAKU_INITIAL_SLP1
-        ):
-            yield i
+def term_candidates(state: State, ti: int) -> list[int]:
+    t = state.terms[ti]
+    if not t.varnas or "taddhita" in t.tags or "lakAra_pratyaya_placeholder" in t.tags:
+        return []
+    if not is_pratyaya_upadesha(t) or it_lopa_already_done(t):
+        return []
+    first = t.varnas[0]
+    if first.slp1 not in _LASAKU_INITIAL_SLP1 or first.tags & IT_LOPA_TAGS:
+        return []
+    return [0]
 
 
 def cond(state: State) -> bool:
-    return next(_eligible_terms(state), None) is not None
+    return any(term_candidates(state, ti) for ti in range(len(state.terms)))
 
 
 def act(state: State) -> State:
-    for i in _eligible_terms(state):
-        state.terms[i].varnas[0].tags.add("it_candidate_lasaku")
-        key = ("it_lasaku", i)
-        state.samjna_registry[key] = frozenset({state.terms[i].varnas[0].slp1})
+    for ti, t in enumerate(state.terms):
+        for j in term_candidates(state, ti):
+            t.varnas[j].tags.add("it_candidate_lasaku")
+            state.samjna_registry[("it_lasaku", ti)] = frozenset({t.varnas[j].slp1})
     state.meta["__why_now_dev__"] = (
         "अतद्धित-प्रत्ययस्य आदौ ल्/श्/कवर्ग-वर्णः 'इत्'-संज्ञां प्राप्नोति; "
         "अयं वर्णः अनन्तरं १.३.९ इति लुप्यते (यथा शप् → अ, ङी → ई)। (१.३.८)"
@@ -76,10 +69,11 @@ SUTRA = SutraRecord(
         "अतद्धिते प्रत्ययादौ ल्-श्-कु-वर्णानाम् इत्-संज्ञा; लोपः १.३.९। "
         "सुप्-पङ्क्तिषु ङ्-आदिर् अपि (*N* ∈ *ku*)।"
     ),
-    apavada_of     = ("1.3.7",),   # अपवाद of 1.3.7 — sutra_ref_out resolver.apavada_of
-    anuvritti_from = ("1.3.2",),
+    apavada_of     = ("1.3.7",),
+    anuvritti_from = ("1.3.2", "1.3.5", "1.3.6"),
     cond           = cond,
     act            = act,
 )
 
 register_sutra(SUTRA)
+register_candidate_tag(TAG_LASAKU, SUTRA.sutra_id)

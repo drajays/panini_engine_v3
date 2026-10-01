@@ -80,7 +80,7 @@ def test_both_readings_of_va_lyapi_are_returned():
     """6.4.38 वा ल्यपि — the same pipeline, unmodified, yields both."""
     branches = explore(_lyap)
     surfaces = {b.surface_slp1 for b in branches}
-    assert surfaces == {"Agaty", "Agay"}, surfaces
+    assert surfaces == {"Agatya", "Agamya"}, surfaces
     for branch in branches:
         assert branch.choices and branch.choices[0][0] == "6.4.38"
 

@@ -13,7 +13,7 @@ import sutras  # noqa: F401
 
 from core.canonical_pipelines import (
     P00_lat_vartamane_jhi_and_sap,
-    P06a_pratyaya_adhikara_3_1_1_to_3,
+    P00_lac_lat_attach,
     P00_as_lat_adadi_2_4_72,
 )
 from engine import apply_rule
@@ -79,18 +79,7 @@ def derive_phalAni_santi_as_lat_padanta_lesson() -> State:
     s = State(terms=[_phalAni_siddha(), _as_dhatu()], meta={"lakara": "laT"}, trace=[])
 
     s.meta["3_1_68_kartari_recipe"] = True
-    s = apply_rule("3.1.91", s)
-    s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
-    s = apply_rule("3.2.123", s)
-    laT = Term(
-        kind="pratyaya",
-        varnas=list(parse_slp1_upadesha_sequence("laT")),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
-        meta={"upadesha_slp1": "laT"},
-    )
-    if laT.varnas and laT.varnas[-1].slp1 == "T":
-        del laT.varnas[-1]
-    s.terms.append(laT)
+    s = P00_lac_lat_attach(s)
 
     # Finish laṭ+jhi+śap on the verbal terms only (indices 1+).
     verbal = State(terms=s.terms[1:], meta=dict(s.meta), trace=[])

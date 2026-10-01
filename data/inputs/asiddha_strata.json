@@ -53,6 +53,14 @@
       "reading": "षत्व-तुकोः असिद्धः — the ekādeśa is asiddha for ṣatva and for tuk."
     }
   },
+  "tripadi_nimitta_exceptions": [
+    {
+      "observers": ["6.3.111", "6.3.112"],
+      "sees": ["8.3.13", "8.3.14"],
+      "authority": "Kāśikā 6.3.111 (ashtadhyayi.com row 63111) — ढ्रलोपे names the lopa of 8.3.13 ढो ढे लोपः / 8.3.14 रो रि as its own nimitta; were that lopa asiddha the rule would have no scope (vacana-sāmarthya). Udāharaṇa लीढम्, मीढम्, उपगूढम्; 6.3.112 सोढा, वोढा.",
+      "reading": "ढ्रलोपे पूर्वस्य दीर्घोऽणः — the dīrgha / ओत् sees the tripāḍī lopa that is its condition, and runs inside the tripāḍī right after it."
+    }
+  ],
   "not_modelled": [
     "6.1.86's observer sets are those the engine implements; more ṣatva/tuk rules will need adding as they land.",
     "Asiddhatva inside the ābhīya section is modelled as full mutual invisibility; the tradition's exceptions (e.g. for a rule's own nimitta) are not yet distinguished."

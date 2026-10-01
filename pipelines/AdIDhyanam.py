@@ -34,7 +34,7 @@ def _A_upasarga() -> Term:
 def derive_AdIDhyana_pratipadika() -> State:
     """``A`` + ``dIDhI`` + *lyuṭ* → ``AdIDhyana`` (merged prātipadika)."""
     s = derive_krt(
-        "dIDhI~N",
+        "dIDIN",
         krt_upadesha_slp1="lyuw",
         merge_pratipadika_label="AdIDhyana",
         prefix_terms=[_A_upasarga()],

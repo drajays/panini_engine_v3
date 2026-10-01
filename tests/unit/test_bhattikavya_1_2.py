@@ -60,9 +60,9 @@ def test_vyajezwa():
 
 def test_araMsta():
     s = derive_araMsta()
-    assert s.flat_slp1() in {"araMsta", "araMsta"}
     assert s.flat_slp1() == "araMsta"
-    assert "8.3.23" in _applied(s)
+    # रम्'s म् before स् is apadānta: 8.3.24 (Kāśikā आक्रंस्यते), not 8.3.23.
+    assert "8.3.24" in _applied(s)
 
 
 def test_samUlaGAtam():
