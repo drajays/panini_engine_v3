@@ -223,7 +223,9 @@ def apply_rule(
         return _finish_apply_rule(prev_sutra, sutra_id, new_state)
 
     # ── Gate 4: Vibhāṣā recipe choice ────────────────────────────────
-    if stype is SutraType.VIBHASHA:
+    if stype is SutraType.VIBHASHA and (
+        rec.vibhasha_scope is None or rec.vibhasha_scope(new_state)
+    ):
         # Precedence: the recipe step, then an explicit exploration policy
         # (engine.vikalpa.choose), then the sūtra's own default. A विभाषा is
         # one rule with two legitimate readings, so the engine must be able to

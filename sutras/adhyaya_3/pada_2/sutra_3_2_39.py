@@ -3,11 +3,13 @@
 
 Sources consulted:
 - ashtadhyayi.com data.txt row i=32039
-- Kāśikā: "परंतपः, द्विषत्तपः।"
+- Kāśikā: "तप दाहे चुरादिः, तप संतापे भ्वादिः। द्वयोरपि ग्रहणम्। द्विषन्तं तापयति
+  द्विषन्तपः। परन्तपः।"
 - Cross-validation: tests/unit/test_bhattikavya_1_1.py (परंतपः)
 
-णिजन्त तप् with उपपद पर/द्विषत् takes **खच्**. Remainder after it-lopa is अ
-(*khit* → **6.4.94** hrasva, **6.3.67** mum).
+तापि — the ṇijanta of तपँ (3.1.32 dhātu, upadeśa ``tApi``) — with उपपद पर/द्विषत्
+takes **खच्**. Remainder after it-lopa is अ (*khit* → **6.4.94** hrasva while the
+णि is present, then **6.4.51** णि-lopa, **6.3.67** mum).
 """
 from __future__ import annotations
 
@@ -17,7 +19,7 @@ from engine.krt_eligibility import krt_insertion_eligible, requested_krt_upadesh
 from phonology.varna import parse_slp1_upadesha_sequence
 
 _GATE_KEY: str = "3_2_39_dvizatpara_39"
-_TAP = frozenset({"tap", "tAp", "tapa~"})
+_TAP = frozenset({"tApi"})
 
 
 def _dhatu(state: State):

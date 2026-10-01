@@ -33,6 +33,7 @@ import sutras  # noqa: F401  (ensure registry loaded)
 
 from engine       import apply_rule
 from engine.state import State, Term, Varna
+from pipelines.it_prakarana import run_it_prakarana
 from pipelines.preflight_lopa_samjna import apply_preflight_luk_samjna_block
 from core.canonical_pipelines import (
     P00_lyap_krt,
@@ -65,10 +66,11 @@ from phonology.pratyahara import is_ekac_upadesha
 from phonology.varna import mk_inherent_a, parse_slp1_upadesha_sequence
 
 
-def _structural_merge_to_pratipadika(state: State, *, upadesha_slp1: str) -> State:
+def _structural_merge_to_pratipadika(state: State, *, upadesha_slp1: str | None = None) -> State:
     """
     Structural (not a sūtra): merge dhātu + pratyaya into a single prātipadika Term.
-    Logged as __KRD_MERGE__ in the trace.
+    Logged as __KRD_MERGE__ in the trace. Without ``upadesha_slp1`` the label is
+    the merged tape itself.
     """
     s = state
     if not s.terms:
@@ -84,7 +86,7 @@ def _structural_merge_to_pratipadika(state: State, *, upadesha_slp1: str) -> Sta
         kind="prakriti",
         varnas=all_varnas,
         tags={"prātipadika", "anga"},
-        meta={"upadesha_slp1": upadesha_slp1},
+        meta={"upadesha_slp1": upadesha_slp1 or "".join(v.slp1 for v in all_varnas)},
     )
     before = s.flat_slp1()
     s.terms = [prat]
@@ -446,13 +448,13 @@ def derive_bhaNguram() -> State:
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
     s = apply_rule("3.1.91", s)
     s = apply_rule("3.2.161", s)
-    for sid in ("1.3.8", "1.3.7", "1.3.3", "1.3.9", "1.3.10"):
-        s = apply_rule(sid, s)
+    s = run_it_prakarana(s)
+    s = apply_rule("1.3.10", s)
     s = apply_rule("1.1.50", s)
     s = apply_rule("7.3.52", s)
     s = apply_rule("1.2.45", s)
     s = apply_rule("1.2.46", s)
-    s = _structural_merge_to_pratipadika(s, upadesha_slp1="BaNgura")
+    s = _structural_merge_to_pratipadika(s)
     if s.terms:
         s.terms[0].tags.add("napuṃsaka")
     s.meta["linga"] = "napuṃsaka"
@@ -472,8 +474,8 @@ def _derive_athuc_stem(dhatu_upadesha: str) -> State:
     s = build_dhatu_state(dhatu_upadesha)
     s.meta["pada"] = "parasmaipada"
     s.meta["ekac_dhatu"] = True
-    for sid in ("1.3.1", "1.3.5", "1.3.2", "1.3.9"):
-        s = apply_rule(sid, s)
+    s = apply_rule("1.3.1", s)
+    s = run_it_prakarana(s)
     if s.terms:
         s.terms[0].tags.discard("upadesha")
     s = apply_rule("1.3.1", s)
@@ -508,8 +510,8 @@ def derive_zvayathuH() -> State:
     s = build_dhatu_state("BvAdi_01_1165")   # टुओँश्वि गतिवृद्ध्योः
     s.meta["pada"] = "parasmaipada"
     s.meta["ekac_dhatu"] = True
-    for sid in ("1.3.1", "1.3.5", "1.3.2", "1.3.9"):
-        s = apply_rule(sid, s)
+    s = apply_rule("1.3.1", s)
+    s = run_it_prakarana(s)
     if s.terms:
         s.terms[0].tags.discard("upadesha")
     s = apply_rule("1.3.1", s)
@@ -540,8 +542,8 @@ def _derive_ktri_stem(dhatu_upadesha: str) -> State:
     """Build ktri kṛt attachment for ḍvit dhātus (3.3.88, structural: pac/kf/vap)."""
     s = build_dhatu_state(dhatu_upadesha)
     s.meta["ekac_dhatu"] = True
-    for sid in ("1.3.1", "1.3.5", "1.3.2", "1.3.3", "1.3.9"):
-        s = apply_rule(sid, s)
+    s = apply_rule("1.3.1", s)
+    s = run_it_prakarana(s)
     if s.terms:
         s.terms[0].tags.discard("upadesha")
     s = apply_rule("1.3.1", s)
@@ -568,8 +570,7 @@ def _ktri_subanta_tail(s: State) -> State:
     s.meta["vibhakti_vacana"] = "1-1"
     s = P00_attach_sup_from_pratipadika(s)
     s = apply_rule("7.1.24", s)
-    for sid in ("1.3.2", "1.3.9"):
-        s = apply_rule(sid, s)
+    s = run_it_prakarana(s)
     s = apply_rule("6.1.107", s)
     _pada_merge(s)
     s = P00_tripadi_rutva_visarga(s)
@@ -606,8 +607,8 @@ def _derive_kta_manual_it_chain(dhatu_upadesha: str) -> State:
     s = build_dhatu_state(dhatu_upadesha)
     s.meta["pada"] = "parasmaipada"
     s.meta["ekac_dhatu"] = True
-    for sid in ("1.3.1", "1.3.5", "1.3.2", "1.3.9"):
-        s = apply_rule(sid, s)
+    s = apply_rule("1.3.1", s)
+    s = run_it_prakarana(s)
     if s.terms:
         s.terms[0].tags.discard("upadesha")
     s = apply_rule("1.3.1", s)

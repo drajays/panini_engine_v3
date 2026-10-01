@@ -162,6 +162,7 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-10-01 01:10 | cursor | P2 oracle accent fix + 7.2.58 गमेरिट् + 8.3.24 मकार + learn.html stepper (plan: docs/LEARN_AND_ORACLE_PLAN.md) | bench/oracle_vidyut.py, bench/oracle/vidyut.csv, bench/report/2026-09-30.json, sutras/adhyaya_7/pada_2/sutra_7_2_58.py, sutras/adhyaya_8/pada_3/sutra_8_3_24.py, pipelines/tinanta.py (`_it_agama` only), engine/trace.py, engine/dispatcher.py, tests/unit/test_gam_lrt_7_2_58.py, tests/unit/test_bhattikavya_1_2.py, tools/build_pages.py, docs/learn.html, docs/index.html, docs/data/**, docs/LEARN_AND_ORACLE_PLAN.md, audit/RUN_LOG.md | released |
 | 2026-10-01 08:30 | cursor | P1 upadeśa-form inputs: āśīrliṅ ātmane + karmaṇi luṅ start from ta/jha (not pre-encoded sIzwa/isAtAm); kṛdanta dhātu via dhātupāṭha upadeśa; dhātupāṭha ँ fixes; झि=Ji; lyap 6.4.38 on the dhātu | pipelines/{tinanta,krdanta,bhattikavya_1_1,BitzIzwa_ashir_ling,saGgasIzwa_sam_gam_ashir_ling,agaty_gam_lyap_acah_lesson,AdIDhyakaH,AdIDhyanam,pacete_iti_pragRhya,viSinanti_laT_rudhadi}.py, core/canonical_pipelines.py, phonology/pratyaya_pratyahara.py, data/inputs/{tin_upadesha,dhatupatha_upadesha}.json, sutras: 1.1.6, 1.2.13, 1.3.29, 2.4.85, 3.1.66, 3.2.161, 3.4.78 (tin_adesha), 3.4.102, 3.4.107, 3.4.108, 6.1.71, 6.4.37, 6.4.38, 6.4.104, 7.1.3, 7.1.4, 7.1.5, 7.1.37, 7.3.52; tests/unit/test_upadesha_inputs.py (new) + updated unit/constitutional tests, audit/RUN_LOG.md | released |
 | 2026-10-01 08:45 | cursor | P1 it-prakaraṇa 1.3.2–1.3.9: full ordered sequence + structured it-records (kit/ṅit/ñīt/irit…) | sutras/adhyaya_1/pada_3/sutra_1_3_{2,3,4,5,6,7,8,9}.py, engine/it_samjna.py (new), engine/it_phonetic.py, engine/sthanivat.py, pipelines/it_prakarana.py (new), pipelines/taddhita.py, pipelines/subanta.py, pipelines/katarakatamA_vibhASa_jasi.py, core/canonical_pipelines.py (only P00_jas_si_num_napumsaka + P00_jas_7_1_17_it_lopa_6_1_87), sutras/adhyaya_4/pada_1/sutra_4_1_98.py, sutras/adhyaya_7/pada_1/sutra_7_1_2.py, tests/unit/test_it_prakarana.py (new), tests/unit/test_corrected_prakriyas_v2_bundle.py, tests/unit/test_zvayathuH_athuc_wzvi.py, tests/regression/sig_applied_paths_baseline.json, audit/RUN_LOG.md | released |
+| 2026-10-01 09:30 | cursor | P2 handover: Bhaṭṭi तपँ+णिच् / गुण+णिच् from upadeśa; 6.4.38 नित्य न्-lopa (आहत्य); घुरच् merge label; launcher entry | pipelines/bhattikavya_1_1.py, pipelines/tinanta.py (`_curadi_nic` merge scope only), sutras/adhyaya_3/pada_2/sutra_3_2_39.py, sutras/adhyaya_6/pada_4/sutra_6_4_38.py, engine/sutra_type.py + engine/dispatcher.py (`vibhasha_scope` only), tests/unit/test_lyap_6_4_38_nitya.py (new), pipelines/krdanta.py (BaNgura label + it-loops), pipelines/tinanta.py (it-loops), sutras/adhyaya_1/pada_3/sutra_1_3_3.py (A~N alias), tests/unit/test_{tinanta_yam_lat_p010,autonomous_vs_recipe}.py (AN input), tools/it_report.py (new), tests/unit/test_it_report.py (new), Panini Engine.command, audit/RUN_LOG.md | released |
 | 2026-10-01 07:25 | cursor | P1 fix 20 failing tests (BU bhāve/karmaṇi āśīrliṅ+luṅ, आयच्छते) + glass-box ratchets + work queue | pipelines/tinanta.py, sutras/**, engine/**, tests/**, tools/**, docs/LEARN_AND_ORACLE_PLAN.md, audit/RUN_LOG.md | released |
 
 ---
@@ -195,6 +196,19 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ---
 
 ## C. Action history (newest at top)
+
+### 2026-10-01 (session)  [cursor]  Handover items: तापि / गुणि from upadeśa · 6.4.38 vyavasthita-vibhāṣā · it-loops · it-report in launcher
+
+**Changes (by linguistic content):**
+- Bhaṭṭi परंतपः: तपँ दाहे (curAdi_10_0350) + णिच् (3.1.25) → 7.2.116 → तापि (3.1.32) + खच् (3.2.39) → 6.4.94 (णौ सति) → 6.4.51 → 6.3.67 → 8.3.23. Kāśikā 3.2.39 "चुरादिः, भ्वादिः। द्वयोरपि ग्रहणम्"; 3.2.39 now matches the ṇijanta `tApi` (was the finished stem `tAp`). गुणाः: गुण (curAdi_10_0436) + णिच् → 6.4.48 → गुणि + घञ् → 6.4.51 → गुण. Both reuse `tinanta._curadi_nic`, whose merge now keeps terms before the dhātu (upapada) out of the new dhātu.
+- 6.4.38 वा ल्यपि as vyavasthita-vibhāṣā (Kāśikā: "मकारान्तानां विकल्पो भवति, अन्यत्र नित्यमेव लोपः … आहत्य"): new generic `SutraRecord.vibhasha_scope` — the dispatcher offers the choice only where it returns True. 6.4.38 also covers वन्/tanādi and न्/ण्-final roots → आहत्य (no आहन्य branch); आगत्य/आगम्य unchanged.
+- घुरच् merge label now taken from the tape (`Bangura` — न्→ङ् is tripāḍī), not a hand-typed finished form.
+- 21 partial it-loops in tinanta/krdanta (ending in 1.3.9) → `run_it_prakarana`. This exposed the upasarga input `A~N` (anunāsika आँ, wrongly made it by 1.3.2) in two tests → `AN` (आङ्); 1.3.3 alias dropped.
+- `tools/it_report.py` (new) + launcher option **i**: it-letters, sūtra and class name (kit/ṅit/ñīt/ṭvit/irit …) for any dhātu / kṛt / taddhita / sup / tiṅ upadeśa.
+
+**Tests:** new test_lyap_6_4_38_nitya.py, test_it_report.py. Full suite 19752 passed / 5 skipped; Vidyut bench 417/417.
+
+**Open:** ṇvul is spelled `Nvul` (= ङ्वुल्) in 3.1.133, 7.1.1, 7.3.32, api/main.py, webui/app.py — should be `Rvul` (same class of error as the old `caPaY`); 74 single `apply_rule("1.3.x")` calls remain in tinanta/krdanta; docs/data not rebuilt (would overwrite the uncommitted Claude Code trace `tinanta.derive_abhavaM.json`).
 
 ### 2026-10-01 (session)  [cursor]  It-prakaraṇa 1.3.2–1.3.9 as one ordered procedure + structured it-records
 

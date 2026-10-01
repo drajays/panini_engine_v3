@@ -294,9 +294,9 @@ class TestAutonomousSpecialSpines:
         from engine.core_loop import derive_autonomous_tinanta
         from pipelines.tinanta import derive
 
-        recipe_state = derive("yama~", "laT", "kartari", 3, 1, upasargas=["A~N"])
+        recipe_state = derive("yama~", "laT", "kartari", 3, 1, upasargas=["AN"])
         auto_state = derive_autonomous_tinanta(
-            "yama~", "laT", "kartari", upasargas=["A~N"]
+            "yama~", "laT", "kartari", upasargas=["AN"]
         )
         assert auto_state.flat_slp1() == recipe_state.flat_slp1() == "AyacCate"
 

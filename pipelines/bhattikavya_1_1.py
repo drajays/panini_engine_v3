@@ -24,8 +24,9 @@ from core.phases.tripadi import execute_tripadi_phase
 from engine import apply_rule
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
+from pipelines.it_prakarana import run_it_prakarana
 from pipelines.krdanta import build_dhatu_state
-from pipelines.tinanta import derive as derive_tinanta
+from pipelines.tinanta import _curadi_nic, derive as derive_tinanta
 
 __pipeline_category__ = "भट्टिकाव्य"
 
@@ -234,25 +235,26 @@ def derive_vibuDasaKaH() -> State:
 
 
 def derive_paraMtapaH() -> State:
-    """पर + ताप् + खच् (३.२.३९, ६.४.९४, ६.३.६७, ८.३.२३) → परंतपः."""
-    s = build_dhatu_state("tAp")
-    s.terms[0].meta["upadesha_slp1"] = "tap"
+    """पर + तपँ दाहे (चुरादि) + णिच् → तापि (३.१.२५, ७.२.११६, ३.१.३२) + खच् (३.२.३९)
+    → ६.४.९४ खचि ह्रस्वः (णौ सति) → ६.४.५१ णेरनिटि → ६.३.६७ मुम् → ८.३.२३ → परंतपः."""
     para = Term(
         kind="prakriti",
         varnas=list(parse_slp1_upadesha_sequence("para")),
         tags={"upapada", "anga", "prātipadika"},
         meta={"upadesha_slp1": "para"},
     )
-    s.terms = [para] + s.terms
+    s = _dhatu("curAdi_10_0350", para)       # तपँ दाहे
+    s = _curadi_nic(s)
     s.meta["derivation_class"] = "krdanta"
     s.meta["krt_upadesha_slp1"] = "Kac"
     s = P06a_pratyaya_adhikara_3_1_1_to_3(s)
     s = apply_rule("3.1.91", s)
     s = apply_rule("3.2.39", s)
-    s = _krt_it_lasaku(s)
+    s = run_it_prakarana(s)
     s = apply_rule("3.4.114", s)
     s = P00_anga_samjna_6_4_1(s)
     s = apply_rule("6.4.94", s)
+    s = apply_rule("6.4.51", s)
     s = apply_rule("6.3.67", s)
     s = _merge_pratipadika(s)
     s = _prathama(s)
@@ -261,8 +263,10 @@ def derive_paraMtapaH() -> State:
 
 
 def derive_guNAH() -> State:
-    """गुण + घञ् (३.३.१९ / ३.३.१६) → गुणाः."""
-    s = build_dhatu_state("guRa")
+    """गुण आमन्त्रणे (चुरादि, अदन्त) + णिच् (३.१.२५) → ६.४.४८ अतो लोपः → गुणि (३.१.३२)
+    + घञ् (३.३.१९ / ३.३.१६) → ६.४.५१ णेरनिटि → गुण (अ-लोप स्थानिवत्: no वृद्धि/गुण) → गुणाः."""
+    s = _dhatu("curAdi_10_0436")             # गुण आमन्त्रणे
+    s = _curadi_nic(s)
     s.meta["derivation_class"] = "krdanta"
     s.meta["krt_upadesha_slp1"] = "GaY"
     s.meta["krt_artha"] = "karmani"
@@ -271,8 +275,9 @@ def derive_guNAH() -> State:
     s = apply_rule("3.3.18", s)
     s = apply_rule("3.3.19", s)
     s = apply_rule("3.3.16", s)
-    s = _krt_it_lasaku(s)
+    s = run_it_prakarana(s)
     s = apply_rule("3.4.114", s)
+    s = apply_rule("6.4.51", s)
     s = apply_rule("7.2.116", s)
     s = _merge_pratipadika(s)
     return _prathama(s, vacana=3)

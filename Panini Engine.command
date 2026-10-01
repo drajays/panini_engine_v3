@@ -97,6 +97,7 @@ while :; do
    5  Noun accuracy          vs ashtadhyayi.com (215k forms)
    6  Derivation paths       our sūtras vs theirs (4.8k noun forms)
    7  Download ashtadhyayi.com data   (needed once for 4–6)
+   i  It-letters of an upadeśa  which it, which sūtra, kit/ṅit/ñīt …
 
    8  Rebuild website data   (docs/data, local only)
    9  Publish                rebuild → test → commit → push → site updates
@@ -114,6 +115,15 @@ EOF
     5) need_gold && "$PY" -m bench.ashtadhyayi_gold --kind subanta; pause ;;
     6) need_gold && "$PY" -m bench.ashtadhyayi_gold --kind prakriya; pause ;;
     7) "$PY" -m tools.fetch_ashtadhyayi_data; pause ;;
+    i|I)
+      echo
+      echo "  SLP1 upadeśas — dhātu id/upadeśa, or --krt / --taddhita / --sup / --tin before pratyayas"
+      echo "  e.g.  qukfY wuo~Svi Bidi~r --krt Kac Rvul kvasu~ --taddhita cPaY --sup jas Sas"
+      printf '  upadeśa: '
+      read -r it_args
+      # shellcheck disable=SC2086
+      [ -n "$it_args" ] && "$PY" -m tools.it_report $it_args
+      pause ;;
     8) "$PY" -m tools.build_pages && "$PY" -m tools.build_shabda_page; pause ;;
     9) publish; pause ;;
     0|q|Q) exit 0 ;;

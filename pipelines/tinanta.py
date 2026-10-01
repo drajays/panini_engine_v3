@@ -72,6 +72,7 @@ import sutras  # noqa: F401  — side-effect: registers all sūtras
 
 from engine       import apply_rule
 from engine.state import State, Term
+from pipelines.it_prakarana import run_it_prakarana
 from core.phases.tripadi import execute_tripadi_phase
 from phonology.varna import parse_slp1_upadesha_sequence, mk as _mk
 
@@ -885,8 +886,7 @@ def _derive_lit_ad_gas(state: State, pada_key: str, purusha: int, vacana: int) -
     state.meta["liT_lakara_recipe"] = True
     state = apply_rule("3.2.115", state)
     state = apply_rule("2.4.40", state)
-    for sid in ("1.3.2", "1.3.3", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
 
     tin_std = _select_tin_adesha("liT", pada_key, purusha, vacana)
     state = P00_parasmai_tin_adesha(state, tin_std)
@@ -2296,7 +2296,7 @@ def _attach_upasargas(state: State, upasargas: list[str] | None) -> State:
 
 
 def _yam_with_A_upasarga(state: State) -> bool:
-    """P010 tape: ``A~N`` + ``yam`` *dhātu* (after it-lopa)."""
+    """P010 tape: ``AN`` + ``yam`` *dhātu* (after it-lopa)."""
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags:
             continue
@@ -2414,7 +2414,7 @@ def _derive_laT_adadi(state: State, purusha: int, vacana: int) -> State:
 
 def _derive_laT_yam_Anga(state: State, purusha: int, vacana: int) -> State:
     """
-    ``A~N`` + ``yam`` laṭ (P010 *āyacchate*): **1.3.28**, *śap*, **7.3.77**, *ṅ*-lopa, **3.4.79**.
+    ``AN`` + ``yam`` laṭ (P010 *āyacchate*): **1.3.28**, *śap*, **7.3.77**, *ṅ*-lopa, **3.4.79**.
     """
     state.meta["lakara"] = "laT"
     state = apply_rule("1.3.28", state)
@@ -2428,12 +2428,10 @@ def _derive_laT_yam_Anga(state: State, purusha: int, vacana: int) -> State:
     for t in state.terms:
         if "dhatu" in t.tags:
             t.tags.discard("upadesha")
-    for sid in ("1.3.8", "1.3.3", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     state = apply_rule("7.3.77", state)     # इषुगमियमां छः: यम् → यछ्
     state = apply_rule("6.1.73", state)     # छे च: यत्छ् (8.4.40 → यच्छ्)
-    for sid in ("1.3.3", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     state = apply_rule("1.1.64", state)
     state = apply_rule("3.4.79", state)
     _pada_merge(state)
@@ -2483,8 +2481,7 @@ def _derive_laT_jYA_apa(state: State, purusha: int, vacana: int) -> State:
     state = P00_tin_adesha_base(state, tin_adesha)
     state = apply_rule("3.1.81", state)
     state = apply_rule("7.3.79", state)
-    for sid in ("1.3.8", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     state = apply_rule("6.4.113", state)
     state = apply_rule("1.1.64", state)
     state = apply_rule("3.4.79", state)
@@ -2539,8 +2536,7 @@ def derive_denominative_laT(
     state = State(terms=[stem], meta={}, trace=[], samjna_registry={})
     state = apply_rule("1.2.45", state)
     state = apply_rule("3.1.13", state)
-    for sid in ("1.3.8", "1.3.3", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     _kyaz_merge(state, nominal_slp1)
     state = apply_rule("3.1.32", state)
     state = P00_lac_lat_attach(state)
@@ -2548,8 +2544,7 @@ def derive_denominative_laT(
     state = P00_tin_adesha_base(state, tin_adesha)
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
-    for sid in ("1.3.3", "1.3.8", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     state = apply_rule("3.4.113", state)
     state = apply_rule("1.1.64", state)
     state = apply_rule("7.4.25", state)
@@ -2607,8 +2602,7 @@ def derive_anukarana_laT(
     state = apply_rule("5.4.57", state)   # qāc suffix
     state = apply_rule("8.1.2", state)
     state = apply_rule("6.1.97", state)
-    for sid in ("1.3.7", "1.3.3", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     state = apply_rule("1.4.18", state)
     state = apply_rule("6.4.143", state)  # ṭi-lopa (structural: bha+stem+dit)
     # After 6.4.143, stem has lost final ṭi syllables. The next term is qāc residue
@@ -2616,8 +2610,7 @@ def derive_anukarana_laT(
     stem_now = "".join(v.slp1 for v in state.terms[0].varnas) if state.terms else ""
     _merge_two_terms_to_pratipadika(state, f"{stem_now} + qAc-residue → {stem_now}A")
     state = apply_rule("3.1.13", state)   # kyaz (structural: fires for this stem)
-    for sid in ("1.3.8", "1.3.3", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     # Merge prātipadika + kyaz residue (ya → y) → dhātu
     stem_after = "".join(v.slp1 for v in state.terms[0].varnas) if state.terms else ""
     _kyaz_merge(state, stem_after)
@@ -2627,8 +2620,7 @@ def derive_anukarana_laT(
     state = P00_tin_adesha_base(state, tin_adesha)
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
-    for sid in ("1.3.3", "1.3.8", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     state = apply_rule("3.4.113", state)
     state = apply_rule("1.1.64", state)
     _pada_merge(state)
@@ -2665,9 +2657,10 @@ def _curadi_nic(state: State) -> State:
     if dh.meta.get("6_4_48_a_lopa_done"):
         keep["aglopa"] = True               # अनग्लोपे (7.4.93): कथ् → अचकथत्
     before = state.flat_slp1()
-    stem = [v for t in state.terms for v in t.varnas]
+    di = state.terms.index(dh)
+    stem = [v for t in state.terms[di:] for v in t.varnas]
     prayoga = dh.tags & {"kartari", "karmani", "bhave"} or {"kartari"}
-    state.terms = [Term(kind="prakriti", varnas=stem, tags={"dhatu", "anga"} | prayoga,
+    state.terms = state.terms[:di] + [Term(kind="prakriti", varnas=stem, tags={"dhatu", "anga"} | prayoga,
                         meta={**keep, "upadesha_slp1": "".join(v.slp1 for v in stem), "gana": 1,
                               "nijanta": True, "sanadi_pratyayanta": True,
                               "anit_dhatu": False, "set_dhatu": True})]
@@ -2721,8 +2714,7 @@ def _derive_laT_nic_atmane(state: State, purusha: int, vacana: int) -> State:
             t.tags.add("emit_Ric_tape")
             break
     state = apply_rule("3.1.26", state)
-    for sid in ("1.3.7", "1.3.3", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     state = apply_rule("7.3.37", state)
     _nic_merge(state)
     state = apply_rule("3.1.32", state)
@@ -2731,8 +2723,7 @@ def _derive_laT_nic_atmane(state: State, purusha: int, vacana: int) -> State:
     state = P00_tin_adesha_base(state, tin_adesha)
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
-    for sid in ("1.3.3", "1.3.8", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     state = P00_adadi_tere_3_4_79(state)
     state = P00_guna_sandhi_7_3_84_6_1_78(state)
     _pada_merge(state)
@@ -2769,8 +2760,7 @@ def _derive_laT_san_atmane(state: State, purusha: int, vacana: int) -> State:
     state = P00_tin_adesha_base(state, tin_adesha)
     state.meta["3_1_68_kartari_recipe"] = True
     state = apply_rule("3.1.68", state)
-    for sid in ("1.3.3", "1.3.8", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     state = P00_adadi_tere_3_4_79(state)
     _pada_merge(state)
     state = apply_rule("6.1.97", state)
@@ -2826,8 +2816,7 @@ def _derive_laT_kf_u_atmane(state: State, purusha: int, vacana: int) -> State:
     for t in state.terms:
         if "upasarga" in t.tags:
             t.tags.discard("upadesha")
-    for sid in ("1.3.3", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     state = P00_lac_lat_attach(state)
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
     state = P00_tin_adesha_base(state, tin_adesha)
@@ -2860,8 +2849,7 @@ def _derive_laT_krI_sna_atmane(state: State, purusha: int, vacana: int) -> State
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
     state = P00_tin_adesha_base(state, tin_adesha)
     state = apply_rule("3.1.81", state)
-    for sid in ("1.3.8", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     state = apply_rule("6.4.113", state)
     state = apply_rule("1.1.64", state)
     state = apply_rule("3.4.79", state)
@@ -2885,16 +2873,14 @@ def _derive_lRG_ṛ_dhatu(state: State, pada_key: str, purusha: int, vacana: int
     _tin = _select_tin_adesha("lRG", pada_key, purusha, vacana)
     state = P00_tin_adesha_base(state, _tin)
     # Halantyam + it-lopa on tiṅ ādeśa: ``tip`` → ``ti`` (required before 3.1.33 ``sy``).
-    for sid in ("1.3.3", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     state = apply_rule("3.1.33", state)
     state = apply_rule("3.4.100", state)
     state = P00_guna_7_3_86(state)
     state = apply_rule("1.1.51", state)
     state = apply_rule("6.4.71", state)
     state = apply_rule("6.1.73", state)
-    for sid in ("1.3.3", "1.3.9"):
-        state = apply_rule(sid, state)
+    state = run_it_prakarana(state)
     _pada_merge(state)
     return state
 

@@ -43,7 +43,7 @@ from sutras.adhyaya_1.pada_3.sutra_1_3_4 import tusma_final_vibhakti
 
 META_P011_B_suT_IC = "corrected_v2_P011_B_suT_ic_arm"
 
-_ANUBANDHA_UPASARGA = frozenset({"A~N", "AN"})
+_ANUBANDHA_UPASARGA = frozenset({"AN"})
 
 
 def _p011_b_suT_mid_u_it(state: State) -> None:

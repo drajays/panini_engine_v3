@@ -189,6 +189,9 @@ class SutraRecord:
 
         For VIBHASHA:
             vibhasha_default : bool  (apply unless recipe says otherwise)
+            vibhasha_scope   : optional Callable[[State], bool] — vyavasthita-vibhāṣā
+                (Paribhāṣenduśekhara 99): True where the option is live; where it
+                returns False the rule is nitya and no choice is offered.
 
         For ATIDESHA:
             atidesha_target, atidesha_source, atidesha_dest : str
@@ -232,6 +235,7 @@ class SutraRecord:
     apavada_of       : Tuple[str, ...]                = field(default_factory=tuple)
     adhikara_scope   : Tuple[str, str]                = field(default=("", ""))
     vibhasha_default : bool                           = True
+    vibhasha_scope   : Optional[Callable[[Any], bool]] = None
     atidesha_target  : Optional[str]                  = None
     atidesha_source  : Optional[str]                  = None
     atidesha_dest    : Optional[str]                  = None
