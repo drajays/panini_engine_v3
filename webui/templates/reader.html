@@ -301,12 +301,13 @@ function renderTable() {
 }
 
 function renderKosha() {
-  let h = `<table class="rd-table"><tr><th>पदम्</th><th>हिन्दी</th><th>English</th><th>सर्वनाम</th><th>नाम</th></tr>`;
+  let h = `<table class="rd-table"><tr><th>पदम्</th><th>हिन्दी</th><th>English</th><th>सर्वनाम</th><th>नाम</th><th>कोशः</th></tr>`;
   data.sentences.forEach((s, si) => s.words.filter(passFilter).forEach(w => {
     h += `<tr data-k="${esc(wkey(si, w))}" class="${selKey === wkey(si, w) ? "sel" : ""}">
       <td class="dev">${esc(w.word)}</td><td class="dev">${esc(w.hindi || "")}</td>
       <td>${esc(w.english || "")}</td><td class="dev">${esc(w.sarvanama || "")}</td>
-      <td class="dev">${esc(w.name_class || "")}</td></tr>`;
+      <td class="dev">${esc(w.name_class || "")}</td>
+      <td class="dev">${esc((w.kosha || []).map(k => `${k.headword}${k.linga ? " (" + k.linga + ")" : ""}: ${k.synonyms.slice(0, 5).join(", ")} [${k.kosha}]`).join(" | "))}</td></tr>`;
   }));
   $("rd-tab-kosha").innerHTML = h + "</table><p class=\"muted\" style=\"font-size:11px\">Glosses are Saṃsādhanī lexical notes (not a prakriyā).</p>";
   bindWords($("rd-tab-kosha"));
@@ -458,7 +459,8 @@ async function selectWord(k) {
   $("rd-detail-empty").style.display = "none"; $("rd-detail-body").style.display = "";
   let kv = [["प्रकारः", KIND[w.kind] || w.kind], ["रूप-विश्लेषणम्", w.morph],
             ["सन्धि-रूपम्", w.sandhied_word], ["समासः", w.samasa],
-            ["अर्थः", [w.hindi, w.english].filter(x => x && x !== "-").join(" · ")]];
+            ["अर्थः", [w.hindi, w.english].filter(x => x && x !== "-").join(" · ")],
+            ["कोशः", (w.kosha || []).map(k => `${k.synonyms.slice(0, 6).join(", ")} — ${k.kosha} ${k.ref}`).join(" | ")]];
   if (w.kind === "tinanta" && inp.dhatu_id)
     kv.push(["यन्त्र-निवेशः", `${inp.dhatu_upadesha_slp1} (${inp.dhatu_id}) · ${inp.lakara} · ${inp.prayoga} · ${inp.purusha}/${inp.vacana}${inp.pada ? " · " + inp.pada : ""}${(inp.upasargas || []).length ? " · +" + inp.upasargas.join("+") : ""}${inp.sanadi ? " · " + inp.sanadi : ""}`]);
   if (w.kind === "subanta" && inp.stem_slp1)

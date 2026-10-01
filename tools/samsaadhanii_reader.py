@@ -25,6 +25,7 @@ import contextlib
 import io
 import json
 import re
+from tools import kosha as _kosha
 from functools import lru_cache
 from pathlib import Path
 
@@ -340,6 +341,7 @@ def verse(uid: str, chapter: str, sloka: str) -> dict:
             "hindi": _dash(r.get("hindi_meaning")), "english": _dash(r.get("english_meaning")),
         }
         w["engine"] = verify(kind, tag, dev_to_slp1(word_dev))
+        w["kosha"] = _kosha.lookup(word_dev, limit=3)
         sentences.setdefault(str(r.get("sentno")), []).append(w)
 
     out_sents, counts = [], {"derived": 0, "differs": 0, "error": 0, "unresolved": 0, "not_attempted": 0}
