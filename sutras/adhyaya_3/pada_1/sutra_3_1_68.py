@@ -71,8 +71,3 @@ SUTRA = SutraRecord(
 
 register_sutra(SUTRA)
 
-# SOI specificity score: śap is the general vikaraṇa (utsarga); apavādas 3.1.69+
-# are more specific, but śap beats the even-more-general yaK (3.1.67).
-from engine.specificity_registry import register_specificity as _rs
-_rs("3.1.68", lambda state: 5)
-del _rs

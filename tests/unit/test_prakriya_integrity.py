@@ -134,7 +134,7 @@ class TestPrakriyaIntegrity:
     def test_structural_blocking_enforcement(self) -> None:
         """
         Conflicts are not “first/last in list” — *tripāḍī* / *pratiṣedha* are prior
-        gates; ``resolve`` uses specificity, then *Aṣṭādhyāyī* order, not ad-hoc
+        gates; ``resolve`` uses declared apavāda then *para* (Art. 21), not ad-hoc
         *RHS wins*.
         """
         s = State(terms=[Term(kind="pada", varnas=[], tags=set(), meta={})])
@@ -146,13 +146,13 @@ class TestPrakriyaIntegrity:
         s2.blocked_sutras.add("1.1.1")
         assert is_blocked("1.1.1", s2)
 
-        # resolve(): higher *specificity* wins; no silent “[0] wins”
+        # Art. 21: para (1.4.2) decides; a specificity score must not win
         out = resolve(
             ["1.1.1", "1.1.2"],
             s,
-            specificity={"1.1.1": lambda st: 0, "1.1.2": lambda st: 5},
+            specificity={"1.1.1": lambda st: 10, "1.1.2": lambda st: 0},
         )
-        assert out == "1.1.2", "expected specificity winner, not sequence order"
+        assert out == "1.1.2", "SOI must not beat para (Art. 21)"
         # explicit override layer exists (structural, not string position)
         assert isinstance(CONFLICT_OVERRIDES, dict)
 

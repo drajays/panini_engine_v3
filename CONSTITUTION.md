@@ -84,9 +84,10 @@ Rules are scheduled in Aṣṭādhyāyī order, modified only by:
 
 1. **Tripāḍī asiddha gate** (8.2.1): sūtras 8.2.1 through 8.4.68 are
    invisible to all prior sūtras. The gate is implemented in `engine/gates.py`.
-2. **Rajpopat's SOI/DOI** (resolver.py): when two sūtras both fire on the
-   same state, specificity-of-input and direction-of-information resolve
-   the conflict — not pāda number.
+2. **Vipratipatti ladder** (Art. 21 / `engine/resolver.py`): when two sūtras
+   both fire on the same state, the winner is decided by declared relations
+   and Pāṇini's own devices (asiddhatva, pratiṣedha, apavāda, *para* 1.4.2).
+   An unnamed heuristic (including Rajpopat SOI) may propose, never decide.
 3. **Pratiṣedha** (explicit blocking): a PRATISHEDHA sūtra adds IDs to
    `state.blocked_sutras`. The dispatcher honours this before firing.
 
@@ -205,7 +206,7 @@ engine paths that bypass `apply_rule()`.
 
 ## Article 10 — Amendment Procedure
 
-These **twenty-one** Articles (numbered 0 through 20) are amended only by:
+These **twenty-three** Articles (numbered 0 through 22) are amended only by:
 1. Opening `docs/AMENDMENT_<N>.md` with the proposed change and rationale.
 2. Passing every constitutional, forward, backward, and regression test
    with the proposed change applied to a branch.
@@ -346,7 +347,8 @@ Every sūtra file under `sutras/adhyaya_*/pada_*/sutra_*.py` whose
 `cond()` or `act()` makes a non-trivial linguistic decision **must**
 name the textual source that justifies that decision. The
 authoritative source roster is defined in `audit_cursor.md` § 0
-and `audit_claude.md` § A. The roster's precedence order is binding.
+and `audit_claude.md` § A. The roster names **what may be cited** in a
+docstring. It does **not** decide what a rule means — that is Art. 22.
 
 **Minimum citation** in each sūtra file's module docstring:
 
@@ -383,11 +385,12 @@ independent verification, Wikipedia (use to locate primary then cite
 primary), PDFs without edition lineage, surface-form transliterators
 as a source of rule logic.
 
-**Conflict resolution:** When two roster sources disagree, the
-lower-numbered (higher precedence) source wins. If the disagreement
-is itself notable, the resolution is documented in
-`docs/AMENDMENT_<N>.md` and the sūtra docstring links to that
-amendment.
+**Conflict resolution:** When two roster sources disagree about *what a
+rule means*, the prāmāṇya ladder (Art. 22) decides. The numbered roster
+only says what may be quoted. If the disagreement is notable, the
+resolution is documented in `docs/AMENDMENT_<N>.md` and the sūtra
+docstring links to that amendment. Runtime conflict between sūtras is
+Art. 21, never this list.
 
 **Article 12 reinforcement (added by AMENDMENT 14):** No new file
 under `pipelines/` may carry the substring `_corrected_` or
@@ -419,9 +422,10 @@ never be narrowed to avoid another sūtra.
 
 When two sūtras claim the same position, the loser is determined by a declared
 relation — `blocks_sutra_ids` (प्रतिषेध), `apavada_of` (अपवाद), adhikāra scope, or
-stratum — and the winner is chosen by the engine's paribhāṣā layer, primarily
+stratum — and the winner is chosen by **Art. 21 Ladder 1**, whose floor is
 **1.4.2 विप्रतिषेधे परं कार्यम्**. The losing sūtra appears in the trace as
-`BLOCKED`, naming the rule that beat it and why.
+`BLOCKED`, naming the rule that beat it and why. A specificity score may
+*propose* a winner; it may not *be* one.
 
 An utsarga that excludes a case in order to let an apavāda through is a
 constitutional violation **even when every test passes**, because the derivation
@@ -549,3 +553,75 @@ operation. The Kāśikā marks them अर्थनिर्देश, which are
 
 *Enforcement:* `tests/constitutional/test_artha_nirdesha.py`;
 `tests/unit/test_adhikara_gate_scope.py`.
+
+---
+
+## Article 21 — Rule conflict is resolved by Ladder 1, in order
+
+> Added by **AMENDMENT 17** (see `docs/AMENDMENT_17.md`).
+
+When two or more sūtras claim the same position, the winner is decided by
+Ladder 1, in order: pāṭha/anuvṛtti → asiddhatva → pratiṣedha → nipātana
+freeze → **vikalpa stop (fork)** → nitya → antaraṅga → apavāda → para
+(1.4.2) → pūrva → sakṛdgati → jñāpaka.
+
+The executable meta-rule book is Nāgeśa's **परिभाषेन्दुशेखर**, vendored as
+`data/inputs/paribhasha_shekhara.json` (full 133-paribhāṣā pāṭha from
+ashtadhyayi-com/data). A decision names the PŚ number it implements. Ārthika
+granthas (वाक्यपदीय, वैयाकरणभूषणसार, परमलघुमञ्जूषा) and the
+Laghuśabdenduśekhara **do not pick a runtime winner**.
+
+Every layer is either **modelled** or declared `not_modelled`. A conflict that
+would turn on an unmodelled layer is recorded as an Art. 18 gap naming the
+layer — it is never silently settled by the layer below.
+
+**No layer may be an unnamed heuristic.** Rajpopat SOI may *propose* an
+undeclared apavāda; it may not *be* the winner. A proposed apavāda must be
+promoted to `apavada_of` or recorded as an amendment.
+
+*Enforcement:* `tests/constitutional/test_vipratisedha_resolver.py`.
+
+---
+
+## Article 22 — Prāmāṇya (which text wins) and declared school
+
+> Added by **AMENDMENT 17**.
+
+Art. 14 is the **evidence roster** (what a docstring may cite). This article
+is the **meaning ladder**. It is used when a human writes a sūtra file; it is
+never an input to `cond()`.
+
+| # | Authority | Notes |
+|---|---|---|
+| T0 | pāṭha | ashtadhyayi.com data; Bhāṣya-supported when MSS differ |
+| T1 | वार्त्तिक (Kātyāyana) | śāstra, not commentary |
+| T2 | महाभाष्य (Patañjali) | ceiling of interpretation |
+| T3 | प्रदीप + उद्योत | whose reading of the Bhāṣya |
+| T4 | परिभाषेन्दुशेखर | meta-rules — this is also Art. 21's runtime book |
+| T5 | लघुशब्देन्दुशेखर | SK-level prakriyā disputes; zero kram authority (Art. 3) |
+| T6 | SK cluster | which rules tradition cites together; zero kram authority |
+| T7 | Kāśikā → Nyāsa → Padamañjarī | udāharaṇa; T2 wins on conflict |
+| T8 | प्रक्रिया primers | pedagogical; no deciding authority |
+| T9 | modern scholarship | zero prāmāṇya; modelling only (Kiparsky on strata) |
+| T10 | oracles | Art. 19: can prove wrong, never prove right |
+
+**Declared school:** this engine is **Nāgeśīya-navya-vyākaraṇa**. Where the
+tradition is divided, T4–T5 decide; where Nāgeśa is silent or contested, revert
+to T2. A departure is an amendment, cited from the sūtra docstring.
+
+**Domain-limited (not vipratipatti):** धातुपाठ, गणपाठ, उणादि, फिट्सूत्र,
+लिङ्गानुशासन, पाणिनीयशिक्षा; and the ārthika granthas वाक्यपदीयम्,
+वैयाकरणभूषणसारः, परमलघुमञ्जूषा (`data/inputs/grantha_catalog.json`).
+
+An amendment in this repository is the audit trail of a Ladder 2 decision, not
+a higher pramāṇa than T2.
+
+**Digitised sources:** the pāṭha and commentaries are read from
+[`github.com/ashtadhyayi-com/data`](https://github.com/ashtadhyayi-com/data)
+(ashtadhyayi.com's own data repo). The RKMVU Grammar site
+(`cs.rkmvu.ac.in/~tamal/learn/sanskrit/Grammar/site`) is a learner front-end
+over that corpus plus Vidyut; it is not a second pāṭha and it is never copied
+into `cond()`. See `data/inputs/grantha_catalog.json`.
+
+*Enforcement:* `tests/constitutional/test_vipratisedha_resolver.py`
+(`runtime_granthas` is PŚ only; LŚ excerpts are quoted, not executed).

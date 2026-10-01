@@ -40,6 +40,14 @@
 | Bare BU dhātu | **0** | **0** | `python3 audit/cond_discipline_auditor.py --status` |
 | `bu_tinanta_init` | **0** | **0** | same |
 
+### 2026-10-01 14:40 — cursor — AMENDMENT 17: two ladders; PŚ from ashtadhyayi-com/data (released)
+
+- Signed: Art. 21 vipratipatti ladder, Art. 22 prāmāṇya + Nāgeśīya school. Art. 14 is now an evidence roster (no "lower-numbered wins" for meaning). Art. 3 §2 no longer ranks Rajpopat SOI above 1.4.2.
+- Resolver: jñāpaka/override → apavāda → vikalpa fork → para. SOI never wins; disagreement with para is an Art. 18 gap. nitya/antaraṅga declared not_modelled and named on para decisions.
+- Runtime book: full 133 PŚ pāṭha lines from github.com/ashtadhyayi-com/data `paribhashendushekhar/data.txt` (vyākhyā omitted). PŚ 50 cited on antaranga. LŚ 1.1.44 excerpt. Catalog also names the RKMVU Grammar site as learner UI only (not a second pāṭha).
+- Gaṇa vikaraṇas 3.1.69/73/77/78/79/81 declare `apavada_of=("3.1.68",)`; SOI registrations removed.
+- Tests: 19771 passed, 5 skipped. Vidyut bench next.
+
 ### 2026-10-01 13:20 — cursor — AMENDMENT 16: अर्थनिर्देश class; 4.1.92 ruling (released)
 
 - Ajay ruled on SC-001: 4.1.92 is an artha-nirdeśa (Kāśikā "पूर्वैरुत्तरैश्च प्रत्ययैरभिसंबध्यते") whose forward force is adhikāra by svarita (1.3.11, per Nyāsa and Padamañjarī). He asked for a dedicated class, written into the constitution and based on the rules.
@@ -140,6 +148,7 @@ abandoned. **Never** start work on a file path that appears under
 
 | timestamp | agent | task | files | status |
 |---|---|---|---|---|
+| 2026-10-01 14:30 | cursor | P0 AMENDMENT 17: two ladders (vipratipatti + prāmāṇya); demote SOI; Art. 21/22 | CONSTITUTION.md, docs/AMENDMENT_17.md, engine/resolver.py, engine/paribhasha.py, engine/specificity_registry.py, data/inputs/paribhasha_shekhara.json, tests/constitutional/test_vipratisedha_resolver.py, tests/unit/test_prakriya_integrity.py, tests/unit/test_audit_pipeline_auditor.py, sutras/adhyaya_3/pada_1/sutra_3_1_{67,68,69,73,77,78,79,81}.py, audit/conflict_resolver.py, audit/RUN_LOG.md, .cursorrules | released |
 | 2026-05-22 09:42 | claude | P0 + P1a + P1b + P2 (full subanta cleanup chain) | webui/static/trace.js, webui/templates/*.html, sutras/adhyaya_1/pada_1/sutra_1_1_{11,12,13,14,15,16,17,18,19,20,22,23,24}.py, core/canonical_pipelines.py | released (5-day stale; released 2026-05-27) |
 | 2026-05-27 (session) | claude | P3 6.1.97 arm cleanup + P5 why_now_dev + regression fix | engine/dispatcher.py, sutras/adhyaya_7/pada_1/sutra_7_1_54.py, sutras/adhyaya_6/pada_4/sutra_6_4_3.py, sutras/adhyaya_8/pada_4/sutra_8_4_2.py, sutras/adhyaya_1/pada_3/sutra_1_3_12.py, pipelines/dhatupatha.py, pipelines/tinanta.py, tests/regression/sig_*, tests/*, webui/static/trace.js | released |
 | 2026-05-22 14:00 | cursor | P2 §4.3 tinanta + tinanta Web UI (RUPA filter) | pipelines/tinanta.py, pipelines/krdanta.py, core/canonical_pipelines.py, webui/templates/tinanta.html, webui/templates/tinanta_all.html | released |

@@ -1,0 +1,100 @@
+{
+  "_provenance": {
+    "source_repo": "https://github.com/ashtadhyayi-com/data",
+    "source_repo_note": "The entire data that powers ashtadhyayi.com. Credit required. Direct edits of commentaries/dhātu/śabda discouraged — use the site edit button.",
+    "learner_front_end": {
+      "url": "https://cs.rkmvu.ac.in/~tamal/learn/sanskrit/Grammar/site/abhyasa.html",
+      "role": "Teaching UI over ashtadhyayi.com corpus + vidyut_prakriya.wasm. Provenance-tag convention (engine-computed / corpus-quoted / editorial). Not a second pāṭha and not a runtime resolver. Generated JSON (index/sutras.json etc.) is often unpublished; the database behind it is ashtadhyayi-com/data."
+    },
+    "local_checkout": "ashtadhyayi.com data-master (iCloud Panini_sanskrit) — mirror of the GitHub repo",
+    "note": "Catalog of granthas the engine is allowed to *cite*. Only paribhāṣā granthas may decide a runtime conflict (Art. 21). Ārthika granthas never pick a winner."
+  },
+  "databases": [
+    {
+      "id": "ashtadhyayi-com-data",
+      "url": "https://github.com/ashtadhyayi-com/data",
+      "kind": "source_texts",
+      "runtime": "paribhashendushekhar pāṭha only (vendored)",
+      "paths": {
+        "paribhashendushekhar": "paribhashendushekhar/data.txt",
+        "laghushabdendushekhar": "sutraani/laghushabdendushekhar.txt",
+        "kashika": "sutraani/kashika.txt",
+        "bhashya": "sutraani/bhashya.txt",
+        "nyaas": "sutraani/nyaas.txt",
+        "padamanjari": "sutraani/padamanjari.txt",
+        "kaumudi": "sutraani/kaumudi.txt",
+        "vartika": "sutraani/vartika.txt",
+        "vakyapadeeyam": "vakyapadeeyam/data.txt",
+        "bhushanasara": "bhushanasara/data.txt",
+        "paramalaghumanjoosha": "paramalaghumanjoosha/data.txt"
+      }
+    },
+    {
+      "id": "rkmvu-grammar-site",
+      "url": "https://cs.rkmvu.ac.in/~tamal/learn/sanskrit/Grammar/site/abhyasa.html",
+      "kind": "learner_front_end",
+      "runtime": false,
+      "role": "Abhyāsa / pāṭha / prakriyā UI. Uses ashtadhyayi-com/data + Vidyut wasm. Copy provenance tags, not rule logic (Art. 0, Art. 19)."
+    }
+  ],
+  "paribhasha_granthas": [
+    {
+      "id": "paribhashendushekhar",
+      "dev": "परिभाषेन्दुशेखरः",
+      "author": "नागेशभट्ट",
+      "ladder": 1,
+      "art22_tier": "T4",
+      "runtime": true,
+      "engine_path": "data/inputs/paribhasha_shekhara.json",
+      "upstream_path": "paribhashendushekhar/data.txt",
+      "github": "https://github.com/ashtadhyayi-com/data/blob/master/paribhashendushekhar/data.txt",
+      "role": "Executable meta-rules for vipratipatti (PŚ 38 ladder and its exceptions)."
+    }
+  ],
+  "sk_tika_granthas": [
+    {
+      "id": "laghushabdendushekhar",
+      "dev": "लघुशब्देन्दुशेखरः",
+      "author": "नागेशभट्ट",
+      "ladder": 2,
+      "art22_tier": "T5",
+      "runtime": false,
+      "url": "https://ashtadhyayi.com/laghushabdendushekhar/",
+      "upstream_path": "sutraani/laghushabdendushekhar.txt",
+      "github": "https://github.com/ashtadhyayi-com/data/blob/master/sutraani/laghushabdendushekhar.txt",
+      "role": "Nāgeśa on the Siddhānta-Kaumudī. Design-time reading of a sūtra (e.g. 1.1.44 विभाषा). Never rearranges kram (Art. 3). Excerpts the resolver names live under paribhasha_shekhara.json laghu_excerpts."
+    }
+  ],
+  "arthika_granthas": [
+    {
+      "id": "vakyapadeeyam",
+      "dev": "वाक्यपदीयम्",
+      "author": "भर्तृहरि",
+      "ladder": 2,
+      "runtime": false,
+      "upstream_path": "vakyapadeeyam/data.txt",
+      "github": "https://github.com/ashtadhyayi-com/data/tree/master/vakyapadeeyam",
+      "role": "śabda-tattva / sphoṭa. Domain-limited; not a vipratipatti authority."
+    },
+    {
+      "id": "vaiyaakaranabhooshanasaara",
+      "dev": "वैयाकरणभूषणसारः",
+      "author": "कौण्डभट्ट",
+      "ladder": 2,
+      "runtime": false,
+      "upstream_path": "bhushanasara/data.txt",
+      "github": "https://github.com/ashtadhyayi-com/data/tree/master/bhushanasara",
+      "role": "śabda-tattva. Domain-limited; not a vipratipatti authority."
+    },
+    {
+      "id": "paramlaghumanjoosha",
+      "dev": "परमलघुमञ्जूषा",
+      "author": "नागेशभट्ट",
+      "ladder": 2,
+      "runtime": false,
+      "upstream_path": "paramalaghumanjoosha/data.txt",
+      "github": "https://github.com/ashtadhyayi-com/data/tree/master/paramalaghumanjoosha",
+      "role": "śabda-tattva. Domain-limited; not a vipratipatti authority."
+    }
+  ]
+}

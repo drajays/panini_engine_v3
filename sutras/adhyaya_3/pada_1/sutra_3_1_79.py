@@ -88,13 +88,8 @@ SUTRA = SutraRecord(
     anuvritti_from=("3.1.68",),
     cond=cond,
     act=act,
+    apavada_of=('3.1.68',),
 )
 
 register_sutra(SUTRA)
 
-# SOI: tanAdi (gana 8) u — apavāda to śap; score 10 when gana matches, else 0.
-from engine.specificity_registry import register_specificity as _rs
-_rs("3.1.79", lambda state, _g=8: (
-    10 if next((t.meta.get("gana") for t in state.terms if "dhatu" in t.tags), None) == _g else 0
-))
-del _rs

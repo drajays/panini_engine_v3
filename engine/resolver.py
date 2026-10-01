@@ -1,49 +1,24 @@
 """
-engine/resolver.py — Rule-conflict resolver.
-──────────────────────────────────────────────
+engine/resolver.py — Rule-conflict resolver (Constitution Art. 21).
+────────────────────────────────────────────────────────────────────
 
-The strength order is not an engineering convenience. It is
-**परिभाषेन्दुशेखर 38**, loaded with its text from ``engine.paribhasha``::
+Runtime conflict is Ladder 1 of AMENDMENT 17, in order. A commentary is never
+consulted here (Art. 22 is design-time only).
 
-    पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः
+  pre-conflict (gates, not this module): pāṭha / asiddhatva / pratiṣedha /
+  nipātana-freeze.
 
-Five terms, ascending: *pūrva* < *para* < *nitya* < *antaraṅga* < *apavāda*.
-Two of them execute here — *apavāda* (PŚ 57 अन्तरङ्गादप्यवादो बलवान्) and
-*para* (the sūtra named in the data) — while *nitya* and *antaraṅga* are
-declared ``not_modelled``, so a conflict that would turn on them is decided by
-the layers below **and says so**, rather than being settled silently (Art. 18).
+  In this module, of the candidates the scheduler still offers:
 
-Every decision names its layer and its losers, and the caller writes those
-losers into the trace as BLOCKED — Art. 15: a rule that was beaten must say
-who beat it.
+    1. named override / jñāpaka   (CONFLICT_OVERRIDES — an amendment)
+    2. declared apavāda           (PŚ 57; SutraRecord.apavada_of)
+    3. vibhāṣā stop               (fork; do not pick)
+    4. nitya, antaraṅga           (PŚ 38; declared not_modelled → Art. 18 gap)
+    5. para                       (1.4.2 / PŚ 38 — Pāṇini's floor)
 
-When two or more sūtras want to fire on the same state, we resolve by:
-
-  Layer A — Asiddha barrier (8.2.1–8.4.68).  An earlier-than-tripāḍī
-            sūtra never wins against a tripāḍī sūtra once we are in
-            the tripāḍī zone; conversely, tripāḍī sūtras are invisible
-            to earlier sūtras.  Implemented in engine/gates.py.
-
-  Layer B — Pratiṣedha.  If candidate X is in state.blocked_sutras,
-            it is dropped.  Implemented in engine/gates.py.
-
-  Layer C — Rajpopat SOI  (Specificity Of Input).
-            Of two candidates, the one whose cond() matches on the
-            NARROWER trigger-set wins.  Specificity is scored by
-            the sūtra file's optional `specificity_score(state)` hook,
-            defaulting to 0.  Higher score wins.
-
-  Layer D — *para* (PŚ 38).  Of two rules of equal strength that both
-            want the same position, the one that comes LATER in the
-            Aṣṭādhyāyī wins.
-
-  Layer E — Conflict override table.  For the (very rare) cases where
-            Pāṇini's own śabda establishes a named override, we
-            consult CONFLICT_OVERRIDES: dict[frozenset[id], str].
-
-This module exposes `resolve(candidates, state)` returning the winner
-or raising if the conflict is unresolved (which is a bug — we do NOT
-silently pick).
+Rajpopat SOI is a *diagnostic*. If it would have picked a different winner than
+*para*, that is recorded as ``undeclared_apavada_candidate``. It never wins
+(Art. 21: no unnamed heuristic may be a winner).
 """
 from __future__ import annotations
 
@@ -51,16 +26,27 @@ from dataclasses import dataclass, field
 from typing import Callable, Dict, FrozenSet, List, Optional
 
 from engine.paribhasha import layer as paribhasha_layer
+from engine.paribhasha import not_modelled as unmodelled_layers
 from engine.registry   import get_sutra
 from engine.state      import State
-from engine.sutra_type import SutraRecord
+from engine.sutra_type import SutraRecord, SutraType
 
 
-# Named overrides.  Populated only by explicit amendment in docs/.
+# Named overrides. Populated only by explicit amendment in docs/ (Art. 21 L10).
 CONFLICT_OVERRIDES: Dict[FrozenSet[str], str] = {
     # Example shape:
     # frozenset({"1.1.3", "6.1.87"}): "6.1.87",
 }
+
+# Decision.layer values Art. 21 permits. Constitutional test greps this set.
+DECISION_LAYERS: FrozenSet[str] = frozenset({
+    "sole-candidate",
+    "override",
+    "jnapaka",
+    "apavada",
+    "vikalpa",
+    "para",
+})
 
 
 class UnresolvedConflict(RuntimeError):
@@ -72,12 +58,18 @@ class Decision:
     """Who won, by which paribhāṣā, and who lost."""
 
     winner: str
-    layer: str                       # override | apavada | soi | 1.4.2
+    layer: str                       # must be in DECISION_LAYERS
     reason_dev: str
     losers: tuple[str, ...] = field(default_factory=tuple)
+    skipped_unmodelled: tuple[str, ...] = field(default_factory=tuple)
+    soi_proposal: Optional[str] = None
 
     def gate_reason(self, loser: str) -> str:
         return f"{self.layer}: {self.winner} beat {loser} — {self.reason_dev}"
+
+
+def _id_key(sid: str) -> tuple[int, ...]:
+    return tuple(int(p) for p in sid.split("."))
 
 
 def _apavada_winner(candidate_ids: List[str]) -> Optional[str]:
@@ -89,17 +81,15 @@ def _apavada_winner(candidate_ids: List[str]) -> Optional[str]:
     return exceptions[0] if len(exceptions) == 1 else None
 
 
-def _soi_scores(
+def _soi_proposal(
     candidate_ids: List[str],
     state: State,
-    specificity: Optional[Dict[str, Callable[[State], int]]] = None,
-) -> Dict[str, int]:
+    specificity: Optional[Dict[str, Callable[[State], int]]],
+) -> Optional[str]:
+    """The sūtra SOI *would* have picked — diagnostic only, never a winner."""
     try:
         from engine.specificity_registry import get_specificity
     except ModuleNotFoundError:
-        # The per-sūtra SOI registry is an optional refinement of Layer C.
-        # Without it every candidate falls back to the declared-field
-        # heuristic, and the paribhāṣā layers above and below still decide.
         def get_specificity(_sutra_id: str, _state: State) -> int:  # type: ignore[misc]
             return 0
 
@@ -111,7 +101,15 @@ def _soi_scores(
             continue
         registered = get_specificity(cid, state)
         scores[cid] = registered if registered > 0 else _default_specificity(get_sutra(cid))
-    return scores
+    if not scores:
+        return None
+    top = max(scores.values())
+    contenders = [cid for cid, score in scores.items() if score == top]
+    return contenders[0] if len(contenders) == 1 else None
+
+
+def _skipped_unmodelled() -> tuple[str, ...]:
+    return tuple(item.key for item in unmodelled_layers())
 
 
 def resolve_with_reason(
@@ -133,7 +131,7 @@ def resolve_with_reason(
     key = frozenset(candidate_ids)
     if key in CONFLICT_OVERRIDES and CONFLICT_OVERRIDES[key] in candidate_ids:
         winner = CONFLICT_OVERRIDES[key]
-        return Decision(winner, "override", "नामित-अपवादः (docs/AMENDMENT)",
+        return Decision(winner, "jnapaka", "ज्ञापकः / नामित-अपवादः (docs/AMENDMENT)",
                         tuple(c for c in candidate_ids if c != winner))
 
     apavada = _apavada_winner(candidate_ids)
@@ -144,20 +142,33 @@ def resolve_with_reason(
         return Decision(apavada, "apavada",
                         paribhasha_layer("apavada").citation(), displaced)
 
-    scores = _soi_scores(candidate_ids, state, specificity)
-    top = max(scores.values())
-    contenders = [cid for cid, score in scores.items() if score == top]
-    if len(contenders) == 1:
-        winner = contenders[0]
-        return Decision(winner, "soi", "संकुचित-निमित्तम् बलीयः (engine heuristic)",
-                        tuple(c for c in candidate_ids if c != winner))
+    skipped = _skipped_unmodelled()
 
-    # पर — of equals, the later sūtra wins. The Aṣṭādhyāyī id of this
-    # paribhāṣā comes from the vendored data, never from a literal here.
+    vibh = []
+    for cid in candidate_ids:
+        try:
+            rec = get_sutra(cid)
+        except Exception:
+            continue
+        if rec.sutra_type is SutraType.VIBHASHA:
+            vibh.append(cid)
+    if vibh and len(candidate_ids) > 1:
+        winner = min(vibh, key=_id_key)
+        return Decision(
+            winner, "vikalpa", paribhasha_layer("vikalpa").citation(),
+            (),  # do not BLOCK the other branch — it remains a live option
+            skipped_unmodelled=skipped,
+        )
+
+    proposal = _soi_proposal(candidate_ids, state, specificity)
     para = paribhasha_layer("para")
-    winner = max(contenders, key=lambda s: tuple(int(p) for p in s.split(".")))
-    return Decision(winner, para.key, para.citation(),
-                    tuple(c for c in contenders if c != winner))
+    winner = max(candidate_ids, key=_id_key)
+    return Decision(
+        winner, para.key, para.citation(),
+        tuple(c for c in candidate_ids if c != winner),
+        skipped_unmodelled=skipped,
+        soi_proposal=proposal if proposal and proposal != winner else None,
+    )
 
 
 def resolve(
@@ -170,12 +181,7 @@ def resolve(
 
 
 def _default_specificity(rec: SutraRecord) -> int:
-    """
-    Tiny default: a sūtra is 'more specific' if it has more declared
-    restrictions.  Sūtras that genuinely need specificity OVERRIDE
-    this by writing a `specificity_score(state)` function in their
-    file and handing it to resolve() via the scheduler.
-    """
+    """Diagnostic only — counted fields, never a reason to win."""
     score = 0
     if rec.adhikara_scope != ("", ""):
         score += 1
@@ -183,19 +189,35 @@ def _default_specificity(rec: SutraRecord) -> int:
         score += 1
     if rec.atidesha_source:
         score += 1
+    if rec.apavada_of:
+        score += 2
     return score
 
 
 def record_decision(state: State, decision: Decision) -> None:
     """Art. 15: a rule that was beaten says who beat it, and by which paribhāṣā.
 
-    Only the genuine contenders are written — the utsargas an apavāda
-    displaced, or the equally specific rivals *para* had to separate — not
-    every candidate the scheduler offered.
+    Unmodelled-layer contacts and SOI-vs-para disagreements are Art. 18 gaps
+    on ``state.meta['art18_gaps']`` — they do not pick a different winner.
     """
+    gaps = state.meta.setdefault("art18_gaps", [])
+    if decision.skipped_unmodelled and decision.layer == "para":
+        gaps.append({
+            "kind": "unmodelled_layer",
+            "layers": list(decision.skipped_unmodelled),
+            "winner": decision.winner,
+            "detail": "nitya/antaraṅga not weighed; para (1.4.2) used as floor",
+        })
+    if decision.soi_proposal:
+        gaps.append({
+            "kind": "undeclared_apavada_candidate",
+            "proposed": decision.soi_proposal,
+            "para_winner": decision.winner,
+            "detail": "SOI would have picked a different winner; declare apavada_of or an amendment",
+        })
+
     if not decision.losers:
         return
-    from engine.registry import get_sutra
     from engine.trace import make_blocked_step
 
     form = state.flat_slp1()

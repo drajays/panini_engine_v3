@@ -1,8 +1,9 @@
 # Source conflicts
 
 Disagreements between sources (or between a source and the engine) that the
-engine must not resolve silently. Authority order: Jijñāsu > Kāśikā > Rajpopat >
-data. Each entry stays **OPEN** until Ajay rules; code is not changed meanwhile.
+engine must not resolve silently. Runtime conflict is Art. 21 (Paribhāṣenduśekhara).
+Meaning disputes are Art. 22. Notable disagreements stay here until Ajay rules;
+code is not changed meanwhile.
 
 Paths: `data.txt` / `kashika.txt` = ashtadhyayi.com `sutraani/` (iCloud
 `Panini_sanskrit/sanskrit/data-master/`); "adhikāra corpus" =

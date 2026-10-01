@@ -58,7 +58,3 @@ SUTRA = SutraRecord(
 
 register_sutra(SUTRA)
 
-# SOI: yaK is the general karmani/bhāve vikaraṇa (beaten by gana-specific apavādas).
-from engine.specificity_registry import register_specificity as _rs
-_rs("3.1.67", lambda state: 3)
-del _rs

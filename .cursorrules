@@ -22,7 +22,11 @@ Treat the log as authoritative. If your claim row conflicts with another agent's
 
 ## Authoritative sources (mandatory citation in sūtra files)
 
-Use the source list in `audit_cursor.md` §0 / `audit_claude.md` §A. Precedence is binding; lower numbers win disputes.
+Use the source list in `audit_cursor.md` §0 / `audit_claude.md` §A. The numbered
+roster is an **evidence roster** (Art. 14): it says what a docstring may cite.
+Meaning disputes go to Art. 22. Runtime conflict is Art. 21 (Paribhāṣenduśekhara).
+Do not treat “lower number wins” as a prāmāṇya rule — that inverted
+यथोत्तरं मुनीनां प्रामाण्यम्.
 
 ### Tier 1 — sūtra pāṭha and direct vṛttis
 1. **ashtadhyayi.com data repo** — `github.com/ashtadhyayi-com/data` (`sutraani/data.txt`; row key `i = 1·adhyāya·pāda·sūtra` digits). Use for `text_dev`, `text_slp1` (`e`), `padaccheda_dev` (`pc`), `anuvritti_from` (`an`), `sutra_type`, siddhārtha (`ss`). **Never** import this into `sutras/` (Art. 6); cite by row index in docstring.

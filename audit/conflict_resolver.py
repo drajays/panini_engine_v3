@@ -2,7 +2,7 @@
 Conflicts between applicable sūtras are **not** resolved by list order.
 
 This module is a thin, documented re-export of :mod:`engine.resolver` and
-:mod:`engine.gates` (tripāḍī, pratiṣedha, SOI/DOI, ``CONFLICT_OVERRIDES``).
+:mod:`engine.gates` (tripāḍī, pratiṣedha, Art. 21 ladder, ``CONFLICT_OVERRIDES``).
 Use :func:`resolve` from here in audit scripts so the intended architecture
 stays obvious.
 """
