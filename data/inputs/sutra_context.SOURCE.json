@@ -1,0 +1,39 @@
+{
+ "ashtadhyayi": {
+  "commentary_ref_path": "<ashtadhyayi>/<ref>/pada-<A>.<P>/<id>.md",
+  "git_commit": "ab287ecf70",
+  "path": "/Users/dr.ajayshukla/ashtadhyayi",
+  "read": [
+   "sutraBasics.json",
+   "adhikara/",
+   "anuvritti/",
+   "padachcheda/",
+   "topic/",
+   "kashika/ (refs)",
+   "vasu_english*/ (refs)"
+  ]
+ },
+ "counts": {
+  "conflicts": {
+   "adhikara_heads": 31,
+   "anuvritti": 325,
+   "type": 13
+  },
+  "extras": [
+   "9.1.1",
+   "9.1.2"
+  ],
+  "sutras": 3983
+ },
+ "credit": "Sūtra map workbook (paanini-ashtadhyaayi-sutra-map) and ashtadhyayi.com (github.com/ashtadhyayi-com/data); imported read-only, provenance per field.",
+ "workbook": {
+  "overrides": 93,
+  "overrides_applied": 93,
+  "path": "/Users/dr.ajayshukla/paanini-ashtadhyaayi-sutra-map (1).xlsx",
+  "sha256": "42ec739539de62c2e01072805f8ada179f8fa12761e7e91b4fbfabd57e8a8e9d",
+  "sheets_read": [
+   "sutra",
+   "Sutra overrides"
+  ]
+ }
+}

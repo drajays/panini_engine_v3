@@ -40,6 +40,15 @@
 | Bare BU dhātu | **0** | **0** | `python3 audit/cond_discipline_auditor.py --status` |
 | `bu_tinanta_init` | **0** | **0** | same |
 
+### 2026-10-01 10:20 — cursor — CURSOR_HANDOVER T2 (released)
+
+- `scripts/build_sutra_context.py` builds `data/inputs/sutra_context.json` from the workbook's `sutra` sheet plus the 93 `Sutra overrides` (all applied), filling gaps from `~/ashtadhyayi` @ `ab287ecf70`. It covers all 3,983 sūtras; the workbook helper rows 9.1.1/9.1.2 go under `extras`.
+- Each record has: type[], term, text, padaccheda[{word,vibhakti,vacana,note}] plus raw, samasaccheda, anuvritti[{word,source_sutra}] plus raw, adhikara_range (workbook), adhikara_heads (corpus), kaumudi_krama, pada_tags, topic, commentary_refs, and per-field provenance. Unknown = null, empty = [].
+- Output is deterministic and one record per line (6.1 MB). `sutra_context.SOURCE.json` holds the workbook sha256, the corpus commit and the credit.
+- Disagreements go to `sutra_context.conflicts.json` and SOURCE_CONFLICTS SC-003: type 13, adhikāra extent 31, anuvṛtti 325. The workbook agrees with data.txt on 4.1.92 (added to SC-001).
+- Tests: `test_sutra_context.py` (5, including build-twice byte-equality). Full suite: 19759 passed, 5 skipped.
+- Not yet read by the engine (T4).
+
 ### 2026-10-01 10:10 — cursor — CURSOR_HANDOVER T0 + T1 (released)
 
 - **T0** (`2bceaff3`): baseline in `docs/ratchet_log.md`: 19753 passed / 5 skipped / 0 failed; Vidyut 417/417; arm-gated cond 0; 48 trace gaps; 914 placeholders; 5 `_push_adhikara` calls.
@@ -173,6 +182,7 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-10-01 09:30 | cursor | P2 handover: Bhaṭṭi तपँ+णिच् / गुण+णिच् from upadeśa; 6.4.38 नित्य न्-lopa (आहत्य); घुरच् merge label; launcher entry | pipelines/bhattikavya_1_1.py, pipelines/tinanta.py (`_curadi_nic` merge scope only), sutras/adhyaya_3/pada_2/sutra_3_2_39.py, sutras/adhyaya_6/pada_4/sutra_6_4_38.py, engine/sutra_type.py + engine/dispatcher.py (`vibhasha_scope` only), tests/unit/test_lyap_6_4_38_nitya.py (new), pipelines/krdanta.py (BaNgura label + it-loops), pipelines/tinanta.py (it-loops), sutras/adhyaya_1/pada_3/sutra_1_3_3.py (A~N alias), tests/unit/test_{tinanta_yam_lat_p010,autonomous_vs_recipe}.py (AN input), tools/it_report.py (new), tests/unit/test_it_report.py (new), Panini Engine.command, audit/RUN_LOG.md | released |
 | 2026-10-01 09:50 | cursor | P2 ṇvul upadeśa label `Nvul` (= ङ्वुल्) → `Rvul`, it-markers {R,l} | sutras 3.1.133, 7.1.1, 7.3.32, 7.3.54; pipelines/{krdanta,AdIDhyakaH,vivakSakaH_san_Nvul,sthanivat_it_samjna_lesson}.py; api/main.py, api/review.html, webui/app.py; data/inputs/krit_pratyaya.json; tests/forward/test_forward_krdanta_{pacaka,nayaka}.py, tests/test_api_smoke.py; audit/RUN_LOG.md | released |
 | 2026-10-01 09:55 | cursor | P1 CURSOR_HANDOVER T0 baseline + T1 adhikāra gate-scope test, 4.1.92 conflicts, audit regen | docs/ratchet_log.md, docs/SOURCE_CONFLICTS.md (new), tests/unit/test_adhikara_gate_scope.py (new), docs/ADHIKARA_AUDIT.md, audit/RUN_LOG.md | released |
+| 2026-10-01 10:20 | cursor | P1 CURSOR_HANDOVER T2 sutra_context import | scripts/build_sutra_context.py, data/inputs/sutra_context{,.SOURCE,.conflicts}.json, tests/unit/test_sutra_context.py, docs/SOURCE_CONFLICTS.md, audit/RUN_LOG.md | released |
 | 2026-10-01 07:25 | cursor | P1 fix 20 failing tests (BU bhāve/karmaṇi āśīrliṅ+luṅ, आयच्छते) + glass-box ratchets + work queue | pipelines/tinanta.py, sutras/**, engine/**, tests/**, tools/**, docs/LEARN_AND_ORACLE_PLAN.md, audit/RUN_LOG.md | released |
 
 ---
