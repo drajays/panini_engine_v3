@@ -40,6 +40,14 @@
 | Bare BU dhātu | **0** | **0** | `python3 audit/cond_discipline_auditor.py --status` |
 | `bu_tinanta_init` | **0** | **0** | same |
 
+### 2026-10-01 10:10 — cursor — CURSOR_HANDOVER T0 + T1 (released)
+
+- **T0** (`2bceaff3`): baseline in `docs/ratchet_log.md`: 19753 passed / 5 skipped / 0 failed; Vidyut 417/417; arm-gated cond 0; 48 trace gaps; 914 placeholders; 5 `_push_adhikara` calls.
+- **T1**: `tests/unit/test_adhikara_gate_scope.py` parses every literal `adhikara_in_effect(sid, state, H)` and `adhikara_id=H` gate in `sutras/` (1,958 citations) and asserts that H is a registered ADHIKARA with `adhikara_scope` covering sid. All pass; it would have caught the 518× 5.1.1 bug.
+- `scripts/adhikara_audit.py` re-run; `docs/ADHIKARA_AUDIT.md` committed: 1439 consistent, 85 mismatches (84× 4.1.92, 1× 4.2.92 at 4.2.114), 2032 code-silent.
+- New `docs/SOURCE_CONFLICTS.md`. SC-001: 4.1.92 adhikāra per data.txt type field, artha-nirdeśa per Kāśikā, absent from the adhikāra corpus. SC-002: 4.2.92 adhikāra per Kāśikā, vidhi per data.txt. No code changed; SC-001 awaits Ajay.
+- Next: T2 (sutra_context import).
+
 ### M5 surface parity (BU × prayoga)
 
 | Path | Surface (3sg) | Status |
@@ -164,6 +172,7 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-10-01 08:45 | cursor | P1 it-prakaraṇa 1.3.2–1.3.9: full ordered sequence + structured it-records (kit/ṅit/ñīt/irit…) | sutras/adhyaya_1/pada_3/sutra_1_3_{2,3,4,5,6,7,8,9}.py, engine/it_samjna.py (new), engine/it_phonetic.py, engine/sthanivat.py, pipelines/it_prakarana.py (new), pipelines/taddhita.py, pipelines/subanta.py, pipelines/katarakatamA_vibhASa_jasi.py, core/canonical_pipelines.py (only P00_jas_si_num_napumsaka + P00_jas_7_1_17_it_lopa_6_1_87), sutras/adhyaya_4/pada_1/sutra_4_1_98.py, sutras/adhyaya_7/pada_1/sutra_7_1_2.py, tests/unit/test_it_prakarana.py (new), tests/unit/test_corrected_prakriyas_v2_bundle.py, tests/unit/test_zvayathuH_athuc_wzvi.py, tests/regression/sig_applied_paths_baseline.json, audit/RUN_LOG.md | released |
 | 2026-10-01 09:30 | cursor | P2 handover: Bhaṭṭi तपँ+णिच् / गुण+णिच् from upadeśa; 6.4.38 नित्य न्-lopa (आहत्य); घुरच् merge label; launcher entry | pipelines/bhattikavya_1_1.py, pipelines/tinanta.py (`_curadi_nic` merge scope only), sutras/adhyaya_3/pada_2/sutra_3_2_39.py, sutras/adhyaya_6/pada_4/sutra_6_4_38.py, engine/sutra_type.py + engine/dispatcher.py (`vibhasha_scope` only), tests/unit/test_lyap_6_4_38_nitya.py (new), pipelines/krdanta.py (BaNgura label + it-loops), pipelines/tinanta.py (it-loops), sutras/adhyaya_1/pada_3/sutra_1_3_3.py (A~N alias), tests/unit/test_{tinanta_yam_lat_p010,autonomous_vs_recipe}.py (AN input), tools/it_report.py (new), tests/unit/test_it_report.py (new), Panini Engine.command, audit/RUN_LOG.md | released |
 | 2026-10-01 09:50 | cursor | P2 ṇvul upadeśa label `Nvul` (= ङ्वुल्) → `Rvul`, it-markers {R,l} | sutras 3.1.133, 7.1.1, 7.3.32, 7.3.54; pipelines/{krdanta,AdIDhyakaH,vivakSakaH_san_Nvul,sthanivat_it_samjna_lesson}.py; api/main.py, api/review.html, webui/app.py; data/inputs/krit_pratyaya.json; tests/forward/test_forward_krdanta_{pacaka,nayaka}.py, tests/test_api_smoke.py; audit/RUN_LOG.md | released |
+| 2026-10-01 09:55 | cursor | P1 CURSOR_HANDOVER T0 baseline + T1 adhikāra gate-scope test, 4.1.92 conflicts, audit regen | docs/ratchet_log.md, docs/SOURCE_CONFLICTS.md (new), tests/unit/test_adhikara_gate_scope.py (new), docs/ADHIKARA_AUDIT.md, audit/RUN_LOG.md | released |
 | 2026-10-01 07:25 | cursor | P1 fix 20 failing tests (BU bhāve/karmaṇi āśīrliṅ+luṅ, आयच्छते) + glass-box ratchets + work queue | pipelines/tinanta.py, sutras/**, engine/**, tests/**, tools/**, docs/LEARN_AND_ORACLE_PLAN.md, audit/RUN_LOG.md | released |
 
 ---
