@@ -36,6 +36,10 @@ def _matches(state: State) -> bool:
         return False
     if anga.meta.get("tyadadi_a_adesha_done"):
         return False
+    if (anga.meta.get("upadesha_slp1") or "").strip() == "kim" and "napuṃsaka" in anga.tags and any(
+        "sup" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() in ("s~", "am") for t in state.terms[1:]
+    ):
+        return False  # kim + neuter su/am: sup is luk'd (7.1.23), so no ādeśa
     if anga.varnas[-1].slp1 not in HAL:
         return False
     return True

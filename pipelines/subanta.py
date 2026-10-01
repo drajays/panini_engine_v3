@@ -393,6 +393,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.2.41",
     "7.2.107",  # adas + su: s → au (then 7.2.106 d→s, 6.1.88 → asau)
     "7.2.106",  # tad/tyad t→s before su (must precede 6.1.68 su-lopa; 7.2.106 checks sup still present)
+    "7.2.103",  # kim → ka (apavāda of 7.2.102, so it is tried first)
     "7.2.102",  # tyadādi final hal→a (must precede 6.1.68; after substitution stem is vowel-final)
     "6.1.68",
     "6.4.1",

@@ -16,6 +16,11 @@ from engine.state import State
 from engine.sthanivat import ANGATVA, adesha_substitute_varnas
 
 
+def _sup_luk_follows(a, b) -> bool:
+    """Neuter su / am is deleted by luk (7.1.23): no *vibhakti* is left for the ādeśa (किम्, not *कम्*)."""
+    return "napuṃsaka" in a.tags and (b.meta.get("upadesha_slp1") or "").strip() in ("s~", "am")
+
+
 def _site(state: State) -> int | None:
     if len(state.terms) < 2:
         return None
@@ -28,10 +33,7 @@ def _site(state: State) -> int | None:
         return None
     if not b.varnas:
         return None
-    first = b.varnas[0].slp1
-    up = (b.meta.get("upadesha_slp1") or "").strip()
-    # Nom. du. ``O`` (कौ) or inst. du. ``ByAm`` (काभ्याम्) per lesson / P028.
-    if first not in {"O", "B"} and up not in {"O", "ByAm"}:
+    if _sup_luk_follows(a, b):
         return None
     if a.meta.get("7_2_103_kim_kah_done"):
         return None
@@ -68,6 +70,7 @@ SUTRA = SutraRecord(
     padaccheda_dev="किमः / कः",
     why_dev="किम्-शब्दस्य क-आदेशः; स्थानिवद्भावेन अङ्गत्वम् (७.३.१०२ सुपि च)।",
     anuvritti_from=("7.2.102",),
+    apavada_of=("7.2.102",),  # kim → ka (whole stem) displaces tyadādi final-hal → a
     cond=cond,
     act=act,
 )

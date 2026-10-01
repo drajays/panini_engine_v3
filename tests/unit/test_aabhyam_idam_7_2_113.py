@@ -20,9 +20,10 @@ def test_trace_has_hali_lopa_7_2_113_for_idam_trika():
     assert s.flat_slp1() == "AByAm"
 
 
-def test_etad_trika_dvibhi_converges_aabhyam():
+def test_etad_trika_dvibhi_keeps_eta_7_2_113_is_idam_only():
+    # 7.2.113 deletes the id of idam only; etad keeps its e-t (एताभ्याम्, not *आभ्याम्*).
     s = derive("etad", 3, 2)
-    assert s.flat_slp1() == "AByAm"
+    assert s.flat_slp1() == "etAByAm"
 
 
 def test_tad_unaffected_by_7_2_113_shape():
