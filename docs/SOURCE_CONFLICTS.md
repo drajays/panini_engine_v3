@@ -10,7 +10,18 @@ Paths: `data.txt` / `kashika.txt` = ashtadhyayi.com `sutraani/` (iCloud
 
 ---
 
-## SC-001 — Is 4.1.92 तस्यापत्यम् an adhikāra over the apatya section? — OPEN
+## SC-001 — Is 4.1.92 तस्यापत्यम् an adhikāra over the apatya section? — RESOLVED 2026-10-01
+
+**Ruling (Ajay):** It is an अर्थनिर्देश (Kāśikā) that connects with the earlier and
+later affixes. Through svarita (1.3.11, per Nyāsa and Padamañjarī) it also acts as
+the adhikāra of the apatya section. Implemented as AMENDMENT 16 / Constitution
+Art. 20: the record stays `ADHIKARA` and gets `artha_nirdesha=ArthaNirdesha("apatya",
+purva_from="4.1.83")`, with the frame covering 4.1.83–4.1.178 (scope end moved from
+4.3.120). The handover's "Kāśikā reads it as adhikāra" was inaccurate. The
+`data.txt` and workbook `AD … 43120` labels are a site taxonomy, not a source for
+scope.
+
+*Original record below.*
 
 **Engine today:** `sutra_4_1_92` is `SutraType.ADHIKARA`, scope 4.1.92–4.3.120.
 84 modules (4.1.93–4.1.178) gate on `adhikara_in_effect(sid, state, "4.1.92")`.

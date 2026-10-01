@@ -30,7 +30,8 @@ def adhikara_in_effect(sutra_id: str, state: State, adhikara_id: str) -> bool:
         end = entry.get("scope_end") or ""
         if end == "":
             return True  # open-ended adhikāra
-        return _id_to_tuple(adhikara_id) <= sid_tuple <= _id_to_tuple(end)
+        start = entry.get("scope_start") or adhikara_id  # अर्थनिर्देश reaches back (Art. 20)
+        return _id_to_tuple(start) <= sid_tuple <= _id_to_tuple(end)
     return False
 
 

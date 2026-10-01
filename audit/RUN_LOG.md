@@ -40,6 +40,14 @@
 | Bare BU dhātu | **0** | **0** | `python3 audit/cond_discipline_auditor.py --status` |
 | `bu_tinanta_init` | **0** | **0** | same |
 
+### 2026-10-01 13:20 — cursor — AMENDMENT 16: अर्थनिर्देश class; 4.1.92 ruling (released)
+
+- Ajay ruled on SC-001: 4.1.92 is an artha-nirdeśa (Kāśikā "पूर्वैरुत्तरैश्च प्रत्ययैरभिसंबध्यते") whose forward force is adhikāra by svarita (1.3.11, per Nyāsa and Padamañjarī). He asked for a dedicated class, written into the constitution and based on the rules.
+- No eleventh SutraType, because Art. 1's list is closed. Instead there is a new `engine.sutra_type.ArthaNirdesha(artha, artha_dev, purva_from, source)` carried as `SutraRecord.artha_nirdesha`, validated as ADHIKARA-only, with backward reach and a non-empty source. `engine.gates.adhikara_in_effect` honours the frame's `scope_start`.
+- 4.1.92: artha `apatya`; the frame covers 4.1.83–4.1.178 (the scope end was 4.3.120; nothing outside 4.1 cited it). Docstring quotes Kāśikā, Nyāsa, Padamañjarī, Bhāṣya and Kaumudī, all verified in local `sutraani/*.txt` key 41092.
+- CONSTITUTION: Art. 1 now notes the list is closed and extra behaviour goes on a rule-grounded class; Art. 10 count is now twenty-one; new **Art. 20**. `docs/AMENDMENT_16.md` records Ajay's written acceptance. SOURCE_CONFLICTS SC-001 is RESOLVED.
+- Tests: new `tests/constitutional/test_artha_nirdesha.py`; 4.1.92 and gate-scope tests updated. Full suite: 19764 passed, 5 skipped. Vidyut 100%.
+
 ### 2026-10-01 10:20 — cursor — CURSOR_HANDOVER T2 (released)
 
 - `scripts/build_sutra_context.py` builds `data/inputs/sutra_context.json` from the workbook's `sutra` sheet plus the 93 `Sutra overrides` (all applied), filling gaps from `~/ashtadhyayi` @ `ab287ecf70`. It covers all 3,983 sūtras; the workbook helper rows 9.1.1/9.1.2 go under `extras`.
@@ -183,6 +191,7 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-10-01 09:50 | cursor | P2 ṇvul upadeśa label `Nvul` (= ङ्वुल्) → `Rvul`, it-markers {R,l} | sutras 3.1.133, 7.1.1, 7.3.32, 7.3.54; pipelines/{krdanta,AdIDhyakaH,vivakSakaH_san_Nvul,sthanivat_it_samjna_lesson}.py; api/main.py, api/review.html, webui/app.py; data/inputs/krit_pratyaya.json; tests/forward/test_forward_krdanta_{pacaka,nayaka}.py, tests/test_api_smoke.py; audit/RUN_LOG.md | released |
 | 2026-10-01 09:55 | cursor | P1 CURSOR_HANDOVER T0 baseline + T1 adhikāra gate-scope test, 4.1.92 conflicts, audit regen | docs/ratchet_log.md, docs/SOURCE_CONFLICTS.md (new), tests/unit/test_adhikara_gate_scope.py (new), docs/ADHIKARA_AUDIT.md, audit/RUN_LOG.md | released |
 | 2026-10-01 10:20 | cursor | P1 CURSOR_HANDOVER T2 sutra_context import | scripts/build_sutra_context.py, data/inputs/sutra_context{,.SOURCE,.conflicts}.json, tests/unit/test_sutra_context.py, docs/SOURCE_CONFLICTS.md, audit/RUN_LOG.md | released |
+| 2026-10-01 13:05 | cursor | P1 SC-001 ruling → AMENDMENT 16 / Art. 20 ArthaNirdesha; 4.1.92 frame 4.1.83–4.1.178 | CONSTITUTION.md, docs/AMENDMENT_16.md, engine/sutra_type.py, engine/gates.py, engine/__init__.py, sutras/adhyaya_4/pada_1/sutra_4_1_92.py, tests/constitutional/test_artha_nirdesha.py, tests/unit/test_sutra_4_1_92_prAgdIvyatIyaSezAdhikAra.py, tests/unit/test_adhikara_gate_scope.py, core/i18n_hi.py, docs/SOURCE_CONFLICTS.md, audit/RUN_LOG.md | released |
 | 2026-10-01 07:25 | cursor | P1 fix 20 failing tests (BU bhāve/karmaṇi āśīrliṅ+luṅ, आयच्छते) + glass-box ratchets + work queue | pipelines/tinanta.py, sutras/**, engine/**, tests/**, tools/**, docs/LEARN_AND_ORACLE_PLAN.md, audit/RUN_LOG.md | released |
 
 ---

@@ -157,6 +157,32 @@ SUTRA_TYPE_CONTRACTS: Dict[SutraType, Dict[str, Any]] = {
 }
 
 
+def _sid_lt(a: str, b: str) -> bool:
+    return tuple(int(p) for p in a.split(".")) < tuple(int(p) for p in b.split("."))
+
+
+@dataclass(frozen=True)
+class ArthaNirdesha:
+    """
+    अर्थनिर्देश (Constitution Art. 20) — a sūtra that states the *meaning* in which
+    affixes are taught, connecting with those already taught and those yet to be
+    taught (Kāśikā 4.1.92: "पूर्वैरुत्तरैश्च प्रत्ययैरभिसंबध्यते").
+
+    Not an eleventh sūtra-lakṣaṇa: its forward force is adhikāra by 1.3.11
+    स्वरितेनाधिकारः, so the record stays ``ADHIKARA`` and this object adds the
+    backward reach. The frame it opens covers ``purva_from`` … ``adhikara_scope[1]``.
+
+        artha       : meaning label read by affix sūtras, e.g. ``"apatya"``
+        artha_dev   : the same in Devanāgarī, e.g. ``"अपत्यम्"``
+        purva_from  : first earlier sūtra whose affixes take this meaning
+        source      : the vṛtti sentence attesting the backward connection
+    """
+    artha      : str
+    artha_dev  : str
+    purva_from : str
+    source     : str
+
+
 # ═════════════════════════════════════════════════════════════════════════
 # ARTICLE 3 — THE CANONICAL SŪTRA RECORD
 # ═════════════════════════════════════════════════════════════════════════
@@ -234,6 +260,9 @@ class SutraRecord:
     # may never be narrowed to dodge the utsarga it displaces.
     apavada_of       : Tuple[str, ...]                = field(default_factory=tuple)
     adhikara_scope   : Tuple[str, str]                = field(default=("", ""))
+    # अर्थनिर्देश (Art. 20) — only on an ADHIKARA whose vṛtti attests that it
+    # also attaches to the affixes taught *before* it (पूर्वैरुत्तरैश्च).
+    artha_nirdesha   : Optional["ArthaNirdesha"]      = None
     vibhasha_default : bool                           = True
     vibhasha_scope   : Optional[Callable[[Any], bool]] = None
     atidesha_target  : Optional[str]                  = None
@@ -287,6 +316,14 @@ class SutraRecord:
             # An ADHIKARA / ATIDESHA with its own act() needs no static fields —
             # the executors run act() when it exists (the static fields are the
             # fallback for a table-driven record).
+            if self.artha_nirdesha is not None:
+                an = self.artha_nirdesha
+                if st is not SutraType.ADHIKARA:
+                    raise ValueError(f"[{self.sutra_id}] artha_nirdesha requires ADHIKARA (Art. 20)")
+                if not _sid_lt(an.purva_from, self.sutra_id):
+                    raise ValueError(f"[{self.sutra_id}] artha_nirdesha.purva_from must precede the sūtra")
+                if not an.source.strip():
+                    raise ValueError(f"[{self.sutra_id}] artha_nirdesha needs its vṛtti source (Art. 20)")
             if st is SutraType.ADHIKARA and self.act is None:
                 if self.adhikara_scope == ("", ""):
                     raise ValueError(

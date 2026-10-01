@@ -17,7 +17,7 @@ Public API (v3.1):
 Everything else is internal. Sūtra files import only these symbols.
 """
 from engine.sutra_type  import (
-    SutraType, SutraRecord, SUTRA_TYPE_CONTRACTS,
+    SutraType, SutraRecord, SUTRA_TYPE_CONTRACTS, ArthaNirdesha,
     R1_EXEMPT, NIPATANA_FROZEN,
 )
 from engine.state       import State, Term, Varna
@@ -31,7 +31,7 @@ from engine.stubs       import make_stub, is_stub, coverage_report
 from engine.sig         import SIGCollector
 
 __all__ = [
-    "SutraType", "SutraRecord", "SUTRA_TYPE_CONTRACTS",
+    "SutraType", "SutraRecord", "SUTRA_TYPE_CONTRACTS", "ArthaNirdesha",
     "State", "Term", "Varna",
     "apply_rule",
     "SUTRA_REGISTRY", "register_sutra",

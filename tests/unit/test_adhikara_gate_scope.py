@@ -1,6 +1,7 @@
 """
 Every adhikāra gate a sūtra cites must name a registered ADHIKARA whose declared
-``adhikara_scope`` covers the citing sūtra (H ≤ sūtra ≤ scope_end(H)).
+``adhikara_scope`` covers the citing sūtra (H ≤ sūtra ≤ scope_end(H)); an
+अर्थनिर्देश head (Art. 20) also covers back to ``artha_nirdesha.purva_from``.
 
 A gate outside its head's scope can never open (``engine.gates.adhikara_in_effect``
 enforces ``scope_end``) — 518 taddhita modules once cited 5.1.1, whose scope
@@ -55,6 +56,8 @@ def test_every_gate_cites_an_adhikara_whose_scope_covers_it():
             bad.append(f"{rel}: {sid} cites {head}, which is {rec.sutra_type.name}, not ADHIKARA")
             continue
         start, end = rec.adhikara_scope
+        if rec.artha_nirdesha is not None:
+            start = rec.artha_nirdesha.purva_from
         if not (start and end):
             bad.append(f"{rel}: {sid} cites {head}, which declares no scope")
         elif not (_t(start) <= _t(sid) <= _t(end)):

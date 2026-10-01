@@ -46,6 +46,10 @@ Every sūtra in this engine carries exactly **one** `SutraType`:
 The 6-fold list is the ontological taxonomy; the 10-fold list is the
 **operational** taxonomy, and the engine executes on the latter.
 
+The list is closed. A sūtra that does not fit one type cleanly is never given an
+eleventh type. Its extra behaviour goes on the record as a class grounded in a
+rule (e.g. `ArthaNirdesha`, Art. 20).
+
 ---
 
 ## Article 2 — Mechanical Blindness
@@ -201,7 +205,7 @@ engine paths that bypass `apply_rule()`.
 
 ## Article 10 — Amendment Procedure
 
-These **twenty** Articles (numbered 0 through 19) are amended only by:
+These **twenty-one** Articles (numbered 0 through 20) are amended only by:
 1. Opening `docs/AMENDMENT_<N>.md` with the proposed change and rationale.
 2. Passing every constitutional, forward, backward, and regression test
    with the proposed change applied to a branch.
@@ -519,3 +523,29 @@ No number may appear in the README that a reader cannot regenerate with one
 command.
 
 *Enforcement:* `bench/` differential runner (scheduled: ROADMAP Phase A4).
+
+---
+
+## Article 20 — अर्थनिर्देश: meaning-assigning heads reach both ways
+
+> Added by **AMENDMENT 16** (see `docs/AMENDMENT_16.md`).
+
+Some sūtras state the *meaning* in which affixes are taught rather than an
+operation. The Kāśikā marks them अर्थनिर्देश, which are connected "पूर्वैरुत्तरैश्च
+प्रत्ययैः" — with the affixes taught before them and after them. The template is
+4.1.92 तस्यापत्यम्.
+
+1. Such a sūtra stays `ADHIKARA` (Art. 1). Its forward reach *is* adhikāra, by
+   **1.3.11 स्वरितेनाधिकारः**.
+2. Its backward reach is declared with `SutraRecord.artha_nirdesha =
+   ArthaNirdesha(artha, artha_dev, purva_from, source)`. The frame it opens covers
+   `purva_from` … `adhikara_scope[1]` and carries `artha`. Affix sūtras read the
+   meaning from that frame, never from a recipe flag.
+3. Backward reach is granted **only** when a vṛtti states it. The `source` field
+   quotes that sentence, and the sūtra docstring repeats it verbatim (Art. 14).
+   A site taxonomy label (e.g. `data.txt` type `AD`) is never sufficient.
+4. The forward end is the end of the section the meaning governs, as the
+   commentaries fix it (4.1.92 → 4.1.178), not a later adhikāra's end.
+
+*Enforcement:* `tests/constitutional/test_artha_nirdesha.py`;
+`tests/unit/test_adhikara_gate_scope.py`.
