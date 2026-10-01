@@ -50,13 +50,12 @@ def test_path_1_3_2_anunasika_it():
 
 
 def test_path_1_3_9_it_lopa_dhatu():
-    """1.3.9 must drop the anunāsika 'a' of पठँ → पठ् (form change: paWa → paW)."""
+    """1.3.9 must drop the anunāsika 'a' of पठँ → पठ् (form change: paWa~ → paW)."""
     state = derive("paW", "laT", "kartari", 3, 1)
-    # Find the 1.3.9 step that changes the dhātu form
     dhatu_lopa = [
         t for t in state.trace
         if t.get("sutra_id") == "1.3.9" and
-           t.get("form_before", "").endswith("Wa") and
+           t.get("form_before", "").rstrip("~").endswith("Wa") and
            t.get("form_after", "").endswith("W")
     ]
     assert dhatu_lopa, "1.3.9 must drop anunāsika 'a' of पठँ → पठ्"

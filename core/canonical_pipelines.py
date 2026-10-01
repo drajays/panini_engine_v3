@@ -154,11 +154,11 @@ def P00_anga_samjna_6_4_1(s: State) -> State:
 
 
 def P00_sup_it_lopa(s: State) -> State:
-    """Sup attachment + it-lopa: 4.1.2 → 1.3.2 → 1.3.9."""
+    """Sup attachment + full it-prakaraṇa: **4.1.2** then **1.3.2**–**1.3.9**."""
+    from pipelines.it_prakarana import run_it_prakarana  # noqa: PLC0415
+
     s = apply_rule("4.1.2", s)
-    s = apply_rule("1.3.2", s)
-    s = apply_rule("1.3.9", s)
-    return s
+    return run_it_prakarana(s)
 
 
 def P00_sup_it_lopa_aprkta(s: State) -> State:
@@ -793,6 +793,7 @@ def P00_ugit_pratipadika_prathama_sup_tail(s: State) -> State:
     merged); this routine adds ``ugit`` / ``prātipadika`` / ``anga`` on
     ``terms[0]`` and sets ``vibhakti_vacana`` to ``1-1``.
     """
+    from pipelines.it_prakarana import run_it_prakarana  # noqa: PLC0415
     from pipelines.subanta import _pada_merge
 
     t0 = s.terms[0]
@@ -801,8 +802,7 @@ def P00_ugit_pratipadika_prathama_sup_tail(s: State) -> State:
     t0.tags.add("anga")
     s.meta["vibhakti_vacana"] = "1-1"
     s = apply_rule("4.1.2", s)
-    for sid in ("1.3.2", "1.3.9"):
-        s = apply_rule(sid, s)
+    s = run_it_prakarana(s)
     s = apply_rule("1.1.43", s)
     s = apply_rule("1.1.47", s)
     s = apply_rule("7.1.70", s)
@@ -1105,10 +1105,8 @@ def P00_ktva_avyaya_then_tripadi(s: State) -> State:
 
 
 def P00_attach_su_it_lopa(s: State) -> State:
-    """Common prathamā-ekavacana sup: 4.1.2 → 1.3.2 → 1.3.9."""
-    for sid in ("4.1.2", "1.3.2", "1.3.9"):
-        s = apply_rule(sid, s)
-    return s
+    """Prathamā-ekavacana *su~*: **4.1.2** then **1.3.2**–**1.3.9** (same as ``P00_sup_it_lopa``)."""
+    return P00_sup_it_lopa(s)
 
 
 def P00_taddhita_it_lopa_chain(s: State) -> State:
@@ -1410,26 +1408,13 @@ def P01_samjna_1_1_15_to_1_1_24(s: State) -> State:
     return s
 
 
-# Leading *it* spine of ``pipelines.subanta.SUBANTA_RULE_IDS_POST_4_1_2`` (keep in sync).
-_SUP_IT_CHAIN: tuple[str, ...] = (
-    "1.3.2",
-    "1.3.3",
-    "1.3.4",
-    "1.3.5",
-    "1.3.6",
-    "1.3.7",
-    "1.3.8",
-    "1.3.9",
-    "1.3.10",
-)
-
-
 def sup_attach_it_chain(s: State) -> State:
-    """**4.1.2** *sup* + **1.3.2**–**1.3.10** (*it* saṃjñā / *lopa* / *yathāsaṅkhyam*)."""
+    """**4.1.2** *sup* + **1.3.2**–**1.3.9** (``run_it_prakarana``) + **1.3.10**."""
+    from pipelines.it_prakarana import run_it_prakarana  # noqa: PLC0415
+
     s = apply_rule("4.1.2", s)
-    for sid in _SUP_IT_CHAIN:
-        s = apply_rule(sid, s)
-    return s
+    s = run_it_prakarana(s)
+    return apply_rule("1.3.10", s)
 
 
 # ── Subanta P13–P15: post **4.1.2** through tripāḍī ─────────────────────────

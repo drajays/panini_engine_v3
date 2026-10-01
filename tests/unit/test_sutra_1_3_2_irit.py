@@ -29,7 +29,9 @@ def test_bidir_irit_lopa_to_bid():
 
 
 def test_sup_su_tilde_strips_to_s():
-    """Non-dhatu: anunāsika vowel fully elided (सुँ → स्)."""
+    """Non-dhatu: anunāsika vowel fully elided (सुँ → स्) by the full it-prakaraṇa."""
+    from pipelines.it_prakarana import run_it_prakarana
+
     varnas = parse_slp1_upadesha_sequence("s~")
     t = Term(
         kind="pratyaya",
@@ -38,5 +40,6 @@ def test_sup_su_tilde_strips_to_s():
     )
     s = State(terms=[t])
     s = apply_rule("1.3.2", s)
-    s = apply_rule("1.3.9", s)
+    assert s.render() == "su~"
+    s = run_it_prakarana(s)
     assert s.render() == "s"

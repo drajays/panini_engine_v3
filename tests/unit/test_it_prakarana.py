@@ -84,6 +84,8 @@ def test_dhatu_upadesha(upadesha, kind_tags, residue, names):
         ("zvun", {"krt"}, "vu", {"zit", "nit"}),
         # 1.3.3 alone
         ("tip", {"tin"}, "ti", {"pit"}),
+        # 1.3.2 anunāsika u of सुँ is it; 1.3.9 elides the vowel (सुँ → स्)
+        ("s~", {"sup"}, "s", {"udit"}),
     ],
 )
 def test_pratyaya_upadesha(upadesha, tags, residue, names):
@@ -173,3 +175,28 @@ def test_records_carry_letter_sutra_position_and_name():
     assert [r["name"] for r in s.meta[META_IT_LOPA_LOG]] == ["qvit", "adit", "zit"]
     why = next(e for e in s.trace if e.get("sutra_id") == "1.3.9")["why_now_dev"]
     assert "ड्वित्" in why and "षित्" in why
+
+
+def test_purva_su_runs_full_it_prakarana_and_lops_anunasika_u():
+    """पूर्व + सुँ: 1.3.2 names उँ as it; 1.3.2–1.3.8 then 1.3.9 elides it → पूर्वस् → पूर्वः."""
+    from core.trace_view import slp1_str_to_dev
+    from pipelines.subanta import derive
+
+    s = derive("pUrva", 1, 1)
+    assert s.flat_slp1() == "pUrvaH"
+    it_ids = [e["sutra_id"] for e in s.trace if e.get("sutra_id") in IT_PRAKARANA_SEQUENCE]
+    assert it_ids[:8] == list(IT_PRAKARANA_SEQUENCE)
+    row_132 = next(
+        e for e in s.trace
+        if e.get("sutra_id") == "1.3.2" and e.get("status") == "APPLIED"
+    )
+    row_139 = next(
+        e for e in s.trace
+        if e.get("sutra_id") == "1.3.9" and e.get("status") == "APPLIED"
+    )
+    assert row_132["form_before"].endswith("su~")
+    assert row_132["form_after"].endswith("su~")
+    assert slp1_str_to_dev(row_132["form_before"]).endswith("सुँ")
+    assert row_139["form_before"].endswith("su~")
+    assert row_139["form_after"] == "pUrvas"
+    assert slp1_str_to_dev(row_139["form_after"]) == "पूर्वस्"

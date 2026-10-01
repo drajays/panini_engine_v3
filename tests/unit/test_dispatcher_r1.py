@@ -41,7 +41,12 @@ def _build_noop_vidhi():
 
 
 def test_r1_fires_on_noop_vidhi():
+    from engine.registry import SUTRA_REGISTRY
+
     _build_noop_vidhi()
     s = State(terms=[Term(kind="prakriti", varnas=[mk("k"), mk("a")])])
-    with pytest.raises(R1Violation):
-        apply_rule("1.1.99", s)
+    try:
+        with pytest.raises(R1Violation):
+            apply_rule("1.1.99", s)
+    finally:
+        SUTRA_REGISTRY.pop("1.1.99", None)

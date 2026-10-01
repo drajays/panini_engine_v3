@@ -46,7 +46,7 @@ def test_most_of_what_the_scheduler_offers_would_change_nothing(ramah_start):
 def test_the_loop_starts_from_stem_plus_raw_upadesha(ramah_start):
     """रामसुँ — the next rule needed is it-saṃjñā (1.3.2 · 1.3.9), which the
     forward-only phase chain has already closed the door on."""
-    assert ramah_start.flat_slp1() == "rAmasu"
+    assert ramah_start.flat_slp1() == "rAmasu~"
 
 
 @pytest.mark.parametrize("case", SUBANTA_CASES, ids=lambda c: c.key)

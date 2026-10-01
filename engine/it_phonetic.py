@@ -10,12 +10,17 @@ separate *phonemic* hiding before **1.3.9**; *lopa* is the physical **pop** in
 ``sutra_1_3_9.act``.
 
 ``IT_LOPA_TAGS`` remains the single deletable set (see ``sutra_1_3_9``).
+
+Phonetic SLP1 emits ``~`` after an anunāsika vowel so traces show सुँ (not सु)
+until **1.3.9** *pops* the letter — same convention as
+``phonology.tokenizer.devanagari_to_slp1_flat``.
 """
 from __future__ import annotations
 
 from typing import Any, Final, FrozenSet, List
 
 from engine.lopa_ghost import LUK_LOPA_GHOST_TAG
+from phonology.varna import AC_DEV
 
 # Single source — must match ``sutra_1_3_9`` deletion set.
 IT_LOPA_TAGS: Final[FrozenSet[str]] = frozenset((
@@ -48,4 +53,10 @@ def term_phonetic_varnas(term: Any) -> List[Any]:
 
 
 def term_phonetic_slp1(term: Any) -> str:
-    return "".join(v.slp1 for v in term_phonetic_varnas(term))
+    parts: List[str] = []
+    for v in term_phonetic_varnas(term):
+        parts.append(v.slp1)
+        tags = getattr(v, "tags", None) or ()
+        if "anunasika" in tags and v.slp1 in AC_DEV:
+            parts.append("~")
+    return "".join(parts)

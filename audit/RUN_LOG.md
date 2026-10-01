@@ -88,7 +88,11 @@
 
 ### In-flight claims (§B)
 
-**None.** All rows `released`.
+| timestamp | agent | task | files | status |
+|---|---|---|---|---|
+| 2026-10-01 18:15 | cursor | P1 1.3.2/1.3.9 सुँ anunāsika-u: traces must show ँ; 1.3.9 must elide pratyaya u | engine/it_phonetic.py, tests/unit/test_it_prakarana.py, tests/unit/test_sutra_1_3_2_irit.py, tests/regression/test_autonomy_baseline.py, audit/RUN_LOG.md | released |
+
+Older rows: all `released`.
 
 ### What each agent last shipped (2026-05-31)
 
@@ -236,6 +240,9 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ---
 
 ## C. Action history (newest at top)
+
+### 2026-10-01 18:40  [claude]  Finished cursor's सुँ 1.3.2/1.3.9 claim
+`term_phonetic_slp1` emits `~` after anunāsika vowels; sup it-lopa paths (`P00_*`, `sup_attach_it_chain`, `SUBANTA_RULE_IDS_POST_4_1_2`) all route via `run_it_prakarana`. Full suite: 19763 pass; only `test_sutra_context::test_build_is_deterministic` fails (venv lacks `openpyxl`, env issue). Claim released.
 
 ### 2026-10-01 15:20  [cursor]  Offline local hub on Panini Engine.command
 

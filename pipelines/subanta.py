@@ -385,14 +385,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.4.103",
     "1.4.13",
     "1.4.14",
-    "1.3.2",
-    "1.3.3",
-    "1.3.4",
-    "1.3.5",
-    "1.3.6",
-    "1.3.7",
-    "1.3.8",
-    "1.3.9",
+    *IT_PRAKARANA_SEQUENCE,  # 1.3.2–1.3.8 saṃjñā, then 1.3.9 lopa
     "1.3.10",
     "7.1.93",  # anang sau: sakhī 1sg → sakhān (i → an; arm-gated)
     "6.4.8",   # dīrgha before sarvananāmasthāna (fires here for anang; idempotent)
@@ -441,14 +434,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.1.54",
     "7.1.52",
     # it-prakaraṇa over substitutes / āgamas (śī, śi, suṭ): 1.3.8 names their ś it.
-    "1.3.2",
-    "1.3.3",
-    "1.3.4",
-    "1.3.5",
-    "1.3.6",
-    "1.3.7",
-    "1.3.8",
-    "1.3.9",
+    *IT_PRAKARANA_SEQUENCE,
     "7.1.72",
     "6.4.10",   # upadhā dīrgha after num insertion (dhanuṣ bahu: u→U before n+s)
     "6.4.8",

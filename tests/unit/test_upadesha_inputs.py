@@ -65,17 +65,17 @@ def test_dhatupatha_examples(dhatu_id, upadesha_dev):
 
 
 @pytest.mark.parametrize(
-    "ref, upadesha_slp1, tape",
+    "ref, upadesha_slp1",
     [
-        ("qupaca~z", "qupaca~z", "qupacaz"),        # डुपचँष्
-        ("gamx~", "gamx~", "gamx"),                 # गमॢँ
-        ("Adadi_02_0059", "vida~", "vida"),         # विदँ
-        ("BvAdi_01_1165", "wuo~Svi", "wuoSvi"),     # टुओँश्वि
+        ("qupaca~z", "qupaca~z"),        # डुपचँष् — anunāsika still on the tape
+        ("gamx~", "gamx~"),             # गमॢँ
+        ("Adadi_02_0059", "vida~"),     # विदँ
+        ("BvAdi_01_1165", "wuo~Svi"),   # टुओँश्वि
     ],
 )
-def test_krdanta_tape_starts_from_upadesha(ref, upadesha_slp1, tape):
+def test_krdanta_tape_starts_from_upadesha(ref, upadesha_slp1):
     from pipelines.krdanta import build_dhatu_state
 
     s = build_dhatu_state(ref)
     assert s.terms[0].meta.get("upadesha_slp1") == upadesha_slp1
-    assert s.flat_slp1() == tape
+    assert s.flat_slp1() == upadesha_slp1

@@ -9,7 +9,7 @@ def test_u_ti_UUm_no_yan_or_eco_after_pragrahya():
     assert "anunasika" in s.terms[0].varnas[0].tags
     assert s.terms[0].varnas[0].slp1 == "U"
     assert PRAGHYA_TERM_TAG in s.terms[0].tags
-    assert s.flat_slp1() == "Uiti"
+    assert s.flat_slp1() == "U~iti"
 
 
 def test_u_ti_viti_when_no_pragrahya_iko_yan():
