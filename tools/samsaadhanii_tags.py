@@ -137,7 +137,7 @@ def _narrow(hits: list[dict], pada: str | None) -> list[dict]:
     by_pada = [e for e in hits if e.get("pada_label_dev") in (_PADA_LABEL.get(pada or ""), "उभयपदी")]
     hits = by_pada or hits
     numbered = [e for e in hits if re.search(r"_\d\d_\d{4}$", e["id"])]
-    return numbered if numbered and len({e["upadesha_slp1"].rstrip("~") for e in hits}) == 1 else hits
+    return numbered if numbered and len({e["upadesha_slp1"].replace("~", "") for e in hits}) == 1 else hits
 
 
 def _resolve_dhatu(upadesha_dev: str | None, stem_dev: str, gana: int,
