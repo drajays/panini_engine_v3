@@ -12,8 +12,11 @@ writes `.audit/gita_gaps.json`). The annotation is a hypothesis; the engine is t
 | dhātu homonym rows resolved by pada | 6279 | 1062 | 131 |
 
 ## Open clusters (by size)
-1. **Enclitic मे/ते/मा/त्वा/नः/वः** (~100): 8.1.20–26 need pada context (not first in pāda, preceding pada).
-   `8.1.22` is only a narrow demo today. Needs the context model, not a table.
+1. ~~Enclitic मे/ते/मा/त्वा/नः/वः~~ **done** (8.1.20–26, `pipelines/enclitic.py`, `tools/reader_enclitic.py`).
+   Known limits: 8.1.25 *yukta* with a paśyārtha verb is input, not derived (needs kāraka analysis);
+   8.1.19 (āmantrita) and accent are not modelled; the reader places pāda boundaries by syllable midpoint
+   (flagged `boundary_approx` when the text has sandhi the annotation lacks); verses whose annotation
+   cannot be aligned to the text get no enclitic verdict. Needs the context model, not a table.
 2. **idam** (~100: अयम्/इदम्/एनम्/इमम्): 7.2.108–112 are placeholders, and the vendored data holds only padaccheda
    and anuvṛtti for them. Needs a cited Kāśikā/SK text first (Art. 14), then the ādeśa mechanics. एनम् is 2.4.34 (etad/idam → एन).
 3. **Feminine tyadādi** (का/सा/एषा/इयम्): derive() has no tāp (4.1.4) path for pronoun stems.

@@ -506,7 +506,10 @@ async function selectWord(k) {
     ${links.length ? `<div style="margin:6px 0;font-size:13px">${links.join(" · ")}</div>` : ""}
     <div class="rd-verdict st-${e.status}">${ST[e.status][0]} ${esc(ST[e.status][1])}
       ${e.produced_dev ? `<br>यन्त्र-रूपम्: <b class="dev">${esc(e.produced_dev)}</b>` : ""}
-      ${e.note ? `<br><span class="muted">${esc(e.note)}</span>` : ""}</div>`;
+      ${e.note ? `<br><span class="muted">${esc(e.note)}</span>` : ""}
+      ${e.enclitic_note ? `<br><span class="muted">${esc(e.enclitic_note)}</span>` : ""}
+      ${e.readings && e.readings.length > 1 ? `<br><span class="muted">८.१.२६ विभाषा — दोनों पाठ: <span class="dev">${esc(e.readings.join(" / "))}</span></span>` : ""}
+      ${e.boundary_approx ? `<br><span class="muted">पाद-सीमा अनुमानित (पाठ में सन्धि)।</span>` : ""}</div>`;
   const sl = [...(rel ? rel.sutras : []), ...e.sutras];
   if (rel) h += `<div class="rd-kv"><div class="k">सम्बन्धः</div><div class="v dev">${esc(rel.label)} → ${esc(rel.target)}</div></div>`;
   if (vc) h += `<div class="rd-verdict ${vc.ok ? "st-derived" : "st-differs"}">${vc.ok ? "✓" : "✗"} विभक्तिः ${esc(VIB[vc.found])}; ${esc(vc.why)} → ${esc(VIB[vc.expected])}</div>`;
