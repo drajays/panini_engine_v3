@@ -185,7 +185,7 @@ async function toggleRuleDetail(row, sid) {
       contentDiv.innerHTML = html;
       contentDiv.dataset.loaded = "true";
     } catch (e) {
-      contentDiv.innerHTML = `<div class="error" style="color:var(--danger);font-size:12px;">विवरणं न लब्धम् (Details not found)</div>`;
+      contentDiv.innerHTML = `<div class="error" style="color:var(--danger);font-size:12px;">विवरणं न लब्धम् (Details not found) — ${escapeHtml(e.message)}</div>`;
     }
   } else {
     detailRow.style.display = "none";

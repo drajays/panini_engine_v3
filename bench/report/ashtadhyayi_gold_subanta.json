@@ -1,13 +1,13 @@
 {
- "generated_at": "2026-09-29T19:54:30+00:00",
+ "generated_at": "2026-10-02T17:16:57+00:00",
  "sample": null,
  "cells": 215155,
- "agree": 194527,
- "differ": 20628,
- "agree_pct": 90.4,
+ "agree": 195034,
+ "differ": 20121,
+ "agree_pct": 90.6,
  "words": {
-  "full paradigm": 6957,
-  "partial": 2048
+  "full paradigm": 7000,
+  "partial": 2005
  },
  "by_linga": {
   "pulliṅga": {
@@ -16,13 +16,13 @@
    "absent": 550
   },
   "strīliṅga": {
-   "agree": 46151,
-   "differ": 4131,
+   "agree": 46249,
+   "differ": 4033,
    "absent": 310
   },
   "napuṃsaka": {
-   "agree": 45451,
-   "differ": 4988,
+   "agree": 45860,
+   "differ": 4579,
    "absent": 105
   }
  },

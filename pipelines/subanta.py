@@ -393,6 +393,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.2.41",
     "7.2.107",  # adas + su: s → au (then 7.2.106 d→s, 6.1.88 → asau)
     "7.2.106",  # tad/tyad t→s before su (must precede 6.1.68 su-lopa; 7.2.106 checks sup still present)
+    "2.4.34",   # द्वितीयाटौस्स्वेनः — anvādeśa idam / etad → ena (stem tag ``anvadesha``); before 7.2.10x
     "7.2.108",  # इदमो मः — idam + su keeps its m (apavāda of 7.2.102, tried first)
     "7.2.111",  # इदोऽय् पुंसि — apavāda of 7.2.110
     "7.2.110",  # यः सौ — iyam
