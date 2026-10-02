@@ -507,6 +507,20 @@ def _pada_merge(state: State) -> None:
     pada_merge(state)
 
 
+# upasarga | dhātu junction: a + ā → ā (avāpnoti), i + u → yu (paryupāsate), a + e → ai/e … Each rule gates
+# itself on the tape, so this is a no-op unless an upasarga Term is present.
+_UPASARGA_JUNCTION_RULES = ("6.1.94", "6.1.101", "6.1.97", "6.1.87", "6.1.88", "6.1.77")
+
+
+def _merge_pada(state: State) -> State:
+    """Sandhi at the upasarga | dhātu boundary (pre-tripāḍī, while the Terms are still apart), then the merge."""
+    if any("upasarga" in t.tags for t in state.terms):
+        for sid in _UPASARGA_JUNCTION_RULES:
+            state = apply_rule(sid, state)
+    _pada_merge(state)
+    return state
+
+
 def _run_lat_kartari_bhuvadi_spine(
     state: State,
     *,
@@ -582,7 +596,7 @@ def _run_lat_kartari_bhuvadi_spine(
         state = apply_rule("8.2.1", state)
         state = apply_rule("8.4.54", state)
 
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = P00_tripadi_rutva_visarga(state)
     return state
 
@@ -864,7 +878,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("8.4.54", state)   # carc on abhyāsa term
 
     # ── MERGE then full post-merge Tripāḍī spine ──────────────────────────────
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = execute_tripadi_phase(state)  # 8.2.1/8.4.54 skip (already done)
 
     return state
@@ -958,7 +972,7 @@ def _derive_lit_ad_gas(state: State, pada_key: str, purusha: int, vacana: int) -
     # Pre-merge: open Tripāḍī zone; 8.4.54 needs the abhyāsa term separate.
     state = apply_rule("8.2.1", state)
     state = apply_rule("8.4.54", state)
-    _pada_merge(state)
+    state = _merge_pada(state)
     # Post-merge: record pre-8.3.60 form for P034 arm, then full spine.
     flat_pre = state.flat_slp1()
     state = apply_rule("8.3.60", state)
@@ -1129,7 +1143,7 @@ def _derive_luT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.4.19", state)
 
     # ── Merge + Tripāḍī ──────────────────────────────────────────────────────
-    _pada_merge(state)
+    state = _merge_pada(state)
     if state.meta.get("_luT_ad_spine"):
         state.meta.pop("_luT_ad_spine", None)
         state.meta.pop("_luT_skip_guna", None)
@@ -1251,7 +1265,7 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.1.101", state)   # अकः सवर्णे दीर्घः: क्रीणा + अम् → अक्रीणाम्
 
     # ── Merge + Tripāḍī ──────────────────────────────────────────────────────
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = execute_tripadi_phase(state)  # 8.2.39/8.4.56/8.2.66/8.3.15/8.2.23/8.4.68 fire naturally
 
     return state
@@ -1308,7 +1322,7 @@ def _derive_luG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
     state = apply_rule("7.3.101", state)
     state = apply_rule("6.1.97", state)
 
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = execute_tripadi_phase(state)  # rules fire based on phonological state
     return state
 
@@ -1518,7 +1532,7 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.4.19", state)
 
     # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
-    _pada_merge(state)
+    state = _merge_pada(state)
     # 8.3.59/8.4.41 fire based on phonological state; no coordinate guard needed.
     state = execute_tripadi_phase(state)
 
@@ -1581,7 +1595,7 @@ def _derive_ashir_liG(state: State, pada_key: str, purusha: int, vacana: int) ->
     state = apply_rule("8.2.29", state)
     state.meta.pop("ashir_8_2_29_recipe", None)
 
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = execute_tripadi_phase(state)
 
     return state
@@ -1684,6 +1698,9 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("3.4.103", state)
         # yāsuṭ is now present with kngiti tag — lift the pre-block flag
         state.meta.pop("liG_yasut_expected", None)
+        # 6.4.111 श्नसोरल्लोपः — the a of अस् drops before the ṅit yāsuṭ (स्यात्, स्याम्); scoped to the root
+        # अस् in its own cond(), a no-op for every other root on this spine.
+        state = apply_rule("6.4.111", state)
 
         # ── Stage: yāsuṭ processing ──────────────────────────────────────────────
         # 7.2.79: [y,A,s] → [y,A]  (drop final 's' of yāsuṭ)
@@ -1720,7 +1737,7 @@ def _derive_liG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.1.78", state)
 
     # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = P00_tripadi_rutva_visarga(state)
 
     return state
@@ -1775,7 +1792,7 @@ def _derive_liG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
     state = apply_rule("8.2.29", state)
     state.meta.pop("liG_ad_8_2_29_suw_recipe", None)
 
-    _pada_merge(state)
+    state = _merge_pada(state)
     if purusha == 3 and vacana == 1:
         state = apply_rule("8.2.1", state)
         state = apply_rule("8.2.39", state)
@@ -1907,7 +1924,7 @@ def _derive_lRT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.4.19", state)
 
     # ── Merge + Tripāḍī ──────────────────────────────────────────────────────
-    _pada_merge(state)
+    state = _merge_pada(state)
     if state.meta.get("_lRT_ad_spine"):
         state.meta.pop("_lRT_ad_spine", None)
         state.meta.pop("_lRT_skip_guna", None)
@@ -1978,7 +1995,7 @@ def _derive_lRG_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
     state = apply_rule("1.4.14", state)
     state = apply_rule("6.1.97", state)
 
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = apply_rule("8.2.1", state)
     if purusha == 3 and vacana == 1:
         state = apply_rule("8.2.39", state)
@@ -2149,7 +2166,7 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.1.88", state)
 
     # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = P00_tripadi_rutva_visarga(state)
     # 8.4.1/8.4.2 rashAByAM no RaH (+ its aw-kupvAN-vyavAya extension) — only
     # relevant to a cell that actually took 3.4.92's āṭ-āgama (uttama-puruṣa
@@ -2234,7 +2251,7 @@ def _derive_loT_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
 
     state = apply_rule("1.4.14", state)
 
-    _pada_merge(state)
+    state = _merge_pada(state)
     if purusha == 3 and vacana == 3:
         state = P00_tripadi_anusvara_parasavarna(state)
         state = apply_rule("8.4.68", state)
@@ -2367,12 +2384,15 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.4.77", state)
     state = apply_rule("1.4.13", state)
     state = apply_rule("1.4.14", state)
+    # 6.1.101 अकः सवर्णे दीर्घः — ā-final root + a-initial affix (या + अन्ति → यान्ति); a no-op for the
+    # consonant-final roots (अद्, दुह्) and for अस् / ब्रू, whose a / ū are gone or changed by now.
+    state = apply_rule("6.1.101", state)
     # 8.2.32 दादेर्धातोर्घः — द्-initial ह्-final dhātu (दुह्, दिह्…) → घ् before
     # a झल्-initial affix (दुह्+ति → दुघ्+ति, apavāda to 8.2.31 हो ढः). Needs
     # the still-separate dhātu/tiṅ terms, so it runs pre-merge like 8.2.7's
     # own pre-merge branch; a no-op for अद्/अस्/ब्रू (none start with द्).
     state = apply_rule("8.2.32", state)
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = apply_rule("8.2.1", state)
     state = P00_tripadi_8_4_55_visarga(state)
     state = P00_tripadi_anusvara_parasavarna(state)
@@ -2397,13 +2417,14 @@ def _derive_laT_adadi(state: State, purusha: int, vacana: int) -> State:
     _tin = _select_tin_adesha("laT", "atmane", purusha, vacana)
     state = P00_tin_adesha_base(state, _tin)
     state.meta["3_1_68_kartari_recipe"] = True
+    state = P00_jha_adesha(state)   # 3pl: 7.1.5 (at) → 7.1.3: आसते, not *आग्झे*
     state = P00_adadi_sap_luk_tere(state)
     # 8.2.32 दादेर्धातोर्घः — द्-initial ह्-final dhātu (दुह्→दुग्धे) needs the
     # same pre-merge tripadi entry the kartari-parasmai spine already has;
     # a no-op for आस्/अद् etc. (this function's original P008 आस्ते case),
     # none of which are द्-initial ह्-final.
     state = apply_rule("8.2.32", state)
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = apply_rule("8.2.1", state)
     state = P00_tripadi_8_4_55_visarga(state)
     state = P00_tripadi_anusvara_parasavarna(state)
@@ -2436,7 +2457,7 @@ def _derive_laT_yam_Anga(state: State, purusha: int, vacana: int) -> State:
     state = run_it_prakarana(state)
     state = apply_rule("1.1.64", state)
     state = apply_rule("3.4.79", state)
-    _pada_merge(state)
+    state = _merge_pada(state)
     return P00_tripadi_rutva_visarga(state)     # 8.4.40: यत्छ → यच्छ
 
 
@@ -2487,7 +2508,7 @@ def _derive_laT_jYA_apa(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.4.113", state)
     state = apply_rule("1.1.64", state)
     state = apply_rule("3.4.79", state)
-    _pada_merge(state)
+    state = _merge_pada(state)
     return state
 
 
@@ -2551,7 +2572,7 @@ def derive_denominative_laT(
     state = apply_rule("1.1.64", state)
     state = apply_rule("7.4.25", state)
     state = apply_rule("6.1.101", state)
-    _pada_merge(state)
+    state = _merge_pada(state)
     return state
 
 
@@ -2625,7 +2646,7 @@ def derive_anukarana_laT(
     state = run_it_prakarana(state)
     state = apply_rule("3.4.113", state)
     state = apply_rule("1.1.64", state)
-    _pada_merge(state)
+    state = _merge_pada(state)
     return state
 
 
@@ -2728,7 +2749,7 @@ def _derive_laT_nic_atmane(state: State, purusha: int, vacana: int) -> State:
     state = run_it_prakarana(state)
     state = P00_adadi_tere_3_4_79(state)
     state = P00_guna_sandhi_7_3_84_6_1_78(state)
-    _pada_merge(state)
+    state = _merge_pada(state)
     return state
 
 
@@ -2764,7 +2785,7 @@ def _derive_laT_san_atmane(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("3.1.68", state)
     state = run_it_prakarana(state)
     state = P00_adadi_tere_3_4_79(state)
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = apply_rule("6.1.97", state)
     state = apply_rule("8.2.1", state)
     state = apply_rule("8.3.59", state)
@@ -2832,7 +2853,7 @@ def _derive_laT_kf_u_atmane(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.1.64", state)
     state = apply_rule("3.4.79", state)
     state = apply_rule("6.4.110", state)
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = apply_rule("8.2.1", state)
     state = apply_rule("8.4.55", state)
     return state
@@ -2857,7 +2878,7 @@ def _derive_laT_krI_sna_atmane(state: State, purusha: int, vacana: int) -> State
     state = apply_rule("3.4.79", state)
     state = apply_rule("8.2.1", state)
     state = apply_rule("8.4.2", state)
-    _pada_merge(state)
+    state = _merge_pada(state)
     return state
 
 
@@ -2883,7 +2904,7 @@ def _derive_lRG_ṛ_dhatu(state: State, pada_key: str, purusha: int, vacana: int
     state = apply_rule("6.4.71", state)
     state = apply_rule("6.1.73", state)
     state = run_it_prakarana(state)
-    _pada_merge(state)
+    state = _merge_pada(state)
     return state
 
 
@@ -2978,7 +2999,7 @@ def _derive_lRG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.1.97", state)    # a+a → a (3pl: sya+ant; 1sg: sya+am)
 
     # ── Merge + Tripāḍī ─────────────────────────────────────────────────────
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = P00_tripadi_rutva_visarga(state)   # full phase (8.4.40 अच्छेत्स्यत …)
     state = apply_rule("8.3.59", state)    # s→ṣ after IK (sya→ṣya)
 
@@ -3052,7 +3073,7 @@ def _derive_karmani_laG(state: State, purusha: int, vacana: int) -> State:
     # 6.1.97 pararūpa: ya-a + a (3pl anta-a) → a
     state = apply_rule("6.1.97", state)
 
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = P00_tripadi_rutva_visarga(state)
 
     return state
@@ -3135,7 +3156,7 @@ def _derive_karmani_liG(state: State, purusha: int, vacana: int) -> State:
     # 6.1.97 pararūpa: 3pl ya-a + ran-a/anta-a → a
     state = apply_rule("6.1.97", state)
 
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = P00_tripadi_rutva_visarga(state)
 
     return state
@@ -3199,7 +3220,7 @@ def _derive_ashir_liG_atmane(state: State, purusha: int, vacana: int) -> State:
     # 6.1.78 eco'yavāyāvaḥ (bho → bhav)
     state = apply_rule("6.1.78", state)
 
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = execute_tripadi_phase(state)
 
     return state
@@ -3255,7 +3276,7 @@ def _derive_karmani_luG(state: State, purusha: int, vacana: int) -> State:
     # 6.1.78 eco'yavāyāvaḥ: O (au) → Av (bhO → bhav)
     state = apply_rule("6.1.78", state)
 
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = P00_tripadi_rutva_visarga(state)
     state = apply_rule("8.3.59", state)   # suṭ-s → ṣ (z) after ciṇ-i (iK)
 
@@ -3443,7 +3464,7 @@ def _derive_luT_atmane(state: State, purusha: int, vacana: int) -> State:
         state = apply_rule("6.1.78", state)
 
     # ── Merge + Tripāḍī (full phase: 8.2.25 tāsdhve → tādhve, 8.4.58 अङ्किता …)
-    _pada_merge(state)
+    state = _merge_pada(state)
     return P00_tripadi_rutva_visarga(state)
 
 
@@ -3486,7 +3507,7 @@ def _derive_bhave_laT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.1.78", state)
     state = apply_rule("6.1.87", state)
     state = apply_rule("6.1.97", state)
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = P00_tripadi_rutva_visarga(state)
     return state
 
@@ -3571,8 +3592,7 @@ def _derive_karmani_laT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.1.97", state)
 
     # ── STRUCTURAL: pada merge ────────────────────────────────────────────
-    _pada_merge(state)
-
+    state = _merge_pada(state)
     # ── TRIPĀḌĪ ──────────────────────────────────────────────────────────
     state = P00_tripadi_rutva_visarga(state)
 
@@ -3679,8 +3699,7 @@ def _derive_karmani_lRT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.1.97", state)
 
     # ── MERGE ─────────────────────────────────────────────────────────────
-    _pada_merge(state)
-
+    state = _merge_pada(state)
     # ── TRIPĀḌĪ ───────────────────────────────────────────────────────────
     state = P00_tripadi_rutva_visarga(state)
     state = apply_rule("8.3.59", state)   # s→ṣ after iṭ-i (in sya: iṣya)
@@ -3811,7 +3830,7 @@ def _derive_karmani_loT(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.1.101", state)
 
     # ── MERGE + TRIPĀḌĪ ───────────────────────────────────────────────────
-    _pada_merge(state)
+    state = _merge_pada(state)
     state = P00_tripadi_rutva_visarga(state)
     state = apply_rule("8.4.68", state)
 

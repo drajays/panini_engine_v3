@@ -202,7 +202,7 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
             # well-formed.
             i += 1
             continue
-        if ch in AC_DEV:
+        if ch in AC_DEV or ch in "MH":  # M anusvāra, H visarga: ayogavāhas inside a stem (saMSaya, duHKa)
             varnas.append(mk(ch))
             i += 1
             continue

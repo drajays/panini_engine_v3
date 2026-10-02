@@ -25,6 +25,8 @@ def _matches(state: State) -> bool:
     pr   = state.terms[-1]
     if "anga" not in anga.tags or "ghi" not in anga.tags:
         return False
+    if "strīliṅga" in anga.tags:
+        return False  # astriyām: the feminine is excluded (मत्या, भक्त्या — yaṇ by 6.1.77), only masc / neuter take nā
     if "sup" not in pr.tags:
         return False
     if pr.meta.get("upadesha_slp1") != "wA":
