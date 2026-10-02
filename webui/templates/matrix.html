@@ -23,6 +23,14 @@
 <div class="panel">
   <h1>चतुर्विंशतिकोष्ठ-प्रतिमानम्</h1>
 
+  
+  <div style="margin: 16px 0; padding: 12px; background: var(--bg-subtle); border-radius: 6px; display:flex; align-items:center; gap:12px;">
+    <strong>शब्दः (Stem Search):</strong>
+    <input type="text" id="shabda-search" list="shabda-list" placeholder="राम / rama / hari..." autocomplete="off" style="padding: 6px 10px; width: 300px; font-size: 1rem; border: 1px solid var(--line);">
+    <datalist id="shabda-list"></datalist>
+    <span class="muted" style="font-size:12px;">Select from 9007 dictionary stems to auto-fill below.</span>
+  </div>
+
   <!-- शीघ्र-उदाहरणम् preset strip -->
   <div class="preset-strip">
     <span class="preset-label">शीघ्र-उदाहरणम्:</span>
@@ -195,6 +203,43 @@ document.querySelectorAll(".preset-btn").forEach(btn => {
 });
 
 document.getElementById("load-btn").addEventListener("click", loadMatrix);
+
+/* ── Dictionary Search ── */
+let SHABDA_INDEX = [];
+fetch("/static/shabda_index.json").then(r => r.json()).then(data => {
+  SHABDA_INDEX = data;
+  const dl = document.getElementById("shabda-list");
+  // We can't render all 9000 at once efficiently in datalist on some browsers, but mostly it works.
+  // We will just put them in the datalist.
+  let frag = document.createDocumentFragment();
+  data.forEach(d => {
+    let opt = document.createElement("option");
+    // value is the visible text when selected, we use Dev + slp + artha so it's searchable
+    opt.value = d.w;
+    opt.textContent = `${d.slp} — ${d.l === 'pulliṅga' ? 'पुं' : (d.l === 'strīliṅga' ? 'स्त्री' : 'नपुं')} — ${d.a || ''} ${d.ae || ''}`;
+    frag.appendChild(opt);
+  });
+  dl.appendChild(frag);
+});
+
+document.getElementById("shabda-search").addEventListener("input", (e) => {
+  const val = e.target.value.trim();
+  const match = SHABDA_INDEX.find(d => d.w === val);
+  if (match) {
+    // auto-fill and load
+    document.getElementById("stem").value = match.slp;
+    document.getElementById("linga").value = match.l;
+    onSchemeChange && onSchemeChange(); // update UI if function exists
+    
+    // De-focus search box so mobile keyboard closes
+    e.target.blur();
+    
+    // trigger load
+    loadMatrix();
+  }
+});
+
+
 document.addEventListener("DOMContentLoaded", loadMatrix);
 
 
