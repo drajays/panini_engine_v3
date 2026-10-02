@@ -11,16 +11,18 @@ writes `.audit/gita_gaps.json`). The annotation is a hypothesis; the engine is t
 | etad / kim (7.2.103 apavāda, 7.2.106, 7.2.113 idam-only) | 6259 | 1039 | 174 |
 | dhātu homonym rows resolved by pada | 6279 | 1062 | 131 |
 
-## Open clusters (by size)
-1. ~~Enclitic मे/ते/मा/त्वा/नः/वः~~ **done** (8.1.20–26, `pipelines/enclitic.py`, `tools/reader_enclitic.py`).
-   Known limits: 8.1.25 *yukta* with a paśyārtha verb is input, not derived (needs kāraka analysis);
-   8.1.19 (āmantrita) and accent are not modelled; the reader places pāda boundaries by syllable midpoint
-   (flagged `boundary_approx` when the text has sandhi the annotation lacks); verses whose annotation
-   cannot be aligned to the text get no enclitic verdict. Needs the context model, not a table.
-2. **idam** (~100: अयम्/इदम्/एनम्/इमम्): 7.2.108–112 are placeholders, and the vendored data holds only padaccheda
-   and anuvṛtti for them. Needs a cited Kāśikā/SK text first (Art. 14), then the ādeśa mechanics. एनम् is 2.4.34 (etad/idam → एन).
-3. **Feminine tyadādi** (का/सा/एषा/इयम्): derive() has no tāp (4.1.4) path for pronoun stems.
-4. **tad neuter nom. plural** gives ते (should be तानि): 7.1.20 śi missing for tyadādi neuter 1-3.
-5. Tiṅanta tails: यान्ति (याअन्ति), शृणु, विदुः, उच्यते, आहुः (ब्रू→आह 2.4.53), जायते, उवाच (vac samprasāraṇa in liṭ).
-6. 131 unresolved tags: "no vibhakti/vacana" (111), taddhita stems.
-7. as laṭ/loṭ 2sg: एधि needs real 6.4.119 (placeholder today).
+## Open clusters (561 differing, 131 unresolved; 421 distinct pairs — a long tail)
+1. **vid / brū / vac suppletions (~35 words):** विदुः, वेद, वेत्थ (3.4.83 वा, ṇal-ādi in laṭ); आहुः, आह, प्राहुः (3.4.84 brū → āh);
+   उवाच (6.1.17 samprasāraṇa in liṭ), उच्यते (vac, not brū + yak). Needs the liṭ tiṅ list (3.4.82) reused for laṭ.
+2. **शृणु (12):** śru + śnu with śṛ (3.1.74) in the svādi/bhvādi homonym pair; the reader picks the bhvādi row.
+3. **कश्चित् / कश्चन / केचित् (~17):** the annotation's stem is किञ्चित् (neuter), not kim + cit; not derivable from that stem.
+4. **Sandhi-boundary / annotation model:** मधुसूदन (8.3.110 list), कथम् → किम्+थम् (taddhita), आपः (ap-stem, nitya bahuvacana),
+   भ्रुवोः (6.4.77/83), सखा (7.1.92–93 arms), स्त्रियः (6.4.79), आशीः / भीः (8.2.36–38), जहि (6.4.36).
+5. **Verb tail:** कल्पते (kLp), द्रक्ष्यसि (dṛś), लिप्यते (lip), निबध्नन्ति (nasal drop 6.4.24 before śnā), सिद्ध्यति.
+6. **131 unresolved tags:** "no vibhakti/vacana" (111) — the annotation itself is incomplete; taddhita / kṛdanta stems.
+7. **8.1.25 (yukta with a paśyārtha verb)** is an input, not derived (needs kāraka analysis); accent / 8.1.19 are not modelled.
+8. **adas** feminine and the remaining feminine i/u ṅit forms (मतये/मत्यै, मतेः/मत्याः via 1.4.6) are not done.
+
+## Inputs the engine cannot read from a string (tags the *caller* proposes, the engine verifies)
+`anvadesha` (2.4.32: a second mention), `ugit` (matup / vatup / śatṛ origin), `yukta` + `paSyArTa` (8.1.24–25), pāda boundaries.
+The reader proposes each from the text and keeps it only if the derivation reproduces the attested form (Art. 17).
