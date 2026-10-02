@@ -318,6 +318,11 @@ def _bhave_atmanepada_tin_after_lopa(state: State, *, kartari_atmane: bool = Fal
 _U_VIKARANA_GANAS = (5, 8)
 
 
+def _u_vikarana(state: State, gana: int) -> bool:
+    """An u-vikaraṇa is on the tape: gaṇa 5 / 8 by their sūtras, or the śnu of 3.1.74 (bhvādi श्रु → शृ + श्नु)."""
+    return gana in _U_VIKARANA_GANAS or any(t.meta.get("3_1_74_done") for t in state.terms)
+
+
 def _samprasarana(state: State) -> State:
     """6.1.15 वचिस्वपियजादीनां किति / 6.1.16 ग्रहिज्या… ङिति च mark the yaṇ;
     1.1.45 makes it ik, 6.1.108 सम्प्रसारणाच्च takes the next vowel, 6.4.2 हलः
@@ -374,6 +379,14 @@ def _apply_vikarana(state: State, gana: int) -> State:
         # 3.1.68 kartari śap
         state.meta["3_1_68_kartari_recipe"] = True
         state = apply_rule("3.1.68", state)
+        # 3.1.74 श्रुवः शृ च: श्रु takes śnu (not śap) and becomes śṛ — scoped to श्रु in its own cond(); then the
+        # same tail as the svādi śnu roots (śnu is śit, apit → ṅidvat by a second 1.2.4 pass: शृणुतः, शृण्वन्ति).
+        state = apply_rule("3.1.74", state)
+        if any(t.meta.get("3_1_74_done") for t in state.terms):
+            state = apply_rule("3.4.113", state)
+            state = P00_lashakvataddhite_it_lopa_chain(state)
+            state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
+            return apply_rule("1.2.4", state)
         # śap is śit — 3.4.113 now marks both śap (as śit) and ti (tiṅ) sārvadhatuka.
         state = apply_rule("3.4.113", state)
         # Process śap it-markers: 1.3.3 (p→it) + 1.3.8 (ś→it) + 1.3.9 (lopa) + 1.3.10
@@ -1278,7 +1291,7 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: pada + sandhi ─────────────────────────────────────────────────
     state = apply_rule("1.4.14", state)
     # 6.1.77 iko yaṇ aci — tanādi gana 8: vikaraṇa-u + AC-initial tiṅ (tan+u+ant → tanvant)
-    if gana in _U_VIKARANA_GANAS:
+    if _u_vikarana(state, gana):
         state = apply_rule("6.4.87", state)   # हुश्नुवोः सार्वधातुके (apavāda of 6.4.77)
         state = apply_rule("6.1.77", state)
     state = apply_rule("6.1.78", state)
@@ -2168,7 +2181,7 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: pada + sandhi ─────────────────────────────────────────────────
     state = apply_rule("1.4.14", state)
     # 6.1.77 iko yaṇ aci — only for tanādi (gana 8): vikaraṇa-u + antu (tanu+antu → tanvantu)
-    if gana in _U_VIKARANA_GANAS:
+    if _u_vikarana(state, gana):
         state = apply_rule("6.4.87", state)   # हुश्नुवोः सार्वधातुके (apavāda of 6.4.77)
         state = apply_rule("6.1.77", state)
     # 6.1.78 (eco'yavAyAvaH) must run BEFORE 6.1.97 below: it needs the śap

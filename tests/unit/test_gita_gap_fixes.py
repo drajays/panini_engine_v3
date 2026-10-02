@@ -117,3 +117,23 @@ def test_plIhan_is_not_the_root_han_6_4_12():
     assert [sub("plIhan", v, n).flat_dev() for v, n in [(1, 1), (1, 2), (2, 1)]] == ["प्लीहा", "प्लीहानौ", "प्लीहानम्"]
     assert [sub("vftrahan", v, n).flat_dev() for v, n in [(1, 1), (1, 2), (2, 1)]] == ["वृत्रहा", "वृत्रहणौ", "वृत्रहणम्"]
     assert sub("Satruhan", 1, 2, han_dhatu=True).flat_dev() == "शत्रुहणौ"      # a han-compound 3.2.87 does not name: input
+
+
+SRU = {  # श्रु (bhvādi): 3.1.74 श्नु + शृ; table order 1sg 1du 1pl 2sg 2du 2pl 3sg 3du 3pl
+    "laT": ["शृणोमि", "शृणुवः", "शृणुमः", "शृणोषि", "शृणुथः", "शृणुथ", "शृणोति", "शृणुतः", "शृण्वन्ति"],
+    "laG": ["अशृणवम्", "अशृणुव", "अशृणुम", "अशृणोः", "अशृणुतम्", "अशृणुत", "अशृणोत्", "अशृणुताम्", "अशृण्वन्"],
+}
+
+
+@pytest.mark.parametrize("lak", list(SRU))
+def test_sru_3_1_74_snu(lak):
+    got = [tin("BvAdi_01_1092", lak, "kartari", p, n).flat_dev() for p in (1, 2, 3) for n in (1, 2, 3)]
+    # the table also lists the saṃyoga-free alternatives शृण्वः / शृण्मः (6.4.107) for vas / mas
+    ok = [g == w or (g, w) in {("शृणुवः", "शृणुवः"), ("अशृणुव", "अशृणुव")} for g, w in zip(got, SRU[lak])]
+    assert all(ok), [(g, w) for g, w, o in zip(got, SRU[lak], ok) if not o]
+
+
+def test_sru_loT_2sg_and_3pl():
+    assert tin("BvAdi_01_1092", "loT", "kartari", 2, 1).flat_dev() == "शृणु"
+    assert tin("BvAdi_01_1092", "loT", "kartari", 3, 3).flat_dev() == "शृण्वन्तु"
+    assert tin("BvAdi_01_1092", "liG", "kartari", 3, 1).flat_dev() == "शृणुयात्"
