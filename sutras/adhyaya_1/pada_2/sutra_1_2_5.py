@@ -81,6 +81,7 @@ def act(state: State) -> State:
     if i is None:
         return state
     state.terms[i].tags.add("kngiti")
+    state.terms[i].tags.add("kit")      # the saṃjñā is *kit* (6.1.15 samprasāraṇa, 6.4.98 … read it), not merely kṅit
     state.samjna_registry["1.2.5_asamyogal_lit_kit"] = True
     return state
 

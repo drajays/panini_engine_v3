@@ -327,6 +327,19 @@ def _samprasarana(state: State) -> State:
     return state
 
 
+def _lit_samprasarana(state: State) -> State:
+    """liṭ: 6.1.15 वचिस्वपियजादीनां किति only (not the ṅiti list 6.1.16: वय् stays) → 1.1.45 → 6.1.108 → 6.4.2.
+    वे / व्ये / ह्वे / श्वि wait for their own ādeśas (see sutra_6_1_17.NOT_YET_DERIVED)."""
+    from sutras.adhyaya_6.pada_1.sutra_6_1_17 import NOT_YET_DERIVED
+
+    root = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+    if root is not None and (root.meta.get("upadesha_slp1") or "").strip() in NOT_YET_DERIVED:
+        return state
+    for sid in ("6.1.15", "1.1.45", "6.1.108", "6.4.2"):
+        state = apply_rule(sid, state)
+    return state
+
+
 def _sit_adesha(state: State) -> State:
     """शिति: the dhātu before a śit vikaraṇa — 7.3.74 शमामष्टानां दीर्घः श्यनि,
     7.3.75 ष्ठिवुक्लम्याचमां शिति, 7.3.76 क्रमः परस्मैपदेषु, 7.3.77 इषुगमियमां छः,
@@ -764,6 +777,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         # ── iṭ path: iṭ → dvitva → vuk (6.4.88 needs abhyāsa for liṭ context) ──
         if lit_adesha != "Tal":          # thal is pit (1.1.56), not kit
             state = apply_rule("1.2.5", state)
+        state = _lit_samprasarana(state)  # 6.1.15 वचिस्वपियजादीनां किति: वच् → उच् before a kit ending (ऊचिव, ईजिम)
         state.meta["liT_krsrbhr_recipe"] = True
         state = apply_rule("7.2.13", state)
         state = apply_rule("7.2.63", state)   # ऋतो भारद्वाजस्य: जहर्थ
@@ -780,6 +794,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("6.1.4", state)
         state.meta["sandhi_6_1_5_recipe"] = True
         state = apply_rule("6.1.5", state)
+        state = apply_rule("6.1.17", state)   # लिट्यभ्यासस्योभयेषाम्
         # 7.4.60 halādiḥ śeṣaḥ — trim CVC abhyāsa to CV (e.g. paW → pa)
         state = apply_rule("7.4.60", state)
         state = apply_rule("7.4.62", state)   # कुहोश्चुः (जहार, जघ्रौ)
@@ -798,12 +813,14 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         # 1.2.5 असंयोगाल्लिट् कित् does not make them kit.
         if lit_adesha not in ("Ral", "Tal"):
             state = apply_rule("1.2.5", state)
+        state = _lit_samprasarana(state)      # 6.1.15: उच् / ईज् before a kit ending (ऊचतुः, ईजतुः, ऊहुः)
         state.meta["liT_dvitva_recipe"] = True
         state = apply_rule("6.1.45", state)   # आदेच उपदेशेऽशिति: ग्लै → ग्ला, धे → धा
         state = apply_rule("6.1.8", state)
         state = apply_rule("6.1.4", state)
         state.meta["sandhi_6_1_5_recipe"] = True
         state = apply_rule("6.1.5", state)
+        state = apply_rule("6.1.17", state)   # लिट्यभ्यासस्योभयेषाम्: the abhyāsa of वच् / स्वप् / यजादि: उ-वच्, इ-यज्, सु-स्वप्
         # 7.4.60 halādiḥ śeṣaḥ — trim CVC abhyāsa to CV (e.g. paW → pa)
         state = apply_rule("7.4.60", state)
         state = apply_rule("7.4.62", state)   # कुहोश्चुः (जहार, जघ्रौ)
@@ -2366,6 +2383,7 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     _tin = _select_tin_adesha("laT", "parasmai", purusha, vacana)
     state = P00_parasmai_tin_adesha(state, _tin)
     state = apply_rule("3.4.83", state)     # विदो लटो वा: optional ṇalādi for vid (scoped to vid in its own cond)
+    state = apply_rule("3.4.84", state)     # ब्रुवः पञ्चानामादित आहो ब्रुवः: brū → āh with the first five (scoped to brū)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
     state = apply_rule("3.4.113", state)
     state = apply_rule("1.2.4", state)
@@ -2402,6 +2420,8 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     # the still-separate dhātu/tiṅ terms, so it runs pre-merge like 8.2.7's
     # own pre-merge branch; a no-op for अद्/अस्/ब्रू (none start with द्).
     state = apply_rule("8.2.32", state)
+    state = apply_rule("8.2.1", state)    # पूर्वत्रासिद्धम्: open the tripāḍī so the pre-merge 8.2.35 can see the separate Terms
+    state = apply_rule("8.2.35", state)   # आहस्थः — आह् + थल्: ह् → थ् (आत्थ); a no-op unless 3.4.84 gave आह्
     state = _merge_pada(state)
     state = apply_rule("8.2.1", state)
     state = P00_tripadi_8_4_55_visarga(state)

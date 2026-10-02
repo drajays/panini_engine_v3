@@ -76,3 +76,44 @@ def test_3_4_83_only_for_vid_jnane():
     run = lambda: tin("Adadi_02_0044", "laT", "kartari", 3, 3)           # yA: not vid
     assert [b.surface_dev for b in explore(run)] == ["यान्ति"]
     assert {b.surface_dev for b in explore(lambda: tin("Adadi_02_0059", "laT", "kartari", 3, 3))} == {"विदन्ति", "विदुः"}
+
+
+def test_bru_3_4_84_ah_with_first_five():
+    from engine.vikalpa import choose, explore
+    d = "Adadi_02_0039"
+    cells = [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)]
+    with choose({"3.4.84": False}):
+        assert [tin(d, "laT", "kartari", p, n).flat_dev() for p, n in cells] == \
+            ["ब्रवीमि", "ब्रूवः", "ब्रूमः", "ब्रवीषि", "ब्रूथः", "ब्रूथ", "ब्रवीति", "ब्रूतः", "ब्रुवन्ति"]
+    with choose({"3.4.84": True}):   # first five only: tha, mip, vas, mas keep their ordinary forms
+        assert [tin(d, "laT", "kartari", p, n).flat_dev() for p, n in cells] == \
+            ["ब्रवीमि", "ब्रूवः", "ब्रूमः", "आत्थ", "आहथुः", "ब्रूथ", "आह", "आहतुः", "आहुः"]
+    assert {b.surface_dev for b in explore(lambda: tin(d, "laT", "kartari", 3, 3))} == {"ब्रुवन्ति", "आहुः"}
+
+
+def test_8_2_35_only_before_th_initial():  # आहथुः keeps ह् (अथुस् is vowel-initial); आत्थ needs 8.2.35 then 8.4.55
+    from engine.vikalpa import choose
+    with choose({"3.4.84": True}):
+        s = tin("Adadi_02_0039", "laT", "kartari", 2, 1)
+    f = [r["sutra_id"] for r in s.trace if r.get("status") == "APPLIED"]
+    assert s.flat_dev() == "आत्थ" and "8.2.35" in f and f.index("3.4.84") < f.index("8.2.35")
+
+
+LIT = {  # root upadeśa → liṭ 3sg / 3du / 3pl  (ashtadhyayi.com dhātu table)
+    "Adadi_02_0058": ["उवाच", "ऊचतुः", "ऊचुः"],          # vac: 6.1.17 abhyāsa, 6.1.15 root before kit
+    "BvAdi_01_1157": ["इयाज", "ईजतुः", "ईजुः"],          # yaj
+    "Adadi_02_0063": ["सुष्वाप", "सुषुपतुः", "सुषुपुः"],  # svap
+    "BvAdi_01_1159": ["उवाह", "ऊहतुः", "ऊहुः"],          # vah
+    "BvAdi_01_1164": ["उवाद", "ऊदतुः", "ऊदुः"],          # vad
+}
+
+
+@pytest.mark.parametrize("d", list(LIT))
+def test_lit_samprasarana_6_1_15_6_1_17(d):
+    assert [tin(d, "liT", "kartari", 3, n).flat_dev() for n in (1, 2, 3)] == LIT[d]
+
+
+def test_plIhan_is_not_the_root_han_6_4_12():
+    assert [sub("plIhan", v, n).flat_dev() for v, n in [(1, 1), (1, 2), (2, 1)]] == ["प्लीहा", "प्लीहानौ", "प्लीहानम्"]
+    assert [sub("vftrahan", v, n).flat_dev() for v, n in [(1, 1), (1, 2), (2, 1)]] == ["वृत्रहा", "वृत्रहणौ", "वृत्रहणम्"]
+    assert sub("Satruhan", 1, 2, han_dhatu=True).flat_dev() == "शत्रुहणौ"      # a han-compound 3.2.87 does not name: input

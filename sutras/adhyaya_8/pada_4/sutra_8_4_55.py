@@ -36,6 +36,8 @@ _JHAL_CAR: dict[str, str] = {
     "D": "t", "d": "t",   # dh/d → t
     "B": "p", "b": "p",   # bh/b → p
     "h": "k",              # h → k
+    # the voiceless aspirates are jhal too: खरि परे they lose the aspiration (आथ्+थ → आत्थ, 8.2.35 + this)
+    "K": "k", "C": "c", "W": "w", "T": "t", "P": "p",
 }
 
 

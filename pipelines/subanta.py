@@ -366,6 +366,10 @@ def derive_anya_pullinga(vibhakti: int, vacana: int) -> State:
     return derive("anya", vibhakti, vacana, linga="pulliṅga")
 
 
+# 3.2.87 ब्रह्मभ्रूणवृत्रेषु क्विप् (हनः): the upapadas the sūtra names, SLP1.
+_KVIP_HAN_UPAPADA_3_2_87 = ("brahma", "BrURa", "vftra")
+
+
 # Structural step in ``run_subanta_post_4_1_2`` (not a sūtra id).
 PADA_MERGE_STEP = "__PADA_MERGE__"
 
@@ -685,12 +689,17 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
            autonomous_scanner: bool = False,
            anvadesha: bool = False,
            ugit: bool = False,
+           han_dhatu: bool = False,
            ) -> State:
     """
     Aṣṭādhyāyī-kram pipeline.  Returns final state with complete trace.
 
     ``ugit`` — the stem is *ugit* (it came from matup / vatup / śatṛ / ḍavatu …: भवत्, गुणवत्, पचत्); tags the stem so
     **7.1.70** gives it nuṃ. Derivation history is not in a stem string, so this is an input, like ``anvadesha``.
+
+    ``han_dhatu`` — the stem ends in the *root* हन् (a kvip compound, 3.2.87: वृत्रहन्, शत्रुहन्): 6.4.12 limits its upadhā-dīrgha
+    to śi / su. Whether a final ``han`` is the root is lexical (प्लीहन् is not); the three upapadas 3.2.87 itself names
+    (ब्रह्म-, भ्रूण-, वृत्र-) are recognised automatically, any other compound passes this.
 
     ``anvadesha`` — the stem is in *anvādeśa* (2.4.32: a second mention, new predicate); tags the stem so
     **2.4.34** can give इदम् / एतद् → एन (एनम्, एनेन, एनयोः).  A fact about the sentence, so an input.
@@ -716,6 +725,8 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
         s.terms[0].tags.add("anvadesha")
     if ugit:
         s.terms[0].tags.add("ugit")
+    if han_dhatu or (stem_slp1.endswith("han") and stem_slp1[:-3].endswith(_KVIP_HAN_UPAPADA_3_2_87)):
+        s.terms[0].tags.add("han_dhatu")
     # sakhī-class i-stem masculine: tag and set 7.1.92/7.1.93 arms
     _SAKHI_CLASS = {"sakhI", "sakhi"}
     if stem_slp1.strip() in _SAKHI_CLASS and linga == "pulliṅga":

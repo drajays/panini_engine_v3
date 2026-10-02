@@ -30,6 +30,12 @@ from engine.state import State
 from phonology    import mk
 
 
+def _niyama_stem(anga) -> bool:
+    """6.4.12's four: -in, -han (the root हन्), -pūṣan, -aryaman."""
+    flat = "".join(v.slp1 for v in anga.varnas)
+    return flat.endswith(("in", "pUzan", "aryaman")) or (flat.endswith("han") and "han_dhatu" in anga.tags)
+
+
 def _matches(state: State) -> bool:
     if len(state.terms) < 2:
         return False
@@ -53,8 +59,7 @@ def _matches(state: State) -> bool:
         return False
     # 6.4.12 इन्हन्पूषार्यम्णां शौ (niyama): for these four stems the dīrgha is only before śi (and, by 6.4.13, su):
     # योगिनौ, वृत्रहणौ, पूषणौ, अर्यमणौ — not *योगीनौ*.
-    flat = "".join(v.slp1 for v in anga.varnas)
-    if flat.endswith(("in", "han", "pUzan", "aryaman")) and (pr.meta.get("upadesha_slp1") or "").strip() != "Si":
+    if _niyama_stem(anga) and (pr.meta.get("upadesha_slp1") or "").strip() != "Si":
         return False
     if anga.varnas[-2].slp1 not in {"a", "i", "u"}:
         return False

@@ -17,7 +17,6 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology import mk
 
-_ENDINGS = ("in", "han", "pUzan", "aryaman")      # 6.4.12's four: in, han, pūṣan, aryaman
 _LONG = {"a": "A", "i": "I"}
 
 
@@ -32,7 +31,8 @@ def _site(state: State):
     if (sup.meta.get("upadesha_slp1") or "").strip() != "s~" or anga.meta.get("6_4_13_done"):
         return None
     flat = "".join(v.slp1 for v in anga.varnas)
-    if not flat.endswith(_ENDINGS) or len(anga.varnas) < 3 or anga.varnas[-2].slp1 not in _LONG:
+    named = flat.endswith(("in", "pUzan", "aryaman")) or (flat.endswith("han") and "han_dhatu" in anga.tags)
+    if not named or len(anga.varnas) < 3 or anga.varnas[-2].slp1 not in _LONG:
         return None
     return anga
 

@@ -20,17 +20,10 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.sthanivat import TING_PRATYAYATVA, adesha_substitute_varnas
+from sutras.adhyaya_3.pada_4.nal_adi_common import ADESHA, lat_parasmai_tin, replace_tin
 
 _ROOT = "vida~"
 _GANA_JNANA = 2  # adādi vid (jñāne); not the divādi sattāyām or the tudādi lābhe vid
-_ADESHA = {"tip": "Ral", "tas": "atus", "Ji": "us", "sip": "Tal", "Tas": "aTus", "Ta": "a",
-           "mip": "Ral", "vas": "va", "mas": "ma"}
-_IT_AT = {"Ral": [(0, "it_candidate_cutu"), (2, "it_candidate_halantyam")], "Tal": [(2, "it_candidate_halantyam")]}
-
-
-def _ident(t) -> str:
-    return (t.meta.get("upadesha_slp1") or "").strip()   # the tiṅ ādeśa 3.4.78 put on the tape: tip, tas, Ji …
 
 
 def _is_vid(state: State) -> bool:
@@ -39,12 +32,7 @@ def _is_vid(state: State) -> bool:
 
 
 def _targets(state: State) -> list[int]:
-    if not _is_vid(state):
-        return []
-    return [i for i, t in enumerate(state.terms)
-            if "pratyaya" in t.tags and "tin_adesha_3_4_78" in t.tags and not t.meta.get("3_4_83_done")
-            and (t.meta.get("source_lakara_upadesha") or "").strip() == "laT"
-            and "parasmaipada" in t.tags and _ident(t) in _ADESHA]
+    return lat_parasmai_tin(state, ADESHA) if _is_vid(state) else []
 
 
 def cond(state: State) -> bool:
@@ -53,16 +41,7 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     for i in _targets(state):
-        term = state.terms[i]
-        before = _ident(term)
-        form = _ADESHA[before]
-        # 1.1.56 sthānivadādeśo'nalvidhau: the ādeśa inherits the sthānin's it-saṃjñā — ṇal/ṭhal replace the pit tip/sip/mip
-        # (so 1.2.4 does not make them kṅit: वेद, वेत्थ), atus/aṭhus/us/a/va/ma replace apit endings (kṅit: विदतुः).
-        adesha_substitute_varnas(term, form, state, sutra_id="3.4.83", gunadharmas=frozenset({TING_PRATYAYATVA}))
-        for idx, tag in _IT_AT.get(form, []):
-            term.varnas[idx].tags.add(tag)
-        term.meta["tin_before_3_4_83"] = before
-        term.meta["3_4_83_done"] = True
+        replace_tin(state, i, "3.4.83")
     return state
 
 
