@@ -355,5 +355,127 @@ function renderRules(rules) {
   document.getElementById("rules-content").innerHTML = html;
 }
 
+
+
+async function loadMatrix() {
+  const stem  = document.getElementById("stem").value.trim();
+  const linga = document.getElementById("linga").value;
+  const status = document.getElementById("load-status");
+
+  /* Highlight active preset button */
+  document.querySelectorAll(".preset-btn").forEach(b => {
+    b.classList.toggle("active", b.dataset.stem === stem && b.dataset.linga === linga);
+  });
+
+  status.innerHTML = '<span class="loading"></span> चतुर्विंशतिः कोष्ठाः व्युत्पाद्यन्ते…';
+  document.getElementById("rules-content").innerHTML = ""; // clear old rules
+
+  document.getElementById("matrix-info").style.display = "none";
+
+  try {
+    const r    = await fetch(`/api/matrix?stem=${encodeURIComponent(stem)}&linga=${encodeURIComponent(linga)}`);
+    const data = await r.json();
+    fillMatrix(data);
+    showMatrixInfo(data, stem, linga);
+    status.textContent = `सम्पन्नम् — ${escapeHtml(stem)}`;
+  } catch (e) {
+    status.textContent = "दोषः: " + e.message;
+  }
+}
+
+function fillMatrix(data) {
+  document.getElementById("matrix-head").textContent =
+    `कोष्ठः — ${data.stem}`;
+  document.querySelectorAll("#matrix td.cell").forEach(td => {
+    const key  = td.dataset.cell;
+    const cell = data.cells[key];
+    td.classList.remove("match", "mismatch", "error");
+    if (!cell) { td.innerHTML = "<span>—</span>"; return; }
+    if (cell.error) {
+      td.classList.add("error");
+      td.innerHTML = `<span class="muted" style="font-size:11px;">${escapeHtml(cell.error)}</span>`;
+      return;
+    }
+    const surface = cell.surface_dev || "—";
+    let html = `<span class="dev">${escapeHtml(surface)}</span>`;
+    if (cell.gold_dev !== null && cell.gold_dev !== undefined) {
+      if (cell.match) {
+        td.classList.add("match");
+      } else {
+        td.classList.add("mismatch");
+        html += `<span class="gold dev">स्वर्णम्: ${escapeHtml(cell.gold_dev)}</span>`;
+      }
+    }
+    td.innerHTML = html;
+    td.onclick = () => openCell(data.stem, td.dataset.v, td.dataset.vv, data.linga);
+  });
+}
+
+function showMatrixInfo(data, stem, linga) {
+  const infoDiv = document.getElementById("matrix-info");
+  infoDiv.style.display = "flex";
+
+  /* Stem class badge */
+  const preset = _PRESET_MAP[stem + "|" + linga];
+  const badge  = document.getElementById("stem-class-badge");
+  if (preset) {
+    badge.textContent = preset.class_dev;
+    badge.style.display = "inline";
+    const samjna = (preset.samjna_dev || []).join(" · ");
+    if (samjna) badge.title = samjna;
+  } else {
+    badge.style.display = "none";
+  }
+
+  /* Gold match pill */
+  const pill = document.getElementById("gold-pill");
+  if (data.has_gold) {
+    const all  = data.match_count === data.total_cells;
+    pill.textContent = `${data.match_count}/${data.total_cells} स्वर्ण-मिलितम्`;
+    pill.className   = "gold-pill " + (all ? "gold-pill-all" : "gold-pill-partial");
+    pill.style.display = "inline";
+  } else {
+    pill.style.display = "none";
+  }
+
+  /* Showcase link — only for SamBu */
+  const scLink = document.getElementById("showcase-link");
+  scLink.style.display = (stem === "SamBu") ? "inline" : "none";
+}
+
+async function openCell(stem, v, vv, linga) {
+  const panel = document.getElementById("cell-trace");
+  const head  = document.getElementById("cell-head");
+  panel.style.display = "block";
+  panel.scrollIntoView({ behavior: "smooth", block: "start" });
+  head.textContent = `${stem} — विभक्तिः ${v}, वचनम् ${vv}`;
+  document.getElementById("trace").innerHTML = '<li class="muted">लादयति…</li>';
+  document.getElementById("sutra-detail").innerHTML =
+    '<div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>';
+
+  const r = await fetch("/api/derive", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ stem, vibhakti: +v, vacana: +vv, linga: linga || "pulliṅga" }),
+  });
+  const data = await r.json();
+  document.getElementById("cell-result").innerHTML = `
+    <div class="result">
+      <div>
+        <div class="big-dev dev">${escapeHtml(data.surface_dev || "—")}</div>
+        <div class="slp1">${escapeHtml(data.surface_slp1)}</div>
+      </div>
+      <div class="stats">
+        <div>अवस्था: ${escapeHtml(data.phase)}</div>
+        <div>
+          <span>${data.stats.applied_count} प्रयुक्तानि</span>
+          <span>${data.stats.blocked_count} निवारितानि</span>
+          <span>${data.stats.skipped_count} अतिक्रान्तानि</span>
+        </div>
+      </div>
+    </div>`;
+  renderTrace(data.trace);
+}
+
 </script>
 {% endblock %}
