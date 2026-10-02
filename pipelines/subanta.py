@@ -209,6 +209,12 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
         # Skip unknown.
         i += 1
 
+    # आदेशप्रत्यययोः (8.3.59): the *s* of a stem is neither ādeśa nor pratyaya — पुस्तकम्, कुसुमम्, हिंसा keep it. The stem-final
+    # *s* of the as / is / us stems (मनस्, हविस्, चक्षुस्, विद्वस्, श्रेयस्) is itself a suffix s, so that one stays eligible.
+    for k, v in enumerate(varnas):
+        if v.slp1 == "s" and k < len(varnas) - 1:
+            v.tags.add("mula_prakrti_v")
+
     stem = Term(
         kind   = "prakriti",
         varnas = varnas,

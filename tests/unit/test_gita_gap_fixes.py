@@ -137,3 +137,11 @@ def test_sru_loT_2sg_and_3pl():
     assert tin("BvAdi_01_1092", "loT", "kartari", 2, 1).flat_dev() == "शृणु"
     assert tin("BvAdi_01_1092", "loT", "kartari", 3, 3).flat_dev() == "शृण्वन्तु"
     assert tin("BvAdi_01_1092", "liG", "kartari", 3, 1).flat_dev() == "शृणुयात्"
+
+
+def test_8_3_59_leaves_the_stems_own_s_alone():  # आदेशप्रत्यययोः: only an ādeśa / pratyaya s becomes ṣ
+    assert [sub("pustaka", v, n, linga="napuṃsaka").flat_dev() for v, n in [(1, 1), (7, 3)]] == ["पुस्तकम्", "पुस्तकेषु"]
+    assert sub("kusuma", 3, 1, linga="napuṃsaka").flat_dev() == "कुसुमेन"
+    assert sub("hiMsA", 1, 1, linga="strīliṅga").flat_dev() == "हिंसा"
+    assert sub("vasu", 7, 3).flat_dev() == "वसुषु"              # the sup's s still becomes ṣ
+    assert sub("havis", 3, 1, linga="napuṃsaka").flat_dev() == "हविषा"   # a stem-final s is the as/is/us suffix's: eligible
