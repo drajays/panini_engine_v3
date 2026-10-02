@@ -242,6 +242,12 @@ def derive_request(req: dict):
         c = TinantaCell(tag="", **fields)
         c.upasargas = list(c.upasargas or [])
         return derive(c.dhatu_id, c.lakara, c.prayoga, int(c.purusha), int(c.vacana), **c.derive_kwargs())
+    if req.get("kind") == "subanta" and req.get("context") and req.get("stem_slp1") in ("asmad", "yuzmad"):
+        from pipelines.enclitic import derive_in_context
+
+        c = req["context"]
+        return derive_in_context(req["stem_slp1"], int(req["vibhakti"]), int(req["vacana"]),
+                                 before=c["before"], after=c["after"])
     if req.get("kind") == "subanta":
         from pipelines.subanta import derive
 
@@ -323,6 +329,24 @@ def karaka_tree(words: list[dict]) -> dict:
 
 # ── Verse assembly ────────────────────────────────────────────────────────
 
+def _enclitic_pass(lines: list[str], sentences: dict[str, list[dict]]) -> None:
+    """yuṣmad / asmad words are judged in their pāda by 8.1.20–26 (tools.reader_enclitic)."""
+    from tools import reader_enclitic as enc
+
+    words = [w for ws in sentences.values() for w in ws]
+    todo = [w for w in words if (w["engine"].get("request") or {}).get("stem_slp1") in enc._PRONOUNS]
+    pds = enc.padas(lines, words) if todo else None
+    if not pds:
+        return
+    for w in todo:
+        ctx = enc.context_for(pds, w)
+        req = w["engine"]["request"]
+        v = enc.judge(req, dev_to_slp1(w["word_dev"]), [ctx]) if ctx else None
+        if v:
+            w["engine"].update(v)
+            w["engine"]["request"] = {**req, "context": ctx}
+
+
 def verse(uid: str, chapter: str, sloka: str) -> dict:
     rows = _rows(uid).get((chapter, sloka))
     if rows is None:
@@ -347,6 +371,8 @@ def verse(uid: str, chapter: str, sloka: str) -> dict:
         w["engine"] = verify(kind, tag, dev_to_slp1(word_dev))
         w["kosha"] = _kosha.lookup(word_dev, limit=3)
         sentences.setdefault(str(r.get("sentno")), []).append(w)
+
+    _enclitic_pass(_slokas(uid).get((chapter, sloka), []), sentences)
 
     out_sents, counts = [], {"derived": 0, "differs": 0, "error": 0, "unresolved": 0, "not_attempted": 0}
     for sentno, words in sentences.items():

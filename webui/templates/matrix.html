@@ -177,10 +177,13 @@ async function loadRules() {
   
   try {
     const r = await fetch(`/api/matrix/rules?stem=${encodeURIComponent(stem)}&linga=${encodeURIComponent(linga)}`);
+    if (!r.ok) {
+      throw new Error(`API त्रुटिः (${r.status}): कृपया सर्वर पुनः चालयतु (Restart server)`);
+    }
     const data = await r.json();
     renderRules(data.rules);
   } catch (e) {
-    rc.innerHTML = '<div class="error">दोषः: ' + e.message + '</div>';
+    rc.innerHTML = '<div class="error" style="color:var(--danger)">दोषः: ' + e.message + '</div>';
   }
 }
 
