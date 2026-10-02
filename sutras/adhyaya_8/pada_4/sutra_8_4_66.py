@@ -84,7 +84,7 @@ def _imam_me_prakriya_31(state: State) -> bool:
         return False
     if not t0.meta.get("prakriya_31_imam_first_udAtta_note"):
         return False
-    if not t1.meta.get("prakriya_31_me_anudAtta_from_8122"):
+    if t1.meta.get("anudAtta_adesha_from") != "8.1.22":
         return False
     if state.samjna_registry.get("prakriya_31_me_svarita_locus"):
         return False

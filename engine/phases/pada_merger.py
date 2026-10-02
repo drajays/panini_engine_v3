@@ -99,9 +99,15 @@ def pada_merge(state: State) -> None:
     if keep_linga:
         tags.add(keep_linga)
 
+    # vibhakti / vacana saṃjñā names stamped by 4.1.2 stay readable on the pada (8.1.20–26)
+    tags |= {g for t in terms for g in t.tags if g.startswith(("vib_", "vac_"))}
+
     dh = next((t for t in terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
-    pada = Term(kind="pada", varnas=all_varnas, tags=tags,
-                meta={"dhatu_upadesha": (dh.meta.get("upadesha_slp1") or "") if dh else ""})
+    pada_meta = {"dhatu_upadesha": (dh.meta.get("upadesha_slp1") or "") if dh else ""}
+    stem = next((t for t in terms if "prātipadika" in t.tags and t.meta.get("upadesha_slp1")), None)
+    if stem is not None:  # lexical identity of the stem survives the merge (pronoun ādeśas, 8.1.20–26)
+        pada_meta["stem_upadesha_slp1"] = stem.meta["upadesha_slp1"]
+    pada = Term(kind="pada", varnas=all_varnas, tags=tags, meta=pada_meta)
     state.terms = [pada]
 
     state.emit_structural(

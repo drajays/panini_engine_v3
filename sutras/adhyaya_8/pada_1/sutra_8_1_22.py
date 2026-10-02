@@ -1,54 +1,51 @@
 """
-8.1.22  तेमयावेकवचनस्य  —  ANUVADA (narrow ``prakriya_31``)
+8.1.22  तेमयावेकवचनस्य  —  VIDHI
 
-**Pāṭha (Kāśikā on *Aṣṭ*. 8.1.22):** *tem ayāvekavacasya* — *ādeśa* ``ते`` / ``मे``
-for ``युष्मद्`` / ``अस्मद्`` with certain *ṣaṣṭhī*–*caturthī*–*dvitīyā* *ekavacana*
-endings (here: ``मे`` after ``अस्मद्`` + ``ङस्``, recipe-narrow).
+एकवचने ṣaṣṭhī / caturthī (dvitīyā में 8.1.23 अपवाद) युष्मद्→ते, अस्मद्→मे।
 
-Narrow v3 (RV **इमं मे …** accent spine):
-  • Two-term demo: ``imam`` + ``me``; stamps ``meta['prakriya_31_me_anudAtta_from_8122']``
-    on ``terms[1]`` when ``prakriya_31_8_1_22_arm`` is True.
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com sūtra 8.1.22 
+  Source #2 — Kāśikā 8.1.22: ग्रामो वां स्वम् / ग्रामो वः स्वम् / ग्रामस्ते स्वम् / ग्रामस्त्वा पश्यति (as the sūtra)
+  Reference — ashtadhyayi.com sūtra-prayoga list (Kirātārjunīya, Bhaṭṭikāvya … attestations)
 
-No *svara* columns on ``Varna`` rows.
+Engine: ``cond`` reads Term tags only — the pada's saṃjñā-names ``vib_*`` / ``vac_*`` (4.1.2), the
+pronoun's lexical identity, and the adhikāras 8.1.17 / 8.1.18 (*padāt* … *apādādau*). The ādeśa
+replaces the whole pada (sarvādeśa, 1.1.55) and is anudātta (accent is not modelled).
 """
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
+from sutras.adhyaya_8.pada_1.enclitic_common import STHA_VIBHAKTI, replace, target
 from engine.state import State
 
+_ADESHA = {'yuzmad': 'te', 'asmad': 'me'}
 
-def _site(state: State) -> bool:
-    if len(state.terms) < 2:
-        return False
-    t1 = state.terms[1]
-    if "prakriya_31_asmad_me_demo" not in t1.tags:
-        return False
-    if t1.meta.get("upadesha_slp1") != "me":
-        return False
-    if t1.meta.get("prakriya_31_me_anudAtta_from_8122"):
-        return False
-    return True
+
+def _site(state: State):
+    i = target(state, "8.1.22")
+    if i is None:
+        return None
+    t = state.terms[i]
+    return i if (t.tags & STHA_VIBHAKTI and "vac_eka" in t.tags) else None
 
 
 def cond(state: State) -> bool:
-    return _site(state)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    if not _site(state):
-        return state
-    state.terms[1].meta["prakriya_31_me_anudAtta_from_8122"] = True
-    return state
+    i = _site(state)
+    return state if i is None else replace(state, i, "8.1.22", _ADESHA)
 
 
 SUTRA = SutraRecord(
     sutra_id="8.1.22",
-    sutra_type=SutraType.ANUVADA,
+    sutra_type=SutraType.VIDHI,
     text_slp1='temayAvekavacanasya',
     text_dev='तेमयावेकवचनस्य',
-    padaccheda_dev="ते / मे / एकवचनस्य",
-    why_dev="युष्मदस्मदोः एकवचनान्तयोः ते-मे-आदेशः (*prakriya_31*, मे-श्रुति)।",
-    anuvritti_from=(),
+    padaccheda_dev='ते-मयौ एकवचनस्य',
+    why_dev='एकवचनान्त षष्ठी/चतुर्थी युष्मद्-अस्मद् पद → ते/मे (द्वितीया में ८.१.२३ अपवाद)।',
+    anuvritti_from=("8.1.17", "8.1.18", "8.1.20"),
     cond=cond,
     act=act,
 )

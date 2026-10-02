@@ -45,7 +45,7 @@ def test_spine_order() -> None:
 def test_registry_and_meta() -> None:
     s = derive_imam_me_RV_prakriya_31()
     assert s.terms[0].meta.get("prakriya_31_imam_first_udAtta_note") is True
-    assert s.terms[1].meta.get("prakriya_31_me_anudAtta_from_8122") is True
+    assert s.terms[1].meta.get("anudAtta_adesha_from") == "8.1.22"
     assert s.samjna_registry.get("prakriya_31_me_svarita_locus") is True
 
 

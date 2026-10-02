@@ -164,18 +164,10 @@ def derive_dviz_am_laG() -> State:
 
 # 8) पदत्वम् — युष्माकम् → वस् (8.1.21) + रुँ (8.2.66) in tripāḍī
 def derive_yuSmAkam_vas() -> State:
-    pada = Term(
-        kind="prakriti",
-        varnas=list(parse_slp1_upadesha_sequence("yuSmAkam")),
-        tags={"pada", "prātipadika", "sarvanama"},
-        meta={"upadesha_slp1": "yuSmAkam", "subanta_pada": True},
-    )
-    s = State(terms=[pada], meta={"sthanivat_lesson_8_1_21": True}, trace=[])
-    s = _with_sthanivat(s)
-    s = apply_rule("8.1.21", s)
-    s = apply_rule("8.2.1", s)
-    s = apply_rule("8.2.66", s)
-    return s
+    """युष्माकम् (yuṣmad ṣaṣṭhī bahu, derived) → वस् by 8.1.21 after a preceding pada, then रुँ / विसर्ग."""
+    from pipelines.enclitic import derive_in_context
+
+    return derive_in_context("yuzmad", 6, 3, before=[{"slp1": "grAmaH", "vibhakti": 1}])
 
 
 __all__ = [

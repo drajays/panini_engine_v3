@@ -162,6 +162,10 @@ def act(state: State) -> State:
     if vv in _SARV:
         pratyaya.tags.add("sup_sarvanamasthana_eligible")
 
+    # Vibhakti / vacana saṃjñā-names for the pada (read by 8.1.20–26 via tags, never via coordinates).
+    from engine.vibhakti_names import vibhakti_vacana_tags
+    pratyaya.tags |= vibhakti_vacana_tags(vv)
+
     state.terms.append(pratyaya)
     return state
 

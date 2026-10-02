@@ -1,40 +1,32 @@
 """
-8.1.23  त्वामौ द्वितीयायाः  —  VIDHI (narrow *glass-box*)
+8.1.23  त्वामौ द्वितीयायाः  —  VIDHI
 
-**Pāṭha (ashtadhyayi-com ``data.txt`` i=81023):** *tvāmau dvitīyāyāḥ* — optional
-*ādeśa* of the accusative *padam* ``tvAm`` → ``tvA`` (and, in full *śāstra*,
-``mAm`` → ``mA``) when the *prayoga* satisfies *apādādau* (recipe-asserted here
-via ``state.meta['prakriya_23_apAda_adau_arm']``).
+द्वितीया-एकवचन युष्मद्→त्वा, अस्मद्→मा; ८.१.२२ का अपवाद (declared ``apavada_of``)।
 
-Engine:
-  • ``cond`` requires ``state.meta['prakriya_23_8_1_23_arm']`` and exactly one
-    ``prakṛti``/``prātipadika`` ``Term`` whose ``meta['upadesha_slp1']`` is
-    ``'tvAm'`` (lexical *pada* label — not *vibhakti* coordinates).
-  • ``act`` rewrites varṇas to ``tvA`` and records ``meta['8_1_23_tvA_adesha']``.
-  • If ``adhikara_stack`` already bears **8.1.18**, sets
-    ``meta['sarva_anudAtta_8_1_18']`` on that ``Term`` (*anudāttaṃ sarvam…*
-    *anuvāda* for this *corpus* slice).
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com sūtra 8.1.23 
+  Source #2 — Kāśikā 8.1.23: ग्रामो वां स्वम् / ग्रामो वः स्वम् / ग्रामस्ते स्वम् / ग्रामस्त्वा पश्यति (as the sūtra)
+  Reference — ashtadhyayi.com sūtra-prayoga list (Kirātārjunīya, Bhaṭṭikāvya … attestations)
+
+Engine: ``cond`` reads Term tags only — the pada's saṃjñā-names ``vib_*`` / ``vac_*`` (4.1.2), the
+pronoun's lexical identity, and the adhikāras 8.1.17 / 8.1.18 (*padāt* … *apādādau*). The ādeśa
+replaces the whole pada (sarvādeśa, 1.1.55) and is anudātta (accent is not modelled).
 """
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
-from engine.state import State, Term
-from phonology.varna import parse_slp1_upadesha_sequence
+from sutras.adhyaya_8.pada_1.enclitic_common import STHA_VIBHAKTI, replace, target
+from engine.state import State
+
+_ADESHA = {'yuzmad': 'tvA', 'asmad': 'mA'}
 
 
-def _site(state: State) -> int | None:
-    if not state.meta.get("prakriya_23_apAda_adau_arm"):
+def _site(state: State):
+    i = target(state, "8.1.23")
+    if i is None:
         return None
-    if len(state.terms) != 1:
-        return None
-    t0 = state.terms[0]
-    if t0.kind != "prakriti":
-        return None
-    if t0.meta.get("upadesha_slp1") != "tvAm":
-        return None
-    if t0.meta.get("8_1_23_tvA_adesha"):
-        return None
-    return 0
+    t = state.terms[i]
+    return i if ("vib_dvitiya" in t.tags and "vac_eka" in t.tags) else None
 
 
 def cond(state: State) -> bool:
@@ -42,17 +34,8 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    j = _site(state)
-    if j is None:
-        return state
-    t = state.terms[j]
-    t.varnas = list(parse_slp1_upadesha_sequence("tvA"))
-    t.meta["upadesha_slp1"] = "tvA"
-    t.meta["8_1_23_tvA_adesha"] = True
-    if any(e.get("id") == "8.1.18" for e in state.adhikara_stack):
-        t.meta["sarva_anudAtta_8_1_18"] = True
-    state.meta.pop("prakriya_23_apAda_adau_arm", None)
-    return state
+    i = _site(state)
+    return state if i is None else replace(state, i, "8.1.23", _ADESHA)
 
 
 SUTRA = SutraRecord(
@@ -60,9 +43,10 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='tvAmO dvitIyAyAH',
     text_dev='त्वामौ द्वितीयायाः',
-    padaccheda_dev="त्वामौ / द्वितीयायाः",
-    why_dev="अपादादौ त्वाम्-पदस्य त्वा-आदेशः (प्रक्रिया-२३, ग्लास-बॉक्स्)।",
-    anuvritti_from=("8.1.17",),
+    padaccheda_dev='त्व-मौ द्वितीयायाः',
+    why_dev='द्वितीयान्त एकवचन युष्मद्-अस्मद् पद → त्वा/मा (पदात् परम्, अपादादौ)।',
+    anuvritti_from=("8.1.17", "8.1.18", "8.1.20"),
+    apavada_of=("8.1.22",),
     cond=cond,
     act=act,
 )

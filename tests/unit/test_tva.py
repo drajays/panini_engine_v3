@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import apply_rule
 from engine.state import State
 
-from pipelines.tva import derive_tva_prakriya_23, _mk_tvAm_pada
+from pipelines.tva import derive_tva_prakriya_23
 
 
 def _fired_ids(state: State) -> list[str]:
@@ -33,22 +33,14 @@ def test_tva_prakriya_23_spine_and_anudAtta_meta() -> None:
     assert "8.1.23" in ids
     assert ids.index("8.1.18") < ids.index("8.1.23")
     t0 = s.terms[0]
-    assert t0.meta.get("8_1_23_tvA_adesha") is True
+    assert t0.meta.get("8_1_23_adesha_done") is True
     assert t0.meta.get("sarva_anudAtta_8_1_18") is True
 
 
-def test_8_1_23_skips_without_apAda_adau_arm() -> None:
-    s = State(terms=[_mk_tvAm_pada()], meta={}, trace=[])
-    s = apply_rule("8.1.18", s)
-    s1 = apply_rule("8.1.23", s)
-    assert s1.flat_slp1() == "tvAm"
-    assert not s1.terms[0].meta.get("8_1_23_tvA_adesha")
-
-
-def test_8_1_23_skips_without_adhikAra_8_1_18_for_anudAtta_flag() -> None:
-    s = State(terms=[_mk_tvAm_pada()], meta={}, trace=[])
-    s.meta["prakriya_23_apAda_adau_arm"] = True
-    s1 = apply_rule("8.1.23", s)
-    assert s1.flat_slp1() == "tvA"
-    assert s1.terms[0].meta.get("8_1_23_tvA_adesha") is True
-    assert s1.terms[0].meta.get("sarva_anudAtta_8_1_18") is not True
+def test_8_1_23_needs_the_adhikaras_and_a_preceding_pada() -> None:
+    # Without 8.1.17 / 8.1.18 on the stack the ādeśa has no licence, and a pada-initial tvām is untouched.
+    from pipelines.asmad_subanta import _derive
+    s = _derive("yuzmad", 2, 1, defer_tripadi=True)
+    assert apply_rule("8.1.23", s).flat_slp1() == "tvAm"
+    s = apply_rule("8.1.17", apply_rule("8.1.18", s))
+    assert apply_rule("8.1.23", s).flat_slp1() == "tvAm"  # no pada before it

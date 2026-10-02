@@ -67,20 +67,31 @@ def _merge_finish(s: State, *, need_tripadi: bool = False,
                   need_visarga: bool = False,
                   need_ns_drop: bool = False,
                   need_t_to_d: bool = False) -> State:
-    """Merge terms and run tripāḍī as needed."""
+    """Merge terms; run tripāḍī now, or leave it pending (``s.meta["_tripadi_pending"]``) when the
+    caller wants to apply 8.1.x first (8.1.x precedes 8.2.1)."""
     if len(s.terms) > 1:
         _pada_merge(s)
-    if need_tripadi or need_visarga or need_ns_drop or need_t_to_d:
+    flags = dict(need_tripadi=need_tripadi, need_visarga=need_visarga,
+                 need_ns_drop=need_ns_drop, need_t_to_d=need_t_to_d)
+    if s.meta.get("_defer_tripadi"):
+        s.meta["_tripadi_pending"] = flags
+        return s
+    return finish_tripadi(s, flags)
+
+
+def finish_tripadi(s: State, flags: dict | None = None) -> State:
+    """Tripāḍī tail of the pronoun paradigm (the part that follows 8.1.x)."""
+    flags = flags if flags is not None else s.meta.pop("_tripadi_pending", {})
+    if any(flags.values()):
         s = apply_rule("8.2.1", s)
-        if need_ns_drop:
+        if flags.get("need_ns_drop"):
             s = apply_rule("8.2.23", s)
-        if need_t_to_d:
+        if flags.get("need_t_to_d"):
             s = apply_rule("8.2.39", s)
-        if need_visarga:
+        if flags.get("need_visarga"):
             s = apply_rule("8.2.66", s)
             s = apply_rule("8.3.15", s)
-    s = apply_rule("1.4.110", s)
-    return s
+    return apply_rule("1.4.110", s)
 
 
 # ─── Individual cell derivations ──────────────────────────────────────────────
@@ -386,7 +397,7 @@ def derive_asmad(vibhakti: int, vacana: int) -> State:
     return _derive("asmad", vibhakti, vacana)
 
 
-def _derive(stem_slp1: str, vibhakti: int, vacana: int) -> State:
+def _derive(stem_slp1: str, vibhakti: int, vacana: int, *, defer_tripadi: bool = False) -> State:
     cell = (vibhakti, vacana)
     if cell not in _CELL_MAP:
         raise ValueError(
@@ -394,10 +405,12 @@ def _derive(stem_slp1: str, vibhakti: int, vacana: int) -> State:
             f"1≤vibhakti≤7, 1≤vacana≤3।"
         )
     s = _build_base(vibhakti, vacana, stem_slp1)
+    if defer_tripadi:
+        s.meta["_defer_tripadi"] = True
     return _CELL_MAP[cell](s)
 
 
-__all__ = ["derive_asmad", "derive_yuzmad"]
+__all__ = ["derive_asmad", "derive_yuzmad", "finish_tripadi"]
 
 
 if __name__ == "__main__":
