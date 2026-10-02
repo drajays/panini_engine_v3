@@ -1,6 +1,24 @@
 {% extends "base.html" %}
 {% block title %}चतुर्विंशतिकोष्ठम् — पाणिनि-यन्त्रम्{% endblock %}
 
+
+{% block head_extra %}
+<style>
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin: 10px 0 8px; }
+.tabs button { background: none; color: var(--ink-dim); border: 1px solid transparent; border-bottom: none; padding: 6px 16px; font-size: 1.1rem; font-family: var(--dev); cursor: pointer; }
+.tabs button.active { background: var(--bg-panel); border-color: var(--line); color: var(--accent); border-radius: 4px 4px 0 0; }
+.rules-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 1rem; }
+.rules-table th { text-align: left; padding: 8px; border-bottom: 1px solid var(--line); font-weight: 600; color: var(--ink-dim); font-size: 0.9em; }
+.rules-table td { padding: 8px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+.rules-table tr:hover td { background: var(--bg-subtle); }
+.rules-table .sutra-id { font-family: var(--mono); font-size: 0.85em; color: var(--accent); display: block; margin-top: 4px; }
+.rules-table .sutra-text { font-family: var(--dev); font-size: 1.2em; color: var(--ink); }
+.rules-table .sutra-type { font-size: 0.8em; color: var(--ink-faint); padding: 2px 6px; border: 1px solid var(--line); border-radius: 4px; display: inline-block; margin-bottom: 4px; }
+.rules-table .forms-list { font-family: var(--dev); color: var(--ink); font-size: 1.1em; line-height: 1.5; }
+.rules-table .cells-list { font-size: 0.8em; color: var(--ink-faint); margin-top: 4px; }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="panel">
   <h1>चतुर्विंशतिकोष्ठ-प्रतिमानम्</h1>
@@ -41,59 +59,76 @@
   </div>
 </div>
 
-<div class="panel">
-  <h2 id="matrix-head">कोष्ठः</h2>
-  <p class="muted" style="font-size:12px;">
-    कोष्ठे क्लिक् करुत → पूर्णा प्रक्रिया पश्यतु।
-    <span class="legend-dot match"></span> स्वर्ण-मिलितम्
-    <span class="legend-dot mismatch"></span> भेदः
-  </p>
-  <table class="matrix" id="matrix">
-    <thead>
-      <tr>
-        <th></th>
-        <th>{{ vacana_dev[1] }}</th>
-        <th>{{ vacana_dev[2] }}</th>
-        <th>{{ vacana_dev[3] }}</th>
-      </tr>
-    </thead>
-    <tbody id="matrix-body">
-      {% for v in range(1, 9) %}
-      <tr>
-        <th class="vib-th">
-          <span class="vib-num">{{ loop.index }}</span>
-          {{ vibhakti_dev[loop.index] }}
-        </th>
-        {% for vv in range(1, 4) %}
-        <td class="cell" data-cell="{{ v }}-{{ vv }}"
-            data-v="{{ v }}" data-vv="{{ vv }}">
-          <span class="dev">…</span>
-        </td>
-        {% endfor %}
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<div class="tabs">
+  <button data-tab="matrix" class="active">कोष्ठः (Matrix)</button>
+  <button data-tab="rules">सर्वाणि सूत्राणि (All Rules)</button>
 </div>
 
-<div class="panel" id="cell-trace" style="display:none;">
-  <h2><span id="cell-head"></span></h2>
-  <div id="cell-result"></div>
-  <div class="two-pane">
-    <div>
-      <div class="trace-filter" id="trace-filter">
-        <label><input type="checkbox" value="RUPA_PARIVARTANA_ONLY" checked> रूप-परिवर्तन-मात्रम्</label>
-        <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
-        <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
-        <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
-        <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
-        <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
+<div id="tab-matrix">
+  <div class="panel">
+    <h2 id="matrix-head">कोष्ठः</h2>
+    <p class="muted" style="font-size:12px;">
+      कोष्ठे क्लिक् करुत → पूर्णा प्रक्रिया पश्यतु।
+      <span class="legend-dot match"></span> स्वर्ण-मिलितम्
+      <span class="legend-dot mismatch"></span> भेदः
+    </p>
+    <table class="matrix" id="matrix">
+      <thead>
+        <tr>
+          <th></th>
+          <th>{{ vacana_dev[1] }}</th>
+          <th>{{ vacana_dev[2] }}</th>
+          <th>{{ vacana_dev[3] }}</th>
+        </tr>
+      </thead>
+      <tbody id="matrix-body">
+        {% for v in range(1, 9) %}
+        <tr>
+          <th class="vib-th">
+            <span class="vib-num">{{ loop.index }}</span>
+            {{ vibhakti_dev[loop.index] }}
+          </th>
+          {% for vv in range(1, 4) %}
+          <td class="cell" data-cell="{{ v }}-{{ vv }}"
+              data-v="{{ v }}" data-vv="{{ vv }}">
+            <span class="dev">…</span>
+          </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel" id="cell-trace" style="display:none;">
+    <h2><span id="cell-head"></span></h2>
+    <div id="cell-result"></div>
+    <div class="two-pane">
+      <div>
+        <div class="trace-filter" id="trace-filter">
+          <label><input type="checkbox" value="RUPA_PARIVARTANA_ONLY" checked> रूप-परिवर्तन-मात्रम्</label>
+          <label><input type="checkbox" value="APPLIED"    checked> प्रयुक्तम्</label>
+          <label><input type="checkbox" value="AUDIT"      checked> निरीक्षणम्</label>
+          <label><input type="checkbox" value="BLOCKED"    checked> निवारितम्</label>
+          <label><input type="checkbox" value="SKIPPED">            अतिक्रान्तम्</label>
+          <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
+        </div>
+        <ol class="trace" id="trace"></ol>
       </div>
-      <ol class="trace" id="trace"></ol>
+      <div class="sutra-detail" id="sutra-detail">
+        <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
+      </div>
     </div>
-    <div class="sutra-detail" id="sutra-detail">
-      <div class="empty">सूत्रं द्रष्टुम् अनुपदं चिनुत।</div>
-    </div>
+  </div>
+</div>
+
+<div id="tab-rules" style="display:none;">
+  <div class="panel">
+    <h2>सर्वाणि प्रयुक्तानि सूत्राणि</h2>
+    <p class="muted" style="font-size:12px; margin-bottom: 12px;">
+      अस्मिन् प्रातिपदिके (सर्वासु विभक्तिषु) प्रयुक्तानां सूत्राणां सङ्ग्रहः, तथा च तैः निर्मितानि रूपाणि।
+    </p>
+    <div id="rules-content"></div>
   </div>
 </div>
 {% endblock %}
@@ -118,6 +153,64 @@ document.querySelectorAll(".preset-btn").forEach(btn => {
 document.getElementById("load-btn").addEventListener("click", loadMatrix);
 document.addEventListener("DOMContentLoaded", loadMatrix);
 
+
+/* ── Tabs logic ── */
+document.querySelectorAll(".tabs button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tabs button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    const tabId = btn.dataset.tab;
+    document.getElementById("tab-matrix").style.display = (tabId === "matrix") ? "block" : "none";
+    document.getElementById("tab-rules").style.display  = (tabId === "rules") ? "block" : "none";
+    
+    if (tabId === "rules" && !document.getElementById("rules-content").innerHTML) {
+      loadRules();
+    }
+  });
+});
+
+async function loadRules() {
+  const stem  = document.getElementById("stem").value.trim();
+  const linga = document.getElementById("linga").value;
+  const rc = document.getElementById("rules-content");
+  rc.innerHTML = '<div class="muted">सूत्राणि सङ्गृह्यन्ते (Fetching all rules)...</div>';
+  
+  try {
+    const r = await fetch(`/api/matrix/rules?stem=${encodeURIComponent(stem)}&linga=${encodeURIComponent(linga)}`);
+    const data = await r.json();
+    renderRules(data.rules);
+  } catch (e) {
+    rc.innerHTML = '<div class="error">दोषः: ' + e.message + '</div>';
+  }
+}
+
+function renderRules(rules) {
+  if (!rules || rules.length === 0) {
+    document.getElementById("rules-content").innerHTML = '<div class="muted">न किञ्चित् सूत्रं प्राप्तम्।</div>';
+    return;
+  }
+  
+  let html = '<table class="rules-table">';
+  html += '<tr><th>सूत्रम्</th><th>प्रकारः</th><th>रूपाणि (Forms)</th></tr>';
+  
+  rules.forEach(r => {
+    html += '<tr>';
+    html += `<td>
+               <span class="sutra-text dev">${escapeHtml(r.text_dev)}</span>
+               <span class="sutra-id">${escapeHtml(r.id)}</span>
+             </td>`;
+    html += `<td><span class="sutra-type dev">${escapeHtml(sutraTypeDev(r.type_dev))}</span></td>`;
+    html += `<td>
+               <div class="forms-list dev">${escapeHtml(r.forms.join(', '))}</div>
+               <div class="cells-list">Vibhakti-Vacana cells: ${escapeHtml(r.cells.join(', '))}</div>
+             </td>`;
+    html += '</tr>';
+  });
+  
+  html += '</table>';
+  document.getElementById("rules-content").innerHTML = html;
+}
+
 async function loadMatrix() {
   const stem  = document.getElementById("stem").value.trim();
   const linga = document.getElementById("linga").value;
@@ -129,6 +222,8 @@ async function loadMatrix() {
   });
 
   status.innerHTML = '<span class="loading"></span> चतुर्विंशतिः कोष्ठाः व्युत्पाद्यन्ते…';
+  document.getElementById("rules-content").innerHTML = ""; // clear old rules
+
   document.getElementById("matrix-info").style.display = "none";
 
   try {
