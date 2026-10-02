@@ -49,6 +49,7 @@ SUTRA = SutraRecord(
     why_dev="सपूर्व प्रथमान्त पद के पश्चात् युष्मद्-अस्मद् आदेश (८.१.२०–२३) विकल्प से।",
     anuvritti_from=("8.1.17", "8.1.18", "8.1.20", "8.1.24"),
     vibhasha_default=False,
+    vibhasha_scope=cond,  # the option exists only where the rule's own condition holds
     cond=cond,
     act=act,
 )
