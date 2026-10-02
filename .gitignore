@@ -41,3 +41,7 @@ data/upstream/
 data/reference/ashtadhyayi_com/*
 !data/reference/ashtadhyayi_com/SOURCE.json
 data/reference/samsaadhanii/raw/
+
+# machine-local / regenerable
+.claude/.headroom_*
+.audit/gold_diff.jsonl
