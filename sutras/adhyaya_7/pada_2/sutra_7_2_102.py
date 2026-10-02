@@ -38,7 +38,7 @@ def _matches(state: State) -> bool:
         return False
     if "idam_m_7_2_108" in anga.tags:
         return False  # 7.2.108 (apavāda): the final m stands
-    if (anga.meta.get("upadesha_slp1") or "").strip() in ("kim", "idam") and "napuṃsaka" in anga.tags and any(
+    if (anga.meta.get("upadesha_slp1") or "").strip() in ("kim", "idam", "enad") and "napuṃsaka" in anga.tags and any(
         "sup" in t.tags and (t.meta.get("upadesha_slp1") or "").strip() in ("s~", "am") for t in state.terms[1:]
     ):
         return False  # kim + neuter su/am: sup is luk'd (7.1.23), so no ādeśa

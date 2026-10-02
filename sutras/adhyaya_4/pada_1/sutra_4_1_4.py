@@ -79,7 +79,9 @@ def _has_sup(state: State) -> bool:
 
 def _fem_sarvanama_site(t) -> bool:
     """Feminine sarvanāma whose stem is a-final (after 7.2.102 for tyadādi: ida, ta, ka …)."""
-    return "sarvanama" in t.tags and bool(t.varnas) and t.varnas[-1].slp1 == "a"
+    # adas (its strī forms run through 7.2.107 and the amu-ādeśas) is not part of this slice yet
+    return ("sarvanama" in t.tags and bool(t.varnas) and t.varnas[-1].slp1 == "a"
+            and (t.meta.get("upadesha_slp1") or "").strip() != "adas")
 
 
 def _insert_site(state: State):

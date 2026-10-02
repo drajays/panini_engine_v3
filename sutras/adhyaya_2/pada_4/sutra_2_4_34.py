@@ -26,6 +26,12 @@ _STEMS = frozenset({"idam", "etad"})
 _SUPS = frozenset({"am", "Ow", "Sas", "wA", "os"})   # dvitīyā (am, auṭ, śas), ṭā, os
 
 
+def _replacement(t, sup) -> str:
+    """ena; for the neuter singular (su / am are luk'd by 7.1.23) the stem stays consonant-final: enad → एनद् / एनत्."""
+    ident = (sup.meta.get("upadesha_slp1_original") or sup.meta.get("upadesha_slp1") or "").strip()
+    return "enad" if "napuṃsaka" in t.tags and ident == "am" else "ena"
+
+
 def _site(state: State):
     for i, t in enumerate(state.terms[:-1]):
         if "anvadesha" not in t.tags or (t.meta.get("upadesha_slp1") or "").strip() not in _STEMS:
@@ -35,7 +41,7 @@ def _site(state: State):
         nxt = state.terms[i + 1]
         ident = (nxt.meta.get("upadesha_slp1_original") or nxt.meta.get("upadesha_slp1") or "").strip()
         if "sup" in nxt.tags and ident in _SUPS:
-            return t
+            return t, nxt
     return None
 
 
@@ -44,9 +50,10 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    t = _site(state)
-    if t is not None:
-        adesha_substitute_varnas(t, "ena", state, sutra_id="2.4.34", gunadharmas=frozenset({ANGATVA}))
+    site = _site(state)
+    if site is not None:
+        t, sup = site
+        adesha_substitute_varnas(t, _replacement(t, sup), state, sutra_id="2.4.34", gunadharmas=frozenset({ANGATVA}))
         t.meta["2_4_34_done"] = True
     return state
 

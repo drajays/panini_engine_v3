@@ -678,9 +678,13 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
            matra_prathama_2_3_46: bool = False,
            nAmadheya_vrddha_term_indices: tuple[int, ...] | frozenset[int] | None = None,
            autonomous_scanner: bool = False,
+           anvadesha: bool = False,
            ) -> State:
     """
     Aṣṭādhyāyī-kram pipeline.  Returns final state with complete trace.
+
+    ``anvadesha`` — the stem is in *anvādeśa* (2.4.32: a second mention, new predicate); tags the stem so
+    **2.4.34** can give इदम् / एतद् → एन (एनम्, एनेन, एनयोः).  A fact about the sentence, so an input.
 
     ``matra_prathama_2_3_46`` — forwarded to ``build_initial_state``; when
     True, preflight runs **2.3.1** then **2.3.46** after **1.4.14**.
@@ -699,6 +703,8 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
         matra_prathama_2_3_46=matra_prathama_2_3_46,
         nAmadheya_vrddha_term_indices=nAmadheya_vrddha_term_indices,
     )
+    if anvadesha:
+        s.terms[0].tags.add("anvadesha")
     # sakhī-class i-stem masculine: tag and set 7.1.92/7.1.93 arms
     _SAKHI_CLASS = {"sakhI", "sakhi"}
     if stem_slp1.strip() in _SAKHI_CLASS and linga == "pulliṅga":
