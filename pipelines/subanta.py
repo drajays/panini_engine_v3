@@ -399,6 +399,9 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.2.110",  # यः सौ — iyam
     "7.2.103",  # kim → ka (apavāda of 7.2.102, so it is tried first)
     "7.2.102",  # tyadādi final hal→a (must precede 6.1.68; after substitution stem is vowel-final)
+    "6.4.1",    # अङ्गस्य — the aṅgakārya adhikāra must be open before 6.4.14 (it is also re-opened harmlessly below)
+    "7.1.70",   # उगिदचां सर्वनामस्थानेऽधातोः — nuṃ for an ugit stem; before su-lopa (भवान्त्+स्): भवन्तौ, भवान्
+    "6.4.14",   # अत्वसन्तस्य चाधातोः — nominative singular only: भवान्त्
     "6.1.68",
     "6.4.1",
     "7.1.94",
@@ -493,6 +496,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.4.110",
     "8.2.1",
     "8.2.7",    # nalopaH prAtipadikAntasya — rAjan/Atman-final n-lopa at pada-end
+    "8.2.23",   # संयोगान्तस्य लोपः — pada-final cluster loses its last letter (भवान्त् → भवान्)
     "8.2.30",   # coH kuH — c/j-vargIya pada-final -> k-vargIya before jhal (vAc+Bis)
     "8.2.80",   # adaso'ser dAd u do maH — d → m, following vowel → u/U
     "8.2.81",   # eta Id bahuvacane — e → I (amI), d → m
@@ -679,9 +683,13 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
            nAmadheya_vrddha_term_indices: tuple[int, ...] | frozenset[int] | None = None,
            autonomous_scanner: bool = False,
            anvadesha: bool = False,
+           ugit: bool = False,
            ) -> State:
     """
     Aṣṭādhyāyī-kram pipeline.  Returns final state with complete trace.
+
+    ``ugit`` — the stem is *ugit* (it came from matup / vatup / śatṛ / ḍavatu …: भवत्, गुणवत्, पचत्); tags the stem so
+    **7.1.70** gives it nuṃ. Derivation history is not in a stem string, so this is an input, like ``anvadesha``.
 
     ``anvadesha`` — the stem is in *anvādeśa* (2.4.32: a second mention, new predicate); tags the stem so
     **2.4.34** can give इदम् / एतद् → एन (एनम्, एनेन, एनयोः).  A fact about the sentence, so an input.
@@ -705,6 +713,8 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     )
     if anvadesha:
         s.terms[0].tags.add("anvadesha")
+    if ugit:
+        s.terms[0].tags.add("ugit")
     # sakhī-class i-stem masculine: tag and set 7.1.92/7.1.93 arms
     _SAKHI_CLASS = {"sakhI", "sakhi"}
     if stem_slp1.strip() in _SAKHI_CLASS and linga == "pulliṅga":

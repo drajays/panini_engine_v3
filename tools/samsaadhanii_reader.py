@@ -169,7 +169,8 @@ def _derive_tinanta(key: str, fields: str) -> tuple[str, str, str]:
 
 
 @lru_cache(maxsize=8192)
-def _derive_subanta(stem: str, v: int, vac: int, linga: str, anvadesha: bool = False) -> tuple[str, str, str]:
+def _derive_subanta(stem: str, v: int, vac: int, linga: str, anvadesha: bool = False,
+                    ugit: bool = False) -> tuple[str, str, str]:
     from pipelines.subanta import derive
 
     try:
@@ -178,7 +179,7 @@ def _derive_subanta(stem: str, v: int, vac: int, linga: str, anvadesha: bool = F
                 from pipelines import asmad_subanta as _pr
                 s = (_pr.derive_asmad if stem == "asmad" else _pr.derive_yuzmad)(v, vac)
             else:
-                s = derive(stem, v, vac, linga=linga, anvadesha=anvadesha)
+                s = derive(stem, v, vac, linga=linga, anvadesha=anvadesha, ugit=ugit)
         return "ok", s.flat_slp1(), s.flat_dev()
     except Exception as e:  # noqa: BLE001
         return "error", "", f"{type(e).__name__}: {e}"[:200]
@@ -230,13 +231,20 @@ def verify(kind: str, tag: str, word_slp1: str) -> dict:
     else:
         out.update(status="derived" if slp == word_slp1 else "differs",
                    produced_slp1=slp, produced_dev=dev)
-        if kind == "subanta" and out["status"] == "differs" and c.stem_slp1 in ("idam", "etad") and word_slp1.startswith("en"):
-            # एन-: the text proposes anvādeśa (2.4.32); the engine verifies it by deriving the attested form (2.4.34)
-            st2, slp2, dev2 = _derive_subanta(c.stem_slp1, c.vibhakti, c.vacana, c.linga, True)
-            if st2 != "error" and slp2 == word_slp1:
-                out.update(status="derived", produced_slp1=slp2, produced_dev=dev2,
-                           note="anvādeśa (2.4.32) taken from the text; 2.4.34 gives एन",
-                           request={**out["request"], "anvadesha": True})
+        if kind == "subanta" and out["status"] == "differs":
+            # The text proposes a fact about the stem or the sentence the string cannot show; the engine verifies it
+            # by deriving the attested form with that fact (Art. 17: analysis proposes, generation verifies).
+            proposals = []
+            if c.stem_slp1 in ("idam", "etad") and word_slp1.startswith("en"):
+                proposals.append(("anvadesha", "anvādeśa (2.4.32) taken from the text; 2.4.34 gives एन"))
+            if c.stem_slp1.endswith("at") and c.stem_slp1[-3:-2] in ("v", "m", "u", "a"):
+                proposals.append(("ugit", "ugit stem (matup / vatup / śatṛ / ḍavatu) taken from the text; 7.1.70 gives नुँम्"))
+            for flag, why in proposals:
+                st2, slp2, dev2 = _derive_subanta(c.stem_slp1, c.vibhakti, c.vacana, c.linga, **{flag: True})
+                if st2 != "error" and slp2 == word_slp1:
+                    out.update(status="derived", produced_slp1=slp2, produced_dev=dev2, note=why,
+                               request={**out["request"], flag: True})
+                    break
     return out
 
 
@@ -259,7 +267,8 @@ def derive_request(req: dict):
         from pipelines.subanta import derive
 
         return derive(req["stem_slp1"], int(req["vibhakti"]), int(req["vacana"]),
-                      linga=req.get("linga") or "pulliṅga", anvadesha=bool(req.get("anvadesha")))
+                      linga=req.get("linga") or "pulliṅga", anvadesha=bool(req.get("anvadesha")),
+                      ugit=bool(req.get("ugit")))
     raise ValueError(f"unknown request kind {req.get('kind')!r}")
 
 

@@ -37,6 +37,8 @@ def _hit(state: State):
         return None
     if "sup" not in pr.tags or "sarvanamasthana" not in pr.tags:
         return None
+    if (pr.meta.get("upadesha_slp1") or "").strip() != "s~" or "sambuddhi" in pr.tags:
+        return None  # anuvṛtti 6.4.13 sau + 6.4.8 asambuddhau: only the nominative singular (भवान्; भवन्तौ stays short)
     vs = anga.varnas
     if len(vs) < 4:
         return None

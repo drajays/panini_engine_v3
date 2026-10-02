@@ -89,3 +89,16 @@ def test_ena_only_in_anvadesha_and_traced():
     assert derive("idam", 2, 1).flat_dev() == "इमम्"                         # no anvādeśa: ordinary idam
     assert "2.4.34" in _fired(derive("idam", 2, 1, anvadesha=True))
     assert derive("idam", 1, 1, anvadesha=True).flat_dev() == "अयम्"          # prathamā su is not in 2.4.34's list
+
+
+def test_ugit_at_stems_7_1_70_6_4_14_8_2_23():  # भवान् / भवन्तौ / भवन्तम् / हे भवन् ; गुणवान्
+    cells = [(1, 1), (1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (8, 1)]
+    assert [derive("Bavat", v, n, ugit=True).flat_dev() for v, n in cells] == \
+        ["भवान्", "भवन्तौ", "भवन्तः", "भवन्तम्", "भवतः", "भवता", "भवन्"]
+    assert derive("guRavat", 1, 1, ugit=True).flat_dev() == "गुणवान्"
+    f = _fired(derive("Bavat", 1, 1, ugit=True))
+    assert f.index("7.1.70") < f.index("6.4.14") < f.index("6.1.68") < f.index("8.2.23")
+
+
+def test_ugit_is_an_input_not_a_guess():  # without the tag the stem is an ordinary a-t stem (7.1.70 needs ugit)
+    assert derive("Bavat", 1, 2).flat_dev() == "भवतौ"
