@@ -391,6 +391,8 @@ def _apply_vikarana(state: State, gana: int) -> State:
         # above. Glass-box, scoped to मिद्'s own upadeśa in its cond() — a
         # no-op for every other divādi root.
         state = apply_rule("7.3.82", state)
+        # 7.3.79 ज्ञाजनोर्जा — जन् + श्यन् → जा (जायते); scoped to jan / jñā in its own cond(), a no-op otherwise
+        state = apply_rule("7.3.79", state)
         return state
 
     if gana == 6:
@@ -451,6 +453,7 @@ def _apply_vikarana(state: State, gana: int) -> State:
         # श्नाभ्यस्तयोरातः (क्रीणन्ति); strong pit ones keep nā (क्रीणाति).
         state = apply_rule("3.1.81", state)
         state = apply_rule("7.3.80", state)    # प्वादीनां ह्रस्वः: लू → लु (लुनाति)
+        state = apply_rule("7.3.79", state)    # ज्ञाजनोर्जा: ज्ञा + श्ना → जा (जानाति); scoped to jñā / jan
         state = apply_rule("3.4.113", state)
         state = P00_lashakvataddhite_it_lopa_chain(state)
         state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
@@ -517,6 +520,12 @@ def _merge_pada(state: State) -> State:
     if any("upasarga" in t.tags for t in state.terms):
         for sid in _UPASARGA_JUNCTION_RULES:
             state = apply_rule(sid, state)
+        # the upasarga is its own pada until the merge: pada-final m → anusvāra (8.3.23), then parasavarṇa
+        # (8.4.58, after the merge): सम् + जानाति → सञ्जानाति; before य/ह the anusvāra stays (संयाति, संहरते)
+        for sid in ("8.2.1", "8.3.23"):
+            state = apply_rule(sid, state)
+        _pada_merge(state)
+        return apply_rule("8.4.58", state)   # anusvāra before a stop → its varga's nasal (संजय → सञ्जय)
     _pada_merge(state)
     return state
 

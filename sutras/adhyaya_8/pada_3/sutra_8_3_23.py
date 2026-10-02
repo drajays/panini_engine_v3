@@ -26,10 +26,25 @@ from __future__ import annotations
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology import mk
-from phonology.pratyahara import JHAL
+from phonology.pratyahara import HAL, JHAL
+
+
+def _upasarga_m(state: State):
+    """(Term index, varṇa index) of a pada-final m of an upasarga Term followed by a consonant: सम् + जायते.
+
+    The upasarga is its own pada until the merge, so its m *is* pada-final (the rule's real condition)."""
+    for ti, t in enumerate(state.terms[:-1]):
+        if "upasarga" not in t.tags or t.meta.get("8_3_23_mo_done") or not t.varnas:
+            continue
+        nxt = state.terms[ti + 1]
+        if t.varnas[-1].slp1 == "m" and nxt.varnas and nxt.varnas[0].slp1 in HAL:
+            return ti, len(t.varnas) - 1
+    return None
 
 
 def _find(state: State):
+    if _upasarga_m(state) is not None:
+        return _upasarga_m(state)[1]
     if len(state.terms) != 1:
         return None
     t = state.terms[0]
@@ -56,7 +71,8 @@ def act(state: State) -> State:
     i = _find(state)
     if i is None:
         return state
-    t = state.terms[0]
+    hit = _upasarga_m(state)
+    t = state.terms[hit[0]] if hit is not None else state.terms[0]
     t.varnas[i] = mk("M")
     t.meta["8_3_23_mo_done"] = True
     return state

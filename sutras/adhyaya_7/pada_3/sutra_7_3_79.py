@@ -16,15 +16,19 @@ from phonology.varna import parse_slp1_upadesha_sequence
 _META_ARM = "corrected_v2_P012_7_3_79_arm"
 
 
+_ROOTS = {"jYA": ("SnA",), "jan": ("Syan",)}   # ज्ञा before श्ना (जानाति); जन् before श्यन् (जायते) — both śit
+
+
 def _hit(state: State) -> int | None:
     for i, dh in enumerate(state.terms[:-1]):
         if "dhatu" not in dh.tags:
             continue
-        if "".join(v.slp1 for v in dh.varnas) != "jYA":
+        flat = "".join(v.slp1 for v in dh.varnas)
+        if flat not in _ROOTS:
             continue
         nxt = state.terms[i + 1]
         up = (nxt.meta.get("upadesha_slp1") or "").strip()
-        if up == "SnA" or "SnA_vikaraṇa" in nxt.tags:
+        if up in _ROOTS[flat] or any(f"{x}_vikaraṇa" in nxt.tags for x in _ROOTS[flat]):
             return i
     return None
 

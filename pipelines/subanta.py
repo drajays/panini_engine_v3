@@ -388,6 +388,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     *IT_PRAKARANA_SEQUENCE,  # 1.3.2–1.3.8 saṃjñā, then 1.3.9 lopa
     "1.3.10",
     "7.1.93",  # anang sau: sakhī 1sg → sakhān (i → an; arm-gated)
+    "6.4.13",  # सौ च — in / han / pūṣan / aryaman: dīrgha in the nominative singular (योगी, वृत्रहा)
     "6.4.8",   # dīrgha before sarvananāmasthāna (fires here for anang; idempotent)
     "1.4.7",
     "1.2.41",
