@@ -96,6 +96,8 @@ def _find_target(state: State):
         return None
     if last.slp1 == "A" and "strīliṅga" not in anga.tags:
         return None
+    if last.slp1 == "A" and "sarvanama" in anga.tags:
+        return None  # sarvanāma ā-stem: 7.3.114 syāṭ (ṅit sups) and 7.2.112 → 7.3.105 (ṭā, os) are para / specific
 
     if last.slp1 == "a":
         repl = _REPLACEMENTS_ATO.get(upa)

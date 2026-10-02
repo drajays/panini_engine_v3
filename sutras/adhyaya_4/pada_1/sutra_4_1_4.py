@@ -77,21 +77,35 @@ def _has_sup(state: State) -> bool:
     return any(t.kind == "pratyaya" and "sup" in t.tags for t in state.terms)
 
 
+def _fem_sarvanama_site(t) -> bool:
+    """Feminine sarvanāma whose stem is a-final (after 7.2.102 for tyadādi: ida, ta, ka …)."""
+    return "sarvanama" in t.tags and bool(t.varnas) and t.varnas[-1].slp1 == "a"
+
+
 def _insert_site(state: State):
     if not _in_strI_adhikara(state):
         return None
-    if _already_has_tap(state) or _has_sup(state):
-        return None
     hit = _first_strI_prakriti(state)
+    if _already_has_tap(state):
+        # ṭāp already stands as its own Term (inserted before the sup): for a feminine sarvanāma its a + ā → ā
+        # is the antaraṅga step the sarvanāma ādeśas (7.3.114 …) need done first.
+        if hit is None or not _has_sup(state) or not _fem_sarvanama_site(hit[1]):
+            return None
+        i, st = hit
+        return (i, st) if i + 1 < len(state.terms) and "stri_wAp" in state.terms[i + 1].tags else None
     if hit is None:
         return None
     idx, t = hit
-    if "tyadadi" in t.tags:
+    sup_present = _has_sup(state)
+    if sup_present and not _fem_sarvanama_site(t):
+        return None   # a ṭāp *after* sup attachment is only the feminine sarvanāma case below
+    if "tyadadi" in t.tags and not sup_present:
         return None
     if "Iyas_bahuvrIhi_pratishedha" in t.tags:
         return None
     flat = "".join(v.slp1 for v in t.varnas)
-    if not tap_4_1_4_applies(t.meta.get("upadesha_slp1"), flat):
+    # After 7.2.102 the tyadādi stem is a-final (ida, ta, ka): match the tape, not the upadeśa (idam, tad).
+    if not tap_4_1_4_applies(None if sup_present else t.meta.get("upadesha_slp1"), flat):
         return None
     return idx, t
 
@@ -105,6 +119,26 @@ def act(state: State) -> State:
     if site is None:
         return state
     idx, stem = site
+    if idx + 1 < len(state.terms) and "stri_wAp" in state.terms[idx + 1].tags:
+        before = state.flat_slp1()          # pending ṭāp Term: join it to the prakṛti (a + ā → ā)
+        del state.terms[idx + 1]
+        stem.varnas[-1] = mk("A")
+        stem.tags |= {"TAp_anta", "strīliṅga", "stri_wAp", "anga"}  # the merged prakṛti is the aṅga of the sup
+        state.emit_structural("__TAP_SAVARNA__", form_before=before, form_after=state.flat_slp1(),
+                              why_dev="ṭāप् + प्रकृति — अ + आ → आ (६.१.१०१ अकः सवर्णे दीर्घः, अङ्ग के भीतर, सुप्-आदेश से पहले)।",
+                              type_label="टाप्-सन्धिः", event="MERGE")
+        return state
+    if _has_sup(state):
+        # Feminine sarvanāma: the sup is already on the tape. ṭāp joins the *prakṛti* (antaraṅga) and
+        # a + ā → ā (6.1.101 akaḥ savarṇe dīrghaḥ) inside the aṅga, before any sup ādeśa: ida → idā.
+        before = state.flat_slp1()
+        stem.varnas[-1] = mk("A")
+        stem.tags |= {"TAp_anta", "strīliṅga", "stri_wAp"}
+        stem.meta["stri_TAp_4_1_4"] = True
+        state.emit_structural("__TAP_SAVARNA__", form_before=before, form_after=state.flat_slp1(),
+                              why_dev="ṭāप् + प्रकृति — अ + आ → आ (६.१.१०१ अकः सवर्णे दीर्घः, अङ्ग के भीतर, सुप्-आदेश से पहले)।",
+                              type_label="टाप्-सन्धिः", event="MERGE")
+        return state
     tap = Term(
         kind="pratyaya",
         varnas=[mk("A")],

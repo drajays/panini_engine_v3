@@ -40,7 +40,7 @@ def _lopa_target(state: State) -> int | None:
     up = (an.meta.get("upadesha_slp1") or "").strip()
     v = an.varnas
     if up == "idam" and len(v) == 3:
-        if v[0].slp1 == "i" and v[1].slp1 == "d" and v[2].slp1 == "a":
+        if v[0].slp1 == "i" and v[1].slp1 == "d" and v[2].slp1 in ("a", "A"):  # ida / idā (strī)
             return len(state.terms) - 2
     return None
 
@@ -56,7 +56,7 @@ def act(state: State) -> State:
     t = state.terms[ti]
     u = t.varnas
     up = (t.meta.get("upadesha_slp1") or "").strip()
-    if up == "idam" and [x.slp1 for x in u] == ["i", "d", "a"]:
+    if up == "idam" and [x.slp1 for x in u][:2] == ["i", "d"] and len(u) == 3:
         t.varnas = u[2:]
     else:  # pragma: no cover — defensive; cond already filtered
         return state

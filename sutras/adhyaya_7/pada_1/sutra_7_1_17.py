@@ -36,6 +36,10 @@ def _matches(state: State) -> bool:
     pr   = state.terms[-1]
     if "anga" not in anga.tags or "sarvanama" not in anga.tags:
         return False
+    if not anga.varnas or anga.varnas[-1].slp1 != "a":
+        return False  # adanta only (ataḥ): an ā-stem feminine keeps jas (इमाः, सर्वाः)
+    if "napuṃsaka" in anga.tags:
+        return False  # 7.1.20 जश्शसोः शिः is para (1.4.2): neuter jas → śi (तानि, इमानि), not śī
     if "sup" not in pr.tags:
         return False
     if pr.meta.get("upadesha_slp1") != "jas":

@@ -18,7 +18,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 _GATE_KEY: str = "7_1_25_adq_25"
 _STEMS = frozenset({
-    "tad", "tyad", "etad", "idam", "yad", "adas",
+    "tad", "tyad", "etad", "yad", "adas",  # idam: neuter su/am are luk'd (7.1.23), इदम्
     "anya", "anyatara", "itara", "ekatara", "katara", "katama",
 })
 

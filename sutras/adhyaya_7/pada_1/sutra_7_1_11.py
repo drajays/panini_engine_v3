@@ -1,43 +1,47 @@
 """
-7.1.11  नेदमदसोरकोः  —  VIDHI
+7.1.11  नेदमदसोरकोः  —  PRATISHEDHA
 
-Padaccheda: न इदम्-अदसोः अकोः
+The bhis → ais of 7.1.9 (अतो भिस ऐस्) does not apply to idam / adas that are *not* aka-extended:
+इदम् + भिस् stays भिस् (→ एभिः, not *ऐः*), अदस् + भिस् → अमीभिः.
 
-नेदमदसोरकोः (7.1.11)
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com sūtra 7.1.11 (padaccheda: न इदम्-अदसोः अकोः)
+  Source #2 — ashtadhyayi.com śabda-prakriyā for इदम् 3-3: इद+भिस् [7.1.11] → अ+भिस् [7.2.113] → ए+भिस् [7.3.103]
+
+Engine: reads the lexical identity of the aṅga (idam / adas, as 7.2.94 reads asmad) and the sup's identity
+(Bis). The aka-extended stems (idakam) carry another identity and are untouched.
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-_GATE_KEY: str = "7_1_11_nedamadaso_11"
+_STEMS = frozenset({"idam", "adas"})
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
+    if len(state.terms) < 2:
         return False
-    if adhikara_in_effect("7.1.11", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    anga, sup = state.terms[-2], state.terms[-1]
+    return ("anga" in anga.tags and (anga.meta.get("upadesha_slp1") or "").strip() in _STEMS
+            and "sup" in sup.tags and (sup.meta.get("upadesha_slp1") or "").strip() == "Bis")
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.1.11"
     return state
 
 
 SUTRA = SutraRecord(
-    sutra_id              = "7.1.11",
-    sutra_type            = SutraType.PRATISHEDHA,
-    r1_form_identity_exempt = True,
-    text_slp1             = "nedamadasorakoH",
-    text_dev              = "नेदमदसोरकोः",
-    padaccheda_dev        = "न इदम्-अदसोः अकोः",
-    why_dev               = "(सूत्रम् 7.1.11) नेदमदसोरकोः।",
-    anuvritti_from        = ('7.1.1',),
-    cond                  = cond,
-    act                   = act,
+    sutra_id="7.1.11",
+    sutra_type=SutraType.PRATISHEDHA,
+    text_slp1="nedamadasorakoH",
+    text_dev="नेदमदसोरकोः",
+    padaccheda_dev="न इदम्-अदसोः अकोः",
+    why_dev="अक-रहित इदम् / अदस् से परे भिस् को ऐस् नहीं होता (७.१.९ का निषेध): एभिः, अमीभिः।",
+    anuvritti_from=("6.4.1",),
+    blocks_sutra_ids=("7.1.9",),
+    cond=cond,
+    act=act,
 )
 
 register_sutra(SUTRA)

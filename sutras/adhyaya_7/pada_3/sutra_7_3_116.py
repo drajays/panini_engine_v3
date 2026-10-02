@@ -35,7 +35,8 @@ def _target(state: State):
     if len(state.terms) < 2:
         return None
     anga, affix = state.terms[-2], state.terms[-1]
-    if "nadi" not in anga.tags or "sup" not in affix.tags:
+    fem_sarvanama = "sarvanama" in anga.tags and "TAp_anta" in anga.tags   # ā-stem (āp): इदा, ता, का, सर्वा
+    if ("nadi" not in anga.tags and not fem_sarvanama) or "sup" not in affix.tags:
         return None
     if affix.meta.get(_DONE) or not affix.varnas:
         return None

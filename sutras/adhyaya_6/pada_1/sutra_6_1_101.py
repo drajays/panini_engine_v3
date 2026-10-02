@@ -28,6 +28,7 @@ from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
 
 
 _AK = frozenset({"a", "A", "i", "I", "u", "U", "f", "F", "x", "X"})
+_PARA_SUPS = frozenset({"wA", "Am"})
 
 
 def _p037_awiw_cluster(state: State) -> bool:
@@ -59,6 +60,11 @@ def _find_pair(state: State):
             if ti1 != ti2 and PRAGHYA_TERM_TAG in state.terms[ti1].tags:
                 # Pragṛhya ‖ ac — no savarṇa-dīrgha across the *pada* boundary
                 # (6.1.125 prakṛti-bhāva; 1.1.11 tag on the left *term*).
+                continue
+            rt = state.terms[ti2]
+            if ti1 != ti2 and vi2 == 0 and "sup" in rt.tags and (rt.meta.get("upadesha_slp1") or "") in _PARA_SUPS:
+                # vipratiṣedha (1.4.2): ṭā → ina (7.1.12), ām → sām (7.1.52) / nuṭ (7.1.54) are para and take
+                # these sups first; only once they have run does this pair exist.
                 continue
             # Replacement = dīrgha of the common series.
             return (ti1, vi1, ti2, vi2, dirgha_of(v1.slp1))

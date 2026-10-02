@@ -24,12 +24,18 @@
   <h1>चतुर्विंशतिकोष्ठ-प्रतिमानम्</h1>
 
   
-  <div style="margin: 16px 0; padding: 12px; background: var(--bg-subtle); border-radius: 6px; display:flex; align-items:center; gap:12px;">
-    <strong>शब्दः (Stem Search):</strong>
-    <input type="text" id="shabda-search" list="shabda-list" placeholder="राम / rama / hari..." autocomplete="off" style="padding: 6px 10px; width: 300px; font-size: 1rem; border: 1px solid var(--line);">
-    <datalist id="shabda-list"></datalist>
-    <span class="muted" style="font-size:12px;">Select from 9007 dictionary stems to auto-fill below.</span>
+
+  <div style="margin: 16px 0; position:relative;" id="shabda-picker-container">
+    <div style="font-size:11px; color:var(--ink-faint); margin-bottom:4px; text-transform:uppercase; letter-spacing:1px;">शब्दः — FIND A STEM</div>
+    <div style="display:flex; gap:8px;">
+      <input type="text" id="shabda-search" placeholder="राम · rama · हरि · विष्णुः" autocomplete="off" style="padding: 8px 12px; width: 100%; max-width:600px; font-size: 1rem; border: 1px solid var(--accent); border-radius:4px; outline:none; box-shadow:0 0 0 1px var(--accent);">
+    </div>
+    <div id="shabda-dropdown" style="display:none; position:absolute; top:65px; left:0; width:100%; max-width:600px; max-height:300px; overflow-y:auto; background:var(--bg-panel); border:1px solid var(--line); border-radius:4px; box-shadow:0 4px 12px rgba(0,0,0,0.1); z-index:100;">
+      <div id="shabda-list" style="display:flex; flex-direction:column;"></div>
+      <div id="shabda-status" class="muted" style="font-size:11px; padding:8px 12px; border-top:1px solid var(--line-soft); background:var(--bg-subtle);"></div>
+    </div>
   </div>
+
 
   <!-- शीघ्र-उदाहरणम् preset strip -->
   <div class="preset-strip">
@@ -142,7 +148,8 @@
 {% endblock %}
 
 {% block body_extra %}
-<script src="{{ url_for('static', filename='trace.js') }}">
+<script src="{{ url_for('static', filename='trace.js') }}"></script>
+<script>
 async function toggleRuleDetail(row, sid) {
   const detailId = "detail-" + sid.replace(/\./g, "-");
   const detailRow = document.getElementById(detailId);
@@ -204,41 +211,80 @@ document.querySelectorAll(".preset-btn").forEach(btn => {
 
 document.getElementById("load-btn").addEventListener("click", loadMatrix);
 
-/* ── Dictionary Search ── */
+/* ── Dictionary Search (Custom Dropdown) ── */
 let SHABDA_INDEX = [];
 fetch("/static/shabda_index.json").then(r => r.json()).then(data => {
   SHABDA_INDEX = data;
-  const dl = document.getElementById("shabda-list");
-  // We can't render all 9000 at once efficiently in datalist on some browsers, but mostly it works.
-  // We will just put them in the datalist.
-  let frag = document.createDocumentFragment();
-  data.forEach(d => {
-    let opt = document.createElement("option");
-    // value is the visible text when selected, we use Dev + slp + artha so it's searchable
-    opt.value = d.w;
-    opt.textContent = `${d.slp} — ${d.l === 'pulliṅga' ? 'पुं' : (d.l === 'strīliṅga' ? 'स्त्री' : 'नपुं')} — ${d.a || ''} ${d.ae || ''}`;
-    frag.appendChild(opt);
-  });
-  dl.appendChild(frag);
 });
 
-document.getElementById("shabda-search").addEventListener("input", (e) => {
-  const val = e.target.value.trim();
-  const match = SHABDA_INDEX.find(d => d.w === val);
-  if (match) {
-    // auto-fill and load
-    document.getElementById("stem").value = match.slp;
-    document.getElementById("linga").value = match.l;
-    onSchemeChange && onSchemeChange(); // update UI if function exists
+const searchInput = document.getElementById("shabda-search");
+const dropdown = document.getElementById("shabda-dropdown");
+const listEl = document.getElementById("shabda-list");
+const statusEl = document.getElementById("shabda-status");
+
+function renderDropdown(query) {
+  query = query.toLowerCase();
+  
+  let matches = [];
+  if (!query) {
+    matches = SHABDA_INDEX.slice(0, 300);
+  } else {
+    for (let i = 0; i < SHABDA_INDEX.length; i++) {
+      const d = SHABDA_INDEX[i];
+      if (d.w.includes(query) || d.slp.toLowerCase().includes(query) || (d.a && d.a.includes(query)) || (d.ae && d.ae.toLowerCase().includes(query))) {
+        matches.push(d);
+        if (matches.length >= 300) break;
+      }
+    }
+  }
+  
+  listEl.innerHTML = "";
+  matches.forEach(d => {
+    const div = document.createElement("div");
+    div.style.padding = "6px 12px";
+    div.style.cursor = "pointer";
+    div.style.borderBottom = "1px solid var(--line-soft)";
     
-    // De-focus search box so mobile keyboard closes
-    e.target.blur();
+    let l_dev = d.l === 'pulliṅga' ? 'पुंलिङ्गम्' : (d.l === 'strīliṅga' ? 'स्त्रीलिङ्गम्' : (d.l === 'napuṃsaka' ? 'नपुंसकलिङ्गम्' : d.l));
+    div.innerHTML = `<span class="dev">${escapeHtml(d.w)}</span> <span class="muted" style="font-size:0.9em;">(${l_dev})</span> ${escapeHtml(d.a || '')} ${escapeHtml(d.ae ? '— ' + d.ae : '')}`;
     
-    // trigger load
-    loadMatrix();
+    div.onmouseover = () => div.style.background = "var(--bg-subtle)";
+    div.onmouseout = () => div.style.background = "none";
+    div.onclick = () => {
+      document.getElementById("stem").value = d.slp;
+      document.getElementById("linga").value = d.l;
+      searchInput.value = d.w;
+      dropdown.style.display = "none";
+      loadMatrix();
+    };
+    listEl.appendChild(div);
+  });
+  
+  if (matches.length === 0) {
+    statusEl.textContent = "No matches found.";
+  } else if (!query) {
+    statusEl.textContent = `all ${SHABDA_INDEX.length} stems — the first 300 are listed; type to narrow`;
+  } else {
+    statusEl.textContent = `showing top ${matches.length} matches`;
+  }
+}
+
+searchInput.addEventListener("focus", () => {
+  if (SHABDA_INDEX.length > 0) {
+    dropdown.style.display = "block";
+    renderDropdown(searchInput.value.trim());
   }
 });
 
+searchInput.addEventListener("input", (e) => {
+  renderDropdown(e.target.value.trim());
+});
+
+document.addEventListener("click", (e) => {
+  if (!document.getElementById("shabda-picker-container").contains(e.target)) {
+    dropdown.style.display = "none";
+  }
+});
 
 document.addEventListener("DOMContentLoaded", loadMatrix);
 

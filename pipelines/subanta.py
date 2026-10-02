@@ -393,6 +393,9 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.2.41",
     "7.2.107",  # adas + su: s → au (then 7.2.106 d→s, 6.1.88 → asau)
     "7.2.106",  # tad/tyad t→s before su (must precede 6.1.68 su-lopa; 7.2.106 checks sup still present)
+    "7.2.108",  # इदमो मः — idam + su keeps its m (apavāda of 7.2.102, tried first)
+    "7.2.111",  # इदोऽय् पुंसि — apavāda of 7.2.110
+    "7.2.110",  # यः सौ — iyam
     "7.2.103",  # kim → ka (apavāda of 7.2.102, so it is tried first)
     "7.2.102",  # tyadādi final hal→a (must precede 6.1.68; after substitution stem is vowel-final)
     "6.1.68",
@@ -404,6 +407,8 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.1.66",
     "7.1.2",
     "6.1.97",
+    "4.1.3",    # स्त्रियाम् — feminine adhikāra
+    "4.1.4",    # अजाद्यतष्टाप् — feminine sarvanāma: ṭāp after the a-ending stem (ida + ṭāp → idā, tā); strīliṅga only
     "7.3.106",
     # 7.3.107 must precede 6.1.69: the सु is dropped *after* a hrasva,
     # and it is this rule that makes नदी short in सम्बुद्धि.
@@ -411,11 +416,13 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.1.69",
     "7.1.15",
     "7.1.12",
-    "7.2.113",  # हलि लोपः — after 7.1.12 so ङस्→स्य is hāl-ādi (अस्य, not इदस्य)
+    "7.2.112",  # अनाप्यकः — idam: id → an before ṭā(ina) / os
     "7.1.14",
+    "7.3.116",  # ङेराम्नद्याम्नीभ्यः — ṅi → ām after an āp-anta sarvanāma, before its syāṭ (7.3.114): अस्याम्
     "7.3.113",
     "7.3.114",
     "7.1.13",
+    "7.1.11",   # नेदमदसोरकोः — blocks 7.1.9 for idam / adas
     "7.1.9",
     "7.1.17",
     "7.1.24",
@@ -436,6 +443,10 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.1.52",
     # it-prakaraṇa over substitutes / āgamas (śī, śi, suṭ): 1.3.8 names their ś it.
     *IT_PRAKARANA_SEQUENCE,
+    # 7.2.113 needs the sup's real first letter (śī / śi are vowel-initial only once their ś is gone),
+    # and every sup ādeśa (smai, smāt, smin, sya, sām) is in final shape by now: अस्मै, अस्य, एषाम्
+    "7.2.113",  # हलि लोपः — once every sup is in final shape (smai, smāt, smin, sya, sām): अस्मै, अस्य, एषाम्
+    "7.2.109",  # दश्च — the d that 7.2.112 / 7.2.113 left: इमौ, इमे, इमम्, इमानि
     "7.1.72",
     "6.4.10",   # upadhā dīrgha after num insertion (dhanuṣ bahu: u→U before n+s)
     "6.4.8",
@@ -461,6 +472,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.3.108",
     "7.3.109",
     "7.3.111",
+    "7.3.105",  # आङि चापः — āp-anta sarvanāma + ṭā: ā → e (इदा → अने + आ), then 6.1.78
     "7.3.119",
     "7.3.120",
     "6.1.104",  # नादिचि — निषेध of 6.1.102 when the pūrva is आत्

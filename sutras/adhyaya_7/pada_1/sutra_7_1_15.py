@@ -44,6 +44,8 @@ def _matches(state: State) -> bool:
     up = pr.meta.get("upadesha_slp1")
     if up not in _TABLE:
         return False
+    if not anga.varnas or anga.varnas[-1].slp1 != "a":
+        return False  # adanta only (7.1.9 ataḥ): an ā-stem sarvanāma takes syāṭ by 7.3.114
     if pr.meta.get("smat_smin_done"):
         return False
     return True

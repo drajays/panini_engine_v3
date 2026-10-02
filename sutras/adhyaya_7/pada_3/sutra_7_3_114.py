@@ -47,6 +47,16 @@ from phonology.sarvanama_syat_7_3_114 import is_abanta_flat, ngit_sup_match
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
+def _ngit_identity(pr):
+    """The ṅit sup this is: Ne / Nas / Nasi, or ṅi once 7.3.116 has made it ām (ṅit by sthānivat)."""
+    up = pr.meta.get("upadesha_slp1")
+    if up in ("Ne", "Nas", "Nasi"):
+        return up
+    if up == "Ni" and pr.meta.get("7_3_116_Am_adesha_done"):
+        return "Ni"  # ṅi already replaced by ām (7.3.116); ṅit by sthānivat
+    return None
+
+
 def _matches(state: State) -> bool:
     if not adhikara_in_effect("7.3.114", state, "6.4.1"):
         return False
@@ -62,11 +72,8 @@ def _matches(state: State) -> bool:
         return False
     if "sup" not in pr.tags:
         return False
-    up = pr.meta.get("upadesha_slp1")
-    # **Ni** (सप्तम्येकवचनम्) is outside the **7.3.114** *syāṭ* slice here.
-    if up == "Ni":
-        return False
-    if not ngit_sup_match(up):
+    up = _ngit_identity(pr)
+    if up is None:
         return False
     if pr.meta.get("syat_7_3_114_done"):
         return False
@@ -80,7 +87,7 @@ def _matches(state: State) -> bool:
 
 # Phonetic remainder after **ṅ** in each **ṅit** *sup* (ṅ dropped).  **Ne** alone
 # carries the **syāṭ** prefix **s** + **y** + **ā** before **e** in ``act``.
-_NGIT_REMAINDER_SLP1 = {"Ne": "e", "Nas": "as", "Nasi": "asi"}
+_NGIT_REMAINDER_SLP1 = {"Ne": "e", "Nas": "as", "Nasi": "as", "Ni": "Am"}
 
 
 def cond(state: State) -> bool:
@@ -96,20 +103,17 @@ def act(state: State) -> State:
     ai, pj = hit
     anga = state.terms[ai]
     pr = state.terms[pj]
-    up = pr.meta.get("upadesha_slp1")
-    if not isinstance(up, str) or up not in _NGIT_REMAINDER_SLP1:
+    up = _ngit_identity(pr)
+    if up is None:
         return state
     rem = _NGIT_REMAINDER_SLP1[up]
     anga.varnas[-1] = mk("a")
     anga.meta["hrasva_7_3_114_anga"] = True
     pr.meta["syat_7_3_114_agama"] = "syAw"
-    pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1", up)
-    if up == "Ne":
-        pr.varnas = [mk("s"), mk("y"), mk("A"), mk("e")]
-        pr.meta["upadesha_slp1"] = "syAe"
-    else:
-        pr.varnas = parse_slp1_upadesha_sequence(rem)
-        pr.meta["upadesha_slp1"] = rem
+    pr.meta.setdefault("upadesha_slp1_original", pr.meta.get("upadesha_slp1", up))
+    # syāṭ (s y ā) + the ṅit sup's remainder: syAe, syAas, syAAm (6.1.101 / 6.1.88 then join them)
+    pr.varnas = [mk("s"), mk("y"), mk("A")] + list(parse_slp1_upadesha_sequence(rem))
+    pr.meta["upadesha_slp1"] = "syA" + rem
     pr.meta["syat_7_3_114_done"] = True
     return state
 
