@@ -355,47 +355,5 @@ function renderRules(rules) {
   document.getElementById("rules-content").innerHTML = html;
 }
 
-async function toggleRuleDetail(row, sid) {
-  const detailId = "detail-" + sid.replace(/\./g, "-");
-  const detailRow = document.getElementById(detailId);
-  if (!detailRow) return;
-  
-  if (detailRow.style.display === "none") {
-    detailRow.style.display = "table-row";
-    row.style.background = "var(--bg-subtle)";
-    
-    // Fetch data if not already loaded
-    const contentDiv = detailRow.querySelector(".rule-detail-content");
-    if (contentDiv.dataset.loaded) return;
-    
-    try {
-      const r = await fetch("/api/sutra-ref/" + sid);
-      if (!r.ok) throw new Error("Not found");
-      const data = await r.json();
-      
-      let html = `<div style="margin-bottom:8px;"><strong>पदच्छेदः:</strong> <span class="dev" style="color:var(--accent);">${escapeHtml(data.pcd || data.dev)}</span></div>`;
-      if (data.anuvritti && data.anuvritti.length > 0) {
-        html += `<div style="margin-bottom:8px;"><strong>अनुवृत्तिः:</strong> <span class="dev">${escapeHtml(data.anuvritti.join(", "))}</span></div>`;
-      }
-      if (data.why_dev) {
-        html += `<div style="margin-bottom:8px;"><strong>तात्पर्यम्:</strong> <span class="dev">${escapeHtml(data.why_dev)}</span></div>`;
-      }
-      if (data.gloss_sa) {
-        html += `<div style="margin-bottom:8px;"><strong>संस्कृत-अर्थः:</strong> <span class="dev">${escapeHtml(data.gloss_sa)}</span></div>`;
-      }
-      if (data.gloss_en) {
-        html += `<div><strong>English:</strong> <span class="muted">${escapeHtml(data.gloss_en)}</span></div>`;
-      }
-      
-      contentDiv.innerHTML = html;
-      contentDiv.dataset.loaded = "true";
-    } catch (e) {
-      contentDiv.innerHTML = `<div class="error" style="color:var(--danger);font-size:12px;">विवरणं न लब्धम् (Details not found)</div>`;
-    }
-  } else {
-    detailRow.style.display = "none";
-    row.style.background = "";
-  }
-}
 </script>
 {% endblock %}

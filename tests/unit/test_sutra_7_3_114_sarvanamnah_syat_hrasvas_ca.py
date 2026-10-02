@@ -108,8 +108,8 @@ def test_nas_remainder_and_dirgha_chain():
     s0 = apply_rule("6.4.1", s0)
     s1 = apply_rule("7.3.114", s0)
     assert s1.terms[0].varnas[-1].slp1 == "a"
-    assert "".join(v.slp1 for v in s1.terms[1].varnas) == "as"
-    assert s1.terms[1].meta.get("upadesha_slp1") == "as"
+    assert "".join(v.slp1 for v in s1.terms[1].varnas) == "syAas"   # syāṭ + the ṅit sup's remainder
+    assert s1.terms[1].meta.get("upadesha_slp1") == "syAas"
     s2 = apply_rule("6.1.101", s1)
     assert "A" in s2.flat_slp1()
     assert "s" in s2.flat_slp1()
@@ -119,7 +119,7 @@ def test_nasi_remainder():
     s0 = _kA_ngit_state("Nasi")
     s0 = apply_rule("6.4.1", s0)
     s1 = apply_rule("7.3.114", s0)
-    assert "".join(v.slp1 for v in s1.terms[1].varnas) == "asi"
+    assert "".join(v.slp1 for v in s1.terms[1].varnas) == "syAas"   # ṅasi → as after it-lopa, with syāṭ
     assert s1.terms[1].meta.get("syat_7_3_114_agama") == "syAw"
 
 
