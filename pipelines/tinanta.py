@@ -2365,6 +2365,7 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     state = P00_lat_vartamane(state)
     _tin = _select_tin_adesha("laT", "parasmai", purusha, vacana)
     state = P00_parasmai_tin_adesha(state, _tin)
+    state = apply_rule("3.4.83", state)     # विदो लटो वा: optional ṇalādi for vid (scoped to vid in its own cond)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
     state = apply_rule("3.4.113", state)
     state = apply_rule("1.2.4", state)

@@ -185,6 +185,24 @@ def _derive_subanta(stem: str, v: int, vac: int, linga: str, anvadesha: bool = F
         return "error", "", f"{type(e).__name__}: {e}"[:200]
 
 
+@lru_cache(maxsize=4096)
+def _tinanta_readings(key: str, fields: str) -> tuple[tuple[str, str, tuple], ...]:
+    """Every vibhāṣā reading the derivation reaches (engine.vikalpa.explore): (slp1, dev, ((sūtra, chosen), …))."""
+    from engine.vikalpa import explore
+    from pipelines.tinanta import derive
+
+    c = TinantaCell(**json.loads(fields))
+
+    def run():
+        with _quiet():
+            return derive(c.dhatu_id, c.lakara, c.prayoga, c.purusha, c.vacana, **c.derive_kwargs())
+
+    try:
+        return tuple((b.surface_slp1, b.surface_dev, b.choices) for b in explore(run))
+    except Exception:  # noqa: BLE001 — the single-reading verdict already carries the error
+        return ()
+
+
 def tinanta_request(c: TinantaCell) -> dict:
     return {"kind": "tinanta", **{k: v for k, v in c.as_dict().items() if k != "tag"}}
 
@@ -223,6 +241,17 @@ def verify(kind: str, tag: str, word_slp1: str) -> dict:
         fields = json.dumps({k: v for k, v in c.as_dict().items()}, ensure_ascii=False, sort_keys=True)
         st, slp, dev = _derive_tinanta(c.key(), fields)
         out["request"] = tinanta_request(c)
+        if st != "error" and slp != word_slp1:
+            # a विभाषा (e.g. 3.4.83 विदो लटो वा) has two legitimate readings: accept the attested one if the engine reaches it
+            for s2, d2, choices in _tinanta_readings(c.key(), fields):
+                if s2 == word_slp1:
+                    used = [sid for sid, chosen in choices if chosen]
+                    out.update(status="derived", produced_slp1=s2, produced_dev=d2,
+                               note=("विभाषा " + ", ".join(used) + " taken — the rule's other reading is "
+                                     + " / ".join(d for s, d, _ in _tinanta_readings(c.key(), fields) if s != s2)) if used else None,
+                               request={**out["request"], "vibhasha": {sid: chosen for sid, chosen in choices}},
+                               readings=[d for _, d, _ in _tinanta_readings(c.key(), fields)])
+                    return out
     else:
         st, slp, dev = _derive_subanta(c.stem_slp1, c.vibhakti, c.vacana, c.linga)
         out["request"] = subanta_request(c)
@@ -256,6 +285,11 @@ def derive_request(req: dict):
         fields = {k: req.get(k) for k in TinantaCell.__dataclass_fields__ if k != "tag"}
         c = TinantaCell(tag="", **fields)
         c.upasargas = list(c.upasargas or [])
+        if req.get("vibhasha"):
+            from engine.vikalpa import choose
+
+            with choose(dict(req["vibhasha"])):
+                return derive(c.dhatu_id, c.lakara, c.prayoga, int(c.purusha), int(c.vacana), **c.derive_kwargs())
         return derive(c.dhatu_id, c.lakara, c.prayoga, int(c.purusha), int(c.vacana), **c.derive_kwargs())
     if req.get("kind") == "subanta" and req.get("context") and req.get("stem_slp1") in ("asmad", "yuzmad"):
         from pipelines.enclitic import derive_in_context

@@ -69,3 +69,19 @@ def is_sarvadhatuka_upadesha_slp1(s: str) -> bool:
     if t.endswith("~") and t[:-1] in SARVADHATUKA_UPADESHA_SLP1:
         return True
     return False
+
+
+# Sthānin lakāras whose tiṅ are sārvadhātuka (liṭ's are ārdhadhātuka by 3.4.115, āśīr-liṅ by 3.4.116).
+_SARVADHATUKA_STHANIN = frozenset({"laT", "loT", "laG", "liG"})
+
+
+def tin_by_sthanin(term) -> bool:
+    """A tiṅ ādeśa that replaced a sārvadhātuka tiṅ (e.g. 3.4.83's ṇal for laṭ's tip) is still that tiṅ — 1.1.56."""
+    return ("tin_adesha_3_4_78" in term.tags
+            and (term.meta.get("source_lakara_upadesha") or "").strip() in _SARVADHATUKA_STHANIN
+            and "tin_before_3_4_83" in term.meta)
+
+
+def sthanin_was_pit(term) -> bool:
+    """1.1.56: the ādeśa inherits the sthānin's pit-ness (ṇal for tip, thal for sip, ṇal for mip)."""
+    return (term.meta.get("tin_before_3_4_83") or "").endswith(("p", "P"))

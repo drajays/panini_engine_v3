@@ -36,7 +36,11 @@ from __future__ import annotations
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import is_sarvadhatuka_upadesha_slp1
+from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import (
+    is_sarvadhatuka_upadesha_slp1,
+    sthanin_was_pit,
+    tin_by_sthanin,
+)
 
 # पित् = the upadeśa's own trailing letter is प् (an इत्, dropped later by
 # 1.3.3 हलन्त्यम्). तिप्/सिप्/मिप् are the three tiṅ ādeśa with this; शप्
@@ -54,9 +58,10 @@ def _find(state: State) -> int | None:
         if "pratyaya" not in t.tags:
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
-        if not is_sarvadhatuka_upadesha_slp1(up):
+        by_sthanin = tin_by_sthanin(t)
+        if not (is_sarvadhatuka_upadesha_slp1(up) or by_sthanin):
             continue
-        if _is_pit_upadesha(up):
+        if _is_pit_upadesha(up) or (by_sthanin and sthanin_was_pit(t)):   # 1.1.56: ṇal for tip is pit too
             continue
         # 3.4.92 आडुत्तमस्य पिच्च: the loṭ uttama endings are pit (सुनवाव, करवाम)
         if ((t.meta.get("source_lakara_upadesha") or "").strip() == "loT"

@@ -20,6 +20,7 @@ from engine.state import State, Term
 from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import (
     SARVADHATUKA_UPADESHA_SLP1,
     is_sarvadhatuka_upadesha_slp1,
+    tin_by_sthanin,
 )
 
 
@@ -36,7 +37,7 @@ def _dhatu_adjacent_sarvadhatuka_untagged(state: State) -> list[Term]:
         if "dhatu" not in state.terms[i - 1].tags:
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
-        if not is_sarvadhatuka_upadesha_slp1(up):
+        if not (is_sarvadhatuka_upadesha_slp1(up) or tin_by_sthanin(t)):
             continue
         if SARVADHATUKA_113 in t.tags:
             continue

@@ -57,3 +57,22 @@ def test_jYA_jan_7_3_79():
 ])
 def test_upasarga_junction_and_sam_anusvara(d, lak, up, want):
     assert tin(d, lak, "kartari", 3, 3 if d.startswith("Adadi_02_0011") else 1, upasargas=up).flat_dev() == want
+
+
+def test_vid_lat_3_4_83_both_readings():
+    from engine.vikalpa import choose
+    cells = [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)]
+    d = "Adadi_02_0059"
+    with choose({"3.4.83": False}):
+        assert [tin(d, "laT", "kartari", p, n).flat_dev() for p, n in cells] == \
+            ["वेद्मि", "विद्वः", "विद्मः", "वेत्सि", "वित्थः", "वित्थ", "वेत्ति", "वित्तः", "विदन्ति"]
+    with choose({"3.4.83": True}):   # ṇalādi: ṇal/ṭhal replace pit tip/sip/mip (guṇa), atus/aṭhus/us/a/va/ma are kṅit
+        assert [tin(d, "laT", "kartari", p, n).flat_dev() for p, n in cells] == \
+            ["वेद", "विद्व", "विद्म", "वेत्थ", "विदथुः", "विद", "वेद", "विदतुः", "विदुः"]
+
+
+def test_3_4_83_only_for_vid_jnane():
+    from engine.vikalpa import choose, explore
+    run = lambda: tin("Adadi_02_0044", "laT", "kartari", 3, 3)           # yA: not vid
+    assert [b.surface_dev for b in explore(run)] == ["यान्ति"]
+    assert {b.surface_dev for b in explore(lambda: tin("Adadi_02_0059", "laT", "kartari", 3, 3))} == {"विदन्ति", "विदुः"}
