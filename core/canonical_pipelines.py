@@ -842,7 +842,7 @@ def P00_ciY_ktavatu_nistha_prathama_tail(s: State) -> State:
     but *sup* is attached **before** the first merge so **7.1.70** sees two terms).
 
     Optional ``state.meta["ktavatu_mfz_stuta_arm"]``: after the first merge, run
-    **8.4.40** (*z*+*t* → *z*+*w*) under ``8_4_40_pre_tripadi_arm`` (*mṛṣ*+*t*).
+    **8.4.41** (*z*+*t* → *z*+*w*, ṣṭutva) for *mṛṣ*+*t*.
 
     Optional ``state.meta["6_1_111_nn_t_lopa_arm"]``: **6.1.111** on the two-term
     tape before merge (*Binn* + *tavat* → *Binn* + *avat* for *bhid*).

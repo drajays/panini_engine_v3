@@ -1,11 +1,18 @@
 """
-8.4.40  —  VIDHI (narrow; two engineering slices on one index)
+8.4.40  स्तोः श्चुना श्चुः  —  VIDHI  (Tripāḍī)
 
-(A) Canonical Pāṇini **8.4.40** *stoḥ ścunā ścuḥ* (recipe arm
-    ``meta['8_4_40_sto_tCh_arm']``): ``t`` + ``C`` (= ``छ``) → ``c`` after **8.2.1**;
+संहितायाम् a स् or a तवर्ग letter that directly follows or precedes a श् or a चवर्ग
+letter becomes the matching श् / चवर्ग letter (स→श, त→च, थ→छ, द→ज, ध→झ, न→ञ):
 
-(B) Older glass-box shard modelled elsewhere as ṭuṇā (``z``+``t`` → ``z``+``w``)
-    for ``mArzwi``, etc.—unchanged behaviour.
+    रामस् + शेते → रामश्शेते      भवान् + शेते → भवाञ् च् शेते (8.3.31 तुक् then त→च)
+    उत् + छ → उच्छ                 राजन् + जलसि → राजञ्जलसि       यज् + न → यज्ञ
+    मस्ज् → मश्ज् (→ 8.4.53 मज्ज्)
+
+Exception **8.4.44 शात्**: a तवर्ग after श् is not changed (प्रश्न).
+Ordering is Tripāḍī's own: 8.2.30 (चोः कुः), 8.2.36, 8.2.39 and 8.2.66 precede, and
+this rule is asiddha for them, so ``sat+cit`` takes jaśtva (``sad``) first and only then
+``saj``; 8.4.55 follows.  ṣ+t is 8.4.41, not this rule.  Scans the flattened varṇa
+stream, across Terms (saṃhitā).
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 84040 · स्तोः श्चुना श्चुः
@@ -23,37 +30,14 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology    import mk
 
-
-def _find_zt(state: State):
-    """
-    *Tripāḍī* zone **or** ``state.meta["8_4_40_pre_tripadi_arm"]`` (e.g. *mṛṣ*+*t*
-    before **8.2.1**) so *ṣ*+*t* → *ṣ*+*ṭ* does not trip the non–8.x *asiddha* gate.
-    """
-    if not (state.tripadi_zone or state.meta.get("8_4_40_pre_tripadi_arm")):
-        return None
-    if not state.terms:
-        return None
-    t = state.terms[0]
-    if t.meta.get("8_4_40_zw_done"):
-        return None
-    for i in range(1, len(t.varnas)):
-        if t.varnas[i - 1].slp1 == "z" and t.varnas[i].slp1 == "t":
-            return (0, i)
-    return None
-
-
 _STU_TO_SCU = {"s": "S", "t": "c", "T": "C", "d": "j", "D": "J", "n": "Y"}
 _SCU = frozenset("ScCjJY")
+_TAVARGA = frozenset("tTdDn")
 
 
 def _find_stu(state: State):
-    """
-    स्तोः श्चुना श्चुः — a स्/तवर्ग letter next to a श्/चवर्ग letter (either
-    side) becomes the matching श्/चवर्ग letter: षस्ज् → सश्ज् (→ 8.4.53 सज्ज्),
-    उत्+छ → उच्छ, राज्+ना → राज्ञा. **8.4.44 शात्**: not a तवर्ग after श् (प्रश्नः).
-    Scans the whole tape in order, across term boundaries (saṃhitā).
-    """
-    if not (state.tripadi_zone or state.meta.get("8_4_40_pre_tripadi_arm")):
+    """First (Term, index) that ścutva applies to, or None."""
+    if not state.tripadi_zone:
         return None
     flat = [(t, i) for t in state.terms for i in range(len(t.varnas))]
     for k, (t, i) in enumerate(flat):
@@ -62,20 +46,29 @@ def _find_stu(state: State):
             continue
         prev = flat[k - 1][0].varnas[flat[k - 1][1]].slp1 if k else ""
         nxt = flat[k + 1][0].varnas[flat[k + 1][1]].slp1 if k + 1 < len(flat) else ""
-        if nxt in _SCU or (prev in _SCU and not (prev == "S" and c != "s")):
+        if prev == "S" and c in _TAVARGA:   # 8.4.44 शात्
+            continue
+        if nxt in _SCU or prev in _SCU:
             return t, i
     return None
 
 
 def cond(state: State) -> bool:
-    # ścutva only — ṣ+t (ṣṭutva) is 8.4.41 ष्टुना ष्टुः
     return _find_stu(state) is not None
 
 
 def act(state: State) -> State:
+    changes = []
     while (hit := _find_stu(state)) is not None:
         t, i = hit
-        t.varnas[i] = mk(_STU_TO_SCU[t.varnas[i].slp1])
+        old = t.varnas[i].slp1
+        t.varnas[i] = mk(_STU_TO_SCU[old])
+        changes.append(f"{old}→{_STU_TO_SCU[old]}")
+    if changes:
+        state.meta["__why_now_dev__"] = (
+            f"श्/चवर्गयोगे स्/तवर्गः श्चुः ({', '.join(changes)}); "
+            "यथा रामस्+शेते → रामश्शेते, यज्+न → यज्ञ; शात् परस्य तवर्गे न (८.४.४४)। (८.४.४०)"
+        )
     return state
 
 
@@ -85,7 +78,7 @@ SUTRA = SutraRecord(
     text_slp1      = 'stoH ScunA ScuH',
     text_dev       = 'स्तोः श्चुना श्चुः',
     padaccheda_dev = "स्तोः / श्चुना / श्चुः",
-    why_dev        = "चवर्गे परे स्तोः श्चुनेन श्चुः (डेमो: दधि+छत्रम्); ष्टुणा-शाखा पुरातन-मार्ज्वि-मार्गे।",
+    why_dev        = "श्/चवर्गयोगे संहितायां स्/तवर्गस्य श्/चवर्गादेशः; शात् परस्य तवर्गे न।",
     anuvritti_from = ("8.2.1",),
     cond           = cond,
     act            = act,

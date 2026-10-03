@@ -1,11 +1,620 @@
 {
-  "anomalies": [],
-  "cascade_slow_cells": [],
+  "anomalies": [
+    {
+      "baseline_mean_ns": 454236.0,
+      "current_avg_ns": 883031.8,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.94,
+      "sutra_id": "7.2.102",
+      "z_score": 538.2
+    },
+    {
+      "baseline_mean_ns": 1902817.3,
+      "current_avg_ns": 3746750.8,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "1.4.102",
+      "z_score": 407.7
+    },
+    {
+      "baseline_mean_ns": 523905.2,
+      "current_avg_ns": 1028802.1,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "6.1.69",
+      "z_score": 389.21
+    },
+    {
+      "baseline_mean_ns": 546969.3,
+      "current_avg_ns": 1086423.2,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.99,
+      "sutra_id": "6.1.77",
+      "z_score": 329.55
+    },
+    {
+      "baseline_mean_ns": 782166.8,
+      "current_avg_ns": 1566479.8,
+      "severity": "CRITICAL",
+      "slowdown_factor": 2.0,
+      "sutra_id": "7.1.54",
+      "z_score": 313.02
+    },
+    {
+      "baseline_mean_ns": 1867949.7,
+      "current_avg_ns": 3732588.0,
+      "severity": "CRITICAL",
+      "slowdown_factor": 2.0,
+      "sutra_id": "7.3.119",
+      "z_score": 305.11
+    },
+    {
+      "baseline_mean_ns": 995854.8,
+      "current_avg_ns": 1963122.0,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "6.1.110",
+      "z_score": 304.33
+    },
+    {
+      "baseline_mean_ns": 1223426.0,
+      "current_avg_ns": 2410014.3,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "7.1.17",
+      "z_score": 299.59
+    },
+    {
+      "baseline_mean_ns": 337761.4,
+      "current_avg_ns": 660387.7,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "1.3.7",
+      "z_score": 286.97
+    },
+    {
+      "baseline_mean_ns": 3655754.1,
+      "current_avg_ns": 7145767.7,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.95,
+      "sutra_id": "7.1.24",
+      "z_score": 281.18
+    },
+    {
+      "baseline_mean_ns": 1084407.1,
+      "current_avg_ns": 2138454.5,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "6.4.3",
+      "z_score": 256.14
+    },
+    {
+      "baseline_mean_ns": 9303050.0,
+      "current_avg_ns": 18234081.0,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "7.2.106",
+      "z_score": 250.34
+    },
+    {
+      "baseline_mean_ns": 60732.9,
+      "current_avg_ns": 118765.8,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "1.2.41",
+      "z_score": 248.22
+    },
+    {
+      "baseline_mean_ns": 1921262.0,
+      "current_avg_ns": 3781353.5,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "7.3.113",
+      "z_score": 238.71
+    },
+    {
+      "baseline_mean_ns": 400209.1,
+      "current_avg_ns": 785060.4,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "1.3.3",
+      "z_score": 232.52
+    },
+    {
+      "baseline_mean_ns": 66455.0,
+      "current_avg_ns": 130049.5,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "1.3.4",
+      "z_score": 222.94
+    },
+    {
+      "baseline_mean_ns": 83517.9,
+      "current_avg_ns": 163987.4,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "8.3.15",
+      "z_score": 202.81
+    },
+    {
+      "baseline_mean_ns": 1278342.3,
+      "current_avg_ns": 2479318.7,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.94,
+      "sutra_id": "1.1.42",
+      "z_score": 199.59
+    },
+    {
+      "baseline_mean_ns": 376738.4,
+      "current_avg_ns": 743489.4,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "7.3.103",
+      "z_score": 196.05
+    },
+    {
+      "baseline_mean_ns": 1869697.3,
+      "current_avg_ns": 3664100.9,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "7.3.120",
+      "z_score": 189.26
+    },
+    {
+      "baseline_mean_ns": 936828.4,
+      "current_avg_ns": 1863491.0,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.99,
+      "sutra_id": "7.3.109",
+      "z_score": 177.29
+    },
+    {
+      "baseline_mean_ns": 461134.2,
+      "current_avg_ns": 918075.9,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.99,
+      "sutra_id": "6.1.102",
+      "z_score": 176.98
+    },
+    {
+      "baseline_mean_ns": 1258937.4,
+      "current_avg_ns": 2468197.1,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "7.1.19",
+      "z_score": 176.7
+    },
+    {
+      "baseline_mean_ns": 655942.4,
+      "current_avg_ns": 1288925.9,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "7.3.104",
+      "z_score": 176.3
+    },
+    {
+      "baseline_mean_ns": 1008745.8,
+      "current_avg_ns": 1978375.2,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "7.3.111",
+      "z_score": 174.11
+    },
+    {
+      "baseline_mean_ns": 583585.0,
+      "current_avg_ns": 1147793.3,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "8.3.59",
+      "z_score": 172.7
+    },
+    {
+      "baseline_mean_ns": 1262239.1,
+      "current_avg_ns": 2460136.3,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.95,
+      "sutra_id": "7.1.20",
+      "z_score": 171.63
+    },
+    {
+      "baseline_mean_ns": 2374775.3,
+      "current_avg_ns": 5732755.6,
+      "severity": "CRITICAL",
+      "slowdown_factor": 2.41,
+      "sutra_id": "7.1.52",
+      "z_score": 170.59
+    },
+    {
+      "baseline_mean_ns": 1365862.7,
+      "current_avg_ns": 2701356.9,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.98,
+      "sutra_id": "7.1.72",
+      "z_score": 169.97
+    },
+    {
+      "baseline_mean_ns": 83710.0,
+      "current_avg_ns": 165245.1,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "8.2.66",
+      "z_score": 169.75
+    },
+    {
+      "baseline_mean_ns": 1098715.2,
+      "current_avg_ns": 2166871.5,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "6.1.101",
+      "z_score": 163.87
+    },
+    {
+      "baseline_mean_ns": 5739827.5,
+      "current_avg_ns": 11285179.8,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "6.1.68",
+      "z_score": 161.62
+    },
+    {
+      "baseline_mean_ns": 23729482.3,
+      "current_avg_ns": 46843850.0,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "1.1.51",
+      "z_score": 161.6
+    },
+    {
+      "baseline_mean_ns": 311226.9,
+      "current_avg_ns": 620882.1,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.99,
+      "sutra_id": "6.1.87",
+      "z_score": 156.47
+    },
+    {
+      "baseline_mean_ns": 1158877.5,
+      "current_avg_ns": 2287992.0,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "7.1.9",
+      "z_score": 154.22
+    },
+    {
+      "baseline_mean_ns": 71367.4,
+      "current_avg_ns": 140586.1,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "1.4.18",
+      "z_score": 150.2
+    },
+    {
+      "baseline_mean_ns": 158649.8,
+      "current_avg_ns": 308259.2,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.94,
+      "sutra_id": "1.3.8",
+      "z_score": 149.46
+    },
+    {
+      "baseline_mean_ns": 354922.2,
+      "current_avg_ns": 692922.0,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.95,
+      "sutra_id": "6.1.88",
+      "z_score": 148.1
+    },
+    {
+      "baseline_mean_ns": 576867.6,
+      "current_avg_ns": 1142861.7,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.98,
+      "sutra_id": "6.1.107",
+      "z_score": 143.7
+    },
+    {
+      "baseline_mean_ns": 253337.9,
+      "current_avg_ns": 493123.0,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.95,
+      "sutra_id": "1.2.72",
+      "z_score": 138.37
+    },
+    {
+      "baseline_mean_ns": 1364216.7,
+      "current_avg_ns": 2661558.9,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.95,
+      "sutra_id": "8.4.56",
+      "z_score": 133.3
+    },
+    {
+      "baseline_mean_ns": 10424934.0,
+      "current_avg_ns": 20354275.0,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.95,
+      "sutra_id": "7.3.107",
+      "z_score": 128.67
+    },
+    {
+      "baseline_mean_ns": 90061.1,
+      "current_avg_ns": 176439.5,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "1.3.9",
+      "z_score": 128.57
+    },
+    {
+      "baseline_mean_ns": 4196189.8,
+      "current_avg_ns": 8328973.3,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.98,
+      "sutra_id": "7.3.112",
+      "z_score": 124.8
+    },
+    {
+      "baseline_mean_ns": 338037.5,
+      "current_avg_ns": 663331.5,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "1.3.2",
+      "z_score": 120.9
+    },
+    {
+      "baseline_mean_ns": 967129.5,
+      "current_avg_ns": 1903524.1,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "6.1.103",
+      "z_score": 119.17
+    },
+    {
+      "baseline_mean_ns": 386473.2,
+      "current_avg_ns": 759776.1,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "7.3.102",
+      "z_score": 116.8
+    },
+    {
+      "baseline_mean_ns": 374546.6,
+      "current_avg_ns": 756464.1,
+      "severity": "CRITICAL",
+      "slowdown_factor": 2.02,
+      "sutra_id": "6.1.104",
+      "z_score": 116.71
+    },
+    {
+      "baseline_mean_ns": 924698.7,
+      "current_avg_ns": 1816504.3,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "1.1.11",
+      "z_score": 110.18
+    },
+    {
+      "baseline_mean_ns": 336378.5,
+      "current_avg_ns": 656284.5,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.95,
+      "sutra_id": "7.1.12",
+      "z_score": 105.03
+    },
+    {
+      "baseline_mean_ns": 1310440.1,
+      "current_avg_ns": 2569973.9,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "8.2.39",
+      "z_score": 103.16
+    },
+    {
+      "baseline_mean_ns": 1921122.5,
+      "current_avg_ns": 3749771.9,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.95,
+      "sutra_id": "7.3.108",
+      "z_score": 102.36
+    },
+    {
+      "baseline_mean_ns": 19246.0,
+      "current_avg_ns": 37653.8,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "1.4.103",
+      "z_score": 101.84
+    },
+    {
+      "baseline_mean_ns": 2402054.7,
+      "current_avg_ns": 4699483.1,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "6.4.8",
+      "z_score": 101.5
+    },
+    {
+      "baseline_mean_ns": 59362.2,
+      "current_avg_ns": 117211.9,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "1.1.43",
+      "z_score": 100.05
+    },
+    {
+      "baseline_mean_ns": 23315773.0,
+      "current_avg_ns": 45736992.0,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "7.3.116",
+      "z_score": 98.7
+    },
+    {
+      "baseline_mean_ns": 232164.0,
+      "current_avg_ns": 461589.5,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.99,
+      "sutra_id": "1.4.16",
+      "z_score": 97.59
+    },
+    {
+      "baseline_mean_ns": 1826269.8,
+      "current_avg_ns": 3606727.1,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "6.4.146",
+      "z_score": 93.14
+    },
+    {
+      "baseline_mean_ns": 19686.6,
+      "current_avg_ns": 38274.5,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.94,
+      "sutra_id": "1.4.13",
+      "z_score": 89.46
+    },
+    {
+      "baseline_mean_ns": 227378.7,
+      "current_avg_ns": 441645.6,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.94,
+      "sutra_id": "1.4.3",
+      "z_score": 87.83
+    },
+    {
+      "baseline_mean_ns": 1052634.4,
+      "current_avg_ns": 2054396.4,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.95,
+      "sutra_id": "7.1.15",
+      "z_score": 87.83
+    },
+    {
+      "baseline_mean_ns": 32931.2,
+      "current_avg_ns": 64802.7,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "1.4.110",
+      "z_score": 86.05
+    },
+    {
+      "baseline_mean_ns": 104287.1,
+      "current_avg_ns": 205268.0,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "1.4.17",
+      "z_score": 85.09
+    },
+    {
+      "baseline_mean_ns": 330606.3,
+      "current_avg_ns": 652744.4,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "6.1.78",
+      "z_score": 82.08
+    },
+    {
+      "baseline_mean_ns": 57891.9,
+      "current_avg_ns": 113912.8,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.97,
+      "sutra_id": "1.1.27",
+      "z_score": 79.64
+    },
+    {
+      "baseline_mean_ns": 59159.8,
+      "current_avg_ns": 115671.3,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "1.4.7",
+      "z_score": 79.4
+    },
+    {
+      "baseline_mean_ns": 32276.2,
+      "current_avg_ns": 62809.8,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.95,
+      "sutra_id": "1.1.73",
+      "z_score": 79.21
+    },
+    {
+      "baseline_mean_ns": 2136703.9,
+      "current_avg_ns": 4148774.2,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.94,
+      "sutra_id": "7.1.14",
+      "z_score": 74.1
+    },
+    {
+      "baseline_mean_ns": 3781183.1,
+      "current_avg_ns": 7369526.3,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.95,
+      "sutra_id": "7.3.106",
+      "z_score": 74.07
+    },
+    {
+      "baseline_mean_ns": 1171980.1,
+      "current_avg_ns": 2456077.2,
+      "severity": "CRITICAL",
+      "slowdown_factor": 2.1,
+      "sutra_id": "8.4.2",
+      "z_score": 69.18
+    },
+    {
+      "baseline_mean_ns": 19290.3,
+      "current_avg_ns": 37471.5,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.94,
+      "sutra_id": "1.4.14",
+      "z_score": 63.46
+    },
+    {
+      "baseline_mean_ns": 19691.0,
+      "current_avg_ns": 38688.8,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "4.1.2",
+      "z_score": 55.53
+    },
+    {
+      "baseline_mean_ns": 2281395.1,
+      "current_avg_ns": 4474126.0,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.96,
+      "sutra_id": "7.1.13",
+      "z_score": 47.06
+    },
+    {
+      "baseline_mean_ns": 13381.4,
+      "current_avg_ns": 26141.5,
+      "severity": "CRITICAL",
+      "slowdown_factor": 1.95,
+      "sutra_id": "1.2.45",
+      "z_score": 37.37
+    },
+    {
+      "baseline_mean_ns": 11065970.7,
+      "current_avg_ns": 30837693.8,
+      "severity": "WARN",
+      "slowdown_factor": 2.79,
+      "sutra_id": "6.1.97",
+      "z_score": 2.97
+    }
+  ],
+  "cascade_slow_cells": [
+    {
+      "cell_id": "anya_pulliṅga:anya:2-3",
+      "median_ns": 7882798,
+      "severity": "WARN",
+      "total_ns": 24847078,
+      "vs_median": 3.15
+    }
+  ],
   "cell_cpu_profile": {
     "derivations_timed": 501,
-    "max_total_ns": 9797163,
-    "median_total_ns": 4064996,
-    "min_total_ns": 3122921
+    "max_total_ns": 24847078,
+    "median_total_ns": 7882798,
+    "min_total_ns": 6033008
   },
   "run_test_count": 505
 }
