@@ -145,3 +145,38 @@ def test_8_3_59_leaves_the_stems_own_s_alone():  # आदेशप्रत्�
     assert sub("hiMsA", 1, 1, linga="strīliṅga").flat_dev() == "हिंसा"
     assert sub("vasu", 7, 3).flat_dev() == "वसुषु"              # the sup's s still becomes ṣ
     assert sub("havis", 3, 1, linga="napuṃsaka").flat_dev() == "हविषा"   # a stem-final s is the as/is/us suffix's: eligible
+
+
+# ── ṛ-stems: 6.1.111 ऋत उत्, 8.2.24 रात्सस्य, 6.4.3 नामि, 6.4.11, 7.1.94 (su only), 1.1.43 for the sambodhana au / jas ──
+RSTEM = {  # pitṛ (pulliṅga), 24 cells in table order
+    "1-1": "पिता", "1-2": "पितरौ", "1-3": "पितरः", "2-1": "पितरम्", "2-2": "पितरौ", "2-3": "पितॄन्", "3-1": "पित्रा",
+    "4-1": "पित्रे", "5-1": "पितुः", "6-1": "पितुः", "6-2": "पित्रोः", "6-3": "पितॄणाम्", "7-1": "पितरि", "7-2": "पित्रोः",
+    "7-3": "पितृषु", "8-1": "पितः", "8-2": "पितरौ", "8-3": "पितरः",
+}
+
+
+def test_pitf_paradigm():
+    got = {k: sub("pitf", *map(int, k.split("-"))).flat_dev() for k in RSTEM}
+    assert got == RSTEM
+
+
+def test_trc_stems_6_4_11_with_the_tfc_input():
+    cells = ["1-1", "1-2", "1-3", "2-1", "2-3", "5-1", "6-3", "8-1", "8-2"]
+    assert [sub("Bavitf", *map(int, c.split("-")), tfc=True).flat_dev() for c in cells] == \
+        ["भविता", "भवितारौ", "भवितारः", "भवितारम्", "भवितॄन्", "भवितुः", "भवितॄणाम्", "भवितः", "भवितारौ"]
+    assert sub("Bavitf", 1, 2).flat_dev() == "भवितरौ"          # without the origin tag the stem is a plain ṛ-stem
+
+
+def test_named_stems_of_6_4_11_need_no_tag():
+    assert [sub("svasf", v, n, linga="strīliṅga").flat_dev() for v, n in [(1, 1), (1, 2), (2, 1), (5, 1), (2, 3)]] == \
+        ["स्वसा", "स्वसारौ", "स्वसारम्", "स्वसुः", "स्वसॄः"]
+    assert [sub("hotf", v, n).flat_dev() for v, n in [(1, 2), (8, 1)]] == ["होतारौ", "होतः"]
+
+
+def test_feminine_short_ik_stems_accusative_plural_6_1_102():
+    assert [sub(s, 2, 3, linga="strīliṅga").flat_dev() for s in ("mati", "Denu", "mAtf")] == ["मतीः", "धेनूः", "मातॄः"]
+    assert sub("hari", 2, 3).flat_dev() == "हरीन्"             # masculine: 6.1.103's one-step form is unchanged
+
+
+def test_long_RR_stems_do_not_take_6_1_111():  # ऋत् is taparaḥ: the long ṝ root-nouns (कॄ, तॄ) are not पितृ-like
+    assert sub("kF", 5, 1).flat_dev() == "क्रः"

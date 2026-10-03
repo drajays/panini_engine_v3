@@ -36,6 +36,14 @@ class ConvergenceError(RuntimeError):
     """Raised when the loop exceeds MAX_ITERATIONS without halting."""
 
 
+def note_tripadi_progress(state: State, sutra_id: str) -> None:
+    """Remember the last tripāḍī rule that fired; the scheduler never goes back before it."""
+    from engine.phase import is_tripadi_sutra
+
+    if state.tripadi_zone and is_tripadi_sutra(sutra_id):
+        state.meta["tripadi_cursor"] = sutra_id
+
+
 def open_adhikaras(state: State) -> None:
     """Hold open the adhikāras of the current phase, each for the scope its own record
     declares (अङ्गस्य governs to the end of Adhyāya 7).
@@ -130,6 +138,7 @@ def _run_phase_until_converged(state: State, *, iteration_budget: list[int]) -> 
         decision = resolve_with_reason(candidates, state)
         record_decision(state, decision)
         state = apply_rule(decision.winner, state)
+        note_tripadi_progress(state, decision.winner)
     return state
 
 

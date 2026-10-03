@@ -39,6 +39,8 @@ def _site(state: State) -> int | None:
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags:
             continue
+        if not t.meta.get("slu_replaced_sap"):      # श्लौ: only where śap went to ślu (2.4.75)
+            return None
         if i + 1 >= len(state.terms):
             return None
         nxt = state.terms[i + 1]

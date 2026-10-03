@@ -38,6 +38,10 @@ def _site(state: State) -> int | None:
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags:
             continue
+        # जुहोत्यादिः = gaṇa 3 (lexical). The P040 tag is the legacy hand-built witness
+        # of pipelines/juhoti_hu_lat_tip_Slu.py, whose dhātu carries no gaṇa.
+        if t.meta.get("gana") != 3 and "P040_juhotyadi" not in t.tags:
+            continue
         nxt = state.terms[i + 1]
         if nxt.kind != "pratyaya":
             continue
@@ -64,6 +68,7 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "Slu"},
     )
     state.terms.insert(i + 1, slu)
+    state.terms[i].meta["slu_replaced_sap"] = True      # the witness 6.1.10 (ślau) reads
     return state
 
 

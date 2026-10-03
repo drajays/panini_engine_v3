@@ -54,14 +54,14 @@ from engine.scheduler import effective_candidates  # noqa: E402,F401  (C2 moved 
 def run_autonomously(state: Any, expected: str, case: str, budget: int) -> Run:
     from engine import apply_rule
     from engine.resolver import resolve_with_reason
-    from engine.core_loop import apply_pratishedhas, open_adhikaras
-    from engine.scheduler import enumerate_candidates
+    from engine.core_loop import apply_pratishedhas, note_tripadi_progress, open_adhikaras
+    from engine.scheduler import enumerate_candidates, operational_paribhasha_candidates
 
     result = Run(case=case, expected=expected)
     for _ in range(budget):
         open_adhikaras(state)
         state = apply_pratishedhas(state)
-        candidates = enumerate_candidates(state)
+        candidates = enumerate_candidates(state) + operational_paribhasha_candidates(state)
         usable = effective_candidates(candidates, state)
         result.offered, result.effective = len(candidates), len(usable)
         if not usable:
@@ -75,6 +75,7 @@ def run_autonomously(state: Any, expected: str, case: str, budget: int) -> Run:
         decision = resolve_with_reason(usable, state)
         before = state.flat_slp1()
         state = apply_rule(decision.winner, state)
+        note_tripadi_progress(state, decision.winner)
         result.steps.append((decision.winner, before, state.flat_slp1(), decision.layer))
     else:
         result.outcome = "diverged"
@@ -89,14 +90,33 @@ def start_state(case: Any) -> Any:
     import sutras  # noqa: F401
     from engine import apply_rule
 
-    if case.kind != "subanta":
-        raise NotImplementedError("tiṅanta start states land with C2")
+    if case.kind == "tinanta":
+        return _tinanta_start(case)
     from pipelines.subanta import build_initial_state, run_subanta_preflight_through_1_4_7
 
     stem, vibhakti, vacana, linga = case.args
     state = build_initial_state(stem, vibhakti, vacana, linga)
     state = run_subanta_preflight_through_1_4_7(state)
     return apply_rule("4.1.2", state)
+
+
+def _tinanta_start(case: Any) -> Any:
+    """The tape a recipe hands the loop for a bhvādi laṭ kartari verb: dhātu + the
+    tiṅ that vivakṣā (puruṣa · vacana) selects, attached to the lakāra. Everything
+    after — it-lopa, 3.4.113, the vikaraṇa, guṇa, sandhi — is the loop's."""
+    import sutras  # noqa: F401
+    from pipelines.tinanta import (
+        P00_lac_lat_attach, P00_parasmai_tin_adesha, _bootstrap_tinanta_derivation,
+        _dhatu_row_by_upadesha, _select_tin_adesha,
+    )
+
+    dhatu, lakara, purusha, vacana = case.args
+    state, _gana, pada_key, _done = _bootstrap_tinanta_derivation(
+        _dhatu_row_by_upadesha(dhatu), lakara, "kartari", purusha=purusha, vacana=vacana)
+    state = P00_lac_lat_attach(state)
+    state = P00_parasmai_tin_adesha(state, _select_tin_adesha(lakara, pada_key, purusha, vacana))
+    state.phase = "pratyaya"       # the stratum we are in: affixes are being attached (3.1–3.4)
+    return state
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -108,7 +128,7 @@ def main(argv: list[str] | None = None) -> int:
 
     from tools.show_prakriya import CASES, derive
 
-    cases = [c for c in CASES if c.kind == "subanta"]
+    cases = [c for c in CASES if c.kind in ("subanta", "tinanta")]
     if args.case:
         cases = [c for c in cases if c.key == args.case]
         if not cases:

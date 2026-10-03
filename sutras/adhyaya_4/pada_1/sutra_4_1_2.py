@@ -44,8 +44,10 @@ _META     : Optional[Dict[str, Any]] = None
 _EKA  = {"1-1", "2-1", "3-1", "4-1", "5-1", "6-1", "7-1", "8-1"}
 _DVI  = {"1-2", "2-2", "3-2", "4-2", "5-2", "6-2", "7-2", "8-2"}
 _BAHU = {"1-3", "2-3", "3-3", "4-3", "5-3", "6-3", "7-3", "8-3"}
-# Sarvanamasthana-eligible cells (prathamā all 3 + dvitīyā eka/dvi, non-napumsaka only)
-_SARV = {"1-1", "1-2", "1-3", "2-1", "2-2"}
+# Sarvanamasthana-eligible cells: 1.1.43 सुडनपुंसकस्य names the first five sups (su au jas am auṭ), non-napuṃsaka only —
+# so prathamā all 3, dvitīyā eka/dvi, and the sambodhana au / jas (हे पितरौ, हे पितरः: the same sups as the nominative).
+# 8-1 su is covered by 1.1.43's own s-initial path.
+_SARV = {"1-1", "1-2", "1-3", "2-1", "2-2", "8-2", "8-3"}
 
 
 def _load_inventory() -> None:

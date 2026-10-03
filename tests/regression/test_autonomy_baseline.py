@@ -18,7 +18,7 @@ import sutras  # noqa: F401
 from tools.autonomy_report import effective_candidates, run_autonomously, start_state
 from tools.show_prakriya import CASES, derive
 
-SUBANTA_CASES = [c for c in CASES if c.kind == "subanta"]
+SUBANTA_CASES = [c for c in CASES if c.kind in ("subanta", "tinanta")]  # name kept; both kinds
 
 
 @pytest.fixture(scope="module")

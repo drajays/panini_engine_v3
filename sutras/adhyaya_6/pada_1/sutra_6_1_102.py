@@ -70,7 +70,12 @@ def _matches(state: State) -> bool:
             return False
         if not anga.varnas or not pratyaya.varnas:
             return False
-        return anga.varnas[-1].slp1 in {"I", "U", "A"}
+        last = anga.varnas[-1].slp1
+        if last in {"I", "U", "A"}:
+            return True
+        # A short ik-final stem that is not masculine (strī मति / धेनु / मातृ) has no 6.1.103 to take it: it ends here with the
+        # pūrvasavarṇa long vowel (मतीः, धेनूः, मातॄः); the masculine's long vowel + न् is 6.1.103's own one-step form.
+        return last in {"i", "u", "f", "x"} and not ({"pulliṅga", "pum"} & anga.tags)
     if up in {"O", "Ow"}:
         # प्रथमा/द्वितीया dual boundary: अक् + औ.  The utsarga claims every
         # अक्-final aṅga here — *hari + au → harī*, *vāyu + au → vāyū*, and
@@ -109,7 +114,10 @@ def act(state: State) -> State:
         pratyaya.meta["upadesha_slp1"] = "As"
         return state
     if up == "Sas":
-        # The stem's long vowel absorbs the affix's अ; only the स् survives.
+        # The stem's long vowel absorbs the affix's अ; only the स् survives. A short ik vowel becomes its long (मति → मतीस्).
+        _long = {"i": "I", "u": "U", "f": "F", "x": "X"}
+        if anga.varnas[-1].slp1 in _long:
+            anga.varnas[-1] = mk(_long[anga.varnas[-1].slp1])
         pratyaya.varnas = [mk("s")]
         pratyaya.meta["Sas_purvasavarna_done"] = True
         state.meta["__why_now_dev__"] = (

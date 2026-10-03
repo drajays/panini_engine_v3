@@ -11,9 +11,8 @@ Operational role (v3.6):
   राजन्+अस् → राज्ञः) does not trigger this branch — the न् survives and
   combines under 6.4.8 / 8.4.40 instead.
 
-Legacy slice:
-  Also supports the existing **tṛc** nominal output path (``krt_tfc`` on the
-  pada), which is treated as always-armed within that narrow demo family.
+(The earlier "legacy slice" that treated every ``krt_tfc`` pada as armed is gone: 7.1.94 now tags the anaṅ-made n ``an_pratipadika``
+ itself, and the old shortcut wrongly deleted the n of भवितॄन्.)
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 82007 · नलोपः प्रातिपदिकान्तस्य
@@ -67,7 +66,7 @@ def cond(state: State) -> bool:
             return False
         if "sambuddhi" in t0.tags or "ngi" in t0.tags:
             return False  # 8.2.8 न ङिसम्बुद्ध्योः — blocks this very rule there
-        return "krt_tfc" in t0.tags or "an_pratipadika" in t0.tags
+        return "an_pratipadika" in t0.tags   # 7.1.94's anaṅ tags the real prātipadika n; a krt_tfc stem's sup-n (भवितॄन्) is not it
 
     # Branch B (narrow demo): samāsa boundary n-lopa on the prior member (P011 dvigu).
     if state.meta.get("purvapada_n_lopa_recipe") and len(state.terms) >= 2:

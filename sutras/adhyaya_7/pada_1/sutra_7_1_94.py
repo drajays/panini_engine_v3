@@ -38,6 +38,8 @@ def cond(state: State) -> bool:
         return False
     if not ang.varnas or ang.varnas[-1].slp1 != "f":
         return False
+    if (sup.meta.get("upadesha_slp1") or "").strip() != "s~" or "sambuddhi" in sup.tags:
+        return False        # sau = the nominative singular su (not the loc. pl. sup), and asambuddhau (7.1.92): हे पितः
     if not sup.varnas or sup.varnas[0].slp1 != "s":
         return False
     return True

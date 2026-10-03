@@ -237,6 +237,10 @@ def enumerate_candidates(state: State) -> List[str]:
         # Multi-term heuristic: skip sandhi/svara/samāsa sūtras when < 2 terms.
         if _needs_multi_term(sid, state):
             continue
+        if in_tripadi and _id_tuple(sid) < (_id_tuple(state.meta["tripadi_cursor"]) if "tripadi_cursor" in state.meta else ()):
+            # 8.2.1 पूर्वत्रासिद्धम्: what 8.4.40 has just done is asiddha to 8.2.30, so an
+            # earlier tripāḍī rule must not wake up on it. The pass only moves forward.
+            continue
         if is_blocked(sid, state):
             continue
         if asiddha_violates(sid, state):
@@ -251,3 +255,22 @@ def enumerate_candidates(state: State) -> List[str]:
             pass
     out.sort(key=lambda s: tuple(int(p) for p in s.split(".")))
     return out
+
+
+def operational_paribhasha_candidates(state: State) -> List[str]:
+    """Paribhāṣās that *do* something to the tape (उरण् रपरः shapes the ādeśa that
+    just happened) contend like any rule once :func:`effective_candidates` has
+    removed the ones that only set gates. ``enumerate_candidates`` still never
+    lists a paribhāṣā — they are interpretive, so only the loop asks for these."""
+    out = []
+    for sid, rec in SUTRA_REGISTRY.items():
+        if rec.sutra_type is not SutraType.PARIBHASHA or rec.cond is None:
+            continue
+        if not _in_scheduler_phase(sid, state) or is_blocked(sid, state):
+            continue
+        try:
+            if rec.cond(state):
+                out.append(sid)
+        except Exception:
+            pass
+    return sorted(out, key=_id_tuple)

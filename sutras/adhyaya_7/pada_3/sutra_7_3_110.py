@@ -49,7 +49,7 @@ def _eligible(state: State) -> bool:
         return False
     if not ang.varnas:
         return False
-    if ang.varnas[-1].slp1 not in ("f", "F"):
+    if ang.varnas[-1].slp1 != "f":      # ऋतः is taparaḥ (1.1.70): the short ṛ only — the long ṝ stems (कॄ, तॄ) take yaṇ (क्रौ, क्रः)
         return False
     if ang.meta.get("Rta_guna_7_3_110_done"):
         return False
