@@ -15,6 +15,7 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
 from engine.sthanivat import BLOCK_AL_SAME_SITE, mark_sthanivat_block
 from phonology import mk
+from phonology.varna import AC_DEV
 
 
 def _div_index(state: State) -> int | None:
@@ -32,7 +33,10 @@ def _div_index(state: State) -> int | None:
         if not nxt.varnas:
             continue
         # *Byām* / *bhyām* class: initial *bh* / *B* in SLP1 upadeśa.
-        if nxt.varnas[0].slp1 not in {"B", "b"}:
+        # bh-sup (Byām…) or a padānta div before any consonant (dyukāma, dyubhyām)
+        if nxt.varnas[0].slp1 in AC_DEV:
+            continue
+        if nxt.varnas[0].slp1 not in {"B", "b"} and "pada" not in t.tags:
             if not state.meta.get("sthanivat_lesson_div_byam"):
                 continue
         return i

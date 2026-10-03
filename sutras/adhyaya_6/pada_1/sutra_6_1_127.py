@@ -1,88 +1,76 @@
 """
-6.1.127  इकोऽसवर्णे शाकल्यस्य ह्रस्वश्च  —  VIDHI (narrow for P023)
+6.1.127  इकोऽसवर्णे शाकल्यस्य ह्रस्वश्च  —  VIBHASHA
 
-This sūtra is cited in P023.json as a commentary-flavoured bridge from
-``div`` to an intermediate ``diu`` before the next member of a compound.
+पदान्त इक् (i u ṛ ḷ + dīrgha) followed by an asavarṇa ac: in Śākalya's view the
+ik becomes hrasva *and* stays unsandhied (prakṛtibhāva, anuvṛtti of 6.1.125
+``प्रकृत्या``).  The other reading is the ordinary 6.1.77 yaṇ:
 
-v3 narrow slice (P023: दिव् + काम → दिउ + काम):
-  - recipe arms: ``state.meta["P023_6_1_127_div_v_to_u_arm"] == True``
-  - witness: first Term has ``meta['upadesha_slp1'] == 'div'`` (or varṇas d-i-v)
-  - action:
-      • rewrite that Term to ``di`` (drop the final ``v``)
-      • insert a following Term with single vowel ``u`` (as a residue from the ādeśa)
+    दधि + अत्र  →  दधि अत्र (Śākalya)   |   दध्यत्र
+    मधु + अत्र  →  मधु अत्र              |   मध्वत्र
 
-This structure allows **6.1.77** (*iko yaṇ aci*) to apply across Terms when
-recipe-arrested via ``6_1_77_ik_yan_aci_general_arm``.
-
-Citation (CONSTITUTION Art. 14)
-  Source #1 — ashtadhyayi.com row i = 61127 · इकोऽसवर्णे शाकल्यस्य ह्रस्वश्च
-              padaccheda: इकः अ-सवर्णे शाकल्यस्य ह्रस्वः च
-              anuvṛtti:   61072: संहितायाम् | 61125: अचि | 61115: प्रकृत्या
-              adhikāra:   6.1.72
-  Source #2 — Kāśikā 6.1.127 udāharaṇa:
-                दधि अत्र (पक्षे: दध्यत्र)
-                मधु अत्र (पक्षे: मध्वत्र)
-                कुमारि अत्र (पक्षे: कुमार्यत्र)
-  Gloss (sa) — In saṃhitā at a pada boundary, if the left ends in ik (i/ī/u/ū/ṛ/ṝ/ḷ/ḹ) and the next begins with a vowel that is not savarṇa, Śākalya allows prakṛtibhāva (no yaṇ substitution) and sets the ik to hrasva; alternative derivation applies 6.1.77 (yaṇ).
-  Cross-check — surface pinned by: tests/unit/test_dyukAmA_bahuvrihi_paribhasha.py
-  Reference record: sutra_ref_out/6_1_127.json
+Optional (vibhāṣā): the default reading leaves the rule unapplied so 6.1.77
+yields the yaṇ form; ``engine.vikalpa.choose({"6.1.127": True})`` /
+``explore`` yields the other.  Padānta = left Term carries the ``pada`` tag.
+Prakṛtibhāva is realised exactly as for pragṛhya (``PRAGHYA_TERM_TAG``), so
+6.1.77 / 6.1.78 / 6.1.101 already skip the boundary.
 """
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
-from engine.state import State, Term
+from engine.state import State
 from phonology import mk
+from phonology.savarna import is_savarna
+from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
+
+_HRASVA = {"i": "i", "I": "i", "u": "u", "U": "u", "f": "f", "F": "f", "x": "x", "X": "x"}
+_AC = frozenset("aAiIuUfFxXeEoO")
+META = "prakritibhava_6_1_127"
 
 
-def _site(state: State):
-    if len(state.terms) < 2:
-        return None
-    if state.meta.get("P023_6_1_127_done"):
-        return None
-    left = state.terms[0]
-    right = state.terms[1]
-    if (left.meta.get("upadesha_slp1") or "").strip() not in {"div"}:
-        if [v.slp1 for v in left.varnas] != ["d", "i", "v"]:
-            return None
-    if not right.varnas:
-        return None
-    return 0
+def _find(state: State):
+    live = [i for i, t in enumerate(state.terms) if t.varnas]
+    for i, j in zip(live, live[1:]):
+        left, right = state.terms[i], state.terms[j]
+        if "pada" not in left.tags or left.meta.get(META) or PRAGHYA_TERM_TAG in left.tags:
+            continue
+        a, b = left.varnas[-1].slp1, right.varnas[0].slp1
+        if a in _HRASVA and b in _AC and not is_savarna(a, b):
+            return i
+    return None
 
 
 def cond(state: State) -> bool:
-    return _site(state) is not None
+    return _find(state) is not None
 
 
 def act(state: State) -> State:
-    i = _site(state)
+    i = _find(state)
     if i is None:
         return state
     left = state.terms[i]
-    # div → di + u (residue as a separate Term)
-    left.varnas = [mk("d"), mk("i")]
-    left.meta["upadesha_slp1"] = "di"
-    u = Term(
-        kind="prakriti",
-        varnas=[mk("u")],
-        tags=set(),
-        meta={"upadesha_slp1": "u", "P023_residue_from_div": True},
+    old = left.varnas[-1].slp1
+    left.varnas[-1] = mk(_HRASVA[old])
+    left.tags.add(PRAGHYA_TERM_TAG)   # prakṛtibhāva (6.1.125 anuvṛtti)
+    left.meta[META] = True
+    state.meta["__why_now_dev__"] = (
+        f"पदान्त-इकः ({old}) असवर्णे अचि परे शाकल्य-मतेन ह्रस्वः ({_HRASVA[old]}) प्रकृतिभावश्च; "
+        "पक्षे ६.१.७७ यण्। (६.१.१२७)"
     )
-    state.terms.insert(i + 1, u)
-    state.meta["P023_6_1_127_done"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id="6.1.127",
-    sutra_type=SutraType.VIDHI,
+    sutra_type=SutraType.VIBHASHA,
     text_slp1='ikosavarRe SAkalyasya hrasvaSca',
     text_dev='इकोऽसवर्णे शाकल्यस्य ह्रस्वश्च',
-    padaccheda_dev="इकः-असवर्णे / शाकल्यस्य / ह्रस्वः / च",
-    why_dev="P023: दिव्-शब्दस्य 'v' स्थाने 'u' (दिउ) — ६.१.७७ हेतु-रचना।",
-    anuvritti_from=(),
+    padaccheda_dev="इकः असवर्णे शाकल्यस्य ह्रस्वः च",
+    why_dev="पदान्तस्य इकः असवर्णे अचि परे शाकल्य-मतेन ह्रस्वः प्रकृतिभावश्च (विकल्पेन)।",
+    anuvritti_from=("6.1.125",),
+    vibhasha_default=False,
+    vibhasha_scope=cond,
     cond=cond,
     act=act,
 )
 
 register_sutra(SUTRA)
-

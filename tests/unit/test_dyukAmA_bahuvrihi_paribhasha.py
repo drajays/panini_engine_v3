@@ -12,7 +12,7 @@ def test_P023_json_spine_and_surface_dyukAmA():
     ids = [t["sutra_id"] for t in s.trace]
 
     # Key ordering checks (allow structural __MERGE__ in between).
-    assert ids.index("6.1.127") < ids.index("6.1.77")
+    assert ids.index("6.1.131") < ids.index("6.1.77")
     assert ids.index("4.1.4") < ids.index("4.1.2") < ids.index("6.1.68")
     assert "2.2.14" in ids
 

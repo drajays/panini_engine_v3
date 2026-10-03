@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from sutras.adhyaya_6.pada_1.sutra_6_1_89 import is_eti_edhati_uth
 
 
 def _find(state: State):
@@ -18,7 +19,8 @@ def _find(state: State):
         if ("upasarga" in left.tags or left.kind == "upasarga") \
                 and "dhatu" in right.tags \
                 and left.varnas[-1].slp1 in ("a", "A") \
-                and right.varnas[0].slp1 in ("e", "o"):
+                and right.varnas[0].slp1 in ("e", "o") \
+                and not is_eti_edhati_uth(right):  # 6.1.89 wins
             return i
     return None
 

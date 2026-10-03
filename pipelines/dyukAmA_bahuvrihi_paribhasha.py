@@ -11,7 +11,7 @@ We do NOT attempt full samāsa generation rules; instead, we:
 
 Spine (key steps):
   1.1.68, 1.2.46, 2.2.14,
-  6.1.127 (div→di+u), 1.1.56, 6.1.66 (attempt; expected skip), 6.1.77 (di+u→dyu),
+  6.1.131 (div→di+u), 1.1.56, 6.1.66 (attempt; expected skip), 6.1.77 (di+u→dyu),
   1.2.45,
   4.1.1, 4.1.3, 4.1.4 (ṭāp), 6.1.101 (a+A→A),
   4.1.2 (su), 1.3.2, 1.3.9, 1.2.41 (apṛkta), 6.1.68 (su-lopa).
@@ -75,8 +75,10 @@ def derive_dyukAmA_bahuvrihi_P023() -> State:
     s = apply_rule("1.2.46", s)
     s = apply_rule("2.2.14", s)
 
-    # div → di + u (P023-armed 6.1.127), then yaṇ across Terms.
-    s = apply_rule("6.1.127", s)
+    # div is padānta (its sup was luk'd inside the compound, 1.1.62 pratyayalakṣaṇa).
+    s.terms[0].tags.add("pada")
+    # 6.1.131 दिव उत्: div → di + u, then yaṇ across Terms.
+    s = apply_rule("6.1.131", s)
 
     # Paribhāṣā note: sthānivadbhāva gate (for the demo).
     s = apply_rule("1.1.56", s)
