@@ -76,6 +76,15 @@ def is_tin_adesha(t: Term) -> bool:
     return "tin_adesha_3_4_78" in t.tags
 
 
+def acts_as_ngit_lakara(t: Term) -> bool:
+    """A tiṅ ādeśa that behaves as the ādeśa of a ṅit lakāra (3.4.99 नित्यं ङितः, 3.4.100 इतश्च,
+    3.4.101): its source lakāra carries ṅ (laṅ · liṅ · luṅ · lṛṅ), **or** 3.4.85 लोटो लङ्वत् has
+    extended that property to it (``laNvat`` — loṭ). Read from the affix, never from the lakāra
+    coordinate of the derivation (Art. 2)."""
+    src = (t.meta.get("source_lakara_upadesha") or "").strip()
+    return src.endswith(("G", "N")) or "laNvat" in t.tags
+
+
 def is_nit(t: Term) -> bool:
     """N-git: carries 'nit' in dhatu_it or it tags."""
     return "nit" in (t.meta.get("dhatu_it") or set()) or "nit" in t.tags

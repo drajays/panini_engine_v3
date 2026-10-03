@@ -23,6 +23,7 @@ _LAKARA_TAG = {
     "lRG": "lrg_derivation",
     "laG": "lag_derivation",
     "lRN": "lrn_derivation",
+    "AsIrliG": "asirlig_derivation",
 }
 
 

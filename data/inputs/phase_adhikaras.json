@@ -1,3 +1,12 @@
-{"_note": "Adhikāras the autonomous loop holds open per phase; scope comes from each sūtra's own record (adhikara_scope), never from here.",
- "angakarya": ["6.4.1"],
- "sandhi": ["6.4.1"]}
+{
+ "_note": "Adhikāras the autonomous loop holds open per phase; scope comes from each sūtra's own record (adhikara_scope), never from here.",
+ "angakarya": [
+  "6.4.1"
+ ],
+ "sandhi": [
+  "6.4.1"
+ ],
+ "lakara_scope": [
+  "3.1.91"
+ ]
+}

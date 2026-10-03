@@ -25,6 +25,11 @@ def _atmane_pratyaya_needing_tag(state: State) -> list[Term]:
     for t in state.terms:
         if t.kind != "pratyaya":
             continue
+        # The saṃjñā belongs to the sthānin (1.1.56): the ta / tam / ta that 3.4.101 puts in place of
+        # tas / thas / tha (loṭ's tiṅ, by 3.4.85) is the ādeśa of a *parasmaipada* tiṅ and stays
+        # parasmaipada, though ta now spells like the ātmanepada ta.
+        if "parasmaipada" in t.tags and t.meta.get("3_4_101_tastha_done"):
+            continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
         if not is_atmanepada_upadesha_slp1(up):
             continue

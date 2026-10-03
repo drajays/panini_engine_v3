@@ -156,6 +156,9 @@ def act(state: State) -> State:
             return state
         ti, vi = hit
         del state.terms[ti].varnas[vi]
+        # what is left of the term (sy of sya) is an ekādeśa residue, not an upadeśa: 1.3.3 must not read its
+        # final consonant as a halantyam it (सिष्यति, not *सिसति)
+        state.terms[ti].tags.discard("upadesha")
     state.meta["__why_now_dev__"] = (
         "अपदान्त-ह्रस्व-अकारात् गुण-स्वरे (अ/ए/ओ) परे पररूप-एकादेशः — पूर्व-अकारस्य लोपः। (६.१.९७)"
     )

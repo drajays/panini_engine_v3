@@ -28,10 +28,10 @@ from phonology import mk
 
 
 def _find(state: State) -> int | None:
-    if state.meta.get("lakara") != "loT":
-        return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
+            continue
+        if (t.meta.get("source_lakara_upadesha") or "").strip() != "loT":
             continue
         if "tin_adesha_3_4_78" not in t.tags:
             continue
@@ -75,6 +75,7 @@ SUTRA = SutraRecord(
         "तदनन्तरं ७.३.१०१ (यञि दीर्घः): अ→आ → भवानि।"
     ),
     anuvritti_from=("3.4.85",),
+    apavada_of=("3.4.101",),   # मिप् → नि, not अम् (Kāśikā: मिप्प्रत्ययार्थं तस्थस्थमिपां न प्रवर्तते)
     cond=cond,
     act=act,
 )

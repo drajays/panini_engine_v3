@@ -13,8 +13,8 @@
       "total": 17
     },
     "ATIDESHA": {
-      "coverage_pct": 6.12,
-      "implemented": 3,
+      "coverage_pct": 8.16,
+      "implemented": 4,
       "stubs": 0,
       "total": 49
     },
@@ -49,26 +49,26 @@
       "total": 178
     },
     "VIBHASHA": {
-      "coverage_pct": 20.0,
-      "implemented": 5,
+      "coverage_pct": 22.22,
+      "implemented": 6,
       "stubs": 0,
-      "total": 25
+      "total": 27
     },
     "VIDHI": {
-      "coverage_pct": 7.21,
-      "implemented": 252,
+      "coverage_pct": 7.5,
+      "implemented": 262,
       "stubs": 0,
-      "total": 3496
+      "total": 3494
     }
   },
   "conditions": {
-    "cited": 450,
-    "invoked": 676,
+    "cited": 464,
+    "invoked": 677,
     "moved": 403,
-    "tested": 615
+    "tested": 620
   },
-  "coverage_pct": 6.85,
-  "implemented": 273,
+  "coverage_pct": 7.16,
+  "implemented": 285,
   "ledger": "sig/firing_coverage.json",
   "moving_but_uncited": [
     "1.1.41",
@@ -76,36 +76,24 @@
     "2.4.74",
     "2.4.81",
     "3.1.25",
-    "3.1.35",
     "3.1.36",
-    "3.1.67",
-    "3.1.69",
-    "3.1.78",
-    "3.1.81",
     "3.1.92",
     "3.2.139",
     "3.2.97",
-    "3.3.16",
     "3.4.106",
     "3.4.115",
     "3.4.116",
     "3.4.80",
-    "3.4.90",
     "3.4.91",
-    "3.4.92",
-    "3.4.93",
     "4.1.15",
     "4.1.95",
     "4.3.138",
     "5.4.57",
-    "6.1.11",
     "6.1.110",
     "6.1.112",
-    "6.1.127",
     "6.1.139",
     "6.1.5",
     "6.1.75",
-    "6.1.90",
     "6.1.96",
     "6.4.101",
     "6.4.106",
@@ -190,7 +178,7 @@
   ],
   "notes": "Art. 16: 'implemented' requires invoked + moved + cited + tested. The ≥3 positive / ≥2 negative split lands with sutra_lint (Phase A2); 'tested' here means the id is exercised by at least one test.",
   "registered": 3983,
-  "scaffolded": 3710,
+  "scaffolded": 3698,
   "stubs": 0,
   "total": 3983
 }

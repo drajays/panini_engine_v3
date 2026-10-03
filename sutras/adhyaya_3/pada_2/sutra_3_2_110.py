@@ -19,6 +19,7 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.lakara_attach import attach_lakara, lakara_site
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -26,6 +27,8 @@ AT_AGAMA_CONTEXT_TAG = "aT_agama_context"
 
 
 def cond(state: State) -> bool:
+    if lakara_site(state, "lug_derivation", "3.2.110", ("luG_recipe",)):
+        return True
     # Glass-box arming: pipelines must opt-in (CONSTITUTION: cond() may not read paradigm selectors).
     if not state.meta.get("luG_recipe", False):
         return False
@@ -37,6 +40,8 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    if lakara_site(state, "lug_derivation", "3.2.110", ("luG_recipe",)):
+        return attach_lakara(state, "luG", at_context=True)
     for term in state.terms:
         if "dhatu" in term.tags:
             term.tags.add(AT_AGAMA_CONTEXT_TAG)

@@ -100,21 +100,39 @@ def start_state(case: Any) -> Any:
     return apply_rule("4.1.2", state)
 
 
+# The lakāra vivakṣā: which attach sūtra the *meaning* selects. Only the lakāras whose attach sūtra
+# really attaches (act appends the placeholder) are listed; the others join as their sūtras are written.
+_LAKARA_ATTACH = {
+    "laT": "3.2.123", "liT": "3.2.115", "luT": "3.3.15", "lRT": "3.3.13", "loT": "3.3.162",
+    "laG": "3.2.111", "liG": "3.3.161", "AsIrliG": "3.3.173", "luG": "3.2.110", "lRG": "3.3.139",
+}
+
+
 def _tinanta_start(case: Any) -> Any:
-    """The tape a recipe hands the loop for a bhvādi laṭ kartari verb: dhātu + the
-    tiṅ that vivakṣā (puruṣa · vacana) selects, attached to the lakāra. Everything
-    after — it-lopa, 3.4.113, the vikaraṇa, guṇa, sandhi — is the loop's."""
+    """The tape a recipe hands the loop for a bhvādi kartari verb: dhātu + the lakāra the meaning chose
+    + the tiṅ that vivakṣā (puruṣa · vacana) selects. Everything after — it-lopa, the atideśa 3.4.85,
+    3.4.113, the vikaraṇa, guṇa, sandhi — is the loop's."""
     import sutras  # noqa: F401
+    from engine import apply_rule
     from pipelines.tinanta import (
-        P00_lac_lat_attach, P00_parasmai_tin_adesha, _bootstrap_tinanta_derivation,
-        _dhatu_row_by_upadesha, _select_tin_adesha,
+        P00_lac_lat_attach, P00_parasmai_tin_adesha, P06a_pratyaya_adhikara_3_1_1_to_3,
+        _bootstrap_tinanta_derivation, _dhatu_row_by_upadesha, _select_tin_adesha,
     )
 
     dhatu, lakara, purusha, vacana = case.args
     state, _gana, pada_key, _done = _bootstrap_tinanta_derivation(
         _dhatu_row_by_upadesha(dhatu), lakara, "kartari", purusha=purusha, vacana=vacana)
-    state = P00_lac_lat_attach(state)
+    if lakara == "laT":
+        state = P00_lac_lat_attach(state)
+    elif lakara in _LAKARA_ATTACH:
+        state = apply_rule("3.1.91", state)
+        state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
+        state = apply_rule(_LAKARA_ATTACH[lakara], state)
+    else:
+        raise NotImplementedError(f"lakāra {lakara!r}: its attach sūtra does not attach on its own yet")
     state = P00_parasmai_tin_adesha(state, _select_tin_adesha(lakara, pada_key, purusha, vacana))
+    if getattr(case, "ashis", False):      # the blessing sense (7.1.35): an input the caller proposes
+        next(x for x in state.terms if "dhatu" in x.tags).tags.add("ashis")
     state.phase = "pratyaya"       # the stratum we are in: affixes are being attached (3.1–3.4)
     return state
 

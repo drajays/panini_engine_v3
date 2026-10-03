@@ -22,17 +22,22 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
+from engine.lakara_attach import attach_lakara, lakara_site
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def cond(state: State) -> bool:
+    if lakara_site(state, "asirlig_derivation", "3.3.173", ("ashir_liG",)):
+        return True
     if not state.meta.get("ashir_liG"):
         return False
     return not any((t.meta.get("upadesha_slp1") or "").strip() == "liG" for t in state.terms)
 
 
 def act(state: State) -> State:
+    if lakara_site(state, "asirlig_derivation", "3.3.173", ("ashir_liG",)):
+        return attach_lakara(state, "liG")
     if not cond(state):
         return state
     liG = Term(

@@ -49,22 +49,36 @@ def _is_bhu_dhatu(state: State) -> bool:
     return up in {"BU", "BU~"}
 
 
-def _luN_or_liT_context(state: State) -> bool:
-    """True for luṅ or liṭ — using structural Term tags only (no lakāra read).
+def _lakara_identities(state: State) -> set[str]:
+    """The lakāras the affixes on the tape come from — read from the affixes' own upadeśa (the lakāra
+    placeholder before 3.4.78, ``source_lakara_upadesha`` after it), never from a coordinate (Art. 2)."""
+    from sutras.adhyaya_3.pada_4.tin_adesha_3_4_78 import LAKAARA_UPADESHA_SLP1
 
-    luṅ: dhātu carries ``aT_agama_context`` tag (before 6.4.71 fires)
-         OR ``aT_agama_6_4_71_done`` meta (after 6.4.71 fires and consumes the tag).
-    liṭ: an ``abhyasa`` term is on the tape (set by 6.1.4 dvitva).
+    out: set[str] = set()
+    for t in state.terms:
+        if t.kind != "pratyaya":
+            continue
+        for key in ("source_lakara_upadesha", "upadesha_slp1"):
+            up = (t.meta.get(key) or "").strip()
+            if up in LAKAARA_UPADESHA_SLP1:
+                out.add(up)
+    return out
+
+
+def _luN_or_liT_context(state: State) -> bool:
+    """True when luṅ or liṭ is the nimitta (भुवो वुग्लुङ्लिटोः).
+
+    The lakāra comes from the affix. When the tape carries no lakāra identity (recipes that build the
+    tape by hand) the older structural witnesses decide: luṅ — ``aT_agama_context`` / ``aT_agama_6_4_71_done``
+    (but laṅ has those too, so they are only used when no lakāra is known); liṭ — an ``abhyasa`` term.
     """
+    ids = _lakara_identities(state)
+    if ids:
+        return bool(ids & {"luG", "liT"})
     for t in state.terms:
-        if "aT_agama_context" in t.tags:       # pre-6.4.71 luṅ
+        if "aT_agama_context" in t.tags or t.meta.get("aT_agama_6_4_71_done"):
             return True
-        if t.meta.get("aT_agama_6_4_71_done"): # post-6.4.71 luṅ
-            return True
-    for t in state.terms:
-        if "abhyasa" in t.tags:                # liṭ dvitva context
-            return True
-    return False
+    return any("abhyasa" in t.tags for t in state.terms)
 
 
 def cond(state: State) -> bool:

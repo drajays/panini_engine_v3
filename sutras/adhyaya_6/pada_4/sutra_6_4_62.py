@@ -16,6 +16,9 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _find_tasi(state: State):
+    # भावकर्मणोः — the sūtra is for the bhāva / karmaṇi prayoga only (the dhātu carries the usage tag).
+    if not any("dhatu" in t.tags and "bhava_karma_usage" in t.tags for t in state.terms):
+        return None
     for i, t in enumerate(state.terms):
         if t.meta.get("tAsi_vikaraṇa") and not t.meta.get("6_4_62_done"):
             return i

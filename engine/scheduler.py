@@ -224,6 +224,14 @@ def is_gate_only(sutra_id: str) -> bool:
 _META_NOISE = frozenset({"art18_gaps", "forked_from", "vibhakti_vacana", "it_lopa_log"})
 
 
+def _vikalpa_policy() -> dict:
+    """The named विभाषा readings in force: a declined vibhāṣā is vacuous under one policy and effective
+    under the other, so the memo must not mix them."""
+    from engine.vikalpa import _POLICY
+
+    return _POLICY
+
+
 def _meta_key(state: State) -> tuple:
     """Everything in ``state.meta`` a rule might read, minus bookkeeping that grows every step."""
     return tuple(sorted((k, repr(v)) for k, v in state.meta.items() if k not in _META_NOISE))
@@ -243,7 +251,7 @@ def effective_candidates(candidates: List[str], state: State) -> List[str]:
     for sid in candidates:
         if is_gate_only(sid):
             continue
-        key = (sid, before, state.phase, _meta_key(state))
+        key = (sid, before, state.phase, _meta_key(state), tuple(sorted(_vikalpa_policy().items())))
         hit = _EFFECTIVE_MEMO.get(key)
         if hit is None:
             try:
@@ -314,13 +322,13 @@ def enumerate_candidates(state: State) -> List[str]:
 
 
 def operational_paribhasha_candidates(state: State) -> List[str]:
-    """Paribhāṣās that *do* something to the tape (उरण् रपरः shapes the ādeśa that
-    just happened) contend like any rule once :func:`effective_candidates` has
-    removed the ones that only set gates. ``enumerate_candidates`` still never
-    lists a paribhāṣā — they are interpretive, so only the loop asks for these."""
+    """Paribhāṣās and atideśas that *do* something to the tape — उरण् रपरः shapes the ādeśa that
+    just happened; लोटो लङ्वत् hands laṅ's pratyaya-kārya to loṭ — contend like any rule once
+    :func:`effective_candidates` has removed the ones that only set gates. ``enumerate_candidates``
+    still never lists them (they are interpretive), so only the loop asks for these."""
     out = []
     for sid, rec in SUTRA_REGISTRY.items():
-        if rec.sutra_type is not SutraType.PARIBHASHA or rec.cond is None:
+        if rec.sutra_type not in (SutraType.PARIBHASHA, SutraType.ATIDESHA) or rec.cond is None:
             continue
         if not _in_scheduler_phase(sid, state) or is_blocked(sid, state):
             continue

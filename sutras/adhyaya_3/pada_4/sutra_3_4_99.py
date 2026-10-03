@@ -26,22 +26,21 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from engine.krt_eligibility import tin_pratyaya_gate_eligible
+from engine.nimitta_predicates import acts_as_ngit_lakara
 
 _GATE_KEY: str = "3_4_99_nityaM_99"
 
 # ṅit tiṅ ādeśas whose final 's' is dropped.
 _NGIT_S_FINAL: frozenset[str] = frozenset({"vas", "mas"})
 
-# Lakāras in which 3.4.99 ṅit s-lopa applies.
-_NGIT_LAKARA_SET: frozenset[str] = frozenset({"laG", "liG", "AsIrliG", "luG", "lRG", "loT"})
 
 
 def _find_ngit_s_term(state: State):
     """Find a ṅit tiṅ ādeśa (vas/mas) ending in 's' for ṅit-lakāra s-lopa."""
-    if state.meta.get("lakara") not in _NGIT_LAKARA_SET:
-        return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
+            continue
+        if not acts_as_ngit_lakara(t):      # ṅit lakāra — or loṭ by 3.4.85 लोटो लङ्वत्
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
         if up not in _NGIT_S_FINAL:

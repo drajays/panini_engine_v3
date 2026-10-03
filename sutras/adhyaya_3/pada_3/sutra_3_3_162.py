@@ -21,14 +21,27 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
-from engine.state import State
+from engine.gates import adhikara_in_effect
+from engine.state import State, Term
+from phonology.varna import parse_slp1_upadesha_sequence
+
+
+def _structural_site(state: State) -> bool:
+    """लोट् च, on its own: the dhātu has been given the loṭ vivakṣā (``lot_derivation`` — an input, like
+    puruṣa and vacana), धातोः (3.1.91) governs, and no lakāra stands after it yet."""
+    if not adhikara_in_effect("3.3.162", state, "3.1.91"):
+        return False
+    if not any("dhatu" in t.tags and "lot_derivation" in t.tags for t in state.terms):
+        return False
+    return not any(t.kind == "pratyaya" and "lakAra_pratyaya_placeholder" in t.tags for t in state.terms) \
+        and not any((t.meta.get("upadesha_slp1") or "") == "loT" for t in state.terms)
 
 
 def cond(state: State) -> bool:
     if state.meta.get("loT_recipe"):
         return not state.meta.get("3_3_162_loT_done")
     if not state.meta.get("loT_adhikara_recipe"):
-        return False
+        return _structural_site(state)
     return not any(e.get("id") == "3.3.162" for e in state.adhikara_stack)
 
 
@@ -36,6 +49,15 @@ def act(state: State) -> State:
     if state.meta.get("loT_recipe"):
         state.meta["3_3_162_loT_done"] = True
         state.meta.pop("loT_recipe", None)
+        return state
+    if not state.meta.get("loT_adhikara_recipe"):
+        # structural path: attach the loṭ placeholder (the ṭ is it: 1.3.3 → 1.3.9 take it away)
+        state.terms.append(Term(
+            kind="pratyaya",
+            varnas=parse_slp1_upadesha_sequence("loT"),
+            tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+            meta={"upadesha_slp1": "loT"},
+        ))
         return state
     state.adhikara_stack.append({
         "id": "3.3.162",

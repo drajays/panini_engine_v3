@@ -24,6 +24,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
+from engine.lakara_attach import attach_lakara, lakara_site
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -33,12 +34,16 @@ def _has_lfT(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
+    if lakara_site(state, "lrt_derivation", "3.3.13", ("lfT_recipe",)):
+        return True
     if not state.meta.get("lfT_recipe") or _has_lfT(state):
         return False
     return adhikara_in_effect("3.3.13", state, "3.3.3")
 
 
 def act(state: State) -> State:
+    if lakara_site(state, "lrt_derivation", "3.3.13", ("lfT_recipe",)):
+        return attach_lakara(state, "lRT")
     vs = parse_slp1_upadesha_sequence("lRT")
     if vs and vs[-1].slp1 == "T":
         vs = vs[:-1]

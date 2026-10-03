@@ -30,10 +30,10 @@ _SKIP_UPADESHA = frozenset({"hi", "ni"})
 
 
 def _find(state: State) -> int | None:
-    if state.meta.get("lakara") != "loT":
-        return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
+            continue
+        if (t.meta.get("source_lakara_upadesha") or "").strip() != "loT":
             continue
         if "tin_adesha_3_4_78" not in t.tags:
             continue
@@ -76,6 +76,7 @@ SUTRA = SutraRecord(
         "ति→तु (भवतु), अन्ति→अन्तु (भवन्तु)।"
     ),
     anuvritti_from=("3.4.85",),
+    apavada_of=("3.4.100",),   # loṭ takes u where laṅ drops i; declared, not excluded from 3.4.100 (Art. 15)
     cond=cond,
     act=act,
 )

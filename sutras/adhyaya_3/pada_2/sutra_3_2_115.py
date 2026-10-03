@@ -23,15 +23,20 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
+from engine.lakara_attach import attach_lakara, lakara_site
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def cond(state: State) -> bool:
+    if lakara_site(state, "lit_derivation", "3.2.115", ("liT_lakara_recipe",)):
+        return True
     return bool(state.meta.get("liT_lakara_recipe")) and not state.meta.get("lakara_liT")
 
 
 def act(state: State) -> State:
+    if lakara_site(state, "lit_derivation", "3.2.115", ("liT_lakara_recipe",)):
+        return attach_lakara(state, "liT")
     if not cond(state):
         return state
     state.meta["lakara_liT"] = True

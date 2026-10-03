@@ -22,11 +22,14 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
+from engine.lakara_attach import attach_lakara, lakara_site
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def cond(state: State) -> bool:
+    if lakara_site(state, "lut_derivation", "3.3.15", ("luT_recipe",)):
+        return True
     if not state.meta.get("luT_recipe"):
         return False
     if state.meta.get("3_3_15_lut_attached"):
@@ -35,6 +38,8 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    if lakara_site(state, "lut_derivation", "3.3.15", ("luT_recipe",)):
+        return attach_lakara(state, "luT")
     lu = Term(
         kind="pratyaya",
         varnas=[],

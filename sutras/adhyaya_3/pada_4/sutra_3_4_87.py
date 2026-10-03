@@ -55,6 +55,7 @@ SUTRA = SutraRecord(
     padaccheda_dev="सेः / हि / अपि / च",
     why_dev="लोटि सिप्-स्थाने हि-आदेशः; अपित्-स्थानिवत् (पित् न)।",
     anuvritti_from=("3.4.86",),
+    apavada_of=("3.4.100",),   # सिप् → हि, not the laṅvat सिप् → स् (हि keeps its i)
     cond=cond,
     act=act,
 )

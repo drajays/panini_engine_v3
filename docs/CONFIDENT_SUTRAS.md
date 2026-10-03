@@ -1,17 +1,17 @@
 # Sūtras the engine does confidently (generated — do not edit)
 
-Generated 2026-10-03 by `python3 -m tools.sutra_class`. **220 of 3983** are confident.
+Generated 2026-10-03 by `python3 -m tools.sutra_class`. **222 of 3983** are confident.
 
 *Operational*: invoked + really moves the tape (exempt flag ignored) + cited + not a gate-only placeholder + named in tests ≥5×. *(S)* = structural/definitional class: invoked + cited + tested + real cond (class proof pending, plan §1).
 
 | status | count |
 |---|---|
-| confident | 103 |
+| confident | 105 |
 | confident_structural | 117 |
 | gate_only | 107 |
 | pending_structural | 268 |
 | placeholder | 587 |
-| unexercised | 2525 |
+| unexercised | 2523 |
 | working | 276 |
 
 | pāda | confident | of |
@@ -27,7 +27,7 @@ Generated 2026-10-03 by `python3 -m tools.sutra_class`. **220 of 3983** are conf
 | 3.1 | 9 | 150 |
 | 3.2 | 4 | 188 |
 | 3.3 | 9 | 176 |
-| 3.4 | 12 | 117 |
+| 3.4 | 13 | 117 |
 | 4.1 | 9 | 178 |
 | 4.2 | 2 | 145 |
 | 4.3 | 0 | 168 |
@@ -40,7 +40,7 @@ Generated 2026-10-03 by `python3 -m tools.sutra_class`. **220 of 3983** are conf
 | 6.2 | 4 | 199 |
 | 6.3 | 2 | 139 |
 | 6.4 | 11 | 175 |
-| 7.1 | 16 | 103 |
+| 7.1 | 17 | 103 |
 | 7.2 | 9 | 118 |
 | 7.3 | 8 | 120 |
 | 7.4 | 5 | 97 |
@@ -60,7 +60,7 @@ Generated 2026-10-03 by `python3 -m tools.sutra_class`. **220 of 3983** are conf
 **3.1** — 22ˢ, 33, 43, 44, 68, 73, 79, 97ˢ, 134  
 **3.2** — 84ˢ, 115, 123ˢ, 134ˢ  
 **3.3** — 3ˢ, 18ˢ, 19ˢ, 88, 89, 94ˢ, 117ˢ, 141ˢ, 174  
-**3.4** — 77ˢ, 78, 79, 86, 87, 99, 100, 101, 103, 104, 107, 108  
+**3.4** — 77ˢ, 78, 79, 86, 87, 89, 99, 100, 101, 103, 104, 107, 108  
 **4.1** — 1ˢ, 2, 3ˢ, 4, 76ˢ, 82ˢ, 83ˢ, 92ˢ, 162ˢ  
 **4.2** — 92ˢ, 113ˢ  
 **4.4** — 75ˢ  
@@ -71,7 +71,7 @@ Generated 2026-10-03 by `python3 -m tools.sutra_class`. **220 of 3983** are conf
 **6.2** — 64ˢ, 92ˢ, 111ˢ, 143ˢ  
 **6.3** — 1ˢ, 114ˢ  
 **6.4** — 11, 22ˢ, 38, 46ˢ, 48, 64, 71, 105, 110, 129ˢ, 146  
-**7.1** — 1, 2, 3, 9, 11ˢ, 12, 14, 15, 17, 18, 23, 24, 37, 52, 54, 100  
+**7.1** — 1, 2, 3, 9, 11ˢ, 12, 14, 15, 17, 18, 23, 24, 35, 37, 52, 54, 100  
 **7.2** — 7, 35, 79, 91ˢ, 102, 113, 115, 116, 117  
 **7.3** — 10ˢ, 84, 86, 101, 102, 103, 113, 114  
 **7.4** — 53, 58ˢ, 59, 60, 62  

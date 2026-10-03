@@ -39,7 +39,10 @@ def _find_dhatu_for_u(state: State) -> int | None:
             continue
         gana = t.meta.get("gana")
         stem = "".join(v.slp1 for v in t.varnas)
-        if gana != 8 and stem not in _TANADI_STEMS:
+        # तनादिकृञ्भ्यः: the tanādi gaṇa (8, kṛ included). A stem that merely *spells* like one
+        # (van of vana~, san of ṣaṇa~, kan of kanī~ — gaṇa 1) is not tanādi; the spelling list is only a
+        # fallback for hand-built dhātus that carry no gaṇa at all.
+        if gana != 8 and not (gana is None and stem in _TANADI_STEMS):
             continue
         if t.meta.get("3_1_79_u_done"):
             continue
@@ -48,7 +51,11 @@ def _find_dhatu_for_u(state: State) -> int | None:
             nxt = state.terms[i + 1]
             if (nxt.meta.get("upadesha_slp1") or "").strip() == "u":
                 continue
-        # sārvadhatuka tin must be on tape
+        # सार्वधातुके: the affix that stands right after the dhātu must not be ārdhadhātuka — in
+        # lṛṭ/luṭ it is sya/tās (3.1.33), and the tiṅ behind it does not make the vikaraṇa u.
+        head = next((u for u in state.terms[i + 1:] if u.kind == "pratyaya" and u.varnas), None)
+        if head is None or "ardhadhatuka" in head.tags:
+            continue
         if not any("tin_adesha_3_4_78" in t2.tags for t2 in state.terms):
             continue
         return i

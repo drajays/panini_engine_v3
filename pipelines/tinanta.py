@@ -2102,6 +2102,7 @@ def _derive_loT(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # ── Stage: 3.4.77 + 3.4.78 tiṅ ādeśa (same laT base set) ─────────────────
     tin_adesha = _select_tin_adesha("laT", pada_key, purusha, vacana)
     state = P00_parasmai_tin_adesha(state, tin_adesha)
+    state = apply_rule("3.4.85", state)   # लोटो लङ्वत् — loṭ's tiṅ takes laṅ's pratyaya-kārya (3.4.99, 3.4.101)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
     # ātmanepada: 3.4.79 टेरे / 3.4.80 थासः से (safe before śap now that the
     # ṭi-replaced ādeśas stay sārvadhātuka — 3.4.113 inventory)
@@ -2253,6 +2254,7 @@ def _derive_loT_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
 
     tin_adesha = _select_tin_adesha("laT", pada_key, purusha, vacana)
     state = P00_parasmai_tin_adesha(state, tin_adesha)
+    state = apply_rule("3.4.85", state)   # लोटो लङ्वत् — loṭ's tiṅ takes laṅ's pratyaya-kārya (3.4.99, 3.4.101)
     state = P00_tin_tusma_audit_halantyam_lopa(state)
 
     state = apply_rule("3.4.113", state)
@@ -3795,6 +3797,7 @@ def _derive_karmani_loT(state: State, purusha: int, vacana: int) -> State:
     # ── 3.4.77 lasya + 3.4.78 tiṅ ādeśa (ātmanepada, laT base) ──────────
     tin_adesha = _select_tin_adesha("laT", "atmane", purusha, vacana)
     state = P00_parasmai_tin_adesha(state, tin_adesha)
+    state = apply_rule("3.4.85", state)   # लोटो लङ्वत् — loṭ's tiṅ takes laṅ's pratyaya-kārya (3.4.99, 3.4.101)
     state = apply_rule("1.4.100", state)
 
     # ── IT-prakaraṇa on tiṅ ādeśa ─────────────────────────────────────────

@@ -55,6 +55,9 @@ def _find_uttama_tin_parasmaipada(state: State):
             continue
         if t.meta.get("3_4_92_done"):
             continue
+        # आडुत्तमस्य is loṭ's (3.4.85–): the affix's source lakāra says so, not the surface 'v'/'m'.
+        if (t.meta.get("source_lakara_upadesha") or "").strip() not in ("loT", ""):
+            continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
         if up == "ni":
             return ti

@@ -67,7 +67,7 @@ def subanta(limit: int | None) -> dict:
             "clusters": [{"first_divergence": k, "count": n, **examples[k]} for k, n in clusters.most_common()]}
 
 
-def tinanta(limit: int | None) -> dict:
+def tinanta(limit: int | None, lakara: str = "laT") -> dict:
     import sutras  # noqa: F401
     from types import SimpleNamespace as NS
 
@@ -84,12 +84,12 @@ def tinanta(limit: int | None) -> dict:
         for purusha in (1, 2, 3):
             for vacana in (1, 2, 3):
                 try:
-                    expect = derive(root, "laT", "kartari", purusha, vacana).flat_slp1()
+                    expect = derive(root, lakara, "kartari", purusha, vacana).flat_slp1()
                 except Exception:
                     continue
                 cells += 1
                 try:
-                    run = run_autonomously(start_state(NS(kind="tinanta", args=(root, "laT", purusha, vacana))),
+                    run = run_autonomously(start_state(NS(kind="tinanta", args=(root, lakara, purusha, vacana))),
                                            expect, root, 120)
                 except Exception as ex:
                     clusters[type(ex).__name__] += 1
@@ -99,7 +99,7 @@ def tinanta(limit: int | None) -> dict:
                 else:
                     clusters[root] += 1
                     examples.setdefault(root, {"cell": f"{purusha}-{vacana}", "recipe": expect, "loop": run.surface})
-    return {"class": "tinanta(laṭ kartari, gaṇa 1)", "roots": len(roots), "cells": cells, "agree": agree,
+    return {"class": f"tinanta({lakara} kartari, gaṇa 1)", "roots": len(roots), "cells": cells, "agree": agree,
             "clusters": [{"first_divergence": k, "count": n, **examples.get(k, {})} for k, n in clusters.most_common()]}
 
 
@@ -107,12 +107,13 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("kind", choices=["subanta", "tinanta"])
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--lakara", default="laT")
     args = ap.parse_args(argv)
     t0 = time.time()
-    report = (subanta if args.kind == "subanta" else tinanta)(args.limit)
+    report = subanta(args.limit) if args.kind == "subanta" else tinanta(args.limit, args.lakara)
     report["seconds"] = round(time.time() - t0)
     book = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
-    book[args.kind] = report
+    book[args.kind if args.kind == "subanta" or args.lakara == "laT" else f"tinanta:{args.lakara}"] = report
     OUT.write_text(json.dumps(book, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{report['class']}: {report['agree']}/{report['cells']} cells agree ({report['seconds']}s)")
     for c in report["clusters"][:15]:

@@ -28,6 +28,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.nimitta_predicates import acts_as_ngit_lakara
 from engine.sthanivat import TING_PRATYAYATVA, adesha_substitute_varnas
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -42,10 +43,10 @@ _TASTHA_MAP: dict[tuple[str, str], str] = {
 
 def _find_target(state: State) -> tuple[int, str] | None:
     """Return (index, new_slp1) for the first matching tiṅ ādeśa in laṅ."""
-    if (state.meta.get("lakara") or "").strip() not in {"laG", "liG", "AsIrliG", "luG", "lRG", "loT"}:
-        return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
+            continue
+        if not acts_as_ngit_lakara(t):      # ṅit lakāra — or loṭ by 3.4.85
             continue
         if "tin_adesha_3_4_78" not in t.tags:
             continue

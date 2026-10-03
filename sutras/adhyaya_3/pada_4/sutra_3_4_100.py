@@ -22,6 +22,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
+from engine.nimitta_predicates import acts_as_ngit_lakara
 from phonology import mk
 
 
@@ -31,11 +32,13 @@ _TAN = frozenset({"ta", "AtAm", "Ja", "TAs", "ATAm", "Dvam", "iw", "vahi", "mahi
 
 def _find_i_final_tin(state: State):
     """Find a tiṅ ādeśa term ending in 'i' in laṅ/luṅ/lṛṅ context."""
-    lk = (state.meta.get("lakara") or "").strip()
-    if lk not in {"luG", "lRG", "laG", "liG", "AsIrliG"}:
-        return None
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
+            continue
+        if not acts_as_ngit_lakara(t):      # ṅit lakāra — or loṭ by 3.4.85 (3.4.86 then wins as apavāda)
+            continue
+        # The "i" is the one of the ādeśa 3.4.78 gave; hi (3.4.87) and ni (3.4.89) are ādeśas of their own.
+        if (t.meta.get("upadesha_slp1") or "").strip() in {"hi", "ni"}:
             continue
         if "tin_adesha_3_4_78" not in t.tags:
             continue
@@ -65,6 +68,9 @@ def act(state: State) -> State:
     if t.varnas and t.varnas[-1].slp1 == "i":
         del t.varnas[-1]
     t.meta["3_4_100_itasca_done"] = True
+    # The residue (jh of jhi, s of sip, t of tip) is an ādeśa's body, not an upadeśa: 1.3.3 must not read
+    # its final consonant as a halantyam it (as 3.4.101 already ensures for its own output).
+    t.tags.discard("upadesha")
     # Lṛṅ ṛ-dhātu (P019 / vftu~): ``sy`` + ``t`` needs intervening ``a`` (*avartsyat*).
     if i > 0 and (state.meta.get("lakara") or "").strip() == "lRG":
         prev = state.terms[i - 1]
