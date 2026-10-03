@@ -1,16 +1,16 @@
 {
   "extraction_policy": {
     "layer": "applied_only",
-    "min_count": 504,
+    "min_count": 505,
     "min_length": 3,
     "min_probability": 1.0
   },
   "groups": [],
   "schema_version": 1,
   "source": {
-    "manifest_generated_utc": "2026-09-30T03:54:52.055791+00:00",
+    "manifest_generated_utc": "2026-10-03T06:46:43.811898+00:00",
     "sig_dir": "sig",
-    "total_derivations": 504,
+    "total_derivations": 505,
     "transition_file": "sig_transitions.json"
   }
 }

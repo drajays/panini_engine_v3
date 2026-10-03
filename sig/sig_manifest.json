@@ -159,26 +159,27 @@
       "file": "data/reference/tinanta_gold/nayati_gold.json",
       "id": "recipe:nayati_gold",
       "recipe": "pipelines.tinanta_nayati_gold:run_nayati_gold_through_step  args=[9]"
-    }
-  ],
-  "gaps": [
+    },
     {
-      "file": "/Users/dr.ajayshukla/panini_engine_v3/data/reference/tinanta_gold/tarati_gold.json",
-      "reason": "recipe module 'pipelines.tinanta_tarati_gold' not importable (also tried 'tools.tinanta_tarati_gold')"
+      "cells": 1,
+      "file": "data/reference/tinanta_gold/tarati_gold.json",
+      "id": "recipe:tarati_gold",
+      "recipe": "pipelines.tinanta_tarati_gold:run_tarati_gold_through_step  args=[9]"
     }
   ],
-  "generated_utc": "2026-09-30T03:55:58.313806+00:00",
+  "gaps": [],
+  "generated_utc": "2026-10-03T06:46:43.811898+00:00",
   "generator": "panini_engine_v3.tools.sig_benchmark",
   "sutra_coverage": {
     "conditions": {
-      "cited": 396,
-      "invoked": 696,
-      "moved": 471,
-      "tested": 557
+      "cited": 451,
+      "invoked": 674,
+      "moved": 402,
+      "tested": 613
     },
-    "coverage_pct": 6.45,
-    "implemented": 257,
+    "coverage_pct": 6.88,
+    "implemented": 274,
     "registered": 3983
   },
-  "total_derivations": 504
+  "total_derivations": 505
 }

@@ -1,7 +1,7 @@
 {
-  "cases": 11,
+  "cases": 14,
   "outcomes": {
-    "reached": 11
+    "reached": 14
   },
   "runs": [
     {
@@ -9,7 +9,7 @@
       "outcome": "reached",
       "surface": "rAmaH",
       "expected": "rAmaH",
-      "offered": 229,
+      "offered": 141,
       "effective": 0,
       "steps": [
         [
@@ -155,7 +155,7 @@
       "outcome": "reached",
       "surface": "rAmAH",
       "expected": "rAmAH",
-      "offered": 229,
+      "offered": 141,
       "effective": 0,
       "steps": [
         [
@@ -249,7 +249,7 @@
       "outcome": "reached",
       "surface": "rAmeRa",
       "expected": "rAmeRa",
-      "offered": 229,
+      "offered": 49,
       "effective": 0,
       "steps": [
         [
@@ -861,6 +861,342 @@
           "jYAnaam",
           "jYAnam",
           "para"
+        ]
+      ]
+    },
+    {
+      "case": "bhavati",
+      "outcome": "reached",
+      "surface": "Bavati",
+      "expected": "Bavati",
+      "offered": 229,
+      "effective": 0,
+      "steps": [
+        [
+          "1.3.3",
+          "BUtip",
+          "BUtip",
+          "upadesha"
+        ],
+        [
+          "1.3.9",
+          "BUtip",
+          "BUti",
+          "upadesha"
+        ],
+        [
+          "3.4.113",
+          "BUti",
+          "BUti",
+          "para"
+        ],
+        [
+          "3.1.68",
+          "BUti",
+          "BUSapti",
+          "para"
+        ],
+        [
+          "1.3.3",
+          "BUSapti",
+          "BUSapti",
+          "upadesha"
+        ],
+        [
+          "1.3.8",
+          "BUSapti",
+          "BUSapti",
+          "upadesha"
+        ],
+        [
+          "1.3.9",
+          "BUSapti",
+          "BUati",
+          "upadesha"
+        ],
+        [
+          "3.4.113",
+          "BUati",
+          "BUati",
+          "para"
+        ],
+        [
+          "1.4.104",
+          "BUati",
+          "BUati",
+          "para"
+        ],
+        [
+          "1.4.102",
+          "BUati",
+          "BUati",
+          "para"
+        ],
+        [
+          "1.4.101",
+          "BUati",
+          "BUati",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "BUati",
+          "BUati",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "BUati",
+          "BUati",
+          "para"
+        ],
+        [
+          "1.2.41",
+          "BUati",
+          "BUati",
+          "sole-candidate"
+        ],
+        [
+          "7.3.84",
+          "BUati",
+          "Boati",
+          "para"
+        ],
+        [
+          "6.1.78",
+          "Boati",
+          "Bavati",
+          "sole-candidate"
+        ]
+      ]
+    },
+    {
+      "case": "bhavatah",
+      "outcome": "reached",
+      "surface": "BavataH",
+      "expected": "BavataH",
+      "offered": 141,
+      "effective": 0,
+      "steps": [
+        [
+          "1.3.4",
+          "BUtas",
+          "BUtas",
+          "upadesha"
+        ],
+        [
+          "3.4.113",
+          "BUtas",
+          "BUtas",
+          "para"
+        ],
+        [
+          "3.1.68",
+          "BUtas",
+          "BUSaptas",
+          "para"
+        ],
+        [
+          "1.3.3",
+          "BUSaptas",
+          "BUSaptas",
+          "upadesha"
+        ],
+        [
+          "1.3.8",
+          "BUSaptas",
+          "BUSaptas",
+          "upadesha"
+        ],
+        [
+          "1.3.9",
+          "BUSaptas",
+          "BUatas",
+          "upadesha"
+        ],
+        [
+          "3.4.113",
+          "BUatas",
+          "BUatas",
+          "para"
+        ],
+        [
+          "1.4.104",
+          "BUatas",
+          "BUatas",
+          "para"
+        ],
+        [
+          "1.4.102",
+          "BUatas",
+          "BUatas",
+          "para"
+        ],
+        [
+          "1.4.101",
+          "BUatas",
+          "BUatas",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "BUatas",
+          "BUatas",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "BUatas",
+          "BUatas",
+          "para"
+        ],
+        [
+          "1.2.41",
+          "BUatas",
+          "BUatas",
+          "sole-candidate"
+        ],
+        [
+          "7.3.84",
+          "BUatas",
+          "Boatas",
+          "para"
+        ],
+        [
+          "6.1.78",
+          "Boatas",
+          "Bavatas",
+          "sole-candidate"
+        ],
+        [
+          "8.2.66",
+          "Bavatas",
+          "Bavatar",
+          "sole-candidate"
+        ],
+        [
+          "8.3.15",
+          "Bavatar",
+          "BavataH",
+          "sole-candidate"
+        ]
+      ]
+    },
+    {
+      "case": "bhavanti",
+      "outcome": "reached",
+      "surface": "Bavanti",
+      "expected": "Bavanti",
+      "offered": 7,
+      "effective": 0,
+      "steps": [
+        [
+          "3.4.113",
+          "BUJi",
+          "BUJi",
+          "para"
+        ],
+        [
+          "3.1.68",
+          "BUJi",
+          "BUSapJi",
+          "para"
+        ],
+        [
+          "1.3.3",
+          "BUSapJi",
+          "BUSapJi",
+          "upadesha"
+        ],
+        [
+          "1.3.8",
+          "BUSapJi",
+          "BUSapJi",
+          "upadesha"
+        ],
+        [
+          "1.3.9",
+          "BUSapJi",
+          "BUaJi",
+          "upadesha"
+        ],
+        [
+          "3.4.113",
+          "BUaJi",
+          "BUaJi",
+          "para"
+        ],
+        [
+          "1.4.104",
+          "BUaJi",
+          "BUaJi",
+          "para"
+        ],
+        [
+          "1.4.102",
+          "BUaJi",
+          "BUaJi",
+          "para"
+        ],
+        [
+          "1.4.101",
+          "BUaJi",
+          "BUaJi",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "BUaJi",
+          "BUaJi",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "BUaJi",
+          "BUaJi",
+          "para"
+        ],
+        [
+          "1.2.41",
+          "BUaJi",
+          "BUaJi",
+          "sole-candidate"
+        ],
+        [
+          "7.3.84",
+          "BUaJi",
+          "BoaJi",
+          "para"
+        ],
+        [
+          "7.1.3",
+          "BoaJi",
+          "Boaanti",
+          "sole-candidate"
+        ],
+        [
+          "6.1.97",
+          "Boaanti",
+          "Boanti",
+          "apavada"
+        ],
+        [
+          "6.1.78",
+          "Boanti",
+          "Bavanti",
+          "sole-candidate"
+        ],
+        [
+          "8.3.24",
+          "Bavanti",
+          "BavaMti",
+          "sole-candidate"
+        ],
+        [
+          "8.4.58",
+          "BavaMti",
+          "Bavanti",
+          "asiddha"
         ]
       ]
     }
