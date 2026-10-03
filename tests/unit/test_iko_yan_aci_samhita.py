@@ -76,3 +76,15 @@ def test_6_1_77_fires_on_ik_before_ac_even_savarNa() -> None:
     )
     s = apply_rule("6.1.77", s)
     assert s.flat_slp1() == "nadyiyam"
+
+
+def test_6_1_77_intra_term_and_why_trace():
+    import sutras  # noqa: F401
+    from engine.state import State, Term
+    from phonology.varna import parse_slp1_upadesha_sequence
+    from sutras.adhyaya_6.pada_1.sutra_6_1_77 import SUTRA
+    st =State(terms=[Term(kind="prakriti", varnas=parse_slp1_upadesha_sequence("nia"), tags=set(), meta={})])
+    assert SUTRA.cond(st)
+    SUTRA.act(st)
+    assert "".join(v.slp1 for v in st.terms[0].varnas) == "nya"
+    assert "६।१।७७" in st.meta["__why_now_dev__"]

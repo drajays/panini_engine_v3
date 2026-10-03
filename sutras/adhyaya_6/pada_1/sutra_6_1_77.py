@@ -78,29 +78,27 @@ def _blocked_by_padadi_ac_lopa_padanta(state: State, boundary_i: int) -> bool:
     return False
 
 
-def _find_ik_ac_boundary(state: State) -> int | None:
+def _find_ik_ac_boundary(state: State) -> tuple[int, int] | None:
     """
-    Scan all adjacent Term pairs.  Return index ``i`` where ``terms[i]``
-    ends in an IK (or IK-dīrgha) vowel and ``terms[i+1]`` begins with an
-    AC vowel, the left Term is not pragṛhya, and has not already undergone yaṇ.
+    Flat scan of the varna stream.  Return ``(term_i, varna_i)`` of an IK
+    vowel immediately followed by an AC vowel — across a Term boundary
+    (left Term not pragṛhya / not already done / not 1.1.58-blocked) or
+    inside one Term.
     """
-    for i in range(len(state.terms) - 1):
-        left, right = state.terms[i], state.terms[i + 1]
-        if not left.varnas or not right.varnas:
+    terms = state.terms
+    for i, left in enumerate(terms):
+        n = len(left.varnas)
+        for k in range(n - 1):  # intra-term
+            if left.varnas[k].slp1 in _YAN_MAP and left.varnas[k + 1].slp1 in _AC_ALL:
+                return i, k
+        if i + 1 >= len(terms) or not n or not terms[i + 1].varnas:
             continue
-        if left.meta.get("iko_yanaci_done"):
-            continue
-        if PRAGHYA_TERM_TAG in left.tags:
+        if left.meta.get("iko_yanaci_done") or PRAGHYA_TERM_TAG in left.tags:
             continue
         if _blocked_by_padadi_ac_lopa_padanta(state, i):
             continue
-        la = left.varnas[-1].slp1
-        rf = right.varnas[0].slp1
-        if la not in _YAN_MAP:
-            continue
-        if rf not in _AC_ALL:
-            continue
-        return i
+        if left.varnas[-1].slp1 in _YAN_MAP and terms[i + 1].varnas[0].slp1 in _AC_ALL:
+            return i, n - 1
     return None
 
 
@@ -109,15 +107,21 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    j = _find_ik_ac_boundary(state)
-    if j is None:
+    hit = _find_ik_ac_boundary(state)
+    if hit is None:
         return state
+    j, k = hit
     left = state.terms[j]
-    yan = mk(_YAN_MAP[left.varnas[-1].slp1])
+    old = left.varnas[k].slp1
+    yan = mk(_YAN_MAP[old])
     yan.tags.add(IKO_YANACI_ADESHA_TAG)
-    left.varnas[-1] = yan
-    left.meta["iko_yanaci_done"] = True
-    left.meta["para_nimitta_yan_adesha"] = True
+    left.varnas[k] = yan
+    if k == len(left.varnas) - 1:
+        left.meta["iko_yanaci_done"] = True
+        left.meta["para_nimitta_yan_adesha"] = True
+    state.meta["__why_now_dev__"] = (
+        f"संधिः: {old} + अच् → {_YAN_MAP[old]} (यण्-आदेशः); (काशिका ६।१।७७)"
+    )
     return state
 
 
