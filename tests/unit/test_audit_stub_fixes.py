@@ -62,3 +62,16 @@ def test_8_4_56_cond_is_structural():
     from sutras.adhyaya_8.pada_4 import sutra_8_4_56 as m
 
     assert "gate_eligible" not in inspect.getsource(m)
+
+
+def test_3_4_108_jhi_becomes_jus_for_ling_from_the_affix_not_the_coordinate():
+    import inspect
+    from sutras.adhyaya_3.pada_4 import sutra_3_4_108 as m
+
+    src = inspect.getsource(m)
+    assert 'meta.get("lakara")' not in src and "gate_eligible" not in src
+    assert "7.1.3" in SUTRA_REGISTRY["3.4.108"].apavada_of            # झोऽन्तापवादः
+    for lak, gold in (("liG", "BaveyuH"), ("AsIrliG", "BUyAsuH")):
+        run = run_autonomously(start_state(NS(kind="tinanta", args=("BU", lak, 3, 3))), "", "BU", 200)
+        assert run.surface == gold
+        assert [s[0] for s in run.steps].count("3.4.108") == 1 and "7.1.3" not in [s[0] for s in run.steps]

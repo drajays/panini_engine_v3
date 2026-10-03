@@ -37,7 +37,7 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     if lakara_site(state, "asirlig_derivation", "3.3.173", ("ashir_liG",)):
-        return attach_lakara(state, "liG")
+        return attach_lakara(state, "liG", tags=frozenset({"ashir_liG"}))   # आशिषि: the tiṅ that replaces it keeps the tag
     if not cond(state):
         return state
     liG = Term(

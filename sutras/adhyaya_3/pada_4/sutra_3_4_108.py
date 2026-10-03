@@ -26,12 +26,8 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tin_pratyaya_gate_eligible
 from phonology    import mk
 
-_GATE_KEY: str = "3_4_108_Jerjus_108"
-
-_JUS_LAKARA: frozenset[str] = frozenset({"liG", "AsIrliG"})
 
 
 def _dhatu_is_anit(state: State) -> bool:
@@ -42,59 +38,52 @@ def _dhatu_is_anit(state: State) -> bool:
 
 
 def _find_jhi_tin(state: State) -> int | None:
-    """Find jhi tiṅ ādeśa — fires from lakāra context, no arm needed."""
-    lakara = state.meta.get("lakara", "")
-    # luṅ: jus after sic (3.4.109 सिजभ्यस्तविदिभ्यश्च) — whenever sic is on the
-    # tape (not luk'd by 2.4.77), seṭ or aniṭ alike (अपठिषुः, अनैषुः).
-    is_lug_set = lakara == "luG" and any(
-        (t.meta.get("upadesha_slp1") or "").strip() == "sic" for t in state.terms)
-    if lakara not in _JUS_LAKARA and not is_lug_set:
-        return None
-    if state.meta.get("3_4_108_liG_done"):
-        return None
+    """The jhi tiṅ ādeśa of a liṅ (vidhi or āśīr) — and of a luṅ that has sic (3.4.109 सिजभ्यस्तविदिभ्यश्च,
+    अपठिषुः) — read from the affix's own provenance, not from the derivation's lakāra (Art. 2)."""
+    has_sic = any((t.meta.get("upadesha_slp1") or "").strip() == "sic" for t in state.terms)
     for i, t in enumerate(state.terms):
-        if t.kind != "pratyaya":
+        if t.kind != "pratyaya" or "tin_adesha_3_4_78" not in t.tags or t.meta.get("3_4_108_liG_done"):
             continue
-        if "tin_adesha_3_4_78" not in t.tags:
+        source = (t.meta.get("source_lakara_upadesha") or "").strip()
+        if source != "liG" and not (source == "luG" and has_sic):
             continue
-        up  = (t.meta.get("upadesha_slp1") or "").strip()
-        cur = "".join(v.slp1 for v in t.varnas)
-        if up == "Ji" and cur in {"Ji", "J"}:
+        if (t.meta.get("upadesha_slp1") or "").strip() == "Ji" and "".join(v.slp1 for v in t.varnas) in {"Ji", "J"}:
             return i
     return None
 
 
 def cond(state: State) -> bool:
-    return tin_pratyaya_gate_eligible(state, "3.4.108", gate_key=_GATE_KEY)
+    return _find_jhi_tin(state) is not None
 
 
 def act(state: State) -> State:
     j = _find_jhi_tin(state)
-    if j is not None:
-        t = state.terms[j]
-        t.varnas = [mk("u"), mk("s")]
-        t.meta["upadesha_slp1"] = "jus"
-        t.meta["3_4_108_liG_done"] = True
-        t.tags.discard("upadesha")
-        state.samjna_registry["3.4.108_jhi_jus"] = True
+    if j is None:
         return state
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.4.108"
+    t = state.terms[j]
+    # जुस् = ज्+उ+स्: the ज् is it (1.3.7 चुटू) and goes; [u, s] stands in place of the whole झि (1.1.55).
+    t.varnas = [mk("u"), mk("s")]
+    t.meta["upadesha_slp1"] = "jus"
+    t.meta["3_4_108_liG_done"] = True
+    t.tags.discard("upadesha")
+    state.samjna_registry["3.4.108_jhi_jus"] = True
+    state.meta["__why_now_dev__"] = (
+        "लिङः झि-आदेशस्य स्थाने जुस् (झोऽन्तस्य अपवादः) — भवेयुः, भूयासुः; सिचि लुङ्यपि (अपठिषुः)। (३.४.१०८)"
+    )
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "3.4.108",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "Jerjus",
     text_dev              = "झेर्जुस्",
     padaccheda_dev        = "झेः जुस्",
     why_dev               = (
         "विधि-लिङि झि-आदेशस्य स्थाने जुस् (j-cuṭु-it → लोपः → [u,s])।"
     ),
-    anuvritti_from        = ('3.1.1',),
+    anuvritti_from        = ('3.4.102',),
+    apavada_of            = ("7.1.3",),   # झोऽन्तापवादः — Kāśikā 3.4.108 (cited above)
     cond                  = cond,
     act                   = act,
 )

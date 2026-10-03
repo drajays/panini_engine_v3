@@ -97,7 +97,7 @@ def find_sap_insertion_dhatu_index(state: State) -> int | None:
         # *ādeśa* (e.g. **P038** *vidhi-liṅ* → ``ran``).
         # (and the āṭ of 3.4.92 आडुत्तमस्य: an āgama is part of the affix it stands before, 1.1.46 —
         # वनं… भवा+नि: śap goes between the dhātu and the whole 'ā+ni')
-        while j < len(state.terms) and ({"ling_sIyuw", "aTa_agama"} & state.terms[j].tags):
+        while j < len(state.terms) and ({"ling_sIyuw", "aTa_agama", "yasut_agama"} & state.terms[j].tags):
             j += 1
         if j >= len(state.terms):
             continue
@@ -112,6 +112,8 @@ def find_sap_insertion_dhatu_index(state: State) -> int | None:
         # A tiṅ stays a tiṅ — and sārvadhātuka — after an ādeśa replaces it (1.1.56 sthānivat; tas → tām
         # is still the tiṅ 3.4.113 named), so the tags decide first; the upadeśa inventory is the
         # fallback for affixes that never went through 3.4.78/3.4.113.
+        if "ardhadhatuka" in nxt.tags:          # सार्वधातुके: āśīr-liṅ's tiṅ is ārdhadhātuka (3.4.116)
+            continue
         tin_sarva = "tin_adesha_3_4_78" in nxt.tags and "sarvadhatuka_3_4_113" in nxt.tags
         if not (tin_sarva or is_sarvadhatuka_upadesha_slp1(up)):
             continue

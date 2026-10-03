@@ -34,14 +34,14 @@ def _dhatu_adjacent_sarvadhatuka_untagged(state: State) -> list[Term]:
             continue
         # An āgama (āṭ, 3.4.92) belongs to the affix it precedes (1.1.46): look past it for the dhātu.
         k = i - 1
-        while k >= 0 and "aTa_agama" in state.terms[k].tags:
+        while k >= 0 and ({"aTa_agama", "yasut_agama"} & state.terms[k].tags):
             k -= 1
         if k < 0 or "dhatu" not in state.terms[k].tags:
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
         if not (is_sarvadhatuka_upadesha_slp1(up) or tin_by_sthanin(t)):
             continue
-        if SARVADHATUKA_113 in t.tags:
+        if SARVADHATUKA_113 in t.tags or "ardhadhatuka" in t.tags:      # already classified (3.4.116 आशिषि)
             continue
         out.append(t)
     return out

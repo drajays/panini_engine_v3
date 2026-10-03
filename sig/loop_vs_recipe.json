@@ -275,5 +275,91 @@
    }
   ],
   "seconds": 494
+ },
+ "tinanta:liG": {
+  "class": "tinanta(liG kartari, gaṇa 1)",
+  "roots": 12,
+  "cells": 108,
+  "agree": 9,
+  "clusters": [
+   {
+    "first_divergence": "eDa~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "eDeya",
+    "loop": "eDa"
+   },
+   {
+    "first_divergence": "sparDa~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "sparDeya",
+    "loop": "sparDa"
+   },
+   {
+    "first_divergence": "gADf~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "gADeya",
+    "loop": "gADa"
+   },
+   {
+    "first_divergence": "bADf~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "bADeya",
+    "loop": "bADa"
+   },
+   {
+    "first_divergence": "nADf~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "nADeya",
+    "loop": "nADa"
+   },
+   {
+    "first_divergence": "nATf~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "nATeya",
+    "loop": "nATa"
+   },
+   {
+    "first_divergence": "daDa~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "daDeya",
+    "loop": "daDa"
+   },
+   {
+    "first_divergence": "skudi~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "skundeya",
+    "loop": "skunda"
+   },
+   {
+    "first_divergence": "Svidi~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "Svindeya",
+    "loop": "Svinda"
+   },
+   {
+    "first_divergence": "vadi~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "vandeya",
+    "loop": "vanda"
+   },
+   {
+    "first_divergence": "Badi~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "Bandeya",
+    "loop": "Banda"
+   }
+  ],
+  "seconds": 42
  }
 }

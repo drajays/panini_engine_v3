@@ -46,7 +46,9 @@ DECISION_LAYERS: FrozenSet[str] = frozenset({
     "jnapaka",
     "upadesha",
     "asiddha",
+    "pratishedha",
     "antaranga",
+    "purva",
     "apavada",
     "vikalpa",
     "para",
@@ -143,15 +145,22 @@ def _reach(sid: str, state: State) -> int:
     return len(state.terms) - 1
 
 
-def _bahiranga_losers(candidate_ids: List[str], state: State) -> set[str]:
-    """PŚ 50 असिद्धं बहिरङ्गमन्तरङ्गे. Two rules *contend* when the terms they rewrite
-    overlap. Of two that contend, the one whose nimitta
-    reaches a term the other does not need is bahiraṅga and yields."""
+def _zones(candidate_ids: List[str], state: State) -> dict:
+    """candidate → (terms it would rewrite, how far right its nimitta reaches); rules that would
+    rewrite nothing are absent."""
     info = {}
     for cid in candidate_ids:
         changed = _changed_terms(cid, state)
         if changed:
             info[cid] = (frozenset(changed), _reach(cid, state))
+    return info
+
+
+def _bahiranga_losers(candidate_ids: List[str], state: State, info: dict | None = None) -> set[str]:
+    """PŚ 50 असिद्धं बहिरङ्गमन्तरङ्गे. Two rules *contend* when the terms they rewrite
+    overlap. Of two that contend, the one whose nimitta
+    reaches a term the other does not need is bahiraṅga and yields."""
+    info = info if info is not None else _zones(candidate_ids, state)
     losers: set[str] = set()
     for c, (zone_c, reach_c) in info.items():
         for r, (zone_r, reach_r) in info.items():
@@ -224,9 +233,18 @@ def resolve_with_reason(
     # Art. 21 Ladder 1, step 2 — asiddhatva. Rules inside the tripāḍī cannot see
     # each other's work in descending order (8.2.1), so *para* is not the arbiter:
     # the earlier rule goes first and the later one meets its result afterwards.
-    if all(is_tripadi_sutra(c) for c in candidate_ids):
+    declared_apavada = any(o in candidate_ids for c in candidate_ids for o in (get_sutra(c).apavada_of or ()))
+    if all(is_tripadi_sutra(c) for c in candidate_ids) and not declared_apavada:
         winner = min(candidate_ids, key=_id_key)
         return Decision(winner, "asiddha", paribhasha_layer("asiddha").citation(), ())
+
+    # Ladder 1, step 3 — pratiṣedha. A prohibition is settled before the rules it forbids contend
+    # (the autonomous loop does it in apply_pratishedhas; a pool-driven scanner offers it as a candidate).
+    prohibitions = [c for c in candidate_ids if get_sutra(c).sutra_type is SutraType.PRATISHEDHA]
+    if prohibitions:
+        first = min(prohibitions, key=_id_key)
+        return Decision(first, "pratishedha", "प्रतिषेधः — निषेधः प्रथमं निर्णीयते (Art. 21)",
+                        tuple(c for c in candidate_ids if c != first))
 
     # Ladder 1: an apavāda displaces the utsarga *it names* and nothing else
     # ("purastād apavādā anantarān vidhīn bādhante nottarān": a later rule at the same
@@ -269,8 +287,38 @@ def resolve_with_reason(
     winner = max(candidate_ids, key=_id_key)
 
     # Ladder 1: antaraṅga outranks para (PŚ 38) — only the rules that did not yield.
-    bahiranga = _bahiranga_losers(candidate_ids, state)
+    info = _zones(candidate_ids, state)
+    bahiranga = _bahiranga_losers(candidate_ids, state, info)
     survivors = [c for c in candidate_ids if c not in bahiranga]
+    # पूर्व (PŚ 38, the weakest term of the ladder). Two rules *conflict* when applying either leaves the
+    # other without a site (विप्रतिषेध): that is *para*'s business (1.4.2, later wins). Rules that leave
+    # each other alone do not conflict, and Aṣṭādhyāyī kram (Art. 3) orders them — the earlier goes first. This
+    # is how 7.2.79 (s-lopa) comes before 7.3.101 although both are open at once.
+    if info and len(survivors) > 1:
+        from engine.scheduler import probe
+
+        after = {c: probe(c, state) for c in survivors if c in info}
+
+        def _kills(x: str, y: str) -> bool:
+            try:
+                return not get_sutra(y).cond(after[x])
+            except Exception:
+                return False
+
+        def _defeated(c: str) -> bool:
+            if c not in info:
+                return False
+            return any(
+                r != c and r in info and _id_key(r) > _id_key(c) and (_kills(c, r) or _kills(r, c))
+                for r in survivors
+            )
+
+        undefeated = [c for c in survivors if c in info and not _defeated(c)]
+        first = min(undefeated, key=_id_key) if undefeated else None
+        if first is not None and first != max(survivors, key=_id_key):
+            return Decision(first, "purva", paribhasha_layer("purva").citation(),
+                            tuple(c for c in candidate_ids if c != first) + pre_losers,
+                            skipped_unmodelled=skipped)
     if bahiranga and survivors:
         inner = max(survivors, key=_id_key)
         if inner != winner:

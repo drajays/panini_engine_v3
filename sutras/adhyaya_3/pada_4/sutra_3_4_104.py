@@ -39,11 +39,41 @@ def _find_tin_index(state: State) -> int | None:
     return None
 
 
+def _structural_site(state: State) -> int | None:
+    for i, t in enumerate(state.terms):
+        if t.kind == "pratyaya" and "tin_adesha_3_4_78" in t.tags and "ashir_liG" in t.tags \
+                and "parasmaipada" in t.tags and not t.meta.get("3_4_104_yasut_done"):
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
+    if _structural_site(state) is not None:
+        return True
     return tin_pratyaya_gate_eligible(state, "3.4.104", gate_key=_GATE_KEY)
 
 
+def _kit_yasut() -> Term:
+    # yāsuṭ upadeśa = y+ā+s+u~+ṭ; after u~/ṭ it-lopa → [y, ā, s], kit so that 1.1.5 क्ङिति च blocks guṇa.
+    return Term(
+        kind="pratyaya",
+        varnas=[mk("y"), mk("A"), mk("s")],
+        tags={"pratyaya", "yasut_agama", "kit", "kngiti", "ardhadhatuka"},
+        meta={"upadesha_slp1": "yAsuT", "yasut_agama": True, "kit": True},
+    )
+
+
 def act(state: State) -> State:
+    i = _structural_site(state)
+    if i is not None:
+        state.terms.insert(i, _kit_yasut())
+        state.terms[i + 1].meta["3_4_104_yasut_done"] = True
+        state.samjna_registry["3.4.104_yasut_inserted"] = True
+        state.meta["__why_now_dev__"] = (
+            "आशिषि लिङः परस्मैपद-तिङः पूर्वं यासुट् — किदाशिषि (कित्, अतो गुणो न): "
+            "भू + ति → भू + यास् + त् (भूयात्)। (३.४.१०४)"
+        )
+        return state
     if state.meta.get("ashir_yasut_recipe") and not state.meta.get("3_4_104_yasut_done"):
         idx = _find_tin_index(state)
         if idx is None:
@@ -79,6 +109,7 @@ SUTRA = SutraRecord(
         "द्वारा धातोः गुण-निषेधः।"
     ),
     anuvritti_from        = ('3.1.1',),
+    apavada_of            = ("3.4.103",),   # आशीर्लिङ्: kit yāsuṭ, not the ṅit one of vidhi-liṅ
     cond                  = cond,
     act                   = act,
 )

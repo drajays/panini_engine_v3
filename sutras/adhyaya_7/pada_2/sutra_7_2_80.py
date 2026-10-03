@@ -82,6 +82,10 @@ SUTRA = SutraRecord(
         "एवं ६.१.८७ द्वारा अ+इ → ए।"
     ),
     anuvritti_from        = ('7.1.1',),
+    # a + yā of liṅ: 7.2.80 gives iy, which takes the yañ-initial yā away from 7.3.101 (a → ā). The Kāśikā's own
+    # discussion (स्यादेतदेवं यदि दीर्घः सार्वधातुके विधीयते) treats it as the exception. Declared (Art. 15);
+    # scholar to confirm against the Bhāṣya (Art. 22).
+    apavada_of            = ("7.3.101",),
     cond                  = cond,
     act                   = act,
 )

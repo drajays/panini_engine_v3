@@ -55,7 +55,10 @@ def _ardhadhatuka_vikarana_index(state: State) -> int | None:
             if not pr.varnas:
                 continue
             if not _val_initial(pr.varnas[0].slp1):
-                continue
+                # वलादेः: the *affix* begins with a val consonant. The first ārdhadhātuka term after the dhātu
+                # is where the affix begins (yāsuṭ of āśīr-liṅ, an āgama, is part of it, 1.1.46): if that is
+                # not val-initial, the tiṅ behind it does not take iṭ.
+                break
             return j
     return None
 

@@ -49,26 +49,26 @@
       "total": 178
     },
     "VIBHASHA": {
-      "coverage_pct": 22.22,
-      "implemented": 6,
+      "coverage_pct": 25.0,
+      "implemented": 7,
       "stubs": 0,
-      "total": 27
+      "total": 28
     },
     "VIDHI": {
-      "coverage_pct": 7.5,
-      "implemented": 262,
+      "coverage_pct": 7.53,
+      "implemented": 263,
       "stubs": 0,
-      "total": 3494
+      "total": 3493
     }
   },
   "conditions": {
     "cited": 464,
-    "invoked": 677,
-    "moved": 403,
+    "invoked": 679,
+    "moved": 405,
     "tested": 620
   },
-  "coverage_pct": 7.16,
-  "implemented": 285,
+  "coverage_pct": 7.21,
+  "implemented": 287,
   "ledger": "sig/firing_coverage.json",
   "moving_but_uncited": [
     "1.1.41",
@@ -178,7 +178,7 @@
   ],
   "notes": "Art. 16: 'implemented' requires invoked + moved + cited + tested. The ≥3 positive / ≥2 negative split lands with sutra_lint (Phase A2); 'tested' here means the id is exercised by at least one test.",
   "registered": 3983,
-  "scaffolded": 3698,
+  "scaffolded": 3696,
   "stubs": 0,
   "total": 3983
 }

@@ -65,7 +65,14 @@ def _find_tin_t_medial(state: State) -> tuple[int, int] | None:
     return None
 
 
+def _structural_site(state: State) -> bool:
+    idx = _find_tin_t_initial(state)
+    return idx is not None and "ashir_liG" in state.terms[idx].tags and "parasmaipada" in state.terms[idx].tags
+
+
 def cond(state: State) -> bool:
+    if _structural_site(state):
+        return True
     if not state.meta.get("suw_recipe"):
         return False
     if not (
@@ -86,19 +93,22 @@ def act(state: State) -> State:
             return state
         i, j = hit
         s_v = mk("s")
-        s_v.tags.add("suw_agama")
+        s_v.tags.update({"suw_agama", "suw_s"})
         state.terms[i].varnas.insert(j, s_v)
         state.terms[i].meta["suw_3_4_107_done"] = True
         state.meta["suw_recipe"] = False
         state.samjna_registry["3.4.107_suw_inserted"] = True
         return state
+    s_v = mk("s")
+    s_v.tags.add("suw_s")            # survives pada_merge, so 8.2.26 (झलो झलि) can find it
     suw = Term(
         kind="pratyaya",
-        varnas=[mk("s")],
+        varnas=[s_v],
         tags={"pratyaya", "suw_agama"},
         meta={"upadesha_slp1": "s", "suw_agama": True},
     )
     state.terms.insert(idx, suw)
+    state.meta["__why_now_dev__"] = "आशिषि लिङः त-थ-आदि तिङः पूर्वं सुट्-आगमः — भू + यास् + त् → भू + यास् + स् + त् (भूयात्)। (३.४.१०७)"
     state.meta["suw_recipe"] = False
     state.samjna_registry["3.4.107_suw_inserted"] = True
     return state

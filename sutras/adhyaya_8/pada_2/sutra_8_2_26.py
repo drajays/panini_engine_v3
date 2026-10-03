@@ -24,7 +24,7 @@ _JHAL = frozenset("kKgGcCjJwWqQtTdDpPbBSzsh")
 
 
 def _sic_s_between_jhal(state: State) -> int | None:
-    """झलो झलि (सिचः लोपः, 8.2.25): sic's s between two jhal — अपाक्ताम्, अपक्त.
+    """झलो झलि (सिचः / सुटः सकारलोपः): the s of sic or of suṭ (3.4.107) between two jhal — अपाक्ताम्, अपक्त.
 
     Excludes a preceding ष्/ढ् (z/Q): that pair is 8.2.41's षढोः कः सि
     (ष्/ढ् + स् → क् + स्, e.g. शिष्+स्+त् → शिक्ष्त्, अशिक्षत्) — a more
@@ -34,7 +34,7 @@ def _sic_s_between_jhal(state: State) -> int | None:
         return None
     vs = state.terms[0].varnas
     for i in range(1, len(vs) - 1):
-        if ("sic_s" in vs[i].tags and vs[i - 1].slp1 in _JHAL and vs[i + 1].slp1 in _JHAL
+        if (({"sic_s", "suw_s"} & vs[i].tags) and vs[i - 1].slp1 in _JHAL and vs[i + 1].slp1 in _JHAL
                 and vs[i - 1].slp1 not in ("z", "Q")):
             return i
     return None

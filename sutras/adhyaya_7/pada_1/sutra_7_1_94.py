@@ -66,6 +66,9 @@ SUTRA = SutraRecord(
     padaccheda_dev = "ऋत्-उशनस्-पुरुदंसोः अनेहसां च",
     why_dev        = "ऋकारान्ते अनङ्-आदेशः (तृच् + सु)।",
     anuvritti_from = ("7.1.93",),
+    # अनङ् takes the ṛ of pitṛ/bhrātṛ… before su and the other sarvanāmasthāna; 7.3.110 (ṛto ṅi सर्वनामस्थानयोर्गुणः)
+    # would give guṇa to the same ṛ (पितर्). Declared — the gold forms पिता/भ्राता need it (Art. 15; scholar to confirm).
+    apavada_of     = ("7.3.110",),
     cond           = cond,
     act            = act,
 )

@@ -136,7 +136,8 @@ def _find_tin_aprkta(state: State) -> int | None:
         if (pr.meta.get("upadesha_slp1") or "").strip() not in ("tip", "sip"):
             continue
         prev = next((u for u in reversed(state.terms[:j]) if u.varnas), None)
-        if prev is not None and prev.varnas[-1].slp1 in HAL:
+        # हलः: the *aṅga* ends in a consonant. A yāsuṭ / āgama residue (…iy) before the tiṅ is not the aṅga.
+        if prev is not None and not ({"agama", "yasut_agama", "aTa_agama", "suw_agama"} & prev.tags) and prev.varnas[-1].slp1 in HAL:
             return j
     return None
 

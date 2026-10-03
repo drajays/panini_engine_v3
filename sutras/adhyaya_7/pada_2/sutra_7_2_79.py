@@ -49,6 +49,8 @@ def _find_yasut(state: State) -> int | None:
             continue
         if not t.varnas or t.varnas[-1].slp1 != "s":
             continue
+        if "ardhadhatuka" in t.tags:       # सार्वधातुके (anuvṛtti): āśīr-liṅ's kit yāsuṭ keeps its s
+            continue
         return i
     return None
 

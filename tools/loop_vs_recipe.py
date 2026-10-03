@@ -67,7 +67,7 @@ def subanta(limit: int | None) -> dict:
             "clusters": [{"first_divergence": k, "count": n, **examples[k]} for k, n in clusters.most_common()]}
 
 
-def tinanta(limit: int | None, lakara: str = "laT") -> dict:
+def tinanta(limit: int | None, lakara: str = "laT", pada: str = "all") -> dict:
     import sutras  # noqa: F401
     from types import SimpleNamespace as NS
 
@@ -75,7 +75,9 @@ def tinanta(limit: int | None, lakara: str = "laT") -> dict:
     from pipelines.tinanta import derive
     from tools.autonomy_report import run_autonomously, start_state
 
-    roots = [r["upadesha_slp1"] for r in iter_dhatu_entries() if r.get("gana") == 1]
+    want = {"parasmai": "परस्मैपदी", "atmane": "आत्मनेपदी", "ubhaya": "उभयपदी"}.get(pada)
+    roots = [r["upadesha_slp1"] for r in iter_dhatu_entries()
+             if r.get("gana") == 1 and (want is None or r.get("pada_label_dev") == want)]
     roots = roots[:limit] if limit else roots
     cells = agree = 0
     clusters: collections.Counter = collections.Counter()
@@ -108,9 +110,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("kind", choices=["subanta", "tinanta"])
     ap.add_argument("--limit", type=int)
     ap.add_argument("--lakara", default="laT")
+    ap.add_argument("--pada", default="all", choices=["all", "parasmai", "atmane", "ubhaya"])
     args = ap.parse_args(argv)
     t0 = time.time()
-    report = subanta(args.limit) if args.kind == "subanta" else tinanta(args.limit, args.lakara)
+    report = subanta(args.limit) if args.kind == "subanta" else tinanta(args.limit, args.lakara, args.pada)
     report["seconds"] = round(time.time() - t0)
     book = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
     book[args.kind if args.kind == "subanta" or args.lakara == "laT" else f"tinanta:{args.lakara}"] = report

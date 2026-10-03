@@ -42,27 +42,55 @@ def _find_tin_index(state: State) -> int | None:
     return None
 
 
+def _structural_site(state: State) -> int | None:
+    """liṅ's parasmaipada tiṅ ādeśa that has not yet received the yāsuṭ (the lakāra is read from the
+    affix's own provenance, not from the derivation)."""
+    for i, t in enumerate(state.terms):
+        if t.kind != "pratyaya" or "tin_adesha_3_4_78" not in t.tags or "parasmaipada" not in t.tags:
+            continue
+        if (t.meta.get("source_lakara_upadesha") or "").strip() != "liG":
+            continue
+        if t.meta.get("3_4_103_yasut_done") or "ashir_liG" in t.tags:
+            continue
+        return i
+    return None
+
+
 def cond(state: State) -> bool:
+    if _structural_site(state) is not None:
+        return True
     return tin_pratyaya_gate_eligible(state, "3.4.103", gate_key=_GATE_KEY)
 
 
+def _insert_yasut(state: State, idx: int) -> None:
+    # yāsuṭ upadeśa = y+ā+s+u~+ṭ; the u~ and ṭ (it) are taken as already gone, so the augment stands as [y, ā, s]
+    # and carries ``yasut_agama`` (not ``upadesha``) lest 1.3.3 read its s as an it before 7.2.79 drops it.
+    state.terms.insert(idx, Term(
+        kind="pratyaya",
+        varnas=[mk("y"), mk("A"), mk("s")],
+        tags={"pratyaya", "yasut_agama", "kngiti"},
+        meta={"upadesha_slp1": "yAsuT", "yasut_agama": True},
+    ))
+    state.terms[idx + 1].meta["3_4_103_yasut_done"] = True
+    state.samjna_registry["3.4.103_yasut_inserted"] = True
+    state.meta["__why_now_dev__"] = (
+        "विधि-लिङः परस्मैपद-तिङः पूर्वं यासुट्-आगमः (उदात्तः ङित् च) — सीयुटोऽपवादः; "
+        "भव + ति → भव + यास् + त् (भवेत्)। (३.४.१०३)"
+    )
+
+
 def act(state: State) -> State:
+    idx = _structural_site(state)
+    if idx is not None:
+        _insert_yasut(state, idx)
+        return state
     if state.meta.get("yasut_recipe") and not state.meta.get("3_4_103_yasut_done"):
         idx = _find_tin_index(state)
         if idx is None:
             return state
-        # yāsuṭ upadeśa = y+ā+s+u~+ṭ.  Pre-process: u~ and T are it-markers
-        # conceptually removed here; 1.3.2/1.3.3/1.3.9 calls in pipeline are trace-only.
-        yasut = Term(
-            kind="pratyaya",
-            varnas=[mk("y"), mk("A"), mk("s")],
-            tags={"pratyaya", "yasut_agama", "kngiti"},
-            meta={"upadesha_slp1": "yAsuT", "yasut_agama": True},
-        )
-        state.terms.insert(idx, yasut)
+        _insert_yasut(state, idx)
         state.meta["3_4_103_yasut_done"] = True
         state.meta.pop("yasut_recipe", None)
-        state.samjna_registry["3.4.103_yasut_inserted"] = True
         return state
     # Legacy gate path
     state.paribhasha_gates[_GATE_KEY] = True

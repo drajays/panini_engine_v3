@@ -137,6 +137,14 @@
    "status": "modelled",
    "note": "उपदेशेऽजनुनासिक इत् — an it is an it *in the upadeśa*, i.e. before any rule reads the affix; the it-prakaraṇa (1.3.2–1.3.9) therefore precedes whatever else is offered, in sūtra order.",
    "text_dev": "उपदेशेऽजनुनासिक इत्"
+  },
+  "purva": {
+   "label_dev": "पूर्व",
+   "ps_num": "38",
+   "astadhyayi_sutra": null,
+   "status": "modelled",
+   "note": "Rules that contend for no term do not conflict; they apply in Aṣṭādhyāyī order (Art. 3). The weakest term of PŚ 38 — पूर्व — is the earlier sūtra, and only genuine vipratiṣedha is settled by para (1.4.2).",
+   "text_dev": "पूर्वपरनित्यान्तरङ्गापवादानामुत्तरोत्तरं बलीयः"
   }
  },
  "entries": [

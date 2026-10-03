@@ -30,11 +30,32 @@ def _find_tin(state: State) -> int | None:
     return None
 
 
+def _structural_site(state: State) -> int | None:
+    """आशिषि liṅ's tiṅ (the tag travels from the lakāra placeholder 3.3.173 attached)."""
+    for i, t in enumerate(state.terms):
+        if t.kind == "pratyaya" and "tin_adesha_3_4_78" in t.tags and "ashir_liG" in t.tags \
+                and not t.meta.get("3_4_116_ardhadhatuka_done"):
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
+    if _structural_site(state) is not None:
+        return True
     return tin_pratyaya_gate_eligible(state, "3.4.116", gate_key=_GATE_KEY)
 
 
 def act(state: State) -> State:
+    i = _structural_site(state)
+    if i is not None:
+        t = state.terms[i]
+        t.tags.discard("sarvadhatuka")
+        t.tags.discard("sarvadhatuka_3_4_113")
+        t.tags.add("ardhadhatuka")
+        t.meta["3_4_116_ardhadhatuka_done"] = True
+        state.samjna_registry["3.4.116_ardhadhatuka"] = True
+        state.meta["__why_now_dev__"] = "आशिषि लिङ्-लकारस्य तिङ् आर्धधातुकसंज्ञः (तिङ्शित्सार्वधातुकम् ३.४.११३ इत्यस्य अपवादः) — अतः शप् नास्ति, गुणः ङित्-वत् न। (३.४.११६)"
+        return state
     if state.meta.get("ashir_liG"):
         idx = _find_tin(state)
         if idx is not None:
@@ -62,6 +83,7 @@ SUTRA = SutraRecord(
         "एवं ७.३.८४ गुणो न भवति (किद्-यासुट्-कारणात्)।"
     ),
     anuvritti_from        = ('3.1.1',),
+    apavada_of            = ("3.4.113",),   # आशिषि liṅ's tiṅ is ārdhadhātuka, not sārvadhātuka
     cond                  = cond,
     act                   = act,
 )

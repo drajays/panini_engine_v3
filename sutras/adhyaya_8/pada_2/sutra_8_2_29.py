@@ -80,7 +80,30 @@ def _all_hal(t) -> bool:
     return bool(t.varnas) and all(v.slp1 in HAL for v in t.varnas)
 
 
+_SKOH = frozenset({"s", "k", "K", "g", "G", "N"})          # सकारः and the kavarga
+_JHAL = frozenset("kKgGcCjJwWqQtTdDpPbBzsSh")
+
+
+def _find_final_cluster(state: State) -> int | None:
+    """स्कोः संयोगाद्योरन्ते च: in the pada (a single merged term, inside the tripāḍī) whose end is a
+    consonant cluster, a saṃyoga-initial sakāra or kavarga letter before a jhal drops — भूयास्स्त् → भूयात्,
+    by two applications (the loop offers it again for the cluster that is left)."""
+    if not state.tripadi_zone or len(state.terms) != 1:
+        return None
+    vs = state.terms[0].varnas
+    k = len(vs)
+    while k > 0 and vs[k - 1].slp1 in HAL:
+        k -= 1
+    if len(vs) - k < 2 or k == 0:
+        return None
+    if vs[k].slp1 in _SKOH and vs[k + 1].slp1 in _JHAL:
+        return k
+    return None
+
+
 def cond(state: State) -> bool:
+    if _find_final_cluster(state) is not None:
+        return True
     # Recipe paths fire pre-merge (before tripadi zone opens).
     if state.meta.get("ashir_8_2_29_recipe") or state.meta.get("liG_ad_8_2_29_suw_recipe"):
         return bool(state.terms)
@@ -88,6 +111,15 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    k = _find_final_cluster(state)
+    if k is not None:
+        dropped = state.terms[0].varnas[k].slp1
+        del state.terms[0].varnas[k]
+        state.meta["__why_now_dev__"] = (
+            f"पदान्ते संयोगस्य आदौ वर्तमानस्य सकार-कवर्गयोः ({dropped}) झलि परे लोपः — "
+            "भूयास्स्त् → भूयास्त् → भूयात्। (८.२.२९)"
+        )
+        return state
     j = _find_lig_ad_suw(state)
     if j is not None:
         state.terms.pop(j)
@@ -136,6 +168,7 @@ SUTRA = SutraRecord(
         "तदनन्तरं सुट्-सकारस्यापि लोपः यदि पद-अन्ते केवल-व्यञ्जन-तिङ् (३एकवचन)।"
     ),
     anuvritti_from        = ('8.1.1',),
+    apavada_of            = ("8.2.23",),   # संयोगान्तस्य लोपः is the general rule; this one names the cluster-initial s / kavarga
     cond                  = cond,
     act                   = act,
 )

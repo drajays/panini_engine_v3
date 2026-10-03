@@ -41,7 +41,7 @@ def lakara_site(state: State, derivation_tag: str, sutra_id: str, legacy_keys: t
         and not any((t.meta.get("source_lakara_upadesha") or "") != "" for t in state.terms)
 
 
-def attach_lakara(state: State, upadesha: str, *, at_context: bool = False) -> State:
+def attach_lakara(state: State, upadesha: str, *, at_context: bool = False, tags: frozenset = frozenset()) -> State:
     """Append the lakāra placeholder (its it-letter stays; 1.3.3 → 1.3.9 take it away, as for every affix)."""
     if at_context:                       # 6.4.71 अट् reads this: laṅ · luṅ · lṛṅ
         for t in state.terms:
@@ -50,7 +50,7 @@ def attach_lakara(state: State, upadesha: str, *, at_context: bool = False) -> S
     state.terms.append(Term(
         kind="pratyaya",
         varnas=parse_slp1_upadesha_sequence(upadesha),
-        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
+        tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"} | set(tags),
         meta={"upadesha_slp1": upadesha},
     ))
     return state
