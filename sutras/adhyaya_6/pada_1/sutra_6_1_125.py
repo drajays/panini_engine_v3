@@ -18,6 +18,8 @@ from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
 from phonology.pratyahara import AC
 
+_AC_ALL = AC | frozenset("AIUFX")  # AC stores short vowels only
+
 from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
 
 _REGISTRY_KEY = "6.1.125_prakRti_aci"
@@ -36,7 +38,7 @@ def _boundary_index(state: State) -> int | None:
             continue
         if not right.varnas:
             continue
-        if right.varnas[0].slp1 not in AC:
+        if right.varnas[0].slp1 not in _AC_ALL:
             continue
         return i
     return None
@@ -53,6 +55,9 @@ def act(state: State) -> State:
     right = state.terms[i + 1]
     right.meta[_META_ACK] = True
     state.samjna_registry[_REGISTRY_KEY] = state.samjna_registry.get(_REGISTRY_KEY, 0) + 1
+    state.meta["__why_now_dev__"] = (
+        "प्लुत-प्रगृह्य-अन्तात् परे अचि प्रकृतिभावः नित्यः — सन्धिः निरुद्धः। (६.१.१२५)"
+    )
     return state
 
 

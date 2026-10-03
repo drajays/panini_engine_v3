@@ -35,6 +35,7 @@ from phonology.pratyahara import AC
 _AC_ALL = AC | frozenset({"A", "I", "U", "F", "X"})
 
 from sutras.adhyaya_1.pada_1.sutra_1_1_11 import PRAGHYA_TERM_TAG
+from sutras.adhyaya_6.pada_1.sutra_6_1_109 import padanta_eng_before_short_a
 
 
 _ECO_SPLIT = {
@@ -75,6 +76,8 @@ def _find_eco_aci_boundary(state: State) -> tuple[int, int] | None:
         # ṅasi/ṅas pūrvarūpa is 6.1.110's business.
         if nxt.meta.get("upadesha_slp1") in {"Nasi", "Nas"}:
             continue
+        if padanta_eng_before_short_a(left, nxt):
+            continue  # 6.1.109 एङः पदान्तादति
         if left.varnas[-1].slp1 in _ECO_SPLIT and nxt.varnas[0].slp1 in _AC_ALL:
             return i, len(left.varnas) - 1
     return None

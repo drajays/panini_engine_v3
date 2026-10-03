@@ -33,7 +33,9 @@ Citation (CONSTITUTION Art. 14)
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
-from phonology.varna import AC_DEV
+
+# 6.1.107 pūrvarūpa is for ak (a i u ṛ ḷ + dīrgha) only; ec stems go via 6.1.78 / 6.1.93.
+_AK = frozenset("aAiIuUfFxX")
 
 
 def _find_target(state: State):
@@ -62,7 +64,7 @@ def _find_target(state: State):
         if nxt.varnas[0].slp1 != "a":
             continue
         last = anga.varnas[-1].slp1
-        if last not in AC_DEV:
+        if last not in _AK:
             continue
         return i
     return None
@@ -87,6 +89,10 @@ def act(state: State) -> State:
     state.terms[i].meta["ami_purva_done"] = True
     # Also block 6.1.101 for safety.
     state.blocked_sutras.add("6.1.101")
+    state.meta["__why_now_dev__"] = (
+        "अम्-प्रत्यये परे अक्-अन्तात् अङ्गात् पूर्वरूपम् एकादेशः (दीर्घ-निषेधः); "
+        "यथा राम+अम् → रामम्, हरि+अम् → हरिम्। (६.१.१०७)"
+    )
     return state
 
 

@@ -169,7 +169,7 @@ def cond(state: State) -> bool:
     return _find_asmad_crossterm(state) is not None
 
 
-def act(state: State) -> State:
+def _act(state: State) -> State:
     if _find_p017_pararupa(state):
         t0, t1, t2 = state.terms[0], state.terms[1], state.terms[2]
         merged = Term(
@@ -210,6 +210,16 @@ def act(state: State) -> State:
         anga.meta["6_1_97_crossterm_done"] = True
         state.samjna_registry["6_1_97_asmad_crossterm_pararupa"] = True
         return state
+    return state
+
+
+def act(state: State) -> State:
+    before = len(state.terms), sum(len(t.varnas) for t in state.terms)
+    state = _act(state)
+    if (len(state.terms), sum(len(t.varnas) for t in state.terms)) != before:
+        state.meta["__why_now_dev__"] = (
+            "ह्रस्व-अकारात् गुण-स्वरे (अ/ए) परे पररूप-एकादेशः — पूर्व-अकारस्य लोपः। (६.१.९७)"
+        )
     return state
 
 
