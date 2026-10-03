@@ -1,8 +1,8 @@
 """
-8.4.56  वाऽवसाने  —  VIDHI
+8.4.56  वाऽवसाने  —  VIBHASHA
 
 At avasāna (word boundary / pause), jaś consonants optionally become car
-(voiceless stops).  In practice always applied for final-position forms.
+(voiceless stops): both readings are valid (वाक् / वाग्), so every branch is an output (Art. 21 vikalpa).
 
 Phonological predicate: merged pada (single term) ends in a jaś consonant
 (d, g, b, j, etc., placed there by 8.2.39 jhal→jaś). Converts to car (voiceless).
@@ -25,10 +25,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tripadi_gate_eligible
 from phonology.varna import parse_slp1_upadesha_sequence
-
-_GATE_KEY: str = "8_4_56_vAvasAne_56"
 
 # jaś → car: voiced obstruents → their voiceless equivalents at avasāna
 _JAS_TO_CAR: dict[str, str] = {
@@ -54,27 +51,29 @@ def _find_jas_final(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    # वाऽवसाने: only a jhal (here a jaś) at the pada's end in pause has work to do
-    return tripadi_gate_eligible(state, "8.4.56", gate_key=_GATE_KEY) and _find_jas_final(state) is not None
+    # वाऽवसाने: inside the tripāḍī, a jaś at the end of the pada has work to do.
+    return state.tripadi_zone and _find_jas_final(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"] = "8.4.56"
     i = _find_jas_final(state)
-    if i is not None:
-        old_slp1 = state.terms[0].varnas[i].slp1
-        car_slp1 = _JAS_TO_CAR[old_slp1]
-        state.terms[0].varnas[i] = parse_slp1_upadesha_sequence(car_slp1)[0]
-        state.samjna_registry["8.4.56_jas_to_car"] = f"{old_slp1}→{car_slp1}"
+    if i is None:
+        return state
+    old_slp1 = state.terms[0].varnas[i].slp1
+    car_slp1 = _JAS_TO_CAR[old_slp1]
+    state.terms[0].varnas[i] = parse_slp1_upadesha_sequence(car_slp1)[0]
+    state.samjna_registry["8.4.56_jas_to_car"] = f"{old_slp1}→{car_slp1}"
+    state.meta["__why_now_dev__"] = (
+        f"अवसाने (पदान्ते विरामे) झलः जशः ({old_slp1}) विकल्पेन चर्-आदेशः ({car_slp1}) — "
+        "अन्यतरस्यां पक्षे जश् एव तिष्ठति (वाक् / वाग्)। (८.४.५६)"
+    )
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "8.4.56",
-    sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
+    sutra_type            = SutraType.VIBHASHA,
+    vibhasha_default      = True,       # the car reading is taken; vikalpa.choose({"8.4.56": False}) keeps the jaś
     text_slp1             = 'vAvasAne',
     text_dev              = 'वाऽवसाने',
     padaccheda_dev        = "वा अवसाने",

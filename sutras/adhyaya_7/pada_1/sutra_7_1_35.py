@@ -58,6 +58,10 @@ def act(state: State) -> State:
         return state
     adesha_substitute_varnas(t, "tAta~N", state, sutra_id="7.1.35", gunadharmas=frozenset({TING_PRATYAYATVA}))
     t.meta["7_1_35_done"] = True
+    state.meta["__why_now_dev__"] = (
+        "आशिषि (आशीर्वादार्थे) लोट्-लकारस्य तु / हि इत्यनयोः स्थाने विकल्पेन तातङ् — "
+        "भव + तु → भव + तात् (भवतात्); अन्यतरस्यां पक्षे भवतु / भव। (७.१.३५)"
+    )
     return state
 
 
