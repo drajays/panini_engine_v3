@@ -11,7 +11,8 @@ Spine (glass-box):
   structural ``loT`` → **3.4.77**/**3.4.78** (*sip*) → **3.4.87** (*hi*) → **1.1.47**
   → **3.1.78** (*śnam* infix on ``viS``) → **1.2.4** → **6.4.111** (*śna* vowel *lopa*)
   → **6.4.101** (*hi*→*Qi*) → ``_pada_merge`` → Tripāḍī **8.2.1** → **8.4.41** (*n*→*R*)
-  → **8.2.36** (*S*→*z* before *jhal*) → **8.4.55** (P031 *viSir* bridge to ``viSiRQi``).
+  → **8.2.36** (*S*→*z* before *jhal*) → **8.4.55** (no khar follows: no-op).  The engine ends at ``viRzQi``;
+the attested ``viSiRQi`` is not yet derived (tracked as an xfail).
 """
 # ── Claude Code review 2026-05-07 ──────────────────────────────────
 # CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   

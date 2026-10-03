@@ -15,18 +15,18 @@
       "sutra_id": "1.4.110"
     },
     {
-      "fire_count": 166,
-      "hub_type": "broadcast",
-      "in_degree": 3,
-      "out_degree": 19,
-      "sutra_id": "1.2.41"
-    },
-    {
       "fire_count": 291,
       "hub_type": "broadcast",
       "in_degree": 5,
       "out_degree": 17,
       "sutra_id": "1.3.9"
+    },
+    {
+      "fire_count": 166,
+      "hub_type": "broadcast",
+      "in_degree": 3,
+      "out_degree": 19,
+      "sutra_id": "1.2.41"
     },
     {
       "fire_count": 325,

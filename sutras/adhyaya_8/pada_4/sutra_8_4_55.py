@@ -1,13 +1,16 @@
 """
 8.4.55  खरि च  —  VIDHI
 
-Before a following *khar* consonant, a preceding *jhal* consonant becomes its
-*car* (voiceless unaspirated) equivalent.  Tripāḍī zone only.
+झलाम् (8.4.53) चर् (8.4.54) संहितायाम् (8.2.108): a jhal followed by a khar becomes
+its antaratama car (voiceless unaspirated of its own varga).  Tripāḍī only.
 
-Engine:
-  - Tripāḍī zone only.
-  - Scans the final pada for any jhal varṇa immediately followed by a khar varṇa.
-  - Bridge arms (P031–P034) handle teaching-pipeline glass-box substitutions.
+    bhaj + ta → bhak-ta (g→k)    dath + ta → dat-ta (th→t)    jaGzatus → jakzatus
+    labh + sya → laps-ya (bh→p)
+
+Scans the flattened varṇa stream, so it fires inside a Term and across a Term
+boundary alike (empty Terms are invisible, 1.1.60).  Not reached by this rule
+(taken earlier in Tripāḍī order): c-varga 8.2.30 (coḥ kuḥ), h 8.2.31 (ho ḍhaḥ);
+śṣs are already car.
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com row i = 84055 · खरि च
@@ -26,103 +29,43 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology import mk
 from phonology.pratyahara import KHAR
-from phonology.varna import parse_slp1_upadesha_sequence
 
-# Jhal → car (voiceless unaspirated savarṇa) substitution table for 8.4.55.
+# jhal → car (antaratama).  c-varga and h are 8.2.30 / 8.2.31's; ś ṣ s are already car.
 _JHAL_CAR: dict[str, str] = {
-    "G": "k", "g": "k",   # gh/g → k
-    "J": "c", "j": "c",   # jh/j → c
-    "Q": "w", "q": "w",   # ḍh/ḍ → ṭ
-    "D": "t", "d": "t",   # dh/d → t
-    "B": "p", "b": "p",   # bh/b → p
-    "h": "k",              # h → k
-    # the voiceless aspirates are jhal too: खरि परे they lose the aspiration (आथ्+थ → आत्थ, 8.2.35 + this)
-    "K": "k", "C": "c", "W": "w", "T": "t", "P": "p",
+    "G": "k", "g": "k", "K": "k",
+    "Q": "w", "q": "w", "W": "w",
+    "D": "t", "d": "t", "T": "t",
+    "B": "p", "b": "p", "P": "p",
 }
 
 
-def _flat_pada(state: State) -> str:
-    if len(state.terms) != 1 or "pada" not in state.terms[0].tags:
-        return ""
-    return "".join(v.slp1 for v in state.terms[0].varnas)
-
-
-def _find_p031_viSir(state: State):
-    """Teaching **P031** step 14: ``viRzQi`` → attested ``viSiRQi`` (खरि-च context)."""
-    if not state.tripadi_zone:
-        return False
-    return _flat_pada(state) == "viRzQi"
-
-
-def _find_p032_viSinanti(state: State) -> bool:
-    """Teaching **P032** steps 8–9: ``vinaSanti`` → ``viSinanti`` (laṭ pra-bahu *śnam*)."""
-    if not state.tripadi_zone:
-        return False
-    return _flat_pada(state) == "vinaSanti"
-
-
-def _find_p033_agda(state: State) -> bool:
-    """Teaching **P033** §14: ``gda`` → ``agda`` (*ad*→*ghas* illustrative augment echo)."""
-    if not state.tripadi_zone:
-        return False
-    return _flat_pada(state) == "gda"
-
-
-def _find_p034_jakzatu(state: State) -> bool:
-    """Teaching **P034** §13: ``jaGzatus``/``jaGzus`` → ``jakzatus``/``jakzus``."""
-    if not state.tripadi_zone:
-        return False
-    return _flat_pada(state) in ("jaGzatus", "jaGzus")
-
-
-def _find(state: State):
-    if len(state.terms) != 1:
-        return None
-    t = state.terms[0]
-    if "pada" not in t.tags:
-        return None
-    if t.meta.get("8_4_55_khari_ca_done"):
-        return None
-    vs = t.varnas
-    for i in range(len(vs) - 1):
-        if vs[i].slp1 in _JHAL_CAR and vs[i + 1].slp1 in KHAR:
-            return i
-    return None
+def _hits(state: State) -> list[tuple[int, int]]:
+    flat = [(ti, vi) for ti, t in enumerate(state.terms) for vi in range(len(t.varnas))]
+    out = []
+    for (ti, vi), (tj, vj) in zip(flat, flat[1:]):
+        if state.terms[ti].varnas[vi].slp1 in _JHAL_CAR and state.terms[tj].varnas[vj].slp1 in KHAR:
+            out.append((ti, vi))
+    return out
 
 
 def cond(state: State) -> bool:
-    if not state.tripadi_zone:
-        return False
-    return (
-        _find_p031_viSir(state)
-        or _find_p032_viSinanti(state)
-        or _find_p033_agda(state)
-        or _find_p034_jakzatu(state)
-        or _find(state) is not None
-    )
+    return bool(state.tripadi_zone) and bool(_hits(state))
 
 
 def act(state: State) -> State:
-    if _find_p031_viSir(state):
-        state.terms[0].varnas = list(parse_slp1_upadesha_sequence("viSiRQi"))
+    if not state.tripadi_zone:
         return state
-    if _find_p032_viSinanti(state):
-        state.terms[0].varnas = list(parse_slp1_upadesha_sequence("viSinanti"))
-        return state
-    if _find_p033_agda(state):
-        state.terms[0].varnas = list(parse_slp1_upadesha_sequence("agda"))
-        return state
-    if _find_p034_jakzatu(state):
-        target = "jakzatus" if _flat_pada(state) == "jaGzatus" else "jakzus"
-        state.terms[0].varnas = list(parse_slp1_upadesha_sequence(target))
-        return state
-    i = _find(state)
-    if i is None:
-        return state
-    t = state.terms[0]
-    car = _JHAL_CAR[t.varnas[i].slp1]
-    t.varnas[i] = mk(car)
-    t.meta["8_4_55_khari_ca_done"] = True
+    changes = []
+    for ti, vi in _hits(state):
+        old = state.terms[ti].varnas[vi].slp1
+        new = _JHAL_CAR[old]
+        state.terms[ti].varnas[vi] = mk(new)
+        changes.append(f"{old}→{new}")
+    if changes:
+        state.meta["__why_now_dev__"] = (
+            f"खर्-वर्णे परे झल् → अन्तरतमः चर् ({', '.join(changes)}); "
+            "यथा भज्+त → भक्त, दथ्+त → दत्त। (८.४.५५)"
+        )
     return state
 
 
@@ -132,11 +75,10 @@ SUTRA = SutraRecord(
     text_slp1="Kari ca",
     text_dev="खरि च",
     padaccheda_dev="खरि च",
-    why_dev="खरि परे झल्-कार्यम् (द्→त्); प०३१—प०३४ ग्लास्-बॉक्स् पूरणम्।",
+    why_dev="खरि परे झलः स्थाने अन्तरतमः चर् (चर्त्वम्)।",
     anuvritti_from=("8.4.53",),
     cond=cond,
     act=act,
 )
 
 register_sutra(SUTRA)
-

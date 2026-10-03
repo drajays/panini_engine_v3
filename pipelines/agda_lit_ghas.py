@@ -8,8 +8,8 @@ OCR/teaching trace is labelled *very-low*; engine models the JSON’s mechanical
   • **Gas** (*ghas* machine shape) → **liṭ** (**3.2.115**) → ``ta`` (**3.4.77**/**3.4.78** slice)
   • **6.4.100** (*upadhā-*``a`` *lopa* before *hal*)
   • Tripāḍī **8.2.26** / **8.2.40** (**G**+*t*→**G**+*d*) / **8.4.53** (*jaṣṭva* **G**→**g**)
-  • **8.4.55** span ``gda``→``agda`` completes the illustrative *siddhi* (substitute **2.4.40**
-    *ad*→*ghas* + augment echo, per JSON notes).
+  • **8.4.55** has no khar to act on here.  The engine ends at ``gda``; the attested
+    ``agda`` (aṭ + 2.4.40 ghas) is not modelled yet (tracked as an xfail).
 """
 # ── Claude Code review 2026-05-07 ──────────────────────────────────
 # CONSTITUTION-compliant · sūtra-driven · Art.6 firewall respected   

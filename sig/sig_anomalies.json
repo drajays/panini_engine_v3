@@ -1,26 +1,11 @@
 {
   "anomalies": [],
-  "cascade_slow_cells": [
-    {
-      "cell_id": "sarva_pulliṅga:sarva:3-3",
-      "median_ns": 4023577,
-      "severity": "WARN",
-      "total_ns": 11190915,
-      "vs_median": 2.78
-    },
-    {
-      "cell_id": "sarva_pulliṅga:sarva:4-1",
-      "median_ns": 4023577,
-      "severity": "WARN",
-      "total_ns": 11044458,
-      "vs_median": 2.74
-    }
-  ],
+  "cascade_slow_cells": [],
   "cell_cpu_profile": {
     "derivations_timed": 501,
-    "max_total_ns": 11190915,
-    "median_total_ns": 4023577,
-    "min_total_ns": 3075372
+    "max_total_ns": 9797163,
+    "median_total_ns": 4064996,
+    "min_total_ns": 3122921
   },
   "run_test_count": 505
 }
