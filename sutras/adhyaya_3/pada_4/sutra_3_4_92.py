@@ -13,6 +13,16 @@ drop the halantyam T, leaving just ā (A).
 Arms:
   - ``3_4_92_loT_karmani_arm``: ātmanepada uttama (terminal *E* / *ai*).
   - ``3_4_92_loT_uttama_arm``: parasmaipada uttama (*ni*, *vas*→*v*, *mas*→*m*).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34092 · आडुत्तमस्य पिच्च
+              padaccheda: आट् उत्तमस्य पित् च
+              anuvṛtti:   34085: लोटः
+  Source #2 — Kāśikā 3.4.92 udāharaṇa:
+                करवाणि
+                करवै
+  Cross-check — surface pinned by: tests/unit/test_tinanta_bhavatu_lot.py
+  Reference record: sutra_ref_out/3_4_92.json
 """
 from __future__ import annotations
 

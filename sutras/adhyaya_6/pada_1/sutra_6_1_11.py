@@ -7,6 +7,17 @@ still call **6.1.1** with ``dvitva_recipe`` afterwards).
 
 COND: ``state.meta['lugi_recipe']`` after the luṅ spine has created
 the structural aorist context.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61011 · चङि
+              padaccheda: चङि
+              anuvṛtti:   61008: धातोः अनभ्यासस्य | 61001: एकाचः द्वे प्रथमस्य | 61002: अजादेः द्वितीयस्य
+  Source #2 — Kāśikā 6.1.11 udāharaṇa:
+                अपीपचत्
+                अपीपठत्
+                आटिटत्
+  Cross-check — surface pinned by: tests/unit/test_AwIwat_luN_aT_Nic_caN_tip.py, tests/unit/test_gita_gap_fixes.py, tests/unit/test_sthanivat_al_ashrita_exceptions.py
+  Reference record: sutra_ref_out/6_1_11.json
 """
 from __future__ import annotations
 

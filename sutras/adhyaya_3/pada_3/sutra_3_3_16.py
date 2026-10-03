@@ -4,6 +4,17 @@
 Padaccheda: पदरुज-विश-स्पृशः घञ्
 
 krt-suffix rule: पदरुजविशस्पृशो घञ्
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 33016 · पदरुजविशस्पृशो घञ्
+              padaccheda: पदरुज-विश-स्पृशः घञ्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31091: धातोः कृत्तिङ्
+  Source #2 — Kāśikā 3.3.16 udāharaṇa:
+                इत उत्तरं त्रिष्वपि कालेषु प्रत्ययाः
+                पदादिभ्यो धातुभ्यो घञ् प्रत्ययो भवति
+                पद्यतेऽसौ पादः
+  Cross-check — surface pinned by: tests/unit/test_bhattikavya_1_1.py, tests/unit/test_paceran_vidhi_liG_pac_Ja.py, tests/unit/test_tinanta_bhavatu_lot.py
+  Reference record: sutra_ref_out/3_3_16.json
 """
 from __future__ import annotations
 

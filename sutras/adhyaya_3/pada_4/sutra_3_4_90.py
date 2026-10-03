@@ -14,6 +14,16 @@ Excluded:
   • mahe (uttama 1pl): starts with 'm', handled by 3.4.93
 
 Arm: state.meta["3_4_90_loT_karmani_arm"] must be True.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34090 · आमेतः
+              padaccheda: आम् एतः
+              anuvṛtti:   34085: लोटः
+  Source #2 — Kāśikā 3.4.90 udāharaṇa:
+                लोट्संबन्धिन एकारस्य आमित्ययमादेशो भवति
+                पचताम्
+  Cross-check — surface pinned by: tests/unit/test_c0_regressions_2026_09.py
+  Reference record: sutra_ref_out/3_4_90.json
 """
 from __future__ import annotations
 

@@ -10,6 +10,17 @@ Engine:
   - recipe-armed by ``state.meta['3_1_78_snam_arm']``.
   - transforms a single dhātu Term into one dhātu Term with `n` inserted after
     its last vowel (post-it-lopa), and records `3_1_78_snam_done`.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31078 · रुधादिभ्यः श्नम्
+              padaccheda: रुधादिभ्यः श्नम्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31022: धातोः | 31067: सार्वधातुके | 31068: कर्तरि | 11047: अचः अन्त्यात् परः
+  Source #2 — Kāśikā 3.1.78 udāharaṇa:
+                शपोऽपवादः
+                मकारो देशविध्यर्थः
+                शकारः  (६.४.२३) इति विशेषणार्थः
+  Cross-check — surface pinned by: tests/constitutional/test_vipratisedha_resolver.py
+  Reference record: sutra_ref_out/3_1_78.json
 """
 from __future__ import annotations
 

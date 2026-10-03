@@ -9,6 +9,17 @@ Engine (recipe-armed, CONSTITUTION Art. 2):
   • ``corrected_v2_P012_3_1_81_arm`` — **``jYA``** dhātu + ``ta`` (**P012**).
 Insert **SnA** immediately before the ``ta`` ``Term`` (optional *upasarga* etc.
 before the dhātu).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31081 · क्र्यादिभ्यः श्ना
+              padaccheda: क्र्यादिभ्यः श्ना (लुप्तप्रथमान्तनिर्देशः)
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31022: धातोः | 31067: सार्वधातुके | 31068: कर्तरि
+  Source #2 — Kāśikā 3.1.81 udāharaṇa:
+                शपोऽपवादः
+                शकारः सार्वधातुकसंज्ञार्थः
+                क्रीणाति
+  Cross-check — surface pinned by: tests/constitutional/test_vipratisedha_resolver.py
+  Reference record: sutra_ref_out/3_1_81.json
 """
 from __future__ import annotations
 

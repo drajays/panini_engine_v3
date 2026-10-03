@@ -7,6 +7,17 @@
 the following *sārvadhātuka* *tiṅ* *ādeśa*.
 
 *Engine:* ``bhava_karma_usage`` on *dhātu*; no ``3_1_67_arm`` (Art. 13).
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31067 · सार्वधातुके यक्
+              padaccheda: सार्वधातुके यक्
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31022: धातोः | 31066: भावकर्मणोः
+  Source #2 — Kāśikā 3.1.67 udāharaṇa:
+                आस्यते भवता
+                शय्यते भवता
+                कर्मणि — क्रियते कटः
+  Cross-check — surface pinned by: tests/unit/test_autonomous_vs_recipe.py, tests/unit/test_tinanta_bhave_lat.py
+  Reference record: sutra_ref_out/3_1_67.json
 """
 from __future__ import annotations
 

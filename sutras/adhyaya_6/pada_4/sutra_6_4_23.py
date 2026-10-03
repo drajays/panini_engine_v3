@@ -4,6 +4,17 @@
 Padaccheda: श्नात् न-लोपः
 
 श्नान्नलोपः (6.4.23)
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 64023 · श्नान्नलोपः
+              padaccheda: श्नात् न-लोपः
+              anuvṛtti:   64001: अङ्गस्य
+  Source #2 — Kāśikā 6.4.23 udāharaṇa:
+                तत उत्तरस्य नकारस्य लोपो भवति
+                अनक्ति
+                भनक्ति
+  Cross-check — surface pinned by: tests/unit/test_c0_regressions_2026_09.py
+  Reference record: sutra_ref_out/6_4_23.json
 """
 from __future__ import annotations
 

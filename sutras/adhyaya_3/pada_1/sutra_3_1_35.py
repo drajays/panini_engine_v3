@@ -4,6 +4,17 @@
 Padaccheda: कास्-प्रत्ययात् आम् अमन्त्रे लिटि
 
 Krt suffix rule from dhatu: कास्प्रत्ययादाममन्त्रे लिटि (35)
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 31035 · कास्प्रत्ययादाममन्त्रे लिटि
+              padaccheda: कास्-प्रत्ययात् आम् अमन्त्रे लिटि
+              anuvṛtti:   31001: प्रत्ययः | 31002: परः च | 31022: धातोः
+  Source #2 — Kāśikā 3.1.35 udāharaṇa:
+                कासाञ्चक्रे
+                प्रत्ययान्तेभ्यः — लोलूयाञ्चके
+                अमन्त्र इति किम्? कृ॒ष्णो नो॑नाव (ऋ० १.७९.२)
+  Cross-check — surface pinned by: tests/unit/test_c0_regressions_2026_09.py
+  Reference record: sutra_ref_out/3_1_35.json
 """
 from __future__ import annotations
 from phonology.varna import parse_slp1_upadesha_sequence

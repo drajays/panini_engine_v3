@@ -12,6 +12,17 @@ In karmani loṭ 1sg: ya | ā(āṭ) | E(ai-tiṅ)
 Operative condition: a term tagged "aTa_agama" with single varṇa 'A'
 immediately followed by a term starting with an EC vowel (E, e, O, o).
 Arm: state.meta["6_1_90_loT_karmani_arm"] must be True.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 61090 · आटश्च
+              padaccheda: आटः च
+              anuvṛtti:   61072: संहितायाम् | 61077: अचि | 61084: एकः पूर्वपरयोः | 61088: वृद्धिः
+  Source #2 — Kāśikā 6.1.90 udāharaṇa:
+                आ + ईक्षिष्ट → ऐक्षिष्ट
+                आ + ईक्षत → ऐक्षत
+                आ + ईक्षिष्यत → ऐक्षिष्यत
+  Cross-check — surface pinned by: tests/unit/test_bhattikavya_1_2.py, tests/unit/test_c0_regressions_2026_09.py
+  Reference record: sutra_ref_out/6_1_90.json
 """
 from __future__ import annotations
 

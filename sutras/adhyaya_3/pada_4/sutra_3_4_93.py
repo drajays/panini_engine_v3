@@ -13,6 +13,17 @@ Applies to:
 Excluded: all prathama/madhyama forms (already handled by 3.4.90/3.4.91).
 
 Arm: state.meta["3_4_93_loT_karmani_arm"] must be True.
+
+Citation (CONSTITUTION Art. 14)
+  Source #1 — ashtadhyayi.com row i = 34093 · एत ऐ
+              padaccheda: एतः ऐ (लुप्तप्रथमान्तनिर्देशः)
+              anuvṛtti:   34085: लोटः | 34092: उत्तमस्य
+  Source #2 — Kāśikā 3.4.93 udāharaṇa:
+                लोडुत्तमसंबन्धिन एकारस्य ऐकारादेशो भवति
+                आमोऽपवादः
+                करवै
+  Cross-check — surface pinned by: tests/unit/test_c0_regressions_2026_09.py
+  Reference record: sutra_ref_out/3_4_93.json
 """
 from __future__ import annotations
 
