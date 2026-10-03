@@ -90,6 +90,7 @@ not history (Art. 2).
   becomes real, the pipeline code that did its work is **deleted in the same commit**.
 - **C3/C4**: `derive()` becomes a thin router onto the loop; the 187 pipelines become regression
   fixtures.
+- **Status 2026-10-03 (later): tiṅanta half started** — laṭ kartari 9 cells × 6 roots + 3 certain bhū cells derive with no recipe once vivakṣā has chosen the tiṅ; a sweep of every gaṇa-1 root (3sg) reaches the recipe's form in **1,152 of 1,165** (`.audit/tin_auto_sweep.py`). The 13 misses are rule gaps, not loop gaps: 3.1.79 reads `vana~/zaRa~/kanI~` as tanādi (u-vikaraṇa) by stem prefix; 7.3.75 (ṣṭhivu~ → ṣṭhīv) is not modelled; `SrA`/`jYA` homonym rows. New in the loop: tripāḍī cursor (8.2.1 — an earlier tripāḍī rule never wakes on a later one's output), operational paribhāṣās (1.1.51) contend after the vacuity filter, 2.4.75/6.1.10 now gaṇa-3 / ślu-witness gated, 6.1.78 hears past lopa'd terms.
 - **Status 2026-10-03: C2 subanta half landed** — 11/11 certain subanta cases reproduce with no recipe (was 0/11); suite 19,889 passed. Remaining for Gate C: tiṅanta start states (bhū cells), the 364 shipped derivations, the 393-ledger, B2/B3, C3/C4.
 - **Gate S1 (= ROADMAP Gate C)**: every rāma cell, every bhū cell and all 364 shipped derivations
   reproduce through the loop with traces a scholar can read; BLOCKED firings rise by an order of

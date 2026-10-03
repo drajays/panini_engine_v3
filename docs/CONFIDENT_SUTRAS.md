@@ -8,11 +8,11 @@ Generated 2026-10-03 by `python3 -m tools.sutra_class`. **216 of 3983** are conf
 |---|---|
 | confident | 99 |
 | confident_structural | 117 |
-| gate_only | 104 |
+| gate_only | 105 |
 | pending_structural | 268 |
 | placeholder | 590 |
-| unexercised | 2526 |
-| working | 279 |
+| unexercised | 2524 |
+| working | 280 |
 
 | pāda | confident | of |
 |---|---|---|

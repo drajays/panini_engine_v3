@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-03T06:16:03+00:00",
+ "generated_at": "2026-10-03T06:52:20+00:00",
  "min_mentions": 5,
  "rows": [
   {
@@ -662,7 +662,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 13,
+   "mentions": 14,
    "status": "confident_structural"
   },
   {
@@ -1101,11 +1101,11 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": false,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "gate_only"
   },
   {
    "id": "1.2.11",
@@ -45161,7 +45161,7 @@
    "invoked": true,
    "moved": true,
    "cited": false,
-   "mentions": 2,
+   "mentions": 3,
    "status": "working"
   },
   {
@@ -45506,14 +45506,14 @@
    "id": "7.3.104",
    "pada": "7.3",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
-   "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "stub_gloss": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "7.3.105",
