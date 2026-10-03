@@ -26,6 +26,9 @@ input{width:7rem}.pill{display:inline-block;padding:.1rem .5rem;margin:.1rem;bor
 vacana <input id="vac" type="number" min="1" max="3" value="1" style="width:4rem">
 <input id="linga" value="puṃliṅga"> <button onclick="run()">derive</button></p>
 <div id="run"></div>
+<p>verb: dhātu <input id="dh" value="gam" style="width:5rem"> puruṣa <input id="pu" type="number" min="1" max="3" value="3" style="width:4rem">
+vacana <input id="va" type="number" min="1" max="3" value="1" style="width:4rem"> laṭ kartari <button onclick="runV()">derive</button></p>
+<div id="runv"></div>
 <h2>Certain subanta cases, autonomous</h2><div id="auto"></div>
 <h2>Confident sūtras by pāda</h2><table id="padas"></table>
 <script>
@@ -43,6 +46,15 @@ fetch('/v1/coverage').then(r=>r.json()).then(d=>{
     $('auto').innerHTML=`<p><b class="ok">${o.reached||0}</b> of ${d.autonomy.cases} reached the recipe's form</p>`+
       '<p>'+d.autonomy.runs.map(r=>`<span class="pill ${r.outcome=='reached'?'ok':''}">${r.case} → ${r.surface}</span>`).join('')+'</p>';}
 });
+function show(el,url){
+  el.textContent='deriving…';
+  fetch(url).then(r=>r.json()).then(d=>{
+    if(d.detail){el.textContent=d.detail;return}
+    el.innerHTML=`<p><b>${d.surface_dev}</b> <span class="mono">${d.surface_slp1}</span></p><table>`+
+      d.steps.filter(s=>s.moved).map(s=>`<tr><td class="mono">${s.sutra_id}<td class="mono">${s.before} → ${s.after}<td style="color:var(--dim)">${s.layer}</tr>`).join('')+'</table>';
+  });
+}
+function runV(){show($('runv'),'/v1/autonomy/tinanta?'+new URLSearchParams({dhatu:$('dh').value,purusha:$('pu').value,vacana:$('va').value}))}
 function run(){
   const q=new URLSearchParams({stem:$('stem').value,vibhakti:$('vib').value,vacana:$('vac').value,linga:$('linga').value});
   $('run').textContent='deriving…';

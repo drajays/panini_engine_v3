@@ -594,6 +594,29 @@ def autonomy_subanta(
     }
 
 
+@app.get("/v1/autonomy/tinanta", tags=["coverage"])
+def autonomy_tinanta(
+    dhatu: str = Query("BU", description="dhātu upadeśa, SLP1 (bhvādi, laṭ kartari)"),
+    purusha: int = Query(3, ge=1, le=3),
+    vacana: int = Query(1, ge=1, le=3),
+) -> dict[str, Any]:
+    """laṭ kartari with no recipe after vivakṣā has chosen the tiṅ."""
+    from types import SimpleNamespace
+
+    from tools.autonomy_report import run_autonomously, start_state
+
+    case = SimpleNamespace(kind="tinanta", args=(dhatu, "laT", purusha, vacana))
+    try:
+        run = run_autonomously(start_state(case), "", dhatu, budget=120)
+    except Exception as ex:
+        raise HTTPException(422, f"{type(ex).__name__}: {ex}") from ex
+    return {
+        "surface_slp1": run.surface, "surface_dev": slp1_str_to_dev(run.surface),
+        "steps": [{"sutra_id": s, "before": b, "after": a, "layer": l, "moved": b != a}
+                  for s, b, a, l in run.steps],
+    }
+
+
 @app.get("/coverage", response_class=HTMLResponse, include_in_schema=False)
 def coverage_page() -> str:
     return (Path(__file__).parent / "coverage.html").read_text(encoding="utf-8")
