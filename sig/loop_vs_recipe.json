@@ -12,354 +12,590 @@
   "class": "tinanta(loT kartari, gaṇa 1)",
   "roots": 60,
   "cells": 540,
-  "agree": 321,
+  "agree": 534,
   "clusters": [
-   {
-    "first_divergence": "eDa~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "eDasva",
-    "loop": "eDAsva"
-   },
-   {
-    "first_divergence": "sparDa~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "sparDasva",
-    "loop": "sparDAsva"
-   },
-   {
-    "first_divergence": "gADf~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "gADasva",
-    "loop": "gADAsva"
-   },
-   {
-    "first_divergence": "bADf~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "bADasva",
-    "loop": "bADAsva"
-   },
-   {
-    "first_divergence": "nADf~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "nADasva",
-    "loop": "nADAsva"
-   },
-   {
-    "first_divergence": "nATf~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "nATasva",
-    "loop": "nATAsva"
-   },
-   {
-    "first_divergence": "daDa~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "daDasva",
-    "loop": "daDAsva"
-   },
-   {
-    "first_divergence": "skudi~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "skundasva",
-    "loop": "skundAsva"
-   },
-   {
-    "first_divergence": "Svidi~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "Svindasva",
-    "loop": "SvindAsva"
-   },
-   {
-    "first_divergence": "vadi~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "vandasva",
-    "loop": "vandAsva"
-   },
-   {
-    "first_divergence": "Badi~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "Bandasva",
-    "loop": "BandAsva"
-   },
-   {
-    "first_divergence": "madi~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "mandasva",
-    "loop": "mandAsva"
-   },
-   {
-    "first_divergence": "spadi~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "spandasva",
-    "loop": "spandAsva"
-   },
    {
     "first_divergence": "klidi~",
     "count": 6,
     "cell": "2-1",
     "recipe": "klindasva",
     "loop": "klindAsva"
-   },
-   {
-    "first_divergence": "muda~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "modasva",
-    "loop": "modAsva"
-   },
-   {
-    "first_divergence": "dada~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "dadasva",
-    "loop": "dadAsva"
-   },
-   {
-    "first_divergence": "zvada~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "svadasva",
-    "loop": "svadAsva"
-   },
-   {
-    "first_divergence": "svarda~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "svardasva",
-    "loop": "svardAsva"
-   },
-   {
-    "first_divergence": "urda~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "Urdasva",
-    "loop": "UrdAsva"
-   },
-   {
-    "first_divergence": "kurda~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "kUrdasva",
-    "loop": "kUrdAsva"
-   },
-   {
-    "first_divergence": "Kurda~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "KUrdasva",
-    "loop": "KUrdAsva"
-   },
-   {
-    "first_divergence": "gurda~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "gUrdasva",
-    "loop": "gUrdAsva"
-   },
-   {
-    "first_divergence": "guda~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "godasva",
-    "loop": "godAsva"
-   },
-   {
-    "first_divergence": "zUda~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "sUdasva",
-    "loop": "sUdAsva"
-   },
-   {
-    "first_divergence": "hrAda~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "hrAdasva",
-    "loop": "hrAdAsva"
-   },
-   {
-    "first_divergence": "hlAdI~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "hlAdasva",
-    "loop": "hlAdAsva"
-   },
-   {
-    "first_divergence": "svAda~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "svAdasva",
-    "loop": "svAdAsva"
-   },
-   {
-    "first_divergence": "parda~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "pardasva",
-    "loop": "pardAsva"
-   },
-   {
-    "first_divergence": "yatI~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "yatasva",
-    "loop": "yatAsva"
-   },
-   {
-    "first_divergence": "yutf~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "yotasva",
-    "loop": "yotAsva"
-   },
-   {
-    "first_divergence": "jutf~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "jotasva",
-    "loop": "jotAsva"
-   },
-   {
-    "first_divergence": "viTf~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "veTasva",
-    "loop": "veTAsva"
-   },
-   {
-    "first_divergence": "veTf~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "veTasva",
-    "loop": "veTAsva"
-   },
-   {
-    "first_divergence": "SraTi~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "SranTasva",
-    "loop": "SranTAsva"
-   },
-   {
-    "first_divergence": "graTi~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "granTasva",
-    "loop": "granTAsva"
-   },
-   {
-    "first_divergence": "katTa~",
-    "count": 6,
-    "cell": "2-1",
-    "recipe": "katTasva",
-    "loop": "katTAsva"
-   },
-   {
-    "first_divergence": "manTa~",
-    "count": 3,
-    "cell": "2-3",
-    "recipe": "manTata",
-    "loop": "maTata"
    }
   ],
-  "seconds": 494
+  "seconds": 490
  },
  "tinanta:liG": {
   "class": "tinanta(liG kartari, gaṇa 1)",
-  "roots": 12,
-  "cells": 108,
-  "agree": 9,
+  "roots": 60,
+  "cells": 540,
+  "agree": 531,
   "clusters": [
    {
-    "first_divergence": "eDa~",
+    "first_divergence": "klidi~",
     "count": 9,
     "cell": "1-1",
-    "recipe": "eDeya",
-    "loop": "eDa"
-   },
-   {
-    "first_divergence": "sparDa~",
-    "count": 9,
-    "cell": "1-1",
-    "recipe": "sparDeya",
-    "loop": "sparDa"
-   },
-   {
-    "first_divergence": "gADf~",
-    "count": 9,
-    "cell": "1-1",
-    "recipe": "gADeya",
-    "loop": "gADa"
-   },
-   {
-    "first_divergence": "bADf~",
-    "count": 9,
-    "cell": "1-1",
-    "recipe": "bADeya",
-    "loop": "bADa"
-   },
-   {
-    "first_divergence": "nADf~",
-    "count": 9,
-    "cell": "1-1",
-    "recipe": "nADeya",
-    "loop": "nADa"
-   },
-   {
-    "first_divergence": "nATf~",
-    "count": 9,
-    "cell": "1-1",
-    "recipe": "nATeya",
-    "loop": "nATa"
-   },
-   {
-    "first_divergence": "daDa~",
-    "count": 9,
-    "cell": "1-1",
-    "recipe": "daDeya",
-    "loop": "daDa"
-   },
-   {
-    "first_divergence": "skudi~",
-    "count": 9,
-    "cell": "1-1",
-    "recipe": "skundeya",
-    "loop": "skunda"
-   },
-   {
-    "first_divergence": "Svidi~",
-    "count": 9,
-    "cell": "1-1",
-    "recipe": "Svindeya",
-    "loop": "Svinda"
-   },
-   {
-    "first_divergence": "vadi~",
-    "count": 9,
-    "cell": "1-1",
-    "recipe": "vandeya",
-    "loop": "vanda"
-   },
-   {
-    "first_divergence": "Badi~",
-    "count": 9,
-    "cell": "1-1",
-    "recipe": "Bandeya",
-    "loop": "Banda"
+    "recipe": "klindeya",
+    "loop": "klinda"
    }
   ],
-  "seconds": 42
+  "seconds": 336
+ },
+ "tinanta": {
+  "class": "tinanta(laT kartari, gaṇa 1)",
+  "roots": 60,
+  "cells": 540,
+  "agree": 540,
+  "clusters": [],
+  "seconds": 406
+ },
+ "tinanta:laG": {
+  "class": "tinanta(laG kartari, gaṇa 1)",
+  "roots": 60,
+  "cells": 540,
+  "agree": 540,
+  "clusters": [],
+  "seconds": 229
+ },
+ "tinanta:lRT": {
+  "class": "tinanta(lRT kartari, gaṇa 1)",
+  "roots": 60,
+  "cells": 540,
+  "agree": 540,
+  "clusters": [],
+  "seconds": 175
+ },
+ "tinanta:liT": {
+  "class": "tinanta(liT kartari, gaṇa 1)",
+  "roots": 60,
+  "cells": 540,
+  "agree": 477,
+  "clusters": [
+   {
+    "first_divergence": "arda~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "Anarda",
+    "loop": "anarda"
+   },
+   {
+    "first_divergence": "ati~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "Ananta",
+    "loop": "ananta"
+   },
+   {
+    "first_divergence": "adi~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "Ananda",
+    "loop": "ananda"
+   },
+   {
+    "first_divergence": "idi~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "indAYcakAra",
+    "loop": "Inda"
+   },
+   {
+    "first_divergence": "oKf~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "oKAYcakAra",
+    "loop": "uvoKa"
+   },
+   {
+    "first_divergence": "uKi~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "uNKAYcakAra",
+    "loop": "UNKa"
+   },
+   {
+    "first_divergence": "ata~",
+    "count": 7,
+    "cell": "1-2",
+    "recipe": "Ativa",
+    "loop": "ativa"
+   },
+   {
+    "first_divergence": "klidi~",
+    "count": 2,
+    "cell": "3-1",
+    "recipe": "ciklinde",
+    "loop": "ciklindite"
+   }
+  ],
+  "seconds": 229
+ },
+ "tinanta:luT": {
+  "class": "tinanta(luT kartari, gaṇa 1)",
+  "roots": 60,
+  "cells": 540,
+  "agree": 537,
+  "clusters": [
+   {
+    "first_divergence": "klidi~",
+    "count": 3,
+    "cell": "3-1",
+    "recipe": "klinditA",
+    "loop": "klinditAste"
+   }
+  ],
+  "seconds": 432
+ },
+ "tinanta:luG": {
+  "class": "tinanta(luG kartari, gaṇa 1)",
+  "roots": 60,
+  "cells": 540,
+  "agree": 424,
+  "clusters": [
+   {
+    "first_divergence": "ata~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "AtIH",
+    "loop": "AtiH"
+   },
+   {
+    "first_divergence": "citI~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "acetIH",
+    "loop": "acetiH"
+   },
+   {
+    "first_divergence": "cyuti~r",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "acyotIH",
+    "loop": "acyotiH"
+   },
+   {
+    "first_divergence": "Scuti~r",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aScotIH",
+    "loop": "aScotiH"
+   },
+   {
+    "first_divergence": "Scyuti~r",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aScyotIH",
+    "loop": "aScyotiH"
+   },
+   {
+    "first_divergence": "jyutf~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "ajyotIH",
+    "loop": "ajyotiH"
+   },
+   {
+    "first_divergence": "maTi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "amanTIH",
+    "loop": "amanTiH"
+   },
+   {
+    "first_divergence": "kuTi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "akunTIH",
+    "loop": "akunTiH"
+   },
+   {
+    "first_divergence": "puTi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "apunTIH",
+    "loop": "apunTiH"
+   },
+   {
+    "first_divergence": "luTi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "alunTIH",
+    "loop": "alunTiH"
+   },
+   {
+    "first_divergence": "manTa~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "amanTIH",
+    "loop": "amanTiH"
+   },
+   {
+    "first_divergence": "ziDa~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aseDIH",
+    "loop": "aseDiH"
+   },
+   {
+    "first_divergence": "ziDU~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aseDIH",
+    "loop": "aseDiH"
+   },
+   {
+    "first_divergence": "KAdf~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aKAdIH",
+    "loop": "aKAdiH"
+   },
+   {
+    "first_divergence": "Kada~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aKadIH",
+    "loop": "aKadiH"
+   },
+   {
+    "first_divergence": "bada~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "abadIH",
+    "loop": "abadiH"
+   },
+   {
+    "first_divergence": "gada~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "agadIH",
+    "loop": "agadiH"
+   },
+   {
+    "first_divergence": "rada~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aradIH",
+    "loop": "aradiH"
+   },
+   {
+    "first_divergence": "Rada~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "anadIH",
+    "loop": "anadiH"
+   },
+   {
+    "first_divergence": "arda~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "ArdIH",
+    "loop": "ArdiH"
+   },
+   {
+    "first_divergence": "narda~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "anardIH",
+    "loop": "anardiH"
+   },
+   {
+    "first_divergence": "garda~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "agardIH",
+    "loop": "agardiH"
+   },
+   {
+    "first_divergence": "tarda~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "atardIH",
+    "loop": "atardiH"
+   },
+   {
+    "first_divergence": "karda~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "akardIH",
+    "loop": "akardiH"
+   },
+   {
+    "first_divergence": "Karda~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aKardIH",
+    "loop": "aKardiH"
+   },
+   {
+    "first_divergence": "ati~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "AntIH",
+    "loop": "AntiH"
+   },
+   {
+    "first_divergence": "adi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "AndIH",
+    "loop": "AndiH"
+   },
+   {
+    "first_divergence": "idi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "EndIH",
+    "loop": "EndiH"
+   },
+   {
+    "first_divergence": "bidi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "abindIH",
+    "loop": "abindiH"
+   },
+   {
+    "first_divergence": "Bidi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aBindIH",
+    "loop": "aBindiH"
+   },
+   {
+    "first_divergence": "gaqi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "agaRqIH",
+    "loop": "agaRqiH"
+   },
+   {
+    "first_divergence": "Ridi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "anindIH",
+    "loop": "anindiH"
+   },
+   {
+    "first_divergence": "wunadi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "anandIH",
+    "loop": "anandiH"
+   },
+   {
+    "first_divergence": "cadi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "acandIH",
+    "loop": "acandiH"
+   },
+   {
+    "first_divergence": "tradi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "atrandIH",
+    "loop": "atrandiH"
+   },
+   {
+    "first_divergence": "kadi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "akandIH",
+    "loop": "akandiH"
+   },
+   {
+    "first_divergence": "kradi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "akrandIH",
+    "loop": "akrandiH"
+   },
+   {
+    "first_divergence": "kladi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aklandIH",
+    "loop": "aklandiH"
+   },
+   {
+    "first_divergence": "SunDa~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aSunDIH",
+    "loop": "aSunDiH"
+   },
+   {
+    "first_divergence": "Pakka~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aPakkIH",
+    "loop": "aPakkiH"
+   },
+   {
+    "first_divergence": "taka~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "atakIH",
+    "loop": "atakiH"
+   },
+   {
+    "first_divergence": "taki~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "ataNkIH",
+    "loop": "ataNkiH"
+   },
+   {
+    "first_divergence": "bukka~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "abukkIH",
+    "loop": "abukkiH"
+   },
+   {
+    "first_divergence": "Suka~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aSokIH",
+    "loop": "aSokiH"
+   },
+   {
+    "first_divergence": "kaKa~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "akaKIH",
+    "loop": "akaKiH"
+   },
+   {
+    "first_divergence": "oKf~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "OKIH",
+    "loop": "OKiH"
+   },
+   {
+    "first_divergence": "rAKf~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "arAKIH",
+    "loop": "arAKiH"
+   },
+   {
+    "first_divergence": "lAKf~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "alAKIH",
+    "loop": "alAKiH"
+   },
+   {
+    "first_divergence": "drAKf~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "adrAKIH",
+    "loop": "adrAKiH"
+   },
+   {
+    "first_divergence": "DrAKf~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aDrAKIH",
+    "loop": "aDrAKiH"
+   },
+   {
+    "first_divergence": "SAKf~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aSAKIH",
+    "loop": "aSAKiH"
+   },
+   {
+    "first_divergence": "SlAKf~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "aSlAKIH",
+    "loop": "aSlAKiH"
+   },
+   {
+    "first_divergence": "uKa~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "OKIH",
+    "loop": "OKiH"
+   },
+   {
+    "first_divergence": "uKi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "ONKIH",
+    "loop": "ONKiH"
+   },
+   {
+    "first_divergence": "vaKa~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "avaKIH",
+    "loop": "avaKiH"
+   },
+   {
+    "first_divergence": "vaKi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "avaNKIH",
+    "loop": "avaNKiH"
+   },
+   {
+    "first_divergence": "maKa~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "amaKIH",
+    "loop": "amaKiH"
+   },
+   {
+    "first_divergence": "maKi~",
+    "count": 2,
+    "cell": "2-1",
+    "recipe": "amaNKIH",
+    "loop": "amaNKiH"
+   }
+  ],
+  "seconds": 581
+ },
+ "tinanta:lRG": {
+  "class": "tinanta(lRG kartari, gaṇa 1)",
+  "roots": 60,
+  "cells": 540,
+  "agree": 540,
+  "clusters": [],
+  "seconds": 326
+ },
+ "tinanta:AsIrliG": {
+  "class": "tinanta(AsIrliG kartari, gaṇa 1)",
+  "roots": 60,
+  "cells": 540,
+  "agree": 513,
+  "clusters": [
+   {
+    "first_divergence": "manTa~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "manTyAsam",
+    "loop": "maTyAsam"
+   },
+   {
+    "first_divergence": "klidi~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "klindizIya",
+    "loop": "klinda"
+   },
+   {
+    "first_divergence": "SunDa~",
+    "count": 9,
+    "cell": "1-1",
+    "recipe": "SunDyAsam",
+    "loop": "SuDyAsam"
+   }
+  ],
+  "seconds": 346
  }
 }

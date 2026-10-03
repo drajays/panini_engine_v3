@@ -45,6 +45,8 @@ def _find(state: State):
         nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
         if nxt is None or (nxt.meta.get("upadesha_slp1") or "").strip() != "sic":
             return None
+        if "neti_7_2_4" in nxt.tags:
+            return None            # 7.2.4 नेटि: sic has its iṭ, no vṛddhi
         tin = state.terms[-1]
         if "atmanepada" in tin.tags:
             return None

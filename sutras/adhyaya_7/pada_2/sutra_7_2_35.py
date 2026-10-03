@@ -255,6 +255,7 @@ SUTRA = SutraRecord(
     anuvritti_from        = ("7.2.34",),
     cond                  = cond,
     act                   = act,
+    apavada_of            = ("7.2.3",),    # iṭ first; 7.2.4 then forbids the vṛddhi it would have made
 )
 
 register_sutra(SUTRA)

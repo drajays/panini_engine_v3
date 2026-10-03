@@ -8,22 +8,38 @@ Padaccheda: न इटि
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
 
 _GATE_KEY: str = "7_2_4_newi_4"
 
 
+def _sic_with_it(state: State) -> bool:
+    """A sic that already begins with its iṭ (7.2.35) stands right after the aṅga."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags:
+            continue
+        nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
+        return (nxt is not None and (nxt.meta.get("upadesha_slp1") or "").strip() == "sic"
+                and "it_agama" in nxt.varnas[0].tags)
+    return False
+
+
+def _sic(state: State):
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" in t.tags:
+            return next((u for u in state.terms[i + 1:] if u.varnas), None)
+    return None
+
+
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.4", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return not state.paribhasha_gates.get(_GATE_KEY) and _sic_with_it(state)
+
 
 def act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.4"
+    _sic(state).tags.add("neti_7_2_4")
+    state.meta["__why_now_dev__"] = "सिच्-प्रत्यये इट्-आगमे सति सिचि वृद्धिः (७.२.१, ७.२.३) न भवति।"
     return state
 
 

@@ -29,11 +29,10 @@ from engine.state import State
 def _kngiti_present(state: State) -> bool:
     # *kṅiti* locus: *kṛt* *pratyaya* rows use ``kind="pratyaya"`` with *kngiti* tag
     # (``"pratyaya"`` string tag is not always present on the same ``Term``).
-    return any(
-        "kngiti" in t.tags
-        for t in state.terms
-        if t.kind == "pratyaya" or "pratyaya" in t.tags
-    )
+    # The affix must follow the aṅga immediately ("pare"): a pit vikaraṇa (śap) between
+    # dhātu and a ṅit tiṅ blocks it (maTAvaH is wrong; manTAvaH).
+    nxt = next((t for t in state.terms[1:] if t.varnas), None)
+    return nxt is not None and "kngiti" in nxt.tags and (nxt.kind == "pratyaya" or "pratyaya" in nxt.tags)
 
 
 _NASAL = frozenset("NYRnmM")

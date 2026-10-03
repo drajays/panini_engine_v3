@@ -8,7 +8,7 @@
   "groups": [],
   "schema_version": 1,
   "source": {
-    "manifest_generated_utc": "2026-10-03T16:00:50.176805+00:00",
+    "manifest_generated_utc": "2026-10-03T18:21:17.513042+00:00",
     "sig_dir": "sig",
     "total_derivations": 505,
     "transition_file": "sig_transitions.json"

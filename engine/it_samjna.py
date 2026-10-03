@@ -120,7 +120,8 @@ def it_lopa_already_done(t: Any) -> bool:
     up, residue = done
     return (
         up == (t.meta.get("upadesha_slp1") or "").strip()
-        and residue == "".join(v.slp1 for v in t.varnas)
+        # an āgama grown into the term (7.2.35's iṭ) is not part of the upadeśa residue
+        and residue == "".join(v.slp1 for v in t.varnas if "it_agama" not in v.tags)
     )
 
 

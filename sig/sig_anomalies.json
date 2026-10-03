@@ -1,11 +1,19 @@
 {
   "anomalies": [],
-  "cascade_slow_cells": [],
+  "cascade_slow_cells": [
+    {
+      "cell_id": "sarva_pulliṅga:sarva:5-1",
+      "median_ns": 2673376,
+      "severity": "WARN",
+      "total_ns": 6864872,
+      "vs_median": 2.57
+    }
+  ],
   "cell_cpu_profile": {
     "derivations_timed": 501,
-    "max_total_ns": 12797495,
-    "median_total_ns": 5205539,
-    "min_total_ns": 3910583
+    "max_total_ns": 6864872,
+    "median_total_ns": 2673376,
+    "min_total_ns": 1995621
   },
   "run_test_count": 505
 }

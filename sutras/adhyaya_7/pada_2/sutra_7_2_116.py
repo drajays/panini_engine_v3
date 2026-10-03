@@ -93,9 +93,6 @@ def _find_upadha_a(state: State):
     hit = _find_upadha_a_nic_p037(state)
     if hit is not None:
         return hit
-    hit = _find_upadha_a_liT_strong(state)
-    if hit is not None:
-        return hit
     if len(state.terms) < 2:
         return None
     dhatu = next((t for t in state.terms if "dhatu" in t.tags), None)

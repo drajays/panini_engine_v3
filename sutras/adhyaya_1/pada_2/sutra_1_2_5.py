@@ -45,10 +45,16 @@ def _dhatu_ends_in_samyoga(state: State) -> bool:
     return dh.varnas[-1].slp1 in hal and dh.varnas[-2].slp1 in hal
 
 
+def _lit_on_tape(state: State) -> bool:
+    """liṭ is read off the tiṅ's own provenance (3.4.78 stores the lakāra it replaced)."""
+    return bool(state.meta.get("lakara_liT")) or any(
+        t.meta.get("source_lakara_upadesha") == "liT" for t in state.terms if "pratyaya" in t.tags)
+
+
 def _find_pratyaya(state: State) -> int | None:
     if state.samjna_registry.get("1.2.5_asamyogal_lit_kit") is True:
         return None
-    if not state.meta.get("lakara_liT"):
+    if not _lit_on_tape(state):
         return None
     if _dhatu_ends_in_samyoga(state):
         return None
@@ -56,6 +62,8 @@ def _find_pratyaya(state: State) -> int | None:
         if "pratyaya" not in t.tags:
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
+        if up in {"Ral", "Tal"}:      # ṇal/thal stand in for pit tip/sip/mip (1.1.56): not apit
+            continue
         if up == "e":
             if "kngiti" in t.tags:
                 return None

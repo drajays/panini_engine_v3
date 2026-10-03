@@ -36,9 +36,7 @@ def _aG_luG_term(state: State):
 
 
 def _sic_luG_term(state: State):
-    """luṅ *sic* vikaraṇa — structural gate: `cli_luG_recipe` set by all luṅ recipes."""
-    if not state.meta.get("cli_luG_recipe"):
-        return None
+    """luṅ *sic* vikaraṇa — a pratyaya that is neither tiṅ nor śit, hence ārdhadhātuka śeṣa."""
     for t in state.terms:
         if t.kind != "pratyaya":
             continue

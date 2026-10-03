@@ -74,6 +74,7 @@ SUTRA = SutraRecord(
     anuvritti_from = (),
     cond           = cond,
     act            = act,
+    apavada_of     = ("6.1.68",),   # sic/asti + apṛkta tiṅ gets īṭ; else hal-lopa would erase that tiṅ (acaiṣīt)
 )
 
 register_sutra(SUTRA)
