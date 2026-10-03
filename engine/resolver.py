@@ -46,6 +46,7 @@ DECISION_LAYERS: FrozenSet[str] = frozenset({
     "jnapaka",
     "upadesha",
     "asiddha",
+    "antaranga",
     "apavada",
     "vikalpa",
     "para",
@@ -82,6 +83,60 @@ def _apavada_winner(candidate_ids: List[str]) -> Optional[str]:
         if any(other in (get_sutra(cid).apavada_of or ()) for other in candidate_ids)
     ]
     return exceptions[0] if len(exceptions) == 1 else None
+
+
+def _term_sig(term) -> tuple:
+    return ("".join(v.slp1 for v in term.varnas), frozenset(term.tags),
+            tuple(sorted((k, repr(v)) for k, v in term.meta.items())))
+
+
+def _changed_terms(sid: str, state: State) -> frozenset[int]:
+    """Indices of the terms a rule would rewrite (all from the first difference on
+    if it inserts or removes a term)."""
+    from engine.scheduler import probe
+
+    try:
+        after = probe(sid, state)
+    except Exception:
+        return frozenset()
+    a, b = state.terms, after.terms
+    if len(a) != len(b):
+        first = next((i for i in range(min(len(a), len(b))) if _term_sig(a[i]) != _term_sig(b[i])),
+                     min(len(a), len(b)))
+        return frozenset(range(first, max(len(a), len(b))))
+    return frozenset(i for i in range(len(a)) if _term_sig(a[i]) != _term_sig(b[i]))
+
+
+def _reach(sid: str, state: State) -> int:
+    """How far to the right a rule's nimitta extends: the smallest k such that
+    ``cond`` is already true with every term after ``k`` cut away."""
+    rec = get_sutra(sid)
+    for k in range(len(state.terms)):
+        cut = state.fork()
+        cut.terms = cut.terms[: k + 1]
+        try:
+            if rec.cond(cut):
+                return k
+        except Exception:
+            continue
+    return len(state.terms) - 1
+
+
+def _bahiranga_losers(candidate_ids: List[str], state: State) -> set[str]:
+    """PŚ 50 असिद्धं बहिरङ्गमन्तरङ्गे. Two rules *contend* when the terms they rewrite
+    overlap. Of two that contend, the one whose nimitta
+    reaches a term the other does not need is bahiraṅga and yields."""
+    info = {}
+    for cid in candidate_ids:
+        changed = _changed_terms(cid, state)
+        if changed:
+            info[cid] = (frozenset(changed), _reach(cid, state))
+    losers: set[str] = set()
+    for c, (zone_c, reach_c) in info.items():
+        for r, (zone_r, reach_r) in info.items():
+            if r != c and zone_c & zone_r and reach_r > reach_c:
+                losers.add(r)
+    return losers
 
 
 def _soi_proposal(
@@ -152,13 +207,23 @@ def resolve_with_reason(
         winner = min(candidate_ids, key=_id_key)
         return Decision(winner, "asiddha", paribhasha_layer("asiddha").citation(), ())
 
-    apavada = _apavada_winner(candidate_ids)
-    if apavada is not None:
-        displaced = tuple(
-            c for c in candidate_ids if c in (get_sutra(apavada).apavada_of or ())
-        )
-        return Decision(apavada, "apavada",
-                        paribhasha_layer("apavada").citation(), displaced)
+    # Ladder 1: an apavāda displaces the utsarga *it names* and nothing else
+    # ("purastād apavādā anantarān vidhīn bādhante nottarān": a later rule at the same
+    # junction — 6.1.102 beside 6.1.97 — is para and still contends).
+    displaced: set[str] = set()
+    for cid in candidate_ids:
+        for other in (get_sutra(cid).apavada_of or ()):
+            if other in candidate_ids:
+                displaced.add(other)
+    if displaced:
+        remaining = [c for c in candidate_ids if c not in displaced]
+        if len(remaining) == 1:
+            return Decision(remaining[0], "apavada",
+                            paribhasha_layer("apavada").citation(), tuple(sorted(displaced)))
+        pre_losers = tuple(sorted(displaced))
+        candidate_ids = remaining
+    else:
+        pre_losers = ()
 
     skipped = _skipped_unmodelled()
 
@@ -181,9 +246,21 @@ def resolve_with_reason(
     proposal = _soi_proposal(candidate_ids, state, specificity)
     para = paribhasha_layer("para")
     winner = max(candidate_ids, key=_id_key)
+
+    # Ladder 1: antaraṅga outranks para (PŚ 38) — only the rules that did not yield.
+    bahiranga = _bahiranga_losers(candidate_ids, state)
+    survivors = [c for c in candidate_ids if c not in bahiranga]
+    if bahiranga and survivors:
+        inner = max(survivors, key=_id_key)
+        if inner != winner:
+            return Decision(
+                inner, "antaranga", paribhasha_layer("antaranga").citation(),
+                tuple(sorted(bahiranga)) + pre_losers, skipped_unmodelled=skipped,
+            )
+        winner = inner
     return Decision(
         winner, para.key, para.citation(),
-        tuple(c for c in candidate_ids if c != winner),
+        tuple(c for c in candidate_ids if c != winner) + pre_losers,
         skipped_unmodelled=skipped,
         soi_proposal=proposal if proposal and proposal != winner else None,
     )

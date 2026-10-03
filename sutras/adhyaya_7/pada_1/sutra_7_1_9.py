@@ -114,6 +114,9 @@ SUTRA = SutraRecord(
     padaccheda_dev = "अतः भिसः ऐस्",
     why_dev        = "अदन्त-अङ्गात् परस्य 'भिस्'-प्रत्ययस्य 'ऐस्'-आदेशः।",
     anuvritti_from = ("6.4.1",),
+    # ato bhisa ais names one stem class and one affix; 7.3.102 (supi ca) and 7.3.103 (bahuvacane jhaly et) would
+    # otherwise turn the same a-final aṅga before bhis into e (वृक्षेभिः). Declared, not narrowed (Art. 15).
+    apavada_of     = ("7.3.102", "7.3.103"),
     cond           = cond,
     act            = act,
 )

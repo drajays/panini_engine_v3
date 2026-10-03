@@ -1,9 +1,13 @@
 """
-Subanta (declension) pipeline is fixed Aṣṭādhyāyī-kram: ``apply_rule`` in a
-recipe-determined order, not a Kaumudī/scheduler “tie-break” (CONSTITUTION Art.3).
+Subanta (declension): phase-ordered pools of ``apply_rule`` calls; **conflicts are
+settled by ``engine.resolver``** (Art. 3 point 2 / Art. 21 Ladder 1), never by position
+in a hand-written list and never inside a sūtra's ``cond`` (Art. 15). Policy change of
+2026-10-03: this file used to forbid the resolver here; the ban is replaced by the
+requirement below.
 
-- ``pipelines.subanta`` does not use ``engine.resolver`` / *rightmost-wins*
-  autonomous disambiguation.
+- ``pipelines.subanta`` obtains every multi-candidate winner of its scanner from ``engine.resolver``.
+  (Debt: 6.1.97 still narrows itself for the *recipe* pipelines — Art. 15 — until tinanta/krdanta/
+  taddhita are loop-driven; see docs/SUTRA_COVERAGE_100_PLAN.md.)
 - The post-4.1.2 rule list is a single source of truth: ``SUBANTA_RULE_IDS_POST_4_1_2``
   in ``subanta.py`` and *must* match the sequence used in ``run_subanta_post_4_1_2``.
 """
@@ -17,12 +21,10 @@ import pytest
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
 
-def test_pipelines_subanta_never_imports_resolver():
+def test_pipelines_subanta_conflicts_go_through_the_resolver():
     p = (ROOT / "pipelines" / "subanta.py").read_text(encoding="utf-8")
-    for needle in ("from engine import resolver", "from engine.resolver", "import resolver", "resolve("):
-        assert needle not in p, (
-            f"pipelines/subanta.py must stay recipe-driven, not {needle!r}"
-        )
+    assert "from engine.resolver import record_decision, resolve_with_reason" in p
+    assert "min(candidates, key=lambda sid: order" not in p, "list position must not break ties"
 
 
 def test_tinanta_jayati_gold_does_not_import_resolve():

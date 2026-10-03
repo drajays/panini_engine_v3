@@ -47,9 +47,6 @@ def _matches(state: State) -> bool:
         return False
     if anga.varnas[-1].slp1 not in _GUNA_MAP:
         return False
-    # Typical trigger: the sambuddhi-su has lost its 's' already.
-    if pr.varnas:
-        return False
     return True
 
 

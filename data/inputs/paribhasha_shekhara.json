@@ -88,8 +88,8 @@
    "ps_num": "50",
    "strength_ladder": "38",
    "astadhyayi_sutra": null,
-   "status": "not_modelled",
-   "note": "See also PŚ 52, 54 (luk and lyap defeat antaraṅga) and PŚ 66 (an apavāda already carita-artha elsewhere yields)."
+   "status": "modelled",
+   "note": "Of two rules contending for a junction, the one whose nimitta reaches a term the other does not need (bahiraṅga) yields. Model: contention = overlapping rewritten terms ±1; reach = how many following terms cond needs. PŚ 52/54 (luk and lyap defeat antaraṅga) are not yet modelled."
   },
   "once_beaten": {
    "label_dev": "सकृद्गति",

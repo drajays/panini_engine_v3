@@ -4,7 +4,7 @@
 Padaccheda: आङि च आपः
 
 An āp-final aṅga (feminine ā-stem) takes e for its final ā before ṭā (āṅ): इदा/अन् + आ → अने + आ, whence
-6.1.78 → अनया, एनया. (os is handled by the same sūtra in the tradition; the engine's existing os path is unchanged.)
+6.1.78 → अनया, एनया. (os — खट्वयोः, मालयोः — is the same sūtra via the carried-in ओसि; Kāśikā udāharaṇa.)
 
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com sūtra 7.3.105 (padaccheda: आङि च आपः)
@@ -24,9 +24,18 @@ def _site(state: State):
     if len(state.terms) < 2:
         return None
     anga, sup = state.terms[-2], state.terms[-1]
-    if "anga" not in anga.tags or "TAp_anta" not in anga.tags or "sarvanama" not in anga.tags:
+    if "anga" not in anga.tags or "sup" not in sup.tags:
         return None
-    if "sup" not in sup.tags or (sup.meta.get("upadesha_slp1") or "").strip() != "wA":
+    up = (sup.meta.get("upadesha_slp1") or "").strip()
+    if up == "wA":
+        if "TAp_anta" not in anga.tags or "sarvanama" not in anga.tags:
+            return None
+    elif up == "os":
+        # ओसि (7.3.104) carried in by anuvṛtti: खट्वयोः, मालयोः. ponytail: āp-anta is read as
+        # "ā-final strīliṅga"; upgrade when 4.1.4–4.1.15 mark TAp_anta on every such stem.
+        if "strīliṅga" not in anga.tags:
+            return None
+    else:
         return None
     if anga.meta.get("7_3_105_done") or not anga.varnas or anga.varnas[-1].slp1 != "A":
         return None

@@ -35,6 +35,10 @@ def _eligible_angas(state: State):
             continue
         if "ghi" in t.tags:
             continue
+        # शेषः: what 1.4.3–1.4.6 did not already name. A stem that has the nadī-saṃjñā keeps
+        # it after 7.3.107 shortens its ī (नदि, not ghi: हे नदि).
+        if "nadi" in t.tags:
+            continue
         yield t
 
 

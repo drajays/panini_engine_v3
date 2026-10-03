@@ -76,7 +76,7 @@ def test_source_databases_are_named():
 
 def test_unmodelled_layers_are_declared_not_hidden():
     deferred = {item.key for item in not_modelled()}
-    assert deferred == {"nitya", "antaranga"}, (
+    assert deferred == {"nitya"}, (
         "a layer the engine does not weigh must say so (Art. 18)"
     )
 
@@ -143,7 +143,7 @@ def test_para_decides_equals_by_astadhyayi_order():
     assert decision.layer == "para"
     assert decision.losers == ("1.1.1",)
     assert "nitya" in decision.skipped_unmodelled
-    assert "antaranga" in decision.skipped_unmodelled
+    assert "antaranga" not in decision.skipped_unmodelled      # modelled 2026-10-03 (PŚ 50)
 
 
 def test_vibhasha_tie_is_forked_not_picked_by_para():

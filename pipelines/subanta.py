@@ -445,6 +445,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.1.11",   # नेदमदसोरकोः — blocks 7.1.9 for idam / adas
     "7.1.9",
     "7.1.17",
+    "7.1.18",   # औङ आपः — au/auṭ → śī after an āp-anta aṅga (राधे)
     "7.1.24",
     "7.1.25",  # अद्ड् for tyadādi napuṃsaka (तत्, not पदवत् अम्)
     "6.1.97",  # अतो गुणे after अद् (त + अत् → तत्)
@@ -533,18 +534,32 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
 )
 
 
-def _subanta_scanner_winner_by_spine_order(candidates: list[str], spine_ids: list[str]) -> str:
+def _subanta_scanner_winner_by_spine_order(candidates: list[str], spine_ids: list[str], state: State) -> str:
     """
-    When several post-4.1.2 sūtras *cond* true together, pick the one listed
-    earliest on ``SUBANTA_RULE_IDS_POST_4_1_2`` (fixed Aṣṭādhyāyī-kram; CONSTITUTION
-    Art. 3 — no autonomous ``engine.resolver`` tie-break in this pipeline).
+    When several post-4.1.2 sūtras *cond* true together, ``engine.resolver`` decides
+    (Art. 21 Ladder 1: apavāda → antaraṅga → para) and the beaten rules are recorded as
+    BLOCKED. ``SUBANTA_RULE_IDS_POST_4_1_2`` is the candidate *pool* and the phase order
+    of the pools — it no longer breaks ties (ROADMAP C2/C4).
     """
     if not candidates:
         raise ValueError("subanta scanner needs at least one candidate")
     if len(candidates) == 1:
         return candidates[0]
-    order = {sid: i for i, sid in enumerate(spine_ids)}
-    return min(candidates, key=lambda sid: order.get(sid, 1_000_000))
+    from engine.resolver import record_decision, resolve_with_reason
+
+    decision = resolve_with_reason(candidates, state)
+    record_decision(state, decision)
+    return decision.winner
+
+
+def _sid_key(sid: str) -> tuple[int, ...]:
+    return tuple(int(x) for x in sid.split("."))
+
+
+def _note_tripadi(state: State, sutra_id: str) -> None:
+    from engine.core_loop import note_tripadi_progress
+
+    note_tripadi_progress(state, sutra_id)
 
 
 def run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
@@ -620,13 +635,26 @@ def run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
                     continue
                 if (sid, _state_sig(s)) in no_progress_sites:
                     continue
+                cur = s.meta.get("tripadi_cursor")
+                if cur and s.tripadi_zone and _sid_key(sid) < _sid_key(cur):
+                    continue            # 8.2.1: an earlier tripāḍī rule never wakes on a later one's work
                 if rec.cond is not None and rec.cond(s):
                     candidates.append(sid)
 
+            # C2: a rule that would change nothing (a declined vibhāṣā, a gate-only record)
+            # is not a candidate.
+            from engine.scheduler import effective_candidates
+            from engine.sutra_type import SutraType as _ST2
+
+            # An adhikāra (6.4.1 अङ्गस्य, 8.2.1 पूर्वत्रासिद्धम्) changes no letter but opens the
+            # scope every later rule reads; it is exempt from the vacuity test.
+            scopes = [c for c in candidates if get_sutra(c).sutra_type is _ST2.ADHIKARA]
+            candidates = effective_candidates([c for c in candidates if c not in scopes], s) + scopes
             if not candidates:
                 return
 
-            winner = _subanta_scanner_winner_by_spine_order(candidates, all_ids)
+            winner = _subanta_scanner_winner_by_spine_order(candidates, all_ids, s)
+            _note_tripadi(s, winner)
             sig_before = _state_sig(s)
             before_len = len(s.trace)
             s = apply_rule(winner, s)
@@ -648,11 +676,23 @@ def run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
     # - structural merge into pada
     # - tripāḍī last (8.2.1+)
     it_ids      = [sid for sid in all_ids if sid.startswith("1.3.")]
-    tripadi_ids = [sid for sid in all_ids if sid.startswith("8.")]
+    # The tripāḍī pool is the whole stratum (8.2.1–8.4.68), not a curated list: the loop
+    # asks every rule there, 8.2.1 orders them, and the resolver settles contention.
+    from engine.phase import is_tripadi_sutra
+    from engine.registry import SUTRA_REGISTRY
+    from engine.sutra_type import SutraType as _ST
+
+    tripadi_ids = sorted(
+        (sid for sid, rec in SUTRA_REGISTRY.items()
+         if is_tripadi_sutra(sid) and (
+             rec.sutra_type in (_ST.VIDHI, _ST.NIYAMA, _ST.VIBHASHA, _ST.NIPATANA)
+             or rec.sutra_type is _ST.ADHIKARA)),      # 8.2.1 itself: it opens the stratum
+        key=lambda sid: tuple(int(x) for x in sid.split(".")),
+    )
     sandhi_ids  = [sid for sid in all_ids if sid.startswith("6.1.")]
     angakarya_ids = [
         sid for sid in all_ids
-        if sid not in set(it_ids) | set(sandhi_ids) | set(tripadi_ids)
+        if sid not in set(it_ids) | set(sandhi_ids) and not is_tripadi_sutra(sid)
     ]
 
     _scan_pool(it_ids)

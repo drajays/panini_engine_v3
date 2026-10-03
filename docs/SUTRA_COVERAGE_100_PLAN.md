@@ -92,6 +92,22 @@ not history (Art. 2).
   fixtures.
 - **Status 2026-10-03 (later): tiṅanta half started** — laṭ kartari 9 cells × 6 roots + 3 certain bhū cells derive with no recipe once vivakṣā has chosen the tiṅ; a sweep of every gaṇa-1 root (3sg) reaches the recipe's form in **1,152 of 1,165** (`.audit/tin_auto_sweep.py`). The 13 misses are rule gaps, not loop gaps: 3.1.79 reads `vana~/zaRa~/kanI~` as tanādi (u-vikaraṇa) by stem prefix; 7.3.75 (ṣṭhivu~ → ṣṭhīv) is not modelled; `SrA`/`jYA` homonym rows. New in the loop: tripāḍī cursor (8.2.1 — an earlier tripāḍī rule never wakes on a later one's output), operational paribhāṣās (1.1.51) contend after the vacuity filter, 2.4.75/6.1.10 now gaṇa-3 / ślu-witness gated, 6.1.78 hears past lopa'd terms.
 - **Status 2026-10-03: C2 subanta half landed** — 11/11 certain subanta cases reproduce with no recipe (was 0/11); suite 19,889 passed. Remaining for Gate C: tiṅanta start states (bhū cells), the 364 shipped derivations, the 393-ledger, B2/B3, C3/C4.
+
+### S1 addendum — the subanta lists → the resolver (added 2026-10-03 from the other session's deferral note)
+
+The note: *6.1.97 carries its own conflict logic (`_para_competitor`), it works, and moving the subanta rule lists
+onto `engine/resolver.py` "becomes worth doing if a second rule needs the same para or antaraṅga judgment; then the
+logic moves out of 6.1.97 into one shared place."* **The trigger has fired** — 7.1.9 (ato bhisa ais) against 7.3.102/103,
+7.3.108 against the sambuddhi su-lopa, 7.1.18 against 6.1.87/88, 7.3.105 for os — so the plan now carries it:
+
+| step | state |
+|---|---|
+| shared place: `engine/resolver.py` — apavāda displaces *only the rule it names* ("purastād apavādā anantarān…"), antaraṅga layer (PŚ 50; contention = overlapping rewritten terms, reach = how many following terms `cond` needs) | **done** (`tests/unit/test_resolver_ladder_layers.py`) |
+| subanta scanner takes winners from the resolver, whole tripāḍī as its pool (8.2.1 orders it), vacuity filter, adhikāras exempt from it | **done** — reproduces all 312 cells of the 13 vendored paradigms (`tests/regression/test_subanta_scanner_matches_gold.py`) |
+| rules declared, not narrowed: 7.1.9 `apavada_of` 7.3.102/103 · 7.3.105 now covers os (āp-anta) · 7.3.108 no longer waits for su-lopa · 1.4.7 respects the nadī-saṃjñā (śeṣaḥ) · 7.1.18 in the pool | **done** |
+| flip `derive()` default to the scanner and delete `_para_competitor` from 6.1.97 | **open — measured**: with the flip + deletion 22 test files fail, with the flip alone 12. Not rule errors: (a) tests that pin the *recipe's trace shape* — SKIPPED rows for rules never evaluated (7.1.12/14/15, 7.1.54), the full 1.3.2–1.3.9 it-chain rows, `sig_applied_paths_baseline` order; (b) pronoun paths the scanner pool lacks (idam/etad/kim 7.2.102–113); (c) every *non-subanta* recipe (tinanta, krdanta, taddhita) still relies on 6.1.97 declining by itself. |
+| finish | after tinanta/krdanta/taddhita are loop-driven (C3/C4): flip, regenerate the SIG baseline with `tools.sig_benchmark --freeze`, rewrite (a) to assert the BLOCKED/decision rows the resolver emits, delete `_para_competitor` |
+
 - **Gate S1 (= ROADMAP Gate C)**: every rāma cell, every bhū cell and all 364 shipped derivations
   reproduce through the loop with traces a scholar can read; BLOCKED firings rise by an order of
   magnitude; the two autonomy xfails turn green.
