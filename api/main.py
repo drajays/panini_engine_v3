@@ -544,6 +544,61 @@ def review_page() -> str:
     return (Path(__file__).parent / "review.html").read_text(encoding="utf-8")
 
 
+@app.get("/v1/coverage", tags=["coverage"])
+def coverage_status() -> dict[str, Any]:
+    """Which sūtras the engine does confidently (docs/CONFIDENT_SUTRAS.md), by pāda,
+    plus how far the recipe-free loop gets. Regenerate with ``make confident``."""
+    path = _ROOT / "sig" / "sutra_class.json"
+    if not path.exists():
+        raise HTTPException(503, "run 'make confident' first")
+    data = json.loads(path.read_text(encoding="utf-8"))
+    padas: dict[str, dict[str, Any]] = {}
+    totals: dict[str, int] = {}
+    for r in data["rows"]:
+        totals[r["status"]] = totals.get(r["status"], 0) + 1
+        p = padas.setdefault(r["pada"], {"pada": r["pada"], "total": 0, "confident": []})
+        p["total"] += 1
+        if r["status"].startswith("confident"):
+            p["confident"].append({"id": r["id"], "structural": r["status"] == "confident_structural"})
+    auto = _ROOT / "sig" / "autonomy.json"
+    return {
+        "generated_at": data["generated_at"],
+        "totals": totals,
+        "padas": sorted(padas.values(), key=lambda x: tuple(int(i) for i in x["pada"].split("."))),
+        "autonomy": json.loads(auto.read_text(encoding="utf-8")) if auto.exists() else None,
+    }
+
+
+@app.get("/v1/autonomy/subanta", tags=["coverage"])
+def autonomy_subanta(
+    stem: str = Query("rAma", description="prātipadika, SLP1"),
+    vibhakti: int = Query(1, ge=1, le=8),
+    vacana: int = Query(1, ge=1, le=3),
+    linga: str = Query("puṃliṅga"),
+) -> dict[str, Any]:
+    """Derive with *no recipe*: scheduler → resolver → apply_rule. Every step names
+    the paribhāṣā layer that chose it."""
+    from types import SimpleNamespace
+
+    from tools.autonomy_report import run_autonomously, start_state
+
+    case = SimpleNamespace(kind="subanta", args=(stem, vibhakti, vacana, linga))
+    try:
+        run = run_autonomously(start_state(case), "", stem, budget=120)
+    except Exception as ex:  # unknown stem / tag combination
+        raise HTTPException(422, f"{type(ex).__name__}: {ex}") from ex
+    return {
+        "surface_slp1": run.surface, "surface_dev": slp1_str_to_dev(run.surface),
+        "steps": [{"sutra_id": s, "before": b, "after": a, "layer": l, "moved": b != a}
+                  for s, b, a, l in run.steps],
+    }
+
+
+@app.get("/coverage", response_class=HTMLResponse, include_in_schema=False)
+def coverage_page() -> str:
+    return (Path(__file__).parent / "coverage.html").read_text(encoding="utf-8")
+
+
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
 def hub() -> str:
     """Local home: every page this machine serves, with no live-site link."""

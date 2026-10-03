@@ -139,7 +139,8 @@ def act(state: State) -> State:
 
 SUTRA = SutraRecord(
     sutra_id="8.4.47",
-    sutra_type=SutraType.VIDHI,
+    sutra_type=SutraType.VIBHASHA,
+    vibhasha_default=False,   # यरो वा (8.4.45) is carried in: the doubling is the optional reading
     text_slp1="anaci ca",
     text_dev="अनचि च",
     padaccheda_dev="अनचि च",

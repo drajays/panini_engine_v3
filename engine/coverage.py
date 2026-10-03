@@ -51,6 +51,7 @@ _CITATION_MARKERS = (
     "परिभाषेन्दुशेखर", "Paribhāṣenduśekhara",
     "ashtadhyayi.com", "GRETIL",
 )
+_OPERATIONAL = frozenset({"VIDHI", "NIYAMA", "NIPATANA", "ATIDESHA", "VIBHASHA"})
 _ROW_INDEX_RE = re.compile(r"\bi\s*=\s*\d{5}\b")
 
 
@@ -119,9 +120,12 @@ def honest_coverage(
     mentions = _test_mentions()
 
     registered = sorted(registry)
+    # A6: the exemption is a class privilege (adhikāra, anuvāda, saṃjñā, paribhāṣā, …).
+    # An operational sūtra that merely declares itself exempt is not thereby "moved".
     exempt = {
         sid for sid, rec in registry.items()
         if getattr(rec, "r1_form_identity_exempt", False)
+        and rec.sutra_type.name not in _OPERATIONAL
     }
 
     def conditions(sid: str) -> Dict[str, bool]:

@@ -283,7 +283,7 @@ sūtra; the autonomous-loop xfails turn green for laṭ kartari.
 | # | deliverable | check |
 |---|---|---|
 | C1 ✅ | `tools/autonomy_report.py` + `make autonomy` — drives scheduler → resolver → apply_rule with no recipe and classifies the outcome as **reached · halted · diverged** | **All 11 certain subanta cases halt at step 0: 126 candidates offered, 0 effective.** Two findings, both measured — see below |
-| C2 | resolver decides using Phase B; `specificity_score` retired in favour of declared relations | no pipeline supplies ordering |
+| C2 ◐ | resolver decides using Phase B; `specificity_score` retired in favour of declared relations | **subanta half landed 2026-10-03: 11/11 certain cases derive with no recipe** (`make autonomy`). Fixes: tape-fingerprint vacuity filter (`engine/scheduler.py`), Adhyāya 1 eligible in every phase, `advance_phase` merges the pada at the Tripāḍī boundary, `apply_pratishedhas` before contention, resolver layers *upadeśa* (1.3.2) and *asiddha* (8.2.1), 8.4.46/47 typed VIBHASHA (यरो वा), adhikāra scope read from the record, real 7.1.18. **Tiṅanta half outstanding.** |
 | C3 | `derive()` becomes a thin router onto the loop (`final_plan.md` Phase 4/5) | |
 | C4 | the 187 pipelines become regression fixtures — kept as tests, removed from the engine | |
 

@@ -148,6 +148,60 @@ def _in_scheduler_phase(sid: str, state: State) -> bool:
     return sutra_in_phase(sid, phase)
 
 
+_DRY_DEPTH = 0
+
+
+def in_dry_run() -> bool:
+    """True while the engine is *probing* a rule on a clone. A probe is not a
+    firing: the coverage ledger (Art. 16) must not count it as one."""
+    return _DRY_DEPTH > 0
+
+
+def probe(sutra_id: str, state: State) -> State:
+    """Apply ``sutra_id`` to a clone, as a dry run."""
+    global _DRY_DEPTH
+    from engine.dispatcher import apply_rule
+
+    _DRY_DEPTH += 1
+    try:
+        return apply_rule(sutra_id, state.clone())
+    finally:
+        _DRY_DEPTH -= 1
+
+
+def tape_fingerprint(state: State) -> tuple:
+    """What a rule can *do* to the derivation: the terms, their varṇas and every
+    tag on them. Gate keys and ``state.meta`` are excluded on purpose — a rule
+    that only records that it ran has done nothing."""
+    return (
+        tuple(
+            (t.kind, tuple(sorted(t.tags)), repr(sorted(t.meta.items(), key=lambda kv: kv[0])),
+             tuple((v.slp1, tuple(sorted(v.tags))) for v in t.varnas))
+            for t in state.terms
+        ),
+        frozenset(state.blocked_sutras),
+        tuple(sorted(map(repr, state.atidesha_map.items()))),
+    )
+
+
+def effective_candidates(candidates: List[str], state: State) -> List[str]:
+    """A candidate that would not change the tape is not a candidate (ROADMAP C2).
+
+    Defined on :func:`tape_fingerprint`, not on the surface string — a saṃjñā
+    (1.3.2 उपदेशेऽजनुनासिक इत्) changes no letter yet is exactly what the next rule
+    waits for.
+    """
+    before = tape_fingerprint(state)
+    keep = []
+    for sid in candidates:
+        try:
+            if tape_fingerprint(probe(sid, state)) != before:
+                keep.append(sid)
+        except Exception:
+            continue
+    return keep
+
+
 def enumerate_candidates(state: State) -> List[str]:
     """
     Return sūtra ids whose cond(state) fires on the current state and

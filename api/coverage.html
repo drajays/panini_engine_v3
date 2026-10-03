@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>सूत्र-व्याप्तिः — coverage</title>
+<style>
+:root{--bg:#fafaf7;--panel:#fff;--ink:#1b1a17;--dim:#5b574d;--accent:#8b2e00;--ok:#196b1a;--line:#d7d2c4;--soft:#ece8dc;
+  --mono:"SF Mono",Menlo,monospace;--dev:"Noto Serif Devanagari","Noto Sans Devanagari",serif}
+@media (prefers-color-scheme:dark){:root{--bg:#16150f;--panel:#1e1d16;--ink:#ece7d8;--dim:#b0a894;--accent:#e08a55;--ok:#7fc07f;--line:#3a382c;--soft:#2a281e}}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 Charter,Georgia,serif;color:var(--ink);background:var(--bg)}
+main{max-width:60rem;margin:0 auto;padding:1rem 1.2rem 3rem}h1{font-size:1.2rem}h1 .dev{color:var(--accent);font-family:var(--dev)}
+h2{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin:1.6rem 0 .5rem}
+table{border-collapse:collapse;width:100%}td,th{padding:.25rem .5rem;border-bottom:1px solid var(--line);text-align:left;font-size:.88rem}
+.bar{height:.55rem;background:var(--soft);border-radius:3px;min-width:6rem}.bar i{display:block;height:100%;background:var(--ok);border-radius:3px}
+.ids{font-family:var(--mono);font-size:.78rem;color:var(--dim)}.ids b{color:var(--ink)}.s{opacity:.6}
+.ok{color:var(--ok)}.mono{font-family:var(--mono);font-size:.82rem}
+input,button{font:inherit;padding:.3rem .5rem;border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--ink)}
+input{width:7rem}.pill{display:inline-block;padding:.1rem .5rem;margin:.1rem;border:1px solid var(--line);border-radius:99px;font-size:.8rem}
+</style></head><body><main>
+<h1><span class="dev">सूत्र-व्याप्तिः</span> — what the engine does confidently</h1>
+<p id="meta" style="color:var(--dim)">loading…</p>
+<div id="totals"></div>
+<h2>Recipe-free derivation (no pipeline chooses the order)</h2>
+<p><input id="stem" value="rAma"> vibhakti <input id="vib" type="number" min="1" max="8" value="3" style="width:4rem">
+vacana <input id="vac" type="number" min="1" max="3" value="1" style="width:4rem">
+<input id="linga" value="puṃliṅga"> <button onclick="run()">derive</button></p>
+<div id="run"></div>
+<h2>Certain subanta cases, autonomous</h2><div id="auto"></div>
+<h2>Confident sūtras by pāda</h2><table id="padas"></table>
+<script>
+const $=id=>document.getElementById(id);
+fetch('/v1/coverage').then(r=>r.json()).then(d=>{
+  $('meta').textContent='ledger '+d.generated_at+' · regenerate: make confident';
+  $('totals').innerHTML=Object.entries(d.totals).sort().map(([k,v])=>`<span class="pill">${k} <b>${v}</b></span>`).join('');
+  const conf=(d.totals.confident||0)+(d.totals.confident_structural||0);
+  $('totals').insertAdjacentHTML('afterbegin',`<p><b class="ok" style="font-size:1.6rem">${conf}</b> of ${d.padas.reduce((a,p)=>a+p.total,0)} sūtras confident</p>`);
+  $('padas').innerHTML='<tr><th>pāda<th>done<th><th>sūtras</tr>'+d.padas.map(p=>{
+    const n=p.confident.length;
+    return `<tr><td>${p.pada}<td>${n}/${p.total}<td><div class="bar"><i style="width:${100*n/p.total}%"></i></div>
+    <td class="ids">${p.confident.map(c=>`<span class="${c.structural?'s':''}">${c.id.split('.')[2]}</span>`).join(' ')}</tr>`}).join('');
+  if(d.autonomy){const o=d.autonomy.outcomes;
+    $('auto').innerHTML=`<p><b class="ok">${o.reached||0}</b> of ${d.autonomy.cases} reached the recipe's form</p>`+
+      '<p>'+d.autonomy.runs.map(r=>`<span class="pill ${r.outcome=='reached'?'ok':''}">${r.case} → ${r.surface}</span>`).join('')+'</p>';}
+});
+function run(){
+  const q=new URLSearchParams({stem:$('stem').value,vibhakti:$('vib').value,vacana:$('vac').value,linga:$('linga').value});
+  $('run').textContent='deriving…';
+  fetch('/v1/autonomy/subanta?'+q).then(r=>r.json()).then(d=>{
+    if(d.detail){$('run').textContent=d.detail;return}
+    $('run').innerHTML=`<p><b>${d.surface_dev}</b> <span class="mono">${d.surface_slp1}</span></p><table>`+
+      d.steps.filter(s=>s.moved).map(s=>`<tr><td class="mono">${s.sutra_id}<td class="mono">${s.before} → ${s.after}<td style="color:var(--dim)">${s.layer}</tr>`).join('')+'</table>';
+  });
+}
+</script></main></body></html>

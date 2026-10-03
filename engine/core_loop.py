@@ -36,6 +36,71 @@ class ConvergenceError(RuntimeError):
     """Raised when the loop exceeds MAX_ITERATIONS without halting."""
 
 
+def open_adhikaras(state: State) -> None:
+    """Hold open the adhikāras of the current phase, each for the scope its own record
+    declares (अङ्गस्य governs to the end of Adhyāya 7).
+
+    The loop does this itself; ``ensure_adhikara_for_phase`` (recipe pipelines) still
+    stops at 6.4.148 and is left alone until C4.
+    """
+    import json
+    from pathlib import Path
+
+    from engine.registry import SUTRA_REGISTRY
+
+    path = Path(__file__).resolve().parent.parent / "data" / "inputs" / "phase_adhikaras.json"
+    for sid in json.loads(path.read_text(encoding="utf-8")).get(state.phase, ()):
+        if not any(e.get("id") == sid for e in state.adhikara_stack):
+            state.adhikara_stack.append(
+                {"id": sid, "scope_end": SUTRA_REGISTRY[sid].adhikara_scope[1]}
+            )
+
+
+def apply_pratishedhas(state: State) -> State:
+    """Art. 21 Ladder 1, step 3: prohibitions are settled *before* rules contend.
+
+    Every PRATISHEDHA whose condition holds and that would add something new to
+    ``state.blocked_sutras`` is applied; the scheduler then never offers what they
+    forbid (6.1.104 नादिचि removes 6.1.102 for ā+ic, so वृद्धि wins by being alone).
+    """
+    from engine.dispatcher import apply_rule as dispatch
+    from engine.registry import SUTRA_REGISTRY
+    from engine.scheduler import probe, tape_fingerprint
+    from engine.sutra_type import SutraType
+
+    for sid, rec in sorted(SUTRA_REGISTRY.items(), key=lambda kv: tuple(map(int, kv[0].split(".")))):
+        if rec.sutra_type is not SutraType.PRATISHEDHA or rec.cond is None:
+            continue
+        try:
+            if not rec.cond(state):
+                continue
+            trial = probe(sid, state)
+        except Exception:
+            continue
+        if tape_fingerprint(trial) != tape_fingerprint(state):
+            state = dispatch(sid, state)
+    return state
+
+
+def advance_phase(state: State) -> bool:
+    """Close the current stratum and open the next (Art. 3). False at the last one.
+
+    Entering Tripāḍī is the one place the tape is re-cut: the terms become a single
+    pada (structural book-keeping, traced as ``__MERGE__``, not a sūtra).
+    """
+    from engine.phase import _VALID_FORWARD
+
+    nxt = _VALID_FORWARD.get(state.phase)
+    if nxt is None:
+        return False
+    if nxt == "tripadi":
+        from engine.phases.pada_merger import pada_merge
+
+        pada_merge(state)
+    set_phase(state, nxt)
+    return True
+
+
 def _advance_to_phase(state: State, target: str) -> None:
     """Walk forward until ``state.phase == target``."""
     from engine.phase import _VALID_FORWARD
@@ -50,6 +115,8 @@ def _advance_to_phase(state: State, target: str) -> None:
 def _run_phase_until_converged(state: State, *, iteration_budget: list[int]) -> State:
     """Inner loop: fire all applicable sūtras in the current ``state.phase``."""
     while True:
+        open_adhikaras(state)
+        state = apply_pratishedhas(state)
         candidates = enumerate_candidates(state)
         if not candidates:
             break

@@ -54,6 +54,13 @@ _PHASE_RANGES: dict[str, tuple[tuple[tuple[int, ...], tuple[int, ...]], ...]] = 
 }
 
 
+# Adhyāya 1 (saṃjñā · paribhāṣā · it · pada) is triggered by *what is on the tape*,
+# not by a stage of the derivation: 4.1.2 puts an upadeśa there after the
+# "upadesha" phase has closed, and सुप्तिङन्तं पदम् (1.4.14) is needed after the
+# affix is lopa'd (ROADMAP C1 finding). Eligible in every phase; cond decides.
+_ADHYAYA_ONE: tuple[tuple[int, ...], tuple[int, ...]] = ((1, 1, 1), (1, 4, 110))
+
+
 def _id_tuple(sid: str) -> tuple[int, ...]:
     return tuple(int(p) for p in sid.split("."))
 
@@ -63,6 +70,8 @@ def sutra_in_phase(sutra_id: str, phase: str) -> bool:
     if phase == "tripadi":
         return is_tripadi_sutra(sutra_id)
     t = _id_tuple(sutra_id)
+    if _ADHYAYA_ONE[0] <= t <= _ADHYAYA_ONE[1]:
+        return True
     for lo, hi in _PHASE_RANGES.get(phase, ()):
         if lo <= t <= hi:
             return True

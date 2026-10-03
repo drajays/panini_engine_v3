@@ -51,6 +51,10 @@ def install() -> None:
     original = dispatcher.apply_rule
 
     def recording_apply_rule(sutra_id: str, state: Any, *args: Any, **kwargs: Any) -> Any:
+        from engine.scheduler import in_dry_run
+
+        if in_dry_run():                 # a probe on a clone is not a firing
+            return original(sutra_id, state, *args, **kwargs)
         before = _surface(state)
         result = original(sutra_id, state, *args, **kwargs)
         INVOKED.add(sutra_id)

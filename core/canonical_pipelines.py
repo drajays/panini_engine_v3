@@ -193,13 +193,17 @@ def P00_tripadi_yar_anaci_dvitva_spine(s: State, *, exhaustive: bool = False) ->
     Default: one pass each (``vikalpa`` — one site per call).  ``exhaustive=True`` loops
     until stable (e.g. ``kfzna`` + ``sya`` — both gemination loci).
     """
+    from engine.vikalpa import choose
+
     s = apply_rule("8.2.108", s)
     s = apply_rule("8.2.1", s)
-    if not exhaustive:
-        s = apply_rule("8.4.46", s)
-        s = apply_rule("8.4.47", s)
-        return s
-    return run_to_fixed_point(["8.4.46", "8.4.47"], s)
+    # This block *is* the gemination reading of the two vā-rules (8.4.45 यरो वा).
+    with choose({"8.4.46": True, "8.4.47": True}):
+        if not exhaustive:
+            s = apply_rule("8.4.46", s)
+            s = apply_rule("8.4.47", s)
+            return s
+        return run_to_fixed_point(["8.4.46", "8.4.47"], s)
 
 
 def P00_samhita_iko_yanaci_spine(s: State) -> State:
@@ -1440,9 +1444,9 @@ def P13_subanta_iti_anga_sandhi_to_pada(s: State) -> State:
 
 
 def P14_tripadi_purvakhya_visarga(s: State) -> State:
-    """8.2.1 *pūrvatrāsiddham* + 8.2.7 *nalopaḥ* + 8.2.23 *saṃyogāntasya lopaḥ* + 8.2.30 *coḥ kuḥ* +
+    """8.2.1 *pūrvatrāsiddham* + 8.2.7 *nalopaḥ* + 8.2.23 *saṃyogāntasya lopaḥ* + 8.2.24 *rātsasya* + 8.2.30 *coḥ kuḥ* +
     8.2.39 *jhalāṃ jaśo'nte* + 8.2.66 *ru* + 8.2.80/81 (*adas* d→m) + 8.3.15 *visarga*."""
-    for sid in ("8.2.1", "8.2.7", "8.2.23", "8.2.30", "8.2.39", "8.2.66", "8.2.80", "8.2.81", "8.3.15"):
+    for sid in ("8.2.1", "8.2.7", "8.2.23", "8.2.24", "8.2.30", "8.2.39", "8.2.66", "8.2.80", "8.2.81", "8.3.15"):
         s = apply_rule(sid, s)
     return s
 

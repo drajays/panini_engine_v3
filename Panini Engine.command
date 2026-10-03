@@ -52,6 +52,7 @@ start_apps() {
   Lab       http://127.0.0.1:${API_PORT}/lab
   अभ्यास    http://127.0.0.1:${API_PORT}/practice
   संशोधनम्  http://127.0.0.1:${API_PORT}/review
+  सूत्र-व्याप्तिः http://127.0.0.1:${API_PORT}/coverage   (confident sūtras · recipe-free derivation)
   पाठः      http://127.0.0.1:${API_PORT}/pages/learn.html
   API docs  http://127.0.0.1:${API_PORT}/docs
   पूर्ण-UI   http://127.0.0.1:${WEB_PORT}/
@@ -103,6 +104,7 @@ while :; do
    5  Noun accuracy          vs ashtadhyayi.com (215k forms)
    6  Derivation paths       our sūtras vs theirs (4.8k noun forms)
    7  Download ashtadhyayi.com data   (needed once for 4–6)
+   c  Coverage refresh      run suite ledger → confident list → autonomy → open /coverage
    i  It-letters of an upadeśa  which it, which sūtra, kit/ṅit/ñīt …
 
    8  Rebuild website data   (docs/data, local only)
@@ -121,6 +123,11 @@ EOF
     5) need_gold && "$PY" -m bench.ashtadhyayi_gold --kind subanta; pause ;;
     6) need_gold && "$PY" -m bench.ashtadhyayi_gold --kind prakriya; pause ;;
     7) "$PY" -m tools.fetch_ashtadhyayi_data; pause ;;
+    c|C)
+      "$PY" -m tools.firing_coverage >/dev/null 2>&1
+      "$PY" -m tools.sutra_class && "$PY" -m tools.autonomy_report | tail -4
+      open "http://127.0.0.1:${API_PORT}/coverage"
+      pause ;;
     i|I)
       echo
       echo "  SLP1 upadeśas — dhātu id/upadeśa, or --krt / --taddhita / --sup / --tin before pratyayas"

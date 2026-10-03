@@ -25,6 +25,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Callable, Dict, FrozenSet, List, Optional
 
+from engine.phase import is_tripadi_sutra
 from engine.paribhasha import layer as paribhasha_layer
 from engine.paribhasha import not_modelled as unmodelled_layers
 from engine.registry   import get_sutra
@@ -43,6 +44,8 @@ DECISION_LAYERS: FrozenSet[str] = frozenset({
     "sole-candidate",
     "override",
     "jnapaka",
+    "upadesha",
+    "asiddha",
     "apavada",
     "vikalpa",
     "para",
@@ -133,6 +136,21 @@ def resolve_with_reason(
         winner = CONFLICT_OVERRIDES[key]
         return Decision(winner, "jnapaka", "ज्ञापकः / नामित-अपवादः (docs/AMENDMENT)",
                         tuple(c for c in candidate_ids if c != winner))
+
+    # Ladder 1, step 1 (pāṭha/anuvṛtti): 1.3.2's "upadeśe" — it-saṃjñā and its lopa
+    # happen when the affix is *introduced*, so they precede every rule that would
+    # otherwise read the affix (7.3.101 must not see the ṅ of ṅas as a yañ).
+    it_rules = [c for c in candidate_ids if (1, 3, 2) <= _id_key(c) <= (1, 3, 9)]
+    if it_rules:
+        winner = min(it_rules, key=_id_key)
+        return Decision(winner, "upadesha", paribhasha_layer("upadesha").citation(), ())
+
+    # Art. 21 Ladder 1, step 2 — asiddhatva. Rules inside the tripāḍī cannot see
+    # each other's work in descending order (8.2.1), so *para* is not the arbiter:
+    # the earlier rule goes first and the later one meets its result afterwards.
+    if all(is_tripadi_sutra(c) for c in candidate_ids):
+        winner = min(candidate_ids, key=_id_key)
+        return Decision(winner, "asiddha", paribhasha_layer("asiddha").citation(), ())
 
     apavada = _apavada_winner(candidate_ids)
     if apavada is not None:

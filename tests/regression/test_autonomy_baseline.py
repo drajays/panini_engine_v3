@@ -50,15 +50,16 @@ def test_the_loop_starts_from_stem_plus_raw_upadesha(ramah_start):
 
 
 @pytest.mark.parametrize("case", SUBANTA_CASES, ids=lambda c: c.key)
-def test_no_certain_subanta_derives_autonomously_yet(case):
-    """The Phase C yardstick. When one of these starts passing, C2 is working
-    and this baseline is what should be raised."""
+def test_every_certain_subanta_derives_autonomously(case):
+    """Gate C, subanta half: scheduler → resolver → apply_rule, no recipe.
+
+    Raised 0/11 → 11/11 on 2026-10-03 (C2: tape-fingerprint vacuity filter, Adhyāya 1
+    eligible in every phase, pada-merge at the Tripāḍī boundary, pratiṣedha before
+    contention, 'upadeśa' and 'asiddha' resolver layers, 8.4.46/47 typed vibhāṣā,
+    adhikāra scope from the records, real 7.1.18)."""
     expected = derive(case).flat_slp1()
-    run = run_autonomously(start_state(case), expected, case.key, budget=8)
-    assert run.outcome != "reached", (
-        f"{case.key} now derives autonomously — raise the C1 baseline and the "
-        "ROADMAP row rather than deleting this test"
-    )
+    run = run_autonomously(start_state(case), expected, case.key, budget=80)
+    assert run.outcome == "reached", f"{case.key}: {run.surface} ≠ {expected} ({run.outcome})"
 
 
 def test_a_vacuous_candidate_is_not_a_candidate(ramah_start):

@@ -1,119 +1,866 @@
 {
   "cases": 11,
   "outcomes": {
-    "halted": 11
+    "reached": 11
   },
   "runs": [
     {
       "case": "ramah",
-      "outcome": "halted",
-      "surface": "rAmasu",
+      "outcome": "reached",
+      "surface": "rAmaH",
       "expected": "rAmaH",
-      "offered": 126,
-      "effective": 0,
-      "steps": []
-    },
-    {
-      "case": "ramau",
-      "outcome": "halted",
-      "surface": "rAmaO",
-      "expected": "rAmO",
-      "offered": 126,
-      "effective": 0,
-      "steps": []
-    },
-    {
-      "case": "ramah_pl",
-      "outcome": "halted",
-      "surface": "rAmajas",
-      "expected": "rAmAH",
-      "offered": 126,
-      "effective": 0,
-      "steps": []
-    },
-    {
-      "case": "ramena",
-      "outcome": "halted",
-      "surface": "rAmawA",
-      "expected": "rAmeRa",
-      "offered": 126,
-      "effective": 0,
-      "steps": []
-    },
-    {
-      "case": "ramasya",
-      "outcome": "halted",
-      "surface": "rAmANas",
-      "expected": "rAmasya",
-      "offered": 126,
+      "offered": 229,
       "effective": 0,
       "steps": [
         [
-          "7.3.101",
+          "1.3.2",
+          "rAmasu~",
+          "rAmasu~",
+          "upadesha"
+        ],
+        [
+          "1.3.9",
+          "rAmasu~",
+          "rAmas",
+          "upadesha"
+        ],
+        [
+          "1.4.104",
+          "rAmas",
+          "rAmas",
+          "para"
+        ],
+        [
+          "1.4.103",
+          "rAmas",
+          "rAmas",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "rAmas",
+          "rAmas",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "rAmas",
+          "rAmas",
+          "para"
+        ],
+        [
+          "1.4.13",
+          "rAmas",
+          "rAmas",
+          "para"
+        ],
+        [
+          "1.2.41",
+          "rAmas",
+          "rAmas",
+          "para"
+        ],
+        [
+          "1.1.43",
+          "rAmas",
+          "rAmas",
+          "sole-candidate"
+        ],
+        [
+          "8.2.66",
+          "rAmas",
+          "rAmar",
+          "sole-candidate"
+        ],
+        [
+          "8.3.15",
+          "rAmar",
+          "rAmaH",
+          "sole-candidate"
+        ]
+      ]
+    },
+    {
+      "case": "ramau",
+      "outcome": "reached",
+      "surface": "rAmO",
+      "expected": "rAmO",
+      "offered": 229,
+      "effective": 0,
+      "steps": [
+        [
+          "1.4.104",
+          "rAmaO",
+          "rAmaO",
+          "para"
+        ],
+        [
+          "1.4.103",
+          "rAmaO",
+          "rAmaO",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "rAmaO",
+          "rAmaO",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "rAmaO",
+          "rAmaO",
+          "para"
+        ],
+        [
+          "1.4.13",
+          "rAmaO",
+          "rAmaO",
+          "para"
+        ],
+        [
+          "1.2.41",
+          "rAmaO",
+          "rAmaO",
+          "para"
+        ],
+        [
+          "1.1.73",
+          "rAmaO",
+          "rAmaO",
+          "para"
+        ],
+        [
+          "1.1.43",
+          "rAmaO",
+          "rAmaO",
+          "sole-candidate"
+        ],
+        [
+          "6.1.88",
+          "rAmaO",
+          "rAmO",
+          "sole-candidate"
+        ],
+        [
+          "1.1.73",
+          "rAmO",
+          "rAmO",
+          "sole-candidate"
+        ]
+      ]
+    },
+    {
+      "case": "ramah_pl",
+      "outcome": "reached",
+      "surface": "rAmAH",
+      "expected": "rAmAH",
+      "offered": 229,
+      "effective": 0,
+      "steps": [
+        [
+          "1.3.4",
+          "rAmajas",
+          "rAmajas",
+          "upadesha"
+        ],
+        [
+          "1.3.7",
+          "rAmajas",
+          "rAmajas",
+          "upadesha"
+        ],
+        [
+          "1.3.9",
+          "rAmajas",
+          "rAmaas",
+          "upadesha"
+        ],
+        [
+          "1.4.104",
+          "rAmaas",
+          "rAmaas",
+          "para"
+        ],
+        [
+          "1.4.103",
+          "rAmaas",
+          "rAmaas",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "rAmaas",
+          "rAmaas",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "rAmaas",
+          "rAmaas",
+          "para"
+        ],
+        [
+          "1.4.13",
+          "rAmaas",
+          "rAmaas",
+          "para"
+        ],
+        [
+          "1.1.43",
+          "rAmaas",
+          "rAmaas",
+          "sole-candidate"
+        ],
+        [
+          "6.1.102",
+          "rAmaas",
+          "rAmAs",
+          "para"
+        ],
+        [
+          "1.3.4",
+          "rAmAs",
+          "rAmAs",
+          "upadesha"
+        ],
+        [
+          "1.1.73",
+          "rAmAs",
+          "rAmAs",
+          "sole-candidate"
+        ],
+        [
+          "8.2.66",
+          "rAmAs",
+          "rAmAr",
+          "sole-candidate"
+        ],
+        [
+          "8.3.15",
+          "rAmAr",
+          "rAmAH",
+          "sole-candidate"
+        ]
+      ]
+    },
+    {
+      "case": "ramena",
+      "outcome": "reached",
+      "surface": "rAmeRa",
+      "expected": "rAmeRa",
+      "offered": 229,
+      "effective": 0,
+      "steps": [
+        [
+          "1.3.7",
+          "rAmawA",
+          "rAmawA",
+          "upadesha"
+        ],
+        [
+          "1.3.9",
+          "rAmawA",
+          "rAmaA",
+          "upadesha"
+        ],
+        [
+          "1.4.104",
+          "rAmaA",
+          "rAmaA",
+          "para"
+        ],
+        [
+          "1.4.103",
+          "rAmaA",
+          "rAmaA",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "rAmaA",
+          "rAmaA",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "rAmaA",
+          "rAmaA",
+          "para"
+        ],
+        [
+          "1.4.13",
+          "rAmaA",
+          "rAmaA",
+          "para"
+        ],
+        [
+          "7.1.12",
+          "rAmaA",
+          "rAmaina",
+          "para"
+        ],
+        [
+          "1.4.18",
+          "rAmaina",
+          "rAmaina",
+          "sole-candidate"
+        ],
+        [
+          "6.1.87",
+          "rAmaina",
+          "rAmena",
+          "sole-candidate"
+        ],
+        [
+          "8.4.2",
+          "rAmena",
+          "rAmeRa",
+          "sole-candidate"
+        ]
+      ]
+    },
+    {
+      "case": "ramasya",
+      "outcome": "reached",
+      "surface": "rAmasya",
+      "expected": "rAmasya",
+      "offered": 230,
+      "effective": 0,
+      "steps": [
+        [
+          "1.3.4",
           "rAmaNas",
-          "rAmANas",
+          "rAmaNas",
+          "upadesha"
+        ],
+        [
+          "1.3.8",
+          "rAmaNas",
+          "rAmaNas",
+          "upadesha"
+        ],
+        [
+          "1.3.9",
+          "rAmaNas",
+          "rAmaas",
+          "upadesha"
+        ],
+        [
+          "1.4.104",
+          "rAmaas",
+          "rAmaas",
+          "para"
+        ],
+        [
+          "1.4.103",
+          "rAmaas",
+          "rAmaas",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "rAmaas",
+          "rAmaas",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "rAmaas",
+          "rAmaas",
+          "para"
+        ],
+        [
+          "1.4.13",
+          "rAmaas",
+          "rAmaas",
+          "sole-candidate"
+        ],
+        [
+          "7.1.12",
+          "rAmaas",
+          "rAmasya",
+          "para"
+        ],
+        [
+          "1.4.18",
+          "rAmasya",
+          "rAmasya",
+          "para"
+        ],
+        [
+          "1.1.43",
+          "rAmasya",
+          "rAmasya",
           "sole-candidate"
         ]
       ]
     },
     {
       "case": "hari",
-      "outcome": "halted",
-      "surface": "hariO",
+      "outcome": "reached",
+      "surface": "harI",
       "expected": "harI",
-      "offered": 126,
-      "effective": 0,
-      "steps": []
-    },
-    {
-      "case": "vayu",
-      "outcome": "halted",
-      "surface": "vAyuO",
-      "expected": "vAyU",
-      "offered": 126,
-      "effective": 0,
-      "steps": []
-    },
-    {
-      "case": "agni",
-      "outcome": "halted",
-      "surface": "agniO",
-      "expected": "agnI",
-      "offered": 126,
-      "effective": 0,
-      "steps": []
-    },
-    {
-      "case": "nadyau",
-      "outcome": "halted",
-      "surface": "nadIO",
-      "expected": "nadyO",
-      "offered": 126,
-      "effective": 0,
-      "steps": []
-    },
-    {
-      "case": "radhe",
-      "outcome": "halted",
-      "surface": "rADAO",
-      "expected": "rADe",
-      "offered": 126,
-      "effective": 0,
-      "steps": []
-    },
-    {
-      "case": "jnanam",
-      "outcome": "halted",
-      "surface": "jYAnaam",
-      "expected": "jYAnam",
-      "offered": 126,
+      "offered": 229,
       "effective": 0,
       "steps": [
         [
+          "1.4.104",
+          "hariO",
+          "hariO",
+          "para"
+        ],
+        [
+          "1.4.103",
+          "hariO",
+          "hariO",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "hariO",
+          "hariO",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "hariO",
+          "hariO",
+          "para"
+        ],
+        [
+          "1.4.13",
+          "hariO",
+          "hariO",
+          "para"
+        ],
+        [
+          "1.4.7",
+          "hariO",
+          "hariO",
+          "para"
+        ],
+        [
+          "1.2.41",
+          "hariO",
+          "hariO",
+          "para"
+        ],
+        [
+          "1.1.73",
+          "hariO",
+          "hariO",
+          "para"
+        ],
+        [
+          "1.1.43",
+          "hariO",
+          "hariO",
+          "sole-candidate"
+        ],
+        [
+          "6.1.102",
+          "hariO",
+          "harI",
+          "para"
+        ],
+        [
+          "1.1.73",
+          "harI",
+          "harI",
+          "para"
+        ],
+        [
+          "1.1.11",
+          "harI",
+          "harI",
+          "sole-candidate"
+        ]
+      ]
+    },
+    {
+      "case": "vayu",
+      "outcome": "reached",
+      "surface": "vAyU",
+      "expected": "vAyU",
+      "offered": 229,
+      "effective": 0,
+      "steps": [
+        [
+          "1.4.104",
+          "vAyuO",
+          "vAyuO",
+          "para"
+        ],
+        [
+          "1.4.103",
+          "vAyuO",
+          "vAyuO",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "vAyuO",
+          "vAyuO",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "vAyuO",
+          "vAyuO",
+          "para"
+        ],
+        [
+          "1.4.13",
+          "vAyuO",
+          "vAyuO",
+          "para"
+        ],
+        [
+          "1.4.7",
+          "vAyuO",
+          "vAyuO",
+          "para"
+        ],
+        [
+          "1.2.41",
+          "vAyuO",
+          "vAyuO",
+          "para"
+        ],
+        [
+          "1.1.73",
+          "vAyuO",
+          "vAyuO",
+          "para"
+        ],
+        [
+          "1.1.43",
+          "vAyuO",
+          "vAyuO",
+          "sole-candidate"
+        ],
+        [
+          "6.1.102",
+          "vAyuO",
+          "vAyU",
+          "para"
+        ],
+        [
+          "1.1.73",
+          "vAyU",
+          "vAyU",
+          "para"
+        ],
+        [
+          "1.1.11",
+          "vAyU",
+          "vAyU",
+          "sole-candidate"
+        ]
+      ]
+    },
+    {
+      "case": "agni",
+      "outcome": "reached",
+      "surface": "agnI",
+      "expected": "agnI",
+      "offered": 230,
+      "effective": 0,
+      "steps": [
+        [
+          "1.4.104",
+          "agniO",
+          "agniO",
+          "para"
+        ],
+        [
+          "1.4.103",
+          "agniO",
+          "agniO",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "agniO",
+          "agniO",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "agniO",
+          "agniO",
+          "para"
+        ],
+        [
+          "1.4.13",
+          "agniO",
+          "agniO",
+          "para"
+        ],
+        [
+          "1.4.7",
+          "agniO",
+          "agniO",
+          "para"
+        ],
+        [
+          "1.2.41",
+          "agniO",
+          "agniO",
+          "para"
+        ],
+        [
+          "1.1.73",
+          "agniO",
+          "agniO",
+          "para"
+        ],
+        [
+          "1.1.43",
+          "agniO",
+          "agniO",
+          "sole-candidate"
+        ],
+        [
+          "6.1.102",
+          "agniO",
+          "agnI",
+          "para"
+        ],
+        [
+          "1.1.73",
+          "agnI",
+          "agnI",
+          "para"
+        ],
+        [
+          "1.1.11",
+          "agnI",
+          "agnI",
+          "sole-candidate"
+        ]
+      ]
+    },
+    {
+      "case": "nadyau",
+      "outcome": "reached",
+      "surface": "nadyO",
+      "expected": "nadyO",
+      "offered": 230,
+      "effective": 0,
+      "steps": [
+        [
+          "1.4.104",
+          "nadIO",
+          "nadIO",
+          "para"
+        ],
+        [
+          "1.4.103",
+          "nadIO",
+          "nadIO",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "nadIO",
+          "nadIO",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "nadIO",
+          "nadIO",
+          "para"
+        ],
+        [
+          "1.4.13",
+          "nadIO",
+          "nadIO",
+          "para"
+        ],
+        [
+          "1.2.41",
+          "nadIO",
+          "nadIO",
+          "para"
+        ],
+        [
+          "1.1.73",
+          "nadIO",
+          "nadIO",
+          "para"
+        ],
+        [
+          "1.1.43",
+          "nadIO",
+          "nadIO",
+          "sole-candidate"
+        ],
+        [
+          "6.1.77",
+          "nadIO",
+          "nadyO",
+          "sole-candidate"
+        ]
+      ]
+    },
+    {
+      "case": "radhe",
+      "outcome": "reached",
+      "surface": "rADe",
+      "expected": "rADe",
+      "offered": 229,
+      "effective": 0,
+      "steps": [
+        [
+          "7.1.18",
+          "rADAO",
+          "rADASI",
+          "para"
+        ],
+        [
+          "1.3.8",
+          "rADASI",
+          "rADASI",
+          "upadesha"
+        ],
+        [
+          "1.3.9",
+          "rADASI",
+          "rADAI",
+          "upadesha"
+        ],
+        [
+          "1.4.104",
+          "rADAI",
+          "rADAI",
+          "para"
+        ],
+        [
+          "1.4.103",
+          "rADAI",
+          "rADAI",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "rADAI",
+          "rADAI",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "rADAI",
+          "rADAI",
+          "para"
+        ],
+        [
+          "1.4.13",
+          "rADAI",
+          "rADAI",
+          "para"
+        ],
+        [
+          "1.4.18",
+          "rADAI",
+          "rADAI",
+          "para"
+        ],
+        [
+          "1.2.41",
+          "rADAI",
+          "rADAI",
+          "para"
+        ],
+        [
+          "1.1.43",
+          "rADAI",
+          "rADAI",
+          "sole-candidate"
+        ],
+        [
+          "6.1.87",
+          "rADAI",
+          "rADe",
+          "sole-candidate"
+        ]
+      ]
+    },
+    {
+      "case": "jnanam",
+      "outcome": "reached",
+      "surface": "jYAnam",
+      "expected": "jYAnam",
+      "offered": 230,
+      "effective": 0,
+      "steps": [
+        [
+          "1.3.2",
+          "jYAnasu~",
+          "jYAnasu~",
+          "upadesha"
+        ],
+        [
+          "1.3.9",
+          "jYAnasu~",
+          "jYAnas",
+          "upadesha"
+        ],
+        [
+          "1.4.104",
+          "jYAnas",
+          "jYAnas",
+          "para"
+        ],
+        [
+          "1.4.103",
+          "jYAnas",
+          "jYAnas",
+          "para"
+        ],
+        [
+          "1.4.14",
+          "jYAnas",
+          "jYAnas",
+          "para"
+        ],
+        [
+          "1.4.110",
+          "jYAnas",
+          "jYAnas",
+          "para"
+        ],
+        [
+          "1.4.13",
+          "jYAnas",
+          "jYAnas",
+          "para"
+        ],
+        [
           "7.1.24",
-          "jYAnasu",
+          "jYAnas",
+          "jYAnaam",
+          "para"
+        ],
+        [
+          "1.3.4",
+          "jYAnaam",
+          "jYAnaam",
+          "upadesha"
+        ],
+        [
+          "1.4.18",
+          "jYAnaam",
           "jYAnaam",
           "sole-candidate"
+        ],
+        [
+          "6.1.107",
+          "jYAnaam",
+          "jYAnam",
+          "para"
         ]
       ]
     }

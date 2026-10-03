@@ -62,6 +62,9 @@ coverage:
 	python3 -m tools.firing_coverage
 	python3 -m tools.firing_coverage --report
 
+confident:   ## per-phase list of sūtras done with confidence → docs/CONFIDENT_SUTRAS.md
+	python3 -m tools.sutra_class
+
 lint:
 	python3 -m tools.sutra_lint
 

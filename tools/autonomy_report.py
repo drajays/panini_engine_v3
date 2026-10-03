@@ -48,38 +48,27 @@ class Run:
     blocked_at: str = ""
 
 
-def effective_candidates(candidates: list[str], state: Any) -> list[str]:
-    """A candidate that would not change the tape is not a candidate.
-
-    The registry holds ~2,400 records whose ``cond`` is permissive and whose
-    ``act`` does nothing. Without this filter the loop fires them in descending
-    sūtra order — *para* picks the latest id first — and burns its whole budget
-    rewriting the same form.
-    """
-    from engine import apply_rule
-
-    before = state.flat_slp1()
-    keep = []
-    for sutra_id in candidates:
-        try:
-            if apply_rule(sutra_id, state.clone()).flat_slp1() != before:
-                keep.append(sutra_id)
-        except Exception:
-            continue
-    return keep
+from engine.scheduler import effective_candidates  # noqa: E402,F401  (C2 moved it into the engine)
 
 
 def run_autonomously(state: Any, expected: str, case: str, budget: int) -> Run:
     from engine import apply_rule
     from engine.resolver import resolve_with_reason
+    from engine.core_loop import apply_pratishedhas, open_adhikaras
     from engine.scheduler import enumerate_candidates
 
     result = Run(case=case, expected=expected)
     for _ in range(budget):
+        open_adhikaras(state)
+        state = apply_pratishedhas(state)
         candidates = enumerate_candidates(state)
         usable = effective_candidates(candidates, state)
         result.offered, result.effective = len(candidates), len(usable)
         if not usable:
+            from engine.core_loop import advance_phase
+
+            if advance_phase(state):     # this stratum is exhausted — Art. 3 moves on
+                continue
             result.outcome = "halted"
             result.blocked_at = state.flat_slp1()
             break
