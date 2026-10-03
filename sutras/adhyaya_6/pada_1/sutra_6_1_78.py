@@ -5,9 +5,8 @@ Classical rule:
   If an EC vowel (e/E/o/O) is followed by an AC vowel, the EC splits:
     e → ay, E → Ay, o → av, O → Av
 
-v3.1 originally implemented only a narrow 'a + os' helper for रामयोः.
-v3.4 extends the rule to its standard eco+aci behaviour, while keeping
-the prior narrow helper intact.
+Universal: fires on any ec‖ac, inside a Term or across Terms (no aṅga-tag gate).
+रामयोः is derived honestly: 7.3.104 ओसि च (a → e) then this rule (e → ay).
 
 v3.5: skip the *ec*+*ac* split when the *aṅga* **Term** carries **1.1.11**
 ``pragrahya`` (e.g. *māle* + *iti* — **6.1.125** *prakṛti-bhāva*).
@@ -46,75 +45,43 @@ _ECO_SPLIT = {
 }
 
 
-def _find_eco_aci_boundary(state: State):
-    if len(state.terms) < 2:
-        return None
+def _live_pairs(state: State):
+    """Adjacent terms *as heard*: a term emptied by lopa (1.1.60 अदर्शनम्, e.g. the
+    vikaraṇa a after 6.1.97) is invisible, so ec meets the next audible term."""
+    live = [i for i, t in enumerate(state.terms) if t.varnas]
+    return zip(live, live[1:])
+
+
+def _find_eco_aci_boundary(state: State) -> tuple[int, int] | None:
+    """
+    Flat scan: ``(term_i, varna_i)`` of an EC vowel immediately followed by an
+    AC vowel — inside one Term, or across a Term boundary (left Term not
+    pragṛhya, not already split; ṅasi/ṅas left to 6.1.110).
+    """
+    for i, left in enumerate(state.terms):
+        vs = left.varnas
+        for k in range(len(vs) - 1):  # intra-term
+            if vs[k].slp1 in _ECO_SPLIT and vs[k + 1].slp1 in _AC_ALL:
+                return i, k
     pairs = (
         iter_anga_to_following_pratyaya_pairs(state)
         if state_has_sup_luk_ghost(state)
-        else ((i, i + 1) for i in range(len(state.terms) - 1))
+        else _live_pairs(state)
     )
     for i, j in pairs:
-        anga = state.terms[i]
-        nxt = state.terms[j]
-        # a vikaraṇa ending in ec is part of the aṅga for what follows (1.4.13):
-        # सुनो + आनि → सुनव् + आनि, असुनो + अम् → असुनवम्
-        if "anga" not in anga.tags and "vikarana" not in anga.tags:
-            continue
-        if not anga.varnas or not nxt.varnas:
-            continue
-        # Avoid interfering with the dedicated ṅasi/ṅas pūrvarūpa handling (6.1.110).
+        left, nxt = state.terms[i], state.terms[j]
+        if left.meta.get("eco_ayavayava_done") or PRAGHYA_TERM_TAG in left.tags:
+            continue  # pragṛhya ‖ ac: 6.1.125 prakṛti-bhāva
+        # ṅasi/ṅas pūrvarūpa is 6.1.110's business.
         if nxt.meta.get("upadesha_slp1") in {"Nasi", "Nas"}:
             continue
-        if anga.meta.get("eco_ayavayava_done"):
-            continue
-        if PRAGHYA_TERM_TAG in anga.tags:
-            # Pragṛhya ‖ ac — no *ay/Av* split (6.1.125 *prakṛti-bhāva*; 1.1.11 tag).
-            continue
-        last = anga.varnas[-1].slp1
-        first = nxt.varnas[0].slp1
-        if last in _ECO_SPLIT and first in _AC_ALL:
-            return i
-    return None
-
-
-def _find_target(state: State):
-    """
-    Find a boundary where stem-a meets pratyaya-o of 'os'.  Insert y
-    between the stem's final 'a' and the pratyaya's 'o'.
-    """
-    if len(state.terms) < 2:
-        return None
-    pairs = (
-        iter_anga_to_following_pratyaya_pairs(state)
-        if state_has_sup_luk_ghost(state)
-        else ((i, i + 1) for i in range(len(state.terms) - 1))
-    )
-    for i, j in pairs:
-        anga = state.terms[i]
-        nxt = state.terms[j]
-        if not anga.varnas or not nxt.varnas:
-            continue
-        if "anga" not in anga.tags:
-            continue
-        if nxt.meta.get("upadesha_slp1") != "os":
-            continue
-        # Idempotency: skip if already inserted.
-        if anga.meta.get("ay_insertion_done"):
-            continue
-        if anga.varnas[-1].slp1 != "a":
-            continue
-        if nxt.varnas[0].slp1 != "o":
-            continue
-        return i
+        if left.varnas[-1].slp1 in _ECO_SPLIT and nxt.varnas[0].slp1 in _AC_ALL:
+            return i, len(left.varnas) - 1
     return None
 
 
 def cond(state: State) -> bool:
-    return (
-        _find_eco_aci_boundary(state) is not None
-        or _find_target(state) is not None
-    )
+    return _find_eco_aci_boundary(state) is not None
 
 
 _WHY_NOW = (
@@ -124,24 +91,15 @@ _WHY_NOW = (
 
 
 def act(state: State) -> State:
-    i = _find_eco_aci_boundary(state)
-    if i is not None:
-        anga = state.terms[i]
-        last = anga.varnas[-1].slp1
-        a, yv = _ECO_SPLIT[last]
-        anga.varnas[-1] = mk(a)
-        anga.varnas.append(mk(yv))
-        anga.meta["eco_ayavayava_done"] = True
-        state.meta["__why_now_dev__"] = _WHY_NOW
+    hit = _find_eco_aci_boundary(state)
+    if hit is None:
         return state
-
-    i = _find_target(state)
-    if i is None:
-        return state
-    anga = state.terms[i]
-    # Legacy narrow helper: insert 'y' at the END of the aṅga Term.
-    anga.varnas.append(mk("y"))
-    anga.meta["ay_insertion_done"] = True
+    i, k = hit
+    left = state.terms[i]
+    a, yv = _ECO_SPLIT[left.varnas[k].slp1]
+    left.varnas[k] = mk(a)
+    left.varnas.insert(k + 1, mk(yv))
+    left.meta["eco_ayavayava_done"] = True
     state.meta["__why_now_dev__"] = _WHY_NOW
     return state
 
@@ -154,10 +112,8 @@ SUTRA = SutraRecord(
     padaccheda_dev = "एचः अय्-अव्-आय्-आवः",
     why_dev        = "एचः (ए, ऐ, ओ, औ) स्थाने परे अचि "
                      "क्रमेण अय्, अव्, आय्, आव् आदेशः (एचोऽयवायावः) — "
-                     "ओस्-विषयकः पूर्वे य्-आगम-वर्णनम् अत्रानुपयुक्तम्। "
                      "अत्र यथा अङ्गान्ते एच्-वर्णः \"e\" (गुणात्) + परे अच् \"a\" (विकरणादादौ) → "
-                     "\"e\"+\"a\" → \"a\"+\"y\"+\"a\" (अय्) → je+a+… → jay+a+… → jayati। "
-                     "अपरः प्रसङ्गः: अदन्त-अङ्ग + \"ओस्\"-प्रत्यय (a+o) पूर्वे \"य्\"-आगमः।",
+                     "\"e\"+\"a\" → \"a\"+\"y\"+\"a\" (अय्) → je+a+… → jay+a+… → jayati।",
     anuvritti_from = (),
     cond           = cond,
     act            = act,

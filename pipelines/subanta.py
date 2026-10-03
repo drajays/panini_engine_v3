@@ -372,8 +372,13 @@ def derive_anya_pullinga(vibhakti: int, vacana: int) -> State:
     return derive("anya", vibhakti, vacana, linga="pulliṅga")
 
 
-# 3.2.87 ब्रह्मभ्रूणवृत्रेषु क्विप् (हनः): the upapadas the sūtra names, SLP1.
-_KVIP_HAN_UPAPADA_3_2_87 = ("brahma", "BrURa", "vftra")
+# A final -han is the root हन् (kvip / kvun compounds: ब्रह्महन्, वृत्रहन्, शत्रुहन्, वीरहन्, तमिस्रहन्) except the few words that merely
+# end that way: अहन् (day) and its -āhan compounds (दीर्घाहन्), and प्लीहन्. A lexical fact, so a short named list, not a spelling rule.
+_HAN_NOT_THE_ROOT = frozenset({"ahan", "plIhan"})
+
+
+def _han_is_root(stem_slp1: str) -> bool:
+    return stem_slp1.endswith("han") and stem_slp1 not in _HAN_NOT_THE_ROOT and not stem_slp1.endswith("Ahan")
 
 
 # Structural step in ``run_subanta_post_4_1_2`` (not a sūtra id).
@@ -475,6 +480,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.1.68",
     "6.4.3",
     "7.3.103",
+    "7.3.104",  # ओसि च — a → e before os (then 6.1.78: rAmayoH)
     "7.3.112",  # आट् for ṅit sups after नदी — नद्यै · नद्याः
     "7.3.116",  # ङि → आम् after नदी — नद्याम्
     "7.3.102",
@@ -498,6 +504,8 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.1.78",
     "6.1.107",
     "6.1.125",
+    "6.1.111",  # ऋत उत् — pitṛ + ṅasi/ṅas → पितुः (the apavāda must precede yaṇ)
+    "1.1.51",   # uraṇ raparaḥ — the r of that ut
     "6.1.77",
     "6.1.87",
     "6.1.88",
@@ -696,6 +704,7 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
            anvadesha: bool = False,
            ugit: bool = False,
            han_dhatu: bool = False,
+           tfc: bool = False,
            ) -> State:
     """
     Aṣṭādhyāyī-kram pipeline.  Returns final state with complete trace.
@@ -703,9 +712,12 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     ``ugit`` — the stem is *ugit* (it came from matup / vatup / śatṛ / ḍavatu …: भवत्, गुणवत्, पचत्); tags the stem so
     **7.1.70** gives it nuṃ. Derivation history is not in a stem string, so this is an input, like ``anvadesha``.
 
+    ``tfc`` — the stem is a tṛc / tṛn agent noun (कर्तृ, दातृ, भवितृ): 6.4.11 lengthens its upadhā before the strong sups
+    (कर्तारम्, but पितरम् — पितृ is not a tṛc stem). Origin, so an input like ``ugit``.
+
     ``han_dhatu`` — the stem ends in the *root* हन् (a kvip compound, 3.2.87: वृत्रहन्, शत्रुहन्): 6.4.12 limits its upadhā-dīrgha
-    to śi / su. Whether a final ``han`` is the root is lexical (प्लीहन् is not); the three upapadas 3.2.87 itself names
-    (ब्रह्म-, भ्रूण-, वृत्र-) are recognised automatically, any other compound passes this.
+    to śi / su. A final ``han`` is taken to be the root except for the few words that merely end that way (अहन्, -आहन्, प्लीहन्);
+    pass ``han_dhatu=True`` for any other case.
 
     ``anvadesha`` — the stem is in *anvādeśa* (2.4.32: a second mention, new predicate); tags the stem so
     **2.4.34** can give इदम् / एतद् → एन (एनम्, एनेन, एनयोः).  A fact about the sentence, so an input.
@@ -731,7 +743,9 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
         s.terms[0].tags.add("anvadesha")
     if ugit:
         s.terms[0].tags.add("ugit")
-    if han_dhatu or (stem_slp1.endswith("han") and stem_slp1[:-3].endswith(_KVIP_HAN_UPAPADA_3_2_87)):
+    if tfc:
+        s.terms[0].tags.add("krt_tfc")
+    if han_dhatu or _han_is_root(stem_slp1):
         s.terms[0].tags.add("han_dhatu")
     # sakhī-class i-stem masculine: tag and set 7.1.92/7.1.93 arms
     _SAKHI_CLASS = {"sakhI", "sakhi"}
