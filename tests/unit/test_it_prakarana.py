@@ -184,8 +184,11 @@ def test_purva_su_runs_full_it_prakarana_and_lops_anunasika_u():
 
     s = derive("pUrva", 1, 1)
     assert s.flat_slp1() == "pUrvaH"
-    it_ids = [e["sutra_id"] for e in s.trace if e.get("sutra_id") in IT_PRAKARANA_SEQUENCE]
-    assert it_ids[:8] == list(IT_PRAKARANA_SEQUENCE)
+    it_ids = [e["sutra_id"] for e in s.trace
+              if e.get("sutra_id") in IT_PRAKARANA_SEQUENCE and e.get("status") == "APPLIED"]
+    # The resolver-driven path shows the it-rules that *did something* (1.3.2 names the it, 1.3.9
+    # elides it), in sūtra order; 1.3.3–1.3.8 had nothing to do for उँ and are not offered.
+    assert it_ids[:2] == ["1.3.2", "1.3.9"]
     row_132 = next(
         e for e in s.trace
         if e.get("sutra_id") == "1.3.2" and e.get("status") == "APPLIED"

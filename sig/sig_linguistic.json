@@ -1,46 +1,39 @@
 {
   "hub_rules": [
     {
-      "fire_count": 180,
+      "fire_count": 501,
       "hub_type": "broadcast",
-      "in_degree": 13,
-      "out_degree": 18,
+      "in_degree": 2,
+      "out_degree": 28,
+      "sutra_id": "1.4.13"
+    },
+    {
+      "fire_count": 171,
+      "hub_type": "broadcast",
+      "in_degree": 12,
+      "out_degree": 14,
       "sutra_id": "1.4.18"
     },
     {
-      "fire_count": 497,
-      "hub_type": "sink",
-      "in_degree": 23,
-      "out_degree": 4,
-      "sutra_id": "1.4.110"
-    },
-    {
-      "fire_count": 291,
+      "fire_count": 168,
       "hub_type": "broadcast",
       "in_degree": 5,
-      "out_degree": 17,
-      "sutra_id": "1.3.9"
-    },
-    {
-      "fire_count": 166,
-      "hub_type": "broadcast",
-      "in_degree": 3,
-      "out_degree": 19,
-      "sutra_id": "1.2.41"
-    },
-    {
-      "fire_count": 325,
-      "hub_type": "broadcast",
-      "in_degree": 3,
       "out_degree": 13,
-      "sutra_id": "1.3.4"
+      "sutra_id": "1.1.43"
+    },
+    {
+      "fire_count": 300,
+      "hub_type": "broadcast",
+      "in_degree": 5,
+      "out_degree": 11,
+      "sutra_id": "1.3.9"
     },
     {
       "fire_count": 21,
       "hub_type": "broadcast",
       "in_degree": 1,
-      "out_degree": 11,
-      "sutra_id": "6.1.97"
+      "out_degree": 13,
+      "sutra_id": "7.2.102"
     }
   ]
 }

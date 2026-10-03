@@ -48,10 +48,17 @@ def test_rADA_strI_trace_smoke_prathamA_eka_includes_6_1_68():
     assert "6.1.68" in path
 
 
+def _in_order(path, wanted):
+    """The rules fire in this order; saṃjñā rules (1.x) may fall between them — they apply when their
+    condition arises, so the resolver-driven path does not keep them out of the way."""
+    it = iter(path)
+    return all(any(step == w for step in it) for w in wanted)
+
+
 def test_rADA_strI_trace_smoke_sambuddhi_eka_7_3_106_then_6_1_69():
     st = derive("rADA", 8, 1, linga="strīliṅga")
     path = extract_applied_path(st.trace)
-    assert _contains_contiguous_subsequence(path, ["7.3.106", "6.1.69"])
+    assert _in_order(path, ["7.3.106", "6.1.69"])
 
 
 def test_rADA_strI_trace_smoke_sambuddhi_dvi_6_1_87():
@@ -64,4 +71,4 @@ def test_rADA_strI_trace_smoke_sambuddhi_dvi_6_1_87():
 def test_rADA_strI_trace_smoke_sambuddhi_bahu_jas_tripadi():
     st = derive("rADA", 8, 3, linga="strīliṅga")
     path = extract_applied_path(st.trace)
-    assert _contains_contiguous_subsequence(path, ["6.1.101", "1.4.110", "8.2.66", "8.3.15"])
+    assert _in_order(path, ["6.1.101", "8.2.66", "8.3.15"]) and "1.4.110" in path

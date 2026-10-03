@@ -157,6 +157,29 @@ def in_dry_run() -> bool:
     return _DRY_DEPTH > 0
 
 
+def _probe_clone(state: State) -> State:
+    """A throw-away copy for a dry run. ``State.clone`` deep-copies the trace and ``meta``, which
+    is most of the cost of a derivation step; a probe needs neither the history nor an isolated
+    deep ``meta`` — one level of copying keeps a rule's writes off the original."""
+    import copy
+
+    return State(
+        terms=[t.clone() for t in state.terms],
+        samjna_registry=dict(state.samjna_registry),
+        paribhasha_gates=dict(state.paribhasha_gates),
+        adhikara_stack=[dict(e) for e in state.adhikara_stack],
+        blocked_sutras=set(state.blocked_sutras),
+        niyama_gates=dict(state.niyama_gates),
+        atidesha_map=dict(state.atidesha_map),
+        vibhasha_forks=list(state.vibhasha_forks),
+        nipatana_flag=state.nipatana_flag,
+        tripadi_zone=state.tripadi_zone,
+        phase=state.phase,
+        trace=[],
+        meta={k: (copy.copy(v) if isinstance(v, (list, dict, set)) else v) for k, v in state.meta.items()},
+    )
+
+
 def probe(sutra_id: str, state: State) -> State:
     """Apply ``sutra_id`` to a clone, as a dry run."""
     global _DRY_DEPTH
@@ -164,7 +187,7 @@ def probe(sutra_id: str, state: State) -> State:
 
     _DRY_DEPTH += 1
     try:
-        return apply_rule(sutra_id, state.clone())
+        return apply_rule(sutra_id, _probe_clone(state))
     finally:
         _DRY_DEPTH -= 1
 
@@ -184,21 +207,54 @@ def tape_fingerprint(state: State) -> tuple:
     )
 
 
+_EFFECTIVE_MEMO: dict[tuple, bool] = {}
+_GATE_ONLY_NAMES = frozenset({"samhita_gate_eligible", "tripadi_gate_eligible", "_GATE_KEY"})
+
+
+def is_gate_only(sutra_id: str) -> bool:
+    """A registered-but-unwritten rule: its ``cond`` is nothing but ``samhita_gate_eligible`` and its
+    ``act`` only records that it ran (ROADMAP A2/C1: ~600 of them). Static, from the code object, so
+    it flips the moment someone writes the real rule — and it saves the dry run, which was 96 % of
+    all probes."""
+    rec = SUTRA_REGISTRY.get(sutra_id)
+    code = getattr(getattr(rec, "cond", None), "__code__", None)
+    return bool(code) and set(code.co_names) <= _GATE_ONLY_NAMES and len(code.co_names) > 1
+
+# vibhakti_vacana: the coordinate a cond may not read (Art. 2); the others are logs that only grow.
+_META_NOISE = frozenset({"art18_gaps", "forked_from", "vibhakti_vacana", "it_lopa_log"})
+
+
+def _meta_key(state: State) -> tuple:
+    """Everything in ``state.meta`` a rule might read, minus bookkeeping that grows every step."""
+    return tuple(sorted((k, repr(v)) for k, v in state.meta.items() if k not in _META_NOISE))
+
+
 def effective_candidates(candidates: List[str], state: State) -> List[str]:
     """A candidate that would not change the tape is not a candidate (ROADMAP C2).
 
     Defined on :func:`tape_fingerprint`, not on the surface string — a saṃjñā
     (1.3.2 उपदेशेऽजनुनासिक इत्) changes no letter yet is exactly what the next rule
-    waits for.
+    waits for. Whether a rule changes a given tape is a pure function of that tape
+    (a rule's ``cond``/``act`` read the tape only — Art. 2), so the answer is memoised on
+    ``(sūtra, tape)``: the same intermediate state recurs across the cells of a paradigm.
     """
     before = tape_fingerprint(state)
     keep = []
     for sid in candidates:
-        try:
-            if tape_fingerprint(probe(sid, state)) != before:
-                keep.append(sid)
-        except Exception:
+        if is_gate_only(sid):
             continue
+        key = (sid, before, state.phase, _meta_key(state))
+        hit = _EFFECTIVE_MEMO.get(key)
+        if hit is None:
+            try:
+                hit = tape_fingerprint(probe(sid, state)) != before
+            except Exception:
+                hit = False
+            if len(_EFFECTIVE_MEMO) > 200_000:
+                _EFFECTIVE_MEMO.clear()
+            _EFFECTIVE_MEMO[key] = hit
+        if hit:
+            keep.append(sid)
     return keep
 
 

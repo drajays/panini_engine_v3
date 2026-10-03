@@ -130,7 +130,9 @@ def cond(state: State) -> bool:
     if hit is None:
         return False
     ti, vi = hit
-    if vi == len(state.terms[ti].varnas) - 1:  # cross-Term junction: para rule may take it
+    from engine.resolver import decides
+
+    if vi == len(state.terms[ti].varnas) - 1 and not decides():  # cross-Term junction: para rule may take it
         j = next(k for k in range(ti + 1, len(state.terms)) if state.terms[k].varnas)
         if _para_competitor(state, ti, j):
             return False

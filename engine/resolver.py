@@ -53,6 +53,27 @@ DECISION_LAYERS: FrozenSet[str] = frozenset({
 })
 
 
+_DECIDES: list[bool] = [False]
+
+
+class resolver_decides:
+    """Context manager: while a derivation is driven by the resolver (the subanta scanner, the
+    autonomous loop), a rule must not pre-judge its rivals — 6.1.97 used to decline by itself when a
+    later rule also applied (ROADMAP C2/C4, Art. 15). Recipe pipelines, which have no resolver, still
+    rely on that self-narrowing; it disappears with the last of them."""
+
+    def __enter__(self):
+        self._prev = _DECIDES[0]
+        _DECIDES[0] = True
+
+    def __exit__(self, *exc):
+        _DECIDES[0] = self._prev
+
+
+def decides() -> bool:
+    return _DECIDES[0]
+
+
 class UnresolvedConflict(RuntimeError):
     """All resolver layers failed to pick a unique winner."""
 

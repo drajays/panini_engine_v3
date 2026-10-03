@@ -91,19 +91,31 @@ def replay_subanta_trace(
     scheduled sūtra — including *SKIPPED* / *BLOCKED* rows that still ran
     ``cond`` / gates — is timed when ``per_step_times`` is passed.
     """
+    from contextlib import nullcontext
+
+    from engine.resolver import resolver_decides
     from pipelines.subanta import build_initial_state, _pada_merge
 
+    def _resolver_verdict(step: Dict[str, Any]) -> bool:
+        # a BLOCKED row written by engine.resolver ("para: X beat Y …") records a *contest*; the loser
+        # never ran, so replaying it would apply a rule the derivation did not (Art. 9).
+        return step.get("status") == "BLOCKED" and " beat " in str(step.get("gate_reason", ""))
+
+    resolver_driven = any(_resolver_verdict(step) for step in reference_trace)
     s = build_initial_state(stem_slp1, vibhakti, vacana, linga)
-    for step in reference_trace:
-        sid = step.get("sutra_id", "")
-        if sid == "__MERGE__":
-            _pada_merge(s)
-        elif sid and not sid.startswith("__"):
-            if per_step_times is not None:
-                s = apply_rule_timed(sid, s, per_step_times)
-            else:
-                from engine.dispatcher import apply_rule
-                s = apply_rule(sid, s)
+    with (resolver_decides() if resolver_driven else nullcontext()):
+        for step in reference_trace:
+            sid = step.get("sutra_id", "")
+            if sid == "__MERGE__":
+                _pada_merge(s)
+            elif _resolver_verdict(step):
+                continue
+            elif sid and not sid.startswith("__"):
+                if per_step_times is not None:
+                    s = apply_rule_timed(sid, s, per_step_times)
+                else:
+                    from engine.dispatcher import apply_rule
+                    s = apply_rule(sid, s)
     return s
 
 

@@ -563,6 +563,13 @@ def _note_tripadi(state: State, sutra_id: str) -> None:
 
 
 def run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
+    from engine.resolver import resolver_decides
+
+    with resolver_decides():
+        return _run_subanta_post_4_1_2_scanner(s, max_steps=max_steps)
+
+
+def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
     """
     Scan-driven execution for the post-4.1.2 region.
 
@@ -649,7 +656,11 @@ def run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
             # An adhikāra (6.4.1 अङ्गस्य, 8.2.1 पूर्वत्रासिद्धम्) changes no letter but opens the
             # scope every later rule reads; it is exempt from the vacuity test.
             scopes = [c for c in candidates if get_sutra(c).sutra_type is _ST2.ADHIKARA]
-            candidates = effective_candidates([c for c in candidates if c not in scopes], s) + scopes
+            rest = [c for c in candidates if c not in scopes]
+            # One rule left needs no contest; the no-progress ledger below catches it if it is vacuous.
+            # Probing every candidate on a clone is what makes this path slow, so only contested
+            # steps pay for it.
+            candidates = (effective_candidates(rest, s) if len(rest) > 1 else rest) + scopes
             if not candidates:
                 return
 
@@ -658,16 +669,10 @@ def run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
             sig_before = _state_sig(s)
             before_len = len(s.trace)
             s = apply_rule(winner, s)
-            if len(s.trace) > before_len:
-                last = s.trace[-1]
-                if last.get("sutra_id") == winner and last.get("status") in TRACE_STATUSES_FIRED:
-                    sig_after = _state_sig(s)
-                    # If this firing did not change anything observable in the
-                    # state signature, do not allow it to re-fire on the exact
-                    # same signature again.  But the rule remains available for
-                    # other sites or after other rules change the tape.
-                    if sig_after == sig_before:
-                        no_progress_sites.add((winner, sig_before))
+            # Whatever the status (a declined vibhāṣā is not FIRED), a step that left the state
+            # signature unchanged may not run again on that same signature.
+            if _state_sig(s) == sig_before:
+                no_progress_sites.add((winner, sig_before))
 
     # Phase-ordered pools (still glass-box, but no hardcoded linear macro pass):
     # - it-prakaraṇa first (so later rules see cleaned affix shapes)
@@ -689,14 +694,37 @@ def run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
              or rec.sutra_type is _ST.ADHIKARA)),      # 8.2.1 itself: it opens the stratum
         key=lambda sid: tuple(int(x) for x in sid.split(".")),
     )
-    sandhi_ids  = [sid for sid in all_ids if sid.startswith("6.1.")]
+    # The sandhi pool is 6.1.* plus the Adhyāya-1 rules the curated spine places *between* sandhi rules
+    # (1.1.11 must see the harī that 6.1.102 has just made; 1.1.51 shapes the guṇa that precedes 6.1.77):
+    # saṃjñā and paribhāṣā apply whenever their condition arises, not at a stage.
+    first6 = next(i for i, sid in enumerate(all_ids) if sid.startswith("6.1."))
+    last6 = max(i for i, sid in enumerate(all_ids) if sid.startswith("6.1."))
+    sandhi_ids = [sid for i, sid in enumerate(all_ids)
+                  if sid.startswith("6.1.") or (first6 <= i <= last6 and sid.startswith("1.") and not sid.startswith("1.3."))]
     angakarya_ids = [
         sid for sid in all_ids
-        if sid not in set(it_ids) | set(sandhi_ids) and not is_tripadi_sutra(sid)
-    ]
+        if sid not in set(it_ids) and not sid.startswith("6.1.") and not is_tripadi_sutra(sid)
+    ]       # Adhyāya 1 stays in this pool too (see sandhi_ids)
+
+    def _why_not(ids: list[str]) -> None:
+        """Glass box: a rule of the pool that never came up still shows in the trace as SKIPPED
+        (cond false here) — the learner sees what was *not* applied, as the recipe always showed."""
+        nonlocal s
+        seen = {row.get("sutra_id") for row in s.trace}
+        for sid in ids:
+            rec = get_sutra(sid)
+            if sid in seen or rec.cond is None or is_blocked(sid, s):
+                continue
+            try:
+                if rec.cond(s):
+                    continue
+            except Exception:
+                pass
+            s = apply_rule(sid, s)
 
     _scan_pool(it_ids)
     _scan_pool(angakarya_ids)
+    _why_not(angakarya_ids)
     # Second it-prakaraṇa pass over substitutes created in aṅgakārya (śī 7.1.17/19,
     # śi 7.1.20: ś is it by 1.3.8).
     _scan_pool(list(IT_PRAKARANA_SEQUENCE))
@@ -705,8 +733,7 @@ def run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
     # (8.2.66 _target_premerge requires len(terms)≥2, so must run before _pada_merge)
     _scan_pool(["8.2.1", "8.2.7", "8.2.66"])
 
-    if len(s.terms) > 1:
-        _pada_merge(s)
+    _pada_merge(s)          # always: a single term (su already lopa'd) still becomes the pada (8.2.7 reads it)
 
     _scan_pool(tripadi_ids)
     return s
@@ -735,12 +762,29 @@ def run_subanta_pipeline(s: State) -> State:
     return run_subanta_sup_attach_and_finish(s)
 
 
+# (stem, liṅga) pairs whose forms the resolver-driven scanner does not yet reproduce, measured by
+# tools/loop_vs_recipe on 2026-10-03. Two causes, both *missing rules*, not pipeline bugs:
+#   • the strī of the tyadādi/kim/etad family needs ṭāp (4.1.4) as a rule — the recipe injects it structurally;
+#   • idam's 7.2.102–113 ordering needs Kāśikā-sourced apavāda/nitya declarations (docs/GITA_GAP_PLAN.md).
+# Quarantined, not hidden: they stay on the recipe until their rules exist; the set may only shrink
+# (tests/constitutional/test_recipe_only_stems_ratchet.py). "*" = every liṅga.
+_RECIPE_ONLY: frozenset[tuple[str, str]] = frozenset({
+    ("idam", "*"), ("tyad", "strīliṅga"), ("tad", "strīliṅga"), ("yad", "strīliṅga"),
+    ("etad", "strīliṅga"), ("kim", "strīliṅga"), ("kim", "napuṃsaka"),
+})
+
+
+def _recipe_only(stem_slp1: str, linga: str, anvadesha: bool) -> bool:
+    # anvādeśa (2.4.32–34) is a caller-proposed input whose rules the scanner pool does not carry yet.
+    return anvadesha or (stem_slp1, "*") in _RECIPE_ONLY or (stem_slp1, linga) in _RECIPE_ONLY
+
+
 def derive(stem_slp1: str, vibhakti: int, vacana: int,
            linga: str = "pulliṅga",
            *,
            matra_prathama_2_3_46: bool = False,
            nAmadheya_vrddha_term_indices: tuple[int, ...] | frozenset[int] | None = None,
-           autonomous_scanner: bool = False,
+           autonomous_scanner: bool | None = None,
            anvadesha: bool = False,
            ugit: bool = False,
            han_dhatu: bool = False,
@@ -802,6 +846,8 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
         _SARVANAM = {(1,1),(1,2),(1,3),(2,1),(2,2),(2,3)}
         if (vibhakti, vacana) in _SARVANAM and vibhakti != 8:
             s.meta["sakhyu_recipe"] = True
+    if autonomous_scanner is None:
+        autonomous_scanner = not _recipe_only(stem_slp1, linga, anvadesha)
     if autonomous_scanner:
         return run_subanta_sup_attach_and_finish_scanner(s)
     return run_subanta_pipeline(s)
