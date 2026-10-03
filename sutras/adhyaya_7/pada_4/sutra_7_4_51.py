@@ -38,10 +38,7 @@ def _find_tasi_before_r(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not state.meta.get("ri_ca_recipe"):
-        return False
+    # structural: a tāsi ending in …ās before an r-initial affix (rau, ras of luṭ's 3du/3pl) — no recipe gate
     return _find_tasi_before_r(state) is not None
 
 
@@ -52,6 +49,7 @@ def act(state: State) -> State:
         # Drop the final s from tAs → tA
         if t.varnas and t.varnas[-1].slp1 == "s":
             t.varnas = t.varnas[:-1]
+            state.meta["__why_now_dev__"] = "तासः अन्त्य-सकारस्य रेफादौ परे लोपः — भवितास् + रौ → भविता + रौ (भवितारौ, भवितारः)। (७.४.५१)"
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["anga_kind"]             = "7.4.51"

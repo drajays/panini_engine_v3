@@ -44,7 +44,20 @@ def _cli_insert_index(state: State) -> int | None:
     return None
 
 
+def _structural_site(state: State) -> int | None:
+    """च्लिः लुङि: before a tiṅ whose own source lakāra is luṅ (read from the affix, Art. 2), once."""
+    if any((t.meta.get("upadesha_slp1") or "").strip() in ("cli", "sic") for t in state.terms):
+        return None
+    for i, t in enumerate(state.terms):
+        if t.kind == "pratyaya" and "tin_adesha_3_4_78" in t.tags and not t.meta.get("3_1_43_cli_done") and \
+                (t.meta.get("source_lakara_upadesha") or "").strip() == "luG":
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
+    if _structural_site(state) is not None and any("dhatu" in t.tags for t in state.terms):
+        return True
     # Glass-box arming: pipelines must opt-in (CONSTITUTION: cond() may not read paradigm selectors).
     if not state.meta.get("cli_luG_recipe", False):
         return False
@@ -54,7 +67,11 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    li = _cli_insert_index(state)
+    li = _structural_site(state)
+    if li is not None:
+        state.meta["__why_now_dev__"] = "लुङि परे धातोः च्लि-विकरणः (शपः अपवादः) — पश्चात् च्लेः सिच् (३.१.४४)। (३.१.४३)"
+    else:
+        li = _cli_insert_index(state)
     assert li is not None
     pr = Term(
         kind="pratyaya",
@@ -63,6 +80,8 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "cli"},
     )
     state.terms.insert(li, pr)
+    state.terms[li + 1].meta["3_1_43_cli_done"] = True      # sic may be luk'd by 2.4.77; cli must not come back
+    state.terms[li + 1].meta["vikarana_chosen"] = True      # …nor may śap (3.1.68) take the slot cli/sic left
     return state
 
 
@@ -74,6 +93,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "च्लि / लुङि",
     why_dev        = "लुङ्-लकारे धातोः परे च्लि-आगमः (सिच्-आदेश-पूर्वः)।",
     anuvritti_from = ("3.1.91",),
+    apavada_of     = ("3.1.68", "3.1.69", "3.1.77", "3.1.78", "3.1.79", "3.1.81"),   # luṅ takes cli, not the sārvadhātuka vikaraṇas
     cond           = cond,
     act            = act,
 )

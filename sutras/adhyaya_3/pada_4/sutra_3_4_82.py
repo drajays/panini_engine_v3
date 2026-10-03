@@ -72,7 +72,26 @@ def _find_rightmost_pratyaya(state: State) -> int | None:
     return None
 
 
+# परस्मैपदानां णलतुसुस्थलथुसणल्वमाः: the nine parasmaipada tiṅ — tip tas jhi sip thas tha mip vas mas, in 3.4.78's
+# order — become ṇal atus us thal athus a ṇal va ma, यथासंख्यम् (1.3.10). Keyed by the *sthānin*, never by
+# (puruṣa, vacana).
+_LIT_ADESHA = {"tip": "Ral", "tas": "atus", "Ji": "us", "sip": "Tal", "Tas": "aTus",
+               "Ta": "a", "mip": "Ral", "vas": "va", "mas": "ma"}
+
+
+def _structural_site(state: State) -> int | None:
+    for i, t in enumerate(state.terms):
+        if t.kind != "pratyaya" or "tin_adesha_3_4_78" not in t.tags or t.meta.get("3_4_82_done"):
+            continue
+        if (t.meta.get("source_lakara_upadesha") or "").strip() == "liT" and "parasmaipada" in t.tags \
+                and (t.meta.get("upadesha_slp1") or "").strip() in _LIT_ADESHA:
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
+    if _structural_site(state) is not None:
+        return True
     if not state.meta.get("lakara_liT"):
         return False
     # General liṭ arm
@@ -110,6 +129,20 @@ def _mark_it_candidates(adesha: str, varnas: list) -> None:
 
 
 def act(state: State) -> State:
+    i = _structural_site(state)
+    if i is not None:
+        from engine.sthanivat import TING_PRATYAYATVA, adesha_substitute_varnas
+
+        t = state.terms[i]
+        adesha = _LIT_ADESHA[(t.meta.get("upadesha_slp1") or "").strip()]
+        adesha_substitute_varnas(t, adesha, state, sutra_id="3.4.82", gunadharmas=frozenset({TING_PRATYAYATVA}))
+        _mark_it_candidates(adesha, t.varnas)
+        t.tags.add("upadesha")
+        t.meta["3_4_82_done"] = True
+        state.meta["__why_now_dev__"] = (
+            f"लिटः परस्मैपद-तिङां यथासंख्यं णल्-अतुस्-उस्-थल्-अथुस्-अ-णल्-व-मा: — {adesha}। (३.४.८२)"
+        )
+        return state
     # General liṭ arm — replaces rightmost pratyaya with the given ādeśa
     if state.meta.get("liT_82_recipe") and state.meta.get("liT_82_adesha_form"):
         ti = _find_rightmost_pratyaya(state)

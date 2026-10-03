@@ -109,6 +109,8 @@ def find_sap_insertion_dhatu_index(state: State) -> int | None:
             continue
         if SAP_INSERT_TAG in nxt.tags:
             continue
+        if nxt.meta.get("vikarana_chosen"):     # cli/sic already took the slot (and may have been luk'd, 2.4.77)
+            continue
         # A tiṅ stays a tiṅ — and sārvadhātuka — after an ādeśa replaces it (1.1.56 sthānivat; tas → tām
         # is still the tiṅ 3.4.113 named), so the tags decide first; the upadeśa inventory is the
         # fallback for affixes that never went through 3.4.78/3.4.113.

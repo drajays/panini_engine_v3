@@ -58,7 +58,25 @@ def _site_p036(state: State) -> bool:
     return True
 
 
+def _structural_site(state: State) -> int | None:
+    """लिटि धातोरनभ्यासस्य: the dhātu (not an abhyāsa, not yet doubled) stands before a liṭ affix — read from the
+    tiṅ's own source lakāra (Art. 2). Returns the dhātu's index."""
+    if _site_p036(state):        # nAy + ṇal: the P036 branch (abhyāsa ne) owns it
+        return None
+    for i, t in enumerate(state.terms):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("6_1_8_dvitva_done"):
+            continue
+        if i > 0 and "abhyasa" in state.terms[i - 1].tags:
+            continue
+        if any(u.kind == "pratyaya" and "tin_adesha_3_4_78" in u.tags and u.varnas
+               and (u.meta.get("source_lakara_upadesha") or "").strip() == "liT" for u in state.terms[i + 1:]):
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
+    if _structural_site(state) is not None:
+        return True
     if not state.meta.get("lakara_liT"):
         return False
     if _site_p036(state):
@@ -74,6 +92,23 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    di = _structural_site(state)
+    if di is not None:
+        dh = state.terms[di]
+        ab = Term(
+            kind=dh.kind,
+            varnas=[deepcopy(v) for v in dh.varnas],
+            tags=set(dh.tags) | {"abhyasa"},
+            meta=dict(dh.meta),
+        )
+        ab.tags.discard("dhatu")
+        ab.meta["6_1_8_abhyasa"] = True
+        state.terms.insert(di, ab)
+        state.terms[di + 1].meta["6_1_8_dvitva_done"] = True
+        state.meta["__why_now_dev__"] = (
+            "लिटि परे अनभ्यासस्य धातोः द्वित्वम् (एकाचो द्वे प्रथमस्य ६.१.१); पूर्वोऽभ्यासः (६.१.४) — भू → भू-भू। (६.१.८)"
+        )
+        return state
     if _site_p036(state):
         di = _first_dhatu_index(state)
         assert di is not None

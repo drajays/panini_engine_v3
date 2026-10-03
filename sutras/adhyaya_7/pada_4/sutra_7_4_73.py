@@ -34,7 +34,19 @@ def _find_abhyasa_u(state: State):
     return None
 
 
+def _structural_site(state: State) -> bool:
+    """भवतेरः: the abhyāsa of bhū (liṭ's dvitva) takes a for its u — बभूव, not *बुभूव."""
+    dh = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+    if dh is None or (dh.meta.get("upadesha_slp1") or "").strip() not in {"BU", "BU~"}:
+        return False
+    if not any(u.kind == "pratyaya" and (u.meta.get("source_lakara_upadesha") or "") == "liT" for u in state.terms):
+        return False
+    return _find_abhyasa_u(state) is not None
+
+
 def cond(state: State) -> bool:
+    if _structural_site(state):
+        return True
     if not state.meta.get("bhU_abhyasa_recipe"):
         return False
     if state.samjna_registry.get("7_4_73_bhavatеra"):
@@ -49,6 +61,7 @@ def act(state: State) -> State:
     i, j = hit
     state.terms[i].varnas[j] = mk("a")
     state.terms[i].meta["7_4_73_done"] = True
+    state.meta["__why_now_dev__"] = "भवतेः अभ्यासस्य उकारस्य अकारः — भू-भू → भ-भू (बभूव)। (७.४.७३)"
     state.meta["bhU_abhyasa_recipe"] = False
     state.samjna_registry["7_4_73_bhavatеra"] = True
     return state

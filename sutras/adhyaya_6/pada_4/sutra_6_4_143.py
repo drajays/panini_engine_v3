@@ -69,7 +69,7 @@ def _find_lut(state: State) -> int | None:
         nxt = state.terms[i + 1]
         if not nxt.varnas:
             continue
-        if not nxt.meta.get("dit_pratyaya"):
+        if not (nxt.meta.get("dit_pratyaya") or {"dit_pratyaya", "it:qit"} & nxt.tags):     # डिति: the tag the it-prakaraṇa leaves
             continue
         return i
     return None

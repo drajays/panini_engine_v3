@@ -12,6 +12,12 @@ from phonology    import mk
 
 
 def _find(state: State):
+    # गुणो यङ्लुकोः: before yaṅ / yaṅ-luk (बोभूयते, लोलुवः) — never a tiṅ's abhyāsa (liṭ: बभूव). A yaṅ-luk tape
+    # carries no tiṅ; a tape with a tiṅ qualifies only if the yaṅ is there.
+    has_yan = any((u.meta.get("upadesha_slp1") or "") in ("yaN", "yaG") or "yaN" in u.tags or u.meta.get("yaN_luk")
+                  for u in state.terms)
+    if not has_yan and any("tin_adesha_3_4_78" in u.tags for u in state.terms):
+        return None
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags:
             continue

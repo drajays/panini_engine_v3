@@ -90,7 +90,31 @@ def _lRG_dhatu_index(state: State) -> int | None:
     return None
 
 
+_VIKARANA_BY_SOURCE = {"lRT": "sya", "lRG": "sya", "luT": "tAs"}
+
+
+def _provenance_site(state: State):
+    """(index, source lakāra) where the vikaraṇa goes: after the dhātu, before a tiṅ whose *own source
+    lakāra* is lṛṭ / lṛṅ (sya) or luṭ (tās). Read from the affix (Art. 2), not from the derivation."""
+    for j, tin in enumerate(state.terms):
+        source = (tin.meta.get("source_lakara_upadesha") or "").strip()
+        if tin.kind != "pratyaya" or "tin_adesha_3_4_78" not in tin.tags or source not in _VIKARANA_BY_SOURCE:
+            continue
+        if tin.meta.get("3_1_33_done"):
+            continue
+        di = next((i for i in range(j - 1, -1, -1) if "dhatu" in state.terms[i].tags), None)
+        if di is None:
+            continue
+        between = [(u.meta.get("upadesha_slp1") or "").strip() for u in state.terms[di + 1:j]]
+        if {"sya", "sy", "tAs"} & set(between):
+            continue
+        return di + 1, source
+    return None
+
+
 def cond(state: State) -> bool:
+    if _provenance_site(state) is not None:
+        return True
     if _lrng_ṛ_sy_insert_index(state) is not None:
         return True
     if (
@@ -110,6 +134,22 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    site = _provenance_site(state)
+    if site is not None:
+        idx, source = site
+        tin = state.terms[idx]
+        if _VIKARANA_BY_SOURCE[source] == "tAs":
+            vik = Term(kind="pratyaya", varnas=[mk("t"), mk("A"), mk("s")], tags={"pratyaya", "ardhadhatuka"},
+                       meta={"upadesha_slp1": "tAs", "tAsi_vikaraṇa": True})
+            state.meta["__why_now_dev__"] = "लुटि स्यतासी लृलुटोः — तास् धातोः परं (भवितास्मि, भविता)। (३.१.३३)"
+        else:
+            vik = Term(kind="pratyaya", varnas=[mk("s"), mk("y"), mk("a")], tags={"pratyaya", "vikarana", "upadesha"},
+                       meta={"upadesha_slp1": "sya", {"lRT": "lrt_vikarana", "lRG": "lRG_vikarana"}[source]: True})
+            state.meta["__why_now_dev__"] = "लृटि लृङि च स्यतासी लृलुटोः — स्य धातोः परम् (भविष्यति, अभविष्यत्)। (३.१.३३)"
+        state.terms.insert(idx, vik)
+        state.terms[idx + 1].meta["3_1_33_done"] = True
+        state.meta["3_1_33_lrt_sy_done"] = state.meta["3_1_33_lRG_sy_done"] = True      # keep the older branches quiet
+        return state
     j_ṛ = _lrng_ṛ_sy_insert_index(state)
     if j_ṛ is not None:
         sy = Term(
@@ -179,6 +219,9 @@ SUTRA = SutraRecord(
     padaccheda_dev = "स्य-तासी / लृ-लुटोः",
     why_dev        = "लुट्-परे तासि-आगमः; P019: लृङि ``sy``-विकरणः।",
     anuvritti_from = ("3.1.22",),
+    # स्य / तासि are the vikaraṇas of lṛṭ·lṛṅ / luṭ; the sārvadhātuka vikaraṇas (śap, śyan, śnu, śa, śnam, u, śnā)
+    # do not stand there. Declared, so the resolver — not a condition inside each of them — decides.
+    apavada_of     = ("3.1.68", "3.1.69", "3.1.73", "3.1.77", "3.1.78", "3.1.79", "3.1.81"),
     cond           = cond,
     act            = act,
 )

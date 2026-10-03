@@ -84,6 +84,11 @@ def _find(state: State):
         return None
     if not dhatu.varnas:
         return None
+    # A kit āgama stands at the *end* of the aṅga it belongs to (1.1.46 आद्यन्तौ टकितौ: भू + वुक् → भूव्): the
+    # aṅga's final is then that hal, not the root's vowel, and there is no ac to take vṛddhi.
+    di0 = state.terms.index(dhatu)
+    if any("agama" in u.tags and u.varnas and "it:kit" in u.tags for u in state.terms[di0 + 1:-1]):
+        return None
     last = dhatu.varnas[-1].slp1
     # Paninian ``ac`` (अच्) — hrasva + dīrgha; ``AC`` pratyāhāra here is short-only.
     if not (is_hrasva(last) or is_dirgha(last)):

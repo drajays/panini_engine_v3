@@ -53,7 +53,23 @@ def _find_tin_residue(state: State, expected_varnas: tuple[str, ...]) -> int | N
     return None
 
 
+# लुटः प्रथमस्य डारौरसः: the prathama-puruṣa tiṅ of luṭ — tip · tas · jhi — become ḍā · rau · ras (यथासंख्यम्, 1.3.10).
+_PRATHAMA_ADESHA = {"tip": "qA", "tas": "rO", "Ji": "ras"}
+
+
+def _structural_site(state: State) -> int | None:
+    for i, t in enumerate(state.terms):
+        if t.kind != "pratyaya" or "tin_adesha_3_4_78" not in t.tags or t.meta.get("2_4_85_lut_prathama_done"):
+            continue
+        if (t.meta.get("source_lakara_upadesha") or "").strip() == "luT" \
+                and (t.meta.get("upadesha_slp1") or "").strip() in _PRATHAMA_ADESHA:
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
+    if _structural_site(state) is not None:
+        return True
     if not state.meta.get("luT_prathama_recipe"):
         return False
     if state.meta.get("2_4_85_lut_prathama_done"):
@@ -69,6 +85,19 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    i = _structural_site(state)
+    if i is not None:
+        from engine.sthanivat import TING_PRATYAYATVA, adesha_substitute_varnas
+
+        t = state.terms[i]
+        adesha = _PRATHAMA_ADESHA[(t.meta.get("upadesha_slp1") or "").strip()]
+        adesha_substitute_varnas(t, adesha, state, sutra_id="2.4.85", gunadharmas=frozenset({TING_PRATYAYATVA}))
+        t.tags.add("tin_adesha_2_4_85")        # the ḍ of ḍā is its it (→ 6.4.143 ṭi-lopa); rau and ras have none
+        t.meta["2_4_85_lut_prathama_done"] = True
+        state.meta["__why_now_dev__"] = (
+            f"लुटः प्रथमपुरुषस्य तिप्-तस्-झि इत्येतेषां यथासंख्यं डा-रौ-रस् — {adesha}। (२.४.८५)"
+        )
+        return state
     adesha = (state.meta.get("luT_adesha_form") or "qA").strip()
     expected_list = _PRATHAMA_MAP.get(adesha)
     if not expected_list:

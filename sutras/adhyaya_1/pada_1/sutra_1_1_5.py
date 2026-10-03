@@ -54,7 +54,9 @@ def _immediate_trigger_is_kngiti(state: State) -> bool:
     trigger_idx = dhatu_idx + 1
     if trigger_idx >= len(state.terms):
         return False
-    return "kngiti" in state.terms[trigger_idx].tags
+    # क्ङिति — literally: with k or ṅ as its it. The tag the saṃjñā rules leave, or the it-marker itself
+    # (a ṅit lakāra's tiṅ inherits the ṅ, 1.1.56).
+    return bool({"kngiti", "it:Git", "it:kit"} & state.terms[trigger_idx].tags)
 
 
 def ik_guna_vriddhi_blocked_by_1_1_5(state: State) -> bool:

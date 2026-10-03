@@ -32,11 +32,9 @@ from phonology.pratyahara import YAN
 
 
 def _val_initial(pr_first: str) -> bool:
-    if pr_first not in HAL:
-        return False
-    if pr_first in YAN:
-        return False
-    return True
+    """वल् = every consonant of the pratyāhāra list *after* ह and य: v, r, l and all that follow — not h, not y.
+    (It used to exclude all of यण्, so व of वस् → व in liṭ needed a recipe arm: बभूविव.)"""
+    return pr_first in HAL and pr_first not in ("y", "h")
 
 
 def _ardhadhatuka_vikarana_index(state: State) -> int | None:

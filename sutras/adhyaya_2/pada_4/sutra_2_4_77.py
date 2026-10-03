@@ -48,8 +48,10 @@ def sic_luk_dhatu(state: State) -> bool:
 
 def _parasmaipada(state: State) -> bool:
     """परस्मैपदेषु — the tiṅ ādeśa is a parasmaipada one (1.4.99 tag)."""
+    # The pada belongs to the sthānin (1.4.99): a tiṅ that 3.4.101 made spell like ta (Ta → ta) is still parasmaipada.
     return any("tin_adesha_3_4_78" in t.tags and "atmanepada" not in t.tags
-               and (t.meta.get("upadesha_slp1") or "").strip() not in _TAN for t in state.terms)
+               and ("parasmaipada" in t.tags or (t.meta.get("upadesha_slp1") or "").strip() not in _TAN)
+               for t in state.terms)
 
 
 _TAN = frozenset({"ta", "AtAm", "Ja", "TAs", "ATAm", "Dvam", "iw", "vahi", "mahiG", "mahiN"})
@@ -85,6 +87,9 @@ SUTRA = SutraRecord(
         "सिच् सम्पूर्णतः लुप्यते; पश्चात् ६.४.८८ वुक्-आगमः।"
     ),
     anuvritti_from        = ('2.4.72',),
+    # sic gone by luk takes jus (3.4.108/109, सिजभ्यस्त…) with it: न लुमताऽङ्गस्य (1.1.63) — what the luk'd pratyaya
+    # would have conditioned is not done. So where this applies, झि → अन्ति → अन् (अभूवन्), not जुस्. Declared.
+    apavada_of            = ("3.4.108",),
     cond                  = cond,
     act                   = act,
 )

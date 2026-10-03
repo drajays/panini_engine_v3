@@ -128,6 +128,10 @@ def _tinanta_start(case: Any) -> Any:
         state = apply_rule("3.1.91", state)
         state = P06a_pratyaya_adhikara_3_1_1_to_3(state)
         state = apply_rule(_LAKARA_ATTACH[lakara], state)
+        # the lakāra's own it-letter (loṭ's ṭ, laṅ/luṅ/liṅ's ṅ) goes *before* 3.4.78 puts a tiṅ in its place, and
+        # the ādeśa inherits that it-ness (1.1.56) — which is how a ṅit lakāra's tiṅ blocks guṇa (1.1.5)
+        state = apply_rule("1.3.3", state)
+        state = apply_rule("1.3.9", state)
     else:
         raise NotImplementedError(f"lakāra {lakara!r}: its attach sūtra does not attach on its own yet")
     state = P00_parasmai_tin_adesha(state, _select_tin_adesha(lakara, pada_key, purusha, vacana))

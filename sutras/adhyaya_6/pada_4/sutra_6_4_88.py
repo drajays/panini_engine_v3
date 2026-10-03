@@ -127,6 +127,9 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "भुवः वुक् लुङ्-लिटोः",
     why_dev               = "भू-धातोः लुङि लिटि च वुक्-आगमः।",
     anuvritti_from        = ('6.1.1',),
+    # भू takes vuk (kit) before luṅ/liṭ's affix, so the guṇa/vṛddhi that affix would give the root is never reached
+    # (बभूव, अभूत् — not *बभोव). Specific over general: declared (Art. 15).
+    apavada_of            = ("7.3.84", "7.2.115"),
     cond                  = cond,
     act                   = act,
 )

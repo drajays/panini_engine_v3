@@ -42,11 +42,15 @@ _PHASE_RANGES: dict[str, tuple[tuple[tuple[int, ...], tuple[int, ...]], ...]] = 
         ((3, 1, 1), (3, 4, 117)),
     ),
     "angakarya": (
+        # 6.1.1–6.1.71 (dvitva, samprasāraṇa, ṣatva…) come *before* saṃhitā (6.1.72 संहितायाम्) and, by
+        # sūtra kram, before the aṅga rules of 6.4 and 7.x that work on their output (abhyāsa-kārya 7.4.59–7.4.97
+        # after the dvitva 6.1.8 of liṭ).
+        ((6, 1, 1), (6, 1, 71)),
         ((6, 4, 1), (6, 4, 168)),
-        ((7, 1, 1), (7, 4, 62)),
+        ((7, 1, 1), (7, 4, 97)),
     ),
     "sandhi": (
-        ((6, 1, 1), (6, 1, 229)),
+        ((6, 1, 72), (6, 1, 229)),
         ((6, 2, 1), (6, 2, 199)),
         ((6, 3, 1), (6, 3, 999)),
         ((8, 1, 1), (8, 1, 73)),

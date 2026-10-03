@@ -7,7 +7,10 @@ from pipelines.tinanta import derive
 
 _GOLD_DEV: dict[tuple[int, int], str] = {
     (3, 1): "अत्ता",
-    (3, 2): "अत्तारः",
+    # 2.4.85 डारौरसः यथासंख्यम्: तिप् → डा, तस् → रौ, झि → रस्. The old table pinned अत्तारः at (3, 2) — the dual — which is the
+    # plural's form (the tests below never had a (3, 3) row). Corrected with the oracle's bhū luṭ cells (भवितारौ / भवितारः).
+    (3, 2): "अत्तारौ",
+    (3, 3): "अत्तारः",
     (2, 1): "अत्तासि",
     (2, 2): "अत्तास्थः",
     (2, 3): "अत्तास्थ",
