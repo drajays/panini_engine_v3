@@ -5,8 +5,8 @@
 of nouns and laṭ verbs). Menu `c` refreshes the numbers. CLI: `make confident`, `make autonomy`.
 
 ## Where things stand
-- **S0 done.** `tools/sutra_class.py` → `sig/sutra_class.json`, `docs/CONFIDENT_SUTRAS.md` (**216 of 3,983 confident**:
-  99 operational + 117 structural). Exempt ratchet 3,205 (`tests/constitutional/test_exempt_ratchet.py`). Probes on clones
+- **S0 done.** `tools/sutra_class.py` → `sig/sutra_class.json`, `docs/CONFIDENT_SUTRAS.md` (**220 of 3,983 confident**:
+  103 operational + 117 structural). Exempt ratchet 3,205 (`tests/constitutional/test_exempt_ratchet.py`). Probes on clones
   go through `engine.scheduler.probe` and are not counted as firings.
 - **S1 / ROADMAP C2 largely landed.** Loop (scheduler → resolver → apply_rule, no recipe): 11/11 certain subanta cases,
   3/3 bhū cells, laṭ kartari grid (6 roots × 9 cells), gaṇa-1 sweep **1,152 / 1,165** match the recipe
@@ -22,6 +22,13 @@ of nouns and laṭ verbs). Menu `c` refreshes the numbers. CLI: `make confident`
 Recipe still makes राधे by a 6.1.87 shortcut; the loop uses the real 7.1.18 → śī route (C4 will reconcile).
 Unmodelled in the loop: lakāras other than laṭ, ātmanepada/passive, juhotyādi ślu removal (placeholder term stays on tape),
 kṛt/taddhita starts.
+
+## Subanta lists → resolver (user-requested, 2026-10-03) — what is done, what is gated
+Done: resolver antaraṅga layer (PŚ 50) + apavāda-names-only-its-target; subanta *scanner* is resolver-driven over the whole
+tripāḍī and reproduces all 312 vendored cells (`tests/regression/test_subanta_scanner_matches_gold.py`); 7.1.9/7.3.105/7.3.108/1.4.7/7.1.18 fixed or declared.
+Gated (measured, see plan addendum): flipping `derive()` default + deleting `_para_competitor` from 6.1.97 — 22 files fail with both, 12 with the flip alone
+(trace-shape pins, idam/etad/kim pronoun paths, every non-subanta recipe relies on 6.1.97 declining itself). Do it after tinanta/krdanta/taddhita are loop-driven.
+B3 (the 87 निषेधs) needs a scholar to confirm block targets (Art. 19) — it cannot be automated.
 
 ## Resume here (S1 remainder, in order)
 1. **B2/B3** — declare conflicts (`apavada_of` / `blocks_sutra_ids`); the 87 निषेधs typed VIDHI (`docs/NISEDHA_REVIEW.md`; scholar confirms targets).

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-03T06:52:20+00:00",
+ "generated_at": "2026-10-03T10:16:06+00:00",
  "min_mentions": 5,
  "rows": [
   {
@@ -12,7 +12,7 @@
    "invoked": true,
    "moved": false,
    "cited": false,
-   "mentions": 48,
+   "mentions": 49,
    "status": "pending_structural"
   },
   {
@@ -25,7 +25,7 @@
    "invoked": true,
    "moved": false,
    "cited": false,
-   "mentions": 25,
+   "mentions": 27,
    "status": "pending_structural"
   },
   {
@@ -909,7 +909,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "pending_structural"
   },
   {
@@ -1949,7 +1949,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 33,
+   "mentions": 34,
    "status": "confident_structural"
   },
   {
@@ -1962,7 +1962,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 32,
+   "mentions": 33,
    "status": "confident_structural"
   },
   {
@@ -2014,7 +2014,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 11,
+   "mentions": 12,
    "status": "confident_structural"
   },
   {
@@ -2027,7 +2027,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 20,
+   "mentions": 21,
    "status": "confident_structural"
   },
   {
@@ -2040,7 +2040,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 83,
+   "mentions": 84,
    "status": "confident"
   },
   {
@@ -3158,7 +3158,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 2,
+   "mentions": 3,
    "status": "pending_structural"
   },
   {
@@ -3301,7 +3301,7 @@
    "invoked": true,
    "moved": false,
    "cited": false,
-   "mentions": 9,
+   "mentions": 10,
    "status": "pending_structural"
   },
   {
@@ -3314,7 +3314,7 @@
    "invoked": true,
    "moved": false,
    "cited": false,
-   "mentions": 5,
+   "mentions": 6,
    "status": "pending_structural"
   },
   {
@@ -7461,7 +7461,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 2,
+   "mentions": 3,
    "status": "working"
   },
   {
@@ -8500,7 +8500,7 @@
    "stub_gloss": false,
    "invoked": true,
    "moved": true,
-   "cited": false,
+   "cited": true,
    "mentions": 1,
    "status": "working"
   },
@@ -8916,7 +8916,7 @@
    "stub_gloss": false,
    "invoked": true,
    "moved": true,
-   "cited": false,
+   "cited": true,
    "mentions": 2,
    "status": "working"
   },
@@ -8942,7 +8942,7 @@
    "stub_gloss": false,
    "invoked": true,
    "moved": true,
-   "cited": false,
+   "cited": true,
    "mentions": 1,
    "status": "working"
   },
@@ -9059,7 +9059,7 @@
    "stub_gloss": false,
    "invoked": true,
    "moved": true,
-   "cited": false,
+   "cited": true,
    "mentions": 1,
    "status": "working"
   },
@@ -9098,7 +9098,7 @@
    "stub_gloss": false,
    "invoked": true,
    "moved": true,
-   "cited": false,
+   "cited": true,
    "mentions": 1,
    "status": "working"
   },
@@ -12647,7 +12647,7 @@
    "stub_gloss": false,
    "invoked": true,
    "moved": true,
-   "cited": false,
+   "cited": true,
    "mentions": 1,
    "status": "working"
   },
@@ -15897,7 +15897,7 @@
    "stub_gloss": false,
    "invoked": true,
    "moved": true,
-   "cited": false,
+   "cited": true,
    "mentions": 1,
    "status": "working"
   },
@@ -15923,7 +15923,7 @@
    "stub_gloss": false,
    "invoked": true,
    "moved": true,
-   "cited": false,
+   "cited": true,
    "mentions": 4,
    "status": "working"
   },
@@ -15936,7 +15936,7 @@
    "stub_gloss": false,
    "invoked": true,
    "moved": true,
-   "cited": false,
+   "cited": true,
    "mentions": 1,
    "status": "working"
   },
@@ -16275,7 +16275,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 73,
+   "mentions": 74,
    "status": "confident"
   },
   {
@@ -31861,7 +31861,7 @@
    "stub_gloss": false,
    "invoked": true,
    "moved": true,
-   "cited": false,
+   "cited": true,
    "mentions": 1,
    "status": "working"
   },
@@ -32720,7 +32720,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 40,
+   "mentions": 41,
    "status": "confident"
   },
   {
@@ -32850,7 +32850,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 20,
+   "mentions": 21,
    "status": "confident"
   },
   {
@@ -32870,14 +32870,14 @@
    "id": "6.1.89",
    "pada": "6.1",
    "type": "VIDHI",
-   "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "exempt": false,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "status": "placeholder"
+   "status": "unexercised"
   },
   {
    "id": "6.1.90",
@@ -32888,7 +32888,7 @@
    "stub_gloss": false,
    "invoked": true,
    "moved": true,
-   "cited": false,
+   "cited": true,
    "mentions": 2,
    "status": "working"
   },
@@ -32935,14 +32935,14 @@
    "id": "6.1.94",
    "pada": "6.1",
    "type": "VIDHI",
-   "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "exempt": false,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
-   "status": "placeholder"
+   "status": "gate_only"
   },
   {
    "id": "6.1.95",
@@ -32980,8 +32980,8 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 4,
-   "status": "working"
+   "mentions": 9,
+   "status": "confident"
   },
   {
    "id": "6.1.98",
@@ -33032,7 +33032,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 32,
+   "mentions": 37,
    "status": "confident"
   },
   {
@@ -33045,7 +33045,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 8,
+   "mentions": 12,
    "status": "confident"
   },
   {
@@ -33130,14 +33130,14 @@
    "id": "6.1.109",
    "pada": "6.1",
    "type": "VIDHI",
-   "exempt": true,
-   "placeholder": true,
-   "stub_gloss": true,
+   "exempt": false,
+   "placeholder": false,
+   "stub_gloss": false,
    "invoked": false,
    "moved": false,
    "cited": false,
    "mentions": 3,
-   "status": "placeholder"
+   "status": "unexercised"
   },
   {
    "id": "6.1.110",
@@ -33363,15 +33363,15 @@
   {
    "id": "6.1.127",
    "pada": "6.1",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": false,
    "placeholder": false,
    "stub_gloss": false,
    "invoked": true,
-   "moved": true,
-   "cited": true,
-   "mentions": 1,
-   "status": "working"
+   "moved": false,
+   "cited": false,
+   "mentions": 2,
+   "status": "gate_only"
   },
   {
    "id": "6.1.128",
@@ -33422,7 +33422,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 1,
+   "mentions": 2,
    "status": "working"
   },
   {
@@ -41404,8 +41404,8 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 4,
-   "status": "working"
+   "mentions": 5,
+   "status": "confident"
   },
   {
    "id": "7.1.10",
@@ -41508,7 +41508,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 6,
+   "mentions": 7,
    "status": "confident"
   },
   {
@@ -45486,8 +45486,8 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 4,
-   "status": "working"
+   "mentions": 5,
+   "status": "confident"
   },
   {
    "id": "7.3.103",
@@ -45499,7 +45499,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 5,
+   "mentions": 6,
    "status": "confident"
   },
   {
@@ -48333,7 +48333,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 12,
+   "mentions": 14,
    "status": "confident"
   },
   {
@@ -48346,7 +48346,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 2,
+   "mentions": 3,
    "status": "working"
   },
   {
@@ -48411,7 +48411,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 2,
+   "mentions": 3,
    "status": "working"
   },
   {
@@ -48444,13 +48444,13 @@
    "id": "8.2.39",
    "pada": "8.2",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
    "invoked": true,
    "moved": true,
    "cited": false,
-   "mentions": 4,
+   "mentions": 5,
    "status": "working"
   },
   {
@@ -48801,7 +48801,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 42,
+   "mentions": 43,
    "status": "confident"
   },
   {
@@ -51427,7 +51427,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 10,
+   "mentions": 13,
    "status": "confident"
   },
   {
@@ -51440,7 +51440,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "pending_structural"
   },
   {
@@ -51453,7 +51453,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -51466,21 +51466,21 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
    "id": "8.4.45",
    "pada": "8.4",
-   "type": "VIDHI",
-   "exempt": true,
+   "type": "VIBHASHA",
+   "exempt": false,
    "placeholder": false,
-   "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
-   "cited": false,
-   "mentions": 0,
-   "status": "unexercised"
+   "stub_gloss": false,
+   "invoked": true,
+   "moved": true,
+   "cited": true,
+   "mentions": 2,
+   "status": "working"
   },
   {
    "id": "8.4.46",
@@ -51609,8 +51609,8 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 3,
-   "status": "working"
+   "mentions": 6,
+   "status": "confident"
   },
   {
    "id": "8.4.56",
