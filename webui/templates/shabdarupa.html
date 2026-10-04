@@ -141,6 +141,18 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
     paint();
   }
 
+  let lastE = null;
+  function engSteps() {
+    const E = lastE || {};
+    if (!E.trace) return `<div class="dr-step">${esc(E.error || "")}</div>`;
+    const rupa = $("f-rupa") ? $("f-rupa").checked : true, audit = !!$("f-audit") && $("f-audit").checked, skip = !!$("f-skip") && $("f-skip").checked;
+    return E.trace.filter(s => {
+      if (["APPLIED","APPLIED_VACUOUS"].includes(s.status)) return !rupa || s.form_before !== s.form_after || s._is_structural;
+      if (s.status === "SKIPPED") return skip;
+      return audit;
+    }).map(s => `<div class="dr-step"><b><a href="/sutra/${esc(s.sutra_id)}" target="_blank" rel="noopener">${esc(s.sutra_id)}</a></b><span class="r">${esc(s.form_before)} → ${esc(s.form_after)}</span>${s.why_now_dev || s.why_dev ? `<div class="r" style="font-family:var(--dev);font-size:.78rem">${esc(s.why_now_dev || s.why_dev)}</div>` : ""}</div>`).join("");
+  }
+
   $("out").addEventListener("click", async e => {
     const b = e.target.closest(".dr-cell"); if (!b) return;
     const i = +b.dataset.i, r = Math.floor(i / 3), k = i % 3;
@@ -148,11 +160,14 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
     const d = await post("/api/shabdarupa/cell", {...args(), vibhakti: r + 1, vacana: k + 1, base: rec.corpus ? rec.corpus.base : ""});
     const miss = new Set(d.missing || []), E = d.engine || {};
     const vs = Array.isArray(d.vidyut) ? d.vidyut.map(p => `<h4>${esc(p.text)}</h4>` + p.steps.map(s => `<div class="dr-step${miss.has(s.code.split(":")[0]) ? " miss" : ""}"><b>${esc(s.code)}</b><span class="r">${esc(s.result.join(" + "))}</span></div>`).join("")).join("") : esc(d.vidyut && d.vidyut.error || "Vidyut unavailable");
-    const es = E.trace ? E.trace.filter(s => ["APPLIED","APPLIED_VACUOUS"].includes(s.status) && (s.form_before !== s.form_after || s._is_structural)).map(s => `<div class="dr-step"><b><a href="/sutra/${esc(s.sutra_id)}" target="_blank" rel="noopener">${esc(s.sutra_id)}</a></b><span class="r">${esc(s.form_before)} → ${esc(s.form_after)}</span></div>`).join("") : `<div class="dr-step">${esc(E.error || "")}</div>`;
+    lastE = E;
     const cs = d.corpus ? `<div><h3>Corpus <span class="dr-note">(hand-checked upstream)</span></h3><h4>${esc(d.corpus.form)}</h4>${d.corpus.steps.map((s, n) => `<div class="dr-step"><b>${n + 1}</b><span class="r">${esc(s.step)}</span> <b style="margin-left:.4rem">${s.sutras.map(esc).join(", ")}</b></div>`).join("")}</div>` : "";
     $("deriv").innerHTML = `<div class="dr-card" id="dcard"><p class="dr-cap">${esc(rec.w)} · ${esc(VIB[r])} · ${esc(VC[k][1])}</p>
       <p class="dr-tally">${(d.missing || []).length ? `<b style="color:#b3261e">Vidyut sūtras our engine did not execute (${d.missing.length}): ${d.missing.map(esc).join(", ")}</b>` : (E.trace && Array.isArray(d.vidyut) ? `<b style="color:#2a8a3e">✓ every Vidyut sūtra is also executed by our engine</b>` : "")}</p>
-      <div class="dr-two">${cs}<div><h3>Vidyut</h3>${vs}</div><div><h3>Our engine ${E.dev ? "— " + esc(E.dev) : ""}</h3>${es}</div></div></div>`;
+      <div class="dr-two">${cs}<div><h3>Vidyut</h3>${vs}</div><div><h3>Our engine ${E.dev ? "— " + esc(E.dev) : ""}</h3>
+      <div class="dr-step" style="font-size:.8rem"><label><input type="checkbox" id="f-rupa" checked> रूप-परिवर्तन-मात्रम्</label> <label><input type="checkbox" id="f-audit"> अधिकार/परिभाषा</label> <label><input type="checkbox" id="f-skip"> अतिक्रान्त</label></div>
+      <div id="esteps">${engSteps()}</div></div></div></div>`;
+    ["f-rupa","f-audit","f-skip"].forEach(i => $(i).addEventListener("change", () => { $("esteps").innerHTML = engSteps(); }));
     $("dcard").scrollIntoView({block:"nearest"});
   });
 
