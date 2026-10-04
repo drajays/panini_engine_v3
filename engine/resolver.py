@@ -305,11 +305,35 @@ def resolve_with_reason(
             except Exception:
                 return False
 
+        def _inserts_only(x: str) -> bool:
+            """x only adds varṇas/Terms (an āgama, a doubling): it never rewrites what stands, so it cannot
+            tie with another rule over the same letters — Aṣṭādhyāyī kram orders it."""
+            a, b = state.terms, after[x].terms
+            if len(a) != len(b):
+                return True
+            for ta, tb in zip(a, b):
+                it = iter("".join(v.slp1 for v in tb.varnas))
+                if not all(ch in it for ch in "".join(v.slp1 for v in ta.varnas)):
+                    return False
+            return True
+
+        def _order_matters(x: str, y: str) -> bool:
+            """Both rewrite the same Term and the two orders end differently: a real विप्रतिषेध even though
+            neither kills the other (7.4.60 vs 7.4.66 on the abhyāsa: sasmāra, not *sarsmāra) — para decides."""
+            if not (info[x][0] & info[y][0]) or is_tripadi_sutra(x) != is_tripadi_sutra(y) or _inserts_only(x) or _inserts_only(y):
+                return False       # tripāḍī is asiddha to what precedes it (8.2.1): its place is fixed, not para
+            try:
+                xy, yx = probe(y, after[x]), probe(x, after[y])
+                return [_term_sig(t) for t in xy.terms] != [_term_sig(t) for t in yx.terms]
+            except Exception:
+                return False
+
         def _defeated(c: str) -> bool:
             if c not in info:
                 return False
             return any(
-                r != c and r in info and _id_key(r) > _id_key(c) and (_kills(c, r) or _kills(r, c))
+                r != c and r in info and _id_key(r) > _id_key(c)
+                and (_kills(c, r) or _kills(r, c) or _order_matters(c, r))
                 for r in survivors
             )
 

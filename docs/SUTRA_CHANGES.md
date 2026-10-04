@@ -11,4 +11,5 @@
 | 7.2.4 | LOGIC | _sic, _sic_with_it, act, cond |
 | 7.2.35 | DECLARATION | apavada_of |
 | 7.2.116 | LOGIC | _find_upadha_a |
+| 7.3.96 | DECLARATION | apavada_of |
 

@@ -74,7 +74,10 @@ SUTRA = SutraRecord(
     anuvritti_from = (),
     cond           = cond,
     act            = act,
-    # not an apavāda of 6.1.68: īṭ is para; once it stands, the t is no longer after a hal (nimitta-vighāta)
+    # Not a true apavāda (īṭ adds, 6.1.68 deletes): classically īṭ is para and, once in, the s/t is no longer after a hal.
+    # Withdrawing this stand-in gives *acetiH/*AtiH (2sg of seṭ roots lose the long ī), so it stays until the resolver
+    # models that nimitta-vighāta.
+    apavada_of     = ("6.1.68",),
 )
 
 register_sutra(SUTRA)

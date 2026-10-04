@@ -10,3 +10,8 @@ from tools.autonomy_report import run_autonomously, start_state
 @pytest.mark.parametrize("dhatu,want", [("vana~", "avanizam"), ("yama~", "ayamizam"), ("pac", "apAkzam")])
 def test_luG_1sg(dhatu, want):
     assert run_autonomously(start_state(NS(kind="tinanta", args=(dhatu, "luG", 1, 1))), "", dhatu, 250).surface == want
+
+
+@pytest.mark.parametrize("dhatu,want", [("ata~", "AtIH"), ("citI~", "acetIH")])
+def test_luG_2sg_seT_Iw(dhatu, want):
+    assert run_autonomously(start_state(NS(kind="tinanta", args=(dhatu, "luG", 2, 1))), "", dhatu, 250).surface == want
