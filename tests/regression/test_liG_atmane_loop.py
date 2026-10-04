@@ -23,3 +23,12 @@ def test_liG_cell(dhatu, lakara, p, v, want):
 ])
 def test_suT_atmane(dhatu, lakara, p, v, want):
     assert run_autonomously(start_state(NS(kind="tinanta", args=(dhatu, lakara, p, v))), "", dhatu, 250).surface == want
+
+
+@pytest.mark.parametrize("dhatu,lakara,p,v,want", [        # iṭ undoes the jhal-kit of 1.2.11 (muda~: modizi); ṣīdhvam/liṭ dhvam → ḍhvam (8.3.78)
+    ("muda~", "luG", 1, 1, "amodizi"), ("muda~", "AsIrliG", 1, 2, "modizIvahi"), ("muda~", "AsIrliG", 3, 1, "modizIzwa"),
+    ("eDa~", "AsIrliG", 2, 3, "eDizIQvam"), ("eDa~", "liG", 2, 3, "eDeDvam"), ("eDa~", "liT", 2, 3, "eDAYcakfQve"),
+    ("eDa~", "luG", 2, 3, "EDiDvam"),
+])
+def test_it_kit_and_dhvam(dhatu, lakara, p, v, want):
+    assert run_autonomously(start_state(NS(kind="tinanta", args=(dhatu, lakara, p, v))), "", dhatu, 250).surface == want

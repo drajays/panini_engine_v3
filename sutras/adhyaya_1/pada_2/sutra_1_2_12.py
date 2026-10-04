@@ -17,7 +17,7 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     i = ling_sic_after(state, r_final)
     if i is not None:
-        state.terms[i].tags.add("kngiti")
+        state.terms[i].tags.update({"kngiti", "kngiti_by_jhal_1_2_9_12"})
     return state
 
 

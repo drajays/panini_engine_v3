@@ -67,6 +67,12 @@ def pada_merge(state: State) -> None:
     # ── Flatten varṇa tapes ───────────────────────────────────────────────────
     form_before = state.flat_slp1()
     all_varnas: List = []
+    for k, t in enumerate(terms):                       # the aṅga | pratyaya boundary survives the merge on the varṇas
+        if k and t.varnas and "pratyaya" in t.tags:      # (8.3.78 reads "dhvam after an iṇ-final aṅga")
+            t.varnas[0].tags.add("pratyaya_start_v")
+            src = (t.meta.get("source_lakara_upadesha") or "").strip()
+            if src:
+                t.varnas[0].tags.add(f"tin_src_{src}")
     for t in terms:
         if "dhatu" in t.tags and "abhyasa" not in t.tags:
             for v in t.varnas:           # 8.2.76–79 need "the dhātu's r/v" after the merge

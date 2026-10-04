@@ -24,6 +24,15 @@ _IN = frozenset("iIuUfFxXeEoOhyvrl")
 
 def _find_i_before_D(state: State):
     """Find i+D (iṭ-vowel followed by dh) within any term or at cross-term boundary."""
+    # after the Tripāḍī merge: the boundary is a varṇa tag (pada_merge); dhvam of liṭ / luṅ / liṅ (ṣīdhvam)
+    for ti, t in enumerate(state.terms):
+        for vi in range(1, len(t.varnas)):
+            v, prev = t.varnas[vi], t.varnas[vi - 1]
+            if (v.slp1 == "D" and "pratyaya_start_v" in v.tags and prev.slp1 in _IN and "it_agama" not in prev.tags
+                    and not t.meta.get("8_3_78_done")
+                    and (any(f"tin_src_{x}" in v.tags for x in ("liT", "luG"))
+                         or ("tin_src_liG" in v.tags and prev.slp1 == "I"))):     # ṣīdhvam: sīyuṭ's ī, not vidhi-liṅ's e
+                return ("intra", ti, vi)
     # लिटाम् — the ending's sthānī is liṭ (1.1.56), or the liṭ recipe is live.
     if not (state.meta.get("liT_lakara_recipe") or any(
             (t.meta.get("source_lakara_upadesha") or "").strip() == "liT" for t in state.terms)):

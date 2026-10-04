@@ -178,6 +178,7 @@ def act(state: State) -> State:
         it_v.tags.add("it_agama")
         t.varnas.insert(0, it_v)
         t.meta["it_agama_7_2_35_done"] = True
+        t.tags -= {"kngiti", "kngiti_by_jhal_1_2_9_12"} if "kngiti_by_jhal_1_2_9_12" in t.tags else set()   # no longer jhal-initial
         return state
     j = _lut_tasi_vikaranha_index(state)
     if j is not None:

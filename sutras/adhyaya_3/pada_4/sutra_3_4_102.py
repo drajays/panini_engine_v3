@@ -94,7 +94,7 @@ def act(state: State) -> State:
         ashir = "ashir_liG" in state.terms[idx].tags        # āśiṣi liṅ (3.3.173) marks its tiṅ; then ārdhadhātuka (3.4.116)
         sI = Term(kind="pratyaya", varnas=parse_slp1_upadesha_sequence("sIy"),
                   tags={"pratyaya", "ling_sIyuw"}, meta={"upadesha_slp1": "sIy"})
-        if "kngiti" in state.terms[idx].tags:
+        if "kngiti" in state.terms[idx].tags and not ashir:   # āśīr-liṅ is ārdhadhātuka (3.4.116): 1.2.4 does not make it ṅit
             sI.tags.add("kngiti")
         if ashir:
             sI.tags.add("ardhadhatuka")

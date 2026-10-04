@@ -17,7 +17,7 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     i = ling_sic_after(state, hal_ik)
     if i is not None:
-        state.terms[i].tags.add("kngiti")
+        state.terms[i].tags.update({"kngiti", "kngiti_by_jhal_1_2_9_12"})   # kit only while jhal-initial: an iṭ (7.2.35) undoes it
     return state
 
 
