@@ -55,14 +55,20 @@ def _find_tin_residue(state: State, expected_varnas: tuple[str, ...]) -> int | N
 
 # लुटः प्रथमस्य डारौरसः: the prathama-puruṣa tiṅ of luṭ — tip · tas · jhi — become ḍā · rau · ras (यथासंख्यम्, 1.3.10).
 _PRATHAMA_ADESHA = {"tip": "qA", "tas": "rO", "Ji": "ras"}
+_PRATHAMA_ADESHA_ATMANE = {"ta": "qA", "AtAm": "rO", "Ja": "ras"}      # ātmanepada prathama: ta, ātām, jha (adhyetā)
+
+
+def _adesha_of(t) -> str | None:
+    """यथासंख्यम्: the ḍā/rau/ras that replaces this prathama tiṅ — parasmaipada or ātmanepada (3.4.78)."""
+    up = (t.meta.get("upadesha_slp1") or "").strip()
+    return (_PRATHAMA_ADESHA if "parasmaipada" in t.tags else _PRATHAMA_ADESHA_ATMANE).get(up)
 
 
 def _structural_site(state: State) -> int | None:
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya" or "tin_adesha_3_4_78" not in t.tags or t.meta.get("2_4_85_lut_prathama_done"):
             continue
-        if (t.meta.get("source_lakara_upadesha") or "").strip() == "luT" \
-                and (t.meta.get("upadesha_slp1") or "").strip() in _PRATHAMA_ADESHA:
+        if (t.meta.get("source_lakara_upadesha") or "").strip() == "luT" and _adesha_of(t):
             return i
     return None
 
@@ -90,7 +96,7 @@ def act(state: State) -> State:
         from engine.sthanivat import TING_PRATYAYATVA, adesha_substitute_varnas
 
         t = state.terms[i]
-        adesha = _PRATHAMA_ADESHA[(t.meta.get("upadesha_slp1") or "").strip()]
+        adesha = _adesha_of(t)
         adesha_substitute_varnas(t, adesha, state, sutra_id="2.4.85", gunadharmas=frozenset({TING_PRATYAYATVA}))
         t.tags.add("tin_adesha_2_4_85")        # the ḍ of ḍā is its it (→ 6.4.143 ṭi-lopa); rau and ras have none
         t.meta["2_4_85_lut_prathama_done"] = True
@@ -125,6 +131,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "लुटः प्रथमस्य डा-रौ-रसः",
     why_dev        = "लुट्-लकारे प्रथम-पुरुष-परस्मैपदानां डा-रौ-रस्-आदेशः।",
     anuvritti_from = (),
+    apavada_of            = ("3.4.79",),   # luṭ-prathama's ḍā/rau/ras is the special case of ṭita ṭer e (adhyetā, not *adhyete)
     cond           = cond,
     act            = act,
 )

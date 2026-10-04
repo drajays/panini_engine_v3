@@ -53,6 +53,9 @@ def _find_target(state: State):
         vs = t.varnas
         if not vs or vs[-1].slp1 != "e":
             continue
+        # एत ऐ is for the uttama only (3.4.92 उत्तमस्य): e, vahe, mahe — not se, Dve, te, ete, ante
+        if not (len(vs) == 1 or vs[0].slp1 in ("v", "m")):
+            continue
         return ti
     return None
 

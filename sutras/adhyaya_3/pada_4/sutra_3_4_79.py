@@ -36,9 +36,9 @@ def _find(state: State):
     for ti, t in enumerate(state.terms):
         if t.kind != "pratyaya":
             continue
-        if t.meta.get("3_4_79_ter_done"):
+        if t.meta.get("3_4_79_ter_done") or t.meta.get("3_4_91_done"):   # 3.4.91 already gave sva/Dvam: no ṭi left to e-fy
             continue
-        if "tin_adesha_3_4_78" not in t.tags:
+        if "tin_adesha_3_4_78" not in t.tags or "tin_adesha_2_4_85" in t.tags:   # ḍā/rau/ras (2.4.85) leave no ṭi to e-fy
             continue
         # आत्मनेपदानाम् — 1.4.99 tags a genuinely parasmaipada ādeśa (tip,
         # sip, mip, tas, …) "parasmaipada"; ṭeḥ-e never touches those.

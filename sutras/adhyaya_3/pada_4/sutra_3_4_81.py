@@ -37,7 +37,23 @@ def _find_ta_or_Ja(state: State):
     return None
 
 
+_ESH = {"ta": "eS", "Ja": "irec"}
+
+
+def _structural_site(state: State) -> int | None:
+    """लिटस्तझयोरेशिरेच् read off the tape: an ātmanepada ta/jha ādeśa whose sthānī is liṭ."""
+    for i, t in enumerate(state.terms):
+        if (t.kind == "pratyaya" and "tin_adesha_3_4_78" in t.tags and "parasmaipada" not in t.tags
+                and not t.meta.get("3_4_81_done")
+                and (t.meta.get("source_lakara_upadesha") or "").strip() == "liT"
+                and (t.meta.get("upadesha_slp1") or "").strip() in _ESH):
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
+    if _structural_site(state) is not None:
+        return True
     if not state.meta.get("lakara_liT"):
         return False
     if not state.meta.get("liT_esh_recipe"):
@@ -46,6 +62,13 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    if (i := _structural_site(state)) is not None:
+        from engine.sthanivat import TING_PRATYAYATVA, adesha_substitute_varnas
+        t = state.terms[i]
+        adesha_substitute_varnas(t, _ESH[(t.meta.get("upadesha_slp1") or "").strip()], state, sutra_id="3.4.81",
+                                 gunadharmas=frozenset({TING_PRATYAYATVA}))
+        t.meta["3_4_81_done"] = True
+        return state
     hit = _find_ta_or_Ja(state)
     if hit is None:
         return state
@@ -71,6 +94,7 @@ SUTRA = SutraRecord(
     padaccheda_dev="लिटः / त-झयोः / एशि-रेच्",
     why_dev="लिटि ‘त’ इत्यस्य ‘एश्’ आदेशः (ईधे)।",
     anuvritti_from=("3.4.78",),
+    apavada_of            = ("3.4.79",),   # liṭ-specific eś/irec over the general ṭeḥ e
     cond=cond,
     act=act,
 )

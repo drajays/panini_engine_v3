@@ -237,6 +237,13 @@ def _meta_key(state: State) -> tuple:
     return tuple(sorted((k, repr(v)) for k, v in state.meta.items() if k not in _META_NOISE))
 
 
+def _gate_key(state: State) -> tuple:
+    """Gates and saṃjñā registry are not on the tape but rules read them (7.2.13 → 7.2.35): two states with one tape
+    and different gates must not share a memoised answer."""
+    return (tuple(sorted((k, repr(v)) for k, v in state.paribhasha_gates.items())),
+            tuple(sorted(map(repr, state.samjna_registry))))
+
+
 def effective_candidates(candidates: List[str], state: State) -> List[str]:
     """A candidate that would not change the tape is not a candidate (ROADMAP C2).
 
@@ -251,7 +258,7 @@ def effective_candidates(candidates: List[str], state: State) -> List[str]:
     for sid in candidates:
         if is_gate_only(sid):
             continue
-        key = (sid, before, state.phase, _meta_key(state), tuple(sorted(_vikalpa_policy().items())))
+        key = (sid, before, state.phase, _meta_key(state), _gate_key(state), tuple(sorted(_vikalpa_policy().items())))
         hit = _EFFECTIVE_MEMO.get(key)
         if hit is None:
             try:
