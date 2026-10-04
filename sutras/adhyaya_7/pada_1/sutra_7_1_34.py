@@ -18,7 +18,7 @@ def _find(state: State):
         if "dhatu" not in dh.tags or "abhyasa" in dh.tags:
             continue
         nxt = state.terms[i + 1]
-        if dh.varnas and dh.varnas[-1].slp1 == "A" \
+        if dh.varnas and dh.varnas[-1].slp1 == "A" and not dh.meta.get("urN_rapara_pending") \
                 and (nxt.meta.get("upadesha_slp1") or "").strip() == "Ral" \
                 and [v.slp1 for v in nxt.varnas] == ["a"]:
             return nxt

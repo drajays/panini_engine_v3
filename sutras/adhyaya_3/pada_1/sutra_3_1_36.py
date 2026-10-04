@@ -27,9 +27,7 @@ def _lit_index(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    if not state.meta.get("lakara_liT"):
-        return False
-    li = _lit_index(state)
+    li = _lit_index(state)             # the liṭ placeholder on the tape is the evidence, not a lakāra flag
     if li is None or li < 1:
         return False
     if li >= 2 and (state.terms[li - 1].meta.get("upadesha_slp1") or "").strip() == "Am":

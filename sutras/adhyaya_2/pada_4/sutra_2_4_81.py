@@ -41,7 +41,7 @@ def act(state: State) -> State:
         kind="prakriti",
         varnas=list(ikz.varnas) + list(am.varnas),
         tags={"anga", "prātipadika"},
-        meta={},
+        meta={"am_anta_2_4_81": True},      # āmanta: 3.1.40 reads this, not the word
     )
     state.terms.append(merged)
     return state

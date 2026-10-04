@@ -20,10 +20,7 @@ def _site(state: State) -> bool:
     if not state.terms:
         return False
     t = state.terms[-1]
-    if "prātipadika" not in t.tags:
-        return False
-    flat = "".join(v.slp1 for v in t.varnas)
-    return flat == "IkzAm"
+    return "prātipadika" in t.tags and bool(t.meta.get("am_anta_2_4_81"))   # ām-anta, liṭ luk'd (2.4.81)
 
 
 def cond(state: State) -> bool:
