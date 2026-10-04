@@ -36,6 +36,8 @@ def _find_sIyuw(state: State) -> int | None:
             continue
         if not t.varnas or t.varnas[0].slp1 != "s":
             continue
+        if "ardhadhatuka" in t.tags:       # सार्वधातुके (anuvṛtti): āśīr-liṅ's sīyuṭ keeps its s (eDizIya)
+            continue
         return i
     return None
 

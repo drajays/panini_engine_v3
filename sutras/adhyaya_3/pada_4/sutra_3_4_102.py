@@ -58,9 +58,25 @@ def _find_liG_index(state: State) -> int | None:
     return None
 
 
+_ATMANE = frozenset({"ta", "AtAm", "Ja", "TAs", "ATAm", "Dvam", "iw", "vahi", "mahiG", "ran"})   # the nine (3.4.78, ātmanepada) and 3.4.105's ran
+
+
+def _structural_idx(state: State) -> int | None:
+    """liṅaḥ sīyuṭ read off the tape (no recipe flag): an ātmanepada tiṅ ādeśa whose sthānī is liṅ, not yet augmented."""
+    if any("ling_sIyuw" in t.tags for t in state.terms):
+        return None
+    for i, t in enumerate(state.terms):
+        if ("tin_adesha_3_4_78" in t.tags and "parasmaipada" not in t.tags    # sīyuṭ is ātmanepada's; parasmaipada has yāsuṭ
+                and (t.meta.get("source_lakara_upadesha") or "").strip() == "liG"
+                and ("atmanepada" in t.tags or t.meta.get("3_4_106_done")           # iṭ→a (3.4.106) is ātmanepada's
+                     or (t.meta.get("upadesha_slp1") or "").strip() in _ATMANE)):
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
     if not state.meta.get("sIyuw_recipe"):
-        return False
+        return _structural_idx(state) is not None
     if any("ling_sIyuw" in t.tags for t in state.terms):
         return False
     if state.meta.get("ashir_liG"):
@@ -74,6 +90,16 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    if not state.meta.get("sIyuw_recipe") and (idx := _structural_idx(state)) is not None:
+        ashir = "ashir_liG" in state.terms[idx].tags        # āśiṣi liṅ (3.3.173) marks its tiṅ; then ārdhadhātuka (3.4.116)
+        sI = Term(kind="pratyaya", varnas=parse_slp1_upadesha_sequence("sIy"),
+                  tags={"pratyaya", "ling_sIyuw"}, meta={"upadesha_slp1": "sIy"})
+        if "kngiti" in state.terms[idx].tags:
+            sI.tags.add("kngiti")
+        if ashir:
+            sI.tags.add("ardhadhatuka")
+        state.terms.insert(idx, sI)
+        return state
     if state.meta.get("ashir_liG"):
         idx = _find_tin_index(state)
         slp = "sIy"

@@ -49,7 +49,7 @@ def _ardhadhatuka_vikarana_index(state: State) -> int | None:
             if "krt" in pr.tags:
                 continue
             if pr.meta.get("it_agama_7_2_35_done"):
-                continue
+                break               # the affix (sīyuṭ + tiṅ, one ārdhadhātuka by 1.1.46) already has its iṭ
             if not pr.varnas:
                 continue
             if not _val_initial(pr.varnas[0].slp1):
