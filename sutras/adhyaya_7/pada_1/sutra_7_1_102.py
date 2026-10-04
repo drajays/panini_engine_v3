@@ -25,7 +25,12 @@ def _find(state: State):
             continue
         if len(t.varnas) < 2 or t.varnas[-1].slp1 != "F" or t.varnas[-2].slp1 not in _OSHTHYA:
             continue
-        nxt = state.terms[i + 1]
+        j = i + 1
+        while j + 1 < len(state.terms) and "agama" in state.terms[j].tags and "yasut_agama" not in state.terms[j].tags:
+            j += 1
+        nxt = state.terms[j]
+        if "kngiti" not in nxt.tags and not nxt.meta.get("is_apit"):
+            continue                                   # kṅiti: pipUrtAm — not sic (apArizma has vṛddhi, 7.2.1)
         up = (nxt.meta.get("upadesha_slp1") or "").strip()
         if (is_sarvadhatuka_upadesha_slp1(up) or "ardhadhatuka" in nxt.tags or "sarvadhatuka" in nxt.tags
                 or "sarvadhatuka_3_4_113" in nxt.tags or "tin_adesha_3_4_78" in nxt.tags

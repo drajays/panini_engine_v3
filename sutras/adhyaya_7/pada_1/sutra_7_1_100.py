@@ -52,6 +52,8 @@ def _find(state: State) -> int | None:
         if i + 1 >= len(state.terms):
             continue
         nxt = state.terms[i + 1]
+        if nxt.meta.get("upadesha_slp1") == "sic" or ("ardhadhatuka" in nxt.tags and "kngiti" not in nxt.tags):
+            continue                                   # ṛta id dhātoḥ is for a weak (kṅit) ending; sic gives vṛddhi (7.2.1)
         up = (nxt.meta.get("upadesha_slp1") or "").strip()
         if not (
             is_sarvadhatuka_upadesha_slp1(up)

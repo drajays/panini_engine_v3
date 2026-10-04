@@ -19,6 +19,7 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
+from sutras.adhyaya_3.pada_1.vikarana_sap_3_1_68 import sarvadhatuka_lakara_context
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -45,7 +46,7 @@ def _matches(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    return _matches(state)
+    return _matches(state) and sarvadhatuka_lakara_context(state)
 
 
 def act(state: State) -> State:

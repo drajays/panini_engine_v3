@@ -38,6 +38,8 @@ def _find(state: State):
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags or t.meta.get("7_2_3_done") or not t.varnas:
             continue
+        if t.meta.get("7_2_1_sici_vrddhi_done"):      # the ac-final aṅga already had its vṛddhi (7.2.1): aGArzva, not *AGArzva
+            continue
         if t.meta.get("6_4_48_a_lopa_done"):
             return None                       # 1.1.57 sthānivat: अवधीत्
         if t.varnas[-1].slp1 in _AC:

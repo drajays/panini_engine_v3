@@ -13,6 +13,7 @@ The inserted *Term* carries ``kngiti`` so **1.1.5** / **7.3.84** treat *apit*
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from sutras.adhyaya_3.pada_1.vikarana_sap_3_1_68 import sarvadhatuka_lakara_context
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -40,7 +41,7 @@ def _svadi_dhatu(state: State) -> int | None:
 def cond(state: State) -> bool:
     if state.meta.get("snu_recipe"):
         return _find_sap(state) is not None
-    return _svadi_dhatu(state) is not None
+    return _svadi_dhatu(state) is not None and sarvadhatuka_lakara_context(state)
 
 
 def act(state: State) -> State:

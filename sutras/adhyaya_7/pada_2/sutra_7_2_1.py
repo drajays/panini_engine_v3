@@ -42,14 +42,13 @@ def _vrddhi_vowel(ch: str, state: State) -> Optional[str]:
 def _find(state: State):
     if len(state.terms) < 3:
         return None
-    dh = state.terms[0]
-    sic = state.terms[1]
+    di = next((i for i, t in enumerate(state.terms) if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+    if di is None:
+        return None
+    dh = state.terms[di]
+    sic = next((u for u in state.terms[di + 1:] if u.varnas), None)      # read off the tape, not from a lakāra flag
     tin = state.terms[-1]
-    if "dhatu" not in dh.tags:
-        return None
-    if sic.kind != "pratyaya" or tin.kind != "pratyaya":
-        return None
-    if not state.meta.get("lakara") == "luG":
+    if sic is None or sic.kind != "pratyaya" or tin.kind != "pratyaya":
         return None
     if dh.meta.get("7_2_1_sici_vrddhi_done"):
         return None
@@ -112,6 +111,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "सिचि / वृद्धिः / परस्मैपदेषु",
     why_dev        = "लुङ्-सिच्-परस्मैपदे धातोः स्वरस्य वृद्धिः (चि→चै) ।",
     anuvritti_from = ("1.1.1", "1.1.3", "1.1.50"),
+    apavada_of            = ("7.3.84", "7.3.86"),   # sici vṛddhiḥ: the specific over guṇa (aBEzIt, akArzIt)
     cond           = cond,
     act            = act,
 )

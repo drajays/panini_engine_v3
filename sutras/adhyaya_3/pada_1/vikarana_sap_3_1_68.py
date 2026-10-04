@@ -127,3 +127,16 @@ def find_sap_insertion_dhatu_index(state: State) -> int | None:
             continue
         return i
     return None
+
+
+def sarvadhatuka_lakara_context(state: State) -> bool:
+    """A vikaraṇa (śap, śnu, śa, śnam, u, śnā…) stands only before a *sārvadhātuka* ending: the tiṅ of laṭ, loṭ, laṅ,
+    vidhi-liṅ. Not before liṭ, luṭ, lṛṭ, luṅ, lṛṅ or āśīr-liṅ, whose affixes are ārdhadhātuka (3.4.114–116). With no
+    tiṅ on the tape yet (a recipe's placeholder), the question is open and the answer is yes."""
+    for t in state.terms:
+        if "tin_adesha_3_4_78" in t.tags:
+            src = (t.meta.get("source_lakara_upadesha") or "").strip()
+            if "ashir_liG" in t.tags or "ardhadhatuka" in t.tags:
+                return False
+            return src in ("", "laT", "loT", "laG", "liG")
+    return True
