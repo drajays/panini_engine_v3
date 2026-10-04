@@ -1533,6 +1533,133 @@ def api_reader_export():
 # Main
 # ─────────────────────────────────────────────────────────────────
 
+# ─────────────────────────────────────────────────────────────────
+# धातुरूपाणि — every form of every root: Vidyut first, our engine alongside
+# (modelled on cs.rkmvu.ac.in/~tamal/learn/sanskrit/Grammar/site/dhaturupa.html)
+# ─────────────────────────────────────────────────────────────────
+
+_DR_LAKARA = [  # Vidyut name, our key (None = engine has no such lakāra yet), Devanāgarī, note
+    ("Lat", "laT", "लट्", "वर्तमाने"), ("Lit", "liT", "लिट्", "परोक्षे"), ("Lut", "luT", "लुट्", "अनद्यतनभविष्यति"),
+    ("Lrt", "lRT", "लृट्", "भविष्यति"), ("Let", None, "लेट्", "वेदे"), ("Lot", "loT", "लोट्", "आज्ञादौ"),
+    ("Lan", "laG", "लङ्", "अनद्यतनभूते"), ("VidhiLin", "liG", "विधिलिङ्", "विधौ"),
+    ("AshirLin", "AsIrliG", "आशीर्लिङ्", "आशिषि"), ("Lun", "luG", "लुङ्", "भूते"), ("Lrn", "lRG", "लृङ्", "क्रियातिपत्तौ"),
+]
+_DR_SANADI = [("san", "सन्"), ("Ric", "णिच्"), ("yaN", "यङ्"), ("yaNluk", "यङ्लुक्"), ("kyac", "क्यच्"),
+              ("kAmyac", "काम्यच्"), ("kyaN", "क्यङ्")]
+_DR_UPASARGA = "pra parA apa sam anu ava nis nir dus dur vi A ni aDi api ati su ut aBi prati pari upa".split()
+_DR_PURUSHA = [("prathama", "प्रथमः"), ("madhyama", "मध्यमः"), ("uttama", "उत्तमः")]
+_DR_VACANA = [("eka", "एकवचनम्"), ("dvi", "द्विवचनम्"), ("bahu", "बहुवचनम्")]
+_DR_CACHE: dict = {}
+
+
+def _dr_row(code: str) -> dict:
+    from pipelines.dhatupatha import resolve_dhatu_identifier
+    return resolve_dhatu_identifier(code)
+
+
+def _dr_vidyut(op: str, row: dict, q: dict, **extra):
+    """Run bench/oracle_dhaturupa under the venv that has vidyut; None when unavailable."""
+    venv_py = _ROOT / ".venv" / "bin" / "python"
+    if not venv_py.exists():
+        return None
+    payload = {"op": op, "upadesha": row["upadesha_slp1"], "path_id": row["dhatupatha_id"],
+               "prayoga": q.get("prayoga") or "kartari", "pada": q.get("pada") or None,
+               "sanadi": q.get("sanadi") or None, "prefix": q.get("prefix") or None, **extra}
+    key = json.dumps(payload, sort_keys=True)
+    if key not in _DR_CACHE:
+        try:
+            r = subprocess.run([str(venv_py), "-m", "bench.oracle_dhaturupa"], cwd=_ROOT, input=key,
+                               capture_output=True, text=True, timeout=180)
+            _DR_CACHE[key] = json.loads(r.stdout) if r.returncode == 0 else None
+        except (subprocess.TimeoutExpired, json.JSONDecodeError):
+            _DR_CACHE[key] = None
+    return _DR_CACHE[key]
+
+
+@app.route("/dhaturupa")
+def dhaturupa_page():
+    return render_template("dhaturupa.html", nav_active="dhaturupa", lakara=_DR_LAKARA, sanadi=_DR_SANADI,
+                           upasarga=_DR_UPASARGA, purusha=_DR_PURUSHA, vacana=_DR_VACANA)
+
+
+@app.route("/api/dhaturupa/roots")
+def api_dhaturupa_roots():
+    from pipelines.dhatupatha import _payload, _envelope
+    return jsonify([{"code": e["dhatupatha_id"], "dev": e.get("mula_dhatu_dev", ""), "upa": e["upadesha_slp1"],
+                     "gana": e.get("gana"), "gana_dev": e.get("gana_label_dev", ""), "artha": e.get("artha_dev", ""),
+                     "en": e.get("artha_en", ""), "pada": e.get("pada_label_dev", "")}
+                    for e in _envelope(_payload())["entries"] if e.get("dhatupatha_id")])
+
+
+@app.route("/api/dhaturupa/vidyut", methods=["POST"])
+def api_dhaturupa_vidyut():
+    """The whole table, from Vidyut: {Lakara: [9 cells (prathama→uttama × eka→bahu), each a list of forms]}."""
+    from core.transliterate import slp1_to_dev
+    q = request.get_json(force=True)
+    try:
+        row = _dr_row(q["code"])
+    except KeyError as e:
+        return jsonify({"error": str(e)}), 404
+    g = _dr_vidyut("grid", row, q, lakaras=[x[0] for x in _DR_LAKARA])
+    if g is None:
+        return jsonify({"error": "Vidyut is unavailable (needs .venv with vidyut)"}), 503
+    return jsonify({la: [[{"slp1": f, "dev": slp1_to_dev(f)} for f in c] for c in cells] for la, cells in g.items()})
+
+
+@app.route("/api/dhaturupa/engine", methods=["POST"])
+def api_dhaturupa_engine():
+    """One lakāra's nine cells from our engine (kept per-lakāra so the page can fill in as they finish)."""
+    from core.transliterate import slp1_to_dev
+    from pipelines.tinanta import derive as tin_derive
+    q = request.get_json(force=True)
+    ours = {v: k for v, k, *_ in _DR_LAKARA}.get(q.get("lakara"))
+    if q.get("sanadi") or q.get("prefix"):
+        return jsonify({"na": "सनादि/उपसर्गयुक्तं यन्त्रे न्यूनम् — engine does not model sanādi/upasarga yet"})
+    if ours is None:
+        return jsonify({"na": "engine has no such lakāra yet"})
+    try:
+        row = _dr_row(q["code"])
+    except KeyError as e:
+        return jsonify({"error": str(e)}), 404
+    kw = {"pada": q["pada"]} if q.get("pada") and (q.get("prayoga") or "kartari") == "kartari" else {}
+    cells = []
+    for pu in (3, 2, 1):
+        for vc in (1, 2, 3):
+            try:
+                st = tin_derive(row.get("id") or row["upadesha_slp1"], ours, q.get("prayoga") or "kartari", pu, vc, **kw)
+                cells.append({"slp1": st.flat_slp1(), "dev": st.flat_dev()})
+            except Exception as ex:
+                cells.append({"error": f"{type(ex).__name__}: {ex}"[:160]})
+    return jsonify({"cells": cells})
+
+
+@app.route("/api/dhaturupa/cell", methods=["POST"])
+def api_dhaturupa_cell():
+    """Click-through: Vidyut's step list and our engine's trace for one cell."""
+    from pipelines.tinanta import derive as tin_derive
+    q = request.get_json(force=True)
+    try:
+        row = _dr_row(q["code"])
+    except KeyError as e:
+        return jsonify({"error": str(e)}), 404
+    pu, vc = int(q["purusha"]), int(q["vacana"])
+    v = _dr_vidyut("cell", row, q, lakara=q["lakara"], purusha=pu, vacana=vc)
+    ours = {x[0]: x[1] for x in _DR_LAKARA}.get(q["lakara"])
+    eng: dict[str, Any]
+    if q.get("sanadi") or q.get("prefix"):
+        eng = {"na": "engine does not model sanādi/upasarga yet"}
+    elif ours is None:
+        eng = {"na": "engine has no such lakāra yet"}
+    else:
+        kw = {"pada": q["pada"]} if q.get("pada") and (q.get("prayoga") or "kartari") == "kartari" else {}
+        try:
+            st = tin_derive(row.get("id") or row["upadesha_slp1"], ours, q.get("prayoga") or "kartari", pu, vc, **kw)
+            eng = {"slp1": st.flat_slp1(), "dev": st.flat_dev(), "trace": _enrich_trace(st.trace)}
+        except Exception as ex:
+            eng = {"error": f"{type(ex).__name__}: {ex}"[:240]}
+    return jsonify({"vidyut": v, "engine": eng})
+
+
 if __name__ == "__main__":
     import os as _os
     _port = int(_os.environ.get("PANINI_PORT", 5050))

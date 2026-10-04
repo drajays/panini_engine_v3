@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% block title %}धातुरूपाणि — पाणिनि-यन्त्रम्{% endblock %}
+
+{% block head_extra %}
+<style>
+.dr-lead { max-width:74ch; color:var(--ink-dim); margin:.2rem 0 1rem; }
+.dr-card { border:1px solid var(--line); border-radius:8px; background:var(--bg); padding:1rem; margin-bottom:1rem; }
+.dr-ctl { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:.75rem; }
+.dr-ctl label, .dr-pick label { display:block; font-size:.83rem; color:var(--ink-dim); margin-bottom:.2rem; }
+.dr-ctl select, .dr-pick input { font-size:.95rem; padding:.4rem .55rem; border:1px solid var(--line); border-radius:4px; background:var(--bg); color:var(--ink); }
+.dr-pick input { width:100%; max-width:34rem; }
+.dr-list { max-width:34rem; max-height:15rem; overflow:auto; border:1px solid var(--line); border-radius:4px; margin-top:.2rem; }
+.dr-list div { padding:.3rem .6rem; cursor:pointer; border-bottom:1px solid var(--line-soft); font-size:.9rem; }
+.dr-list div:hover, .dr-list div.on { background:var(--bg-subtle); }
+.dr-cap { font-family:var(--dev); font-size:1.05rem; margin:0 0 .3rem; }
+.dr-cap .m { font-family:inherit; font-size:.82rem; color:var(--ink-dim); }
+.dr-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(21rem,1fr)); gap:1rem; }
+.dr-grid table { width:100%; border-collapse:collapse; font-size:.9rem; }
+.dr-grid caption { text-align:left; font-weight:600; font-family:var(--dev); padding:.2rem 0; }
+.dr-grid caption .en { font-weight:400; font-size:.78rem; color:var(--ink-dim); margin-left:.5rem; }
+.dr-grid th, .dr-grid td { border:1px solid var(--line-soft); padding:.25rem .4rem; vertical-align:top; }
+.dr-grid th { background:var(--bg-subtle); font-weight:500; font-size:.78rem; color:var(--ink-dim); }
+.dr-cell { all:unset; display:block; cursor:pointer; width:100%; }
+.dr-cell:hover { background:var(--bg-subtle); }
+.dr-v { font-family:var(--dev); font-size:1rem; }
+.dr-e { font-family:var(--dev); font-size:.88rem; color:var(--ink-dim); border-top:1px dotted var(--line); margin-top:.15rem; padding-top:.1rem; }
+.dr-e.ok::after { content:" ✓"; color:#2a8a3e; }
+.dr-e.bad { color:#b3261e; }
+.dr-e.bad::after { content:" ≠"; }
+.dr-e.na { color:var(--ink-dim); font-style:italic; font-size:.78rem; }
+.dr-tally { font-size:.85rem; color:var(--ink-dim); margin:.3rem 0 .6rem; }
+.dr-two { display:grid; grid-template-columns:repeat(auto-fit,minmax(20rem,1fr)); gap:1rem; }
+.dr-step { font-size:.85rem; padding:.2rem 0; border-bottom:1px solid var(--line-soft); }
+.dr-step b { font-family:var(--mono, monospace); margin-right:.5rem; }
+.dr-step .r { color:var(--ink-dim); }
+.dr-note { font-size:.8rem; color:var(--ink-dim); margin-top:1.2rem; }
+</style>
+{% endblock %}
+
+{% block content %}
+<h2 style="margin:.4rem 0">धातुरूपाणि — every form of every root</h2>
+<p class="dr-lead">All eleven lakāras of any root in the Dhātupāṭha, in the three prayogas, with or without a sanādi pratyaya and an upasarga.
+Each cell shows <b>Vidyut</b>'s form first; beneath it, in grey, <b>our engine's</b> form (✓ agrees, ≠ differs).
+Click a cell to see both derivations step by step.</p>
+
+<div class="dr-card">
+  <div class="dr-pick">
+    <label for="q">धातुः — find a root</label>
+    <input id="q" autocomplete="off" placeholder="भू · bhU · to exist · 01.0001">
+    <div id="list" class="dr-list" hidden></div>
+  </div>
+  <div class="dr-ctl">
+    <div><label for="pr">प्रयोगः</label><select id="pr"><option value="kartari">कर्तरि</option><option value="karmani">कर्मणि</option><option value="bhave">भावे</option></select></div>
+    <div><label for="pd">पदम्</label><select id="pd"><option value="">उभयम् — both</option><option value="parasmai">परस्मैपदम्</option><option value="atmane">आत्मनेपदम्</option></select></div>
+    <div><label for="sn">सनादिप्रत्ययः</label><select id="sn"><option value="">— none (मूलधातुः)</option>{% for n, d in sanadi %}<option value="{{ n }}">{{ d }}</option>{% endfor %}</select></div>
+    <div><label for="up">उपसर्गः</label><select id="up"><option value="">— none</option>{% for u in upasarga %}<option value="{{ u }}" data-slp="{{ u }}">{{ u }}</option>{% endfor %}</select></div>
+  </div>
+</div>
+
+<div id="out"></div>
+<div id="deriv"></div>
+<p class="dr-note">Vidyut: <a href="https://github.com/ambuda-org/vidyut">ambuda-org/vidyut</a> (MIT), run as an independent oracle (Art. 19).
+The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ubhayapadī filtering beyond what it already supports — those cells show “n/a”, never a guess.</p>
+{% endblock %}
+
+{% block body_extra %}
+<script>
+(() => {
+  const LAKARA = {{ lakara | tojson }}, PU = {{ purusha | tojson }}, VC = {{ vacana | tojson }};
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const post = (u, b) => fetch(u, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(b)}).then(r => r.json());
+  let ROOTS = [], cur = null, token = 0, vid = null, eng = {};
+
+  fetch("/api/dhaturupa/roots").then(r => r.json()).then(r => {
+    ROOTS = r;
+    const code = new URLSearchParams(location.search).get("code");
+    pick(ROOTS.find(x => x.code === code) || ROOTS[0]);
+  });
+
+  const hay = d => [d.dev, d.upa, d.artha, d.en, d.code, d.gana].join(" ").toLowerCase();
+  function showList() {
+    const t = $("q").value.trim().toLowerCase(), box = $("list");
+    const hit = (t ? ROOTS.filter(d => hay(d).includes(t)) : ROOTS).slice(0, 40);
+    box.innerHTML = hit.map(d => `<div data-c="${d.code}">${esc(d.dev)} <span style="color:var(--ink-dim)">(${esc(d.gana)}) ${esc(d.artha)} · ${esc(d.code)}</span></div>`).join("") || "<div>—</div>";
+    box.hidden = false;
+  }
+  $("q").addEventListener("input", showList);
+  $("q").addEventListener("focus", showList);
+  $("list").addEventListener("mousedown", e => { const c = e.target.closest("[data-c]"); if (c) pick(ROOTS.find(x => x.code === c.dataset.c)); });
+  document.addEventListener("click", e => { if (!e.target.closest(".dr-pick")) $("list").hidden = true; });
+  ["pr","pd","sn","up"].forEach(i => $(i).addEventListener("change", load));
+
+  function pick(d) { cur = d; $("q").value = `${d.dev} (${d.code})`; $("list").hidden = true; load(); }
+  const args = () => ({code: cur.code, prayoga: $("pr").value, pada: $("pd").value, sanadi: $("sn").value, prefix: $("up").value});
+
+  function tables() {
+    return LAKARA.map(([v, o, dev, note]) => `<table data-la="${v}"><caption>${esc(dev)}<span class="en">${esc(note)}</span></caption>
+      <tr><th></th>${VC.map(x => `<th>${esc(x[1])}</th>`).join("")}</tr>` +
+      PU.map((p, r) => `<tr><th>${esc(p[1])}</th>` + [0,1,2].map(c => `<td><button class="dr-cell" data-la="${v}" data-r="${r}" data-c="${c}" id="c-${v}-${r}-${c}"><span class="dr-v">…</span></button></td>`).join("") + "</tr>").join("") + "</table>").join("");
+  }
+
+  async function load() {
+    if (!cur) return;
+    const my = ++token, a = args(); vid = null; eng = {};
+    $("deriv").innerHTML = "";
+    $("out").innerHTML = `<div class="dr-card"><p class="dr-cap">${esc(cur.dev)} <span class="m">${esc(cur.upa)} · ${esc(cur.code)} · गण ${esc(cur.gana)} · ${esc(cur.artha)} · ${esc(cur.en)}</span></p>
+      <div class="dr-tally" id="tally">Vidyut तालिकां निर्मिमीते…</div><div class="dr-grid">${tables()}</div></div>`;
+    vid = await post("/api/dhaturupa/vidyut", a);
+    if (my !== token) return;
+    if (vid.error) { $("tally").textContent = vid.error; return; }
+    LAKARA.forEach(([v]) => paintLa(v));
+    $("tally").textContent = "Vidyut ✓ — our engine fills in below…";
+    for (const [v] of LAKARA) {                                   // sequential: the engine is not thread-safe
+      const r = await post("/api/dhaturupa/engine", {...a, lakara: v});
+      if (my !== token) return;
+      eng[v] = r; paintLa(v); tally();
+    }
+    tally(true);
+  }
+
+  function paintLa(v) {
+    const vs = (vid && vid[v]) || [], es = eng[v];
+    for (let i = 0; i < 9; i++) {
+      const b = $(`c-${v}-${Math.floor(i/3)}-${i%3}`); if (!b) continue;
+      const forms = vs[i] || [];
+      let h = `<span class="dr-v">${forms.length ? forms.map(f => esc(f.dev)).join(" · ") : "—"}</span>`;
+      if (es) {
+        const e = es.cells && es.cells[i];
+        if (es.na) h += `<div class="dr-e na">${i === 0 ? "n/a" : "n/a"}</div>`;
+        else if (e && e.error) h += `<div class="dr-e bad" title="${esc(e.error)}">err</div>`;
+        else if (e) h += `<div class="dr-e ${forms.some(f => f.slp1 === e.slp1) ? "ok" : (forms.length ? "bad" : "na")}">${esc(e.dev)}</div>`;
+      }
+      b.innerHTML = h;
+    }
+  }
+
+  function tally(done) {
+    let ok = 0, bad = 0, na = 0, tot = 0;
+    LAKARA.forEach(([v]) => { const es = eng[v], vs = vid[v] || [];
+      for (let i = 0; i < 9; i++) { if (!(vs[i] || []).length) continue; tot++;
+        if (!es) continue; if (es.na) { na++; continue; }
+        const e = es.cells && es.cells[i]; if (e && !e.error && vs[i].some(f => f.slp1 === e.slp1)) ok++; else bad++; } });
+    $("tally").textContent = `Vidyut: ${tot} cells · engine agrees ${ok} · differs ${bad} · n/a ${na}` + (done ? "" : " …");
+  }
+
+  $("out").addEventListener("click", async e => {
+    const b = e.target.closest(".dr-cell"); if (!b) return;
+    const v = b.dataset.la, r = +b.dataset.r, c = +b.dataset.c, a = args();
+    $("deriv").innerHTML = `<div class="dr-card">…</div>`;
+    const d = await post("/api/dhaturupa/cell", {...a, lakara: v, purusha: 3 - r, vacana: c + 1});
+    const vsteps = Array.isArray(d.vidyut) ? d.vidyut.map(p => `<h4>${esc(p.text)}</h4>` + p.steps.map(s => `<div class="dr-step"><b>${esc(s.code)}</b><span class="r">${esc(s.result.join(" + "))}</span></div>`).join("")).join("") : esc(d.vidyut && d.vidyut.error || "Vidyut unavailable");
+    const E = d.engine || {};
+    const esteps = E.trace ? E.trace.filter(s => ["APPLIED","APPLIED_VACUOUS"].includes(s.status)).map(s => `<div class="dr-step"><b>${esc(s.sutra_id)}</b><span class="r">${esc(s.form_before)} → ${esc(s.form_after)}</span></div>`).join("") : `<div class="dr-step">${esc(E.na || E.error || "")}</div>`;
+    const lab = LAKARA.find(x => x[0] === v)[2];
+    $("deriv").innerHTML = `<div class="dr-card"><p class="dr-cap">${esc(cur.dev)} · ${esc(lab)} · ${esc(PU[r][1])} · ${esc(VC[c][1])}</p>
+      <div class="dr-two"><div><h3>Vidyut</h3>${vsteps}</div><div><h3>Our engine ${E.dev ? "— " + esc(E.dev) : ""}</h3>${esteps}</div></div></div>`;
+    $("deriv").scrollIntoView({block:"nearest"});
+  });
+})();
+</script>
+{% endblock %}
