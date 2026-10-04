@@ -255,7 +255,10 @@ SUTRA = SutraRecord(
     anuvritti_from        = ("7.2.34",),
     cond                  = cond,
     act                   = act,
-    # not an apavāda of 7.2.1/7.2.3: iṭ is para (and nitya); 7.2.4 neṭi then forbids the vṛddhi
+    # Not a true apavāda of 7.2.3 (different operation). Classically iṭ goes first because it is nitya (vṛddhi can be
+    # blocked by iṭ via 7.2.4 neṭi, not vice versa); the resolver does not model nitya (Art. 18 gap). Withdrawing this
+    # stand-in made luṅ 1sg give *avAnizam for every seṭ root (swept: 1528/6453 agree), so it stays until nitya is modelled.
+    apavada_of            = ("7.2.3",),
 )
 
 register_sutra(SUTRA)
