@@ -69,7 +69,7 @@ def act(state: State) -> State:
 
 SUTRA = SutraRecord(
     sutra_id              = "7.2.13",
-    sutra_type            = SutraType.VIDHI,
+    sutra_type            = SutraType.PRATISHEDHA,     # a niṣedha of 7.2.35's iṭ: settled before it contends
     r1_form_identity_exempt = True,
     text_slp1             = "kfsfBfvfstudrusruSruvo liwi",
     text_dev              = "कृसृभृवृस्तुद्रुस्रुश्रुवो लिटि",
@@ -78,6 +78,7 @@ SUTRA = SutraRecord(
     anuvritti_from        = ('7.1.1',),
     cond                  = cond,
     act                   = act,
+    blocks_sutra_ids      = ("7.2.35",),
 )
 
 register_sutra(SUTRA)

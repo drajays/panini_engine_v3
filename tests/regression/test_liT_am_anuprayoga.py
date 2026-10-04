@@ -12,3 +12,8 @@ from tools.autonomy_report import run_autonomously, start_state
                                         ("oKf~", "oKAYcakAra"), ("arda~", "Anarda"), ("agi~", "AnaNga")])
 def test_liT_1sg(dhatu, want):
     assert run_autonomously(start_state(NS(kind="tinanta", args=(dhatu, "liT", 1, 1))), "", dhatu, 250).surface == want
+
+
+@pytest.mark.parametrize("dhatu,want", [("qukfY", "cakfva"), ("idi~", "indAYcakfva")])
+def test_liT_1du_no_iT_7_2_13(dhatu, want):          # kṛ·sṛ·bhṛ… take no iṭ in liṭ (7.2.13 is a niṣedha, settled first)
+    assert run_autonomously(start_state(NS(kind="tinanta", args=(dhatu, "liT", 1, 2))), "", dhatu, 250).surface == want
