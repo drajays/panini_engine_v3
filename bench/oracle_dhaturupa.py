@@ -38,10 +38,34 @@ def _pada(q: dict, v_mod, lakara: str, purusha: int, vacana: int):
                         vacana=getattr(Vacana, _VACANA[vacana]), **kw)
 
 
+def _subanta(q: dict, vibhakti: int, vacana: int):
+    from vidyut.prakriya import Linga, Pada, Pratipadika, Vacana, Vibhakti
+    from bench.oracle_vidyut import _LINGA, _VIBHAKTI
+    stem, linga = q["stem"], _LINGA[q["linga"]]
+    nyap = linga == "Stri" and stem.endswith(("A", "I"))
+    return Pada.Subanta(pratipadika=Pratipadika.nyap(stem) if nyap else Pratipadika.basic(stem),
+                        linga=getattr(Linga, linga), vibhakti=getattr(Vibhakti, _VIBHAKTI[vibhakti]),
+                        vacana=getattr(Vacana, _VACANA[vacana]))
+
+
 def main() -> int:
     from vidyut.prakriya import Vyakarana
     v, q = Vyakarana(), json.load(sys.stdin)
-    if q["op"] == "grid":
+    if q["op"] == "subgrid":                      # 8 vibhakti × 3 vacana, row-major
+        out = []
+        for vb in range(1, 9):
+            for vc in (1, 2, 3):
+                try:
+                    out.append(sorted({p.text for p in v.derive(_subanta(q, vb, vc))}))
+                except Exception:
+                    out.append([])
+    elif q["op"] == "subcell":
+        try:
+            out = [{"text": p.text, "steps": [{"code": s.code, "result": list(s.result)} for s in p.history]}
+                   for p in v.derive(_subanta(q, q["vibhakti"], q["vacana"]))]
+        except Exception as ex:
+            out = {"error": f"{type(ex).__name__}: {ex}"[:200]}
+    elif q["op"] == "grid":
         out = {}
         for la in q.get("lakaras") or LAKARAS:
             cells = []

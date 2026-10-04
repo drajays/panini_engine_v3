@@ -1509,6 +1509,7 @@ _DR_UPASARGA = "pra parA apa sam anu ava nis nir dus dur vi A ni aDi api ati su 
 _DR_PURUSHA = [("prathama", "प्रथमः"), ("madhyama", "मध्यमः"), ("uttama", "उत्तमः")]
 _DR_VACANA = [("eka", "एकवचनम्"), ("dvi", "द्विवचनम्"), ("bahu", "बहुवचनम्")]
 _DR_CACHE: dict = {}
+_DR_EXECUTED = {"APPLIED", "APPLIED_VACUOUS", "DEFINED", "VACUOUS", "AUDIT"}   # fired or recognised (not SKIPPED/BLOCKED)
 
 
 def _dr_row(code: str) -> dict:
@@ -1618,7 +1619,88 @@ def api_dhaturupa_cell():
             eng = {"slp1": st.flat_slp1(), "dev": st.flat_dev(), "trace": _enrich_trace(st.trace)}
         except Exception as ex:
             eng = {"error": f"{type(ex).__name__}: {ex}"[:240]}
-    return jsonify({"vidyut": v, "engine": eng})
+    # The invariant: every sūtra Vidyut fires, our engine fires too (extras are fine). Compare against the closest branch.
+    missing: list[str] = []
+    if isinstance(v, list) and v and eng.get("trace"):
+        ours = {st["sutra_id"] for st in eng["trace"] if st.get("status") in _DR_EXECUTED}
+        branches = [{c["code"].split(":")[0] for c in p["steps"]} for p in v]
+        best = min(branches, key=lambda b: len(b - ours))
+        missing = sorted(best - ours, key=lambda x: tuple(int(n) for n in x.split(".") if n.isdigit()))
+    return jsonify({"vidyut": v, "engine": eng, "missing": missing})
+
+
+# ─────────────────────────────────────────────────────────────────
+# शब्दरूपाणि — subanta, Vidyut first with our engine alongside (same shape as /dhaturupa)
+# ─────────────────────────────────────────────────────────────────
+
+_SR_LINGA = {"pulliṅga": "pum", "strīliṅga": "stri", "napuṃsaka": "napumsaka"}
+_SR_VIBHAKTI = ["प्रथमा", "द्वितीया", "तृतीया", "चतुर्थी", "पञ्चमी", "षष्ठी", "सप्तमी", "सम्बोधनम्"]
+_SR_VACANA = [("eka", "एकवचनम्"), ("dvi", "द्विवचनम्"), ("bahu", "बहुवचनम्")]
+
+
+def _sr_vidyut(op: str, q: dict, **extra):
+    venv_py = _ROOT / ".venv" / "bin" / "python"
+    if not venv_py.exists():
+        return None
+    payload = {"op": op, "stem": q["stem"], "linga": _SR_LINGA.get(q.get("linga"), "pum"), **extra}
+    key = json.dumps(payload, sort_keys=True)
+    if key not in _DR_CACHE:
+        try:
+            r = subprocess.run([str(venv_py), "-m", "bench.oracle_dhaturupa"], cwd=_ROOT, input=key,
+                               capture_output=True, text=True, timeout=120)
+            _DR_CACHE[key] = json.loads(r.stdout) if r.returncode == 0 else None
+        except (subprocess.TimeoutExpired, json.JSONDecodeError):
+            _DR_CACHE[key] = None
+    return _DR_CACHE[key]
+
+
+@app.route("/shabdarupa")
+def shabdarupa_page():
+    return render_template("shabdarupa.html", nav_active="shabdarupa", vibhakti=_SR_VIBHAKTI, vacana=_SR_VACANA,
+                           linga=list(_SR_LINGA))
+
+
+@app.route("/api/shabdarupa/vidyut", methods=["POST"])
+def api_shabdarupa_vidyut():
+    from core.transliterate import slp1_to_dev
+    q = request.get_json(force=True)
+    g = _sr_vidyut("subgrid", q)
+    if g is None:
+        return jsonify({"error": "Vidyut is unavailable (needs .venv with vidyut)"}), 503
+    return jsonify([[{"slp1": f, "dev": slp1_to_dev(f)} for f in c] for c in g])
+
+
+@app.route("/api/shabdarupa/engine", methods=["POST"])
+def api_shabdarupa_engine():
+    """Our engine's 24 cells (vibhakti-major), one request — each derive is fast."""
+    q = request.get_json(force=True)
+    cells = []
+    for vb in range(1, 9):
+        for vc in (1, 2, 3):
+            try:
+                st = derive(q["stem"], vb, vc, linga=q.get("linga") or "pulliṅga")
+                cells.append({"slp1": st.flat_slp1(), "dev": st.flat_dev()})
+            except Exception as ex:
+                cells.append({"error": f"{type(ex).__name__}: {ex}"[:160]})
+    return jsonify({"cells": cells})
+
+
+@app.route("/api/shabdarupa/cell", methods=["POST"])
+def api_shabdarupa_cell():
+    q = request.get_json(force=True)
+    vb, vc = int(q["vibhakti"]), int(q["vacana"])
+    v = _sr_vidyut("subcell", q, vibhakti=vb, vacana=vc)
+    try:
+        st = derive(q["stem"], vb, vc, linga=q.get("linga") or "pulliṅga")
+        eng: dict[str, Any] = {"slp1": st.flat_slp1(), "dev": st.flat_dev(), "trace": _enrich_trace(st.trace)}
+    except Exception as ex:
+        eng = {"error": f"{type(ex).__name__}: {ex}"[:240]}
+    missing: list[str] = []
+    if isinstance(v, list) and v and eng.get("trace"):
+        ours = {t["sutra_id"] for t in eng["trace"] if t.get("status") in _DR_EXECUTED}
+        best = min(({c["code"].split(":")[0] for c in p["steps"]} for p in v), key=lambda b: len(b - ours))
+        missing = sorted(best - ours, key=lambda x: tuple(int(n) for n in x.split(".") if n.isdigit()))
+    return jsonify({"vidyut": v, "engine": eng, "missing": missing})
 
 
 if __name__ == "__main__":

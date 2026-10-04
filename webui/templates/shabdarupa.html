@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}शब्दरूपाणि — पाणिनि-यन्त्रम्{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static', filename='parallel.css') }}">{% endblock %}
+
+{% block content %}
+<h2 style="margin:.4rem 0">शब्दरूपाणि — every form of a prātipadika</h2>
+<p class="dr-lead">Eight vibhaktis × three vacanas. Each cell shows <b>Vidyut</b>'s form(s) first and, in grey, <b>our engine's</b> form (✓ agrees, ≠ differs).
+Click a cell to compare the two derivations sūtra by sūtra — any sūtra Vidyut fires that our engine does not execute is flagged in red.</p>
+
+<div class="dr-card">
+  <div class="dr-ctl" style="margin-top:0">
+    <div><label for="sch">इनपुट-विधि</label><select id="sch">
+      <option value="slp1">SLP1</option><option value="iast">IAST</option><option value="hk">Harvard-Kyoto</option>
+      <option value="velthuis">Velthuis</option><option value="wx">WX</option><option value="itrans">ITRANS</option><option value="devanagari">देवनागरी</option></select></div>
+    <div style="flex:1;min-width:14rem"><label for="stem">प्रातिपदिकम्</label><input id="stem" value="rAma" autocomplete="off" style="width:100%"></div>
+    <div><label for="lg">लिङ्गम्</label><select id="lg">{% for l in linga %}<option>{{ l }}</option>{% endfor %}</select></div>
+    <div style="align-self:flex-end"><button id="go" type="button">रूपाणि दर्शय</button></div>
+  </div>
+  <p class="dr-note" id="pv" style="margin:.4rem 0 0"></p>
+</div>
+<div id="out"></div>
+<div id="deriv"></div>
+{% endblock %}
+
+{% block body_extra %}
+<script src="{{ url_for('static', filename='transliterate.js') }}"></script>
+<script>
+(() => {
+  const VIB = {{ vibhakti | tojson }}, VC = {{ vacana | tojson }};
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const post = (u, b) => fetch(u, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(b)}).then(r => r.json());
+  let token = 0, vid = null, eng = null, last = null;
+  const stem = () => { try { return Transliterate.toSLP1($("stem").value.trim(), $("sch").value); } catch (e) { return $("stem").value.trim(); } };
+  const args = () => ({stem: stem(), linga: $("lg").value});
+  $("stem").addEventListener("input", () => { try { $("pv").textContent = "SLP1: " + stem(); } catch (e) {} });
+  $("go").onclick = load; $("stem").addEventListener("keydown", e => { if (e.key === "Enter") load(); });
+  const params = new URLSearchParams(location.search);
+  if (params.get("stem")) $("stem").value = params.get("stem");
+  load();
+
+  function paint() {
+    for (let i = 0; i < 24; i++) {
+      const b = $(`c-${i}`); if (!b) continue;
+      const forms = (vid && vid[i]) || [], e = eng && eng.cells[i];
+      let h = `<span class="dr-v">${forms.length ? forms.map(f => esc(f.dev)).join(" · ") : "—"}</span>`;
+      if (e) h += e.error ? `<div class="dr-e bad" title="${esc(e.error)}">err</div>`
+        : `<div class="dr-e ${forms.some(f => f.slp1 === e.slp1) ? "ok" : (forms.length ? "bad" : "na")}">${esc(e.dev)}</div>`;
+      b.innerHTML = h;
+    }
+    if (vid && eng) {
+      let ok = 0, tot = 0;
+      for (let i = 0; i < 24; i++) { const f = vid[i] || []; if (!f.length) continue; tot++; const e = eng.cells[i]; if (e && !e.error && f.some(x => x.slp1 === e.slp1)) ok++; }
+      $("tally").textContent = `Vidyut: ${tot} cells · engine agrees ${ok} · differs ${tot - ok}`;
+    }
+  }
+
+  async function load() {
+    const my = ++token, a = args(); vid = eng = null; $("deriv").innerHTML = "";
+    $("out").innerHTML = `<div class="dr-card"><div class="dr-tally" id="tally">Vidyut तालिकां निर्मिमीते…</div><div class="dr-grid" style="grid-template-columns:minmax(0,1fr)"><table>
+      <tr><th></th>${VC.map(x => `<th>${esc(x[1])}</th>`).join("")}</tr>` +
+      VIB.map((v, r) => `<tr><th>${esc(v)}</th>` + [0,1,2].map(c => `<td><button class="dr-cell" data-i="${r*3+c}" id="c-${r*3+c}"><span class="dr-v">…</span></button></td>`).join("") + "</tr>").join("") + "</table></div></div>";
+    vid = await post("/api/shabdarupa/vidyut", a); if (my !== token) return;
+    if (vid.error) { $("tally").textContent = vid.error; return; }
+    paint();
+    eng = await post("/api/shabdarupa/engine", a); if (my !== token) return;
+    paint();
+  }
+
+  $("out").addEventListener("click", async e => {
+    const b = e.target.closest(".dr-cell"); if (!b) return;
+    const i = +b.dataset.i, r = Math.floor(i / 3), c = i % 3;
+    $("deriv").innerHTML = `<div class="dr-card">…</div>`;
+    const d = last = await post("/api/shabdarupa/cell", {...args(), vibhakti: r + 1, vacana: c + 1});
+    const miss = new Set(d.missing || []), E = d.engine || {};
+    const vs = Array.isArray(d.vidyut) ? d.vidyut.map(p => `<h4>${esc(p.text)}</h4>` + p.steps.map(s => `<div class="dr-step${miss.has(s.code.split(":")[0]) ? " miss" : ""}"><b>${esc(s.code)}</b><span class="r">${esc(s.result.join(" + "))}</span></div>`).join("")).join("") : esc(d.vidyut && d.vidyut.error || "Vidyut unavailable");
+    const es = E.trace ? E.trace.filter(s => ["APPLIED","APPLIED_VACUOUS"].includes(s.status) && (s.form_before !== s.form_after || s._is_structural)).map(s => `<div class="dr-step"><b><a href="/sutra/${esc(s.sutra_id)}" target="_blank" rel="noopener">${esc(s.sutra_id)}</a></b><span class="r">${esc(s.form_before)} → ${esc(s.form_after)}</span></div>`).join("") : `<div class="dr-step">${esc(E.error || "")}</div>`;
+    $("deriv").innerHTML = `<div class="dr-card"><p class="dr-cap">${esc($("stem").value)} · ${esc(VIB[r])} · ${esc(VC[c][1])}</p>
+      <p class="dr-tally">${(d.missing || []).length ? `<b style="color:#b3261e">Vidyut sūtras our engine did not execute (${d.missing.length}): ${d.missing.map(esc).join(", ")}</b>` : (E.trace && Array.isArray(d.vidyut) ? `<b style="color:#2a8a3e">✓ every Vidyut sūtra is also executed by our engine</b>` : "")}</p>
+      <div class="dr-two"><div><h3>Vidyut</h3>${vs}</div><div><h3>Our engine ${E.dev ? "— " + esc(E.dev) : ""}</h3>${es}</div></div></div>`;
+    $("deriv").scrollIntoView({block:"nearest"});
+  });
+})();
+</script>
+{% endblock %}
