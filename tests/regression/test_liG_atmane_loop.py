@@ -15,3 +15,11 @@ from tools.autonomy_report import run_autonomously, start_state
 ])
 def test_liG_cell(dhatu, lakara, p, v, want):
     assert run_autonomously(start_state(NS(kind="tinanta", args=(dhatu, lakara, p, v))), "", dhatu, 250).surface == want
+
+
+@pytest.mark.parametrize("dhatu,lakara,p,v,want", [        # 3.4.107 suṭ (ātmanepada); its s goes in vidhi-liṅ (7.2.79), stays in āśīr
+    ("eDa~", "liG", 3, 1, "eDeta"), ("eDa~", "liG", 2, 1, "eDeTAH"), ("eDa~", "liG", 3, 2, "eDeyAtAm"),
+    ("eDa~", "AsIrliG", 3, 1, "eDizIzwa"), ("eDa~", "AsIrliG", 2, 1, "eDizIzWAH"), ("eDa~", "AsIrliG", 3, 2, "eDizIyAstAm"),
+])
+def test_suT_atmane(dhatu, lakara, p, v, want):
+    assert run_autonomously(start_state(NS(kind="tinanta", args=(dhatu, lakara, p, v))), "", dhatu, 250).surface == want

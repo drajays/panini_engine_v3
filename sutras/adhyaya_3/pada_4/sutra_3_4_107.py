@@ -65,13 +65,33 @@ def _find_tin_t_medial(state: State) -> tuple[int, int] | None:
     return None
 
 
+def _atmane_liG_site(state: State):
+    """ātmanepada liṅ (vidhi or āśīr): ("init", i) before a t/th-initial tiṅ (ta, thās), or ("medial", i, j) inside
+    ātām/āthām — read off the tape: sthānī liṅ, no parasmaipada tag, no suṭ yet (3.4.107 सुट् तिथोः)."""
+    for i, t in enumerate(state.terms):
+        if (t.kind != "pratyaya" or "tin_adesha_3_4_78" not in t.tags or "parasmaipada" in t.tags
+                or t.meta.get("suw_3_4_107_done") or (t.meta.get("source_lakara_upadesha") or "").strip() != "liG"
+                or not t.varnas):
+            continue
+        if i > 0 and "suw_agama" in state.terms[i - 1].tags:
+            continue
+        if not any("ling_sIyuw" in u.tags for u in state.terms[:i]):     # suṭ follows sīyuṭ (3.4.102 first)
+            continue
+        if t.varnas[0].slp1 in ("t", "T"):
+            return ("init", i)
+        for j, v in enumerate(t.varnas[1:], start=1):
+            if v.slp1 in ("t", "T"):
+                return ("medial", i, j)
+    return None
+
+
 def _structural_site(state: State) -> bool:
     idx = _find_tin_t_initial(state)
     return idx is not None and "ashir_liG" in state.terms[idx].tags and "parasmaipada" in state.terms[idx].tags
 
 
 def cond(state: State) -> bool:
-    if _structural_site(state):
+    if _structural_site(state) or _atmane_liG_site(state):
         return True
     if not state.meta.get("suw_recipe"):
         return False
@@ -86,6 +106,21 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    hit = None if state.meta.get("suw_recipe") else _atmane_liG_site(state)
+    if hit is not None:
+        if hit[0] == "medial":
+            _, i, j = hit
+            s_v = mk("s")
+            s_v.tags.update({"suw_agama", "suw_s"})
+            state.terms[i].varnas.insert(j, s_v)
+            state.terms[i].meta["suw_3_4_107_done"] = True
+        else:
+            s_v = mk("s")
+            s_v.tags.add("suw_s")
+            state.terms.insert(hit[1], Term(kind="pratyaya", varnas=[s_v], tags={"pratyaya", "suw_agama"},
+                                            meta={"upadesha_slp1": "s", "suw_agama": True}))
+        state.samjna_registry["3.4.107_suw_inserted"] = True
+        return state
     idx = _find_tin_t_initial(state)
     if idx is None:
         hit = _find_tin_t_medial(state)

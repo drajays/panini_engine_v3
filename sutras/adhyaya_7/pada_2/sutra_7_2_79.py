@@ -57,11 +57,35 @@ def _find_yasut(state: State) -> int | None:
     return None
 
 
+def _find_suw(state: State):
+    """suṭ (3.4.107) is liṅ's āgama too: its s goes with sīyuṭ's before a sārvadhātuka tiṅ (vidhi-liṅ: eDeta, eDeyAtAm);
+    in āśīr-liṅ (ārdhadhātuka) it stays. ("init", i) a suṭ Term, or ("medial", i, j) a suṭ varṇa inside ātām/āthām."""
+    for i, t in enumerate(state.terms):
+        if "suw_agama" in t.tags and [v.slp1 for v in t.varnas] == ["s"] and i + 1 < len(state.terms):
+            nxt = state.terms[i + 1]
+            if "ashir_liG" not in nxt.tags and "ardhadhatuka" not in nxt.tags and "tin_adesha_3_4_78" in nxt.tags:
+                return ("init", i)
+        if "tin_adesha_3_4_78" in t.tags and "ashir_liG" not in t.tags and "ardhadhatuka" not in t.tags:
+            for j, v in enumerate(t.varnas):
+                if "suw_agama" in v.tags:
+                    return ("medial", i, j)
+    return None
+
+
 def cond(state: State) -> bool:
-    return _find_sIyuw(state) is not None or _find_yasut(state) is not None
+    return (_find_sIyuw(state) is not None or _find_yasut(state) is not None
+            or _find_suw(state) is not None)
 
 
 def act(state: State) -> State:
+    hit = _find_suw(state) if _find_sIyuw(state) is None and _find_yasut(state) is None else None
+    if hit is not None:
+        if hit[0] == "init":
+            del state.terms[hit[1]]
+        else:
+            del state.terms[hit[1]].varnas[hit[2]]
+        state.samjna_registry["7.2.79_suw_s_lopa"] = True
+        return state
     idx = _find_sIyuw(state)
     if idx is not None:
         t = state.terms[idx]
