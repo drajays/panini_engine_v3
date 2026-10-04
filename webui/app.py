@@ -1630,19 +1630,40 @@ def api_dhaturupa_cell():
 
 
 # ─────────────────────────────────────────────────────────────────
-# शब्दरूपाणि — subanta, Vidyut first with our engine alongside (same shape as /dhaturupa)
+# शब्दरूपाणि — nominal paradigms: the printed corpus (ashtadhyayi.com), Vidyut, and our engine side by side
+# (modelled on cs.rkmvu.ac.in/~tamal/learn/sanskrit/Grammar/site/shabdarupa.html)
 # ─────────────────────────────────────────────────────────────────
 
 _SR_LINGA = {"pulliṅga": "pum", "strīliṅga": "stri", "napuṃsaka": "napumsaka"}
+_SR_LINGA_CODE = {"P": "pulliṅga", "S": "strīliṅga", "N": "napuṃsaka", "A": "pulliṅga"}
 _SR_VIBHAKTI = ["प्रथमा", "द्वितीया", "तृतीया", "चतुर्थी", "पञ्चमी", "षष्ठी", "सप्तमी", "सम्बोधनम्"]
 _SR_VACANA = [("eka", "एकवचनम्"), ("dvi", "द्विवचनम्"), ("bahu", "बहुवचनम्")]
+_SR_CORPUS: dict = {}
+
+
+def _sr_corpus():
+    """shabda__data2.txt (9,007 paradigms, same order as static/shabda_index.json) and shabdaprakriya steps."""
+    if not _SR_CORPUS:
+        base = _ROOT / "data" / "reference" / "ashtadhyayi_com"
+        _SR_CORPUS["rows"] = json.loads((base / "shabda__data2.txt").read_text(encoding="utf-8"))["data"]
+        steps: dict = {}
+        for r in json.loads((base / "shabda__shabdaprakriya.txt").read_text(encoding="utf-8"))["data"]:
+            steps.setdefault((r["baseindex"], int(r["vibhakti"]), int(r["vachan"])), r)
+        _SR_CORPUS["steps"] = steps
+    return _SR_CORPUS
+
+
+def _sr_baseindex(z: str) -> str:
+    a, _, b = (z or "").partition(".")
+    return f"{int(a):02d}.{int(b):03d}" if a.isdigit() and b.isdigit() else ""
 
 
 def _sr_vidyut(op: str, q: dict, **extra):
     venv_py = _ROOT / ".venv" / "bin" / "python"
     if not venv_py.exists():
         return None
-    payload = {"op": op, "stem": q["stem"], "linga": _SR_LINGA.get(q.get("linga"), "pum"), **extra}
+    payload = {"op": op, "stem": q["stem"], "linga": _SR_LINGA.get(q.get("linga"), "pum"),
+               "nyap": (bool(q["nyap"]) if q.get("nyap") is not None else None), **extra}
     key = json.dumps(payload, sort_keys=True)
     if key not in _DR_CACHE:
         try:
@@ -1660,6 +1681,25 @@ def shabdarupa_page():
                            linga=list(_SR_LINGA))
 
 
+@app.route("/api/shabdarupa/stem/<int:i>")
+def api_shabdarupa_stem(i: int):
+    """One corpus paradigm: printed forms (24, each a list of alternatives), notes, option chips, and the nyap tag."""
+    rows = _sr_corpus()["rows"]
+    if not 0 <= i < len(rows):
+        abort(404)
+    r = rows[i]
+    opts = [k.replace("_", " ") for k in r["prakriya_options"] if k != "linga"]
+    from core.transliterate import dev_to_slp1
+    return jsonify({
+        "w": r["word"], "slp": dev_to_slp1(r["word"]), "linga": _SR_LINGA_CODE.get(r["linga"], "pulliṅga"),
+        "artha": r.get("artha", ""), "en": r.get("artha_eng", ""), "vy": r.get("vyutpatti", ""),
+        "note": r.get("shabda_notes", ""), "info": r.get("info", ""), "opts": opts,
+        "nyap": any(k in r["prakriya_options"] for k in ("आबन्त", "ङ्यन्त")),
+        "base": _sr_baseindex(r.get("zbaseindex", "")),
+        "forms": [[x.replace("हे ", "").strip() for x in c.split("-") if x.strip()] for c in r["forms"].split(";")],
+    })
+
+
 @app.route("/api/shabdarupa/vidyut", methods=["POST"])
 def api_shabdarupa_vidyut():
     from core.transliterate import slp1_to_dev
@@ -1672,7 +1712,7 @@ def api_shabdarupa_vidyut():
 
 @app.route("/api/shabdarupa/engine", methods=["POST"])
 def api_shabdarupa_engine():
-    """Our engine's 24 cells (vibhakti-major), one request — each derive is fast."""
+    """Our engine's 24 cells (vibhakti-major)."""
     q = request.get_json(force=True)
     cells = []
     for vb in range(1, 9):
@@ -1687,6 +1727,7 @@ def api_shabdarupa_engine():
 
 @app.route("/api/shabdarupa/cell", methods=["POST"])
 def api_shabdarupa_cell():
+    """Click-through: the corpus's hand-checked steps (where it has them), Vidyut's steps, our engine's trace."""
     q = request.get_json(force=True)
     vb, vc = int(q["vibhakti"]), int(q["vacana"])
     v = _sr_vidyut("subcell", q, vibhakti=vb, vacana=vc)
@@ -1695,12 +1736,27 @@ def api_shabdarupa_cell():
         eng: dict[str, Any] = {"slp1": st.flat_slp1(), "dev": st.flat_dev(), "trace": _enrich_trace(st.trace)}
     except Exception as ex:
         eng = {"error": f"{type(ex).__name__}: {ex}"[:240]}
+    corpus = None
+    hit = _sr_corpus()["steps"].get((q.get("base") or "", vb, vc))
+    if hit:
+        corpus = {"form": hit["form"], "steps": hit["steps"]}
     missing: list[str] = []
     if isinstance(v, list) and v and eng.get("trace"):
         ours = {t["sutra_id"] for t in eng["trace"] if t.get("status") in _DR_EXECUTED}
         best = min(({c["code"].split(":")[0] for c in p["steps"]} for p in v), key=lambda b: len(b - ours))
         missing = sorted(best - ours, key=lambda x: tuple(int(n) for n in x.split(".") if n.isdigit()))
-    return jsonify({"vidyut": v, "engine": eng, "missing": missing})
+    return jsonify({"corpus": corpus, "vidyut": v, "engine": eng, "missing": missing})
+
+
+@app.route("/api/shabdarupa/taddhita", methods=["POST"])
+def api_shabdarupa_taddhita():
+    """Every taddhita pratyaya Vidyut knows, applied to this stem (most yield nothing, and the table says so)."""
+    from core.transliterate import slp1_to_dev
+    q = request.get_json(force=True)
+    r = _sr_vidyut("taddhita", q)
+    if r is None:
+        return jsonify({"error": "Vidyut is unavailable"}), 503
+    return jsonify([{"name": x["name"], "forms": [{"slp1": f, "dev": slp1_to_dev(f)} for f in x["forms"]]} for x in r])
 
 
 if __name__ == "__main__":

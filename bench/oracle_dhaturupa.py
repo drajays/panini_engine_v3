@@ -42,7 +42,7 @@ def _subanta(q: dict, vibhakti: int, vacana: int):
     from vidyut.prakriya import Linga, Pada, Pratipadika, Vacana, Vibhakti
     from bench.oracle_vidyut import _LINGA, _VIBHAKTI
     stem, linga = q["stem"], _LINGA[q["linga"]]
-    nyap = linga == "Stri" and stem.endswith(("A", "I"))
+    nyap = bool(q["nyap"]) if q.get("nyap") is not None else (linga == "Stri" and stem.endswith(("A", "I")))
     return Pada.Subanta(pratipadika=Pratipadika.nyap(stem) if nyap else Pratipadika.basic(stem),
                         linga=getattr(Linga, linga), vibhakti=getattr(Vibhakti, _VIBHAKTI[vibhakti]),
                         vacana=getattr(Vacana, _VACANA[vacana]))
@@ -59,6 +59,19 @@ def main() -> int:
                     out.append(sorted({p.text for p in v.derive(_subanta(q, vb, vc))}))
                 except Exception:
                     out.append([])
+    elif q["op"] == "taddhita":                    # every taddhita pratyaya on this stem: prathamā ekavacana
+        from vidyut.prakriya import Linga, Pada, Pratipadika, Taddhita, Vacana, Vibhakti
+        out = []
+        for name in [n for n in dir(Taddhita) if not n.startswith("_") and n[0].isalpha() and n not in ("name", "value")]:
+            try:
+                base = Pratipadika.nyap(q["stem"]) if q.get("nyap") else Pratipadika.basic(q["stem"])
+                pp = Pratipadika.taddhitanta(base, getattr(Taddhita, name))
+                forms = sorted({p.text for p in v.derive(Pada.Subanta(pratipadika=pp, linga=Linga.Pum,
+                                vibhakti=Vibhakti.Prathama, vacana=Vacana.Eka))})
+            except Exception:
+                forms = []
+            if forms:
+                out.append({"name": name, "forms": forms})
     elif q["op"] == "subcell":
         try:
             out = [{"text": p.text, "steps": [{"code": s.code, "result": list(s.result)} for s in p.history]}

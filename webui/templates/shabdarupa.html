@@ -1,85 +1,167 @@
 {% extends "base.html" %}
 {% block title %}शब्दरूपाणि — पाणिनि-यन्त्रम्{% endblock %}
-{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static', filename='parallel.css') }}">{% endblock %}
+{% block head_extra %}<link rel="stylesheet" href="{{ url_for('static', filename='parallel.css') }}">
+<style>.dr-c{font-family:var(--dev);font-size:1rem}.dr-c.corp{font-weight:600}.dr-e.v{color:#5b4a8a}.dr-chip{display:inline-block;border:1px solid var(--line);border-radius:10px;padding:0 .5rem;margin:.1rem .2rem 0 0;font-size:.78rem;color:var(--ink-dim)}</style>{% endblock %}
 
 {% block content %}
-<h2 style="margin:.4rem 0">शब्दरूपाणि — every form of a prātipadika</h2>
-<p class="dr-lead">Eight vibhaktis × three vacanas. Each cell shows <b>Vidyut</b>'s form(s) first and, in grey, <b>our engine's</b> form (✓ agrees, ≠ differs).
-Click a cell to compare the two derivations sūtra by sūtra — any sūtra Vidyut fires that our engine does not execute is flagged in red.</p>
+<h2 style="margin:.4rem 0">शब्दरूपाणि — nominal paradigms</h2>
+<p class="dr-lead">The full declension of 9,007 stems — seven vibhaktis and the sambodhana, in three vacanas — as the corpus (ashtadhyayi.com) prints them,
+with <b>Vidyut</b>'s and <b>our engine</b>'s forms beside each. ✓ means the form equals the corpus's; a red form is what that engine derives instead.
+Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut fires that our engine does not execute is flagged in red.</p>
 
 <div class="dr-card">
   <div class="dr-ctl" style="margin-top:0">
     <div><label for="sch">इनपुट-विधि</label><select id="sch">
-      <option value="slp1">SLP1</option><option value="iast">IAST</option><option value="hk">Harvard-Kyoto</option>
-      <option value="velthuis">Velthuis</option><option value="wx">WX</option><option value="itrans">ITRANS</option><option value="devanagari">देवनागरी</option></select></div>
-    <div style="flex:1;min-width:14rem"><label for="stem">प्रातिपदिकम्</label><input id="stem" value="rAma" autocomplete="off" style="width:100%"></div>
-    <div><label for="lg">लिङ्गम्</label><select id="lg">{% for l in linga %}<option>{{ l }}</option>{% endfor %}</select></div>
-    <div style="align-self:flex-end"><button id="go" type="button">रूपाणि दर्शय</button></div>
+      <option value="devanagari">देवनागरी</option><option value="slp1">SLP1</option><option value="iast">IAST</option><option value="hk">Harvard-Kyoto</option>
+      <option value="velthuis">Velthuis</option><option value="wx">WX</option><option value="itrans">ITRANS</option></select></div>
+    <div style="flex:1;min-width:14rem"><label for="q">शब्दः — find a stem (राम · rAma · हरि · विष्णुः · meaning)</label><input id="q" autocomplete="off" style="width:100%" placeholder="राम · rAma · to be"></div>
+    <div><label for="fl">लिङ्गम्</label><select id="fl"><option value="">सर्वे</option><option>pulliṅga</option><option>strīliṅga</option><option>napuṃsaka</option></select></div>
   </div>
-  <p class="dr-note" id="pv" style="margin:.4rem 0 0"></p>
+  <div class="dr-tally" id="count" style="margin:.6rem 0 .2rem"></div>
+  <div id="list" class="dr-list" style="max-width:none"></div>
+  <div class="dr-ctl" style="margin-top:.4rem;align-items:center"><button id="prev" type="button">← पूर्व</button><span id="pg"></span><button id="next" type="button">अग्र →</button></div>
 </div>
+
 <div id="out"></div>
 <div id="deriv"></div>
+
+<div class="dr-card" id="tadcard" hidden>
+  <h3 style="margin:0 0 .2rem">तद्धितान्ताः</h3>
+  <p class="dr-note" style="margin:0 0 .5rem">Every taddhita pratyaya Vidyut knows, applied to this stem. Most produce nothing — a taddhita is ordained in a specific sense after specific stems. (Our engine has no general taddhita derivation yet.)</p>
+  <button id="tadgo" type="button">derive all</button><div id="tadout"></div>
+</div>
+
+<div class="dr-card">
+  <h3 style="margin:0 0 .2rem">अन्यः शब्दः — decline any stem</h3>
+  <p class="dr-note" style="margin:0 0 .5rem">The corpus prints 9,007 paradigms; Vidyut and our engine will decline anything. There is no corpus column for a stem typed here.</p>
+  <div class="dr-ctl" style="margin-top:0">
+    <div style="flex:1;min-width:14rem"><label for="anyq">शब्दः (in the input-scheme above)</label><input id="anyq" autocomplete="off" style="width:100%" placeholder="राम · rAma"></div>
+    <div><label for="anyl">लिङ्गम्</label><select id="anyl"><option>pulliṅga</option><option>strīliṅga</option><option>napuṃsaka</option></select></div>
+    <div><label for="anyn">स्त्रीप्रत्ययान्तः</label><select id="anyn"><option value="">no — a plain stem</option><option value="1">yes — आबन्त / ङ्यन्त</option></select></div>
+    <div style="align-self:flex-end"><button id="anygo" type="button">decline</button></div>
+  </div>
+  <p class="dr-note" id="anypv" style="margin:.3rem 0 0"></p>
+</div>
 {% endblock %}
 
 {% block body_extra %}
 <script src="{{ url_for('static', filename='transliterate.js') }}"></script>
 <script>
 (() => {
-  const VIB = {{ vibhakti | tojson }}, VC = {{ vacana | tojson }};
+  const VIB = {{ vibhakti | tojson }}, VC = {{ vacana | tojson }}, PAGE = 12;
   const $ = id => document.getElementById(id);
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const post = (u, b) => fetch(u, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(b)}).then(r => r.json());
-  let token = 0, vid = null, eng = null, last = null;
-  const stem = () => { try { return Transliterate.toSLP1($("stem").value.trim(), $("sch").value); } catch (e) { return $("stem").value.trim(); } };
-  const args = () => ({stem: stem(), linga: $("lg").value});
-  $("stem").addEventListener("input", () => { try { $("pv").textContent = "SLP1: " + stem(); } catch (e) {} });
-  $("go").onclick = load; $("stem").addEventListener("keydown", e => { if (e.key === "Enter") load(); });
-  const params = new URLSearchParams(location.search);
-  if (params.get("stem")) $("stem").value = params.get("stem");
-  load();
+  const slp = (t, sch) => { try { return Transliterate.toSLP1(t, sch); } catch (e) { return t; } };
+  let IX = [], hits = [], page = 0, rec = null, token = 0, vid = null, eng = null, ids = -1;
+  const same = (forms, e) => e && !e.error && forms.some(f => f.slp1 === e.slp1 || f === e.dev);
 
+  fetch("/static/shabda_index.json").then(r => r.json()).then(r => {
+    IX = r; refilter();
+    const w = new URLSearchParams(location.search).get("w");
+    const i = w ? IX.findIndex(x => x.w === w || x.slp === w) : -1;
+    if (i >= 0) pick(i); else if (w) { $("anyq").value = w; anyDecline(); } else pick(IX.findIndex(x => x.slp === "rAma" && x.l === "pulliṅga"));
+  });
+
+  function refilter() {
+    const raw = $("q").value.trim().toLowerCase(), t2 = raw && $("sch").value !== "slp1" ? slp(raw, $("sch").value).toLowerCase() : raw, lg = $("fl").value;
+    hits = [];
+    IX.forEach((d, i) => { if ((!lg || d.l === lg) && (!raw || [d.w, d.slp, d.a, d.ae].join(" ").toLowerCase().includes(raw) || d.slp.toLowerCase().includes(t2) || d.w.includes(raw))) hits.push(i); });
+    page = 0; paintList();
+  }
+  function paintList() {
+    const n = hits.length, from = page * PAGE;
+    $("count").textContent = `${n.toLocaleString()} स्तेमाः`;
+    $("list").innerHTML = hits.slice(from, from + PAGE).map(i => { const d = IX[i];
+      return `<div data-i="${i}" class="${i === ids ? "on" : ""}"><b style="font-family:var(--dev)">${esc(d.w)}</b> <span style="color:var(--ink-dim)">${esc(d.slp)} · ${esc(d.l)} — ${esc(d.a)} ${esc(d.ae)}</span></div>`; }).join("") || "<div>—</div>";
+    $("pg").textContent = n ? `${from + 1}–${Math.min(n, from + PAGE)} / ${n}` : "—";
+    $("prev").disabled = page === 0; $("next").disabled = from + PAGE >= n;
+  }
+  ["q","sch","fl"].forEach(i => $(i).addEventListener(i === "q" ? "input" : "change", refilter));
+  $("prev").onclick = () => { page--; paintList(); }; $("next").onclick = () => { page++; paintList(); };
+  $("list").addEventListener("click", e => { const c = e.target.closest("[data-i]"); if (c) pick(+c.dataset.i); });
+
+  async function pick(i) {
+    if (i < 0) return;
+    ids = i; paintList();
+    const r = await (await fetch(`/api/shabdarupa/stem/${i}`)).json();
+    rec = {stem: r.slp, linga: r.linga, nyap: r.nyap, w: r.w, corpus: r};
+    $("tadcard").hidden = false; $("tadout").innerHTML = "";
+    load();
+  }
+
+  function anyDecline() {
+    const raw = $("anyq").value.trim(); if (!raw) return;
+    const sl = slp(raw, $("sch").value);
+    rec = {stem: sl, linga: $("anyl").value, nyap: !!$("anyn").value, w: raw, corpus: null};
+    ids = -1; paintList(); $("tadcard").hidden = false; $("tadout").innerHTML = "";
+    load();
+  }
+  $("anygo").onclick = anyDecline; $("anyq").addEventListener("keydown", e => { if (e.key === "Enter") anyDecline(); });
+  $("anyq").addEventListener("input", () => { $("anypv").textContent = "SLP1: " + slp($("anyq").value.trim(), $("sch").value); });
+
+  const args = () => ({stem: rec.stem, linga: rec.linga, nyap: rec.corpus ? rec.nyap : (rec.nyap || null)});
+  const cellHtml = (corp, forms, e) => {
+    let h = corp ? `<div class="dr-c corp">${esc(corp.join(" · ")) || "—"}</div>` : "";
+    h += `<div class="dr-e v${corp ? "" : ""}" style="${corp ? "" : "border-top:0;color:var(--ink)"}">${forms.length ? forms.map(f => esc(f.dev)).join(" · ") : "—"}${vid && corp ? (corp.length && forms.length && forms.every(f => corp.includes(f.dev)) && corp.every(c => forms.some(f => f.dev === c)) ? ' <span class="dr-e ok"></span>' : "") : ""}</div>`;
+    if (e) h += e.error ? `<div class="dr-e bad" title="${esc(e.error)}">err</div>`
+      : `<div class="dr-e ${corp ? (corp.includes(e.dev) ? "ok" : "bad") : (forms.some(f => f.slp1 === e.slp1) ? "ok" : (forms.length ? "bad" : "na"))}">${esc(e.dev)}</div>`;
+    return h;
+  };
   function paint() {
     for (let i = 0; i < 24; i++) {
       const b = $(`c-${i}`); if (!b) continue;
-      const forms = (vid && vid[i]) || [], e = eng && eng.cells[i];
-      let h = `<span class="dr-v">${forms.length ? forms.map(f => esc(f.dev)).join(" · ") : "—"}</span>`;
-      if (e) h += e.error ? `<div class="dr-e bad" title="${esc(e.error)}">err</div>`
-        : `<div class="dr-e ${forms.some(f => f.slp1 === e.slp1) ? "ok" : (forms.length ? "bad" : "na")}">${esc(e.dev)}</div>`;
-      b.innerHTML = h;
+      b.innerHTML = cellHtml(rec.corpus ? rec.corpus.forms[i] || [] : null, (vid && vid[i]) || [], eng && eng.cells[i]);
     }
     if (vid && eng) {
-      let ok = 0, tot = 0;
-      for (let i = 0; i < 24; i++) { const f = vid[i] || []; if (!f.length) continue; tot++; const e = eng.cells[i]; if (e && !e.error && f.some(x => x.slp1 === e.slp1)) ok++; }
-      $("tally").textContent = `Vidyut: ${tot} cells · engine agrees ${ok} · differs ${tot - ok}`;
+      let ok = 0, vok = 0, tot = 0;
+      for (let i = 0; i < 24; i++) { const e = eng.cells[i], f = vid[i] || [], c = rec.corpus && rec.corpus.forms[i];
+        tot++;
+        if (c) { if (e && c.includes(e.dev)) ok++; if (f.length && f.some(x => c.includes(x.dev))) vok++; }
+        else if (same(f, e)) ok++; }
+      $("tally").textContent = rec.corpus ? `corpus: ${tot} cells · our engine = corpus in ${ok} · Vidyut = corpus in ${vok}` : `Vidyut vs our engine: agree in ${ok} of ${tot}`;
     }
   }
 
   async function load() {
-    const my = ++token, a = args(); vid = eng = null; $("deriv").innerHTML = "";
-    $("out").innerHTML = `<div class="dr-card"><div class="dr-tally" id="tally">Vidyut तालिकां निर्मिमीते…</div><div class="dr-grid" style="grid-template-columns:minmax(0,1fr)"><table>
+    const my = ++token; vid = eng = null; $("deriv").innerHTML = "";
+    const c = rec.corpus;
+    const cap = c ? `<p class="dr-cap">${esc(c.w)} <span class="m">${esc(c.slp)} · ${esc(c.linga)} · ${esc(c.artha)} ${esc(c.en)}</span></p>
+      ${[c.vy, c.note, c.info].filter(Boolean).map(x => `<p class="dr-note" style="margin:.1rem 0">${esc(x)}</p>`).join("")}
+      <p>${c.opts.map(o => `<span class="dr-chip">${esc(o)}</span>`).join("")}</p>` : `<p class="dr-cap">${esc(rec.w)} <span class="m">${esc(rec.stem)} · ${esc(rec.linga)}${rec.nyap ? " · strī-pratyayānta" : ""}</span></p>`;
+    $("out").innerHTML = `<div class="dr-card">${cap}<div class="dr-tally" id="tally">Vidyut तालिकां निर्मिमीते…</div><div class="dr-grid" style="grid-template-columns:minmax(0,1fr)"><table>
       <tr><th></th>${VC.map(x => `<th>${esc(x[1])}</th>`).join("")}</tr>` +
-      VIB.map((v, r) => `<tr><th>${esc(v)}</th>` + [0,1,2].map(c => `<td><button class="dr-cell" data-i="${r*3+c}" id="c-${r*3+c}"><span class="dr-v">…</span></button></td>`).join("") + "</tr>").join("") + "</table></div></div>";
-    vid = await post("/api/shabdarupa/vidyut", a); if (my !== token) return;
-    if (vid.error) { $("tally").textContent = vid.error; return; }
+      VIB.map((v, r) => `<tr><th>${esc(v)}</th>` + [0,1,2].map(k => `<td><button class="dr-cell" data-i="${r*3+k}" id="c-${r*3+k}"><span class="dr-v">…</span></button></td>`).join("") + "</tr>").join("") +
+      `</table></div><p class="dr-note">${c ? "Top: the corpus's printed form. Purple: Vidyut. Grey: our engine. " : "Top: Vidyut. Grey: our engine. "}Click a cell for its derivation.</p></div>`;
+    if (c) paint();
+    vid = await post("/api/shabdarupa/vidyut", args()); if (my !== token) return;
+    if (vid.error) { $("tally").textContent = vid.error; vid = null; return; }
     paint();
-    eng = await post("/api/shabdarupa/engine", a); if (my !== token) return;
+    eng = await post("/api/shabdarupa/engine", args()); if (my !== token) return;
     paint();
   }
 
   $("out").addEventListener("click", async e => {
     const b = e.target.closest(".dr-cell"); if (!b) return;
-    const i = +b.dataset.i, r = Math.floor(i / 3), c = i % 3;
+    const i = +b.dataset.i, r = Math.floor(i / 3), k = i % 3;
     $("deriv").innerHTML = `<div class="dr-card">…</div>`;
-    const d = last = await post("/api/shabdarupa/cell", {...args(), vibhakti: r + 1, vacana: c + 1});
+    const d = await post("/api/shabdarupa/cell", {...args(), vibhakti: r + 1, vacana: k + 1, base: rec.corpus ? rec.corpus.base : ""});
     const miss = new Set(d.missing || []), E = d.engine || {};
     const vs = Array.isArray(d.vidyut) ? d.vidyut.map(p => `<h4>${esc(p.text)}</h4>` + p.steps.map(s => `<div class="dr-step${miss.has(s.code.split(":")[0]) ? " miss" : ""}"><b>${esc(s.code)}</b><span class="r">${esc(s.result.join(" + "))}</span></div>`).join("")).join("") : esc(d.vidyut && d.vidyut.error || "Vidyut unavailable");
     const es = E.trace ? E.trace.filter(s => ["APPLIED","APPLIED_VACUOUS"].includes(s.status) && (s.form_before !== s.form_after || s._is_structural)).map(s => `<div class="dr-step"><b><a href="/sutra/${esc(s.sutra_id)}" target="_blank" rel="noopener">${esc(s.sutra_id)}</a></b><span class="r">${esc(s.form_before)} → ${esc(s.form_after)}</span></div>`).join("") : `<div class="dr-step">${esc(E.error || "")}</div>`;
-    $("deriv").innerHTML = `<div class="dr-card"><p class="dr-cap">${esc($("stem").value)} · ${esc(VIB[r])} · ${esc(VC[c][1])}</p>
+    const cs = d.corpus ? `<div><h3>Corpus <span class="dr-note">(hand-checked upstream)</span></h3><h4>${esc(d.corpus.form)}</h4>${d.corpus.steps.map((s, n) => `<div class="dr-step"><b>${n + 1}</b><span class="r">${esc(s.step)}</span> <b style="margin-left:.4rem">${s.sutras.map(esc).join(", ")}</b></div>`).join("")}</div>` : "";
+    $("deriv").innerHTML = `<div class="dr-card" id="dcard"><p class="dr-cap">${esc(rec.w)} · ${esc(VIB[r])} · ${esc(VC[k][1])}</p>
       <p class="dr-tally">${(d.missing || []).length ? `<b style="color:#b3261e">Vidyut sūtras our engine did not execute (${d.missing.length}): ${d.missing.map(esc).join(", ")}</b>` : (E.trace && Array.isArray(d.vidyut) ? `<b style="color:#2a8a3e">✓ every Vidyut sūtra is also executed by our engine</b>` : "")}</p>
-      <div class="dr-two"><div><h3>Vidyut</h3>${vs}</div><div><h3>Our engine ${E.dev ? "— " + esc(E.dev) : ""}</h3>${es}</div></div></div>`;
-    $("deriv").scrollIntoView({block:"nearest"});
+      <div class="dr-two">${cs}<div><h3>Vidyut</h3>${vs}</div><div><h3>Our engine ${E.dev ? "— " + esc(E.dev) : ""}</h3>${es}</div></div></div>`;
+    $("dcard").scrollIntoView({block:"nearest"});
   });
+
+  $("tadgo").onclick = async () => {
+    $("tadgo").disabled = true; $("tadout").textContent = "deriving…";
+    const r = await post("/api/shabdarupa/taddhita", args());
+    $("tadgo").disabled = false;
+    $("tadout").innerHTML = r.error ? esc(r.error) : (r.length ? `<p class="dr-note">${r.length} taddhita pratyayas produce a form here.</p><table style="border-collapse:collapse"><tr><th style="text-align:left">प्रत्ययः</th><th style="text-align:left">रूपम्</th></tr>` + r.map(x => `<tr><td style="padding:.15rem .8rem .15rem 0">${esc(x.name)}</td><td style="font-family:var(--dev)">${x.forms.map(f => esc(f.dev)).join(" · ")}</td></tr>`).join("") + "</table>" : "No taddhita pratyaya produces a form from this stem.");
+  };
 })();
 </script>
 {% endblock %}
