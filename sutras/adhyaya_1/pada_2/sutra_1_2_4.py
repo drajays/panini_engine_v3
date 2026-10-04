@@ -59,9 +59,12 @@ def _find(state: State) -> int | None:
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
         by_sthanin = tin_by_sthanin(t)
-        if not (is_sarvadhatuka_upadesha_slp1(up) or by_sthanin):
+        # a tiṅ ādeśa of laṭ/loṭ/laṅ/liṅ is sārvadhātuka (3.4.113) even after 3.4.101 turned thas → tam, tas → tām …
+        by_lak = ("tin_adesha_3_4_78" in t.tags and (t.meta.get("source_lakara_upadesha") or "").strip() in {"laT", "loT", "laG", "liG"}
+                  and "ardhadhatuka" not in t.tags and "ashir_liG" not in t.tags)
+        if not (is_sarvadhatuka_upadesha_slp1(up) or by_sthanin or by_lak):
             continue
-        if _is_pit_upadesha(up) or (by_sthanin and sthanin_was_pit(t)):   # 1.1.56: ṇal for tip is pit too
+        if _is_pit_upadesha(up) or ((by_sthanin or by_lak) and sthanin_was_pit(t)):   # 1.1.56: ṇal for tip is pit too
             continue
         # 3.4.92 आडुत्तमस्य पिच्च: the loṭ uttama endings are pit (सुनवाव, करवाम)
         if ((t.meta.get("source_lakara_upadesha") or "").strip() == "loT"

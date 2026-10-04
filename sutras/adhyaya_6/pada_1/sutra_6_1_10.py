@@ -60,13 +60,21 @@ def act(state: State) -> State:
         return state
     dh = state.terms[i]
     abhy_tags = (set(dh.tags) | {"abhyasa", "anga", "P040_juhoti_abhyasa"}) - {"dhatu"}
+    vs = list(dh.varnas)
+    aT = []
+    if vs and "aT_agama_v" in vs[0].tags:      # the aṭ precedes the whole aṅga (abhyāsa included): a-bi-bhet, not *a-bhI-a-bhet
+        aT, vs = [vs[0]], vs[1:]
+        dh.varnas = list(vs)
     abhy = Term(
         kind=dh.kind,
-        varnas=list(dh.varnas),
+        varnas=list(vs),
         tags=abhy_tags,
         meta=dict(dh.meta),
     )
     state.terms.insert(i, abhy)
+    if aT:      # the aṭ as its own Term before the abhyāsa: it is no part of the abhyāsa (7.4.60 must not read it)
+        state.terms.insert(i, Term(kind="pratyaya", varnas=aT, tags={"pratyaya", "agama", "aT_agama"},
+                                   meta={"upadesha_slp1": "aw"}))
     state.samjna_registry["6.1.10_P040_slau_dvitva_done"] = True
     return state
 

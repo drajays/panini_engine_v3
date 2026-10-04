@@ -70,6 +70,7 @@ def act(state: State) -> State:
         return state
     idx, new_slp1 = result
     t = state.terms[idx]
+    t.meta.setdefault("tin_before_3_4_83", (t.meta.get("upadesha_slp1") or "").strip())   # the sthānin (1.1.56): pit-ness is read from it
     adesha_substitute_varnas(
         t,
         new_slp1,

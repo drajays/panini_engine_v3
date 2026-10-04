@@ -95,7 +95,10 @@ def _sarvadhatuka_or_ardhadhatuka_following_dhatu(state: State, di: int) -> bool
     """True iff ``terms[di+1]`` is the *pare* *sārvadhātuka* / *ārdhadhātuka* trigger."""
     if di + 1 >= len(state.terms):
         return False
-    nxt = state.terms[di + 1]
+    k = di + 1
+    while k + 1 < len(state.terms) and "agama" in state.terms[k].tags:      # an āgama (āṭ of loṭ) is part of the affix (1.1.46)
+        k += 1
+    nxt = state.terms[k]
     up = (nxt.meta.get("upadesha_slp1") or "").strip()
     if is_sarvadhatuka_upadesha_slp1(up):
         return True

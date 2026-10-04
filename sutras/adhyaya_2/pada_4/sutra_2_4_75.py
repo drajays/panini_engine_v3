@@ -55,7 +55,14 @@ def _already_has_slu(state: State) -> bool:
 
 def cond(state: State) -> bool:
     i = _site(state)
-    return i is not None and not _already_has_slu(state) and not state.terms[i].meta.get("2_4_75_slu_done")
+    if i is None or _already_has_slu(state) or state.terms[i].meta.get("2_4_75_slu_done"):
+        return False
+    if "P040_juhotyadi" in state.terms[i].tags:
+        return True
+    # ślu replaces śap — so only where śap would stand (a sārvadhātuka tiṅ); not under sya/tās (lṛṭ, luṭ), not in luṅ's sic
+    from sutras.adhyaya_3.pada_1.vikarana_sap_3_1_68 import find_sap_insertion_dhatu_index
+    return find_sap_insertion_dhatu_index(state) is not None or any(
+        t.kind == "pratyaya" and (t.meta.get("upadesha_slp1") or "").strip() == "Sap" for t in state.terms)
 
 
 def act(state: State) -> State:

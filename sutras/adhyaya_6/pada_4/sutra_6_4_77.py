@@ -39,19 +39,40 @@ def _find(state: State):
     return None
 
 
+def _snu_samyogapurva(state: State):
+    """śnu after a conjunct (the root ends in a consonant: Sak+nu, āp+nu): uvaṅ, not yaṇ — Saknuvanti, āpnuvanti."""
+    ts = state.terms
+    for k in range(1, len(ts) - 1):
+        nu, nxt = ts[k], ts[k + 1]
+        if (nu.meta.get("upadesha_slp1") or "").strip() != "Snu" or [v.slp1 for v in nu.varnas] != ["n", "u"]:
+            continue
+        if nu.meta.get("6_4_77_uvang_done") or not nxt.varnas or nxt.varnas[0].slp1 not in _AC:
+            continue
+        prev = ts[k - 1].varnas
+        if prev and prev[-1].slp1 not in _AC:            # a consonant before n: saṃyogapūrva
+            return k
+    return None
+
+
 def cond(state: State) -> bool:
-    return _find(state) is not None
+    return _find(state) is not None or _snu_samyogapurva(state) is not None
 
 
 def act(state: State) -> State:
     i = _find(state)
     if i is None:
+        k = _snu_samyogapurva(state)
+        if k is not None:
+            state.terms[k].varnas.append(mk("v"))
+            state.terms[k].meta["6_4_77_uvang_done"] = True
+            state.terms[k].tags.discard("upadesha")
         return state
     dh = state.terms[i]
     a, b = _IYUV[dh.varnas[-1].slp1]
     dh.varnas[-1] = mk(a)
     dh.varnas.append(mk(b))
     dh.meta["6_4_77_uvang_done"] = True
+    dh.tags.discard("upadesha")          # the new final v/y is no upadeśa-final (1.3.3 must not strip it)
     return state
 
 
@@ -63,6 +84,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "अचि / श्नु-धातु-भ्रुवाम् / य्वोः / इयु-वङौ",
     why_dev        = "धातोः इवर्ण-उवर्णयोः अचि परे इयङ्-उवङौ (नुवति, म्रियते)।",
     anuvritti_from = ("6.4.1",),
+    apavada_of            = ("6.1.77",),      # iyaṅ/uvaṅ for i/u-final aṅgas — the specific over iko yaṇ aci
     cond           = cond,
     act            = act,
 )

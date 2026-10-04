@@ -45,7 +45,9 @@ def _find_jhi_tin(state: State) -> int | None:
         if t.kind != "pratyaya" or "tin_adesha_3_4_78" not in t.tags or t.meta.get("3_4_108_liG_done"):
             continue
         source = (t.meta.get("source_lakara_upadesha") or "").strip()
-        if source != "liG" and not (source == "luG" and has_sic):
+        # 3.4.109 सिजभ्यस्तविदिभ्यश्च: in laṅ, jus after an abhyasta dhātu (abibhayuH, aduH) — and after vid
+        abhyasta_lan = source == "laG" and any("abhyasa" in u.tags or u.meta.get("slu_replaced_sap") for u in state.terms)
+        if source != "liG" and not (source == "luG" and has_sic) and not abhyasta_lan:
             continue
         if (t.meta.get("upadesha_slp1") or "").strip() == "Ji" and "".join(v.slp1 for v in t.varnas) in {"Ji", "J"}:
             return i

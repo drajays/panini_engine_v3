@@ -39,7 +39,9 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    _site(state).varnas[-1] = mk("v")
+    nu = _site(state)
+    nu.varnas[-1] = mk("v")
+    nu.tags.discard("upadesha")          # the v is not an upadeśa-final: 1.3.3 must not take it for a halantyam it
     return state
 
 

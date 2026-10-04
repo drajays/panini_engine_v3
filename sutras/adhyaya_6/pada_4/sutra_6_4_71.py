@@ -56,7 +56,9 @@ def act(state: State) -> State:
     # the aṭ precedes the whole aṅga — an abhyāsa too (अचूचुरत्)
     i = state.terms.index(dh)
     first = state.terms[i - 1] if i and "abhyasa" in state.terms[i - 1].tags else dh
-    first.varnas.insert(0, mk("a"))
+    _a = mk("a")
+    _a.tags.add("aT_agama_v")
+    first.varnas.insert(0, _a)
     dh.meta["aT_agama_6_4_71_done"] = True
     dh.tags.discard(AT_AGAMA_CONTEXT_TAG)
     return state

@@ -103,6 +103,7 @@ def act(state: State) -> State:
     left.varnas[k] = mk(a)
     left.varnas.insert(k + 1, mk(yv))
     left.meta["eco_ayavayava_done"] = True
+    left.tags.discard("upadesha")       # no longer an upadeśa: the new final v/y must not be read as a halantyam it (1.3.3)
     state.meta["__why_now_dev__"] = _WHY_NOW
     return state
 

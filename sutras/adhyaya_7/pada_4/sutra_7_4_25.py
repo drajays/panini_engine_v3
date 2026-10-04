@@ -54,6 +54,15 @@ def _karmani_vacuous_dirgha(state: State) -> bool:
 _SHORT_IU = {"i": "I", "u": "U"}
 
 
+def _vidhi_ling_yasut(state: State, j: int) -> bool:
+    """yāsuṭ of *vidhi*-liṅ is sārvadhātuka (part of its tiṅ): yuyAt, not *yUyAt. Only āśīr-liṅ's is ārdhadhātuka."""
+    t = state.terms[j]
+    if "yasut_agama" not in t.tags and "ling_sIyuw" not in t.tags:
+        return False
+    tin = next((u for u in state.terms[j + 1:] if "tin_adesha_3_4_78" in u.tags), None)
+    return tin is not None and "ashir_liG" not in tin.tags and "ardhadhatuka" not in tin.tags and "ardhadhatuka" not in t.tags
+
+
 def _ajanta_before_kngit_y(state: State) -> int | None:
     """अकृत्सार्वधातुकयोर्दीर्घः (with 7.4.22 यि क्ङिति): a final i/u of the aṅga
     lengthens before a y-ādi kṅit that is neither kṛt nor sārvadhātuka — yak
@@ -65,7 +74,8 @@ def _ajanta_before_kngit_y(state: State) -> int | None:
                 and not t.meta.get("7_4_28_riN_done")      # riṅ is taught short
                 and "kngiti" in nxt.tags and nxt.varnas and nxt.varnas[0].slp1 == "y"
                 and "krt" not in nxt.tags and "sarvadhatuka" not in nxt.tags
-                and "sarvadhatuka_3_4_113" not in nxt.tags):
+                and "sarvadhatuka_3_4_113" not in nxt.tags
+                and not _vidhi_ling_yasut(state, i + 1)):
             return i
     return None
 
