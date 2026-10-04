@@ -39,59 +39,91 @@
 
 {% block content %}
 <h2 style="margin:.4rem 0">धातुरूपाणि — every form of every root</h2>
-<p class="dr-lead">All eleven lakāras of any root in the Dhātupāṭha, in the three prayogas, with or without a sanādi pratyaya and an upasarga.
-Each cell shows <b>Vidyut</b>'s form first; beneath it, in grey, <b>our engine's</b> form (✓ agrees, ≠ differs).
-Click a cell to see both derivations step by step.</p>
+<p class="dr-lead">One place for everything tiṅanta: browse and filter the Dhātupāṭha, pick a root, and see all eleven lakāras in any prayoga,
+with or without a sanādi pratyaya and an upasarga. Each cell shows <b>Vidyut</b>'s form first; beneath it, in grey, <b>our engine's</b> form (✓ agrees, ≠ differs).
+Click a cell for both derivations step by step.</p>
 
 <div class="dr-card">
-  <div class="dr-pick">
-    <label for="q">धातुः — find a root</label>
-    <input id="q" autocomplete="off" placeholder="भू · bhU · to exist · 01.0001">
-    <div id="list" class="dr-list" hidden></div>
+  <div class="dr-ctl" style="margin-top:0">
+    <div><label for="sch">इनपुट-विधि</label><select id="sch">
+      <option value="slp1">SLP1</option><option value="iast">IAST</option><option value="hk">Harvard-Kyoto</option>
+      <option value="velthuis">Velthuis</option><option value="wx">WX</option><option value="itrans">ITRANS</option><option value="devanagari">देवनागरी</option></select></div>
+    <div style="flex:1;min-width:14rem"><label for="q">धातुः — खोजें (भू · BU · to be · 01.0001)</label>
+      <input id="q" autocomplete="off" style="width:100%" placeholder="BU / भू / to exist / सत्ता / 01.0001"></div>
+    <div><label for="fg">गणः</label><select id="fg"><option value="">सर्वे</option>
+      {% for g in [(1,'भ्वादिः'),(2,'अदादिः'),(3,'जुहोत्यादिः'),(4,'दिवादिः'),(5,'स्वादिः'),(6,'तुदादिः'),(7,'रुधादिः'),(8,'तनादिः'),(9,'क्र्यादिः'),(10,'चुरादिः')] %}<option value="{{ g[0] }}">{{ g[0] }} · {{ g[1] }}</option>{% endfor %}</select></div>
+    <div><label for="fp">पदम्</label><select id="fp"><option value="">सर्वे</option><option value="परस्मै">परस्मैपदी</option><option value="आत्मने">आत्मनेपदी</option><option value="उभय">उभयपदी</option></select></div>
+    <div><label for="fi">इट्</label><select id="fi"><option value="">सर्वे</option><option value="set">सेट्</option><option value="anit">अनिट्</option><option value="vet">वेट्</option></select></div>
+    <div><label for="fk">कर्म</label><select id="fk"><option value="">सर्वे</option><option value="सकर्म">सकर्मकः</option><option value="अकर्म">अकर्मकः</option></select></div>
   </div>
+  <div class="dr-tally" id="count" style="margin:.6rem 0 .2rem"></div>
+  <div id="list" class="dr-list" style="max-width:none"></div>
+  <div class="dr-ctl" style="margin-top:.4rem;align-items:center"><button id="prev" type="button">← पूर्व</button><span id="pg"></span><button id="next" type="button">अग्र →</button></div>
+</div>
+
+<div class="dr-card" id="ctl" hidden>
+  <div id="banner" class="dr-cap"></div>
   <div class="dr-ctl">
     <div><label for="pr">प्रयोगः</label><select id="pr"><option value="kartari">कर्तरि</option><option value="karmani">कर्मणि</option><option value="bhave">भावे</option></select></div>
     <div><label for="pd">पदम्</label><select id="pd"><option value="">उभयम् — both</option><option value="parasmai">परस्मैपदम्</option><option value="atmane">आत्मनेपदम्</option></select></div>
     <div><label for="sn">सनादिप्रत्ययः</label><select id="sn"><option value="">— none (मूलधातुः)</option>{% for n, d in sanadi %}<option value="{{ n }}">{{ d }}</option>{% endfor %}</select></div>
-    <div><label for="up">उपसर्गः</label><select id="up"><option value="">— none</option>{% for u in upasarga %}<option value="{{ u }}" data-slp="{{ u }}">{{ u }}</option>{% endfor %}</select></div>
+    <div><label for="up">उपसर्गः</label><select id="up"><option value="">— none</option>{% for u in upasarga %}<option value="{{ u }}">{{ u }}</option>{% endfor %}</select></div>
   </div>
 </div>
 
 <div id="out"></div>
 <div id="deriv"></div>
-<p class="dr-note">Vidyut: <a href="https://github.com/ambuda-org/vidyut">ambuda-org/vidyut</a> (MIT), run as an independent oracle (Art. 19).
+<p class="dr-note">Old pages (<code>/tinanta</code>, <code>/tinanta/all</code>, <code>/dhatupatha</code>, <code>/dhatufilters</code>) now open here. Vidyut: <a href="https://github.com/ambuda-org/vidyut">ambuda-org/vidyut</a> (MIT), run as an independent oracle (Art. 19).
 The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ubhayapadī filtering beyond what it already supports — those cells show “n/a”, never a guess.</p>
 {% endblock %}
 
 {% block body_extra %}
+<script src="{{ url_for('static', filename='transliterate.js') }}"></script>
 <script>
 (() => {
   const LAKARA = {{ lakara | tojson }}, PU = {{ purusha | tojson }}, VC = {{ vacana | tojson }};
   const $ = id => document.getElementById(id);
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const post = (u, b) => fetch(u, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(b)}).then(r => r.json());
-  let ROOTS = [], cur = null, token = 0, vid = null, eng = {};
+  const QS = new URLSearchParams(location.search), PAGE = 12;
+  let ROOTS = [], hits = [], page = 0, cur = null, token = 0, vid = null, eng = {}, lastTrace = null;
 
   fetch("/api/dhaturupa/roots").then(r => r.json()).then(r => {
-    ROOTS = r;
-    const code = new URLSearchParams(location.search).get("code");
-    pick(ROOTS.find(x => x.code === code) || ROOTS[0]);
+    ROOTS = r; refilter();
+    const want = QS.get("code") || QS.get("dhatu");
+    const d = want && ROOTS.find(x => x.code === want || x.upa === want || x.dev === want);
+    if (d) pick(d, true);
   });
 
-  const hay = d => [d.dev, d.upa, d.artha, d.en, d.code, d.gana].join(" ").toLowerCase();
-  function showList() {
-    const t = $("q").value.trim().toLowerCase(), box = $("list");
-    const hit = (t ? ROOTS.filter(d => hay(d).includes(t)) : ROOTS).slice(0, 40);
-    box.innerHTML = hit.map(d => `<div data-c="${d.code}">${esc(d.dev)} <span style="color:var(--ink-dim)">(${esc(d.gana)}) ${esc(d.artha)} · ${esc(d.code)}</span></div>`).join("") || "<div>—</div>";
-    box.hidden = false;
+  const hay = d => [d.dev, d.upa, d.artha, d.en, d.code].join(" ").toLowerCase();
+  function slp(t) { try { return Transliterate.toSLP1(t, $("sch").value); } catch (e) { return t; } }
+  function refilter() {
+    const raw = $("q").value.trim().toLowerCase(), t2 = raw && $("sch").value !== "slp1" ? slp(raw).toLowerCase() : raw;
+    const g = $("fg").value, p = $("fp").value, it = $("fi").value, k = $("fk").value;
+    hits = ROOTS.filter(d => (!g || String(d.gana) === g) && (!p || (d.pada || "").includes(p)) && (!it || d.fl.includes(it))
+      && (!k || (d.karma || "").includes(k)) && (!raw || hay(d).includes(raw) || hay(d).includes(t2)));
+    page = 0; paintList();
   }
-  $("q").addEventListener("input", showList);
-  $("q").addEventListener("focus", showList);
-  $("list").addEventListener("mousedown", e => { const c = e.target.closest("[data-c]"); if (c) pick(ROOTS.find(x => x.code === c.dataset.c)); });
-  document.addEventListener("click", e => { if (!e.target.closest(".dr-pick")) $("list").hidden = true; });
-  ["pr","pd","sn","up"].forEach(i => $(i).addEventListener("change", load));
+  function paintList() {
+    const n = hits.length, from = page * PAGE;
+    $("count").textContent = `${n.toLocaleString()} धातवः`;
+    $("list").innerHTML = hits.slice(from, from + PAGE).map(d =>
+      `<div data-c="${d.code}" class="${cur && cur.code === d.code ? "on" : ""}"><b style="font-family:var(--dev)">${esc(d.dev)}</b> <span style="color:var(--ink-dim)">${esc(d.upa)} · ${esc(d.code)} · ${esc(d.gana_dev)} · ${esc(d.pada)} · ${esc(d.it)} · ${esc(d.karma)} — ${esc(d.artha)} · ${esc(d.en)}</span></div>`).join("") || "<div>—</div>";
+    $("pg").textContent = n ? `${from + 1}–${Math.min(n, from + PAGE)} / ${n}` : "—";
+    $("prev").disabled = page === 0; $("next").disabled = from + PAGE >= n;
+  }
+  ["q","sch","fg","fp","fi","fk"].forEach(i => $(i).addEventListener(i === "q" ? "input" : "change", refilter));
+  $("prev").onclick = () => { page--; paintList(); };
+  $("next").onclick = () => { page++; paintList(); };
+  $("list").addEventListener("click", e => { const c = e.target.closest("[data-c]"); if (c) pick(ROOTS.find(x => x.code === c.dataset.c)); });
+  ["pr","pd","sn","up"].forEach(i => $(i).addEventListener("change", () => load()));
 
-  function pick(d) { cur = d; $("q").value = `${d.dev} (${d.code})`; $("list").hidden = true; load(); }
+  function pick(d, deep) {
+    cur = d; paintList(); $("ctl").hidden = false;
+    $("banner").innerHTML = `${esc(d.dev)} <span class="m">${esc(d.upa)} · ${esc(d.code)} · ${esc(d.gana_dev)} · ${esc(d.pada)} · ${esc(d.it)} · ${esc(d.karma)} · ${esc(d.artha)} · ${esc(d.en)} · <a href="/dhatu/${esc(d.code)}">↗</a></span>`;
+    if (deep) { if (QS.get("prayoga")) $("pr").value = QS.get("prayoga"); if (QS.get("pada")) $("pd").value = QS.get("pada"); }
+    load(deep ? QS.get("lakara") : null);
+  }
   const args = () => ({code: cur.code, prayoga: $("pr").value, pada: $("pd").value, sanadi: $("sn").value, prefix: $("up").value});
 
   function tables() {
@@ -100,17 +132,17 @@ The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ub
       PU.map((p, r) => `<tr><th>${esc(p[1])}</th>` + [0,1,2].map(c => `<td><button class="dr-cell" data-la="${v}" data-r="${r}" data-c="${c}" id="c-${v}-${r}-${c}"><span class="dr-v">…</span></button></td>`).join("") + "</tr>").join("") + "</table>").join("");
   }
 
-  async function load() {
+  async function load(openLa) {
     if (!cur) return;
     const my = ++token, a = args(); vid = null; eng = {};
     $("deriv").innerHTML = "";
-    $("out").innerHTML = `<div class="dr-card"><p class="dr-cap">${esc(cur.dev)} <span class="m">${esc(cur.upa)} · ${esc(cur.code)} · गण ${esc(cur.gana)} · ${esc(cur.artha)} · ${esc(cur.en)}</span></p>
-      <div class="dr-tally" id="tally">Vidyut तालिकां निर्मिमीते…</div><div class="dr-grid">${tables()}</div></div>`;
+    $("out").innerHTML = `<div class="dr-card"><div class="dr-tally" id="tally">Vidyut तालिकां निर्मिमीते…</div><div class="dr-grid">${tables()}</div></div>`;
     vid = await post("/api/dhaturupa/vidyut", a);
     if (my !== token) return;
     if (vid.error) { $("tally").textContent = vid.error; return; }
     LAKARA.forEach(([v]) => paintLa(v));
     $("tally").textContent = "Vidyut ✓ — our engine fills in below…";
+    if (openLa) { const pu = +(QS.get("purusha") || 3), vc = +(QS.get("vacana") || 1); openCell(openLa, 3 - pu, vc - 1); }
     for (const [v] of LAKARA) {                                   // sequential: the engine is not thread-safe
       const r = await post("/api/dhaturupa/engine", {...a, lakara: v});
       if (my !== token) return;
@@ -127,7 +159,7 @@ The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ub
       let h = `<span class="dr-v">${forms.length ? forms.map(f => esc(f.dev)).join(" · ") : "—"}</span>`;
       if (es) {
         const e = es.cells && es.cells[i];
-        if (es.na) h += `<div class="dr-e na">${i === 0 ? "n/a" : "n/a"}</div>`;
+        if (es.na) h += `<div class="dr-e na">n/a</div>`;
         else if (e && e.error) h += `<div class="dr-e bad" title="${esc(e.error)}">err</div>`;
         else if (e) h += `<div class="dr-e ${forms.some(f => f.slp1 === e.slp1) ? "ok" : (forms.length ? "bad" : "na")}">${esc(e.dev)}</div>`;
       }
@@ -144,19 +176,33 @@ The engine does not yet model sanādi/upasarga, laṭ-let, or pada-restricted ub
     $("tally").textContent = `Vidyut: ${tot} cells · engine agrees ${ok} · differs ${bad} · n/a ${na}` + (done ? "" : " …");
   }
 
-  $("out").addEventListener("click", async e => {
-    const b = e.target.closest(".dr-cell"); if (!b) return;
-    const v = b.dataset.la, r = +b.dataset.r, c = +b.dataset.c, a = args();
+  function engSteps() {
+    const E = (lastTrace && lastTrace.engine) || {};
+    if (!E.trace) return `<div class="dr-step">${esc(E.na || E.error || "")}</div>`;
+    const rupa = $("f-rupa") ? $("f-rupa").checked : true, audit = $("f-audit") && $("f-audit").checked, skip = $("f-skip") && $("f-skip").checked;
+    return E.trace.filter(s => {
+      if (["APPLIED","APPLIED_VACUOUS"].includes(s.status)) return !rupa || s.form_before !== s.form_after || s._is_structural;
+      if (s.status === "SKIPPED") return skip;
+      return audit;
+    }).map(s => `<div class="dr-step"><b><a href="/sutra/${esc(s.sutra_id)}" target="_blank" rel="noopener">${esc(s.sutra_id)}</a></b><span class="r">${esc(s.form_before)} → ${esc(s.form_after)}</span>${s.why_now_dev || s.why_dev ? `<div class="r" style="font-family:var(--dev);font-size:.78rem">${esc(s.why_now_dev || s.why_dev)}</div>` : ""}</div>`).join("");
+  }
+
+  async function openCell(v, r, c) {
+    const a = args();
     $("deriv").innerHTML = `<div class="dr-card">…</div>`;
-    const d = await post("/api/dhaturupa/cell", {...a, lakara: v, purusha: 3 - r, vacana: c + 1});
+    const d = lastTrace = await post("/api/dhaturupa/cell", {...a, lakara: v, purusha: 3 - r, vacana: c + 1});
     const vsteps = Array.isArray(d.vidyut) ? d.vidyut.map(p => `<h4>${esc(p.text)}</h4>` + p.steps.map(s => `<div class="dr-step"><b>${esc(s.code)}</b><span class="r">${esc(s.result.join(" + "))}</span></div>`).join("")).join("") : esc(d.vidyut && d.vidyut.error || "Vidyut unavailable");
     const E = d.engine || {};
-    const esteps = E.trace ? E.trace.filter(s => ["APPLIED","APPLIED_VACUOUS"].includes(s.status)).map(s => `<div class="dr-step"><b>${esc(s.sutra_id)}</b><span class="r">${esc(s.form_before)} → ${esc(s.form_after)}</span></div>`).join("") : `<div class="dr-step">${esc(E.na || E.error || "")}</div>`;
     const lab = LAKARA.find(x => x[0] === v)[2];
-    $("deriv").innerHTML = `<div class="dr-card"><p class="dr-cap">${esc(cur.dev)} · ${esc(lab)} · ${esc(PU[r][1])} · ${esc(VC[c][1])}</p>
-      <div class="dr-two"><div><h3>Vidyut</h3>${vsteps}</div><div><h3>Our engine ${E.dev ? "— " + esc(E.dev) : ""}</h3>${esteps}</div></div></div>`;
-    $("deriv").scrollIntoView({block:"nearest"});
-  });
+    $("deriv").innerHTML = `<div class="dr-card" id="dcard"><p class="dr-cap">${esc(cur.dev)} · ${esc(lab)} · ${esc(PU[r][1])} · ${esc(VC[c][1])}</p>
+      <div class="dr-two"><div><h3>Vidyut</h3>${vsteps}</div><div><h3>Our engine ${E.dev ? "— " + esc(E.dev) : ""}</h3>
+      <div class="dr-step" style="font-size:.8rem"><label><input type="checkbox" id="f-rupa" checked> रूप-परिवर्तन-मात्रम्</label> <label><input type="checkbox" id="f-audit"> अधिकार/परिभाषा</label> <label><input type="checkbox" id="f-skip"> अतिक्रान्त</label></div>
+      <div id="esteps">${engSteps()}</div></div></div></div>`;
+    ["f-rupa","f-audit","f-skip"].forEach(i => $(i).addEventListener("change", () => { $("esteps").innerHTML = engSteps(); }));
+    $("dcard").scrollIntoView({block:"nearest"});
+  }
+
+  $("out").addEventListener("click", e => { const b = e.target.closest(".dr-cell"); if (b) openCell(b.dataset.la, +b.dataset.r, +b.dataset.c); });
 })();
 </script>
 {% endblock %}

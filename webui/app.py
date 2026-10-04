@@ -772,18 +772,8 @@ def api_pipeline_run(key: str):
 
 @app.route("/tinanta")
 def tinanta_page():
-    lak_meta_path = _ROOT / "data" / "inputs" / "lakara_metadata.json"
-    lak_meta = {}
-    if lak_meta_path.exists():
-        lak_meta = json.loads(lak_meta_path.read_text(encoding="utf-8"))
-    lakara_choices = {k: v for k, v in lak_meta.items() if not k.startswith("_")}
-    return render_template(
-        "tinanta.html",
-        nav_active="tinanta",
-        cov=coverage_report(SUTRA_REGISTRY),
-        lakara_choices=lakara_choices,
-    )
-
+    """Folded into /dhaturupa — the one place for everything tiṅanta."""
+    return redirect(url_for("dhaturupa_page", **request.args), code=302)
 
 @app.route("/api/tinanta", methods=["POST"])
 def api_tinanta():
@@ -921,18 +911,8 @@ _ALL_LAKARAS = [
 
 @app.route("/tinanta/all")
 def tinanta_all_page():
-    lak_meta_path = _ROOT / "data" / "inputs" / "lakara_metadata.json"
-    lak_meta = {}
-    if lak_meta_path.exists():
-        lak_meta = json.loads(lak_meta_path.read_text(encoding="utf-8"))
-    return render_template(
-        "tinanta_all.html",
-        nav_active="tinanta",
-        cov=coverage_report(SUTRA_REGISTRY),
-        all_lakaras=_ALL_LAKARAS,
-        lak_meta=lak_meta,
-    )
-
+    """Folded into /dhaturupa — the one place for everything tiṅanta."""
+    return redirect(url_for("dhaturupa_page", **request.args), code=302)
 
 @app.route("/api/tinanta/all_lakara", methods=["POST"])
 def api_tinanta_all_lakara():
@@ -995,47 +975,26 @@ def dhatu_ashtadhyayi_link(path_id: str):
         abort(404)
     return redirect(
         url_for(
-            "dhatufilters_page",
-            dhatu=pid,
-            filters="gana~1",
+            "dhaturupa_page",
+            code=pid,
         )
     )
 
 
 @app.route("/dhatufilters")
 def dhatufilters_page():
-    return render_template(
-        "dhatufilters.html",
-        nav_active="dhatufilters",
-        cov=coverage_report(SUTRA_REGISTRY),
-        all_lakaras=_ALL_LAKARAS,
-    )
-
+    """Folded into /dhaturupa — the one place for everything tiṅanta."""
+    return redirect(url_for("dhaturupa_page", **request.args), code=302)
 
 @app.route("/prakriya/tinanta")
 def prakriya_tinanta_page():
-    """Full glass-box prakriyā for one tiṅanta cell (query-param driven)."""
-    lak_meta_path = _ROOT / "data" / "inputs" / "lakara_metadata.json"
-    lak_meta: dict = {}
-    if lak_meta_path.exists():
-        lak_meta = json.loads(lak_meta_path.read_text(encoding="utf-8"))
-    return render_template(
-        "prakriya_tinanta.html",
-        nav_active="dhatufilters",
-        cov=coverage_report(SUTRA_REGISTRY),
-        lak_meta=lak_meta,
-        all_lakaras=_ALL_LAKARAS,
-    )
-
+    """Folded into /dhaturupa — the one place for everything tiṅanta."""
+    return redirect(url_for("dhaturupa_page", **request.args), code=302)
 
 @app.route("/dhatupatha")
 def dhatupatha_page():
-    return render_template(
-        "dhatupatha.html",
-        nav_active="dhatupatha",
-        cov=coverage_report(SUTRA_REGISTRY),
-    )
-
+    """Folded into /dhaturupa — the one place for everything tiṅanta."""
+    return redirect(url_for("dhaturupa_page", **request.args), code=302)
 
 @app.route("/api/dhatupatha")
 def api_dhatupatha_list():
@@ -1587,7 +1546,9 @@ def api_dhaturupa_roots():
     from pipelines.dhatupatha import _payload, _envelope
     return jsonify([{"code": e["dhatupatha_id"], "dev": e.get("mula_dhatu_dev", ""), "upa": e["upadesha_slp1"],
                      "gana": e.get("gana"), "gana_dev": e.get("gana_label_dev", ""), "artha": e.get("artha_dev", ""),
-                     "en": e.get("artha_en", ""), "pada": e.get("pada_label_dev", "")}
+                     "en": e.get("artha_en", ""), "pada": e.get("pada_label_dev", ""),
+                     "it": e.get("it_class_label_dev", ""), "karma": e.get("karmatva_label_dev", ""),
+                     "fl": [k for k in ("anit", "set", "vet") if (e.get("flags") or {}).get(k)]}
                     for e in _envelope(_payload())["entries"] if e.get("dhatupatha_id")])
 
 
