@@ -15,3 +15,13 @@ from tools.autonomy_report import run_autonomously, start_state
 ])
 def test_cell(dhatu, lakara, p, v, want):
     assert run_autonomously(start_state(NS(kind="tinanta", args=(dhatu, lakara, p, v))), "", dhatu, 250).surface == want
+
+
+@pytest.mark.parametrize("dhatu,lakara,p,v,want", [        # gaṇa 3 (ślu), 4 (śyan: ñit-ṇit only), 7 (śnam n kept), 8 (u: kit only before m/v)
+    ("hu", "laT", 1, 1, "juhomi"), ("hu", "laT", 3, 1, "juhoti"), ("pf", "laT", 1, 1, "piparmi"), ("quBfY", "laT", 1, 1, "biBarmi"),
+    ("zRasu~", "laT", 1, 1, "snasyAmi"), ("divu~", "laT", 3, 1, "dIvyati"),
+    ("ruDi~r", "laT", 1, 2, "runDvaH"), ("kftI~", "laT", 1, 1, "kfntAmi"),
+    ("kziRu~", "laT", 1, 1, "kzeRomi"), ("qukfY", "laT", 1, 2, "kurvaH"), ("qukfY", "laT", 1, 1, "karomi"),
+])
+def test_other_gana_cells(dhatu, lakara, p, v, want):
+    assert run_autonomously(start_state(NS(kind="tinanta", args=(dhatu, lakara, p, v))), "", dhatu, 250).surface == want

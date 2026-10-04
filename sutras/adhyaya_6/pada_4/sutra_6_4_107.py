@@ -54,6 +54,10 @@ def _find(state: State) -> int | None:
         suf = state.terms[i + 2]
         if not suf.varnas:
             continue
+        if "kngiti" not in suf.tags:            # ṅiti (6.4.106 anuvṛtti): mip is pit (tanomi), vas/mas are apit (tanvaH)
+            continue
+        if len(t.varnas) >= 2 and t.varnas[-1].slp1 not in "aAiIuUfFxXeEoO" and t.varnas[-2].slp1 not in "aAiIuUfFxXeEoO":
+            continue                            # असंयोगपूर्वस्य: the u must not stand after a saṃyoga
         if suf.varnas[0].slp1 in _MV:
             return i + 1  # index of vikaraṇa to drop
     return None
@@ -74,7 +78,7 @@ def act(state: State) -> State:
 
 SUTRA = SutraRecord(
     sutra_id              = "6.4.107",
-    sutra_type            = SutraType.VIDHI,
+    sutra_type            = SutraType.VIBHASHA,       # vā: tanuvaH / tanvaH; kṛ is nitya (6.4.108)
     r1_form_identity_exempt = True,
     text_slp1             = "lopaScAsyAnyatarasyAM mvoH",
     text_dev              = "लोपश्चास्यान्यतरस्यां म्वोः",
@@ -84,6 +88,7 @@ SUTRA = SutraRecord(
         "(वनुवः / वन्वः, वनुमः / वन्मः)।"
     ),
     anuvritti_from        = ("6.4.106",),
+    vibhasha_default      = False,
     cond                  = cond,
     act                   = act,
 )

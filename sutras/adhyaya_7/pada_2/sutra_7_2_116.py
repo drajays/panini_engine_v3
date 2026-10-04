@@ -105,7 +105,9 @@ def _find_upadha_a(state: State):
         return None
     pr = state.terms[di + 1]              # ñit/ṇit pratyaya right after the aṅga (kṛt, ciṇ, …)
     itm = pr.meta.get("it_markers", set())
-    if not isinstance(itm, set) or not ("N" in itm or "R" in itm):
+    if not isinstance(itm, set) or not ("Y" in itm or "R" in itm or ("N" in itm and "vikarana" not in pr.tags and "tin_adesha_3_4_78" not in pr.tags)):
+        # ñit, ṇit. Some kṛt/taddhita upadeśas still spell ñ as N (GaN), so N counts — except on a vikaraṇa or tiṅ,
+        # where it is really ṅ (śyan: snasyAmi, not *snAsyAmi)
         return None
     if dhatu.meta.get("upadha_vrddhi_done"):
         return None

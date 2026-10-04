@@ -53,6 +53,8 @@ def cond(state: State) -> bool:
         return False
     if dh.varnas[-2].slp1 not in _NASAL or "num_agama" in dh.varnas[-2].tags:
         return False
+    if "snam" in dh.varnas[-2].tags:      # śnam's n is an infix, not the root's upadhā-nasal (rundhaH)
+        return False
     if dh.meta.get("6_4_24_n_lopa_done"):
         return False
     if len(dh.varnas) < 2:

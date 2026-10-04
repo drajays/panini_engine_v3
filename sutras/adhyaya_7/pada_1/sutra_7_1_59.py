@@ -63,7 +63,9 @@ def act(state: State) -> State:
             break
     if j is None:
         return state
-    dh.varnas.insert(j + 1, mk("n"))
+    _n = mk("n")
+    _n.tags.add("num_agama")            # an āgama's n, not the root's upadhā-nasal (6.4.24 leaves it)
+    dh.varnas.insert(j + 1, _n)
     dh.meta["7_1_59_num_done"] = True
     return state
 
