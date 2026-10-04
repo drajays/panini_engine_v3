@@ -53,11 +53,11 @@ def _attach_lRG(state: State) -> State:
             term.tags.add(AT_AGAMA_CONTEXT_TAG)
     lit = Term(
         kind="pratyaya",
-        varnas=list(parse_slp1_upadesha_sequence("lRG")),
+        varnas=list(parse_slp1_upadesha_sequence("lfN")),
         tags={"pratyaya", "upadesha", "lakAra_pratyaya_placeholder"},
         meta={"upadesha_slp1": "lRG"},
     )
-    if lit.varnas and lit.varnas[-1].slp1 == "G":
+    if lit.varnas and lit.varnas[-1].slp1 == "N":
         del lit.varnas[-1]
     state.terms.append(lit)
     return state

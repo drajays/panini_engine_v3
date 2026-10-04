@@ -80,7 +80,7 @@ def _find(state: State):
     itm = pr.meta.get("it_markers", set())
     if not isinstance(itm, set):
         return None
-    if not (("Y" in itm) or ("N" in itm) or ("R" in itm)):
+    if not (("Y" in itm) or ("R" in itm)):                  # ñit, ṇit — not ṅit (SLP1 N = ṅ)
         return None
     if not dhatu.varnas:
         return None
@@ -129,6 +129,8 @@ SUTRA = SutraRecord(
     padaccheda_dev = "अचः ञ्-णिति",
     why_dev        = "ञित्/णिति-परे अङ्गान्त्यचः वृद्धिः (णीञ्+ण्वुल् → नै/नायक)।",
     anuvritti_from = ("7.2.114",),
+    # vṛddhi before ñit/ṇit is the exception to the guṇa of 7.3.84 (ji + ṇal → jijāya, not *jijaya).
+    apavada_of     = ("7.3.84",),
     cond           = cond,
     act            = act,
 )
