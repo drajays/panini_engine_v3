@@ -24,8 +24,8 @@
 The engine's *raison d'être* is to be a **glass-box mathematical
 re-implementation of the Aṣṭādhyāyī as a rewrite system** (Art. 0).
 For that, every rule must be defended by a quotable, citable,
-versioned source. The list below is ordered by precedence: source #1
-wins ties; #2 wins only when #1 is silent; and so on. Engine code
+versioned source. The list below is an evidence roster (Art. 14), not a ranking:
+meaning disputes are decided under Art. 22, runtime conflicts under Art. 21. Engine code
 that does not cite at least one of these for any non-trivial
 predicate is **suspect** and should be revisited.
 

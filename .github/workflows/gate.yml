@@ -1,0 +1,15 @@
+name: gate
+on: [pull_request]
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r requirements.txt pytest
+      - run: BASE_REF=origin/${{ github.base_ref }} python -m tools.agent_gate scope
+      - run: python -m tools.agent_gate ratchets --base origin/${{ github.base_ref }}
+      - run: make full-check
+      - run: make lint

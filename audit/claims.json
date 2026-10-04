@@ -1,0 +1,56 @@
+[
+ {
+  "id": "subanta-flip",
+  "agent": "claude-coverage",
+  "scope": [
+   "pipelines/subanta.py",
+   "tools/loop_vs_recipe.py",
+   "engine/resolver.py",
+   "engine/scheduler.py",
+   "engine/core_loop.py"
+  ],
+  "out_of_scope": "tinanta/krdanta pipelines, sutras/adhyaya_8/**",
+  "status": "released",
+  "hotspots": [
+   "engine/scheduler.py",
+   "engine/resolver.py",
+   "engine/core_loop.py"
+  ],
+  "updated": 1791027154.263906
+ },
+ {
+  "id": "lot-lakara",
+  "agent": "claude-coverage",
+  "scope": [
+   "sutras/adhyaya_3/pada_3/sutra_3_3_162.py",
+   "sutras/adhyaya_3/pada_4/sutra_3_4_85.py",
+   "sutras/adhyaya_3/pada_4/sutra_3_4_86.py",
+   "sutras/adhyaya_3/pada_4/sutra_3_4_87.py",
+   "sutras/adhyaya_3/pada_4/sutra_3_4_89.py",
+   "sutras/adhyaya_3/pada_4/sutra_3_4_99.py",
+   "sutras/adhyaya_3/pada_4/sutra_3_4_100.py",
+   "sutras/adhyaya_3/pada_4/sutra_3_4_101.py",
+   "engine/nimitta_predicates.py",
+   "tools/autonomy_report.py",
+   "tools/loop_vs_recipe.py",
+   "tests/unit/test_lot_laNvat.py"
+  ],
+  "out_of_scope": "",
+  "status": "in-progress",
+  "hotspots": [],
+  "updated": 1791030185.7044559
+ },
+ {
+  "id": "audit-fixes",
+  "agent": "claude-coverage",
+  "scope": [
+   "sutras/adhyaya_7/pada_1/sutra_7_1_35.py",
+   "sutras/adhyaya_8/pada_4/sutra_8_4_56.py",
+   "tests/unit/test_audit_stub_fixes.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1791037381.344667
+ }
+]

@@ -1,0 +1,2 @@
+#!/bin/sh
+python3 -m tools.agent_gate scope --staged && python3 -m tools.agent_gate ratchets && python3 -m pytest tests/constitutional -q -x

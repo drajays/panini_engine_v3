@@ -86,3 +86,22 @@ autonomy:
 
 shabda:
 	python3 -m tools.shabda_table --check
+
+# ── multi-agent gate (see AGENTS.md) ──
+.PHONY: preflight claim release claims ratchets scope status hooks
+preflight:
+	@$(PYTHON) -m tools.agent_gate preflight $(S)
+claim:
+	@$(PYTHON) -m tools.agent_gate claim $(ID) "$(SCOPE)"
+release:
+	@$(PYTHON) -m tools.agent_gate release $(ID)
+claims:
+	@$(PYTHON) -m tools.agent_gate status
+ratchets:
+	@$(PYTHON) -m tools.agent_gate ratchets
+scope:
+	@$(PYTHON) -m tools.agent_gate scope
+status:
+	@$(PYTHON) -m tools.status
+hooks:
+	git config core.hooksPath .githooks

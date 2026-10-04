@@ -31,7 +31,7 @@ Sources consulted:
 """
 ```
 
-## Citation precedence (binding)
+## Citation roster (Art. 14 — evidence list, not a ranking)
 
 1. ashtadhyayi.com data repo (`github.com/ashtadhyayi-com/data`)
 2. Kāśikā Vṛtti
@@ -40,9 +40,10 @@ Sources consulted:
 5. Laghu-Siddhānta-Kaumudī
 6. Prakriyā-Kaumudī / Prakriyā-Sarvasva
 
-When sources disagree, the lower-numbered source wins. Document the
-disagreement in `docs/AMENDMENT_<N>.md` and link from the sūtra
-docstring.
+The numbering says what a docstring may cite; it does NOT decide meaning.
+Meaning disputes go to CONSTITUTION Art. 22 (prāmāṇya); runtime rule
+conflict is Art. 21. Record disagreements in `docs/SOURCE_CONFLICTS.md`
+and link from the sūtra docstring.
 
 ## Cross-validation oracles (Tier 4)
 
