@@ -90,6 +90,10 @@ def find_sap_insertion_dhatu_index(state: State) -> int | None:
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags:
             continue
+        if t.meta.get("3_1_78_snam_done"):      # śnam (rudhādi) is an infix of the dhātu, not a Term: it displaced śap (apavāda)
+            continue
+        if t.meta.get("3_1_68_sap_given"):      # śap was introduced (and a luk, 2.4.72/75, may have removed it): once
+            continue
         if i + 1 >= len(state.terms):
             continue
         j = i + 1

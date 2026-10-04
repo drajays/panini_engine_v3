@@ -52,8 +52,8 @@ def _is_pit_upadesha(up: str) -> bool:
 
 
 def _find(state: State) -> int | None:
-    if state.samjna_registry.get("1.2.4_sarvadhatukam_apit") is True:
-        return None
+    # (no once-per-derivation registry gate: the tag on each Term is the idempotence — a vikaraṇa (śnu, śnā, śyan…)
+    # arrives after the tiṅ and is just as much sārvadhātuka and apit)
     for i, t in enumerate(state.terms):
         if "pratyaya" not in t.tags:
             continue

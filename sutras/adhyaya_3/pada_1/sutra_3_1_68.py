@@ -50,6 +50,7 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "Sap"},
     )
     state.terms.insert(i + 1, sap)
+    state.terms[i].meta["3_1_68_sap_given"] = True
     return state
 
 

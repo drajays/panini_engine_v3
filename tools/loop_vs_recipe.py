@@ -67,7 +67,7 @@ def subanta(limit: int | None) -> dict:
             "clusters": [{"first_divergence": k, "count": n, **examples[k]} for k, n in clusters.most_common()]}
 
 
-def tinanta(limit: int | None, lakara: str = "laT", pada: str = "all") -> dict:
+def tinanta(limit: int | None, lakara: str = "laT", pada: str = "all", gana: int = 1) -> dict:
     import sutras  # noqa: F401
     from types import SimpleNamespace as NS
 
@@ -77,7 +77,7 @@ def tinanta(limit: int | None, lakara: str = "laT", pada: str = "all") -> dict:
 
     want = {"parasmai": "परस्मैपदी", "atmane": "आत्मनेपदी", "ubhaya": "उभयपदी"}.get(pada)
     roots = [r["upadesha_slp1"] for r in iter_dhatu_entries()
-             if r.get("gana") == 1 and (want is None or r.get("pada_label_dev") == want)]
+             if r.get("gana") == gana and (want is None or r.get("pada_label_dev") == want)]
     roots = roots[:limit] if limit else roots
     cells = agree = 0
     clusters: collections.Counter = collections.Counter()
@@ -101,7 +101,7 @@ def tinanta(limit: int | None, lakara: str = "laT", pada: str = "all") -> dict:
                 else:
                     clusters[root] += 1
                     examples.setdefault(root, {"cell": f"{purusha}-{vacana}", "recipe": expect, "loop": run.surface})
-    return {"class": f"tinanta({lakara} kartari, gaṇa 1)", "roots": len(roots), "cells": cells, "agree": agree,
+    return {"class": f"tinanta({lakara} kartari, gaṇa {gana})", "roots": len(roots), "cells": cells, "agree": agree,
             "clusters": [{"first_divergence": k, "count": n, **examples.get(k, {})} for k, n in clusters.most_common()]}
 
 
@@ -111,13 +111,15 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--limit", type=int)
     ap.add_argument("--lakara", default="laT")
     ap.add_argument("--pada", default="all", choices=["all", "parasmai", "atmane", "ubhaya"])
+    ap.add_argument("--gana", type=int, default=1)
     args = ap.parse_args(argv)
     t0 = time.time()
-    report = subanta(args.limit) if args.kind == "subanta" else tinanta(args.limit, args.lakara, args.pada)
+    report = subanta(args.limit) if args.kind == "subanta" else tinanta(args.limit, args.lakara, args.pada, args.gana)
     report["seconds"] = round(time.time() - t0)
-    book = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
-    book[args.kind if args.kind == "subanta" or args.lakara == "laT" else f"tinanta:{args.lakara}"] = report
-    OUT.write_text(json.dumps(book, ensure_ascii=False, indent=1), encoding="utf-8")
+    if not args.limit and args.gana == 1:        # a sample (--limit) or another gaṇa never overwrites the frozen ledger
+        book = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
+        book[args.kind if args.kind == "subanta" or args.lakara == "laT" else f"tinanta:{args.lakara}"] = report
+        OUT.write_text(json.dumps(book, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{report['class']}: {report['agree']}/{report['cells']} cells agree ({report['seconds']}s)")
     for c in report["clusters"][:15]:
         print(f"  {c['count']:>4}  {c['first_divergence']:<22} e.g. {c.get('stem', '')} {c.get('cell', '')}: "
