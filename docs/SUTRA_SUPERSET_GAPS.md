@@ -47,3 +47,11 @@ Loop vs recipe, ātmanepada, first 20 gaṇa-1 roots (`python3 -m tools.loop_vs_
 | āśīrliṅ | 96 | 2sg `ṣṭhās` (8.3.59 + ṣṭutva) and 2pl `ḍhvam` (8.3.78) not reached |
 
 The Vidyut⊆engine gap list above is measured on the recipe path (`pipelines.tinanta.derive`) and is unchanged: the top item, 1.3.12 (683 of 756 cells), is `SKIPPED` in the recipe for every ātmanepadī root because 1.3.12 has no structural condition (the dhātu's anudātta/ṅit it-marker is not read off the tape). That is the next rule to make structural, then 3.4.113/114 (saṃjñā recognition in the liṭ/luṅ recipes), then 8.3.111, 7.4.61, 8.4.37.
+
+## Update 2 (1.3.12, 3.4.113, 3.4.114)
+
+`tools/sutra_superset.py --roots 12 --lakara laT liT laG luG lRT loT liG`: cells with **no** Vidyut sūtra missing from the engine rose from 7 to 400 of 756.
+- 1.3.12 now fires for ātmanepadī roots (its cond was self-contradictory: it read the same meta key as both a veto and a requirement).
+- 3.4.113 now classifies a tiṅ behind a vikaraṇa (luṅ: dhātu + sic + tiṅ); the luṅ recipe also calls 3.4.114 for the sic.
+
+Still missing, by size: 3.4.107 suṭ in ātmanepada liṅ (recipe path), 8.3.111 (a padādi-s ṣatva prohibition Vidyut records; our rule is a gate stub), 1.3.2/1.3.3 (Vidyut records them on the lakāra's own it-letters), 7.2.13 and 1.3.3 in liṭ dual cells, 7.4.61, 8.3.24, 1.1.5, 3.1.40 (āṃ-liṭ in the recipe path).

@@ -37,27 +37,20 @@ def _primary_dhatu(state: State) -> Term | None:
 
 
 def cond(state: State) -> bool:
-    if (state.meta.get("pada") or "").strip() == "Atmanepada":
-        return False
+    """अनुदात्तङित आत्मनेपदम्: the dhātu's own it-svara/ṅit makes it ātmanepadī. The lexical fact (the dhātupāṭha's
+    pada, which *is* that anubandha) is carried on the dhātu Term as ``kartari_atmanepada_licensed is True``; this rule
+    is where it takes effect (``pada``, the gate) — once. An ubhayapadī root (``"ubhaya"``) is 1.3.72/1.3.78's."""
     d = _primary_dhatu(state)
-    if d is None:
+    if d is None or d.meta.get("1_3_12_done"):
         return False
-    if d.meta.get(ATMANE_LICENSE_META_KEY):
-        return False
-    # *anudāttet* = ekāc (ँ) without udātta on the upadeśa (not mere ``ekac`` on भू etc.).
-    # Guard: only fire for dhātus the dhātupātha already marks ātmanepada/ubhayapadi.
-    # A seṭ parasmaipada dhātu like paWa~ (पठँ) is ekāc+anudātta but its chandrabindu
-    # marks iṭ-eligibility (seṭ), NOT ṅit → ātmanepada.
-    if not d.meta.get("kartari_atmanepada_licensed"):
-        return False
-    return bool(d.meta.get("ekac_dhatu")) and not bool(d.meta.get("udatta_dhatu"))
+    return d.meta.get(ATMANE_LICENSE_META_KEY) is True
 
 
 def act(state: State) -> State:
     d = _primary_dhatu(state)
     if d is None:
         return state
-    d.meta[ATMANE_LICENSE_META_KEY] = True
+    d.meta["1_3_12_done"] = True
     state.meta["pada"] = "Atmanepada"
     state.paribhasha_gates["1.3.12_anudatta_nit_atmanepada"] = True
     return state

@@ -34,7 +34,10 @@ def _dhatu_adjacent_sarvadhatuka_untagged(state: State) -> list[Term]:
             continue
         # An āgama (āṭ, 3.4.92) belongs to the affix it precedes (1.1.46): look past it for the dhātu.
         k = i - 1
-        while k >= 0 and ({"aTa_agama", "yasut_agama"} & state.terms[k].tags):
+        # तिङ् is sārvadhātuka whatever stands between it and the dhātu — āgama, vikaraṇa (luṅ: dhātu + sic + tiṅ)
+        while k >= 0 and ("dhatu" not in state.terms[k].tags) and (
+                {"aTa_agama", "yasut_agama", "agama"} & state.terms[k].tags or state.terms[k].kind == "pratyaya"
+                and "tin_adesha_3_4_78" not in state.terms[k].tags):
             k -= 1
         if k < 0 or "dhatu" not in state.terms[k].tags:
             continue

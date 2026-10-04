@@ -1438,6 +1438,7 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # ── Stage: 3.4.113 tiṅ is sārvadhatuka ──────────────────────────────────
     state = apply_rule("3.4.113", state)
+    state = apply_rule("3.4.114", state)   # ārdhadhātukaṃ śeṣaḥ: the sic (not tiṅ, not śit)
 
     # ── sic-luk (2.4.77 गातिस्थाघुपाभूभ्यः सिचः परस्मैपदेषु) vs sic kept ──────
     # Decided by 2.4.77's own condition (root identity + parasmaipada), not by
