@@ -54,6 +54,8 @@ def _hit_abhyasta(state: State) -> int | None:
         if "".join(v.slp1 for v in t.varnas) in {"dA", "DA"}:          # aghoḥ
             continue
         nxt = state.terms[i + 1]
+        if "yasut_agama" in nxt.tags:
+            continue
         if ("kngiti" in nxt.tags or nxt.meta.get("is_apit")) and nxt.varnas and nxt.varnas[0].slp1 not in "aAiIuUfFxXeEoO" \
                 and (nxt.meta.get("upadesha_slp1") or "").strip() not in {"jhi", "Ji", "Ja", "jha"}:
             return i

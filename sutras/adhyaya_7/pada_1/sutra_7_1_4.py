@@ -38,7 +38,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _has_abhyasa(state: State) -> bool:
-    return any("abhyasa" in t.tags for t in state.terms)
+    return any("abhyasa" in t.tags or t.meta.get("slu_replaced_sap") for t in state.terms)   # ślu ⇒ abhyasta (6.1.10) to come
 
 
 def _find_jh_term(state: State):
@@ -49,8 +49,11 @@ def _find_jh_term(state: State):
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
         vs = t.varnas
-        if up != "Ji":
+        src = (t.meta.get("source_lakara_upadesha") or "").strip()
+        if up != "Ji" and not (src == "loT" and len(vs) == 2 and vs[0].slp1 == "J" and vs[1].slp1 == "u"):
             continue
+        if len(vs) == 2 and vs[0].slp1 == "J" and vs[1].slp1 == "u":
+            return (i, "jhu")                    # loṭ jhi → ju (3.4.86): atu
         if len(vs) == 2 and vs[0].slp1 == "J" and vs[1].slp1 == "i":
             return (i, "jhi")
         if len(vs) == 1 and vs[0].slp1 == "J":
@@ -70,7 +73,7 @@ def act(state: State) -> State:
         return state
     idx, kind = result
     old = state.terms[idx]
-    new_slp1 = "ati" if kind == "jhi" else "at"
+    new_slp1 = {"jhi": "ati", "jhu": "atu"}.get(kind, "at")
     new_term = Term(
         kind="pratyaya",
         varnas=parse_slp1_upadesha_sequence(new_slp1),
@@ -92,6 +95,7 @@ SUTRA = SutraRecord(
     padaccheda_dev         = "अत् अभ्यस्तात्",
     why_dev                = "अभ्यस्तात् परस्य झेः अत्-आदेशः (जुह्वति) — सप्तम्याः ७.१.३ अपवादः।",
     anuvritti_from         = ("7.1.1", "7.1.3"),
+    apavada_of            = ("7.1.3",),     # ad abhyastāt: jhi→ati for an abhyasta, not anti
     cond                   = cond,
     act                    = act,
 )

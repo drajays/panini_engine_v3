@@ -234,7 +234,8 @@ def _ngit_vikarana_own_guna(state: State) -> int | None:
         return None
     loT_uttama = ((tin.meta.get("source_lakara_upadesha") or "").strip() == "loT"
                   and up in {"mip", "vas", "mas", "ni", "va", "ma"})   # 3.4.92 आडुत्तमस्य पिच्च
-    if not (up.endswith(("p", "P")) or tin.meta.get("pit") or loT_uttama):
+    from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import sthanin_was_pit
+    if not (up.endswith(("p", "P")) or tin.meta.get("pit") or loT_uttama or sthanin_was_pit(tin)):   # am for mip (1.1.56)
         return None
     return di if _vikarana_ik_eligible(state, di) else None
 

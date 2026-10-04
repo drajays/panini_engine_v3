@@ -27,6 +27,13 @@ def _find(state: State):
             continue
         if not dh.varnas or dh.varnas[-1].slp1 not in _IYUV:
             continue
+        j = i + 1
+        while j + 1 < len(state.terms) and "agama" in state.terms[j].tags:
+            j += 1
+        tin = state.terms[j]
+        if ("tin_adesha_3_4_78" in tin.tags and "kngiti" not in tin.tags and not tin.meta.get("is_apit")
+                and "ardhadhatuka" not in tin.tags and any(t.startswith("sarvadhatuka") for t in tin.tags)):
+            continue                                   # a pit sārvadhātuka (āni, ni…) takes guṇa first: biBayAni, not *biBeyAni
         if len(dh.varnas) == 1 and dh.varnas[0].slp1 == "i":
             continue                                   # 6.4.81 इणो यण्
         # 6.4.82 एरनेकाचोऽसंयोगपूर्वस्य: an अनेकाच् aṅga (here: after its abhyāsa)
@@ -47,6 +54,11 @@ def _snu_samyogapurva(state: State):
         if (nu.meta.get("upadesha_slp1") or "").strip() != "Snu" or [v.slp1 for v in nu.varnas] != ["n", "u"]:
             continue
         if nu.meta.get("6_4_77_uvang_done") or not nxt.varnas or nxt.varnas[0].slp1 not in _AC:
+            continue
+        j = k + 1
+        while j + 1 < len(ts) and "agama" in ts[j].tags:
+            j += 1
+        if not ("kngiti" in ts[j].tags or ts[j].meta.get("is_apit")):      # Apnuvanti — but ApnavAni (pit): guṇa first
             continue
         prev = ts[k - 1].varnas
         if prev and prev[-1].slp1 not in _AC:            # a consonant before n: saṃyogapūrva

@@ -55,7 +55,8 @@ def _find_ghu_abhyasta(state: State) -> int | None:
         ghu = "".join(v.slp1 for v in t.varnas) in _GHU_ROOTS
         up = (nxt.meta.get("upadesha_slp1") or "").strip()
         vowel_initial = bool(nxt.varnas) and (nxt.varnas[0].slp1 in "aAiIuUfFxXeEoO" or up in {"jhi", "Ji", "Ja", "jha"})
-        if ghu or vowel_initial:        # any abhyasta ā-root drops it before a vowel-initial kṅit (jahati); ghu before any
+        yasut = "yasut_agama" in nxt.tags              # vidhi-liṅ's yāsuṭ: jahyAt (ā drops, then y)
+        if ghu or vowel_initial or yasut:        # any abhyasta ā-root drops it before a vowel-initial kṅit (jahati); ghu before any
             return i
     return None
 

@@ -14,6 +14,21 @@ from phonology    import mk
 _AC = frozenset("aAiIuUfFxXeEoO")
 
 
+def _weak_after(ts, k: int) -> bool:
+    """The affix right after the vikaraṇa (an āgama such as āṭ belongs to it) is not pit: weak (cinvanti), whether or not
+    1.2.4 has already tagged it. A pit one (tip, mip, loṭ ni…) takes guṇa first: cinoti, cinavAni, acinavam."""
+    from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import sthanin_was_pit
+    j = k + 1
+    while j + 1 < len(ts) and "agama" in ts[j].tags:
+        j += 1
+    t = ts[j]
+    if "kngiti" in t.tags or t.meta.get("is_apit") or "kngiti" in ts[k + 1].tags:
+        return True
+    up = (t.meta.get("upadesha_slp1") or "").strip()
+    loT_uttama = (t.meta.get("source_lakara_upadesha") or "").strip() == "loT" and up in {"mip", "vas", "mas", "ni", "va", "ma"}
+    return not (up.endswith(("p", "P")) or sthanin_was_pit(t) or loT_uttama or t.meta.get("pit"))
+
+
 def _site(state: State):
     """हुश्नुवोः सार्वधातुके (असंयोगपूर्वस्य, 6.4.82): the उ of श्नु (and of हु) not after a
     conjunct becomes व् before a vowel-initial sārvadhātuka — सुनु+अन्ति → सुन्वन्ति;
@@ -24,6 +39,9 @@ def _site(state: State):
         if (nu.meta.get("upadesha_slp1") or "").strip() != "Snu" or [v.slp1 for v in nu.varnas] != ["n", "u"]:
             continue
         if not nxt.varnas or nxt.varnas[0].slp1 not in _AC:
+            continue
+        # only before a weak (kṅit) ending: cinvanti — but cinavAni / acinavam (pit: guṇa, then av) keep the u
+        if not _weak_after(ts, k):
             continue
         # सार्वधातुके: a tiṅ is sārvadhātuka by 3.4.113 even when its ādeśa lost the tag
         if not (any(t.startswith("sarvadhatuka") for t in nxt.tags) or "tin_adesha_3_4_78" in nxt.tags):
