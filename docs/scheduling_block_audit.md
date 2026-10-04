@@ -2,7 +2,7 @@
 
 Read-only AST scan of **ordered** ``apply_rule("x.y.z", …)`` calls.  Strings that are not the first argument to ``apply_rule`` are ignored.
 
-- **scanned_py_files**: `20`
+- **scanned_py_files**: `201`
 - **duplicate_cross_file_groups**: `0`
 
 ## Result
