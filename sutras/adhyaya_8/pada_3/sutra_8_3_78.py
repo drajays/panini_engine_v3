@@ -30,8 +30,9 @@ def _find_i_before_D(state: State):
             v, prev = t.varnas[vi], t.varnas[vi - 1]
             if (v.slp1 == "D" and "pratyaya_start_v" in v.tags and prev.slp1 in _IN and "it_agama" not in prev.tags
                     and not t.meta.get("8_3_78_done")
-                    and (any(f"tin_src_{x}" in v.tags for x in ("liT", "luG"))
-                         or ("tin_src_liG" in v.tags and prev.slp1 == "I"))):     # ṣīdhvam: sīyuṭ's ī, not vidhi-liṅ's e
+                    # liṭ and luṅ. The ṣīdhvam of āśīr-liṅ is left out: Vidyut and the recipe both give eDizIDvam
+                    # (8.3.79 vibhāṣeṭaḥ), so no ḍhatva is derived there until a scholar settles the vikalpa.
+                    and any(f"tin_src_{x}" in v.tags for x in ("liT", "luG"))):
                 return ("intra", ti, vi)
     # लिटाम् — the ending's sthānī is liṭ (1.1.56), or the liṭ recipe is live.
     if not (state.meta.get("liT_lakara_recipe") or any(
