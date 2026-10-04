@@ -39,7 +39,7 @@ def _find_gas_upadha_lopa(state: State) -> int | None:
     return None
 
 
-_GAMAHANA = frozenset({"gam", "han", "jan", "Kan", "Gas"})
+_GAMAHANA = frozenset({"gam", "han", "Gan", "jan", "Kan", "Gas"})      # Gan: han after 7.3.55 (abhyāsāc ca)
 _AC = frozenset("aAiIuUfFxXeEoO")
 
 

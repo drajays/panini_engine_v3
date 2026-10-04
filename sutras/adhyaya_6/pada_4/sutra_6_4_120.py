@@ -50,6 +50,8 @@ def _find(state: State) -> int | None:
             continue
         if t.meta.get("6_4_120_done") or t.meta.get("upadha_vrddhi_done") or t.meta.get("anga_guna_7_3_84"):
             continue          # the a must be the root's own (6.4.126 …गुणानाम्)
+        if (t.meta.get("upadesha_slp1") or "").replace("~", "").endswith(("f", "F")) or t.meta.get("urN_rapara_pending"):
+            continue          # an ar that comes from a ṛ-root is a guṇa/rapara, not the root's own a (SaSaratuH)
         if not _ending_licenses(nxt):
             continue
         vs = [v.slp1 for v in t.varnas]

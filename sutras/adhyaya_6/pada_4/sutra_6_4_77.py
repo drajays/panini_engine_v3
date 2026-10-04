@@ -36,6 +36,10 @@ def _find(state: State):
             continue                                   # a pit sārvadhātuka (āni, ni…) takes guṇa first: biBayAni, not *biBeyAni
         if len(dh.varnas) == 1 and dh.varnas[0].slp1 == "i":
             continue                                   # 6.4.81 इणो यण्
+        if (not any("abhyasa" in u.tags for u in state.terms)
+                and (any((u.meta.get("source_lakara_upadesha") or "").strip() == "liT" for u in state.terms)
+                     or dh.meta.get("slu_replaced_sap"))):
+            continue                                   # dvitva (6.1.8 / 6.1.10) comes first: jiGyatuH, not *jiGiyatuH
         # 6.4.82 एरनेकाचोऽसंयोगपूर्वस्य: an अनेकाच् aṅga (here: after its abhyāsa)
         # ending in इ-varṇa not after a conjunct takes yaṇ (निन्युः, निन्यिरे)
         if dh.varnas[-1].slp1 in "iI" and i > 0 and "abhyasa" in state.terms[i - 1].tags \

@@ -98,6 +98,9 @@ def _find(state: State):
             continue
         if t.meta.get("7_4_60_haladi_done") or t.meta.get("6_4_78_done"):
             continue
+        if (any(v.slp1 in "fF" for v in t.varnas) and not t.meta.get("7_4_66_urat_abhyasa_done")
+                and any((u.meta.get("source_lakara_upadesha") or "").strip() == "liT" for u in state.terms)):   # liṭ (cakarta)
+            continue            # the abhyāsa's ṛ goes first (7.4.66 ur at, 7.4.76/77): its rapara r is then trimmed here
         if t.meta.get("7_4_60_first_hal_only"):
             if t.varnas:
                 return ti
