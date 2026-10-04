@@ -87,8 +87,11 @@ SUTRA = SutraRecord(
         "सिच् सम्पूर्णतः लुप्यते; पश्चात् ६.४.८८ वुक्-आगमः।"
     ),
     anuvritti_from        = ('2.4.72',),
-    # sic gone by luk takes jus (3.4.108/109, सिजभ्यस्त…) with it: न लुमताऽङ्गस्य (1.1.63) — what the luk'd pratyaya
-    # would have conditioned is not done. So where this applies, झि → अन्ति → अन् (अभूवन्), not जुस्. Declared.
+    # NOT a true apavāda (different sthānī: sic vs jhi) — a stand-in for a jñāpaka. Classically: 3.4.109's jus is not
+    # triggered by a luk'd sic (1.1.62 pratyayalakṣaṇa does not carry it; 3.4.110 आतः would be vyartha otherwise), so
+    # अभूवन् (jhi→ant, 7.1.3), not *अभूवुः. 1.1.63 alone does not explain it (jus is pratyaya-kārya, not aṅga-kārya).
+    # Needed because the engine's 3.4.108 also does 3.4.109's luṅ-sic jus and sees sic before 2.4.77 pops it.
+    # TODO: replace by a CONFLICT_OVERRIDES entry (Art. 21 L10) once an amendment records the jñāpaka.
     apavada_of            = ("3.4.108",),
     cond                  = cond,
     act                   = act,

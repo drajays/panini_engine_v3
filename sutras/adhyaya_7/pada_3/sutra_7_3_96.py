@@ -74,7 +74,7 @@ SUTRA = SutraRecord(
     anuvritti_from = (),
     cond           = cond,
     act            = act,
-    apavada_of     = ("6.1.68",),   # sic/asti + apṛkta tiṅ gets īṭ; else hal-lopa would erase that tiṅ (acaiṣīt)
+    # not an apavāda of 6.1.68: īṭ is para; once it stands, the t is no longer after a hal (nimitta-vighāta)
 )
 
 register_sutra(SUTRA)
