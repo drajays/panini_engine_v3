@@ -64,7 +64,7 @@ def _site_dirgha(state: State) -> bool:
     if i is None:
         return False
     t = state.terms[i]
-    if t.meta.get("7_4_59_hrasva_done"):
+    if t.meta.get("7_4_59_hrasva_done") or t.meta.get("7_4_70_done"):   # 7.4.70 अत आदेः is para: its आ stands
         return False
     return _first_dirgha_ak_index(t) is not None
 
