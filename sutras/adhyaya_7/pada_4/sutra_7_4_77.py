@@ -34,10 +34,13 @@ def _root_varnas(t) -> str:
 
 def _find(state: State):
     dhatu = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
-    if dhatu is None or _root_varnas(dhatu) not in _TARGET_ROOTS:
-        return None
+    if dhatu is None or not (_root_varnas(dhatu) in _TARGET_ROOTS
+                             or (dhatu.meta.get("upadesha_slp1") or "").replace("~", "") in _TARGET_ROOTS):
+        return None            # (the root's upadeśa, since 7.4.11 has already turned its ṛ into ar by now)
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags:
+            continue
+        if t.meta.get("7_4_77_done"):
             continue
         for j, v in enumerate(t.varnas):
             if v.slp1 in {"f", "F"}:
@@ -55,6 +58,7 @@ def act(state: State) -> State:
         return state
     ti, j = hit
     state.terms[ti].varnas[j] = mk("i")
+    state.terms[ti].meta["7_4_77_done"] = True
     return state
 
 
@@ -66,6 +70,7 @@ SUTRA = SutraRecord(
     padaccheda_dev         = "अर्ति-पिपर्त्योः च",
     why_dev                = "ऋतेः पॄतेश्च अभ्यासस्य ऋकारस्य इत्-आदेशः श्लौ (इयर्ति, पिपर्ति) — ७.४.७६ भृञामित्-अनुवृत्तिः।",
     anuvritti_from         = ("7.4.76", "7.4.75", "7.4.58"),
+    apavada_of            = ("7.4.66",),   # arti / pipartti: i, not ur-at
     cond                   = cond,
     act                    = act,
 )

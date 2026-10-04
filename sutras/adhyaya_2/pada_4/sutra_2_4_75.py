@@ -54,12 +54,25 @@ def _already_has_slu(state: State) -> bool:
 
 
 def cond(state: State) -> bool:
-    return _site(state) is not None and not _already_has_slu(state)
+    i = _site(state)
+    return i is not None and not _already_has_slu(state) and not state.terms[i].meta.get("2_4_75_slu_done")
 
 
 def act(state: State) -> State:
     i = _site(state)
     if i is None:
+        return state
+    if "P040_juhotyadi" not in state.terms[i].tags:
+        # ślu is a luk-like lopa of śap (1.1.61): nothing is left on the tape, only the witness 6.1.10 reads, and
+        # 3.1.68 must not bring śap back
+        for k in reversed(range(len(state.terms))):
+            if state.terms[k].kind == "pratyaya" and (state.terms[k].meta.get("upadesha_slp1") or "").strip() == "Sap":
+                del state.terms[k]
+                if k <= i:
+                    i -= 1
+        state.terms[i].meta["slu_replaced_sap"] = True
+        state.terms[i].meta["3_1_68_sap_given"] = True
+        state.terms[i].meta["2_4_75_slu_done"] = True
         return state
     slu = Term(
         kind="pratyaya",
@@ -81,6 +94,7 @@ SUTRA = SutraRecord(
     why_dev        = "जुहोत्यादि-गणात् शप्-स्थाने श्लुः (२.४.७५) — P040।",
     apavada_of     = ("3.1.68",),   # अपवाद of 3.1.68 — sutra_ref_out resolver.apavada_of
     anuvritti_from = ("2.4.58",),
+    r1_form_identity_exempt = True,       # ślu is a lopa: śap goes without a trace on the tape
     cond           = cond,
     act            = act,
 )

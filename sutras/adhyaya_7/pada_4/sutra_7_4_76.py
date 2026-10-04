@@ -30,7 +30,7 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology    import mk
 
-_TARGET_ROOTS = {"Bf"}
+_TARGET_ROOTS = {"Bf", "mA", "hA"}      # भृञ्, माङ्, ओहाङ् (juhotyādi: abhyāsa → i: बिभर्ति, मिमीते, जिहीते)
 
 
 def _root_varnas(t) -> str:
@@ -44,8 +44,11 @@ def _find(state: State):
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags:
             continue
+        if t.meta.get("7_4_76_done"):
+            continue
         for j, v in enumerate(t.varnas):
-            if v.slp1 in {"f", "F"}:
+            if v.slp1 in {"f", "F"} or (v.slp1 in {"a", "A"} and _root_varnas(dhatu) in {"mA", "hA"}
+                                         and dhatu.meta.get("slu_replaced_sap")):
                 return ti, j
     return None
 
@@ -60,6 +63,7 @@ def act(state: State) -> State:
         return state
     ti, j = hit
     state.terms[ti].varnas[j] = mk("i")
+    state.terms[ti].meta["7_4_76_done"] = True
     return state
 
 
@@ -71,6 +75,7 @@ SUTRA = SutraRecord(
     padaccheda_dev         = "भृञाम् इत्",
     why_dev                = "भृञः अभ्यासस्य ऋकारस्य इत्-आदेशः श्लौ (बिभर्ति) — ७.४.६६ उरत्-अपवादः।",
     anuvritti_from         = ("7.4.75", "7.4.58"),
+    apavada_of            = ("7.4.66",),   # the ṛ of the abhyāsa goes to i, not (u)ra-t
     cond                   = cond,
     act                    = act,
 )
