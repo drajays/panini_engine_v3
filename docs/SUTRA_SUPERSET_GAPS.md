@@ -34,3 +34,16 @@ Reading it:
 - **8.3.111, 7.4.61, 8.4.37, 6.1.90, 8.3.24, 1.1.5, 3.1.40**: real per-rule gaps (the loop/recipe reaches the form by another route and never records the rule).
 - Work order: ātmanepada first, then re-run this tool and take the remaining codes one by one. Add a ratchet (gap count may only fall) once the baseline is stable.
 - Not available from Vidyut: sandhi. `vidyut.sandhi` offers only a splitter, no rule-by-rule application, so a sandhi parallel page has no Vidyut sūtra list to compare against.
+
+## Update 2026-10-04 (after the ātmanepada loop work)
+
+Loop vs recipe, ātmanepada, first 20 gaṇa-1 roots (`python3 -m tools.loop_vs_recipe tinanta --lakara X --pada atmane --limit 20`):
+
+| lakāra | agree /180 | remaining |
+|---|---|---|
+| laṭ, luṭ, lṛṭ, loṭ, laṅ, liṅ | 180 | — |
+| liṭ | 178 | 2pl `cakfDve` for `cakfQve`: 8.3.78 needs the aṅga/pratyaya boundary, which the Tripāḍī merge discards |
+| luṅ | 171 | `muda~`: 1.2.11 makes sic kit before iṭ arrives (7.2.35 only opens after 6.4.71); Vidyut gives `amodizi` |
+| āśīrliṅ | 96 | 2sg `ṣṭhās` (8.3.59 + ṣṭutva) and 2pl `ḍhvam` (8.3.78) not reached |
+
+The Vidyut⊆engine gap list above is measured on the recipe path (`pipelines.tinanta.derive`) and is unchanged: the top item, 1.3.12 (683 of 756 cells), is `SKIPPED` in the recipe for every ātmanepadī root because 1.3.12 has no structural condition (the dhātu's anudātta/ṅit it-marker is not read off the tape). That is the next rule to make structural, then 3.4.113/114 (saṃjñā recognition in the liṭ/luṅ recipes), then 8.3.111, 7.4.61, 8.4.37.
