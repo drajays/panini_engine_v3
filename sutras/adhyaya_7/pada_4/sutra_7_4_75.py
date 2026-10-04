@@ -37,7 +37,10 @@ def _root_varnas(t) -> str:
 
 def _find(state: State):
     dhatu = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
-    if dhatu is None or _root_varnas(dhatu) not in _TARGET_ROOTS:
+    if dhatu is None:
+        return None
+    up = (dhatu.meta.get("upadesha_slp1") or "").replace("~", "")
+    if not (_root_varnas(dhatu) in _TARGET_ROOTS or up.startswith(("Rij", "vij", "viz"))):   # Riji~r: ṇ is still ṇ here
         return None
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags or t.meta.get("7_4_75_nijadi_guna_done"):

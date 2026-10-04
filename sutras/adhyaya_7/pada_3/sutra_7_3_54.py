@@ -43,6 +43,9 @@ def _site(state: State):
         if "dhatu" not in t.tags or not t.varnas:
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
+        flat = "".join(v.slp1 for v in t.varnas)
+        if up == "hana~" and t.varnas[0].slp1 == "h" and (flat == "hn" or _nit_follows(state, i)):
+            return i               # हनस्तोऽचिण्णलोः … ghnanti: the n of the root itself follows the h (ñ-ṇi-n-eṣu: n)
         if up not in {"han", "vaDa", "vaD"} and "".join(v.slp1 for v in t.varnas) not in {"han", "Gan", "han"}:
             if t.varnas[0].slp1 != "h":
                 continue

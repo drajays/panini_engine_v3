@@ -39,16 +39,17 @@ def _root_varnas(t) -> str:
 
 def _find(state: State):
     dhatu = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
-    if dhatu is None or _root_varnas(dhatu) not in _TARGET_ROOTS:
-        return None
+    up = (dhatu.meta.get("upadesha_slp1") or "") if dhatu is not None else ""
+    if dhatu is None or not (_root_varnas(dhatu) in _TARGET_ROOTS or up in {"quBfY", "mAN", "o~hAN"}):
+        return None            # (by upadeśa too: 6.4.113 may already have made the root's ā an ī)
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags:
             continue
         if t.meta.get("7_4_76_done"):
             continue
         for j, v in enumerate(t.varnas):
-            if v.slp1 in {"f", "F"} or (v.slp1 in {"a", "A"} and _root_varnas(dhatu) in {"mA", "hA"}
-                                         and dhatu.meta.get("slu_replaced_sap")):
+            if v.slp1 in {"f", "F"} or (v.slp1 in {"a", "A"} and (dhatu.meta.get("upadesha_slp1") or "") in {"mAN", "o~hAN"}
+                                         and dhatu.meta.get("slu_replaced_sap")):      # māṅ, hāṅ — not hāk (jahAti)
                 return ti, j
     return None
 

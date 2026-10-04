@@ -44,13 +44,33 @@ def _hit(state: State) -> tuple[int, int] | None:
     return None
 
 
+def _hit_abhyasta(state: State) -> int | None:
+    """ई हल्यघोः for an abhyasta root in ā that is not ghu (hā: jahITaH): before a hal-initial kṅit."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or not t.varnas or t.varnas[-1].slp1 != "A":
+            continue
+        if t.meta.get("6_4_113_I_done") or not any("abhyasa" in u.tags for u in state.terms):
+            continue
+        if "".join(v.slp1 for v in t.varnas) in {"dA", "DA"}:          # aghoḥ
+            continue
+        nxt = state.terms[i + 1]
+        if ("kngiti" in nxt.tags or nxt.meta.get("is_apit")) and nxt.varnas and nxt.varnas[0].slp1 not in "aAiIuUfFxXeEoO" \
+                and (nxt.meta.get("upadesha_slp1") or "").strip() not in {"jhi", "Ji", "Ja", "jha"}:
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
-    return _hit(state) is not None
+    return _hit(state) is not None or _hit_abhyasta(state) is not None
 
 
 def act(state: State) -> State:
     h = _hit(state)
     if h is None:
+        j = _hit_abhyasta(state)
+        if j is not None:
+            state.terms[j].varnas[-1] = mk("I")
+            state.terms[j].meta["6_4_113_I_done"] = True
         return state
     ti, vi = h
     state.terms[ti].varnas[vi] = mk("I")

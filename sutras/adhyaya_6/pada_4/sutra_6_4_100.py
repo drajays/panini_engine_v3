@@ -66,8 +66,23 @@ def _site_structural_lit(state: State) -> bool:
     return up in {"atus", "aTus", "us", "va", "ma", "th", "a"} or nxt.meta.get("lit_atus") is True
 
 
+def _site_abhyasta_kngiti(state: State):
+    """घसिभसोर्हलि च + अजादौ क्ङिति (6.4.98 anuvṛtti): the a of an abhyasta ghas/bhas drops before a kṅit — bapsati, babdhaH."""
+    if not any("abhyasa" in t.tags for t in state.terms):
+        return None
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("6_4_100_structural_done"):
+            continue
+        if [v.slp1 for v in t.varnas] not in (["G", "a", "s"], ["B", "a", "s"]):
+            continue
+        nxt = state.terms[i + 1]
+        if "kngiti" in nxt.tags and nxt.varnas:
+            return i
+    return None
+
+
 def _site(state: State) -> bool:
-    return _site_structural_lit(state)
+    return _site_structural_lit(state) or _site_abhyasta_kngiti(state) is not None
 
 
 def cond(state: State) -> bool:
@@ -75,6 +90,10 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    if (i := _site_abhyasta_kngiti(state)) is not None and not _site_structural_lit(state):
+        del state.terms[i].varnas[1]
+        state.terms[i].meta["6_4_100_structural_done"] = True
+        return state
     if not _site_structural_lit(state):
         return state
     hit = _gas_dhatu(state)

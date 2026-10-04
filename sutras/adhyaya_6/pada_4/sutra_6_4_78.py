@@ -58,6 +58,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "अभ्यासस्य असवर्णे",
     why_dev               = "अभ्यासस्य इवर्णोवर्णयोः असवर्णे अचि परे इयङुवङौ (इयेख, उवोख)।",
     anuvritti_from        = ('6.1.1',),
+    apavada_of            = ("6.1.77",),    # abhyāsa i/u before a non-savarṇa vowel: iy/uv, not y/v (iyarti)
     cond                  = cond,
     act                   = act,
 )

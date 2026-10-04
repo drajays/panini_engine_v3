@@ -74,7 +74,7 @@ def _find(state: State):
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags:
             continue
-        if t.meta.get("7_4_60_haladi_done"):
+        if t.meta.get("7_4_60_haladi_done") or t.meta.get("6_4_78_done"):    # iy/uv (6.4.78) is not an onset cluster
             continue
         vs = t.varnas
         if (
@@ -85,7 +85,7 @@ def _find(state: State):
         ):
             return ti
     for ti, t in enumerate(state.terms):
-        if "abhyasa" not in t.tags or t.meta.get("7_4_60_haladi_done"):
+        if "abhyasa" not in t.tags or t.meta.get("7_4_60_haladi_done") or t.meta.get("6_4_78_done"):
             continue
         # P037 structural: abhyāsa exactly [I, w] → trim to [I]
         if len(t.varnas) == 2 and t.varnas[0].slp1 == "I" and t.varnas[1].slp1 == "w":
@@ -96,7 +96,7 @@ def _find(state: State):
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags:
             continue
-        if t.meta.get("7_4_60_haladi_done"):
+        if t.meta.get("7_4_60_haladi_done") or t.meta.get("6_4_78_done"):
             continue
         if t.meta.get("7_4_60_first_hal_only"):
             if t.varnas:
@@ -118,7 +118,7 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     for ti, t in enumerate(state.terms):
-        if "abhyasa" not in t.tags or t.meta.get("7_4_60_haladi_done"):
+        if "abhyasa" not in t.tags or t.meta.get("7_4_60_haladi_done") or t.meta.get("6_4_78_done"):
             continue
         vs = t.varnas
         if (

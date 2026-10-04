@@ -48,15 +48,16 @@ def _blocked_by_1_1_58_vareya_after_6_4_48(state: State, dh) -> bool:
 
 
 def _ic_pratyaya_idx(state: State, dhi: int) -> int | None:
-    """First pratyaya after dhātu with kngiti + initial ``i``."""
+    """The pratyaya *right after* the dhātu (a vikaraṇa in between — śyan, śap — makes it part of the aṅga: jAyate, not
+    *jyate) with kngiti + initial ``i``."""
     for j in range(dhi + 1, len(state.terms)):
         t = state.terms[j]
-        if t.kind != "pratyaya":
+        if t.kind != "pratyaya" or not t.varnas:
             continue
-        if "kngiti" not in t.tags:
-            continue
-        if not t.varnas or t.varnas[0].slp1 != "i":
-            continue
+        if "kngiti" not in t.tags or t.varnas[0].slp1 != "i":
+            return None               # the first affix after the dhātu is not it
+        if "vikarana" in t.tags:
+            return None
         if t.meta.get("6_4_64_target_done"):
             continue
         return j

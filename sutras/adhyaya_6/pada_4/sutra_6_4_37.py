@@ -29,7 +29,25 @@ from phonology.pratyahara import JHAL
 _GAM_UPADESHA = frozenset({"gamx~"})   # गमॢँ गतौ (01.1137), anudātta-upadeśa
 
 
+def _structural_site(state: State):
+    """अनुदात्तोपदेश… अनुनासिकलोपो झलि क्ङिति, read off the tape: an anudātta-upadeśa root (ekāc, not udātta — han, gam,
+    yam, ram, man, vana, tan …) ending in n/m, immediately before a jhal-initial kṅit affix: hataH, haTa, gatvA."""
+    for i, t in enumerate(state.terms[:-1]):
+        if ("dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("6_4_37_nasal_lopa_done") or len(t.varnas) < 2):
+            continue
+        if not (t.meta.get("ekac_dhatu") and not t.meta.get("udatta_dhatu")):
+            continue
+        if t.varnas[-1].slp1 not in ("n", "m") or "mula_dhatu_v" not in t.varnas[-1].tags:
+            continue
+        nxt = state.terms[i + 1]
+        if "kngiti" in nxt.tags and nxt.varnas and nxt.varnas[0].slp1 in JHAL:
+            return i
+    return None
+
+
 def cond(state: State) -> bool:
+    if _structural_site(state) is not None:
+        return True
     if not state.meta.get("gam_anunasika_recipe"):
         return False
     for i, t in enumerate(state.terms):
@@ -53,6 +71,10 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    if (i := _structural_site(state)) is not None:
+        state.terms[i].varnas.pop()
+        state.terms[i].meta["6_4_37_nasal_lopa_done"] = True
+        return state
     if not cond(state):
         return state
     for i, t in enumerate(state.terms):

@@ -25,3 +25,19 @@ def test_cell(dhatu, lakara, p, v, want):
 ])
 def test_other_gana_cells(dhatu, lakara, p, v, want):
     assert run_autonomously(start_state(NS(kind="tinanta", args=(dhatu, lakara, p, v))), "", dhatu, 250).surface == want
+
+
+@pytest.mark.parametrize("dhatu,lakara,p,v,want", [        # checked against Vidyut (tools/tri_compare.py)
+    ("hana~", "laT", 3, 2, "hataH"), ("hana~", "laT", 3, 3, "Gnanti"), ("hana~", "laT", 2, 2, "haTaH"), ("hana~", "laT", 3, 1, "hanti"),
+    ("Riji~r", "laT", 3, 1, "nenekti"), ("o~hAk", "laT", 3, 3, "jahati"), ("o~hAk", "laT", 3, 2, "jahItaH"),
+    ("Basa~", "laT", 3, 3, "bapsati"), ("f", "liT", 3, 1, "Ara"),
+])
+def test_vs_vidyut_gana_2_3(dhatu, lakara, p, v, want):
+    assert run_autonomously(start_state(NS(kind="tinanta", args=(dhatu, lakara, p, v))), "", dhatu, 250).surface == want
+
+
+@pytest.mark.parametrize("ref,p,v,want", [("JuhotyAdi_03_0017", 3, 1, "iyarti"), ("JuhotyAdi_03_0017", 3, 2, "iyftaH"),
+                                          ("JuhotyAdi_03_0007", 3, 1, "mimIte"), ("divAdi_04_0044", 3, 2, "jAyete"),
+                                          ("Adadi_02_0009", 2, 1, "Iqize")])
+def test_by_row_id(ref, p, v, want):             # an upadeśa repeats across gaṇas: the row id disambiguates
+    assert run_autonomously(start_state(NS(kind="tinanta", args=(ref, "laT", p, v))), "", ref, 250).surface == want

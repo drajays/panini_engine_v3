@@ -241,7 +241,8 @@ def _gate_key(state: State) -> tuple:
     """Gates and saṃjñā registry are not on the tape but rules read them (7.2.13 → 7.2.35): two states with one tape
     and different gates must not share a memoised answer."""
     return (tuple(sorted((k, repr(v)) for k, v in state.paribhasha_gates.items())),
-            tuple(sorted(map(repr, state.samjna_registry))))
+            tuple(sorted(map(repr, state.samjna_registry))),
+            tuple(repr(e.get("id")) for e in state.adhikara_stack))       # adhikara_in_effect() reads this (7.1.35, 7.2.77…)
 
 
 def effective_candidates(candidates: List[str], state: State) -> List[str]:

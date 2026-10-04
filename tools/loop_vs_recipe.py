@@ -76,7 +76,7 @@ def tinanta(limit: int | None, lakara: str = "laT", pada: str = "all", gana: int
     from tools.autonomy_report import run_autonomously, start_state
 
     want = {"parasmai": "परस्मैपदी", "atmane": "आत्मनेपदी", "ubhaya": "उभयपदी"}.get(pada)
-    roots = [r["upadesha_slp1"] for r in iter_dhatu_entries()
+    roots = [r.get("id") or r["upadesha_slp1"] for r in iter_dhatu_entries()
              if r.get("gana") == gana and (want is None or r.get("pada_label_dev") == want)]
     roots = roots[:limit] if limit else roots
     cells = agree = 0

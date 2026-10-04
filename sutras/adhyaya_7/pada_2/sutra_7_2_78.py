@@ -14,23 +14,23 @@ from engine.state import State
 _GATE_KEY: str = "7_2_78_IqajanorDv_78"
 
 
+from sutras.adhyaya_7.pada_2.sutra_7_2_77 import iT_act, iT_site
+
+_ROOTS = frozenset({"Iqa~", "janI~", "ISa~"})      # ca: īśaḥ too takes iṭ before dhve (ISiDve); its se is 7.2.77
+
+
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.78", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return iT_site(state, _ROOTS, True) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.78"
+    iT_act(state, _ROOTS, True)
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.2.78",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "IqajanorDve ca",
     text_dev              = "ईडजनोर्ध्वे च",
     padaccheda_dev        = "ईड-जनोः ध्वे (लुप्तषष्ठ्यन्तनिर्देशः) च",

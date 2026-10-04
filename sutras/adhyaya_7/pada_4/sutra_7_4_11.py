@@ -18,6 +18,9 @@ def _lit_dhatu(state: State):
     """The non-abhyāsa dhātu of a liṭ derivation, or None."""
     if not any("abhyasa" in t.tags for t in state.terms):
         return None
+    if not any((t.meta.get("source_lakara_upadesha") or "").strip() == "liT" or "lit_derivation" in t.tags
+               or t.meta.get("upadesha_slp1") == "liT" for t in state.terms):
+        return None            # लिटि: not every abhyasta (juhotyādi iyarti has no 7.4.11)
     return next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
 
 

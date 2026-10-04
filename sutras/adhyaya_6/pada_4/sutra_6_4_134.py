@@ -63,7 +63,7 @@ def _find_final_n_arm(state: State):
         return None
     for ti in range(len(state.terms) - 1):
         anga = state.terms[ti]
-        if "anga" not in anga.tags:
+        if "anga" not in anga.tags or "dhatu" in anga.tags:      # an-stems (rājan), never a dhātu (han + ti)
             continue
         vs = anga.varnas
         if not vs or vs[-1].slp1 != "n":

@@ -37,6 +37,8 @@ def _find(state: State):
     if dhatu is None or not (_root_varnas(dhatu) in _TARGET_ROOTS
                              or (dhatu.meta.get("upadesha_slp1") or "").replace("~", "") in _TARGET_ROOTS):
         return None            # (the root's upadeśa, since 7.4.11 has already turned its ṛ into ar by now)
+    if not dhatu.meta.get("slu_replaced_sap"):
+        return None            # ślau (7.4.75 anuvṛtti): juhotyādi only — the bhvādi ṛ (liṭ Ara) has its abhyāsa a
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags:
             continue

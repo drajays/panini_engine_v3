@@ -45,8 +45,6 @@ def _find_ghu_abhyasta(state: State) -> int | None:
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags or "abhyasa" in t.tags:
             continue
-        if "".join(v.slp1 for v in t.varnas) not in _GHU_ROOTS:
-            continue
         if not any("abhyasa" in u.tags for u in state.terms):
             continue
         nxt = state.terms[i + 1]
@@ -54,7 +52,11 @@ def _find_ghu_abhyasta(state: State) -> int | None:
             continue
         if not t.varnas or t.varnas[-1].slp1 != "A":
             continue
-        return i
+        ghu = "".join(v.slp1 for v in t.varnas) in _GHU_ROOTS
+        up = (nxt.meta.get("upadesha_slp1") or "").strip()
+        vowel_initial = bool(nxt.varnas) and (nxt.varnas[0].slp1 in "aAiIuUfFxXeEoO" or up in {"jhi", "Ji", "Ja", "jha"})
+        if ghu or vowel_initial:        # any abhyasta ā-root drops it before a vowel-initial kṅit (jahati); ghu before any
+            return i
     return None
 
 
