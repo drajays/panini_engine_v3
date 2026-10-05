@@ -47,7 +47,10 @@ def _find_jhi_tin(state: State) -> int | None:
         source = (t.meta.get("source_lakara_upadesha") or "").strip()
         # 3.4.109 सिजभ्यस्तविदिभ्यश्च: in laṅ, jus after an abhyasta dhātu (abibhayuH, aduH) — and after vid
         abhyasta_lan = source == "laG" and any("abhyasa" in u.tags or u.meta.get("slu_replaced_sap") for u in state.terms)
-        if source != "liG" and not (source == "luG" and has_sic) and not abhyasta_lan:
+        # 3.4.110 आतः: after an ā-final root whose sic was luk'd (2.4.77) jhi is jus too — aguH, asthuH, adaH
+        ata = (source == "luG" and state.samjna_registry.get("2.4.77_sic_luk")
+               and any("dhatu" in u.tags and "abhyasa" not in u.tags and u.varnas and u.varnas[-1].slp1 == "A" for u in state.terms))
+        if source != "liG" and not (source == "luG" and has_sic) and not abhyasta_lan and not ata:
             continue
         if (t.meta.get("upadesha_slp1") or "").strip() == "Ji" and "".join(v.slp1 for v in t.varnas) in {"Ji", "J"}:
             return i

@@ -282,7 +282,7 @@ def samprasarana_site(state: State, stems: frozenset, *, ngit: bool,
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("samprasarana_done"):
             continue
-        stem = "".join(v.slp1 for v in t.varnas)
+        stem = "".join(v.slp1 for v in t.varnas if "aT_agama_v" not in v.tags)    # the aṭ is no part of the root (avfScat)
         if stem not in stems and not (antargana and antargana in (t.meta.get("antarganas") or ())):
             continue
         nxt = state.terms[i + 1]

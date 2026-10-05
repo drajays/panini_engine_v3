@@ -33,7 +33,7 @@ def _find_iN_dhatu(state: State):
     for t in state.terms:
         if "dhatu" not in t.tags:
             continue
-        if (t.meta.get("upadesha_slp1") or "").strip() != "iN":
+        if (t.meta.get("upadesha_slp1") or "").strip() not in ("iN", "iR", "ik"):
             continue
         if t.meta.get("2_4_45_iNo_ga_done"):
             continue
@@ -42,9 +42,10 @@ def _find_iN_dhatu(state: State):
 
 
 def _matches(state: State) -> bool:
-    if state.meta.get("lakara") != "luG":
-        return False
-    return _find_iN_dhatu(state) is not None
+    luG = (state.meta.get("lakara") == "luG"
+           or any((t.meta.get("source_lakara_upadesha") or "").strip() == "luG"
+                  or (t.meta.get("upadesha_slp1") or "").strip() in ("sic", "cli") for t in state.terms))   # luṅ read off the tape
+    return luG and _find_iN_dhatu(state) is not None
 
 
 def cond(state: State) -> bool:
@@ -57,8 +58,9 @@ def act(state: State) -> State:
     dh = _find_iN_dhatu(state)
     if dh is None:
         return state
-    dh.varnas = list(parse_slp1_upadesha_sequence("gAN"))
-    dh.meta["upadesha_slp1"] = "gAN"
+    new = "gAN" if (dh.meta.get("upadesha_slp1") or "").strip() == "iN" else "gA"      # iR/ik: gA (agAt)
+    dh.varnas = list(parse_slp1_upadesha_sequence(new))
+    dh.meta["upadesha_slp1"] = new
     dh.meta["2_4_45_iNo_ga_done"] = True
     return state
 

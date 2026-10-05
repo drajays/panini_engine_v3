@@ -25,7 +25,10 @@ from phonology    import mk
 def _find(state: State):
     """Return (yasut_idx, A_idx) if yā-term precedes us-term, else None."""
     for i, t in enumerate(state.terms):
-        if "yasut_agama" not in t.tags:
+        is_yasut = "yasut_agama" in t.tags
+        is_root = ("dhatu" in t.tags and "abhyasa" not in t.tags and bool(t.varnas) and i + 1 < len(state.terms)
+                   and (state.terms[i + 1].meta.get("upadesha_slp1") or "") == "jus")      # agA+us → agus (aguH)
+        if not (is_yasut or is_root):
             continue
         if not t.varnas:
             continue
@@ -75,6 +78,7 @@ SUTRA = SutraRecord(
         "तनु-उ-या-उस् → तनु-उ-य्-उस् (तनुयुः)।"
     ),
     anuvritti_from        = ("6.1.1",),
+    apavada_of            = ("6.1.87", "6.1.101"),
     cond                  = cond,
     act                   = act,
 )

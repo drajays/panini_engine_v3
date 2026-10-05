@@ -38,7 +38,7 @@ def _find_sic_index(state: State) -> int | None:
 
 # गाति-स्था-घु-पा-भू (upadeśa identity): इण् (→ गा, 2.4.45), ष्ठा, the ghu roots
 # (1.1.20 दाधा घ्वदाप् — dā/dhā-rūpa, not दाप्/दैप्), पा पाने, भू.
-SIC_LUK_UPADESHA = frozenset({"iR", "zWA", "qudAY", "quDAY", "do", "dAR", "deN", "DeW", "pA", "BU"})
+SIC_LUK_UPADESHA = frozenset({"iR", "gA", "zWA", "qudAY", "quDAY", "do", "dAR", "deN", "DeW", "pA", "BU"})
 
 
 def sic_luk_dhatu(state: State) -> bool:
