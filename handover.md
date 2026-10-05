@@ -61,3 +61,22 @@ Gotchas: `.audit/pathdiff.py` needs `PYTHONPATH=.` and separate args (zsh doesn'
 - Ledgers (`sig/`, firing_coverage, sutra_class, sig_benchmark --freeze) NOT regenerated this session.
 - Known: the full suite is order-/load-sensitive in rare cells (7.1.35 tAtaN, liṭ kṛ); each passes alone and in a quiet serial run. Do not run sweeps while the suite runs.
 - Engine spelling trap: some kṛt/taddhita upadeśas spell ñ as `N` (GaN); tiṅ/vikaraṇa `N` is really ṅ (7.2.116 handles both).
+
+
+## Status 2026-10-05 (late) — loop vs Vidyut (the real oracle), by `tools/tri_compare.py`
+`.venv/bin/python -m tools.tri_compare ALL --gana N --lakara X --pada parasmai|atmane|ubhaya --limit K` prints every cell where
+the **loop** differs from **Vidyut** (also shows the recipe; the recipe is often the one that is wrong). One root:
+`tools.tri_compare ROOT --gana N --lakara X --pada P`. Sweeps and the harness take **row ids** (an upadeśa repeats across gaṇas)
+and `start_state(NS(..., pada="atmane"))` picks the pada of an ubhayapadī root.
+Cells differing from Vidyut, first 5–8 roots per gaṇa (measured before the last few fixes):
+- parasmaipada: gaṇa 1 = 0 in every lakāra; laṭ/loṭ/laṅ/liṅ/lṛṭ/luṭ ≈ 0 for gaṇas 2–9 except pf/pF, Basa~, quDAY, tF (Vidyut empty), Dana~;
+  liṭ gaṇa 3/5/6/9 a few roots (hi, rADa~, vyaca~ samprasāraṇa 6.1.17, quBfY); luṅ gaṇa 3 `o~hAk` (Vidyut seṭ, our data aniṭ).
+- ātmanepada: laṭ 0 everywhere but gaṇa 10 (ṇic roots: the harness cannot run them — `_bootstrap` returns a finished recipe state);
+  open: dIN luṭ `dAtA`, liṭ cakziN (Vidyut gives āṃ forms), loṭ zwiGa~.
+- ubhayapadī: laṭ ≈ 0 except `hu`/`quDAY` ātmane (Vidyut returns nothing for some), `liha~`/`duha~` bhaṣ (8.2.37 dhokṣi), ciY (Vidyut empty).
+Rules made structural or fixed this round (all Vidyut-checked): 6.4.37, 7.3.54, 6.4.112/113, 7.4.75/76/77/72, 6.4.78, 6.4.100, 6.4.64, 7.2.77/78,
+7.2.1 (over 7.3.84), 7.2.3, 7.1.4, 7.1.100/102, 7.3.55, 7.3.83, 6.4.82, 6.4.63, 6.4.87/77 (uvaṅ/yaṇ), 3.4.108/109 jus after abhyasta, 1.2.2 vij iṭ.
+Fixed engine-wide: aṭ is its own Term before the abhyāsa; every vikaraṇa rule stands only before a sārvadhātuka lakāra; v/y finals lose the
+upadeśa tag (else 1.3.3 strips them); memo key includes gates, registry, adhikāra stack.
+Full suite: serial and quiet it is green (≈6 min); run concurrently with sweeps it can fail on liṭ/7.1.35 cells — never run both at once.
+Ledgers (`sig/`) still not regenerated.

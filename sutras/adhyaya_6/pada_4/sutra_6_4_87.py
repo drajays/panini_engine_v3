@@ -44,7 +44,8 @@ def _site(state: State):
         if not _weak_after(ts, k):
             continue
         # सार्वधातुके: a tiṅ is sārvadhātuka by 3.4.113 even when its ādeśa lost the tag
-        if not (any(t.startswith("sarvadhatuka") for t in nxt.tags) or "tin_adesha_3_4_78" in nxt.tags):
+        if not (any(t.startswith("sarvadhatuka") for t in nxt.tags) or "tin_adesha_3_4_78" in nxt.tags
+                or ("ling_sIyuw" in nxt.tags and "ardhadhatuka" not in nxt.tags)):    # vidhi-liṅ: sunvIta
             continue
         prev = ts[k - 1].varnas
         if prev and prev[-1].slp1 in _AC:           # न् is the only consonant before उ
