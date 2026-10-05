@@ -13,28 +13,48 @@ from engine.state import State
 from engine.krt_eligibility import samhita_gate_eligible
 
 _GATE_KEY: str = "6_4_63_dINo_63"
+_AC = frozenset("aAiIuUfFxXeEoO")
+
+
+def _site(state: State):
+    """दीङो युडचि क्ङिति: dīṅ (dīyate) takes the āgama yuṭ before a vowel-initial kṅit affix — didIye, adIyi."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("6_4_63_yuT_done"):
+            continue
+        if (t.meta.get("upadesha_slp1") or "").replace("~", "") != "dIN" or not t.varnas or t.varnas[-1].slp1 != "I":
+            continue
+        nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
+        if nxt is not None and nxt.varnas[0].slp1 in _AC and ("kngiti" in nxt.tags or nxt.meta.get("is_apit")
+                                                              or "it:Git" in nxt.tags or "it:Nit" in nxt.tags
+                                                              or (nxt.meta.get("source_lakara_upadesha") or "") == "liT"):  # 1.2.5: liṭ after a non-conjunct is kit
+            return t
+    return None
 
 
 def cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.4.63", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.4.63"
+    t = _site(state)
+    if t is None:
+        return state
+    from phonology import mk
+    t.varnas.append(mk("y"))
+    t.meta["6_4_63_yuT_done"] = True
+    t.tags.discard("upadesha")
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "6.4.63",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "dINo yuqaci kNiti",
     text_dev              = "दीङो युडचि क्ङिति",
     padaccheda_dev        = "दीङः युट् अचि क्ङिति",
     why_dev               = "(सूत्रम् 6.4.63) दीङो युडचि क्ङिति।",
     anuvritti_from        = ('6.1.1',),
+    apavada_of            = ("6.4.82", "6.4.77"),   # dīṅ takes yuṭ, not yaṇ/iyaṅ
     cond                  = cond,
     act                   = act,
 )

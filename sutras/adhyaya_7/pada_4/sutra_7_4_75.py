@@ -42,6 +42,8 @@ def _find(state: State):
     up = (dhatu.meta.get("upadesha_slp1") or "").replace("~", "")
     if not (_root_varnas(dhatu) in _TARGET_ROOTS or up.startswith(("Rij", "vij", "viz"))):   # Riji~r: ṇ is still ṇ here
         return None
+    if not dhatu.meta.get("slu_replaced_sap"):
+        return None            # ślau (7.4.75 anuvṛtti): juhotyādi only — not tudādi vijI~ in liṭ (vivije)
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags or t.meta.get("7_4_75_nijadi_guna_done"):
             continue

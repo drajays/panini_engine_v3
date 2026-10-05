@@ -59,8 +59,8 @@ def _site_p031(state: State) -> bool:
     for t in state.terms:
         if "dhatu" not in t.tags:
             continue
-        if t.meta.get("P031_6_4_111_sna_done"):
-            continue
+        if t.meta.get("P031_6_4_111_sna_done") or t.meta.get("7_4_72_done") or t.meta.get("7_4_71_done"):
+            continue                       # that n is nuṭ's (ānaśe), not śna's
         vs = t.varnas
         for j in range(len(vs) - 2):
             if vs[j].slp1 == "n" and vs[j + 1].slp1 == "a" and vs[j + 2].slp1 == "S":

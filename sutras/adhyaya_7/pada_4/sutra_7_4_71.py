@@ -29,7 +29,7 @@ def _find(state: State):
     if hit is None:
         return None
     ab, dh = hit
-    if not ab.meta.get("7_4_70_done") or dh.meta.get("7_4_71_done"):
+    if not ab.meta.get("7_4_70_done") or dh.meta.get("7_4_71_done") or dh.meta.get("7_4_72_done"):
         return None
     hals = sum(1 for v in dh.varnas if v.slp1 not in _AC or v.slp1 in "fF")
     return dh if hals >= 2 else None
