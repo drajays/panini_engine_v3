@@ -112,3 +112,18 @@ they settle only what the anuvṛtti/examples show. Reading-only; the engine nev
 
 Net: 4 items (A3, B2, B4, C1) are now closed by the data, 5 more (B3, D1/D3, D15, D17, D7) have a clear direction and become engine work; the
 rest still need your Kāśikā/Bhāṣya or expert view.
+
+---------------------------------------------------------------------------------------------------------------------------------
+## H. Resolved under AMENDMENT 18/19 (2026-10-05) — closed, each pinned by a test
+
+| id | resolution | evidence | test |
+|---|---|---|---|
+| B3/D16 | 8.3.78 applies to the ṣīdhvam of āśīr-liṅ: `kfzIQvam`; after iṭ 8.3.79 vibhāṣā (default `eDizIDvam`); vidhi-liṅ unchanged. Vidyut's `kfzIDvam` is outvoted | sūtra text, examples `कृषीढ्वं`, `नाध्यगीढ्वं` | test_asir_sidhvam_8_3_78 |
+| D1 | 8.2.37 bhaṣ: `Dokzi`, `Dekzi` (the root's ādeśa-final `G` no longer drops out of the dhātu span) | examples `विजिघृक्षु`, `अधाक्षीत्` | test_bhas_8_2_37_38 |
+| D3 | 8.2.38 dadhaḥ + 8.2.40 adhaḥ: `DattaH`, `DatTaH`, `DatTa` | examples `अभिधत्त`, `अन्तर्धत्स्व`, `पिधध्वं` | test_bhas_8_2_37_38 |
+| D7 | 6.1.17 covers the 6.1.16 class (vivyāca, vivyādha, jijyau, vavraśca) with a named override 6.1.17 > 7.4.60 (AMENDMENT 19); 6.4.19 chv-śūṭ only before a jhal-initial kit/ṅit in liṭ (papracCa) | example `संविव्ययुः`; anuvṛtti of 6.4.19 (6.4.15 kvi-jhaloḥ kṅiti) | test_liT_abhyasa_samprasarana_6_1_17 |
+| D17 | 3.1.55 was already data-driven (`antarganas`); the two Vidyut mismatches are the *unlabelled* rows `vyuza~ 04.0008`, `pluza~ 04.0009` — the data labels only 04.0114/04.0122 puṣādi. Data wins | ashtadhyayi.com dhātu table `antarganas` | — |
+| C1 | `pf` → `piparti` (7.4.77 ittva in ślau) stands; Vidyut's `paparti` is the outlier | 7.4.77 anuvṛtti | — |
+| A3/B2/B4 | confirmed by §G | | |
+
+Fresh sweep launched after these changes; §D rows that still show in the regenerated `docs/CONFLICT_CELLS.md` are the remaining work.
