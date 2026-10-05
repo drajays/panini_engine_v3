@@ -28,6 +28,10 @@ def _find(state: State) -> int | None:
             continue
         if ((nxt.meta.get("upadesha_slp1") or "").strip() in _NIMITTA or "yak" in nxt.tags
                 or "yasut_agama" in nxt.tags):
+            if "yasut_agama" in nxt.tags or (nxt.meta.get("upadesha_slp1") or "").strip() in {"yAsuw", "yAs"}:
+                tin = next((u for u in state.terms[i + 1:] if "tin_adesha_3_4_78" in u.tags), None)
+                if tin is not None and "ashir_liG" not in tin.tags and "ardhadhatuka" not in tin.tags:
+                    continue            # riṅ before the liṅ of *āśīr* only (kriyAt); vidhi-liṅ keeps ṛ (jaGfyAt, kuryAt)
             return i
     return None
 

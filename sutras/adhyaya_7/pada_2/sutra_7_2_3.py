@@ -53,7 +53,11 @@ def _find(state: State):
         if "atmanepada" in tin.tags:
             return None
         for j in range(len(t.varnas) - 1, -1, -1):
+            if t.varnas[j].slp1 in "AEO":
+                return None                       # the root's vowel is already vṛddhi (rAD: arAtsIt; the aṭ stays short)
             if t.varnas[j].slp1 in _VRDDHI:
+                if "aT_agama_v" in t.varnas[j].tags:
+                    continue                      # the aṭ is no part of the aṅga's own vowel
                 return (i, j)
     return None
 
