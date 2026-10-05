@@ -18,7 +18,9 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology import mk
 
-_STEMS = frozenset({"vac", "svap"})
+from sutras.adhyaya_6.pada_1.sutra_6_1_16 import _STEMS as _GRAHI_STEMS   # उभयेषाम् — the 6.1.16 class too (विव्याध, विव्यच)
+
+_STEMS = frozenset({"vac", "svap"}) | _GRAHI_STEMS
 # yajādi members whose own ādeśas come first and are not derived yet — वेञ् (2.4.41 वयादेश → उवाय), व्येञ्, ह्वेञ्, श्वि (the
 # optional vārttika: शिश्वाय / शुशाव). They stay on the unmodified path (and out of 6.1.15 in liṭ) until those rules exist.
 NOT_YET_DERIVED = frozenset({"veY", "vyeY", "hveY", "wuo~Svi"})
@@ -28,10 +30,17 @@ _VOWELS = frozenset("aAiIuUfFxXeEoO")
 
 def _root_class(t) -> bool:
     stem = "".join(v.slp1 for v in t.varnas)
+    lopa = t.meta.get("it_lopa_done") or ()      # the root as it stood after it-lopa — the samprasāraṇa (6.1.16) may have changed the tape
+    if lopa and lopa[-1] in _STEMS:
+        stem = lopa[-1]
+    up = (t.meta.get("upadesha_slp1") or "").strip().rstrip("~")
+    if up in _STEMS or (up.endswith("a") and up[:-1] in _STEMS):     # an ā-final root can lose its ā (6.4.64) first
+        stem = up[:-1] if up not in _STEMS else up
     if (t.meta.get("upadesha_slp1") or "").strip() in NOT_YET_DERIVED:
         return False
     return "dhatu" in t.tags and "abhyasa" not in t.tags and (
-        stem in _STEMS or "यजादिः" in (t.meta.get("antarganas") or ()))
+        stem in _STEMS or stem.replace("A", "a", 1) in _STEMS     # the root may already stand vṛddha (7.2.116): vyAc
+        or "यजादिः" in (t.meta.get("antarganas") or ()))
 
 
 def _liT_follows(state: State, i: int) -> bool:

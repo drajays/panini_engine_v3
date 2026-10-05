@@ -37,6 +37,8 @@ def _find(state: State):
     vs = t.varnas
     for i in range(len(vs) - 1):
         if vs[i].slp1 in _JHASH and vs[i + 1].slp1 in _TA_THA:
+            if t.meta.get("dhatu_upadesha") == "quDAY" and vs[i].slp1 == "D" and "abhyasa_v" not in vs[i].tags:
+                continue                                  # अधः: dhā is excepted (धत्तः, not दधद्धः)
             return i + 1
     return None
 

@@ -98,6 +98,8 @@ def act(state: State) -> State:
             sI.tags.add("kngiti")
         if ashir:
             sI.tags.add("ardhadhatuka")
+            for v in sI.varnas:                   # 8.3.78 ṣīdhvam: the sīyuṭ of āśīr-liṅ stays findable after the merge
+                v.tags.add("ashir_sIy_v")
         state.terms.insert(idx, sI)
         return state
     if state.meta.get("ashir_liG"):

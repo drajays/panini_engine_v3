@@ -22,6 +22,8 @@ _ENGINE_LITERAL_SUTRA_ID_ALLOW: dict[str, frozenset[str]] = {
     }),
     # autonomous-loop spine — it-saṃjñā rules called before phase loop
     "core_loop.py": frozenset({"1.3.28", "1.3.12", "1.3.78"}),
+    # Art. 21 L10 named override table (CONFLICT_OVERRIDES) — docs/AMENDMENT_19.md
+    "resolver.py": frozenset({"6.1.17", "7.4.60"}),
 }
 
 _SUTRA_ID_FULL = re.compile(r"^\d+\.\d+\.\d+$")

@@ -585,7 +585,7 @@ promoted to `apavada_of` or recorded as an amendment.
 
 ## Article 22 — Prāmāṇya (which text wins) and declared school
 
-> Added by **AMENDMENT 17**.
+> Added by **AMENDMENT 17**; T7 widened by **AMENDMENT 18**.
 
 Art. 14 is the **evidence roster** (what a docstring may cite). This article
 is the **meaning ladder**. It is used when a human writes a sūtra file; it is
@@ -600,7 +600,7 @@ never an input to `cond()`.
 | T4 | परिभाषेन्दुशेखर | meta-rules — this is also Art. 21's runtime book |
 | T5 | लघुशब्देन्दुशेखर | SK-level prakriyā disputes; zero kram authority (Art. 3) |
 | T6 | SK cluster | which rules tradition cites together; zero kram authority |
-| T7 | Kāśikā → Nyāsa → Padamañjarī | udāharaṇa; T2 wins on conflict |
+| T7 | Kāśikā → Nyāsa → Padamañjarī; **ashtadhyayi.com sūtra data incl. `sutra_prayogas` examples** (AMENDMENT 18) | udāharaṇa; equal evidence to Prathamāvṛtti/Kāśikā; T2 wins on conflict |
 | T8 | प्रक्रिया primers | pedagogical; no deciding authority |
 | T9 | modern scholarship | zero prāmāṇya; modelling only (Kiparsky on strata) |
 | T10 | oracles | Art. 19: can prove wrong, never prove right |

@@ -37,6 +37,7 @@ from engine.sutra_type import SutraRecord, SutraType
 CONFLICT_OVERRIDES: Dict[FrozenSet[str], str] = {
     # Example shape:
     # frozenset({"1.1.3", "6.1.87"}): "6.1.87",
+    frozenset({"6.1.17", "7.4.60"}): "6.1.17",     # docs/AMENDMENT_19.md: abhyāsa samprasāraṇa before halādiḥ śeṣaḥ
 }
 
 # Decision.layer values Art. 21 permits. Constitutional test greps this set.

@@ -73,7 +73,7 @@ def _find_merged(state: State):
         if "abhyasa" in t.tags:
             continue
         run = [i for i, v in enumerate(t.varnas) if "abhyasa_v" in v.tags]
-        if not run or any("carc_done" in t.varnas[i].tags for i in run):
+        if not run or any(tg in t.varnas[i].tags for i in run for tg in ("carc_done", "bhas_8_2_38")):
             continue
         i = next((i for i in run if t.varnas[i].slp1 not in _AC), None)
         if i is not None and t.varnas[i].slp1 in _JHAS_TO_JAS:

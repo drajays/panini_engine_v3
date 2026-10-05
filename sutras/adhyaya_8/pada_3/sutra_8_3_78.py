@@ -22,6 +22,14 @@ from phonology.varna import mk as _mk
 _IN = frozenset("iIuUfFxXeEoOhyvrl")
 
 
+def _asir_sidhvam(state: State, prev) -> bool:
+    """The sīyuṭ of āśīr-liṅ before dhvam; after an iṭ it is 8.3.79 विभाषेटः (no ḍhatva by default)."""
+    if "ashir_sIy_v" not in prev.tags:
+        return False
+    return not any("it_agama" in v.tags or "it_agama" in u.tags or u.meta.get("it_agama_7_2_35")
+                   for u in state.terms for v in u.varnas)
+
+
 def _find_i_before_D(state: State):
     """Find i+D (iṭ-vowel followed by dh) within any term or at cross-term boundary."""
     # after the Tripāḍī merge: the boundary is a varṇa tag (pada_merge); dhvam of liṭ / luṅ / liṅ (ṣīdhvam)
@@ -30,9 +38,9 @@ def _find_i_before_D(state: State):
             v, prev = t.varnas[vi], t.varnas[vi - 1]
             if (v.slp1 == "D" and "pratyaya_start_v" in v.tags and prev.slp1 in _IN and "it_agama" not in prev.tags
                     and not t.meta.get("8_3_78_done")
-                    # liṭ and luṅ. The ṣīdhvam of āśīr-liṅ is left out: Vidyut and the recipe both give eDizIDvam
-                    # (8.3.79 vibhāṣeṭaḥ), so no ḍhatva is derived there until a scholar settles the vikalpa.
-                    and any(f"tin_src_{x}" in v.tags for x in ("liT", "luG"))):
+                    # liṭ, luṅ, and the ṣīdhvam of āśīr-liṅ (the sūtra names it; examples कृषीढ्वं, नाध्यगीढ्वं — ashtadhyayi.com).
+                    # After an iṭ the ṣīdhvam case is 8.3.79 विभाषेटः: no ḍhatva by default (eDizIDvam).
+                    and (any(f"tin_src_{x}" in v.tags for x in ("liT", "luG")) or _asir_sidhvam(state, prev))):
                 return ("intra", ti, vi)
     # लिटाम् — the ending's sthānī is liṭ (1.1.56), or the liṭ recipe is live.
     if not (state.meta.get("liT_lakara_recipe") or any(

@@ -39,6 +39,20 @@ from phonology import mk
 _ROOT_UPADESHAS = frozenset({"praCa", "pfcC"})
 
 
+_JHAL = frozenset("kKgGNcCjJYwWqQRtTdDnpPbBmSzsh")   # every consonant but the sonorants y r l v
+
+
+def _liT_not_kvi_jhal_kngiti(state: State) -> bool:
+    """क्विझलोः क्ङिति (6.4.15, anuvṛtti): in liṭ the chv-śūṭ stands only before a jhal-initial kit/ṅit ending — not before
+    the vowel-initial ṇal/atus/us (पप्रच्छ, पप्रच्छतुः). (The lṛṭ/luṭ/luṅ recipes still call this sūtra for the tuk.)"""
+    if len(state.terms) < 2:
+        return False
+    nxt = state.terms[1]
+    if (nxt.meta.get("source_lakara_upadesha") or "").strip() != "liT" or not nxt.varnas:
+        return False
+    return not ("kngiti" in nxt.tags and nxt.varnas[0].slp1 in _JHAL)
+
+
 def _site(state: State):
     """(dhātu_term, cut_index) for a trailing [c|t, C] pair on the प्रच्छ् root."""
     if not state.terms:
@@ -52,6 +66,8 @@ def _site(state: State):
         return None
     vs = dh.varnas
     if len(vs) < 2 or vs[-1].slp1 != "C" or vs[-2].slp1 not in ("c", "t"):
+        return None
+    if _liT_not_kvi_jhal_kngiti(state):
         return None
     return dh, len(vs) - 2
 
