@@ -34,6 +34,8 @@ def _anga_jhal_final(state: State, hi_idx: int) -> bool:
         return False
     if not ang.varnas:
         return False
+    if (ang.meta.get("upadesha_slp1") or "").replace("~", "") == "hu":
+        return True                                    # हुझल्भ्यो हेर्धिः: hu is named
     return ang.varnas[-1].slp1 in JHAL
 
 
@@ -51,7 +53,7 @@ def act(state: State) -> State:
     t = state.terms[hi_i]
     ang_final = state.terms[hi_i - 1].varnas[-1].slp1
     # Dental *aṅga* (*ad* … अद्धि): *Dhi*; else P031 *Qi* (ढि, *viśiṇḍhi*).
-    if ang_final == "d":
+    if True:       # always dhi: the ḍh of viSiRQi / the ṭ-class comes from ṣṭutva (8.4.41), not from this rule
         adesha_substitute_varnas(
             t, "Di", state,
             sutra_id="6.4.101",

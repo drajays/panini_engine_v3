@@ -30,13 +30,15 @@ def main() -> int:
     from pipelines.tinanta import derive
     from tools.autonomy_report import run_autonomously, start_state
     if a.root == "ALL":          # every loop≠Vidyut cell of the first --limit roots of the gaṇa (the real work list)
-        want = {"parasmai": "परस्मैपदी", "atmane": "आत्मनेपदी"}.get(a.pada)
+        want = {"parasmai": "परस्मैपदी", "atmane": "आत्मनेपदी", "ubhaya": "उभयपदी"}.get(a.pada)
         todo = [r for r in iter_dhatu_entries() if r.get("gana") == a.gana and (not want or r.get("pada_label_dev") == want)][: a.limit]
         bad = tot = 0
         for r in todo:
-            sub = subprocess.run([sys.executable, "-m", "tools.tri_compare", r["upadesha_slp1"], "--gana", str(a.gana),
-                                  "--lakara", a.lakara] + (["--pada", a.pada] if a.pada else []),
-                                 cwd=_ROOT, capture_output=True, text=True).stdout
+            sub = ""
+            for pd in (["parasmai", "atmane"] if a.pada == "ubhaya" else [a.pada]):       # an ubhayapadī root: both padas
+                sub += subprocess.run([sys.executable, "-m", "tools.tri_compare", r["upadesha_slp1"], "--gana", str(a.gana),
+                                       "--lakara", a.lakara] + (["--pada", pd] if pd else []),
+                                      cwd=_ROOT, capture_output=True, text=True).stdout
             for line in sub.splitlines():
                 tot += 1
                 if "loop≠V" in line:
@@ -60,7 +62,7 @@ def main() -> int:
         for vc in (1, 2, 3):
             try: rec = derive(ref, a.lakara, "kartari", pu, vc, **kw).flat_slp1()
             except Exception as e: rec = "ERR"
-            try: loop = run_autonomously(start_state(NS(kind="tinanta", args=(ref, a.lakara, pu, vc))), "", ref, 250).surface
+            try: loop = run_autonomously(start_state(NS(kind="tinanta", args=(ref, a.lakara, pu, vc), pada=a.pada or None)), "", ref, 250).surface
             except Exception as e: loop = "ERR"
             v = vid[i]; i += 1
             flag = "" if (loop in v and rec in v) else "  <-- " + ("recipe≠V " if rec not in v else "") + ("loop≠V" if loop not in v else "")

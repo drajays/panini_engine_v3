@@ -82,6 +82,7 @@ def derive_viSiNQi_loT_rudhadi_P031() -> State:
     s = apply_rule("8.4.41", s)
     s.meta["P031_8_2_36_S_before_jhal_arm"] = True
     s = apply_rule("8.2.36", s)
+    s = apply_rule("8.4.41", s)       # ṣṭutva: the ṣ that 8.2.36 has just made turns dhi into ḍhi
     s = apply_rule("8.4.55", s)
 
     return s

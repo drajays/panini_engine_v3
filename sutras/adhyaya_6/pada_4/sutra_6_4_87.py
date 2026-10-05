@@ -52,11 +52,32 @@ def _site(state: State):
     return None
 
 
+def _hu_site(state: State):
+    """हुश्नुवोः: the u of hu itself (abhyasta juhu) before a vowel-initial weak ending — juhvati, juhvatu (not *juhuvati)."""
+    ts = state.terms
+    for i, t in enumerate(ts[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("6_4_87_hu_done") or i == 0:
+            continue
+        if "abhyasa" not in ts[i - 1].tags or [v.slp1 for v in t.varnas] != ["h", "u"]:
+            continue
+        if (t.meta.get("upadesha_slp1") or "").replace("~", "") != "hu":
+            continue
+        nxt = next((u for u in ts[i + 1:] if u.varnas), None)
+        if nxt is not None and nxt.varnas[0].slp1 in _AC and _weak_after(ts, i):
+            return t
+    return None
+
+
 def cond(state: State) -> bool:
-    return _site(state) is not None
+    return _site(state) is not None or _hu_site(state) is not None
 
 
 def act(state: State) -> State:
+    if _site(state) is None and (h := _hu_site(state)) is not None:
+        h.varnas[-1] = mk("v")
+        h.meta["6_4_87_hu_done"] = True
+        h.tags.discard("upadesha")
+        return state
     nu = _site(state)
     nu.varnas[-1] = mk("v")
     nu.tags.discard("upadesha")          # the v is not an upadeśa-final: 1.3.3 must not take it for a halantyam it

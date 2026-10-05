@@ -122,6 +122,8 @@ def _tinanta_start(case: Any) -> Any:
     dhatu, lakara, purusha, vacana = case.args
     state, _gana, pada_key, _done = _bootstrap_tinanta_derivation(
         _dhatu_row_by_upadesha(dhatu), lakara, "kartari", purusha=purusha, vacana=vacana)
+    if getattr(case, "pada", None) in ("parasmai", "atmane"):
+        pada_key = case.pada            # an ubhayapadī root: the caller picks the pada (the vivakṣā), as for puruṣa and vacana
     if lakara == "laT":
         state = P00_lac_lat_attach(state)
     elif lakara in _LAKARA_ATTACH:
