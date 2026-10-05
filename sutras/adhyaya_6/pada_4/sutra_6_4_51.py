@@ -77,7 +77,9 @@ def _nijanta_before_anit(state: State) -> int | None:
     for i, t in enumerate(state.terms[:-1]):
         nxt = state.terms[i + 1]
         if (t.meta.get("nijanta") and "dhatu" in t.tags and t.varnas and t.varnas[-1].slp1 == "i"
-                and "ardhadhatuka" in nxt.tags and nxt.varnas
+                and ("ardhadhatuka" in nxt.tags
+                     or (nxt.tags & {"yasut_agama", "ling_sIyuw"} and any("ashir_liG" in u.tags for u in state.terms)))
+                and nxt.varnas
                 and "it_agama" not in nxt.varnas[0].tags):
             return i
     return None
@@ -136,6 +138,8 @@ SUTRA = SutraRecord(
     padaccheda_dev="णेः / अनिटि",
     why_dev="अनिडित आर्धधातुके परे णिचः लुक् (हिडि→हिड्)।",
     anuvritti_from=("6.4.1",),
+    # इयङ्यण्गुणवृद्धिदीर्घाणामपवादः (Kāśikā 6.4.51): the ṇi goes first, so none of these has its site
+    apavada_of=("6.4.77", "6.4.82", "7.3.84", "7.3.86", "7.2.115", "7.4.25"),
     cond=cond,
     act=act,
 )

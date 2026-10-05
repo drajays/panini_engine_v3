@@ -24,6 +24,10 @@ def _find(state: State):
         return None
     if len(dh.varnas) < 2 or dh.varnas[-2].slp1 not in _SHORT:
         return None
+    up = (dh.meta.get("upadesha_slp1_original") or dh.meta.get("dhatu_upadesha") or "")
+    if "ṛdit" in str(dh.meta.get("it_samjna_names") or "") or "fit" in str(dh.meta.get("it_samjna_names") or "") \
+            or dh.meta.get("rdit"):
+        return None        # नाग्लोपिशास्वृदिताम् (7.4.2): ṛdit roots (कुद्रि: अचुकोदत्) keep the long upadhā
     return dh
 
 

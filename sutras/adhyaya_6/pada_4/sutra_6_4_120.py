@@ -44,6 +44,8 @@ def _ending_licenses(t) -> bool:
 
 def _find(state: State) -> int | None:
     """Index of the liṭ dhātu (after its abhyāsa) where a → e and the abhyāsa drops."""
+    if not any((u.meta.get("source_lakara_upadesha") or "").strip() == "liT" for u in state.terms):
+        return None           # लिटि (anuvṛtti 6.4.120): not before the caṅ of luṅ (अलीलपत्)
     for i in range(1, len(state.terms) - 1):
         ab, t, nxt = state.terms[i - 1], state.terms[i], state.terms[i + 1]
         if "abhyasa" not in ab.tags or "dhatu" not in t.tags or "abhyasa" in t.tags:

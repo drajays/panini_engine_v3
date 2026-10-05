@@ -240,6 +240,12 @@ def _meta_key(state: State) -> tuple:
     return tuple(sorted((k, repr(v)) for k, v in state.meta.items() if k not in _META_NOISE))
 
 
+def _term_meta_key(state: State) -> int:
+    """Rules read Term.meta too (ekac_dhatu, gana, anit_dhatu, upadesha…): two roots whose tapes coincide at some step must
+    not share a memoised answer — the sweeps showed 6.1.8 skipped on a tape another root had made ineffective."""
+    return hash(tuple(tuple(sorted((k, repr(v)) for k, v in t.meta.items() if k not in _META_NOISE)) for t in state.terms))
+
+
 def _gate_key(state: State) -> tuple:
     """Gates and saṃjñā registry are not on the tape but rules read them (7.2.13 → 7.2.35): two states with one tape
     and different gates must not share a memoised answer."""
@@ -262,7 +268,7 @@ def effective_candidates(candidates: List[str], state: State) -> List[str]:
     for sid in candidates:
         if is_gate_only(sid):
             continue
-        key = (sid, before, state.phase, _meta_key(state), _gate_key(state), tuple(sorted(_vikalpa_policy().items())))
+        key = (sid, before, state.phase, _meta_key(state), _term_meta_key(state), _gate_key(state), tuple(sorted(_vikalpa_policy().items())))
         hit = _EFFECTIVE_MEMO.get(key)
         if hit is None:
             try:

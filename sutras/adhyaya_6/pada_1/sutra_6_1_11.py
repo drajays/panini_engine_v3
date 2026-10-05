@@ -36,7 +36,8 @@ def _general(state: State):
         if "dhatu" in t.tags and "abhyasa" not in t.tags:
             if i and "abhyasa" in state.terms[i - 1].tags:
                 return None
-            if not t.varnas or t.varnas[0].slp1 in "aAiIuUfFxeEoO":
+            j = next((k for k, v in enumerate(t.varnas) if "aT_agama_v" not in v.tags), None)    # the aṭ stands before the abhyāsa
+            if j is None or t.varnas[j].slp1 in "aAiIuUfFxeEoO":
                 return None
             return i
     return None
@@ -55,9 +56,14 @@ def act(state: State) -> State:
         from copy import deepcopy
         from engine.state import Term
         dh = state.terms[gi]
+        j = next(k for k, v in enumerate(dh.varnas) if "aT_agama_v" not in v.tags)
+        pre, dh.varnas = dh.varnas[:j], dh.varnas[j:]      # aṭ + abhyāsa + dhātu (अचूचुरत्)
         ab = Term(kind=dh.kind, varnas=[deepcopy(v) for v in dh.varnas],
                   tags=(set(dh.tags) | {"abhyasa"}) - {"dhatu"}, meta={})
         state.terms.insert(gi, ab)
+        if pre:         # the aṭ is its own Term before the abhyāsa — 7.4.60 must not read it
+            state.terms.insert(gi, Term(kind="pratyaya", varnas=pre, tags={"pratyaya", "agama", "aT_agama"},
+                                        meta={"upadesha_slp1": "aw"}))
         state.paribhasha_gates["6_1_11_cani_dvitva"] = True
         return state
     state.paribhasha_gates[GATE_KEY] = True

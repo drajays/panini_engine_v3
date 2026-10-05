@@ -2723,6 +2723,8 @@ def _curadi_nic(state: State) -> State:
     state = apply_rule("6.4.92", state)    # मितां ह्रस्वः: ज्ञाप् → ज्ञप् (ज्ञपयति)
     dh = next(t for t in state.terms if "dhatu" in t.tags)
     keep = {k: dh.meta[k] for k in ("kartari_atmanepada_licensed",) if k in dh.meta}
+    if (dh.meta.get("dhatu_upadesha") or dh.meta.get("upadesha_slp1") or "").endswith("f~"):
+        keep["rdit"] = True                 # ṛdit (7.4.2 नाग्लोपिशास्वृदिताम्): the caṅ-ṇau hrasva stays off
     if dh.meta.get("6_4_48_a_lopa_done"):
         keep["aglopa"] = True               # अनग्लोपे (7.4.93): कथ् → अचकथत्
     before = state.flat_slp1()

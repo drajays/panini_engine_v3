@@ -38,6 +38,8 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _has_abhyasa(state: State) -> bool:
+    if any((t.meta.get("upadesha_slp1") or "").strip() == "caG" for t in state.terms):
+        return False        # the aṅga of a caṅ-luṅ is dhātu+caṅ, not an abhyasta ending: अचूचुरन्, not *अचूचुरत्
     return any("abhyasa" in t.tags or t.meta.get("slu_replaced_sap") for t in state.terms)   # ślu ⇒ abhyasta (6.1.10) to come
 
 

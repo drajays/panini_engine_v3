@@ -8,29 +8,38 @@ bruv root is replaced by vac.
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from engine.sthanivat import DHATUTVA, adesha_substitute_varnas
 
-_GATE_KEY: str = "2_4_53_bruva_vaci"
+
+def _site(state: State):
+    """ब्रुवो वचिः (ārdhadhātuke, anuvṛtti 2.4.35): brū → vac before an ārdhadhātuka — वक्ता, वक्ष्यति, उवाच, उच्यात्, अवोचत्."""
+    for i, dh in enumerate(state.terms[:-1]):
+        if "dhatu" not in dh.tags or dh.meta.get("2_4_53_done") or (dh.meta.get("upadesha_slp1") or "").strip() != "brUY":
+            continue
+        after = state.terms[i + 1:]
+        if any(("ardhadhatuka" in u.tags and "pratyaya" in u.tags) or "ashir_liG" in u.tags
+               or (u.meta.get("source_lakara_upadesha") or "").strip() in ("liT", "luT", "lRT", "luG", "lRG") for u in after):
+            return dh
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return adhikara_in_effect("2.4.53", state, "2.4.35")
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["adesha_kind"]             = "2.4.53"
+    dh = _site(state)
+    if dh is not None:
+        adesha_substitute_varnas(dh, "vac", state, sutra_id="2.4.53", gunadharmas=frozenset({DHATUTVA}))
+        dh.meta.update({"2_4_53_done": True, "anit_dhatu": True, "set_dhatu": False, "ekac_dhatu": True})     # vac is aniṭ (वक्ता), not seṭ like brū
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "2.4.53",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
+    r1_form_identity_exempt = False,
     text_slp1             = "bruvo vaciH",
     text_dev              = "ब्रुवो वचिः",
     padaccheda_dev        = "ब्रुवः वचिः",
