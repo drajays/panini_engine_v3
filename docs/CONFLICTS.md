@@ -90,3 +90,25 @@ Removing any of them breaks forms (verified), so they stay until the resolver mo
 - The loop never tags `atmanepada` (1.4.100 does not fire); rules read "not parasmaipada" (3.4.102, 3.4.107, 1.2.11, 2.4.85).
 - Candidates conflict resolution (`engine/resolver.py` purva/para): "same Term and different results by order ⇒ para" introduced this
   session; confirm against the intended vipratiṣedha reading (Art. 21).
+
+---------------------------------------------------------------------------------------------------------------------------------
+## G. Checked against ashtadhyayi.com data (`data/reference/ashtadhyayi_com/sutraani__data.txt`, `sutraani__sutra_prayogas.txt`)
+
+Those files give, per sūtra: text, padaccheda (`pc`), anuvṛtti (`an`), adhikāra (`ad`), and example words with the cited sūtra. They carry no Kāśikā prose, so
+they settle only what the anuvṛtti/examples show. Reading-only; the engine never imports them (Art. 6).
+
+| id | finding from the data | effect on the register |
+|---|---|---|
+| A3 | 2.4.77 examples `श्रदधुः`: "gāti-sthā… sico luk", and 3.4.110 `आतः` cites the same word `श्रदधुः` for jus. So jus after a luk'd sic is the sūtra's own intended use | A3 supported: jus after luk'd sic is authentic; keep, upgrade the stand-in to a proper override entry when the resolver can model it |
+| B1 | 7.2.4 `नेटि` anuvṛtti = 7.2.1 (vṛddhiḥ, sici) + 7.2.3 (vadavraja-halantasya, acaḥ); examples are all hal-anta (`पर्याणंसीत्`, `उदनंसिषुः`, `मच्योष्ट`) | consistent with blocking the 7.2.3 case; no example for the ac-final 7.2.1 case |
+| B3 | 8.3.78 `पc` = `इणः षीध्वम्-लुङ्-लिटाम्`; examples `कृषीढ्वं`, `नाध्यगीढ्वं` (ṣīdhvam of āśīr-liṅ is named in the sūtra); 8.3.79 `विभाषेटः` anuvṛtti = 8.3.78 | the sūtra itself names ṣīḍhvam, so āśīr-liṅ is in scope (engine, Vidyut and recipe all omit it); `eDiṣīḍhvam` ~ `eDizIDvam` question stays but the direction is: ṣ is correct and 8.3.79 is optional. Engine change pending (D16/B3) |
+| B4 | 7.4.28 anuvṛtti = `यि`, `अकृत्सार्वधातुकयोः` (7.4.25), `ऋतः`; examples `ध्रियते` (yak), `क्रियताम्` (yak) | confirms riṅ is for ārdhadhātuka/yi contexts; āśīr-liṅ fits, vidhi-liṅ (sārvadhātuka) excluded |
+| B2 | 6.4.107 `लोपश्चास्यान्यतरस्यां म्वोः`; anuvṛtti = 6.4.98 kṅiti, 6.4.106 (asaṃyogapūrvāt, uta, ca, pratyayāt) ; adhikāra: asiddhavat | `anyatarasyām` is in the sūtra ⇒ vibhāṣā confirmed; engine choice B2 is correct |
+| C1 | 7.4.77 `अर्तिपिपर्त्योश्च` anuvṛtti = abhyāsasya, ślau (7.4.75), it (7.4.76); no examples | ittva in ślau for `pf`: engine's `piparti` follows the sūtra; Vidyut's `paparti` is the outlier → mark closed in favour of engine |
+| D1/D3 | 8.2.37 examples `विजिघृक्षु`, `अधाक्षीद्`; 8.2.38 examples `अन्तर्धत्स्व`, `पिधध्वं`, `अभिधत्त` (bhaṣ for the abhyāsa and the root's dh before t/th) | confirms the missing rules and the target forms (`Datta`, `dattaH`→`DattaH`) |
+| D15 | 3.1.35 anuvṛtti empty; examples `संत्रासयांचकार`, `कासांचक्रे` | āṃ for ṇijanta in liṭ is in use, supports Vidyut's āṃ forms for gaṇa 10; engine to follow |
+| D17 | 3.1.55 14 examples (`पुषः`, `प्रापत्`, `समासदत्`) | confirms aṅ for puṣādi/dyutādi/ḷdit; list to be implemented from the gaṇapāṭha |
+| D7 | 6.1.17 example `संविव्ययुः` (vye) | the sūtra covers the abhyāsa samprasāraṇa in liṭ; `vyaca~` as 6.1.16 member to be checked |
+
+Net: 4 items (A3, B2, B4, C1) are now closed by the data, 5 more (B3, D1/D3, D15, D17, D7) have a clear direction and become engine work; the
+rest still need your Kāśikā/Bhāṣya or expert view.
