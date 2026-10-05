@@ -26,6 +26,17 @@ from phonology    import mk, HAL
 def _find(state: State):
     if state.meta.get("_3_1_45_ksa_recipe"):
         return None            # 3.1.45 अपवाद: no ईट् either (अशिक्षत्, not अशिक्षीत्)
+    # अस्तेः: as itself, before the single-hal residue of laṅ's tip/sip (आसीत्, आसीः)
+    for i in range(len(state.terms) - 1):
+        dh, tin = state.terms[i], state.terms[i + 1]
+        if "dhatu" not in dh.tags or tin.kind != "pratyaya" or dh.meta.get("7_3_96_Iw_done") or not tin.varnas:
+            continue
+        if "".join(v.slp1 for v in dh.varnas if "aT_agama_v" not in v.tags) not in ("as", "As", "Aas") \
+                and (dh.meta.get("upadesha_slp1") or "").strip() != "asa~":
+            continue
+        if len(tin.varnas) == 1 and tin.varnas[0].slp1 in ("t", "s") and "tin_adesha_3_4_78" in tin.tags \
+                and (tin.meta.get("source_lakara_upadesha") or "").strip() == "laG":
+            return i + 1
     if len(state.terms) < 3:
         return None
     # Expect [... dhātu, sic_term, tin_term]

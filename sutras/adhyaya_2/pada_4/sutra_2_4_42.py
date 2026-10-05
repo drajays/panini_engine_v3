@@ -8,29 +8,39 @@ han root is replaced by vadha in lin.
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from engine.sthanivat import DHATUTVA, adesha_substitute_varnas
 
-_GATE_KEY: str = "2_4_42_hana_vadha_lingi"
+
+def _han_dhatu(state: State):
+    """हन् before āśīr-liṅ (the ārdhadhātuka liṅ, 3.4.116): वध्यात् — a vowel-initial affix gives vadh-a → vadh by 6.4.48."""
+    if not any("ashir_liG" in t.tags for t in state.terms):
+        return None
+    for dh in state.terms:
+        if "dhatu" not in dh.tags or dh.meta.get("2_4_42_han_vadh_done"):
+            continue
+        up = (dh.meta.get("upadesha_slp1") or "").strip()
+        if up in {"han", "hana~", "han~"} or "".join(v.slp1 for v in dh.varnas) == "han":
+            return dh
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    return adhikara_in_effect("2.4.42", state, "2.4.35")
+    return _han_dhatu(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["adesha_kind"]             = "2.4.42"
+    dh = _han_dhatu(state)
+    if dh is not None:
+        adesha_substitute_varnas(dh, "vaDa", state, sutra_id="2.4.42", gunadharmas=frozenset({DHATUTVA}))
+        dh.meta["2_4_42_han_vadh_done"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "2.4.42",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
+    r1_form_identity_exempt = False,
     text_slp1             = "hano vaDa liNi",
     text_dev              = "हनो वध लिङि",
     padaccheda_dev        = "हनः वध (लुप्तप्रथमान्तनिर्देशः) लिङि",

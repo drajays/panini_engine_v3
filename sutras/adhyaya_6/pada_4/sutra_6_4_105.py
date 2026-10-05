@@ -51,7 +51,7 @@ def _find_loT_hi(state: State) -> int | None:
         if i == 0:
             continue
         prev = state.terms[i - 1]
-        if not prev.varnas or prev.varnas[-1].slp1 != "a":
+        if not prev.varnas or prev.varnas[-1].slp1 != "a" or "sthanivat_non_a" in prev.varnas[-1].tags:
             continue
         return i
     return None

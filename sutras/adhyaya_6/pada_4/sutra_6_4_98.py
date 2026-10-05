@@ -49,7 +49,7 @@ def _find_general(state: State) -> int | None:
     for i, t in enumerate(state.terms):
         if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("6_4_98_gas_upadha_done"):
             continue
-        flat = "".join(v.slp1 for v in t.varnas)
+        flat = "".join(v.slp1 for v in t.varnas if "aT_agama_v" not in v.tags)    # the aṭ stands in the same pada
         if flat not in _GAMAHANA:
             return None
         nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
@@ -80,7 +80,8 @@ def act(state: State) -> State:
         i = _find_general(state)
     if i is not None:
         t = state.terms[i]
-        del t.varnas[1]
+        j = next((k for k, v in enumerate(t.varnas) if "aT_agama_v" not in v.tags), 0)
+        del t.varnas[j + 1]            # the upadhā a (after any aṭ)
         t.meta["6_4_98_gas_upadha_done"] = True
         return state
     state.paribhasha_gates[_GATE_KEY] = True

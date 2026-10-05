@@ -40,6 +40,16 @@ _YAJ: frozenset[str] = frozenset({
 })
 
 
+def _sarvadhatuke(state: State, t2) -> bool:
+    """सार्वधातुके (anuvṛtti 7.3.87): the tiṅ of laṭ, loṭ, laṅ, vidhi-liṅ, luṭ, lṛṭ, luṅ, lṛṅ is sārvadhātuka (3.4.113); not the
+    ārdhadhātuka yāsuṭ/sīyuṭ + tiṅ of āśīr-liṅ (3.4.116: वध्यात्, not *वधायात्)."""
+    if "ardhadhatuka" in t2.tags:
+        return False
+    if any("ashir_liG" in u.tags for u in state.terms) and (t2.tags & {"yasut_agama", "ling_sIyuw", "tin_adesha_3_4_78"}):
+        return False
+    return True
+
+
 def _find(state: State) -> int | None:
     """Return index i such that terms[i] ends with 'a' and terms[i+1] starts with yañ."""
     for i in range(len(state.terms) - 1):
@@ -56,6 +66,8 @@ def _find(state: State) -> int | None:
         if "pratyaya" not in t2.tags:
             continue
         if t1.meta.get("7_3_101_done"):
+            continue
+        if not _sarvadhatuke(state, t2):
             continue
         return i
     return None

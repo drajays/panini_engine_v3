@@ -51,6 +51,7 @@ from engine.gates      import (
 from engine.phase      import sutra_in_phase
 from engine.registry   import SUTRA_REGISTRY
 from engine.state      import State
+from engine.strata     import sees_later_tripadi, sees_tripadi_nimitta
 from engine.sutra_type import SutraType
 
 # Sūtra types the autonomous loop considers.
@@ -110,6 +111,8 @@ def _needs_multi_term(sid: str, state: State) -> bool:
          This prevents tinanta spines (dhātu+vikaraṇa+tiṅ) from spuriously
          matching these sūtras after vikaraṇa insertion adds a 3rd term.
     """
+    if sees_tripadi_nimitta(sid):       # 6.3.111/112 read a tripāḍī lopa inside one pada
+        return False
     nterms = len(state.terms)
     t = _id_tuple(sid)
 
@@ -144,7 +147,7 @@ def _in_scheduler_phase(sid: str, state: State) -> bool:
     """Phase-scoped enumeration — only sūtras in the current phase window."""
     phase = getattr(state, "phase", "angakarya") or "angakarya"
     if phase == "tripadi":
-        return is_tripadi(sid)
+        return is_tripadi(sid) or sees_tripadi_nimitta(sid)     # 6.3.111/112 run inside the tripāḍī, on the lopa they depend on
     return sutra_in_phase(sid, phase)
 
 
@@ -309,7 +312,8 @@ def enumerate_candidates(state: State) -> List[str]:
         # Multi-term heuristic: skip sandhi/svara/samāsa sūtras when < 2 terms.
         if _needs_multi_term(sid, state):
             continue
-        if in_tripadi and _id_tuple(sid) < (_id_tuple(state.meta["tripadi_cursor"]) if "tripadi_cursor" in state.meta else ()):
+        if in_tripadi and _id_tuple(sid) < (_id_tuple(state.meta["tripadi_cursor"]) if "tripadi_cursor" in state.meta else ()) \
+                and not sees_later_tripadi(sid, state.meta["tripadi_cursor"]):
             # 8.2.1 पूर्वत्रासिद्धम्: what 8.4.40 has just done is asiddha to 8.2.30, so an
             # earlier tripāḍī rule must not wake up on it. The pass only moves forward.
             continue

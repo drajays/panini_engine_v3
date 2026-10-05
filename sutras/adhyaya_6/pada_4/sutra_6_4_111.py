@@ -27,12 +27,15 @@ def _apit_sarvadhatuka_tin_after(state: State, dhatu_i: int) -> bool:
         pr = state.terms[j]
         if "pratyaya" not in pr.tags:
             continue
-        if pr.meta.get("pit") is True:
+        if pr.meta.get("pit") is True or "it:pit" in pr.tags:      # a pit ending (tip/sip/mip and their ādeśas) is not ṅit (1.2.4)
             continue
+        if (pr.meta.get("source_lakara_upadesha") or "").strip() == "loT" and (
+                any("aTa_agama" in u.tags for u in state.terms) or (pr.varnas and pr.varnas[0].slp1 == "A")):
+            continue                               # 3.4.92 आडुत्तमस्य पिच्च: the loṭ-uttama ending is pit (असाव, असाम)
         up = (pr.meta.get("upadesha_slp1") or "").strip()
         if is_sarvadhatuka_upadesha_slp1(up):
             return True
-        if "tin_adesha_3_4_78" in pr.tags or "kngiti" in pr.tags:
+        if "kngiti" in pr.tags:                    # क्ङिति: only a weak (apit, not the pit loṭ-uttama) ending
             return True
     return False
 
@@ -78,7 +81,10 @@ def _snam_a(state: State):
         if k is None:
             continue
         tin = next((u for u in state.terms[i + 1:] if "tin_adesha_3_4_78" in u.tags), None)
-        if tin is not None and ("kngiti" in tin.tags or tin.meta.get("is_apit")):
+        if tin is None:
+            continue
+        upto = state.terms[i + 1:state.terms.index(tin) + 1]      # an āgama (yāsuṭ, ṅit by 3.4.103) makes the whole ending weak
+        if any("kngiti" in u.tags for u in upto) or tin.meta.get("is_apit"):
             return (i, k)
     return None
 

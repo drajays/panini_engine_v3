@@ -76,6 +76,17 @@ def tripadi_nimitta_exceptions() -> list[dict[str, Any]]:
     return json.loads(_DATA.read_text(encoding="utf-8")).get("tripadi_nimitta_exceptions", [])
 
 
+@lru_cache(maxsize=1)
+def tripadi_cursor_exceptions() -> list[dict[str, Any]]:
+    return json.loads(_DATA.read_text(encoding="utf-8")).get("tripadi_cursor_exceptions", [])
+
+
+def sees_later_tripadi(observer: str, cursor: str) -> bool:
+    """An earlier tripāḍī rule that may still wake after ``cursor`` has applied, because the Kāśikā makes that
+    operation siddha for it (ṣṭutva for 8.3.13)."""
+    return any(observer == ex["observer"] and cursor in ex["sees"] for ex in tripadi_cursor_exceptions())
+
+
 def sees_tripadi_nimitta(observer: str, effect_of: str | None = None) -> bool:
     """A pre-tripāḍī rule whose own condition is a tripāḍī operation (6.3.111
     ढ्रलोपे …) — it may run inside the tripāḍī and see that operation."""

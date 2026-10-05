@@ -120,7 +120,10 @@ def find_sap_insertion_dhatu_index(state: State) -> int | None:
         # fallback for affixes that never went through 3.4.78/3.4.113.
         if "ardhadhatuka" in nxt.tags:          # सार्वधातुके: āśīr-liṅ's tiṅ is ārdhadhātuka (3.4.116)
             continue
-        tin_sarva = "tin_adesha_3_4_78" in nxt.tags and "sarvadhatuka_3_4_113" in nxt.tags
+        tin_sarva = "tin_adesha_3_4_78" in nxt.tags and (
+            "sarvadhatuka_3_4_113" in nxt.tags       # 3.4.113 may not have run yet: the sthānī lakāra says the same (3.4.113 / 3.4.114–116)
+            or ((nxt.meta.get("source_lakara_upadesha") or "").strip() in ("laT", "loT", "laG", "liG")
+                and "ashir_liG" not in nxt.tags))
         if not (tin_sarva or is_sarvadhatuka_upadesha_slp1(up)):
             continue
         if not (tin_sarva or _sap_trigger_next_pratyaya(up)):

@@ -80,7 +80,8 @@ def act(state: State) -> State:
     if hit is None:
         return state
     dh, sic = hit
-    dh.varnas.pop()                          # drop the root's own final शल्
+    if state.meta.get("cli_luG_recipe"):       # the old recipe stands ksa as sounds and drops the root's śal
+        dh.varnas.pop()                      # drop the root's own final शल्
     dh.meta[_DONE_KEY] = True
     sic.varnas = parse_slp1_upadesha_sequence("ksa")   # सिच् (स्+च्) → क्स (क्+स्+अ)
     sic.meta["upadesha_slp1"] = "ksa"

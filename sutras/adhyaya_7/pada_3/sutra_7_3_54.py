@@ -34,6 +34,12 @@ def _nit_follows(state: State, di: int) -> bool:
     return False
 
 
+def _body(t):
+    """(index of the root's first varṇa, the root's letters) — an aṭ standing in the same pada is not the root's."""
+    j = next((k for k, v in enumerate(t.varnas) if "aT_agama_v" not in v.tags), 0)
+    return j, "".join(v.slp1 for v in t.varnas[j:])
+
+
 def _site(state: State):
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return None
@@ -43,15 +49,15 @@ def _site(state: State):
         if "dhatu" not in t.tags or not t.varnas:
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
-        flat = "".join(v.slp1 for v in t.varnas)
-        if up == "hana~" and t.varnas[0].slp1 == "h" and (flat == "hn" or _nit_follows(state, i)):
+        j0, flat = _body(t)
+        if up == "hana~" and t.varnas[j0].slp1 == "h" and (flat == "hn" or _nit_follows(state, i)):
             return i               # हनस्तोऽचिण्णलोः … ghnanti: the n of the root itself follows the h (ñ-ṇi-n-eṣu: n)
-        if up not in {"han", "vaDa", "vaD"} and "".join(v.slp1 for v in t.varnas) not in {"han", "Gan", "han"}:
-            if t.varnas[0].slp1 != "h":
+        if up not in {"han", "vaDa", "vaD"} and flat not in {"han", "Gan", "han"}:
+            if t.varnas[j0].slp1 != "h":
                 continue
             if up not in {"han", "han~"}:
                 continue
-        if t.varnas[0].slp1 != "h":
+        if t.varnas[j0].slp1 != "h":
             continue
         if not _nit_follows(state, i):
             continue
@@ -68,7 +74,7 @@ def act(state: State) -> State:
     if i is None:
         return state
     t = state.terms[i]
-    t.varnas[0] = mk("G")
+    t.varnas[_body(t)[0]] = mk("G")
     t.meta["7_3_54_gh_done"] = True
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY] = True

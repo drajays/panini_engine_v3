@@ -22,9 +22,17 @@ from phonology.varna import mk as _mk
 _IN = frozenset("iIuUfFxXeEoOhyvrl")
 
 
-def _asir_sidhvam(state: State, prev) -> bool:
-    """The sīyuṭ of āśīr-liṅ before dhvam; after an iṭ it is 8.3.79 विभाषेटः (no ḍhatva by default)."""
-    if "ashir_sIy_v" not in prev.tags:
+def _asir_sidhvam(state: State, t, vi: int) -> bool:
+    """The sīyuṭ of āśīr-liṅ before dhvam, after an aṅga ending in an iṇ letter (iṇaḥ ṣīdhvam: कृषीढ्वं, but दासीध्वम्);
+    after an iṭ it is 8.3.79 विभाषेटः (no ḍhatva by default)."""
+    k = vi - 1
+    if k < 0 or "ashir_sIy_v" not in t.varnas[k].tags:
+        return False
+    while k >= 0 and "ashir_sIy_v" in t.varnas[k].tags:
+        k -= 1
+    if k >= 0 and t.varnas[k].slp1 in ("s", "z"):      # the sīyuṭ's s, already ṣ by 8.3.59 (the new letter carries no tag)
+        k -= 1
+    if k < 0 or t.varnas[k].slp1 not in _IN:
         return False
     return not any("it_agama" in v.tags or "it_agama" in u.tags or u.meta.get("it_agama_7_2_35")
                    for u in state.terms for v in u.varnas)
@@ -40,7 +48,7 @@ def _find_i_before_D(state: State):
                     and not t.meta.get("8_3_78_done")
                     # liṭ, luṅ, and the ṣīdhvam of āśīr-liṅ (the sūtra names it; examples कृषीढ्वं, नाध्यगीढ्वं — ashtadhyayi.com).
                     # After an iṭ the ṣīdhvam case is 8.3.79 विभाषेटः: no ḍhatva by default (eDizIDvam).
-                    and (any(f"tin_src_{x}" in v.tags for x in ("liT", "luG")) or _asir_sidhvam(state, prev))):
+                    and (any(f"tin_src_{x}" in v.tags for x in ("liT", "luG")) or _asir_sidhvam(state, t, vi))):
                 return ("intra", ti, vi)
     # लिटाम् — the ending's sthānī is liṭ (1.1.56), or the liṭ recipe is live.
     if not (state.meta.get("liT_lakara_recipe") or any(

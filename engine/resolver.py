@@ -38,6 +38,10 @@ CONFLICT_OVERRIDES: Dict[FrozenSet[str], str] = {
     # Example shape:
     # frozenset({"1.1.3", "6.1.87"}): "6.1.87",
     frozenset({"6.1.17", "7.4.60"}): "6.1.17",     # docs/AMENDMENT_19.md: abhyāsa samprasāraṇa before halādiḥ śeṣaḥ
+    frozenset({"6.4.101", "6.4.119"}): "6.4.101",     # docs/AMENDMENT_19.md: एधि — hi→dhi after the jhal-final as, then e
+    frozenset({"6.1.50", "7.3.84"}): "6.1.50",       # docs/AMENDMENT_19.md: dāsyate, mātā — ātva before guṇa (data: ashtadhyayi.com dhātu table)
+    frozenset({"6.1.50", "7.2.1"}): "6.1.50",        # amāsīt, not *amaiṣīt
+    frozenset({"7.3.96", "7.4.50"}): "7.3.96",     # docs/AMENDMENT_19.md: आसीः — īṭ comes first, so the two s's are no longer adjacent
 }
 
 # Decision.layer values Art. 21 permits. Constitutional test greps this set.
@@ -218,8 +222,9 @@ def resolve_with_reason(
         return Decision(candidate_ids[0], "sole-candidate", "एकम् एव प्राप्तम्", ())
 
     key = frozenset(candidate_ids)
-    if key in CONFLICT_OVERRIDES and CONFLICT_OVERRIDES[key] in candidate_ids:
-        winner = CONFLICT_OVERRIDES[key]
+    named = next((w for k, w in CONFLICT_OVERRIDES.items() if k <= key and w in candidate_ids), None)   # a named pair inside a larger set
+    if named is not None:
+        winner = named
         return Decision(winner, "jnapaka", "ज्ञापकः / नामित-अपवादः (docs/AMENDMENT)",
                         tuple(c for c in candidate_ids if c != winner))
 

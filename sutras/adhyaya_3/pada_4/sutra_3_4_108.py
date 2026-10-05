@@ -41,6 +41,10 @@ def _find_jhi_tin(state: State) -> int | None:
     """The jhi tiṅ ādeśa of a liṅ (vidhi or āśīr) — and of a luṅ that has sic (3.4.109 सिजभ्यस्तविदिभ्यश्च,
     अपठिषुः) — read from the affix's own provenance, not from the derivation's lakāra (Art. 2)."""
     has_sic = any((t.meta.get("upadesha_slp1") or "").strip() == "sic" for t in state.terms)
+    if has_sic:
+        from sutras.adhyaya_3.pada_1.sutra_3_1_45 import _site as _ksa_site
+        if _ksa_site(state) is not None:      # क्स (3.1.45) will take sic's place: it is not sic, so 3.4.109 gives no jus (अधुक्षन्)
+            has_sic = False
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya" or "tin_adesha_3_4_78" not in t.tags or t.meta.get("3_4_108_liG_done"):
             continue

@@ -42,6 +42,9 @@ def _find(state: State):
     up = (dhatu.meta.get("upadesha_slp1") or "") if dhatu is not None else ""
     if dhatu is None or not (_root_varnas(dhatu) in _TARGET_ROOTS or up in {"quBfY", "mAN", "o~hAN"}):
         return None            # (by upadeśa too: 6.4.113 may already have made the root's ā an ī)
+    if not dhatu.meta.get("slu_replaced_sap") and any(
+            (u.meta.get("source_lakara_upadesha") or "").strip() == "liT" for u in state.terms):
+        return None            # bhṛñām it is ślau (anuvṛtti 7.4.75): liṭ has no śap-luk — baBAra, not *biBAra
     for ti, t in enumerate(state.terms):
         if "abhyasa" not in t.tags:
             continue

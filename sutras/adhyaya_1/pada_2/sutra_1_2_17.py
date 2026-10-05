@@ -24,6 +24,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from phonology import mk
 from phonology.varna import parse_slp1_upadesha_sequence
 
 from sutras.adhyaya_1.pada_1.sutra_1_1_20 import GHU_DHATU_UPADESHA_SLP1, ghu_samjna_is_registered
@@ -36,7 +37,26 @@ def _primary_dhatu_upadesha(state: State) -> str:
     return ""
 
 
+def _loop_site(state: State):
+    """The loop's reading: ātmanepada luṅ, sic after sthā or a ghu root → ic (अधित, अदित, उपास्थित); no registry/arm flag."""
+    if any("parasmaipada" in t.tags for t in state.terms):
+        return None
+    for i, dh in enumerate(state.terms[:-1]):
+        if "dhatu" not in dh.tags or "abhyasa" in dh.tags:
+            continue
+        up = (dh.meta.get("upadesha_slp1") or "").strip()
+        if up not in ("zWA", "quDAY", "qudAY") and up not in GHU_DHATU_UPADESHA_SLP1:
+            continue
+        nxt = state.terms[i + 1]
+        if nxt.kind == "pratyaya" and (nxt.meta.get("upadesha_slp1") or "").strip() == "sic" and not nxt.meta.get("1_2_17_ic_adesha_done") \
+                and any("tin_adesha_3_4_78" in u.tags and (u.meta.get("source_lakara_upadesha") or "").strip() == "luG" for u in state.terms):
+            return nxt
+    return None
+
+
 def _find_sic_term(state: State):
+    if (hit := _loop_site(state)) is not None:
+        return hit
     if not ghu_samjna_is_registered(state):
         return None
     up0 = _primary_dhatu_upadesha(state)
@@ -60,6 +80,15 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     t = _find_sic_term(state)
     if t is None:
+        return state
+    if _loop_site(state) is t:
+        # ātmanepada luṅ: the ā of sthā/ghu becomes i (ic) and sic is kit: अधित (8.2.26 drops s before t), अधिषाताम्
+        dh = state.terms[state.terms.index(t) - 1]
+        if dh.varnas and dh.varnas[-1].slp1 == "A":
+            old = dh.varnas[-1]
+            dh.varnas[-1] = mk("i", *((old.tags - {"mula_dhatu_v"}) | {"dhatu_adesha_v"}))
+        t.tags.add("kngiti")
+        t.meta["1_2_17_ic_adesha_done"] = True
         return state
     t.varnas = parse_slp1_upadesha_sequence("ic")
     t.meta["upadesha_slp1"] = "ic"
