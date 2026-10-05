@@ -127,3 +127,30 @@ rest still need your Kāśikā/Bhāṣya or expert view.
 | A3/B2/B4 | confirmed by §G | | |
 
 Fresh sweep launched after these changes; §D rows that still show in the regenerated `docs/CONFLICT_CELLS.md` are the remaining work.
+
+---------------------------------------------------------------------------------------------------------------------------------
+## I. Resolved after the 2026-10-05 re-sweep (engine now follows the sūtra data / matches Vidyut)
+
+| item | rule(s) | resolution |
+|---|---|---|
+| ṣīdhvam ḍhatva needs an iṇ-final aṅga | 8.3.78 | `kfzIQvam`, `eDizIDvam` (iṭ → 8.3.79), `dAsIDvam`, `DukzIDvam` (āśīr of duh: aṅga ends in k, no ḍh) — the earlier "all āśīr dhvam → ḍh" was too broad |
+| ksa-luṅ (duh, dih, lih, dviś, diś, ruh): `aDukzat`, `aDukzan` | 3.1.45, 3.4.108/109, 8.2.32/37/41/55 | ksa is not sic: no jus after it; the root's `h` is kept and k comes from gh by 8.4.55; bhaṣ 8.2.37 now sees the root-final ādeśa |
+| lih lopa + dīrgha: `lIQaH`, `lIQi`, `lIQAm` | 8.3.13 + 6.3.111 | 8.3.13 may follow 8.4.41 (Kāśikā: ṣṭutva siddha); 6.3.111/112 run inside the tripāḍī (data: `asiddha_strata.json`) |
+| `asti`, `AsIt`, `AsIH`, `asAva`, `eDi` | 6.4.111, 7.3.96, 7.4.50, 6.4.101/119 | śnasor allopaḥ only before a weak ending (pit tip/loṭ-uttama excluded); īṭ after as in laṅ; overrides 7.3.96 > 7.4.50, 6.4.101 > 6.4.119 (Amendment 19) |
+| han: `vaDyAt`, `jahi`, `aGnan` | 2.4.42, 6.4.36, 6.4.98, 7.3.54, 6.4.105 | vadha in āśīr-liṅ; ja before hi (sthānivat: no ato heḥ); aṭ in the same pada no longer hides the root from 6.4.98/7.3.54 |
+| ghu/ātmane: `DeyAt`, `Dehi`, `dehi`, `aDita`, `adizAtAm` | 6.4.67, 6.4.119, 1.2.17 | e in āśīr-liṅ (apavāda of 6.4.66); e + abhyāsa-lopa before hi; ā→i + kit sic in ātmanepada luṅ |
+| mī/mi/dī: `mAsyati`, `mAtA`, `amAsIt`, `dAsyate`, `dAsIzwa` | 6.1.50 | ātva before a non-liṭ ārdhadhātuka; overrides 6.1.50 > 7.3.84, 7.2.1 (Amendment 19) |
+| vidhi-liṅ ātmane 1sg of śyan roots: `nahyeya`, `DIyeya` | 3.1.68/69 | the loop reads the sthānī lakāra, so 3.4.106 no longer hides the sārvadhātuka |
+| bhṛ liṭ `baBAra` (not `biBAra`) | 7.4.76 | ślau only |
+| hu liṭ `juhuvatuH` | 6.4.87 | sārvadhātuke only |
+| loṭ sva of īś: `ISizva` | 7.2.77 | se → sva (3.4.91) is sthānivat |
+| ūrṇu laṅ `OrRot` | 7.3.89/90/91 | vibhāṣā: guṇa branch is the one output |
+| 6.4.19 chv-śūṭ in liṭ | 6.4.19 | only before a jhal-initial kit/ṅit |
+
+### Still open (need your source or expert view)
+- `UrRuY` liṭ: Vidyut `UrRunAva` (vārttika "ūrṇor nuvad bhāvaḥ") vs the 3.1.35 ām reading — no sūtra in the data covers nuvat.
+- `cakziN`, `Asa~` ātmane liṭ: Vidyut gives `-AYcakre` (āṃ) forms for roots our loop derives without ām (3.1.35/36 scope: ijādi guru-mat; Asa~'s upadeśa `Asa~` is ijādi? ac-initial `A` is not ik).
+- `ISa~`/`Iqa~` laṅ dhvam: Vidyut `EqQvam` — looks like a data mapping bug, we give `ESiDvam`/`EqiDvam`.
+- `dyuta~` luṅ: Vidyut `adyotIt` (ubhaya) vs the Kāśikā example `अद्युतत्` (3.1.55, parasmaipada) — ours follows the example; liṭ `dudyutiva` (kit va) still to check.
+- vibhāṣā alternatives (7.3.90 vṛddhi, 8.3.79 ḍh after iṭ, 3.1.38 optional ām for hu/bhṛ, 6.4.68, 7.2.63 bhāradvāja): the engine gives one output per cell; the other is not generated.
+- `pf`/`spf`/`smf` liṭ thal (7.2.63/64), `tF` (Vidyut empty), `ciY` (Vidyut empty for ubhaya).
