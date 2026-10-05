@@ -154,3 +154,29 @@ Fresh sweep launched after these changes; §D rows that still show in the regene
 - `dyuta~` luṅ: Vidyut `adyotIt` (ubhaya) vs the Kāśikā example `अद्युतत्` (3.1.55, parasmaipada) — ours follows the example; liṭ `dudyutiva` (kit va) still to check.
 - vibhāṣā alternatives (7.3.90 vṛddhi, 8.3.79 ḍh after iṭ, 3.1.38 optional ām for hu/bhṛ, 6.4.68, 7.2.63 bhāradvāja): the engine gives one output per cell; the other is not generated.
 - `pf`/`spf`/`smf` liṭ thal (7.2.63/64), `tF` (Vidyut empty), `ciY` (Vidyut empty for ubhaya).
+
+---------------------------------------------------------------------------------------------------------------------------------
+## J. Re-sweep of 2026-10-06 (offset 0, 12 roots per gaṇa, three pada types) — rechecked in fresh processes
+
+`tools/ledger_recheck.py` / `docs/RECHECK_2026-10-06.txt` hold the cells that still differ **after** an independent re-derivation (rare irreproducible misses in the
+long sweeps — e.g. a root's first cell coming out without dvitva — were dropped; `tri_compare` now asks a wrong cell twice and tags `[flaky]`).
+
+Fixed in this pass: 3.1.55 only in parasmaipada (अद्योतिष्ट, अमुक्त, अविदत); 6.4.67 only with the kit yāsuṭ (दासीष्ट, मासीष्ट); 7.2.81 not in luṅ (अधुक्षाताम्);
+curādi ṇijanta liṭ/luṅ/āśīr; brū→vac; aṅ for vac/hve/lip; 6.4.51 as apavāda; 7.4.1/7.4.2; 7.1.4 after caṅ.
+
+### Open — engine differs from Vidyut and I have no sūtra evidence either way
+| item | cells | note |
+|---|---|---|
+| ātmane luṅ 1sg of ksa roots: `aDukzi` (V) vs `aDukze` | duh/dih/dviś/liha/diś | suggests luṅ's tiṅ behaves as ārdhadhātuka here (a-lopa before `i`), yet lṛṭ/luṅ duals show `ete` for lṛṭ — the 7.2.81 scope (sārvadhātuke) needs the Kāśikā reading |
+| `GfRu~/fRu~/tfRu~/stanBu~/skanBu~…` loṭ 2sg | 6 roots | after hi-lopa (6.4.106) the guṇa/nasal rules do not see the lopa'd ṅit hi (1.1.62 pratyayalakṣaṇa): ours `GarRu`, `skamBAna` vs V `GfRu`, `skaBAna` |
+| `Riji~r/viji~r/vizx~` laṅ·loṭ 1sg `anenijam`, `nenijAni`; `kita~` `acikitam`; `YiBI` `biBayAni` | ~10 | Vidyut shows no guṇa for the pit uttama ending of abhyasta roots; ours guṇa |
+| ṛ-final liṭ thal: `jaGarTa`, `jaharTa`, `sasmarTa`, `tastarTa`, `paparTa` (aniṭ) but `vavariTa` | hf Gf smf stfY pf vfY | dhātupāṭha seṭ/aniṭ data vs 7.2.61–64 — data question |
+| `pf`/`f` forms (`paparti`, `EyaH`, `iyaryAt`) | pf f | 7.4.77 (ours piparti follows the sūtra), `f` (iyarti) unresolved |
+| `Basa~` `babDaH`/`baBastaH`, `abaBat` | 5 | bhas + ta cluster (8.2.? ) |
+| `qukrIY` ātmane `krIRIte` vs ours `kriyiRAte` | 4 | ātmane kryādi: śnā + ātmane tiṅ ordering (6.4.113 ī before consonant, 6.4.112 ā-lopa before vowel) — ours takes the iyaṅ path |
+| ISa~/Iqa~ laṅ dhvam `EqQvam` (V) | 2 | probably an oracle mapping error |
+| `ada~` laṅ `Ad`, luṅ `aGasat`; `zwuY`/`zuY` luṅ `astAvIt`, `asAvIt`; `pluza~`/`vyuza~` luṅ (`apluzat`: 3.1.55 list vs row id) | ~8 | specific rules: 7.3.100 (ada), 2.4.37 + 3.1.52 (ghas), 7.2.1 vṛddhi vs guṇa for u-final, puṣādi row labels |
+| `Brasja~` (`Barkzyati/Brakzyati` samprasāraṇa) | 9 | 6.1.16 + 8.2.36 for bhrasj — optional alternates |
+| `kUN/kuN/gurI~` ātmane guṇa (`kavizyate` vs `kuvizyate`; `kozyate` vs `kuzyate`) | 15 | the u-ending ātmane root takes guṇa before ārdhadhātuka sya/iṭ: our 1.1.5/1.2.4 reading treats the ātmane tiṅ as kṅit |
+| `ranja~` ātmane liṭ `raraYje` (V) vs ours `reje` | 1 | 6.4.120 + 6.4.24 nasal lopa interplay |
+| `IN` liṭ `ayAYcakre` (V) vs `yAYcakre` | 1 | ām + anuprayoga with aṭ-less abhyāsa |

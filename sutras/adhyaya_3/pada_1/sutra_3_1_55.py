@@ -85,11 +85,21 @@ def _pusadi_dyutadi_ldit(state: State) -> bool:
     return "पुषादिः" in ag or "द्युतादिः" in ag or "x~" in (dh.meta.get("upadesha_slp1") or "")
 
 
+def _parasmaipade(state: State) -> bool:
+    """परस्मैपदेषु: once a tiṅ stands on the tape it must be a parasmaipada one (ātmanepada luṅ keeps sic: अद्योतिष्ट, अमुक्त)."""
+    tins = [t for t in state.terms if "tin_adesha_3_4_78" in t.tags]
+    return not tins or any("parasmaipada" in t.tags for t in tins)
+
+
 def cond(state: State) -> bool:
+    if not _parasmaipade(state):
+        return False
     return _dyut_site(state) or _ghas_luG_aG_site(state) or _pusadi_dyutadi_ldit(state)
 
 
 def act(state: State) -> State:
+    if not _parasmaipade(state):
+        return state
     if not (_dyut_site(state) or _ghas_luG_aG_site(state) or _pusadi_dyutadi_ldit(state)):
         return state
     for i, t in enumerate(state.terms):

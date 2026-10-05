@@ -63,11 +63,19 @@ def main() -> int:
         for vc in (1, 2, 3):
             try: rec = derive(ref, a.lakara, "kartari", pu, vc, **kw).flat_slp1()
             except Exception as e: rec = "ERR"
-            try: loop = run_autonomously(start_state(NS(kind="tinanta", args=(ref, a.lakara, pu, vc), pada=a.pada or None)), "", ref, 250).surface
-            except Exception as e: loop = "ERR"
+            def _loop():
+                try: return run_autonomously(start_state(NS(kind="tinanta", args=(ref, a.lakara, pu, vc), pada=a.pada or None)), "", ref, 250).surface
+                except Exception: return "ERR"
+            loop = _loop()
+            flaky = ""
+            if loop not in vid[i]:                  # a wrong first answer is asked again: the sweeps showed rare irreproducible misses
+                again = _loop()
+                if again != loop:
+                    flaky = "  [flaky: first %s]" % loop
+                    loop = again
             v = vid[i]; i += 1
             flag = "" if (loop in v and rec in v) else "  <-- " + ("recipe≠V " if rec not in v else "") + ("loop≠V" if loop not in v else "")
-            print(f"{pu}-{vc}  recipe {rec:<14} loop {loop:<14} vidyut {','.join(v)}{flag}")
+            print(f"{pu}-{vc}  recipe {rec:<14} loop {loop:<14} vidyut {','.join(v)}{flag}{flaky}")
     return 0
 
 

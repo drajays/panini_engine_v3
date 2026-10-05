@@ -1,0 +1,761 @@
+1 dyuta~ liT parasmai 1-2  recipe dudyutiva      loop dudyotiva      vidyut dudyutiva  <-- loop≠V
+1 dyuta~ liT parasmai 1-3  recipe dudyutima      loop dudyotima      vidyut dudyutima  <-- loop≠V
+1 dyuta~ liT atmane 3-3  recipe dudyutire      loop dudyotire      vidyut dudyutire  <-- loop≠V
+1 dyuta~ liT atmane 2-1  recipe dudyutize      loop dudyotize      vidyut dudyutize  <-- loop≠V
+1 dyuta~ liT atmane 2-3  recipe dudyutiDve     loop dudyotiDve     vidyut dudyutiDve  <-- loop≠V
+1 dyuta~ liT atmane 1-2  recipe dudyutivahe    loop dudyotivahe    vidyut dudyutivahe  <-- loop≠V
+1 dyuta~ liT atmane 1-3  recipe dudyutimahe    loop dudyotimahe    vidyut dudyutimahe  <-- loop≠V
+1 dyuta~ luG parasmai 3-1  recipe adyutat        loop adyutat        vidyut adyotId,adyotIt  <-- recipe≠V loop≠V
+1 dyuta~ luG parasmai 3-2  recipe adyutatAm      loop adyutatAm      vidyut adyotizwAm  <-- recipe≠V loop≠V
+1 dyuta~ luG parasmai 3-3  recipe adyutan        loop adyutan        vidyut adyotizuH  <-- recipe≠V loop≠V
+1 dyuta~ luG parasmai 2-1  recipe adyutaH        loop adyutaH        vidyut adyotIH  <-- recipe≠V loop≠V
+1 dyuta~ luG parasmai 2-2  recipe adyutatam      loop adyutatam      vidyut adyotizwam  <-- recipe≠V loop≠V
+1 dyuta~ luG parasmai 2-3  recipe adyutata       loop adyutata       vidyut adyotizwa  <-- recipe≠V loop≠V
+1 dyuta~ luG parasmai 1-1  recipe adyutam        loop adyutam        vidyut adyotizam  <-- recipe≠V loop≠V
+1 dyuta~ luG parasmai 1-2  recipe adyutAva       loop adyutAva       vidyut adyotizva  <-- recipe≠V loop≠V
+1 dyuta~ luG parasmai 1-3  recipe adyutAma       loop adyutAma       vidyut adyotizma  <-- recipe≠V loop≠V
+1 dyuta~ luG atmane 3-1  recipe adyotizwa      loop adyutata       vidyut adyotizwa  <-- loop≠V
+1 dyuta~ luG atmane 3-2  recipe adyotizAtAm    loop adyutetAm      vidyut adyotizAtAm  <-- loop≠V
+1 dyuta~ luG atmane 3-3  recipe adyotizata     loop adyutanta      vidyut adyotizata  <-- loop≠V
+1 dyuta~ luG atmane 2-1  recipe adyotizWAH     loop adyutaTAH      vidyut adyotizWAH  <-- loop≠V
+1 dyuta~ luG atmane 2-2  recipe adyotizATAm    loop adyuteTAm      vidyut adyotizATAm  <-- loop≠V
+1 dyuta~ luG atmane 2-3  recipe adyotiDvam     loop adyutaDvam     vidyut adyotiDvam  <-- loop≠V
+1 dyuta~ luG atmane 1-1  recipe adyotizi       loop adyute         vidyut adyotizi  <-- loop≠V
+1 dyuta~ luG atmane 1-2  recipe adyotizvahi    loop adyutAvahi     vidyut adyotizvahi  <-- loop≠V
+1 dyuta~ luG atmane 1-3  recipe adyotizmahi    loop adyutAmahi     vidyut adyotizmahi  <-- loop≠V
+2 ISa~ laG atmane 2-3  recipe EqQvam         loop ESiDvam        vidyut EqQvam  <-- loop≠V
+1 sranBu~ liT atmane 3-1  recipe sasramBe       loop sasraBe        vidyut sasramBe  <-- loop≠V
+1 sranBu~ liT atmane 3-2  recipe sasramBAte     loop sasraBAte      vidyut sasramBAte  <-- loop≠V
+1 sranBu~ liT atmane 2-1  recipe sasramBize     loop sasraBize      vidyut sasramBize  <-- loop≠V
+1 sranBu~ liT atmane 2-2  recipe sasramBATe     loop sasraBATe      vidyut sasramBATe  <-- loop≠V
+1 sranBu~ liT atmane 2-3  recipe sasramBiDve    loop sasraBiDve     vidyut sasramBiDve  <-- loop≠V
+1 sranBu~ liT atmane 1-1  recipe sasramBe       loop sasraBe        vidyut sasramBe  <-- loop≠V
+1 sranBu~ liT atmane 1-2  recipe sasramBivahe   loop sasraBivahe    vidyut sasramBivahe  <-- loop≠V
+1 sranBu~ liT atmane 1-3  recipe sasramBimahe   loop sasraBimahe    vidyut sasramBimahe  <-- loop≠V
+2 Iqa~ laG atmane 2-3  recipe EqQvam         loop EqiDvam        vidyut EqQvam  <-- loop≠V
+2 ada~ laG parasmai 3-1  recipe Adt            loop Adt            vidyut Ad,At  <-- recipe≠V loop≠V
+2 ada~ laG parasmai 2-1  recipe AdH            loop AdH            vidyut AH,Ad,At  <-- recipe≠V loop≠V
+2 Asa~ liT atmane 3-1  recipe Ase            loop Ase            vidyut AsAYcakre,AsAmAsa,AsAmbaBUva  <-- recipe≠V loop≠V
+2 Asa~ liT atmane 3-2  recipe AsAte          loop AsAte          vidyut AsAYcakrAte,AsAmAsatuH,AsAmbaBUvatuH  <-- recipe≠V loop≠V
+2 Asa~ liT atmane 3-3  recipe Asire          loop Asire          vidyut AsAYcakrire,AsAmAsuH,AsAmbaBUvuH  <-- recipe≠V loop≠V
+2 Asa~ liT atmane 2-1  recipe Asize          loop Asize          vidyut AsAYcakfze,AsAmAsiTa,AsAmbaBUviTa  <-- recipe≠V loop≠V
+2 Asa~ liT atmane 2-2  recipe AsATe          loop AsATe          vidyut AsAYcakrATe,AsAmAsaTuH,AsAmbaBUvaTuH  <-- recipe≠V loop≠V
+2 Asa~ liT atmane 2-3  recipe AsiDve         loop AsiDve         vidyut AsAYcakfQve,AsAmAsa,AsAmbaBUva  <-- recipe≠V loop≠V
+2 Asa~ liT atmane 1-1  recipe Ase            loop Ase            vidyut AsAYcakre,AsAmAsa,AsAmbaBUva  <-- recipe≠V loop≠V
+2 Asa~ liT atmane 1-2  recipe Asivahe        loop Asivahe        vidyut AsAYcakfvahe,AsAmAsiva,AsAmbaBUviva  <-- recipe≠V loop≠V
+2 Asa~ liT atmane 1-3  recipe Asimahe        loop Asimahe        vidyut AsAYcakfmahe,AsAmAsima,AsAmbaBUvima  <-- recipe≠V loop≠V
+2 UrRuY liT atmane 3-1  recipe UrRuAYcakre    loop UrRvAYcakre    vidyut UrRunuve  <-- recipe≠V loop≠V
+2 UrRuY liT atmane 3-2  recipe UrRuAYcakrAte  loop UrRvAYcakrAte  vidyut UrRunuvAte  <-- recipe≠V loop≠V
+2 UrRuY liT atmane 3-3  recipe UrRuAYcakrire  loop UrRvAYcakrire  vidyut UrRunuvire  <-- recipe≠V loop≠V
+2 UrRuY liT atmane 2-1  recipe UrRuAYcakfze   loop UrRvAYcakfze   vidyut UrRunuvize  <-- recipe≠V loop≠V
+2 UrRuY liT atmane 2-2  recipe UrRuAYcakrATe  loop UrRvAYcakrATe  vidyut UrRunuvATe  <-- recipe≠V loop≠V
+2 UrRuY liT atmane 2-3  recipe UrRuAYcakfQve  loop UrRvAYcakfQve  vidyut UrRunuviDve,UrRunuviQve  <-- recipe≠V loop≠V
+2 UrRuY liT atmane 1-1  recipe UrRuAYcakre    loop UrRvAYcakre    vidyut UrRunuve  <-- recipe≠V loop≠V
+2 UrRuY liT atmane 1-2  recipe UrRuAYcakfvahe loop UrRvAYcakfvahe vidyut UrRunuvivahe  <-- recipe≠V loop≠V
+2 UrRuY liT atmane 1-3  recipe UrRuAYcakfmahe loop UrRvAYcakfmahe vidyut UrRunuvimahe  <-- recipe≠V loop≠V
+2 UrRuY liT parasmai 3-1  recipe UrRuAYcakAra   loop UrRvAYcakAra   vidyut UrRunAva  <-- recipe≠V loop≠V
+2 UrRuY liT parasmai 3-2  recipe UrRuAYcakratuH loop UrRvAYcakratuH vidyut UrRunuvatuH  <-- recipe≠V loop≠V
+2 UrRuY liT parasmai 3-3  recipe UrRuAYcakruH   loop UrRvAYcakruH   vidyut UrRunuvuH  <-- recipe≠V loop≠V
+2 UrRuY liT parasmai 2-1  recipe UrRuAYcakarTa  loop UrRvAYcakarTa  vidyut UrRunaviTa,UrRunuviTa  <-- recipe≠V loop≠V
+2 UrRuY liT parasmai 2-2  recipe UrRuAYcakraTuH loop UrRvAYcakraTuH vidyut UrRunuvaTuH  <-- recipe≠V loop≠V
+2 UrRuY liT parasmai 2-3  recipe UrRuAYcakra    loop UrRvAYcakra    vidyut UrRunuva  <-- recipe≠V loop≠V
+2 UrRuY liT parasmai 1-1  recipe UrRuAYcakAra   loop UrRvAYcakAra   vidyut UrRunAva,UrRunava  <-- recipe≠V loop≠V
+2 UrRuY liT parasmai 1-2  recipe UrRuAYcakfva   loop UrRvAYcakfva   vidyut UrRunuviva  <-- recipe≠V loop≠V
+2 UrRuY liT parasmai 1-3  recipe UrRuAYcakfma   loop UrRvAYcakfma   vidyut UrRunuvima  <-- recipe≠V loop≠V
+2 cakziN liT atmane 3-1  recipe cacakziye      loop cacakziye      vidyut cakzayAYcakre,cakzayAmAsa,cakzayAmbaBUva  <-- recipe≠V loop≠V
+2 cakziN liT atmane 3-2  recipe cacakziyAte    loop cacakziyAte    vidyut cakzayAYcakrAte,cakzayAmAsatuH,cakzayAmbaBUvatuH  <-- recipe≠V loop≠V
+2 cakziN liT atmane 3-3  recipe cacakziyire    loop cacakziyire    vidyut cakzayAYcakrire,cakzayAmAsuH,cakzayAmbaBUvuH  <-- recipe≠V loop≠V
+2 cakziN liT atmane 2-1  recipe cacakziyize    loop cacakziyize    vidyut cakzayAYcakfze,cakzayAmAsiTa,cakzayAmbaBUviTa  <-- recipe≠V loop≠V
+2 cakziN liT atmane 2-2  recipe cacakziyATe    loop cacakziyATe    vidyut cakzayAYcakrATe,cakzayAmAsaTuH,cakzayAmbaBUvaTuH  <-- recipe≠V loop≠V
+2 cakziN liT atmane 2-3  recipe cacakziyiDve   loop cacakziyiDve   vidyut cakzayAYcakfQve,cakzayAmAsa,cakzayAmbaBUva  <-- recipe≠V loop≠V
+2 cakziN liT atmane 1-1  recipe cacakziye      loop cacakziye      vidyut cakzayAYcakre,cakzayAmAsa,cakzayAmbaBUva  <-- recipe≠V loop≠V
+2 cakziN liT atmane 1-2  recipe cacakziyivahe  loop cacakziyivahe  vidyut cakzayAYcakfvahe,cakzayAmAsiva,cakzayAmbaBUviva  <-- recipe≠V loop≠V
+2 cakziN liT atmane 1-3  recipe cacakziyimahe  loop cacakziyimahe  vidyut cakzayAYcakfmahe,cakzayAmAsima,cakzayAmbaBUvima  <-- recipe≠V loop≠V
+2 ada~ luG parasmai 3-1  recipe aGasat         loop akzat          vidyut aGasad,aGasat  <-- loop≠V
+2 ada~ luG parasmai 3-2  recipe aGasatAm       loop akzatAm        vidyut aGasatAm  <-- loop≠V
+2 ada~ luG parasmai 3-3  recipe aGasan         loop akzan          vidyut aGasan  <-- loop≠V
+2 ada~ luG parasmai 2-1  recipe aGasaH         loop akzaH          vidyut aGasaH  <-- loop≠V
+2 ada~ luG parasmai 2-2  recipe aGasatam       loop akzatam        vidyut aGasatam  <-- loop≠V
+2 ada~ luG parasmai 2-3  recipe aGasata        loop akzata         vidyut aGasata  <-- loop≠V
+2 ada~ luG parasmai 1-1  recipe aGasam         loop akzam          vidyut aGasam  <-- loop≠V
+2 ada~ luG parasmai 1-2  recipe aGasAva        loop akzAva         vidyut aGasAva  <-- loop≠V
+2 ada~ luG parasmai 1-3  recipe aGasAma        loop akzAma         vidyut aGasAma  <-- loop≠V
+2 diha~ luG atmane 3-2  recipe adikzAtAm      loop aDikzetAm      vidyut aDikzAtAm  <-- recipe≠V loop≠V
+2 diha~ luG atmane 2-2  recipe adikzATAm      loop aDikzeTAm      vidyut aDikzATAm  <-- recipe≠V loop≠V
+2 diha~ luG atmane 1-1  recipe adikzai        loop aDikze         vidyut aDikzi  <-- recipe≠V loop≠V
+2 duha~ luG atmane 3-2  recipe adukzAtAm      loop aDukzetAm      vidyut aDukzAtAm  <-- recipe≠V loop≠V
+2 duha~ luG atmane 2-2  recipe adukzATAm      loop aDukzeTAm      vidyut aDukzATAm  <-- recipe≠V loop≠V
+2 duha~ luG atmane 1-1  recipe adukzai        loop aDukze         vidyut aDukzi  <-- recipe≠V loop≠V
+2 dviza~ luG atmane 3-2  recipe advikzAtAm     loop advikzetAm     vidyut advikzAtAm  <-- loop≠V
+2 dviza~ luG atmane 2-2  recipe advikzATAm     loop advikzeTAm     vidyut advikzATAm  <-- loop≠V
+2 dviza~ luG atmane 1-1  recipe advikzai       loop advikze        vidyut advikzi  <-- recipe≠V loop≠V
+2 liha~ luG atmane 3-2  recipe alikzAtAm      loop alikzetAm      vidyut alikzAtAm  <-- loop≠V
+2 liha~ luG atmane 2-2  recipe alikzATAm      loop alikzeTAm      vidyut alikzATAm  <-- loop≠V
+2 liha~ luG atmane 1-1  recipe alikzai        loop alikze         vidyut alikzi  <-- recipe≠V loop≠V
+3 Basa~ AsIrliG parasmai 3-1  recipe BasyAt         loop BasyAt         vidyut psyAd,psyAt  <-- recipe≠V loop≠V
+3 Basa~ AsIrliG parasmai 3-2  recipe BasyAstAm      loop BasyAstAm      vidyut psyAstAm  <-- recipe≠V loop≠V
+3 Basa~ AsIrliG parasmai 3-3  recipe BasyAsuH       loop BasyAsuH       vidyut psyAsuH  <-- recipe≠V loop≠V
+3 Basa~ AsIrliG parasmai 2-1  recipe BasyAH         loop BasyAH         vidyut psyAH  <-- recipe≠V loop≠V
+3 Basa~ AsIrliG parasmai 2-2  recipe BasyAstam      loop BasyAstam      vidyut psyAstam  <-- recipe≠V loop≠V
+3 Basa~ AsIrliG parasmai 2-3  recipe BasyAsta       loop BasyAsta       vidyut psyAsta  <-- recipe≠V loop≠V
+3 Basa~ AsIrliG parasmai 1-1  recipe BasyAsam       loop BasyAsam       vidyut psyAsam  <-- recipe≠V loop≠V
+3 Basa~ AsIrliG parasmai 1-2  recipe BasyAsva       loop BasyAsva       vidyut psyAsva  <-- recipe≠V loop≠V
+3 Basa~ AsIrliG parasmai 1-3  recipe BasyAsma       loop BasyAsma       vidyut psyAsma  <-- recipe≠V loop≠V
+3 Basa~ laT parasmai 3-2  recipe baBastaH       loop bapstaH        vidyut babDaH  <-- recipe≠V loop≠V
+3 Basa~ laT parasmai 2-2  recipe baBasTaH       loop bapsTaH        vidyut babDaH  <-- recipe≠V loop≠V
+3 Basa~ laT parasmai 2-3  recipe baBasTa        loop bapsTa         vidyut babDa  <-- recipe≠V loop≠V
+3 Basa~ laG parasmai 3-1  recipe abaBaH         loop abaBaH         vidyut abaBad,abaBat  <-- recipe≠V loop≠V
+3 Basa~ laG parasmai 3-2  recipe abaBastAm      loop abapstAm       vidyut ababDAm  <-- recipe≠V loop≠V
+3 Basa~ laG parasmai 2-2  recipe abaBastam      loop abapstam       vidyut ababDam  <-- recipe≠V loop≠V
+3 Basa~ laG parasmai 2-3  recipe abaBasta       loop abapsta        vidyut ababDa  <-- recipe≠V loop≠V
+2 zwuY luG parasmai 3-1  recipe astOzIt        loop astOzIt        vidyut astAvId,astAvIt  <-- recipe≠V loop≠V
+2 zwuY luG parasmai 3-2  recipe astOzwAm       loop astOzwAm       vidyut astAvizwAm  <-- recipe≠V loop≠V
+2 zwuY luG parasmai 3-3  recipe astOzuH        loop astOzuH        vidyut astAvizuH  <-- recipe≠V loop≠V
+2 zwuY luG parasmai 2-1  recipe astOzIH        loop astOzIH        vidyut astAvIH  <-- recipe≠V loop≠V
+2 zwuY luG parasmai 2-2  recipe astOzwam       loop astOzwam       vidyut astAvizwam  <-- recipe≠V loop≠V
+2 zwuY luG parasmai 2-3  recipe astOzwa        loop astOzwa        vidyut astAvizwa  <-- recipe≠V loop≠V
+2 zwuY luG parasmai 1-1  recipe astOzam        loop astOzam        vidyut astAvizam  <-- recipe≠V loop≠V
+2 zwuY luG parasmai 1-2  recipe astOzva        loop astOzva        vidyut astAvizva  <-- recipe≠V loop≠V
+2 zwuY luG parasmai 1-3  recipe astOzma        loop astOzma        vidyut astAvizma  <-- recipe≠V loop≠V
+3 Basa~ loT parasmai 3-2  recipe baBastAm       loop bapstAm        vidyut babDAm  <-- recipe≠V loop≠V
+3 Basa~ loT parasmai 2-2  recipe baBastam       loop bapstam        vidyut babDam  <-- recipe≠V loop≠V
+3 Basa~ loT parasmai 2-3  recipe baBasta        loop bapsta         vidyut babDa  <-- recipe≠V loop≠V
+3 Gf liT parasmai 2-1  recipe jaGarTa        loop jaGariTa       vidyut jaGarTa  <-- loop≠V
+3 Riji~r laG parasmai 1-1  recipe anenejam       loop anenejam       vidyut anenijam  <-- recipe≠V loop≠V
+3 YiBI loT parasmai 1-1  recipe biBayAni       loop biByAni        vidyut biBayAni  <-- loop≠V
+3 YiBI loT parasmai 1-2  recipe biBayAva       loop biByAva        vidyut biBayAva  <-- loop≠V
+3 YiBI loT parasmai 1-3  recipe biBayAma       loop biByAma        vidyut biBayAma  <-- loop≠V
+3 Riji~r loT parasmai 1-1  recipe nenejAni       loop nenejAni       vidyut nenijAni  <-- recipe≠V loop≠V
+3 Riji~r loT parasmai 1-2  recipe nenejAva       loop nenejAva       vidyut nenijAva  <-- recipe≠V loop≠V
+3 Riji~r loT parasmai 1-3  recipe nenejAma       loop nenejAma       vidyut nenijAma  <-- recipe≠V loop≠V
+3 Riji~r loT atmane 1-1  recipe nenejE         loop nenejE         vidyut nenijE  <-- recipe≠V loop≠V
+3 Riji~r loT atmane 1-2  recipe nenejAvahE     loop nenejAvahE     vidyut nenijAvahE  <-- recipe≠V loop≠V
+3 Riji~r loT atmane 1-3  recipe nenijAmahE     loop nenejAmahE     vidyut nenijAmahE  <-- loop≠V
+3 f liG parasmai 3-1  recipe yfyAt          loop iyaryAt        vidyut iyfyAd,iyfyAt  <-- recipe≠V loop≠V
+3 f liG parasmai 3-2  recipe yfyAtAm        loop iyaryAtAm      vidyut iyfyAtAm  <-- recipe≠V loop≠V
+3 f liG parasmai 3-3  recipe yfyAt          loop iyaryuH        vidyut iyfyuH  <-- recipe≠V loop≠V
+3 f liG parasmai 2-1  recipe yfyAH          loop iyaryAH        vidyut iyfyAH  <-- recipe≠V loop≠V
+3 f liG parasmai 2-2  recipe yfyAtam        loop iyaryAtam      vidyut iyfyAtam  <-- recipe≠V loop≠V
+3 f liG parasmai 2-3  recipe yfyAta         loop iyaryAta       vidyut iyfyAta  <-- recipe≠V loop≠V
+3 f liG parasmai 1-1  recipe yfyAm          loop iyaryAm        vidyut iyfyAm  <-- recipe≠V loop≠V
+3 f liG parasmai 1-2  recipe yfyAva         loop iyaryAva       vidyut iyfyAva  <-- recipe≠V loop≠V
+3 f liG parasmai 1-3  recipe yfyAma         loop iyaryAma       vidyut iyfyAma  <-- recipe≠V loop≠V
+3 f laG parasmai 3-1  recipe iArt           loop Art            vidyut EyaH  <-- recipe≠V loop≠V
+3 f laG parasmai 3-2  recipe iArtAm         loop artAm          vidyut EyftAm  <-- recipe≠V loop≠V
+3 f laG parasmai 3-3  recipe iArat          loop AruH           vidyut EyaruH  <-- recipe≠V loop≠V
+3 f laG parasmai 2-1  recipe iArH           loop AH             vidyut EyaH  <-- recipe≠V loop≠V
+3 f laG parasmai 2-2  recipe iArtam         loop artam          vidyut Eyftam  <-- recipe≠V loop≠V
+3 f laG parasmai 2-3  recipe iArta          loop arta           vidyut Eyfta  <-- recipe≠V loop≠V
+3 f laG parasmai 1-1  recipe iAram          loop Aram           vidyut Eyaram  <-- recipe≠V loop≠V
+3 f laG parasmai 1-2  recipe iArva          loop arva           vidyut Eyfva  <-- recipe≠V loop≠V
+3 f laG parasmai 1-3  recipe iArma          loop arma           vidyut Eyfma  <-- recipe≠V loop≠V
+3 hf liT parasmai 2-1  recipe jaharTa        loop jahariTa       vidyut jaharTa  <-- loop≠V
+3 f luG parasmai 3-1  recipe ArzIt          loop ArzIt          vidyut Arad,Arat  <-- recipe≠V loop≠V
+3 f luG parasmai 3-2  recipe ArzwAm         loop ArzwAm         vidyut AratAm  <-- recipe≠V loop≠V
+3 f luG parasmai 3-3  recipe ArzuH          loop ArzuH          vidyut Aran  <-- recipe≠V loop≠V
+3 f luG parasmai 2-1  recipe ArzIH          loop ArzIH          vidyut AraH  <-- recipe≠V loop≠V
+3 f luG parasmai 2-2  recipe Arzwam         loop Arzwam         vidyut Aratam  <-- recipe≠V loop≠V
+3 f luG parasmai 2-3  recipe Arzwa          loop Arzwa          vidyut Arata  <-- recipe≠V loop≠V
+3 f luG parasmai 1-1  recipe Arzam          loop Arzam          vidyut Aram  <-- recipe≠V loop≠V
+3 f luG parasmai 1-2  recipe Arzva          loop Arzva          vidyut ArAva  <-- recipe≠V loop≠V
+3 f luG parasmai 1-3  recipe Arzma          loop Arzma          vidyut ArAma  <-- recipe≠V loop≠V
+3 ki loT parasmai 1-1  recipe cikayAni       loop cikyAni        vidyut cikayAni  <-- loop≠V
+3 ki loT parasmai 1-2  recipe cikayAva       loop cikyAva        vidyut cikayAva  <-- loop≠V
+3 ki loT parasmai 1-3  recipe cikayAma       loop cikyAma        vidyut cikayAma  <-- loop≠V
+3 kita~ laG parasmai 1-1  recipe aciketam       loop aciketam       vidyut acikitam  <-- recipe≠V loop≠V
+3 pf laT parasmai 3-1  recipe piparti        loop piparti        vidyut paparti  <-- recipe≠V loop≠V
+3 pf laT parasmai 3-2  recipe pipftaH        loop pipftaH        vidyut papftaH  <-- recipe≠V loop≠V
+3 pf laT parasmai 3-3  recipe piprati        loop piprati        vidyut paprati  <-- recipe≠V loop≠V
+3 pf laT parasmai 2-1  recipe piparzi        loop piparzi        vidyut paparzi  <-- recipe≠V loop≠V
+3 pf laT parasmai 2-2  recipe pipfTaH        loop pipfTaH        vidyut papfTaH  <-- recipe≠V loop≠V
+3 pf laT parasmai 2-3  recipe pipfTa         loop pipfTa         vidyut papfTa  <-- recipe≠V loop≠V
+3 pf laT parasmai 1-1  recipe piparmi        loop piparmi        vidyut paparmi  <-- recipe≠V loop≠V
+3 pf laT parasmai 1-2  recipe pipfvaH        loop pipfvaH        vidyut papfvaH  <-- recipe≠V loop≠V
+3 pf laT parasmai 1-3  recipe pipfmaH        loop pipfmaH        vidyut papfmaH  <-- recipe≠V loop≠V
+3 kita~ loT parasmai 1-1  recipe ciketAni       loop ciketAni       vidyut cikitAni  <-- recipe≠V loop≠V
+3 kita~ loT parasmai 1-2  recipe ciketAva       loop ciketAva       vidyut cikitAva  <-- recipe≠V loop≠V
+3 kita~ loT parasmai 1-3  recipe ciketAma       loop ciketAma       vidyut cikitAma  <-- recipe≠V loop≠V
+3 pf laG parasmai 3-1  recipe apipaH         loop apipaH         vidyut apapaH  <-- recipe≠V loop≠V
+3 pf laG parasmai 3-2  recipe apipftAm       loop apipftAm       vidyut apapftAm  <-- recipe≠V loop≠V
+3 pf laG parasmai 3-3  recipe apipfat        loop apiparuH       vidyut apaparuH  <-- recipe≠V loop≠V
+3 pf laG parasmai 2-1  recipe apipaH         loop apipaH         vidyut apapaH  <-- recipe≠V loop≠V
+3 pf laG parasmai 2-2  recipe apipftam       loop apipftam       vidyut apapftam  <-- recipe≠V loop≠V
+3 pf laG parasmai 2-3  recipe apipfta        loop apipfta        vidyut apapfta  <-- recipe≠V loop≠V
+3 pf laG parasmai 1-1  recipe apiparam       loop apiparam       vidyut apaparam  <-- recipe≠V loop≠V
+3 pf laG parasmai 1-2  recipe apipfva        loop apipfva        vidyut apapfva  <-- recipe≠V loop≠V
+3 pf laG parasmai 1-3  recipe apipfma        loop apipfma        vidyut apapfma  <-- recipe≠V loop≠V
+3 mAN AsIrliG atmane 3-1  recipe mAsIzwa        loop mezIzwa        vidyut mAsIzwa  <-- loop≠V
+3 mAN AsIrliG atmane 3-2  recipe mAsIyAstAm     loop mezIyAstAm     vidyut mAsIyAstAm  <-- loop≠V
+3 mAN AsIrliG atmane 3-3  recipe mAsIran        loop mezIran        vidyut mAsIran  <-- loop≠V
+3 mAN AsIrliG atmane 2-1  recipe mAsIzWAH       loop mezIzWAH       vidyut mAsIzWAH  <-- loop≠V
+3 mAN AsIrliG atmane 2-2  recipe mAsIyAsTAm     loop mezIyAsTAm     vidyut mAsIyAsTAm  <-- loop≠V
+3 mAN AsIrliG atmane 2-3  recipe mAsIDvam       loop mezIQvam       vidyut mAsIDvam  <-- loop≠V
+3 mAN AsIrliG atmane 1-1  recipe mAsIya         loop mezIya         vidyut mAsIya  <-- loop≠V
+3 mAN AsIrliG atmane 1-2  recipe mAsIvahi       loop mezIvahi       vidyut mAsIvahi  <-- loop≠V
+3 mAN AsIrliG atmane 1-3  recipe mAsImahi       loop mezImahi       vidyut mAsImahi  <-- loop≠V
+3 pf liG parasmai 3-1  recipe pipfyAt        loop pipfyAt        vidyut papfyAd,papfyAt  <-- recipe≠V loop≠V
+3 pf liG parasmai 3-2  recipe pipfyAtAm      loop pipfyAtAm      vidyut papfyAtAm  <-- recipe≠V loop≠V
+3 pf liG parasmai 3-3  recipe pipfyAt        loop pipfyuH        vidyut papfyuH  <-- recipe≠V loop≠V
+3 pf liG parasmai 2-1  recipe pipfyAH        loop pipfyAH        vidyut papfyAH  <-- recipe≠V loop≠V
+3 pf liG parasmai 2-2  recipe pipfyAtam      loop pipfyAtam      vidyut papfyAtam  <-- recipe≠V loop≠V
+3 pf liG parasmai 2-3  recipe pipfyAta       loop pipfyAta       vidyut papfyAta  <-- recipe≠V loop≠V
+3 pf liG parasmai 1-1  recipe pipfyAm        loop pipfyAm        vidyut papfyAm  <-- recipe≠V loop≠V
+3 pf liG parasmai 1-2  recipe pipfyAva       loop pipfyAva       vidyut papfyAva  <-- recipe≠V loop≠V
+3 pf liG parasmai 1-3  recipe pipfyAma       loop pipfyAma       vidyut papfyAma  <-- recipe≠V loop≠V
+3 o~hAk luG parasmai 3-2  recipe ahAstAm        loop ahAstAm        vidyut ahAsizwAm  <-- recipe≠V loop≠V
+3 o~hAk luG parasmai 3-3  recipe ahAsuH         loop ahAsuH         vidyut ahAsizuH  <-- recipe≠V loop≠V
+3 o~hAk luG parasmai 2-2  recipe ahAstam        loop ahAstam        vidyut ahAsizwam  <-- recipe≠V loop≠V
+3 o~hAk luG parasmai 2-3  recipe ahAsta         loop ahAsta         vidyut ahAsizwa  <-- recipe≠V loop≠V
+3 o~hAk luG parasmai 1-1  recipe ahAsam         loop ahAsam         vidyut ahAsizam  <-- recipe≠V loop≠V
+3 o~hAk luG parasmai 1-2  recipe ahAsva         loop ahAsva         vidyut ahAsizva  <-- recipe≠V loop≠V
+3 o~hAk luG parasmai 1-3  recipe ahAsma         loop ahAsma         vidyut ahAsizma  <-- recipe≠V loop≠V
+3 pf loT parasmai 3-1  recipe pipartu        loop pipartu        vidyut papartu,papftAd,papftAt  <-- recipe≠V loop≠V
+3 pf loT parasmai 3-2  recipe pipftAm        loop pipftAm        vidyut papftAm  <-- recipe≠V loop≠V
+3 pf loT parasmai 3-3  recipe pipfatu        loop pipratu        vidyut papratu  <-- recipe≠V loop≠V
+3 pf loT parasmai 2-1  recipe pipfhi         loop pipfhi         vidyut papfhi,papftAd,papftAt  <-- recipe≠V loop≠V
+3 pf loT parasmai 2-2  recipe pipftam        loop pipftam        vidyut papftam  <-- recipe≠V loop≠V
+3 pf loT parasmai 2-3  recipe pipfta         loop pipfta         vidyut papfta  <-- recipe≠V loop≠V
+3 pf loT parasmai 1-1  recipe piparARi       loop piparARi       vidyut paparARi  <-- recipe≠V loop≠V
+3 pf loT parasmai 1-2  recipe piparAva       loop piparAva       vidyut paparAva  <-- recipe≠V loop≠V
+3 pf loT parasmai 1-3  recipe piparAma       loop piparAma       vidyut paparAma  <-- recipe≠V loop≠V
+3 quDAY AsIrliG atmane 3-1  recipe DAsIzwa        loop DezIzwa        vidyut DAsIzwa  <-- loop≠V
+3 quDAY AsIrliG atmane 3-2  recipe DAsIyAstAm     loop DezIyAstAm     vidyut DAsIyAstAm  <-- loop≠V
+3 quDAY AsIrliG atmane 3-3  recipe DAsIran        loop DezIran        vidyut DAsIran  <-- loop≠V
+3 quDAY AsIrliG atmane 2-1  recipe DAsIzWAH       loop DezIzWAH       vidyut DAsIzWAH  <-- loop≠V
+3 quDAY AsIrliG atmane 2-2  recipe DAsIyAsTAm     loop DezIyAsTAm     vidyut DAsIyAsTAm  <-- loop≠V
+3 quDAY AsIrliG atmane 2-3  recipe DAsIDvam       loop DezIQvam       vidyut DAsIDvam  <-- loop≠V
+3 quDAY AsIrliG atmane 1-1  recipe DAsIya         loop DezIya         vidyut DAsIya  <-- loop≠V
+3 quDAY AsIrliG atmane 1-2  recipe DAsIvahi       loop DezIvahi       vidyut DAsIvahi  <-- loop≠V
+3 quDAY AsIrliG atmane 1-3  recipe DAsImahi       loop DezImahi       vidyut DAsImahi  <-- loop≠V
+3 quDAY laT atmane 2-1  recipe datse          loop datse          vidyut Datse  <-- recipe≠V loop≠V
+3 quDAY laT atmane 2-3  recipe dadDve         loop dadDve         vidyut DadDve  <-- recipe≠V loop≠V
+3 quDAY laG atmane 2-3  recipe adaDADvam      loop adadDvam       vidyut aDadDvam  <-- recipe≠V loop≠V
+3 quDAY loT atmane 2-1  recipe daDAsva        loop datsva         vidyut Datsva  <-- recipe≠V loop≠V
+3 quDAY loT atmane 2-3  recipe daDADvam       loop dadDvam        vidyut DadDvam  <-- recipe≠V loop≠V
+3 viji~r laG parasmai 1-1  recipe avevejam       loop avevejam       vidyut avevijam  <-- recipe≠V loop≠V
+3 qudAY AsIrliG atmane 3-1  recipe dAsIzwa        loop dezIzwa        vidyut dAsIzwa  <-- loop≠V
+3 qudAY AsIrliG atmane 3-2  recipe dAsIyAstAm     loop dezIyAstAm     vidyut dAsIyAstAm  <-- loop≠V
+3 qudAY AsIrliG atmane 3-3  recipe dAsIran        loop dezIran        vidyut dAsIran  <-- loop≠V
+3 qudAY AsIrliG atmane 2-1  recipe dAsIzWAH       loop dezIzWAH       vidyut dAsIzWAH  <-- loop≠V
+3 qudAY AsIrliG atmane 2-2  recipe dAsIyAsTAm     loop dezIyAsTAm     vidyut dAsIyAsTAm  <-- loop≠V
+3 qudAY AsIrliG atmane 2-3  recipe dAsIDvam       loop dezIQvam       vidyut dAsIDvam  <-- loop≠V
+3 qudAY AsIrliG atmane 1-1  recipe dAsIya         loop dezIya         vidyut dAsIya  <-- loop≠V
+3 qudAY AsIrliG atmane 1-2  recipe dAsIvahi       loop dezIvahi       vidyut dAsIvahi  <-- loop≠V
+3 qudAY AsIrliG atmane 1-3  recipe dAsImahi       loop dezImahi       vidyut dAsImahi  <-- loop≠V
+3 sf luG parasmai 3-1  recipe asArzIt        loop asArzIt        vidyut asarad,asarat  <-- recipe≠V loop≠V
+3 sf luG parasmai 3-2  recipe asArzwAm       loop asArzwAm       vidyut asaratAm  <-- recipe≠V loop≠V
+3 sf luG parasmai 3-3  recipe asArzuH        loop asArzuH        vidyut asaran  <-- recipe≠V loop≠V
+3 sf luG parasmai 2-1  recipe asArzIH        loop asArzIH        vidyut asaraH  <-- recipe≠V loop≠V
+3 sf luG parasmai 2-2  recipe asArzwam       loop asArzwam       vidyut asaratam  <-- recipe≠V loop≠V
+3 sf luG parasmai 2-3  recipe asArzwa        loop asArzwa        vidyut asarata  <-- recipe≠V loop≠V
+3 sf luG parasmai 1-1  recipe asArzam        loop asArzam        vidyut asaram  <-- recipe≠V loop≠V
+3 sf luG parasmai 1-2  recipe asArzva        loop asArzva        vidyut asarAva  <-- recipe≠V loop≠V
+3 sf luG parasmai 1-3  recipe asArzma        loop asArzma        vidyut asarAma  <-- recipe≠V loop≠V
+3 viji~r loT parasmai 1-1  recipe vevejAni       loop vevejAni       vidyut vevijAni  <-- recipe≠V loop≠V
+3 viji~r loT parasmai 1-2  recipe vevejAva       loop vevejAva       vidyut vevijAva  <-- recipe≠V loop≠V
+3 viji~r loT parasmai 1-3  recipe vevejAma       loop vevejAma       vidyut vevijAma  <-- recipe≠V loop≠V
+3 vizx~ laG parasmai 1-1  recipe avevezam       loop avevezam       vidyut avevizam  <-- recipe≠V loop≠V
+3 viji~r loT atmane 1-1  recipe vevejE         loop vevejE         vidyut vevijE  <-- recipe≠V loop≠V
+3 viji~r loT atmane 1-2  recipe vevejAvahE     loop vevejAvahE     vidyut vevijAvahE  <-- recipe≠V loop≠V
+3 viji~r loT atmane 1-3  recipe vevijAmahE     loop vevejAmahE     vidyut vevijAmahE  <-- loop≠V
+3 vizx~ loT parasmai 1-1  recipe vevezARi       loop vevezARi       vidyut vevizARi  <-- recipe≠V loop≠V
+3 vizx~ loT parasmai 1-2  recipe vevezAva       loop vevezAva       vidyut vevizAva  <-- recipe≠V loop≠V
+3 vizx~ loT parasmai 1-3  recipe vevezAma       loop vevezAma       vidyut vevizAma  <-- recipe≠V loop≠V
+3 vizx~ loT atmane 1-1  recipe vevezE         loop vevezE         vidyut vevizE  <-- recipe≠V loop≠V
+3 vizx~ loT atmane 1-2  recipe vevezAvahE     loop vevezAvahE     vidyut vevizAvahE  <-- recipe≠V loop≠V
+3 vizx~ loT atmane 1-3  recipe vevizAmahE     loop vevezAmahE     vidyut vevizAmahE  <-- loop≠V
+4 IN liT atmane 3-1  recipe IAYcakre       loop yAYcakre       vidyut ayAYcakre,ayAmAsa,ayAmbaBUva  <-- recipe≠V loop≠V
+4 IN liT atmane 3-2  recipe IAYcakrAte     loop yAYcakrAte     vidyut ayAYcakrAte,ayAmAsatuH,ayAmbaBUvatuH  <-- recipe≠V loop≠V
+4 IN liT atmane 3-3  recipe IAYcakrire     loop yAYcakrire     vidyut ayAYcakrire,ayAmAsuH,ayAmbaBUvuH  <-- recipe≠V loop≠V
+4 IN liT atmane 2-1  recipe IAYcakfze      loop yAYcakfze      vidyut ayAYcakfze,ayAmAsiTa,ayAmbaBUviTa  <-- recipe≠V loop≠V
+4 IN liT atmane 2-2  recipe IAYcakrATe     loop yAYcakrATe     vidyut ayAYcakrATe,ayAmAsaTuH,ayAmbaBUvaTuH  <-- recipe≠V loop≠V
+4 IN liT atmane 2-3  recipe IAYcakfQve     loop yAYcakfQve     vidyut ayAYcakfQve,ayAmAsa,ayAmbaBUva  <-- recipe≠V loop≠V
+4 IN liT atmane 1-1  recipe IAYcakre       loop yAYcakre       vidyut ayAYcakre,ayAmAsa,ayAmbaBUva  <-- recipe≠V loop≠V
+4 IN liT atmane 1-2  recipe IAYcakfvahe    loop yAYcakfvahe    vidyut ayAYcakfvahe,ayAmAsiva,ayAmbaBUviva  <-- recipe≠V loop≠V
+4 IN liT atmane 1-3  recipe IAYcakfmahe    loop yAYcakfmahe    vidyut ayAYcakfmahe,ayAmAsima,ayAmbaBUvima  <-- recipe≠V loop≠V
+3 vizx~ luG atmane 3-1  recipe avikzata       loop avizata        vidyut avikzata  <-- loop≠V
+3 vizx~ luG atmane 3-2  recipe avikzAtAm      loop avizetAm       vidyut avikzAtAm  <-- loop≠V
+3 vizx~ luG atmane 3-3  recipe avikzAnta      loop avizanta       vidyut avikzanta  <-- recipe≠V loop≠V
+3 vizx~ luG atmane 2-1  recipe avikzaTAH      loop avizaTAH       vidyut avikzaTAH  <-- loop≠V
+3 vizx~ luG atmane 2-2  recipe avikzATAm      loop avizeTAm       vidyut avikzATAm  <-- loop≠V
+3 vizx~ luG atmane 2-3  recipe avikzaDvam     loop avizaDvam      vidyut avikzaDvam  <-- loop≠V
+3 vizx~ luG atmane 1-1  recipe avikzai        loop avize          vidyut avikzi  <-- recipe≠V loop≠V
+3 vizx~ luG atmane 1-2  recipe avikzAvahi     loop avizAvahi      vidyut avikzAvahi  <-- loop≠V
+3 vizx~ luG atmane 1-3  recipe avikzAmahi     loop avizAmahi      vidyut avikzAmahi  <-- loop≠V
+4 dIN liT atmane 2-3  recipe didyiDve       loop didIyiDve      vidyut didIyiQve  <-- recipe≠V loop≠V
+4 Raha~ luG parasmai 3-1  recipe anAkzIt        loop anAkzIt        vidyut anAtsId,anAtsIt  <-- recipe≠V loop≠V
+4 Raha~ luG parasmai 3-2  recipe anAQAm         loop anAQAm         vidyut anAdDAm  <-- recipe≠V loop≠V
+4 Raha~ luG parasmai 3-3  recipe anAkzuH        loop anAkzuH        vidyut anAtsuH  <-- recipe≠V loop≠V
+4 Raha~ luG parasmai 2-1  recipe anAkzIH        loop anAkzIH        vidyut anAtsIH  <-- recipe≠V loop≠V
+4 Raha~ luG parasmai 2-2  recipe anAQam         loop anAQam         vidyut anAdDam  <-- recipe≠V loop≠V
+4 Raha~ luG parasmai 2-3  recipe anAQa          loop anAQa          vidyut anAdDa  <-- recipe≠V loop≠V
+4 Raha~ luG parasmai 1-1  recipe anAkzam        loop anAkzam        vidyut anAtsam  <-- recipe≠V loop≠V
+4 Raha~ luG parasmai 1-2  recipe anAkzva        loop anAkzva        vidyut anAtsva  <-- recipe≠V loop≠V
+4 Raha~ luG parasmai 1-3  recipe anAkzma        loop anAkzma        vidyut anAtsma  <-- recipe≠V loop≠V
+4 mAN AsIrliG atmane 3-1  recipe mAsIzwa        loop mezIzwa        vidyut mAsIzwa  <-- loop≠V
+4 mAN AsIrliG atmane 3-2  recipe mAsIyAstAm     loop mezIyAstAm     vidyut mAsIyAstAm  <-- loop≠V
+4 mAN AsIrliG atmane 3-3  recipe mAsIran        loop mezIran        vidyut mAsIran  <-- loop≠V
+4 mAN AsIrliG atmane 2-1  recipe mAsIzWAH       loop mezIzWAH       vidyut mAsIzWAH  <-- loop≠V
+4 mAN AsIrliG atmane 2-2  recipe mAsIyAsTAm     loop mezIyAsTAm     vidyut mAsIyAsTAm  <-- loop≠V
+4 mAN AsIrliG atmane 2-3  recipe mAsIDvam       loop mezIQvam       vidyut mAsIDvam  <-- loop≠V
+4 mAN AsIrliG atmane 1-1  recipe mAsIya         loop mezIya         vidyut mAsIya  <-- loop≠V
+4 mAN AsIrliG atmane 1-2  recipe mAsIvahi       loop mezIvahi       vidyut mAsIvahi  <-- loop≠V
+4 mAN AsIrliG atmane 1-3  recipe mAsImahi       loop mezImahi       vidyut mAsImahi  <-- loop≠V
+4 Saka~ luG parasmai 3-1  recipe aSakat         loop aSakat         vidyut aSAkId,aSAkIt,aSakId,aSakIt  <-- recipe≠V loop≠V
+4 Saka~ luG parasmai 3-2  recipe aSakatAm       loop aSakatAm       vidyut aSAkizwAm,aSakizwAm  <-- recipe≠V loop≠V
+4 Saka~ luG parasmai 3-3  recipe aSakan         loop aSakan         vidyut aSAkizuH,aSakizuH  <-- recipe≠V loop≠V
+4 Saka~ luG parasmai 2-1  recipe aSakaH         loop aSakaH         vidyut aSAkIH,aSakIH  <-- recipe≠V loop≠V
+4 Saka~ luG parasmai 2-2  recipe aSakatam       loop aSakatam       vidyut aSAkizwam,aSakizwam  <-- recipe≠V loop≠V
+4 Saka~ luG parasmai 2-3  recipe aSakata        loop aSakata        vidyut aSAkizwa,aSakizwa  <-- recipe≠V loop≠V
+4 Saka~ luG parasmai 1-1  recipe aSakam         loop aSakam         vidyut aSAkizam,aSakizam  <-- recipe≠V loop≠V
+4 Saka~ luG parasmai 1-2  recipe aSakAva        loop aSakAva        vidyut aSAkizva,aSakizva  <-- recipe≠V loop≠V
+4 Saka~ luG parasmai 1-3  recipe aSakAma        loop aSakAma        vidyut aSAkizma,aSakizma  <-- recipe≠V loop≠V
+4 Saka~ luG atmane 3-1  recipe aSakizwa       loop aSakata        vidyut aSakizwa  <-- loop≠V
+4 Saka~ luG atmane 3-2  recipe aSakizAtAm     loop aSaketAm       vidyut aSakizAtAm  <-- loop≠V
+4 Saka~ luG atmane 3-3  recipe aSakizata      loop aSakanta       vidyut aSakizata  <-- loop≠V
+4 Saka~ luG atmane 2-1  recipe aSakizWAH      loop aSakaTAH       vidyut aSakizWAH  <-- loop≠V
+4 Saka~ luG atmane 2-2  recipe aSakizATAm     loop aSakeTAm       vidyut aSakizATAm  <-- loop≠V
+4 Saka~ luG atmane 2-3  recipe aSakiDvam      loop aSakaDvam      vidyut aSakiDvam  <-- loop≠V
+4 Saka~ luG atmane 1-1  recipe aSakizi        loop aSake          vidyut aSakizi  <-- loop≠V
+4 Saka~ luG atmane 1-2  recipe aSakizvahi     loop aSakAvahi      vidyut aSakizvahi  <-- loop≠V
+4 Saka~ luG atmane 1-3  recipe aSakizmahi     loop aSakAmahi      vidyut aSakizmahi  <-- loop≠V
+4 ranja~ liT atmane 3-1  recipe raraYje        loop reje           vidyut raraYje  <-- loop≠V
+4 ranja~ liT atmane 3-2  recipe raraYjAte      loop rejAte         vidyut raraYjAte  <-- loop≠V
+4 ranja~ liT atmane 2-1  recipe raraYjize      loop rejize         vidyut raraYjize  <-- loop≠V
+4 ranja~ liT atmane 2-2  recipe raraYjATe      loop rejATe         vidyut raraYjATe  <-- loop≠V
+4 ranja~ liT atmane 2-3  recipe raraYjiDve     loop rejiDve        vidyut raraYjiDve  <-- loop≠V
+4 ranja~ liT atmane 1-1  recipe raraYje        loop reje           vidyut raraYje  <-- loop≠V
+4 ranja~ liT atmane 1-2  recipe raraYjivahe    loop rejivahe       vidyut raraYjivahe  <-- loop≠V
+4 ranja~ liT atmane 1-3  recipe raraYjimahe    loop rejimahe       vidyut raraYjimahe  <-- loop≠V
+4 pluza~ luG parasmai 3-1  recipe aplozIt        loop aplozIt        vidyut apluzad,apluzat  <-- recipe≠V loop≠V
+4 pluza~ luG parasmai 3-2  recipe aplozizwAm     loop aplozizwAm     vidyut apluzatAm  <-- recipe≠V loop≠V
+4 pluza~ luG parasmai 3-3  recipe aplozizuH      loop aplozizuH      vidyut apluzan  <-- recipe≠V loop≠V
+4 pluza~ luG parasmai 2-1  recipe aplozIH        loop aplozIH        vidyut apluzaH  <-- recipe≠V loop≠V
+4 pluza~ luG parasmai 2-2  recipe aplozizwam     loop aplozizwam     vidyut apluzatam  <-- recipe≠V loop≠V
+4 pluza~ luG parasmai 2-3  recipe aplozizwa      loop aplozizwa      vidyut apluzata  <-- recipe≠V loop≠V
+4 pluza~ luG parasmai 1-1  recipe aplozizam      loop aplozizam      vidyut apluzam  <-- recipe≠V loop≠V
+4 pluza~ luG parasmai 1-2  recipe aplozizva      loop aplozizva      vidyut apluzAva  <-- recipe≠V loop≠V
+4 pluza~ luG parasmai 1-3  recipe aplozizma      loop aplozizma      vidyut apluzAma  <-- recipe≠V loop≠V
+4 vyuza~ liT parasmai 3-1  recipe vUvyoza        loop vUvyoza        vidyut vuvyoza  <-- recipe≠V loop≠V
+4 vyuza~ liT parasmai 2-1  recipe vUvyoziTa      loop vUvyoziTa      vidyut vuvyoziTa  <-- recipe≠V loop≠V
+4 vyuza~ liT parasmai 1-1  recipe vUvyoza        loop vUvyoza        vidyut vuvyoza  <-- recipe≠V loop≠V
+4 vyuza~ luG parasmai 3-1  recipe avyozIt        loop avyozIt        vidyut avyuzad,avyuzat  <-- recipe≠V loop≠V
+4 vyuza~ luG parasmai 3-2  recipe avyozizwAm     loop avyozizwAm     vidyut avyuzatAm  <-- recipe≠V loop≠V
+4 vyuza~ luG parasmai 3-3  recipe avyozizuH      loop avyozizuH      vidyut avyuzan  <-- recipe≠V loop≠V
+4 vyuza~ luG parasmai 2-1  recipe avyozIH        loop avyozIH        vidyut avyuzaH  <-- recipe≠V loop≠V
+4 vyuza~ luG parasmai 2-2  recipe avyozizwam     loop avyozizwam     vidyut avyuzatam  <-- recipe≠V loop≠V
+4 vyuza~ luG parasmai 2-3  recipe avyozizwa      loop avyozizwa      vidyut avyuzata  <-- recipe≠V loop≠V
+4 vyuza~ luG parasmai 1-1  recipe avyozizam      loop avyozizam      vidyut avyuzam  <-- recipe≠V loop≠V
+4 vyuza~ luG parasmai 1-2  recipe avyozizva      loop avyozizva      vidyut avyuzAva  <-- recipe≠V loop≠V
+4 vyuza~ luG parasmai 1-3  recipe avyozizma      loop avyozizma      vidyut avyuzAma  <-- recipe≠V loop≠V
+5 pf liT parasmai 2-1  recipe paparTa        loop papariTa       vidyut paparTa  <-- loop≠V
+5 qumiY liT parasmai 3-1  recipe mimAya         loop mimAya         vidyut mamO  <-- recipe≠V loop≠V
+5 qumiY liT parasmai 2-1  recipe mimayiTa       loop mimayiTa       vidyut mamATa,mamiTa  <-- recipe≠V loop≠V
+5 qumiY liT parasmai 1-1  recipe mimAya         loop mimAya         vidyut mamO  <-- recipe≠V loop≠V
+5 smf liT parasmai 2-1  recipe smasmarTa      loop sasmariTa      vidyut sasmarTa  <-- recipe≠V loop≠V
+5 spf liT parasmai 2-1  recipe spasparTa      loop paspariTa      vidyut pasparTa  <-- recipe≠V loop≠V
+5 rADa~ liT parasmai 3-2  recipe rarADatuH      loop rarADatuH      vidyut reDatuH  <-- recipe≠V loop≠V
+5 rADa~ liT parasmai 3-3  recipe rarADuH        loop rarADuH        vidyut reDuH  <-- recipe≠V loop≠V
+5 rADa~ liT parasmai 2-1  recipe rarADiTa       loop rarADiTa       vidyut reDiTa  <-- recipe≠V loop≠V
+5 rADa~ liT parasmai 2-2  recipe rarADaTuH      loop rarADaTuH      vidyut reDaTuH  <-- recipe≠V loop≠V
+5 rADa~ liT parasmai 2-3  recipe rarADa         loop rarADa         vidyut reDa  <-- recipe≠V loop≠V
+5 rADa~ liT parasmai 1-2  recipe rarADiva       loop rarADiva       vidyut reDiva  <-- recipe≠V loop≠V
+5 rADa~ liT parasmai 1-3  recipe rarADima       loop rarADima       vidyut reDima  <-- recipe≠V loop≠V
+5 stfY liT parasmai 2-1  recipe stastarTa      loop tastariTa      vidyut tastarTa  <-- recipe≠V loop≠V
+5 qumiY luG parasmai 3-2  recipe amEzwAm        loop amAstAm        vidyut amAsizwAm  <-- recipe≠V loop≠V
+5 qumiY luG parasmai 3-3  recipe amEzuH         loop amAsuH         vidyut amAsizuH  <-- recipe≠V loop≠V
+5 qumiY luG parasmai 2-2  recipe amEzwam        loop amAstam        vidyut amAsizwam  <-- recipe≠V loop≠V
+5 qumiY luG parasmai 2-3  recipe amEzwa         loop amAsta         vidyut amAsizwa  <-- recipe≠V loop≠V
+5 qumiY luG parasmai 1-1  recipe amEzam         loop amAsam         vidyut amAsizam  <-- recipe≠V loop≠V
+5 qumiY luG parasmai 1-2  recipe amEzva         loop amAsva         vidyut amAsizva  <-- recipe≠V loop≠V
+5 qumiY luG parasmai 1-3  recipe amEzma         loop amAsma         vidyut amAsizma  <-- recipe≠V loop≠V
+5 vfY liT parasmai 2-1  recipe vavarTa        loop vavarTa        vidyut vavariTa  <-- recipe≠V loop≠V
+6 Brasja~ AsIrliG atmane 3-1  recipe BradkzIzwa     loop BratkzIzwa     vidyut BarkzIzwa,BrakzIzwa  <-- recipe≠V loop≠V
+6 Brasja~ AsIrliG atmane 3-2  recipe BradkzIyAstAm  loop BratkzIyAstAm  vidyut BarkzIyAstAm,BrakzIyAstAm  <-- recipe≠V loop≠V
+6 Brasja~ AsIrliG atmane 3-3  recipe BradkzIran     loop BratkzIran     vidyut BarkzIran,BrakzIran  <-- recipe≠V loop≠V
+6 Brasja~ AsIrliG atmane 2-1  recipe BradkzIzWAH    loop BratkzIzWAH    vidyut BarkzIzWAH,BrakzIzWAH  <-- recipe≠V loop≠V
+6 Brasja~ AsIrliG atmane 2-2  recipe BradkzIyAsTAm  loop BratkzIyAsTAm  vidyut BarkzIyAsTAm,BrakzIyAsTAm  <-- recipe≠V loop≠V
+6 Brasja~ AsIrliG atmane 2-3  recipe BradkzIDvam    loop BratkzIDvam    vidyut BarkzIDvam,BrakzIDvam  <-- recipe≠V loop≠V
+6 Brasja~ AsIrliG atmane 1-1  recipe BradkzIya      loop BratkzIya      vidyut BarkzIya,BrakzIya  <-- recipe≠V loop≠V
+6 Brasja~ AsIrliG atmane 1-2  recipe BradkzIvahi    loop BratkzIvahi    vidyut BarkzIvahi,BrakzIvahi  <-- recipe≠V loop≠V
+6 Brasja~ AsIrliG atmane 1-3  recipe BradkzImahi    loop BratkzImahi    vidyut BarkzImahi,BrakzImahi  <-- recipe≠V loop≠V
+6 Brasja~ lRG parasmai 3-1  recipe aBradkzyat     loop aBratkzyat     vidyut aBarkzyad,aBarkzyat,aBrakzyad,aBrakzyat  <-- recipe≠V loop≠V
+6 Brasja~ lRG parasmai 3-2  recipe aBradkzyatAm   loop aBratkzyatAm   vidyut aBarkzyatAm,aBrakzyatAm  <-- recipe≠V loop≠V
+6 Brasja~ lRG parasmai 3-3  recipe aBradkzyan     loop aBratkzyan     vidyut aBarkzyan,aBrakzyan  <-- recipe≠V loop≠V
+6 Brasja~ lRG parasmai 2-1  recipe aBradkzyaH     loop aBratkzyaH     vidyut aBarkzyaH,aBrakzyaH  <-- recipe≠V loop≠V
+6 Brasja~ lRG parasmai 2-2  recipe aBradkzyatam   loop aBratkzyatam   vidyut aBarkzyatam,aBrakzyatam  <-- recipe≠V loop≠V
+6 Brasja~ lRG parasmai 2-3  recipe aBradkzyata    loop aBratkzyata    vidyut aBarkzyata,aBrakzyata  <-- recipe≠V loop≠V
+6 Brasja~ lRG parasmai 1-1  recipe aBradkzyam     loop aBratkzyam     vidyut aBarkzyam,aBrakzyam  <-- recipe≠V loop≠V
+6 Brasja~ lRG parasmai 1-2  recipe aBradkzyAva    loop aBratkzyAva    vidyut aBarkzyAva,aBrakzyAva  <-- recipe≠V loop≠V
+6 Brasja~ lRG parasmai 1-3  recipe aBradkzyAma    loop aBratkzyAma    vidyut aBarkzyAma,aBrakzyAma  <-- recipe≠V loop≠V
+6 Brasja~ lRG atmane 3-1  recipe aBradkzyata    loop aBratkzyata    vidyut aBarkzyata,aBrakzyata  <-- recipe≠V loop≠V
+6 Brasja~ lRG atmane 3-2  recipe aBradkzyetAm   loop aBratkzyetAm   vidyut aBarkzyetAm,aBrakzyetAm  <-- recipe≠V loop≠V
+6 Brasja~ lRG atmane 3-3  recipe aBradkzyanta   loop aBratkzyanta   vidyut aBarkzyanta,aBrakzyanta  <-- recipe≠V loop≠V
+6 Brasja~ lRG atmane 2-1  recipe aBradkzyaTAH   loop aBratkzyaTAH   vidyut aBarkzyaTAH,aBrakzyaTAH  <-- recipe≠V loop≠V
+6 Brasja~ lRG atmane 2-2  recipe aBradkzyeTAm   loop aBratkzyeTAm   vidyut aBarkzyeTAm,aBrakzyeTAm  <-- recipe≠V loop≠V
+6 Brasja~ lRG atmane 2-3  recipe aBradkzyaDvam  loop aBratkzyaDvam  vidyut aBarkzyaDvam,aBrakzyaDvam  <-- recipe≠V loop≠V
+6 Brasja~ lRG atmane 1-1  recipe aBradkzye      loop aBratkzye      vidyut aBarkzye,aBrakzye  <-- recipe≠V loop≠V
+6 Brasja~ lRG atmane 1-2  recipe aBradkzyAvahi  loop aBratkzyAvahi  vidyut aBarkzyAvahi,aBrakzyAvahi  <-- recipe≠V loop≠V
+6 Brasja~ lRG atmane 1-3  recipe aBradkzyAmahi  loop aBratkzyAmahi  vidyut aBarkzyAmahi,aBrakzyAmahi  <-- recipe≠V loop≠V
+5 zuY luG parasmai 3-1  recipe asOzIt         loop asOzIt         vidyut asAvId,asAvIt  <-- recipe≠V loop≠V
+5 zuY luG parasmai 3-2  recipe asOzwAm        loop asOzwAm        vidyut asAvizwAm  <-- recipe≠V loop≠V
+5 zuY luG parasmai 3-3  recipe asOzuH         loop asOzuH         vidyut asAvizuH  <-- recipe≠V loop≠V
+5 zuY luG parasmai 2-1  recipe asOzIH         loop asOzIH         vidyut asAvIH  <-- recipe≠V loop≠V
+5 zuY luG parasmai 2-2  recipe asOzwam        loop asOzwam        vidyut asAvizwam  <-- recipe≠V loop≠V
+5 zuY luG parasmai 2-3  recipe asOzwa         loop asOzwa         vidyut asAvizwa  <-- recipe≠V loop≠V
+5 zuY luG parasmai 1-1  recipe asOzam         loop asOzam         vidyut asAvizam  <-- recipe≠V loop≠V
+5 zuY luG parasmai 1-2  recipe asOzva         loop asOzva         vidyut asAvizva  <-- recipe≠V loop≠V
+5 zuY luG parasmai 1-3  recipe asOzma         loop asOzma         vidyut asAvizma  <-- recipe≠V loop≠V
+6 Brasja~ lRT atmane 3-1  recipe Bradkzyate     loop Bratkzyate     vidyut Barkzyate,Brakzyate  <-- recipe≠V loop≠V
+6 Brasja~ lRT atmane 3-2  recipe Bradkzyete     loop Bratkzyete     vidyut Barkzyete,Brakzyete  <-- recipe≠V loop≠V
+6 Brasja~ lRT atmane 3-3  recipe Bradkzyante    loop Bratkzyante    vidyut Barkzyante,Brakzyante  <-- recipe≠V loop≠V
+6 Brasja~ lRT atmane 2-1  recipe Bradkzyase     loop Bratkzyase     vidyut Barkzyase,Brakzyase  <-- recipe≠V loop≠V
+6 Brasja~ lRT atmane 2-2  recipe BradkzyeTe     loop BratkzyeTe     vidyut BarkzyeTe,BrakzyeTe  <-- recipe≠V loop≠V
+6 Brasja~ lRT atmane 2-3  recipe BradkzyaDve    loop BratkzyaDve    vidyut BarkzyaDve,BrakzyaDve  <-- recipe≠V loop≠V
+6 Brasja~ lRT atmane 1-1  recipe Bradkzye       loop Bratkzye       vidyut Barkzye,Brakzye  <-- recipe≠V loop≠V
+6 Brasja~ lRT atmane 1-2  recipe BradkzyAvahe   loop BratkzyAvahe   vidyut BarkzyAvahe,BrakzyAvahe  <-- recipe≠V loop≠V
+6 Brasja~ lRT atmane 1-3  recipe BradkzyAmahe   loop BratkzyAmahe   vidyut BarkzyAmahe,BrakzyAmahe  <-- recipe≠V loop≠V
+6 Brasja~ lRT parasmai 3-1  recipe Bradkzyati     loop Bratkzyati     vidyut Barkzyati,Brakzyati  <-- recipe≠V loop≠V
+6 Brasja~ lRT parasmai 3-2  recipe BradkzyataH    loop BratkzyataH    vidyut BarkzyataH,BrakzyataH  <-- recipe≠V loop≠V
+6 Brasja~ lRT parasmai 3-3  recipe Bradkzyanti    loop Bratkzyanti    vidyut Barkzyanti,Brakzyanti  <-- recipe≠V loop≠V
+6 Brasja~ lRT parasmai 2-1  recipe Bradkzyasi     loop Bratkzyasi     vidyut Barkzyasi,Brakzyasi  <-- recipe≠V loop≠V
+6 Brasja~ lRT parasmai 2-2  recipe BradkzyaTaH    loop BratkzyaTaH    vidyut BarkzyaTaH,BrakzyaTaH  <-- recipe≠V loop≠V
+6 Brasja~ lRT parasmai 2-3  recipe BradkzyaTa     loop BratkzyaTa     vidyut BarkzyaTa,BrakzyaTa  <-- recipe≠V loop≠V
+6 Brasja~ lRT parasmai 1-1  recipe BradkzyAmi     loop BratkzyAmi     vidyut BarkzyAmi,BrakzyAmi  <-- recipe≠V loop≠V
+6 Brasja~ lRT parasmai 1-2  recipe BradkzyAvaH    loop BratkzyAvaH    vidyut BarkzyAvaH,BrakzyAvaH  <-- recipe≠V loop≠V
+6 Brasja~ lRT parasmai 1-3  recipe BradkzyAmaH    loop BratkzyAmaH    vidyut BarkzyAmaH,BrakzyAmaH  <-- recipe≠V loop≠V
+6 Brasja~ luT parasmai 3-1  recipe BradktA        loop BratktA        vidyut BarzwA,BrazwA  <-- recipe≠V loop≠V
+6 Brasja~ luT parasmai 3-2  recipe BradktArO      loop BratktArO      vidyut BarzwArO,BrazwArO  <-- recipe≠V loop≠V
+6 Brasja~ luT parasmai 3-3  recipe BradktAraH     loop BratktAraH     vidyut BarzwAraH,BrazwAraH  <-- recipe≠V loop≠V
+6 Brasja~ luT parasmai 2-1  recipe BradktAsi      loop BratktAsi      vidyut BarzwAsi,BrazwAsi  <-- recipe≠V loop≠V
+6 Brasja~ luT parasmai 2-2  recipe BradktAsTaH    loop BratktAsTaH    vidyut BarzwAsTaH,BrazwAsTaH  <-- recipe≠V loop≠V
+6 Brasja~ luT parasmai 2-3  recipe BradktAsTa     loop BratktAsTa     vidyut BarzwAsTa,BrazwAsTa  <-- recipe≠V loop≠V
+6 Brasja~ luT parasmai 1-1  recipe BradktAsmi     loop BratktAsmi     vidyut BarzwAsmi,BrazwAsmi  <-- recipe≠V loop≠V
+6 Brasja~ luT parasmai 1-2  recipe BradktAsvaH    loop BratktAsvaH    vidyut BarzwAsvaH,BrazwAsvaH  <-- recipe≠V loop≠V
+6 Brasja~ luT parasmai 1-3  recipe BradktAsmaH    loop BratktAsmaH    vidyut BarzwAsmaH,BrazwAsmaH  <-- recipe≠V loop≠V
+6 Brasja~ luT atmane 3-1  recipe BradktA        loop BratktA        vidyut BarzwA,BrazwA  <-- recipe≠V loop≠V
+6 Brasja~ luT atmane 3-2  recipe BradktArO      loop BratktArO      vidyut BarzwArO,BrazwArO  <-- recipe≠V loop≠V
+6 Brasja~ luT atmane 3-3  recipe BradktAraH     loop BratktAraH     vidyut BarzwAraH,BrazwAraH  <-- recipe≠V loop≠V
+6 Brasja~ luT atmane 2-1  recipe BradktAse      loop BratktAse      vidyut BarzwAse,BrazwAse  <-- recipe≠V loop≠V
+6 Brasja~ luT atmane 2-2  recipe BradktAsATe    loop BratktAsATe    vidyut BarzwAsATe,BrazwAsATe  <-- recipe≠V loop≠V
+6 Brasja~ luT atmane 2-3  recipe BradktADve     loop BratktADve     vidyut BarzwADve,BrazwADve  <-- recipe≠V loop≠V
+6 Brasja~ luT atmane 1-1  recipe BradktAhe      loop BratktAhe      vidyut BarzwAhe,BrazwAhe  <-- recipe≠V loop≠V
+6 Brasja~ luT atmane 1-2  recipe BradktAsvahe   loop BratktAsvahe   vidyut BarzwAsvahe,BrazwAsvahe  <-- recipe≠V loop≠V
+6 Brasja~ luT atmane 1-3  recipe BradktAsmahe   loop BratktAsmahe   vidyut BarzwAsmahe,BrazwAsmahe  <-- recipe≠V loop≠V
+6 Brasja~ luG parasmai 3-1  recipe aBrAdkzIt      loop aBrAtkzIt      vidyut aBArkzId,aBArkzIt,aBrAkzId,aBrAkzIt  <-- recipe≠V loop≠V
+6 Brasja~ luG parasmai 3-2  recipe aBrAdktAm      loop aBrAtktAm      vidyut aBArzwAm,aBrAzwAm  <-- recipe≠V loop≠V
+6 Brasja~ luG parasmai 3-3  recipe aBrAdkzuH      loop aBrAtkzuH      vidyut aBArkzuH,aBrAkzuH  <-- recipe≠V loop≠V
+6 Brasja~ luG parasmai 2-1  recipe aBrAdkzIH      loop aBrAtkzIH      vidyut aBArkzIH,aBrAkzIH  <-- recipe≠V loop≠V
+6 Brasja~ luG parasmai 2-2  recipe aBrAdktam      loop aBrAtktam      vidyut aBArzwam,aBrAzwam  <-- recipe≠V loop≠V
+6 Brasja~ luG parasmai 2-3  recipe aBrAdkta       loop aBrAtkta       vidyut aBArzwa,aBrAzwa  <-- recipe≠V loop≠V
+6 Brasja~ luG parasmai 1-1  recipe aBrAdkzam      loop aBrAtkzam      vidyut aBArkzam,aBrAkzam  <-- recipe≠V loop≠V
+6 Brasja~ luG parasmai 1-2  recipe aBrAdkzva      loop aBrAtkzva      vidyut aBArkzva,aBrAkzva  <-- recipe≠V loop≠V
+6 Brasja~ luG parasmai 1-3  recipe aBrAdkzma      loop aBrAtkzma      vidyut aBArkzma,aBrAkzma  <-- recipe≠V loop≠V
+6 Brasja~ luG atmane 3-1  recipe aBradkta       loop aBratkta       vidyut aBarzwa,aBrazwa  <-- recipe≠V loop≠V
+6 Brasja~ luG atmane 3-2  recipe aBradkzAtAm    loop aBratkzAtAm    vidyut aBarkzAtAm,aBrakzAtAm  <-- recipe≠V loop≠V
+6 Brasja~ luG atmane 3-3  recipe aBradkzata     loop aBratkzata     vidyut aBarkzata,aBrakzata  <-- recipe≠V loop≠V
+6 Brasja~ luG atmane 2-1  recipe aBradkTAH      loop aBratkTAH      vidyut aBarzWAH,aBrazWAH  <-- recipe≠V loop≠V
+6 Brasja~ luG atmane 2-2  recipe aBradkzATAm    loop aBratkzATAm    vidyut aBarkzATAm,aBrakzATAm  <-- recipe≠V loop≠V
+6 Brasja~ luG atmane 2-3  recipe aBradgDvam     loop aBradgDvam     vidyut aBarQvam,aBarqQvam,aBraqQvam  <-- recipe≠V loop≠V
+6 Brasja~ luG atmane 1-1  recipe aBradkzi       loop aBratkzi       vidyut aBarkzi,aBrakzi  <-- recipe≠V loop≠V
+6 Brasja~ luG atmane 1-2  recipe aBradkzvahi    loop aBratkzvahi    vidyut aBarkzvahi,aBrakzvahi  <-- recipe≠V loop≠V
+6 Brasja~ luG atmane 1-3  recipe aBradkzmahi    loop aBratkzmahi    vidyut aBarkzmahi,aBrakzmahi  <-- recipe≠V loop≠V
+6 Brasja~ liT atmane 3-1  recipe badgBrajje     loop baBfjje        vidyut baBarje,baBrajje  <-- recipe≠V loop≠V
+6 Brasja~ liT atmane 3-2  recipe badgBrajjAte   loop baBfjjAte      vidyut baBarjAte,baBrajjAte  <-- recipe≠V loop≠V
+6 Brasja~ liT atmane 2-1  recipe badgBrajjize   loop baBfjjize      vidyut baBarjize,baBrajjize  <-- recipe≠V loop≠V
+6 Brasja~ liT atmane 2-2  recipe badgBrajjATe   loop baBfjjATe      vidyut baBarjATe,baBrajjATe  <-- recipe≠V loop≠V
+6 Brasja~ liT atmane 2-3  recipe badgBrajjiDve  loop baBfjjiDve     vidyut baBarjiDve,baBrajjiDve  <-- recipe≠V loop≠V
+6 Brasja~ liT atmane 1-1  recipe badgBrajje     loop baBfjje        vidyut baBarje,baBrajje  <-- recipe≠V loop≠V
+6 Brasja~ liT atmane 1-2  recipe badgBrajjivahe loop baBfjjivahe    vidyut baBarjivahe,baBrajjivahe  <-- recipe≠V loop≠V
+6 Brasja~ liT atmane 1-3  recipe badgBrajjimahe loop baBfjjimahe    vidyut baBarjimahe,baBrajjimahe  <-- recipe≠V loop≠V
+6 diSa~ luG atmane 3-2  recipe adikzAtAm      loop adikzetAm      vidyut adikzAtAm  <-- loop≠V
+6 diSa~ luG atmane 2-2  recipe adikzATAm      loop adikzeTAm      vidyut adikzATAm  <-- loop≠V
+6 diSa~ luG atmane 1-1  recipe adikzai        loop adikze         vidyut adikzi  <-- recipe≠V loop≠V
+6 gurI~ AsIrliG atmane 3-1  recipe gurizIzwa      loop gurizIzwa      vidyut gorizIzwa  <-- recipe≠V loop≠V
+6 gurI~ AsIrliG atmane 3-2  recipe gurizIyAstAm   loop gurizIyAstAm   vidyut gorizIyAstAm  <-- recipe≠V loop≠V
+6 gurI~ AsIrliG atmane 3-3  recipe gurizIran      loop gurizIran      vidyut gorizIran  <-- recipe≠V loop≠V
+6 gurI~ AsIrliG atmane 2-1  recipe gurizIzWAH     loop gurizIzWAH     vidyut gorizIzWAH  <-- recipe≠V loop≠V
+6 gurI~ AsIrliG atmane 2-2  recipe gurizIyAsTAm   loop gurizIyAsTAm   vidyut gorizIyAsTAm  <-- recipe≠V loop≠V
+6 gurI~ AsIrliG atmane 2-3  recipe gurizIDvam     loop gurizIDvam     vidyut gorizIDvam,gorizIQvam  <-- recipe≠V loop≠V
+6 gurI~ AsIrliG atmane 1-1  recipe gurizIya       loop gurizIya       vidyut gorizIya  <-- recipe≠V loop≠V
+6 gurI~ AsIrliG atmane 1-2  recipe gurizIvahi     loop gurizIvahi     vidyut gorizIvahi  <-- recipe≠V loop≠V
+6 gurI~ AsIrliG atmane 1-3  recipe gurizImahi     loop gurizImahi     vidyut gorizImahi  <-- recipe≠V loop≠V
+6 gurI~ lRG atmane 3-1  recipe agurizyata     loop agurizyata     vidyut agorizyata  <-- recipe≠V loop≠V
+6 gurI~ lRG atmane 3-2  recipe agurizyetAm    loop agurizyetAm    vidyut agorizyetAm  <-- recipe≠V loop≠V
+6 gurI~ lRG atmane 3-3  recipe agurizyanta    loop agurizyanta    vidyut agorizyanta  <-- recipe≠V loop≠V
+6 gurI~ lRG atmane 2-1  recipe agurizyaTAH    loop agurizyaTAH    vidyut agorizyaTAH  <-- recipe≠V loop≠V
+6 gurI~ lRG atmane 2-2  recipe agurizyeTAm    loop agurizyeTAm    vidyut agorizyeTAm  <-- recipe≠V loop≠V
+6 gurI~ lRG atmane 2-3  recipe agurizyaDvam   loop agurizyaDvam   vidyut agorizyaDvam  <-- recipe≠V loop≠V
+6 gurI~ lRG atmane 1-1  recipe agurizye       loop agurizye       vidyut agorizye  <-- recipe≠V loop≠V
+6 gurI~ lRG atmane 1-2  recipe agurizyAvahi   loop agurizyAvahi   vidyut agorizyAvahi  <-- recipe≠V loop≠V
+6 gurI~ lRG atmane 1-3  recipe agurizyAmahi   loop agurizyAmahi   vidyut agorizyAmahi  <-- recipe≠V loop≠V
+6 gurI~ lRT atmane 3-1  recipe gurizyate      loop gurizyate      vidyut gorizyate  <-- recipe≠V loop≠V
+6 gurI~ lRT atmane 3-2  recipe gurizyete      loop gurizyete      vidyut gorizyete  <-- recipe≠V loop≠V
+6 gurI~ lRT atmane 3-3  recipe gurizyante     loop gurizyante     vidyut gorizyante  <-- recipe≠V loop≠V
+6 gurI~ lRT atmane 2-1  recipe gurizyase      loop gurizyase      vidyut gorizyase  <-- recipe≠V loop≠V
+6 gurI~ lRT atmane 2-2  recipe gurizyeTe      loop gurizyeTe      vidyut gorizyeTe  <-- recipe≠V loop≠V
+6 gurI~ lRT atmane 2-3  recipe gurizyaDve     loop gurizyaDve     vidyut gorizyaDve  <-- recipe≠V loop≠V
+6 gurI~ lRT atmane 1-1  recipe gurizye        loop gurizye        vidyut gorizye  <-- recipe≠V loop≠V
+6 gurI~ lRT atmane 1-2  recipe gurizyAvahe    loop gurizyAvahe    vidyut gorizyAvahe  <-- recipe≠V loop≠V
+6 gurI~ lRT atmane 1-3  recipe gurizyAmahe    loop gurizyAmahe    vidyut gorizyAmahe  <-- recipe≠V loop≠V
+6 gurI~ luT atmane 3-1  recipe guritA         loop guritA         vidyut goritA  <-- recipe≠V loop≠V
+6 gurI~ luT atmane 3-2  recipe guritArO       loop guritArO       vidyut goritArO  <-- recipe≠V loop≠V
+6 gurI~ luT atmane 3-3  recipe guritAraH      loop guritAraH      vidyut goritAraH  <-- recipe≠V loop≠V
+6 gurI~ luT atmane 2-1  recipe guritAse       loop guritAse       vidyut goritAse  <-- recipe≠V loop≠V
+6 gurI~ luT atmane 2-2  recipe guritAsATe     loop guritAsATe     vidyut goritAsATe  <-- recipe≠V loop≠V
+6 gurI~ luT atmane 2-3  recipe guritADve      loop guritADve      vidyut goritADve  <-- recipe≠V loop≠V
+6 gurI~ luT atmane 1-1  recipe guritAhe       loop guritAhe       vidyut goritAhe  <-- recipe≠V loop≠V
+6 gurI~ luT atmane 1-2  recipe guritAsvahe    loop guritAsvahe    vidyut goritAsvahe  <-- recipe≠V loop≠V
+6 gurI~ luT atmane 1-3  recipe guritAsmahe    loop guritAsmahe    vidyut goritAsmahe  <-- recipe≠V loop≠V
+6 kUN AsIrliG atmane 3-1  recipe kUizIzwa       loop kuvizIzwa      vidyut kavizIzwa  <-- recipe≠V loop≠V
+6 kUN AsIrliG atmane 3-2  recipe kUizIyAstAm    loop kuvizIyAstAm   vidyut kavizIyAstAm  <-- recipe≠V loop≠V
+6 kUN AsIrliG atmane 3-3  recipe kUizIran       loop kuvizIran      vidyut kavizIran  <-- recipe≠V loop≠V
+6 kUN AsIrliG atmane 2-1  recipe kUizIzWAH      loop kuvizIzWAH     vidyut kavizIzWAH  <-- recipe≠V loop≠V
+6 kUN AsIrliG atmane 2-2  recipe kUizIyAsTAm    loop kuvizIyAsTAm   vidyut kavizIyAsTAm  <-- recipe≠V loop≠V
+6 kUN AsIrliG atmane 2-3  recipe kUizIDvam      loop kuvizIDvam     vidyut kavizIDvam,kavizIQvam  <-- recipe≠V loop≠V
+6 kUN AsIrliG atmane 1-1  recipe kUizIya        loop kuvizIya       vidyut kavizIya  <-- recipe≠V loop≠V
+6 kUN AsIrliG atmane 1-2  recipe kUizIvahi      loop kuvizIvahi     vidyut kavizIvahi  <-- recipe≠V loop≠V
+6 kUN AsIrliG atmane 1-3  recipe kUizImahi      loop kuvizImahi     vidyut kavizImahi  <-- recipe≠V loop≠V
+6 gurI~ luG atmane 3-1  recipe agurizwa       loop agurizwa       vidyut agorizwa  <-- recipe≠V loop≠V
+6 gurI~ luG atmane 3-2  recipe agurizAtAm     loop agurizAtAm     vidyut agorizAtAm  <-- recipe≠V loop≠V
+6 gurI~ luG atmane 3-3  recipe agurizata      loop agurizata      vidyut agorizata  <-- recipe≠V loop≠V
+6 gurI~ luG atmane 2-1  recipe agurizWAH      loop agurizWAH      vidyut agorizWAH  <-- recipe≠V loop≠V
+6 gurI~ luG atmane 2-2  recipe agurizATAm     loop agurizATAm     vidyut agorizATAm  <-- recipe≠V loop≠V
+6 gurI~ luG atmane 2-3  recipe aguriDvam      loop aguriDvam      vidyut agoriDvam,agoriQvam  <-- recipe≠V loop≠V
+6 gurI~ luG atmane 1-1  recipe agurizi        loop agurizi        vidyut agorizi  <-- recipe≠V loop≠V
+6 gurI~ luG atmane 1-2  recipe agurizvahi     loop agurizvahi     vidyut agorizvahi  <-- recipe≠V loop≠V
+6 gurI~ luG atmane 1-3  recipe agurizmahi     loop agurizmahi     vidyut agorizmahi  <-- recipe≠V loop≠V
+6 kUN lRG atmane 3-1  recipe akUizyata      loop akuvizyata     vidyut akavizyata  <-- recipe≠V loop≠V
+6 kUN lRG atmane 3-2  recipe akUizyetAm     loop akuvizyetAm    vidyut akavizyetAm  <-- recipe≠V loop≠V
+6 kUN lRG atmane 3-3  recipe akUizyanta     loop akuvizyanta    vidyut akavizyanta  <-- recipe≠V loop≠V
+6 kUN lRG atmane 2-1  recipe akUizyaTAH     loop akuvizyaTAH    vidyut akavizyaTAH  <-- recipe≠V loop≠V
+6 kUN lRG atmane 2-2  recipe akUizyeTAm     loop akuvizyeTAm    vidyut akavizyeTAm  <-- recipe≠V loop≠V
+6 kUN lRG atmane 2-3  recipe akUizyaDvam    loop akuvizyaDvam   vidyut akavizyaDvam  <-- recipe≠V loop≠V
+6 kUN lRG atmane 1-1  recipe akUizye        loop akuvizye       vidyut akavizye  <-- recipe≠V loop≠V
+6 kUN lRG atmane 1-2  recipe akUizyAvahi    loop akuvizyAvahi   vidyut akavizyAvahi  <-- recipe≠V loop≠V
+6 kUN lRG atmane 1-3  recipe akUizyAmahi    loop akuvizyAmahi   vidyut akavizyAmahi  <-- recipe≠V loop≠V
+6 kUN lRT atmane 3-1  recipe kUizyate       loop kuvizyate      vidyut kavizyate  <-- recipe≠V loop≠V
+6 kUN lRT atmane 3-2  recipe kUizyete       loop kuvizyete      vidyut kavizyete  <-- recipe≠V loop≠V
+6 kUN lRT atmane 3-3  recipe kUizyante      loop kuvizyante     vidyut kavizyante  <-- recipe≠V loop≠V
+6 kUN lRT atmane 2-1  recipe kUizyase       loop kuvizyase      vidyut kavizyase  <-- recipe≠V loop≠V
+6 kUN lRT atmane 2-2  recipe kUizyeTe       loop kuvizyeTe      vidyut kavizyeTe  <-- recipe≠V loop≠V
+6 kUN lRT atmane 2-3  recipe kUizyaDve      loop kuvizyaDve     vidyut kavizyaDve  <-- recipe≠V loop≠V
+6 kUN lRT atmane 1-1  recipe kUizye         loop kuvizye        vidyut kavizye  <-- recipe≠V loop≠V
+6 kUN lRT atmane 1-2  recipe kUizyAvahe     loop kuvizyAvahe    vidyut kavizyAvahe  <-- recipe≠V loop≠V
+6 kUN lRT atmane 1-3  recipe kUizyAmahe     loop kuvizyAmahe    vidyut kavizyAmahe  <-- recipe≠V loop≠V
+6 kUN luT atmane 3-1  recipe kUitA          loop kuvitA         vidyut kavitA  <-- recipe≠V loop≠V
+6 kUN luT atmane 3-2  recipe kUitArO        loop kuvitArO       vidyut kavitArO  <-- recipe≠V loop≠V
+6 kUN luT atmane 3-3  recipe kUitAraH       loop kuvitAraH      vidyut kavitAraH  <-- recipe≠V loop≠V
+6 kUN luT atmane 2-1  recipe kUitAse        loop kuvitAse       vidyut kavitAse  <-- recipe≠V loop≠V
+6 kUN luT atmane 2-2  recipe kUitAsATe      loop kuvitAsATe     vidyut kavitAsATe  <-- recipe≠V loop≠V
+6 kUN luT atmane 2-3  recipe kUitADve       loop kuvitADve      vidyut kavitADve  <-- recipe≠V loop≠V
+6 kUN luT atmane 1-1  recipe kUitAhe        loop kuvitAhe       vidyut kavitAhe  <-- recipe≠V loop≠V
+6 kUN luT atmane 1-2  recipe kUitAsvahe     loop kuvitAsvahe    vidyut kavitAsvahe  <-- recipe≠V loop≠V
+6 kUN luT atmane 1-3  recipe kUitAsmahe     loop kuvitAsmahe    vidyut kavitAsmahe  <-- recipe≠V loop≠V
+6 kfza~ luG atmane 3-1  recipe akfkzwa        loop akfkzwa        vidyut akfkzata,akfzwa  <-- recipe≠V loop≠V
+6 kfza~ luG atmane 2-1  recipe akfkzWAH       loop akfkzWAH       vidyut akfkzaTAH,akfzWAH  <-- recipe≠V loop≠V
+6 kfza~ luG parasmai 3-2  recipe akarkzwAm      loop akArkzwAm      vidyut akArzwAm,akfkzatAm,akrAzwAm  <-- recipe≠V loop≠V
+6 kfza~ luG parasmai 2-2  recipe akarkzwam      loop akArkzwam      vidyut akArzwam,akfkzatam,akrAzwam  <-- recipe≠V loop≠V
+6 kfza~ luG parasmai 2-3  recipe akarkzwa       loop akArkzwa       vidyut akArzwa,akfkzata,akrAzwa  <-- recipe≠V loop≠V
+6 kuN AsIrliG atmane 3-1  recipe kuzIzwa        loop kuzIzwa        vidyut kozIzwa  <-- recipe≠V loop≠V
+6 kuN AsIrliG atmane 3-2  recipe kuzIyAstAm     loop kuzIyAstAm     vidyut kozIyAstAm  <-- recipe≠V loop≠V
+6 kuN AsIrliG atmane 3-3  recipe kuzIran        loop kuzIran        vidyut kozIran  <-- recipe≠V loop≠V
+6 kuN AsIrliG atmane 2-1  recipe kuzIzWAH       loop kuzIzWAH       vidyut kozIzWAH  <-- recipe≠V loop≠V
+6 kuN AsIrliG atmane 2-2  recipe kuzIyAsTAm     loop kuzIyAsTAm     vidyut kozIyAsTAm  <-- recipe≠V loop≠V
+6 kuN AsIrliG atmane 2-3  recipe kuzIDvam       loop kuzIQvam       vidyut kozIQvam  <-- recipe≠V loop≠V
+6 kuN AsIrliG atmane 1-1  recipe kuzIya         loop kuzIya         vidyut kozIya  <-- recipe≠V loop≠V
+6 kuN AsIrliG atmane 1-2  recipe kuzIvahi       loop kuzIvahi       vidyut kozIvahi  <-- recipe≠V loop≠V
+6 kuN AsIrliG atmane 1-3  recipe kuzImahi       loop kuzImahi       vidyut kozImahi  <-- recipe≠V loop≠V
+6 kUN luG atmane 3-1  recipe akvizwa        loop akuvizwa       vidyut akavizwa  <-- recipe≠V loop≠V
+6 kUN luG atmane 3-2  recipe akvizAtAm      loop akuvizAtAm     vidyut akavizAtAm  <-- recipe≠V loop≠V
+6 kUN luG atmane 3-3  recipe akvizata       loop akuvizata      vidyut akavizata  <-- recipe≠V loop≠V
+6 kUN luG atmane 2-1  recipe akvizWAH       loop akuvizWAH      vidyut akavizWAH  <-- recipe≠V loop≠V
+6 kUN luG atmane 2-2  recipe akvizATAm      loop akuvizATAm     vidyut akavizATAm  <-- recipe≠V loop≠V
+6 kUN luG atmane 2-3  recipe akviDvam       loop akuviDvam      vidyut akaviDvam,akaviQvam  <-- recipe≠V loop≠V
+6 kUN luG atmane 1-1  recipe akvizi         loop akuvizi        vidyut akavizi  <-- recipe≠V loop≠V
+6 kUN luG atmane 1-2  recipe akvizvahi      loop akuvizvahi     vidyut akavizvahi  <-- recipe≠V loop≠V
+6 kUN luG atmane 1-3  recipe akvizmahi      loop akuvizmahi     vidyut akavizmahi  <-- recipe≠V loop≠V
+6 kuN lRT atmane 3-1  recipe kuzyate        loop kuzyate        vidyut kozyate  <-- recipe≠V loop≠V
+6 kuN lRT atmane 3-2  recipe kuzyete        loop kuzyete        vidyut kozyete  <-- recipe≠V loop≠V
+6 kuN lRT atmane 3-3  recipe kuzyante       loop kuzyante       vidyut kozyante  <-- recipe≠V loop≠V
+6 kuN lRT atmane 2-1  recipe kuzyase        loop kuzyase        vidyut kozyase  <-- recipe≠V loop≠V
+6 kuN lRT atmane 2-2  recipe kuzyeTe        loop kuzyeTe        vidyut kozyeTe  <-- recipe≠V loop≠V
+6 kuN lRT atmane 2-3  recipe kuzyaDve       loop kuzyaDve       vidyut kozyaDve  <-- recipe≠V loop≠V
+6 kuN lRT atmane 1-1  recipe kuzye          loop kuzye          vidyut kozye  <-- recipe≠V loop≠V
+6 kuN lRT atmane 1-2  recipe kuzyAvahe      loop kuzyAvahe      vidyut kozyAvahe  <-- recipe≠V loop≠V
+6 kuN lRT atmane 1-3  recipe kuzyAmahe      loop kuzyAmahe      vidyut kozyAmahe  <-- recipe≠V loop≠V
+6 kuN lRG atmane 3-1  recipe akuzyata       loop akuzyata       vidyut akozyata  <-- recipe≠V loop≠V
+6 kuN lRG atmane 3-2  recipe akuzyetAm      loop akuzyetAm      vidyut akozyetAm  <-- recipe≠V loop≠V
+6 kuN lRG atmane 3-3  recipe akuzyanta      loop akuzyanta      vidyut akozyanta  <-- recipe≠V loop≠V
+6 kuN lRG atmane 2-1  recipe akuzyaTAH      loop akuzyaTAH      vidyut akozyaTAH  <-- recipe≠V loop≠V
+6 kuN lRG atmane 2-2  recipe akuzyeTAm      loop akuzyeTAm      vidyut akozyeTAm  <-- recipe≠V loop≠V
+6 kuN lRG atmane 2-3  recipe akuzyaDvam     loop akuzyaDvam     vidyut akozyaDvam  <-- recipe≠V loop≠V
+6 kuN lRG atmane 1-1  recipe akuzye         loop akuzye         vidyut akozye  <-- recipe≠V loop≠V
+6 kuN lRG atmane 1-2  recipe akuzyAvahi     loop akuzyAvahi     vidyut akozyAvahi  <-- recipe≠V loop≠V
+6 kuN lRG atmane 1-3  recipe akuzyAmahi     loop akuzyAmahi     vidyut akozyAmahi  <-- recipe≠V loop≠V
+6 kuN luT atmane 3-1  recipe kutA           loop kutA           vidyut kotA  <-- recipe≠V loop≠V
+6 kuN luT atmane 3-2  recipe kutArO         loop kutArO         vidyut kotArO  <-- recipe≠V loop≠V
+6 kuN luT atmane 3-3  recipe kutAraH        loop kutAraH        vidyut kotAraH  <-- recipe≠V loop≠V
+6 kuN luT atmane 2-1  recipe kutAse         loop kutAse         vidyut kotAse  <-- recipe≠V loop≠V
+6 kuN luT atmane 2-2  recipe kutAsATe       loop kutAsATe       vidyut kotAsATe  <-- recipe≠V loop≠V
+6 kuN luT atmane 2-3  recipe kutADve        loop kutADve        vidyut kotADve  <-- recipe≠V loop≠V
+6 kuN luT atmane 1-1  recipe kutAhe         loop kutAhe         vidyut kotAhe  <-- recipe≠V loop≠V
+6 kuN luT atmane 1-2  recipe kutAsvahe      loop kutAsvahe      vidyut kotAsvahe  <-- recipe≠V loop≠V
+6 kuN luT atmane 1-3  recipe kutAsmahe      loop kutAsmahe      vidyut kotAsmahe  <-- recipe≠V loop≠V
+6 kuN luG atmane 3-1  recipe akuta          loop akuta          vidyut akozwa  <-- recipe≠V loop≠V
+6 kuN luG atmane 3-2  recipe akuzAtAm       loop akuzAtAm       vidyut akozAtAm  <-- recipe≠V loop≠V
+6 kuN luG atmane 3-3  recipe akuzata        loop akuzata        vidyut akozata  <-- recipe≠V loop≠V
+6 kuN luG atmane 2-1  recipe akuTAH         loop akuTAH         vidyut akozWAH  <-- recipe≠V loop≠V
+6 kuN luG atmane 2-2  recipe akuzATAm       loop akuzATAm       vidyut akozATAm  <-- recipe≠V loop≠V
+6 kuN luG atmane 2-3  recipe akuDvam        loop akuQvam        vidyut akoQvam  <-- recipe≠V loop≠V
+6 kuN luG atmane 1-1  recipe akuzi          loop akuzi          vidyut akozi  <-- recipe≠V loop≠V
+6 kuN luG atmane 1-2  recipe akuzvahi       loop akuzvahi       vidyut akozvahi  <-- recipe≠V loop≠V
+6 kuN luG atmane 1-3  recipe akuzmahi       loop akuzmahi       vidyut akozmahi  <-- recipe≠V loop≠V
+6 lupx~ luG atmane 3-1  recipe alupta         loop alupata        vidyut alupta  <-- loop≠V
+6 lupx~ luG atmane 3-2  recipe alupsAtAm      loop alupetAm       vidyut alupsAtAm  <-- loop≠V
+6 lupx~ luG atmane 3-3  recipe alupsata       loop alupanta       vidyut alupsata  <-- loop≠V
+6 lupx~ luG atmane 2-1  recipe alupTAH        loop alupaTAH       vidyut alupTAH  <-- loop≠V
+6 lupx~ luG atmane 2-2  recipe alupsATAm      loop alupeTAm       vidyut alupsATAm  <-- loop≠V
+6 lupx~ luG atmane 2-3  recipe alubDvam       loop alupaDvam      vidyut alubDvam  <-- loop≠V
+6 lupx~ luG atmane 1-1  recipe alupsi         loop alupe          vidyut alupsi  <-- loop≠V
+6 lupx~ luG atmane 1-2  recipe alupsvahi      loop alupAvahi      vidyut alupsvahi  <-- loop≠V
+6 lupx~ luG atmane 1-3  recipe alupsmahi      loop alupAmahi      vidyut alupsmahi  <-- loop≠V
+7 hisi~ laG parasmai 3-1  recipe ahinaH         loop ahinaH         vidyut ahinad,ahinat  <-- recipe≠V loop≠V
+7 anjU~ laG parasmai 3-1  recipe Anagt          loop Anagt          vidyut Anag,Anak  <-- recipe≠V loop≠V
+7 anjU~ laG parasmai 2-1  recipe AnagH          loop AnagH          vidyut Anag,Anak  <-- recipe≠V loop≠V
+6 mucx~ luG atmane 3-1  recipe amukta         loop amucata        vidyut amukta  <-- loop≠V
+6 mucx~ luG atmane 3-2  recipe amukzAtAm      loop amucetAm       vidyut amukzAtAm  <-- loop≠V
+6 mucx~ luG atmane 3-3  recipe amukzata       loop amucanta       vidyut amukzata  <-- loop≠V
+6 mucx~ luG atmane 2-1  recipe amukTAH        loop amucaTAH       vidyut amukTAH  <-- loop≠V
+6 mucx~ luG atmane 2-2  recipe amukzATAm      loop amuceTAm       vidyut amukzATAm  <-- loop≠V
+6 mucx~ luG atmane 2-3  recipe amugDvam       loop amucaDvam      vidyut amugDvam  <-- loop≠V
+6 mucx~ luG atmane 1-1  recipe amukzi         loop amuce          vidyut amukzi  <-- loop≠V
+6 mucx~ luG atmane 1-2  recipe amukzvahi      loop amucAvahi      vidyut amukzvahi  <-- loop≠V
+6 mucx~ luG atmane 1-3  recipe amukzmahi      loop amucAmahi      vidyut amukzmahi  <-- loop≠V
+6 vidx~ luG atmane 3-1  recipe avitta         loop avidata        vidyut avedizwa,avitta  <-- loop≠V
+6 vidx~ luG atmane 3-2  recipe avitsAtAm      loop avidetAm       vidyut avedizAtAm,avitsAtAm  <-- loop≠V
+6 vidx~ luG atmane 3-3  recipe avitsata       loop avidanta       vidyut avedizata,avitsata  <-- loop≠V
+6 vidx~ luG atmane 2-1  recipe avitTAH        loop avidaTAH       vidyut avedizWAH,avitTAH  <-- loop≠V
+6 vidx~ luG atmane 2-2  recipe avitsATAm      loop avideTAm       vidyut avedizATAm,avitsATAm  <-- loop≠V
+6 vidx~ luG atmane 2-3  recipe avidDvam       loop avidaDvam      vidyut avediDvam,avidDvam  <-- loop≠V
+6 vidx~ luG atmane 1-1  recipe avitsi         loop avide          vidyut avedizi,avitsi  <-- loop≠V
+6 vidx~ luG atmane 1-2  recipe avitsvahi      loop avidAvahi      vidyut avedizvahi,avitsvahi  <-- loop≠V
+6 vidx~ luG atmane 1-3  recipe avitsmahi      loop avidAmahi      vidyut avedizmahi,avitsmahi  <-- loop≠V
+7 tfha~ laG parasmai 3-1  recipe atfRaw         loop atfRaw         vidyut atfReq,atfRew  <-- recipe≠V loop≠V
+7 tfha~ laG parasmai 2-1  recipe atfRaw         loop atfRaw         vidyut atfReq,atfRew  <-- recipe≠V loop≠V
+7 tfha~ laT parasmai 3-1  recipe tfRAQi         loop tfRAQi         vidyut tfReQi  <-- recipe≠V loop≠V
+7 tfha~ laT parasmai 2-1  recipe tfRakzi        loop tfRakzi        vidyut tfRekzi  <-- recipe≠V loop≠V
+7 tfha~ laT parasmai 1-1  recipe tfRahmi        loop tfRahmi        vidyut tfRehmi  <-- recipe≠V loop≠V
+7 tfha~ loT parasmai 3-1  recipe tfRAQu         loop tfRAQu         vidyut tfRQAd,tfRQAt,tfReQu  <-- recipe≠V loop≠V
+7 undI~ laG parasmai 3-1  recipe Onadt          loop Onadt          vidyut Onad,Onat  <-- recipe≠V loop≠V
+7 undI~ laG parasmai 2-1  recipe OnadH          loop OnadH          vidyut OnaH,Onad,Onat  <-- recipe≠V loop≠V
+8 GfRu~ loT parasmai 2-1  recipe GarRuhi        loop GarRu          vidyut GarRuhi,GarRutAd,GarRutAt,GfRu,GfRutAd,GfRutAt  <-- loop≠V
+8 fRu~ loT parasmai 2-1  recipe arRuhi         loop arRu           vidyut arRuhi,arRutAd,arRutAt,fRu,fRutAd,fRutAt  <-- loop≠V
+8 tfRu~ loT parasmai 2-1  recipe tarRuhi        loop tarRu          vidyut tarRuhi,tarRutAd,tarRutAt,tfRu,tfRutAd,tfRutAt  <-- loop≠V
+9 SFY laG parasmai 3-1  recipe aSfRAt         loop aSfRAt         vidyut aSIrRAd,aSIrRAt  <-- recipe≠V loop≠V
+9 SFY laG parasmai 3-2  recipe aSfRItAm       loop aSfRItAm       vidyut aSIrRItAm  <-- recipe≠V loop≠V
+9 SFY laG parasmai 3-3  recipe aSfRan         loop aSfRan         vidyut aSIrRan  <-- recipe≠V loop≠V
+9 SFY laG parasmai 2-1  recipe aSfRAH         loop aSfRAH         vidyut aSIrRAH  <-- recipe≠V loop≠V
+9 SFY laG parasmai 2-2  recipe aSfRItam       loop aSfRItam       vidyut aSIrRItam  <-- recipe≠V loop≠V
+9 SFY laG parasmai 2-3  recipe aSfRIta        loop aSfRIta        vidyut aSIrRIta  <-- recipe≠V loop≠V
+9 SFY laG parasmai 1-1  recipe aSfRAm         loop aSfRAm         vidyut aSIrRAm  <-- recipe≠V loop≠V
+9 SFY laG parasmai 1-2  recipe aSfRIva        loop aSfRIva        vidyut aSIrRIva  <-- recipe≠V loop≠V
+9 SFY laG parasmai 1-3  recipe aSfRIma        loop aSfRIma        vidyut aSIrRIma  <-- recipe≠V loop≠V
+9 SFY laT parasmai 3-1  recipe SfRAti         loop SfRAti         vidyut SIrRAti  <-- recipe≠V loop≠V
+9 SFY laT parasmai 3-2  recipe SfRItaH        loop SfRItaH        vidyut SIrRItaH  <-- recipe≠V loop≠V
+9 SFY laT parasmai 3-3  recipe SfRanti        loop SfRanti        vidyut SIrRanti  <-- recipe≠V loop≠V
+9 SFY laT parasmai 2-1  recipe SfRAsi         loop SfRAsi         vidyut SIrRAsi  <-- recipe≠V loop≠V
+9 SFY laT parasmai 2-2  recipe SfRITaH        loop SfRITaH        vidyut SIrRITaH  <-- recipe≠V loop≠V
+9 SFY laT parasmai 2-3  recipe SfRITa         loop SfRITa         vidyut SIrRITa  <-- recipe≠V loop≠V
+9 SFY laT parasmai 1-1  recipe SfRAmi         loop SfRAmi         vidyut SIrRAmi  <-- recipe≠V loop≠V
+9 SFY laT parasmai 1-2  recipe SfRIvaH        loop SfRIvaH        vidyut SIrRIvaH  <-- recipe≠V loop≠V
+9 SFY laT parasmai 1-3  recipe SfRImaH        loop SfRImaH        vidyut SIrRImaH  <-- recipe≠V loop≠V
+9 SFY laT atmane 3-1  recipe SfRIte         loop SfRIte         vidyut SIrRIte  <-- recipe≠V loop≠V
+9 SFY laT atmane 3-2  recipe SfRAte         loop SfRAte         vidyut SIrRAte  <-- recipe≠V loop≠V
+9 SFY laT atmane 3-3  recipe SfRate         loop SfRate         vidyut SIrRate  <-- recipe≠V loop≠V
+9 SFY laT atmane 2-1  recipe SfRIze         loop SfRIze         vidyut SIrRIze  <-- recipe≠V loop≠V
+9 SFY laT atmane 2-2  recipe SfRATe         loop SfRATe         vidyut SIrRATe  <-- recipe≠V loop≠V
+9 SFY laT atmane 2-3  recipe SfRIDve        loop SfRIDve        vidyut SIrRIDve  <-- recipe≠V loop≠V
+9 SFY laT atmane 1-1  recipe SfRe           loop SfRe           vidyut SIrRe  <-- recipe≠V loop≠V
+9 SFY laT atmane 1-2  recipe SfRIvahe       loop SfRIvahe       vidyut SIrRIvahe  <-- recipe≠V loop≠V
+9 SFY laT atmane 1-3  recipe SfRImahe       loop SfRImahe       vidyut SIrRImahe  <-- recipe≠V loop≠V
+9 SFY laG atmane 3-1  recipe aSfRIta        loop aSfRIta        vidyut aSIrRIta  <-- recipe≠V loop≠V
+9 SFY laG atmane 3-2  recipe aSfRAtAm       loop aSfRAtAm       vidyut aSIrRAtAm  <-- recipe≠V loop≠V
+9 SFY laG atmane 3-3  recipe aSfRata        loop aSfRata        vidyut aSIrRata  <-- recipe≠V loop≠V
+9 SFY laG atmane 2-1  recipe aSfRITAH       loop aSfRITAH       vidyut aSIrRITAH  <-- recipe≠V loop≠V
+9 SFY laG atmane 2-2  recipe aSfRATAm       loop aSfRATAm       vidyut aSIrRATAm  <-- recipe≠V loop≠V
+9 SFY laG atmane 2-3  recipe aSfRIDvam      loop aSfRIDvam      vidyut aSIrRIDvam  <-- recipe≠V loop≠V
+9 SFY laG atmane 1-1  recipe aSfRi          loop aSfRi          vidyut aSIrRi  <-- recipe≠V loop≠V
+9 SFY laG atmane 1-2  recipe aSfRIvahi      loop aSfRIvahi      vidyut aSIrRIvahi  <-- recipe≠V loop≠V
+9 SFY laG atmane 1-3  recipe aSfRImahi      loop aSfRImahi      vidyut aSIrRImahi  <-- recipe≠V loop≠V
+9 SFY liT parasmai 3-2  recipe SaSaratuH      loop SeratuH        vidyut SaSaratuH,SaSratuH  <-- loop≠V
+9 SFY liT parasmai 3-3  recipe SaSaruH        loop SeruH          vidyut SaSaruH,SaSruH  <-- loop≠V
+9 SFY liT parasmai 2-1  recipe SaSariTa       loop SeriTa         vidyut SaSariTa  <-- loop≠V
+9 SFY liT parasmai 2-2  recipe SaSaraTuH      loop SeraTuH        vidyut SaSaraTuH,SaSraTuH  <-- loop≠V
+9 SFY liT parasmai 2-3  recipe SaSara         loop Sera           vidyut SaSara,SaSra  <-- loop≠V
+9 SFY liT parasmai 1-2  recipe SaSariva       loop Seriva         vidyut SaSariva,SaSriva  <-- loop≠V
+9 SFY liT parasmai 1-3  recipe SaSarima       loop Serima         vidyut SaSarima,SaSrima  <-- loop≠V
+9 SFY liG parasmai 3-1  recipe SfRIyAt        loop SfRIyAt        vidyut SIrRIyAd,SIrRIyAt  <-- recipe≠V loop≠V
+9 SFY liG parasmai 3-2  recipe SfRIyAtAm      loop SfRIyAtAm      vidyut SIrRIyAtAm  <-- recipe≠V loop≠V
+9 SFY liG parasmai 3-3  recipe SfRIyuH        loop SfRIyuH        vidyut SIrRIyuH  <-- recipe≠V loop≠V
+9 SFY liG parasmai 2-1  recipe SfRIyAH        loop SfRIyAH        vidyut SIrRIyAH  <-- recipe≠V loop≠V
+9 SFY liG parasmai 2-2  recipe SfRIyAtam      loop SfRIyAtam      vidyut SIrRIyAtam  <-- recipe≠V loop≠V
+9 SFY liG parasmai 2-3  recipe SfRIyAta       loop SfRIyAta       vidyut SIrRIyAta  <-- recipe≠V loop≠V
+9 SFY liG parasmai 1-1  recipe SfRIyAm        loop SfRIyAm        vidyut SIrRIyAm  <-- recipe≠V loop≠V
+9 SFY liG parasmai 1-2  recipe SfRIyAva       loop SfRIyAva       vidyut SIrRIyAva  <-- recipe≠V loop≠V
+9 SFY liG parasmai 1-3  recipe SfRIyAma       loop SfRIyAma       vidyut SIrRIyAma  <-- recipe≠V loop≠V
+9 SFY liG atmane 3-1  recipe SfRIta         loop SfRIta         vidyut SIrRIta  <-- recipe≠V loop≠V
+9 SFY liG atmane 3-2  recipe SfRIyAtAm      loop SfRIyAtAm      vidyut SIrRIyAtAm  <-- recipe≠V loop≠V
+9 SFY liG atmane 3-3  recipe SfRIran        loop SfRIran        vidyut SIrRIran  <-- recipe≠V loop≠V
+9 SFY liG atmane 2-1  recipe SfRITAH        loop SfRITAH        vidyut SIrRITAH  <-- recipe≠V loop≠V
+9 SFY liG atmane 2-2  recipe SfRIyATAm      loop SfRIyATAm      vidyut SIrRIyATAm  <-- recipe≠V loop≠V
+9 SFY liG atmane 2-3  recipe SfRIDvam       loop SfRIDvam       vidyut SIrRIDvam  <-- recipe≠V loop≠V
+9 SFY liG atmane 1-1  recipe SfRIya         loop SfRIya         vidyut SIrRIya  <-- recipe≠V loop≠V
+9 SFY liG atmane 1-2  recipe SfRIvahi       loop SfRIvahi       vidyut SIrRIvahi  <-- recipe≠V loop≠V
+9 SFY liG atmane 1-3  recipe SfRImahi       loop SfRImahi       vidyut SIrRImahi  <-- recipe≠V loop≠V
+9 SFY liT atmane 3-1  recipe SaSare         loop Sere           vidyut SaSare,SaSre  <-- loop≠V
+9 SFY liT atmane 3-2  recipe SaSarAte       loop SerAte         vidyut SaSarAte,SaSrAte  <-- loop≠V
+9 SFY liT atmane 3-3  recipe SaSarire       loop Serire         vidyut SaSarire,SaSrire  <-- loop≠V
+9 SFY liT atmane 2-1  recipe SaSarize       loop Serize         vidyut SaSarize,SaSrize  <-- loop≠V
+9 SFY liT atmane 2-2  recipe SaSarATe       loop SerATe         vidyut SaSarATe,SaSrATe  <-- loop≠V
+9 SFY liT atmane 2-3  recipe SaSariDve      loop SeriDve        vidyut SaSariDve,SaSariQve,SaSriDve,SaSriQve  <-- loop≠V
+9 SFY liT atmane 1-1  recipe SaSare         loop Sere           vidyut SaSare,SaSre  <-- loop≠V
+9 SFY liT atmane 1-2  recipe SaSarivahe     loop Serivahe       vidyut SaSarivahe,SaSrivahe  <-- loop≠V
+9 SFY liT atmane 1-3  recipe SaSarimahe     loop Serimahe       vidyut SaSarimahe,SaSrimahe  <-- loop≠V
+9 SFY loT parasmai 3-1  recipe SfRAtu         loop SfRAtu         vidyut SIrRAtu,SIrRItAd,SIrRItAt  <-- recipe≠V loop≠V
+9 SFY loT parasmai 3-2  recipe SfRItAm        loop SfRItAm        vidyut SIrRItAm  <-- recipe≠V loop≠V
+9 SFY loT parasmai 3-3  recipe SfRantu        loop SfRantu        vidyut SIrRantu  <-- recipe≠V loop≠V
+9 SFY loT parasmai 2-1  recipe SfRIhi         loop SfRIhi         vidyut SIrRIhi,SIrRItAd,SIrRItAt  <-- recipe≠V loop≠V
+9 SFY loT parasmai 2-2  recipe SfRItam        loop SfRItam        vidyut SIrRItam  <-- recipe≠V loop≠V
+9 SFY loT parasmai 2-3  recipe SfRIta         loop SfRIta         vidyut SIrRIta  <-- recipe≠V loop≠V
+9 SFY loT parasmai 1-1  recipe SfRAni         loop SfRAni         vidyut SIrRAni  <-- recipe≠V loop≠V
+9 SFY loT parasmai 1-2  recipe SfRAva         loop SfRAva         vidyut SIrRAva  <-- recipe≠V loop≠V
+9 SFY loT parasmai 1-3  recipe SfRAma         loop SfRAma         vidyut SIrRAma  <-- recipe≠V loop≠V
+9 SFY loT atmane 3-1  recipe SfRItAm        loop SfRItAm        vidyut SIrRItAm  <-- recipe≠V loop≠V
+9 SFY loT atmane 3-2  recipe SfRAtAm        loop SfRAtAm        vidyut SIrRAtAm  <-- recipe≠V loop≠V
+9 SFY loT atmane 3-3  recipe SfRIatAm       loop SfRatAm        vidyut SIrRatAm  <-- recipe≠V loop≠V
+9 SFY loT atmane 2-1  recipe SfRIzva        loop SfRIzva        vidyut SIrRIzva  <-- recipe≠V loop≠V
+9 SFY loT atmane 2-2  recipe SfRATAm        loop SfRATAm        vidyut SIrRATAm  <-- recipe≠V loop≠V
+9 SFY loT atmane 2-3  recipe SfRIDvam       loop SfRIDvam       vidyut SIrRIDvam  <-- recipe≠V loop≠V
+9 SFY loT atmane 1-1  recipe SfRE           loop SfRE           vidyut SIrRE  <-- recipe≠V loop≠V
+9 SFY loT atmane 1-2  recipe SfRAvahE       loop SfRAvahE       vidyut SIrRAvahE  <-- recipe≠V loop≠V
+9 SFY loT atmane 1-3  recipe SfRAmahE       loop SfRAmahE       vidyut SIrRAmahE  <-- recipe≠V loop≠V
+9 mIY luG parasmai 3-2  recipe amEzwAm        loop amAstAm        vidyut amAsizwAm  <-- recipe≠V loop≠V
+9 mIY luG parasmai 3-3  recipe amEzuH         loop amAsuH         vidyut amAsizuH  <-- recipe≠V loop≠V
+9 mIY luG parasmai 2-2  recipe amEzwam        loop amAstam        vidyut amAsizwam  <-- recipe≠V loop≠V
+9 mIY luG parasmai 2-3  recipe amEzwa         loop amAsta         vidyut amAsizwa  <-- recipe≠V loop≠V
+9 mIY luG parasmai 1-1  recipe amEzam         loop amAsam         vidyut amAsizam  <-- recipe≠V loop≠V
+9 mIY luG parasmai 1-2  recipe amEzva         loop amAsva         vidyut amAsizva  <-- recipe≠V loop≠V
+9 mIY luG parasmai 1-3  recipe amEzma         loop amAsma         vidyut amAsizma  <-- recipe≠V loop≠V
+9 qukrIY laG atmane 3-1  recipe akrIRIta       loop akriyiRAta     vidyut akrIRIta  <-- loop≠V
+9 qukrIY laT atmane 3-1  recipe krIRIte        loop kriyiRAte      vidyut krIRIte  <-- loop≠V
+9 qukrIY loT atmane 3-1  recipe krIRItAm       loop kriyiRAtAm     vidyut krIRItAm  <-- loop≠V
+9 skanBu~ loT parasmai 2-1  recipe skaBAna        loop skamBAna       vidyut skaBAna,skaBnItAd,skaBnItAt,skaBnuhi,skaBnutAd,skaBnutAt  <-- loop≠V
+9 skunBu~ loT parasmai 2-1  recipe skuBAna        loop skumBAna       vidyut skuBAna,skuBnItAd,skuBnItAt,skuBnuhi,skuBnutAd,skuBnutAt  <-- loop≠V
+9 stanBu~ loT parasmai 2-1  recipe staBAna        loop stamBAna       vidyut staBAna,staBnItAd,staBnItAt,staBnuhi,staBnutAd,staBnutAt  <-- loop≠V
+9 stunBu~ loT parasmai 2-1  recipe stuBAna        loop stumBAna       vidyut stuBAna,stuBnItAd,stuBnItAt,stuBnuhi,stuBnutAd,stuBnutAt  <-- loop≠V
+6 mila~ liT parasmai 3-1  recipe mimela         loop mila           vidyut mimela  <-- loop≠V
+6 mila~ liT parasmai 1-1  recipe mimela         loop mila           vidyut mimela  <-- loop≠V
+9 mIY liT parasmai 3-1  recipe mimAya         loop mIa            vidyut mamO  <-- recipe≠V loop≠V
+9 mIY liT parasmai 2-1  recipe mimayiTa       loop mimayiTa       vidyut mamATa,mamiTa  <-- recipe≠V loop≠V
+9 mIY liT parasmai 1-1  recipe mimAya         loop mIa            vidyut mamO  <-- recipe≠V loop≠V

@@ -20,6 +20,8 @@ def _site(state: State):
     """एर्लिङि: the ā of the 6.4.66 roots becomes e before the yāsuṭ of āśīr-liṅ (kit, ārdhadhātuka), the later rule over 6.4.66."""
     if not any("ashir_liG" in t.tags for t in state.terms):
         return None
+    if not any("yasut_agama" in t.tags for t in state.terms):
+        return None        # क्ङिति: the kit yāsuṭ of parasmaipada; ātmanepada's sīyuṭ is not kit (दासीष्ट, मासीष्ट)
     for i, dh in enumerate(state.terms[:-1]):
         if "dhatu" not in dh.tags or dh.meta.get("6_4_67_done"):
             continue
