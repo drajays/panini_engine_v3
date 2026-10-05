@@ -60,9 +60,10 @@ def cond(state: State) -> bool:
     if "P040_juhotyadi" in state.terms[i].tags:
         return True
     # ślu replaces śap — so only where śap would stand (a sārvadhātuka tiṅ); not under sya/tās (lṛṭ, luṭ), not in luṅ's sic
-    from sutras.adhyaya_3.pada_1.vikarana_sap_3_1_68 import find_sap_insertion_dhatu_index
+    from sutras.adhyaya_3.pada_1.vikarana_sap_3_1_68 import find_sap_insertion_dhatu_index, sarvadhatuka_lakara_context
     return find_sap_insertion_dhatu_index(state) is not None or any(
-        t.kind == "pratyaya" and (t.meta.get("upadesha_slp1") or "").strip() == "Sap" for t in state.terms)
+        t.kind == "pratyaya" and (t.meta.get("upadesha_slp1") or "").strip() == "Sap" for t in state.terms) or (
+        any("tin_adesha_3_4_78" in t.tags for t in state.terms) and sarvadhatuka_lakara_context(state))
 
 
 def act(state: State) -> State:

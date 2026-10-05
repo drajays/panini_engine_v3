@@ -25,8 +25,8 @@ def iT_site(state: State, roots: frozenset, dhve: bool):
             continue
         if (t.meta.get("upadesha_slp1") or "").replace("~", "") not in {r.replace("~", "") for r in roots}:
             continue
-        nxt = next((u for u in state.terms[i + 1:] if u.varnas and "tin_adesha_3_4_78" in u.tags), None)
-        if nxt is None or nxt.meta.get("it_agama_7_2_77_78_done"):
+        nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)      # the affix right after the root, not past tāsi/sya
+        if nxt is None or "tin_adesha_3_4_78" not in nxt.tags or nxt.meta.get("it_agama_7_2_77_78_done"):
             continue
         vs = "".join(v.slp1 for v in nxt.varnas)
         if vs == "se" or (dhve and vs in ("Dve", "Dvam")):

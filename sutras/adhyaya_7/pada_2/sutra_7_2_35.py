@@ -61,6 +61,13 @@ def _ardhadhatuka_vikarana_index(state: State) -> int | None:
     return None
 
 
+def _vij_kit(state: State, t) -> None:
+    """1.2.2 विज इट्: the iṭ that o~vijI~ takes makes its affix kit — vijitA, vijiSyate (no guṇa)."""
+    dh = next((d for d in state.terms if "dhatu" in d.tags and "abhyasa" not in d.tags), None)
+    if dh is not None and (dh.meta.get("upadesha_slp1") or "").replace("~", "") == "ovijI":
+        t.tags.add("kngiti")
+
+
 def _target_term(state: State):
     allow_sic = bool(state.meta.get("7_2_35_allow_sic", False))
     if allow_sic:
@@ -178,6 +185,7 @@ def act(state: State) -> State:
         it_v.tags.add("it_agama")
         t.varnas.insert(0, it_v)
         t.meta["it_agama_7_2_35_done"] = True
+        _vij_kit(state, t)
         t.tags -= {"kngiti", "kngiti_by_jhal_1_2_9_12"} if "kngiti_by_jhal_1_2_9_12" in t.tags else set()   # no longer jhal-initial
         return state
     j = _lut_tasi_vikaranha_index(state)
@@ -187,6 +195,7 @@ def act(state: State) -> State:
         it_v.tags.add("it_agama")
         t.varnas.insert(0, it_v)
         t.meta["it_agama_7_2_35_done"] = True
+        _vij_kit(state, t)
         return state
     # General liṭ-tiṅ arm
     j = _lit_tin_index(state)
@@ -196,6 +205,7 @@ def act(state: State) -> State:
         it_v.tags.add("it_agama")
         t.varnas.insert(0, it_v)
         t.meta["it_agama_7_2_35_done"] = True
+        _vij_kit(state, t)
         return state
     pr = _target_term(state)
     if pr is None:
@@ -204,6 +214,7 @@ def act(state: State) -> State:
     it_v.tags.add("it_agama")
     pr.varnas.insert(0, it_v)
     pr.meta["it_agama_7_2_35_done"] = True
+    _vij_kit(state, pr)
     return state
 
 

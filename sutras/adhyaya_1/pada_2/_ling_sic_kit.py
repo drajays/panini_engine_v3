@@ -25,7 +25,8 @@ def ling_sic_after(state: State, dhatu_ok) -> int | None:
         is_ling = "ling_sIyuw" in nxt.tags or (nxt.meta.get("source_lakara_upadesha") == "liG"
                                               and "ardhadhatuka" in nxt.tags)
         is_sic = up == "sic" or "sic_s" in nxt.varnas[0].tags
-        atmane = any("atmanepada" in u.tags for u in state.terms[i + 1:])
+        atmane = any("atmanepada" in u.tags or ("tin_adesha_3_4_78" in u.tags and "parasmaipada" not in u.tags)
+                     for u in state.terms[i + 1:])        # the loop never tags atmanepada: not-parasmaipada is it
         if (is_ling or is_sic) and atmane and dhatu_ok([v.slp1 for v in t.varnas]):
             return i + 1
     return None

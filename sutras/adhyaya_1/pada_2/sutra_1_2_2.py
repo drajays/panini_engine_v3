@@ -35,11 +35,27 @@ def _find_vij(state: State) -> int | None:
     return None
 
 
+def _find_vij_it(state: State):
+    """विज इट्: the iṭ-initial ārdhadhātuka after o~vijI~ is kit — no guṇa: vijitA, vijiSyate (not *vejitA)."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" not in t.tags or "abhyasa" in t.tags:
+            continue
+        if (t.meta.get("upadesha_slp1") or "").replace("~", "") != "ovijI":
+            continue
+        nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
+        if nxt is not None and "kngiti" not in nxt.tags and "it_agama" in nxt.varnas[0].tags:
+            return nxt
+    return None
+
+
 def cond(state: State) -> bool:
-    return _find_vij(state) is not None
+    return _find_vij(state) is not None or _find_vij_it(state) is not None
 
 
 def act(state: State) -> State:
+    if (u := _find_vij_it(state)) is not None:
+        u.tags.add("kngiti")
+        return state
     i = _find_vij(state)
     if i is None:
         return state

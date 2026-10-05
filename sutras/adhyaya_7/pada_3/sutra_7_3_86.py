@@ -125,7 +125,20 @@ def _find_target(state: State):
     return (ai, up_i, rep, up)
 
 
+def _vij_it_kit(state: State) -> bool:
+    """1.2.2 विज इट्: o~vijI~'s ārdhadhātuka takes a kit iṭ — no guṇa of its upadhā (vijitA, vijiSyate), whichever of the
+    iṭ and the guṇa the loop reaches first."""
+    for i, t in enumerate(state.terms[:-1]):
+        if "dhatu" in t.tags and "abhyasa" not in t.tags and (t.meta.get("upadesha_slp1") or "").replace("~", "") == "ovijI":
+            nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
+            return nxt is not None and "ardhadhatuka" in nxt.tags and (
+                "it_agama" in nxt.varnas[0].tags or nxt.varnas[0].slp1 not in "aAiIuUfFxXeEoOyh")
+    return False
+
+
 def cond(state: State) -> bool:
+    if _vij_it_kit(state):
+        return False
     if _p018_b_dyut_guna(state) is not None:
         return True
     if _lrng_dhatu_ṛ_guna_index(state) is not None:

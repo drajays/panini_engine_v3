@@ -233,7 +233,7 @@ def _ngit_vikarana_own_guna(state: State) -> int | None:
     if tin.meta.get("is_apit"):                  # 3.4.87 सेर्ह्यपिच्च: हि is apit
         return None
     loT_uttama = ((tin.meta.get("source_lakara_upadesha") or "").strip() == "loT"
-                  and up in {"mip", "vas", "mas", "ni", "va", "ma"})   # 3.4.92 आडुत्तमस्य पिच्च
+                  and up in {"mip", "vas", "mas", "ni", "va", "ma", "iw", "vahi", "mahiG", "e", "vahe", "mahe", "E", "vahE", "mahE"})   # 3.4.92 आडुत्तमस्य पिच्च
     from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import sthanin_was_pit
     if not (up.endswith(("p", "P")) or tin.meta.get("pit") or loT_uttama or sthanin_was_pit(tin)):   # am for mip (1.1.56)
         return None
@@ -241,6 +241,9 @@ def _ngit_vikarana_own_guna(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
+    from sutras.adhyaya_7.pada_3.sutra_7_3_86 import _vij_it_kit
+    if _vij_it_kit(state):
+        return False                   # 1.2.2 विज इट्: vijitA — the iṭ is kit
     if state.meta.get("_3_1_45_ksa_recipe"):
         return False   # 3.1.45 क्स अपवाद: उपधा unchanged (अशिक्षत्, not अशेक्षत्)
     if ik_guna_vriddhi_blocked_by_1_1_4(state):
