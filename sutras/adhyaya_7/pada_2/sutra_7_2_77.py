@@ -29,7 +29,8 @@ def iT_site(state: State, roots: frozenset, dhve: bool):
         if nxt is None or "tin_adesha_3_4_78" not in nxt.tags or nxt.meta.get("it_agama_7_2_77_78_done"):
             continue
         vs = "".join(v.slp1 for v in nxt.varnas)
-        if vs == "se" or (dhve and vs in ("Dve", "Dvam")):
+        loT_sva = vs == "sva" and (nxt.meta.get("source_lakara_upadesha") or "").strip() == "loT"      # se → sva (3.4.91); sthānivat (1.1.56)
+        if vs == "se" or loT_sva or (dhve and vs in ("Dve", "Dvam")):
             return state.terms.index(nxt)
     return None
 

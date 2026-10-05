@@ -28,6 +28,8 @@ def _find(state: State) -> int | None:
             continue
         if not t.varnas or t.varnas[-1].slp1 != "u":
             return None
+        if (t.meta.get("upadesha_slp1") or "").strip() == "UrRuY":
+            return None          # ऊर्णोतेर्विभाषा (7.3.90): vṛddhi or guṇa (7.3.91 गुणोऽपृक्ते); the guṇa branch is the one output (और्णोत्)
         tin = next((u for u in state.terms[i + 1:] if u.varnas), None)
         if tin is None or tin.varnas[0].slp1 in _AC or "kngiti" in tin.tags or tin.meta.get("is_apit"):
             return None

@@ -64,7 +64,8 @@ def _hu_site(state: State):
         if (t.meta.get("upadesha_slp1") or "").replace("~", "") != "hu":
             continue
         nxt = next((u for u in ts[i + 1:] if u.varnas), None)
-        if nxt is not None and nxt.varnas[0].slp1 in _AC and _weak_after(ts, i):
+        if nxt is not None and nxt.varnas[0].slp1 in _AC and _weak_after(ts, i) and "ardhadhatuka" not in nxt.tags \
+                and (nxt.meta.get("source_lakara_upadesha") or "").strip() != "liT":      # सार्वधातुके: not liṭ (juhuvatuH)
             return t
     return None
 
