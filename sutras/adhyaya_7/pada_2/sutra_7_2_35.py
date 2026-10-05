@@ -134,7 +134,15 @@ def _lit_tin_index(state: State) -> int | None:
     return None
 
 
+def _thal_no_it(state: State) -> bool:
+    """अचस्तास्वत् थल्यनिटो नित्यम् (7.2.61) + ऋतो भारद्वाजस्य (7.2.63): an aniṭ ṛ-final root takes no iṭ before thal (जहर्थ, सस्मर्थ, तस्तर्थ)."""
+    from sutras.adhyaya_7.pada_2.sutra_7_2_63 import _hit
+    return _hit(state)
+
+
 def cond(state: State) -> bool:
+    if _thal_no_it(state):
+        return False
     # 7.2.13 कृसृभृवृस्तुद्रुस्रुश्रुवो लिटि is a niyama on this iṭ: once it has
     # fired (liṭ, kṛ-group), no branch below may add iṭ (चकृम, चकर्थ).
     if state.paribhasha_gates.get("7_2_13_kfsfBfvfst_13"):

@@ -21,7 +21,8 @@ def _hit(state: State) -> bool:
     dh = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
     if dh is None or not dh.meta.get("anit_dhatu") or not dh.varnas:
         return False
-    return dh.varnas[-1].slp1 == "f" and len(dh.varnas) > 1
+    up = (dh.meta.get("upadesha_slp1") or "").rstrip("~").rstrip("YN")      # the root as given: guṇa/rapara has turned f into ar
+    return up.endswith("f") and len(up) > 1
 
 
 def cond(state: State) -> bool:

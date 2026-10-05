@@ -25,6 +25,8 @@ def main() -> int:
     ap.add_argument("--pada", default="")
     ap.add_argument("--limit", type=int, default=12)
     ap.add_argument("--offset", type=int, default=0)
+    ap.add_argument("--sample", type=float, default=0, help="ALL: a random PCT%% of the gaṇa's roots (seeded) instead of the first --limit")
+    ap.add_argument("--seed", type=int, default=0)
     a = ap.parse_args()
     import sutras  # noqa: F401
     from pipelines.dhatupatha import iter_dhatu_entries
@@ -33,6 +35,10 @@ def main() -> int:
     if a.root == "ALL":          # every loop≠Vidyut cell of the first --limit roots of the gaṇa (the real work list)
         want = {"parasmai": "परस्मैपदी", "atmane": "आत्मनेपदी", "ubhaya": "उभयपदी"}.get(a.pada)
         todo = [r for r in iter_dhatu_entries() if r.get("gana") == a.gana and (not want or r.get("pada_label_dev") == want)][a.offset: a.offset + a.limit]
+        if a.sample:
+            import random
+            pool = [r for r in iter_dhatu_entries() if r.get("gana") == a.gana and (not want or r.get("pada_label_dev") == want)]
+            todo = random.Random(a.seed).sample(pool, max(1, round(len(pool) * a.sample / 100))) if pool else []
         bad = tot = 0
         for r in todo:
             sub = ""

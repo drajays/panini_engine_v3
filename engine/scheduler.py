@@ -273,6 +273,8 @@ def effective_candidates(candidates: List[str], state: State) -> List[str]:
         if hit is None:
             try:
                 hit = tape_fingerprint(probe(sid, state)) != before
+            except (MemoryError, RecursionError):
+                raise                  # a resource failure is not "this rule changes nothing" (it was cached as such and silently dropped a rule)
             except Exception:
                 hit = False
             if len(_EFFECTIVE_MEMO) > 200_000:
@@ -332,6 +334,8 @@ def enumerate_candidates(state: State) -> List[str]:
         try:
             if rec.cond is not None and rec.cond(state):
                 out.append(sid)
+        except (MemoryError, RecursionError):
+            raise
         except Exception:
             # A cond() that raises on this state simply doesn't apply.
             pass

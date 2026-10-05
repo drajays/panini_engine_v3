@@ -30,7 +30,8 @@ def iT_site(state: State, roots: frozenset, dhve: bool):
             continue
         vs = "".join(v.slp1 for v in nxt.varnas)
         loT_sva = vs == "sva" and (nxt.meta.get("source_lakara_upadesha") or "").strip() == "loT"      # se → sva (3.4.91); sthānivat (1.1.56)
-        if vs == "se" or loT_sva or (dhve and vs in ("Dve", "Dvam")):
+        if vs == "se" or loT_sva or (dhve and (vs == "Dve" or (vs == "Dvam" and (nxt.meta.get("source_lakara_upadesha") or "").strip() == "loT"))):
+            # ध्वे only (ṭi→e, 3.4.79); loṭ's ध्वम् by एकदेशविकृत (PŚ 37); laṅ's ध्वम् never: ऐड्ढ्वम् (KV 7.2.78)
             return state.terms.index(nxt)
     return None
 

@@ -34,7 +34,7 @@ def _site(state: State) -> int | None:
         if "dhatu" not in t.tags or "abhyasa" in t.tags:
             continue
         pratyayanta = t.meta.get("sanadi_pratyayanta") or \
-            (t.meta.get("upadesha_slp1") or "").strip() in {"kAsf~", "kAs"}
+            (t.meta.get("upadesha_slp1") or "").strip() in {"kAsf~", "kAs", "daya~", "aya~", "Asa~"}   # + 3.1.37 दयायासश्च (आसाञ्चक्रे, KV)
         nxt = state.terms[i + 1]
         if pratyayanta and (nxt.meta.get("upadesha_slp1") or "").strip() == "liT":
             return i + 1

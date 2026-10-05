@@ -55,7 +55,7 @@ def _find_general(state: State) -> int | None:
         nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
         if nxt is None or nxt.varnas[0].slp1 not in _AC:
             return None
-        if (nxt.meta.get("upadesha_slp1") or "").strip() == "aN":
+        if (nxt.meta.get("upadesha_slp1") or "").strip() in ("aN", "aG"):
             return None
         # क्ङिति: the *affix that follows the aṅga* is kit/ṅit. An āgama (iṭ) belongs to the affix it stands
         # before, so the head is the first non-āgama term — gam+iṭ+sya+tas: sya is not ṅit, the tiṅ after

@@ -29,8 +29,8 @@ def _find_Ate(state: State):
             continue
         if not t.varnas or t.varnas[0].slp1 != "A":
             continue
-        if (t.meta.get("source_lakara_upadesha") or "").strip() in ("luG", "liT") or "ardhadhatuka" in t.tags:
-            continue        # सार्वधातुके (anuvṛtti 7.2.76): अधुक्षाताम्, not *अधुक्षेताम् (open: why luṅ's ātām stays — see docs/CONFLICTS.md)
+        if "ardhadhatuka" in t.tags:
+            continue        # सार्वधातुके (anuvṛtti 7.2.76) — luṅ's ātām stays: 7.3.72 क्सस्याचि (para, 1.4.2) first removes ksa's a
         # अतः (7.2.80): the preceding aṅga ends in a — śap (एध + आते) or yak
         # (भूय + आते). Once gated to yak (bhāva/karma) only, which left
         # kartari ātmanepada duals as एधआते for एधेते.

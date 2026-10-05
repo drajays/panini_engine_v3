@@ -24,7 +24,9 @@ def _site(state: State):
             continue
         after = state.terms[i + 1:]
         if any((u.meta.get("source_lakara_upadesha") or "").strip() == "liT" for u in after):
-            continue
+            # liṭ: ātva only before a ṇit/pit ending (ममौ, ममाथ — SK 3.1.81 'मीनातिमिनोति…'); kit endings keep the vowel (मिम्यतुः)
+            if not any((u.meta.get("source_lakara_upadesha") or "").strip() == "liT" and ({"it:Rit", "it:pit"} & u.tags) for u in after):
+                continue
         if any(("ardhadhatuka" in u.tags and "pratyaya" in u.tags) or "ashir_liG" in u.tags for u in after):
             return dh
     return None
