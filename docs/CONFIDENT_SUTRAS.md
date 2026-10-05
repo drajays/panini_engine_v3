@@ -1,18 +1,18 @@
 # Sūtras the engine does confidently (generated — do not edit)
 
-Generated 2026-10-03 by `python3 -m tools.sutra_class`. **222 of 3983** are confident.
+Generated 2026-10-05 by `python3 -m tools.sutra_class`. **223 of 3983** are confident.
 
 *Operational*: invoked + really moves the tape (exempt flag ignored) + cited + not a gate-only placeholder + named in tests ≥5×. *(S)* = structural/definitional class: invoked + cited + tested + real cond (class proof pending, plan §1).
 
 | status | count |
 |---|---|
-| confident | 105 |
+| confident | 106 |
 | confident_structural | 117 |
-| gate_only | 272 |
-| pending_structural | 268 |
-| placeholder | 587 |
-| unexercised | 2358 |
-| working | 276 |
+| gate_only | 99 |
+| pending_structural | 269 |
+| placeholder | 585 |
+| unexercised | 2521 |
+| working | 286 |
 
 | pāda | confident | of |
 |---|---|---|
@@ -27,7 +27,7 @@ Generated 2026-10-03 by `python3 -m tools.sutra_class`. **222 of 3983** are conf
 | 3.1 | 9 | 150 |
 | 3.2 | 4 | 188 |
 | 3.3 | 9 | 176 |
-| 3.4 | 13 | 117 |
+| 3.4 | 14 | 117 |
 | 4.1 | 9 | 178 |
 | 4.2 | 2 | 145 |
 | 4.3 | 0 | 168 |
@@ -60,7 +60,7 @@ Generated 2026-10-03 by `python3 -m tools.sutra_class`. **222 of 3983** are conf
 **3.1** — 22ˢ, 33, 43, 44, 68, 73, 79, 97ˢ, 134  
 **3.2** — 84ˢ, 115, 123ˢ, 134ˢ  
 **3.3** — 3ˢ, 18ˢ, 19ˢ, 88, 89, 94ˢ, 117ˢ, 141ˢ, 174  
-**3.4** — 77ˢ, 78, 79, 86, 87, 89, 99, 100, 101, 103, 104, 107, 108  
+**3.4** — 77ˢ, 78, 79, 86, 87, 89, 99, 100, 101, 102, 103, 104, 107, 108  
 **4.1** — 1ˢ, 2, 3ˢ, 4, 76ˢ, 82ˢ, 83ˢ, 92ˢ, 162ˢ  
 **4.2** — 92ˢ, 113ˢ  
 **4.4** — 75ˢ  

@@ -2729,7 +2729,8 @@ def _curadi_nic(state: State) -> State:
     di = state.terms.index(dh)
     stem = [v for t in state.terms[di:] for v in t.varnas]
     prayoga = dh.tags & {"kartari", "karmani", "bhave"} or {"kartari"}
-    state.terms = state.terms[:di] + [Term(kind="prakriti", varnas=stem, tags={"dhatu", "anga"} | prayoga,
+    vivaksha = {t for t in dh.tags if t.endswith("_derivation") or t == "ashis"}      # the lakāra vivakṣā an input, kept (Art. 2)
+    state.terms = state.terms[:di] + [Term(kind="prakriti", varnas=stem, tags={"dhatu", "anga"} | prayoga | vivaksha,
                         meta={**keep, "upadesha_slp1": "".join(v.slp1 for v in stem), "gana": 1,
                               "nijanta": True, "sanadi_pratyayanta": True,
                               "anit_dhatu": False, "set_dhatu": True})]
