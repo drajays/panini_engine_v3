@@ -12,3 +12,13 @@ CASES = [("vAri", 1, 2, "वारिणी"), ("vAri", 1, 3, "वारीण�
 @pytest.mark.parametrize("stem,vi,va,want", CASES)
 def test_neuter_ik(stem, vi, va, want):
     assert derive(stem, vi, va, linga="napuṃsaka").flat_dev() == want
+
+
+@pytest.mark.parametrize("stem,lg,vi,va,want", [("gomat", "pulliṅga", 1, 1, "गोमान्"), ("gomat", "pulliṅga", 1, 2, "गोमन्तौ"), ("kanIyas", "pulliṅga", 1, 2, "कनीयांसौ"),
+                                                  ("kamitf", "pulliṅga", 1, 2, "कमितारौ"), ("pitf", "pulliṅga", 1, 2, "पितरौ"),
+                                                  ("anyatarA", "strīliṅga", 4, 1, "अन्यतरस्यै"), ("sarvA", "strīliṅga", 6, 3, "सर्वासाम्"),
+                                                  ("acCa", "pulliṅga", 1, 1, "अच्छः"), ("icCA", "strīliṅga", 1, 1, "इच्छा"), ("vAc", "strīliṅga", 7, 3, "वाक्षु")])
+def test_stem_shape_flags_and_cC(stem, lg, vi, va, want):
+    """ugit / tfc are inputs (here as the gold harness gives them); sarvādi feminines run from the a-stem; a stem-internal cC is not 8.2.30's c."""
+    from bench.ashtadhyayi_gold import _origin_flags
+    assert derive(stem, vi, va, linga=lg, **_origin_flags(stem)).flat_dev() == want

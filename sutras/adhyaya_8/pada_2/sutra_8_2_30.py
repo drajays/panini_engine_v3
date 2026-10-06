@@ -41,6 +41,10 @@ def _find(state: State):
         vs = t.varnas
         for vi in range(len(vs) - 1):
             if vs[vi].slp1 in _CU and vs[vi + 1].slp1 in JHAL:
+                # a cu-varga letter before another (cC, cc, jj, jJ) is a stem-internal cluster (accha, icchā, lāmajjaka), not a
+                # pada-final c meeting a jhal (vāc+bhiḥ, pac+ta) — coḥ kuḥ leaves it alone
+                if vs[vi + 1].slp1 in _CU:
+                    continue
                 return (ti, vi)
     # 2) Cross-term boundary: X ends with c, next begins with JHAL.
     for i in range(len(state.terms) - 1):

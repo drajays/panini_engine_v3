@@ -94,6 +94,18 @@ def subanta_jobs(sample: int | None, seed: int):
         yield stem, LINGA[r["linga"]], [{a.removeprefix("हे ").strip() for a in c.split("-")} for c in cells]
 
 
+# The gold list gives stems, not derivations. A stem string carries no history (tests/unit/test_idam_strI_sarvanama_paradigms.py:
+# ugit is an input, not a guess), so the *harness* supplies the origin flags from the stem's shape — it is the test's lexicon.
+#   ugit (7.1.70): matup/vatup (-mat, -vat), -īyas (īyasun), -ivas (kvasu), vidvas.
+#   tfc (6.4.11): tṛc/tṛn agent nouns — -tṛ/-ṭṛ, except the kinship nouns of 7.1.94.
+_NOT_TFC = ("pitf", "mAtf", "BrAtf", "jAmAtf", "duhitf", "naptf")
+
+
+def _origin_flags(stem: str) -> dict:
+    return {"ugit": stem.endswith(("mat", "vat", "Iyas", "ivas", "vidvas")),
+            "tfc": stem.endswith(("tf", "wf")) and not stem.endswith(_NOT_TFC)}
+
+
 def _run_sub(job):
     stem, linga, alts = job
     from pipelines.subanta import derive
@@ -103,7 +115,7 @@ def _run_sub(job):
             out.append(("absent", ""))
             continue
         try:
-            ours = derive(stem, vi, va, linga=linga).flat_dev()
+            ours = derive(stem, vi, va, linga=linga, **_origin_flags(stem)).flat_dev()
             out.append(("agree" if ours in gold else "differ", ours))
         except Exception as ex:
             out.append(("error", type(ex).__name__))

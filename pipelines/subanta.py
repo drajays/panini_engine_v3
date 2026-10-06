@@ -821,6 +821,12 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     """
     if stem_slp1.strip() in {"tad", "yad", "etad", "idam", "adas"} and vibhakti == 8:
         raise ValueError("tyadādi pronouns do not take sambodhana cells")
+    if linga == "strīliṅga" and stem_slp1.endswith("A"):
+        # the feminine of a sarvādi word (sarvā, anyatarā, parā) is the a-stem + ṭāp (4.1.4): derive it from there, where the
+        # sarvanāma rules (7.3.114 syāṭ, 7.1.52 suṭ) already run
+        from sutras.adhyaya_1.pada_1.sutra_1_1_27 import _load_sarvadi
+        if stem_slp1[:-1] + "a" in _load_sarvadi():
+            stem_slp1 = stem_slp1[:-1] + "a"
     s = build_initial_state(
         stem_slp1, vibhakti, vacana, linga,
         matra_prathama_2_3_46=matra_prathama_2_3_46,
