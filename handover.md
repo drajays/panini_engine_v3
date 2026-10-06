@@ -1,5 +1,23 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
+## 2026-10-06 (brain restored; PARKED_ISSUES_RESOLVED item e/b/g in progress)
+Brain is back: `~/data-master/ashtadhyayi-ai` → symlink to a fresh clone of the full ashtadhyayi.com data +
+knowledge_api.py tool (owner pushed it to `drajays/ashtadhyayi_brain`; `venv` rebuilt here with
+`indic_transliteration`). `make brain S=<id>` works again.
+Landed: **1.2.3 विभाषोर्णोः** was dead (wrong upadeśa match string; 1.2.1–1.2.7 never get revisited once
+Adhyāya 7 has run in a tiṅanta derivation — same reason 7.2.35 already special-cases 1.2.2/विज्). Fixed by
+giving 1.2.3 an `apply_at_it_insertion()` hook that 7.2.35 calls right at iṭ-insertion; verified forking via
+`engine.vikalpa.explore()` (6b6d090). Known gap exposed, not fixed: 6.4.77 uvaṅ doesn't reach this term in
+the luṭ+iṭ environment, so the ṅit branch isn't the fully sandhi'd ऊर्णुविता yet.
+Re-checked item (b) (fRu~ loṭ 2sg): the bare-arRu bug in PARKED_ISSUES_RESOLVED.md does **not** reproduce —
+engine already gives अर्णुहि correctly. Open: SK's full paradigm shows a dual guṇa/aguṇa stem throughout the
+lakāra (ऋणोति/अर्णोति …), not just at 2sg; haven't found the sūtra granting that vikalpa — 3.1.79's own
+commentary only covers nitya guṇa + 6.4.107's separate vā-lopa, no guṇa fork. Not guessing at it; see
+`docs/PARKED_ISSUES.md`.
+Next (per docs/PARKED_ISSUES_RESOLVED.md item g, citations already in hand): 8.3.115–119, 8.4.14,
+6.1.15–19, 37–40 (prefix ṣatva/ṇatva + vye/hve/ve/vay liṭ samprasāraṇa) — several are gate-only placeholders
+today (e.g. 6.1.38/6.1.39 just set paribhāṣā flags, no real phonology).
+
 **Plan of record:** `docs/SUTRA_COVERAGE_100_PLAN.md` (v2) · **Law:** `CONSTITUTION.md` · **Program:** `ROADMAP.md`
 **See it:** double-click `Panini Engine.command` → `/coverage` (confident sūtras by pāda; live recipe-free derivation
 of nouns and laṭ verbs). Menu `c` refreshes the numbers. CLI: `make confident`, `make autonomy`.
