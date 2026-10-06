@@ -32,3 +32,8 @@ mī/mi/dī before a non-liṭ ārdhadhātuka: `ātva` precedes guṇa/vṛddhi (
 ec-final roots in liṭ (glai, ṣṭyai, ovai): ātva (6.1.45) is done on the bare root *before* dvitva, so both copies are ā (`जग्लौ`, `तस्थ्यौ`, `ववौ`), not `*जिग्लाय`.
 Evidence: brain (ashtadhyayi.com prakriyā, glai liṭ): `glE → glA` (6.1.45) precedes `glA + liw` and `glA glA`; Vidyut agrees. The same fix removes the no-op
 vṛddhi E→E of 7.2.115 that stripped the root's own-ec mark (`mula_dhatu_v`) and made 6.1.45 miss. Pinned by `tests/regression/test_tinanta_ec_liT.py`.
+
+## Addition (2026-10-06): named override 7.2.73 over 7.2.3
+
+yam/ram/nam and ā-final aṅgas in parasmaipada luṅ: sak + iṭ (7.2.73) enter at once after the tiṅ is lopa'd (brain prakriyā of `mA luṅ`: `mAs + iw + s + t` precedes every
+aṅga rule); with iṭ on the sic, 7.2.4 neṭi forbids the hal-anta vṛddhi of 7.2.3 → `anaMsIt`, `aramsIt`, not `*anAmsIt`. Pinned by `tests/regression/test_tinanta_7_2_73.py`.

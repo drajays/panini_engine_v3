@@ -7,7 +7,7 @@ import sutras  # noqa: F401
 from tools.autonomy_report import run_autonomously, start_state
 
 
-@pytest.mark.parametrize("dhatu,want", [("vana~", "avanizam"), ("yama~", "ayamizam"), ("pac", "apAkzam")])
+@pytest.mark.parametrize("dhatu,want", [("vana~", "avanizam"), ("yama~", "ayaMsizam"), ("pac", "apAkzam")])
 def test_luG_1sg(dhatu, want):
     assert run_autonomously(start_state(NS(kind="tinanta", args=(dhatu, "luG", 1, 1))), "", dhatu, 250).surface == want
 
