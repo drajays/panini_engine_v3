@@ -50,8 +50,8 @@ def _find_as_al_lopa(state: State) -> int | None:
         # general it-lopa act() never resyncs — "asa~" stays "asa~" in meta
         # even after 1.3.2/1.3.9 strip the anunāsika it off the tape). Same
         # convention _adadi_dhatu_stem_slp1() already uses for root identity.
-        if "".join(v.slp1 for v in t.varnas) != "as":
-            continue
+        if "".join(v.slp1 for v in t.varnas) != "as" or t.meta.get("gana") not in (2, None):
+            continue                    # adādi as (bhuvi) only — bhvādi asa~ (असति) keeps its a
         if not _apit_sarvadhatuka_tin_after(state, i):
             continue
         return i

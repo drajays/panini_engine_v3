@@ -25,7 +25,7 @@ def _site(state: State):
             continue
         flat = "".join(v.slp1 for v in dh.varnas)
         up = (dh.meta.get("upadesha_slp1") or "").strip()
-        if (up == "asa~" and flat == "as") or (up in _GHU and flat in ("dA", "DA")):
+        if (up == "asa~" and flat == "as" and dh.meta.get("gana") in (2, None)) or (up in _GHU and flat in ("dA", "DA")):
             return i, dh
     return None
 

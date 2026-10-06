@@ -14,7 +14,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 
 
 def _stem(t) -> str:
-    return "".join(v.slp1 for v in t.varnas)
+    return "".join(v.slp1 for v in t.varnas if "aT_agama_v" not in v.tags)       # the aṭ of laṅ stands in the same pada
 
 
 def _hit(state: State):
@@ -23,7 +23,7 @@ def _hit(state: State):
         return None
     t = state.terms[i]
     st = _stem(t)
-    if st in ("gam", "yam") or (st == "iz" and (t.meta.get("upadesha_slp1") or "").startswith("izu")):
+    if st in ("gam", "yam") or (st in ("iz", "Ez", "Aiz") and (t.meta.get("upadesha_slp1") or "").startswith("izu")):
         return i
     return None
 
