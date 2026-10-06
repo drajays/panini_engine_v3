@@ -4,6 +4,7 @@
 Padaccheda: दीर्घ-काश-तुष-भ्राष्ट्र-वटम् जे
 
 दीर्घकाशतुषभ्राष्ट्रवटं जे (6.2.82)
+Pāṭha: ashtadhyayi.com data.txt row i=62082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dIrGakASatuzaBrAzwravawaM je",
     text_dev              = "दीर्घकाशतुषभ्राष्ट्रवटं जे",
+    samagra_slp1          = "AdiH udAttaH dIrGa-kASa-tuza-BrAzwra-vawam je pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः दीर्घ-काश-तुष-भ्राष्ट्र-वटम् जे पूर्वपदम्",
     padaccheda_dev        = "दीर्घ-काश-तुष-भ्राष्ट्र-वटम् जे",
     why_dev               = "(सूत्रम् 6.2.82) दीर्घकाशतुषभ्राष्ट्रवटं जे।",
     anuvritti_from        = ('6.1.1',),

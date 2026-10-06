@@ -4,6 +4,7 @@
 Padaccheda: उभयथा ऋक्षु
 
 उभयथर्क्षु (8.3.8)
+Pāṭha: ashtadhyayi.com data.txt row i=83008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uBayaTarkzu",
     text_dev              = "उभयथर्क्षु",
+    samagra_slp1          = "ampare Cavi naH ru~ uBayaTA fkzu",
+    samagra_dev           = "अम्परे छवि नः रुँ उभयथा ऋक्षु",
     padaccheda_dev        = "उभयथा ऋक्षु",
     why_dev               = "(सूत्रम् 8.3.8) उभयथर्क्षु।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: संख्या-अव्यय-आदेः ङीप्
 
 संख्याऽव्ययादेर्ङीप् (4.1.26)
+Pāṭha: ashtadhyayi.com data.txt row i=41026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'saMKyAvyayAderNIp',
     text_dev              = 'संख्याव्ययादेर्ङीप्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt saMKyA-avyayAdeH NIp UDasaH bahuvrIheH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् संख्या-अव्ययादेः ङीप् ऊधसः बहुव्रीहेः",
     padaccheda_dev        = "संख्या-अव्यय-आदेः ङीप्",
     why_dev               = "(सूत्रम् 4.1.26) संख्याऽव्ययादेर्ङीप्।",
     anuvritti_from        = ('4.1.1',),

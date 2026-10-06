@@ -4,6 +4,7 @@
 Padaccheda: विभाषितम् स-उपसर्गम् अन्-उत्तमम्
 
 विभाषितं सोपसर्गमनुत्तमम् (8.1.53)
+Pāṭha: ashtadhyayi.com data.txt row i=81053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzitaM sopasargamanuttamam",
     text_dev              = "विभाषितं सोपसर्गमनुत्तमम्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO viBAzitam sopasargam anuttamam tiN na gatyarTalowA cet kArakam sarvAnyat low",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ विभाषितम् सोपसर्गम् अनुत्तमम् तिङ् न गत्यर्थलोटा चेत् कारकम् सर्वान्यत् लोट्",
     padaccheda_dev        = "विभाषितम् स-उपसर्गम् अन्-उत्तमम्",
     why_dev               = "(सूत्रम् 8.1.53) विभाषितं सोपसर्गमनुत्तमम्।",
     anuvritti_from        = ('8.1.1',),

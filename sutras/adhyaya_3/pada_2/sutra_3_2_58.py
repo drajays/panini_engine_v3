@@ -4,6 +4,7 @@
 Padaccheda: स्पृशः अनुदके क्विन्
 
 krt-suffix rule: स्पृशोऽनुदके क्विन् (58)
+Pāṭha: ashtadhyayi.com data.txt row i=32058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'spfSonudake kvin',
     text_dev              = 'स्पृशोऽनुदके क्विन्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH spfSaH anudake kvin kft karmaRi anupasarge supi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः स्पृशः अनुदके क्विन् कृत् कर्मणि अनुपसर्गे सुपि",
     padaccheda_dev        = "स्पृशः अनुदके क्विन्",
     why_dev               = "धातोः कृत्-प्रत्ययः [स्पृशोऽनुदके क्विन्] विहितः (३.२.58)।",
     anuvritti_from        = ('3.1.1',),

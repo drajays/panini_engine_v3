@@ -4,6 +4,7 @@
 Padaccheda: जनिता मन्त्रे
 
 जनिता मन्त्रे (6.4.53)
+Pāṭha: ashtadhyayi.com data.txt row i=64053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "janitA mantre",
     text_dev              = "जनिता मन्त्रे",
+    samagra_slp1          = "aNgasya asidDavadatrABAt ArDaDAtuke janitA mantre nalopaH lopaH ReH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् आर्धधातुके जनिता मन्त्रे नलोपः लोपः णेः",
     padaccheda_dev        = "जनिता मन्त्रे",
     why_dev               = "(सूत्रम् 6.4.53) जनिता मन्त्रे।",
     anuvritti_from        = ('6.1.1',),

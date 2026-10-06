@@ -17,6 +17,7 @@ Engine implementation:
     • replace first varna 'a' with 'n' in the pratyaya (ādiḥ parasya 1.1.54)
     • set upadesha_slp1 = "ns" (or keep "Sas" with updated varnas)
     • mark "7_1_29_done"
+Pāṭha: ashtadhyayi.com data.txt row i=71029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -76,6 +77,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Saso na",
     text_dev              = "शसो न",
+    samagra_slp1          = "aNgasya SasaH na yuzmad-asmadByAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य शसः न युष्मद्-अस्मद्भ्याम्",
     padaccheda_dev        = "शसः न (लुप्तप्रथमान्तनिर्देशः)",
     why_dev               = "अस्मद्-शब्दयोः शस्-प्रत्ययस्य आदि-'अ' स्थाने नकारः "
                             "(सूत्रम् ७.१.२९ शसो न)।",

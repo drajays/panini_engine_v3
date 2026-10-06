@@ -4,6 +4,7 @@
 Padaccheda: वयस्यासु मूर्ध्नः मतुप्
 
 वयस्यासु मूर्ध्नो मतुप् (4.4.127)
+Pāṭha: ashtadhyayi.com data.txt row i=44127 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vayasyAsu mUrDno matup",
     text_dev              = "वयस्यासु मूर्ध्नो मतुप्",
+    samagra_slp1          = "upaDAnaH mantraH AsAm iti vayasyAsu mUrDnaH iti izwakAsu matup matoH ca luk",
+    samagra_dev           = "'उपधानः मन्त्रः आसाम्' (इति) 'वयस्यासु मूर्ध्नः' इति इष्टकासु मतुप्, मतोः च लुक्",
     padaccheda_dev        = "वयस्यासु मूर्ध्नः मतुप्",
     why_dev               = "(सूत्रम् 4.4.127) वयस्यासु मूर्ध्नो मतुप्।",
     anuvritti_from        = ('4.1.1',),

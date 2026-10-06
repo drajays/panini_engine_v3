@@ -4,6 +4,7 @@
 Padaccheda: न-लोपः सुप्-स्वर-संज्ञा-तुक्-विधिषु कृति
 
 नलोपः सुप्स्वरसंज्ञातुग्विधिषु कृति (8.2.2)
+Pāṭha: ashtadhyayi.com data.txt row i=82002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nalopaH supsvarasaMjYAtugviDizu kfti",
     text_dev              = "नलोपः सुप्स्वरसंज्ञातुग्विधिषु कृति",
+    samagra_slp1          = "sup-svara-saMjYA-tugviDizu-kfti nalopaH pUrvatra asidDam",
+    samagra_dev           = "सुप्-स्वर-संज्ञा-तुग्विधिषु-कृति नलोपः पूर्वत्र असिद्धम्",
     padaccheda_dev        = "न-लोपः सुप्-स्वर-संज्ञा-तुक्-विधिषु कृति",
     why_dev               = "(सूत्रम् 8.2.2) नलोपः सुप्स्वरसंज्ञातुग्विधिषु कृति।",
     anuvritti_from        = ('8.1.1',),

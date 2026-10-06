@@ -13,6 +13,7 @@ Then 6.1.68 apṛkta s-lopa, then 8.2.7 n-lopa: sakhā
 
 Engine: arm ``anaN_recipe`` + finds sakhi-type stem (prātipadika ending in 'i'
 tagged sakhi_ikarant) and replaces final 'i' with [a,n] (anang after ṅ-lopa).
+Pāṭha: ashtadhyayi.com data.txt row i=71093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -65,6 +66,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anaN sO",
     text_dev              = "अनङ् सौ",
+    samagra_slp1          = "asambudDO sO saKyuH anaN",
+    samagra_dev           = "असम्बुद्धौ सौ सख्युः अनङ्",
     padaccheda_dev        = "अनङ् सौ",
     why_dev               = (
         "सखि-शब्दस्य सौ-प्रत्यये परे 'अनङ्'-आदेशः — "

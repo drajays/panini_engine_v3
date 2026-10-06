@@ -4,6 +4,7 @@
 Padaccheda: ब्रह्म-भ्रूण-वृत्रेषु क्विँप्
 
 krt-suffix rule: ब्रह्मभ्रूणवृत्रेषु क्विप् (87)
+Pāṭha: ashtadhyayi.com data.txt row i=32087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "brahmaBrURavftrezu kvip",
     text_dev              = "ब्रह्मभ्रूणवृत्रेषु क्विप्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte brahma-BrURa-vftrezu kvip kft hanaH karmaRi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते ब्रह्म-भ्रूण-वृत्रेषु क्विप् कृत् हनः कर्मणि",
     padaccheda_dev        = "ब्रह्म-भ्रूण-वृत्रेषु क्विँप्",
     why_dev               = "धातोः कृत्-प्रत्ययः [ब्रह्मभ्रूणवृत्रेषु क्विप्] विहितः (३.२.87)।",
     anuvritti_from        = ('3.1.1',),

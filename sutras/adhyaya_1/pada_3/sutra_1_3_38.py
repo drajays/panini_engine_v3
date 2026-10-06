@@ -14,6 +14,7 @@ one tag from _KRAM_USAGES, and (c) the idempotency stamp
 "Atmanepada_1_3_38" is absent from state.meta.
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -53,6 +54,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='vfttisargatAyanezu kramaH',
     text_dev='वृत्तिसर्गतायनेषु क्रमः',
+    samagra_slp1="vfttisargatAyanezu kramaH",
+    samagra_dev="वृत्तिसर्गतायनेषु क्रमः",
     padaccheda_dev="वृत्ति-सर्ग-तायनेषु (सप्तमी-बहुवचन) / क्रमः (प्रथमा-एकवचन)",
     why_dev=(
         "वृत्ति-सर्ग-तायन-अर्थेषु क्रम्-धातोः प्रयोगे आत्मनेपदम् — "

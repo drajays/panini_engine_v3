@@ -4,6 +4,7 @@
 Padaccheda: कं-शंभ्याम् ब-भ-युस्-ति-तु-त-यसः
 
 कंशंभ्यां बभयुस्तितुतयसः (5.2.138)
+Pāṭha: ashtadhyayi.com data.txt row i=52138 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kaMSaMByAM baBayustitutayasaH",
     text_dev              = "कंशंभ्यां बभयुस्तितुतयसः",
+    samagra_slp1          = "tat asya asmin astIti iti kam-SaMByAm ba-Ba-yus-ti-tu-ta-yasaH",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) कम्-शंभ्याम् ब-भ-युस्-ति-तु-त-यसः",
     padaccheda_dev        = "कं-शंभ्याम् ब-भ-युस्-ति-तु-त-यसः",
     why_dev               = "(सूत्रम् 5.2.138) कंशंभ्यां बभयुस्तितुतयसः।",
     anuvritti_from        = ('4.1.82',),

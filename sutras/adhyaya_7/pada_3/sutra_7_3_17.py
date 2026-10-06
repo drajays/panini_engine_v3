@@ -4,6 +4,7 @@
 Padaccheda: परिमाण-अन्तस्य असंज्ञाशाणयोः
 
 परिमाणान्तस्यासंज्ञाशाणयोः (7.3.17)
+Pāṭha: ashtadhyayi.com data.txt row i=73017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parimARAntasyAsaMjYASARayoH",
     text_dev              = "परिमाणान्तस्यासंज्ञाशाणयोः",
+    samagra_slp1          = "aNgasya uttarapadasya parimARAntasya asaMjYASARayoH vfdDiH YRiti acaH tadDitezu AdeH SvAdeH saMKyAyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य परिमाणान्तस्य असंज्ञाशाणयोः वृद्धिः ञ्णिति अचः तद्धितेषु आदेः श्वादेः संख्यायाः",
     padaccheda_dev        = "परिमाण-अन्तस्य असंज्ञाशाणयोः",
     why_dev               = "(सूत्रम् 7.3.17) परिमाणान्तस्यासंज्ञाशाणयोः।",
     anuvritti_from        = ('7.1.1',),

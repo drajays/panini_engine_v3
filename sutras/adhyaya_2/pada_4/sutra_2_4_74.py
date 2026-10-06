@@ -5,6 +5,7 @@ Glass-box scope for `loluv`:
   When a yaG-derived dhātu has a trailing 'y' immediately before an
   ardhadhātuka ac-pratyaya 'a', delete that 'y' (luk) and tag the dhātu with
   ``dhatulopa`` so 1.1.4 can block 7.3.84 guṇa in that locus.
+Pāṭha: ashtadhyayi.com data.txt row i=24074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -53,6 +54,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'yaNoci ca',
     text_dev       = 'यङोऽचि च',
+    samagra_slp1   = "yaNaH aci ca luk bahulam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "यङः अचि च लुक् बहुलम्",
     padaccheda_dev = "यङः / अचि / च",
     why_dev        = "यङन्त-धातोः अचि परे अन्त्य-यकारस्य लुक् (लोप-टैग सह)।",
     anuvritti_from = ("2.4.58",),

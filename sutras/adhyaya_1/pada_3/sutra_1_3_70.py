@@ -16,6 +16,7 @@ becomes modest).
 stamp "Atmanepada_1_3_70" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _LI_ROOTS carries either "sammAnana_usage" or "SAlinIkaraNa_usage" tag.
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -64,6 +65,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='liyaH sammAnanaSAlInIkaraRayoSca',
     text_dev='लियः सम्माननशालीनीकरणयोश्च',
+    samagra_slp1="liyaH sammAnana-SAlInIkaraRayoH ca Atmanepadam ReH pralamBane",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="लियः सम्मानन-शालीनीकरणयोः च आत्मनेपदम् णेः प्रलम्भने",
     padaccheda_dev=(
         "लियः (षष्ठी-एकवचन) / सम्मानन-शालीनीकरणयोः (सप्तमी-द्विवचन) / च"
     ),

@@ -4,6 +4,7 @@
 Padaccheda: उपसर्गस्य घञि अमनुष्ये बहुलम्
 
 उपसर्गस्य घञ्यमनुष्ये बहुलम् (6.3.122)
+Pāṭha: ashtadhyayi.com data.txt row i=63122 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upasargasya GaYyamanuzye bahulam",
     text_dev              = "उपसर्गस्य घञ्यमनुष्ये बहुलम्",
+    samagra_slp1          = "uttarapade saMhitAyAm upasargasya GaYi amanuzye bahulam dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् उपसर्गस्य घञि अमनुष्ये बहुलम् दीर्घः",
     padaccheda_dev        = "उपसर्गस्य घञि अमनुष्ये बहुलम्",
     why_dev               = "(सूत्रम् 6.3.122) उपसर्गस्य घञ्यमनुष्ये बहुलम्।",
     anuvritti_from        = ('6.1.1',),

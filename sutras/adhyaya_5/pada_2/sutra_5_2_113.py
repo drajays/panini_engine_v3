@@ -4,6 +4,7 @@
 Padaccheda: दन्त-शिखात् संज्ञायाम्
 
 दन्तशिखात् संज्ञायाम् (5.2.113)
+Pāṭha: ashtadhyayi.com data.txt row i=52113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dantaSiKAt saMjYAyAm",
     text_dev              = "दन्तशिखात् संज्ञायाम्",
+    samagra_slp1          = "tat asya asmin astIti iti danta-SiKAt saMjYAyAm valac",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) दन्त-शिखात् संज्ञायाम्  वलच्",
     padaccheda_dev        = "दन्त-शिखात् संज्ञायाम्",
     why_dev               = "(सूत्रम् 5.2.113) दन्तशिखात् संज्ञायाम्।",
     anuvritti_from        = ('4.1.82',),

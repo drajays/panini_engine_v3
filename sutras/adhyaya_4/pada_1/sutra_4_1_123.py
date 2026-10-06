@@ -4,6 +4,7 @@
 Padaccheda: शुभ्र-आदिभ्यः च
 
 शुभ्रादिभ्यश्च (4.1.123)
+Pāṭha: ashtadhyayi.com data.txt row i=41123 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SuBrAdiByaSca",
     text_dev              = "शुभ्रादिभ्यश्च",
+    samagra_slp1          = "tasya apatyam iti SuBrAdiByaH Qak",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) शुभ्रादिभ्यः ढक्",
     padaccheda_dev        = "शुभ्र-आदिभ्यः च",
     why_dev               = "(सूत्रम् 4.1.123) शुभ्रादिभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

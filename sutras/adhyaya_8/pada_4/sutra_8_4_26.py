@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि ऋत्-अवग्रहात्
 
 छन्दस्यृदवग्रहात् (8.4.26)
+Pāṭha: ashtadhyayi.com data.txt row i=84026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "CandasyfdavagrahAt",
     text_dev              = "छन्दस्यृदवग्रहात्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm Candasi ft-avagrahAt razAByAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् छन्दसि ऋत्-अवग्रहात् रषाभ्याम्",
     padaccheda_dev        = "छन्दसि ऋत्-अवग्रहात्",
     why_dev               = "(सूत्रम् 8.4.26) छन्दस्यृदवग्रहात्।",
     anuvritti_from        = ('8.1.1',),

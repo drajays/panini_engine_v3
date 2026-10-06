@@ -4,6 +4,7 @@
 Padaccheda: छेद-आदिभ्यः नित्यम्
 
 छेदादिभ्यो नित्यम् (5.1.64)
+Pāṭha: ashtadhyayi.com data.txt row i=51064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "CedAdiByo nityam",
     text_dev              = "छेदादिभ्यो नित्यम्",
+    samagra_slp1          = "tat nityamarhati iti CedAdiByaH",
+    samagra_dev           = "'तत् नित्यमर्हति' इति छेदादिभ्यः",
     padaccheda_dev        = "छेद-आदिभ्यः नित्यम्",
     why_dev               = "(सूत्रम् 5.1.64) छेदादिभ्यो नित्यम्।",
     anuvritti_from        = ('5.1.18',),

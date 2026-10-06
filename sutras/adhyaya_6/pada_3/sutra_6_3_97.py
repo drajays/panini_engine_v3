@@ -4,6 +4,7 @@
 Padaccheda: द्वि-अन्तः-उपसर्गेभ्यः अपः ईत्
 
 द्व्यन्तरुपसर्गेभ्योऽप ईत् (6.3.97)
+Pāṭha: ashtadhyayi.com data.txt row i=63097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'dvyantarupasargeByopa It',
     text_dev              = 'द्व्यन्तरुपसर्गेभ्योऽप ईत्',
+    samagra_slp1          = "uttarapade dvi-antar-upasargeByaH apaH It",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे द्वि-अन्तर्-उपसर्गेभ्यः अपः ईत्",
     padaccheda_dev        = "द्वि-अन्तः-उपसर्गेभ्यः अपः ईत्",
     why_dev               = "(सूत्रम् 6.3.97) द्व्यन्तरुपसर्गेभ्योऽप ईत्।",
     anuvritti_from        = ('6.1.1',),

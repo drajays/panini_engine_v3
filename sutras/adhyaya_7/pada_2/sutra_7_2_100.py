@@ -4,6 +4,7 @@
 Padaccheda: अचि रः ऋतः
 
 अचि र ऋतः (7.2.100)
+Pāṭha: ashtadhyayi.com data.txt row i=72100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aci ra ftaH",
     text_dev              = "अचि र ऋतः",
+    samagra_slp1          = "tisfcatasf aci viBaktO ftaH raH",
+    samagra_dev           = "तिसृचतसृ अचि विभक्तौ ऋतः रः",
     padaccheda_dev        = "अचि रः ऋतः",
     why_dev               = "(सूत्रम् 7.2.100) अचि र ऋतः।",
     anuvritti_from        = ('7.1.1',),

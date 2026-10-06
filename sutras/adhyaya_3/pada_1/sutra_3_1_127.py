@@ -4,6 +4,7 @@
 Padaccheda: आनाय्यः अनित्ये
 
 Krt suffix rule from dhatu: आनाय्योऽनित्ये (127)
+Pāṭha: ashtadhyayi.com data.txt row i=31127 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'AnAyyonitye',
     text_dev              = 'आनाय्योऽनित्ये',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH AnAyyaH anitye kft Ryat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः आनाय्यः अनित्ये कृत् ण्यत्",
     padaccheda_dev        = "आनाय्यः अनित्ये",
     why_dev               = "धातोः [आनाय्योऽनित्ये]-प्रत्ययः विहितः (३.१.127)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

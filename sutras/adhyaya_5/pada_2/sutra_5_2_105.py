@@ -4,6 +4,7 @@
 Padaccheda: देशे लुप्-इलचौ च
 
 देशे लुबिलचौ च (5.2.105)
+Pāṭha: ashtadhyayi.com data.txt row i=52105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "deSe lubilacO ca",
     text_dev              = "देशे लुबिलचौ च",
+    samagra_slp1          = "tat asya asmin astIti iti sikatA-SarkarAByAm deSe aR ilac matu~p lup ca",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) सिकता-शर्कराभ्याम् देशे अण्, इलच्, मतुँप्, लुप् च",
     padaccheda_dev        = "देशे लुप्-इलचौ च",
     why_dev               = "(सूत्रम् 5.2.105) देशे लुबिलचौ च।",
     anuvritti_from        = ('4.1.82',),

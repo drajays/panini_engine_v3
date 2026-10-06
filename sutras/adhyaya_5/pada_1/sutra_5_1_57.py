@@ -4,6 +4,7 @@
 Padaccheda: तत् अस्य परिमाणम्
 
 तदस्य परिमाणम् (5.1.57)
+Pāṭha: ashtadhyayi.com data.txt row i=51057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadasya parimARam",
     text_dev              = "तदस्य परिमाणम्",
+    samagra_slp1          = "tat asya parimARam iti samarTAnAM praTamAt paraH WaY pratyayaH",
+    samagra_dev           = "'तत् अस्य परिमाणम्' इति समर्थानां प्रथमात् परः  ठञ् प्रत्ययः",
     padaccheda_dev        = "तत् अस्य परिमाणम्",
     why_dev               = "(सूत्रम् 5.1.57) तदस्य परिमाणम्।",
     anuvritti_from        = ('5.1.19',),

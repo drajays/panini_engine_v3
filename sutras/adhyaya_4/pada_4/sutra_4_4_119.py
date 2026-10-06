@@ -4,6 +4,7 @@
 Padaccheda: बर्हिषि दत्तम्
 
 बर्हिषि दत्तम् (4.4.119)
+Pāṭha: ashtadhyayi.com data.txt row i=44119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "barhizi dattam",
     text_dev              = "बर्हिषि दत्तम्",
+    samagra_slp1          = "tatra dattam iti barhizi Candasi saMjYAyAt yat",
+    samagra_dev           = "'तत्र दत्तम्' इति बर्हिषि छन्दसि संज्ञायात् यत्",
     padaccheda_dev        = "बर्हिषि दत्तम्",
     why_dev               = "(सूत्रम् 4.4.119) बर्हिषि दत्तम्।",
     anuvritti_from        = ('4.1.1',),

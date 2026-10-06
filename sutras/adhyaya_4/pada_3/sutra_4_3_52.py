@@ -4,6 +4,7 @@
 Padaccheda: तत् अस्य सोढम्
 
 तदस्य सोढम् (4.3.52)
+Pāṭha: ashtadhyayi.com data.txt row i=43052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadasya soQam",
     text_dev              = "तदस्य सोढम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA tat asya soQam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा तत् अस्य सोढम्",
     padaccheda_dev        = "तत् अस्य सोढम्",
     why_dev               = "(सूत्रम् 4.3.52) तदस्य सोढम्।",
     anuvritti_from        = ('4.1.1',),

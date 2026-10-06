@@ -4,6 +4,7 @@
 Padaccheda: आरक् उदीचाम्
 
 आरगुदीचाम् (4.1.130)
+Pāṭha: ashtadhyayi.com data.txt row i=41130 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AragudIcAm",
     text_dev              = "आरगुदीचाम्",
+    samagra_slp1          = "tasya apatyam iti goDAyAH udIcAmArak",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) गोधायाः उदीचामारक्",
     padaccheda_dev        = "आरक् उदीचाम्",
     why_dev               = "(सूत्रम् 4.1.130) आरगुदीचाम्।",
     anuvritti_from        = ('4.1.1',),

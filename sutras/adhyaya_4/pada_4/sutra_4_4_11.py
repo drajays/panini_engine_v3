@@ -4,6 +4,7 @@
 Padaccheda: श्वगणात् ठञ् च
 
 श्वगणाट्ठञ्च (4.4.11)
+Pāṭha: ashtadhyayi.com data.txt row i=44011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SvagaRAwWaYca",
     text_dev              = "श्वगणाट्ठञ्च",
+    samagra_slp1          = "tena carati iti SvagaRAt zWan WaY ca",
+    samagra_dev           = "'तेन चरति' (इति) श्वगणात् ष्ठन् ठञ् च",
     padaccheda_dev        = "श्वगणात् ठञ् च",
     why_dev               = "(सूत्रम् 4.4.11) श्वगणाट्ठञ्च।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अस्-माया-मेधा-स्रजः विनिः
 
 अस्मायामेधास्रजो विनिः (5.2.121)
+Pāṭha: ashtadhyayi.com data.txt row i=52121 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "asmAyAmeDAsrajo viniH",
     text_dev              = "अस्मायामेधास्रजो विनिः",
+    samagra_slp1          = "tat asya asmin astIti iti as-mAyA-meDA-srajaH viniH matu~p anyatarasyAm",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) अस्-माया-मेधा-स्रजः विनिः, मतुँप् अन्यतरस्याम्",
     padaccheda_dev        = "अस्-माया-मेधा-स्रजः विनिः",
     why_dev               = "(सूत्रम् 5.2.121) अस्मायामेधास्रजो विनिः।",
     anuvritti_from        = ('4.1.82',),

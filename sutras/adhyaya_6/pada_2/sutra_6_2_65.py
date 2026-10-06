@@ -4,6 +4,7 @@
 Padaccheda: सप्तमी-हारिणौ धर्म्ये अहरणे
 
 सप्तमीहारिणौ धर्म्येऽहरणे (6.2.65)
+Pāṭha: ashtadhyayi.com data.txt row i=62065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'saptamIhAriRO DarmyeharaRe',
     text_dev              = 'सप्तमीहारिणौ धर्म्येऽहरणे',
+    samagra_slp1          = "AdiH udAttaH saptamI-hAriRO Darmye aharaRe pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः सप्तमी-हारिणौ धर्म्ये अहरणे पूर्वपदम्",
     padaccheda_dev        = "सप्तमी-हारिणौ धर्म्ये अहरणे",
     why_dev               = "(सूत्रम् 6.2.65) सप्तमीहारिणौ धर्म्येऽहरणे।",
     anuvritti_from        = ('6.1.1',),

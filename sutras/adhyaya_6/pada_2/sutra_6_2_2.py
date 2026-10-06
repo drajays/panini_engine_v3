@@ -4,6 +4,7 @@
 Padaccheda: तत्पुरुषे तुल्य-अर्थ-तृतीया-सप्तमी-उपमान-अव्यय-द्वितीया-कृत्याः
 
 तत्पुरुषे तुल्यार्थतृतीयासप्तम्युपमानाव्ययद्वितीयाकृत्याः (6.2.2)
+Pāṭha: ashtadhyayi.com data.txt row i=62002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tatpuruze tulyArTatftIyAsaptamyupamAnAvyayadvitIyAkftyAH",
     text_dev              = "तत्पुरुषे तुल्यार्थतृतीयासप्तम्युपमानाव्ययद्वितीयाकृत्याः",
+    samagra_slp1          = "tatpuruze tulyArTa-tftIyA-saptamI-upamAna-dvitIyA-kftyAH prakftyA pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तत्पुरुषे तुल्यार्थ-तृतीया-सप्तमी-उपमान-द्वितीया-कृत्याः प्रकृत्या पूर्वपदम्",
     padaccheda_dev        = "तत्पुरुषे तुल्य-अर्थ-तृतीया-सप्तमी-उपमान-अव्यय-द्वितीया-कृत्याः",
     why_dev               = "(सूत्रम् 6.2.2) तत्पुरुषे तुल्यार्थतृतीयासप्तम्युपमानाव्ययद्वितीयाकृत्याः।",
     anuvritti_from        = ('6.1.1',),

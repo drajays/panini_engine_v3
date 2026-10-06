@@ -14,6 +14,7 @@ upadesha_slp1 is "zwA", (c) that dhātu carries the tag "prakASana_usage" OR
 "sTeyA_usage", and (d) idempotency guard "Atmanepada_1_3_23" absent from meta.
 No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True because no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='prakASanasTeyAKyayoSca',
     text_dev='प्रकाशनस्थेयाख्ययोश्च',
+    samagra_slp1="prakASana-sTeyAKyayoH sTaH Atmanepadam",
+    samagra_dev="प्रकाशन-स्थेयाख्ययोः स्थः आत्मनेपदम्",
     padaccheda_dev="प्रकाशन-स्थेया-आख्यायोः (षष्ठी-द्विवचन) / च",
     why_dev=(
         "प्रकाशन-अर्थे स्थेया-अर्थे च स्था-धातोः आत्मनेपदं भवति; "

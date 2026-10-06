@@ -4,6 +4,7 @@
 Padaccheda: वॄतः वा
 
 वॄतो वा (7.2.38)
+Pāṭha: ashtadhyayi.com data.txt row i=72038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vFto vA",
     text_dev              = "वॄतो वा",
+    samagra_slp1          = "aNgasya vFtaH vA valAdeH iw ArDaDAtukasya grahaH aliwi dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य वॄतः वा वलादेः इट् आर्धधातुकस्य ग्रहः अलिटि दीर्घः",
     padaccheda_dev        = "वॄतः वा",
     why_dev               = "(सूत्रम् 7.2.38) वॄतो वा।",
     anuvritti_from        = ('7.1.1',),

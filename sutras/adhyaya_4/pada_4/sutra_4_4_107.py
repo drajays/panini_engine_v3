@@ -4,6 +4,7 @@
 Padaccheda: समानतीर्थे वासी
 
 समानतीर्थे वासी (4.4.107)
+Pāṭha: ashtadhyayi.com data.txt row i=44107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samAnatIrTe vAsI",
     text_dev              = "समानतीर्थे वासी",
+    samagra_slp1          = "vAsI iti saMjYAyAm samAnatIrTe yat",
+    samagra_dev           = "'वासी' (इति) संज्ञायाम् समानतीर्थे यत्",
     padaccheda_dev        = "समानतीर्थे वासी",
     why_dev               = "(सूत्रम् 4.4.107) समानतीर्थे वासी।",
     anuvritti_from        = ('4.1.1',),

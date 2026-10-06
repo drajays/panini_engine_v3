@@ -4,6 +4,7 @@
 Padaccheda: रोग-आख्यायाम् ण्वुल् बहुलम्
 
 krt-suffix rule: रोगाख्यायां ण्वुल् बहुलम्
+Pāṭha: ashtadhyayi.com data.txt row i=33108 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rogAKyAyAM Rvul bahulam",
     text_dev              = "रोगाख्यायां ण्वुल् बहुलम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm striyAm rogAKyAyAm Rvul bahulam kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् स्त्रियाम् रोगाख्यायाम् ण्वुल् बहुलम् कृत्",
     padaccheda_dev        = "रोग-आख्यायाम् ण्वुल् बहुलम्",
     why_dev               = "धातोः प्रत्ययः (३.3.108)।",
     anuvritti_from        = ('3.1.1',),

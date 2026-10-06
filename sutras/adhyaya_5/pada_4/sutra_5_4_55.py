@@ -4,6 +4,7 @@
 Padaccheda: देये त्रा च
 
 देये त्रा च (5.4.55)
+Pāṭha: ashtadhyayi.com data.txt row i=54055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "deye trA ca",
     text_dev              = "देये त्रा च",
+    samagra_slp1          = "tadaDInavacane deye kf-BU-asti yoge sampadA ca sAtiH trA ca",
+    samagra_dev           = "तदधीनवचने देये कृ-भू-अस्ति योगे सम्पदा च सातिः, त्रा च",
     padaccheda_dev        = "देये त्रा च",
     why_dev               = "(सूत्रम् 5.4.55) देये त्रा च।",
     anuvritti_from        = ('4.1.76',),

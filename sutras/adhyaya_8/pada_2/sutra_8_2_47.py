@@ -4,6 +4,7 @@
 Padaccheda: श्यः अस्पर्शे
 
 श्योऽस्पर्शे (8.2.47)
+Pāṭha: ashtadhyayi.com data.txt row i=82047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'SyosparSe',
     text_dev              = 'श्योऽस्पर्शे',
+    samagra_slp1          = "padasya pUrvatrAsidDam SyaH asparSe nizWAtaH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् श्यः अस्पर्शे निष्ठातः नः",
     padaccheda_dev        = "श्यः अस्पर्शे",
     why_dev               = "(सूत्रम् 8.2.47) श्योऽस्पर्शे।",
     anuvritti_from        = ('8.1.1',),

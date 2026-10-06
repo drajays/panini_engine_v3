@@ -4,6 +4,7 @@
 Padaccheda: धान्यानाम् भवने क्षेत्रे खञ्
 
 धान्यानां भवने क्षेत्रे खञ् (5.2.1)
+Pāṭha: ashtadhyayi.com data.txt row i=52001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DAnyAnAM Bavane kzetre KaY",
     text_dev              = "धान्यानां भवने क्षेत्रे खञ्",
+    samagra_slp1          = "DAnyAnAm Bavane kzetre KaY",
+    samagra_dev           = "धान्यानाम् भवने क्षेत्रे खञ्",
     padaccheda_dev        = "धान्यानाम् भवने क्षेत्रे खञ्",
     why_dev               = "(सूत्रम् 5.2.1) धान्यानां भवने क्षेत्रे खञ्।",
     anuvritti_from        = ('4.1.82',),

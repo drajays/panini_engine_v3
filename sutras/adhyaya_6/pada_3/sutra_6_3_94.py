@@ -4,6 +4,7 @@
 Padaccheda: तिरसः तिरि (लुप्तप्रथमान्तनिर्देशः) अलोपे
 
 तिरसस्तिर्यलोपे (6.3.94)
+Pāṭha: ashtadhyayi.com data.txt row i=63094 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tirasastiryalope",
     text_dev              = "तिरसस्तिर्यलोपे",
+    samagra_slp1          = "apratyaye alope aYcatO uttarapade tirasaH tiri",
+    samagra_dev           = "अप्रत्यये अलोपे अञ्चतौ उत्तरपदे तिरसः तिरि",
     padaccheda_dev        = "तिरसः तिरि (लुप्तप्रथमान्तनिर्देशः) अलोपे",
     why_dev               = "(सूत्रम् 6.3.94) तिरसस्तिर्यलोपे।",
     anuvritti_from        = ('6.1.1',),

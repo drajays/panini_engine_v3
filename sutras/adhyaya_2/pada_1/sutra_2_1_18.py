@@ -9,6 +9,7 @@ Example: *gaṅgāyāḥ pāre* → *pāragaṅgam* ("on the far side of the Ga�
 
 v3 narrow slice: gate-marks the compound with key
 ``2_1_18_pare_madhye_shashti``.
+Pāṭha: ashtadhyayi.com data.txt row i=21018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pAre maDye zazWyA vA",
     text_dev              = "पारे मध्ये षष्ठ्या वा",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA avyayIBAvaH pAre maDye zazWyA vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा अव्ययीभावः पारे मध्ये षष्ठ्या वा",
     padaccheda_dev        = "पारे / मध्ये / षष्ठ्या / वा",
     why_dev               = "पार-मध्य-शब्दयोः षष्ठ्यन्तेन सह विकल्पेन अव्ययीभावः (२.१.१८)।",
     anuvritti_from        = ("2.1.5",),

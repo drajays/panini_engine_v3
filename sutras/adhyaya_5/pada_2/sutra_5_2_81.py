@@ -4,6 +4,7 @@
 Padaccheda: काल-प्रयोजनात् रोगे
 
 कालप्रयोजनाद्रोगे (5.2.81)
+Pāṭha: ashtadhyayi.com data.txt row i=52081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kAlaprayojanAdroge",
     text_dev              = "कालप्रयोजनाद्रोगे",
+    samagra_slp1          = "kAla-prayojanAt roge saMjYAyAm",
+    samagra_dev           = "काल-प्रयोजनात् रोगे संज्ञायाम्",
     padaccheda_dev        = "काल-प्रयोजनात् रोगे",
     why_dev               = "(सूत्रम् 5.2.81) कालप्रयोजनाद्रोगे।",
     anuvritti_from        = ('4.1.82',),

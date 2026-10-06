@@ -4,6 +4,7 @@
 Padaccheda: अद्यश्वीन (लुप्तप्रथमान्तनिर्देशः) अवष्टब्धे
 
 अद्यश्वीनाऽवष्टब्धे (5.2.13)
+Pāṭha: ashtadhyayi.com data.txt row i=52013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'adyaSvInAvazwabDe',
     text_dev              = 'अद्यश्वीनाऽवष्टब्धे',
+    samagra_slp1          = "avazwabDe vijAyate iti adyaSvInaH nipAtyate",
+    samagra_dev           = "'अवष्टब्धे विजायते' (इति) अद्यश्वीनः (निपात्यते)",
     padaccheda_dev        = "अद्यश्वीन (लुप्तप्रथमान्तनिर्देशः) अवष्टब्धे",
     why_dev               = "(सूत्रम् 5.2.13) अद्यश्वीनाऽवष्टब्धे।",
     anuvritti_from        = ('4.1.82',),

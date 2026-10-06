@@ -190,6 +190,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'pugantalaGUpaDasya ca',
     text_dev       = 'पुगन्तलघूपधस्य च',
+    samagra_slp1   = "sArvaDAtukArDaDAtukayoH pugantalaGUpaDasya ca guRaH",
+    samagra_dev    = "सार्वधातुकार्धधातुकयोः पुगन्तलघूपधस्य च गुणः",
     padaccheda_dev = "पुगन्त-लघु-उपधस्य च",
     why_dev        = (
         "पुगन्त/लघूपध-अङ्गस्य उपधायाः गुणः (इडागम-इकारे तु 1.1.6 निषेधः); "

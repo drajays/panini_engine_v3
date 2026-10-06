@@ -4,6 +4,7 @@
 Padaccheda: न रुधः
 
 Krt suffix rule from dhatu: न रुधः (64)
+Pāṭha: ashtadhyayi.com data.txt row i=31064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na ruDaH",
     text_dev              = "न रुधः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH na ruDaH luNi cleH ciR te karmakartari",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः न रुधः लुङि च्लेः चिण् ते कर्मकर्तरि",
     padaccheda_dev        = "न रुधः",
     why_dev               = "धातोः [न रुधः]-प्रत्ययः विहितः (३.१.64)।",
     anuvritti_from        = ('3.1.1',),

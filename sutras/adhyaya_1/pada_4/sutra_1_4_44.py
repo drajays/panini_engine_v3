@@ -10,6 +10,7 @@ E.g. *śatena parikrīṇāti* — the śata (hundred) is the price → samprad�
 
 *Engine:* tags bearing ``"parikaraNa_sAmpr"`` get ``"sampradAna"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'parikrayaRe sampradAnamanyatarasyAm',
     text_dev             = 'परिक्रयणे सम्प्रदानमन्यतरस्याम्',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake parikrayaRe sampradAnam anyatarasyAm sADakatamam karaRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके परिक्रयणे सम्प्रदानम् अन्यतरस्याम् साधकतमम् करणम्",
     padaccheda_dev       = "परिक्रयणे / सम्प्रदानम् / अन्यतरस्याम्",
     why_dev              = (
         "परिक्रयणे (भृत्यपरिग्रहे) यत् मूल्यं दीयते तत् सम्प्रदान-कारक-संज्ञकम् "

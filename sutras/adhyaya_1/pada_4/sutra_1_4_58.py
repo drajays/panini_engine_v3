@@ -9,6 +9,7 @@ dus, dur, vi, A, ni, aDi, api, ati, su, ut, ud — these also become nipātas
 under the adhikāra of 1.4.56 (prāg rīśvarān nipātāḥ).
 
 v3: registers samjna_registry["upasarga_list"] as a frozenset of SLP1 forms.
+Pāṭha: ashtadhyayi.com data.txt row i=14058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -37,6 +38,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1="prAdayaH",
     text_dev="प्रादयः",
+    samagra_slp1="prAdayaH asatve nipAtAH",
+    samagra_dev="प्रादयः असत्वे निपाताः",
     padaccheda_dev="प्र-आदयः",
     why_dev="प्रादयः (प्र, परा, अप, सम्, अनु, अव, निस्, निर्, दुस्, दुर्, वि, आ, नि, अधि, अपि, अति, सु, उत्, उद्) "
             "इत्येते निपात-संज्ञाः सन्ति — उपसर्ग-सूचिः संज्ञारजिस्ट्रीयां स्थाप्यते।",

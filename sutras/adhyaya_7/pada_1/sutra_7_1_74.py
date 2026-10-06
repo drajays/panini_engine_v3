@@ -4,6 +4,7 @@
 Padaccheda: तृतीया-आदिषु भाषितपुंस्कम् पुंवत् गालवस्य
 
 तृतीयाऽऽदिषु भाषितपुंस्कं पुंवद्गालवस्य (7.1.74)
+Pāṭha: ashtadhyayi.com data.txt row i=71074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tftIyAdizu BAzitapuMskaM puMvadgAlavasya',
     text_dev              = 'तृतीयादिषु भाषितपुंस्कं पुंवद्गालवस्य',
+    samagra_slp1          = "BAzitapuMskasya napuMsakasya ikaH aNgasya tftIyAdizu aci viBaktO puMvad - gAlavasya",
+    samagra_dev           = "भाषितपुंस्कस्य नपुंसकस्य इकः अङ्गस्य तृतीयादिषु अचि विभक्तौ पुंवद् - गालवस्य",
     padaccheda_dev        = "तृतीया-आदिषु भाषितपुंस्कम् पुंवत् गालवस्य",
     why_dev               = "(सूत्रम् 7.1.74) तृतीयाऽऽदिषु भाषितपुंस्कं पुंवद्गालवस्य।",
     anuvritti_from        = ('7.1.1',),

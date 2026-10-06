@@ -4,6 +4,7 @@
 Padaccheda: विभाषा छन्दसि
 
 विभाषा छन्दसि (6.2.164)
+Pāṭha: ashtadhyayi.com data.txt row i=62164 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA Candasi",
     text_dev              = "विभाषा छन्दसि",
+    samagra_slp1          = "uttarapadAdiH antaH viBAzA Candasi bahuvrIhO saMKyAyAH stanaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः विभाषा छन्दसि बहुव्रीहौ संख्यायाः स्तनः",
     padaccheda_dev        = "विभाषा छन्दसि",
     why_dev               = "(सूत्रम् 6.2.164) विभाषा छन्दसि।",
     anuvritti_from        = ('6.1.1',),

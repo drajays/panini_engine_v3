@@ -4,6 +4,7 @@
 Padaccheda: न गो-श्वन्-सौ-अवर्ण-राट्-अङ्-क्रुङ्-कृद्‍भ्यः
 
 न गोश्वन्त्साववर्णराडङ्क्रुङ्कृद्भ्यः (6.1.182)
+Pāṭha: ashtadhyayi.com data.txt row i=61182 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na goSvantsAvavarRarAqaNkruNkfdByaH",
     text_dev              = "न गोश्वन्त्साववर्णराडङ्क्रुङ्कृद्भ्यः",
+    samagra_slp1          = "na go-Svan-sAvavarRaH-rAqaN-kruN-kfdByaH antaH udAttaH viBaktiH nAm anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "न गो-श्वन्-साववर्णः-राडङ्-क्रुङ्-कृद्भ्यः अन्तः उदात्तः विभक्तिः नाम् अन्यतरस्याम्",
     padaccheda_dev        = "न गो-श्वन्-सौ-अवर्ण-राट्-अङ्-क्रुङ्-कृद्‍भ्यः",
     why_dev               = "(सूत्रम् 6.1.182) न गोश्वन्त्साववर्णराडङ्क्रुङ्कृद्भ्यः।",
     anuvritti_from        = ('6.1.1',),

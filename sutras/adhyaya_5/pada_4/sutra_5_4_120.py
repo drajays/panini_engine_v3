@@ -4,6 +4,7 @@
 Padaccheda: सुप्रात-सुश्व-सुदिव-शारिकुक्ष-चतुरश्र-एणीपद-अजपद-प्रोष्ठपदाः
 
 सुप्रातसुश्वसुदिवशारिकुक्षचतुरश्रैणीपदाजपदप्रोष्ठपदाः (5.4.120)
+Pāṭha: ashtadhyayi.com data.txt row i=54120 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "suprAtasuSvasudivaSArikukzacaturaSrERIpadAjapadaprozWapadAH",
     text_dev              = "सुप्रातसुश्वसुदिवशारिकुक्षचतुरश्रैणीपदाजपदप्रोष्ठपदाः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA suprAtasuSvasudivaSArikukzacaturaSrERIpadAjapadaprozWapadAH bahuvrIhO ac",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा सुप्रातसुश्वसुदिवशारिकुक्षचतुरश्रैणीपदाजपदप्रोष्ठपदाः बहुव्रीहौ अच्",
     padaccheda_dev        = "सुप्रात-सुश्व-सुदिव-शारिकुक्ष-चतुरश्र-एणीपद-अजपद-प्रोष्ठपदाः",
     why_dev               = "(सूत्रम् 5.4.120) सुप्रातसुश्वसुदिवशारिकुक्षचतुरश्रैणीपदाजपदप्रोष्ठपदाः।",
     anuvritti_from        = ('5.4.68',),

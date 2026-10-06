@@ -4,6 +4,7 @@
 Padaccheda: कार्त्तकौजप-आदयः च
 
 कार्तकौजपादयश्च (6.2.37)
+Pāṭha: ashtadhyayi.com data.txt row i=62037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kArtakOjapAdayaSca",
     text_dev              = "कार्तकौजपादयश्च",
+    samagra_slp1          = "kArtakOjapAdayaH ca prakftyA pUrvapadam rAjanya-bahuvacana-dvandve",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "कार्तकौजपादयः च प्रकृत्या पूर्वपदम् राजन्य-बहुवचन-द्वन्द्वे",
     padaccheda_dev        = "कार्त्तकौजप-आदयः च",
     why_dev               = "(सूत्रम् 6.2.37) कार्तकौजपादयश्च।",
     anuvritti_from        = ('6.1.1',),

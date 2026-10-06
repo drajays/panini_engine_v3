@@ -4,6 +4,7 @@
 Padaccheda: अ-प्लुत-वत् उपस्थिते
 
 अप्लुतवदुपस्थिते (6.1.129)
+Pāṭha: ashtadhyayi.com data.txt row i=61129 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aplutavadupasTite",
     text_dev              = "अप्लुतवदुपस्थिते",
+    samagra_slp1          = "plutaH avasTite aplutavat",
+    samagra_dev           = "प्लुतः अवस्थिते अप्लुतवत्",
     padaccheda_dev        = "अ-प्लुत-वत् उपस्थिते",
     why_dev               = "(सूत्रम् 6.1.129) अप्लुतवदुपस्थिते।",
     anuvritti_from        = ('6.1.1',),

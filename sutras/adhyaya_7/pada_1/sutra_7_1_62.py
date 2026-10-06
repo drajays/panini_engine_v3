@@ -4,6 +4,7 @@
 Padaccheda: न इटि अ-लिटि रधेः
 
 नेट्यलिटि रधेः (7.1.62)
+Pāṭha: ashtadhyayi.com data.txt row i=71062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "newyaliwi raDeH",
     text_dev              = "नेट्यलिटि रधेः",
+    samagra_slp1          = "raDeH aliwi iwi aci num na",
+    samagra_dev           = "रधेः अलिटि इटि अचि नुम् न",
     padaccheda_dev        = "न इटि अ-लिटि रधेः",
     why_dev               = "(सूत्रम् 7.1.62) नेट्यलिटि रधेः।",
     anuvritti_from        = ('7.1.1',),

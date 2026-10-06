@@ -4,6 +4,7 @@
 Padaccheda: श्राद्धम् अनेन भुक्तम् इनि-ठनौ
 
 श्राद्धमनेन भुक्तमिनिठनौ (5.2.85)
+Pāṭha: ashtadhyayi.com data.txt row i=52085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SrAdDamanena BuktaminiWanO",
     text_dev              = "श्राद्धमनेन भुक्तमिनिठनौ",
+    samagra_slp1          = "SrAdDamanena Buktam iti iniWanO",
+    samagra_dev           = "'श्राद्धमनेन भुक्तम्' (इति) इनिठनौ",
     padaccheda_dev        = "श्राद्धम् अनेन भुक्तम् इनि-ठनौ",
     why_dev               = "(सूत्रम् 5.2.85) श्राद्धमनेन भुक्तमिनिठनौ।",
     anuvritti_from        = ('4.1.82',),

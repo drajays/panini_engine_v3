@@ -94,6 +94,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'eNhrasvAt sambudDeH',
     text_dev       = 'एङ्ह्रस्वात् सम्बुद्धेः',
+    samagra_slp1   = "eN-hrasvAt sambudDeH hal lupyate ",
+    samagra_dev    = "एङ्-ह्रस्वात् सम्बुद्धेः हल् लुप्यते ।",
     padaccheda_dev = "एङ्-ह्रस्वात् सम्बुद्धेः — हलोः",
     why_dev        = "एङ्-अन्त / ह्रस्व-अन्त अङ्गात् परस्य सम्बुद्धि-एकवचन-"
                      "सु-प्रत्ययस्य हल्-वर्णस्य लोपः।",

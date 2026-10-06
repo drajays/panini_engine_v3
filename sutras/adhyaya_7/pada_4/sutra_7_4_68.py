@@ -4,6 +4,7 @@
 Padaccheda: व्यथः लिटि
 
 व्यथो लिटि (7.4.68)
+Pāṭha: ashtadhyayi.com data.txt row i=74068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vyaTo liwi",
     text_dev              = "व्यथो लिटि",
+    samagra_slp1          = "aNgasya aByAsasya vyaTaH liwi samprasAraRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य व्यथः लिटि सम्प्रसारणम्",
     padaccheda_dev        = "व्यथः लिटि",
     why_dev               = "(सूत्रम् 7.4.68) व्यथो लिटि।",
     anuvritti_from        = ('7.1.1',),

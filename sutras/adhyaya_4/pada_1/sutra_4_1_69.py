@@ -4,6 +4,7 @@
 Padaccheda: ऊरु-उत्तरपदात् औपम्ये
 
 ऊरूत्तरपदादौपम्ये (4.1.69)
+Pāṭha: ashtadhyayi.com data.txt row i=41069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "UrUttarapadAdOpamye",
     text_dev              = "ऊरूत्तरपदादौपम्ये",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt UrU-uttarapadAt Opamye UN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् ऊरू-उत्तरपदात् औपम्ये ऊङ्",
     padaccheda_dev        = "ऊरु-उत्तरपदात् औपम्ये",
     why_dev               = "(सूत्रम् 4.1.69) ऊरूत्तरपदादौपम्ये।",
     anuvritti_from        = ('4.1.1',),

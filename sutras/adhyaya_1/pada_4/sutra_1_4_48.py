@@ -9,6 +9,7 @@ the place of dwelling becomes *karman*. E.g. *grāmam upavasat*.
 
 *Engine:* tags bearing ``"upa_anu_aDi_A_vas_karma"`` get ``"karman"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -41,6 +42,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'upAnvaDyANvasaH',
     text_dev             = 'उपान्वध्याङ्वसः',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake upa-anu-aDi-AN-vasaH ADAraH karma",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके उप-अनु-अधि-आङ्-वसः आधारः कर्म",
     padaccheda_dev       = "उप-अनु-अधि-आङ् / वसः",
     why_dev              = (
         "उप-अनु-अधि-आङ्-पूर्वक-वस्-धातोः यः आवासस्थानम् तत् कर्म-कारक-संज्ञकम्। "

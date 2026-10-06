@@ -17,6 +17,7 @@ Engine implementation:
   act:
     • replace final 'd' varna with 'ā' (SLP1: "A")
     • add "7_2_86_done" tag to stem
+Pāṭha: ashtadhyayi.com data.txt row i=72086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -67,6 +68,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yuzmadasmadoranAdeSe",
     text_dev              = "युष्मदस्मदोरनादेशे",
+    samagra_slp1          = "aNgasya yuzmadasmadoH anAdeSe AH viBaktO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य युष्मदस्मदोः अनादेशे आः विभक्तौ",
     padaccheda_dev        = "युष्मद्-अस्मदोः अन्-आदेशे",
     why_dev               = "अस्मद्-शब्दस्य अन्त्य-दकारस्य स्थाने दीर्घ-आकारः "
                             "(सूत्रम् ७.२.८६ युष्मदस्मदोरनादेशे)।",

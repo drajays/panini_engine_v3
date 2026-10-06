@@ -4,6 +4,7 @@
 Padaccheda: सामि
 
 sami (proximity) with subanta forms avyayibhava compound.
+Pāṭha: ashtadhyayi.com data.txt row i=21027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sAmi",
     text_dev              = "सामि",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH sAmi dvitIyA ktena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः सामि द्वितीया क्तेन",
     padaccheda_dev        = "सामि",
     why_dev               = "सामि-वाचिना सुबन्तेन सह अव्ययीभावः (२.१.२७)।",
     anuvritti_from        = ('2.1.5',),

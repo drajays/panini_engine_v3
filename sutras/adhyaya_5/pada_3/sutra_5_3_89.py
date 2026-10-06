@@ -4,6 +4,7 @@
 Padaccheda: कुत्वा डुपच्
 
 कुत्वा डुपच् (5.3.89)
+Pāṭha: ashtadhyayi.com data.txt row i=53089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kutvA qupac",
     text_dev              = "कुत्वा डुपच्",
+    samagra_slp1          = "hrasve kutvAH qupac",
+    samagra_dev           = "ह्रस्वे कुत्वाः डुपच्",
     padaccheda_dev        = "कुत्वा डुपच्",
     why_dev               = "(सूत्रम् 5.3.89) कुत्वा डुपच्।",
     anuvritti_from        = ('5.3.70',),

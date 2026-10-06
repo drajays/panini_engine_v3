@@ -18,6 +18,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'asmado dvayoSca',
     text_dev                = 'अस्मदो द्वयोश्च',
+    samagra_slp1            = "asmadaH dvayoH ca ekasmin bahuvacanam anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "अस्मदः द्वयोः च एकस्मिन् बहुवचनम् अन्यतरस्याम्",
     padaccheda_dev          = "अस्मदः / द्वयोः / च",
     why_dev                 = (
         "अस्मच्छब्दात् द्वयोः सन्दर्भे च एकशेषः — "

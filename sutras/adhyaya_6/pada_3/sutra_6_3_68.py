@@ -4,6 +4,7 @@
 Padaccheda: इचः एक-अचः अम् प्रत्यय-वत् च
 
 इच एकाचोऽम्प्रत्ययवच्च (6.3.68)
+Pāṭha: ashtadhyayi.com data.txt row i=63068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ica ekAcompratyayavacca',
     text_dev              = 'इच एकाचोऽम्प्रत्ययवच्च',
+    samagra_slp1          = "uttarapade icaH ekAcaH am pratyayavat ca treH Kiti mum",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे इचः एकाचः अम् प्रत्ययवत् च त्रेः खिति मुम्",
     padaccheda_dev        = "इचः एक-अचः अम् प्रत्यय-वत् च",
     why_dev               = "(सूत्रम् 6.3.68) इच एकाचोऽम्प्रत्ययवच्च।",
     anuvritti_from        = ('6.1.1',),

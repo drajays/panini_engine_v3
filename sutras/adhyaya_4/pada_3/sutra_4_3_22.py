@@ -4,6 +4,7 @@
 Padaccheda: सर्वत्र च तलोपः च
 
 सर्वत्राण् च तलोपश्च (4.3.22)
+Pāṭha: ashtadhyayi.com data.txt row i=43022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sarvatrAR ca talopaSca",
     text_dev              = "सर्वत्राण् च तलोपश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA sarvatra aR ca ta-lopaH kAlAt hemantAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा सर्वत्र अण् च त-लोपः कालात् हेमन्तात्",
     padaccheda_dev        = "सर्वत्र च तलोपः च",
     why_dev               = "(सूत्रम् 4.3.22) सर्वत्राण् च तलोपश्च।",
     anuvritti_from        = ('4.1.1',),

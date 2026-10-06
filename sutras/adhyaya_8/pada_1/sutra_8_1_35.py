@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि अनेकम् अपि साकाङ्क्षम्
 
 छन्दस्यनेकमपि साकाङ्क्षम् (8.1.35)
+Pāṭha: ashtadhyayi.com data.txt row i=81035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Candasyanekamapi sAkANkzam",
     text_dev              = "छन्दस्यनेकमपि साकाङ्क्षम्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO Candasi anekam api sAkANkzam tiN na hi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ छन्दसि अनेकम् अपि साकाङ्क्षम् तिङ् न हि",
     padaccheda_dev        = "छन्दसि अनेकम् अपि साकाङ्क्षम्",
     why_dev               = "(सूत्रम् 8.1.35) छन्दस्यनेकमपि साकाङ्क्षम्।",
     anuvritti_from        = ('8.1.1',),

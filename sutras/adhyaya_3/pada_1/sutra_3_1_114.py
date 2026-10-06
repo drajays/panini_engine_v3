@@ -4,6 +4,7 @@
 Padaccheda: राजसूय-सूर्य-मृषोद्य-रुच्य-कुप्य-कृष्टपच्य-अव्यथ्याः
 
 Krt suffix rule from dhatu: राजसूयसूर्यमृषोद्यरुच्यकुप्यकृष्टपच्याव्यथ्याः (114)
+Pāṭha: ashtadhyayi.com data.txt row i=31114 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAjasUyasUryamfzodyarucyakupyakfzwapacyAvyaTyAH",
     text_dev              = "राजसूयसूर्यमृषोद्यरुच्यकुप्यकृष्टपच्याव्यथ्याः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH rAjasUya-sUrya-mfzodya-rucya-kupya-kfzwapacya-avyaTyAH kft kyap",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः राजसूय-सूर्य-मृषोद्य-रुच्य-कुप्य-कृष्टपच्य-अव्यथ्याः कृत् क्यप्",
     padaccheda_dev        = "राजसूय-सूर्य-मृषोद्य-रुच्य-कुप्य-कृष्टपच्य-अव्यथ्याः",
     why_dev               = "धातोः [राजसूयसूर्यमृषोद्यरुच्यकुप्यकृष्टपच्याव्यथ्याः]-प्रत्ययः विहितः (३.१.114)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

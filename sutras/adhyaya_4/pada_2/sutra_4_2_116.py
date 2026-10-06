@@ -4,6 +4,7 @@
 Padaccheda: काशि-आदिभ्यः ठञ्-ञिठौ
 
 काश्यादिभ्यष्ठञ्ञिठौ (4.2.116)
+Pāṭha: ashtadhyayi.com data.txt row i=42116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kASyAdiByazWaYYiWO",
     text_dev              = "काश्यादिभ्यष्ठञ्ञिठौ",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA kASI-AdiByaH WaY-YiWO vfdDAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा काशी-आदिभ्यः ठञ्-ञिठौ वृद्धात्",
     padaccheda_dev        = "काशि-आदिभ्यः ठञ्-ञिठौ",
     why_dev               = "(सूत्रम् 4.2.116) काश्यादिभ्यष्ठञ्ञिठौ।",
     anuvritti_from        = ('4.1.1',),

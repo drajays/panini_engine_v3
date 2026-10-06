@@ -4,6 +4,7 @@
 Padaccheda: गोत्र-स्त्रियाः कुत्सने ण (लुप्तप्रथमान्तनिर्देशः) च
 
 गोत्रस्त्रियाः कुत्सने ण च (4.1.147)
+Pāṭha: ashtadhyayi.com data.txt row i=41147 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gotrastriyAH kutsane Ra ca",
     text_dev              = "गोत्रस्त्रियाः कुत्सने ण च",
+    samagra_slp1          = "tasya apatyam iti gotrastriyAH kutsane Ra Wak ca",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) गोत्रस्त्रियाः कुत्सने ण ठक् च",
     padaccheda_dev        = "गोत्र-स्त्रियाः कुत्सने ण (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 4.1.147) गोत्रस्त्रियाः कुत्सने ण च।",
     anuvritti_from        = ('4.1.1',),

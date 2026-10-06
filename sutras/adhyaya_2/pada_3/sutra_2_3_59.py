@@ -4,6 +4,7 @@
 Padaccheda: विभाषा उपसर्गे
 
 Optional sasthi with upasarga.
+Pāṭha: ashtadhyayi.com data.txt row i=23059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzopasarge",
     text_dev              = "विभाषोपसर्गे",
+    samagra_slp1          = "anaBihite viBAzA upasarge zazWI Seze karmaRi divaH tadarTasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते विभाषा उपसर्गे षष्ठी शेषे कर्मणि दिवः तदर्थस्य",
     padaccheda_dev        = "विभाषा उपसर्गे",
     why_dev               = "उपसर्गे विभाषा (२.३.५९)।",
     anuvritti_from        = ('2.3.50',),

@@ -4,6 +4,7 @@
 Padaccheda: आत्मनः च पूरणे
 
 आत्मनश्च पूरणे (6.3.6)
+Pāṭha: ashtadhyayi.com data.txt row i=63006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AtmanaSca pUraRe",
     text_dev              = "आत्मनश्च पूरणे",
+    samagra_slp1          = "alug uttarapade AtmanaH ca pUraRe tftIyAyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे आत्मनः च पूरणे तृतीयायाः",
     padaccheda_dev        = "आत्मनः च पूरणे",
     why_dev               = "(सूत्रम् 6.3.6) आत्मनश्च पूरणे।",
     anuvritti_from        = ('6.1.1',),

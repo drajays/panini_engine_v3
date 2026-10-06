@@ -4,6 +4,7 @@
 Padaccheda: सम्बोधने च
 
 krt-suffix rule: सम्बोधने च (125)
+Pāṭha: ashtadhyayi.com data.txt row i=32125 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samboDane ca",
     text_dev              = "सम्बोधने च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne samboDane ca kft lawaH SatfSAnacO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने सम्बोधने च कृत् लटः शतृशानचौ",
     padaccheda_dev        = "सम्बोधने च",
     why_dev               = "धातोः कृत्-प्रत्ययः [सम्बोधने च] विहितः (३.२.125)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

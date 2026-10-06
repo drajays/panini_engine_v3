@@ -4,6 +4,7 @@
 Padaccheda: धन-गणम् लब्धा
 
 धनगणं लब्धा (4.4.84)
+Pāṭha: ashtadhyayi.com data.txt row i=44084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DanagaRaM labDA",
     text_dev              = "धनगणं लब्धा",
+    samagra_slp1          = "tat DanagaRam labDA iti samarTAnAm praTamAt paraH yat pratyayaH",
+    samagra_dev           = "'तत् धनगणम् लब्धा' (इति) समर्थानाम् प्रथमात् परः यत् प्रत्ययः",
     padaccheda_dev        = "धन-गणम् लब्धा",
     why_dev               = "(सूत्रम् 4.4.84) धनगणं लब्धा।",
     anuvritti_from        = ('4.1.1',),

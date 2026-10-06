@@ -4,6 +4,7 @@
 Padaccheda: आर्यः ब्राह्मण-कुमारयोः
 
 आर्यो ब्राह्मणकुमारयोः (6.2.58)
+Pāṭha: ashtadhyayi.com data.txt row i=62058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Aryo brAhmaRakumArayoH",
     text_dev              = "आर्यो ब्राह्मणकुमारयोः",
+    samagra_slp1          = "AryaH brAhmaRa-kumArayoH prakftyA pUrvapadam anyatarasyAm karmaDAraye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्यः ब्राह्मण-कुमारयोः प्रकृत्या पूर्वपदम् अन्यतरस्याम् कर्मधारये",
     padaccheda_dev        = "आर्यः ब्राह्मण-कुमारयोः",
     why_dev               = "(सूत्रम् 6.2.58) आर्यो ब्राह्मणकुमारयोः।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अव्ययीभावात् च
 
 अव्ययीभावाच्च (4.3.59)
+Pāṭha: ashtadhyayi.com data.txt row i=43059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avyayIBAvAcca",
     text_dev              = "अव्ययीभावाच्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA avyayIBAvAt ca tatra BavaH YyaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा अव्ययीभावात् च तत्र भवः ञ्यः",
     padaccheda_dev        = "अव्ययीभावात् च",
     why_dev               = "(सूत्रम् 4.3.59) अव्ययीभावाच्च।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: युष्मत्-त्द्-ततक्षुःषु अन्तः-पादम्
 
 युष्मत्तत्ततक्षुःष्वन्तःपादम् (8.3.103)
+Pāṭha: ashtadhyayi.com data.txt row i=83103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yuzmattattatakzuHzvantaHpAdam",
     text_dev              = "युष्मत्तत्ततक्षुःष्वन्तःपादम्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH yuzmat-tat-tatakzuHzu antaHpAdam saH tAdO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः युष्मत्-तत्-ततक्षुःषु अन्तःपादम् सः तादौ",
     padaccheda_dev        = "युष्मत्-त्द्-ततक्षुःषु अन्तः-पादम्",
     why_dev               = "(सूत्रम् 8.3.103) युष्मत्तत्ततक्षुःष्वन्तःपादम्।",
     anuvritti_from        = ('8.1.1',),

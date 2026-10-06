@@ -4,6 +4,7 @@
 Padaccheda: सदेः परस्य लिटि
 
 सदिष्वञ्जोः परस्य लिटि (8.3.118)
+Pāṭha: ashtadhyayi.com data.txt row i=83118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sadeH parasya liwi',
     text_dev              = 'सदेः परस्य लिटि',
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH sadeH parasya liwi saH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः सदेः परस्य लिटि सः न",
     padaccheda_dev        = "सदेः परस्य लिटि",
     why_dev               = "(सूत्रम् 8.3.118) सदिष्वञ्जोः परस्य लिटि।",
     anuvritti_from        = ('8.1.1',),

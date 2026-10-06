@@ -4,6 +4,7 @@
 Padaccheda: दोषः णौ
 
 दोषो णौ (6.4.90)
+Pāṭha: ashtadhyayi.com data.txt row i=64090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dozo RO",
     text_dev              = "दोषो णौ",
+    samagra_slp1          = "dozaH upaDAyAH Ut RO",
+    samagra_dev           = "दोषः उपधायाः ऊत् णौ",
     padaccheda_dev        = "दोषः णौ",
     why_dev               = "(सूत्रम् 6.4.90) दोषो णौ।",
     anuvritti_from        = ('6.1.1',),

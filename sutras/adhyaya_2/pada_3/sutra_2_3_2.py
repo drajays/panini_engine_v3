@@ -12,6 +12,7 @@ Engine: this sūtra registers the karma→dvitīyā mapping in
 ``state.meta['vibhakti']`` or any paradigm coordinate (CONSTITUTION Art. 2).
 ``r1_form_identity_exempt=True`` because this sūtra records a semantic mapping,
 not a surface phonemic change.
+Pāṭha: ashtadhyayi.com data.txt row i=23002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -37,6 +38,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "karmaRi dvitIyA",
     text_dev              = "कर्मणि द्वितीया",
+    samagra_slp1          = "anaBihite karmaRi dvitIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते कर्मणि द्वितीया",
     padaccheda_dev        = "कर्मणि / द्वितीया",
     why_dev               = (
         "कर्म-कारके (अनभिहिते) द्वितीया-विभक्तिः विधीयते — "

@@ -4,6 +4,7 @@
 Padaccheda: द्वि-त्रिभ्याम् ष (लुप्तप्रथमान्तनिर्देशः) मूर्ध्नः
 
 द्वित्रिभ्यां ष मूर्ध्नः (5.4.115)
+Pāṭha: ashtadhyayi.com data.txt row i=54115 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvitriByAM za mUrDnaH",
     text_dev              = "द्वित्रिभ्यां ष मूर्ध्नः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA dvitriByAm za mUrDnaH bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा द्वित्रिभ्याम् ष मूर्ध्नः बहुव्रीहौ",
     padaccheda_dev        = "द्वि-त्रिभ्याम् ष (लुप्तप्रथमान्तनिर्देशः) मूर्ध्नः",
     why_dev               = "(सूत्रम् 5.4.115) द्वित्रिभ्यां ष मूर्ध्नः।",
     anuvritti_from        = ('5.4.68',),

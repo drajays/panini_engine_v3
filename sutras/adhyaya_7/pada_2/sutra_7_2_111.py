@@ -6,6 +6,7 @@
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com sūtra 7.2.111 (padaccheda: इदः अय् पुंसि)
   Source #2 — ashtadhyayi.com śabda-prakriyā for इदम् (the sūtra path of each cell, all three liṅgas)
+Pāṭha: ashtadhyayi.com data.txt row i=72111 (Art. 14).
 """
 from __future__ import annotations
 
@@ -63,6 +64,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='idoy puMsi',
     text_dev='इदोऽय् पुंसि',
+    samagra_slp1="idamaH idaH ay pu~si sO",
+    samagra_dev="इदमः इदः अय् पुँसि सौ",
     padaccheda_dev='इदः अय् पुंसि',
     why_dev='सुँ परे पुंलिङ्ग इदम् का इद् → अय् (अयम्)।',
     anuvritti_from=("6.4.1", "7.2.84"),

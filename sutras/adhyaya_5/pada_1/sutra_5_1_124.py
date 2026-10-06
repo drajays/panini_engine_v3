@@ -4,6 +4,7 @@
 Padaccheda: गुणवचन-ब्राह्मण-आदिभ्यः कर्मणि च
 
 गुणवचनब्राह्मणादिभ्यः कर्मणि च (5.1.124)
+Pāṭha: ashtadhyayi.com data.txt row i=51124 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "guRavacanabrAhmaRAdiByaH karmaRi ca",
     text_dev              = "गुणवचनब्राह्मणादिभ्यः कर्मणि च",
+    samagra_slp1          = "guRavacana-brAhmaRAdiByaH tasya BAvaH karmaRi ca zyaY",
+    samagra_dev           = "गुणवचन-ब्राह्मणादिभ्यः तस्य भावः कर्मणि च ष्यञ्",
     padaccheda_dev        = "गुणवचन-ब्राह्मण-आदिभ्यः कर्मणि च",
     why_dev               = "(सूत्रम् 5.1.124) गुणवचनब्राह्मणादिभ्यः कर्मणि च।",
     anuvritti_from        = ('5.1.120',),

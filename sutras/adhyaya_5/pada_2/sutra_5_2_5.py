@@ -4,6 +4,7 @@
 Padaccheda: सर्वचर्मणः कृतः ख-खञौ
 
 सर्वचर्मणः कृतः खखञौ (5.2.5)
+Pāṭha: ashtadhyayi.com data.txt row i=52005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sarvacarmaRaH kftaH KaKaYO",
     text_dev              = "सर्वचर्मणः कृतः खखञौ",
+    samagra_slp1          = "carmaRaH sarvaH kftaH iti Ka-KaYO",
+    samagra_dev           = "'चर्मणः सर्वः कृतः' (इति) ख-खञौ",
     padaccheda_dev        = "सर्वचर्मणः कृतः ख-खञौ",
     why_dev               = "(सूत्रम् 5.2.5) सर्वचर्मणः कृतः खखञौ।",
     anuvritti_from        = ('4.1.82',),

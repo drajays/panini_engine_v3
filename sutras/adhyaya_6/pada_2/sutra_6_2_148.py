@@ -4,6 +4,7 @@
 Padaccheda: कारकात् दत्त-श्रुतयोः एव आशिषि
 
 कारकाद्दत्तश्रुतयोरेवाशिषि (6.2.148)
+Pāṭha: ashtadhyayi.com data.txt row i=62148 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kArakAddattaSrutayorevASizi",
     text_dev              = "कारकाद्दत्तश्रुतयोरेवाशिषि",
+    samagra_slp1          = "uttarapadAdiH antaH kArakAt datta-SrutayoH eva ASizi ktaH saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः कारकात् दत्त-श्रुतयोः एव आशिषि क्तः संज्ञायाम्",
     padaccheda_dev        = "कारकात् दत्त-श्रुतयोः एव आशिषि",
     why_dev               = "(सूत्रम् 6.2.148) कारकाद्दत्तश्रुतयोरेवाशिषि।",
     anuvritti_from        = ('6.1.1',),

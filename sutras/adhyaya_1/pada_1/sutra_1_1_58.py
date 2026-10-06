@@ -2,7 +2,7 @@
 1.1.58  न पदान्तद्विर्वचनवरेयलोपस्वरसवर्णानुस्वारदीर्घजश्चर्विधिषु  —  NIYAMA
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=101058
+- ashtadhyayi.com data.txt row i=11058
 - Kāśikā: न पदान्तादिकारादीनां विधीनाम् अनुवृत्तिः (पदान्ते असिद्धत्वम्)
 - Cross-validation: tests/unit/test_phalAni_santi_as_lat_padanta_lesson.py
   (**6.1.77** blocked at *phalāni*+अन्ति after **6.4.111** *padādi* *a*-lopa);
@@ -65,6 +65,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1           = 'na padAntadvirvacanavareyalopasvarasavarRAnusvAradIrGajaScarviDizu',
     text_dev            = 'न पदान्तद्विर्वचनवरेयलोपस्वरसवर्णानुस्वारदीर्घजश्चर्विधिषु',
+    samagra_slp1        = "padAnta-dvirvacana-vare-yalopa-svara-savarRa-anusvAra-dIrGa-jaS-car-viDizu acaH AdeSaH parasmin sTAnivad na",
+    samagra_dev         = "पदान्त-द्विर्वचन-वरे-यलोप-स्वर-सवर्ण-अनुस्वार-दीर्घ-जश्-चर्-विधिषु  अचः आदेशः परस्मिन् स्थानिवद् न",
     padaccheda_dev      = "न / पदान्त-द्विर्वचन-वरेय-लोप-स्वर-सवर्ण-अनुस्वार-दीर्घ-जश्चर्-विधिषु",
     why_dev             = "पदान्त-द्विर्वचन-वरेयलोप-स्वर-सवर्ण-अनुस्वार-दीर्घ-जश्चर्-विधिषु पूर्वसूत्रस्य अनुवृत्तिः न — एते प्रसङ्गाः असिद्धवत्।",
     anuvritti_from      = (),

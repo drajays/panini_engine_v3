@@ -4,6 +4,7 @@
 Padaccheda: प्रमाणे च
 
 krt-suffix rule: प्रमाणे च
+Pāṭha: ashtadhyayi.com data.txt row i=34051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pramARe ca",
     text_dev              = "प्रमाणे च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH pramARe ca kft Ramul tftIyAyAm saptamyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः प्रमाणे च कृत् णमुल् तृतीयायाम् सप्तम्याम्",
     padaccheda_dev        = "प्रमाणे च",
     why_dev               = "धातोः प्रत्ययः (३.4.51)।",
     anuvritti_from        = ('3.1.1',),

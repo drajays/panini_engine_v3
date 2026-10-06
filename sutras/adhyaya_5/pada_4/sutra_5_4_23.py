@@ -4,6 +4,7 @@
 Padaccheda: अनन्त-आवसथ-इतिह-भेषजात् ञ्यः
 
 अनन्तावसथेतिहभेषजाञ्ञ्यः (5.4.23)
+Pāṭha: ashtadhyayi.com data.txt row i=54023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anantAvasaTetihaBezajAYYyaH",
     text_dev              = "अनन्तावसथेतिहभेषजाञ्ञ्यः",
+    samagra_slp1          = "ananta-AvasaTa-itiha-BezajAt YyaH",
+    samagra_dev           = "अनन्त-आवसथ-इतिह-भेषजात् ञ्यः",
     padaccheda_dev        = "अनन्त-आवसथ-इतिह-भेषजात् ञ्यः",
     why_dev               = "(सूत्रम् 5.4.23) अनन्तावसथेतिहभेषजाञ्ञ्यः।",
     anuvritti_from        = ('4.1.76',),

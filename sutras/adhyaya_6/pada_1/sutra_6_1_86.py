@@ -4,6 +4,7 @@
 Padaccheda: षत्व-तुकोः असिद्धः
 
 षत्वतुकोरसिद्धः (6.1.86)
+Pāṭha: ashtadhyayi.com data.txt row i=61086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zatvatukorasidDaH",
     text_dev              = "षत्वतुकोरसिद्धः",
+    samagra_slp1          = "ekaH pUrvaparayoH zatvatukoH asidDaH",
+    samagra_dev           = "एकः पूर्वपरयोः षत्वतुकोः असिद्धः",
     padaccheda_dev        = "षत्व-तुकोः असिद्धः",
     why_dev               = "(सूत्रम् 6.1.86) षत्वतुकोरसिद्धः।",
     anuvritti_from        = ('6.1.1',),

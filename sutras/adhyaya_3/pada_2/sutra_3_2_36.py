@@ -4,6 +4,7 @@
 Padaccheda: असूर्य-ललाटयोः दृशि-तपोः
 
 krt-suffix rule: असूर्यललाटयोर्दृशितपोः (36)
+Pāṭha: ashtadhyayi.com data.txt row i=32036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "asUryalalAwayordfSitapoH",
     text_dev              = "असूर्यललाटयोर्दृशितपोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH asUrya-lalAwayoH dfSi-tapoH kft karmaRi anupasarge supi KaS",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः असूर्य-ललाटयोः दृशि-तपोः कृत् कर्मणि अनुपसर्गे सुपि खश्",
     padaccheda_dev        = "असूर्य-ललाटयोः दृशि-तपोः",
     why_dev               = "धातोः कृत्-प्रत्ययः [असूर्यललाटयोर्दृशितपोः] विहितः (३.२.36)।",
     anuvritti_from        = ('3.1.1',),

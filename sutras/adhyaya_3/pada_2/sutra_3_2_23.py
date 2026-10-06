@@ -4,6 +4,7 @@
 Padaccheda: न शब्द-श्लोक-कलह-गाथा-वैर-चाटु-सूत्र-मन्त्र-पदेषु
 
 krt-suffix rule: न शब्दश्लोककलहगाथावैरचाटुसूत्रमन्त्रपदेषु (23)
+Pāṭha: ashtadhyayi.com data.txt row i=32023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na SabdaSlokakalahagATAvEracAwusUtramantrapadezu",
     text_dev              = "न शब्दश्लोककलहगाथावैरचाटुसूत्रमन्त्रपदेषु",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH na Sabda-Sloka-kalaha-gATA-vEra-cAwu-sUtra-mantra-padezu kft karmaRi anupasarge supi waH kfYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः न शब्द-श्लोक-कलह-गाथा-वैर-चाटु-सूत्र-मन्त्र-पदेषु कृत् कर्मणि अनुपसर्गे सुपि टः कृञः",
     padaccheda_dev        = "न शब्द-श्लोक-कलह-गाथा-वैर-चाटु-सूत्र-मन्त्र-पदेषु",
     why_dev               = "धातोः कृत्-प्रत्ययः [न शब्दश्लोककलहगाथावैरचाटुसूत्रमन्त्रपदेषु] विहितः (३.२.23)।",
     anuvritti_from        = ('3.1.1',),

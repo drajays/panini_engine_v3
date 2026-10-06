@@ -4,6 +4,7 @@
 Padaccheda: ऋतः भारद्वाजस्य
 
 ऋतो भारद्वाजस्य (7.2.63)
+Pāṭha: ashtadhyayi.com data.txt row i=72063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -40,6 +41,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "fto BAradvAjasya",
     text_dev              = "ऋतो भारद्वाजस्य",
+    samagra_slp1          = "aNgasya ftaH BAradvAjasya valAdeH iw ArDaDAtukasya na tAsi nityam Tali aniwaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ऋतः भारद्वाजस्य वलादेः इट् आर्धधातुकस्य न तासि नित्यम् थलि अनिटः",
     padaccheda_dev        = "ऋतः भारद्वाजस्य",
     why_dev               = "अनिटः ऋदन्तात् थलि इडभावः (जहर्थ, सस्मर्थ)।",
     anuvritti_from        = ('7.1.1',),

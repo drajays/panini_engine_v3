@@ -13,6 +13,7 @@ kalptā — he will be fit. The ca extends from 1.3.92.
 stamp "Atmanepada_1_3_93" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _KLP_ROOTS carries the tag "luT_lakAra".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='luwi ca kxpaH',
     text_dev='लुटि च कॢपः',
+    samagra_slp1="luwi ca kxpaH kartari parasmEpadam vA syasanoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="लुटि च कॢपः कर्तरि परस्मैपदम् वा स्यसनोः",
     padaccheda_dev="लुटि (सप्तमी-एकवचन) / च / कॢपः (षष्ठी-एकवचन)",
     why_dev=(
         "कॢप्-धातोः लुटि-लकारे आत्मनेपदम् — "

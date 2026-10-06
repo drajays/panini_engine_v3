@@ -4,6 +4,7 @@
 Padaccheda: वस्न-द्रव्याभ्याम् ठन्-कनौ
 
 वस्नद्रव्याभ्यां ठन्कनौ (5.1.51)
+Pāṭha: ashtadhyayi.com data.txt row i=51051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vasnadravyAByAM WankanO",
     text_dev              = "वस्नद्रव्याभ्यां ठन्कनौ",
+    samagra_slp1          = "tad harati vahati Avahati iti vasna-dravyAByAm Wan-kanO",
+    samagra_dev           = "'तद् हरति, वहति, आवहति' (इति) वस्न-द्रव्याभ्याम् ठन्-कनौ",
     padaccheda_dev        = "वस्न-द्रव्याभ्याम् ठन्-कनौ",
     why_dev               = "(सूत्रम् 5.1.51) वस्नद्रव्याभ्यां ठन्कनौ।",
     anuvritti_from        = ('5.1.19',),

@@ -4,6 +4,7 @@
 Padaccheda: कु-मति च
 
 कुमति च (8.4.13)
+Pāṭha: ashtadhyayi.com data.txt row i=84013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kumati ca",
     text_dev              = "कुमति च",
+    samagra_slp1          = "pUrvapadAt razAByAM prAtipadikAnta-num-viBaktizu kumati naH RaH awkupvANnumvyavAye api",
+    samagra_dev           = "पूर्वपदात् रषाभ्यां प्रातिपदिकान्त-नुम्-विभक्तिषु कुमति नः णः,  अट्कुप्वाङ्नुम्व्यवाये अपि",
     padaccheda_dev        = "कु-मति च",
     why_dev               = "(सूत्रम् 8.4.13) कुमति च।",
     anuvritti_from        = ('8.1.1',),

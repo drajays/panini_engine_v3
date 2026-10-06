@@ -4,6 +4,7 @@
 Padaccheda: पति-अन्त-पुरोहित-आदिभ्यः यक्
 
 पत्यन्तपुरोहितादिभ्यो यक् (5.1.128)
+Pāṭha: ashtadhyayi.com data.txt row i=51128 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "patyantapurohitAdiByo yak",
     text_dev              = "पत्यन्तपुरोहितादिभ्यो यक्",
+    samagra_slp1          = "tasya BAvaH karmaRi ca iti patyanta-purohitAdiByaH yak",
+    samagra_dev           = "'तस्य भावः, कर्मणि च' (इति) पत्यन्त-पुरोहितादिभ्यः यक्",
     padaccheda_dev        = "पति-अन्त-पुरोहित-आदिभ्यः यक्",
     why_dev               = "(सूत्रम् 5.1.128) पत्यन्तपुरोहितादिभ्यो यक्।",
     anuvritti_from        = ('5.1.120',),

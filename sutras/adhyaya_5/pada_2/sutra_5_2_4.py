@@ -4,6 +4,7 @@
 Padaccheda: विभाषा तिल-माष-उमा-भङ्गा-अणुभ्यः
 
 विभाषा तिलमाषोमाभङ्गाऽणुभ्यः (5.2.4)
+Pāṭha: ashtadhyayi.com data.txt row i=52004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'viBAzA tilamAzomABaNgARuByaH',
     text_dev              = 'विभाषा तिलमाषोमाभङ्गाऽणुभ्यः',
+    samagra_slp1          = "DAnyAnAm Bavane kzetre iti tila-mAza-umA-BaNgA-aRuByaH viBAzA yat  KaY",
+    samagra_dev           = "'धान्यानाम् भवने क्षेत्रे' (इति) तिल-माष-उमा-भङ्गा-अणुभ्यः विभाषा यत् , खञ्",
     padaccheda_dev        = "विभाषा तिल-माष-उमा-भङ्गा-अणुभ्यः",
     why_dev               = "(सूत्रम् 5.2.4) विभाषा तिलमाषोमाभङ्गाऽणुभ्यः।",
     anuvritti_from        = ('4.1.82',),

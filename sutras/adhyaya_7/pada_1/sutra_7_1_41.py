@@ -4,6 +4,7 @@
 Padaccheda: लोपः तः आत्मनेपदेषु
 
 लोपस्त आत्मनेपदेषु (7.1.41)
+Pāṭha: ashtadhyayi.com data.txt row i=71041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lopasta Atmanepadezu",
     text_dev              = "लोपस्त आत्मनेपदेषु",
+    samagra_slp1          = "aNgasya lopaH taH Atmanepadezu Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य लोपः तः आत्मनेपदेषु छन्दसि",
     padaccheda_dev        = "लोपः तः आत्मनेपदेषु",
     why_dev               = "(सूत्रम् 7.1.41) लोपस्त आत्मनेपदेषु।",
     anuvritti_from        = ('7.1.1',),

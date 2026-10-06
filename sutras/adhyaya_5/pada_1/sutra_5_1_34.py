@@ -4,6 +4,7 @@
 Padaccheda: पण-पाद-माष-शतात् यत्
 
 पणपादमाषशतादत् (5.1.34)
+Pāṭha: ashtadhyayi.com data.txt row i=51034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'paRapAdamAzaSatAdyat',
     text_dev              = 'पणपादमाषशताद्यत्',
+    samagra_slp1          = "A-arhAt paRa-pAda-mAza-SatAt yat",
+    samagra_dev           = "आ-अर्हात् पण-पाद-माष-शतात् यत्",
     padaccheda_dev        = "पण-पाद-माष-शतात् यत्",
     why_dev               = "(सूत्रम् 5.1.34) पणपादमाषशतादत्।",
     anuvritti_from        = ('5.1.19',),

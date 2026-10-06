@@ -4,6 +4,7 @@
 Padaccheda: तयोः दा-र्हिलौ च च्छन्दसि
 
 तयोर्दार्हिलौ च च्छन्दसि (5.3.20)
+Pāṭha: ashtadhyayi.com data.txt row i=53020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tayordArhilO ca cCandasi",
     text_dev              = "तयोर्दार्हिलौ च च्छन्दसि",
+    samagra_slp1          = "tAByAm dA-rhilO Candasi",
+    samagra_dev           = "ताभ्याम् दा-र्हिलौ छन्दसि",
     padaccheda_dev        = "तयोः दा-र्हिलौ च च्छन्दसि",
     why_dev               = "(सूत्रम् 5.3.20) तयोर्दार्हिलौ च च्छन्दसि।",
     anuvritti_from        = ('5.3.2',),

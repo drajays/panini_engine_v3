@@ -4,6 +4,7 @@
 Padaccheda: सम्भवाने अलम् इति चेत् सिद्ध-अप्रयोगे
 
 krt-suffix rule: सम्भवानेऽलमिति चेत् सिद्धाप्रयोगे
+Pāṭha: ashtadhyayi.com data.txt row i=33154 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'samBAvanelamiti cet sidDAprayoge',
     text_dev              = 'सम्भावनेऽलमिति चेत् सिद्धाप्रयोगे',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH samBAvane alam iti cet sidDAprayoge kft liN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः सम्भावने अलम् इति चेत् सिद्धाप्रयोगे कृत् लिङ्",
     padaccheda_dev        = "सम्भवाने अलम् इति चेत् सिद्ध-अप्रयोगे",
     why_dev               = "धातोः प्रत्ययः (३.3.154)।",
     anuvritti_from        = ('3.1.1',),

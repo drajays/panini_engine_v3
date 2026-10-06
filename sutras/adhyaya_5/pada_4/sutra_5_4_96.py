@@ -4,6 +4,7 @@
 Padaccheda: अतेः शुनः
 
 अतेः शुनः (5.4.96)
+Pāṭha: ashtadhyayi.com data.txt row i=54096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ateH SunaH",
     text_dev              = "अतेः शुनः",
+    samagra_slp1          = "tatpuruzasya ateH SUnaH wac",
+    samagra_dev           = "तत्पुरुषस्य अतेः शूनः टच्",
     padaccheda_dev        = "अतेः शुनः",
     why_dev               = "(सूत्रम् 5.4.96) अतेः शुनः।",
     anuvritti_from        = ('5.4.68',),

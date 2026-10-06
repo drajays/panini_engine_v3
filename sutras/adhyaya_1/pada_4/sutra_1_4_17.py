@@ -8,6 +8,7 @@ receives *pada* tagging ``pada_1_4_17``.
 This *pada* is **bādhyate** by *bha* from **1.4.18** when **1.4.18** also
 applies (e.g. *rājan* + *śas* — *bha* blocks unwanted *pada*-driven **8.2.7**
 *n*-lopa in fuller Tripāḍī scope).
+Pāṭha: ashtadhyayi.com data.txt row i=14017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -66,6 +67,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'svAdizvasarvanAmasTAne',
     text_dev       = 'स्वादिष्वसर्वनामस्थाने',
+    samagra_slp1   = "asarvanAmasTAne su~-Adizu padam",
+    samagra_dev    = "असर्वनामस्थाने सुँ-आदिषु   पदम्",
     padaccheda_dev = "स्वादिषु असर्वनामस्थाने",
     why_dev        = "असर्वनामस्थान-स्वादि-प्रत्यये परे प्रातिपदिकस्य पदसंज्ञा।",
     anuvritti_from = ("1.4.1",),

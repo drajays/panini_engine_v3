@@ -4,6 +4,7 @@
 Padaccheda: आदिः णमुँल्ि अन्यतरस्याम्
 
 आदिर्णमुल्यन्यतरस्याम् (6.1.194)
+Pāṭha: ashtadhyayi.com data.txt row i=61194 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AdirRamulyanyatarasyAm",
     text_dev              = "आदिर्णमुल्यन्यतरस्याम्",
+    samagra_slp1          = "AdiH Ramuli anyatarasyAm udAttaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः णमुलि अन्यतरस्याम् उदात्तः",
     padaccheda_dev        = "आदिः णमुँल्ि अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.1.194) आदिर्णमुल्यन्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

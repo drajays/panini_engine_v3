@@ -4,6 +4,7 @@
 Padaccheda: तेन निर्वृत्तम्
 
 तेन निर्वृत्तम् (5.1.79)
+Pāṭha: ashtadhyayi.com data.txt row i=51079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tena nirvfttam",
     text_dev              = "तेन निर्वृत्तम्",
+    samagra_slp1          = "tena nirvfttam iti samarTAnAm praTamAt kAlAt WaY pratyayaH",
+    samagra_dev           = "'तेन निर्वृत्तम्' (इति) समर्थानाम् प्रथमात् कालात् ठञ् प्रत्ययः",
     padaccheda_dev        = "तेन निर्वृत्तम्",
     why_dev               = "(सूत्रम् 5.1.79) तेन निर्वृत्तम्।",
     anuvritti_from        = ('5.1.78',),

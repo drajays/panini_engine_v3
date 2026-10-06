@@ -4,6 +4,7 @@
 Padaccheda: शकटात् अण्
 
 शकटादण् (4.4.80)
+Pāṭha: ashtadhyayi.com data.txt row i=44080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SakawAdaR",
     text_dev              = "शकटादण्",
+    samagra_slp1          = "tat vahati iti SakawAt aR",
+    samagra_dev           = "'तत् वहति' इति शकटात् अण्",
     padaccheda_dev        = "शकटात् अण्",
     why_dev               = "(सूत्रम् 4.4.80) शकटादण्।",
     anuvritti_from        = ('4.1.1',),

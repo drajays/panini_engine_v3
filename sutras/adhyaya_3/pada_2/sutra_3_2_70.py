@@ -4,6 +4,7 @@
 Padaccheda: दुहः कप् घः च
 
 krt-suffix rule: दुहः कब् घश्च (70)
+Pāṭha: ashtadhyayi.com data.txt row i=32070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "duhaH kab GaSca",
     text_dev              = "दुहः कब् घश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH duhaH kap GaH ca kft supi upasarge api",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः दुहः कप् घः च कृत् सुपि उपसर्गे अपि",
     padaccheda_dev        = "दुहः कप् घः च",
     why_dev               = "धातोः कृत्-प्रत्ययः [दुहः कब् घश्च] विहितः (३.२.70)।",
     anuvritti_from        = ('3.1.1',),

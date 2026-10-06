@@ -4,6 +4,7 @@
 Padaccheda: शलालुनः अन्यतरस्याम्
 
 शलालुनोऽन्यतरस्याम् (4.4.54)
+Pāṭha: ashtadhyayi.com data.txt row i=44054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'SalAlunonyatarasyAm',
     text_dev              = 'शलालुनोऽन्यतरस्याम्',
+    samagra_slp1          = "tadasya paRyam iti SalAlunaH zWan anyatarasyAm",
+    samagra_dev           = "'तदस्य पण्यम्' (इति) शलालुनः ष्ठन् अन्यतरस्याम्",
     padaccheda_dev        = "शलालुनः अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 4.4.54) शलालुनोऽन्यतरस्याम्।",
     anuvritti_from        = ('4.1.1',),

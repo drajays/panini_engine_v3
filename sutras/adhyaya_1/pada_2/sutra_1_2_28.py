@@ -19,6 +19,7 @@ Engine:
   - act: set paribhasha_gates["1_2_28_acaS_ca"] = True;
          set samjna_registry["1_2_28_acaS_ca"] = True; return state.
   - r1_form_identity_exempt=True: no surface string changes.
+Pāṭha: ashtadhyayi.com data.txt row i=12028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'acaSca',
     text_dev                = 'अचश्च',
+    samagra_slp1            = "hrasvadIrGaplutaH ac acaH",
+    samagra_dev             = "ह्रस्वदीर्घप्लुतः अच् अचः",
     padaccheda_dev          = "अचः / च",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.27",),

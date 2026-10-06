@@ -4,6 +4,7 @@
 Padaccheda: नित्यम् क्रीडा-जीविकयोः
 
 In krida and jivika context always tatpurusha.
+Pāṭha: ashtadhyayi.com data.txt row i=22017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nityaM krIqAjIvikayoH",
     text_dev              = "नित्यं क्रीडाजीविकयोः",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH nityam krIqA-jIvikayoH zazWI tfjakAByAM",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः नित्यम् क्रीडा-जीविकयोः षष्ठी तृजकाभ्यां",
     padaccheda_dev        = "नित्यम् क्रीडा-जीविकयोः",
     why_dev               = "क्रीडा-जीविका-अर्थे नित्यं तत्पुरुषः (२.२.१७)।",
     anuvritti_from        = ('2.2.1',),

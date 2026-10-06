@@ -18,6 +18,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'PalgunIprozWapadAnAM ca nakzatre',
     text_dev                = 'फल्गुनीप्रोष्ठपदानां च नक्षत्रे',
+    samagra_slp1            = "PalgunI-prozWapadAnAm ca nakzatre bahuvacanam anyatarasyAm dvayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "फल्गुनी-प्रोष्ठपदानाम् च नक्षत्रे बहुवचनम् अन्यतरस्याम् द्वयोः",
     padaccheda_dev          = "फल्गुनी-प्रोष्ठपदानाम् / च / नक्षत्रे",
     why_dev                 = (
         "फल्गुनी-प्रोष्ठपदयोः नक्षत्रनाम्नोः युगलविवक्षायां बहुवचनम् एकशेषश्च — "

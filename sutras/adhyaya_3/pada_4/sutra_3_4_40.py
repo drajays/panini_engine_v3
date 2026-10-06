@@ -4,6 +4,7 @@
 Padaccheda: स्वे पुषः
 
 krt-suffix rule: स्वे पुषः
+Pāṭha: ashtadhyayi.com data.txt row i=34040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sve puzaH",
     text_dev              = "स्वे पुषः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH sve puzaH kft Ramul karaRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः स्वे पुषः कृत् णमुल् करणे",
     padaccheda_dev        = "स्वे पुषः",
     why_dev               = "धातोः प्रत्ययः (३.4.40)।",
     anuvritti_from        = ('3.1.1',),

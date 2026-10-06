@@ -160,6 +160,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'ajAdyatazwAp',
     text_dev       = 'अजाद्यतष्टाप्',
+    samagra_slp1   = "ajAdi-ataH prAtipadikAt striyAm wAp-pratyayaH",
+    samagra_dev    = "अजादि-अतः प्रातिपदिकात् स्त्रियाम् टाप्-प्रत्ययः",
     padaccheda_dev = (
         "अजादि-अतः (पञ्चमी-एकवचनम्) / टाप् (प्रथमा-एकवचनम्)"
     ),

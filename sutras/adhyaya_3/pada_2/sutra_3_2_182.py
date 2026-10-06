@@ -4,6 +4,7 @@
 Padaccheda: दाप्-नी-शस-यु-युज-स्तु-तुद-सि-सिच-मिह-पत-दश-नहः करणे
 
 krt-suffix rule: दाम्नीशसयुयुजस्तुतुदसिसिचमिहपतदशनहः करणे (182)
+Pāṭha: ashtadhyayi.com data.txt row i=32182 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dAmnISasayuyujastutudasisicamihapatadaSanahaH karaRe",
     text_dev              = "दाम्नीशसयुयुजस्तुतुदसिसिचमिहपतदशनहः करणे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne dAp-nI-Sasa-yu-yuja-stu-tuda-si-sica-miha-pata-daSa-nahaH karaRe kft zwran",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने दाप्-नी-शस-यु-युज-स्तु-तुद-सि-सिच-मिह-पत-दश-नहः करणे कृत् ष्ट्रन्",
     padaccheda_dev        = "दाप्-नी-शस-यु-युज-स्तु-तुद-सि-सिच-मिह-पत-दश-नहः करणे",
     why_dev               = "धातोः कृत्-प्रत्ययः [दाम्नीशसयुयुजस्तुतुदसिसिचमिहपतदशनहः करणे] विहितः (३.२.182)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

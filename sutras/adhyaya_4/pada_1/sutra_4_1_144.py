@@ -4,6 +4,7 @@
 Padaccheda: भ्रातुः व्यत् च
 
 भ्रातुर्व्यच्च (4.1.144)
+Pāṭha: ashtadhyayi.com data.txt row i=41144 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BrAturvyacca",
     text_dev              = "भ्रातुर्व्यच्च",
+    samagra_slp1          = "tasya apatyam iti BrAtuH CaH vyat ca",
+    samagra_dev           = "'तस्य अपत्यम्' (इति)  भ्रातुः छः व्यत् च",
     padaccheda_dev        = "भ्रातुः व्यत् च",
     why_dev               = "(सूत्रम् 4.1.144) भ्रातुर्व्यच्च।",
     anuvritti_from        = ('4.1.1',),

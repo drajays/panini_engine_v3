@@ -4,6 +4,7 @@
 Padaccheda: वेः च स्वनः भोजने
 
 वेश्च स्वनो भोजने (8.3.69)
+Pāṭha: ashtadhyayi.com data.txt row i=83069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "veSca svano Bojane",
     text_dev              = "वेश्च स्वनो भोजने",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH veH ca svanaH Bojane saH aqvyavAye api upasargAt avAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः वेः च स्वनः भोजने सः अड्व्यवाये अपि उपसर्गात् अवात्",
     padaccheda_dev        = "वेः च स्वनः भोजने",
     why_dev               = "(सूत्रम् 8.3.69) वेश्च स्वनो भोजने।",
     anuvritti_from        = ('8.1.1',),

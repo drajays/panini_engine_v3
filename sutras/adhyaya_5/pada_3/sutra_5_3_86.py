@@ -4,6 +4,7 @@
 Padaccheda: ह्रस्वे
 
 ह्रस्वे (5.3.86)
+Pāṭha: ashtadhyayi.com data.txt row i=53086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hrasve",
     text_dev              = "ह्रस्वे",
+    samagra_slp1          = "hrasve prAtipadikAt kaH",
+    samagra_dev           = "ह्रस्वे प्रातिपदिकात् कः",
     padaccheda_dev        = "ह्रस्वे",
     why_dev               = "(सूत्रम् 5.3.86) ह्रस्वे।",
     anuvritti_from        = ('5.3.70',),

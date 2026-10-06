@@ -8,6 +8,7 @@ one **prātipadika** *Term* (**``IkzAm``**) for the periphrastic spine.
 Engine:
   • ``state.meta['2_4_81_lit_luk_arm']``
   • expects ``… + Ikz + Am + liT``
+Pāṭha: ashtadhyayi.com data.txt row i=24081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="AmaH",
     text_dev="आमः",
+    samagra_slp1="AmaH leH luk",
+    samagra_dev="आमः लेः लुक्",
     padaccheda_dev="आमः",
     why_dev="आम्-परे लिट्-लुक्; ईक्ष्+आम् → ईक्षाम् (प्रातिपदिकम्) — P014।",
     anuvritti_from=("2.4.1",),

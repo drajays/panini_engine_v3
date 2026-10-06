@@ -4,6 +4,7 @@
 Padaccheda: गवि-युधिभ्याम् स्थिरः
 
 गवियुधिभ्यां स्थिरः (8.3.95)
+Pāṭha: ashtadhyayi.com data.txt row i=83095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gaviyuDiByAM sTiraH",
     text_dev              = "गवियुधिभ्यां स्थिरः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH gavi-yuDiByAm sTiraH saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः गवि-युधिभ्याम् स्थिरः सः",
     padaccheda_dev        = "गवि-युधिभ्याम् स्थिरः",
     why_dev               = "(सूत्रम् 8.3.95) गवियुधिभ्यां स्थिरः।",
     anuvritti_from        = ('8.1.1',),

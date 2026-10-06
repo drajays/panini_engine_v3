@@ -11,6 +11,7 @@ the derivation.
 
 v3: registers samjna_registry["gati_tiras_kRni_vibhasha"] = True.
     vibhasha_default = True means the gati reading is the preferred option.
+Pāṭha: ashtadhyayi.com data.txt row i=14072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIBHASHA,
     text_slp1='viBAzA kfYi',
     text_dev='विभाषा कृञि',
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH viBAzA kfYi kriyAyoge gatiH tiraH antarDO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः विभाषा कृञि क्रियायोगे गतिः तिरः अन्तर्धौ",
     padaccheda_dev="विभाषा / कृञि",
     why_dev="कृञि 'तिरस्' विभाषया गति-संज्ञकः — ऐच्छिकः पक्षः।",
     anuvritti_from=("1.4.60", "1.4.71"),

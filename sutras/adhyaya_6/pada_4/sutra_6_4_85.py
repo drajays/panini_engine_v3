@@ -4,6 +4,7 @@
 Padaccheda: न भू-सुधियोः
 
 न भूसुधियोः (6.4.85)
+Pāṭha: ashtadhyayi.com data.txt row i=64085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na BUsuDiyoH",
     text_dev              = "न भूसुधियोः",
+    samagra_slp1          = "BUsuDiyoH aNgasya supi aci yaR na",
+    samagra_dev           = "भूसुधियोः अङ्गस्य सुपि अचि यण् न",
     padaccheda_dev        = "न भू-सुधियोः",
     why_dev               = "(सूत्रम् 6.4.85) न भूसुधियोः।",
     anuvritti_from        = ('6.1.1',),

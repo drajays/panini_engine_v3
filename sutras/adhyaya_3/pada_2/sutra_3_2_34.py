@@ -4,6 +4,7 @@
 Padaccheda: मित-नखे च
 
 krt-suffix rule: मितनखे च (34)
+Pāṭha: ashtadhyayi.com data.txt row i=32034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mitanaKe ca",
     text_dev              = "मितनखे च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH mitanaKe ca kft karmaRi anupasarge supi KaS pacaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः मितनखे च कृत् कर्मणि अनुपसर्गे सुपि खश् पचः",
     padaccheda_dev        = "मित-नखे च",
     why_dev               = "धातोः कृत्-प्रत्ययः [मितनखे च] विहितः (३.२.34)।",
     anuvritti_from        = ('3.1.1',),

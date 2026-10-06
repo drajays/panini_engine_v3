@@ -7,6 +7,7 @@ the suffix *āmi* (*āmi* — genitive plural marker).
 v3: optionally adds the *nadi* tag to eligible prātipadika–stri Terms that
 appear in an *āmi* context and have not yet been processed by this sūtra.
 The default choice is to apply (``vibhasha_default=True``).
+Pāṭha: ashtadhyayi.com data.txt row i=14005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.VIBHASHA,
     text_slp1              = 'vAmi',
     text_dev               = 'वाऽऽमि',
+    samagra_slp1           = "iyaN-uvaN-sTAnO yU stryAKyO Ami nadI vA astrI",
+    samagra_dev            = "इयङ्-उवङ्-स्थानौ यू स्त्र्याख्यौ आमि नदी वा, अस्त्री",
     padaccheda_dev         = "वा / आमि",
     why_dev                = "आमि परे स्त्री-प्रातिपदिकस्य वा नदीसंज्ञा।",
     apavada_of     = ("1.4.4",),   # अपवाद of 1.4.4 — sutra_ref_out resolver.apavada_of

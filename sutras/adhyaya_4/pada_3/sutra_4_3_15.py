@@ -4,6 +4,7 @@
 Padaccheda: श्वसः तुट् च
 
 श्वसस्तुट् च (4.3.15)
+Pāṭha: ashtadhyayi.com data.txt row i=43015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Svasastuw ca",
     text_dev              = "श्वसस्तुट् च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA SvasaH tuw ca WaY kAlAt viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा श्वसः तुट् च ठञ् कालात् विभाषा",
     padaccheda_dev        = "श्वसः तुट् च",
     why_dev               = "(सूत्रम् 4.3.15) श्वसस्तुट् च।",
     anuvritti_from        = ('4.1.1',),

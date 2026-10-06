@@ -4,6 +4,7 @@
 Padaccheda: नः उदात्त-स्वरित-उदयम् अ-गार्ग्य-काश्यप-गालवानाम्
 
 नोदात्तस्वरितोदयमगार्ग्यकाश्यपगालवानाम् (8.4.67)
+Pāṭha: ashtadhyayi.com data.txt row i=84067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nodAttasvaritodayamagArgyakASyapagAlavAnAm",
     text_dev              = "नोदात्तस्वरितोदयमगार्ग्यकाश्यपगालवानाम्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm naH udAtta-svarita-udayam a-gArgya-kASyapa-gAlavAnAm anudAttasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् नः उदात्त-स्वरित-उदयम् अ-गार्ग्य-काश्यप-गालवानाम् अनुदात्तस्य",
     padaccheda_dev        = "नः उदात्त-स्वरित-उदयम् अ-गार्ग्य-काश्यप-गालवानाम्",
     why_dev               = "(सूत्रम् 8.4.67) नोदात्तस्वरितोदयमगार्ग्यकाश्यपगालवानाम्।",
     anuvritti_from        = ('8.1.1',),

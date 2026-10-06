@@ -4,6 +4,7 @@
 Padaccheda: ध्वमः ध्वात्
 
 ध्वमो ध्वात् (7.1.42)
+Pāṭha: ashtadhyayi.com data.txt row i=71042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Dvamo DvAt",
     text_dev              = "ध्वमो ध्वात्",
+    samagra_slp1          = "aNgasya DvamaH DvAt Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ध्वमः ध्वात् छन्दसि",
     padaccheda_dev        = "ध्वमः ध्वात्",
     why_dev               = "(सूत्रम् 7.1.42) ध्वमो ध्वात्।",
     anuvritti_from        = ('7.1.1',),

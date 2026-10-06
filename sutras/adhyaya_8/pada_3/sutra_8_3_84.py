@@ -4,6 +4,7 @@
 Padaccheda: मातृ-पितृभ्याम् स्वसा
 
 मातृपितृभ्यां स्वसा (8.3.84)
+Pāṭha: ashtadhyayi.com data.txt row i=83084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mAtfpitfByAM svasA",
     text_dev              = "मातृपितृभ्यां स्वसा",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH mAtf-pitfByAm svasA saH samAse",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः मातृ-पितृभ्याम् स्वसा सः समासे",
     padaccheda_dev        = "मातृ-पितृभ्याम् स्वसा",
     why_dev               = "(सूत्रम् 8.3.84) मातृपितृभ्यां स्वसा।",
     anuvritti_from        = ('8.1.1',),

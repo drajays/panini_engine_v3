@@ -4,6 +4,7 @@
 Padaccheda: लोहितात् मणौ
 
 लोहितान्मणौ (5.4.30)
+Pāṭha: ashtadhyayi.com data.txt row i=54030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lohitAnmaRO",
     text_dev              = "लोहितान्मणौ",
+    samagra_slp1          = "lohitAt maRO kan",
+    samagra_dev           = "लोहितात् मणौ कन्",
     padaccheda_dev        = "लोहितात् मणौ",
     why_dev               = "(सूत्रम् 5.4.30) लोहितान्मणौ।",
     anuvritti_from        = ('4.1.76',),

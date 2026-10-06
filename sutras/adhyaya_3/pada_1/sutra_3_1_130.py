@@ -4,6 +4,7 @@
 Padaccheda: क्रतौ कुण्डपाय्य-संचाय्यौ
 
 Krt suffix rule from dhatu: क्रतौ कुण्डपाय्यसंचाय्यौ (130)
+Pāṭha: ashtadhyayi.com data.txt row i=31130 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kratO kuRqapAyyasaMcAyyO",
     text_dev              = "क्रतौ कुण्डपाय्यसंचाय्यौ",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH kratO kuRqapAyya-saMcAyyO kft Ryat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः क्रतौ कुण्डपाय्य-संचाय्यौ कृत् ण्यत्",
     padaccheda_dev        = "क्रतौ कुण्डपाय्य-संचाय्यौ",
     why_dev               = "धातोः [क्रतौ कुण्डपाय्यसंचाय्यौ]-प्रत्ययः विहितः (३.१.130)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

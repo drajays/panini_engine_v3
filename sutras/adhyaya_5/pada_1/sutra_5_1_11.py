@@ -4,6 +4,7 @@
 Padaccheda: माणव-चरकाभ्याम् खञ्
 
 माणवचरकाभ्यां खञ् (5.1.11)
+Pāṭha: ashtadhyayi.com data.txt row i=51011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mARavacarakAByAM KaY",
     text_dev              = "माणवचरकाभ्यां खञ्",
+    samagra_slp1          = "tasmE hitam iti mARava-carakAByAm KaY",
+    samagra_dev           = "'तस्मै हितम्' (इति) माणव-चरकाभ्याम् खञ्",
     padaccheda_dev        = "माणव-चरकाभ्याम् खञ्",
     why_dev               = "(सूत्रम् 5.1.11) माणवचरकाभ्यां खञ्।",
     anuvritti_from        = ('5.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: खः सर्वधुरात्
 
 खः सर्वधुरात् (4.4.78)
+Pāṭha: ashtadhyayi.com data.txt row i=44078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "KaH sarvaDurAt",
     text_dev              = "खः सर्वधुरात्",
+    samagra_slp1          = "tat vahati iti sarvaDurAt KaH",
+    samagra_dev           = "'तत् वहति' इति सर्वधुरात् खः",
     padaccheda_dev        = "खः सर्वधुरात्",
     why_dev               = "(सूत्रम् 4.4.78) खः सर्वधुरात्।",
     anuvritti_from        = ('4.1.1',),

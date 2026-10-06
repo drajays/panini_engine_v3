@@ -4,6 +4,7 @@
 Padaccheda: कुसूल-कूप-कुम्भ-शालम् बिले
 
 कुसूलकूपकुम्भशालं बिले (6.2.102)
+Pāṭha: ashtadhyayi.com data.txt row i=62102 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kusUlakUpakumBaSAlaM bile",
     text_dev              = "कुसूलकूपकुम्भशालं बिले",
+    samagra_slp1          = "udAttaH antaH kusUla-kUpa-kumBa-SAlam bile pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः कुसूल-कूप-कुम्भ-शालम् बिले पूर्वपदम्",
     padaccheda_dev        = "कुसूल-कूप-कुम्भ-शालम् बिले",
     why_dev               = "(सूत्रम् 6.2.102) कुसूलकूपकुम्भशालं बिले।",
     anuvritti_from        = ('6.1.1',),

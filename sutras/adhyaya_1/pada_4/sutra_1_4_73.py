@@ -6,6 +6,7 @@ structures) get the gati-saṃjñā.  These are specialised Vedic/grammatical
 items that occur as preverb-like elements in specific constructions.
 
 v3: registers samjna_registry["gati_upaje_anvaje"] = frozenset({"upAje","anvAje"}).
+Pāṭha: ashtadhyayi.com data.txt row i=14073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='upAjenvAje',
     text_dev='उपाजेऽन्वाजे',
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH upAje anvAje kriyAyoge gatiH viBAzA kfYi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः उपाजे अन्वाजे क्रियायोगे गतिः विभाषा कृञि",
     padaccheda_dev="उपाजे / अन्वाजे",
     why_dev="'उपाजे' 'अन्वाजे' इत्येते गति-संज्ञकौ — गति-सेटे योज्येते।",
     anuvritti_from=("1.4.60",),

@@ -4,6 +4,7 @@
 Padaccheda: लिङ्-अर्थे लेट्
 
 krt-suffix rule: लिङर्थे लेट्
+Pāṭha: ashtadhyayi.com data.txt row i=34007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "liNarTe lew",
     text_dev              = "लिङर्थे लेट्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH liNarTe lew kft Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः लिङर्थे लेट् कृत् छन्दसि",
     padaccheda_dev        = "लिङ्-अर्थे लेट्",
     why_dev               = "धातोः प्रत्ययः (३.4.7)।",
     anuvritti_from        = ('3.1.1',),

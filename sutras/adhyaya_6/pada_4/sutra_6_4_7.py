@@ -4,6 +4,7 @@
 Padaccheda: न (लुप्तषष्ठ्यन्तनिर्देशः) उपधायाः
 
 नोपधायाः (6.4.7)
+Pāṭha: ashtadhyayi.com data.txt row i=64007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nopaDAyAH",
     text_dev              = "नोपधायाः",
+    samagra_slp1          = "naH aNgasya upaDAyAH nAmi dIrGaH",
+    samagra_dev           = "नः अङ्गस्य उपधायाः नामि दीर्घः",
     padaccheda_dev        = "न (लुप्तषष्ठ्यन्तनिर्देशः) उपधायाः",
     why_dev               = "(सूत्रम् 6.4.7) नोपधायाः।",
     anuvritti_from        = ('6.1.1',),

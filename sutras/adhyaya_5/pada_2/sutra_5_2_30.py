@@ -4,6 +4,7 @@
 Padaccheda: अवात् कुटारच् च
 
 अवात् कुटारच्च (5.2.30)
+Pāṭha: ashtadhyayi.com data.txt row i=52030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avAt kuwAracca",
     text_dev              = "अवात् कुटारच्च",
+    samagra_slp1          = "avAt kuwArac kawac ca",
+    samagra_dev           = "अवात् कुटारच् कटच् च",
     padaccheda_dev        = "अवात् कुटारच् च",
     why_dev               = "(सूत्रम् 5.2.30) अवात् कुटारच्च।",
     anuvritti_from        = ('4.1.82',),

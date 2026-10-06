@@ -4,6 +4,7 @@
 Padaccheda: कम्बलात् च संज्ञायाम्
 
 कम्बलाच्च संज्ञायाम् (5.1.3)
+Pāṭha: ashtadhyayi.com data.txt row i=51003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kambalAcca saMjYAyAm",
     text_dev              = "कम्बलाच्च संज्ञायाम्",
+    samagra_slp1          = "prAk krItAt kambalAt saMjYAyAm yat",
+    samagra_dev           = "प्राक् क्रीतात् कम्बलात् संज्ञायाम् यत्",
     padaccheda_dev        = "कम्बलात् च संज्ञायाम्",
     why_dev               = "(सूत्रम् 5.1.3) कम्बलाच्च संज्ञायाम्।",
     anuvritti_from        = ('5.1.1',),

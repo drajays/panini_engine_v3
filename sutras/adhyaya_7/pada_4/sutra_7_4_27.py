@@ -4,6 +4,7 @@
 Padaccheda: रीङ् ऋतः
 
 रीङ् ऋतः (7.4.27)
+Pāṭha: ashtadhyayi.com data.txt row i=74027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rIN ftaH",
     text_dev              = "रीङ् ऋतः",
+    samagra_slp1          = "aNgasya rIN ftaH yi akftsArvaDAtukayoH cvO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य रीङ् ऋतः यि अकृत्सार्वधातुकयोः च्वौ",
     padaccheda_dev        = "रीङ् ऋतः",
     why_dev               = "(सूत्रम् 7.4.27) रीङ् ऋतः।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: कुलटायाः वा
 
 कुलटाया वा (4.1.127)
+Pāṭha: ashtadhyayi.com data.txt row i=41127 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kulawAyA vA",
     text_dev              = "कुलटाया वा",
+    samagra_slp1          = "tasya apatyam iti kulawAyAH Qak  inaN AdeSaH vA",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) कुलटायाः ढक् , इनङ् (आदेशः) वा",
     padaccheda_dev        = "कुलटायाः वा",
     why_dev               = "(सूत्रम् 4.1.127) कुलटाया वा।",
     anuvritti_from        = ('4.1.1',),

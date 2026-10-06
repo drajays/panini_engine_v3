@@ -4,6 +4,7 @@
 Padaccheda: विभाषा साकाङ्क्षे
 
 krt-suffix rule: विभाषा साकाङ्क्षे (114)
+Pāṭha: ashtadhyayi.com data.txt row i=32114 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA sAkANkze",
     text_dev              = "विभाषा साकाङ्क्षे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte viBAzA sAkANkze kft anadyatane aBijYAvacane",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते विभाषा साकाङ्क्षे कृत् अनद्यतने अभिज्ञावचने",
     padaccheda_dev        = "विभाषा साकाङ्क्षे",
     why_dev               = "धातोः कृत्-प्रत्ययः [विभाषा साकाङ्क्षे] विहितः (३.२.114)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

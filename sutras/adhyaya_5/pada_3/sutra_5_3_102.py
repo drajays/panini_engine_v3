@@ -4,6 +4,7 @@
 Padaccheda: शिलायाः ढः
 
 शिलाया ढः (5.3.102)
+Pāṭha: ashtadhyayi.com data.txt row i=53102 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SilAyA QaH",
     text_dev              = "शिलाया ढः",
+    samagra_slp1          = "SilAyAH ive QaH",
+    samagra_dev           = "शिलायाः इवे ढः",
     padaccheda_dev        = "शिलायाः ढः",
     why_dev               = "(सूत्रम् 5.3.102) शिलाया ढः।",
     anuvritti_from        = ('4.1.76',),

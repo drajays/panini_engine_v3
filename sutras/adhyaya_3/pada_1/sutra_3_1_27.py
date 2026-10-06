@@ -4,6 +4,7 @@
 Padaccheda: कण्डू-आदिभ्यः यक्
 
 Krt suffix rule from dhatu: कण्ड्वादिभ्यो यक् (27)
+Pāṭha: ashtadhyayi.com data.txt row i=31027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kaRqvAdiByo yak",
     text_dev              = "कण्ड्वादिभ्यो यक्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kaRqvAdiByaH yak",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कण्ड्वादिभ्यः यक्",
     padaccheda_dev        = "कण्डू-आदिभ्यः यक्",
     why_dev               = "धातोः [कण्ड्वादिभ्यो यक्]-प्रत्ययः विहितः (३.१.27)।",
     anuvritti_from        = ('3.1.1',),

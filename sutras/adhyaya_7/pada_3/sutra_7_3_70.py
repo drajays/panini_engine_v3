@@ -4,6 +4,7 @@
 Padaccheda: घोः लोपः लेटि वा
 
 घोर्लोपो लेटि वा (7.3.70)
+Pāṭha: ashtadhyayi.com data.txt row i=73070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Gorlopo lewi vA",
     text_dev              = "घोर्लोपो लेटि वा",
+    samagra_slp1          = "aNgasya GoH lopaH lewi vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य घोः लोपः लेटि वा",
     padaccheda_dev        = "घोः लोपः लेटि वा",
     why_dev               = "(सूत्रम् 7.3.70) घोर्लोपो लेटि वा।",
     anuvritti_from        = ('7.1.1',),

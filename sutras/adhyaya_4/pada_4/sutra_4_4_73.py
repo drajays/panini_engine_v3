@@ -4,6 +4,7 @@
 Padaccheda: निकटे वसति (क्रियापदम्)
 
 निकटे वसति (4.4.73)
+Pāṭha: ashtadhyayi.com data.txt row i=44073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nikawe vasati",
     text_dev              = "निकटे वसति",
+    samagra_slp1          = "nikawe vasati iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'निकटे वसति' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "निकटे वसति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.73) निकटे वसति।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: तु-रु-स्तु-शम्-यमः सार्वधातुके
 
 तुरुस्तुशम्यमः सार्वधातुके (7.3.95)
+Pāṭha: ashtadhyayi.com data.txt row i=73095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "turustuSamyamaH sArvaDAtuke",
     text_dev              = "तुरुस्तुशम्यमः सार्वधातुके",
+    samagra_slp1          = "turustuSamyamaH aNgAt sArvaDAtuke hali tiNi Iw vA",
+    samagra_dev           = "तुरुस्तुशम्यमः अङ्गात् सार्वधातुके हलि तिङि ईट् वा",
     padaccheda_dev        = "तु-रु-स्तु-शम्-यमः सार्वधातुके",
     why_dev               = "(सूत्रम् 7.3.95) तुरुस्तुशम्यमः सार्वधातुके।",
     anuvritti_from        = ('7.1.1',),

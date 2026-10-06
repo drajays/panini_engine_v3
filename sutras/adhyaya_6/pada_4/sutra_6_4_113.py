@@ -8,6 +8,7 @@ Engine:
   • ``corrected_v2_P009_6_4_113_arm`` (**P009**),
   • ``corrected_v2_P012_6_4_113_arm`` (**P012**) —
 ``n`` + ``A`` + following ``ta`` → ``n`` + ``I``.
+Pāṭha: ashtadhyayi.com data.txt row i=64113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -85,6 +86,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='I halyaGoH',
     text_dev='ई हल्यघोः',
+    samagra_slp1="SnA-aByastayoH AtaH hali sArvaDAtuke kNiti I aGoH",
+    samagra_dev="श्ना-अभ्यस्तयोः आतः हलि सार्वधातुके क्ङिति ई, अघोः",
     padaccheda_dev="ई / हलि / अघोः",
     why_dev="अघोः अङ्गस्य हलि परे आत् ईत्वम् — प००९ / प०१२ *श्ना*-शेषः।",
     anuvritti_from=("6.4.1",),

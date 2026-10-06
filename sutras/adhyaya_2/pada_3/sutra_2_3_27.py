@@ -4,6 +4,7 @@
 Padaccheda: सर्वनाम्नः तृतीया च
 
 Sarvanaaman also takes tritiya.
+Pāṭha: ashtadhyayi.com data.txt row i=23027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sarvanAmnastftIyA ca",
     text_dev              = "सर्वनाम्नस्तृतीया च",
+    samagra_slp1          = "anaBihite sarvanAmnaH tftIyA ca hetO zazWI hetu-prayoge",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते सर्वनाम्नः तृतीया च हेतौ षष्ठी हेतु-प्रयोगे",
     padaccheda_dev        = "सर्वनाम्नः तृतीया च",
     why_dev               = "सर्वनाम्नः तृतीया च (२.३.२७)।",
     anuvritti_from        = ('2.3.18',),

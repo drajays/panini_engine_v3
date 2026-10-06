@@ -4,6 +4,7 @@
 Padaccheda: आक्रन्दात् ठञ् च
 
 आक्रन्दाट्ठञ्च (4.4.38)
+Pāṭha: ashtadhyayi.com data.txt row i=44038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AkrandAwWaYca",
     text_dev              = "आक्रन्दाट्ठञ्च",
+    samagra_slp1          = "tat DAvati iti AkrandAt WaY ca",
+    samagra_dev           = "'तत् धावति' (इति) आक्रन्दात् ठञ् च",
     padaccheda_dev        = "आक्रन्दात् ठञ् च",
     why_dev               = "(सूत्रम् 4.4.38) आक्रन्दाट्ठञ्च।",
     anuvritti_from        = ('4.1.1',),

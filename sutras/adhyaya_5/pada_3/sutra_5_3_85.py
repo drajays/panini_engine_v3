@@ -4,6 +4,7 @@
 Padaccheda: अल्पे
 
 अल्पे (5.3.85)
+Pāṭha: ashtadhyayi.com data.txt row i=53085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "alpe",
     text_dev              = "अल्पे",
+    samagra_slp1          = "alpe prAtipadikAt tiNaH ca kaH",
+    samagra_dev           = "अल्पे प्रातिपदिकात् तिङः च कः",
     padaccheda_dev        = "अल्पे",
     why_dev               = "(सूत्रम् 5.3.85) अल्पे।",
     anuvritti_from        = ('5.3.70',),

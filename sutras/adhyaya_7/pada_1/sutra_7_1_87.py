@@ -2,7 +2,7 @@
 7.1.87  थो न्थः  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=701087
+- ashtadhyayi.com data.txt row i=71087
 - Kāśikā: "पन्थाः थः न्थः"
 - Cross-validation: tests/unit/test_sthanivat_al_ashrita_exceptions.py
 
@@ -55,6 +55,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="To nTaH",
     text_dev="थो न्थः",
+    samagra_slp1="paTi-maTi-fBukzAmaNgasya TaH sarvanAmasTAne nTaH",
+    samagra_dev="पथि-मथि-ऋभुक्षामङ्गस्य थः सर्वनामस्थाने न्थः",
     padaccheda_dev="थः न्थः",
     why_dev="पथिन्-श्रेण्यां थकारस्य न्थ्-आदेशः।",
     anuvritti_from=("7.1.1",),

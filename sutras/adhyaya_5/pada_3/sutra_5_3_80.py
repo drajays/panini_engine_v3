@@ -4,6 +4,7 @@
 Padaccheda: प्राचाम् उप-आदेः अडच्-वुचौ च
 
 प्राचामुपादेरडज्वुचौ च (5.3.80)
+Pāṭha: ashtadhyayi.com data.txt row i=53080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prAcAmupAderaqajvucO ca",
     text_dev              = "प्राचामुपादेरडज्वुचौ च",
+    samagra_slp1          = "anukampAyAm nItO tadyuktAt upAdeH bahvacaH manuzyanAmnaH prAcAm aqac-vucO ca",
+    samagra_dev           = "अनुकम्पायाम् नीतौ तद्युक्तात् उपादेः बह्वचः मनुष्यनाम्नः प्राचाम्  अडच्-वुचौ च",
     padaccheda_dev        = "प्राचाम् उप-आदेः अडच्-वुचौ च",
     why_dev               = "(सूत्रम् 5.3.80) प्राचामुपादेरडज्वुचौ च।",
     anuvritti_from        = ('5.3.70',),

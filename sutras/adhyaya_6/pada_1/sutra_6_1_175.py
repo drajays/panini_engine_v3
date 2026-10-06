@@ -4,6 +4,7 @@
 Padaccheda: नः ऊङ्-धात्वोः
 
 नोङ्धात्वोः (6.1.175)
+Pāṭha: ashtadhyayi.com data.txt row i=61175 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "noNDAtvoH",
     text_dev              = "नोङ्धात्वोः",
+    samagra_slp1          = "naH UN-DAtvoH udAttaH antaH viBaktiH antodattAt aYceH Candasi asarvanAmasTAnam nadI-ajAdi udAttayaRaH hal-pUrvAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "नः ऊङ्-धात्वोः उदात्तः अन्तः विभक्तिः अन्तोदत्तात् अञ्चेः छन्दसि असर्वनामस्थानम् नदी-अजादि उदात्तयणः हल्-पूर्वात्",
     padaccheda_dev        = "नः ऊङ्-धात्वोः",
     why_dev               = "(सूत्रम् 6.1.175) नोङ्धात्वोः।",
     anuvritti_from        = ('6.1.1',),

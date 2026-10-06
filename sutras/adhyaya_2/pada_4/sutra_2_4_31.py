@@ -4,6 +4,7 @@
 Padaccheda: अर्धर्चाः पुंसि च
 
 ardharca words are also masculine.
+Pāṭha: ashtadhyayi.com data.txt row i=24031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "arDarcAH puMsi ca",
     text_dev              = "अर्धर्चाः पुंसि च",
+    samagra_slp1          = "arDarcAH puMsi ca napuMsakam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अर्धर्चाः पुंसि च नपुंसकम्",
     padaccheda_dev        = "अर्धर्चाः पुंसि च",
     why_dev               = "अर्धर्चाः पुंसि च (२.४.३१)।",
     anuvritti_from        = ('2.4.26',),

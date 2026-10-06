@@ -4,6 +4,7 @@
 Padaccheda: चतुर्थी-अर्थे बहुलम् छन्दसि
 
 Bahulam (varied) use of caturthy-artha in chandas.
+Pāṭha: ashtadhyayi.com data.txt row i=23062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "caturTyarTe bahulaM Candasi",
     text_dev              = "चतुर्थ्यर्थे बहुलं छन्दसि",
+    samagra_slp1          = "anaBihite caturTI-arTe bahulam Candasi Seze zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते चतुर्थी-अर्थे बहुलम् छन्दसि शेषे षष्ठी",
     padaccheda_dev        = "चतुर्थी-अर्थे बहुलम् छन्दसि",
     why_dev               = "चतुर्थी-अर्थे बहुलम् छन्दसि (२.३.६२)।",
     anuvritti_from        = ('2.3.13',),

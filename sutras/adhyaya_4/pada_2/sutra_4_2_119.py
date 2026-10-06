@@ -4,6 +4,7 @@
 Padaccheda: ओः देशे ठञ्
 
 ओर्देशे ठञ् (4.2.119)
+Pāṭha: ashtadhyayi.com data.txt row i=42119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ordeSe WaY",
     text_dev              = "ओर्देशे ठञ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA oH deSe WaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा ओः देशे ठञ्",
     padaccheda_dev        = "ओः देशे ठञ्",
     why_dev               = "(सूत्रम् 4.2.119) ओर्देशे ठञ्।",
     anuvritti_from        = ('4.1.1',),

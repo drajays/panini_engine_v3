@@ -4,6 +4,7 @@
 Padaccheda: एहिमन्ये (लुप्तप्रथमान्तनिर्देशः) प्रहासे लृट्
 
 एहिमन्ये प्रहासे लृट् (8.1.46)
+Pāṭha: ashtadhyayi.com data.txt row i=81046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ehimanye prahAse lfw",
     text_dev              = "एहिमन्ये प्रहासे लृट्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO ehimanye prahAse lfw tiN na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ एहिमन्ये प्रहासे लृट् तिङ् न",
     padaccheda_dev        = "एहिमन्ये (लुप्तप्रथमान्तनिर्देशः) प्रहासे लृट्",
     why_dev               = "(सूत्रम् 8.1.46) एहिमन्ये प्रहासे लृट्।",
     anuvritti_from        = ('8.1.1',),

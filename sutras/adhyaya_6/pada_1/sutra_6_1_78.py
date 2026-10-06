@@ -113,6 +113,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'ecoyavAyAvaH',
     text_dev       = 'एचोऽयवायावः',
+    samagra_slp1   = "ecaH aci ay-av-Ay-AvaH",
+    samagra_dev    = "एचः अचि अय्-अव्-आय्-आवः",
     padaccheda_dev = "एचः अय्-अव्-आय्-आवः",
     why_dev        = "एचः (ए, ऐ, ओ, औ) स्थाने परे अचि "
                      "क्रमेण अय्, अव्, आय्, आव् आदेशः (एचोऽयवायावः) — "

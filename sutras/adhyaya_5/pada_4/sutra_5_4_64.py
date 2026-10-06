@@ -4,6 +4,7 @@
 Padaccheda: दुःखात् प्रातिलोम्ये
 
 दुःखात् प्रातिलोम्ये (5.4.64)
+Pāṭha: ashtadhyayi.com data.txt row i=54064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "duHKAt prAtilomye",
     text_dev              = "दुःखात् प्रातिलोम्ये",
+    samagra_slp1          = "duHKAt kfYaH prAtilomye qAc",
+    samagra_dev           = "दुःखात् कृञः प्रातिलोम्ये डाच्",
     padaccheda_dev        = "दुःखात् प्रातिलोम्ये",
     why_dev               = "(सूत्रम् 5.4.64) दुःखात् प्रातिलोम्ये।",
     anuvritti_from        = ('4.1.76',),

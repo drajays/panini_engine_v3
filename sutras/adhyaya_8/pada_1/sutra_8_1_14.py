@@ -4,6 +4,7 @@
 Padaccheda: यथास्वे यथायथम्
 
 यथास्वे यथायथम् (8.1.14)
+Pāṭha: ashtadhyayi.com data.txt row i=81014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yaTAsve yaTAyaTam",
     text_dev              = "यथास्वे यथायथम्",
+    samagra_slp1          = "sarvasya dve yaTAsve yaTAyaTam karmaDArayavat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सर्वस्य द्वे यथास्वे यथायथम् कर्मधारयवत्",
     padaccheda_dev        = "यथास्वे यथायथम्",
     why_dev               = "(सूत्रम् 8.1.14) यथास्वे यथायथम्।",
     anuvritti_from        = ('8.1.1',),

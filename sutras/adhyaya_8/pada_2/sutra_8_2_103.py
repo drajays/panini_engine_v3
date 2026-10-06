@@ -4,6 +4,7 @@
 Padaccheda: स्वरितम् आम्रेडिते असूया-सम्मति-कोप-कुत्सनेषु
 
 स्वरितमाम्रेडितेऽसूयासम्मतिकोपकुत्सनेषु (8.2.103)
+Pāṭha: ashtadhyayi.com data.txt row i=82103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'svaritamAmreqitesUyAsammatikopakutsanezu',
     text_dev              = 'स्वरितमाम्रेडितेऽसूयासम्मतिकोपकुत्सनेषु',
+    samagra_slp1          = "padasya pUrvatrAsidDam vAkyasya weH plutaH udAttaH svaritam Amreqite asUyAsammatikopakutsanezu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वाक्यस्य टेः प्लुतः उदात्तः स्वरितम् आम्रेडिते असूयासम्मतिकोपकुत्सनेषु",
     padaccheda_dev        = "स्वरितम् आम्रेडिते असूया-सम्मति-कोप-कुत्सनेषु",
     why_dev               = "(सूत्रम् 8.2.103) स्वरितमाम्रेडितेऽसूयासम्मतिकोपकुत्सनेषु।",
     anuvritti_from        = ('8.1.1',),

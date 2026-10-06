@@ -4,6 +4,7 @@
 Padaccheda: अचि विभाषा
 
 अचि विभाषा (8.2.21)
+Pāṭha: ashtadhyayi.com data.txt row i=82021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aci viBAzA",
     text_dev              = "अचि विभाषा",
+    samagra_slp1          = "padasya pUrvatrAsidDam aci viBAzA raH laH graH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् अचि विभाषा रः लः ग्रः",
     padaccheda_dev        = "अचि विभाषा",
     why_dev               = "(सूत्रम् 8.2.21) अचि विभाषा।",
     anuvritti_from        = ('8.1.1',),

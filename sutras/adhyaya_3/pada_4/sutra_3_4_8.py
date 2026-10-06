@@ -4,6 +4,7 @@
 Padaccheda: उपसंवाद-आशङ्कयोः च
 
 krt-suffix rule: उपसंवादाशङ्कयोश्च
+Pāṭha: ashtadhyayi.com data.txt row i=34008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upasaMvAdASaNkayoSca",
     text_dev              = "उपसंवादाशङ्कयोश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH upasaMvAda-ASaNkayoH ca kft Candasi liNarTe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः उपसंवाद-आशङ्कयोः च कृत् छन्दसि लिङर्थे",
     padaccheda_dev        = "उपसंवाद-आशङ्कयोः च",
     why_dev               = "धातोः प्रत्ययः (३.4.8)।",
     anuvritti_from        = ('3.1.1',),

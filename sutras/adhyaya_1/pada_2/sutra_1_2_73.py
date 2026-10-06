@@ -23,6 +23,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'grAmyapaSusaMGezvataruRezu strI',
     text_dev                = 'ग्राम्यपशुसंघेष्वतरुणेषु स्त्री',
+    samagra_slp1            = "grAmya-paSu-saMGezu a-taruRezu strI eka-SezaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "ग्राम्य-पशु-संघेषु अ-तरुणेषु स्त्री एक-शेषः",
     padaccheda_dev          = "ग्राम्य-पशु-संघेषु / अतरुणेषु / स्त्री",
     why_dev                 = (
         "ग्राम्यपशूनां संघे अतरुणेषु एकशेषे स्त्रीशब्द एव शिष्यते — "

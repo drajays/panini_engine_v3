@@ -4,6 +4,7 @@
 Padaccheda: प्रकृत्या एक-अच्
 
 प्रकृत्यैकाच् (6.4.163)
+Pāṭha: ashtadhyayi.com data.txt row i=64163 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prakftyEkAc",
     text_dev              = "प्रकृत्यैकाच्",
+    samagra_slp1          = "aNgasya asidDavadatrABAt Basya prakftyA ekAc izWa-iman-Iyassu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् भस्य प्रकृत्या एकाच् इष्ठ-इमन्-ईयस्सु",
     padaccheda_dev        = "प्रकृत्या एक-अच्",
     why_dev               = "(सूत्रम् 6.4.163) प्रकृत्यैकाच्।",
     anuvritti_from        = ('6.1.1',),

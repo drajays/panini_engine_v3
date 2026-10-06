@@ -4,6 +4,7 @@
 Padaccheda: शक्ति-यष्ट्‍योः ईकक्
 
 शक्तियष्ट्योरीकक् (4.4.59)
+Pāṭha: ashtadhyayi.com data.txt row i=44059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SaktiyazwyorIkak",
     text_dev              = "शक्तियष्ट्योरीकक्",
+    samagra_slp1          = "tadasya praharaRam iti Sakti-yazwyoH Ikak",
+    samagra_dev           = "'तदस्य प्रहरणम्' (इति) शक्ति-यष्ट्योः ईकक्",
     padaccheda_dev        = "शक्ति-यष्ट्‍योः ईकक्",
     why_dev               = "(सूत्रम् 4.4.59) शक्तियष्ट्योरीकक्।",
     anuvritti_from        = ('4.1.1',),

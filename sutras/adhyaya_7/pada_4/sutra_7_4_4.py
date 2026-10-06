@@ -4,6 +4,7 @@
 Padaccheda: लोपः पिबतेः ईत् च अभ्यासस्य
 
 लोपः पिबतेरीच्चाभ्यासस्य (7.4.4)
+Pāṭha: ashtadhyayi.com data.txt row i=74004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lopaH pibaterIccAByAsasya",
     text_dev              = "लोपः पिबतेरीच्चाभ्यासस्य",
+    samagra_slp1          = "aNgasya lopaH pibateH It ca aByAsasya RO caNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य लोपः पिबतेः ईत् च अभ्यासस्य णौ चङि",
     padaccheda_dev        = "लोपः पिबतेः ईत् च अभ्यासस्य",
     why_dev               = "(सूत्रम् 7.4.4) लोपः पिबतेरीच्चाभ्यासस्य।",
     anuvritti_from        = ('7.1.1',),

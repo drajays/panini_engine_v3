@@ -4,6 +4,7 @@
 Padaccheda: शीङः सार्वधातुके गुणः
 
 शीङः सार्वधातुके गुणः (7.4.21)
+Pāṭha: ashtadhyayi.com data.txt row i=74021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SINaH sArvaDAtuke guRaH",
     text_dev              = "शीङः सार्वधातुके गुणः",
+    samagra_slp1          = "aNgasya SINaH sArvaDAtuke guRaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य शीङः सार्वधातुके गुणः",
     padaccheda_dev        = "शीङः सार्वधातुके गुणः",
     why_dev               = "(सूत्रम् 7.4.21) शीङः सार्वधातुके गुणः।",
     anuvritti_from        = ('7.1.1',),

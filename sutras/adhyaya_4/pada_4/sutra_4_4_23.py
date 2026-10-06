@@ -4,6 +4,7 @@
 Padaccheda: चूर्णात् इनिः
 
 चूर्णादिनिः (4.4.23)
+Pāṭha: ashtadhyayi.com data.txt row i=44023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "cUrRAdiniH",
     text_dev              = "चूर्णादिनिः",
+    samagra_slp1          = "tena saMsfzwe iti cUrRAt ini",
+    samagra_dev           = "'तेन संसृष्टे' इति चूर्णात् इनि",
     padaccheda_dev        = "चूर्णात् इनिः",
     why_dev               = "(सूत्रम् 4.4.23) चूर्णादिनिः।",
     anuvritti_from        = ('4.1.1',),

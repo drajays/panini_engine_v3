@@ -4,6 +4,7 @@
 Padaccheda: लिट्-यङोः च
 
 लिड्यङोश्च (6.1.29)
+Pāṭha: ashtadhyayi.com data.txt row i=61029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "liqyaNoSca",
     text_dev              = "लिड्यङोश्च",
+    samagra_slp1          = "liw-yaNoH ca samprasAraRam pyAyaH pI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "लिट्-यङोः च सम्प्रसारणम् प्यायः पी",
     padaccheda_dev        = "लिट्-यङोः च",
     why_dev               = "(सूत्रम् 6.1.29) लिड्यङोश्च।",
     anuvritti_from        = ('6.1.1',),

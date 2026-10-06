@@ -4,6 +4,7 @@
 Padaccheda: नित्यम् वृद्ध-शर-आदिभ्यः
 
 नित्यं वृद्धशरादिभ्यः (4.3.144)
+Pāṭha: ashtadhyayi.com data.txt row i=43144 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nityaM vfdDaSarAdiByaH",
     text_dev              = "नित्यं वृद्धशरादिभ्यः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA nityam vfdDa-Sara-AdiByaH vikAraH tasya avayave BAzAyAm a-Bakzya-AcCAdanayoH mayaw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा नित्यम् वृद्ध-शर-आदिभ्यः विकारः तस्य अवयवे भाषायाम् अ-भक्ष्य-आच्छादनयोः मयट्",
     padaccheda_dev        = "नित्यम् वृद्ध-शर-आदिभ्यः",
     why_dev               = "(सूत्रम् 4.3.144) नित्यं वृद्धशरादिभ्यः।",
     anuvritti_from        = ('4.1.1',),

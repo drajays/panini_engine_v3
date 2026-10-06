@@ -4,6 +4,7 @@
 Padaccheda: मनसः संज्ञायाम्
 
 मनसः संज्ञायाम् (6.3.4)
+Pāṭha: ashtadhyayi.com data.txt row i=63004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "manasaH saMjYAyAm",
     text_dev              = "मनसः संज्ञायाम्",
+    samagra_slp1          = "alug uttarapade manasaH saMjYAyAm tftIyAyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे मनसः संज्ञायाम् तृतीयायाः",
     padaccheda_dev        = "मनसः संज्ञायाम्",
     why_dev               = "(सूत्रम् 6.3.4) मनसः संज्ञायाम्।",
     anuvritti_from        = ('6.1.1',),

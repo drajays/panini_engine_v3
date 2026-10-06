@@ -4,6 +4,7 @@
 Padaccheda: रक्षः-यातूनाम् हननी
 
 रक्षोयातूनां हननी (4.4.121)
+Pāṭha: ashtadhyayi.com data.txt row i=44121 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rakzoyAtUnAM hananI",
     text_dev              = "रक्षोयातूनां हननी",
+    samagra_slp1          = "rakzas-yAtUnAm hananI iti Candasi saMjYAyAm yat",
+    samagra_dev           = "रक्षस्-यातूनाम् 'हननी' (इति) छन्दसि संज्ञायाम् यत्",
     padaccheda_dev        = "रक्षः-यातूनाम् हननी",
     why_dev               = "(सूत्रम् 4.4.121) रक्षोयातूनां हननी।",
     anuvritti_from        = ('4.1.1',),

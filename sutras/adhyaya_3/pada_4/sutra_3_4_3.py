@@ -4,6 +4,7 @@
 Padaccheda: समुच्चये अन्यतरस्याम्
 
 krt-suffix rule: समुच्चयेऽन्यतरस्याम्
+Pāṭha: ashtadhyayi.com data.txt row i=34003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'samuccayenyatarasyAm',
     text_dev              = 'समुच्चयेऽन्यतरस्याम्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH samuccaye anyatarasyAm kft DAtusambanDe kriyAsamaBihAre",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः समुच्चये अन्यतरस्याम् कृत् धातुसम्बन्धे क्रियासमभिहारे",
     padaccheda_dev        = "समुच्चये अन्यतरस्याम्",
     why_dev               = "धातोः प्रत्ययः (३.4.3)।",
     anuvritti_from        = ('3.1.1',),

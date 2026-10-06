@@ -4,6 +4,7 @@
 Padaccheda: समायाः खः
 
 समायाः खः (5.1.85)
+Pāṭha: ashtadhyayi.com data.txt row i=51085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samAyAH KaH",
     text_dev              = "समायाः खः",
+    samagra_slp1          = "tamaDIzwaH BftaH BUtaH BAvI iti samAyAH KaH",
+    samagra_dev           = "'तमधीष्टः भृतः भूतः भावी' (इति) समायाः खः",
     padaccheda_dev        = "समायाः खः",
     why_dev               = "(सूत्रम् 5.1.85) समायाः खः।",
     anuvritti_from        = ('5.1.78',),

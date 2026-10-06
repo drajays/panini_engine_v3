@@ -4,6 +4,7 @@
 Padaccheda: अहन् (लुप्तषष्ठ्यन्तनिर्देशः)
 
 अहन् (8.2.68)
+Pāṭha: ashtadhyayi.com data.txt row i=82068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ahan",
     text_dev              = "अहन्",
+    samagra_slp1          = "padasya ahnaH ru~H",
+    samagra_dev           = "पदस्य अह्नः रुँः",
     padaccheda_dev        = "अहन् (लुप्तषष्ठ्यन्तनिर्देशः)",
     why_dev               = "(सूत्रम् 8.2.68) अहन्।",
     anuvritti_from        = ('8.1.1',),

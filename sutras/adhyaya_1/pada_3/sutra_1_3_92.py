@@ -13,6 +13,7 @@ he will grow; vivṛtsate — he desires to grow.
 stamp "Atmanepada_1_3_92" is absent, (c) a dhātu Term carries "vṛd_group" tag
 or upadesha is in _VRD_ROOTS, AND carries "sya_pratyaya" or "san_pratyaya".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -71,6 +72,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='vfdByaH syasanoH',
     text_dev='वृद्भ्यः स्यसनोः',
+    samagra_slp1="vfdByaH sya-sanoH kartari parasmEpadam vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="वृद्भ्यः स्य-सनोः कर्तरि परस्मैपदम् वा",
     padaccheda_dev="वृद्भ्यः (पञ्चमी-बहुवचन) / स्य-सनोः (षष्ठी-द्विवचन)",
     why_dev=(
         "वृद्-गण-धातूनां स्य-प्रत्यये सन्-प्रत्यये च परे आत्मनेपदम् — "

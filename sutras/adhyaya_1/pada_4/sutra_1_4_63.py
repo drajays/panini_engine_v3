@@ -8,6 +8,7 @@ E.g., "sat-kṛ" (to honour) and "asat-kṛ" (to dishonour) — here sat/asat
 function as gatis modifying the verb root kṛ.
 
 v3: registers samjna_registry["gati_sad_asati"] with the frozenset {"sat","asat"}.
+Pāṭha: ashtadhyayi.com data.txt row i=14063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='AdarAnAdarayoH sadasatI',
     text_dev='आदरानादरयोः सदसती',
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH Adara-anAdarayoH sat-asatI kriyAyoge gatiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः आदर-अनादरयोः सत्-असती क्रियायोगे गतिः",
     padaccheda_dev="आदर-अनादरयोः / सत्-असती",
     why_dev="आदरानादरयोः 'सत्' 'असत्' शब्दौ गति-संज्ञकौ — सत्-सूचिः गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

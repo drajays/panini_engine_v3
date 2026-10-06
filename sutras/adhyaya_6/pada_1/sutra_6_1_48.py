@@ -4,6 +4,7 @@
 Padaccheda: क्री-इङ्-जीनाम् णौ
 
 क्रीङ्जीनां णौ (6.1.48)
+Pāṭha: ashtadhyayi.com data.txt row i=61048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "krINjInAM RO",
     text_dev              = "क्रीङ्जीनां णौ",
+    samagra_slp1          = "krI-iN-jInAm RO At ecaH upadeSe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "क्री-इङ्-जीनाम् णौ आत् एचः उपदेशे",
     padaccheda_dev        = "क्री-इङ्-जीनाम् णौ",
     why_dev               = "(सूत्रम् 6.1.48) क्रीङ्जीनां णौ।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: विभाषा अभि-अव-पूर्वस्य
 
 विभाषाऽभ्यवपूर्वस्य (6.1.26)
+Pāṭha: ashtadhyayi.com data.txt row i=61026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'viBAzAByavapUrvasya',
     text_dev              = 'विभाषाऽभ्यवपूर्वस्य',
+    samagra_slp1          = "viBAzA aBi-ava-pUrvasya samprasAraRam nizWAyAm SyaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "विभाषा अभि-अव-पूर्वस्य सम्प्रसारणम् निष्ठायाम् श्यः",
     padaccheda_dev        = "विभाषा अभि-अव-पूर्वस्य",
     why_dev               = "(सूत्रम् 6.1.26) विभाषाऽभ्यवपूर्वस्य।",
     anuvritti_from        = ('6.1.1',),

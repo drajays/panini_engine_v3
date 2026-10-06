@@ -17,6 +17,7 @@ perfect). If the main verb is ātmanepada, kṛ also takes ātmanepada.
 stamp "Atmanepada_1_3_63" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _KR_ROOTS carries the tag "anuprayoga_usage" and "Am_pratyaya". No arm flags
 (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -64,6 +65,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='Ampratyayavat kfYonuprayogasya',
     text_dev='आम्प्रत्ययवत् कृञोऽनुप्रयोगस्य',
+    samagra_slp1="anuprayogasya kfYaH Ampratyayavat pUrvavat",
+    samagra_dev="अनुप्रयोगस्य कृञः आम्प्रत्ययवत् पूर्ववत्",
     padaccheda_dev=(
         "आम्-प्रत्ययवत् / कृञः (षष्ठी-एकवचन) / अनुप्रयोगस्य (षष्ठी-एकवचन)"
     ),

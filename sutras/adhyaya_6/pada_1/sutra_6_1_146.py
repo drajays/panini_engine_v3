@@ -4,6 +4,7 @@
 Padaccheda: आस्पदम् प्रतिष्ठायाम्
 
 आस्पदं प्रतिष्ठायाम् (6.1.146)
+Pāṭha: ashtadhyayi.com data.txt row i=61146 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AspadaM pratizWAyAm",
     text_dev              = "आस्पदं प्रतिष्ठायाम्",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH Aspadam pratizWAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः आस्पदम् प्रतिष्ठायाम्",
     padaccheda_dev        = "आस्पदम् प्रतिष्ठायाम्",
     why_dev               = "(सूत्रम् 6.1.146) आस्पदं प्रतिष्ठायाम्।",
     anuvritti_from        = ('6.1.1',),

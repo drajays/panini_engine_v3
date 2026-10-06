@@ -4,6 +4,7 @@
 Padaccheda: अभ्यस्तानाम् आदिः
 
 अभ्यस्तानामादिः (6.1.189)
+Pāṭha: ashtadhyayi.com data.txt row i=61189 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aByastAnAmAdiH",
     text_dev              = "अभ्यस्तानामादिः",
+    samagra_slp1          = "aByastAnAm AdiH udAttaH la-sArvaDAtukam aniwi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अभ्यस्तानाम् आदिः उदात्तः ल-सार्वधातुकम् अनिटि",
     padaccheda_dev        = "अभ्यस्तानाम् आदिः",
     why_dev               = "(सूत्रम् 6.1.189) अभ्यस्तानामादिः।",
     anuvritti_from        = ('6.1.1',),

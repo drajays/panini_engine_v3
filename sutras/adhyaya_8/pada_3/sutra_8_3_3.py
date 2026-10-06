@@ -4,6 +4,7 @@
 Padaccheda: आतः अटि नित्यम्
 
 आतोऽटि नित्यम् (8.3.3)
+Pāṭha: ashtadhyayi.com data.txt row i=83003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'Atowi nityam',
     text_dev              = 'आतोऽटि नित्यम्',
+    samagra_slp1          = "atra padasya roH pUrvasya AtaH awi nityamanunAsikaH",
+    samagra_dev           = "अत्र पदस्य रोः पूर्वस्य आतः अटि नित्यमनुनासिकः",
     padaccheda_dev        = "आतः अटि नित्यम्",
     why_dev               = "(सूत्रम् 8.3.3) आतोऽटि नित्यम्।",
     anuvritti_from        = ('8.1.1',),

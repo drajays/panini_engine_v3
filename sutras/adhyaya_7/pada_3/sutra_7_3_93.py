@@ -12,6 +12,7 @@ vowel-initial affix (झि/अन्ति etc.), never a हल्-आदि o
 Source: PDF p.809–810 (Mīmāṃsaka Aṣṭādhyāyī-Bhāṣya परिशिष्टम्) — direct
 transcription: "ब्रुव ईट् (7.3.93) से हल्आदि पित् सार्वधातुक 'तिप्' को
 ईट् आगम होकर 'ब्रू ईट् ति' रहा। गुण एव अवादेश होकर 'ब्रवीति' बन गया।"
+Pāṭha: ashtadhyayi.com data.txt row i=73093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -62,6 +63,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bruva Iw",
     text_dev              = "ब्रुव ईट्",
+    samagra_slp1          = "bruvaH aNgAt sArvaDAtuke hali piti Iw",
+    samagra_dev           = "ब्रुवः अङ्गात् सार्वधातुके हलि पिति ईट्",
     padaccheda_dev        = "ब्रुवः ईट्",
     why_dev               = "(सूत्रम् 7.3.93) ब्रुव ईट्।",
     anuvritti_from        = ('7.1.1',),

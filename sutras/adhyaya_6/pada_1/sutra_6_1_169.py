@@ -4,6 +4,7 @@
 Padaccheda: अन्त-उदात्तात् उत्तरपदात् अन्यतरस्याम् अनित्य-समासे
 
 अन्तोदत्तादुत्तरपदादन्यतरस्यामनित्यसमासे (6.1.169)
+Pāṭha: ashtadhyayi.com data.txt row i=61169 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'antodAttAduttarapadAdanyatarasyAmanityasamAse',
     text_dev              = 'अन्तोदात्तादुत्तरपदादन्यतरस्यामनित्यसमासे',
+    samagra_slp1          = "antodAttAt uttarapadAt anyatarasyAm anityasamAse udAttaH antaH ekAcaH tftIyAdiH viBaktiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अन्तोदात्तात् उत्तरपदात् अन्यतरस्याम् अनित्यसमासे उदात्तः अन्तः एकाचः तृतीयादिः विभक्तिः",
     padaccheda_dev        = "अन्त-उदात्तात् उत्तरपदात् अन्यतरस्याम् अनित्य-समासे",
     why_dev               = "(सूत्रम् 6.1.169) अन्तोदत्तादुत्तरपदादन्यतरस्यामनित्यसमासे।",
     anuvritti_from        = ('6.1.1',),

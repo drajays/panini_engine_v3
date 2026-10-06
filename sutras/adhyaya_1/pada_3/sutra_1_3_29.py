@@ -67,6 +67,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='samo gamyfcCipracCisvaratyartiSruvidiByaH',
     text_dev='समो गम्यृच्छिप्रच्छिस्वरत्यर्तिश्रुविदिभ्यः',
+    samagra_slp1="akarmakAt samaH gami-fcCi-pracCi-svarati-arti-Sru-vidiByaH Atmanepadam",
+    samagra_dev="अकर्मकात् समः गमि-ऋच्छि-प्रच्छि-स्वरति-अर्ति-श्रु-विदिभ्यः आत्मनेपदम्",
     padaccheda_dev="समः / गमेः …",
     why_dev=(
         "\"सम्\"पूर्वात् धातुर् \"\"गम्\" आत्मनेपद-पथे जातुः (आशिषि; डेमो-संज्ञा सूत्रस्थ।"

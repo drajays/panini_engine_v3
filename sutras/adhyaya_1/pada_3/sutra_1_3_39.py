@@ -12,6 +12,7 @@ one dhātu Term carries the tag "upa_prefix" or the tag "parA_prefix", and
 (c) the idempotency stamp "Atmanepada_1_3_39" is absent from state.meta.
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -46,6 +47,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="upaparAByAm",
     text_dev="उपपराभ्याम्",
+    samagra_slp1="upaparAByAm vfttisargatAyanezu kramaH",
+    samagra_dev="उपपराभ्याम् वृत्तिसर्गतायनेषु क्रमः",
     padaccheda_dev="उप-पराभ्याम् (पञ्चमी-द्विवचन)",
     why_dev=(
         "उप-पूर्वकस्य वा परा-पूर्वकस्य धातोः प्रयोगे आत्मनेपदम् — "

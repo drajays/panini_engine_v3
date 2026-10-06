@@ -4,6 +4,7 @@
 Padaccheda: एतदः अन्
 
 एतदोऽश् (5.3.5)
+Pāṭha: ashtadhyayi.com data.txt row i=53005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'etadon',
     text_dev              = 'एतदोऽन्',
+    samagra_slp1          = "etadaH prAgdiSaH an",
+    samagra_dev           = "एतदः प्राग्दिशः अन्",
     padaccheda_dev        = "एतदः अन्",
     why_dev               = "(सूत्रम् 5.3.5) एतदोऽश्।",
     anuvritti_from        = ('5.3.2',),

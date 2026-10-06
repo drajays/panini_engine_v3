@@ -4,6 +4,7 @@
 Padaccheda: अ-परोक्षे च
 
 krt-suffix rule: अपरोक्षे च (119)
+Pāṭha: ashtadhyayi.com data.txt row i=32119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aparokze ca",
     text_dev              = "अपरोक्षे च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte aparokze ca kft anadyatane sme law",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते अपरोक्षे च कृत् अनद्यतने स्मे लट्",
     padaccheda_dev        = "अ-परोक्षे च",
     why_dev               = "धातोः कृत्-प्रत्ययः [अपरोक्षे च] विहितः (३.२.119)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

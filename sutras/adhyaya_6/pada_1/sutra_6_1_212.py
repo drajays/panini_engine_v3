@@ -4,6 +4,7 @@
 Padaccheda: ङयि च
 
 ङयि च (6.1.212)
+Pāṭha: ashtadhyayi.com data.txt row i=61212 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Nayi ca",
     text_dev              = "ङयि च",
+    samagra_slp1          = "Nayi ca udAttaH AdiH yuzmad-asmadoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "ङयि च उदात्तः आदिः युष्मद्-अस्मदोः",
     padaccheda_dev        = "ङयि च",
     why_dev               = "(सूत्रम् 6.1.212) ङयि च।",
     anuvritti_from        = ('6.1.1',),

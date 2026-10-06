@@ -4,6 +4,7 @@
 Padaccheda: अचित्त-हस्ति-धेनोः ठक्
 
 अचित्तहस्तिधेनोष्ठक् (4.2.47)
+Pāṭha: ashtadhyayi.com data.txt row i=42047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "acittahastiDenozWak",
     text_dev              = "अचित्तहस्तिधेनोष्ठक्",
+    samagra_slp1          = "tasya samUhaH iti acitta-hasti-DenoH Wak",
+    samagra_dev           = "तस्य समूहः (इति) अचित्त-हस्ति-धेनोः ठक्",
     padaccheda_dev        = "अचित्त-हस्ति-धेनोः ठक्",
     why_dev               = "(सूत्रम् 4.2.47) अचित्तहस्तिधेनोष्ठक्।",
     anuvritti_from        = ('4.1.1',),

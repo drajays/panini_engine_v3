@@ -4,6 +4,7 @@
 Padaccheda: नमि-कम्पि-स्मि-अजस-कम-हिंस-दीपः रः
 
 krt-suffix rule: नमिकम्पिस्म्यजसकमहिंसदीपो रः (167)
+Pāṭha: ashtadhyayi.com data.txt row i=32167 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "namikampismyajasakamahiMsadIpo raH",
     text_dev              = "नमिकम्पिस्म्यजसकमहिंसदीपो रः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu nami-kampi-smi-ajasa-kama-hiMsa-dIpaH raH kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु नमि-कम्पि-स्मि-अजस-कम-हिंस-दीपः रः कृत्",
     padaccheda_dev        = "नमि-कम्पि-स्मि-अजस-कम-हिंस-दीपः रः",
     why_dev               = "धातोः कृत्-प्रत्ययः [नमिकम्पिस्म्यजसकमहिंसदीपो रः] विहितः (३.२.167)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

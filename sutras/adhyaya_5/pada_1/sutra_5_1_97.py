@@ -4,6 +4,7 @@
 Padaccheda: व्युष्ट-आदिभ्यः अण्
 
 व्युष्टादिभ्योऽण् (5.1.97)
+Pāṭha: ashtadhyayi.com data.txt row i=51097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vyuzwAdiByoR',
     text_dev              = 'व्युष्टादिभ्योऽण्',
+    samagra_slp1          = "tatra dIyate kAryam iti vyuzwAdiByaH aR",
+    samagra_dev           = "'तत्र दीयते, कार्यम्' (इति) व्युष्टादिभ्यः अण्",
     padaccheda_dev        = "व्युष्ट-आदिभ्यः अण्",
     why_dev               = "(सूत्रम् 5.1.97) व्युष्टादिभ्योऽण्।",
     anuvritti_from        = ('5.1.18',),

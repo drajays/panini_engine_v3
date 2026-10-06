@@ -4,6 +4,7 @@
 Padaccheda: रुजा-अर्थानाम् भाव-वचनानाम् अज्वरेः
 
 Disease-words with bhava meaning take sasthi (except jvara).
+Pāṭha: ashtadhyayi.com data.txt row i=23054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rujArTAnAM BAvavacanAnAmajvareH",
     text_dev              = "रुजार्थानां भाववचनानामज्वरेः",
+    samagra_slp1          = "anaBihite ruja-arTAnAm BAva-vacanAnAm ajvareH Seze zazWI karmaRi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते रुज-अर्थानाम् भाव-वचनानाम् अज्वरेः शेषे षष्ठी कर्मणि",
     padaccheda_dev        = "रुजा-अर्थानाम् भाव-वचनानाम् अज्वरेः",
     why_dev               = "रुजा-अर्थानाम् भाव-वचनानाम् अज्वरेः (२.३.५४)।",
     anuvritti_from        = ('2.3.50',),

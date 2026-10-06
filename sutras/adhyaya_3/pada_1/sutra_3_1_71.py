@@ -4,6 +4,7 @@
 Padaccheda: यसः अनुपसर्गात्
 
 Krt suffix rule from dhatu: यसोऽनुपसर्गात् (71)
+Pāṭha: ashtadhyayi.com data.txt row i=31071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'yasonupasargAt',
     text_dev              = 'यसोऽनुपसर्गात्',
+    samagra_slp1          = "karttari sArvaDAtuke anupasargAt yasaH DAtoH paraH Syan vA",
+    samagra_dev           = "कर्त्तरि सार्वधातुके अनुपसर्गात् यसः धातोः परः श्यन् वा",
     padaccheda_dev        = "यसः अनुपसर्गात्",
     why_dev               = "धातोः [यसोऽनुपसर्गात्]-प्रत्ययः विहितः (३.१.71)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: संयोग-आदेः आतः धातोः यण्-वतः
 
 संयोगादेरातो धातोर्यण्वतः (8.2.43)
+Pāṭha: ashtadhyayi.com data.txt row i=82043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMyogAderAto DAtoryaRvataH",
     text_dev              = "संयोगादेरातो धातोर्यण्वतः",
+    samagra_slp1          = "padasya pUrvatrAsidDam saMyogAdeH AtaH DAtoH yaRvataH nizWAtaH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् संयोगादेः आतः धातोः यण्वतः निष्ठातः नः",
     padaccheda_dev        = "संयोग-आदेः आतः धातोः यण्-वतः",
     why_dev               = "(सूत्रम् 8.2.43) संयोगादेरातो धातोर्यण्वतः।",
     anuvritti_from        = ('8.1.1',),

@@ -20,6 +20,7 @@ See also **1.1.11** (``sutra_1_1_11``) for *pragṛhya* in *dvivacana*; **1.1.12
 (``sutra_1_1_12``) for *adaso māt* ( *aś* in *sarvān. adas* *it*); **1.1.13**
 (``sutra_1_1_13``) for *śe* ( *pragṛhya* *prayoga* off in the *aś* / *ś* locus);
 **1.1.14** (``sutra_1_1_14``) *nipāta ekājanāṅ*; **1.1.100** (``sutra_1_1_100``) *Kāśikā* *na mātrā samāse*.
+Pāṭha: ashtadhyayi.com data.txt row i=11010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'nAjJalO',
     text_dev       = 'नाज्झलौ',
+    samagra_slp1   = "ac-halO savarRO na",
+    samagra_dev    = "अच्-हलौ सवर्णौ न",
     padaccheda_dev = "न अज्-झलौ",
     why_dev        = _WHY,
     apavada_of     = ("1.1.9",),   # अपवाद of 1.1.9 — sutra_ref_out resolver.apavada_of

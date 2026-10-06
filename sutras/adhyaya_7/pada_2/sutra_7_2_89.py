@@ -20,6 +20,7 @@ Engine implementation:
 
 Note: After this rule, the stem ends in 'y' followed by the suffix vowel,
 giving the correct sandhi (e.g. ma+y + os → mayos, ma+y + i → mayi).
+Pāṭha: ashtadhyayi.com data.txt row i=72089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -70,6 +71,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'yoci',
     text_dev              = 'योऽचि',
+    samagra_slp1          = "aNgasya yaH aci AH viBaktO anAdeSe yuzmadasmadoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य यः अचि आः विभक्तौ अनादेशे युष्मदस्मदोः",
     padaccheda_dev        = "यः अचि",
     why_dev               = "अस्मद्-शब्दस्य अन्त्य-दकारस्य स्थाने यकारः "
                             "अचि परे (सूत्रम् ७.२.८९ योऽचि)।",

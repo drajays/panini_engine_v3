@@ -9,6 +9,7 @@ kāraka (the recipient, the one for whose benefit the action is done; cf. 1.4.32
 Engine: registers the sampradāna→caturthī gate. ``cond`` checks only the gate
 flag, never vibhakti coordinates (CONSTITUTION Art. 2).
 ``r1_form_identity_exempt=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=23013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -34,6 +35,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "caturTI sampradAne",
     text_dev              = "चतुर्थी सम्प्रदाने",
+    samagra_slp1          = "anaBihite caturTI sampradAne",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते चतुर्थी सम्प्रदाने",
     padaccheda_dev        = "चतुर्थी / सम्प्रदाने",
     why_dev               = (
         "सम्प्रदान-कारके चतुर्थी-विभक्तिः — "

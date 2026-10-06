@@ -4,6 +4,7 @@
 Padaccheda: अच् नासिकायाः संज्ञायाम् नसम् च अस्थूलात्
 
 अञ्नासिकायाः संज्ञायां नसं चास्थूलात् (5.4.118)
+Pāṭha: ashtadhyayi.com data.txt row i=54118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aYnAsikAyAH saMjYAyAM nasaM cAsTUlAt",
     text_dev              = "अञ्नासिकायाः संज्ञायां नसं चास्थूलात्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA ac nAsikAyAH saMjYAyAm nasam ca asTUlAt bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा अच् नासिकायाः संज्ञायाम् नसम् च अस्थूलात् बहुव्रीहौ",
     padaccheda_dev        = "अच् नासिकायाः संज्ञायाम् नसम् च अस्थूलात्",
     why_dev               = "(सूत्रम् 5.4.118) अञ्नासिकायाः संज्ञायां नसं चास्थूलात्।",
     anuvritti_from        = ('5.4.68',),

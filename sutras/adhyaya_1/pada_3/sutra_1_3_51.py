@@ -14,6 +14,7 @@ idempotency stamp "Atmanepada_1_3_51" is absent, and (c) a dhātu Term
 whose upadesha_slp1 is in _GRAH_ROOTS and which carries the tag "ava_prefix".
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -54,6 +55,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="avAdgraH",
     text_dev="अवाद्ग्रः",
+    samagra_slp1="avAt graH Atmanepadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अवात् ग्रः आत्मनेपदम्",
     padaccheda_dev="अवात् (पञ्चमी-एकवचन) / ग्रः (षष्ठी-एकवचन)",
     why_dev=(
         "अव-पूर्वकस्य ग्रह्-धातोः प्रयोगे आत्मनेपदम् — "

@@ -4,6 +4,7 @@
 Padaccheda: ननु इति अनुज्ञैषणायाम्
 
 नन्वित्यनुज्ञैषणायाम् (8.1.43)
+Pāṭha: ashtadhyayi.com data.txt row i=81043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nanvityanujYEzaRAyAm",
     text_dev              = "नन्वित्यनुज्ञैषणायाम्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO nanu iti anujYEzaRAyAm tiN na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ ननु इति अनुज्ञैषणायाम् तिङ् न",
     padaccheda_dev        = "ननु इति अनुज्ञैषणायाम्",
     why_dev               = "(सूत्रम् 8.1.43) नन्वित्यनुज्ञैषणायाम्।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: काश्यप-कौशिकाभ्याम् ऋषिभ्याम् णिनिः
 
 काश्यपकौशिकाभ्यामृषिभ्यां णिनिः (4.3.103)
+Pāṭha: ashtadhyayi.com data.txt row i=43103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kASyapakOSikAByAmfziByAM RiniH",
     text_dev              = "काश्यपकौशिकाभ्यामृषिभ्यां णिनिः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA kASyapa-kOSikAByAm fziByAm RiniH tena proktam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा काश्यप-कौशिकाभ्याम् ऋषिभ्याम् णिनिः तेन प्रोक्तम्",
     padaccheda_dev        = "काश्यप-कौशिकाभ्याम् ऋषिभ्याम् णिनिः",
     why_dev               = "(सूत्रम् 4.3.103) काश्यपकौशिकाभ्यामृषिभ्यां णिनिः।",
     anuvritti_from        = ('4.1.1',),

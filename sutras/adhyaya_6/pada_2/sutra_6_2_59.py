@@ -4,6 +4,7 @@
 Padaccheda: राजा च
 
 राजा च (6.2.59)
+Pāṭha: ashtadhyayi.com data.txt row i=62059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAjA ca",
     text_dev              = "राजा च",
+    samagra_slp1          = "rAjA ca pUrvapadam prakftyA anyatarasyAm karmaDAraye brAhmaRa-kumArayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "राजा च पूर्वपदम् प्रकृत्या अन्यतरस्याम् कर्मधारये ब्राह्मण-कुमारयोः",
     padaccheda_dev        = "राजा च",
     why_dev               = "(सूत्रम् 6.2.59) राजा च।",
     anuvritti_from        = ('6.1.1',),

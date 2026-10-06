@@ -4,6 +4,7 @@
 Padaccheda: लोक-सर्वलोकात् ठञ्
 
 लोकसर्वलोकाट्ठञ् (5.1.44)
+Pāṭha: ashtadhyayi.com data.txt row i=51044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lokasarvalokAwWaY",
     text_dev              = "लोकसर्वलोकाट्ठञ्",
+    samagra_slp1          = "tatra viditaH iti loka-sarvalokAt WaY",
+    samagra_dev           = "'तत्र विदितः' (इति) लोक-सर्वलोकात्  ठञ्",
     padaccheda_dev        = "लोक-सर्वलोकात् ठञ्",
     why_dev               = "(सूत्रम् 5.1.44) लोकसर्वलोकाट्ठञ्।",
     anuvritti_from        = ('5.1.19',),

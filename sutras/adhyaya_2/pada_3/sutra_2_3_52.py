@@ -4,6 +4,7 @@
 Padaccheda: अधि-इक्-अर्थ-दय-ईशाम् कर्मणि
 
 adhi-ik, day, isa verbs take karma as sasthi.
+Pāṭha: ashtadhyayi.com data.txt row i=23052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDIgarTadayeSAM karmaRi",
     text_dev              = "अधीगर्थदयेशां कर्मणि",
+    samagra_slp1          = "anaBihite aDi-ik-arTa-daya-ISAm karmaRi Seze zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते अधि-इक्-अर्थ-दय-ईशाम् कर्मणि शेषे षष्ठी",
     padaccheda_dev        = "अधि-इक्-अर्थ-दय-ईशाम् कर्मणि",
     why_dev               = "अधि-इक्-अर्थ-दय-ईशाम् कर्मणि षष्ठी (२.३.५२)।",
     anuvritti_from        = ('2.3.50',),

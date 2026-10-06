@@ -4,6 +4,7 @@
 Padaccheda: कम्बोजात् लुक्
 
 कम्बोजाल्लुक् (4.1.175)
+Pāṭha: ashtadhyayi.com data.txt row i=41175 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kambojAlluk",
     text_dev              = "कम्बोजाल्लुक्",
+    samagra_slp1          = "tadrAjasya kambojAt luk",
+    samagra_dev           = "तद्राजस्य कम्बोजात् लुक्",
     padaccheda_dev        = "कम्बोजात् लुक्",
     why_dev               = "(सूत्रम् 4.1.175) कम्बोजाल्लुक्।",
     anuvritti_from        = ('4.1.1',),

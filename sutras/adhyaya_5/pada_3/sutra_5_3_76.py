@@ -4,6 +4,7 @@
 Padaccheda: अनुकम्पायाम्
 
 अनुकम्पायाम् (5.3.76)
+Pāṭha: ashtadhyayi.com data.txt row i=53076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anukampAyAm",
     text_dev              = "अनुकम्पायाम्",
+    samagra_slp1          = "anukampAyAm prAtipadikAt tiNaH ca kaH",
+    samagra_dev           = "अनुकम्पायाम् प्रातिपदिकात् तिङः च कः",
     padaccheda_dev        = "अनुकम्पायाम्",
     why_dev               = "(सूत्रम् 5.3.76) अनुकम्पायाम्।",
     anuvritti_from        = ('5.3.70',),

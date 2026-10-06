@@ -4,6 +4,7 @@
 Padaccheda: न क्रोडा-आदि-बहु-अचः
 
 न क्रोडादिबह्वचः (4.1.56)
+Pāṭha: ashtadhyayi.com data.txt row i=41056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na kroqAdibahvacaH",
     text_dev              = "न क्रोडादिबह्वचः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt na kroqa-Adi-bahvacaH NIz sva-aNgAt ca upasarjanAt a-saMyoga-upaDAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् न क्रोड-आदि-बह्वचः ङीष् स्व-अङ्गात् च उपसर्जनात् अ-संयोग-उपधात्",
     padaccheda_dev        = "न क्रोडा-आदि-बहु-अचः",
     why_dev               = "(सूत्रम् 4.1.56) न क्रोडादिबह्वचः।",
     anuvritti_from        = ('4.1.1',),

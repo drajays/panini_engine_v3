@@ -4,6 +4,7 @@
 Padaccheda: पादस्य पद (लुप्तप्रथमान्तनिर्देशः) आजि-आति-गोप-हतेषु
 
 पादस्य पदाज्यातिगोपहतेषु (6.3.52)
+Pāṭha: ashtadhyayi.com data.txt row i=63052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pAdasya padAjyAtigopahatezu",
     text_dev              = "पादस्य पदाज्यातिगोपहतेषु",
+    samagra_slp1          = "uttarapade pAdasya pada Aji-Ati-ga-upahatezu treH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे पादस्य पद आजि-आति-ग-उपहतेषु त्रेः",
     padaccheda_dev        = "पादस्य पद (लुप्तप्रथमान्तनिर्देशः) आजि-आति-गोप-हतेषु",
     why_dev               = "(सूत्रम् 6.3.52) पादस्य पदाज्यातिगोपहतेषु।",
     anuvritti_from        = ('6.1.1',),

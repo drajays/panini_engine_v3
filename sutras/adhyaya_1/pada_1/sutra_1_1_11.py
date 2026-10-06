@@ -26,6 +26,7 @@ tagging is the ``SHE_PRAGHYA_TAG_ARM_META`` path above;
 **1.1.14** (``sutra_1_1_14``) for *nipāta ekājanāṅ* ( *pragṛhya* for one-vowel *nipāta*, not *ā*ṅ);
 **1.1.100** (``sutra_1_1_100``) — *Kāśikā* *na mātrā samāse* ( *vṛtti* extension, not the Pāṇini *1.1.14* pāṭha);
 **1.1.19** (``sutra_1_1_19``) for *Ī* / *Ū* + *tau* with *saptamī*-*artha* (ashtadhyayi *i* 11019).
+Pāṭha: ashtadhyayi.com data.txt row i=11011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -160,6 +161,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = "IdUdeddvivacanaM pragfhyam",
     text_dev       = "ईदूदेद्द्विवचनं प्रगृह्यम्",
+    samagra_slp1   = "It-Ut-et dvivacanaM pragfhyam",
+    samagra_dev    = "ईत्-ऊत्-एत् द्विवचनं  प्रगृह्यम्",
     padaccheda_dev = "द्विवचनं ईदूदैदौ प्रगृह्यम्",
     why_dev        = _WHY,
     anuvritti_from = (),

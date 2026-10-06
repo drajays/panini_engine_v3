@@ -4,6 +4,7 @@
 Padaccheda: पुरे प्राचाम्
 
 पुरे प्राचाम् (6.2.99)
+Pāṭha: ashtadhyayi.com data.txt row i=62099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pure prAcAm",
     text_dev              = "पुरे प्राचाम्",
+    samagra_slp1          = "udAttaH antaH pure prAcAm pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः पुरे प्राचाम् पूर्वपदम्",
     padaccheda_dev        = "पुरे प्राचाम्",
     why_dev               = "(सूत्रम् 6.2.99) पुरे प्राचाम्।",
     anuvritti_from        = ('6.1.1',),

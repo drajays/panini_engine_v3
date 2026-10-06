@@ -4,6 +4,7 @@
 Padaccheda: गोतः णित्
 
 गोतो णित् (7.1.90)
+Pāṭha: ashtadhyayi.com data.txt row i=71090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "goto Rit",
     text_dev              = "गोतो णित्",
+    samagra_slp1          = "gotaH sarvanAmasTAne Rit",
+    samagra_dev           = "गोतः सर्वनामस्थाने णित्",
     padaccheda_dev        = "गोतः णित्",
     why_dev               = "(सूत्रम् 7.1.90) गोतो णित्।",
     anuvritti_from        = ('7.1.1',),

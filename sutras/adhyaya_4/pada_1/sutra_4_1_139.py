@@ -4,6 +4,7 @@
 Padaccheda: कुलात् खः
 
 कुलात् खः (4.1.139)
+Pāṭha: ashtadhyayi.com data.txt row i=41139 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kulAt KaH",
     text_dev              = "कुलात् खः",
+    samagra_slp1          = "tasya apatyam iti kulAt KaH",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) कुलात् खः",
     padaccheda_dev        = "कुलात् खः",
     why_dev               = "(सूत्रम् 4.1.139) कुलात् खः।",
     anuvritti_from        = ('4.1.1',),

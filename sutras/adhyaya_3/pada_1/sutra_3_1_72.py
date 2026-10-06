@@ -4,6 +4,7 @@
 Padaccheda: संयसः च
 
 Krt suffix rule from dhatu: संयसश्च (72)
+Pāṭha: ashtadhyayi.com data.txt row i=31072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMyasaSca",
     text_dev              = "संयसश्च",
+    samagra_slp1          = "karttari sArvaDAtuke saMyasaH DAtoH paraH Syan vA",
+    samagra_dev           = "कर्त्तरि सार्वधातुके संयसः धातोः परः श्यन् वा",
     padaccheda_dev        = "संयसः च",
     why_dev               = "धातोः [संयसश्च]-प्रत्ययः विहितः (३.१.72)।",
     anuvritti_from        = ('3.1.1',),

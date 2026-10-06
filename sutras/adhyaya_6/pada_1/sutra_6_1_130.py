@@ -4,6 +4,7 @@
 Padaccheda: ई३ (लुप्तप्रथमान्तनिर्देशः) चाक्रवर्मणस्य
 
 ई३ चाक्रवर्मणस्य (6.1.130)
+Pāṭha: ashtadhyayi.com data.txt row i=61130 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'I cAkravarmaRasya',
     text_dev              = 'ई३ चाक्रवर्मणस्य',
+    samagra_slp1          = "I aci aplutavat - cAkravarmaRasya",
+    samagra_dev           = "ई3 अचि अप्लुतवत् - चाक्रवर्मणस्य",
     padaccheda_dev        = "ई३ (लुप्तप्रथमान्तनिर्देशः) चाक्रवर्मणस्य",
     why_dev               = "(सूत्रम् 6.1.130) ई३ चाक्रवर्मणस्य।",
     anuvritti_from        = ('6.1.1',),

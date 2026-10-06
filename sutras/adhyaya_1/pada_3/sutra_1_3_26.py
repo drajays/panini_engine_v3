@@ -13,6 +13,7 @@ above]. Intransitive roots that have no external object naturally take
 carries the tag "akarmaka" (intransitive), and (c) idempotency guard
 "Atmanepada_1_3_26" is absent from meta.  No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True because no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="akarmakAcca",
     text_dev="अकर्मकाच्च",
+    samagra_slp1="akarmakAt upAt sTaH Atmanepadam",
+    samagra_dev="अकर्मकात् उपात् स्थः आत्मनेपदम्",
     padaccheda_dev="अकर्मकात् (पञ्चमी) / च",
     why_dev=(
         "अकर्मक-धातोः आत्मनेपदं भवति; "

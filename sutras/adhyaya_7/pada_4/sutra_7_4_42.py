@@ -4,6 +4,7 @@
 Padaccheda: दधातेः हिः
 
 दधातेर्हिः (7.4.42)
+Pāṭha: ashtadhyayi.com data.txt row i=74042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "daDAterhiH",
     text_dev              = "दधातेर्हिः",
+    samagra_slp1          = "aNgasya daDAteH hiH ti kiti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य दधातेः हिः ति किति",
     padaccheda_dev        = "दधातेः हिः",
     why_dev               = "(सूत्रम् 7.4.42) दधातेर्हिः।",
     anuvritti_from        = ('7.1.1',),

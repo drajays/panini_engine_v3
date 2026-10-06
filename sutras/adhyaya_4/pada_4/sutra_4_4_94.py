@@ -4,6 +4,7 @@
 Padaccheda: उरसः अण् च
 
 उरसोऽण् च (4.4.94)
+Pāṭha: ashtadhyayi.com data.txt row i=44094 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'urasoR ca',
     text_dev              = 'उरसोऽण् च',
+    samagra_slp1          = "urasaH nirmitaH iti saMjYAyAmaR yat ca",
+    samagra_dev           = "'उरसः निर्मितः' (इति) संज्ञायामण् यत् च",
     padaccheda_dev        = "उरसः अण् च",
     why_dev               = "(सूत्रम् 4.4.94) उरसोऽण् च।",
     anuvritti_from        = ('4.1.1',),

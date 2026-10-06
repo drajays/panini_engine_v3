@@ -4,6 +4,7 @@
 Padaccheda: नित्यमाम्रेडिते डाचि
 
 नित्यमाम्रेडिते डाचि (6.1.100)
+Pāṭha: ashtadhyayi.com data.txt row i=61100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nityamAmreqite qAci",
     text_dev              = "नित्यमाम्रेडिते डाचि",
+    samagra_slp1          = "saMhitAyAm ekaH pUrvaparayoH nityam Amreqite qAci aci pararUpam avyaktAnukaraRasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् एकः पूर्वपरयोः नित्यम् आम्रेडिते डाचि अचि पररूपम् अव्यक्तानुकरणस्य",
     padaccheda_dev        = "नित्यमाम्रेडिते डाचि",
     why_dev               = "(सूत्रम् 6.1.100) नित्यमाम्रेडिते डाचि।",
     anuvritti_from        = ('6.1.1',),

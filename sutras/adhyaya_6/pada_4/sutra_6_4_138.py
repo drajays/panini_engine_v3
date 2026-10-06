@@ -4,6 +4,7 @@
 Padaccheda: अचः
 
 अचः (6.4.138)
+Pāṭha: ashtadhyayi.com data.txt row i=64138 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "acaH",
     text_dev              = "अचः",
+    samagra_slp1          = "acaH Basya aNgasya at-lopaH",
+    samagra_dev           = "अचः भस्य अङ्गस्य अत्-लोपः",
     padaccheda_dev        = "अचः",
     why_dev               = "(सूत्रम् 6.4.138) अचः।",
     anuvritti_from        = ('6.1.1',),

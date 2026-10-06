@@ -4,6 +4,7 @@
 Padaccheda: वृक-ज्येष्ठाभ्याम् तिल्-तातिलौ च छन्दसि
 
 वृकज्येष्ठाभ्यां तिल्तातिलौ च च्छन्दसि (5.4.41)
+Pāṭha: ashtadhyayi.com data.txt row i=54041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vfkajyezWAByAM tiltAtilO ca cCandasi",
     text_dev              = "वृकज्येष्ठाभ्यां तिल्तातिलौ च च्छन्दसि",
+    samagra_slp1          = "praSaMsAyAm vfka-jyezWAByAm til-tAtilO Candasi",
+    samagra_dev           = "प्रशंसायाम् वृक-ज्येष्ठाभ्याम् तिल्-तातिलौ छन्दसि",
     padaccheda_dev        = "वृक-ज्येष्ठाभ्याम् तिल्-तातिलौ च छन्दसि",
     why_dev               = "(सूत्रम् 5.4.41) वृकज्येष्ठाभ्यां तिल्तातिलौ च च्छन्दसि।",
     anuvritti_from        = ('4.1.76',),

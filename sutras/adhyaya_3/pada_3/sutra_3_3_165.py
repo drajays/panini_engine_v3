@@ -4,6 +4,7 @@
 Padaccheda: स्मे लोट्
 
 krt-suffix rule: स्मे लोट्
+Pāṭha: ashtadhyayi.com data.txt row i=33165 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sme low",
     text_dev              = "स्मे लोट्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH sme low kft prEza-atisarga-prAptakAlezu ca UrDvamOhUrtike",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः स्मे लोट् कृत् प्रैष-अतिसर्ग-प्राप्तकालेषु च ऊर्ध्वमौहूर्तिके",
     padaccheda_dev        = "स्मे लोट्",
     why_dev               = "धातोः प्रत्ययः (३.3.165)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: ये (लुप्तषष्ठ्यन्तनिर्देशः) यज्ञकर्मणि
 
 ये यज्ञकर्मणि (8.2.88)
+Pāṭha: ashtadhyayi.com data.txt row i=82088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ye yajYakarmaRi",
     text_dev              = "ये यज्ञकर्मणि",
+    samagra_slp1          = "padasya pUrvatrAsidDam vAkyasya weH plutaH udAttaH ye yajYakarmaRi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वाक्यस्य टेः प्लुतः उदात्तः ये यज्ञकर्मणि",
     padaccheda_dev        = "ये (लुप्तषष्ठ्यन्तनिर्देशः) यज्ञकर्मणि",
     why_dev               = "(सूत्रम् 8.2.88) ये यज्ञकर्मणि।",
     anuvritti_from        = ('8.1.1',),

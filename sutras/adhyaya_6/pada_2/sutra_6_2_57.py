@@ -4,6 +4,7 @@
 Padaccheda: कतर-कतमौ कर्मधारये
 
 कतरकतमौ कर्मधारये (6.2.57)
+Pāṭha: ashtadhyayi.com data.txt row i=62057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "katarakatamO karmaDAraye",
     text_dev              = "कतरकतमौ कर्मधारये",
+    samagra_slp1          = "katara-katamO karmaDAraye prakftyA pUrvapadam anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "कतर-कतमौ कर्मधारये प्रकृत्या पूर्वपदम् अन्यतरस्याम्",
     padaccheda_dev        = "कतर-कतमौ कर्मधारये",
     why_dev               = "(सूत्रम् 6.2.57) कतरकतमौ कर्मधारये।",
     anuvritti_from        = ('6.1.1',),

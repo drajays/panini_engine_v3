@@ -4,6 +4,7 @@
 पदान्त ए/ओ followed by short अ: the अ is elided (pūrvarūpa; avagraha in
 writing) — ``te`` + ``atra`` → ``te 'tra``, ``vanO`` ... not ``tayatra``.
 Padānta = left Term carries the ``pada`` tag (1.4.14 / 1.4.17).
+Pāṭha: ashtadhyayi.com data.txt row i=61109 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = "eNaH padAntAdati",
     text_dev       = "एङः पदान्तादति",
+    samagra_slp1   = "padAntAt eNaH ati pUrvaH",
+    samagra_dev    = "पदान्तात् एङः अति पूर्वः",
     padaccheda_dev = "एङः पदान्तात् अति",
     why_dev        = "पदान्तात् एङः परस्य ह्रस्वाकारस्य पूर्वरूपम्।",
     apavada_of     = ("6.1.78",),

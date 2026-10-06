@@ -4,6 +4,7 @@
 Padaccheda: आहो उताहो च अनन्तरम्
 
 आहो उताहो चानन्तरम् (8.1.49)
+Pāṭha: ashtadhyayi.com data.txt row i=81049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Aho utAho cAnantaram",
     text_dev              = "आहो उताहो चानन्तरम्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO Aho utAho ca anantaram tiN na apUrvam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ आहो उताहो च अनन्तरम् तिङ् न अपूर्वम्",
     padaccheda_dev        = "आहो उताहो च अनन्तरम्",
     why_dev               = "(सूत्रम् 8.1.49) आहो उताहो चानन्तरम्।",
     anuvritti_from        = ('8.1.1',),

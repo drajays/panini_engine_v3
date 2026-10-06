@@ -4,6 +4,7 @@
 Padaccheda: हिंसा-अर्थानाम् च समान-कर्मकाणाम्
 
 krt-suffix rule: हिंसार्थानां च समानकर्मकाणाम्
+Pāṭha: ashtadhyayi.com data.txt row i=34048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hiMsArTAnAM ca samAnakarmakARAm",
     text_dev              = "हिंसार्थानां च समानकर्मकाणाम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH hiMsArTAnAm ca samAnakarmakARAm kft Ramul tftIyAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः हिंसार्थानाम् च समानकर्मकाणाम् कृत् णमुल् तृतीयायाम्",
     padaccheda_dev        = "हिंसा-अर्थानाम् च समान-कर्मकाणाम्",
     why_dev               = "धातोः प्रत्ययः (३.4.48)।",
     anuvritti_from        = ('3.1.1',),

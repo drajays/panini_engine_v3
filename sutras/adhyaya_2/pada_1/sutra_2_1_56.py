@@ -4,6 +4,7 @@
 Padaccheda: उपमितम् व्याघ्र-आदिभिः सामान्य-अप्रयोगे
 
 upamita with vyaghra etc. in non-samanya use forms karmadharaya.
+Pāṭha: ashtadhyayi.com data.txt row i=21056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upamitaM vyAGrAdiBiH sAmAnyAprayoge",
     text_dev              = "उपमितं व्याघ्रादिभिः सामान्याप्रयोगे",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH upamitam vyAGra-AdiBiH sAmAnya-aprayoge samAnADikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः उपमितम् व्याघ्र-आदिभिः सामान्य-अप्रयोगे समानाधिकरणेन",
     padaccheda_dev        = "उपमितम् व्याघ्र-आदिभिः सामान्य-अप्रयोगे",
     why_dev               = "उपमितं व्याघ्र-आदिभिः सामान्य-अप्रयोगे कर्मधारयः (२.१.५६)।",
     anuvritti_from        = ('2.1.55',),

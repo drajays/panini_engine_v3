@@ -4,6 +4,7 @@
 Padaccheda: तत् अस्याम् प्रहरणम् इति क्रीडायाम् णः
 
 तदस्यां प्रहरणमिति क्रीडायाम् णः (4.2.57)
+Pāṭha: ashtadhyayi.com data.txt row i=42057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadasyAM praharaRamiti krIqAyAm RaH",
     text_dev              = "तदस्यां प्रहरणमिति क्रीडायाम् णः",
+    samagra_slp1          = "tat asyAm krIqAyAm praharaRam iti samarTAnAM praTamAt paraH tadDitaH pratyayaH RaH vA",
+    samagra_dev           = "'तत् अस्याम् क्रीडायाम् प्रहरणम्' इति समर्थानां प्रथमात् परः तद्धितः प्रत्ययः णः वा",
     padaccheda_dev        = "तत् अस्याम् प्रहरणम् इति क्रीडायाम् णः",
     why_dev               = "(सूत्रम् 4.2.57) तदस्यां प्रहरणमिति क्रीडायाम् णः।",
     anuvritti_from        = ('4.1.1',),

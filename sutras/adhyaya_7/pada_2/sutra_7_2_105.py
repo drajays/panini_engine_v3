@@ -4,6 +4,7 @@
 Padaccheda: क्व (लुप्तप्रथमान्तनिर्देशः) अति
 
 क्वाति (7.2.105)
+Pāṭha: ashtadhyayi.com data.txt row i=72105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kvAti",
     text_dev              = "क्वाति",
+    samagra_slp1          = "ati viBaktO kimaH kva",
+    samagra_dev           = "अति विभक्तौ किमः क्व",
     padaccheda_dev        = "क्व (लुप्तप्रथमान्तनिर्देशः) अति",
     why_dev               = "(सूत्रम् 7.2.105) क्वाति।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: दिक्-पूर्वपदात् असंज्ञायाम् ञः
 
 दिक्पूर्वपदादसंज्ञायां ञः (4.2.107)
+Pāṭha: ashtadhyayi.com data.txt row i=42107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dikpUrvapadAdasaMjYAyAM YaH",
     text_dev              = "दिक्पूर्वपदादसंज्ञायां ञः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA dik-pUrvapadAt a-saMjYAyAm YaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा दिक्-पूर्वपदात् अ-संज्ञायाम् ञः",
     padaccheda_dev        = "दिक्-पूर्वपदात् असंज्ञायाम् ञः",
     why_dev               = "(सूत्रम् 4.2.107) दिक्पूर्वपदादसंज्ञायां ञः।",
     anuvritti_from        = ('4.1.1',),

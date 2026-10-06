@@ -4,6 +4,7 @@
 Padaccheda: विभाषा ओषधि-वनस्पतिभ्यः
 
 विभाषौषधिवनस्पतिभ्यः (8.4.6)
+Pāṭha: ashtadhyayi.com data.txt row i=84006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzOzaDivanaspatiByaH",
     text_dev              = "विभाषौषधिवनस्पतिभ्यः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm viBAzA ozaDi-vanaspatiByaH razAByAm pUrvapadAt saMjYAyAm vanam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् विभाषा ओषधि-वनस्पतिभ्यः रषाभ्याम् पूर्वपदात् संज्ञायाम् वनम्",
     padaccheda_dev        = "विभाषा ओषधि-वनस्पतिभ्यः",
     why_dev               = "(सूत्रम् 8.4.6) विभाषौषधिवनस्पतिभ्यः।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: भुवः च
 
 krt-suffix rule: भुवश्च (138)
+Pāṭha: ashtadhyayi.com data.txt row i=32138 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BuvaSca",
     text_dev              = "भुवश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu BuvaH ca kft izRuc Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु भुवः च कृत् इष्णुच् छन्दसि",
     padaccheda_dev        = "भुवः च",
     why_dev               = "धातोः कृत्-प्रत्ययः [भुवश्च] विहितः (३.२.138)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

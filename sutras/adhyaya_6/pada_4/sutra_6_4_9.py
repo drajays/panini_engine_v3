@@ -4,6 +4,7 @@
 Padaccheda: वा ष-पूर्वस्य निगमे
 
 वा षपूर्वस्य निगमे (6.4.9)
+Pāṭha: ashtadhyayi.com data.txt row i=64009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA zapUrvasya nigame",
     text_dev              = "वा षपूर्वस्य निगमे",
+    samagra_slp1          = "nigame zapUrvasya naH aNgasya upaDAyAH asambudDO sarvanAmasTAne vA dIrGaH",
+    samagra_dev           = "निगमे षपूर्वस्य नः अङ्गस्य उपधायाः असम्बुद्धौ सर्वनामस्थाने वा दीर्घः",
     padaccheda_dev        = "वा ष-पूर्वस्य निगमे",
     why_dev               = "(सूत्रम् 6.4.9) वा षपूर्वस्य निगमे।",
     anuvritti_from        = ('6.1.1',),

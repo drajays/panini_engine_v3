@@ -4,6 +4,7 @@
 Padaccheda: नॄन् (लुप्तषष्ठ्यन्तनिर्देशः) पे
 
 नॄन् पे (8.3.10)
+Pāṭha: ashtadhyayi.com data.txt row i=83010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nFn pe",
     text_dev              = "नॄन् पे",
+    samagra_slp1          = "nFn pe ru~H uBayaTA",
+    samagra_dev           = "नॄन् पे रुँः उभयथा",
     padaccheda_dev        = "नॄन् (लुप्तषष्ठ्यन्तनिर्देशः) पे",
     why_dev               = "(सूत्रम् 8.3.10) नॄन् पे।",
     anuvritti_from        = ('8.1.1',),

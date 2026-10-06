@@ -4,6 +4,7 @@
 Padaccheda: सर्वभूमि-पृथिवीभ्याम् अण्-अञौ
 
 सर्वभूमिपृथिवीभ्यामणञौ (5.1.41)
+Pāṭha: ashtadhyayi.com data.txt row i=51041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sarvaBUmipfTivIByAmaRaYO",
     text_dev              = "सर्वभूमिपृथिवीभ्यामणञौ",
+    samagra_slp1          = "tasya nimittaM saMyogotpAtO iti sarvaBUmi-pfTivIByAmaR-aYO",
+    samagra_dev           = "'तस्य निमित्तं संयोगोत्पातौ' इति सर्वभूमि-पृथिवीभ्यामण्-अञौ",
     padaccheda_dev        = "सर्वभूमि-पृथिवीभ्याम् अण्-अञौ",
     why_dev               = "(सूत्रम् 5.1.41) सर्वभूमिपृथिवीभ्यामणञौ।",
     anuvritti_from        = ('5.1.19',),

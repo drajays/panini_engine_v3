@@ -4,6 +4,7 @@
 Padaccheda: नित्यम् छन्दसि
 
 नित्यं छन्दसि (7.4.8)
+Pāṭha: ashtadhyayi.com data.txt row i=74008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nityaM Candasi",
     text_dev              = "नित्यं छन्दसि",
+    samagra_slp1          = "aNgasya nityam Candasi RO caNi ft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य नित्यम् छन्दसि णौ चङि ऋत्",
     padaccheda_dev        = "नित्यम् छन्दसि",
     why_dev               = "(सूत्रम् 7.4.8) नित्यं छन्दसि।",
     anuvritti_from        = ('7.1.1',),

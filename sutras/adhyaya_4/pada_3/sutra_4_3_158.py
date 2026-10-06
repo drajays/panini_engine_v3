@@ -4,6 +4,7 @@
 Padaccheda: उमा-ऊर्णयोः वा
 
 उमोर्णयोर्वा (4.3.158)
+Pāṭha: ashtadhyayi.com data.txt row i=43158 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "umorRayorvA",
     text_dev              = "उमोर्णयोर्वा",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA umA-UrRayoH vA tasya vikAraH avayave vuY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा उमा-ऊर्णयोः वा तस्य विकारः अवयवे वुञ्",
     padaccheda_dev        = "उमा-ऊर्णयोः वा",
     why_dev               = "(सूत्रम् 4.3.158) उमोर्णयोर्वा।",
     anuvritti_from        = ('4.1.1',),

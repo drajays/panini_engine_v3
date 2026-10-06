@@ -4,6 +4,7 @@
 Padaccheda: यज्ञ-ऋत्विग्भ्याम् घ-खञौ
 
 यज्ञर्त्विग्भ्यां घखञौ (5.1.71)
+Pāṭha: ashtadhyayi.com data.txt row i=51071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yajYartvigByAM GaKaYO",
     text_dev              = "यज्ञर्त्विग्भ्यां घखञौ",
+    samagra_slp1          = "tat arhati iti yajYa-ftvigByAM Ga-KaYO",
+    samagra_dev           = "'तत् अर्हति' (इति) यज्ञ-ऋत्विग्भ्यां घ-खञौ",
     padaccheda_dev        = "यज्ञ-ऋत्विग्भ्याम् घ-खञौ",
     why_dev               = "(सूत्रम् 5.1.71) यज्ञर्त्विग्भ्यां घखञौ।",
     anuvritti_from        = ('5.1.18',),

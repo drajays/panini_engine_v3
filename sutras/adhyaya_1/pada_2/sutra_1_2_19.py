@@ -16,6 +16,7 @@ Engine:
   - Guards re-entry via meta["seT_nistha_1_2_19"].
   - Adds "seT" to the dhātu Term.
   - r1_form_identity_exempt=True: no surface string changes in this step.
+Pāṭha: ashtadhyayi.com data.txt row i=12019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -82,6 +83,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nizWA SINsvidimidikzvidiDfzaH',
     text_dev              = 'निष्ठा शीङ्स्विदिमिदिक्ष्विदिधृषः',
+    samagra_slp1          = "nizWA SIN-svidi-midi-kzvidi-DfzaH kit na sew",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "निष्ठा शीङ्-स्विदि-मिदि-क्ष्विदि-धृषः कित् न सेट्",
     padaccheda_dev        = "निष्ठा / शीङ्-स्विदि-मिदि-क्ष्विदि-धृषः",
     why_dev               = ("निष्ठा-प्रत्ययस्य (क्त-क्तवतु) पूर्वं शीङ्-स्विदि-मिदि-"
                              "क्ष्विदि-धृष्-धातवः सेट् भवन्ति — एतेभ्यः इडागमो भवति।"),

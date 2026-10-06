@@ -4,6 +4,7 @@
 Padaccheda: जयः करणम्
 
 जयः करणम् (6.1.202)
+Pāṭha: ashtadhyayi.com data.txt row i=61202 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jayaH karaRam",
     text_dev              = "जयः करणम्",
+    samagra_slp1          = "jayaH karaRam udAttaH AdiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "जयः करणम् उदात्तः आदिः",
     padaccheda_dev        = "जयः करणम्",
     why_dev               = "(सूत्रम् 6.1.202) जयः करणम्।",
     anuvritti_from        = ('6.1.1',),

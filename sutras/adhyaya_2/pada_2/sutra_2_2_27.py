@@ -4,6 +4,7 @@
 Padaccheda: तत्र तेन इदम् इति सरूपे
 
 In sarupya context tatra-tena-idam karmadharaya.
+Pāṭha: ashtadhyayi.com data.txt row i=22027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tatra tenedamiti sarUpe",
     text_dev              = "तत्र तेनेदमिति सरूपे",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatra ten idam iti sarUpe anekam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्र तेन् इदम् इति सरूपे अनेकम्",
     padaccheda_dev        = "तत्र तेन इदम् इति सरूपे",
     why_dev               = "तत्र तेन इदम् इति सरूपे कर्मधारयः (२.२.२७)।",
     anuvritti_from        = ('2.2.1',),

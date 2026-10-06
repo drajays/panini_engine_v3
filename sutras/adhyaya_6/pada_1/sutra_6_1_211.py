@@ -4,6 +4,7 @@
 Padaccheda: युष्मद्-अस्मदोः ङसि
 
 युष्मदस्मदोर्ङसि (6.1.211)
+Pāṭha: ashtadhyayi.com data.txt row i=61211 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yuzmadasmadorNasi",
     text_dev              = "युष्मदस्मदोर्ङसि",
+    samagra_slp1          = "yuzmad-asmadoH Nasi udAttaH AdiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "युष्मद्-अस्मदोः ङसि उदात्तः आदिः",
     padaccheda_dev        = "युष्मद्-अस्मदोः ङसि",
     why_dev               = "(सूत्रम् 6.1.211) युष्मदस्मदोर्ङसि।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अश्नोतेः च
 
 अश्नोतेश्च (7.4.72)
+Pāṭha: ashtadhyayi.com data.txt row i=74072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "aSnoteSca",
     text_dev              = "अश्नोतेश्च",
+    samagra_slp1          = "aNgasya aByAsasya aSnoteH ca liwi tasmAt nuw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य अश्नोतेः च लिटि तस्मात् नुट्",
     padaccheda_dev        = "अश्नोतेः च",
     why_dev               = "(सूत्रम् 7.4.72) अश्नोतेश्च।",
     anuvritti_from        = ('7.1.1',),

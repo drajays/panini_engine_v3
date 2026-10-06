@@ -4,6 +4,7 @@
 Padaccheda: निष्ठा उपसर्ग-पूर्वम् अन्यतरस्याम्
 
 निष्ठोपसर्गपूर्वमन्यतरस्याम् (6.2.110)
+Pāṭha: ashtadhyayi.com data.txt row i=62110 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nizWopasargapUrvamanyatarasyAm",
     text_dev              = "निष्ठोपसर्गपूर्वमन्यतरस्याम्",
+    samagra_slp1          = "udAttaH antaH nizWA upasargapUrvam anyatarasyAm bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः निष्ठा उपसर्गपूर्वम् अन्यतरस्याम् बहुव्रीहौ",
     padaccheda_dev        = "निष्ठा उपसर्ग-पूर्वम् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.2.110) निष्ठोपसर्गपूर्वमन्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

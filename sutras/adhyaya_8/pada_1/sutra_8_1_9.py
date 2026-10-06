@@ -4,6 +4,7 @@
 Padaccheda: एकम् बहुव्रीहि-वत्
 
 एकं बहुव्रीहिवत् (8.1.9)
+Pāṭha: ashtadhyayi.com data.txt row i=81009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ekaM bahuvrIhivat",
     text_dev              = "एकं बहुव्रीहिवत्",
+    samagra_slp1          = "sarvasya dve ekam bahuvrIhivat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सर्वस्य द्वे एकम् बहुव्रीहिवत्",
     padaccheda_dev        = "एकम् बहुव्रीहि-वत्",
     why_dev               = "(सूत्रम् 8.1.9) एकं बहुव्रीहिवत्।",
     anuvritti_from        = ('8.1.1',),

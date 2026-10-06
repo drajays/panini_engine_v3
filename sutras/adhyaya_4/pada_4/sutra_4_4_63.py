@@ -4,6 +4,7 @@
 Padaccheda: कर्म अध्ययने वृत्तम्
 
 कर्माध्ययने वृत्तम् (4.4.63)
+Pāṭha: ashtadhyayi.com data.txt row i=44063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karmADyayane vfttam",
     text_dev              = "कर्माध्ययने वृत्तम्",
+    samagra_slp1          = "aDyayane tat vfttam karma asya iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'अध्ययने तत् वृत्तम् कर्म अस्य' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "कर्म अध्ययने वृत्तम्",
     why_dev               = "(सूत्रम् 4.4.63) कर्माध्ययने वृत्तम्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: भुवः भावे
 
 Krt suffix rule from dhatu: भुवो भावे (107)
+Pāṭha: ashtadhyayi.com data.txt row i=31107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Buvo BAve",
     text_dev              = "भुवो भावे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH BuvaH BAve kft anupasarge supi kyap",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः भुवः भावे कृत् अनुपसर्गे सुपि क्यप्",
     padaccheda_dev        = "भुवः भावे",
     why_dev               = "धातोः [भुवो भावे]-प्रत्ययः विहितः (३.१.107)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

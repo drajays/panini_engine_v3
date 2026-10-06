@@ -4,6 +4,7 @@
 Padaccheda: षष्ठ्या रूप्य (लुप्तप्रथमान्तनिर्देशः) च
 
 षष्ठ्या रूप्य च (5.3.54)
+Pāṭha: ashtadhyayi.com data.txt row i=53054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zazWyA rUpya ca",
     text_dev              = "षष्ठ्या रूप्य च",
+    samagra_slp1          = "zazWyA BUtapUrve caraw rUpyaH ca",
+    samagra_dev           = "षष्ठ्या भूतपूर्वे चरट् रूप्यः  च",
     padaccheda_dev        = "षष्ठ्या रूप्य (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 5.3.54) षष्ठ्या रूप्य च।",
     anuvritti_from        = ('4.1.76',),

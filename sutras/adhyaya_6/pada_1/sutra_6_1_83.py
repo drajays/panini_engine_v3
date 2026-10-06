@@ -4,6 +4,7 @@
 Padaccheda: भय्य-प्रवय्ये च छन्दसि
 
 भय्यप्रवय्ये च च्छन्दसि (6.1.83)
+Pāṭha: ashtadhyayi.com data.txt row i=61083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Bayyapravayye ca cCandasi",
     text_dev              = "भय्यप्रवय्ये च च्छन्दसि",
+    samagra_slp1          = "Candasi Bayya-pravayye",
+    samagra_dev           = "छन्दसि भय्य-प्रवय्ये",
     padaccheda_dev        = "भय्य-प्रवय्ये च छन्दसि",
     why_dev               = "(सूत्रम् 6.1.83) भय्यप्रवय्ये च च्छन्दसि।",
     anuvritti_from        = ('6.1.1',),

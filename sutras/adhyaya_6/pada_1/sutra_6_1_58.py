@@ -4,6 +4,7 @@
 Padaccheda: सृजि-दृशोः झलि अम् अ-किति
 
 सृजिदृशोर्झल्यमकिति (6.1.58)
+Pāṭha: ashtadhyayi.com data.txt row i=61058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sfjidfSorJalyamakiti",
     text_dev              = "सृजिदृशोर्झल्यमकिति",
+    samagra_slp1          = "sfji-dfSoH Jali am akiti upadeSe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सृजि-दृशोः झलि अम् अकिति उपदेशे",
     padaccheda_dev        = "सृजि-दृशोः झलि अम् अ-किति",
     why_dev               = "(सूत्रम् 6.1.58) सृजिदृशोर्झल्यमकिति।",
     anuvritti_from        = ('6.1.1',),

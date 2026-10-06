@@ -4,6 +4,7 @@
 Padaccheda: वा लिटि
 
 Optionally in lit (perfect).
+Pāṭha: ashtadhyayi.com data.txt row i=24055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA liwi",
     text_dev              = "वा लिटि",
+    samagra_slp1          = "ArDaDAtuke vA liwi cakziNaH KyAY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके वा लिटि चक्षिङः ख्याञ्",
     padaccheda_dev        = "वा लिटि",
     why_dev               = "वा लिटि (२.४.५५)।",
     anuvritti_from        = ('2.4.54',),

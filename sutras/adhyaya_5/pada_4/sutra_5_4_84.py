@@ -4,6 +4,7 @@
 Padaccheda: द्विस्तावा त्रिस्तावा वेदिः
 
 द्विस्तावा त्रिस्तावा वेदिः (5.4.84)
+Pāṭha: ashtadhyayi.com data.txt row i=54084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvistAvA tristAvA vediH",
     text_dev              = "द्विस्तावा त्रिस्तावा वेदिः",
+    samagra_slp1          = "dvistAvA tristAvA vediH",
+    samagra_dev           = "द्विस्तावा त्रिस्तावा वेदिः",
     padaccheda_dev        = "द्विस्तावा त्रिस्तावा वेदिः",
     why_dev               = "(सूत्रम् 5.4.84) द्विस्तावा त्रिस्तावा वेदिः।",
     anuvritti_from        = ('5.4.68',),

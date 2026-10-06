@@ -4,6 +4,7 @@
 Padaccheda: चर्म-उदरयोः पूरेः
 
 krt-suffix rule: चर्मोदरयोः पूरेः
+Pāṭha: ashtadhyayi.com data.txt row i=34031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "carmodarayoH pUreH",
     text_dev              = "चर्मोदरयोः पूरेः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH carma-udarayoH pUreH kft Ramul karmaRi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः चर्म-उदरयोः पूरेः कृत् णमुल् कर्मणि",
     padaccheda_dev        = "चर्म-उदरयोः पूरेः",
     why_dev               = "धातोः प्रत्ययः (३.4.31)।",
     anuvritti_from        = ('3.1.1',),

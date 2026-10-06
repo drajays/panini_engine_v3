@@ -4,6 +4,7 @@
 Padaccheda: अव्यक्त-अनुकरणस्य अतः इतौ
 
 अव्यक्तानुकरणस्यात इतौ (6.1.98)
+Pāṭha: ashtadhyayi.com data.txt row i=61098 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'avyaktAnukaraRasyAta itO',
     text_dev              = 'अव्यक्तानुकरणस्यात इतौ',
+    samagra_slp1          = "avyaktAnukaraRasya ataH itO pUrvaparayoH ekaH pararUpam",
+    samagra_dev           = "अव्यक्तानुकरणस्य अतः इतौ पूर्वपरयोः एकः पररूपम्",
     padaccheda_dev        = "अव्यक्त-अनुकरणस्य अतः इतौ",
     why_dev               = "(सूत्रम् 6.1.98) अव्यक्तानुकरणस्यात इतौ।",
     anuvritti_from        = ('6.1.1',),

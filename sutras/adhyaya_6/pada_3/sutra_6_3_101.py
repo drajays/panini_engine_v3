@@ -4,6 +4,7 @@
 Padaccheda: कोः कत् तत्पुरुषे अचि
 
 कोः कत् तत्पुरुषेऽचि (6.3.101)
+Pāṭha: ashtadhyayi.com data.txt row i=63101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'koH kat tatpuruzeci',
     text_dev              = 'कोः कत् तत्पुरुषेऽचि',
+    samagra_slp1          = "uttarapade koH kat tatpuruze aci",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे कोः कत् तत्पुरुषे अचि",
     padaccheda_dev        = "कोः कत् तत्पुरुषे अचि",
     why_dev               = "(सूत्रम् 6.3.101) कोः कत् तत्पुरुषेऽचि।",
     anuvritti_from        = ('6.1.1',),

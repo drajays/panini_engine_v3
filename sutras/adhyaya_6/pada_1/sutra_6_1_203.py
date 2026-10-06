@@ -4,6 +4,7 @@
 Padaccheda: वृष-आदीनाम् च
 
 वृषादीनां च (6.1.203)
+Pāṭha: ashtadhyayi.com data.txt row i=61203 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vfzAdInAM ca",
     text_dev              = "वृषादीनां च",
+    samagra_slp1          = "vfzAdInAm ca udAttaH AdiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "वृषादीनाम् च उदात्तः आदिः",
     padaccheda_dev        = "वृष-आदीनाम् च",
     why_dev               = "(सूत्रम् 6.1.203) वृषादीनां च।",
     anuvritti_from        = ('6.1.1',),

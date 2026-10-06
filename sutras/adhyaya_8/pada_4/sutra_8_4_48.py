@@ -4,6 +4,7 @@
 Padaccheda: न ०/० आदिनी ७/१ आक्रोशे ७/१ पुत्रस्य ६/१
 
 नादिन्याक्रोशे पुत्रस्य (8.4.48)
+Pāṭha: ashtadhyayi.com data.txt row i=84048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nAdinyAkroSe putrasya",
     text_dev              = "नादिन्याक्रोशे पुत्रस्य",
+    samagra_slp1          = "putrasya yaraH dve na AdinyAmAkroSe",
+    samagra_dev           = "पुत्रस्य यरः द्वे न आदिन्यामाक्रोशे",
     padaccheda_dev        = "न ०/० आदिनी ७/१ आक्रोशे ७/१ पुत्रस्य ६/१",
     why_dev               = "(सूत्रम् 8.4.48) नादिन्याक्रोशे पुत्रस्य।",
     anuvritti_from        = ('8.1.1',),

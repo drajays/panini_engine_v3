@@ -4,6 +4,7 @@
 Padaccheda: सर्त्ति-शास्ति-अर्तिभ्यः च
 
 Krt suffix rule from dhatu: सर्त्तिशास्त्यर्तिभ्यश्च (56)
+Pāṭha: ashtadhyayi.com data.txt row i=31056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sarttiSAstyartiByaSca",
     text_dev              = "सर्त्तिशास्त्यर्तिभ्यश्च",
+    samagra_slp1          = "sarti-SAs-artiByaH cleH aN",
+    samagra_dev           = "सर्ति-शास्-अर्तिभ्यः च्लेः अङ्",
     padaccheda_dev        = "सर्त्ति-शास्ति-अर्तिभ्यः च",
     why_dev               = "धातोः [सर्त्तिशास्त्यर्तिभ्यश्च]-प्रत्ययः विहितः (३.१.56)।",
     anuvritti_from        = ('3.1.1',),

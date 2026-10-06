@@ -4,6 +4,7 @@
 Padaccheda: जाग्रः अ-वि-चिण्-णल्-ङित्सु
 
 जाग्रोऽविचिण्णल्ङित्सु (7.3.85)
+Pāṭha: ashtadhyayi.com data.txt row i=73085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'jAgroviciRRalNitsu',
     text_dev              = 'जाग्रोऽविचिण्णल्ङित्सु',
+    samagra_slp1          = "aNgasya jAgraH aviciRRalNitsu guRaH sArvaDAtuka-ArDaDAtukayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य जाग्रः अविचिण्णल्ङित्सु गुणः सार्वधातुक-आर्धधातुकयोः",
     padaccheda_dev        = "जाग्रः अ-वि-चिण्-णल्-ङित्सु",
     why_dev               = "(सूत्रम् 7.3.85) जाग्रोऽविचिण्णल्ङित्सु।",
     anuvritti_from        = ('7.1.1',),

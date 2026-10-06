@@ -18,6 +18,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = "kAlopasarjane ca tulyam",
     text_dev                = "कालोपसर्जने च तुल्यम्",
+    samagra_slp1            = "kAla-upasarjane ca tulyam tat a-Sizyam arTasya anyapramARatvAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "काल-उपसर्जने च तुल्यम् तत् अ-शिष्यम् अर्थस्य अन्यप्रमाणत्वात्",
     padaccheda_dev          = "काल-उपसर्जने / च / तुल्यम्",
     why_dev                 = (
         "यत्र कालः उपसर्जनं तत्रापि पूर्वसूत्रोक्तं तुल्यम् — "

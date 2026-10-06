@@ -4,6 +4,7 @@
 Padaccheda: समुद्र-अभ्रात् घः
 
 समुद्राभ्राद्घः (4.4.118)
+Pāṭha: ashtadhyayi.com data.txt row i=44118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samudrABrAdGaH",
     text_dev              = "समुद्राभ्राद्घः",
+    samagra_slp1          = "tatra Bave iti samudra-aBrAt Candasi saMjYAyAm GaH",
+    samagra_dev           = "'तत्र भवे' (इति) समुद्र-अभ्रात् छन्दसि संज्ञायाम् घः",
     padaccheda_dev        = "समुद्र-अभ्रात् घः",
     why_dev               = "(सूत्रम् 4.4.118) समुद्राभ्राद्घः।",
     anuvritti_from        = ('4.1.1',),

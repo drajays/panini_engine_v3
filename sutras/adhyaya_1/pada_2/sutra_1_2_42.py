@@ -10,6 +10,7 @@ Narrow v3 (**पाचकवृन्दारिका** commentary spine — `
     Term ``prakriya_37_pAcikA_vndArikA_witness`` → ``samjna_registry['1.2.42_karmadhAraya_prakriya_37']``.
 
 No ``varṇa`` mutation.
+Pāṭha: ashtadhyayi.com data.txt row i=12042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='tatpuruzaH samAnADikaraRaH karmaDArayaH',
     text_dev='तत्पुरुषः समानाधिकरणः कर्मधारयः',
+    samagra_slp1="tatpuruzaH samAnADikaraRaH karmaDArayaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="तत्पुरुषः समानाधिकरणः कर्मधारयः",
     padaccheda_dev="तत्पुरुषः / समानाधिकरणः / कर्मधारयः",
     why_dev="समानाधिकरण-तत्पुरुषः कर्मधारयः (*prakriya_37*, **पाचिका**/**वृन्दारिका**)।",
     anuvritti_from=(),

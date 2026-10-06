@@ -4,6 +4,7 @@
 Padaccheda: अण् ऋगयन-आदिभ्यः
 
 अणृगयनादिभ्यः (4.3.73)
+Pāṭha: ashtadhyayi.com data.txt row i=43073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aRfgayanAdiByaH",
     text_dev              = "अणृगयनादिभ्यः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA aR fgayana-AdiByaH tatra BavaH tasya vyAKyAne vyAKyAtavya-nAmnaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा अण् ऋगयन-आदिभ्यः तत्र भवः तस्य व्याख्याने व्याख्यातव्य-नाम्नः",
     padaccheda_dev        = "अण् ऋगयन-आदिभ्यः",
     why_dev               = "(सूत्रम् 4.3.73) अणृगयनादिभ्यः।",
     anuvritti_from        = ('4.1.1',),

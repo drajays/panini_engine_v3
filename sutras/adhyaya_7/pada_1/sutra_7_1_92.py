@@ -10,6 +10,7 @@ ai → āy. Result: sakhi → sakhāy + pratyaya.
 
 Engine: arm ``sakhyu_recipe`` + finds the pratyaya term tagged "sarvanamasthana"
 (and not sambodhana/sambuddhi). Applies vṛddhi to the stem's final 'i'.
+Pāṭha: ashtadhyayi.com data.txt row i=71092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -72,6 +73,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saKyurasambudDO",
     text_dev              = "सख्युरसम्बुद्धौ",
+    samagra_slp1          = "asambudDO sarvanAmasTAne saKyuH Rit",
+    samagra_dev           = "असम्बुद्धौ सर्वनामस्थाने सख्युः णित्",
     padaccheda_dev        = "सख्युः अ-सम्बुद्धौ",
     why_dev               = (
         "सखि-शब्दात् सर्वनामस्थान-प्रत्यये (सम्बोधनेतर) ṇिद्वद्भावः → "

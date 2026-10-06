@@ -8,6 +8,7 @@ The upasargas (enumerated in 1.4.58 prādayaḥ) also get the gati-saṃjñā
 v3: registers samjna_registry["gati_set"] with the upasarga list plus the
     word "gati" tag, enabling downstream rules (e.g., 2.2.18, 6.2.49) to
     identify gati members.
+Pāṭha: ashtadhyayi.com data.txt row i=14060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -41,6 +42,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='gatiSca',
     text_dev='गतिश्च',
+    samagra_slp1="nipAtAH prAdayaH kriyAyoge gatiH ca ",
+    samagra_dev="निपाताः प्रादयः क्रियायोगे गतिः च ।",
     padaccheda_dev="गतिः / च",
     why_dev="उपसर्गाश्च गति-संज्ञकाः — गति-सूचिः संज्ञारजिस्ट्रीयां स्थाप्यते।",
     anuvritti_from=("1.4.58", "1.4.59"),

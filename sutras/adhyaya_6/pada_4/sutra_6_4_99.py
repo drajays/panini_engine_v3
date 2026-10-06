@@ -4,6 +4,7 @@
 Padaccheda: तनि-पत्योः छन्दसि
 
 तनिपत्योश्छन्दसि (6.4.99)
+Pāṭha: ashtadhyayi.com data.txt row i=64099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tanipatyoSCandasi",
     text_dev              = "तनिपत्योश्छन्दसि",
+    samagra_slp1          = "aNgasya asidDavadatrABAt tani-patyoH Candasi aci upaDAyAH lopaH kNiti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् तनि-पत्योः छन्दसि अचि उपधायाः लोपः क्ङिति",
     padaccheda_dev        = "तनि-पत्योः छन्दसि",
     why_dev               = "(सूत्रम् 6.4.99) तनिपत्योश्छन्दसि।",
     anuvritti_from        = ('6.1.1',),

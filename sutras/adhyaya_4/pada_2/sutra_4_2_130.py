@@ -4,6 +4,7 @@
 Padaccheda: विभाषा कुरु-युगन्धराभ्याम्
 
 विभाषा कुरुयुगन्धराभ्याम् (4.2.130)
+Pāṭha: ashtadhyayi.com data.txt row i=42130 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA kuruyuganDarAByAm",
     text_dev              = "विभाषा कुरुयुगन्धराभ्याम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA viBAzA kuru-yuganDarAByAm vuY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा विभाषा कुरु-युगन्धराभ्याम् वुञ्",
     padaccheda_dev        = "विभाषा कुरु-युगन्धराभ्याम्",
     why_dev               = "(सूत्रम् 4.2.130) विभाषा कुरुयुगन्धराभ्याम्।",
     anuvritti_from        = ('4.1.1',),

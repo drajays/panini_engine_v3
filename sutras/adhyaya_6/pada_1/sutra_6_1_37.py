@@ -4,6 +4,7 @@
 Padaccheda: न सम्प्रसारणे सम्प्रसारणम्
 
 न सम्प्रसारणे सम्प्रसारणम् (6.1.37)
+Pāṭha: ashtadhyayi.com data.txt row i=61037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na samprasAraRe samprasAraRam",
     text_dev              = "न सम्प्रसारणे सम्प्रसारणम्",
+    samagra_slp1          = "na samprasAraRe samprasAraRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "न सम्प्रसारणे सम्प्रसारणम्",
     padaccheda_dev        = "न सम्प्रसारणे सम्प्रसारणम्",
     why_dev               = "(सूत्रम् 6.1.37) न सम्प्रसारणे सम्प्रसारणम्।",
     anuvritti_from        = ('6.1.1',),

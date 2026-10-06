@@ -5,6 +5,7 @@ Narrow v3: blocks **7.2.35** (iṭ-āgama) when the pipeline marks a one-vowel
 (ekāc) **anudātta** dhātu — ``state.meta['ekac_dhatu']`` and **not**
 ``state.meta['udatta_dhatu']`` (seṭ / udātta-śāstra rows from
 ``pipelines/krdanta`` / JSON ``flags.udatta``).
+Pāṭha: ashtadhyayi.com data.txt row i=72010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -72,6 +73,8 @@ SUTRA = SutraRecord(
     sutra_type       = SutraType.PRATISHEDHA,
     text_slp1        = 'ekAca upadeSenudAttAt',
     text_dev         = 'एकाच उपदेशेऽनुदात्तात्',
+    samagra_slp1     = "upadeSe anudAttAt ekAcaH aNgAt iw na",
+    samagra_dev      = "उपदेशे अनुदात्तात् एकाचः अङ्गात् इट् न",
     padaccheda_dev   = "एकाच् उपदेशे अनुदात्तात्",
     why_dev          = "एकाच् धातौ आर्धधातुके इट्-प्रतिषेधः (त्रिच्-पथ)।",
     anuvritti_from   = (),

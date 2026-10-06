@@ -4,6 +4,7 @@
 Padaccheda: तत् सर्व-आदेः पथ्यङ्ग-कर्म-पत्र-पात्रम् व्याप्नोति (क्रियापदम्)
 
 तत्सर्वादेः पथ्यङ्गकर्मपत्रपात्रं व्याप्नोति (5.2.7)
+Pāṭha: ashtadhyayi.com data.txt row i=52007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tatsarvAdeH paTyaNgakarmapatrapAtraM vyApnoti",
     text_dev              = "तत्सर्वादेः पथ्यङ्गकर्मपत्रपात्रं व्याप्नोति",
+    samagra_slp1          = "tat vyApnoti iti sarvAdeH paTi-aNga-karma-patra-pAtram KaH",
+    samagra_dev           = "'तत् व्याप्नोति' (इति) सर्वादेः पथि-अङ्ग-कर्म-पत्र-पात्रम् खः",
     padaccheda_dev        = "तत् सर्व-आदेः पथ्यङ्ग-कर्म-पत्र-पात्रम् व्याप्नोति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 5.2.7) तत्सर्वादेः पथ्यङ्गकर्मपत्रपात्रं व्याप्नोति।",
     anuvritti_from        = ('4.1.82',),

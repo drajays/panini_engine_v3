@@ -4,6 +4,7 @@
 Padaccheda: शारदे अनार्तवे
 
 शारदेअनार्तवे (6.2.9)
+Pāṭha: ashtadhyayi.com data.txt row i=62009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'SAradenArtave',
     text_dev              = 'शारदेऽनार्तवे',
+    samagra_slp1          = "SArade anArtave prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "शारदे अनार्तवे प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "शारदे अनार्तवे",
     why_dev               = "(सूत्रम् 6.2.9) शारदेअनार्तवे।",
     anuvritti_from        = ('6.1.1',),

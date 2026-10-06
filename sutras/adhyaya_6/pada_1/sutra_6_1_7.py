@@ -4,6 +4,7 @@
 Padaccheda: तुज्-आदीनाम् दीर्घः अभ्यासस्य
 
 तुजादीनां दीर्घोऽभ्यासस्य (6.1.7)
+Pāṭha: ashtadhyayi.com data.txt row i=61007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tujAdInAM dIrGoByAsasya',
     text_dev              = 'तुजादीनां दीर्घोऽभ्यासस्य',
+    samagra_slp1          = "ekAco dve praTamasya tujAdInAm dIrGaH aByAsasya ajAdeH dvitIyasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "एकाचो द्वे प्रथमस्य तुजादीनाम् दीर्घः अभ्यासस्य अजादेः द्वितीयस्य",
     padaccheda_dev        = "तुज्-आदीनाम् दीर्घः अभ्यासस्य",
     why_dev               = "(सूत्रम् 6.1.7) तुजादीनां दीर्घोऽभ्यासस्य।",
     anuvritti_from        = ('6.1.1',),

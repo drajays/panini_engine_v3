@@ -14,6 +14,7 @@ carries "ud_prefix" or "anu_prefix" in its tags, (c) that dhātu carries the
 semantic usage tag "UrDva_karma_usage", and (d) idempotency guard
 "Atmanepada_1_3_24" is absent from meta.  No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True because no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='udonUrDvakarmaRi',
     text_dev='उदोऽनूर्ध्वकर्मणि',
+    samagra_slp1="udaH sTaH anUrDvakarmaRi Atmanepadam",
+    samagra_dev="उदः स्थः अनूर्ध्वकर्मणि आत्मनेपदम्",
     padaccheda_dev="उदः (पञ्चमी) / अनु / ऊर्ध्व-कर्मणि (सप्तमी)",
     why_dev=(
         "उद्-अनु-पूर्वकस्य धातोः ऊर्ध्व-कर्म-विषये आत्मनेपदं भवति; "

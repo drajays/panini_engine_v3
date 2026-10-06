@@ -31,6 +31,7 @@ Aṣṭādhyāyī (sākṣāt); anuvṛtti can carry the term into further rules
 
 (See ``~/Documents/panini_engine_v2/core/sutra_1_1_1.py`` for the older axiom-registration
 pattern; v3 keeps definition in registry + full trace.)
+Pāṭha: ashtadhyayi.com data.txt row i=11001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -86,6 +87,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'vfdDirAdEc',
     text_dev       = 'वृद्धिरादैच्',
+    samagra_slp1   = "At-Ec vfdDiH",
+    samagra_dev    = "आत्-ऐच् वृद्धिः",
     padaccheda_dev = "वृद्धिः आत्-ऐच्",
     why_dev        = _WHY_DEV,
     anuvritti_from = (),

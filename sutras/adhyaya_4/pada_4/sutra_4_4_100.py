@@ -4,6 +4,7 @@
 Padaccheda: भक्तात् णः
 
 भक्ताण्णः (4.4.100)
+Pāṭha: ashtadhyayi.com data.txt row i=44100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BaktARRaH",
     text_dev              = "भक्ताण्णः",
+    samagra_slp1          = "tatra sADuH iti BaktAt saMjYAyAm RaH",
+    samagra_dev           = "'तत्र साधुः' इति भक्तात् संज्ञायाम् णः",
     padaccheda_dev        = "भक्तात् णः",
     why_dev               = "(सूत्रम् 4.4.100) भक्ताण्णः।",
     anuvritti_from        = ('4.1.1',),

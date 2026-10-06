@@ -8,6 +8,7 @@
 *Anuvṛtti:* **1.4.1** *ekasañjñā*.
 
 *Engine:* ``paribhasha_gates``; **R3**-safe ``cond``; no *vākya* semantics.
+Pāṭha: ashtadhyayi.com data.txt row i=14022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'dvyekayordvivacanEkavacane',
     text_dev       = 'द्व्येकयोर्द्विवचनैकवचने',
+    samagra_slp1   = "dvi-ekayoH dvivacana-ekavacane",
+    samagra_dev    = "द्वि-एकयोः द्विवचन-एकवचने",
     padaccheda_dev = "द्वि-एकयोः (सप्तमी-द्वि) / द्विवचन-एकवचने (प्रथमा-द्वि)",
     why_dev        = (
         "द्वित्व-विवक्षायां द्वि-वचनिय-प्रत्ययः, एकत्व-विवक्षायाम् एक-वचनियः; "

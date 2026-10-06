@@ -11,6 +11,7 @@ with a per-position restriction predicate.
 Because augment-placement rules key off this niyama, we record it as
 a fact in niyama_gates['mit_placement'] = 'after_last_ac'.  The VIDHI
 that inserts a mit-augment reads this and honours it.
+Pāṭha: ashtadhyayi.com data.txt row i=11047 (Art. 14).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1      = 'midacontyAtparaH',
     text_dev       = 'मिदचोऽन्त्यात्परः',
+    samagra_slp1   = "mit antyAt acaH paraH",
+    samagra_dev    = "मित्  अन्त्यात् अचः परः",
     padaccheda_dev = "मित् अचः अन्त्यात् परः",
     why_dev        = "मित्-आदेशः अङ्गस्य अन्त्य-अच् वर्णात् परः स्थाप्यते।",
     anuvritti_from = (),

@@ -4,6 +4,7 @@
 Padaccheda: नदी बन्धुनि
 
 नदी बन्धुनि (6.2.109)
+Pāṭha: ashtadhyayi.com data.txt row i=62109 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nadI banDuni",
     text_dev              = "नदी बन्धुनि",
+    samagra_slp1          = "udAttaH antaH nadI banDuni pUrvapadam bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः नदी बन्धुनि पूर्वपदम् बहुव्रीहौ",
     padaccheda_dev        = "नदी बन्धुनि",
     why_dev               = "(सूत्रम् 6.2.109) नदी बन्धुनि।",
     anuvritti_from        = ('6.1.1',),

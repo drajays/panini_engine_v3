@@ -4,6 +4,7 @@
 Padaccheda: मन्-क्तिन्-व्याख्यान-शयन-आसन-स्थान-याजक-आदि-क्रीताः
 
 मन्क्तिन्व्याख्यानशयनासनस्थानयाजकादिक्रीताः (6.2.151)
+Pāṭha: ashtadhyayi.com data.txt row i=62151 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "manktinvyAKyAnaSayanAsanasTAnayAjakAdikrItAH",
     text_dev              = "मन्क्तिन्व्याख्यानशयनासनस्थानयाजकादिक्रीताः",
+    samagra_slp1          = "uttarapadAdiH antaH man-ktin-vyAKyAna-Sayana-Asana-sTAna-yAjakAdi-krItAH kArakAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः मन्-क्तिन्-व्याख्यान-शयन-आसन-स्थान-याजकादि-क्रीताः कारकात्",
     padaccheda_dev        = "मन्-क्तिन्-व्याख्यान-शयन-आसन-स्थान-याजक-आदि-क्रीताः",
     why_dev               = "(सूत्रम् 6.2.151) मन्क्तिन्व्याख्यानशयनासनस्थानयाजकादिक्रीताः।",
     anuvritti_from        = ('6.1.1',),

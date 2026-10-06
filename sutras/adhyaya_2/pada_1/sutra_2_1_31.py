@@ -4,6 +4,7 @@
 Padaccheda: पूर्व-सदृश-सम-ऊनार्थ-कलह-निपुण-मिश्र-श्लक्ष्णैः
 
 purva, sadrsa, sama etc. with tritiya form karmadharaya compound.
+Pāṭha: ashtadhyayi.com data.txt row i=21031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUrvasadfSasamonArTakalahanipuRamiSraSlakzREH",
     text_dev              = "पूर्वसदृशसमोनार्थकलहनिपुणमिश्रश्लक्ष्णैः",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH pUrva-sadfSa-sama-UnArTa-kalaha-nipuRa-miSra-SlakzREH tftIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः पूर्व-सदृश-सम-ऊनार्थ-कलह-निपुण-मिश्र-श्लक्ष्णैः तृतीया",
     padaccheda_dev        = "पूर्व-सदृश-सम-ऊनार्थ-कलह-निपुण-मिश्र-श्लक्ष्णैः",
     why_dev               = "पूर्व-सदृश-आदिभिः तृतीयान्तस्य सह कर्मधारयः (२.१.३१)।",
     anuvritti_from        = ('2.1.3',),

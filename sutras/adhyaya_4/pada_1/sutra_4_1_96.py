@@ -4,6 +4,7 @@
 Padaccheda: बाहु-आदिभ्यः च
 
 बाह्वादिभ्यश्च (4.1.96)
+Pāṭha: ashtadhyayi.com data.txt row i=41096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bAhvAdiByaSca",
     text_dev              = "बाह्वादिभ्यश्च",
+    samagra_slp1          = "tasya apatyam iti bAhvAdiByaH iY pratyayaH",
+    samagra_dev           = "'तस्य अपत्यम्' इति बाह्वादिभ्यः इञ् प्रत्ययः",
     padaccheda_dev        = "बाहु-आदिभ्यः च",
     why_dev               = "(सूत्रम् 4.1.96) बाह्वादिभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

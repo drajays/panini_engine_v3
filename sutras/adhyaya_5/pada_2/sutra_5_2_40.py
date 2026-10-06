@@ -4,6 +4,7 @@
 Padaccheda: किम्-इदम्भ्याम् वः घः
 
 किमिदंभ्यां वो घः (5.2.40)
+Pāṭha: ashtadhyayi.com data.txt row i=52040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kimidaMByAM vo GaH",
     text_dev              = "किमिदंभ्यां वो घः",
+    samagra_slp1          = "tat asya iti parimARe kimidaMByAm vatu~p vaH GaH ca",
+    samagra_dev           = "'तत् अस्य' (इति) परिमाणे किमिदंभ्याम् वतुँप्, वः घः (च)",
     padaccheda_dev        = "किम्-इदम्भ्याम् वः घः",
     why_dev               = "(सूत्रम् 5.2.40) किमिदंभ्यां वो घः।",
     anuvritti_from        = ('4.1.82',),

@@ -9,6 +9,7 @@ Engine policy:
   - No form mutation here.
   - Only enables a gate in ``state.paribhasha_gates``; operational sūtras may
     consult it when deciding whether to rewrite the next term/varna boundary.
+Pāṭha: ashtadhyayi.com data.txt row i=11054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.PARIBHASHA,
     text_slp1      = 'AdeH parasya',
     text_dev       = 'आदेः परस्य',
+    samagra_slp1   = "parasya AdeH alaH",
+    samagra_dev    = "परस्य आदेः अलः",
     padaccheda_dev = "आदेशः / परस्य",
     why_dev        = "परिभाषा-गेट: आदेश-नियोजनम् पर-स्थाने।",
     anuvritti_from = ("1.1.49",),

@@ -9,6 +9,7 @@ sūtra (glass-box trace); does not alter ``varṇa``s.
 
   • ``prakriya_35`` — ``spfS`` dhātu anchor for **३.१.६२** neighbourhood (``prakriya_35_1_3_1_arm`` +
     ``prakriya_35_spfSa_kvin_demo``).
+Pāṭha: ashtadhyayi.com data.txt row i=13001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'BUvAdayo DAtavaH',
     text_dev       = 'भूवादयो धातवः',
+    samagra_slp1   = "BUvAdayaH DAtavaH",
+    samagra_dev    = "भूवादयः धातवः",
     padaccheda_dev = "भू-आदयः धातवः",
     why_dev        = "भू आदि गणे पठितानां धातूनां धातु-संज्ञा (उपदेश एव अधिकृतः)।",
     anuvritti_from = (),

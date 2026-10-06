@@ -13,6 +13,7 @@ upadesha_slp1 is in _KRIDA_ROOTS, (c) any tag from _KRIDA_PREFIXES present on
 that dhātu, and (d) idempotency guard "Atmanepada_1_3_21" absent from meta.
 No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True because no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='krIqonusampariByaSca',
     text_dev='क्रीडोऽनुसम्परिभ्यश्च',
+    samagra_slp1="ANaH anu-sam-pariByaH krIqaH Atmanepadam",
+    samagra_dev="आङः अनु-सम्-परिभ्यः क्रीडः आत्मनेपदम्",
     padaccheda_dev="क्रीडः (षष्ठी) / अनु-सम्-परि-भ्यः (पञ्चमी) / च",
     why_dev=(
         "अनु-सम्-परि-पूर्वकस्य क्रीड्-धातोः आत्मनेपदं भवति; "

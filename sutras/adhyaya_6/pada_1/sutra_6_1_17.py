@@ -11,6 +11,7 @@ Citation (CONSTITUTION Art. 14)
 
 Engine: the abhyāsa Term (tag ``abhyasa``) directly before a root of the 6.1.15 class whose tiṅ has liṭ as its sthānin (a saṃjñā
 3.4.78 stamped). The abhyāsa's yaṇ + vowel becomes the ik vowel and the following vowel is absorbed (6.1.108): va → u, ya → i, sva → su.
+Pāṭha: ashtadhyayi.com data.txt row i=61017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -79,6 +80,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="liwyaByAsasyoBayezAm",
     text_dev="लिट्यभ्यासस्योभयेषाम्",
+    samagra_slp1="liwi aByAsasya uBayezAm samprasAraRam vaci-svapi-yajAdInAm grahi-jyA-vayi-vyaDi-vazwi-vicati-vfScati-pfcCati-BfjjatInAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="लिटि अभ्यासस्य उभयेषाम् सम्प्रसारणम् वचि-स्वपि-यजादीनाम् ग्रहि-ज्या-वयि-व्यधि-वष्टि-विचति-वृश्चति-पृच्छति-भृज्जतीनाम्",
     padaccheda_dev="लिटि अभ्यासस्य उभयेषाम्",
     why_dev="लिट् में वच्-स्वप्-यजादि धातुओं के अभ्यास को भी सम्प्रसारण (उवाच, इयाज, सुष्वाप, उवाह)।",
     anuvritti_from=("6.1.15",),

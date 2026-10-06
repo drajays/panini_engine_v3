@@ -8,6 +8,7 @@ non-village localities (agrāma) that have a specific gender (viśiṣṭaliṅg
 takes ekavacana.
 
 Engine: sets gate "2_4_7_visisthalinga_nadi_desa_agrama_ekavacana".
+Pāṭha: ashtadhyayi.com data.txt row i=24007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -34,6 +35,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1      = 'viSizwaliNgo nadI deSogrAmAH',
     text_dev       = 'विशिष्टलिङ्गो नदी देशोऽग्रामाः',
+    samagra_slp1   = "viSizwa-liNgaH nadI deSaH a-grAmAH ekavacanam dvandvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "विशिष्ट-लिङ्गः नदी देशः अ-ग्रामाः एकवचनम् द्वन्द्वः",
     padaccheda_dev = "विशिष्ट-लिङ्गः / नदी / देशः / अ-ग्रामाः",
     why_dev        = "विशिष्टलिङ्ग-नदी-देश-अग्राम-द्वन्द्वे एकवचनम्।",
     anuvritti_from = ("2.4.1", "2.4.2"),

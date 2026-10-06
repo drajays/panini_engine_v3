@@ -4,6 +4,7 @@
 Padaccheda: त्रिककुत् पर्वते
 
 त्रिककुत् पर्वते (5.4.147)
+Pāṭha: ashtadhyayi.com data.txt row i=54147 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "trikakut parvate",
     text_dev              = "त्रिककुत् पर्वते",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA trikakut parvate bahuvrIhO lopaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा त्रिककुत् पर्वते बहुव्रीहौ लोपः",
     padaccheda_dev        = "त्रिककुत् पर्वते",
     why_dev               = "(सूत्रम् 5.4.147) त्रिककुत् पर्वते।",
     anuvritti_from        = ('5.4.68',),

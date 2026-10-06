@@ -4,6 +4,7 @@
 Padaccheda: वसति-क्षुधोः इट्
 
 वसतिक्षुधोरिट् (7.2.52)
+Pāṭha: ashtadhyayi.com data.txt row i=72052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vasatikzuDoriw",
     text_dev              = "वसतिक्षुधोरिट्",
+    samagra_slp1          = "aNgasya vasatikzuDoH iw ArDaDAtukasya valAdeH ktvAnizWayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य वसतिक्षुधोः इट् आर्धधातुकस्य वलादेः क्त्वानिष्ठयोः",
     padaccheda_dev        = "वसति-क्षुधोः इट्",
     why_dev               = "(सूत्रम् 7.2.52) वसतिक्षुधोरिट्।",
     anuvritti_from        = ('7.1.1',),

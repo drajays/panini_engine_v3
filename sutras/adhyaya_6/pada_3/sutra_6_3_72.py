@@ -4,6 +4,7 @@
 Padaccheda: रात्रेः कृति विभाषा
 
 रात्रेः कृति विभाषा (6.3.72)
+Pāṭha: ashtadhyayi.com data.txt row i=63072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAtreH kfti viBAzA",
     text_dev              = "रात्रेः कृति विभाषा",
+    samagra_slp1          = "uttarapade rAtreH kfti viBAzA mum",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे रात्रेः कृति विभाषा मुम्",
     padaccheda_dev        = "रात्रेः कृति विभाषा",
     why_dev               = "(सूत्रम् 6.3.72) रात्रेः कृति विभाषा।",
     anuvritti_from        = ('6.1.1',),

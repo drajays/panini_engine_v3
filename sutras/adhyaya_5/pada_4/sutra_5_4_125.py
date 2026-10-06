@@ -4,6 +4,7 @@
 Padaccheda: जम्भा सु-हरित-तृण-सोमेभ्यः
 
 जम्भा सुहरिततृणसोमेभ्यः (5.4.125)
+Pāṭha: ashtadhyayi.com data.txt row i=54125 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jamBA suharitatfRasomeByaH",
     text_dev              = "जम्भा सुहरिततृणसोमेभ्यः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA jamBA suharitatfRasomeByaH bahuvrIhO anic",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा जम्भा सुहरिततृणसोमेभ्यः बहुव्रीहौ अनिच्",
     padaccheda_dev        = "जम्भा सु-हरित-तृण-सोमेभ्यः",
     why_dev               = "(सूत्रम् 5.4.125) जम्भा सुहरिततृणसोमेभ्यः।",
     anuvritti_from        = ('5.4.68',),

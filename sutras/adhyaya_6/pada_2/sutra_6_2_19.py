@@ -4,6 +4,7 @@
 Padaccheda: न भू-वाक्-चित्-दिधिषु
 
 न भूवाक्चिद्दिधिषु (6.2.19)
+Pāṭha: ashtadhyayi.com data.txt row i=62019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na BUvAkciddiDizu",
     text_dev              = "न भूवाक्चिद्दिधिषु",
+    samagra_slp1          = "na BU-vAk-cit-diDizu pUrvapadam prakftyA tatpuruze patyO ESvarye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "न भू-वाक्-चित्-दिधिषु पूर्वपदम् प्रकृत्या तत्पुरुषे पत्यौ ऐश्वर्ये",
     padaccheda_dev        = "न भू-वाक्-चित्-दिधिषु",
     why_dev               = "(सूत्रम् 6.2.19) न भूवाक्चिद्दिधिषु।",
     anuvritti_from        = ('6.1.1',),

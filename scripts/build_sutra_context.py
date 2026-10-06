@@ -26,6 +26,8 @@ import openpyxl
 ROOT = Path(__file__).resolve().parents[1]
 WORKBOOK = Path("/Users/dr.ajayshukla/paanini-ashtadhyaayi-sutra-map (1).xlsx")
 ASHTADHYAYI = Path("/Users/dr.ajayshukla/ashtadhyayi")
+# T0 pāṭha (Art. 14 #1, Art. 22): ashtadhyayi-com/data ``sutraani/data.txt`` field ``s``.
+PATHA = Path("/Users/dr.ajayshukla/data-master/sutraani/data.txt")
 OUT = ROOT / "data/inputs/sutra_context.json"
 OUT_SOURCE = ROOT / "data/inputs/sutra_context.SOURCE.json"
 OUT_CONFLICTS = ROOT / "data/inputs/sutra_context.conflicts.json"
@@ -143,7 +145,12 @@ def build(workbook: Path, ash: Path):
 
     records: dict[str, dict] = {}
     extras: dict[str, dict] = {}
-    conflicts = {"type": [], "adhikara_heads": [], "anuvritti": []}
+    conflicts = {"type": [], "adhikara_heads": [], "anuvritti": [], "text": []}
+    patha = {}
+    if PATHA.exists():
+        for it in json.loads(PATHA.read_text(encoding="utf-8"))["data"]:
+            patha[f"{it['a']}.{it['p']}.{it['n']}"] = it["s"]
+    _n = lambda t: re.sub(r"[\s|।॥\u200c\u200d]", "", t or "")
     applied_overrides = 0
 
     for r in base_rows:
@@ -182,6 +189,17 @@ def build(workbook: Path, ash: Path):
         if rec["text"] is None and _s(b.get("सूत्रम्")):
             rec["text"] = _s(b["सूत्रम्"])
             prov["text"] = "ashtadhyayi.com"
+        # AMENDMENT 20: workbook pāṭha that differs from T0 is corrected to T0 — except where the only
+        # difference is an added ँ (the workbook marks pratijñā-anunāsika it-vowels: क्विँप्, घिनुँण्),
+        # which is kept. Owner overrides are never touched. Every case is logged.
+        t0 = patha.get(sid)
+        if t0 and rec["text"] and prov.get("text") == "workbook" and _n(rec["text"]) != _n(t0):
+            if _n(rec["text"].replace("ँ", "")) == _n(t0):
+                conflicts["text"].append({"id": sid, "kind": "anunasika_marking_kept", "workbook": rec["text"], "data.txt": t0})
+            else:
+                conflicts["text"].append({"id": sid, "kind": "corrected_to_T0", "workbook": rec["text"], "data.txt": t0})
+                rec["text"] = t0 + (" |" if rec["text"].rstrip().endswith("|") else "")
+                prov["text"] = "ashtadhyayi.com data.txt (T0)"
         if rec["kaumudi_krama"] is None and b.get("कौमुदीक्रमसङ्ख्या") not in (None, ""):
             rec["kaumudi_krama"] = int(b["कौमुदीक्रमसङ्ख्या"])
             prov["kaumudi_krama"] = "ashtadhyayi.com"
@@ -275,6 +293,7 @@ def main(argv=None) -> None:
                         "read": ["sutraBasics.json", "adhikara/", "anuvritti/", "padachcheda/", "topic/",
                                  "kashika/ (refs)", "vasu_english*/ (refs)"],
                         "commentary_ref_path": COMMENTARY_PATH},
+        "patha_T0": {"path": str(PATHA), "read": ["data.txt field s (workbook text corrected to it, AMENDMENT 20)"]},
         "counts": {"sutras": len(records), "extras": sorted(extras),
                    "conflicts": {k: len(v) for k, v in conflicts.items()}},
         "credit": "Sūtra map workbook (paanini-ashtadhyaayi-sutra-map) and ashtadhyayi.com "

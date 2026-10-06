@@ -18,6 +18,7 @@ Downstream effect in this repo:
 
 Mechanical blindness (CONSTITUTION Art. 2):
   - ``cond`` reads only tags/meta (no vibhakti/vacana, no gold).
+Pāṭha: ashtadhyayi.com data.txt row i=11040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -71,6 +72,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'ktvAtosunkasunaH',
     text_dev       = 'क्त्वातोसुन्कसुनः',
+    samagra_slp1   = "ktvA-tosun-kasunaH avyayAni",
+    samagra_dev    = "क्त्वा-तोसुन्-कसुनः अव्ययानि",
     padaccheda_dev = "क्त्वा / तोसुन् / कसुनः",
     why_dev        = "क्त्वा-तोसुन्-कसुन्-प्रत्ययान्तस्य अव्ययत्वम् (२.४.८२ सुप्-लुक्-प्रसङ्गः)।",
     anuvritti_from = (),

@@ -4,6 +4,7 @@
 Padaccheda: गन्तव्य-पण्यम् वाणिजे
 
 गन्तव्यपण्यं वाणिजे (6.2.13)
+Pāṭha: ashtadhyayi.com data.txt row i=62013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gantavyapaRyaM vARije",
     text_dev              = "गन्तव्यपण्यं वाणिजे",
+    samagra_slp1          = "gantavya-paRyam vARije prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "गन्तव्य-पण्यम् वाणिजे प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "गन्तव्य-पण्यम् वाणिजे",
     why_dev               = "(सूत्रम् 6.2.13) गन्तव्यपण्यं वाणिजे।",
     anuvritti_from        = ('6.1.1',),

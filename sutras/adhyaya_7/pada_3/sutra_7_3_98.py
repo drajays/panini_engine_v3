@@ -4,6 +4,7 @@
 Padaccheda: रुदः (व्यत्ययेन बहुवचनस्यैकत्वम्) च पञ्चभ्यः
 
 रुदश्च पञ्चभ्यः (7.3.98)
+Pāṭha: ashtadhyayi.com data.txt row i=73098 (Art. 14).
 """
 from __future__ import annotations
 from engine.state import Term
@@ -61,6 +62,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "rudaSca paYcaByaH",
     text_dev              = "रुदश्च पञ्चभ्यः",
+    samagra_slp1          = "rudaH paYcaByaH aNgAt sArvaDAtuke apfkte piti hali Iw",
+    samagra_dev           = "रुदः पञ्चभ्यः अङ्गात् सार्वधातुके अपृक्ते पिति हलि ईट्",
     padaccheda_dev        = "रुदः (व्यत्ययेन बहुवचनस्यैकत्वम्) च पञ्चभ्यः",
     why_dev               = "(सूत्रम् 7.3.98) रुदश्च पञ्चभ्यः।",
     anuvritti_from        = ('7.1.1',),

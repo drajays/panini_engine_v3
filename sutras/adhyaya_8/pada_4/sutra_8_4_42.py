@@ -4,6 +4,7 @@
 Padaccheda: न · पदान्तात् · टोः · नाम्
 
 न पदान्ताट्टोरनाम् (8.4.42)
+Pāṭha: ashtadhyayi.com data.txt row i=84042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na padAntAwworanAm",
     text_dev              = "न पदान्ताट्टोरनाम्",
+    samagra_slp1          = "padAntAt woH anAm stoH zwuH na ",
+    samagra_dev           = "पदान्तात् टोः अनाम् स्तोः ष्टुः न ।",
     padaccheda_dev        = "न · पदान्तात् · टोः · नाम्",
     why_dev               = "(सूत्रम् 8.4.42) न पदान्ताट्टोरनाम्।",
     anuvritti_from        = ('8.1.1',),

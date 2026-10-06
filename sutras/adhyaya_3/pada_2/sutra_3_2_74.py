@@ -4,6 +4,7 @@
 Padaccheda: आतः मनिन्-क्वनिप्-वनिपः च
 
 krt-suffix rule: आतो मनिन्क्वनिप्वनिपश्च (74)
+Pāṭha: ashtadhyayi.com data.txt row i=32074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'Ato maninkvanibvanipaSca',
     text_dev              = 'आतो मनिन्क्वनिब्वनिपश्च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH AtaH manin-kvanip-vanipaH ca kft supi api upasarge vic Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः आतः मनिन्-क्वनिप्-वनिपः च कृत् सुपि अपि उपसर्गे विच् छन्दसि",
     padaccheda_dev        = "आतः मनिन्-क्वनिप्-वनिपः च",
     why_dev               = "धातोः कृत्-प्रत्ययः [आतो मनिन्क्वनिप्वनिपश्च] विहितः (३.२.74)।",
     anuvritti_from        = ('3.1.1',),

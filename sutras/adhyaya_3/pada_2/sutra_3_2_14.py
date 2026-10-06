@@ -4,6 +4,7 @@
 Padaccheda: शमि धातोः संज्ञायाम् ( अत्र शम् इत्यव्ययम् ; तस्मात् प्रातिपदिकानुकरणत्वाद् विभक्तेरुत्पत्तिः| एवम् सवंत्राव्ययस्थले बोध्यम्|)
 
 krt-suffix rule: शमि धातोः संज्ञायाम् (14)
+Pāṭha: ashtadhyayi.com data.txt row i=32014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Sami DAtoH saMjYAyAm",
     text_dev              = "शमि धातोः संज्ञायाम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH Sami saMjYAyAm kft karmaRi anupasarge supi ac",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः शमि संज्ञायाम् कृत् कर्मणि अनुपसर्गे सुपि अच्",
     padaccheda_dev        = "शमि धातोः संज्ञायाम् ( अत्र शम् इत्यव्ययम् ; तस्मात् प्रातिपदिकानुकरणत्वाद् विभक्तेरुत्पत्तिः| एवम् सवंत्राव्ययस्थले बोध्यम्|)",
     why_dev               = "धातोः कृत्-प्रत्ययः [शमि धातोः संज्ञायाम्] विहितः (३.२.14)।",
     anuvritti_from        = ('3.1.1',),

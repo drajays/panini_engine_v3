@@ -4,6 +4,7 @@
 Padaccheda: केदारात् यञ् च
 
 केदाराद्यञ् च (4.2.40)
+Pāṭha: ashtadhyayi.com data.txt row i=42040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kedArAdyaY ca",
     text_dev              = "केदाराद्यञ् च",
+    samagra_slp1          = "tasya samUhaH iti kedArAt vuY yaY ca",
+    samagra_dev           = "तस्य समूहः (इति) केदारात् वुञ् यञ् च",
     padaccheda_dev        = "केदारात् यञ् च",
     why_dev               = "(सूत्रम् 4.2.40) केदाराद्यञ् च।",
     anuvritti_from        = ('4.1.1',),

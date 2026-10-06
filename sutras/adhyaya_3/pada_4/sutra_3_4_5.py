@@ -4,6 +4,7 @@
 Padaccheda: समुच्चये सामान्यवचनस्य
 
 krt-suffix rule: समुच्चये सामान्यवचनस्य
+Pāṭha: ashtadhyayi.com data.txt row i=34005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samuccaye sAmAnyavacanasya",
     text_dev              = "समुच्चये सामान्यवचनस्य",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH samuccaye sAmAnyavacanasya kft DAtusambanDe anuprayogaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः समुच्चये सामान्यवचनस्य कृत् धातुसम्बन्धे अनुप्रयोगः",
     padaccheda_dev        = "समुच्चये सामान्यवचनस्य",
     why_dev               = "धातोः प्रत्ययः (३.4.5)।",
     anuvritti_from        = ('3.1.1',),

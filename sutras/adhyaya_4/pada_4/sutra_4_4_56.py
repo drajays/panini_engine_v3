@@ -4,6 +4,7 @@
 Padaccheda: मड्‍डुक-झर्झरात् अण् अन्यतरस्याम्
 
 मड्डुकझर्झरादणन्यतरस्याम् (4.4.56)
+Pāṭha: ashtadhyayi.com data.txt row i=44056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "maqqukaJarJarAdaRanyatarasyAm",
     text_dev              = "मड्डुकझर्झरादणन्यतरस्याम्",
+    samagra_slp1          = "tadasya Silpam iti maqquka-JarJarAt anyatarasyAmaR",
+    samagra_dev           = "'तदस्य शिल्पम्' (इति) मड्डुक-झर्झरात् अन्यतरस्यामण्",
     padaccheda_dev        = "मड्‍डुक-झर्झरात् अण् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 4.4.56) मड्डुकझर्झरादणन्यतरस्याम्।",
     anuvritti_from        = ('4.1.1',),

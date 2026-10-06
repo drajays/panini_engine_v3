@@ -4,6 +4,7 @@
 Padaccheda: त्रेः त्रयः
 
 त्रेस्त्रयः (7.1.53)
+Pāṭha: ashtadhyayi.com data.txt row i=71053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "trestrayaH",
     text_dev              = "त्रेस्त्रयः",
+    samagra_slp1          = "treH aNgasya Ami trayaH",
+    samagra_dev           = "त्रेः अङ्गस्य आमि त्रयः",
     padaccheda_dev        = "त्रेः त्रयः",
     why_dev               = "(सूत्रम् 7.1.53) त्रेस्त्रयः।",
     anuvritti_from        = ('7.1.1',),

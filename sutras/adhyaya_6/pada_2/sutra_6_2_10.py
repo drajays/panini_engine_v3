@@ -4,6 +4,7 @@
 Padaccheda: अध्वर्यु-कषाययोः जातौ
 
 अध्वर्युकषाययोर्जातौ (6.2.10)
+Pāṭha: ashtadhyayi.com data.txt row i=62010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDvaryukazAyayorjAtO",
     text_dev              = "अध्वर्युकषाययोर्जातौ",
+    samagra_slp1          = "aDvaryu-kazAyayoH jAtO prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अध्वर्यु-कषाययोः जातौ प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "अध्वर्यु-कषाययोः जातौ",
     why_dev               = "(सूत्रम् 6.2.10) अध्वर्युकषाययोर्जातौ।",
     anuvritti_from        = ('6.1.1',),

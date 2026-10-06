@@ -4,6 +4,7 @@
 Padaccheda: घु-असोः एत् हौ अभ्यास-लोपः च
 
 घ्वसोरेद्धावभ्यासलोपश्च (6.4.119)
+Pāṭha: ashtadhyayi.com data.txt row i=64119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "GvasoredDAvaByAsalopaSca",
     text_dev              = "घ्वसोरेद्धावभ्यासलोपश्च",
+    samagra_slp1          = "Gu-asoH hO et aByAsalopaH ca",
+    samagra_dev           = "घु-असोः हौ एत्, अभ्यासलोपः च",
     padaccheda_dev        = "घु-असोः एत् हौ अभ्यास-लोपः च",
     why_dev               = "(सूत्रम् 6.4.119) घ्वसोरेद्धावभ्यासलोपश्च।",
     anuvritti_from        = ('6.1.1',),

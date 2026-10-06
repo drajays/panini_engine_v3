@@ -4,6 +4,7 @@
 Padaccheda: पुरा च परीप्सायाम्
 
 पुरा च परीप्सायाम् (8.1.42)
+Pāṭha: ashtadhyayi.com data.txt row i=81042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "purA ca parIpsAyAm",
     text_dev              = "पुरा च परीप्सायाम्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO purA ca parIpsAyAm tiN na Seze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ पुरा च परीप्सायाम् तिङ् न शेषे",
     padaccheda_dev        = "पुरा च परीप्सायाम्",
     why_dev               = "(सूत्रम् 8.1.42) पुरा च परीप्सायाम्।",
     anuvritti_from        = ('8.1.1',),

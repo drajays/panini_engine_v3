@@ -4,6 +4,7 @@
 Padaccheda: भक्तात् अण् अन्यतरस्याम्
 
 भक्तादणन्यतरस्याम् (4.4.68)
+Pāṭha: ashtadhyayi.com data.txt row i=44068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BaktAdaRanyatarasyAm",
     text_dev              = "भक्तादणन्यतरस्याम्",
+    samagra_slp1          = "tat asmE niyuktam dIyate iti BaktAt anyatarasyAmaR",
+    samagra_dev           = "'तत् अस्मै नियुक्तम् दीयते' (इति) भक्तात् अन्यतरस्यामण्",
     padaccheda_dev        = "भक्तात् अण् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 4.4.68) भक्तादणन्यतरस्याम्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अध्यायिनि अदेशकालात्
 
 अध्यायिन्यदेशकालात् (4.4.71)
+Pāṭha: ashtadhyayi.com data.txt row i=44071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDyAyinyadeSakAlAt",
     text_dev              = "अध्यायिन्यदेशकालात्",
+    samagra_slp1          = "tatra aDyAyini adeSakAlAt iti samarTAnAm praTamAt Wak pratyayaH",
+    samagra_dev           = "'तत्र अध्यायिनि अदेशकालात्' (इति) समर्थानाम् प्रथमात् ठक् प्रत्ययः",
     padaccheda_dev        = "अध्यायिनि अदेशकालात्",
     why_dev               = "(सूत्रम् 4.4.71) अध्यायिन्यदेशकालात्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अष्टाभ्यः औश्
 
 अष्टाभ्य औश् (7.1.21)
+Pāṭha: ashtadhyayi.com data.txt row i=71021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "azwABya OS",
     text_dev              = "अष्टाभ्य औश्",
+    samagra_slp1          = "azwAByaH jaS-SasoH OS",
+    samagra_dev           = "अष्टाभ्यः जश्-शसोः औश्",
     padaccheda_dev        = "अष्टाभ्यः औश्",
     why_dev               = "(सूत्रम् 7.1.21) अष्टाभ्य औश्।",
     anuvritti_from        = ('7.1.1',),

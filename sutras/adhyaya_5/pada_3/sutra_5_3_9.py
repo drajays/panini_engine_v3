@@ -4,6 +4,7 @@
 Padaccheda: परि-अभिभ्याम् च
 
 पर्यभिभ्यां च (5.3.9)
+Pāṭha: ashtadhyayi.com data.txt row i=53009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paryaBiByAM ca",
     text_dev              = "पर्यभिभ्यां च",
+    samagra_slp1          = "pari-aBiByAm tasil",
+    samagra_dev           = "परि-अभिभ्याम् तसिल्",
     padaccheda_dev        = "परि-अभिभ्याम् च",
     why_dev               = "(सूत्रम् 5.3.9) पर्यभिभ्यां च।",
     anuvritti_from        = ('5.3.2',),

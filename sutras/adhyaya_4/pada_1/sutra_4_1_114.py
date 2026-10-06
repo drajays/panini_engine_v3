@@ -4,6 +4,7 @@
 Padaccheda: ऋषि-अन्धक-वृष्णि-कुरुभ्यः च
 
 ऋष्यन्धकवृष्णिकुरुभ्यश्च (4.1.114)
+Pāṭha: ashtadhyayi.com data.txt row i=41114 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "fzyanDakavfzRikuruByaSca",
     text_dev              = "ऋष्यन्धकवृष्णिकुरुभ्यश्च",
+    samagra_slp1          = "tasya apatyam iti fzi-anDaka-vfzRi-kuruByaH aR",
+    samagra_dev           = "'तस्य अपत्यम्' (इति)  ऋषि-अन्धक-वृष्णि-कुरुभ्यः अण्",
     padaccheda_dev        = "ऋषि-अन्धक-वृष्णि-कुरुभ्यः च",
     why_dev               = "(सूत्रम् 4.1.114) ऋष्यन्धकवृष्णिकुरुभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

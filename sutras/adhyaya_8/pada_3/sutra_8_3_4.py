@@ -4,6 +4,7 @@
 Padaccheda: अनुनासिकात् परः अनुस्वारः
 
 अनुनासिकात् परोऽनुस्वारः (8.3.4)
+Pāṭha: ashtadhyayi.com data.txt row i=83004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'anunAsikAt paronusvAraH',
     text_dev              = 'अनुनासिकात् परोऽनुस्वारः',
+    samagra_slp1          = "anunAsikAt anyasya roH pUrvasya paraH anusvAraH",
+    samagra_dev           = "अनुनासिकात् (अन्यस्य) रोः पूर्वस्य परः अनुस्वारः",
     padaccheda_dev        = "अनुनासिकात् परः अनुस्वारः",
     why_dev               = "(सूत्रम् 8.3.4) अनुनासिकात् परोऽनुस्वारः।",
     anuvritti_from        = ('8.1.1',),

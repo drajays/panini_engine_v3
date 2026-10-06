@@ -4,6 +4,7 @@
 Padaccheda: अचः उपसर्गात् तः
 
 अच उपसर्गात्तः (7.4.47)
+Pāṭha: ashtadhyayi.com data.txt row i=74047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aca upasargAttaH",
     text_dev              = "अच उपसर्गात्तः",
+    samagra_slp1          = "aNgasya acaH upasargAt taH ti kiti daH GoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अचः उपसर्गात् तः ति किति दः घोः",
     padaccheda_dev        = "अचः उपसर्गात् तः",
     why_dev               = "(सूत्रम् 7.4.47) अच उपसर्गात्तः।",
     anuvritti_from        = ('7.1.1',),

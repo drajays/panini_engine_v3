@@ -4,6 +4,7 @@
 Padaccheda: कर्तरि च ऋषि-देवतयोः
 
 krt-suffix rule: कर्तरि चर्षिदेवतयोः (186)
+Pāṭha: ashtadhyayi.com data.txt row i=32186 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kartari carzidevatayoH",
     text_dev              = "कर्तरि चर्षिदेवतयोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne kartari ca fzi-devatayoH kft karaRe itraH puvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने कर्तरि च ऋषि-देवतयोः कृत् करणे इत्रः पुवः",
     padaccheda_dev        = "कर्तरि च ऋषि-देवतयोः",
     why_dev               = "धातोः कृत्-प्रत्ययः [कर्तरि चर्षिदेवतयोः] विहितः (३.२.186)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

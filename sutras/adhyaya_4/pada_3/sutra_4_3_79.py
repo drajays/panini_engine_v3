@@ -4,6 +4,7 @@
 Padaccheda: पितुः यत् च
 
 पितुर्यच्च (4.3.79)
+Pāṭha: ashtadhyayi.com data.txt row i=43079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pituryacca",
     text_dev              = "पितुर्यच्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA pituH yat ca AgataH tata WaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा पितुः यत् च आगतः तत ठञ्",
     padaccheda_dev        = "पितुः यत् च",
     why_dev               = "(सूत्रम् 4.3.79) पितुर्यच्च।",
     anuvritti_from        = ('4.1.1',),

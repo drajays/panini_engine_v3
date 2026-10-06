@@ -4,6 +4,7 @@
 Padaccheda: बन्धुनि बहुव्रीहौ
 
 बन्धुनि बहुव्रीहौ (6.1.14)
+Pāṭha: ashtadhyayi.com data.txt row i=61014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "banDuni bahuvrIhO",
     text_dev              = "बन्धुनि बहुव्रीहौ",
+    samagra_slp1          = "banDuni bahuvrIhO zyaNaH samprasAraRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "बन्धुनि बहुव्रीहौ ष्यङः सम्प्रसारणम्",
     padaccheda_dev        = "बन्धुनि बहुव्रीहौ",
     why_dev               = "(सूत्रम् 6.1.14) बन्धुनि बहुव्रीहौ।",
     anuvritti_from        = ('6.1.1',),

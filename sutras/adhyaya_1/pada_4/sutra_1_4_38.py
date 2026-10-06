@@ -10,6 +10,7 @@ E.g. *devadattam abhikrudhyati*.
 
 *Engine:* tags bearing ``"kruDa_druha_karma"`` get ``"karman"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'kruDadruhorupasfzwayoH karma',
     text_dev             = 'क्रुधद्रुहोरुपसृष्टयोः कर्म',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake kruDa-druhoH upasfzwayoH karma sampradAnam yam prati kopaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके क्रुध-द्रुहोः उपसृष्टयोः कर्म सम्प्रदानम् यम् प्रति कोपः",
     padaccheda_dev       = "क्रुध-द्रुहोः / उपसृष्टयोः / कर्म",
     why_dev              = (
         "क्रुध्-द्रुह्-धात्वोः उपसर्गसहितयोः यत् कर्म तत् कर्म-कारक-संज्ञकम्। "

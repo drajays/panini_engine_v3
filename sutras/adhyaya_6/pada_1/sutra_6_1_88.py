@@ -24,6 +24,7 @@ the umbrella of 6.1.88).
 
 We implement narrowly: when the flat stream has 'a' followed by 'E'
 or 'O', replace both with the E/O.
+Pāṭha: ashtadhyayi.com data.txt row i=61088 (Art. 14).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
@@ -82,6 +83,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'vfdDireci',
     text_dev       = 'वृद्धिरेचि',
+    samagra_slp1   = "At eci pUrvaparayoH ekaH vfdDiH",
+    samagra_dev    = "आत् एचि पूर्वपरयोः एकः वृद्धिः",
     padaccheda_dev = "वृद्धिः एचि",
     why_dev        = "अ-वर्णात् परस्मिन् एच्-वर्णे (ए/ऐ/ओ/औ) एकादेश-रूपेण "
                      "वृद्धिः।",

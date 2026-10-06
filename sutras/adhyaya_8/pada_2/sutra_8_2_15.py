@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि इरः
 
 छन्दसीरः (8.2.15)
+Pāṭha: ashtadhyayi.com data.txt row i=82015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "CandasIraH",
     text_dev              = "छन्दसीरः",
+    samagra_slp1          = "padasya pUrvatrAsidDam Candasi iraH vaH matoH saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् छन्दसि इरः वः मतोः संज्ञायाम्",
     padaccheda_dev        = "छन्दसि इरः",
     why_dev               = "(सूत्रम् 8.2.15) छन्दसीरः।",
     anuvritti_from        = ('8.1.1',),

@@ -14,6 +14,7 @@ Engine (narrow, mechanically blind):
   Gate key ``2_2_8_sasthi_gate``.  Recipe arms ``state.meta['2_2_8_arm']``
   and tags a Term with ``sasthi_samasa`` indicating the genitive tatpuruṣa
   context.  Gate is raised on first fire.
+Pāṭha: ashtadhyayi.com data.txt row i=22008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="zazWI",
     text_dev="षष्ठी",
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः षष्ठी",
     padaccheda_dev="षष्ठी",
     why_dev=(
         "षष्ठ्यन्तं सुबन्तेन समस्यते — राजपुरुषः, देवप्रियः इत्यादि षष्ठी-तत्पुरुषः।"

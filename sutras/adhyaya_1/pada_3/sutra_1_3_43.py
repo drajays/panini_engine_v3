@@ -16,6 +16,7 @@ state.meta.
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
 vibhasha_default=True: the optional form is taken by default.
+Pāṭha: ashtadhyayi.com data.txt row i=13043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     vibhasha_default=True,
     text_slp1='anupasargAdvA',
     text_dev='अनुपसर्गाद्वा',
+    samagra_slp1="anupasargAt kramaH vA Atmanepadam",
+    samagra_dev="अनुपसर्गात् क्रमः वा आत्मनेपदम्",
     padaccheda_dev="अनुपसर्गात् (पञ्चमी-एकवचन) / वा (अव्यय)",
     why_dev=(
         "उपसर्गरहितस्य धातोः प्रयोगे वा आत्मनेपदम् — "

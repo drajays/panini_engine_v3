@@ -4,6 +4,7 @@
 Padaccheda: संज्ञायाम् कन्
 
 संज्ञायां कन् (5.3.75)
+Pāṭha: ashtadhyayi.com data.txt row i=53075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYAyAM kan",
     text_dev              = "संज्ञायां कन्",
+    samagra_slp1          = "kutsite prAtipadikAt saMjYAyAM kan",
+    samagra_dev           = "कुत्सिते प्रातिपदिकात् संज्ञायां कन्",
     padaccheda_dev        = "संज्ञायाम् कन्",
     why_dev               = "(सूत्रम् 5.3.75) संज्ञायां कन्।",
     anuvritti_from        = ('5.3.70',),

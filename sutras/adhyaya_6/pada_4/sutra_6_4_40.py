@@ -4,6 +4,7 @@
 Padaccheda: गमः क्वौ
 
 गमः क्वौ (6.4.40)
+Pāṭha: ashtadhyayi.com data.txt row i=64040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gamaH kvO",
     text_dev              = "गमः क्वौ",
+    samagra_slp1          = "aNgasya asidDavadatrABAt gamaH kvO nalopaH anunAsika lopaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् गमः क्वौ नलोपः अनुनासिक लोपः",
     padaccheda_dev        = "गमः क्वौ",
     why_dev               = "(सूत्रम् 6.4.40) गमः क्वौ।",
     anuvritti_from        = ('6.1.1',),

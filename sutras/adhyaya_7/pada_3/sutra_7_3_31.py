@@ -4,6 +4,7 @@
 Padaccheda: यथातथ-यथापुरयोः पर्यायेण
 
 यथातथयथापुरयोः पर्यायेण (7.3.31)
+Pāṭha: ashtadhyayi.com data.txt row i=73031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yaTAtaTayaTApurayoH paryAyeRa",
     text_dev              = "यथातथयथापुरयोः पर्यायेण",
+    samagra_slp1          = "aNgasya uttarapadasya yaTAtaTayaTApurayoH paryAyeRa vfdDiH acaH YRiti tadDitezu AdeH parimARasya naYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य यथातथयथापुरयोः पर्यायेण वृद्धिः अचः ञ्णिति तद्धितेषु आदेः परिमाणस्य नञः",
     padaccheda_dev        = "यथातथ-यथापुरयोः पर्यायेण",
     why_dev               = "(सूत्रम् 7.3.31) यथातथयथापुरयोः पर्यायेण।",
     anuvritti_from        = ('7.1.1',),

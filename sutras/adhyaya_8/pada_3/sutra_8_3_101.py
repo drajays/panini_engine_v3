@@ -4,6 +4,7 @@
 Padaccheda: ह्रस्वात् त-आदौ तद्धिते
 
 ह्रस्वात् तादौ तद्धिते (8.3.101)
+Pāṭha: ashtadhyayi.com data.txt row i=83101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hrasvAt tAdO tadDite",
     text_dev              = "ह्रस्वात् तादौ तद्धिते",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH hrasvAt tAdO tadDite saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः ह्रस्वात् तादौ तद्धिते सः",
     padaccheda_dev        = "ह्रस्वात् त-आदौ तद्धिते",
     why_dev               = "(सूत्रम् 8.3.101) ह्रस्वात् तादौ तद्धिते।",
     anuvritti_from        = ('8.1.1',),

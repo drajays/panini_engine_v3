@@ -4,6 +4,7 @@
 Padaccheda: शुक्रात् घन्
 
 शुक्राद्घन् (4.2.26)
+Pāṭha: ashtadhyayi.com data.txt row i=42026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SukrAdGan",
     text_dev              = "शुक्राद्घन्",
+    samagra_slp1          = "sA asya devatA iti SukrAt Gan",
+    samagra_dev           = "'सा अस्य देवता' (इति) शुक्रात् घन्",
     padaccheda_dev        = "शुक्रात् घन्",
     why_dev               = "(सूत्रम् 4.2.26) शुक्राद्घन्।",
     anuvritti_from        = ('4.1.1',),

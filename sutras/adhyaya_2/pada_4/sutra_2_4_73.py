@@ -4,6 +4,7 @@
 Padaccheda: बहुलम् छन्दसि
 
 Bahulam (varied) in chandas context.
+Pāṭha: ashtadhyayi.com data.txt row i=24073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahulaM Candasi",
     text_dev              = "बहुलं छन्दसि",
+    samagra_slp1          = "bahulam Candasi luk adi-praBftiByaH SapaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "बहुलम् छन्दसि लुक् अदि-प्रभृतिभ्यः शपः",
     padaccheda_dev        = "बहुलम् छन्दसि",
     why_dev               = "बहुलम् छन्दसि (२.४.७३)।",
     anuvritti_from        = ('2.4.72',),

@@ -4,6 +4,7 @@
 Padaccheda: नित्य-वीप्सयोः
 
 नित्यवीप्सयोः (8.1.4)
+Pāṭha: ashtadhyayi.com data.txt row i=81004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nityavIpsayoH",
     text_dev              = "नित्यवीप्सयोः",
+    samagra_slp1          = "sarvasya dve nityavIpsayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सर्वस्य द्वे नित्यवीप्सयोः",
     padaccheda_dev        = "नित्य-वीप्सयोः",
     why_dev               = "(सूत्रम् 8.1.4) नित्यवीप्सयोः।",
     anuvritti_from        = ('8.1.1',),

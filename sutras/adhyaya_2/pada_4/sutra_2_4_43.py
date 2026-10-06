@@ -2,7 +2,7 @@
 2.4.43  लुङि च  —  VIDHI (narrow)
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=204043
+- ashtadhyayi.com data.txt row i=24043
 - Kāśikā: हन् लुङि च (वध-आदेशः)
 - Cross-validation: tests/unit/test_avaDIt_luN_han.py,
   tests/unit/test_avadhIt_han_lun_ekavacana.py,
@@ -59,6 +59,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='luNi ca',
     text_dev='लुङि च',
+    samagra_slp1="ArDaDAtuke luNi ca hanaH vaDa",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आर्धधातुके लुङि च हनः वध",
     padaccheda_dev="हन् / लुङि / च",
     why_dev="लुङ्-लकारे हन्-धातोः स्थाने वध्-आदेशः (अवधीत्-प्रक्रिया)।",
     anuvritti_from=("2.4.1",),

@@ -4,6 +4,7 @@
 Padaccheda: निष्ठायाम् सेटि
 
 निष्ठायां सेटि (6.4.52)
+Pāṭha: ashtadhyayi.com data.txt row i=64052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nizWAyAM sewi",
     text_dev              = "निष्ठायां सेटि",
+    samagra_slp1          = "aNgasya asidDavadatrABAt ArDaDAtuke nizWAyAm sewi nalopaH lopaH ReH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् आर्धधातुके निष्ठायाम् सेटि नलोपः लोपः णेः",
     padaccheda_dev        = "निष्ठायाम् सेटि",
     why_dev               = "(सूत्रम् 6.4.52) निष्ठायां सेटि।",
     anuvritti_from        = ('6.1.1',),

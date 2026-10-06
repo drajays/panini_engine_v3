@@ -4,6 +4,7 @@
 Padaccheda: वस्तेः ढञ्
 
 वस्तेर्ढञ् (5.3.101)
+Pāṭha: ashtadhyayi.com data.txt row i=53101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vasterQaY",
     text_dev              = "वस्तेर्ढञ्",
+    samagra_slp1          = "vasteH ive QaY",
+    samagra_dev           = "वस्तेः इवे ढञ्",
     padaccheda_dev        = "वस्तेः ढञ्",
     why_dev               = "(सूत्रम् 5.3.101) वस्तेर्ढञ्।",
     anuvritti_from        = ('4.1.76',),

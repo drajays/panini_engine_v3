@@ -4,6 +4,7 @@
 Padaccheda: तद्राजस्य बहुषु तेन एव अ-स्त्रियाम्
 
 tadraaja suffix luk in plural non-feminine.
+Pāṭha: ashtadhyayi.com data.txt row i=24062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadrAjasya bahuzu tenEvAstriyAm",
     text_dev              = "तद्राजस्य बहुषु तेनैवास्त्रियाम्",
+    samagra_slp1          = "tadrAjasya bahuzu tena eva astriyAm luk",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तद्राजस्य बहुषु तेन एव अस्त्रियाम् लुक्",
     padaccheda_dev        = "तद्राजस्य बहुषु तेन एव अ-स्त्रियाम्",
     why_dev               = "तद्राजस्य बहुषु तेन एव अ-स्त्रियाम् (२.४.६२)।",
     anuvritti_from        = ('2.4.58',),

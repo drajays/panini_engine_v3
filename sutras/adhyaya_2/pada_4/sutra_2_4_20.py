@@ -4,6 +4,7 @@
 Padaccheda: संज्ञायाम् कन्था उशीनरेषु
 
 In samjna kantha etc. in Usinara territory.
+Pāṭha: ashtadhyayi.com data.txt row i=24020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYAyAM kanToSInarezu",
     text_dev              = "संज्ञायां कन्थोशीनरेषु",
+    samagra_slp1          = "tatpuruzonaYkarmaDArayaH saMjYAyAm kanTA uSInarezu napuMsakam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तत्पुरुषोऽनञ्कर्मधारयः संज्ञायाम् कन्था उशीनरेषु नपुंसकम्",
     padaccheda_dev        = "संज्ञायाम् कन्था उशीनरेषु",
     why_dev               = "संज्ञायाम् कन्था उशीनरेषु (२.४.२०)।",
     anuvritti_from        = ('2.4.18',),

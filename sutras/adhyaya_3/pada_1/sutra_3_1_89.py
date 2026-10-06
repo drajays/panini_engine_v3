@@ -4,6 +4,7 @@
 Padaccheda: न दुह-स्नु-नमाम् यक्-चिणौ
 
 Krt suffix rule from dhatu: न दुहस्नुनमां यक्चिणौ (89)
+Pāṭha: ashtadhyayi.com data.txt row i=31089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na duhasnunamAM yakciRO",
     text_dev              = "न दुहस्नुनमां यक्चिणौ",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH na duha-snu-namAm yak-ciRO karmavat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः न दुह-स्नु-नमाम् यक्-चिणौ कर्मवत्",
     padaccheda_dev        = "न दुह-स्नु-नमाम् यक्-चिणौ",
     why_dev               = "धातोः [न दुहस्नुनमां यक्चिणौ]-प्रत्ययः विहितः (३.१.89)।",
     anuvritti_from        = ('3.1.1',),

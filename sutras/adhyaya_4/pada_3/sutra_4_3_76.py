@@ -4,6 +4,7 @@
 Padaccheda: शुण्डिक-आदिभ्यः अण्
 
 शुण्डिकादिभ्योऽण् (4.3.76)
+Pāṭha: ashtadhyayi.com data.txt row i=43076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'SuRqikAdiByoR',
     text_dev              = 'शुण्डिकादिभ्योऽण्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA SuRqikA-AdiByaH aR AgataH tata",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा शुण्डिका-आदिभ्यः अण् आगतः तत",
     padaccheda_dev        = "शुण्डिक-आदिभ्यः अण्",
     why_dev               = "(सूत्रम् 4.3.76) शुण्डिकादिभ्योऽण्।",
     anuvritti_from        = ('4.1.1',),

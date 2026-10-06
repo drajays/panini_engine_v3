@@ -4,6 +4,7 @@
 Padaccheda: खण्डिका-आदिभ्यः च
 
 खण्डिकादिभ्यश्च (4.2.45)
+Pāṭha: ashtadhyayi.com data.txt row i=42045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "KaRqikAdiByaSca",
     text_dev              = "खण्डिकादिभ्यश्च",
+    samagra_slp1          = "tasya samUhaH iti KaRqikAdiByaH aY",
+    samagra_dev           = "तस्य समूहः (इति) खण्डिकादिभ्यः अञ्",
     padaccheda_dev        = "खण्डिका-आदिभ्यः च",
     why_dev               = "(सूत्रम् 4.2.45) खण्डिकादिभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

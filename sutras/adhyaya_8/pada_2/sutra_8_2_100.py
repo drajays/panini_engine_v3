@@ -4,6 +4,7 @@
 Padaccheda: अनुदात्तम् प्रश्नान्त-अभिपूजितयोः
 
 अनुदात्तं प्रश्नान्ताभिपूजितयोः (8.2.100)
+Pāṭha: ashtadhyayi.com data.txt row i=82100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anudAttaM praSnAntABipUjitayoH",
     text_dev              = "अनुदात्तं प्रश्नान्ताभिपूजितयोः",
+    samagra_slp1          = "padasya pUrvatrAsidDam vAkyasya weH plutaH udAttaH anudAttam praSnAntABipUjitayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वाक्यस्य टेः प्लुतः उदात्तः अनुदात्तम् प्रश्नान्ताभिपूजितयोः",
     padaccheda_dev        = "अनुदात्तम् प्रश्नान्त-अभिपूजितयोः",
     why_dev               = "(सूत्रम् 8.2.100) अनुदात्तं प्रश्नान्ताभिपूजितयोः।",
     anuvritti_from        = ('8.1.1',),

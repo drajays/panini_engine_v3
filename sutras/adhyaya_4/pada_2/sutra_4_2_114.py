@@ -13,6 +13,7 @@ Later *paratva* rules (e.g. **4.2.104**, **106**, **109**, **110**) may block th
 recipe marks *śaiṣika*-*śeṣa*-eligible via ``state.meta[META_ELIGIBLE_INDICES]``
 and (b) **1.1.73** *vṛddha-pada* indices.  No *Cha* segment is inserted here
 (*vidhi* / *prakriyā* pending).  **4.2.92** *adhikāra* must be open.
+Pāṭha: ashtadhyayi.com data.txt row i=42114 (Art. 14).
 """
 from __future__ import annotations
 
@@ -86,6 +87,8 @@ SUTRA = SutraRecord(
     text_dev        = (
         'वृद्धाच्छः'
     ),
+    samagra_slp1    = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA vfdDAt CaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev     = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा वृद्धात् छः",
     padaccheda_dev  = "वृद्धात् (पञ्चमी-एकवचनम्) / छः (प्रथमा-एकवचनम्)",
     why_dev         = (
         "वृद्ध-प्रातिपदिकात् शैषिके शेषार्थे छ-प्रत्ययः, अण्-बाधकः; "

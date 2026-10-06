@@ -8,6 +8,7 @@ Example: *yāvat jīvanam* → *yāvajjīvam* ("as long as life lasts").
 
 v3 narrow slice: gate-marks the avyayībhāva samāsa with key
 ``2_1_8_yavad_avadhara``.
+Pāṭha: ashtadhyayi.com data.txt row i=21008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -41,6 +42,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'yAvadavaDAraRe',
     text_dev              = 'यावदवधारणे',
+    samagra_slp1          = "yAvat avaDAraRe supA saha avyayIBAvaH samAsaH",
+    samagra_dev           = "यावत् अवधारणे सुपा सह अव्ययीभावः समासः",
     padaccheda_dev        = "यावत् / अवधारणे",
     why_dev               = "यावत्-अव्यय-पूर्वकः अवधारणार्थे अव्ययीभावः (२.१.८)।",
     anuvritti_from        = ("2.1.5",),

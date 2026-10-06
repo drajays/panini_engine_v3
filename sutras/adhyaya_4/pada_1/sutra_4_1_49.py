@@ -4,6 +4,7 @@
 Padaccheda: इन्द्र-वरुण-भव-शर्व-रुद्र-मृड-हिम-अरण्य-यव-यवन-मातुल-आचार्याणाम् आनुक्
 
 इन्द्रवरुणभवशर्वरुद्रमृडहिमारण्ययवयवनमातुलाचार्याणामानुक् (4.1.49)
+Pāṭha: ashtadhyayi.com data.txt row i=41049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "indravaruRaBavaSarvarudramfqahimAraRyayavayavanamAtulAcAryARAmAnuk",
     text_dev              = "इन्द्रवरुणभवशर्वरुद्रमृडहिमारण्ययवयवनमातुलाचार्याणामानुक्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt indra-varuRa-Bava-Sarva-rudra-mfqa-hima-araRya-yava-yavana-mAtula-AcAryARAm Anuk NIz pum-yogAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् इन्द्र-वरुण-भव-शर्व-रुद्र-मृड-हिम-अरण्य-यव-यवन-मातुल-आचार्याणाम् आनुक् ङीष् पुम्-योगात्",
     padaccheda_dev        = "इन्द्र-वरुण-भव-शर्व-रुद्र-मृड-हिम-अरण्य-यव-यवन-मातुल-आचार्याणाम् आनुक्",
     why_dev               = "(सूत्रम् 4.1.49) इन्द्रवरुणभवशर्वरुद्रमृडहिमारण्ययवयवनमातुलाचार्याणामानुक्।",
     anuvritti_from        = ('4.1.1',),

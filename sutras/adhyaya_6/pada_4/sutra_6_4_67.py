@@ -4,6 +4,7 @@
 Padaccheda: एः लिङि
 
 एर्लिङि (6.4.67)
+Pāṭha: ashtadhyayi.com data.txt row i=64067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -54,6 +55,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "erliNi",
     text_dev              = "एर्लिङि",
+    samagra_slp1          = "aNgasya asidDavadatrABAt ArDaDAtuke eH liNi kNiti AtaH Gu-mA-sTA-gA-pA-jahAti-sAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् आर्धधातुके एः लिङि क्ङिति आतः घु-मा-स्था-गा-पा-जहाति-साम्",
     padaccheda_dev        = "एः लिङि",
     why_dev               = "(सूत्रम् 6.4.67) एर्लिङि।",
     anuvritti_from        = ('6.1.1',),

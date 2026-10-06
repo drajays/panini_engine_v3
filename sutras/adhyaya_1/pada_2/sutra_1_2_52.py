@@ -22,6 +22,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -48,6 +49,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'viSezaRAnAM cAjAteH',
     text_dev                = 'विशेषणानां चाजातेः',
+    samagra_slp1            = "viSezaRAnAm ca a-jAteH lupi yuktavat vyakti-vacane",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "विशेषणानाम् च अ-जातेः लुपि युक्तवत् व्यक्ति-वचने",
     padaccheda_dev          = "विशेषणानाम् / च / अजातेः",
     why_dev                 = (
         "विशेषणानां जातिवाचित्वं विना एकशेषो विधीयते — "

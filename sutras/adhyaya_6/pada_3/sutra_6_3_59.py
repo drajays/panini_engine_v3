@@ -4,6 +4,7 @@
 Padaccheda: एक-हल्-आदौ पूरयितव्ये अन्यतरस्याम्
 
 एकहलादौ पूरयितव्येऽन्यतरस्याम् (6.3.59)
+Pāṭha: ashtadhyayi.com data.txt row i=63059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ekahalAdO pUrayitavyenyatarasyAm',
     text_dev              = 'एकहलादौ पूरयितव्येऽन्यतरस्याम्',
+    samagra_slp1          = "uttarapade ekahalAdO pUrayitavye anyatarasyAm treH udakasya udaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे एकहलादौ पूरयितव्ये अन्यतरस्याम् त्रेः उदकस्य उदः",
     padaccheda_dev        = "एक-हल्-आदौ पूरयितव्ये अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.3.59) एकहलादौ पूरयितव्येऽन्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

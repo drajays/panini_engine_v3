@@ -4,6 +4,7 @@
 Padaccheda: हनः वध (लुप्तप्रथमान्तनिर्देशः) लिङि
 
 han root is replaced by vadha in lin.
+Pāṭha: ashtadhyayi.com data.txt row i=24042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "hano vaDa liNi",
     text_dev              = "हनो वध लिङि",
+    samagra_slp1          = "ArDaDAtuke hanaH vaDa liNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके हनः वध लिङि",
     padaccheda_dev        = "हनः वध (लुप्तप्रथमान्तनिर्देशः) लिङि",
     why_dev               = "हनः वध लिङि (२.४.४२)।",
     anuvritti_from        = ('2.4.40',),

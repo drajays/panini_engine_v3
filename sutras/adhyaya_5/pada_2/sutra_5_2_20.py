@@ -4,6 +4,7 @@
 Padaccheda: शालीन-कौपीने अधृष्ट-अकार्ययोः
 
 शालीनकौपीने अधृष्टाकार्ययोः (5.2.20)
+Pāṭha: ashtadhyayi.com data.txt row i=52020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SAlInakOpIne aDfzwAkAryayoH",
     text_dev              = "शालीनकौपीने अधृष्टाकार्ययोः",
+    samagra_slp1          = "SAlIna-kOpIne aDfzwa-akAryayoH nipAtyete",
+    samagra_dev           = "शालीन-कौपीने अधृष्ट-अकार्ययोः (निपात्येते)",
     padaccheda_dev        = "शालीन-कौपीने अधृष्ट-अकार्ययोः",
     why_dev               = "(सूत्रम् 5.2.20) शालीनकौपीने अधृष्टाकार्ययोः।",
     anuvritti_from        = ('4.1.82',),

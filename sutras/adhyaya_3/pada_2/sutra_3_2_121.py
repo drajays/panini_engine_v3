@@ -4,6 +4,7 @@
 Padaccheda: नन्वोः विभाषा
 
 krt-suffix rule: नन्वोर्विभाषा (121)
+Pāṭha: ashtadhyayi.com data.txt row i=32121 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nanvorviBAzA",
     text_dev              = "नन्वोर्विभाषा",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte nanvoH viBAzA kft anadyatane law pfzwaprativacane",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते नन्वोः विभाषा कृत् अनद्यतने लट् पृष्टप्रतिवचने",
     padaccheda_dev        = "नन्वोः विभाषा",
     why_dev               = "धातोः कृत्-प्रत्ययः [नन्वोर्विभाषा] विहितः (३.२.121)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

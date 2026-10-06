@@ -7,6 +7,7 @@ Padaccheda: अध्ययनतः / अविप्रकृष्ट-आख�
 non-remote (aviprākṛṣṭa) named Vedic texts take ekavacana.
 
 Engine: sets gate "2_4_5_adhyayana_avipraksrta_ekavacana".
+Pāṭha: ashtadhyayi.com data.txt row i=24005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1      = 'aDyayanatoviprakfzwAKyAnAm',
     text_dev       = 'अध्ययनतोऽविप्रकृष्टाख्यानाम्',
+    samagra_slp1   = "aDyayanataH a-vi-prakfzwa-AKyAnAm ekavacanam dvandvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "अध्ययनतः अ-वि-प्रकृष्ट-आख्यानाम् एकवचनम् द्वन्द्वः",
     padaccheda_dev = "अध्ययनतः / अविप्रकृष्ट-आख्यानाम्",
     why_dev        = "अध्ययन-दृष्ट्या अविप्रकृष्ट-नामधेय-द्वन्द्वे एकवचनम्।",
     anuvritti_from = ("2.4.1", "2.4.2"),

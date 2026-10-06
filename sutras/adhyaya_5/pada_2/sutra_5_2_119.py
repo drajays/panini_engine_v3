@@ -4,6 +4,7 @@
 Padaccheda: शत-सहस्र-अन्तात् च निष्कात्
 
 शतसहस्रान्ताच्च निष्कात् (5.2.119)
+Pāṭha: ashtadhyayi.com data.txt row i=52119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SatasahasrAntAcca nizkAt",
     text_dev              = "शतसहस्रान्ताच्च निष्कात्",
+    samagra_slp1          = "tat asya asmin astIti iti Sata-sahasrAntAt nizkAt WaY",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) शत-सहस्रान्तात् निष्कात् ठञ्",
     padaccheda_dev        = "शत-सहस्र-अन्तात् च निष्कात्",
     why_dev               = "(सूत्रम् 5.2.119) शतसहस्रान्ताच्च निष्कात्।",
     anuvritti_from        = ('4.1.82',),

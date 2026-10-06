@@ -4,6 +4,7 @@
 Padaccheda: वा । शरि
 
 वा शरि (8.3.36)
+Pāṭha: ashtadhyayi.com data.txt row i=83036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA Sari",
     text_dev              = "वा शरि",
+    samagra_slp1          = "visarjanIyasya Sari vA visarjanIyaH",
+    samagra_dev           = "विसर्जनीयस्य शरि वा विसर्जनीयः",
     padaccheda_dev        = "वा । शरि",
     why_dev               = "(सूत्रम् 8.3.36) वा शरि।",
     anuvritti_from        = ('8.1.1',),

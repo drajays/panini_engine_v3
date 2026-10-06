@@ -4,6 +4,7 @@
 Padaccheda: ककुदस्य अवस्थायाम् लोपः
 
 ककुदस्यावस्थायां लोपः (5.4.146)
+Pāṭha: ashtadhyayi.com data.txt row i=54146 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kakudasyAvasTAyAM lopaH",
     text_dev              = "ककुदस्यावस्थायां लोपः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA kakudasya avasTAyAm lopaH bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा ककुदस्य अवस्थायाम् लोपः बहुव्रीहौ",
     padaccheda_dev        = "ककुदस्य अवस्थायाम् लोपः",
     why_dev               = "(सूत्रम् 5.4.146) ककुदस्यावस्थायां लोपः।",
     anuvritti_from        = ('5.4.68',),

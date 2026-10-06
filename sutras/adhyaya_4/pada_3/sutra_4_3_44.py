@@ -4,6 +4,7 @@
 Padaccheda: उप्ते च
 
 उप्ते च (4.3.44)
+Pāṭha: ashtadhyayi.com data.txt row i=43044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upte ca",
     text_dev              = "उप्ते च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA upte ca tatra kAlAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा उप्ते च तत्र कालात्",
     padaccheda_dev        = "उप्ते च",
     why_dev               = "(सूत्रम् 4.3.44) उप्ते च।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: सूत्रम् प्रतिष्णातम्
 
 सूत्रं प्रतिष्णातम् (8.3.90)
+Pāṭha: ashtadhyayi.com data.txt row i=83090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sUtraM pratizRAtam",
     text_dev              = "सूत्रं प्रतिष्णातम्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH sUtram pratizRAtam saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः सूत्रम् प्रतिष्णातम् सः",
     padaccheda_dev        = "सूत्रम् प्रतिष्णातम्",
     why_dev               = "(सूत्रम् 8.3.90) सूत्रं प्रतिष्णातम्।",
     anuvritti_from        = ('8.1.1',),

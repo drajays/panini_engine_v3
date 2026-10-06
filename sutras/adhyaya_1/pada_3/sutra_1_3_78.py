@@ -11,6 +11,7 @@
 *Engine:* sets ``prayoga_1_3_78_seza_kartari_parasmaipada`` in ``paribhasha_gates``.  The recipe
 signals *ātmanepada* licence with ``Term.meta['kartari_atmanepada_licensed']`` on the primary
 *dhātu* *Term*; **cond** is false when the gate already matches the desired value (R3-safe).
+Pāṭha: ashtadhyayi.com data.txt row i=13078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'SezAt kartari parasmEpadam',
     text_dev       = 'शेषात् कर्तरि परस्मैपदम्',
+    samagra_slp1   = "SezAt kartari parasmEpadam",
+    samagra_dev    = "शेषात् कर्तरि परस्मैपदम्",
     padaccheda_dev = "शेषात् (पञ्चमी) / कर्तरि (सप्तमी) / परस्मैपदम् (प्रथमा)",
     why_dev        = (
         "१.३.१२–७७ इत्यादिष्व् आत्मनेपद-विषयं विहाय अन्येभ्यो धातुभ्यः कर्तरि परस्मैपदम्; "

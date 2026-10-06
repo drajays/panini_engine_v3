@@ -4,6 +4,7 @@
 Padaccheda: ना-धा-अर्थ-प्रत्यये च्वि-अर्थे
 
 krt-suffix rule: नाधाऽर्थप्रत्यये च्व्यर्थे
+Pāṭha: ashtadhyayi.com data.txt row i=34062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nADArTapratyaye cvyarTe',
     text_dev              = 'नाधाऽर्थप्रत्यये च्व्यर्थे',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH nA-DA-arTapratyaye cvyarTe kft ktvA-RamulO kf-BvoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः ना-धा-अर्थप्रत्यये च्व्यर्थे कृत् क्त्वा-णमुलौ कृ-भ्वोः",
     padaccheda_dev        = "ना-धा-अर्थ-प्रत्यये च्वि-अर्थे",
     why_dev               = "धातोः प्रत्ययः (३.4.62)।",
     anuvritti_from        = ('3.1.1',),

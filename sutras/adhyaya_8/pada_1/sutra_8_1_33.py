@@ -4,6 +4,7 @@
 Padaccheda: अङ्ग अप्रातिलोम्ये
 
 अङ्गाप्रातिलोम्ये (8.1.33)
+Pāṭha: ashtadhyayi.com data.txt row i=81033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aNgAprAtilomye",
     text_dev              = "अङ्गाप्रातिलोम्ये",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO aNga aprAtilomye tiN na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ अङ्ग अप्रातिलोम्ये तिङ् न",
     padaccheda_dev        = "अङ्ग अप्रातिलोम्ये",
     why_dev               = "(सूत्रम् 8.1.33) अङ्गाप्रातिलोम्ये।",
     anuvritti_from        = ('8.1.1',),

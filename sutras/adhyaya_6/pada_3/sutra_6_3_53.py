@@ -4,6 +4,7 @@
 Padaccheda: पद् यति अतदर्थे
 
 पद् यत्यतदर्थे (6.3.53)
+Pāṭha: ashtadhyayi.com data.txt row i=63053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pad yatyatadarTe",
     text_dev              = "पद् यत्यतदर्थे",
+    samagra_slp1          = "uttarapade pad yati atadarTe treH pAdasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे पद् यति अतदर्थे त्रेः पादस्य",
     padaccheda_dev        = "पद् यति अतदर्थे",
     why_dev               = "(सूत्रम् 6.3.53) पद् यत्यतदर्थे।",
     anuvritti_from        = ('6.1.1',),

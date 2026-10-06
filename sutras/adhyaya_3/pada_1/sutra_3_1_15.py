@@ -4,6 +4,7 @@
 Padaccheda: कर्मणः रोमन्थ-तपोभ्याम् वर्ति-चरोः
 
 Krt suffix rule from dhatu: कर्मणः रोमन्थतपोभ्यां वर्तिचरोः (15)
+Pāṭha: ashtadhyayi.com data.txt row i=31015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'karmaRo romanTatapoByAM varticaroH',
     text_dev              = 'कर्मणो रोमन्थतपोभ्यां वर्तिचरोः',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca karmaRaH romanTa-tapoByAm vartticaroH vA kyaN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कर्मणः रोमन्थ-तपोभ्याम् वर्त्तिचरोः वा क्यङ्",
     padaccheda_dev        = "कर्मणः रोमन्थ-तपोभ्याम् वर्ति-चरोः",
     why_dev               = "धातोः [कर्मणः रोमन्थतपोभ्यां वर्तिचरोः]-प्रत्ययः विहितः (३.१.15)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अर्हे कृत्य-तृचः च
 
 krt-suffix rule: अर्हे कृत्यतृचश्च
+Pāṭha: ashtadhyayi.com data.txt row i=33169 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "arhe kftyatfcaSca",
     text_dev              = "अर्हे कृत्यतृचश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH arhe kftya-tfcaH ca kft liN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः अर्हे कृत्य-तृचः च कृत् लिङ्",
     padaccheda_dev        = "अर्हे कृत्य-तृचः च",
     why_dev               = "धातोः प्रत्ययः (३.3.169)।",
     anuvritti_from        = ('3.1.1',),

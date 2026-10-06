@@ -4,6 +4,7 @@
 Padaccheda: अन्यतः ङीष्
 
 अन्यतो ङीष्। (4.1.40)
+Pāṭha: ashtadhyayi.com data.txt row i=41040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'anyato NIz',
     text_dev              = 'अन्यतो ङीष्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt anyataH NIz varRAt anudAttAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् अन्यतः ङीष् वर्णात् अनुदात्तात्",
     padaccheda_dev        = "अन्यतः ङीष्",
     why_dev               = "(सूत्रम् 4.1.40) अन्यतो ङीष्।।",
     anuvritti_from        = ('4.1.1',),

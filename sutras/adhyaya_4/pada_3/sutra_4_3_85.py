@@ -4,6 +4,7 @@
 Padaccheda: तत् गच्छति (क्रियापदम्) पथि-दूतयोः
 
 तद्गच्छति पथिदूतयोः (4.3.85)
+Pāṭha: ashtadhyayi.com data.txt row i=43085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadgacCati paTidUtayoH",
     text_dev              = "तद्गच्छति पथिदूतयोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA tat gacCati paTidUtayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा तत् गच्छति पथिदूतयोः",
     padaccheda_dev        = "तत् गच्छति (क्रियापदम्) पथि-दूतयोः",
     why_dev               = "(सूत्रम् 4.3.85) तद्गच्छति पथिदूतयोः।",
     anuvritti_from        = ('4.1.1',),

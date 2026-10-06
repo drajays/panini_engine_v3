@@ -18,6 +18,7 @@ v3 *silico*:
 freezes a breadcrumb in ``paribhasha_gates[GATE_KEY]``.
 
 See also: ``sutra_1_1_3`` / ``sutra_1_1_4``, then ``sutra_1_1_6`` (*dīdhī*…).
+Pāṭha: ashtadhyayi.com data.txt row i=11005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -118,6 +119,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'kNiti ca',
     text_dev       = 'क्ङिति च',
+    samagra_slp1   = "kNiti ikaH guRavfdDI na",
+    samagra_dev    = "क्ङिति इकः गुणवृद्धी  न",
     padaccheda_dev = "क्‍ङ् इति",
     why_dev        = _WHY,
     apavada_of     = ("7.3.84",),   # अपवाद of 7.3.84 — sutra_ref_out resolver.apavada_of

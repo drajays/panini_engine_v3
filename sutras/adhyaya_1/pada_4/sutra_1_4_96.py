@@ -13,6 +13,7 @@ word-sense), *sambhāvanā* (supposition), *anvavasarga* (permission),
 *Engine:* sets paribhāṣā gate for *api-in-these-five-senses*.
 ``cond`` never reads vibhakti/vacana/lakāra/surface.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=14096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -38,6 +39,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'apiH padArTasamBAvanAnvavasargagarhAsamuccayezu',
     text_dev             = 'अपिः पदार्थसम्भावनान्ववसर्गगर्हासमुच्चयेषु',
+    samagra_slp1         = "AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH karmapravacanIyAH apiH padArTa-samBAvanA-anvavasarga-garhA-samuccayezu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः कर्मप्रवचनीयाः अपिः पदार्थ-सम्भावना-अन्ववसर्ग-गर्हा-समुच्चयेषु",
     padaccheda_dev       = "अपिः / पदार्थ-सम्भावना-अन्ववसर्ग-गर्हा-समुच्चयेषु",
     why_dev              = (
         "पदार्थ-सम्भावना-अन्ववसर्ग-गर्हा-समुच्चय-अर्थेषु वर्तमानः 'अपि' "

@@ -4,6 +4,7 @@
 Padaccheda: प्रिय-स्थिर-स्फिर-उरु-बहुल-गुरु-वृद्ध-तृप्र-दीर्घ-वृन्दारकाणाम् प्र-स्थ-वर्-बंहि-गर्-वर्षि-त्रप्-द्राघि-वृन्दाः
 
 प्रियस्थिरस्फिरोरुबहुलगुरुवृद्धतृप्रदीर्घवृन्दारकाणां प्रस्थस्फवर्बंहिगर्वर्षित्रब्द्राघिवृन्दाः (6.4.157)
+Pāṭha: ashtadhyayi.com data.txt row i=64157 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "priyasTirasPirorubahulaguruvfdDatfpradIrGavfndArakARAM prasTasPavarbaMhigarvarzitrabdrAGivfndAH",
     text_dev              = "प्रियस्थिरस्फिरोरुबहुलगुरुवृद्धतृप्रदीर्घवृन्दारकाणां प्रस्थस्फवर्बंहिगर्वर्षित्रब्द्राघिवृन्दाः",
+    samagra_slp1          = "aNgasya asidDavadatrABAt Basya priya-sTira-sPira-uru-bahula-guru-vfdDa-tfpra-dIrGa-vfndArakARAm pra-sTa-sPa-var-baMhi-gar-varzi-trap-drAGi-vfndAH izWa-iman-Iyassu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् भस्य प्रिय-स्थिर-स्फिर-उरु-बहुल-गुरु-वृद्ध-तृप्र-दीर्घ-वृन्दारकाणाम् प्र-स्थ-स्फ-वर्-बंहि-गर्-वर्षि-त्रप्-द्राघि-वृन्दाः इष्ठ-इमन्-ईयस्सु",
     padaccheda_dev        = "प्रिय-स्थिर-स्फिर-उरु-बहुल-गुरु-वृद्ध-तृप्र-दीर्घ-वृन्दारकाणाम् प्र-स्थ-वर्-बंहि-गर्-वर्षि-त्रप्-द्राघि-वृन्दाः",
     why_dev               = "(सूत्रम् 6.4.157) प्रियस्थिरस्फिरोरुबहुलगुरुवृद्धतृप्रदीर्घवृन्दारकाणां प्रस्थस्फवर्बंहिगर्वर्षित्रब्द्राघिवृन्दाः।",
     anuvritti_from        = ('6.1.1',),

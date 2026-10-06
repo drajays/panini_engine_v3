@@ -83,6 +83,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.PARIBHASHA,
     text_slp1='eca igGrasvAdeSe',
     text_dev='एच इग्घ्रस्वादेशे',
+    samagra_slp1="ecaH hrasvAdeSe ik",
+    samagra_dev="एचः ह्रस्वादेशे इक्",
     padaccheda_dev="एच् / इक् / ह्रस्व-आदेशे",
     why_dev=(
         "एच् के ह्रस्वादेशे इक् एव — अन्य विधि (६.४.९२, १.२.४७, …) यत्र एच्-ह्रस्वः "

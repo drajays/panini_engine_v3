@@ -4,6 +4,7 @@
 Padaccheda: कंसात् टिठन्
 
 कंसाट्टिठन् (5.1.25)
+Pāṭha: ashtadhyayi.com data.txt row i=51025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kaMsAwwiWan",
     text_dev              = "कंसाट्टिठन्",
+    samagra_slp1          = "A-arhAt kaMsAt wiWan",
+    samagra_dev           = "आ-अर्हात् कंसात् टिठन्",
     padaccheda_dev        = "कंसात् टिठन्",
     why_dev               = "(सूत्रम् 5.1.25) कंसाट्टिठन्।",
     anuvritti_from        = ('5.1.19',),

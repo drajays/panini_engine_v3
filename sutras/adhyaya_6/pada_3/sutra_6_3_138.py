@@ -4,6 +4,7 @@
 Padaccheda: चौ
 
 चौ (6.3.138)
+Pāṭha: ashtadhyayi.com data.txt row i=63138 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "cO",
     text_dev              = "चौ",
+    samagra_slp1          = "cO parataH pUrvasya aRaH dIrGaH",
+    samagra_dev           = "चौ परतः पूर्वस्य अणः दीर्घः",
     padaccheda_dev        = "चौ",
     why_dev               = "(सूत्रम् 6.3.138) चौ।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: एकस्य सकृत् च
 
 एकस्य सकृच्च (5.4.19)
+Pāṭha: ashtadhyayi.com data.txt row i=54019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ekasya sakfcca",
     text_dev              = "एकस्य सकृच्च",
+    samagra_slp1          = "kriyAgaRane ekasya sakft suc ca",
+    samagra_dev           = "क्रियागणने एकस्य सकृत्,   सुच् च",
     padaccheda_dev        = "एकस्य सकृत् च",
     why_dev               = "(सूत्रम् 5.4.19) एकस्य सकृच्च।",
     anuvritti_from        = ('4.1.76',),

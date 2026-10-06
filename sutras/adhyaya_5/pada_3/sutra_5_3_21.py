@@ -4,6 +4,7 @@
 Padaccheda: अन्-अद्यतने र्हिल् अन्यतरस्याम्
 
 अनद्यतने र्हिलन्यतरस्याम् (5.3.21)
+Pāṭha: ashtadhyayi.com data.txt row i=53021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anadyatane rhilanyatarasyAm",
     text_dev              = "अनद्यतने र्हिलन्यतरस्याम्",
+    samagra_slp1          = "kim-sarvanAma-bahuByaH advyAdiByaH anadyatane kAle anyatarasyAm rhil",
+    samagra_dev           = "किम्-सर्वनाम-बहुभ्यः अद्व्यादिभ्यः अनद्यतने काले अन्यतरस्याम् र्हिल्",
     padaccheda_dev        = "अन्-अद्यतने र्हिल् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 5.3.21) अनद्यतने र्हिलन्यतरस्याम्।",
     anuvritti_from        = ('5.3.2',),

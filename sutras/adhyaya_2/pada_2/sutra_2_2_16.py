@@ -4,6 +4,7 @@
 Padaccheda: कर्तरि च
 
 Also in kartri context tatpurusha is formed.
+Pāṭha: ashtadhyayi.com data.txt row i=22016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'kartari ca',
     text_dev              = 'कर्तरि  च',
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH kartari ca zazWI na tfjakAByAM",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः कर्तरि च षष्ठी न तृजकाभ्यां",
     padaccheda_dev        = "कर्तरि च",
     why_dev               = "कर्तरि च तत्पुरुषः (२.२.१६)।",
     anuvritti_from        = ('2.2.15',),

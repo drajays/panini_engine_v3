@@ -4,6 +4,7 @@
 Padaccheda: कल्याणी-आदीनाम् इनङ्
 
 कल्याण्यादीनामिनङ् (4.1.126)
+Pāṭha: ashtadhyayi.com data.txt row i=41126 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kalyARyAdInAminaN",
     text_dev              = "कल्याण्यादीनामिनङ्",
+    samagra_slp1          = "tasya apatyam iti kalyARI-AdInAm inaN AdeSaH Qak pratyayaH",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) कल्याणी-आदीनाम् इनङ् (आदेशः), ढक् प्रत्ययः",
     padaccheda_dev        = "कल्याणी-आदीनाम् इनङ्",
     why_dev               = "(सूत्रम् 4.1.126) कल्याण्यादीनामिनङ्।",
     anuvritti_from        = ('4.1.1',),

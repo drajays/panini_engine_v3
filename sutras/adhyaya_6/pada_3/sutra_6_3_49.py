@@ -4,6 +4,7 @@
 Padaccheda: विभाषा चत्वारिंशत्-प्रभृतौ सर्वेषाम्
 
 विभाषा चत्वारिंशत्प्रभृतौ सर्वेषाम् (6.3.49)
+Pāṭha: ashtadhyayi.com data.txt row i=63049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA catvAriMSatpraBftO sarvezAm",
     text_dev              = "विभाषा चत्वारिंशत्प्रभृतौ सर्वेषाम्",
+    samagra_slp1          = "uttarapade viBAzA catvAriMSat-praBftO sarvezAm At saMKyAyAm abahuvrIhi-aSItyoH trayaH treH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे विभाषा चत्वारिंशत्-प्रभृतौ सर्वेषाम् आत् संख्यायाम् अबहुव्रीहि-अशीत्योः त्रयः त्रेः",
     padaccheda_dev        = "विभाषा चत्वारिंशत्-प्रभृतौ सर्वेषाम्",
     why_dev               = "(सूत्रम् 6.3.49) विभाषा चत्वारिंशत्प्रभृतौ सर्वेषाम्।",
     anuvritti_from        = ('6.1.1',),

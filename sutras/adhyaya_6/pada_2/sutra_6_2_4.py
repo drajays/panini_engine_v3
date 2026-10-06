@@ -4,6 +4,7 @@
 Padaccheda: गाध-लवणयोः प्रमाणे
 
 गाधलवणयोः प्रमाणे (6.2.4)
+Pāṭha: ashtadhyayi.com data.txt row i=62004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gADalavaRayoH pramARe",
     text_dev              = "गाधलवणयोः प्रमाणे",
+    samagra_slp1          = "gADa-lavaRayoH pramARe prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "गाध-लवणयोः प्रमाणे प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "गाध-लवणयोः प्रमाणे",
     why_dev               = "(सूत्रम् 6.2.4) गाधलवणयोः प्रमाणे।",
     anuvritti_from        = ('6.1.1',),

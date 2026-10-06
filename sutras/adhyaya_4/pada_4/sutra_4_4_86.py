@@ -4,6 +4,7 @@
 Padaccheda: वशम् गतः
 
 वशं गतः (4.4.86)
+Pāṭha: ashtadhyayi.com data.txt row i=44086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vaSaM gataH",
     text_dev              = "वशं गतः",
+    samagra_slp1          = "tat vaSaM gataH iti samarTAnAm praTamAt paraH yat pratyayaH",
+    samagra_dev           = "'तत् वशं गतः' (इति) समर्थानाम् प्रथमात् परः यत् प्रत्ययः",
     padaccheda_dev        = "वशम् गतः",
     why_dev               = "(सूत्रम् 4.4.86) वशं गतः।",
     anuvritti_from        = ('4.1.1',),

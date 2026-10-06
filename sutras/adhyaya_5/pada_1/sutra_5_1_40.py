@@ -4,6 +4,7 @@
 Padaccheda: पुत्रात् छ (लुप्तप्रथमान्तनिर्देशः) च
 
 पुत्राच्छ च (5.1.40)
+Pāṭha: ashtadhyayi.com data.txt row i=51040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "putrAcCa ca",
     text_dev              = "पुत्राच्छ च",
+    samagra_slp1          = "tasya nimittaM saMyogotpAtO iti putrAt yat CaH ca",
+    samagra_dev           = "'तस्य निमित्तं संयोगोत्पातौ' इति पुत्रात् यत् छः च",
     padaccheda_dev        = "पुत्रात् छ (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 5.1.40) पुत्राच्छ च।",
     anuvritti_from        = ('5.1.19',),

@@ -4,6 +4,7 @@
 Padaccheda: अपेत-अपोढ-मुक्त-पतित-अपत्रस्तैः अल्पशः
 
 apeta, apoḍha, mukta, patita etc. (alpasas) with dvitiya form tatpurusha.
+Pāṭha: ashtadhyayi.com data.txt row i=21038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "apetApoQamuktapatitApatrastEralpaSaH",
     text_dev              = "अपेतापोढमुक्तपतितापत्रस्तैरल्पशः",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH apeta-apoQa-mukta-patita-apatrastEH alpaSaH paYcamI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः अपेत-अपोढ-मुक्त-पतित-अपत्रस्तैः अल्पशः पञ्चमी",
     padaccheda_dev        = "अपेत-अपोढ-मुक्त-पतित-अपत्रस्तैः अल्पशः",
     why_dev               = "अपेत-अपोढ-आदिभिः अल्पशः द्वितीयान्तस्य सह तत्पुरुषः (२.१.३८)।",
     anuvritti_from        = ('2.1.22',),

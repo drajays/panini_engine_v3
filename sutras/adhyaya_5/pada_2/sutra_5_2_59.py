@@ -4,6 +4,7 @@
 Padaccheda: मतौ छः सूक्त-साम्नोः
 
 मतौ च्छः सूक्तसाम्नोः (5.2.59)
+Pāṭha: ashtadhyayi.com data.txt row i=52059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'matO CaH sUktasAmnoH',
     text_dev              = 'मतौ छः सूक्तसाम्नोः',
+    samagra_slp1          = "matO sUktasAmnoH CaH",
+    samagra_dev           = "मतौ सूक्तसाम्नोः छः",
     padaccheda_dev        = "मतौ छः सूक्त-साम्नोः",
     why_dev               = "(सूत्रम् 5.2.59) मतौ च्छः सूक्तसाम्नोः।",
     anuvritti_from        = ('4.1.82',),

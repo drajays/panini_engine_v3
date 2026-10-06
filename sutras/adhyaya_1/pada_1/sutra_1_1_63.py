@@ -25,6 +25,7 @@ term for *luk*–*ślu*–*lup* teaching; the *tṛtīyā* *lumatā* “when los
 
 **Engine:** sets ``paribhasha_gates[NA_LUMATANGASYA_GATE]`` once in preflight
 (immediately after **1.1.62**).  Requires **1.1.62** to have fired first.
+Pāṭha: ashtadhyayi.com data.txt row i=11063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.PARIBHASHA,
     text_slp1      = 'na lumatANgasya',
     text_dev       = 'न लुमताङ्गस्य',
+    samagra_slp1   = "lumatA pratyayalope aNgasya pratyayalakzaRaM na",
+    samagra_dev    = "लुमता प्रत्ययलोपे अङ्गस्य प्रत्ययलक्षणं न",
     padaccheda_dev = (
         "न (अव्ययम्) / लुमता (तृतीया-एकवचनम्) / प्रत्ययलोपे (सप्तमी-एकवचनम्, अन्वा. १.१.६२) / "
         "अङ्गस्य (षष्ठी-एकवचनम्) / प्रत्ययलक्षणम् (प्रथमा-एकवचनम्, अन्वा. १.१.६२)"

@@ -4,6 +4,7 @@
 Padaccheda: भविष्यति मर्यादावचने अवरस्मिन्
 
 krt-suffix rule: भविष्यति मर्यादावचनेऽवरस्मिन्
+Pāṭha: ashtadhyayi.com data.txt row i=33136 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'Bavizyati maryAdAvacanevarasmin',
     text_dev              = 'भविष्यति मर्यादावचनेऽवरस्मिन्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH Bavizyati maryAdAvacane a-varasmin kft na anadyatanavat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भविष्यति मर्यादावचने अ-वरस्मिन् कृत् न अनद्यतनवत्",
     padaccheda_dev        = "भविष्यति मर्यादावचने अवरस्मिन्",
     why_dev               = "धातोः प्रत्ययः (३.3.136)।",
     anuvritti_from        = ('3.1.1',),

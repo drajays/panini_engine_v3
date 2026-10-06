@@ -4,6 +4,7 @@
 Padaccheda: तॄ-फल-भज-त्रपः च
 
 तॄफलभजत्रपश्च (6.4.122)
+Pāṭha: ashtadhyayi.com data.txt row i=64122 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tFPalaBajatrapaSca",
     text_dev              = "तॄफलभजत्रपश्च",
+    samagra_slp1          = "aNgasya asidDavadatrABAt tF-Pala-Baja-trapaH ca kNiti aByAsalopaH ataH Tali sewi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् तॄ-फल-भज-त्रपः च क्ङिति अभ्यासलोपः अतः थलि सेटि",
     padaccheda_dev        = "तॄ-फल-भज-त्रपः च",
     why_dev               = "(सूत्रम् 6.4.122) तॄफलभजत्रपश्च।",
     anuvritti_from        = ('6.1.1',),

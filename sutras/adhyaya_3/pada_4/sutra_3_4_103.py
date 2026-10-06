@@ -105,6 +105,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yAsuw parasmEpadezUdAtto Nicca",
     text_dev              = "यासुट् परस्मैपदेषूदात्तो ङिच्च",
+    samagra_slp1          = "liNaH parasmEpadezu yAsuw udAttaH Nit ca",
+    samagra_dev           = "लिङः परस्मैपदेषु यासुट् उदात्तः ङित् च",
     padaccheda_dev        = "यासुट् परस्मैपदेषु उदात्तः ङित् च",
     why_dev               = (
         "विधि-लिङि परस्मैपदे धातोः परे यासुट्-आगमः; "

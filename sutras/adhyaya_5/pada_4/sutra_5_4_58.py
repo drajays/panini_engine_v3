@@ -4,6 +4,7 @@
 Padaccheda: कृञः द्वितीय-तृतीय-शम्ब-बीजात् कृषौ
 
 कृञो द्वितीयतृतीयशम्बबीजात् कृषौ (5.4.58)
+Pāṭha: ashtadhyayi.com data.txt row i=54058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kfYo dvitIyatftIyaSambabIjAt kfzO",
     text_dev              = "कृञो द्वितीयतृतीयशम्बबीजात् कृषौ",
+    samagra_slp1          = "dvitIya-tftIya-Samba-bIjAt kfzO kfYaH qAc",
+    samagra_dev           = "द्वितीय-तृतीय-शम्ब-बीजात् कृषौ कृञः डाच्",
     padaccheda_dev        = "कृञः द्वितीय-तृतीय-शम्ब-बीजात् कृषौ",
     why_dev               = "(सूत्रम् 5.4.58) कृञो द्वितीयतृतीयशम्बबीजात् कृषौ।",
     anuvritti_from        = ('4.1.76',),

@@ -4,6 +4,7 @@
 Padaccheda: स्फुरति-स्फुलत्योः घञि
 
 स्फुरतिस्फुलत्योर्घञि (6.1.47)
+Pāṭha: ashtadhyayi.com data.txt row i=61047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sPuratisPulatyorGaYi",
     text_dev              = "स्फुरतिस्फुलत्योर्घञि",
+    samagra_slp1          = "sPurati-sPulatyoH GaYi At ecaH upadeSe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "स्फुरति-स्फुलत्योः घञि आत् एचः उपदेशे",
     padaccheda_dev        = "स्फुरति-स्फुलत्योः घञि",
     why_dev               = "(सूत्रम् 6.1.47) स्फुरतिस्फुलत्योर्घञि।",
     anuvritti_from        = ('6.1.1',),

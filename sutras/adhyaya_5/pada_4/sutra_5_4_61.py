@@ -4,6 +4,7 @@
 Padaccheda: सपत्र-निष्पत्रात् अतिव्यथने
 
 सपत्त्रनिष्पत्रादतिव्यथने (5.4.61)
+Pāṭha: ashtadhyayi.com data.txt row i=54061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sapattranizpatrAdativyaTane",
     text_dev              = "सपत्त्रनिष्पत्रादतिव्यथने",
+    samagra_slp1          = "sapatra-nizpatrAt ativyaTane kfYaH qAc",
+    samagra_dev           = "सपत्र-निष्पत्रात् अतिव्यथने कृञः डाच्",
     padaccheda_dev        = "सपत्र-निष्पत्रात् अतिव्यथने",
     why_dev               = "(सूत्रम् 5.4.61) सपत्त्रनिष्पत्रादतिव्यथने।",
     anuvritti_from        = ('4.1.76',),

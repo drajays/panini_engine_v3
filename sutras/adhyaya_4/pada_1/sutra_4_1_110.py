@@ -4,6 +4,7 @@
 Padaccheda: अश्व-आदिभ्यः फञ्
 
 अश्वादिभ्यः फञ् (4.1.110)
+Pāṭha: ashtadhyayi.com data.txt row i=41110 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aSvAdiByaH PaY",
     text_dev              = "अश्वादिभ्यः फञ्",
+    samagra_slp1          = "tasya gotre apatyam iti aSvAdiByaH PaY",
+    samagra_dev           = "'तस्य गोत्रे अपत्यम्' (इति) अश्वादिभ्यः फञ्",
     padaccheda_dev        = "अश्व-आदिभ्यः फञ्",
     why_dev               = "(सूत्रम् 4.1.110) अश्वादिभ्यः फञ्।",
     anuvritti_from        = ('4.1.1',),

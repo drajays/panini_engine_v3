@@ -4,6 +4,7 @@
 Padaccheda: ओम्-आङोः च
 
 ओमाङोश्च (6.1.95)
+Pāṭha: ashtadhyayi.com data.txt row i=61095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'omANoSca',
     text_dev              = 'ओमाङोश्च',
+    samagra_slp1          = "om-ANoH At pUrvaparayoH ekaH pararUpam",
+    samagra_dev           = "ओम्-आङोः आत् पूर्वपरयोः एकः पररूपम्",
     padaccheda_dev        = "ओम्-आङोः च",
     why_dev               = "(सूत्रम् 6.1.95) ओमाङोश्च।",
     apavada_of     = ("6.1.88",),   # अपवाद of 6.1.88 — sutra_ref_out resolver.apavada_of

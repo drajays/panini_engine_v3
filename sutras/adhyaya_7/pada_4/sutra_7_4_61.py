@@ -4,6 +4,7 @@
 Padaccheda: शर्-पूर्वाः खयः
 
 शर्पूर्वाः खयः (7.4.61)
+Pāṭha: ashtadhyayi.com data.txt row i=74061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SarpUrvAH KayaH",
     text_dev              = "शर्पूर्वाः खयः",
+    samagra_slp1          = "aByAsasya AdiH Sar-pUrvAH KayaH hal SezaH",
+    samagra_dev           = "अभ्यासस्य आदिः शर्-पूर्वाः खयः हल् शेषः",
     padaccheda_dev        = "शर्-पूर्वाः खयः",
     why_dev               = "(सूत्रम् 7.4.61) शर्पूर्वाः खयः।",
     anuvritti_from        = ('7.1.1',),

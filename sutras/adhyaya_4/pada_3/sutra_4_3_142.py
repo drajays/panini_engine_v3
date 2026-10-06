@@ -4,6 +4,7 @@
 Padaccheda: शम्याः ष्लञ्
 
 शम्याष्ट्लञ् (4.3.142)
+Pāṭha: ashtadhyayi.com data.txt row i=43142 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SamyAzwlaY",
     text_dev              = "शम्याष्ट्लञ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA SamyAH wlaY tasya vikAraH avayave",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा शम्याः ट्लञ् तस्य विकारः अवयवे",
     padaccheda_dev        = "शम्याः ष्लञ्",
     why_dev               = "(सूत्रम् 4.3.142) शम्याष्ट्लञ्।",
     anuvritti_from        = ('4.1.1',),

@@ -7,6 +7,7 @@ napuṃsaka, which then licenses **1.2.47** hrasva.
 Engine:
   - If the current block has ``avyayibhava`` structural tag, tag the head
     prātipadika aṅga as ``napuṃsaka``.
+Pāṭha: ashtadhyayi.com data.txt row i=24018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -38,6 +39,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1      = 'avyayIBAvaSca',
     text_dev       = 'अव्ययीभावश्च',
+    samagra_slp1   = "avyayIBAvaH ca napuMsakam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "अव्ययीभावः च नपुंसकम्",
     padaccheda_dev = "अव्ययीभावस्य / नपुंसकम्",
     why_dev        = "अव्ययीभाव-समासः नपुंसकलिङ्गः (१.२.४७ ह्रस्व-प्रसङ्गः)।",
     anuvritti_from = ("2.1.5",),

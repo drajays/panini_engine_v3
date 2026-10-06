@@ -4,6 +4,7 @@
 Padaccheda: कुत्सिते
 
 कुत्सिते (5.3.74)
+Pāṭha: ashtadhyayi.com data.txt row i=53074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kutsite",
     text_dev              = "कुत्सिते",
+    samagra_slp1          = "kutsite prAtipadikAt tiNaH ca kaH",
+    samagra_dev           = "कुत्सिते प्रातिपदिकात् तिङः च कः",
     padaccheda_dev        = "कुत्सिते",
     why_dev               = "(सूत्रम् 5.3.74) कुत्सिते।",
     anuvritti_from        = ('5.3.70',),

@@ -4,6 +4,7 @@
 Padaccheda: ऋत्-हनोः स्ये
 
 ऋद्धनोः स्ये (7.2.70)
+Pāṭha: ashtadhyayi.com data.txt row i=72070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "fdDanoH sye",
     text_dev              = "ऋद्धनोः स्ये",
+    samagra_slp1          = "aNgasya fdDanoH sye ArDaDAtukasya iw valAdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ऋद्धनोः स्ये आर्धधातुकस्य इट् वलादेः",
     padaccheda_dev        = "ऋत्-हनोः स्ये",
     why_dev               = "(सूत्रम् 7.2.70) ऋद्धनोः स्ये।",
     anuvritti_from        = ('7.1.1',),

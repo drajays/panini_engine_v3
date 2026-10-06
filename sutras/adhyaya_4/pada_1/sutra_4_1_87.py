@@ -4,6 +4,7 @@
 Padaccheda: स्त्री-पुंसाभ्याम् नञ्-स्नञौ भवनात्
 
 स्त्रीपुंसाभ्यां नञ्स्नञौ भवनात् (4.1.87)
+Pāṭha: ashtadhyayi.com data.txt row i=41087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "strIpuMsAByAM naYsnaYO BavanAt",
     text_dev              = "स्त्रीपुंसाभ्यां नञ्स्नञौ भवनात्",
+    samagra_slp1          = "strIpuMsAByAm naY-snaYO tadDitaH pratyayaH samarTAnAm praTamAt paraH vA BavanAt ",
+    samagra_dev           = "स्त्रीपुंसाभ्याम् नञ्-स्नञौ तद्धितः प्रत्ययः समर्थानाम् प्रथमात् परः वा, भवनात् ।",
     padaccheda_dev        = "स्त्री-पुंसाभ्याम् नञ्-स्नञौ भवनात्",
     why_dev               = "(सूत्रम् 4.1.87) स्त्रीपुंसाभ्यां नञ्स्नञौ भवनात्।",
     anuvritti_from        = ('4.1.1',),

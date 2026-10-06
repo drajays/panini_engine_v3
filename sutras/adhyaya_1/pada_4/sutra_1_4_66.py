@@ -8,6 +8,7 @@ pratīghāta (hostility/resistance).
 E.g., "kaṇe-kṛ" = to whisper in the ear; "manasi-kṛ" = to fix in the mind.
 
 v3: registers samjna_registry["gati_kane_manasi"] = frozenset({"kaRe","manasi"}).
+Pāṭha: ashtadhyayi.com data.txt row i=14066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1="kaRemanasI SradDApratIGAte",
     text_dev="कणेमनसी श्रद्धाप्रतीघाते",
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH kaRe-manasI SradDApratIGAte kriyAyoge gatiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः कणे-मनसी श्रद्धाप्रतीघाते क्रियायोगे गतिः",
     padaccheda_dev="कणे-मनसी / श्रद्धा-प्रतीघाते",
     why_dev="श्रद्धाप्रतीघाते 'कणे' 'मनसि' शब्दौ गति-संज्ञकौ — द्वौ शब्दौ गति-सेटे योज्येते।",
     anuvritti_from=("1.4.60",),

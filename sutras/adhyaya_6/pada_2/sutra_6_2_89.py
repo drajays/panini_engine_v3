@@ -4,6 +4,7 @@
 Padaccheda: अमहन्नवम् नगरे अनुदीचाम्
 
 अमहन्नवं नगरेऽनुदीचाम् (6.2.89)
+Pāṭha: ashtadhyayi.com data.txt row i=62089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'amahannavaM nagarenudIcAm',
     text_dev              = 'अमहन्नवं नगरेऽनुदीचाम्',
+    samagra_slp1          = "AdiH udAttaH a-mahannavam nagare anudIcAm pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः अ-महन्नवम् नगरे अनुदीचाम् पूर्वपदम्",
     padaccheda_dev        = "अमहन्नवम् नगरे अनुदीचाम्",
     why_dev               = "(सूत्रम् 6.2.89) अमहन्नवं नगरेऽनुदीचाम्।",
     anuvritti_from        = ('6.1.1',),

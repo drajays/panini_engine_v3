@@ -4,6 +4,7 @@
 Padaccheda: तस्य तात्
 
 तस्य तात् (7.1.44)
+Pāṭha: ashtadhyayi.com data.txt row i=71044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tasya tAt",
     text_dev              = "तस्य तात्",
+    samagra_slp1          = "aNgasya tasya tAt Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य तस्य तात् छन्दसि",
     padaccheda_dev        = "तस्य तात्",
     why_dev               = "(सूत्रम् 7.1.44) तस्य तात्।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: विभाषा कथमि लिङ् च
 
 krt-suffix rule: विभाषा कथमि लिङ् च
+Pāṭha: ashtadhyayi.com data.txt row i=33143 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA kaTami liN ca",
     text_dev              = "विभाषा कथमि लिङ् च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH viBAzA kaTami liN ca kft utApyoH law garhAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः विभाषा कथमि लिङ् च कृत् उताप्योः लट् गर्हायाम्",
     padaccheda_dev        = "विभाषा कथमि लिङ् च",
     why_dev               = "धातोः प्रत्ययः (३.3.143)।",
     anuvritti_from        = ('3.1.1',),

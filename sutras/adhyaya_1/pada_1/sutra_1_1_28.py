@@ -20,6 +20,7 @@ Together with **2.2.26**’s Kāśikā-vārttika *sarvanāmno vṛtti-mātre pu�
 and ``meta['vartika_sarvanAma_puMvat_vrtti']`` on the merged dik stem, this
 models the traditional link between **puṃ-vat** in *vṛtti* and optional
 sarvanāma-saṃjñā for declension-class behaviour (not full *subanta* here).
+Pāṭha: ashtadhyayi.com data.txt row i=11028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -79,6 +80,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIBHASHA,
     text_slp1      = 'viBAzA diksamAse bahuvrIhO',
     text_dev       = 'विभाषा दिक्समासे बहुव्रीहौ',
+    samagra_slp1   = "diksamAse bahuvrIhO sarvAdIni viBAzA sarvanAmAni",
+    samagra_dev    = "दिक्समासे बहुव्रीहौ सर्वादीनि विभाषा सर्वनामानि",
     padaccheda_dev = "विभाषा / दिक्समासे / बहुव्रीहौ",
     why_dev        = "दिक्समास-बहुव्रीहौ सर्वादि-शब्दाः विकल्पेन सर्वनाम-संज्ञकाः।",
     anuvritti_from = ("1.1.27",),

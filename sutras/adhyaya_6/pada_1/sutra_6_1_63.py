@@ -4,6 +4,7 @@
 Padaccheda: पद्‍-दत्-नस्-मास्-हृत्-निश्-असन्-यूषन्-दोषन्-यकन्-शकन्-उदन्-आसन् (सर्वे पृथक् पृथक् लुप्तप्रथमान्तनिर्द्दिष्टाः) शस्-प्रभृतिषु
 
 पद्दन्नोमास्हृन्निशसन्यूषन्दोषन्यकञ्छकन्नुदन्नासञ्छस्प्रभृतिषु (6.1.63)
+Pāṭha: ashtadhyayi.com data.txt row i=61063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paddannomAshfnniSasanyUzandozanyakaYCakannudannAsaYCaspraBftizu",
     text_dev              = "पद्दन्नोमास्हृन्निशसन्यूषन्दोषन्यकञ्छकन्नुदन्नासञ्छस्प्रभृतिषु",
+    samagra_slp1          = "Sas-praBftizu pad-dat-nas-mAs-hft-niS-asan-yUzan-dozan-yakan-Sakan-udan-Asan anyatarasyAm",
+    samagra_dev           = "शस्-प्रभृतिषु पद्-दत्-नस्-मास्-हृत्-निश्-असन्-यूषन्-दोषन्-यकन्-शकन्-उदन्-आसन् अन्यतरस्याम्",
     padaccheda_dev        = "पद्‍-दत्-नस्-मास्-हृत्-निश्-असन्-यूषन्-दोषन्-यकन्-शकन्-उदन्-आसन् (सर्वे पृथक् पृथक् लुप्तप्रथमान्तनिर्द्दिष्टाः) शस्-प्रभृतिषु",
     why_dev               = "(सूत्रम् 6.1.63) पद्दन्नोमास्हृन्निशसन्यूषन्दोषन्यकञ्छकन्नुदन्नासञ्छस्प्रभृतिषु।",
     anuvritti_from        = ('6.1.1',),

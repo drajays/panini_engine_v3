@@ -4,6 +4,7 @@
 Padaccheda: आनि (लुप्तषष्ठ्यन्तनिर्देशः) लोट् (लुप्तषष्ठ्यन्तनिर्देशः)
 
 आनि लोट् (8.4.16)
+Pāṭha: ashtadhyayi.com data.txt row i=84016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Ani low",
     text_dev              = "आनि लोट्",
+    samagra_slp1          = "upasargAt razAByAM low Ani naH RaH",
+    samagra_dev           = "उपसर्गात् रषाभ्यां लोट् आनि नः णः",
     padaccheda_dev        = "आनि (लुप्तषष्ठ्यन्तनिर्देशः) लोट् (लुप्तषष्ठ्यन्तनिर्देशः)",
     why_dev               = "(सूत्रम् 8.4.16) आनि लोट्।",
     anuvritti_from        = ('8.1.1',),

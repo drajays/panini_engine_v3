@@ -4,6 +4,7 @@
 Glass-box scope for `loluv`:
   When a dhātu ends in ū (U) and an a-initial pratyaya follows, replace that U
   with the sequence "uv" (u + v).
+Pāṭha: ashtadhyayi.com data.txt row i=64077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -97,6 +98,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'aci SnuDAtuBruvAM yvoriyaNuvaNO',
     text_dev       = 'अचि श्नुधातुभ्रुवां य्वोरियङुवङौ',
+    samagra_slp1   = "aci Snu-DAtu-BruvAm yvoH aNgasya iyaN uvaNO",
+    samagra_dev    = "अचि श्नु-धातु-भ्रुवाम् य्वोः अङ्गस्य इयङ् उवङौ",
     padaccheda_dev = "अचि / श्नु-धातु-भ्रुवाम् / य्वोः / इयु-वङौ",
     why_dev        = "धातोः इवर्ण-उवर्णयोः अचि परे इयङ्-उवङौ (नुवति, म्रियते)।",
     anuvritti_from = ("6.4.1",),

@@ -4,6 +4,7 @@
 Padaccheda: कर्म-वत् कर्मणा तुल्यक्रियः
 
 Krt suffix rule from dhatu: कर्मवत् कर्मणा तुल्यक्रियः (87)
+Pāṭha: ashtadhyayi.com data.txt row i=31087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karmavat karmaRA tulyakriyaH",
     text_dev              = "कर्मवत् कर्मणा तुल्यक्रियः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH karmavat karmaRA tulyakriyaH kartari",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कर्मवत् कर्मणा तुल्यक्रियः कर्तरि",
     padaccheda_dev        = "कर्म-वत् कर्मणा तुल्यक्रियः",
     why_dev               = "धातोः [कर्मवत् कर्मणा तुल्यक्रियः]-प्रत्ययः विहितः (३.१.87)।",
     anuvritti_from        = ('3.1.1',),

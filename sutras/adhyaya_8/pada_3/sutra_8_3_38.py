@@ -4,6 +4,7 @@
 Padaccheda: सः · अपद-आदौ
 
 सोऽपदादौ (8.3.38)
+Pāṭha: ashtadhyayi.com data.txt row i=83038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sopadAdO',
     text_dev              = 'सोऽपदादौ',
+    samagra_slp1          = "apadAdO kupvoH padasya visarjanIyasya saH",
+    samagra_dev           = "अपदादौ कुप्वोः पदस्य विसर्जनीयस्य सः",
     padaccheda_dev        = "सः · अपद-आदौ",
     why_dev               = "(सूत्रम् 8.3.38) सोऽपदादौ।",
     anuvritti_from        = ('8.1.1',),

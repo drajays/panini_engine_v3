@@ -4,6 +4,7 @@
 Padaccheda: जराया जरस् अन्यतरस्याम्
 
 जराया जरसन्यतरस्याम् (7.2.101)
+Pāṭha: ashtadhyayi.com data.txt row i=72101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jarAyA jarasanyatarasyAm",
     text_dev              = "जराया जरसन्यतरस्याम्",
+    samagra_slp1          = "jarAyAH aci viBaktO jaras anyatarasyAm",
+    samagra_dev           = "जरायाः अचि विभक्तौ जरस् अन्यतरस्याम्",
     padaccheda_dev        = "जराया जरस् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 7.2.101) जराया जरसन्यतरस्याम्।",
     anuvritti_from        = ('7.1.1',),

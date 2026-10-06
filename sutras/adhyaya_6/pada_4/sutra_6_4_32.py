@@ -4,6 +4,7 @@
 Padaccheda: ज-अन्त-नशाम् विभाषा
 
 जान्तनशां विभाषा (6.4.32)
+Pāṭha: ashtadhyayi.com data.txt row i=64032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jAntanaSAM viBAzA",
     text_dev              = "जान्तनशां विभाषा",
+    samagra_slp1          = "jAntanaSAM upaDAyAH ktvi nalopaH viBAzA",
+    samagra_dev           = "जान्तनशां उपधायाः क्त्वि  नलोपः विभाषा",
     padaccheda_dev        = "ज-अन्त-नशाम् विभाषा",
     why_dev               = "(सूत्रम् 6.4.32) जान्तनशां विभाषा।",
     anuvritti_from        = ('6.1.1',),

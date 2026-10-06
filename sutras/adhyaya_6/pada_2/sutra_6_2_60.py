@@ -4,6 +4,7 @@
 Padaccheda: षष्ठी प्रत्येनसि
 
 षष्ठी प्रत्येनसि (6.2.60)
+Pāṭha: ashtadhyayi.com data.txt row i=62060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zazWI pratyenasi",
     text_dev              = "षष्ठी प्रत्येनसि",
+    samagra_slp1          = "zazWI pratyenasi prakftyA pUrvapadam anyatarasyAm rAjA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "षष्ठी प्रत्येनसि प्रकृत्या पूर्वपदम् अन्यतरस्याम् राजा",
     padaccheda_dev        = "षष्ठी प्रत्येनसि",
     why_dev               = "(सूत्रम् 6.2.60) षष्ठी प्रत्येनसि।",
     anuvritti_from        = ('6.1.1',),

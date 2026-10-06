@@ -4,6 +4,7 @@
 Padaccheda: अध्वनः यत्-खौ
 
 अध्वनो यत्खौ (5.2.16)
+Pāṭha: ashtadhyayi.com data.txt row i=52016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDvano yatKO",
     text_dev              = "अध्वनो यत्खौ",
+    samagra_slp1          = "tat alaNgAmI iti aDvanoH yat-KO",
+    samagra_dev           = "'तत् अलङ्गामी' (इति) अध्वनोः यत्-खौ",
     padaccheda_dev        = "अध्वनः यत्-खौ",
     why_dev               = "(सूत्रम् 5.2.16) अध्वनो यत्खौ।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: सुधित (लुप्तप्रथमान्तनिर्देशः) वसुधित (लुप्तप्रथमान्तनिर्देशः) नेमधित (लुप्तप्रथमान्तनिर्देशः) धिष्व (क्रियापदम्) धिषीय (क्रियापदम्) च
 
 सुधितवसुधितनेमधितधिष्वधिषीय च (7.4.45)
+Pāṭha: ashtadhyayi.com data.txt row i=74045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "suDitavasuDitanemaDitaDizvaDizIya ca",
     text_dev              = "सुधितवसुधितनेमधितधिष्वधिषीय च",
+    samagra_slp1          = "aNgasya suDita vasuDita nemaDita Dizva DizIya ca ti kiti Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य सुधित वसुधित नेमधित धिष्व धिषीय च ति किति छन्दसि",
     padaccheda_dev        = "सुधित (लुप्तप्रथमान्तनिर्देशः) वसुधित (लुप्तप्रथमान्तनिर्देशः) नेमधित (लुप्तप्रथमान्तनिर्देशः) धिष्व (क्रियापदम्) धिषीय (क्रियापदम्) च",
     why_dev               = "(सूत्रम् 7.4.45) सुधितवसुधितनेमधितधिष्वधिषीय च।",
     anuvritti_from        = ('7.1.1',),

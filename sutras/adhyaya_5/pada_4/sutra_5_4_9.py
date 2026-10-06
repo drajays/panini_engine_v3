@@ -4,6 +4,7 @@
 Padaccheda: जाति-अन्तात् छ (लुप्तप्रथमान्तनिर्देशः) बन्धुनि
 
 जात्यन्ताच्छ बन्धुनि (5.4.9)
+Pāṭha: ashtadhyayi.com data.txt row i=54009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jAtyantAcCa banDuni",
     text_dev              = "जात्यन्ताच्छ बन्धुनि",
+    samagra_slp1          = "jAtyantAt banDuni CaH",
+    samagra_dev           = "जात्यन्तात् बन्धुनि छः",
     padaccheda_dev        = "जाति-अन्तात् छ (लुप्तप्रथमान्तनिर्देशः) बन्धुनि",
     why_dev               = "(सूत्रम् 5.4.9) जात्यन्ताच्छ बन्धुनि।",
     anuvritti_from        = ('4.1.76',),

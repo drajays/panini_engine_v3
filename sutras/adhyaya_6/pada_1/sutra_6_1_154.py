@@ -4,6 +4,7 @@
 Padaccheda: मस्कर-मस्करिणौ वेणु-परिव्राजकयोः
 
 मस्करमस्करिणौ वेणुपरिव्राजकयोः (6.1.154)
+Pāṭha: ashtadhyayi.com data.txt row i=61154 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "maskaramaskariRO veRuparivrAjakayoH",
     text_dev              = "मस्करमस्करिणौ वेणुपरिव्राजकयोः",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH maskara-maskariRO veRu-parivrAjakayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः मस्कर-मस्करिणौ वेणु-परिव्राजकयोः",
     padaccheda_dev        = "मस्कर-मस्करिणौ वेणु-परिव्राजकयोः",
     why_dev               = "(सूत्रम् 6.1.154) मस्करमस्करिणौ वेणुपरिव्राजकयोः।",
     anuvritti_from        = ('6.1.1',),

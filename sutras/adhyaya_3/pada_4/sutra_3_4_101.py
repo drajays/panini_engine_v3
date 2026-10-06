@@ -91,6 +91,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'tasTasTamipAM tAMtaMtAmaH',
     text_dev       = 'तस्थस्थमिपां तांतंतामः',
+    samagra_slp1   = "NitaH tas-Tas-Ta-mipAm tAm-tam-ta-amaH",
+    samagra_dev    = "ङितः तस्-थस्-थ-मिपाम् ताम्-तम्-त-अमः",
     padaccheda_dev = "तस्थस्थमिपाम् / तांतंतामः",
     why_dev        = (
         "लङि: तस्→ताम् (प्रथम-द्विवचन), थस्→तम् (मध्यम-द्वि), "

@@ -4,6 +4,7 @@
 Padaccheda: पूर्व-वत् अश्ववडवौ
 
 asva and vadava follow the former member's gender.
+Pāṭha: ashtadhyayi.com data.txt row i=24027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUrvavadaSvavaqavO",
     text_dev              = "पूर्ववदश्ववडवौ",
+    samagra_slp1          = "pUrvavat aSva-vaqavO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्ववत् अश्व-वडवौ",
     padaccheda_dev        = "पूर्व-वत् अश्ववडवौ",
     why_dev               = "अश्ववडवौ पूर्व-वत् (२.४.२७)।",
     anuvritti_from        = ('2.4.26',),

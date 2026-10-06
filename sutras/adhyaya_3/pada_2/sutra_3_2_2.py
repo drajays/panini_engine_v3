@@ -4,6 +4,7 @@
 Padaccheda: ह्वा-वा-मः च
 
 krt-suffix rule: ह्वावामश्च (2)
+Pāṭha: ashtadhyayi.com data.txt row i=32002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hvAvAmaSca",
     text_dev              = "ह्वावामश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH hvAvAmaH ca kft aR karmaRi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः ह्वावामः च कृत् अण् कर्मणि",
     padaccheda_dev        = "ह्वा-वा-मः च",
     why_dev               = "धातोः कृत्-प्रत्ययः [ह्वावामश्च] विहितः (३.२.2)।",
     anuvritti_from        = ('3.1.1',),

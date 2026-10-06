@@ -4,6 +4,7 @@
 Padaccheda: तेन रक्तम् रागात्
 
 तेन रक्तं रागात् (4.2.1)
+Pāṭha: ashtadhyayi.com data.txt row i=42001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tena raktaM rAgAt",
     text_dev              = "तेन रक्तं रागात्",
+    samagra_slp1          = "tena raktaM rAgAt iti samarTAnAm praTamAt paraH aR pratyayaH",
+    samagra_dev           = "'तेन रक्तं रागात्' (इति) समर्थानाम् प्रथमात् परः अण् प्रत्ययः",
     padaccheda_dev        = "तेन रक्तम् रागात्",
     why_dev               = "(सूत्रम् 4.2.1) तेन रक्तं रागात्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: सनि मी-मा-घु-रभ-लभ-शक-पत-पदाम् अच इस्
 
 सनि मीमाघुरभलभशकपतपदामच इस् (7.4.54)
+Pāṭha: ashtadhyayi.com data.txt row i=74054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sani mImAGuraBalaBaSakapatapadAmaca is",
     text_dev              = "सनि मीमाघुरभलभशकपतपदामच इस्",
+    samagra_slp1          = "aNgasya sani mImAGuraBalaBaSakapatapadAmaca is si",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य सनि मीमाघुरभलभशकपतपदामच इस् सि",
     padaccheda_dev        = "सनि मी-मा-घु-रभ-लभ-शक-पत-पदाम् अच इस्",
     why_dev               = "(सूत्रम् 7.4.54) सनि मीमाघुरभलभशकपतपदामच इस्।",
     anuvritti_from        = ('7.1.1',),

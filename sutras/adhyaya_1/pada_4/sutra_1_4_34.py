@@ -12,6 +12,7 @@ Example: *gurave ślāghate* — the guru is the jñīpsyamāna/sampradāna.
 *Engine:* A Term carrying ``"jYIpsya_slAga"`` (pipeline-set) gets tag
 ``"sampradAna"``.  ``cond`` reads only structural semantic tags
 (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = 'SlAGahnuNsTASapAM jYIpsyamAnaH',
     text_dev              = 'श्लाघह्नुङ्स्थाशपां ज्ञीप्स्यमानः',
+    samagra_slp1          = "AkaqArAt ekA saMjYA kArake SlAGa-hnuN-sTA-SapAm jYIpsyamAnaH sampradAnam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा कारके श्लाघ-ह्नुङ्-स्था-शपाम् ज्ञीप्स्यमानः सम्प्रदानम्",
     padaccheda_dev        = "श्लाघ-ह्नुङ्-स्था-शपाम् / ज्ञीप्स्यमानः",
     why_dev               = (
         "श्लाघ-ह्नु-स्था-शप्-धातूनां प्रयोगे यो ज्ञीप्स्यमानः (यस्मै ज्ञापयितुम् "

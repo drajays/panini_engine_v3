@@ -4,6 +4,7 @@
 Padaccheda: अमु (लुप्तप्रथमान्तनिर्देशः) च छन्दसि
 
 अमु च च्छन्दसि (5.4.12)
+Pāṭha: ashtadhyayi.com data.txt row i=54012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "amu ca cCandasi",
     text_dev              = "अमु च च्छन्दसि",
+    samagra_slp1          = "kim-et-tiN-avyaya-GAt adravyaprakarze Amu amu ca Candasi",
+    samagra_dev           = "किम्-एत्-तिङ्-अव्यय-घात् अद्रव्यप्रकर्षे आमु अमु च छन्दसि",
     padaccheda_dev        = "अमु (लुप्तप्रथमान्तनिर्देशः) च छन्दसि",
     why_dev               = "(सूत्रम् 5.4.12) अमु च च्छन्दसि।",
     anuvritti_from        = ('4.1.76',),

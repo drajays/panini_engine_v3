@@ -13,6 +13,7 @@ Engine (narrow, mechanically blind):
   Gate key ``2_2_9_yajaka_gate``.  Recipe arms ``state.meta['2_2_9_arm']``
   and tags a Term with ``yajaka_adi`` indicating a *yājaka*-group compound.
   Extends the ṣaṣṭhī gate context (*ca* in the sūtra).
+Pāṭha: ashtadhyayi.com data.txt row i=22009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='yAjakAdiBiSca',
     text_dev='याजकादिभिश्च',
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH yAjaka-AdiBiH ca zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः याजक-आदिभिः च षष्ठी",
     padaccheda_dev="याजक-आदिभिः / च",
     why_dev=(
         "याजकादयः षष्ठ्यन्तेन च समस्यन्ते — ब्राह्मणयाजकः इत्यादि।"

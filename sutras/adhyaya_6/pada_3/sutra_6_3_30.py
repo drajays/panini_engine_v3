@@ -4,6 +4,7 @@
 Padaccheda: दिवसः च पृथिव्याम्
 
 दिवसश्च पृथिव्याम् (6.3.30)
+Pāṭha: ashtadhyayi.com data.txt row i=63030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "divasaSca pfTivyAm",
     text_dev              = "दिवसश्च पृथिव्याम्",
+    samagra_slp1          = "uttarapade divasaH ca pfTivyAm devatAdvandve divaH dyAvA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे दिवसः च पृथिव्याम् देवताद्वन्द्वे दिवः द्यावा",
     padaccheda_dev        = "दिवसः च पृथिव्याम्",
     why_dev               = "(सूत्रम् 6.3.30) दिवसश्च पृथिव्याम्।",
     anuvritti_from        = ('6.1.1',),

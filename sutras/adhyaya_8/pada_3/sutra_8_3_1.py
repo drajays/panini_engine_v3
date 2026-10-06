@@ -4,6 +4,7 @@
 Padaccheda: मतु-वसोः रु (लुप्तप्रथमान्तनिर्देशः) सम्बुद्धौ छन्दसि
 
 मतुवसो रु सम्बुद्धौ छन्दसि (8.3.1)
+Pāṭha: ashtadhyayi.com data.txt row i=83001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "matuvaso ru sambudDO Candasi",
     text_dev              = "मतुवसो रु सम्बुद्धौ छन्दसि",
+    samagra_slp1          = "matuvasO padasya saMhitAyAm sambudDO Candasi ru~",
+    samagra_dev           = "मतुवसौ पदस्य संहितायाम् सम्बुद्धौ छन्दसि  रुँ",
     padaccheda_dev        = "मतु-वसोः रु (लुप्तप्रथमान्तनिर्देशः) सम्बुद्धौ छन्दसि",
     why_dev               = "(सूत्रम् 8.3.1) मतुवसो रु सम्बुद्धौ छन्दसि।",
     anuvritti_from        = ('8.1.1',),

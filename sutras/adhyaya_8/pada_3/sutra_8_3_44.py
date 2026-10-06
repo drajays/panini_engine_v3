@@ -4,6 +4,7 @@
 Padaccheda: इसुसोः · सामर्थ्ये
 
 इसुसोः सामर्थ्ये (8.3.44)
+Pāṭha: ashtadhyayi.com data.txt row i=83044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "isusoH sAmarTye",
     text_dev              = "इसुसोः सामर्थ्ये",
+    samagra_slp1          = "isusoH visarjanIyasya kupvoH anyatarasyAm zaH sAmarTye",
+    samagra_dev           = "इसुसोः विसर्जनीयस्य कुप्वोः अन्यतरस्याम् षः सामर्थ्ये",
     padaccheda_dev        = "इसुसोः · सामर्थ्ये",
     why_dev               = "(सूत्रम् 8.3.44) इसुसोः सामर्थ्ये।",
     anuvritti_from        = ('8.1.1',),

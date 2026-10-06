@@ -4,6 +4,7 @@
 Padaccheda: अचः कर्तृ-यकि
 
 अचः कर्तृयकि (6.1.195)
+Pāṭha: ashtadhyayi.com data.txt row i=61195 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "acaH kartfyaki",
     text_dev              = "अचः कर्तृयकि",
+    samagra_slp1          = "acaH kartfyaki udAttaH AdiH anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अचः कर्तृयकि उदात्तः आदिः अन्यतरस्याम्",
     padaccheda_dev        = "अचः कर्तृ-यकि",
     why_dev               = "(सूत्रम् 6.1.195) अचः कर्तृयकि।",
     anuvritti_from        = ('6.1.1',),

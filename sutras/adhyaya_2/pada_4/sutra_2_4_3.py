@@ -7,6 +7,7 @@ Padaccheda: अनुवादे / चरणानाम्
 recitation branches (caraṇa) takes ekavacana.
 
 Engine: sets gate "2_4_3_anuvade_carana_ekavacana".
+Pāṭha: ashtadhyayi.com data.txt row i=24003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1      = 'anuvAde caraRAnAm',
     text_dev       = 'अनुवादे चरणानाम्',
+    samagra_slp1   = "anuvAde caraRAnAm ekavacanam dvandvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "अनुवादे चरणानाम् एकवचनम् द्वन्द्वः",
     padaccheda_dev = "अनुवादे / चरणानाम्",
     why_dev        = "अनुवाद-प्रसङ्गे चरण-द्वन्द्वः एकवचने भवति।",
     anuvritti_from = ("2.4.1", "2.4.2"),

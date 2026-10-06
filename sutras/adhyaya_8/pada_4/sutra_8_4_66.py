@@ -23,6 +23,7 @@ Engine:
     registers ``samjna_registry['prakriya_32_EdaviDa_svarita_locus']``.
 
 Full **8.4.66** *vidhi* on the varṇa tape is not modelled here.
+Pāṭha: ashtadhyayi.com data.txt row i=84066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -200,6 +201,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'udAttAdanudAttasya svaritaH',
     text_dev       = 'उदात्तादनुदात्तस्य स्वरितः',
+    samagra_slp1   = "pUrvatrAsidDam saMhitAyAm udAttAt anudAttasya svaritaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "पूर्वत्रासिद्धम् संहितायाम् उदात्तात् अनुदात्तस्य स्वरितः",
     padaccheda_dev = "उदात्तात् अनुदात्तस्य स्वरितः",
     why_dev        = "फिट् १.१ (*फिषोऽन्त उदात्तः*) इत उत्सर्ग-अङ्कनम् — पूर्णं ८.४.६६-विधिं नास्ति।",
     anuvritti_from = ("8.4.65",),

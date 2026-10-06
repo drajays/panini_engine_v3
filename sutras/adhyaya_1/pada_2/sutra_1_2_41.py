@@ -3,6 +3,7 @@
 
 Engine: if a pratyaya Term consists of a single consonant (one HAL varṇa),
 tag it as 'apfkta_1_2_41' and record in registry (audit). Used by 7.3.96.
+Pāṭha: ashtadhyayi.com data.txt row i=12041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = "apfkta ekAl pratyayaH",
     text_dev       = "अपृक्त एकाल् प्रत्ययः",
+    samagra_slp1   = "ekAl pratyayaH apfktaH",
+    samagra_dev    = "एकाल् प्रत्ययः अपृक्तः",
     padaccheda_dev = "अपृक्तः / एकाल् / प्रत्ययः",
     why_dev        = "एक-हल्-प्रत्ययः अपृक्त-संज्ञकः (ईट्-आगम ७.३.९६ इत्यादि-प्रसङ्गे)।",
     anuvritti_from = (),

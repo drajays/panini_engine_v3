@@ -6,6 +6,7 @@ affix is **yat** (accent *śāstra*; v3 has no *svara* on ``Varna`` rows).
 
 Narrow v3 (``prakriya_18``):
   • ``cond`` — ``state.meta['sama_6_1_213_recipe']``.
+Pāṭha: ashtadhyayi.com data.txt row i=61213 (Art. 14).
 """
 from __future__ import annotations
 
@@ -26,6 +27,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.ANUVADA,
     text_slp1      = 'yatonAvaH',
     text_dev       = 'यतोऽनावः',
+    samagra_slp1   = "yataH anAvaH udAttaH AdiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "यतः अनावः उदात्तः आदिः",
     padaccheda_dev = "यतः अनावः",
     why_dev        = "यत्-प्रत्यये आद्य्-उदात्त-न्यायः (श्रुति-स्तरः)।",
     anuvritti_from = (),

@@ -4,6 +4,7 @@
 Padaccheda: स्थान-अन्तात् विभाषा सस्थानेन इति चेत्
 
 स्थानान्ताद्विभाषा सस्थानेनेति चेत् (5.4.10)
+Pāṭha: ashtadhyayi.com data.txt row i=54010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sTAnAntAdviBAzA sasTAneneti cet",
     text_dev              = "स्थानान्ताद्विभाषा सस्थानेनेति चेत्",
+    samagra_slp1          = "sTAnAntAt sasTAnena cet iti viBAzA CaH",
+    samagra_dev           = "स्थानान्तात् 'सस्थानेन चेत्' इति विभाषा छः",
     padaccheda_dev        = "स्थान-अन्तात् विभाषा सस्थानेन इति चेत्",
     why_dev               = "(सूत्रम् 5.4.10) स्थानान्ताद्विभाषा सस्थानेनेति चेत्।",
     anuvritti_from        = ('4.1.76',),

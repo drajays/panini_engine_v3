@@ -4,6 +4,7 @@
 Padaccheda: अजा-अविभ्याम् थ्यन्
 
 अजाविभ्यां थ्यन् (5.1.8)
+Pāṭha: ashtadhyayi.com data.txt row i=51008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ajAviByAM Tyan",
     text_dev              = "अजाविभ्यां थ्यन्",
+    samagra_slp1          = "tasmE hitam iti aja-aviByAm Tyan",
+    samagra_dev           = "'तस्मै हितम्' (इति) अज-अविभ्याम् थ्यन्",
     padaccheda_dev        = "अजा-अविभ्याम् थ्यन्",
     why_dev               = "(सूत्रम् 5.1.8) अजाविभ्यां थ्यन्।",
     anuvritti_from        = ('5.1.1',),

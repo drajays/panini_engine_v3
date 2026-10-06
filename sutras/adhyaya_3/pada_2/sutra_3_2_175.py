@@ -4,6 +4,7 @@
 Padaccheda: स्था-ईश-भास-पिस-कसः वरच्
 
 krt-suffix rule: स्थेशभासपिसकसो वरच् (175)
+Pāṭha: ashtadhyayi.com data.txt row i=32175 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sTeSaBAsapisakaso varac",
     text_dev              = "स्थेशभासपिसकसो वरच्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu sTA-ISa-BAsa-pisa-kasaH varac kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु स्था-ईश-भास-पिस-कसः वरच् कृत्",
     padaccheda_dev        = "स्था-ईश-भास-पिस-कसः वरच्",
     why_dev               = "धातोः कृत्-प्रत्ययः [स्थेशभासपिसकसो वरच्] विहितः (३.२.175)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

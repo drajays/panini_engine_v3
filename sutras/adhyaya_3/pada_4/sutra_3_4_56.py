@@ -4,6 +4,7 @@
 Padaccheda: विशि-पति-पदि-स्कन्दाम् व्याप्यमान-आसेव्यमानयोः
 
 krt-suffix rule: विशिपतिपदिस्कन्दां व्याप्यमानासेव्यमानयोः
+Pāṭha: ashtadhyayi.com data.txt row i=34056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viSipatipadiskandAM vyApyamAnAsevyamAnayoH",
     text_dev              = "विशिपतिपदिस्कन्दां व्याप्यमानासेव्यमानयोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH viSi-pati-padi-skandAm vyApyamAna-AsevyamAnayoH kft Ramul dvitIyAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः विशि-पति-पदि-स्कन्दाम् व्याप्यमान-आसेव्यमानयोः कृत् णमुल् द्वितीयायाम्",
     padaccheda_dev        = "विशि-पति-पदि-स्कन्दाम् व्याप्यमान-आसेव्यमानयोः",
     why_dev               = "धातोः प्रत्ययः (३.4.56)।",
     anuvritti_from        = ('3.1.1',),

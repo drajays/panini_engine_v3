@@ -8,6 +8,7 @@ of gati-saṃjñā: the gati must precede the dhātu in the phonological string.
 v3: registers the gate "1_4_80_gati_prag_dhatu" = True to mark that this
     positional requirement has been noted.  The actual positional check is
     enforced by the recipe/pipeline when applying sandhi and kṛt rules.
+Pāṭha: ashtadhyayi.com data.txt row i=14080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -29,6 +30,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='te prAgDAtoH',
     text_dev='ते प्राग्धातोः',
+    samagra_slp1="upasargAH  gatiH prAk DAtoH",
+    samagra_dev="उपसर्गाः , गतिः प्राक् धातोः",
     padaccheda_dev="ते / प्राक् / धातोः",
     why_dev="गति-संज्ञकाः धातोः प्राक् भवन्ति — स्थान-नियमः संज्ञारजिस्ट्रीयां नोद्यते।",
     anuvritti_from=("1.4.60",),

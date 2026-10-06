@@ -4,6 +4,7 @@
 Padaccheda: बहुप्रजाः छन्दसि
 
 बहुप्रजाश्छन्दसि (5.4.123)
+Pāṭha: ashtadhyayi.com data.txt row i=54123 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahuprajASCandasi",
     text_dev              = "बहुप्रजाश्छन्दसि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA bahuprajAH Candasi bahuvrIhO nityam asic",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा बहुप्रजाः छन्दसि बहुव्रीहौ नित्यम् असिच्",
     padaccheda_dev        = "बहुप्रजाः छन्दसि",
     why_dev               = "(सूत्रम् 5.4.123) बहुप्रजाश्छन्दसि।",
     anuvritti_from        = ('5.4.68',),

@@ -4,6 +4,7 @@
 Padaccheda: च-वा-योगे प्रथमा
 
 चवायोगे प्रथमा (8.1.59)
+Pāṭha: ashtadhyayi.com data.txt row i=81059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "cavAyoge praTamA",
     text_dev              = "चवायोगे प्रथमा",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO cavAyoge praTamA tiN na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ चवायोगे प्रथमा तिङ् न",
     padaccheda_dev        = "च-वा-योगे प्रथमा",
     why_dev               = "(सूत्रम् 8.1.59) चवायोगे प्रथमा।",
     anuvritti_from        = ('8.1.1',),

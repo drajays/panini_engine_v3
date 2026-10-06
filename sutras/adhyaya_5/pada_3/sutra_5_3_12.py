@@ -4,6 +4,7 @@
 Padaccheda: किमः अत्
 
 किमोऽत् (5.3.12)
+Pāṭha: ashtadhyayi.com data.txt row i=53012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'kimot',
     text_dev              = 'किमोऽत्',
+    samagra_slp1          = "kimaH saptamyAH at vA",
+    samagra_dev           = "किमः सप्तम्याः अत् वा",
     padaccheda_dev        = "किमः अत्",
     why_dev               = "(सूत्रम् 5.3.12) किमोऽत्।",
     anuvritti_from        = ('5.3.2',),

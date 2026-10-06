@@ -4,6 +4,7 @@
 Padaccheda: उभय-प्राप्तौ कर्मणि
 
 When both karaka can be obtained, karma takes over.
+Pāṭha: ashtadhyayi.com data.txt row i=23066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uBayaprAptO karmaRi",
     text_dev              = "उभयप्राप्तौ कर्मणि",
+    samagra_slp1          = "anaBihite uBayaprAptO karmaRi zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते उभयप्राप्तौ कर्मणि षष्ठी",
     padaccheda_dev        = "उभय-प्राप्तौ कर्मणि",
     why_dev               = "उभय-प्राप्तौ कर्मणि (२.३.६६)।",
     anuvritti_from        = ('2.3.65',),

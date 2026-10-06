@@ -177,6 +177,7 @@ Operational v3 role: sets paribhāṣā gates so later vidhis can choose the
 
 - ``paribhasha_gates['sthanantara_vrddhi']``: vṛddhi selection
 - ``paribhasha_gates['sthanantara_guna']``  : guṇa selection (used by 6.1.87)
+Pāṭha: ashtadhyayi.com data.txt row i=11050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -214,6 +215,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.PARIBHASHA,
     text_slp1      = 'sTAnentaratamaH',
     text_dev       = 'स्थानेऽन्तरतमः',
+    samagra_slp1   = "sTAne antaratamaH",
+    samagra_dev    = "स्थाने अन्तरतमः",
     padaccheda_dev = "स्थाने / अन्तरतमः",
     why_dev        = "आदेश-चयनस्य परिभाषा — स्थाने (उच्चारण-स्थान-प्रयत्नादि-साम्ये) "
                      "अन्तरतमः विकल्प्यते।",

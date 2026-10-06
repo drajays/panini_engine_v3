@@ -4,6 +4,7 @@
 Padaccheda: इष्ठस्य यिट् च
 
 इष्ठस्य यिट् च (6.4.159)
+Pāṭha: ashtadhyayi.com data.txt row i=64159 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "izWasya yiw ca",
     text_dev              = "इष्ठस्य यिट् च",
+    samagra_slp1          = "aNgasya asidDavadatrABAt Basya izWasya yiw ca izWa-iman-Iyassu bahoH BU",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् भस्य इष्ठस्य यिट् च इष्ठ-इमन्-ईयस्सु बहोः भू",
     padaccheda_dev        = "इष्ठस्य यिट् च",
     why_dev               = "(सूत्रम् 6.4.159) इष्ठस्य यिट् च।",
     anuvritti_from        = ('6.1.1',),

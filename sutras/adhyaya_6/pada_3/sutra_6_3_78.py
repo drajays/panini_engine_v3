@@ -4,6 +4,7 @@
 Padaccheda: सहस्य सः संज्ञायाम्
 
 सहस्य सः संज्ञायाम् (6.3.78)
+Pāṭha: ashtadhyayi.com data.txt row i=63078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sahasya saH saMjYAyAm",
     text_dev              = "सहस्य सः संज्ञायाम्",
+    samagra_slp1          = "uttarapade sahasya saH saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे सहस्य सः संज्ञायाम्",
     padaccheda_dev        = "सहस्य सः संज्ञायाम्",
     why_dev               = "(सूत्रम् 6.3.78) सहस्य सः संज्ञायाम्।",
     anuvritti_from        = ('6.1.1',),

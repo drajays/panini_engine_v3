@@ -4,6 +4,7 @@
 Padaccheda: अङ्‍गुली-आदिभ्यः ठक्
 
 अङ्गुल्यादिभ्यष्ठक् (5.3.108)
+Pāṭha: ashtadhyayi.com data.txt row i=53108 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aNgulyAdiByazWak",
     text_dev              = "अङ्गुल्यादिभ्यष्ठक्",
+    samagra_slp1          = "aNgulyAdiByaH ive Wak",
+    samagra_dev           = "अङ्गुल्यादिभ्यः इवे ठक्",
     padaccheda_dev        = "अङ्‍गुली-आदिभ्यः ठक्",
     why_dev               = "(सूत्रम् 5.3.108) अङ्गुल्यादिभ्यष्ठक्।",
     anuvritti_from        = ('4.1.76',),

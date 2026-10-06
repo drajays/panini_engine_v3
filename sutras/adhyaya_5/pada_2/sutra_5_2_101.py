@@ -4,6 +4,7 @@
 Padaccheda: प्रज्ञा-श्रद्धा-अर्चा-वृत्तिभ्यः णः
 
 प्रज्ञाश्रद्धाऽर्चावृत्तिभ्यो णः (5.2.101)
+Pāṭha: ashtadhyayi.com data.txt row i=52101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'prajYASradDArcAByo RaH',
     text_dev              = 'प्रज्ञाश्रद्धार्चाभ्यो णः',
+    samagra_slp1          = "tat asya asmin astIti iti prajYA-SradDA-arcAByaH RaH matu~p anyatarasyAm",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) प्रज्ञा-श्रद्धा-अर्चाभ्यः णः, मतुँप् अन्यतरस्याम्",
     padaccheda_dev        = "प्रज्ञा-श्रद्धा-अर्चा-वृत्तिभ्यः णः",
     why_dev               = "(सूत्रम् 5.2.101) प्रज्ञाश्रद्धाऽर्चावृत्तिभ्यो णः।",
     anuvritti_from        = ('4.1.82',),

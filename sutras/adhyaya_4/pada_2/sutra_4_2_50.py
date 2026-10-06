@@ -4,6 +4,7 @@
 Padaccheda: खल-गोरथात्
 
 खलगोरथात् (4.2.50)
+Pāṭha: ashtadhyayi.com data.txt row i=42050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "KalagoraTAt",
     text_dev              = "खलगोरथात्",
+    samagra_slp1          = "tasya samUhaH iti Kala-go-raTAt yaH",
+    samagra_dev           = "तस्य समूहः (इति) खल-गो-रथात् यः",
     padaccheda_dev        = "खल-गोरथात्",
     why_dev               = "(सूत्रम् 4.2.50) खलगोरथात्।",
     anuvritti_from        = ('4.1.1',),

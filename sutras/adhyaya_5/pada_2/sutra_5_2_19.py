@@ -4,6 +4,7 @@
 Padaccheda: अश्वस्य एकाहगमः
 
 अश्वस्यैकाहगमः (5.2.19)
+Pāṭha: ashtadhyayi.com data.txt row i=52019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aSvasyEkAhagamaH",
     text_dev              = "अश्वस्यैकाहगमः",
+    samagra_slp1          = "ekAhagamaH iti aSvasya KaY",
+    samagra_dev           = "'एकाहगमः' (इति) अश्वस्य खञ्",
     padaccheda_dev        = "अश्वस्य एकाहगमः",
     why_dev               = "(सूत्रम् 5.2.19) अश्वस्यैकाहगमः।",
     anuvritti_from        = ('4.1.82',),

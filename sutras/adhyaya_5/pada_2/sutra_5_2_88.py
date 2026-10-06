@@ -4,6 +4,7 @@
 Padaccheda: इष्ट-आदिभ्यः च
 
 इष्टादिभ्यश्च (5.2.88)
+Pāṭha: ashtadhyayi.com data.txt row i=52088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "izwAdiByaSca",
     text_dev              = "इष्टादिभ्यश्च",
+    samagra_slp1          = "anena iti izwAdiByaH iniH",
+    samagra_dev           = "'अनेन' (इति) इष्टादिभ्यः इनिः",
     padaccheda_dev        = "इष्ट-आदिभ्यः च",
     why_dev               = "(सूत्रम् 5.2.88) इष्टादिभ्यश्च।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: बहोः नञ्-वत् उत्तरपद-भूम्नि
 
 बहोर्नञ्वदुत्तरपदभूम्नि (6.2.175)
+Pāṭha: ashtadhyayi.com data.txt row i=62175 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahornaYvaduttarapadaBUmni",
     text_dev              = "बहोर्नञ्वदुत्तरपदभूम्नि",
+    samagra_slp1          = "uttarapadAdiH antaH bahoH naYvat uttarapadaBUmni bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः बहोः नञ्वत् उत्तरपदभूम्नि बहुव्रीहौ",
     padaccheda_dev        = "बहोः नञ्-वत् उत्तरपद-भूम्नि",
     why_dev               = "(सूत्रम् 6.2.175) बहोर्नञ्वदुत्तरपदभूम्नि।",
     anuvritti_from        = ('6.1.1',),

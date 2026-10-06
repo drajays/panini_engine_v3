@@ -4,6 +4,7 @@
 Padaccheda: चतुर्थी च आशिषि आयुष्य-मद्र-भद्र-कुशल-सुख-अर्थहितैः
 
 caturthy in blessings with ayusya, madra, bhadra etc.
+Pāṭha: ashtadhyayi.com data.txt row i=23073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "caturTI cASizyAyuzyamadraBadrakuSalasuKArTahitEH",
     text_dev              = "चतुर्थी चाशिष्यायुष्यमद्रभद्रकुशलसुखार्थहितैः",
+    samagra_slp1          = "caturTI ca ASizi Ayuzya-madra-Badra-kuSala-suKa-arTa-hitEH zazWI anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "चतुर्थी च आशिषि आयुष्य-मद्र-भद्र-कुशल-सुख-अर्थ-हितैः षष्ठी अन्यतरस्याम्",
     padaccheda_dev        = "चतुर्थी च आशिषि आयुष्य-मद्र-भद्र-कुशल-सुख-अर्थहितैः",
     why_dev               = "चतुर्थी च आशिषि आयुष्य-मद्र-भद्र-कुशल-सुख-अर्थहितैः (२.३.७३)।",
     anuvritti_from        = ('2.3.13',),

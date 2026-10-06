@@ -4,6 +4,7 @@
 Padaccheda: छ (लुप्तप्रथमान्तनिर्देशः) च
 
 छ च (4.2.28)
+Pāṭha: ashtadhyayi.com data.txt row i=42028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Ca ca",
     text_dev              = "छ च",
+    samagra_slp1          = "sA asya devatA iti aponaptf-apAnnaptfByAm Ca pratyayaH",
+    samagra_dev           = "'सा अस्य देवता' (इति) अपोनप्तृ-अपान्नप्तृभ्याम् छ प्रत्ययः",
     padaccheda_dev        = "छ (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 4.2.28) छ च।",
     anuvritti_from        = ('4.1.1',),

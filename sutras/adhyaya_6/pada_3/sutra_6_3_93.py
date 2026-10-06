@@ -4,6 +4,7 @@
 Padaccheda: समः समि (लुप्तप्रथमान्तनिर्देशः)
 
 समः समि (6.3.93)
+Pāṭha: ashtadhyayi.com data.txt row i=63093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samaH sami",
     text_dev              = "समः समि",
+    samagra_slp1          = "apratyaye aYcatO uttarapade samaH sami",
+    samagra_dev           = "अप्रत्यये अञ्चतौ उत्तरपदे समः समि",
     padaccheda_dev        = "समः समि (लुप्तप्रथमान्तनिर्देशः)",
     why_dev               = "(सूत्रम् 6.3.93) समः समि।",
     anuvritti_from        = ('6.1.1',),

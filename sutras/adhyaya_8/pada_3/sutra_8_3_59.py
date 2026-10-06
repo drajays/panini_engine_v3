@@ -101,6 +101,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = "AdeSapratyayayoH",
     text_dev       = "आदेशप्रत्यययोः",
+    samagra_slp1   = "AdeSa-pratyayayoH iRkoH apadAntasya saH mUrDanyaH",
+    samagra_dev    = "आदेश-प्रत्यययोः इण्कोः अपदान्तस्य सः मूर्धन्यः",
     padaccheda_dev = "आदेश-प्रत्यययोः",
     why_dev        = "इन्-कुक्-पूर्वे स-कारस्य (प्रत्ययस्थस्य) 'ष'-आदेशः "
                      "(त्रिपादी)।",

@@ -6,6 +6,7 @@ Padaccheda: क्षुद्र-जन्तवः
 Śāstra: dvandva compounds of small creatures (kṣudrajantavaḥ) take ekavacana.
 
 Engine: sets gate "2_4_8_ksudrajantava_ekavacana".
+Pāṭha: ashtadhyayi.com data.txt row i=24008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1      = "kzudrajantavaH",
     text_dev       = "क्षुद्रजन्तवः",
+    samagra_slp1   = "kzudra-jantavaH ekavacanam dvandvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "क्षुद्र-जन्तवः एकवचनम् द्वन्द्वः",
     padaccheda_dev = "क्षुद्र-जन्तवः",
     why_dev        = "क्षुद्रजन्तु-द्वन्द्वे एकवचनम्।",
     anuvritti_from = ("2.4.1", "2.4.2"),

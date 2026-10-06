@@ -2,6 +2,7 @@
 3.1.91  धातोः  —  ADHIKARA
 
 Kṛt/tiṅ pratyayas attach to *dhātu* (3.1.91–3.4.117).
+Pāṭha: ashtadhyayi.com data.txt row i=31091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -29,6 +30,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.ADHIKARA,
     text_slp1      = "DAtoH",
     text_dev       = "धातोः",
+    samagra_slp1   = "DAtoH paraH AdyudAttaH pratyayaH syAt",
+    samagra_dev    = "धातोः परः आद्युदात्तः प्रत्ययः (स्यात्)",
     padaccheda_dev = "धातोः",
     why_dev        = "धातोः कृत्-तिङ्-प्रत्ययाः — अधिकारः ३.१.९१ तः ३.४.११७ पर्यन्तम्।",
     anuvritti_from = ("3.1.1", "3.1.2", "3.1.3"),

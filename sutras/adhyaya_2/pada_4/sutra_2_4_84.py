@@ -4,6 +4,7 @@
 Padaccheda: तृतीया-सप्तम्योः बहुलम्
 
 Bahulam (varied) for tritiya and saptami.
+Pāṭha: ashtadhyayi.com data.txt row i=24084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tftIyAsaptamyorbahulam",
     text_dev              = "तृतीयासप्तम्योर्बहुलम्",
+    samagra_slp1          = "tftIyA-saptamyoH bahulam supaH avyayIBAvAt ataH am",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तृतीया-सप्तम्योः बहुलम् सुपः अव्ययीभावात् अतः अम्",
     padaccheda_dev        = "तृतीया-सप्तम्योः बहुलम्",
     why_dev               = "तृतीया-सप्तम्योः बहुलम् (२.४.८४)।",
     anuvritti_from        = ('2.4.83',),

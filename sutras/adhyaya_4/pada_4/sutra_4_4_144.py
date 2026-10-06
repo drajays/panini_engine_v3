@@ -4,6 +4,7 @@
 Padaccheda: भावे च
 
 भावे च (4.4.144)
+Pāṭha: ashtadhyayi.com data.txt row i=44144 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BAve ca",
     text_dev              = "भावे च",
+    samagra_slp1          = "BAve iti Siva-Sam-arizwasya Candasi saMjYAyAm tAtil",
+    samagra_dev           = "'भावे' (इति) शिव-शम्-अरिष्टस्य छन्दसि संज्ञायाम् तातिल्",
     padaccheda_dev        = "भावे च",
     why_dev               = "(सूत्रम् 4.4.144) भावे च।",
     anuvritti_from        = ('4.1.1',),

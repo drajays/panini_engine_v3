@@ -4,6 +4,7 @@
 Padaccheda: आगवीनः
 
 आगवीनः (5.2.14)
+Pāṭha: ashtadhyayi.com data.txt row i=52014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AgavInaH",
     text_dev              = "आगवीनः",
+    samagra_slp1          = "AgavInaH iti nipAtyate",
+    samagra_dev           = "'आगवीनः' (इति निपात्यते)",
     padaccheda_dev        = "आगवीनः",
     why_dev               = "(सूत्रम् 5.2.14) आगवीनः।",
     anuvritti_from        = ('4.1.82',),

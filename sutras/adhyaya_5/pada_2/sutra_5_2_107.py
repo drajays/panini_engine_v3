@@ -4,6 +4,7 @@
 Padaccheda: ऊष-सुषि-मुष्क-मधः रः
 
 ऊषसुषिमुष्कमधो रः (5.2.107)
+Pāṭha: ashtadhyayi.com data.txt row i=52107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "UzasuzimuzkamaDo raH",
     text_dev              = "ऊषसुषिमुष्कमधो रः",
+    samagra_slp1          = "tat asya asmin astIti iti Uza-suzi-muzka-maDaH raH",
+    samagra_dev           = "'तत् अस्य अस्मिन् अस्तीति' (इति) ऊष-सुषि-मुष्क-मधः रः",
     padaccheda_dev        = "ऊष-सुषि-मुष्क-मधः रः",
     why_dev               = "(सूत्रम् 5.2.107) ऊषसुषिमुष्कमधो रः।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: एतदः त्र-तसोः त्र-तसौ च अनुदात्तौ
 
 For etad, tra and tasa are substituted, both unaccented.
+Pāṭha: ashtadhyayi.com data.txt row i=24033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "etadastratasostratasO cAnudAttO",
     text_dev              = "एतदस्त्रतसोस्त्रतसौ चानुदात्तौ",
+    samagra_slp1          = "etadaH tra-tasoH tra-tasO ca anudAttO idamaH anvAdeSe aS anudAttaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "एतदः त्र-तसोः त्र-तसौ च अनुदात्तौ इदमः अन्वादेशे अश् अनुदात्तः",
     padaccheda_dev        = "एतदः त्र-तसोः त्र-तसौ च अनुदात्तौ",
     why_dev               = "एतदः त्र-तसोः त्र-तसौ च अनुदात्तौ (२.४.३३)।",
     anuvritti_from        = ('2.4.32',),

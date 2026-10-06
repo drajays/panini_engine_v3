@@ -23,6 +23,7 @@ Engine implementation:
       No arm needed for 's' (original su path — default behaviour).
     • no "7_1_28_done" tag on the pratyaya
   act — replace pratyaya varnas with [a, m]; set upadesha_slp1 = "am"
+Pāṭha: ashtadhyayi.com data.txt row i=71028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -116,6 +117,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Ne praTamayoram",
     text_dev              = "ङे प्रथमयोरम्",
+    samagra_slp1          = "aNgasya Ne praTamayoram yuzmad-asmadByAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ङे प्रथमयोरम् युष्मद्-अस्मद्भ्याम्",
     padaccheda_dev        = "ङे (लुप्तषष्ठ्यन्तनिर्देशः) प्रथमयोः अम्",
     why_dev               = "अस्मद्/युष्मद्-शब्दयोः सुँ-प्रत्ययस्य स्थाने अम् आदेशः "
                             "(सूत्रम् ७.१.२८ ङे प्रथमयोरम्)।",

@@ -18,6 +18,7 @@ Engine implementation:
     • replace first 3 varnas [a,s,m] with parse("Ava") = [ā,v,a]
     • result: stem = [ā, v, a, a, d]
     • add "7_2_92_done" tag to stem
+Pāṭha: ashtadhyayi.com data.txt row i=72092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -67,6 +68,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yuvAvO dvivacane",
     text_dev              = "युवावौ द्विवचने",
+    samagra_slp1          = "aNgasya maparyantasya yuvAvO dvivacane viBaktO yuzmadasmadoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य मपर्यन्तस्य युवावौ द्विवचने विभक्तौ युष्मदस्मदोः",
     padaccheda_dev        = "युव-आवौ द्विवचने",
     why_dev               = "अस्मद्-शब्दस्य आदि-भागस्य [अ,स्,म्] स्थाने [आ,व,अ] आदेशः "
                             "द्विवचने (सूत्रम् ७.२.९२ युवावौ द्विवचने)।",

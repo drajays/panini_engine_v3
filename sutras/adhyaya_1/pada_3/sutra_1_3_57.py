@@ -14,6 +14,7 @@ desiderative suffix). For example: jijñāsate — he desires to know;
 stamp "Atmanepada_1_3_57" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _ROOTS carries the tag "san_pratyaya". No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -61,6 +62,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='jYASrusmfdfSAM sanaH',
     text_dev='ज्ञाश्रुस्मृदृशां सनः',
+    samagra_slp1="jYA-Sru-smf-dfSAm sanaH Atmanepadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="ज्ञा-श्रु-स्मृ-दृशाम् सनः आत्मनेपदम्",
     padaccheda_dev="ज्ञा-श्रु-स्मृ-दृशाम् (षष्ठी-बहुवचन) / सनः (षष्ठी-एकवचन)",
     why_dev=(
         "ज्ञा-श्रु-स्मृ-दृश्-धातूनां सन्-प्रत्यये परे आत्मनेपदम् — "

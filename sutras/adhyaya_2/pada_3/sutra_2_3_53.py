@@ -4,6 +4,7 @@
 Padaccheda: कृञः प्रतियत्ने
 
 krnj in effort context takes sasthi.
+Pāṭha: ashtadhyayi.com data.txt row i=23053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kfYaH pratiyatne",
     text_dev              = "कृञः प्रतियत्ने",
+    samagra_slp1          = "anaBihite kfYaH pratiyatne Seze zazWI karmaRi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते कृञः प्रतियत्ने शेषे षष्ठी कर्मणि",
     padaccheda_dev        = "कृञः प्रतियत्ने",
     why_dev               = "कृञः प्रतियत्ने षष्ठी (२.३.५३)।",
     anuvritti_from        = ('2.3.50',),

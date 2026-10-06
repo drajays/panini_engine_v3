@@ -4,6 +4,7 @@
 Padaccheda: अपादाने च अहीयरुहोः
 
 अपादाने चाहीयरुहोः (5.4.45)
+Pāṭha: ashtadhyayi.com data.txt row i=54045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "apAdAne cAhIyaruhoH",
     text_dev              = "अपादाने चाहीयरुहोः",
+    samagra_slp1          = "apAdAne a-hIya-ruhoH tasiH",
+    samagra_dev           = "अपादाने अ-हीय-रुहोः तसिः",
     padaccheda_dev        = "अपादाने च अहीयरुहोः",
     why_dev               = "(सूत्रम् 5.4.45) अपादाने चाहीयरुहोः।",
     anuvritti_from        = ('4.1.76',),

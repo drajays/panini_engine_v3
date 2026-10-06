@@ -16,6 +16,7 @@ Engine:
   - act: set samjna_registry["1_2_38_deva_brahman_anudAtta"] = DEVA_BRAHMAN;
          return state.
   - r1_form_identity_exempt=True: no surface string changes.
+Pāṭha: ashtadhyayi.com data.txt row i=12038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'devabrahmaRoranudAttaH',
     text_dev                = 'देवब्रह्मणोरनुदात्तः',
+    samagra_slp1            = "deva-brahmaRoH anudAttaH ekaSruti subrahmaRyAyAm svaritasya tu udAttaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "देव-ब्रह्मणोः अनुदात्तः एकश्रुति सुब्रह्मण्यायाम् स्वरितस्य तु उदात्तः",
     padaccheda_dev          = "देव-ब्रह्मणोः / अनुदात्तः",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.30",),

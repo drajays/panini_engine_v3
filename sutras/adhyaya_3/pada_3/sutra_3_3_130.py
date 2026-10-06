@@ -4,6 +4,7 @@
 Padaccheda: अन्येभ्यः अपि दृश्यते (क्रियापदम्)
 
 krt-suffix rule: अन्येभ्योऽपि दृश्यते
+Pāṭha: ashtadhyayi.com data.txt row i=33130 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'anyeByopi dfSyate',
     text_dev              = 'अन्येभ्योऽपि दृश्यते',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH anyeByaH api dfSyate kft yuc Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः अन्येभ्यः अपि दृश्यते कृत् युच् छन्दसि",
     padaccheda_dev        = "अन्येभ्यः अपि दृश्यते (क्रियापदम्)",
     why_dev               = "धातोः प्रत्ययः (३.3.130)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: तत् अधीते (क्रियापदम्) तद्वेद
 
 तदधीते तद्वेद (4.2.59)
+Pāṭha: ashtadhyayi.com data.txt row i=42059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadaDIte tadveda",
     text_dev              = "तदधीते तद्वेद",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA tat aDIte veda",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा तत् अधीते वेद",
     padaccheda_dev        = "तत् अधीते (क्रियापदम्) तद्वेद",
     why_dev               = "(सूत्रम् 4.2.59) तदधीते तद्वेद।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: तस्य वापः
 
 तस्य वापः (5.1.45)
+Pāṭha: ashtadhyayi.com data.txt row i=51045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tasya vApaH",
     text_dev              = "तस्य वापः",
+    samagra_slp1          = "tasya vApaH iti samarTAnAM praTamAt paraH WaY pratyayaH",
+    samagra_dev           = "'तस्य वापः' (इति) समर्थानां प्रथमात् परः ठञ् प्रत्ययः",
     padaccheda_dev        = "तस्य वापः",
     why_dev               = "(सूत्रम् 5.1.45) तस्य वापः।",
     anuvritti_from        = ('5.1.19',),

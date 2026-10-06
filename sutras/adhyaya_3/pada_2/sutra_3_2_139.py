@@ -9,6 +9,7 @@ a *dhātu* whose *upadeśa* is ``ji``, append a *kṛt* ``Term`` **gsnuC**
 (``g`` + ``s`` + ``n`` + ``u`` + ``c`` *it*).  The initial ``g`` is *it* by
 **1.3.8** (*laśakvataddhite*); the ``Term`` carries ``kngiti`` so **1.1.5**
 blocks **7.3.84** *guṇa* (*gidiavat* behaviour after ``g``-*lopa*).
+Pāṭha: ashtadhyayi.com data.txt row i=32139 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'glAjisTaSca ksnuH',
     text_dev       = 'ग्लाजिस्थश्च क्स्नुः',
+    samagra_slp1   = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu glA-ji-sTaH ca ksnuH kft BuvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु ग्ला-जि-स्थः च क्स्नुः कृत् भुवः",
     padaccheda_dev = "ग्ला-जि-स्थः / च / ग्स्नुः",
     why_dev        = "ताच्छील्ये जि-धातोः ग्स्नुच्-प्रत्ययः (ग्लास-बॉक्स्)।",
     anuvritti_from = ("3.2.134",),

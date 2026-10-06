@@ -2,7 +2,7 @@
 6.4.72  आडजादीनाम्  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=60472
+- ashtadhyayi.com data.txt row i=64072
 - Kāśikā: आड् आदेशः अच्-आदि-धातुषु लृङि
 - Cross-validation: tests/unit/test_tinanta_ad_lrg_kartari.py (आत्स्यत् …)
 
@@ -73,6 +73,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="AqajAdInAm",
     text_dev="आडजादीनाम्",
+    samagra_slp1="luNlaNlfNkzu ajAdInAmAw udAttaH",
+    samagra_dev="लुङ्लङ्लृङ्क्षु अजादीनामाट् उदात्तः",
     padaccheda_dev="आट् / अच्-आदीनाम्",
     why_dev="लृङि अद्-धातौ आट्-आगमः — आत्स्यत्।",
     anuvritti_from=("6.4.1",),

@@ -4,6 +4,7 @@
 Padaccheda: प्रावृषः एण्यः
 
 प्रावृष एण्यः (4.3.17)
+Pāṭha: ashtadhyayi.com data.txt row i=43017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prAvfza eRyaH",
     text_dev              = "प्रावृष एण्यः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA prAvfzaH eRyaH kAlAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा प्रावृषः एण्यः कालात्",
     padaccheda_dev        = "प्रावृषः एण्यः",
     why_dev               = "(सूत्रम् 4.3.17) प्रावृष एण्यः।",
     anuvritti_from        = ('4.1.1',),

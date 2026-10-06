@@ -4,6 +4,7 @@
 Padaccheda: वित्तः भोगप्रत्यययोः
 
 वित्तो भोगप्रत्यययोः (8.2.58)
+Pāṭha: ashtadhyayi.com data.txt row i=82058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vitto BogapratyayayoH",
     text_dev              = "वित्तो भोगप्रत्यययोः",
+    samagra_slp1          = "padasya pUrvatrAsidDam vittaH BogapratyayayoH nizWAtaH naH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वित्तः भोगप्रत्यययोः निष्ठातः नः न",
     padaccheda_dev        = "वित्तः भोगप्रत्यययोः",
     why_dev               = "(सूत्रम् 8.2.58) वित्तो भोगप्रत्यययोः।",
     anuvritti_from        = ('8.1.1',),

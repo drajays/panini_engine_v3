@@ -16,6 +16,7 @@ whose upadesha_slp1 is in _VAD_ROOTS and which carries the tag
 "samuccArana_usage" (indicating the samuccāraṇa context).
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='vyaktavAcAM samuccAraRe',
     text_dev='व्यक्तवाचां समुच्चारणे',
+    samagra_slp1="vyaktavAcAm samuccAraRe Atmanepadam vadaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="व्यक्तवाचाम् समुच्चारणे आत्मनेपदम् वदः",
     padaccheda_dev="व्यक्त-वाचाम् (षष्ठी-बहुवचन) / समुच्चारणे (सप्तमी-एकवचन)",
     why_dev=(
         "व्यक्तवाचां समुच्चारणे वद्-धातोः आत्मनेपदम् — "

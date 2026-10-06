@@ -4,6 +4,7 @@
 Padaccheda: इङ्-धार्य्योः (पञ्चम्यर्थे षष्ठी) शतृँ (लुप्तप्रथमान्तनिर्देशः) अकृच्छ्रिणि
 
 krt-suffix rule: इङ्धार्योः शत्रकृच्छ्रिणि (130)
+Pāṭha: ashtadhyayi.com data.txt row i=32130 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "iNDAryoH SatrakfcCriRi",
     text_dev              = "इङ्धार्योः शत्रकृच्छ्रिणि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne iN-DAryyoH Satf akfcCriRi kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने इङ्-धार्य्योः शतृ अकृच्छ्रिणि कृत्",
     padaccheda_dev        = "इङ्-धार्य्योः (पञ्चम्यर्थे षष्ठी) शतृँ (लुप्तप्रथमान्तनिर्देशः) अकृच्छ्रिणि",
     why_dev               = "धातोः कृत्-प्रत्ययः [इङ्धार्योः शत्रकृच्छ्रिणि] विहितः (३.२.130)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

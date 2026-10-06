@@ -4,6 +4,7 @@
 Padaccheda: स्थण्डिलात् शयितरि व्रते
 
 स्थण्डिलाच्छयितरि व्रते (4.2.15)
+Pāṭha: ashtadhyayi.com data.txt row i=42015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sTaRqilAcCayitari vrate",
     text_dev              = "स्थण्डिलाच्छयितरि व्रते",
+    samagra_slp1          = "vrate tatra Sayitari sTaRqilAt aR",
+    samagra_dev           = "व्रते तत्र शयितरि स्थण्डिलात् अण्",
     padaccheda_dev        = "स्थण्डिलात् शयितरि व्रते",
     why_dev               = "(सूत्रम् 4.2.15) स्थण्डिलाच्छयितरि व्रते।",
     anuvritti_from        = ('4.1.1',),

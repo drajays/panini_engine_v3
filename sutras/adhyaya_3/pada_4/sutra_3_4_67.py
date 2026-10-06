@@ -4,6 +4,7 @@
 Scope for kṛt-pratyaya rules in the *kartṛ* sense, through 3.4.117 (per
 traditional layout).  Pushes an adhikāra marker for trace alignment with
 ``pachak.md`` / kartṛi prakriyā.
+Pāṭha: ashtadhyayi.com data.txt row i=34067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = "kartari kft",
     text_dev       = "कर्तरि कृत्",
+    samagra_slp1   = "pratyayaH paraSca AdyudAttaSca DAtoH kartari kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कर्तरि कृत्",
     padaccheda_dev = "कर्तरि कृत्",
     why_dev        = "कर्तरि अर्थे कृत्-प्रत्ययानां विधानम् — अधिकारः ३.४.६७ तः ३.४.११७ पर्यन्तम्।",
     anuvritti_from = ("3.4.66",),

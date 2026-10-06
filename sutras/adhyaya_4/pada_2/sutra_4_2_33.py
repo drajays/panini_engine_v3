@@ -4,6 +4,7 @@
 Padaccheda: अग्नेः ढक्
 
 अग्नेर्ढक् (4.2.33)
+Pāṭha: ashtadhyayi.com data.txt row i=42033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "agnerQak",
     text_dev              = "अग्नेर्ढक्",
+    samagra_slp1          = "sA asya devatA iti agneH Qak",
+    samagra_dev           = "'सा अस्य देवता' (इति)  अग्नेः ढक्",
     padaccheda_dev        = "अग्नेः ढक्",
     why_dev               = "(सूत्रम् 4.2.33) अग्नेर्ढक्।",
     anuvritti_from        = ('4.1.1',),

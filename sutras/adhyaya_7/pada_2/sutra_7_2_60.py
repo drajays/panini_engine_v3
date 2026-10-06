@@ -4,6 +4,7 @@
 Padaccheda: तासि (लुप्तषष्ठ्यन्तनिर्देशः) च कॢपः
 
 तासि च कॢपः (7.2.60)
+Pāṭha: ashtadhyayi.com data.txt row i=72060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tAsi ca kxpaH",
     text_dev              = "तासि च कॢपः",
+    samagra_slp1          = "aNgasya tAsi ca kxpaH valAdeH iw ArDaDAtukasya se parasmEpadezu na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य तासि च कॢपः वलादेः इट् आर्धधातुकस्य से परस्मैपदेषु न",
     padaccheda_dev        = "तासि (लुप्तषष्ठ्यन्तनिर्देशः) च कॢपः",
     why_dev               = "(सूत्रम् 7.2.60) तासि च कॢपः।",
     anuvritti_from        = ('7.1.1',),

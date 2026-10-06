@@ -159,6 +159,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'halantyam',
     text_dev       = 'हलन्त्यम्',
+    samagra_slp1   = "upadeSe antyam hal it",
+    samagra_dev    = "उपदेशे अन्त्यम् हल् इत्",
     padaccheda_dev = "उपदेशे अन्त्यं हलन्त्यम्",
     why_dev        = "उपदेशे अन्त्यः हल् वर्णः ‘इत्’ संज्ञां लभते; "
                      "तुस्मान्त-विभक्तौ निषेधः १.३.४। लोपः १.३.९।",

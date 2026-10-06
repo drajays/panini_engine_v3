@@ -14,6 +14,7 @@ in vidhiliṅ 3pl derivation.
 
 Engine scope: fires when a yasut_agama term ends in 'ā' (or 'A') and the
 immediately following term starts with 'u' + 's' (= the 3pl liṅ suffix 'us').
+Pāṭha: ashtadhyayi.com data.txt row i=61096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -72,6 +73,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "usyapadAntAt",
     text_dev              = "उस्यपदान्तात्",
+    samagra_slp1          = "apadAntAt At usi pUrvaparayoH ekaH pararUpam",
+    samagra_dev           = "अपदान्तात् आत् उसि पूर्वपरयोः एकः पररूपम्",
     padaccheda_dev        = "उसि अ-पदान्तात्",
     why_dev               = (
         "विधिलिङि तृतीयपुरुष-बहुवचने (उस्-परे) यासुट्-अन्त्यस्य 'आ'-कारस्य लोपः — "

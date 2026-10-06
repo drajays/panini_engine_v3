@@ -4,6 +4,7 @@
 Padaccheda: कौमार (लुप्तप्रथमान्तनिर्देशः) अपूर्ववचने
 
 कौमारापूर्ववचने (4.2.13)
+Pāṭha: ashtadhyayi.com data.txt row i=42013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kOmArApUrvavacane",
     text_dev              = "कौमारापूर्ववचने",
+    samagra_slp1          = "apUrvavacane kOmAraH",
+    samagra_dev           = "अपूर्ववचने कौमारः",
     padaccheda_dev        = "कौमार (लुप्तप्रथमान्तनिर्देशः) अपूर्ववचने",
     why_dev               = "(सूत्रम् 4.2.13) कौमारापूर्ववचने।",
     anuvritti_from        = ('4.1.1',),

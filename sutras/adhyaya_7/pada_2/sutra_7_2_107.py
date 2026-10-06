@@ -4,6 +4,7 @@
 Padaccheda: अदसः औ (लुप्तप्रथमान्तनिर्देशः) सु-लोपः च
 
 अदस औ सुलोपश्च (7.2.107)
+Pāṭha: ashtadhyayi.com data.txt row i=72107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -37,6 +38,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "adasa O sulopaSca",
     text_dev              = "अदस औ सुलोपश्च",
+    samagra_slp1          = "adasaH sO O sulopaH ca",
+    samagra_dev           = "अदसः सौ औ सुलोपः च",
     padaccheda_dev        = "अदसः औ (लुप्तप्रथमान्तनिर्देशः) सु-लोपः च",
     why_dev               = "(सूत्रम् 7.2.107) अदस औ सुलोपश्च।",
     anuvritti_from        = ('7.1.1',),

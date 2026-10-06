@@ -4,6 +4,7 @@
 Padaccheda: जातु अ-पूर्वम्
 
 जात्वपूर्वम् (8.1.47)
+Pāṭha: ashtadhyayi.com data.txt row i=81047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jAtvapUrvam",
     text_dev              = "जात्वपूर्वम्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO jAtu apUrvam tiN na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ जातु अपूर्वम् तिङ् न",
     padaccheda_dev        = "जातु अ-पूर्वम्",
     why_dev               = "(सूत्रम् 8.1.47) जात्वपूर्वम्।",
     anuvritti_from        = ('8.1.1',),

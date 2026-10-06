@@ -4,6 +4,7 @@
 Padaccheda: लुप् अविशेषे
 
 लुबविशेषे (4.2.4)
+Pāṭha: ashtadhyayi.com data.txt row i=42004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lubaviSeze",
     text_dev              = "लुबविशेषे",
+    samagra_slp1          = "nakzatreRa yuktaH kAlaH iti aviSeze lup",
+    samagra_dev           = "'नक्षत्रेण युक्तः कालः' (इति) अविशेषे लुप्",
     padaccheda_dev        = "लुप् अविशेषे",
     why_dev               = "(सूत्रम् 4.2.4) लुबविशेषे।",
     anuvritti_from        = ('4.1.1',),

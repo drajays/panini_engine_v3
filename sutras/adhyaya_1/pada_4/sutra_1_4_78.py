@@ -5,6 +5,7 @@ The word "prādhvam" gets the gati-saṃjñā when used in the sense of
 bandhana (binding / fastening).
 
 v3: registers samjna_registry["gati_pradhvam_bandhane"] = frozenset({"prADvam"}).
+Pāṭha: ashtadhyayi.com data.txt row i=14078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -30,6 +31,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1="prADvaM banDane",
     text_dev="प्राध्वं बन्धने",
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH prADvam banDane kriyAyoge gatiH kfYi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः प्राध्वम् बन्धने क्रियायोगे गतिः कृञि",
     padaccheda_dev="प्राध्वम् / बन्धने",
     why_dev="बन्धने 'प्राध्वम्' गति-संज्ञकम् — गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

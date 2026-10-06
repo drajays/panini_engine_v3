@@ -75,6 +75,8 @@ SUTRA = SutraRecord(
     sutra_type       = SutraType.ATIDESHA,
     text_slp1        = 'gANkuwAdiByoYRinNit',
     text_dev         = 'गाङ्कुटादिभ्योऽञ्णिन्ङित्',
+    samagra_slp1     = "gAN-kuw-AdiByaH a-YRit Nit",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev      = "गाङ्-कुट्-आदिभ्यः अ-ञ्णित् ङित्",
     padaccheda_dev   = "गाङ्-कुटादिभ्यः अञ्-णित्-ङित्",
     why_dev          = "गाङ्/कुटादि धातोः परस्य प्रत्ययस्य (अञ्-णित्-भिन्नस्य) "
                        "ङित्वम् अतिदिश्यते — कुटिता।",

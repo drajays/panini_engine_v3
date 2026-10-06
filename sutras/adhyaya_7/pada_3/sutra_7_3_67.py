@@ -4,6 +4,7 @@
 Padaccheda: वचः अशब्दसंज्ञायाम्
 
 वचोऽशब्दसंज्ञायाम् (7.3.67)
+Pāṭha: ashtadhyayi.com data.txt row i=73067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vacoSabdasaMjYAyAm',
     text_dev              = 'वचोऽशब्दसंज्ञायाम्',
+    samagra_slp1          = "aNgasya vacaH aSabdasaMjYAyAm cajoH ku na Rye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य वचः अशब्दसंज्ञायाम् चजोः कु न ण्ये",
     padaccheda_dev        = "वचः अशब्दसंज्ञायाम्",
     why_dev               = "(सूत्रम् 7.3.67) वचोऽशब्दसंज्ञायाम्।",
     anuvritti_from        = ('7.1.1',),

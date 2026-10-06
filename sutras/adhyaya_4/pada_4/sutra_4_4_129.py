@@ -4,6 +4,7 @@
 Padaccheda: मधोः ञ (लुप्तप्रथमान्तनिर्देशः) च
 
 मधोर्ञ च (4.4.129)
+Pāṭha: ashtadhyayi.com data.txt row i=44129 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "maDorYa ca",
     text_dev              = "मधोर्ञ च",
+    samagra_slp1          = "matvarTe maDoH Candasi saMjYAyAm YaH yat ca",
+    samagra_dev           = "मत्वर्थे मधोः छन्दसि संज्ञायाम् ञः यत् च",
     padaccheda_dev        = "मधोः ञ (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 4.4.129) मधोर्ञ च।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अतः आदेः
 
 अत आदेः (7.4.70)
+Pāṭha: ashtadhyayi.com data.txt row i=74070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -46,6 +47,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "ata AdeH",
     text_dev              = "अत आदेः",
+    samagra_slp1          = "aNgasya aByAsasya ataH AdeH liwi dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य अतः आदेः लिटि दीर्घः",
     padaccheda_dev        = "अतः आदेः",
     why_dev               = "अभ्यासस्य आदेः अकारस्य दीर्घः (आट, आनर्द)।",
     anuvritti_from        = ('7.1.1',),

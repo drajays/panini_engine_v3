@@ -4,6 +4,7 @@
 Padaccheda: स्त्रियाम् अवन्ति-कुन्ति-कुरुभ्यः च
 
 स्त्रियामवन्तिकुन्तिकुरुभ्यश्च (4.1.176)
+Pāṭha: ashtadhyayi.com data.txt row i=41176 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "striyAmavantikuntikuruByaSca",
     text_dev              = "स्त्रियामवन्तिकुन्तिकुरुभ्यश्च",
+    samagra_slp1          = "avanti-kunti-kuruByaH tadrAjasya striyAm luk",
+    samagra_dev           = "अवन्ति-कुन्ति-कुरुभ्यः तद्राजस्य स्त्रियाम् लुक्",
     padaccheda_dev        = "स्त्रियाम् अवन्ति-कुन्ति-कुरुभ्यः च",
     why_dev               = "(सूत्रम् 4.1.176) स्त्रियामवन्तिकुन्तिकुरुभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

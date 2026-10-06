@@ -4,6 +4,7 @@
 Padaccheda: संख्याया अ-ति-शत्-अन्तायाः कन्
 
 संख्याया अतिशदन्तायाः कन् (5.1.22)
+Pāṭha: ashtadhyayi.com data.txt row i=51022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMKyAyA atiSadantAyAH kan",
     text_dev              = "संख्याया अतिशदन्तायाः कन्",
+    samagra_slp1          = "A-arhAt saNKyAyAH a-ti-Sad-antAyAH kan",
+    samagra_dev           = "आ-अर्हात् सङ्ख्यायाः अ-ति-शद्-अन्तायाः कन्",
     padaccheda_dev        = "संख्याया अ-ति-शत्-अन्तायाः कन्",
     why_dev               = "(सूत्रम् 5.1.22) संख्याया अतिशदन्तायाः कन्।",
     anuvritti_from        = ('5.1.19',),

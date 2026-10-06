@@ -2,7 +2,7 @@
 7.1.13  ङेर्यः  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=701013
+- ashtadhyayi.com data.txt row i=71013
 - Kāśikā: ङे → य (अदन्त-अङ्गात्) → रामाय
 - Cross-validation: pipelines/sthanivat_anal_ashrita_lesson.py — ``derive_rAmAya``
 
@@ -69,6 +69,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'NeryaH',
     text_dev       = 'ङेर्यः',
+    samagra_slp1   = "ataH aNgAt NeH yaH",
+    samagra_dev    = "अतः अङ्गात् ङेः यः",
     padaccheda_dev = "ङेः यः — अतः अङ्गात्",
     why_dev        = "अदन्त-अङ्गात् परस्य ङे-प्रत्ययस्य 'य'-आदेशः।",
     anuvritti_from = ("6.4.1", "7.1.9", "7.1.12"),

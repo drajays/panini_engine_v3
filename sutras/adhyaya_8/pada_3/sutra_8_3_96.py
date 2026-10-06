@@ -4,6 +4,7 @@
 Padaccheda: वि-कु-शमि-परिभ्यः स्थलम्
 
 विकुशमिपरिभ्यः स्थलम् (8.3.96)
+Pāṭha: ashtadhyayi.com data.txt row i=83096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vikuSamipariByaH sTalam",
     text_dev              = "विकुशमिपरिभ्यः स्थलम्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH vi-ku-Sami-pariByaH sTalam saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः वि-कु-शमि-परिभ्यः स्थलम् सः",
     padaccheda_dev        = "वि-कु-शमि-परिभ्यः स्थलम्",
     why_dev               = "(सूत्रम् 8.3.96) विकुशमिपरिभ्यः स्थलम्।",
     anuvritti_from        = ('8.1.1',),

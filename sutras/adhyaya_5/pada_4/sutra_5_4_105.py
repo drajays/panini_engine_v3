@@ -4,6 +4,7 @@
 Padaccheda: कु-महद्‍भ्याम् अन्यतरस्याम्
 
 कुमहद्भ्यामन्यतरस्याम् (5.4.105)
+Pāṭha: ashtadhyayi.com data.txt row i=54105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kumahadByAmanyatarasyAm",
     text_dev              = "कुमहद्भ्यामन्यतरस्याम्",
+    samagra_slp1          = "tatpuruzasya kumahadByAm brahmaRaH wac anyatarasyAm",
+    samagra_dev           = "तत्पुरुषस्य कुमहद्भ्याम् ब्रह्मणः टच् अन्यतरस्याम्",
     padaccheda_dev        = "कु-महद्‍भ्याम् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 5.4.105) कुमहद्भ्यामन्यतरस्याम्।",
     anuvritti_from        = ('5.4.68',),

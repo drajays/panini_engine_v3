@@ -4,6 +4,7 @@
 Padaccheda: कान् (लुप्तषष्ठ्यन्तनिर्देशः) आम्रेडिते
 
 कानाम्रेडिते (8.3.12)
+Pāṭha: ashtadhyayi.com data.txt row i=83012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kAnAmreqite",
     text_dev              = "कानाम्रेडिते",
+    samagra_slp1          = "kAn-padasya Amreqite ru~",
+    samagra_dev           = "कान्-पदस्य आम्रेडिते रुँ",
     padaccheda_dev        = "कान् (लुप्तषष्ठ्यन्तनिर्देशः) आम्रेडिते",
     why_dev               = "(सूत्रम् 8.3.12) कानाम्रेडिते।",
     anuvritti_from        = ('8.1.1',),

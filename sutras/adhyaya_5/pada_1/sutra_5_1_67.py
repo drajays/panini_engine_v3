@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि च
 
 छन्दसि च (5.1.67)
+Pāṭha: ashtadhyayi.com data.txt row i=51067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Candasi ca",
     text_dev              = "छन्दसि च",
+    samagra_slp1          = "tat arhati iti Candasi yat",
+    samagra_dev           = "'तत् अर्हति' (इति) छन्दसि यत्",
     padaccheda_dev        = "छन्दसि च",
     why_dev               = "(सूत्रम् 5.1.67) छन्दसि च।",
     anuvritti_from        = ('5.1.18',),

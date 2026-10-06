@@ -4,6 +4,7 @@
 Padaccheda: विषयः देशे
 
 विषयो देशे (4.2.52)
+Pāṭha: ashtadhyayi.com data.txt row i=42052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vizayo deSe",
     text_dev              = "विषयो देशे",
+    samagra_slp1          = "tasya vizayo deSe iti samarTAnAM praTamAt paraH tadDitaH pratyayaH aR vA",
+    samagra_dev           = "'तस्य विषयो देशे' (इति) समर्थानां प्रथमात् परः तद्धितः प्रत्ययः अण् वा",
     padaccheda_dev        = "विषयः देशे",
     why_dev               = "(सूत्रम् 4.2.52) विषयो देशे।",
     anuvritti_from        = ('4.1.1',),

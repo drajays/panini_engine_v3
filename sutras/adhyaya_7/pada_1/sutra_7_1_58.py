@@ -8,6 +8,7 @@ last vowel of the dhātu (placement per **1.1.47**).
 Engine: fires on any dhātu ``Term`` whose ``tags`` include ``"idit"`` and which
 has not yet been augmented.  No arm flag — the grammatical property alone drives
 the rule.
+Pāṭha: ashtadhyayi.com data.txt row i=71058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="idito num DAtoH",
     text_dev="इदितो नुम् धातोः",
+    samagra_slp1="iditaH DAtoH num",
+    samagra_dev="इदितः धातोः नुम्",
     padaccheda_dev="इदितः / नुम् / धातोः",
     why_dev="इदित्-धातोः नुम्-आगमः (डेमो: वन्दे)।",
     anuvritti_from=("6.4.1",),

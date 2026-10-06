@@ -4,6 +4,7 @@
 Padaccheda: हरति (क्रियापदम्) उत्सङ्ग-आदिभ्यः
 
 हरत्युत्सङ्गादिभ्यः (4.4.15)
+Pāṭha: ashtadhyayi.com data.txt row i=44015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "haratyutsaNgAdiByaH",
     text_dev              = "हरत्युत्सङ्गादिभ्यः",
+    samagra_slp1          = "tena harati iti utsaNgAdiByaH samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तेन हरति' (इति) उत्सङ्गादिभ्यः समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "हरति (क्रियापदम्) उत्सङ्ग-आदिभ्यः",
     why_dev               = "(सूत्रम् 4.4.15) हरत्युत्सङ्गादिभ्यः।",
     anuvritti_from        = ('4.1.1',),

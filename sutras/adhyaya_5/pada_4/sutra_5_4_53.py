@@ -4,6 +4,7 @@
 Padaccheda: अभिविधौ सम्पदा च
 
 अभिविधौ सम्पदा च (5.4.53)
+Pāṭha: ashtadhyayi.com data.txt row i=54053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aBiviDO sampadA ca",
     text_dev              = "अभिविधौ सम्पदा च",
+    samagra_slp1          = "aBUtatadBAve aBiviDO kf-BU-asti-yoge sampadA ca viBAzA sAtiH",
+    samagra_dev           = "अभूततद्भावे अभिविधौ कृ-भू-अस्ति-योगे सम्पदा च विभाषा सातिः",
     padaccheda_dev        = "अभिविधौ सम्पदा च",
     why_dev               = "(सूत्रम् 5.4.53) अभिविधौ सम्पदा च।",
     anuvritti_from        = ('4.1.76',),

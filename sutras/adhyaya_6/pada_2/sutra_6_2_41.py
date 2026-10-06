@@ -4,6 +4,7 @@
 Padaccheda: गौः साद-सादि-सारथिषु
 
 गौः सादसादिसारथिषु (6.2.41)
+Pāṭha: ashtadhyayi.com data.txt row i=62041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gOH sAdasAdisAraTizu",
     text_dev              = "गौः सादसादिसारथिषु",
+    samagra_slp1          = "gOH sAda-sAdisAraTizu prakftyA pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "गौः साद-सादिसारथिषु प्रकृत्या पूर्वपदम्",
     padaccheda_dev        = "गौः साद-सादि-सारथिषु",
     why_dev               = "(सूत्रम् 6.2.41) गौः सादसादिसारथिषु।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: आक्रोशे नञि अनिः
 
 krt-suffix rule: आक्रोशे नञ्यनिः
+Pāṭha: ashtadhyayi.com data.txt row i=33112 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AkroSe naYyaniH",
     text_dev              = "आक्रोशे नञ्यनिः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm striyAm AkroSe naYi aniH kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् स्त्रियाम् आक्रोशे नञि अनिः कृत्",
     padaccheda_dev        = "आक्रोशे नञि अनिः",
     why_dev               = "धातोः प्रत्ययः (३.3.112)।",
     anuvritti_from        = ('3.1.1',),

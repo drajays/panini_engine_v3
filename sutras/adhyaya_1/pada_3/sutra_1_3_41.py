@@ -15,6 +15,7 @@ one dhātu Term carries the tag "vi_prefix" and the tag
 is absent from state.meta.
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -50,6 +51,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='veH pAdaviharaRe',
     text_dev='वेः पादविहरणे',
+    samagra_slp1="pAdaviharaRe veH kramaH Atmanepadam",
+    samagra_dev="पादविहरणे वेः क्रमः आत्मनेपदम्",
     padaccheda_dev="वेः (पञ्चमी-एकवचन) / पादविहरणे (सप्तमी-एकवचन)",
     why_dev=(
         "वि-पूर्वकस्य धातोः पादविहरण-अर्थे प्रयोगे आत्मनेपदम् — "

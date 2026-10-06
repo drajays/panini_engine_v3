@@ -11,6 +11,7 @@
 *Engine:* sets paribhāṣā gate for *prati-in-pratinidhi/pratidāna*.
 ``cond`` never reads vibhakti/vacana/lakāra/surface.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=14092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -36,6 +37,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'pratiH pratiniDipratidAnayoH',
     text_dev             = 'प्रतिः प्रतिनिधिप्रतिदानयोः',
+    samagra_slp1         = "AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH karmapravacanIyAH pratiH pratiniDi-pratidAnayoH lakzaRa-itTamBUtAKyAna-BAga-vIpsAsu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः कर्मप्रवचनीयाः प्रतिः प्रतिनिधि-प्रतिदानयोः लक्षण-इत्थम्भूताख्यान-भाग-वीप्सासु",
     padaccheda_dev       = "प्रतिः / प्रतिनिधि-प्रतिदानयोः",
     why_dev              = (
         "प्रतिनिधि-प्रतिदान-अर्थयोः वर्तमानः 'प्रति' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

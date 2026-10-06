@@ -4,6 +4,7 @@
 Padaccheda: हु-श्नुवोः सार्वधातुके
 
 हुश्नुवोः सार्वधातुके (6.4.87)
+Pāṭha: ashtadhyayi.com data.txt row i=64087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -91,6 +92,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "huSnuvoH sArvaDAtuke",
     text_dev              = "हुश्नुवोः सार्वधातुके",
+    samagra_slp1          = "anekAcaH aNgasya huSnuvoH asaMyogapUrvasya oH aci sArvaDAtuke yaR",
+    samagra_dev           = "अनेकाचः अङ्गस्य हुश्नुवोः असंयोगपूर्वस्य ओः अचि सार्वधातुके यण्",
     padaccheda_dev        = "हु-श्नुवोः सार्वधातुके",
     why_dev               = "असंयोगपूर्वस्य श्नुप्रत्ययस्य उकारस्य यण् अजादौ सार्वधातुके (सुन्वन्ति, चिन्वन्ति)।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: शा हौ
 
 शा हौ (6.4.35)
+Pāṭha: ashtadhyayi.com data.txt row i=64035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SA hO",
     text_dev              = "शा हौ",
+    samagra_slp1          = "SAsaH hO SA",
+    samagra_dev           = "शासः हौ शा",
     padaccheda_dev        = "शा हौ",
     why_dev               = "(सूत्रम् 6.4.35) शा हौ।",
     anuvritti_from        = ('6.1.1',),

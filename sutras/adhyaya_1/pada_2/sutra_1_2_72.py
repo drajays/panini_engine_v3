@@ -7,6 +7,7 @@ Operational role (v3.7):
   - Also tag it as `sarvanama` (these are pronouns in this scope).
 
 This mirrors the v2 reference engine's preamble behaviour for `tad`.
+Pāṭha: ashtadhyayi.com data.txt row i=12072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -61,6 +62,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'tyadAdIni sarvErnityam',
     text_dev       = 'त्यदादीनि सर्वैर्नित्यम्',
+    samagra_slp1   = "tyad-AdIni sarvEH nityam eka-SezaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "त्यद्-आदीनि सर्वैः नित्यम् एक-शेषः",
     padaccheda_dev = "त्यदादि-गणः",
     why_dev        = "त्यदादि-गण-पठित-शब्दाः ‘त्यदादि’ संज्ञकाः (तद्-प्रकारे)।",
     anuvritti_from = (),

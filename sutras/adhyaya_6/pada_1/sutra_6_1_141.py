@@ -4,6 +4,7 @@
 Padaccheda: हिंसायाम् प्रतेः च
 
 हिंसायां प्रतेश्च (6.1.141)
+Pāṭha: ashtadhyayi.com data.txt row i=61141 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hiMsAyAM prateSca",
     text_dev              = "हिंसायां प्रतेश्च",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH hiMsAyAm prateH ca upAt kiratO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः हिंसायाम् प्रतेः च उपात् किरतौ",
     padaccheda_dev        = "हिंसायाम् प्रतेः च",
     why_dev               = "(सूत्रम् 6.1.141) हिंसायां प्रतेश्च।",
     anuvritti_from        = ('6.1.1',),

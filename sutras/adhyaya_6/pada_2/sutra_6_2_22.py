@@ -4,6 +4,7 @@
 Padaccheda: पूर्वे भूतपूर्वे
 
 पूर्वे भूतपूर्वे (6.2.22)
+Pāṭha: ashtadhyayi.com data.txt row i=62022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUrve BUtapUrve",
     text_dev              = "पूर्वे भूतपूर्वे",
+    samagra_slp1          = "pUrve BUtapUrve prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वे भूतपूर्वे प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "पूर्वे भूतपूर्वे",
     why_dev               = "(सूत्रम् 6.2.22) पूर्वे भूतपूर्वे।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: रोः · रि
 
 रो रि (8.3.14)
+Pāṭha: ashtadhyayi.com data.txt row i=83014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ro ri",
     text_dev              = "रो रि",
+    samagra_slp1          = "raH ri lopaH",
+    samagra_dev           = "रः रि लोपः",
     padaccheda_dev        = "रोः · रि",
     why_dev               = "(सूत्रम् 8.3.14) रो रि।",
     anuvritti_from        = ('8.1.1',),

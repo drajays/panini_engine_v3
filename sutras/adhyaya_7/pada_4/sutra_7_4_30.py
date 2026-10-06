@@ -4,6 +4,7 @@
 Padaccheda: यङि च
 
 यङि च (7.4.30)
+Pāṭha: ashtadhyayi.com data.txt row i=74030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yaNi ca",
     text_dev              = "यङि च",
+    samagra_slp1          = "aNgasya yaNi ca ftaH guRaH artisaMyogAdyoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य यङि च ऋतः गुणः अर्तिसंयोगाद्योः",
     padaccheda_dev        = "यङि च",
     why_dev               = "(सूत्रम् 7.4.30) यङि च।",
     anuvritti_from        = ('7.1.1',),

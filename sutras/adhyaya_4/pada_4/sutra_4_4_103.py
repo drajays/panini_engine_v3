@@ -4,6 +4,7 @@
 Padaccheda: गुड-आदिभ्यः ठञ्
 
 गुडादिभ्यष्ठञ् (4.4.103)
+Pāṭha: ashtadhyayi.com data.txt row i=44103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "guqAdiByazWaY",
     text_dev              = "गुडादिभ्यष्ठञ्",
+    samagra_slp1          = "tatra sADuH iti guqAdiByaH saMjYAyAm WaY",
+    samagra_dev           = "'तत्र साधुः' (इति) गुडादिभ्यः संज्ञायाम् ठञ्",
     padaccheda_dev        = "गुड-आदिभ्यः ठञ्",
     why_dev               = "(सूत्रम् 4.4.103) गुडादिभ्यष्ठञ्।",
     anuvritti_from        = ('4.1.1',),

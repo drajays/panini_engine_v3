@@ -4,6 +4,7 @@
 Padaccheda: णौ च सन्-चङोः
 
 Also in nic with san and can.
+Pāṭha: ashtadhyayi.com data.txt row i=24051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'RO ca saMScaNoH',
     text_dev              = 'णौ च संश्चङोः',
+    samagra_slp1          = "ArDaDAtuke RO ca san-caNoH iNaH gAN viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके णौ च सन्-चङोः इङः गाङ् विभाषा",
     padaccheda_dev        = "णौ च सन्-चङोः",
     why_dev               = "णौ च सन्-चङोः (२.४.५१)।",
     anuvritti_from        = ('2.4.49',),

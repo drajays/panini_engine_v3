@@ -4,6 +4,7 @@
 Padaccheda: इत्-उद्‍भ्याम्
 
 इदुद्भ्याम् (7.3.117)
+Pāṭha: ashtadhyayi.com data.txt row i=73117 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "idudByAm",
     text_dev              = "इदुद्भ्याम्",
+    samagra_slp1          = "idudByAm nadyAH aNgAt NeH Am",
+    samagra_dev           = "इदुद्भ्याम् नद्याः अङ्गात् ङेः आम्",
     padaccheda_dev        = "इत्-उद्‍भ्याम्",
     why_dev               = "(सूत्रम् 7.3.117) इदुद्भ्याम्।",
     anuvritti_from        = ('7.1.1',),

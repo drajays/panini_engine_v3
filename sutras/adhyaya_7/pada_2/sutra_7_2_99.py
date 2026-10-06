@@ -4,6 +4,7 @@
 Padaccheda: त्रि-चतुरोः स्त्रियाम् तिसृ-चतसृ (लुप्तप्रथमान्तनिर्देशः)
 
 त्रिचतुरोः स्त्रियां तिसृचतसृ (7.2.99)
+Pāṭha: ashtadhyayi.com data.txt row i=72099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tricaturoH striyAM tisfcatasf",
     text_dev              = "त्रिचतुरोः स्त्रियां तिसृचतसृ",
+    samagra_slp1          = "tricaturoH striyAM tisfcatasf viBaktO",
+    samagra_dev           = "त्रिचतुरोः स्त्रियां तिसृचतसृ विभक्तौ",
     padaccheda_dev        = "त्रि-चतुरोः स्त्रियाम् तिसृ-चतसृ (लुप्तप्रथमान्तनिर्देशः)",
     why_dev               = "(सूत्रम् 7.2.99) त्रिचतुरोः स्त्रियां तिसृचतसृ।",
     anuvritti_from        = ('7.1.1',),

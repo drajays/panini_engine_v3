@@ -9,6 +9,7 @@ Applied in karmani liṭ 2pl: i + dhve → i + ḍhve = iḍhve.
 
 Arm flag: state.meta["8_3_78_arm"] must be True.
 Finds cross-term i (final of iṭ-residue) + D (initial of tiṅ ādeśa Dve).
+Pāṭha: ashtadhyayi.com data.txt row i=83078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -109,6 +110,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = 'iRaH zIDvaMluNliwAM DoNgAt',
     text_dev              = 'इणः षीध्वंलुङ्लिटां धोऽङ्गात्',
+    samagra_slp1          = "iRaH aNgAt zIDvam-luN-liwAmapadAntasya DaH mUrDanyaH",
+    samagra_dev           = "इणः अङ्गात् षीध्वम्-लुङ्-लिटामपदान्तस्य धः मूर्धन्यः",
     padaccheda_dev        = "इणः षीध्वं-लुङ्-लिटाम् धः अङ्गात्",
     why_dev               = (
         "इट्-जन्य-इ-परे लिटि ध्वम्/ध्वे-आदि-प्रत्यये ध् → ढ् — "

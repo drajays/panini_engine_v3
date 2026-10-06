@@ -4,6 +4,7 @@
 Padaccheda: अशनाय-उदन्य-धनाया बुभुक्षा-पिपासा-गर्द्धेषु
 
 अशनायोदन्यधनाया बुभुक्षापिपासागर्द्धेषु (7.4.34)
+Pāṭha: ashtadhyayi.com data.txt row i=74034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aSanAyodanyaDanAyA buBukzApipAsAgardDezu",
     text_dev              = "अशनायोदन्यधनाया बुभुक्षापिपासागर्द्धेषु",
+    samagra_slp1          = "aNgasya aSanAyodanyaDanAyA buBukzApipAsAgardDezu asya kyaci",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अशनायोदन्यधनाया बुभुक्षापिपासागर्द्धेषु अस्य क्यचि",
     padaccheda_dev        = "अशनाय-उदन्य-धनाया बुभुक्षा-पिपासा-गर्द्धेषु",
     why_dev               = "(सूत्रम् 7.4.34) अशनायोदन्यधनाया बुभुक्षापिपासागर्द्धेषु।",
     anuvritti_from        = ('7.1.1',),

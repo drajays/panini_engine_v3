@@ -10,6 +10,7 @@ parṇaṃ patati*.
 *Engine:* A Term carrying the pipeline-set tag ``"apadAna_source"`` receives the
 kāraka tag ``"apAdAna"``.  ``cond`` reads only structural semantic tags —
 no vibhakti / vacana / surface reads (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = 'DruvamapAyepAdAnam',
     text_dev              = 'ध्रुवमपायेऽपादानम्',
+    samagra_slp1          = "apAye Druvam kArakam apAdAnam",
+    samagra_dev           = "अपाये ध्रुवम् कारकम् अपादानम्",
     padaccheda_dev        = "ध्रुवम् / अपाये / अपादानम्",
     why_dev               = (
         "यस्मादपाय: तद् ध्रुवम् अपादान-कारक-संज्ञकम् — यथा 'ग्रामादागच्छति' "

@@ -4,6 +4,7 @@
 Padaccheda: गोत्रात् अङ्क-वत्
 
 गोत्रादङ्कवत् (4.3.80)
+Pāṭha: ashtadhyayi.com data.txt row i=43080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gotrAdaNkavat",
     text_dev              = "गोत्रादङ्कवत्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA gotrAt aNkavat AgataH tata",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा गोत्रात् अङ्कवत् आगतः तत",
     padaccheda_dev        = "गोत्रात् अङ्क-वत्",
     why_dev               = "(सूत्रम् 4.3.80) गोत्रादङ्कवत्।",
     anuvritti_from        = ('4.1.1',),

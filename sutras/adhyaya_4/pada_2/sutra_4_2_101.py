@@ -4,6 +4,7 @@
 Padaccheda: द्यु-प्राक्-अपाक्-उदक्-प्रतीचः यत्
 
 द्युप्रागपागुदक्प्रतीचो यत् (4.2.101)
+Pāṭha: ashtadhyayi.com data.txt row i=42101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dyuprAgapAgudakpratIco yat",
     text_dev              = "द्युप्रागपागुदक्प्रतीचो यत्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA dyu-prAk-apAk-udak-pratIcaH yat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा द्यु-प्राक्-अपाक्-उदक्-प्रतीचः यत्",
     padaccheda_dev        = "द्यु-प्राक्-अपाक्-उदक्-प्रतीचः यत्",
     why_dev               = "(सूत्रम् 4.2.101) द्युप्रागपागुदक्प्रतीचो यत्।",
     anuvritti_from        = ('4.1.1',),

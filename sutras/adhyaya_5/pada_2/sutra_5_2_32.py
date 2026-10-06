@@ -4,6 +4,7 @@
 Padaccheda: नेः बिडच्-बिरीसचौ
 
 नेर्बिडज्बिरीसचौ (5.2.32)
+Pāṭha: ashtadhyayi.com data.txt row i=52032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nerbiqajbirIsacO",
     text_dev              = "नेर्बिडज्बिरीसचौ",
+    samagra_slp1          = "nAsikAyAH nate saMjYAyAm neH biqac-birIsacO",
+    samagra_dev           = "नासिकायाः नते संज्ञायाम्  नेः बिडच्-बिरीसचौ",
     padaccheda_dev        = "नेः बिडच्-बिरीसचौ",
     why_dev               = "(सूत्रम् 5.2.32) नेर्बिडज्बिरीसचौ।",
     anuvritti_from        = ('4.1.82',),

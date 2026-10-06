@@ -4,6 +4,7 @@
 Padaccheda: श्रोत्रियन् छन्दः अधीते (क्रियापदम्)
 
 श्रोत्रियंश्छन्दोऽधीते (5.2.84)
+Pāṭha: ashtadhyayi.com data.txt row i=52084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'SrotriyaMSCandoDIte',
     text_dev              = 'श्रोत्रियंश्छन्दोऽधीते',
+    samagra_slp1          = "CandaH aDIte iti Srotriyan vA nipAtyate",
+    samagra_dev           = "'छन्दः अधीते' (इति) श्रोत्रियन् वा (निपात्यते)",
     padaccheda_dev        = "श्रोत्रियन् छन्दः अधीते (क्रियापदम्)",
     why_dev               = "(सूत्रम् 5.2.84) श्रोत्रियंश्छन्दोऽधीते।",
     anuvritti_from        = ('4.1.82',),

@@ -11,6 +11,7 @@ Narrow v3 (*tri-vocative apposition* demo **ऐडविड जटिलक अ�
     in this slice when *samānādhikaraṇa* holds).
 
 No *svara* columns on ``Varna`` rows.
+Pāṭha: ashtadhyayi.com data.txt row i=81072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -48,6 +49,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.ATIDESHA,
     text_slp1='AmantritaM pUrvamavidyamAnavat',
     text_dev='आमन्त्रितं पूर्वमविद्यमानवत्',
+    samagra_slp1="padasya anudAttaM sarvamApAdAdO Amantritam pUrvam avidyamAnavat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="पदस्य अनुदात्तं सर्वमापादादौ आमन्त्रितम् पूर्वम् अविद्यमानवत्",
     padaccheda_dev="आमन्त्रितम् / पूर्वम् / अविद्यमानवत्",
     why_dev="पूर्वम् आमन्त्रितम् अविद्यमानवत् (*prakriya_32*; separated JSON **८।१।८२** → शास्त्रीय **८.१.७२**)।",
     anuvritti_from=(),

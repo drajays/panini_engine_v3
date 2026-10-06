@@ -4,6 +4,7 @@
 Padaccheda: वा जाते
 
 वा जाते (6.2.171)
+Pāṭha: ashtadhyayi.com data.txt row i=62171 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA jAte",
     text_dev              = "वा जाते",
+    samagra_slp1          = "uttarapadAdiH antaH vA jAte bahuvrIhO jAti-kAla-suKAdiByaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः वा जाते बहुव्रीहौ जाति-काल-सुखादिभ्यः",
     padaccheda_dev        = "वा जाते",
     why_dev               = "(सूत्रम् 6.2.171) वा जाते।",
     anuvritti_from        = ('6.1.1',),

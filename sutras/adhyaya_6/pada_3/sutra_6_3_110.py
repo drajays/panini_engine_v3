@@ -4,6 +4,7 @@
 Padaccheda: संख्या-वि-साय-पूर्वस्य अह्नस्य अहन् अन्यतरस्याम् ङौ
 
 संख्याविसायपूर्वस्याह्नस्याहन्नन्यतरस्यां ङौ (6.3.110)
+Pāṭha: ashtadhyayi.com data.txt row i=63110 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMKyAvisAyapUrvasyAhnasyAhannanyatarasyAM NO",
     text_dev              = "संख्याविसायपूर्वस्याह्नस्याहन्नन्यतरस्यां ङौ",
+    samagra_slp1          = "saMKyA-vi-sAya-pUrvasya uttarapade ahnasya NO ahan anyatarasyAm",
+    samagra_dev           = "संख्या-वि-साय-पूर्वस्य उत्तरपदे अह्नस्य ङौ अहन् अन्यतरस्याम्",
     padaccheda_dev        = "संख्या-वि-साय-पूर्वस्य अह्नस्य अहन् अन्यतरस्याम् ङौ",
     why_dev               = "(सूत्रम् 6.3.110) संख्याविसायपूर्वस्याह्नस्याहन्नन्यतरस्यां ङौ।",
     anuvritti_from        = ('6.1.1',),

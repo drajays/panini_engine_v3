@@ -4,6 +4,7 @@
 Padaccheda: अधिकरण-वाचिनः च
 
 adhikarana-denoting words also take sasthi with krt.
+Pāṭha: ashtadhyayi.com data.txt row i=23068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDikaraRavAcinaSca",
     text_dev              = "अधिकरणवाचिनश्च",
+    samagra_slp1          = "anaBihite aDikaraRa-vAcinaH ca zazWI ktasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते अधिकरण-वाचिनः च षष्ठी क्तस्य",
     padaccheda_dev        = "अधिकरण-वाचिनः च",
     why_dev               = "अधिकरण-वाचिनः च (२.३.६८)।",
     anuvritti_from        = ('2.3.65',),

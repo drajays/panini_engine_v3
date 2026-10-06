@@ -4,6 +4,7 @@
 Padaccheda: सुपाम् सु-लुक्-पूर्वसवर्ण-आ-आत्-शे-या-डा-ड्या-याच्-आलः
 
 सुपां सुलुक्पूर्वसवर्णाऽऽच्छेयाडाड्यायाजालः (7.1.39)
+Pāṭha: ashtadhyayi.com data.txt row i=71039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'supAM sulukpUrvasavarRAcCeyAqAqyAyAjAlaH',
     text_dev              = 'सुपां सुलुक्पूर्वसवर्णाऽऽच्छेयाडाड्यायाजालः',
+    samagra_slp1          = "aNgasya supAm su-luk-pUrvasavarRa-A-At-Se-yA-qA-qyA-yAjAlaH Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य सुपाम् सु-लुक्-पूर्वसवर्ण-आ-आत्-शे-या-डा-ड्या-याजालः छन्दसि",
     padaccheda_dev        = "सुपाम् सु-लुक्-पूर्वसवर्ण-आ-आत्-शे-या-डा-ड्या-याच्-आलः",
     why_dev               = "(सूत्रम् 7.1.39) सुपां सुलुक्पूर्वसवर्णाऽऽच्छेयाडाड्यायाजालः।",
     anuvritti_from        = ('7.1.1',),

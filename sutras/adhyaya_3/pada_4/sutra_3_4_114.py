@@ -7,6 +7,7 @@ Narrow v3 use: tag a *kṛt* pratyaya (**tfc**, **gsnuC**/**snu**, **kta**, …)
 
 When a recipe sets ``state.meta['3_4_114_luN_sic_samjna_arm']``, the *luṅ* *sic*
 vikaraṇa placeholder is likewise tagged **ārdhadhātuka** (P026).
+Pāṭha: ashtadhyayi.com data.txt row i=34114 (Art. 14).
 """
 from __future__ import annotations
 
@@ -136,6 +137,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = "ArDaDAtukaM SezaH",
     text_dev       = "आर्धधातुकं शेषः",
+    samagra_slp1   = "tiN-Sit-SezaH DAtoH paraH pratyayaH ArDaDAtukaH",
+    samagra_dev    = "तिङ्-शित्-शेषः धातोः परः प्रत्ययः आर्धधातुकः",
     padaccheda_dev = "आर्धधातुकं शेषः",
     why_dev        = "शेषः प्रत्यय आर्धधातुक-संज्ञकः (तृच् इत्यादौ)।",
     anuvritti_from = ("3.4.113",),

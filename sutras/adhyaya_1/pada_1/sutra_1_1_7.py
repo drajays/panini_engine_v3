@@ -11,6 +11,7 @@ canonical *frozen* value; the **operational** “is this span a cluster?” test
 Art. 2, Art. 6).
 
 See also **1.1.8** (``sutra_1_1_8``) for *anunāsika* saṃjñā, then **1.1.9** (``sutra_1_1_9``) for *savarṇa*.
+Pāṭha: ashtadhyayi.com data.txt row i=11007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -72,6 +73,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'halonantarAH saMyogaH',
     text_dev       = 'हलोऽनन्तराः संयोगः',
+    samagra_slp1   = "anantarAH halaH saMyogaH",
+    samagra_dev    = "अनन्तराः हलः संयोगः",
     padaccheda_dev = "हलः अनन्तराः संयोगः",
     why_dev        = _WHY,
     anuvritti_from = (),

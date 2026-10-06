@@ -13,6 +13,7 @@ Citation (CONSTITUTION Art. 14)
 
 Engine: ``cond`` reads the root's lexical identity (ब्रूञ् = upadeśa ``brUY``) and the tiṅ Terms' sthānin tag. The ādeśa
 for brū is sarvādeśa (1.1.55), keeps dhātutva and aṅgatva by 1.1.56, and is tagged ``ah_adesha`` for 8.2.35.
+Pāṭha: ashtadhyayi.com data.txt row i=34084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -55,6 +56,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIBHASHA,
     text_slp1="bruvaH paYcAnAmAdita Aho bruvaH",
     text_dev="ब्रुवः पञ्चानामादित आहो ब्रुवः",
+    samagra_slp1="bruvaH lawaH lasya parasmEpadAnAmAditaH paYcAnAm Ral-atus-us-Tal-aTus  bruvaH AhaH ",
+    samagra_dev="ब्रुवः लटः लस्य परस्मैपदानामादितः पञ्चानाम् णल्-अतुस्-उस्-थल्-अथुस् , ब्रुवः आहः ।",
     padaccheda_dev="ब्रुवः पञ्चानाम् आदितः आहः ब्रुवः",
     why_dev="ब्रू से परे लट् के आदि पाँच परस्मैपद तिङ् विकल्प से णल्-आदि हों और ब्रू को आह् आदेश (आह, आहतुः, आहुः, आत्थ, आहथुः)।",
     anuvritti_from=("3.4.82", "3.4.83"),

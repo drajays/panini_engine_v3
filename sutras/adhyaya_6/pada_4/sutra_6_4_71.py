@@ -69,6 +69,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'luNlaNlfNkzvaqudAttaH',
     text_dev       = 'लुङ्लङ्लृङ्क्ष्वडुदात्तः',
+    samagra_slp1   = "luN-laN-lfNkzu aNgasya aw udAttaH",
+    samagra_dev    = "लुङ्-लङ्-लृङ्क्षु अङ्गस्य अट् उदात्तः",
     padaccheda_dev = "लुङ्-लङ्-लृङ्-क्षु / अट् / उदात्तः",
     why_dev        = (
         "लुङ्/लङ्/लृङ्-लकारे धातोः पूर्वं अट्-आगमः; "

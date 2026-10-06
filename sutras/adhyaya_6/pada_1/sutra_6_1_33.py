@@ -4,6 +4,7 @@
 Padaccheda: अभ्यस्तस्य च
 
 अभ्यस्तस्य च (6.1.33)
+Pāṭha: ashtadhyayi.com data.txt row i=61033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aByastasya ca",
     text_dev              = "अभ्यस्तस्य च",
+    samagra_slp1          = "aByastasya ca hvaH samprasAraRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अभ्यस्तस्य च ह्वः सम्प्रसारणम्",
     padaccheda_dev        = "अभ्यस्तस्य च",
     why_dev               = "(सूत्रम् 6.1.33) अभ्यस्तस्य च।",
     anuvritti_from        = ('6.1.1',),

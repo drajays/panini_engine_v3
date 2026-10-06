@@ -13,6 +13,7 @@ kāraka saṃjñā assignment operates in verbalised sentence contexts.
 ``"1_4_29_akhyata_upayoga"`` set to True (pipeline signals verb-in-use context).
 Writes ``state.samjna_registry["1_4_29_gate"]`` to mark the gate as activated.
 ``cond`` reads only structural meta (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = "AKyAtopayoge",
     text_dev              = "आख्यातोपयोगे",
+    samagra_slp1          = "AKyAtA upayoge apAdAnaM kArakam",
+    samagra_dev           = "आख्याता उपयोगे अपादानं कारकम्",
     padaccheda_dev        = "आख्यात-उपयोगे",
     why_dev               = (
         "आख्यातस्य उपयोगे (क्रियापदस्य व्यवहारे) एव कारक-संज्ञा-विधानम् "

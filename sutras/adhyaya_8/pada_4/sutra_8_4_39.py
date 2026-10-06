@@ -4,6 +4,7 @@
 Padaccheda: क्षुभ्ना-आदिषु च
 
 क्षुभ्नाऽऽदिषु च (8.4.39)
+Pāṭha: ashtadhyayi.com data.txt row i=84039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'kzuBnAdizu ca',
     text_dev              = 'क्षुभ्नाऽऽदिषु च',
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm kzuBnA-Adizu ca razAByAm na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् क्षुभ्ना-आदिषु च रषाभ्याम् न",
     padaccheda_dev        = "क्षुभ्ना-आदिषु च",
     why_dev               = "(सूत्रम् 8.4.39) क्षुभ्नाऽऽदिषु च।",
     anuvritti_from        = ('8.1.1',),

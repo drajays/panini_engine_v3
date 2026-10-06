@@ -4,6 +4,7 @@
 Padaccheda: एक-आदिः च एकस्य च आदुक्
 
 एकादिश्चैकस्य चादुक् (6.3.76)
+Pāṭha: ashtadhyayi.com data.txt row i=63076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ekAdiScEkasya cAduk",
     text_dev              = "एकादिश्चैकस्य चादुक्",
+    samagra_slp1          = "uttarapade ekAdiH ca ekasya Aduk naYaH prakftyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे एकादिः च एकस्य आदुक् नञः प्रकृत्या",
     padaccheda_dev        = "एक-आदिः च एकस्य च आदुक्",
     why_dev               = "(सूत्रम् 6.3.76) एकादिश्चैकस्य चादुक्।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: दाश्वान् साह्वान् मीढ्-वान् च
 
 दाश्वान् साह्वान् मीढ्वांश्च (6.1.12)
+Pāṭha: ashtadhyayi.com data.txt row i=61012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dASvAn sAhvAn mIQvAMSca",
     text_dev              = "दाश्वान् साह्वान् मीढ्वांश्च",
+    samagra_slp1          = "ekAco dve praTamasya dASvAn sAhvAn mIQ-vAn ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "एकाचो द्वे प्रथमस्य दाश्वान् साह्वान् मीढ्-वान् च",
     padaccheda_dev        = "दाश्वान् साह्वान् मीढ्-वान् च",
     why_dev               = "(सूत्रम् 6.1.12) दाश्वान् साह्वान् मीढ्वांश्च।",
     anuvritti_from        = ('6.1.1',),

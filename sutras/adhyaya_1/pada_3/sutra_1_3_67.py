@@ -18,6 +18,7 @@ stamp "Atmanepada_1_3_67" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in any dhātu set carries the tag "Ni_pratyaya" (causative) and
 "karmakartf_usage" (karma=kartā overlap) and does NOT carry "anADyAna_usage".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -63,6 +64,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='ReraRO yatkarma RO cet sa kartAnADyAne',
     text_dev='णेरणौ यत्कर्म णौ चेत् स कर्ताऽनाध्याने',
+    samagra_slp1="ReH aRO yat karma RO cet saH kartA anADyAne Atmanepadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="णेः अणौ यत् कर्म णौ चेत् सः कर्ता अनाध्याने आत्मनेपदम्",
     padaccheda_dev=(
         "णेः (षष्ठी-एकवचन) / णौ (सप्तमी-एकवचन) / यत्-कर्म / णौ / चेत् "
         "/ सः / कर्ता / अनाध्याने (सप्तमी-एकवचन)"

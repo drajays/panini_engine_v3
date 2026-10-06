@@ -4,6 +4,7 @@
 Padaccheda: वाचः व्याहृतार्थायाम्
 
 वाचो व्याहृतार्थायाम् (5.4.35)
+Pāṭha: ashtadhyayi.com data.txt row i=54035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vAco vyAhftArTAyAm",
     text_dev              = "वाचो व्याहृतार्थायाम्",
+    samagra_slp1          = "vyAhftA arTAyAm vAcaH Wak",
+    samagra_dev           = "व्याहृता अर्थायाम् वाचः ठक्",
     padaccheda_dev        = "वाचः व्याहृतार्थायाम्",
     why_dev               = "(सूत्रम् 5.4.35) वाचो व्याहृतार्थायाम्।",
     anuvritti_from        = ('4.1.76',),

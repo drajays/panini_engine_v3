@@ -42,7 +42,7 @@ def _split(src: str):
         if isinstance(node, ast.Assign) and any(getattr(t, "id", "") == "SUTRA" for t in node.targets) \
                 and isinstance(node.value, ast.Call):
             for k in node.value.keywords:
-                if k.arg and k.arg not in ("why_dev", "text_slp1", "text_dev", "padaccheda_dev", "anuvritti_from"):
+                if k.arg and k.arg not in ("why_dev", "text_slp1", "text_dev", "samagra_slp1", "samagra_dev", "padaccheda_dev", "anuvritti_from"):
                     kw[k.arg] = ast.dump(k.value)
                 elif k.arg == "why_dev":
                     kw["why_dev"] = "(text)"

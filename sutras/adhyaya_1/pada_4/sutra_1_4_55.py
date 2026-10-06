@@ -11,6 +11,7 @@ Devadatta (the causer) is kartā by this rule.
 
 *Engine:* tags bearing ``"prayojaka_hetu"`` get ``"kartf"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'tatprayojako hetuSca',
     text_dev             = 'तत्प्रयोजको हेतुश्च',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake tat-prayojakaH hetuH ca kartA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके तत्-प्रयोजकः हेतुः च कर्ता",
     padaccheda_dev       = "तत्-प्रयोजकः / हेतुः / च",
     why_dev              = (
         "यः कर्तारं प्रयोजयति (हेतुः/प्रेरकः) स अपि कर्तृ-कारक-संज्ञकः। "

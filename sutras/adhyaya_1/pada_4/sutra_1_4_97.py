@@ -12,6 +12,7 @@
 *Engine:* sets paribhāṣā gate for *adhi-in-īśvara*.
 ``cond`` never reads vibhakti/vacana/lakāra/surface.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=14097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -37,6 +38,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'aDirISvare',
     text_dev             = 'अधिरीश्वरे',
+    samagra_slp1         = "AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH karmapravacanIyAH aDiH ISvare",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः कर्मप्रवचनीयाः अधिः ईश्वरे",
     padaccheda_dev       = "अधिः / ईश्वरे",
     why_dev              = (
         "ईश्वर-अर्थे वर्तमानः 'अधि' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

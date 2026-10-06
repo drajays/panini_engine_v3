@@ -4,6 +4,7 @@
 Padaccheda: पाद-अर्घाभ्याम् च
 
 पादार्घाभ्यां च (5.4.25)
+Pāṭha: ashtadhyayi.com data.txt row i=54025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pAdArGAByAM ca",
     text_dev              = "पादार्घाभ्यां च",
+    samagra_slp1          = "pAda-arGAByAm tAdarTye yat",
+    samagra_dev           = "पाद-अर्घाभ्याम् तादर्थ्ये यत्",
     padaccheda_dev        = "पाद-अर्घाभ्याम् च",
     why_dev               = "(सूत्रम् 5.4.25) पादार्घाभ्यां च।",
     anuvritti_from        = ('4.1.76',),

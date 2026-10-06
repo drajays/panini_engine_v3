@@ -4,6 +4,7 @@
 Padaccheda: चतुरः शसि
 
 चतुरः शसि (6.1.167)
+Pāṭha: ashtadhyayi.com data.txt row i=61167 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "caturaH Sasi",
     text_dev              = "चतुरः शसि",
+    samagra_slp1          = "caturaH Sasi antaH udAttaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "चतुरः शसि अन्तः उदात्तः",
     padaccheda_dev        = "चतुरः शसि",
     why_dev               = "(सूत्रम् 6.1.167) चतुरः शसि।",
     anuvritti_from        = ('6.1.1',),

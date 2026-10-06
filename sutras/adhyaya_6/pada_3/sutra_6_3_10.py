@@ -4,6 +4,7 @@
 Padaccheda: कारनाम्नि च प्राचाम् हल्-आदौ
 
 कारनाम्नि च प्राचां हलादौ (6.3.10)
+Pāṭha: ashtadhyayi.com data.txt row i=63010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kAranAmni ca prAcAM halAdO",
     text_dev              = "कारनाम्नि च प्राचां हलादौ",
+    samagra_slp1          = "alug uttarapade kAranAmni ca prAcAm halAdO haladantAt saptamyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे कारनाम्नि च प्राचाम् हलादौ हलदन्तात् सप्तम्याः",
     padaccheda_dev        = "कारनाम्नि च प्राचाम् हल्-आदौ",
     why_dev               = "(सूत्रम् 6.3.10) कारनाम्नि च प्राचां हलादौ।",
     anuvritti_from        = ('6.1.1',),

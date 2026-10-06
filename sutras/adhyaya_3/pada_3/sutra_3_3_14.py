@@ -4,6 +4,7 @@
 Padaccheda: लृटः सत् वा
 
 krt-suffix rule: लृटः सद् वा
+Pāṭha: ashtadhyayi.com data.txt row i=33014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lfwaH sad vA",
     text_dev              = "लृटः सद् वा",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH Bavizyati lfwaH sat vA kft Seze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भविष्यति लृटः सत् वा कृत् शेषे",
     padaccheda_dev        = "लृटः सत् वा",
     why_dev               = "धातोः प्रत्ययः (३.3.14)।",
     anuvritti_from        = ('3.1.1',),

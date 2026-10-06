@@ -4,6 +4,7 @@
 Padaccheda: दध्नः ठक्
 
 दध्नष्ठक् (4.2.18)
+Pāṭha: ashtadhyayi.com data.txt row i=42018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "daDnazWak",
     text_dev              = "दध्नष्ठक्",
+    samagra_slp1          = "tatra saMskftaM BakzAH iti daDnaH Wak",
+    samagra_dev           = "तत्र संस्कृतं भक्षाः (इति) दध्नः ठक्",
     padaccheda_dev        = "दध्नः ठक्",
     why_dev               = "(सूत्रम् 4.2.18) दध्नष्ठक्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: तदधीनवचने
 
 तदधीनवचने (5.4.54)
+Pāṭha: ashtadhyayi.com data.txt row i=54054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadaDInavacane",
     text_dev              = "तदधीनवचने",
+    samagra_slp1          = "tadaDInavacane kf-BU-asti yoge sampadA ca sAtiH",
+    samagra_dev           = "तदधीनवचने कृ-भू-अस्ति योगे सम्पदा च सातिः",
     padaccheda_dev        = "तदधीनवचने",
     why_dev               = "(सूत्रम् 5.4.54) तदधीनवचने।",
     anuvritti_from        = ('4.1.76',),

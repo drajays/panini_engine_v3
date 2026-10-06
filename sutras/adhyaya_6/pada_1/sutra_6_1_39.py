@@ -4,6 +4,7 @@
 Padaccheda: वः च अस्य अन्यतरस्याम् किति
 
 वश्चास्यान्यतरस्याम् किति (6.1.39)
+Pāṭha: ashtadhyayi.com data.txt row i=61039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vaScAsyAnyatarasyAm kiti",
     text_dev              = "वश्चास्यान्यतरस्याम् किति",
+    samagra_slp1          = "vaH ca asya anyatarasyAm kiti samprasAraRam na liwi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "वः च अस्य अन्यतरस्याम् किति सम्प्रसारणम् न लिटि",
     padaccheda_dev        = "वः च अस्य अन्यतरस्याम् किति",
     why_dev               = "(सूत्रम् 6.1.39) वश्चास्यान्यतरस्याम् किति।",
     anuvritti_from        = ('6.1.1',),

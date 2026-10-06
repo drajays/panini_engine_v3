@@ -4,6 +4,7 @@
 Padaccheda: समः सुटि
 
 समः सुटि (8.3.5)
+Pāṭha: ashtadhyayi.com data.txt row i=83005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samaH suwi",
     text_dev              = "समः सुटि",
+    samagra_slp1          = "samaH suwi ru~",
+    samagra_dev           = "समः सुटि रुँ",
     padaccheda_dev        = "समः सुटि",
     why_dev               = "(सूत्रम् 8.3.5) समः सुटि।",
     anuvritti_from        = ('8.1.1',),

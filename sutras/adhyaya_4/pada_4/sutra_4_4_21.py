@@ -4,6 +4,7 @@
 Padaccheda: अपमित्य-याचिताभ्याम् कक्-कनौ
 
 अपमित्ययाचिताभ्यां कक्कनौ (4.4.21)
+Pāṭha: ashtadhyayi.com data.txt row i=44021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "apamityayAcitAByAM kakkanO",
     text_dev              = "अपमित्ययाचिताभ्यां कक्कनौ",
+    samagra_slp1          = "tena nirvftte iti apamitya-yAcitAByAm kak-kanO",
+    samagra_dev           = "'तेन निर्वृत्ते' (इति) अपमित्य-याचिताभ्याम् कक्-कनौ",
     padaccheda_dev        = "अपमित्य-याचिताभ्याम् कक्-कनौ",
     why_dev               = "(सूत्रम् 4.4.21) अपमित्ययाचिताभ्यां कक्कनौ।",
     anuvritti_from        = ('4.1.1',),

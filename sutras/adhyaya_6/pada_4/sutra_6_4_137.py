@@ -4,6 +4,7 @@
 Padaccheda: न संयोगात् व-म-अन्तात्
 
 न संयोगाद्वमन्तात् (6.4.137)
+Pāṭha: ashtadhyayi.com data.txt row i=64137 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na saMyogAdvamantAt",
     text_dev              = "न संयोगाद्वमन्तात्",
+    samagra_slp1          = "vamantAt saMyogAt anaH Basya aNgasya at-lopaH na",
+    samagra_dev           = "वमन्तात् संयोगात् अनः भस्य अङ्गस्य अत्-लोपः न",
     padaccheda_dev        = "न संयोगात् व-म-अन्तात्",
     why_dev               = "संयोगात् परौ मकार-वकारौ यस्य अनः तस्य अकारलोपो न (कर्मणा, आत्मना)।",
     anuvritti_from        = ('6.1.1',),

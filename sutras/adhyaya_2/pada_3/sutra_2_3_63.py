@@ -4,6 +4,7 @@
 Padaccheda: यजेः च करणे
 
 yaj root also takes tritiya for karana.
+Pāṭha: ashtadhyayi.com data.txt row i=23063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yajeSca karaRe",
     text_dev              = "यजेश्च करणे",
+    samagra_slp1          = "anaBihite yajeH ca karaRe zazWI Seze bahulam Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते यजेः च करणे षष्ठी शेषे बहुलम् छन्दसि",
     padaccheda_dev        = "यजेः च करणे",
     why_dev               = "यजेः च करणे (२.३.६३)।",
     anuvritti_from        = ('2.3.18',),

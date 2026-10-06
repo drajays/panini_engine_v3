@@ -4,6 +4,7 @@
 Padaccheda: तत्र विदितः इति च
 
 तत्र विदित इति च (5.1.43)
+Pāṭha: ashtadhyayi.com data.txt row i=51043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tatra vidita iti ca",
     text_dev              = "तत्र विदित इति च",
+    samagra_slp1          = "tatra viditaH iti saptamIsamarTAt sarvaBUmipfTivIByAmaR-aYO",
+    samagra_dev           = "'तत्र विदितः' (इति) सप्तमीसमर्थात् सर्वभूमिपृथिवीभ्यामण्-अञौ",
     padaccheda_dev        = "तत्र विदितः इति च",
     why_dev               = "(सूत्रम् 5.1.43) तत्र विदित इति च।",
     anuvritti_from        = ('5.1.19',),

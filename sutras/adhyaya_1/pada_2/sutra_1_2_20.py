@@ -16,6 +16,7 @@ Engine:
   - Guards re-entry via meta["seT_mrz_1_2_20"].
   - Adds "seT" to the dhātu Term; sets the registry flag.
   - r1_form_identity_exempt=True: no surface string changes at this step.
+Pāṭha: ashtadhyayi.com data.txt row i=12020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -72,6 +73,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'mfzastitikzAyAm',
     text_dev              = 'मृषस्तितिक्षायाम्',
+    samagra_slp1          = "mfzaH titikzAyAm kit na sew nizWA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "मृषः तितिक्षायाम् कित् न सेट् निष्ठा",
     padaccheda_dev        = "मृषः / तितिक्षायाम्",
     why_dev               = ("मृष्-धातुः तितिक्षार्थे निष्ठा-प्रत्ययस्य पूर्वं सेट् भवति — "
                              "१.२.१८-अपवादः; मृषित इति रूपम्।"),

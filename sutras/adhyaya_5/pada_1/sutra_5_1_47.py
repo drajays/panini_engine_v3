@@ -4,6 +4,7 @@
 Padaccheda: तत् अस्मिन् वृद्धि-आय-लाभ-शुल्क-उपदाः /वाच्य=अर्थ दीयते (क्रियापदम्)
 
 तदस्मिन् वृद्ध्यायलाभशुल्कोपदा दीयते (5.1.47)
+Pāṭha: ashtadhyayi.com data.txt row i=51047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadasmin vfdDyAyalABaSulkopadA dIyate",
     text_dev              = "तदस्मिन् वृद्ध्यायलाभशुल्कोपदा दीयते",
+    samagra_slp1          = "tat asmin vfdDi-Aya-lABa-Sulka-upadAH dIyate iti samarTAnAm praTamAt paraH WaY pratyayaH",
+    samagra_dev           = "'तत् अस्मिन् वृद्धि-आय-लाभ-शुल्क-उपदाः दीयते' (इति) समर्थानाम् प्रथमात् परः ठञ् प्रत्ययः",
     padaccheda_dev        = "तत् अस्मिन् वृद्धि-आय-लाभ-शुल्क-उपदाः /वाच्य=अर्थ दीयते (क्रियापदम्)",
     why_dev               = "(सूत्रम् 5.1.47) तदस्मिन् वृद्ध्यायलाभशुल्कोपदा दीयते।",
     anuvritti_from        = ('5.1.19',),

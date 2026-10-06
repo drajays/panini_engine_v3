@@ -4,6 +4,7 @@
 Padaccheda: ताल-आदिभ्यः अण्
 
 तालादिभ्योऽण् (4.3.152)
+Pāṭha: ashtadhyayi.com data.txt row i=43152 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tAlAdiByoR',
     text_dev              = 'तालादिभ्योऽण्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA tAla-AdiByaH aR tasya vikAraH avayave",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा ताल-आदिभ्यः अण् तस्य विकारः अवयवे",
     padaccheda_dev        = "ताल-आदिभ्यः अण्",
     why_dev               = "(सूत्रम् 4.3.152) तालादिभ्योऽण्।",
     anuvritti_from        = ('4.1.1',),

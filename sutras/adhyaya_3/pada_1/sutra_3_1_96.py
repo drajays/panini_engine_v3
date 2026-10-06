@@ -1,7 +1,7 @@
 """
 3.1.96  तव्यत्तव्यानीयरः  —  VIDHI
 
-**Pāṭha (ashtadhyayi-com data.txt i=30196):** tavyat-tavyānīyaraḥ — kṛtya affixes
+**Pāṭha (ashtadhyayi-com data.txt i=31096):** tavyat-tavyānīyaraḥ — kṛtya affixes
 **tavyat**, **tavya**, **anīyar** in the dhātu context (3.1.91 anuvṛtti).
 
 3.1.96 enumerates three kṛtya options; all three are equally valid for any
@@ -96,6 +96,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='tavyattavyAnIyaraH',
     text_dev='तव्यत्तव्यानीयरः',
+    samagra_slp1="pratyayaH paraSca AdyudAttaSca DAtoH tavyat-tavya-anIyaraH kft kftyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="प्रत्ययः परश्च आद्युदात्तश्च धातोः तव्यत्-तव्य-अनीयरः कृत् कृत्याः",
     padaccheda_dev="तव्यत्-तव्य-अनीयर्",
     why_dev=(
         "कृत्य-प्रत्ययाः तव्यत्/तव्य/अनीयर् — 'krtya_recipe' संयोजन-कुञ्जिकया चित्यते।"

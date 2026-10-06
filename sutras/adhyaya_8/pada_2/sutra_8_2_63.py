@@ -4,6 +4,7 @@
 Padaccheda: नशेः वा
 
 नशेर्वा (8.2.63)
+Pāṭha: ashtadhyayi.com data.txt row i=82063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "naServA",
     text_dev              = "नशेर्वा",
+    samagra_slp1          = "naSeH padasya ante ku vA",
+    samagra_dev           = "नशेः पदस्य अन्ते कु वा",
     padaccheda_dev        = "नशेः वा",
     why_dev               = "(सूत्रम् 8.2.63) नशेर्वा।",
     anuvritti_from        = ('8.1.1',),

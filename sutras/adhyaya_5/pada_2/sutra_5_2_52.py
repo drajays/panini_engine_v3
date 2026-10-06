@@ -4,6 +4,7 @@
 Padaccheda: बहु-पूग-गण-सङ्‍घस्य तिथुक्
 
 बहुपूगगणसंघस्य तिथुक् (5.2.52)
+Pāṭha: ashtadhyayi.com data.txt row i=52052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahupUgagaRasaMGasya tiTuk",
     text_dev              = "बहुपूगगणसंघस्य तिथुक्",
+    samagra_slp1          = "tasya pUraRe iti qawi bahu-pUga-gaRa-saNGasya Tuk",
+    samagra_dev           = "'तस्य पूरणे' (इति) डटि बहु-पूग-गण-सङ्घस्य थुक्",
     padaccheda_dev        = "बहु-पूग-गण-सङ्‍घस्य तिथुक्",
     why_dev               = "(सूत्रम् 5.2.52) बहुपूगगणसंघस्य तिथुक्।",
     anuvritti_from        = ('4.1.82',),

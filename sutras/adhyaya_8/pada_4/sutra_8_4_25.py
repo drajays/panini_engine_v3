@@ -4,6 +4,7 @@
 Padaccheda: अयनम् च
 
 अयनं च (8.4.25)
+Pāṭha: ashtadhyayi.com data.txt row i=84025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ayanaM ca",
     text_dev              = "अयनं च",
+    samagra_slp1          = "antar razAByAmayanaM naH RaH adeSe",
+    samagra_dev           = "अन्तर् रषाभ्यामयनं नः णः अदेशे",
     padaccheda_dev        = "अयनम् च",
     why_dev               = "(सूत्रम् 8.4.25) अयनं च।",
     anuvritti_from        = ('8.1.1',),

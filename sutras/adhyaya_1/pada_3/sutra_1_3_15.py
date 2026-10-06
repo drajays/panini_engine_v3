@@ -14,6 +14,7 @@ upadesha_slp1 is in GATI_HIMSA_ROOTS, and (c) the blocking tag is not already ap
 act reverts pada to "parasmaipada" and stamps each matching term with the blocking tag.
 No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True because no surface phonological change occurs.
+Pāṭha: ashtadhyayi.com data.txt row i=13015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -75,6 +76,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.NIYAMA,
     text_slp1='na gatihiMsArTeByaH',
     text_dev='न गतिहिंसार्थेभ्यः',
+    samagra_slp1="gatihiMsArTeByaH kartari karmavyatihAre Atmanepadam na",
+    samagra_dev="गतिहिंसार्थेभ्यः कर्तरि कर्मव्यतिहारे आत्मनेपदम् न",
     padaccheda_dev="न / गति-हिंसा-अर्थेभ्यः (पञ्चमी-बहुवचन)",
     why_dev=(
         "गति-हिंसा-अर्थकेभ्यो धातुभ्यः आत्मनेपदं न भवति; "

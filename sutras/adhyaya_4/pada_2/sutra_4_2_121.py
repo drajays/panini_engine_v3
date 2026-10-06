@@ -4,6 +4,7 @@
 Padaccheda: धन्व-य-उपधात् वुञ्
 
 धन्वयोपधाद्वुञ् (4.2.121)
+Pāṭha: ashtadhyayi.com data.txt row i=42121 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DanvayopaDAdvuY",
     text_dev              = "धन्वयोपधाद्वुञ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA Danva-ya-upaDAt vuY vfdDAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा धन्व-य-उपधात् वुञ् वृद्धात्",
     padaccheda_dev        = "धन्व-य-उपधात् वुञ्",
     why_dev               = "(सूत्रम् 4.2.121) धन्वयोपधाद्वुञ्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: निर्वृत्ते अक्ष-द्यूत-आदिभ्यः
 
 निर्वृत्तेऽक्षद्यूतादिभ्यः (4.4.19)
+Pāṭha: ashtadhyayi.com data.txt row i=44019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nirvfttekzadyUtAdiByaH',
     text_dev              = 'निर्वृत्तेऽक्षद्यूतादिभ्यः',
+    samagra_slp1          = "tena nirvftte iti akzadyutAdiByaH samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तेन निर्वृत्ते' (इति) अक्षद्युतादिभ्यः समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "निर्वृत्ते अक्ष-द्यूत-आदिभ्यः",
     why_dev               = "(सूत्रम् 4.4.19) निर्वृत्तेऽक्षद्यूतादिभ्यः।",
     anuvritti_from        = ('4.1.1',),

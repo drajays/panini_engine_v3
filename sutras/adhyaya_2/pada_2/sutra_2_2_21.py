@@ -4,6 +4,7 @@
 Padaccheda: तृतीया-प्रभृतीनि अन्यतरस्याम्
 
 tritiya onwards are optionally compounded.
+Pāṭha: ashtadhyayi.com data.txt row i=22021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tftIyApraBftInyanyatarasyAm",
     text_dev              = "तृतीयाप्रभृतीन्यन्यतरस्याम्",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH tftIyA-praBftIni anyatarasyAm upapadam amA eva avyayena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः तृतीया-प्रभृतीनि अन्यतरस्याम् उपपदम् अमा एव अव्ययेन",
     padaccheda_dev        = "तृतीया-प्रभृतीनि अन्यतरस्याम्",
     why_dev               = "तृतीया-प्रभृतीनि अन्यतरस्यां समस्यन्ते (२.२.२१)।",
     anuvritti_from        = ('2.2.1',),

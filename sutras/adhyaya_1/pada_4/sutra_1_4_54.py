@@ -10,6 +10,7 @@ This is the foundational definitional rule for kartṛ. E.g. *devadatto pacati*.
 *Engine:* This is a gate-style definitional rule. ``cond`` fires when
 ``samjna_registry`` has no entry for ``"kartf"`` yet. Also tags terms bearing
 ``"svatantra_kartf"``. ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -47,6 +48,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'svatantraH kartA',
     text_dev             = 'स्वतन्त्रः कर्ता',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake svatantraH kartA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके स्वतन्त्रः कर्ता",
     padaccheda_dev       = "स्वतन्त्रः / कर्ता",
     why_dev              = (
         "यः क्रियायां स्वतन्त्रः (स्वेच्छया प्रवर्तते) स कर्तृ-कारक-संज्ञकः। "

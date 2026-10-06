@@ -4,6 +4,7 @@
 Padaccheda: सुधातुः अकङ् च
 
 सुधातुरकङ् च (4.1.97)
+Pāṭha: ashtadhyayi.com data.txt row i=41097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "suDAturakaN ca",
     text_dev              = "सुधातुरकङ् च",
+    samagra_slp1          = "tasya apatyam iti suDAtuH akaN AdeSaH iY pratyayaH ca ",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) सुधातुः अकङ् (आदेशः), इञ् प्रत्ययः च ।",
     padaccheda_dev        = "सुधातुः अकङ् च",
     why_dev               = "(सूत्रम् 4.1.97) सुधातुरकङ् च।",
     anuvritti_from        = ('4.1.1',),

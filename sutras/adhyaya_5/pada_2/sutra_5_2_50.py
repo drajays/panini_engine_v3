@@ -4,6 +4,7 @@
 Padaccheda: थट् च छन्दसि
 
 थट् च च्छन्दसि (5.2.50)
+Pāṭha: ashtadhyayi.com data.txt row i=52050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'Taw cacCandasi',
     text_dev              = 'थट् चच्छन्दसि',
+    samagra_slp1          = "tasya pUraRe iti asaNKyAdeH nAntAt saNKyAyAH qawaH Candasi maw Taw ca",
+    samagra_dev           = "'तस्य पूरणे' (इति) असङ्ख्यादेः नान्तात् सङ्ख्यायाः डटः छन्दसि मट्  थट् च",
     padaccheda_dev        = "थट् च छन्दसि",
     why_dev               = "(सूत्रम् 5.2.50) थट् च च्छन्दसि।",
     anuvritti_from        = ('4.1.82',),

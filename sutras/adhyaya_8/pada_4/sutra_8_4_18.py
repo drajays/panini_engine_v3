@@ -4,6 +4,7 @@
 Padaccheda: शेषे विभाषा अ-क-ख-आदौ अ-ष-अन्ते उपदेशे
 
 शेषे विभाषाऽकखादावषान्त उपदेशे (8.4.18)
+Pāṭha: ashtadhyayi.com data.txt row i=84018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'Seze viBAzAkaKAdAvazAnta upadeSe',
     text_dev              = 'शेषे विभाषाऽकखादावषान्त उपदेशे',
+    samagra_slp1          = "razAByAmupasargAt upadeSe kaKAdO azAnte Seze neH naH viBAzA RaH",
+    samagra_dev           = "रषाभ्यामुपसर्गात् उपदेशे कखादौ अषान्ते शेषे नेः नः विभाषा णः",
     padaccheda_dev        = "शेषे विभाषा अ-क-ख-आदौ अ-ष-अन्ते उपदेशे",
     why_dev               = "(सूत्रम् 8.4.18) शेषे विभाषाऽकखादावषान्त उपदेशे।",
     anuvritti_from        = ('8.1.1',),

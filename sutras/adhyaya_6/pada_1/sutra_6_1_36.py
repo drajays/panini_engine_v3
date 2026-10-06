@@ -4,6 +4,7 @@
 Padaccheda: अपस्पृधेथाम् (तिङ्) आनृचुः (तिङ्) आनृहुः (तिङ्) चिच्युषे (तिङ्) तित्याज (तिङ्) श्राताः श्रितम् आशीर् आशीर्त्ताः
 
 अपस्पृधेथामानृचुरानृहुश्चिच्युषेतित्याजश्राताःश्रितमाशीराशीर्त्तः (6.1.36)
+Pāṭha: ashtadhyayi.com data.txt row i=61036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'apaspfDeTAmAnfcurAnfhuScicyuzetityAjaSrAtAHSritamASIrASIrttAH',
     text_dev              = 'अपस्पृधेथामानृचुरानृहुश्चिच्युषेतित्याजश्राताःश्रितमाशीराशीर्त्ताः',
+    samagra_slp1          = "apaspfDeTAm AnfcuH AnfhuH cicyuze tityAja SrAtAH Sritam ASIr ASIrttAH samprasAraRam Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अपस्पृधेथाम् आनृचुः आनृहुः चिच्युषे तित्याज श्राताः श्रितम् आशीर् आशीर्त्ताः सम्प्रसारणम् छन्दसि",
     padaccheda_dev        = "अपस्पृधेथाम् (तिङ्) आनृचुः (तिङ्) आनृहुः (तिङ्) चिच्युषे (तिङ्) तित्याज (तिङ्) श्राताः श्रितम् आशीर् आशीर्त्ताः",
     why_dev               = "(सूत्रम् 6.1.36) अपस्पृधेथामानृचुरानृहुश्चिच्युषेतित्याजश्राताःश्रितमाशीराशीर्त्तः।",
     anuvritti_from        = ('6.1.1',),

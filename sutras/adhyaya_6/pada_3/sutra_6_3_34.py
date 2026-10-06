@@ -4,6 +4,7 @@
 Padaccheda: स्त्रियाः पुंवत् भाषितपुंस्कात्-अनूङ् (लुप्तषष्ठीकम्) समानाधिकरणे स्त्रियाम् अ-पूरणी-प्रिया-आदिषु
 
 स्त्रियाः पुंवद्भाषितपुंस्कादनूङ् समानाधिकरणे स्त्रियामपूरणीप्रियाऽऽदिषु (6.3.34)
+Pāṭha: ashtadhyayi.com data.txt row i=63034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'striyAH puMvadBAzitapuMskAdanUN samAnADikaraRe striyAmapUraRIpriyAdizu',
     text_dev              = 'स्त्रियाः पुंवद्भाषितपुंस्कादनूङ् समानाधिकरणे स्त्रियामपूरणीप्रियाऽऽदिषु',
+    samagra_slp1          = "uttarapade striyAH puMvat BAzitapu~skAd anUN samAnADikaraRe striyAm apUraRIpriyAdizu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे स्त्रियाः पुंवत् भाषितपुँस्काद् अनूङ् समानाधिकरणे स्त्रियाम् अपूरणीप्रियाऽऽदिषु",
     padaccheda_dev        = "स्त्रियाः पुंवत् भाषितपुंस्कात्-अनूङ् (लुप्तषष्ठीकम्) समानाधिकरणे स्त्रियाम् अ-पूरणी-प्रिया-आदिषु",
     why_dev               = "(सूत्रम् 6.3.34) स्त्रियाः पुंवद्भाषितपुंस्कादनूङ् समानाधिकरणे स्त्रियामपूरणीप्रियाऽऽदिषु।",
     anuvritti_from        = ('6.1.1',),

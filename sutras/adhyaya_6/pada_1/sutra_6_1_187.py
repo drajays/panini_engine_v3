@@ -4,6 +4,7 @@
 Padaccheda: आदिः सिचः अन्यतरस्याम्
 
 आदिः सिचोऽन्यतरस्याम् (6.1.187)
+Pāṭha: ashtadhyayi.com data.txt row i=61187 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'AdiH siconyatarasyAm',
     text_dev              = 'आदिः सिचोऽन्यतरस्याम्',
+    samagra_slp1          = "AdiH sicaH anyatarasyAm udAttaH nAm la-sArvaDAtukam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः सिचः अन्यतरस्याम् उदात्तः नाम् ल-सार्वधातुकम्",
     padaccheda_dev        = "आदिः सिचः अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.1.187) आदिः सिचोऽन्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

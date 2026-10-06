@@ -4,6 +4,7 @@
 Padaccheda: युवा खलति-पलित-वलिन-जरतीभिः
 
 yuva with khalati, palita, valina, jarati forms karmadharaya.
+Pāṭha: ashtadhyayi.com data.txt row i=21067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yuvA KalatipalitavalinajaratIBiH",
     text_dev              = "युवा खलतिपलितवलिनजरतीभिः",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH yuvA Kalati-palita-valina-jaratIBiH samAnADikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः युवा खलति-पलित-वलिन-जरतीभिः समानाधिकरणेन",
     padaccheda_dev        = "युवा खलति-पलित-वलिन-जरतीभिः",
     why_dev               = "युवा खलति-पलित-आदिभिः सह कर्मधारयः (२.१.६७)।",
     anuvritti_from        = ('2.1.3',),

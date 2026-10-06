@@ -4,6 +4,7 @@
 Padaccheda: पुत्र-अन्तात् अन्यतरस्याम्
 
 पुत्रान्तादन्यतरस्याम् (4.1.159)
+Pāṭha: ashtadhyayi.com data.txt row i=41159 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "putrAntAdanyatarasyAm",
     text_dev              = "पुत्रान्तादन्यतरस्याम्",
+    samagra_slp1          = "tasya apatyam iti vfdDAt putrAntAt udIcAm kuk anyatarasyAm",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) वृद्धात् पुत्रान्तात् उदीचाम् कुक् अन्यतरस्याम्",
     padaccheda_dev        = "पुत्र-अन्तात् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 4.1.159) पुत्रान्तादन्यतरस्याम्।",
     anuvritti_from        = ('4.1.1',),

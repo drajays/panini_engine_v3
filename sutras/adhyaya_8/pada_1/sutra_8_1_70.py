@@ -4,6 +4,7 @@
 Padaccheda: गतिः गतौ
 
 गतिर्गतौ (8.1.70)
+Pāṭha: ashtadhyayi.com data.txt row i=81070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gatirgatO",
     text_dev              = "गतिर्गतौ",
+    samagra_slp1          = "padasya anudAttaM sarvamApAdAdO gatiH gatO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य अनुदात्तं सर्वमापादादौ गतिः गतौ",
     padaccheda_dev        = "गतिः गतौ",
     why_dev               = "(सूत्रम् 8.1.70) गतिर्गतौ।",
     anuvritti_from        = ('8.1.1',),

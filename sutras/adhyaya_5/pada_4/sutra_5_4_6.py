@@ -4,6 +4,7 @@
 Padaccheda: बृहत्याः आच्छादने
 
 बृहत्या आच्छादने (5.4.6)
+Pāṭha: ashtadhyayi.com data.txt row i=54006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bfhatyA AcCAdane",
     text_dev              = "बृहत्या आच्छादने",
+    samagra_slp1          = "bfhatyAH AcCAdane kan",
+    samagra_dev           = "बृहत्याः आच्छादने कन्",
     padaccheda_dev        = "बृहत्याः आच्छादने",
     why_dev               = "(सूत्रम् 5.4.6) बृहत्या आच्छादने।",
     anuvritti_from        = ('4.1.76',),

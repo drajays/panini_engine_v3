@@ -4,6 +4,7 @@
 Padaccheda: प्रयोज्य-नियोज्यौ शक्यार्थे
 
 प्रयोज्यनियोज्यौ शक्यार्थे (7.3.68)
+Pāṭha: ashtadhyayi.com data.txt row i=73068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prayojyaniyojyO SakyArTe",
     text_dev              = "प्रयोज्यनियोज्यौ शक्यार्थे",
+    samagra_slp1          = "aNgasya prayojyaniyojyO SakyArTe cajoH ku na Rye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य प्रयोज्यनियोज्यौ शक्यार्थे चजोः कु न ण्ये",
     padaccheda_dev        = "प्रयोज्य-नियोज्यौ शक्यार्थे",
     why_dev               = "(सूत्रम् 7.3.68) प्रयोज्यनियोज्यौ शक्यार्थे।",
     anuvritti_from        = ('7.1.1',),

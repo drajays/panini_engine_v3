@@ -4,6 +4,7 @@
 Padaccheda: हः च व्रीहि-कालयोः
 
 Krt suffix rule from dhatu: हश्च व्रीहिकालयोः (148)
+Pāṭha: ashtadhyayi.com data.txt row i=31148 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "haSca vrIhikAlayoH",
     text_dev              = "हश्च व्रीहिकालयोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH haH ca vrIhi-kAlayoH kft Ryuw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः हः च व्रीहि-कालयोः कृत् ण्युट्",
     padaccheda_dev        = "हः च व्रीहि-कालयोः",
     why_dev               = "धातोः [हश्च व्रीहिकालयोः]-प्रत्ययः विहितः (३.१.148)।",
     anuvritti_from        = ('3.1.1',),

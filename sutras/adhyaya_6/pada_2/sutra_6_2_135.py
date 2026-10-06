@@ -4,6 +4,7 @@
 Padaccheda: षट् च काण्ड-आदीनि
 
 षट् च काण्डादीनि (6.2.135)
+Pāṭha: ashtadhyayi.com data.txt row i=62135 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zaw ca kARqAdIni",
     text_dev              = "षट् च काण्डादीनि",
+    samagra_slp1          = "udAttaH uttarapadAdiH zaw ca kARqAdIni tatpuruze a-prARi-zazWyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः षट् च काण्डादीनि तत्पुरुषे अ-प्राणि-षष्ठ्याः",
     padaccheda_dev        = "षट् च काण्ड-आदीनि",
     why_dev               = "(सूत्रम् 6.2.135) षट् च काण्डादीनि।",
     anuvritti_from        = ('6.1.1',),

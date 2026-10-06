@@ -4,6 +4,7 @@
 Padaccheda: विभाषा वर्ष-क्षर-शर-वरात्
 
 विभाषा वर्षक्षरशरवरात् (6.3.16)
+Pāṭha: ashtadhyayi.com data.txt row i=63016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA varzakzaraSaravarAt",
     text_dev              = "विभाषा वर्षक्षरशरवरात्",
+    samagra_slp1          = "alug uttarapade viBAzA varza-kzara-Sara-varAt haladantAt saptamyAH je",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे विभाषा वर्ष-क्षर-शर-वरात् हलदन्तात् सप्तम्याः जे",
     padaccheda_dev        = "विभाषा वर्ष-क्षर-शर-वरात्",
     why_dev               = "(सूत्रम् 6.3.16) विभाषा वर्षक्षरशरवरात्।",
     anuvritti_from        = ('6.1.1',),

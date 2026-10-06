@@ -4,6 +4,7 @@
 Padaccheda: विभाषा पूर्वाह्ण-अपराह्णाभ्याम्
 
 विभाषा पूर्वाह्णापराह्णाभ्याम् (4.3.24)
+Pāṭha: ashtadhyayi.com data.txt row i=43024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA pUrvAhRAparAhRAByAm",
     text_dev              = "विभाषा पूर्वाह्णापराह्णाभ्याम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA viBAzA pUrvAhRa-aparAhRAByAm kAlAt wyu-wyulO tuw ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा विभाषा पूर्वाह्ण-अपराह्णाभ्याम् कालात् ट्यु-ट्युलौ तुट् च",
     padaccheda_dev        = "विभाषा पूर्वाह्ण-अपराह्णाभ्याम्",
     why_dev               = "(सूत्रम् 4.3.24) विभाषा पूर्वाह्णापराह्णाभ्याम्।",
     anuvritti_from        = ('4.1.1',),

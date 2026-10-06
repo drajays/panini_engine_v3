@@ -4,6 +4,7 @@
 Padaccheda: कर्णः वर्णलक्षणात्
 
 कर्णो वर्णलक्षणात् (6.2.112)
+Pāṭha: ashtadhyayi.com data.txt row i=62112 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karRo varRalakzaRAt",
     text_dev              = "कर्णो वर्णलक्षणात्",
+    samagra_slp1          = "udAttaH uttarapadAdiH karRaH varRalakzaRAt bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः कर्णः वर्णलक्षणात् बहुव्रीहौ",
     padaccheda_dev        = "कर्णः वर्णलक्षणात्",
     why_dev               = "(सूत्रम् 6.2.112) कर्णो वर्णलक्षणात्।",
     anuvritti_from        = ('6.1.1',),

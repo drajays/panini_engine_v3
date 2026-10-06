@@ -7,6 +7,7 @@
 v3: sets the interpretive gate ``1_4_19_tasau_matvArTe`` in
 ``state.paribhasha_gates`` to mark that the *ta*/*su*-in-matvārtha
 designation is operative for downstream matvārtha processing.
+Pāṭha: ashtadhyayi.com data.txt row i=14019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -30,6 +31,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.SAMJNA,
     text_slp1              = 'tasO matvarTe',
     text_dev               = 'तसौ मत्वर्थे',
+    samagra_slp1           = "ta-sO matvarTe Bam",
+    samagra_dev            = "त-सौ मत्वर्थे  भम्",
     padaccheda_dev         = "तसौ / मत्वर्थे",
     why_dev                = "मत्वर्थे 'त' 'स' इति द्वयोः प्रत्यययोः संज्ञा।",
     anuvritti_from         = ("1.4.1",),

@@ -4,6 +4,7 @@
 Padaccheda: उञ्छ-आदीनाम् च
 
 उञ्छादीनां च (6.1.160)
+Pāṭha: ashtadhyayi.com data.txt row i=61160 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uYCAdInAM ca",
     text_dev              = "उञ्छादीनां च",
+    samagra_slp1          = "uYCAdInAm ca antaH udAttaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उञ्छादीनाम् च अन्तः उदात्तः",
     padaccheda_dev        = "उञ्छ-आदीनाम् च",
     why_dev               = "(सूत्रम् 6.1.160) उञ्छादीनां च।",
     anuvritti_from        = ('6.1.1',),

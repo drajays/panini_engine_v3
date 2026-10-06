@@ -4,6 +4,7 @@
 Padaccheda: तत्र च दीयते (क्रियापदम्) कार्यम् भव-वत्
 
 तत्र च दीयते कार्यं भववत् (5.1.96)
+Pāṭha: ashtadhyayi.com data.txt row i=51096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tatra ca dIyate kAryaM Bavavat",
     text_dev              = "तत्र च दीयते कार्यं भववत्",
+    samagra_slp1          = "tatra dIyate kAryam  iti kAlAt samarTAnAm praTamAt paraH Bavavat pratyayaH",
+    samagra_dev           = "'तत्र दीयते, कार्यम् ' (इति) कालात् समर्थानाम् प्रथमात् परः भववत् प्रत्ययः",
     padaccheda_dev        = "तत्र च दीयते (क्रियापदम्) कार्यम् भव-वत्",
     why_dev               = "(सूत्रम् 5.1.96) तत्र च दीयते कार्यं भववत्।",
     anuvritti_from        = ('5.1.78',),

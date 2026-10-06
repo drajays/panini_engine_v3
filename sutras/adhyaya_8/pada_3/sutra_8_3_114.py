@@ -4,6 +4,7 @@
 Padaccheda: प्रतिस्तब्ध-निस्तब्धौ च
 
 प्रतिस्तब्धनिस्तब्धौ च (8.3.114)
+Pāṭha: ashtadhyayi.com data.txt row i=83114 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pratistabDanistabDO ca",
     text_dev              = "प्रतिस्तब्धनिस्तब्धौ च",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH pratistabDa-nistabDO ca saH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः प्रतिस्तब्ध-निस्तब्धौ च सः न",
     padaccheda_dev        = "प्रतिस्तब्ध-निस्तब्धौ च",
     why_dev               = "(सूत्रम् 8.3.114) प्रतिस्तब्धनिस्तब्धौ च।",
     anuvritti_from        = ('8.1.1',),

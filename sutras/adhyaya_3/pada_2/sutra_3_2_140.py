@@ -4,6 +4,7 @@
 Padaccheda: त्रसि- गृधि-धृषि-क्षिपेः क्नुः
 
 krt-suffix rule: त्रसिगृधिधृषिक्षिपेः क्नुः (140)
+Pāṭha: ashtadhyayi.com data.txt row i=32140 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "trasigfDiDfzikzipeH knuH",
     text_dev              = "त्रसिगृधिधृषिक्षिपेः क्नुः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu trasi-gfDi-Dfzi-kzipeH knuH kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु त्रसि-गृधि-धृषि-क्षिपेः क्नुः कृत्",
     padaccheda_dev        = "त्रसि- गृधि-धृषि-क्षिपेः क्नुः",
     why_dev               = "धातोः कृत्-प्रत्ययः [त्रसिगृधिधृषिक्षिपेः क्नुः] विहितः (३.२.140)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

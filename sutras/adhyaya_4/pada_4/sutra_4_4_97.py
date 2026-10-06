@@ -4,6 +4,7 @@
 Padaccheda: मत-जन-हलात् करण-जल्प-कर्षेषु
 
 मतजनहलात् करणजल्पकर्षेषु (4.4.97)
+Pāṭha: ashtadhyayi.com data.txt row i=44097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "matajanahalAt karaRajalpakarzezu",
     text_dev              = "मतजनहलात् करणजल्पकर्षेषु",
+    samagra_slp1          = "mata-jana-halAt karaRa-jalpa-karzezu saMjYAyAm yat",
+    samagra_dev           = "मत-जन-हलात् करण-जल्प-कर्षेषु संज्ञायाम् यत्",
     padaccheda_dev        = "मत-जन-हलात् करण-जल्प-कर्षेषु",
     why_dev               = "(सूत्रम् 4.4.97) मतजनहलात् करणजल्पकर्षेषु।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: पूगेषु अन्यतरस्याम्
 
 पूगेष्वन्यतरस्याम् (6.2.28)
+Pāṭha: ashtadhyayi.com data.txt row i=62028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUgezvanyatarasyAm",
     text_dev              = "पूगेष्वन्यतरस्याम्",
+    samagra_slp1          = "pUgezu anyatarasyAm pUrvapadam prakftyA karmaDAraye kumAraH AdiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूगेषु अन्यतरस्याम् पूर्वपदम् प्रकृत्या कर्मधारये कुमारः आदिः",
     padaccheda_dev        = "पूगेषु अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.2.28) पूगेष्वन्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

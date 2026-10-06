@@ -4,6 +4,7 @@
 Padaccheda: उत् परस्य अतः
 
 उत् परस्यातः (7.4.88)
+Pāṭha: ashtadhyayi.com data.txt row i=74088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ut parasyAtaH",
     text_dev              = "उत् परस्यातः",
+    samagra_slp1          = "aNgasya aByAsasya ut parasya ataH yaNlukoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य उत् परस्य अतः यङ्लुकोः",
     padaccheda_dev        = "उत् परस्य अतः",
     why_dev               = "(सूत्रम् 7.4.88) उत् परस्यातः।",
     anuvritti_from        = ('7.1.1',),

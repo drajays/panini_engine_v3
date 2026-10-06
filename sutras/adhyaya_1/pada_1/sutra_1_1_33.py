@@ -21,6 +21,7 @@ v3:
 Mechanical blindness (CONSTITUTION Art. 2):
   - ``cond`` reads only ``Term.meta['upadesha_slp1']`` and Term.tags.
   - No paradigm coordinates, no Devanāgarī strings.
+Pāṭha: ashtadhyayi.com data.txt row i=11033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -77,6 +78,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1      = "praTamacaramatayAlpArDakatipayanemASca",
     text_dev       = "प्रथमचरमतयाल्पार्धकतिपयनेमाश्च",
+    samagra_slp1   = "praTamacaramatayAlpArDakatipayanemAH jasi viBAzA sarvanAmAni",
+    samagra_dev    = "प्रथमचरमतयाल्पार्धकतिपयनेमाः जसि विभाषा सर्वनामानि",
     padaccheda_dev = "प्रथम-चरम-तय-अल्प-अर्ध-कतिपय-नेमाः च (सर्वनाम-संज्ञा)",
     why_dev        = "प्रथमादि-शब्दाः (सप्त) च सर्वनाम-संज्ञकाः — १.१.२७-अनुवृत्त्या।",
     anuvritti_from = ("1.1.27",),

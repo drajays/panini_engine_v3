@@ -4,6 +4,7 @@
 Padaccheda: प्रहरणम्
 
 प्रहरणम् (4.4.57)
+Pāṭha: ashtadhyayi.com data.txt row i=44057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "praharaRam",
     text_dev              = "प्रहरणम्",
+    samagra_slp1          = "tadasya praharaRam iti samarTAnAM praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तदस्य प्रहरणम्' (इति) समर्थानां प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "प्रहरणम्",
     why_dev               = "(सूत्रम् 4.4.57) प्रहरणम्।",
     anuvritti_from        = ('4.1.1',),

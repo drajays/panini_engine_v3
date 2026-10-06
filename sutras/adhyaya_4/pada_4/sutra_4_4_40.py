@@ -4,6 +4,7 @@
 Padaccheda: प्रतिकण्ठ-अर्थ-ललामम् च
 
 प्रतिकण्ठार्थललामं च (4.4.40)
+Pāṭha: ashtadhyayi.com data.txt row i=44040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pratikaRWArTalalAmaM ca",
     text_dev              = "प्रतिकण्ठार्थललामं च",
+    samagra_slp1          = "tat pratikaRWa-arTa-lalAmaM gfhRAti iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् प्रतिकण्ठ-अर्थ-ललामं गृह्णाति' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "प्रतिकण्ठ-अर्थ-ललामम् च",
     why_dev               = "(सूत्रम् 4.4.40) प्रतिकण्ठार्थललामं च।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: ईत् अग्नेः सोमवरुणयोः
 
 ईदग्नेः सोमवरुणयोः (6.3.27)
+Pāṭha: ashtadhyayi.com data.txt row i=63027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "IdagneH somavaruRayoH",
     text_dev              = "ईदग्नेः सोमवरुणयोः",
+    samagra_slp1          = "uttarapade It agneH soma-varuRayoH devatAdvandve ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे ईत् अग्नेः सोम-वरुणयोः देवताद्वन्द्वे च",
     padaccheda_dev        = "ईत् अग्नेः सोमवरुणयोः",
     why_dev               = "(सूत्रम् 6.3.27) ईदग्नेः सोमवरुणयोः।",
     anuvritti_from        = ('6.1.1',),

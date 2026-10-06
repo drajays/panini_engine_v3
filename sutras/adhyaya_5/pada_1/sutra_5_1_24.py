@@ -4,6 +4,7 @@
 Padaccheda: विंशति-त्रिंशद्‍भ्याम् ड्‍वुन् अ-संज्ञायाम्
 
 विंशतित्रिंशद्भ्यां ड्वुन्नसंज्ञायाम् (5.1.24)
+Pāṭha: ashtadhyayi.com data.txt row i=51024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viMSatitriMSadByAM qvunnasaMjYAyAm",
     text_dev              = "विंशतित्रिंशद्भ्यां ड्वुन्नसंज्ञायाम्",
+    samagra_slp1          = "viMSati-triMSadByAmA-arhAt asaMjYAyAm qvun",
+    samagra_dev           = "विंशति-त्रिंशद्भ्यामा-अर्हात् असंज्ञायाम् ड्वुन्",
     padaccheda_dev        = "विंशति-त्रिंशद्‍भ्याम् ड्‍वुन् अ-संज्ञायाम्",
     why_dev               = "(सूत्रम् 5.1.24) विंशतित्रिंशद्भ्यां ड्वुन्नसंज्ञायाम्।",
     anuvritti_from        = ('5.1.19',),

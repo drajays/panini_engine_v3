@@ -4,6 +4,7 @@
 Padaccheda: ह्रस्व-अन्ते अन्त्यात् पूर्वम्
 
 ह्रस्वान्तेऽन्त्यात् पूर्वम् (6.2.174)
+Pāṭha: ashtadhyayi.com data.txt row i=62174 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'hrasvAntentyAt pUrvam',
     text_dev              = 'ह्रस्वान्तेऽन्त्यात् पूर्वम्',
+    samagra_slp1          = "uttarapadAdiH antaH hrasvAnte antyAt pUrvam bahuvrIhO naYsuByAm kapi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः ह्रस्वान्ते अन्त्यात् पूर्वम् बहुव्रीहौ नञ्सुभ्याम् कपि",
     padaccheda_dev        = "ह्रस्व-अन्ते अन्त्यात् पूर्वम्",
     why_dev               = "(सूत्रम् 6.2.174) ह्रस्वान्तेऽन्त्यात् पूर्वम्।",
     anuvritti_from        = ('6.1.1',),

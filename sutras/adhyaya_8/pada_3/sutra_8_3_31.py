@@ -4,6 +4,7 @@
 Padaccheda: शि तुक्
 
 शि तुक् (8.3.31)
+Pāṭha: ashtadhyayi.com data.txt row i=83031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Si tuk",
     text_dev              = "शि तुक्",
+    samagra_slp1          = "padasya naH Si tuk vA",
+    samagra_dev           = "पदस्य नः शि तुक् वा",
     padaccheda_dev        = "शि तुक्",
     why_dev               = "(सूत्रम् 8.3.31) शि तुक्।",
     anuvritti_from        = ('8.1.1',),

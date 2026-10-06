@@ -4,6 +4,7 @@
 Padaccheda: स्थूल-दूर-युव-ह्रस्व-क्षिप्र-क्षुद्राणाम् यण्-आदि-परम् पूर्वस्य च गुणः
 
 स्थूलदूरयुवह्रस्वक्षिप्रक्षुद्राणां यणादिपरं पूर्वस्य च गुणः (6.4.156)
+Pāṭha: ashtadhyayi.com data.txt row i=64156 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sTUladUrayuvahrasvakziprakzudrARAM yaRAdiparaM pUrvasya ca guRaH",
     text_dev              = "स्थूलदूरयुवह्रस्वक्षिप्रक्षुद्राणां यणादिपरं पूर्वस्य च गुणः",
+    samagra_slp1          = "aNgasya asidDavadatrABAt Basya sTUla-dUra-yuva-hrasva-kzipra-kzudrARAm yaRAdiparam pUrvasya ca guRaH izWa-iman-Iyassu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् भस्य स्थूल-दूर-युव-ह्रस्व-क्षिप्र-क्षुद्राणाम् यणादिपरम् पूर्वस्य च गुणः इष्ठ-इमन्-ईयस्सु",
     padaccheda_dev        = "स्थूल-दूर-युव-ह्रस्व-क्षिप्र-क्षुद्राणाम् यण्-आदि-परम् पूर्वस्य च गुणः",
     why_dev               = "(सूत्रम् 6.4.156) स्थूलदूरयुवह्रस्वक्षिप्रक्षुद्राणां यणादिपरं पूर्वस्य च गुणः।",
     anuvritti_from        = ('6.1.1',),

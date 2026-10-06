@@ -4,6 +4,7 @@
 Padaccheda: शब्द-वैर-कलह-अभ्र-कण्व-मेघेभ्यः करणे
 
 Krt suffix rule from dhatu: शब्दवैरकलहाभ्रकण्वमेघेभ्यः करणे (17)
+Pāṭha: ashtadhyayi.com data.txt row i=31017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SabdavErakalahABrakaRvameGeByaH karaRe",
     text_dev              = "शब्दवैरकलहाभ्रकण्वमेघेभ्यः करणे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca Sabda-vEra-kalaha-aBra-kaRva-meGeByaH karaRe vA kyaN karmaRaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च शब्द-वैर-कलह-अभ्र-कण्व-मेघेभ्यः करणे वा क्यङ् कर्मणः",
     padaccheda_dev        = "शब्द-वैर-कलह-अभ्र-कण्व-मेघेभ्यः करणे",
     why_dev               = "धातोः [शब्दवैरकलहाभ्रकण्वमेघेभ्यः करणे]-प्रत्ययः विहितः (३.१.17)।",
     anuvritti_from        = ('3.1.1',),

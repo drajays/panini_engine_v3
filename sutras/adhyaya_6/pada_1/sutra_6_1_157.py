@@ -4,6 +4,7 @@
 Padaccheda: पारस्कर-प्रभृतीनि च संज्ञायाम्
 
 पारस्करप्रभृतीनि च संज्ञायाम् (6.1.157)
+Pāṭha: ashtadhyayi.com data.txt row i=61157 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pAraskarapraBftIni ca saMjYAyAm",
     text_dev              = "पारस्करप्रभृतीनि च संज्ञायाम्",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH pAraskarapraBftIni ca saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः पारस्करप्रभृतीनि च संज्ञायाम्",
     padaccheda_dev        = "पारस्कर-प्रभृतीनि च संज्ञायाम्",
     why_dev               = "(सूत्रम् 6.1.157) पारस्करप्रभृतीनि च संज्ञायाम्।",
     anuvritti_from        = ('6.1.1',),

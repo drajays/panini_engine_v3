@@ -4,6 +4,7 @@
 Padaccheda: नहि-वृति-वृषि-व्यधि-रुचि-सहि-तनिषु क्वौ
 
 नहिवृतिवृषिव्यधिरुचिसहितनिषु क्वौ (6.3.116)
+Pāṭha: ashtadhyayi.com data.txt row i=63116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nahivftivfzivyaDirucisahitanizu kvO",
     text_dev              = "नहिवृतिवृषिव्यधिरुचिसहितनिषु क्वौ",
+    samagra_slp1          = "uttarapade saMhitAyAm nahi-vfti-vfzi-vyaDi-ruci-sahi-tanizu kvO dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् नहि-वृति-वृषि-व्यधि-रुचि-सहि-तनिषु क्वौ दीर्घः",
     padaccheda_dev        = "नहि-वृति-वृषि-व्यधि-रुचि-सहि-तनिषु क्वौ",
     why_dev               = "(सूत्रम् 6.3.116) नहिवृतिवृषिव्यधिरुचिसहितनिषु क्वौ।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: कापिश्याः ष्फक्
 
 कापिश्याः ष्फक् (4.2.99)
+Pāṭha: ashtadhyayi.com data.txt row i=42099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kApiSyAH zPak",
     text_dev              = "कापिश्याः ष्फक्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA kApiSyAH zPak",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा कापिश्याः ष्फक्",
     padaccheda_dev        = "कापिश्याः ष्फक्",
     why_dev               = "(सूत्रम् 4.2.99) कापिश्याः ष्फक्।",
     anuvritti_from        = ('4.1.1',),

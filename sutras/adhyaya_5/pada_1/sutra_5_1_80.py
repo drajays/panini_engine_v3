@@ -4,6 +4,7 @@
 Padaccheda: तम् अधीष्टः भृतः भूतः भावी
 
 तमधीष्टो भृतो भूतो भावी (5.1.80)
+Pāṭha: ashtadhyayi.com data.txt row i=51080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tamaDIzwo Bfto BUto BAvI",
     text_dev              = "तमधीष्टो भृतो भूतो भावी",
+    samagra_slp1          = "tamaDIzwaH BftaH BUtaH BAvI iti kAlAt WaY pratyayaH",
+    samagra_dev           = "'तमधीष्टः, भृतः,  भूतः,  भावी' (इति) कालात् ठञ् प्रत्ययः",
     padaccheda_dev        = "तम् अधीष्टः भृतः भूतः भावी",
     why_dev               = "(सूत्रम् 5.1.80) तमधीष्टो भृतो भूतो भावी।",
     anuvritti_from        = ('5.1.78',),

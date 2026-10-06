@@ -4,6 +4,7 @@
 Padaccheda: न कवतेः यङि
 
 न कवतेर्यङि (7.4.63)
+Pāṭha: ashtadhyayi.com data.txt row i=74063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na kavateryaNi",
     text_dev              = "न कवतेर्यङि",
+    samagra_slp1          = "aNgasya aByAsasya na kavateH yaNi cuH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य न कवतेः यङि चुः",
     padaccheda_dev        = "न कवतेः यङि",
     why_dev               = "(सूत्रम् 7.4.63) न कवतेर्यङि।",
     anuvritti_from        = ('7.1.1',),

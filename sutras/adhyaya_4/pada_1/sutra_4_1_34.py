@@ -4,6 +4,7 @@
 Padaccheda: विभाषा स-पूर्वस्य
 
 विभाषा सपूर्वस्य (4.1.34)
+Pāṭha: ashtadhyayi.com data.txt row i=41034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA sapUrvasya",
     text_dev              = "विभाषा सपूर्वस्य",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt viBAzA sa-pUrvasya patyuH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् विभाषा स-पूर्वस्य पत्युः नः",
     padaccheda_dev        = "विभाषा स-पूर्वस्य",
     why_dev               = "(सूत्रम् 4.1.34) विभाषा सपूर्वस्य।",
     anuvritti_from        = ('4.1.1',),

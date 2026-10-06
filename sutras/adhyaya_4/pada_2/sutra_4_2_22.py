@@ -4,6 +4,7 @@
 Padaccheda: आग्रहायणी-अश्वत्थात् ठक्
 
 आग्रहायण्यश्वत्थाट्ठक् (4.2.22)
+Pāṭha: ashtadhyayi.com data.txt row i=42022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AgrahAyaRyaSvatTAwWak",
     text_dev              = "आग्रहायण्यश्वत्थाट्ठक्",
+    samagra_slp1          = "sA asmin pOrRamAsI iti saMjYAyAm iti AgrahAyaRI-aSvatTAt Wak",
+    samagra_dev           = "'सा अस्मिन् पौर्णमासी इति संज्ञायाम्' (इति) आग्रहायणी-अश्वत्थात् ठक्",
     padaccheda_dev        = "आग्रहायणी-अश्वत्थात् ठक्",
     why_dev               = "(सूत्रम् 4.2.22) आग्रहायण्यश्वत्थाट्ठक्।",
     anuvritti_from        = ('4.1.1',),

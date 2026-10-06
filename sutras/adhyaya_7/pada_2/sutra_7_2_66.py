@@ -4,6 +4,7 @@
 Padaccheda: इट् अत्ति-अर्ति-व्ययतीनाम्
 
 इडत्त्यर्तिव्ययतीनाम् (7.2.66)
+Pāṭha: ashtadhyayi.com data.txt row i=72066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "iqattyartivyayatInAm",
     text_dev              = "इडत्त्यर्तिव्ययतीनाम्",
+    samagra_slp1          = "aNgasya iw attyartivyayatInAm valAdeH ArDaDAtukasya Tali aniwaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य इट् अत्त्यर्तिव्ययतीनाम् वलादेः आर्धधातुकस्य थलि अनिटः",
     padaccheda_dev        = "इट् अत्ति-अर्ति-व्ययतीनाम्",
     why_dev               = "(सूत्रम् 7.2.66) इडत्त्यर्तिव्ययतीनाम्।",
     anuvritti_from        = ('7.1.1',),

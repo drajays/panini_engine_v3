@@ -4,6 +4,7 @@
 Padaccheda: समयात् च यापनायाम्
 
 समयाच्च यापनायाम् (5.4.60)
+Pāṭha: ashtadhyayi.com data.txt row i=54060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samayAcca yApanAyAm",
     text_dev              = "समयाच्च यापनायाम्",
+    samagra_slp1          = "yApanAyAm samayAt kfYaH qAc",
+    samagra_dev           = "यापनायाम् समयात् कृञः डाच्",
     padaccheda_dev        = "समयात् च यापनायाम्",
     why_dev               = "(सूत्रम् 5.4.60) समयाच्च यापनायाम्।",
     anuvritti_from        = ('4.1.76',),

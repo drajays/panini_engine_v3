@@ -4,6 +4,7 @@
 Padaccheda: क्त्वि स्कन्दि-स्यन्दोः
 
 क्त्वि स्कन्दिस्यन्दोः (6.4.31)
+Pāṭha: ashtadhyayi.com data.txt row i=64031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ktvi skandisyandoH",
     text_dev              = "क्त्वि स्कन्दिस्यन्दोः",
+    samagra_slp1          = "skandi-syandoH upaDAyAH nalopaH ktvi na",
+    samagra_dev           = "स्कन्दि-स्यन्दोः उपधायाः नलोपः क्त्वि न",
     padaccheda_dev        = "क्त्वि स्कन्दि-स्यन्दोः",
     why_dev               = "(सूत्रम् 6.4.31) क्त्वि स्कन्दिस्यन्दोः।",
     anuvritti_from        = ('6.1.1',),

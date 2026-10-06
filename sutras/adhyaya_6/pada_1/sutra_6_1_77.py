@@ -2,7 +2,7 @@
 6.1.77  इको यणचि  —  VIDHI  (universal utsarga)
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=601077
+- ashtadhyayi.com data.txt row i=61077
 - Kāśikā: इको यणणि (परस्मिन् अचि यणादेशः)
 - Cross-validation: tests/unit/test_iko_yan_aci_samhita.py;
   tests/unit/test_phalAni_santi_as_lat_padanta_lesson.py (**1.1.58** blocks
@@ -130,6 +130,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='iko yaRaci',
     text_dev='इको यणचि',
+    samagra_slp1="ikaH yaR aci saMhitAyAm",
+    samagra_dev="इकः यण् अचि संहितायाम्",
     padaccheda_dev="इकः यण् अचि",
     why_dev=(
         "इक्-समाप्तेः परे अच्-आदौ यण्-आदेशः — सार्वत्रिकः उत्सर्गः; "

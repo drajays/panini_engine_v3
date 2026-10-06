@@ -4,6 +4,7 @@
 Padaccheda: देवताद्वन्द्वे च
 
 देवताद्वंद्वे च (6.3.26)
+Pāṭha: ashtadhyayi.com data.txt row i=63026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'devatAdvandve ca',
     text_dev              = 'देवताद्वन्द्वे च',
+    samagra_slp1          = "uttarapade devatAdvandve ca AnaN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे देवताद्वन्द्वे च आनङ्",
     padaccheda_dev        = "देवताद्वन्द्वे च",
     why_dev               = "(सूत्रम् 6.3.26) देवताद्वंद्वे च।",
     anuvritti_from        = ('6.1.1',),

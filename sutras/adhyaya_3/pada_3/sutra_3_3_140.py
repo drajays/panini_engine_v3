@@ -4,6 +4,7 @@
 Padaccheda: भूते च
 
 krt-suffix rule: भूते च
+Pāṭha: ashtadhyayi.com data.txt row i=33140 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BUte ca",
     text_dev              = "भूते च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte ca kft liNnimitte lfN kriyAtipattO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते च कृत् लिङ्निमित्ते लृङ् क्रियातिपत्तौ",
     padaccheda_dev        = "भूते च",
     why_dev               = "धातोः प्रत्ययः (३.3.140)।",
     anuvritti_from        = ('3.1.1',),

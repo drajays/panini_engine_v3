@@ -13,6 +13,7 @@ Citation (CONSTITUTION Art. 14)
 Engine: the *yukta* relation (syntactic sambandha) is INPUT on the tape — a following verb Term tagged
 ``paSyArTa`` (dhātu meaning दर्शन) and ``yukta_pronoun``, and not ``AlocanArTa``. Deriving *yukta* from
 kāraka analysis is out of scope (Art. 17: analysis proposes, generation verifies).
+Pāṭha: ashtadhyayi.com data.txt row i=81025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.PRATISHEDHA,
     text_slp1="pazyArTEScAnAlocane",
     text_dev="पश्यार्थैश्चानालोचने",
+    samagra_slp1="padasya padAt anudAttaM sarvamApAdAdO paSyArTEH ca anAlocane yuzmadasmadoH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="पदस्य पदात् अनुदात्तं सर्वमापादादौ पश्यार्थैः च अनालोचने युष्मदस्मदोः न",
     padaccheda_dev="पश्यार्थैः च अनालोचने",
     why_dev="आलोचन से भिन्न अर्थ में पश्यार्थ धातु से युक्त युष्मद्-अस्मद् पद पर ८.१.२०–२३ के आदेश नहीं होते।",
     anuvritti_from=("8.1.17", "8.1.18", "8.1.20", "8.1.24"),

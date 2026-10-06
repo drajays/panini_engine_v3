@@ -4,6 +4,7 @@
 Padaccheda: उदात्त-यणः हल्-पूर्वात्
 
 उदात्तयणो हल्पूर्वात् (6.1.174)
+Pāṭha: ashtadhyayi.com data.txt row i=61174 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "udAttayaRo halpUrvAt",
     text_dev              = "उदात्तयणो हल्पूर्वात्",
+    samagra_slp1          = "udAttayaRaH hal-pUrvAt udAttaH antaH viBaktiH antodattAt aYceH Candasi asarvanAmasTAnam nadI-ajAdi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तयणः हल्-पूर्वात् उदात्तः अन्तः विभक्तिः अन्तोदत्तात् अञ्चेः छन्दसि असर्वनामस्थानम् नदी-अजादि",
     padaccheda_dev        = "उदात्त-यणः हल्-पूर्वात्",
     why_dev               = "(सूत्रम् 6.1.174) उदात्तयणो हल्पूर्वात्।",
     anuvritti_from        = ('6.1.1',),

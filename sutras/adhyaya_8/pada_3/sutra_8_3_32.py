@@ -4,6 +4,7 @@
 Padaccheda: ङमः ह्रस्वात् अचि ङमुट् नित्यम्
 
 ङमो ह्रस्वादचि ङमुण्नित्यम् (8.3.32)
+Pāṭha: ashtadhyayi.com data.txt row i=83032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Namo hrasvAdaci NamuRnityam",
     text_dev              = "ङमो ह्रस्वादचि ङमुण्नित्यम्",
+    samagra_slp1          = "hrasvAt NamaH padAt aci nityam Namuw ",
+    samagra_dev           = "ह्रस्वात् ङमः पदात् अचि नित्यम् ङमुट् ।",
     padaccheda_dev        = "ङमः ह्रस्वात् अचि ङमुट् नित्यम्",
     why_dev               = "(सूत्रम् 8.3.32) ङमो ह्रस्वादचि ङमुण्नित्यम्।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: पूर्वम् तु भाषायाम्
 
 पूर्वं तु भाषायाम् (8.2.98)
+Pāṭha: ashtadhyayi.com data.txt row i=82098 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUrvaM tu BAzAyAm",
     text_dev              = "पूर्वं तु भाषायाम्",
+    samagra_slp1          = "padasya pUrvatrAsidDam vAkyasya weH plutaH udAttaH pUrvam tu BAzAyAm vicAryamARAnAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वाक्यस्य टेः प्लुतः उदात्तः पूर्वम् तु भाषायाम् विचार्यमाणानाम्",
     padaccheda_dev        = "पूर्वम् तु भाषायाम्",
     why_dev               = "(सूत्रम् 8.2.98) पूर्वं तु भाषायाम्।",
     anuvritti_from        = ('8.1.1',),

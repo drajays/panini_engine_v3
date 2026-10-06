@@ -4,6 +4,7 @@
 Padaccheda: गेहे कः
 
 Krt suffix rule from dhatu: गेहे कः (144)
+Pāṭha: ashtadhyayi.com data.txt row i=31144 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gehe kaH",
     text_dev              = "गेहे कः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH gehe kaH kft grahaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः गेहे कः कृत् ग्रहः",
     padaccheda_dev        = "गेहे कः",
     why_dev               = "धातोः [गेहे कः]-प्रत्ययः विहितः (३.१.144)।",
     anuvritti_from        = ('3.1.1',),

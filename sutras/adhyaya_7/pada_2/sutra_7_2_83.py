@@ -4,6 +4,7 @@
 Padaccheda: ईत् आसः
 
 ईदासः (7.2.83)
+Pāṭha: ashtadhyayi.com data.txt row i=72083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "IdAsaH",
     text_dev              = "ईदासः",
+    samagra_slp1          = "aNgasya It AsaH Ane",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ईत् आसः आने",
     padaccheda_dev        = "ईत् आसः",
     why_dev               = "(सूत्रम् 7.2.83) ईदासः।",
     anuvritti_from        = ('7.1.1',),

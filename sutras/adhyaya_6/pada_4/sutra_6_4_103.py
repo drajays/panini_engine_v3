@@ -4,6 +4,7 @@
 Padaccheda: अ-ङ्-इतः च
 
 अङितश्च (6.4.103)
+Pāṭha: ashtadhyayi.com data.txt row i=64103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aNitaSca",
     text_dev              = "अङितश्च",
+    samagra_slp1          = "aNgasya asidDavadatrABAt a-NitaH ca kNiti heH DiH Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् अ-ङितः च क्ङिति हेः धिः छन्दसि",
     padaccheda_dev        = "अ-ङ्-इतः च",
     why_dev               = "(सूत्रम् 6.4.103) अङितश्च।",
     anuvritti_from        = ('6.1.1',),

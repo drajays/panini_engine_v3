@@ -4,6 +4,7 @@
 Padaccheda: रोणी
 
 रोणी (4.2.78)
+Pāṭha: ashtadhyayi.com data.txt row i=42078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "roRI",
     text_dev              = "रोणी",
+    samagra_slp1          = "roRyAH tadasminnastIti deSe tannAmni  tena nirvfttam  tasya nivAsaH  adUraBavaSca iti prAgdIvyatIyaH pratyayaH aR",
+    samagra_dev           = "रोण्याः  'तदस्मिन्नस्तीति देशे तन्नाम्नि , तेन निर्वृत्तम् , तस्य निवासः , अदूरभवश्च' (इति) प्राग्दीव्यतीयः प्रत्ययः अण्",
     padaccheda_dev        = "रोणी",
     why_dev               = "(सूत्रम् 4.2.78) रोणी।",
     anuvritti_from        = ('4.1.1',),

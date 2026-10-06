@@ -4,6 +4,7 @@
 Padaccheda: वृद्धि-निमित्तस्य च तद्धितस्य अरक्तविकारे
 
 वृद्धिनिमित्तस्य च तद्धितस्यारक्तविकारे (6.3.39)
+Pāṭha: ashtadhyayi.com data.txt row i=63039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vfdDinimittasya ca tadDitasyAraktavikAre",
     text_dev              = "वृद्धिनिमित्तस्य च तद्धितस्यारक्तविकारे",
+    samagra_slp1          = "uttarapade vfdDinimittasya ca tadDitasya a-raktavikAre striyAH puMvat anUN BAzitapu~skAd na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे वृद्धिनिमित्तस्य च तद्धितस्य अ-रक्तविकारे स्त्रियाः पुंवत् अनूङ् भाषितपुँस्काद् न",
     padaccheda_dev        = "वृद्धि-निमित्तस्य च तद्धितस्य अरक्तविकारे",
     why_dev               = "(सूत्रम् 6.3.39) वृद्धिनिमित्तस्य च तद्धितस्यारक्तविकारे।",
     anuvritti_from        = ('6.1.1',),

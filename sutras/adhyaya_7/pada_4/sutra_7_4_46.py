@@ -4,6 +4,7 @@
 Padaccheda: दः दद् घोः
 
 दो दद् घोः (7.4.46)
+Pāṭha: ashtadhyayi.com data.txt row i=74046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "do dad GoH",
     text_dev              = "दो दद् घोः",
+    samagra_slp1          = "aNgasya daH daT GoH ti kiti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य दः दथ् घोः ति किति",
     padaccheda_dev        = "दः दद् घोः",
     why_dev               = "(सूत्रम् 7.4.46) दो दद् घोः।",
     anuvritti_from        = ('7.1.1',),

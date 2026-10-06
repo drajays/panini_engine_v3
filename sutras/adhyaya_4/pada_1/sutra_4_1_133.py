@@ -4,6 +4,7 @@
 Padaccheda: ढकि लोपः
 
 ढकि लोपः (4.1.133)
+Pāṭha: ashtadhyayi.com data.txt row i=41133 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Qaki lopaH",
     text_dev              = "ढकि लोपः",
+    samagra_slp1          = "tasya apatyam iti pitfzvasuH Qaki lopaH",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) पितृष्वसुः ढकि लोपः",
     padaccheda_dev        = "ढकि लोपः",
     why_dev               = "(सूत्रम् 4.1.133) ढकि लोपः।",
     anuvritti_from        = ('4.1.1',),

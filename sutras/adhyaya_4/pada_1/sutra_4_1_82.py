@@ -20,6 +20,7 @@ continues (*Kāśikā*); *samarthānām prathamāt* do not.
 *Kāśikā:* *pūrvasūtrād anyatarasyāṃ grahaṇam anuvartate* (**4.1.81**) — when
 *samāsa* is possible, *taddhita*, *samāsa*, or neither may obtain (*upagor
 apatyam* / *upagvapatyam* / *aupagavaḥ*).
+Pāṭha: ashtadhyayi.com data.txt row i=41082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     text_dev        = (
         'समर्थानां प्रथमाद्वा'
     ),
+    samagra_slp1    = "samarTAnAm praTamAt NyApprAtipadikAt paraH AdyudAttaH tadDitaH vA",
+    samagra_dev     = "समर्थानाम् प्रथमात् ङ्याप्प्रातिपदिकात् परः आद्युदात्तः तद्धितः वा",
     padaccheda_dev  = (
         "समर्थानाम् (षष्ठी-बहुवचनम्) / प्रथमात् (पञ्चमी-एकवचनम्) / "
         "ङ्याप्-प्रातिपदिकात् / परः / आद्युदात्तः / तद्धितः / वा (अव्ययम्)"

@@ -4,6 +4,7 @@
 Padaccheda: हन्त च
 
 हन्त च (8.1.54)
+Pāṭha: ashtadhyayi.com data.txt row i=81054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hanta ca",
     text_dev              = "हन्त च",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO hanta ca tiN na low viBAzitam sopasargam anuttamam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ हन्त च तिङ् न लोट् विभाषितम् सोपसर्गम् अनुत्तमम्",
     padaccheda_dev        = "हन्त च",
     why_dev               = "(सूत्रम् 8.1.54) हन्त च।",
     anuvritti_from        = ('8.1.1',),

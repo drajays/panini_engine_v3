@@ -4,6 +4,7 @@
 Padaccheda: भौरिक्य-आदि-ऐषुकार्य-आदिभ्यः विधल्-भक्तलौ
 
 भौरिक्याद्यैषुकार्यादिभ्यो विधल्भक्तलौ (4.2.54)
+Pāṭha: ashtadhyayi.com data.txt row i=42054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BOrikyAdyEzukAryAdiByo viDalBaktalO",
     text_dev              = "भौरिक्याद्यैषुकार्यादिभ्यो विधल्भक्तलौ",
+    samagra_slp1          = "tasya vizayaH deSe iti BOrikyAdi-EzukAryAdiByaH viDal-BaktalO",
+    samagra_dev           = "तस्य विषयः देशे (इति) भौरिक्यादि-ऐषुकार्यादिभ्यः विधल्-भक्तलौ",
     padaccheda_dev        = "भौरिक्य-आदि-ऐषुकार्य-आदिभ्यः विधल्-भक्तलौ",
     why_dev               = "(सूत्रम् 4.2.54) भौरिक्याद्यैषुकार्यादिभ्यो विधल्भक्तलौ।",
     anuvritti_from        = ('4.1.1',),

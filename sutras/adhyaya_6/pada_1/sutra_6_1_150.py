@@ -4,6 +4,7 @@
 Padaccheda: विष्किरः शकुनौ वा
 
 विष्किरः शकुनिर्विकरो वा (6.1.150)
+Pāṭha: ashtadhyayi.com data.txt row i=61150 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vizkiraH SakunO vA',
     text_dev              = 'विष्किरः शकुनौ वा',
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH vizkiraH SakunO vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः विष्किरः शकुनौ वा",
     padaccheda_dev        = "विष्किरः शकुनौ वा",
     why_dev               = "(सूत्रम् 6.1.150) विष्किरः शकुनिर्विकरो वा।",
     anuvritti_from        = ('6.1.1',),

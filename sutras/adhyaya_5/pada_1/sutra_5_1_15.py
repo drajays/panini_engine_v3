@@ -4,6 +4,7 @@
 Padaccheda: चर्म्मणः अञ्
 
 चर्म्मणोऽञ् (5.1.15)
+Pāṭha: ashtadhyayi.com data.txt row i=51015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'carmaRoY',
     text_dev              = 'चर्मणोऽञ्',
+    samagra_slp1          = "tadarTam carmaRaH prakftO iti vikfteH aY",
+    samagra_dev           = "'तदर्थम् चर्मणः प्रकृतौ' (इति)  विकृतेः अञ्",
     padaccheda_dev        = "चर्म्मणः अञ्",
     why_dev               = "(सूत्रम् 5.1.15) चर्म्मणोऽञ्।",
     anuvritti_from        = ('5.1.1',),

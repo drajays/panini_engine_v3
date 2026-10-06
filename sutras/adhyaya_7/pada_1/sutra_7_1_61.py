@@ -4,6 +4,7 @@
 Padaccheda: रधि-जभोः अचि
 
 रधिजभोरचि (7.1.61)
+Pāṭha: ashtadhyayi.com data.txt row i=71061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "raDijaBoraci",
     text_dev              = "रधिजभोरचि",
+    samagra_slp1          = "raDi-jaBoH aci num",
+    samagra_dev           = "रधि-जभोः अचि नुम्",
     padaccheda_dev        = "रधि-जभोः अचि",
     why_dev               = "(सूत्रम् 7.1.61) रधिजभोरचि।",
     anuvritti_from        = ('7.1.1',),

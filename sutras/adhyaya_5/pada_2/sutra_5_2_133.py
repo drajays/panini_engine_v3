@@ -4,6 +4,7 @@
 Padaccheda: हस्तात् जातौ
 
 हस्ताज्जातौ (5.2.133)
+Pāṭha: ashtadhyayi.com data.txt row i=52133 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hastAjjAtO",
     text_dev              = "हस्ताज्जातौ",
+    samagra_slp1          = "tat asya asmin astIti iti hastAt jAtO iniH",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) हस्तात् जातौ इनिः",
     padaccheda_dev        = "हस्तात् जातौ",
     why_dev               = "(सूत्रम् 5.2.133) हस्ताज्जातौ।",
     anuvritti_from        = ('4.1.82',),

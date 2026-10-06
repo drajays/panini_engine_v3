@@ -4,6 +4,7 @@
 Padaccheda: चर-फलोः च
 
 चरफलोश्च (7.4.87)
+Pāṭha: ashtadhyayi.com data.txt row i=74087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "caraPaloSca",
     text_dev              = "चरफलोश्च",
+    samagra_slp1          = "aNgasya aByAsasya caraPaloH ca yaNlukoH nuk",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य चरफलोः च यङ्लुकोः नुक्",
     padaccheda_dev        = "चर-फलोः च",
     why_dev               = "(सूत्रम् 7.4.87) चरफलोश्च।",
     anuvritti_from        = ('7.1.1',),

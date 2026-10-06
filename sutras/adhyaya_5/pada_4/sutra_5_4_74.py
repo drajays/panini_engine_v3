@@ -4,6 +4,7 @@
 Padaccheda: ऋक्-पूः-अप्-धूह्-पथाम् अ (लुप्तप्रथमान्तनिर्देशः) अनक्षे
 
 ऋक्पूरप्धूःपथामानक्षे (5.4.74)
+Pāṭha: ashtadhyayi.com data.txt row i=54074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'fkpUrabDUHpaTAmAnakze',
     text_dev              = 'ऋक्पूरब्धूःपथामानक्षे',
+    samagra_slp1          = "fk-pUr-ap-DUr-paTAmanakze aH",
+    samagra_dev           = "ऋक्-पूर्-अप्-धूर्-पथामनक्षे अः",
     padaccheda_dev        = "ऋक्-पूः-अप्-धूह्-पथाम् अ (लुप्तप्रथमान्तनिर्देशः) अनक्षे",
     why_dev               = "(सूत्रम् 5.4.74) ऋक्पूरप्धूःपथामानक्षे।",
     anuvritti_from        = ('5.4.68',),

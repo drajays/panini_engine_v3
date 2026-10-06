@@ -4,6 +4,7 @@
 Padaccheda: मधोः
 
 मधोः (4.4.139)
+Pāṭha: ashtadhyayi.com data.txt row i=44139 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "maDoH",
     text_dev              = "मधोः",
+    samagra_slp1          = "maye iti maDoH Candasi saMjYAyAm yat",
+    samagra_dev           = "मये (इति) मधोः छन्दसि संज्ञायाम् यत्",
     padaccheda_dev        = "मधोः",
     why_dev               = "(सूत्रम् 4.4.139) मधोः।",
     anuvritti_from        = ('4.1.1',),

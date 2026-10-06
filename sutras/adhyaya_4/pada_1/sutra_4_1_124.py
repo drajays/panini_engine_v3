@@ -4,6 +4,7 @@
 Padaccheda: विकर्ण-कुषीतकात् काश्यपे
 
 विकर्णकुषीतकात् काश्यपे (4.1.124)
+Pāṭha: ashtadhyayi.com data.txt row i=41124 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vikarRakuzItakAt kASyape",
     text_dev              = "विकर्णकुषीतकात् काश्यपे",
+    samagra_slp1          = "tasya apatyam iti kASyape vikarRa-kuzItakAt Qak",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) काश्यपे विकर्ण-कुषीतकात् ढक्",
     padaccheda_dev        = "विकर्ण-कुषीतकात् काश्यपे",
     why_dev               = "(सूत्रम् 4.1.124) विकर्णकुषीतकात् काश्यपे।",
     anuvritti_from        = ('4.1.1',),

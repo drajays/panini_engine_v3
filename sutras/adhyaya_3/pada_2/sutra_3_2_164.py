@@ -4,6 +4,7 @@
 Padaccheda: गत्वरः च
 
 krt-suffix rule: गत्वरश्च (164)
+Pāṭha: ashtadhyayi.com data.txt row i=32164 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gatvaraSca",
     text_dev              = "गत्वरश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu gatvaraH ca kft kvarap",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु गत्वरः च कृत् क्वरप्",
     padaccheda_dev        = "गत्वरः च",
     why_dev               = "धातोः कृत्-प्रत्ययः [गत्वरश्च] विहितः (३.२.164)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

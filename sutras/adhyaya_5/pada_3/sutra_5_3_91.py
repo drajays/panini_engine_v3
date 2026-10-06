@@ -4,6 +4,7 @@
 Padaccheda: वत्स-उक्ष-अश्व-ऋषभेभ्यः च तनुत्वे
 
 वत्सोक्षाश्वर्षभेभ्यश्च तनुत्वे (5.3.91)
+Pāṭha: ashtadhyayi.com data.txt row i=53091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vatsokzASvarzaBeByaSca tanutve",
     text_dev              = "वत्सोक्षाश्वर्षभेभ्यश्च तनुत्वे",
+    samagra_slp1          = "vatsa-ukza-aSva-fzaBeByaH tanutve zwarac",
+    samagra_dev           = "वत्स-उक्ष-अश्व-ऋषभेभ्यः तनुत्वे ष्टरच्",
     padaccheda_dev        = "वत्स-उक्ष-अश्व-ऋषभेभ्यः च तनुत्वे",
     why_dev               = "(सूत्रम् 5.3.91) वत्सोक्षाश्वर्षभेभ्यश्च तनुत्वे।",
     anuvritti_from        = ('5.3.70',),

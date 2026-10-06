@@ -4,6 +4,7 @@
 Padaccheda: अभूत-तद्भावे कृ-भू-अस्तियोगे सम्पद्य-कर्तरि च्विः
 
 अभूततद्भावे कृभ्वस्तियोगे सम्पद्यकर्तरि च्विः (5.4.50)
+Pāṭha: ashtadhyayi.com data.txt row i=54050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aBUtatadBAve kfBvastiyoge sampadyakartari cviH",
     text_dev              = "अभूततद्भावे कृभ्वस्तियोगे सम्पद्यकर्तरि च्विः",
+    samagra_slp1          = "aBUtatadBAve sampadyakartari kf-BU-asti-yoge cviH",
+    samagra_dev           = "अभूततद्भावे सम्पद्यकर्तरि कृ-भू-अस्ति-योगे च्विः",
     padaccheda_dev        = "अभूत-तद्भावे कृ-भू-अस्तियोगे सम्पद्य-कर्तरि च्विः",
     why_dev               = "(सूत्रम् 5.4.50) अभूततद्भावे कृभ्वस्तियोगे सम्पद्यकर्तरि च्विः।",
     anuvritti_from        = ('4.1.76',),

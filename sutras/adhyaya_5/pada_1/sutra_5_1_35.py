@@ -4,6 +4,7 @@
 Padaccheda: शाणात् वा
 
 शाणाद्वा (5.1.35)
+Pāṭha: ashtadhyayi.com data.txt row i=51035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SARAdvA",
     text_dev              = "शाणाद्वा",
+    samagra_slp1          = "A-arhAt SARAt yat vA",
+    samagra_dev           = "आ-अर्हात् शाणात् यत् वा",
     padaccheda_dev        = "शाणात् वा",
     why_dev               = "(सूत्रम् 5.1.35) शाणाद्वा।",
     anuvritti_from        = ('5.1.19',),

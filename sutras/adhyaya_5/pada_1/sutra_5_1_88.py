@@ -4,6 +4,7 @@
 Padaccheda: वर्षात् लुक् च
 
 वर्षाल्लुक् च (5.1.88)
+Pāṭha: ashtadhyayi.com data.txt row i=51088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "varzAlluk ca",
     text_dev              = "वर्षाल्लुक् च",
+    samagra_slp1          = "tamaDIzwo Bfto BUto BAvI taTA tena nirvfttam iti varzAt dvigoH KaH WaY vA luk ca ",
+    samagra_dev           = "'तमधीष्टो भृतो भूतो भावी' (तथा) 'तेन निर्वृत्तम्' (इति) वर्षात् द्विगोः खः ठञ् वा, लुक् च ।",
     padaccheda_dev        = "वर्षात् लुक् च",
     why_dev               = "(सूत्रम् 5.1.88) वर्षाल्लुक् च।",
     anuvritti_from        = ('5.1.78',),

@@ -4,6 +4,7 @@
 Padaccheda: पुच्छ-भाण्ड-चीवरात् णिङ्
 
 Krt suffix rule from dhatu: पुच्छभाण्डचीवराण्णिङ् (20)
+Pāṭha: ashtadhyayi.com data.txt row i=31020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pucCaBARqacIvarARRiN",
     text_dev              = "पुच्छभाण्डचीवराण्णिङ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca pucCa-BARqa-cIvarAt RiN vA karmaRaH karaRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च पुच्छ-भाण्ड-चीवरात् णिङ् वा कर्मणः करणे",
     padaccheda_dev        = "पुच्छ-भाण्ड-चीवरात् णिङ्",
     why_dev               = "धातोः [पुच्छभाण्डचीवराण्णिङ्]-प्रत्ययः विहितः (३.१.20)।",
     anuvritti_from        = ('3.1.1',),

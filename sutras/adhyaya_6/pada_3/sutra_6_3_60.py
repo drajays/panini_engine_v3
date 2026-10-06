@@ -4,6 +4,7 @@
 Padaccheda: मन्थ-ओदन-सक्तु-बिन्दु-वज्र-भार-हार-वीवध-गाहेषु च
 
 मन्थौदनसक्तुबिन्दुवज्रभारहारवीवधगाहेषु च (6.3.60)
+Pāṭha: ashtadhyayi.com data.txt row i=63060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "manTOdanasaktubinduvajraBArahAravIvaDagAhezu ca",
     text_dev              = "मन्थौदनसक्तुबिन्दुवज्रभारहारवीवधगाहेषु च",
+    samagra_slp1          = "uttarapade manTa-odana-saktu-bindu-vajra-BAra-hAra-vIvaDa-gAhezu ca treH udakasya udaH anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे मन्थ-ओदन-सक्तु-बिन्दु-वज्र-भार-हार-वीवध-गाहेषु च त्रेः उदकस्य उदः अन्यतरस्याम्",
     padaccheda_dev        = "मन्थ-ओदन-सक्तु-बिन्दु-वज्र-भार-हार-वीवध-गाहेषु च",
     why_dev               = "(सूत्रम् 6.3.60) मन्थौदनसक्तुबिन्दुवज्रभारहारवीवधगाहेषु च।",
     anuvritti_from        = ('6.1.1',),

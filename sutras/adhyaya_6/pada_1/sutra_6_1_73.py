@@ -94,6 +94,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='Ce ca',
     text_dev='छे च',
+    samagra_slp1="hrasvasya Ce tuk saMhitAyAm",
+    samagra_dev="ह्रस्वस्य छे तुक् संहितायाम्",
     padaccheda_dev="छे / च",
     why_dev=(
         "ह्रस्वस्वरात् परः अव्यवहितः छकारः विद्यते चेत् तस्य ह्रस्वस्य 'तुक्' आगमः।"

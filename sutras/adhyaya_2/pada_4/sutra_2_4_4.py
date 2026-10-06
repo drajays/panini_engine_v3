@@ -8,6 +8,7 @@ ritual) is not napuṃsaka (i.e. it retains its natural gender); the ekavacana
 from 2.4.1 does not compel napuṃsaka-tva here.
 
 Engine: sets gate "2_4_4_adhvaryukratu_anapumsaka".
+Pāṭha: ashtadhyayi.com data.txt row i=24004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -34,6 +35,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1      = 'aDvaryukraturanapuMsakam',
     text_dev       = 'अध्वर्युक्रतुरनपुंसकम्',
+    samagra_slp1   = "aDvaryu-kratuH a-napuMsakam ekavacanam dvandvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "अध्वर्यु-क्रतुः अ-नपुंसकम् एकवचनम् द्वन्द्वः",
     padaccheda_dev = "अध्वर्यु-क्रतुः / अनपुंसकम्",
     why_dev        = "अध्वर्यु-क्रतु-द्वन्द्वे नपुंसकत्वं न भवति।",
     anuvritti_from = ("2.4.2",),

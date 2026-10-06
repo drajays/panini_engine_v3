@@ -15,6 +15,7 @@ recipe to signal reciprocal construction), and (c) the idempotency stamp
 "Atmanepada_1_3_16" is absent from state.meta.  No arm flags (CONSTITUTION
 Art. 13).  r1_form_identity_exempt=True because no surface phonological
 change occurs.
+Pāṭha: ashtadhyayi.com data.txt row i=13016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -54,6 +55,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='itaretarAnyonyopapadAcca',
     text_dev='इतरेतरान्योन्योपपदाच्च',
+    samagra_slp1="itaretara-anyonya-upapadAt kartari karmavyatihAre Atmanepadam na",
+    samagra_dev="इतरेतर-अन्योन्य-उपपदात् 'कर्तरि कर्मव्यतिहारे' आत्मनेपदम् न",
     padaccheda_dev="इतरेतर-अन्योन्य-उपपदात् (षष्ठी) / च (अव्यय)",
     why_dev=(
         "इतरेतर-अन्योन्य-उपेतोक्ते प्रयोगे परस्परक्रिया-बोधकत्वात् "

@@ -4,6 +4,7 @@
 Padaccheda: लुभः विमोहने
 
 लुभो विमोचने (7.2.54)
+Pāṭha: ashtadhyayi.com data.txt row i=72054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'luBo vimohane',
     text_dev              = 'लुभो विमोहने',
+    samagra_slp1          = "aNgasya luBaH vimohane ArDaDAtukasya iw valAdeH ktvAnizWayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य लुभः विमोहने आर्धधातुकस्य इट् वलादेः क्त्वानिष्ठयोः",
     padaccheda_dev        = "लुभः विमोहने",
     why_dev               = "(सूत्रम् 7.2.54) लुभो विमोचने।",
     anuvritti_from        = ('7.1.1',),

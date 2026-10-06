@@ -4,6 +4,7 @@
 Padaccheda: उपसर्गात् च
 
 उपसर्गाच्च (5.4.119)
+Pāṭha: ashtadhyayi.com data.txt row i=54119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upasargAcca",
     text_dev              = "उपसर्गाच्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA upasargAt ca bahuvrIhO nAsikAyAH ac",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा उपसर्गात् च बहुव्रीहौ नासिकायाः अच्",
     padaccheda_dev        = "उपसर्गात् च",
     why_dev               = "(सूत्रम् 5.4.119) उपसर्गाच्च।",
     anuvritti_from        = ('5.4.68',),

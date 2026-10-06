@@ -4,6 +4,7 @@
 Padaccheda: न पूजनात्
 
 न पूजनात् (5.4.69)
+Pāṭha: ashtadhyayi.com data.txt row i=54069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na pUjanAt",
     text_dev              = "न पूजनात्",
+    samagra_slp1          = "samAsAntAH pUjanAt na",
+    samagra_dev           = "समासान्ताः पूजनात् न",
     padaccheda_dev        = "न पूजनात्",
     why_dev               = "(सूत्रम् 5.4.69) न पूजनात्।",
     anuvritti_from        = ('5.4.68',),

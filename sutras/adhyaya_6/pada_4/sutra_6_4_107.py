@@ -17,6 +17,7 @@ For kṛ, 6.4.108 is nityam (obligatory) — 6.4.107 does not overlap with it.
 anyatarasyām: both forms vanuvaḥ (no-lopa) and vanvaḥ (lopa) are valid.
 The engine fires this rule to produce the lopa form; the no-lopa form is
 derived without applying this sūtra.
+Pāṭha: ashtadhyayi.com data.txt row i=64107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -82,6 +83,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lopaScAsyAnyatarasyAM mvoH",
     text_dev              = "लोपश्चास्यान्यतरस्यां म्वोः",
+    samagra_slp1          = "asya asaMyogapUrvasya utaH pratyayasya mvoH anyatarasyAm lopaH",
+    samagra_dev           = "अस्य असंयोगपूर्वस्य उतः प्रत्ययस्य म्वोः अन्यतरस्याम् लोपः",
     padaccheda_dev        = "लोपः च अस्य अन्यतरस्याम् म्वोः",
     why_dev               = (
         "तनाद्यादि-धातोः उ-विकरणस्य लोपः अन्यतरस्याम् — म्-व्-आदौ सार्वधातुके परे "

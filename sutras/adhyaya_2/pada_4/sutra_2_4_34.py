@@ -15,6 +15,7 @@ Engine: ``anvadesha`` is a Term tag on the stem — an input like the liṅga ta
 sentence, not about the word (Art. 17: analysis proposes, generation verifies). The rule reads the tag, the stem's
 lexical identity (idam / etad) and the sup's identity (am, auṭ, śas, ṭā, os — ṭā also as its ādeśa ina). The ādeśa is
 the whole stem (sarvādeśa, 1.1.55); aṅgatva and the sarvanāma saṃjñā pass to it by 1.1.56.
+Pāṭha: ashtadhyayi.com data.txt row i=24034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -63,6 +64,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="dvitIyAwOssvenaH",
     text_dev="द्वितीयाटौस्स्वेनः",
+    samagra_slp1="dvitIyA-wA-ossu enaH idamaH anvAdeSe anudAttaH etadaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="द्वितीया-टा-ओस्सु एनः इदमः अन्वादेशे अनुदात्तः एतदः",
     padaccheda_dev="द्वितीया-टा-ओस्सु एनः",
     why_dev="अन्वादेश में इदम् / एतद् को एन आदेश, द्वितीया-टा-ओस् परे (एनम्, एनेन, एनयोः)।",
     anuvritti_from=("2.4.32",),

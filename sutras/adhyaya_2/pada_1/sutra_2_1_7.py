@@ -8,6 +8,7 @@ Example: *yathā śakti* → *yathaśakti* ("according to one's strength").
 
 v3 narrow slice: gate-marks the avyayībhāva samāsa with the key
 ``2_1_7_yatha_sadrshya`` so downstream rules can proceed.
+Pāṭha: ashtadhyayi.com data.txt row i=21007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -41,6 +42,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'yaTAsAdfSye',
     text_dev              = 'यथासादृश्ये',
+    samagra_slp1          = "yaTA asAdfSye supA saha avyayIBAvaH samAsaH",
+    samagra_dev           = "यथा असादृश्ये सुपा सह अव्ययीभावः समासः",
     padaccheda_dev        = "यथा / सादृश्ये",
     why_dev               = "यथा-अव्यय-पूर्वकः सादृश्यार्थे अव्ययीभावः (२.१.७)।",
     anuvritti_from        = ("2.1.5",),

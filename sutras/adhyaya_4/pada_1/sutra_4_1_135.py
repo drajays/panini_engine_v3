@@ -4,6 +4,7 @@
 Padaccheda: चतुष्पाद्‍भ्यः ढञ्
 
 चतुष्पाद्भ्यो ढञ् (4.1.135)
+Pāṭha: ashtadhyayi.com data.txt row i=41135 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "catuzpAdByo QaY",
     text_dev              = "चतुष्पाद्भ्यो ढञ्",
+    samagra_slp1          = "tasya apatyam iti catuzpAdByaH QaY",
+    samagra_dev           = "'तस्य अपत्यम्' (इति)  चतुष्पाद्भ्यः ढञ्",
     padaccheda_dev        = "चतुष्पाद्‍भ्यः ढञ्",
     why_dev               = "(सूत्रम् 4.1.135) चतुष्पाद्भ्यो ढञ्।",
     anuvritti_from        = ('4.1.1',),

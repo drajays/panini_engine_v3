@@ -10,6 +10,7 @@ E.g. *devadattāya anugṛhṇāti*.
 
 *Engine:* tags bearing ``"anu_prati_grNa"`` get ``"sampradAna"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'anupratigfRaSca',
     text_dev             = 'अनुप्रतिगृणश्च',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake anu-prati-gfRaH ca sampradAnam pUrvasya kartA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके अनु-प्रति-गृणः च सम्प्रदानम् पूर्वस्य कर्ता",
     padaccheda_dev       = "अनु-प्रति-गृणः / च",
     why_dev              = (
         "अनु-प्रति-पूर्वक-गृ-धातोः यस्मै ददाति स सम्प्रदान-कारक-संज्ञकः। "

@@ -23,6 +23,7 @@ v3 engine role:
     in samjna_registry for audit.
   - No paradigm coordinate access; no surface Devanāgarī; no arm flags.
   - r1_form_identity_exempt=True (pure SAMJNA, no surface rewrite).
+Pāṭha: ashtadhyayi.com data.txt row i=11074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -81,6 +82,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = "tyadAdIni ca",
     text_dev                = "त्यदादीनि च",
+    samagra_slp1            = "tyadAdIni ca vfdDam",
+    samagra_dev             = "त्यदादीनि च वृद्धम्",
     padaccheda_dev          = "त्यद्-आदीनि / च",
     why_dev                 = (
         "त्यद्-आदि-गण-पठिताः शब्दाः (त्यद्, तद्, यद्, एतद्, इदम्, अदस्, किम्) "

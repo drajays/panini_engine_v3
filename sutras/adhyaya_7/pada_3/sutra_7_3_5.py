@@ -4,6 +4,7 @@
 Padaccheda: न्यग्रोधस्य च केवलस्य
 
 न्यग्रोधस्य च केवलस्य (7.3.5)
+Pāṭha: ashtadhyayi.com data.txt row i=73005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nyagroDasya ca kevalasya",
     text_dev              = "न्यग्रोधस्य च केवलस्य",
+    samagra_slp1          = "aNgasya nyagroDasya ca kevalasya vfdDiH YRiti acaH AdeH tadDitezu na yvAByAm padAntAByAm Ec",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न्यग्रोधस्य च केवलस्य वृद्धिः ञ्णिति अचः आदेः तद्धितेषु न य्वाभ्याम् पदान्ताभ्याम् ऐच्",
     padaccheda_dev        = "न्यग्रोधस्य च केवलस्य",
     why_dev               = "(सूत्रम् 7.3.5) न्यग्रोधस्य च केवलस्य।",
     anuvritti_from        = ('7.1.1',),

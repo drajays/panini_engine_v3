@@ -4,6 +4,7 @@
 Padaccheda: श्रु-शृणु-पॄ-कृ-वृभ्यः छन्दसि
 
 श्रुशृणुपॄकृवृभ्यश्छन्दसि (6.4.102)
+Pāṭha: ashtadhyayi.com data.txt row i=64102 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SruSfRupFkfvfByaSCandasi",
     text_dev              = "श्रुशृणुपॄकृवृभ्यश्छन्दसि",
+    samagra_slp1          = "aNgasya asidDavadatrABAt Sru-SfRu-pF-kf-vfByaH Candasi kNiti heH DiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् श्रु-शृणु-पॄ-कृ-वृभ्यः छन्दसि क्ङिति हेः धिः",
     padaccheda_dev        = "श्रु-शृणु-पॄ-कृ-वृभ्यः छन्दसि",
     why_dev               = "(सूत्रम् 6.4.102) श्रुशृणुपॄकृवृभ्यश्छन्दसि।",
     anuvritti_from        = ('6.1.1',),

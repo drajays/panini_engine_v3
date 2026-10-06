@@ -4,6 +4,7 @@
 Padaccheda: डः सि धुट्
 
 डः सि धुट् (8.3.29)
+Pāṭha: ashtadhyayi.com data.txt row i=83029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "qaH si Duw",
     text_dev              = "डः सि धुट्",
+    samagra_slp1          = "padasya qaH si Duw vA",
+    samagra_dev           = "पदस्य डः सि धुट् वा",
     padaccheda_dev        = "डः सि धुट्",
     why_dev               = "(सूत्रम् 8.3.29) डः सि धुट्।",
     anuvritti_from        = ('8.1.1',),

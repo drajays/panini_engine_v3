@@ -4,6 +4,7 @@
 Padaccheda: उत्तर-मृग-पूर्वात् च सक्थ्‍नः
 
 उत्तरमृगपूर्वाच्च सक्थ्नः (5.4.98)
+Pāṭha: ashtadhyayi.com data.txt row i=54098 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uttaramfgapUrvAcca sakTnaH",
     text_dev              = "उत्तरमृगपूर्वाच्च सक्थ्नः",
+    samagra_slp1          = "uttara-mfga-pUrvAt upamAnAt ca sakTnaH",
+    samagra_dev           = "उत्तर-मृग-पूर्वात् उपमानात् च सक्थ्नः",
     padaccheda_dev        = "उत्तर-मृग-पूर्वात् च सक्थ्‍नः",
     why_dev               = "(सूत्रम् 5.4.98) उत्तरमृगपूर्वाच्च सक्थ्नः।",
     anuvritti_from        = ('5.4.68',),

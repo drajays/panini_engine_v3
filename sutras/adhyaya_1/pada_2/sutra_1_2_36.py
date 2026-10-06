@@ -22,6 +22,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     vibhasha_default        = True,
     text_slp1               = 'viBAzA Candasi',
     text_dev                = 'विभाषा छन्दसि',
+    samagra_slp1            = "viBAzA Candasi ekaSruti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "विभाषा छन्दसि एकश्रुति",
     padaccheda_dev          = "विभाषा / छन्दसि",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.29",),

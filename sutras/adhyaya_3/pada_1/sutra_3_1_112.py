@@ -4,6 +4,7 @@
 Padaccheda: भृञः अ-संज्ञायाम्
 
 Krt suffix rule from dhatu: भृञोऽसंज्ञायाम् (112)
+Pāṭha: ashtadhyayi.com data.txt row i=31112 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'BfYosaMjYAyAm',
     text_dev              = 'भृञोऽसंज्ञायाम्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH BfYaH asaMjYAyAm kft kyap",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः भृञः असंज्ञायाम् कृत् क्यप्",
     padaccheda_dev        = "भृञः अ-संज्ञायाम्",
     why_dev               = "धातोः [भृञोऽसंज्ञायाम्]-प्रत्ययः विहितः (३.१.112)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

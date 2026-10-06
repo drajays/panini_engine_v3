@@ -4,6 +4,7 @@
 Padaccheda: लवणात् लुक्
 
 लवणाल्लुक् (4.4.24)
+Pāṭha: ashtadhyayi.com data.txt row i=44024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lavaRAlluk",
     text_dev              = "लवणाल्लुक्",
+    samagra_slp1          = "tena saMsfzwe iti lavaRAt luk",
+    samagra_dev           = "'तेन संसृष्टे' इति लवणात् लुक्",
     padaccheda_dev        = "लवणात् लुक्",
     why_dev               = "(सूत्रम् 4.4.24) लवणाल्लुक्।",
     anuvritti_from        = ('4.1.1',),

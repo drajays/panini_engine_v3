@@ -4,6 +4,7 @@
 Padaccheda: अव-सम्-अन्धेभ्यः तमसः
 
 अवसमन्धेभ्यस्तमसः (5.4.79)
+Pāṭha: ashtadhyayi.com data.txt row i=54079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avasamanDeByastamasaH",
     text_dev              = "अवसमन्धेभ्यस्तमसः",
+    samagra_slp1          = "ava-sam-anDeByaH tamasaH ac",
+    samagra_dev           = "अव-सम्-अन्धेभ्यः तमसः अच्",
     padaccheda_dev        = "अव-सम्-अन्धेभ्यः तमसः",
     why_dev               = "(सूत्रम् 5.4.79) अवसमन्धेभ्यस्तमसः।",
     anuvritti_from        = ('5.4.68',),

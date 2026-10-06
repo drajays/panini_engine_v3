@@ -4,6 +4,7 @@
 Padaccheda: कर्मधारय-वत् उत्तरेषु
 
 कर्मधारयवत् उत्तरेषु (8.1.11)
+Pāṭha: ashtadhyayi.com data.txt row i=81011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karmaDArayavat uttarezu",
     text_dev              = "कर्मधारयवत् उत्तरेषु",
+    samagra_slp1          = "sarvasya dve karmaDArayavat uttarezu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सर्वस्य द्वे कर्मधारयवत् उत्तरेषु",
     padaccheda_dev        = "कर्मधारय-वत् उत्तरेषु",
     why_dev               = "(सूत्रम् 8.1.11) कर्मधारयवत् उत्तरेषु।",
     anuvritti_from        = ('8.1.1',),

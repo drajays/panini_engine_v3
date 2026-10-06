@@ -4,6 +4,7 @@
 Padaccheda: प्रकृत्या आशिषि अ-गो-वत्स-हलेषु
 
 प्रकृत्याऽऽशिष्यगोवत्सहलेषु (6.3.83)
+Pāṭha: ashtadhyayi.com data.txt row i=63083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'prakftyASizyagovatsahalezu',
     text_dev              = 'प्रकृत्याऽऽशिष्यगोवत्सहलेषु',
+    samagra_slp1          = "uttarapade prakftyA ASizi a-go-vatsa-halezu sahasya saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे प्रकृत्या आशिषि अ-गो-वत्स-हलेषु सहस्य सः",
     padaccheda_dev        = "प्रकृत्या आशिषि अ-गो-वत्स-हलेषु",
     why_dev               = "(सूत्रम् 6.3.83) प्रकृत्याऽऽशिष्यगोवत्सहलेषु।",
     anuvritti_from        = ('6.1.1',),

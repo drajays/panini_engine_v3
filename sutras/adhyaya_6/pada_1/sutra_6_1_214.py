@@ -4,6 +4,7 @@
 Padaccheda: ईड-वन्द-वृ-शंस-दुहाम् ण्यतः
 
 ईडवन्दवृशंसदुहां ण्यतः (6.1.214)
+Pāṭha: ashtadhyayi.com data.txt row i=61214 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "IqavandavfSaMsaduhAM RyataH",
     text_dev              = "ईडवन्दवृशंसदुहां ण्यतः",
+    samagra_slp1          = "Iqa-vanda-vf-SaMsa-duhAm RyataH udAttaH AdiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "ईड-वन्द-वृ-शंस-दुहाम् ण्यतः उदात्तः आदिः",
     padaccheda_dev        = "ईड-वन्द-वृ-शंस-दुहाम् ण्यतः",
     why_dev               = "(सूत्रम् 6.1.214) ईडवन्दवृशंसदुहां ण्यतः।",
     anuvritti_from        = ('6.1.1',),

@@ -10,6 +10,7 @@ This sūtra closes the avyayībhāva adhikāra opened at 2.1.5
 
 v3 narrow slice: gate-marks the saṃjñā avyayībhāva gate with key
 ``2_1_21_anyapadaartha_sanjna``.
+Pāṭha: ashtadhyayi.com data.txt row i=21021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -37,6 +38,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anyapadArTe ca saMjYAyAm",
     text_dev              = "अन्यपदार्थे च संज्ञायाम्",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA avyayIBAvaH anya-padArTe ca saMjYAyAm nadIBiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा अव्ययीभावः अन्य-पदार्थे च संज्ञायाम् नदीभिः",
     padaccheda_dev        = "अन्यपदार्थे / च / संज्ञायाम्",
     why_dev               = "संज्ञायां यस्य अन्यपदार्थः तस्य अव्ययीभावसंज्ञा (२.१.२१)।",
     anuvritti_from        = ("2.1.5",),

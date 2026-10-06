@@ -4,6 +4,7 @@
 Padaccheda: उपसर्गात् स्वाङ्गम् ध्रुवम् अपर्शु
 
 उपसर्गात् स्वाङ्गं ध्रुवमपर्शु (6.2.177)
+Pāṭha: ashtadhyayi.com data.txt row i=62177 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upasargAt svANgaM DruvamaparSu",
     text_dev              = "उपसर्गात् स्वाङ्गं ध्रुवमपर्शु",
+    samagra_slp1          = "uttarapadAdiH antaH upasargAt svANgam Druvam aparSu bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः उपसर्गात् स्वाङ्गम् ध्रुवम् अपर्शु बहुव्रीहौ",
     padaccheda_dev        = "उपसर्गात् स्वाङ्गम् ध्रुवम् अपर्शु",
     why_dev               = "(सूत्रम् 6.2.177) उपसर्गात् स्वाङ्गं ध्रुवमपर्शु।",
     anuvritti_from        = ('6.1.1',),

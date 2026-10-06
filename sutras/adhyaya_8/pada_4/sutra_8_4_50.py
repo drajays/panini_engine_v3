@@ -4,6 +4,7 @@
 Padaccheda: त्रिप्रभृतिषु ७/३ शाकटायनस्य ६/१
 
 त्रिप्रभृतिषु शाकटायनस्य (8.4.50)
+Pāṭha: ashtadhyayi.com data.txt row i=84050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tripraBftizu SAkawAyanasya",
     text_dev              = "त्रिप्रभृतिषु शाकटायनस्य",
+    samagra_slp1          = "tripraBftizu yaraH dve na - SAkawAyanasya",
+    samagra_dev           = "त्रिप्रभृतिषु यरः द्वे न - शाकटायनस्य",
     padaccheda_dev        = "त्रिप्रभृतिषु ७/३ शाकटायनस्य ६/१",
     why_dev               = "(सूत्रम् 8.4.50) त्रिप्रभृतिषु शाकटायनस्य।",
     anuvritti_from        = ('8.1.1',),

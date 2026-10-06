@@ -4,6 +4,7 @@
 Padaccheda: उक्- गितः च
 
 उगितश्च (6.3.45)
+Pāṭha: ashtadhyayi.com data.txt row i=63045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ugitaSca",
     text_dev              = "उगितश्च",
+    samagra_slp1          = "uttarapade ugitaH ca Ga-rUpa-kalpa-celaw-brUva-gotra-mata-hatezu hrasvaH nadyAH anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे उगितः च घ-रूप-कल्प-चेलट्-ब्रूव-गोत्र-मत-हतेषु ह्रस्वः नद्याः अन्यतरस्याम्",
     padaccheda_dev        = "उक्- गितः च",
     why_dev               = "(सूत्रम् 6.3.45) उगितश्च।",
     anuvritti_from        = ('6.1.1',),

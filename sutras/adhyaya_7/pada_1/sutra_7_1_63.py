@@ -4,6 +4,7 @@
 Padaccheda: रभेः अ-शप्-लिटोः
 
 रभेरशब्लिटोः (7.1.63)
+Pāṭha: ashtadhyayi.com data.txt row i=71063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "raBeraSabliwoH",
     text_dev              = "रभेरशब्लिटोः",
+    samagra_slp1          = "raBeH a-Sap-liwoH aci num",
+    samagra_dev           = "रभेः अ-शप्-लिटोः अचि नुम्",
     padaccheda_dev        = "रभेः अ-शप्-लिटोः",
     why_dev               = "(सूत्रम् 7.1.63) रभेरशब्लिटोः।",
     anuvritti_from        = ('7.1.1',),

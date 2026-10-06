@@ -4,6 +4,7 @@
 Padaccheda: उपसर्गात् अ-समासे अपि ण-उपदेशस्य
 
 उपसर्गादसमासेऽपि णोपदेशस्य (8.4.14)
+Pāṭha: ashtadhyayi.com data.txt row i=84014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'upasargAdasamAsepi RopadeSasya',
     text_dev              = 'उपसर्गादसमासेऽपि णोपदेशस्य',
+    samagra_slp1          = "pUrvapadAt upasargAt razAByAm Ra-upadeSasya naH RaH asamAsepi",
+    samagra_dev           = "पूर्वपदात् उपसर्गात् रषाभ्याम् ण-उपदेशस्य नः णः, असमासेऽपि",
     padaccheda_dev        = "उपसर्गात् अ-समासे अपि ण-उपदेशस्य",
     why_dev               = "(सूत्रम् 8.4.14) उपसर्गादसमासेऽपि णोपदेशस्य।",
     anuvritti_from        = ('8.1.1',),

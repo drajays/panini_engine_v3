@@ -4,6 +4,7 @@
 Padaccheda: विभाषा श्वेः
 
 विभाषा श्वेः (6.1.30)
+Pāṭha: ashtadhyayi.com data.txt row i=61030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA SveH",
     text_dev              = "विभाषा श्वेः",
+    samagra_slp1          = "viBAzA SveH samprasAraRam liw-yaNoH ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "विभाषा श्वेः सम्प्रसारणम् लिट्-यङोः च",
     padaccheda_dev        = "विभाषा श्वेः",
     why_dev               = "(सूत्रम् 6.1.30) विभाषा श्वेः।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: पर-अवर-अधम-उत्तम-पूर्वात् च
 
 परावराधमोत्तमपूर्वाच्च (4.3.5)
+Pāṭha: ashtadhyayi.com data.txt row i=43005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parAvarADamottamapUrvAcca",
     text_dev              = "परावराधमोत्तमपूर्वाच्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA para-avara-aDama-uttama-pUrvAt ca arDAt yat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा पर-अवर-अधम-उत्तम-पूर्वात् च अर्धात् यत्",
     padaccheda_dev        = "पर-अवर-अधम-उत्तम-पूर्वात् च",
     why_dev               = "(सूत्रम् 4.3.5) परावराधमोत्तमपूर्वाच्च।",
     anuvritti_from        = ('4.1.1',),

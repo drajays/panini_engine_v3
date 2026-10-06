@@ -8,6 +8,7 @@ Operational role (v3.5):
 Blindness:
   - cond() reads only Term.meta['upadesha_slp1'] and Term tags.
   - No paradigm coordinate access; no reference/gold access.
+Pāṭha: ashtadhyayi.com data.txt row i=11027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -67,6 +68,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = "sarvAdIni sarvanAmAni",
     text_dev       = "सर्वादीनि सर्वनामानि",
+    samagra_slp1   = "sarvAdIni sarvanAmAni",
+    samagra_dev    = "सर्वादीनि सर्वनामानि",
     padaccheda_dev = "सर्व-आदीनि सर्वनामानि",
     why_dev        = "सर्वादि-गण-पठित-शब्दाः सर्वनाम-संज्ञकाः।",
     anuvritti_from = (),

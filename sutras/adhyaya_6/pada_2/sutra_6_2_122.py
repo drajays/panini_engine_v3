@@ -4,6 +4,7 @@
 Padaccheda: कंस-मन्थ-शूर्प-पाय्य-काण्डम् द्विगौ
 
 कंसमन्थशूर्पपाय्यकाण्डं द्विगौ (6.2.122)
+Pāṭha: ashtadhyayi.com data.txt row i=62122 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kaMsamanTaSUrpapAyyakARqaM dvigO",
     text_dev              = "कंसमन्थशूर्पपाय्यकाण्डं द्विगौ",
+    samagra_slp1          = "udAttaH uttarapadAdiH kaMsa-manTa-SUrpa-pAyya-kARqam dvigO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः कंस-मन्थ-शूर्प-पाय्य-काण्डम् द्विगौ",
     padaccheda_dev        = "कंस-मन्थ-शूर्प-पाय्य-काण्डम् द्विगौ",
     why_dev               = "(सूत्रम् 6.2.122) कंसमन्थशूर्पपाय्यकाण्डं द्विगौ।",
     anuvritti_from        = ('6.1.1',),

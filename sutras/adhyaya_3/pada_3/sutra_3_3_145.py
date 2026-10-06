@@ -4,6 +4,7 @@
 Padaccheda: अनवकॢप्ति-अमर्षयोः अ-किंवृत्ते अपि
 
 krt-suffix rule: अनवकॢप्त्यमर्षयोरकिंवृत्ते अपि
+Pāṭha: ashtadhyayi.com data.txt row i=33145 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'anavakxptyamarzayorakiMvfttepi',
     text_dev              = 'अनवकॢप्त्यमर्षयोरकिंवृत्तेऽपि',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH anavakxpti-amarzayoH akiMvftte api kft utApyoH liNlfwO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः अनवकॢप्ति-अमर्षयोः अकिंवृत्ते अपि कृत् उताप्योः लिङ्लृटौ",
     padaccheda_dev        = "अनवकॢप्ति-अमर्षयोः अ-किंवृत्ते अपि",
     why_dev               = "धातोः प्रत्ययः (३.3.145)।",
     anuvritti_from        = ('3.1.1',),

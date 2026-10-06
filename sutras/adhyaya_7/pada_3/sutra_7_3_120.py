@@ -10,6 +10,7 @@ This enables:
 
 Blindness:
   - cond() keys only off tags + pratyaya.meta['upadesha_slp1'].
+Pāṭha: ashtadhyayi.com data.txt row i=73120 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'ANo nAstriyAm',
     text_dev       = 'आङो नाऽस्त्रियाम्',
+    samagra_slp1   = "GeH aNgAt ANaH nA astriyAm",
+    samagra_dev    = "घेः अङ्गात् आङः ना अस्त्रियाम्",
     padaccheda_dev = "घि-अङ्गस्य टा → ना",
     why_dev        = "घि-संज्ञक-अङ्गात् परे टा-प्रत्यये ‘ना’ आदेशः (हरि-इत्यादौ हरिणा)।",
     anuvritti_from = ("7.3.111",),

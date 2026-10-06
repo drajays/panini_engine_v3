@@ -4,6 +4,7 @@
 Padaccheda: यस्य विभाषा
 
 यस्य विभाषा (7.2.15)
+Pāṭha: ashtadhyayi.com data.txt row i=72015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yasya viBAzA",
     text_dev              = "यस्य विभाषा",
+    samagra_slp1          = "aNgasya yasya viBAzA na iw nizWAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य यस्य विभाषा न इट् निष्ठायाम्",
     padaccheda_dev        = "यस्य विभाषा",
     why_dev               = "(सूत्रम् 7.2.15) यस्य विभाषा।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: श्रेणि-आदयः कृत-आदिभिः
 
 sreni etc. with krta-adi form karmadharaya compound.
+Pāṭha: ashtadhyayi.com data.txt row i=21059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SreRyAdayaH kftAdiBiH",
     text_dev              = "श्रेण्यादयः कृतादिभिः",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH SreRi-AdayaH kfta-AdiBiH samAnADikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः श्रेणि-आदयः कृत-आदिभिः समानाधिकरणेन",
     padaccheda_dev        = "श्रेणि-आदयः कृत-आदिभिः",
     why_dev               = "श्रेणि-आदयः कृत-आदिभिः सह कर्मधारयः (२.१.५९)।",
     anuvritti_from        = ('2.1.57',),

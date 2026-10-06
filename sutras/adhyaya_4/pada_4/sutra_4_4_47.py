@@ -4,6 +4,7 @@
 Padaccheda: तस्य धर्म्यम्
 
 तस्य धर्म्यम् (4.4.47)
+Pāṭha: ashtadhyayi.com data.txt row i=44047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tasya Darmyam",
     text_dev              = "तस्य धर्म्यम्",
+    samagra_slp1          = "tasya Darmyam iti samarTAnAM praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तस्य धर्म्यम्' इति समर्थानां प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "तस्य धर्म्यम्",
     why_dev               = "(सूत्रम् 4.4.47) तस्य धर्म्यम्।",
     anuvritti_from        = ('4.1.1',),

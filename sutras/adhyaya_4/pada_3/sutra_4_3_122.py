@@ -4,6 +4,7 @@
 Padaccheda: पत्त्र-पूर्वात् अञ्
 
 पत्त्रपूर्वादञ् (4.3.122)
+Pāṭha: ashtadhyayi.com data.txt row i=43122 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'patrapUrvAdaY',
     text_dev              = 'पत्रपूर्वादञ्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA patra-pUrvAt aY tasya idam raTAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा पत्र-पूर्वात् अञ् तस्य इदम् रथात्",
     padaccheda_dev        = "पत्त्र-पूर्वात् अञ्",
     why_dev               = "(सूत्रम् 4.3.122) पत्त्रपूर्वादञ्।",
     anuvritti_from        = ('4.1.1',),

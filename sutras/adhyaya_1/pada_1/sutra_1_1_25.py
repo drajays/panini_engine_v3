@@ -16,6 +16,7 @@ registry.
 Mechanical blindness (CONSTITUTION Art. 2):
   - ``cond`` reads only ``Term.meta['upadesha_slp1']``, Term.tags, and
     ``samjna_registry`` — no paradigm coordinates, no Devanāgarī strings.
+Pāṭha: ashtadhyayi.com data.txt row i=11025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -77,6 +78,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1      = "qati ca",
     text_dev       = "डति च",
+    samagra_slp1   = "qati saMKyA zaw",
+    samagra_dev    = "डति संख्या षट्",
     padaccheda_dev = "डति / च (षट्-संज्ञा)",
     why_dev        = "डति (कति-आदि) च षट्-संज्ञकम् — १.१.२३-२४-अनुवृत्त्या।",
     apavada_of     = ("1.1.24",),   # अपवाद of 1.1.24 — sutra_ref_out resolver.apavada_of

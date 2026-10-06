@@ -4,6 +4,7 @@
 Padaccheda: तत्पुरुषे शालायाम् नपुंसके
 
 तत्पुरुषे शालायां नपुंसके (6.2.123)
+Pāṭha: ashtadhyayi.com data.txt row i=62123 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tatpuruze SAlAyAM napuMsake",
     text_dev              = "तत्पुरुषे शालायां नपुंसके",
+    samagra_slp1          = "udAttaH uttarapadAdiH tatpuruze SAlAyAm napuMsake",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः तत्पुरुषे शालायाम् नपुंसके",
     padaccheda_dev        = "तत्पुरुषे शालायाम् नपुंसके",
     why_dev               = "(सूत्रम् 6.2.123) तत्पुरुषे शालायां नपुंसके।",
     anuvritti_from        = ('6.1.1',),

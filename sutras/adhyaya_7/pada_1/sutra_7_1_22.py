@@ -4,6 +4,7 @@
 Padaccheda: षड्‍भ्यः लुक्
 
 षड्भ्यो लुक् (7.1.22)
+Pāṭha: ashtadhyayi.com data.txt row i=71022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zaqByo luk",
     text_dev              = "षड्भ्यो लुक्",
+    samagra_slp1          = "zaqByaH aNgAt jaS-SasoH luk",
+    samagra_dev           = "षड्भ्यः अङ्गात् जश्-शसोः लुक्",
     padaccheda_dev        = "षड्‍भ्यः लुक्",
     why_dev               = "(सूत्रम् 7.1.22) षड्भ्यो लुक्।",
     anuvritti_from        = ('7.1.1',),

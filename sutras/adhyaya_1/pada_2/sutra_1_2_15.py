@@ -19,6 +19,7 @@ Engine note:
   does not fire for that term.
 
   r1_form_identity_exempt=True: no surface string changes in this step.
+Pāṭha: ashtadhyayi.com data.txt row i=12015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -66,6 +67,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yamo ganDane",
     text_dev              = "यमो गन्धने",
+    samagra_slp1          = "yamaH ganDane kit Atmanepadezu sic",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "यमः गन्धने कित् आत्मनेपदेषु सिच्",
     padaccheda_dev        = "यमः / गन्धने (अनिट्)",
     why_dev               = ("√यम्-धातुः गन्धन-अर्थे अनिट् — "
                              "इडागमः न भवति।"),

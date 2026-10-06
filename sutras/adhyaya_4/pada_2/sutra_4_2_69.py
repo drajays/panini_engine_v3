@@ -4,6 +4,7 @@
 Padaccheda: तस्य निवासः
 
 तस्य निवासः (4.2.69)
+Pāṭha: ashtadhyayi.com data.txt row i=42069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tasya nivAsaH",
     text_dev              = "तस्य निवासः",
+    samagra_slp1          = "tasya nivAsaH iti tannAmA deSaH iti samarTAnAm praTamAt paraH tadDitaH pratyayaH aR vA",
+    samagra_dev           = "'तस्य निवासः इति तन्नामा देशः' (इति) समर्थानाम् प्रथमात् परः तद्धितः प्रत्ययः अण् वा",
     padaccheda_dev        = "तस्य निवासः",
     why_dev               = "(सूत्रम् 4.2.69) तस्य निवासः।",
     anuvritti_from        = ('4.1.1',),

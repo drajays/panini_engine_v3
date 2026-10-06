@@ -2,7 +2,7 @@
 7.2.103  किमः कः  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=702103
+- ashtadhyayi.com data.txt row i=72103
 - Kāśikā: किम् + औ → क + औ (कौ)
 - Cross-validation: pipelines/kO_staH_vakya.py; sthanivat_anal_ashrita_lesson.py
 
@@ -67,6 +67,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="kimaH kaH",
     text_dev="किमः कः",
+    samagra_slp1="kimaH kaH viBaktO",
+    samagra_dev="किमः कः विभक्तौ",
     padaccheda_dev="किमः / कः",
     why_dev="किम्-शब्दस्य क-आदेशः; स्थानिवद्भावेन अङ्गत्वम् (७.३.१०२ सुपि च)।",
     anuvritti_from=("7.2.102",),

@@ -4,6 +4,7 @@
 Padaccheda: ख (लुप्तप्रथमान्तनिर्देशः) च
 
 ख च (4.4.132)
+Pāṭha: ashtadhyayi.com data.txt row i=44132 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Ka ca",
     text_dev              = "ख च",
+    samagra_slp1          = "veSo-yaSa-AdeH BagAt matvarTe Candasi saMjYAyAm KaH",
+    samagra_dev           = "वेशो-यश-आदेः भगात् मत्वर्थे छन्दसि संज्ञायाम् खः",
     padaccheda_dev        = "ख (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 4.4.132) ख च।",
     anuvritti_from        = ('4.1.1',),

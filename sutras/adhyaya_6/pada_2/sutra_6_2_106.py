@@ -4,6 +4,7 @@
 Padaccheda: बहुव्रीहौ विश्वम् संज्ञायाम्
 
 बहुव्रीहौ विश्वं संज्ञयाम् (6.2.106)
+Pāṭha: ashtadhyayi.com data.txt row i=62106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'bahuvrIhO viSvaM saMjYAyAm',
     text_dev              = 'बहुव्रीहौ विश्वं संज्ञायाम्',
+    samagra_slp1          = "udAttaH antaH bahuvrIhO viSvam saMjYAyAm pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः बहुव्रीहौ विश्वम् संज्ञायाम् पूर्वपदम्",
     padaccheda_dev        = "बहुव्रीहौ विश्वम् संज्ञायाम्",
     why_dev               = "(सूत्रम् 6.2.106) बहुव्रीहौ विश्वं संज्ञयाम्।",
     anuvritti_from        = ('6.1.1',),

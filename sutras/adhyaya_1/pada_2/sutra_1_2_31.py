@@ -22,6 +22,7 @@ svarita. Actual svarita assignment is the work of accent vidhi sūtras
 (e.g., 8.2.4, 8.4.66, etc.).
 
 SLP1 representation: "samAhAraH" (= samāhāraḥ, nominative singular).
+Pāṭha: ashtadhyayi.com data.txt row i=12031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = "samAhAraH svaritaH",
     text_dev                = "समाहारः स्वरितः",
+    samagra_slp1            = "samAhAraH ac svaritaH",
+    samagra_dev             = "समाहारः अच् स्वरितः",
     padaccheda_dev          = "समाहारः स्वरितः",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.29", "1.2.30"),

@@ -2,7 +2,7 @@
 7.2.7  अतो हलादेर्लघोः  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=702007
+- ashtadhyayi.com data.txt row i=72007
 - Kāśikā: अतो हलादेः लघोः (विकल्पेन वृद्धिः)
 - Cross-validation: tests/unit/test_avaDIt_luN_han.py (luṅ *iṭ*→*ī* on *sic*);
   tests/unit/test_avadhIt_han_lun_ekavacana.py (*a*-lopa + **1.1.57** block)
@@ -91,6 +91,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='ato halAderlaGoH',
     text_dev='अतो हलादेर्लघोः',
+    samagra_slp1="aNgasya ataH halAdeH laGoH sici vfdDiH parasmEpadezu na iwi viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अङ्गस्य अतः हलादेः लघोः सिचि वृद्धिः परस्मैपदेषु न इटि विभाषा",
     padaccheda_dev="अतः / हलादेः / लघोः",
     why_dev="लुङ्-सिच्-पथे इट्-कार्यम् (इ→ई, P026); हलादेः पूर्वस्य अ-विकल्प-वृद्धिः (हन्-लुङ्)।",
     anuvritti_from=("7.2.6",),

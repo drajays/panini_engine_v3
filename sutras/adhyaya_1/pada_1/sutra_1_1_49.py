@@ -12,6 +12,7 @@ Blindness:
   - cond() reads only state.paribhasha_gates — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=11049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -37,6 +38,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1           = 'zazWI sTAneyogA',
     text_dev            = 'षष्ठी स्थानेयोगा',
+    samagra_slp1        = "zazWI sTAneyogA",
+    samagra_dev         = "षष्ठी स्थानेयोगा",
     padaccheda_dev      = "षष्ठी / स्थाने-योगा",
     why_dev             = "सूत्रे षष्ठी-विभक्तिः \"स्थाने\" (आदेश-लक्ष्य) अर्थे — यस्य स्थाने आदेशः तस्य ग्रहणम्।",
     anuvritti_from      = (),

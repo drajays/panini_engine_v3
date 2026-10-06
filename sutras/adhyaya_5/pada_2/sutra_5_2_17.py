@@ -4,6 +4,7 @@
 Padaccheda: अभ्यमित्रात् छ (लुप्तप्रथमान्तनिर्देशः) च
 
 अभ्यमित्राच्छ च (5.2.17)
+Pāṭha: ashtadhyayi.com data.txt row i=52017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aByamitrAcCa ca",
     text_dev              = "अभ्यमित्राच्छ च",
+    samagra_slp1          = "tat alaNgAmI iti aByamitrAt yatKO CaH ca",
+    samagra_dev           = "'तत् अलङ्गामी' (इति) अभ्यमित्रात् यत्खौ छः च",
     padaccheda_dev        = "अभ्यमित्रात् छ (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 5.2.17) अभ्यमित्राच्छ च।",
     anuvritti_from        = ('4.1.82',),

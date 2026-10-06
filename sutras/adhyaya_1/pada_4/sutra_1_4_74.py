@@ -6,6 +6,7 @@ gati-saṃjñā.  This gaṇa includes: sākṣāt, vyarthā, āvis, āvir-bhāv
 tirobhāva, and similar compound-forming indeclinables.
 
 v3: registers samjna_registry["gati_saksat_prabhrti"] as the frozenset.
+Pāṭha: ashtadhyayi.com data.txt row i=14074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='sAkzAtpraBftIni ca',
     text_dev='साक्षात्प्रभृतीनि च',
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH sAkzAt-praBftIni ca kriyAyoge gatiH viBAzA kfYi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः साक्षात्-प्रभृतीनि च क्रियायोगे गतिः विभाषा कृञि",
     padaccheda_dev="साक्षात्-प्रभृतीनि / च",
     why_dev="साक्षात्प्रभृतयः गति-संज्ञकाः — साक्षाद्-गण-सूचिः गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

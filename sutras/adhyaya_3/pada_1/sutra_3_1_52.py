@@ -4,6 +4,7 @@
 Padaccheda: अस्यति-वक्ति-ख्यातिभ्यः अङ्
 
 Krt suffix rule from dhatu: अस्यतिवक्तिख्यातिभ्यः अङ् (52)
+Pāṭha: ashtadhyayi.com data.txt row i=31052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = 'asyativaktiKyAtiByoN',
     text_dev              = 'अस्यतिवक्तिख्यातिभ्योऽङ्',
+    samagra_slp1          = "asyati-vakti-KyAtiByaH cleH aN",
+    samagra_dev           = "अस्यति-वक्ति-ख्यातिभ्यः च्लेः अङ्",
     padaccheda_dev        = "अस्यति-वक्ति-ख्यातिभ्यः अङ्",
     why_dev               = "धातोः [अस्यतिवक्तिख्यातिभ्यः अङ्]-प्रत्ययः विहितः (३.१.52)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: श्राणा-मांस-ओदनात् टिठन्
 
 श्राणामांसौदनाट्टिठन् (4.4.67)
+Pāṭha: ashtadhyayi.com data.txt row i=44067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SrARAmAMsOdanAwwiWan",
     text_dev              = "श्राणामांसौदनाट्टिठन्",
+    samagra_slp1          = "tat asmE niyuktam dIyate iti SrARA-mAMsOdanAt wiWan",
+    samagra_dev           = "'तत् अस्मै नियुक्तम् दीयते' (इति) श्राणा-मांसौदनात् टिठन्",
     padaccheda_dev        = "श्राणा-मांस-ओदनात् टिठन्",
     why_dev               = "(सूत्रम् 4.4.67) श्राणामांसौदनाट्टिठन्।",
     anuvritti_from        = ('4.1.1',),

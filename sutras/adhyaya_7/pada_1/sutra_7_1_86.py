@@ -2,7 +2,7 @@
 7.1.86  इतोऽत् सर्वनामस्थाने  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=701086
+- ashtadhyayi.com data.txt row i=71086
 - Kāśikā: "पन्थाम् इतः अत्"
 - Cross-validation: tests/unit/test_sthanivat_al_ashrita_exceptions.py
 
@@ -60,6 +60,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='itot sarvanAmasTAne',
     text_dev='इतोऽत् सर्वनामस्थाने',
+    samagra_slp1="paTimaTyfBukzAmaNgasya itaH sarvanAmasTAne at",
+    samagra_dev="पथिमथ्यृभुक्षामङ्गस्य इतः सर्वनामस्थाने अत्",
     padaccheda_dev="इतः अत् सर्वनामस्थाने",
     why_dev="सर्वनामस्थाने इकारस्य अ-आदेशः (पथिन्-श्रेणिः)।",
     anuvritti_from=("7.1.1",),

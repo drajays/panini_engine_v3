@@ -4,6 +4,7 @@
 Padaccheda: विभाषा कार्षापण-सहस्राभ्याम्
 
 विभाषा कार्षापणसहस्राभ्याम् (5.1.29)
+Pāṭha: ashtadhyayi.com data.txt row i=51029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA kArzApaRasahasrAByAm",
     text_dev              = "विभाषा कार्षापणसहस्राभ्याम्",
+    samagra_slp1          = "A-arhAt kArzApaRa-sahasrAByAmaDyarDapUrva-dvigoH viBAzA luk",
+    samagra_dev           = "आ-अर्हात्  कार्षापण-सहस्राभ्यामध्यर्धपूर्व-द्विगोः विभाषा लुक्",
     padaccheda_dev        = "विभाषा कार्षापण-सहस्राभ्याम्",
     why_dev               = "(सूत्रम् 5.1.29) विभाषा कार्षापणसहस्राभ्याम्।",
     anuvritti_from        = ('5.1.19',),

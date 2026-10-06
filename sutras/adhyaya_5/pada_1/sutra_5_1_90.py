@@ -4,6 +4,7 @@
 Padaccheda: षष्टिकाः षष्टि-रात्रेण पच्यन्ते (क्रियापदम्)
 
 षष्टिकाः षष्टिरात्रेण पच्यन्ते (5.1.90)
+Pāṭha: ashtadhyayi.com data.txt row i=51090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zazwikAH zazwirAtreRa pacyante",
     text_dev              = "षष्टिकाः षष्टिरात्रेण पच्यन्ते",
+    samagra_slp1          = "zazwirAtreRa pacyante iti zazwikAH ",
+    samagra_dev           = "'षष्टिरात्रेण पच्यन्ते' (इति) षष्टिकाः ।",
     padaccheda_dev        = "षष्टिकाः षष्टि-रात्रेण पच्यन्ते (क्रियापदम्)",
     why_dev               = "(सूत्रम् 5.1.90) षष्टिकाः षष्टिरात्रेण पच्यन्ते।",
     anuvritti_from        = ('5.1.78',),

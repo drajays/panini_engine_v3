@@ -4,6 +4,7 @@
 Padaccheda: विभाषा पृष्टप्रतिवचने हेः
 
 विभाषा पृष्टप्रतिवचने हेः (8.2.93)
+Pāṭha: ashtadhyayi.com data.txt row i=82093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA pfzwaprativacane heH",
     text_dev              = "विभाषा पृष्टप्रतिवचने हेः",
+    samagra_slp1          = "padasya pUrvatrAsidDam vAkyasya weH plutaH udAttaH viBAzA pfzwaprativacane heH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वाक्यस्य टेः प्लुतः उदात्तः विभाषा पृष्टप्रतिवचने हेः",
     padaccheda_dev        = "विभाषा पृष्टप्रतिवचने हेः",
     why_dev               = "(सूत्रम् 8.2.93) विभाषा पृष्टप्रतिवचने हेः।",
     anuvritti_from        = ('8.1.1',),

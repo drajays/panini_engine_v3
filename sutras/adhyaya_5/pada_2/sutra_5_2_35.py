@@ -4,6 +4,7 @@
 Padaccheda: कर्मणि घटः अठच्
 
 कर्मणि घटोऽठच् (5.2.35)
+Pāṭha: ashtadhyayi.com data.txt row i=52035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'karmaRi GawoWac',
     text_dev              = 'कर्मणि घटोऽठच्',
+    samagra_slp1          = "karmaRi GawaH iti aWac",
+    samagra_dev           = "कर्मणि 'घटः' (इति) अठच्",
     padaccheda_dev        = "कर्मणि घटः अठच्",
     why_dev               = "(सूत्रम् 5.2.35) कर्मणि घटोऽठच्।",
     anuvritti_from        = ('4.1.82',),

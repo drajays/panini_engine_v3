@@ -4,6 +4,7 @@
 Padaccheda: इनच्-पिटच् चिकचि (लुप्तप्रथमान्तनिर्देशः) च
 
 इनच्पिटच्चिकचि च (5.2.33)
+Pāṭha: ashtadhyayi.com data.txt row i=52033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "inacpiwaccikaci ca",
     text_dev              = "इनच्पिटच्चिकचि च",
+    samagra_slp1          = "nAsikAyAH nate neH inac-piwac neH cika-ciH ",
+    samagra_dev           = "नासिकायाः नते नेः इनच्-पिटच्, (नेः) चिक-चिः ।",
     padaccheda_dev        = "इनच्-पिटच् चिकचि (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 5.2.33) इनच्पिटच्चिकचि च।",
     anuvritti_from        = ('4.1.82',),

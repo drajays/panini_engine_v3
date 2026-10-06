@@ -4,6 +4,7 @@
 Padaccheda: तपः-सहस्राभ्याम् विनि-इनी
 
 तपःसहस्राभ्यां विनीनी (5.2.102)
+Pāṭha: ashtadhyayi.com data.txt row i=52102 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tapaHsahasrAByAM vinInI",
     text_dev              = "तपःसहस्राभ्यां विनीनी",
+    samagra_slp1          = "tat asya asmin astIti iti tapaH-sahasrAByAm vini-inI",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) तपः-सहस्राभ्याम् विनि-इनी",
     padaccheda_dev        = "तपः-सहस्राभ्याम् विनि-इनी",
     why_dev               = "(सूत्रम् 5.2.102) तपःसहस्राभ्यां विनीनी।",
     anuvritti_from        = ('4.1.82',),

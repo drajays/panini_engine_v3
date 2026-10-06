@@ -4,6 +4,7 @@
 Padaccheda: उदके अकेवले
 
 उदकेऽकेवले (6.2.96)
+Pāṭha: ashtadhyayi.com data.txt row i=62096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'udakekevale',
     text_dev              = 'उदकेऽकेवले',
+    samagra_slp1          = "udAttaH antaH udake akevale pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः उदके अकेवले पूर्वपदम्",
     padaccheda_dev        = "उदके अकेवले",
     why_dev               = "(सूत्रम् 6.2.96) उदकेऽकेवले।",
     anuvritti_from        = ('6.1.1',),

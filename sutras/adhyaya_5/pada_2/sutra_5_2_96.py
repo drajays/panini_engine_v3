@@ -4,6 +4,7 @@
 Padaccheda: प्राणि-स्थात् आतः लच् अन्यतरस्याम्
 
 प्राणिस्थादातो लजन्यतरस्याम् (5.2.96)
+Pāṭha: ashtadhyayi.com data.txt row i=52096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prARisTAdAto lajanyatarasyAm",
     text_dev              = "प्राणिस्थादातो लजन्यतरस्याम्",
+    samagra_slp1          = "tad asya asmin astIti iti prARisTAt AtaH anyatarasyAm lac matu~p",
+    samagra_dev           = "'तद्  अस्य, अस्मिन् अस्तीति' (इति) प्राणिस्थात् आतः अन्यतरस्याम् लच्, मतुँप्",
     padaccheda_dev        = "प्राणि-स्थात् आतः लच् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 5.2.96) प्राणिस्थादातो लजन्यतरस्याम्।",
     anuvritti_from        = ('4.1.82',),

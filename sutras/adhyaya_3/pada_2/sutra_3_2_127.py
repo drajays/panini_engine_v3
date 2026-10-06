@@ -4,6 +4,7 @@
 Padaccheda: तौ सत्
 
 krt-suffix rule: तौ सत् (127)
+Pāṭha: ashtadhyayi.com data.txt row i=32127 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tO sat",
     text_dev              = "तौ सत्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne tO sat kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने तौ सत् कृत्",
     padaccheda_dev        = "तौ सत्",
     why_dev               = "धातोः कृत्-प्रत्ययः [तौ सत्] विहितः (३.२.127)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

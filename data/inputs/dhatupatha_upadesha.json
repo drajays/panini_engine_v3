@@ -37727,8 +37727,8 @@
       "gana_number": 1,
       "serial_in_gana": 1143,
       "sutra_ref": null,
-      "upadesha_dev": "दृशिर्",
-      "upadesha_slp1": "dfSir",
+      "upadesha_dev": "दृशिँर्",
+      "upadesha_slp1": "dfSi~r",
       "mula_dhatu_dev": "दृश्",
       "raw_dhatu_after_it_lopa_dev": "दृश्",
       "raw_dhatu_after_it_lopa_slp1": "dfS",
@@ -37740,9 +37740,7 @@
       "pada_label_dev": "परस्मैपदी",
       "karmatva_label_dev": "सकर्मकः",
       "it_class_label_dev": "अनिट्",
-      "it_markers": [
-        "र्"
-      ],
+      "it_markers": [],
       "flags": {
         "anit": true,
         "set": false,

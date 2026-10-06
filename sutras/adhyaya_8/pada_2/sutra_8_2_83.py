@@ -4,6 +4,7 @@
 Padaccheda: प्रत्यभिवादे अशूद्रे
 
 प्रत्यभिवादेअशूद्रे (8.2.83)
+Pāṭha: ashtadhyayi.com data.txt row i=82083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'pratyaBivAdeSUdre',
     text_dev              = 'प्रत्यभिवादेऽशूद्रे',
+    samagra_slp1          = "aSUdravizaye pratyaBivAde vAkyasya weH plutaH udAttaH ",
+    samagra_dev           = "अशूद्रविषये प्रत्यभिवादे वाक्यस्य टेः प्लुतः उदात्तः ।",
     padaccheda_dev        = "प्रत्यभिवादे अशूद्रे",
     why_dev               = "(सूत्रम् 8.2.83) प्रत्यभिवादेअशूद्रे।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: राज-श्वशुरात् यत्
 
 राजश्वशुराद्यत् (4.1.137)
+Pāṭha: ashtadhyayi.com data.txt row i=41137 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAjaSvaSurAdyat",
     text_dev              = "राजश्वशुराद्यत्",
+    samagra_slp1          = "tasya apatyam iti rAja-SvaSurAt yat",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) राज-श्वशुरात् यत्",
     padaccheda_dev        = "राज-श्वशुरात् यत्",
     why_dev               = "(सूत्रम् 4.1.137) राजश्वशुराद्यत्।",
     anuvritti_from        = ('4.1.1',),

@@ -13,6 +13,7 @@ carries "upa_prefix" in its tags, (c) that dhātu carries the semantic usage
 tag "mantrakaraNa_usage", and (d) idempotency guard "Atmanepada_1_3_25" is
 absent from meta.  No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True because no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -47,6 +48,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='upAnmantrakaraRe',
     text_dev='उपान्मन्त्रकरणे',
+    samagra_slp1="upAt mantrakaraRe sTaH Atmanepadam",
+    samagra_dev="उपात् मन्त्रकरणे स्थः आत्मनेपदम्",
     padaccheda_dev="उपात् (पञ्चमी) / मन्त्र-करणे (सप्तमी)",
     why_dev=(
         "उप-पूर्वकस्य धातोः मन्त्र-करण-अर्थे आत्मनेपदं भवति; "

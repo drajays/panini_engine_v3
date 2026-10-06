@@ -4,6 +4,7 @@
 Padaccheda: अनः उपधा-लोपिनः अन्यतरस्याम्
 
 अन उपधालोपिनोन्यतरस्याम् (4.1.28)
+Pāṭha: ashtadhyayi.com data.txt row i=41028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ana upaDAlopinonyatarasyAm",
     text_dev              = "अन उपधालोपिनोन्यतरस्याम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt anaH upaDA-lopinaH anyatarasyAm bahuvrIheH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् अनः उपधा-लोपिनः अन्यतरस्याम् बहुव्रीहेः",
     padaccheda_dev        = "अनः उपधा-लोपिनः अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 4.1.28) अन उपधालोपिनोन्यतरस्याम्।",
     anuvritti_from        = ('4.1.1',),

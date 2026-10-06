@@ -7,6 +7,7 @@ Vedic usage.
 
 v3: registers samjna_registry["1_4_81_gati_pare_chandasi"] = True to mark
     that the chandas exception has been noted.
+Pāṭha: ashtadhyayi.com data.txt row i=14081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -28,6 +29,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='Candasi parepi',
     text_dev='छन्दसि परेऽपि',
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH Candasi pare api te prAk DAtoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः छन्दसि परे अपि ते प्राक् धातोः",
     padaccheda_dev="छन्दसि / परे / अपि",
     why_dev="छन्दसि धातोः परेऽपि गतिर्भवति — छन्दसि-अपवाद-द्वारं स्थाप्यते।",
     anuvritti_from=("1.4.60", "1.4.80"),

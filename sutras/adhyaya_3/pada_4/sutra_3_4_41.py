@@ -4,6 +4,7 @@
 Padaccheda: अधिकरणे बन्धः
 
 krt-suffix rule: अधिकरणे बन्धः
+Pāṭha: ashtadhyayi.com data.txt row i=34041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDikaraRe banDaH",
     text_dev              = "अधिकरणे बन्धः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH aDikaraRe banDaH kft Ramul",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः अधिकरणे बन्धः कृत् णमुल्",
     padaccheda_dev        = "अधिकरणे बन्धः",
     why_dev               = "धातोः प्रत्ययः (३.4.41)।",
     anuvritti_from        = ('3.1.1',),

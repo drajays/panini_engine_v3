@@ -4,6 +4,7 @@
 Padaccheda: विभाषा चेः
 
 विभाषा चेः (7.3.58)
+Pāṭha: ashtadhyayi.com data.txt row i=73058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA ceH",
     text_dev              = "विभाषा चेः",
+    samagra_slp1          = "aNgasya viBAzA ceH ku cajoH aByAsAt ca sanliwoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य विभाषा चेः कु चजोः अभ्यासात् च सन्लिटोः",
     padaccheda_dev        = "विभाषा चेः",
     why_dev               = "(सूत्रम् 7.3.58) विभाषा चेः।",
     anuvritti_from        = ('7.1.1',),

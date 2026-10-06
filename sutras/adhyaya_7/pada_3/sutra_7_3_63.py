@@ -4,6 +4,7 @@
 Padaccheda: वञ्चेः गतौ
 
 वञ्चेर्गतौ (7.3.63)
+Pāṭha: ashtadhyayi.com data.txt row i=73063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vaYcergatO",
     text_dev              = "वञ्चेर्गतौ",
+    samagra_slp1          = "aNgasya vaYceH gatO cajoH ku na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य वञ्चेः गतौ चजोः कु न",
     padaccheda_dev        = "वञ्चेः गतौ",
     why_dev               = "(सूत्रम् 7.3.63) वञ्चेर्गतौ।",
     anuvritti_from        = ('7.1.1',),

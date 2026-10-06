@@ -4,6 +4,7 @@
 Padaccheda: बवि-अव-हृ-पणोः समर्थयोः
 
 vyava-hr and pan when related take sasthi.
+Pāṭha: ashtadhyayi.com data.txt row i=23057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vyavahfpaRoH samarTayoH",
     text_dev              = "व्यवहृपणोः समर्थयोः",
+    samagra_slp1          = "anaBihite vyavahf-paRoH samarTayoH Seze zazWI karmaRi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते व्यवहृ-पणोः समर्थयोः शेषे षष्ठी कर्मणि",
     padaccheda_dev        = "बवि-अव-हृ-पणोः समर्थयोः",
     why_dev               = "व्यव-हृ-पणोः समर्थयोः षष्ठी (२.३.५७)।",
     anuvritti_from        = ('2.3.50',),

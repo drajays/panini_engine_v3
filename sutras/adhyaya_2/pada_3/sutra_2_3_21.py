@@ -4,6 +4,7 @@
 Padaccheda: इत्थंभूत-लक्षणे (लक्ष्यते अनेनेति लक्षणम्)
 
 Tritiya marks the characteristic in ittham-bhuta context.
+Pāṭha: ashtadhyayi.com data.txt row i=23021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "itTaMBUtalakzaRe",
     text_dev              = "इत्थंभूतलक्षणे",
+    samagra_slp1          = "anaBihite itTaMBUta-lakzaRe tftIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते इत्थंभूत-लक्षणे तृतीया",
     padaccheda_dev        = "इत्थंभूत-लक्षणे (लक्ष्यते अनेनेति लक्षणम्)",
     why_dev               = "इत्थंभूत-लक्षणे (२.३.२१)।",
     anuvritti_from        = ('2.3.18',),

@@ -4,6 +4,7 @@
 Padaccheda: वले
 
 वले (6.3.118)
+Pāṭha: ashtadhyayi.com data.txt row i=63118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vale",
     text_dev              = "वले",
+    samagra_slp1          = "uttarapade saMhitAyAm vale dIrGaH saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् वले दीर्घः संज्ञायाम्",
     padaccheda_dev        = "वले",
     why_dev               = "(सूत्रम् 6.3.118) वले।",
     anuvritti_from        = ('6.1.1',),

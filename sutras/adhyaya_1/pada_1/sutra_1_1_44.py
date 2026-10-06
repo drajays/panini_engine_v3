@@ -12,6 +12,7 @@ Blindness:
   - cond() reads only state.paribhasha_gates — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=11044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -37,6 +38,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1           = 'na veti viBAzA',
     text_dev            = 'न वेति विभाषा',
+    samagra_slp1        = "na vA iti viBAzA",
+    samagra_dev         = "न, वा इति विभाषा",
     padaccheda_dev      = "न / वा / इति / विभाषा",
     why_dev             = "\"न\" \"वा\" इति शब्दौ यत्र सूत्रे स्तः तत् सूत्रं विभाषार्थं — विकल्पेन प्रवर्तते।",
     anuvritti_from      = (),

@@ -4,6 +4,7 @@
 Padaccheda: सेनायाः वा
 
 सेनाया वा (4.4.45)
+Pāṭha: ashtadhyayi.com data.txt row i=44045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "senAyA vA",
     text_dev              = "सेनाया वा",
+    samagra_slp1          = "tat samavAyAn samavEti iti senAyAH RyaH Wak vA",
+    samagra_dev           = "'तत् समवायान् समवैति' (इति) सेनायाः ण्यः ठक् वा",
     padaccheda_dev        = "सेनायाः वा",
     why_dev               = "(सूत्रम् 4.4.45) सेनाया वा।",
     anuvritti_from        = ('4.1.1',),

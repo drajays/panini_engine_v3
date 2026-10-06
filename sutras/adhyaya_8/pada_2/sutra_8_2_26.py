@@ -7,6 +7,7 @@ yielding **Gta**.
 
 Arms: ``state.meta['jhalo_jhali_recipe']``; Tripāḍī zone; single *pada*
 with flat ``Gsta``.
+Pāṭha: ashtadhyayi.com data.txt row i=82026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -79,6 +80,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='Jalo Jali',
     text_dev='झलो झलि',
+    samagra_slp1="padasya pUrvatrAsidDam JalaH Jali lopaH sasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="पदस्य पूर्वत्रासिद्धम् झलः झलि लोपः सस्य",
     padaccheda_dev="झलः / झलि",
     why_dev="झलो झलि परे लोपः — प०३३ (घ्स्-त-)।",
     anuvritti_from=("8.2.1",),

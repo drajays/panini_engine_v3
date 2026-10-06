@@ -4,6 +4,7 @@
 Padaccheda: पाथो-नदीभ्याम् ड्यण्
 
 पाथोनदीभ्यां ड्यण् (4.4.111)
+Pāṭha: ashtadhyayi.com data.txt row i=44111 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pATonadIByAM qyaR",
     text_dev              = "पाथोनदीभ्यां ड्यण्",
+    samagra_slp1          = "tatra Bave iti Candasi saMjYAyAm pATonadIByAM qyaR",
+    samagra_dev           = "'तत्र भवे' (इति) छन्दसि संज्ञायाम् पाथोनदीभ्यां ड्यण्",
     padaccheda_dev        = "पाथो-नदीभ्याम् ड्यण्",
     why_dev               = "(सूत्रम् 4.4.111) पाथोनदीभ्यां ड्यण्।",
     anuvritti_from        = ('4.1.1',),

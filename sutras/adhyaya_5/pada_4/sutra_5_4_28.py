@@ -4,6 +4,7 @@
 Padaccheda: अवेः कः
 
 अवेः कः (5.4.28)
+Pāṭha: ashtadhyayi.com data.txt row i=54028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aveH kaH",
     text_dev              = "अवेः कः",
+    samagra_slp1          = "aveH kaH",
+    samagra_dev           = "अवेः कः",
     padaccheda_dev        = "अवेः कः",
     why_dev               = "(सूत्रम् 5.4.28) अवेः कः।",
     anuvritti_from        = ('4.1.76',),

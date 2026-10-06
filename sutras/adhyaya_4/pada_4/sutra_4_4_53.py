@@ -4,6 +4,7 @@
 Padaccheda: किशर-आदिभ्यः ष्ठन्
 
 किशरादिभ्यः ष्ठन् (4.4.53)
+Pāṭha: ashtadhyayi.com data.txt row i=44053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kiSarAdiByaH zWan",
     text_dev              = "किशरादिभ्यः ष्ठन्",
+    samagra_slp1          = "tadasya paRyam iti kiSarAdiByaH zWan",
+    samagra_dev           = "'तदस्य पण्यम्' (इति) किशरादिभ्यः ष्ठन्",
     padaccheda_dev        = "किशर-आदिभ्यः ष्ठन्",
     why_dev               = "(सूत्रम् 4.4.53) किशरादिभ्यः ष्ठन्।",
     anuvritti_from        = ('4.1.1',),

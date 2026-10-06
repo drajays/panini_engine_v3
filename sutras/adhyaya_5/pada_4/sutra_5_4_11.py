@@ -4,6 +4,7 @@
 Padaccheda: किम्-एतद्-तिङ्-अव्यय-घात् आमु (लुप्तप्रथमान्तनिर्देशः) अद्रव्यप्रकर्षे
 
 किमेत्तिङव्ययघादाम्वद्रव्यप्रकर्षे (5.4.11)
+Pāṭha: ashtadhyayi.com data.txt row i=54011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kimettiNavyayaGAdAmvadravyaprakarze",
     text_dev              = "किमेत्तिङव्ययघादाम्वद्रव्यप्रकर्षे",
+    samagra_slp1          = "kim-et-tiN-avyaya-GAt adravyaprakarze AmuH",
+    samagra_dev           = "किम्-एत्-तिङ्-अव्यय-घात् अद्रव्यप्रकर्षे आमुः",
     padaccheda_dev        = "किम्-एतद्-तिङ्-अव्यय-घात् आमु (लुप्तप्रथमान्तनिर्देशः) अद्रव्यप्रकर्षे",
     why_dev               = "(सूत्रम् 5.4.11) किमेत्तिङव्ययघादाम्वद्रव्यप्रकर्षे।",
     anuvritti_from        = ('4.1.76',),

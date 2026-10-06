@@ -4,6 +4,7 @@
 Padaccheda: शृतम् पाके
 
 शृतं पाके (6.1.27)
+Pāṭha: ashtadhyayi.com data.txt row i=61027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SftaM pAke",
     text_dev              = "शृतं पाके",
+    samagra_slp1          = "Sftam pAke samprasAraRam nizWAyAm viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "शृतम् पाके सम्प्रसारणम् निष्ठायाम् विभाषा",
     padaccheda_dev        = "शृतम् पाके",
     why_dev               = "(सूत्रम् 6.1.27) शृतं पाके।",
     anuvritti_from        = ('6.1.1',),

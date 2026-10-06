@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि लुङ्-लङ्-लिटः
 
 krt-suffix rule: छन्दसि लुङ्लङ्लिटः
+Pāṭha: ashtadhyayi.com data.txt row i=34006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Candasi luNlaNliwaH",
     text_dev              = "छन्दसि लुङ्लङ्लिटः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH Candasi luN-laN-liwaH kft DAtusambanDe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः छन्दसि लुङ्-लङ्-लिटः कृत् धातुसम्बन्धे",
     padaccheda_dev        = "छन्दसि लुङ्-लङ्-लिटः",
     why_dev               = "धातोः प्रत्ययः (३.4.6)।",
     anuvritti_from        = ('3.1.1',),

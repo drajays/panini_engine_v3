@@ -4,6 +4,7 @@
 Padaccheda: ईयसः च
 
 ईयसश्च (5.4.156)
+Pāṭha: ashtadhyayi.com data.txt row i=54156 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "IyasaSca",
     text_dev              = "ईयसश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA IyasaH ca bahuvrIhO kap na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा ईयसः च बहुव्रीहौ कप् न",
     padaccheda_dev        = "ईयसः च",
     why_dev               = "(सूत्रम् 5.4.156) ईयसश्च।",
     anuvritti_from        = ('5.4.68',),

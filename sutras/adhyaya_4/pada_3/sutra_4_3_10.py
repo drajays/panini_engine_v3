@@ -4,6 +4,7 @@
 Padaccheda: द्वीपात् अनुसमुद्रम् यञ्
 
 द्वीपादनुसमुद्रं यञ् (4.3.10)
+Pāṭha: ashtadhyayi.com data.txt row i=43010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvIpAdanusamudraM yaY",
     text_dev              = "द्वीपादनुसमुद्रं यञ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA dvIpAt anu-samudram yaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा द्वीपात् अनु-समुद्रम् यञ्",
     padaccheda_dev        = "द्वीपात् अनुसमुद्रम् यञ्",
     why_dev               = "(सूत्रम् 4.3.10) द्वीपादनुसमुद्रं यञ्।",
     anuvritti_from        = ('4.1.1',),

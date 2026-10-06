@@ -4,6 +4,7 @@
 Padaccheda: सिध्यतेः अपारलौकिके
 
 सिध्यतेरपारलौकिके (6.1.49)
+Pāṭha: ashtadhyayi.com data.txt row i=61049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "siDyaterapAralOkike",
     text_dev              = "सिध्यतेरपारलौकिके",
+    samagra_slp1          = "siDyateH apAralOkike At ecaH upadeSe RO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सिध्यतेः अपारलौकिके आत् एचः उपदेशे णौ",
     padaccheda_dev        = "सिध्यतेः अपारलौकिके",
     why_dev               = "(सूत्रम् 6.1.49) सिध्यतेरपारलौकिके।",
     anuvritti_from        = ('6.1.1',),

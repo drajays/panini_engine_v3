@@ -6,6 +6,7 @@ the later (*para*) rule wins.
 
 v3: sets the ``1_4_2_vipratiSeDe`` gate in ``state.paribhasha_gates`` and
 records the logical set in ``state.samjna_registry``.
+Pāṭha: ashtadhyayi.com data.txt row i=14002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -29,6 +30,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.PARIBHASHA,
     text_slp1              = 'vipratizeDe paraM kAryam',
     text_dev               = 'विप्रतिषेधे परं कार्यम्',
+    samagra_slp1           = "vipratizeDe paraM kAryam",
+    samagra_dev            = "विप्रतिषेधे परं कार्यम्",
     padaccheda_dev         = "विप्रतिषेधे परम् कार्यम्",
     why_dev                = "विप्रतिषेधे — समबलयोः सूत्रयोः संघर्षे — परं (उत्तरं) सूत्रं कार्यं भवति।",
     anuvritti_from         = ("1.4.1",),

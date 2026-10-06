@@ -4,6 +4,7 @@
 Padaccheda: अगार-अन्तात् ठन्
 
 अगारान्ताट्ठन् (4.4.70)
+Pāṭha: ashtadhyayi.com data.txt row i=44070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "agArAntAwWan",
     text_dev              = "अगारान्ताट्ठन्",
+    samagra_slp1          = "tatra niyuktaH iti agArAntAt Wan",
+    samagra_dev           = "'तत्र नियुक्तः' (इति) अगारान्तात् ठन्",
     padaccheda_dev        = "अगार-अन्तात् ठन्",
     why_dev               = "(सूत्रम् 4.4.70) अगारान्ताट्ठन्।",
     anuvritti_from        = ('4.1.1',),

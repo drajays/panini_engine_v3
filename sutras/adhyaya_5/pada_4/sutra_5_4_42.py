@@ -4,6 +4,7 @@
 Padaccheda: बहु-अल्प-अर्थात् शस् कारकात् अन्यतरस्याम्
 
 बह्वल्पार्थाच्छस् कारकादन्यतरस्याम् (5.4.42)
+Pāṭha: ashtadhyayi.com data.txt row i=54042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahvalpArTAcCas kArakAdanyatarasyAm",
     text_dev              = "बह्वल्पार्थाच्छस् कारकादन्यतरस्याम्",
+    samagra_slp1          = "bahu-alpArTAt kArakAt Sas anyatarasyAm",
+    samagra_dev           = "बहु-अल्पार्थात् कारकात् शस् अन्यतरस्याम्",
     padaccheda_dev        = "बहु-अल्प-अर्थात् शस् कारकात् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 5.4.42) बह्वल्पार्थाच्छस् कारकादन्यतरस्याम्।",
     anuvritti_from        = ('4.1.76',),

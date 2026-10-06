@@ -4,6 +4,7 @@
 Padaccheda: नौ-द्वि-अचः ठन्
 
 नौद्व्यचष्ठन् (4.4.7)
+Pāṭha: ashtadhyayi.com data.txt row i=44007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nOdvyacazWan",
     text_dev              = "नौद्व्यचष्ठन्",
+    samagra_slp1          = "tena tarati iti nO-dvyacaH Wan",
+    samagra_dev           = "'तेन तरति' इति नौ-द्व्यचः ठन्",
     padaccheda_dev        = "नौ-द्वि-अचः ठन्",
     why_dev               = "(सूत्रम् 4.4.7) नौद्व्यचष्ठन्।",
     anuvritti_from        = ('4.1.1',),

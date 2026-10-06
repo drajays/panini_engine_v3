@@ -4,6 +4,7 @@
 Padaccheda: अपघनः अङ्गम्
 
 krt-suffix rule: अपघनोऽङ्गम्
+Pāṭha: ashtadhyayi.com data.txt row i=33081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'apaGanoNgam',
     text_dev              = 'अपघनोऽङ्गम्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm apaGanaH aNgam kft ap hanaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् अपघनः अङ्गम् कृत् अप् हनः",
     padaccheda_dev        = "अपघनः अङ्गम्",
     why_dev               = "धातोः प्रत्ययः (३.3.81)।",
     anuvritti_from        = ('3.1.1',),

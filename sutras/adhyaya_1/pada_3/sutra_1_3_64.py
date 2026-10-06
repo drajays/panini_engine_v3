@@ -16,6 +16,7 @@ For example: prayuṅkte — he employs/uses; upayuṅkte — he uses/enjoys.
 stamp "Atmanepada_1_3_64" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _YUJ_ROOTS carries either "pra_prefix" or "upa_prefix" AND does NOT carry
 "yajYapAtra_usage". No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -66,6 +67,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='propAByAM yujerayajYapAtrezu',
     text_dev='प्रोपाभ्यां युजेरयज्ञपात्रेषु',
+    samagra_slp1="pra-upAByAm yujeH ayajYapAtrezu Atmanepadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="प्र-उपाभ्याम् युजेः अयज्ञपात्रेषु आत्मनेपदम्",
     padaccheda_dev=(
         "प्र-उपाभ्याम् (पञ्चमी-द्विवचन) / युजेः (षष्ठी-एकवचन) "
         "/ अयज्ञपात्रेषु (सप्तमी-बहुवचन)"

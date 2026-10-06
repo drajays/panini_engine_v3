@@ -4,6 +4,7 @@
 Padaccheda: समयः तत् अस्य प्राप्तम्
 
 समयस्तदस्य प्राप्तम् (5.1.104)
+Pāṭha: ashtadhyayi.com data.txt row i=51104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samayastadasya prAptam",
     text_dev              = "समयस्तदस्य प्राप्तम्",
+    samagra_slp1          = "tat asya prAptam iti samayAt WaY pratyayaH",
+    samagra_dev           = "'तत् अस्य प्राप्तम्' (इति) समयात्  ठञ् प्रत्ययः",
     padaccheda_dev        = "समयः तत् अस्य प्राप्तम्",
     why_dev               = "(सूत्रम् 5.1.104) समयस्तदस्य प्राप्तम्।",
     anuvritti_from        = ('5.1.18',),

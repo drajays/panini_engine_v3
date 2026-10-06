@@ -4,6 +4,7 @@
 Padaccheda: इरितः वा
 
 Krt suffix rule from dhatu: इरितो वा (57)
+Pāṭha: ashtadhyayi.com data.txt row i=31057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "irito vA",
     text_dev              = "इरितो वा",
+    samagra_slp1          = "iritaH cleH aN vA",
+    samagra_dev           = "इरितः च्लेः अङ् वा",
     padaccheda_dev        = "इरितः वा",
     why_dev               = "धातोः [इरितो वा]-प्रत्ययः विहितः (३.१.57)।",
     anuvritti_from        = ('3.1.1',),

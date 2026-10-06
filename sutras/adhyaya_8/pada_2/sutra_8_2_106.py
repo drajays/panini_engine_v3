@@ -4,6 +4,7 @@
 Padaccheda: प्लुतौ ऐचः इत्--उतौ
 
 प्लुतावैच इदुतौ (8.2.106)
+Pāṭha: ashtadhyayi.com data.txt row i=82106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "plutAvEca idutO",
     text_dev              = "प्लुतावैच इदुतौ",
+    samagra_slp1          = "padasya pUrvatrAsidDam vAkyasya weH plutaH udAttaH plutO EcaH idutO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वाक्यस्य टेः प्लुतः उदात्तः प्लुतौ ऐचः इदुतौ",
     padaccheda_dev        = "प्लुतौ ऐचः इत्--उतौ",
     why_dev               = "(सूत्रम् 8.2.106) प्लुतावैच इदुतौ।",
     anuvritti_from        = ('8.1.1',),

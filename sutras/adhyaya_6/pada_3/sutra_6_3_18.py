@@ -4,6 +4,7 @@
 Padaccheda: शय-वास-वासिषु अकालात्
 
 शयवासवासिषु अकालात् (6.3.18)
+Pāṭha: ashtadhyayi.com data.txt row i=63018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'SayavAsavAsizvakAlAt',
     text_dev              = 'शयवासवासिष्वकालात्',
+    samagra_slp1          = "alug uttarapade Saya-vAsa-vAsizu akAlAt haladantAt saptamyAH viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे शय-वास-वासिषु अकालात् हलदन्तात् सप्तम्याः विभाषा",
     padaccheda_dev        = "शय-वास-वासिषु अकालात्",
     why_dev               = "(सूत्रम् 6.3.18) शयवासवासिषु अकालात्।",
     anuvritti_from        = ('6.1.1',),

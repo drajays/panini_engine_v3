@@ -18,6 +18,7 @@ idempotency stamp "Niyama_1_3_49" is absent, and (d) a dhātu Term carries
 both "anu_prefix" and "akarmaka" tags.
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=False because
 this rule reverts a prior state change (NIYAMA contract).
+Pāṭha: ashtadhyayi.com data.txt row i=13049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -59,6 +60,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='anorakarmakAt',
     text_dev='अनोरकर्मकात्',
+    samagra_slp1="anoH akarmakAt Atmanepadam vadaH vyaktavAcAM samuccAraRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अनोः अकर्मकात् आत्मनेपदम् वदः व्यक्तवाचां समुच्चारणे",
     padaccheda_dev="अनोः (पञ्चमी-एकवचन) / अकर्मकात् (पञ्चमी-एकवचन)",
     why_dev=(
         "अनु-पूर्वकस्य अकर्मक-धातोः प्रयोगे आत्मनेपदं न — "

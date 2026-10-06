@@ -4,6 +4,7 @@
 Padaccheda: ऋति अकः
 
 ऋत्यकः (6.1.128)
+Pāṭha: ashtadhyayi.com data.txt row i=61128 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ftyakaH",
     text_dev              = "ऋत्यकः",
+    samagra_slp1          = "padAntasya akaH asavarRe fti hrasvaH prakftyA SAkalyasya",
+    samagra_dev           = "पदान्तस्य  अकः असवर्णे ऋति ह्रस्वः  प्रकृत्या शाकल्यस्य",
     padaccheda_dev        = "ऋति अकः",
     why_dev               = "(सूत्रम् 6.1.128) ऋत्यकः।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: द्यावापृथिवी-शुनासीर-मरुत्वत्-अग्नीषोम-वास्तोष्पति-गृहमेधात् छ (लुप्तप्रथमान्तनिर्देशः) च
 
 द्यावापृथिवीशुनासीरमरुत्वदग्नीषोमवास्तोष्पतिगृहमेधाच्छ च (4.2.32)
+Pāṭha: ashtadhyayi.com data.txt row i=42032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dyAvApfTivISunAsIramarutvadagnIzomavAstozpatigfhameDAcCa ca",
     text_dev              = "द्यावापृथिवीशुनासीरमरुत्वदग्नीषोमवास्तोष्पतिगृहमेधाच्छ च",
+    samagra_slp1          = "sA asya devatA iti dyAvApfTivI-SunAsIra-marutvat-agnIzoma-vAstozpati-gfhameDAt yat Ca ca",
+    samagra_dev           = "'सा अस्य देवता' (इति)  द्यावापृथिवी-शुनासीर-मरुत्वत्-अग्नीषोम-वास्तोष्पति-गृहमेधात् यत् छ च",
     padaccheda_dev        = "द्यावापृथिवी-शुनासीर-मरुत्वत्-अग्नीषोम-वास्तोष्पति-गृहमेधात् छ (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 4.2.32) द्यावापृथिवीशुनासीरमरुत्वदग्नीषोमवास्तोष्पतिगृहमेधाच्छ च।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: चित् ति च उपमा-अर्थे प्रयुज्यमाने
 
 चिदिति चोपमाऽर्थे प्रयुज्यमाने (8.2.101)
+Pāṭha: ashtadhyayi.com data.txt row i=82101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ciditi copamArTe prayujyamAne',
     text_dev              = 'चिदिति चोपमाऽर्थे प्रयुज्यमाने',
+    samagra_slp1          = "padasya pUrvatrAsidDam vAkyasya weH plutaH udAttaH cit iti ca upamArTe prayujyamAne anudAttam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वाक्यस्य टेः प्लुतः उदात्तः चित् इति च उपमाऽर्थे प्रयुज्यमाने अनुदात्तम्",
     padaccheda_dev        = "चित् ति च उपमा-अर्थे प्रयुज्यमाने",
     why_dev               = "(सूत्रम् 8.2.101) चिदिति चोपमाऽर्थे प्रयुज्यमाने।",
     anuvritti_from        = ('8.1.1',),

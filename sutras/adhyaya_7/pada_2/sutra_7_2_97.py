@@ -4,6 +4,7 @@
 Padaccheda: त्व-मौ एकवचने
 
 त्वमावेकवचने (7.2.97)
+Pāṭha: ashtadhyayi.com data.txt row i=72097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tvamAvekavacane",
     text_dev              = "त्वमावेकवचने",
+    samagra_slp1          = "aNgasya maparyantasya tvamO ekavacane viBaktO yuzmadasmadoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य मपर्यन्तस्य त्वमौ एकवचने विभक्तौ युष्मदस्मदोः",
     padaccheda_dev        = "त्व-मौ एकवचने",
     why_dev               = "(सूत्रम् 7.2.97) त्वमावेकवचने।",
     anuvritti_from        = ('7.1.1',),

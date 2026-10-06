@@ -8,6 +8,7 @@ v3: sets the interpretive gate ``1_4_6_Ngiti_hrasva`` in
 ``state.paribhasha_gates`` to signal downstream rules that hrasva-before-ṅit
 is operative.  No phonemic mutation is performed here; the actual shortening
 is executed by the relevant VIDHI rules.
+Pāṭha: ashtadhyayi.com data.txt row i=14006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.NIYAMA,
     text_slp1              = 'Niti hrasvaSca',
     text_dev               = 'ङिति ह्रस्वश्च',
+    samagra_slp1           = "iyaN-uvaN-sTAnO yU stryAKyO hrasvaH ca Niti nadI vA astrI",
+    samagra_dev            = "इयङ्-उवङ्-स्थानौ यू स्त्र्याख्यौ, ह्रस्वः च, ङिति नदी वा, अस्त्री",
     padaccheda_dev         = "ङिति / ह्रस्वः च",
     why_dev                = "ङित्-प्रत्यये परे नदीसंज्ञकस्य ह्रस्वश्च भवति।",
     anuvritti_from         = ("1.4.1", "1.4.3"),

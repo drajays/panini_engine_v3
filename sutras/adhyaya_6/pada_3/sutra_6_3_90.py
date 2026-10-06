@@ -4,6 +4,7 @@
 Padaccheda: इदम्-किमोः ईश्-की (लुप्तप्रथमान्तनिर्देशः)
 
 इदङ्किमोरीश्की (6.3.90)
+Pāṭha: ashtadhyayi.com data.txt row i=63090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "idaNkimorISkI",
     text_dev              = "इदङ्किमोरीश्की",
+    samagra_slp1          = "uttarapade idam-kimoH IS-kI dfk-dfSa-vatuzu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे इदम्-किमोः ईश्-की दृक्-दृश-वतुषु",
     padaccheda_dev        = "इदम्-किमोः ईश्-की (लुप्तप्रथमान्तनिर्देशः)",
     why_dev               = "(सूत्रम् 6.3.90) इदङ्किमोरीश्की।",
     anuvritti_from        = ('6.1.1',),

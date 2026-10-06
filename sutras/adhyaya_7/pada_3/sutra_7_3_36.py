@@ -4,6 +4,7 @@
 Padaccheda: अर्त्ति-ह्री-व्ली-री-क्नूयी-क्ष्मायी-आताम् पुक् णौ
 
 अर्त्तिह्रीब्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ (7.3.36)
+Pāṭha: ashtadhyayi.com data.txt row i=73036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'artihrIvlIrIknUyIkzmAyyAtAM puNRO',
     text_dev              = 'अर्तिह्रीव्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ',
+    samagra_slp1          = "aNgasya artihrIvlIrIknUyIkzmAyyAtAm puk RO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अर्तिह्रीव्लीरीक्नूयीक्ष्माय्याताम् पुक् णौ",
     padaccheda_dev        = "अर्त्ति-ह्री-व्ली-री-क्नूयी-क्ष्मायी-आताम् पुक् णौ",
     why_dev               = "(सूत्रम् 7.3.36) अर्त्तिह्रीब्लीरीक्नूयीक्ष्माय्यातां पुङ्णौ।",
     anuvritti_from        = ('7.1.1',),

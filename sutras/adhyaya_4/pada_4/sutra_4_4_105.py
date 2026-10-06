@@ -4,6 +4,7 @@
 Padaccheda: सभायाः यः
 
 सभाया यः (4.4.105)
+Pāṭha: ashtadhyayi.com data.txt row i=44105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saBAyA yaH",
     text_dev              = "सभाया यः",
+    samagra_slp1          = "tatra sADuH iti saBAyAH saMjYAyAm yaH",
+    samagra_dev           = "'तत्र साधुः' (इति) सभायाः संज्ञायाम् यः",
     padaccheda_dev        = "सभायाः यः",
     why_dev               = "(सूत्रम् 4.4.105) सभाया यः।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: पानम् देशे
 
 पानं देशे (8.4.9)
+Pāṭha: ashtadhyayi.com data.txt row i=84009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pAnaM deSe",
     text_dev              = "पानं देशे",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm pAnam deSe razAByAm pUrvapadAt saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् पानम् देशे रषाभ्याम् पूर्वपदात् संज्ञायाम्",
     padaccheda_dev        = "पानम् देशे",
     why_dev               = "(सूत्रम् 8.4.9) पानं देशे।",
     anuvritti_from        = ('8.1.1',),

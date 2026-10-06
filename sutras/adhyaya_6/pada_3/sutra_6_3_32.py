@@ -4,6 +4,7 @@
 Padaccheda: मातरपितरौ उदीचाम्
 
 मातरपितरावुदीचाम् (6.3.32)
+Pāṭha: ashtadhyayi.com data.txt row i=63032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mAtarapitarAvudIcAm",
     text_dev              = "मातरपितरावुदीचाम्",
+    samagra_slp1          = "uttarapade mAtarapitarO udIcAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे मातरपितरौ उदीचाम्",
     padaccheda_dev        = "मातरपितरौ उदीचाम्",
     why_dev               = "(सूत्रम् 6.3.32) मातरपितरावुदीचाम्।",
     anuvritti_from        = ('6.1.1',),

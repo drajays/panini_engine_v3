@@ -4,6 +4,7 @@
 Padaccheda: द्विगोः यप्
 
 द्विगोर्यप् (5.1.82)
+Pāṭha: ashtadhyayi.com data.txt row i=51082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvigoryap",
     text_dev              = "द्विगोर्यप्",
+    samagra_slp1          = "BUtaH iti mAsAt dvigoH vayasi yap",
+    samagra_dev           = "'भूतः' (इति) मासात् द्विगोः वयसि यप्",
     padaccheda_dev        = "द्विगोः यप्",
     why_dev               = "(सूत्रम् 5.1.82) द्विगोर्यप्।",
     anuvritti_from        = ('5.1.78',),

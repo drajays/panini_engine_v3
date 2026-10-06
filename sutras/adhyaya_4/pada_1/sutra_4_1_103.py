@@ -4,6 +4,7 @@
 Padaccheda: द्रोण-पर्वत-जीवन्तात् अन्यतरस्याम्
 
 द्रोणपर्वतजीवन्तादन्यतरयाम् (4.1.103)
+Pāṭha: ashtadhyayi.com data.txt row i=41103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'droRaparvatajIvantAdanyatarasyAm',
     text_dev              = 'द्रोणपर्वतजीवन्तादन्यतरस्याम्',
+    samagra_slp1          = "tasya gotre apatyam iti droRa-parvata-jIvantAt Pak anyatarasyAm",
+    samagra_dev           = "'तस्य गोत्रे अपत्यम्' (इति) द्रोण-पर्वत-जीवन्तात् फक् अन्यतरस्याम्",
     padaccheda_dev        = "द्रोण-पर्वत-जीवन्तात् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 4.1.103) द्रोणपर्वतजीवन्तादन्यतरयाम्।",
     anuvritti_from        = ('4.1.1',),

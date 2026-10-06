@@ -9,6 +9,7 @@ Engine (narrow v3 slice):
     ``avyaya`` (all terms, including the merged stem).
 
 This is used to trigger **2.4.82** *sup*-luk for pratyagni/adhistri demos.
+Pāṭha: ashtadhyayi.com data.txt row i=11041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -40,6 +41,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1      = 'avyayIBAvaSca',
     text_dev       = 'अव्ययीभावश्च',
+    samagra_slp1   = "avyayIBAvaH avyayam",
+    samagra_dev    = "अव्ययीभावः अव्ययम्",
     padaccheda_dev = "अव्ययीभावः / च",
     why_dev        = "अव्ययीभाव-समासः अव्यय-संज्ञकः (२.४.८२ सुप्-लुक्-प्रसङ्गः)।",
     anuvritti_from = ("1.1.37",),

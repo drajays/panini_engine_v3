@@ -4,6 +4,7 @@
 Padaccheda: हलि · सर्वेषाम्
 
 हलि सर्वेषाम् (8.3.22)
+Pāṭha: ashtadhyayi.com data.txt row i=83022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hali sarvezAm",
     text_dev              = "हलि सर्वेषाम्",
+    samagra_slp1          = "Bo-Bago-aGo-apUrvasya padasya yaH hali lopaH sarvezAm",
+    samagra_dev           = "भो-भगो-अघो-अपूर्वस्य पदस्य यः हलि लोपः सर्वेषाम्",
     padaccheda_dev        = "हलि · सर्वेषाम्",
     why_dev               = "(सूत्रम् 8.3.22) हलि सर्वेषाम्।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: भागात् यत् च
 
 भागाद्यच्च (5.1.49)
+Pāṭha: ashtadhyayi.com data.txt row i=51049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BAgAdyacca",
     text_dev              = "भागाद्यच्च",
+    samagra_slp1          = "tadasmin vfdDi-Aya-lABa-Sulka-upadAH dIyate iti BAgAt Wan yat ca",
+    samagra_dev           = "'तदस्मिन् वृद्धि-आय-लाभ-शुल्क-उपदाः दीयते' इति भागात् ठन् यत् च",
     padaccheda_dev        = "भागात् यत् च",
     why_dev               = "(सूत्रम् 5.1.49) भागाद्यच्च।",
     anuvritti_from        = ('5.1.19',),

@@ -4,6 +4,7 @@
 Padaccheda: बल-आदिभ्यः मतुप् अन्यतरस्याम्
 
 बलादिभ्यो मतुबन्यतरस्याम् (5.2.136)
+Pāṭha: ashtadhyayi.com data.txt row i=52136 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "balAdiByo matubanyatarasyAm",
     text_dev              = "बलादिभ्यो मतुबन्यतरस्याम्",
+    samagra_slp1          = "tat asya asmin astIti iti balAdiByaH iniH matu~p anyatarasyAm",
+    samagra_dev           = "'तत् अस्य, अस्मिन्  अस्तीति' (इति) बलादिभ्यः इनिः, मतुँप्  अन्यतरस्याम्",
     padaccheda_dev        = "बल-आदिभ्यः मतुप् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 5.2.136) बलादिभ्यो मतुबन्यतरस्याम्।",
     anuvritti_from        = ('4.1.82',),

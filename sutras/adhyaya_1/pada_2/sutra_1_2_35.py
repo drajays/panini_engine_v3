@@ -22,6 +22,7 @@ Blindness:
   - cond() reads only ``state.samjna_registry`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -57,6 +58,8 @@ SUTRA = SutraRecord(
     vibhasha_default        = True,
     text_slp1               = "uccEstarAM vA vazawkAraH",
     text_dev                = "उच्चैस्तरां वा वषट्कारः",
+    samagra_slp1            = "uccEstarAm vA vazawkAraH ekaSruti yajYakarmaRi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "उच्चैस्तराम् वा वषट्कारः एकश्रुति यज्ञकर्मणि",
     padaccheda_dev          = "उच्चैस्तराम् / वा / वषट्कारः",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.29",),

@@ -4,6 +4,7 @@
 Padaccheda: यथा-तथयोः असूया-प्रतिवचने
 
 krt-suffix rule: यथातथयोरसूयाप्रतिवचने
+Pāṭha: ashtadhyayi.com data.txt row i=34028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yaTAtaTayorasUyAprativacane",
     text_dev              = "यथातथयोरसूयाप्रतिवचने",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH yaTA-taTayoH asUyAprativacane kft kfYaH Ramul sidDAprayogaH cet",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः यथा-तथयोः असूयाप्रतिवचने कृत् कृञः णमुल् सिद्धाप्रयोगः चेत्",
     padaccheda_dev        = "यथा-तथयोः असूया-प्रतिवचने",
     why_dev               = "धातोः प्रत्ययः (३.4.28)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: उपमानात् आचारे
 
 Krt suffix rule from dhatu: उपमानादाचारे (10)
+Pāṭha: ashtadhyayi.com data.txt row i=31010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upamAnAdAcAre",
     text_dev              = "उपमानादाचारे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca upamAnAt AcAre karmaRaH vA supaH kyac",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च उपमानात् आचारे कर्मणः वा सुपः क्यच्",
     padaccheda_dev        = "उपमानात् आचारे",
     why_dev               = "धातोः [उपमानादाचारे]-प्रत्ययः विहितः (३.१.10)।",
     anuvritti_from        = ('3.1.1',),

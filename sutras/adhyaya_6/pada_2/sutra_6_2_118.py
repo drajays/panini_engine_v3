@@ -4,6 +4,7 @@
 Padaccheda: क्रतु-आदयः च
 
 क्रत्वादयश्च (6.2.118)
+Pāṭha: ashtadhyayi.com data.txt row i=62118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kratvAdayaSca",
     text_dev              = "क्रत्वादयश्च",
+    samagra_slp1          = "udAttaH uttarapadAdiH kratvAdayaH ca bahuvrIhO soH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः क्रत्वादयः च बहुव्रीहौ सोः",
     padaccheda_dev        = "क्रतु-आदयः च",
     why_dev               = "(सूत्रम् 6.2.118) क्रत्वादयश्च।",
     anuvritti_from        = ('6.1.1',),

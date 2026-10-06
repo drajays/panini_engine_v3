@@ -4,6 +4,7 @@
 Padaccheda: अस्थि-दधि-सक्थि-अक्ष्णाम् अनङ् उदात्तः
 
 अस्थिदधिसक्थ्यक्ष्णामनङुदात्तः (7.1.75)
+Pāṭha: ashtadhyayi.com data.txt row i=71075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "asTidaDisakTyakzRAmanaNudAttaH",
     text_dev              = "अस्थिदधिसक्थ्यक्ष्णामनङुदात्तः",
+    samagra_slp1          = "asTi-daDi-sakTi-akzRAm tftIyAdizu aci anaN udAttaH",
+    samagra_dev           = "अस्थि-दधि-सक्थि-अक्ष्णाम् तृतीयादिषु अचि अनङ् उदात्तः",
     padaccheda_dev        = "अस्थि-दधि-सक्थि-अक्ष्णाम् अनङ् उदात्तः",
     why_dev               = "(सूत्रम् 7.1.75) अस्थिदधिसक्थ्यक्ष्णामनङुदात्तः।",
     anuvritti_from        = ('7.1.1',),

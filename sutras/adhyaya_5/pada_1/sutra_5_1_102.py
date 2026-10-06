@@ -4,6 +4,7 @@
 Padaccheda: योगात् यत् च
 
 योगाद्यच्च (5.1.102)
+Pāṭha: ashtadhyayi.com data.txt row i=51102 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yogAdyacca",
     text_dev              = "योगाद्यच्च",
+    samagra_slp1          = "tasmE praBavati iti yogAt yat WaY ca",
+    samagra_dev           = "'तस्मै प्रभवति' (इति) योगात् यत् ठञ् च",
     padaccheda_dev        = "योगात् यत् च",
     why_dev               = "(सूत्रम् 5.1.102) योगाद्यच्च।",
     anuvritti_from        = ('5.1.18',),

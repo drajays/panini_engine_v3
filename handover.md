@@ -17,6 +17,14 @@ of nouns and laṭ verbs). Menu `c` refreshes the numbers. CLI: `make confident`
 - **Real rules written/repaired this stage:** 7.1.18, 2.4.75 (gaṇa 3), 6.1.10 (ślu witness), 6.1.78 (hears past lopa),
   8.4.46/47 (now VIBHASHA).
 
+## Reference brain (2026-10-06)
+`~/data-master/ashtadhyayi-ai` — read-only per-sūtra dossier/scaffold/resolve (see its `AI_AGENT_GUIDE.md`, `Brain.command`).
+Branch `brain-corrections` (AMENDMENT 20, acceptance pending): `samagra_*` on all 3,983 records (Art. 4 rewritten);
+row-i citation in every file; anunāsika ≠ anusvāra (joiner + parser fixed, `han~` = हनँ); `BvAdi_dfSir` → दृशिँर्;
+`sutra_context.json` pāṭha corrected to T0 (201) with 9 ँ-markings kept. AMENDMENT 21 (vārttika ids `X.Y.Z.vN`) proposed,
+deferred to Track G. Suite: same 13 environmental failures as main, +23 passing. Open: legacy
+`raw_dhatu_after_it_lopa_slp1` wrong in 274 rows (AMENDMENT 20 §7).
+
 ## Known gaps (the 13 gaṇa-1 misses are rule gaps, not loop gaps)
 3.1.79 reads `vana~/zaRa~/kanI~` as tanādi by stem prefix · 7.3.75 (ṣṭhivu~ → ṣṭhīv) unmodelled · `SrA`/`jYA` homonym rows.
 Recipe still makes राधे by a 6.1.87 shortcut; the loop uses the real 7.1.18 → śī route (C4 will reconcile).

@@ -4,6 +4,7 @@
 Padaccheda: अपदातौ साल्वात्
 
 अपदातौ साल्वात् (4.2.135)
+Pāṭha: ashtadhyayi.com data.txt row i=42135 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "apadAtO sAlvAt",
     text_dev              = "अपदातौ साल्वात्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA a-padAtO sAlvAt manuzya-tat-sTayoH vuY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा अ-पदातौ साल्वात् मनुष्य-तत्-स्थयोः वुञ्",
     padaccheda_dev        = "अपदातौ साल्वात्",
     why_dev               = "(सूत्रम् 4.2.135) अपदातौ साल्वात्।",
     anuvritti_from        = ('4.1.1',),

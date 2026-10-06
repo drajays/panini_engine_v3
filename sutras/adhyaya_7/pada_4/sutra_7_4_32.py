@@ -4,6 +4,7 @@
 Padaccheda: अस्य च्वौ
 
 अस्य च्वौ (7.4.32)
+Pāṭha: ashtadhyayi.com data.txt row i=74032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "asya cvO",
     text_dev              = "अस्य च्वौ",
+    samagra_slp1          = "aNgasya asya cvO I",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अस्य च्वौ ई",
     padaccheda_dev        = "अस्य च्वौ",
     why_dev               = "(सूत्रम् 7.4.32) अस्य च्वौ।",
     anuvritti_from        = ('7.1.1',),

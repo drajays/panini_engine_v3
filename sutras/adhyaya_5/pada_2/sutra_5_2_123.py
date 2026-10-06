@@ -4,6 +4,7 @@
 Padaccheda: ऊर्णायाः युस्
 
 ऊर्णाया युस् (5.2.123)
+Pāṭha: ashtadhyayi.com data.txt row i=52123 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "UrRAyA yus",
     text_dev              = "ऊर्णाया युस्",
+    samagra_slp1          = "tat asya asmin astIti iti UrRAyAH yus",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) ऊर्णायाः युस्",
     padaccheda_dev        = "ऊर्णायाः युस्",
     why_dev               = "(सूत्रम् 5.2.123) ऊर्णाया युस्।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: राजन्य-बहुवचन-द्वन्द्वे अन्धक-वृष्णिषु
 
 राजन्यबहुवचनद्वंद्वेऽन्धकवृष्णिषु (6.2.34)
+Pāṭha: ashtadhyayi.com data.txt row i=62034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'rAjanyabahuvacanadvandvenDakavfzRizu',
     text_dev              = 'राजन्यबहुवचनद्वन्द्वेऽन्धकवृष्णिषु',
+    samagra_slp1          = "rAjanya-bahuvacana-dvandve anDaka-vfzRizu prakftyA pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "राजन्य-बहुवचन-द्वन्द्वे अन्धक-वृष्णिषु प्रकृत्या पूर्वपदम्",
     padaccheda_dev        = "राजन्य-बहुवचन-द्वन्द्वे अन्धक-वृष्णिषु",
     why_dev               = "(सूत्रम् 6.2.34) राजन्यबहुवचनद्वंद्वेऽन्धकवृष्णिषु।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अङ्गे इत्यादौ च
 
 अङ्ग इत्यादौ च (6.1.119)
+Pāṭha: ashtadhyayi.com data.txt row i=61119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aNga ityAdO ca",
     text_dev              = "अङ्ग इत्यादौ च",
+    samagra_slp1          = "saMhitAyAm aNge ityAdO ca aci prakftyA yajuzi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् अङ्गे इत्यादौ च अचि प्रकृत्या यजुषि",
     padaccheda_dev        = "अङ्गे इत्यादौ च",
     why_dev               = "(सूत्रम् 6.1.119) अङ्ग इत्यादौ च।",
     anuvritti_from        = ('6.1.1',),

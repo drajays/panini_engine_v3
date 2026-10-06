@@ -4,6 +4,7 @@
 Padaccheda: प्रयोजनम्
 
 प्रयोजनम् (5.1.109)
+Pāṭha: ashtadhyayi.com data.txt row i=51109 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prayojanam",
     text_dev              = "प्रयोजनम्",
+    samagra_slp1          = "tat asya prayojanam iti samarTAnAm praTamAt paraH WaY pratyayaH",
+    samagra_dev           = "'तत् अस्य प्रयोजनम्' (इति) समर्थानाम् प्रथमात् परः ठञ् प्रत्ययः",
     padaccheda_dev        = "प्रयोजनम्",
     why_dev               = "(सूत्रम् 5.1.109) प्रयोजनम्।",
     anuvritti_from        = ('5.1.18',),

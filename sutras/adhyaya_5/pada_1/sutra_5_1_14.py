@@ -4,6 +4,7 @@
 Padaccheda: ऋषभ-उपानहोः ञ्यः
 
 ऋषभोपानहोर्ञ्यः (5.1.14)
+Pāṭha: ashtadhyayi.com data.txt row i=51014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "fzaBopAnahorYyaH",
     text_dev              = "ऋषभोपानहोर्ञ्यः",
+    samagra_slp1          = "tadarTam prakftO iti fzaBa-upAnahoH vikfteH YyaH",
+    samagra_dev           = "'तदर्थम् प्रकृतौ' (इति) ऋषभ-उपानहोः विकृतेः ञ्यः",
     padaccheda_dev        = "ऋषभ-उपानहोः ञ्यः",
     why_dev               = "(सूत्रम् 5.1.14) ऋषभोपानहोर्ञ्यः।",
     anuvritti_from        = ('5.1.1',),

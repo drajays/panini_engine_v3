@@ -17,6 +17,7 @@ Engine implementation:
     • replace pratyaya varnas with parse("Byam")
     • set upadesha_slp1 = "Byam"
     • mark "7_1_30_done"
+Pāṭha: ashtadhyayi.com data.txt row i=71030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -71,6 +72,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Byaso Byam",
     text_dev              = "भ्यसो भ्यम्",
+    samagra_slp1          = "aNgasya ByasaH Byam yuzmad-asmadByAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य भ्यसः भ्यम् युष्मद्-अस्मद्भ्याम्",
     padaccheda_dev        = "भ्यसः भ्यम्",
     why_dev               = "अस्मद्-शब्दयोः भ्यस्-प्रत्ययस्य स्थाने भ्यम् आदेशः "
                             "(सूत्रम् ७.१.३० भ्यसो भ्यम्)।",

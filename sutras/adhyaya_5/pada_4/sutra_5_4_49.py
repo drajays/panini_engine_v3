@@ -4,6 +4,7 @@
 Padaccheda: रोगात् च अपनयने
 
 रोगाच्चापनयने (5.4.49)
+Pāṭha: ashtadhyayi.com data.txt row i=54049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rogAccApanayane",
     text_dev              = "रोगाच्चापनयने",
+    samagra_slp1          = "rogAt zazWyAH apanayane tasiH",
+    samagra_dev           = "रोगात् षष्ठ्याः अपनयने तसिः",
     padaccheda_dev        = "रोगात् च अपनयने",
     why_dev               = "(सूत्रम् 5.4.49) रोगाच्चापनयने।",
     anuvritti_from        = ('4.1.76',),

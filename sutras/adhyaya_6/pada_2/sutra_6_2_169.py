@@ -4,6 +4,7 @@
 Padaccheda: निष्ठा-उपमानात् अन्यतरस्याम्
 
 निष्ठोपमानादन्यतरस्याम् (6.2.169)
+Pāṭha: ashtadhyayi.com data.txt row i=62169 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nizWopamAnAdanyatarasyAm",
     text_dev              = "निष्ठोपमानादन्यतरस्याम्",
+    samagra_slp1          = "uttarapadAdiH antaH nizWopamAnAt anyatarasyAm bahuvrIhO muKam svANgam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः निष्ठोपमानात् अन्यतरस्याम् बहुव्रीहौ मुखम् स्वाङ्गम्",
     padaccheda_dev        = "निष्ठा-उपमानात् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.2.169) निष्ठोपमानादन्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

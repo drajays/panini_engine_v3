@@ -17,6 +17,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = "BrAtfputrO svasfduhitfByAm",
     text_dev                = "भ्रातृपुत्रौ स्वसृदुहितृभ्याम्",
+    samagra_slp1            = "BrAtf-putrO svasf-duhitfByAm ekaSezaH tallakzaRaH cet eva viSezaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "भ्रातृ-पुत्रौ स्वसृ-दुहितृभ्याम् एकशेषः तल्लक्षणः चेत् एव विशेषः",
     padaccheda_dev          = "भ्रातृपुत्रौ / स्वसृदुहितृभ्याम्",
     why_dev                 = (
         "एकशेषे स्वसृ-दुहितृभ्यां सह भ्रातृ-पुत्रौ क्रमेण शिष्येते — "

@@ -4,6 +4,7 @@
 Padaccheda: कन्यायाः कनीन (लुप्तप्रथमान्तनिर्देशः) च
 
 कन्यायाः कनीन च (4.1.116)
+Pāṭha: ashtadhyayi.com data.txt row i=41116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kanyAyAH kanIna ca",
     text_dev              = "कन्यायाः कनीन च",
+    samagra_slp1          = "tasya apatyam iti kanyAyAH kanInaH AdeSaH aR pratyayaH ",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) कन्यायाः कनीनः (आदेशः), अण् प्रत्ययः ।",
     padaccheda_dev        = "कन्यायाः कनीन (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 4.1.116) कन्यायाः कनीन च।",
     anuvritti_from        = ('4.1.1',),

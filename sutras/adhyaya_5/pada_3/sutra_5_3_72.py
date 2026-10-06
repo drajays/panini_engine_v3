@@ -4,6 +4,7 @@
 Padaccheda: कस्य च दः
 
 कस्य च दः (5.3.72)
+Pāṭha: ashtadhyayi.com data.txt row i=53072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kasya ca daH",
     text_dev              = "कस्य च दः",
+    samagra_slp1          = "kasya akac sanniyogena daH",
+    samagra_dev           = "कस्य अकच् (सन्नियोगेन)  दः",
     padaccheda_dev        = "कस्य च दः",
     why_dev               = "(सूत्रम् 5.3.72) कस्य च दः।",
     anuvritti_from        = ('5.3.70',),

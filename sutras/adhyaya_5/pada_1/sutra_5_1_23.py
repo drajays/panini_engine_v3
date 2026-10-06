@@ -4,6 +4,7 @@
 Padaccheda: वतोः इट् वा
 
 वतोरिड्वा (5.1.23)
+Pāṭha: ashtadhyayi.com data.txt row i=51023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vatoriqvA",
     text_dev              = "वतोरिड्वा",
+    samagra_slp1          = "A-arhAt vatoH saMKyAyAH iw vA",
+    samagra_dev           = "आ-अर्हात् वतोः संख्यायाः  इट्  वा",
     padaccheda_dev        = "वतोः इट् वा",
     why_dev               = "(सूत्रम् 5.1.23) वतोरिड्वा।",
     anuvritti_from        = ('5.1.19',),

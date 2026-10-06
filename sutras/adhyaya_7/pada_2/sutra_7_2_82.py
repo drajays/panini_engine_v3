@@ -4,6 +4,7 @@
 Padaccheda: आने मुक्
 
 आने मुक् (7.2.82)
+Pāṭha: ashtadhyayi.com data.txt row i=72082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Ane muk",
     text_dev              = "आने मुक्",
+    samagra_slp1          = "aNgasya Ane muk ataH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य आने मुक् अतः",
     padaccheda_dev        = "आने मुक्",
     why_dev               = "(सूत्रम् 7.2.82) आने मुक्।",
     anuvritti_from        = ('7.1.1',),

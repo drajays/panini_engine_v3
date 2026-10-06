@@ -4,6 +4,7 @@
 र्वोरुपधाया दीर्घ इकः (8.2.76) continues: the ik before a dhātu's र्/व् is
 lengthened when the र्/व् is itself the dhātu's upadhā (मुर्व् → मूर्वति, उर्द् → ऊर्दते). 8.2.79 न भकुर्छुराम् excepts कुर्/छुर् (कुर्वः).
 Operates on the merged pada; dhātu varṇas carry ``dhatu_v`` (pada_merger).
+Pāṭha: ashtadhyayi.com data.txt row i=82078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -65,6 +66,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = "upaDAyAM ca",
     text_dev       = "उपधायां च",
+    samagra_slp1   = "DAtoH upaDayoH halparayoH rvoH upaDAyAH ikaH dIrGaH",
+    samagra_dev    = "धातोः उपधयोः हल्परयोः र्वोः उपधायाः इकः दीर्घः",
     padaccheda_dev = "उपधायाम् च",
     why_dev        = "धातोः उपधाभूतयोः र्वोः पूर्वस्य इकः दीर्घः (मूर्वति)।",
     anuvritti_from = ("8.2.76",),

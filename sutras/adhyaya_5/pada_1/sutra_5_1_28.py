@@ -1,7 +1,7 @@
 """
 5.1.28  अध्यर्धपूर्वद्विगोर्लुगसंज्ञायाम्  —  SAMJNA (narrow ``prakriya_43``)
 
-**Pāṭha (ashtadhyayi-com ``data.txt`` i=50128):** *adhyardhapūrvadvigor lug saṃjñāyām* — *luk* of ``ṭak``
+**Pāṭha (ashtadhyayi-com ``data.txt`` i=51028):** *adhyardhapūrvadvigor lug saṃjñāyām* — *luk* of ``ṭak``
 when the prior formation is a *dvigu* (under **संज्ञा**, not a proper-name reading).
 
 Narrow v3 (**पञ्चशष्कुलम्** ``panini_engine_pipeline``): after **5.1.37** has registered *ṭak* intent,
@@ -60,6 +60,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='aDyarDapUrvadvigorlugasaMjYAyAm',
     text_dev='अध्यर्धपूर्वद्विगोर्लुगसंज्ञायाम्',
+    samagra_slp1="A arhAt aDyarDapUrva-dvigoH asaMjYAyAm luk",
+    samagra_dev="आ अर्हात् अध्यर्धपूर्व-द्विगोः असंज्ञायाम् लुक्",
     padaccheda_dev="अध्यर्ध-पूर्व-द्विगोः / लुक् / संज्ञायाम्",
     why_dev="द्विगोः परस्य ठकि लुक् (*saṃjñā*, *prakriya_43*)।",
     anuvritti_from=(),

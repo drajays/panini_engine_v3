@@ -4,6 +4,7 @@
 Padaccheda: न अतः परस्य
 
 नातः परस्य (7.3.27)
+Pāṭha: ashtadhyayi.com data.txt row i=73027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nAtaH parasya",
     text_dev              = "नातः परस्य",
+    samagra_slp1          = "aNgasya uttarapadasya na ataH parasya vfdDiH YRiti acaH tadDitezu AdeH arDAt pUrvasya tu vA parimARasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य न अतः परस्य वृद्धिः ञ्णिति अचः तद्धितेषु आदेः अर्धात् पूर्वस्य तु वा परिमाणस्य",
     padaccheda_dev        = "न अतः परस्य",
     why_dev               = "(सूत्रम् 7.3.27) नातः परस्य।",
     anuvritti_from        = ('7.1.1',),

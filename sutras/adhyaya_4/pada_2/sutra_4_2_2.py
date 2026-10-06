@@ -4,6 +4,7 @@
 Padaccheda: लाक्षा-रोचनात् (शकलकर्दमात् ) ठक्
 
 लाक्षारोचना(शकलकर्दमा)ट्ठक् (4.2.2)
+Pāṭha: ashtadhyayi.com data.txt row i=42002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'lAkzArocanASakalakardamAwWak',
     text_dev              = 'लाक्षारोचनाशकलकर्दमाट्ठक्',
+    samagra_slp1          = "tena raktaM rAgAt iti lAkzA-rocanA-Sakala-kardamAt Wak pratyayaH",
+    samagra_dev           = "'तेन रक्तं रागात्' (इति) लाक्षा-रोचना-शकल-कर्दमात् ठक् प्रत्ययः",
     padaccheda_dev        = "लाक्षा-रोचनात् (शकलकर्दमात् ) ठक्",
     why_dev               = "(सूत्रम् 4.2.2) लाक्षारोचना(शकलकर्दमा)ट्ठक्।",
     anuvritti_from        = ('4.1.1',),

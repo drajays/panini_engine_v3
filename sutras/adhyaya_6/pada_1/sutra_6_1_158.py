@@ -14,6 +14,7 @@ Narrow v3:
   • ``prakriya_29`` — **गौरावस्कन्दिन्** accent note (``gaura_6_1_158_recipe``).
   • ``prakriya_32`` — tri-vocative accent note (``trivoc_6_1_158_recipe``).
   • Trace-only (no *svara* columns on the flat tape).
+Pāṭha: ashtadhyayi.com data.txt row i=61158 (Art. 14).
 """
 from __future__ import annotations
 
@@ -46,6 +47,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.ANUVADA,
     text_slp1      = "anudAttaM padamekavarjam",
     text_dev       = "अनुदात्तं पदमेकवर्जम्",
+    samagra_slp1   = "anudAttam padam ekavarjam",
+    samagra_dev    = "अनुदात्तम् पदम् एकवर्जम्",
     padaccheda_dev = "अनुदात्तम् / पदम् / एकवर्जम्",
     why_dev        = "वाक्ये अनुदात्त-पद-न्यायः (श्रुति-स्तरः; वर्ण-पटे नास्ति)।",
     anuvritti_from = (),

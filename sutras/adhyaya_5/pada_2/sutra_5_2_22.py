@@ -4,6 +4,7 @@
 Padaccheda: साप्तपदीनम् सख्यम्
 
 साप्तपदीनं सख्यम् (5.2.22)
+Pāṭha: ashtadhyayi.com data.txt row i=52022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sAptapadInaM saKyam",
     text_dev              = "साप्तपदीनं सख्यम्",
+    samagra_slp1          = "sAptapadInam iti saKyam asmin arTe nipAtyate",
+    samagra_dev           = "साप्तपदीनम् (इति) सख्यम् (अस्मिन् अर्थे निपात्यते)",
     padaccheda_dev        = "साप्तपदीनम् सख्यम्",
     why_dev               = "(सूत्रम् 5.2.22) साप्तपदीनं सख्यम्।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: कुरुगार्हपत (षष्ठ्याः सौत्रः लुक्) रिक्तगुरु (षष्ठ्याः सौत्रः लुक्) असूतजरती अश्लीलदृढरूपा पारेवडवा तैतिलकद्रूः पण्यकम्बलः (सर्वत्र सुब्व्यत्ययेन षष्ठीस्थाने प्रथमा वेदितया) दासीभाराणाम् च
 
 कुरुगार्हपतरिक्तगुर्वसूतजरत्यश्लीलदृढरूपापारेवडवातैतिलकद्रूःपण्यकम्बलो दासीभाराणां च (6.2.42)
+Pāṭha: ashtadhyayi.com data.txt row i=62042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kurugArhapatariktagurvasUtajaratyaSlIladfQarUpApArevaqavAtEtilakadrUHpaRyakambalo dAsIBArARAM ca",
     text_dev              = "कुरुगार्हपतरिक्तगुर्वसूतजरत्यश्लीलदृढरूपापारेवडवातैतिलकद्रूःपण्यकम्बलो दासीभाराणां च",
+    samagra_slp1          = "kurugArhapata riktaguru asUtajarati yaSlIladfQarUpA pArevaqavA tEtilakadrUH paRyakambalaH dAsIBArARAm ca prakftyA pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "कुरुगार्हपत रिक्तगुरु असूतजरति यश्लीलदृढरूपा पारेवडवा तैतिलकद्रूः पण्यकम्बलः दासीभाराणाम् च प्रकृत्या पूर्वपदम्",
     padaccheda_dev        = "कुरुगार्हपत (षष्ठ्याः सौत्रः लुक्) रिक्तगुरु (षष्ठ्याः सौत्रः लुक्) असूतजरती अश्लीलदृढरूपा पारेवडवा तैतिलकद्रूः पण्यकम्बलः (सर्वत्र सुब्व्यत्ययेन षष्ठीस्थाने प्रथमा वेदितया) दासीभाराणाम् च",
     why_dev               = "(सूत्रम् 6.2.42) कुरुगार्हपतरिक्तगुर्वसूतजरत्यश्लीलदृढरूपापारेवडवातैतिलकद्रूःपण्यकम्बलो दासीभाराणां च।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: सदृश-प्रतिरूपयोः सादृश्ये
 
 सदृशप्रतिरूपयोः सादृश्ये (6.2.11)
+Pāṭha: ashtadhyayi.com data.txt row i=62011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sadfSapratirUpayoH sAdfSye",
     text_dev              = "सदृशप्रतिरूपयोः सादृश्ये",
+    samagra_slp1          = "sadfSa-pratirUpayoH sAdfSye prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सदृश-प्रतिरूपयोः सादृश्ये प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "सदृश-प्रतिरूपयोः सादृश्ये",
     why_dev               = "(सूत्रम् 6.2.11) सदृशप्रतिरूपयोः सादृश्ये।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: झरः झरि सवर्णे
 
 झरो झरि सवर्णे (8.4.65)
+Pāṭha: ashtadhyayi.com data.txt row i=84065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Jaro Jari savarRe",
     text_dev              = "झरो झरि सवर्णे",
+    samagra_slp1          = "halaH JaraH savarRe Jari anyatarasyAm lopaH",
+    samagra_dev           = "हलः झरः सवर्णे झरि अन्यतरस्याम् लोपः",
     padaccheda_dev        = "झरः झरि सवर्णे",
     why_dev               = "(सूत्रम् 8.4.65) झरो झरि सवर्णे।",
     anuvritti_from        = ('8.1.1',),

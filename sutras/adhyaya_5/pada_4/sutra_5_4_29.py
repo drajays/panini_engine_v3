@@ -4,6 +4,7 @@
 Padaccheda: याव-आदिभ्यः कन्
 
 यावादिभ्यः कन् (5.4.29)
+Pāṭha: ashtadhyayi.com data.txt row i=54029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yAvAdiByaH kan",
     text_dev              = "यावादिभ्यः कन्",
+    samagra_slp1          = "yAvAdiByaH kan",
+    samagra_dev           = "यावादिभ्यः कन्",
     padaccheda_dev        = "याव-आदिभ्यः कन्",
     why_dev               = "(सूत्रम् 5.4.29) यावादिभ्यः कन्।",
     anuvritti_from        = ('4.1.76',),

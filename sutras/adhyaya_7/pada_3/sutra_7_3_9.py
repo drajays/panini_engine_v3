@@ -4,6 +4,7 @@
 Padaccheda: पदान्तस्य अन्यतरस्याम्
 
 पदान्तस्यान्यतरस्याम् (7.3.9)
+Pāṭha: ashtadhyayi.com data.txt row i=73009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "padAntasyAnyatarasyAm",
     text_dev              = "पदान्तस्यान्यतरस्याम्",
+    samagra_slp1          = "aNgasya padAntasya anyatarasyAm vfdDiH YRiti acaH AdeH tadDitezu na SvAdeH Ec",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य पदान्तस्य अन्यतरस्याम् वृद्धिः ञ्णिति अचः आदेः तद्धितेषु न श्वादेः ऐच्",
     padaccheda_dev        = "पदान्तस्य अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 7.3.9) पदान्तस्यान्यतरस्याम्।",
     anuvritti_from        = ('7.1.1',),

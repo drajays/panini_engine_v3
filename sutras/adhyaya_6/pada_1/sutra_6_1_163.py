@@ -6,6 +6,7 @@
 
 Narrow v3 (``prakriya_20`` *devam*):
   • ``state.meta['devam_6_1_163_recipe']`` — trace-only *anuvāda*.
+Pāṭha: ashtadhyayi.com data.txt row i=61163 (Art. 14).
 """
 from __future__ import annotations
 
@@ -26,6 +27,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.ANUVADA,
     text_slp1      = "citaH",
     text_dev       = "चितः",
+    samagra_slp1   = "citaH udAttaH",
+    samagra_dev    = "चितः उदात्तः",
     padaccheda_dev = "चितः",
     why_dev        = "चिति-प्रत्यये अन्तोदात्त-न्यायः (श्रुति-स्तरः; प्रक्रिया-२०)।",
     anuvritti_from = (),

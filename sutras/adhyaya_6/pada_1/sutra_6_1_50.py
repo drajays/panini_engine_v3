@@ -4,6 +4,7 @@
 Padaccheda: मीनाति-मिनोति-दीङाम् ल्यपि च
 
 मीनातिमिनोतिदीङां ल्यपि च (6.1.50)
+Pāṭha: ashtadhyayi.com data.txt row i=61050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "mInAtiminotidINAM lyapi ca",
     text_dev              = "मीनातिमिनोतिदीङां ल्यपि च",
+    samagra_slp1          = "mInAti-minoti-dINAm lyapi ca At ecaH upadeSe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "मीनाति-मिनोति-दीङाम् ल्यपि च आत् एचः उपदेशे",
     padaccheda_dev        = "मीनाति-मिनोति-दीङाम् ल्यपि च",
     why_dev               = "(सूत्रम् 6.1.50) मीनातिमिनोतिदीङां ल्यपि च।",
     anuvritti_from        = ('6.1.1',),

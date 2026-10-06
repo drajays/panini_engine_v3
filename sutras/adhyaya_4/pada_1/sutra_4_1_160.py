@@ -4,6 +4,7 @@
 Padaccheda: प्राचाम् अ-वृद्धात् फिन् बहुलम्
 
 प्राचामवृद्धात् फिन् बहुलम् (4.1.160)
+Pāṭha: ashtadhyayi.com data.txt row i=41160 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prAcAmavfdDAt Pin bahulam",
     text_dev              = "प्राचामवृद्धात् फिन् बहुलम्",
+    samagra_slp1          = "tasya apatyam iti prAcAmavfdDAt bahulam Pin",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) प्राचामवृद्धात् बहुलम् फिन्",
     padaccheda_dev        = "प्राचाम् अ-वृद्धात् फिन् बहुलम्",
     why_dev               = "(सूत्रम् 4.1.160) प्राचामवृद्धात् फिन् बहुलम्।",
     anuvritti_from        = ('4.1.1',),

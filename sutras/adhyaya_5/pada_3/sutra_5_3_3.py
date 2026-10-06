@@ -4,6 +4,7 @@
 Padaccheda: इदमः इश्
 
 इदम इश् (5.3.3)
+Pāṭha: ashtadhyayi.com data.txt row i=53003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "idama iS",
     text_dev              = "इदम इश्",
+    samagra_slp1          = "idamaH prAg diSaH iS",
+    samagra_dev           = "इदमः प्राग् दिशः इश्",
     padaccheda_dev        = "इदमः इश्",
     why_dev               = "(सूत्रम् 5.3.3) इदम इश्।",
     anuvritti_from        = ('5.3.2',),

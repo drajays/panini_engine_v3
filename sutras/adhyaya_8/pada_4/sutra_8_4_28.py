@@ -4,6 +4,7 @@
 Padaccheda: उपसर्गात् अन्-ओत्-परः
 
 उपसर्गाद् बहुलम् (8.4.28)
+Pāṭha: ashtadhyayi.com data.txt row i=84028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upasargAd bahulam",
     text_dev              = "उपसर्गाद् बहुलम्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm upasargAt anotparaH razAByAm naH ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् उपसर्गात् अनोत्परः रषाभ्याम् नः च",
     padaccheda_dev        = "उपसर्गात् अन्-ओत्-परः",
     why_dev               = "(सूत्रम् 8.4.28) उपसर्गाद् बहुलम्।",
     anuvritti_from        = ('8.1.1',),

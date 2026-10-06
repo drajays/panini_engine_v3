@@ -4,6 +4,7 @@
 Padaccheda: ऊर्ध्वाद् विभाषा
 
 ऊर्ध्वाद्विभाषा (5.4.130)
+Pāṭha: ashtadhyayi.com data.txt row i=54130 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "UrDvAdviBAzA",
     text_dev              = "ऊर्ध्वाद्विभाषा",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA UrDvAd viBAzA bahuvrIhO jAnunoH jYuH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा ऊर्ध्वाद् विभाषा बहुव्रीहौ जानुनोः ज्ञुः",
     padaccheda_dev        = "ऊर्ध्वाद् विभाषा",
     why_dev               = "(सूत्रम् 5.4.130) ऊर्ध्वाद्विभाषा।",
     anuvritti_from        = ('5.4.68',),

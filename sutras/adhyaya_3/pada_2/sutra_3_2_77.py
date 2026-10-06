@@ -4,6 +4,7 @@
 Padaccheda: स्थः क (लुप्तप्रथमान्तनिर्देशः) च
 
 krt-suffix rule: स्थः क च (77)
+Pāṭha: ashtadhyayi.com data.txt row i=32077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sTaH ka ca",
     text_dev              = "स्थः क च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH sTaH ka ca kft supi upasarge api kvip",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः स्थः क च कृत् सुपि उपसर्गे अपि क्विप्",
     padaccheda_dev        = "स्थः क (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "धातोः कृत्-प्रत्ययः [स्थः क च] विहितः (३.२.77)।",
     anuvritti_from        = ('3.1.1',),

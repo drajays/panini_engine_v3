@@ -4,6 +4,7 @@
 Padaccheda: विस्पष्ट-आदीनि गुणवचनेषु
 
 विस्पष्टादीनि गुणवचनेषु (6.2.24)
+Pāṭha: ashtadhyayi.com data.txt row i=62024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vispazwAdIni guRavacanezu",
     text_dev              = "विस्पष्टादीनि गुणवचनेषु",
+    samagra_slp1          = "vispazwAdIni guRavacanezu prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "विस्पष्टादीनि गुणवचनेषु प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "विस्पष्ट-आदीनि गुणवचनेषु",
     why_dev               = "(सूत्रम् 6.2.24) विस्पष्टादीनि गुणवचनेषु।",
     anuvritti_from        = ('6.1.1',),

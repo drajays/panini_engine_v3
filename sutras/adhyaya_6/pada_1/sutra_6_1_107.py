@@ -101,6 +101,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = "ami pUrvaH",
     text_dev       = "अमि पूर्वः",
+    samagra_slp1   = "akaH ami pUrvaparayoH ekaH pUrvaH saMhitAyAm",
+    samagra_dev    = "अकः अमि पूर्वपरयोः एकः पूर्वः संहितायाम्",
     padaccheda_dev = "अमि पूर्वः",
     why_dev        = "अम्-प्रत्यये परे पूर्व-रूपम् एकादेशः "
                      "(अ+अ → अ, दीर्घ-निषेधः)।",

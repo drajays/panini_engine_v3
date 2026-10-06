@@ -4,6 +4,7 @@
 Padaccheda: नृ (लुप्तषष्ठ्यन्तनिर्देशः) च
 
 नृ च (6.4.6)
+Pāṭha: ashtadhyayi.com data.txt row i=64006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nf ca",
     text_dev              = "नृ च",
+    samagra_slp1          = "nf-aNgasya nAmi dIrGaH uBayaTA",
+    samagra_dev           = "नृ-अङ्गस्य नामि दीर्घः उभयथा",
     padaccheda_dev        = "नृ (लुप्तषष्ठ्यन्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 6.4.6) नृ च।",
     anuvritti_from        = ('6.1.1',),

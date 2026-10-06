@@ -4,6 +4,7 @@
 Padaccheda: प्रस्त्यः अन्यतरस्याम्
 
 प्रस्त्योऽन्यतरस्याम् (8.2.54)
+Pāṭha: ashtadhyayi.com data.txt row i=82054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'prastyonyatarasyAm',
     text_dev              = 'प्रस्त्योऽन्यतरस्याम्',
+    samagra_slp1          = "padasya pUrvatrAsidDam prastyaH anyatarasyAm nizWAtaH naH maH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् प्रस्त्यः अन्यतरस्याम् निष्ठातः नः मः",
     padaccheda_dev        = "प्रस्त्यः अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 8.2.54) प्रस्त्योऽन्यतरस्याम्।",
     anuvritti_from        = ('8.1.1',),

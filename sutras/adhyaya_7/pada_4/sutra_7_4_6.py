@@ -4,6 +4,7 @@
 Padaccheda: जिघ्रतेः वा
 
 जिघ्रतेर्वा (7.4.6)
+Pāṭha: ashtadhyayi.com data.txt row i=74006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jiGratervA",
     text_dev              = "जिघ्रतेर्वा",
+    samagra_slp1          = "aNgasya jiGrateH vA RO caNi it",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य जिघ्रतेः वा णौ चङि इत्",
     padaccheda_dev        = "जिघ्रतेः वा",
     why_dev               = "(सूत्रम् 7.4.6) जिघ्रतेर्वा।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: पद-अन्तस्य
 
 पदान्तस्य (8.4.37)
+Pāṭha: ashtadhyayi.com data.txt row i=84037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "padAntasya",
     text_dev              = "पदान्तस्य",
+    samagra_slp1          = "razAByAm padAntasya naH RaH na ",
+    samagra_dev           = "रषाभ्याम् पदान्तस्य नः णः न ।",
     padaccheda_dev        = "पद-अन्तस्य",
     why_dev               = "(सूत्रम् 8.4.37) पदान्तस्य।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: परश्वधात् ठञ् च
 
 परश्वधाट्ठञ्च (4.4.58)
+Pāṭha: ashtadhyayi.com data.txt row i=44058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paraSvaDAwWaYca",
     text_dev              = "परश्वधाट्ठञ्च",
+    samagra_slp1          = "tadasya praharaRam iti paraSvaDAt WaY Wak ca",
+    samagra_dev           = "'तदस्य प्रहरणम्' (इति) परश्वधात् ठञ् ठक् च",
     padaccheda_dev        = "परश्वधात् ठञ् च",
     why_dev               = "(सूत्रम् 4.4.58) परश्वधाट्ठञ्च।",
     anuvritti_from        = ('4.1.1',),

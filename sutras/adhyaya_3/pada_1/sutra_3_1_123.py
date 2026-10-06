@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि निष्टर्क्य-देवहूय-प्रणीय-उन्नीय-उच्छिष्य-मर्य-स्तर्या-ध्वर्य-खन्य-खान्य-देवयज्या-आपृच्छ्य-प्रतिषीव्य-ब्रह्मवाद्य-भाव्य-स्ताव्य-उपचाय्यपृडानि
 
 Krt suffix rule from dhatu: छन्दसि निष्टर्क्यदेवहूयप्रणीयोन्नीयोच्छिष्य (123)
+Pāṭha: ashtadhyayi.com data.txt row i=31123 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'Candasi nizwarkyadevahUyapraRIyonnIyocCizyamaryastaryADvaryaKanyaKAnyadevayajyApfcCyapratizIvyabrahmavAdyaBAvyastAvyopacAyyapfqAni',
     text_dev              = 'छन्दसि निष्टर्क्यदेवहूयप्रणीयोन्नीयोच्छिष्यमर्यस्तर्याध्वर्यखन्यखान्यदेवयज्यापृच्छ्यप्रतिषीव्यब्रह्मवाद्यभाव्यस्ताव्योपचाय्यपृडानि',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH Candasi nizwarkya-devahUya-praRIya-unnIya-ucCizya-marya-staryA-Dvarya-Kanya-KAnya-devayajyA-ApfcCya-pratizIvya-brahmavAdya-BAvya-stAvya-upacAyyapfqAni kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः छन्दसि निष्टर्क्य-देवहूय-प्रणीय-उन्नीय-उच्छिष्य-मर्य-स्तर्या-ध्वर्य-खन्य-खान्य-देवयज्या-आपृच्छ्य-प्रतिषीव्य-ब्रह्मवाद्य-भाव्य-स्ताव्य-उपचाय्यपृडानि कृत्",
     padaccheda_dev        = "छन्दसि निष्टर्क्य-देवहूय-प्रणीय-उन्नीय-उच्छिष्य-मर्य-स्तर्या-ध्वर्य-खन्य-खान्य-देवयज्या-आपृच्छ्य-प्रतिषीव्य-ब्रह्मवाद्य-भाव्य-स्ताव्य-उपचाय्यपृडानि",
     why_dev               = "धातोः [छन्दसि निष्टर्क्यदेवहूयप्रणीयोन्नीयोच्छिष्य]-प्रत्ययः विहितः (३.१.123)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

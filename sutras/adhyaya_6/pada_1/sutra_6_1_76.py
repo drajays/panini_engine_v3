@@ -4,6 +4,7 @@
 Padaccheda: पदान्तात् वा
 
 पदान्ताद्वा (6.1.76)
+Pāṭha: ashtadhyayi.com data.txt row i=61076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "padAntAdvA",
     text_dev              = "पदान्ताद्वा",
+    samagra_slp1          = "dIrGAt padAntAt saMhitAyAm vA tugAgamaH",
+    samagra_dev           = "दीर्घात् पदान्तात् संहितायाम् वा तुगागमः",
     padaccheda_dev        = "पदान्तात् वा",
     why_dev               = "(सूत्रम् 6.1.76) पदान्ताद्वा।",
     anuvritti_from        = ('6.1.1',),

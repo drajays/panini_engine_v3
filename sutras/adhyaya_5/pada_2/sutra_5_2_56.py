@@ -4,6 +4,7 @@
 Padaccheda: विंशति-आदिभ्यः तमट् अन्यतरस्याम्
 
 विंशत्यादिभ्यस्तमडन्यतरस्याम् (5.2.56)
+Pāṭha: ashtadhyayi.com data.txt row i=52056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viMSatyAdiByastamaqanyatarasyAm",
     text_dev              = "विंशत्यादिभ्यस्तमडन्यतरस्याम्",
+    samagra_slp1          = "tasya pUraRe iti viMSati-AdiByaH qawaH anyatarasyAm tamaw",
+    samagra_dev           = "'तस्य पूरणे' (इति) विंशति-आदिभ्यः डटः अन्यतरस्याम् तमट्",
     padaccheda_dev        = "विंशति-आदिभ्यः तमट् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 5.2.56) विंशत्यादिभ्यस्तमडन्यतरस्याम्।",
     anuvritti_from        = ('4.1.82',),

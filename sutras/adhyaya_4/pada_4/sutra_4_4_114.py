@@ -4,6 +4,7 @@
 Padaccheda: सगर्भ-सयूथ-सनुतात् यन्
 
 सगर्भसयूथसनुताद्यन् (4.4.114)
+Pāṭha: ashtadhyayi.com data.txt row i=44114 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sagarBasayUTasanutAdyan",
     text_dev              = "सगर्भसयूथसनुताद्यन्",
+    samagra_slp1          = "tatra Bave iti sagarBa-sayUTa-sanutAt Candasi saMjYAyAm yan",
+    samagra_dev           = "'तत्र भवे' (इति) सगर्भ-सयूथ-सनुतात् छन्दसि संज्ञायाम् यन्",
     padaccheda_dev        = "सगर्भ-सयूथ-सनुतात् यन्",
     why_dev               = "(सूत्रम् 4.4.114) सगर्भसयूथसनुताद्यन्।",
     anuvritti_from        = ('4.1.1',),

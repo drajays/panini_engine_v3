@@ -4,6 +4,7 @@
 Padaccheda: विभाषा सेना-सुरा-छाया-शाला-निशानाम्
 
 Optional for sena, sura, chaya, shala, nisha.
+Pāṭha: ashtadhyayi.com data.txt row i=24025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'viBAzA senAsurAcCAyASAlAniSAnAm',
     text_dev              = 'विभाषा सेनासुराच्छायाशालानिशानाम्',
+    samagra_slp1          = "tatpuruzonaYkarmaDArayaH viBAzA senA-surA-CAyA-SAlA-niSAnAm napuMsakam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तत्पुरुषोऽनञ्कर्मधारयः विभाषा सेना-सुरा-छाया-शाला-निशानाम् नपुंसकम्",
     padaccheda_dev        = "विभाषा सेना-सुरा-छाया-शाला-निशानाम्",
     why_dev               = "सेना-सुरा-छाया-शाला-निशानाम् विभाषा (२.४.२५)।",
     anuvritti_from        = ('2.4.18',),

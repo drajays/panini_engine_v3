@@ -4,6 +4,7 @@
 Padaccheda: वनः र (लुप्तप्रथमान्तनिर्देशः) च
 
 वनो र च (4.1.7)
+Pāṭha: ashtadhyayi.com data.txt row i=41007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vano ra ca",
     text_dev              = "वनो र च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm vanaH ra ca NIp",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् वनः र च ङीप्",
     padaccheda_dev        = "वनः र (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 4.1.7) वनो र च।",
     anuvritti_from        = ('4.1.1',),

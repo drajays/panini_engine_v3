@@ -4,6 +4,7 @@
 Padaccheda: अतेः अ-कृत्-पदे
 
 अतेरकृत्पदे (6.2.191)
+Pāṭha: ashtadhyayi.com data.txt row i=62191 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aterakftpade",
     text_dev              = "अतेरकृत्पदे",
+    samagra_slp1          = "uttarapadAdiH antaH ateH akftpade upasargAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः अतेः अकृत्पदे उपसर्गात्",
     padaccheda_dev        = "अतेः अ-कृत्-पदे",
     why_dev               = "(सूत्रम् 6.2.191) अतेरकृत्पदे।",
     anuvritti_from        = ('6.1.1',),

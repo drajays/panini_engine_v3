@@ -17,6 +17,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'lubyogApraKyAnAt',
     text_dev                = 'लुब्योगाप्रख्यानात्',
+    samagra_slp1            = "lup yoga-a-praKyAnAt tat a-Sizyam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "लुप् योग-अ-प्रख्यानात् तत् अ-शिष्यम्",
     padaccheda_dev          = "लुप् / योग-अप्रख्यानात्",
     why_dev                 = (
         "लुपि कृते अपि योगसम्बन्धान्न प्रख्यानहानिः — "

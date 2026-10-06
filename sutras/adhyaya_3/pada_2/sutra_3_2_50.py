@@ -4,6 +4,7 @@
 Padaccheda: अपे क्लेश-तमसोः
 
 krt-suffix rule: अपे क्लेशतमसोः (50)
+Pāṭha: ashtadhyayi.com data.txt row i=32050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ape kleSatamasoH",
     text_dev              = "अपे क्लेशतमसोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH ape kleSa-tamasoH kft karmaRi anupasarge supi qaH hanaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः अपे क्लेश-तमसोः कृत् कर्मणि अनुपसर्गे सुपि डः हनः",
     padaccheda_dev        = "अपे क्लेश-तमसोः",
     why_dev               = "धातोः कृत्-प्रत्ययः [अपे क्लेशतमसोः] विहितः (३.२.50)।",
     anuvritti_from        = ('3.1.1',),

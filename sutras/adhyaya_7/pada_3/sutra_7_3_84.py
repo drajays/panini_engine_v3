@@ -346,6 +346,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = "sArvaDAtukArDaDAtukayoH",
     text_dev       = "सार्वधातुकार्धधातुकयोः",
+    samagra_slp1   = "aNgasya guRaH sArvaDAtuka-ArDaDAtukayoH",
+    samagra_dev    = "अङ्गस्य गुणः सार्वधातुक-आर्धधातुकयोः",
     padaccheda_dev = "सार्वधातुक-आर्धधातुकयोः",
     why_dev        = (
         "अङ्गान्तिकः गुणः — धातोः परतरं सार्वधातुके वा आर्धधातुके वा "

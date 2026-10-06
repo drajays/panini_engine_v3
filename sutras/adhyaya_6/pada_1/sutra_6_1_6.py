@@ -4,6 +4,7 @@
 Padaccheda: जक्ष् (अविभक्तिकनिर्देशः) इति-आदयः षट्
 
 जक्षित्यादयः षट् (6.1.6)
+Pāṭha: ashtadhyayi.com data.txt row i=61006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jakzityAdayaH zaw",
     text_dev              = "जक्षित्यादयः षट्",
+    samagra_slp1          = "jakzityAdayaH zaw aByastam",
+    samagra_dev           = "जक्षित्यादयः षट् अभ्यस्तम्",
     padaccheda_dev        = "जक्ष् (अविभक्तिकनिर्देशः) इति-आदयः षट्",
     why_dev               = "(सूत्रम् 6.1.6) जक्षित्यादयः षट्।",
     anuvritti_from        = ('6.1.1',),

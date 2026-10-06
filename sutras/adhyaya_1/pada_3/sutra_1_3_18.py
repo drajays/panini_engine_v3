@@ -15,6 +15,7 @@ one of the prefix tags in _PARI_VI_AVA_PREFIXES, and (c) the idempotency
 stamp "Atmanepada_1_3_18" is absent from state.meta.  No arm flags
 (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because no surface
 phonological change occurs.
+Pāṭha: ashtadhyayi.com data.txt row i=13018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='parivyaveByaH kriyaH',
     text_dev='परिव्यवेभ्यः क्रियः',
+    samagra_slp1="pari-vi-aveByaH kriyaH Atmanepadam",
+    samagra_dev="परि-वि-अवेभ्यः क्रियः आत्मनेपदम्",
     padaccheda_dev="परि-वि-अवेभ्यः (पञ्चमी-बहुवचन) / क्रियः (षष्ठी)",
     why_dev=(
         "परि-, वि-, अव-पूर्वस्य कृ-धातोः प्रयोगे आत्मनेपदम् — "

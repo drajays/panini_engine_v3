@@ -4,6 +4,7 @@
 Padaccheda: पर्पादिभ्यः ष्ठन्
 
 पर्पादिभ्यः ष्ठन् (4.4.10)
+Pāṭha: ashtadhyayi.com data.txt row i=44010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parpAdiByaH zWan",
     text_dev              = "पर्पादिभ्यः ष्ठन्",
+    samagra_slp1          = "tena carati iti parpAdiByaH zWan",
+    samagra_dev           = "'तेन चरति' (इति) पर्पादिभ्यः ष्ठन्",
     padaccheda_dev        = "पर्पादिभ्यः ष्ठन्",
     why_dev               = "(सूत्रम् 4.4.10) पर्पादिभ्यः ष्ठन्।",
     anuvritti_from        = ('4.1.1',),

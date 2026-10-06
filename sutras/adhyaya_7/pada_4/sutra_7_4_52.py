@@ -8,6 +8,7 @@ iṭ+3.4.79: iṭ→i→e). So `tāse → tāhe` → final form `bhavitāhe`.
 
 Arm flag: state.meta["7_4_52_arm"] must be True.
 Finds tāsi term with final s, followed by a term starting with e.
+Pāṭha: ashtadhyayi.com data.txt row i=74052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ha eti",
     text_dev              = "ह एति",
+    samagra_slp1          = "aNgasya haH eti saH si tAsastyoH lopaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य हः एति सः सि तासस्त्योः लोपः",
     padaccheda_dev        = "हः एति",
     why_dev               = "(सूत्रम् 7.4.52) ह एति।",
     anuvritti_from        = ('7.1.1',),

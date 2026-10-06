@@ -4,6 +4,7 @@
 Padaccheda: धातु-सम्बन्धे प्रत्ययाः
 
 krt-suffix rule: धातुसम्बन्धे प्रत्ययाः
+Pāṭha: ashtadhyayi.com data.txt row i=34001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DAtusambanDe pratyayAH",
     text_dev              = "धातुसम्बन्धे प्रत्ययाः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH DAtusambanDe pratyayAH kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः धातुसम्बन्धे प्रत्ययाः कृत्",
     padaccheda_dev        = "धातु-सम्बन्धे प्रत्ययाः",
     why_dev               = "धातोः प्रत्ययः (३.4.1)।",
     anuvritti_from        = ('3.1.1',),

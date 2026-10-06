@@ -18,6 +18,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = "ekaviBakti cApUrvanipAte",
     text_dev                = "एकविभक्ति चापूर्वनिपाते",
+    samagra_slp1            = "ekaviBakti ca apUrvanipAte samAse upasarjanam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "एकविभक्ति च अपूर्वनिपाते समासे उपसर्जनम्",
     padaccheda_dev          = "एकविभक्ति / च / अपूर्वनिपाते",
     why_dev                 = (
         "एकविभक्त्यन्तं अपूर्वनिपातञ्च शब्दं अव्ययसंज्ञकं विदधाति "

@@ -4,6 +4,7 @@
 Padaccheda: कवि-अध्वर-पृतनस्य ऋचि लोपः
 
 कव्यध्वरपृतनस्यर्चि लोपः (7.4.39)
+Pāṭha: ashtadhyayi.com data.txt row i=74039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kavyaDvarapftanasyarci lopaH",
     text_dev              = "कव्यध्वरपृतनस्यर्चि लोपः",
+    samagra_slp1          = "aNgasya kavyaDvarapftanasya fci lopaH kyaci Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य कव्यध्वरपृतनस्य ऋचि लोपः क्यचि छन्दसि",
     padaccheda_dev        = "कवि-अध्वर-पृतनस्य ऋचि लोपः",
     why_dev               = "(सूत्रम् 7.4.39) कव्यध्वरपृतनस्यर्चि लोपः।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: पात्रात् ष्ठन्
 
 पात्रात् ष्ठन् (5.1.46)
+Pāṭha: ashtadhyayi.com data.txt row i=51046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pAtrAt zWan",
     text_dev              = "पात्रात् ष्ठन्",
+    samagra_slp1          = "tasya vApaH iti pAtrAt zWan",
+    samagra_dev           = "'तस्य वापः' इति पात्रात् ष्ठन्",
     padaccheda_dev        = "पात्रात् ष्ठन्",
     why_dev               = "(सूत्रम् 5.1.46) पात्रात् ष्ठन्।",
     anuvritti_from        = ('5.1.19',),

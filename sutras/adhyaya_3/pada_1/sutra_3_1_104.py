@@ -4,6 +4,7 @@
 Padaccheda: उपसर्या काल्या प्रजने
 
 Krt suffix rule from dhatu: उपसर्या काल्या प्रजने (104)
+Pāṭha: ashtadhyayi.com data.txt row i=31104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upasaryA kAlyA prajane",
     text_dev              = "उपसर्या काल्या प्रजने",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH upasaryA kAlyA prajane kft yat anupasarge",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः उपसर्या काल्या प्रजने कृत् यत् अनुपसर्गे",
     padaccheda_dev        = "उपसर्या काल्या प्रजने",
     why_dev               = "धातोः [उपसर्या काल्या प्रजने]-प्रत्ययः विहितः (३.१.104)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

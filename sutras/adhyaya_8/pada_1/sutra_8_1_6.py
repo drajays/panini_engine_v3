@@ -13,6 +13,7 @@ registers the accent-chain prerequisite ``samjna_registry['prakriya_27_phit481_u
 when ``state.meta['prakriya_27_8_1_6_arm']`` is True and ``terms[0]`` is the
 ``AgacCa`` *tinanta* *śruti* demo (CONSTITUTION Art. 2: no *lakāra* / *puruṣa*
 reads in ``cond``).
+Pāṭha: ashtadhyayi.com data.txt row i=81006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="prasamupodaH pAdapUraRe",
     text_dev="प्रसमुपोदः पादपूरणे",
+    samagra_slp1="sarvasya dve prasamupodaH pAdapUraRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="सर्वस्य द्वे प्रसमुपोदः पादपूरणे",
     padaccheda_dev="प्रसमुपोदः / पादपूरणे",
     why_dev="फिट् ४.८१ (*उपसर्गाश्चाभिवर्जम्*): उपसर्ग-स्वराङ्कनम् — पूर्णं ८.१.६-विधिं नास्ति (*prakriya_27*)।",
     anuvritti_from=(),

@@ -4,6 +4,7 @@
 Padaccheda: दन्तः (पञ्चम्यर्थे प्रथमा) उन्नतः उरच्
 
 दन्त उन्नत उरच् (5.2.106)
+Pāṭha: ashtadhyayi.com data.txt row i=52106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "danta unnata urac",
     text_dev              = "दन्त उन्नत उरच्",
+    samagra_slp1          = "tat asya asmin astIti iti unnataH dantaH urac",
+    samagra_dev           = "'तत् अस्य अस्मिन् अस्तीति' (इति) उन्नतः दन्तः उरच्",
     padaccheda_dev        = "दन्तः (पञ्चम्यर्थे प्रथमा) उन्नतः उरच्",
     why_dev               = "(सूत्रम् 5.2.106) दन्त उन्नत उरच्।",
     anuvritti_from        = ('4.1.82',),

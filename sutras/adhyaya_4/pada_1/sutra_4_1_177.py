@@ -4,6 +4,7 @@
 Padaccheda: अतः च
 
 अतश्च (4.1.177)
+Pāṭha: ashtadhyayi.com data.txt row i=41177 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ataSca",
     text_dev              = "अतश्च",
+    samagra_slp1          = "ataH tadrAjasya striyAm luk",
+    samagra_dev           = "अतः तद्राजस्य स्त्रियाम् लुक्",
     padaccheda_dev        = "अतः च",
     why_dev               = "(सूत्रम् 4.1.177) अतश्च।",
     anuvritti_from        = ('4.1.1',),

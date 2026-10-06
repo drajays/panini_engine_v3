@@ -4,6 +4,7 @@
 Padaccheda: पिष्टात् च
 
 पिष्टाच्च (4.3.146)
+Pāṭha: ashtadhyayi.com data.txt row i=43146 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pizwAcca",
     text_dev              = "पिष्टाच्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA pizwAt ca tasya vikAraH avayave mayaw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा पिष्टात् च तस्य विकारः अवयवे मयट्",
     padaccheda_dev        = "पिष्टात् च",
     why_dev               = "(सूत्रम् 4.3.146) पिष्टाच्च।",
     anuvritti_from        = ('4.1.1',),

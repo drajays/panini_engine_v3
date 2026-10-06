@@ -9,6 +9,7 @@ Narrow v3 (**पाचिका** → **पाचक** stage in ``panini_engine_
   • ``prakriya_37_6_3_42_arm`` registers ``samjna_registry['6.3.42_puMvaw_prakriya_37']``.
 
 Full morphophonemic **ङीप्**→``पācaka`` substitution is not modelled — registry-only slice.
+Pāṭha: ashtadhyayi.com data.txt row i=63042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -40,6 +41,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.ATIDESHA,
     text_slp1='puMvat karmaDArayajAtIyadeSIyezu',
     text_dev='पुंवत् कर्मधारयजातीयदेशीयेषु',
+    samagra_slp1="uttarapade puMvat karmaDAraya-jAtIya-deSIyezu striyAH anUN BAzitapu~skAd na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="उत्तरपदे पुंवत् कर्मधारय-जातीय-देशीयेषु स्त्रियाः अनूङ् भाषितपुँस्काद् न",
     padaccheda_dev="पुंवत् / कर्मधारय-जातीय-देशीयेषु",
     why_dev="कर्मधारये पूर्वपदस्य पुंवद्भावः (*prakriya_37*, संक्षेप-अङ्कनम्)।",
     anuvritti_from=(),

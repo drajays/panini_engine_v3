@@ -4,6 +4,7 @@
 Padaccheda: विभाषा अग्रे-प्रथम-पूर्वेषु
 
 krt-suffix rule: विभाषाऽग्रेप्रथमपूर्वेषु
+Pāṭha: ashtadhyayi.com data.txt row i=34024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'viBAzAgrepraTamapUrvezu',
     text_dev              = 'विभाषाऽग्रेप्रथमपूर्वेषु',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH viBAzA agre-praTama-pUrvezu kft ktvA pUrvakAle samAnakarttfkayoH Ramul ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः विभाषा अग्रे-प्रथम-पूर्वेषु कृत् क्त्वा पूर्वकाले समानकर्त्तृकयोः णमुल् च",
     padaccheda_dev        = "विभाषा अग्रे-प्रथम-पूर्वेषु",
     why_dev               = "धातोः प्रत्ययः (३.4.24)।",
     anuvritti_from        = ('3.1.1',),

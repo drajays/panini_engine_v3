@@ -4,6 +4,7 @@
 Padaccheda: प्रात् अ-स्वाङ्गम् संज्ञायाम्
 
 प्रादस्वाङ्गं संज्ञायाम् (6.2.183)
+Pāṭha: ashtadhyayi.com data.txt row i=62183 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prAdasvANgaM saMjYAyAm",
     text_dev              = "प्रादस्वाङ्गं संज्ञायाम्",
+    samagra_slp1          = "uttarapadAdiH antaH prAt asvANgam saMjYAyAm upasargAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः प्रात् अस्वाङ्गम् संज्ञायाम् उपसर्गात्",
     padaccheda_dev        = "प्रात् अ-स्वाङ्गम् संज्ञायाम्",
     why_dev               = "(सूत्रम् 6.2.183) प्रादस्वाङ्गं संज्ञायाम्।",
     anuvritti_from        = ('6.1.1',),

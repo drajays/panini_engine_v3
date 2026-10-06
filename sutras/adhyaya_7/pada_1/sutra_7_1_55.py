@@ -4,6 +4,7 @@
 Padaccheda: षट्-चतुर्भ्यः च
 
 षट्चतुर्भ्यश्च (7.1.55)
+Pāṭha: ashtadhyayi.com data.txt row i=71055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zawcaturByaSca",
     text_dev              = "षट्चतुर्भ्यश्च",
+    samagra_slp1          = "zaw-caturByaH Ami nuw ca",
+    samagra_dev           = "षट्-चतुर्भ्यः आमि नुट् च",
     padaccheda_dev        = "षट्-चतुर्भ्यः च",
     why_dev               = "(सूत्रम् 7.1.55) षट्चतुर्भ्यश्च।",
     anuvritti_from        = ('7.1.1',),

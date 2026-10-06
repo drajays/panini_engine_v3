@@ -11,6 +11,7 @@ whose karma is in view).
 Engine: registers the kriyārthopapadā-karma-sthānin→caturthī gate. ``cond``
 checks only the gate flag, never vibhakti coordinates (CONSTITUTION Art. 2).
 ``r1_form_identity_exempt=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=23014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -36,6 +37,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'kriyArTopapadasya ca karmaRi sTAninaH',
     text_dev              = 'क्रियार्थोपपदस्य च कर्मणि स्थानिनः',
+    samagra_slp1          = "anaBihite kriyA-arTa-upapadasya ca karmaRi sTAninaH caturTI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते क्रिया-अर्थ-उपपदस्य च कर्मणि स्थानिनः चतुर्थी",
     padaccheda_dev        = "क्रियार्थ-उपदस्य / च / कर्मणि / स्थानिनः",
     why_dev               = (
         "क्रियार्थोपदस्य स्थानिनः कर्मणि चतुर्थी च — "

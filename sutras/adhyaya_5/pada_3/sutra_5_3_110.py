@@ -4,6 +4,7 @@
 Padaccheda: कर्क-लोहितात् ईकक्
 
 कर्कलोहितादीकक् (5.3.110)
+Pāṭha: ashtadhyayi.com data.txt row i=53110 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karkalohitAdIkak",
     text_dev              = "कर्कलोहितादीकक्",
+    samagra_slp1          = "karka-lohitAt ive Ikak",
+    samagra_dev           = "कर्क-लोहितात् इवे ईकक्",
     padaccheda_dev        = "कर्क-लोहितात् ईकक्",
     why_dev               = "(सूत्रम् 5.3.110) कर्कलोहितादीकक्।",
     anuvritti_from        = ('4.1.76',),

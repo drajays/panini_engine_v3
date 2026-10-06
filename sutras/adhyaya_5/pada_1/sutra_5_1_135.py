@@ -4,6 +4,7 @@
 Padaccheda: होत्राभ्यः छः
 
 होत्राभ्यश्छः (5.1.135)
+Pāṭha: ashtadhyayi.com data.txt row i=51135 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hotrAByaSCaH",
     text_dev              = "होत्राभ्यश्छः",
+    samagra_slp1          = "tasya BAvaH  karmaRi ca iti hotrAByaH CaH",
+    samagra_dev           = "'तस्य भावः , कर्मणि च' इति होत्राभ्यः छः",
     padaccheda_dev        = "होत्राभ्यः छः",
     why_dev               = "(सूत्रम् 5.1.135) होत्राभ्यश्छः।",
     anuvritti_from        = ('5.1.120',),

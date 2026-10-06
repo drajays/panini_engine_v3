@@ -4,6 +4,7 @@
 Padaccheda: विभाषा तृन्-अन्न-तीक्ष्ण-शुचिषु
 
 विभाषा तृन्नन्नतीक्ष्णशुचिषु (6.2.161)
+Pāṭha: ashtadhyayi.com data.txt row i=62161 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA tfnnannatIkzRaSucizu",
     text_dev              = "विभाषा तृन्नन्नतीक्ष्णशुचिषु",
+    samagra_slp1          = "uttarapadAdiH antaH viBAzA tfn-anna-tIkzRa-Sucizu naYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः विभाषा तृन्-अन्न-तीक्ष्ण-शुचिषु नञः",
     padaccheda_dev        = "विभाषा तृन्-अन्न-तीक्ष्ण-शुचिषु",
     why_dev               = "(सूत्रम् 6.2.161) विभाषा तृन्नन्नतीक्ष्णशुचिषु।",
     anuvritti_from        = ('6.1.1',),

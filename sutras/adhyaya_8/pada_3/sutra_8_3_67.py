@@ -4,6 +4,7 @@
 Padaccheda: स्तन्भेः
 
 स्तम्भेः (8.3.67)
+Pāṭha: ashtadhyayi.com data.txt row i=83067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "stamBeH",
     text_dev              = "स्तम्भेः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH stamBeH saH aqvyavAye api upasargAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः स्तम्भेः सः अड्व्यवाये अपि उपसर्गात्",
     padaccheda_dev        = "स्तन्भेः",
     why_dev               = "(सूत्रम् 8.3.67) स्तम्भेः।",
     anuvritti_from        = ('8.1.1',),

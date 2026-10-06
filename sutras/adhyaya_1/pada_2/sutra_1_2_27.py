@@ -23,6 +23,7 @@ SLP1 vowel inventory:
     (e and o are inherently long in Sanskrit phonology; E = ai, O = au)
   Pluta: registered as boolean True; actual 3-mātrā marking is assigned
          contextually by later vidhi sūtras.
+Pāṭha: ashtadhyayi.com data.txt row i=12027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -62,6 +63,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'UkAlojJrasvadIrGaplutaH',
     text_dev                = 'ऊकालोऽज्झ्रस्वदीर्घप्लुतः',
+    samagra_slp1            = "UkAlaH ac hrasva-dIrGa-plutaH",
+    samagra_dev             = "ऊकालः अच् ह्रस्व-दीर्घ-प्लुतः",
     padaccheda_dev          = "ऊकालः अच् ह्रस्व-दीर्घ-प्लुतः",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = (),

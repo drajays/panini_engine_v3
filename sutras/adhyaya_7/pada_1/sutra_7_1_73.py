@@ -4,6 +4,7 @@
 Padaccheda: इकः अचि विभक्तौ
 
 इकोऽचि विभक्तौ (7.1.73)
+Pāṭha: ashtadhyayi.com data.txt row i=71073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ikoci viBaktO',
     text_dev              = 'इकोऽचि विभक्तौ',
+    samagra_slp1          = "ikaH napuMsakasya aci viBaktO num",
+    samagra_dev           = "इकः नपुंसकस्य अचि विभक्तौ नुम्",
     padaccheda_dev        = "इकः अचि विभक्तौ",
     why_dev               = "(सूत्रम् 7.1.73) इकोऽचि विभक्तौ।",
     anuvritti_from        = ('7.1.1',),

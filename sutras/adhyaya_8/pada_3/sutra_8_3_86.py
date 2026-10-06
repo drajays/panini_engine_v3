@@ -4,6 +4,7 @@
 Padaccheda: अभि-निसः स्तनः शब्दसंज्ञायाम्
 
 अभिनिसः स्तनः शब्दसंज्ञायाम् (8.3.86)
+Pāṭha: ashtadhyayi.com data.txt row i=83086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aBinisaH stanaH SabdasaMjYAyAm",
     text_dev              = "अभिनिसः स्तनः शब्दसंज्ञायाम्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH aBi-nisaH stanaH SabdasaMjYAyAm saH anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः अभि-निसः स्तनः शब्दसंज्ञायाम् सः अन्यतरस्याम्",
     padaccheda_dev        = "अभि-निसः स्तनः शब्दसंज्ञायाम्",
     why_dev               = "(सूत्रम् 8.3.86) अभिनिसः स्तनः शब्दसंज्ञायाम्।",
     anuvritti_from        = ('8.1.1',),

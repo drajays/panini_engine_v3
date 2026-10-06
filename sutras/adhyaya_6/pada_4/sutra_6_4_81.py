@@ -4,6 +4,7 @@
 Padaccheda: इणः यण्
 
 इणो यण् (6.4.81)
+Pāṭha: ashtadhyayi.com data.txt row i=64081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "iRo yaR",
     text_dev              = "इणो यण्",
+    samagra_slp1          = "iRaH aNgasya aci yaR",
+    samagra_dev           = "इणः अङ्गस्य अचि यण्",
     padaccheda_dev        = "इणः यण्",
     why_dev               = "(सूत्रम् 6.4.81) इणो यण्।",
     anuvritti_from        = ('6.1.1',),

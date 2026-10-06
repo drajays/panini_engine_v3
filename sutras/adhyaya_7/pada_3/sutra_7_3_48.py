@@ -4,6 +4,7 @@
 Padaccheda: अ-भाषितपुंस्कात् च
 
 अभाषितपुंस्काच्च (7.3.48)
+Pāṭha: ashtadhyayi.com data.txt row i=73048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aBAzitapuMskAcca",
     text_dev              = "अभाषितपुंस्काच्च",
+    samagra_slp1          = "aNgasya aBAzitapuMskAt ca it ataH udIcAm AtaH sTAne",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभाषितपुंस्कात् च इत् अतः उदीचाम् आतः स्थाने",
     padaccheda_dev        = "अ-भाषितपुंस्कात् च",
     why_dev               = "(सूत्रम् 7.3.48) अभाषितपुंस्काच्च।",
     anuvritti_from        = ('7.1.1',),

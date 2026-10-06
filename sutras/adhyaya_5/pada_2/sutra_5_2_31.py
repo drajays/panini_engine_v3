@@ -4,6 +4,7 @@
 Padaccheda: नते नासिकायाः संज्ञायाम् टीटच्-नाटच्-भ्रटचः
 
 नते नासिकायाः संज्ञायां टीटञ्नाटज्भ्राटचः (5.2.31)
+Pāṭha: ashtadhyayi.com data.txt row i=52031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nate nAsikAyAH saMjYAyAM wIwaYnAwajBrawacaH',
     text_dev              = 'नते नासिकायाः संज्ञायां टीटञ्नाटज्भ्रटचः',
+    samagra_slp1          = "nAsikAyAH nate saMjYAyAmavAt wIwac-nAwac-BrawacaH",
+    samagra_dev           = "नासिकायाः नते संज्ञायामवात्  टीटच्-नाटच्-भ्रटचः",
     padaccheda_dev        = "नते नासिकायाः संज्ञायाम् टीटच्-नाटच्-भ्रटचः",
     why_dev               = "(सूत्रम् 5.2.31) नते नासिकायाः संज्ञायां टीटञ्नाटज्भ्राटचः।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: प्रज्ञा-आदिभ्यः च
 
 प्रज्ञादिभ्यश्च (5.4.38)
+Pāṭha: ashtadhyayi.com data.txt row i=54038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prajYAdiByaSca",
     text_dev              = "प्रज्ञादिभ्यश्च",
+    samagra_slp1          = "prajYAdiByaH aR",
+    samagra_dev           = "प्रज्ञादिभ्यः अण्",
     padaccheda_dev        = "प्रज्ञा-आदिभ्यः च",
     why_dev               = "(सूत्रम् 5.4.38) प्रज्ञादिभ्यश्च।",
     anuvritti_from        = ('4.1.76',),

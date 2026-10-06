@@ -4,6 +4,7 @@
 Padaccheda: ओजसः अहनि यत्-खौ
 
 ओजसोऽहनि यत्खौ (4.4.130)
+Pāṭha: ashtadhyayi.com data.txt row i=44130 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ojasohani yatKO',
     text_dev              = 'ओजसोऽहनि यत्खौ',
+    samagra_slp1          = "ojasaH ahani matvarTe Candasi saMjYAyAm yat-KO",
+    samagra_dev           = "ओजसः अहनि मत्वर्थे छन्दसि संज्ञायाम् यत्-खौ",
     padaccheda_dev        = "ओजसः अहनि यत्-खौ",
     why_dev               = "(सूत्रम् 4.4.130) ओजसोऽहनि यत्खौ।",
     anuvritti_from        = ('4.1.1',),

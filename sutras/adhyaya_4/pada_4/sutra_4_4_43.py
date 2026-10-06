@@ -4,6 +4,7 @@
 Padaccheda: समवायान् समवैति (क्रियापदम्)
 
 समवायान् समवैति (4.4.43)
+Pāṭha: ashtadhyayi.com data.txt row i=44043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samavAyAn samavEti",
     text_dev              = "समवायान् समवैति",
+    samagra_slp1          = "tat samavAyAn samavEti iti samarTAnAm praTamAt paraH Wak pratyayaH ",
+    samagra_dev           = "'तत् समवायान् समवैति' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः ।",
     padaccheda_dev        = "समवायान् समवैति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.43) समवायान् समवैति।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: न ऊनयति-ध्वनयति-एलयति-अर्दयतिभ्यः
 
 Krt suffix rule from dhatu: नोनयतिध्वनयत्येलयत्यर्दयतिभ्यः (51)
+Pāṭha: ashtadhyayi.com data.txt row i=31051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nonayatiDvanayatyelayatyardayatiByaH",
     text_dev              = "नोनयतिध्वनयत्येलयत्यर्दयतिभ्यः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH na Unayati-Dvanayati-elayati-ardayatiByaH luNi cleH caN Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः न ऊनयति-ध्वनयति-एलयति-अर्दयतिभ्यः लुङि च्लेः चङ् छन्दसि",
     padaccheda_dev        = "न ऊनयति-ध्वनयति-एलयति-अर्दयतिभ्यः",
     why_dev               = "धातोः [नोनयतिध्वनयत्येलयत्यर्दयतिभ्यः]-प्रत्ययः विहितः (३.१.51)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: मायायाम् अण्
 
 मायायामण् (4.4.124)
+Pāṭha: ashtadhyayi.com data.txt row i=44124 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mAyAyAmaR",
     text_dev              = "मायायामण्",
+    samagra_slp1          = "asurasya svam iti mAyAyAm Candasi saMjYAyAmaR",
+    samagra_dev           = "असुरस्य 'स्वम्' (इति) मायायाम् छन्दसि संज्ञायामण्",
     padaccheda_dev        = "मायायाम् अण्",
     why_dev               = "(सूत्रम् 4.4.124) मायायामण्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: तरति (क्रियापदम्)
 
 तरति (4.4.5)
+Pāṭha: ashtadhyayi.com data.txt row i=44005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tarati",
     text_dev              = "तरति",
+    samagra_slp1          = "tena tarati iti samarTAnAm praTamAt paraH Wak",
+    samagra_dev           = "'तेन तरति' (इति) समर्थानाम् प्रथमात् परः ठक्",
     padaccheda_dev        = "तरति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.5) तरति।",
     anuvritti_from        = ('4.1.1',),

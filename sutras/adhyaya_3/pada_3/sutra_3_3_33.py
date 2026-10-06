@@ -4,6 +4,7 @@
 Padaccheda: प्रथने वौ अशब्दे
 
 krt-suffix rule: प्रथने वावशब्दे
+Pāṭha: ashtadhyayi.com data.txt row i=33033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "praTane vAvaSabde",
     text_dev              = "प्रथने वावशब्दे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm praTane vO aSabde kft GaY straH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् प्रथने वौ अशब्दे कृत् घञ् स्त्रः",
     padaccheda_dev        = "प्रथने वौ अशब्दे",
     why_dev               = "धातोः प्रत्ययः (३.3.33)।",
     anuvritti_from        = ('3.1.1',),

@@ -10,6 +10,7 @@ E.g. *devadattam rādhyati* (he satisfies Devadatta).
 
 *Engine:* tags bearing ``"rADA_viprazna"`` get ``"karman"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'rADIkzyoryasya vipraSnaH',
     text_dev             = 'राधीक्ष्योर्यस्य विप्रश्नः',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake rAD-IkzyoH yasya vipraSnaH sampradAnam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके राध्-ईक्ष्योः यस्य विप्रश्नः सम्प्रदानम्",
     padaccheda_dev       = "राध-ईक्ष्योः / यस्य / विप्रश्नः",
     why_dev              = (
         "राध्-ईक्ष्-धात्वोः यस्य विप्रश्नः (जिज्ञासा/साधनम्) तत् कर्म-कारक-संज्ञकम्। "

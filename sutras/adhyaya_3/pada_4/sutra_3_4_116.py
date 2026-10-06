@@ -8,6 +8,7 @@ Two operational paths:
 
 cond (āśīr-liṅ path): ``state.meta["ashir_liG"]`` is set AND a tiṅ ādeśa
   (tagged ``tin_adesha_3_4_78``) without ``3_4_116_ardhadhatuka_done`` exists.
+Pāṭha: ashtadhyayi.com data.txt row i=34116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -77,6 +78,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "liNASizi",
     text_dev              = "लिङाशिषि",
+    samagra_slp1          = "ASizi liN tiN ArDaDAtukam",
+    samagra_dev           = "आशिषि लिङ् तिङ् आर्धधातुकम्",
     padaccheda_dev        = "लिङ् आशिषि",
     why_dev               = (
         "आशीर्-लिङि तिङ्-आदेशः आर्धधातुकः (न सार्वधातुकः) — "

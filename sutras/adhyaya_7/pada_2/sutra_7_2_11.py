@@ -4,6 +4,7 @@
 Padaccheda: श्रि-उकः किति
 
 श्र्युकः किति (7.2.11)
+Pāṭha: ashtadhyayi.com data.txt row i=72011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SryukaH kiti",
     text_dev              = "श्र्युकः किति",
+    samagra_slp1          = "aNgasya SryukaH kiti na iw ekAcaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य श्र्युकः किति न इट् एकाचः",
     padaccheda_dev        = "श्रि-उकः किति",
     why_dev               = "(सूत्रम् 7.2.11) श्र्युकः किति।",
     anuvritti_from        = ('7.1.1',),

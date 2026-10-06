@@ -4,6 +4,7 @@
 Padaccheda: किमः क्षेपे
 
 किमः क्षेपे (5.4.70)
+Pāṭha: ashtadhyayi.com data.txt row i=54070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kimaH kzepe",
     text_dev              = "किमः क्षेपे",
+    samagra_slp1          = "kimaH kzepe samAsAntAH na",
+    samagra_dev           = "किमः क्षेपे समासान्ताः न",
     padaccheda_dev        = "किमः क्षेपे",
     why_dev               = "(सूत्रम् 5.4.70) किमः क्षेपे।",
     anuvritti_from        = ('5.4.68',),

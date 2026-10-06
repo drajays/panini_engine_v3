@@ -15,6 +15,7 @@ mithyā kurvīta — he practises doing falsely / he habitually does wrong.
 stamp "Atmanepada_1_3_71" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _KR_ROOTS carries the tag "miTyA_upapada" and "AByAsa_usage". No arm flags
 (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -62,6 +63,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='miTyopapadAt kfYoByAse',
     text_dev='मिथ्योपपदात् कृञोऽभ्यासे',
+    samagra_slp1="miTyA upapadAt kfYaH aByAse Atmanepadam ReH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="मिथ्या उपपदात् कृञः अभ्यासे आत्मनेपदम् णेः",
     padaccheda_dev=(
         "मिथ्या-उपपदात् (पञ्चमी-एकवचन) / कृञः (षष्ठी-एकवचन) / अभ्यासे (सप्तमी-एकवचन)"
     ),

@@ -11,6 +11,7 @@ Narrow v3 (**वृकभयम्** ``…/separated_prakriyas/prakriya_39_*.jso
     ``samjna_registry['2.1.37_paYcamI_bhayena_prakriya_39']``.
 
 No ``varṇa`` mutation (recipe gate only).
+Pāṭha: ashtadhyayi.com data.txt row i=21037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='paYcamI Bayena',
     text_dev='पञ्चमी भयेन',
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH paYcamI Bayena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः पञ्चमी भयेन",
     padaccheda_dev="पञ्चमी / भयेन",
     why_dev="पञ्चम्यन्तैः भयेन सह तत्पुरुषः (*prakriya_39*, **वृकभयम्**)।",
     anuvritti_from=("2.1.36",),

@@ -4,6 +4,7 @@
 Padaccheda: यञ्-इञोः च
 
 यञिञोश्च (4.1.101)
+Pāṭha: ashtadhyayi.com data.txt row i=41101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yaYiYoSca",
     text_dev              = "यञिञोश्च",
+    samagra_slp1          = "tasya gotre apatyam iti yaY-iYoH Pak",
+    samagra_dev           = "'तस्य गोत्रे अपत्यम्' (इति) यञ्-इञोः  फक्",
     padaccheda_dev        = "यञ्-इञोः च",
     why_dev               = "(सूत्रम् 4.1.101) यञिञोश्च।",
     anuvritti_from        = ('4.1.1',),

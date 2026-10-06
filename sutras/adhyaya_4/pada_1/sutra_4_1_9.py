@@ -4,6 +4,7 @@
 Padaccheda: टाप् ऋचि
 
 टाबृचि (4.1.9)
+Pāṭha: ashtadhyayi.com data.txt row i=41009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "wAbfci",
     text_dev              = "टाबृचि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm wAp fci NIp pAdaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् टाप् ऋचि ङीप् पादः",
     padaccheda_dev        = "टाप् ऋचि",
     why_dev               = "(सूत्रम् 4.1.9) टाबृचि।",
     anuvritti_from        = ('4.1.1',),

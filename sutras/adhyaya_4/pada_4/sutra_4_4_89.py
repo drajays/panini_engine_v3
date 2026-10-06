@@ -4,6 +4,7 @@
 Padaccheda: संज्ञायाम् धेनुष्या
 
 संज्ञायां धेनुष्या (4.4.89)
+Pāṭha: ashtadhyayi.com data.txt row i=44089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYAyAM DenuzyA",
     text_dev              = "संज्ञायां धेनुष्या",
+    samagra_slp1          = "saMjYAyAM DenuzyA nipAtyate",
+    samagra_dev           = "संज्ञायां धेनुष्या (निपात्यते)",
     padaccheda_dev        = "संज्ञायाम् धेनुष्या",
     why_dev               = "(सूत्रम् 4.4.89) संज्ञायां धेनुष्या।",
     anuvritti_from        = ('4.1.1',),

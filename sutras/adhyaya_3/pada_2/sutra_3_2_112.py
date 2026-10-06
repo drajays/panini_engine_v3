@@ -4,6 +4,7 @@
 Padaccheda: अभिज्ञावचने लृट्
 
 krt-suffix rule: अभिज्ञावचने लृट् (112)
+Pāṭha: ashtadhyayi.com data.txt row i=32112 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aBijYAvacane lfw",
     text_dev              = "अभिज्ञावचने लृट्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte aBijYAvacane lfw kft anadyatane",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते अभिज्ञावचने लृट् कृत् अनद्यतने",
     padaccheda_dev        = "अभिज्ञावचने लृट्",
     why_dev               = "धातोः कृत्-प्रत्ययः [अभिज्ञावचने लृट्] विहितः (३.२.112)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

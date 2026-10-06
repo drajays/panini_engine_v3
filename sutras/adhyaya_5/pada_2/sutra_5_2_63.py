@@ -4,6 +4,7 @@
 Padaccheda: तत्र कुशलः पथः
 
 तत्र कुशलः पथः (5.2.63)
+Pāṭha: ashtadhyayi.com data.txt row i=52063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tatra kuSalaH paTaH",
     text_dev              = "तत्र कुशलः पथः",
+    samagra_slp1          = "tatra kuSalaH iti paTaH vun",
+    samagra_dev           = "'तत्र कुशलः' (इति) पथः वुन्",
     padaccheda_dev        = "तत्र कुशलः पथः",
     why_dev               = "(सूत्रम् 5.2.63) तत्र कुशलः पथः।",
     anuvritti_from        = ('4.1.82',),

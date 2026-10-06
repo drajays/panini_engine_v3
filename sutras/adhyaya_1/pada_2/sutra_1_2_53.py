@@ -16,6 +16,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'tadaSizyaM saMjYApramARatvAt',
     text_dev                = 'तदशिष्यं संज्ञाप्रमाणत्वात्',
+    samagra_slp1            = "tat a-Sizyam saMjYA-pramARatvAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "तत् अ-शिष्यम् संज्ञा-प्रमाणत्वात्",
     padaccheda_dev          = "तत् / अशिष्यम् / संज्ञा-प्रमाणत्वात्",
     why_dev                 = (
         "संज्ञैव प्रमाणम् इति कृत्वा तस्य पुनः शासनम् अनावश्यकम् — "

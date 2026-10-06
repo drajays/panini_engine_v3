@@ -4,6 +4,7 @@
 Padaccheda: शक-धृष-ज्ञा-ग्ला-घट-रभ-लभ-क्रम-सह-अर्ह-अस्ति-अर्थेषु तुमुँन्
 
 krt-suffix rule: शकधृषज्ञाग्लाघटरभलभक्रमसहार्हास्त्यर्थेषु तुमुन्
+Pāṭha: ashtadhyayi.com data.txt row i=34065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SakaDfzajYAglAGawaraBalaBakramasahArhAstyarTezu tumun",
     text_dev              = "शकधृषज्ञाग्लाघटरभलभक्रमसहार्हास्त्यर्थेषु तुमुन्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH Saka-Dfza-jYA-glA-Gawa-raBa-laBa-krama-saha-arha-asti-arTezu tumun kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः शक-धृष-ज्ञा-ग्ला-घट-रभ-लभ-क्रम-सह-अर्ह-अस्ति-अर्थेषु तुमुन् कृत्",
     padaccheda_dev        = "शक-धृष-ज्ञा-ग्ला-घट-रभ-लभ-क्रम-सह-अर्ह-अस्ति-अर्थेषु तुमुँन्",
     why_dev               = "धातोः प्रत्ययः (३.4.65)।",
     anuvritti_from        = ('3.1.1',),

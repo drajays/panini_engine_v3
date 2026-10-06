@@ -21,6 +21,7 @@ blocked when the *lopa* is named *luk* / *ślu* / *lup*.
 (next to **1.1.60** / **1.1.61**).  Individual *vidhi* *cond*/*act* still encode
 their own phonology; this gate documents that the interpretive principle is in
 force and is available for future checks via ``pratyayalakshanam_paribhasha_is_active``.
+Pāṭha: ashtadhyayi.com data.txt row i=11062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.PARIBHASHA,
     text_slp1      = 'pratyayalope pratyayalakzaRam',
     text_dev       = 'प्रत्ययलोपे प्रत्ययलक्षणम्',
+    samagra_slp1   = "pratyayalope pratyayalakzaRam",
+    samagra_dev    = "प्रत्ययलोपे प्रत्ययलक्षणम्",
     padaccheda_dev = (
         "प्रत्ययलोपे (सप्तमी-एकवचनम्) / प्रत्ययलक्षणम् (प्रथमा-एकवचनम्)"
     ),

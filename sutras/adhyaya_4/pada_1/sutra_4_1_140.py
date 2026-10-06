@@ -4,6 +4,7 @@
 Padaccheda: अ-पूर्वपदात् अन्यतरस्याम् यत्-ढकञौ
 
 अपूर्वपदादन्यतरस्यां यड्ढकञौ (4.1.140)
+Pāṭha: ashtadhyayi.com data.txt row i=41140 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "apUrvapadAdanyatarasyAM yaqQakaYO",
     text_dev              = "अपूर्वपदादन्यतरस्यां यड्ढकञौ",
+    samagra_slp1          = "tasya apatyam iti apUrvapadAt kulAt anyatarasyAm yat-QakaYO",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) अपूर्वपदात् कुलात् अन्यतरस्याम् यत्-ढकञौ",
     padaccheda_dev        = "अ-पूर्वपदात् अन्यतरस्याम् यत्-ढकञौ",
     why_dev               = "(सूत्रम् 4.1.140) अपूर्वपदादन्यतरस्यां यड्ढकञौ।",
     anuvritti_from        = ('4.1.1',),

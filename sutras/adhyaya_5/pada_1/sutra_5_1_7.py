@@ -4,6 +4,7 @@
 Padaccheda: खल-यव-माष-तिल-वृष-ब्रह्मणः च
 
 खलयवमाषतिलवृषब्रह्मणश्च (5.1.7)
+Pāṭha: ashtadhyayi.com data.txt row i=51007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "KalayavamAzatilavfzabrahmaRaSca",
     text_dev              = "खलयवमाषतिलवृषब्रह्मणश्च",
+    samagra_slp1          = "tasmE hitam iti Kala-yava-mAza-tila-vfza-brahmaRaH ca yat",
+    samagra_dev           = "'तस्मै हितम्' (इति) खल-यव-माष-तिल-वृष-ब्रह्मणः च यत्",
     padaccheda_dev        = "खल-यव-माष-तिल-वृष-ब्रह्मणः च",
     why_dev               = "(सूत्रम् 5.1.7) खलयवमाषतिलवृषब्रह्मणश्च।",
     anuvritti_from        = ('5.1.1',),

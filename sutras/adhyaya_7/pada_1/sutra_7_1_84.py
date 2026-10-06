@@ -1,7 +1,7 @@
 """
 7.1.84  दिव औत्  —  VIDHI (narrow for P022)
 
-Pāṭha (cross-check: ``sutrANi.tsv`` / ashtadhyayi-com ``data.txt`` i=70184):
+Pāṭha (cross-check: ``sutrANi.tsv`` / ashtadhyayi-com ``data.txt`` i=71084):
   *diva aut* — the stem **div** takes the substitute **auT** before a
 *sarvanāmasthāna* sup.
 
@@ -59,6 +59,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='diva Ot',
     text_dev='दिव औत्',
+    samagra_slp1="divaH aNgasya sO Ot",
+    samagra_dev="दिवः अङ्गस्य सौ औत्",
     padaccheda_dev="दिवः / औत्",
     why_dev="दिव्-शब्दस्य सर्वनामस्थान-सुपि औट्-आदेशः (द्यौः, P022)।",
     anuvritti_from=("7.1.1",),

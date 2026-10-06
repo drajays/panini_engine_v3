@@ -4,6 +4,7 @@
 Padaccheda: उपसर्गस्य अयतौ
 
 उपसर्गस्यायतौ (8.2.19)
+Pāṭha: ashtadhyayi.com data.txt row i=82019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upasargasyAyatO",
     text_dev              = "उपसर्गस्यायतौ",
+    samagra_slp1          = "padasya pUrvatrAsidDam upasargasya ayatO raH laH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् उपसर्गस्य अयतौ रः लः",
     padaccheda_dev        = "उपसर्गस्य अयतौ",
     why_dev               = "(सूत्रम् 8.2.19) उपसर्गस्यायतौ।",
     anuvritti_from        = ('8.1.1',),

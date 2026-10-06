@@ -4,6 +4,7 @@
 Padaccheda: ई (लुप्तप्रथमान्तनिर्देशः) च गणः
 
 ई च गणः (7.4.97)
+Pāṭha: ashtadhyayi.com data.txt row i=74097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "I ca gaRaH",
     text_dev              = "ई च गणः",
+    samagra_slp1          = "aNgasya aByAsasya I ca gaRaH caNpare anaglope at",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य ई च गणः चङ्परे अनग्लोपे अत्",
     padaccheda_dev        = "ई (लुप्तप्रथमान्तनिर्देशः) च गणः",
     why_dev               = "(सूत्रम् 7.4.97) ई च गणः।",
     anuvritti_from        = ('7.1.1',),

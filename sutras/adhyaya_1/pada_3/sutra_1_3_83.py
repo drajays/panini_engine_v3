@@ -13,6 +13,7 @@
 stamp "Atmanepada_1_3_83" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _RAM_ROOTS carries any of "vi_prefix", "A_prefix", "pari_prefix".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -61,6 +62,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="vyANpariByo ramaH",
     text_dev="व्याङ्परिभ्यो रमः",
+    samagra_slp1="vi-AN-pariByaH ramaH kartari parasmEpadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="वि-आङ्-परिभ्यः रमः कर्तरि परस्मैपदम्",
     padaccheda_dev="वि-आङ्-परिभ्यः (पञ्चमी-बहुवचन) / रमः (षष्ठी-एकवचन)",
     why_dev=(
         "वि-आ-परि-पूर्वकस्य रम्-धातोः आत्मनेपदम् — "

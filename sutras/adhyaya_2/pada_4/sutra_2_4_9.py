@@ -7,6 +7,7 @@ Padaccheda: येषाम् / च / विरोधः / शाश्वत�
 opposition also take ekavacana.
 
 Engine: sets gate "2_4_9_virodha_sasvatika_ekavacana".
+Pāṭha: ashtadhyayi.com data.txt row i=24009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1      = 'yezAM ca viroDaH SASvatikaH',
     text_dev       = 'येषां च विरोधः शाश्वतिकः',
+    samagra_slp1   = "yezAm ca viroDaH SASvatikaH ekavacanam dvandvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "येषाम् च विरोधः शाश्वतिकः एकवचनम् द्वन्द्वः",
     padaccheda_dev = "येषाम् / च / विरोधः / शाश्वतिकः",
     why_dev        = "शाश्वत-विरोध-युक्त-द्वन्द्वे एकवचनम्।",
     anuvritti_from = ("2.4.1", "2.4.2"),

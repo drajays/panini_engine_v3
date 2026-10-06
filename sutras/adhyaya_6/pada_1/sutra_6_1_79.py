@@ -4,6 +4,7 @@
 Padaccheda: वान्तः यि प्रत्यये
 
 वान्तो यि प्रत्यये (6.1.79)
+Pāṭha: ashtadhyayi.com data.txt row i=61079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vAnto yi pratyaye",
     text_dev              = "वान्तो यि प्रत्यये",
+    samagra_slp1          = "ecaH yi-pratyaye vAntaH saMhiyAtAm",
+    samagra_dev           = "एचः यि-प्रत्यये वान्तः संहियाताम्",
     padaccheda_dev        = "वान्तः यि प्रत्यये",
     why_dev               = "(सूत्रम् 6.1.79) वान्तो यि प्रत्यये।",
     anuvritti_from        = ('6.1.1',),

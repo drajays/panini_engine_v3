@@ -4,6 +4,7 @@
 Padaccheda: विभाषा उदरे
 
 विभाषोदरे (6.3.88)
+Pāṭha: ashtadhyayi.com data.txt row i=63088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzodare",
     text_dev              = "विभाषोदरे",
+    samagra_slp1          = "uttarapade viBAzA udare saH samAnasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे विभाषा उदरे सः समानस्य",
     padaccheda_dev        = "विभाषा उदरे",
     why_dev               = "(सूत्रम् 6.3.88) विभाषोदरे।",
     anuvritti_from        = ('6.1.1',),

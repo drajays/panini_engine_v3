@@ -151,6 +151,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'halAdiH SezaH',
     text_dev       = 'हलादिः शेषः',
+    samagra_slp1   = "aByAsasya AdiH hal SezaH",
+    samagra_dev    = "अभ्यासस्य आदिः हल् शेषः",
     padaccheda_dev = "हलादिः / शेषः",
     why_dev        = (
         "अभ्यासे हलादिः एव शेषः (ग्लास-बॉक्स्: द्वित्व-प्रकरणे); प०३७ च ``Iw``→``I``।"

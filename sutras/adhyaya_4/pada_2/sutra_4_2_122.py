@@ -4,6 +4,7 @@
 Padaccheda: प्रस्थ-पुर-वह-अन्तात् च
 
 प्रस्थपुरवहान्ताच्च (4.2.122)
+Pāṭha: ashtadhyayi.com data.txt row i=42122 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prasTapuravahAntAcca",
     text_dev              = "प्रस्थपुरवहान्ताच्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA prasTa-pura-vaha-antAt ca vfdDAt vuY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा प्रस्थ-पुर-वह-अन्तात् च वृद्धात् वुञ्",
     padaccheda_dev        = "प्रस्थ-पुर-वह-अन्तात् च",
     why_dev               = "(सूत्रम् 4.2.122) प्रस्थपुरवहान्ताच्च।",
     anuvritti_from        = ('4.1.1',),

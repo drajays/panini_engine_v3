@@ -4,6 +4,7 @@
 Padaccheda: कृपः रः लः
 
 कृपो रो लः (8.2.18)
+Pāṭha: ashtadhyayi.com data.txt row i=82018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kfpo ro laH",
     text_dev              = "कृपो रो लः",
+    samagra_slp1          = "padasya pUrvatrAsidDam kfpaH raH laH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् कृपः रः लः",
     padaccheda_dev        = "कृपः रः लः",
     why_dev               = "(सूत्रम् 8.2.18) कृपो रो लः।",
     anuvritti_from        = ('8.1.1',),

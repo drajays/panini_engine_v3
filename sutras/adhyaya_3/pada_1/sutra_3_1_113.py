@@ -4,6 +4,7 @@
 Padaccheda: मृजेः विभाषा
 
 Krt suffix rule from dhatu: मृजेर्विभाषा (113)
+Pāṭha: ashtadhyayi.com data.txt row i=31113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mfjerviBAzA",
     text_dev              = "मृजेर्विभाषा",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH mfjeH viBAzA kft kyap",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः मृजेः विभाषा कृत् क्यप्",
     padaccheda_dev        = "मृजेः विभाषा",
     why_dev               = "धातोः [मृजेर्विभाषा]-प्रत्ययः विहितः (३.१.113)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

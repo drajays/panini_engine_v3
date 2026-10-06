@@ -4,6 +4,7 @@
 Padaccheda: आश्चर्यम् अनित्ये
 
 आश्चर्यमनित्ये (6.1.147)
+Pāṭha: ashtadhyayi.com data.txt row i=61147 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AScaryamanitye",
     text_dev              = "आश्चर्यमनित्ये",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH AScaryam anitye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः आश्चर्यम् अनित्ये",
     padaccheda_dev        = "आश्चर्यम् अनित्ये",
     why_dev               = "(सूत्रम् 6.1.147) आश्चर्यमनित्ये।",
     anuvritti_from        = ('6.1.1',),

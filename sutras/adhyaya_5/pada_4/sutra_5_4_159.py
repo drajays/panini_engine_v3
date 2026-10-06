@@ -4,6 +4,7 @@
 Padaccheda: नाडी-तन्त्र्योः स्वाङ्गे
 
 नाडीतन्त्र्योः स्वाङ्गे (5.4.159)
+Pāṭha: ashtadhyayi.com data.txt row i=54159 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nAqItantryoH svANge",
     text_dev              = "नाडीतन्त्र्योः स्वाङ्गे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA nAqItantryoH svANge bahuvrIhO kap na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा नाडीतन्त्र्योः स्वाङ्गे बहुव्रीहौ कप् न",
     padaccheda_dev        = "नाडी-तन्त्र्योः स्वाङ्गे",
     why_dev               = "(सूत्रम् 5.4.159) नाडीतन्त्र्योः स्वाङ्गे।",
     anuvritti_from        = ('5.4.68',),

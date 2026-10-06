@@ -4,6 +4,7 @@
 Padaccheda: बह्वचः मनुष्यनाम्नः ठच् वा
 
 बह्वचो मनुष्यनाम्नष्ठज्वा (5.3.78)
+Pāṭha: ashtadhyayi.com data.txt row i=53078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahvaco manuzyanAmnazWajvA",
     text_dev              = "बह्वचो मनुष्यनाम्नष्ठज्वा",
+    samagra_slp1          = "anukampAyAm nItO tadyuktAt bahvacaH manuzyanAmnaH Wac vA",
+    samagra_dev           = "अनुकम्पायाम् नीतौ तद्युक्तात् बह्वचः मनुष्यनाम्नः ठच् वा",
     padaccheda_dev        = "बह्वचः मनुष्यनाम्नः ठच् वा",
     why_dev               = "(सूत्रम् 5.3.78) बह्वचो मनुष्यनाम्नष्ठज्वा।",
     anuvritti_from        = ('5.3.70',),

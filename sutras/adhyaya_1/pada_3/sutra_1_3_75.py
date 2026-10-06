@@ -17,6 +17,7 @@ stamp "Atmanepada_1_3_75" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _YAM_ROOTS carries one of {sam_prefix, ut_prefix, A_prefix} and does NOT
 carry "granTa_usage". No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -67,6 +68,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='samudANByo yamogranTe',
     text_dev='समुदाङ्भ्यो यमोऽग्रन्थे',
+    samagra_slp1="sam-ut-ANByaH yamaH agranTe Atmanepadam kartraBiprAye kriyAPale",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="सम्-उत्-आङ्भ्यः यमः अग्रन्थे आत्मनेपदम् कर्त्रभिप्राये क्रियाफले",
     padaccheda_dev=(
         "सम्-उत्-आङ्भ्यः (पञ्चमी-बहुवचन) / यमः (षष्ठी-एकवचन) "
         "/ अग्रन्थे (सप्तमी-एकवचन)"

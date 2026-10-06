@@ -36,6 +36,7 @@ Engine (narrow, mechanically blind):
   sūtras (e.g. 6.3.82).
 
 This does not implement 6.3.82 or full internal *sup*; it is an auditable slice.
+Pāṭha: ashtadhyayi.com data.txt row i=22028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -138,6 +139,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'tena saheti tulyayoge',
     text_dev       = 'तेन सहेति तुल्ययोगे',
+    samagra_slp1   = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tena saha iti tulyayoge anekam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तेन सह इति तुल्ययोगे अनेकम्",
     padaccheda_dev = (
         "तेन (तृतीया-एकवचनम्), सह (अव्ययम्), इति (अव्ययम्), "
         "तुल्ययोगे (सप्तमी-एकवचनम्)"

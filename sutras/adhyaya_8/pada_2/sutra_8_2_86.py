@@ -4,6 +4,7 @@
 Padaccheda: गुरोः अन्-ऋतः अन्-अन्त्यस्य अपि एकैकस्य प्राचाम्
 
 गुरोरनृतोऽनन्त्यस्याप्येकैकस्य प्राचाम् (8.2.86)
+Pāṭha: ashtadhyayi.com data.txt row i=82086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'guroranftonantyasyApyekEkasya prAcAm',
     text_dev              = 'गुरोरनृतोऽनन्त्यस्याप्येकैकस्य प्राचाम्',
+    samagra_slp1          = "dUrAt hute vAkyasya anftaH anantyasya api ekEkasya guroH prAcAm plutaH udAttaH",
+    samagra_dev           = "दूरात् हुते वाक्यस्य अनृतः अनन्त्यस्य अपि एकैकस्य गुरोः प्राचाम् प्लुतः उदात्तः",
     padaccheda_dev        = "गुरोः अन्-ऋतः अन्-अन्त्यस्य अपि एकैकस्य प्राचाम्",
     why_dev               = "(सूत्रम् 8.2.86) गुरोरनृतोऽनन्त्यस्याप्येकैकस्य प्राचाम्।",
     anuvritti_from        = ('8.1.1',),

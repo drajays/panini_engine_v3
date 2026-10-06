@@ -10,6 +10,7 @@ a lord's command (*īśvaravacana*).
 Engine: registers the adhika/īśvaravacana→saptamī gate. ``cond`` checks only
 the gate flag, never vibhakti coordinates (CONSTITUTION Art. 2).
 ``r1_form_identity_exempt=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=23009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'yasmAdaDikaM yasya ceSvaravacanaM tatra saptamI',
     text_dev              = 'यस्मादधिकं यस्य चेश्वरवचनं तत्र सप्तमी',
+    samagra_slp1          = "anaBihite yasmAt aDikam yasya ca ISvaravacanam tatra saptamI karmapravacanIya-yukte",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते यस्मात् अधिकम् यस्य च ईश्वरवचनम् तत्र सप्तमी कर्मप्रवचनीय-युक्ते",
     padaccheda_dev        = "यस्मात् / अधिकम् / यस्य / च / ईश्वरवचनम् / तत्र / सप्तमी",
     why_dev               = (
         "अधिकत्वे ईश्वरवचने च सप्तमी-विभक्तिः — "

@@ -11,6 +11,7 @@
 *Engine:* sets paribhāṣā gate for *adhi/pari-anarthaka*.
 ``cond`` never reads vibhakti/vacana/lakāra/surface.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=14093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -36,6 +37,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'aDiparI anarTakO',
     text_dev             = 'अधिपरी अनर्थकौ',
+    samagra_slp1         = "AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH karmapravacanIyAH aDi-parI anarTakO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः कर्मप्रवचनीयाः अधि-परी अनर्थकौ",
     padaccheda_dev       = "अधि-परी / अनर्थकौ",
     why_dev              = (
         "अनर्थक-रूपेण वर्तमानौ 'अधि' 'परि' कर्मप्रवचनीय-संज्ञकौ (१.४.८३-अधिकार)।"

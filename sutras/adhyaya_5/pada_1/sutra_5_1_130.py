@@ -4,6 +4,7 @@
 Padaccheda: हायन-अन्त-युव-आदिभ्यः अण्
 
 हायनान्तयुवादिभ्योऽण् (5.1.130)
+Pāṭha: ashtadhyayi.com data.txt row i=51130 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'hAyanAntayuvAdiByoR',
     text_dev              = 'हायनान्तयुवादिभ्योऽण्',
+    samagra_slp1          = "tasya BAvaH karmaci ca iti hAyanAnta-yuvAdiByaH aR",
+    samagra_dev           = "'तस्य भावः, कर्मचि च' (इति) हायनान्त-युवादिभ्यः अण्",
     padaccheda_dev        = "हायन-अन्त-युव-आदिभ्यः अण्",
     why_dev               = "(सूत्रम् 5.1.130) हायनान्तयुवादिभ्योऽण्।",
     anuvritti_from        = ('5.1.120',),

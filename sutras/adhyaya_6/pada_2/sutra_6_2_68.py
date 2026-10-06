@@ -4,6 +4,7 @@
 Padaccheda: पापम् च शिल्पिनि
 
 पापं च शिल्पिनि (6.2.68)
+Pāṭha: ashtadhyayi.com data.txt row i=62068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pApaM ca Silpini",
     text_dev              = "पापं च शिल्पिनि",
+    samagra_slp1          = "AdiH udAttaH pApam ca Silpini pUrvapadam viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः पापम् च शिल्पिनि पूर्वपदम् विभाषा",
     padaccheda_dev        = "पापम् च शिल्पिनि",
     why_dev               = "(सूत्रम् 6.2.68) पापं च शिल्पिनि।",
     anuvritti_from        = ('6.1.1',),

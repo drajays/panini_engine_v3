@@ -4,6 +4,7 @@
 Padaccheda: संज्ञायाम् ललाट-कुक्‍कुट्यौ पश्यति (क्रियापदम्)
 
 संज्ञायां ललाटकुक्कुट्यौ पश्यति (4.4.46)
+Pāṭha: ashtadhyayi.com data.txt row i=44046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYAyAM lalAwakukkuwyO paSyati",
     text_dev              = "संज्ञायां ललाटकुक्कुट्यौ पश्यति",
+    samagra_slp1          = "tat lalAwakukuwyO paSyati iti saMjYAyAm samarTAnAM praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् ललाटकुकुट्यौ पश्यति' इति संज्ञायाम् समर्थानां प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "संज्ञायाम् ललाट-कुक्‍कुट्यौ पश्यति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.46) संज्ञायां ललाटकुक्कुट्यौ पश्यति।",
     anuvritti_from        = ('4.1.1',),

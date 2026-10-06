@@ -4,6 +4,7 @@
 Padaccheda: एः अन्-एक-अचः अ-संयोग-पूर्वस्य
 
 एरनेकाचोऽसंयोगपूर्वस्य (6.4.82)
+Pāṭha: ashtadhyayi.com data.txt row i=64082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -53,6 +54,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'eranekAcosaMyogapUrvasya',
     text_dev              = 'एरनेकाचोऽसंयोगपूर्वस्य',
+    samagra_slp1          = "anekAcaH aNgasya asaMyogapUrvasya eH DAtoH aci yaR",
+    samagra_dev           = "अनेकाचः अङ्गस्य असंयोगपूर्वस्य एः धातोः अचि यण्",
     padaccheda_dev        = "एः अन्-एक-अचः अ-संयोग-पूर्वस्य",
     why_dev               = "(सूत्रम् 6.4.82) एरनेकाचोऽसंयोगपूर्वस्य।",
     anuvritti_from        = ('6.1.1',),

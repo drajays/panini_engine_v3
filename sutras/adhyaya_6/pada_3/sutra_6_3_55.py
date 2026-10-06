@@ -4,6 +4,7 @@
 Padaccheda: ऋचः शे
 
 ऋचः शे (6.3.55)
+Pāṭha: ashtadhyayi.com data.txt row i=63055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "fcaH Se",
     text_dev              = "ऋचः शे",
+    samagra_slp1          = "uttarapade fcaH Se treH pAdasya pad",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे ऋचः शे त्रेः पादस्य पद्",
     padaccheda_dev        = "ऋचः शे",
     why_dev               = "(सूत्रम् 6.3.55) ऋचः शे।",
     anuvritti_from        = ('6.1.1',),

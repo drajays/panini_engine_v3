@@ -12,6 +12,7 @@ Engine:
   - Requires a following pratyaya Term with upadesha_slp1 == "si~c".
   - Guards re-entry via dhātu meta["aniT_1_2_14"].
   - Tags the dhātu "aniT" (no surface change → r1_form_identity_exempt=True).
+Pāṭha: ashtadhyayi.com data.txt row i=12014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -62,6 +63,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hanaH sic",
     text_dev              = "हनः सिच्",
+    samagra_slp1          = "hanaH sic kit Atmanepadezu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "हनः सिच् कित् आत्मनेपदेषु",
     padaccheda_dev        = "हनः / सिच् (अनिट्)",
     why_dev               = ("√हन्-धातुः सिच्-परः अनिट् — "
                              "लुङि इडागमः न भवति।"),

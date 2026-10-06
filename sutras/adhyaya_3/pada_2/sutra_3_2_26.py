@@ -4,6 +4,7 @@
 Padaccheda: फलेग्रहिः आत्मम्भरिः च
 
 krt-suffix rule: फलेग्रहिरात्मम्भरिश्च (26)
+Pāṭha: ashtadhyayi.com data.txt row i=32026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "PalegrahirAtmamBariSca",
     text_dev              = "फलेग्रहिरात्मम्भरिश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH PalegrahiH AtmamBariH ca kft karmaRi anupasarge supi in",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः फलेग्रहिः आत्मम्भरिः च कृत् कर्मणि अनुपसर्गे सुपि इन्",
     padaccheda_dev        = "फलेग्रहिः आत्मम्भरिः च",
     why_dev               = "धातोः कृत्-प्रत्ययः [फलेग्रहिरात्मम्भरिश्च] विहितः (३.२.26)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: उञि · च · पदे
 
 उञि च पदे (8.3.21)
+Pāṭha: ashtadhyayi.com data.txt row i=83021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uYi ca pade",
     text_dev              = "उञि च पदे",
+    samagra_slp1          = "apUrvasya padasya yvoH lopaH uYi",
+    samagra_dev           = "अपूर्वस्य पदस्य य्वोः लोपः उञि",
     padaccheda_dev        = "उञि · च · पदे",
     why_dev               = "(सूत्रम् 8.3.21) उञि च पदे।",
     anuvritti_from        = ('8.1.1',),

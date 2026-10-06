@@ -4,6 +4,7 @@
 Padaccheda: अन्तः
 
 अन्तः (6.2.179)
+Pāṭha: ashtadhyayi.com data.txt row i=62179 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "antaH",
     text_dev              = "अन्तः",
+    samagra_slp1          = "uttarapadAdiH antaH upasargAt vanam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः उपसर्गात् वनम्",
     padaccheda_dev        = "अन्तः",
     why_dev               = "(सूत्रम् 6.2.179) अन्तः।",
     anuvritti_from        = ('6.1.1',),

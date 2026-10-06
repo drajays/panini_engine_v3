@@ -4,6 +4,7 @@
 Padaccheda: जातु-यदोः लिङ्
 
 krt-suffix rule: जातुयदोर्लिङ्
+Pāṭha: ashtadhyayi.com data.txt row i=33147 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jAtuyadorliN",
     text_dev              = "जातुयदोर्लिङ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH jAtu-yadoH liN kft utApyoH anavakxpti-amarzayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः जातु-यदोः लिङ् कृत् उताप्योः अनवकॢप्ति-अमर्षयोः",
     padaccheda_dev        = "जातु-यदोः लिङ्",
     why_dev               = "धातोः प्रत्ययः (३.3.147)।",
     anuvritti_from        = ('3.1.1',),

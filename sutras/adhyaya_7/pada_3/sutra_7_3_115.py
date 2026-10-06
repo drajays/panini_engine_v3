@@ -4,6 +4,7 @@
 Padaccheda: विभाषा द्वितीया-तृतीयाभ्याम्
 
 विभाषा द्वितीयातृतीयाभ्याम् (7.3.115)
+Pāṭha: ashtadhyayi.com data.txt row i=73115 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA dvitIyAtftIyAByAm",
     text_dev              = "विभाषा द्वितीयातृतीयाभ्याम्",
+    samagra_slp1          = "dvitIyA-tftIyAByAm Niti supi syAw aNgasya hrasvaH ca viBAzA ",
+    samagra_dev           = "द्वितीया-तृतीयाभ्याम् ङिति सुपि स्याट् अङ्गस्य ह्रस्वः च विभाषा ।",
     padaccheda_dev        = "विभाषा द्वितीया-तृतीयाभ्याम्",
     why_dev               = "(सूत्रम् 7.3.115) विभाषा द्वितीयातृतीयाभ्याम्।",
     anuvritti_from        = ('7.1.1',),

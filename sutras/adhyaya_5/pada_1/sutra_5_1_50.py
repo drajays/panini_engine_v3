@@ -4,6 +4,7 @@
 Padaccheda: तद् हरति (क्रियापदम्) वहति (क्रियापदम्) आवहति (क्रियापदम्) भारात् वंश-आदिभ्यः
 
 तद्धरति वहत्यावहति भाराद्वंशादिभ्यः (5.1.50)
+Pāṭha: ashtadhyayi.com data.txt row i=51050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadDarati vahatyAvahati BArAdvaMSAdiByaH",
     text_dev              = "तद्धरति वहत्यावहति भाराद्वंशादिभ्यः",
+    samagra_slp1          = "tad harati vahati Avahati iti vaMSAdiByaH BArAt samarTAnAM praTamAt paraH WaY-pratyayaH",
+    samagra_dev           = "'तद् हरति, वहति, आवहति' (इति) वंशादिभ्यः भारात् समर्थानां प्रथमात् परः ठञ्-प्रत्ययः",
     padaccheda_dev        = "तद् हरति (क्रियापदम्) वहति (क्रियापदम्) आवहति (क्रियापदम्) भारात् वंश-आदिभ्यः",
     why_dev               = "(सूत्रम् 5.1.50) तद्धरति वहत्यावहति भाराद्वंशादिभ्यः।",
     anuvritti_from        = ('5.1.19',),

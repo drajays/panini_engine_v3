@@ -4,6 +4,7 @@
 Padaccheda: तेन एकदिक्
 
 तेनैकदिक् (4.3.112)
+Pāṭha: ashtadhyayi.com data.txt row i=43112 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tenEkadik",
     text_dev              = "तेनैकदिक्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA tena ekadik",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा तेन एकदिक्",
     padaccheda_dev        = "तेन एकदिक्",
     why_dev               = "(सूत्रम् 4.3.112) तेनैकदिक्।",
     anuvritti_from        = ('4.1.1',),

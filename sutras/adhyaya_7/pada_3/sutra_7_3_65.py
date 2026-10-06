@@ -4,6 +4,7 @@
 Padaccheda: ण्ये आवश्यके
 
 ण्य आवश्यके (7.3.65)
+Pāṭha: ashtadhyayi.com data.txt row i=73065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Rya AvaSyake",
     text_dev              = "ण्य आवश्यके",
+    samagra_slp1          = "aNgasya Rye AvaSyake cajoH ku na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ण्ये आवश्यके चजोः कु न",
     padaccheda_dev        = "ण्ये आवश्यके",
     why_dev               = "(सूत्रम् 7.3.65) ण्य आवश्यके।",
     anuvritti_from        = ('7.1.1',),

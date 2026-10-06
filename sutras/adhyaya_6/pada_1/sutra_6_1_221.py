@@ -4,6 +4,7 @@
 Padaccheda: ईवत्याः
 
 ईवत्याः (6.1.221)
+Pāṭha: ashtadhyayi.com data.txt row i=61221 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "IvatyAH",
     text_dev              = "ईवत्याः",
+    samagra_slp1          = "IvatyAH saMjYAyAm striyAm antaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "ईवत्याः संज्ञायाम् स्त्रियाम् अन्तः",
     padaccheda_dev        = "ईवत्याः",
     why_dev               = "(सूत्रम् 6.1.221) ईवत्याः।",
     anuvritti_from        = ('6.1.1',),

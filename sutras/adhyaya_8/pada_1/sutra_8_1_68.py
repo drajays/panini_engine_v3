@@ -4,6 +4,7 @@
 Padaccheda: स-गतिः अपि तिङ्
 
 सगतिरपि तिङ् (8.1.68)
+Pāṭha: ashtadhyayi.com data.txt row i=81068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sagatirapi tiN",
     text_dev              = "सगतिरपि तिङ्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO sagatiH api tiN kziyAyAm pUjanAt pUjitam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ सगतिः अपि तिङ् क्षियायाम् पूजनात् पूजितम्",
     padaccheda_dev        = "स-गतिः अपि तिङ्",
     why_dev               = "(सूत्रम् 8.1.68) सगतिरपि तिङ्।",
     anuvritti_from        = ('8.1.1',),

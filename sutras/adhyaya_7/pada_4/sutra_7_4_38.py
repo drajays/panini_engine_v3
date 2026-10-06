@@ -4,6 +4,7 @@
 Padaccheda: देवसुम्नयोः यजुषि काठके
 
 देवसुम्नयोर्यजुषि काठके (7.4.38)
+Pāṭha: ashtadhyayi.com data.txt row i=74038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "devasumnayoryajuzi kAWake",
     text_dev              = "देवसुम्नयोर्यजुषि काठके",
+    samagra_slp1          = "aNgasya devasumnayoH yajuzi kAWake kyaci Candasi At",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य देवसुम्नयोः यजुषि काठके क्यचि छन्दसि आत्",
     padaccheda_dev        = "देवसुम्नयोः यजुषि काठके",
     why_dev               = "(सूत्रम् 7.4.38) देवसुम्नयोर्यजुषि काठके।",
     anuvritti_from        = ('7.1.1',),

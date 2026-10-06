@@ -4,6 +4,7 @@
 Padaccheda: अवे यजः
 
 krt-suffix rule: अवे यजः (72)
+Pāṭha: ashtadhyayi.com data.txt row i=32072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ave yajaH",
     text_dev              = "अवे यजः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH ave yajaH kft supi api upasarge mantre Rvin",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः अवे यजः कृत् सुपि अपि उपसर्गे मन्त्रे ण्विन्",
     padaccheda_dev        = "अवे यजः",
     why_dev               = "धातोः कृत्-प्रत्ययः [अवे यजः] विहितः (३.२.72)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: वह्यम् करणम्
 
 Krt suffix rule from dhatu: वह्यं करणम् (102)
+Pāṭha: ashtadhyayi.com data.txt row i=31102 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vahyaM karaRam",
     text_dev              = "वह्यं करणम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH vahyam karaRam kft yat anupasarge",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः वह्यम् करणम् कृत् यत् अनुपसर्गे",
     padaccheda_dev        = "वह्यम् करणम्",
     why_dev               = "धातोः [वह्यं करणम्]-प्रत्ययः विहितः (३.१.102)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

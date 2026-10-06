@@ -16,6 +16,7 @@ carries the tag "sam_prefix" and also the tag "pratijYAna_usage" (indicating
 the promise/assent sense).
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="samaH pratijYAne",
     text_dev="समः प्रतिज्ञाने",
+    samagra_slp1="samaH pratijYAne Atmanepadam graH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="समः प्रतिज्ञाने आत्मनेपदम् ग्रः",
     padaccheda_dev="समः (पञ्चमी-एकवचन) / प्रतिज्ञाने (सप्तमी-एकवचन)",
     why_dev=(
         "सम्-पूर्वकस्य धातोः प्रतिज्ञान-अर्थे आत्मनेपदम् — "

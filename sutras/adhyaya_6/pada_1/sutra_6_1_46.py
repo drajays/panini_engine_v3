@@ -4,6 +4,7 @@
 Padaccheda: न व्यः लिटि
 
 न व्यो लिटि (6.1.46)
+Pāṭha: ashtadhyayi.com data.txt row i=61046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na vyo liwi",
     text_dev              = "न व्यो लिटि",
+    samagra_slp1          = "na vyaH liwi At ecaH upadeSe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "न व्यः लिटि आत् एचः उपदेशे",
     padaccheda_dev        = "न व्यः लिटि",
     why_dev               = "(सूत्रम् 6.1.46) न व्यो लिटि।",
     anuvritti_from        = ('6.1.1',),

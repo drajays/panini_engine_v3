@@ -15,6 +15,7 @@ Engine (narrow, mechanically blind):
   ``state.meta['2_2_10_arm']`` and tags a Term with ``nirdhaarana``
   indicating the singling-out genitive context.  When this gate fires, the
   ṣaṣṭhī-tatpuruṣa gate (2.2.8) is NOT set for this derivation.
+Pāṭha: ashtadhyayi.com data.txt row i=22010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -41,6 +42,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="na nirDAraRe",
     text_dev="न निर्धारणे",
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH na nirDAraRe zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः न निर्धारणे षष्ठी",
     padaccheda_dev="न / निर्धारणे",
     why_dev=(
         "निर्धारणे षष्ठी न समस्यते — कृष्णानां श्रेष्ठः न समस्यते।"

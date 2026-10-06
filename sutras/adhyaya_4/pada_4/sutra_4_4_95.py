@@ -4,6 +4,7 @@
 Padaccheda: हृदयस्य प्रियः
 
 हृदयस्य प्रियः (4.4.95)
+Pāṭha: ashtadhyayi.com data.txt row i=44095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hfdayasya priyaH",
     text_dev              = "हृदयस्य प्रियः",
+    samagra_slp1          = "hfdayasya priyaH iti saMjYAyAm samarTAnAm praTamAt paraH yat pratyayaH",
+    samagra_dev           = "'हृदयस्य प्रियः' (इति) संज्ञायाम् समर्थानाम् प्रथमात् परः यत् प्रत्ययः",
     padaccheda_dev        = "हृदयस्य प्रियः",
     why_dev               = "(सूत्रम् 4.4.95) हृदयस्य प्रियः।",
     anuvritti_from        = ('4.1.1',),

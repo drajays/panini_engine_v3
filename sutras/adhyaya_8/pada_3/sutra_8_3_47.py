@@ -4,6 +4,7 @@
 Padaccheda: अधः · शिरसी · पदे
 
 अधःशिरसी पदे (8.3.47)
+Pāṭha: ashtadhyayi.com data.txt row i=83047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDaHSirasI pade",
     text_dev              = "अधःशिरसी पदे",
+    samagra_slp1          = "aDaH-SirasoH samAse visarjanIyasya nityam saH pade anuttarapadasTasya",
+    samagra_dev           = "अधः-शिरसोः समासे विसर्जनीयस्य नित्यम् सः पदे, अनुत्तरपदस्थस्य",
     padaccheda_dev        = "अधः · शिरसी · पदे",
     why_dev               = "(सूत्रम् 8.3.47) अधःशिरसी पदे।",
     anuvritti_from        = ('8.1.1',),

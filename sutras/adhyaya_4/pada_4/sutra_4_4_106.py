@@ -4,6 +4,7 @@
 Padaccheda: ढः छन्दसि
 
 ढश्छन्दसि (4.4.106)
+Pāṭha: ashtadhyayi.com data.txt row i=44106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "QaSCandasi",
     text_dev              = "ढश्छन्दसि",
+    samagra_slp1          = "tatra sADuH iti saBAyAH Candasi saMjYAyAm QaH",
+    samagra_dev           = "'तत्र साधुः' (इति) सभायाः छन्दसि संज्ञायाम् ढः",
     padaccheda_dev        = "ढः छन्दसि",
     why_dev               = "(सूत्रम् 4.4.106) ढश्छन्दसि।",
     anuvritti_from        = ('4.1.1',),

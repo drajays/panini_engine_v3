@@ -4,6 +4,7 @@
 Padaccheda: वतोः इथुक्
 
 वतोरिथुक् (5.2.53)
+Pāṭha: ashtadhyayi.com data.txt row i=52053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vatoriTuk",
     text_dev              = "वतोरिथुक्",
+    samagra_slp1          = "tasya pUraRe iti qawi vatoH iTuk",
+    samagra_dev           = "'तस्य पूरणे' (इति) डटि वतोः इथुक्",
     padaccheda_dev        = "वतोः इथुक्",
     why_dev               = "(सूत्रम् 5.2.53) वतोरिथुक्।",
     anuvritti_from        = ('4.1.82',),

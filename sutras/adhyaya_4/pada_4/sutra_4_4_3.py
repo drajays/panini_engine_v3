@@ -4,6 +4,7 @@
 Padaccheda: संस्कृतम्
 
 संस्कृतम् (4.4.3)
+Pāṭha: ashtadhyayi.com data.txt row i=44003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMskftam",
     text_dev              = "संस्कृतम्",
+    samagra_slp1          = "tena saMskftam iti samarTAnAm praTamAt paraH Wak ",
+    samagra_dev           = "'तेन संस्कृतम्' (इति) समर्थानाम् प्रथमात् परः ठक् ।",
     padaccheda_dev        = "संस्कृतम्",
     why_dev               = "(सूत्रम् 4.4.3) संस्कृतम्।",
     anuvritti_from        = ('4.1.1',),

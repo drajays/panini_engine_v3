@@ -4,6 +4,7 @@
 Padaccheda: आयुधजीविभ्यः छः पर्वते
 
 आयुधजीविभ्यश्छः पर्वते (4.3.91)
+Pāṭha: ashtadhyayi.com data.txt row i=43091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AyuDajIviByaSCaH parvate",
     text_dev              = "आयुधजीविभ्यश्छः पर्वते",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA AyuDajIviByaH CaH parvate saH asya aBijanaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा आयुधजीविभ्यः छः पर्वते सः अस्य अभिजनः",
     padaccheda_dev        = "आयुधजीविभ्यः छः पर्वते",
     why_dev               = "(सूत्रम् 4.3.91) आयुधजीविभ्यश्छः पर्वते।",
     anuvritti_from        = ('4.1.1',),

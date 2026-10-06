@@ -4,6 +4,7 @@
 Padaccheda: अयःशूल-दण्डाजिनाभ्याम् ठक्-ठञौ
 
 अयःशूलदण्डाजिनाभ्यां ठक्ठञौ (5.2.76)
+Pāṭha: ashtadhyayi.com data.txt row i=52076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ayaHSUladaRqAjinAByAM WakWaYO",
     text_dev              = "अयःशूलदण्डाजिनाभ्यां ठक्ठञौ",
+    samagra_slp1          = "ayaHSUla-daRqAjinAByAmanvicCati iti Wak-WaYO",
+    samagra_dev           = "'अयःशूल-दण्डाजिनाभ्यामन्विच्छति' (इति) ठक्-ठञौ",
     padaccheda_dev        = "अयःशूल-दण्डाजिनाभ्याम् ठक्-ठञौ",
     why_dev               = "(सूत्रम् 5.2.76) अयःशूलदण्डाजिनाभ्यां ठक्ठञौ।",
     anuvritti_from        = ('4.1.82',),

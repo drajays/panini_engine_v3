@@ -4,6 +4,7 @@
 Padaccheda: यजध्वैनम् इति च
 
 यजध्वैनमिति च (7.1.43)
+Pāṭha: ashtadhyayi.com data.txt row i=71043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yajaDvEnamiti ca",
     text_dev              = "यजध्वैनमिति च",
+    samagra_slp1          = "aNgasya yajaDvEnam iti ca Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य यजध्वैनम् इति च छन्दसि",
     padaccheda_dev        = "यजध्वैनम् इति च",
     why_dev               = "(सूत्रम् 7.1.43) यजध्वैनमिति च।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: वस्न-क्रय-विक्रयात् ठन्
 
 वस्नक्रयविक्रयाट्ठन् (4.4.13)
+Pāṭha: ashtadhyayi.com data.txt row i=44013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vasnakrayavikrayAwWan",
     text_dev              = "वस्नक्रयविक्रयाट्ठन्",
+    samagra_slp1          = "tena jIvati iti vasnakrayavikrayAt Wan",
+    samagra_dev           = "'तेन जीवति' इति वस्नक्रयविक्रयात् ठन्",
     padaccheda_dev        = "वस्न-क्रय-विक्रयात् ठन्",
     why_dev               = "(सूत्रम् 4.4.13) वस्नक्रयविक्रयाट्ठन्।",
     anuvritti_from        = ('4.1.1',),

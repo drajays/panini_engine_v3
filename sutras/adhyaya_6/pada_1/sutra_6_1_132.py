@@ -4,6 +4,7 @@
 Padaccheda: एतद्-तदोः सु-लोपः अ-कोः अ-नञ्-समासे हलि
 
 एतत्तदोः सुलोपोऽकोरनञ्समासे हलि (6.1.132)
+Pāṭha: ashtadhyayi.com data.txt row i=61132 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'etattadoH sulopokoranaYsamAse hali',
     text_dev              = 'एतत्तदोः सुलोपोऽकोरनञ्समासे हलि',
+    samagra_slp1          = "anaYsamAse - akoH etad-tadoH hali su~lopaH",
+    samagra_dev           = "अनञ्समासे - अकोः एतद्-तदोः हलि सुँलोपः",
     padaccheda_dev        = "एतद्-तदोः सु-लोपः अ-कोः अ-नञ्-समासे हलि",
     why_dev               = "(सूत्रम् 6.1.132) एतत्तदोः सुलोपोऽकोरनञ्समासे हलि।",
     anuvritti_from        = ('6.1.1',),

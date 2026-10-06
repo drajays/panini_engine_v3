@@ -4,6 +4,7 @@
 Padaccheda: द्वन्द्वात् चु-द-ष-हान्तात् समाहारे
 
 द्वंद्वाच्चुदषहान्तात् समाहारे (5.4.106)
+Pāṭha: ashtadhyayi.com data.txt row i=54106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'dvandvAccudazahAntAt samAhAre',
     text_dev              = 'द्वन्द्वाच्चुदषहान्तात् समाहारे',
+    samagra_slp1          = "dvandvAt cu-da-za-hAntAt samAhAre wac",
+    samagra_dev           = "द्वन्द्वात् चु-द-ष-हान्तात् समाहारे टच्",
     padaccheda_dev        = "द्वन्द्वात् चु-द-ष-हान्तात् समाहारे",
     why_dev               = "(सूत्रम् 5.4.106) द्वंद्वाच्चुदषहान्तात् समाहारे।",
     anuvritti_from        = ('5.4.68',),

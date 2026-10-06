@@ -2,7 +2,7 @@
 7.4.53  यीवर्णयोर्दीधीवेव्योः  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=704053
+- ashtadhyayi.com data.txt row i=74053
 - Kāśikā: यीवर्णयोर्दीधीवेव्योः (ई-लोपः परे यि/इ-वर्णे)
 - Cross-validation: tests/unit/test_dIdhye_dIdhi_lat_parasmin_lesson.py
 
@@ -67,6 +67,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="yIvarRayordIDIvevyoH",
     text_dev="यीवर्णयोर्दीधीवेव्योः",
+    samagra_slp1="aNgasya yIvarRayoH dIDIvevyoH lopaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अङ्गस्य यीवर्णयोः दीधीवेव्योः लोपः",
     padaccheda_dev="यि-इवर्णयोः / दीधी-वेव्योः",
     why_dev="दीधी-धातोः परे यि/इ-वर्णे ई-लोपः; ३.४.७९-स्वनिमित्तक-ए-परे न (१.१.५७)।",
     anuvritti_from=("7.1.1",),

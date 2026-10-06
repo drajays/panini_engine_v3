@@ -4,6 +4,7 @@
 Padaccheda: सोमात् ट्यण्
 
 सोमाट्ट्यण् (4.2.30)
+Pāṭha: ashtadhyayi.com data.txt row i=42030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "somAwwyaR",
     text_dev              = "सोमाट्ट्यण्",
+    samagra_slp1          = "sA asya devatA iti somAt wyaR",
+    samagra_dev           = "'सा अस्य देवता' (इति) सोमात् ट्यण्",
     padaccheda_dev        = "सोमात् ट्यण्",
     why_dev               = "(सूत्रम् 4.2.30) सोमाट्ट्यण्।",
     anuvritti_from        = ('4.1.1',),

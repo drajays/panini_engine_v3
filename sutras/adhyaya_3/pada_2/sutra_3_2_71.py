@@ -4,6 +4,7 @@
 Padaccheda: मन्त्रे श्वेतवह-उक्थशस्-पुरोडाशः ण्विन्
 
 krt-suffix rule: मन्त्रे श्वेतवहौक्थशस्पुरोडाशो ण्विन् (71)
+Pāṭha: ashtadhyayi.com data.txt row i=32071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'mantre SvetavahokTaSaspuroqASo Rvin',
     text_dev              = 'मन्त्रे श्वेतवहोक्थशस्पुरोडाशो ण्विन्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH mantre Svetavaha-ukTaSas-puroqASaH Rvin kft supi upasarge api",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः मन्त्रे श्वेतवह-उक्थशस्-पुरोडाशः ण्विन् कृत् सुपि उपसर्गे अपि",
     padaccheda_dev        = "मन्त्रे श्वेतवह-उक्थशस्-पुरोडाशः ण्विन्",
     why_dev               = "धातोः कृत्-प्रत्ययः [मन्त्रे श्वेतवहौक्थशस्पुरोडाशो ण्विन्] विहितः (३.२.71)।",
     anuvritti_from        = ('3.1.1',),

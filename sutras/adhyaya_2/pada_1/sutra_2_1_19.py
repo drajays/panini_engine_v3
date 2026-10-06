@@ -9,6 +9,7 @@ lineage").
 
 v3 narrow slice: gate-marks the compound with key
 ``2_1_19_sankhya_vamshya``.
+Pāṭha: ashtadhyayi.com data.txt row i=21019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMKyA vaMSyena",
     text_dev              = "संख्या वंश्येन",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA avyayIBAvaH saMKyA vaMSyena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा अव्ययीभावः संख्या वंश्येन",
     padaccheda_dev        = "संख्या / वंश्येन",
     why_dev               = "संख्यावाचिशब्दस्य वंश्यशब्देन सह अव्ययीभावः (२.१.१९)।",
     anuvritti_from        = ("2.1.5",),

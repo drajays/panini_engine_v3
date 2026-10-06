@@ -4,6 +4,7 @@
 Padaccheda: व्रीहि-आ दिभ्यः च
 
 व्रीह्यादिभ्यश्च (5.2.116)
+Pāṭha: ashtadhyayi.com data.txt row i=52116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vrIhyAdiByaSca",
     text_dev              = "व्रीह्यादिभ्यश्च",
+    samagra_slp1          = "tat asya asmin astIti iti vrIhyAdiByaH ini-WanO anyatarasyAm matu~p",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) व्रीह्यादिभ्यः इनि-ठनौ, अन्यतरस्याम् मतुँप्",
     padaccheda_dev        = "व्रीहि-आ दिभ्यः च",
     why_dev               = "(सूत्रम् 5.2.116) व्रीह्यादिभ्यश्च।",
     anuvritti_from        = ('4.1.82',),

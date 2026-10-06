@@ -11,6 +11,7 @@ Example: *caurād rakṣati* — the thief is the apādāna (what one guards fro
 
 *Engine:* A Term carrying ``"vAraNa_Ipsita"`` (pipeline-set) gets tag ``"apAdAna"``.
 ``cond`` reads only structural semantic tags (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = 'vAraRArTAnAmIpsitaH',
     text_dev              = 'वारणार्थानामीप्सितः',
+    samagra_slp1          = "vAraRArTAnAm IpsitaH kArakam apAdAnam",
+    samagra_dev           = "वारणार्थानाम् ईप्सितः कारकम् अपादानम्",
     padaccheda_dev        = "वारणार्थानाम् / ईप्सितः",
     why_dev               = (
         "वारणार्थ-धातूनाम् प्रयोगे योऽभीप्सितः (यस्माद् वारयति) स "

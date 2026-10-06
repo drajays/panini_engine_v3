@@ -10,6 +10,7 @@ or ās (to sit), the *locus* (ādhāra) in/on which the action occurs becomes th
 
 *Engine:* tags bearing ``"aDiSIN_sTa_As_karma"`` get ``"karman"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'aDiSINsTAsAM karma',
     text_dev             = 'अधिशीङ्स्थाऽऽसां कर्म',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake aDi-SIN-sTA-AsAm karma ADAraH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके अधि-शीङ्-स्था-आसाम् कर्म आधारः",
     padaccheda_dev       = "अधि-शीङ्-स्था-आसाम् / कर्म",
     why_dev              = (
         "अधि-पूर्वक-शीङ्-स्था-आस्-धातूनां यः आधारः स कर्म-कारक-संज्ञकः। "

@@ -4,6 +4,7 @@
 Padaccheda: पञ्चम्याम् अ-जातौ
 
 krt-suffix rule: पञ्चम्यामजातौ (98)
+Pāṭha: ashtadhyayi.com data.txt row i=32098 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paYcamyAmajAtO",
     text_dev              = "पञ्चम्यामजातौ",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte paYcamyAm ajAtO kft janeH qaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते पञ्चम्याम् अजातौ कृत् जनेः डः",
     padaccheda_dev        = "पञ्चम्याम् अ-जातौ",
     why_dev               = "धातोः कृत्-प्रत्ययः [पञ्चम्यामजातौ] विहितः (३.२.98)।",
     anuvritti_from        = ('3.1.1',),

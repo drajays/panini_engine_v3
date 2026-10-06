@@ -4,6 +4,7 @@
 Padaccheda: कृत्यैः अधिक-अर्थ-वचने
 
 krtya words with adhikaartha-vacana form tatpurusha compound.
+Pāṭha: ashtadhyayi.com data.txt row i=21033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kftyEraDikArTavacane",
     text_dev              = "कृत्यैरधिकार्थवचने",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH kftyEH aDika-arTa-vacane tftIyA kartfkaraRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः कृत्यैः अधिक-अर्थ-वचने तृतीया कर्तृकरणे",
     padaccheda_dev        = "कृत्यैः अधिक-अर्थ-वचने",
     why_dev               = "कृत्यैः अधिक-अर्थ-वचने तत्पुरुषः (२.१.३३)।",
     anuvritti_from        = ('2.1.3',),

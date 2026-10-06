@@ -4,6 +4,7 @@
 Padaccheda: शतात् च ठन्-यतौ अशते
 
 शताच्च ठन्यतावशते (5.1.21)
+Pāṭha: ashtadhyayi.com data.txt row i=51021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SatAcca WanyatAvaSate",
     text_dev              = "शताच्च ठन्यतावशते",
+    samagra_slp1          = "A-arhAt SatAt asamAse Wan-yatO aSate",
+    samagra_dev           = "आ-अर्हात् शतात् असमासे ठन्-यतौ अशते",
     padaccheda_dev        = "शतात् च ठन्-यतौ अशते",
     why_dev               = "(सूत्रम् 5.1.21) शताच्च ठन्यतावशते।",
     anuvritti_from        = ('5.1.19',),

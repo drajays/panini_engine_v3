@@ -4,6 +4,7 @@
 Padaccheda: अम्ब-आम्-गो-भूमि-सव्य-अप-द्वि-त्रि-कु-शेकु-शङ्‍कु-अङ्गु-मञ्जि-पुञ्जि-परमे-बर्हिः-दिवि-अग्निभ्यः स्थः (षष्ठ्यर्थे प्रथमा)
 
 अम्बाम्बगोभूमिसव्यापद्वित्रिकुशेकुशङ्क्वङ्गुमञ्जिपुञ्जिपरमेबर्हिर्दिव्यग्निभ्यः स्थः (8.3.97)
+Pāṭha: ashtadhyayi.com data.txt row i=83097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ambAmbagoBUmisavyApadvitrikuSekuSaNkvaNgumaYjipuYjiparamebarhirdivyagniByaH sTaH",
     text_dev              = "अम्बाम्बगोभूमिसव्यापद्वित्रिकुशेकुशङ्क्वङ्गुमञ्जिपुञ्जिपरमेबर्हिर्दिव्यग्निभ्यः स्थः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH amba-Amba-go-BUmi-savya-apa-dvi-tri-ku-Seku-SaNku-aNgu-maYji-puYji-parame-barhis-divi-agniByaH sTaH saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः अम्ब-आम्ब-गो-भूमि-सव्य-अप-द्वि-त्रि-कु-शेकु-शङ्कु-अङ्गु-मञ्जि-पुञ्जि-परमे-बर्हिस्-दिवि-अग्निभ्यः स्थः सः",
     padaccheda_dev        = "अम्ब-आम्-गो-भूमि-सव्य-अप-द्वि-त्रि-कु-शेकु-शङ्‍कु-अङ्गु-मञ्जि-पुञ्जि-परमे-बर्हिः-दिवि-अग्निभ्यः स्थः (षष्ठ्यर्थे प्रथमा)",
     why_dev               = "(सूत्रम् 8.3.97) अम्बाम्बगोभूमिसव्यापद्वित्रिकुशेकुशङ्क्वङ्गुमञ्जिपुञ्जिपरमेबर्हिर्दिव्यग्निभ्यः स्थः।",
     anuvritti_from        = ('8.1.1',),

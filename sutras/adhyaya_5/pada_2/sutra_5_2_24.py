@@ -4,6 +4,7 @@
 Padaccheda: तस्य पाकमूले पीलु-आदि-कर्ण-आदिभ्यः कुणप्-जाहचौ
 
 तस्य पाकमूले पील्वदिकर्णादिभ्यः कुणब्जाहचौ (5.2.24)
+Pāṭha: ashtadhyayi.com data.txt row i=52024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tasya pAkamUle pIlvAdikarRAdiByaH kuRabjAhacO',
     text_dev              = 'तस्य पाकमूले पील्वादिकर्णादिभ्यः कुणब्जाहचौ',
+    samagra_slp1          = "tasya pAka-mUle iti pIlvAdi-karRAdiByaH kuRap-jAhacO",
+    samagra_dev           = "'तस्य पाक-मूले' (इति) पील्वादि-कर्णादिभ्यः कुणप्-जाहचौ",
     padaccheda_dev        = "तस्य पाकमूले पीलु-आदि-कर्ण-आदिभ्यः कुणप्-जाहचौ",
     why_dev               = "(सूत्रम् 5.2.24) तस्य पाकमूले पील्वदिकर्णादिभ्यः कुणब्जाहचौ।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: स्थे च भाषायाम्
 
 स्थे च भाषायाम् (6.3.20)
+Pāṭha: ashtadhyayi.com data.txt row i=63020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sTe ca BAzAyAm",
     text_dev              = "स्थे च भाषायाम्",
+    samagra_slp1          = "alug uttarapade sTe ca BAzAyAm saptamyAH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे स्थे च भाषायाम् सप्तम्याः न",
     padaccheda_dev        = "स्थे च भाषायाम्",
     why_dev               = "(सूत्रम् 6.3.20) स्थे च भाषायाम्।",
     anuvritti_from        = ('6.1.1',),

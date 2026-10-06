@@ -4,6 +4,7 @@
 Padaccheda: प्राचाम् नगर-अन्ते
 
 प्राचां नगरान्ते (7.3.24)
+Pāṭha: ashtadhyayi.com data.txt row i=73024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prAcAM nagarAnte",
     text_dev              = "प्राचां नगरान्ते",
+    samagra_slp1          = "aNgasya uttarapadasya prAcAm nagarAnte vfdDiH acaH YRiti tadDitezu AdeH pUrvapadasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य प्राचाम् नगरान्ते वृद्धिः अचः ञ्णिति तद्धितेषु आदेः पूर्वपदस्य",
     padaccheda_dev        = "प्राचाम् नगर-अन्ते",
     why_dev               = "(सूत्रम् 7.3.24) प्राचां नगरान्ते।",
     anuvritti_from        = ('7.1.1',),

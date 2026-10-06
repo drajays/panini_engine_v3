@@ -4,6 +4,7 @@
 Padaccheda: गुप्-तिज्-किद्‍भ्यः सन्
 
 Krt suffix rule from dhatu: गुप्तिज्किद्भ्यः सन् (5)
+Pāṭha: ashtadhyayi.com data.txt row i=31005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "guptijkidByaH san",
     text_dev              = "गुप्तिज्किद्भ्यः सन्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca gup-tij-kidByaH san",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च गुप्-तिज्-किद्भ्यः सन्",
     padaccheda_dev        = "गुप्-तिज्-किद्‍भ्यः सन्",
     why_dev               = "धातोः [गुप्तिज्किद्भ्यः सन्]-प्रत्ययः विहितः (३.१.5)।",
     anuvritti_from        = ('3.1.1',),

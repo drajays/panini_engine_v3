@@ -4,6 +4,7 @@
 Padaccheda: सङ्‍ग्रामे प्रयोजन-योद्धृभ्यः
 
 संग्रामे प्रयोजनयोद्धृभ्यः (4.2.56)
+Pāṭha: ashtadhyayi.com data.txt row i=42056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMgrAme prayojanayodDfByaH",
     text_dev              = "संग्रामे प्रयोजनयोद्धृभ्यः",
+    samagra_slp1          = "saH asya saNgrAme prayojanayodDfByaH iti samarTAnAM praTamAt paraH tadDitaH pratyayaH aR vA",
+    samagra_dev           = "'सः अस्य सङ्ग्रामे प्रयोजनयोद्धृभ्यः' (इति)  समर्थानां प्रथमात् परः तद्धितः प्रत्ययः अण् वा",
     padaccheda_dev        = "सङ्‍ग्रामे प्रयोजन-योद्धृभ्यः",
     why_dev               = "(सूत्रम् 4.2.56) संग्रामे प्रयोजनयोद्धृभ्यः।",
     anuvritti_from        = ('4.1.1',),

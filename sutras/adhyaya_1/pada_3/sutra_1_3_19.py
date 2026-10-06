@@ -14,6 +14,7 @@ prefix tags in _VI_PARA_PREFIXES, and (c) the idempotency stamp
 "Atmanepada_1_3_19" is absent from state.meta.  No arm flags (CONSTITUTION
 Art. 13).  r1_form_identity_exempt=True because no surface phonological
 change occurs.
+Pāṭha: ashtadhyayi.com data.txt row i=13019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='viparAByAM jeH',
     text_dev='विपराभ्यां जेः',
+    samagra_slp1="vi-parAByAm jeH Atmanepadam",
+    samagra_dev="वि-पराभ्याम् जेः आत्मनेपदम्",
     padaccheda_dev="वि-पराभ्याम् (पञ्चमी-द्विवचन) / जेः (षष्ठी)",
     why_dev=(
         "वि-, परा-पूर्वस्य जि-धातोः प्रयोगे आत्मनेपदम् — "

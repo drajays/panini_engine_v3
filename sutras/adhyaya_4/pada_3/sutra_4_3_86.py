@@ -4,6 +4,7 @@
 Padaccheda: अभिनिष्क्रामति (क्रियापदम्) द्वारम्
 
 अभिनिष्क्रामति द्वारम् (4.3.86)
+Pāṭha: ashtadhyayi.com data.txt row i=43086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aBinizkrAmati dvAram",
     text_dev              = "अभिनिष्क्रामति द्वारम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA aBinizkrAmati dvAram tat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा अभिनिष्क्रामति द्वारम् तत्",
     padaccheda_dev        = "अभिनिष्क्रामति (क्रियापदम्) द्वारम्",
     why_dev               = "(सूत्रम् 4.3.86) अभिनिष्क्रामति द्वारम्।",
     anuvritti_from        = ('4.1.1',),

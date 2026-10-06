@@ -4,6 +4,7 @@
 Padaccheda: समांसमाम् विजायते
 
 समांसमां विजायते (5.2.12)
+Pāṭha: ashtadhyayi.com data.txt row i=52012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samAMsamAM vijAyate",
     text_dev              = "समांसमां विजायते",
+    samagra_slp1          = "tat samAM samAM vijAyate iti KaH",
+    samagra_dev           = "'तत्  समां समां विजायते' (इति) खः",
     padaccheda_dev        = "समांसमाम् विजायते",
     why_dev               = "(सूत्रम् 5.2.12) समांसमां विजायते।",
     anuvritti_from        = ('4.1.82',),

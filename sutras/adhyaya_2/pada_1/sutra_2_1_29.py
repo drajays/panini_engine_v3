@@ -4,6 +4,7 @@
 Padaccheda: अत्यन्त-संयोगे च
 
 atyanta-samyoga (excessive contact) with dvitiya forms avyayibhava.
+Pāṭha: ashtadhyayi.com data.txt row i=21029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "atyantasaMyoge ca",
     text_dev              = "अत्यन्तसंयोगे च",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH atyantasaMyoge ca dvitIyA kAlAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः अत्यन्तसंयोगे च द्वितीया कालाः",
     padaccheda_dev        = "अत्यन्त-संयोगे च",
     why_dev               = "अत्यन्त-संयोगे द्वितीयान्तस्य सह अव्ययीभावः (२.१.२९)।",
     anuvritti_from        = ('2.1.5',),

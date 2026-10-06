@@ -20,6 +20,7 @@ v3 engine role:
   - cond() reads ONLY paribhasha_gates (Art. 2 compliant: no vibhakti,
     vacana, lakāra, surface Devanāgarī, data, or reference access).
   - No arm flags.  r1_form_identity_exempt=True (no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=11072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'yena viDistadantasya',
     text_dev                = 'येन विधिस्तदन्तस्य',
+    samagra_slp1            = "yena viDiH svasya rUpasya tadantasya",
+    samagra_dev             = "येन विधिः, स्वस्य रूपस्य, तदन्तस्य",
     padaccheda_dev          = "येन / विधिः / तद्-अन्तस्य",
     why_dev                 = (
         "यस्मिन् शब्दे (येन) विधिः (नियमः) उच्यते, "

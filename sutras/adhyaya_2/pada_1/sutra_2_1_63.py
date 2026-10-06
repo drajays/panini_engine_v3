@@ -4,6 +4,7 @@
 Padaccheda: कतर-कतमौ जाति-परिप्रश्ने
 
 katara, katama in jati-question context form karmadharaya.
+Pāṭha: ashtadhyayi.com data.txt row i=21063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "katarakatamO jAtiparipraSne",
     text_dev              = "कतरकतमौ जातिपरिप्रश्ने",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH katara-katamO jAti-paripraSne samAnADikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः कतर-कतमौ जाति-परिप्रश्ने समानाधिकरणेन",
     padaccheda_dev        = "कतर-कतमौ जाति-परिप्रश्ने",
     why_dev               = "कतर-कतमौ जाति-परिप्रश्ने कर्मधारये (२.१.६३)।",
     anuvritti_from        = ('2.1.3',),

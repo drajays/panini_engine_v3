@@ -19,6 +19,7 @@ The *dhātu*'s *sakarmakatva* / *akarmakatva* must be supplied on ``Term.meta['k
 by the input recipe (or lexicon), not by coordinate inspection.
 
 See ``lakara_prayoga_3_4_69.py`` for the gate shape.
+Pāṭha: ashtadhyayi.com data.txt row i=34069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'laH karmaRi ca BAve cAkarmakeByaH',
     text_dev       = 'लः कर्मणि च भावे चाकर्मकेभ्यः',
+    samagra_slp1   = "laH kartari karmaRi ca BAve kartari ca akarmakeByaH DAtoH paraSca",
+    samagra_dev    = "लः कर्तरि कर्मणि च, भावे कर्तरि  च अकर्मकेभ्यः धातोः परश्च",
     padaccheda_dev = (
         "लः (प्रथमा-बहुवचनम्) · कर्मणि (सप्तमी) · च · भावे (सप्तमी) · च · "
         "अकर्मकेभ्यः (पञ्चमी-बहुवचनम्) · (अन्वितम्) कर्तरि (सप्तमी) — धातोः · परः"

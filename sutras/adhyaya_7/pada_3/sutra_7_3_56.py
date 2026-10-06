@@ -4,6 +4,7 @@
 Padaccheda: हेः अ-चङि
 
 हेरचङि (7.3.56)
+Pāṭha: ashtadhyayi.com data.txt row i=73056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "heracaNi",
     text_dev              = "हेरचङि",
+    samagra_slp1          = "aNgasya heH acaNi ku cajoH hanteH aByAsAt ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य हेः अचङि कु चजोः हन्तेः अभ्यासात् च",
     padaccheda_dev        = "हेः अ-चङि",
     why_dev               = "(सूत्रम् 7.3.56) हेरचङि।",
     anuvritti_from        = ('7.1.1',),

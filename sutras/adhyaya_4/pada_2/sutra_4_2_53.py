@@ -4,6 +4,7 @@
 Padaccheda: राजन्य-आदिभ्यः वुञ्
 
 राजन्यादिभ्यो वुञ् (4.2.53)
+Pāṭha: ashtadhyayi.com data.txt row i=42053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAjanyAdiByo vuY",
     text_dev              = "राजन्यादिभ्यो वुञ्",
+    samagra_slp1          = "tasya vizayaH deSe iti rAjanyAdiByaH vuY",
+    samagra_dev           = "तस्य विषयः देशे (इति) राजन्यादिभ्यः वुञ्",
     padaccheda_dev        = "राजन्य-आदिभ्यः वुञ्",
     why_dev               = "(सूत्रम् 4.2.53) राजन्यादिभ्यो वुञ्।",
     anuvritti_from        = ('4.1.1',),

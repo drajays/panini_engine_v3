@@ -4,6 +4,7 @@
 Padaccheda: न वशः
 
 न वशः (6.1.20)
+Pāṭha: ashtadhyayi.com data.txt row i=61020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na vaSaH",
     text_dev              = "न वशः",
+    samagra_slp1          = "na vaSaH samprasAraRam yaNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "न वशः सम्प्रसारणम् यङि",
     padaccheda_dev        = "न वशः",
     why_dev               = "(सूत्रम् 6.1.20) न वशः।",
     anuvritti_from        = ('6.1.1',),

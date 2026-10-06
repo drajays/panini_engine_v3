@@ -15,6 +15,7 @@ Engine (narrow, mechanically blind):
   ``state.meta['2_2_1_arm']`` and provides two *prātipadika* Terms where the
   first carries tag ``pUrva_apara`` and the second carries tag ``ekadesha``.
   After merge the gate is raised and a registry stamp is recorded.
+Pāṭha: ashtadhyayi.com data.txt row i=22001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -55,6 +56,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='pUrvAparADarottaramekadeSinEkADikaraRe',
     text_dev='पूर्वापराधरोत्तरमेकदेशिनैकाधिकरणे',
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH pUrva-apara-aDara-uttaram ekadeSinA ekADikaraRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः पूर्व-अपर-अधर-उत्तरम् एकदेशिना एकाधिकरणे",
     padaccheda_dev="पूर्व-अपर-अधर-उत्तरम् / एकदेशिना / एकाधिकरणे",
     why_dev=(
         "पूर्वादयः एकदेशिनैकाधिकरणे वर्तमानाः समस्यन्ते — "

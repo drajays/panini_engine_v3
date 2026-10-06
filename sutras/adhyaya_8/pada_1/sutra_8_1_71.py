@@ -4,6 +4,7 @@
 Padaccheda: तिङि च उदात्त-वति
 
 तिङि चोदात्तवति (8.1.71)
+Pāṭha: ashtadhyayi.com data.txt row i=81071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tiNi codAttavati",
     text_dev              = "तिङि चोदात्तवति",
+    samagra_slp1          = "padasya anudAttaM sarvamApAdAdO tiNi ca udAttavati gatiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य अनुदात्तं सर्वमापादादौ तिङि च उदात्तवति गतिः",
     padaccheda_dev        = "तिङि च उदात्त-वति",
     why_dev               = "(सूत्रम् 8.1.71) तिङि चोदात्तवति।",
     anuvritti_from        = ('8.1.1',),

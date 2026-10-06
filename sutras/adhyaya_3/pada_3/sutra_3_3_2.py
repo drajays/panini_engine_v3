@@ -4,6 +4,7 @@
 Padaccheda: भूते अपि दृश्यन्ते (क्रियापदम्)
 
 krt-suffix rule: भूतेऽपि दृश्यन्ते
+Pāṭha: ashtadhyayi.com data.txt row i=33002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'BUtepi dfSyante',
     text_dev              = 'भूतेऽपि दृश्यन्ते',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte api dfSyante kft uRAdayaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते अपि दृश्यन्ते कृत् उणादयः",
     padaccheda_dev        = "भूते अपि दृश्यन्ते (क्रियापदम्)",
     why_dev               = "धातोः प्रत्ययः (३.3.2)।",
     anuvritti_from        = ('3.1.1',),

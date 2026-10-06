@@ -4,6 +4,7 @@
 Padaccheda: अर्धात् च
 
 अर्धाच्च (5.4.100)
+Pāṭha: ashtadhyayi.com data.txt row i=54100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "arDAcca",
     text_dev              = "अर्धाच्च",
+    samagra_slp1          = "tatpuruzasya arDAt nAvaH wac",
+    samagra_dev           = "तत्पुरुषस्य अर्धात् नावः टच्",
     padaccheda_dev        = "अर्धात् च",
     why_dev               = "(सूत्रम् 5.4.100) अर्धाच्च।",
     anuvritti_from        = ('5.4.68',),

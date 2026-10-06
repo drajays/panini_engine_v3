@@ -4,6 +4,7 @@
 Padaccheda: तद्धितस्य
 
 तद्धितस्य (6.1.164)
+Pāṭha: ashtadhyayi.com data.txt row i=61164 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadDitasya",
     text_dev              = "तद्धितस्य",
+    samagra_slp1          = "citaH tadDitasya udAttaH",
+    samagra_dev           = "चितः तद्धितस्य उदात्तः",
     padaccheda_dev        = "तद्धितस्य",
     why_dev               = "(सूत्रम् 6.1.164) तद्धितस्य।",
     anuvritti_from        = ('6.1.1',),

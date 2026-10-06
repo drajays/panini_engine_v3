@@ -4,6 +4,7 @@
 Padaccheda: दीर्घात् च वरुणस्य
 
 दीर्घाच्च वरुणस्य (7.3.23)
+Pāṭha: ashtadhyayi.com data.txt row i=73023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dIrGAcca varuRasya",
     text_dev              = "दीर्घाच्च वरुणस्य",
+    samagra_slp1          = "aNgasya uttarapadasya dIrGAt ca varuRasya vfdDiH YRiti acaH AdeH tadDitezu pUrvapadasya devatAdvandve na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य दीर्घात् च वरुणस्य वृद्धिः ञ्णिति अचः आदेः तद्धितेषु पूर्वपदस्य देवताद्वन्द्वे न",
     padaccheda_dev        = "दीर्घात् च वरुणस्य",
     why_dev               = "(सूत्रम् 7.3.23) दीर्घाच्च वरुणस्य।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: प्रष्ठः अग्रगामिनि
 
 प्रष्ठोऽग्रगामिनि (8.3.92)
+Pāṭha: ashtadhyayi.com data.txt row i=83092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'prazWogragAmini',
     text_dev              = 'प्रष्ठोऽग्रगामिनि',
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH prazWaH agragAmini saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः प्रष्ठः अग्रगामिनि सः",
     padaccheda_dev        = "प्रष्ठः अग्रगामिनि",
     why_dev               = "(सूत्रम् 8.3.92) प्रष्ठोऽग्रगामिनि।",
     anuvritti_from        = ('8.1.1',),

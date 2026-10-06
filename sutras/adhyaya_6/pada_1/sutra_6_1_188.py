@@ -4,6 +4,7 @@
 Padaccheda: स्वप्-आदि-र्हिंसाम् अचि अन्-इटि
 
 स्वपादिर्हिंसामच्यनिटि (6.1.188)
+Pāṭha: ashtadhyayi.com data.txt row i=61188 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'svapAdihiMsAmacyaniwi',
     text_dev              = 'स्वपादिहिंसामच्यनिटि',
+    samagra_slp1          = "svapAdiH-hiMsAm aci aniwi udAttaH la-sArvaDAtukam AdiH anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "स्वपादिः-हिंसाम् अचि अनिटि उदात्तः ल-सार्वधातुकम् आदिः अन्यतरस्याम्",
     padaccheda_dev        = "स्वप्-आदि-र्हिंसाम् अचि अन्-इटि",
     why_dev               = "(सूत्रम् 6.1.188) स्वपादिर्हिंसामच्यनिटि।",
     anuvritti_from        = ('6.1.1',),

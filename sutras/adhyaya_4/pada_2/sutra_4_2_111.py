@@ -4,6 +4,7 @@
 Padaccheda: कण्व-आदिभ्यः गोत्रे
 
 कण्वादिभ्यो गोत्रे (4.2.111)
+Pāṭha: ashtadhyayi.com data.txt row i=42111 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kaRvAdiByo gotre",
     text_dev              = "कण्वादिभ्यो गोत्रे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA kaRva-AdiByaH gotre aR",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा कण्व-आदिभ्यः गोत्रे अण्",
     padaccheda_dev        = "कण्व-आदिभ्यः गोत्रे",
     why_dev               = "(सूत्रम् 4.2.111) कण्वादिभ्यो गोत्रे।",
     anuvritti_from        = ('4.1.1',),

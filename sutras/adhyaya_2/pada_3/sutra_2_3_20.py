@@ -4,6 +4,7 @@
 Padaccheda: येन अङ्गविकारः
 
 Instrumental marks that by which a bodily defect is caused.
+Pāṭha: ashtadhyayi.com data.txt row i=23020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yenANgavikAraH",
     text_dev              = "येनाङ्गविकारः",
+    samagra_slp1          = "anaBihite yena aNga-vikAraH tftIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते येन अङ्ग-विकारः तृतीया",
     padaccheda_dev        = "येन अङ्गविकारः",
     why_dev               = "येन अङ्गविकारे (२.३.२०)।",
     anuvritti_from        = ('2.3.18',),

@@ -4,6 +4,7 @@
 Padaccheda: ति (लुप्तषष्ठ्यन्तनिर्देशः) विंशतेः डिति
 
 ति विंशतेर्डिति (6.4.142)
+Pāṭha: ashtadhyayi.com data.txt row i=64142 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ti viMSaterqiti",
     text_dev              = "ति विंशतेर्डिति",
+    samagra_slp1          = "viMSateH Basya teH qiti lopaH",
+    samagra_dev           = "विंशतेः भस्य तेः डिति लोपः",
     padaccheda_dev        = "ति (लुप्तषष्ठ्यन्तनिर्देशः) विंशतेः डिति",
     why_dev               = "(सूत्रम् 6.4.142) ति विंशतेर्डिति।",
     anuvritti_from        = ('6.1.1',),

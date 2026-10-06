@@ -4,6 +4,7 @@
 Padaccheda: विपूय-विनीय-जित्या मुञ्ज-कल्क-हलिषु
 
 Krt suffix rule from dhatu: विपूयविनीयजित्या मुञ्जकल्कहलिषु (117)
+Pāṭha: ashtadhyayi.com data.txt row i=31117 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vipUyavinIyajityA muYjakalkahalizu",
     text_dev              = "विपूयविनीयजित्या मुञ्जकल्कहलिषु",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH vipUya-vinIya-jityAH muYja-kalka-halizu kft kyap",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः विपूय-विनीय-जित्याः मुञ्ज-कल्क-हलिषु कृत् क्यप्",
     padaccheda_dev        = "विपूय-विनीय-जित्या मुञ्ज-कल्क-हलिषु",
     why_dev               = "धातोः [विपूयविनीयजित्या मुञ्जकल्कहलिषु]-प्रत्ययः विहितः (३.१.117)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

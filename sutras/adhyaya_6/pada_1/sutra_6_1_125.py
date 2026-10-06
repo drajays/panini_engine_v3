@@ -11,6 +11,7 @@ right *term* ``meta`` once per boundary so repeated scheduling does not loop.
 
 *Pluta* is modeled at the ``Term`` level via ``"pluta" in term.tags``.
 A pipeline marks a term as pluta before calling this sūtra.
+Pāṭha: ashtadhyayi.com data.txt row i=61125 (Art. 14).
 """
 from __future__ import annotations
 
@@ -66,6 +67,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'plutapragfhyA aci nityam',
     text_dev       = 'प्लुतप्रगृह्या अचि नित्यम्',
+    samagra_slp1   = "pluta-pragfhyAH aci nityam prakftyA",
+    samagra_dev    = "प्लुत-प्रगृह्याः अचि नित्यम् प्रकृत्या",
     padaccheda_dev = "प्लुत-प्रगृह्यात् च नित्यम् अचि",
     why_dev        = (
         "प्रगृह्यान्तात् परस्य अच्-आदौ प्रकृतिभावो नित्यः; "

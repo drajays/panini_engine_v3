@@ -4,6 +4,7 @@
 Padaccheda: कष्टाय क्रमणे
 
 Krt suffix rule from dhatu: कष्टाय क्रमणे (14)
+Pāṭha: ashtadhyayi.com data.txt row i=31014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kazwAya kramaRe",
     text_dev              = "कष्टाय क्रमणे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kazwAya kramaRe vA kyaN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कष्टाय क्रमणे वा क्यङ्",
     padaccheda_dev        = "कष्टाय क्रमणे",
     why_dev               = "धातोः [कष्टाय क्रमणे]-प्रत्ययः विहितः (३.१.14)।",
     anuvritti_from        = ('3.1.1',),

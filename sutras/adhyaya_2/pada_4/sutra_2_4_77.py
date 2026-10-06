@@ -81,6 +81,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gAtisTAGupABUByaH sicaH parasmEpadezu",
     text_dev              = "गातिस्थाघुपाभूभ्यः सिचः परस्मैपदेषु",
+    samagra_slp1          = "gAti-sTA-Gu-pA-BUByaH sicaH parasmEpadezu luk",
+    samagra_dev           = "गाति-स्था-घु-पा-भूभ्यः सिचः परस्मैपदेषु लुक्",
     padaccheda_dev        = "गाति-स्था-घु-पा-भूभ्यः सिचः परस्मैपदेषु",
     why_dev               = (
         "लुङि भू-आदिभ्यः परस्मैपदे सिच्-विकरणस्य लुक् — "

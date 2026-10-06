@@ -4,6 +4,7 @@
 Padaccheda: उपात् प्रशंसायाम्
 
 उपात् प्रशंसायाम् (7.1.66)
+Pāṭha: ashtadhyayi.com data.txt row i=71066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upAt praSaMsAyAm",
     text_dev              = "उपात् प्रशंसायाम्",
+    samagra_slp1          = "upAt laBeH praSaMsAyAm yi num",
+    samagra_dev           = "उपात् लभेः प्रशंसायाम् यि नुम्",
     padaccheda_dev        = "उपात् प्रशंसायाम्",
     why_dev               = "(सूत्रम् 7.1.66) उपात् प्रशंसायाम्।",
     anuvritti_from        = ('7.1.1',),

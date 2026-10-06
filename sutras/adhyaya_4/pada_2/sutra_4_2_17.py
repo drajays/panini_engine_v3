@@ -4,6 +4,7 @@
 Padaccheda: शूल-उखात् यत्
 
 शूलोखाद्यत् (4.2.17)
+Pāṭha: ashtadhyayi.com data.txt row i=42017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SUloKAdyat",
     text_dev              = "शूलोखाद्यत्",
+    samagra_slp1          = "tatra saMskftaM BakzAH iti SUla-uKAt yat",
+    samagra_dev           = "तत्र संस्कृतं भक्षाः (इति) शूल-उखात् यत्",
     padaccheda_dev        = "शूल-उखात् यत्",
     why_dev               = "(सूत्रम् 4.2.17) शूलोखाद्यत्।",
     anuvritti_from        = ('4.1.1',),

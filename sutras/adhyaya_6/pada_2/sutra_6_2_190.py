@@ -4,6 +4,7 @@
 Padaccheda: पुरुषः च अन्वादिष्टः
 
 पुरुषश्चान्वादिष्टः (6.2.190)
+Pāṭha: ashtadhyayi.com data.txt row i=62190 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "puruzaScAnvAdizwaH",
     text_dev              = "पुरुषश्चान्वादिष्टः",
+    samagra_slp1          = "uttarapadAdiH antaH puruzaH ca anvAdizwaH upasargAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः पुरुषः च अन्वादिष्टः उपसर्गात्",
     padaccheda_dev        = "पुरुषः च अन्वादिष्टः",
     why_dev               = "(सूत्रम् 6.2.190) पुरुषश्चान्वादिष्टः।",
     anuvritti_from        = ('6.1.1',),

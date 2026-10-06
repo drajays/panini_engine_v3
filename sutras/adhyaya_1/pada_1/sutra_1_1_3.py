@@ -14,6 +14,7 @@ can test *sthāyin* without reading gold lists.
 See also **1.1.4** / **1.1.5** — ``sutra_1_1_4.ik_guna_vriddhi_blocked_by_1_1_4`` (*ārdhadhātuke*
 *dhātu* lopa) and ``sutra_1_1_5.ik_guna_vriddhi_blocked_by_1_1_5`` (*kṅiti* locus for *kit*
 *pratyāya*); then **1.1.6** (*dīdhī*…).
+Pāṭha: ashtadhyayi.com data.txt row i=11003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -80,6 +81,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.PARIBHASHA,
     text_slp1      = 'iko guRavfdDI',
     text_dev       = 'इको गुणवृद्धी',
+    samagra_slp1   = "guRaH vfdDiH ityetAByAM nirdizwO guRa-vfdDI ikaH",
+    samagra_dev    = "गुणः, वृद्धिः (इत्येताभ्यां निर्दिष्टौ) गुण-वृद्धी इकः",
     padaccheda_dev = "इकः गुणवृद्धी",
     why_dev        = _WHY,
     anuvritti_from = (),

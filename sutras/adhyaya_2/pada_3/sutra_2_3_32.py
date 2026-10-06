@@ -4,6 +4,7 @@
 Padaccheda: पृथक्-विना-नानाभिः तृतीया अन्यतरस्याम्
 
 prthak vina nana optionally take tritiya.
+Pāṭha: ashtadhyayi.com data.txt row i=23032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'pfTagvinAnAnABistftIyAnyatarasyAm',
     text_dev              = 'पृथग्विनानानाभिस्तृतीयाऽन्यतरस्याम्',
+    samagra_slp1          = "anaBihite pfTak-vinA-nAnABiH tftIyA anyatarasyAm paYcamI dvitIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते पृथक्-विना-नानाभिः तृतीया अन्यतरस्याम् पञ्चमी द्वितीया",
     padaccheda_dev        = "पृथक्-विना-नानाभिः तृतीया अन्यतरस्याम्",
     why_dev               = "पृथक्-विना-नानाभिः तृतीया अन्यतरस्याम् (२.३.३२)।",
     anuvritti_from        = ('2.3.18',),

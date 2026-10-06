@@ -14,6 +14,7 @@ putrakāmyati — he desires a son.
 "Atmanepada", (b) idempotency stamp "Atmanepada_1_3_90" is absent,
 (c) a dhātu Term carries the tag "kyaz_pratyaya" or "kyaS_suffix".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -61,6 +62,8 @@ SUTRA = SutraRecord(
     vibhasha_default=True,
     text_slp1="vA kyazaH",
     text_dev="वा क्यषः",
+    samagra_slp1="vA kyazaH kartari parasmEpadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="वा क्यषः कर्तरि परस्मैपदम्",
     padaccheda_dev="वा / क्यषः (षष्ठी-एकवचन)",
     why_dev=(
         "क्यष्-प्रत्यये परे विकल्पेन आत्मनेपदम् — "

@@ -4,6 +4,7 @@
 Padaccheda: बहुव्रीहौ संख्येये डच् अबहुगणात्
 
 बहुव्रीहौ संख्येये डजबहुगणात् (5.4.73)
+Pāṭha: ashtadhyayi.com data.txt row i=54073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahuvrIhO saMKyeye qajabahugaRAt",
     text_dev              = "बहुव्रीहौ संख्येये डजबहुगणात्",
+    samagra_slp1          = "bahuvrIhO abahugaRanAt saNKyeye qac",
+    samagra_dev           = "बहुव्रीहौ अबहुगणनात् सङ्ख्येये डच्",
     padaccheda_dev        = "बहुव्रीहौ संख्येये डच् अबहुगणात्",
     why_dev               = "(सूत्रम् 5.4.73) बहुव्रीहौ संख्येये डजबहुगणात्।",
     anuvritti_from        = ('5.4.68',),

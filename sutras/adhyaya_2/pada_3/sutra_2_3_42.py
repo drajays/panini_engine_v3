@@ -4,6 +4,7 @@
 Padaccheda: पञ्चमी विभक्ते
 
 Pancami marks the separated/distinguished item.
+Pāṭha: ashtadhyayi.com data.txt row i=23042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paYcamI viBakte",
     text_dev              = "पञ्चमी विभक्ते",
+    samagra_slp1          = "anaBihite paYcamI viBakte yataH ca nirDAraRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते पञ्चमी विभक्ते यतः च निर्धारणम्",
     padaccheda_dev        = "पञ्चमी विभक्ते",
     why_dev               = "विभक्ते पञ्चमी (२.३.४२)।",
     anuvritti_from        = ('2.3.28',),

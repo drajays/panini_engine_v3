@@ -4,6 +4,7 @@
 Padaccheda: वा उतः गुणवचनात्
 
 वोतो गुणवचनात् (4.1.44)
+Pāṭha: ashtadhyayi.com data.txt row i=41044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "voto guRavacanAt",
     text_dev              = "वोतो गुणवचनात्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt vA utaH guRa-vacanAt NIz",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् वा उतः गुण-वचनात् ङीष्",
     padaccheda_dev        = "वा उतः गुणवचनात्",
     why_dev               = "(सूत्रम् 4.1.44) वोतो गुणवचनात्।",
     anuvritti_from        = ('4.1.1',),

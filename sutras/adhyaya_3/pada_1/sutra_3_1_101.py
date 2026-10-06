@@ -4,6 +4,7 @@
 Padaccheda: अवद्य-पण्य-वर्याः गर्ह्य-पणितव्य-अनिरोधेषु
 
 Krt suffix rule from dhatu: अवद्यपण्यवर्या गर्ह्यपणितव्यानिरोधेषु (101)
+Pāṭha: ashtadhyayi.com data.txt row i=31101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avadyapaRyavaryA garhyapaRitavyAniroDezu",
     text_dev              = "अवद्यपण्यवर्या गर्ह्यपणितव्यानिरोधेषु",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH avadya-paRya-varyAH garhya-paRitavya-aniroDezu kft yat anupasarge",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः अवद्य-पण्य-वर्याः गर्ह्य-पणितव्य-अनिरोधेषु कृत् यत् अनुपसर्गे",
     padaccheda_dev        = "अवद्य-पण्य-वर्याः गर्ह्य-पणितव्य-अनिरोधेषु",
     why_dev               = "धातोः [अवद्यपण्यवर्या गर्ह्यपणितव्यानिरोधेषु]-प्रत्ययः विहितः (३.१.101)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

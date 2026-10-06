@@ -4,6 +4,7 @@
 Padaccheda: व्यवायिनः अन्तरम्
 
 व्यवायिनोऽन्तरम् (6.2.166)
+Pāṭha: ashtadhyayi.com data.txt row i=62166 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vyavAyinontaram',
     text_dev              = 'व्यवायिनोऽन्तरम्',
+    samagra_slp1          = "uttarapadAdiH antaH vyavAyinaH antaram bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः व्यवायिनः अन्तरम् बहुव्रीहौ",
     padaccheda_dev        = "व्यवायिनः अन्तरम्",
     why_dev               = "(सूत्रम् 6.2.166) व्यवायिनोऽन्तरम्।",
     anuvritti_from        = ('6.1.1',),

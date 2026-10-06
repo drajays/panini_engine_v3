@@ -4,6 +4,7 @@
 Padaccheda: पात्रात् घन् च
 
 पात्राद्घंश्च (5.1.68)
+Pāṭha: ashtadhyayi.com data.txt row i=51068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pAtrAdGaMSca",
     text_dev              = "पात्राद्घंश्च",
+    samagra_slp1          = "tat arhati iti pAtrAt Gan yat ca",
+    samagra_dev           = "'तत् अर्हति' (इति) पात्रात् घन् यत् च",
     padaccheda_dev        = "पात्रात् घन् च",
     why_dev               = "(सूत्रम् 5.1.68) पात्राद्घंश्च।",
     anuvritti_from        = ('5.1.18',),

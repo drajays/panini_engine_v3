@@ -4,6 +4,7 @@
 Padaccheda: घ-काल-तनेषु काल-नाम्नः
 
 घकालतनेषु कालनाम्नः (6.3.17)
+Pāṭha: ashtadhyayi.com data.txt row i=63017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "GakAlatanezu kAlanAmnaH",
     text_dev              = "घकालतनेषु कालनाम्नः",
+    samagra_slp1          = "alug uttarapade Ga-kAla-tanezu kAlanAmnaH haladantAt saptamyAH viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे घ-काल-तनेषु कालनाम्नः हलदन्तात् सप्तम्याः विभाषा",
     padaccheda_dev        = "घ-काल-तनेषु काल-नाम्नः",
     why_dev               = "(सूत्रम् 6.3.17) घकालतनेषु कालनाम्नः।",
     anuvritti_from        = ('6.1.1',),

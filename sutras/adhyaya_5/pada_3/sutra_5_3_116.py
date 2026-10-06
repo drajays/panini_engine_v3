@@ -4,6 +4,7 @@
 Padaccheda: दामनि-आदि-त्रिगर्तषष्ठात् छः
 
 दामन्यादित्रिगर्तषष्ठाच्छः (5.3.116)
+Pāṭha: ashtadhyayi.com data.txt row i=53116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dAmanyAditrigartazazWAcCaH",
     text_dev              = "दामन्यादित्रिगर्तषष्ठाच्छः",
+    samagra_slp1          = "AyuDajIvisaNGAt dAmanyAdi-trigartazazWAt CaH",
+    samagra_dev           = "आयुधजीविसङ्घात् दामन्यादि-त्रिगर्तषष्ठात् छः",
     padaccheda_dev        = "दामनि-आदि-त्रिगर्तषष्ठात् छः",
     why_dev               = "(सूत्रम् 5.3.116) दामन्यादित्रिगर्तषष्ठाच्छः।",
     anuvritti_from        = ('4.1.76',),

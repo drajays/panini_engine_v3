@@ -4,6 +4,7 @@
 Padaccheda: मद्रात् परिवापणे
 
 मद्रात् परिवापणे (5.4.67)
+Pāṭha: ashtadhyayi.com data.txt row i=54067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "madrAt parivApaRe",
     text_dev              = "मद्रात् परिवापणे",
+    samagra_slp1          = "madrAt parivApaRe kfYaH qAc",
+    samagra_dev           = "मद्रात् परिवापणे कृञः डाच्",
     padaccheda_dev        = "मद्रात् परिवापणे",
     why_dev               = "(सूत्रम् 5.4.67) मद्रात् परिवापणे।",
     anuvritti_from        = ('4.1.76',),

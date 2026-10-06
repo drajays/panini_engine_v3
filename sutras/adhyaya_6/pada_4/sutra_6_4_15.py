@@ -4,6 +4,7 @@
 Padaccheda: अनुनासिकस्य क्वि-झलोः क्ङिति
 
 अनुनासिकस्य क्विझलोः क्ङिति (6.4.15)
+Pāṭha: ashtadhyayi.com data.txt row i=64015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anunAsikasya kviJaloH kNiti",
     text_dev              = "अनुनासिकस्य क्विझलोः क्ङिति",
+    samagra_slp1          = "anunAsikasya aNgasya upaDAyAH kvi-JaloH kNiti dIrGaH",
+    samagra_dev           = "अनुनासिकस्य अङ्गस्य उपधायाः क्वि-झलोः क्ङिति दीर्घः",
     padaccheda_dev        = "अनुनासिकस्य क्वि-झलोः क्ङिति",
     why_dev               = "(सूत्रम् 6.4.15) अनुनासिकस्य क्विझलोः क्ङिति।",
     anuvritti_from        = ('6.1.1',),

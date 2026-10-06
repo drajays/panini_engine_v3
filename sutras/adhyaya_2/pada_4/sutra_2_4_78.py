@@ -4,6 +4,7 @@
 Padaccheda: विभाषा घ्रा-धेट्-शा-छा-सः
 
 Optional luk for ghra, dhet, sha, cha, sa.
+Pāṭha: ashtadhyayi.com data.txt row i=24078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA GrADewSAcCAsaH",
     text_dev              = "विभाषा घ्राधेट्शाच्छासः",
+    samagra_slp1          = "GrA-Dew-SA-CA-saH sicaH parasmEpadezu viBAzA luk",
+    samagra_dev           = "घ्रा-धेट्-शा-छा-सः सिचः परस्मैपदेषु विभाषा लुक्",
     padaccheda_dev        = "विभाषा घ्रा-धेट्-शा-छा-सः",
     why_dev               = "घ्रा-धेट्-शा-छा-सः विभाषा (२.४.७८)।",
     anuvritti_from        = ('2.4.77',),

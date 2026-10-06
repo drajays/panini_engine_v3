@@ -4,6 +4,7 @@
 Padaccheda: आबाधे च
 
 आबाधे च (8.1.10)
+Pāṭha: ashtadhyayi.com data.txt row i=81010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AbADe ca",
     text_dev              = "आबाधे च",
+    samagra_slp1          = "sarvasya dve AbADe ca bahuvrIhivat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सर्वस्य द्वे आबाधे च बहुव्रीहिवत्",
     padaccheda_dev        = "आबाधे च",
     why_dev               = "(सूत्रम् 8.1.10) आबाधे च।",
     anuvritti_from        = ('8.1.1',),

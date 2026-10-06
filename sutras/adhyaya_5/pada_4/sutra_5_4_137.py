@@ -4,6 +4,7 @@
 Padaccheda: उपमानात् च
 
 उपमानाच्च (5.4.137)
+Pāṭha: ashtadhyayi.com data.txt row i=54137 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upamAnAcca",
     text_dev              = "उपमानाच्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA upamAnAt ca bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा उपमानात् च बहुव्रीहौ",
     padaccheda_dev        = "उपमानात् च",
     why_dev               = "(सूत्रम् 5.4.137) उपमानाच्च।",
     anuvritti_from        = ('5.4.68',),

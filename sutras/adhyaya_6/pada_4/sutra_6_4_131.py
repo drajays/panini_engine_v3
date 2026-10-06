@@ -4,6 +4,7 @@
 Padaccheda: वसोः सम्प्रसारणम्
 
 वसोः सम्प्रसारणम् (6.4.131)
+Pāṭha: ashtadhyayi.com data.txt row i=64131 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vasoH samprasAraRam",
     text_dev              = "वसोः सम्प्रसारणम्",
+    samagra_slp1          = "vasoH Basya aNgasya samprasAraRam",
+    samagra_dev           = "वसोः भस्य अङ्गस्य सम्प्रसारणम्",
     padaccheda_dev        = "वसोः सम्प्रसारणम्",
     why_dev               = "(सूत्रम् 6.4.131) वसोः सम्प्रसारणम्।",
     anuvritti_from        = ('6.1.1',),

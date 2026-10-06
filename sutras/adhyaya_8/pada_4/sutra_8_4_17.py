@@ -1,7 +1,7 @@
 """
 8.4.17  नेर्गदनदपतपदघुमास्यतिहन्तियातिवातिद्रातिप्सातिवपतिवहतिशाम्यतिचिनोतिदेग्धिषु च  —  VIDHI (narrow: *neḥ* of *ni* → *ṇ* + *ghu*)
 
-*Śāstra-pāṭha (machine index i=34017; SLP1 row on ashtadhyayi-com):* **neH**
+*Śāstra-pāṭha (machine index i=84017; SLP1 row on ashtadhyayi-com):* **neH**
 before the listed ārya-roots, including **घु**-dhātus.  This engine implements
 only the **घु** *śākhā* in terms of `dhatu_upadesha_slp1_is_ghu` (``1.1.20``):
 after a **pra-** or **pary-**-class *upasarga* (*recipes* use flat ``"pra"``,
@@ -96,7 +96,7 @@ def act(state: State) -> State:
     return state
 
 
-# Full *pāṭha* SLP1: *neH* + *gadādi* liṣṭa *śabda* (i=34017, ashtadhyayi-com *s*).
+# Full *pāṭha* SLP1: *neH* + *gadādi* liṣṭa *śabda* (i=84017, ashtadhyayi-com *s*).
 # Devanagarī: नेर्गदनदपतपदघु…चनो…देग्धिषु च
 _TEXT_SLP1 = (
     "neH gadanadapatapadaghumAsyatihantiyAtivAtidrAtipsAtivapativahati"
@@ -108,6 +108,8 @@ SUTRA = SutraRecord(
     sutra_type       = SutraType.VIDHI,
     text_slp1        = 'nergadanadapatapadaGumAsyatihantiyAtivAtidrAtipsAtivapativahatiSAmyaticinotidegDizu ca',
     text_dev         = 'नेर्गदनदपतपदघुमास्यतिहन्तियातिवातिद्रातिप्सातिवपतिवहतिशाम्यतिचिनोतिदेग्धिषु च',
+    samagra_slp1     = "razAByAM upasargAt - gada-nada-pata-pada-Gu-mA-syati-hanti-yAti-vAti-drAti-psAti-vapati-vahati-SAmyati-cinoti-degDizu neH naH RaH",
+    samagra_dev      = "रषाभ्यां उपसर्गात् - गद-नद-पत-पद-घु-मा-स्यति-हन्ति-याति-वाति-द्राति-प्साति-वपति-वहति-शाम्यति-चिनोति-देग्धिषु नेः नः णः",
     padaccheda_dev   = "नेः / गद-… / च",
     why_dev          = (
         "उपसर्ग-स्थानिकस्य नि-उपसर्गे नकारं गदादिघोः परतः णादेशो "

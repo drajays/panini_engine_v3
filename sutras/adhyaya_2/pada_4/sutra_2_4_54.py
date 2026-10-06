@@ -4,6 +4,7 @@
 Padaccheda: चक्षिङः ख्याञ्
 
 caksin is replaced by khyan.
+Pāṭha: ashtadhyayi.com data.txt row i=24054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "cakziNaH KyAY",
     text_dev              = "चक्षिङः ख्याञ्",
+    samagra_slp1          = "ArDaDAtuke cakziNaH KyAY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके चक्षिङः ख्याञ्",
     padaccheda_dev        = "चक्षिङः ख्याञ्",
     why_dev               = "चक्षिङः ख्याञ् (२.४.५४)।",
     anuvritti_from        = ('2.4.40',),

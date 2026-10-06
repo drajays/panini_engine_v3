@@ -4,6 +4,7 @@
 Padaccheda: विभाषा अध्यक्षे
 
 विभाषाऽध्यक्षे (6.2.67)
+Pāṭha: ashtadhyayi.com data.txt row i=62067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'viBAzADyakze',
     text_dev              = 'विभाषाऽध्यक्षे',
+    samagra_slp1          = "AdiH udAttaH viBAzA aDyakze pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः विभाषा अध्यक्षे पूर्वपदम्",
     padaccheda_dev        = "विभाषा अध्यक्षे",
     why_dev               = "(सूत्रम् 6.2.67) विभाषाऽध्यक्षे।",
     anuvritti_from        = ('6.1.1',),

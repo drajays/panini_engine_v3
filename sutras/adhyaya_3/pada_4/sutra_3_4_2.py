@@ -4,6 +4,7 @@
 Padaccheda: क्रिया-समभिहारे लोट् लोटः हि-स्वौ वा च त-ध्वमोः
 
 krt-suffix rule: क्रियासमभिहारे लोट्; लोटो हिस्वौ; वा च तध्वमोः
+Pāṭha: ashtadhyayi.com data.txt row i=34002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'kriyAsamaBihAre low lowo hisvO vA ca taDvamoH',
     text_dev              = 'क्रियासमभिहारे लोट्; लोटो हिस्वौ; वा च तध्वमोः',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kriyAsamaBihAre low lowaH hisvO vA ca taDvamoH kft DAtusambanDe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः क्रियासमभिहारे लोट् लोटः हिस्वौ वा च तध्वमोः कृत् धातुसम्बन्धे",
     padaccheda_dev        = "क्रिया-समभिहारे लोट् लोटः हि-स्वौ वा च त-ध्वमोः",
     why_dev               = "धातोः प्रत्ययः (३.4.2)।",
     anuvritti_from        = ('3.1.1',),

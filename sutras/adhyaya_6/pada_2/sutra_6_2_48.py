@@ -4,6 +4,7 @@
 Padaccheda: तृतीया कर्मणि
 
 तृतीया कर्मणि (6.2.48)
+Pāṭha: ashtadhyayi.com data.txt row i=62048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tftIyA karmaRi",
     text_dev              = "तृतीया कर्मणि",
+    samagra_slp1          = "tftIyA karmaRi prakftyA pUrvapadam kte",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तृतीया कर्मणि प्रकृत्या पूर्वपदम् क्ते",
     padaccheda_dev        = "तृतीया कर्मणि",
     why_dev               = "(सूत्रम् 6.2.48) तृतीया कर्मणि।",
     anuvritti_from        = ('6.1.1',),

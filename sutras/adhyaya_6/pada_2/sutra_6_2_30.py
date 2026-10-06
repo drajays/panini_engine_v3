@@ -4,6 +4,7 @@
 Padaccheda: बहु अन्यतरस्याम्
 
 बह्वन्यतरस्याम् (6.2.30)
+Pāṭha: ashtadhyayi.com data.txt row i=62030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahvanyatarasyAm",
     text_dev              = "बह्वन्यतरस्याम्",
+    samagra_slp1          = "bahu anyatarasyAm pUrvapadam prakftyA iganta-kAla-kapAla-BagAla-SarAvezu dvigO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "बहु अन्यतरस्याम् पूर्वपदम् प्रकृत्या इगन्त-काल-कपाल-भगाल-शरावेषु द्विगौ",
     padaccheda_dev        = "बहु अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.2.30) बह्वन्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

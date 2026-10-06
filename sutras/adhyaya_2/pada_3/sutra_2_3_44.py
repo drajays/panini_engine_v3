@@ -4,6 +4,7 @@
 Padaccheda: प्रसित-उत्सुकाभ्याम् तृतीया च
 
 prasita and utsuka also take tritiya.
+Pāṭha: ashtadhyayi.com data.txt row i=23044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prasitotsukAByAM tftIyA ca",
     text_dev              = "प्रसितोत्सुकाभ्यां तृतीया च",
+    samagra_slp1          = "anaBihite prasita-utsukAByAm tftIyA ca saptamI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते प्रसित-उत्सुकाभ्याम् तृतीया च सप्तमी",
     padaccheda_dev        = "प्रसित-उत्सुकाभ्याम् तृतीया च",
     why_dev               = "प्रसित-उत्सुकाभ्याम् तृतीया च (२.३.४४)।",
     anuvritti_from        = ('2.3.43',),

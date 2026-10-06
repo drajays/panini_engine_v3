@@ -6,6 +6,7 @@ going (gati-artha) or roots of saying (vad-ādi).
 E.g., "accha-gam" (to go towards), "accha-vad" (to address).
 
 v3: registers samjna_registry["gati_accha"] = frozenset({"acCa"}).
+Pāṭha: ashtadhyayi.com data.txt row i=14069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1="acCa gatyarTavadezu",
     text_dev="अच्छ गत्यर्थवदेषु",
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH acCa gati-arTa-vadezu kriyAyoge gatiH avyayam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः अच्छ गति-अर्थ-वदेषु क्रियायोगे गतिः अव्ययम्",
     padaccheda_dev="अच्छ / गति-अर्थ-वदेषु",
     why_dev="गत्यर्थवदेषु 'अच्छ' शब्दो गति-संज्ञकः — 'acCa' गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

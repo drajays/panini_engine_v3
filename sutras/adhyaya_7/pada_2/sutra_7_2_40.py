@@ -4,6 +4,7 @@
 Padaccheda: सिचि च परस्मैपदेषु
 
 सिचि च परस्मैपदेषु (7.2.40)
+Pāṭha: ashtadhyayi.com data.txt row i=72040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sici ca parasmEpadezu",
     text_dev              = "सिचि च परस्मैपदेषु",
+    samagra_slp1          = "aNgasya sici ca parasmEpadezu valAdeH iw ArDaDAtukasya dIrGaH vFtaH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य सिचि च परस्मैपदेषु वलादेः इट् आर्धधातुकस्य दीर्घः वॄतः न",
     padaccheda_dev        = "सिचि च परस्मैपदेषु",
     why_dev               = "(सूत्रम् 7.2.40) सिचि च परस्मैपदेषु।",
     anuvritti_from        = ('7.1.1',),

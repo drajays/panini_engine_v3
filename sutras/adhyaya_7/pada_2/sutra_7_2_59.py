@@ -4,6 +4,7 @@
 Padaccheda: न वृद्‍भ्यः चतुर्भ्यः
 
 न वृद्भ्यश्चतुर्भ्यः (7.2.59)
+Pāṭha: ashtadhyayi.com data.txt row i=72059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na vfdByaScaturByaH",
     text_dev              = "न वृद्भ्यश्चतुर्भ्यः",
+    samagra_slp1          = "aNgasya na vfdByaH caturByaH valAdeH iw ArDaDAtukasya se parasmEpadezu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न वृद्भ्यः चतुर्भ्यः वलादेः इट् आर्धधातुकस्य से परस्मैपदेषु",
     padaccheda_dev        = "न वृद्‍भ्यः चतुर्भ्यः",
     why_dev               = "(सूत्रम् 7.2.59) न वृद्भ्यश्चतुर्भ्यः।",
     anuvritti_from        = ('7.1.1',),

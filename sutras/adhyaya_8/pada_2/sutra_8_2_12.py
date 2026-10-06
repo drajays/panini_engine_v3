@@ -4,6 +4,7 @@
 Padaccheda: आसन्दीवत् (लुप्तप्रथमान्त) अष्ठीवत् (लुप्तप्रथमान्त) चक्रीवत् (लुप्तप्रथमान्त) कक्षीवत् (लुप्तप्रथमान्त) रुमण्वत् (लुप्तप्रथमान्त) चर्मण्वती (लुप्तप्रथमान्त)
 
 आसन्दीवदष्ठीवच्चक्रीवत्कक्षीवद्रुमण्वच्चर्मण्वती (8.2.12)
+Pāṭha: ashtadhyayi.com data.txt row i=82012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AsandIvadazWIvaccakrIvatkakzIvadrumaRvaccarmaRvatI",
     text_dev              = "आसन्दीवदष्ठीवच्चक्रीवत्कक्षीवद्रुमण्वच्चर्मण्वती",
+    samagra_slp1          = "padasya pUrvatrAsidDam AsandIvat azWIvat cakrIvat kakzIvat rumaRvat carmaRvatI vaH matoH saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् आसन्दीवत् अष्ठीवत् चक्रीवत् कक्षीवत् रुमण्वत् चर्मण्वती वः मतोः संज्ञायाम्",
     padaccheda_dev        = "आसन्दीवत् (लुप्तप्रथमान्त) अष्ठीवत् (लुप्तप्रथमान्त) चक्रीवत् (लुप्तप्रथमान्त) कक्षीवत् (लुप्तप्रथमान्त) रुमण्वत् (लुप्तप्रथमान्त) चर्मण्वती (लुप्तप्रथमान्त)",
     why_dev               = "(सूत्रम् 8.2.12) आसन्दीवदष्ठीवच्चक्रीवत्कक्षीवद्रुमण्वच्चर्मण्वती।",
     anuvritti_from        = ('8.1.1',),

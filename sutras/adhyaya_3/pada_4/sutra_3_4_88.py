@@ -4,6 +4,7 @@
 Padaccheda: वा छन्दसि
 
 krt-suffix rule: वा छन्दसि
+Pāṭha: ashtadhyayi.com data.txt row i=34088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA Candasi",
     text_dev              = "वा छन्दसि",
+    samagra_slp1          = "lowaH lasya seH hi Candasi vA apit ca",
+    samagra_dev           = "लोटः लस्य सेः हि छन्दसि वा अपित् च",
     padaccheda_dev        = "वा छन्दसि",
     why_dev               = "धातोः प्रत्ययः (३.4.88)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: झयः । होः । अन्यतरस्याम्
 
 झयो होऽन्यतरस्याम् (8.4.62)
+Pāṭha: ashtadhyayi.com data.txt row i=84062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'Jayo honyatarasyAm',
     text_dev              = 'झयो होऽन्यतरस्याम्',
+    samagra_slp1          = "JayaH haH pUrvasya savarRaH anyatarasyAm",
+    samagra_dev           = "झयः हः पूर्वस्य सवर्णः अन्यतरस्याम्",
     padaccheda_dev        = "झयः । होः । अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 8.4.62) झयो होऽन्यतरस्याम्।",
     anuvritti_from        = ('8.1.1',),

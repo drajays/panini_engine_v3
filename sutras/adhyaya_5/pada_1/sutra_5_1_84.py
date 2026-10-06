@@ -4,6 +4,7 @@
 Padaccheda: अवयसि ठन् च
 
 अवयसि ठंश्च (5.1.84)
+Pāṭha: ashtadhyayi.com data.txt row i=51084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avayasi WaMSca",
     text_dev              = "अवयसि ठंश्च",
+    samagra_slp1          = "tam BUtaH iti avayasi zaRmAsAt dvigoH Ryat Wan ca",
+    samagra_dev           = "'तम् भूतः' (इति) अवयसि षण्मासात् द्विगोः ण्यत् ठन् च",
     padaccheda_dev        = "अवयसि ठन् च",
     why_dev               = "(सूत्रम् 5.1.84) अवयसि ठंश्च।",
     anuvritti_from        = ('5.1.78',),

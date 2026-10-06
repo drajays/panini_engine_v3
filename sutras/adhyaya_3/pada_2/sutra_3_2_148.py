@@ -4,6 +4,7 @@
 Padaccheda: चलन-शब्द-अर्थात् अकर्मकात् युच्
 
 krt-suffix rule: चलनशब्दार्थादकर्मकाद्युच् (148)
+Pāṭha: ashtadhyayi.com data.txt row i=32148 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "calanaSabdArTAdakarmakAdyuc",
     text_dev              = "चलनशब्दार्थादकर्मकाद्युच्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu calanaSabdArTAt akarmakAt yuc kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु चलनशब्दार्थात् अकर्मकात् युच् कृत्",
     padaccheda_dev        = "चलन-शब्द-अर्थात् अकर्मकात् युच्",
     why_dev               = "धातोः कृत्-प्रत्ययः [चलनशब्दार्थादकर्मकाद्युच्] विहितः (३.२.148)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

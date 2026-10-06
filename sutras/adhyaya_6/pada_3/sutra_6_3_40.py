@@ -4,6 +4,7 @@
 Padaccheda: स्वाङ्गात् च ईतः अमानिनि
 
 स्वाङ्गाच्चेतोऽमानिनि (6.3.40)
+Pāṭha: ashtadhyayi.com data.txt row i=63040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'svANgAccetomAnini',
     text_dev              = 'स्वाङ्गाच्चेतोऽमानिनि',
+    samagra_slp1          = "uttarapade svANgAt ca ItaH amAnini striyAH puMvat anUN BAzitapu~skAd na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे स्वाङ्गात् च ईतः अमानिनि स्त्रियाः पुंवत् अनूङ् भाषितपुँस्काद् न",
     padaccheda_dev        = "स्वाङ्गात् च ईतः अमानिनि",
     why_dev               = "(सूत्रम् 6.3.40) स्वाङ्गाच्चेतोऽमानिनि।",
     anuvritti_from        = ('6.1.1',),

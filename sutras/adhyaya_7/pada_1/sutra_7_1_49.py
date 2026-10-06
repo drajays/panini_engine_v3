@@ -4,6 +4,7 @@
 Padaccheda: स्नात्वी-आदयः च
 
 स्नात्व्यादयश्च (7.1.49)
+Pāṭha: ashtadhyayi.com data.txt row i=71049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "snAtvyAdayaSca",
     text_dev              = "स्नात्व्यादयश्च",
+    samagra_slp1          = "aNgasya snAtvyAdayaH ca Candasi ktvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य स्नात्व्यादयः च छन्दसि क्त्वः",
     padaccheda_dev        = "स्नात्वी-आदयः च",
     why_dev               = "(सूत्रम् 7.1.49) स्नात्व्यादयश्च।",
     anuvritti_from        = ('7.1.1',),

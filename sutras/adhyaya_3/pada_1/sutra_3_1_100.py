@@ -4,6 +4,7 @@
 Padaccheda: गद-मद-चर-यमः च अन्-उपसर्गे
 
 Krt suffix rule from dhatu: गदमदचरयमश्चानुपसर्गे (100)
+Pāṭha: ashtadhyayi.com data.txt row i=31100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gadamadacarayamaScAnupasarge",
     text_dev              = "गदमदचरयमश्चानुपसर्गे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH gada-mada-cara-yamaH ca anupasarge kft yat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः गद-मद-चर-यमः च अनुपसर्गे कृत् यत्",
     padaccheda_dev        = "गद-मद-चर-यमः च अन्-उपसर्गे",
     why_dev               = "धातोः [गदमदचरयमश्चानुपसर्गे]-प्रत्ययः विहितः (३.१.100)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

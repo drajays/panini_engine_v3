@@ -11,6 +11,7 @@ for **idam**+**B**+**y**+**A**+**m** — see user note `aabhyam.md`.
 *Nyūna* v3: only the **i**+**d**+**a** and **e**+**t**+**a** *corpora* (SLP1 ``ida``, ``eta``) after
 **6.1.97**; *no* *vibhakti*/*vacana* read in ``cond`` (Art. 2).  *Etad* is included so
 *etad*+*bhyām* converges (note line 40–41).
+Pāṭha: ashtadhyayi.com data.txt row i=72113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -69,6 +70,8 @@ SUTRA = SutraRecord(
     sutra_type       = SutraType.VIDHI,
     text_slp1        = "hali lopaH",
     text_dev         = "हलि लोपः",
+    samagra_slp1     = "akaH idamaH idaH Api hali viBaktO lopaH",
+    samagra_dev      = "अकः इदमः इदः आपि हलि विभक्तौ लोपः",
     padaccheda_dev   = "हलि / लोपः",
     why_dev          = (
         "इदम्-एतद्-शब्दयोर् हल्-वर्णादौ सुपि परे 'इद्'-'एत्'-भागस्य लोपः, "

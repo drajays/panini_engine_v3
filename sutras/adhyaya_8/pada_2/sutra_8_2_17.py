@@ -4,6 +4,7 @@
 Padaccheda: नात् घस्य
 
 नाद्घस्य (8.2.17)
+Pāṭha: ashtadhyayi.com data.txt row i=82017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nAdGasya",
     text_dev              = "नाद्घस्य",
+    samagra_slp1          = "padasya pUrvatrAsidDam nAt Gasya Candasi nuw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् नात् घस्य छन्दसि नुट्",
     padaccheda_dev        = "नात् घस्य",
     why_dev               = "(सूत्रम् 8.2.17) नाद्घस्य।",
     anuvritti_from        = ('8.1.1',),

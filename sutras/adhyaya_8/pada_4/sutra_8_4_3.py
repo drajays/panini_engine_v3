@@ -4,6 +4,7 @@
 Padaccheda: पूर्व-पदात् संज्ञायाम् अ-गः
 
 पूर्वपदात् संज्ञायामगः (8.4.3)
+Pāṭha: ashtadhyayi.com data.txt row i=84003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUrvapadAt saMjYAyAmagaH",
     text_dev              = "पूर्वपदात् संज्ञायामगः",
+    samagra_slp1          = "saMjYAyAm pUrvapadAt razAByAm naH RaH agaH ",
+    samagra_dev           = "संज्ञायाम् पूर्वपदात् रषाभ्याम् नः णः, अगः ।",
     padaccheda_dev        = "पूर्व-पदात् संज्ञायाम् अ-गः",
     why_dev               = "(सूत्रम् 8.4.3) पूर्वपदात् संज्ञायामगः।",
     anuvritti_from        = ('8.1.1',),

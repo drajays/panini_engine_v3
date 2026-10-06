@@ -4,6 +4,7 @@
 Padaccheda: दुहः च
 
 Krt suffix rule from dhatu: दुहश्च (63)
+Pāṭha: ashtadhyayi.com data.txt row i=31063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "duhaSca",
     text_dev              = "दुहश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH duhaH ca luNi cleH ciR te anyatarasyAm karmakartari",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः दुहः च लुङि च्लेः चिण् ते अन्यतरस्याम् कर्मकर्तरि",
     padaccheda_dev        = "दुहः च",
     why_dev               = "धातोः [दुहश्च]-प्रत्ययः विहितः (३.१.63)।",
     anuvritti_from        = ('3.1.1',),

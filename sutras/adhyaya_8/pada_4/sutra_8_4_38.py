@@ -4,6 +4,7 @@
 Padaccheda: पद-व्यवाये अपि
 
 पदव्यवायेऽपि (8.4.38)
+Pāṭha: ashtadhyayi.com data.txt row i=84038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'padavyavAyepi',
     text_dev              = 'पदव्यवायेऽपि',
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm pada-vyavAye api razAByAm na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् पद-व्यवाये अपि रषाभ्याम् न",
     padaccheda_dev        = "पद-व्यवाये अपि",
     why_dev               = "(सूत्रम् 8.4.38) पदव्यवायेऽपि।",
     anuvritti_from        = ('8.1.1',),

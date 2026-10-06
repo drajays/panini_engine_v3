@@ -15,6 +15,7 @@ in _JNA_ROOTS carries the tag "san_pratyaya" AND "anu_prefix" — in which case
 we set a blocker flag to prevent 1.3.57 from firing for this combination.
 Actually implemented as VIDHI that sets a negative gate. No arm flags.
 r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -63,6 +64,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="nAnorjYaH",
     text_dev="नानोर्ज्ञः",
+    samagra_slp1="na anoH jYaH Atmanepadam sanaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="न अनोः ज्ञः आत्मनेपदम् सनः",
     padaccheda_dev="न / अनोः (पञ्चमी-एकवचन) / ज्ञः (षष्ठी-एकवचन)",
     why_dev=(
         "अनु-पूर्वकस्य ज्ञा-धातोः सन्-प्रत्यये परे आत्मनेपदं न भवति — "

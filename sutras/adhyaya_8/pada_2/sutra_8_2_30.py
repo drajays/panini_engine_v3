@@ -99,6 +99,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="coH kuH",
     text_dev="चोः कुः",
+    samagra_slp1="coH kuH Jali padasya ante",
+    samagra_dev="चोः कुः झलि पदस्य अन्ते",
     padaccheda_dev="चोः कुः",
     why_dev="झलि/पदान्ते परे च-वर्णस्य क-वर्णादेशः (उक्त-उपपत्ति)। "
              "प००३-ए: त्रिपादी-प्रवेशात् पूर्वम् अनुमतम्।",

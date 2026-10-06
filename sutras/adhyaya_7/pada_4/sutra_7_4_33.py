@@ -4,6 +4,7 @@
 Padaccheda: क्यचि च
 
 क्यचि च (7.4.33)
+Pāṭha: ashtadhyayi.com data.txt row i=74033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kyaci ca",
     text_dev              = "क्यचि च",
+    samagra_slp1          = "aNgasya kyaci ca I asya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य क्यचि च ई अस्य",
     padaccheda_dev        = "क्यचि च",
     why_dev               = "(सूत्रम् 7.4.33) क्यचि च।",
     anuvritti_from        = ('7.1.1',),

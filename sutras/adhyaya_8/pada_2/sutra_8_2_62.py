@@ -4,6 +4,7 @@
 Padaccheda: क्विन्-प्रत्ययस्य कुः
 
 क्विन्प्रत्ययस्य कुः (8.2.62)
+Pāṭha: ashtadhyayi.com data.txt row i=82062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kvinpratyayasya kuH",
     text_dev              = "क्विन्प्रत्ययस्य कुः",
+    samagra_slp1          = "padasya kvinpratyayasya kuH",
+    samagra_dev           = "पदस्य क्विन्प्रत्ययस्य कुः",
     padaccheda_dev        = "क्विन्-प्रत्ययस्य कुः",
     why_dev               = "(सूत्रम् 8.2.62) क्विन्प्रत्ययस्य कुः।",
     anuvritti_from        = ('8.1.1',),

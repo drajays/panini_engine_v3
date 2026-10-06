@@ -4,6 +4,7 @@
 Padaccheda: गः थकन्
 
 Krt suffix rule from dhatu: गस्थकन् (146)
+Pāṭha: ashtadhyayi.com data.txt row i=31146 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gasTakan",
     text_dev              = "गस्थकन्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH gaH Takan kft Silpini",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः गः थकन् कृत् शिल्पिनि",
     padaccheda_dev        = "गः थकन्",
     why_dev               = "धातोः [गस्थकन्]-प्रत्ययः विहितः (३.१.146)।",
     anuvritti_from        = ('3.1.1',),

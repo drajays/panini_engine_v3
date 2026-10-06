@@ -4,6 +4,7 @@
 Padaccheda: सर्वत्र विभाषा गोः
 
 सर्वत्र विभाषा गोः (6.1.122)
+Pāṭha: ashtadhyayi.com data.txt row i=61122 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sarvatra viBAzA goH',
     text_dev              = 'सर्वत्र विभाषा गोः',
+    samagra_slp1          = "padAntAt goH eNaH ati sarvatra prakftyA viBAzA",
+    samagra_dev           = "पदान्तात् गोः एङः अति सर्वत्र प्रकृत्या विभाषा",
     padaccheda_dev        = "सर्वत्र विभाषा गोः",
     why_dev               = "(सूत्रम् 6.1.122) सर्वत्र विभाषा गोः।",
     anuvritti_from        = ('6.1.1',),

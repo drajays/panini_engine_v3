@@ -4,6 +4,7 @@
 Padaccheda: ओकः उचः के
 
 ओक उचः के (7.3.64)
+Pāṭha: ashtadhyayi.com data.txt row i=73064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "oka ucaH ke",
     text_dev              = "ओक उचः के",
+    samagra_slp1          = "aNgasya okaH ucaH ke cajoH ku na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ओकः उचः के चजोः कु न",
     padaccheda_dev        = "ओकः उचः के",
     why_dev               = "(सूत्रम् 7.3.64) ओक उचः के।",
     anuvritti_from        = ('7.1.1',),

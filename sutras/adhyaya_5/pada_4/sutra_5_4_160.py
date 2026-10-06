@@ -4,6 +4,7 @@
 Padaccheda: निष्प्रवाणिः च
 
 निष्प्रवाणिश्च (5.4.160)
+Pāṭha: ashtadhyayi.com data.txt row i=54160 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nizpravARiSca",
     text_dev              = "निष्प्रवाणिश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA nizpravARiH ca bahuvrIhO kap na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा निष्प्रवाणिः च बहुव्रीहौ कप् न",
     padaccheda_dev        = "निष्प्रवाणिः च",
     why_dev               = "(सूत्रम् 5.4.160) निष्प्रवाणिश्च।",
     anuvritti_from        = ('5.4.68',),

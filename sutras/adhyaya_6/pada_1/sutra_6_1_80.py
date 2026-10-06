@@ -4,6 +4,7 @@
 Padaccheda: धातोः तन्निमित्तस्य अन्त्यस्य एव
 
 धातोस्तन्निमित्तस्यैव (6.1.80)
+Pāṭha: ashtadhyayi.com data.txt row i=61080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DAtostannimittasyEva",
     text_dev              = "धातोस्तन्निमित्तस्यैव",
+    samagra_slp1          = "DAtoH yi-pratyaye tannimitasyEva ecaH vAntaH saMhitAyAm",
+    samagra_dev           = "धातोः यि-प्रत्यये तन्निमितस्यैव एचः वान्तः संहितायाम्",
     padaccheda_dev        = "धातोः तन्निमित्तस्य अन्त्यस्य एव",
     why_dev               = "(सूत्रम् 6.1.80) धातोस्तन्निमित्तस्यैव।",
     anuvritti_from        = ('6.1.1',),

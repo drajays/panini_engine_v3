@@ -4,6 +4,7 @@
 Padaccheda: दिवः द्यावा
 
 दिवो द्यावा (6.3.29)
+Pāṭha: ashtadhyayi.com data.txt row i=63029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "divo dyAvA",
     text_dev              = "दिवो द्यावा",
+    samagra_slp1          = "uttarapade divaH dyAvA devatAdvandve ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे दिवः द्यावा देवताद्वन्द्वे च",
     padaccheda_dev        = "दिवः द्यावा",
     why_dev               = "(सूत्रम् 6.3.29) दिवो द्यावा।",
     anuvritti_from        = ('6.1.1',),

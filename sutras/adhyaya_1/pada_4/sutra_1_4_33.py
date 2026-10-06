@@ -11,6 +11,7 @@ Example: *bālāya modakā rocate* — the child (bāla) is the prīyamāṇa/sa
 *Engine:* A Term carrying ``"prIyamANa_ruci"`` (pipeline-set) gets tag
 ``"sampradAna"``.  ``cond`` reads only structural semantic tags
 (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = "rucyarTAnAM prIyamARaH",
     text_dev              = "रुच्यर्थानां प्रीयमाणः",
+    samagra_slp1          = "AkaqArAt ekA saMjYA kArake ruci-arTAnAm prIyamARaH sampradAnam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा कारके रुचि-अर्थानाम् प्रीयमाणः सम्प्रदानम्",
     padaccheda_dev        = "रुचि-अर्थानाम् / प्रीयमाणः",
     why_dev               = (
         "रुच्यर्थ-धातूनां प्रयोगे यः प्रीयमाणः (यस्य रोचते) स सम्प्रदान-कारक-संज्ञकः — "

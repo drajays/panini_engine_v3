@@ -4,6 +4,7 @@
 Padaccheda: कुलिजात् लुक्-खौ च
 
 कुलिजाल्लुक्खौ च (5.1.55)
+Pāṭha: ashtadhyayi.com data.txt row i=51055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kulijAllukKO ca",
     text_dev              = "कुलिजाल्लुक्खौ च",
+    samagra_slp1          = "tat samBavati avaharati pacati iti kulijAt dvigoH anyatarasyAm luk-KO zWan ca",
+    samagra_dev           = "'तत् सम्भवति, अवहरति, पचति' (इति) कुलिजात् द्विगोः अन्यतरस्याम्  लुक्-खौ, ष्ठन्  च",
     padaccheda_dev        = "कुलिजात् लुक्-खौ च",
     why_dev               = "(सूत्रम् 5.1.55) कुलिजाल्लुक्खौ च।",
     anuvritti_from        = ('5.1.19',),

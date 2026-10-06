@@ -4,6 +4,7 @@
 Padaccheda: अण्-इञोः अनार्षयोः गुरु-उपोत्तमयोः ष्यङ् गोत्रे
 
 अणिञोरनार्षयोर्गुरूपोत्तमयोः ष्यङ् गोत्रे (4.1.78)
+Pāṭha: ashtadhyayi.com data.txt row i=41078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aRiYoranArzayorgurUpottamayoH zyaN gotre",
     text_dev              = "अणिञोरनार्षयोर्गुरूपोत्तमयोः ष्यङ् गोत्रे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt tadDitAH aRa-iYoH anArzayoH guru-upottamayoH zyaN gotre",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् तद्धिताः अण-इञोः अनार्षयोः गुरु-उपोत्तमयोः ष्यङ् गोत्रे",
     padaccheda_dev        = "अण्-इञोः अनार्षयोः गुरु-उपोत्तमयोः ष्यङ् गोत्रे",
     why_dev               = "(सूत्रम् 4.1.78) अणिञोरनार्षयोर्गुरूपोत्तमयोः ष्यङ् गोत्रे।",
     anuvritti_from        = ('4.1.1',),

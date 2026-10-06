@@ -9,6 +9,7 @@ Padaccheda: द्विगुः / एकवचनम्
 Engine: sets a gate in paribhasha_gates recording that the dvigु ekavacana
 rule has been noted; downstream steps use the samjna_registry entry
 "2_4_1_dvigu_ekavacana" to apply singular inflection.
+Pāṭha: ashtadhyayi.com data.txt row i=24001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1      = 'dvigurekavacanam',
     text_dev       = 'द्विगुरेकवचनम्',
+    samagra_slp1   = "dviguH ekavacanam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "द्विगुः एकवचनम्",
     padaccheda_dev = "द्विगुः / एकवचनम्",
     why_dev        = "द्विगु-समासः एकवचने भवति।",
     anuvritti_from = (),

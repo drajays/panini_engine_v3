@@ -4,6 +4,7 @@
 Padaccheda: इट् सनि वा
 
 इट् सनि वा (7.2.41)
+Pāṭha: ashtadhyayi.com data.txt row i=72041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "iw sani vA",
     text_dev              = "इट् सनि वा",
+    samagra_slp1          = "aNgasya iw sani vA ArDaDAtukasya valAdeH vFtaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य इट् सनि वा आर्धधातुकस्य वलादेः वॄतः",
     padaccheda_dev        = "इट् सनि वा",
     why_dev               = "(सूत्रम् 7.2.41) इट् सनि वा।",
     anuvritti_from        = ('7.1.1',),

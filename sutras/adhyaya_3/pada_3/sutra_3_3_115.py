@@ -7,6 +7,7 @@ related senses.
 Engine role: trace-only stamp on the **चिञ्** → *cayana* (*lyuṭ*) spine when the
 recipe arms ``corrected_v2_P006_3_3_115_arm`` (CONSTITUTION Art. 7).  Affixation
 still proceeds via **3.4.68** + **3.1.133** (*lyuw*).
+Pāṭha: ashtadhyayi.com data.txt row i=33115 (Art. 14).
 """
 from __future__ import annotations
 
@@ -38,6 +39,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.ANUVADA,
     text_slp1="lyuw ca",
     text_dev="ल्युट् च",
+    samagra_slp1="pratyayaH paraSca AdyudAttaSca DAtoH lyuw ca kft napuMsake BAve",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="प्रत्ययः परश्च आद्युदात्तश्च धातोः ल्युट् च कृत् नपुंसके भावे",
     padaccheda_dev="ल्युट् च",
     why_dev="भावादौ धातोः ल्युट्-विधानम् — अनुवादः (प००६ आर्म्)।",
     anuvritti_from=("3.1.91",),

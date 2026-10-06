@@ -8,6 +8,7 @@ attach **डाच्** (machine **``qAc``**) before *it*-prakaraṇa.
 Engine:
   • ``state.meta['corrected_v2_P017_5_4_57_arm']`` (cleared in ``act``).
   • expects **two** adjacent **``pawat``** stems with **``prātipadika``** and **``anga``**.
+Pāṭha: ashtadhyayi.com data.txt row i=54057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -58,6 +59,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='avyaktAnukaraRAddvyajavarArDAdanitO qAc',
     text_dev='अव्यक्तानुकरणाद्द्व्यजवरार्धादनितौ डाच्',
+    samagra_slp1="avyakta-anukaraRAt dvyac-avarArDAt anitO kf-BU-asti-yoge qAc",
+    samagra_dev="अव्यक्त-अनुकरणात् द्व्यच्-अवरार्धात् अनितौ कृ-भू-अस्ति-योगे डाच्",
     padaccheda_dev="अव्यक्त-अनुकरणात् / द्व्यज्-अवरार्धात् / अनितौ / डाच्",
     why_dev="अव्यक्तानुकरण-``pawat``-द्वित्वे परे ``qAc`` (डाच्) — P017।",
     anuvritti_from=("5.4.1",),

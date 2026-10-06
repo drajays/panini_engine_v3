@@ -4,6 +4,7 @@
 Padaccheda: ऊत् उपधायाः गोहः
 
 ऊदुपधाया गोहः (6.4.89)
+Pāṭha: ashtadhyayi.com data.txt row i=64089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "UdupaDAyA gohaH",
     text_dev              = "ऊदुपधाया गोहः",
+    samagra_slp1          = "gohaH upaDAyAH Ut aci",
+    samagra_dev           = "गोहः उपधायाः ऊत् अचि",
     padaccheda_dev        = "ऊत् उपधायाः गोहः",
     why_dev               = "(सूत्रम् 6.4.89) ऊदुपधाया गोहः।",
     anuvritti_from        = ('6.1.1',),

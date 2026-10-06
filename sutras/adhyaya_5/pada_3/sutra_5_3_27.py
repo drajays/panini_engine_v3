@@ -4,6 +4,7 @@
 Padaccheda: दिक्शब्देभ्यः सप्तमी-पञ्चमी-प्रथमाभ्यः दिग्-देश-कालेषु अस्तातिः
 
 दिक्शब्देभ्यः सप्तमीपञ्चमीप्रथमाभ्यो दिग्देशकालेष्वस्तातिः (5.3.27)
+Pāṭha: ashtadhyayi.com data.txt row i=53027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dikSabdeByaH saptamIpaYcamIpraTamAByo digdeSakAlezvastAtiH",
     text_dev              = "दिक्शब्देभ्यः सप्तमीपञ्चमीप्रथमाभ्यो दिग्देशकालेष्वस्तातिः",
+    samagra_slp1          = "dikSabdeByaH saptamI-paYcamI-praTamAByaH dig-deSa-kAlezu astAtiH",
+    samagra_dev           = "दिक्शब्देभ्यः सप्तमी-पञ्चमी-प्रथमाभ्यः दिग्-देश-कालेषु अस्तातिः",
     padaccheda_dev        = "दिक्शब्देभ्यः सप्तमी-पञ्चमी-प्रथमाभ्यः दिग्-देश-कालेषु अस्तातिः",
     why_dev               = "(सूत्रम् 5.3.27) दिक्शब्देभ्यः सप्तमीपञ्चमीप्रथमाभ्यो दिग्देशकालेष्वस्तातिः।",
     anuvritti_from        = ('4.1.76',),

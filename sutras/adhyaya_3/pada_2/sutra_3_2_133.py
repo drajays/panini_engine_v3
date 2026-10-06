@@ -4,6 +4,7 @@
 Padaccheda: अर्हः पूजायाम् (or प्रशंसायाम् )
 
 krt-suffix rule: अर्हः पूजायाम् (133)
+Pāṭha: ashtadhyayi.com data.txt row i=32133 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'arhaH praSaMsAyAm',
     text_dev              = 'अर्हः प्रशंसायाम्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne arhaH praSaMsAyAm kft Satf",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने अर्हः प्रशंसायाम् कृत् शतृ",
     padaccheda_dev        = "अर्हः पूजायाम् (or प्रशंसायाम् )",
     why_dev               = "धातोः कृत्-प्रत्ययः [अर्हः पूजायाम्] विहितः (३.२.133)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

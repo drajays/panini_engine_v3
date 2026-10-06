@@ -4,6 +4,7 @@
 Padaccheda: वा अम्-शसोः
 
 वाऽम्शसोः (6.4.80)
+Pāṭha: ashtadhyayi.com data.txt row i=64080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vAmSasoH',
     text_dev              = 'वाऽम्शसोः',
+    samagra_slp1          = "amSasoH striyAH vA iyaN",
+    samagra_dev           = "अम्शसोः स्त्रियाः वा इयङ्",
     padaccheda_dev        = "वा अम्-शसोः",
     why_dev               = "(सूत्रम् 6.4.80) वाऽम्शसोः।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: संज्ञायाम् च
 
 संज्ञायां च (6.2.77)
+Pāṭha: ashtadhyayi.com data.txt row i=62077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYAyAM ca",
     text_dev              = "संज्ञायां च",
+    samagra_slp1          = "AdiH udAttaH saMjYAyAm ca pUrvapadam aRi akfYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः संज्ञायाम् च पूर्वपदम् अणि अकृञः",
     padaccheda_dev        = "संज्ञायाम् च",
     why_dev               = "(सूत्रम् 6.2.77) संज्ञायां च।",
     anuvritti_from        = ('6.1.1',),

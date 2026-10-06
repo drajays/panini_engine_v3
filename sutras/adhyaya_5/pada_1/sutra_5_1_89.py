@@ -4,6 +4,7 @@
 Padaccheda: चित्तवति नित्यम्
 
 चित्तवति नित्यम् (5.1.89)
+Pāṭha: ashtadhyayi.com data.txt row i=51089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "cittavati nityam",
     text_dev              = "चित्तवति नित्यम्",
+    samagra_slp1          = "tam BUtaH iti varzAt dvigoH cittavati nityam luk",
+    samagra_dev           = "'तम् भूतः' (इति) वर्षात् द्विगोः चित्तवति नित्यम् लुक्",
     padaccheda_dev        = "चित्तवति नित्यम्",
     why_dev               = "(सूत्रम् 5.1.89) चित्तवति नित्यम्।",
     anuvritti_from        = ('5.1.78',),

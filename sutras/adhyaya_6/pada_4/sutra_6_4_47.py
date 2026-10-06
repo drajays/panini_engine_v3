@@ -4,6 +4,7 @@
 Padaccheda: भ्रस्जः र-उपधयोः रम् अन्यतरस्याम्
 
 भ्रस्जो रोपधयोः रमन्यतरस्याम् (6.4.47)
+Pāṭha: ashtadhyayi.com data.txt row i=64047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Brasjo ropaDayoH ramanyatarasyAm",
     text_dev              = "भ्रस्जो रोपधयोः रमन्यतरस्याम्",
+    samagra_slp1          = "BrasjaH ra-upaDayoH anyatarasyAm ramArDaDAtuke",
+    samagra_dev           = "भ्रस्जः र-उपधयोः अन्यतरस्याम् रमार्धधातुके",
     padaccheda_dev        = "भ्रस्जः र-उपधयोः रम् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.4.47) भ्रस्जो रोपधयोः रमन्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

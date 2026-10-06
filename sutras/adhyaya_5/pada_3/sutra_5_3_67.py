@@ -4,6 +4,7 @@
 Padaccheda: ईषत्-असमाप्तौ कल्पप्-देश्य-देशीयरः
 
 ईषदसमाप्तौ कल्पब्देश्यदेशीयरः (5.3.67)
+Pāṭha: ashtadhyayi.com data.txt row i=53067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "IzadasamAptO kalpabdeSyadeSIyaraH",
     text_dev              = "ईषदसमाप्तौ कल्पब्देश्यदेशीयरः",
+    samagra_slp1          = "Izad-asamAptO prAtipadikAt tiNaH ca kalpap-deSya-deSIyaraH",
+    samagra_dev           = "ईषद्-असमाप्तौ प्रातिपदिकात् तिङः च कल्पप्-देश्य-देशीयरः",
     padaccheda_dev        = "ईषत्-असमाप्तौ कल्पप्-देश्य-देशीयरः",
     why_dev               = "(सूत्रम् 5.3.67) ईषदसमाप्तौ कल्पब्देश्यदेशीयरः।",
     anuvritti_from        = ('4.1.76',),

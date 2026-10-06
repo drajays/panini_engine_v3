@@ -4,6 +4,7 @@
 Padaccheda: अम्नः-ऊधः-अवर् (लुप्तषष्ठ्यन्तनिर्देशः) इति उभयथा छन्दसि
 
 अम्नरूधरवरित्युभयथा छन्दसि (8.2.70)
+Pāṭha: ashtadhyayi.com data.txt row i=82070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "amnarUDaravarityuBayaTA Candasi",
     text_dev              = "अम्नरूधरवरित्युभयथा छन्दसि",
+    samagra_slp1          = "padasya pUrvatrAsidDam amnarUDaravarityuBayaTA Candasi raH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् अम्नरूधरवरित्युभयथा छन्दसि रः",
     padaccheda_dev        = "अम्नः-ऊधः-अवर् (लुप्तषष्ठ्यन्तनिर्देशः) इति उभयथा छन्दसि",
     why_dev               = "(सूत्रम् 8.2.70) अम्नरूधरवरित्युभयथा छन्दसि।",
     anuvritti_from        = ('8.1.1',),

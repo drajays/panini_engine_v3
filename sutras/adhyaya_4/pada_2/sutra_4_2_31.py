@@ -4,6 +4,7 @@
 Padaccheda: वायु-ऋतु-पितृ-उषसः यत्
 
 वाय्वृतुपित्रुषसो यत् (4.2.31)
+Pāṭha: ashtadhyayi.com data.txt row i=42031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vAyvftupitruzaso yat",
     text_dev              = "वाय्वृतुपित्रुषसो यत्",
+    samagra_slp1          = "sA asya devatA iti vAyu-ftu-pitf-uzasaH yat",
+    samagra_dev           = "'सा अस्य देवता' (इति)  वायु-ऋतु-पितृ-उषसः यत्",
     padaccheda_dev        = "वायु-ऋतु-पितृ-उषसः यत्",
     why_dev               = "(सूत्रम् 4.2.31) वाय्वृतुपित्रुषसो यत्।",
     anuvritti_from        = ('4.1.1',),

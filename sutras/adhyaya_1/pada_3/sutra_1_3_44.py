@@ -17,6 +17,7 @@ Term whose upadesha_slp1 is in _SMARA_ROOTS or which carries the tag
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
 vibhasha_default=True: the optional form is taken by default.
+Pāṭha: ashtadhyayi.com data.txt row i=13044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='apahnave jYaH',
     text_dev='अपह्नवे ज्ञः',
+    samagra_slp1="apahnave jYaH Atmanepadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अपह्नवे ज्ञः आत्मनेपदम्",
     padaccheda_dev="विभाषा (अव्यय) / स्मरति-हृद्यभावयोः (सप्तमी-द्विवचन)",
     why_dev=(
         "स्मृति-अर्थे हृद्यभाव-अर्थे च धातोः प्रयोगे विभाषा आत्मनेपदम् — "

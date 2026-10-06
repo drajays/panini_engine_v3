@@ -2,7 +2,7 @@
 6.1.70  शेश्छन्दसि बहुलम्  —  VIDHI (narrow slice for P029; JSON mislabels as **6.1.66**)
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=601070
+- ashtadhyayi.com data.txt row i=61070
 - Kāśikā: लोपो व्योर्वलि (यङ्-य्-लोपः वर-पूर्वम्)
 - Cross-validation: tests/unit/test_yAyAvaraH_yang_varac.py (P029 arm),
   tests/unit/test_yAyAvar_yang_varac_purvavidhau_lesson.py (structural *varac*)
@@ -105,6 +105,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='SeSCandasi bahulam',
     text_dev='शेश्छन्दसि बहुलम्',
+    samagra_slp1="SeH Candasi bahulam lopaH",
+    samagra_dev="शेः छन्दसि बहुलम् लोपः",
     padaccheda_dev="लोपः / व्योः / वलि",
     why_dev="यङ्-अन्त्य-य्-लोपः वर-पूर्वः (P029); य्-लोपः र्-पूर्वः (P038)।",
     anuvritti_from=("6.1.64",),

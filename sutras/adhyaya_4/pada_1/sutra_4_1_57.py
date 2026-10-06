@@ -4,6 +4,7 @@
 Padaccheda: सह-नञ्-विद्यमान-पूर्वात् च
 
 सहनञ्विद्यमानपूर्वाच्च (4.1.57)
+Pāṭha: ashtadhyayi.com data.txt row i=41057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sahanaYvidyamAnapUrvAcca",
     text_dev              = "सहनञ्विद्यमानपूर्वाच्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt saha-naY-vidyamAna-pUrvAt ca NIz sva-aNgAt upasarjanAt a-saMyoga-upaDAt na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् सह-नञ्-विद्यमान-पूर्वात् च ङीष् स्व-अङ्गात् उपसर्जनात् अ-संयोग-उपधात् न",
     padaccheda_dev        = "सह-नञ्-विद्यमान-पूर्वात् च",
     why_dev               = "(सूत्रम् 4.1.57) सहनञ्विद्यमानपूर्वाच्च।",
     anuvritti_from        = ('4.1.1',),

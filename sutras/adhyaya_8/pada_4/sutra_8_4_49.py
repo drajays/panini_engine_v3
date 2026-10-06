@@ -4,6 +4,7 @@
 Padaccheda: शरः अचि
 
 शरोऽचि (8.4.49)
+Pāṭha: ashtadhyayi.com data.txt row i=84049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'Saroci',
     text_dev              = 'शरोऽचि',
+    samagra_slp1          = "SaraH aci dve na",
+    samagra_dev           = "शरः अचि द्वे न",
     padaccheda_dev        = "शरः अचि",
     why_dev               = "(सूत्रम् 8.4.49) शरोऽचि।",
     anuvritti_from        = ('8.1.1',),

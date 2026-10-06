@@ -4,6 +4,7 @@
 Padaccheda: यु-प्लुवोः दीर्घः छन्दसि
 
 युप्लुवोर्दीर्घश्छन्दसि (6.4.58)
+Pāṭha: ashtadhyayi.com data.txt row i=64058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yupluvordIrGaSCandasi",
     text_dev              = "युप्लुवोर्दीर्घश्छन्दसि",
+    samagra_slp1          = "aNgasya asidDavadatrABAt ArDaDAtuke yu-pluvoH dIrGaH Candasi lyapi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् आर्धधातुके यु-प्लुवोः दीर्घः छन्दसि ल्यपि",
     padaccheda_dev        = "यु-प्लुवोः दीर्घः छन्दसि",
     why_dev               = "(सूत्रम् 6.4.58) युप्लुवोर्दीर्घश्छन्दसि।",
     anuvritti_from        = ('6.1.1',),

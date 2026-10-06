@@ -61,6 +61,8 @@ SUTRA = SutraRecord(
         'kartari Sap'
     ),
     text_dev       = 'कर्तरि शप्',
+    samagra_slp1   = "sArvaDAtuke kartari DAtoH Sap",
+    samagra_dev    = "सार्वधातुके कर्तरि धातोः शप्",
     padaccheda_dev = "सार्वधातुके (३.१.६७) / कर्तरि / धातोः / शप्",
     why_dev        = (
         "कर्तरि सार्वधातुके परे विकरण-शप्-आगमः; अपवादाः ३.१.६९ इत्यादौ पृथक्।"

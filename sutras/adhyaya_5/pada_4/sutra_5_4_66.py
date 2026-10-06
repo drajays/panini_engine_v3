@@ -4,6 +4,7 @@
 Padaccheda: सत्यात् अशपथे
 
 सत्यादशपथे (5.4.66)
+Pāṭha: ashtadhyayi.com data.txt row i=54066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "satyAdaSapaTe",
     text_dev              = "सत्यादशपथे",
+    samagra_slp1          = "satyAt aSapaTe kfYaH qAc",
+    samagra_dev           = "सत्यात् अशपथे कृञः डाच्",
     padaccheda_dev        = "सत्यात् अशपथे",
     why_dev               = "(सूत्रम् 5.4.66) सत्यादशपथे।",
     anuvritti_from        = ('4.1.76',),

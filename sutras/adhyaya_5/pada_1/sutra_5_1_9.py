@@ -4,6 +4,7 @@
 Padaccheda: आत्मन्-विश्वजन-भोग-उत्तरपदात् खः
 
 आत्मन्विश्वजनभोगोत्तरपदात् खः (5.1.9)
+Pāṭha: ashtadhyayi.com data.txt row i=51009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AtmanviSvajanaBogottarapadAt KaH",
     text_dev              = "आत्मन्विश्वजनभोगोत्तरपदात् खः",
+    samagra_slp1          = "tasmE hitam iti Atman-viSvajana-BogottarapadAt KaH",
+    samagra_dev           = "'तस्मै हितम्' (इति) आत्मन्-विश्वजन-भोगोत्तरपदात् खः",
     padaccheda_dev        = "आत्मन्-विश्वजन-भोग-उत्तरपदात् खः",
     why_dev               = "(सूत्रम् 5.1.9) आत्मन्विश्वजनभोगोत्तरपदात् खः।",
     anuvritti_from        = ('5.1.1',),

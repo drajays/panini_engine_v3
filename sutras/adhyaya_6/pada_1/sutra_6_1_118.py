@@ -4,6 +4,7 @@
 Padaccheda: आपो जुषाणो वृष्णो वर्षिष्ठे अम्बे अम्बाले (लुप्तप्रथमान्तनिर्देशः) अम्बिके-पूर्वे
 
 आपोजुषाणोवृष्णोवर्षिष्ठेऽम्बेऽम्बालेऽम्बिकेपूर्वे (6.1.118)
+Pāṭha: ashtadhyayi.com data.txt row i=61118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ApojuzARovfzRovarzizWembembAlembikepUrve',
     text_dev              = 'आपोजुषाणोवृष्णोवर्षिष्ठेऽम्बेऽम्बालेऽम्बिकेपूर्वे',
+    samagra_slp1          = "saMhitAyAm Apo-juzARo-vfzRo-varzizWe-ambe-ambAle-ambikepUrve aci prakftyA yajuzi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् आपो-जुषाणो-वृष्णो-वर्षिष्ठे-अम्बे-अम्बाले-अम्बिकेपूर्वे अचि प्रकृत्या यजुषि",
     padaccheda_dev        = "आपो जुषाणो वृष्णो वर्षिष्ठे अम्बे अम्बाले (लुप्तप्रथमान्तनिर्देशः) अम्बिके-पूर्वे",
     why_dev               = "(सूत्रम् 6.1.118) आपोजुषाणोवृष्णोवर्षिष्ठेऽम्बेऽम्बालेऽम्बिकेपूर्वे।",
     anuvritti_from        = ('6.1.1',),

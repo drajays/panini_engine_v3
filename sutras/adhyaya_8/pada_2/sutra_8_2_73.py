@@ -4,6 +4,7 @@
 Padaccheda: तिपि अन्-अस्तेः
 
 तिप्यनस्तेः (8.2.73)
+Pāṭha: ashtadhyayi.com data.txt row i=82073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tipyanasteH",
     text_dev              = "तिप्यनस्तेः",
+    samagra_slp1          = "padasya pUrvatrAsidDam tipi anasteH saH daH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् तिपि अनस्तेः सः दः",
     padaccheda_dev        = "तिपि अन्-अस्तेः",
     why_dev               = "(सूत्रम् 8.2.73) तिप्यनस्तेः।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: उदीचाम् इञ्
 
 उदीचामिञ् (4.1.153)
+Pāṭha: ashtadhyayi.com data.txt row i=41153 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "udIcAmiY",
     text_dev              = "उदीचामिञ्",
+    samagra_slp1          = "tasya apatyam iti senAnta-lakzaRa-kAriByaH udIcAm iY",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) सेनान्त-लक्षण-कारिभ्यः उदीचाम् इञ्",
     padaccheda_dev        = "उदीचाम् इञ्",
     why_dev               = "(सूत्रम् 4.1.153) उदीचामिञ्।",
     anuvritti_from        = ('4.1.1',),

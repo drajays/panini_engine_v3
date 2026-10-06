@@ -4,6 +4,7 @@
 Padaccheda: णचः स्त्रियाम् अञ्
 
 णचः स्त्रियामञ् (5.4.14)
+Pāṭha: ashtadhyayi.com data.txt row i=54014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "RacaH striyAmaY",
     text_dev              = "णचः स्त्रियामञ्",
+    samagra_slp1          = "RacaH striyAmaY",
+    samagra_dev           = "णचः स्त्रियामञ्",
     padaccheda_dev        = "णचः स्त्रियाम् अञ्",
     why_dev               = "(सूत्रम् 5.4.14) णचः स्त्रियामञ्।",
     anuvritti_from        = ('4.1.76',),

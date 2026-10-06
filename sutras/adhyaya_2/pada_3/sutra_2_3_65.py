@@ -4,6 +4,7 @@
 Padaccheda: कर्तृ-कर्मणोः कृति
 
 For krt-suffix forms, kartri and karma take sasthi.
+Pāṭha: ashtadhyayi.com data.txt row i=23065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kartfkarmaRoH kfti",
     text_dev              = "कर्तृकर्मणोः कृति",
+    samagra_slp1          = "anaBihite kartf-karmaRoH kfti zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते कर्तृ-कर्मणोः कृति षष्ठी",
     padaccheda_dev        = "कर्तृ-कर्मणोः कृति",
     why_dev               = "कर्तृ-कर्मणोः कृति (२.३.६५)।",
     anuvritti_from        = ('2.3.50',),

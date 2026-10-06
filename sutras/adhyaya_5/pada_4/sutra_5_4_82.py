@@ -4,6 +4,7 @@
 Padaccheda: प्रतेः उरसः सप्तमी-स्थात्
 
 प्रतेरुरसः सप्तमीस्थात् (5.4.82)
+Pāṭha: ashtadhyayi.com data.txt row i=54082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "praterurasaH saptamIsTAt",
     text_dev              = "प्रतेरुरसः सप्तमीस्थात्",
+    samagra_slp1          = "prateH saptamIsTAt urasaH ac",
+    samagra_dev           = "प्रतेः सप्तमीस्थात् उरसः अच्",
     padaccheda_dev        = "प्रतेः उरसः सप्तमी-स्थात्",
     why_dev               = "(सूत्रम् 5.4.82) प्रतेरुरसः सप्तमीस्थात्।",
     anuvritti_from        = ('5.4.68',),

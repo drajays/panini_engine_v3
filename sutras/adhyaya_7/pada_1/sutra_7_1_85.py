@@ -2,7 +2,7 @@
 7.1.85  पथिमथ्यृभुक्षामात्  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=701085
+- ashtadhyayi.com data.txt row i=71085
 - Kāśikā: "पथिनः प्रथमैकवचने नस्य आः"
 - Cross-validation: tests/unit/test_sthanivat_al_ashrita_exceptions.py
 
@@ -74,6 +74,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="paTimaTyfBukzAmAt",
     text_dev="पथिमथ्यृभुक्षामात्",
+    samagra_slp1="paTi-maTi-fBukzAmaNgasya sO At",
+    samagra_dev="पथि-मथि-ऋभुक्षामङ्गस्य सौ आत्",
     padaccheda_dev="पथि-मथि-ऋभुक्षाम् आत्",
     why_dev="पथिन्-अन्त्य-नस्य आ-आदेशः; हलन्तत्वम् आ-आदेशे न स्थानिवत्।",
     anuvritti_from=("7.1.1",),

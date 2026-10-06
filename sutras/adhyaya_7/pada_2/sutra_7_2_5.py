@@ -4,6 +4,7 @@
 Padaccheda: ह्-म्-य्-अन्त-क्षण-श्वस-जागृ-णि-श्वि-एदिताम्
 
 ह्म्यन्तक्षणश्वसजागृणिश्व्येदिताम् (7.2.5)
+Pāṭha: ashtadhyayi.com data.txt row i=72005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hmyantakzaRaSvasajAgfRiSvyeditAm",
     text_dev              = "ह्म्यन्तक्षणश्वसजागृणिश्व्येदिताम्",
+    samagra_slp1          = "aNgasya hmyantakzaRaSvasajAgfRiSvyeditAm sici vfdDiH parasmEpadezu na iwi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ह्म्यन्तक्षणश्वसजागृणिश्व्येदिताम् सिचि वृद्धिः परस्मैपदेषु न इटि",
     padaccheda_dev        = "ह्-म्-य्-अन्त-क्षण-श्वस-जागृ-णि-श्वि-एदिताम्",
     why_dev               = "(सूत्रम् 7.2.5) ह्म्यन्तक्षणश्वसजागृणिश्व्येदिताम्।",
     anuvritti_from        = ('7.1.1',),

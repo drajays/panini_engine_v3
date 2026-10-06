@@ -13,6 +13,7 @@ Engine (narrow, mechanically blind):
   Gate key ``2_2_5_kala_parimana_gate``.  Recipe arms
   ``state.meta['2_2_5_arm']`` and tags a Term with ``kala_parimana``
   indicating a time + measure compound context.
+Pāṭha: ashtadhyayi.com data.txt row i=22005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -38,6 +39,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="kAlAH parimARinA",
     text_dev="कालाः परिमाणिना",
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH kAlAH parimARinA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः कालाः परिमाणिना",
     padaccheda_dev="कालाः / परिमाणिना",
     why_dev=(
         "कालवाचिनः परिमाणिना समस्यन्ते — मासपरिमाणा इत्यादि तत्पुरुषः।"

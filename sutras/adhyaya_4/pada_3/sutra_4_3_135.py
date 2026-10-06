@@ -4,6 +4,7 @@
 Padaccheda: अवयवे च प्राणि-ओषधि-वृक्षेभ्यः
 
 अवयवे च प्राण्योषधिवृक्षेभ्यः (4.3.135)
+Pāṭha: ashtadhyayi.com data.txt row i=43135 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avayave ca prARyozaDivfkzeByaH",
     text_dev              = "अवयवे च प्राण्योषधिवृक्षेभ्यः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA avayave ca prARi-ozaDi-vfkzeByaH tasya idam vikAraH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा अवयवे च प्राणि-ओषधि-वृक्षेभ्यः तस्य इदम् विकारः",
     padaccheda_dev        = "अवयवे च प्राणि-ओषधि-वृक्षेभ्यः",
     why_dev               = "(सूत्रम् 4.3.135) अवयवे च प्राण्योषधिवृक्षेभ्यः।",
     anuvritti_from        = ('4.1.1',),

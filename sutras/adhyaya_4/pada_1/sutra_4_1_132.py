@@ -4,6 +4,7 @@
 Padaccheda: पितृष्वसु छण्
 
 पितृष्वसुश्छण् (4.1.132)
+Pāṭha: ashtadhyayi.com data.txt row i=41132 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pitfzvasuSCaR",
     text_dev              = "पितृष्वसुश्छण्",
+    samagra_slp1          = "tasya apatyam iti pitfzvasuH CaR",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) पितृष्वसुः छण्",
     padaccheda_dev        = "पितृष्वसु छण्",
     why_dev               = "(सूत्रम् 4.1.132) पितृष्वसुश्छण्।",
     anuvritti_from        = ('4.1.1',),

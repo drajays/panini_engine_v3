@@ -4,6 +4,7 @@
 Padaccheda: दीर्घात् ५/१ आचार्याणाम् ६/३
 
 दीर्घादाचार्याणाम् (8.4.52)
+Pāṭha: ashtadhyayi.com data.txt row i=84052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dIrGAdAcAryARAm",
     text_dev              = "दीर्घादाचार्याणाम्",
+    samagra_slp1          = "dIrGAt yaraH dvitvam na - AcAryARAm",
+    samagra_dev           = "दीर्घात् यरः द्वित्वम् न - आचार्याणाम्",
     padaccheda_dev        = "दीर्घात् ५/१ आचार्याणाम् ६/३",
     why_dev               = "(सूत्रम् 8.4.52) दीर्घादाचार्याणाम्।",
     anuvritti_from        = ('8.1.1',),

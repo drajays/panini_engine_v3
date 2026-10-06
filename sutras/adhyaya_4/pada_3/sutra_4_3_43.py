@@ -4,6 +4,7 @@
 Padaccheda: कालात् साधुपुष्प्यत्-पच्यमानेषु
 
 कालात् साधुपुष्प्यत्पच्यमानेषु (4.3.43)
+Pāṭha: ashtadhyayi.com data.txt row i=43043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kAlAt sADupuzpyatpacyamAnezu",
     text_dev              = "कालात् साधुपुष्प्यत्पच्यमानेषु",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA kAlAt sADu-puzpyat-pacyamAnezu tatra saMBUte",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा कालात् साधु-पुष्प्यत्-पच्यमानेषु तत्र संभूते",
     padaccheda_dev        = "कालात् साधुपुष्प्यत्-पच्यमानेषु",
     why_dev               = "(सूत्रम् 4.3.43) कालात् साधुपुष्प्यत्पच्यमानेषु।",
     anuvritti_from        = ('4.1.1',),

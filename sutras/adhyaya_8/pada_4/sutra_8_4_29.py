@@ -4,6 +4,7 @@
 Padaccheda: कृति अचः
 
 कृत्यचः (8.4.29)
+Pāṭha: ashtadhyayi.com data.txt row i=84029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kftyacaH",
     text_dev              = "कृत्यचः",
+    samagra_slp1          = "razAByAm upasargAt kfti acaH naH RaH",
+    samagra_dev           = "रषाभ्याम्  उपसर्गात्  कृति अचः नः णः",
     padaccheda_dev        = "कृति अचः",
     why_dev               = "(सूत्रम् 8.4.29) कृत्यचः।",
     anuvritti_from        = ('8.1.1',),

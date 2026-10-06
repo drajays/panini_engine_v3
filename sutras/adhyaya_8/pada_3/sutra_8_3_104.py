@@ -4,6 +4,7 @@
 Padaccheda: यजुषि एकेषाम्
 
 यजुष्येकेषाम् (8.3.104)
+Pāṭha: ashtadhyayi.com data.txt row i=83104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yajuzyekezAm",
     text_dev              = "यजुष्येकेषाम्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH yajuzi ekezAm saH tAdO yuzmattattatakzuHzu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः यजुषि एकेषाम् सः तादौ युष्मत्तत्ततक्षुःषु",
     padaccheda_dev        = "यजुषि एकेषाम्",
     why_dev               = "(सूत्रम् 8.3.104) यजुष्येकेषाम्।",
     anuvritti_from        = ('8.1.1',),

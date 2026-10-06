@@ -4,6 +4,7 @@
 Padaccheda: स्तुत-स्तोमयोः छन्दसि
 
 स्तुतस्तोमयोश्छन्दसि (8.3.105)
+Pāṭha: ashtadhyayi.com data.txt row i=83105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "stutastomayoSCandasi",
     text_dev              = "स्तुतस्तोमयोश्छन्दसि",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH stuta-stomayoH Candasi saH ekezAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः स्तुत-स्तोमयोः छन्दसि सः एकेषाम्",
     padaccheda_dev        = "स्तुत-स्तोमयोः छन्दसि",
     why_dev               = "(सूत्रम् 8.3.105) स्तुतस्तोमयोश्छन्दसि।",
     anuvritti_from        = ('8.1.1',),

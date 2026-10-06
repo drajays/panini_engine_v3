@@ -8,6 +8,7 @@ Engine (glass-box rows):
 
 * ``corrected_v2_P005_A_3_1_92_arm`` — ``[kuru, sup, car]`` → tag ``kuru``.
 * ``corrected_v2_P005_B_3_1_92_arm`` — ``[upasara, sup, jan~]`` → tag ``upasara``.
+Pāṭha: ashtadhyayi.com data.txt row i=31092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -75,6 +76,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='tatropapadaM saptamIsTam',
     text_dev='तत्रोपपदं सप्तमीस्थम्',
+    samagra_slp1="tatra DAtoH ityatra saptamIsTamupapadam",
+    samagra_dev="तत्र धातोः (इत्यत्र) सप्तमीस्थमुपपदम्",
     padaccheda_dev="तत्र / उपपदम् / सप्तमीस्थम्",
     why_dev="उपपद-प्रकरणे सप्तम्यर्थक-पदस्य उपपद-संज्ञा (प००५-अ/ब)।",
     anuvritti_from=("3.1.88",),

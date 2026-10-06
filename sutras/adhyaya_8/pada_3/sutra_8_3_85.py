@@ -4,6 +4,7 @@
 Padaccheda: मातुः-पितुर्भ्याम् अन्यतरस्याम्
 
 मातुःपितुर्भ्यामन्यतरस्याम् (8.3.85)
+Pāṭha: ashtadhyayi.com data.txt row i=83085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mAtuHpiturByAmanyatarasyAm",
     text_dev              = "मातुःपितुर्भ्यामन्यतरस्याम्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH mAtuH-piturByAm anyatarasyAm saH samAse svasA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः मातुः-पितुर्भ्याम् अन्यतरस्याम् सः समासे स्वसा",
     padaccheda_dev        = "मातुः-पितुर्भ्याम् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 8.3.85) मातुःपितुर्भ्यामन्यतरस्याम्।",
     anuvritti_from        = ('8.1.1',),

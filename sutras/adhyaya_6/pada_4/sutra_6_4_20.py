@@ -4,6 +4,7 @@
 Padaccheda: ज्वर-त्वर-स्रिवि-अवि-मवाम् उपधायाः च
 
 ज्वरत्वरश्रिव्यविमवामुपधायाश्च (6.4.20)
+Pāṭha: ashtadhyayi.com data.txt row i=64020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'jvaratvarasrivyavimavAmupaDAyASca',
     text_dev              = 'ज्वरत्वरस्रिव्यविमवामुपधायाश्च',
+    samagra_slp1          = "aNgasya jvara-tvara-srivi-avi-mavAm upaDAyAH ca kvi-JaloH kNiti Sa-UW cC-voH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ज्वर-त्वर-स्रिवि-अवि-मवाम् उपधायाः च क्वि-झलोः क्ङिति श-ऊठ् च्छ्-वोः",
     padaccheda_dev        = "ज्वर-त्वर-स्रिवि-अवि-मवाम् उपधायाः च",
     why_dev               = "(सूत्रम् 6.4.20) ज्वरत्वरश्रिव्यविमवामुपधायाश्च।",
     anuvritti_from        = ('6.1.1',),

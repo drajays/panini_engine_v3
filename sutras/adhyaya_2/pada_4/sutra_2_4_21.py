@@ -4,6 +4,7 @@
 Padaccheda: उपज्ञा-उपक्रमम् तदाद्याचिख्यासायाम्
 
 upajña and upakrama in 'desiring to teach' context.
+Pāṭha: ashtadhyayi.com data.txt row i=24021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upajYopakramaM tadAdyAciKyAsAyAm",
     text_dev              = "उपज्ञोपक्रमं तदाद्याचिख्यासायाम्",
+    samagra_slp1          = "tatpuruzonaYkarmaDArayaH upajYA-upakramam tad-Adi-AciKyAsAyAm napuMsakam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तत्पुरुषोऽनञ्कर्मधारयः उपज्ञा-उपक्रमम् तद्-आदि-आचिख्यासायाम् नपुंसकम्",
     padaccheda_dev        = "उपज्ञा-उपक्रमम् तदाद्याचिख्यासायाम्",
     why_dev               = "उपज्ञा-उपक्रमम् तदाद्याचिख्यासायाम् (२.४.२१)।",
     anuvritti_from        = ('2.4.18',),

@@ -4,6 +4,7 @@
 Padaccheda: निष्ठा
 
 Nistha-suffix form in bahuvrihi compound.
+Pāṭha: ashtadhyayi.com data.txt row i=22036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nizWA",
     text_dev              = "निष्ठा",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA nizWA pUrvam bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा निष्ठा पूर्वम् बहुव्रीहौ",
     padaccheda_dev        = "निष्ठा",
     why_dev               = "निष्ठा-अन्तं बहुव्रीहौ (२.२.३६)।",
     anuvritti_from        = ('2.2.23',),

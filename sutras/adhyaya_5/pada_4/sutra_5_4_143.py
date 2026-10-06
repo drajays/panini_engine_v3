@@ -4,6 +4,7 @@
 Padaccheda: स्त्रियाम् संज्ञायाम्
 
 स्त्रियां संज्ञायाम् (5.4.143)
+Pāṭha: ashtadhyayi.com data.txt row i=54143 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "striyAM saMjYAyAm",
     text_dev              = "स्त्रियां संज्ञायाम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA striyAm saMjYAyAm bahuvrIhO dantasya datf",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा स्त्रियाम् संज्ञायाम् बहुव्रीहौ दन्तस्य दतृ",
     padaccheda_dev        = "स्त्रियाम् संज्ञायाम्",
     why_dev               = "(सूत्रम् 5.4.143) स्त्रियां संज्ञायाम्।",
     anuvritti_from        = ('5.4.68',),

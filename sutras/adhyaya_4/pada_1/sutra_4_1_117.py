@@ -4,6 +4,7 @@
 Padaccheda: विकर्ण-शुङ्ग-छगलात् वत्स-भरद्वाज-अत्रिषु
 
 विकर्णशुङ्गच्छगलाद्वत्सभरद्वाजात्रिषु (4.1.117)
+Pāṭha: ashtadhyayi.com data.txt row i=41117 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vikarRaSuNgacCagalAdvatsaBaradvAjAtrizu",
     text_dev              = "विकर्णशुङ्गच्छगलाद्वत्सभरद्वाजात्रिषु",
+    samagra_slp1          = "tasya apatyam iti vatsa-BaradvAja-atrizu vikarRa-SuNga-CagalAt aR",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) वत्स-भरद्वाज-अत्रिषु विकर्ण-शुङ्ग-छगलात्  अण्",
     padaccheda_dev        = "विकर्ण-शुङ्ग-छगलात् वत्स-भरद्वाज-अत्रिषु",
     why_dev               = "(सूत्रम् 4.1.117) विकर्णशुङ्गच्छगलाद्वत्सभरद्वाजात्रिषु।",
     anuvritti_from        = ('4.1.1',),

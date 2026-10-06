@@ -4,6 +4,7 @@
 Padaccheda: वेञः वयिः
 
 vij root is replaced by vayi.
+Pāṭha: ashtadhyayi.com data.txt row i=24041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "veYo vayiH",
     text_dev              = "वेञो वयिः",
+    samagra_slp1          = "ArDaDAtuke veYaH vayiH liwi anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके वेञः वयिः लिटि अन्यतरस्याम्",
     padaccheda_dev        = "वेञः वयिः",
     why_dev               = "वेञः वयिः (२.४.४१)।",
     anuvritti_from        = ('2.4.40',),

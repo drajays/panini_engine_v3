@@ -4,6 +4,7 @@
 Padaccheda: अपस्करः रथाङ्गम्
 
 अपस्करो रथाङ्गम् (6.1.149)
+Pāṭha: ashtadhyayi.com data.txt row i=61149 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "apaskaro raTANgam",
     text_dev              = "अपस्करो रथाङ्गम्",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH apaskaraH raTANgam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः अपस्करः रथाङ्गम्",
     padaccheda_dev        = "अपस्करः रथाङ्गम्",
     why_dev               = "(सूत्रम् 6.1.149) अपस्करो रथाङ्गम्।",
     anuvritti_from        = ('6.1.1',),

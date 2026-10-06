@@ -4,6 +4,7 @@
 Padaccheda: वत्सशाला-अभिजित्-अश्वयुक्-शतभिषजः वा
 
 वत्सशालाऽभिजिदश्वयुक्छतभिषजो वा (4.3.36)
+Pāṭha: ashtadhyayi.com data.txt row i=43036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vatsaSAlABijidaSvayukCataBizajo vA',
     text_dev              = 'वत्सशालाभिजिदश्वयुक्छतभिषजो वा',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA vatsaSAlA-aBijit-aSvayuk-SataBizajaH vA jAtaH tatra luk",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा वत्सशाला-अभिजित्-अश्वयुक्-शतभिषजः वा जातः तत्र लुक्",
     padaccheda_dev        = "वत्सशाला-अभिजित्-अश्वयुक्-शतभिषजः वा",
     why_dev               = "(सूत्रम् 4.3.36) वत्सशालाऽभिजिदश्वयुक्छतभिषजो वा।",
     anuvritti_from        = ('4.1.1',),

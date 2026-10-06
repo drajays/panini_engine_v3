@@ -4,6 +4,7 @@
 Padaccheda: ह्रस्व-नुड्-भ्याम् मतुप्
 
 ह्रस्वनुड्भ्यां मतुप् (6.1.176)
+Pāṭha: ashtadhyayi.com data.txt row i=61176 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hrasvanuqByAM matup",
     text_dev              = "ह्रस्वनुड्भ्यां मतुप्",
+    samagra_slp1          = "hrasva-nuqByAm matup udAttaH antaH viBaktiH antodattAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "ह्रस्व-नुड्भ्याम् मतुप् उदात्तः अन्तः विभक्तिः अन्तोदत्तात्",
     padaccheda_dev        = "ह्रस्व-नुड्-भ्याम् मतुप्",
     why_dev               = "(सूत्रम् 6.1.176) ह्रस्वनुड्भ्यां मतुप्।",
     anuvritti_from        = ('6.1.1',),

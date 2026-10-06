@@ -4,6 +4,7 @@
 Padaccheda: पूर्वकाल-एक-सर्व-जरत्-पुराण-नव-केवलाः समानाधिकरणेन
 
 purvakala, eka, sarva, jarat etc. with samana-adhikarana form karmadharaya.
+Pāṭha: ashtadhyayi.com data.txt row i=21049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUrvakAlEkasarvajaratpurARanavakevalAH samAnADikaraRena",
     text_dev              = "पूर्वकालैकसर्वजरत्पुराणनवकेवलाः समानाधिकरणेन",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH pUrvakAla-eka-sarva-jarat-purARa-nava-kevalAH samAna-aDikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः पूर्वकाल-एक-सर्व-जरत्-पुराण-नव-केवलाः समान-अधिकरणेन",
     padaccheda_dev        = "पूर्वकाल-एक-सर्व-जरत्-पुराण-नव-केवलाः समानाधिकरणेन",
     why_dev               = "पूर्वकाल-एक-सर्व-आदयः समानाधिकरणेन सह कर्मधारयः (२.१.४९)।",
     anuvritti_from        = ('2.1.3',),

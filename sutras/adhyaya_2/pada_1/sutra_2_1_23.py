@@ -15,6 +15,7 @@ No ``varṇa`` mutation (recipe gate only).
 
 **Note:** Edition numbering differs in some OCR dumps (**२.१.२४** vs **२.१.२३**); this file follows the
 vyākhyā numbering where this *pāṭha* is **२.१.२३**.
+Pāṭha: ashtadhyayi.com data.txt row i=21023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='dviguSca',
     text_dev='द्विगुश्च',
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH dviguH ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः द्विगुः च",
     padaccheda_dev="द्वितीया / श्रित-आतीत-पतित-गत-अत्यस्त-प्राप्त-आपन्नैः",
     why_dev="द्वितीयान्तैः श्रितादिभिः तत्पुरुषः (*prakriya_38*, **कष्टश्रितः**)।",
     anuvritti_from=("2.1.22",),

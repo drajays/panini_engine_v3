@@ -4,6 +4,7 @@
 Padaccheda: अवक्रयः
 
 अवक्रयः (4.4.50)
+Pāṭha: ashtadhyayi.com data.txt row i=44050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avakrayaH",
     text_dev              = "अवक्रयः",
+    samagra_slp1          = "tasya avakrayaH iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तस्य अवक्रयः' इति समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "अवक्रयः",
     why_dev               = "(सूत्रम् 4.4.50) अवक्रयः।",
     anuvritti_from        = ('4.1.1',),

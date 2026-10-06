@@ -4,6 +4,7 @@
 Padaccheda: आतः च उपसर्गे
 
 krt-suffix rule: आतश्चोपसर्गे
+Pāṭha: ashtadhyayi.com data.txt row i=33106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AtaScopasarge",
     text_dev              = "आतश्चोपसर्गे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm striyAm AtaH ca upasarge kft aN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् स्त्रियाम् आतः च उपसर्गे कृत् अङ्",
     padaccheda_dev        = "आतः च उपसर्गे",
     why_dev               = "धातोः प्रत्ययः (३.3.106)।",
     anuvritti_from        = ('3.1.1',),

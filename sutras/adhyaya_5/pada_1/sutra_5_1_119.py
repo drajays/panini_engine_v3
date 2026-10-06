@@ -4,6 +4,7 @@
 Padaccheda: तस्य भावः त्व-तलौ
 
 तस्य भावस्त्वतलौ (5.1.119)
+Pāṭha: ashtadhyayi.com data.txt row i=51119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tasya BAvastvatalO",
     text_dev              = "तस्य भावस्त्वतलौ",
+    samagra_slp1          = "tasya BAvaH tva-talO",
+    samagra_dev           = "तस्य भावः त्व-तलौ",
     padaccheda_dev        = "तस्य भावः त्व-तलौ",
     why_dev               = "(सूत्रम् 5.1.119) तस्य भावस्त्वतलौ।",
     anuvritti_from        = ('4.1.82',),

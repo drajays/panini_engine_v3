@@ -4,6 +4,7 @@
 Padaccheda: अनः-अश्म-अयः-सरसाम् जाति-संज्ञयोः
 
 अनोऽश्मायस्सरसाम् जातिसंज्ञयोः (5.4.94)
+Pāṭha: ashtadhyayi.com data.txt row i=54094 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'anoSmAyassarasAm jAtisaMjYayoH',
     text_dev              = 'अनोऽश्मायस्सरसाम् जातिसंज्ञयोः',
+    samagra_slp1          = "anaH-aSma-ayas-sarasAm tatpuruzasya jAti-saMjYayoH wac",
+    samagra_dev           = "अनः-अश्म-अयस्-सरसाम् तत्पुरुषस्य जाति-संज्ञयोः टच्",
     padaccheda_dev        = "अनः-अश्म-अयः-सरसाम् जाति-संज्ञयोः",
     why_dev               = "(सूत्रम् 5.4.94) अनोऽश्मायस्सरसाम् जातिसंज्ञयोः।",
     anuvritti_from        = ('5.4.68',),

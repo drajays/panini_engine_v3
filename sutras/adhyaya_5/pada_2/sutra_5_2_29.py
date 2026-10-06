@@ -4,6 +4,7 @@
 Padaccheda: सम्प्रोदः च कटच्
 
 सम्प्रोदश्च कटच् (5.2.29)
+Pāṭha: ashtadhyayi.com data.txt row i=52029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samprodaSca kawac",
     text_dev              = "सम्प्रोदश्च कटच्",
+    samagra_slp1          = "sam-pra-udaH veH ca kawac",
+    samagra_dev           = "सम्-प्र-उदः वेः च कटच्",
     padaccheda_dev        = "सम्प्रोदः च कटच्",
     why_dev               = "(सूत्रम् 5.2.29) सम्प्रोदश्च कटच्।",
     anuvritti_from        = ('4.1.82',),

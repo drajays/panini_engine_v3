@@ -4,6 +4,7 @@
 Padaccheda: अन्त-आदि-वत् च
 
 अन्तादिवच्च (6.1.85)
+Pāṭha: ashtadhyayi.com data.txt row i=61085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -28,6 +29,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.ATIDESHA,
     text_slp1             = "antAdivacca",
     text_dev              = "अन्तादिवच्च",
+    samagra_slp1          = "pUrvaparayoH ekAdeSaH anta-Adivat ",
+    samagra_dev           = "पूर्वपरयोः एकादेशः अन्त-आदिवत् ।",
     padaccheda_dev        = "अन्त-आदि-वत् च",
     why_dev               = "(सूत्रम् 6.1.85) अन्तादिवच्च।",
     anuvritti_from        = ('6.1.1',),

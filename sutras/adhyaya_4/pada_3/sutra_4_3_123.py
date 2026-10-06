@@ -4,6 +4,7 @@
 Padaccheda: पत्त्र-अध्वर्यु-परिषदः च
 
 पत्त्राध्वर्युपरिषदश्च (4.3.123)
+Pāṭha: ashtadhyayi.com data.txt row i=43123 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'patrADvaryuparizadaSca',
     text_dev              = 'पत्राध्वर्युपरिषदश्च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA patra-aDvaryu-parizadaH ca tasya idam aY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा पत्र-अध्वर्यु-परिषदः च तस्य इदम् अञ्",
     padaccheda_dev        = "पत्त्र-अध्वर्यु-परिषदः च",
     why_dev               = "(सूत्रम् 4.3.123) पत्त्राध्वर्युपरिषदश्च।",
     anuvritti_from        = ('4.1.1',),

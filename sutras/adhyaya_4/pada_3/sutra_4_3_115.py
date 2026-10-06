@@ -4,6 +4,7 @@
 Padaccheda: उपज्ञाते
 
 उपज्ञाते (4.3.115)
+Pāṭha: ashtadhyayi.com data.txt row i=43115 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upajYAte",
     text_dev              = "उपज्ञाते",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA upajYAte tena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा उपज्ञाते तेन",
     padaccheda_dev        = "उपज्ञाते",
     why_dev               = "(सूत्रम् 4.3.115) उपज्ञाते।",
     anuvritti_from        = ('4.1.1',),

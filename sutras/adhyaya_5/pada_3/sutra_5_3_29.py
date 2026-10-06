@@ -4,6 +4,7 @@
 Padaccheda: विभाषा पर-अवराभ्याम्
 
 विभाषा परावराभ्याम् (5.3.29)
+Pāṭha: ashtadhyayi.com data.txt row i=53029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA parAvarAByAm",
     text_dev              = "विभाषा परावराभ्याम्",
+    samagra_slp1          = "para-avarAByAm saptamI-paYcamI-praTamAByaH dig-deSa-kAlezu viBAzA atasuc",
+    samagra_dev           = "पर-अवराभ्याम् सप्तमी-पञ्चमी-प्रथमाभ्यः दिग्-देश-कालेषु विभाषा अतसुच्",
     padaccheda_dev        = "विभाषा पर-अवराभ्याम्",
     why_dev               = "(सूत्रम् 5.3.29) विभाषा परावराभ्याम्।",
     anuvritti_from        = ('4.1.76',),

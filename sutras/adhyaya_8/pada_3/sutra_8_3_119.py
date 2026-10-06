@@ -4,6 +4,7 @@
 Padaccheda: नि-वि-अभिभ्यः अट्-व्यवाये वा छन्दसि
 
 निव्यभिभ्योऽड्व्यावये वा छन्दसि (8.3.119)
+Pāṭha: ashtadhyayi.com data.txt row i=83119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nivyaBiByoqvyavAye vA Candasi',
     text_dev              = 'निव्यभिभ्योऽड्व्यवाये वा छन्दसि',
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH ni-vi-aBiByaH aqvyavAye vA Candasi saH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः नि-वि-अभिभ्यः अड्व्यवाये वा छन्दसि सः न",
     padaccheda_dev        = "नि-वि-अभिभ्यः अट्-व्यवाये वा छन्दसि",
     why_dev               = "(सूत्रम् 8.3.119) निव्यभिभ्योऽड्व्यावये वा छन्दसि।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: भू-सुवोः तिङि
 
 भूसुवोस्तिङि (7.3.88)
+Pāṭha: ashtadhyayi.com data.txt row i=73088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BUsuvostiNi",
     text_dev              = "भूसुवोस्तिङि",
+    samagra_slp1          = "BUsuvoH tiNi guRaH na",
+    samagra_dev           = "भूसुवोः तिङि गुणः न",
     padaccheda_dev        = "भू-सुवोः तिङि",
     why_dev               = "(सूत्रम् 7.3.88) भूसुवोस्तिङि।",
     anuvritti_from        = ('7.1.1',),

@@ -10,6 +10,7 @@ Narrow v3 (``prakriya_18`` audit):
     *ṭi-lopa*).
   • ``act`` — narrow *lopa* of final ``n`` on ``sAman`` when unblocked (not used
     in the default ``sāmanyaḥ`` trace; kept for symmetry with **6.4.144** text).
+Pāṭha: ashtadhyayi.com data.txt row i=64144 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'nastadDite',
     text_dev       = 'नस्तद्धिते',
+    samagra_slp1   = "naH Basya aNgasya weH tadDite lopaH",
+    samagra_dev    = "नः भस्य अङ्गस्य टेः तद्धिते लोपः",
     padaccheda_dev = "नः तद्धिते",
     why_dev        = "अन्-ान्ताद् यत्-परे टि-लोपः (प्रकृतिभावेन बाध्यते इति अङ्कनम्)।",
     anuvritti_from = (),

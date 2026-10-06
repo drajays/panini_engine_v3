@@ -4,6 +4,7 @@
 Padaccheda: तत् प्रकृतवचने मयट्
 
 तत्प्रकृतवचने मयट् (5.4.21)
+Pāṭha: ashtadhyayi.com data.txt row i=54021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tatprakftavacane mayaw",
     text_dev              = "तत्प्रकृतवचने मयट्",
+    samagra_slp1          = "tat prakftavacane mayaw",
+    samagra_dev           = "तत् प्रकृतवचने मयट्",
     padaccheda_dev        = "तत् प्रकृतवचने मयट्",
     why_dev               = "(सूत्रम् 5.4.21) तत्प्रकृतवचने मयट्।",
     anuvritti_from        = ('4.1.76',),

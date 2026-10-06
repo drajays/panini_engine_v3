@@ -4,6 +4,7 @@
 Padaccheda: छदिः-उपधि-बलेः ढञ्
 
 छदिरुपधिबलेः ढञ् (5.1.13)
+Pāṭha: ashtadhyayi.com data.txt row i=51013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'CadirupaDibalerQaY',
     text_dev              = 'छदिरुपधिबलेर्ढञ्',
+    samagra_slp1          = "tadarTam prakftO iti Cadir-upaDi-baleH vikfteH QaY",
+    samagra_dev           = "'तदर्थम् प्रकृतौ' (इति) छदिर्-उपधि-बलेः विकृतेः ढञ्",
     padaccheda_dev        = "छदिः-उपधि-बलेः ढञ्",
     why_dev               = "(सूत्रम् 5.1.13) छदिरुपधिबलेः ढञ्।",
     anuvritti_from        = ('5.1.1',),

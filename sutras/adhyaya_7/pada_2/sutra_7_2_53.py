@@ -4,6 +4,7 @@
 Padaccheda: अञ्चेः पूजायाम्
 
 अञ्चेः पूजायाम् (7.2.53)
+Pāṭha: ashtadhyayi.com data.txt row i=72053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aYceH pUjAyAm",
     text_dev              = "अञ्चेः पूजायाम्",
+    samagra_slp1          = "aNgasya aYceH pUjAyAm ArDaDAtukasya iw valAdeH ktvAnizWayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अञ्चेः पूजायाम् आर्धधातुकस्य इट् वलादेः क्त्वानिष्ठयोः",
     padaccheda_dev        = "अञ्चेः पूजायाम्",
     why_dev               = "(सूत्रम् 7.2.53) अञ्चेः पूजायाम्।",
     anuvritti_from        = ('7.1.1',),

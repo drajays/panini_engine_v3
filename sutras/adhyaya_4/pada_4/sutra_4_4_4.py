@@ -4,6 +4,7 @@
 Padaccheda: कुलत्थ-क-उपधात् अण्
 
 कुलत्थकोपधादण् (4.4.4)
+Pāṭha: ashtadhyayi.com data.txt row i=44004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kulatTakopaDAdaR",
     text_dev              = "कुलत्थकोपधादण्",
+    samagra_slp1          = "tena saMskftam iti kulatTa-kopaDAt aR",
+    samagra_dev           = "'तेन संस्कृतम्' (इति) कुलत्थ-कोपधात् अण्",
     padaccheda_dev        = "कुलत्थ-क-उपधात् अण्",
     why_dev               = "(सूत्रम् 4.4.4) कुलत्थकोपधादण्।",
     anuvritti_from        = ('4.1.1',),

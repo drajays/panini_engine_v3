@@ -4,6 +4,7 @@
 Padaccheda: संज्ञः अन्यतरस्याम् कर्मणि
 
 samjna optionally takes karma vibhakti (tritiya/dvitiya).
+Pāṭha: ashtadhyayi.com data.txt row i=23022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'saMjYonyatarasyAM karmaRi',
     text_dev              = 'संज्ञोऽन्यतरस्यां कर्मणि',
+    samagra_slp1          = "anaBihite saMjYaH anyatarasyAm karmaRi tftIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते संज्ञः अन्यतरस्याम् कर्मणि तृतीया",
     padaccheda_dev        = "संज्ञः अन्यतरस्याम् कर्मणि",
     why_dev               = "संज्ञः अन्यतरस्याम् कर्मणि (२.३.२२)।",
     anuvritti_from        = ('2.3.18',),

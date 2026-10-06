@@ -4,6 +4,7 @@
 Padaccheda: मातुः उत् संख्या-सम्-भद्रपर्वायाः
 
 मातुरुत् संख्यासम्भद्रपूर्वायाः (4.1.115)
+Pāṭha: ashtadhyayi.com data.txt row i=41115 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mAturut saMKyAsamBadrapUrvAyAH",
     text_dev              = "मातुरुत् संख्यासम्भद्रपूर्वायाः",
+    samagra_slp1          = "tasya apatyam iti saMKyA-sam-Badra-pUrvAyAH mAtuH ut AdeSaH aR pratyayaH ",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) संख्या-सम्-भद्र-पूर्वायाः मातुः उत् (आदेशः), अण् प्रत्ययः ।",
     padaccheda_dev        = "मातुः उत् संख्या-सम्-भद्रपर्वायाः",
     why_dev               = "(सूत्रम् 4.1.115) मातुरुत् संख्यासम्भद्रपूर्वायाः।",
     anuvritti_from        = ('4.1.1',),

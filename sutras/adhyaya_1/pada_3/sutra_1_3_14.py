@@ -13,6 +13,7 @@ endings.
 dhātu Term carries the tag "karmavyatihAra_usage" — set by the recipe to signal a
 reciprocal construction.  No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True because no surface phonological change occurs.
+Pāṭha: ashtadhyayi.com data.txt row i=13014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="kartari karmavyatihAre",
     text_dev="कर्तरि कर्मव्यतिहारे",
+    samagra_slp1="karma-vyatihAre kartari Atmanepadam",
+    samagra_dev="कर्म-व्यतिहारे कर्तरि आत्मनेपदम्",
     padaccheda_dev="कर्तरि (सप्तमी) / कर्म-व्यतिहारे (सप्तमी)",
     why_dev=(
         "कर्तरि प्रयोगे यदा कर्म-व्यतिहारः (परस्परक्रिया) अस्ति तदा "

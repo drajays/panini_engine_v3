@@ -4,6 +4,7 @@
 Padaccheda: च-आदिषु च
 
 चादिषु च (8.1.58)
+Pāṭha: ashtadhyayi.com data.txt row i=81058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "cAdizu ca",
     text_dev              = "चादिषु च",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO cAdizu ca tiN na AgateH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ चादिषु च तिङ् न आगतेः",
     padaccheda_dev        = "च-आदिषु च",
     why_dev               = "(सूत्रम् 8.1.58) चादिषु च।",
     anuvritti_from        = ('8.1.1',),

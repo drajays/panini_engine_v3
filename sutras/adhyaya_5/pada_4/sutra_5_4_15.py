@@ -4,6 +4,7 @@
 Padaccheda: अण् इनुणः
 
 अणिनुणः (5.4.15)
+Pāṭha: ashtadhyayi.com data.txt row i=54015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aRinuRaH",
     text_dev              = "अणिनुणः",
+    samagra_slp1          = "inuRaH aR",
+    samagra_dev           = "इनुणः अण्",
     padaccheda_dev        = "अण् इनुणः",
     why_dev               = "(सूत्रम् 5.4.15) अणिनुणः।",
     anuvritti_from        = ('4.1.76',),

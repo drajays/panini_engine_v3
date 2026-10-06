@@ -9,6 +9,7 @@ the ātmanepada-assignment block.  This rule opens that gate.
 *Engine:* registers gate "1_3_11_svaritena_aDikAraH" in paribhasha_gates and
 samjna_registry.  cond is True whenever the gate has not yet been registered.
 r1_form_identity_exempt=True because no surface change occurs.
+Pāṭha: ashtadhyayi.com data.txt row i=13011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.PARIBHASHA,
     text_slp1='svaritenADikAraH',
     text_dev='स्वरितेनाधिकारः',
+    samagra_slp1="svaritena aDikAraH",
+    samagra_dev="स्वरितेन अधिकारः",
     padaccheda_dev="स्वरितेन (तृतीया) / अधिकारः (प्रथमा)",
     why_dev=(
         "स्वरितेन चिह्नितस्य अधिकारस्य विषयः १.३.१२–१.३.९३ इत्येषु आत्मनेपद-नियमेषु।"

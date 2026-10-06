@@ -4,6 +4,7 @@
 Padaccheda: कर्तुः क्यङ् सलोपः च
 
 Krt suffix rule from dhatu: कर्तुः क्यङ् सलोपश्च (11)
+Pāṭha: ashtadhyayi.com data.txt row i=31011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kartuH kyaN salopaSca",
     text_dev              = "कर्तुः क्यङ् सलोपश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kartuH kyaN salopaH ca vA supaH upamAnAt AcAre",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कर्तुः क्यङ् सलोपः च वा सुपः उपमानात् आचारे",
     padaccheda_dev        = "कर्तुः क्यङ् सलोपः च",
     why_dev               = "धातोः [कर्तुः क्यङ् सलोपश्च]-प्रत्ययः विहितः (३.१.11)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: संख्यया अव्यय-आसन्न-अदूर-अधिक-संख्याः संख्येये
 
 Numeral + near/far/excess forms karmadharaya.
+Pāṭha: ashtadhyayi.com data.txt row i=22025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'saMKyayAvyayAsannAdUrADikasaMKyAH saMKyeye',
     text_dev              = 'संख्ययाऽव्ययासन्नादूराधिकसंख्याः संख्येये',
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA saMKyayA avyaya-Asanna-adUra-aDika-saMKyAH saMKyeye anekam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा संख्यया अव्यय-आसन्न-अदूर-अधिक-संख्याः संख्येये अनेकम्",
     padaccheda_dev        = "संख्यया अव्यय-आसन्न-अदूर-अधिक-संख्याः संख्येये",
     why_dev               = "संख्यया अव्यय-आसन्न-आदि-संख्याः संख्येये कर्मधारयः (२.२.२५)।",
     anuvritti_from        = ('2.2.1',),

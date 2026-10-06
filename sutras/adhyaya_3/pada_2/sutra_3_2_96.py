@@ -4,6 +4,7 @@
 Padaccheda: सहे च
 
 krt-suffix rule: सहे च (96)
+Pāṭha: ashtadhyayi.com data.txt row i=32096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sahe ca",
     text_dev              = "सहे च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte sahe ca kft kvanip yuDi-kfYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते सहे च कृत् क्वनिप् युधि-कृञः",
     padaccheda_dev        = "सहे च",
     why_dev               = "धातोः कृत्-प्रत्ययः [सहे च] विहितः (३.२.96)।",
     anuvritti_from        = ('3.1.1',),

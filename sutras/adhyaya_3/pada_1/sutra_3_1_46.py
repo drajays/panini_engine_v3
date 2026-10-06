@@ -4,6 +4,7 @@
 Padaccheda: श्लिषः आलिङ्गने
 
 Krt suffix rule from dhatu: श्लिष आलिङ्गने (46)
+Pāṭha: ashtadhyayi.com data.txt row i=31046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Sliza AliNgane",
     text_dev              = "श्लिष आलिङ्गने",
+    samagra_slp1          = "SlizaH AliNgane cleH ksaH",
+    samagra_dev           = "श्लिषः आलिङ्गने च्लेः क्सः",
     padaccheda_dev        = "श्लिषः आलिङ्गने",
     why_dev               = "धातोः [श्लिष आलिङ्गने]-प्रत्ययः विहितः (३.१.46)।",
     anuvritti_from        = ('3.1.1',),

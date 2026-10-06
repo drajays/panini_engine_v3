@@ -4,6 +4,7 @@
 Padaccheda: कर्मणि भृतौ
 
 krt-suffix rule: कर्मणि भृतौ (22)
+Pāṭha: ashtadhyayi.com data.txt row i=32022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karmaRi BftO",
     text_dev              = "कर्मणि भृतौ",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH karmaRi BftO kft anupasarge supi waH kfYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कर्मणि भृतौ कृत् अनुपसर्गे सुपि टः कृञः",
     padaccheda_dev        = "कर्मणि भृतौ",
     why_dev               = "धातोः कृत्-प्रत्ययः [कर्मणि भृतौ] विहितः (३.२.22)।",
     anuvritti_from        = ('3.1.1',),

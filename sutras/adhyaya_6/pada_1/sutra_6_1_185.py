@@ -11,6 +11,7 @@ upadeśa names or demo-context tags — the presence of the grammatical ``"tit"`
 property is the sole trigger.
 
 No *svara* columns on ``Varna`` rows (accent is *śruti*-metadata only).
+Pāṭha: ashtadhyayi.com data.txt row i=61185 (Art. 14).
 """
 from __future__ import annotations
 
@@ -46,6 +47,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.ANUVADA,
     text_slp1="titsvaritam",
     text_dev="तित्स्वरितम्",
+    samagra_slp1="tit svaritam",
+    samagra_dev="तित् स्वरितम्",
     padaccheda_dev="तित्-स्वरितम्",
     why_dev="तित्-संज्ञकस्य प्रत्ययस्य / निपातस्य स्वरित-अनुवादः (यः «tit»-टैगयुतः पदः तस्य स्वरितः)।",
     anuvritti_from=(),

@@ -4,6 +4,7 @@
 Padaccheda: तासि-अनुदात्त-इत्-ङित्-अत्-उपदेशात् ल-सार्वधातुकम् अनुदात्तम् अ-ह्नु-इङोः
 
 तास्यनुदात्तेन्ङिददुपदेशाल्लसार्वधातुकमनुदात्तमहन्विङोः (6.1.186)
+Pāṭha: ashtadhyayi.com data.txt row i=61186 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tAsyanudAttenNidadupadeSAllasArvaDAtukamanudAttamahnviNoH',
     text_dev              = 'तास्यनुदात्तेन्ङिददुपदेशाल्लसार्वधातुकमनुदात्तमह्न्विङोः',
+    samagra_slp1          = "tAsi-anudAttet-Nit-adupadeSAt la-sArvaDAtukam anudAttam a-hanva-iNoH udAttaH nAm anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तासि-अनुदात्तेत्-ङित्-अदुपदेशात् ल-सार्वधातुकम् अनुदात्तम् अ-हन्व-इङोः उदात्तः नाम् अन्यतरस्याम्",
     padaccheda_dev        = "तासि-अनुदात्त-इत्-ङित्-अत्-उपदेशात् ल-सार्वधातुकम् अनुदात्तम् अ-ह्नु-इङोः",
     why_dev               = "(सूत्रम् 6.1.186) तास्यनुदात्तेन्ङिददुपदेशाल्लसार्वधातुकमनुदात्तमहन्विङोः।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: इणः · षः
 
 इणः षः (8.3.39)
+Pāṭha: ashtadhyayi.com data.txt row i=83039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "iRaH zaH",
     text_dev              = "इणः षः",
+    samagra_slp1          = "iRaH visarjanIyasya apadAdO kupvoH zakAraH",
+    samagra_dev           = "इणः विसर्जनीयस्य अपदादौ कुप्वोः षकारः",
     padaccheda_dev        = "इणः · षः",
     why_dev               = "(सूत्रम् 8.3.39) इणः षः।",
     anuvritti_from        = ('8.1.1',),

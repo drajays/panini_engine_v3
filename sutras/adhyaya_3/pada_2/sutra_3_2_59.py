@@ -4,6 +4,7 @@
 Padaccheda: ऋत्विक्-दधृक्-स्रक्-दिक्-उष्णिक्-अञ्चु-युजि-क्रुञ्चाम् च
 
 krt-suffix rule: ऋत्विग्दधृक्स्रग्दिगुष्णिगञ्चुयुजिक्रुञ्चां च (59)
+Pāṭha: ashtadhyayi.com data.txt row i=32059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ftvigdaDfksragdiguzRigaYcuyujikruYcAM ca",
     text_dev              = "ऋत्विग्दधृक्स्रग्दिगुष्णिगञ्चुयुजिक्रुञ्चां च",
+    samagra_slp1          = "ftvig-daDfk-srag-dig-uzRig-aYcu-yuji-kruYcAm kvin pratyayaH paraH AdyudAttaH",
+    samagra_dev           = "ऋत्विग्-दधृक्-स्रग्-दिग्-उष्णिग्-अञ्चु-युजि-क्रुञ्चाम् क्विन् प्रत्ययः परः आद्युदात्तः",
     padaccheda_dev        = "ऋत्विक्-दधृक्-स्रक्-दिक्-उष्णिक्-अञ्चु-युजि-क्रुञ्चाम् च",
     why_dev               = "धातोः कृत्-प्रत्ययः [ऋत्विग्दधृक्स्रग्दिगुष्णिगञ्चुयुजिक्रुञ्चां च] विहितः (३.२.59)।",
     anuvritti_from        = ('3.1.1',),

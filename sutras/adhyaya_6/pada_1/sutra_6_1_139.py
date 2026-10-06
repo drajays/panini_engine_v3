@@ -10,6 +10,7 @@ Under **6.1.135** *suṭ kāt pūrvaḥ*, *suṭ*-style augment before **कृ*
 
 **CONSTITUTION Art. 2:** ``cond`` does not read prayoga semantics (*pratiyatna*
 etc.); the recipe arms ``state.meta['corrected_v2_P011_B_6_1_139_arm']``.
+Pāṭha: ashtadhyayi.com data.txt row i=61139 (Art. 14).
 """
 from __future__ import annotations
 
@@ -66,6 +67,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='upAt pratiyatnavEkftavAkyADyAhArezu',
     text_dev='उपात् प्रतियत्नवैकृतवाक्याध्याहारेषु',
+    samagra_slp1="saMhitAyAm suwkAtpUrvaH upAt pratiyatna-vEkfta-vAkyADyAhArezu karotO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="संहितायाम् सुट्कात्पूर्वः उपात् प्रतियत्न-वैकृत-वाक्याध्याहारेषु करोतौ",
     padaccheda_dev="उपात् / प्रतियत्न-वैकृत-वाक्याध्याहारेषु",
     why_dev="उप-पूर्वक-कृञि सुट्-आगमः (डेमो: उपस्कुरुते) — षष्ठ्यर्थानुवृत्तौ।",
     anuvritti_from=("6.1.135",),

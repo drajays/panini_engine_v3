@@ -4,6 +4,7 @@
 Padaccheda: एक (लुप्तषष्ठ्यन्तनिर्देशः) तद्धिते च
 
 एक तद्धिते च (6.3.62)
+Pāṭha: ashtadhyayi.com data.txt row i=63062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "eka tadDite ca",
     text_dev              = "एक तद्धिते च",
+    samagra_slp1          = "uttarapade eka tadDite ca treH hrasvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे एक तद्धिते च त्रेः ह्रस्वः",
     padaccheda_dev        = "एक (लुप्तषष्ठ्यन्तनिर्देशः) तद्धिते च",
     why_dev               = "(सूत्रम् 6.3.62) एक तद्धिते च।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: मुखम् स्वाङ्गम्
 
 मुखं स्वाङ्गम् (6.2.167)
+Pāṭha: ashtadhyayi.com data.txt row i=62167 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "muKaM svANgam",
     text_dev              = "मुखं स्वाङ्गम्",
+    samagra_slp1          = "uttarapadAdiH antaH muKam svANgam bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः मुखम् स्वाङ्गम् बहुव्रीहौ",
     padaccheda_dev        = "मुखम् स्वाङ्गम्",
     why_dev               = "(सूत्रम् 6.2.167) मुखं स्वाङ्गम्।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: स्रोतसः विभाषा ड्यत्-ड्यौ
 
 स्रोतसो विभाषा ड्यड्ड्यौ (4.4.113)
+Pāṭha: ashtadhyayi.com data.txt row i=44113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "srotaso viBAzA qyaqqyO",
     text_dev              = "स्रोतसो विभाषा ड्यड्ड्यौ",
+    samagra_slp1          = "tatra Bave iti srotasaH Candasi saMjYAyAm qyat qyO yat viBAzA",
+    samagra_dev           = "'तत्र भवे' (इति) स्रोतसः छन्दसि संज्ञायाम् ड्यत् ड्यौ यत् विभाषा",
     padaccheda_dev        = "स्रोतसः विभाषा ड्यत्-ड्यौ",
     why_dev               = "(सूत्रम् 4.4.113) स्रोतसो विभाषा ड्यड्ड्यौ।",
     anuvritti_from        = ('4.1.1',),

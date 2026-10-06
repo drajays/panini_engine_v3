@@ -4,6 +4,7 @@
 Padaccheda: अन्-अस्-अन्तात् नपुंसकात् छन्दसि
 
 अनसन्तान्नपुंसकाच्छन्दसि (5.4.103)
+Pāṭha: ashtadhyayi.com data.txt row i=54103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anasantAnnapuMsakAcCandasi",
     text_dev              = "अनसन्तान्नपुंसकाच्छन्दसि",
+    samagra_slp1          = "tatpuruzasya an-asantAt napuMsakAt Candasi wac",
+    samagra_dev           = "तत्पुरुषस्य अन्-असन्तात् नपुंसकात्  छन्दसि टच्",
     padaccheda_dev        = "अन्-अस्-अन्तात् नपुंसकात् छन्दसि",
     why_dev               = "(सूत्रम् 5.4.103) अनसन्तान्नपुंसकाच्छन्दसि।",
     anuvritti_from        = ('5.4.68',),

@@ -10,6 +10,7 @@ verbs). E.g. *gāṃ doghti payaḥ* — gāṃ is akathita karman; *nī, vah, h
 
 *Engine:* tags bearing ``"akaTita_karma"`` get ``"karman"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'akaTitaM ca',
     text_dev             = 'अकथितं च',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake akaTitam ca karma",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके अकथितम् च कर्म",
     padaccheda_dev       = "अकथितम् / च",
     why_dev              = (
         "अकथितम् (द्विकर्मक-धातोः अनभिधेयं यत् कारकम्) तत् कर्म-कारक-संज्ञकम्। "

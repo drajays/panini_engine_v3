@@ -4,6 +4,7 @@
 Padaccheda: षण्मासात् ण्यत् च
 
 षण्मासाण्ण्यच्च (5.1.83)
+Pāṭha: ashtadhyayi.com data.txt row i=51083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zaRmAsARRyacca",
     text_dev              = "षण्मासाण्ण्यच्च",
+    samagra_slp1          = "tam BUtaH iti vayasi zaRmAsAt dvigoH Ryat yap  WaY ca",
+    samagra_dev           = "'तम् भूतः' (इति) वयसि षण्मासात् द्विगोः ण्यत्, यप् , ठञ् च",
     padaccheda_dev        = "षण्मासात् ण्यत् च",
     why_dev               = "(सूत्रम् 5.1.83) षण्मासाण्ण्यच्च।",
     anuvritti_from        = ('5.1.78',),

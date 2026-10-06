@@ -15,6 +15,7 @@ For example: upayacchate — he restrains himself.
 stamp "Atmanepada_1_3_56" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _YAM_ROOTS carries both the tag "upa_prefix" and the tag "svakAraNa_usage".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -62,6 +63,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="upAdyamaH svakaraRe",
     text_dev="उपाद्यमः स्वकरणे",
+    samagra_slp1="upAt yamaH svakaraRe Atmanepadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="उपात् यमः स्वकरणे आत्मनेपदम्",
     padaccheda_dev="उपात् (पञ्चमी-एकवचन) / यमः (षष्ठी-एकवचन) / स्वकरणे (सप्तमी-एकवचन)",
     why_dev=(
         "उप-पूर्वकस्य यम्-धातोः स्वकारण-अर्थे आत्मनेपदम् — "

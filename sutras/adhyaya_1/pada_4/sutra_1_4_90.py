@@ -13,6 +13,7 @@
 *Engine:* sets paribhāṣā gate for *prati/pari/anu* in these six senses.
 ``cond`` never reads vibhakti/vacana/lakāra/surface.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=14090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -38,6 +39,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'lakzaRetTamBUtAKyAnaBAgavIpsAsu pratiparyanavaH',
     text_dev             = 'लक्षणेत्थम्भूताख्यानभागवीप्सासु प्रतिपर्यनवः',
+    samagra_slp1         = "AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH karmapravacanIyAH lakzaRa-itTamBUtAKyAna-BAga-vIpsAsu prati-pari-anavaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः कर्मप्रवचनीयाः लक्षण-इत्थम्भूताख्यान-भाग-वीप्सासु प्रति-परि-अनवः",
     padaccheda_dev       = "लक्षण-इत्थम्भूत-आख्यान-भाग-वीप्सासु / प्रति-परि-अनवः",
     why_dev              = (
         "लक्षण-इत्थम्भूत-आख्यान-भाग-वीप्सा-अर्थेषु 'प्रति' 'परि' 'अनु' "

@@ -4,6 +4,7 @@
 Padaccheda: नि-अधी च
 
 न्यधी च (6.2.53)
+Pāṭha: ashtadhyayi.com data.txt row i=62053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nyaDI ca",
     text_dev              = "न्यधी च",
+    samagra_slp1          = "nyaDI ca prakftyA pUrvapadam aYcatO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "न्यधी च प्रकृत्या पूर्वपदम् अञ्चतौ",
     padaccheda_dev        = "नि-अधी च",
     why_dev               = "(सूत्रम् 6.2.53) न्यधी च।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: ओषधेः च विभक्तौ अ-प्रथमायाम्
 
 ओषधेश्च विभक्तावप्रथमायाम् (6.3.132)
+Pāṭha: ashtadhyayi.com data.txt row i=63132 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ozaDeSca viBaktAvapraTamAyAm",
     text_dev              = "ओषधेश्च विभक्तावप्रथमायाम्",
+    samagra_slp1          = "uttarapade saMhitAyAm ozaDeH ca viBaktO apraTamAyAm dIrGaH mantre",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् ओषधेः च विभक्तौ अप्रथमायाम् दीर्घः मन्त्रे",
     padaccheda_dev        = "ओषधेः च विभक्तौ अ-प्रथमायाम्",
     why_dev               = "(सूत्रम् 6.3.132) ओषधेश्च विभक्तावप्रथमायाम्।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: क्षुद्राभ्यः वा
 
 क्षुद्राभ्यो वा (4.1.131)
+Pāṭha: ashtadhyayi.com data.txt row i=41131 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kzudrAByo vA",
     text_dev              = "क्षुद्राभ्यो वा",
+    samagra_slp1          = "tasya apatyam iti kzudrAByaH Qrak vA",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) क्षुद्राभ्यः ढ्रक् वा",
     padaccheda_dev        = "क्षुद्राभ्यः वा",
     why_dev               = "(सूत्रम् 4.1.131) क्षुद्राभ्यो वा।",
     anuvritti_from        = ('4.1.1',),

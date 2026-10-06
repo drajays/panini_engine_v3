@@ -4,6 +4,7 @@
 Padaccheda: श्व-आदेः इञि
 
 श्वादेरिञि (7.3.8)
+Pāṭha: ashtadhyayi.com data.txt row i=73008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SvAderiYi",
     text_dev              = "श्वादेरिञि",
+    samagra_slp1          = "aNgasya SvAdeH iYi vfdDiH acaH YRiti tadDitezu AdeH na Ec",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य श्वादेः इञि वृद्धिः अचः ञ्णिति तद्धितेषु आदेः न ऐच्",
     padaccheda_dev        = "श्व-आदेः इञि",
     why_dev               = "(सूत्रम् 7.3.8) श्वादेरिञि।",
     anuvritti_from        = ('7.1.1',),

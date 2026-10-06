@@ -4,6 +4,7 @@
 Padaccheda: क-उपधात् च
 
 कोपधाच्च (4.3.137)
+Pāṭha: ashtadhyayi.com data.txt row i=43137 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kopaDAcca",
     text_dev              = "कोपधाच्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA ka-upaDAt ca tasya vikAraH avayave aR",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा क-उपधात् च तस्य विकारः अवयवे अण्",
     padaccheda_dev        = "क-उपधात् च",
     why_dev               = "(सूत्रम् 4.3.137) कोपधाच्च।",
     anuvritti_from        = ('4.1.1',),

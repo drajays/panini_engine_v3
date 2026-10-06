@@ -4,6 +4,7 @@
 Padaccheda: विभाषा लुङ्-लृङोः
 
 Optional in lun and lrng.
+Pāṭha: ashtadhyayi.com data.txt row i=24050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA luNlfNoH",
     text_dev              = "विभाषा लुङ्लृङोः",
+    samagra_slp1          = "ArDaDAtuke viBAzA luN-lfNoH iNaH gAN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके विभाषा लुङ्-लृङोः इङः गाङ्",
     padaccheda_dev        = "विभाषा लुङ्-लृङोः",
     why_dev               = "विभाषा लुङ्-लृङोः (२.४.५०)।",
     anuvritti_from        = ('2.4.49',),

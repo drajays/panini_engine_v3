@@ -4,6 +4,7 @@
 Padaccheda: प्राचाम् ष्फः तद्धितः
 
 प्राचां ष्फ तद्धितः (4.1.17)
+Pāṭha: ashtadhyayi.com data.txt row i=41017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prAcAM zPa tadDitaH",
     text_dev              = "प्राचां ष्फ तद्धितः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt prAcAm zPaH tadDitaH NIp yaYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् प्राचाम् ष्फः तद्धितः ङीप् यञः",
     padaccheda_dev        = "प्राचाम् ष्फः तद्धितः",
     why_dev               = "(सूत्रम् 4.1.17) प्राचां ष्फ तद्धितः।",
     anuvritti_from        = ('4.1.1',),

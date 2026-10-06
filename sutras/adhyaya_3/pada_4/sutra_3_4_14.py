@@ -4,6 +4,7 @@
 Padaccheda: कृत्य-अर्थे तवै-केन्-केन्य-त्वनः
 
 krt-suffix rule: कृत्यार्थे तवैकेन्केन्यत्वनः
+Pāṭha: ashtadhyayi.com data.txt row i=34014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kftyArTe tavEkenkenyatvanaH",
     text_dev              = "कृत्यार्थे तवैकेन्केन्यत्वनः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kftyArTe tavE-ken-kenya-tvanaH kft Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कृत्यार्थे तवै-केन्-केन्य-त्वनः कृत् छन्दसि",
     padaccheda_dev        = "कृत्य-अर्थे तवै-केन्-केन्य-त्वनः",
     why_dev               = "धातोः प्रत्ययः (३.4.14)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: निर्वाणः अवाते
 
 निर्वाणोऽवाते (8.2.50)
+Pāṭha: ashtadhyayi.com data.txt row i=82050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nirvARovAte',
     text_dev              = 'निर्वाणोऽवाते',
+    samagra_slp1          = "padasya pUrvatrAsidDam nirvARaH avAte nizWAtaH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् निर्वाणः अवाते निष्ठातः नः",
     padaccheda_dev        = "निर्वाणः अवाते",
     why_dev               = "(सूत्रम् 8.2.50) निर्वाणोऽवाते।",
     anuvritti_from        = ('8.1.1',),

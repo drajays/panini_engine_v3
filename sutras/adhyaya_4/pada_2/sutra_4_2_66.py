@@ -4,6 +4,7 @@
 Padaccheda: छन्दोब्राह्मणानि च तद्विषयाणि
 
 छन्दोब्राह्मणानि च तद्विषयाणि (4.2.66)
+Pāṭha: ashtadhyayi.com data.txt row i=42066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "CandobrAhmaRAni ca tadvizayARi",
     text_dev              = "छन्दोब्राह्मणानि च तद्विषयाणि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA Candas-brAhmaRAni ca tad-vizayARi tat aDIte veda proktAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा छन्दस्-ब्राह्मणानि च तद्-विषयाणि तत् अधीते वेद प्रोक्तात्",
     padaccheda_dev        = "छन्दोब्राह्मणानि च तद्विषयाणि",
     why_dev               = "(सूत्रम् 4.2.66) छन्दोब्राह्मणानि च तद्विषयाणि।",
     anuvritti_from        = ('4.1.1',),

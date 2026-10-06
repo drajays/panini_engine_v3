@@ -4,6 +4,7 @@
 Padaccheda: इच् कर्मव्यतिहारे
 
 इच् कर्मव्यतिहारे (5.4.127)
+Pāṭha: ashtadhyayi.com data.txt row i=54127 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ic karmavyatihAre",
     text_dev              = "इच् कर्मव्यतिहारे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA ic karmavyatihAre bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा इच् कर्मव्यतिहारे बहुव्रीहौ",
     padaccheda_dev        = "इच् कर्मव्यतिहारे",
     why_dev               = "(सूत्रम् 5.4.127) इच् कर्मव्यतिहारे।",
     anuvritti_from        = ('5.4.68',),

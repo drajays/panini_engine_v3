@@ -4,6 +4,7 @@
 Padaccheda: कालेभ्यः भव-वत्
 
 कालेभ्यो भववत् (4.2.34)
+Pāṭha: ashtadhyayi.com data.txt row i=42034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kAleByo Bavavat",
     text_dev              = "कालेभ्यो भववत्",
+    samagra_slp1          = "sA asya devatA iti kAleByaH Bavavat",
+    samagra_dev           = "'सा अस्य देवता' (इति)  कालेभ्यः भववत्",
     padaccheda_dev        = "कालेभ्यः भव-वत्",
     why_dev               = "(सूत्रम् 4.2.34) कालेभ्यो भववत्।",
     anuvritti_from        = ('4.1.1',),

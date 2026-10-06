@@ -15,6 +15,7 @@ of the prefix tags in _NISAM_PREFIXES, and (c) the idempotency stamp
 "Atmanepada_1_3_30" is absent from state.meta.  No arm flags (CONSTITUTION
 Art. 13).  r1_form_identity_exempt=True because no surface phonological
 change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -59,6 +60,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='nisamupaviByo hvaH',
     text_dev='निसमुपविभ्यो ह्वः',
+    samagra_slp1="ni-sam-upa-viByaH hvaH Atmanepadam",
+    samagra_dev="नि-सम्-उप-विभ्यः ह्वः आत्मनेपदम्",
     padaccheda_dev="नि-सम्-उप-वि-भ्यः (पञ्चमी-बहुवचन) / ह्वः (षष्ठी-एकवचन)",
     why_dev=(
         "नि-, सम्-, उप-, वि-पूर्वस्य ह्वे-धातोः प्रयोगे आत्मनेपदम् — "

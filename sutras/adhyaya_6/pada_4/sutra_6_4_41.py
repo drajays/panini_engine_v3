@@ -4,6 +4,7 @@
 Padaccheda: विट्-वनोः अनुनासिकस्य आत्
 
 विड्वनोरनुनासिकस्यात् (6.4.41)
+Pāṭha: ashtadhyayi.com data.txt row i=64041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viqvanoranunAsikasyAt",
     text_dev              = "विड्वनोरनुनासिकस्यात्",
+    samagra_slp1          = "aNgasya asidDavadatrABAt viw-vanoH anunAsikasya At nalopaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् विट्-वनोः अनुनासिकस्य आत् नलोपः",
     padaccheda_dev        = "विट्-वनोः अनुनासिकस्य आत्",
     why_dev               = "(सूत्रम् 6.4.41) विड्वनोरनुनासिकस्यात्।",
     anuvritti_from        = ('6.1.1',),

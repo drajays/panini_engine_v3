@@ -4,6 +4,7 @@
 Padaccheda: पदम् अस्मिन् दृश्यम्
 
 पदमस्मिन् दृश्यम् (4.4.87)
+Pāṭha: ashtadhyayi.com data.txt row i=44087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "padamasmin dfSyam",
     text_dev              = "पदमस्मिन् दृश्यम्",
+    samagra_slp1          = "padam dfSyamasmin iti samarTAnAm praTamAt paraH yat pratyayaH",
+    samagra_dev           = "'पदम् दृश्यमस्मिन्' (इति) समर्थानाम् प्रथमात् परः यत् प्रत्ययः",
     padaccheda_dev        = "पदम् अस्मिन् दृश्यम्",
     why_dev               = "(सूत्रम् 4.4.87) पदमस्मिन् दृश्यम्।",
     anuvritti_from        = ('4.1.1',),

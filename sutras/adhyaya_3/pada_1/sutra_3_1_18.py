@@ -4,6 +4,7 @@
 Padaccheda: सुख-आदिभ्यः कर्तृ (लुप्तषष्ठ्यन्तनिर्देशः) वेदनायाम्
 
 Krt suffix rule from dhatu: सुखादिभ्यः कर्तृवेदनायाम् (18)
+Pāṭha: ashtadhyayi.com data.txt row i=31018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "suKAdiByaH kartfvedanAyAm",
     text_dev              = "सुखादिभ्यः कर्तृवेदनायाम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca suKAdiByaH kartf vedanAyAm vA kyaN karmaRaH karaRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च सुखादिभ्यः कर्तृ वेदनायाम् वा क्यङ् कर्मणः करणे",
     padaccheda_dev        = "सुख-आदिभ्यः कर्तृ (लुप्तषष्ठ्यन्तनिर्देशः) वेदनायाम्",
     why_dev               = "धातोः [सुखादिभ्यः कर्तृवेदनायाम्]-प्रत्ययः विहितः (३.१.18)।",
     anuvritti_from        = ('3.1.1',),

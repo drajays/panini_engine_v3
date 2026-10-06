@@ -4,6 +4,7 @@
 Padaccheda: तोः · षि
 
 तोः षि (8.4.43)
+Pāṭha: ashtadhyayi.com data.txt row i=84043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "toH zi",
     text_dev              = "तोः षि",
+    samagra_slp1          = "toH zi zwuH na ",
+    samagra_dev           = "तोः षि ष्टुः न ।",
     padaccheda_dev        = "तोः · षि",
     why_dev               = "(सूत्रम् 8.4.43) तोः षि।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: पथि-अतिथि-वसति-स्वपतेः ढञ्
 
 पथ्यतिथिवसतिस्वपतेर्ढञ् (4.4.104)
+Pāṭha: ashtadhyayi.com data.txt row i=44104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paTyatiTivasatisvapaterQaY",
     text_dev              = "पथ्यतिथिवसतिस्वपतेर्ढञ्",
+    samagra_slp1          = "tatra sADuH iti saMjYAyAm paTi-atiTi-vasati-svapateH saMjYAyAm QaY",
+    samagra_dev           = "'तत्र साधुः' इति संज्ञायाम् पथि-अतिथि-वसति-स्वपतेः संज्ञायाम् ढञ्",
     padaccheda_dev        = "पथि-अतिथि-वसति-स्वपतेः ढञ्",
     why_dev               = "(सूत्रम् 4.4.104) पथ्यतिथिवसतिस्वपतेर्ढञ्।",
     anuvritti_from        = ('4.1.1',),

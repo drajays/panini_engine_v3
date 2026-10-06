@@ -4,6 +4,7 @@
 Padaccheda: पथि-मथोः सर्वनामस्थाने
 
 पथिमथोः सर्वनामस्थाने (6.1.199)
+Pāṭha: ashtadhyayi.com data.txt row i=61199 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paTimaToH sarvanAmasTAne",
     text_dev              = "पथिमथोः सर्वनामस्थाने",
+    samagra_slp1          = "paTi-maToH sarvanAmasTAne udAttaH AdiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पथि-मथोः सर्वनामस्थाने उदात्तः आदिः",
     padaccheda_dev        = "पथि-मथोः सर्वनामस्थाने",
     why_dev               = "(सूत्रम् 6.1.199) पथिमथोः सर्वनामस्थाने।",
     anuvritti_from        = ('6.1.1',),

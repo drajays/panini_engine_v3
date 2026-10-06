@@ -4,6 +4,7 @@
 Padaccheda: द्विगौ प्रमाणे
 
 द्विगौ प्रमाणे (6.2.12)
+Pāṭha: ashtadhyayi.com data.txt row i=62012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvigO pramARe",
     text_dev              = "द्विगौ प्रमाणे",
+    samagra_slp1          = "dvigO pramARe prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "द्विगौ प्रमाणे प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "द्विगौ प्रमाणे",
     why_dev               = "(सूत्रम् 6.2.12) द्विगौ प्रमाणे।",
     anuvritti_from        = ('6.1.1',),

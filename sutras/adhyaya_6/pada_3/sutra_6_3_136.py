@@ -4,6 +4,7 @@
 Padaccheda: निपातस्य च
 
 निपातस्य च (6.3.136)
+Pāṭha: ashtadhyayi.com data.txt row i=63136 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nipAtasya ca",
     text_dev              = "निपातस्य च",
+    samagra_slp1          = "uttarapade saMhitAyAm nipAtasya ca dIrGaH fci",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् निपातस्य च दीर्घः ऋचि",
     padaccheda_dev        = "निपातस्य च",
     why_dev               = "(सूत्रम् 6.3.136) निपातस्य च।",
     anuvritti_from        = ('6.1.1',),

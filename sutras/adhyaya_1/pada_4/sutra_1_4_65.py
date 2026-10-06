@@ -6,6 +6,7 @@ parigraha (enclosure / inside), e.g., "antar-dhā" (to hide inside),
 "antar-kṛ" (to put inside).
 
 v3: registers samjna_registry["gati_antar_parigrahe"] = frozenset({"antar"}).
+Pāṭha: ashtadhyayi.com data.txt row i=14065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1="antaraparigrahe",
     text_dev="अन्तरपरिग्रहे",
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH antaH aparigrahe kriyAyoge gatiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः अन्तः अपरिग्रहे क्रियायोगे गतिः",
     padaccheda_dev="अन्तर् / परिग्रहे",
     why_dev="परिग्रहे 'अन्तर्' शब्दो गति-संज्ञकः — 'antar' गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

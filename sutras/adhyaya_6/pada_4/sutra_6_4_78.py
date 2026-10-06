@@ -4,6 +4,7 @@
 Padaccheda: अभ्यासस्य असवर्णे
 
 अभ्यासस्यासवर्णे (6.4.78)
+Pāṭha: ashtadhyayi.com data.txt row i=64078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -55,6 +56,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "aByAsasyAsavarRe",
     text_dev              = "अभ्यासस्यासवर्णे",
+    samagra_slp1          = "aByAsasya yvoH asavarRe aci iyaN-uvaNO",
+    samagra_dev           = "अभ्यासस्य य्वोः असवर्णे अचि इयङ्-उवङौ",
     padaccheda_dev        = "अभ्यासस्य असवर्णे",
     why_dev               = "अभ्यासस्य इवर्णोवर्णयोः असवर्णे अचि परे इयङुवङौ (इयेख, उवोख)।",
     anuvritti_from        = ('6.1.1',),

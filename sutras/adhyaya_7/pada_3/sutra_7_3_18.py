@@ -4,6 +4,7 @@
 Padaccheda: जे प्रोष्ठपदानाम्
 
 जे प्रोष्ठपदानाम् (7.3.18)
+Pāṭha: ashtadhyayi.com data.txt row i=73018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "je prozWapadAnAm",
     text_dev              = "जे प्रोष्ठपदानाम्",
+    samagra_slp1          = "aNgasya uttarapadasya je prozWapadAnAm vfdDiH acaH YRiti tadDitezu AdeH SvAdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य जे प्रोष्ठपदानाम् वृद्धिः अचः ञ्णिति तद्धितेषु आदेः श्वादेः",
     padaccheda_dev        = "जे प्रोष्ठपदानाम्",
     why_dev               = "(सूत्रम् 7.3.18) जे प्रोष्ठपदानाम्।",
     anuvritti_from        = ('7.1.1',),

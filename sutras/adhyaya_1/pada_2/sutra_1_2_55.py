@@ -18,6 +18,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'yogapramARe ca tadaBAvedarSanaM syAt',
     text_dev                = 'योगप्रमाणे च तदभावेऽदर्शनं स्यात्',
+    samagra_slp1            = "yoga-pramARe ca tad-aBAve a-darSanam syAt tat a-Sizyam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "योग-प्रमाणे च तद्-अभावे अ-दर्शनम् स्यात् तत् अ-शिष्यम्",
     padaccheda_dev          = "योग-प्रमाणे / च / तत्-अभावे / अदर्शनम् / स्यात्",
     why_dev                 = (
         "योगः प्रमाणं यस्य तस्मिन् विषये तस्य योगस्य अभावे रूपस्य अदर्शनम् — "

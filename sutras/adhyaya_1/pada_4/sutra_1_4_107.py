@@ -5,6 +5,7 @@ Padaccheda: अस्मदि ७/१ उत्तमः १/१
 
 The word/form relating to asmad (first person) is called uttama
 (first person marker).
+Pāṭha: ashtadhyayi.com data.txt row i=14107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "asmadyuttamaH",
     text_dev              = "अस्मद्युत्तमः",
+    samagra_slp1          = "asmadi upapade samAnADikaraRe sTAnini api uttamaH",
+    samagra_dev           = "अस्मदि उपपदे समानाधिकरणे स्थानिनि अपि उत्तमः",
     padaccheda_dev        = "अस्मदि ७/१ उत्तमः १/१",
     why_dev               = "अस्मच्छब्दे अर्थे उत्तम-पुरुष-संज्ञा (१.४.१०७)।",
     anuvritti_from        = ("1.4.105",),

@@ -4,6 +4,7 @@
 Padaccheda: संज्ञा-पूरण्योः च
 
 संज्ञापूरण्योश्च (6.3.38)
+Pāṭha: ashtadhyayi.com data.txt row i=63038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYApUraRyoSca",
     text_dev              = "संज्ञापूरण्योश्च",
+    samagra_slp1          = "uttarapade saMjYA-pUraRyoH ca striyAH puMvat anUN BAzitapu~skAd na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संज्ञा-पूरण्योः च स्त्रियाः पुंवत् अनूङ् भाषितपुँस्काद् न",
     padaccheda_dev        = "संज्ञा-पूरण्योः च",
     why_dev               = "(सूत्रम् 6.3.38) संज्ञापूरण्योश्च।",
     anuvritti_from        = ('6.1.1',),

@@ -13,6 +13,7 @@ yields the yaṇ form; ``engine.vikalpa.choose({"6.1.127": True})`` /
 ``explore`` yields the other.  Padānta = left Term carries the ``pada`` tag.
 Prakṛtibhāva is realised exactly as for pragṛhya (``PRAGHYA_TERM_TAG``), so
 6.1.77 / 6.1.78 / 6.1.101 already skip the boundary.
+Pāṭha: ashtadhyayi.com data.txt row i=61127 (Art. 14).
 """
 from __future__ import annotations
 
@@ -64,6 +65,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIBHASHA,
     text_slp1='ikosavarRe SAkalyasya hrasvaSca',
     text_dev='इकोऽसवर्णे शाकल्यस्य ह्रस्वश्च',
+    samagra_slp1="ikaH padAntAt asavarRe aci prakftyA hrasvaH ca",
+    samagra_dev="इकः पदान्तात् असवर्णे अचि प्रकृत्या ह्रस्वः च",
     padaccheda_dev="इकः असवर्णे शाकल्यस्य ह्रस्वः च",
     why_dev="पदान्तस्य इकः असवर्णे अचि परे शाकल्य-मतेन ह्रस्वः प्रकृतिभावश्च (विकल्पेन)।",
     anuvritti_from=("6.1.125",),

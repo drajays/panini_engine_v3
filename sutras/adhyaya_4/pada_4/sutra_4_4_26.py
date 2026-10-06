@@ -4,6 +4,7 @@
 Padaccheda: व्यञ्जनैः उपसिक्ते
 
 व्यञ्जनैरुपसिक्ते (4.4.26)
+Pāṭha: ashtadhyayi.com data.txt row i=44026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vyaYjanErupasikte",
     text_dev              = "व्यञ्जनैरुपसिक्ते",
+    samagra_slp1          = "tena upasikte iti vyaYjanEH samarTAnAM praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तेन उपसिक्ते' (इति) व्यञ्जनैः समर्थानां प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "व्यञ्जनैः उपसिक्ते",
     why_dev               = "(सूत्रम् 4.4.26) व्यञ्जनैरुपसिक्ते।",
     anuvritti_from        = ('4.1.1',),

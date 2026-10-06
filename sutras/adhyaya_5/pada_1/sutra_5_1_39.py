@@ -4,6 +4,7 @@
 Padaccheda: गो-द्वि-अचः अ-संख्या-परिमाण-अश्व-आदेः यत्
 
 गोद्व्यचोरसंख्यापरिमाणाश्वादेर्यत् (5.1.39)
+Pāṭha: ashtadhyayi.com data.txt row i=51039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'godvyacosaMKyAparimARASvAderyat',
     text_dev              = 'गोद्व्यचोऽसंख्यापरिमाणाश्वादेर्यत्',
+    samagra_slp1          = "tasya nimittaM saMyogotpAtO iti go-dvyacaH asaMKyA-parimARa-aSvAdeH yat",
+    samagra_dev           = "'तस्य निमित्तं संयोगोत्पातौ' इति गो-द्व्यचः असंख्या-परिमाण-अश्वादेः यत्",
     padaccheda_dev        = "गो-द्वि-अचः अ-संख्या-परिमाण-अश्व-आदेः यत्",
     why_dev               = "(सूत्रम् 5.1.39) गोद्व्यचोरसंख्यापरिमाणाश्वादेर्यत्।",
     anuvritti_from        = ('5.1.19',),

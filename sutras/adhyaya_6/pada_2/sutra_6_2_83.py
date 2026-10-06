@@ -4,6 +4,7 @@
 Padaccheda: अन्त्यात् पूर्वम् बहु-अचः
 
 अन्त्यात् पूर्वं बह्वचः (6.2.83)
+Pāṭha: ashtadhyayi.com data.txt row i=62083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "antyAt pUrvaM bahvacaH",
     text_dev              = "अन्त्यात् पूर्वं बह्वचः",
+    samagra_slp1          = "AdiH udAttaH antyAt pUrvam bahvacaH pUrvapadam je",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः अन्त्यात् पूर्वम् बह्वचः पूर्वपदम् जे",
     padaccheda_dev        = "अन्त्यात् पूर्वम् बहु-अचः",
     why_dev               = "(सूत्रम् 6.2.83) अन्त्यात् पूर्वं बह्वचः।",
     anuvritti_from        = ('6.1.1',),

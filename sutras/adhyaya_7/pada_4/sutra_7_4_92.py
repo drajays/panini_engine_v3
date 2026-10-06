@@ -4,6 +4,7 @@
 Padaccheda: ऋतः च
 
 ऋतश्च (7.4.92)
+Pāṭha: ashtadhyayi.com data.txt row i=74092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ftaSca",
     text_dev              = "ऋतश्च",
+    samagra_slp1          = "aNgasya aByAsasya ftaH ca rIk luki",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य ऋतः च रीक् लुकि",
     padaccheda_dev        = "ऋतः च",
     why_dev               = "(सूत्रम् 7.4.92) ऋतश्च।",
     anuvritti_from        = ('7.1.1',),

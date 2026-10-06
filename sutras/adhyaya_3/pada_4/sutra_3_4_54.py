@@ -4,6 +4,7 @@
 Padaccheda: स्वाङ्गे अध्रुवे
 
 krt-suffix rule: स्वाङ्गेऽध्रुवे
+Pāṭha: ashtadhyayi.com data.txt row i=34054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'svANgeDruve',
     text_dev              = 'स्वाङ्गेऽध्रुवे',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH svANge aDruve kft Ramul dvitIyAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः स्वाङ्गे अध्रुवे कृत् णमुल् द्वितीयायाम्",
     padaccheda_dev        = "स्वाङ्गे अध्रुवे",
     why_dev               = "धातोः प्रत्ययः (३.4.54)।",
     anuvritti_from        = ('3.1.1',),

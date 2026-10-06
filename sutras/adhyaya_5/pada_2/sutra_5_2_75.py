@@ -4,6 +4,7 @@
 Padaccheda: पार्श्वेन अन्विच्छति (क्रियापदम्)
 
 पार्श्वेनान्विच्छति (5.2.75)
+Pāṭha: ashtadhyayi.com data.txt row i=52075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pArSvenAnvicCati",
     text_dev              = "पार्श्वेनान्विच्छति",
+    samagra_slp1          = "pArSvena anvicCati iti kan",
+    samagra_dev           = "'पार्श्वेन अन्विच्छति' (इति) कन्",
     padaccheda_dev        = "पार्श्वेन अन्विच्छति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 5.2.75) पार्श्वेनान्विच्छति।",
     anuvritti_from        = ('4.1.82',),

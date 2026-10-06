@@ -4,6 +4,7 @@
 Padaccheda: पाश-आदिभ्यः यः
 
 पाशादिभ्यो यः (4.2.49)
+Pāṭha: ashtadhyayi.com data.txt row i=42049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pASAdiByo yaH",
     text_dev              = "पाशादिभ्यो यः",
+    samagra_slp1          = "tasya samUhaH iti pASAdiByaH yaH",
+    samagra_dev           = "तस्य समूहः (इति) पाशादिभ्यः यः",
     padaccheda_dev        = "पाश-आदिभ्यः यः",
     why_dev               = "(सूत्रम् 4.2.49) पाशादिभ्यो यः।",
     anuvritti_from        = ('4.1.1',),

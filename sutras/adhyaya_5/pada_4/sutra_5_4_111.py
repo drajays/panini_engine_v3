@@ -4,6 +4,7 @@
 Padaccheda: झयः
 
 झयः (5.4.111)
+Pāṭha: ashtadhyayi.com data.txt row i=54111 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "JayaH",
     text_dev              = "झयः",
+    samagra_slp1          = "JayaH avyayIBAve anyatarasyAm wac",
+    samagra_dev           = "झयः अव्ययीभावे अन्यतरस्याम् टच्",
     padaccheda_dev        = "झयः",
     why_dev               = "(सूत्रम् 5.4.111) झयः।",
     anuvritti_from        = ('5.4.68',),

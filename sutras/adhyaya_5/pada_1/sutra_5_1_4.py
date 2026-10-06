@@ -4,6 +4,7 @@
 Padaccheda: विभाषा हविः-अपूपादिभ्यः
 
 विभाषा हविरपूपादिभ्यः (5.1.4)
+Pāṭha: ashtadhyayi.com data.txt row i=51004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA havirapUpAdiByaH",
     text_dev              = "विभाषा हविरपूपादिभ्यः",
+    samagra_slp1          = "prAkkrItAt havirapUpAdiByaH viBAzA yat",
+    samagra_dev           = "प्राक्क्रीतात् हविरपूपादिभ्यः विभाषा यत्",
     padaccheda_dev        = "विभाषा हविः-अपूपादिभ्यः",
     why_dev               = "(सूत्रम् 5.1.4) विभाषा हविरपूपादिभ्यः।",
     anuvritti_from        = ('5.1.1',),

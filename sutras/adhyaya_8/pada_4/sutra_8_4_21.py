@@ -4,6 +4,7 @@
 Padaccheda: उभौ स-अभ्यासस्य
 
 उभौ साभ्यासस्य (8.4.21)
+Pāṭha: ashtadhyayi.com data.txt row i=84021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uBO sAByAsasya",
     text_dev              = "उभौ साभ्यासस्य",
+    samagra_slp1          = "razAByAmupasargAt aniteH sAByAsasya uBO naH RaH",
+    samagra_dev           = "रषाभ्यामुपसर्गात् अनितेः साभ्यासस्य उभौ  नः णः",
     padaccheda_dev        = "उभौ स-अभ्यासस्य",
     why_dev               = "(सूत्रम् 8.4.21) उभौ साभ्यासस्य।",
     anuvritti_from        = ('8.1.1',),

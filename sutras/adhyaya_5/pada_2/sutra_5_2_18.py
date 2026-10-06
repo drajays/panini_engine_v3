@@ -4,6 +4,7 @@
 Padaccheda: गोष्ठात् खञ् भूतपूर्वे
 
 गोष्ठात् खञ् भूतपूर्वे (5.2.18)
+Pāṭha: ashtadhyayi.com data.txt row i=52018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gozWAt KaY BUtapUrve",
     text_dev              = "गोष्ठात् खञ् भूतपूर्वे",
+    samagra_slp1          = "gozWAt BUtapUrve KaY",
+    samagra_dev           = "गोष्ठात् भूतपूर्वे खञ्",
     padaccheda_dev        = "गोष्ठात् खञ् भूतपूर्वे",
     why_dev               = "(सूत्रम् 5.2.18) गोष्ठात् खञ् भूतपूर्वे।",
     anuvritti_from        = ('4.1.82',),

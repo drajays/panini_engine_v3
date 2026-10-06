@@ -100,6 +100,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'JalAM jaSonte',
     text_dev              = 'झलां जशोऽन्ते',
+    samagra_slp1          = "padasya ante JalAm jaSaH",
+    samagra_dev           = "पदस्य अन्ते झलाम् जशः",
     padaccheda_dev        = "झलाम् जशः अन्ते",
     why_dev               = "पदान्ते झल्-व्यञ्जनस्य स्थाने जश्-व्यञ्जनः "
                             "(सूत्रम् ८.२.३९ झलां जशोऽन्ते) — यथा वाक् → वाग्, षष् → षड्।",

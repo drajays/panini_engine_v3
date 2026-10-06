@@ -13,6 +13,7 @@
 stamp "Atmanepada_1_3_88" is absent, (c) a dhātu Term carries "akarmaka" and
 "cittvat_kartf" tags, and does NOT carry "NI_causative_context".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='aRAvakarmakAccittavatkartfkAt',
     text_dev='अणावकर्मकाच्चित्तवत्कर्तृकात्',
+    samagra_slp1="aRO akarmakAt cittavatkartfkAt kartari parasmEpadam ReH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अणौ अकर्मकात् चित्तवत्कर्तृकात् कर्तरि परस्मैपदम् णेः",
     padaccheda_dev="अणौ (सप्तमी-एकवचन) / अकर्मकात् (पञ्चमी-एकवचन) / चित्तवत्-कर्तृकात् (पञ्चमी-एकवचन)",
     why_dev=(
         "अणि-परे (न णि-प्रत्यये) अकर्मक-धातोः चित्तवत्-कर्तृके आत्मनेपदम् — "

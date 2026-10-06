@@ -4,6 +4,7 @@
 Padaccheda: अदः जग्धिः ल्यप् (लुप्तसप्तम्यन्तनिर्देशः) ति किति
 
 adas root becomes jagdhi in lyap, ti, kit context.
+Pāṭha: ashtadhyayi.com data.txt row i=24036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ado jagDirlyapti kiti",
     text_dev              = "अदो जग्धिर्ल्यप्ति किति",
+    samagra_slp1          = "ArDaDAtuke adaH jagDiH lyap ti kiti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके अदः जग्धिः ल्यप् ति किति",
     padaccheda_dev        = "अदः जग्धिः ल्यप् (लुप्तसप्तम्यन्तनिर्देशः) ति किति",
     why_dev               = "अदः जग्धिः ल्यप् ति किति (२.४.३६)।",
     anuvritti_from        = ('2.4.35',),

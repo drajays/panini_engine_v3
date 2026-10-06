@@ -7,6 +7,7 @@ A dhātu whose upadeśa ends in an ec (ए ऐ ओ औ) takes ā for it before a
 that is not śit: ग्लै + ता → ग्लाता, ग्लै + स्य → ग्लास्यति, ग्लै + यासुट् → ग्लायात्.
 Before a śit (śap: ग्लायति) the ec stays and meets 6.1.78.
 "उपदेशे": only the root's own ec (``mula_dhatu_v``), never a guṇa product (भो).
+Pāṭha: ashtadhyayi.com data.txt row i=61045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'Adeca upadeSeSiti',
     text_dev              = 'आदेच उपदेशेऽशिति',
+    samagra_slp1          = "At ecaH upadeSe aSiti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आत् एचः उपदेशे अशिति",
     padaccheda_dev        = "आत् एचः उपदेशे अ-शिति",
     why_dev               = "उपदेशे एजन्तस्य धातोः आत्वम् अशिति प्रत्यये परे (ग्लै → ग्ला)।",
     anuvritti_from        = ('6.1.1',),

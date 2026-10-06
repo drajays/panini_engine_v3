@@ -11,6 +11,7 @@ the technical name *sampradāna-kāraka*. E.g. *bālāya spṛhayati* — the b�
 *Engine:* tags bearing ``"spfhA_Ipsita"`` get the saṃjñā ``"sampradAna"``.
 ``cond`` does NOT read vibhakti/vacana/lakāra/surface or any gold corpus.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=14036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'spfherIpsitaH',
     text_dev             = 'स्पृहेरीप्सितः',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake spfheH IpsitaH sampradAnam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके स्पृहेः ईप्सितः सम्प्रदानम्",
     padaccheda_dev       = "स्पृहेः / ईप्सितः",
     why_dev              = (
         "स्पृह्-धातोः ईप्सितः (यं प्रति स्पृहा) सम्प्रदान-कारक-संज्ञकः। "

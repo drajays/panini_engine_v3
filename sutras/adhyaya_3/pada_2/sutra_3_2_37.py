@@ -4,6 +4,7 @@
 Padaccheda: उग्रम्पश्य-इरम्मद-पाणिन्धमाः च
 
 krt-suffix rule: उग्रम्पश्येरम्मदपाणिन्धमाश्च (37)
+Pāṭha: ashtadhyayi.com data.txt row i=32037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ugrampaSyerammadapARinDamASca",
     text_dev              = "उग्रम्पश्येरम्मदपाणिन्धमाश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH ugrampaSya-irammada-pARinDamAH ca kft karmaRi anupasarge supi KaS",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः उग्रम्पश्य-इरम्मद-पाणिन्धमाः च कृत् कर्मणि अनुपसर्गे सुपि खश्",
     padaccheda_dev        = "उग्रम्पश्य-इरम्मद-पाणिन्धमाः च",
     why_dev               = "धातोः कृत्-प्रत्ययः [उग्रम्पश्येरम्मदपाणिन्धमाश्च] विहितः (३.२.37)।",
     anuvritti_from        = ('3.1.1',),

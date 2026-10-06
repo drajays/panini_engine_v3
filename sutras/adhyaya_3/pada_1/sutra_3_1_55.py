@@ -121,6 +121,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='puzAdidyutAdyxditaH parasmEpadezu',
     text_dev='पुषादिद्युताद्यॢदितः परस्मैपदेषु',
+    samagra_slp1="puzAdi-dyutAdi-xditaH cleH parasmEpadezu aN",
+    samagra_dev="पुषादि-द्युतादि-ऌदितः च्लेः परस्मैपदेषु अङ्",
     padaccheda_dev="पुषादि-द्युतादि-ॢदितः / परस्मैपदेषु",
     why_dev=(
         "द्युत्-आदेर् धातोः परस्मैपद-लुङि च्लि-स्थाने अङादेशः (अङ् इति; P018-A)।"

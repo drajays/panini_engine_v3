@@ -4,6 +4,7 @@
 Padaccheda: आत्ममाने खः च
 
 krt-suffix rule: आत्ममाने खश्च (83)
+Pāṭha: ashtadhyayi.com data.txt row i=32083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AtmamAne KaSca",
     text_dev              = "आत्ममाने खश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH AtmamAne KaH ca kft supi RiniH manaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः आत्ममाने खः च कृत् सुपि णिनिः मनः",
     padaccheda_dev        = "आत्ममाने खः च",
     why_dev               = "धातोः कृत्-प्रत्ययः [आत्ममाने खश्च] विहितः (३.२.83)।",
     anuvritti_from        = ('3.1.1',),

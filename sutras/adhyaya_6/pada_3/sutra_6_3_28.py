@@ -4,6 +4,7 @@
 Padaccheda: इत् वृद्धौ
 
 इद्वृद्धौ (6.3.28)
+Pāṭha: ashtadhyayi.com data.txt row i=63028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "idvfdDO",
     text_dev              = "इद्वृद्धौ",
+    samagra_slp1          = "uttarapade it vfdDO devatAdvandve ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे इत् वृद्धौ देवताद्वन्द्वे च",
     padaccheda_dev        = "इत् वृद्धौ",
     why_dev               = "(सूत्रम् 6.3.28) इद्वृद्धौ।",
     anuvritti_from        = ('6.1.1',),

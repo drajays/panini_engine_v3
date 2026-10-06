@@ -4,6 +4,7 @@
 Padaccheda: सिन्धु-तक्षशिला-आदिभ्यः अण्-अञौ
 
 सिन्धुतक्षशिलाऽऽदिभ्योऽणञौ (4.3.93)
+Pāṭha: ashtadhyayi.com data.txt row i=43093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sinDutakzaSilAdiByoRaYO',
     text_dev              = 'सिन्धुतक्षशिलादिभ्योऽणञौ',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA sinDu-takzaSilA-AdiByaH aR-aYO saH asya aBijanaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा सिन्धु-तक्षशिला-आदिभ्यः अण्-अञौ सः अस्य अभिजनः",
     padaccheda_dev        = "सिन्धु-तक्षशिला-आदिभ्यः अण्-अञौ",
     why_dev               = "(सूत्रम् 4.3.93) सिन्धुतक्षशिलाऽऽदिभ्योऽणञौ।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: उपमाने कर्मणि च
 
 krt-suffix rule: उपमाने कर्मणि च
+Pāṭha: ashtadhyayi.com data.txt row i=34045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upamAne karmaRi ca",
     text_dev              = "उपमाने कर्मणि च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH upamAne karmaRi ca kft Ramul kartroH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः उपमाने कर्मणि च कृत् णमुल् कर्त्रोः",
     padaccheda_dev        = "उपमाने कर्मणि च",
     why_dev               = "धातोः प्रत्ययः (३.4.45)।",
     anuvritti_from        = ('3.1.1',),

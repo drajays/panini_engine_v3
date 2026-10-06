@@ -4,6 +4,7 @@
 Padaccheda: अनोः अप्रधान-कनीयसी
 
 अनोरप्रधानकनीयसी (6.2.189)
+Pāṭha: ashtadhyayi.com data.txt row i=62189 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anorapraDAnakanIyasI",
     text_dev              = "अनोरप्रधानकनीयसी",
+    samagra_slp1          = "uttarapadAdiH antaH anoH apraDAna-kanIyasI upasargAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः अनोः अप्रधान-कनीयसी उपसर्गात्",
     padaccheda_dev        = "अनोः अप्रधान-कनीयसी",
     why_dev               = "(सूत्रम् 6.2.189) अनोरप्रधानकनीयसी।",
     anuvritti_from        = ('6.1.1',),

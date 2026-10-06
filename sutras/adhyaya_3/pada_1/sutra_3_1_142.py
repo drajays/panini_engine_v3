@@ -4,6 +4,7 @@
 Padaccheda: दु-न्योः अन्-उपसर्गे
 
 Krt suffix rule from dhatu: दुन्योरनुपसर्गे (142)
+Pāṭha: ashtadhyayi.com data.txt row i=31142 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dunyoranupasarge",
     text_dev              = "दुन्योरनुपसर्गे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH dunyoH anupasarge kft RaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः दुन्योः अनुपसर्गे कृत् णः",
     padaccheda_dev        = "दु-न्योः अन्-उपसर्गे",
     why_dev               = "धातोः [दुन्योरनुपसर्गे]-प्रत्ययः विहितः (३.१.142)।",
     anuvritti_from        = ('3.1.1',),

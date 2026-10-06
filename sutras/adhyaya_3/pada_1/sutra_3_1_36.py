@@ -8,6 +8,7 @@ the *liṭ* placeholder.
 Engine:
   • ``state.meta['corrected_v2_P014_3_1_36_am_arm']``
   • tape ends ``… + dhātu(Ikz) + liT``
+Pāṭha: ashtadhyayi.com data.txt row i=31036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -76,6 +77,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='ijAdeSca gurumatonfcCaH',
     text_dev='इजादेश्च गुरुमतोऽनृच्छः',
+    samagra_slp1="ijAdeH gurumataH anfcCaH DAtoH liwi Am pratyayaH paraSca",
+    samagra_dev="इजादेः गुरुमतः अनृच्छः धातोः लिटि आम् प्रत्ययः परश्च",
     padaccheda_dev="इजादेः / च / गुरुमतः / अनृच्छः",
     why_dev="इजादि-गुरुमत्-धातोः (ईक्ष्) लिट्-पूर्वम् आम्-आगमः — P014।",
     anuvritti_from=("3.1.35",),

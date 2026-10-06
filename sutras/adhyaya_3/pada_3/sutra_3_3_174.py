@@ -2,7 +2,7 @@
 3.3.174  क्तिच्क्तौ च संज्ञायाम्  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=303174
+- ashtadhyayi.com data.txt row i=33174
 - Kāśikā: क्तिच्क्तौ च संज्ञायाम् (क्तिच्-प्रत्ययः — कण्डूति इत्यादि)
 - Cross-validation: tests/unit/test_kaNDUti_ktic_vareya_yalopa_lesson.py;
   tests/unit/test_vAyavaH.py (*uṇ* path, ``uR_recipe``)
@@ -74,6 +74,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="kticktO ca saMjYAyAm",
     text_dev="क्तिच्क्तौ च संज्ञायाम्",
+    samagra_slp1="pratyayaH paraSca AdyudAttaSca DAtoH ktic-ktO ca saMjYAyAm kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="प्रत्ययः परश्च आद्युदात्तश्च धातोः क्तिच्-क्तौ च संज्ञायाम् कृत्",
     padaccheda_dev="क्तिच्-क्तौ / च / संज्ञायाम्",
     why_dev="संज्ञायां क्तिच्-प्रत्ययः (कण्डूति); वा-धातोः उण् (प०२४)।",
     anuvritti_from=("3.1.91",),

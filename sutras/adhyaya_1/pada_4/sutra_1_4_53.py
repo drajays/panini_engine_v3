@@ -10,6 +10,7 @@ E.g. *devadattena/devadattam hārayati*.
 
 *Engine:* tags bearing ``"hf_kf_anyatara"`` get both ``"karman"`` and
 ``"kartf"`` tags (the pipeline marks optionality). ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'hfkroranyatarasyAm',
     text_dev             = 'हृक्रोरन्यतरस्याम्',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake hf-kroH anyatarasyAm karma aRi kartA saH RO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके हृ-क्रोः अन्यतरस्याम् कर्म अणि कर्ता सः णौ",
     padaccheda_dev       = "हृ-क्रोः / अन्यतरस्याम्",
     why_dev              = (
         "हृ-कृ-धात्वोः णि-प्रयोगे प्रयोज्यः कर्म वा कर्ता वा विकल्पेन। "

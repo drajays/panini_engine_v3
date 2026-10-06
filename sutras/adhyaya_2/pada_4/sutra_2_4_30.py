@@ -4,6 +4,7 @@
 Padaccheda: अपथम् नपुंसकम्
 
 apatha is neuter.
+Pāṭha: ashtadhyayi.com data.txt row i=24030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "apaTaM napuMsakam",
     text_dev              = "अपथं नपुंसकम्",
+    samagra_slp1          = "apaTam napuMsakam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अपथम् नपुंसकम्",
     padaccheda_dev        = "अपथम् नपुंसकम्",
     why_dev               = "अपथम् नपुंसकम् (२.४.३०)।",
     anuvritti_from        = ('2.4.26',),

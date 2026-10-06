@@ -18,6 +18,7 @@ Engine (narrow, mechanically blind):
   ``state.meta['2_2_11_arm']`` and tags a Term with ``karmadharaya_context``
   indicating one of the listed categories.  Registry stamp records the
   karmadhāraya saṃjñā.
+Pāṭha: ashtadhyayi.com data.txt row i=22011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
         'pUraRaguRasuhitArTasadavyayatavyasamAnADikaraRena'
     ),
     text_dev='पूरणगुणसुहितार्थसदव्ययतव्यसमानाधिकरणेन',
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH pUraRa-guRa-suhitArTa-sadavyaya-tavya-samAnADikaraRena zazWI na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः पूरण-गुण-सुहितार्थ-सदव्यय-तव्य-समानाधिकरणेन षष्ठी न",
     padaccheda_dev=(
         "पूरण-गुण-सुहित-अर्थ-सत्-अव्यय-तव्य-समान-अधिकरणेन"
     ),

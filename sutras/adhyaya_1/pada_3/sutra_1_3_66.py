@@ -15,6 +15,7 @@ enjoys; but bhojati/bhunakti — he protects (rare usage).
 stamp "Atmanepada_1_3_66" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _BHUJ_ROOTS does NOT carry the tag "avana_usage". No arm flags
 (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -62,6 +63,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='Bujonavane',
     text_dev='भुजोऽनवने',
+    samagra_slp1="BujaH anavane Atmanepadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="भुजः अनवने आत्मनेपदम्",
     padaccheda_dev="भुजः (षष्ठी-एकवचन) / अनवने (सप्तमी-एकवचन)",
     why_dev=(
         "भुज्-धातोः अवन-अर्थव्यतिरिक्त-विषये आत्मनेपदम् — "

@@ -4,6 +4,7 @@
 Padaccheda: नाम् अन्यतरस्याम्
 
 नामन्यतरस्याम् (6.1.177)
+Pāṭha: ashtadhyayi.com data.txt row i=61177 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nAmanyatarasyAm",
     text_dev              = "नामन्यतरस्याम्",
+    samagra_slp1          = "nAm anyatarasyAm udAttaH antaH viBaktiH antodattAt hrasva-nuqByAm matup",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "नाम् अन्यतरस्याम् उदात्तः अन्तः विभक्तिः अन्तोदत्तात् ह्रस्व-नुड्भ्याम् मतुप्",
     padaccheda_dev        = "नाम् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.1.177) नामन्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

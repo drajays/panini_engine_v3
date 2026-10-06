@@ -4,6 +4,7 @@
 Padaccheda: आङि युद्धे
 
 krt-suffix rule: आङि युद्धे
+Pāṭha: ashtadhyayi.com data.txt row i=33073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ANi yudDe",
     text_dev              = "आङि युद्धे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm ANi yudDe kft ap hvaH samprasAraRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् आङि युद्धे कृत् अप् ह्वः सम्प्रसारणम्",
     padaccheda_dev        = "आङि युद्धे",
     why_dev               = "धातोः प्रत्ययः (३.3.73)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: कपि पूर्वम्
 
 कपि पूर्वम् (6.2.173)
+Pāṭha: ashtadhyayi.com data.txt row i=62173 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kapi pUrvam",
     text_dev              = "कपि पूर्वम्",
+    samagra_slp1          = "uttarapadAdiH antaH kapi pUrvam bahuvrIhO naYsuByAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः कपि पूर्वम् बहुव्रीहौ नञ्सुभ्याम्",
     padaccheda_dev        = "कपि पूर्वम्",
     why_dev               = "(सूत्रम् 6.2.173) कपि पूर्वम्।",
     anuvritti_from        = ('6.1.1',),

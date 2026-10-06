@@ -4,6 +4,7 @@
 Padaccheda: बिल्वक-आदिभ्यः छस्य लुक्
 
 बिल्वकादिभ्यश्छस्य लुक् (6.4.153)
+Pāṭha: ashtadhyayi.com data.txt row i=64153 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bilvakAdiByaSCasya luk",
     text_dev              = "बिल्वकादिभ्यश्छस्य लुक्",
+    samagra_slp1          = "aNgasya asidDavadatrABAt Basya bilvakAdiByaH Casya luk lopaH tadDite",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् भस्य बिल्वकादिभ्यः छस्य लुक् लोपः तद्धिते",
     padaccheda_dev        = "बिल्वक-आदिभ्यः छस्य लुक्",
     why_dev               = "(सूत्रम् 6.4.153) बिल्वकादिभ्यश्छस्य लुक्।",
     anuvritti_from        = ('6.1.1',),

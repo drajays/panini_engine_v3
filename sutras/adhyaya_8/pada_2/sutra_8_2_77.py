@@ -4,6 +4,7 @@
 र्वोरुपधाया दीर्घ इकः (8.2.76) continues: the ik before a dhātu's र्/व् is
 lengthened when an affix-initial hal follows (दिव् + य → दीव्यति). 8.2.79 न भकुर्छुराम् excepts कुर्/छुर् (कुर्वः).
 Operates on the merged pada; dhātu varṇas carry ``dhatu_v`` (pada_merger).
+Pāṭha: ashtadhyayi.com data.txt row i=82077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -58,6 +59,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = "hali ca",
     text_dev       = "हलि च",
+    samagra_slp1   = "rvoH DAtoH upaDAyAH ikaH hali dIrGaH",
+    samagra_dev    = "र्वोः  धातोः उपधायाः इकः हलि दीर्घः",
     padaccheda_dev = "हलि च",
     why_dev        = "धातोः र्वोः पूर्वस्य इकः दीर्घः हलि परे (दीव्यति)।",
     anuvritti_from = ("8.2.76",),

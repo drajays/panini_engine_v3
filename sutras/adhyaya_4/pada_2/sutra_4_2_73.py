@@ -4,6 +4,7 @@
 Padaccheda: बहु-अचः कूपेषु
 
 बह्वचः कूपेषु (4.2.73)
+Pāṭha: ashtadhyayi.com data.txt row i=42073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahvacaH kUpezu",
     text_dev              = "बह्वचः कूपेषु",
+    samagra_slp1          = "bahvacaH kUpezu tadasminnastIti deSe tannAmni  tena nirvfttam  tasya nivAsaH  adUraBavaSca iti prAgdIvyatIyaH pratyayaH aY",
+    samagra_dev           = "बह्वचः कूपेषु  'तदस्मिन्नस्तीति देशे तन्नाम्नि , तेन निर्वृत्तम् ,  तस्य निवासः , अदूरभवश्च' (इति) प्राग्दीव्यतीयः प्रत्ययः अञ्",
     padaccheda_dev        = "बहु-अचः कूपेषु",
     why_dev               = "(सूत्रम् 4.2.73) बह्वचः कूपेषु।",
     anuvritti_from        = ('4.1.1',),

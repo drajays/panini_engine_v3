@@ -4,6 +4,7 @@
 Padaccheda: सस्येन परिजातः
 
 सस्येन परिजातः (5.2.68)
+Pāṭha: ashtadhyayi.com data.txt row i=52068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sasyena parijAtaH",
     text_dev              = "सस्येन परिजातः",
+    samagra_slp1          = "sasyena parijAtaH iti kan",
+    samagra_dev           = "'सस्येन परिजातः' (इति) कन्",
     padaccheda_dev        = "सस्येन परिजातः",
     why_dev               = "(सूत्रम् 5.2.68) सस्येन परिजातः।",
     anuvritti_from        = ('4.1.82',),

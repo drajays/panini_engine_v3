@@ -5,6 +5,7 @@ Glass-box scope for `mArzwi`:
   For dhātu `mFj` (after it-lopa from `mFjU~z`), when a tiṅ pratyaya follows,
   apply vṛddhi on vocalic ṛ (f) as: f → A and arm 1.1.51 (uRaN-rapara) to
   insert r after that A (yielding Ar).
+Pāṭha: ashtadhyayi.com data.txt row i=72114 (Art. 14).
 """
 from __future__ import annotations
 
@@ -62,6 +63,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'mfjervfdDiH',
     text_dev       = 'मृजेर्वृद्धिः',
+    samagra_slp1   = "mfjeH aNgasya vfdDiH",
+    samagra_dev    = "मृजेः अङ्गस्य वृद्धिः",
     padaccheda_dev = "मृजेः / वृद्धिः",
     why_dev        = "मृज्-धातोः सार्वधातुके परे ऋ-स्थाने वृद्धि (आर्) — ग्लास-बॉक्स्।",
     anuvritti_from = ("1.1.1", "1.1.3", "1.1.50", "1.1.51"),

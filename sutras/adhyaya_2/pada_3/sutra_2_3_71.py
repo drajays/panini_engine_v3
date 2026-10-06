@@ -4,6 +4,7 @@
 Padaccheda: कृत्यानाम् कर्तरि वा
 
 krtya words optionally take kartri as agent.
+Pāṭha: ashtadhyayi.com data.txt row i=23071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kftyAnAM kartari vA",
     text_dev              = "कृत्यानां कर्तरि वा",
+    samagra_slp1          = "anaBihite kftyAnAm kartari vA zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते कृत्यानाम् कर्तरि वा षष्ठी",
     padaccheda_dev        = "कृत्यानाम् कर्तरि वा",
     why_dev               = "कर्तरि कृत्यानाम् वा (२.३.७१)।",
     anuvritti_from        = ('2.3.65',),

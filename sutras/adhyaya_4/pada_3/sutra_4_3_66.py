@@ -4,6 +4,7 @@
 Padaccheda: तस्य व्याख्याने इति च व्याख्यातव्यनाम्नः
 
 तस्य व्याख्यान इति च व्याख्यातव्यनाम्नः (4.3.66)
+Pāṭha: ashtadhyayi.com data.txt row i=43066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tasya vyAKyAna iti ca vyAKyAtavyanAmnaH",
     text_dev              = "तस्य व्याख्यान इति च व्याख्यातव्यनाम्नः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA tasya vyAKyAne iti ca vyAKyAtavya-nAmnaH tatra BavaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा तस्य व्याख्याने इति च व्याख्यातव्य-नाम्नः तत्र भवः",
     padaccheda_dev        = "तस्य व्याख्याने इति च व्याख्यातव्यनाम्नः",
     why_dev               = "(सूत्रम् 4.3.66) तस्य व्याख्यान इति च व्याख्यातव्यनाम्नः।",
     anuvritti_from        = ('4.1.1',),

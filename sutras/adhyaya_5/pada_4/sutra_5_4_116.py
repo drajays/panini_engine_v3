@@ -4,6 +4,7 @@
 Padaccheda: अप् पूरणी-प्रमाण्योः
 
 अप् पूरणीप्रमाण्योः (5.4.116)
+Pāṭha: ashtadhyayi.com data.txt row i=54116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ap pUraRIpramARyoH",
     text_dev              = "अप् पूरणीप्रमाण्योः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA ap pUraRIpramARyoH bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा अप् पूरणीप्रमाण्योः बहुव्रीहौ",
     padaccheda_dev        = "अप् पूरणी-प्रमाण्योः",
     why_dev               = "(सूत्रम् 5.4.116) अप् पूरणीप्रमाण्योः।",
     anuvritti_from        = ('5.4.68',),

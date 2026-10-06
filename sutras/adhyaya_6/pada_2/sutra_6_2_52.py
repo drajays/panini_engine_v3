@@ -4,6 +4,7 @@
 Padaccheda: अन्-इक्-अन्तः अञ्चतौ व-प्रत्यये
 
 अनिगन्तोऽञ्चतौ वप्रत्यये (6.2.52)
+Pāṭha: ashtadhyayi.com data.txt row i=62052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'anigantoYcatO vapratyaye',
     text_dev              = 'अनिगन्तोऽञ्चतौ वप्रत्यये',
+    samagra_slp1          = "anigantaH aYcatO vapratyaye prakftyA pUrvapadam gatiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनिगन्तः अञ्चतौ वप्रत्यये प्रकृत्या पूर्वपदम् गतिः",
     padaccheda_dev        = "अन्-इक्-अन्तः अञ्चतौ व-प्रत्यये",
     why_dev               = "(सूत्रम् 6.2.52) अनिगन्तोऽञ्चतौ वप्रत्यये।",
     anuvritti_from        = ('6.1.1',),

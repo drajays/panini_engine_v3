@@ -4,6 +4,7 @@
 Padaccheda: केश-अश्वाभ्याम् यञ्-छौ अन्यतरस्याम्
 
 केशाश्वाभ्यां यञ्छावन्यतरस्याम् (4.2.48)
+Pāṭha: ashtadhyayi.com data.txt row i=42048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "keSASvAByAM yaYCAvanyatarasyAm",
     text_dev              = "केशाश्वाभ्यां यञ्छावन्यतरस्याम्",
+    samagra_slp1          = "tasya samUhaH iti keSa-aSvAByAm yaY CO anyatarasyAm",
+    samagra_dev           = "तस्य समूहः (इति) केश-अश्वाभ्याम् यञ् छौ अन्यतरस्याम्",
     padaccheda_dev        = "केश-अश्वाभ्याम् यञ्-छौ अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 4.2.48) केशाश्वाभ्यां यञ्छावन्यतरस्याम्।",
     anuvritti_from        = ('4.1.1',),

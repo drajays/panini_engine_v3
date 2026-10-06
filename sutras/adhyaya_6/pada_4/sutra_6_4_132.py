@@ -4,6 +4,7 @@
 Padaccheda: वाहः ऊठ्
 
 वाह ऊठ् (6.4.132)
+Pāṭha: ashtadhyayi.com data.txt row i=64132 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vAha UW",
     text_dev              = "वाह ऊठ्",
+    samagra_slp1          = "vAhaH samprasAraRam UW",
+    samagra_dev           = "वाहः सम्प्रसारणम् ऊठ्",
     padaccheda_dev        = "वाहः ऊठ्",
     why_dev               = "(सूत्रम् 6.4.132) वाह ऊठ्।",
     anuvritti_from        = ('6.1.1',),

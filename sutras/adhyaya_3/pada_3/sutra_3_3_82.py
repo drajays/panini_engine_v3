@@ -4,6 +4,7 @@
 Padaccheda: करणे अयः-वि-द्रुषु
 
 krt-suffix rule: करणेऽयोविद्रुषु
+Pāṭha: ashtadhyayi.com data.txt row i=33082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'karaReyovidruzu',
     text_dev              = 'करणेऽयोविद्रुषु',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm karaRe ayas-vi-druzu kft ap hanaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् करणे अयस्-वि-द्रुषु कृत् अप् हनः",
     padaccheda_dev        = "करणे अयः-वि-द्रुषु",
     why_dev               = "धातोः प्रत्ययः (३.3.82)।",
     anuvritti_from        = ('3.1.1',),

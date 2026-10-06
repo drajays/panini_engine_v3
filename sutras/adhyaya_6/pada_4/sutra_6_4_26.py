@@ -4,6 +4,7 @@
 Padaccheda: रञ्जेः च
 
 रञ्जेश्च (6.4.26)
+Pāṭha: ashtadhyayi.com data.txt row i=64026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "raYjeSca",
     text_dev              = "रञ्जेश्च",
+    samagra_slp1          = "raYjeH aNgasya upaDAyAH Sapi nalopaH",
+    samagra_dev           = "रञ्जेः अङ्गस्य उपधायाः शपि नलोपः",
     padaccheda_dev        = "रञ्जेः च",
     why_dev               = "(सूत्रम् 6.4.26) रञ्जेश्च।",
     anuvritti_from        = ('6.1.1',),

@@ -16,6 +16,7 @@ stamp ``meta['prakriya_27_gaccha_base_anudAtta_note']`` on ``terms[0]``.
 the *odanam pacati* illustration (identity on tape; trace only).
 
 No *udātta* / *anudātta* columns on ``Varna`` rows (same policy as **6.1.158** demos).
+Pāṭha: ashtadhyayi.com data.txt row i=81028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -77,6 +78,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.ANUVADA,
     text_slp1='tiNNatiNaH',
     text_dev='तिङ्ङतिङः',
+    samagra_slp1="padasya padAt anudAttaM sarvamApAdAdO tiN atiNaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="पदस्य पदात् अनुदात्तं सर्वमापादादौ तिङ् अतिङः",
     padaccheda_dev="तिङन्तं पदम् / अतिङन्तात् / पदात् / परम् / अनुदात्तम्",
     why_dev="तिङन्त-पदे अनुदात्त-अनुवादः — *gaccha* भागः (*prakriya_27*) / P044 टिप्पणी।",
     anuvritti_from=(),

@@ -4,6 +4,7 @@
 Padaccheda: द्वि-त्र्योः च धमुञ्
 
 द्वित्र्योश्च धमुञ् (5.3.45)
+Pāṭha: ashtadhyayi.com data.txt row i=53045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvitryoSca DamuY",
     text_dev              = "द्वित्र्योश्च धमुञ्",
+    samagra_slp1          = "dvi-tryoH DaH DamuY anyatarasyAm",
+    samagra_dev           = "द्वि-त्र्योः धः धमुञ् अन्यतरस्याम्",
     padaccheda_dev        = "द्वि-त्र्योः च धमुञ्",
     why_dev               = "(सूत्रम् 5.3.45) द्वित्र्योश्च धमुञ्।",
     anuvritti_from        = ('4.1.76',),

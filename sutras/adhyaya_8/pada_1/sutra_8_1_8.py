@@ -4,6 +4,7 @@
 Padaccheda: वाक्य-आदेः आमन्त्रितस्य असूया-सम्मति-कोप-कुत्सन-भर्त्सनेषु
 
 वाक्यादेरामन्त्रितस्यासूयासम्मतिकोपकुत्सनभर्त्सनेषु (8.1.8)
+Pāṭha: ashtadhyayi.com data.txt row i=81008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vAkyAderAmantritasyAsUyAsammatikopakutsanaBartsanezu",
     text_dev              = "वाक्यादेरामन्त्रितस्यासूयासम्मतिकोपकुत्सनभर्त्सनेषु",
+    samagra_slp1          = "sarvasya dve vAkyAdeH Amantritasya asUyAsammatikopakutsanaBartsanezu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सर्वस्य द्वे वाक्यादेः आमन्त्रितस्य असूयासम्मतिकोपकुत्सनभर्त्सनेषु",
     padaccheda_dev        = "वाक्य-आदेः आमन्त्रितस्य असूया-सम्मति-कोप-कुत्सन-भर्त्सनेषु",
     why_dev               = "(सूत्रम् 8.1.8) वाक्यादेरामन्त्रितस्यासूयासम्मतिकोपकुत्सनभर्त्सनेषु।",
     anuvritti_from        = ('8.1.1',),

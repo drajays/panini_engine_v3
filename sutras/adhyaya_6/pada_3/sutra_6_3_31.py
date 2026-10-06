@@ -4,6 +4,7 @@
 Padaccheda: उषासा उषसः
 
 उषासोषसः (6.3.31)
+Pāṭha: ashtadhyayi.com data.txt row i=63031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uzAsozasaH",
     text_dev              = "उषासोषसः",
+    samagra_slp1          = "uttarapade uzAsA uzasaH devatAdvandve ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे उषासा उषसः देवताद्वन्द्वे च",
     padaccheda_dev        = "उषासा उषसः",
     why_dev               = "(सूत्रम् 6.3.31) उषासोषसः।",
     anuvritti_from        = ('6.1.1',),

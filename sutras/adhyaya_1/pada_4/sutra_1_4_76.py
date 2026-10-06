@@ -5,6 +5,7 @@ The words "madhye" (in the middle), "pade" (at the step/place), and forms
 used in the sense of nivacana (respectful address) also get the gati-saṃjñā.
 
 v3: registers samjna_registry["gati_madhye_pade"] = frozenset({"maDye","pade"}).
+Pāṭha: ashtadhyayi.com data.txt row i=14076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -30,6 +31,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1="maDye pade nivacane ca",
     text_dev="मध्ये पदे निवचने च",
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH maDye pade nivacane ca kriyAyoge gatiH viBAzA kfYi anatyADAne",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः मध्ये पदे निवचने च क्रियायोगे गतिः विभाषा कृञि अनत्याधाने",
     padaccheda_dev="मध्ये / पदे / निवचने / च",
     why_dev="निवचने 'मध्ये' 'पदे' गति-संज्ञकौ — गति-सेटे योज्येते।",
     anuvritti_from=("1.4.60",),

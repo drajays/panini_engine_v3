@@ -4,6 +4,7 @@
 Padaccheda: क्रय्यः तदर्थे
 
 क्रय्यस्तदर्थे (6.1.82)
+Pāṭha: ashtadhyayi.com data.txt row i=61082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "krayyastadarTe",
     text_dev              = "क्रय्यस्तदर्थे",
+    samagra_slp1          = "krayyaH tadarTe SakyArTe",
+    samagra_dev           = "क्रय्यः तदर्थे शक्यार्थे",
     padaccheda_dev        = "क्रय्यः तदर्थे",
     why_dev               = "(सूत्रम् 6.1.82) क्रय्यस्तदर्थे।",
     anuvritti_from        = ('6.1.1',),

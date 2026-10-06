@@ -12,6 +12,7 @@ Citation (CONSTITUTION Art. 14)
 
 Engine: reads Term tags and the sup's identity only (ṭā, by upadeśa) — the feminine ā-stem is the aṅga that 4.1.4 marked
 ``TAp_anta``; the sarvanāma ā-stem keeps ṭā because 7.1.12's strī branch stands down for it.
+Pāṭha: ashtadhyayi.com data.txt row i=73105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -59,6 +60,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="ANi cApaH",
     text_dev="आङि चापः",
+    samagra_slp1="ApaH aNgasya osi ANi ca supi et",
+    samagra_dev="आपः अङ्गस्य ओसि आङि च सुपि एत्",
     padaccheda_dev="आङि च आपः",
     why_dev="आप्-अन्त अङ्ग के अन्त्य आ को ए, आङ् (टा) परे — अनेया → अनया (६.१.७८)।",
     anuvritti_from=("6.4.1",),

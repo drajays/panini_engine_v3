@@ -4,6 +4,7 @@
 Padaccheda: स्तम्भु-स्तुम्भु-स्कम्भु-स्कुम्भु-स्कुञ्भ्यः श्नुः च
 
 Krt suffix rule from dhatu: स्तम्भुस्तुम्भुस्कम्भुस्कुम्भुस्कुञ्भ्यः श्नुश्च (82)
+Pāṭha: ashtadhyayi.com data.txt row i=31082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'stanBustunBuskanBuskunBuskuYByaH SnuSca',
     text_dev              = 'स्तन्भुस्तुन्भुस्कन्भुस्कुन्भुस्कुञ्भ्यः श्नुश्च',
+    samagra_slp1          = "karttari sArvaDAtuke stanBu~-stunBu~-skanBu~-skunBu~-skuYByaH DAtoH paraH SnuH SnA ca",
+    samagra_dev           = "कर्त्तरि सार्वधातुके स्तन्भुँ-स्तुन्भुँ-स्कन्भुँ-स्कुन्भुँ-स्कुञ्भ्यः धातोः परः श्नुः श्ना च",
     padaccheda_dev        = "स्तम्भु-स्तुम्भु-स्कम्भु-स्कुम्भु-स्कुञ्भ्यः श्नुः च",
     why_dev               = "धातोः [स्तम्भुस्तुम्भुस्कम्भुस्कुम्भुस्कुञ्भ्यः श्नुश्च]-प्रत्ययः विहितः (३.१.82)।",
     anuvritti_from        = ('3.1.1',),

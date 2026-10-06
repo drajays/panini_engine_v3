@@ -4,6 +4,7 @@
 Padaccheda: कुसीद-दशैकादशात् ष्ठन्-ष्ठचौ
 
 कुसीददशैकादशात् ष्ठन्ष्ठचौ (4.4.31)
+Pāṭha: ashtadhyayi.com data.txt row i=44031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kusIdadaSEkAdaSAt zWanzWacO",
     text_dev              = "कुसीददशैकादशात् ष्ठन्ष्ठचौ",
+    samagra_slp1          = "tat garhyam prayacCati iti kusIda-daSEkAdaSAt zWan-zWacO",
+    samagra_dev           = "'तत् गर्ह्यम् प्रयच्छति' (इति) कुसीद-दशैकादशात् ष्ठन्-ष्ठचौ",
     padaccheda_dev        = "कुसीद-दशैकादशात् ष्ठन्-ष्ठचौ",
     why_dev               = "(सूत्रम् 4.4.31) कुसीददशैकादशात् ष्ठन्ष्ठचौ।",
     anuvritti_from        = ('4.1.1',),

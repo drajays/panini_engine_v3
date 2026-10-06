@@ -4,6 +4,7 @@
 Padaccheda: केवल-मामक-भागधेय-पाप-अपर-समान-आर्यकृत-सुमङ्गल-भेषजात् च
 
 केवलमामकभागधेयपापापरसमानार्यकृत-सुमङ्गलभेषजाच्च (4.1.30)
+Pāṭha: ashtadhyayi.com data.txt row i=41030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'kevalamAmakaBAgaDeyapApAparasamAnAryakftasumaNgalaBezajAcca',
     text_dev              = 'केवलमामकभागधेयपापापरसमानार्यकृत-सुमङ्गलभेषजाच्च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt kevala-mAmaka-BAgaDeya-pApa-apara-samAna-Aryakfta-sumaNgala-BezajAt ca saMjYA-CandasoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् केवल-मामक-भागधेय-पाप-अपर-समान-आर्यकृत-सुमङ्गल-भेषजात् च संज्ञा-छन्दसोः",
     padaccheda_dev        = "केवल-मामक-भागधेय-पाप-अपर-समान-आर्यकृत-सुमङ्गल-भेषजात् च",
     why_dev               = "(सूत्रम् 4.1.30) केवलमामकभागधेयपापापरसमानार्यकृत-सुमङ्गलभेषजाच्च।",
     anuvritti_from        = ('4.1.1',),

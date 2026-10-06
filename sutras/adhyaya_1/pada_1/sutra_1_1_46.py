@@ -9,6 +9,7 @@
 that splice augments (e.g. **6.4.71** *aṭ*, **7.3.40** *ṣuk*).
 
 See ``phonology.agama_placement_1_1_46`` for order constants without ``State``.
+Pāṭha: ashtadhyayi.com data.txt row i=11046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.PARIBHASHA,
     text_slp1      = 'AdyantO wakitO',
     text_dev       = 'आद्यन्तौ टकितौ',
+    samagra_slp1   = "Adi-antO wakitO",
+    samagra_dev    = "आदि-अन्तौ टकितौ",
     padaccheda_dev = "आदि-अन्तौ (प्रथमा-द्विवचनम्), टकितौ (प्रथमा-द्विवचनम्)",
     why_dev        = (
         "टित्-आगमः आगमिनः पूर्वम्, कित्-आगमः आगमिनः अनन्तरम् इति स्थाननिर्णयः।"

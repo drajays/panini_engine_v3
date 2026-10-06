@@ -4,6 +4,7 @@
 Padaccheda: पक्षि-मत्स्य-मृगान् हन्ति (क्रियापदम्)
 
 पक्षिमत्स्यमृगान् हन्ति (4.4.35)
+Pāṭha: ashtadhyayi.com data.txt row i=44035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pakzimatsyamfgAn hanti",
     text_dev              = "पक्षिमत्स्यमृगान् हन्ति",
+    samagra_slp1          = "tat pakzi-matsya-mfgAn hanti iti samarTAnAM praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् पक्षि-मत्स्य-मृगान् हन्ति' (इति) समर्थानां प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "पक्षि-मत्स्य-मृगान् हन्ति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.35) पक्षिमत्स्यमृगान् हन्ति।",
     anuvritti_from        = ('4.1.1',),

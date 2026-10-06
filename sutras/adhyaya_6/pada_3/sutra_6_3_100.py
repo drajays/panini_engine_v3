@@ -4,6 +4,7 @@
 Padaccheda: अर्थे विभाषा
 
 अर्थे विभाषा (6.3.100)
+Pāṭha: ashtadhyayi.com data.txt row i=63100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "arTe viBAzA",
     text_dev              = "अर्थे विभाषा",
+    samagra_slp1          = "uttarapade arTe viBAzA azazWI-atftIyAsTasya duk",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे अर्थे विभाषा अषष्ठी-अतृतीयास्थस्य दुक्",
     padaccheda_dev        = "अर्थे विभाषा",
     why_dev               = "(सूत्रम् 6.3.100) अर्थे विभाषा।",
     anuvritti_from        = ('6.1.1',),

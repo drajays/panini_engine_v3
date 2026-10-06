@@ -10,6 +10,7 @@ Engine: the core engine is mechanically blind to semantics (CONSTITUTION Art. 2)
 so this sūtra is represented as an interpretive gate in
 ``state.paribhasha_gates`` when a recipe chooses to record “samarthya assumed”
 for a glass-box derivation narrative.
+Pāṭha: ashtadhyayi.com data.txt row i=21001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.PARIBHASHA,
     text_slp1      = 'samarTaH padaviDiH',
     text_dev       = 'समर्थः पदविधिः',
+    samagra_slp1   = "padaviDiH samarTaH jYAtavyaH",
+    samagra_dev    = "पदविधिः समर्थः (ज्ञातव्यः)",
     padaccheda_dev = "समर्थः / पदविधिः",
     why_dev        = (
         "पदविधि-प्रसङ्गे सामर्थ्य-अपेक्षा — इह यन्त्रे अर्थ-अन्धत्वात् "

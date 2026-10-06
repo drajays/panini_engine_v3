@@ -4,6 +4,7 @@
 Padaccheda: पातौ च बहुलम्
 
 पातौ च बहुलम् (8.3.52)
+Pāṭha: ashtadhyayi.com data.txt row i=83052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pAtO ca bahulam",
     text_dev              = "पातौ च बहुलम्",
+    samagra_slp1          = "padasya pUrvatrAsidDam saMhitAyAm pAtO ca bahulam visarjanIyasya kupvoH saH samAse Candasi paYcamyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् संहितायाम् पातौ च बहुलम् विसर्जनीयस्य कुप्वोः सः समासे छन्दसि पञ्चम्याः",
     padaccheda_dev        = "पातौ च बहुलम्",
     why_dev               = "(सूत्रम् 8.3.52) पातौ च बहुलम्।",
     anuvritti_from        = ('8.1.1',),

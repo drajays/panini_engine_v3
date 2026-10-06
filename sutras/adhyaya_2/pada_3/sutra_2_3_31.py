@@ -4,6 +4,7 @@
 Padaccheda: एनपा द्वितीया
 
 ena-type pronoun takes dvitiya.
+Pāṭha: ashtadhyayi.com data.txt row i=23031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "enapA dvitIyA",
     text_dev              = "एनपा द्वितीया",
+    samagra_slp1          = "anaBihite enapA dvitIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते एनपा द्वितीया",
     padaccheda_dev        = "एनपा द्वितीया",
     why_dev               = "एनपा द्वितीया (२.३.३१)।",
     anuvritti_from        = ('2.3.2',),

@@ -2,7 +2,7 @@
 7.2.116  अत उपधायाः  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=702116
+- ashtadhyayi.com data.txt row i=72116
 - Kāśikā: अत उपधायाः (णिति-परे)
 - Cross-validation: tests/unit/test_kathi_kath_nic.py, test_paTayati_paTu_Nic.py
 
@@ -141,6 +141,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'ata upaDAyAH',
     text_dev       = 'अत उपधायाः',
+    samagra_slp1   = "aNgasya upaDAyAH ataH YRiti vfdDiH",
+    samagra_dev    = "अङ्गस्य उपधायाः अतः ञ्णिति वृद्धिः",
     padaccheda_dev = "अतः उपधायाः",
     why_dev        = "णित्-प्रत्यये परे धातोः उपधास्थ-अकारस्य वृद्धि (पच् → पाच्)।",
     apavada_of     = ("7.2.115",),   # अपवाद of 7.2.115 — sutra_ref_out resolver.apavada_of

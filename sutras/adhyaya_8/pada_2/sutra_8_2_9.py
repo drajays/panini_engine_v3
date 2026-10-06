@@ -4,6 +4,7 @@
 Padaccheda: मात् उपधायाः च मतोः वः अ-यव-आदिभ्यः
 
 मादुपधायाश्च मतोर्वोऽयवादिभ्यः (8.2.9)
+Pāṭha: ashtadhyayi.com data.txt row i=82009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'mAdupaDAyASca matorvoyavAdiByaH',
     text_dev              = 'मादुपधायाश्च मतोर्वोऽयवादिभ्यः',
+    samagra_slp1          = "padasya pUrvatrAsidDam mAt upaDAyAH ca matoH vaH ayavAdiByaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् मात् उपधायाः च मतोः वः अयवादिभ्यः",
     padaccheda_dev        = "मात् उपधायाः च मतोः वः अ-यव-आदिभ्यः",
     why_dev               = "(सूत्रम् 8.2.9) मादुपधायाश्च मतोर्वोऽयवादिभ्यः।",
     anuvritti_from        = ('8.1.1',),

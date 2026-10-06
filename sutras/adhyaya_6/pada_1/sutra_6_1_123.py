@@ -4,6 +4,7 @@
 Padaccheda: अवङ् स्फोटायनस्य
 
 अवङ् स्फोटायनस्य (6.1.123)
+Pāṭha: ashtadhyayi.com data.txt row i=61123 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'avaN sPowAyanasya',
     text_dev              = 'अवङ् स्फोटायनस्य',
+    samagra_slp1          = "padAntAt goH aci avaN viBAzA sPowAyanasya",
+    samagra_dev           = "पदान्तात् गोः अचि अवङ् विभाषा स्फोटायनस्य",
     padaccheda_dev        = "अवङ् स्फोटायनस्य",
     why_dev               = "(सूत्रम् 6.1.123) अवङ् स्फोटायनस्य।",
     anuvritti_from        = ('6.1.1',),

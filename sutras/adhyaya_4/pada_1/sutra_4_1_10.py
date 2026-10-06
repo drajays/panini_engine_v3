@@ -4,6 +4,7 @@
 Padaccheda: न षट्-स्वस्रादिभ्यः
 
 न षट्स्वस्रादिभ्यः (4.1.10)
+Pāṭha: ashtadhyayi.com data.txt row i=41010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na zawsvasrAdiByaH",
     text_dev              = "न षट्स्वस्रादिभ्यः",
+    samagra_slp1          = "zaw-svasrAdiByaH NyApprAtipadikAt striyAm NIp pratyayaH na",
+    samagra_dev           = "षट्-स्वस्रादिभ्यः ङ्याप्प्रातिपदिकात् स्त्रियाम् ङीप् प्रत्ययः न",
     padaccheda_dev        = "न षट्-स्वस्रादिभ्यः",
     why_dev               = "(सूत्रम् 4.1.10) न षट्स्वस्रादिभ्यः।",
     anuvritti_from        = ('4.1.1',),

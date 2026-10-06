@@ -10,6 +10,7 @@ measure of time or path at the completion-point.
 Engine: registers the apavarga→tṛtīyā gate. ``cond`` checks only the gate
 flag, never vibhakti coordinates (CONSTITUTION Art. 2).
 ``r1_form_identity_exempt=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=23006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "apavarge tftIyA",
     text_dev              = "अपवर्गे तृतीया",
+    samagra_slp1          = "anaBihite apavarge tftIyA kAlADvanoH atyantasaMyoge",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते अपवर्गे तृतीया कालाध्वनोः अत्यन्तसंयोगे",
     padaccheda_dev        = "अपवर्गे / तृतीया",
     why_dev               = (
         "अपवर्गे (क्रियासमाप्तौ) काल-अध्वनोः तृतीया-विभक्तिः — "

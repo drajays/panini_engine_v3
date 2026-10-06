@@ -4,6 +4,7 @@
 Padaccheda: युक्तारोही-आदयः च
 
 युक्तारोह्यादयश्च (6.2.81)
+Pāṭha: ashtadhyayi.com data.txt row i=62081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yuktArohyAdayaSca",
     text_dev              = "युक्तारोह्यादयश्च",
+    samagra_slp1          = "AdiH udAttaH yuktArohyAdayaH ca pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः युक्तारोह्यादयः च पूर्वपदम्",
     padaccheda_dev        = "युक्तारोही-आदयः च",
     why_dev               = "(सूत्रम् 6.2.81) युक्तारोह्यादयश्च।",
     anuvritti_from        = ('6.1.1',),

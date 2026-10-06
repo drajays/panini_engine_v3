@@ -10,6 +10,7 @@ is also used for karma (in addition to dvitīyā). The particle *hoḥ*
 Engine: registers the chandas-karma→tṛtīyā gate. ``cond`` checks only
 that the gate has not yet been opened; it does not read vibhakti coordinates
 (CONSTITUTION Art. 2). ``r1_form_identity_exempt=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=23003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'tftIyA ca hoSCandasi',
     text_dev              = 'तृतीया च होश्छन्दसि',
+    samagra_slp1          = "anaBihite tftIyA ca hoH Candasi karmaRi dvitIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते तृतीया च होः छन्दसि कर्मणि द्वितीया",
     padaccheda_dev        = "तृतीया / च / होः / छन्दसि",
     why_dev               = (
         "छन्दसि होः-योगे कर्म-कारके तृतीया च — "

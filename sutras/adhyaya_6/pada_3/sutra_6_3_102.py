@@ -4,6 +4,7 @@
 Padaccheda: रथ-वदयोः च
 
 रथवदयोश्च (6.3.102)
+Pāṭha: ashtadhyayi.com data.txt row i=63102 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "raTavadayoSca",
     text_dev              = "रथवदयोश्च",
+    samagra_slp1          = "uttarapade raTa-vadayoH ca kat koH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे रथ-वदयोः च कत् कोः",
     padaccheda_dev        = "रथ-वदयोः च",
     why_dev               = "(सूत्रम् 6.3.102) रथवदयोश्च।",
     anuvritti_from        = ('6.1.1',),

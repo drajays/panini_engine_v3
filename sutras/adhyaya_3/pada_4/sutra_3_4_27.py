@@ -4,6 +4,7 @@
 Padaccheda: अन्यथा-एवं-कथम्-इत्थंसु सिद्ध-अप्रयोगः चेत्
 
 krt-suffix rule: अन्यथैवंकथमित्थंसु सिद्धाप्रयोगश्चेत्
+Pāṭha: ashtadhyayi.com data.txt row i=34027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anyaTEvaMkaTamitTaMsu sidDAprayogaScet",
     text_dev              = "अन्यथैवंकथमित्थंसु सिद्धाप्रयोगश्चेत्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH anyaTA-evam-kaTam-itTam-su sidDAprayogaH cet kft kfYaH Ramul",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः अन्यथा-एवम्-कथम्-इत्थम्-सु सिद्धाप्रयोगः चेत् कृत् कृञः णमुल्",
     padaccheda_dev        = "अन्यथा-एवं-कथम्-इत्थंसु सिद्ध-अप्रयोगः चेत्",
     why_dev               = "धातोः प्रत्ययः (३.4.27)।",
     anuvritti_from        = ('3.1.1',),

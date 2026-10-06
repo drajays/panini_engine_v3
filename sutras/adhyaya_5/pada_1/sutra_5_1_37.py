@@ -1,7 +1,7 @@
 """
 5.1.37  तेन क्रीतम्  —  SAMJNA (narrow ``prakriya_43``)
 
-**Pāṭha (ashtadhyayi-com ``data.txt`` i=50137):** *tena krītam* — ``Ra`` (*ṭak*) after a stem in the sense
+**Pāṭha (ashtadhyayi-com ``data.txt`` i=51037):** *tena krītam* — ``Ra`` (*ṭak*) after a stem in the sense
 ‘bought with / by means of that’.
 
 Narrow v3 (**पञ्चशष्कुलम्** ``…/separated_prakriyas/prakriya_43_*.json`` ``panini_engine_pipeline``):
@@ -58,6 +58,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="tena krItam",
     text_dev="तेन क्रीतम्",
+    samagra_slp1="tena krItam iti samarTAnAm praTamAt paraH WaY pratyayaH",
+    samagra_dev="'तेन क्रीतम्' (इति) समर्थानाम् प्रथमात् परः ठञ् प्रत्ययः",
     padaccheda_dev="तेन क्रीतम्",
     why_dev="तेन क्रीतम् इत्यर्थे ठक्-प्रत्ययः (*prakriya_43*, **पञ्चशष्कुलम्**)।",
     anuvritti_from=(),

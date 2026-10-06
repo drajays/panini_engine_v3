@@ -4,6 +4,7 @@
 Padaccheda: तिक-आदिभ्यः फिञ्
 
 तिकादिभ्यः फिञ् (4.1.154)
+Pāṭha: ashtadhyayi.com data.txt row i=41154 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tikAdiByaH PiY",
     text_dev              = "तिकादिभ्यः फिञ्",
+    samagra_slp1          = "tasya apatyam iti tikAdiByaH PiY",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) तिकादिभ्यः फिञ्",
     padaccheda_dev        = "तिक-आदिभ्यः फिञ्",
     why_dev               = "(सूत्रम् 4.1.154) तिकादिभ्यः फिञ्।",
     anuvritti_from        = ('4.1.1',),

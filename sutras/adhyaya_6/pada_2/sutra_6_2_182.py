@@ -4,6 +4,7 @@
 Padaccheda: परेः अभितोभावि मण्डलम्
 
 परेरभितोभाविमण्डलम् (6.2.182)
+Pāṭha: ashtadhyayi.com data.txt row i=62182 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pareraBitoBAvimaRqalam",
     text_dev              = "परेरभितोभाविमण्डलम्",
+    samagra_slp1          = "uttarapadAdiH antaH pareH aBitoBAvi maRqalam upasargAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः परेः अभितोभावि मण्डलम् उपसर्गात्",
     padaccheda_dev        = "परेः अभितोभावि मण्डलम्",
     why_dev               = "(सूत्रम् 6.2.182) परेरभितोभाविमण्डलम्।",
     anuvritti_from        = ('6.1.1',),

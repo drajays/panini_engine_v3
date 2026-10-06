@@ -4,6 +4,7 @@
 Padaccheda: इतः च अन्-इञः
 
 इतश्चानिञः (4.1.122)
+Pāṭha: ashtadhyayi.com data.txt row i=41122 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "itaScAniYaH",
     text_dev              = "इतश्चानिञः",
+    samagra_slp1          = "tasya apatyam iti aniYaH dvyacaH itaH Qak",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) अनिञः द्व्यचः इतः ढक्",
     padaccheda_dev        = "इतः च अन्-इञः",
     why_dev               = "(सूत्रम् 4.1.122) इतश्चानिञः।",
     anuvritti_from        = ('4.1.1',),

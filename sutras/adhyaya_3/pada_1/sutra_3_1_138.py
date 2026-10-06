@@ -4,6 +4,7 @@
 Padaccheda: अन्-उपसर्गात् लिम्प-विन्द-धारि-पारि-वेदि-उदेजि-चेति-साति-साहिभ्यः च
 
 Krt suffix rule from dhatu: अनुपसर्गाल्लिम्पविन्दधारिपारिवेद्युदेजिचेतिसातिसाहिभ्यश्च (138)
+Pāṭha: ashtadhyayi.com data.txt row i=31138 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anupasargAllimpavindaDAripArivedyudejicetisAtisAhiByaSca",
     text_dev              = "अनुपसर्गाल्लिम्पविन्दधारिपारिवेद्युदेजिचेतिसातिसाहिभ्यश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH anupasargAt limpa-vinda-DAri-pAri-vedi-udeji-ceti-sAti-sAhiByaH ca kft SaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः अनुपसर्गात् लिम्प-विन्द-धारि-पारि-वेदि-उदेजि-चेति-साति-साहिभ्यः च कृत् शः",
     padaccheda_dev        = "अन्-उपसर्गात् लिम्प-विन्द-धारि-पारि-वेदि-उदेजि-चेति-साति-साहिभ्यः च",
     why_dev               = "धातोः [अनुपसर्गाल्लिम्पविन्दधारिपारिवेद्युदेजिचेतिसातिसाहिभ्यश्च]-प्रत्ययः विहितः (३.१.138)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: तुग्रात् घन्
 
 तुग्राद्घन् (4.4.115)
+Pāṭha: ashtadhyayi.com data.txt row i=44115 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tugrAdGan",
     text_dev              = "तुग्राद्घन्",
+    samagra_slp1          = "tatra Bave iti tugrAt Candasi saMjYAyAm Gan",
+    samagra_dev           = "'तत्र भवे' (इति) तुग्रात् छन्दसि संज्ञायाम् घन्",
     padaccheda_dev        = "तुग्रात् घन्",
     why_dev               = "(सूत्रम् 4.4.115) तुग्राद्घन्।",
     anuvritti_from        = ('4.1.1',),

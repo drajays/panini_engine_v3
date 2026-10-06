@@ -4,6 +4,7 @@
 Padaccheda: इङः च
 
 Also for ing root.
+Pāṭha: ashtadhyayi.com data.txt row i=24048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "iNaSca",
     text_dev              = "इङश्च",
+    samagra_slp1          = "ArDaDAtuke iNaH ca gamiH sani",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके इङः च गमिः सनि",
     padaccheda_dev        = "इङः च",
     why_dev               = "इङः च (२.४.४८)।",
     anuvritti_from        = ('2.4.46',),

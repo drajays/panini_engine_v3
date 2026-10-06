@@ -4,6 +4,7 @@
 Padaccheda: ध्वाङ्क्षेण क्षेपे
 
 dhvanksa in ksepa context with saptami forms tatpurusha compound.
+Pāṭha: ashtadhyayi.com data.txt row i=21042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DvANkzeRa kzepe",
     text_dev              = "ध्वाङ्क्षेण क्षेपे",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH DvANkzeRa kzepe saptamI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः ध्वाङ्क्षेण क्षेपे सप्तमी",
     padaccheda_dev        = "ध्वाङ्क्षेण क्षेपे",
     why_dev               = "ध्वाङ्क्षेण क्षेपे सप्तम्यन्तस्य सह तत्पुरुषः (२.१.४२)।",
     anuvritti_from        = ('2.1.40',),

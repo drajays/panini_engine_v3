@@ -4,6 +4,7 @@
 Padaccheda: लटः शतृ-शानचः अ-प्रथमा-समानाधिकरणे
 
 krt-suffix rule: लटः शतृशानचावप्रथमासमानाधिकरणे (124)
+Pāṭha: ashtadhyayi.com data.txt row i=32124 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lawaH SatfSAnacAvapraTamAsamAnADikaraRe",
     text_dev              = "लटः शतृशानचावप्रथमासमानाधिकरणे",
+    samagra_slp1          = "lawaH apraTamAsamAnADikaraRe vartamAne SatfSAnacO DAtoH paraH",
+    samagra_dev           = "लटः अप्रथमासमानाधिकरणे वर्तमाने शतृशानचौ धातोः परः",
     padaccheda_dev        = "लटः शतृ-शानचः अ-प्रथमा-समानाधिकरणे",
     why_dev               = "धातोः कृत्-प्रत्ययः [लटः शतृशानचावप्रथमासमानाधिकरणे] विहितः (३.२.124)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

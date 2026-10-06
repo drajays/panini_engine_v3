@@ -4,6 +4,7 @@
 Padaccheda: क्षीरात् ढञ्
 
 क्षीराड्ढञ् (4.2.20)
+Pāṭha: ashtadhyayi.com data.txt row i=42020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kzIrAqQaY",
     text_dev              = "क्षीराड्ढञ्",
+    samagra_slp1          = "tatra saMskftaM BakzAH iti kzIrAt QaY",
+    samagra_dev           = "'तत्र संस्कृतं भक्षाः' (इति) क्षीरात् ढञ्",
     padaccheda_dev        = "क्षीरात् ढञ्",
     why_dev               = "(सूत्रम् 4.2.20) क्षीराड्ढञ्।",
     anuvritti_from        = ('4.1.1',),

@@ -10,6 +10,7 @@ E.g. *stambham āhanti* — the pillar is hit unintentionally but is still karma
 
 *Engine:* tags bearing ``"anIpsita_karma"`` get ``"karman"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'taTAyuktaM cAnIpsitam',
     text_dev             = 'तथायुक्तं चानीप्सितम्',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake taTA yuktam ca anIpsitam karma",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके तथा युक्तम् च अनीप्सितम् कर्म",
     padaccheda_dev       = "तथा-युक्तम् / च / अनीप्सितम्",
     why_dev              = (
         "तथायुक्तम् अनीप्सितम् अपि (अनभिलषितम् अपि) कर्म-कारक-संज्ञकम्। "

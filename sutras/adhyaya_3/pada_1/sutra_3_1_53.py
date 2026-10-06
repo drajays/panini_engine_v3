@@ -4,6 +4,7 @@
 Padaccheda: लिपि-सिचि-ह्वः च
 
 Krt suffix rule from dhatu: लिपिसिचिह्वश्च (53)
+Pāṭha: ashtadhyayi.com data.txt row i=31053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lipisicihvaSca",
     text_dev              = "लिपिसिचिह्वश्च",
+    samagra_slp1          = "lipi-sici-hvaH cleH aN",
+    samagra_dev           = "लिपि-सिचि-ह्वः च्लेः अङ्",
     padaccheda_dev        = "लिपि-सिचि-ह्वः च",
     why_dev               = "धातोः [लिपिसिचिह्वश्च]-प्रत्ययः विहितः (३.१.53)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अ-स्वाङ्ग-पूर्वपदात् वा
 
 अस्वाङ्गपूर्वपदाद्वा (4.1.53)
+Pāṭha: ashtadhyayi.com data.txt row i=41053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "asvANgapUrvapadAdvA",
     text_dev              = "अस्वाङ्गपूर्वपदाद्वा",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt a-sva-aNga-pUrva-padAt vA NIz ktAt bahuvrIheH ca antodAttAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् अ-स्व-अङ्ग-पूर्व-पदात् वा ङीष् क्तात् बहुव्रीहेः च अन्तोदात्तात्",
     padaccheda_dev        = "अ-स्वाङ्ग-पूर्वपदात् वा",
     why_dev               = "(सूत्रम् 4.1.53) अस्वाङ्गपूर्वपदाद्वा।",
     anuvritti_from        = ('4.1.1',),

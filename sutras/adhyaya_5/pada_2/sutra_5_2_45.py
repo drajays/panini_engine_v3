@@ -4,6 +4,7 @@
 Padaccheda: तद् अस्मिन् अधिकम् इति दशान्तात् डः
 
 तदस्मिन्नधिकमिति दशान्ताड्डः (5.2.45)
+Pāṭha: ashtadhyayi.com data.txt row i=52045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadasminnaDikamiti daSAntAqqaH",
     text_dev              = "तदस्मिन्नधिकमिति दशान्ताड्डः",
+    samagra_slp1          = "tat asmin aDikam iti iti daSAntAt qaH",
+    samagra_dev           = "'तत् अस्मिन् अधिकम् इति' (इति) दशान्तात् डः",
     padaccheda_dev        = "तद् अस्मिन् अधिकम् इति दशान्तात् डः",
     why_dev               = "(सूत्रम् 5.2.45) तदस्मिन्नधिकमिति दशान्ताड्डः।",
     anuvritti_from        = ('4.1.82',),

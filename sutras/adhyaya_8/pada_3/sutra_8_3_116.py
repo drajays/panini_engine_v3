@@ -4,6 +4,7 @@
 Padaccheda: स्तम्भु-सिवु-सहाम् चङि
 
 स्तम्भुसिवुसहां चङि (8.3.116)
+Pāṭha: ashtadhyayi.com data.txt row i=83116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "stamBusivusahAM caNi",
     text_dev              = "स्तम्भुसिवुसहां चङि",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH stamBu-sivu-sahAm caNi saH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः स्तम्भु-सिवु-सहाम् चङि सः न",
     padaccheda_dev        = "स्तम्भु-सिवु-सहाम् चङि",
     why_dev               = "(सूत्रम् 8.3.116) स्तम्भुसिवुसहां चङि।",
     anuvritti_from        = ('8.1.1',),

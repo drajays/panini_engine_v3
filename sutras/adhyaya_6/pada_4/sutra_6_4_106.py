@@ -4,6 +4,7 @@
 Padaccheda: उतः च प्रत्ययात् अ-संयोग-पूर्वात्
 
 उतश्च प्रत्ययादसंयोगपूर्वात् (6.4.106)
+Pāṭha: ashtadhyayi.com data.txt row i=64106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "utaSca pratyayAdasaMyogapUrvAt",
     text_dev              = "उतश्च प्रत्ययादसंयोगपूर्वात्",
+    samagra_slp1          = "asaMyogapUrvAt utaH pratyayAt heH luk",
+    samagra_dev           = "असंयोगपूर्वात् उतः प्रत्ययात् हेः लुक्",
     padaccheda_dev        = "उतः च प्रत्ययात् अ-संयोग-पूर्वात्",
     why_dev               = "(सूत्रम् 6.4.106) उतश्च प्रत्ययादसंयोगपूर्वात्।",
     anuvritti_from        = ('6.1.1',),

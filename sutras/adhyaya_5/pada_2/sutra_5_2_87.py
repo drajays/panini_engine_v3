@@ -4,6 +4,7 @@
 Padaccheda: स-पूर्वात् च
 
 सपूर्वाच्च (5.2.87)
+Pāṭha: ashtadhyayi.com data.txt row i=52087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sapUrvAcca",
     text_dev              = "सपूर्वाच्च",
+    samagra_slp1          = "anena iti sapUrvAt pUrvAt iniH",
+    samagra_dev           = "'अनेन' (इति) सपूर्वात् पूर्वात् इनिः",
     padaccheda_dev        = "स-पूर्वात् च",
     why_dev               = "(सूत्रम् 5.2.87) सपूर्वाच्च।",
     anuvritti_from        = ('4.1.82',),

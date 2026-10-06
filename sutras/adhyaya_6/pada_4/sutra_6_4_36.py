@@ -4,6 +4,7 @@
 Padaccheda: हन्तेः जः
 
 हन्तेर्जः (6.4.36)
+Pāṭha: ashtadhyayi.com data.txt row i=64036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -47,6 +48,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "hanterjaH",
     text_dev              = "हन्तेर्जः",
+    samagra_slp1          = "hanteH aNgasya hO jaH",
+    samagra_dev           = "हन्तेः अङ्गस्य हौ जः",
     padaccheda_dev        = "हन्तेः जः",
     why_dev               = "(सूत्रम् 6.4.36) हन्तेर्जः।",
     anuvritti_from        = ('6.1.1',),

@@ -2,6 +2,7 @@
 1.2.11  लिङ्सिचावात्मनेपदेषु  —  VIDHI (kit-vat)
 
 After a hal-final dhātu with ik beside it, jhal-ādi liṅ/sic in ātmanepada are kit: भित्सीष्ट.
+Pāṭha: ashtadhyayi.com data.txt row i=12011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -27,6 +28,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="liNsicAvAtmanepadezu",
     text_dev="लिङ्सिचावात्मनेपदेषु",
+    samagra_slp1="liN-sicO Atmanepadezu kit ikaH Jal halantAt ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="लिङ्-सिचौ आत्मनेपदेषु कित् इकः झल् हलन्तात् च",
     padaccheda_dev="लिङ्-सिचौ / आत्मनेपदेषु",
     why_dev="इक्समीपाद्धलन्तात् परौ झलादी लिङ्सिचौ आत्मनेपदेषु किद्वत् — गुणो न (१.१.५)।",
     anuvritti_from=("1.2.9", "1.2.10"),

@@ -4,6 +4,7 @@
 Padaccheda: षात् पद-अन्तात्
 
 षात् पदान्तात् (8.4.35)
+Pāṭha: ashtadhyayi.com data.txt row i=84035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zAt padAntAt",
     text_dev              = "षात् पदान्तात्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm zAt padAntAt razAByAm na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् षात् पदान्तात् रषाभ्याम् न",
     padaccheda_dev        = "षात् पद-अन्तात्",
     why_dev               = "(सूत्रम् 8.4.35) षात् पदान्तात्।",
     anuvritti_from        = ('8.1.1',),

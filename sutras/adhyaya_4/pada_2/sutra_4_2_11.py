@@ -4,6 +4,7 @@
 Padaccheda: पाण्डु-कम्बलात् इनिः
 
 पाण्डुकम्बलादिनिः (4.2.11)
+Pāṭha: ashtadhyayi.com data.txt row i=42011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pARqukambalAdiniH",
     text_dev              = "पाण्डुकम्बलादिनिः",
+    samagra_slp1          = "parivfto raTaH iti pARqukambalAt iniH",
+    samagra_dev           = "'परिवृतो रथः' (इति) पाण्डुकम्बलात् इनिः",
     padaccheda_dev        = "पाण्डु-कम्बलात् इनिः",
     why_dev               = "(सूत्रम् 4.2.11) पाण्डुकम्बलादिनिः।",
     anuvritti_from        = ('4.1.1',),

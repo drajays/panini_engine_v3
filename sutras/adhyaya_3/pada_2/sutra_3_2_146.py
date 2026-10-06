@@ -4,6 +4,7 @@
 Padaccheda: निन्द-हिंस-क्लिश-खाद-विनाश-परिक्षिप-परिरट-परिवादि-व्याभाष-असूयः (पञ्चम्यर्थे प्रथमा) वुञ्
 
 krt-suffix rule: निन्दहिंसक्लिशखादविनाशपरिक्षिपपरिरटपरिवादिव्याभाषासूञो वुञ् (146)
+Pāṭha: ashtadhyayi.com data.txt row i=32146 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nindahiMsakliSaKAdavinASaparikzipaparirawaparivAdivyABAzAsUYo vuY",
     text_dev              = "निन्दहिंसक्लिशखादविनाशपरिक्षिपपरिरटपरिवादिव्याभाषासूञो वुञ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu ninda-hiMsa-kliSa-KAda-vinASa-parikzipa-parirawa-parivAdi-vyABAza-asUyaH vuY kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु निन्द-हिंस-क्लिश-खाद-विनाश-परिक्षिप-परिरट-परिवादि-व्याभाष-असूयः वुञ् कृत्",
     padaccheda_dev        = "निन्द-हिंस-क्लिश-खाद-विनाश-परिक्षिप-परिरट-परिवादि-व्याभाष-असूयः (पञ्चम्यर्थे प्रथमा) वुञ्",
     why_dev               = "धातोः कृत्-प्रत्ययः [निन्दहिंसक्लिशखादविनाशपरिक्षिपपरिरटपरिवादिव्याभाषासूञो वुञ्] विहितः (३.२.146)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

@@ -4,6 +4,7 @@
 Padaccheda: भ्रातरि च ज्यायसि
 
 भ्रातरि च ज्यायसि (4.1.164)
+Pāṭha: ashtadhyayi.com data.txt row i=41164 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BrAtari ca jyAyasi",
     text_dev              = "भ्रातरि च ज्यायसि",
+    samagra_slp1          = "jyAyasi BrAtari jIvati pOtrapraBfteH apatyam yuvA",
+    samagra_dev           = "ज्यायसि भ्रातरि जीवति पौत्रप्रभृतेः अपत्यम् युवा",
     padaccheda_dev        = "भ्रातरि च ज्यायसि",
     why_dev               = "(सूत्रम् 4.1.164) भ्रातरि च ज्यायसि।",
     anuvritti_from        = ('4.1.1',),

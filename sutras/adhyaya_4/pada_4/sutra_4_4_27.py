@@ -4,6 +4,7 @@
 Padaccheda: ओजः-सहः-अम्भसा वर्तते (क्रियापदम्)
 
 ओजस्सहोऽम्भसा वर्तते (4.4.27)
+Pāṭha: ashtadhyayi.com data.txt row i=44027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ojassahomBasA vartate',
     text_dev              = 'ओजस्सहोऽम्भसा वर्तते',
+    samagra_slp1          = "tena vartate iti ojas-sahas-amBasA samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तेन वर्तते' इति ओजस्-सहस्-अम्भसा समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "ओजः-सहः-अम्भसा वर्तते (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.27) ओजस्सहोऽम्भसा वर्तते।",
     anuvritti_from        = ('4.1.1',),

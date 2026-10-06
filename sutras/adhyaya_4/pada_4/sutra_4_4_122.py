@@ -4,6 +4,7 @@
 Padaccheda: रेवती-जगती-हविष्याभ्यः प्रशस्ये
 
 रेवतीजगतीहविष्याभ्यः प्रशस्ये (4.4.122)
+Pāṭha: ashtadhyayi.com data.txt row i=44122 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "revatIjagatIhavizyAByaH praSasye",
     text_dev              = "रेवतीजगतीहविष्याभ्यः प्रशस्ये",
+    samagra_slp1          = "revatI-jagatI-havizyAByaH praSasye Candasi saMjYAyAm yat",
+    samagra_dev           = "रेवती-जगती-हविष्याभ्यः प्रशस्ये छन्दसि संज्ञायाम् यत्",
     padaccheda_dev        = "रेवती-जगती-हविष्याभ्यः प्रशस्ये",
     why_dev               = "(सूत्रम् 4.4.122) रेवतीजगतीहविष्याभ्यः प्रशस्ये।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: चितेः कपि
 
 चितेः कपि (6.3.127)
+Pāṭha: ashtadhyayi.com data.txt row i=63127 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "citeH kapi",
     text_dev              = "चितेः कपि",
+    samagra_slp1          = "uttarapade saMhitAyAm citeH kapi dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् चितेः कपि दीर्घः",
     padaccheda_dev        = "चितेः कपि",
     why_dev               = "(सूत्रम् 6.3.127) चितेः कपि।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अच् प्रति-अनु-अव-पूर्वात् साम-लोम्नः
 
 अच् प्रत्यन्ववपूर्वात् सामलोम्नः (5.4.75)
+Pāṭha: ashtadhyayi.com data.txt row i=54075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ac pratyanvavapUrvAt sAmalomnaH",
     text_dev              = "अच् प्रत्यन्ववपूर्वात् सामलोम्नः",
+    samagra_slp1          = "prati-anu-ava-pUrvAt sAma-lomnaH ac",
+    samagra_dev           = "प्रति-अनु-अव-पूर्वात् साम-लोम्नः अच्",
     padaccheda_dev        = "अच् प्रति-अनु-अव-पूर्वात् साम-लोम्नः",
     why_dev               = "(सूत्रम् 5.4.75) अच् प्रत्यन्ववपूर्वात् सामलोम्नः।",
     anuvritti_from        = ('5.4.68',),

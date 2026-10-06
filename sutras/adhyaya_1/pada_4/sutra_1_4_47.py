@@ -9,6 +9,7 @@
 
 *Engine:* tags bearing ``"aBi_ni_viS_karma"`` get ``"karman"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -41,6 +42,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'aBiniviSaSca',
     text_dev             = 'अभिनिविशश्च',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake aBini-viSaH ca ADAraH karma",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके अभिनि-विशः च आधारः कर्म",
     padaccheda_dev       = "अभि-नि-विशः / च",
     why_dev              = (
         "अभि-नि-पूर्वक-विश्-धातोः यत् गन्तव्यस्थानम् तत् कर्म-कारक-संज्ञकम्। "

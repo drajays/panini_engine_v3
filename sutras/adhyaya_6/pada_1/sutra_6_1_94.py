@@ -4,6 +4,7 @@
 अवर्णान्त उपसर्ग followed by an एङ्-आदि धातु: the अ/आ is replaced by the
 following एङ् (pararūpa) — ``pra`` + ``ejate`` → ``prejate``, ``upa`` + ``ozati``
 → ``upozati``.
+Pāṭha: ashtadhyayi.com data.txt row i=61094 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = "eNi pararUpam",
     text_dev       = "एङि पररूपम्",
+    samagra_slp1   = "At upasargAt eNi DAtO pUrvaparayoH ekaH pararUpam",
+    samagra_dev    = "आत् उपसर्गात् एङि धातौ पूर्वपरयोः एकः पररूपम्",
     padaccheda_dev = "एङि पररूपम्",
     why_dev        = "उपसर्गस्य अवर्णान्तस्य एङ्-आदौ धातौ परे पररूपम्।",
     apavada_of     = ("6.1.88",),

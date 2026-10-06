@@ -4,6 +4,7 @@
 Padaccheda: न नि-विभ्याम्
 
 न निविभ्याम् (6.2.181)
+Pāṭha: ashtadhyayi.com data.txt row i=62181 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na niviByAm",
     text_dev              = "न निविभ्याम्",
+    samagra_slp1          = "uttarapadAdiH antaH na niviByAm upasargAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः न निविभ्याम् उपसर्गात्",
     padaccheda_dev        = "न नि-विभ्याम्",
     why_dev               = "(सूत्रम् 6.2.181) न निविभ्याम्।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: किम्-वृत्तम् च चित्-उत्तरम्
 
 किम्वृत्तं च चिदुत्तरम् (8.1.48)
+Pāṭha: ashtadhyayi.com data.txt row i=81048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kimvfttaM ca ciduttaram",
     text_dev              = "किम्वृत्तं च चिदुत्तरम्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO kimvfttam ca ciduttaram tiN na apUrvam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ किम्वृत्तम् च चिदुत्तरम् तिङ् न अपूर्वम्",
     padaccheda_dev        = "किम्-वृत्तम् च चित्-उत्तरम्",
     why_dev               = "(सूत्रम् 8.1.48) किम्वृत्तं च चिदुत्तरम्।",
     anuvritti_from        = ('8.1.1',),

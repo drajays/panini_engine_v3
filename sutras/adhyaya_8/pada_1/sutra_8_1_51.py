@@ -4,6 +4,7 @@
 Padaccheda: गति-अर्थ-लोटा लृट् न चेत् कारकम् सर्व-अन्यत्
 
 गत्यर्थलोटा लृण्न चेत् कारकं सर्वान्यत् (8.1.51)
+Pāṭha: ashtadhyayi.com data.txt row i=81051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gatyarTalowA lfRna cet kArakaM sarvAnyat",
     text_dev              = "गत्यर्थलोटा लृण्न चेत् कारकं सर्वान्यत्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO gatyarTalowA lfw na cet kArakam sarvAnyat tiN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ गत्यर्थलोटा लृट् न चेत् कारकम् सर्वान्यत् तिङ्",
     padaccheda_dev        = "गति-अर्थ-लोटा लृट् न चेत् कारकम् सर्व-अन्यत्",
     why_dev               = "(सूत्रम् 8.1.51) गत्यर्थलोटा लृण्न चेत् कारकं सर्वान्यत्।",
     anuvritti_from        = ('8.1.1',),

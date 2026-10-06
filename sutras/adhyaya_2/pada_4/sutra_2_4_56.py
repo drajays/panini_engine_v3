@@ -4,6 +4,7 @@
 Padaccheda: अजेः वी (लुप्तप्रथमान्तनिर्देशः) अ-घञ्-अपोः
 
 aj root replaced by vi except with ghan and ap.
+Pāṭha: ashtadhyayi.com data.txt row i=24056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ajervyaGaYapoH",
     text_dev              = "अजेर्व्यघञपोः",
+    samagra_slp1          = "ArDaDAtuke ajeH vI aGaYapoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके अजेः वी अघञपोः",
     padaccheda_dev        = "अजेः वी (लुप्तप्रथमान्तनिर्देशः) अ-घञ्-अपोः",
     why_dev               = "अजेः वी अ-घञ्-अपोः (२.४.५६)।",
     anuvritti_from        = ('2.4.40',),

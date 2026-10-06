@@ -4,6 +4,7 @@
 Padaccheda: पर-अवर-योगे च
 
 krt-suffix rule: परावरयोगे च
+Pāṭha: ashtadhyayi.com data.txt row i=34020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parAvarayoge ca",
     text_dev              = "परावरयोगे च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH para-avara-yoge ca kft ktvA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः पर-अवर-योगे च कृत् क्त्वा",
     padaccheda_dev        = "पर-अवर-योगे च",
     why_dev               = "धातोः प्रत्ययः (३.4.20)।",
     anuvritti_from        = ('3.1.1',),

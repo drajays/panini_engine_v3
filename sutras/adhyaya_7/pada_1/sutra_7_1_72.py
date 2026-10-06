@@ -11,6 +11,7 @@ Minimal implementation:
 
 This sets up 6.4.8 to lengthen the aṅga's upadhā and yields forms like
 ज्ञानानि.
+Pāṭha: ashtadhyayi.com data.txt row i=71072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -66,6 +67,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'napuMsakasya JalacaH',
     text_dev       = 'नपुंसकस्य झलचः',
+    samagra_slp1   = "JalacaH napuMsakasya sarvanAmasTAne num",
+    samagra_dev    = "झलचः नपुंसकस्य सर्वनामस्थाने नुम्",
     padaccheda_dev = "नपुंसकस्य झल्-अचः",
     why_dev        = "नपुंसक-अङ्गस्य सर्वनामस्थाने परे नुम्-आगमः (ज्ञानानि)।",
     anuvritti_from = ("6.4.1",),

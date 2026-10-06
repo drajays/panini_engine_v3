@@ -4,6 +4,7 @@
 Padaccheda: दिक्सङ्ख्ये संज्ञायाम्
 
 Direction and number words in samjna context form karmadharaya.
+Pāṭha: ashtadhyayi.com data.txt row i=21050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "diksaMKye saMjYAyAm",
     text_dev              = "दिक्संख्ये संज्ञायाम्",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH dik-saMKye saMjYAyAm samAnADikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः दिक्-संख्ये संज्ञायाम् समानाधिकरणेन",
     padaccheda_dev        = "दिक्सङ्ख्ये संज्ञायाम्",
     why_dev               = "दिक्-संख्ये संज्ञायां कर्मधारयः (२.१.५०)।",
     anuvritti_from        = ('2.1.3',),

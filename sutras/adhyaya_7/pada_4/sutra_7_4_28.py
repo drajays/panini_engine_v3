@@ -4,6 +4,7 @@
 Padaccheda: रिङ् श-यक्-लिङ्‍क्षु
 
 रिङ् शयग्लिङ्क्षु (7.4.28)
+Pāṭha: ashtadhyayi.com data.txt row i=74028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "riN SayagliNkzu",
     text_dev              = "रिङ् शयग्लिङ्क्षु",
+    samagra_slp1          = "ftaH aNgasya asArvaDAtuke SayagliNkzu riN",
+    samagra_dev           = "ऋतः अङ्गस्य असार्वधातुके शयग्लिङ्क्षु रिङ्",
     padaccheda_dev        = "रिङ् श-यक्-लिङ्‍क्षु",
     why_dev               = "ऋदन्तस्य अङ्गस्य रिङ् आदेशः श-यक्-लिङ्क्षु परेषु (कृ + यक् → क्रियते)।",
     anuvritti_from        = ('7.1.1',),

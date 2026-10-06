@@ -4,6 +4,7 @@
 Padaccheda: सभायाम् नपुंसके
 
 सभायां नपुंसके (6.2.98)
+Pāṭha: ashtadhyayi.com data.txt row i=62098 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saBAyAM napuMsake",
     text_dev              = "सभायां नपुंसके",
+    samagra_slp1          = "udAttaH antaH saBAyAm napuMsake pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः सभायाम् नपुंसके पूर्वपदम्",
     padaccheda_dev        = "सभायाम् नपुंसके",
     why_dev               = "(सूत्रम् 6.2.98) सभायां नपुंसके।",
     anuvritti_from        = ('6.1.1',),

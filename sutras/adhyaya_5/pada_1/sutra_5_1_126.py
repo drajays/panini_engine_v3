@@ -4,6 +4,7 @@
 Padaccheda: सख्युः यः
 
 सख्युर्यः (5.1.126)
+Pāṭha: ashtadhyayi.com data.txt row i=51126 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saKyuryaH",
     text_dev              = "सख्युर्यः",
+    samagra_slp1          = "tasya BAvaH karmaRi ca iti saKyuH yaH",
+    samagra_dev           = "'तस्य भावः कर्मणि च' (इति) सख्युः यः",
     padaccheda_dev        = "सख्युः यः",
     why_dev               = "(सूत्रम् 5.1.126) सख्युर्यः।",
     anuvritti_from        = ('5.1.120',),

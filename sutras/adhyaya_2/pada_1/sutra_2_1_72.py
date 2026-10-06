@@ -4,6 +4,7 @@
 Padaccheda: मयूरव्यंसक-आदयः च
 
 mayuravyamsaka etc. by nipatana form karmadharaya compound.
+Pāṭha: ashtadhyayi.com data.txt row i=21072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mayUravyaMsakAdayaSca",
     text_dev              = "मयूरव्यंसकादयश्च",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH mayUravyaMsaka-AdayaH ca samAnADikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः मयूरव्यंसक-आदयः च समानाधिकरणेन",
     padaccheda_dev        = "मयूरव्यंसक-आदयः च",
     why_dev               = "मयूरव्यंसक-आदयश्च निपातनात् (२.१.७२)।",
     anuvritti_from        = ('2.1.3',),

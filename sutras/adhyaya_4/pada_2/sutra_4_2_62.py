@@ -4,6 +4,7 @@
 Padaccheda: अनुब्राह्मणात् इनिः
 
 अनुब्राह्मणादिनिः (4.2.62)
+Pāṭha: ashtadhyayi.com data.txt row i=42062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anubrAhmaRAdiniH",
     text_dev              = "अनुब्राह्मणादिनिः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA anubrAhmaRAt iniH tat aDIte veda",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा अनुब्राह्मणात् इनिः तत् अधीते वेद",
     padaccheda_dev        = "अनुब्राह्मणात् इनिः",
     why_dev               = "(सूत्रम् 4.2.62) अनुब्राह्मणादिनिः।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: सोः मनसी अलोमोषसी
 
 सोर्मनसी अलोमोषसी (6.2.117)
+Pāṭha: ashtadhyayi.com data.txt row i=62117 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sormanasI alomozasI",
     text_dev              = "सोर्मनसी अलोमोषसी",
+    samagra_slp1          = "udAttaH uttarapadAdiH soH manasI a-lomozasI bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः सोः मनसी अ-लोमोषसी बहुव्रीहौ",
     padaccheda_dev        = "सोः मनसी अलोमोषसी",
     why_dev               = "(सूत्रम् 6.2.117) सोर्मनसी अलोमोषसी।",
     anuvritti_from        = ('6.1.1',),

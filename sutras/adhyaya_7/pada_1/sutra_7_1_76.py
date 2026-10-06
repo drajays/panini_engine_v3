@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि अपि दृश्यते (क्रियापदम्)
 
 छन्दस्यपि दृश्यते (7.1.76)
+Pāṭha: ashtadhyayi.com data.txt row i=71076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Candasyapi dfSyate",
     text_dev              = "छन्दस्यपि दृश्यते",
+    samagra_slp1          = "aNgasya Candasi api dfSyate num napuMsakasya udAttaH asTi-daDi-sakTi-akzRAm anaN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य छन्दसि अपि दृश्यते नुम् नपुंसकस्य उदात्तः अस्थि-दधि-सक्थि-अक्ष्णाम् अनङ्",
     padaccheda_dev        = "छन्दसि अपि दृश्यते (क्रियापदम्)",
     why_dev               = "(सूत्रम् 7.1.76) छन्दस्यपि दृश्यते।",
     anuvritti_from        = ('7.1.1',),

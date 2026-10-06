@@ -4,6 +4,7 @@
 Padaccheda: अधिकम्
 
 अधिकम् (5.2.73)
+Pāṭha: ashtadhyayi.com data.txt row i=52073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDikam",
     text_dev              = "अधिकम्",
+    samagra_slp1          = "aDikam iti nipAtyate",
+    samagra_dev           = "अधिकम् (इति निपात्यते)",
     padaccheda_dev        = "अधिकम्",
     why_dev               = "(सूत्रम् 5.2.73) अधिकम्।",
     anuvritti_from        = ('4.1.82',),

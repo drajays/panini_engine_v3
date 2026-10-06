@@ -4,6 +4,7 @@
 Padaccheda: अपोनप्तृ-अपान्नप्तृभ्याम् घः
 
 अपोनप्त्रपान्नप्तृभ्यां घः (4.2.27)
+Pāṭha: ashtadhyayi.com data.txt row i=42027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aponaptrapAnnaptfByAM GaH",
     text_dev              = "अपोनप्त्रपान्नप्तृभ्यां घः",
+    samagra_slp1          = "sA asya devatA iti aponaptf-apAnnaptfByAm GaH",
+    samagra_dev           = "'सा अस्य देवता' (इति) अपोनप्तृ-अपान्नप्तृभ्याम् घः",
     padaccheda_dev        = "अपोनप्तृ-अपान्नप्तृभ्याम् घः",
     why_dev               = "(सूत्रम् 4.2.27) अपोनप्त्रपान्नप्तृभ्यां घः।",
     anuvritti_from        = ('4.1.1',),

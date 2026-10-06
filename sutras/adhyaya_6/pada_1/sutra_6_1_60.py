@@ -4,6 +4,7 @@
 Padaccheda: शीर्षन् छन्दसि
 
 शीर्षंश्छन्दसि (6.1.60)
+Pāṭha: ashtadhyayi.com data.txt row i=61060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SIrzaMSCandasi",
     text_dev              = "शीर्षंश्छन्दसि",
+    samagra_slp1          = "SIrzan Candasi upadeSe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "शीर्षन् छन्दसि उपदेशे",
     padaccheda_dev        = "शीर्षन् छन्दसि",
     why_dev               = "(सूत्रम् 6.1.60) शीर्षंश्छन्दसि।",
     anuvritti_from        = ('6.1.1',),

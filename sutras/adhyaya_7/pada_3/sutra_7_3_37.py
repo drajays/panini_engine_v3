@@ -12,6 +12,7 @@ run after *ṇ*/*c* lopa so the trigger is ``nic`` tag + residual ``i`` shape
 or full ``Ric`` tape not yet merged.
 
 Idempotency: ``Term.meta['7_3_37_yuk_augment_done']`` on the *dhātu*.
+Pāṭha: ashtadhyayi.com data.txt row i=73037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -86,6 +87,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="SAcCAsAhvAvyAvepAM yuk",
     text_dev="शाच्छासाह्वाव्यावेपां युक्",
+    samagra_slp1="aNgasya SAcCAsAhvAvyAvepAm yuk RO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अङ्गस्य शाच्छासाह्वाव्यावेपाम् युक् णौ",
     padaccheda_dev="श-आदिभ्यः / च-आदिभ्यः / … / युक्",
     why_dev="णिच्-परे शाच्छादिभ्यो युक्-आगमः (पाययते)।",
     anuvritti_from=("7.3.1",),

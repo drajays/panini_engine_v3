@@ -4,6 +4,7 @@
 Padaccheda: बहुलम् छन्दसि
 
 बहुलं छन्दसि (7.4.78)
+Pāṭha: ashtadhyayi.com data.txt row i=74078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahulaM Candasi",
     text_dev              = "बहुलं छन्दसि",
+    samagra_slp1          = "aNgasya aByAsasya bahulam Candasi SlO it",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य बहुलम् छन्दसि श्लौ इत्",
     padaccheda_dev        = "बहुलम् छन्दसि",
     why_dev               = "(सूत्रम् 7.4.78) बहुलं छन्दसि।",
     anuvritti_from        = ('7.1.1',),

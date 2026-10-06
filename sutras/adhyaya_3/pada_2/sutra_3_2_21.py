@@ -4,6 +4,7 @@
 Padaccheda: दिवा-विभा-निशा-प्रभा-भास्-कार-अन्त-अनन्त-आदि-बहु-नान्दी-किम्-लिपि-लिबि-बलि-भक्ति-कर्तृ-चित्र-क्षेत्र-संख्या-जङ्घा-बाहु-अहर्-यत्-तत्-धनुर्-अरुष्षु
 
 krt-suffix rule: दिवाविभानिशाप्रभाभास्करान्तानन्तादिबहुनान्दीकिम्लिपिलिबिबलिभक्तिकर्तृचित्रक्षेत्रसंख्याजङ्घाबाह्वहर्यत्तत्धनुररुष्षु (21)
+Pāṭha: ashtadhyayi.com data.txt row i=32021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'divAviBAniSApraBABAskArAntAnantAdibahunAndIkimlipilibibaliBaktikartfcitrakzetrasaMKyAjaNGAbAhvaharyattatDanuraruzzu',
     text_dev              = 'दिवाविभानिशाप्रभाभास्कारान्तानन्तादिबहुनान्दीकिम्लिपिलिबिबलिभक्तिकर्तृचित्रक्षेत्रसंख्याजङ्घाबाह्वहर्यत्तत्धनुररुष्षु',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH divA-viBA-niSA-praBA-BAs-kAra-anta-ananta-Adi-bahu-nAndI-kim-lipi-libi-bali-Bakti-kartf-citra-kzetra-saMKyA-jaNGA-bAhu-ahas-yat-tat-Danuz-aruzzu kft karmaRi anupasarge supi waH kfYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः दिवा-विभा-निशा-प्रभा-भास्-कार-अन्त-अनन्त-आदि-बहु-नान्दी-किम्-लिपि-लिबि-बलि-भक्ति-कर्तृ-चित्र-क्षेत्र-संख्या-जङ्घा-बाहु-अहस्-यत्-तत्-धनुष्-अरुष्षु कृत् कर्मणि अनुपसर्गे सुपि टः कृञः",
     padaccheda_dev        = "दिवा-विभा-निशा-प्रभा-भास्-कार-अन्त-अनन्त-आदि-बहु-नान्दी-किम्-लिपि-लिबि-बलि-भक्ति-कर्तृ-चित्र-क्षेत्र-संख्या-जङ्घा-बाहु-अहर्-यत्-तत्-धनुर्-अरुष्षु",
     why_dev               = "धातोः कृत्-प्रत्ययः [दिवाविभानिशाप्रभाभास्करान्तानन्तादिबहुनान्दीकिम्लिपिलिबिबलिभक्तिकर्तृचित्रक्षेत्रसंख्याजङ्घाबाह्वहर्यत्तत्धनुररुष्षु] विहितः (३.२.21)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: तनोतेः यकि
 
 तनोतेर्यकि (6.4.44)
+Pāṭha: ashtadhyayi.com data.txt row i=64044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tanoteryaki",
     text_dev              = "तनोतेर्यकि",
+    samagra_slp1          = "aNgasya asidDavadatrABAt tanoteH yaki nalopaH At viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् तनोतेः यकि नलोपः आत् विभाषा",
     padaccheda_dev        = "तनोतेः यकि",
     why_dev               = "(सूत्रम् 6.4.44) तनोतेर्यकि।",
     anuvritti_from        = ('6.1.1',),

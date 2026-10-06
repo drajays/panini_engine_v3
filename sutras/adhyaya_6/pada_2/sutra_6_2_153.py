@@ -4,6 +4,7 @@
 Padaccheda: ऊन-अर्थ-कलहम् तृतीयायाः
 
 ऊनार्थकलहं तृतीयायाः (6.2.153)
+Pāṭha: ashtadhyayi.com data.txt row i=62153 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "UnArTakalahaM tftIyAyAH",
     text_dev              = "ऊनार्थकलहं तृतीयायाः",
+    samagra_slp1          = "uttarapadAdiH antaH UnArTakalaham tftIyAyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः ऊनार्थकलहम् तृतीयायाः",
     padaccheda_dev        = "ऊन-अर्थ-कलहम् तृतीयायाः",
     why_dev               = "(सूत्रम् 6.2.153) ऊनार्थकलहं तृतीयायाः।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: प्र-सम्भ्याम् जानुनोः ज्ञुः
 
 प्रसम्भ्यां जानुनोर्ज्ञुः (5.4.129)
+Pāṭha: ashtadhyayi.com data.txt row i=54129 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prasamByAM jAnunorjYuH",
     text_dev              = "प्रसम्भ्यां जानुनोर्ज्ञुः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA prasamByAm jAnunoH jYuH bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा प्रसम्भ्याम् जानुनोः ज्ञुः बहुव्रीहौ",
     padaccheda_dev        = "प्र-सम्भ्याम् जानुनोः ज्ञुः",
     why_dev               = "(सूत्रम् 5.4.129) प्रसम्भ्यां जानुनोर्ज्ञुः।",
     anuvritti_from        = ('5.4.68',),

@@ -4,6 +4,7 @@
 Padaccheda: ठक्-छौ च
 
 ठक्छौ च (4.2.84)
+Pāṭha: ashtadhyayi.com data.txt row i=42084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "WakCO ca",
     text_dev              = "ठक्छौ च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA Wak-CO ca SarkarAyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा ठक्-छौ च शर्करायाः",
     padaccheda_dev        = "ठक्-छौ च",
     why_dev               = "(सूत्रम् 4.2.84) ठक्छौ च।",
     anuvritti_from        = ('4.1.1',),

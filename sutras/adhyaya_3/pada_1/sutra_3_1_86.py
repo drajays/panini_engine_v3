@@ -4,6 +4,7 @@
 Padaccheda: लिङि आशिषि अङ्
 
 Krt suffix rule from dhatu: लिङ्याशिष्यङ् (86)
+Pāṭha: ashtadhyayi.com data.txt row i=31086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "liNyASizyaN",
     text_dev              = "लिङ्याशिष्यङ्",
+    samagra_slp1          = "Candasi ASizi liNi DAtoH paraH aN api kartari sArvaDAtuke",
+    samagra_dev           = "छन्दसि आशिषि लिङि धातोः परः अङ् अपि कर्तरि सार्वधातुके",
     padaccheda_dev        = "लिङि आशिषि अङ्",
     why_dev               = "धातोः [लिङ्याशिष्यङ्]-प्रत्ययः विहितः (३.१.86)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: शप्-श्यनोः नित्यम्
 
 शप्श्यनोर्नित्यम् (7.1.81)
+Pāṭha: ashtadhyayi.com data.txt row i=71081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SapSyanornityam",
     text_dev              = "शप्श्यनोर्नित्यम्",
+    samagra_slp1          = "aNgasya Sap-SyanoH nityam num SatuH SI-nadyoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य शप्-श्यनोः नित्यम् नुम् शतुः शी-नद्योः",
     padaccheda_dev        = "शप्-श्यनोः नित्यम्",
     why_dev               = "(सूत्रम् 7.1.81) शप्श्यनोर्नित्यम्।",
     anuvritti_from        = ('7.1.1',),

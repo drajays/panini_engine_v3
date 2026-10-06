@@ -4,6 +4,7 @@
 Padaccheda: कवम् च उष्णे
 
 कवं चोष्णे (6.3.107)
+Pāṭha: ashtadhyayi.com data.txt row i=63107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kavaM cozRe",
     text_dev              = "कवं चोष्णे",
+    samagra_slp1          = "uttarapade kavam ca uzRe koH kA viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे कवम् च उष्णे कोः का विभाषा",
     padaccheda_dev        = "कवम् च उष्णे",
     why_dev               = "(सूत्रम् 6.3.107) कवं चोष्णे।",
     anuvritti_from        = ('6.1.1',),

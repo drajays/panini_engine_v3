@@ -16,6 +16,7 @@
 ``state.meta['2_3_46_matra_prathama_eligible']``, set by the *subanta* recipe
 when the caller opts into this *śāstra* slice, and requires **2.3.1**
 *anabhihita* *adhikāra* on ``adhikara_stack``.
+Pāṭha: ashtadhyayi.com data.txt row i=23046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
         'prAtipadikArTaliNgaparimARavacanamAtre praTamA'
     ),
     text_dev       = 'प्रातिपदिकार्थलिङ्गपरिमाणवचनमात्रे प्रथमा',
+    samagra_slp1   = "anaBihite prAtipadikArTa-liNga-parimARa-vacanamAtre praTamA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "अनभिहिते प्रातिपदिकार्थ-लिङ्ग-परिमाण-वचनमात्रे प्रथमा",
     padaccheda_dev = (
         "अनभिहिते / प्रातिपदिकार्थ-लिङ्ग-परिमाण-वचनमात्रे / प्रथमा"
     ),

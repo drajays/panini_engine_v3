@@ -4,6 +4,7 @@
 Padaccheda: विभाषा तृतीया-आदिषु अचि
 
 विभाषा तृतीयाऽऽदिष्वचि (7.1.97)
+Pāṭha: ashtadhyayi.com data.txt row i=71097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'viBAzA tftIyAdizvaci',
     text_dev              = 'विभाषा तृतीयादिष्वचि',
+    samagra_slp1          = "tftIyAdizu aci krozwu tfjvat viBAzA",
+    samagra_dev           = "तृतीयादिषु अचि क्रोष्टु तृज्वत् विभाषा",
     padaccheda_dev        = "विभाषा तृतीया-आदिषु अचि",
     why_dev               = "(सूत्रम् 7.1.97) विभाषा तृतीयाऽऽदिष्वचि।",
     anuvritti_from        = ('7.1.1',),

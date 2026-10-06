@@ -4,6 +4,7 @@
 Padaccheda: अक्षः अन्यतरस्याम्
 
 Krt suffix rule from dhatu: अक्षोऽन्यतरस्याम् (75)
+Pāṭha: ashtadhyayi.com data.txt row i=31075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'akzonyatarasyAm',
     text_dev              = 'अक्षोऽन्यतरस्याम्',
+    samagra_slp1          = "karttari sArvaDAtuke akzaH SnuH anyatarasyAm",
+    samagra_dev           = "कर्त्तरि सार्वधातुके अक्षः श्नुः अन्यतरस्याम्",
     padaccheda_dev        = "अक्षः अन्यतरस्याम्",
     why_dev               = "धातोः [अक्षोऽन्यतरस्याम्]-प्रत्ययः विहितः (३.१.75)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अतः ल (लुप्तषष्ठ्यन्तनिर्देशः) अन्तस्य
 
 अतो र्लान्तस्य (7.2.2)
+Pāṭha: ashtadhyayi.com data.txt row i=72002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ato lrAntasya',
     text_dev              = 'अतो ल्रान्तस्य',
+    samagra_slp1          = "aNgasya ataH lra antasya sici vfdDiH parasmEpadezu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अतः ल्र अन्तस्य सिचि वृद्धिः परस्मैपदेषु",
     padaccheda_dev        = "अतः ल (लुप्तषष्ठ्यन्तनिर्देशः) अन्तस्य",
     why_dev               = "(सूत्रम् 7.2.2) अतो र्लान्तस्य।",
     anuvritti_from        = ('7.1.1',),

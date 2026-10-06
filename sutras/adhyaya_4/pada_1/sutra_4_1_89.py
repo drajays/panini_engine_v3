@@ -4,6 +4,7 @@
 Padaccheda: गोत्रे अ-लुक् अचि
 
 गोत्रेऽलुगचि (4.1.89)
+Pāṭha: ashtadhyayi.com data.txt row i=41089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'gotrelugaci',
     text_dev              = 'गोत्रेऽलुगचि',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samarTAnAM praTamAdvA prAgdIvyatoR gotre aluk aci",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समर्थानां प्रथमाद्वा प्राग्दीव्यतोऽण् गोत्रे अलुक् अचि",
     padaccheda_dev        = "गोत्रे अ-लुक् अचि",
     why_dev               = "(सूत्रम् 4.1.89) गोत्रेऽलुगचि।",
     anuvritti_from        = ('4.1.1',),

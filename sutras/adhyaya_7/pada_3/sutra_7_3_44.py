@@ -4,6 +4,7 @@
 Padaccheda: प्रत्ययस्थात् कात् पूर्वस्य अतः इत् आपि अ-सुपः
 
 प्रत्ययस्थात् कात् पूर्वस्यात इदाप्यसुपः (7.3.44)
+Pāṭha: ashtadhyayi.com data.txt row i=73044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pratyayasTAt kAt pUrvasyAta idApyasupaH",
     text_dev              = "प्रत्ययस्थात् कात् पूर्वस्यात इदाप्यसुपः",
+    samagra_slp1          = "aNgasya pratyayasTAt kAt pUrvasya ataH it Api asupaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य प्रत्ययस्थात् कात् पूर्वस्य अतः इत् आपि असुपः",
     padaccheda_dev        = "प्रत्ययस्थात् कात् पूर्वस्य अतः इत् आपि अ-सुपः",
     why_dev               = "(सूत्रम् 7.3.44) प्रत्ययस्थात् कात् पूर्वस्यात इदाप्यसुपः।",
     anuvritti_from        = ('7.1.1',),

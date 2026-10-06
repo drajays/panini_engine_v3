@@ -4,6 +4,7 @@
 Padaccheda: अनुदात्तस्य च यत्र उदात्त-लोपः
 
 अनुदात्तस्य च यत्रोदात्तलोपः (6.1.161)
+Pāṭha: ashtadhyayi.com data.txt row i=61161 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anudAttasya ca yatrodAttalopaH",
     text_dev              = "अनुदात्तस्य च यत्रोदात्तलोपः",
+    samagra_slp1          = "anudAttasya ca yatra udAttalopaH antaH udAttaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनुदात्तस्य च यत्र उदात्तलोपः अन्तः उदात्तः",
     padaccheda_dev        = "अनुदात्तस्य च यत्र उदात्त-लोपः",
     why_dev               = "(सूत्रम् 6.1.161) अनुदात्तस्य च यत्रोदात्तलोपः।",
     anuvritti_from        = ('6.1.1',),

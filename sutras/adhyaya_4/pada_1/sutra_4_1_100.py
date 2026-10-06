@@ -4,6 +4,7 @@
 Padaccheda: हरित-आदिभ्यः अञः
 
 हरितादिभ्योऽञः (4.1.100)
+Pāṭha: ashtadhyayi.com data.txt row i=41100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'haritAdiByoYaH',
     text_dev              = 'हरितादिभ्योऽञः',
+    samagra_slp1          = "tasya gotre apatyam iti haritAdiByaH aYaH Pak",
+    samagra_dev           = "'तस्य गोत्रे अपत्यम्' (इति) हरितादिभ्यः अञः फक्",
     padaccheda_dev        = "हरित-आदिभ्यः अञः",
     why_dev               = "(सूत्रम् 4.1.100) हरितादिभ्योऽञः।",
     anuvritti_from        = ('4.1.1',),

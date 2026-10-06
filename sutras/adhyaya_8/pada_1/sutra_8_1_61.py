@@ -4,6 +4,7 @@
 Padaccheda: अह इति विनियोगे च
 
 अहेति विनियोगे च (8.1.61)
+Pāṭha: ashtadhyayi.com data.txt row i=81061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aheti viniyoge ca",
     text_dev              = "अहेति विनियोगे च",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO aha iti viniyoge ca tiN na praTamA kziyAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ अह इति विनियोगे च तिङ् न प्रथमा क्षियायाम्",
     padaccheda_dev        = "अह इति विनियोगे च",
     why_dev               = "(सूत्रम् 8.1.61) अहेति विनियोगे च।",
     anuvritti_from        = ('8.1.1',),

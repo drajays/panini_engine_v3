@@ -4,6 +4,7 @@
 Padaccheda: पुंसः असुङ्
 
 पुंसोऽसुङ् (7.1.89)
+Pāṭha: ashtadhyayi.com data.txt row i=71089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'puMsosuN',
     text_dev              = 'पुंसोऽसुङ्',
+    samagra_slp1          = "sarvanAmasTAne puMsaH asuN",
+    samagra_dev           = "सर्वनामस्थाने पुंसः असुङ्",
     padaccheda_dev        = "पुंसः असुङ्",
     why_dev               = "(सूत्रम् 7.1.89) पुंसोऽसुङ्।",
     anuvritti_from        = ('7.1.1',),

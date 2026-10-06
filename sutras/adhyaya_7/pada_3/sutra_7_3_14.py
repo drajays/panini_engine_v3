@@ -4,6 +4,7 @@
 Padaccheda: प्राचाम् ग्राम-नगराणाम्
 
 प्राचां ग्रामनगराणाम् (7.3.14)
+Pāṭha: ashtadhyayi.com data.txt row i=73014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prAcAM grAmanagarARAm",
     text_dev              = "प्राचां ग्रामनगराणाम्",
+    samagra_slp1          = "aNgasya uttarapadasya prAcAm grAmanagarARAm vfdDiH YRiti acaH tadDitezu AdeH SvAdeH diSaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य प्राचाम् ग्रामनगराणाम् वृद्धिः ञ्णिति अचः तद्धितेषु आदेः श्वादेः दिशः",
     padaccheda_dev        = "प्राचाम् ग्राम-नगराणाम्",
     why_dev               = "(सूत्रम् 7.3.14) प्राचां ग्रामनगराणाम्।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: उपरि-अधि-अधसः सामीप्ये
 
 उपर्यध्यधसः सामीप्ये (8.1.7)
+Pāṭha: ashtadhyayi.com data.txt row i=81007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uparyaDyaDasaH sAmIpye",
     text_dev              = "उपर्यध्यधसः सामीप्ये",
+    samagra_slp1          = "sarvasya dve uparyaDyaDasaH sAmIpye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सर्वस्य द्वे उपर्यध्यधसः सामीप्ये",
     padaccheda_dev        = "उपरि-अधि-अधसः सामीप्ये",
     why_dev               = "(सूत्रम् 8.1.7) उपर्यध्यधसः सामीप्ये।",
     anuvritti_from        = ('8.1.1',),

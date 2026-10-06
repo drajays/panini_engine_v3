@@ -4,6 +4,7 @@
 Padaccheda: विभाषा बहोः धा अविप्रकृष्टकाले
 
 विभाषा बहोर्धाऽविप्रकृष्टकाले (5.4.20)
+Pāṭha: ashtadhyayi.com data.txt row i=54020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'viBAzA bahorDAviprakfzwakAle',
     text_dev              = 'विभाषा बहोर्धाविप्रकृष्टकाले',
+    samagra_slp1          = "bahoH aviprakfzwakAle kriyA-aByAvfttigaRane viBAzA DA",
+    samagra_dev           = "बहोः अविप्रकृष्टकाले क्रिया-अभ्यावृत्तिगणने विभाषा धा",
     padaccheda_dev        = "विभाषा बहोः धा अविप्रकृष्टकाले",
     why_dev               = "(सूत्रम् 5.4.20) विभाषा बहोर्धाऽविप्रकृष्टकाले।",
     anuvritti_from        = ('4.1.76',),

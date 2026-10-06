@@ -11,6 +11,7 @@ and also in the *hīna* sense (by *ca*).
 *Engine:* sets paribhāṣā gate for *upa-in-adhika*.
 ``cond`` never reads vibhakti/vacana/lakāra/surface.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=14087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -36,6 +37,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'upoDike ca',
     text_dev             = 'उपोऽधिके च',
+    samagra_slp1         = "AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH karmapravacanIyAH upaH aDike ca hIne",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः कर्मप्रवचनीयाः उपः अधिके च हीने",
     padaccheda_dev       = "उपः / अधिके / च",
     why_dev              = (
         "अधिक-अर्थे (हीन-अर्थे च) वर्तमानः 'उप' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

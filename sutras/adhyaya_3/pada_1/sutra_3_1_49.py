@@ -4,6 +4,7 @@
 Padaccheda: विभाषा धेट्-श्व्योः
 
 Krt suffix rule from dhatu: विभाषा धेट्श्व्योः (49)
+Pāṭha: ashtadhyayi.com data.txt row i=31049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA DewSvyoH",
     text_dev              = "विभाषा धेट्श्व्योः",
+    samagra_slp1          = "Dew-SvyoH cleH caN viBAzA",
+    samagra_dev           = "धेट्-श्व्योः च्लेः चङ् विभाषा",
     padaccheda_dev        = "विभाषा धेट्-श्व्योः",
     why_dev               = "धातोः [विभाषा धेट्श्व्योः]-प्रत्ययः विहितः (३.१.49)।",
     anuvritti_from        = ('3.1.1',),

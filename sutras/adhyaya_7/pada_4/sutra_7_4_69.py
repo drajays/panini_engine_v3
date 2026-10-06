@@ -4,6 +4,7 @@
 Padaccheda: दीर्घः इणः किति
 
 दीर्घ इणः किति (7.4.69)
+Pāṭha: ashtadhyayi.com data.txt row i=74069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dIrGa iRaH kiti",
     text_dev              = "दीर्घ इणः किति",
+    samagra_slp1          = "aNgasya aByAsasya dIrGaH iRaH kiti liwi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य दीर्घः इणः किति लिटि",
     padaccheda_dev        = "दीर्घः इणः किति",
     why_dev               = "(सूत्रम् 7.4.69) दीर्घ इणः किति।",
     anuvritti_from        = ('7.1.1',),

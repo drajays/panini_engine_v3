@@ -4,6 +4,7 @@
 Padaccheda: पद-अस्वैरि-बाह्या-पक्ष्येषु च
 
 Krt suffix rule from dhatu: पदास्वैरिबाह्यापक्ष्येषु च (119)
+Pāṭha: ashtadhyayi.com data.txt row i=31119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "padAsvEribAhyApakzyezu ca",
     text_dev              = "पदास्वैरिबाह्यापक्ष्येषु च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH pada-asvEri-bAhyA-pakzyezu ca kft kyap graheH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः पद-अस्वैरि-बाह्या-पक्ष्येषु च कृत् क्यप् ग्रहेः",
     padaccheda_dev        = "पद-अस्वैरि-बाह्या-पक्ष्येषु च",
     why_dev               = "धातोः [पदास्वैरिबाह्यापक्ष्येषु च]-प्रत्ययः विहितः (३.१.119)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

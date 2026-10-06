@@ -17,6 +17,7 @@ Engine:
   - vibhasha_default=True → the optional seṭ is applied by default (engine
     handles paksha branching at a higher level).
   - r1_form_identity_exempt=True: no surface string changes at this step.
+Pāṭha: ashtadhyayi.com data.txt row i=12023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -65,6 +66,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nopaDAtTaPAntAdvA',
     text_dev              = 'नोपधात्थफान्ताद्वा',
+    samagra_slp1          = "na-upaDAt Ta-Pa-antAt vA kit na sew ktvA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "न-उपधात् थ-फ-अन्तात् वा कित् न सेट् क्त्वा",
     padaccheda_dev        = "न / उपधात् / थ-फ-अन्तात् / वा",
     why_dev               = ("थ-फ-अन्त-धातोः विभाषा सेट् भवति — "
                              "विकल्पेन इडागमो भवति (वा इत्यनेन)।"),

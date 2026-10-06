@@ -4,6 +4,7 @@
 Padaccheda: स्वागत-आदीनाम् च
 
 स्वागतादीनां च (7.3.7)
+Pāṭha: ashtadhyayi.com data.txt row i=73007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "svAgatAdInAM ca",
     text_dev              = "स्वागतादीनां च",
+    samagra_slp1          = "aNgasya svAgatAdInAm ca vfdDiH acaH YRiti tadDitezu AdeH na Ec",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य स्वागतादीनाम् च वृद्धिः अचः ञ्णिति तद्धितेषु आदेः न ऐच्",
     padaccheda_dev        = "स्वागत-आदीनाम् च",
     why_dev               = "(सूत्रम् 7.3.7) स्वागतादीनां च।",
     anuvritti_from        = ('7.1.1',),

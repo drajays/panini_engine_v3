@@ -69,6 +69,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="merniH",
     text_dev="मेर्निः",
+    samagra_slp1="lowaH lasya meH niH",
+    samagra_dev="लोटः लस्य मेः निः",
     padaccheda_dev="मेः / निः",
     why_dev=(
         "लोटि उत्तम-एकवचन-तिङ् मि-स्थाने नि-आदेशः; "

@@ -4,6 +4,7 @@
 Padaccheda: क्यात् छन्दसि
 
 krt-suffix rule: क्याच्छन्दसि (170)
+Pāṭha: ashtadhyayi.com data.txt row i=32170 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kyAcCandasi",
     text_dev              = "क्याच्छन्दसि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu kyAt Candasi kft uH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु क्यात् छन्दसि कृत् उः",
     padaccheda_dev        = "क्यात् छन्दसि",
     why_dev               = "धातोः कृत्-प्रत्ययः [क्याच्छन्दसि] विहितः (३.२.170)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

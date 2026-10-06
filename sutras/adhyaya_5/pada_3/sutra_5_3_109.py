@@ -4,6 +4,7 @@
 Padaccheda: एकशालायाः ठच् अन्यतरस्याम्
 
 एकशालायाष्ठजन्यतरस्याम् (5.3.109)
+Pāṭha: ashtadhyayi.com data.txt row i=53109 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ekaSAlAyAzWajanyatarasyAm",
     text_dev              = "एकशालायाष्ठजन्यतरस्याम्",
+    samagra_slp1          = "ekaSAlAyAH ive Wac anyatarasyAm Wak",
+    samagra_dev           = "एकशालायाः इवे ठच्, अन्यतरस्याम् ठक्",
     padaccheda_dev        = "एकशालायाः ठच् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 5.3.109) एकशालायाष्ठजन्यतरस्याम्।",
     anuvritti_from        = ('4.1.76',),

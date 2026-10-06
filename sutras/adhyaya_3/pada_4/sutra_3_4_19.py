@@ -4,6 +4,7 @@
 Padaccheda: उदीचाम् माङः व्यतीहारे
 
 krt-suffix rule: उदीचां माङो व्यतीहारे
+Pāṭha: ashtadhyayi.com data.txt row i=34019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "udIcAM mANo vyatIhAre",
     text_dev              = "उदीचां माङो व्यतीहारे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH udIcAm mANaH vyatIhAre kft ktvA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः उदीचाम् माङः व्यतीहारे कृत् क्त्वा",
     padaccheda_dev        = "उदीचाम् माङः व्यतीहारे",
     why_dev               = "धातोः प्रत्ययः (३.4.19)।",
     anuvritti_from        = ('3.1.1',),

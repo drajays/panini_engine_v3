@@ -21,3 +21,7 @@ Enforcement is by tests/CI, not by this file. If a gate blocks you, fix your cha
 - Reviewers are read-only and a different agent from the author.
 
 Hook setup once per clone: `make hooks`.
+
+Reference brain (read-only, never a `cond()` input): `~/data-master/ashtadhyayi-ai/AI_AGENT_GUIDE.md`.
+Before writing a sūtra: `knowledge_api.py dossier <id>` (rule, examples ±, prakriyā, partners, conflicts) and
+`scaffold <id>` (metadata + Art. 14 citations; cond/act left to you). Vidyut there is a floor, never a template.

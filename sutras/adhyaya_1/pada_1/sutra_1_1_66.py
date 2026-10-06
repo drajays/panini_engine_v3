@@ -7,6 +7,7 @@ understood on the **preceding** (*pūrva*) element — contrast **1.1.67**
 
 Engine: installs ``paribhasha_gates['1.1.66_tasminniti_nirdiste_purvasya']`` when
 ``state.meta['paribhasha_recipe']`` is set (recipe-scoped demo).
+Pāṭha: ashtadhyayi.com data.txt row i=11066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.PARIBHASHA,
     text_slp1='tasminniti nirdizwe pUrvasya',
     text_dev='तस्मिन्निति निर्दिष्टे पूर्वस्य',
+    samagra_slp1="tasmin iti nirdizwe pUrvasya",
+    samagra_dev="'तस्मिन्' इति निर्दिष्टे पूर्वस्य",
     padaccheda_dev="तस्मिनि / इति / निर्दिष्टे / पूर्वस्य",
     why_dev="परिभाषा-गेट: सप्तमी-निर्देशे पूर्व-ग्रहणम् (१.१.६६) — P044।",
     anuvritti_from=(),

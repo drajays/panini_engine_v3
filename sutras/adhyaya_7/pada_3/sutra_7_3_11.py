@@ -4,6 +4,7 @@
 Padaccheda: अवयवात् ऋतोः
 
 अवयवादृतोः (7.3.11)
+Pāṭha: ashtadhyayi.com data.txt row i=73011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avayavAdftoH",
     text_dev              = "अवयवादृतोः",
+    samagra_slp1          = "aNgasya uttarapadasya avayavAt ftoH vfdDiH acaH YRiti tadDitezu AdeH SvAdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य अवयवात् ऋतोः वृद्धिः अचः ञ्णिति तद्धितेषु आदेः श्वादेः",
     padaccheda_dev        = "अवयवात् ऋतोः",
     why_dev               = "(सूत्रम् 7.3.11) अवयवादृतोः।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: इकः सुञि
 
 इकः सुञि (6.3.134)
+Pāṭha: ashtadhyayi.com data.txt row i=63134 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ikaH suYi",
     text_dev              = "इकः सुञि",
+    samagra_slp1          = "uttarapade saMhitAyAm ikaH suYi dIrGaH fci",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् इकः सुञि दीर्घः ऋचि",
     padaccheda_dev        = "इकः सुञि",
     why_dev               = "(सूत्रम् 6.3.134) इकः सुञि।",
     anuvritti_from        = ('6.1.1',),

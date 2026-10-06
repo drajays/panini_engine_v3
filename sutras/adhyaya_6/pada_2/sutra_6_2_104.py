@@ -4,6 +4,7 @@
 Padaccheda: आचार्योपसर्जनः (सुपां स्थाने सुर्भवतीति --७.१.३९ ; सप्तम्येकवचनस्य स्थाने प्रथमैकवचनम्) च अन्तेवासिनि
 
 आचार्योपसर्जनश्चान्तेवासिनि (6.2.104)
+Pāṭha: ashtadhyayi.com data.txt row i=62104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AcAryopasarjanaScAntevAsini",
     text_dev              = "आचार्योपसर्जनश्चान्तेवासिनि",
+    samagra_slp1          = "udAttaH antaH AcAryopasarjanaH ca antevAsini pUrvapadam dikSabdAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः आचार्योपसर्जनः च अन्तेवासिनि पूर्वपदम् दिक्शब्दाः",
     padaccheda_dev        = "आचार्योपसर्जनः (सुपां स्थाने सुर्भवतीति --७.१.३९ ; सप्तम्येकवचनस्य स्थाने प्रथमैकवचनम्) च अन्तेवासिनि",
     why_dev               = "(सूत्रम् 6.2.104) आचार्योपसर्जनश्चान्तेवासिनि।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: गुणः अर्ति-संयोग-आद्योः
 
 गुणोऽर्तिसंयोगाद्योः (7.4.29)
+Pāṭha: ashtadhyayi.com data.txt row i=74029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -50,6 +51,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'guRortisaMyogAdyoH',
     text_dev              = 'गुणोऽर्तिसंयोगाद्योः',
+    samagra_slp1          = "aNgasya guRaH artisaMyogAdyoH yi akftsArvaDAtukayoH ftaH SayagliNkzu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य गुणः अर्तिसंयोगाद्योः यि अकृत्सार्वधातुकयोः ऋतः शयग्लिङ्क्षु",
     padaccheda_dev        = "गुणः अर्ति-संयोग-आद्योः",
     why_dev               = "ऋ-धातोः संयोगादेः ऋदन्तस्य च यकि आशीर्लिङि च गुणः (स्मर्यते, अर्यते) — रिङोऽपवादः।",
     anuvritti_from        = ('7.1.1',),

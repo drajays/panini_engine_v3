@@ -20,6 +20,7 @@ whose upadesha_slp1 is in _VAD_ROOTS and which carries the tag "BAsana_usage"
 (the umbrella tag for all six senses listed).
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -70,6 +71,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='BAsanopasamBAzAjYAnayatnavimatyupamantraRezu vadaH',
     text_dev='भासनोपसम्भाषाज्ञानयत्नविमत्युपमन्त्रणेषु वदः',
+    samagra_slp1="BAsana-upasamBAzA-jYAna-yatna-vimati-upamantraRezu vadaH Atmanepadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="भासन-उपसम्भाषा-ज्ञान-यत्न-विमति-उपमन्त्रणेषु वदः आत्मनेपदम्",
     padaccheda_dev=(
         "भासन-उपसम्भाषा-ज्ञान-यत्न-विमति-उपमन्त्रणेषु (सप्तमी-बहुवचन) / "
         "वदः (षष्ठी-एकवचन)"

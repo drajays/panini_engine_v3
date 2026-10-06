@@ -2,6 +2,7 @@
 7.3.75  ष्ठिवुक्लमुचमां शिति  —  VIDHI
 
 ष्ठिव्, क्लम् and आङ्+चम् lengthen their vowel before a śit: ष्ठीवति, क्लामति, आचामति.
+Pāṭha: ashtadhyayi.com data.txt row i=73075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -46,6 +47,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='zWivuklamucamAM Siti',
     text_dev='ष्ठिवुक्लमुचमां शिति',
+    samagra_slp1="aNgasya zWivu-klamu-camAm Siti dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अङ्गस्य ष्ठिवु-क्लमु-चमाम् शिति दीर्घः",
     padaccheda_dev="ष्ठिवु-क्लमि-आचमाम् शिति",
     why_dev="ष्ठिव्-क्लम्-आङ्पूर्वचम्-धातूनाम् अचः दीर्घः शिति परे (ष्ठीवति, क्लामति, आचामति)।",
     anuvritti_from=("7.3.73",),

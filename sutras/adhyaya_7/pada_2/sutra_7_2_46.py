@@ -4,6 +4,7 @@
 Padaccheda: निरः कुषः
 
 निरः कुषः (7.2.46)
+Pāṭha: ashtadhyayi.com data.txt row i=72046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "niraH kuzaH",
     text_dev              = "निरः कुषः",
+    samagra_slp1          = "aNgasya niraH kuzaH ArDaDAtukasya iw valAdeH vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य निरः कुषः आर्धधातुकस्य इट् वलादेः वा",
     padaccheda_dev        = "निरः कुषः",
     why_dev               = "(सूत्रम् 7.2.46) निरः कुषः।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: स्नेहने पिषः
 
 krt-suffix rule: स्नेहने पिषः
+Pāṭha: ashtadhyayi.com data.txt row i=34038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "snehane pizaH",
     text_dev              = "स्नेहने पिषः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH snehane pizaH kft Ramul karaRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः स्नेहने पिषः कृत् णमुल् करणे",
     padaccheda_dev        = "स्नेहने पिषः",
     why_dev               = "धातोः प्रत्ययः (३.4.38)।",
     anuvritti_from        = ('3.1.1',),

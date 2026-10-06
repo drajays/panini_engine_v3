@@ -4,6 +4,7 @@
 Padaccheda: विभाषा सुपः बहुच् पुरस्तात् तु
 
 विभाषा सुपो बहुच् पुरस्तात्तु (5.3.68)
+Pāṭha: ashtadhyayi.com data.txt row i=53068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA supo bahuc purastAttu",
     text_dev              = "विभाषा सुपो बहुच् पुरस्तात्तु",
+    samagra_slp1          = "Izad-asamAptO supaH purastAt viBAzA bahuc kalpap-deSya-deSIyaraH",
+    samagra_dev           = "ईषद्-असमाप्तौ सुपः पुरस्तात् विभाषा बहुच्, कल्पप्-देश्य-देशीयरः",
     padaccheda_dev        = "विभाषा सुपः बहुच् पुरस्तात् तु",
     why_dev               = "(सूत्रम् 5.3.68) विभाषा सुपो बहुच् पुरस्तात्तु।",
     anuvritti_from        = ('4.1.76',),

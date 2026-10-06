@@ -17,6 +17,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'tizyapunarvasvornakzatradvandve bahuvacanasya dvivacanaM nityam',
     text_dev                = 'तिष्यपुनर्वस्वोर्नक्षत्रद्वन्द्वे बहुवचनस्य द्विवचनं नित्यम्',
+    samagra_slp1            = "tizya-punarvasvoH nakzatra-dvandve bahuvacanasya dvivacanam nityam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "तिष्य-पुनर्वस्वोः नक्षत्र-द्वन्द्वे बहुवचनस्य द्विवचनम् नित्यम्",
     padaccheda_dev          = "तिष्यपुनर्वस्वोः / नक्षत्रद्वन्द्वे / बहुवचनस्य / द्विवचनम् / नित्यम्",
     why_dev                 = (
         "तिष्य-पुनर्वसु-नक्षत्रयोः द्वन्द्वे बहुवचनस्य स्थाने द्विवचनं नित्यं भवति — "

@@ -4,6 +4,7 @@
 Padaccheda: पौरोडाश-पुरोडाशात् ष्ठन्
 
 पौरोडाशपुरोडाशात् ष्ठन् (4.3.70)
+Pāṭha: ashtadhyayi.com data.txt row i=43070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pOroqASapuroqASAt zWan",
     text_dev              = "पौरोडाशपुरोडाशात् ष्ठन्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA pOroqASa-puroqASAt zWan tatra BavaH tasya vyAKyAne vyAKyAtavya-nAmnaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा पौरोडाश-पुरोडाशात् ष्ठन् तत्र भवः तस्य व्याख्याने व्याख्यातव्य-नाम्नः",
     padaccheda_dev        = "पौरोडाश-पुरोडाशात् ष्ठन्",
     why_dev               = "(सूत्रम् 4.3.70) पौरोडाशपुरोडाशात् ष्ठन्।",
     anuvritti_from        = ('4.1.1',),

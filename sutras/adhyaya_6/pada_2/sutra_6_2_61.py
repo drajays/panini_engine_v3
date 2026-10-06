@@ -4,6 +4,7 @@
 Padaccheda: क्ते नित्य-अर्थे
 
 क्ते नित्यार्थे (6.2.61)
+Pāṭha: ashtadhyayi.com data.txt row i=62061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kte nityArTe",
     text_dev              = "क्ते नित्यार्थे",
+    samagra_slp1          = "kte nityArTe prakftyA pUrvapadam anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "क्ते नित्यार्थे प्रकृत्या पूर्वपदम् अन्यतरस्याम्",
     padaccheda_dev        = "क्ते नित्य-अर्थे",
     why_dev               = "(सूत्रम् 6.2.61) क्ते नित्यार्थे।",
     anuvritti_from        = ('6.1.1',),

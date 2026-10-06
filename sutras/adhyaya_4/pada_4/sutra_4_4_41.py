@@ -4,6 +4,7 @@
 Padaccheda: धर्मम् चरति (क्रियापदम्)
 
 धर्मं चरति (4.4.41)
+Pāṭha: ashtadhyayi.com data.txt row i=44041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DarmaM carati",
     text_dev              = "धर्मं चरति",
+    samagra_slp1          = "tat Darmam carati iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् धर्मम् चरति' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "धर्मम् चरति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.41) धर्मं चरति।",
     anuvritti_from        = ('4.1.1',),

@@ -7,6 +7,7 @@ In bhāvakarmaṇa context, before tāsi (luṭ vikaraṇa), optionally insert i
 
 Engine: recipe arms via state.meta["6_4_62_arm"]. Finds the tāsi vikaraṇa term
 (tagged tAsi_vikaraṇa) and inserts iṭ before it, marking it as ciṇvat.
+Pāṭha: ashtadhyayi.com data.txt row i=64062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'syasicsIyuwtAsizu BAvakarmaRorupadeSejJanagrahadfSAM vA ciRvadiw ca',
     text_dev              = 'स्यसिच्सीयुट्तासिषु भावकर्मणोरुपदेशेऽज्झनग्रहदृशां वा चिण्वदिट् च',
+    samagra_slp1          = "aNgasya asidDavadatrABAt ArDaDAtuke sya-sic-sIyuw-tAsizu BAvakarmmaRoH upadeSe ac-hana-graha-dfSAm vA ciRvat iw ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् आर्धधातुके स्य-सिच्-सीयुट्-तासिषु भावकर्म्मणोः उपदेशे अच्-हन-ग्रह-दृशाम् वा चिण्वत् इट् च",
     padaccheda_dev        = "स्य-सिच्-सीयुट्‍-तासिषु भाव-कर्म्मणोः उपदेशे अच्-हन-ग्रह-दृशाम् वा चिण्-वत् इट् च",
     why_dev               = "(सूत्रम् 6.4.62) स्यसिच्सीयुट्तासिषु भावकर्मणोरुपदेशेऽज्झनग्रहदृशां वा चिण्वदिट् च।",
     anuvritti_from        = ('6.1.1',),

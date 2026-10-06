@@ -4,6 +4,7 @@
 Padaccheda: क्षायः मः
 
 क्षायो मः (8.2.53)
+Pāṭha: ashtadhyayi.com data.txt row i=82053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kzAyo maH",
     text_dev              = "क्षायो मः",
+    samagra_slp1          = "padasya pUrvatrAsidDam kzAyaH maH nizWAtaH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् क्षायः मः निष्ठातः नः",
     padaccheda_dev        = "क्षायः मः",
     why_dev               = "(सूत्रम् 8.2.53) क्षायो मः।",
     anuvritti_from        = ('8.1.1',),

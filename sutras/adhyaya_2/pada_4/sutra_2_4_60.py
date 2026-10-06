@@ -4,6 +4,7 @@
 Padaccheda: इञः प्राचाम्
 
 inja suffix in eastern dialect context.
+Pāṭha: ashtadhyayi.com data.txt row i=24060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "iYaH prAcAm",
     text_dev              = "इञः प्राचाम्",
+    samagra_slp1          = "iYaH prAcAm yUni luk",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "इञः प्राचाम् यूनि लुक्",
     padaccheda_dev        = "इञः प्राचाम्",
     why_dev               = "इञः प्राचाम् (२.४.६०)।",
     anuvritti_from        = ('2.4.58',),

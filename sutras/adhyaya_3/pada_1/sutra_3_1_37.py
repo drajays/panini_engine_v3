@@ -4,6 +4,7 @@
 Padaccheda: दय-अय-आसः च
 
 Krt suffix rule from dhatu: दयायासश्च (37)
+Pāṭha: ashtadhyayi.com data.txt row i=31037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dayAyAsaSca",
     text_dev              = "दयायासश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH dayAyAsaH ca liwi Am",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः दयायासः च लिटि आम्",
     padaccheda_dev        = "दय-अय-आसः च",
     why_dev               = "धातोः [दयायासश्च]-प्रत्ययः विहितः (३.१.37)।",
     anuvritti_from        = ('3.1.1',),

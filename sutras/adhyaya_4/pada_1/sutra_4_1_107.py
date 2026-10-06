@@ -4,6 +4,7 @@
 Padaccheda: कपि-बोधात् आङ्गिरसे
 
 कपिबोधादाङ्गिरसे (4.1.107)
+Pāṭha: ashtadhyayi.com data.txt row i=41107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kapiboDAdANgirase",
     text_dev              = "कपिबोधादाङ्गिरसे",
+    samagra_slp1          = "tasya gotre apatyam iti kapiboDAt ANgirase yaY",
+    samagra_dev           = "'तस्य गोत्रे अपत्यम्' (इति) कपिबोधात् आङ्गिरसे यञ्",
     padaccheda_dev        = "कपि-बोधात् आङ्गिरसे",
     why_dev               = "(सूत्रम् 4.1.107) कपिबोधादाङ्गिरसे।",
     anuvritti_from        = ('4.1.1',),

@@ -12,6 +12,7 @@ Citation (CONSTITUTION Art. 14)
 
 Engine: *yukta* = the very next pada on the tape is one of the five named particles (lexical identity
 of the Term, as 7.2.94 reads "asmad"). A particle that precedes the pronoun belongs to the previous word.
+Pāṭha: ashtadhyayi.com data.txt row i=81024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -41,6 +42,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.PRATISHEDHA,
     text_slp1="na cavAhAhEvayukte",
     text_dev="न चवाहाहैवयुक्ते",
+    samagra_slp1="padasya padAt anudAttaM sarvamApAdAdO na cavAhAhEvayukte yuzmadasmadoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="पदस्य पदात् अनुदात्तं सर्वमापादादौ न चवाहाहैवयुक्ते युष्मदस्मदोः",
     padaccheda_dev="न च-वा-ह-अह-एव-युक्ते",
     why_dev="च / वा / ह / अह / एव से साक्षात् युक्त युष्मद्-अस्मद् पद पर ८.१.२०–२३ के आदेश नहीं होते।",
     anuvritti_from=("8.1.17", "8.1.18", "8.1.20"),

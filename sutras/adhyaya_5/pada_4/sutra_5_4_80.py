@@ -4,6 +4,7 @@
 Padaccheda: श्वसः वसीयः-श्रेयसः
 
 श्वसो वसीयःश्रेयसः (5.4.80)
+Pāṭha: ashtadhyayi.com data.txt row i=54080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Svaso vasIyaHSreyasaH",
     text_dev              = "श्वसो वसीयःश्रेयसः",
+    samagra_slp1          = "SvasaH vasIyas-SreyasaH ac",
+    samagra_dev           = "श्वसः वसीयस्-श्रेयसः अच्",
     padaccheda_dev        = "श्वसः वसीयः-श्रेयसः",
     why_dev               = "(सूत्रम् 5.4.80) श्वसो वसीयःश्रेयसः।",
     anuvritti_from        = ('5.4.68',),

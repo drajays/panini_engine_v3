@@ -4,6 +4,7 @@
 Padaccheda: इस्-उस्-उक्-तान्तात् कः
 
 इसुसुक्तान्तात् कः (7.3.51)
+Pāṭha: ashtadhyayi.com data.txt row i=73051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "isusuktAntAt kaH",
     text_dev              = "इसुसुक्तान्तात् कः",
+    samagra_slp1          = "is-us-uk-t-antAt aNgAt Wasya kaH",
+    samagra_dev           = "इस्-उस्-उक्-त्-अन्तात् अङ्गात् ठस्य कः",
     padaccheda_dev        = "इस्-उस्-उक्-तान्तात् कः",
     why_dev               = "(सूत्रम् 7.3.51) इसुसुक्तान्तात् कः।",
     anuvritti_from        = ('7.1.1',),

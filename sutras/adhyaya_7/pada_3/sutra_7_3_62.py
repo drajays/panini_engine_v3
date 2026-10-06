@@ -4,6 +4,7 @@
 Padaccheda: प्रयाज-अनुयाजौ यज्ञाङ्गे
 
 प्रयाजानुयाजौ यज्ञाङ्गे (7.3.62)
+Pāṭha: ashtadhyayi.com data.txt row i=73062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prayAjAnuyAjO yajYANge",
     text_dev              = "प्रयाजानुयाजौ यज्ञाङ्गे",
+    samagra_slp1          = "aNgasya prayAjAnuyAjO yajYANge cajoH ku na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य प्रयाजानुयाजौ यज्ञाङ्गे चजोः कु न",
     padaccheda_dev        = "प्रयाज-अनुयाजौ यज्ञाङ्गे",
     why_dev               = "(सूत्रम् 7.3.62) प्रयाजानुयाजौ यज्ञाङ्गे।",
     anuvritti_from        = ('7.1.1',),

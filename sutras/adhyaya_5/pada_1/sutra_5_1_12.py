@@ -4,6 +4,7 @@
 Padaccheda: तदर्थम् विकृतेः प्रकृतौ
 
 तदर्थं विकृतेः प्रकृतौ (5.1.12)
+Pāṭha: ashtadhyayi.com data.txt row i=51012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadarTaM vikfteH prakftO",
     text_dev              = "तदर्थं विकृतेः प्रकृतौ",
+    samagra_slp1          = "tadarTaM prakftO iti vikfteH CaH",
+    samagra_dev           = "'तदर्थं प्रकृतौ' (इति) विकृतेः छः",
     padaccheda_dev        = "तदर्थम् विकृतेः प्रकृतौ",
     why_dev               = "(सूत्रम् 5.1.12) तदर्थं विकृतेः प्रकृतौ।",
     anuvritti_from        = ('5.1.1',),

@@ -10,6 +10,7 @@ definitional scope. E.g. *akṣair divyati* — akṣa (dice) is the means → k
 
 *Engine:* tags bearing ``"div_karma"`` get ``"karman"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'divaH karma ca',
     text_dev             = 'दिवः कर्म च',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake divaH karma ca sADakatamam karaRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके दिवः कर्म च साधकतमम् करणम्",
     padaccheda_dev       = "दिवः / कर्म / च",
     why_dev              = (
         "दिव्-धातोः (क्रीडार्थस्य) यत् क्रीडोपयोगि तत् कर्म-कारक-संज्ञकम्। "

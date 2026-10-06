@@ -11,6 +11,7 @@ This eliminates pipeline-side hardcoding of ``upasarga`` tags for prefixes like
 Blindness (CONSTITUTION Art. 2):
   - no semantic parsing; only adjacency/co-presence of a dhātu + known upadeśa
     prefix identities.
+Pāṭha: ashtadhyayi.com data.txt row i=14059 (Art. 14).
 """
 
 from __future__ import annotations
@@ -94,6 +95,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1="upasargAH kriyAyoge",
     text_dev="उपसर्गाः क्रियायोगे",
+    samagra_slp1="nipAtAH prAdayaH kriyAyAge upasargAH",
+    samagra_dev="निपाताः प्रादयः क्रियायाेगे उपसर्गाः",
     padaccheda_dev="उपसर्गाः / क्रियायोगे",
     why_dev="क्रियायोगे उपसर्ग-संज्ञा (आङ्/प्र/परि/नि इत्यादयः) — पाइपलाइन-टैग-हैक् वर्जनीयः।",
     anuvritti_from=(),

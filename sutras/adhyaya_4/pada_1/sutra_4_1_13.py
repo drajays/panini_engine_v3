@@ -4,6 +4,7 @@
 Padaccheda: डाप् उभाभ्याम् अन्यतरस्याम्
 
 डाबुभाभ्यामन्यतरस्याम् (4.1.13)
+Pāṭha: ashtadhyayi.com data.txt row i=41013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "qAbuBAByAmanyatarasyAm",
     text_dev              = "डाबुभाभ्यामन्यतरस्याम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm qAp uBAByAm anyatarasyAm NIp manaH anaH bahuvrIheH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् डाप् उभाभ्याम् अन्यतरस्याम् ङीप् मनः अनः बहुव्रीहेः",
     padaccheda_dev        = "डाप् उभाभ्याम् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 4.1.13) डाबुभाभ्यामन्यतरस्याम्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: र-उपधा-इतोः प्राचाम्
 
 रोपधेतोः प्राचाम् (4.2.123)
+Pāṭha: ashtadhyayi.com data.txt row i=42123 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ropaDetoH prAcAm",
     text_dev              = "रोपधेतोः प्राचाम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA ra-upaDA-itoH prAcAm vfdDAt vuY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा र-उपधा-इतोः प्राचाम् वृद्धात् वुञ्",
     padaccheda_dev        = "र-उपधा-इतोः प्राचाम्",
     why_dev               = "(सूत्रम् 4.2.123) रोपधेतोः प्राचाम्।",
     anuvritti_from        = ('4.1.1',),

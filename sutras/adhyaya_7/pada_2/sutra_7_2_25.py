@@ -4,6 +4,7 @@
 Padaccheda: अभेः च आविदूर्ये
 
 अभेश्चाविदूर्ये (7.2.25)
+Pāṭha: ashtadhyayi.com data.txt row i=72025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aBeScAvidUrye",
     text_dev              = "अभेश्चाविदूर्ये",
+    samagra_slp1          = "aNgasya aBeH ca AvidUrye na iw nizWAyAm ardeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभेः च आविदूर्ये न इट् निष्ठायाम् अर्देः",
     padaccheda_dev        = "अभेः च आविदूर्ये",
     why_dev               = "(सूत्रम् 7.2.25) अभेश्चाविदूर्ये।",
     anuvritti_from        = ('7.1.1',),

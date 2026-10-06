@@ -7,6 +7,7 @@ non-feminine nominal — do NOT receive the *nadī* saṃjñā from 1.4.3.
 v3: removes the *nadi* tag from any Term that already has it but is either
 tagged *iyaN_sub*, *uvaN_sub*, or lacks *stri*, and records a done-marker
 in ``term.meta`` to prevent re-firing.
+Pāṭha: ashtadhyayi.com data.txt row i=14004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -46,6 +47,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.NIYAMA,
     text_slp1              = 'neyaNuvaNsTAnAvastrI',
     text_dev               = 'नेयङुवङ्स्थानावस्त्री',
+    samagra_slp1           = "iyaN-uvaNasTAnO yU nadI na  astrI ",
+    samagra_dev            = "इयङ्-उवङस्थानौ यू नदी न , अस्त्री ।",
     padaccheda_dev         = "न / इयङ्-उवङ्-स्थानौ / अस्त्री",
     why_dev                = "इयङ्-उवङ्-स्थानभूतस्य अथवा स्त्री-भिन्नस्य नदीसंज्ञा न।",
     apavada_of     = ("1.4.3",),   # अपवाद of 1.4.3 — sutra_ref_out resolver.apavada_of

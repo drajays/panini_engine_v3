@@ -4,6 +4,7 @@
 Padaccheda: लुप् मनुष्ये
 
 लुम्मनुष्ये (5.3.98)
+Pāṭha: ashtadhyayi.com data.txt row i=53098 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lummanuzye",
     text_dev              = "लुम्मनुष्ये",
+    samagra_slp1          = "ive manuzye saMjYAyAm kanaH lup",
+    samagra_dev           = "इवे मनुष्ये संज्ञायाम् कनः लुप्",
     padaccheda_dev        = "लुप् मनुष्ये",
     why_dev               = "(सूत्रम् 5.3.98) लुम्मनुष्ये।",
     anuvritti_from        = ('4.1.76',),

@@ -7,6 +7,7 @@
 v3: sets the gate ``1_4_21_bahu_bahuvacana`` in ``state.paribhasha_gates``
 to signal that the bahuvacana–plural correspondence paribhāṣā is operative.
 This is a general niyama anchoring the three-vacana system.
+Pāṭha: ashtadhyayi.com data.txt row i=14021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -30,6 +31,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.NIYAMA,
     text_slp1              = 'bahuzu bahuvacanam',
     text_dev               = 'बहुषु बहुवचनम्',
+    samagra_slp1           = "bahuzu bahuvacanam",
+    samagra_dev            = "बहुषु बहुवचनम्",
     padaccheda_dev         = "बहुषु / बहुवचनम्",
     why_dev                = "बहुषु (त्रयेषु वा अधिकेषु) बहुवचनं प्रयुज्यते।",
     anuvritti_from         = ("1.4.1",),

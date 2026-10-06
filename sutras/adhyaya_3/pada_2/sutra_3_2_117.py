@@ -4,6 +4,7 @@
 Padaccheda: प्रश्ने च आसन्नकाले
 
 krt-suffix rule: प्रश्ने चासन्नकाले (117)
+Pāṭha: ashtadhyayi.com data.txt row i=32117 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "praSne cAsannakAle",
     text_dev              = "प्रश्ने चासन्नकाले",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte praSne ca AsannakAle kft anadyatane liw parokze laN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते प्रश्ने च आसन्नकाले कृत् अनद्यतने लिट् परोक्षे लङ्",
     padaccheda_dev        = "प्रश्ने च आसन्नकाले",
     why_dev               = "धातोः कृत्-प्रत्ययः [प्रश्ने चासन्नकाले] विहितः (३.२.117)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

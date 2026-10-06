@@ -4,6 +4,7 @@
 Padaccheda: सः सि आर्द्धधातुके
 
 सः स्यार्द्धधातुके (7.4.49)
+Pāṭha: ashtadhyayi.com data.txt row i=74049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saH syArdDaDAtuke",
     text_dev              = "सः स्यार्द्धधातुके",
+    samagra_slp1          = "saH aNgasya ArDaDAtuke si taH",
+    samagra_dev           = "सः अङ्गस्य आर्धधातुके सि तः",
     padaccheda_dev        = "सः सि आर्द्धधातुके",
     why_dev               = "(सूत्रम् 7.4.49) सः स्यार्द्धधातुके।",
     anuvritti_from        = ('7.1.1',),

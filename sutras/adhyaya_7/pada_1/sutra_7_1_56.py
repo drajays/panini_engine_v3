@@ -4,6 +4,7 @@
 Padaccheda: श्री-ग्रामण्योः छन्दसि
 
 श्रीग्रामण्योश्छन्दसि (7.1.56)
+Pāṭha: ashtadhyayi.com data.txt row i=71056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SrIgrAmaRyoSCandasi",
     text_dev              = "श्रीग्रामण्योश्छन्दसि",
+    samagra_slp1          = "aNgasya SrI-grAmaRyoH Candasi Ami nuw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य श्री-ग्रामण्योः छन्दसि आमि नुट्",
     padaccheda_dev        = "श्री-ग्रामण्योः छन्दसि",
     why_dev               = "(सूत्रम् 7.1.56) श्रीग्रामण्योश्छन्दसि।",
     anuvritti_from        = ('7.1.1',),

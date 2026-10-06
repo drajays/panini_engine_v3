@@ -4,6 +4,7 @@
 Padaccheda: वर्णात् अनुदात्तात् त-उपधात् तः नः
 
 वर्णादनुदात्तात्तोपधात्तो नः (4.1.39)
+Pāṭha: ashtadhyayi.com data.txt row i=41039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "varRAdanudAttAttopaDAtto naH",
     text_dev              = "वर्णादनुदात्तात्तोपधात्तो नः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt varRAt anudAttAt ta-upaDAt taH naH vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् वर्णात् अनुदात्तात् त-उपधात् तः नः वा",
     padaccheda_dev        = "वर्णात् अनुदात्तात् त-उपधात् तः नः",
     why_dev               = "(सूत्रम् 4.1.39) वर्णादनुदात्तात्तोपधात्तो नः।",
     anuvritti_from        = ('4.1.1',),

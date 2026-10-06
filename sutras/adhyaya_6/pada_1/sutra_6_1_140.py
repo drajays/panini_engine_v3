@@ -4,6 +4,7 @@
 Padaccheda: किरतौ लवने
 
 किरतौ लवने (6.1.140)
+Pāṭha: ashtadhyayi.com data.txt row i=61140 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kiratO lavane",
     text_dev              = "किरतौ लवने",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH kiratO lavane upAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः किरतौ लवने उपात्",
     padaccheda_dev        = "किरतौ लवने",
     why_dev               = "(सूत्रम् 6.1.140) किरतौ लवने।",
     anuvritti_from        = ('6.1.1',),

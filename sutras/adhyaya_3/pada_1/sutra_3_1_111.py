@@ -4,6 +4,7 @@
 Padaccheda: ई (लुप्तप्रथमान्तनिर्देशः) च खनः
 
 Krt suffix rule from dhatu: ई च खनः (111)
+Pāṭha: ashtadhyayi.com data.txt row i=31111 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "I ca KanaH",
     text_dev              = "ई च खनः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH I ca KanaH kft kyap",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः ई च खनः कृत् क्यप्",
     padaccheda_dev        = "ई (लुप्तप्रथमान्तनिर्देशः) च खनः",
     why_dev               = "धातोः [ई च खनः]-प्रत्ययः विहितः (३.१.111)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

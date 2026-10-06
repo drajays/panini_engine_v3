@@ -4,6 +4,7 @@
 Padaccheda: पृथु-आदिभ्यः इमनिच् वा
 
 पृथ्वादिभ्य इमनिज्वा (5.1.122)
+Pāṭha: ashtadhyayi.com data.txt row i=51122 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pfTvAdiBya imanijvA",
     text_dev              = "पृथ्वादिभ्य इमनिज्वा",
+    samagra_slp1          = "tasya BAvaH iti pfTvAdiByaH imanic vA",
+    samagra_dev           = "'तस्य भावः' (इति) पृथ्वादिभ्यः इमनिच् वा",
     padaccheda_dev        = "पृथु-आदिभ्यः इमनिच् वा",
     why_dev               = "(सूत्रम् 5.1.122) पृथ्वादिभ्य इमनिज्वा।",
     anuvritti_from        = ('5.1.120',),

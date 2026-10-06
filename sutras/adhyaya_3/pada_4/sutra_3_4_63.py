@@ -4,6 +4,7 @@
 Padaccheda: तूष्णीमि भुवः
 
 krt-suffix rule: तूष्णीमि भुवः
+Pāṭha: ashtadhyayi.com data.txt row i=34063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tUzRImi BuvaH",
     text_dev              = "तूष्णीमि भुवः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH tUzRImi BuvaH kft ktvA-RamulO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः तूष्णीमि भुवः कृत् क्त्वा-णमुलौ",
     padaccheda_dev        = "तूष्णीमि भुवः",
     why_dev               = "धातोः प्रत्ययः (३.4.63)।",
     anuvritti_from        = ('3.1.1',),

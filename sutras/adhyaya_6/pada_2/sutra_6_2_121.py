@@ -4,6 +4,7 @@
 Padaccheda: कूल-तीर-तूल-मूल-शाला-अक्ष-समम् अव्ययीभावे
 
 कूलतीरतूलमूलशालाऽक्षसममव्ययीभावे (6.2.121)
+Pāṭha: ashtadhyayi.com data.txt row i=62121 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'kUlatIratUlamUlaSAlAkzasamamavyayIBAve',
     text_dev              = 'कूलतीरतूलमूलशालाऽक्षसममव्ययीभावे',
+    samagra_slp1          = "udAttaH uttarapadAdiH kUla-tIra-tUla-mUla-SAlA-akza-samam avyayIBAve",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः कूल-तीर-तूल-मूल-शाला-अक्ष-समम् अव्ययीभावे",
     padaccheda_dev        = "कूल-तीर-तूल-मूल-शाला-अक्ष-समम् अव्ययीभावे",
     why_dev               = "(सूत्रम् 6.2.121) कूलतीरतूलमूलशालाऽक्षसममव्ययीभावे।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Within the *pratyaya* adhikāra (3.1.1–5.4.160), the property “first syllable
 *udātta*” governs *pratyaya* operations until **5.4.160** (traditional layout;
 ashtadhyayi-com type: प्रत्ययस्य आद्युदात्तत्वाधिकारः).
+Pāṭha: ashtadhyayi.com data.txt row i=31003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -29,6 +30,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.ADHIKARA,
     text_slp1      = 'AdyudAttaSca',
     text_dev       = 'आद्युदात्तश्च',
+    samagra_slp1   = "pratyayaH AdyudAttaSca",
+    samagra_dev    = "प्रत्ययः आद्युदात्तश्च",
     padaccheda_dev = "आद्युदात्तः च",
     why_dev        = "प्रत्ययस्य आद्युदात्तत्वम् — अधिकारः ३.१.३ तः ५.४.१६० पर्यन्तम्।",
     anuvritti_from = ("3.1.1", "3.1.2"),

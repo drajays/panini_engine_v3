@@ -4,6 +4,7 @@
 Padaccheda: षष्ठ-अष्टमाभ्याम् ञ (लुप्तप्रथमान्तनिर्देशः) च
 
 षष्ठाष्टमाभ्यां ञ च (5.3.50)
+Pāṭha: ashtadhyayi.com data.txt row i=53050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zazWAzwamAByAM Ya ca",
     text_dev              = "षष्ठाष्टमाभ्यां ञ च",
+    samagra_slp1          = "zazWa-azwamAByAm BAge acCandasi an YaH ca",
+    samagra_dev           = "षष्ठ-अष्टमाभ्याम् भागे अच्छन्दसि अन् ञः च",
     padaccheda_dev        = "षष्ठ-अष्टमाभ्याम् ञ (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 5.3.50) षष्ठाष्टमाभ्यां ञ च।",
     anuvritti_from        = ('4.1.76',),

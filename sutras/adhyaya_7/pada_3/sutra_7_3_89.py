@@ -4,6 +4,7 @@
 Padaccheda: उतः वृद्धिः लुकि हलि
 
 उतो वृद्धिर्लुकि हलि (7.3.89)
+Pāṭha: ashtadhyayi.com data.txt row i=73089 (Art. 14).
 """
 from __future__ import annotations
 from phonology import mk
@@ -57,6 +58,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "uto vfdDirluki hali",
     text_dev              = "उतो वृद्धिर्लुकि हलि",
+    samagra_slp1          = "aNgasya utaH vfdDiH luki hali piti sArvaDAtuke",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उतः वृद्धिः लुकि हलि पिति सार्वधातुके",
     padaccheda_dev        = "उतः वृद्धिः लुकि हलि",
     why_dev               = "(सूत्रम् 7.3.89) उतो वृद्धिर्लुकि हलि।",
     anuvritti_from        = ('7.1.1',),

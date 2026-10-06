@@ -4,6 +4,7 @@
 Padaccheda: जालम् आनायः
 
 krt-suffix rule: जालमानायः
+Pāṭha: ashtadhyayi.com data.txt row i=33124 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jAlamAnAyaH",
     text_dev              = "जालमानायः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH karaRADikaraRayoH jAlam AnAyaH kft karaRa-aDikaraRayoH ca puMsi GaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः करणाधिकरणयोः जालम् आनायः कृत् करण-अधिकरणयोः च पुंसि घञ्",
     padaccheda_dev        = "जालम् आनायः",
     why_dev               = "धातोः प्रत्ययः (३.3.124)।",
     anuvritti_from        = ('3.1.1',),

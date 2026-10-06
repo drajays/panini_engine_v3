@@ -13,6 +13,7 @@ Common:
   • Fires only in **Tripāḍī** (``state.tripadi_zone`` after **8.2.1**).
   • Registers the current flat surface under ``samjna_registry['ekadesa_udatta_8_2_5']``
     for audit (one application per derivation).
+Pāṭha: ashtadhyayi.com data.txt row i=82005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -46,6 +47,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = "ekAdeSa udAttenodAttaH",
     text_dev       = "एकादेश उदात्तेनोदात्तः",
+    samagra_slp1   = "padasya pUrvatrAsidDam ekAdeSaH udAttena udAttaH anudAttasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "पदस्य पूर्वत्रासिद्धम् एकादेशः उदात्तेन उदात्तः अनुदात्तस्य",
     padaccheda_dev = "एकादेशः उदात्तेन उदात्तः",
     why_dev        = "एकादेशस्य उदात्तत्वम् — वर्ण-पटे अनुदात्तादि नास्ति; संज्ञा-अङ्कनम्।",
     anuvritti_from = ("8.2.1",),

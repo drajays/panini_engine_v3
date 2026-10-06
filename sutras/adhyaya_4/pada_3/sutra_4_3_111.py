@@ -4,6 +4,7 @@
 Padaccheda: कर्मन्द-कृशाश्वात् इनिः
 
 कर्मन्दकृशाश्वादिनिः (4.3.111)
+Pāṭha: ashtadhyayi.com data.txt row i=43111 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karmandakfSASvAdiniH",
     text_dev              = "कर्मन्दकृशाश्वादिनिः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA karmanda-kfSASvAt iniH tena proktam Bikzu-nawasUtrayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा कर्मन्द-कृशाश्वात् इनिः तेन प्रोक्तम् भिक्षु-नटसूत्रयोः",
     padaccheda_dev        = "कर्मन्द-कृशाश्वात् इनिः",
     why_dev               = "(सूत्रम् 4.3.111) कर्मन्दकृशाश्वादिनिः।",
     anuvritti_from        = ('4.1.1',),

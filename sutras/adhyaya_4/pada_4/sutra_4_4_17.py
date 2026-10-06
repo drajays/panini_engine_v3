@@ -4,6 +4,7 @@
 Padaccheda: विभाषा विवध-वीवधात्
 
 विभाषा विवधवीवधात् (4.4.17)
+Pāṭha: ashtadhyayi.com data.txt row i=44017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA vivaDavIvaDAt",
     text_dev              = "विभाषा विवधवीवधात्",
+    samagra_slp1          = "tena harati iti vivaDa-vIvaDAt viBAzA zWan",
+    samagra_dev           = "'तेन हरति' इति विवध-वीवधात् विभाषा ष्ठन्",
     padaccheda_dev        = "विभाषा विवध-वीवधात्",
     why_dev               = "(सूत्रम् 4.4.17) विभाषा विवधवीवधात्।",
     anuvritti_from        = ('4.1.1',),

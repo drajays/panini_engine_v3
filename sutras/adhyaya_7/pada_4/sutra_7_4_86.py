@@ -4,6 +4,7 @@
 Padaccheda: जप-जभ-दह-दश-भञ्ज-पशाम् च
 
 जपजभदहदशभञ्जपशां च (7.4.86)
+Pāṭha: ashtadhyayi.com data.txt row i=74086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "japajaBadahadaSaBaYjapaSAM ca",
     text_dev              = "जपजभदहदशभञ्जपशां च",
+    samagra_slp1          = "aNgasya aByAsasya japajaBadahadaSaBaYjapaSAm ca yaNlukoH nuk",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य जपजभदहदशभञ्जपशाम् च यङ्लुकोः नुक्",
     padaccheda_dev        = "जप-जभ-दह-दश-भञ्ज-पशाम् च",
     why_dev               = "(सूत्रम् 7.4.86) जपजभदहदशभञ्जपशां च।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: सप्तम्याम् च उप-पीड-रुध-कर्षः (पञ्चम्यार्थे प्रथमा)
 
 krt-suffix rule: सप्तम्यां चोपपीडरुधकर्षः
+Pāṭha: ashtadhyayi.com data.txt row i=34049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saptamyAM copapIqaruDakarzaH",
     text_dev              = "सप्तम्यां चोपपीडरुधकर्षः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH saptamyAm ca upa-pIqa-ruDa-karzaH kft Ramul tftIyAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः सप्तम्याम् च उप-पीड-रुध-कर्षः कृत् णमुल् तृतीयायाम्",
     padaccheda_dev        = "सप्तम्याम् च उप-पीड-रुध-कर्षः (पञ्चम्यार्थे प्रथमा)",
     why_dev               = "धातोः प्रत्ययः (३.4.49)।",
     anuvritti_from        = ('3.1.1',),

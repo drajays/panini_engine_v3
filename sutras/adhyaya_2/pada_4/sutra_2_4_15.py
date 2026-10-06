@@ -4,6 +4,7 @@
 Padaccheda: अधिकरण-एतावत्त्वे च
 
 Also in adhikarana-etavattva context.
+Pāṭha: ashtadhyayi.com data.txt row i=24015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDikaraREtAvattve ca",
     text_dev              = "अधिकरणैतावत्त्वे च",
+    samagra_slp1          = "aDikaraRa-etAvattve ca ekavacanam dvandvaH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अधिकरण-एतावत्त्वे च एकवचनम् द्वन्द्वः न",
     padaccheda_dev        = "अधिकरण-एतावत्त्वे च",
     why_dev               = "अधिकरण-एतावत्त्वे च (२.४.१५)।",
     anuvritti_from        = ('2.4.1',),

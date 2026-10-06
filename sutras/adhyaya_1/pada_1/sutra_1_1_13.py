@@ -15,6 +15,7 @@ is *pragṛhya* before external *ac*, see ``SHE_PRAGHYA_TAG_ARM_META`` on ``Stat
 See also **1.1.14** (``sutra_1_1_14``) *nipāta ekājanāṅ*; **1.1.100** (``sutra_1_1_100``) *na mātrā samāse* ( *Kāśikā* ).
 
 CONSTITUTION Art. 2: *cond* inspects only *State* *markers* (no *vibhakti* / *vacana* in *cond*).
+Pāṭha: ashtadhyayi.com data.txt row i=11013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = "Se",
     text_dev       = "शे",
+    samagra_slp1   = "Se pragfhyam",
+    samagra_dev    = "शे प्रगृह्यम्",
     padaccheda_dev = "शे",
     why_dev        = _WHY,
     apavada_of     = ("1.1.11",),   # अपवाद of 1.1.11 — sutra_ref_out resolver.apavada_of

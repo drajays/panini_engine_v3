@@ -4,6 +4,7 @@
 Padaccheda: विभाषा चिण्-णमुँल्ोः
 
 विभाषा चिण्णमुलोः (7.1.69)
+Pāṭha: ashtadhyayi.com data.txt row i=71069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA ciRRamuloH",
     text_dev              = "विभाषा चिण्णमुलोः",
+    samagra_slp1          = "aNgasya viBAzA cit-RamuloH num laBeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य विभाषा चित्-णमुलोः नुम् लभेः",
     padaccheda_dev        = "विभाषा चिण्-णमुँल्ोः",
     why_dev               = "(सूत्रम् 7.1.69) विभाषा चिण्णमुलोः।",
     anuvritti_from        = ('7.1.1',),

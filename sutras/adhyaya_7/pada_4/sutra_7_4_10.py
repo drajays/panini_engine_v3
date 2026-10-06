@@ -4,6 +4,7 @@
 Padaccheda: ऋतः च संयोग-आदेः गुणः
 
 ऋतश्च संयोगादेर्गुणः (7.4.10)
+Pāṭha: ashtadhyayi.com data.txt row i=74010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -50,6 +51,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "ftaSca saMyogAderguRaH",
     text_dev              = "ऋतश्च संयोगादेर्गुणः",
+    samagra_slp1          = "aNgasya ftaH ca saMyogAdeH guRaH liwi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ऋतः च संयोगादेः गुणः लिटि",
     padaccheda_dev        = "ऋतः च संयोग-आदेः गुणः",
     why_dev               = "संयोगादेः ऋदन्तस्य लिटि गुणः (सस्मरे, सस्मरतुः)।",
     anuvritti_from        = ('7.1.1',),

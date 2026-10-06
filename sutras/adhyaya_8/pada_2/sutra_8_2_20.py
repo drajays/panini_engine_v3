@@ -4,6 +4,7 @@
 Padaccheda: ग्रः यङि
 
 ग्रो यङि (8.2.20)
+Pāṭha: ashtadhyayi.com data.txt row i=82020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gro yaNi",
     text_dev              = "ग्रो यङि",
+    samagra_slp1          = "padasya pUrvatrAsidDam graH yaNi raH laH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् ग्रः यङि रः लः",
     padaccheda_dev        = "ग्रः यङि",
     why_dev               = "(सूत्रम् 8.2.20) ग्रो यङि।",
     anuvritti_from        = ('8.1.1',),

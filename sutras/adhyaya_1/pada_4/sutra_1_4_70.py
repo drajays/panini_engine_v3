@@ -7,6 +7,7 @@ a preverb-like element compounding with a root (not in its substantival
 sense), it becomes a gati.
 
 v3: registers samjna_registry["gati_adas_anupadesha"] = frozenset({"adas"}).
+Pāṭha: ashtadhyayi.com data.txt row i=14070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='adonupadeSe',
     text_dev='अदोऽनुपदेशे',
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH adaH anupadeSe kriyAyoge gatiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः अदः अनुपदेशे क्रियायोगे गतिः",
     padaccheda_dev="अदः / अनुपदेशे",
     why_dev="अनुपदेशे 'अदस्' गति-संज्ञकः — 'adas' गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

@@ -4,6 +4,7 @@
 Padaccheda: तेन तुल्यम् क्रिया चेत् वतिः
 
 तेन तुल्यं क्रिया चेद्वतिः (5.1.115)
+Pāṭha: ashtadhyayi.com data.txt row i=51115 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tena tulyaM kriyA cedvatiH",
     text_dev              = "तेन तुल्यं क्रिया चेद्वतिः",
+    samagra_slp1          = "tena tulyam iti kriyA cet vatiH",
+    samagra_dev           = "'तेन तुल्यम्' (इति) क्रिया चेत् वतिः",
     padaccheda_dev        = "तेन तुल्यम् क्रिया चेत् वतिः",
     why_dev               = "(सूत्रम् 5.1.115) तेन तुल्यं क्रिया चेद्वतिः।",
     anuvritti_from        = ('4.1.82',),

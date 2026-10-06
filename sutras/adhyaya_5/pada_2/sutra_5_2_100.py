@@ -4,6 +4,7 @@
 Padaccheda: लोम-आदि-पाम-आदि-पिच्छ-आदिभ्यः श-न-इलचः
 
 लोमादिपामादिपिच्छादिभ्यः शनेलचः (5.2.100)
+Pāṭha: ashtadhyayi.com data.txt row i=52100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lomAdipAmAdipicCAdiByaH SanelacaH",
     text_dev              = "लोमादिपामादिपिच्छादिभ्यः शनेलचः",
+    samagra_slp1          = "tat asya asmin astIti iti lomAdi-pAmAdi-picCAdiByaH Sa-na-ilacaH matu~p anyatarasyAm",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) लोमादि-पामादि-पिच्छादिभ्यः श-न-इलचः, मतुँप् अन्यतरस्याम्",
     padaccheda_dev        = "लोम-आदि-पाम-आदि-पिच्छ-आदिभ्यः श-न-इलचः",
     why_dev               = "(सूत्रम् 5.2.100) लोमादिपामादिपिच्छादिभ्यः शनेलचः।",
     anuvritti_from        = ('4.1.82',),

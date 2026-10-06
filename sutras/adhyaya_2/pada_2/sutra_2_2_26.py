@@ -63,6 +63,7 @@ Engine (representative, mechanically blind):
 
 This does NOT attempt full *sup* reconstruction or full samāsa machinery;
 it is a narrow, auditable slice.
+Pāṭha: ashtadhyayi.com data.txt row i=22026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -301,6 +302,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'diNnAmAnyantarAle',
     text_dev       = 'दिङ्नामान्यन्तराले',
+    samagra_slp1   = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA diN-nAmAni antarAle anekam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा दिङ्-नामानि अन्तराले अनेकम्",
     padaccheda_dev = (
         "दिङ्-नामानि (प्रथमा-बहुवचनम्) / अन्तराले (सप्तमी-एकवचनम्)"
     ),

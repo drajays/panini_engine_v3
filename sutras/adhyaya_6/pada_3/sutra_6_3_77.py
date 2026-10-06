@@ -4,6 +4,7 @@
 Padaccheda: नगः अप्राणिषु अन्यतरस्याम्
 
 नगोऽप्राणिष्वन्यतरस्याम् (6.3.77)
+Pāṭha: ashtadhyayi.com data.txt row i=63077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nagoprARizvanyatarasyAm',
     text_dev              = 'नगोऽप्राणिष्वन्यतरस्याम्',
+    samagra_slp1          = "uttarapade nagaH aprARizu anyatarasyAm naYaH prakftyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे नगः अप्राणिषु अन्यतरस्याम् नञः प्रकृत्या",
     padaccheda_dev        = "नगः अप्राणिषु अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.3.77) नगोऽप्राणिष्वन्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

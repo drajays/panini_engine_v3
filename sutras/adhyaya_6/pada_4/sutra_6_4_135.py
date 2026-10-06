@@ -4,6 +4,7 @@
 Padaccheda: ष-पूर्व-हन्-धृतराज्ञाम् अणि
 
 षपूर्वहन्धृतराज्ञामणि (6.4.135)
+Pāṭha: ashtadhyayi.com data.txt row i=64135 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zapUrvahanDftarAjYAmaRi",
     text_dev              = "षपूर्वहन्धृतराज्ञामणि",
+    samagra_slp1          = "Basya aNgasya za-pUrva-han-DftarAjYAmanaH aRi at-lopaH",
+    samagra_dev           = "भस्य अङ्गस्य ष-पूर्व-हन्-धृतराज्ञामनः अणि अत्-लोपः",
     padaccheda_dev        = "ष-पूर्व-हन्-धृतराज्ञाम् अणि",
     why_dev               = "(सूत्रम् 6.4.135) षपूर्वहन्धृतराज्ञामणि।",
     anuvritti_from        = ('6.1.1',),

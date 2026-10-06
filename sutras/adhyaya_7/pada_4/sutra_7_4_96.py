@@ -4,6 +4,7 @@
 Padaccheda: विभाषा वेष्टि-चेष्ट्योः
 
 विभाषा वेष्टिचेष्ट्योः (7.4.96)
+Pāṭha: ashtadhyayi.com data.txt row i=74096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA vezwicezwyoH",
     text_dev              = "विभाषा वेष्टिचेष्ट्योः",
+    samagra_slp1          = "aNgasya aByAsasya viBAzA vezwicezwyoH caNpare anaglope at",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य विभाषा वेष्टिचेष्ट्योः चङ्परे अनग्लोपे अत्",
     padaccheda_dev        = "विभाषा वेष्टि-चेष्ट्योः",
     why_dev               = "(सूत्रम् 7.4.96) विभाषा वेष्टिचेष्ट्योः।",
     anuvritti_from        = ('7.1.1',),

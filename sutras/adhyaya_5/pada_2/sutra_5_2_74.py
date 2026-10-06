@@ -4,6 +4,7 @@
 Padaccheda: अनुक-अभिक-अभीकः कमिता
 
 अनुकाभिकाभीकः कमिता (5.2.74)
+Pāṭha: ashtadhyayi.com data.txt row i=52074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anukABikABIkaH kamitA",
     text_dev              = "अनुकाभिकाभीकः कमिता",
+    samagra_slp1          = "kamitA iti anuka-aBika-aBIkAH nipAtyante",
+    samagra_dev           = "'कमिता' (इति) अनुक-अभिक-अभीकाः (निपात्यन्ते)",
     padaccheda_dev        = "अनुक-अभिक-अभीकः कमिता",
     why_dev               = "(सूत्रम् 5.2.74) अनुकाभिकाभीकः कमिता।",
     anuvritti_from        = ('4.1.82',),

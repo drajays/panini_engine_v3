@@ -2,7 +2,7 @@
 7.3.50  ठस्येकः  —  VIDHI (narrow: Tak → ika)
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=703050
+- ashtadhyayi.com data.txt row i=73050
 - Kāśikā: ठञ् → इक (संवत्सरिक-प्रयोगः)
 - Cross-validation: pipelines/dADikam_taddhita_split_prakriyas.py
 
@@ -52,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'WasyekaH',
     text_dev       = 'ठस्येकः',
+    samagra_slp1   = "aNgAt Wasya ikaH",
+    samagra_dev    = "अङ्गात् ठस्य इकः",
     padaccheda_dev = "ठस्य / एकः",
     why_dev        = "ठक्-प्रत्ययस्य ‘इक’ आदेशः (P018 narrow demo).",
     anuvritti_from = ("7.3.45",),

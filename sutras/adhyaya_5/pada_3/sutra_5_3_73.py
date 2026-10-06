@@ -4,6 +4,7 @@
 Padaccheda: अज्ञाते
 
 अज्ञाते (5.3.73)
+Pāṭha: ashtadhyayi.com data.txt row i=53073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ajYAte",
     text_dev              = "अज्ञाते",
+    samagra_slp1          = "ajYAte prAtipadikAt tiNaH ca kaH",
+    samagra_dev           = "अज्ञाते प्रातिपदिकात् तिङः च कः",
     padaccheda_dev        = "अज्ञाते",
     why_dev               = "(सूत्रम् 5.3.73) अज्ञाते।",
     anuvritti_from        = ('5.3.70',),

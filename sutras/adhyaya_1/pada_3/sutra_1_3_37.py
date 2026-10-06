@@ -19,6 +19,7 @@ non-physical karma condition), and (c) the idempotency stamp
 "Atmanepada_1_3_37" is absent from state.meta.
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -54,6 +55,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='kartfsTe cASarIre karmaRi',
     text_dev='कर्तृस्थे चाशरीरे कर्मणि',
+    samagra_slp1="kartfsTe SarIre karmaRi niyaH Atmanepadam",
+    samagra_dev="कर्तृस्थे शरीरे कर्मणि नियः आत्मनेपदम्",
     padaccheda_dev=(
         "कर्तृस्थे (सप्तमी-एकवचन) / च (अव्यय) / "
         "अशरीरे (सप्तमी-एकवचन) / कर्मणि (सप्तमी-एकवचन)"

@@ -4,6 +4,7 @@
 Padaccheda: वृक्ष-आसनयोः विष्टरः
 
 वृक्षासनयोर्विष्टरः (8.3.93)
+Pāṭha: ashtadhyayi.com data.txt row i=83093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vfkzAsanayorvizwaraH",
     text_dev              = "वृक्षासनयोर्विष्टरः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH vfkza-AsanayoH vizwaraH saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः वृक्ष-आसनयोः विष्टरः सः",
     padaccheda_dev        = "वृक्ष-आसनयोः विष्टरः",
     why_dev               = "(सूत्रम् 8.3.93) वृक्षासनयोर्विष्टरः।",
     anuvritti_from        = ('8.1.1',),

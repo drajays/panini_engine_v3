@@ -4,6 +4,7 @@
 Padaccheda: वि-प्-रसम्भ्यः डु असंज्ञायाम्
 
 krt-suffix rule: विप्रसम्भ्यो ड्वसंज्ञायाम् (180)
+Pāṭha: ashtadhyayi.com data.txt row i=32180 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viprasamByo qvasaMjYAyAm",
     text_dev              = "विप्रसम्भ्यो ड्वसंज्ञायाम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne vi-pra-sam-ByaH qu asaMjYAyAm kft BuvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने वि-प्र-सम्-भ्यः डु असंज्ञायाम् कृत् भुवः",
     padaccheda_dev        = "वि-प्-रसम्भ्यः डु असंज्ञायाम्",
     why_dev               = "धातोः कृत्-प्रत्ययः [विप्रसम्भ्यो ड्वसंज्ञायाम्] विहितः (३.२.180)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

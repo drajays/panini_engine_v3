@@ -79,6 +79,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = "nAdici",
     text_dev                = "नादिचि",
+    samagra_slp1            = "At ici praTamayoH pUrvasavarRaH na",
+    samagra_dev             = "आत् इचि प्रथमयोः पूर्वसवर्णः न",
     padaccheda_dev          = "न · आत् · इचि",
     why_dev                 = "आत्-वर्णात् परे इच्-वर्णे ६.१.१०२ पूर्वसवर्ण-दीर्घः न भवति; "
                               "तेन राम+औ इत्यत्र वृद्धिः (६.१.८८) अवकाशं लभते।",

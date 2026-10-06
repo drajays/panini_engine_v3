@@ -4,6 +4,7 @@
 Padaccheda: प्रतियोगे पञ्चम्याः तसिः
 
 प्रतियोगे पञ्चम्यास्तसिः (5.4.44)
+Pāṭha: ashtadhyayi.com data.txt row i=54044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pratiyoge paYcamyAstasiH",
     text_dev              = "प्रतियोगे पञ्चम्यास्तसिः",
+    samagra_slp1          = "pratiyoge paYcamyAH tasiH",
+    samagra_dev           = "प्रतियोगे पञ्चम्याः तसिः",
     padaccheda_dev        = "प्रतियोगे पञ्चम्याः तसिः",
     why_dev               = "(सूत्रम् 5.4.44) प्रतियोगे पञ्चम्यास्तसिः।",
     anuvritti_from        = ('4.1.76',),

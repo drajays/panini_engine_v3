@@ -4,6 +4,7 @@
 Padaccheda: बहु-अच्-पूर्वपदात् ठच्
 
 बह्वच्पूर्वपदाट्ठच् (4.4.64)
+Pāṭha: ashtadhyayi.com data.txt row i=44064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahvacpUrvapadAwWac",
     text_dev              = "बह्वच्पूर्वपदाट्ठच्",
+    samagra_slp1          = "aDyayane tat vfttam karma asya iti bahvacpUrvapadAt Wac",
+    samagra_dev           = "'अध्ययने तत् वृत्तम् कर्म अस्य' (इति) बह्वच्पूर्वपदात् ठच्",
     padaccheda_dev        = "बहु-अच्-पूर्वपदात् ठच्",
     why_dev               = "(सूत्रम् 4.4.64) बह्वच्पूर्वपदाट्ठच्।",
     anuvritti_from        = ('4.1.1',),

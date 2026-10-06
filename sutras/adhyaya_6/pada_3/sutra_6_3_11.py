@@ -4,6 +4,7 @@
 Padaccheda: मध्यात् गुरौ
 
 मध्याद्गुरौ (6.3.11)
+Pāṭha: ashtadhyayi.com data.txt row i=63011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "maDyAdgurO",
     text_dev              = "मध्याद्गुरौ",
+    samagra_slp1          = "alug uttarapade maDyAt gurO haladantAt saptamyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे मध्यात् गुरौ हलदन्तात् सप्तम्याः",
     padaccheda_dev        = "मध्यात् गुरौ",
     why_dev               = "(सूत्रम् 6.3.11) मध्याद्गुरौ।",
     anuvritti_from        = ('6.1.1',),

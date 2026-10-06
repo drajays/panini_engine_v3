@@ -18,6 +18,7 @@ Engine implementation:
     • replace first 3 varnas [a,s,m] with parse("mahya") = [m,a,h,y,a]
     • result: stem = [m, a, h, y, a, a, d]
     • add "7_2_95_done" tag to stem
+Pāṭha: ashtadhyayi.com data.txt row i=72095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -67,6 +68,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tuByamahyO Nayi",
     text_dev              = "तुभ्यमह्यौ ङयि",
+    samagra_slp1          = "aNgasya maparyantasya tuByamahyO Nayi viBaktO yuzmadasmadoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य मपर्यन्तस्य तुभ्यमह्यौ ङयि विभक्तौ युष्मदस्मदोः",
     padaccheda_dev        = "तुभ्य-मह्यौ ङयि",
     why_dev               = "अस्मद्-शब्दस्य आदि-भागस्य [अ,स्,म्] स्थाने [म,ह्,य,अ] आदेशः "
                             "ङयि परे (सूत्रम् ७.२.९५ तुभ्यमह्यौ ङयि)।",

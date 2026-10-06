@@ -4,6 +4,7 @@
 Padaccheda: नहः धः
 
 नहो धः (8.2.34)
+Pāṭha: ashtadhyayi.com data.txt row i=82034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "naho DaH",
     text_dev              = "नहो धः",
+    samagra_slp1          = "nahaH haH DaH Jali padasya ante",
+    samagra_dev           = "नहः हः धः झलि पदस्य अन्ते",
     padaccheda_dev        = "नहः धः",
     why_dev               = "नहो धः: the ह् of नह् → ध् (apavāda of 8.2.31) — नह्+त → नद्ध.",
     anuvritti_from        = ('8.1.1',),

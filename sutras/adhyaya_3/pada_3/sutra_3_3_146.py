@@ -4,6 +4,7 @@
 Padaccheda: किंकिल-अस्त्यर्थेषु लृट्
 
 krt-suffix rule: किंकिलास्त्यर्थेषु लृट्
+Pāṭha: ashtadhyayi.com data.txt row i=33146 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kiMkilAstyarTezu lfw",
     text_dev              = "किंकिलास्त्यर्थेषु लृट्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kiMkila-astyarTezu lfw kft utApyoH anavakxpti-amarzayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः किंकिल-अस्त्यर्थेषु लृट् कृत् उताप्योः अनवकॢप्ति-अमर्षयोः",
     padaccheda_dev        = "किंकिल-अस्त्यर्थेषु लृट्",
     why_dev               = "धातोः प्रत्ययः (३.3.146)।",
     anuvritti_from        = ('3.1.1',),

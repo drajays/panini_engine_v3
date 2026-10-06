@@ -4,6 +4,7 @@
 Padaccheda: भुज-न्युब्जौ पाणि-उपतापयोः
 
 भुजन्युब्जौ पाण्युपतापयोः (7.3.61)
+Pāṭha: ashtadhyayi.com data.txt row i=73061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BujanyubjO pARyupatApayoH",
     text_dev              = "भुजन्युब्जौ पाण्युपतापयोः",
+    samagra_slp1          = "aNgasya BujanyubjO pARyupatApayoH cajoH ku na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य भुजन्युब्जौ पाण्युपतापयोः चजोः कु न",
     padaccheda_dev        = "भुज-न्युब्जौ पाणि-उपतापयोः",
     why_dev               = "(सूत्रम् 7.3.61) भुजन्युब्जौ पाण्युपतापयोः।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: शीङः रुट्
 
 शीङो रुट् (7.1.6)
+Pāṭha: ashtadhyayi.com data.txt row i=71006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SINo ruw",
     text_dev              = "शीङो रुट्",
+    samagra_slp1          = "SINaH aNgAt JaH ataH rUw",
+    samagra_dev           = "शीङः अङ्गात् झः अतः रूट्",
     padaccheda_dev        = "शीङः रुट्",
     why_dev               = "(सूत्रम् 7.1.6) शीङो रुट्।",
     anuvritti_from        = ('7.1.1',),

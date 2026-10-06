@@ -4,6 +4,7 @@
 Padaccheda: बन्धने च ऋषौ
 
 बन्धने चर्षौ (4.4.96)
+Pāṭha: ashtadhyayi.com data.txt row i=44096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "banDane carzO",
     text_dev              = "बन्धने चर्षौ",
+    samagra_slp1          = "hfdayasya banDane iti saMjYAyAm fzO yat ca",
+    samagra_dev           = "'हृदयस्य बन्धने' (इति) संज्ञायाम् ऋषौ यत् च",
     padaccheda_dev        = "बन्धने च ऋषौ",
     why_dev               = "(सूत्रम् 4.4.96) बन्धने चर्षौ।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि सहः
 
 krt-suffix rule: छन्दसि सहः (63)
+Pāṭha: ashtadhyayi.com data.txt row i=32063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Candasi sahaH",
     text_dev              = "छन्दसि सहः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH Candasi sahaH kft supi upasarge api RviH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः छन्दसि सहः कृत् सुपि उपसर्गे अपि ण्विः",
     padaccheda_dev        = "छन्दसि सहः",
     why_dev               = "धातोः कृत्-प्रत्ययः [छन्दसि सहः] विहितः (३.२.63)।",
     anuvritti_from        = ('3.1.1',),

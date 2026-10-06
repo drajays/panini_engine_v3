@@ -4,6 +4,7 @@
 Padaccheda: उः ऋत्
 
 उर्ऋत् (7.4.7)
+Pāṭha: ashtadhyayi.com data.txt row i=74007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "urft",
     text_dev              = "उर्ऋत्",
+    samagra_slp1          = "aNgasya uH ft RO caNi vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उः ऋत् णौ चङि वा",
     padaccheda_dev        = "उः ऋत्",
     why_dev               = "(सूत्रम् 7.4.7) उर्ऋत्।",
     anuvritti_from        = ('7.1.1',),

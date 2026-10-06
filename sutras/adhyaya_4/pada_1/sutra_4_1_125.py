@@ -4,6 +4,7 @@
 Padaccheda: भ्रुवः वुक् च
 
 भ्रुवो वुक् च (4.1.125)
+Pāṭha: ashtadhyayi.com data.txt row i=41125 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Bruvo vuk ca",
     text_dev              = "भ्रुवो वुक् च",
+    samagra_slp1          = "tasya apatyam iti BruvaH vuk AgamaH Qak ca pratyayaH",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) भ्रुवः वुक् (आगमः), ढक् च प्रत्ययः",
     padaccheda_dev        = "भ्रुवः वुक् च",
     why_dev               = "(सूत्रम् 4.1.125) भ्रुवो वुक् च।",
     anuvritti_from        = ('4.1.1',),

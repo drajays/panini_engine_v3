@@ -4,6 +4,7 @@
 Padaccheda: द्वन्द्वात् छः
 
 द्वंद्वाच्छः (4.2.6)
+Pāṭha: ashtadhyayi.com data.txt row i=42006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'dvandvAcCaH',
     text_dev              = 'द्वन्द्वाच्छः',
+    samagra_slp1          = "nakzatreRa yuktaH kAlaH iti dvandvAt CaH",
+    samagra_dev           = "'नक्षत्रेण युक्तः कालः' (इति) द्वन्द्वात् छः",
     padaccheda_dev        = "द्वन्द्वात् छः",
     why_dev               = "(सूत्रम् 4.2.6) द्वंद्वाच्छः।",
     anuvritti_from        = ('4.1.1',),

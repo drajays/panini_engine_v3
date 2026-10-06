@@ -64,6 +64,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'laSakvatadDite',
     text_dev       = 'लशक्वतद्धिते',
+    samagra_slp1   = "upadeSe atadDitasya pratyayasya AdiH la-Sa-ku it",
+    samagra_dev    = "उपदेशे अतद्धितस्य  प्रत्ययस्य आदिः ल-श-कु इत्",
     padaccheda_dev = "उपदेशे लशकु-अतद्धिते इत्",
     why_dev        = (
         "अतद्धिते प्रत्ययादौ ल्-श्-कु-वर्णानाम् इत्-संज्ञा; लोपः १.३.९। "

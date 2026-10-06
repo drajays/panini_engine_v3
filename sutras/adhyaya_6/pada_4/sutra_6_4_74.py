@@ -4,6 +4,7 @@
 Padaccheda: न माङ्-योगे
 
 न माङ्योगे (6.4.74)
+Pāṭha: ashtadhyayi.com data.txt row i=64074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na mANyoge",
     text_dev              = "न माङ्योगे",
+    samagra_slp1          = "luN-laN-lfNkzu mAN yoge aNgasya aw Aw na",
+    samagra_dev           = "लुङ्-लङ्-लृङ्क्षु माङ् योगे अङ्गस्य अट् आट्  न",
     padaccheda_dev        = "न माङ्-योगे",
     why_dev               = "(सूत्रम् 6.4.74) न माङ्योगे।",
     anuvritti_from        = ('6.1.1',),

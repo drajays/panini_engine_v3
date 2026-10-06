@@ -2,6 +2,7 @@
 1.2.12  उश्च  —  VIDHI (kit-vat)
 
 After an ṛ-final dhātu, jhal-ādi liṅ/sic in ātmanepada are kit: कृषीष्ट, अकृत.
+Pāṭha: ashtadhyayi.com data.txt row i=12012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -27,6 +28,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='uSca',
     text_dev='उश्च',
+    samagra_slp1="uH ca kit Jal liN-sicO Atmanepadezu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="उः च कित् झल् लिङ्-सिचौ आत्मनेपदेषु",
     padaccheda_dev="उः / च",
     why_dev="ऋवर्णान्ताद्धातोः परौ झलादी लिङ्सिचौ आत्मनेपदेषु किद्वत् — कृषीष्ट, अकृत।",
     anuvritti_from=("1.2.9", "1.2.10"),

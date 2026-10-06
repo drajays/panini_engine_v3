@@ -16,6 +16,7 @@ Engine (glass-box):
 Mechanical blindness (CONSTITUTION Art. 2):
   - cond() reads only Term.meta['upadesha_slp1'] and Term.tags.
   - No vibhakti/vacana/lakāra/gold access.
+Pāṭha: ashtadhyayi.com data.txt row i=11036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -57,6 +58,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'antaraM bahiryogopasaMvyAnayoH',
     text_dev              = 'अन्तरं बहिर्योगोपसंव्यानयोः',
+    samagra_slp1          = "antaraM bahiryoga-upasaMvyAnayoH sarvanAmAni viBAzA jasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अन्तरं बहिर्योग-उपसंव्यानयोः सर्वनामानि विभाषा जसि",
     padaccheda_dev        = "अन्तरम् / बहिर्-योग-उपसंव्यानयोः",
     why_dev               = (
         "बहिर्योगे उपसंव्याने च «अन्तर»-शब्दस्य सर्वनाम-संज्ञा।"

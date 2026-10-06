@@ -4,6 +4,7 @@
 Padaccheda: आप्-ज्ञपि-ऋधाम् ईत्
 
 आप्ज्ञप्यृधामीत् (7.4.55)
+Pāṭha: ashtadhyayi.com data.txt row i=74055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ApjYapyfDAmIt",
     text_dev              = "आप्ज्ञप्यृधामीत्",
+    samagra_slp1          = "aNgasya ApjYapyfDAm It si aca sani",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य आप्ज्ञप्यृधाम् ईत् सि अच सनि",
     padaccheda_dev        = "आप्-ज्ञपि-ऋधाम् ईत्",
     why_dev               = "(सूत्रम् 7.4.55) आप्ज्ञप्यृधामीत्।",
     anuvritti_from        = ('7.1.1',),

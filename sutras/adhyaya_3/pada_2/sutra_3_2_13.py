@@ -4,6 +4,7 @@
 Padaccheda: स्तम्ब-कर्णयोः रमि-जपोः
 
 krt-suffix rule: स्तम्बकर्णयोः रमिजपोः (13)
+Pāṭha: ashtadhyayi.com data.txt row i=32013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'stambakarRayo ramijapoH',
     text_dev              = 'स्तम्बकर्णयो रमिजपोः',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH stamba-karRayoH rami-japoH kft karmaRi anupasarge supi ac",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः स्तम्ब-कर्णयोः रमि-जपोः कृत् कर्मणि अनुपसर्गे सुपि अच्",
     padaccheda_dev        = "स्तम्ब-कर्णयोः रमि-जपोः",
     why_dev               = "धातोः कृत्-प्रत्ययः [स्तम्बकर्णयोः रमिजपोः] विहितः (३.२.13)।",
     anuvritti_from        = ('3.1.1',),

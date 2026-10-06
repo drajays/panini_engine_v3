@@ -4,6 +4,7 @@
 Padaccheda: विभाषा समीपे
 
 Optional dvandva in proximity context.
+Pāṭha: ashtadhyayi.com data.txt row i=24016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA samIpe",
     text_dev              = "विभाषा समीपे",
+    samagra_slp1          = "viBAzA samIpe ekavacanam dvandvaH aDikaraREtAvattve",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "विभाषा समीपे एकवचनम् द्वन्द्वः अधिकरणैतावत्त्वे",
     padaccheda_dev        = "विभाषा समीपे",
     why_dev               = "समीपे विभाषा (२.४.१६)।",
     anuvritti_from        = ('2.4.1',),

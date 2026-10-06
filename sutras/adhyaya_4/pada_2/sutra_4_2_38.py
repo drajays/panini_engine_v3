@@ -4,6 +4,7 @@
 Padaccheda: भिक्षा-आदिभ्यः अण्
 
 भिक्षाऽऽदिभ्योऽण् (4.2.38)
+Pāṭha: ashtadhyayi.com data.txt row i=42038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'BikzAdiByoR',
     text_dev              = 'भिक्षादिभ्योऽण्',
+    samagra_slp1          = "tasya samUhaH iti BikzAdiByaH aR",
+    samagra_dev           = "तस्य समूहः (इति) भिक्षादिभ्यः अण्",
     padaccheda_dev        = "भिक्षा-आदिभ्यः अण्",
     why_dev               = "(सूत्रम् 4.2.38) भिक्षाऽऽदिभ्योऽण्।",
     anuvritti_from        = ('4.1.1',),

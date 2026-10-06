@@ -4,6 +4,7 @@
 Padaccheda: अर्श-आदिभ्यः अच्
 
 अर्शआदिभ्योऽच् (5.2.127)
+Pāṭha: ashtadhyayi.com data.txt row i=52127 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'arSaAdiByoc',
     text_dev              = 'अर्शआदिभ्योऽच्',
+    samagra_slp1          = "tat asya asmin astIti iti arSa-AdiByaH ac",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) अर्श-आदिभ्यः अच्",
     padaccheda_dev        = "अर्श-आदिभ्यः अच्",
     why_dev               = "(सूत्रम् 5.2.127) अर्शआदिभ्योऽच्।",
     anuvritti_from        = ('4.1.82',),

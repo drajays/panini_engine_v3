@@ -4,6 +4,7 @@
 Padaccheda: उभात् उदात्तः नित्यम्
 
 उभादुदात्तो नित्यम् (5.2.44)
+Pāṭha: ashtadhyayi.com data.txt row i=52044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uBAdudAtto nityam",
     text_dev              = "उभादुदात्तो नित्यम्",
+    samagra_slp1          = "uBAt tayasya nityamudAttaH ayac",
+    samagra_dev           = "उभात् तयस्य नित्यमुदात्तः अयच्",
     padaccheda_dev        = "उभात् उदात्तः नित्यम्",
     why_dev               = "(सूत्रम् 5.2.44) उभादुदात्तो नित्यम्।",
     anuvritti_from        = ('4.1.82',),

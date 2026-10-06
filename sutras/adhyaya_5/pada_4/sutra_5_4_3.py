@@ -4,6 +4,7 @@
 Padaccheda: स्थूल-आदिभ्यः प्रकारवचने कन्
 
 स्थूलादिभ्यः प्रकारवचने कन् (5.4.3)
+Pāṭha: ashtadhyayi.com data.txt row i=54003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sTUlAdiByaH prakAravacane kan",
     text_dev              = "स्थूलादिभ्यः प्रकारवचने कन्",
+    samagra_slp1          = "sTUlAdiByaH prakAravacane kan",
+    samagra_dev           = "स्थूलादिभ्यः प्रकारवचने कन्",
     padaccheda_dev        = "स्थूल-आदिभ्यः प्रकारवचने कन्",
     why_dev               = "(सूत्रम् 5.4.3) स्थूलादिभ्यः प्रकारवचने कन्।",
     anuvritti_from        = ('4.1.76',),

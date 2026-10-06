@@ -4,6 +4,7 @@
 Padaccheda: ऋचि तु-नु-घ-मक्षु-तङ्-कुत्र-उरुष्याणाम्
 
 ऋचि तुनुघमक्षुतङ्कुत्रोरुष्याणाम् (6.3.133)
+Pāṭha: ashtadhyayi.com data.txt row i=63133 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "fci tunuGamakzutaNkutroruzyARAm",
     text_dev              = "ऋचि तुनुघमक्षुतङ्कुत्रोरुष्याणाम्",
+    samagra_slp1          = "uttarapade saMhitAyAm fci tu-nu-Ga-makzu-taN-ku-tra-uruzyARAm dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् ऋचि तु-नु-घ-मक्षु-तङ्-कु-त्र-उरुष्याणाम् दीर्घः",
     padaccheda_dev        = "ऋचि तु-नु-घ-मक्षु-तङ्-कुत्र-उरुष्याणाम्",
     why_dev               = "(सूत्रम् 6.3.133) ऋचि तुनुघमक्षुतङ्कुत्रोरुष्याणाम्।",
     anuvritti_from        = ('6.1.1',),

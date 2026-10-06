@@ -4,6 +4,7 @@
 Padaccheda: वेशन्त-हिमवद्‍भ्याम् अण्
 
 वेशन्तहिमवद्भ्यामण् (4.4.112)
+Pāṭha: ashtadhyayi.com data.txt row i=44112 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "veSantahimavadByAmaR",
     text_dev              = "वेशन्तहिमवद्भ्यामण्",
+    samagra_slp1          = "tatra Bave iti Candasi saMjYAyAm veSantahimavadByAmaR",
+    samagra_dev           = "'तत्र भवे' (इति) छन्दसि संज्ञायाम् वेशन्तहिमवद्भ्यामण्",
     padaccheda_dev        = "वेशन्त-हिमवद्‍भ्याम् अण्",
     why_dev               = "(सूत्रम् 4.4.112) वेशन्तहिमवद्भ्यामण्।",
     anuvritti_from        = ('4.1.1',),

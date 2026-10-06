@@ -7,6 +7,7 @@ Engine approach (glass-box):
   - Pipeline arms ``meta['prati_abhimukhya_recipe']=True``.
   - If an avyaya member with ``upadesha_slp1 == 'prati'`` is present, mark the
     samāsa members as ``avyayibhava`` so downstream 1.2.43 / 2.2.30 / 1.1.41 fire.
+Pāṭha: ashtadhyayi.com data.txt row i=21013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1      = 'AN maryAdABiviDyoH',
     text_dev       = 'आङ् मर्यादाभिविध्योः',
+    samagra_slp1   = "maryAdA-aBiviDyoH AN paYcamyAH viBAzA avyayIBAvaH samAsaH",
+    samagra_dev    = "मर्यादा-अभिविध्योः आङ् पञ्चम्याः विभाषा अव्ययीभावः समासः",
     padaccheda_dev = "लक्षणेन / अभिप्रती / आभिमुख्ये",
     why_dev        = "प्रति-प्रत्यय-योगे आभिमुख्ये अव्ययीभावः (demo arm meta).",
     anuvritti_from = ("2.1.5",),

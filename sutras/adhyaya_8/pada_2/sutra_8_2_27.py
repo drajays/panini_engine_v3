@@ -4,6 +4,7 @@
 Padaccheda: ह्रस्वात् अङ्गात्
 
 ह्रस्वादङ्गात् (8.2.27)
+Pāṭha: ashtadhyayi.com data.txt row i=82027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "hrasvAdaNgAt",
     text_dev              = "ह्रस्वादङ्गात्",
+    samagra_slp1          = "padasya pUrvatrAsidDam hrasvAt aNgAt lopaH sasya Jali",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् ह्रस्वात् अङ्गात् लोपः सस्य झलि",
     padaccheda_dev        = "ह्रस्वात् अङ्गात्",
     why_dev               = "ह्रस्वान्ताद् अङ्गात् परस्य सिचः सस्य लोपो झलि — अकृत।",
     anuvritti_from        = ('8.1.1',),

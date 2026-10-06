@@ -4,6 +4,7 @@
 Padaccheda: संख्या-पूर्वः द्विगुः
 
 samkhya-purva (numeral-first) compound is called dvigu.
+Pāṭha: ashtadhyayi.com data.txt row i=21052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMKyApUrvo dviguH",
     text_dev              = "संख्यापूर्वो द्विगुः",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH saMKyA-pUrvaH dviguH samAnADikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः संख्या-पूर्वः द्विगुः समानाधिकरणेन",
     padaccheda_dev        = "संख्या-पूर्वः द्विगुः",
     why_dev               = "संख्या-पूर्वः द्विगुः समासः (२.१.५२)।",
     anuvritti_from        = ('2.1.3',),

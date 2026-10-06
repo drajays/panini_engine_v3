@@ -4,6 +4,7 @@
 Padaccheda: उदीचाम् वृद्धात् अ-गोत्रात्
 
 उदीचां वृद्धादगोत्रात् (4.1.157)
+Pāṭha: ashtadhyayi.com data.txt row i=41157 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "udIcAM vfdDAdagotrAt",
     text_dev              = "उदीचां वृद्धादगोत्रात्",
+    samagra_slp1          = "tasya apatyam iti udIcAmagotrAt vfdDAt PiY",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) उदीचामगोत्रात् वृद्धात् फिञ्",
     padaccheda_dev        = "उदीचाम् वृद्धात् अ-गोत्रात्",
     why_dev               = "(सूत्रम् 4.1.157) उदीचां वृद्धादगोत्रात्।",
     anuvritti_from        = ('4.1.1',),

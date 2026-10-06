@@ -4,6 +4,7 @@
 Padaccheda: आलच्-आटचौ बहुभाषिणि
 
 आलजाटचौ बहुभाषिणि (5.2.125)
+Pāṭha: ashtadhyayi.com data.txt row i=52125 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AlajAwacO bahuBAziRi",
     text_dev              = "आलजाटचौ बहुभाषिणि",
+    samagra_slp1          = "tat asya asmin astIti iti vAcaH bahuBAziRi Alac-AwacO",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) वाचः बहुभाषिणि आलच्-आटचौ",
     padaccheda_dev        = "आलच्-आटचौ बहुभाषिणि",
     why_dev               = "(सूत्रम् 5.2.125) आलजाटचौ बहुभाषिणि।",
     anuvritti_from        = ('4.1.82',),

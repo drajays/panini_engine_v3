@@ -4,6 +4,7 @@
 Padaccheda: लवणात् ठञ्
 
 लवणाट्ठञ् (4.4.52)
+Pāṭha: ashtadhyayi.com data.txt row i=44052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lavaRAwWaY",
     text_dev              = "लवणाट्ठञ्",
+    samagra_slp1          = "tat asya paRyam iti lavaRAt WaY",
+    samagra_dev           = "'तत् अस्य पण्यम्' इति लवणात् ठञ्",
     padaccheda_dev        = "लवणात् ठञ्",
     why_dev               = "(सूत्रम् 4.4.52) लवणाट्ठञ्।",
     anuvritti_from        = ('4.1.1',),

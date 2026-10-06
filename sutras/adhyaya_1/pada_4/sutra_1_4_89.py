@@ -11,6 +11,7 @@
 *Engine:* sets paribhāṣā gate for *āṅ-in-maryādā*.
 ``cond`` never reads vibhakti/vacana/lakāra/surface.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=14089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -36,6 +37,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = "AN maryAdAvacane",
     text_dev             = "आङ् मर्यादावचने",
+    samagra_slp1         = "AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH karmapravacanIyAH AN maryAdAvacane",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः कर्मप्रवचनीयाः आङ् मर्यादावचने",
     padaccheda_dev       = "आङ् / मर्यादा-वचने",
     why_dev              = (
         "मर्यादा-अर्थे वर्तमानः 'आ' (आङ्) कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

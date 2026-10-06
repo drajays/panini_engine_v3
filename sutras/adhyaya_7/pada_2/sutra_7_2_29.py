@@ -4,6 +4,7 @@
 Padaccheda: हृषेः लोमसु
 
 हृषेर्लोमसु (7.2.29)
+Pāṭha: ashtadhyayi.com data.txt row i=72029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hfzerlomasu",
     text_dev              = "हृषेर्लोमसु",
+    samagra_slp1          = "aNgasya hfzeH lomasu na iw nizWAyAm vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य हृषेः लोमसु न इट् निष्ठायाम् वा",
     padaccheda_dev        = "हृषेः लोमसु",
     why_dev               = "(सूत्रम् 7.2.29) हृषेर्लोमसु।",
     anuvritti_from        = ('7.1.1',),

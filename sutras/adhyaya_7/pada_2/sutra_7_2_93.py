@@ -18,6 +18,7 @@ Engine implementation:
     • replace first 3 varnas [a,s,m] with parse("vaya") = [v,a,y,a]
     • result: stem = [v, a, y, a, a, d]
     • add "7_2_93_done" tag to stem
+Pāṭha: ashtadhyayi.com data.txt row i=72093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -67,6 +68,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yUyavayO jasi",
     text_dev              = "यूयवयौ जसि",
+    samagra_slp1          = "aNgasya maparyantasya yUyavayO jasi viBaktO yuzmadasmadoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य मपर्यन्तस्य यूयवयौ जसि विभक्तौ युष्मदस्मदोः",
     padaccheda_dev        = "यूय-वयौ जसि",
     why_dev               = "अस्मद्-शब्दस्य आदि-भागस्य [अ,स्,म्] स्थाने [व,य,अ] आदेशः "
                             "जसि परे (सूत्रम् ७.२.९३ यूयवयौ जसि)।",

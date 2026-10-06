@@ -4,6 +4,7 @@
 Padaccheda: च्वौ च
 
 च्वौ च (7.4.26)
+Pāṭha: ashtadhyayi.com data.txt row i=74026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "cvO ca",
     text_dev              = "च्वौ च",
+    samagra_slp1          = "aNgasya cvO ca yi dIrGaH akftsArvaDAtukayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य च्वौ च यि दीर्घः अकृत्सार्वधातुकयोः",
     padaccheda_dev        = "च्वौ च",
     why_dev               = "(सूत्रम् 7.4.26) च्वौ च।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि उभयथा
 
 krt-suffix rule: छन्दस्युभयथा
+Pāṭha: ashtadhyayi.com data.txt row i=34117 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "CandasyuBayaTA",
     text_dev              = "छन्दस्युभयथा",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH Candasi uBayaTA ArDaDAtukam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः छन्दसि उभयथा आर्धधातुकम्",
     padaccheda_dev        = "छन्दसि उभयथा",
     why_dev               = "धातोः प्रत्ययः (३.4.117)।",
     anuvritti_from        = ('3.1.1',),

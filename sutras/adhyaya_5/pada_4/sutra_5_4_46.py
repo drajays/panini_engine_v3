@@ -4,6 +4,7 @@
 Padaccheda: अतिग्रह-अव्यथन-क्षेपेषु अ-कर्तरि तृतीयायाः
 
 अतिग्रहाव्यथनक्षेपेष्वकर्तरि तृतीयायाः (5.4.46)
+Pāṭha: ashtadhyayi.com data.txt row i=54046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "atigrahAvyaTanakzepezvakartari tftIyAyAH",
     text_dev              = "अतिग्रहाव्यथनक्षेपेष्वकर्तरि तृतीयायाः",
+    samagra_slp1          = "atigraha-avyaTana-kzepezu tftIyAyAH akartari tasiH",
+    samagra_dev           = "अतिग्रह-अव्यथन-क्षेपेषु तृतीयायाः अकर्तरि तसिः",
     padaccheda_dev        = "अतिग्रह-अव्यथन-क्षेपेषु अ-कर्तरि तृतीयायाः",
     why_dev               = "(सूत्रम् 5.4.46) अतिग्रहाव्यथनक्षेपेष्वकर्तरि तृतीयायाः।",
     anuvritti_from        = ('4.1.76',),

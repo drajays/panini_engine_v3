@@ -4,6 +4,7 @@
 Padaccheda: क्ते च
 
 क्ते च (6.2.45)
+Pāṭha: ashtadhyayi.com data.txt row i=62045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kte ca",
     text_dev              = "क्ते च",
+    samagra_slp1          = "kte ca prakftyA pUrvapadam caturTI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "क्ते च प्रकृत्या पूर्वपदम् चतुर्थी",
     padaccheda_dev        = "क्ते च",
     why_dev               = "(सूत्रम् 6.2.45) क्ते च।",
     anuvritti_from        = ('6.1.1',),

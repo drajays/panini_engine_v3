@@ -4,6 +4,7 @@
 Padaccheda: दक्षिणेर्मा लुब्धयोगे
 
 दक्षिणेर्मा लुब्धयोगे (5.4.126)
+Pāṭha: ashtadhyayi.com data.txt row i=54126 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dakziRermA lubDayoge",
     text_dev              = "दक्षिणेर्मा लुब्धयोगे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA dakziRermA lubDayoge bahuvrIhO anic",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा दक्षिणेर्मा लुब्धयोगे बहुव्रीहौ अनिच्",
     padaccheda_dev        = "दक्षिणेर्मा लुब्धयोगे",
     why_dev               = "(सूत्रम् 5.4.126) दक्षिणेर्मा लुब्धयोगे।",
     anuvritti_from        = ('5.4.68',),

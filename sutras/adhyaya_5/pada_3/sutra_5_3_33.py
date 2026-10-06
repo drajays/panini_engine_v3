@@ -4,6 +4,7 @@
 Padaccheda: पश्च पश्चा च छन्दसि
 
 पश्च पश्चा च च्छन्दसि (5.3.33)
+Pāṭha: ashtadhyayi.com data.txt row i=53033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paSca paScA ca cCandasi",
     text_dev              = "पश्च पश्चा च च्छन्दसि",
+    samagra_slp1          = "Candasi paSca paScA nipAtyete",
+    samagra_dev           = "छन्दसि पश्च, पश्चा (निपात्येते)",
     padaccheda_dev        = "पश्च पश्चा च छन्दसि",
     why_dev               = "(सूत्रम् 5.3.33) पश्च पश्चा च च्छन्दसि।",
     anuvritti_from        = ('4.1.76',),

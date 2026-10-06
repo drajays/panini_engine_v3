@@ -16,6 +16,7 @@ doing the necessary semantic analysis outside the engine core).  When eligible
 and the **2.3.1** *anabhihita* adhikāra is open, this sūtra writes
 ``state.meta['vibhakti_vacana'] = '6-1'`` (genitive singular) so **4.1.2** can
 attach the correct *sup* (*ङस् / Nas*).
+Pāṭha: ashtadhyayi.com data.txt row i=23050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -58,6 +59,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'zazWI Seze',
     text_dev       = 'षष्ठी शेषे',
+    samagra_slp1   = "anaBihite zazWI Seze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "अनभिहिते षष्ठी शेषे",
     padaccheda_dev = "अनभिहिते / षष्ठी / शेषे",
     why_dev        = (
         "कर्मादिभ्योऽन्यः (स्वस्वामिसंबन्धादिः) शेषः; तत्र षष्ठी विभक्तिः। "

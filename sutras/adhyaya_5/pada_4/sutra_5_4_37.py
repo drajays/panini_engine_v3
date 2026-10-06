@@ -4,6 +4,7 @@
 Padaccheda: ओषधेः अजातौ
 
 ओषधेरजातौ (5.4.37)
+Pāṭha: ashtadhyayi.com data.txt row i=54037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ozaDerajAtO",
     text_dev              = "ओषधेरजातौ",
+    samagra_slp1          = "ozaDeH ajAtO aR",
+    samagra_dev           = "ओषधेः अजातौ अण्",
     padaccheda_dev        = "ओषधेः अजातौ",
     why_dev               = "(सूत्रम् 5.4.37) ओषधेरजातौ।",
     anuvritti_from        = ('4.1.76',),

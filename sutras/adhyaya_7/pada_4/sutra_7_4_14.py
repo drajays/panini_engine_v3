@@ -4,6 +4,7 @@
 Padaccheda: न कपि
 
 न कपि (7.4.14)
+Pāṭha: ashtadhyayi.com data.txt row i=74014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na kapi",
     text_dev              = "न कपि",
+    samagra_slp1          = "aNgasya na kapi hrasvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न कपि ह्रस्वः",
     padaccheda_dev        = "न कपि",
     why_dev               = "(सूत्रम् 7.4.14) न कपि।",
     anuvritti_from        = ('7.1.1',),

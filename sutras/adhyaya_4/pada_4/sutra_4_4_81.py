@@ -4,6 +4,7 @@
 Padaccheda: हलसीरात् ठक्
 
 हलसीराट्ठक् (4.4.81)
+Pāṭha: ashtadhyayi.com data.txt row i=44081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "halasIrAwWak",
     text_dev              = "हलसीराट्ठक्",
+    samagra_slp1          = "tat vahati iti halasIrAt Wak",
+    samagra_dev           = "'तत् वहति' इति हलसीरात् ठक्",
     padaccheda_dev        = "हलसीरात् ठक्",
     why_dev               = "(सूत्रम् 4.4.81) हलसीराट्ठक्।",
     anuvritti_from        = ('4.1.1',),

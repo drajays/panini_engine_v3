@@ -4,6 +4,7 @@
 Padaccheda: पुरि लुङ् च अस्मे
 
 krt-suffix rule: पुरि लुङ् चास्मे (122)
+Pāṭha: ashtadhyayi.com data.txt row i=32122 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "puri luN cAsme",
     text_dev              = "पुरि लुङ् चास्मे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte puri luN ca asme kft anadyatane law viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते पुरि लुङ् च अस्मे कृत् अनद्यतने लट् विभाषा",
     padaccheda_dev        = "पुरि लुङ् च अस्मे",
     why_dev               = "धातोः कृत्-प्रत्ययः [पुरि लुङ् चास्मे] विहितः (३.२.122)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

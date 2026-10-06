@@ -4,6 +4,7 @@
 Padaccheda: फणाम् च सप्तानाम्
 
 फणां च सप्तानाम् (6.4.125)
+Pāṭha: ashtadhyayi.com data.txt row i=64125 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "PaRAM ca saptAnAm",
     text_dev              = "फणां च सप्तानाम्",
+    samagra_slp1          = "aNgasya asidDavadatrABAt PaRAm ca saptAnAm kNiti aByAsalopaH ataH Tali sewi vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् फणाम् च सप्तानाम् क्ङिति अभ्यासलोपः अतः थलि सेटि वा",
     padaccheda_dev        = "फणाम् च सप्तानाम्",
     why_dev               = "(सूत्रम् 6.4.125) फणां च सप्तानाम्।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: सन्-लिटोः जेः
 
 सन्लिटोर्जेः (7.3.57)
+Pāṭha: ashtadhyayi.com data.txt row i=73057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sanliworjeH",
     text_dev              = "सन्लिटोर्जेः",
+    samagra_slp1          = "aNgasya sanliwoH jeH ku cajoH aByAsAt ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य सन्लिटोः जेः कु चजोः अभ्यासात् च",
     padaccheda_dev        = "सन्-लिटोः जेः",
     why_dev               = "(सूत्रम् 7.3.57) सन्लिटोर्जेः।",
     anuvritti_from        = ('7.1.1',),

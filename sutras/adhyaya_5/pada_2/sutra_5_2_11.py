@@ -4,6 +4,7 @@
 Padaccheda: अवारपार-अत्यन्त-अनुकामम् गामी
 
 अवारपारात्यन्तानुकामं गामी (5.2.11)
+Pāṭha: ashtadhyayi.com data.txt row i=52011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avArapArAtyantAnukAmaM gAmI",
     text_dev              = "अवारपारात्यन्तानुकामं गामी",
+    samagra_slp1          = "tat avArapAram atyantam anukAmam gAmI iti KaH",
+    samagra_dev           = "'तत् अवारपारम्, अत्यन्तम्, अनुकामम् गामी' (इति) खः",
     padaccheda_dev        = "अवारपार-अत्यन्त-अनुकामम् गामी",
     why_dev               = "(सूत्रम् 5.2.11) अवारपारात्यन्तानुकामं गामी।",
     anuvritti_from        = ('4.1.82',),

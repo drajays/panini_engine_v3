@@ -4,6 +4,7 @@
 Padaccheda: क्-इतः
 
 कितः (6.1.165)
+Pāṭha: ashtadhyayi.com data.txt row i=61165 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kitaH",
     text_dev              = "कितः",
+    samagra_slp1          = "kitaH tadDitasya udAttaH",
+    samagra_dev           = "कितः तद्धितस्य उदात्तः",
     padaccheda_dev        = "क्-इतः",
     why_dev               = "(सूत्रम् 6.1.165) कितः।",
     anuvritti_from        = ('6.1.1',),

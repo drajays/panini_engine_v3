@@ -4,6 +4,7 @@
 Padaccheda: तन्त्रात् अचिरापहृते
 
 तन्त्रादचिरापहृते (5.2.70)
+Pāṭha: ashtadhyayi.com data.txt row i=52070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tantrAdacirApahfte",
     text_dev              = "तन्त्रादचिरापहृते",
+    samagra_slp1          = "acira-apahfte iti tantrAt kan",
+    samagra_dev           = "'अचिर-अपहृते' (इति) तन्त्रात् कन्",
     padaccheda_dev        = "तन्त्रात् अचिरापहृते",
     why_dev               = "(सूत्रम् 5.2.70) तन्त्रादचिरापहृते।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: दृढः स्थूल-बलयोः
 
 दृढः स्थूलबलयोः (7.2.20)
+Pāṭha: ashtadhyayi.com data.txt row i=72020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dfQaH sTUlabalayoH",
     text_dev              = "दृढः स्थूलबलयोः",
+    samagra_slp1          = "aNgasya dfQaH sTUlabalayoH na iw nizWAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य दृढः स्थूलबलयोः न इट् निष्ठायाम्",
     padaccheda_dev        = "दृढः स्थूल-बलयोः",
     why_dev               = "(सूत्रम् 7.2.20) दृढः स्थूलबलयोः।",
     anuvritti_from        = ('7.1.1',),

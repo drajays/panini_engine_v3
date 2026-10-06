@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि वा अ-प्र-आम्रेडितयोः
 
 छन्दसि वाऽप्राम्रेडितयोः (8.3.49)
+Pāṭha: ashtadhyayi.com data.txt row i=83049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'Candasi vAprAmreqitayoH',
     text_dev              = 'छन्दसि वाऽप्राम्रेडितयोः',
+    samagra_slp1          = "padasya pUrvatrAsidDam saMhitAyAm Candasi vA a-pra-AmreqitayoH visarjanIyasya kupvoH saH samAse",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् संहितायाम् छन्दसि वा अ-प्र-आम्रेडितयोः विसर्जनीयस्य कुप्वोः सः समासे",
     padaccheda_dev        = "छन्दसि वा अ-प्र-आम्रेडितयोः",
     why_dev               = "(सूत्रम् 8.3.49) छन्दसि वाऽप्राम्रेडितयोः।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: पोटा-युवति-स्तोक-कतिपय-गृष्टि-धेनु-वशा-वेहद्-बष्कयणी-प्रवक्तॄ-श्रोत्रिय-अध्यापक-धूर्तैः जातिः
 
 pota, yuvati, stoka, katipaya etc. with jati form karmadharaya.
+Pāṭha: ashtadhyayi.com data.txt row i=21065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'powAyuvatistokakatipayagfzwiDenuvaSAvehatbazkayaRIpravaktfSrotriyADyApakaDUrtErjAtiH',
     text_dev              = 'पोटायुवतिस्तोककतिपयगृष्टिधेनुवशावेहत्बष्कयणीप्रवक्तृश्रोत्रियाध्यापकधूर्तैर्जातिः',
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH powA-yuvati-stoka-katipaya-gfzwi-Denu-vaSA-vehat-bazkayaRI-pravaktf-Srotriya-aDyApaka-DUrtEH jAtiH samAnADikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः पोटा-युवति-स्तोक-कतिपय-गृष्टि-धेनु-वशा-वेहत्-बष्कयणी-प्रवक्तृ-श्रोत्रिय-अध्यापक-धूर्तैः जातिः समानाधिकरणेन",
     padaccheda_dev        = "पोटा-युवति-स्तोक-कतिपय-गृष्टि-धेनु-वशा-वेहद्-बष्कयणी-प्रवक्तॄ-श्रोत्रिय-अध्यापक-धूर्तैः जातिः",
     why_dev               = "पोटा-युवति-आदिभिः जाति-वाचिभिः सह कर्मधारयः (२.१.६५)।",
     anuvritti_from        = ('2.1.3',),

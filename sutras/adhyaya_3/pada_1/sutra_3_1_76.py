@@ -4,6 +4,7 @@
 Padaccheda: तनूकरणे तक्षः
 
 Krt suffix rule from dhatu: तनूकरणे तक्षः (76)
+Pāṭha: ashtadhyayi.com data.txt row i=31076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tanUkaraRe takzaH",
     text_dev              = "तनूकरणे तक्षः",
+    samagra_slp1          = "karttari sArvaDAtuke tanUkaraRe takzaH SnuH anyatarasyAm",
+    samagra_dev           = "कर्त्तरि सार्वधातुके तनूकरणे तक्षः श्नुः अन्यतरस्याम्",
     padaccheda_dev        = "तनूकरणे तक्षः",
     why_dev               = "धातोः [तनूकरणे तक्षः]-प्रत्ययः विहितः (३.१.76)।",
     anuvritti_from        = ('3.1.1',),

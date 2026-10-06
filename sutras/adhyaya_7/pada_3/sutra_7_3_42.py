@@ -4,6 +4,7 @@
 Padaccheda: शदेः अगतौ तः
 
 शदेरगतौ तः (7.3.42)
+Pāṭha: ashtadhyayi.com data.txt row i=73042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SaderagatO taH",
     text_dev              = "शदेरगतौ तः",
+    samagra_slp1          = "aNgasya SadeH agatO taH RO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य शदेः अगतौ तः णौ",
     padaccheda_dev        = "शदेः अगतौ तः",
     why_dev               = "(सूत्रम् 7.3.42) शदेरगतौ तः।",
     anuvritti_from        = ('7.1.1',),

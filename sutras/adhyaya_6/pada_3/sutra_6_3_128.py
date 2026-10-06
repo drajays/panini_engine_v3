@@ -4,6 +4,7 @@
 Padaccheda: विश्वस्य वसु-राटोः
 
 विश्वस्य वसुराटोः (6.3.128)
+Pāṭha: ashtadhyayi.com data.txt row i=63128 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viSvasya vasurAwoH",
     text_dev              = "विश्वस्य वसुराटोः",
+    samagra_slp1          = "uttarapade saMhitAyAm viSvasya vasu-rAwoH dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् विश्वस्य वसु-राटोः दीर्घः",
     padaccheda_dev        = "विश्वस्य वसु-राटोः",
     why_dev               = "(सूत्रम् 6.3.128) विश्वस्य वसुराटोः।",
     anuvritti_from        = ('6.1.1',),

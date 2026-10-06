@@ -4,6 +4,7 @@
 Padaccheda: द्वि-त्रिभ्याम् अञ्जलेः
 
 द्वित्रिभ्यामञ्जलेः (5.4.102)
+Pāṭha: ashtadhyayi.com data.txt row i=54102 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvitriByAmaYjaleH",
     text_dev              = "द्वित्रिभ्यामञ्जलेः",
+    samagra_slp1          = "tatpuruzasyadvigoH dvi-triByAmaYjaleH atadDitaluki wac prAcAm",
+    samagra_dev           = "तत्पुरुषस्यद्विगोः  द्वि-त्रिभ्यामञ्जलेः अतद्धितलुकि टच् प्राचाम्",
     padaccheda_dev        = "द्वि-त्रिभ्याम् अञ्जलेः",
     why_dev               = "(सूत्रम् 5.4.102) द्वित्रिभ्यामञ्जलेः।",
     anuvritti_from        = ('5.4.68',),

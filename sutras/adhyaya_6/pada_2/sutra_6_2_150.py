@@ -4,6 +4,7 @@
 Padaccheda: अनः भावकर्मवचनः
 
 अनो भावकर्मवचनः (6.2.150)
+Pāṭha: ashtadhyayi.com data.txt row i=62150 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ano BAvakarmavacanaH",
     text_dev              = "अनो भावकर्मवचनः",
+    samagra_slp1          = "uttarapadAdiH antaH anaH BAvakarmavacanaH kArakAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः अनः भावकर्मवचनः कारकात्",
     padaccheda_dev        = "अनः भावकर्मवचनः",
     why_dev               = "(सूत्रम् 6.2.150) अनो भावकर्मवचनः।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: सूत्रात् च क-उपधात्
 
 सूत्राच्च कोपधात् (4.2.65)
+Pāṭha: ashtadhyayi.com data.txt row i=42065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sUtrAcca kopaDAt",
     text_dev              = "सूत्राच्च कोपधात्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA sUtrAt ca kopaDAt tat aDIte veda luk proktAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा सूत्रात् च कोपधात् तत् अधीते वेद लुक् प्रोक्तात्",
     padaccheda_dev        = "सूत्रात् च क-उपधात्",
     why_dev               = "(सूत्रम् 4.2.65) सूत्राच्च कोपधात्।",
     anuvritti_from        = ('4.1.1',),

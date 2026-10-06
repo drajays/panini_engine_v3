@@ -4,6 +4,7 @@
 Padaccheda: क्षेम-प्रिय-मद्रे अण् च
 
 krt-suffix rule: क्षेमप्रियमद्रेऽण् च (44)
+Pāṭha: ashtadhyayi.com data.txt row i=32044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'kzemapriyamadreR ca',
     text_dev              = 'क्षेमप्रियमद्रेऽण् च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kzema-priya-madre aR ca kft karmaRi anupasarge supi Kac kfYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः क्षेम-प्रिय-मद्रे अण् च कृत् कर्मणि अनुपसर्गे सुपि खच् कृञः",
     padaccheda_dev        = "क्षेम-प्रिय-मद्रे अण् च",
     why_dev               = "धातोः कृत्-प्रत्ययः [क्षेमप्रियमद्रेऽण् च] विहितः (३.२.44)।",
     anuvritti_from        = ('3.1.1',),

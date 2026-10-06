@@ -4,6 +4,7 @@
 Padaccheda: प्रकारवचने जातीयर्
 
 प्रकारवचने जातीयर्। (5.3.69)
+Pāṭha: ashtadhyayi.com data.txt row i=53069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'prakAravacane jAtIyar',
     text_dev              = 'प्रकारवचने जातीयर्',
+    samagra_slp1          = "prakAravacane jAtIyar",
+    samagra_dev           = "प्रकारवचने जातीयर्",
     padaccheda_dev        = "प्रकारवचने जातीयर्",
     why_dev               = "(सूत्रम् 5.3.69) प्रकारवचने जातीयर्।।",
     anuvritti_from        = ('4.1.76',),

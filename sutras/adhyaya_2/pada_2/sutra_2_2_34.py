@@ -6,6 +6,7 @@
 Engine: fires when any Term carries the ``dvandva`` tag and the dvandva samjña
 has already been stamped (2.2.29 fired first). Records an anuvāda audit step
 without mutating the tape.
+Pāṭha: ashtadhyayi.com data.txt row i=22034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.ANUVADA,
     text_slp1      = "alpActaram",
     text_dev       = "अल्पाच्तरम्",
+    samagra_slp1   = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA alpa-ac-taram pUrvam dvandve",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा अल्प-अच्-तरम् पूर्वम् द्वन्द्वे",
     padaccheda_dev = "अल्प-अच्-तरम्",
     why_dev        = "समासे पदक्रम-नियमः (narrow audit stamp for P013).",
     anuvritti_from = ("2.2.29",),

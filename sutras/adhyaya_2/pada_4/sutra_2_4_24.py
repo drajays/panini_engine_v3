@@ -4,6 +4,7 @@
 Padaccheda: अशाला च
 
 Also ashala (without shala).
+Pāṭha: ashtadhyayi.com data.txt row i=24024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aSAlA ca",
     text_dev              = "अशाला च",
+    samagra_slp1          = "tatpuruzonaYkarmaDArayaH a-SAlA ca napuMsakam saBA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तत्पुरुषोऽनञ्कर्मधारयः अ-शाला च नपुंसकम् सभा",
     padaccheda_dev        = "अशाला च",
     why_dev               = "अशाला च (२.४.२४)।",
     anuvritti_from        = ('2.4.23',),

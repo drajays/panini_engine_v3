@@ -4,6 +4,7 @@
 Padaccheda: जीविका-अर्थे च अपण्ये
 
 जीविकाऽर्थे चापण्ये (5.3.99)
+Pāṭha: ashtadhyayi.com data.txt row i=53099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'jIvikArTe cApaRye',
     text_dev              = 'जीविकार्थे चापण्ये',
+    samagra_slp1          = "ive kanaH jIvikArTe apaRye lup",
+    samagra_dev           = "इवे कनः जीविकार्थे अपण्ये लुप्",
     padaccheda_dev        = "जीविका-अर्थे च अपण्ये",
     why_dev               = "(सूत्रम् 5.3.99) जीविकाऽर्थे चापण्ये।",
     anuvritti_from        = ('4.1.76',),

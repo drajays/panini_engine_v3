@@ -4,6 +4,7 @@
 Padaccheda: मन्त्रे सोम-अश्व-इन्द्रिय-विश्वदेव्यस्य मतौ
 
 मन्त्रे सोमाश्वेन्द्रियविश्वदेव्यस्य मतौ (6.3.131)
+Pāṭha: ashtadhyayi.com data.txt row i=63131 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mantre somASvendriyaviSvadevyasya matO",
     text_dev              = "मन्त्रे सोमाश्वेन्द्रियविश्वदेव्यस्य मतौ",
+    samagra_slp1          = "uttarapade saMhitAyAm mantre soma-aSva-indriya-viSvadevyasya matO dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् मन्त्रे सोम-अश्व-इन्द्रिय-विश्वदेव्यस्य मतौ दीर्घः",
     padaccheda_dev        = "मन्त्रे सोम-अश्व-इन्द्रिय-विश्वदेव्यस्य मतौ",
     why_dev               = "(सूत्रम् 6.3.131) मन्त्रे सोमाश्वेन्द्रियविश्वदेव्यस्य मतौ।",
     anuvritti_from        = ('6.1.1',),

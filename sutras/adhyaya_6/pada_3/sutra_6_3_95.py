@@ -4,6 +4,7 @@
 Padaccheda: सहस्य सध्रिः
 
 सहस्य सध्रिः (6.3.95)
+Pāṭha: ashtadhyayi.com data.txt row i=63095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sahasya saDriH",
     text_dev              = "सहस्य सध्रिः",
+    samagra_slp1          = "apratyaye aYcatO uttarapade sahasya saDriH",
+    samagra_dev           = "अप्रत्यये अञ्चतौ उत्तरपदे सहस्य सध्रिः",
     padaccheda_dev        = "सहस्य सध्रिः",
     why_dev               = "(सूत्रम् 6.3.95) सहस्य सध्रिः।",
     anuvritti_from        = ('6.1.1',),

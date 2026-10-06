@@ -9,6 +9,7 @@ Before an *asarvanāmasthāna* *svādi* affix whose raw upadeśa is in **siti**
 the *prakṛti* / *aṅga* receives *pada* technical tagging ``pada_1_4_16``.
 
 This *pada* **bādhate** *bha* from **1.4.18** (e.g. *ūrṇā* + *yus*).
+Pāṭha: ashtadhyayi.com data.txt row i=14016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -57,6 +58,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = "siti ca",
     text_dev       = "सिति च",
+    samagra_slp1   = "siti padam",
+    samagra_dev    = "सिति  पदम्",
     padaccheda_dev = "सिति च",
     why_dev        = "सिति परे प्रातिपदिकस्य पदसंज्ञा; भसंज्ञां बाधते।",
     apavada_of     = ("1.4.18",),   # अपवाद of 1.4.18 — sutra_ref_out resolver.apavada_of

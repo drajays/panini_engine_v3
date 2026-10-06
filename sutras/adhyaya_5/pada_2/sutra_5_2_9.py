@@ -4,6 +4,7 @@
 Padaccheda: अनुपद-सर्वान्न-अय-अनयम् बद्धा-भक्षयति-नेयेषु
 
 अनुपदसर्वान्नायानयं बद्धाभक्षयतिनेयेषु (5.2.9)
+Pāṭha: ashtadhyayi.com data.txt row i=52009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anupadasarvAnnAyAnayaM badDABakzayatineyezu",
     text_dev              = "अनुपदसर्वान्नायानयं बद्धाभक्षयतिनेयेषु",
+    samagra_slp1          = "tat anupada-sarvAnna-ayAnayam badDA-Bakzayati-neyezu KaH",
+    samagra_dev           = "तत् अनुपद-सर्वान्न-अयानयम् बद्धा-भक्षयति-नेयेषु खः",
     padaccheda_dev        = "अनुपद-सर्वान्न-अय-अनयम् बद्धा-भक्षयति-नेयेषु",
     why_dev               = "(सूत्रम् 5.2.9) अनुपदसर्वान्नायानयं बद्धाभक्षयतिनेयेषु।",
     anuvritti_from        = ('4.1.82',),

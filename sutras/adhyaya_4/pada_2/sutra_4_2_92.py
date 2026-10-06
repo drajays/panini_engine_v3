@@ -16,6 +16,7 @@ sense families (**4.3.25**, **101**, **74**, **89**, **38**, …).  *Kāśikā:*
 
 *Examples (illustrative):* *cākṣuṣam*, *śrāvaṇaḥ*, *daṛṣadaḥ* → *dārṣadaḥ*,
 *aulūkhalaḥ*, *āśvaḥ*, *cāturam*, *cāturdśam*, …
+Pāṭha: ashtadhyayi.com data.txt row i=42092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     text_dev        = (
         'शेषे'
     ),
+    samagra_slp1    = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA Seze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev     = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा शेषे",
     padaccheda_dev  = "शेषे (सप्तमी-एकवचनम्)",
     why_dev         = (
         "अपत्यादि-चतुरर्थ-पर्यन्तेभ्यो व्यतिरिक्तेऽर्थे तद्धिताः — "

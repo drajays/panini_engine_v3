@@ -4,6 +4,7 @@
 Padaccheda: ब्रह्मणः जानपदाख्यायाम्
 
 ब्रह्मणो जानपदाख्यायाम् (5.4.104)
+Pāṭha: ashtadhyayi.com data.txt row i=54104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "brahmaRo jAnapadAKyAyAm",
     text_dev              = "ब्रह्मणो जानपदाख्यायाम्",
+    samagra_slp1          = "tatpuruzasya brahmaRaH jAnapadAKyAyAm wac",
+    samagra_dev           = "तत्पुरुषस्य ब्रह्मणः जानपदाख्यायाम् टच्",
     padaccheda_dev        = "ब्रह्मणः जानपदाख्यायाम्",
     why_dev               = "(सूत्रम् 5.4.104) ब्रह्मणो जानपदाख्यायाम्।",
     anuvritti_from        = ('5.4.68',),

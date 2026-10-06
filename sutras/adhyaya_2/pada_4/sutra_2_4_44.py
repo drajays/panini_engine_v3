@@ -4,6 +4,7 @@
 Padaccheda: आत्मनेपदेषु अन्यतरस्याम्
 
 Optional in atmanepada forms.
+Pāṭha: ashtadhyayi.com data.txt row i=24044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AtmanepadezvanyatarasyAm",
     text_dev              = "आत्मनेपदेष्वन्यतरस्याम्",
+    samagra_slp1          = "ArDaDAtuke Atmanepadezu anyatarasyAm hanaH vaDa luNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके आत्मनेपदेषु अन्यतरस्याम् हनः वध लुङि",
     padaccheda_dev        = "आत्मनेपदेषु अन्यतरस्याम्",
     why_dev               = "आत्मनेपदेषु अन्यतरस्याम् (२.४.४४)।",
     anuvritti_from        = ('2.4.42',),

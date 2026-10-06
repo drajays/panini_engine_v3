@@ -4,6 +4,7 @@
 Padaccheda: दैवयज्ञि-शौचिवृक्षि-सात्यमुग्रि-काण्ठेविद्धिभ्यः अन्यतरस्याम्
 
 दैवयज्ञिशौचिवृक्षिसात्यमुग्रिकाण्ठेविद्धिभ्योऽन्यतरस्याम् (4.1.81)
+Pāṭha: ashtadhyayi.com data.txt row i=41081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'dEvayajYiSOcivfkzisAtyamugrikARWevidDiByonyatarasyAm',
     text_dev              = 'दैवयज्ञिशौचिवृक्षिसात्यमुग्रिकाण्ठेविद्धिभ्योऽन्यतरस्याम्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt tadDitAH dEvayajYi-SOcivfkzi-sAtyamugri-kARWevidDiByaH anyatarasyAm zyaN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् तद्धिताः दैवयज्ञि-शौचिवृक्षि-सात्यमुग्रि-काण्ठेविद्धिभ्यः अन्यतरस्याम् ष्यङ्",
     padaccheda_dev        = "दैवयज्ञि-शौचिवृक्षि-सात्यमुग्रि-काण्ठेविद्धिभ्यः अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 4.1.81) दैवयज्ञिशौचिवृक्षिसात्यमुग्रिकाण्ठेविद्धिभ्योऽन्यतरस्याम्।",
     anuvritti_from        = ('4.1.1',),

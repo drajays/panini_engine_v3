@@ -4,6 +4,7 @@
 Padaccheda: नदी-पौर्णमासी-आग्रहायणीभ्यः
 
 नदीपौर्णमास्याग्रहायणीभ्यः (5.4.110)
+Pāṭha: ashtadhyayi.com data.txt row i=54110 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nadIpOrRamAsyAgrahAyaRIByaH",
     text_dev              = "नदीपौर्णमास्याग्रहायणीभ्यः",
+    samagra_slp1          = "nadI-pOrRamAsI-AgrahAyaRIByaH avyayIBAve anyatarasyAm wac",
+    samagra_dev           = "नदी-पौर्णमासी-आग्रहायणीभ्यः अव्ययीभावे अन्यतरस्याम् टच्",
     padaccheda_dev        = "नदी-पौर्णमासी-आग्रहायणीभ्यः",
     why_dev               = "(सूत्रम् 5.4.110) नदीपौर्णमास्याग्रहायणीभ्यः।",
     anuvritti_from        = ('5.4.68',),

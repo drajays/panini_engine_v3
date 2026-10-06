@@ -4,6 +4,7 @@
 Padaccheda: उपक-आदिभ्यः अन्यतरस्याम् अ-द्वन्द्वे
 
 Optionally for upaka etc. in non-dvandva context.
+Pāṭha: ashtadhyayi.com data.txt row i=24069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'upakAdiByonyatarasyAmadvandve',
     text_dev              = 'उपकादिभ्योऽन्यतरस्यामद्वन्द्वे',
+    samagra_slp1          = "upaka-AdiByaH anyatarasyAm a-dvandve luk bahuzu tena eva astriyAm gotre",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उपक-आदिभ्यः अन्यतरस्याम् अ-द्वन्द्वे लुक् बहुषु तेन एव अस्त्रियाम् गोत्रे",
     padaccheda_dev        = "उपक-आदिभ्यः अन्यतरस्याम् अ-द्वन्द्वे",
     why_dev               = "उपक-आदिभ्यः अन्यतरस्याम् अ-द्वन्द्वे (२.४.६९)।",
     anuvritti_from        = ('2.4.68',),

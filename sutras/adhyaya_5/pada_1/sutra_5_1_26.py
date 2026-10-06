@@ -4,6 +4,7 @@
 Padaccheda: शूर्पात् अञ् अन्यतरस्याम्
 
 शूर्पादञन्यतरस्याम् (5.1.26)
+Pāṭha: ashtadhyayi.com data.txt row i=51026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SUrpAdaYanyatarasyAm",
     text_dev              = "शूर्पादञन्यतरस्याम्",
+    samagra_slp1          = "A-arhAt SUrpAt anyatarasyAmaY",
+    samagra_dev           = "आ-अर्हात् शूर्पात् अन्यतरस्यामञ्",
     padaccheda_dev        = "शूर्पात् अञ् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 5.1.26) शूर्पादञन्यतरस्याम्।",
     anuvritti_from        = ('5.1.19',),

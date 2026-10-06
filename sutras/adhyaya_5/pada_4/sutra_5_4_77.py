@@ -4,6 +4,7 @@
 Padaccheda: अचतुर-विचतुर-सुचतुर-स्त्रीपुंस-धेन्वनडुह-ऋक्साम-वाङ्मनस्-अक्षिभ्रुव-दारगव-उर्वष्ठीव-पदष्ठीव-नक्तंदिव-रात्रिंदिव-अहर्दिव-सरजस-निःश्रेयस-पुरुषायुष-द्व्यायुष-त्र्यायुष-ऋग्यजुष-जातोक्ष-महोक्ष-वृद्धोक्ष-उपशुन-गोष्ठश्वाः
 
 अचतुरविचतुरसुचतुरस्त्रीपुंसधेन्वनडुहर्क्सामवाङ्मनसाक्षिभ्रुवदारगवोर्वष्ठीवपदष्ठीवनक्तंदिवरत्रिंदिवाहर्दिवसरजसनिःश्रेयसपुरुषायुषद्व्यायुषत्र्यायुषर्ग्यजुषजातोक्षमहोक्षवृद्धोक्षोपशुनगोष्ठश्वाः (5.4.77)
+Pāṭha: ashtadhyayi.com data.txt row i=54077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'acaturavicaturasucaturastrIpuMsaDenvanaquharksAmavANmanasAkziBruvadAragavorvazWIvapadazWIvanaktaMdivarAtriMdivAhardivasarajasaniHSreyasapuruzAyuzadvyAyuzatryAyuzargyajuzajAtokzamahokzavfdDokzopaSunagozWaSvAH',
     text_dev              = 'अचतुरविचतुरसुचतुरस्त्रीपुंसधेन्वनडुहर्क्सामवाङ्मनसाक्षिभ्रुवदारगवोर्वष्ठीवपदष्ठीवनक्तंदिवरात्रिंदिवाहर्दिवसरजसनिःश्रेयसपुरुषायुषद्व्यायुषत्र्यायुषर्ग्यजुषजातोक्षमहोक्षवृद्धोक्षोपशुनगोष्ठश्वाः',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA acatura-vicatura-sucatura-strIpuMsa-Denvanaquha-fksAma-vANmanasa-akziBruva-dAragava-UrvazWIva-padazWIva-naktaMdiva-rAtriMdiva-ahardiva-sarajasa-niHSreyasa-puruzAyuza-dvyAyuza-tryAyuza-fgyajuza-jAtokza-mahokza-vfdDokza-upaSuna-gozWaSvAH ac",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा अचतुर-विचतुर-सुचतुर-स्त्रीपुंस-धेन्वनडुह-ऋक्साम-वाङ्मनस-अक्षिभ्रुव-दारगव-ऊर्वष्ठीव-पदष्ठीव-नक्तंदिव-रात्रिंदिव-अहर्दिव-सरजस-निःश्रेयस-पुरुषायुष-द्व्यायुष-त्र्यायुष-ऋग्यजुष-जातोक्ष-महोक्ष-वृद्धोक्ष-उपशुन-गोष्ठश्वाः अच्",
     padaccheda_dev        = "अचतुर-विचतुर-सुचतुर-स्त्रीपुंस-धेन्वनडुह-ऋक्साम-वाङ्मनस्-अक्षिभ्रुव-दारगव-उर्वष्ठीव-पदष्ठीव-नक्तंदिव-रात्रिंदिव-अहर्दिव-सरजस-निःश्रेयस-पुरुषायुष-द्व्यायुष-त्र्यायुष-ऋग्यजुष-जातोक्ष-महोक्ष-वृद्धोक्ष-उपशुन-गोष्ठश्वाः",
     why_dev               = "(सूत्रम् 5.4.77) अचतुरविचतुरसुचतुरस्त्रीपुंसधेन्वनडुहर्क्सामवाङ्मनसाक्षिभ्रुवदारगवोर्वष्ठीवपदष्ठीवनक्तंदिवरत्रिंदिवाहर्दिवसरजसनिःश्रेयसपुरुषायुषद्व्यायुषत्र्यायुषर्ग्यजुषजातोक्षमहोक्षवृद्धोक्षोपशुनगोष्ठश्वाः।",
     anuvritti_from        = ('5.4.68',),

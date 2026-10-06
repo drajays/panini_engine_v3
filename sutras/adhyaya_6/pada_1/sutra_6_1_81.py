@@ -4,6 +4,7 @@
 Padaccheda: क्षय्य-जय्यौ शक्य-अर्थे
 
 क्षय्यजय्यौ शक्यार्थे (6.1.81)
+Pāṭha: ashtadhyayi.com data.txt row i=61081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kzayyajayyO SakyArTe",
     text_dev              = "क्षय्यजय्यौ शक्यार्थे",
+    samagra_slp1          = "SakyArTe kzayya-jayyO",
+    samagra_dev           = "शक्यार्थे क्षय्य-जय्यौ",
     padaccheda_dev        = "क्षय्य-जय्यौ शक्य-अर्थे",
     why_dev               = "(सूत्रम् 6.1.81) क्षय्यजय्यौ शक्यार्थे।",
     anuvritti_from        = ('6.1.1',),

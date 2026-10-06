@@ -4,6 +4,7 @@
 Padaccheda: तुमर्थे से-सेन्-असे-असेन्-क्से-कसेन्-अध्यै-अध्यैन्-कध्यै-कध्यैन्-शध्यै-शध्यैन्-तवै-तवेङ्-तवेनः
 
 krt-suffix rule: तुमर्थे सेसेनसेअसेन्क्सेकसेनध्यैअध्यैन्कध्यैकध्यैन्शध्यैशध्यैन्तवैतवेङ्तवेनः
+Pāṭha: ashtadhyayi.com data.txt row i=34009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tumarTe sesenasesenksekasenaDyEaDyEnkaDyEkaDyEnSaDyESaDyEntavEtaveNtavenaH',
     text_dev              = 'तुमर्थे सेसेनसेऽसेन्क्सेकसेनध्यैअध्यैन्कध्यैकध्यैन्शध्यैशध्यैन्तवैतवेङ्तवेनः',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH tumarTe se-sen-ase-asen-kse-kasen-aDyE-aDyEn-kaDyE-kaDyEn-SaDyE-SaDyEn-tavE-taveN-tavenaH kft Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः तुमर्थे से-सेन्-असे-असेन्-क्से-कसेन्-अध्यै-अध्यैन्-कध्यै-कध्यैन्-शध्यै-शध्यैन्-तवै-तवेङ्-तवेनः कृत् छन्दसि",
     padaccheda_dev        = "तुमर्थे से-सेन्-असे-असेन्-क्से-कसेन्-अध्यै-अध्यैन्-कध्यै-कध्यैन्-शध्यै-शध्यैन्-तवै-तवेङ्-तवेनः",
     why_dev               = "धातोः प्रत्ययः (३.4.9)।",
     anuvritti_from        = ('3.1.1',),

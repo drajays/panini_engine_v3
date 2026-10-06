@@ -4,6 +4,7 @@
 Padaccheda: नक्षत्रात् घः
 
 नक्षत्राद्घः (4.4.141)
+Pāṭha: ashtadhyayi.com data.txt row i=44141 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nakzatrAdGaH",
     text_dev              = "नक्षत्राद्घः",
+    samagra_slp1          = "nakzatrAt Candasi saMjYAyAm GaH",
+    samagra_dev           = "नक्षत्रात् छन्दसि संज्ञायाम् घः",
     padaccheda_dev        = "नक्षत्रात् घः",
     why_dev               = "(सूत्रम् 4.4.141) नक्षत्राद्घः।",
     anuvritti_from        = ('4.1.1',),

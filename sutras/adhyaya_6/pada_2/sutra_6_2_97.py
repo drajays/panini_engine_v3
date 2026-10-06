@@ -4,6 +4,7 @@
 Padaccheda: द्विगौ क्रतौ
 
 द्विगौ क्रतौ (6.2.97)
+Pāṭha: ashtadhyayi.com data.txt row i=62097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvigO kratO",
     text_dev              = "द्विगौ क्रतौ",
+    samagra_slp1          = "udAttaH antaH dvigO kratO pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः द्विगौ क्रतौ पूर्वपदम्",
     padaccheda_dev        = "द्विगौ क्रतौ",
     why_dev               = "(सूत्रम् 6.2.97) द्विगौ क्रतौ।",
     anuvritti_from        = ('6.1.1',),

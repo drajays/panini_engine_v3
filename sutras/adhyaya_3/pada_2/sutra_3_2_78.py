@@ -4,6 +4,7 @@
 Padaccheda: सुपि अ-जातौ णिनिः ताच्छील्ये
 
 krt-suffix rule: सुप्यजातौ णिनिस्ताच्छिल्ये (78)
+Pāṭha: ashtadhyayi.com data.txt row i=32078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'supyajAtO RinistAcCIlye',
     text_dev              = 'सुप्यजातौ णिनिस्ताच्छील्ये',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH supi ajAtO RiniH tAcCIlye kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः सुपि अजातौ णिनिः ताच्छील्ये कृत्",
     padaccheda_dev        = "सुपि अ-जातौ णिनिः ताच्छील्ये",
     why_dev               = "धातोः कृत्-प्रत्ययः [सुप्यजातौ णिनिस्ताच्छिल्ये] विहितः (३.२.78)।",
     anuvritti_from        = ('3.1.1',),

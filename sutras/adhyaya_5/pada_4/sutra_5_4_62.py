@@ -4,6 +4,7 @@
 Padaccheda: निष्कुलात् निष्कोषणे
 
 निष्कुलान्निष्कोषणे (5.4.62)
+Pāṭha: ashtadhyayi.com data.txt row i=54062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nizkulAnnizkozaRe",
     text_dev              = "निष्कुलान्निष्कोषणे",
+    samagra_slp1          = "nizkulAt nizkozaRe kfYaH qAc",
+    samagra_dev           = "निष्कुलात् निष्कोषणे कृञः डाच्",
     padaccheda_dev        = "निष्कुलात् निष्कोषणे",
     why_dev               = "(सूत्रम् 5.4.62) निष्कुलान्निष्कोषणे।",
     anuvritti_from        = ('4.1.76',),

@@ -4,6 +4,7 @@
 Padaccheda: विभाषा कृ-वृषोः
 
 Krt suffix rule from dhatu: विभाषा कृवृषोः (120)
+Pāṭha: ashtadhyayi.com data.txt row i=31120 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA kfvfzoH",
     text_dev              = "विभाषा कृवृषोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH viBAzA kfvfzoH kft kyap",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः विभाषा कृवृषोः कृत् क्यप्",
     padaccheda_dev        = "विभाषा कृ-वृषोः",
     why_dev               = "धातोः [विभाषा कृवृषोः]-प्रत्ययः विहितः (३.१.120)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

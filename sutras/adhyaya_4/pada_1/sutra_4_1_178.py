@@ -4,6 +4,7 @@
 Padaccheda: न प्राच्य-भर्ग-आदि-यौधेय-आदिभ्यः
 
 न प्राच्यभर्गादियौधेयादिभ्यः (4.1.178)
+Pāṭha: ashtadhyayi.com data.txt row i=41178 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na prAcyaBargAdiyODeyAdiByaH",
     text_dev              = "न प्राच्यभर्गादियौधेयादिभ्यः",
+    samagra_slp1          = "prAcya-BargAdi-yODeyAdiByaH striyAm tadrAjasya luk na",
+    samagra_dev           = "प्राच्य-भर्गादि-यौधेयादिभ्यः स्त्रियाम्  तद्राजस्य लुक् न",
     padaccheda_dev        = "न प्राच्य-भर्ग-आदि-यौधेय-आदिभ्यः",
     why_dev               = "(सूत्रम् 4.1.178) न प्राच्यभर्गादियौधेयादिभ्यः।",
     anuvritti_from        = ('4.1.1',),

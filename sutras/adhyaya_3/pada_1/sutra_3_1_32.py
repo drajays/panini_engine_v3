@@ -3,6 +3,7 @@
 
 Glass-box role: when a sanādi pratyaya (e.g. yaG) has been attached, the whole
 base is treated as dhātu again.
+Pāṭha: ashtadhyayi.com data.txt row i=31032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = "sanAdyantA DAtavaH",
     text_dev       = "सनाद्यन्ता धातवः",
+    samagra_slp1   = "sanAdyantAH DAtavaH",
+    samagra_dev    = "सनाद्यन्ताः धातवः",
     padaccheda_dev = "सनादि-अन्ताः / धातवः",
     why_dev        = "सनादि-प्रत्ययान्तः समुदायः धातु-संज्ञकः।",
     anuvritti_from = (),

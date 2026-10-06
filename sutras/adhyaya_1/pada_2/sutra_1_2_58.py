@@ -18,6 +18,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'jAtyAKyAyAmekasmin bahuvacanamanyatarasyAm',
     text_dev                = 'जात्याख्यायामेकस्मिन् बहुवचनमन्यतरस्याम्',
+    samagra_slp1            = "jAti-AKyAyAm ekasmin bahuvacanam anyatarasyAm arTasya anyapramARatvAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "जाति-आख्यायाम् एकस्मिन् बहुवचनम् अन्यतरस्याम् अर्थस्य अन्यप्रमाणत्वात्",
     padaccheda_dev          = "जाति-आख्यायाम् / एकस्मिन् / बहुवचनम् / अन्यतरस्याम्",
     why_dev                 = (
         "जातिवाचिनि शब्दे एकस्मिन् अर्थे विवक्षिते बहुवचनम् अन्यतरस्याम् — "

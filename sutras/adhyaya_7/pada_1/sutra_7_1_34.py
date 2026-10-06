@@ -4,6 +4,7 @@
 Padaccheda: आतः औ (लुप्तप्रथमान्तनिर्देशः) णलः
 
 आत औ णलः (7.1.34)
+Pāṭha: ashtadhyayi.com data.txt row i=71034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -40,6 +41,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "Ata O RalaH",
     text_dev              = "आत औ णलः",
+    samagra_slp1          = "aNgasya AtaH O RalaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य आतः औ णलः",
     padaccheda_dev        = "आतः औ (लुप्तप्रथमान्तनिर्देशः) णलः",
     why_dev               = "आदन्तात् अङ्गात् परस्य णलः औकारादेशः (ददौ, जग्लौ)।",
     anuvritti_from        = ('7.1.1',),

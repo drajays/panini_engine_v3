@@ -4,6 +4,7 @@
 Padaccheda: षष्ठी च अनादरे
 
 Sasthi also in contempt/disregard context.
+Pāṭha: ashtadhyayi.com data.txt row i=23038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zazWI cAnAdare",
     text_dev              = "षष्ठी चानादरे",
+    samagra_slp1          = "anaBihite zazWI ca anAdare saptamI yasya BAvena BAva-lakzaRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते षष्ठी च अनादरे सप्तमी यस्य भावेन भाव-लक्षणम्",
     padaccheda_dev        = "षष्ठी च अनादरे",
     why_dev               = "षष्ठी च अनादरे (२.३.३८)।",
     anuvritti_from        = ('2.3.50',),

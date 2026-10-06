@@ -4,6 +4,7 @@
 Padaccheda: त-आदौ च न्-इति कृति अतौ
 
 तादौ च निति कृत्यतौ (6.2.50)
+Pāṭha: ashtadhyayi.com data.txt row i=62050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tAdO ca niti kftyatO",
     text_dev              = "तादौ च निति कृत्यतौ",
+    samagra_slp1          = "tAdO ca niti kfti atO pUrvapadam prakftyA anantaraH gatiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तादौ च निति कृति अतौ पूर्वपदम् प्रकृत्या अनन्तरः गतिः",
     padaccheda_dev        = "त-आदौ च न्-इति कृति अतौ",
     why_dev               = "(सूत्रम् 6.2.50) तादौ च निति कृत्यतौ।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: मघवा (सुब्व्यत्ययेनात्र षष्ट्यर्थे प्रथमा ) बहुलम्
 
 मघवा बहुलम् (6.4.128)
+Pāṭha: ashtadhyayi.com data.txt row i=64128 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "maGavA bahulam",
     text_dev              = "मघवा बहुलम्",
+    samagra_slp1          = "aNgasya asidDavadatrABAt maGavA bahulam tf",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् मघवा बहुलम् तृ",
     padaccheda_dev        = "मघवा (सुब्व्यत्ययेनात्र षष्ट्यर्थे प्रथमा ) बहुलम्",
     why_dev               = "(सूत्रम् 6.4.128) मघवा बहुलम्।",
     anuvritti_from        = ('6.1.1',),

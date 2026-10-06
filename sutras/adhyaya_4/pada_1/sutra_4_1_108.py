@@ -4,6 +4,7 @@
 Padaccheda: वतण्डात् च
 
 वतण्डाच्च (4.1.108)
+Pāṭha: ashtadhyayi.com data.txt row i=41108 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vataRqAcca",
     text_dev              = "वतण्डाच्च",
+    samagra_slp1          = "tasya gotre apatyam iti vataRqAt ANgirase yaY",
+    samagra_dev           = "'तस्य गोत्रे अपत्यम्' (इति) वतण्डात् आङ्गिरसे यञ्",
     padaccheda_dev        = "वतण्डात् च",
     why_dev               = "(सूत्रम् 4.1.108) वतण्डाच्च।",
     anuvritti_from        = ('4.1.1',),

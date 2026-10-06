@@ -4,6 +4,7 @@
 Padaccheda: विभाषा फाल्गुनी-श्रवणा-कार्त्तिकी-चैत्रीभ्यः
 
 विभाषा फाल्गुनीश्रवणाकार्त्तिकीचैत्रीभ्यः (4.2.23)
+Pāṭha: ashtadhyayi.com data.txt row i=42023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA PAlgunISravaRAkArttikIcEtrIByaH",
     text_dev              = "विभाषा फाल्गुनीश्रवणाकार्त्तिकीचैत्रीभ्यः",
+    samagra_slp1          = "sA asmin pOrRamAsI iti saMjYAyAm iti PAlgunI-SravaRA-kArttikI-cEtrIByaH viBAzA Waka",
+    samagra_dev           = "'सा अस्मिन् पौर्णमासी इति संज्ञायाम्' (इति) फाल्गुनी-श्रवणा-कार्त्तिकी-चैत्रीभ्यः विभाषा ठक",
     padaccheda_dev        = "विभाषा फाल्गुनी-श्रवणा-कार्त्तिकी-चैत्रीभ्यः",
     why_dev               = "(सूत्रम् 4.2.23) विभाषा फाल्गुनीश्रवणाकार्त्तिकीचैत्रीभ्यः।",
     anuvritti_from        = ('4.1.1',),

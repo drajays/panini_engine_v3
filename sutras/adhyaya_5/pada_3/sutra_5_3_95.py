@@ -4,6 +4,7 @@
 Padaccheda: अवक्षेपणे कन्
 
 अवक्षेपणे कन् (5.3.95)
+Pāṭha: ashtadhyayi.com data.txt row i=53095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avakzepaRe kan",
     text_dev              = "अवक्षेपणे कन्",
+    samagra_slp1          = "avakzepaRe kan",
+    samagra_dev           = "अवक्षेपणे कन्",
     padaccheda_dev        = "अवक्षेपणे कन्",
     why_dev               = "(सूत्रम् 5.3.95) अवक्षेपणे कन्।",
     anuvritti_from        = ('5.3.70',),

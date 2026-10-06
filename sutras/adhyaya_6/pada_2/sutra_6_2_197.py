@@ -4,6 +4,7 @@
 Padaccheda: द्वि-त्रिभ्याम् पाद्-दत्-मूर्धसु बहुव्रीहौ
 
 द्वित्रिभ्यां पाद्दन्मूर्धसु बहुव्रीहौ (6.2.197)
+Pāṭha: ashtadhyayi.com data.txt row i=62197 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvitriByAM pAddanmUrDasu bahuvrIhO",
     text_dev              = "द्वित्रिभ्यां पाद्दन्मूर्धसु बहुव्रीहौ",
+    samagra_slp1          = "uttarapadAdiH antaH dvitriByAm pAd-dat-mUrDasu bahuvrIhO viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः द्वित्रिभ्याम् पाद्-दत्-मूर्धसु बहुव्रीहौ विभाषा",
     padaccheda_dev        = "द्वि-त्रिभ्याम् पाद्-दत्-मूर्धसु बहुव्रीहौ",
     why_dev               = "(सूत्रम् 6.2.197) द्वित्रिभ्यां पाद्दन्मूर्धसु बहुव्रीहौ।",
     anuvritti_from        = ('6.1.1',),

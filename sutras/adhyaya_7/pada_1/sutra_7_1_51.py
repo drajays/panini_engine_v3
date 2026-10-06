@@ -4,6 +4,7 @@
 Padaccheda: अश्व-क्षीर-वृष-लवणानाम् आत्म-प्रीतौ क्यचि
 
 अश्वक्षीरवृषलवणानामात्मप्रीतौ क्यचि (7.1.51)
+Pāṭha: ashtadhyayi.com data.txt row i=71051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aSvakzIravfzalavaRAnAmAtmaprItO kyaci",
     text_dev              = "अश्वक्षीरवृषलवणानामात्मप्रीतौ क्यचि",
+    samagra_slp1          = "aNgasya aSva-kzIra-vfza-lavaRAnAm AtmaprItO kyaci asuk At",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अश्व-क्षीर-वृष-लवणानाम् आत्मप्रीतौ क्यचि असुक् आत्",
     padaccheda_dev        = "अश्व-क्षीर-वृष-लवणानाम् आत्म-प्रीतौ क्यचि",
     why_dev               = "(सूत्रम् 7.1.51) अश्वक्षीरवृषलवणानामात्मप्रीतौ क्यचि।",
     anuvritti_from        = ('7.1.1',),

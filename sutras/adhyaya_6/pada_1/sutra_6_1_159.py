@@ -4,6 +4,7 @@
 Padaccheda: कर्ष-अत्वतः घञः अन्तः उदात्तः
 
 कर्षात्वतो घञोऽन्त उदात्तः (6.1.159)
+Pāṭha: ashtadhyayi.com data.txt row i=61159 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'karzAtvato GaYonta udAttaH',
     text_dev              = 'कर्षात्वतो घञोऽन्त उदात्तः',
+    samagra_slp1          = "karza-AtvataH GaYaH antaH udAttaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "कर्ष-आत्वतः घञः अन्तः उदात्तः",
     padaccheda_dev        = "कर्ष-अत्वतः घञः अन्तः उदात्तः",
     why_dev               = "(सूत्रम् 6.1.159) कर्षात्वतो घञोऽन्त उदात्तः।",
     anuvritti_from        = ('6.1.1',),

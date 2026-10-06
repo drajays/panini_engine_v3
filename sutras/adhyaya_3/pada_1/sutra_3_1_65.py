@@ -4,6 +4,7 @@
 Padaccheda: तपः अनुतापे च
 
 Krt suffix rule from dhatu: तपोऽनुतापे च (65)
+Pāṭha: ashtadhyayi.com data.txt row i=31065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'taponutApe ca',
     text_dev              = 'तपोऽनुतापे च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH tapaH anutApe ca luNi cleH ciR te karmakartari na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः तपः अनुतापे च लुङि च्लेः चिण् ते कर्मकर्तरि न",
     padaccheda_dev        = "तपः अनुतापे च",
     why_dev               = "धातोः [तपोऽनुतापे च]-प्रत्ययः विहितः (३.१.65)।",
     anuvritti_from        = ('3.1.1',),

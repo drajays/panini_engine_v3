@@ -9,6 +9,7 @@ We implement a narrow phonemic version:
   - aṅga upadeśa is 'tad' or 'tyad'
   - following sup upadeśa identity is s~ (su)
   - replace the first varṇa 't' → 's'
+Pāṭha: ashtadhyayi.com data.txt row i=72106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -71,6 +72,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'tadoH saH sAvanantyayoH',
     text_dev       = 'तदोः सः सावनन्त्ययोः',
+    samagra_slp1   = "tyadAdInAmanantyayoH tadoH saH sO",
+    samagra_dev    = "त्यदादीनामनन्त्ययोः तदोः सः सौ",
     padaccheda_dev = "त-दोः सः सौ अनन्त्ययोः",
     why_dev        = "तद्/त्यद्-शब्दयोः सुँ-प्रत्यये परे आद्य-तकारस्य सकारादेशः (सः)।",
     anuvritti_from = (),

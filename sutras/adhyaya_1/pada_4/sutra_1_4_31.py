@@ -10,6 +10,7 @@ Example: *himavataḥ gaṅgā prabhavati* — Himavat is the prabhava/apādāna
 
 *Engine:* A Term carrying ``"praBava_bhu"`` (pipeline-set) gets tag ``"apAdAna"``.
 ``cond`` reads only structural semantic tags (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -50,6 +51,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = "BuvaH praBavaH",
     text_dev              = "भुवः प्रभवः",
+    samagra_slp1          = "BuvaH kartuH praBavaH kArakam apAdAnam",
+    samagra_dev           = "भुवः कर्तुः प्रभवः कारकम् अपादानम्",
     padaccheda_dev        = "भुवः / प्रभवः",
     why_dev               = (
         "भू-धातोः प्रसङ्गे यः प्रभवः (उद्गम-स्थानम्) स अपादान-कारक-संज्ञकः — "

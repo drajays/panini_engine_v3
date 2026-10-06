@@ -4,6 +4,7 @@
 Padaccheda: परेः वर्जने
 
 परेर्वर्जने (8.1.5)
+Pāṭha: ashtadhyayi.com data.txt row i=81005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parervarjane",
     text_dev              = "परेर्वर्जने",
+    samagra_slp1          = "sarvasya dve pareH varjane",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सर्वस्य द्वे परेः वर्जने",
     padaccheda_dev        = "परेः वर्जने",
     why_dev               = "(सूत्रम् 8.1.5) परेर्वर्जने।",
     anuvritti_from        = ('8.1.1',),

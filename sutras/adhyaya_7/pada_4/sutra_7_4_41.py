@@ -4,6 +4,7 @@
 Padaccheda: शा-छोः अन्यतरस्याम्
 
 शाछोरन्यतरस्याम् (7.4.41)
+Pāṭha: ashtadhyayi.com data.txt row i=74041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'SAcCoranyatarasyAm',
     text_dev              = 'शाच्छोरन्यतरस्याम्',
+    samagra_slp1          = "aNgasya SAcCoH anyatarasyAm it ti kiti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य शाच्छोः अन्यतरस्याम् इत् ति किति",
     padaccheda_dev        = "शा-छोः अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 7.4.41) शाछोरन्यतरस्याम्।",
     anuvritti_from        = ('7.1.1',),

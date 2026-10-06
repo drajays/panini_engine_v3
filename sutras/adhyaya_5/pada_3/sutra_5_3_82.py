@@ -4,6 +4,7 @@
 Padaccheda: अजिन-अन्तस्य उत्तरपद-लोपः च
 
 अजिनान्तस्योत्तरपदलोपश्च (5.3.82)
+Pāṭha: ashtadhyayi.com data.txt row i=53082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ajinAntasyottarapadalopaSca",
     text_dev              = "अजिनान्तस्योत्तरपदलोपश्च",
+    samagra_slp1          = "ajina-antasya manuzyanAmnaH anukampAyAmuttarapadalopaH kan ca",
+    samagra_dev           = "अजिन-अन्तस्य मनुष्यनाम्नः अनुकम्पायामुत्तरपदलोपः, कन् च",
     padaccheda_dev        = "अजिन-अन्तस्य उत्तरपद-लोपः च",
     why_dev               = "(सूत्रम् 5.3.82) अजिनान्तस्योत्तरपदलोपश्च।",
     anuvritti_from        = ('5.3.70',),

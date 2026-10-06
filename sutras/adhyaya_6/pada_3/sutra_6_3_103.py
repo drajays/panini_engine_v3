@@ -4,6 +4,7 @@
 Padaccheda: तृणे च जातौ
 
 तृणे च जातौ (6.3.103)
+Pāṭha: ashtadhyayi.com data.txt row i=63103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tfRe ca jAtO",
     text_dev              = "तृणे च जातौ",
+    samagra_slp1          = "uttarapade tfRe ca jAtO kat koH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे तृणे च जातौ कत् कोः",
     padaccheda_dev        = "तृणे च जातौ",
     why_dev               = "(सूत्रम् 6.3.103) तृणे च जातौ।",
     anuvritti_from        = ('6.1.1',),

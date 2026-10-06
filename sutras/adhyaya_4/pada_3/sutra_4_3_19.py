@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि ठञ्
 
 छन्दसि ठञ् (4.3.19)
+Pāṭha: ashtadhyayi.com data.txt row i=43019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Candasi WaY",
     text_dev              = "छन्दसि ठञ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA Candasi WaY kAlAt varzAByaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा छन्दसि ठञ् कालात् वर्षाभ्यः",
     padaccheda_dev        = "छन्दसि ठञ्",
     why_dev               = "(सूत्रम् 4.3.19) छन्दसि ठञ्।",
     anuvritti_from        = ('4.1.1',),

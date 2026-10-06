@@ -15,6 +15,7 @@ open (without requiring the **1.4.18** *bha* tag on **sup**).
 Recipe exclusions: **a**+short **i** (→ **6.1.87** *guṇa*); **i**+**i**; and
 **a**+**ī** before *sarvanāmasthāna* / **O** / **Si**/**SI** surfaces so
 napuṃsaka dual **O** paths stay **jñāne**-style, not *lopa*.
+Pāṭha: ashtadhyayi.com data.txt row i=64148 (Art. 14).
 """
 from __future__ import annotations
 
@@ -297,6 +298,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'yasyeti ca',
     text_dev       = 'यस्येति च',
+    samagra_slp1   = "Basya aNgasya yasya tadDite Iti ca lopaH",
+    samagra_dev    = "भस्य अङ्गस्य यस्य तद्धिते ईति च लोपः",
     padaccheda_dev = "यस्य इति च — अङ्गस्य",
     why_dev        = "भाधिकारे इत्यादौ परे अङ्गान्त्यस्य अ/इ-वर्णस्य लोपः।",
     anuvritti_from = ("6.4.1", "6.4.129"),

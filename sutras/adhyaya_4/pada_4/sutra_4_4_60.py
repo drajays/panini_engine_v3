@@ -4,6 +4,7 @@
 Padaccheda: अस्ति-नास्ति-दिष्टम् मतिः
 
 अस्तिनास्तिदिष्टं मतिः (4.4.60)
+Pāṭha: ashtadhyayi.com data.txt row i=44060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "astinAstidizwaM matiH",
     text_dev              = "अस्तिनास्तिदिष्टं मतिः",
+    samagra_slp1          = "tad asya matiH iti samarTAnAm praTamAt asti-nAsti-dizwa-prAtipadikAt paraH Wak pratyayaH",
+    samagra_dev           = "'तद् अस्य मतिः' (इति)  समर्थानाम् प्रथमात् अस्ति-नास्ति-दिष्ट-प्रातिपदिकात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "अस्ति-नास्ति-दिष्टम् मतिः",
     why_dev               = "(सूत्रम् 4.4.60) अस्तिनास्तिदिष्टं मतिः।",
     anuvritti_from        = ('4.1.1',),

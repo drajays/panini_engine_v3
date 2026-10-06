@@ -4,6 +4,7 @@
 Padaccheda: पाक-कर्ण-पर्ण-पुष्प-फल-मूल-वाल-उत्तरपदात् च
 
 पाककर्णपर्णपुष्पफलमूलबालोत्तरपदाच्च (4.1.64)
+Pāṭha: ashtadhyayi.com data.txt row i=41064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'pAkakarRaparRapuzpaPalamUlavAlottarapadAcca',
     text_dev              = 'पाककर्णपर्णपुष्पफलमूलवालोत्तरपदाच्च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt pAka-karRa-parRa-puzpa-Pala-mUla-vAla-uttarapadAt ca NIz jAteH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् पाक-कर्ण-पर्ण-पुष्प-फल-मूल-वाल-उत्तरपदात् च ङीष् जातेः",
     padaccheda_dev        = "पाक-कर्ण-पर्ण-पुष्प-फल-मूल-वाल-उत्तरपदात् च",
     why_dev               = "(सूत्रम् 4.1.64) पाककर्णपर्णपुष्पफलमूलबालोत्तरपदाच्च।",
     anuvritti_from        = ('4.1.1',),

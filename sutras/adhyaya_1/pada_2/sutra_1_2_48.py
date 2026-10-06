@@ -21,6 +21,7 @@ Engine (modular, mechanically blind):
     *prakṛti* Term with ``upasarjana`` plus **either** ``gostriyor_go`` **or**
     ``TAp_anta`` (ṭāp-anta / feminine-stem signal from **4.1.4** when *upasarjana*).
   • Tag ``Iyas_bahuvrIhi_pratishedha`` blocks application (vārttika).
+Pāṭha: ashtadhyayi.com data.txt row i=12048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -97,6 +98,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'gostriyorupasarjanasya',
     text_dev       = 'गोस्त्रियोरुपसर्जनस्य',
+    samagra_slp1   = "go-striyoH upasarjanasya hrasvaH prAtipadikasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "गो-स्त्रियोः उपसर्जनस्य ह्रस्वः प्रातिपदिकस्य",
     padaccheda_dev = (
         "गो-स्त्रियोः (षष्ठी-द्विवचनम्) / उपसर्जनस्य (षष्ठी-एकवचनम्)"
     ),

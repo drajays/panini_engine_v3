@@ -4,6 +4,7 @@
 Padaccheda: अदः अनन्ने
 
 krt-suffix rule: अदोऽनन्ने (68)
+Pāṭha: ashtadhyayi.com data.txt row i=32068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'adonanne',
     text_dev              = 'अदोऽनन्ने',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH adaH ananne kft supi upasarge api viw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः अदः अनन्ने कृत् सुपि उपसर्गे अपि विट्",
     padaccheda_dev        = "अदः अनन्ने",
     why_dev               = "धातोः कृत्-प्रत्ययः [अदोऽनन्ने] विहितः (३.२.68)।",
     anuvritti_from        = ('3.1.1',),

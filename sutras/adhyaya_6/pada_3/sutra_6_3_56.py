@@ -4,6 +4,7 @@
 Padaccheda: वा घोष-मिश्र-शब्देषु
 
 वा घोषमिश्रशब्देषु (6.3.56)
+Pāṭha: ashtadhyayi.com data.txt row i=63056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA GozamiSraSabdezu",
     text_dev              = "वा घोषमिश्रशब्देषु",
+    samagra_slp1          = "uttarapade vA Goza-miSra-Sabdezu treH pAdasya pad",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे वा घोष-मिश्र-शब्देषु त्रेः पादस्य पद्",
     padaccheda_dev        = "वा घोष-मिश्र-शब्देषु",
     why_dev               = "(सूत्रम् 6.3.56) वा घोषमिश्रशब्देषु।",
     anuvritti_from        = ('6.1.1',),

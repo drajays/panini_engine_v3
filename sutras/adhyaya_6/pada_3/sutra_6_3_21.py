@@ -4,6 +4,7 @@
 Padaccheda: षष्ठ्या आक्रोशे
 
 षष्ठ्या आक्रोशे (6.3.21)
+Pāṭha: ashtadhyayi.com data.txt row i=63021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zazWyA AkroSe",
     text_dev              = "षष्ठ्या आक्रोशे",
+    samagra_slp1          = "alug uttarapade zazWyA AkroSe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे षष्ठ्या आक्रोशे",
     padaccheda_dev        = "षष्ठ्या आक्रोशे",
     why_dev               = "(सूत्रम् 6.3.21) षष्ठ्या आक्रोशे।",
     anuvritti_from        = ('6.1.1',),

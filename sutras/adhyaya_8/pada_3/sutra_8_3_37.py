@@ -4,6 +4,7 @@
 Padaccheda: कुप्वोः । XकXपौ । च
 
 कुप्वोः XकXपौ च (8.3.37)
+Pāṭha: ashtadhyayi.com data.txt row i=83037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'kupvoH kapO ca',
     text_dev              = 'कुप्वोः ≍क≍पौ च',
+    samagra_slp1          = "visarjanIyasya kupvoH kapO visarjanIyaH ca",
+    samagra_dev           = "विसर्जनीयस्य कुप्वोः ≍क≍पौ विसर्जनीयः च",
     padaccheda_dev        = "कुप्वोः । XकXपौ । च",
     why_dev               = "(सूत्रम् 8.3.37) कुप्वोः XकXपौ च।",
     anuvritti_from        = ('8.1.1',),

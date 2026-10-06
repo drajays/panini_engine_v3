@@ -4,6 +4,7 @@
 Padaccheda: भावलक्षणे स्था-इण्-कृञ्-वदि-चरि-हु-तमि-जनिभ्यः तोसुन्
 
 krt-suffix rule: भावलक्षणे स्थेण्कृञ्वदिचरिहुतमिजनिभ्यस्तोसुन्
+Pāṭha: ashtadhyayi.com data.txt row i=34016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BAvalakzaRe sTeRkfYvadicarihutamijaniByastosun",
     text_dev              = "भावलक्षणे स्थेण्कृञ्वदिचरिहुतमिजनिभ्यस्तोसुन्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAvalakzaRe sTA-iR-kfY-vadi-cari-hu-tami-janiByaH tosun kft Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावलक्षणे स्था-इण्-कृञ्-वदि-चरि-हु-तमि-जनिभ्यः तोसुन् कृत् छन्दसि",
     padaccheda_dev        = "भावलक्षणे स्था-इण्-कृञ्-वदि-चरि-हु-तमि-जनिभ्यः तोसुन्",
     why_dev               = "धातोः प्रत्ययः (३.4.16)।",
     anuvritti_from        = ('3.1.1',),

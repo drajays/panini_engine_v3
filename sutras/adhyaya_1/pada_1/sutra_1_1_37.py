@@ -16,6 +16,7 @@ Engine (glass-box):
 Mechanical blindness (CONSTITUTION Art. 2):
   - cond() reads only Term.kind, Term.meta['upadesha_slp1'], and Term.tags.
   - No vibhakti/vacana/lakāra/gold access.
+Pāṭha: ashtadhyayi.com data.txt row i=11037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -101,6 +102,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'svarAdinipAtamavyayam',
     text_dev              = 'स्वरादिनिपातमव्ययम्',
+    samagra_slp1          = "svarAdinipAtamavyayam",
+    samagra_dev           = "स्वरादिनिपातमव्ययम्",
     padaccheda_dev        = "स्वर-आदि-निपातम् / अव्ययम्",
     why_dev               = (
         "स्वरादि-निपाताः अव्यय-संज्ञकाः; ततो २.४.८२ सुप्-लुक्।"

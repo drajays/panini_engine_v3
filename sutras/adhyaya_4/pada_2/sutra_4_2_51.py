@@ -4,6 +4,7 @@
 Padaccheda: इनि-त्र-कट्यचः च
 
 इनित्रकट्यचश्च (4.2.51)
+Pāṭha: ashtadhyayi.com data.txt row i=42051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "initrakawyacaSca",
     text_dev              = "इनित्रकट्यचश्च",
+    samagra_slp1          = "tasya samUhaH iti Kala-go-raTAt ini-tra-kawyacaH",
+    samagra_dev           = "तस्य समूहः (इति) खल-गो-रथात् इनि-त्र-कट्यचः",
     padaccheda_dev        = "इनि-त्र-कट्यचः च",
     why_dev               = "(सूत्रम् 4.2.51) इनित्रकट्यचश्च।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: ईशः से (लुप्तषष्ठ्यन्तनिर्देशः)
 
 ईशः से (7.2.77)
+Pāṭha: ashtadhyayi.com data.txt row i=72077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -62,6 +63,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "ISaH se",
     text_dev              = "ईशः से",
+    samagra_slp1          = "aNgasya ISaH se iw valAdeH sArvaDAtuke",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ईशः से इट् वलादेः सार्वधातुके",
     padaccheda_dev        = "ईशः से (लुप्तषष्ठ्यन्तनिर्देशः)",
     why_dev               = "(सूत्रम् 7.2.77) ईशः से।",
     anuvritti_from        = ('7.1.1',),

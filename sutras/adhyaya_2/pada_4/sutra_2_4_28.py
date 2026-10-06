@@ -4,6 +4,7 @@
 Padaccheda: हेमन्तशिशिरौ अहोरात्रे च छन्दसि
 
 hemanta and sisira in ahoraatra and chandas context.
+Pāṭha: ashtadhyayi.com data.txt row i=24028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hemantaSiSirAvahorAtre ca cCandasi",
     text_dev              = "हेमन्तशिशिरावहोरात्रे च च्छन्दसि",
+    samagra_slp1          = "hemanta-SiSirO ahorAtre ca Candasi pUrvavat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "हेमन्त-शिशिरौ अहोरात्रे च छन्दसि पूर्ववत्",
     padaccheda_dev        = "हेमन्तशिशिरौ अहोरात्रे च छन्दसि",
     why_dev               = "हेमन्त-शिशिरौ अहोरात्रे च छन्दसि (२.४.२८)।",
     anuvritti_from        = ('2.4.26',),

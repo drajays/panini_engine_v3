@@ -4,6 +4,7 @@
 Padaccheda: वाचंयम-पुरंदरौ च
 
 वाचंयमपुरंदरौ च (6.3.69)
+Pāṭha: ashtadhyayi.com data.txt row i=63069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vAcaMyamapuraMdarO ca",
     text_dev              = "वाचंयमपुरंदरौ च",
+    samagra_slp1          = "uttarapade vAcaMyama-puraMdarO ca treH Kiti mum",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे वाचंयम-पुरंदरौ च त्रेः खिति मुम्",
     padaccheda_dev        = "वाचंयम-पुरंदरौ च",
     why_dev               = "(सूत्रम् 6.3.69) वाचंयमपुरंदरौ च।",
     anuvritti_from        = ('6.1.1',),

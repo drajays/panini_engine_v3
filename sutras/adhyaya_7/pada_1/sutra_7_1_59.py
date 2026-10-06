@@ -8,6 +8,7 @@ Demo slice (मुञ्चति.md):
 Engine:
   - recipe-armed by ``state.meta['7_1_59_num_arm']``.
   - performs the insertion directly on the dhātu term.
+Pāṭha: ashtadhyayi.com data.txt row i=71059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -75,6 +76,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='Se mucAdInAm',
     text_dev='शे मुचादीनाम्',
+    samagra_slp1="mucAdInAm Se num",
+    samagra_dev="मुचादीनाम् शे नुम्",
     padaccheda_dev="शे / मुच-आदीनाम्",
     why_dev="श-विकरणे परे मुच्-आदीनां नुम्-आगमः (डेमो: मुञ्चति)।",
     anuvritti_from=("6.4.1",),

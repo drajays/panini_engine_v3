@@ -22,6 +22,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'tasyAdita udAttamarDahrasvam',
     text_dev                = 'तस्यादित उदात्तमर्धह्रस्वम्',
+    samagra_slp1            = "tasya svaritasya AditamarDahrasvamudAttaH",
+    samagra_dev             = "तस्य स्वरितस्य आदितमर्धह्रस्वमुदात्तः",
     padaccheda_dev          = "तस्य / आदितः / उदात्तम् / अर्धह्रस्वम्",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.29", "1.2.31"),

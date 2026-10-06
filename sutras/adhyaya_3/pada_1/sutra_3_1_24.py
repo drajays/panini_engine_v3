@@ -4,6 +4,7 @@
 Padaccheda: लुप-सद-चर-जप-जभ-दह-दश-गॄभ्यः भावगर्हायाम्
 
 Krt suffix rule from dhatu: लुपसदचरजपजभदहदशगॄभ्यो भावगर्हायाम् (24)
+Pāṭha: ashtadhyayi.com data.txt row i=31024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lupasadacarajapajaBadahadaSagFByo BAvagarhAyAm",
     text_dev              = "लुपसदचरजपजभदहदशगॄभ्यो भावगर्हायाम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH lupa-sada-cara-japa-jaBa-daha-daSa-gFByaH BAvagarhAyAm yaN nityam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः लुप-सद-चर-जप-जभ-दह-दश-गॄभ्यः भावगर्हायाम् यङ् नित्यम्",
     padaccheda_dev        = "लुप-सद-चर-जप-जभ-दह-दश-गॄभ्यः भावगर्हायाम्",
     why_dev               = "धातोः [लुपसदचरजपजभदहदशगॄभ्यो भावगर्हायाम्]-प्रत्ययः विहितः (३.१.24)।",
     anuvritti_from        = ('3.1.1',),

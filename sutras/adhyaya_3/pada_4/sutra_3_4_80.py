@@ -6,6 +6,7 @@ The ātmanepada 2sg tiṅ ādeśa thās (TAs in SLP1) is replaced by se.
   thās → se   (ātmanepada 2sg present, e.g. भूयसे)
 
 Condition: find a tiṅ ādeśa term with upadesha_slp1 == "TAs".
+Pāṭha: ashtadhyayi.com data.txt row i=34080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "TAsasse",
     text_dev              = "थासस्से",
+    samagra_slp1          = "witaH lasya AtmanepadAnAm TAsaH se",
+    samagra_dev           = "टितः लस्य आत्मनेपदानाम् थासः से",
     padaccheda_dev        = "थासः से (लुप्तप्रथमान्तनिर्देशः)",
     why_dev               = "आत्मनेपद-२मध्यम-एकवचने 'थास्' स्थाने 'से' आदेशः।",
     anuvritti_from        = ('3.4.79',),

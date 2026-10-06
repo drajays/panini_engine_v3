@@ -4,6 +4,7 @@
 Padaccheda: ग्राम-जनपद-एकदेशात् अञ्-ठञौ
 
 ग्रामजनपदैकदेशादञ्ठञौ (4.3.7)
+Pāṭha: ashtadhyayi.com data.txt row i=43007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "grAmajanapadEkadeSAdaYWaYO",
     text_dev              = "ग्रामजनपदैकदेशादञ्ठञौ",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA grAma-janapada-ekadeSAt aY-WaYO yat dik-pUrvapadAt WaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा ग्राम-जनपद-एकदेशात् अञ्-ठञौ यत् दिक्-पूर्वपदात् ठञ्",
     padaccheda_dev        = "ग्राम-जनपद-एकदेशात् अञ्-ठञौ",
     why_dev               = "(सूत्रम् 4.3.7) ग्रामजनपदैकदेशादञ्ठञौ।",
     anuvritti_from        = ('4.1.1',),

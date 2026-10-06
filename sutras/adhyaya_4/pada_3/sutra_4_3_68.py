@@ -4,6 +4,7 @@
 Padaccheda: क्रतु-यज्ञेभ्यः च
 
 क्रतुयज्ञेभ्यश्च (4.3.68)
+Pāṭha: ashtadhyayi.com data.txt row i=43068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kratuyajYeByaSca",
     text_dev              = "क्रतुयज्ञेभ्यश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA kratu-yajYeByaH ca tatra BavaH tasya vyAKyAne vyAKyAtavya-nAmnaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा क्रतु-यज्ञेभ्यः च तत्र भवः तस्य व्याख्याने व्याख्यातव्य-नाम्नः",
     padaccheda_dev        = "क्रतु-यज्ञेभ्यः च",
     why_dev               = "(सूत्रम् 4.3.68) क्रतुयज्ञेभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

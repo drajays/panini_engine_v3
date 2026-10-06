@@ -4,6 +4,7 @@
 Padaccheda: उत् ओष्ठ्यपूर्वस्य
 
 उदोष्ठ्यपूर्वस्य (7.1.102)
+Pāṭha: ashtadhyayi.com data.txt row i=71102 (Art. 14).
 """
 from __future__ import annotations
 
@@ -61,6 +62,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "udozWyapUrvasya",
     text_dev              = "उदोष्ठ्यपूर्वस्य",
+    samagra_slp1          = "ozWyapUrvasya ftaH DAtoH ut",
+    samagra_dev           = "ओष्ठ्यपूर्वस्य ऋतः धातोः उत्",
     padaccheda_dev        = "उत् ओष्ठ्यपूर्वस्य",
     why_dev               = "(सूत्रम् 7.1.102) उदोष्ठ्यपूर्वस्य।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: णिनि
 
 णिनि (6.2.79)
+Pāṭha: ashtadhyayi.com data.txt row i=62079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Rini",
     text_dev              = "णिनि",
+    samagra_slp1          = "AdiH udAttaH Rini pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः णिनि पूर्वपदम्",
     padaccheda_dev        = "णिनि",
     why_dev               = "(सूत्रम् 6.2.79) णिनि।",
     anuvritti_from        = ('6.1.1',),

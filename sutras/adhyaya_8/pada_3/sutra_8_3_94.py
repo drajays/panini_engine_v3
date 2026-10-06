@@ -4,6 +4,7 @@
 Padaccheda: छन्दोनाम्नि च
 
 छन्दोनाम्नि च (8.3.94)
+Pāṭha: ashtadhyayi.com data.txt row i=83094 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "CandonAmni ca",
     text_dev              = "छन्दोनाम्नि च",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH CandonAmni ca saH vizwaraH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः छन्दोनाम्नि च सः विष्टरः",
     padaccheda_dev        = "छन्दोनाम्नि च",
     why_dev               = "(सूत्रम् 8.3.94) छन्दोनाम्नि च।",
     anuvritti_from        = ('8.1.1',),

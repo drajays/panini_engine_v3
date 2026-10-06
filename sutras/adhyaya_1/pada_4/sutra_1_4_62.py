@@ -11,6 +11,7 @@ are treated as gati.
 v3: registers the gate "1_4_62_anukаrana_gati" to mark that the rule has
     been applied; onomatopoeia detection is left to the recipe (which tags
     terms with "anukаrana").
+Pāṭha: ashtadhyayi.com data.txt row i=14062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='anukaraRaM cAnitiparam',
     text_dev='अनुकरणं चानितिपरम्',
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH anukaraRam ca anitiparam kriyAyoge gatiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः अनुकरणम् च अनितिपरम् क्रियायोगे गतिः",
     padaccheda_dev="अनुकरणम् / च / अनिति-परम्",
     why_dev="इतिशब्दपरं न भवति यत् अनुकरणं तत् गति-संज्ञकम् — गति-संज्ञाप्रयोजनार्थं द्वारं स्थाप्यते।",
     anuvritti_from=("1.4.60",),

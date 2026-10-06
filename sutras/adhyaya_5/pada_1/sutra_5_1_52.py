@@ -4,6 +4,7 @@
 Padaccheda: सम्भवति (क्रियापदम्) अवहरति (क्रियापदम्) पचति (क्रियापदम्)
 
 सम्भवत्यवहरति पचति (5.1.52)
+Pāṭha: ashtadhyayi.com data.txt row i=51052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samBavatyavaharati pacati",
     text_dev              = "सम्भवत्यवहरति पचति",
+    samagra_slp1          = "tat samBavati  avaharati pacati iti samarTAnAM praTamAt paraH WaY-pratyayaH",
+    samagra_dev           = "'तत् सम्भवति , अवहरति, पचति' (इति) समर्थानां प्रथमात् परः ठञ्-प्रत्ययः",
     padaccheda_dev        = "सम्भवति (क्रियापदम्) अवहरति (क्रियापदम्) पचति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 5.1.52) सम्भवत्यवहरति पचति।",
     anuvritti_from        = ('5.1.19',),

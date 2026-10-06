@@ -4,6 +4,7 @@
 Padaccheda: मृदः तिकन्
 
 मृदस्तिकन् (5.4.39)
+Pāṭha: ashtadhyayi.com data.txt row i=54039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mfdastikan",
     text_dev              = "मृदस्तिकन्",
+    samagra_slp1          = "mfdaH tikan",
+    samagra_dev           = "मृदः तिकन्",
     padaccheda_dev        = "मृदः तिकन्",
     why_dev               = "(सूत्रम् 5.4.39) मृदस्तिकन्।",
     anuvritti_from        = ('4.1.76',),

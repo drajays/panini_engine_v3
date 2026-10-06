@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि परिपन्थि-परिपरिणौ पर्यवस्थातरि
 
 छन्दसि परिपन्थिपरिपरिणौ पर्यवस्थातरि (5.2.89)
+Pāṭha: ashtadhyayi.com data.txt row i=52089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Candasi paripanTiparipariRO paryavasTAtari",
     text_dev              = "छन्दसि परिपन्थिपरिपरिणौ पर्यवस्थातरि",
+    samagra_slp1          = "Candasi paryavasTAtari paripanTi-paripariRO nipAtyete",
+    samagra_dev           = "छन्दसि पर्यवस्थातरि परिपन्थि-परिपरिणौ (निपात्येते)",
     padaccheda_dev        = "छन्दसि परिपन्थि-परिपरिणौ पर्यवस्थातरि",
     why_dev               = "(सूत्रम् 5.2.89) छन्दसि परिपन्थिपरिपरिणौ पर्यवस्थातरि।",
     anuvritti_from        = ('4.1.82',),

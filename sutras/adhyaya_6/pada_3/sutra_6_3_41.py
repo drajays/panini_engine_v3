@@ -4,6 +4,7 @@
 Padaccheda: जातेः च
 
 जातेश्च (6.3.41)
+Pāṭha: ashtadhyayi.com data.txt row i=63041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jAteSca",
     text_dev              = "जातेश्च",
+    samagra_slp1          = "uttarapade jAteH ca striyAH puMvat anUN BAzitapu~skAd na amAnini",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे जातेः च स्त्रियाः पुंवत् अनूङ् भाषितपुँस्काद् न अमानिनि",
     padaccheda_dev        = "जातेः च",
     why_dev               = "(सूत्रम् 6.3.41) जातेश्च।",
     anuvritti_from        = ('6.1.1',),

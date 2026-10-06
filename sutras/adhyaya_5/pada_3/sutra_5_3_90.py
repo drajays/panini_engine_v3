@@ -4,6 +4,7 @@
 Padaccheda: कासू-गोणीभ्याम् ष्टरच्
 
 कासूगोणीभ्यां ष्टरच् (5.3.90)
+Pāṭha: ashtadhyayi.com data.txt row i=53090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kAsUgoRIByAM zwarac",
     text_dev              = "कासूगोणीभ्यां ष्टरच्",
+    samagra_slp1          = "hrasve kAsU-goRIByAm zwarac",
+    samagra_dev           = "ह्रस्वे कासू-गोणीभ्याम् ष्टरच्",
     padaccheda_dev        = "कासू-गोणीभ्याम् ष्टरच्",
     why_dev               = "(सूत्रम् 5.3.90) कासूगोणीभ्यां ष्टरच्।",
     anuvritti_from        = ('5.3.70',),

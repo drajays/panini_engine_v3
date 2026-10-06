@@ -4,6 +4,7 @@
 Padaccheda: न दण्डमाणव-अन्तेवासिषु
 
 न दण्डमाणवान्तेवासिषु (4.3.130)
+Pāṭha: ashtadhyayi.com data.txt row i=43130 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na daRqamARavAntevAsizu",
     text_dev              = "न दण्डमाणवान्तेवासिषु",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA na daRqa-mARava-antevAsizu tasya idam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा न दण्ड-माणव-अन्तेवासिषु तस्य इदम्",
     padaccheda_dev        = "न दण्डमाणव-अन्तेवासिषु",
     why_dev               = "(सूत्रम् 4.3.130) न दण्डमाणवान्तेवासिषु।",
     anuvritti_from        = ('4.1.1',),

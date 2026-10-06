@@ -17,6 +17,7 @@ usage tag from _KRNA_USAGES, and (c) the idempotency stamp
 "Atmanepada_1_3_32" is absent from state.meta.  No arm flags (CONSTITUTION
 Art. 13).  r1_form_identity_exempt=True because no surface phonological
 change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -64,6 +65,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='ganDanAvakzepaRasevanasAhasikyapratiyatnaprakaTanopayogezu kfYaH',
     text_dev='गन्धनावक्षेपणसेवनसाहसिक्यप्रतियत्नप्रकथनोपयोगेषु कृञः',
+    samagra_slp1="ganDana-avakzepaRa-sevana-sAhasikya-pratiyatna-prakaTana-upayogezu kfYaH Atmanepadam",
+    samagra_dev="गन्धन-अवक्षेपण-सेवन-साहसिक्य-प्रतियत्न-प्रकथन-उपयोगेषु कृञः आत्मनेपदम्",
     padaccheda_dev=(
         "गन्धनावक्षेपण-सेवन-साहसिक्य-प्रतियत्न-प्रकथन-उपयोगेषु (सप्तमी-बहुवचन)"
         " / कृञः (षष्ठी)"

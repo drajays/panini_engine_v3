@@ -4,6 +4,7 @@
 Padaccheda: आदिः प्रत्येनसि
 
 आदिः प्रत्येनसि (6.2.27)
+Pāṭha: ashtadhyayi.com data.txt row i=62027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AdiH pratyenasi",
     text_dev              = "आदिः प्रत्येनसि",
+    samagra_slp1          = "AdiH pratyenasi pUrvapadam prakftyA karmaDAraye kumAraH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः प्रत्येनसि पूर्वपदम् प्रकृत्या कर्मधारये कुमारः",
     padaccheda_dev        = "आदिः प्रत्येनसि",
     why_dev               = "(सूत्रम् 6.2.27) आदिः प्रत्येनसि।",
     anuvritti_from        = ('6.1.1',),

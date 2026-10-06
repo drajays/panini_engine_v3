@@ -4,6 +4,7 @@
 Padaccheda: खार्याः प्राचाम्
 
 खार्याः प्राचाम् (5.4.101)
+Pāṭha: ashtadhyayi.com data.txt row i=54101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "KAryAH prAcAm",
     text_dev              = "खार्याः प्राचाम्",
+    samagra_slp1          = "tatpuruzasya arDAt dvigoH ca KAryAH wac",
+    samagra_dev           = "तत्पुरुषस्य  अर्धात् द्विगोः च खार्याः टच्",
     padaccheda_dev        = "खार्याः प्राचाम्",
     why_dev               = "(सूत्रम् 5.4.101) खार्याः प्राचाम्।",
     anuvritti_from        = ('5.4.68',),

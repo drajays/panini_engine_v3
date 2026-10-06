@@ -4,6 +4,7 @@
 Padaccheda: नपुंसके भावे क्तः
 
 krt-suffix rule: नपुंसके भावे क्तः
+Pāṭha: ashtadhyayi.com data.txt row i=33114 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "napuMsake BAve ktaH",
     text_dev              = "नपुंसके भावे क्तः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH napuMsake BAve ktaH kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः नपुंसके भावे क्तः कृत्",
     padaccheda_dev        = "नपुंसके भावे क्तः",
     why_dev               = "धातोः प्रत्ययः (३.3.114)।",
     anuvritti_from        = ('3.1.1',),

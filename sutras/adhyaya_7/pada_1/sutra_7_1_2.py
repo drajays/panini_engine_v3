@@ -171,6 +171,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'AyaneyInIyiyaH PaQaKacCaGAM pratyayAdInAm',
     text_dev       = 'आयनेयीनीयियः फढखच्छघां प्रत्ययादीनाम्',
+    samagra_slp1   = "pratyayAdInAm Pa-Qa-Ka-Ca-GAmAyan-ey-In-Iy-iyaH",
+    samagra_dev    = "प्रत्ययादीनाम्  फ-ढ-ख-छ-घामायन्-एय्-ईन्-ईय्-इयः",
     padaccheda_dev = (
         "आयन्-एय्-ईन्-ईय्-इयः (प्रथमा-बहुवचनम्) / "
         "फ-ढ-ख-छ-घाम् (षष्ठी-बहुवचनम्) / प्रत्ययादीनाम् (षष्ठी-बहुवचनम्)"

@@ -100,6 +100,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "Aquttamasya picca",
     text_dev              = "आडुत्तमस्य पिच्च",
+    samagra_slp1          = "lowaH lasya uttamasya Aw pit ca",
+    samagra_dev           = "लोटः लस्य उत्तमस्य आट् पित् च",
     padaccheda_dev        = "आट् उत्तमस्य पित् च",
     why_dev               = (
         "लोट् उत्तम-आत्मनेपद-प्रत्ययेषु (ऐ, वहै, महै) पूर्वम् "

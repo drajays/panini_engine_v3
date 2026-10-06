@@ -4,6 +4,7 @@
 Padaccheda: अधिकरणे शेतेः
 
 krt-suffix rule: अधिकरणे शेतेः (15)
+Pāṭha: ashtadhyayi.com data.txt row i=32015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDikaraRe SeteH",
     text_dev              = "अधिकरणे शेतेः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH aDikaraRe SeteH kft karmaRi anupasarge supi ac",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः अधिकरणे शेतेः कृत् कर्मणि अनुपसर्गे सुपि अच्",
     padaccheda_dev        = "अधिकरणे शेतेः",
     why_dev               = "धातोः कृत्-प्रत्ययः [अधिकरणे शेतेः] विहितः (३.२.15)।",
     anuvritti_from        = ('3.1.1',),

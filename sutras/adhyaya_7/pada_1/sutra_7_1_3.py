@@ -82,6 +82,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'JontaH',
     text_dev       = 'झोऽन्तः',
+    samagra_slp1   = "pratyayasya JaH antaH",
+    samagra_dev    = "प्रत्ययस्य झः अन्तः",
     padaccheda_dev = "झः / अन्तः",
     why_dev        = (
         "झि-प्रत्ययस्य झकारस्य अन्तादेशः → अन्ति (परस्मैपद); "

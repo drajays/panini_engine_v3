@@ -4,6 +4,7 @@
 Padaccheda: स्यदः जवे
 
 स्यदो जवे (6.4.28)
+Pāṭha: ashtadhyayi.com data.txt row i=64028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "syado jave",
     text_dev              = "स्यदो जवे",
+    samagra_slp1          = "aNgasya asidDavadatrABAt syadaH jave nalopaH upaDAyAH GaYi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् स्यदः जवे नलोपः उपधायाः घञि",
     padaccheda_dev        = "स्यदः जवे",
     why_dev               = "(सूत्रम् 6.4.28) स्यदो जवे।",
     anuvritti_from        = ('6.1.1',),

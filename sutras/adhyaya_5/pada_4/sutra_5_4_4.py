@@ -4,6 +4,7 @@
 Padaccheda: अनत्यन्तगतौ क्तात्
 
 अनत्यन्तगतौ क्तात् (5.4.4)
+Pāṭha: ashtadhyayi.com data.txt row i=54004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anatyantagatO ktAt",
     text_dev              = "अनत्यन्तगतौ क्तात्",
+    samagra_slp1          = "anatyantagatO ktAt kan",
+    samagra_dev           = "अनत्यन्तगतौ क्तात् कन्",
     padaccheda_dev        = "अनत्यन्तगतौ क्तात्",
     why_dev               = "(सूत्रम् 5.4.4) अनत्यन्तगतौ क्तात्।",
     anuvritti_from        = ('4.1.76',),

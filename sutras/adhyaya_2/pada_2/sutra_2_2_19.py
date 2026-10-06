@@ -7,6 +7,7 @@ with *√dhā* + *kvip* in ``prakriya_22``).
 
 Fires when any Term carries the ``upapada`` tag (structural environment set by
 the pipeline before calling this sūtra).
+Pāṭha: ashtadhyayi.com data.txt row i=22019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -30,6 +31,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='upapadamatiN',
     text_dev='उपपदमतिङ्',
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH upapadam atiN nityaM",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः उपपदम् अतिङ् नित्यं",
     padaccheda_dev="उपपदम् / अतिङ्खि",
     why_dev="उपपद-समासार्थं संज्ञा-अनुमोदनम् (प्रक्रिया-२२)।",
     anuvritti_from=("2.1.3",),
