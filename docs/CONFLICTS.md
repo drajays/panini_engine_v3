@@ -180,3 +180,15 @@ curādi ṇijanta liṭ/luṅ/āśīr; brū→vac; aṅ for vac/hve/lip; 6.4.51 
 | `kUN/kuN/gurI~` ātmane guṇa (`kavizyate` vs `kuvizyate`; `kozyate` vs `kuzyate`) | 15 | the u-ending ātmane root takes guṇa before ārdhadhātuka sya/iṭ: our 1.1.5/1.2.4 reading treats the ātmane tiṅ as kṅit |
 | `ranja~` ātmane liṭ `raraYje` (V) vs ours `reje` | 1 | 6.4.120 + 6.4.24 nasal lopa interplay |
 | `IN` liṭ `ayAYcakre` (V) vs `yAYcakre` | 1 | ām + anuprayoga with aṭ-less abhyāsa |
+
+## K. 2026-10-06 (brain session) — recheck of the CONFLICT_CELLS groups in fresh processes
+
+Closed (loop now = Vidyut, tests added): ec-root liṭ (glai/ṣṭyai/ovai: 6.1.45 before 6.1.8), 7.2.73 sak+iṭ (anaMsIt, ayaMsIt, avAsizam), nahyati luṅ (8.2.34), ajādi ṇijanta caṅ (Awiwwat),
+puMsa~ āśīrliṅ (6.4.24 not on a ṇic-lopa'd aṅga), śānac slot (izARa), 7.3.86 ṛ-upadhā only (abfMhizyat, atfMhizyam).
+
+Still differing, judged Vidyut's side (not engine gaps):
+- bhvādi `sf` luṅ: SK 3.1.56 "tena bhvādyor nāṅ" → asArzIt is right (Vidyut gives the juhotyādi form).
+- bhvādi `Divi~` laṭ/laṅ/loṭ/liṅ: Dinvati (3.1.80) is right; Vidyut gives the svādi Dinoti.
+- `gurI~` ātmane āśīrliṅ/luṅ/lṛṭ: needs the 7.3.86 guṇa question settled (Vidyut gorizIzwa) — open.
+Open, need a source/expert: caha~ curādi (cAhayati vs cahayati), fRu~ loṭ 2sg (arRu/fRu/arRuhi), fDu~ liṭ (Vidyut AnarDa vs engine AnarDa now agrees; recipe stale).
+Intermittent: hrage~/fDu~ liṭ lost 6.1.8 once in a ledger_recheck run and never again in 12 reruns (also 8-12 hash seeds) — cause unknown.
