@@ -133,10 +133,35 @@
    "Makefile"
   ],
   "out_of_scope": "",
-  "status": "in-progress",
+  "status": "released",
   "hotspots": [
    "CONSTITUTION.md"
   ],
-  "updated": 1791259366.0823889
+  "updated": 1791299751.348553
+ },
+ {
+  "id": "sutra-1-2-3-urnnu",
+  "agent": "claude",
+  "scope": [
+   "1.2.3",
+   "tests/unit/test_1_2_3_urnu_vibhasha.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1791301135.8041573
+ },
+ {
+  "id": "sutra-1-2-3-urnnu",
+  "agent": "claude",
+  "scope": [
+   "1.2.3",
+   "sutras/adhyaya_7/pada_2/sutra_7_2_35.py",
+   "tests/unit/test_1_2_3_urnu_vibhasha.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1791301135.8041587
  }
 ]

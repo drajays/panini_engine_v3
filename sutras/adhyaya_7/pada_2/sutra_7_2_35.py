@@ -68,6 +68,13 @@ def _vij_kit(state: State, t) -> None:
         t.tags.add("kngiti")
 
 
+def _urnu_1_2_3(state: State, t) -> None:
+    """1.2.3 विभाषोर्णोः: the same structural hand-off as _vij_kit, owned by
+    sutras/adhyaya_1/pada_2/sutra_1_2_3.py (predicate + vibhāṣā choice + trace)."""
+    from sutras.adhyaya_1.pada_2.sutra_1_2_3 import apply_at_it_insertion
+    apply_at_it_insertion(state, t)
+
+
 def _target_term(state: State):
     allow_sic = bool(state.meta.get("7_2_35_allow_sic", False))
     if allow_sic:
@@ -194,6 +201,7 @@ def act(state: State) -> State:
         t.varnas.insert(0, it_v)
         t.meta["it_agama_7_2_35_done"] = True
         _vij_kit(state, t)
+        _urnu_1_2_3(state, t)
         t.tags -= {"kngiti", "kngiti_by_jhal_1_2_9_12"} if "kngiti_by_jhal_1_2_9_12" in t.tags else set()   # no longer jhal-initial
         return state
     j = _lut_tasi_vikaranha_index(state)
@@ -204,6 +212,7 @@ def act(state: State) -> State:
         t.varnas.insert(0, it_v)
         t.meta["it_agama_7_2_35_done"] = True
         _vij_kit(state, t)
+        _urnu_1_2_3(state, t)
         return state
     # General liṭ-tiṅ arm
     j = _lit_tin_index(state)
@@ -214,6 +223,7 @@ def act(state: State) -> State:
         t.varnas.insert(0, it_v)
         t.meta["it_agama_7_2_35_done"] = True
         _vij_kit(state, t)
+        _urnu_1_2_3(state, t)
         return state
     pr = _target_term(state)
     if pr is None:
