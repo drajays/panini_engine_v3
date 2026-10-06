@@ -25,7 +25,7 @@ def _find_tasi_before_si(state: State) -> int | None:
     for i in range(len(state.terms) - 1):
         t = state.terms[i]
         # tāsi vikaraṇa (…A+s) or the root as (upadeśa "as"): both are named by the sūtra
-        if not (t.meta.get("tAsi_vikaraṇa") or (t.meta.get("upadesha_slp1") or "").strip() in ("as", "asa~")):
+        if not (t.meta.get("tAsi_vikaraṇa") or ((t.meta.get("upadesha_slp1") or "").strip() in ("as", "asa~") and t.meta.get("gana") in (2, None))):   # adādi as only
             continue
         vs = t.varnas
         if len(vs) < 2:

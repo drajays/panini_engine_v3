@@ -16,8 +16,8 @@ from engine.gates import adhikara_in_effect
 from engine.state import State
 from engine.sthanivat import DHATUTVA, adesha_substitute_varnas
 
-_AS_UPADESHA = frozenset({"as", "Asa", "Asa~"})
-_BHU_ADESHA = "BU~"
+_AS_UPADESHA = frozenset({"as", "asa~"})        # adādi as (bhuvi) — not āsa~ (to sit), whose capital A the old set confused with it
+_BHU_ADESHA = "BU"
 
 
 def _find_as_dhatu(state: State) -> int | None:
@@ -25,15 +25,25 @@ def _find_as_dhatu(state: State) -> int | None:
         if "dhatu" not in t.tags:
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
-        if up in _AS_UPADESHA and not t.meta.get("2_4_52_as_to_bhu_done"):
+        if up in _AS_UPADESHA and t.meta.get("gana") in (2, None) and not t.meta.get("2_4_52_as_to_bhu_done"):   # adādi as, not bhvādi asa~
             return i
     return None
+
+
+_ARDHA = frozenset({"liT", "luT", "lRT", "luG", "lRG", "liw", "luw", "lfw", "luN", "lfN"})
+
+
+def _ardhadhatuka_lakara(state: State) -> bool:
+    """आर्धधातुके (anuvṛtti 2.4.35): the lakāra on the tape — liṭ, luṭ, lṛṭ, luṅ, lṛṅ, or āśīr-liṅ — is ārdhadhātuka."""
+    return any("ashir_liG" in u.tags or "ardhadhatuka" in u.tags
+               or (u.meta.get("source_lakara_upadesha") or u.meta.get("upadesha_slp1") or "").strip() in _ARDHA
+               for u in state.terms if "dhatu" not in u.tags)
 
 
 def cond(state: State) -> bool:
     if state.meta.get("2_4_52_as_to_bhu_done"):
         return False
-    if not adhikara_in_effect("2.4.52", state, "2.4.35"):
+    if not (adhikara_in_effect("2.4.52", state, "2.4.35") or _ardhadhatuka_lakara(state)):
         return False
     return _find_as_dhatu(state) is not None
 
@@ -50,7 +60,8 @@ def act(state: State) -> State:
         sutra_id="2.4.52",
         gunadharmas=frozenset({DHATUTVA}),
     )
-    t.meta["2_4_52_as_to_bhu_done"] = True
+    t.meta["upadesha_slp1"] = "BU~"          # the dhātu bhū as the dhātupāṭha names it (the tape letters are BU)
+    t.meta.update({"2_4_52_as_to_bhu_done": True, "set_dhatu": True, "anit_dhatu": False, "ekac_dhatu": True, "gana": 1})   # bhū is seṭ (भविता)
     state.meta["2_4_52_as_to_bhu_done"] = True
     state.meta["adesha_kind"] = "2.4.52"
     return state

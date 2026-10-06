@@ -32,7 +32,7 @@ def _find(state: State):
         if "dhatu" not in dh.tags or tin.kind != "pratyaya" or dh.meta.get("7_3_96_Iw_done") or not tin.varnas:
             continue
         if "".join(v.slp1 for v in dh.varnas if "aT_agama_v" not in v.tags) not in ("as", "As", "Aas") \
-                and (dh.meta.get("upadesha_slp1") or "").strip() != "asa~":
+                and (dh.meta.get("upadesha_slp1") or "").strip() != "asa~" or dh.meta.get("gana") not in (2, None):
             continue
         if len(tin.varnas) == 1 and tin.varnas[0].slp1 in ("t", "s") and "tin_adesha_3_4_78" in tin.tags \
                 and (tin.meta.get("source_lakara_upadesha") or "").strip() == "laG":
