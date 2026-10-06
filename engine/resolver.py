@@ -242,9 +242,16 @@ def resolve_with_reason(
     # each other's work in descending order (8.2.1), so *para* is not the arbiter:
     # the earlier rule goes first and the later one meets its result afterwards.
     declared_apavada = any(o in candidate_ids for c in candidate_ids for o in (get_sutra(c).apavada_of or ()))
-    if all(is_tripadi_sutra(c) for c in candidate_ids) and not declared_apavada:
-        winner = min(candidate_ids, key=_id_key)
-        return Decision(winner, "asiddha", paribhasha_layer("asiddha").citation(), ())
+    if all(is_tripadi_sutra(c) for c in candidate_ids):
+        if not declared_apavada:
+            winner = min(candidate_ids, key=_id_key)
+            return Decision(winner, "asiddha", paribhasha_layer("asiddha").citation(), ())
+        # an apavāda inside the tripāḍī (8.2.34 over 8.2.31) displaces only the rule it names; the rest keep kram
+        gone = {o for c in candidate_ids for o in (get_sutra(c).apavada_of or ()) if o in candidate_ids}
+        rest = [c for c in candidate_ids if c not in gone]
+        if len(rest) > 1 and all(not (get_sutra(c).apavada_of or ()) or not set(get_sutra(c).apavada_of) & set(rest) for c in rest):
+            winner = min(rest, key=_id_key)
+            return Decision(winner, "asiddha", paribhasha_layer("asiddha").citation(), tuple(sorted(gone)))
 
     # Ladder 1, step 3 — pratiṣedha. A prohibition is settled before the rules it forbids contend
     # (the autonomous loop does it in apply_pratishedhas; a pool-driven scanner offers it as a candidate).

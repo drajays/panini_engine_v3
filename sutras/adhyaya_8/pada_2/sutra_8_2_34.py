@@ -24,7 +24,8 @@ def _site(state: State):
         if slp(c[k]) != "h" or not followed_by_jhal_or_end(c, k):
             continue
         span = dhatu_span(c, k)
-        if span and span[1] == k and "".join(slp(x) for x in c[span[0]:span[1] + 1]) == "nah":
+        # the root's ac may be guṇa/vṛddhi by now (anAh-s-īt: luṅ), so read its consonants: n…h of Raha~ (nahyati) — no other root has that skeleton
+        if span and span[1] == k and "".join(slp(x) for x in c[span[0]:span[1] + 1] if slp(x) not in AC) == "nh":
             return c[k]
     return None
 
@@ -49,6 +50,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "नहः धः",
     why_dev               = "नहो धः: the ह् of नह् → ध् (apavāda of 8.2.31) — नह्+त → नद्ध.",
     anuvritti_from        = ('8.1.1',),
+    apavada_of            = ("8.2.31",),   # नहो धः displaces हो ढः on the ह् of नह्
     cond                  = cond,
     act                   = act,
 )
