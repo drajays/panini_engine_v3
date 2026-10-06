@@ -29,7 +29,7 @@ GATE_KEY = "P037_6_1_11_lugi_dvitva"
 
 def _general(state: State):
     """चङि: the dhātu before caṅ is doubled (its first ekāc part; 7.4.60 trims the
-    abhyāsa) — चुर् → चुचुर्. Hal-initial dhātus only here."""
+    abhyāsa) — चुर् → चुचुर्. Ajādi: 6.1.2 (second ekāc)."""
     if not any((t.meta.get("upadesha_slp1") or "").strip() == "caG" for t in state.terms):
         return None
     for i, t in enumerate(state.terms):
@@ -37,10 +37,24 @@ def _general(state: State):
             if i and "abhyasa" in state.terms[i - 1].tags:
                 return None
             j = next((k for k, v in enumerate(t.varnas) if "aT_agama_v" not in v.tags), None)    # the aṭ stands before the abhyāsa
-            if j is None or t.varnas[j].slp1 in "aAiIuUfFxeEoO":
+            if j is not None and j == 0 and "aTa_agama" in t.tags:
+                j = 1                                      # āṭ (6.4.72, ajādi) stands in front of the root's own vowel
+            if j is None or j >= len(t.varnas):
+                return None
+            if t.varnas[j].slp1 in _AC and _second_ekac(t, j) is None:
                 return None
             return i
     return None
+
+
+_AC = "aAiIuUfFxeEoO"
+
+
+def _second_ekac(t, j):
+    """अजादेर्द्वितीयस्य (6.1.2): an ajādi root's second ekāc — the consonants after its first vowel up to the next vowel,
+    with that vowel (awwi → wwi: Awiwwat) — is what is doubled. (start, end) in ``t.varnas``, or None."""
+    k = next((m for m in range(j + 1, len(t.varnas)) if t.varnas[m].slp1 in _AC), None)
+    return None if k is None else (j + 1, k + 1)
 
 def cond(state: State) -> bool:
     if _general(state) is not None:
@@ -57,10 +71,21 @@ def act(state: State) -> State:
         from engine.state import Term
         dh = state.terms[gi]
         j = next(k for k, v in enumerate(dh.varnas) if "aT_agama_v" not in v.tags)
+        if j == 0 and "aTa_agama" in dh.tags:
+            j = 1
         pre, dh.varnas = dh.varnas[:j], dh.varnas[j:]      # aṭ + abhyāsa + dhātu (अचूचुरत्)
-        ab = Term(kind=dh.kind, varnas=[deepcopy(v) for v in dh.varnas],
-                  tags=(set(dh.tags) | {"abhyasa"}) - {"dhatu"}, meta={})
-        state.terms.insert(gi, ab)
+        lead = []
+        if dh.varnas[0].slp1 in _AC:                       # ajādi: the first ekāc stays, the second is doubled
+            s0, e0 = _second_ekac(dh, 0)
+            lead, dh.varnas = dh.varnas[:s0], dh.varnas[s0:]
+            ab = Term(kind=dh.kind, varnas=[deepcopy(v) for v in dh.varnas[:e0 - s0]],
+                      tags=(set(dh.tags) | {"abhyasa"}) - {"dhatu"}, meta={})
+            state.terms.insert(gi, ab)
+            state.terms.insert(gi, Term(kind=dh.kind, varnas=lead, tags=set(dh.tags) - {"dhatu"} | {"anga"}, meta={}))
+        else:
+            ab = Term(kind=dh.kind, varnas=[deepcopy(v) for v in dh.varnas],
+                      tags=(set(dh.tags) | {"abhyasa"}) - {"dhatu"}, meta={})
+            state.terms.insert(gi, ab)
         if pre:         # the aṭ is its own Term before the abhyāsa — 7.4.60 must not read it
             state.terms.insert(gi, Term(kind="pratyaya", varnas=pre, tags={"pratyaya", "agama", "aT_agama"},
                                         meta={"upadesha_slp1": "aw"}))

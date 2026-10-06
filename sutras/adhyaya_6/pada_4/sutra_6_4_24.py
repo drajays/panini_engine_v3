@@ -57,6 +57,8 @@ def cond(state: State) -> bool:
         return False
     if dh.meta.get("6_4_24_n_lopa_done"):
         return False
+    if dh.meta.get("ni_lopa_done") or dh.meta.get("6_4_51_Reraniwi_done"):
+        return False      # ṇic is lopa'd (6.4.51) but sthānivat (1.1.62): the aṅga is still ṇyanta, so the root's n is not its upadhā (puMsyAt)
     if len(dh.varnas) < 2:
         return False
     return True

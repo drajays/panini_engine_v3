@@ -37,3 +37,8 @@ vṛddhi E→E of 7.2.115 that stripped the root's own-ec mark (`mula_dhatu_v`) 
 
 yam/ram/nam and ā-final aṅgas in parasmaipada luṅ: sak + iṭ (7.2.73) enter at once after the tiṅ is lopa'd (brain prakriyā of `mA luṅ`: `mAs + iw + s + t` precedes every
 aṅga rule); with iṭ on the sic, 7.2.4 neṭi forbids the hal-anta vṛddhi of 7.2.3 → `anaMsIt`, `aramsIt`, not `*anAmsIt`. Pinned by `tests/regression/test_tinanta_7_2_73.py`.
+
+## Addition (2026-10-06): named override 6.1.11 over 6.4.51; 6.1.11 handles ajādi roots (6.1.2)
+
+ajādi ṇijanta before caṅ (aṭ→āṭ, `awi`): the second ekāc `wi` is doubled while the ṇi is still there, then 6.4.51 drops it from the root only → `Awiwat`. Evidence: brain prakriyā of
+`aṭ` luṅ (deriv 142, step 10: 6.1.11 / 6.4.51 / 1.1.59 / 6.1.2). Pinned by `tests/regression/test_tinanta_nijanta_ajadi_caN.py`.

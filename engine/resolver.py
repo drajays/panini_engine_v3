@@ -42,6 +42,9 @@ CONFLICT_OVERRIDES: Dict[FrozenSet[str], str] = {
     frozenset({"6.1.50", "7.3.84"}): "6.1.50",       # docs/AMENDMENT_19.md: dāsyate, mātā — ātva before guṇa (data: ashtadhyayi.com dhātu table)
     frozenset({"6.1.50", "7.2.1"}): "6.1.50",        # amāsīt, not *amaiṣīt
     frozenset({"7.2.3", "7.2.73"}): "7.2.73",       # docs/AMENDMENT_19.md: anaMsIt — sak+iṭ first, then 7.2.4 forbids the vṛddhi of 7.2.3
+    frozenset({"6.4.72", "6.1.11", "6.4.51"}): "6.4.72",   # the āṭ goes in before the caṅ-dvitva (brain deriv 142: āṭ is step 5, dvitva step 10)
+    frozenset({"6.4.71", "6.1.11", "6.4.51"}): "6.4.71",   # likewise the aṭ
+    frozenset({"6.1.11", "6.4.51"}): "6.1.11",     # docs/AMENDMENT_19.md: ṇijanta caṅ — dvitva of the ṇyanta aṅga first, ṇi-lopa after (Awiwwat; 1.1.59 dvirvacane'ci)
     frozenset({"6.1.8", "6.1.45"}): "6.1.45",       # docs/AMENDMENT_19.md: glai/ṣṭyai/vai liṭ — ātva on the bare root, then dvitva (jaglau)
     frozenset({"7.3.96", "7.4.50"}): "7.3.96",     # docs/AMENDMENT_19.md: आसीः — īṭ comes first, so the two s's are no longer adjacent
 }
