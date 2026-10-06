@@ -105,7 +105,9 @@ def _dhatu_index() -> tuple[dict, dict]:
             continue
         g = e.get("gana_number") or e.get("gana")
         by_upadesha.setdefault((e.get("upadesha_dev", ""), g), []).append(e)
-        by_raw.setdefault((e.get("raw_dhatu_after_it_lopa_dev", ""), g), []).append(e)
+        for k in ("citation_dhatu_dev", "raw_dhatu_after_it_lopa_dev"):  # Samsaadhanii cites traditional roots
+            if e.get(k) and e not in by_raw.get((e[k], g), []):
+                by_raw.setdefault((e[k], g), []).append(e)
     return by_upadesha, by_raw
 
 

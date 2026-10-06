@@ -1252,7 +1252,7 @@ def api_krdanta():
         elif krt_type == "nvul":
             from pipelines.krdanta import derive_krt
             # Label comes from dhātupātha metadata; fall back to raw upadesha only.
-            label = row.get("raw_dhatu_after_it_lopa_slp1") or upadesha.rstrip("~").rstrip("\\")
+            label = row.get("citation_dhatu_slp1") or row.get("raw_dhatu_after_it_lopa_slp1") or upadesha.rstrip("~").rstrip("\\")
             nvul_state = derive_krt(
                 upadesha,
                 krt_upadesha_slp1="Rvul",

@@ -56,14 +56,21 @@ but don't break anything … handle anunasik correctly … also apply in our eng
 13 failed, 20,189 passed. The 13 failures are identical on both and environmental (missing practice/notes fixture
 files; untracked `data/upstream/ashtadhyayi_dhatu_data.json`). No new failure.
 
-## 7. Legacy field `raw_dhatu_after_it_lopa_*` (corrected on acceptance)
+## 7. Legacy field `raw_dhatu_after_it_lopa_*` — resolved (owner: "resolve it now rather than keeping the bug alive")
 
-The field is the traditional *citation* root (it keeps num for idit — `citi~` → cint —, tuk, ṣatva/ṇatva …), read by
-9 modules as a lookup key. 39 rows were outright errors and now take the entry's own `mula_dhatu_dev`: initial ṇ/ṭ/ḍ
-dropped by a misapplied 1.3.7 (`Rada~` → nad), final ṭ/ḍ/ṇ dropped (`awa~` → aw), 1.3.3 missed (`trapU~z` → trap),
-transliteration slips (`wala~` → wal, `kzala~` → kzal). चक्षिङ् → **चक्षिँङ्** (1.3.2: only the anunāsika reading
-yields the attested चक्ष्; listed in `tests/unit/test_upadesha_inputs.py` known divergences beside पेबृँ).
-The field's mixed ṣ/ṇ convention (`zvad` vs `sam`) is left as is — both forms stay valid lookup keys.
+The field's name said "after it-lopa" but it held a mix: the traditional citation root (num for idit, tuk, sometimes
+ṣatva/ṇatva) plus 274 rows that matched neither (1.3.7 applied to dhātus — `Rada~` → ad; idit/final ṭu dropped —
+`awa~` → a; 1.3.3 missed — `trapU~z` → trapz; transliteration slips — `wala~` → Tal). Resolution: two fields with one
+meaning each, filled by `scripts/fill_dhatu_it_lopa.py` and pinned by `tests/unit/test_dhatu_root_fields.py`:
+
+- `raw_dhatu_after_it_lopa_slp1/_dev` = the engine's own it-prakaraṇa residue (1.3.2–1.3.9), all 2,240 dhātus.
+- `citation_dhatu_slp1/_dev` (new) = `mula_dhatu_dev`, the traditional root (नद्, चिन्त्, पञ्च्).
+
+Readers: `pipelines/dhatupatha.resolve_dhatu_identifier` and the `tinanta` index accept both (residue first, citation
+last — `cint` → चितिँ; ambiguous keys such as `nad` = residue of टुनदिँ / citation of णदँ resolve to the residue);
+`engine/registries/lexicon_lookup`, `tools/samsaadhanii_tags` index both; `api/main.py`, `webui/app.py` label with the
+citation root; `pipelines/krdanta.derive_trc` keeps starting from the residue. चक्षिङ् → **चक्षिँङ्** (1.3.2 decides;
+known divergence from upstream Devanāgarī recorded beside पेबृँ). Left for a scholar: `curAdi_10_0470` कर्णँ vs mūla कर्ण.
 
 ## 8. Upstream data
 

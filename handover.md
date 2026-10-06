@@ -23,7 +23,8 @@ AMENDMENT 20 **accepted** and merged: `samagra_*` on all 3,983 records (Art. 4 r
 vipariṇāma before relying on them); row-i citation in every file; anunāsika ≠ anusvāra (joiner + parser fixed,
 `han~` = हनँ; engine it-prakaraṇa verified on all 2,240 dhātus); दृशिँर्, चक्षिँङ् restored by 1.3.2; `sutra_context.json`
 pāṭha = T0 (ashtadhyayi.com data synced to upstream 5744762: 3.1.73 स्वादिभ्यः, 3.1.31 आर्धधातुके …); legacy
-`raw_dhatu_after_it_lopa_*` corrected in 39 rows from `mula_dhatu_dev`. AMENDMENT 21 (vārttika ids `X.Y.Z.vN`) proposed,
+root field RESOLVED: `raw_dhatu_after_it_lopa_*` = engine it-lopa residue, new `citation_dhatu_*` = traditional root,
+all readers updated (`scripts/fill_dhatu_it_lopa.py` after any dhātupāṭha edit; test pins it). AMENDMENT 21 (vārttika ids `X.Y.Z.vN`) proposed,
 deferred to Track G. Open: `curAdi_10_0470` कर्णँ vs mūla कर्ण (adanta?) needs a scholar; brain `anunasika` lists the rest.
 
 ## Known gaps (the 13 gaṇa-1 misses are rule gaps, not loop gaps)

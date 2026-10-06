@@ -461,7 +461,7 @@ def krdanta(req: KrdantaReq) -> dict[str, Any]:
                      vibhakti=1, vacana=1, linga="pulliṅga")
     else:
         from pipelines.krdanta import derive_krt
-        label = row.get("raw_dhatu_after_it_lopa_slp1") or upadesha.rstrip("~").rstrip("\\")
+        label = row.get("citation_dhatu_slp1") or row.get("raw_dhatu_after_it_lopa_slp1") or upadesha.rstrip("~").rstrip("\\")
         state = _run(derive_krt, upadesha, krt_upadesha_slp1="Rvul",
                      merge_pratipadika_label=label)
     return _derivation(state, **req.model_dump())
