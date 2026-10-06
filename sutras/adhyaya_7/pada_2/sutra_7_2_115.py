@@ -96,8 +96,8 @@ def _find(state: State):
     rep = _vrddhi_vowel(last, state)
     if rep is None and last in ("f", "F", "x", "X"):
         rep = "A"          # vṛddhi of ṛ/ḷ is ā + r/l (1.1.51): पॄ → पार् (पारयति)
-    if rep is None:
-        return None
+    if rep is None or rep == last:              # already vṛddhi (ai, au, ā): ādeśa = sthānī, nothing to do — and the
+        return None                             # root's own ec must stay "mūla" for 6.1.45 (glai liṭ: jaglau)
     di = state.terms.index(dhatu)
     return (di, len(dhatu.varnas) - 1, rep)
 

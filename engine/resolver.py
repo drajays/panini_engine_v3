@@ -41,6 +41,7 @@ CONFLICT_OVERRIDES: Dict[FrozenSet[str], str] = {
     frozenset({"6.4.101", "6.4.119"}): "6.4.101",     # docs/AMENDMENT_19.md: एधि — hi→dhi after the jhal-final as, then e
     frozenset({"6.1.50", "7.3.84"}): "6.1.50",       # docs/AMENDMENT_19.md: dāsyate, mātā — ātva before guṇa (data: ashtadhyayi.com dhātu table)
     frozenset({"6.1.50", "7.2.1"}): "6.1.50",        # amāsīt, not *amaiṣīt
+    frozenset({"6.1.8", "6.1.45"}): "6.1.45",       # docs/AMENDMENT_19.md: glai/ṣṭyai/vai liṭ — ātva on the bare root, then dvitva (jaglau)
     frozenset({"7.3.96", "7.4.50"}): "7.3.96",     # docs/AMENDMENT_19.md: आसीः — īṭ comes first, so the two s's are no longer adjacent
 }
 
