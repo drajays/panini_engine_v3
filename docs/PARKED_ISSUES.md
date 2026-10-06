@@ -4,10 +4,10 @@ Not blockers. Add one line per item: area · what · evidence · what is needed.
 
 ## tiṅanta
 - caha~ (curādi): CLOSED — engine right (mit row 10.0120, SK 6.4.92 cahayati); see docs/PARKED_ISSUES_RESOLVED.md.
-- fRu~ loṭ 2sg: VERIFIED engine bug (arRu); needs guṇa-before-6.4.106 ordering + the vibhāṣā fork (aguṇa fRu / guṇa arRuhi). Waits on vikalpa support.
+- fRu~ loṭ 2sg: VERIFIED engine bug (arRu); needs guṇa-before-6.4.106 ordering + the vibhāṣā fork (aguṇa fRu / guṇa arRuhi). engine/vikalpa.py already provides the fork mechanism (see 1.2.3 below); not yet wired for this root.
 - gurI~: CLOSED — engine right (kuṭādi 1.2.1, brain dhātu row 6.0131).
 - bhvādi sf luṅ (`asArzIt`) and bhvādi Divi~ (`Dinvati`): engine right per SK / 3.1.80; Vidyut differs. Only a note.
-- vibhāṣā alternates not generated (one form per cell): ūrṇu liṭ, kṛṣ-type sic fork.
+- vibhāṣā alternates not generated (one form per cell): ūrṇu liṭ (**1.2.3 partially fixed, 2026-10-06**: the sūtra was dead — wrong upadeśa string ("UrzRu" vs real "UrRuY") and the scheduler never revisits 1.2.x after Adhyāya 7; now hooked into 7.2.35's iṭ-insertion point, same pattern as 1.2.2/विज्. luṭ 3sg now correctly forks guṇa-blocked vs not — `tests/unit/test_1_2_3_urnu_vibhasha.py`. Still open: 6.4.77 (uvaṅ) doesn't reach this term in the luṭ+iṭ environment, so the ṅit branch isn't yet the fully sandhi'd ऊर्णुविता — a separate, pre-existing 6.4.77 adjacency gap, newly exposed here), kṛṣ-type sic fork (3.1.44 vārttika, still open).
 - Intermittent: hrage~ / fDu~ liṭ lost 6.1.8 once in one ledger_recheck run; a full-suite run hung once at bhū laG-2-2. Not reproducible (12 reruns, 12 hash seeds).
 - SK §43: 40 gate-only sūtras (docs/SK43_COVERAGE.md): prefix-dependent ṣatva/ṇatva (8.3.117/118, 8.4.14), liṭ samprasāraṇa of vye/hve (6.1.15–19, 37–40) — verified implementable, correct numbers in PARKED_ISSUES_RESOLVED.md.
 - Stale recipe pipeline disagrees with the (correct) loop for ajādi ṇijanta caṅ (awwa~) — recipe is being retired, ignore.
