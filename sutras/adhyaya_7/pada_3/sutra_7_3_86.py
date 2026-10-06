@@ -50,8 +50,8 @@ def _lrng_dhatu_ṛ_guna_index(state: State) -> int | None:
             continue
         if t.meta.get("lrng_ṛ_guna_done"):
             continue
-        if not any(v.slp1 == "f" for v in t.varnas):
-            continue
+        if len(t.varnas) < 2 or t.varnas[-2].slp1 != "f":
+            continue                  # laghūpadhasya: the ṛ must be the upadhā (vṛt), not one before a num/hal (bfMh: abfMhizyat)
         return i
     return None
 
