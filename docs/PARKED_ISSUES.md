@@ -3,13 +3,13 @@
 Not blockers. Add one line per item: area · what · evidence · what is needed.
 
 ## tiṅanta
-- caha~ (curādi): Vidyut `cAhayati`, engine `cahayati` — hinges on whether caha~ is in the ghaṭādi (mit) list. Needs source.
-- fRu~ loṭ 2sg: engine `arRu`; Vidyut {arRuhi, arRutAd, fRu, …}. 6.4.106 luk vs 7.3.84 guṇa on ṛ. Needs expert view.
-- gurI~ (kuṭādi, ātmane) āśīrliṅ/luṅ/lṛṭ: engine `gurizIzwa`, Vidyut `gorizIzwa`; Vidyut probably wrong (kuṭādi ṅit).
+- caha~ (curādi): CLOSED — engine right (mit row 10.0120, SK 6.4.92 cahayati); see docs/PARKED_ISSUES_RESOLVED.md.
+- fRu~ loṭ 2sg: VERIFIED engine bug (arRu); needs guṇa-before-6.4.106 ordering + the vibhāṣā fork (aguṇa fRu / guṇa arRuhi). Waits on vikalpa support.
+- gurI~: CLOSED — engine right (kuṭādi 1.2.1, brain dhātu row 6.0131).
 - bhvādi sf luṅ (`asArzIt`) and bhvādi Divi~ (`Dinvati`): engine right per SK / 3.1.80; Vidyut differs. Only a note.
 - vibhāṣā alternates not generated (one form per cell): ūrṇu liṭ, kṛṣ-type sic fork.
 - Intermittent: hrage~ / fDu~ liṭ lost 6.1.8 once in one ledger_recheck run; a full-suite run hung once at bhū laG-2-2. Not reproducible (12 reruns, 12 hash seeds).
-- SK §43: 40 gate-only sūtras (docs/SK43_COVERAGE.md): prefix-dependent ṣatva/ṇatva, liṭ samprasāraṇa of vye/hve.
+- SK §43: 40 gate-only sūtras (docs/SK43_COVERAGE.md): prefix-dependent ṣatva/ṇatva (8.3.117/118, 8.4.14), liṭ samprasāraṇa of vye/hve (6.1.15–19, 37–40) — verified implementable, correct numbers in PARKED_ISSUES_RESOLVED.md.
 - Stale recipe pipeline disagrees with the (correct) loop for ajādi ṇijanta caṅ (awwa~) — recipe is being retired, ignore.
 
 ## subanta (from the 9,005-stem ashtadhyayi.com gold sweep, 2026-10-06; harness = bench/ashtadhyayi_gold.py --kind subanta)
