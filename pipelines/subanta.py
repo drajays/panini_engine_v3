@@ -110,6 +110,7 @@ from typing import List
 from engine            import apply_rule
 from pipelines.it_prakarana import IT_PRAKARANA_SEQUENCE
 from engine.state      import State, Term
+from engine.strata     import sees_later_tripadi
 from phonology         import mk
 from phonology.varna   import mk_inherent_a
 
@@ -643,7 +644,7 @@ def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
                 if (sid, _state_sig(s)) in no_progress_sites:
                     continue
                 cur = s.meta.get("tripadi_cursor")
-                if cur and s.tripadi_zone and _sid_key(sid) < _sid_key(cur):
+                if cur and s.tripadi_zone and _sid_key(sid) < _sid_key(cur) and not sees_later_tripadi(sid, cur):
                     continue            # 8.2.1: an earlier tripāḍī rule never wakes on a later one's work
                 if rec.cond is not None and rec.cond(s):
                     candidates.append(sid)
@@ -732,6 +733,7 @@ def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
     # Pre-merge rutva: enter tripāḍī zone and convert stem-final s→r before HAL-initial sup
     # (8.2.66 _target_premerge requires len(terms)≥2, so must run before _pada_merge)
     _scan_pool(["8.2.1", "8.2.7", "8.2.66"])
+    _scan_pool(["6.1.113", "6.1.114", "6.1.87"])   # ru after a → u before a haś (manaru+bhyām), then a+u → o: manobhyām
 
     _pada_merge(s)          # always: a single term (su already lopa'd) still becomes the pada (8.2.7 reads it)
 

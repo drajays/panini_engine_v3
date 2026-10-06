@@ -1,100 +1,136 @@
 {
-  "_doc": "Asiddha domains — where the effect of one rule is invisible to another. Sūtra texts come from sutra_ref_out/ (ashtadhyayi corpus); the ranges are structural and each one says below what authorises it.",
-  "domains": {
-    "tripadi": {
-      "sutra": "8.2.1",
-      "dev": "पूर्वत्रासिद्धम्",
-      "padaccheda_dev": "पूर्वत्र · असिद्धम्",
-      "range": [
-        "8.2.1",
-        "8.4.68"
-      ],
-      "kind": "asiddha",
-      "range_authority": "The tripāḍī is the standard closing section 8.2.1–8.4.68; the same bounds already govern engine/gates.py and engine/phase.py.",
-      "reading": "पूर्वत्र असिद्धम् — what a tripāḍī rule does is asiddha for everything earlier, including earlier tripāḍī rules."
-    },
-    "abhiya": {
-      "sutra": "6.4.22",
-      "dev": "असिद्धवदत्राभात्",
-      "padaccheda_dev": "असिद्ध-वत् अत्र आ भात्",
-      "range": [
-        "6.4.22",
-        "6.4.129"
-      ],
-      "kind": "asiddhavat",
-      "range_authority": "आ भात् — up to भस्य (6.4.129), which this engine already registers as the ADHIKARA that opens the bha section.",
-      "reading": "असिद्धवत् अत्र आ भात् — inside this section the rules are asiddhavat to one another."
-    },
-    "ekadesha_for_satva_tuk": {
-      "sutra": "6.1.86",
-      "dev": "षत्वतुकोरसिद्धः",
-      "padaccheda_dev": "षत्व-तुकोः असिद्धः",
-      "range": [
-        "6.1.84",
-        "6.1.111"
-      ],
-      "kind": "asiddha",
-      "observers": {
-        "satva": [
-          "8.3.59",
-          "8.3.60",
-          "8.3.57"
-        ],
-        "tuk": [
-          "6.1.71",
-          "6.1.72",
-          "6.1.73",
-          "6.1.74",
-          "6.1.75",
-          "6.1.76"
-        ]
-      },
-      "range_authority": "The ekādeśa section opened by एकः पूर्वपरयोः (6.1.84). The observer sets are the ṣatva and tuk rules THIS ENGINE models, not an exhaustive reading of the śāstra.",
-      "reading": "षत्व-तुकोः असिद्धः — the ekādeśa is asiddha for ṣatva and for tuk."
-    }
+ "_doc": "Asiddha domains — where the effect of one rule is invisible to another. Sūtra texts come from sutra_ref_out/ (ashtadhyayi corpus); the ranges are structural and each one says below what authorises it.",
+ "domains": {
+  "tripadi": {
+   "sutra": "8.2.1",
+   "dev": "पूर्वत्रासिद्धम्",
+   "padaccheda_dev": "पूर्वत्र · असिद्धम्",
+   "range": [
+    "8.2.1",
+    "8.4.68"
+   ],
+   "kind": "asiddha",
+   "range_authority": "The tripāḍī is the standard closing section 8.2.1–8.4.68; the same bounds already govern engine/gates.py and engine/phase.py.",
+   "reading": "पूर्वत्र असिद्धम् — what a tripāḍī rule does is asiddha for everything earlier, including earlier tripāḍī rules."
   },
-  "tripadi_nimitta_exceptions": [
-    {
-      "observers": [
-        "6.3.111",
-        "6.3.112"
-      ],
-      "sees": [
-        "8.3.13",
-        "8.3.14"
-      ],
-      "authority": "Kāśikā 6.3.111 (ashtadhyayi.com row 63111) — ढ्रलोपे names the lopa of 8.3.13 ढो ढे लोपः / 8.3.14 रो रि as its own nimitta; were that lopa asiddha the rule would have no scope (vacana-sāmarthya). Udāharaṇa लीढम्, मीढम्, उपगूढम्; 6.3.112 सोढा, वोढा.",
-      "reading": "ढ्रलोपे पूर्वस्य दीर्घोऽणः — the dīrgha / ओत् sees the tripāḍī lopa that is its condition, and runs inside the tripāḍī right after it."
-    }
-  ],
-  "not_modelled": [
-    "6.1.86's observer sets are those the engine implements; more ṣatva/tuk rules will need adding as they land.",
-    "Asiddhatva inside the ābhīya section is modelled as full mutual invisibility; the tradition's exceptions (e.g. for a rule's own nimitta) are not yet distinguished."
-  ],
-  "tripadi_cursor_exceptions": [
-    {
-      "observer": "8.3.13",
-      "sees": [
-        "8.4.41"
-      ],
-      "authority": "Kāśikā 8.3.13 (ashtadhyayi.com row 83013): 'ṣṭutvasyātra siddhatvam āśrayāt' — the ṣṭutva that makes the second ḍh is siddha for the lopa. Udāharaṇa लीढम्, मीढम्, उपगूढम्; luṭ लेढा.",
-      "reading": "ढो ढे लोपः runs after 8.4.41 although it stands earlier in the tripāḍī."
-    },
-    {
-      "observer": "6.3.111",
-      "sees": [
-        "8.3.13"
-      ],
-      "authority": "Kāśikā 6.3.111 ढ्रलोपे (see tripadi_nimitta_exceptions): the dīrgha is the consequence of 8.3.13's lopa, so it follows it though numbered earlier.",
-      "reading": "ढ्रलोपे पूर्वस्य दीर्घोऽणः runs right after 8.3.13."
-    },
-    {
-      "observer": "6.3.112",
-      "sees": [
-        "8.3.14"
-      ],
-      "authority": "Kāśikā 6.3.112 सहिवहोरोदवर्णस्य (सोढा, वोढा): follows 8.3.14 रो रि.",
-      "reading": "ओत् after the rori lopa."
-    }
-  ]
+  "abhiya": {
+   "sutra": "6.4.22",
+   "dev": "असिद्धवदत्राभात्",
+   "padaccheda_dev": "असिद्ध-वत् अत्र आ भात्",
+   "range": [
+    "6.4.22",
+    "6.4.129"
+   ],
+   "kind": "asiddhavat",
+   "range_authority": "आ भात् — up to भस्य (6.4.129), which this engine already registers as the ADHIKARA that opens the bha section.",
+   "reading": "असिद्धवत् अत्र आ भात् — inside this section the rules are asiddhavat to one another."
+  },
+  "ekadesha_for_satva_tuk": {
+   "sutra": "6.1.86",
+   "dev": "षत्वतुकोरसिद्धः",
+   "padaccheda_dev": "षत्व-तुकोः असिद्धः",
+   "range": [
+    "6.1.84",
+    "6.1.111"
+   ],
+   "kind": "asiddha",
+   "observers": {
+    "satva": [
+     "8.3.59",
+     "8.3.60",
+     "8.3.57"
+    ],
+    "tuk": [
+     "6.1.71",
+     "6.1.72",
+     "6.1.73",
+     "6.1.74",
+     "6.1.75",
+     "6.1.76"
+    ]
+   },
+   "range_authority": "The ekādeśa section opened by एकः पूर्वपरयोः (6.1.84). The observer sets are the ṣatva and tuk rules THIS ENGINE models, not an exhaustive reading of the śāstra.",
+   "reading": "षत्व-तुकोः असिद्धः — the ekādeśa is asiddha for ṣatva and for tuk."
+  }
+ },
+ "tripadi_nimitta_exceptions": [
+  {
+   "observers": [
+    "6.3.111",
+    "6.3.112"
+   ],
+   "sees": [
+    "8.3.13",
+    "8.3.14"
+   ],
+   "authority": "Kāśikā 6.3.111 (ashtadhyayi.com row 63111) — ढ्रलोपे names the lopa of 8.3.13 ढो ढे लोपः / 8.3.14 रो रि as its own nimitta; were that lopa asiddha the rule would have no scope (vacana-sāmarthya). Udāharaṇa लीढम्, मीढम्, उपगूढम्; 6.3.112 सोढा, वोढा.",
+   "reading": "ढ्रलोपे पूर्वस्य दीर्घोऽणः — the dīrgha / ओत् sees the tripāḍī lopa that is its condition, and runs inside the tripāḍī right after it."
+  },
+  {
+   "observers": [
+    "6.1.113",
+    "6.1.114",
+    "6.1.87"
+   ],
+   "sees": [
+    "8.2.66"
+   ],
+   "authority": "6.1.113 'ato roḥ' names the ru that 8.2.66 makes as its own nimitta (vacana-sāmarthya); the guṇa 6.1.87 that completes manaru+bhyām → mano-bhyām runs right after (Kāśikā 6.1.114: manobhyām, payobhiḥ; SK haśi ca).",
+   "reading": "ru→u before haś, then a+u→o, inside the tripāḍī."
+  }
+ ],
+ "not_modelled": [
+  "6.1.86's observer sets are those the engine implements; more ṣatva/tuk rules will need adding as they land.",
+  "Asiddhatva inside the ābhīya section is modelled as full mutual invisibility; the tradition's exceptions (e.g. for a rule's own nimitta) are not yet distinguished."
+ ],
+ "tripadi_cursor_exceptions": [
+  {
+   "observer": "8.3.13",
+   "sees": [
+    "8.4.41"
+   ],
+   "authority": "Kāśikā 8.3.13 (ashtadhyayi.com row 83013): 'ṣṭutvasyātra siddhatvam āśrayāt' — the ṣṭutva that makes the second ḍh is siddha for the lopa. Udāharaṇa लीढम्, मीढम्, उपगूढम्; luṭ लेढा.",
+   "reading": "ढो ढे लोपः runs after 8.4.41 although it stands earlier in the tripāḍī."
+  },
+  {
+   "observer": "6.3.111",
+   "sees": [
+    "8.3.13"
+   ],
+   "authority": "Kāśikā 6.3.111 ढ्रलोपे (see tripadi_nimitta_exceptions): the dīrgha is the consequence of 8.3.13's lopa, so it follows it though numbered earlier.",
+   "reading": "ढ्रलोपे पूर्वस्य दीर्घोऽणः runs right after 8.3.13."
+  },
+  {
+   "observer": "6.3.112",
+   "sees": [
+    "8.3.14"
+   ],
+   "authority": "Kāśikā 6.3.112 सहिवहोरोदवर्णस्य (सोढा, वोढा): follows 8.3.14 रो रि.",
+   "reading": "ओत् after the rori lopa."
+  },
+  {
+   "observer": "6.1.113",
+   "sees": [
+    "8.2.66"
+   ],
+   "authority": "Kāśikā 6.1.114 haśi ca (manobhyām, payobhiḥ; SK): the ru of 8.2.66 is the nimitta these rules name ('ato roḥ'), so they run on it though numbered earlier; 6.1.87 completes a+u → o.",
+   "reading": "ru→u before haś, then guṇa, inside the tripāḍī."
+  },
+  {
+   "observer": "6.1.114",
+   "sees": [
+    "8.2.66"
+   ],
+   "authority": "Kāśikā 6.1.114 haśi ca (manobhyām, payobhiḥ; SK): the ru of 8.2.66 is the nimitta these rules name ('ato roḥ'), so they run on it though numbered earlier; 6.1.87 completes a+u → o.",
+   "reading": "ru→u before haś, then guṇa, inside the tripāḍī."
+  },
+  {
+   "observer": "6.1.87",
+   "sees": [
+    "8.2.66"
+   ],
+   "authority": "Kāśikā 6.1.114 haśi ca (manobhyām, payobhiḥ; SK): the ru of 8.2.66 is the nimitta these rules name ('ato roḥ'), so they run on it though numbered earlier; 6.1.87 completes a+u → o.",
+   "reading": "ru→u before haś, then guṇa, inside the tripāḍī."
+  }
+ ]
 }
