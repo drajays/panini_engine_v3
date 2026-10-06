@@ -72,8 +72,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'iko Jal',
     text_dev              = 'इको झल्',
-    samagra_slp1          = "ikaH Jal kit saMSca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
-    samagra_dev           = "इकः झल् कित् संश्च",
+    samagra_slp1          = "ikaH Jal kit san ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "इकः झल् कित् सन् च",
     padaccheda_dev        = "इकः / झल् (अनिट्)",
     why_dev               = ("इक्-अन्त-धातुः झल्-आदि-प्रत्यये परे अनिट् — "
                              "इडागमः न भवति (नियम-संज्ञा)।"),

@@ -61,8 +61,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'halantAcca',
     text_dev              = 'हलन्ताच्च',
-    samagra_slp1          = "halantAt ca kit saMSca ikaH Jal",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
-    samagra_dev           = "हलन्तात् च कित् संश्च इकः झल्",
+    samagra_slp1          = "halantAt ca kit san ikaH Jal",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "हलन्तात् च कित् सन् इकः झल्",
     padaccheda_dev        = "हलन्तात् / च (अनिट्)",
     why_dev               = ("हलन्त-धातुः (सेट्-भिन्नः) अनिट् — "
                              "इडागमः न भवति (१.२.९-अनुवृत्ति-विस्तारः)।"),

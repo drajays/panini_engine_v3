@@ -56,8 +56,16 @@ but don't break anything … handle anunasik correctly … also apply in our eng
 13 failed, 20,189 passed. The 13 failures are identical on both and environmental (missing practice/notes fixture
 files; untracked `data/upstream/ashtadhyayi_dhatu_data.json`). No new failure.
 
-## 7. Found, not changed (needs the owner)
+## 7. Legacy field `raw_dhatu_after_it_lopa_*` (corrected on acceptance)
 
-`raw_dhatu_after_it_lopa_slp1` in `dhatupatha_upadesha.json` (legacy v2 field, read by 9 modules) is wrong in 274 rows:
-it applies 1.3.7 to dhātus (`Rada~` → `ad`), drops idit consonants (`awi~` → `a`), misses 1.3.3 (`trapU~z` → `trapz`),
-and folds in 6.1.64/6.1.65 (`zvid` → `svid`). The engine's own it-prakaraṇa is right on all of them.
+The field is the traditional *citation* root (it keeps num for idit — `citi~` → cint —, tuk, ṣatva/ṇatva …), read by
+9 modules as a lookup key. 39 rows were outright errors and now take the entry's own `mula_dhatu_dev`: initial ṇ/ṭ/ḍ
+dropped by a misapplied 1.3.7 (`Rada~` → nad), final ṭ/ḍ/ṇ dropped (`awa~` → aw), 1.3.3 missed (`trapU~z` → trap),
+transliteration slips (`wala~` → wal, `kzala~` → kzal). चक्षिङ् → **चक्षिँङ्** (1.3.2: only the anunāsika reading
+yields the attested चक्ष्; listed in `tests/unit/test_upadesha_inputs.py` known divergences beside पेबृँ).
+The field's mixed ṣ/ṇ convention (`zvad` vs `sam`) is left as is — both forms stay valid lookup keys.
+
+## 8. Upstream data
+
+`~/data-master` synced to ashtadhyayi-com/data `5744762` (2026-09-13): 4 pāṭha, 4 samagra, 19 anuvṛtti, 5 padaccheda
+corrections; 16 `samagra_*` refreshed (e.g. 3.1.73 दिवादिभ्यः → स्वादिभ्यः); `sutra_context.json` regenerated.
