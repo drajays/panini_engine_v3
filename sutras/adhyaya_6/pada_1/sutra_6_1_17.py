@@ -29,6 +29,8 @@ _VOWELS = frozenset("aAiIuUfFxXeEoO")
 
 
 def _root_class(t) -> bool:
+    if "".join(v.slp1 for v in t.varnas) == "vay":
+        return False          # लिटि वयो यः (6.1.38): ववये
     stem = "".join(v.slp1 for v in t.varnas)
     lopa = t.meta.get("it_lopa_done") or ()      # the root as it stood after it-lopa — the samprasāraṇa (6.1.16) may have changed the tape
     if lopa and lopa[-1] in _STEMS:

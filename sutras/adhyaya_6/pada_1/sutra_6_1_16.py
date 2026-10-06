@@ -16,7 +16,16 @@ from sutras.adhyaya_1.pada_1.sutra_1_1_45 import META_TARGETS
 _STEMS = frozenset({"grah", "jyA", "vay", "vyaD", "vaS", "vyac", "vraSc", "vrasc", "pracC", "praC", "pratC", "Brasj"})
 
 
+def _vay_in_liT(state: State) -> bool:
+    """लिटि वयो यः (6.1.38): vay keeps its y in liṭ — वववे? no: ववये, ववयतुः (no samprasāraṇa)."""
+    dh = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
+    return dh is not None and "".join(v.slp1 for v in dh.varnas if "aT_agama_v" not in v.tags) in ("vay",) and any(
+        (u.meta.get("source_lakara_upadesha") or "").strip() == "liT" for u in state.terms)
+
+
 def cond(state: State) -> bool:
+    if _vay_in_liT(state):
+        return False
     return samprasarana_site(state, _STEMS, ngit=True) is not None
 
 

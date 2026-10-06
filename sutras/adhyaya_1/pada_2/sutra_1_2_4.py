@@ -57,6 +57,8 @@ def _find(state: State) -> int | None:
     for i, t in enumerate(state.terms):
         if "pratyaya" not in t.tags:
             continue
+        if "ardhadhatuka" in t.tags:
+            continue            # liṭ's eś (śit by upadeśa) is ārdhadhātuka (3.4.115 > 3.4.113): not "sārvadhātukam apit"
         up = (t.meta.get("upadesha_slp1") or "").strip()
         by_sthanin = tin_by_sthanin(t)
         # a tiṅ ādeśa of laṭ/loṭ/laṅ/liṅ is sārvadhātuka (3.4.113) even after 3.4.101 turned thas → tam, tas → tām …
