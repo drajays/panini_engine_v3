@@ -163,5 +163,18 @@
   "status": "released",
   "hotspots": [],
   "updated": 1791301135.8041587
+ },
+ {
+  "id": "sutra-1-3-12-brain-citation",
+  "agent": "claude",
+  "scope": [
+   "sutras/adhyaya_1/pada_3/sutra_1_3_12.py",
+   "docs/BRAIN_1_3_12_CROSSCHECK.md",
+   "docs/PARKED_ISSUES.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1791305639.2776866
  }
 ]

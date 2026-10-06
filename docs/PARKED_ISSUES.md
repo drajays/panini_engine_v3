@@ -18,7 +18,7 @@ Not blockers. Add one line per item: area · what · evidence · what is needed.
 Remaining differences are almost all *not* missing sūtras but missing stem metadata. Each needs a stem-origin input (like `ugit`, `tfc`, `han_dhatu`) or samāsa/upasarga info:
 - Compound / upasarga stems: ṇatva & ṣatva across a member boundary (antarmanas→antarmanāḥ not antarmaṇaḥ, caturānana, citrabhānu, prakampana, kṛmighna, tryahna): ~1,000 cells. Needs samāsa/upasarga metadata (8.4.1 "samānapade").
 - kvip/kvin/dhātu-final stems: dṛś/spṛś (8.2.62 kuḥ), rāj/vraśc/yaj finals (8.2.36 → ṭ), yac/añc (tiryaṅ, tiraścaḥ), iyaṅ/uvaṅ of dhī/śrī/bhū/bhrū/strī (6.4.77–83 are stubs), 7.3.54 han→ghn (vīraghnaḥ): ~900 cells.
-- śatṛ -at stems (runDat, kaTayat) need `ugit`; kvasu -vas (vidvas: 6.4.131 samprasāraṇa, 8.2.72 vidvatsu) not written: ~250 cells.
+- śatṛ -at stems (runDat, kaTayat) need `ugit`; kvasu -vas (vidvas: 6.4.131 samprasāraṇa, 8.2.72 vidvatsu) not written: ~250 cells. Confirmed again 2026-10-06 while checking 1.3.12 (docs/BRAIN_1_3_12_CROSSCHECK.md): no kvasu/kānac/yaṅ kṛt-pratyaya pipeline exists at all (`pipelines/krdanta.py`'s `derive_krt()` is Ṇvul/lyuṭ/lyap only) — most of 1.3.12's own Vidyut-floor examples are kvasu/kānac/yaṅ and can't be exercised end-to-end until this is built.
 - Anusvāra orthography: stems spelled with M (saṃyama, saṃveda, vāchaṃyama): gold keeps ṃ, engine gives the parasavarṇa (8.4.58). ~700 cells.
 - Sense-dependent sarvanāma / optional forms: adhara, antara, sama, prathama, viśva (neuter); pāda → pad (6.4.130 only for bahuvrīhi final); pratyeka; 'sapta' numerals (saptan jas/śas luk 7.1.22): ~400 cells.
 - ṣatva/s oddities: grāvan/pīvan 7/3; uśanas 1/1 (uśanā); ṭ-cluster 'ratnamuṭtsu' (8.3.29 ḍaḥ si dhuṭ).
