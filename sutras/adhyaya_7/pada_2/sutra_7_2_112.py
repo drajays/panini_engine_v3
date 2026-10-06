@@ -6,6 +6,7 @@
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com sūtra 7.2.112 (padaccheda: अन आपि अकः)
   Source #2 — ashtadhyayi.com śabda-prakriyā for इदम् (the sūtra path of each cell, all three liṅgas)
+Pāṭha: ashtadhyayi.com data.txt row i=72112 (Art. 14).
 """
 from __future__ import annotations
 
@@ -65,6 +66,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='anApyakaH',
     text_dev='अनाप्यकः',
+    samagra_slp1="akaH idamaH idaH Api viBaktO ana",
+    samagra_dev="अकः इदमः इदः आपि विभक्तौ अन",
     padaccheda_dev='अन आपि अकः',
     why_dev='आप् (टा / ओस्) परे अकक्-रहित इदम् का इद् → अन्।',
     anuvritti_from=("6.4.1", "7.2.84"),

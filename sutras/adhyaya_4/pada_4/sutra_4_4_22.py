@@ -4,6 +4,7 @@
 Padaccheda: संसृष्टे
 
 संसृष्टे (4.4.22)
+Pāṭha: ashtadhyayi.com data.txt row i=44022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMsfzwe",
     text_dev              = "संसृष्टे",
+    samagra_slp1          = "tena saMsfzwe iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तेन संसृष्टे' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "संसृष्टे",
     why_dev               = "(सूत्रम् 4.4.22) संसृष्टे।",
     anuvritti_from        = ('4.1.1',),

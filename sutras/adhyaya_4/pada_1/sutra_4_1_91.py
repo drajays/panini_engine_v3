@@ -4,6 +4,7 @@
 Padaccheda: फक्-फिञोः अन्यतरस्याम्
 
 फक्फिञोरन्यतरस्याम् (4.1.91)
+Pāṭha: ashtadhyayi.com data.txt row i=41091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "PakPiYoranyatarasyAm",
     text_dev              = "फक्फिञोरन्यतरस्याम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samarTAnAM praTamAdvA prAgdIvyatoR Pak-PiYoH anyatarasyAm aci yUni luk",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समर्थानां प्रथमाद्वा प्राग्दीव्यतोऽण् फक्-फिञोः अन्यतरस्याम् अचि यूनि लुक्",
     padaccheda_dev        = "फक्-फिञोः अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 4.1.91) फक्फिञोरन्यतरस्याम्।",
     anuvritti_from        = ('4.1.1',),

@@ -7,6 +7,7 @@ Operational role (v3.6, demos):
 This is used as a clear glass-box marker in demo prakriyās (e.g. उक्तः / उक्तवान्),
 but downstream rules in v3 typically key off `krt` / it-markers rather than
 paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=11026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='ktaktavatU nizWA',
     text_dev='क्तक्तवतू निष्ठा',
+    samagra_slp1="kta-ktavatU nizWA",
+    samagra_dev="क्त-क्तवतू निष्ठा",
     padaccheda_dev="क्त-क्तवतु निष्ठा",
     why_dev="क्त/क्तवतु-प्रत्यययोः निष्ठा-संज्ञा।",
     anuvritti_from=(),

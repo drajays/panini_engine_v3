@@ -4,6 +4,7 @@
 Padaccheda: प्रवृद्ध-आदीनाम् च
 
 प्रवृद्धादीनां च (6.2.147)
+Pāṭha: ashtadhyayi.com data.txt row i=62147 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pravfdDAdInAM ca",
     text_dev              = "प्रवृद्धादीनां च",
+    samagra_slp1          = "uttarapadAdiH antaH pravfdDAdInAm ca ktaH saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः प्रवृद्धादीनाम् च क्तः संज्ञायाम्",
     padaccheda_dev        = "प्रवृद्ध-आदीनाम् च",
     why_dev               = "(सूत्रम् 6.2.147) प्रवृद्धादीनां च।",
     anuvritti_from        = ('6.1.1',),

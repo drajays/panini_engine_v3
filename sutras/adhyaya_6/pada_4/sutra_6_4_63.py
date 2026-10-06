@@ -4,6 +4,7 @@
 Padaccheda: दीङः युट् अचि क्ङिति
 
 दीङो युडचि क्ङिति (6.4.63)
+Pāṭha: ashtadhyayi.com data.txt row i=64063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "dINo yuqaci kNiti",
     text_dev              = "दीङो युडचि क्ङिति",
+    samagra_slp1          = "aNgasya asidDavadatrABAt ArDaDAtuke dINaH yuw aci kNiti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् आर्धधातुके दीङः युट् अचि क्ङिति",
     padaccheda_dev        = "दीङः युट् अचि क्ङिति",
     why_dev               = "(सूत्रम् 6.4.63) दीङो युडचि क्ङिति।",
     anuvritti_from        = ('6.1.1',),

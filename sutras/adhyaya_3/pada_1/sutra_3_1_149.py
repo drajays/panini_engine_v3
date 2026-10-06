@@ -4,6 +4,7 @@
 Padaccheda: प्रु-सृल्वः ( अत्र पञ्चम्याः स्थाने जस्) समभिहारे वुन्
 
 Krt suffix rule from dhatu: प्रुसृल्वः समभिहारे वुन् (149)
+Pāṭha: ashtadhyayi.com data.txt row i=31149 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prusflvaH samaBihAre vun",
     text_dev              = "प्रुसृल्वः समभिहारे वुन्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH pru-sf-lvaH samaBihAre vun kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः प्रु-सृ-ल्वः समभिहारे वुन् कृत्",
     padaccheda_dev        = "प्रु-सृल्वः ( अत्र पञ्चम्याः स्थाने जस्) समभिहारे वुन्",
     why_dev               = "धातोः [प्रुसृल्वः समभिहारे वुन्]-प्रत्ययः विहितः (३.१.149)।",
     anuvritti_from        = ('3.1.1',),

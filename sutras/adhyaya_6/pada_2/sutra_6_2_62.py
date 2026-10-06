@@ -4,6 +4,7 @@
 Padaccheda: ग्रामः शिल्पिनि
 
 ग्रामः शिल्पिनि (6.2.62)
+Pāṭha: ashtadhyayi.com data.txt row i=62062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "grAmaH Silpini",
     text_dev              = "ग्रामः शिल्पिनि",
+    samagra_slp1          = "grAmaH Silpini prakftyA pUrvapadam anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "ग्रामः शिल्पिनि प्रकृत्या पूर्वपदम् अन्यतरस्याम्",
     padaccheda_dev        = "ग्रामः शिल्पिनि",
     why_dev               = "(सूत्रम् 6.2.62) ग्रामः शिल्पिनि।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: सम्-उदोः अजः पशुषु
 
 krt-suffix rule: समुदोरजः पशुषु
+Pāṭha: ashtadhyayi.com data.txt row i=33069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samudorajaH paSuzu",
     text_dev              = "समुदोरजः पशुषु",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm sam-udoH ajaH paSuzu kft ap",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् सम्-उदोः अजः पशुषु कृत् अप्",
     padaccheda_dev        = "सम्-उदोः अजः पशुषु",
     why_dev               = "धातोः प्रत्ययः (३.3.69)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: जॄ-व्रश्च्योः क्त्वि
 
 जॄव्रश्च्योः क्त्वि (7.2.55)
+Pāṭha: ashtadhyayi.com data.txt row i=72055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jFvraScyoH ktvi",
     text_dev              = "जॄव्रश्च्योः क्त्वि",
+    samagra_slp1          = "aNgasya jFvraScyoH ktvi ArDaDAtukasya iw valAdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य जॄव्रश्च्योः क्त्वि आर्धधातुकस्य इट् वलादेः",
     padaccheda_dev        = "जॄ-व्रश्च्योः क्त्वि",
     why_dev               = "(सूत्रम् 7.2.55) जॄव्रश्च्योः क्त्वि।",
     anuvritti_from        = ('7.1.1',),

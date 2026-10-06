@@ -4,6 +4,7 @@
 Padaccheda: हव्येः अनन्तःपादम्
 
 krt-suffix rule: हव्येऽनन्तः पादम् (66)
+Pāṭha: ashtadhyayi.com data.txt row i=32066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'havyenantaH pAdam',
     text_dev              = 'हव्येऽनन्तः पादम्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH havyeH anantaHpAdam kft supi api upasarge Candasi vahaH ca Yyuw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः हव्येः अनन्तःपादम् कृत् सुपि अपि उपसर्गे छन्दसि वहः च ञ्युट्",
     padaccheda_dev        = "हव्येः अनन्तःपादम्",
     why_dev               = "धातोः कृत्-प्रत्ययः [हव्येऽनन्तः पादम्] विहितः (३.२.66)।",
     anuvritti_from        = ('3.1.1',),

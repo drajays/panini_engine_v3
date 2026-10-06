@@ -12,6 +12,7 @@ the SLP1 string for the pedagogical *śālāyām* *prayoga* (set by
 ``samjna_registry[REGISTRY_KEY]`` for trace/UI.  Does **not** reattach *sup* or
 mutate the running *śālīya* *prakriyā* (still *prathama* *samartha* for
 **4.1.82** per recipe).  ``cond`` does not read (vibhakti, vacana) (Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=23036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -76,6 +77,8 @@ SUTRA = SutraRecord(
     # Short *pāṭha* head; *anuvṛtti* of **2.3.1** *kārake* is metalinguistic here.
     text_slp1      = 'saptamyaDikaraRe ca',
     text_dev       = 'सप्तम्यधिकरणे च',
+    samagra_slp1   = "anaBihite saptamI aDikaraRe ca dUrAntikArTeByaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "अनभिहिते सप्तमी अधिकरणे च दूरान्तिकार्थेभ्यः",
     padaccheda_dev = "सप्तमी / अधिकरणे / च",
     why_dev        = (
         "अधिकरणे कारके सप्तमी-स्मरणम् — *śālīya* प्रक्रियायां केवल ऑडिट्; "

@@ -4,6 +4,7 @@
 Padaccheda: ज्यः च
 
 ज्यश्च (6.1.42)
+Pāṭha: ashtadhyayi.com data.txt row i=61042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jyaSca",
     text_dev              = "ज्यश्च",
+    samagra_slp1          = "jyaH ca samprasAraRam na lyapi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "ज्यः च सम्प्रसारणम् न ल्यपि",
     padaccheda_dev        = "ज्यः च",
     why_dev               = "(सूत्रम् 6.1.42) ज्यश्च।",
     anuvritti_from        = ('6.1.1',),

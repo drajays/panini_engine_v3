@@ -4,6 +4,7 @@
 Padaccheda: वर्षाभ्वः च
 
 वर्षाभ्वश्च (6.4.84)
+Pāṭha: ashtadhyayi.com data.txt row i=64084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "varzABvaSca",
     text_dev              = "वर्षाभ्वश्च",
+    samagra_slp1          = "varzABvaH aNgasya aci supi yaRaH",
+    samagra_dev           = "वर्षाभ्वः अङ्गस्य अचि सुपि यणः",
     padaccheda_dev        = "वर्षाभ्वः च",
     why_dev               = "(सूत्रम् 6.4.84) वर्षाभ्वश्च।",
     anuvritti_from        = ('6.1.1',),

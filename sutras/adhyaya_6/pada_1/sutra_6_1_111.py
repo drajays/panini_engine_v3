@@ -15,6 +15,7 @@ with the rapara marker 1.1.51 consumes; the a is absorbed into the ekādeśa (th
 DEBT (Art. 16): this file also carries, below, an older glass-box branch that is *not* 6.1.111 — it deletes the t of ktavatu in
 भिन्नवान् and fires structurally (``n n`` + ``t``-initial krt). It predates the real rule and is kept only so that derivation stays
 green; the honest derivation is 8.2.42 (the t of niṣṭhā becomes n).
+Pāṭha: ashtadhyayi.com data.txt row i=61111 (Art. 14).
 """
 from __future__ import annotations
 
@@ -77,6 +78,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'fta ut',
     text_dev       = 'ऋत उत्',
+    samagra_slp1   = "ftaH NasiNasoH ati pUrvaparayoH ekaH ut",
+    samagra_dev    = "ऋतः ङसिङसोः अति पूर्वपरयोः एकः उत्",
     padaccheda_dev = "ऋतः उत्",
     why_dev        = "ऋकारान्त अङ्ग और ङसि / ङस् के अ के स्थान में उ (रपर) एकादेश: पितुः, मातुः।",
     anuvritti_from = ("6.1.110",),

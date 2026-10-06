@@ -4,6 +4,7 @@
 Padaccheda: स्त्यः प्र-पूर्वस्य
 
 स्त्यः प्रपूर्वस्य (6.1.23)
+Pāṭha: ashtadhyayi.com data.txt row i=61023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "styaH prapUrvasya",
     text_dev              = "स्त्यः प्रपूर्वस्य",
+    samagra_slp1          = "styaH pra-pUrvasya samprasAraRam nizWAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "स्त्यः प्र-पूर्वस्य सम्प्रसारणम् निष्ठायाम्",
     padaccheda_dev        = "स्त्यः प्र-पूर्वस्य",
     why_dev               = "(सूत्रम् 6.1.23) स्त्यः प्रपूर्वस्य।",
     anuvritti_from        = ('6.1.1',),

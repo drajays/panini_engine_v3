@@ -4,6 +4,7 @@
 Padaccheda: जल्प-भिक्ष-कुट्ट-लुण्ठ-वृङः षाकन्
 
 krt-suffix rule: जल्पभिक्षकुट्टलुण्टवृङः षाकन् (155)
+Pāṭha: ashtadhyayi.com data.txt row i=32155 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jalpaBikzakuwwaluRwavfNaH zAkan",
     text_dev              = "जल्पभिक्षकुट्टलुण्टवृङः षाकन्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu jalpa-Bikza-kuwwa-luRwa-vfNaH zAkan kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु जल्प-भिक्ष-कुट्ट-लुण्ट-वृङः षाकन् कृत्",
     padaccheda_dev        = "जल्प-भिक्ष-कुट्ट-लुण्ठ-वृङः षाकन्",
     why_dev               = "धातोः कृत्-प्रत्ययः [जल्पभिक्षकुट्टलुण्टवृङः षाकन्] विहितः (३.२.155)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

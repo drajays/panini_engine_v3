@@ -4,6 +4,7 @@
 Padaccheda: सः नपुंसकम्
 
 The dvandva compound is neuter.
+Pāṭha: ashtadhyayi.com data.txt row i=24017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sa napuMsakam",
     text_dev              = "स नपुंसकम्",
+    samagra_slp1          = "saH napuMsakam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सः नपुंसकम्",
     padaccheda_dev        = "सः नपुंसकम्",
     why_dev               = "सः नपुंसकम् (२.४.१७)।",
     anuvritti_from        = ('2.4.1',),

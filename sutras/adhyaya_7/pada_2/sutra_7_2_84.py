@@ -4,6 +4,7 @@
 Padaccheda: अष्टनः आः विभक्तौ
 
 अष्टन आ विभक्तौ (7.2.84)
+Pāṭha: ashtadhyayi.com data.txt row i=72084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "azwana A viBaktO",
     text_dev              = "अष्टन आ विभक्तौ",
+    samagra_slp1          = "azwanaH aNgasya viBaktO A",
+    samagra_dev           = "अष्टनः अङ्गस्य विभक्तौ आ",
     padaccheda_dev        = "अष्टनः आः विभक्तौ",
     why_dev               = "(सूत्रम् 7.2.84) अष्टन आ विभक्तौ।",
     anuvritti_from        = ('7.1.1',),

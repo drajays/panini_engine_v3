@@ -4,6 +4,7 @@
 Padaccheda: आत् शी-नद्योः नुम्
 
 आच्छीनद्योर्नुम् (7.1.80)
+Pāṭha: ashtadhyayi.com data.txt row i=71080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AcCInadyornum",
     text_dev              = "आच्छीनद्योर्नुम्",
+    samagra_slp1          = "aNgasya At SI-nadyoH num SatuH vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य आत् शी-नद्योः नुम् शतुः वा",
     padaccheda_dev        = "आत् शी-नद्योः नुम्",
     why_dev               = "(सूत्रम् 7.1.80) आच्छीनद्योर्नुम्।",
     anuvritti_from        = ('7.1.1',),

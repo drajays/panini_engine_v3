@@ -19,6 +19,7 @@ same information is also stored under ``GATE_KEY`` in ``paribhasha_gates`` for
 audit / replay.
 
 See also: ``sutra_1_1_3.GATE_KEY``, then ``sutra_1_1_5`` (*kṅiti*), then ``sutra_1_1_6`` (*dīdhī*…).
+Pāṭha: ashtadhyayi.com data.txt row i=11004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -79,6 +80,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.PRATISHEDHA,
     text_slp1      = 'na DAtulopa ArDaDAtuke',
     text_dev       = 'न धातुलोप आर्धधातुके',
+    samagra_slp1   = "ArDaDAtuke DAtulope ikaH guRavfdDI na",
+    samagra_dev    = "आर्धधातुके धातुलोपे इकः गुणवृद्धी  न",
     padaccheda_dev = "न धातु-लोपे आर्धधातुके",
     why_dev        = _WHY,
     apavada_of     = ("1.1.3",),   # अपवाद of 1.1.3 — sutra_ref_out resolver.apavada_of

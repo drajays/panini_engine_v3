@@ -4,6 +4,7 @@
 Padaccheda: अन्नात् णः
 
 अन्नाण्णः (4.4.85)
+Pāṭha: ashtadhyayi.com data.txt row i=44085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "annARRaH",
     text_dev              = "अन्नाण्णः",
+    samagra_slp1          = "tat labDA iti annAt RaH",
+    samagra_dev           = "'तत् लब्धा' इति अन्नात् णः",
     padaccheda_dev        = "अन्नात् णः",
     why_dev               = "(सूत्रम् 4.4.85) अन्नाण्णः।",
     anuvritti_from        = ('4.1.1',),

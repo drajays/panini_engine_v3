@@ -4,6 +4,7 @@
 Padaccheda: मः राजि समः क्वौ
 
 मो राजि समः क्वौ (8.3.25)
+Pāṭha: ashtadhyayi.com data.txt row i=83025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mo rAji samaH kvO",
     text_dev              = "मो राजि समः क्वौ",
+    samagra_slp1          = "samaH maH kvO rAji maH",
+    samagra_dev           = "समः मः क्वौ राजि मः",
     padaccheda_dev        = "मः राजि समः क्वौ",
     why_dev               = "(सूत्रम् 8.3.25) मो राजि समः क्वौ।",
     anuvritti_from        = ('8.1.1',),

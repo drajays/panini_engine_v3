@@ -4,6 +4,7 @@
 Padaccheda: अव्ययीभावे शरत्-प्रभृतिभ्यः
 
 अव्ययीभावे शरत्प्रभृतिभ्यः (5.4.107)
+Pāṭha: ashtadhyayi.com data.txt row i=54107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avyayIBAve SaratpraBftiByaH",
     text_dev              = "अव्ययीभावे शरत्प्रभृतिभ्यः",
+    samagra_slp1          = "SaratpraBftiByaH avyayIBAve wac",
+    samagra_dev           = "शरत्प्रभृतिभ्यः अव्ययीभावे टच्",
     padaccheda_dev        = "अव्ययीभावे शरत्-प्रभृतिभ्यः",
     why_dev               = "(सूत्रम् 5.4.107) अव्ययीभावे शरत्प्रभृतिभ्यः।",
     anuvritti_from        = ('5.4.68',),

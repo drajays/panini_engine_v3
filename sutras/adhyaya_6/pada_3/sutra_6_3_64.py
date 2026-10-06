@@ -4,6 +4,7 @@
 Padaccheda: त्वे च
 
 त्वे च (6.3.64)
+Pāṭha: ashtadhyayi.com data.txt row i=63064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tve ca",
     text_dev              = "त्वे च",
+    samagra_slp1          = "uttarapade tve ca treH hrasvaH Ni-ApoH bahulam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे त्वे च त्रेः ह्रस्वः ङि-आपोः बहुलम्",
     padaccheda_dev        = "त्वे च",
     why_dev               = "(सूत्रम् 6.3.64) त्वे च।",
     anuvritti_from        = ('6.1.1',),

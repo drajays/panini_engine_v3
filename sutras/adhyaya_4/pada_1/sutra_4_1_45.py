@@ -4,6 +4,7 @@
 Padaccheda: बहु-आदिभ्यः च
 
 बह्वादिभ्यश्च (4.1.45)
+Pāṭha: ashtadhyayi.com data.txt row i=41045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahvAdiByaSca",
     text_dev              = "बह्वादिभ्यश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt bahva-AdiByaH ca NIz vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् बह्व-आदिभ्यः च ङीष् वा",
     padaccheda_dev        = "बहु-आदिभ्यः च",
     why_dev               = "(सूत्रम् 4.1.45) बह्वादिभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: भी-ह्री-भृ-हुवाम् श्लु-वत् च
 
 Krt suffix rule from dhatu: भीह्रीभृहुवां श्लुवच्च (39)
+Pāṭha: ashtadhyayi.com data.txt row i=31039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BIhrIBfhuvAM Sluvacca",
     text_dev              = "भीह्रीभृहुवां श्लुवच्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BI-hrI-Bf-huvAm Sluvat ca liwi Am anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भी-ह्री-भृ-हुवाम् श्लुवत् च लिटि आम् अन्यतरस्याम्",
     padaccheda_dev        = "भी-ह्री-भृ-हुवाम् श्लु-वत् च",
     why_dev               = "धातोः [भीह्रीभृहुवां श्लुवच्च]-प्रत्ययः विहितः (३.१.39)।",
     anuvritti_from        = ('3.1.1',),

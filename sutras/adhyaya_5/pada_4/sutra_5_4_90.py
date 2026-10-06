@@ -4,6 +4,7 @@
 Padaccheda: उत्तम-एकाभ्याम् च
 
 उत्तमैकाभ्यां च (5.4.90)
+Pāṭha: ashtadhyayi.com data.txt row i=54090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uttamEkAByAM ca",
     text_dev              = "उत्तमैकाभ्यां च",
+    samagra_slp1          = "uttama-ekAByAmahnaH ahnaH na",
+    samagra_dev           = "उत्तम-एकाभ्यामह्नः अह्नः न",
     padaccheda_dev        = "उत्तम-एकाभ्याम् च",
     why_dev               = "(सूत्रम् 5.4.90) उत्तमैकाभ्यां च।",
     anuvritti_from        = ('5.4.68',),

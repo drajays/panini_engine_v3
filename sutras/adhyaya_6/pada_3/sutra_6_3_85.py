@@ -4,6 +4,7 @@
 Padaccheda: ज्योतिः-जनपद-रात्रि-नाभि-नाम-गोत्र-रूप-स्थान-वर्ण-वयः-वचन-बन्धुषु
 
 ज्योतिर्जनपदरात्रिनाभिनामगोत्ररूपस्थानवर्णवयोवचनबन्धुषु (6.3.85)
+Pāṭha: ashtadhyayi.com data.txt row i=63085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jyotirjanapadarAtrinABinAmagotrarUpasTAnavarRavayovacanabanDuzu",
     text_dev              = "ज्योतिर्जनपदरात्रिनाभिनामगोत्ररूपस्थानवर्णवयोवचनबन्धुषु",
+    samagra_slp1          = "uttarapade jyotiH-janapada-rAtri-nABi-nAma-gotra-rUpa-sTAna-varRa-vayas-vacana-banDuzu saH samAnasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे ज्योतिः-जनपद-रात्रि-नाभि-नाम-गोत्र-रूप-स्थान-वर्ण-वयस्-वचन-बन्धुषु सः समानस्य",
     padaccheda_dev        = "ज्योतिः-जनपद-रात्रि-नाभि-नाम-गोत्र-रूप-स्थान-वर्ण-वयः-वचन-बन्धुषु",
     why_dev               = "(सूत्रम् 6.3.85) ज्योतिर्जनपदरात्रिनाभिनामगोत्ररूपस्थानवर्णवयोवचनबन्धुषु।",
     anuvritti_from        = ('6.1.1',),

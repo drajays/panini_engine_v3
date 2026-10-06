@@ -4,6 +4,7 @@
 Padaccheda: ब्रह्मणः त्वः
 
 ब्रह्मणस्त्वः (5.1.136)
+Pāṭha: ashtadhyayi.com data.txt row i=51136 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "brahmaRastvaH",
     text_dev              = "ब्रह्मणस्त्वः",
+    samagra_slp1          = "tasya BAvaH karmaRi ca iti hotrAByaH brahmaRaH tvaH",
+    samagra_dev           = "'तस्य भावः, कर्मणि च' (इति) होत्राभ्यः ब्रह्मणः त्वः",
     padaccheda_dev        = "ब्रह्मणः त्वः",
     why_dev               = "(सूत्रम् 5.1.136) ब्रह्मणस्त्वः।",
     anuvritti_from        = ('5.1.120',),

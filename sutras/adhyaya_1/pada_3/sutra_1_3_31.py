@@ -14,6 +14,7 @@ the tag "sparDA_usage" (encoding the competitive semantic context), and
 (c) the idempotency stamp "Atmanepada_1_3_31" is absent from state.meta.
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='spardDAyAmANaH',
     text_dev='स्पर्द्धायामाङः',
+    samagra_slp1="sparDAyAmANaH hve Atmanepadam",
+    samagra_dev="स्पर्धायामाङः ह्वे आत्मनेपदम्",
     padaccheda_dev="स्पर्द्धायाम् (सप्तमी) / आङः (पञ्चमी)",
     why_dev=(
         "स्पर्द्धा-अर्थे आङ्-पूर्वकस्य धातोः प्रयोगे आत्मनेपदम् — "

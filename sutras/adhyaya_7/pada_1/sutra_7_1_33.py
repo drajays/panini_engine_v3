@@ -17,6 +17,7 @@ Engine implementation:
     • replace pratyaya varnas with parse("Akam")
     • set upadesha_slp1 = "Akam"
     • mark "7_1_33_done"
+Pāṭha: ashtadhyayi.com data.txt row i=71033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -71,6 +72,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sAma Akam",
     text_dev              = "साम आकम्",
+    samagra_slp1          = "aNgasya sAmaH Akam yuzmad-asmadByAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य सामः आकम् युष्मद्-अस्मद्भ्याम्",
     padaccheda_dev        = "सामः आकम्",
     why_dev               = "अस्मद्-शब्दयोः षष्ठी-बहुवचने आम्-प्रत्ययस्य स्थाने आकम् "
                             "(सूत्रम् ७.१.३३ साम आकम्)।",

@@ -27,6 +27,7 @@ marking of varṇas is by the ``anunasika`` tag (see ``1.3.2``, ``phonology.toke
 ``pratyahara``/``Varna.slp1`` only (CONSTITUTION Art. 2).
 
 See also **1.1.9** (``sutra_1_1_9``) for *savarṇa*.
+Pāṭha: ashtadhyayi.com data.txt row i=11008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -79,6 +80,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'muKanAsikAvacanonunAsikaH',
     text_dev       = 'मुखनासिकावचनोऽनुनासिकः',
+    samagra_slp1   = "muKa-nAsikA-vacanaH anunAsikaH",
+    samagra_dev    = "मुख-नासिका-वचनः अनुनासिकः",
     padaccheda_dev = "मुख-नासिका-वचनः / अनुनासिकः",
     why_dev        = _WHY,
     anuvritti_from = (),

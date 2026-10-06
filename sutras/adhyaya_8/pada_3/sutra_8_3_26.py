@@ -4,6 +4,7 @@
 Padaccheda: हे म-परे वा
 
 हे मपरे वा (8.3.26)
+Pāṭha: ashtadhyayi.com data.txt row i=83026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "he mapare vA",
     text_dev              = "हे मपरे वा",
+    samagra_slp1          = "padasya maH mapare he maH vA",
+    samagra_dev           = "पदस्य मः मपरे हे मः वा",
     padaccheda_dev        = "हे म-परे वा",
     why_dev               = "(सूत्रम् 8.3.26) हे मपरे वा।",
     anuvritti_from        = ('8.1.1',),

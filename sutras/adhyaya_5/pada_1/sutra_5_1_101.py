@@ -4,6 +4,7 @@
 Padaccheda: तस्मै प्रभवति (क्रियापदम्) संताप-आदिभ्यः
 
 तस्मै प्रभवति संतापादिभ्यः (5.1.101)
+Pāṭha: ashtadhyayi.com data.txt row i=51101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tasmE praBavati saMtApAdiByaH",
     text_dev              = "तस्मै प्रभवति संतापादिभ्यः",
+    samagra_slp1          = "tasmE praBavati iti santApAdiByaH WaY",
+    samagra_dev           = "'तस्मै प्रभवति' (इति) सन्तापादिभ्यः ठञ्",
     padaccheda_dev        = "तस्मै प्रभवति (क्रियापदम्) संताप-आदिभ्यः",
     why_dev               = "(सूत्रम् 5.1.101) तस्मै प्रभवति संतापादिभ्यः।",
     anuvritti_from        = ('5.1.18',),

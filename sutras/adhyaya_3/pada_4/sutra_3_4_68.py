@@ -3,6 +3,7 @@
 
 Narrow v3 use: opens the *bhāve* scope for *kṛt* affixation (e.g. *lyuṭ* in
 ``pipelines/krdanta``) when ``state.meta['krt_artha'] == 'bhave'``.
+Pāṭha: ashtadhyayi.com data.txt row i=34068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -30,6 +31,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'BavyageyapravacanIyopasTAnIyajanyAplAvyApAtyA vA',
     text_dev       = 'भव्यगेयप्रवचनीयोपस्थानीयजन्याप्लाव्यापात्या वा',
+    samagra_slp1   = "pratyayaH paraSca AdyudAttaSca DAtoH Bavya-geya-pravacanIya-upasTAnIya-janya-AplAvya-ApAtyAH vA kft kartari",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भव्य-गेय-प्रवचनीय-उपस्थानीय-जन्य-आप्लाव्य-आपात्याः वा कृत् कर्तरि",
     padaccheda_dev = "भावे",
     why_dev        = "भाव-अर्थे कृत्-प्रत्ययानां विधानम् — अधिकारः।",
     anuvritti_from = ("3.4.67",),

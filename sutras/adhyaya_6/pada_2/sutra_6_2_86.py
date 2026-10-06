@@ -4,6 +4,7 @@
 Padaccheda: छात्रि-आदयः शालायाम्
 
 छात्र्यादयः शालायाम् (6.2.86)
+Pāṭha: ashtadhyayi.com data.txt row i=62086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "CAtryAdayaH SAlAyAm",
     text_dev              = "छात्र्यादयः शालायाम्",
+    samagra_slp1          = "AdiH udAttaH CAtryAdayaH SAlAyAm pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः छात्र्यादयः शालायाम् पूर्वपदम्",
     padaccheda_dev        = "छात्रि-आदयः शालायाम्",
     why_dev               = "(सूत्रम् 6.2.86) छात्र्यादयः शालायाम्।",
     anuvritti_from        = ('6.1.1',),

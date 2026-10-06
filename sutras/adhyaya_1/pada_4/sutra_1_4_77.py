@@ -8,6 +8,7 @@ hand in marriage / accepting).
 E.g., "haste-kṛ" (to take by the hand) in the marriage ritual context.
 
 v3: registers samjna_registry["gati_haste_panau"] = frozenset({"haste","pARau"}).
+Pāṭha: ashtadhyayi.com data.txt row i=14077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1="nityaM haste pARAvupayamane",
     text_dev="नित्यं हस्ते पाणावुपयमने",
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH nityam haste pARO upayamane kriyAyoge gatiH kfYi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः नित्यम् हस्ते पाणौ उपयमने क्रियायोगे गतिः कृञि",
     padaccheda_dev="नित्यम् / हस्ते / पाणौ / उपयमने",
     why_dev="उपयमने नित्यं 'हस्ते' 'पाणौ' गति-संज्ञकौ — गति-सेटे योज्येते।",
     anuvritti_from=("1.4.60",),

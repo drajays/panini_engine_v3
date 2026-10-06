@@ -24,6 +24,7 @@ v3 engine role:
   - cond() reads ONLY samjna_registry (Art. 2 compliant: no vibhakti,
     vacana, lakāra, surface Devanāgarī, data, or reference access).
   - No arm flags.  r1_form_identity_exempt=True (pure SAMJNA, no rewrite).
+Pāṭha: ashtadhyayi.com data.txt row i=11075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'eN prAcAM deSe',
     text_dev                = 'एङ् प्राचां देशे',
+    samagra_slp1            = "eN yasya acAmAdiH tat prAcAm deSe vfdDam",
+    samagra_dev             = "एङ् यस्य अचामादिः तत् प्राचाम् देशे वृद्धम्",
     padaccheda_dev          = "एङ् / प्राचाम् / देशे",
     why_dev                 = (
         "प्राचां देशे — पूर्वदेशीय-वैयाकरणानां मते — "

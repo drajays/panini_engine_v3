@@ -4,6 +4,7 @@
 Padaccheda: सिव-आदीनाम् वा अट्-अव्यवाये अपि
 
 सिवादीनां वाऽड्व्यवायेऽपि (8.3.71)
+Pāṭha: ashtadhyayi.com data.txt row i=83071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sivAdInAM vAqvyavAyepi',
     text_dev              = 'सिवादीनां वाऽड्व्यवायेऽपि',
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH sivAdInAm vA aqvyavAye api saH upasargAt pariniviByaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः सिवादीनाम् वा अड्व्यवाये अपि सः उपसर्गात् परिनिविभ्यः",
     padaccheda_dev        = "सिव-आदीनाम् वा अट्-अव्यवाये अपि",
     why_dev               = "(सूत्रम् 8.3.71) सिवादीनां वाऽड्व्यवायेऽपि।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: विभाषा वेणु-इन्धानयोः
 
 विभाषा वेण्विन्धानयोः (6.1.215)
+Pāṭha: ashtadhyayi.com data.txt row i=61215 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA veRvinDAnayoH",
     text_dev              = "विभाषा वेण्विन्धानयोः",
+    samagra_slp1          = "viBAzA veRu-inDAnayoH udAttaH AdiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "विभाषा वेणु-इन्धानयोः उदात्तः आदिः",
     padaccheda_dev        = "विभाषा वेणु-इन्धानयोः",
     why_dev               = "(सूत्रम् 6.1.215) विभाषा वेण्विन्धानयोः।",
     anuvritti_from        = ('6.1.1',),

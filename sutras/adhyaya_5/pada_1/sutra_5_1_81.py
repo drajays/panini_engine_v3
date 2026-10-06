@@ -4,6 +4,7 @@
 Padaccheda: मासात् वयसि यत्-खञौ
 
 मासाद्वयसि यत्खञौ (5.1.81)
+Pāṭha: ashtadhyayi.com data.txt row i=51081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mAsAdvayasi yatKaYO",
     text_dev              = "मासाद्वयसि यत्खञौ",
+    samagra_slp1          = "tam BUtaH iti mAsAt vayasi yat-KaYO",
+    samagra_dev           = "'तम् भूतः' (इति) मासात् वयसि यत्-खञौ",
     padaccheda_dev        = "मासात् वयसि यत्-खञौ",
     why_dev               = "(सूत्रम् 5.1.81) मासाद्वयसि यत्खञौ।",
     anuvritti_from        = ('5.1.78',),

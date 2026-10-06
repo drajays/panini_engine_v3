@@ -77,6 +77,8 @@ SUTRA = SutraRecord(
     vibhasha_default=True,
     text_slp1='svaritaYitaH kartraBiprAye kriyAPale',
     text_dev='स्वरितञितः कर्त्रभिप्राये क्रियाफले',
+    samagra_slp1="svarita-YitaH kartraBiprAye kriyAPale Atmanepadam",
+    samagra_dev="स्वरित-ञितः कर्त्रभिप्राये क्रियाफले आत्मनेपदम्",
     padaccheda_dev=(
         "स्वरित-ञितः (षष्ठी-एकवचन) / कर्तृ-अभिप्राये (सप्तमी-एकवचन) "
         "/ क्रिया-फले (सप्तमी-एकवचन)"

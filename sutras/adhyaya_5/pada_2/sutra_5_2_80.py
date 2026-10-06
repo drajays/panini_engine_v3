@@ -4,6 +4,7 @@
 Padaccheda: उत्कः उन्मनाः
 
 उत्क उन्मनाः (5.2.80)
+Pāṭha: ashtadhyayi.com data.txt row i=52080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "utka unmanAH",
     text_dev              = "उत्क उन्मनाः",
+    samagra_slp1          = "unmanAH iti utkaH nipAtyate",
+    samagra_dev           = "उन्मनाः  (इति) उत्कः (निपात्यते)",
     padaccheda_dev        = "उत्कः उन्मनाः",
     why_dev               = "(सूत्रम् 5.2.80) उत्क उन्मनाः।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: गोपुच्छात् ठञ्
 
 गोपुच्छाट्ठञ् (4.4.6)
+Pāṭha: ashtadhyayi.com data.txt row i=44006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gopucCAwWaY",
     text_dev              = "गोपुच्छाट्ठञ्",
+    samagra_slp1          = "tena tarati iti gopucCAt WaY",
+    samagra_dev           = "'तेन तरति' (इति) गोपुच्छात् ठञ्",
     padaccheda_dev        = "गोपुच्छात् ठञ्",
     why_dev               = "(सूत्रम् 4.4.6) गोपुच्छाट्ठञ्।",
     anuvritti_from        = ('4.1.1',),

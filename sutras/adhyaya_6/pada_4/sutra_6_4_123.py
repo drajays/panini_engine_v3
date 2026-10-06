@@ -4,6 +4,7 @@
 Padaccheda: राधः हिंसायाम्
 
 राधो हिंसायाम् (6.4.123)
+Pāṭha: ashtadhyayi.com data.txt row i=64123 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rADo hiMsAyAm",
     text_dev              = "राधो हिंसायाम्",
+    samagra_slp1          = "aNgasya asidDavadatrABAt rADaH hiMsAyAm kNiti aByAsalopaH ataH Tali sewi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् राधः हिंसायाम् क्ङिति अभ्यासलोपः अतः थलि सेटि",
     padaccheda_dev        = "राधः हिंसायाम्",
     why_dev               = "(सूत्रम् 6.4.123) राधो हिंसायाम्।",
     anuvritti_from        = ('6.1.1',),

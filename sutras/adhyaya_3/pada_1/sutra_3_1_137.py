@@ -4,6 +4,7 @@
 Padaccheda: पा-घ्रा-ध्मा-धेट्-दृशः शः
 
 Krt suffix rule from dhatu: पाघ्राध्माधेट्दृशः शः (137)
+Pāṭha: ashtadhyayi.com data.txt row i=31137 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pAGrADmADewdfSaH SaH",
     text_dev              = "पाघ्राध्माधेट्दृशः शः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH pA-GrA-DmA-Dew-dfSaH SaH kft upasarge",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः पा-घ्रा-ध्मा-धेट्-दृशः शः कृत् उपसर्गे",
     padaccheda_dev        = "पा-घ्रा-ध्मा-धेट्-दृशः शः",
     why_dev               = "धातोः [पाघ्राध्माधेट्दृशः शः]-प्रत्ययः विहितः (३.१.137)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: किरः च पञ्चभ्यः
 
 किरश्च पञ्चभ्यः (7.2.75)
+Pāṭha: ashtadhyayi.com data.txt row i=72075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kiraSca paYcaByaH",
     text_dev              = "किरश्च पञ्चभ्यः",
+    samagra_slp1          = "aNgasya kiraH ca paYcaByaH ArDaDAtukasya iw valAdeH sani",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य किरः च पञ्चभ्यः आर्धधातुकस्य इट् वलादेः सनि",
     padaccheda_dev        = "किरः च पञ्चभ्यः",
     why_dev               = "(सूत्रम् 7.2.75) किरश्च पञ्चभ्यः।",
     anuvritti_from        = ('7.1.1',),

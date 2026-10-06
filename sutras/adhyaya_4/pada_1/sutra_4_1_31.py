@@ -4,6 +4,7 @@
 Padaccheda: रात्रेः च अ-जसौ
 
 रात्रेश्चाजसौ (4.1.31)
+Pāṭha: ashtadhyayi.com data.txt row i=41031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAtreScAjasO",
     text_dev              = "रात्रेश्चाजसौ",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt rAtreH ca a-jasO saMjYA-CandasoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् रात्रेः च अ-जसौ संज्ञा-छन्दसोः",
     padaccheda_dev        = "रात्रेः च अ-जसौ",
     why_dev               = "(सूत्रम् 4.1.31) रात्रेश्चाजसौ।",
     anuvritti_from        = ('4.1.1',),

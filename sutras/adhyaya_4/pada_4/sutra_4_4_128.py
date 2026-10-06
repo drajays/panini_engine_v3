@@ -4,6 +4,7 @@
 Padaccheda: मतु-अर्थे मास-तन्वोः
 
 मत्वर्थे मासतन्वोः (4.4.128)
+Pāṭha: ashtadhyayi.com data.txt row i=44128 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "matvarTe mAsatanvoH",
     text_dev              = "मत्वर्थे मासतन्वोः",
+    samagra_slp1          = "mAsatanvoH matvarTe Candasi saMjYAyAM yat",
+    samagra_dev           = "मासतन्वोः मत्वर्थे छन्दसि संज्ञायां यत्",
     padaccheda_dev        = "मतु-अर्थे मास-तन्वोः",
     why_dev               = "(सूत्रम् 4.4.128) मत्वर्थे मासतन्वोः।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: ऋ-हलोः ण्यत्
 
 Krt suffix rule from dhatu: ऋहलोर्ण्यत् (124)
+Pāṭha: ashtadhyayi.com data.txt row i=31124 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "fhalorRyat",
     text_dev              = "ऋहलोर्ण्यत्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH f-haloH Ryat kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः ऋ-हलोः ण्यत् कृत्",
     padaccheda_dev        = "ऋ-हलोः ण्यत्",
     why_dev               = "धातोः [ऋहलोर्ण्यत्]-प्रत्ययः विहितः (३.१.124)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

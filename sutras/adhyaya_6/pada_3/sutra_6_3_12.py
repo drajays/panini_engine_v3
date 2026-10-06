@@ -4,6 +4,7 @@
 Padaccheda: अ-मूर्ध-मस्तकात् स्वाङ्गात् अकामे
 
 अमूर्धमस्तकात् स्वाङ्गादकामे (6.3.12)
+Pāṭha: ashtadhyayi.com data.txt row i=63012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "amUrDamastakAt svANgAdakAme",
     text_dev              = "अमूर्धमस्तकात् स्वाङ्गादकामे",
+    samagra_slp1          = "alug uttarapade amUrDamastakAt svANgAt akAme haladantAt saptamyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे अमूर्धमस्तकात् स्वाङ्गात् अकामे हलदन्तात् सप्तम्याः",
     padaccheda_dev        = "अ-मूर्ध-मस्तकात् स्वाङ्गात् अकामे",
     why_dev               = "(सूत्रम् 6.3.12) अमूर्धमस्तकात् स्वाङ्गादकामे।",
     anuvritti_from        = ('6.1.1',),

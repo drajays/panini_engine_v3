@@ -9,6 +9,7 @@ a minimal, auditable *samāsa* assignment used by demos like **adhistri**:
 
 We do not attempt full semantic parsing; the pipeline arms
 ``meta['avyayibhava_recipe']=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=21006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -38,6 +39,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1      = 'avyayaM viBaktisamIpasamfdDivyfdDyarTABAvAtyayAsampratiSabdaprAdurBAvapaScAdyaTAnupUrvyayOgapadyasAdfSyasampattisAkalyAntavacanezu',
     text_dev       = 'अव्ययं विभक्तिसमीपसमृद्धिव्यृद्ध्यर्थाभावात्ययासम्प्रतिशब्दप्रादुर्भावपश्चाद्यथानुपूर्व्ययौगपद्यसादृश्यसम्पत्तिसाकल्यान्तवचनेषु',
+    samagra_slp1   = "avyayam viBakti-samIpa-samfdDi-vyfdDi-arTABAva-atyaya-asamprati-SabdaprAdurBAva-paScAt-yaTA-AnupUrvya-yOgapadya-sAdfSya-sampatti-sAkalyArTa-antavacanezu supA saha avyayIBAvaH samAsaH",
+    samagra_dev    = "अव्ययम् विभक्ति-समीप-समृद्धि-व्यृद्धि-अर्थाभाव-अत्यय-असम्प्रति-शब्दप्रादुर्भाव-पश्चात्-यथा-आनुपूर्व्य-यौगपद्य-सादृश्य-सम्पत्ति-साकल्यार्थ-अन्तवचनेषु  सुपा सह अव्ययीभावः समासः",
     padaccheda_dev = "अव्ययम् / विभक्ति-समीप-समृद्धि…",
     why_dev        = "अव्यय-पूर्वकः समासः (अव्ययीभाव) — demo arm meta.",
     anuvritti_from = ("2.1.5",),

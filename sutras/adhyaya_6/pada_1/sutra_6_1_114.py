@@ -4,6 +4,7 @@
 Padaccheda: हशि · च
 
 हशि च (6.1.114)
+Pāṭha: ashtadhyayi.com data.txt row i=61114 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "haSi ca",
     text_dev              = "हशि च",
+    samagra_slp1          = "aplutAt ataH roH ut haSi",
+    samagra_dev           = "अप्लुतात् अतः रोः उत् हशि",
     padaccheda_dev        = "हशि · च",
     why_dev               = "(सूत्रम् 6.1.114) हशि च।",
     anuvritti_from        = ('6.1.1',),

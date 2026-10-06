@@ -10,6 +10,7 @@ the tag and records the set in ``state.samjna_registry``.
 
 cond() reads only Term.tags and Term.varnas (structural phonemic data) — not
 vibhakti, vacana, or any gold/reference field (Constitution Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.SAMJNA,
     text_slp1              = 'yU stryAKyO nadI',
     text_dev               = 'यू स्त्र्याख्यौ नदी',
+    samagra_slp1           = "yU stryAKyO nadI",
+    samagra_dev            = "यू स्त्र्याख्यौ नदी",
     padaccheda_dev         = "यू / स्त्री-आख्यौ / नदी",
     why_dev                = "ई-उ-अन्तं स्त्रीलिङ्गं प्रातिपदिकं नदीसंज्ञकम् (हरी-वध्वादि)।",
     anuvritti_from         = ("1.4.1",),

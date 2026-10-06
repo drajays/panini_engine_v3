@@ -19,6 +19,7 @@ Engine:
     step), tags the dhātu "seT" and removes any earlier "aniT" tag
     (in case 1.2.15 already fired).
   - r1_form_identity_exempt=True: no surface string changes in this step.
+Pāṭha: ashtadhyayi.com data.txt row i=12016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -67,6 +68,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzopayamane",
     text_dev              = "विभाषोपयमने",
+    samagra_slp1          = "viBAzA upa-yamane kit Atmanepadezu sic yamaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "विभाषा उप-यमने कित् आत्मनेपदेषु सिच् यमः",
     padaccheda_dev        = "विभाषा / उपयमने (सेट्-विकल्पः)",
     why_dev               = ("√यम्-धातुः उपयमन-अर्थे विकल्पेन सेट् — "
                              "इडागमः विभाषया भवति (१.२.१५-अपवादः)।"),

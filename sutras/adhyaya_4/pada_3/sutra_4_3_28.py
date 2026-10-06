@@ -4,6 +4,7 @@
 Padaccheda: पूर्वाह्ण-अपराह्ण-आर्द्रा-मूल-प्रदोष-अवस्करात् वुन्
 
 पूर्वाह्णापराह्णार्द्रामूलप्रदोषावस्कराद्वुन् (4.3.28)
+Pāṭha: ashtadhyayi.com data.txt row i=43028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUrvAhRAparAhRArdrAmUlapradozAvaskarAdvun",
     text_dev              = "पूर्वाह्णापराह्णार्द्रामूलप्रदोषावस्कराद्वुन्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA pUrvAhRa-aparAhRa-ArdrA-mUla-pradoza-avaskarAt vun jAtaH tatra saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा पूर्वाह्ण-अपराह्ण-आर्द्रा-मूल-प्रदोष-अवस्करात् वुन् जातः तत्र संज्ञायाम्",
     padaccheda_dev        = "पूर्वाह्ण-अपराह्ण-आर्द्रा-मूल-प्रदोष-अवस्करात् वुन्",
     why_dev               = "(सूत्रम् 4.3.28) पूर्वाह्णापराह्णार्द्रामूलप्रदोषावस्कराद्वुन्।",
     anuvritti_from        = ('4.1.1',),

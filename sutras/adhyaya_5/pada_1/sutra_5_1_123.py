@@ -4,6 +4,7 @@
 Padaccheda: वर्ण-दृढ-आदिभ्यः ष्यञ् च
 
 वर्णदृढादिभ्यः ष्यञ् च (5.1.123)
+Pāṭha: ashtadhyayi.com data.txt row i=51123 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "varRadfQAdiByaH zyaY ca",
     text_dev              = "वर्णदृढादिभ्यः ष्यञ् च",
+    samagra_slp1          = "tasya BAvaH iti varRadfQAdiByaH zyaY imanic ca",
+    samagra_dev           = "'तस्य भावः' (इति) वर्णदृढादिभ्यः ष्यञ् इमनिच्  च",
     padaccheda_dev        = "वर्ण-दृढ-आदिभ्यः ष्यञ् च",
     why_dev               = "(सूत्रम् 5.1.123) वर्णदृढादिभ्यः ष्यञ् च।",
     anuvritti_from        = ('5.1.120',),

@@ -4,6 +4,7 @@
 Padaccheda: साल्वेय-गान्धारिभ्याम् च
 
 साल्वेयगान्धारिभ्यां च (4.1.169)
+Pāṭha: ashtadhyayi.com data.txt row i=41169 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sAlveyagAnDAriByAM ca",
     text_dev              = "साल्वेयगान्धारिभ्यां च",
+    samagra_slp1          = "tasya apatyam iti kzatriyAt janapadaSabdAt sAlveya-gAnDAriByAmaY ca",
+    samagra_dev           = "तस्य अपत्यम् (इति) क्षत्रियात् जनपदशब्दात् साल्वेय-गान्धारिभ्यामञ् च",
     padaccheda_dev        = "साल्वेय-गान्धारिभ्याम् च",
     why_dev               = "(सूत्रम् 4.1.169) साल्वेयगान्धारिभ्यां च।",
     anuvritti_from        = ('4.1.1',),

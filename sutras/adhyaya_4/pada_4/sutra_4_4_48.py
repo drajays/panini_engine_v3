@@ -4,6 +4,7 @@
 Padaccheda: अण् महिषी-आदिभ्यः
 
 अण् महिष्यादिभ्यः (4.4.48)
+Pāṭha: ashtadhyayi.com data.txt row i=44048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aR mahizyAdiByaH",
     text_dev              = "अण् महिष्यादिभ्यः",
+    samagra_slp1          = "tasya Darmyam iti mahizyAdiByaH aR",
+    samagra_dev           = "'तस्य धर्म्यम्' इति महिष्यादिभ्यः अण्",
     padaccheda_dev        = "अण् महिषी-आदिभ्यः",
     why_dev               = "(सूत्रम् 4.4.48) अण् महिष्यादिभ्यः।",
     anuvritti_from        = ('4.1.1',),

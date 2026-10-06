@@ -11,6 +11,7 @@ Narrow v3:
     ``meta['prakriya_31_imam_first_udAtta_note']``.
 
 No *svara* columns on ``Varna`` rows.
+Pāṭha: ashtadhyayi.com data.txt row i=61197 (Art. 14).
 """
 from __future__ import annotations
 
@@ -67,6 +68,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.ANUVADA,
     text_slp1='YnityAdirnityam',
     text_dev='ञ्नित्यादिर्नित्यम्',
+    samagra_slp1="Yniti AdiH nityamudAttaH",
+    samagra_dev="ञ्निति आदिः नित्यमुदात्तः",
     padaccheda_dev="ञ्णित्यादिः / नित्यम्",
     why_dev="ञिति-निति-प्रत्यये आदिरुदात्तः (*prakriya_29* / *31*)।",
     anuvritti_from=(),

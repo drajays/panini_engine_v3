@@ -8,6 +8,7 @@ Example: *grāmāt bahis* → *bahirgrāmam* ("outside the village").
 
 v3 narrow slice: gate-marks the compound with key
 ``2_1_12_apa_pari_bahis_pancami``.
+Pāṭha: ashtadhyayi.com data.txt row i=21012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'apaparibahiraYcavaH paYcamyA',
     text_dev              = 'अपपरिबहिरञ्चवः पञ्चम्या',
+    samagra_slp1          = "apa-pari-bahiH-aYcavaH paYcamyA supA saha viBAzA avyayIBAvasamAsaH",
+    samagra_dev           = "अप-परि-बहिः-अञ्चवः  पञ्चम्या  सुपा सह विभाषा अव्ययीभावसमासः",
     padaccheda_dev        = "अप-परि-बहिः-अञ्चवः / पञ्चम्या",
     why_dev               = "अप-परि-बहिस्-अञ्च्-शब्दानां पञ्चम्यन्तेन सह अव्ययीभावः (२.१.१२)।",
     anuvritti_from        = ("2.1.5",),

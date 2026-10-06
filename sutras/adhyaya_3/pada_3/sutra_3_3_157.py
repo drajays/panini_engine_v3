@@ -4,6 +4,7 @@
 Padaccheda: इच्छा-अर्थेषु लिङ्-लोटौ
 
 krt-suffix rule: इच्छार्थेषु लिङ्लोटौ
+Pāṭha: ashtadhyayi.com data.txt row i=33157 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "icCArTezu liNlowO",
     text_dev              = "इच्छार्थेषु लिङ्लोटौ",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH icCArTezu liN-lowO kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः इच्छार्थेषु लिङ्-लोटौ कृत्",
     padaccheda_dev        = "इच्छा-अर्थेषु लिङ्-लोटौ",
     why_dev               = "धातोः प्रत्ययः (३.3.157)।",
     anuvritti_from        = ('3.1.1',),

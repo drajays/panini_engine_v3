@@ -18,6 +18,7 @@ stamp "Atmanepada_1_3_74" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _VAD_ROOTS carries both "apa_prefix" and "Nic_pratyaya". act sets
 pada = "Parasmaipada" (extending niyama). No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -65,6 +66,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="RicaSca",
     text_dev="णिचश्च",
+    samagra_slp1="RicaH ca Atmanepadam kartraBiprAye kriyAPale",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="णिचः च आत्मनेपदम् कर्त्रभिप्राये क्रियाफले",
     padaccheda_dev="णिचः (षष्ठी-एकवचन) / च",
     why_dev=(
         "अप-पूर्वकस्य वद्-धातोः णिच्-प्रत्यये परे अपि आत्मनेपदं न भवति — "

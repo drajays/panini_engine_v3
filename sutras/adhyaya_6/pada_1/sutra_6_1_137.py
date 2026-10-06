@@ -4,6 +4,7 @@
 Padaccheda: सम्-परि-उपेभ्यः करोतौ भूषणे
 
 सम्पर्युपेभ्यः करोतौ भूषणे (6.1.137)
+Pāṭha: ashtadhyayi.com data.txt row i=61137 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samparyupeByaH karotO BUzaRe",
     text_dev              = "सम्पर्युपेभ्यः करोतौ भूषणे",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH sam-pari-upeByaH karotO BUzaRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः सम्-परि-उपेभ्यः करोतौ भूषणे",
     padaccheda_dev        = "सम्-परि-उपेभ्यः करोतौ भूषणे",
     why_dev               = "(सूत्रम् 6.1.137) सम्पर्युपेभ्यः करोतौ भूषणे।",
     anuvritti_from        = ('6.1.1',),

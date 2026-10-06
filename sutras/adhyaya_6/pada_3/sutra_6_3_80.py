@@ -4,6 +4,7 @@
 Padaccheda: द्वितीये च अनुपाख्ये
 
 द्वितीये चानुपाख्ये (6.3.80)
+Pāṭha: ashtadhyayi.com data.txt row i=63080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvitIye cAnupAKye",
     text_dev              = "द्वितीये चानुपाख्ये",
+    samagra_slp1          = "uttarapade dvitIye ca anupAKye sahasya saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे द्वितीये च अनुपाख्ये सहस्य सः",
     padaccheda_dev        = "द्वितीये च अनुपाख्ये",
     why_dev               = "(सूत्रम् 6.3.80) द्वितीये चानुपाख्ये।",
     anuvritti_from        = ('6.1.1',),

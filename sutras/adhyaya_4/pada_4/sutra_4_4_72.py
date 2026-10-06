@@ -4,6 +4,7 @@
 Padaccheda: कठिनान्त-प्रस्तार-संस्थानेषु व्यवहरति (क्रियापदम्)
 
 कठिनान्तप्रस्तारसंस्थानेषु व्यवहरति (4.4.72)
+Pāṭha: ashtadhyayi.com data.txt row i=44072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kaWinAntaprastArasaMsTAnezu vyavaharati",
     text_dev              = "कठिनान्तप्रस्तारसंस्थानेषु व्यवहरति",
+    samagra_slp1          = "tatra kaWinAnta-prastAra-saMsTAnezu vyavaharati iti samarTAnAM praTamAt paraH Wak-pratyayaH ",
+    samagra_dev           = "'तत्र कठिनान्त-प्रस्तार-संस्थानेषु व्यवहरति' (इति) समर्थानां प्रथमात् परः ठक्-प्रत्ययः ।",
     padaccheda_dev        = "कठिनान्त-प्रस्तार-संस्थानेषु व्यवहरति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.72) कठिनान्तप्रस्तारसंस्थानेषु व्यवहरति।",
     anuvritti_from        = ('4.1.1',),

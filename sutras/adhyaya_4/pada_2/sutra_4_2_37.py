@@ -4,6 +4,7 @@
 Padaccheda: तस्य समूहः
 
 तस्य समूहः (4.2.37)
+Pāṭha: ashtadhyayi.com data.txt row i=42037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tasya samUhaH",
     text_dev              = "तस्य समूहः",
+    samagra_slp1          = "tasya samUhaH iti samarTAnAM praTamAt paraH aR pratyayaH",
+    samagra_dev           = "'तस्य समूहः' (इति) समर्थानां प्रथमात् परः अण्  प्रत्ययः",
     padaccheda_dev        = "तस्य समूहः",
     why_dev               = "(सूत्रम् 4.2.37) तस्य समूहः।",
     anuvritti_from        = ('4.1.1',),

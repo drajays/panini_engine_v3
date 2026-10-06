@@ -9,6 +9,7 @@ used in the *lakṣaṇa* (marking / signifying) sense.
 *Engine:* sets a paribhāṣā gate once to signal that *anu-in-lakṣaṇa* has
 been recognised.  ``cond`` never reads vibhakti/vacana/lakāra/surface.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=14084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -34,6 +35,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'anurlakzaRe',
     text_dev             = 'अनुर्लक्षणे',
+    samagra_slp1         = "AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH karmapravacanIyAH anuH lakzaRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः कर्मप्रवचनीयाः अनुः लक्षणे",
     padaccheda_dev       = "अनुः / लक्षणे",
     why_dev              = (
         "लक्षण-अर्थे वर्तमानः 'अनु' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

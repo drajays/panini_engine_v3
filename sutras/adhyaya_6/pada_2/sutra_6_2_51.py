@@ -4,6 +4,7 @@
 Padaccheda: तवै (लुप्तप्रथमान्तनिर्देशः) च अन्तः च युगपत्
 
 तवै चान्तश्च युगपत् (6.2.51)
+Pāṭha: ashtadhyayi.com data.txt row i=62051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tavE cAntaSca yugapat",
     text_dev              = "तवै चान्तश्च युगपत्",
+    samagra_slp1          = "tavE ca antaH yugapat pUrvapadam prakftyA anantaraH gatiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तवै च अन्तः युगपत् पूर्वपदम् प्रकृत्या अनन्तरः गतिः",
     padaccheda_dev        = "तवै (लुप्तप्रथमान्तनिर्देशः) च अन्तः च युगपत्",
     why_dev               = "(सूत्रम् 6.2.51) तवै चान्तश्च युगपत्।",
     anuvritti_from        = ('6.1.1',),

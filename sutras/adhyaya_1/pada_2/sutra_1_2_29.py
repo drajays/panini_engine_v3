@@ -15,6 +15,7 @@ accent rules in 6.1, 6.2). This rule only fixes the interpretive gate —
 the meaning of the word "udātta" whenever it appears in later sūtras.
 
 SLP1 representation: "uccaiH" (= uccaiḥ, instrumental ablative of uccais).
+Pāṭha: ashtadhyayi.com data.txt row i=12029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'uccErudAttaH',
     text_dev                = 'उच्चैरुदात्तः',
+    samagra_slp1            = "uccEH ac udAttaH",
+    samagra_dev             = "उच्चैः अच् उदात्तः",
     padaccheda_dev          = "उच्चैः उदात्तः",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = (),

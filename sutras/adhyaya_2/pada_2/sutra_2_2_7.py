@@ -13,6 +13,7 @@ Engine (narrow, mechanically blind):
   Gate key ``2_2_7_isadat_akrta_gate``.  Recipe arms
   ``state.meta['2_2_7_arm']`` and tags a Term with ``isadat_akrta``
   indicating the *īṣat* + kṛt compound context.
+Pāṭha: ashtadhyayi.com data.txt row i=22007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -38,6 +39,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="IzadakftA",
     text_dev="ईषदकृता",
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH Izat akftA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः ईषत् अकृता",
     padaccheda_dev="ईषत् / अकृता",
     why_dev=(
         "ईषच्छब्दः कृदन्तेन समस्यते — ईषत्पक्वः, ईषत्कृतम् इत्यादि।"

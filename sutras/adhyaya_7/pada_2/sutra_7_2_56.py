@@ -4,6 +4,7 @@
 Padaccheda: उत्-इतः वा
 
 उदितो वा (7.2.56)
+Pāṭha: ashtadhyayi.com data.txt row i=72056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "udito vA",
     text_dev              = "उदितो वा",
+    samagra_slp1          = "aNgasya uditaH vA ArDaDAtukasya iw valAdeH ktvi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उदितः वा आर्धधातुकस्य इट् वलादेः क्त्वि",
     padaccheda_dev        = "उत्-इतः वा",
     why_dev               = "(सूत्रम् 7.2.56) उदितो वा।",
     anuvritti_from        = ('7.1.1',),

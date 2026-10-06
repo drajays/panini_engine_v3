@@ -4,6 +4,7 @@
 Padaccheda: अतिथेः ञ्यः
 
 अतिथेर्ञ्यः (5.4.26)
+Pāṭha: ashtadhyayi.com data.txt row i=54026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "atiTerYyaH",
     text_dev              = "अतिथेर्ञ्यः",
+    samagra_slp1          = "atiTeH tAdaraTye YyaH",
+    samagra_dev           = "अतिथेः तादरथ्ये ञ्यः",
     padaccheda_dev        = "अतिथेः ञ्यः",
     why_dev               = "(सूत्रम् 5.4.26) अतिथेर्ञ्यः।",
     anuvritti_from        = ('4.1.76',),

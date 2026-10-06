@@ -4,6 +4,7 @@
 Padaccheda: दूर-अन्तिक-अर्थैः षष्ठी अन्यतरस्याम्
 
 Distant/near words optionally take sasthi.
+Pāṭha: ashtadhyayi.com data.txt row i=23034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dUrAntikArTEH zazWyanyatarasyAm",
     text_dev              = "दूरान्तिकार्थैः षष्ठ्यन्यतरस्याम्",
+    samagra_slp1          = "anaBihite dUrA-antika-arTEH zazWI anyatarasyAm paYcamI asatvavacanasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते दूरा-अन्तिक-अर्थैः षष्ठी अन्यतरस्याम् पञ्चमी असत्ववचनस्य",
     padaccheda_dev        = "दूर-अन्तिक-अर्थैः षष्ठी अन्यतरस्याम्",
     why_dev               = "दूर-अन्तिक-अर्थैः षष्ठी अन्यतरस्याम् (२.३.३४)।",
     anuvritti_from        = ('2.3.50',),

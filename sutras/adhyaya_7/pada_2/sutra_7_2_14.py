@@ -4,6 +4,7 @@
 Padaccheda: श्वि-ईत्-इतः निष्ठायाम्
 
 श्वीदितो निष्ठायाम् (7.2.14)
+Pāṭha: ashtadhyayi.com data.txt row i=72014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SvIdito nizWAyAm",
     text_dev              = "श्वीदितो निष्ठायाम्",
+    samagra_slp1          = "aNgasya SvIditaH nizWAyAm na iw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य श्वीदितः निष्ठायाम् न इट्",
     padaccheda_dev        = "श्वि-ईत्-इतः निष्ठायाम्",
     why_dev               = "(सूत्रम् 7.2.14) श्वीदितो निष्ठायाम्।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: गोत्र-क्षत्रिय-अख्येभ्यः बहुलम् वुञ्
 
 गोत्रक्षत्रियाख्येभ्यो बहुलं वुञ् (4.3.99)
+Pāṭha: ashtadhyayi.com data.txt row i=43099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gotrakzatriyAKyeByo bahulaM vuY",
     text_dev              = "गोत्रक्षत्रियाख्येभ्यो बहुलं वुञ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA gotra-kzatriya-AKyeByaH bahulam vuY saH asya BaktiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा गोत्र-क्षत्रिय-आख्येभ्यः बहुलम् वुञ् सः अस्य भक्तिः",
     padaccheda_dev        = "गोत्र-क्षत्रिय-अख्येभ्यः बहुलम् वुञ्",
     why_dev               = "(सूत्रम् 4.3.99) गोत्रक्षत्रियाख्येभ्यो बहुलं वुञ्।",
     anuvritti_from        = ('4.1.1',),

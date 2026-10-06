@@ -4,6 +4,7 @@
 Padaccheda: न सामिवचने
 
 न सामिवचने (5.4.5)
+Pāṭha: ashtadhyayi.com data.txt row i=54005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na sAmivacane",
     text_dev              = "न सामिवचने",
+    samagra_slp1          = "ktAntAt sAmivacane kan na",
+    samagra_dev           = "क्तान्तात् सामिवचने कन् न",
     padaccheda_dev        = "न सामिवचने",
     why_dev               = "(सूत्रम् 5.4.5) न सामिवचने।",
     anuvritti_from        = ('4.1.76',),

@@ -4,6 +4,7 @@
 Padaccheda: ददाति-दधात्योः विभाषा
 
 Krt suffix rule from dhatu: ददातिदधात्योर्विभाषा (139)
+Pāṭha: ashtadhyayi.com data.txt row i=31139 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dadAtidaDAtyorviBAzA",
     text_dev              = "ददातिदधात्योर्विभाषा",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH dadAti-daDAtyoH viBAzA kft SaH anupasargAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः ददाति-दधात्योः विभाषा कृत् शः अनुपसर्गात्",
     padaccheda_dev        = "ददाति-दधात्योः विभाषा",
     why_dev               = "धातोः [ददातिदधात्योर्विभाषा]-प्रत्ययः विहितः (३.१.139)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: तृणहः इम्
 
 तृणह इम् (7.3.92)
+Pāṭha: ashtadhyayi.com data.txt row i=73092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tfRaha im",
     text_dev              = "तृणह इम्",
+    samagra_slp1          = "aNgasya tfRahaH im piti sArvaDAtuke hali",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य तृणहः इम् पिति सार्वधातुके हलि",
     padaccheda_dev        = "तृणहः इम्",
     why_dev               = "(सूत्रम् 7.3.92) तृणह इम्।",
     anuvritti_from        = ('7.1.1',),

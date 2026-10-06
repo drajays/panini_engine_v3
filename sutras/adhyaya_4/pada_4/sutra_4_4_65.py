@@ -4,6 +4,7 @@
 Padaccheda: हितम् भक्षाः
 
 हितं भक्षाः (4.4.65)
+Pāṭha: ashtadhyayi.com data.txt row i=44065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hitaM BakzAH",
     text_dev              = "हितं भक्षाः",
+    samagra_slp1          = "tat hitam BakzAH asya iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् हितम् भक्षाः अस्य' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "हितम् भक्षाः",
     why_dev               = "(सूत्रम् 4.4.65) हितं भक्षाः।",
     anuvritti_from        = ('4.1.1',),

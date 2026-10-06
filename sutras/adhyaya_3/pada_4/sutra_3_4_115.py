@@ -4,6 +4,7 @@
 Padaccheda: लिट् च
 
 krt-suffix rule: लिट् च
+Pāṭha: ashtadhyayi.com data.txt row i=34115 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "liw ca",
     text_dev              = "लिट् च",
+    samagra_slp1          = "liw ca tiN ArDaDAtukam",
+    samagra_dev           = "लिट् च तिङ् आर्धधातुकम्",
     padaccheda_dev        = "लिट् च",
     why_dev               = "धातोः प्रत्ययः (३.4.115)।",
     apavada_of            = ("3.4.113",),   # liṭ's tiṅ is ārdhadhātuka

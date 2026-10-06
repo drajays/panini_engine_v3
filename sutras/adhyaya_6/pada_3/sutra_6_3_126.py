@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि च
 
 छन्दसि च (6.3.126)
+Pāṭha: ashtadhyayi.com data.txt row i=63126 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Candasi ca",
     text_dev              = "छन्दसि च",
+    samagra_slp1          = "uttarapade saMhitAyAm Candasi ca dIrGaH azwanaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् छन्दसि च दीर्घः अष्टनः",
     padaccheda_dev        = "छन्दसि च",
     why_dev               = "(सूत्रम् 6.3.126) छन्दसि च।",
     anuvritti_from        = ('6.1.1',),

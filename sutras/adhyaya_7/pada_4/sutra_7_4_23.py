@@ -4,6 +4,7 @@
 Padaccheda: उपसर्गात् ह्रस्वः ऊहतेः
 
 उपसर्गाद्ध्रस्व ऊहतेः (7.4.23)
+Pāṭha: ashtadhyayi.com data.txt row i=74023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upasargAdDrasva UhateH",
     text_dev              = "उपसर्गाद्ध्रस्व ऊहतेः",
+    samagra_slp1          = "aNgasya upasargAt hrasvaH UhateH kNiti yi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उपसर्गात् ह्रस्वः ऊहतेः क्ङिति यि",
     padaccheda_dev        = "उपसर्गात् ह्रस्वः ऊहतेः",
     why_dev               = "(सूत्रम् 7.4.23) उपसर्गाद्ध्रस्व ऊहतेः।",
     anuvritti_from        = ('7.1.1',),

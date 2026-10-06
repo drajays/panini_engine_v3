@@ -2,7 +2,7 @@
 6.4.111  श्नसोरल्लोपः  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=604111
+- ashtadhyayi.com data.txt row i=64111
 - Kāśikā: श्नोः अलोपः (अस्-धातोः आद्यचः लोपः णित्-सार्वधातुके)
 - Cross-validation: tests/unit/test_phalAni_santi_as_lat_padanta_lesson.py (*as*+झि → *s*+अन्ति);
   pipelines/kO_staH_vakya.py (*as*+तस् → स्तः, P028 arm grandfathered)
@@ -125,6 +125,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='SnasorallopaH',
     text_dev='श्नसोरल्लोपः',
+    samagra_slp1="SnasoH sArvaDAtuke kNiti allopaH",
+    samagra_dev="श्नसोः सार्वधातुके क्ङिति अल्लोपः",
     padaccheda_dev="श्नसोः / अल्-लोपः",
     why_dev="अस्-आद्यचः लोपः अपित्-सार्वधातुके (फलानि सन्ति, कौ स्तः)।",
     anuvritti_from=("6.4.1",),

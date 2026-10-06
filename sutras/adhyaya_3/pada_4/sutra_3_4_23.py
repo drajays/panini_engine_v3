@@ -4,6 +4,7 @@
 Padaccheda: न यदि अनाकाङ्क्षे
 
 krt-suffix rule: न यद्यनाकाङ्क्षे
+Pāṭha: ashtadhyayi.com data.txt row i=34023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na yadyanAkANkze",
     text_dev              = "न यद्यनाकाङ्क्षे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH na yadi anAkANkze kft ktvA pUrvakAle samAnakarttfkayoH ABIkzRye Ramul ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः न यदि अनाकाङ्क्षे कृत् क्त्वा पूर्वकाले समानकर्त्तृकयोः आभीक्ष्ण्ये णमुल् च",
     padaccheda_dev        = "न यदि अनाकाङ्क्षे",
     why_dev               = "धातोः प्रत्ययः (३.4.23)।",
     anuvritti_from        = ('3.1.1',),

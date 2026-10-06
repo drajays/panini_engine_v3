@@ -4,6 +4,7 @@
 Padaccheda: दायाद्यम् दायादे
 
 दायाद्यं दायादे (6.2.5)
+Pāṭha: ashtadhyayi.com data.txt row i=62005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dAyAdyaM dAyAde",
     text_dev              = "दायाद्यं दायादे",
+    samagra_slp1          = "dAyAdyam dAyAde prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "दायाद्यम् दायादे प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "दायाद्यम् दायादे",
     why_dev               = "(सूत्रम् 6.2.5) दायाद्यं दायादे।",
     anuvritti_from        = ('6.1.1',),

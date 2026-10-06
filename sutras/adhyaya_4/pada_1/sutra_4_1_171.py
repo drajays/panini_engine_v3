@@ -4,6 +4,7 @@
 Padaccheda: वृद्ध-इत्-कोसल-आजादात् ञ्यङ्
 
 वृद्धेत्कोसलाजादाञ्ञ्यङ् (4.1.171)
+Pāṭha: ashtadhyayi.com data.txt row i=41171 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vfdDetkosalAjAdAYYyaN",
     text_dev              = "वृद्धेत्कोसलाजादाञ्ञ्यङ्",
+    samagra_slp1          = "tasya apatyam iti kzatriyAt janapadaSabdAt vfdDa-it-kosala-ajAdAt YyaN",
+    samagra_dev           = "तस्य अपत्यम् (इति) क्षत्रियात् जनपदशब्दात् वृद्ध-इत्-कोसल-अजादात् ञ्यङ्",
     padaccheda_dev        = "वृद्ध-इत्-कोसल-आजादात् ञ्यङ्",
     why_dev               = "(सूत्रम् 4.1.171) वृद्धेत्कोसलाजादाञ्ञ्यङ्।",
     anuvritti_from        = ('4.1.1',),

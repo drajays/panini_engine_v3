@@ -10,6 +10,7 @@ in the manner of a verbal prefix, cf. 1.4.83-98), the second vibhakti
 Engine: registers the karmapravacanīya-yukta→dvitīyā gate. ``cond`` checks
 only the gate flag, never vibhakti coordinates (CONSTITUTION Art. 2).
 ``r1_form_identity_exempt=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=23008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'karmapravacanIyayukte dvitIyA',
     text_dev              = 'कर्मप्रवचनीययुक्ते द्वितीया',
+    samagra_slp1          = "anaBihite karmapravacanIya-yukte dvitIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते कर्मप्रवचनीय-युक्ते द्वितीया",
     padaccheda_dev        = "कर्मप्रवचनीय-युक्ते / द्वितीया",
     why_dev               = (
         "कर्मप्रवचनीय-युक्ते द्वितीया-विभक्तिः — "

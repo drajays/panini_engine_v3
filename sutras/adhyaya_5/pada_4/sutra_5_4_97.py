@@ -4,6 +4,7 @@
 Padaccheda: उपमानात् अप्राणिषु
 
 उपमानादप्राणिषु (5.4.97)
+Pāṭha: ashtadhyayi.com data.txt row i=54097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upamAnAdaprARizu",
     text_dev              = "उपमानादप्राणिषु",
+    samagra_slp1          = "tatpuruzasya SunaH upamAnAt aprARizu wac",
+    samagra_dev           = "तत्पुरुषस्य शुनः उपमानात् अप्राणिषु टच्",
     padaccheda_dev        = "उपमानात् अप्राणिषु",
     why_dev               = "(सूत्रम् 5.4.97) उपमानादप्राणिषु।",
     anuvritti_from        = ('5.4.68',),

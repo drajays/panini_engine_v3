@@ -4,6 +4,7 @@
 Padaccheda: तत्र नियुक्तः
 
 तत्र नियुक्तः (4.4.69)
+Pāṭha: ashtadhyayi.com data.txt row i=44069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tatra niyuktaH",
     text_dev              = "तत्र नियुक्तः",
+    samagra_slp1          = "tatra niyuktaH iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत्र नियुक्तः' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "तत्र नियुक्तः",
     why_dev               = "(सूत्रम् 4.4.69) तत्र नियुक्तः।",
     anuvritti_from        = ('4.1.1',),

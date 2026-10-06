@@ -4,6 +4,7 @@
 Padaccheda: वा अन्यस्य संयोग-आदेः
 
 वाऽन्यस्य संयोगादेः (6.4.68)
+Pāṭha: ashtadhyayi.com data.txt row i=64068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vAnyasya saMyogAdeH',
     text_dev              = 'वाऽन्यस्य संयोगादेः',
+    samagra_slp1          = "aNgasya asidDavadatrABAt ArDaDAtuke vA anyasya saMyogAdeH kNiti AtaH Gu-mA-sTA-gA-pA-jahAti-sAm eH liNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् आर्धधातुके वा अन्यस्य संयोगादेः क्ङिति आतः घु-मा-स्था-गा-पा-जहाति-साम् एः लिङि",
     padaccheda_dev        = "वा अन्यस्य संयोग-आदेः",
     why_dev               = "(सूत्रम् 6.4.68) वाऽन्यस्य संयोगादेः।",
     anuvritti_from        = ('6.1.1',),

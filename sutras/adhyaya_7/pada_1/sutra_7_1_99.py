@@ -4,6 +4,7 @@
 Padaccheda: अम् सम्बुद्धौ
 
 अम् सम्बुद्धौ (7.1.99)
+Pāṭha: ashtadhyayi.com data.txt row i=71099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "am sambudDO",
     text_dev              = "अम् सम्बुद्धौ",
+    samagra_slp1          = "catur-anaquhoH aNgasya sambudDO am",
+    samagra_dev           = "चतुर्-अनडुहोः अङ्गस्य सम्बुद्धौ अम्",
     padaccheda_dev        = "अम् सम्बुद्धौ",
     why_dev               = "(सूत्रम् 7.1.99) अम् सम्बुद्धौ।",
     anuvritti_from        = ('7.1.1',),

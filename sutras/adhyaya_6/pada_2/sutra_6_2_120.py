@@ -4,6 +4,7 @@
 Padaccheda: वीर-वीर्यौ च
 
 वीरवीर्यौ च (6.2.120)
+Pāṭha: ashtadhyayi.com data.txt row i=62120 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vIravIryO ca",
     text_dev              = "वीरवीर्यौ च",
+    samagra_slp1          = "udAttaH uttarapadAdiH vIra-vIryO ca bahuvrIhO soH Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः वीर-वीर्यौ च बहुव्रीहौ सोः छन्दसि",
     padaccheda_dev        = "वीर-वीर्यौ च",
     why_dev               = "(सूत्रम् 6.2.120) वीरवीर्यौ च।",
     anuvritti_from        = ('6.1.1',),

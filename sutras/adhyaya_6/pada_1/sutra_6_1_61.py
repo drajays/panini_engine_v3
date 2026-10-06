@@ -4,6 +4,7 @@
 Padaccheda: ये च तद्धिते
 
 ये च तद्धिते (6.1.61)
+Pāṭha: ashtadhyayi.com data.txt row i=61061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ye ca tadDite",
     text_dev              = "ये च तद्धिते",
+    samagra_slp1          = "ye ca tadDite upadeSe SIrzan Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "ये च तद्धिते उपदेशे शीर्षन् छन्दसि",
     padaccheda_dev        = "ये च तद्धिते",
     why_dev               = "(सूत्रम् 6.1.61) ये च तद्धिते।",
     anuvritti_from        = ('6.1.1',),

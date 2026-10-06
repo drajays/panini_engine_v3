@@ -4,6 +4,7 @@
 Padaccheda: कर्तरि भुवः खिष्णुच्-खुकञौ
 
 krt-suffix rule: कर्तरि भुवः खिष्णुच्खुकञौ (57)
+Pāṭha: ashtadhyayi.com data.txt row i=32057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kartari BuvaH KizRucKukaYO",
     text_dev              = "कर्तरि भुवः खिष्णुच्खुकञौ",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kartari BuvaH KizRuc-KukaYO kft karmaRi anupasarge supi AQya-suBaga-sTUla-palita-nagna-anDa-priyezu cvyarTezu acvO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कर्तरि भुवः खिष्णुच्-खुकञौ कृत् कर्मणि अनुपसर्गे सुपि आढ्य-सुभग-स्थूल-पलित-नग्न-अन्ध-प्रियेषु च्व्यर्थेषु अच्वौ",
     padaccheda_dev        = "कर्तरि भुवः खिष्णुच्-खुकञौ",
     why_dev               = "धातोः कृत्-प्रत्ययः [कर्तरि भुवः खिष्णुच्खुकञौ] विहितः (३.२.57)।",
     anuvritti_from        = ('3.1.1',),

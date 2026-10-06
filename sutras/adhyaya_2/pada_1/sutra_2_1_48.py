@@ -4,6 +4,7 @@
 Padaccheda: पात्रेसमितादयः च
 
 patresamita etc. in samjna context form tatpurusha compound.
+Pāṭha: ashtadhyayi.com data.txt row i=21048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pAtresamitAdayaSca",
     text_dev              = "पात्रेसमितादयश्च",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH pAtresamita-AdayaH ca saptamI kzepe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः पात्रेसमित-आदयः च सप्तमी क्षेपे",
     padaccheda_dev        = "पात्रेसमितादयः च",
     why_dev               = "पात्रेसमित-आदिभ्यश्च संज्ञायां तत्पुरुषः (२.१.४८)।",
     anuvritti_from        = ('2.1.44',),

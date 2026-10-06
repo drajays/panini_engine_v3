@@ -4,6 +4,7 @@
 Padaccheda: विचार्यमाणानाम्
 
 विचार्यमाणानाम् (8.2.97)
+Pāṭha: ashtadhyayi.com data.txt row i=82097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vicAryamARAnAm",
     text_dev              = "विचार्यमाणानाम्",
+    samagra_slp1          = "padasya pUrvatrAsidDam vAkyasya weH plutaH udAttaH vicAryamARAnAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वाक्यस्य टेः प्लुतः उदात्तः विचार्यमाणानाम्",
     padaccheda_dev        = "विचार्यमाणानाम्",
     why_dev               = "(सूत्रम् 8.2.97) विचार्यमाणानाम्।",
     anuvritti_from        = ('8.1.1',),

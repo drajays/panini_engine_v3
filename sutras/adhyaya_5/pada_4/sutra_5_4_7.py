@@ -4,6 +4,7 @@
 Padaccheda: अषडक्ष-आशितङ्‍गु-अलंकर्म-अलम्पुरुष-अधि-उत्तरपदात् खः
 
 अषडक्षाशितङ्ग्वलंकर्मालम्पुरुषाध्युत्तरपदात् खः (5.4.7)
+Pāṭha: ashtadhyayi.com data.txt row i=54007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "azaqakzASitaNgvalaMkarmAlampuruzADyuttarapadAt KaH",
     text_dev              = "अषडक्षाशितङ्ग्वलंकर्मालम्पुरुषाध्युत्तरपदात् खः",
+    samagra_slp1          = "azaqakza-ASitaNgu-alaMkarma-alampuruza-aDyuttarapadAt KaH",
+    samagra_dev           = "अषडक्ष-आशितङ्गु-अलंकर्म-अलम्पुरुष-अध्युत्तरपदात् खः",
     padaccheda_dev        = "अषडक्ष-आशितङ्‍गु-अलंकर्म-अलम्पुरुष-अधि-उत्तरपदात् खः",
     why_dev               = "(सूत्रम् 5.4.7) अषडक्षाशितङ्ग्वलंकर्मालम्पुरुषाध्युत्तरपदात् खः।",
     anuvritti_from        = ('4.1.76',),

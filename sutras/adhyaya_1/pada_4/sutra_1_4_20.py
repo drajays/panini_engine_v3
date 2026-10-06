@@ -8,6 +8,7 @@ v3: sets the gate ``1_4_20_ayasmayAdi_chandasi`` in
 ``state.paribhasha_gates`` to indicate that the ayasmayādi Vedic provision
 is active.  Actual morphological effects are handled by downstream rules
 consulting this gate when ``state.meta["chandas"]`` is set.
+Pāṭha: ashtadhyayi.com data.txt row i=14020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.SAMJNA,
     text_slp1              = 'ayasmayAdIni cCandasi',
     text_dev               = 'अयस्मयादीनि च्छन्दसि',
+    samagra_slp1           = "ayasmayAdIni Candasi Bam padam",
+    samagra_dev            = "अयस्मयादीनि छन्दसि भम् पदम्",
     padaccheda_dev         = "अयस्मय-आदीनि / छन्दसि",
     why_dev                = "छन्दसि अयस्मयादि-शब्दानां विशेष-विधिः प्रवर्तते।",
     anuvritti_from         = ("1.4.1",),

@@ -4,6 +4,7 @@
 Padaccheda: पर-आदिः छन्दसि बहुलम्
 
 परादिश्छन्दसि बहुलम् (6.2.199)
+Pāṭha: ashtadhyayi.com data.txt row i=62199 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parAdiSCandasi bahulam",
     text_dev              = "परादिश्छन्दसि बहुलम्",
+    samagra_slp1          = "uttarapadAdiH antaH parAdiH Candasi bahulam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः परादिः छन्दसि बहुलम्",
     padaccheda_dev        = "पर-आदिः छन्दसि बहुलम्",
     why_dev               = "(सूत्रम् 6.2.199) परादिश्छन्दसि बहुलम्।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: ऊर्णोतेः विभाषा
 
 ऊर्णोतेर्विभाषा (7.2.6)
+Pāṭha: ashtadhyayi.com data.txt row i=72006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "UrRoterviBAzA",
     text_dev              = "ऊर्णोतेर्विभाषा",
+    samagra_slp1          = "aNgasya UrRoteH viBAzA sici vfdDiH parasmEpadezu na iwi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ऊर्णोतेः विभाषा सिचि वृद्धिः परस्मैपदेषु न इटि",
     padaccheda_dev        = "ऊर्णोतेः विभाषा",
     why_dev               = "(सूत्रम् 7.2.6) ऊर्णोतेर्विभाषा।",
     anuvritti_from        = ('7.1.1',),

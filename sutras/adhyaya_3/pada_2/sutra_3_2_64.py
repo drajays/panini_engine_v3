@@ -4,6 +4,7 @@
 Padaccheda: वहः च
 
 krt-suffix rule: वहश्च (64)
+Pāṭha: ashtadhyayi.com data.txt row i=32064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vahaSca",
     text_dev              = "वहश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vahaH ca kft supi api RviH Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वहः च कृत् सुपि अपि ण्विः छन्दसि",
     padaccheda_dev        = "वहः च",
     why_dev               = "धातोः कृत्-प्रत्ययः [वहश्च] विहितः (३.२.64)।",
     anuvritti_from        = ('3.1.1',),

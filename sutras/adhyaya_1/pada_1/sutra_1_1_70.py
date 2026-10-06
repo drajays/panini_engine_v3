@@ -19,6 +19,7 @@ v3 engine role:
   - cond() reads ONLY paribhasha_gates (Art. 2 compliant: no vibhakti,
     vacana, lakāra, surface Devanāgarī, data, or reference access).
   - No arm flags.  r1_form_identity_exempt=True (no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=11070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'taparastatkAlasya',
     text_dev                = 'तपरस्तत्कालस्य',
+    samagra_slp1            = "taparaH tatkAlasya",
+    samagra_dev             = "तपरः तत्कालस्य",
     padaccheda_dev          = "त-परः / तत्-कालस्य",
     why_dev                 = (
         "त-परो वर्णः (यथा अत्, इत्, उत्) तत्-कालस्यैव — "

@@ -4,6 +4,7 @@
 Padaccheda: नित्यम् संज्ञा-छन्दसोः
 
 नित्यं संज्ञाछन्दसोः (4.1.29)
+Pāṭha: ashtadhyayi.com data.txt row i=41029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nityaM saMjYACandasoH",
     text_dev              = "नित्यं संज्ञाछन्दसोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt nityam saMjYA-CandasoH bahuvrIheH anaH upaDA-lopinaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् नित्यम् संज्ञा-छन्दसोः बहुव्रीहेः अनः उपधा-लोपिनः",
     padaccheda_dev        = "नित्यम् संज्ञा-छन्दसोः",
     why_dev               = "(सूत्रम् 4.1.29) नित्यं संज्ञाछन्दसोः।",
     anuvritti_from        = ('4.1.1',),

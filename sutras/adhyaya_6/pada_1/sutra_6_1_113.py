@@ -4,6 +4,7 @@
 Padaccheda: अतः · रोः · अप्लुतात् · अप्लुते
 
 अतो रोरप्लुतादप्लुते (6.1.113)
+Pāṭha: ashtadhyayi.com data.txt row i=61113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ato roraplutAdaplute",
     text_dev              = "अतो रोरप्लुतादप्लुते",
+    samagra_slp1          = "aplutAt ataH roH ut aplute ati",
+    samagra_dev           = "अप्लुतात् अतः रोः उत् अप्लुते अति",
     padaccheda_dev        = "अतः · रोः · अप्लुतात् · अप्लुते",
     why_dev               = "(सूत्रम् 6.1.113) अतो रोरप्लुतादप्लुते।",
     anuvritti_from        = ('6.1.1',),

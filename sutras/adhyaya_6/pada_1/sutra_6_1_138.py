@@ -4,6 +4,7 @@
 Padaccheda: समवाये च
 
 समवाये च (6.1.138)
+Pāṭha: ashtadhyayi.com data.txt row i=61138 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samavAye ca",
     text_dev              = "समवाये च",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH samavAye ca sam-pari-upeByaH karotO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः समवाये च सम्-परि-उपेभ्यः करोतौ",
     padaccheda_dev        = "समवाये च",
     why_dev               = "(सूत्रम् 6.1.138) समवाये च।",
     anuvritti_from        = ('6.1.1',),

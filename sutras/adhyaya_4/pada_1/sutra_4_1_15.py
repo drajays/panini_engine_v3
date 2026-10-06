@@ -6,6 +6,7 @@
 Engine: when ``corrected_v2_P005_A_4_1_15_arm`` and a single merged stem carries
 ``corrected_v2_P005_A_kurucara_stem``, append **NIp** (ङीप्; SLP1 ``N`` = ङ्, not ``Ng``)
 as an affix ``Term``.
+Pāṭha: ashtadhyayi.com data.txt row i=41015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='wiqQARaYdvayasajdaGnaYmAtractayapWakWaYkaYkvarapaH',
     text_dev='टिड्ढाणञ्द्वयसज्दघ्नञ्मात्रच्तयप्ठक्ठञ्कञ्क्वरपः',
+    samagra_slp1="pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt wit-Qa-aR-aY-dvayasac-daGnac-mAtrac-tayap-Wak-WaY-kaY-kvarapaH NIp",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् टित्-ढ-अण्-अञ्-द्वयसच्-दघ्नच्-मात्रच्-तयप्-ठक्-ठञ्-कञ्-क्वरपः ङीप्",
     padaccheda_dev="टि-इति / ङीप्",
     why_dev="टितः कृतः स्त्रियां ङीप् (प००५-अ, संक्षिप्तम्)।",
     anuvritti_from=("4.1.4",),

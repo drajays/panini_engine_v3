@@ -4,6 +4,7 @@
 Padaccheda: सूर्य-तिष्य-अगस्त्य-मत्स्यानाम् यः उपधायाः
 
 सूर्यतिष्यागस्त्यमत्स्यानां य उपधायाः (6.4.149)
+Pāṭha: ashtadhyayi.com data.txt row i=64149 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sUryatizyAgastyamatsyAnAM ya upaDAyAH",
     text_dev              = "सूर्यतिष्यागस्त्यमत्स्यानां य उपधायाः",
+    samagra_slp1          = "aNgasya asidDavadatrABAt Basya sUrya-tizya-agastya-matsyAnAm yaH upaDAyAH tadDite lopaH Iti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् भस्य सूर्य-तिष्य-अगस्त्य-मत्स्यानाम् यः उपधायाः तद्धिते लोपः ईति",
     padaccheda_dev        = "सूर्य-तिष्य-अगस्त्य-मत्स्यानाम् यः उपधायाः",
     why_dev               = "(सूत्रम् 6.4.149) सूर्यतिष्यागस्त्यमत्स्यानां य उपधायाः।",
     anuvritti_from        = ('6.1.1',),

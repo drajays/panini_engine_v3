@@ -4,6 +4,7 @@
 Padaccheda: नुद-विद-उन्द-त्रा-घ्रा-ह्रीभ्यः अन्यतरस्याम्
 
 नुदविदोन्दत्राघ्राह्रीभ्योऽन्यतरस्याम् (8.2.56)
+Pāṭha: ashtadhyayi.com data.txt row i=82056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nudavidondatrAGrAhrIByonyatarasyAm',
     text_dev              = 'नुदविदोन्दत्राघ्राह्रीभ्योऽन्यतरस्याम्',
+    samagra_slp1          = "padasya pUrvatrAsidDam nudavidondatrAGrAhrIByaH anyatarasyAm nizWAtaH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् नुदविदोन्दत्राघ्राह्रीभ्यः अन्यतरस्याम् निष्ठातः नः",
     padaccheda_dev        = "नुद-विद-उन्द-त्रा-घ्रा-ह्रीभ्यः अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 8.2.56) नुदविदोन्दत्राघ्राह्रीभ्योऽन्यतरस्याम्।",
     anuvritti_from        = ('8.1.1',),

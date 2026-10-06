@@ -13,6 +13,7 @@ parasmaipada are allowed. For example: śete / śayate (to lie down).
 (a) pada is not already "Atmanepada", (b) idempotency stamp "Atmanepada_1_3_85"
 is absent, (c) a dhātu Term carries the tag "akarmaka".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -57,6 +58,8 @@ SUTRA = SutraRecord(
     vibhasha_default=True,
     text_slp1='viBAzAkarmakAt',
     text_dev='विभाषाऽकर्मकात्',
+    samagra_slp1="viBAzA akarmakAt kartari parasmEpadam ramaH upAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="विभाषा अकर्मकात् कर्तरि परस्मैपदम् रमः उपात्",
     padaccheda_dev="विभाषा / अकर्मकात् (पञ्चमी-एकवचन)",
     why_dev=(
         "अकर्मक-धातोः विकल्पेन आत्मनेपदम् — "

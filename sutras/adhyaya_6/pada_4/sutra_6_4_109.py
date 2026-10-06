@@ -4,6 +4,7 @@
 Padaccheda: ये च
 
 ये च (6.4.109)
+Pāṭha: ashtadhyayi.com data.txt row i=64109 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "ye ca",
     text_dev              = "ये च",
+    samagra_slp1          = "karoteH aNgasya utaH pratyayasya ye nityaM lopaH",
+    samagra_dev           = "करोतेः अङ्गस्य उतः प्रत्ययस्य ये नित्यं लोपः",
     padaccheda_dev        = "ये च",
     why_dev               = "(सूत्रम् 6.4.109) ये च।",
     anuvritti_from        = ('6.1.1',),

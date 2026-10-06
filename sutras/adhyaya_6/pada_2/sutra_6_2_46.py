@@ -4,6 +4,7 @@
 Padaccheda: कर्मधारये अ-निष्ठा
 
 कर्मधारयेऽनिष्ठा (6.2.46)
+Pāṭha: ashtadhyayi.com data.txt row i=62046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'karmaDArayenizWA',
     text_dev              = 'कर्मधारयेऽनिष्ठा',
+    samagra_slp1          = "karmaDAraye anizWA prakftyA pUrvapadam kte",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "कर्मधारये अनिष्ठा प्रकृत्या पूर्वपदम् क्ते",
     padaccheda_dev        = "कर्मधारये अ-निष्ठा",
     why_dev               = "(सूत्रम् 6.2.46) कर्मधारयेऽनिष्ठा।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: विभाषा अवरस्य
 
 विभाषाऽवरस्य (5.3.41)
+Pāṭha: ashtadhyayi.com data.txt row i=53041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'viBAzAvarasya',
     text_dev              = 'विभाषावरस्य',
+    samagra_slp1          = "avarasya astAti viBAzA avaH",
+    samagra_dev           = "अवरस्य अस्ताति विभाषा अवः",
     padaccheda_dev        = "विभाषा अवरस्य",
     why_dev               = "(सूत्रम् 5.3.41) विभाषाऽवरस्य।",
     anuvritti_from        = ('4.1.76',),

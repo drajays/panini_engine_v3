@@ -4,6 +4,7 @@
 Padaccheda: उदन्वान् उदधौ च
 
 उदन्वानुदधौ च (8.2.13)
+Pāṭha: ashtadhyayi.com data.txt row i=82013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "udanvAnudaDO ca",
     text_dev              = "उदन्वानुदधौ च",
+    samagra_slp1          = "padasya pUrvatrAsidDam udanvAn udaDO ca vaH matoH saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् उदन्वान् उदधौ च वः मतोः संज्ञायाम्",
     padaccheda_dev        = "उदन्वान् उदधौ च",
     why_dev               = "(सूत्रम् 8.2.13) उदन्वानुदधौ च।",
     anuvritti_from        = ('8.1.1',),

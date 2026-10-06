@@ -4,6 +4,7 @@
 Padaccheda: ईश्वरे तोसुन्-कसुनौ
 
 krt-suffix rule: ईश्वरे तोसुन्कसुनौ
+Pāṭha: ashtadhyayi.com data.txt row i=34013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ISvare tosunkasunO",
     text_dev              = "ईश्वरे तोसुन्कसुनौ",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH ISvare tosun-kasunO kft Candasi tumarTe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः ईश्वरे तोसुन्-कसुनौ कृत् छन्दसि तुमर्थे",
     padaccheda_dev        = "ईश्वरे तोसुन्-कसुनौ",
     why_dev               = "धातोः प्रत्ययः (३.4.13)।",
     anuvritti_from        = ('3.1.1',),

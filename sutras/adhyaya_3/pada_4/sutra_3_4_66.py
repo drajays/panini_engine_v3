@@ -4,6 +4,7 @@
 Padaccheda: पर्याप्तिवचनेषु अलम्-अर्थेषु
 
 krt-suffix rule: पर्याप्तिवचनेष्वलमर्थेषु
+Pāṭha: ashtadhyayi.com data.txt row i=34066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paryAptivacanezvalamarTezu",
     text_dev              = "पर्याप्तिवचनेष्वलमर्थेषु",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH paryAptivacanezu alam-arTezu kft tumun",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः पर्याप्तिवचनेषु अलम्-अर्थेषु कृत् तुमुन्",
     padaccheda_dev        = "पर्याप्तिवचनेषु अलम्-अर्थेषु",
     why_dev               = "धातोः प्रत्ययः (३.4.66)।",
     anuvritti_from        = ('3.1.1',),

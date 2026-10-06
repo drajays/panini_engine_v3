@@ -4,6 +4,7 @@
 Padaccheda: उत्तर-अधर-दक्षिणात् आतिः
 
 उत्तराधरदक्षिणादातिः (5.3.34)
+Pāṭha: ashtadhyayi.com data.txt row i=53034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uttarADaradakziRAdAtiH",
     text_dev              = "उत्तराधरदक्षिणादातिः",
+    samagra_slp1          = "uttara-aDara-dakziRAt saptamI-paYcamI-praTamAByaH dig-deSa-kAlezu AtiH",
+    samagra_dev           = "उत्तर-अधर-दक्षिणात् सप्तमी-पञ्चमी-प्रथमाभ्यः दिग्-देश-कालेषु आतिः",
     padaccheda_dev        = "उत्तर-अधर-दक्षिणात् आतिः",
     why_dev               = "(सूत्रम् 5.3.34) उत्तराधरदक्षिणादातिः।",
     anuvritti_from        = ('4.1.76',),

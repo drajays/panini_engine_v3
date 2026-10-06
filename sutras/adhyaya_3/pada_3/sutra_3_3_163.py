@@ -4,6 +4,7 @@
 Padaccheda: प्रैष-अतिसर्ग-प्राप्तकालेषु कृत्याः च
 
 krt-suffix rule: प्रैषातिसर्गप्राप्तकालेषु कृत्याश्च
+Pāṭha: ashtadhyayi.com data.txt row i=33163 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prEzAtisargaprAptakAlezu kftyASca",
     text_dev              = "प्रैषातिसर्गप्राप्तकालेषु कृत्याश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH prEza-atisarga-prAptakAlezu kftyAH ca kft low",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः प्रैष-अतिसर्ग-प्राप्तकालेषु कृत्याः च कृत् लोट्",
     padaccheda_dev        = "प्रैष-अतिसर्ग-प्राप्तकालेषु कृत्याः च",
     why_dev               = "धातोः प्रत्ययः (३.3.163)।",
     anuvritti_from        = ('3.1.1',),

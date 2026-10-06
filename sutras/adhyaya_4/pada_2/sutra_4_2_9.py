@@ -4,6 +4,7 @@
 Padaccheda: वामदेवात् ड्यत्-ड्यौ
 
 वामदेवाड्ड्यड्ड्यौ (4.2.9)
+Pāṭha: ashtadhyayi.com data.txt row i=42009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vAmadevAqqyaqqyO",
     text_dev              = "वामदेवाड्ड्यड्ड्यौ",
+    samagra_slp1          = "tena dfzwaM sAma iti vAmadevAt qyat-qyO",
+    samagra_dev           = "'तेन दृष्टं साम' (इति)  वामदेवात् ड्यत्-ड्यौ",
     padaccheda_dev        = "वामदेवात् ड्यत्-ड्यौ",
     why_dev               = "(सूत्रम् 4.2.9) वामदेवाड्ड्यड्ड्यौ।",
     anuvritti_from        = ('4.1.1',),

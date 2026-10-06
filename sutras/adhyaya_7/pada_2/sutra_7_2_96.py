@@ -16,6 +16,7 @@ Mode B (ṅas genitive singular): asm → mama
   Result: stem = [m, a, m, a, a, d]
 
 त्वमौ एकवचने / तवममौ ङसि (7.2.96)
+Pāṭha: ashtadhyayi.com data.txt row i=72096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -94,6 +95,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tavamamO Nasi',
     text_dev              = 'तवममौ ङसि',
+    samagra_slp1          = "aNgasya maparyantasya tavamamO Nasi viBaktO yuzmadasmadoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य मपर्यन्तस्य तवममौ ङसि विभक्तौ युष्मदस्मदोः",
     padaccheda_dev        = "त्व-मौ एकवचने",
     why_dev               = "अस्मद्-शब्दस्य आदि-भागस्य [अ,स्,म्] स्थाने [म,अ] (एकवचने) "
                             "वा [म,म,अ] (ङसि) आदेशः (सूत्रम् ७.२.९६)।",

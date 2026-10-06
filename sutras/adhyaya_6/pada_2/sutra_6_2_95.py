@@ -4,6 +4,7 @@
 Padaccheda: कुमार्याम् वयसि
 
 कुमार्यां वयसि (6.2.95)
+Pāṭha: ashtadhyayi.com data.txt row i=62095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kumAryAM vayasi",
     text_dev              = "कुमार्यां वयसि",
+    samagra_slp1          = "udAttaH antaH kumAryAm vayasi pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः कुमार्याम् वयसि पूर्वपदम्",
     padaccheda_dev        = "कुमार्याम् वयसि",
     why_dev               = "(सूत्रम् 6.2.95) कुमार्यां वयसि।",
     anuvritti_from        = ('6.1.1',),

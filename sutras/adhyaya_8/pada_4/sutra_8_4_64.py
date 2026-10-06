@@ -4,6 +4,7 @@
 Padaccheda: हलः यमाम् यमि लोपः
 
 हलो यमां यमि लोपः (8.4.64)
+Pāṭha: ashtadhyayi.com data.txt row i=84064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "halo yamAM yami lopaH",
     text_dev              = "हलो यमां यमि लोपः",
+    samagra_slp1          = "halaH yamAm yami anyatarasyAm lopaH",
+    samagra_dev           = "हलः यमाम् यमि अन्यतरस्याम् लोपः",
     padaccheda_dev        = "हलः यमाम् यमि लोपः",
     why_dev               = "(सूत्रम् 8.4.64) हलो यमां यमि लोपः।",
     anuvritti_from        = ('8.1.1',),

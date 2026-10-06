@@ -4,6 +4,7 @@
 Padaccheda: सिप् बहुलम् लेटि
 
 Krt suffix rule from dhatu: सिब्बहुलं लेटि (34)
+Pāṭha: ashtadhyayi.com data.txt row i=31034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sibbahulaM lewi",
     text_dev              = "सिब्बहुलं लेटि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH sip bahulam lewi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः सिप् बहुलम् लेटि",
     padaccheda_dev        = "सिप् बहुलम् लेटि",
     why_dev               = "धातोः [सिब्बहुलं लेटि]-प्रत्ययः विहितः (३.१.34)।",
     anuvritti_from        = ('3.1.1',),

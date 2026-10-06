@@ -8,6 +8,7 @@ Glass-box demo slice (भीषयते .md):
 Engine:
   - recipe-armed by ``state.meta['7_3_40_zuk_arm']``.
   - inserts a pratyaya Term ``zu~k`` between dhātu and nic once.
+Pāṭha: ashtadhyayi.com data.txt row i=73040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="Biyo hetuBaye zuk",
     text_dev="भियो हेतुभये षुक्",
+    samagra_slp1="aNgasya BiyaH hetuBaye zuk RO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अङ्गस्य भियः हेतुभये षुक् णौ",
     padaccheda_dev="भियः / हेतु-भये / षुक्",
     why_dev="भि-धातोः (भय-हेतौ) णिचि परे षुक्-आगमः।",
     anuvritti_from=("7.3.39",),

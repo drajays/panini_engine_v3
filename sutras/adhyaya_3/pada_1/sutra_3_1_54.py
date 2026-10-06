@@ -4,6 +4,7 @@
 Padaccheda: आत्मनेपदेषु अन्यतरस्याम्
 
 Krt suffix rule from dhatu: आत्मनेपदेष्वन्यतरस्याम् (54)
+Pāṭha: ashtadhyayi.com data.txt row i=31054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AtmanepadezvanyatarasyAm",
     text_dev              = "आत्मनेपदेष्वन्यतरस्याम्",
+    samagra_slp1          = "Atmanepadezu lipi-si-cihvaH cleH anyatarasyAmaN",
+    samagra_dev           = "आत्मनेपदेषु लिपि-सि-चिह्वः च्लेः अन्यतरस्यामङ्",
     padaccheda_dev        = "आत्मनेपदेषु अन्यतरस्याम्",
     why_dev               = "धातोः [आत्मनेपदेष्वन्यतरस्याम्]-प्रत्ययः विहितः (३.१.54)।",
     anuvritti_from        = ('3.1.1',),

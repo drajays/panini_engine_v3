@@ -9,6 +9,7 @@ Citation (CONSTITUTION Art. 14)
   Source #2 — ashtadhyayi.com subanta table, ṛ-stems 5-1 / 6-1: पितुः, मातुः (the ṅasi/ṅas s after the r of ur)
 
 Engine: reads the tape of the single merged pada: its last varṇa s with r immediately before it.
+Pāṭha: ashtadhyayi.com data.txt row i=82024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="rAtsasya",
     text_dev="रात्सस्य",
+    samagra_slp1="saMyogAntasya padasya rAt sasya lopaH",
+    samagra_dev="संयोगान्तस्य पदस्य रात् सस्य लोपः",
     padaccheda_dev="रात् सस्य",
     why_dev="पदान्त रेफ के पश्चात् सकार का लोप (पितुर्स् → पितुर्, फिर ८.३.१५ से पितुः)।",
     anuvritti_from=("8.2.23",),

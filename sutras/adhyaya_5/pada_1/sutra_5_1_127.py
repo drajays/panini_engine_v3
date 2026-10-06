@@ -4,6 +4,7 @@
 Padaccheda: कपि-ज्ञात्योः ढक्
 
 कपिज्ञात्योर्ढक् (5.1.127)
+Pāṭha: ashtadhyayi.com data.txt row i=51127 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kapijYAtyorQak",
     text_dev              = "कपिज्ञात्योर्ढक्",
+    samagra_slp1          = "tasya BAvaH karmaRi ca iti kapi-jYAtyoH Qak",
+    samagra_dev           = "'तस्य भावः कर्मणि च' (इति) कपि-ज्ञात्योः ढक्",
     padaccheda_dev        = "कपि-ज्ञात्योः ढक्",
     why_dev               = "(सूत्रम् 5.1.127) कपिज्ञात्योर्ढक्।",
     anuvritti_from        = ('5.1.120',),

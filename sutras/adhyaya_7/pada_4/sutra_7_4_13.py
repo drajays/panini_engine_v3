@@ -4,6 +4,7 @@
 Padaccheda: के अणः
 
 केऽणः (7.4.13)
+Pāṭha: ashtadhyayi.com data.txt row i=74013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'keRaH',
     text_dev              = 'केऽणः',
+    samagra_slp1          = "aNgasya ke aRaH hrasvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य के अणः ह्रस्वः",
     padaccheda_dev        = "के अणः",
     why_dev               = "(सूत्रम् 7.4.13) केऽणः।",
     anuvritti_from        = ('7.1.1',),

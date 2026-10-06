@@ -4,6 +4,7 @@
 Padaccheda: कुमारः च
 
 कुमारश्च (6.2.26)
+Pāṭha: ashtadhyayi.com data.txt row i=62026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kumAraSca",
     text_dev              = "कुमारश्च",
+    samagra_slp1          = "kumAraH ca prakftyA pUrvapadam karmaDAraye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "कुमारः च प्रकृत्या पूर्वपदम् कर्मधारये",
     padaccheda_dev        = "कुमारः च",
     why_dev               = "(सूत्रम् 6.2.26) कुमारश्च।",
     anuvritti_from        = ('6.1.1',),

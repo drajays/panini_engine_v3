@@ -4,6 +4,7 @@
 Padaccheda: सर्वत्र ०/० शाकल्यस्य ६/१
 
 सर्वत्र शाकल्यस्य (8.4.51)
+Pāṭha: ashtadhyayi.com data.txt row i=84051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sarvatra SAkalyasya",
     text_dev              = "सर्वत्र शाकल्यस्य",
+    samagra_slp1          = "sarvatra dve na SAkalyasya",
+    samagra_dev           = "सर्वत्र द्वे न शाकल्यस्य",
     padaccheda_dev        = "सर्वत्र ०/० शाकल्यस्य ६/१",
     why_dev               = "(सूत्रम् 8.4.51) सर्वत्र शाकल्यस्य।",
     anuvritti_from        = ('8.1.1',),

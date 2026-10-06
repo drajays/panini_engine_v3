@@ -4,6 +4,7 @@
 Padaccheda: जनि-वध्योः च
 
 जनिवध्योश्च (7.3.35)
+Pāṭha: ashtadhyayi.com data.txt row i=73035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "janivaDyoSca",
     text_dev              = "जनिवध्योश्च",
+    samagra_slp1          = "aNgasya janivaDyoH ca vfdDiH YRiti ciRkftoH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य जनिवध्योः च वृद्धिः ञ्णिति चिण्कृतोः न",
     padaccheda_dev        = "जनि-वध्योः च",
     why_dev               = "(सूत्रम् 7.3.35) जनिवध्योश्च।",
     anuvritti_from        = ('7.1.1',),

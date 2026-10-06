@@ -4,6 +4,7 @@
 Padaccheda: संख्यायाः संज्ञा-सङ्‍घ-सूत्र-अध्ययनेषु
 
 संख्यायाः संज्ञासंघसूत्राध्ययनेषु (5.1.58)
+Pāṭha: ashtadhyayi.com data.txt row i=51058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMKyAyAH saMjYAsaMGasUtrADyayanezu",
     text_dev              = "संख्यायाः संज्ञासंघसूत्राध्ययनेषु",
+    samagra_slp1          = "tat asya parimARam iti saNKyAyAH saMjYA-saMGa-sUtra-aDyayanezu",
+    samagra_dev           = "'तत् अस्य परिमाणम्' (इति) सङ्ख्यायाः संज्ञा-संघ-सूत्र-अध्ययनेषु",
     padaccheda_dev        = "संख्यायाः संज्ञा-सङ्‍घ-सूत्र-अध्ययनेषु",
     why_dev               = "(सूत्रम् 5.1.58) संख्यायाः संज्ञासंघसूत्राध्ययनेषु।",
     anuvritti_from        = ('5.1.19',),

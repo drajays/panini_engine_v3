@@ -4,6 +4,7 @@
 Padaccheda: मतौ च
 
 मतौ च (4.4.136)
+Pāṭha: ashtadhyayi.com data.txt row i=44136 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "matO ca",
     text_dev              = "मतौ च",
+    samagra_slp1          = "matO sahasreRa Candasi saMjYAyAm GaH",
+    samagra_dev           = "मतौ सहस्रेण छन्दसि संज्ञायाम् घः",
     padaccheda_dev        = "मतौ च",
     why_dev               = "(सूत्रम् 4.4.136) मतौ च।",
     anuvritti_from        = ('4.1.1',),

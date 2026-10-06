@@ -4,6 +4,7 @@
 Padaccheda: श्या-आत्-व्यध-आस्रु-संस्रु-अतीण्-अवसा-अवहृ-लिह-श्लिष-श्वसः च
 
 Krt suffix rule from dhatu: श्याऽऽद्व्यधास्रुसंस्र्वतीणवसाऽवहृलिहश्लिषश्वसश्च (141)
+Pāṭha: ashtadhyayi.com data.txt row i=31141 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'SyAdvyaDAsrusaMsrvatIRavasAvahflihaSlizaSvasaSca',
     text_dev              = 'श्याद्व्यधास्रुसंस्र्वतीणवसाऽवहृलिहश्लिषश्वसश्च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH SyA-At-vyaDa-Asru-saMsru-atIR-avasA-avahf-liha-Sliza-SvasaH ca kft anupasargAt RaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः श्या-आत्-व्यध-आस्रु-संस्रु-अतीण्-अवसा-अवहृ-लिह-श्लिष-श्वसः च कृत् अनुपसर्गात् णः",
     padaccheda_dev        = "श्या-आत्-व्यध-आस्रु-संस्रु-अतीण्-अवसा-अवहृ-लिह-श्लिष-श्वसः च",
     why_dev               = "धातोः [श्याऽऽद्व्यधास्रुसंस्र्वतीणवसाऽवहृलिहश्लिषश्वसश्च]-प्रत्ययः विहितः (३.१.141)।",
     anuvritti_from        = ('3.1.1',),

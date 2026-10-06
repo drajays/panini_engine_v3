@@ -4,6 +4,7 @@
 Padaccheda: क्सस्य अचि
 
 क्सस्याचि (7.3.72)
+Pāṭha: ashtadhyayi.com data.txt row i=73072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "ksasyAci",
     text_dev              = "क्सस्याचि",
+    samagra_slp1          = "aNgasya ksasya aci lopaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य क्सस्य अचि लोपः",
     padaccheda_dev        = "क्सस्य अचि",
     why_dev               = "(सूत्रम् 7.3.72) क्सस्याचि।",
     anuvritti_from        = ('7.1.1',),

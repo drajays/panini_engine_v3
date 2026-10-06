@@ -4,6 +4,7 @@
 Padaccheda: आ (लुप्तप्रथमान्तनिर्देशः) सर्वनाम्नः
 
 आ सर्वनाम्नः (6.3.91)
+Pāṭha: ashtadhyayi.com data.txt row i=63091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "A sarvanAmnaH",
     text_dev              = "आ सर्वनाम्नः",
+    samagra_slp1          = "uttarapade A sarvanAmnaH dfk-dfSa-vatuzu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे आ सर्वनाम्नः दृक्-दृश-वतुषु",
     padaccheda_dev        = "आ (लुप्तप्रथमान्तनिर्देशः) सर्वनाम्नः",
     why_dev               = "(सूत्रम् 6.3.91) आ सर्वनाम्नः।",
     anuvritti_from        = ('6.1.1',),

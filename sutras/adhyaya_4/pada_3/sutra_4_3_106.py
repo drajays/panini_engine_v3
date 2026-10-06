@@ -4,6 +4,7 @@
 Padaccheda: शौनक-आदिभ्यः छन्दसि
 
 शौनकादिभ्यश्छन्दसि (4.3.106)
+Pāṭha: ashtadhyayi.com data.txt row i=43106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SOnakAdiByaSCandasi",
     text_dev              = "शौनकादिभ्यश्छन्दसि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA SOnaka-AdiByaH Candasi tena proktam RiniH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा शौनक-आदिभ्यः छन्दसि तेन प्रोक्तम् णिनिः",
     padaccheda_dev        = "शौनक-आदिभ्यः छन्दसि",
     why_dev               = "(सूत्रम् 4.3.106) शौनकादिभ्यश्छन्दसि।",
     anuvritti_from        = ('4.1.1',),

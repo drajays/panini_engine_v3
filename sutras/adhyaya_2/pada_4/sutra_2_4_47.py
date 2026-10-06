@@ -4,6 +4,7 @@
 Padaccheda: सनि च
 
 Also in san (desiderative).
+Pāṭha: ashtadhyayi.com data.txt row i=24047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sani ca",
     text_dev              = "सनि च",
+    samagra_slp1          = "ArDaDAtuke sani ca iRaH a-boDane gamiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके सनि च इणः अ-बोधने गमिः",
     padaccheda_dev        = "सनि च",
     why_dev               = "सनि च (२.४.४७)।",
     anuvritti_from        = ('2.4.46',),

@@ -4,6 +4,7 @@
 Padaccheda: भस्त्रा-आदिभ्यः ष्ठन्
 
 भस्त्राऽऽदिभ्यः ष्ठन् (4.4.16)
+Pāṭha: ashtadhyayi.com data.txt row i=44016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'BastrAdiByaH zWan',
     text_dev              = 'भस्त्रादिभ्यः ष्ठन्',
+    samagra_slp1          = "tena harati iti BastrAdiByaH zWan",
+    samagra_dev           = "'तेन हरति' (इति) भस्त्रादिभ्यः ष्ठन्",
     padaccheda_dev        = "भस्त्रा-आदिभ्यः ष्ठन्",
     why_dev               = "(सूत्रम् 4.4.16) भस्त्राऽऽदिभ्यः ष्ठन्।",
     anuvritti_from        = ('4.1.1',),

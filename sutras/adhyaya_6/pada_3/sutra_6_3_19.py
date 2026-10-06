@@ -4,6 +4,7 @@
 Padaccheda: न इन्-सिद्ध-बध्नातिषु
 
 नेन्सिद्धबध्नातिषु (6.3.19)
+Pāṭha: ashtadhyayi.com data.txt row i=63019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nensidDabaDnAtizu",
     text_dev              = "नेन्सिद्धबध्नातिषु",
+    samagra_slp1          = "alug uttarapade na in-sidDabaDnAtizu saptamyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे न इन्-सिद्धबध्नातिषु सप्तम्याः",
     padaccheda_dev        = "न इन्-सिद्ध-बध्नातिषु",
     why_dev               = "(सूत्रम् 6.3.19) नेन्सिद्धबध्नातिषु।",
     anuvritti_from        = ('6.1.1',),

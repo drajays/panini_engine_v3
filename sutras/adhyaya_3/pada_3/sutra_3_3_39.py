@@ -4,6 +4,7 @@
 Padaccheda: वि-उपयोः शेतेः पर्याये
 
 krt-suffix rule: व्युपयोः शेतेः पर्याये
+Pāṭha: ashtadhyayi.com data.txt row i=33039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vyupayoH SeteH paryAye",
     text_dev              = "व्युपयोः शेतेः पर्याये",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm vi-upayoH SeteH paryAye kft GaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् वि-उपयोः शेतेः पर्याये कृत् घञ्",
     padaccheda_dev        = "वि-उपयोः शेतेः पर्याये",
     why_dev               = "धातोः प्रत्ययः (३.3.39)।",
     anuvritti_from        = ('3.1.1',),

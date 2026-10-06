@@ -13,6 +13,7 @@ We model this as an explicit recipe-armed constructor:
 The subsequent it-prakaraṇa (1.3.2/3/8/9) will delete `u~` and `k` of `zuk`,
 leaving `z` (ष्), and delete `R` of `aR` while recording `R` as it-marker,
 so 7.2.117 can apply vṛddhi (ṇit taddhita).
+Pāṭha: ashtadhyayi.com data.txt row i=43138 (Art. 14).
 """
 from __future__ import annotations
 
@@ -75,6 +76,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='trapujatunoH zuk',
     text_dev='त्रपुजतुनोः षुक्',
+    samagra_slp1="pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA trapu-jatunoH zuk tasya vikAraH avayave aR",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा त्रपु-जतुनोः षुक् तस्य विकारः अवयवे अण्",
     padaccheda_dev="त्रपु-जतु-नोः षुक्",
     why_dev="त्रपु/जतु-शब्दयोः तद्धिते षुक्-आगमः (विकार-अर्थे, अण्-सह)।",
     anuvritti_from=("4.3.134",),

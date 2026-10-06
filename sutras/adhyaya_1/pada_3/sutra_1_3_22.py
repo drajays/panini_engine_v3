@@ -13,6 +13,7 @@ upadesha_slp1 is in _STHA_ROOTS, (c) any tag from _STHA_PREFIXES present on
 that dhātu, and (d) idempotency guard "Atmanepada_1_3_22" absent from meta.
 No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True because no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='samavapraviByaH sTaH',
     text_dev='समवप्रविभ्यः स्थः',
+    samagra_slp1="sam-ava-pra-viByaH sTaH Atmanepadam",
+    samagra_dev="सम्-अव-प्र-विभ्यः स्थः आत्मनेपदम्",
     padaccheda_dev="सम्-अव-प्र-वि-भ्यः (पञ्चमी) / स्थः (षष्ठी)",
     why_dev=(
         "सम्-अव-प्र-वि-पूर्वकस्य स्था-धातोः आत्मनेपदं भवति; "

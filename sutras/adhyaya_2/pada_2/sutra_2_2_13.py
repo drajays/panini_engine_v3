@@ -4,6 +4,7 @@
 Padaccheda: अधिकरण-वाचिना च
 
 Adhikarana-denoting word with tatpurusha.
+Pāṭha: ashtadhyayi.com data.txt row i=22013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDikaraRavAcinA ca",
     text_dev              = "अधिकरणवाचिना च",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH aDikaraRa-vAcinA ca zazWI na ktena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः अधिकरण-वाचिना च षष्ठी न क्तेन",
     padaccheda_dev        = "अधिकरण-वाचिना च",
     why_dev               = "अधिकरण-वाचिना सह तत्पुरुषः (२.२.१३)।",
     anuvritti_from        = ('2.2.1',),

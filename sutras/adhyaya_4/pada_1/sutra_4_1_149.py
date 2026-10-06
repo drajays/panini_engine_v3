@@ -4,6 +4,7 @@
 Padaccheda: फेः छ (लुप्तप्रथमान्तनिर्देशः) च
 
 फेश्छ च (4.1.149)
+Pāṭha: ashtadhyayi.com data.txt row i=41149 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "PeSCa ca",
     text_dev              = "फेश्छ च",
+    samagra_slp1          = "tasya apatyam iti sOvirezu kutsane PeH CaH Wak ca",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) सौविरेषु कुत्सने फेः छः ठक् च",
     padaccheda_dev        = "फेः छ (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 4.1.149) फेश्छ च।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: संख्यायाः स्तनः
 
 संख्यायाः स्तनः (6.2.163)
+Pāṭha: ashtadhyayi.com data.txt row i=62163 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMKyAyAH stanaH",
     text_dev              = "संख्यायाः स्तनः",
+    samagra_slp1          = "uttarapadAdiH antaH saMKyAyAH stanaH bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः संख्यायाः स्तनः बहुव्रीहौ",
     padaccheda_dev        = "संख्यायाः स्तनः",
     why_dev               = "(सूत्रम् 6.2.163) संख्यायाः स्तनः।",
     anuvritti_from        = ('6.1.1',),

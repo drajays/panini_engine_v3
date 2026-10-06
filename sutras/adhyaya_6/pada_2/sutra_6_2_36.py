@@ -4,6 +4,7 @@
 Padaccheda: आचार्य-उपसर्जनः च अन्तेवासी
 
 आचार्योपसर्जनश्चान्तेवासी (6.2.36)
+Pāṭha: ashtadhyayi.com data.txt row i=62036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AcAryopasarjanaScAntevAsI",
     text_dev              = "आचार्योपसर्जनश्चान्तेवासी",
+    samagra_slp1          = "AcAryopasarjanaH ca antevAsI prakftyA pUrvapadam rAjanya-bahuvacana-dvandve",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आचार्योपसर्जनः च अन्तेवासी प्रकृत्या पूर्वपदम् राजन्य-बहुवचन-द्वन्द्वे",
     padaccheda_dev        = "आचार्य-उपसर्जनः च अन्तेवासी",
     why_dev               = "(सूत्रम् 6.2.36) आचार्योपसर्जनश्चान्तेवासी।",
     anuvritti_from        = ('6.1.1',),

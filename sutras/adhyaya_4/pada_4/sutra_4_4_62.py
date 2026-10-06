@@ -4,6 +4,7 @@
 Padaccheda: छत्र-आदिभ्यः णः
 
 छत्रादिभ्यो णः (4.4.62)
+Pāṭha: ashtadhyayi.com data.txt row i=44062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "CatrAdiByo RaH",
     text_dev              = "छत्रादिभ्यो णः",
+    samagra_slp1          = "tadasya SIlam iti CatrAdiByaH RaH",
+    samagra_dev           = "'तदस्य शीलम्' (इति) छत्रादिभ्यः णः",
     padaccheda_dev        = "छत्र-आदिभ्यः णः",
     why_dev               = "(सूत्रम् 4.4.62) छत्रादिभ्यो णः।",
     anuvritti_from        = ('4.1.1',),

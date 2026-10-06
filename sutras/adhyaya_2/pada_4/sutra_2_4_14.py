@@ -4,6 +4,7 @@
 Padaccheda: न दधि-पय-आदीनि
 
 NOT dadhi, payas etc. in dvandva.
+Pāṭha: ashtadhyayi.com data.txt row i=24014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na daDipayaAdIni",
     text_dev              = "न दधिपयआदीनि",
+    samagra_slp1          = "na daDi-paya-AdIni ekavacanam dvandvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "न दधि-पय-आदीनि एकवचनम् द्वन्द्वः",
     padaccheda_dev        = "न दधि-पय-आदीनि",
     why_dev               = "न दधि-पय-आदीनि (२.४.१४)।",
     anuvritti_from        = ('2.4.1',),

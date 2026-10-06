@@ -168,6 +168,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='weH',
     text_dev='टेः',
+    samagra_slp1="Basya weH qiti lopaH",
+    samagra_dev="भस्य टेः डिति लोपः",
     padaccheda_dev="टेः / डिति / परे / टि-लोपः",
     why_dev=(
         "डित्-परे टि-लोपः — *luṭ*-*vikaraṇ*, *kim*+*qati*→*kati*, अथवा प००५-ब *जन्*।"

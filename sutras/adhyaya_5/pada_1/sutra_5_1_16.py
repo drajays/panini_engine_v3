@@ -4,6 +4,7 @@
 Padaccheda: तत् अस्य तत् अस्मिन् स्यात् (क्रियापदम्) इति
 
 तदस्य तदस्मिन् स्यादिति (5.1.16)
+Pāṭha: ashtadhyayi.com data.txt row i=51016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadasya tadasmin syAditi",
     text_dev              = "तदस्य तदस्मिन् स्यादिति",
+    samagra_slp1          = "tat asya syAt iti taTA tat asmin syAt iti iti samarTAnAM praTamAt paraH CaH pratyayaH",
+    samagra_dev           = "'तत् अस्य स्यात् इति' (तथा)  'तत् अस्मिन् स्यात् इति' (इति) समर्थानां प्रथमात् परः छः प्रत्ययः",
     padaccheda_dev        = "तत् अस्य तत् अस्मिन् स्यात् (क्रियापदम्) इति",
     why_dev               = "(सूत्रम् 5.1.16) तदस्य तदस्मिन् स्यादिति।",
     anuvritti_from        = ('5.1.1',),

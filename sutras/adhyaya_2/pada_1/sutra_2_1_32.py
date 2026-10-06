@@ -4,6 +4,7 @@
 Padaccheda: कर्तृ-करणे कृता बहुलम्
 
 karta and karana with kta-suffix form bahula tatpurusha compound.
+Pāṭha: ashtadhyayi.com data.txt row i=21032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kartfkaraRe kftA bahulam",
     text_dev              = "कर्तृकरणे कृता बहुलम्",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH kartf-karaRe kftA bahulam tftIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः कर्तृ-करणे कृता बहुलम् तृतीया",
     padaccheda_dev        = "कर्तृ-करणे कृता बहुलम्",
     why_dev               = "कर्तृ-करणे कृता बहुलं समासः (२.१.३२)।",
     anuvritti_from        = ('2.1.3',),

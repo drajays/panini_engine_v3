@@ -10,6 +10,7 @@ Citation (CONSTITUTION Art. 14)
 
 Engine: reads the lexical identity of the aṅga (idam / adas, as 7.2.94 reads asmad) and the sup's identity
 (Bis). The aka-extended stems (idakam) carry another identity and are untouched.
+Pāṭha: ashtadhyayi.com data.txt row i=71011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -36,6 +37,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.PRATISHEDHA,
     text_slp1="nedamadasorakoH",
     text_dev="नेदमदसोरकोः",
+    samagra_slp1="akoH idam-adasoH BisaH Es na",
+    samagra_dev="अकोः इदम्-अदसोः भिसः ऐस् न",
     padaccheda_dev="न इदम्-अदसोः अकोः",
     why_dev="अक-रहित इदम् / अदस् से परे भिस् को ऐस् नहीं होता (७.१.९ का निषेध): एभिः, अमीभिः।",
     anuvritti_from=("6.4.1",),

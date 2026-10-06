@@ -4,6 +4,7 @@
 Padaccheda: नड-शादात् ड्वलच्
 
 नडशादाड्ड्वलच् (4.2.88)
+Pāṭha: ashtadhyayi.com data.txt row i=42088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "naqaSAdAqqvalac",
     text_dev              = "नडशादाड्ड्वलच्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA naqa-SAdAt qvalac",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा नड-शादात् ड्वलच्",
     padaccheda_dev        = "नड-शादात् ड्वलच्",
     why_dev               = "(सूत्रम् 4.2.88) नडशादाड्ड्वलच्।",
     anuvritti_from        = ('4.1.1',),

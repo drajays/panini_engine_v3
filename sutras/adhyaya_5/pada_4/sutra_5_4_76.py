@@ -4,6 +4,7 @@
 Padaccheda: अक्ष्णः अदर्शनात्
 
 अक्ष्णोऽदर्शनात् (5.4.76)
+Pāṭha: ashtadhyayi.com data.txt row i=54076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'akzRodarSanAt',
     text_dev              = 'अक्ष्णोऽदर्शनात्',
+    samagra_slp1          = "akzRaH adarSanAt ac",
+    samagra_dev           = "अक्ष्णः अदर्शनात् अच्",
     padaccheda_dev        = "अक्ष्णः अदर्शनात्",
     why_dev               = "(सूत्रम् 5.4.76) अक्ष्णोऽदर्शनात्।",
     anuvritti_from        = ('5.4.68',),

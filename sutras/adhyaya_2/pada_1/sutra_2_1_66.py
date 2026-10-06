@@ -4,6 +4,7 @@
 Padaccheda: प्रशंसा-वचनैः च
 
 Praise words (prashamsa-vacana) form karmadharaya compound.
+Pāṭha: ashtadhyayi.com data.txt row i=21066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "praSaMsAvacanESca",
     text_dev              = "प्रशंसावचनैश्च",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH praSaMsA-vacanEH ca samAnADikaraRena jAtiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः प्रशंसा-वचनैः च समानाधिकरणेन जातिः",
     padaccheda_dev        = "प्रशंसा-वचनैः च",
     why_dev               = "प्रशंसा-वचनैश्च कर्मधारयः (२.१.६६)।",
     anuvritti_from        = ('2.1.3',),

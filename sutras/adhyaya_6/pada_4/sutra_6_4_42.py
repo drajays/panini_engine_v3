@@ -4,6 +4,7 @@
 Padaccheda: जन-सन-खनाम् सन्-झलोः
 
 जनसनखनां सञ्झलोः (6.4.42)
+Pāṭha: ashtadhyayi.com data.txt row i=64042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "janasanaKanAM saYJaloH",
     text_dev              = "जनसनखनां सञ्झलोः",
+    samagra_slp1          = "aNgasya asidDavadatrABAt jana-sana-KanAm san-JaloH nalopaH At",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् जन-सन-खनाम् सन्-झलोः नलोपः आत्",
     padaccheda_dev        = "जन-सन-खनाम् सन्-झलोः",
     why_dev               = "(सूत्रम् 6.4.42) जनसनखनां सञ्झलोः।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि घस्
 
 छन्दसि घस् (5.1.106)
+Pāṭha: ashtadhyayi.com data.txt row i=51106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Candasi Gas",
     text_dev              = "छन्दसि घस्",
+    samagra_slp1          = "tat asya prAptam iti ftoH Candasi Gas",
+    samagra_dev           = "'तत्  अस्य प्राप्तम्' (इति) ऋतोः छन्दसि घस्",
     padaccheda_dev        = "छन्दसि घस्",
     why_dev               = "(सूत्रम् 5.1.106) छन्दसि घस्।",
     anuvritti_from        = ('5.1.18',),

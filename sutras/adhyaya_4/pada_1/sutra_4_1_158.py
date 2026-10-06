@@ -4,6 +4,7 @@
 Padaccheda: वाकिन-आदीनाम् कुक् च
 
 वाकिनादीनां कुक् च (4.1.158)
+Pāṭha: ashtadhyayi.com data.txt row i=41158 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vAkinAdInAM kuk ca",
     text_dev              = "वाकिनादीनां कुक् च",
+    samagra_slp1          = "tasya apatyam iti udicAm vAkinAdInAm kuk AgamaH PiY pratyayaH",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) उदिचाम्  वाकिनादीनाम् कुक् (आगमः) फिञ् प्रत्ययः",
     padaccheda_dev        = "वाकिन-आदीनाम् कुक् च",
     why_dev               = "(सूत्रम् 4.1.158) वाकिनादीनां कुक् च।",
     anuvritti_from        = ('4.1.1',),

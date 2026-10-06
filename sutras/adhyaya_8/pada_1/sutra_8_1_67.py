@@ -4,6 +4,7 @@
 Padaccheda: पूजनात् पूजितम् अनुदात्तम् (काष्ठादिभ्यः)
 
 पूजनात् पूजितमनुदात्तम् (काष्ठादिभ्यः) (8.1.67)
+Pāṭha: ashtadhyayi.com data.txt row i=81067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'pUjanAt pUjitamanudAttaM kAzWAdiByaH',
     text_dev              = 'पूजनात् पूजितमनुदात्तं काष्ठादिभ्यः',
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO pUjanAt pUjitam anudAttam kAzWAdiByaH kziyAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ पूजनात् पूजितम् अनुदात्तम् काष्ठादिभ्यः क्षियायाम्",
     padaccheda_dev        = "पूजनात् पूजितम् अनुदात्तम् (काष्ठादिभ्यः)",
     why_dev               = "(सूत्रम् 8.1.67) पूजनात् पूजितमनुदात्तम् (काष्ठादिभ्यः)।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: आतः धातोः
 
 आतो धातोः (6.4.140)
+Pāṭha: ashtadhyayi.com data.txt row i=64140 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Ato DAtoH",
     text_dev              = "आतो धातोः",
+    samagra_slp1          = "AtaH DAtoH Basya lopaH",
+    samagra_dev           = "आतः धातोः भस्य लोपः",
     padaccheda_dev        = "आतः धातोः",
     why_dev               = "(सूत्रम् 6.4.140) आतो धातोः।",
     anuvritti_from        = ('6.1.1',),

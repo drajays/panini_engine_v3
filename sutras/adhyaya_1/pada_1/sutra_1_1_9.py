@@ -84,6 +84,7 @@ See also **1.1.10** (``sutra_1_1_10``) — *nājjhalau* paribhāṣā for *it* i
 **1.1.12** (``sutra_1_1_12``) — *adaso māt* ( *aś* / *etad*–*adas* *it* prakaraṇa);
 **1.1.13** (``sutra_1_1_13``) — *śe* ( *pragṛhya* *prayoga* off in the *aś* / *ś* locus);
 **1.1.14** (``sutra_1_1_14``) *nipāta ekājanāṅ*; **1.1.100** (``sutra_1_1_100``) *Kāśikā* *na mātrā samāse*.
+Pāṭha: ashtadhyayi.com data.txt row i=11009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -137,6 +138,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'tulyAsyaprayatnaM savarRam',
     text_dev       = 'तुल्यास्यप्रयत्नं सवर्णम्',
+    samagra_slp1   = "tulya-Asya-prayatnam savarRam",
+    samagra_dev    = "तुल्य-आस्य-प्रयत्नम् सवर्णम्",
     padaccheda_dev = "तुल्य-आस्य-प्रयत्नम् / सवर्णम्",
     why_dev        = _WHY,
     anuvritti_from = (),

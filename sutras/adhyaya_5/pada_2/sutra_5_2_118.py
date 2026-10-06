@@ -4,6 +4,7 @@
 Padaccheda: एक-गो-पूर्वात् ठञ् नित्यम्
 
 एकगोपूर्वाट्ठञ् नित्यम् (5.2.118)
+Pāṭha: ashtadhyayi.com data.txt row i=52118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ekagopUrvAwWaY nityam",
     text_dev              = "एकगोपूर्वाट्ठञ् नित्यम्",
+    samagra_slp1          = "tat asya asmin astIti iti eka-go-pUrvAt WaY nityam ",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) एक-गो-पूर्वात् ठञ् नित्यम् ।",
     padaccheda_dev        = "एक-गो-पूर्वात् ठञ् नित्यम्",
     why_dev               = "(सूत्रम् 5.2.118) एकगोपूर्वाट्ठञ् नित्यम्।",
     anuvritti_from        = ('4.1.82',),

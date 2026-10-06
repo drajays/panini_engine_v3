@@ -199,6 +199,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'tasya lopaH',
     text_dev       = 'तस्य लोपः',
+    samagra_slp1   = "tasya itaH lopaH",
+    samagra_dev    = "तस्य इतः लोपः",
     padaccheda_dev = "उपदेशे इतस्य लोपः",
     why_dev        = "ये वर्णाः ‘इत्’ संज्ञकाः (१.३.२–१.३.८), तेषां लोपः। "
                      "अयम् एव ध्वनि-अपगमः — संज्ञा-निर्देशो न।",

@@ -4,6 +4,7 @@
 Padaccheda: राजदन्त-आदिषु परम्
 
 In rajadanta etc. the latter member prevails.
+Pāṭha: ashtadhyayi.com data.txt row i=22031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAjadantAdizu param",
     text_dev              = "राजदन्तादिषु परम्",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA rAjadanta-Adizu param upasarjanaM pUrvam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा राजदन्त-आदिषु परम् उपसर्जनं पूर्वम्",
     padaccheda_dev        = "राजदन्त-आदिषु परम्",
     why_dev               = "राजदन्त-आदिषु पूर्वपदं परम् (२.२.३१)।",
     anuvritti_from        = ('2.2.1',),

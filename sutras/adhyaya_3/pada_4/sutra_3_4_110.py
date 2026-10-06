@@ -4,6 +4,7 @@
 Padaccheda: आतः
 
 krt-suffix rule: आतः
+Pāṭha: ashtadhyayi.com data.txt row i=34110 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AtaH",
     text_dev              = "आतः",
+    samagra_slp1          = "AtaH sicaH lugantAt NitaH JeH jus",
+    samagra_dev           = "आतः सिचः (लुगन्तात्) ङितः झेः जुस्",
     padaccheda_dev        = "आतः",
     why_dev               = "धातोः प्रत्ययः (३.4.110)।",
     anuvritti_from        = ('3.1.1',),

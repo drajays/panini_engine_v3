@@ -4,6 +4,7 @@
 Padaccheda: आकालिकट् आद्यन्तवचने
 
 आकालिकडाद्यन्तवचने (5.1.114)
+Pāṭha: ashtadhyayi.com data.txt row i=51114 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AkAlikaqAdyantavacane",
     text_dev              = "आकालिकडाद्यन्तवचने",
+    samagra_slp1          = "Adyantavacane AkAlikaw nipAtyate",
+    samagra_dev           = "आद्यन्तवचने 'आकालिकट्' (निपात्यते)",
     padaccheda_dev        = "आकालिकट् आद्यन्तवचने",
     why_dev               = "(सूत्रम् 5.1.114) आकालिकडाद्यन्तवचने।",
     anuvritti_from        = ('5.1.18',),

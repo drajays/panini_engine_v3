@@ -4,6 +4,7 @@
 Padaccheda: एकः गोत्रे
 
 एको गोत्रे (4.1.93)
+Pāṭha: ashtadhyayi.com data.txt row i=41093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "eko gotre",
     text_dev              = "एको गोत्रे",
+    samagra_slp1          = "gotre ekaH pratyayaH",
+    samagra_dev           = "गोत्रे एकः प्रत्ययः",
     padaccheda_dev        = "एकः गोत्रे",
     why_dev               = "(सूत्रम् 4.1.93) एको गोत्रे।",
     anuvritti_from        = ('4.1.1',),

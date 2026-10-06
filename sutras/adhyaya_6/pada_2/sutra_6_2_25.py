@@ -4,6 +4,7 @@
 Padaccheda: श्र-ज्या-अवम-कन्-पापवत्सु भावे कर्मधारये
 
 श्रज्याऽवमकन्पापवत्सु भावे कर्मधारये (6.2.25)
+Pāṭha: ashtadhyayi.com data.txt row i=62025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'SrajyAvamakanpApavatsu BAve karmaDAraye',
     text_dev              = 'श्रज्याऽवमकन्पापवत्सु भावे कर्मधारये',
+    samagra_slp1          = "Sra-jya-avama-kan-pApavatsu BAve karmaDAraye prakftyA pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "श्र-ज्य-अवम-कन्-पापवत्सु भावे कर्मधारये प्रकृत्या पूर्वपदम्",
     padaccheda_dev        = "श्र-ज्या-अवम-कन्-पापवत्सु भावे कर्मधारये",
     why_dev               = "(सूत्रम् 6.2.25) श्रज्याऽवमकन्पापवत्सु भावे कर्मधारये।",
     anuvritti_from        = ('6.1.1',),

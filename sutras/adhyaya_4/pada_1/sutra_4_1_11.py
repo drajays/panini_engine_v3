@@ -4,6 +4,7 @@
 Padaccheda: मनः
 
 मनः (4.1.11)
+Pāṭha: ashtadhyayi.com data.txt row i=41011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "manaH",
     text_dev              = "मनः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm manaH NIp na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् मनः ङीप् न",
     padaccheda_dev        = "मनः",
     why_dev               = "(सूत्रम् 4.1.11) मनः।",
     anuvritti_from        = ('4.1.1',),

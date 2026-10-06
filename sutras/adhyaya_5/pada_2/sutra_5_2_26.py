@@ -4,6 +4,7 @@
 Padaccheda: तेन वित्तः चुञ्चुप्-चणपौ
 
 तेन वित्तश्चुञ्चुप्चणपौ (5.2.26)
+Pāṭha: ashtadhyayi.com data.txt row i=52026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tena vittaScuYcupcaRapO",
     text_dev              = "तेन वित्तश्चुञ्चुप्चणपौ",
+    samagra_slp1          = "tena vittaH iti cuYcup-caRapO",
+    samagra_dev           = "'तेन वित्तः' (इति) चुञ्चुप्-चणपौ",
     padaccheda_dev        = "तेन वित्तः चुञ्चुप्-चणपौ",
     why_dev               = "(सूत्रम् 5.2.26) तेन वित्तश्चुञ्चुप्चणपौ।",
     anuvritti_from        = ('4.1.82',),

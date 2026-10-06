@@ -4,6 +4,7 @@
 Padaccheda: उपरि-उपरिष्टात्
 
 उपर्युपरिष्टात् (5.3.31)
+Pāṭha: ashtadhyayi.com data.txt row i=53031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uparyuparizwAt",
     text_dev              = "उपर्युपरिष्टात्",
+    samagra_slp1          = "upari-uparizwAt nipAtyete",
+    samagra_dev           = "उपरि-उपरिष्टात् (निपात्येते)",
     padaccheda_dev        = "उपरि-उपरिष्टात्",
     why_dev               = "(सूत्रम् 5.3.31) उपर्युपरिष्टात्।",
     anuvritti_from        = ('4.1.76',),

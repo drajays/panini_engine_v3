@@ -4,6 +4,7 @@
 Padaccheda: सङ्ख्या-एकवचनात् च वीप्सायाम्
 
 संख्यैकवचनाच्च वीप्सायाम् (5.4.43)
+Pāṭha: ashtadhyayi.com data.txt row i=54043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMKyEkavacanAcca vIpsAyAm",
     text_dev              = "संख्यैकवचनाच्च वीप्सायाम्",
+    samagra_slp1          = "saNKyA-ekavacanAt vIpsAyAm kArakAt Sas anyatarasyAm",
+    samagra_dev           = "सङ्ख्या-एकवचनात् वीप्सायाम् कारकात् शस् अन्यतरस्याम्",
     padaccheda_dev        = "सङ्ख्या-एकवचनात् च वीप्सायाम्",
     why_dev               = "(सूत्रम् 5.4.43) संख्यैकवचनाच्च वीप्सायाम्।",
     anuvritti_from        = ('4.1.76',),

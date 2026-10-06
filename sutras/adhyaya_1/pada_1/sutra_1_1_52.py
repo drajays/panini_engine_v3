@@ -11,6 +11,7 @@ Engine policy:
 
 This is a lightweight infrastructure paribhāṣā used for deterministic
 selection; it does not override explicit index targeting in recipes.
+Pāṭha: ashtadhyayi.com data.txt row i=11052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -37,6 +38,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.PARIBHASHA,
     text_slp1      = 'alontyasya',
     text_dev       = 'अलोऽन्त्यस्य',
+    samagra_slp1   = "zazWyAH antyasya alaH",
+    samagra_dev    = "षष्ठ्याः अन्त्यस्य अलः",
     padaccheda_dev = "अलः / अन्त्यस्य",
     why_dev        = "परिभाषा-गेट: अल्-आदेश-प्रसङ्गे अन्त्य-अल्-ग्रहणम्।",
     anuvritti_from = ("1.1.49",),

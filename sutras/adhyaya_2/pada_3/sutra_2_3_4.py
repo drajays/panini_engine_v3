@@ -10,6 +10,7 @@ accusative) is applied to the governed noun.
 Engine: registers the antarā/antareṇa-yukta→dvitīyā gate. ``cond`` checks
 only the gate flag; it never reads vibhakti coordinates (CONSTITUTION Art. 2).
 ``r1_form_identity_exempt=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=23004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'antarAntareRa yukte',
     text_dev              = 'अन्तराऽन्तरेण युक्ते',
+    samagra_slp1          = "anaBihite antarA-antareRa yukte dvitIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते अन्तरा-अन्तरेण युक्ते द्वितीया",
     padaccheda_dev        = "अन्तरा / अन्तरेण / युक्ते",
     why_dev               = (
         "अन्तरा/अन्तरेण-युक्ते द्वितीया-विभक्तिः — "

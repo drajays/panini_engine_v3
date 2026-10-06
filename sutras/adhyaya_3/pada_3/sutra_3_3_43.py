@@ -4,6 +4,7 @@
 Padaccheda: कर्म-व्यतिहारे णच् स्त्रियाम्
 
 krt-suffix rule: कर्मव्यतिहारे णच् स्त्रियाम्
+Pāṭha: ashtadhyayi.com data.txt row i=33043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karmavyatihAre Rac striyAm",
     text_dev              = "कर्मव्यतिहारे णच् स्त्रियाम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm karmavyatihAre Rac striyAm kft GaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् कर्मव्यतिहारे णच् स्त्रियाम् कृत् घञ्",
     padaccheda_dev        = "कर्म-व्यतिहारे णच् स्त्रियाम्",
     why_dev               = "धातोः प्रत्ययः (३.3.43)।",
     anuvritti_from        = ('3.1.1',),

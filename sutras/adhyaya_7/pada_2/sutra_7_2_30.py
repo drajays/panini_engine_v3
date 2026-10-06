@@ -4,6 +4,7 @@
 Padaccheda: अपचितः च
 
 अपचितश्च (7.2.30)
+Pāṭha: ashtadhyayi.com data.txt row i=72030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "apacitaSca",
     text_dev              = "अपचितश्च",
+    samagra_slp1          = "aNgasya apacitaH ca na iw nizWAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अपचितः च न इट् निष्ठायाम्",
     padaccheda_dev        = "अपचितः च",
     why_dev               = "(सूत्रम् 7.2.30) अपचितश्च।",
     anuvritti_from        = ('7.1.1',),

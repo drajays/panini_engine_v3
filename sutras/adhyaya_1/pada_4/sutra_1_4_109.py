@@ -5,6 +5,7 @@ Padaccheda: परः १/१ सन्निकर्षः १/१ संह�
 
 Extreme proximity (para-sannikarsah) of sounds is called samhita
 (sandhi context). This is the foundational definition for sandhi rules.
+Pāṭha: ashtadhyayi.com data.txt row i=14109 (Art. 14).
 """
 from __future__ import annotations
 
@@ -29,6 +30,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = 'paraH sannikarzaH saMhitA',
     text_dev              = 'परः सन्निकर्षः संहिता',
+    samagra_slp1          = "paraH sannikarzaH saMhitA",
+    samagra_dev           = "परः सन्निकर्षः संहिता",
     padaccheda_dev        = "परः १/१ सन्निकर्षः १/१ संहिता १/१",
     why_dev               = "परः सन्निकर्षः (अत्यन्त-सामीप्यम्) संहिता-संज्ञा (१.४.१०९)।",
     anuvritti_from        = (),

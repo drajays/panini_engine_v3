@@ -4,6 +4,7 @@
 Padaccheda: मुचः अकर्मकस्य गुणः वा
 
 मुचोऽकर्मकस्य गुणो वा (7.4.57)
+Pāṭha: ashtadhyayi.com data.txt row i=74057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'mucokarmakasya guRo vA',
     text_dev              = 'मुचोऽकर्मकस्य गुणो वा',
+    samagra_slp1          = "aNgasya mucaH akarmakasya guRaH vA si sani",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य मुचः अकर्मकस्य गुणः वा सि सनि",
     padaccheda_dev        = "मुचः अकर्मकस्य गुणः वा",
     why_dev               = "(सूत्रम् 7.4.57) मुचोऽकर्मकस्य गुणो वा।",
     anuvritti_from        = ('7.1.1',),

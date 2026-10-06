@@ -4,6 +4,7 @@
 Padaccheda: विंशतिकात् खः
 
 विंशतिकात् खः (5.1.32)
+Pāṭha: ashtadhyayi.com data.txt row i=51032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viMSatikAt KaH",
     text_dev              = "विंशतिकात् खः",
+    samagra_slp1          = "A-arhAt viMSatikAt aDyarDapUrvadvigoH KaH",
+    samagra_dev           = "आ-अर्हात् विंशतिकात् अध्यर्धपूर्वद्विगोः खः",
     padaccheda_dev        = "विंशतिकात् खः",
     why_dev               = "(सूत्रम् 5.1.32) विंशतिकात् खः।",
     anuvritti_from        = ('5.1.19',),

@@ -4,6 +4,7 @@
 Padaccheda: अकृच्छ्रे प्रिय-सुखयोः अन्यतरस्याम्
 
 अकृच्छ्रे प्रियसुखयोरन्यतरस्याम् (8.1.13)
+Pāṭha: ashtadhyayi.com data.txt row i=81013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "akfcCre priyasuKayoranyatarasyAm",
     text_dev              = "अकृच्छ्रे प्रियसुखयोरन्यतरस्याम्",
+    samagra_slp1          = "sarvasya dve akfcCre priyasuKayoH anyatarasyAm karmaDArayavat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सर्वस्य द्वे अकृच्छ्रे प्रियसुखयोः अन्यतरस्याम् कर्मधारयवत्",
     padaccheda_dev        = "अकृच्छ्रे प्रिय-सुखयोः अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 8.1.13) अकृच्छ्रे प्रियसुखयोरन्यतरस्याम्।",
     anuvritti_from        = ('8.1.1',),

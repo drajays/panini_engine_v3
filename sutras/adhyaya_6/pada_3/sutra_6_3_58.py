@@ -4,6 +4,7 @@
 Padaccheda: पेषं-वास-वाहन-धिषु च
 
 पेषंवासवाहनधिषु च (6.3.58)
+Pāṭha: ashtadhyayi.com data.txt row i=63058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pezaMvAsavAhanaDizu ca",
     text_dev              = "पेषंवासवाहनधिषु च",
+    samagra_slp1          = "uttarapade pezam-vAsa-vAhana-Dizu ca treH udakasya udaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे पेषम्-वास-वाहन-धिषु च त्रेः उदकस्य उदः",
     padaccheda_dev        = "पेषं-वास-वाहन-धिषु च",
     why_dev               = "(सूत्रम् 6.3.58) पेषंवासवाहनधिषु च।",
     anuvritti_from        = ('6.1.1',),

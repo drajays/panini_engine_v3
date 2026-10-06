@@ -4,6 +4,7 @@
 Padaccheda: तदः दा च
 
 तदो दा च (5.3.19)
+Pāṭha: ashtadhyayi.com data.txt row i=53019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tado dA ca",
     text_dev              = "तदो दा च",
+    samagra_slp1          = "tadaH saptamyAH kAle dA dAnIm ca",
+    samagra_dev           = "तदः सप्तम्याः काले दा, दानीम् च",
     padaccheda_dev        = "तदः दा च",
     why_dev               = "(सूत्रम् 5.3.19) तदो दा च।",
     anuvritti_from        = ('5.3.2',),

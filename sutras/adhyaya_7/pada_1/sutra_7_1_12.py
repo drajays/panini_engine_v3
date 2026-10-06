@@ -147,6 +147,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'wANasiNasAminAtsyAH',
     text_dev       = 'टाङसिङसामिनात्स्याः',
+    samagra_slp1   = "ataH aNgAt wA-Nasi-NasAm ina-At-syAH",
+    samagra_dev    = "अतः अङ्गात् टा-ङसि-ङसाम् इन-आत्-स्याः",
     padaccheda_dev = "टा-ङसि-ङसाम् इन-आत्-स्याः",
     why_dev        = "अदन्त-अङ्गात् परेषां टा/ङसि/ङसाम् क्रमेण "
                      "इन/आत्/स्य-आदेशाः भवन्ति।",

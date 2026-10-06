@@ -4,6 +4,7 @@
 Padaccheda: पूर्व-पदात्
 
 पूर्वपदात् (8.3.106)
+Pāṭha: ashtadhyayi.com data.txt row i=83106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUrvapadAt",
     text_dev              = "पूर्वपदात्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH pUrvapadAt saH ekezAm Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः पूर्वपदात् सः एकेषाम् छन्दसि",
     padaccheda_dev        = "पूर्व-पदात्",
     why_dev               = "(सूत्रम् 8.3.106) पूर्वपदात्।",
     anuvritti_from        = ('8.1.1',),

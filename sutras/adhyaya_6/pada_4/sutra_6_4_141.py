@@ -4,6 +4,7 @@
 Padaccheda: मन्त्रेषु आङि आदेः आत्मनः
 
 मन्त्रेष्वाङ्यादेरात्मनः (6.4.141)
+Pāṭha: ashtadhyayi.com data.txt row i=64141 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mantrezvANyAderAtmanaH",
     text_dev              = "मन्त्रेष्वाङ्यादेरात्मनः",
+    samagra_slp1          = "aNgasya asidDavadatrABAt Basya mantrezu ANi AdeH AtmanaH at-lopaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् भस्य मन्त्रेषु आङि आदेः आत्मनः अत्-लोपः",
     padaccheda_dev        = "मन्त्रेषु आङि आदेः आत्मनः",
     why_dev               = "(सूत्रम् 6.4.141) मन्त्रेष्वाङ्यादेरात्मनः।",
     anuvritti_from        = ('6.1.1',),

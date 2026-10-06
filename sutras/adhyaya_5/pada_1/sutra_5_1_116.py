@@ -4,6 +4,7 @@
 Padaccheda: तत्र तस्य इव
 
 तत्र तस्येव (5.1.116)
+Pāṭha: ashtadhyayi.com data.txt row i=51116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tatra tasyeva",
     text_dev              = "तत्र तस्येव",
+    samagra_slp1          = "tatra tasya iva iti vatiH",
+    samagra_dev           = "'तत्र, तस्य इव' (इति) वतिः",
     padaccheda_dev        = "तत्र तस्य इव",
     why_dev               = "(सूत्रम् 5.1.116) तत्र तस्येव।",
     anuvritti_from        = ('4.1.82',),

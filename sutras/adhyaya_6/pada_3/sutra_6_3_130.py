@@ -4,6 +4,7 @@
 Padaccheda: मित्रे च ऋषौ
 
 मित्रे चर्षौ (6.3.130)
+Pāṭha: ashtadhyayi.com data.txt row i=63130 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mitre carzO",
     text_dev              = "मित्रे चर्षौ",
+    samagra_slp1          = "uttarapade saMhitAyAm mitre ca fzO dIrGaH viSvasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् मित्रे च ऋषौ दीर्घः विश्वस्य",
     padaccheda_dev        = "मित्रे च ऋषौ",
     why_dev               = "(सूत्रम् 6.3.130) मित्रे चर्षौ।",
     anuvritti_from        = ('6.1.1',),

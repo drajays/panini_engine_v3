@@ -9,6 +9,7 @@ Engine role (narrow):
   It does not perform a phonemic rewrite, nor does it install a gate needed
   elsewhere in v3.  We therefore model it as ANUVADA: it records an audit step
   once per derivation.
+Pāṭha: ashtadhyayi.com data.txt row i=11068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -30,6 +31,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.ANUVADA,
     text_slp1='svaM rUpaM SabdasyASabdasaMjYA',
     text_dev='स्वं रूपं शब्दस्याशब्दसंज्ञा',
+    samagra_slp1="aSabdasaMjYA Sabdasya svaM rUpam",
+    samagra_dev="अशब्दसंज्ञा शब्दस्य स्वं रूपम्",
     padaccheda_dev="स्वम् / रूपम् / शब्दस्य / अशब्द-संज्ञा",
     why_dev="शब्दः स्व-रूप-पर्यायः (अशब्द-संज्ञा-अपवादः) — डेमो-आडिट्।",
     anuvritti_from=(),

@@ -15,6 +15,7 @@ an explicit marker. The vibhāṣā (option) means parasmaipada is also valid.
 stamp "Atmanepada_vibhASA_1_3_77" is absent, (c) any dhātu Term carries the
 tag "upapada_pratIyamAne_usage". No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     vibhasha_default=True,
     text_slp1='viBAzopapadena pratIyamAne',
     text_dev='विभाषोपपदेन प्रतीयमाने',
+    samagra_slp1="viBAzA upapadena pratIyamAne Atmanepadam kartraBiprAye kriyAPale",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="विभाषा उपपदेन प्रतीयमाने आत्मनेपदम् कर्त्रभिप्राये क्रियाफले",
     padaccheda_dev=(
         "विभाषा (प्रथमा-एकवचन) / उपापदेन (तृतीया-एकवचन) "
         "/ प्रतीयमाने (सप्तमी-एकवचन)"

@@ -4,6 +4,7 @@
 Padaccheda: उप-उत्तमम् रिति
 
 उपोत्तमं रिति (6.1.217)
+Pāṭha: ashtadhyayi.com data.txt row i=61217 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upottamaM riti",
     text_dev              = "उपोत्तमं रिति",
+    samagra_slp1          = "riti upottamamudAttaH",
+    samagra_dev           = "रिति उपोत्तममुदात्तः",
     padaccheda_dev        = "उप-उत्तमम् रिति",
     why_dev               = "(सूत्रम् 6.1.217) उपोत्तमं रिति।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: तुन्दि-वलि-वटेः भः
 
 तुन्दिवलिवटेर्भः (5.2.139)
+Pāṭha: ashtadhyayi.com data.txt row i=52139 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tundivalivawerBaH",
     text_dev              = "तुन्दिवलिवटेर्भः",
+    samagra_slp1          = "tat asya asmin astIti iti tundi-vali-vaweH BaH",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) तुन्दि-वलि-वटेः भः",
     padaccheda_dev        = "तुन्दि-वलि-वटेः भः",
     why_dev               = "(सूत्रम् 5.2.139) तुन्दिवलिवटेर्भः।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: दिवः अविजिगीषायाम्
 
 दिवोऽविजिगीषायाम् (8.2.49)
+Pāṭha: ashtadhyayi.com data.txt row i=82049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'divovijigIzAyAm',
     text_dev              = 'दिवोऽविजिगीषायाम्',
+    samagra_slp1          = "padasya pUrvatrAsidDam divaH avijigIzAyAm nizWAtaH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् दिवः अविजिगीषायाम् निष्ठातः नः",
     padaccheda_dev        = "दिवः अविजिगीषायाम्",
     why_dev               = "(सूत्रम् 8.2.49) दिवोऽविजिगीषायाम्।",
     anuvritti_from        = ('8.1.1',),

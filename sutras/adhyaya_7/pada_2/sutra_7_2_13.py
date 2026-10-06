@@ -7,6 +7,7 @@ Special iṭ-agama privilege for the kṛsṛ… dhātus in liṭ context.
 The "liṭi" context is structurally detected via the "abhyasa" tag: after
 6.1.8 dvitva (liṭ-specific), an abhyāsa-tagged Term is on the tape.
 The dhātu is checked by its post-lopa upadesha_slp1 root.
+Pāṭha: ashtadhyayi.com data.txt row i=72013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -73,6 +74,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kfsfBfvfstudrusruSruvo liwi",
     text_dev              = "कृसृभृवृस्तुद्रुस्रुश्रुवो लिटि",
+    samagra_slp1          = "aNgasya kfsfBfvfstudrusruSruvaH liwi na iw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य कृसृभृवृस्तुद्रुस्रुश्रुवः लिटि न इट्",
     padaccheda_dev        = "कृ-सृ-भृ-वृ-स्तु-द्रु-स्रु-श्रुवः लिटि",
     why_dev               = "(सूत्रम् 7.2.13) कृसृभृवृस्तुद्रुस्रुश्रुवो लिटि।",
     anuvritti_from        = ('7.1.1',),

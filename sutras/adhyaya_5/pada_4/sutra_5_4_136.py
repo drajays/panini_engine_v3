@@ -4,6 +4,7 @@
 Padaccheda: अल्पाख्यायाम्
 
 अल्पाख्यायाम् (5.4.136)
+Pāṭha: ashtadhyayi.com data.txt row i=54136 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "alpAKyAyAm",
     text_dev              = "अल्पाख्यायाम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA alpAKyAyAm bahuvrIhO ganDasya it",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा अल्पाख्यायाम् बहुव्रीहौ गन्धस्य इत्",
     padaccheda_dev        = "अल्पाख्यायाम्",
     why_dev               = "(सूत्रम् 5.4.136) अल्पाख्यायाम्।",
     anuvritti_from        = ('5.4.68',),

@@ -4,6 +4,7 @@
 Padaccheda: तुः छन्दसि
 
 तुश्छन्दसि (5.3.59)
+Pāṭha: ashtadhyayi.com data.txt row i=53059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tuSCandasi",
     text_dev              = "तुश्छन्दसि",
+    samagra_slp1          = "Candasi tuH atiSAyane ajAdiH",
+    samagra_dev           = "छन्दसि  तुः अतिशायने अजादिः",
     padaccheda_dev        = "तुः छन्दसि",
     why_dev               = "(सूत्रम् 5.3.59) तुश्छन्दसि।",
     anuvritti_from        = ('4.1.76',),

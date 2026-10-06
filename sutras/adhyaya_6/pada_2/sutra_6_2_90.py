@@ -4,6 +4,7 @@
 Padaccheda: अर्मे च अवर्णम् द्वि-अच् त्रि-अच्
 
 अर्मे चावर्णं द्व्यच्त्र्यच् (6.2.90)
+Pāṭha: ashtadhyayi.com data.txt row i=62090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "arme cAvarRaM dvyactryac",
     text_dev              = "अर्मे चावर्णं द्व्यच्त्र्यच्",
+    samagra_slp1          = "AdiH udAttaH arme ca avarRam dvyac tryac pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः अर्मे च अवर्णम् द्व्यच् त्र्यच् पूर्वपदम्",
     padaccheda_dev        = "अर्मे च अवर्णम् द्वि-अच् त्रि-अच्",
     why_dev               = "(सूत्रम् 6.2.90) अर्मे चावर्णं द्व्यच्त्र्यच्।",
     anuvritti_from        = ('6.1.1',),

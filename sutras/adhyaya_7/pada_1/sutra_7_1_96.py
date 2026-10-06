@@ -4,6 +4,7 @@
 Padaccheda: स्त्रियाम् च
 
 स्त्रियां च (7.1.96)
+Pāṭha: ashtadhyayi.com data.txt row i=71096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "striyAM ca",
     text_dev              = "स्त्रियां च",
+    samagra_slp1          = "striyAM krozwu tfjvat",
+    samagra_dev           = "स्त्रियां क्रोष्टु तृज्वत्",
     padaccheda_dev        = "स्त्रियाम् च",
     why_dev               = "(सूत्रम् 7.1.96) स्त्रियां च।",
     anuvritti_from        = ('7.1.1',),

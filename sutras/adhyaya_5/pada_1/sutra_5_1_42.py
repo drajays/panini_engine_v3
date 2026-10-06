@@ -4,6 +4,7 @@
 Padaccheda: तस्य ईश्वरः
 
 तस्येश्वरः (5.1.42)
+Pāṭha: ashtadhyayi.com data.txt row i=51042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tasyeSvaraH",
     text_dev              = "तस्येश्वरः",
+    samagra_slp1          = "tasya ISvaraH iti sarvaBUmipfTivIByAmaRaYO",
+    samagra_dev           = "तस्य ईश्वरः (इति) सर्वभूमिपृथिवीभ्यामणञौ",
     padaccheda_dev        = "तस्य ईश्वरः",
     why_dev               = "(सूत्रम् 5.1.42) तस्येश्वरः।",
     anuvritti_from        = ('5.1.19',),

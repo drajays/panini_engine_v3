@@ -4,6 +4,7 @@
 Padaccheda: यस्य च भावेन भाव-लक्षणम्
 
 When the being of one marks the being of another, sasthi.
+Pāṭha: ashtadhyayi.com data.txt row i=23037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yasya ca BAvena BAvalakzaRam",
     text_dev              = "यस्य च भावेन भावलक्षणम्",
+    samagra_slp1          = "anaBihite yasya ca BAvena BAva-lakzaRam saptamI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते यस्य च भावेन भाव-लक्षणम् सप्तमी",
     padaccheda_dev        = "यस्य च भावेन भाव-लक्षणम्",
     why_dev               = "यस्य च भावेन भाव-लक्षणम् (२.३.३७)।",
     anuvritti_from        = ('2.3.36',),

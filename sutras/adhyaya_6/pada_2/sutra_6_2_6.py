@@ -4,6 +4,7 @@
 Padaccheda: प्रतिबन्धि चिर-कृच्छ्रयोः
 
 प्रतिबन्धि चिरकृच्छ्रयोः (6.2.6)
+Pāṭha: ashtadhyayi.com data.txt row i=62006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pratibanDi cirakfcCrayoH",
     text_dev              = "प्रतिबन्धि चिरकृच्छ्रयोः",
+    samagra_slp1          = "pratibanDi cira-kfcCrayoH prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रतिबन्धि चिर-कृच्छ्रयोः प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "प्रतिबन्धि चिर-कृच्छ्रयोः",
     why_dev               = "(सूत्रम् 6.2.6) प्रतिबन्धि चिरकृच्छ्रयोः।",
     anuvritti_from        = ('6.1.1',),

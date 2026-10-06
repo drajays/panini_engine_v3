@@ -4,6 +4,7 @@
 Padaccheda: भस्त्रा-एषा-अजा-ज्ञा-द्वा-स्वाः (षष्ठ्यर्थे प्रथमा) नञ्-पूर्वाणाम् अपि
 
 भस्त्रैषाऽजाज्ञाद्वास्वानञ्पूर्वाणामपि (7.3.47)
+Pāṭha: ashtadhyayi.com data.txt row i=73047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'BastrEzAjAjYAdvAsvAnaYpUrvARAmapi',
     text_dev              = 'भस्त्रैषाऽजाज्ञाद्वास्वानञ्पूर्वाणामपि',
+    samagra_slp1          = "aNgasya BastrEzAjAjYAdvAsvAH naYpUrvARAm api it ataH udIcAm AtaH sTAne",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य भस्त्रैषाऽजाज्ञाद्वास्वाः नञ्पूर्वाणाम् अपि इत् अतः उदीचाम् आतः स्थाने",
     padaccheda_dev        = "भस्त्रा-एषा-अजा-ज्ञा-द्वा-स्वाः (षष्ठ्यर्थे प्रथमा) नञ्-पूर्वाणाम् अपि",
     why_dev               = "(सूत्रम् 7.3.47) भस्त्रैषाऽजाज्ञाद्वास्वानञ्पूर्वाणामपि।",
     anuvritti_from        = ('7.1.1',),

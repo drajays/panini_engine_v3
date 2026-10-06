@@ -4,6 +4,7 @@
 Padaccheda: सर्वदेवात् तातिल्
 
 सर्वदेवात् तातिल् (4.4.142)
+Pāṭha: ashtadhyayi.com data.txt row i=44142 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sarvadevAt tAtil",
     text_dev              = "सर्वदेवात् तातिल्",
+    samagra_slp1          = "sarvadevAt Candasi saMjYAyAm tAtil",
+    samagra_dev           = "सर्वदेवात् छन्दसि संज्ञायाम् तातिल्",
     padaccheda_dev        = "सर्वदेवात् तातिल्",
     why_dev               = "(सूत्रम् 4.4.142) सर्वदेवात् तातिल्।",
     anuvritti_from        = ('4.1.1',),

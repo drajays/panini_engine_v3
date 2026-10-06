@@ -4,6 +4,7 @@
 Padaccheda: सप्तनः अञ् छन्दसि
 
 सप्तनोऽञ् छन्दसि (5.1.61)
+Pāṭha: ashtadhyayi.com data.txt row i=51061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'saptanoY Candasi',
     text_dev              = 'सप्तनोऽञ् छन्दसि',
+    samagra_slp1          = "tat asya parimARam iti varge saptanaH Candasi aY",
+    samagra_dev           = "'तत् अस्य परिमाणम्' (इति) वर्गे सप्तनः छन्दसि अञ्",
     padaccheda_dev        = "सप्तनः अञ् छन्दसि",
     why_dev               = "(सूत्रम् 5.1.61) सप्तनोऽञ् छन्दसि।",
     anuvritti_from        = ('5.1.19',),

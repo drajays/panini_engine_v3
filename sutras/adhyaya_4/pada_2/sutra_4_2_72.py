@@ -4,6 +4,7 @@
 Padaccheda: मतोः च बहु-अच्-अङ्गात्
 
 मतोश्च बह्वजङ्गात् (4.2.72)
+Pāṭha: ashtadhyayi.com data.txt row i=42072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "matoSca bahvajaNgAt",
     text_dev              = "मतोश्च बह्वजङ्गात्",
+    samagra_slp1          = "bahvajaNgAt matoH tadasminnastIti deSe tannAmni tena nirvfttam tasya nivAsaH adUraBavaSca iti prAgdIvyatIyaH pratyayaH aY",
+    samagra_dev           = "बह्वजङ्गात् मतोः 'तदस्मिन्नस्तीति देशे तन्नाम्नि, तेन निर्वृत्तम्, तस्य निवासः, अदूरभवश्च' (इति) प्राग्दीव्यतीयः प्रत्ययः अञ्",
     padaccheda_dev        = "मतोः च बहु-अच्-अङ्गात्",
     why_dev               = "(सूत्रम् 4.2.72) मतोश्च बह्वजङ्गात्।",
     anuvritti_from        = ('4.1.1',),

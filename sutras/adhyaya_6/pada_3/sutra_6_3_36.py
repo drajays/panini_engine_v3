@@ -4,6 +4,7 @@
 Padaccheda: क्यङ्-मानिनोः च
 
 क्यङ्मानिनोश्च (6.3.36)
+Pāṭha: ashtadhyayi.com data.txt row i=63036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kyaNmAninoSca",
     text_dev              = "क्यङ्मानिनोश्च",
+    samagra_slp1          = "uttarapade kyaN-mAninoH ca striyAH puMvat anUN BAzitapu~skAd",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे क्यङ्-मानिनोः च स्त्रियाः पुंवत् अनूङ् भाषितपुँस्काद्",
     padaccheda_dev        = "क्यङ्-मानिनोः च",
     why_dev               = "(सूत्रम् 6.3.36) क्यङ्मानिनोश्च।",
     anuvritti_from        = ('6.1.1',),

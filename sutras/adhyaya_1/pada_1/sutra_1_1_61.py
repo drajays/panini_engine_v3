@@ -54,6 +54,7 @@ sūtras (e.g. **1.3.9**, **2.4.71**, **4.3.166**, …).
    → the surviving stem *pañcāla-* takes **plural** like the tribal name in usage
    (*pañcālāḥ janapadaḥ*), though *janapada-* itself is notionally singular in the
    construction.  Other *lup* sites include **4.3.166** *lup ca* on *aṇ*, etc.
+Pāṭha: ashtadhyayi.com data.txt row i=11061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -103,6 +104,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'pratyayasya lukSlulupaH',
     text_dev       = 'प्रत्ययस्य लुक्श्लुलुपः',
+    samagra_slp1   = "pratyayasya adarSanam luk-Slu-lupaH",
+    samagra_dev    = "प्रत्ययस्य अदर्शनम् लुक्-श्लु-लुपः",
     padaccheda_dev = (
         "प्रत्ययस्य (षष्ठी-एकवचनम्) / अदर्शनम् (अन्वा. १.१.६०) / "
         "लुक्-श्लु-लुपः (प्रथमा-बहुवचनम्)"

@@ -4,6 +4,7 @@
 Padaccheda: पोः अत्-उपधात्
 
 Krt suffix rule from dhatu: पोरदुपधात् (98)
+Pāṭha: ashtadhyayi.com data.txt row i=31098 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "poradupaDAt",
     text_dev              = "पोरदुपधात्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH poH adupaDAt kft yat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः पोः अदुपधात् कृत् यत्",
     padaccheda_dev        = "पोः अत्-उपधात्",
     why_dev               = "धातोः [पोरदुपधात्]-प्रत्ययः विहितः (३.१.98)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

@@ -27,6 +27,7 @@ For v3.1 coverage we use trigger set {y, v, r, l, B, n}.  This is a
 simplification (real 7.3.102 is governed by yañādi + 7.3.103/104
 exceptions); we honour that by marking the meta field 'aNga_dirgha_done'
 so the rule is idempotent.
+Pāṭha: ashtadhyayi.com data.txt row i=73102 (Art. 14).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.gates  import adhikara_in_effect
@@ -92,6 +93,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'supi ca',
     text_dev       = 'सुपि च',
+    samagra_slp1   = "ataH aNgasya yaYi supi dIrGaH",
+    samagra_dev    = "अतः अङ्गस्य यञि सुपि दीर्घः",
     padaccheda_dev = "सुपि च — अङ्गस्य अतः",
     why_dev        = "यञादि-सुप्-प्रत्यये परे अदन्त-अङ्गस्य अन्त्य-अ-कारस्य "
                      "दीर्घः आ-कारः भवति।",

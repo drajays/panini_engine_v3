@@ -4,6 +4,7 @@
 Padaccheda: न नञ्-पूर्वात् तत्पुरुषात् अचतुर-संगत-लवण-वट-युध-कत-रस-लसेभ्यः
 
 न नञ्पूर्वात्तत्पुरुषादचतुरसंगतलवणवटयुधकतरसलसेभ्यः (5.1.121)
+Pāṭha: ashtadhyayi.com data.txt row i=51121 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na naYpUrvAttatpuruzAdacaturasaMgatalavaRavawayuDakatarasalaseByaH",
     text_dev              = "न नञ्पूर्वात्तत्पुरुषादचतुरसंगतलवणवटयुधकतरसलसेभ्यः",
+    samagra_slp1          = "tasya BAvaH iti tva-talO A tvAt ca  a-catura-saMgata-lavaRa-vawa-yuDa-kata-rasa-laseByaH naYpUrvAt tatpuruzAt na",
+    samagra_dev           = "'तस्य भावः' (इति) त्व-तलौ आ त्वात् च , अ-चतुर-संगत-लवण-वट-युध-कत-रस-लसेभ्यः नञ्पूर्वात् तत्पुरुषात् न",
     padaccheda_dev        = "न नञ्-पूर्वात् तत्पुरुषात् अचतुर-संगत-लवण-वट-युध-कत-रस-लसेभ्यः",
     why_dev               = "(सूत्रम् 5.1.121) न नञ्पूर्वात्तत्पुरुषादचतुरसंगतलवणवटयुधकतरसलसेभ्यः।",
     anuvritti_from        = ('5.1.120',),

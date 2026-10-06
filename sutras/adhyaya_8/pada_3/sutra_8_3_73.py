@@ -4,6 +4,7 @@
 Padaccheda: वेः स्कन्देः अ-निष्ठायाम्
 
 वेः स्कन्देरनिष्ठायाम् (8.3.73)
+Pāṭha: ashtadhyayi.com data.txt row i=83073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "veH skanderanizWAyAm",
     text_dev              = "वेः स्कन्देरनिष्ठायाम्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH veH skandeH anizWAyAm saH upasargAt vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः वेः स्कन्देः अनिष्ठायाम् सः उपसर्गात् वा",
     padaccheda_dev        = "वेः स्कन्देः अ-निष्ठायाम्",
     why_dev               = "(सूत्रम् 8.3.73) वेः स्कन्देरनिष्ठायाम्।",
     anuvritti_from        = ('8.1.1',),

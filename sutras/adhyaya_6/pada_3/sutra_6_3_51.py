@@ -4,6 +4,7 @@
 Padaccheda: वा शोक-ष्यञ्-रोगेषु
 
 वा शोकष्यञ्रोगेषु (6.3.51)
+Pāṭha: ashtadhyayi.com data.txt row i=63051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA SokazyaYrogezu",
     text_dev              = "वा शोकष्यञ्रोगेषु",
+    samagra_slp1          = "uttarapade vA Soka-zyaY-rogezu treH hfdayasya leKa-yat-aR-lAsezu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे वा शोक-ष्यञ्-रोगेषु त्रेः हृदयस्य लेख-यत्-अण्-लासेषु",
     padaccheda_dev        = "वा शोक-ष्यञ्-रोगेषु",
     why_dev               = "(सूत्रम् 6.3.51) वा शोकष्यञ्रोगेषु।",
     anuvritti_from        = ('6.1.1',),

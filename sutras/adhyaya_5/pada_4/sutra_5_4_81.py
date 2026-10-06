@@ -4,6 +4,7 @@
 Padaccheda: अनु-अव-तप्तात् रहसः
 
 अन्ववतप्ताद्रहसः (5.4.81)
+Pāṭha: ashtadhyayi.com data.txt row i=54081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anvavataptAdrahasaH",
     text_dev              = "अन्ववतप्ताद्रहसः",
+    samagra_slp1          = "anu-ava-taptAt rahasaH ac",
+    samagra_dev           = "अनु-अव-तप्तात् रहसः अच्",
     padaccheda_dev        = "अनु-अव-तप्तात् रहसः",
     why_dev               = "(सूत्रम् 5.4.81) अन्ववतप्ताद्रहसः।",
     anuvritti_from        = ('5.4.68',),

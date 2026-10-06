@@ -4,6 +4,7 @@
 Padaccheda: पुष्कर-आदिभ्यः देशे
 
 पुष्करादिभ्यो देशे (5.2.135)
+Pāṭha: ashtadhyayi.com data.txt row i=52135 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "puzkarAdiByo deSe",
     text_dev              = "पुष्करादिभ्यो देशे",
+    samagra_slp1          = "tat asya asmin astIti iti puzkarAdiByaH deSe iniH",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) पुष्करादिभ्यः देशे इनिः",
     padaccheda_dev        = "पुष्कर-आदिभ्यः देशे",
     why_dev               = "(सूत्रम् 5.2.135) पुष्करादिभ्यो देशे।",
     anuvritti_from        = ('4.1.82',),

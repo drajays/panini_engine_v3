@@ -4,6 +4,7 @@
 Padaccheda: षष्ठी अतस्-अर्थ-प्रत्ययेन
 
 Sasthi with atas-artha pratyaya.
+Pāṭha: ashtadhyayi.com data.txt row i=23030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zazWyatasarTapratyayena",
     text_dev              = "षष्ठ्यतसर्थप्रत्ययेन",
+    samagra_slp1          = "anaBihite zazWI atasarTa-pratyayena paYcamI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते षष्ठी अतसर्थ-प्रत्ययेन पञ्चमी",
     padaccheda_dev        = "षष्ठी अतस्-अर्थ-प्रत्ययेन",
     why_dev               = "अतस्-अर्थ-प्रत्ययेन षष्ठी (२.३.३०)।",
     anuvritti_from        = ('2.3.50',),

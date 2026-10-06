@@ -77,6 +77,8 @@ SUTRA = SutraRecord(
     sutra_type       = SutraType.VIDHI,
     text_slp1        = 'avyayasarvanAmnAmakac prAk weH',
     text_dev         = 'अव्ययसर्वनाम्नामकच् प्राक् टेः',
+    samagra_slp1     = "tiNaH avyaya-sarvanAmnAm supaH akac prAk weH",
+    samagra_dev      = "तिङः, अव्यय-सर्वनाम्नाम्, सुपः अकच् प्राक् टेः",
     padaccheda_dev   = "अव्यय-सर्वनाम्नाम् / कच् / प्राक् / टेः",
     why_dev          = (
         "सर्वनाम-अव्यय-विषये *अकच्* प्रत्ययः (च्-इत्संज्ञकलोपे *क्* शिष्यते) "

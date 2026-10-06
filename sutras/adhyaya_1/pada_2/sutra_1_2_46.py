@@ -18,6 +18,7 @@ a registry flag for *śālīya* recipes (``pipelines/taddhita_salIya``) *before*
 **1.2.46** names the *kṛt-taddhita*-*anta* *śabda*; *C* of *Cha* is *it* per
 1.3.2–1.3.9).  Case E: same three-*Term* frame for *itika* + *phak*
 (``pipelines/taddhita_itika_etikAyana``; ``prakriya_itika_phak``).
+Pāṭha: ashtadhyayi.com data.txt row i=12046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -521,6 +522,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'kfttadDitasamAsASca',
     text_dev       = 'कृत्तद्धितसमासाश्च',
+    samagra_slp1   = "kft-tadDita-samAsAH prAtipadikam ca",
+    samagra_dev    = "कृत्-तद्धित-समासाः प्रातिपदिकम् च",
     padaccheda_dev = "कृत्-तद्धित-समासाः च (प्रातिपदिकम्)",
     why_dev        = "कृत्-तद्धित-समासान्ताः शब्दाः प्रातिपदिक-संज्ञकाः।",
     anuvritti_from = ("1.2.45",),

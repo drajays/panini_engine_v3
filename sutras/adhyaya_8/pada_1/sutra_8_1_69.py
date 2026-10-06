@@ -4,6 +4,7 @@
 Padaccheda: कुत्सने च सुपि अ-गोत्र-आदौ
 
 कुत्सने च सुप्यगोत्रादौ (8.1.69)
+Pāṭha: ashtadhyayi.com data.txt row i=81069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kutsane ca supyagotrAdO",
     text_dev              = "कुत्सने च सुप्यगोत्रादौ",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO kutsane ca supi agotrAdO sagatiH api tiN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ कुत्सने च सुपि अगोत्रादौ सगतिः अपि तिङ्",
     padaccheda_dev        = "कुत्सने च सुपि अ-गोत्र-आदौ",
     why_dev               = "(सूत्रम् 8.1.69) कुत्सने च सुप्यगोत्रादौ।",
     anuvritti_from        = ('8.1.1',),

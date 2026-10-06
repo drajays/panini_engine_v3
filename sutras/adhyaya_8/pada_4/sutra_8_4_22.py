@@ -4,6 +4,7 @@
 Padaccheda: हन्तेः अत्-पूर्वस्य
 
 हन्तेरत्पूर्वस्य (8.4.22)
+Pāṭha: ashtadhyayi.com data.txt row i=84022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hanteratpUrvasya",
     text_dev              = "हन्तेरत्पूर्वस्य",
+    samagra_slp1          = "razAByAmupasargAt atpUrvasya hanteH naH RaH",
+    samagra_dev           = "रषाभ्यामुपसर्गात् अत्पूर्वस्य हन्तेः नः णः",
     padaccheda_dev        = "हन्तेः अत्-पूर्वस्य",
     why_dev               = "(सूत्रम् 8.4.22) हन्तेरत्पूर्वस्य।",
     anuvritti_from        = ('8.1.1',),

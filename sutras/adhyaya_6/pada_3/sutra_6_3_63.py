@@ -4,6 +4,7 @@
 Padaccheda: ङी-आपोः संज्ञा-छन्दसोः बहुलम्
 
 ङ्यापोः संज्ञाछन्दसोर्बहुलम् (6.3.63)
+Pāṭha: ashtadhyayi.com data.txt row i=63063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "NyApoH saMjYACandasorbahulam",
     text_dev              = "ङ्यापोः संज्ञाछन्दसोर्बहुलम्",
+    samagra_slp1          = "uttarapade Ni-ApoH saMjYA-CandasoH bahulam treH hrasvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे ङि-आपोः संज्ञा-छन्दसोः बहुलम् त्रेः ह्रस्वः",
     padaccheda_dev        = "ङी-आपोः संज्ञा-छन्दसोः बहुलम्",
     why_dev               = "(सूत्रम् 6.3.63) ङ्यापोः संज्ञाछन्दसोर्बहुलम्।",
     anuvritti_from        = ('6.1.1',),

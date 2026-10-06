@@ -4,6 +4,7 @@
 Padaccheda: कर्म-वेषात् यत्
 
 कर्मवेषाद्यत् (5.1.100)
+Pāṭha: ashtadhyayi.com data.txt row i=51100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karmavezAdyat",
     text_dev              = "कर्मवेषाद्यत्",
+    samagra_slp1          = "tena sampAdini iti karma-vezAt yat",
+    samagra_dev           = "'तेन सम्पादिनि' (इति) कर्म-वेषात् यत्",
     padaccheda_dev        = "कर्म-वेषात् यत्",
     why_dev               = "(सूत्रम् 5.1.100) कर्मवेषाद्यत्।",
     anuvritti_from        = ('5.1.18',),

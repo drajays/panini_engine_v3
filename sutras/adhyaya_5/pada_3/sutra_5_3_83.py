@@ -4,6 +4,7 @@
 Padaccheda: ठ-अच्-आदौ ऊर्ध्वम् द्वितीयात् अचः
 
 ठाजादावूर्ध्वं द्वितीयादचः (5.3.83)
+Pāṭha: ashtadhyayi.com data.txt row i=53083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "WAjAdAvUrDvaM dvitIyAdacaH",
     text_dev              = "ठाजादावूर्ध्वं द्वितीयादचः",
+    samagra_slp1          = "prAtipadikAt anukampAyAm Wa-ajAdO dvitIyAt acaH UrDvam lopaH",
+    samagra_dev           = "प्रातिपदिकात् अनुकम्पायाम् ठ-अजादौ द्वितीयात् अचः ऊर्ध्वम् लोपः",
     padaccheda_dev        = "ठ-अच्-आदौ ऊर्ध्वम् द्वितीयात् अचः",
     why_dev               = "(सूत्रम् 5.3.83) ठाजादावूर्ध्वं द्वितीयादचः।",
     anuvritti_from        = ('5.3.70',),

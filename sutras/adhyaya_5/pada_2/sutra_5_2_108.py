@@ -4,6 +4,7 @@
 Padaccheda: द्यु-द्रुभ्याम् मः
 
 द्युद्रुभ्यां मः (5.2.108)
+Pāṭha: ashtadhyayi.com data.txt row i=52108 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dyudruByAM maH",
     text_dev              = "द्युद्रुभ्यां मः",
+    samagra_slp1          = "tat asya asmin astIti iti dyu-druByAm maH",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) द्यु-द्रुभ्याम् मः",
     padaccheda_dev        = "द्यु-द्रुभ्याम् मः",
     why_dev               = "(सूत्रम् 5.2.108) द्युद्रुभ्यां मः।",
     anuvritti_from        = ('4.1.82',),

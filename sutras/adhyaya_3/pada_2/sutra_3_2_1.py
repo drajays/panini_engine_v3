@@ -4,6 +4,7 @@
 Padaccheda: कर्मणि अण्
 
 krt-suffix rule: कर्मण्यण् (1)
+Pāṭha: ashtadhyayi.com data.txt row i=32001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karmaRyaR",
     text_dev              = "कर्मण्यण्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH karmaRi aR kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कर्मणि अण् कृत्",
     padaccheda_dev        = "कर्मणि अण्",
     why_dev               = "धातोः कृत्-प्रत्ययः [कर्मण्यण्] विहितः (३.२.1)।",
     anuvritti_from        = ('3.1.1',),

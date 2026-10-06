@@ -4,6 +4,7 @@
 Padaccheda: स्तु-सु-धूञ्भ्यः परस्मैपदेषु
 
 स्तुसुधूञ्भ्यः परस्मैपदेषु (7.2.72)
+Pāṭha: ashtadhyayi.com data.txt row i=72072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -50,6 +51,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "stusuDUYByaH parasmEpadezu",
     text_dev              = "स्तुसुधूञ्भ्यः परस्मैपदेषु",
+    samagra_slp1          = "aNgasya stusuDUYByaH parasmEpadezu ArDaDAtukasya iw valAdeH sici",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य स्तुसुधूञ्भ्यः परस्मैपदेषु आर्धधातुकस्य इट् वलादेः सिचि",
     padaccheda_dev        = "स्तु-सु-धूञ्भ्यः परस्मैपदेषु",
     why_dev               = "(सूत्रम् 7.2.72) स्तुसुधूञ्भ्यः परस्मैपदेषु।",
     anuvritti_from        = ('7.1.1',),

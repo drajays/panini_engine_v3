@@ -4,6 +4,7 @@
 Padaccheda: यूनः च कुत्सायाम्
 
 यूनश्च कुत्सायाम् (4.1.167)
+Pāṭha: ashtadhyayi.com data.txt row i=41167 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yUnaSca kutsAyAm",
     text_dev              = "यूनश्च कुत्सायाम्",
+    samagra_slp1          = "yUnaH kutsAyAM yuvA vA",
+    samagra_dev           = "यूनः कुत्सायां युवा वा",
     padaccheda_dev        = "यूनः च कुत्सायाम्",
     why_dev               = "(सूत्रम् 4.1.167) यूनश्च कुत्सायाम्।",
     anuvritti_from        = ('4.1.1',),

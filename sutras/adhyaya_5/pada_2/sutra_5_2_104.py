@@ -4,6 +4,7 @@
 Padaccheda: सिकता-शर्कराभ्याम् च
 
 सिकताशर्कराभ्यां च (5.2.104)
+Pāṭha: ashtadhyayi.com data.txt row i=52104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sikatASarkarAByAM ca",
     text_dev              = "सिकताशर्कराभ्यां च",
+    samagra_slp1          = "tat asya asmin astIti iti sikatA-SarkarAByAmaR",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) सिकता-शर्कराभ्यामण्",
     padaccheda_dev        = "सिकता-शर्कराभ्याम् च",
     why_dev               = "(सूत्रम् 5.2.104) सिकताशर्कराभ्यां च।",
     anuvritti_from        = ('4.1.82',),

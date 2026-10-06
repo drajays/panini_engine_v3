@@ -11,6 +11,7 @@
 *Engine:* sets paribhāṣā gate for *abhi-in-abhāga*.
 ``cond`` never reads vibhakti/vacana/lakāra/surface.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=14091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -36,6 +37,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'aBiraBAge',
     text_dev             = 'अभिरभागे',
+    samagra_slp1         = "AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH karmapravacanIyAH aBiH aBAge lakzaRa-itTamBUtAKyAna-BAga-vIpsAsu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः कर्मप्रवचनीयाः अभिः अभागे लक्षण-इत्थम्भूताख्यान-भाग-वीप्सासु",
     padaccheda_dev       = "अभिः / अभागे",
     why_dev              = (
         "अभाग-अर्थे वर्तमानः 'अभि' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

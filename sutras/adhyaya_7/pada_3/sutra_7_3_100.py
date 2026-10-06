@@ -4,6 +4,7 @@
 Padaccheda: अदः सर्वेषाम्
 
 अदः सर्वेषाम् (7.3.100)
+Pāṭha: ashtadhyayi.com data.txt row i=73100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "adaH sarvezAm",
     text_dev              = "अदः सर्वेषाम्",
+    samagra_slp1          = "adaH aNgAt apfkte sArvaDAtuke aw sarvezAm",
+    samagra_dev           = "अदः अङ्गात् अपृक्ते सार्वधातुके अट् सर्वेषाम्",
     padaccheda_dev        = "अदः सर्वेषाम्",
     why_dev               = "(सूत्रम् 7.3.100) अदः सर्वेषाम्।",
     anuvritti_from        = ('7.1.1',),

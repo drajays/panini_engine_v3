@@ -4,6 +4,7 @@
 Padaccheda: तुन्द-आदिभ्यः इलच् च
 
 तुन्दादिभ्य इलच् च (5.2.117)
+Pāṭha: ashtadhyayi.com data.txt row i=52117 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tundAdiBya ilac ca",
     text_dev              = "तुन्दादिभ्य इलच् च",
+    samagra_slp1          = "tat asya asmin astIti iti tundAdiByaH ilac iniWanO matu~p anyatarasyAm",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) तुन्दादिभ्यः इलच्, इनिठनौ, मतुँप् अन्यतरस्याम्",
     padaccheda_dev        = "तुन्द-आदिभ्यः इलच् च",
     why_dev               = "(सूत्रम् 5.2.117) तुन्दादिभ्य इलच् च।",
     anuvritti_from        = ('4.1.82',),

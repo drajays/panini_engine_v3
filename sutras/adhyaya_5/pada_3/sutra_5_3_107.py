@@ -4,6 +4,7 @@
 Padaccheda: शर्करा-आदिभ्यः अण्
 
 शर्कराऽऽदिभ्योऽण् (5.3.107)
+Pāṭha: ashtadhyayi.com data.txt row i=53107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'SarkarAdiByoR',
     text_dev              = 'शर्करादिभ्योऽण्',
+    samagra_slp1          = "SarkarAdiByaH ive aR",
+    samagra_dev           = "शर्करादिभ्यः इवे अण्",
     padaccheda_dev        = "शर्करा-आदिभ्यः अण्",
     why_dev               = "(सूत्रम् 5.3.107) शर्कराऽऽदिभ्योऽण्।",
     anuvritti_from        = ('4.1.76',),

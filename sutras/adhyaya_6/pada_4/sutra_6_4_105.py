@@ -82,6 +82,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="ato heH",
     text_dev="अतो हेः",
+    samagra_slp1="ataH aNgAt heH luk",
+    samagra_dev="अतः अङ्गात् हेः लुक्",
     padaccheda_dev="अतः / हेः",
     why_dev=(
         "लोटि ह्र्स्व-अकारान्त-अङ्गात् परस्य 'हि'-तिङ्-आदेशस्य लोपः "

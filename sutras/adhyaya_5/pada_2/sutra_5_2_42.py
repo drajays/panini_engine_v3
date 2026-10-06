@@ -4,6 +4,7 @@
 Padaccheda: संख्यायाः अवयवे तयप्
 
 संख्याया अवयवे तयप् (5.2.42)
+Pāṭha: ashtadhyayi.com data.txt row i=52042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMKyAyA avayave tayap",
     text_dev              = "संख्याया अवयवे तयप्",
+    samagra_slp1          = "tat asya iti saNKyAyAH avayave tayap",
+    samagra_dev           = "'तत् अस्य' (इति) सङ्ख्यायाः अवयवे तयप्",
     padaccheda_dev        = "संख्यायाः अवयवे तयप्",
     why_dev               = "(सूत्रम् 5.2.42) संख्याया अवयवे तयप्।",
     anuvritti_from        = ('4.1.82',),

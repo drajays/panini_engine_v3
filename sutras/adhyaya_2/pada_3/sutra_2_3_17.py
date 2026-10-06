@@ -4,6 +4,7 @@
 Padaccheda: मन्य-कर्मणि अनादरे विभाषा अप्राणिषु
 
 Optional tritiya with manya in disrespect context for non-beings.
+Pāṭha: ashtadhyayi.com data.txt row i=23017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'manyakarmaRyanAdare viBAzAprARizu',
     text_dev              = 'मन्यकर्मण्यनादरे विभाषाऽप्राणिषु',
+    samagra_slp1          = "anaBihite manyakarmaRi anAdare viBAzA aprARizu caturTI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते मन्यकर्मणि अनादरे विभाषा अप्राणिषु चतुर्थी",
     padaccheda_dev        = "मन्य-कर्मणि अनादरे विभाषा अप्राणिषु",
     why_dev               = "मन्य-कर्मणि अनादरे अप्राणिषु विभाषा तृतीया (२.३.१७)।",
     anuvritti_from        = ('2.3.18',),

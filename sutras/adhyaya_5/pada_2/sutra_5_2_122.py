@@ -4,6 +4,7 @@
 Padaccheda: बहुलम् छन्दसि
 
 बहुलं छन्दसि (5.2.122)
+Pāṭha: ashtadhyayi.com data.txt row i=52122 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahulaM Candasi",
     text_dev              = "बहुलं छन्दसि",
+    samagra_slp1          = "tat asya asmin astIti iti Candasi bahulam vini",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) छन्दसि बहुलम् विनि",
     padaccheda_dev        = "बहुलम् छन्दसि",
     why_dev               = "(सूत्रम् 5.2.122) बहुलं छन्दसि।",
     anuvritti_from        = ('4.1.82',),

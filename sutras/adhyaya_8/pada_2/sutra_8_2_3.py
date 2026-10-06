@@ -4,6 +4,7 @@
 Padaccheda: न मु (लुप्तप्रथमान्तनिर्देशः) ने
 
 न मु ने (8.2.3)
+Pāṭha: ashtadhyayi.com data.txt row i=82003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na mu ne",
     text_dev              = "न मु ने",
+    samagra_slp1          = "mu ne pUrvatra asidDam na",
+    samagra_dev           = "मु ने पूर्वत्र असिद्धम् न",
     padaccheda_dev        = "न मु (लुप्तप्रथमान्तनिर्देशः) ने",
     why_dev               = "(सूत्रम् 8.2.3) न मु ने।",
     anuvritti_from        = ('8.1.1',),

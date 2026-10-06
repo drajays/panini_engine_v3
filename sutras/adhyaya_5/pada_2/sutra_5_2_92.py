@@ -4,6 +4,7 @@
 Padaccheda: क्षेत्रियच् परक्षेत्रे चिकित्स्यः
 
 क्षेत्रियच् परक्षेत्रे चिकित्स्यः (5.2.92)
+Pāṭha: ashtadhyayi.com data.txt row i=52092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kzetriyac parakzetre cikitsyaH",
     text_dev              = "क्षेत्रियच् परक्षेत्रे चिकित्स्यः",
+    samagra_slp1          = "parakzetre cikitsyaH iti kzetriyac nipAtyate",
+    samagra_dev           = "'परक्षेत्रे चिकित्स्यः' (इति) क्षेत्रियच् (निपात्यते)",
     padaccheda_dev        = "क्षेत्रियच् परक्षेत्रे चिकित्स्यः",
     why_dev               = "(सूत्रम् 5.2.92) क्षेत्रियच् परक्षेत्रे चिकित्स्यः।",
     anuvritti_from        = ('4.1.82',),

@@ -12,6 +12,7 @@ Engine:
   - Guards re-entry via meta["seT_pUN_ktva_1_2_22"].
   - Removes "aniT" if present (reversing any 1.2.18 application) and adds "seT".
   - r1_form_identity_exempt=True: no surface string changes in this step.
+Pāṭha: ashtadhyayi.com data.txt row i=12022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -65,6 +66,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUNaH ktvA ca",
     text_dev              = "पूङः क्त्वा च",
+    samagra_slp1          = "pUNaH ktvA ca kit na sew nizWA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूङः क्त्वा च कित् न सेट् निष्ठा",
     padaccheda_dev        = "पूङः / क्त्वा / च",
     why_dev               = ("पूङ्-धातोः क्त्वा-प्रत्ययस्य पूर्वमपि सेट् भवति — "
                              "१.२.१८-अपवादः, पूत्वा इत्यत्र इडागमो भवति।"),

@@ -4,6 +4,7 @@
 Padaccheda: उपसर्गात् अध्वनः
 
 उपसर्गादध्वनः (5.4.85)
+Pāṭha: ashtadhyayi.com data.txt row i=54085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upasargAdaDvanaH",
     text_dev              = "उपसर्गादध्वनः",
+    samagra_slp1          = "upasargAt aDvanaH ac",
+    samagra_dev           = "उपसर्गात् अध्वनः अच्",
     padaccheda_dev        = "उपसर्गात् अध्वनः",
     why_dev               = "(सूत्रम् 5.4.85) उपसर्गादध्वनः।",
     anuvritti_from        = ('5.4.68',),

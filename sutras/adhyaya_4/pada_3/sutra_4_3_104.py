@@ -4,6 +4,7 @@
 Padaccheda: कलापि-वैशम्पायन-अन्तेवासिभ्यः च
 
 कलापिवैशम्पायनान्तेवासिभ्यश्च (4.3.104)
+Pāṭha: ashtadhyayi.com data.txt row i=43104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kalApivESampAyanAntevAsiByaSca",
     text_dev              = "कलापिवैशम्पायनान्तेवासिभ्यश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA kalApi-vESampAyana-antevAsiByaH ca tena proktam RiniH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा कलापि-वैशम्पायन-अन्तेवासिभ्यः च तेन प्रोक्तम् णिनिः",
     padaccheda_dev        = "कलापि-वैशम्पायन-अन्तेवासिभ्यः च",
     why_dev               = "(सूत्रम् 4.3.104) कलापिवैशम्पायनान्तेवासिभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

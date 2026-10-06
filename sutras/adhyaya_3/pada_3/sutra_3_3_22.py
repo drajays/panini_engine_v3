@@ -4,6 +4,7 @@
 Padaccheda: उपसर्गे रुवः
 
 krt-suffix rule: उपसर्गे रुवः
+Pāṭha: ashtadhyayi.com data.txt row i=33022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upasarge ruvaH",
     text_dev              = "उपसर्गे रुवः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm upasarge ruvaH kft GaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् उपसर्गे रुवः कृत् घञ्",
     padaccheda_dev        = "उपसर्गे रुवः",
     why_dev               = "धातोः प्रत्ययः (३.3.22)।",
     anuvritti_from        = ('3.1.1',),

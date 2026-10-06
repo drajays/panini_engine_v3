@@ -4,6 +4,7 @@
 Padaccheda: दः च
 
 दश्च (8.2.75)
+Pāṭha: ashtadhyayi.com data.txt row i=82075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "daSca",
     text_dev              = "दश्च",
+    samagra_slp1          = "padasya pUrvatrAsidDam daH ca sipi ruH vA DAtoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् दः च सिपि रुः वा धातोः",
     padaccheda_dev        = "दः च",
     why_dev               = "(सूत्रम् 8.2.75) दश्च।",
     anuvritti_from        = ('8.1.1',),

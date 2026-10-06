@@ -4,6 +4,7 @@
 Padaccheda: बहु-अचः अन्त-उदात्तात् ठञ्
 
 बह्वचोऽन्तोदात्ताट्ठञ् (4.3.67)
+Pāṭha: ashtadhyayi.com data.txt row i=43067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'bahvacontodAttAwWaY',
     text_dev              = 'बह्वचोऽन्तोदात्ताट्ठञ्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA bahu-acaH antodAttAt WaY tatra BavaH tasya vyAKyAne vyAKyAtavya-nAmnaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा बहु-अचः अन्तोदात्तात् ठञ् तत्र भवः तस्य व्याख्याने व्याख्यातव्य-नाम्नः",
     padaccheda_dev        = "बहु-अचः अन्त-उदात्तात् ठञ्",
     why_dev               = "(सूत्रम् 4.3.67) बह्वचोऽन्तोदात्ताट्ठञ्।",
     anuvritti_from        = ('4.1.1',),

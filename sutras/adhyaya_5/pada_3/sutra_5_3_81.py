@@ -4,6 +4,7 @@
 Padaccheda: जातिनाम्नः कन्
 
 जातिनाम्नः कन् (5.3.81)
+Pāṭha: ashtadhyayi.com data.txt row i=53081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jAtinAmnaH kan",
     text_dev              = "जातिनाम्नः कन्",
+    samagra_slp1          = "anukampAyAm nItO tadyuktAt manuzyanAmnaH jAtinAmnaH kan vA",
+    samagra_dev           = "अनुकम्पायाम् नीतौ तद्युक्तात्  मनुष्यनाम्नः जातिनाम्नः कन् वा",
     padaccheda_dev        = "जातिनाम्नः कन्",
     why_dev               = "(सूत्रम् 5.3.81) जातिनाम्नः कन्।",
     anuvritti_from        = ('5.3.70',),

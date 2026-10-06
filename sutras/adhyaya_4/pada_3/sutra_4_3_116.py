@@ -4,6 +4,7 @@
 Padaccheda: कृते ग्रन्थे
 
 कृते ग्रन्थे (4.3.116)
+Pāṭha: ashtadhyayi.com data.txt row i=43116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kfte granTe",
     text_dev              = "कृते ग्रन्थे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA kfte granTe tena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा कृते ग्रन्थे तेन",
     padaccheda_dev        = "कृते ग्रन्थे",
     why_dev               = "(सूत्रम् 4.3.116) कृते ग्रन्थे।",
     anuvritti_from        = ('4.1.1',),

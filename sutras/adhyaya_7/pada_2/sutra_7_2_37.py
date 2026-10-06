@@ -4,6 +4,7 @@
 Padaccheda: ग्रहः अ-लिटि दीर्घः
 
 ग्रहोऽलिटि दीर्घः (7.2.37)
+Pāṭha: ashtadhyayi.com data.txt row i=72037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'graholiwi dIrGaH',
     text_dev              = 'ग्रहोऽलिटि दीर्घः',
+    samagra_slp1          = "aNgasya grahaH aliwi dIrGaH ArDaDAtukasya iw valAdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ग्रहः अलिटि दीर्घः आर्धधातुकस्य इट् वलादेः",
     padaccheda_dev        = "ग्रहः अ-लिटि दीर्घः",
     why_dev               = "(सूत्रम् 7.2.37) ग्रहोऽलिटि दीर्घः।",
     anuvritti_from        = ('7.1.1',),

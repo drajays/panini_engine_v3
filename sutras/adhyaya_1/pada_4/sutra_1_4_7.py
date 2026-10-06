@@ -15,6 +15,7 @@ This is a SAMJNA rule:
 Blindness:
   - cond() inspects only aṅga-final phoneme and Term tags.
   - does NOT read (vibhakti, vacana) or any gold/reference.
+Pāṭha: ashtadhyayi.com data.txt row i=14007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -61,6 +62,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'Sezo GyasaKi',
     text_dev       = 'शेषो घ्यसखि',
+    samagra_slp1   = "SezaH hrasvaH yU Gi a-saKi",
+    samagra_dev    = "शेषः ह्रस्वः यू घि अ-सखि",
     padaccheda_dev = "शेषः घि",
     why_dev        = "ह्रस्व-इक्-अन्तस्य अङ्गस्य घि-संज्ञा (हरि-प्रकारे प्रयोगाय)।",
     anuvritti_from = ("1.4.1",),

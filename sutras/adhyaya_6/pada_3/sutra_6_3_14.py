@@ -4,6 +4,7 @@
 Padaccheda: तत्पुरुषे कृति बहुलम्
 
 तत्पुरुषे कृति बहुलम् (6.3.14)
+Pāṭha: ashtadhyayi.com data.txt row i=63014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tatpuruze kfti bahulam",
     text_dev              = "तत्पुरुषे कृति बहुलम्",
+    samagra_slp1          = "alug uttarapade tatpuruze kfti bahulam haladantAt saptamyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे तत्पुरुषे कृति बहुलम् हलदन्तात् सप्तम्याः",
     padaccheda_dev        = "तत्पुरुषे कृति बहुलम्",
     why_dev               = "(सूत्रम् 6.3.14) तत्पुरुषे कृति बहुलम्।",
     anuvritti_from        = ('6.1.1',),

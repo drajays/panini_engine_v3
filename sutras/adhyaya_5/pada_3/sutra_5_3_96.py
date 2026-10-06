@@ -4,6 +4,7 @@
 Padaccheda: इवे प्रतिकृतौ
 
 इवे प्रतिकृतौ (5.3.96)
+Pāṭha: ashtadhyayi.com data.txt row i=53096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ive pratikftO",
     text_dev              = "इवे प्रतिकृतौ",
+    samagra_slp1          = "ive pratikftO kan",
+    samagra_dev           = "इवे प्रतिकृतौ कन्",
     padaccheda_dev        = "इवे प्रतिकृतौ",
     why_dev               = "(सूत्रम् 5.3.96) इवे प्रतिकृतौ।",
     anuvritti_from        = ('4.1.76',),

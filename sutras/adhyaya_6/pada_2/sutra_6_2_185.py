@@ -4,6 +4,7 @@
 Padaccheda: अभेः मुखम्
 
 अभेर्मुखम् (6.2.185)
+Pāṭha: ashtadhyayi.com data.txt row i=62185 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aBermuKam",
     text_dev              = "अभेर्मुखम्",
+    samagra_slp1          = "uttarapadAdiH antaH aBeH muKam upasargAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः अभेः मुखम् उपसर्गात्",
     padaccheda_dev        = "अभेः मुखम्",
     why_dev               = "(सूत्रम् 6.2.185) अभेर्मुखम्।",
     anuvritti_from        = ('6.1.1',),

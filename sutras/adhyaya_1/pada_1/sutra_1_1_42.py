@@ -7,6 +7,7 @@ Operational role (v3.6):
 
 This enables 7.1.72 / 6.4.8 style operations to key off a technical
 term rather than paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=11042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -41,6 +42,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'Si sarvanAmasTAnam',
     text_dev       = 'शि सर्वनामस्थानम्',
+    samagra_slp1   = "Si sarvanAmasTAnam",
+    samagra_dev    = "शि सर्वनामस्थानम्",
     padaccheda_dev = "शि सर्वनामस्थानम्",
     why_dev        = "शि-प्रत्ययः सर्वनामस्थान-संज्ञकः।",
     anuvritti_from = (),

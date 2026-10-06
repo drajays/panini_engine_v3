@@ -4,6 +4,7 @@
 Padaccheda: कुल-कुक्षि-ग्रीवाभ्यः श्व-असि-अलङ्कारेषु
 
 कुलकुक्षिग्रीवाभ्यः श्वास्यलंकारेषु (4.2.96)
+Pāṭha: ashtadhyayi.com data.txt row i=42096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kulakukzigrIvAByaH SvAsyalaMkArezu",
     text_dev              = "कुलकुक्षिग्रीवाभ्यः श्वास्यलंकारेषु",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA kula-kukzi-grIvAByaH Sva-asi-alaNkArezu QakaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा कुल-कुक्षि-ग्रीवाभ्यः श्व-असि-अलङ्कारेषु ढकञ्",
     padaccheda_dev        = "कुल-कुक्षि-ग्रीवाभ्यः श्व-असि-अलङ्कारेषु",
     why_dev               = "(सूत्रम् 4.2.96) कुलकुक्षिग्रीवाभ्यः श्वास्यलंकारेषु।",
     anuvritti_from        = ('4.1.1',),

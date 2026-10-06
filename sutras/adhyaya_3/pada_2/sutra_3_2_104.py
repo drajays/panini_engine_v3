@@ -4,6 +4,7 @@
 Padaccheda: जीर्यतेः अतृन्
 
 krt-suffix rule: जीर्यतेरतृन् (104)
+Pāṭha: ashtadhyayi.com data.txt row i=32104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jIryateratfn",
     text_dev              = "जीर्यतेरतृन्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte jIryateH atfn kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते जीर्यतेः अतृन् कृत्",
     padaccheda_dev        = "जीर्यतेः अतृन्",
     why_dev               = "धातोः कृत्-प्रत्ययः [जीर्यतेरतृन्] विहितः (३.२.104)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

@@ -4,6 +4,7 @@
 Padaccheda: वैयाकरणाख्यायाम् चतुर्थ्याः
 
 वैयाकरणाख्यायां चतुर्थ्याः (6.3.7)
+Pāṭha: ashtadhyayi.com data.txt row i=63007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vEyAkaraRAKyAyAM caturTyAH",
     text_dev              = "वैयाकरणाख्यायां चतुर्थ्याः",
+    samagra_slp1          = "alug uttarapade vEyAkaraRAKyAyAm caturTyAH AtmanaH ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे वैयाकरणाख्यायाम् चतुर्थ्याः आत्मनः च",
     padaccheda_dev        = "वैयाकरणाख्यायाम् चतुर्थ्याः",
     why_dev               = "(सूत्रम् 6.3.7) वैयाकरणाख्यायां चतुर्थ्याः।",
     anuvritti_from        = ('6.1.1',),

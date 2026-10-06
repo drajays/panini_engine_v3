@@ -4,6 +4,7 @@
 Padaccheda: अय् आम्-अन्त-आलु-आय्य-इत्नु-इष्णुषु
 
 अयामन्ताल्वाय्येत्न्विष्णुषु (6.4.55)
+Pāṭha: ashtadhyayi.com data.txt row i=64055 (Art. 14).
 """
 from __future__ import annotations
 from phonology import mk
@@ -47,6 +48,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "ayAmantAlvAyyetnvizRuzu",
     text_dev              = "अयामन्ताल्वाय्येत्न्विष्णुषु",
+    samagra_slp1          = "aNgasya asidDavadatrABAt ArDaDAtuke ay Am-anta-Alu-Ayya-itnu-izRuzu nalopaH ReH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् आर्धधातुके अय् आम्-अन्त-आलु-आय्य-इत्नु-इष्णुषु नलोपः णेः",
     padaccheda_dev        = "अय् आम्-अन्त-आलु-आय्य-इत्नु-इष्णुषु",
     why_dev               = "(सूत्रम् 6.4.55) अयामन्ताल्वाय्येत्न्विष्णुषु।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: सर्व-एक-अन्य-किं-यद्-तदः काले दा
 
 सर्वैकान्यकिंयत्तदः काले दा (5.3.15)
+Pāṭha: ashtadhyayi.com data.txt row i=53015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sarvEkAnyakiMyattadaH kAle dA",
     text_dev              = "सर्वैकान्यकिंयत्तदः काले दा",
+    samagra_slp1          = "saptamyAH sarva-eka-anya-kim-yat-tadaH kAle dA",
+    samagra_dev           = "सप्तम्याः सर्व-एक-अन्य-किम्-यत्-तदः काले दा",
     padaccheda_dev        = "सर्व-एक-अन्य-किं-यद्-तदः काले दा",
     why_dev               = "(सूत्रम् 5.3.15) सर्वैकान्यकिंयत्तदः काले दा।",
     anuvritti_from        = ('5.3.2',),

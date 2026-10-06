@@ -4,6 +4,7 @@
 Padaccheda: व्यन् सपत्ने
 
 व्यन् सपत्ने (4.1.145)
+Pāṭha: ashtadhyayi.com data.txt row i=41145 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vyan sapatne",
     text_dev              = "व्यन् सपत्ने",
+    samagra_slp1          = "BrAtuH sapatne vyan",
+    samagra_dev           = "भ्रातुः सपत्ने व्यन्",
     padaccheda_dev        = "व्यन् सपत्ने",
     why_dev               = "(सूत्रम् 4.1.145) व्यन् सपत्ने।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: वर्णे च अनित्ये
 
 वर्णे चानित्ये (5.4.31)
+Pāṭha: ashtadhyayi.com data.txt row i=54031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "varRe cAnitye",
     text_dev              = "वर्णे चानित्ये",
+    samagra_slp1          = "anitye varRe lohitAt kan",
+    samagra_dev           = "अनित्ये वर्णे लोहितात् कन्",
     padaccheda_dev        = "वर्णे च अनित्ये",
     why_dev               = "(सूत्रम् 5.4.31) वर्णे चानित्ये।",
     anuvritti_from        = ('4.1.76',),

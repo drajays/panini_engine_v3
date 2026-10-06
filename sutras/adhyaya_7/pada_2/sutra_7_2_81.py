@@ -7,6 +7,7 @@
 **3.4.79**) becomes *iy* when a *ṅit* *vikaraṇa* (*yaḳ*→*ya*) precedes.
 
 *Engine:* ``bhava_karma_usage`` on *dhātu*; *tiṅ* *ādeśa* with initial ``A``; no ``_arm`` (Art. 13).
+Pāṭha: ashtadhyayi.com data.txt row i=72081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -65,6 +66,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="Ato NitaH",
     text_dev="आतो ङितः",
+    samagra_slp1="aNgasya AtaH NitaH sArvaDAtuke iyaH ataH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अङ्गस्य आतः ङितः सार्वधातुके इयः अतः",
     padaccheda_dev="आतः ङितः",
     why_dev=(
         "कर्मणि/भावे ङित-विकरण-पूर्वम् आत्मनेपद-द्विवचनस्य आकारस्य 'इय्'-आदेशः — "

@@ -4,6 +4,7 @@
 Padaccheda: इकः वहे अपीलोः
 
 इकः वहे अपीलोः (6.3.121)
+Pāṭha: ashtadhyayi.com data.txt row i=63121 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ikaH vahepIloH',
     text_dev              = 'इकः वहेऽपीलोः',
+    samagra_slp1          = "uttarapade saMhitAyAm ikaH vahe apIloH dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् इकः वहे अपीलोः दीर्घः",
     padaccheda_dev        = "इकः वहे अपीलोः",
     why_dev               = "(सूत्रम् 6.3.121) इकः वहे अपीलोः।",
     anuvritti_from        = ('6.1.1',),

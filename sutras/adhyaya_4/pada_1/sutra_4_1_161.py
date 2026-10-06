@@ -4,6 +4,7 @@
 Padaccheda: मनोः जातौ अञ्-यतौ षुक् च
 
 मनोर्जातावञ्यतौ षुक् च (4.1.161)
+Pāṭha: ashtadhyayi.com data.txt row i=41161 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "manorjAtAvaYyatO zuk ca",
     text_dev              = "मनोर्जातावञ्यतौ षुक् च",
+    samagra_slp1          = "manoH jAtO aY-yatO zuk AgamaH ca",
+    samagra_dev           = "मनोः जातौ अञ्-यतौ, षुक् (आगमः) च",
     padaccheda_dev        = "मनोः जातौ अञ्-यतौ षुक् च",
     why_dev               = "(सूत्रम् 4.1.161) मनोर्जातावञ्यतौ षुक् च।",
     anuvritti_from        = ('4.1.1',),

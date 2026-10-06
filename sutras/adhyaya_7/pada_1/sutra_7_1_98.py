@@ -4,6 +4,7 @@
 Padaccheda: चतुर्-अनडुहोः आम् उदात्तः
 
 चतुरनडुहोरामुदात्तः (7.1.98)
+Pāṭha: ashtadhyayi.com data.txt row i=71098 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "caturanaquhorAmudAttaH",
     text_dev              = "चतुरनडुहोरामुदात्तः",
+    samagra_slp1          = "catur-anaquhoH aNgasya sarvanAmasTAne AmudAttaH",
+    samagra_dev           = "चतुर्-अनडुहोः अङ्गस्य सर्वनामस्थाने आमुदात्तः",
     padaccheda_dev        = "चतुर्-अनडुहोः आम् उदात्तः",
     why_dev               = "(सूत्रम् 7.1.98) चतुरनडुहोरामुदात्तः।",
     anuvritti_from        = ('7.1.1',),

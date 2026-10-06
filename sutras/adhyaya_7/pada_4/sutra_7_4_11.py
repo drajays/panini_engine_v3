@@ -4,6 +4,7 @@
 Padaccheda: ऋच्छति-ऋ-ॠताम्
 
 ऋच्छत्यॄताम् (7.4.11)
+Pāṭha: ashtadhyayi.com data.txt row i=74011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -54,6 +55,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "fcCatyFtAm",
     text_dev              = "ऋच्छत्यॄताम्",
+    samagra_slp1          = "aNgasya fcCatyFtAm liwi guRaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ऋच्छत्यॄताम् लिटि गुणः",
     padaccheda_dev        = "ऋच्छति-ऋ-ॠताम्",
     why_dev               = "ऋच्छ्-ऋ-ॠदन्तानां लिटि गुणः (ननरे, आरतुः)।",
     anuvritti_from        = ('7.1.1',),

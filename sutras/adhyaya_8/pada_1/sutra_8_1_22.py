@@ -11,6 +11,7 @@ Citation (CONSTITUTION Art. 14)
 Engine: ``cond`` reads Term tags only — the pada's saṃjñā-names ``vib_*`` / ``vac_*`` (4.1.2), the
 pronoun's lexical identity, and the adhikāras 8.1.17 / 8.1.18 (*padāt* … *apādādau*). The ādeśa
 replaces the whole pada (sarvādeśa, 1.1.55) and is anudātta (accent is not modelled).
+Pāṭha: ashtadhyayi.com data.txt row i=81022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='temayAvekavacanasya',
     text_dev='तेमयावेकवचनस्य',
+    samagra_slp1="padasya padAt anudAttaM sarvamApAdAdO temayO ekavacanasya zazWIcaturTIdvitIyAsTayoH yuzmadasmadoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="पदस्य पदात् अनुदात्तं सर्वमापादादौ तेमयौ एकवचनस्य षष्ठीचतुर्थीद्वितीयास्थयोः युष्मदस्मदोः",
     padaccheda_dev='ते-मयौ एकवचनस्य',
     why_dev='एकवचनान्त षष्ठी/चतुर्थी युष्मद्-अस्मद् पद → ते/मे (द्वितीया में ८.१.२३ अपवाद)।',
     anuvritti_from=("8.1.17", "8.1.18", "8.1.20"),

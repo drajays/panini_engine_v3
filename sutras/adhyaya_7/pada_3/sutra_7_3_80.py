@@ -4,6 +4,7 @@
 Padaccheda: पू-आदीनाम् ह्रस्वः
 
 प्वादीनां ह्रस्वः (7.3.80)
+Pāṭha: ashtadhyayi.com data.txt row i=73080 (Art. 14).
 """
 from __future__ import annotations
 from phonology import mk
@@ -54,6 +55,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "pvAdInAM hrasvaH",
     text_dev              = "प्वादीनां ह्रस्वः",
+    samagra_slp1          = "aNgasya pvAdInAm hrasvaH Siti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य प्वादीनाम् ह्रस्वः शिति",
     padaccheda_dev        = "पू-आदीनाम् ह्रस्वः",
     why_dev               = "(सूत्रम् 7.3.80) प्वादीनां ह्रस्वः।",
     anuvritti_from        = ('7.1.1',),

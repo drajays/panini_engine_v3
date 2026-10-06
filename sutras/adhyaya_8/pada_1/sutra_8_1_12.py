@@ -4,6 +4,7 @@
 Padaccheda: प्रकारे गुणवचनस्य
 
 प्रकारे गुणवचनस्य (8.1.12)
+Pāṭha: ashtadhyayi.com data.txt row i=81012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prakAre guRavacanasya",
     text_dev              = "प्रकारे गुणवचनस्य",
+    samagra_slp1          = "sarvasya dve prakAre guRavacanasya karmaDArayavat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सर्वस्य द्वे प्रकारे गुणवचनस्य कर्मधारयवत्",
     padaccheda_dev        = "प्रकारे गुणवचनस्य",
     why_dev               = "(सूत्रम् 8.1.12) प्रकारे गुणवचनस्य।",
     anuvritti_from        = ('8.1.1',),

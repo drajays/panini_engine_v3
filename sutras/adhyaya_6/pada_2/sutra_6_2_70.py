@@ -4,6 +4,7 @@
 Padaccheda: अङ्गानि मैरेये
 
 अङ्गानि मैरेये (6.2.70)
+Pāṭha: ashtadhyayi.com data.txt row i=62070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aNgAni mEreye",
     text_dev              = "अङ्गानि मैरेये",
+    samagra_slp1          = "AdiH udAttaH aNgAni mEreye pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः अङ्गानि मैरेये पूर्वपदम्",
     padaccheda_dev        = "अङ्गानि मैरेये",
     why_dev               = "(सूत्रम् 6.2.70) अङ्गानि मैरेये।",
     anuvritti_from        = ('6.1.1',),

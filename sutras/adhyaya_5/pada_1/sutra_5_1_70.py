@@ -4,6 +4,7 @@
 Padaccheda: स्थालीबिलात्
 
 स्थालीबिलात् (5.1.70)
+Pāṭha: ashtadhyayi.com data.txt row i=51070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sTAlIbilAt",
     text_dev              = "स्थालीबिलात्",
+    samagra_slp1          = "tad arhati iti sTAlIbilAt CaH yat ca",
+    samagra_dev           = "'तद् अर्हति' (इति) स्थालीबिलात् छः यत् च",
     padaccheda_dev        = "स्थालीबिलात्",
     why_dev               = "(सूत्रम् 5.1.70) स्थालीबिलात्।",
     anuvritti_from        = ('5.1.18',),

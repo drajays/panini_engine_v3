@@ -4,6 +4,7 @@
 Padaccheda: कारे सत्य-अगदस्य
 
 कारे सत्यागदस्य (6.3.70)
+Pāṭha: ashtadhyayi.com data.txt row i=63070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kAre satyAgadasya",
     text_dev              = "कारे सत्यागदस्य",
+    samagra_slp1          = "uttarapade kAre satya-agadasya mum",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे कारे सत्य-अगदस्य मुम्",
     padaccheda_dev        = "कारे सत्य-अगदस्य",
     why_dev               = "(सूत्रम् 6.3.70) कारे सत्यागदस्य।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: पुत्रः पुम्भ्यः
 
 पुत्रः पुंभ्यः (6.2.132)
+Pāṭha: ashtadhyayi.com data.txt row i=62132 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "putraH puMByaH",
     text_dev              = "पुत्रः पुंभ्यः",
+    samagra_slp1          = "udAttaH uttarapadAdiH putraH pumByaH tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः पुत्रः पुम्भ्यः तत्पुरुषे",
     padaccheda_dev        = "पुत्रः पुम्भ्यः",
     why_dev               = "(सूत्रम् 6.2.132) पुत्रः पुंभ्यः।",
     anuvritti_from        = ('6.1.1',),

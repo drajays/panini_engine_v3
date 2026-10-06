@@ -12,6 +12,7 @@ Narrow **tat-puruṣa** slice (**``prakriya_39``**, ``pipelines/yUpadAru_vfkaBha
 Engine: when a term carries ``avyayibhava`` and looks like an avyaya (tag
 ``avyaya`` or kind ``nipata``), tag it ``upasarjana``. Else (tat-puruṣa branch): tag
 terms marked ``prakriya_39_upasarjana_purva``.
+Pāṭha: ashtadhyayi.com data.txt row i=12043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -55,6 +56,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'praTamAnirdizwaM samAsa upasarjanam',
     text_dev       = 'प्रथमानिर्दिष्टं समास उपसर्जनम्',
+    samagra_slp1   = "praTamAnirdizwam samAse upasarjanam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "प्रथमानिर्दिष्टम् समासे उपसर्जनम्",
     padaccheda_dev = "प्रथमा-निर्दिष्टम् / समासे / उपसर्जनम्",
     why_dev        = "समासे प्रथमानिर्दिष्टं पदम् उपसर्जन-संज्ञकं (अव्ययीभावे अव्ययः)।",
     anuvritti_from = ("1.2.42",),

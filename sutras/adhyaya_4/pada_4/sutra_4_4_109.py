@@ -4,6 +4,7 @@
 Padaccheda: सोदरात् यः
 
 सोदराद्यः (4.4.109)
+Pāṭha: ashtadhyayi.com data.txt row i=44109 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sodarAdyaH",
     text_dev              = "सोदराद्यः",
+    samagra_slp1          = "SayitaH iti sodarAt saMjYAyAm yaH",
+    samagra_dev           = "'शयितः' (इति) सोदरात् संज्ञायाम् यः",
     padaccheda_dev        = "सोदरात् यः",
     why_dev               = "(सूत्रम् 4.4.109) सोदराद्यः।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: पूरण-अर्धात् ठन्
 
 पूरणार्धाट्ठन् (5.1.48)
+Pāṭha: ashtadhyayi.com data.txt row i=51048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUraRArDAwWan",
     text_dev              = "पूरणार्धाट्ठन्",
+    samagra_slp1          = "tadasmin vfdDi-Aya-lABa-Sulka-upadAH dIyate iti pUraRa-arDAt Wan",
+    samagra_dev           = "'तदस्मिन् वृद्धि-आय-लाभ-शुल्क-उपदाः दीयते' इति पूरण-अर्धात् ठन्",
     padaccheda_dev        = "पूरण-अर्धात् ठन्",
     why_dev               = "(सूत्रम् 5.1.48) पूरणार्धाट्ठन्।",
     anuvritti_from        = ('5.1.19',),

@@ -4,6 +4,7 @@
 Padaccheda: छन्दो-गौक्थिक-याज्ञिक-बह्‍वृच-नटात् ञ्यः
 
 छन्दोगौक्थिकयाज्ञिकबह्वृचनटाञ्ञ्यः (4.3.129)
+Pāṭha: ashtadhyayi.com data.txt row i=43129 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "CandogOkTikayAjYikabahvfcanawAYYyaH",
     text_dev              = "छन्दोगौक्थिकयाज्ञिकबह्वृचनटाञ्ञ्यः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA Candoga-OkTika-yAjYika-bahvfca-nawAt YyaH tasya idam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा छन्दोग-औक्थिक-याज्ञिक-बह्वृच-नटात् ञ्यः तस्य इदम्",
     padaccheda_dev        = "छन्दो-गौक्थिक-याज्ञिक-बह्‍वृच-नटात् ञ्यः",
     why_dev               = "(सूत्रम् 4.3.129) छन्दोगौक्थिकयाज्ञिकबह्वृचनटाञ्ञ्यः।",
     anuvritti_from        = ('4.1.1',),

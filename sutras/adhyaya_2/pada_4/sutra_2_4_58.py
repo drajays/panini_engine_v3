@@ -4,6 +4,7 @@
 Padaccheda: ण्य-क्षत्रिय-आर्ष-ञितः यूनि लुक् अण्-इञोः
 
 luk of an and ina in nyakshtriya arsha ñit in yuvaka context.
+Pāṭha: ashtadhyayi.com data.txt row i=24058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "RyakzatriyArzaYito yUni lugaRiYoH",
     text_dev              = "ण्यक्षत्रियार्षञितो यूनि लुगणिञोः",
+    samagra_slp1          = "Rya-kzatriya-Arza-YitaH yUni luk aR-iYoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "ण्य-क्षत्रिय-आर्ष-ञितः यूनि लुक् अण्-इञोः",
     padaccheda_dev        = "ण्य-क्षत्रिय-आर्ष-ञितः यूनि लुक् अण्-इञोः",
     why_dev               = "ण्य-क्षत्रिय-आर्ष-ञित्-यूनि लुक् अण्-इञोः (२.४.५८)।",
     anuvritti_from        = ('2.4.1',),

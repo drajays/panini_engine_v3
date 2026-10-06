@@ -4,6 +4,7 @@
 Padaccheda: रुषि-अम-त्वर-संघुष-आस्वनाम्
 
 रुष्यमत्वरसंघुषास्वनाम् (7.2.28)
+Pāṭha: ashtadhyayi.com data.txt row i=72028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ruzyamatvarasaMGuzAsvanAm",
     text_dev              = "रुष्यमत्वरसंघुषास्वनाम्",
+    samagra_slp1          = "aNgasya ruzyamatvarasaMGuzAsvanAm na iw nizWAyAm vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य रुष्यमत्वरसंघुषास्वनाम् न इट् निष्ठायाम् वा",
     padaccheda_dev        = "रुषि-अम-त्वर-संघुष-आस्वनाम्",
     why_dev               = "(सूत्रम् 7.2.28) रुष्यमत्वरसंघुषास्वनाम्।",
     anuvritti_from        = ('7.1.1',),

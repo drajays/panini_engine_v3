@@ -4,6 +4,7 @@
 Padaccheda: अपे च लषः
 
 krt-suffix rule: अपे च लषः (144)
+Pāṭha: ashtadhyayi.com data.txt row i=32144 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ape ca lazaH",
     text_dev              = "अपे च लषः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu ape ca lazaH kft GinuR vO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु अपे च लषः कृत् घिनुण् वौ",
     padaccheda_dev        = "अपे च लषः",
     why_dev               = "धातोः कृत्-प्रत्ययः [अपे च लषः] विहितः (३.२.144)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

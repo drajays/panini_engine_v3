@@ -4,6 +4,7 @@
 Padaccheda: त्यद्-आदिषु दृशः अनालोचने कञ् च
 
 krt-suffix rule: त्यदादिषु दृशोऽनालोचने कञ् च (60)
+Pāṭha: ashtadhyayi.com data.txt row i=32060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tyadAdizu dfSonAlocane kaY ca',
     text_dev              = 'त्यदादिषु दृशोऽनालोचने कञ् च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH tyadAdizu dfSaH anAlocane kaY ca kft anupasarge supi kvin",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः त्यदादिषु दृशः अनालोचने कञ् च कृत् अनुपसर्गे सुपि क्विन्",
     padaccheda_dev        = "त्यद्-आदिषु दृशः अनालोचने कञ् च",
     why_dev               = "धातोः कृत्-प्रत्ययः [त्यदादिषु दृशोऽनालोचने कञ् च] विहितः (३.२.60)।",
     anuvritti_from        = ('3.1.1',),

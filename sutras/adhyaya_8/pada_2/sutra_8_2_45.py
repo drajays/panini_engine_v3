@@ -4,6 +4,7 @@
 Padaccheda: ओत्-इतः च
 
 ओदितश्च (8.2.45)
+Pāṭha: ashtadhyayi.com data.txt row i=82045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "oditaSca",
     text_dev              = "ओदितश्च",
+    samagra_slp1          = "padasya pUrvatrAsidDam oditaH ca nizWAtaH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् ओदितः च निष्ठातः नः",
     padaccheda_dev        = "ओत्-इतः च",
     why_dev               = "(सूत्रम् 8.2.45) ओदितश्च।",
     anuvritti_from        = ('8.1.1',),

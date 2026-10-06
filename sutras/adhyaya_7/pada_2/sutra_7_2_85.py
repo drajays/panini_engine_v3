@@ -4,6 +4,7 @@
 Padaccheda: रायः हलि
 
 रायो हलि (7.2.85)
+Pāṭha: ashtadhyayi.com data.txt row i=72085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAyo hali",
     text_dev              = "रायो हलि",
+    samagra_slp1          = "rAyaH aNgasya hali viBaktO A",
+    samagra_dev           = "रायः अङ्गस्य हलि विभक्तौ आ",
     padaccheda_dev        = "रायः हलि",
     why_dev               = "(सूत्रम् 7.2.85) रायो हलि।",
     anuvritti_from        = ('7.1.1',),

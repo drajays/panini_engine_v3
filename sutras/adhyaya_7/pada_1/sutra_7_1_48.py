@@ -4,6 +4,7 @@
 Padaccheda: इष्ट्‍वीनम् इति च
 
 इष्ट्वीनमिति च (7.1.48)
+Pāṭha: ashtadhyayi.com data.txt row i=71048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "izwvInamiti ca",
     text_dev              = "इष्ट्वीनमिति च",
+    samagra_slp1          = "aNgasya izwvInam iti ca Candasi ktvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य इष्ट्वीनम् इति च छन्दसि क्त्वः",
     padaccheda_dev        = "इष्ट्‍वीनम् इति च",
     why_dev               = "(सूत्रम् 7.1.48) इष्ट्वीनमिति च।",
     anuvritti_from        = ('7.1.1',),

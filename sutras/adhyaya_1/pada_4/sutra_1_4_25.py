@@ -10,6 +10,7 @@ bhayahetu and gets apādāna.
 
 *Engine:* A Term carrying ``"Baya_hetu"`` (pipeline-set) gets tag ``"apAdAna"``.
 ``cond`` reads only structural semantic tags (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -50,6 +51,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = "BItrArTAnAM BayahetuH",
     text_dev              = "भीत्रार्थानां भयहेतुः",
+    samagra_slp1          = "BItrArTAnAM BayahetuH kArakam apAdAnam",
+    samagra_dev           = "भीत्रार्थानां भयहेतुः कारकम् अपादानम्",
     padaccheda_dev        = "भीत्रार्थानाम् / भयहेतुः",
     why_dev               = (
         "भीत्रादि-धातूनाम् अर्थे यो भयहेतुः स अपादान-कारक-संज्ञकः — "

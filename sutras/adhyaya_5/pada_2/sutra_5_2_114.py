@@ -4,6 +4,7 @@
 Padaccheda: ज्योत्स्ना-तमिस्रा-शृङ्गिण-ऊजस्विन्-ऊर्जस्वल-गोमिन्-मलिन-मलीमसाः
 
 ज्योत्स्नातमिस्राशृङ्गिणोजस्विन्नूर्जस्वलगोमिन्मलिनमलीमसाः (5.2.114)
+Pāṭha: ashtadhyayi.com data.txt row i=52114 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'jyotsnAtamisrASfNgiRorjasvinnUrjasvalagominmalinamalImasAH',
     text_dev              = 'ज्योत्स्नातमिस्राशृङ्गिणोर्जस्विन्नूर्जस्वलगोमिन्मलिनमलीमसाः',
+    samagra_slp1          = "tat asya asmin astIti iti jyotsnA-tamisrA-SfNgiRa-Urjasvin-Urjasvala-gomin-malina-malImasAH nipAtyante",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) ज्योत्स्ना-तमिस्रा-शृङ्गिण-ऊर्जस्विन्-ऊर्जस्वल-गोमिन्-मलिन-मलीमसाः (निपात्यन्ते)",
     padaccheda_dev        = "ज्योत्स्ना-तमिस्रा-शृङ्गिण-ऊजस्विन्-ऊर्जस्वल-गोमिन्-मलिन-मलीमसाः",
     why_dev               = "(सूत्रम् 5.2.114) ज्योत्स्नातमिस्राशृङ्गिणोजस्विन्नूर्जस्वलगोमिन्मलिनमलीमसाः।",
     anuvritti_from        = ('4.1.82',),

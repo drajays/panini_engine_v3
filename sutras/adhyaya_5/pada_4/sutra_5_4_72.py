@@ -4,6 +4,7 @@
 Padaccheda: पथः विभाषा
 
 पथो विभाषा (5.4.72)
+Pāṭha: ashtadhyayi.com data.txt row i=54072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paTo viBAzA",
     text_dev              = "पथो विभाषा",
+    samagra_slp1          = "naYaH tatpuruzAt paTaH viBAzA samAsAntAH",
+    samagra_dev           = "नञः तत्पुरुषात् पथः विभाषा समासान्ताः",
     padaccheda_dev        = "पथः विभाषा",
     why_dev               = "(सूत्रम् 5.4.72) पथो विभाषा।",
     anuvritti_from        = ('5.4.68',),

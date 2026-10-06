@@ -4,6 +4,7 @@
 Padaccheda: तोः । लि
 
 तोर्लि (8.4.60)
+Pāṭha: ashtadhyayi.com data.txt row i=84060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "torli",
     text_dev              = "तोर्लि",
+    samagra_slp1          = "toH li parasavarRaH saMhitAyAm",
+    samagra_dev           = "तोः लि परसवर्णः संहितायाम्",
     padaccheda_dev        = "तोः । लि",
     why_dev               = "(सूत्रम् 8.4.60) तोर्लि।",
     anuvritti_from        = ('8.1.1',),

@@ -13,6 +13,7 @@ pratiśṛṇute — he hears back / he promises; āśṛṇute — he hears.
 stamp "Atmanepada_1_3_59" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _SRU_ROOTS carries either "prati_prefix" or "A_prefix". No arm flags
 (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -61,6 +62,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="pratyANByAM SruvaH",
     text_dev="प्रत्याङ्भ्यां श्रुवः",
+    samagra_slp1="prati-ANByAm SruvaH Atmanepadam sanaH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="प्रति-आङ्भ्याम् श्रुवः आत्मनेपदम् सनः न",
     padaccheda_dev="प्रति-आङ्भ्याम् (पञ्चमी-द्विवचन) / श्रुवः (षष्ठी-एकवचन)",
     why_dev=(
         "प्रति/आ-पूर्वकस्य श्रु-धातोः आत्मनेपदम् — "

@@ -4,6 +4,7 @@
 Padaccheda: दृष्टम् साम
 
 दृष्ट्अं साम (4.2.7)
+Pāṭha: ashtadhyayi.com data.txt row i=42007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'dfzwaM sAma',
     text_dev              = 'दृष्टं साम',
+    samagra_slp1          = "tena dfzwaM sAma iti samarTAnAm praTamAt paraH aR pratyayaH",
+    samagra_dev           = "'तेन दृष्टं साम' (इति) समर्थानाम् प्रथमात् परः अण् प्रत्ययः",
     padaccheda_dev        = "दृष्टम् साम",
     why_dev               = "(सूत्रम् 4.2.7) दृष्ट्अं साम।",
     anuvritti_from        = ('4.1.1',),

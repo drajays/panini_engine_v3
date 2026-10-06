@@ -4,6 +4,7 @@
 Padaccheda: राजा च प्रशंसायाम्
 
 राजा च प्रशंसायाम् (6.2.63)
+Pāṭha: ashtadhyayi.com data.txt row i=62063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAjA ca praSaMsAyAm",
     text_dev              = "राजा च प्रशंसायाम्",
+    samagra_slp1          = "rAjA ca praSaMsAyAm prakftyA pUrvapadam anyatarasyAm Silpini",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "राजा च प्रशंसायाम् प्रकृत्या पूर्वपदम् अन्यतरस्याम् शिल्पिनि",
     padaccheda_dev        = "राजा च प्रशंसायाम्",
     why_dev               = "(सूत्रम् 6.2.63) राजा च प्रशंसायाम्।",
     anuvritti_from        = ('6.1.1',),

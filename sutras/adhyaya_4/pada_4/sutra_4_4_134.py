@@ -4,6 +4,7 @@
 Padaccheda: अद्भिः संस्कृतम्
 
 अद्भिः संस्कृतम् (4.4.134)
+Pāṭha: ashtadhyayi.com data.txt row i=44134 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "adBiH saMskftam",
     text_dev              = "अद्भिः संस्कृतम्",
+    samagra_slp1          = "adBiH saMskftam iti Candasi saMjYAyAm yat",
+    samagra_dev           = "'अद्भिः संस्कृतम्' (इति) छन्दसि संज्ञायाम् यत्",
     padaccheda_dev        = "अद्भिः संस्कृतम्",
     why_dev               = "(सूत्रम् 4.4.134) अद्भिः संस्कृतम्।",
     anuvritti_from        = ('4.1.1',),

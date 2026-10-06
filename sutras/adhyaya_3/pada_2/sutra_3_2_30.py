@@ -4,6 +4,7 @@
 Padaccheda: नाडी-मुष्ट्योः च
 
 krt-suffix rule: नाडीमुष्ट्योश्च (30)
+Pāṭha: ashtadhyayi.com data.txt row i=32030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nAqImuzwyoSca",
     text_dev              = "नाडीमुष्ट्योश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH nAqI-muzwyoH ca kft karmaRi anupasarge supi KaS DmA-DewoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः नाडी-मुष्ट्योः च कृत् कर्मणि अनुपसर्गे सुपि खश् ध्मा-धेटोः",
     padaccheda_dev        = "नाडी-मुष्ट्योः च",
     why_dev               = "धातोः कृत्-प्रत्ययः [नाडीमुष्ट्योश्च] विहितः (३.२.30)।",
     anuvritti_from        = ('3.1.1',),

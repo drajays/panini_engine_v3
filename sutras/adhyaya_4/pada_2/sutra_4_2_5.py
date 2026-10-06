@@ -4,6 +4,7 @@
 Padaccheda: संज्ञायाम् श्रवण-अश्वत्थाभ्याम्
 
 संज्ञायां श्रवणाश्वत्थाभ्याम् (4.2.5)
+Pāṭha: ashtadhyayi.com data.txt row i=42005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYAyAM SravaRASvatTAByAm",
     text_dev              = "संज्ञायां श्रवणाश्वत्थाभ्याम्",
+    samagra_slp1          = "nakzatreRa yuktaH kAlaH iti SravaRa-aSvatTAByAm saMjYAyAM lup",
+    samagra_dev           = "'नक्षत्रेण युक्तः कालः' (इति) श्रवण-अश्वत्थाभ्याम् संज्ञायां लुप्",
     padaccheda_dev        = "संज्ञायाम् श्रवण-अश्वत्थाभ्याम्",
     why_dev               = "(सूत्रम् 4.2.5) संज्ञायां श्रवणाश्वत्थाभ्याम्।",
     anuvritti_from        = ('4.1.1',),

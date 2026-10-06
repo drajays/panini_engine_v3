@@ -4,6 +4,7 @@
 Padaccheda: इत्-अन्तः मसि (लुप्तप्रथमान्तनिर्देशः)
 
 इदन्तो मसि (7.1.46)
+Pāṭha: ashtadhyayi.com data.txt row i=71046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "idanto masi",
     text_dev              = "इदन्तो मसि",
+    samagra_slp1          = "aNgasya idantaH masi Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य इदन्तः मसि छन्दसि",
     padaccheda_dev        = "इत्-अन्तः मसि (लुप्तप्रथमान्तनिर्देशः)",
     why_dev               = "(सूत्रम् 7.1.46) इदन्तो मसि।",
     anuvritti_from        = ('7.1.1',),

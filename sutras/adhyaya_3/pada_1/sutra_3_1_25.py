@@ -4,6 +4,7 @@
 Padaccheda: सत्याप-पाश-रूप-वीणा-तूल-श्लोक-सेना-लोम-त्वच-वर्म-वर्ण-चूर्ण-चुरादिभ्यः णिच्
 
 Krt suffix rule from dhatu: सत्यापपाशरूपवीणातूलश्लोकसेनालोमत्वचवर्मवर्णचूर्णचुरादिभ्यो णिच् (25)
+Pāṭha: ashtadhyayi.com data.txt row i=31025 (Art. 14).
 """
 from __future__ import annotations
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -47,6 +48,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "satyApapASarUpavIRAtUlaSlokasenAlomatvacavarmavarRacUrRacurAdiByo Ric",
     text_dev              = "सत्यापपाशरूपवीणातूलश्लोकसेनालोमत्वचवर्मवर्णचूर्णचुरादिभ्यो णिच्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH satyApa-pASa-rUpa-vIRA-tUla-Sloka-senA-loma-tvaca-varma-varRa-cUrRa-curAdiByaH Ric",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः सत्याप-पाश-रूप-वीणा-तूल-श्लोक-सेना-लोम-त्वच-वर्म-वर्ण-चूर्ण-चुरादिभ्यः णिच्",
     padaccheda_dev        = "सत्याप-पाश-रूप-वीणा-तूल-श्लोक-सेना-लोम-त्वच-वर्म-वर्ण-चूर्ण-चुरादिभ्यः णिच्",
     why_dev               = "धातोः [सत्यापपाशरूपवीणातूलश्लोकसेनालोमत्वचवर्मवर्णचूर्णचुरादिभ्यो णिच्]-प्रत्ययः विहितः (३.१.25)।",
     anuvritti_from        = ('3.1.1',),

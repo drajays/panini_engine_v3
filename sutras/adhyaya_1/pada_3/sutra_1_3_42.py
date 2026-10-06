@@ -15,6 +15,7 @@ one dhātu Term carries one of _PROPA_PREFIXES and also carries the tag
 absent from state.meta.
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -53,6 +54,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='propAByAM samarTAByAm',
     text_dev='प्रोपाभ्यां समर्थाभ्याम्',
+    samagra_slp1="samarTAByAm propAByAm kramaH Atmanepadam",
+    samagra_dev="समर्थाभ्याम् प्रोपाभ्याम् क्रमः आत्मनेपदम्",
     padaccheda_dev="प्र-उपाभ्याम् (पञ्चमी-द्विवचन) / समर्थाभ्याम् (पञ्चमी-द्विवचन)",
     why_dev=(
         "प्र-पूर्वकस्य वा उप-पूर्वकस्य धातोः समर्थ-प्रयोगे आत्मनेपदम् — "

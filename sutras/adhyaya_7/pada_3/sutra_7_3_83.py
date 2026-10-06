@@ -4,6 +4,7 @@
 Padaccheda: जुसि च
 
 जुसि च (7.3.83)
+Pāṭha: ashtadhyayi.com data.txt row i=73083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "jusi ca",
     text_dev              = "जुसि च",
+    samagra_slp1          = "aNgasya jusi ca guRaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य जुसि च गुणः",
     padaccheda_dev        = "जुसि च",
     why_dev               = "(सूत्रम् 7.3.83) जुसि च।",
     anuvritti_from        = ('7.1.1',),

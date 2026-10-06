@@ -4,6 +4,7 @@
 Padaccheda: सः (षष्ठ्यर्थे प्रथमा) अचि लोपे चेत् पादपूरणम्
 
 सोऽचि लोपे चेत् पादपूरणम् (6.1.134)
+Pāṭha: ashtadhyayi.com data.txt row i=61134 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'soci lope cet pAdapUraRam',
     text_dev              = 'सोऽचि लोपे चेत् पादपूरणम्',
+    samagra_slp1          = "lope pAdapUraRam cet - saH aci lopaH",
+    samagra_dev           = "लोपे पादपूरणम् चेत् - सः अचि लोपः",
     padaccheda_dev        = "सः (षष्ठ्यर्थे प्रथमा) अचि लोपे चेत् पादपूरणम्",
     why_dev               = "(सूत्रम् 6.1.134) सोऽचि लोपे चेत् पादपूरणम्।",
     anuvritti_from        = ('6.1.1',),

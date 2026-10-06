@@ -4,6 +4,7 @@
 Padaccheda: कस्क-आदिषु । च
 
 कस्कादिषु च (8.3.48)
+Pāṭha: ashtadhyayi.com data.txt row i=83048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kaskAdizu ca",
     text_dev              = "कस्कादिषु च",
+    samagra_slp1          = "kaskAdizu visarjanIyasya saH  iRaH zaH",
+    samagra_dev           = "कस्कादिषु विसर्जनीयस्य सः , इणः षः",
     padaccheda_dev        = "कस्क-आदिषु । च",
     why_dev               = "(सूत्रम् 8.3.48) कस्कादिषु च।",
     anuvritti_from        = ('8.1.1',),

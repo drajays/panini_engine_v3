@@ -6,6 +6,7 @@ Two operational paths:
   2. Arm ``ashir_7_4_25_recipe``: āśīr-liṅ — fires as a trace marker.
      BU (bhū) already has the long ū; dīrgha is vacuous here.  The rule
      formally applies before ārdhadhātuka (yāsuṭ is ārdhadhātuka context).
+Pāṭha: ashtadhyayi.com data.txt row i=74025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -131,6 +132,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='akftsArvaDAtukayordIrGaH',
     text_dev='अकृत्सार्वधातुकयोर्दीर्घः',
+    samagra_slp1="aNgasya akftsArvaDAtukayoH dIrGaH kNiti yi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अङ्गस्य अकृत्सार्वधातुकयोः दीर्घः क्ङिति यि",
     padaccheda_dev="अकृतः / सार्वधातुकयोः / दीर्घः",
     why_dev=(
         "आर्धधातुके (आशीर्-लिङ्-यासुट्) परे अङ्गान्त-स्वरस्य दीर्घः "

@@ -4,6 +4,7 @@
 Padaccheda: स्यः (षष्ठ्यर्थे प्रथमा) छन्दसि बहुलम्
 
 स्यश्छन्दसि बहुलम् (6.1.133)
+Pāṭha: ashtadhyayi.com data.txt row i=61133 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "syaSCandasi bahulam",
     text_dev              = "स्यश्छन्दसि बहुलम्",
+    samagra_slp1          = "syaH Candasi hali bahulaM sulopaH",
+    samagra_dev           = "स्यः छन्दसि हलि बहुलं सुलोपः",
     padaccheda_dev        = "स्यः (षष्ठ्यर्थे प्रथमा) छन्दसि बहुलम्",
     why_dev               = "(सूत्रम् 6.1.133) स्यश्छन्दसि बहुलम्।",
     anuvritti_from        = ('6.1.1',),

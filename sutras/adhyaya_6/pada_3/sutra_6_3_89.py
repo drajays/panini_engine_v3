@@ -4,6 +4,7 @@
 Padaccheda: दृक्-दृश-वतुषु
 
 दृग्दृशवतुषु (6.3.89)
+Pāṭha: ashtadhyayi.com data.txt row i=63089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dfgdfSavatuzu",
     text_dev              = "दृग्दृशवतुषु",
+    samagra_slp1          = "uttarapade dfk-dfSa-vatuzu saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे दृक्-दृश-वतुषु सः",
     padaccheda_dev        = "दृक्-दृश-वतुषु",
     why_dev               = "(सूत्रम् 6.3.89) दृग्दृशवतुषु।",
     anuvritti_from        = ('6.1.1',),

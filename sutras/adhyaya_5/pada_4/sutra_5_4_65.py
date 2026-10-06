@@ -4,6 +4,7 @@
 Padaccheda: शूलात् पाके
 
 शूलात् पाके (5.4.65)
+Pāṭha: ashtadhyayi.com data.txt row i=54065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SUlAt pAke",
     text_dev              = "शूलात् पाके",
+    samagra_slp1          = "SUlAt pAke kfYaH qAc",
+    samagra_dev           = "शूलात् पाके कृञः डाच्",
     padaccheda_dev        = "शूलात् पाके",
     why_dev               = "(सूत्रम् 5.4.65) शूलात् पाके।",
     anuvritti_from        = ('4.1.76',),

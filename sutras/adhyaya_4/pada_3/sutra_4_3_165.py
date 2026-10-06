@@ -4,6 +4,7 @@
 Padaccheda: जम्ब्वाः वा
 
 जम्ब्वा वा (4.3.165)
+Pāṭha: ashtadhyayi.com data.txt row i=43165 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jambvA vA",
     text_dev              = "जम्ब्वा वा",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA jambvAH vA vikAraH tasya avayave Pale aR",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा जम्ब्वाः वा विकारः तस्य अवयवे फले अण्",
     padaccheda_dev        = "जम्ब्वाः वा",
     why_dev               = "(सूत्रम् 4.3.165) जम्ब्वा वा।",
     anuvritti_from        = ('4.1.1',),

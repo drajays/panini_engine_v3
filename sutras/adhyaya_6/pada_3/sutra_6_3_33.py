@@ -4,6 +4,7 @@
 Padaccheda: पितरामातरा च छन्दसि
 
 पितरामातरा च च्छन्दसि (6.3.33)
+Pāṭha: ashtadhyayi.com data.txt row i=63033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pitarAmAtarA ca cCandasi",
     text_dev              = "पितरामातरा च च्छन्दसि",
+    samagra_slp1          = "uttarapade pitarAmAtarA ca Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे पितरामातरा च छन्दसि",
     padaccheda_dev        = "पितरामातरा च छन्दसि",
     why_dev               = "(सूत्रम् 6.3.33) पितरामातरा च च्छन्दसि।",
     anuvritti_from        = ('6.1.1',),

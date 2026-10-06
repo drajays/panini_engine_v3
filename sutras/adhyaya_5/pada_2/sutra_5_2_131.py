@@ -4,6 +4,7 @@
 Padaccheda: सुख-आदिभ्यः च
 
 सुखादिभ्यश्च (5.2.131)
+Pāṭha: ashtadhyayi.com data.txt row i=52131 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "suKAdiByaSca",
     text_dev              = "सुखादिभ्यश्च",
+    samagra_slp1          = "tat asya asmin astIti  iti suKAdiByaH ini",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति ' (इति) सुखादिभ्यः इनि",
     padaccheda_dev        = "सुख-आदिभ्यः च",
     why_dev               = "(सूत्रम् 5.2.131) सुखादिभ्यश्च।",
     anuvritti_from        = ('4.1.82',),

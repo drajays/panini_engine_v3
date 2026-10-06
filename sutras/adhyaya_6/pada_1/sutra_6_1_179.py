@@ -4,6 +4,7 @@
 Padaccheda: षट्-त्रि-चतुर्भ्यः हल्-आदिः
 
 षट्त्रिचतुर्भ्यो हलादिः (6.1.179)
+Pāṭha: ashtadhyayi.com data.txt row i=61179 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zawtricaturByo halAdiH",
     text_dev              = "षट्त्रिचतुर्भ्यो हलादिः",
+    samagra_slp1          = "zaw-tri-caturByaH halAdiH antaH udAttaH viBaktiH nAm anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "षट्-त्रि-चतुर्भ्यः हलादिः अन्तः उदात्तः विभक्तिः नाम् अन्यतरस्याम्",
     padaccheda_dev        = "षट्-त्रि-चतुर्भ्यः हल्-आदिः",
     why_dev               = "(सूत्रम् 6.1.179) षट्त्रिचतुर्भ्यो हलादिः।",
     anuvritti_from        = ('6.1.1',),

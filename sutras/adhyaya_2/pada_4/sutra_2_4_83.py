@@ -4,6 +4,7 @@
 Padaccheda: न अव्ययीभावात् अतः अम् तु अ-पञ्चम्याः
 
 NOT avyayibhava from a, but am (not pancami) is retained.
+Pāṭha: ashtadhyayi.com data.txt row i=24083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nAvyayIBAvAdatomtvapaYcamyAH',
     text_dev              = 'नाव्ययीभावादतोऽम्त्वपञ्चम्याः',
+    samagra_slp1          = "na avyayIBAvAt ataH am tu a-paYcamyAH luk supaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "न अव्ययीभावात् अतः अम् तु अ-पञ्चम्याः लुक् सुपः",
     padaccheda_dev        = "न अव्ययीभावात् अतः अम् तु अ-पञ्चम्याः",
     why_dev               = "न अव्ययीभावात् अतः अम् तु अ-पञ्चम्याः (२.४.८३)।",
     anuvritti_from        = ('2.4.82',),

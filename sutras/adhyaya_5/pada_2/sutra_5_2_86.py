@@ -4,6 +4,7 @@
 Padaccheda: पूर्वात् इनिः
 
 पूर्वादिनिः (5.2.86)
+Pāṭha: ashtadhyayi.com data.txt row i=52086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUrvAdiniH",
     text_dev              = "पूर्वादिनिः",
+    samagra_slp1          = "anena iti pUrvAt iniH",
+    samagra_dev           = "'अनेन' (इति) पूर्वात् इनिः",
     padaccheda_dev        = "पूर्वात् इनिः",
     why_dev               = "(सूत्रम् 5.2.86) पूर्वादिनिः।",
     anuvritti_from        = ('4.1.82',),

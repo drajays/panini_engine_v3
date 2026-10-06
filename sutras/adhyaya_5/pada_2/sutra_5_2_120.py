@@ -4,6 +4,7 @@
 Padaccheda: रूपात् आहत-प्रशंसयोः यप्
 
 रूपादाहतप्रशंसयोरप् (5.2.120)
+Pāṭha: ashtadhyayi.com data.txt row i=52120 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'rUpAdAhatapraSaMsayoryap',
     text_dev              = 'रूपादाहतप्रशंसयोर्यप्',
+    samagra_slp1          = "tat asya asmin astIti iti rUpAt Ahata-praSaMsayoH yap",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) रूपात् आहत-प्रशंसयोः यप्",
     padaccheda_dev        = "रूपात् आहत-प्रशंसयोः यप्",
     why_dev               = "(सूत्रम् 5.2.120) रूपादाहतप्रशंसयोरप्।",
     anuvritti_from        = ('4.1.82',),

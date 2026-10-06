@@ -4,6 +4,7 @@
 Padaccheda: तत् अस्मै दीयते (क्रियापदम्) नियुक्तम्
 
 तदस्मै दीयते नियुक्तम् (4.4.66)
+Pāṭha: ashtadhyayi.com data.txt row i=44066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadasmE dIyate niyuktam",
     text_dev              = "तदस्मै दीयते नियुक्तम्",
+    samagra_slp1          = "tat asmE niyuktam dIyate iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् अस्मै नियुक्तम् दीयते' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "तत् अस्मै दीयते (क्रियापदम्) नियुक्तम्",
     why_dev               = "(सूत्रम् 4.4.66) तदस्मै दीयते नियुक्तम्।",
     anuvritti_from        = ('4.1.1',),

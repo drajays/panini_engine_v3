@@ -10,6 +10,7 @@ for this file (so **4.2.71** < **4.2.92** in the Aṣṭādhyāyī order still p
 **Engine:** one-shot audit in ``samjna_registry`` — ``True`` iff the first
 *prātipadika* ``Term``’s last phoneme is SLP1 ``o`` (so *aṇ* from *o* is live);
 ``False`` for bases like *śālā* (ā-anta), without reading *vibhakti* (Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=42071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     text_dev        = (
         'ओरञ्'
     ),
+    samagra_slp1    = "tadasminnastIti deSe tannAmni tena nirvfttam tasya nivAsaH adUraBavaSca iti oH aY",
+    samagra_dev     = "'तदस्मिन्नस्तीति देशे तन्नाम्नि', 'तेन निर्वृत्तम्', 'तस्य निवासः', 'अदूरभवश्च' इति ओः अञ्",
     padaccheda_dev  = "ओः (षष्ठी-एकवचनम्) / अञ् (प्रथमा-एकवचनम्)",
     why_dev         = (
         "ओकारान्ताद् अण्-प्रत्ययः शेषार्थे; आकारान्ते (शाला) अत्र न प्रवृत्तिः — "

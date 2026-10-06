@@ -2,6 +2,7 @@
 7.3.76  क्रमः परस्मैपदेषु  —  VIDHI
 
 क्रम् lengthens before a śit when a parasmaipada ending follows: क्रामति (but क्रमते).
+Pāṭha: ashtadhyayi.com data.txt row i=73076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -38,6 +39,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="kramaH parasmEpadezu",
     text_dev="क्रमः परस्मैपदेषु",
+    samagra_slp1="aNgasya kramaH parasmEpadezu dIrGaH Siti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अङ्गस्य क्रमः परस्मैपदेषु दीर्घः शिति",
     padaccheda_dev="क्रमः परस्मैपदेषु",
     why_dev="क्रम्-धातोः दीर्घः शिति परस्मैपदे परे (क्रामति)।",
     anuvritti_from=("7.3.73",),

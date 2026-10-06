@@ -4,6 +4,7 @@
 Padaccheda: उदः । स्था-स्तम्भोः । पूर्वस्य
 
 उदः स्थास्तम्भोः पूर्वस्य (8.4.61)
+Pāṭha: ashtadhyayi.com data.txt row i=84061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "udaH sTAstamBoH pUrvasya",
     text_dev              = "उदः स्थास्तम्भोः पूर्वस्य",
+    samagra_slp1          = "udaH sTAstamBoH pUrvasya savarRaH",
+    samagra_dev           = "उदः स्थास्तम्भोः पूर्वस्य सवर्णः",
     padaccheda_dev        = "उदः । स्था-स्तम्भोः । पूर्वस्य",
     why_dev               = "(सूत्रम् 8.4.61) उदः स्थास्तम्भोः पूर्वस्य।",
     anuvritti_from        = ('8.1.1',),

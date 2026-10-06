@@ -4,6 +4,7 @@
 Padaccheda: स्वामि-ईश्वर-अधिपति-दायाद-साक्षि-प्रतिभू-प्रसूतैः च
 
 svami, isvara, adhipati etc. take sasthi.
+Pāṭha: ashtadhyayi.com data.txt row i=23039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "svAmISvarADipatidAyAdasAkzipratiBUprasUtESca",
     text_dev              = "स्वामीश्वराधिपतिदायादसाक्षिप्रतिभूप्रसूतैश्च",
+    samagra_slp1          = "anaBihite svAmin-ISvara-aDipati-dAyAda-sAkzin-pratiBU-prasUtEH ca saptamI zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते स्वामिन्-ईश्वर-अधिपति-दायाद-साक्षिन्-प्रतिभू-प्रसूतैः च सप्तमी षष्ठी",
     padaccheda_dev        = "स्वामि-ईश्वर-अधिपति-दायाद-साक्षि-प्रतिभू-प्रसूतैः च",
     why_dev               = "स्वामि-ईश्वर-अधिपति-दायाद-साक्षि-प्रतिभू-प्रसूतैः च षष्ठी (२.३.३९)।",
     anuvritti_from        = ('2.3.50',),

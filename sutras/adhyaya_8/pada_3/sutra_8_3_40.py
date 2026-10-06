@@ -4,6 +4,7 @@
 Padaccheda: नमस् · पुरस् · गत्योः
 
 नमस्पुरसोर्गत्योः (8.3.40)
+Pāṭha: ashtadhyayi.com data.txt row i=83040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "namaspurasorgatyoH",
     text_dev              = "नमस्पुरसोर्गत्योः",
+    samagra_slp1          = "gatyoH namas-purasoH visarjanIyasya kupvoH saH",
+    samagra_dev           = "गत्योः नमस्-पुरसोः विसर्जनीयस्य कुप्वोः सः",
     padaccheda_dev        = "नमस् · पुरस् · गत्योः",
     why_dev               = "(सूत्रम् 8.3.40) नमस्पुरसोर्गत्योः।",
     anuvritti_from        = ('8.1.1',),

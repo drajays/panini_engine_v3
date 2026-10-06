@@ -4,6 +4,7 @@
 Padaccheda: अनुदात्ते च
 
 अनुदात्ते च (6.1.190)
+Pāṭha: ashtadhyayi.com data.txt row i=61190 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anudAtte ca",
     text_dev              = "अनुदात्ते च",
+    samagra_slp1          = "anudAtte ca udAttaH la-sArvaDAtukam AdiH aByastAnAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनुदात्ते च उदात्तः ल-सार्वधातुकम् आदिः अभ्यस्तानाम्",
     padaccheda_dev        = "अनुदात्ते च",
     why_dev               = "(सूत्रम् 6.1.190) अनुदात्ते च।",
     anuvritti_from        = ('6.1.1',),

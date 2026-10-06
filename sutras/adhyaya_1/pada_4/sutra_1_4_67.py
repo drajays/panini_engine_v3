@@ -6,6 +6,7 @@ gati-saṃjñā.  E.g., "puro-kṛ" (to place in front), "puro-dhā" (to keep
 in front — whence the compound purohita).
 
 v3: registers samjna_registry["gati_puras"] = frozenset({"puras"}).
+Pāṭha: ashtadhyayi.com data.txt row i=14067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='purovyayam',
     text_dev='पुरोऽव्ययम्',
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH puraH avyayam kriyAyoge gatiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः पुरः अव्ययम् क्रियायोगे गतिः",
     padaccheda_dev="पुरः / अव्ययम्",
     why_dev="'पुरस्' अव्ययं गति-संज्ञकम् — 'puras' गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

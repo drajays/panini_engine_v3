@@ -12,6 +12,7 @@
 *Engine:* ``cond`` delegates to ``terms_needing_tin_102_vacana`` (for tiṅ) and also handles sup
 terms tagged ``sup_ekavacana``/``sup_dvivacana``/``sup_bahuvacana`` (from **4.1.2**) that have
 not yet received ``sup_102_vacana_registered`` tag; *registry* ``1.4.102_tin_vacana`` (R2).
+Pāṭha: ashtadhyayi.com data.txt row i=14102 (Art. 14).
 """
 from __future__ import annotations
 
@@ -95,6 +96,8 @@ SUTRA = SutraRecord(
     text_dev       = (
         'तान्येकवचनद्विवचनबहुवचनान्येकशः'
     ),
+    samagra_slp1   = "tAni trIRi trIRi tiNaH ekavacana-dvivacana-bahuvacanAni ekaSaH",
+    samagra_dev    = "तानि त्रीणि त्रीणि तिङः एकवचन-द्विवचन-बहुवचनानि एकशः",
     padaccheda_dev = "तानि / त्रीणि-त्रीणि / तिङ् / एकवचन-द्विवचन-बहुवचनानि / एकशः",
     why_dev        = (
         "प्रत्येक-पुरुष-त्रिके क्रमेण एक-द्वि-बहु-वचन-संज्ञा; अष्टादश-तिङ्-क्रमः ३.४.७८।"

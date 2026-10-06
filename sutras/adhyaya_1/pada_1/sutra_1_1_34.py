@@ -24,6 +24,7 @@ v3:
 Mechanical blindness (CONSTITUTION Art. 2):
   - ``cond`` reads only ``Term.meta['upadesha_slp1']`` and Term.tags.
   - No paradigm coordinates, no Devanāgarī strings.
+Pāṭha: ashtadhyayi.com data.txt row i=11034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -91,6 +92,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1      = 'pUrvaparAvaradakziRottarAparADarARi vyavasTAyAmasaMjYAyAm',
     text_dev       = 'पूर्वपरावरदक्षिणोत्तरापराधराणि व्यवस्थायामसंज्ञायाम्',
+    samagra_slp1   = "pUrva-para-avara-dakziRa-uttara-apara-aDarARi vyavasTAyAm asaMjYAyAm sarvanAmAni viBAzA jasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "पूर्व-पर-अवर-दक्षिण-उत्तर-अपर-अधराणि व्यवस्थायाम् असंज्ञायाम् सर्वनामानि विभाषा जसि",
     padaccheda_dev = "पूर्व-पर-अवर-दक्षिण-उत्तर-अपर-अधराणि / व्यवस्थायाम् / असंज्ञायाम्",
     why_dev        = "दिशावाचि-शब्दानाम् (पूर्वादि-सप्तानाम्) सर्वनाम-संज्ञा व्यवस्थायाम् एव, "
                      "न तु संज्ञा-शब्देषु (नियमः)।",

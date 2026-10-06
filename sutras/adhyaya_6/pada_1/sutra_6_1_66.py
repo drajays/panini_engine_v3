@@ -2,7 +2,7 @@
 6.1.66  लोपो व्योर्वलि  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=601066
+- ashtadhyayi.com data.txt row i=61066
 - Kāśikā: हल्ङ्याब्भ्यो दीर्घात् सुतिपृक्तं हल्; लोपो व्योर्वलि (यकारलोपार्थम्)
 - Cross-validation: tests/unit/test_kaNDUti_ktic_vareya_yalopa_lesson.py;
   tests/unit/test_yAyAvar_yang_varac_purvavidhau_lesson.py
@@ -289,6 +289,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'lopo vyorvali',
     text_dev       = 'लोपो व्योर्वलि',
+    samagra_slp1   = "vyoH vali lopaH",
+    samagra_dev    = "व्योः वलि लोपः",
     padaccheda_dev = "हल्-ङि-आप्-भ्यः दीर्घात् सुति पृक्तं हल्",
     why_dev        = (
         "तृच्-पथ: दीर्घात् परस्य अपृक्त हल्-लोपः (सु→स्)। "

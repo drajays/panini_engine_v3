@@ -87,6 +87,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "Jerjus",
     text_dev              = "झेर्जुस्",
+    samagra_slp1          = "liNaH JeH jus",
+    samagra_dev           = "लिङः झेः जुस्",
     padaccheda_dev        = "झेः जुस्",
     why_dev               = (
         "विधि-लिङि झि-आदेशस्य स्थाने जुस् (j-cuṭु-it → लोपः → [u,s])।"

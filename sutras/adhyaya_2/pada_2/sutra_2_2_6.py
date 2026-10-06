@@ -14,6 +14,7 @@ Engine (narrow, mechanically blind):
   Gate key ``2_2_6_nan_gate``.  Recipe arms ``state.meta['2_2_6_arm']``
   and tags a Term with ``nan_negative`` indicating the nañ compound context.
   The gate is raised on first fire; registry stamp records the formation.
+Pāṭha: ashtadhyayi.com data.txt row i=22006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="naY",
     text_dev="नञ्",
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH naY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः नञ्",
     padaccheda_dev="नञ्",
     why_dev=(
         "नञ् सुबन्तेन समस्यते — अब्राह्मणः, अनश्वः इत्यादि नञ्-तत्पुरुषः।"

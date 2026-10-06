@@ -4,6 +4,7 @@
 Padaccheda: ई (लुप्तप्रथमान्तनिर्देशः) घ्रा-ध्मोः
 
 ई घ्राध्मोः (7.4.31)
+Pāṭha: ashtadhyayi.com data.txt row i=74031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "I GrADmoH",
     text_dev              = "ई घ्राध्मोः",
+    samagra_slp1          = "aNgasya I GrADmoH yaNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ई घ्राध्मोः यङि",
     padaccheda_dev        = "ई (लुप्तप्रथमान्तनिर्देशः) घ्रा-ध्मोः",
     why_dev               = "(सूत्रम् 7.4.31) ई घ्राध्मोः।",
     anuvritti_from        = ('7.1.1',),

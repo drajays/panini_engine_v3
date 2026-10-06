@@ -4,6 +4,7 @@
 Padaccheda: एनप् अन्यतरस्याम् अदूरे अ-पञ्चम्याः
 
 एनबन्यतरस्यामदूरेऽपञ्चम्याः (5.3.35)
+Pāṭha: ashtadhyayi.com data.txt row i=53035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'enabanyatarasyAmadUrepaYcamyAH',
     text_dev              = 'एनबन्यतरस्यामदूरेऽपञ्चम्याः',
+    samagra_slp1          = "uttara-aDara-dakziRAt saptamI-paYcamI-praTamAByaH apaYcamyAH adUre dik-deSa-kAlezu anyatarasyAm enap",
+    samagra_dev           = "उत्तर-अधर-दक्षिणात् सप्तमी-पञ्चमी-प्रथमाभ्यः अपञ्चम्याः अदूरे दिक्-देश-कालेषु अन्यतरस्याम् एनप्",
     padaccheda_dev        = "एनप् अन्यतरस्याम् अदूरे अ-पञ्चम्याः",
     why_dev               = "(सूत्रम् 5.3.35) एनबन्यतरस्यामदूरेऽपञ्चम्याः।",
     anuvritti_from        = ('4.1.76',),

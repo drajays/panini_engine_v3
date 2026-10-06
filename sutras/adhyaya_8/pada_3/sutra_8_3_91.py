@@ -4,6 +4,7 @@
 Padaccheda: कपिष्ठलः गोत्रे
 
 कपिष्ठलो गोत्रे (8.3.91)
+Pāṭha: ashtadhyayi.com data.txt row i=83091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kapizWalo gotre",
     text_dev              = "कपिष्ठलो गोत्रे",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH kapizWalaH gotre saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः कपिष्ठलः गोत्रे सः",
     padaccheda_dev        = "कपिष्ठलः गोत्रे",
     why_dev               = "(सूत्रम् 8.3.91) कपिष्ठलो गोत्रे।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: कुस्तुम्बुरूणि जातिः
 
 कुस्तुम्बुरूणि जातिः (6.1.143)
+Pāṭha: ashtadhyayi.com data.txt row i=61143 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kustumburURi jAtiH",
     text_dev              = "कुस्तुम्बुरूणि जातिः",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH kustumburURi jAtiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः कुस्तुम्बुरूणि जातिः",
     padaccheda_dev        = "कुस्तुम्बुरूणि जातिः",
     why_dev               = "(सूत्रम् 6.1.143) कुस्तुम्बुरूणि जातिः।",
     anuvritti_from        = ('6.1.1',),

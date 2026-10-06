@@ -4,6 +4,7 @@
 Padaccheda: माङि लुङ्
 
 krt-suffix rule: माङि लुङ्
+Pāṭha: ashtadhyayi.com data.txt row i=33175 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mANi luN",
     text_dev              = "माङि लुङ्",
+    samagra_slp1          = "mANi DAtoH paraH luN-pratyayaH",
+    samagra_dev           = "माङि धातोः परः लुङ्-प्रत्ययः",
     padaccheda_dev        = "माङि लुङ्",
     why_dev               = "धातोः प्रत्ययः (३.3.175)।",
     anuvritti_from        = ('3.1.1',),

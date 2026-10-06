@@ -4,6 +4,7 @@
 Padaccheda: द्युति-स्वाप्योः सम्प्रसारणम्
 
 द्युतिस्वाप्योः सम्प्रसारणम् (7.4.67)
+Pāṭha: ashtadhyayi.com data.txt row i=74067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dyutisvApyoH samprasAraRam",
     text_dev              = "द्युतिस्वाप्योः सम्प्रसारणम्",
+    samagra_slp1          = "aNgasya aByAsasya dyutisvApyoH samprasAraRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य द्युतिस्वाप्योः सम्प्रसारणम्",
     padaccheda_dev        = "द्युति-स्वाप्योः सम्प्रसारणम्",
     why_dev               = "(सूत्रम् 7.4.67) द्युतिस्वाप्योः सम्प्रसारणम्।",
     anuvritti_from        = ('7.1.1',),

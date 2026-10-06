@@ -4,6 +4,7 @@
 Padaccheda: विभाषा भाषायाम्
 
 विभाषा भाषायाम् (6.1.181)
+Pāṭha: ashtadhyayi.com data.txt row i=61181 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA BAzAyAm",
     text_dev              = "विभाषा भाषायाम्",
+    samagra_slp1          = "viBAzA BAzAyAm udAttaH antaH viBaktiH anyatarasyAm nAm zaw-tri-caturByaH Jali upottamam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "विभाषा भाषायाम् उदात्तः अन्तः विभक्तिः अन्यतरस्याम् नाम् षट्-त्रि-चतुर्भ्यः झलि उपोत्तमम्",
     padaccheda_dev        = "विभाषा भाषायाम्",
     why_dev               = "(सूत्रम् 6.1.181) विभाषा भाषायाम्।",
     anuvritti_from        = ('6.1.1',),

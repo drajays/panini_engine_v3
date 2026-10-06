@@ -8,6 +8,7 @@ In loṭ (imperative), this rule operates on two cells:
        (after 3.4.79 replaces Dvam's ṭi-am with e, giving Dve=dhve)
 
 Arm: state.meta["loT_karmani_recipe"] must be True.
+Pāṭha: ashtadhyayi.com data.txt row i=34091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -93,6 +94,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "savAByAM vAmO",
     text_dev              = "सवाभ्यां वामौ",
+    samagra_slp1          = "lowaH lasya savAByAm etaH va-amO",
+    samagra_dev           = "लोटः लस्य सवाभ्याम् एतः व-अमौ",
     padaccheda_dev        = "स-वाभ्याम् वा-मौ",
     why_dev               = (
         "लोट् आत्मनेपदे: मध्यमा-एक. से → स्व (थासस्से-पश्चात्); "

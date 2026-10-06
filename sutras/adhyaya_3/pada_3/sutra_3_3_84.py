@@ -4,6 +4,7 @@
 Padaccheda: परौ घः
 
 krt-suffix rule: परौ घः
+Pāṭha: ashtadhyayi.com data.txt row i=33084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parO GaH",
     text_dev              = "परौ घः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm parO GaH kft ap hanaH karaRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् परौ घः कृत् अप् हनः करणे",
     padaccheda_dev        = "परौ घः",
     why_dev               = "धातोः प्रत्ययः (३.3.84)।",
     anuvritti_from        = ('3.1.1',),

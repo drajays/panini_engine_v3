@@ -4,6 +4,7 @@
 Padaccheda: दः ति
 
 दस्ति (6.3.124)
+Pāṭha: ashtadhyayi.com data.txt row i=63124 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dasti",
     text_dev              = "दस्ति",
+    samagra_slp1          = "uttarapade saMhitAyAm daH ti dIrGaH upasargasya ikaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् दः ति दीर्घः उपसर्गस्य इकः",
     padaccheda_dev        = "दः ति",
     why_dev               = "(सूत्रम् 6.3.124) दस्ति।",
     anuvritti_from        = ('6.1.1',),

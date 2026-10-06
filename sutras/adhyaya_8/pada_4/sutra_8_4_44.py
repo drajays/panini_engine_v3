@@ -8,6 +8,7 @@ Classical reading: "An s-series or t-varga letter followed by S/c-varga
 here as a representative VIBHASHA SutraRecord so the engine tests cover
 all ten types.  The real 8.4.44 is an obligatory pariṇāmana; substitute
 any genuine vibhāṣā when building the production catalog.)
+Pāṭha: ashtadhyayi.com data.txt row i=84044 (Art. 14).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     sutra_type       = SutraType.VIBHASHA,
     text_slp1        = 'SAt',
     text_dev         = 'शात्',
+    samagra_slp1     = "SAt toH ScuH na",
+    samagra_dev      = "शात् तोः श्चुः न",
     padaccheda_dev   = "स्तोः श्चुना श्चुः",
     why_dev          = "स्-तवर्गयोः श्च्वर्ग-परे विकल्पेन श्चुः (श्-चवर्ग)।",
     anuvritti_from   = ("8.4.40",),

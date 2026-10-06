@@ -4,6 +4,7 @@
 Padaccheda: प्रतेः च
 
 प्रतेश्च (6.1.25)
+Pāṭha: ashtadhyayi.com data.txt row i=61025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prateSca",
     text_dev              = "प्रतेश्च",
+    samagra_slp1          = "prateH ca samprasAraRam nizWAyAm SyaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रतेः च सम्प्रसारणम् निष्ठायाम् श्यः",
     padaccheda_dev        = "प्रतेः च",
     why_dev               = "(सूत्रम् 6.1.25) प्रतेश्च।",
     anuvritti_from        = ('6.1.1',),

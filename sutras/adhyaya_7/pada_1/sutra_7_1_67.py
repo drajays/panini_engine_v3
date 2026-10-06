@@ -4,6 +4,7 @@
 Padaccheda: उपसर्गात् खल्-घञोः
 
 उपसर्गात् खल्घञोः (7.1.67)
+Pāṭha: ashtadhyayi.com data.txt row i=71067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upasargAt KalGaYoH",
     text_dev              = "उपसर्गात् खल्घञोः",
+    samagra_slp1          = "upasargAt laBeH Kal-GaYoH num",
+    samagra_dev           = "उपसर्गात् लभेः खल्-घञोः नुम्",
     padaccheda_dev        = "उपसर्गात् खल्-घञोः",
     why_dev               = "(सूत्रम् 7.1.67) उपसर्गात् खल्घञोः।",
     anuvritti_from        = ('7.1.1',),

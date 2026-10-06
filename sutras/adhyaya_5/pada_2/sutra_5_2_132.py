@@ -4,6 +4,7 @@
 Padaccheda: धर्म-शील-वर्ण-अन्तात् च
 
 धर्मशीलवर्णान्ताच्च (5.2.132)
+Pāṭha: ashtadhyayi.com data.txt row i=52132 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DarmaSIlavarRAntAcca",
     text_dev              = "धर्मशीलवर्णान्ताच्च",
+    samagra_slp1          = "tat asya asmin astIti iti Darma-SIla-varRAntAt iniH",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) धर्म-शील-वर्णान्तात् इनिः",
     padaccheda_dev        = "धर्म-शील-वर्ण-अन्तात् च",
     why_dev               = "(सूत्रम् 5.2.132) धर्मशीलवर्णान्ताच्च।",
     anuvritti_from        = ('4.1.82',),

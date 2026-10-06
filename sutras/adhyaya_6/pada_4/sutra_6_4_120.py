@@ -17,6 +17,7 @@ Replace 'a' with 'e'.
 Does NOT fire for:
   - kṛ → kar (anga_guna_7_3_84=True: 'a' is from ṛ→ar substitution)
   - Strong forms (upadha_vrddhi_done=True: 7.2.116 already gives ā)
+Pāṭha: ashtadhyayi.com data.txt row i=64120 (Art. 14).
 """
 from __future__ import annotations
 
@@ -95,6 +96,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ata ekahalmaDyenAdeSAderliwi',
     text_dev              = 'अत एकहल्मध्येऽनादेशादेर्लिटि',
+    samagra_slp1          = "ekahalmaDye anAdeSAdeH aNgasya ataH et kiti liwi aByAsalopaH ca ",
+    samagra_dev           = "एकहल्मध्ये अनादेशादेः अङ्गस्य अतः एत् किति लिटि, अभ्यासलोपः च ।",
     padaccheda_dev        = "अतः एक-हल्-मध्ये अन्-आदेश-आदेः लिटि",
     why_dev               = (
         "लिटि अनाभ्यास-धातोः एकहल्मध्यस्थ 'अ' → 'ए' — "

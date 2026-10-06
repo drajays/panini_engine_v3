@@ -4,6 +4,7 @@
 Padaccheda: वर्णात् ब्रह्मचारिणि
 
 वर्णाद्ब्रह्मचारिणि (5.2.134)
+Pāṭha: ashtadhyayi.com data.txt row i=52134 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "varRAdbrahmacAriRi",
     text_dev              = "वर्णाद्ब्रह्मचारिणि",
+    samagra_slp1          = "tat asya asmin astIti iti varRAt brahmacAriRi ini",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) वर्णात् ब्रह्मचारिणि इनि",
     padaccheda_dev        = "वर्णात् ब्रह्मचारिणि",
     why_dev               = "(सूत्रम् 5.2.134) वर्णाद्ब्रह्मचारिणि।",
     anuvritti_from        = ('4.1.82',),

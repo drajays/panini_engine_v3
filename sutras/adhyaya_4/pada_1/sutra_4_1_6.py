@@ -4,6 +4,7 @@
 Padaccheda: उक्-इतः च
 
 उगितश्च (4.1.6)
+Pāṭha: ashtadhyayi.com data.txt row i=41006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ugitaSca",
     text_dev              = "उगितश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm ugitaH ca NIp",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् उगितः च ङीप्",
     padaccheda_dev        = "उक्-इतः च",
     why_dev               = "(सूत्रम् 4.1.6) उगितश्च।",
     anuvritti_from        = ('4.1.1',),

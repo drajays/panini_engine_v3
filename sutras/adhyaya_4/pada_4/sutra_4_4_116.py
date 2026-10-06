@@ -4,6 +4,7 @@
 Padaccheda: अग्रात् यत्
 
 अग्राद्यत् (4.4.116)
+Pāṭha: ashtadhyayi.com data.txt row i=44116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "agrAdyat",
     text_dev              = "अग्राद्यत्",
+    samagra_slp1          = "tatra Bave iti agrAt Candasi saMjYAyAm yat",
+    samagra_dev           = "'तत्र भवे' (इति) अग्रात् छन्दसि संज्ञायाम् यत्",
     padaccheda_dev        = "अग्रात् यत्",
     why_dev               = "(सूत्रम् 4.4.116) अग्राद्यत्।",
     anuvritti_from        = ('4.1.1',),

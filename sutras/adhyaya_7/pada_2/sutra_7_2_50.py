@@ -4,6 +4,7 @@
 Padaccheda: क्लिशः क्त्वा-निष्ठयोः
 
 क्लिशः क्त्वानिष्ठयोः (7.2.50)
+Pāṭha: ashtadhyayi.com data.txt row i=72050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kliSaH ktvAnizWayoH",
     text_dev              = "क्लिशः क्त्वानिष्ठयोः",
+    samagra_slp1          = "aNgasya kliSaH ktvAnizWayoH ArDaDAtukasya iw valAdeH vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य क्लिशः क्त्वानिष्ठयोः आर्धधातुकस्य इट् वलादेः वा",
     padaccheda_dev        = "क्लिशः क्त्वा-निष्ठयोः",
     why_dev               = "(सूत्रम् 7.2.50) क्लिशः क्त्वानिष्ठयोः।",
     anuvritti_from        = ('7.1.1',),

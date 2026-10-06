@@ -4,6 +4,7 @@
 Padaccheda: अपरिमाण-बिस्त-अचित-कम्बल्येभ्यः न तद्धित-लुकि
 
 अपरिमाणबिस्ताचितकम्बल्येभ्यो न तद्धितलुकि (4.1.22)
+Pāṭha: ashtadhyayi.com data.txt row i=41022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aparimARabistAcitakambalyeByo na tadDitaluki",
     text_dev              = "अपरिमाणबिस्ताचितकम्बल्येभ्यो न तद्धितलुकि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt a-parimARa-bista-Acita-kambalyeByaH na tadDita-luki NIp dvigoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् अ-परिमाण-बिस्त-आचित-कम्बल्येभ्यः न तद्धित-लुकि ङीप् द्विगोः",
     padaccheda_dev        = "अपरिमाण-बिस्त-अचित-कम्बल्येभ्यः न तद्धित-लुकि",
     why_dev               = "(सूत्रम् 4.1.22) अपरिमाणबिस्ताचितकम्बल्येभ्यो न तद्धितलुकि।",
     anuvritti_from        = ('4.1.1',),

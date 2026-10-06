@@ -4,6 +4,7 @@
 Padaccheda: सप्तम्याः त्रल्
 
 सप्तम्यास्त्रल् (5.3.10)
+Pāṭha: ashtadhyayi.com data.txt row i=53010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saptamyAstral",
     text_dev              = "सप्तम्यास्त्रल्",
+    samagra_slp1          = "saptamyAH kim-sarvanAmabahuByaH advyAdiByaH tral",
+    samagra_dev           = "सप्तम्याः किम्-सर्वनामबहुभ्यः अद्व्यादिभ्यः त्रल्",
     padaccheda_dev        = "सप्तम्याः त्रल्",
     why_dev               = "(सूत्रम् 5.3.10) सप्तम्यास्त्रल्।",
     anuvritti_from        = ('5.3.2',),

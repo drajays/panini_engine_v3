@@ -4,6 +4,7 @@
 Padaccheda: परस्मिन् विभाषा
 
 krt-suffix rule: परस्मिन् विभाषा
+Pāṭha: ashtadhyayi.com data.txt row i=33138 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parasmin viBAzA",
     text_dev              = "परस्मिन् विभाषा",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH parasmin viBAzA kft na anadyatanavat maryAdAvacane Bavizyati kAlaviBAge ca anahorAtrARAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः परस्मिन् विभाषा कृत् न अनद्यतनवत् मर्यादावचने भविष्यति कालविभागे च अनहोरात्राणाम्",
     padaccheda_dev        = "परस्मिन् विभाषा",
     why_dev               = "धातोः प्रत्ययः (३.3.138)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: विभाषा उशीनरेषु
 
 विभाषोशीनरेषु (4.2.118)
+Pāṭha: ashtadhyayi.com data.txt row i=42118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzoSInarezu",
     text_dev              = "विभाषोशीनरेषु",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA viBAzA uSInarezu vfdDAt WaY-YiWO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा विभाषा उशीनरेषु वृद्धात् ठञ्-ञिठौ",
     padaccheda_dev        = "विभाषा उशीनरेषु",
     why_dev               = "(सूत्रम् 4.2.118) विभाषोशीनरेषु।",
     anuvritti_from        = ('4.1.1',),

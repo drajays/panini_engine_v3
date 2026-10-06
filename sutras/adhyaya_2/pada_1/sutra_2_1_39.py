@@ -4,6 +4,7 @@
 Padaccheda: स्तोक-अन्तिक-दूर-अर्थ-कृच्छ्राणि क्तेन
 
 stoka, antika, dura, krcchra with kta form tatpurusha compound.
+Pāṭha: ashtadhyayi.com data.txt row i=21039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "stokAntikadUrArTakfcCrARi ktena",
     text_dev              = "स्तोकान्तिकदूरार्थकृच्छ्राणि क्तेन",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH stoka-antika-dUrArTa-kfcCrARi ktena paYcamI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः स्तोक-अन्तिक-दूरार्थ-कृच्छ्राणि क्तेन पञ्चमी",
     padaccheda_dev        = "स्तोक-अन्तिक-दूर-अर्थ-कृच्छ्राणि क्तेन",
     why_dev               = "स्तोक-अन्तिक-आदिषु क्तान्तेन सह तत्पुरुषः (२.१.३९)।",
     anuvritti_from        = ('2.1.22',),

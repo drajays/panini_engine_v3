@@ -11,6 +11,15 @@ Paths: `data.txt` / `kashika.txt` = ashtadhyayi.com `sutraani/` (iCloud
 
 ---
 
+## SC-T — sūtra pāṭha: workbook vs ashtadhyayi.com `data.txt` (AMENDMENT 20, 2026-10-06)
+
+`scripts/build_sutra_context.py` now corrects workbook `text` to the T0 pāṭha (`data.txt` `s`) — 201 sūtras
+(typos/truncations copied from an older site export: 1.1.5 क्क्ङिति, 1.1.34 truncated, 1.2.59 द्वायोः, 1.3.87 lacks च …).
+Kept: 9 where the only difference is an added ँ (workbook marks pratijñā-anunāsika: क्विँप्, घिनुँण्). Owner overrides untouched.
+Every case is in `data/inputs/sutra_context.conflicts.json` → `text` (`kind`: `corrected_to_T0` | `anunasika_marking_kept`).
+
+---
+
 ## SC-001 — Is 4.1.92 तस्यापत्यम् an adhikāra over the apatya section? — RESOLVED 2026-10-01
 
 **Ruling (Ajay):** It is an अर्थनिर्देश (Kāśikā) that connects with the earlier and

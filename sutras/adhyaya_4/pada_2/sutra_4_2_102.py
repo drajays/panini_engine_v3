@@ -4,6 +4,7 @@
 Padaccheda: कन्थायाः ठक्
 
 कन्थायाष्ठक् (4.2.102)
+Pāṭha: ashtadhyayi.com data.txt row i=42102 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kanTAyAzWak",
     text_dev              = "कन्थायाष्ठक्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA kanTAyAH Wak",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा कन्थायाः ठक्",
     padaccheda_dev        = "कन्थायाः ठक्",
     why_dev               = "(सूत्रम् 4.2.102) कन्थायाष्ठक्।",
     anuvritti_from        = ('4.1.1',),

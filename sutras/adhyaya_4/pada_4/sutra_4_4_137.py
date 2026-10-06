@@ -4,6 +4,7 @@
 Padaccheda: सोमम् अर्हति (क्रियापदम्) यः
 
 सोममर्हति यः (4.4.137)
+Pāṭha: ashtadhyayi.com data.txt row i=44137 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "somamarhati yaH",
     text_dev              = "सोममर्हति यः",
+    samagra_slp1          = "somamarhati iti Candasi saMjYAyAm yaH",
+    samagra_dev           = "'सोममर्हति' (इति) छन्दसि संज्ञायाम्  यः",
     padaccheda_dev        = "सोमम् अर्हति (क्रियापदम्) यः",
     why_dev               = "(सूत्रम् 4.4.137) सोममर्हति यः।",
     anuvritti_from        = ('4.1.1',),

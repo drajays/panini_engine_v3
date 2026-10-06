@@ -4,6 +4,7 @@
 Padaccheda: वसु-स्रंसु-ध्वंसु-अनडुहाम् दः
 
 वसुस्रंसुध्वंस्वनडुहां दः (8.2.72)
+Pāṭha: ashtadhyayi.com data.txt row i=82072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vasusraMsuDvaMsvanaquhAM daH",
     text_dev              = "वसुस्रंसुध्वंस्वनडुहां दः",
+    samagra_slp1          = "saH vasu~-sraMsu-DvaMsu-anaquhAm padasya daH",
+    samagra_dev           = "सः वसुँ-स्रंसु-ध्वंसु-अनडुहाम् पदस्य दः",
     padaccheda_dev        = "वसु-स्रंसु-ध्वंसु-अनडुहाम् दः",
     why_dev               = "(सूत्रम् 8.2.72) वसुस्रंसुध्वंस्वनडुहां दः।",
     anuvritti_from        = ('8.1.1',),

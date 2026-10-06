@@ -4,6 +4,7 @@
 Padaccheda: ह इति क्षियायाम्
 
 हेति क्षियायाम् (8.1.60)
+Pāṭha: ashtadhyayi.com data.txt row i=81060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "heti kziyAyAm",
     text_dev              = "हेति क्षियायाम्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO ha iti kziyAyAm tiN na praTamA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ ह इति क्षियायाम् तिङ् न प्रथमा",
     padaccheda_dev        = "ह इति क्षियायाम्",
     why_dev               = "(सूत्रम् 8.1.60) हेति क्षियायाम्।",
     anuvritti_from        = ('8.1.1',),

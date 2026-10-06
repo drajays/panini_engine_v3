@@ -4,6 +4,7 @@
 Padaccheda: कव्य-पुरीष-पुरीष्येषु ञ्युट्
 
 krt-suffix rule: कव्यपुरीषपुरीष्येषु ञ्युट् (65)
+Pāṭha: ashtadhyayi.com data.txt row i=32065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kavyapurIzapurIzyezu Yyuw",
     text_dev              = "कव्यपुरीषपुरीष्येषु ञ्युट्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kavya-purIza-purIzyezu Yyuw kft supi api upasarge Candasi vahaH ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कव्य-पुरीष-पुरीष्येषु ञ्युट् कृत् सुपि अपि उपसर्गे छन्दसि वहः च",
     padaccheda_dev        = "कव्य-पुरीष-पुरीष्येषु ञ्युट्",
     why_dev               = "धातोः कृत्-प्रत्ययः [कव्यपुरीषपुरीष्येषु ञ्युट्] विहितः (३.२.65)।",
     anuvritti_from        = ('3.1.1',),

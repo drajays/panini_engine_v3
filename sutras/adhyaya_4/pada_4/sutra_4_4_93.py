@@ -4,6 +4,7 @@
 Padaccheda: छन्दसः निर्मिते
 
 छन्दसो निर्मिते (4.4.93)
+Pāṭha: ashtadhyayi.com data.txt row i=44093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Candaso nirmite",
     text_dev              = "छन्दसो निर्मिते",
+    samagra_slp1          = "CandasaH saMjYAyAm nirmite iti samarTAnAm praTamAt paraH yat pratyayaH",
+    samagra_dev           = "'छन्दसः संज्ञायाम् निर्मिते' (इति) समर्थानाम् प्रथमात् परः यत् प्रत्ययः",
     padaccheda_dev        = "छन्दसः निर्मिते",
     why_dev               = "(सूत्रम् 4.4.93) छन्दसो निर्मिते।",
     anuvritti_from        = ('4.1.1',),

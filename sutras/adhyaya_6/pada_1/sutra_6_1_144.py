@@ -4,6 +4,7 @@
 Padaccheda: अपरस्पराः क्रियासातत्ये
 
 अपरस्पराः क्रियासातत्ये (6.1.144)
+Pāṭha: ashtadhyayi.com data.txt row i=61144 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aparasparAH kriyAsAtatye",
     text_dev              = "अपरस्पराः क्रियासातत्ये",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH aparasparAH kriyAsAtatye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः अपरस्पराः क्रियासातत्ये",
     padaccheda_dev        = "अपरस्पराः क्रियासातत्ये",
     why_dev               = "(सूत्रम् 6.1.144) अपरस्पराः क्रियासातत्ये।",
     anuvritti_from        = ('6.1.1',),

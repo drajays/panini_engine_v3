@@ -4,6 +4,7 @@
 Padaccheda: पथः ष्कन्
 
 पथः ष्कन् (5.1.75)
+Pāṭha: ashtadhyayi.com data.txt row i=51075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paTaH zkan",
     text_dev              = "पथः ष्कन्",
+    samagra_slp1          = "tat gacCati iti paTaH zkan",
+    samagra_dev           = "'तत् गच्छति' (इति) पथः ष्कन्",
     padaccheda_dev        = "पथः ष्कन्",
     why_dev               = "(सूत्रम् 5.1.75) पथः ष्कन्।",
     anuvritti_from        = ('5.1.18',),

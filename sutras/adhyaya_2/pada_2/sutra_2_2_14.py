@@ -11,6 +11,7 @@ v3 narrow slice:
 
 This module does not attempt full samāsa formation; pipelines may perform
 structural merges (recorded in trace) after asserting the intent.
+Pāṭha: ashtadhyayi.com data.txt row i=22014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -34,6 +35,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='karmaRi ca',
     text_dev='कर्मणि च',
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH karmaRi ca zazWI na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः कर्मणि च षष्ठी न",
     padaccheda_dev="कर्तरि / च",
     why_dev="बहुव्रीहौ अनेकेन अन्यपदार्थे (P023 डेमो) — संज्ञा-चिह्ननम्।",
     anuvritti_from=("2.2.13",),

@@ -4,6 +4,7 @@
 Padaccheda: कन्था च
 
 कन्था च (6.2.124)
+Pāṭha: ashtadhyayi.com data.txt row i=62124 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kanTA ca",
     text_dev              = "कन्था च",
+    samagra_slp1          = "udAttaH uttarapadAdiH kanTA ca napuMsake tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः कन्था च नपुंसके तत्पुरुषे",
     padaccheda_dev        = "कन्था च",
     why_dev               = "(सूत्रम् 6.2.124) कन्था च।",
     anuvritti_from        = ('6.1.1',),

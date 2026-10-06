@@ -4,6 +4,7 @@
 Padaccheda: समासे अङ्‍गुलेः सङ्गः (षष्ठ्याः स्थाने प्रथमाऽत्र व्यत्ययेन )
 
 समासेऽङ्गुलेः सङ्गः (8.3.80)
+Pāṭha: ashtadhyayi.com data.txt row i=83080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'samAseNguleH saNgaH',
     text_dev              = 'समासेऽङ्गुलेः सङ्गः',
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH samAse aNguleH saNgaH saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः समासे अङ्गुलेः सङ्गः सः",
     padaccheda_dev        = "समासे अङ्‍गुलेः सङ्गः (षष्ठ्याः स्थाने प्रथमाऽत्र व्यत्ययेन )",
     why_dev               = "(सूत्रम् 8.3.80) समासेऽङ्गुलेः सङ्गः।",
     anuvritti_from        = ('8.1.1',),

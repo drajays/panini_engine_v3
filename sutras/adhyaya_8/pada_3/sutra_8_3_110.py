@@ -4,6 +4,7 @@
 Padaccheda: न र-पर-सृपि-सृजि-स्पृशि-स्पृहि-सवन-आदीनाम्
 
 न रपरसृपिसृजिस्पृशिस्पृहिसवनादीनाम् (8.3.110)
+Pāṭha: ashtadhyayi.com data.txt row i=83110 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na raparasfpisfjispfSispfhisavanAdInAm",
     text_dev              = "न रपरसृपिसृजिस्पृशिस्पृहिसवनादीनाम्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH na rapara-sfpi-sfji-spfSi-spfhi-savanAdInAm saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः न रपर-सृपि-सृजि-स्पृशि-स्पृहि-सवनादीनाम् सः",
     padaccheda_dev        = "न र-पर-सृपि-सृजि-स्पृशि-स्पृहि-सवन-आदीनाम्",
     why_dev               = "(सूत्रम् 8.3.110) न रपरसृपिसृजिस्पृशिस्पृहिसवनादीनाम्।",
     anuvritti_from        = ('8.1.1',),

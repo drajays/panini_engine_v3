@@ -4,6 +4,7 @@
 Padaccheda: महेन्द्रात् घ-अणौ च
 
 महेन्द्राद्घाणौ च (4.2.29)
+Pāṭha: ashtadhyayi.com data.txt row i=42029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mahendrAdGARO ca",
     text_dev              = "महेन्द्राद्घाणौ च",
+    samagra_slp1          = "sA asya devatA iti mahendrAt Ga-aRO Ca ca",
+    samagra_dev           = "'सा अस्य देवता' (इति) महेन्द्रात् घ-अणौ, छ च",
     padaccheda_dev        = "महेन्द्रात् घ-अणौ च",
     why_dev               = "(सूत्रम् 4.2.29) महेन्द्राद्घाणौ च।",
     anuvritti_from        = ('4.1.1',),

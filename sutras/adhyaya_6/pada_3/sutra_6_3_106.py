@@ -4,6 +4,7 @@
 Padaccheda: विभाषा पुरुषे
 
 विभाषा पुरुषे (6.3.106)
+Pāṭha: ashtadhyayi.com data.txt row i=63106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA puruze",
     text_dev              = "विभाषा पुरुषे",
+    samagra_slp1          = "uttarapade viBAzA puruze koH kA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे विभाषा पुरुषे कोः का",
     padaccheda_dev        = "विभाषा पुरुषे",
     why_dev               = "(सूत्रम् 6.3.106) विभाषा पुरुषे।",
     anuvritti_from        = ('6.1.1',),

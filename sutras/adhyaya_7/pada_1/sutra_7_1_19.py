@@ -7,6 +7,7 @@ Operational role (v3.6, napuṃsaka a-stems):
 
 After it-lopa removes S, the boundary a + I resolves by 6.1.87 to 'e'
 giving forms like **ज्ञाने**.
+Pāṭha: ashtadhyayi.com data.txt row i=71019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -54,6 +55,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'napuMsakAcca',
     text_dev       = 'नपुंसकाच्च',
+    samagra_slp1   = "napuMsakAt aNgAt ONaH SI",
+    samagra_dev    = "नपुंसकात् अङ्गात् औङः शी",
     padaccheda_dev = "नपुंसकात् च",
     why_dev        = "नपुंसक-अङ्गात् परस्य औ/औट्-प्रत्ययस्य ‘शी’-आदेशः (ज्ञाने)।",
     anuvritti_from = ("6.4.1",),

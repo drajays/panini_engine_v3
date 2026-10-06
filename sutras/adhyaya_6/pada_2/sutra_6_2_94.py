@@ -4,6 +4,7 @@
 Padaccheda: संज्ञायाम् गिरि-निकाययोः
 
 संज्ञायां गिरिनिकाययोः (6.2.94)
+Pāṭha: ashtadhyayi.com data.txt row i=62094 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYAyAM girinikAyayoH",
     text_dev              = "संज्ञायां गिरिनिकाययोः",
+    samagra_slp1          = "udAttaH antaH saMjYAyAm giri-nikAyayoH pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः संज्ञायाम् गिरि-निकाययोः पूर्वपदम्",
     padaccheda_dev        = "संज्ञायाम् गिरि-निकाययोः",
     why_dev               = "(सूत्रम् 6.2.94) संज्ञायां गिरिनिकाययोः।",
     anuvritti_from        = ('6.1.1',),

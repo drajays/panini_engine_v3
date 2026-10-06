@@ -4,6 +4,7 @@
 Padaccheda: एकात् आकिनिच् च असहाये
 
 एकादाकिनिच्चासहाये (5.3.52)
+Pāṭha: ashtadhyayi.com data.txt row i=53052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ekAdAkiniccAsahAye",
     text_dev              = "एकादाकिनिच्चासहाये",
+    samagra_slp1          = "ekAt asahAye Akinic kan lukO ca",
+    samagra_dev           = "एकात् असहाये आकिनिच्, कन् लुकौ च",
     padaccheda_dev        = "एकात् आकिनिच् च असहाये",
     why_dev               = "(सूत्रम् 5.3.52) एकादाकिनिच्चासहाये।",
     anuvritti_from        = ('4.1.76',),

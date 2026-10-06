@@ -4,6 +4,7 @@
 Padaccheda: जनपद-तदवध्योः च
 
 जनपदतदवध्योश्च (4.2.124)
+Pāṭha: ashtadhyayi.com data.txt row i=42124 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "janapadatadavaDyoSca",
     text_dev              = "जनपदतदवध्योश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA janapada-tad-avaDyoH ca vfdDAt vuY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा जनपद-तद्-अवध्योः च वृद्धात् वुञ्",
     padaccheda_dev        = "जनपद-तदवध्योः च",
     why_dev               = "(सूत्रम् 4.2.124) जनपदतदवध्योश्च।",
     anuvritti_from        = ('4.1.1',),

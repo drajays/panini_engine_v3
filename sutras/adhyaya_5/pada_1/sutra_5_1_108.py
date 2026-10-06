@@ -4,6 +4,7 @@
 Padaccheda: प्रकृष्टे ठञ्
 
 प्रकृष्टे ठञ् (5.1.108)
+Pāṭha: ashtadhyayi.com data.txt row i=51108 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prakfzwe WaY",
     text_dev              = "प्रकृष्टे ठञ्",
+    samagra_slp1          = "tat asya iti kAlAt prakfzwe WaY",
+    samagra_dev           = "'तत् अस्य' (इति) कालात् प्रकृष्टे ठञ्",
     padaccheda_dev        = "प्रकृष्टे ठञ्",
     why_dev               = "(सूत्रम् 5.1.108) प्रकृष्टे ठञ्।",
     anuvritti_from        = ('5.1.18',),

@@ -4,6 +4,7 @@
 Padaccheda: सर्व-पुरुषाभ्याम् ण-ढञौ
 
 सर्वपुरुषाभ्यां णढञौ (5.1.10)
+Pāṭha: ashtadhyayi.com data.txt row i=51010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sarvapuruzAByAM RaQaYO",
     text_dev              = "सर्वपुरुषाभ्यां णढञौ",
+    samagra_slp1          = "tasmE hitam iti sarva-puruzAByAm Ra-QaYO",
+    samagra_dev           = "'तस्मै हितम्' (इति) सर्व-पुरुषाभ्याम् ण-ढञौ",
     padaccheda_dev        = "सर्व-पुरुषाभ्याम् ण-ढञौ",
     why_dev               = "(सूत्रम् 5.1.10) सर्वपुरुषाभ्यां णढञौ।",
     anuvritti_from        = ('5.1.1',),

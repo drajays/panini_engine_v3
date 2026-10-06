@@ -4,6 +4,7 @@
 Padaccheda: अयङ् यि क्ङिति
 
 अयङ् यि क्ङिति (7.4.22)
+Pāṭha: ashtadhyayi.com data.txt row i=74022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ayaN yi kNiti",
     text_dev              = "अयङ् यि क्ङिति",
+    samagra_slp1          = "aNgasya ayaN yi kNiti SINaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अयङ् यि क्ङिति शीङः",
     padaccheda_dev        = "अयङ् यि क्ङिति",
     why_dev               = "(सूत्रम् 7.4.22) अयङ् यि क्ङिति।",
     anuvritti_from        = ('7.1.1',),

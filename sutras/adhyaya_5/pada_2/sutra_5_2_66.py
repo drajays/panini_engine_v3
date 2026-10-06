@@ -4,6 +4,7 @@
 Padaccheda: स्वाङ्गेभ्यः प्रसिते
 
 स्वाङ्गेभ्यः प्रसिते (5.2.66)
+Pāṭha: ashtadhyayi.com data.txt row i=52066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "svANgeByaH prasite",
     text_dev              = "स्वाङ्गेभ्यः प्रसिते",
+    samagra_slp1          = "tatra prasite iti svANgeByaH kan",
+    samagra_dev           = "'तत्र प्रसिते' (इति) स्वाङ्गेभ्यः कन्",
     padaccheda_dev        = "स्वाङ्गेभ्यः प्रसिते",
     why_dev               = "(सूत्रम् 5.2.66) स्वाङ्गेभ्यः प्रसिते।",
     anuvritti_from        = ('4.1.82',),

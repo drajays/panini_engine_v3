@@ -4,6 +4,7 @@
 Padaccheda: पश्चात्
 
 पश्चात् (5.3.32)
+Pāṭha: ashtadhyayi.com data.txt row i=53032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paScAt",
     text_dev              = "पश्चात्",
+    samagra_slp1          = "paScAt nipAtyate",
+    samagra_dev           = "पश्चात् (निपात्यते)",
     padaccheda_dev        = "पश्चात्",
     why_dev               = "(सूत्रम् 5.3.32) पश्चात्।",
     anuvritti_from        = ('4.1.76',),

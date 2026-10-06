@@ -4,6 +4,7 @@
 Padaccheda: चन-चित्-इव-गोत्र-आदि-तद्धित-आम्रेडितेषु अ-गतेः
 
 चनचिदिवगोत्रादितद्धिताम्रेडितेष्वगतेः (8.1.57)
+Pāṭha: ashtadhyayi.com data.txt row i=81057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "canacidivagotrAditadDitAmreqitezvagateH",
     text_dev              = "चनचिदिवगोत्रादितद्धिताम्रेडितेष्वगतेः",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO canacidivagotrAditadDitAmreqitezu AgateH tiN na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ चनचिदिवगोत्रादितद्धिताम्रेडितेषु आगतेः तिङ् न",
     padaccheda_dev        = "चन-चित्-इव-गोत्र-आदि-तद्धित-आम्रेडितेषु अ-गतेः",
     why_dev               = "(सूत्रम् 8.1.57) चनचिदिवगोत्रादितद्धिताम्रेडितेष्वगतेः।",
     anuvritti_from        = ('8.1.1',),

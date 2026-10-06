@@ -4,6 +4,7 @@
 Padaccheda: बिभेतेः हेतुभये
 
 बिभेतेर्हेतुभये (6.1.56)
+Pāṭha: ashtadhyayi.com data.txt row i=61056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "biBeterhetuBaye",
     text_dev              = "बिभेतेर्हेतुभये",
+    samagra_slp1          = "biBeteH hetuBaye At ecaH upadeSe viBAzA RO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "बिभेतेः हेतुभये आत् एचः उपदेशे विभाषा णौ",
     padaccheda_dev        = "बिभेतेः हेतुभये",
     why_dev               = "(सूत्रम् 6.1.56) बिभेतेर्हेतुभये।",
     anuvritti_from        = ('6.1.1',),

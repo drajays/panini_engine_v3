@@ -4,6 +4,7 @@
 Padaccheda: द्वि-अच्-मगध-कलिङ्ग-सूरमसाद् अण्
 
 द्व्यञ्मगधकलिङ्गसूरमसादण् (4.1.170)
+Pāṭha: ashtadhyayi.com data.txt row i=41170 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvyaYmagaDakaliNgasUramasAdaR",
     text_dev              = "द्व्यञ्मगधकलिङ्गसूरमसादण्",
+    samagra_slp1          = "tasya apatyam iti kzatriyAt janapadaSabdAt dvyac-magaDa-kaliNga-sUramasAt aR",
+    samagra_dev           = "तस्य अपत्यम् (इति) क्षत्रियात् जनपदशब्दात् द्व्यच्-मगध-कलिङ्ग-सूरमसात् अण्",
     padaccheda_dev        = "द्वि-अच्-मगध-कलिङ्ग-सूरमसाद् अण्",
     why_dev               = "(सूत्रम् 4.1.170) द्व्यञ्मगधकलिङ्गसूरमसादण्।",
     anuvritti_from        = ('4.1.1',),

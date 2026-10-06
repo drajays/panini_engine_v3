@@ -4,6 +4,7 @@
 Padaccheda: सनि इव्-अन्त-ऋध-भ्रस्ज-दम्भु-श्रि-स्वृ-यु-ऊर्णु-भर-ज्ञपि-सनाम्
 
 सनीवन्तर्धभ्रस्जदम्भुश्रिस्वृयूर्णुभरज्ञपिसनाम् (7.2.49)
+Pāṭha: ashtadhyayi.com data.txt row i=72049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sanIvantarDaBrasjadamBuSrisvfyUrRuBarajYapisanAm",
     text_dev              = "सनीवन्तर्धभ्रस्जदम्भुश्रिस्वृयूर्णुभरज्ञपिसनाम्",
+    samagra_slp1          = "aNgasya sani ivanta-fDa-Brasja-damBu-Sri-svf-yu-UrRu-Bara-jYapi-sanAm ArDaDAtukasya iw valAdeH vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य सनि इवन्त-ऋध-भ्रस्ज-दम्भु-श्रि-स्वृ-यु-ऊर्णु-भर-ज्ञपि-सनाम् आर्धधातुकस्य इट् वलादेः वा",
     padaccheda_dev        = "सनि इव्-अन्त-ऋध-भ्रस्ज-दम्भु-श्रि-स्वृ-यु-ऊर्णु-भर-ज्ञपि-सनाम्",
     why_dev               = "(सूत्रम् 7.2.49) सनीवन्तर्धभ्रस्जदम्भुश्रिस्वृयूर्णुभरज्ञपिसनाम्।",
     anuvritti_from        = ('7.1.1',),

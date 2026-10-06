@@ -4,6 +4,7 @@
 Padaccheda: ब्रुवः वचिः
 
 bruv root is replaced by vac.
+Pāṭha: ashtadhyayi.com data.txt row i=24053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "bruvo vaciH",
     text_dev              = "ब्रुवो वचिः",
+    samagra_slp1          = "ArDaDAtuke bruvaH vaciH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके ब्रुवः वचिः",
     padaccheda_dev        = "ब्रुवः वचिः",
     why_dev               = "ब्रुवः वचिः (२.४.५३)।",
     anuvritti_from        = ('2.4.40',),

@@ -1,7 +1,7 @@
 """
 8.3.41  इदुदुपधस्य चाप्रत्ययस्य  —  VIDHI (narrow ``prakriya_40``)
 
-**Pāṭha (cross-check: ``sutrANi.tsv`` / ashtadhyayi-com ``data.txt`` i=80341):**
+**Pāṭha (cross-check: ``sutrANi.tsv`` / ashtadhyayi-com ``data.txt`` i=83041):**
 *idudupadhasya cāpratyayasya* — extends murdhanya / ṣatva contexts (Tripāḍī).
 
 Narrow v3 (**निष्कोशाम्बिः** ``…/separated_prakriyas/prakriya_40_*.json`` ``panini_engine_pipeline``):
@@ -60,6 +60,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='idudupaDasya cApratyayasya',
     text_dev='इदुदुपधस्य चाप्रत्ययस्य',
+    samagra_slp1="idudupaDasya apratyayasya visarjanIyasya kupvoH zaH",
+    samagra_dev="इदुदुपधस्य अप्रत्ययस्य विसर्जनीयस्य कुप्वोः षः",
     padaccheda_dev="इदुदुपधस्य / च / अप्रत्ययस्य",
     why_dev="निः-क-प्रसङ्गे विसर्गस्य मूर्धन्य ष् (*prakriya_40*, **निष्कोशाम्बिः** डेमो)।",
     anuvritti_from=(),

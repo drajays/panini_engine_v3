@@ -4,6 +4,7 @@
 Padaccheda: लभेः च
 
 लभेश्च (7.1.64)
+Pāṭha: ashtadhyayi.com data.txt row i=71064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "laBeSca",
     text_dev              = "लभेश्च",
+    samagra_slp1          = "laBeH aSap-liwapaH aci num",
+    samagra_dev           = "लभेः अशप्-लिटपः अचि नुम्",
     padaccheda_dev        = "लभेः च",
     why_dev               = "(सूत्रम् 7.1.64) लभेश्च।",
     anuvritti_from        = ('7.1.1',),

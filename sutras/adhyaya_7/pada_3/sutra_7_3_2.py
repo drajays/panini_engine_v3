@@ -4,6 +4,7 @@
 Padaccheda: केकय-मित्त्रयु-प्रलयानाम् य-आदेः इयः
 
 केकयमित्त्रयुप्रलयानां यादेरियः (7.3.2)
+Pāṭha: ashtadhyayi.com data.txt row i=73002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kekayamittrayupralayAnAM yAderiyaH",
     text_dev              = "केकयमित्त्रयुप्रलयानां यादेरियः",
+    samagra_slp1          = "aNgasya kekayamittrayupralayAnAm yAdeH iyaH vfdDiH acaH YRiti tadDitezu AdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य केकयमित्त्रयुप्रलयानाम् यादेः इयः वृद्धिः अचः ञ्णिति तद्धितेषु आदेः",
     padaccheda_dev        = "केकय-मित्त्रयु-प्रलयानाम् य-आदेः इयः",
     why_dev               = "(सूत्रम् 7.3.2) केकयमित्त्रयुप्रलयानां यादेरियः।",
     anuvritti_from        = ('7.1.1',),

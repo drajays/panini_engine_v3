@@ -4,6 +4,7 @@
 Padaccheda: क्त्वा (लुप्तप्रथमान्तनिर्देशः) अपि छन्दसि
 
 क्त्वाऽपि छन्दसि (7.1.38)
+Pāṭha: ashtadhyayi.com data.txt row i=71038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ktvApi Candasi',
     text_dev              = 'क्त्वाऽपि छन्दसि',
+    samagra_slp1          = "aNgasya ktvA api Candasi samAse anaYpUrve ktvaH lyap",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य क्त्वा अपि छन्दसि समासे अनञ्पूर्वे क्त्वः ल्यप्",
     padaccheda_dev        = "क्त्वा (लुप्तप्रथमान्तनिर्देशः) अपि छन्दसि",
     why_dev               = "(सूत्रम् 7.1.38) क्त्वाऽपि छन्दसि।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: निशा-प्रदोषाभ्याम् च
 
 निशाप्रदोषाभ्यां च (4.3.14)
+Pāṭha: ashtadhyayi.com data.txt row i=43014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "niSApradozAByAM ca",
     text_dev              = "निशाप्रदोषाभ्यां च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA niSA-pradozAByAm ca WaY kAlAt viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा निशा-प्रदोषाभ्याम् च ठञ् कालात् विभाषा",
     padaccheda_dev        = "निशा-प्रदोषाभ्याम् च",
     why_dev               = "(सूत्रम् 4.3.14) निशाप्रदोषाभ्यां च।",
     anuvritti_from        = ('4.1.1',),

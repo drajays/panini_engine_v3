@@ -13,6 +13,7 @@ one dhātu Term carries the tag "A_prefix" and the tag "udgamana_usage",
 and (c) the idempotency stamp "Atmanepada_1_3_40" is absent from state.meta.
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -48,6 +49,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='ANa udgamane',
     text_dev='आङ उद्गमने',
+    samagra_slp1="udgamane ANaH kramaH Atmanepadam",
+    samagra_dev="उद्गमने आङः क्रमः आत्मनेपदम्",
     padaccheda_dev="आङ (पञ्चमी-एकवचन) / उद्गमने (सप्तमी-एकवचन)",
     why_dev=(
         "आ-पूर्वकस्य धातोः उद्गमन-अर्थे प्रयोगे आत्मनेपदम् — "

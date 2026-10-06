@@ -88,6 +88,8 @@ SUTRA = SutraRecord(
     # Spaced SLP1 to match ``ANUVRITTI_SAHITA_DEV``; compact index ``e`` = ``nipaatekaajanaang``.
     text_slp1      = 'nipAta ekAjanAN',
     text_dev       = 'निपात एकाजनाङ्',
+    samagra_slp1   = "ekAc anAN nipAtaH pragfhyam",
+    samagra_dev    = "एकाच् अनाङ् निपातः प्रगृह्यम्",
     padaccheda_dev = (
         "निपातः (प्र. ए.) / एकाच् (प्र. ए.) / अनाङ् (प्र. ए.); "
         "अन्वितं प्रगृह्यम् (१.१.११)"

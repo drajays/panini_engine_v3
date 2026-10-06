@@ -4,6 +4,7 @@
 Padaccheda: धृषि-शसी वैयात्ये
 
 धृषिशसी वैयात्ये (7.2.19)
+Pāṭha: ashtadhyayi.com data.txt row i=72019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DfziSasI vEyAtye",
     text_dev              = "धृषिशसी वैयात्ये",
+    samagra_slp1          = "aNgasya DfziSasI vEyAtye na iw nizWAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य धृषिशसी वैयात्ये न इट् निष्ठायाम्",
     padaccheda_dev        = "धृषि-शसी वैयात्ये",
     why_dev               = "(सूत्रम् 7.2.19) धृषिशसी वैयात्ये।",
     anuvritti_from        = ('7.1.1',),

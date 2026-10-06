@@ -13,6 +13,7 @@ Citation (CONSTITUTION Art. 14)
 Engine: scheduled before 8.1.20–23. Default (``vibhasha_default=False``) leaves the ādeśa standing
 (the first form the Kāśikā lists); choosing True records ``enclitic_nivrtta_8_1_26`` on the pronoun so
 8.1.20–23 decline. ``engine.vikalpa.explore`` returns both readings.
+Pāṭha: ashtadhyayi.com data.txt row i=81026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIBHASHA,
     text_slp1="sapUrvAyAH praTamAyA viBAzA",
     text_dev="सपूर्वायाः प्रथमाया विभाषा",
+    samagra_slp1="padasya padAt anudAttaM sarvamApAdAdO sapUrvAyAH praTamAyAH viBAzA yuzmadasmadoH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="पदस्य पदात् अनुदात्तं सर्वमापादादौ सपूर्वायाः प्रथमायाः विभाषा युष्मदस्मदोः न",
     padaccheda_dev="सपूर्वायाः प्रथमायाः विभाषा",
     why_dev="सपूर्व प्रथमान्त पद के पश्चात् युष्मद्-अस्मद् आदेश (८.१.२०–२३) विकल्प से।",
     anuvritti_from=("8.1.17", "8.1.18", "8.1.20", "8.1.24"),

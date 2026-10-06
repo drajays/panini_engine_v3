@@ -4,6 +4,7 @@
 Padaccheda: ग्रन्थान्त-अधिके च
 
 ग्रन्थान्ताधिके च (6.3.79)
+Pāṭha: ashtadhyayi.com data.txt row i=63079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "granTAntADike ca",
     text_dev              = "ग्रन्थान्ताधिके च",
+    samagra_slp1          = "uttarapade granTAntADike ca sahasya saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे ग्रन्थान्ताधिके च सहस्य सः",
     padaccheda_dev        = "ग्रन्थान्त-अधिके च",
     why_dev               = "(सूत्रम् 6.3.79) ग्रन्थान्ताधिके च।",
     anuvritti_from        = ('6.1.1',),

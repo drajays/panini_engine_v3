@@ -4,6 +4,7 @@
 Padaccheda: ऊत् अनोः देशे
 
 ऊदनोर्देशे (6.3.98)
+Pāṭha: ashtadhyayi.com data.txt row i=63098 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "UdanordeSe",
     text_dev              = "ऊदनोर्देशे",
+    samagra_slp1          = "uttarapade Ut anoH deSe apaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे ऊत् अनोः देशे अपः",
     padaccheda_dev        = "ऊत् अनोः देशे",
     why_dev               = "(सूत्रम् 6.3.98) ऊदनोर्देशे।",
     anuvritti_from        = ('6.1.1',),

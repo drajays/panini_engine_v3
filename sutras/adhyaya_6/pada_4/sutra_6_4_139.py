@@ -4,6 +4,7 @@
 Padaccheda: उदः ईत्
 
 उद ईत् (6.4.139)
+Pāṭha: ashtadhyayi.com data.txt row i=64139 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uda It",
     text_dev              = "उद ईत्",
+    samagra_slp1          = "udaH acaH Basya It",
+    samagra_dev           = "उदः अचः भस्य ईत्",
     padaccheda_dev        = "उदः ईत्",
     why_dev               = "(सूत्रम् 6.4.139) उद ईत्।",
     anuvritti_from        = ('6.1.1',),

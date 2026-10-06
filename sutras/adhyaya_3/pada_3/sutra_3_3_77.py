@@ -4,6 +4,7 @@
 Padaccheda: मूर्तौ घनः
 
 krt-suffix rule: मूर्तौ घनः
+Pāṭha: ashtadhyayi.com data.txt row i=33077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mUrtO GanaH",
     text_dev              = "मूर्तौ घनः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm mUrtO GanaH kft ap hanaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् मूर्तौ घनः कृत् अप् हनः",
     padaccheda_dev        = "मूर्तौ घनः",
     why_dev               = "धातोः प्रत्ययः (३.3.77)।",
     anuvritti_from        = ('3.1.1',),

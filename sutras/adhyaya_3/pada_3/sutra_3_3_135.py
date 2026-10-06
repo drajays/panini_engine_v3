@@ -4,6 +4,7 @@
 Padaccheda: न अन्-अद्यतन-वत् क्रियाप्रबन्ध-सामीप्ययोः
 
 krt-suffix rule: नानद्यतनवत् क्रियाप्रबन्धसामीप्ययोः
+Pāṭha: ashtadhyayi.com data.txt row i=33135 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nAnadyatanavat kriyAprabanDasAmIpyayoH",
     text_dev              = "नानद्यतनवत् क्रियाप्रबन्धसामीप्ययोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH na anadyatanavat kriyAprabanDa-sAmIpyayoH kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः न अनद्यतनवत् क्रियाप्रबन्ध-सामीप्ययोः कृत्",
     padaccheda_dev        = "न अन्-अद्यतन-वत् क्रियाप्रबन्ध-सामीप्ययोः",
     why_dev               = "धातोः प्रत्ययः (३.3.135)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: न भ-कुर्-छुराम्
 
 न भकुर्छुराम् (8.2.79)
+Pāṭha: ashtadhyayi.com data.txt row i=82079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na BakurCurAm",
     text_dev              = "न भकुर्छुराम्",
+    samagra_slp1          = "padasya pUrvatrAsidDam na BakurCurAm DAtoH rvoH dIrGa",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् न भकुर्छुराम् धातोः र्वोः दीर्घ",
     padaccheda_dev        = "न भ-कुर्-छुराम्",
     why_dev               = "(सूत्रम् 8.2.79) न भकुर्छुराम्।",
     anuvritti_from        = ('8.1.1',),

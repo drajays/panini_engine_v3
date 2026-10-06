@@ -4,6 +4,7 @@
 Padaccheda: त्रेः सम्प्रसारणम् च
 
 त्रेः सम्प्रसारणम् च (5.2.55)
+Pāṭha: ashtadhyayi.com data.txt row i=52055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'treH samprasAraRaM ca',
     text_dev              = 'त्रेः सम्प्रसारणं च',
+    samagra_slp1          = "tasya pUraRe iti treH tIyaH samprasAraRam ca",
+    samagra_dev           = "'तस्य पूरणे' (इति) त्रेः तीयः, सम्प्रसारणम् च",
     padaccheda_dev        = "त्रेः सम्प्रसारणम् च",
     why_dev               = "(सूत्रम् 5.2.55) त्रेः सम्प्रसारणम् च।",
     anuvritti_from        = ('4.1.82',),

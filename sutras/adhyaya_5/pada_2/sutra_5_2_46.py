@@ -4,6 +4,7 @@
 Padaccheda: शत्-अन्त-विंशतेः च
 
 शदन्तविंशतेश्च (5.2.46)
+Pāṭha: ashtadhyayi.com data.txt row i=52046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SadantaviMSateSca",
     text_dev              = "शदन्तविंशतेश्च",
+    samagra_slp1          = "tad asmin aDikam iti iti Sadanta-viMSateH qaH",
+    samagra_dev           = "'तद् अस्मिन् अधिकम् इति' (इति) शदन्त-विंशतेः डः",
     padaccheda_dev        = "शत्-अन्त-विंशतेः च",
     why_dev               = "(सूत्रम् 5.2.46) शदन्तविंशतेश्च।",
     anuvritti_from        = ('4.1.82',),

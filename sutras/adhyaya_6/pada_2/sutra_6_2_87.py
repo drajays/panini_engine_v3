@@ -4,6 +4,7 @@
 Padaccheda: प्रस्थे अ-वृद्धम् अ-कर्क्की-आदीनाम्
 
 प्रस्थेऽवृद्धमकर्क्यादीनाम् (6.2.87)
+Pāṭha: ashtadhyayi.com data.txt row i=62087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'prasTevfdDamakarkyAdInAm',
     text_dev              = 'प्रस्थेऽवृद्धमकर्क्यादीनाम्',
+    samagra_slp1          = "AdiH udAttaH prasTe avfdDam a-karkyAdInAm pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः प्रस्थे अवृद्धम् अ-कर्क्यादीनाम् पूर्वपदम्",
     padaccheda_dev        = "प्रस्थे अ-वृद्धम् अ-कर्क्की-आदीनाम्",
     why_dev               = "(सूत्रम् 6.2.87) प्रस्थेऽवृद्धमकर्क्यादीनाम्।",
     anuvritti_from        = ('6.1.1',),

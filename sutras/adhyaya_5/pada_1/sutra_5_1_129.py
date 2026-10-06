@@ -4,6 +4,7 @@
 Padaccheda: प्राणभृज्जाति-वयोवचन-उद्गातृ-आदिभ्यः अञ्
 
 प्राणभृज्जातिवयोवचनोद्गात्रादिभ्योऽञ् (5.1.129)
+Pāṭha: ashtadhyayi.com data.txt row i=51129 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'prARaBfjjAtivayovacanodgAtrAdiByoY',
     text_dev              = 'प्राणभृज्जातिवयोवचनोद्गात्रादिभ्योऽञ्',
+    samagra_slp1          = "tasya BAvaH karmaRi ca iti prARaBfjjAti-vayovacana-udgAtrAdiByaH aY",
+    samagra_dev           = "'तस्य भावः कर्मणि च' (इति) प्राणभृज्जाति-वयोवचन-उद्गात्रादिभ्यः अञ्",
     padaccheda_dev        = "प्राणभृज्जाति-वयोवचन-उद्गातृ-आदिभ्यः अञ्",
     why_dev               = "(सूत्रम् 5.1.129) प्राणभृज्जातिवयोवचनोद्गात्रादिभ्योऽञ्।",
     anuvritti_from        = ('5.1.120',),

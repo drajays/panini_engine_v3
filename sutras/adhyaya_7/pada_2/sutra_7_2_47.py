@@ -4,6 +4,7 @@
 Padaccheda: इट् निष्ठायाम्
 
 इण्निष्ठायाम् (7.2.47)
+Pāṭha: ashtadhyayi.com data.txt row i=72047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "iRnizWAyAm",
     text_dev              = "इण्निष्ठायाम्",
+    samagra_slp1          = "aNgasya iw nizWAyAm valAdeH ArDaDAtukasya vA niraH kuzaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य इट् निष्ठायाम् वलादेः आर्धधातुकस्य वा निरः कुषः",
     padaccheda_dev        = "इट् निष्ठायाम्",
     why_dev               = "(सूत्रम् 7.2.47) इण्निष्ठायाम्।",
     anuvritti_from        = ('7.1.1',),

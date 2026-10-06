@@ -4,6 +4,7 @@
 Padaccheda: स्वरितः वा अनुदात्ते पद-आदौ
 
 स्वरितो वाऽनुदात्ते पदादौ (8.2.6)
+Pāṭha: ashtadhyayi.com data.txt row i=82006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'svarito vAnudAtte padAdO',
     text_dev              = 'स्वरितो वाऽनुदात्ते पदादौ',
+    samagra_slp1          = "padasya pUrvatrAsidDam svaritaH vA anudAtte padAdO anudAttasya ekAdeSaH udAttena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् स्वरितः वा अनुदात्ते पदादौ अनुदात्तस्य एकादेशः उदात्तेन",
     padaccheda_dev        = "स्वरितः वा अनुदात्ते पद-आदौ",
     why_dev               = "(सूत्रम् 8.2.6) स्वरितो वाऽनुदात्ते पदादौ।",
     anuvritti_from        = ('8.1.1',),

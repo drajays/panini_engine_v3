@@ -4,6 +4,7 @@
 Padaccheda: न उपदिष्ट&उदात्तस्य /seq=1 <BV>&()म&()अन्तस्य अन्-आचमेः
 
 नोदात्तोपदेशस्य मान्तस्यानाचमेः (7.3.34)
+Pāṭha: ashtadhyayi.com data.txt row i=73034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nodAttopadeSasya mAntasyAnAcameH",
     text_dev              = "नोदात्तोपदेशस्य मान्तस्यानाचमेः",
+    samagra_slp1          = "aNgasya na udAttopadeSasya mAntasya anAcameH vfdDiH YRiti ciRkftoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न उदात्तोपदेशस्य मान्तस्य अनाचमेः वृद्धिः ञ्णिति चिण्कृतोः",
     padaccheda_dev        = "न उपदिष्ट&उदात्तस्य /seq=1 <BV>&()म&()अन्तस्य अन्-आचमेः",
     why_dev               = "(सूत्रम् 7.3.34) नोदात्तोपदेशस्य मान्तस्यानाचमेः।",
     anuvritti_from        = ('7.1.1',),

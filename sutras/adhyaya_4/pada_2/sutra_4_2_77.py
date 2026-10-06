@@ -4,6 +4,7 @@
 Padaccheda: सुवास्तु-आदिभ्यः अण्
 
 सुवास्त्वादिभ्योऽण् (4.2.77)
+Pāṭha: ashtadhyayi.com data.txt row i=42077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'suvAstvAdiByoR',
     text_dev              = 'सुवास्त्वादिभ्योऽण्',
+    samagra_slp1          = "suvAstu-AdiByaH tadasminnastIti deSe tannAmni  tena nirvfttam  tasya nivAsaH  adUraBavaSca iti prAgdIvyatIyaH pratyayaH aR",
+    samagra_dev           = "सुवास्तु-आदिभ्यः 'तदस्मिन्नस्तीति देशे तन्नाम्नि , तेन निर्वृत्तम् , तस्य निवासः , अदूरभवश्च' (इति) प्राग्दीव्यतीयः प्रत्ययः अण्",
     padaccheda_dev        = "सुवास्तु-आदिभ्यः अण्",
     why_dev               = "(सूत्रम् 4.2.77) सुवास्त्वादिभ्योऽण्।",
     anuvritti_from        = ('4.1.1',),

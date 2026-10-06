@@ -4,6 +4,7 @@
 Padaccheda: इदमः अन्वादेशे अश् अनुदात्तः तृतीया-आदौ
 
 In anvaadesa, ash-form of idam is unaccented in tritiya etc.
+Pāṭha: ashtadhyayi.com data.txt row i=24032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'idamonvAdeSeSanudAttastftIyAdO',
     text_dev              = 'इदमोऽन्वादेशेऽशनुदात्तस्तृतीयादौ',
+    samagra_slp1          = "idamaH anvAdeSe aS anudAttaH tftIyA-AdO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "इदमः अन्वादेशे अश् अनुदात्तः तृतीया-आदौ",
     padaccheda_dev        = "इदमः अन्वादेशे अश् अनुदात्तः तृतीया-आदौ",
     why_dev               = "अन्वादेशे अश् अनुदात्तः तृतीया-आदौ (२.४.३२)।",
     anuvritti_from        = ('2.4.31',),

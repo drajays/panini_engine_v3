@@ -4,6 +4,7 @@
 Padaccheda: उपसर्गात् छन्दसि धातु-अर्थे
 
 उपसर्गाच्छन्दसि धात्वर्थे (5.1.118)
+Pāṭha: ashtadhyayi.com data.txt row i=51118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upasargAcCandasi DAtvarTe",
     text_dev              = "उपसर्गाच्छन्दसि धात्वर्थे",
+    samagra_slp1          = "Candasi DAtvarTe upasargAt vatiH",
+    samagra_dev           = "छन्दसि धात्वर्थे उपसर्गात् वतिः",
     padaccheda_dev        = "उपसर्गात् छन्दसि धातु-अर्थे",
     why_dev               = "(सूत्रम् 5.1.118) उपसर्गाच्छन्दसि धात्वर्थे।",
     anuvritti_from        = ('4.1.82',),

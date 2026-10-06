@@ -4,6 +4,7 @@
 Padaccheda: देविका-शिंशपा-दित्यवाट्-दीर्घसत्र-श्रेयसाम् आत्
 
 देविकाशिंशपादित्यवाड्दीर्घसत्रश्रेयसामात् (7.3.1)
+Pāṭha: ashtadhyayi.com data.txt row i=73001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "devikASiMSapAdityavAqdIrGasatraSreyasAmAt",
     text_dev              = "देविकाशिंशपादित्यवाड्दीर्घसत्रश्रेयसामात्",
+    samagra_slp1          = "aNgasya devikASiMSapAdityavAqdIrGasatraSreyasAm At vfdDiH acaH YRiti tadDitezu AdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य देविकाशिंशपादित्यवाड्दीर्घसत्रश्रेयसाम् आत् वृद्धिः अचः ञ्णिति तद्धितेषु आदेः",
     padaccheda_dev        = "देविका-शिंशपा-दित्यवाट्-दीर्घसत्र-श्रेयसाम् आत्",
     why_dev               = "(सूत्रम् 7.3.1) देविकाशिंशपादित्यवाड्दीर्घसत्रश्रेयसामात्।",
     anuvritti_from        = ('7.1.1',),

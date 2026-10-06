@@ -16,6 +16,7 @@ stamp "Atmanepada_1_3_54" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _CAR_ROOTS carries both the tag "sam_prefix" and the tag "tRtIyA_yukta_usage".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True because no
 surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -63,6 +64,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='samastftIyAyuktAt',
     text_dev='समस्तृतीयायुक्तात्',
+    samagra_slp1="samaH tftIyAyuktAt Atmanepadam caraH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="समः तृतीयायुक्तात् आत्मनेपदम् चरः",
     padaccheda_dev="समः (पञ्चमी-एकवचन) / तृतीया-युक्तात् (पञ्चमी-एकवचन)",
     why_dev=(
         "सम्-पूर्वकस्य चर-धातोः तृतीया-युक्त-प्रयोगे आत्मनेपदम् — "

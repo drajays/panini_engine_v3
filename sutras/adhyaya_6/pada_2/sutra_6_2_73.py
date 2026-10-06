@@ -4,6 +4,7 @@
 Padaccheda: अके जीविका-अर्थे
 
 अके जीविकाऽर्थे (6.2.73)
+Pāṭha: ashtadhyayi.com data.txt row i=62073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ake jIvikArTe',
     text_dev              = 'अके जीविकाऽर्थे',
+    samagra_slp1          = "AdiH udAttaH ake jIvikA-arTe pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः अके जीविका-अर्थे पूर्वपदम्",
     padaccheda_dev        = "अके जीविका-अर्थे",
     why_dev               = "(सूत्रम् 6.2.73) अके जीविकाऽर्थे।",
     anuvritti_from        = ('6.1.1',),

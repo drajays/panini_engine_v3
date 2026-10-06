@@ -4,6 +4,7 @@
 Padaccheda: धुरः यत्-ढकौ
 
 धुरो यड्ढकौ (4.4.77)
+Pāṭha: ashtadhyayi.com data.txt row i=44077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Duro yaqQakO",
     text_dev              = "धुरो यड्ढकौ",
+    samagra_slp1          = "tat vahati iti DuraH yat-QakO",
+    samagra_dev           = "'तत् वहति' इति धुरः यत्-ढकौ",
     padaccheda_dev        = "धुरः यत्-ढकौ",
     why_dev               = "(सूत्रम् 4.4.77) धुरो यड्ढकौ।",
     anuvritti_from        = ('4.1.1',),

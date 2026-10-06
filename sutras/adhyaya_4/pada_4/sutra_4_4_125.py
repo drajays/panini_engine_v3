@@ -4,6 +4,7 @@
 Padaccheda: तद्वान् आसाम् उपधानः मन्त्रः इति इष्टकासु लुक् च मतोः
 
 तद्वानासामुपधानो मन्त्र इतीष्टकासु लुक् च मतोः (4.4.125)
+Pāṭha: ashtadhyayi.com data.txt row i=44125 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadvAnAsAmupaDAno mantra itIzwakAsu luk ca matoH",
     text_dev              = "तद्वानासामुपधानो मन्त्र इतीष्टकासु लुक् च मतोः",
+    samagra_slp1          = "upaDAnaH mantraH AsAm iti tadvAn iti izwakAsu yat matoH ca luk",
+    samagra_dev           = "'उपधानः मन्त्रः आसाम्' (इति) 'तद्वान्' इति इष्टकासु यत्, मतोः च लुक्",
     padaccheda_dev        = "तद्वान् आसाम् उपधानः मन्त्रः इति इष्टकासु लुक् च मतोः",
     why_dev               = "(सूत्रम् 4.4.125) तद्वानासामुपधानो मन्त्र इतीष्टकासु लुक् च मतोः।",
     anuvritti_from        = ('4.1.1',),

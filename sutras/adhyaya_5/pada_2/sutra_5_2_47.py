@@ -4,6 +4,7 @@
 Padaccheda: संख्यायाः गुणस्य निमाने मयट्
 
 संख्याया गुणस्य निमाने मयट् (5.2.47)
+Pāṭha: ashtadhyayi.com data.txt row i=52047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMKyAyA guRasya nimAne mayaw",
     text_dev              = "संख्याया गुणस्य निमाने मयट्",
+    samagra_slp1          = "tat asya iti saNKyAyAH guRasya nimAne mayaw",
+    samagra_dev           = "'तत् अस्य' (इति) सङ्ख्यायाः गुणस्य निमाने मयट्",
     padaccheda_dev        = "संख्यायाः गुणस्य निमाने मयट्",
     why_dev               = "(सूत्रम् 5.2.47) संख्याया गुणस्य निमाने मयट्।",
     anuvritti_from        = ('4.1.82',),

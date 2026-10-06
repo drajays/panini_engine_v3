@@ -5,6 +5,7 @@ After a *jhal*-final *aṅga*, *loṭ* *hi* is replaced by *dhi* (here **Qi** in
 engine SLP1 = ढ् + मात्रा *i*, matching *viśiṇḍhi*).
 
 Arms: ``state.meta['P031_6_4_101_hi_to_Qi_arm']``.
+Pāṭha: ashtadhyayi.com data.txt row i=64101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -75,6 +76,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='huJalByo herDiH',
     text_dev='हुझल्भ्यो हेर्धिः',
+    samagra_slp1="hu-JalByoH heH DiH",
+    samagra_dev="हु-झल्भ्योः हेः धिः",
     padaccheda_dev="हुझल्भ्यः / हेः / धिः",
     why_dev="झल्-परत्वे हि-स्थाने ढि-आदेशः — प०३१ (*विशिण्ढि*)।",
     anuvritti_from=("6.4.1",),

@@ -4,6 +4,7 @@
 Padaccheda: शमिता यज्ञे
 
 शमिता यज्ञे (6.4.54)
+Pāṭha: ashtadhyayi.com data.txt row i=64054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SamitA yajYe",
     text_dev              = "शमिता यज्ञे",
+    samagra_slp1          = "aNgasya asidDavadatrABAt ArDaDAtuke SamitA yajYe nalopaH lopaH ReH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् आर्धधातुके शमिता यज्ञे नलोपः लोपः णेः",
     padaccheda_dev        = "शमिता यज्ञे",
     why_dev               = "(सूत्रम् 6.4.54) शमिता यज्ञे।",
     anuvritti_from        = ('6.1.1',),

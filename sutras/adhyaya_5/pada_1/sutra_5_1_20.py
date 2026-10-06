@@ -4,6 +4,7 @@
 Padaccheda: अ-समासे निष्क-आदिभ्यः
 
 असमासे निष्कादिभ्यः (5.1.20)
+Pāṭha: ashtadhyayi.com data.txt row i=51020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "asamAse nizkAdiByaH",
     text_dev              = "असमासे निष्कादिभ्यः",
+    samagra_slp1          = "A-arhAt nizkAdiByaH asamAse Wak",
+    samagra_dev           = "आ-अर्हात् निष्कादिभ्यः असमासे ठक्",
     padaccheda_dev        = "अ-समासे निष्क-आदिभ्यः",
     why_dev               = "(सूत्रम् 5.1.20) असमासे निष्कादिभ्यः।",
     anuvritti_from        = ('5.1.19',),

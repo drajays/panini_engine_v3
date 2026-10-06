@@ -4,6 +4,7 @@
 Padaccheda: बहुलम् छन्दसि
 
 krt-suffix rule: बहुलं छन्दसि (88)
+Pāṭha: ashtadhyayi.com data.txt row i=32088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahulaM Candasi",
     text_dev              = "बहुलं छन्दसि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte bahulam Candasi kft hanaH karmaRi kvip",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते बहुलम् छन्दसि कृत् हनः कर्मणि क्विप्",
     padaccheda_dev        = "बहुलम् छन्दसि",
     why_dev               = "धातोः कृत्-प्रत्ययः [बहुलं छन्दसि] विहितः (३.२.88)।",
     anuvritti_from        = ('3.1.1',),

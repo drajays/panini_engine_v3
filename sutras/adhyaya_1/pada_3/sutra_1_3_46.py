@@ -16,6 +16,7 @@ carries one of _SAM_PRATI_PREFIXES and also carries the tag "anADyAna_usage"
 (indicating the action is in the non-learning sense).
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -55,6 +56,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="sampratiByAmanADyAne",
     text_dev="सम्प्रतिभ्यामनाध्याने",
+    samagra_slp1="sam-pratiByAm anADyAne Atmanepadam jYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="सम्-प्रतिभ्याम् अनाध्याने आत्मनेपदम् ज्ञः",
     padaccheda_dev="सम्-प्रतिभ्याम् (पञ्चमी-द्विवचन) / अनाध्याने (सप्तमी-एकवचन)",
     why_dev=(
         "सम्-पूर्वकस्य प्रति-पूर्वकस्य वा धातोः अनाध्यान-अर्थे आत्मनेपदम् — "

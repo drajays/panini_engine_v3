@@ -4,6 +4,7 @@
 Padaccheda: अंशम् हारी
 
 अंशं हारी (5.2.69)
+Pāṭha: ashtadhyayi.com data.txt row i=52069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aMSaM hArI",
     text_dev              = "अंशं हारी",
+    samagra_slp1          = "aMSaM hArI iti kan",
+    samagra_dev           = "'अंशं हारी' (इति) कन्",
     padaccheda_dev        = "अंशम् हारी",
     why_dev               = "(सूत्रम् 5.2.69) अंशं हारी।",
     anuvritti_from        = ('4.1.82',),

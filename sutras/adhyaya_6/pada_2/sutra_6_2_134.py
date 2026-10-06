@@ -4,6 +4,7 @@
 Padaccheda: चूर्ण-आदीनि अप्राणि-षष्ठ्याः
 
 चूर्णादीन्यप्राणिषष्ठ्याः (6.2.134)
+Pāṭha: ashtadhyayi.com data.txt row i=62134 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "cUrRAdInyaprARizazWyAH",
     text_dev              = "चूर्णादीन्यप्राणिषष्ठ्याः",
+    samagra_slp1          = "udAttaH uttarapadAdiH cUrRAdIni a-prARi-zazWyAH tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः चूर्णादीनि अ-प्राणि-षष्ठ्याः तत्पुरुषे",
     padaccheda_dev        = "चूर्ण-आदीनि अप्राणि-षष्ठ्याः",
     why_dev               = "(सूत्रम् 6.2.134) चूर्णादीन्यप्राणिषष्ठ्याः।",
     anuvritti_from        = ('6.1.1',),

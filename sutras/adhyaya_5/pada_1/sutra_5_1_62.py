@@ -4,6 +4,7 @@
 Padaccheda: त्रिंशत्-चत्वारिंशतोः ब्राह्मणे संज्ञायाम् डण्
 
 त्रिंशच्चत्वारिंशतोर्ब्राह्मणे संज्ञायां डण् (5.1.62)
+Pāṭha: ashtadhyayi.com data.txt row i=51062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "triMSaccatvAriMSatorbrAhmaRe saMjYAyAM qaR",
     text_dev              = "त्रिंशच्चत्वारिंशतोर्ब्राह्मणे संज्ञायां डण्",
+    samagra_slp1          = "tat asya parimARam iti triMSat-catvAriMSatoH saMjYAyAM brAhmaRe qaR",
+    samagra_dev           = "'तत् अस्य परिमाणम्' (इति) त्रिंशत्-चत्वारिंशतोः संज्ञायां ब्राह्मणे डण्",
     padaccheda_dev        = "त्रिंशत्-चत्वारिंशतोः ब्राह्मणे संज्ञायाम् डण्",
     why_dev               = "(सूत्रम् 5.1.62) त्रिंशच्चत्वारिंशतोर्ब्राह्मणे संज्ञायां डण्।",
     anuvritti_from        = ('5.1.19',),

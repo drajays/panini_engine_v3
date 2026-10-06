@@ -4,6 +4,7 @@
 Padaccheda: पुष्य-सिद्ध्यौ नक्षत्रे
 
 Krt suffix rule from dhatu: पुष्यसिद्ध्यौ नक्षत्रे (116)
+Pāṭha: ashtadhyayi.com data.txt row i=31116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "puzyasidDyO nakzatre",
     text_dev              = "पुष्यसिद्ध्यौ नक्षत्रे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH puzya-sidDyO nakzatre kft kyap",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः पुष्य-सिद्ध्यौ नक्षत्रे कृत् क्यप्",
     padaccheda_dev        = "पुष्य-सिद्ध्यौ नक्षत्रे",
     why_dev               = "धातोः [पुष्यसिद्ध्यौ नक्षत्रे]-प्रत्ययः विहितः (३.१.116)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

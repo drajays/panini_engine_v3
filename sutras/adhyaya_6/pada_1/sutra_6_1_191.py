@@ -4,6 +4,7 @@
 Padaccheda: सर्वस्य सुपि
 
 सर्वस्य सुपि (6.1.191)
+Pāṭha: ashtadhyayi.com data.txt row i=61191 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sarvasya supi",
     text_dev              = "सर्वस्य सुपि",
+    samagra_slp1          = "sarvasya supi udAttaH la-sArvaDAtukam AdiH aByastAnAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सर्वस्य सुपि उदात्तः ल-सार्वधातुकम् आदिः अभ्यस्तानाम्",
     padaccheda_dev        = "सर्वस्य सुपि",
     why_dev               = "(सूत्रम् 6.1.191) सर्वस्य सुपि।",
     anuvritti_from        = ('6.1.1',),

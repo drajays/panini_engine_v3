@@ -4,6 +4,7 @@
 Padaccheda: नुम्-विसर्जनीय-शर्-व्यवाये अपि
 
 नुम्विसर्जनीयशर्व्यवायेऽपि (8.3.58)
+Pāṭha: ashtadhyayi.com data.txt row i=83058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'numvisarjanIyaSarvyavAyepi',
     text_dev              = 'नुम्विसर्जनीयशर्व्यवायेऽपि',
+    samagra_slp1          = "num-visarjanIya-Sar-vyavAye api apadAntasya iRkoH saH mUrDanyaH",
+    samagra_dev           = "नुम्-विसर्जनीय-शर्-व्यवाये अपि अपदान्तस्य इण्कोः सः मूर्धन्यः",
     padaccheda_dev        = "नुम्-विसर्जनीय-शर्-व्यवाये अपि",
     why_dev               = "(सूत्रम् 8.3.58) नुम्विसर्जनीयशर्व्यवायेऽपि।",
     anuvritti_from        = ('8.1.1',),

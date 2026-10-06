@@ -4,6 +4,7 @@
 Padaccheda: समूह-वत् च बहुषु
 
 समूहवच्च बहुषु (5.4.22)
+Pāṭha: ashtadhyayi.com data.txt row i=54022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samUhavacca bahuzu",
     text_dev              = "समूहवच्च बहुषु",
+    samagra_slp1          = "tat bahuzu prakftavacane samUhavat mayaw ca",
+    samagra_dev           = "'तत् बहुषु प्रकृतवचने' समूहवत् मयट् च",
     padaccheda_dev        = "समूह-वत् च बहुषु",
     why_dev               = "(सूत्रम् 5.4.22) समूहवच्च बहुषु।",
     anuvritti_from        = ('4.1.76',),

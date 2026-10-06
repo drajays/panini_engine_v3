@@ -4,6 +4,7 @@
 Padaccheda: प्रवाहणस्य ढे
 
 प्रवाहणस्य ढे (7.3.28)
+Pāṭha: ashtadhyayi.com data.txt row i=73028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pravAhaRasya Qe",
     text_dev              = "प्रवाहणस्य ढे",
+    samagra_slp1          = "aNgasya uttarapadasya pravAhaRasya Qe vfdDiH YRiti acaH tadDitezu AdeH pUrvasya tu vA parimARasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य प्रवाहणस्य ढे वृद्धिः ञ्णिति अचः तद्धितेषु आदेः पूर्वस्य तु वा परिमाणस्य",
     padaccheda_dev        = "प्रवाहणस्य ढे",
     why_dev               = "(सूत्रम् 7.3.28) प्रवाहणस्य ढे।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: न अञ्चेः पूजायाम्
 
 नाञ्चेः पूजायाम् (6.4.30)
+Pāṭha: ashtadhyayi.com data.txt row i=64030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nAYceH pUjAyAm",
     text_dev              = "नाञ्चेः पूजायाम्",
+    samagra_slp1          = "pUjAyAmaYceH aNgasya upaDAyAH nalopaH na",
+    samagra_dev           = "पूजायामञ्चेः अङ्गस्य  उपधायाः नलोपः न",
     padaccheda_dev        = "न अञ्चेः पूजायाम्",
     why_dev               = "(सूत्रम् 6.4.30) नाञ्चेः पूजायाम्।",
     anuvritti_from        = ('6.1.1',),

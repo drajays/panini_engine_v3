@@ -4,6 +4,7 @@
 Padaccheda: सम्बोधने च
 
 Also in sambodha (vocative) context.
+Pāṭha: ashtadhyayi.com data.txt row i=23047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samboDane ca",
     text_dev              = "सम्बोधने च",
+    samagra_slp1          = "anaBihite samboDane ca praTamA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते सम्बोधने च प्रथमा",
     padaccheda_dev        = "सम्बोधने च",
     why_dev               = "सम्बोधने च (२.३.४७)।",
     anuvritti_from        = ('2.3.46',),

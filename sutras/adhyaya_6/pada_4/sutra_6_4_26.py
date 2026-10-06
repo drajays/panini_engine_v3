@@ -3,6 +3,7 @@
 
 Before śap the nasal of रञ्ज् drops — रजति, रजते (not before kit liṭ: ररञ्जे) (KV/SK §43: "रञ्जेश्च").
 Sources: ashtadhyayi.com data row 64026; Kāśikā 6.4.26.
+Pāṭha: ashtadhyayi.com data.txt row i=64026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="ranjeS ca",
     text_dev="रञ्जेश्च",
+    samagra_slp1="raYjeH aNgasya upaDAyAH Sapi nalopaH",
+    samagra_dev="रञ्जेः अङ्गस्य उपधायाः शपि नलोपः",
     padaccheda_dev="रञ्जेः च",
     why_dev="शपि रञ्जेर्नलोपः (रजति)।",
     anuvritti_from=("6.4.1",),

@@ -99,12 +99,25 @@ the engine.
 
 ## Article 4 — Anuvṛtti is Baked In
 
-Every sūtra's `text_slp1` / `text_dev` is the **full, anuvṛtti-complete**
-form. The engine never computes anuvṛtti at runtime.
+> Amended by **AMENDMENT 20** (see `docs/AMENDMENT_20.md`).
 
-Example: sūtra 1.3.3 (`halantyam`) is stored as
-`"hal antyam upadeśe 'n it"` — because 1.3.2's `upadeśe` and `it` carry
-over and are part of the executable rule.
+Every sūtra record carries two texts:
+
+- `text_slp1` / `text_dev` — the **mūla pāṭha** as in ashtadhyayi.com `data.txt` (T0).
+- `samagra_slp1` / `samagra_dev` — the **full, anuvṛtti-complete** sentence
+  (ashtadhyayi.com `ss`; where that is empty, adhikāra + padas + anuvṛtti padas,
+  marked "composed" in the file).
+
+The engine never computes anuvṛtti at runtime and reads neither text.
+
+Example: sūtra 1.3.3 has `text_slp1 = "halantyam"` and
+`samagra_slp1 = "upadeSe antyam hal it"` — because 1.3.2's `upadeśe` and `it`
+carry over and are part of the executable rule.
+
+**§2 Anunāsika is not anusvāra.** ँ is an `anunasika` tag on the vowel it is
+written on (SLP1 `~` right after that vowel; `~` after a consonant is that
+consonant's anunāsika inherent `a`: `han~` = हनँ). ं is the varṇa `M`. No code
+path may merge them — 1.3.2 उपदेशेऽजनुनासिक इत् depends on the difference.
 
 The field `anuvṛtti_from` on `SutraRecord` is **metadata only** — it
 tells scholars which earlier sūtras contributed terms, but the engine

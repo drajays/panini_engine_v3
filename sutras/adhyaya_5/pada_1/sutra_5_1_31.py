@@ -4,6 +4,7 @@
 Padaccheda: बिस्तात् च
 
 बिस्ताच्च (5.1.31)
+Pāṭha: ashtadhyayi.com data.txt row i=51031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bistAcca",
     text_dev              = "बिस्ताच्च",
+    samagra_slp1          = "A-arhAt dvi-tri-pUrvAt bistAt dvigoH viBAzA luk",
+    samagra_dev           = "आ-अर्हात्  द्वि-त्रि-पूर्वात् बिस्तात् द्विगोः विभाषा लुक्",
     padaccheda_dev        = "बिस्तात् च",
     why_dev               = "(सूत्रम् 5.1.31) बिस्ताच्च।",
     anuvritti_from        = ('5.1.19',),

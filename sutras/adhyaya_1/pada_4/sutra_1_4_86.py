@@ -11,6 +11,7 @@
 *Engine:* sets paribhāṣā gate for *anu-in-hīna*.
 ``cond`` never reads vibhakti/vacana/lakāra/surface.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=14086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -36,6 +37,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = "hIne",
     text_dev             = "हीने",
+    samagra_slp1         = "AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH karmapravacanIyAH hIne anuH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः कर्मप्रवचनीयाः हीने अनुः",
     padaccheda_dev       = "हीने",
     why_dev              = (
         "हीन-अर्थे (न्यून-अर्थे) वर्तमानः 'अनु' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

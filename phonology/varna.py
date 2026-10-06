@@ -90,13 +90,18 @@ def mk_inherent_a() -> Varna:
 
 def parse_slp1_upadesha_sequence(slp1_seq: str) -> list:
     """
-    Parse SLP1 upadeśa where a standalone ``~`` marks anunāsika on the nearest
-    preceding vowel (same information as Devanagari candrabindu ``ँ`` in
-    ``devanagari_to_varnas``).
+    Parse SLP1 upadeśa where ``~`` marks anunāsika on the IMMEDIATELY preceding
+    varṇa (same information as Devanagari candrabindu ``ँ`` in
+    ``devanagari_to_varnas``, which sits on the vowel it is written on):
 
-    Examples:
-      * ``qupac~z`` → ``… a(anunāsika), c, …`` (the ``~`` applies to the ``a``).
-      * Inventory ``s~`` (सुँ) → ``[s, u(anunāsika)]`` (no vowel precedes ``~``).
+      * after a vowel: that vowel is anunāsika — ``eDa~`` = एधँ, ``Yizvapa~`` = ञिष्वपँ.
+      * after a consonant (shorthand): the consonant's inherent ``a`` is the
+        anunāsika it-vowel — ``han~`` = ``hana~`` = हनँ, ``qupac~z`` = ``qupaca~z`` = डुपचँष्.
+        (A former reading put it on the nearest *earlier* vowel — ``han~`` → h·a~·n —
+        which marks the wrong vowel for 1.3.2 उपदेशेऽजनुनासिक इत्; AMENDMENT 20.)
+      * Inventory ``s~`` (सुँ) → ``[s, u(anunāsika)]``.
+
+    Anunāsika (``~``) and anusvāra (``M``) are different phonemes and never merged.
 
     This must stay aligned with ``phonology.tokenizer.devanagari_to_slp1_flat``,
     which emits ``~`` after vowel letters that carry the ``anunasika`` tag.
@@ -110,11 +115,12 @@ def parse_slp1_upadesha_sequence(slp1_seq: str) -> list:
     while i < len(slp1_seq):
         ch = slp1_seq[i]
         if ch == "~":
-            for j in range(len(varnas) - 1, -1, -1):
-                # AC from pratyāhāra may exclude dīrgha letters; treat any vowel as eligible.
-                if varnas[j].slp1 in AC_DEV:
-                    varnas[j].tags.add("anunasika")
-                    break
+            if varnas and varnas[-1].slp1 in AC_DEV:
+                varnas[-1].tags.add("anunasika")
+            elif varnas and varnas[-1].slp1 in HAL:
+                a = mk_inherent_a()
+                a.tags.add("anunasika")
+                varnas.append(a)
             i += 1
             continue
         if ch == "a" and varnas and varnas[-1].slp1 in HAL:

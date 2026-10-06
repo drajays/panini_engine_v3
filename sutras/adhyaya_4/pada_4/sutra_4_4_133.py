@@ -4,6 +4,7 @@
 Padaccheda: पूर्वैः कृतम् इनि-यौ च
 
 पूर्वैः कृतमिनियौ च (4.4.133)
+Pāṭha: ashtadhyayi.com data.txt row i=44133 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'pUrvEH kftaminayO ca',
     text_dev              = 'पूर्वैः कृतमिनयौ च',
+    samagra_slp1          = "pUrvEH kftam iti Candasi saMjYAyAm ina-yO KaH ca",
+    samagra_dev           = "पूर्वैः 'कृतम्' (इति) छन्दसि संज्ञायाम् इन-यौ खः च",
     padaccheda_dev        = "पूर्वैः कृतम् इनि-यौ च",
     why_dev               = "(सूत्रम् 4.4.133) पूर्वैः कृतमिनियौ च।",
     anuvritti_from        = ('4.1.1',),

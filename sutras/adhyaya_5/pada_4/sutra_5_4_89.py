@@ -4,6 +4,7 @@
 Padaccheda: न सङ्‍ख्या-आदेः समाहारे
 
 न संख्याऽऽदेः समाहारे (5.4.89)
+Pāṭha: ashtadhyayi.com data.txt row i=54089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'na saMKyAdeH samAhAre',
     text_dev              = 'न संख्यादेः समाहारे',
+    samagra_slp1          = "ahnaH ahnaH saNKyAdO tatpuruzasya samAhAre na",
+    samagra_dev           = "अह्नः अह्नः सङ्ख्यादौ तत्पुरुषस्य  समाहारे न",
     padaccheda_dev        = "न सङ्‍ख्या-आदेः समाहारे",
     why_dev               = "(सूत्रम् 5.4.89) न संख्याऽऽदेः समाहारे।",
     anuvritti_from        = ('5.4.68',),

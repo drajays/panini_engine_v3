@@ -4,6 +4,7 @@
 Padaccheda: मतौ बहु-अचः अनजिर-आदीनाम्
 
 मतौ बह्वचोऽनजिरादीनाम् (6.3.119)
+Pāṭha: ashtadhyayi.com data.txt row i=63119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'matO bahvaconajirAdInAm',
     text_dev              = 'मतौ बह्वचोऽनजिरादीनाम्',
+    samagra_slp1          = "uttarapade saMhitAyAm matO bahvacaH a-najirAdInAm dIrGaH saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् मतौ बह्वचः अ-नजिरादीनाम् दीर्घः संज्ञायाम्",
     padaccheda_dev        = "मतौ बहु-अचः अनजिर-आदीनाम्",
     why_dev               = "(सूत्रम् 6.3.119) मतौ बह्वचोऽनजिरादीनाम्।",
     anuvritti_from        = ('6.1.1',),

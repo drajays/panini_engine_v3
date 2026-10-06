@@ -4,6 +4,7 @@
 Padaccheda: विदूरात् ञ्यः
 
 विदूराञ्ञ्यः (4.3.84)
+Pāṭha: ashtadhyayi.com data.txt row i=43084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vidUrAYYyaH",
     text_dev              = "विदूराञ्ञ्यः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA vidUrAt YyaH tata praBavati",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा विदूरात् ञ्यः तत प्रभवति",
     padaccheda_dev        = "विदूरात् ञ्यः",
     why_dev               = "(सूत्रम् 4.3.84) विदूराञ्ञ्यः।",
     anuvritti_from        = ('4.1.1',),

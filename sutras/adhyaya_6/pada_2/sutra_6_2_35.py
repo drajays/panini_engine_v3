@@ -4,6 +4,7 @@
 Padaccheda: संख्या
 
 संख्या (6.2.35)
+Pāṭha: ashtadhyayi.com data.txt row i=62035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMKyA",
     text_dev              = "संख्या",
+    samagra_slp1          = "saMKyA prakftyA pUrvapadam rAjanya-bahuvacana-dvandve",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संख्या प्रकृत्या पूर्वपदम् राजन्य-बहुवचन-द्वन्द्वे",
     padaccheda_dev        = "संख्या",
     why_dev               = "(सूत्रम् 6.2.35) संख्या।",
     anuvritti_from        = ('6.1.1',),

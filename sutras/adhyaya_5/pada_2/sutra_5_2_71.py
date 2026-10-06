@@ -4,6 +4,7 @@
 Padaccheda: ब्राह्मण-कोष्णिके संज्ञायाम्
 
 ब्राह्मणकोष्णिके संज्ञायाम् (5.2.71)
+Pāṭha: ashtadhyayi.com data.txt row i=52071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "brAhmaRakozRike saMjYAyAm",
     text_dev              = "ब्राह्मणकोष्णिके संज्ञायाम्",
+    samagra_slp1          = "saMjYAyAm brAhmaRaka-uzRike nipAtyete ",
+    samagra_dev           = "संज्ञायाम् 'ब्राह्मणक-उष्णिके' निपात्येते ।",
     padaccheda_dev        = "ब्राह्मण-कोष्णिके संज्ञायाम्",
     why_dev               = "(सूत्रम् 5.2.71) ब्राह्मणकोष्णिके संज्ञायाम्।",
     anuvritti_from        = ('4.1.82',),

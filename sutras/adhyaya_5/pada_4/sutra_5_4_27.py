@@ -4,6 +4,7 @@
 Padaccheda: देवात् तल्
 
 देवात्तल् (5.4.27)
+Pāṭha: ashtadhyayi.com data.txt row i=54027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "devAttal",
     text_dev              = "देवात्तल्",
+    samagra_slp1          = "devAt tal",
+    samagra_dev           = "देवात् तल्",
     padaccheda_dev        = "देवात् तल्",
     why_dev               = "(सूत्रम् 5.4.27) देवात्तल्।",
     anuvritti_from        = ('4.1.76',),

@@ -11,6 +11,7 @@
 
 *Cross-refs:* **3.4.114** ( *ārdhadhātuka* *śeṣa* ), **3.4.115** / **3.4.116** ( *liṭ* / āśīr *liṅ* *ārdhadhākatva* in *tiṅ* ) —
 not implemented in this sūtra’s *act* (see module docstring).
+Pāṭha: ashtadhyayi.com data.txt row i=34113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -75,6 +76,8 @@ SUTRA = SutraRecord(
         'tiNSitsArvaDAtukam'
     ),
     text_dev       = 'तिङ्शित्सार्वधातुकम्',
+    samagra_slp1   = "DAtoH paraH tiNSit-pratyayaH sArvaDAtukam",
+    samagra_dev    = "धातोः परः तिङ्/शित्-प्रत्ययः सार्वधातुकम्",
     padaccheda_dev = "धातोः (३.१.९१) / परः / तिङ्-शित्-प्रत्ययः / सार्वधातुकम्",
     why_dev        = (
         "तिङ्-तथा-शित्-प्रत्ययः सार्वधातुक-संज्ञकः, आर्धधातुकानि ३.४.११४-अग्रे।"

@@ -4,6 +4,7 @@
 Padaccheda: झयः
 
 झयः (8.2.10)
+Pāṭha: ashtadhyayi.com data.txt row i=82010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "JayaH",
     text_dev              = "झयः",
+    samagra_slp1          = "padasya pUrvatrAsidDam JayaH vaH matoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् झयः वः मतोः",
     padaccheda_dev        = "झयः",
     why_dev               = "(सूत्रम् 8.2.10) झयः।",
     anuvritti_from        = ('8.1.1',),

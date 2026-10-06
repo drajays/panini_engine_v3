@@ -4,6 +4,7 @@
 Padaccheda: यच्च-यत्रयोः
 
 krt-suffix rule: यच्चयत्रयोः
+Pāṭha: ashtadhyayi.com data.txt row i=33148 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yaccayatrayoH",
     text_dev              = "यच्चयत्रयोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH yacca-yatrayoH kft utApyoH anavakxpti-amarzayoH liN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः यच्च-यत्रयोः कृत् उताप्योः अनवकॢप्ति-अमर्षयोः लिङ्",
     padaccheda_dev        = "यच्च-यत्रयोः",
     why_dev               = "धातोः प्रत्ययः (३.3.148)।",
     anuvritti_from        = ('3.1.1',),

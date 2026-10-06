@@ -4,6 +4,7 @@
 Padaccheda: आदिकर्मणि क्तः कर्तरि च
 
 krt-suffix rule: अदिकर्मणि क्तः कर्तरि च
+Pāṭha: ashtadhyayi.com data.txt row i=34071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'AdikarmaRi ktaH kartari ca',
     text_dev              = 'आदिकर्मणि क्तः कर्तरि च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH AdikarmaRi ktaH kartari ca kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः आदिकर्मणि क्तः कर्तरि च कृत्",
     padaccheda_dev        = "आदिकर्मणि क्तः कर्तरि च",
     why_dev               = "धातोः प्रत्ययः (३.4.71)।",
     anuvritti_from        = ('3.1.1',),

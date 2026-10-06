@@ -4,6 +4,7 @@
 Padaccheda: बहोः लोपः भू (लुप्तप्रथमान्तनिर्देशः) च बहोः
 
 बहोर्लोपो भू च बहोः (6.4.158)
+Pāṭha: ashtadhyayi.com data.txt row i=64158 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahorlopo BU ca bahoH",
     text_dev              = "बहोर्लोपो भू च बहोः",
+    samagra_slp1          = "aNgasya asidDavadatrABAt Basya bahoH lopaH BU ca izWa-iman-Iyassu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् भस्य बहोः लोपः भू च इष्ठ-इमन्-ईयस्सु",
     padaccheda_dev        = "बहोः लोपः भू (लुप्तप्रथमान्तनिर्देशः) च बहोः",
     why_dev               = "(सूत्रम् 6.4.158) बहोर्लोपो भू च बहोः।",
     anuvritti_from        = ('6.1.1',),

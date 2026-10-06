@@ -7,6 +7,7 @@ The word "astam" (the western mountain where the sun sets) functions as a gati
 when compounded with roots of motion.
 
 v3: registers samjna_registry["gati_astam"] = frozenset({"astam"}).
+Pāṭha: ashtadhyayi.com data.txt row i=14068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1="astaM ca",
     text_dev="अस्तं च",
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH astam ca kriyAyoge gatiH avyayam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः अस्तम् च क्रियायोगे गतिः अव्ययम्",
     padaccheda_dev="अस्तम् / च",
     why_dev="'अस्तम्' अपि गति-संज्ञकम् — 'astam' गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60", "1.4.67"),

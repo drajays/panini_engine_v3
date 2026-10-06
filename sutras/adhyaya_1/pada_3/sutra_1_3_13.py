@@ -12,6 +12,7 @@ constructions, the verb takes ātmanepada endings.
 dhātu Term carries the tag "bhava_karma_usage" — set by the recipe to signal a
 passive/impersonal derivation.  No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True because no surface phonological change occurs.
+Pāṭha: ashtadhyayi.com data.txt row i=13013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -41,6 +42,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="BAvakarmaRoH",
     text_dev="भावकर्मणोः",
+    samagra_slp1="BAva-karmaRoH Atmanepadam",
+    samagra_dev="भाव-कर्मणोः आत्मनेपदम्",
     padaccheda_dev="भाव-कर्मणोः (षष्ठी-द्विवचन)",
     why_dev=(
         "भावे कर्मणि च प्रयोगे धातोः आत्मनेपद-विभक्तयः भवन्ति; "

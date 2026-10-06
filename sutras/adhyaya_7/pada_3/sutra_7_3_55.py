@@ -4,6 +4,7 @@
 Padaccheda: अभ्यासात् च
 
 अभ्यासाच्च (7.3.55)
+Pāṭha: ashtadhyayi.com data.txt row i=73055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "aByAsAcca",
     text_dev              = "अभ्यासाच्च",
+    samagra_slp1          = "aNgasya aByAsAt ca ku cajoH haH hanteH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासात् च कु चजोः हः हन्तेः",
     padaccheda_dev        = "अभ्यासात् च",
     why_dev               = "(सूत्रम् 7.3.55) अभ्यासाच्च।",
     anuvritti_from        = ('7.1.1',),

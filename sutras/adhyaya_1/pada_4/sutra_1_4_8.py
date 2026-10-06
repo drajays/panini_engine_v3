@@ -7,6 +7,7 @@ designation ONLY in a compound (*samāsa*), not elsewhere.
 v3: if any Term has upadesha_slp1 == "pati", has the *nadi* tag, but is NOT
 tagged *samasa*, the *nadi* tag is removed (the rule negates the application
 of 1.4.3/1.4.7 to *pati* outside compounds).
+Pāṭha: ashtadhyayi.com data.txt row i=14008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.NIYAMA,
     text_slp1              = "patiH samAsa eva",
     text_dev               = "पतिः समास एव",
+    samagra_slp1           = "patiH Gi samAse eva",
+    samagra_dev            = "पतिः घि समासे एव",
     padaccheda_dev         = "पतिः / समासे / एव",
     why_dev                = "पतिशब्दस्य नदीसंज्ञा समासे एव; पृथक्-प्रयोगे न।",
     anuvritti_from         = ("1.4.1", "1.4.3"),

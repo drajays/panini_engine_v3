@@ -4,6 +4,7 @@
 Padaccheda: ह्लादः निष्ठायाम्
 
 ह्लादो निष्ठायाम् (6.4.95)
+Pāṭha: ashtadhyayi.com data.txt row i=64095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hlAdo nizWAyAm",
     text_dev              = "ह्लादो निष्ठायाम्",
+    samagra_slp1          = "aNgasya asidDavadatrABAt hlAdaH nizWAyAm aci upaDAyAH hrasvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् ह्लादः निष्ठायाम् अचि उपधायाः ह्रस्वः",
     padaccheda_dev        = "ह्लादः निष्ठायाम्",
     why_dev               = "(सूत्रम् 6.4.95) ह्लादो निष्ठायाम्।",
     anuvritti_from        = ('6.1.1',),

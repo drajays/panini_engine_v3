@@ -9,6 +9,7 @@ engine.gates.asiddha_violates can refuse any non-tripāḍī sūtra that
 tries to fire after this point.
 
 Pushes an adhikāra entry covering (8.2.1, 8.4.68).
+Pāṭha: ashtadhyayi.com data.txt row i=82001 (Art. 14).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
@@ -34,6 +35,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.ADHIKARA,
     text_slp1      = 'pUrvatrAsidDam',
     text_dev       = 'पूर्वत्रासिद्धम्',
+    samagra_slp1   = "pUrvatra asidDam",
+    samagra_dev    = "पूर्वत्र असिद्धम्",
     padaccheda_dev = "पूर्वत्र असिद्धम्",
     why_dev        = "८.२.१ तः ८.४.६८ पर्यन्तम् (त्रिपादी) पूर्व-सूत्रेभ्यः असिद्धम्।",
     anuvritti_from = (),

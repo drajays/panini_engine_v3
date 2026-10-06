@@ -4,6 +4,7 @@
 Padaccheda: आम एकान्तरम् आमन्त्रितम् अनन्तिके
 
 आम एकान्तरमामन्त्रितमनन्तिके (8.1.55)
+Pāṭha: ashtadhyayi.com data.txt row i=81055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Ama ekAntaramAmantritamanantike",
     text_dev              = "आम एकान्तरमामन्त्रितमनन्तिके",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO Ama ekAntaram Amantritam anantike tiN na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ आम एकान्तरम् आमन्त्रितम् अनन्तिके तिङ् न",
     padaccheda_dev        = "आम एकान्तरम् आमन्त्रितम् अनन्तिके",
     why_dev               = "(सूत्रम् 8.1.55) आम एकान्तरमामन्त्रितमनन्तिके।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अन्तः
 
 अन्तः (8.4.20)
+Pāṭha: ashtadhyayi.com data.txt row i=84020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "antaH",
     text_dev              = "अन्तः",
+    samagra_slp1          = "razAByAM upasargAt padasya antaH naH RaH",
+    samagra_dev           = "रषाभ्यां  उपसर्गात् पदस्य अन्तः नः णः",
     padaccheda_dev        = "अन्तः",
     why_dev               = "(सूत्रम् 8.4.20) अन्तः।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अहीने द्वितीया
 
 अहीने द्वितीया (6.2.47)
+Pāṭha: ashtadhyayi.com data.txt row i=62047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ahIne dvitIyA",
     text_dev              = "अहीने द्वितीया",
+    samagra_slp1          = "ahIne dvitIyA prakftyA pUrvapadam kte",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अहीने द्वितीया प्रकृत्या पूर्वपदम् क्ते",
     padaccheda_dev        = "अहीने द्वितीया",
     why_dev               = "(सूत्रम् 6.2.47) अहीने द्वितीया।",
     anuvritti_from        = ('6.1.1',),

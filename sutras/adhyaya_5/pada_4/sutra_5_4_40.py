@@ -4,6 +4,7 @@
 Padaccheda: सस्नौ प्रशंसायाम्
 
 सस्नौ प्रशंसायाम् (5.4.40)
+Pāṭha: ashtadhyayi.com data.txt row i=54040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sasnO praSaMsAyAm",
     text_dev              = "सस्नौ प्रशंसायाम्",
+    samagra_slp1          = "praSaMsAyAm mfdaH sa-snO",
+    samagra_dev           = "प्रशंसायाम् मृदः स-स्नौ",
     padaccheda_dev        = "सस्नौ प्रशंसायाम्",
     why_dev               = "(सूत्रम् 5.4.40) सस्नौ प्रशंसायाम्।",
     anuvritti_from        = ('4.1.76',),

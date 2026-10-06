@@ -90,6 +90,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'bahuvacane Jalyet',
     text_dev       = 'बहुवचने झल्येत्',
+    samagra_slp1   = "ataH aNgasya bahuvacane Jali et",
+    samagra_dev    = "अतः अङ्गस्य बहुवचने झलि एत्",
     padaccheda_dev = "बहुवचने झलि एत् — अङ्गस्य अतः",
     why_dev        = "झल्-आदि-बहुवचन-सुप्-प्रत्यये परे अदन्त-अङ्गस्य "
                      "अन्त्य-अ-कारस्य 'ए'-आदेशः।",

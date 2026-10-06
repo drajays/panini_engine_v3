@@ -4,6 +4,7 @@
 Padaccheda: हनः च वधः
 
 krt-suffix rule: हनश्च वधः
+Pāṭha: ashtadhyayi.com data.txt row i=33076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hanaSca vaDaH",
     text_dev              = "हनश्च वधः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm hanaH ca vaDaH kft ap anupasargasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् हनः च वधः कृत् अप् अनुपसर्गस्य",
     padaccheda_dev        = "हनः च वधः",
     why_dev               = "धातोः प्रत्ययः (३.3.76)।",
     anuvritti_from        = ('3.1.1',),

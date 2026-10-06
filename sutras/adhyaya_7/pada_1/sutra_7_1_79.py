@@ -4,6 +4,7 @@
 Padaccheda: वा नपुंसकस्य
 
 वा नपुंसकस्य (7.1.79)
+Pāṭha: ashtadhyayi.com data.txt row i=71079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA napuMsakasya",
     text_dev              = "वा नपुंसकस्य",
+    samagra_slp1          = "aNgasya vA napuMsakasya num na aByastAt SatuH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य वा नपुंसकस्य नुम् न अभ्यस्तात् शतुः",
     padaccheda_dev        = "वा नपुंसकस्य",
     why_dev               = "(सूत्रम् 7.1.79) वा नपुंसकस्य।",
     anuvritti_from        = ('7.1.1',),

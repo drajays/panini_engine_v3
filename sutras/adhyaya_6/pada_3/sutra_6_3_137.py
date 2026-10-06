@@ -4,6 +4,7 @@
 Padaccheda: अन्येषाम् अपि दृश्यते (क्रियापदम्)
 
 अन्येषामपि दृश्यते (6.3.137)
+Pāṭha: ashtadhyayi.com data.txt row i=63137 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anyezAmapi dfSyate",
     text_dev              = "अन्येषामपि दृश्यते",
+    samagra_slp1          = "uttarapade saMhitAyAm anyezAm api dfSyate dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् अन्येषाम् अपि दृश्यते दीर्घः",
     padaccheda_dev        = "अन्येषाम् अपि दृश्यते (क्रियापदम्)",
     why_dev               = "(सूत्रम् 6.3.137) अन्येषामपि दृश्यते।",
     anuvritti_from        = ('6.1.1',),

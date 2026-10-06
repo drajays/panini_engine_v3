@@ -16,6 +16,7 @@ Narrow v3:
 
 **Note:** **6.1.198** (*ṝk-prātishākhya* neighbourhood) is a different anchor from this **8.1.19**
 accent sandhi row — both may read *āmantriṭasya ca* in machine metadata.
+Pāṭha: ashtadhyayi.com data.txt row i=81019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -123,6 +124,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.ANUVADA,
     text_slp1='Amantritasya ca',
     text_dev='आमन्त्रितस्य च',
+    samagra_slp1="padasya padAt anudAttaM sarvamApAdAdO Amantritasya ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="पदस्य पदात् अनुदात्तं सर्वमापादादौ आमन्त्रितस्य च",
     padaccheda_dev="आमन्त्रितस्य च",
     why_dev="आमन्त्रित-पदं सर्वानुदात्तम् (*prakriya_30* / *32* / *34*, **८.१.१८**-अधिकारे)।",
     anuvritti_from=("8.1.18",),

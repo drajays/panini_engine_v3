@@ -4,6 +4,7 @@
 Padaccheda: तप्-तनप्-तन-थनाः च
 
 तप्तनप्तनथनाश्च (7.1.45)
+Pāṭha: ashtadhyayi.com data.txt row i=71045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "taptanaptanaTanASca",
     text_dev              = "तप्तनप्तनथनाश्च",
+    samagra_slp1          = "aNgasya tap-tanap-tana-TanAH ca Candasi tasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य तप्-तनप्-तन-थनाः च छन्दसि तस्य",
     padaccheda_dev        = "तप्-तनप्-तन-थनाः च",
     why_dev               = "(सूत्रम् 7.1.45) तप्तनप्तनथनाश्च।",
     anuvritti_from        = ('7.1.1',),

@@ -7,6 +7,7 @@ called *guru*.
 v3: sets the ``1_4_11_saMYoge_guru`` gate in ``state.paribhasha_gates`` to
 signal that the saṃyoge-guru rule is operative.  The actual syllable-weight
 computation is done by phonology utilities consulting this gate.
+Pāṭha: ashtadhyayi.com data.txt row i=14011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -30,6 +31,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.SAMJNA,
     text_slp1              = 'saMyoge guru',
     text_dev               = 'संयोगे गुरु',
+    samagra_slp1           = "saMyoge hrasvaM guru",
+    samagra_dev            = "संयोगे ह्रस्वं गुरु",
     padaccheda_dev         = "संयोगे / गुरु",
     why_dev                = "संयोग-पूर्वो ह्रस्वः स्वरो गुरु-संज्ञकः।",
     anuvritti_from         = ("1.4.1", "1.4.10"),

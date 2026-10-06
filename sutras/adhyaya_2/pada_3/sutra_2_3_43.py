@@ -4,6 +4,7 @@
 Padaccheda: साधु-निपुणाभ्याम् अर्चायाम् सप्तमी अ-प्रतेः
 
 sadhu and nipuna in worship context take saptami.
+Pāṭha: ashtadhyayi.com data.txt row i=23043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sADunipuRAByAmarcAyAM saptamyaprateH',
     text_dev              = 'साधुनिपुणाभ्यामर्चायां सप्तम्यप्रतेः',
+    samagra_slp1          = "anaBihite sADu-nipuRAByAm arcAyAm saptamI aprateH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते साधु-निपुणाभ्याम् अर्चायाम् सप्तमी अप्रतेः",
     padaccheda_dev        = "साधु-निपुणाभ्याम् अर्चायाम् सप्तमी अ-प्रतेः",
     why_dev               = "साधु-निपुणाभ्याम् अर्चायाम् सप्तमी (२.३.४३)।",
     anuvritti_from        = ('2.3.36',),

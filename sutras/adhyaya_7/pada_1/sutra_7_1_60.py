@@ -4,6 +4,7 @@
 Padaccheda: मस्जि-नशोः झलि
 
 मस्जिनशोर्झलि (7.1.60)
+Pāṭha: ashtadhyayi.com data.txt row i=71060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "masjinaSorJali",
     text_dev              = "मस्जिनशोर्झलि",
+    samagra_slp1          = "masji-naSoH num Jali",
+    samagra_dev           = "मस्जि-नशोः नुम् झलि",
     padaccheda_dev        = "मस्जि-नशोः झलि",
     why_dev               = "(सूत्रम् 7.1.60) मस्जिनशोर्झलि।",
     anuvritti_from        = ('7.1.1',),

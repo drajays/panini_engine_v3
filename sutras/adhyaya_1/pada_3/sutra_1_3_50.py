@@ -17,6 +17,7 @@ Term carries the tag "vipralApa_usage".
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
 vibhasha_default=True: the optional ātmanepada form is taken by default.
+Pāṭha: ashtadhyayi.com data.txt row i=13050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='viBAzA vipralApe',
     text_dev='विभाषा विप्रलापे',
+    samagra_slp1="viBAzA vipralApe Atmanepadam vadaH vyaktavAcAM samuccAraRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="विभाषा विप्रलापे आत्मनेपदम् वदः व्यक्तवाचां समुच्चारणे",
     padaccheda_dev="विभाषा (अव्यय) / विप्रलापे (सप्तमी-एकवचन)",
     why_dev=(
         "विप्रलाप-अर्थे धातोः प्रयोगे विभाषा आत्मनेपदम् — "

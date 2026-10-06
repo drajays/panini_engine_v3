@@ -4,6 +4,7 @@
 Padaccheda: लुक् वा दुह-दिह-लिह-गुहाम् आत्मनेपदे दन्त्ये
 
 लुग्वा दुहदिहलिहगुहामात्मनेपदे दन्त्ये (7.3.73)
+Pāṭha: ashtadhyayi.com data.txt row i=73073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lugvA duhadihalihaguhAmAtmanepade dantye",
     text_dev              = "लुग्वा दुहदिहलिहगुहामात्मनेपदे दन्त्ये",
+    samagra_slp1          = "aNgasya luk vA duhadihalihaguhAm Atmanepade dantye ksasya aci",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य लुक् वा दुहदिहलिहगुहाम् आत्मनेपदे दन्त्ये क्सस्य अचि",
     padaccheda_dev        = "लुक् वा दुह-दिह-लिह-गुहाम् आत्मनेपदे दन्त्ये",
     why_dev               = "(सूत्रम् 7.3.73) लुग्वा दुहदिहलिहगुहामात्मनेपदे दन्त्ये।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: काम्यच् च
 
 Krt suffix rule from dhatu: काम्यच्च (9)
+Pāṭha: ashtadhyayi.com data.txt row i=31009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kAmyacca",
     text_dev              = "काम्यच्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kAmyac ca karmaRaH icCAyAM vA supaH AtmanaH kyac",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च काम्यच् च कर्मणः इच्छायां वा सुपः आत्मनः क्यच्",
     padaccheda_dev        = "काम्यच् च",
     why_dev               = "धातोः [काम्यच्च]-प्रत्ययः विहितः (३.१.9)।",
     anuvritti_from        = ('3.1.1',),

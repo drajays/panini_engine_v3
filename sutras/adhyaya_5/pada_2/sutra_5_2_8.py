@@ -4,6 +4,7 @@
 Padaccheda: आप्रपदम् प्राप्नोति (क्रियापदम्)
 
 आप्रपदं प्राप्नोति (5.2.8)
+Pāṭha: ashtadhyayi.com data.txt row i=52008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AprapadaM prApnoti",
     text_dev              = "आप्रपदं प्राप्नोति",
+    samagra_slp1          = "prApnoti iti Aprapadam KaH",
+    samagra_dev           = "'प्राप्नोति' (इति) आप्रपदम् खः",
     padaccheda_dev        = "आप्रपदम् प्राप्नोति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 5.2.8) आप्रपदं प्राप्नोति।",
     anuvritti_from        = ('4.1.82',),

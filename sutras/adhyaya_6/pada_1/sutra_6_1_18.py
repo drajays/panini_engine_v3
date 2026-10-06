@@ -4,6 +4,7 @@
 Padaccheda: स्वापेः चङि
 
 स्वापेश्चङि (6.1.18)
+Pāṭha: ashtadhyayi.com data.txt row i=61018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "svApeScaNi",
     text_dev              = "स्वापेश्चङि",
+    samagra_slp1          = "svApeH caNi samprasAraRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "स्वापेः चङि सम्प्रसारणम्",
     padaccheda_dev        = "स्वापेः चङि",
     why_dev               = "(सूत्रम् 6.1.18) स्वापेश्चङि।",
     anuvritti_from        = ('6.1.1',),

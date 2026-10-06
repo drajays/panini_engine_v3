@@ -4,6 +4,7 @@
 Padaccheda: वृद्धात् ठक् सौवीरेषु बहुलम्
 
 वृद्धाट्ठक् सौवीरेषु बहुलम् (4.1.148)
+Pāṭha: ashtadhyayi.com data.txt row i=41148 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vfdDAwWak sOvIrezu bahulam",
     text_dev              = "वृद्धाट्ठक् सौवीरेषु बहुलम्",
+    samagra_slp1          = "tasya apatyam iti sOvirezu kutsane vfdDAt bahulam Wak",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) सौविरेषु कुत्सने वृद्धात् बहुलम् ठक्",
     padaccheda_dev        = "वृद्धात् ठक् सौवीरेषु बहुलम्",
     why_dev               = "(सूत्रम् 4.1.148) वृद्धाट्ठक् सौवीरेषु बहुलम्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अपः भि
 
 अपो भि (7.4.48)
+Pāṭha: ashtadhyayi.com data.txt row i=74048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "apo Bi",
     text_dev              = "अपो भि",
+    samagra_slp1          = "aNgasya apaH Bi taH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अपः भि तः",
     padaccheda_dev        = "अपः भि",
     why_dev               = "(सूत्रम् 7.4.48) अपो भि।",
     anuvritti_from        = ('7.1.1',),

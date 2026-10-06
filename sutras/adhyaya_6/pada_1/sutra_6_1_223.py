@@ -4,6 +4,7 @@
 Padaccheda: समासस्य
 
 समासस्य (6.1.223)
+Pāṭha: ashtadhyayi.com data.txt row i=61223 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samAsasya",
     text_dev              = "समासस्य",
+    samagra_slp1          = "samAsasya antaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "समासस्य अन्तः",
     padaccheda_dev        = "समासस्य",
     why_dev               = "(सूत्रम् 6.1.223) समासस्य।",
     anuvritti_from        = ('6.1.1',),

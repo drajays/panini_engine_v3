@@ -4,6 +4,7 @@
 Padaccheda: नि-नदीभ्याम् स्नातेः कौशले
 
 निनदीभ्यां स्नातेः कौशले (8.3.89)
+Pāṭha: ashtadhyayi.com data.txt row i=83089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ninadIByAM snAteH kOSale",
     text_dev              = "निनदीभ्यां स्नातेः कौशले",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH ni-nadIByAm snAteH kOSale saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः नि-नदीभ्याम् स्नातेः कौशले सः",
     padaccheda_dev        = "नि-नदीभ्याम् स्नातेः कौशले",
     why_dev               = "(सूत्रम् 8.3.89) निनदीभ्यां स्नातेः कौशले।",
     anuvritti_from        = ('8.1.1',),

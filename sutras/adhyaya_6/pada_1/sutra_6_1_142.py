@@ -4,6 +4,7 @@
 Padaccheda: अपात् चतुष्पात्-शकुनिषु आलेखने
 
 अपाच्चतुष्पाच्छकुनिष्वालेखने (6.1.142)
+Pāṭha: ashtadhyayi.com data.txt row i=61142 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "apAccatuzpAcCakunizvAleKane",
     text_dev              = "अपाच्चतुष्पाच्छकुनिष्वालेखने",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH apAt catuzpAt-Sakunizu AleKane kiratO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः अपात् चतुष्पात्-शकुनिषु आलेखने किरतौ",
     padaccheda_dev        = "अपात् चतुष्पात्-शकुनिषु आलेखने",
     why_dev               = "(सूत्रम् 6.1.142) अपाच्चतुष्पाच्छकुनिष्वालेखने।",
     anuvritti_from        = ('6.1.1',),

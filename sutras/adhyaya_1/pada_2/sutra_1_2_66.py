@@ -17,6 +17,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'strI puMvacca',
     text_dev                = 'स्त्री पुंवच्च',
+    samagra_slp1            = "strI puMvat ca ekaSezaH vfdDaH yUnA tallakzaRaH cet eva viSezaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "स्त्री पुंवत् च एकशेषः वृद्धः यूना तल्लक्षणः चेत् एव विशेषः",
     padaccheda_dev          = "स्त्री / पुंवत् / च",
     why_dev                 = (
         "एकशेषे स्त्री पुंवत् भवति — पुंलिङ्गः एव शिष्यते स्त्रीलिङ्गेन सह युगले। "

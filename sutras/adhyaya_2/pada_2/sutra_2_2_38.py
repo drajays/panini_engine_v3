@@ -4,6 +4,7 @@
 Padaccheda: कडाराः कर्मधारये
 
 Kadara etc. in karmadharaya compound.
+Pāṭha: ashtadhyayi.com data.txt row i=22038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kaqArAH karmaDAraye",
     text_dev              = "कडाराः कर्मधारये",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA kaqArAH karmaDAraye pUrvam vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा कडाराः कर्मधारये पूर्वम् वा",
     padaccheda_dev        = "कडाराः कर्मधारये",
     why_dev               = "कडाराः कर्मधारये (२.२.३८)।",
     anuvritti_from        = ('2.2.1',),

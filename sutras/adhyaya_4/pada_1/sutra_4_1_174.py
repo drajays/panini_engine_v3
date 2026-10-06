@@ -4,6 +4,7 @@
 Padaccheda: ते तद्राजाः
 
 ते तद्राजाः (4.1.174)
+Pāṭha: ashtadhyayi.com data.txt row i=41174 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "te tadrAjAH",
     text_dev              = "ते तद्राजाः",
+    samagra_slp1          = "te kzatriyAt janapadaSabdAt uktAH pratyayAH tadrAjAH",
+    samagra_dev           = "ते क्षत्रियात् जनपदशब्दात् (उक्ताः) प्रत्ययाः तद्राजाः",
     padaccheda_dev        = "ते तद्राजाः",
     why_dev               = "(सूत्रम् 4.1.174) ते तद्राजाः।",
     anuvritti_from        = ('4.1.1',),

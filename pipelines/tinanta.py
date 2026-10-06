@@ -168,8 +168,8 @@ def _upadesha_to_id_map() -> dict[str, str]:
     Indexed by:
       1. Exact upadesha_slp1 (e.g. 'BU', 'paci~', 'paWa~')
       2. Trailing-~ stripped form (e.g. 'paci' from 'paci~')
-      3. raw_dhatu_after_it_lopa_slp1 (e.g. 'pac', 'paW', 'nI') — lets
-         callers use the clean post-IT-lopa form as the lookup key.
+      3. raw_dhatu_after_it_lopa_slp1 (e.g. 'pac', 'paW') — the engine's it-lopa residue
+      4. citation_dhatu_slp1 (e.g. 'nad', 'nI', 'cint') — the traditional citation root
     """
     env = _envelope(_payload())
     m: dict[str, str] = {}
@@ -188,6 +188,10 @@ def _upadesha_to_id_map() -> dict[str, str]:
         # do not override upadesha-key mappings already set.
         if raw and raw not in m:
             m[raw] = eid
+        # traditional citation root (e.g. 'nad' for 'Rada~') — lowest priority
+        cit = e.get("citation_dhatu_slp1", "")
+        if cit and cit not in m:
+            m[cit] = eid
     return m
 
 

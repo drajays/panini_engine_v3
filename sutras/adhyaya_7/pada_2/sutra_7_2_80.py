@@ -76,6 +76,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ato yeyaH",
     text_dev              = "अतो येयः",
+    samagra_slp1          = "ataH liNaH yAH iyaH sArvaDAtuke",
+    samagra_dev           = "अतः लिङः याः इयः सार्वधातुके",
     padaccheda_dev        = "अतः या (लुप्तषष्ठ्यन्तनिर्देशः) इयः",
     why_dev               = (
         "विधि-लिङि अकारान्त-विकरणपरस्य यासुट्-अवशेषस्य [y,A] → [i,y]; "

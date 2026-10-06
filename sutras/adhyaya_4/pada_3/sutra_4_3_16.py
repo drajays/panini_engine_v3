@@ -4,6 +4,7 @@
 Padaccheda: संधिवेला-आदि-ऋतु-नक्षत्रेभ्यः अण्
 
 संधिवेलाऽऽद्यृतुनक्षत्रेभ्योऽण् (4.3.16)
+Pāṭha: ashtadhyayi.com data.txt row i=43016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'saMDivelAdyftunakzatreByoR',
     text_dev              = 'संधिवेलाद्यृतुनक्षत्रेभ्योऽण्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA saMDivelA-Adi-ftu-nakzatreByaH aR kAlAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा संधिवेला-आदि-ऋतु-नक्षत्रेभ्यः अण् कालात्",
     padaccheda_dev        = "संधिवेला-आदि-ऋतु-नक्षत्रेभ्यः अण्",
     why_dev               = "(सूत्रम् 4.3.16) संधिवेलाऽऽद्यृतुनक्षत्रेभ्योऽण्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: स्रवति-शृणोति-द्रवति-प्रवति-प्लवति-च्यवतीनाम् वा
 
 स्रवतिशृणोतिद्रवतिप्रवतिप्लवतिच्यवतीनां वा (7.4.81)
+Pāṭha: ashtadhyayi.com data.txt row i=74081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sravatiSfRotidravatipravatiplavaticyavatInAM vA",
     text_dev              = "स्रवतिशृणोतिद्रवतिप्रवतिप्लवतिच्यवतीनां वा",
+    samagra_slp1          = "aNgasya aByAsasya sravatiSfRotidravatipravatiplavaticyavatInAm vA it sani puyaRji apare",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य स्रवतिशृणोतिद्रवतिप्रवतिप्लवतिच्यवतीनाम् वा इत् सनि पुयण्जि अपरे",
     padaccheda_dev        = "स्रवति-शृणोति-द्रवति-प्रवति-प्लवति-च्यवतीनाम् वा",
     why_dev               = "(सूत्रम् 7.4.81) स्रवतिशृणोतिद्रवतिप्रवतिप्लवतिच्यवतीनां वा।",
     anuvritti_from        = ('7.1.1',),

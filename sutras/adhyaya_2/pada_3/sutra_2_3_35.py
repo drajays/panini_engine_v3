@@ -4,6 +4,7 @@
 Padaccheda: दूर-अन्तिक-अर्थेभ्यः द्वितीया च
 
 dura and antika words also take dvitiya.
+Pāṭha: ashtadhyayi.com data.txt row i=23035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dUrAntikArTeByo dvitIyA ca",
     text_dev              = "दूरान्तिकार्थेभ्यो द्वितीया च",
+    samagra_slp1          = "anaBihite dUra-antika-arTeByaH dvitIyA ca paYcamI asatvavacanasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते दूर-अन्तिक-अर्थेभ्यः द्वितीया च पञ्चमी असत्ववचनस्य",
     padaccheda_dev        = "दूर-अन्तिक-अर्थेभ्यः द्वितीया च",
     why_dev               = "दूर-अन्तिक-अर्थेभ्यः द्वितीया च (२.३.३५)।",
     anuvritti_from        = ('2.3.2',),

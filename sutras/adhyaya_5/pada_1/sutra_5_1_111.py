@@ -4,6 +4,7 @@
 Padaccheda: अनुप्रवचन-आदिभ्यः छः
 
 अनुप्रवचनादिभ्यश्छः (5.1.111)
+Pāṭha: ashtadhyayi.com data.txt row i=51111 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anupravacanAdiByaSCaH",
     text_dev              = "अनुप्रवचनादिभ्यश्छः",
+    samagra_slp1          = "tat asya prayojanam iti anupravacanAdiByaH CaH",
+    samagra_dev           = "'तत् अस्य प्रयोजनम्' (इति) अनुप्रवचनादिभ्यः छः",
     padaccheda_dev        = "अनुप्रवचन-आदिभ्यः छः",
     why_dev               = "(सूत्रम् 5.1.111) अनुप्रवचनादिभ्यश्छः।",
     anuvritti_from        = ('5.1.18',),

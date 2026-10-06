@@ -4,6 +4,7 @@
 Padaccheda: दुष्कुलात् ढक्
 
 दुष्कुलाड्ढक् (4.1.142)
+Pāṭha: ashtadhyayi.com data.txt row i=41142 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "duzkulAqQak",
     text_dev              = "दुष्कुलाड्ढक्",
+    samagra_slp1          = "tasya apatyam iti duzkulAt anyatarasyAm Qak",
+    samagra_dev           = "'तस्य अपत्यम्' (इति)  दुष्कुलात् अन्यतरस्याम् ढक्",
     padaccheda_dev        = "दुष्कुलात् ढक्",
     why_dev               = "(सूत्रम् 4.1.142) दुष्कुलाड्ढक्।",
     anuvritti_from        = ('4.1.1',),

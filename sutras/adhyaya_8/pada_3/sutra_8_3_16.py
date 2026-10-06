@@ -12,6 +12,7 @@ not dhanuḥbhyām).
 This sūtra is recorded as ANUVADA: it fires as a trace event to mark the
 "roḥ supi" śāstra context for downstream rules (8.3.17+), but does not itself
 mutate any varṇa.  All structural work is done by 8.3.15 and 8.3.59.
+Pāṭha: ashtadhyayi.com data.txt row i=83016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -34,6 +35,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "roH supi",
     text_dev              = "रोः सुपि",
+    samagra_slp1          = "padasya ruH supi visarjanIyaH saMhitAyAm",
+    samagra_dev           = "पदस्य रुः सुपि विसर्जनीयः संहितायाम्",
     padaccheda_dev        = "रोः सुपि",
     why_dev               = "सुपि-पूर्वस्य रु-विसर्गः (८.३.१५ एव कार्यम्; अनुवादः)।",
     anuvritti_from        = ("8.2.1",),

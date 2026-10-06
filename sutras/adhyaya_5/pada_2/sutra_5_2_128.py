@@ -4,6 +4,7 @@
 Padaccheda: द्वन्द्व-उपताप-गर्ह्यात् प्राणि-स्थात् इनिः
 
 द्वंद्वोपतापगर्ह्यात् प्राणिस्थादिनिः (5.2.128)
+Pāṭha: ashtadhyayi.com data.txt row i=52128 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'dvandvopatApagarhyAt prARisTAdiniH',
     text_dev              = 'द्वन्द्वोपतापगर्ह्यात् प्राणिस्थादिनिः',
+    samagra_slp1          = "tat asya asmin astIti iti prARisTAt ataH dvandva-upatApa-garhyAt iniH",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) प्राणिस्थात् अतः द्वन्द्व-उपताप-गर्ह्यात् इनिः",
     padaccheda_dev        = "द्वन्द्व-उपताप-गर्ह्यात् प्राणि-स्थात् इनिः",
     why_dev               = "(सूत्रम् 5.2.128) द्वंद्वोपतापगर्ह्यात् प्राणिस्थादिनिः।",
     anuvritti_from        = ('4.1.82',),

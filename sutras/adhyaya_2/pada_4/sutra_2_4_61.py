@@ -4,6 +4,7 @@
 Padaccheda: न तौल्वलिभ्यः
 
 NOT from taulvali etc.
+Pāṭha: ashtadhyayi.com data.txt row i=24061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na tOlvaliByaH",
     text_dev              = "न तौल्वलिभ्यः",
+    samagra_slp1          = "na tOlvaliByaH yUni luk",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "न तौल्वलिभ्यः यूनि लुक्",
     padaccheda_dev        = "न तौल्वलिभ्यः",
     why_dev               = "न तौल्वलिभ्यः (२.४.६१)।",
     anuvritti_from        = ('2.4.58',),

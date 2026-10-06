@@ -4,6 +4,7 @@
 Padaccheda: वृद्धस्य च पूजायाम्
 
 वृद्धस्य च पूजायाम् (4.1.166)
+Pāṭha: ashtadhyayi.com data.txt row i=41166 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vfdDasya ca pUjAyAm",
     text_dev              = "वृद्धस्य च पूजायाम्",
+    samagra_slp1          = "vfdDasya pUjAyAm vA yuvA",
+    samagra_dev           = "वृद्धस्य पूजायाम् वा युवा",
     padaccheda_dev        = "वृद्धस्य च पूजायाम्",
     why_dev               = "(सूत्रम् 4.1.166) वृद्धस्य च पूजायाम्।",
     anuvritti_from        = ('4.1.1',),

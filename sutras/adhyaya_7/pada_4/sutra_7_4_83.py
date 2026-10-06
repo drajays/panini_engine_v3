@@ -7,6 +7,7 @@ JSON **P029** step 8: after **7.4.59**, lengthen the *abhyāsa* *hrasva* back to
 Narrow v3: ``state.meta['P029_7_4_83_abhyasa_dirgha_arm']`` + ``abhyasa`` term
 whose second varṇa is *hrasva* ``a`` after leading ``y`` → replace that ``a``
 with ``A``.
+Pāṭha: ashtadhyayi.com data.txt row i=74083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='dIrGokitaH',
     text_dev='दीर्घोऽकितः',
+    samagra_slp1="aNgasya aByAsasya dIrGaH akitaH yaNlukoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अङ्गस्य अभ्यासस्य दीर्घः अकितः यङ्लुकोः",
     padaccheda_dev="दीर्घः / अकितः",
     why_dev="यङ्-प्रकरणे अभ्यासस्य दीर्घः (P029)।",
     anuvritti_from=("7.4.82",),

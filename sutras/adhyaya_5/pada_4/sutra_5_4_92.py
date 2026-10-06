@@ -4,6 +4,7 @@
 Padaccheda: गोः अ-तद्धित-लुकि
 
 गोरतद्धितलुकि (5.4.92)
+Pāṭha: ashtadhyayi.com data.txt row i=54092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "goratadDitaluki",
     text_dev              = "गोरतद्धितलुकि",
+    samagra_slp1          = "tatpuruzasya goH a-tadDita-luki wac",
+    samagra_dev           = "तत्पुरुषस्य गोः अ-तद्धित-लुकि टच्",
     padaccheda_dev        = "गोः अ-तद्धित-लुकि",
     why_dev               = "(सूत्रम् 5.4.92) गोरतद्धितलुकि।",
     anuvritti_from        = ('5.4.68',),

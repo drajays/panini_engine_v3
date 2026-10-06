@@ -14,6 +14,7 @@ the tag "Sabda_karma_usage" (encoding the śabda-karma semantic context),
 and (c) the idempotency stamp "Atmanepada_1_3_34" is absent from state.meta.
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="veH SabdakarmaRaH",
     text_dev="वेः शब्दकर्मणः",
+    samagra_slp1="SabdakarmaRaH veH kfYaH Atmanepadam",
+    samagra_dev="शब्दकर्मणः वेः कृञः आत्मनेपदम्",
     padaccheda_dev="वेः (पञ्चमी-एकवचन) / शब्दकर्मणः (षष्ठी-एकवचन)",
     why_dev=(
         "वि-पूर्वस्य शब्द-कर्मकस्य धातोः प्रयोगे आत्मनेपदम् — "

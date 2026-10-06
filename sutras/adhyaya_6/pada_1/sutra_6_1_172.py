@@ -4,6 +4,7 @@
 Padaccheda: अष्टनः दीर्घात्
 
 अष्टनो दीर्घात् (6.1.172)
+Pāṭha: ashtadhyayi.com data.txt row i=61172 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "azwano dIrGAt",
     text_dev              = "अष्टनो दीर्घात्",
+    samagra_slp1          = "azwanaH dIrGAt udAttaH antaH viBaktiH antodattAt aYceH Candasi asarvanAmasTAnam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अष्टनः दीर्घात् उदात्तः अन्तः विभक्तिः अन्तोदत्तात् अञ्चेः छन्दसि असर्वनामस्थानम्",
     padaccheda_dev        = "अष्टनः दीर्घात्",
     why_dev               = "(सूत्रम् 6.1.172) अष्टनो दीर्घात्।",
     anuvritti_from        = ('6.1.1',),

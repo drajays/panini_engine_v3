@@ -4,6 +4,7 @@
 Padaccheda: दयतेः दिगि (लुप्तप्रथमान्तनिर्देशः) लिटि
 
 दयतेर्दिगि लिटि (7.4.9)
+Pāṭha: ashtadhyayi.com data.txt row i=74009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dayaterdigi liwi",
     text_dev              = "दयतेर्दिगि लिटि",
+    samagra_slp1          = "aNgasya dayateH digi liwi caNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य दयतेः दिगि लिटि चङि",
     padaccheda_dev        = "दयतेः दिगि (लुप्तप्रथमान्तनिर्देशः) लिटि",
     why_dev               = "(सूत्रम् 7.4.9) दयतेर्दिगि लिटि।",
     anuvritti_from        = ('7.1.1',),

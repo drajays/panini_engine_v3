@@ -4,6 +4,7 @@
 Padaccheda: गोत्र-अवयवात्
 
 गोत्रावयवात् (4.1.79)
+Pāṭha: ashtadhyayi.com data.txt row i=41079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gotrAvayavAt",
     text_dev              = "गोत्रावयवात्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt tadDitAH gotra-avayavAt aRa-iYoH gotre zyaN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् तद्धिताः गोत्र-अवयवात् अण-इञोः गोत्रे ष्यङ्",
     padaccheda_dev        = "गोत्र-अवयवात्",
     why_dev               = "(सूत्रम् 4.1.79) गोत्रावयवात्।",
     anuvritti_from        = ('4.1.1',),

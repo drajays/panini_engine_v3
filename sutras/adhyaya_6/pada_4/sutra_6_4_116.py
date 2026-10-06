@@ -4,6 +4,7 @@
 Padaccheda: जहातेः च
 
 जहातेश्च (6.4.116)
+Pāṭha: ashtadhyayi.com data.txt row i=64116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jahAteSca",
     text_dev              = "जहातेश्च",
+    samagra_slp1          = "jahAteH aNgasya hali sArvaDAtuke kNiti it anyatarasyAm",
+    samagra_dev           = "जहातेः अङ्गस्य हलि सार्वधातुके क्ङिति इत् अन्यतरस्याम्",
     padaccheda_dev        = "जहातेः च",
     why_dev               = "(सूत्रम् 6.4.116) जहातेश्च।",
     anuvritti_from        = ('6.1.1',),

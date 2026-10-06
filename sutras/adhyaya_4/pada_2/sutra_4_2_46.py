@@ -4,6 +4,7 @@
 Padaccheda: चरणेभ्यः धर्म-वत्
 
 चरणेभ्यो धर्मवत् (4.2.46)
+Pāṭha: ashtadhyayi.com data.txt row i=42046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "caraReByo Darmavat",
     text_dev              = "चरणेभ्यो धर्मवत्",
+    samagra_slp1          = "tasya samUhaH iti caraReByaH Darmavat",
+    samagra_dev           = "तस्य समूहः (इति) चरणेभ्यः धर्मवत्",
     padaccheda_dev        = "चरणेभ्यः धर्म-वत्",
     why_dev               = "(सूत्रम् 4.2.46) चरणेभ्यो धर्मवत्।",
     anuvritti_from        = ('4.1.1',),

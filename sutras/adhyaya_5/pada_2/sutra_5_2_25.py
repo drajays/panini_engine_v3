@@ -4,6 +4,7 @@
 Padaccheda: पक्षात् तिः
 
 पक्षात्तिः (5.2.25)
+Pāṭha: ashtadhyayi.com data.txt row i=52025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pakzAttiH",
     text_dev              = "पक्षात्तिः",
+    samagra_slp1          = "tasya mUle iti pakzAt tiH",
+    samagra_dev           = "'तस्य मूले' (इति) पक्षात् तिः",
     padaccheda_dev        = "पक्षात् तिः",
     why_dev               = "(सूत्रम् 5.2.25) पक्षात्तिः।",
     anuvritti_from        = ('4.1.82',),

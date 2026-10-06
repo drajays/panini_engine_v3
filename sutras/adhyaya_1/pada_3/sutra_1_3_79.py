@@ -13,6 +13,7 @@ he does surpassingly.
 stamp "Atmanepada_1_3_79" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _KR_ROOTS carries either "anu_prefix" or "parA_prefix" tag.
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -61,6 +62,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="anuparAByAM kfYaH",
     text_dev="अनुपराभ्यां कृञः",
+    samagra_slp1="anu-parAByAm kfYaH kartari parasmEpadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अनु-पराभ्याम् कृञः कर्तरि परस्मैपदम्",
     padaccheda_dev="अनु-पराभ्याम् (पञ्चमी-द्विवचन) / कृञः (षष्ठी-एकवचन)",
     why_dev=(
         "अनु-पूर्वकस्य पर-पूर्वकस्य च कृञ्-धातोः आत्मनेपदम् — "

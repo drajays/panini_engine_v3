@@ -4,6 +4,7 @@
 Padaccheda: बहुव्रीहौ इदम्-एतद्-तद्‍भ्यः प्रथम-पूरणयोः क्रियागणने
 
 बहुव्रीहाविदमेतत्तद्भ्यः प्रथमपूरणयोः क्रियागणने (6.2.162)
+Pāṭha: ashtadhyayi.com data.txt row i=62162 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahuvrIhAvidametattadByaH praTamapUraRayoH kriyAgaRane",
     text_dev              = "बहुव्रीहाविदमेतत्तद्भ्यः प्रथमपूरणयोः क्रियागणने",
+    samagra_slp1          = "uttarapadAdiH antaH bahuvrIhO idam-etat-tadByaH praTamapUraRayoH kriyAgaRane",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः बहुव्रीहौ इदम्-एतत्-तद्भ्यः प्रथमपूरणयोः क्रियागणने",
     padaccheda_dev        = "बहुव्रीहौ इदम्-एतद्-तद्‍भ्यः प्रथम-पूरणयोः क्रियागणने",
     why_dev               = "(सूत्रम् 6.2.162) बहुव्रीहाविदमेतत्तद्भ्यः प्रथमपूरणयोः क्रियागणने।",
     anuvritti_from        = ('6.1.1',),

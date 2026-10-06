@@ -4,6 +4,7 @@
 Padaccheda: हनः त (लुप्तप्रथमान्तनिर्देशः) च
 
 Krt suffix rule from dhatu: हनस्त च (108)
+Pāṭha: ashtadhyayi.com data.txt row i=31108 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hanasta ca",
     text_dev              = "हनस्त च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH hanaH ta ca kft anupasarge supi kyap BAve",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः हनः त च कृत् अनुपसर्गे सुपि क्यप् भावे",
     padaccheda_dev        = "हनः त (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "धातोः [हनस्त च]-प्रत्ययः विहितः (३.१.108)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

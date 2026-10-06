@@ -162,6 +162,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "skoH saMyogAdyorante ca",
     text_dev              = "स्कोः संयोगाद्योरन्ते च",
+    samagra_slp1          = "saMyogAdyoH skoH padasya ante Jali ca lopaH",
+    samagra_dev           = "संयोगाद्योः स्कोः पदस्य अन्ते झलि च लोपः",
     padaccheda_dev        = "स्-कोः संयोग-आद्योः अन्ते च",
     why_dev               = (
         "आशीर्-लिङि: यासुट्-सकारस्य लोपः (सुट्-पूर्वं संयोग-आदि) — "

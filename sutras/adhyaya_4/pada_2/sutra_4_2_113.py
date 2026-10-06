@@ -9,6 +9,7 @@ see *Kāśikā* on this sūtra).
 that the *prācya-bharata* *dvyaca* block is **not** activated for the current
 state (no *vibhakti* read — CONSTITUTION Art. 2).  R2: ``samjna_registry`` gains a
 fresh entry.
+Pāṭha: ashtadhyayi.com data.txt row i=42113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     text_dev        = (
         'न द्व्यचः प्राच्यभरतेषु'
     ),
+    samagra_slp1    = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA na dvi-acaH prAcya-Baratezu aR gotre iYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev     = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा न द्वि-अचः प्राच्य-भरतेषु अण् गोत्रे इञः",
     padaccheda_dev  = "न / द्व्यचः / प्राच्यभरतेषु (सप्तमी-बहुवचनम्)",
     why_dev         = (
         "द्व्यचः-प्राच्यभरत-निषेधः अत्र प्रवृत्तो न — एकवचन-शाला-प्रक्रियायाम् "

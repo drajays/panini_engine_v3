@@ -4,6 +4,7 @@
 Padaccheda: द्वि-त्रिभ्याम् तयस्य अयच् वा
 
 द्वित्रिभ्यां तयस्यायज्वा (5.2.43)
+Pāṭha: ashtadhyayi.com data.txt row i=52043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvitriByAM tayasyAyajvA",
     text_dev              = "द्वित्रिभ्यां तयस्यायज्वा",
+    samagra_slp1          = "dvitriByAm tayasya ayac vA",
+    samagra_dev           = "द्वित्रिभ्याम् तयस्य अयच् वा",
     padaccheda_dev        = "द्वि-त्रिभ्याम् तयस्य अयच् वा",
     why_dev               = "(सूत्रम् 5.2.43) द्वित्रिभ्यां तयस्यायज्वा।",
     anuvritti_from        = ('4.1.82',),

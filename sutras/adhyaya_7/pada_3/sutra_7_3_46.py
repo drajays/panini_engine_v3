@@ -4,6 +4,7 @@
 Padaccheda: उदीचाम् आतः स्थाने य-क-पूर्वायाः
 
 उदीचामातः स्थाने यकपूर्वायाः (7.3.46)
+Pāṭha: ashtadhyayi.com data.txt row i=73046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "udIcAmAtaH sTAne yakapUrvAyAH",
     text_dev              = "उदीचामातः स्थाने यकपूर्वायाः",
+    samagra_slp1          = "aNgasya udIcAm AtaH sTAne yakapUrvAyAH it ataH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उदीचाम् आतः स्थाने यकपूर्वायाः इत् अतः",
     padaccheda_dev        = "उदीचाम् आतः स्थाने य-क-पूर्वायाः",
     why_dev               = "(सूत्रम् 7.3.46) उदीचामातः स्थाने यकपूर्वायाः।",
     anuvritti_from        = ('7.1.1',),

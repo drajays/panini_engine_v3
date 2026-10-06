@@ -4,6 +4,7 @@
 Padaccheda: भजः ण्विः
 
 krt-suffix rule: भजो ण्विः (62)
+Pāṭha: ashtadhyayi.com data.txt row i=32062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Bajo RviH",
     text_dev              = "भजो ण्विः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BajaH RviH kft supi upasarge api",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भजः ण्विः कृत् सुपि उपसर्गे अपि",
     padaccheda_dev        = "भजः ण्विः",
     why_dev               = "धातोः कृत्-प्रत्ययः [भजो ण्विः] विहितः (३.२.62)।",
     anuvritti_from        = ('3.1.1',),

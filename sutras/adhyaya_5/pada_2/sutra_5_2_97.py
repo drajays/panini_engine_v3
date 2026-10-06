@@ -4,6 +4,7 @@
 Padaccheda: सिध्म-आदिभ्यः च
 
 सिध्मादिभ्यश्च (5.2.97)
+Pāṭha: ashtadhyayi.com data.txt row i=52097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "siDmAdiByaSca",
     text_dev              = "सिध्मादिभ्यश्च",
+    samagra_slp1          = "tad asya asmin astIti iti siDmAdiByaH anyatarasyAm lac matu~p",
+    samagra_dev           = "'तद्  अस्य, अस्मिन् अस्तीति' (इति) सिध्मादिभ्यः अन्यतरस्याम् लच्, मतुँप्",
     padaccheda_dev        = "सिध्म-आदिभ्यः च",
     why_dev               = "(सूत्रम् 5.2.97) सिध्मादिभ्यश्च।",
     anuvritti_from        = ('4.1.82',),

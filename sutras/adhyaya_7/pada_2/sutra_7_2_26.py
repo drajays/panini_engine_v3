@@ -4,6 +4,7 @@
 Padaccheda: णेः अध्ययने वृत्तम्
 
 णेरध्ययने वृत्तम् (7.2.26)
+Pāṭha: ashtadhyayi.com data.txt row i=72026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ReraDyayane vfttam",
     text_dev              = "णेरध्ययने वृत्तम्",
+    samagra_slp1          = "aNgasya ReH aDyayane vfttam na iw nizWAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य णेः अध्ययने वृत्तम् न इट् निष्ठायाम्",
     padaccheda_dev        = "णेः अध्ययने वृत्तम्",
     why_dev               = "(सूत्रम् 7.2.26) णेरध्ययने वृत्तम्।",
     anuvritti_from        = ('7.1.1',),

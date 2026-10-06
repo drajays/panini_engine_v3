@@ -4,6 +4,7 @@
 Padaccheda: आशितः कर्ता
 
 आशितः कर्ता (6.1.207)
+Pāṭha: ashtadhyayi.com data.txt row i=61207 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ASitaH kartA",
     text_dev              = "आशितः कर्ता",
+    samagra_slp1          = "ASitaH kartA udAttaH AdiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आशितः कर्ता उदात्तः आदिः",
     padaccheda_dev        = "आशितः कर्ता",
     why_dev               = "(सूत्रम् 6.1.207) आशितः कर्ता।",
     anuvritti_from        = ('6.1.1',),

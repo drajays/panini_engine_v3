@@ -4,6 +4,7 @@
 Padaccheda: हैयङ्गवीनम् संज्ञायाम्
 
 हैयंगवीनं संज्ञायाम् (5.2.23)
+Pāṭha: ashtadhyayi.com data.txt row i=52023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hEyaMgavInaM saMjYAyAm",
     text_dev              = "हैयंगवीनं संज्ञायाम्",
+    samagra_slp1          = "saMjYAyAm hEyaNgavInam iti nipAtyate",
+    samagra_dev           = "संज्ञायाम् हैयङ्गवीनम् (इति निपात्यते)",
     padaccheda_dev        = "हैयङ्गवीनम् संज्ञायाम्",
     why_dev               = "(सूत्रम् 5.2.23) हैयंगवीनं संज्ञायाम्।",
     anuvritti_from        = ('4.1.82',),

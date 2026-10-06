@@ -4,6 +4,7 @@
 Padaccheda: वयसि च
 
 krt-suffix rule: वयसि च (10)
+Pāṭha: ashtadhyayi.com data.txt row i=32010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vayasi ca",
     text_dev              = "वयसि च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vayasi ca kft karmaRi anupasarge supi harateH ac",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वयसि च कृत् कर्मणि अनुपसर्गे सुपि हरतेः अच्",
     padaccheda_dev        = "वयसि च",
     why_dev               = "धातोः कृत्-प्रत्ययः [वयसि च] विहितः (३.२.10)।",
     anuvritti_from        = ('3.1.1',),

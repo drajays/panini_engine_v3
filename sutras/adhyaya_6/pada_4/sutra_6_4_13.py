@@ -10,6 +10,7 @@ Citation (CONSTITUTION Art. 14)
   Source #2 — Kāśikā 6.4.13: योगी, वृत्रहा, पूषा, अर्यमा
 
 Engine: reads the aṅga's last letters (the four named stem-endings), the sup's identity (su) and the absence of sambuddhi.
+Pāṭha: ashtadhyayi.com data.txt row i=64013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -54,6 +55,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="sO ca",
     text_dev="सौ च",
+    samagra_slp1="in-han-pUza-aryamRAmaNgasya asambudDO sO sarvanAmasTAne ca upaDAyAH dIrGaH",
+    samagra_dev="इन्-हन्-पूष-अर्यम्णामङ्गस्य असम्बुद्धौ सौ सर्वनामस्थाने च उपधायाः दीर्घः",
     padaccheda_dev="सौ च",
     why_dev="इन्-हन्-पूषन्-अर्यमन् अङ्ग की उपधा दीर्घ, सु परे (योगी, वृत्रहा, पूषा, अर्यमा)।",
     anuvritti_from=("6.4.1", "6.4.7", "6.4.8", "6.4.12"),

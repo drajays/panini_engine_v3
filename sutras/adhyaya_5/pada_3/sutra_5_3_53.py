@@ -4,6 +4,7 @@
 Padaccheda: भूतपूर्वे चरट्
 
 भूतपूर्वे चरट् (5.3.53)
+Pāṭha: ashtadhyayi.com data.txt row i=53053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BUtapUrve caraw",
     text_dev              = "भूतपूर्वे चरट्",
+    samagra_slp1          = "BUtapUrve caraw",
+    samagra_dev           = "भूतपूर्वे चरट्",
     padaccheda_dev        = "भूतपूर्वे चरट्",
     why_dev               = "(सूत्रम् 5.3.53) भूतपूर्वे चरट्।",
     anuvritti_from        = ('4.1.76',),

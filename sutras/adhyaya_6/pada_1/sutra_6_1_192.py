@@ -4,6 +4,7 @@
 Padaccheda: भी-ह्री-भृ-हु-मद-जन-धन-दरिद्रा-जागराम् प्रत्ययात् पूर्वम् प्-इति
 
 भीह्रीभृहुमदजनधनदरिद्राजागरां प्रत्ययात् पूर्वम् पिति (6.1.192)
+Pāṭha: ashtadhyayi.com data.txt row i=61192 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BIhrIBfhumadajanaDanadaridrAjAgarAM pratyayAt pUrvam piti",
     text_dev              = "भीह्रीभृहुमदजनधनदरिद्राजागरां प्रत्ययात् पूर्वम् पिति",
+    samagra_slp1          = "BI-hrI-Bf-hu-mada-jana-Dana-daridrA-jAgarAm pratyayAt pUrvam piti udAttaH la-sArvaDAtukam aByastAnAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "भी-ह्री-भृ-हु-मद-जन-धन-दरिद्रा-जागराम् प्रत्ययात् पूर्वम् पिति उदात्तः ल-सार्वधातुकम् अभ्यस्तानाम्",
     padaccheda_dev        = "भी-ह्री-भृ-हु-मद-जन-धन-दरिद्रा-जागराम् प्रत्ययात् पूर्वम् प्-इति",
     why_dev               = "(सूत्रम् 6.1.192) भीह्रीभृहुमदजनधनदरिद्राजागरां प्रत्ययात् पूर्वम् पिति।",
     anuvritti_from        = ('6.1.1',),

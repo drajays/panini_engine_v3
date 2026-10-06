@@ -4,6 +4,7 @@
 Padaccheda: अर्धात् परिमाणस्य पूर्वस्य तु वा
 
 अर्धात् परिमाणस्य पूर्वस्य तु वा (7.3.26)
+Pāṭha: ashtadhyayi.com data.txt row i=73026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "arDAt parimARasya pUrvasya tu vA",
     text_dev              = "अर्धात् परिमाणस्य पूर्वस्य तु वा",
+    samagra_slp1          = "aNgasya uttarapadasya arDAt parimARasya pUrvasya tu vA vfdDiH acaH YRiti tadDitezu AdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य अर्धात् परिमाणस्य पूर्वस्य तु वा वृद्धिः अचः ञ्णिति तद्धितेषु आदेः",
     padaccheda_dev        = "अर्धात् परिमाणस्य पूर्वस्य तु वा",
     why_dev               = "(सूत्रम् 7.3.26) अर्धात् परिमाणस्य पूर्वस्य तु वा।",
     anuvritti_from        = ('7.1.1',),

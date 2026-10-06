@@ -4,6 +4,7 @@
 Padaccheda: प्यायः पी (लुप्तप्रथमान्तनिर्देशः)
 
 प्यायः पी (6.1.28)
+Pāṭha: ashtadhyayi.com data.txt row i=61028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pyAyaH pI",
     text_dev              = "प्यायः पी",
+    samagra_slp1          = "pyAyaH pI samprasAraRam nizWAyAm viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्यायः पी सम्प्रसारणम् निष्ठायाम् विभाषा",
     padaccheda_dev        = "प्यायः पी (लुप्तप्रथमान्तनिर्देशः)",
     why_dev               = "(सूत्रम् 6.1.28) प्यायः पी।",
     anuvritti_from        = ('6.1.1',),

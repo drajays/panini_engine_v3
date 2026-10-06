@@ -4,6 +4,7 @@
 Padaccheda: सुप आत्मनः क्यच्
 
 Krt suffix rule from dhatu: सुप आत्मनः क्यच् (8)
+Pāṭha: ashtadhyayi.com data.txt row i=31008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "supa AtmanaH kyac",
     text_dev              = "सुप आत्मनः क्यच्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca supa AtmanaH kyac karmaRaH icCAyAM vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च सुप आत्मनः क्यच् कर्मणः इच्छायां वा",
     padaccheda_dev        = "सुप आत्मनः क्यच्",
     why_dev               = "धातोः [सुप आत्मनः क्यच्]-प्रत्ययः विहितः (३.१.8)।",
     anuvritti_from        = ('3.1.1',),

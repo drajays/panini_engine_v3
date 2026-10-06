@@ -4,6 +4,7 @@
 Padaccheda: मः नः धातोः
 
 मो नो धातोः (8.2.64)
+Pāṭha: ashtadhyayi.com data.txt row i=82064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mo no DAtoH",
     text_dev              = "मो नो धातोः",
+    samagra_slp1          = "maH DAtoH padasya naH",
+    samagra_dev           = "मः धातोः पदस्य नः",
     padaccheda_dev        = "मः नः धातोः",
     why_dev               = "(सूत्रम् 8.2.64) मो नो धातोः।",
     anuvritti_from        = ('8.1.1',),

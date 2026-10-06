@@ -4,6 +4,7 @@
 Padaccheda: सहेः पृतना-ऋताभ्याम् च
 
 सहेः पृतनर्ताभ्यां च (8.3.109)
+Pāṭha: ashtadhyayi.com data.txt row i=83109 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saheH pftanartAByAM ca",
     text_dev              = "सहेः पृतनर्ताभ्यां च",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH saheH pftanA-ftAByAm ca saH Candasi pUrvapadAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः सहेः पृतना-ऋताभ्याम् च सः छन्दसि पूर्वपदात्",
     padaccheda_dev        = "सहेः पृतना-ऋताभ्याम् च",
     why_dev               = "(सूत्रम् 8.3.109) सहेः पृतनर्ताभ्यां च।",
     anuvritti_from        = ('8.1.1',),

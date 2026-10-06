@@ -4,6 +4,7 @@
 Padaccheda: द्वि-त्रि-पूर्वात् निष्कात्
 
 द्वित्रिपूर्वान्निष्कात् (5.1.30)
+Pāṭha: ashtadhyayi.com data.txt row i=51030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvitripUrvAnnizkAt",
     text_dev              = "द्वित्रिपूर्वान्निष्कात्",
+    samagra_slp1          = "A-arhAt dvi-tri-pUrvAt nizkAt dvigoH viBAzA luk",
+    samagra_dev           = "आ-अर्हात्  द्वि-त्रि-पूर्वात् निष्कात् द्विगोः विभाषा लुक्",
     padaccheda_dev        = "द्वि-त्रि-पूर्वात् निष्कात्",
     why_dev               = "(सूत्रम् 5.1.30) द्वित्रिपूर्वान्निष्कात्।",
     anuvritti_from        = ('5.1.19',),

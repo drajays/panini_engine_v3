@@ -4,6 +4,7 @@
 Padaccheda: सुख-प्रिययोः हिते
 
 सुखप्रिययोर्हिते (6.2.15)
+Pāṭha: ashtadhyayi.com data.txt row i=62015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "suKapriyayorhite",
     text_dev              = "सुखप्रिययोर्हिते",
+    samagra_slp1          = "suKapriyayoH hite prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सुखप्रिययोः हिते प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "सुख-प्रिययोः हिते",
     why_dev               = "(सूत्रम् 6.2.15) सुखप्रिययोर्हिते।",
     anuvritti_from        = ('6.1.1',),

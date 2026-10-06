@@ -17,6 +17,7 @@
   "conflicts": {
    "adhikara_heads": 31,
    "anuvritti": 325,
+   "text": 212,
    "type": 13
   },
   "extras": [
@@ -26,6 +27,12 @@
   "sutras": 3983
  },
  "credit": "Sūtra map workbook (paanini-ashtadhyaayi-sutra-map) and ashtadhyayi.com (github.com/ashtadhyayi-com/data); imported read-only, provenance per field.",
+ "patha_T0": {
+  "path": "/Users/dr.ajayshukla/data-master/sutraani/data.txt",
+  "read": [
+   "data.txt field s (workbook text corrected to it, AMENDMENT 20)"
+  ]
+ },
  "workbook": {
   "overrides": 93,
   "overrides_applied": 93,

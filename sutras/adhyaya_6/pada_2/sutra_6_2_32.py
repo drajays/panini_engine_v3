@@ -4,6 +4,7 @@
 Padaccheda: सप्तमी सिद्ध-शुष्क-पक्व-बन्धेषु अकालात्
 
 सप्तमी सिद्धशुष्कपक्वबन्धेष्वकालात् (6.2.32)
+Pāṭha: ashtadhyayi.com data.txt row i=62032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saptamI sidDaSuzkapakvabanDezvakAlAt",
     text_dev              = "सप्तमी सिद्धशुष्कपक्वबन्धेष्वकालात्",
+    samagra_slp1          = "saptamI sidDa-Suzka-pakva-banDezu akAlAt prakftyA pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सप्तमी सिद्ध-शुष्क-पक्व-बन्धेषु अकालात् प्रकृत्या पूर्वपदम्",
     padaccheda_dev        = "सप्तमी सिद्ध-शुष्क-पक्व-बन्धेषु अकालात्",
     why_dev               = "(सूत्रम् 6.2.32) सप्तमी सिद्धशुष्कपक्वबन्धेष्वकालात्।",
     anuvritti_from        = ('6.1.1',),

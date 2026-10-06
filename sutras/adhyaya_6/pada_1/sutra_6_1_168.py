@@ -4,6 +4,7 @@
 Padaccheda: सौ एक-अचः तृतीया-आदिः विभक्तिः
 
 सावेकाचस्तृतीयाऽऽदिविभक्तिः (6.1.168)
+Pāṭha: ashtadhyayi.com data.txt row i=61168 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sAvekAcastftIyAdirviBaktiH',
     text_dev              = 'सावेकाचस्तृतीयादिर्विभक्तिः',
+    samagra_slp1          = "sO ekAcaH tftIyAdiH viBaktiH antaH udAttaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सौ एकाचः तृतीयादिः विभक्तिः अन्तः उदात्तः",
     padaccheda_dev        = "सौ एक-अचः तृतीया-आदिः विभक्तिः",
     why_dev               = "(सूत्रम् 6.1.168) सावेकाचस्तृतीयाऽऽदिविभक्तिः।",
     anuvritti_from        = ('6.1.1',),

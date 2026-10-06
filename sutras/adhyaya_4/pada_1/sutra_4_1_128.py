@@ -4,6 +4,7 @@
 Padaccheda: चटकायाः ऐरक्
 
 चटकाया ऐरक् (4.1.128)
+Pāṭha: ashtadhyayi.com data.txt row i=41128 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "cawakAyA Erak",
     text_dev              = "चटकाया ऐरक्",
+    samagra_slp1          = "tasya apatyam iti cawakAyAH Erak",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) चटकायाः ऐरक्",
     padaccheda_dev        = "चटकायाः ऐरक्",
     why_dev               = "(सूत्रम् 4.1.128) चटकाया ऐरक्।",
     anuvritti_from        = ('4.1.1',),

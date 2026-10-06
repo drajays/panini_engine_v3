@@ -4,6 +4,7 @@
 Padaccheda: यम-रम-नम-आताम् सक् च
 
 यमरमनमातां सक् च (7.2.73)
+Pāṭha: ashtadhyayi.com data.txt row i=72073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yamaramanamAtAM sak ca",
     text_dev              = "यमरमनमातां सक् च",
+    samagra_slp1          = "aNgasya yamaramanamAtAm sak ca valAdeH iw ArDaDAtukasya sici parasmEpadezu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य यमरमनमाताम् सक् च वलादेः इट् आर्धधातुकस्य सिचि परस्मैपदेषु",
     padaccheda_dev        = "यम-रम-नम-आताम् सक् च",
     why_dev               = "(सूत्रम् 7.2.73) यमरमनमातां सक् च।",
     anuvritti_from        = ('7.1.1',),

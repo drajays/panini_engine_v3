@@ -103,6 +103,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'razAByAM no RaH samAnapade',
     text_dev       = 'रषाभ्यां नो णः समानपदे',
+    samagra_slp1   = "samAnapade razAByAm naH RaH saMhitAyAm",
+    samagra_dev    = "समानपदे रषाभ्याम् नः णः संहितायाम्",
     padaccheda_dev = "समानपदे / रषाभ्याम् / नो / णः / संहितायाम्",
     why_dev        = "समानपदे रेफ-ष-वर्णाभ्यां (ऋवर्णाद् अपि) ऋणे परस्य न-कारस्य "
                      "सन्निहिते णादेशः (१०८ संहितायाम्, त्रिपादी)।",

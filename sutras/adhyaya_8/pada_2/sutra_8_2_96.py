@@ -4,6 +4,7 @@
 Padaccheda: अङ्गयुक्तम् तिङ् आकाङ्क्षम्
 
 अङ्गयुक्तं तिङ् आकाङ्क्षम् (8.2.96)
+Pāṭha: ashtadhyayi.com data.txt row i=82096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aNgayuktaM tiN AkANkzam",
     text_dev              = "अङ्गयुक्तं तिङ् आकाङ्क्षम्",
+    samagra_slp1          = "padasya pUrvatrAsidDam vAkyasya weH plutaH udAttaH aNgayuktam tiN AkANkzam Bartsane",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वाक्यस्य टेः प्लुतः उदात्तः अङ्गयुक्तम् तिङ् आकाङ्क्षम् भर्त्सने",
     padaccheda_dev        = "अङ्गयुक्तम् तिङ् आकाङ्क्षम्",
     why_dev               = "(सूत्रम् 8.2.96) अङ्गयुक्तं तिङ् आकाङ्क्षम्।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: पारायण-तुरायण-चान्द्रायणम् वर्तयति (क्रियापदम्)
 
 पारायणतुरायणचान्द्रायणं वर्तयति (5.1.72)
+Pāṭha: ashtadhyayi.com data.txt row i=51072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pArAyaRaturAyaRacAndrAyaRaM vartayati",
     text_dev              = "पारायणतुरायणचान्द्रायणं वर्तयति",
+    samagra_slp1          = "tat pArAyaRa-turAyaRa-cAndrAyaRam vartayati iti samarTAnAM praTamAt paraH WaY pratyayaH",
+    samagra_dev           = "'तत् पारायण-तुरायण-चान्द्रायणम् वर्तयति' (इति) समर्थानां प्रथमात् परः ठञ् प्रत्ययः",
     padaccheda_dev        = "पारायण-तुरायण-चान्द्रायणम् वर्तयति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 5.1.72) पारायणतुरायणचान्द्रायणं वर्तयति।",
     anuvritti_from        = ('5.1.18',),

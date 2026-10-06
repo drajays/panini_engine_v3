@@ -4,6 +4,7 @@
 Padaccheda: न कु-आदेः
 
 न क्वादेः (7.3.59)
+Pāṭha: ashtadhyayi.com data.txt row i=73059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na kvAdeH",
     text_dev              = "न क्वादेः",
+    samagra_slp1          = "aNgasya na kvAdeH cajoH ku",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न क्वादेः चजोः कु",
     padaccheda_dev        = "न कु-आदेः",
     why_dev               = "(सूत्रम् 7.3.59) न क्वादेः।",
     anuvritti_from        = ('7.1.1',),

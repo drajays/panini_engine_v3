@@ -4,6 +4,7 @@
 Padaccheda: न कउपधायाः
 
 न कोपधायाः (6.3.37)
+Pāṭha: ashtadhyayi.com data.txt row i=63037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na kopaDAyAH",
     text_dev              = "न कोपधायाः",
+    samagra_slp1          = "uttarapade na kopaDAyAH striyAH puMvat anUN BAzitapu~skAd",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे न कोपधायाः स्त्रियाः पुंवत् अनूङ् भाषितपुँस्काद्",
     padaccheda_dev        = "न कउपधायाः",
     why_dev               = "(सूत्रम् 6.3.37) न कोपधायाः।",
     anuvritti_from        = ('6.1.1',),

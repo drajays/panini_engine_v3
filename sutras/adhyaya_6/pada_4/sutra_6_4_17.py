@@ -4,6 +4,7 @@
 Padaccheda: तनोतेः विभाषा
 
 तनोतेर्विभाषा (6.4.17)
+Pāṭha: ashtadhyayi.com data.txt row i=64017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tanoterviBAzA",
     text_dev              = "तनोतेर्विभाषा",
+    samagra_slp1          = "aNgasya tanoteH viBAzA dIrGaH na upaDAyAH kvi-JaloH kNiti sani",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य तनोतेः विभाषा दीर्घः न उपधायाः क्वि-झलोः क्ङिति सनि",
     padaccheda_dev        = "तनोतेः विभाषा",
     why_dev               = "(सूत्रम् 6.4.17) तनोतेर्विभाषा।",
     anuvritti_from        = ('6.1.1',),

@@ -16,6 +16,7 @@ Engine:
     starts with a JHAL consonant.
   - Tags the dhātu Term "aniT" and guards re-entry via meta["aniT_1_2_9"].
   - r1_form_identity_exempt=True: no surface string changes in this step.
+Pāṭha: ashtadhyayi.com data.txt row i=12009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -71,6 +72,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'iko Jal',
     text_dev              = 'इको झल्',
+    samagra_slp1          = "ikaH Jal kit san ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "इकः झल् कित् सन् च",
     padaccheda_dev        = "इकः / झल् (अनिट्)",
     why_dev               = ("इक्-अन्त-धातुः झल्-आदि-प्रत्यये परे अनिट् — "
                              "इडागमः न भवति (नियम-संज्ञा)।"),

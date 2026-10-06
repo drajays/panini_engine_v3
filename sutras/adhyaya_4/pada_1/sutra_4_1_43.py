@@ -4,6 +4,7 @@
 Padaccheda: शोणात् प्राचाम्
 
 शोणात् प्राचाम् (4.1.43)
+Pāṭha: ashtadhyayi.com data.txt row i=41043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SoRAt prAcAm",
     text_dev              = "शोणात् प्राचाम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt SoRAt prAcAm NIz",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् शोणात् प्राचाम् ङीष्",
     padaccheda_dev        = "शोणात् प्राचाम्",
     why_dev               = "(सूत्रम् 4.1.43) शोणात् प्राचाम्।",
     anuvritti_from        = ('4.1.1',),

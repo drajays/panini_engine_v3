@@ -4,6 +4,7 @@
 Demo slice (जिघृक्षति):
   For a one-vowel (ekāc) base ending in jhaṣ (`D`), when `s` follows, replace the
   initial `g` (baś) with `G` (bhaṣ) i.e. g → gh.
+Pāṭha: ashtadhyayi.com data.txt row i=82037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -54,6 +55,8 @@ SUTRA = SutraRecord(
     sutra_type= SutraType.VIDHI,
     text_slp1='ekAco baSo Baz Jazantasya sDvoH',
     text_dev='एकाचो बशो भष् झषन्तस्य स्ध्वोः',
+    samagra_slp1="DAtoH ekAcaH Jazantasya baSaH sDvoH padasya ante ca Baz",
+    samagra_dev="धातोः एकाचः झषन्तस्य बशः स्ध्वोः पदस्य अन्ते च भष्",
     padaccheda_dev="एकाचः / बशः / भष् / झषन्तस्य / स्ध्वोः",
     why_dev= "एकाचो बशो भष् झषन्तस्य स्ध्वोः: a one-vowel dhātu beginning with बश् and ending in झष् aspirates its initial before स्/ध्व् or at the end — दुघ्+स्य → धुघ्+स्य (धोक्ष्यति).",
     anuvritti_from=("8.2.1",),

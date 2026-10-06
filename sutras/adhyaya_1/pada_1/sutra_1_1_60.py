@@ -18,6 +18,7 @@ saṃjñā in their own contexts (e.g. **8.2.23**, **6.1.68**, …).
 
 **Cross-refs (operational *lopa* elsewhere):** 1.3.9, 8.2.23, 6.1.68, 6.4.48, …
 **1.1.56–1.1.58** *sthānivat* for *lupta-varṇa* — separate paribhāṣā.
+Pāṭha: ashtadhyayi.com data.txt row i=11060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -54,6 +55,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'adarSanaM lopaH',
     text_dev       = 'अदर्शनं लोपः',
+    samagra_slp1   = "sTAne adarSanam lopaH",
+    samagra_dev    = "स्थाने अदर्शनम् लोपः",
     padaccheda_dev = "स्थाने / अदर्शनं / लोपः",
     why_dev        = _WHY,
     anuvritti_from = ("1.1.50",),

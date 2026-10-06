@@ -4,6 +4,7 @@
 Padaccheda: यज-याच-रुच-प्रवचर्चः च
 
 यजयाचरुचप्रवचर्चश्च (7.3.66)
+Pāṭha: ashtadhyayi.com data.txt row i=73066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yajayAcarucapravacarcaSca",
     text_dev              = "यजयाचरुचप्रवचर्चश्च",
+    samagra_slp1          = "aNgasya yajayAcarucapravacarcaH ca cajoH ku na Rye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य यजयाचरुचप्रवचर्चः च चजोः कु न ण्ये",
     padaccheda_dev        = "यज-याच-रुच-प्रवचर्चः च",
     why_dev               = "(सूत्रम् 7.3.66) यजयाचरुचप्रवचर्चश्च।",
     anuvritti_from        = ('7.1.1',),

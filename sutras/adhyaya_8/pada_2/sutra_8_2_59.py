@@ -4,6 +4,7 @@
 Padaccheda: भित्तम् शकलम्
 
 भित्तं शकलम् (8.2.59)
+Pāṭha: ashtadhyayi.com data.txt row i=82059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BittaM Sakalam",
     text_dev              = "भित्तं शकलम्",
+    samagra_slp1          = "padasya pUrvatrAsidDam Bittam Sakalam nizWAtaH naH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् भित्तम् शकलम् निष्ठातः नः न",
     padaccheda_dev        = "भित्तम् शकलम्",
     why_dev               = "(सूत्रम् 8.2.59) भित्तं शकलम्।",
     anuvritti_from        = ('8.1.1',),

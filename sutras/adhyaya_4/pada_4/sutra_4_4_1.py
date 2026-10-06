@@ -4,6 +4,7 @@
 Padaccheda: प्राक् वहतेः ठक्
 
 प्राग्वहतेष्ठक् (4.4.1)
+Pāṭha: ashtadhyayi.com data.txt row i=44001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -40,6 +41,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prAgvahatezWak",
     text_dev              = "प्राग्वहतेष्ठक्",
+    samagra_slp1          = "prAk-vahateH Wak",
+    samagra_dev           = "प्राक्-वहतेः ठक्",
     padaccheda_dev        = "प्राक् वहतेः ठक्",
     why_dev               = "(सूत्रम् 4.4.1) प्राग्वहतेष्ठक्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: जनपद-शब्दात् क्षत्रियात् अञ्
 
 जनपदशब्दात् क्षत्रियादञ् (4.1.168)
+Pāṭha: ashtadhyayi.com data.txt row i=41168 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "janapadaSabdAt kzatriyAdaY",
     text_dev              = "जनपदशब्दात् क्षत्रियादञ्",
+    samagra_slp1          = "tasya apatyam iti kzatriyAt janapadaSabdAt aY",
+    samagra_dev           = "तस्य अपत्यम् (इति) क्षत्रियात् जनपदशब्दात् अञ्",
     padaccheda_dev        = "जनपद-शब्दात् क्षत्रियात् अञ्",
     why_dev               = "(सूत्रम् 4.1.168) जनपदशब्दात् क्षत्रियादञ्।",
     anuvritti_from        = ('4.1.1',),

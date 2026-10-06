@@ -4,6 +4,7 @@
 Padaccheda: कथा-आदिभ्यः ठक्
 
 कथाऽऽदिभ्यष्ठक् (4.4.102)
+Pāṭha: ashtadhyayi.com data.txt row i=44102 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'kaTAdiByazWak',
     text_dev              = 'कथादिभ्यष्ठक्',
+    samagra_slp1          = "tatra sADuH iti kaTAdiByaH saMjYAyAm Wak",
+    samagra_dev           = "'तत्र साधुः' इति कथादिभ्यः संज्ञायाम् ठक्",
     padaccheda_dev        = "कथा-आदिभ्यः ठक्",
     why_dev               = "(सूत्रम् 4.4.102) कथाऽऽदिभ्यष्ठक्।",
     anuvritti_from        = ('4.1.1',),

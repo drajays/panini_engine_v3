@@ -3,6 +3,7 @@
 
 In kṛp (कृपू) the r — and the ṛ vowel, as ḷ — become l: कल्पते, चक्लृपे, अक्लृप्त (KV/SK §43; Vidyut: kalpate, cakxpe, akxpat).
 Source: ashtadhyayi.com data row 82018.
+Pāṭha: ashtadhyayi.com data.txt row i=82018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="kfpo ro laH",
     text_dev="कृपो रो लः",
+    samagra_slp1="padasya pUrvatrAsidDam kfpaH raH laH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="पदस्य पूर्वत्रासिद्धम् कृपः रः लः",
     padaccheda_dev="कृपः रः लः",
     why_dev="कृपू-धातोः रेफस्य लकारः (कल्पते)।",
     anuvritti_from=("8.2.1",),

@@ -4,6 +4,7 @@
 Padaccheda: प्रणाय्यः असंमतौ
 
 Krt suffix rule from dhatu: प्रणाय्योऽसंमतौ (128)
+Pāṭha: ashtadhyayi.com data.txt row i=31128 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'praRAyyosaMmatO',
     text_dev              = 'प्रणाय्योऽसंमतौ',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH praRAyyaH asaMmatO kft Ryat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः प्रणाय्यः असंमतौ कृत् ण्यत्",
     padaccheda_dev        = "प्रणाय्यः असंमतौ",
     why_dev               = "धातोः [प्रणाय्योऽसंमतौ]-प्रत्ययः विहितः (३.१.128)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

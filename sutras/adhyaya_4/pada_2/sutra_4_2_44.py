@@ -4,6 +4,7 @@
 Padaccheda: अनुदात्त-आदेः अञ्
 
 अनुदात्तादेरञ् (4.2.44)
+Pāṭha: ashtadhyayi.com data.txt row i=42044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anudAttAderaY",
     text_dev              = "अनुदात्तादेरञ्",
+    samagra_slp1          = "tasya samUhaH iti anudAttAdeH aY",
+    samagra_dev           = "तस्य समूहः (इति) अनुदात्तादेः अञ्",
     padaccheda_dev        = "अनुदात्त-आदेः अञ्",
     why_dev               = "(सूत्रम् 4.2.44) अनुदात्तादेरञ्।",
     anuvritti_from        = ('4.1.1',),

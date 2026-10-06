@@ -4,6 +4,7 @@
 Padaccheda: आत् आचार्याणाम्
 
 आदाचार्याणाम् (7.3.49)
+Pāṭha: ashtadhyayi.com data.txt row i=73049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AdAcAryARAm",
     text_dev              = "आदाचार्याणाम्",
+    samagra_slp1          = "aNgasya At AcAryARAm ataH sTAne aBAzitapuMskAt ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य आत् आचार्याणाम् अतः स्थाने अभाषितपुंस्कात् च",
     padaccheda_dev        = "आत् आचार्याणाम्",
     why_dev               = "(सूत्रम् 7.3.49) आदाचार्याणाम्।",
     anuvritti_from        = ('7.1.1',),

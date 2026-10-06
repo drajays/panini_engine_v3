@@ -4,6 +4,7 @@
 Padaccheda: एधाच् च
 
 एधाच्च (5.3.46)
+Pāṭha: ashtadhyayi.com data.txt row i=53046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "eDAcca",
     text_dev              = "एधाच्च",
+    samagra_slp1          = "dvi-tryoH DaH anyatarasyAm eDAc",
+    samagra_dev           = "द्वि-त्र्योः धः अन्यतरस्याम् एधाच्",
     padaccheda_dev        = "एधाच् च",
     why_dev               = "(सूत्रम् 5.3.46) एधाच्च।",
     anuvritti_from        = ('4.1.76',),

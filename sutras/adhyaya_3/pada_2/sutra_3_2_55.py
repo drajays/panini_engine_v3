@@ -4,6 +4,7 @@
 Padaccheda: पाणिघ-ताडघौ शिल्पिनि
 
 krt-suffix rule: पाणिघताडघौ शिल्पिनि (55)
+Pāṭha: ashtadhyayi.com data.txt row i=32055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pARiGatAqaGO Silpini",
     text_dev              = "पाणिघताडघौ शिल्पिनि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH pARiGa-tAqaGO Silpini kft karmaRi anupasarge supi hanaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः पाणिघ-ताडघौ शिल्पिनि कृत् कर्मणि अनुपसर्गे सुपि हनः",
     padaccheda_dev        = "पाणिघ-ताडघौ शिल्पिनि",
     why_dev               = "धातोः कृत्-प्रत्ययः [पाणिघताडघौ शिल्पिनि] विहितः (३.२.55)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: कर्मणि हनः
 
 krt-suffix rule: कर्मणि हनः (86)
+Pāṭha: ashtadhyayi.com data.txt row i=32086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karmaRi hanaH",
     text_dev              = "कर्मणि हनः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte karmaRi hanaH kft RiniH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते कर्मणि हनः कृत् णिनिः",
     padaccheda_dev        = "कर्मणि हनः",
     why_dev               = "धातोः कृत्-प्रत्ययः [कर्मणि हनः] विहितः (३.२.86)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: सम्प्रसारणस्य
 
 सम्प्रसारणस्य (6.3.139)
+Pāṭha: ashtadhyayi.com data.txt row i=63139 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samprasAraRasya",
     text_dev              = "सम्प्रसारणस्य",
+    samagra_slp1          = "uttarapade saMhitAyAm samprasAraRasya dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् सम्प्रसारणस्य दीर्घः",
     padaccheda_dev        = "सम्प्रसारणस्य",
     why_dev               = "(सूत्रम् 6.3.139) सम्प्रसारणस्य।",
     anuvritti_from        = ('6.1.1',),

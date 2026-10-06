@@ -4,6 +4,7 @@
 Padaccheda: अध्याय-अनुवाकयोः लुक्
 
 अध्यायानुवाकयोर्लुक् (5.2.60)
+Pāṭha: ashtadhyayi.com data.txt row i=52060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDyAyAnuvAkayorluk",
     text_dev              = "अध्यायानुवाकयोर्लुक्",
+    samagra_slp1          = "matvarTayoH aDyAya-anuvAkayoH anyatarasyAm luk",
+    samagra_dev           = "मत्वर्थयोः अध्याय-अनुवाकयोः अन्यतरस्याम् लुक्",
     padaccheda_dev        = "अध्याय-अनुवाकयोः लुक्",
     why_dev               = "(सूत्रम् 5.2.60) अध्यायानुवाकयोर्लुक्।",
     anuvritti_from        = ('4.1.82',),

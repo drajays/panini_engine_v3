@@ -4,6 +4,7 @@
 Padaccheda: कुषि-रजोः प्राचाम् श्यन् परस्मैपदम् च
 
 Krt suffix rule from dhatu: कुषिरजोः प्राचां श्यन् परस्मैपदं च (90)
+Pāṭha: ashtadhyayi.com data.txt row i=31090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kuzirajoH prAcAM Syan parasmEpadaM ca",
     text_dev              = "कुषिरजोः प्राचां श्यन् परस्मैपदं च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kuzi-rajoH prAcAm Syan parasmEpadam ca karmavat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कुषि-रजोः प्राचाम् श्यन् परस्मैपदम् च कर्मवत्",
     padaccheda_dev        = "कुषि-रजोः प्राचाम् श्यन् परस्मैपदम् च",
     why_dev               = "धातोः [कुषिरजोः प्राचां श्यन् परस्मैपदं च]-प्रत्ययः विहितः (३.१.90)।",
     anuvritti_from        = ('3.1.1',),

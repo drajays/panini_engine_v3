@@ -4,6 +4,7 @@
 Padaccheda: तस्य च दक्षिणा यज्ञाख्येभ्यः
 
 तस्य च दक्षिणा यज्ञाख्येभ्यः (5.1.95)
+Pāṭha: ashtadhyayi.com data.txt row i=51095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tasya ca dakziRA yajYAKyeByaH",
     text_dev              = "तस्य च दक्षिणा यज्ञाख्येभ्यः",
+    samagra_slp1          = "tasya dakziRA iti yajYAKyeByaH samarTAnAM praTamAt paraH WaY pratyayaH",
+    samagra_dev           = "'तस्य दक्षिणा' (इति) यज्ञाख्येभ्यः समर्थानां प्रथमात् परः ठञ् प्रत्ययः",
     padaccheda_dev        = "तस्य च दक्षिणा यज्ञाख्येभ्यः",
     why_dev               = "(सूत्रम् 5.1.95) तस्य च दक्षिणा यज्ञाख्येभ्यः।",
     anuvritti_from        = ('5.1.78',),

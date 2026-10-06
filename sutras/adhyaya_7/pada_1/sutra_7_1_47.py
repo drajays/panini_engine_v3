@@ -4,6 +4,7 @@
 Padaccheda: क्त्वः यक्
 
 क्त्वो यक् (7.1.47)
+Pāṭha: ashtadhyayi.com data.txt row i=71047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ktvo yak",
     text_dev              = "क्त्वो यक्",
+    samagra_slp1          = "aNgasya ktvaH yak Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य क्त्वः यक् छन्दसि",
     padaccheda_dev        = "क्त्वः यक्",
     why_dev               = "(सूत्रम् 7.1.47) क्त्वो यक्।",
     anuvritti_from        = ('7.1.1',),

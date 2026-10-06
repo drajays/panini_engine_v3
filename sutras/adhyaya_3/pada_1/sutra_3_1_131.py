@@ -4,6 +4,7 @@
 Padaccheda: अग्नौ परिचाय्य-उपचाय्य-समूह्याः
 
 Krt suffix rule from dhatu: अग्नौ परिचाय्योपचाय्यसमूह्याः (131)
+Pāṭha: ashtadhyayi.com data.txt row i=31131 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "agnO paricAyyopacAyyasamUhyAH",
     text_dev              = "अग्नौ परिचाय्योपचाय्यसमूह्याः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH agnO paricAyya-upacAyya-samUhyAH kft Ryat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः अग्नौ परिचाय्य-उपचाय्य-समूह्याः कृत् ण्यत्",
     padaccheda_dev        = "अग्नौ परिचाय्य-उपचाय्य-समूह्याः",
     why_dev               = "धातोः [अग्नौ परिचाय्योपचाय्यसमूह्याः]-प्रत्ययः विहितः (३.१.131)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

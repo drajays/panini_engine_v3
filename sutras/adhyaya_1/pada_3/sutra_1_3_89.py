@@ -14,6 +14,7 @@ For example: pibati (not *pibate) — he drinks.
 in the blocked set, this rule reverts it to "Parasmaipada". cond checks
 (a) stamp "na_1_3_89" absent, (b) a dhātu whose upadesha_slp1 is in _BLOCKED.
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -77,6 +78,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='na pAdamyANyamANyasaparimuharucinftivadavasaH',
     text_dev='न पादम्याङ्यमाङ्यसपरिमुहरुचिनृतिवदवसः',
+    samagra_slp1="na pA-dami-ANyama-ANyasa-parimuha-ruci-nfti-vada-vasaH kartari parasmEpadam ReH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="न पा-दमि-आङ्यम-आङ्यस-परिमुह-रुचि-नृति-वद-वसः कर्तरि परस्मैपदम् णेः",
     padaccheda_dev="न / पात् / अम्याङ् / यमाङ् / यस-परि-मुह-रुचि-नृति-वद-वसः",
     why_dev=(
         "पा-अम्-यम्-यस्-मुह्-रुच्-नृत्-वद्-वस्-धातूनां आत्मनेपदं न — "

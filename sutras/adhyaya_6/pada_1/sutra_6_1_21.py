@@ -4,6 +4,7 @@
 Padaccheda: चायः की (लुप्तप्रथमान्तनिर्देशः)
 
 चायः की (6.1.21)
+Pāṭha: ashtadhyayi.com data.txt row i=61021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "cAyaH kI",
     text_dev              = "चायः की",
+    samagra_slp1          = "cAyaH kI samprasAraRam yaNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "चायः की सम्प्रसारणम् यङि",
     padaccheda_dev        = "चायः की (लुप्तप्रथमान्तनिर्देशः)",
     why_dev               = "(सूत्रम् 6.1.21) चायः की।",
     anuvritti_from        = ('6.1.1',),

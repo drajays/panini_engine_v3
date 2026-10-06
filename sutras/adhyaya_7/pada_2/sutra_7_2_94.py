@@ -17,6 +17,7 @@ Engine implementation:
   act — replace first 3 varnas [a, s, m] of stem with [a, h, a]
         mark stem with "7_2_94_done"
         result: stem varnas = [a, h, a, a, d]
+Pāṭha: ashtadhyayi.com data.txt row i=72094 (Art. 14).
 """
 from __future__ import annotations
 
@@ -84,6 +85,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tvAhO sO",
     text_dev              = "त्वाहौ सौ",
+    samagra_slp1          = "aNgasya maparyantasya tvAhO sO viBaktO yuzmadasmadoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य मपर्यन्तस्य त्वाहौ सौ विभक्तौ युष्मदस्मदोः",
     padaccheda_dev        = "त्व-अहौ सौ",
     why_dev               = "अस्मद्-शब्दस्य आदि-भागस्य [अ,स्,म्] स्थाने [अ,ह,अ] आदेशः "
                             "सौ परे (सूत्रम् ७.२.९४ त्वाहौ सौ)।",

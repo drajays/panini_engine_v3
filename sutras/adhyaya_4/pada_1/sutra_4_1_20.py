@@ -4,6 +4,7 @@
 Padaccheda: वयसि प्रथमे
 
 वयसि प्रथमे (4.1.20)
+Pāṭha: ashtadhyayi.com data.txt row i=41020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vayasi praTame",
     text_dev              = "वयसि प्रथमे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt vayasi praTame NIp",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् वयसि प्रथमे ङीप्",
     padaccheda_dev        = "वयसि प्रथमे",
     why_dev               = "(सूत्रम् 4.1.20) वयसि प्रथमे।",
     anuvritti_from        = ('4.1.1',),

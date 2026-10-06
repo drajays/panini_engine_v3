@@ -15,6 +15,7 @@ stamp "Atmanepada_1_3_53" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _CAR_ROOTS carries both the tag "ut_prefix" and the tag "sakarmaka_usage".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True because no
 surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -62,6 +63,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="udaScaraH sakarmakAt",
     text_dev="उदश्चरः सकर्मकात्",
+    samagra_slp1="udaH caraH sakarmakAt Atmanepadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="उदः चरः सकर्मकात् आत्मनेपदम्",
     padaccheda_dev="उदः (पञ्चमी-एकवचन) / चरः (षष्ठी) / सकर्मकात् (पञ्चमी-एकवचन)",
     why_dev=(
         "उत्-पूर्वकस्य चर-धातोः सकर्मक-प्रयोगे आत्मनेपदम् — "

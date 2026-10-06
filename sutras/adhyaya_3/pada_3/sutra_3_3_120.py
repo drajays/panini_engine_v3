@@ -4,6 +4,7 @@
 Padaccheda: अवे तॄ-स्त्रोः घञ्
 
 krt-suffix rule: अवे तॄस्त्रोर्घञ्
+Pāṭha: ashtadhyayi.com data.txt row i=33120 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ave tFstrorGaY",
     text_dev              = "अवे तॄस्त्रोर्घञ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH karaRADikaraRayoH ave tF-stroH GaY kft karaRa-aDikaraRayoH ca puMsi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः करणाधिकरणयोः अवे तॄ-स्त्रोः घञ् कृत् करण-अधिकरणयोः च पुंसि",
     padaccheda_dev        = "अवे तॄ-स्त्रोः घञ्",
     why_dev               = "धातोः प्रत्ययः (३.3.120)।",
     anuvritti_from        = ('3.1.1',),

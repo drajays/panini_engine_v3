@@ -4,6 +4,7 @@
 Padaccheda: नसत्त-निषत्त-अनुत्त-प्रतूर्त-सूर्त-गूर्तानि छन्दसि
 
 नसत्तनिषत्तानुत्तप्रतूर्तसूर्तगूर्तानि छन्दसि (8.2.61)
+Pāṭha: ashtadhyayi.com data.txt row i=82061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nasattanizattAnuttapratUrtasUrtagUrtAni Candasi",
     text_dev              = "नसत्तनिषत्तानुत्तप्रतूर्तसूर्तगूर्तानि छन्दसि",
+    samagra_slp1          = "padasya pUrvatrAsidDam nasattanizattAnuttapratUrtasUrtagUrtAni Candasi nizWAtaH naH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् नसत्तनिषत्तानुत्तप्रतूर्तसूर्तगूर्तानि छन्दसि निष्ठातः नः न",
     padaccheda_dev        = "नसत्त-निषत्त-अनुत्त-प्रतूर्त-सूर्त-गूर्तानि छन्दसि",
     why_dev               = "(सूत्रम् 8.2.61) नसत्तनिषत्तानुत्तप्रतूर्तसूर्तगूर्तानि छन्दसि।",
     anuvritti_from        = ('8.1.1',),

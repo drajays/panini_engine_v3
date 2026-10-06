@@ -4,6 +4,7 @@
 Padaccheda: नासिका-उदर-ओष्ठ-जङ्‍घा-दन्त-कर्ण-शृङ्गात् च
 
 नासिकोदरौष्ठजङ्घादन्तकर्णशृङ्गाच्च (4.1.55)
+Pāṭha: ashtadhyayi.com data.txt row i=41055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nAsikodarOzWajaNGAdantakarRaSfNgAcca",
     text_dev              = "नासिकोदरौष्ठजङ्घादन्तकर्णशृङ्गाच्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt nAsika-udara-ozWa-jaNGA-danta-karRa-SfNgAt ca NIz vA sva-aNgAt upasarjanAt a-saMyoga-upaDAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् नासिक-उदर-ओष्ठ-जङ्घा-दन्त-कर्ण-शृङ्गात् च ङीष् वा स्व-अङ्गात् उपसर्जनात् अ-संयोग-उपधात्",
     padaccheda_dev        = "नासिका-उदर-ओष्ठ-जङ्‍घा-दन्त-कर्ण-शृङ्गात् च",
     why_dev               = "(सूत्रम् 4.1.55) नासिकोदरौष्ठजङ्घादन्तकर्णशृङ्गाच्च।",
     anuvritti_from        = ('4.1.1',),

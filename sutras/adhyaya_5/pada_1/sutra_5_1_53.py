@@ -4,6 +4,7 @@
 Padaccheda: आढक-आचित-पात्रात् खः अन्यतरयाम्
 
 आढकाचितपात्रात् खोऽन्यतरयाम् (5.1.53)
+Pāṭha: ashtadhyayi.com data.txt row i=51053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'AQakAcitapAtrAt KonyatarasyAm',
     text_dev              = 'आढकाचितपात्रात् खोऽन्यतरस्याम्',
+    samagra_slp1          = "tat samBavati  avaharati pacati iti AQaka-Acita-pAtrAt anyatarasyAm KaH",
+    samagra_dev           = "'तत् सम्भवति , अवहरति, पचति' (इति) आढक-आचित-पात्रात् अन्यतरस्याम् खः",
     padaccheda_dev        = "आढक-आचित-पात्रात् खः अन्यतरयाम्",
     why_dev               = "(सूत्रम् 5.1.53) आढकाचितपात्रात् खोऽन्यतरयाम्।",
     anuvritti_from        = ('5.1.19',),

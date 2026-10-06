@@ -4,6 +4,7 @@
 Padaccheda: पीलायाः वा
 
 पीलाया वा (4.1.118)
+Pāṭha: ashtadhyayi.com data.txt row i=41118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pIlAyA vA",
     text_dev              = "पीलाया वा",
+    samagra_slp1          = "tasya apatyam iti pIlAyAH aR vA",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) पीलायाः अण् वा",
     padaccheda_dev        = "पीलायाः वा",
     why_dev               = "(सूत्रम् 4.1.118) पीलाया वा।",
     anuvritti_from        = ('4.1.1',),

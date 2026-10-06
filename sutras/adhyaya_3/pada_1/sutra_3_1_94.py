@@ -4,6 +4,7 @@
 Padaccheda: वा असरूपः अ-स्त्रियाम्
 
 Krt suffix rule from dhatu: वाऽसरूपोऽस्त्रियाम् (94)
+Pāṭha: ashtadhyayi.com data.txt row i=31094 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vAsarUpostriyAm',
     text_dev              = 'वाऽसरूपोऽस्त्रियाम्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vA asarUpaH astriyAm tatra kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वा असरूपः अस्त्रियाम् तत्र कृत्",
     padaccheda_dev        = "वा असरूपः अ-स्त्रियाम्",
     why_dev               = "धातोः [वाऽसरूपोऽस्त्रियाम्]-प्रत्ययः विहितः (३.१.94)।",
     anuvritti_from        = ('3.1.1',),

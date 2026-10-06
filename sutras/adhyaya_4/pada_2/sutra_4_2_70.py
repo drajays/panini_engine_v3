@@ -47,6 +47,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='adUraBavaSca',
     text_dev='अदूरभवश्च',
+    samagra_slp1="tasya adUraBavaH iti deSaH tannAmA iti samarTAnAm praTamAt paraH tadDitaH pratyayaH aR vA",
+    samagra_dev="'तस्य अदूरभवः इति देशः तन्नामा' (इति) समर्थानाम् प्रथमात् परः तद्धितः प्रत्ययः अण् वा",
     padaccheda_dev="अदूरभवः / च",
     why_dev=(
         "अदूरभवार्थे अण् (*prakriya_46*, **गोदौ ग्रामः** विग्रहादेशः) — संज्ञा-चिह्नम्।"

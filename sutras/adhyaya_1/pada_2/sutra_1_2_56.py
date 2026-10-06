@@ -19,6 +19,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'praDAnapratyayArTavacanamarTasyAnyapramARatvAt',
     text_dev                = 'प्रधानप्रत्ययार्थवचनमर्थस्यान्यप्रमाणत्वात्',
+    samagra_slp1            = "praDAna-pratyaya-arTavacanam arTasya anyapramARatvAt tat a-Sizyam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "प्रधान-प्रत्यय-अर्थवचनम् अर्थस्य अन्यप्रमाणत्वात् तत् अ-शिष्यम्",
     padaccheda_dev          = "प्रधान-प्रत्यय-अर्थ-वचनम् / अर्थस्य / अन्य-प्रमाणत्वात्",
     why_dev                 = (
         "प्रधानस्य प्रत्ययस्य अर्थवचनम् प्रामाणिकम् — अर्थस्य अन्यप्रमाणत्वात् "

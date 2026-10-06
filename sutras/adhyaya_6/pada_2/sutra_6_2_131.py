@@ -4,6 +4,7 @@
 Padaccheda: वर्ग्य-आदयः च
 
 वर्ग्यादयश्च (6.2.131)
+Pāṭha: ashtadhyayi.com data.txt row i=62131 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vargyAdayaSca",
     text_dev              = "वर्ग्यादयश्च",
+    samagra_slp1          = "udAttaH uttarapadAdiH vargyAdayaH ca tatpuruze akarmaDAraye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः वर्ग्यादयः च तत्पुरुषे अकर्मधारये",
     padaccheda_dev        = "वर्ग्य-आदयः च",
     why_dev               = "(सूत्रम् 6.2.131) वर्ग्यादयश्च।",
     anuvritti_from        = ('6.1.1',),

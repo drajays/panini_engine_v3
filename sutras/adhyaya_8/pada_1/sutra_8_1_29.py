@@ -4,6 +4,7 @@
 Padaccheda: न लुट्
 
 न लुट् (8.1.29)
+Pāṭha: ashtadhyayi.com data.txt row i=81029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na luw",
     text_dev              = "न लुट्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO na luw tiN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ न लुट् तिङ्",
     padaccheda_dev        = "न लुट्",
     why_dev               = "(सूत्रम् 8.1.29) न लुट्।",
     anuvritti_from        = ('8.1.1',),

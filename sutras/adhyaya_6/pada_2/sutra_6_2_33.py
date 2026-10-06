@@ -4,6 +4,7 @@
 Padaccheda: परि-प्रति-उप-अपा वर्ज्यमान-अहोरात्र-अवयवेषु
 
 परिप्रत्युपापा वर्ज्यमानाहोरात्रावयवेषु (6.2.33)
+Pāṭha: ashtadhyayi.com data.txt row i=62033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paripratyupApA varjyamAnAhorAtrAvayavezu",
     text_dev              = "परिप्रत्युपापा वर्ज्यमानाहोरात्रावयवेषु",
+    samagra_slp1          = "pari-prati-upa-apAH varjyamAna-ahaH-rAtrAvayavezu prakftyA pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "परि-प्रति-उप-अपाः वर्ज्यमान-अहः-रात्रावयवेषु प्रकृत्या पूर्वपदम्",
     padaccheda_dev        = "परि-प्रति-उप-अपा वर्ज्यमान-अहोरात्र-अवयवेषु",
     why_dev               = "(सूत्रम् 6.2.33) परिप्रत्युपापा वर्ज्यमानाहोरात्रावयवेषु।",
     anuvritti_from        = ('6.1.1',),

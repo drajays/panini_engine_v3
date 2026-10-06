@@ -96,6 +96,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Sala igupaDAdaniwaH ksaH",
     text_dev              = "शल इगुपधादनिटः क्सः",
+    samagra_slp1          = "igupaDAt SalaH cleH aniwaH ksaH",
+    samagra_dev           = "इगुपधात् शलः च्लेः अनिटः क्सः",
     padaccheda_dev        = "शलः इक्-उपधात् अन्-इटः क्सः",
     why_dev               = "अनिट्-हल्-अन्त-शल्-धातोः इगुपधात् चिलः क्स-आदेशः (सिचोऽपवादः); "
                              "धातोः अन्त्य-शल् लुप्तः; क्स-प्रकरणे गुण/ष्टुत्वे न (शिष् → अशिक्षत्)।",

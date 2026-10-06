@@ -18,6 +18,7 @@ optional "prasahana_usage" tag is also checked when present, but the rule
 is not blocked by its absence since the adhi + sah combination is itself
 the primary diagnostic).  No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True because no surface phonological change occurs.
+Pāṭha: ashtadhyayi.com data.txt row i=13033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='aDeH prasahane',
     text_dev='अधेः प्रसहने',
+    samagra_slp1="aDeH kfYaH prasahane Atmanepadam",
+    samagra_dev="अधेः कृञः प्रसहने आत्मनेपदम्",
     padaccheda_dev="अधेः (पञ्चमी) / प्रसहने (सप्तमी)",
     why_dev=(
         "अधि-पूर्वकस्य सह्-धातोः प्रसहन-अर्थे प्रयोगे आत्मनेपदम् — "

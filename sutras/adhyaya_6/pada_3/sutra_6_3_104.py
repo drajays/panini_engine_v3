@@ -4,6 +4,7 @@
 Padaccheda: का (लुप्तप्रथमान्तनिर्देशः) पथि-अक्षयोः
 
 का पथ्यक्षयोः (6.3.104)
+Pāṭha: ashtadhyayi.com data.txt row i=63104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kA paTyakzayoH",
     text_dev              = "का पथ्यक्षयोः",
+    samagra_slp1          = "uttarapade kA paTi-akzayoH koH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे का पथि-अक्षयोः कोः",
     padaccheda_dev        = "का (लुप्तप्रथमान्तनिर्देशः) पथि-अक्षयोः",
     why_dev               = "(सूत्रम् 6.3.104) का पथ्यक्षयोः।",
     anuvritti_from        = ('6.1.1',),

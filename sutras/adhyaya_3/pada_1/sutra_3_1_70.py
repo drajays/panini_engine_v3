@@ -4,6 +4,7 @@
 Padaccheda: वा भ्राश-भ्लाश-भ्रमु-क्रमु-क्लमु-त्रसि-त्रुटि-लषः
 
 Krt suffix rule from dhatu: वा भ्राशभ्लाशभ्रमुक्रमुक्लमुत्रसित्रुटिलषः (70)
+Pāṭha: ashtadhyayi.com data.txt row i=31070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA BrASaBlASaBramukramuklamutrasitruwilazaH",
     text_dev              = "वा भ्राशभ्लाशभ्रमुक्रमुक्लमुत्रसित्रुटिलषः",
+    samagra_slp1          = "karttari sArvaDAtuke BrASa-BlASa-Bramu-kramu-klamu-trasi-truwi-lazaH DAtoH paraH Syan vA",
+    samagra_dev           = "कर्त्तरि सार्वधातुके भ्राश-भ्लाश-भ्रमु-क्रमु-क्लमु-त्रसि-त्रुटि-लषः धातोः परः श्यन् वा",
     padaccheda_dev        = "वा भ्राश-भ्लाश-भ्रमु-क्रमु-क्लमु-त्रसि-त्रुटि-लषः",
     why_dev               = "धातोः [वा भ्राशभ्लाशभ्रमुक्रमुक्लमुत्रसित्रुटिलषः]-प्रत्ययः विहितः (३.१.70)।",
     anuvritti_from        = ('3.1.1',),

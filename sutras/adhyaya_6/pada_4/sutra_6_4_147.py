@@ -4,6 +4,7 @@
 Padaccheda: ढे लोपः अकद्र्वाः
 
 ढे लोपोऽकद्र्वाः (6.4.147)
+Pāṭha: ashtadhyayi.com data.txt row i=64147 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'Qe lopokadrvAH',
     text_dev              = 'ढे लोपोऽकद्र्वाः',
+    samagra_slp1          = "oH Basya aNgasya Qe tadDite lopaH akadrvAH",
+    samagra_dev           = "ओः भस्य अङ्गस्य ढे तद्धिते लोपः अकद्र्वाः",
     padaccheda_dev        = "ढे लोपः अकद्र्वाः",
     why_dev               = "(सूत्रम् 6.4.147) ढे लोपोऽकद्र्वाः।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: उदरात् ठक् आद्यूने
 
 उदराट्ठगाद्यूने (5.2.67)
+Pāṭha: ashtadhyayi.com data.txt row i=52067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "udarAwWagAdyUne",
     text_dev              = "उदराट्ठगाद्यूने",
+    samagra_slp1          = "tatra prasite iti udarAt Adyune Wak",
+    samagra_dev           = "'तत्र प्रसिते' (इति) उदरात् आद्युने ठक्",
     padaccheda_dev        = "उदरात् ठक् आद्यूने",
     why_dev               = "(सूत्रम् 5.2.67) उदराट्ठगाद्यूने।",
     anuvritti_from        = ('4.1.82',),

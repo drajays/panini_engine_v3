@@ -4,6 +4,7 @@
 Padaccheda: नौ-वयो-धर्म-विष-मूल-मूल-सीता-तुलाभ्यः तार्य-तुल्य-प्राप्य-वध्य-आनाम्य-सम-समित-सम्मितेषु
 
 नौवयोधर्मविषमूलमूलसीतातुलाभ्यस्तार्यतुल्यप्राप्यवध्यानाम्यसमसमितसम्मितेषु (4.4.91)
+Pāṭha: ashtadhyayi.com data.txt row i=44091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nOvayoDarmavizamUlamUlasItAtulAByastAryatulyaprApyavaDyAnAmyasamasamitasammitezu",
     text_dev              = "नौवयोधर्मविषमूलमूलसीतातुलाभ्यस्तार्यतुल्यप्राप्यवध्यानाम्यसमसमितसम्मितेषु",
+    samagra_slp1          = "nO-vayo-Darma-viza-mUla-mUla-sItA-tulAByaH tArya-tulya-prApya-vaDya-AnAmya-sama-samita-sammitezu saMjYAyAm yat",
+    samagra_dev           = "नौ-वयो-धर्म-विष-मूल-मूल-सीता-तुलाभ्यः  तार्य-तुल्य-प्राप्य-वध्य-आनाम्य-सम-समित-सम्मितेषु संज्ञायाम् यत्",
     padaccheda_dev        = "नौ-वयो-धर्म-विष-मूल-मूल-सीता-तुलाभ्यः तार्य-तुल्य-प्राप्य-वध्य-आनाम्य-सम-समित-सम्मितेषु",
     why_dev               = "(सूत्रम् 4.4.91) नौवयोधर्मविषमूलमूलसीतातुलाभ्यस्तार्यतुल्यप्राप्यवध्यानाम्यसमसमितसम्मितेषु।",
     anuvritti_from        = ('4.1.1',),

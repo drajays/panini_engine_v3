@@ -4,6 +4,7 @@
 Padaccheda: क्षियः
 
 क्षियः (6.4.59)
+Pāṭha: ashtadhyayi.com data.txt row i=64059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kziyaH",
     text_dev              = "क्षियः",
+    samagra_slp1          = "aNgasya asidDavadatrABAt ArDaDAtuke kziyaH lyapi dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् आर्धधातुके क्षियः ल्यपि दीर्घः",
     padaccheda_dev        = "क्षियः",
     why_dev               = "(सूत्रम् 6.4.59) क्षियः।",
     anuvritti_from        = ('6.1.1',),

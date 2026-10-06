@@ -4,6 +4,7 @@
 Padaccheda: न दृशः
 
 Krt suffix rule from dhatu: न दृशः (47)
+Pāṭha: ashtadhyayi.com data.txt row i=31047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na dfSaH",
     text_dev              = "न दृशः",
+    samagra_slp1          = "dfSaH cleH ksaH na",
+    samagra_dev           = "दृशः च्लेः क्सः न",
     padaccheda_dev        = "न दृशः",
     why_dev               = "धातोः [न दृशः]-प्रत्ययः विहितः (३.१.47)।",
     anuvritti_from        = ('3.1.1',),

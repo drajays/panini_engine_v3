@@ -4,6 +4,7 @@
 Padaccheda: नः च
 
 नश्च (8.3.30)
+Pāṭha: ashtadhyayi.com data.txt row i=83030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "naSca",
     text_dev              = "नश्च",
+    samagra_slp1          = "padasya naH si Duw vA",
+    samagra_dev           = "पदस्य नः सि धुट् वा",
     padaccheda_dev        = "नः च",
     why_dev               = "(सूत्रम् 8.3.30) नश्च।",
     anuvritti_from        = ('8.1.1',),

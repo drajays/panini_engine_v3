@@ -4,6 +4,7 @@
 Padaccheda: तनादिभ्यः त-थासोः
 
 luk of sic for tanadi roots in ta and thasa.
+Pāṭha: ashtadhyayi.com data.txt row i=24079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tanAdiByastaTAsoH",
     text_dev              = "तनादिभ्यस्तथासोः",
+    samagra_slp1          = "tan-AdiByaH ta-TAsoH luk sicaH viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तन्-आदिभ्यः त-थासोः लुक् सिचः विभाषा",
     padaccheda_dev        = "तनादिभ्यः त-थासोः",
     why_dev               = "तनादिभ्यः त-थासोः (२.४.७९)।",
     anuvritti_from        = ('2.4.77',),

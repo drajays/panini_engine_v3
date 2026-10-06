@@ -4,6 +4,7 @@
 Padaccheda: इरयोः रे (लुप्तप्रथमान्तनिर्देशः)
 
 इरयो रे (6.4.76)
+Pāṭha: ashtadhyayi.com data.txt row i=64076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "irayo re",
     text_dev              = "इरयो रे",
+    samagra_slp1          = "aNgasya asidDavadatrABAt irayoH re bahulam Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् इरयोः रे बहुलम् छन्दसि",
     padaccheda_dev        = "इरयोः रे (लुप्तप्रथमान्तनिर्देशः)",
     why_dev               = "(सूत्रम् 6.4.76) इरयो रे।",
     anuvritti_from        = ('6.1.1',),

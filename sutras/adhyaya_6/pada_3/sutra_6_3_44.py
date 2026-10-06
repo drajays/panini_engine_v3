@@ -4,6 +4,7 @@
 Padaccheda: नद्याः शेषस्य अन्यतरस्याम्
 
 नद्याः शेषस्यान्यतरस्याम् (6.3.44)
+Pāṭha: ashtadhyayi.com data.txt row i=63044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nadyAH SezasyAnyatarasyAm",
     text_dev              = "नद्याः शेषस्यान्यतरस्याम्",
+    samagra_slp1          = "uttarapade nadyAH Sezasya anyatarasyAm Ga-rUpa-kalpa-celaw-brUva-gotra-mata-hatezu hrasvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे नद्याः शेषस्य अन्यतरस्याम् घ-रूप-कल्प-चेलट्-ब्रूव-गोत्र-मत-हतेषु ह्रस्वः",
     padaccheda_dev        = "नद्याः शेषस्य अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.3.44) नद्याः शेषस्यान्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

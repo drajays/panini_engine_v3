@@ -4,6 +4,7 @@
 Padaccheda: इदमः र्हिल्
 
 इदमो र्हिल् (5.3.16)
+Pāṭha: ashtadhyayi.com data.txt row i=53016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "idamo rhil",
     text_dev              = "इदमो र्हिल्",
+    samagra_slp1          = "idamaH saptamyAH kAle rhil",
+    samagra_dev           = "इदमः सप्तम्याः काले र्हिल्",
     padaccheda_dev        = "इदमः र्हिल्",
     why_dev               = "(सूत्रम् 5.3.16) इदमो र्हिल्।",
     anuvritti_from        = ('5.3.2',),

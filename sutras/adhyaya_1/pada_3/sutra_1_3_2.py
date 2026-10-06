@@ -96,6 +96,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'upadeSejanunAsika it',
     text_dev       = 'उपदेशेऽजनुनासिक इत्',
+    samagra_slp1   = "upadeSe anunAsikaH ac it",
+    samagra_dev    = "उपदेशे अनुनासिकः अच् इत्",
     padaccheda_dev = "उपदेशे अज् अनुनासिकः इत्",
     why_dev        = "उपदेशावस्थायाम् अज् वर्णः अनुनासिकः चेद् इत्-संज्ञकः; "
                      "इँर्-वार्तिके पुनः द्वयोः संयुक्तः इत्। लोपः १.३.९।",

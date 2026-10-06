@@ -4,6 +4,7 @@
 Padaccheda: गो-बिडाल-सिंह-सैन्धवेषु उपमाने
 
 गोबिडालसिंहसैन्धवेषूपमाने (6.2.72)
+Pāṭha: ashtadhyayi.com data.txt row i=62072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gobiqAlasiMhasEnDavezUpamAne",
     text_dev              = "गोबिडालसिंहसैन्धवेषूपमाने",
+    samagra_slp1          = "AdiH udAttaH go-biqAla-siMha-sEnDavezu upamAne pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः गो-बिडाल-सिंह-सैन्धवेषु उपमाने पूर्वपदम्",
     padaccheda_dev        = "गो-बिडाल-सिंह-सैन्धवेषु उपमाने",
     why_dev               = "(सूत्रम् 6.2.72) गोबिडालसिंहसैन्धवेषूपमाने।",
     anuvritti_from        = ('6.1.1',),

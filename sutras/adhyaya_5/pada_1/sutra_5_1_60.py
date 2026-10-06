@@ -4,6 +4,7 @@
 Padaccheda: पञ्चत्-दशतौ वर्गे वा
 
 पञ्चद्दशतौ वर्गे वा (5.1.60)
+Pāṭha: ashtadhyayi.com data.txt row i=51060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paYcaddaSatO varge vA",
     text_dev              = "पञ्चद्दशतौ वर्गे वा",
+    samagra_slp1          = "tat asya parimARam iti paYcat-daSatO varge vA",
+    samagra_dev           = "'तत् अस्य परिमाणम्' (इति) पञ्चत्-दशतौ वर्गे वा",
     padaccheda_dev        = "पञ्चत्-दशतौ वर्गे वा",
     why_dev               = "(सूत्रम् 5.1.60) पञ्चद्दशतौ वर्गे वा।",
     anuvritti_from        = ('5.1.19',),

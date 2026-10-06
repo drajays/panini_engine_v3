@@ -4,6 +4,7 @@
 Padaccheda: सु-वि-निर्-दुर्भ्यः सुपि-सूति-समाः
 
 सुविनिर्दुर्भ्यः सुपिसूतिसमाः (8.3.88)
+Pāṭha: ashtadhyayi.com data.txt row i=83088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "suvinirdurByaH supisUtisamAH",
     text_dev              = "सुविनिर्दुर्भ्यः सुपिसूतिसमाः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH su-vi-nir-durByaH supi-sUti-samAH saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः सु-वि-निर्-दुर्भ्यः सुपि-सूति-समाः सः",
     padaccheda_dev        = "सु-वि-निर्-दुर्भ्यः सुपि-सूति-समाः",
     why_dev               = "(सूत्रम् 8.3.88) सुविनिर्दुर्भ्यः सुपिसूतिसमाः।",
     anuvritti_from        = ('8.1.1',),

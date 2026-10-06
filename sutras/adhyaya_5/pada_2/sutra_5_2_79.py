@@ -4,6 +4,7 @@
 Padaccheda: शृङ्‍खलम् अस्य बन्धनम् करभे
 
 शृङ्खलमस्य बन्धनं करभे (5.2.79)
+Pāṭha: ashtadhyayi.com data.txt row i=52079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SfNKalamasya banDanaM karaBe",
     text_dev              = "शृङ्खलमस्य बन्धनं करभे",
+    samagra_slp1          = "SfNKalam banDanamasya iti karaBe kan",
+    samagra_dev           = "'शृङ्खलम् बन्धनमस्य' (इति) करभे कन्",
     padaccheda_dev        = "शृङ्‍खलम् अस्य बन्धनम् करभे",
     why_dev               = "(सूत्रम् 5.2.79) शृङ्खलमस्य बन्धनं करभे।",
     anuvritti_from        = ('4.1.82',),

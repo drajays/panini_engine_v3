@@ -53,7 +53,7 @@ def dhatu_upadesha_slp1_set() -> FrozenSet[str]:
     for e in entries:
         if not isinstance(e, dict):
             continue
-        for k in ("upadesha_slp1", "raw_dhatu_after_it_lopa_slp1"):
+        for k in ("upadesha_slp1", "raw_dhatu_after_it_lopa_slp1", "citation_dhatu_slp1"):
             v = e.get(k)
             if isinstance(v, str) and v.strip():
                 out.add(v.strip())

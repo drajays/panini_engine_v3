@@ -4,6 +4,7 @@
 Padaccheda: एतः ईत् बहुवचने
 
 एत ईद्बहुवचने (8.2.81)
+Pāṭha: ashtadhyayi.com data.txt row i=82081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "eta Idbahuvacane",
     text_dev              = "एत ईद्बहुवचने",
+    samagra_slp1          = "padasya pUrvatrAsidDam etaH It bahuvacane adasaH dAt u daH maH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् एतः ईत् बहुवचने अदसः दात् उ दः मः",
     padaccheda_dev        = "एतः ईत् बहुवचने",
     why_dev               = "(सूत्रम् 8.2.81) एत ईद्बहुवचने।",
     anuvritti_from        = ('8.1.1',),

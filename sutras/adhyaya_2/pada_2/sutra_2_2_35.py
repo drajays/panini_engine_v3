@@ -4,6 +4,7 @@
 Padaccheda: सप्तमी-विशेषणे बहुव्रीहौ
 
 Saptami used as visesana in bahuvrihi.
+Pāṭha: ashtadhyayi.com data.txt row i=22035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saptamIviSezaRe bahuvrIhO",
     text_dev              = "सप्तमीविशेषणे बहुव्रीहौ",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA saptamI-viSezaRe bahuvrIhO pUrvam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा सप्तमी-विशेषणे बहुव्रीहौ पूर्वम्",
     padaccheda_dev        = "सप्तमी-विशेषणे बहुव्रीहौ",
     why_dev               = "सप्तमी-विशेषणे बहुव्रीहौ (२.२.३५)।",
     anuvritti_from        = ('2.2.23',),

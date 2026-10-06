@@ -4,6 +4,7 @@
 Padaccheda: आयुक्त-कुशलाभ्याम् च आसेवायाम्
 
 ayukta and kusala also in service context take sasthi.
+Pāṭha: ashtadhyayi.com data.txt row i=23040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AyuktakuSalAByAM cAsevAyAm",
     text_dev              = "आयुक्तकुशलाभ्यां चासेवायाम्",
+    samagra_slp1          = "anaBihite Ayukta-kuSalAByAm ca AsevAyAm saptamI zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते आयुक्त-कुशलाभ्याम् च आसेवायाम् सप्तमी षष्ठी",
     padaccheda_dev        = "आयुक्त-कुशलाभ्याम् च आसेवायाम्",
     why_dev               = "आयुक्त-कुशलाभ्याम् च आसेवायाम् (२.३.४०)।",
     anuvritti_from        = ('2.3.39',),

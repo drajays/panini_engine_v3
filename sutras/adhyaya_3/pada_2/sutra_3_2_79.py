@@ -4,6 +4,7 @@
 Padaccheda: कर्तरि उपमाने
 
 krt-suffix rule: कर्तर्युपमाने (79)
+Pāṭha: ashtadhyayi.com data.txt row i=32079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kartaryupamAne",
     text_dev              = "कर्तर्युपमाने",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kartari upamAne kft supi RiniH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कर्तरि उपमाने कृत् सुपि णिनिः",
     padaccheda_dev        = "कर्तरि उपमाने",
     why_dev               = "धातोः कृत्-प्रत्ययः [कर्तर्युपमाने] विहितः (३.२.79)।",
     anuvritti_from        = ('3.1.1',),

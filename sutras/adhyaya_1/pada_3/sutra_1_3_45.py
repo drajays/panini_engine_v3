@@ -15,6 +15,7 @@ idempotency stamp "Atmanepada_1_3_45" is absent, and (c) a dhātu Term
 carries the tag "akarmaka".
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="akarmakAcca",
     text_dev="अकर्मकाच्च",
+    samagra_slp1="akarmakAt ca Atmanepadam jYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अकर्मकात् च आत्मनेपदम् ज्ञः",
     padaccheda_dev="अकर्मकात् (पञ्चमी-एकवचन) / च (अव्यय)",
     why_dev=(
         "अकर्मक-धातोः प्रयोगे आत्मनेपदम् — "

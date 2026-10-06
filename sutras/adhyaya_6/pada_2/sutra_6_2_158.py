@@ -4,6 +4,7 @@
 Padaccheda: आक्रोशे च
 
 आक्रोशे च (6.2.158)
+Pāṭha: ashtadhyayi.com data.txt row i=62158 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AkroSe ca",
     text_dev              = "आक्रोशे च",
+    samagra_slp1          = "uttarapadAdiH antaH AkroSe ca naYaH ackO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः आक्रोशे च नञः अच्कौ",
     padaccheda_dev        = "आक्रोशे च",
     why_dev               = "(सूत्रम् 6.2.158) आक्रोशे च।",
     anuvritti_from        = ('6.1.1',),

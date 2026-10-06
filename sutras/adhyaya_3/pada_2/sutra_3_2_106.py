@@ -4,6 +4,7 @@
 Padaccheda: लिटः कानच् वा
 
 krt-suffix rule: लिटः कानज्वा (106)
+Pāṭha: ashtadhyayi.com data.txt row i=32106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "liwaH kAnajvA",
     text_dev              = "लिटः कानज्वा",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte liwaH kAnac vA kft Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते लिटः कानच् वा कृत् छन्दसि",
     padaccheda_dev        = "लिटः कानच् वा",
     why_dev               = "धातोः कृत्-प्रत्ययः [लिटः कानज्वा] विहितः (३.२.106)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

@@ -4,6 +4,7 @@
 Padaccheda: वृद्धस्य च
 
 वृद्धस्य च (5.3.62)
+Pāṭha: ashtadhyayi.com data.txt row i=53062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vfdDasya ca",
     text_dev              = "वृद्धस्य च",
+    samagra_slp1          = "atiSAyane vfdDasya ajAdyoH jyaH",
+    samagra_dev           = "अतिशायने वृद्धस्य अजाद्योः  ज्यः",
     padaccheda_dev        = "वृद्धस्य च",
     why_dev               = "(सूत्रम् 5.3.62) वृद्धस्य च।",
     anuvritti_from        = ('4.1.76',),

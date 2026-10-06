@@ -4,6 +4,7 @@
 Padaccheda: पाय्य-सान्नाय्य-निकाय्य-धाय्याः मान-हविः-निवास-सामिधेनीषु
 
 Krt suffix rule from dhatu: पाय्यसान्नाय्यनिकाय्यधाय्या मानहविर्निवाससामिधेनीषु (129)
+Pāṭha: ashtadhyayi.com data.txt row i=31129 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pAyyasAnnAyyanikAyyaDAyyA mAnahavirnivAsasAmiDenIzu",
     text_dev              = "पाय्यसान्नाय्यनिकाय्यधाय्या मानहविर्निवाससामिधेनीषु",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH pAyya-sAnnAyya-nikAyya-DAyyAH mAna-havir-nivAsa-sAmiDenIzu kft Ryat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः पाय्य-सान्नाय्य-निकाय्य-धाय्याः मान-हविर्-निवास-सामिधेनीषु कृत् ण्यत्",
     padaccheda_dev        = "पाय्य-सान्नाय्य-निकाय्य-धाय्याः मान-हविः-निवास-सामिधेनीषु",
     why_dev               = "धातोः [पाय्यसान्नाय्यनिकाय्यधाय्या मानहविर्निवाससामिधेनीषु]-प्रत्ययः विहितः (३.१.129)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

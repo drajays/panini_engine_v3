@@ -4,6 +4,7 @@
 Padaccheda: तीर्थे ये
 
 तीर्थे ये (6.3.87)
+Pāṭha: ashtadhyayi.com data.txt row i=63087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tIrTe ye",
     text_dev              = "तीर्थे ये",
+    samagra_slp1          = "uttarapade tIrTe ye saH samAnasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे तीर्थे ये सः समानस्य",
     padaccheda_dev        = "तीर्थे ये",
     why_dev               = "(सूत्रम् 6.3.87) तीर्थे ये।",
     anuvritti_from        = ('6.1.1',),

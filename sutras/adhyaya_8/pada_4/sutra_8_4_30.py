@@ -4,6 +4,7 @@
 Padaccheda: णेः विभाषा
 
 णेर्विभाषा (8.4.30)
+Pāṭha: ashtadhyayi.com data.txt row i=84030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "RerviBAzA",
     text_dev              = "णेर्विभाषा",
+    samagra_slp1          = "razAByAm upasargAt ReH kfti acaH naH viBAzA RaH",
+    samagra_dev           = "रषाभ्याम्  उपसर्गात्  णेः कृति अचः  नः विभाषा णः",
     padaccheda_dev        = "णेः विभाषा",
     why_dev               = "(सूत्रम् 8.4.30) णेर्विभाषा।",
     anuvritti_from        = ('8.1.1',),

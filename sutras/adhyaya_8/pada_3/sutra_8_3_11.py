@@ -4,6 +4,7 @@
 Padaccheda: स्वतवान् (लुप्तषष्ठ्यन्तनिर्देशः) पायौ
 
 स्वतवान् पायौ (8.3.11)
+Pāṭha: ashtadhyayi.com data.txt row i=83011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "svatavAn pAyO",
     text_dev              = "स्वतवान् पायौ",
+    samagra_slp1          = "svatavAn padasya pAyO ru~ uBayaTA",
+    samagra_dev           = "स्वतवान् पदस्य पायौ रुँ उभयथा",
     padaccheda_dev        = "स्वतवान् (लुप्तषष्ठ्यन्तनिर्देशः) पायौ",
     why_dev               = "(सूत्रम् 8.3.11) स्वतवान् पायौ।",
     anuvritti_from        = ('8.1.1',),

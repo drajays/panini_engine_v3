@@ -4,6 +4,7 @@
 Padaccheda: अन्-अन्त्यस्य अपि प्रश्न-आख्यानयोः
 
 अनन्त्यस्यापि प्रश्नाख्यानयोः (8.2.105)
+Pāṭha: ashtadhyayi.com data.txt row i=82105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anantyasyApi praSnAKyAnayoH",
     text_dev              = "अनन्त्यस्यापि प्रश्नाख्यानयोः",
+    samagra_slp1          = "padasya pUrvatrAsidDam vAkyasya weH plutaH udAttaH anantyasya api praSnAKyAnayoH svaritam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वाक्यस्य टेः प्लुतः उदात्तः अनन्त्यस्य अपि प्रश्नाख्यानयोः स्वरितम्",
     padaccheda_dev        = "अन्-अन्त्यस्य अपि प्रश्न-आख्यानयोः",
     why_dev               = "(सूत्रम् 8.2.105) अनन्त्यस्यापि प्रश्नाख्यानयोः।",
     anuvritti_from        = ('8.1.1',),

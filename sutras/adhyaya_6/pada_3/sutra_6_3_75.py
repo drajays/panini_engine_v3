@@ -4,6 +4,7 @@
 Padaccheda: नभ्राट्-नपात्-नवेदा-नासत्या-नमुचि-नकुल-नख-नपुंसक-नक्षत्र-नक्र-नाकेषु प्रकृत्या
 
 नभ्राण्नपान्नवेदानासत्यानमुचिनकुलनखनपुंसकनक्षत्रनक्रनाकेषु प्रकृत्या (6.3.75)
+Pāṭha: ashtadhyayi.com data.txt row i=63075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "naBrARnapAnnavedAnAsatyAnamucinakulanaKanapuMsakanakzatranakranAkezu prakftyA",
     text_dev              = "नभ्राण्नपान्नवेदानासत्यानमुचिनकुलनखनपुंसकनक्षत्रनक्रनाकेषु प्रकृत्या",
+    samagra_slp1          = "uttarapade naBrAw-napAt-navedAH-nAsatyAH-namuci-nakula-naKa-napuMsaka-nakzatra-nakra-nAkezu prakftyA naYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे नभ्राट्-नपात्-नवेदाः-नासत्याः-नमुचि-नकुल-नख-नपुंसक-नक्षत्र-नक्र-नाकेषु प्रकृत्या नञः",
     padaccheda_dev        = "नभ्राट्-नपात्-नवेदा-नासत्या-नमुचि-नकुल-नख-नपुंसक-नक्षत्र-नक्र-नाकेषु प्रकृत्या",
     why_dev               = "(सूत्रम् 6.3.75) नभ्राण्नपान्नवेदानासत्यानमुचिनकुलनखनपुंसकनक्षत्रनक्रनाकेषु प्रकृत्या।",
     anuvritti_from        = ('6.1.1',),

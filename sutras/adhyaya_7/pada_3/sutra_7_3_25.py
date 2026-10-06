@@ -4,6 +4,7 @@
 Padaccheda: जङ्गल-धेनु-वलज-अन्तस्य विभाषितम् उत्तरम्
 
 जङ्गलधेनुवलजान्तस्य विभाषितमुत्तरम् (7.3.25)
+Pāṭha: ashtadhyayi.com data.txt row i=73025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jaNgalaDenuvalajAntasya viBAzitamuttaram",
     text_dev              = "जङ्गलधेनुवलजान्तस्य विभाषितमुत्तरम्",
+    samagra_slp1          = "aNgasya uttarapadasya jaNgalaDenuvalajAntasya viBAzitam uttaram vfdDiH acaH YRiti tadDitezu AdeH pUrvapadasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य जङ्गलधेनुवलजान्तस्य विभाषितम् उत्तरम् वृद्धिः अचः ञ्णिति तद्धितेषु आदेः पूर्वपदस्य",
     padaccheda_dev        = "जङ्गल-धेनु-वलज-अन्तस्य विभाषितम् उत्तरम्",
     why_dev               = "(सूत्रम् 7.3.25) जङ्गलधेनुवलजान्तस्य विभाषितमुत्तरम्।",
     anuvritti_from        = ('7.1.1',),

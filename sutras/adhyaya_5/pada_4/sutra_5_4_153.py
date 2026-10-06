@@ -4,6 +4,7 @@
 Padaccheda: नदी-ऋतः च
 
 नद्यृतश्च (5.4.153)
+Pāṭha: ashtadhyayi.com data.txt row i=54153 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nadyftaSca",
     text_dev              = "नद्यृतश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA nadyftaH ca bahuvrIhO kap",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा नद्यृतः च बहुव्रीहौ कप्",
     padaccheda_dev        = "नदी-ऋतः च",
     why_dev               = "(सूत्रम् 5.4.153) नद्यृतश्च।",
     anuvritti_from        = ('5.4.68',),

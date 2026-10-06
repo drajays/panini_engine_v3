@@ -15,6 +15,7 @@ Engine (narrow, mechanically blind):
   Gate key ``2_2_12_kta_puja_gate``.  Recipe arms
   ``state.meta['2_2_12_arm']`` and tags a Term with ``kta_puja`` indicating
   a kta-compound in the pūjā sense.
+Pāṭha: ashtadhyayi.com data.txt row i=22012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -40,6 +41,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="ktena ca pUjAyAm",
     text_dev="क्तेन च पूजायाम्",
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH ktena ca pUjAyAm zazWI na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः क्तेन च पूजायाम् षष्ठी न",
     padaccheda_dev="क्तेन / च / पूजायाम्",
     why_dev=(
         "क्तान्तेन च पूजार्थे समानाधिकरणे समासः — पूजितब्राह्मणः, आदृतसखः इत्यादि।"

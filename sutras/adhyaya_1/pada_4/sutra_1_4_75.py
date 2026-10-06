@@ -8,6 +8,7 @@ burden / overloading).
 v3: registers samjna_registry["gati_urasi_manasi"] = frozenset({"urasi","manasi"}).
 Note: "manasi" overlaps with 1.4.66 but in a different semantic context;
 both registrations are kept separate.
+Pāṭha: ashtadhyayi.com data.txt row i=14075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='anatyADAna urasimanasI',
     text_dev='अनत्याधान उरसिमनसी',
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH anatyADAne urasi-manasI kriyAyoge gatiH viBAzA kfYi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः अनत्याधाने उरसि-मनसी क्रियायोगे गतिः विभाषा कृञि",
     padaccheda_dev="अनत्याधाने / उरसि-मनसी",
     why_dev="अनत्याधाने 'उरसि' 'मनसि' गति-संज्ञकौ — गति-सेटे योज्येते।",
     anuvritti_from=("1.4.60",),

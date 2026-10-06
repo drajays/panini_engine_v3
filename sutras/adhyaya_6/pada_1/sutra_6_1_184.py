@@ -4,6 +4,7 @@
 Padaccheda: नृ (लुप्तपञ्चम्यन्तनिर्देशः) च अन्यतरस्याम्
 
 नृ चान्यतरस्याम् (6.1.184)
+Pāṭha: ashtadhyayi.com data.txt row i=61184 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nf cAnyatarasyAm",
     text_dev              = "नृ चान्यतरस्याम्",
+    samagra_slp1          = "nf ca anyatarasyAm udAttaH antaH viBaktiH nAm na Jal",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "नृ च अन्यतरस्याम् उदात्तः अन्तः विभक्तिः नाम् न झल्",
     padaccheda_dev        = "नृ (लुप्तपञ्चम्यन्तनिर्देशः) च अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.1.184) नृ चान्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

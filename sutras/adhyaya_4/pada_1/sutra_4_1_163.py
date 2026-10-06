@@ -4,6 +4,7 @@
 Padaccheda: जीवति तु वंश्ये युवा
 
 जीवति तु वंश्ये युवा (4.1.163)
+Pāṭha: ashtadhyayi.com data.txt row i=41163 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jIvati tu vaMSye yuvA",
     text_dev              = "जीवति तु वंश्ये युवा",
+    samagra_slp1          = "vaMSye jIvati pOtrapraBfteH apatyam tu yuvA",
+    samagra_dev           = "वंश्ये जीवति पौत्रप्रभृतेः अपत्यम् तु युवा",
     padaccheda_dev        = "जीवति तु वंश्ये युवा",
     why_dev               = "(सूत्रम् 4.1.163) जीवति तु वंश्ये युवा।",
     anuvritti_from        = ('4.1.1',),

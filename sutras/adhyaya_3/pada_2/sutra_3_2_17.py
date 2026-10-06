@@ -4,6 +4,7 @@
 Padaccheda: भिक्षा-सेना-आदायेषु च
 
 krt-suffix rule: भिक्षासेनाऽऽदायेषु च (17)
+Pāṭha: ashtadhyayi.com data.txt row i=32017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'BikzAsenAdAyezu ca',
     text_dev              = 'भिक्षासेनादायेषु च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BikzA-senA-AdAyezu ca kft karmaRi anupasarge supi careH waH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भिक्षा-सेना-आदायेषु च कृत् कर्मणि अनुपसर्गे सुपि चरेः टः",
     padaccheda_dev        = "भिक्षा-सेना-आदायेषु च",
     why_dev               = "धातोः कृत्-प्रत्ययः [भिक्षासेनाऽऽदायेषु च] विहितः (३.२.17)।",
     anuvritti_from        = ('3.1.1',),

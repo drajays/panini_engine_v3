@@ -4,6 +4,7 @@
 Padaccheda: फाण्टाहृति-मिमताभ्याम् ण-फिञौ
 
 फाण्टाहृतिमिमताभ्यां णफिञौ (4.1.150)
+Pāṭha: ashtadhyayi.com data.txt row i=41150 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "PARwAhftimimatAByAM RaPiYO",
     text_dev              = "फाण्टाहृतिमिमताभ्यां णफिञौ",
+    samagra_slp1          = "tasya apatyam iti sOvirezu PARwAhfti-mimatAByAm Ra-PiYO",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) सौविरेषु फाण्टाहृति-मिमताभ्याम् ण-फिञौ",
     padaccheda_dev        = "फाण्टाहृति-मिमताभ्याम् ण-फिञौ",
     why_dev               = "(सूत्रम् 4.1.150) फाण्टाहृतिमिमताभ्यां णफिञौ।",
     anuvritti_from        = ('4.1.1',),

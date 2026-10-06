@@ -4,6 +4,7 @@
 Padaccheda: विसारिणः मत्स्ये
 
 विसारिणो मत्स्ये (5.4.16)
+Pāṭha: ashtadhyayi.com data.txt row i=54016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "visAriRo matsye",
     text_dev              = "विसारिणो मत्स्ये",
+    samagra_slp1          = "matsye visAriRaH aR",
+    samagra_dev           = "मत्स्ये विसारिणः अण्",
     padaccheda_dev        = "विसारिणः मत्स्ये",
     why_dev               = "(सूत्रम् 5.4.16) विसारिणो मत्स्ये।",
     anuvritti_from        = ('4.1.76',),

@@ -13,6 +13,7 @@ Engine:
   - act (vibhasha_default=True): adds "seT" tag and marks meta to prevent
     re-entry.
   - r1_form_identity_exempt=True: no surface string changes in this step.
+Pāṭha: ashtadhyayi.com data.txt row i=12003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     vibhasha_default      = True,
     text_slp1             = 'viBAzorRoH',
     text_dev              = 'विभाषोर्णोः',
+    samagra_slp1          = "viBAzA UrRoH Nit iw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "विभाषा ऊर्णोः ङित् इट्",
     padaccheda_dev        = "विभाषा / ऊर्णोः",
     why_dev               = "ऊर्णु-धातुः विकल्पेन सेट् — इडागमः विकल्पेन अर्धधातुके।",
     anuvritti_from        = ("1.2.1",),

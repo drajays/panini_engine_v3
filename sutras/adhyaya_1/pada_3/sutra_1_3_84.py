@@ -13,6 +13,7 @@ he rests/desists.
 stamp "Atmanepada_1_3_84" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _RAM_ROOTS carries the tag "upa_prefix".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="upAcca",
     text_dev="उपाच्च",
+    samagra_slp1="upAt ca kartari parasmEpadam ramaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="उपात् च कर्तरि परस्मैपदम् रमः",
     padaccheda_dev="उपात् (पञ्चमी-एकवचन) / च",
     why_dev=(
         "उप-पूर्वकस्य रम्-धातोः अपि आत्मनेपदम् — "

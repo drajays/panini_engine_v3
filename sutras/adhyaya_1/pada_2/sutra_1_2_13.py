@@ -75,6 +75,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='vA gamaH',
     text_dev='वा गमः',
+    samagra_slp1="vA gamaH kit Jal liN-sicO Atmanepadezu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="वा गमः कित् झल् लिङ्-सिचौ आत्मनेपदेषु",
     padaccheda_dev="वा /* गम्-आश्रितः सीयुट् / च",
     why_dev=(
         "\\\"√गम्\\\"-परे आशिषि \\\"वा\\\" इति सीयुट्‌ आगमे किद्वन्-आचरणम् (संज्ञा-मात्रम्)।"

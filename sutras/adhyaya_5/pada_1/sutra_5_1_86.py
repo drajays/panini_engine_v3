@@ -4,6 +4,7 @@
 Padaccheda: द्विगोः वा
 
 द्विगोर्वा (5.1.86)
+Pāṭha: ashtadhyayi.com data.txt row i=51086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvigorvA",
     text_dev              = "द्विगोर्वा",
+    samagra_slp1          = "tamaDIzwo Bfto BUto BAvI taTA tena nirvfttam iti samAyAH dvigoH KaH vA",
+    samagra_dev           = "'तमधीष्टो भृतो भूतो भावी' (तथा) 'तेन निर्वृत्तम्' (इति) समायाः द्विगोः खः वा",
     padaccheda_dev        = "द्विगोः वा",
     why_dev               = "(सूत्रम् 5.1.86) द्विगोर्वा।",
     anuvritti_from        = ('5.1.78',),

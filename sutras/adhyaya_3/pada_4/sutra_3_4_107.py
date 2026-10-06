@@ -154,6 +154,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="suw tiToH",
     text_dev="सुट् तिथोः",
+    samagra_slp1="liNaH tiToH suw",
+    samagra_dev="लिङः तिथोः सुट्",
     padaccheda_dev="सुट् / तिथोः",
     why_dev=(
         "आशीर्-लिङि त-थ-प्रारम्भ-तिङ्-आदेशात् पूर्वं सुट्-आगमः — "

@@ -4,6 +4,7 @@
 Padaccheda: दृशेः क्वनिप्
 
 krt-suffix rule: दृशेः क्वनिप् (94)
+Pāṭha: ashtadhyayi.com data.txt row i=32094 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dfSeH kvanip",
     text_dev              = "दृशेः क्वनिप्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte dfSeH kvanip kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते दृशेः क्वनिप् कृत्",
     padaccheda_dev        = "दृशेः क्वनिप्",
     why_dev               = "धातोः कृत्-प्रत्ययः [दृशेः क्वनिप्] विहितः (३.२.94)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: दिष्टि-वितस्त्योः च
 
 दिष्टिवितस्त्योश्च (6.2.31)
+Pāṭha: ashtadhyayi.com data.txt row i=62031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dizwivitastyoSca",
     text_dev              = "दिष्टिवितस्त्योश्च",
+    samagra_slp1          = "dizwi-vitastyoH ca pUrvapadam prakftyA dvigO anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "दिष्टि-वितस्त्योः च पूर्वपदम् प्रकृत्या द्विगौ अन्यतरस्याम्",
     padaccheda_dev        = "दिष्टि-वितस्त्योः च",
     why_dev               = "(सूत्रम् 6.2.31) दिष्टिवितस्त्योश्च।",
     anuvritti_from        = ('6.1.1',),

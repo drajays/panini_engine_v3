@@ -4,6 +4,7 @@
 Padaccheda: कौसल्य-कार्मार्याभ्याम् च
 
 कौसल्यकार्मार्याभ्यां च (4.1.155)
+Pāṭha: ashtadhyayi.com data.txt row i=41155 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kOsalyakArmAryAByAM ca",
     text_dev              = "कौसल्यकार्मार्याभ्यां च",
+    samagra_slp1          = "tasya apatyam iti kOsalya-kArmAryAByAm PiY",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) कौसल्य-कार्मार्याभ्याम् फिञ्",
     padaccheda_dev        = "कौसल्य-कार्मार्याभ्याम् च",
     why_dev               = "(सूत्रम् 4.1.155) कौसल्यकार्मार्याभ्यां च।",
     anuvritti_from        = ('4.1.1',),

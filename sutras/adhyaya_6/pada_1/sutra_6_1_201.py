@@ -4,6 +4,7 @@
 Padaccheda: क्षयः निवासे
 
 क्षयो निवासे (6.1.201)
+Pāṭha: ashtadhyayi.com data.txt row i=61201 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kzayo nivAse",
     text_dev              = "क्षयो निवासे",
+    samagra_slp1          = "kzayaH nivAse udAttaH AdiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "क्षयः निवासे उदात्तः आदिः",
     padaccheda_dev        = "क्षयः निवासे",
     why_dev               = "(सूत्रम् 6.1.201) क्षयो निवासे।",
     anuvritti_from        = ('6.1.1',),

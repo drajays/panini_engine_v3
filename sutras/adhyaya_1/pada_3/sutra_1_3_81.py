@@ -12,6 +12,7 @@ takes ātmanepada endings. For example: pravahate — he carries forward.
 stamp "Atmanepada_1_3_81" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _VAH_ROOTS carries the tag "pra_prefix".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -59,6 +60,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='prAdvahaH',
     text_dev='प्राद्वहः',
+    samagra_slp1="prAt vahaH kartari parasmEpadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="प्रात् वहः कर्तरि परस्मैपदम्",
     padaccheda_dev="प्रात् (पञ्चमी-एकवचन) / वहः (षष्ठी-एकवचन)",
     why_dev=(
         "प्र-पूर्वकस्य वह्-धातोः आत्मनेपदम् — "

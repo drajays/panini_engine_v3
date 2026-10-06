@@ -4,6 +4,7 @@
 Padaccheda: शेवल-सुपरि-विशाल-वरुण-अर्यम-आदीनाम् तृतीयात्
 
 शेवलसुपरिविशालवरुणार्यमादीनां तृतीयात् (5.3.84)
+Pāṭha: ashtadhyayi.com data.txt row i=53084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SevalasupariviSAlavaruRAryamAdInAM tftIyAt",
     text_dev              = "शेवलसुपरिविशालवरुणार्यमादीनां तृतीयात्",
+    samagra_slp1          = "prAtipadikAt anukampAyAm Wa-ajAdO Sevala-supari-viSAla-varuRa-aryamA-AdInAm tftIyAt UrDvamacaH lopaH",
+    samagra_dev           = "प्रातिपदिकात् अनुकम्पायाम् ठ-अजादौ शेवल-सुपरि-विशाल-वरुण-अर्यमा-आदीनाम् तृतीयात् ऊर्ध्वमचः लोपः",
     padaccheda_dev        = "शेवल-सुपरि-विशाल-वरुण-अर्यम-आदीनाम् तृतीयात्",
     why_dev               = "(सूत्रम् 5.3.84) शेवलसुपरिविशालवरुणार्यमादीनां तृतीयात्।",
     anuvritti_from        = ('5.3.70',),

@@ -4,6 +4,7 @@
 Padaccheda: मतोः पूर्वम् आत् संज्ञायाम् स्त्रियाम्
 
 मतोः पूर्वमात् संज्ञायां स्त्रियाम् (6.1.219)
+Pāṭha: ashtadhyayi.com data.txt row i=61219 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "matoH pUrvamAt saMjYAyAM striyAm",
     text_dev              = "मतोः पूर्वमात् संज्ञायां स्त्रियाम्",
+    samagra_slp1          = "matoH pUrvam At saMjYAyAm striyAm udAttaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "मतोः पूर्वम् आत् संज्ञायाम् स्त्रियाम् उदात्तः",
     padaccheda_dev        = "मतोः पूर्वम् आत् संज्ञायाम् स्त्रियाम्",
     why_dev               = "(सूत्रम् 6.1.219) मतोः पूर्वमात् संज्ञायां स्त्रियाम्।",
     anuvritti_from        = ('6.1.1',),

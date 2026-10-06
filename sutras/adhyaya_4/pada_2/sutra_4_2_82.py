@@ -47,6 +47,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='varaRAdiByaSca',
     text_dev='वरणादिभ्यश्च',
+    samagra_slp1="pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA varaRa-AdiByaH ca lup",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा वरण-आदिभ्यः च लुप्",
     padaccheda_dev="वरणादिभ्यः / च",
     why_dev=(
         "वरणाद्यन्ताद् अण्-लुपि चिह्नम् (*prakriya_46*); **4.2.81** इत्यत्र *जनपदे लुप्* पृथक्।"

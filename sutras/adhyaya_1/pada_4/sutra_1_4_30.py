@@ -11,6 +11,7 @@ Example: *mṛttikāyāḥ ghaṭo jāyate* — mṛttikā (clay) is the prakṛ
 
 *Engine:* A Term carrying ``"jani_prakrti"`` (pipeline-set) gets tag ``"apAdAna"``.
 ``cond`` reads only structural semantic tags (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = "janikartuH prakftiH",
     text_dev              = "जनिकर्तुः प्रकृतिः",
+    samagra_slp1          = "janikartuH prakftiH kArakam apAdAnam",
+    samagra_dev           = "जनिकर्तुः प्रकृतिः कारकम् अपादानम्",
     padaccheda_dev        = "जनि-कर्तुः / प्रकृतिः",
     why_dev               = (
         "जनि-धातोः कर्तुः या प्रकृतिः (उपादान-कारणम्) सा अपादान-कारक-संज्ञका — "

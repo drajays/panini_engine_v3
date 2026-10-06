@@ -4,6 +4,7 @@
 Padaccheda: माला-आदीनाम् च
 
 मालाऽऽदीनां च (6.2.88)
+Pāṭha: ashtadhyayi.com data.txt row i=62088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'mAlAdInAM ca',
     text_dev              = 'मालादीनां च',
+    samagra_slp1          = "AdiH udAttaH mAlA-AdInAm ca pUrvapadam prasTe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः माला-आदीनाम् च पूर्वपदम् प्रस्थे",
     padaccheda_dev        = "माला-आदीनाम् च",
     why_dev               = "(सूत्रम् 6.2.88) मालाऽऽदीनां च।",
     anuvritti_from        = ('6.1.1',),

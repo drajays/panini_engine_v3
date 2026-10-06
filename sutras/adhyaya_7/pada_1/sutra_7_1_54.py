@@ -8,6 +8,7 @@
 Reading after anuvṛtti from 6.4.1 (aṅgasya).
 The inserted न् carries the tag 'it_candidate_nut_t' — the ṭ it-marker
 is in the sūtra's śabda, added here so that 1.3.9 knows to delete it.
+Pāṭha: ashtadhyayi.com data.txt row i=71054 (Art. 14).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.gates  import adhikara_in_effect
@@ -79,6 +80,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = "hrasvanadyApo nuw",
     text_dev       = "ह्रस्वनद्यापो नुट्",
+    samagra_slp1   = "hrasva-nadI-ApaH aNgAt Ami nuw",
+    samagra_dev    = "ह्रस्व-नदी-आपः अङ्गात् आमि नुट्",
     padaccheda_dev = "ह्रस्व-नदी-आपाम् नुट्",
     why_dev        = "ह्रस्वान्त-अङ्ग / नदी-आप्-अङ्गात् परस्य आम्-प्रत्ययस्य "
                      "पराद्यौ 'नुट्' आगमः।",

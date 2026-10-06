@@ -4,6 +4,7 @@
 Padaccheda: परौ अवनुपात्यये इणः
 
 krt-suffix rule: परावनुपात्यय इणः
+Pāṭha: ashtadhyayi.com data.txt row i=33038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parAvanupAtyaya iRaH",
     text_dev              = "परावनुपात्यय इणः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm parO avanupAtyaye iRaH kft GaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् परौ अवनुपात्यये इणः कृत् घञ्",
     padaccheda_dev        = "परौ अवनुपात्यये इणः",
     why_dev               = "धातोः प्रत्ययः (३.3.38)।",
     anuvritti_from        = ('3.1.1',),

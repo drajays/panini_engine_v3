@@ -4,6 +4,7 @@
 Padaccheda: असुरस्य स्वम्
 
 असुरस्य स्वम् (4.4.123)
+Pāṭha: ashtadhyayi.com data.txt row i=44123 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "asurasya svam",
     text_dev              = "असुरस्य स्वम्",
+    samagra_slp1          = "asurasya svam iti Candasi saMjYAyAm yat",
+    samagra_dev           = "असुरस्य 'स्वम्' (इति) छन्दसि संज्ञायाम् यत्",
     padaccheda_dev        = "असुरस्य स्वम्",
     why_dev               = "(सूत्रम् 4.4.123) असुरस्य स्वम्।",
     anuvritti_from        = ('4.1.1',),

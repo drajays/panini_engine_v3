@@ -4,6 +4,7 @@
 Padaccheda: परिषदः ण्यः
 
 परिषदो ण्यः (4.4.44)
+Pāṭha: ashtadhyayi.com data.txt row i=44044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parizado RyaH",
     text_dev              = "परिषदो ण्यः",
+    samagra_slp1          = "tat samavAyAn samavEti iti parizadaH RyaH",
+    samagra_dev           = "'तत् समवायान् समवैति' (इति) परिषदः ण्यः",
     padaccheda_dev        = "परिषदः ण्यः",
     why_dev               = "(सूत्रम् 4.4.44) परिषदो ण्यः।",
     anuvritti_from        = ('4.1.1',),

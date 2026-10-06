@@ -4,6 +4,7 @@
 Padaccheda: है-हे-प्रयोगे है-हयोः
 
 हैहेप्रयोगे हैहयोः (8.2.85)
+Pāṭha: ashtadhyayi.com data.txt row i=82085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hEheprayoge hEhayoH",
     text_dev              = "हैहेप्रयोगे हैहयोः",
+    samagra_slp1          = "hE-he-prayoge dUrAt hute vAkyasya hE-he plutaH udAttaH",
+    samagra_dev           = "है-हे-प्रयोगे दूरात् हुते वाक्यस्य है-हे प्लुतः उदात्तः",
     padaccheda_dev        = "है-हे-प्रयोगे है-हयोः",
     why_dev               = "(सूत्रम् 8.2.85) हैहेप्रयोगे हैहयोः।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: शीत-उष्णाभ्याम् कारिणि
 
 शीतोष्णाभ्यां कारिणि (5.2.72)
+Pāṭha: ashtadhyayi.com data.txt row i=52072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SItozRAByAM kAriRi",
     text_dev              = "शीतोष्णाभ्यां कारिणि",
+    samagra_slp1          = "kAriRi iti SIta-uzRAByAm kan",
+    samagra_dev           = "'कारिणि' (इति) शीत-उष्णाभ्याम् कन्",
     padaccheda_dev        = "शीत-उष्णाभ्याम् कारिणि",
     why_dev               = "(सूत्रम् 5.2.72) शीतोष्णाभ्यां कारिणि।",
     anuvritti_from        = ('4.1.82',),

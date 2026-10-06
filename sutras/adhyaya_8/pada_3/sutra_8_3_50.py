@@ -4,6 +4,7 @@
 Padaccheda: कः-करत्-करति-कृधि-कृतेषु अनदितेः
 
 कःकरत्करतिकृधिकृतेष्वनदितेः (8.3.50)
+Pāṭha: ashtadhyayi.com data.txt row i=83050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kaHkaratkaratikfDikftezvanaditeH",
     text_dev              = "कःकरत्करतिकृधिकृतेष्वनदितेः",
+    samagra_slp1          = "padasya pUrvatrAsidDam saMhitAyAm kaH-karat-karati-kfDi-kftezu anaditeH visarjanIyasya kupvoH saH samAse Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् संहितायाम् कः-करत्-करति-कृधि-कृतेषु अनदितेः विसर्जनीयस्य कुप्वोः सः समासे छन्दसि",
     padaccheda_dev        = "कः-करत्-करति-कृधि-कृतेषु अनदितेः",
     why_dev               = "(सूत्रम् 8.3.50) कःकरत्करतिकृधिकृतेष्वनदितेः।",
     anuvritti_from        = ('8.1.1',),

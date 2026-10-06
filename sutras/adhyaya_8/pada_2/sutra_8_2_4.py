@@ -4,6 +4,7 @@
 Padaccheda: उदात्त-स्वरितयोः यणः स्वरितः अनुदात्तस्य
 
 उदात्तस्वरितयोर्यणः स्वरितोऽनुदात्तस्य (8.2.4)
+Pāṭha: ashtadhyayi.com data.txt row i=82004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'udAttasvaritayoryaRaH svaritonudAttasya',
     text_dev              = 'उदात्तस्वरितयोर्यणः स्वरितोऽनुदात्तस्य',
+    samagra_slp1          = "padasya pUrvatrAsidDam udAttasvaritayoH yaRaH svaritaH anudAttasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् उदात्तस्वरितयोः यणः स्वरितः अनुदात्तस्य",
     padaccheda_dev        = "उदात्त-स्वरितयोः यणः स्वरितः अनुदात्तस्य",
     why_dev               = "(सूत्रम् 8.2.4) उदात्तस्वरितयोर्यणः स्वरितोऽनुदात्तस्य।",
     anuvritti_from        = ('8.1.1',),

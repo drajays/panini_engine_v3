@@ -4,6 +4,7 @@
 Padaccheda: अनुदात्तस्य च ऋत्-उपधस्य अन्यतरस्याम्
 
 अनुदात्तस्य चर्दुपधस्यान्यतरस्याम् (6.1.59)
+Pāṭha: ashtadhyayi.com data.txt row i=61059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anudAttasya cardupaDasyAnyatarasyAm",
     text_dev              = "अनुदात्तस्य चर्दुपधस्यान्यतरस्याम्",
+    samagra_slp1          = "anudAttasya ca ft-upaDasya anyatarasyAm upadeSe Jali am akiti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनुदात्तस्य च ऋत्-उपधस्य अन्यतरस्याम् उपदेशे झलि अम् अकिति",
     padaccheda_dev        = "अनुदात्तस्य च ऋत्-उपधस्य अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.1.59) अनुदात्तस्य चर्दुपधस्यान्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

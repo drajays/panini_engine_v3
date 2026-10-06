@@ -4,6 +4,7 @@
 Padaccheda: आदिः चिहण-आदीनाम्
 
 आदिश्चिहणादीनाम् (6.2.125)
+Pāṭha: ashtadhyayi.com data.txt row i=62125 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AdiScihaRAdInAm",
     text_dev              = "आदिश्चिहणादीनाम्",
+    samagra_slp1          = "udAttaH uttarapadAdiH AdiH cihaRAdInAm napuMsake tatpuruze kanTA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः आदिः चिहणादीनाम् नपुंसके तत्पुरुषे कन्था",
     padaccheda_dev        = "आदिः चिहण-आदीनाम्",
     why_dev               = "(सूत्रम् 6.2.125) आदिश्चिहणादीनाम्।",
     anuvritti_from        = ('6.1.1',),

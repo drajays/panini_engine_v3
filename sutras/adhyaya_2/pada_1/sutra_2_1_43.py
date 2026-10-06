@@ -4,6 +4,7 @@
 Padaccheda: कृत्यैः ऋणे
 
 krtya words in rna (debt) context with saptami form tatpurusha.
+Pāṭha: ashtadhyayi.com data.txt row i=21043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kftyErfRe",
     text_dev              = "कृत्यैर्ऋणे",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH kftyEH fRe saptamI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः कृत्यैः ऋणे सप्तमी",
     padaccheda_dev        = "कृत्यैः ऋणे",
     why_dev               = "कृत्यैः ऋणे सप्तम्यन्तस्य सह तत्पुरुषः (२.१.४३)।",
     anuvritti_from        = ('2.1.3',),

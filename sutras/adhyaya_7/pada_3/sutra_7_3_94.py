@@ -4,6 +4,7 @@
 Padaccheda: यङः वा
 
 यङो वा (7.3.94)
+Pāṭha: ashtadhyayi.com data.txt row i=73094 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yaNo vA",
     text_dev              = "यङो वा",
+    samagra_slp1          = "yaNaH aNgAt sArvaDAtuke hali piti Iw vA",
+    samagra_dev           = "यङः अङ्गात् सार्वधातुके हलि पिति ईट् वा",
     padaccheda_dev        = "यङः वा",
     why_dev               = "(सूत्रम् 7.3.94) यङो वा।",
     anuvritti_from        = ('7.1.1',),

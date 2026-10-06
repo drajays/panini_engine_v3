@@ -4,6 +4,7 @@
 Padaccheda: प्रभौ परिवृढः
 
 प्रभौ परिवृढः (7.2.21)
+Pāṭha: ashtadhyayi.com data.txt row i=72021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "praBO parivfQaH",
     text_dev              = "प्रभौ परिवृढः",
+    samagra_slp1          = "aNgasya praBO parivfQaH na iw nizWAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य प्रभौ परिवृढः न इट् निष्ठायाम्",
     padaccheda_dev        = "प्रभौ परिवृढः",
     why_dev               = "(सूत्रम् 7.2.21) प्रभौ परिवृढः।",
     anuvritti_from        = ('7.1.1',),

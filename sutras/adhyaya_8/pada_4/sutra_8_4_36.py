@@ -4,6 +4,7 @@
 Padaccheda: नशेः ष-अन्तस्य
 
 नशेः षान्तस्य (8.4.36)
+Pāṭha: ashtadhyayi.com data.txt row i=84036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "naSeH zAntasya",
     text_dev              = "नशेः षान्तस्य",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm naSeH zAntasya razAByAm na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् नशेः षान्तस्य रषाभ्याम् न",
     padaccheda_dev        = "नशेः ष-अन्तस्य",
     why_dev               = "(सूत्रम् 8.4.36) नशेः षान्तस्य।",
     anuvritti_from        = ('8.1.1',),

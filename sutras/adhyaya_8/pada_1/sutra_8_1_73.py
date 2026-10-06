@@ -11,6 +11,7 @@ Narrow v3:
     **8.1.19** (*padāt parasmāt*) can apply to ``jaWilaka`` / ``aDyApaka``.
 
 No *svara* columns on ``Varna`` rows.
+Pāṭha: ashtadhyayi.com data.txt row i=81073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -48,6 +49,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.PRATISHEDHA,
     text_slp1='nAmantrite samAnADikaraRe sAmAnyavacanam',
     text_dev='नामन्त्रिते समानाधिकरणे सामान्यवचनम्',
+    samagra_slp1="padasya anudAttaM sarvamApAdAdO na Amantrite samAnADikaraRe sAmAnyavacanam Amantritam pUrvam avidyamAnavat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="पदस्य अनुदात्तं सर्वमापादादौ न आमन्त्रिते समानाधिकरणे सामान्यवचनम् आमन्त्रितम् पूर्वम् अविद्यमानवत्",
     padaccheda_dev="न आमन्त्रिते / समानाधिकरणे / सामान्यवचनम्",
     why_dev="समानाधिकरणे आमन्त्रितेषु **८.१.७२** अप्रवृत्तिः (*prakriya_32*)।",
     anuvritti_from=(),

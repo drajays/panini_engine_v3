@@ -2,7 +2,7 @@
 1.1.57  अचः परस्मिन् पूर्वविधौ  —  PARIBHASHA
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=101057
+- ashtadhyayi.com data.txt row i=11057
 - Kāśikā: अचः परस्मिन् पूर्वविधौ (लोपितस्य अचः स्थानिवत्-भावः)
 - Cross-validation: tests/unit/test_kathi_kath_nic.py (lupta *a* blocks **7.2.116**);
   tests/unit/test_agaty_gam_lyap_acah_lesson.py (lupta *m* does **not** block **6.1.71**);
@@ -34,6 +34,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.ATIDESHA,
     text_slp1='acaH parasmin pUrvaviDO',
     text_dev='अचः परस्मिन् पूर्वविधौ',
+    samagra_slp1="acaH AdeSaH parasmin pUrvaviDO sTAnivat",
+    samagra_dev="अचः आदेशः परस्मिन् पूर्वविधौ स्थानिवत्",
     padaccheda_dev="अचः / परस्मिन् / पूर्वविधौ",
     why_dev="पूर्वविधि-लोपितस्य अचः स्थानिवत्-भावः (P025)।",
     anuvritti_from=(),

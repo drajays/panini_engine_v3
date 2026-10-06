@@ -4,6 +4,7 @@
 Padaccheda: क्षुल्लकः च वैश्वदेवे
 
 क्षुल्लकश्च वैश्वदेवे (6.2.39)
+Pāṭha: ashtadhyayi.com data.txt row i=62039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kzullakaSca vESvadeve",
     text_dev              = "क्षुल्लकश्च वैश्वदेवे",
+    samagra_slp1          = "kzullakaH ca vESvadeve prakftyA pUrvapadam mahAn",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "क्षुल्लकः च वैश्वदेवे प्रकृत्या पूर्वपदम् महान्",
     padaccheda_dev        = "क्षुल्लकः च वैश्वदेवे",
     why_dev               = "(सूत्रम् 6.2.39) क्षुल्लकश्च वैश्वदेवे।",
     anuvritti_from        = ('6.1.1',),

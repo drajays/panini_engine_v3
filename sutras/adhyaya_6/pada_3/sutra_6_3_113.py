@@ -4,6 +4,7 @@
 Padaccheda: साढ्यै साढ्वा साढा इति निगमे
 
 साढ्यै साढ्वा साढेति निगमे (6.3.113)
+Pāṭha: ashtadhyayi.com data.txt row i=63113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sAQyE sAQvA sAQeti nigame",
     text_dev              = "साढ्यै साढ्वा साढेति निगमे",
+    samagra_slp1          = "uttarapade sAQyE sAQvA sAQA iti nigame dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे साढ्यै साढ्वा साढा इति निगमे दीर्घः",
     padaccheda_dev        = "साढ्यै साढ्वा साढा इति निगमे",
     why_dev               = "(सूत्रम् 6.3.113) साढ्यै साढ्वा साढेति निगमे।",
     anuvritti_from        = ('6.1.1',),

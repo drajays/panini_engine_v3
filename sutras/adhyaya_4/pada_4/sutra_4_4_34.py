@@ -4,6 +4,7 @@
 Padaccheda: शब्द-दर्दुरम् करोति (क्रियापदम्)
 
 शब्ददर्दुरं करोति (4.4.34)
+Pāṭha: ashtadhyayi.com data.txt row i=44034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SabdadarduraM karoti",
     text_dev              = "शब्ददर्दुरं करोति",
+    samagra_slp1          = "tat SabdadarduraM karoti iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् शब्ददर्दुरं करोति' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "शब्द-दर्दुरम् करोति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.34) शब्ददर्दुरं करोति।",
     anuvritti_from        = ('4.1.1',),

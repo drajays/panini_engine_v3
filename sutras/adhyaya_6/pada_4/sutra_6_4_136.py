@@ -4,6 +4,7 @@
 Padaccheda: विभाषा ङि-श्योः
 
 विभाषा ङिश्योः (6.4.136)
+Pāṭha: ashtadhyayi.com data.txt row i=64136 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA NiSyoH",
     text_dev              = "विभाषा ङिश्योः",
+    samagra_slp1          = "anaH Basya aNgasya at NiSyoH viBAzA lopaH",
+    samagra_dev           = "अनः भस्य अङ्गस्य अत् ङिश्योः विभाषा लोपः",
     padaccheda_dev        = "विभाषा ङि-श्योः",
     why_dev               = "(सूत्रम् 6.4.136) विभाषा ङिश्योः।",
     anuvritti_from        = ('6.1.1',),

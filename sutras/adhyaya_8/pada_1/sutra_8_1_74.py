@@ -4,6 +4,7 @@
 Padaccheda: विभाषितम् (सामान्यवचनम् ) विशेषवचने (बहुवचनम्)
 
 विभाषितं विशेषवचने बहुवचनम् (8.1.74)
+Pāṭha: ashtadhyayi.com data.txt row i=81074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzitaM viSezavacane bahuvacanam",
     text_dev              = "विभाषितं विशेषवचने बहुवचनम्",
+    samagra_slp1          = "padasya anudAttaM sarvamApAdAdO viBAzitam viSezavacane bahuvacanam Amantritam pUrvam avidyamAnavat Amantrite samAnADikaraRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य अनुदात्तं सर्वमापादादौ विभाषितम् विशेषवचने बहुवचनम् आमन्त्रितम् पूर्वम् अविद्यमानवत् आमन्त्रिते समानाधिकरणे",
     padaccheda_dev        = "विभाषितम् (सामान्यवचनम् ) विशेषवचने (बहुवचनम्)",
     why_dev               = "(सूत्रम् 8.1.74) विभाषितं विशेषवचने बहुवचनम्।",
     anuvritti_from        = ('8.1.1',),

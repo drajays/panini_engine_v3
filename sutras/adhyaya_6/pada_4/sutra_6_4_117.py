@@ -4,6 +4,7 @@
 Padaccheda: आ (लुप्तप्रथमान्तनिर्देशः) च हौ
 
 आ च हौ (6.4.117)
+Pāṭha: ashtadhyayi.com data.txt row i=64117 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "A ca hO",
     text_dev              = "आ च हौ",
+    samagra_slp1          = "jahAteH aNgasya A it anyatarasyAm hO",
+    samagra_dev           = "जहातेः अङ्गस्य आ, इत् अन्यतरस्याम् हौ",
     padaccheda_dev        = "आ (लुप्तप्रथमान्तनिर्देशः) च हौ",
     why_dev               = "(सूत्रम् 6.4.117) आ च हौ।",
     anuvritti_from        = ('6.1.1',),

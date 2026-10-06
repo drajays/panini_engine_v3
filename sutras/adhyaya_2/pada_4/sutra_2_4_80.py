@@ -4,6 +4,7 @@
 Padaccheda: मन्त्रे घस-ह्वर-णश-वृ-दह-आत्-वृच्-कृ-गमि-जनिभ्यः लेः
 
 luk of le in mantra after ghasa, hvr, at, vrc, kr, gami, jani.
+Pāṭha: ashtadhyayi.com data.txt row i=24080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mantre GasahvaraRaSavfdahAdvfckfgamijaniByo leH",
     text_dev              = "मन्त्रे घसह्वरणशवृदहाद्वृच्कृगमिजनिभ्यो लेः",
+    samagra_slp1          = "mantre Gasa-hvara-RaSa-vf-daha-At-vfc-kf-gami-janiByaH leH luk",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "मन्त्रे घस-ह्वर-णश-वृ-दह-आत्-वृच्-कृ-गमि-जनिभ्यः लेः लुक्",
     padaccheda_dev        = "मन्त्रे घस-ह्वर-णश-वृ-दह-आत्-वृच्-कृ-गमि-जनिभ्यः लेः",
     why_dev               = "मन्त्रे घस-ह्वर-आत्-वृच्-कृ-गमि-जनिभ्यः लेः (२.४.८०)।",
     anuvritti_from        = ('2.4.72',),

@@ -4,6 +4,7 @@
 Padaccheda: कॄ (लुप्तपञ्चम्यन्तनिर्देशः) धान्ये
 
 krt-suffix rule: कॄ धान्ये
+Pāṭha: ashtadhyayi.com data.txt row i=33030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kF DAnye",
     text_dev              = "कॄ धान्ये",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm kF DAnye kft GaY unnyoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् कॄ धान्ये कृत् घञ् उन्न्योः",
     padaccheda_dev        = "कॄ (लुप्तपञ्चम्यन्तनिर्देशः) धान्ये",
     why_dev               = "धातोः प्रत्ययः (३.3.30)।",
     anuvritti_from        = ('3.1.1',),

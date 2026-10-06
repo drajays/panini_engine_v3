@@ -4,6 +4,7 @@
 Padaccheda: प्रतिजनादिभ्यः खञ्
 
 प्रतिजनादिभ्यः खञ् (4.4.99)
+Pāṭha: ashtadhyayi.com data.txt row i=44099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pratijanAdiByaH KaY",
     text_dev              = "प्रतिजनादिभ्यः खञ्",
+    samagra_slp1          = "tatra sADuH iti pratijanAdiByaH saMjYAyAm KaY",
+    samagra_dev           = "'तत्र साधुः' इति प्रतिजनादिभ्यः संज्ञायाम् खञ्",
     padaccheda_dev        = "प्रतिजनादिभ्यः खञ्",
     why_dev               = "(सूत्रम् 4.4.99) प्रतिजनादिभ्यः खञ्।",
     anuvritti_from        = ('4.1.1',),

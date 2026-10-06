@@ -4,6 +4,7 @@
 Padaccheda: सः अस्य निवासः
 
 सोऽस्य निवासः (4.3.89)
+Pāṭha: ashtadhyayi.com data.txt row i=43089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sosya nivAsaH',
     text_dev              = 'सोऽस्य निवासः',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA saH asya nivAsaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा सः अस्य निवासः",
     padaccheda_dev        = "सः अस्य निवासः",
     why_dev               = "(सूत्रम् 4.3.89) सोऽस्य निवासः।",
     anuvritti_from        = ('4.1.1',),

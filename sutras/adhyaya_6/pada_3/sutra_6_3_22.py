@@ -4,6 +4,7 @@
 Padaccheda: पुत्रे अन्यतरस्याम्
 
 पुत्रेऽन्यतरस्याम् (6.3.22)
+Pāṭha: ashtadhyayi.com data.txt row i=63022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'putrenyatarasyAm',
     text_dev              = 'पुत्रेऽन्यतरस्याम्',
+    samagra_slp1          = "alug uttarapade putre anyatarasyAm AkroSe zazWyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे पुत्रे अन्यतरस्याम् आक्रोशे षष्ठ्या",
     padaccheda_dev        = "पुत्रे अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.3.22) पुत्रेऽन्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

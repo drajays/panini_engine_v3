@@ -4,6 +4,7 @@
 Padaccheda: संज्ञायाम् उपमानम्
 
 संज्ञायामुपमानम् (6.1.204)
+Pāṭha: ashtadhyayi.com data.txt row i=61204 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYAyAmupamAnam",
     text_dev              = "संज्ञायामुपमानम्",
+    samagra_slp1          = "saMjYAyAm upamAnam udAttaH AdiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संज्ञायाम् उपमानम् उदात्तः आदिः",
     padaccheda_dev        = "संज्ञायाम् उपमानम्",
     why_dev               = "(सूत्रम् 6.1.204) संज्ञायामुपमानम्।",
     anuvritti_from        = ('6.1.1',),

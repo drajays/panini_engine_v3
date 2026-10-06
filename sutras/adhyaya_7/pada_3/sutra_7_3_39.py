@@ -4,6 +4,7 @@
 Padaccheda: ली-लोः नुक्-लुकौ अन्यतरस्याम् स्नेहविपातने
 
 लीलोर्नुग्लुकावन्यतरस्यां स्नेहविपातने (7.3.39)
+Pāṭha: ashtadhyayi.com data.txt row i=73039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lIlornuglukAvanyatarasyAM snehavipAtane",
     text_dev              = "लीलोर्नुग्लुकावन्यतरस्यां स्नेहविपातने",
+    samagra_slp1          = "aNgasya lIloH nuglukO anyatarasyAm snehavipAtane RO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य लीलोः नुग्लुकौ अन्यतरस्याम् स्नेहविपातने णौ",
     padaccheda_dev        = "ली-लोः नुक्-लुकौ अन्यतरस्याम् स्नेहविपातने",
     why_dev               = "(सूत्रम् 7.3.39) लीलोर्नुग्लुकावन्यतरस्यां स्नेहविपातने।",
     anuvritti_from        = ('7.1.1',),

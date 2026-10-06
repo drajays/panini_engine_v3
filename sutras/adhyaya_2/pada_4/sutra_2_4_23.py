@@ -4,6 +4,7 @@
 Padaccheda: सभा राजा-अमनुष्यपूर्वा
 
 Sabha when preceded by raja or non-human.
+Pāṭha: ashtadhyayi.com data.txt row i=24023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'saBA rAjAmanuzyapUrvA',
     text_dev              = 'सभा राजामनुष्यपूर्वा',
+    samagra_slp1          = "tatpuruzonaYkarmaDArayaH saBA rAja-a-manuzya-pUrvA napuMsakam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तत्पुरुषोऽनञ्कर्मधारयः सभा राज-अ-मनुष्य-पूर्वा नपुंसकम्",
     padaccheda_dev        = "सभा राजा-अमनुष्यपूर्वा",
     why_dev               = "राजा-अमनुष्यपूर्वा सभा (२.४.२३)।",
     anuvritti_from        = ('2.4.18',),

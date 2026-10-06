@@ -4,6 +4,7 @@
 Padaccheda: रेवती-आदिभ्यः ठक्
 
 रेवत्यादिभ्यष्ठक् (4.1.146)
+Pāṭha: ashtadhyayi.com data.txt row i=41146 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "revatyAdiByazWak",
     text_dev              = "रेवत्यादिभ्यष्ठक्",
+    samagra_slp1          = "tasya apatyam iti revatyAdiByaH Wak",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) रेवत्यादिभ्यः ठक्",
     padaccheda_dev        = "रेवती-आदिभ्यः ठक्",
     why_dev               = "(सूत्रम् 4.1.146) रेवत्यादिभ्यष्ठक्।",
     anuvritti_from        = ('4.1.1',),

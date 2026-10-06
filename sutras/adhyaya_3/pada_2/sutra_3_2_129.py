@@ -4,6 +4,7 @@
 Padaccheda: ताच्छील्य-वयोवचन-शक्तिषु चानश्
 
 krt-suffix rule: ताच्छील्यवयोवचनशक्तिषु चानश् (129)
+Pāṭha: ashtadhyayi.com data.txt row i=32129 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tAcCIlyavayovacanaSaktizu cAnaS",
     text_dev              = "ताच्छील्यवयोवचनशक्तिषु चानश्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne tAcCIlya-vayovacana-Saktizu cAnaS kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने ताच्छील्य-वयोवचन-शक्तिषु चानश् कृत्",
     padaccheda_dev        = "ताच्छील्य-वयोवचन-शक्तिषु चानश्",
     why_dev               = "धातोः कृत्-प्रत्ययः [ताच्छील्यवयोवचनशक्तिषु चानश्] विहितः (३.२.129)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

@@ -4,6 +4,7 @@
 Padaccheda: पूङः च
 
 पूङश्च (7.2.51)
+Pāṭha: ashtadhyayi.com data.txt row i=72051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUNaSca",
     text_dev              = "पूङश्च",
+    samagra_slp1          = "aNgasya pUNaH ca valAdeH iw ArDaDAtukasya vA ktvAnizWayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य पूङः च वलादेः इट् आर्धधातुकस्य वा क्त्वानिष्ठयोः",
     padaccheda_dev        = "पूङः च",
     why_dev               = "(सूत्रम् 7.2.51) पूङश्च।",
     anuvritti_from        = ('7.1.1',),

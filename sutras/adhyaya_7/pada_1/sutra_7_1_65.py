@@ -4,6 +4,7 @@
 Padaccheda: आङः यि
 
 आङो यि (7.1.65)
+Pāṭha: ashtadhyayi.com data.txt row i=71065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ANo yi",
     text_dev              = "आङो यि",
+    samagra_slp1          = "ANo laBeH yi num",
+    samagra_dev           = "आङो लभेः यि नुम्",
     padaccheda_dev        = "आङः यि",
     why_dev               = "(सूत्रम् 7.1.65) आङो यि।",
     anuvritti_from        = ('7.1.1',),

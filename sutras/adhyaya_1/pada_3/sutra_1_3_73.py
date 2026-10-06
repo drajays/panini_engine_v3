@@ -16,6 +16,7 @@ does NOT take ātmanepada endings — even when the general ātmanepada rules
 upadesha_slp1 is in _VAD_ROOTS carries the tag "apa_prefix". act sets
 pada = "Parasmaipada" and writes to niyama_gates. No arm flags
 (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -64,6 +65,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="apAdvadaH",
     text_dev="अपाद्वदः",
+    samagra_slp1="apAt vadaH Atmanepadam kartraBiprAye kriyAPale",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अपात् वदः आत्मनेपदम् कर्त्रभिप्राये क्रियाफले",
     padaccheda_dev="अपात् (पञ्चमी-एकवचन) / वदः (षष्ठी-एकवचन)",
     why_dev=(
         "अप-पूर्वकस्य वद्-धातोः आत्मनेपदं न भवति — apavadati (न *apavadate); "

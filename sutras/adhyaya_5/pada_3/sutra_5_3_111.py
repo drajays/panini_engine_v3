@@ -4,6 +4,7 @@
 Padaccheda: प्रत्न-पूर्व-विश्व-इमात् थाल् छन्दसि
 
 प्रत्नपूर्वविश्वेमात्थाल् छन्दसि (5.3.111)
+Pāṭha: ashtadhyayi.com data.txt row i=53111 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pratnapUrvaviSvemAtTAl Candasi",
     text_dev              = "प्रत्नपूर्वविश्वेमात्थाल् छन्दसि",
+    samagra_slp1          = "pratna-pUrva-viSva-imAt ive Candasi TAl",
+    samagra_dev           = "प्रत्न-पूर्व-विश्व-इमात् इवे छन्दसि थाल्",
     padaccheda_dev        = "प्रत्न-पूर्व-विश्व-इमात् थाल् छन्दसि",
     why_dev               = "(सूत्रम् 5.3.111) प्रत्नपूर्वविश्वेमात्थाल् छन्दसि।",
     anuvritti_from        = ('4.1.76',),

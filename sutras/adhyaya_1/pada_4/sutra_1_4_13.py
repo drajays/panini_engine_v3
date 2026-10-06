@@ -11,6 +11,7 @@ is already *aṅga*-*tag*ged, **1.4.13** registers the *aṅga* relation in the
 same *registry* *slot*.  **Case C:** ``prakriya_itika_phak`` (``pipelines/taddhita_itika_etikAyana``) —
 same pattern as Case B.  **Case D:** ``prakriya_matup_asti`` — *go* + *matup* style
 ``[prātipadika, taddhita]`` after **2.4.71** *luk* (``pipelines/gomAn_prathamA_go_matup``).
+Pāṭha: ashtadhyayi.com data.txt row i=14013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -88,6 +89,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'yasmAt pratyayaviDistadAdi pratyayeNgam',
     text_dev       = 'यस्मात् प्रत्ययविधिस्तदादि प्रत्ययेऽङ्गम्',
+    samagra_slp1   = "yasmAt pratyayaviDiH tadAdi pratyaye aNgam ",
+    samagra_dev    = "यस्मात् प्रत्ययविधिः तदादि प्रत्यये अङ्गम् ।",
     padaccheda_dev = "यस्मात् प्रत्यय-विधिः तदादि प्रत्यये अङ्गम्",
     why_dev        = "प्रत्यय-विधेर् यस्मात् तदादि प्रत्यये यत् तद् अङ्गम्।",
     anuvritti_from = ("1.4.1",),

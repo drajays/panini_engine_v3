@@ -11,6 +11,7 @@ devadatta is kartā in the causative.
 
 *Engine:* tags bearing ``"gati_buddhi_NI_kartf"`` get ``"kartf"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'gatibudDipratyavasAnArTaSabdakarmAkarmakARAmaRi kartA sa RO',
     text_dev             = 'गतिबुद्धिप्रत्यवसानार्थशब्दकर्माकर्मकाणामणि कर्ता स णौ',
+    samagra_slp1         = "gati-budDi-pratyavasAnArTa-Sabdakarma-akarmakARAma-Ri kartA saH RO karma",
+    samagra_dev          = "गति-बुद्धि-प्रत्यवसानार्थ-शब्दकर्म-अकर्मकाणाम-णि कर्ता सः णौ कर्म",
     padaccheda_dev       = "गति-बुद्धि-प्रत्यवसान-अर्थ-शब्द-कर्म-अकर्मकाणाम् / अणि / कर्ता / सः / णौ",
     why_dev              = (
         "गति-बुद्धि-आदि-धातूनां णि-प्रयोगे यः कर्ता (प्रयोज्यः) स कर्तृ-कारक-संज्ञकः। "

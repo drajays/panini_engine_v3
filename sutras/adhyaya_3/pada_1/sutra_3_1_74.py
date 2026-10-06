@@ -13,6 +13,7 @@ Citation (CONSTITUTION Art. 14)
 Engine: ``cond`` reads the root's lexical identity (श्रु = upadeśa ``Sru``, the name the sūtra gives) and a śap vikaraṇa on the
 tape. The śnu Term replaces śap (as 3.1.73 does) and carries ``kngiti`` (apit sārvadhātuka); the root is replaced as a whole
 (sarvādeśa, 1.1.55) and keeps dhātutva / aṅgatva (1.1.56).
+Pāṭha: ashtadhyayi.com data.txt row i=31074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -55,6 +56,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="SruvaH Sf ca",
     text_dev="श्रुवः शृ च",
+    samagra_slp1="karttari sArvaDAtuke SruvaH DAtoH paraH SnuH pratyayaH SfH ca",
+    samagra_dev="कर्त्तरि सार्वधातुके श्रुवः धातोः परः श्नुः प्रत्ययः, शृः च",
     padaccheda_dev="श्रुवः शृ च",
     why_dev="शप् के विषय में भ्वादि श्रु से श्नु प्रत्यय, और श्रु को शृ आदेश (शृणोति)।",
     anuvritti_from=("3.1.73", "3.1.68"),

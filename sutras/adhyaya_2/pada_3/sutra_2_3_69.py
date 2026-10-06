@@ -4,6 +4,7 @@
 Padaccheda: न ल-उ-उक-अव्यय-निष्ठा-खल्-अर्थतृनाम्
 
 NOT for luk, avyaya, nistha, khal, artha-trn.
+Pāṭha: ashtadhyayi.com data.txt row i=23069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na lokAvyayanizWAKalarTatfnAm",
     text_dev              = "न लोकाव्ययनिष्ठाखलर्थतृनाम्",
+    samagra_slp1          = "anaBihite na la-u-uka-avyaya-nizWA-KalarTa-tfnAm zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते न ल-उ-उक-अव्यय-निष्ठा-खलर्थ-तृनाम् षष्ठी",
     padaccheda_dev        = "न ल-उ-उक-अव्यय-निष्ठा-खल्-अर्थतृनाम्",
     why_dev               = "न लक-अव्यय-निष्ठा-खल्-अर्थतृनाम् (२.३.६९)।",
     anuvritti_from        = ('2.3.65',),

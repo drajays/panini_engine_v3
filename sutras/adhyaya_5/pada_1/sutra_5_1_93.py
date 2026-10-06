@@ -4,6 +4,7 @@
 Padaccheda: तेन परिजय्य-लभ्य-कार्य-सुकरम्
 
 तेन परिजय्यलभ्यकार्यसुकरम् (5.1.93)
+Pāṭha: ashtadhyayi.com data.txt row i=51093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tena parijayyalaByakAryasukaram",
     text_dev              = "तेन परिजय्यलभ्यकार्यसुकरम्",
+    samagra_slp1          = "tena parijayya-laBya-kArya-sukaram iti samarTAnAM praTamAt kAlAt paraH WaY pratyayaH",
+    samagra_dev           = "'तेन परिजय्य-लभ्य-कार्य-सुकरम्' (इति) समर्थानां प्रथमात् कालात् परः ठञ् प्रत्ययः",
     padaccheda_dev        = "तेन परिजय्य-लभ्य-कार्य-सुकरम्",
     why_dev               = "(सूत्रम् 5.1.93) तेन परिजय्यलभ्यकार्यसुकरम्।",
     anuvritti_from        = ('5.1.78',),

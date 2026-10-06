@@ -4,6 +4,7 @@
 Padaccheda: रुक्-रिकौ च लुकि
 
 रुग्रिकौ च लुकि (7.4.91)
+Pāṭha: ashtadhyayi.com data.txt row i=74091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rugrikO ca luki",
     text_dev              = "रुग्रिकौ च लुकि",
+    samagra_slp1          = "aNgasya aByAsasya rugrikO ca luki fdupaDasya rIk",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य रुग्रिकौ च लुकि ऋदुपधस्य रीक्",
     padaccheda_dev        = "रुक्-रिकौ च लुकि",
     why_dev               = "(सूत्रम् 7.4.91) रुग्रिकौ च लुकि।",
     anuvritti_from        = ('7.1.1',),

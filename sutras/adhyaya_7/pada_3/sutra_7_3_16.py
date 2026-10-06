@@ -4,6 +4,7 @@
 Padaccheda: वर्षस्य अभविष्यति
 
 वर्षस्याभविष्यति (7.3.16)
+Pāṭha: ashtadhyayi.com data.txt row i=73016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "varzasyABavizyati",
     text_dev              = "वर्षस्याभविष्यति",
+    samagra_slp1          = "aNgasya uttarapadasya varzasya aBavizyati vfdDiH YRiti acaH tadDitezu AdeH SvAdeH saMKyAyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य वर्षस्य अभविष्यति वृद्धिः ञ्णिति अचः तद्धितेषु आदेः श्वादेः संख्यायाः",
     padaccheda_dev        = "वर्षस्य अभविष्यति",
     why_dev               = "(सूत्रम् 7.3.16) वर्षस्याभविष्यति।",
     anuvritti_from        = ('7.1.1',),

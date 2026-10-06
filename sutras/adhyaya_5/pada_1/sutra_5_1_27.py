@@ -4,6 +4,7 @@
 Padaccheda: शतमान-विंशतिक-सहस्र-वसनात् अण्
 
 शतमानविंशतिकसहस्रवसनादण् (5.1.27)
+Pāṭha: ashtadhyayi.com data.txt row i=51027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SatamAnaviMSatikasahasravasanAdaR",
     text_dev              = "शतमानविंशतिकसहस्रवसनादण्",
+    samagra_slp1          = "A-arhAt SatamAna-viMSatika-sahasra-vasanAt aR",
+    samagra_dev           = "आ-अर्हात् शतमान-विंशतिक-सहस्र-वसनात् अण्",
     padaccheda_dev        = "शतमान-विंशतिक-सहस्र-वसनात् अण्",
     why_dev               = "(सूत्रम् 5.1.27) शतमानविंशतिकसहस्रवसनादण्।",
     anuvritti_from        = ('5.1.19',),

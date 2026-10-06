@@ -4,6 +4,7 @@
 Padaccheda: निष्ठा च द्वि-अच् अन्-आत्
 
 निष्ठा च द्व्यजनात् (6.1.205)
+Pāṭha: ashtadhyayi.com data.txt row i=61205 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nizWA ca dvyajanAt",
     text_dev              = "निष्ठा च द्व्यजनात्",
+    samagra_slp1          = "nizWA ca dv-yac anAt udAttaH AdiH saMjYAyAm upamAnam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "निष्ठा च द्व्-यच् अनात् उदात्तः आदिः संज्ञायाम् उपमानम्",
     padaccheda_dev        = "निष्ठा च द्वि-अच् अन्-आत्",
     why_dev               = "(सूत्रम् 6.1.205) निष्ठा च द्व्यजनात्।",
     anuvritti_from        = ('6.1.1',),

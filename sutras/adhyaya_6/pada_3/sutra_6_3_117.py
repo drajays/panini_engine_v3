@@ -4,6 +4,7 @@
 Padaccheda: वन-गिर्योः संज्ञायाम् कोटर-किंशुलक-आदीनाम्
 
 वनगिर्योः संज्ञायां कोटरकिंशुलकादीनाम् (6.3.117)
+Pāṭha: ashtadhyayi.com data.txt row i=63117 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vanagiryoH saMjYAyAM kowarakiMSulakAdInAm",
     text_dev              = "वनगिर्योः संज्ञायां कोटरकिंशुलकादीनाम्",
+    samagra_slp1          = "uttarapade saMhitAyAm vana-giryoH saMjYAyAm kowara-kiMSulakAdInAm dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् वन-गिर्योः संज्ञायाम् कोटर-किंशुलकादीनाम् दीर्घः",
     padaccheda_dev        = "वन-गिर्योः संज्ञायाम् कोटर-किंशुलक-आदीनाम्",
     why_dev               = "(सूत्रम् 6.3.117) वनगिर्योः संज्ञायां कोटरकिंशुलकादीनाम्।",
     anuvritti_from        = ('6.1.1',),

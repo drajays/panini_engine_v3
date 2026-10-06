@@ -17,6 +17,7 @@ Engine implementation:
     • replace pratyaya varnas with parse("at")
     • set upadesha_slp1 = "at"
     • mark "7_1_32_done"
+Pāṭha: ashtadhyayi.com data.txt row i=71032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -71,6 +72,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ekavacanasya ca",
     text_dev              = "एकवचनस्य च",
+    samagra_slp1          = "aNgasya ekavacanasya ca yuzmad-asmadByAm paYcamyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य एकवचनस्य च युष्मद्-अस्मद्भ्याम् पञ्चम्याः",
     padaccheda_dev        = "एकवचनस्य च",
     why_dev               = "अस्मद्-शब्दयोः पञ्चमी-एकवचने ङसि-प्रत्ययस्य स्थाने अत् "
                             "(सूत्रम् ७.१.३२ एकवचनस्य च)।",

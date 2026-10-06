@@ -4,6 +4,7 @@
 Padaccheda: नक्षत्रे च लुपि
 
 Nakshatra with lup also takes saptami.
+Pāṭha: ashtadhyayi.com data.txt row i=23045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nakzatre ca lupi",
     text_dev              = "नक्षत्रे च लुपि",
+    samagra_slp1          = "anaBihite nakzatre ca lupi saptamI tftIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते नक्षत्रे च लुपि सप्तमी तृतीया",
     padaccheda_dev        = "नक्षत्रे च लुपि",
     why_dev               = "नक्षत्रे च लुपि (२.३.४५)।",
     anuvritti_from        = ('2.3.36',),

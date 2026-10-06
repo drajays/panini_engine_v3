@@ -4,6 +4,7 @@
 Padaccheda: लिति
 
 लिति (6.1.193)
+Pāṭha: ashtadhyayi.com data.txt row i=61193 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "liti",
     text_dev              = "लिति",
+    samagra_slp1          = "liti pratyayAt pUrvamudAttaH",
+    samagra_dev           = "लिति प्रत्ययात् पूर्वमुदात्तः",
     padaccheda_dev        = "लिति",
     why_dev               = "(सूत्रम् 6.1.193) लिति।",
     anuvritti_from        = ('6.1.1',),

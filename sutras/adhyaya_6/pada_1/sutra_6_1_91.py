@@ -4,6 +4,7 @@
 Padaccheda: उपसर्गात् ऋति धातौ
 
 उपसर्गादृति धातौ (6.1.91)
+Pāṭha: ashtadhyayi.com data.txt row i=61091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'upasargAdfti DAtO',
     text_dev              = 'उपसर्गादृति धातौ',
+    samagra_slp1          = "At upasargAt fti DAtO pUrvaparayoH ekaH vfdDiH",
+    samagra_dev           = "आत् उपसर्गात् ऋति धातौ पूर्वपरयोः एकः वृद्धिः",
     padaccheda_dev        = "उपसर्गात् ऋति धातौ",
     why_dev               = "(सूत्रम् 6.1.91) उपसर्गादृति धातौ।",
     apavada_of     = ("6.1.87",),   # अपवाद of 6.1.87 — sutra_ref_out resolver.apavada_of

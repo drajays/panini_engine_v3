@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि उभयथा
 
 छन्दस्युभयथा (6.4.5)
+Pāṭha: ashtadhyayi.com data.txt row i=64005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "CandasyuBayaTA",
     text_dev              = "छन्दस्युभयथा",
+    samagra_slp1          = "aNgasya nAmi Candasi dIrGaH uBayaTA ",
+    samagra_dev           = "अङ्गस्य नामि छन्दसि दीर्घः उभयथा ।",
     padaccheda_dev        = "छन्दसि उभयथा",
     why_dev               = "(सूत्रम् 6.4.5) छन्दस्युभयथा।",
     anuvritti_from        = ('6.1.1',),

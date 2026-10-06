@@ -4,6 +4,7 @@
 Padaccheda: सत्-सू-द्विष-द्रुह-दुह-युज-विद-भिद-च्छिद-जि-नी-राजाम् उपसर्गे अपि क्विँप्
 
 krt-suffix rule: सत्सूद्विषद्रुहदुहयुजविदभिदच्छिदजिनीराजामुपसर्गेऽपि क्विप् (61)
+Pāṭha: ashtadhyayi.com data.txt row i=32061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'satsUdvizadruhaduhayujavidaBidacCidajinIrAjAmupasargepi kvip',
     text_dev              = 'सत्सूद्विषद्रुहदुहयुजविदभिदच्छिदजिनीराजामुपसर्गेऽपि क्विप्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH sat-sU-dviza-druha-duha-yuja-vida-Bida-cCida-ji-nI-rAjAm upasarge api kvip kft supi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः सत्-सू-द्विष-द्रुह-दुह-युज-विद-भिद-च्छिद-जि-नी-राजाम् उपसर्गे अपि क्विप् कृत् सुपि",
     padaccheda_dev        = "सत्-सू-द्विष-द्रुह-दुह-युज-विद-भिद-च्छिद-जि-नी-राजाम् उपसर्गे अपि क्विँप्",
     why_dev               = "धातोः कृत्-प्रत्ययः [सत्सूद्विषद्रुहदुहयुजविदभिदच्छिदजिनीराजामुपसर्गेऽपि क्विप्] विहितः (३.२.61)।",
     anuvritti_from        = ('3.1.1',),

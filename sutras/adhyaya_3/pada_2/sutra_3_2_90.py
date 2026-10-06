@@ -4,6 +4,7 @@
 Padaccheda: सोमे सुञः
 
 krt-suffix rule: सोमे सुञः (90)
+Pāṭha: ashtadhyayi.com data.txt row i=32090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "some suYaH",
     text_dev              = "सोमे सुञः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte some suYaH kft karmaRi kvip",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते सोमे सुञः कृत् कर्मणि क्विप्",
     padaccheda_dev        = "सोमे सुञः",
     why_dev               = "धातोः कृत्-प्रत्ययः [सोमे सुञः] विहितः (३.२.90)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: न-अन्तात् अ-सङ्‍ख्या-आदेः मट्
 
 नान्तादसंख्याऽऽदेर्मट् (5.2.49)
+Pāṭha: ashtadhyayi.com data.txt row i=52049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nAntAdasaMKyAdermaw',
     text_dev              = 'नान्तादसंख्यादेर्मट्',
+    samagra_slp1          = "tasya pUraRe iti asaNKyAdeH nAntAt saNKyAyAH qawaH maw",
+    samagra_dev           = "'तस्य पूरणे' (इति) असङ्ख्यादेः नान्तात् सङ्ख्यायाः डटः मट्",
     padaccheda_dev        = "न-अन्तात् अ-सङ्‍ख्या-आदेः मट्",
     why_dev               = "(सूत्रम् 5.2.49) नान्तादसंख्याऽऽदेर्मट्।",
     anuvritti_from        = ('4.1.82',),

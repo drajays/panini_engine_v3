@@ -4,6 +4,7 @@
 Padaccheda: विभाषा आख्यान-परिप्रश्नयोः इञ् च
 
 krt-suffix rule: विभाषाऽऽख्यानपरिप्रश्नयोरिञ् च
+Pāṭha: ashtadhyayi.com data.txt row i=33110 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'viBAzAKyAnaparipraSnayoriY ca',
     text_dev              = 'विभाषाऽऽख्यानपरिप्रश्नयोरिञ् च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm striyAm viBAzA AKyAna-paripraSnayoH iY ca kft Rvul",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् स्त्रियाम् विभाषा आख्यान-परिप्रश्नयोः इञ् च कृत् ण्वुल्",
     padaccheda_dev        = "विभाषा आख्यान-परिप्रश्नयोः इञ् च",
     why_dev               = "धातोः प्रत्ययः (३.3.110)।",
     anuvritti_from        = ('3.1.1',),

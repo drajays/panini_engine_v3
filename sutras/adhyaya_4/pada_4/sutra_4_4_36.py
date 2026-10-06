@@ -4,6 +4,7 @@
 Padaccheda: परिपन्थम् च तिष्ठति (क्रियापदम्)
 
 परिपन्थं च तिष्ठति (4.4.36)
+Pāṭha: ashtadhyayi.com data.txt row i=44036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paripanTaM ca tizWati",
     text_dev              = "परिपन्थं च तिष्ठति",
+    samagra_slp1          = "tat paripanTam tizWati hanti ca iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् परिपन्थम् तिष्ठति हन्ति च' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "परिपन्थम् च तिष्ठति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.36) परिपन्थं च तिष्ठति।",
     anuvritti_from        = ('4.1.1',),

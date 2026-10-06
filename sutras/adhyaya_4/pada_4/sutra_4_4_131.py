@@ -4,6 +4,7 @@
 Padaccheda: वेशोयश-आदेः भगात् यल्
 
 वेशोयशआदेर्भगाद्यल् (4.4.131)
+Pāṭha: ashtadhyayi.com data.txt row i=44131 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "veSoyaSaAderBagAdyal",
     text_dev              = "वेशोयशआदेर्भगाद्यल्",
+    samagra_slp1          = "veSo-yaSa-AdeH BagAt matvarTe Candasi saMjYAyAm yal",
+    samagra_dev           = "वेशो-यश-आदेः भगात् मत्वर्थे छन्दसि संज्ञायाम् यल्",
     padaccheda_dev        = "वेशोयश-आदेः भगात् यल्",
     why_dev               = "(सूत्रम् 4.4.131) वेशोयशआदेर्भगाद्यल्।",
     anuvritti_from        = ('4.1.1',),

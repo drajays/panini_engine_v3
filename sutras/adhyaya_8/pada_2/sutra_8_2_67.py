@@ -4,6 +4,7 @@
 Padaccheda: अवयाः श्वेतवाः पुरोडाः च
 
 अवयाःश्वेतवाःपुरोडाश्च (8.2.67)
+Pāṭha: ashtadhyayi.com data.txt row i=82067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avayAHSvetavAHpuroqASca",
     text_dev              = "अवयाःश्वेतवाःपुरोडाश्च",
+    samagra_slp1          = "avayAH SvetavAH puroqAH ca",
+    samagra_dev           = "अवयाः श्वेतवाः पुरोडाः च",
     padaccheda_dev        = "अवयाः श्वेतवाः पुरोडाः च",
     why_dev               = "(सूत्रम् 8.2.67) अवयाःश्वेतवाःपुरोडाश्च।",
     anuvritti_from        = ('8.1.1',),

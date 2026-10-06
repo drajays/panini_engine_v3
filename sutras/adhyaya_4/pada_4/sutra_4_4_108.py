@@ -4,6 +4,7 @@
 Padaccheda: समानोदरे शयितः ओ (लुप्तप्रथमान्तनिर्देशः) च उदात्तः
 
 समानोदरे शयित ओ चोदात्तः (4.4.108)
+Pāṭha: ashtadhyayi.com data.txt row i=44108 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samAnodare Sayita o codAttaH",
     text_dev              = "समानोदरे शयित ओ चोदात्तः",
+    samagra_slp1          = "SayitaH iti saMjYAyAm samAnodare yat o ca udAttaH",
+    samagra_dev           = "'शयितः' (इति) संज्ञायाम् समानोदरे यत्, ओ च उदात्तः",
     padaccheda_dev        = "समानोदरे शयितः ओ (लुप्तप्रथमान्तनिर्देशः) च उदात्तः",
     why_dev               = "(सूत्रम् 4.4.108) समानोदरे शयित ओ चोदात्तः।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: वाचः ग्मिनिः
 
 वाचो ग्मिनिः (5.2.124)
+Pāṭha: ashtadhyayi.com data.txt row i=52124 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vAco gminiH",
     text_dev              = "वाचो ग्मिनिः",
+    samagra_slp1          = "tat asya asmin astIti iti vAcaH gminiH",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) वाचः ग्मिनिः",
     padaccheda_dev        = "वाचः ग्मिनिः",
     why_dev               = "(सूत्रम् 5.2.124) वाचो ग्मिनिः।",
     anuvritti_from        = ('4.1.82',),

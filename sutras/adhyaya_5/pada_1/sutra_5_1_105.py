@@ -4,6 +4,7 @@
 Padaccheda: ऋतोः अण्
 
 ऋतोरण् (5.1.105)
+Pāṭha: ashtadhyayi.com data.txt row i=51105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ftoraR",
     text_dev              = "ऋतोरण्",
+    samagra_slp1          = "tat asya prAptam iti ftoH aR",
+    samagra_dev           = "'तत् अस्य प्राप्तम्' इति ऋतोः अण्",
     padaccheda_dev        = "ऋतोः अण्",
     why_dev               = "(सूत्रम् 5.1.105) ऋतोरण्।",
     anuvritti_from        = ('5.1.18',),

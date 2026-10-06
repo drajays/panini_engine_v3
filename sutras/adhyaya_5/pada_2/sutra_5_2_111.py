@@ -4,6 +4,7 @@
 Padaccheda: काण्ड-अण्डात् ईरन्-ईरचौ
 
 काण्डाण्डादीरन्नीरचौ (5.2.111)
+Pāṭha: ashtadhyayi.com data.txt row i=52111 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kARqARqAdIrannIracO",
     text_dev              = "काण्डाण्डादीरन्नीरचौ",
+    samagra_slp1          = "tat asya asmin astIti iti kARqa-aRqAt Iran-IracO",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) काण्ड-अण्डात् ईरन्-ईरचौ",
     padaccheda_dev        = "काण्ड-अण्डात् ईरन्-ईरचौ",
     why_dev               = "(सूत्रम् 5.2.111) काण्डाण्डादीरन्नीरचौ।",
     anuvritti_from        = ('4.1.82',),

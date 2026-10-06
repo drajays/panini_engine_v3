@@ -4,6 +4,7 @@
 Padaccheda: शरीर-अवयवात् यत्
 
 शरीरावयवाद्यत् (5.1.6)
+Pāṭha: ashtadhyayi.com data.txt row i=51006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SarIrAvayavAdyat",
     text_dev              = "शरीरावयवाद्यत्",
+    samagra_slp1          = "tasmE hitam iti SarIra-avayavAt yat",
+    samagra_dev           = "'तस्मै हितम्' इति शरीर-अवयवात् यत्",
     padaccheda_dev        = "शरीर-अवयवात् यत्",
     why_dev               = "(सूत्रम् 5.1.6) शरीरावयवाद्यत्।",
     anuvritti_from        = ('5.1.1',),

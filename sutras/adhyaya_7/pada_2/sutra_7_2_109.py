@@ -6,6 +6,7 @@
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com sūtra 7.2.109 (padaccheda: दः च)
   Source #2 — ashtadhyayi.com śabda-prakriyā for इदम् (the sūtra path of each cell, all three liṅgas)
+Pāṭha: ashtadhyayi.com data.txt row i=72109 (Art. 14).
 """
 from __future__ import annotations
 
@@ -64,6 +65,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='daSca',
     text_dev='दश्च',
+    samagra_slp1="idamaH daH maH viBaktO",
+    samagra_dev="इदमः दः मः विभक्तौ",
     padaccheda_dev='दः च',
     why_dev='विभक्ति परे इदम् का द् → म् (अपवाद-क्रम में ७.२.११२, ७.२.११३ के बाद)।',
     anuvritti_from=("6.4.1", "7.2.84"),

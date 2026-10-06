@@ -13,6 +13,7 @@ Engine (narrow, mechanically blind):
   Gate key ``2_2_3_ordinal_ekadesha_gate``.  Recipe arms
   ``state.meta['2_2_3_arm']``.  The optionality (*anyatarasya*) is modelled by
   the recipe — the gate is simply stamped when armed.
+Pāṭha: ashtadhyayi.com data.txt row i=22003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='dvitIyatftIyacaturTaturyARyanyatarasyAm',
     text_dev='द्वितीयतृतीयचतुर्थतुर्याण्यन्यतरस्याम्',
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH dvitIya-tftIya-caturTa-turyARi anyatarasyAm ekadeSinEkADikaraRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः द्वितीय-तृतीय-चतुर्थ-तुर्याणि अन्यतरस्याम् एकदेशिनैकाधिकरणे",
     padaccheda_dev="द्वितीय-तृतीय-चतुर्थ-तुर्याणि / अन्यतरस्याम्",
     why_dev=(
         "द्वितीयादयः एकदेशिनैकाधिकरणे विभाषा समस्यन्ते — "

@@ -4,6 +4,7 @@
 Padaccheda: पुरुष-हस्तिभ्याम् अण् च
 
 पुरुषहस्तिभ्यामण् च (5.2.38)
+Pāṭha: ashtadhyayi.com data.txt row i=52038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "puruzahastiByAmaR ca",
     text_dev              = "पुरुषहस्तिभ्यामण् च",
+    samagra_slp1          = "tat asya iti pramARe puruzahastiByAM dvayasac-daGnac-mAtrac-aR ca ",
+    samagra_dev           = "'तत् अस्य' (इति) प्रमाणे पुरुषहस्तिभ्यां द्वयसच्-दघ्नच्-मात्रच्-अण् च ।",
     padaccheda_dev        = "पुरुष-हस्तिभ्याम् अण् च",
     why_dev               = "(सूत्रम् 5.2.38) पुरुषहस्तिभ्यामण् च।",
     anuvritti_from        = ('4.1.82',),

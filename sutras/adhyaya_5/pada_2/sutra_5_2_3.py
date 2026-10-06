@@ -4,6 +4,7 @@
 Padaccheda: यव-यवक-षष्टिकात् यत्
 
 यवयवकषष्टिकादत् (5.2.3)
+Pāṭha: ashtadhyayi.com data.txt row i=52003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'yavayavakazazwikAdyat',
     text_dev              = 'यवयवकषष्टिकाद्यत्',
+    samagra_slp1          = "DAnyAnAM Bavane kzetre iti yava-yavaka-zazwikAt yat",
+    samagra_dev           = "'धान्यानां भवने क्षेत्रे' (इति) यव-यवक-षष्टिकात् यत्",
     padaccheda_dev        = "यव-यवक-षष्टिकात् यत्",
     why_dev               = "(सूत्रम् 5.2.3) यवयवकषष्टिकादत्।",
     anuvritti_from        = ('4.1.82',),

@@ -11,6 +11,7 @@ Engine:
     been tagged "seT" by this sūtra.
   - Tags it "seT" and records the samjna in the registry.
   - r1_form_identity_exempt=True: no surface string changes.
+Pāṭha: ashtadhyayi.com data.txt row i=12002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -71,6 +72,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vija iw',
     text_dev              = 'विज इट्',
+    samagra_slp1          = "vijaH iw Nit",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "विजः इट् ङित्",
     padaccheda_dev        = "विजः / इट्",
     why_dev               = "विज्-धातुः सेट् — अस्य इडागमः अर्धधातुके परे भवति।",
     anuvritti_from        = ("1.2.1",),

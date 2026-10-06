@@ -5,6 +5,7 @@ Padaccheda: यज्ञकर्मणि · अजप · न्यूङ्ख
 
 In sacrificial contexts (yajnakarmani) with ajapa, nyunkha, and saman
 the relevant forms are recognized as non-anudatta.
+Pāṭha: ashtadhyayi.com data.txt row i=12034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yajYakarmaRyajapanyUNKasAmasu",
     text_dev              = "यज्ञकर्मण्यजपन्यूङ्खसामसु",
+    samagra_slp1          = "yajYakarmaRi a-japa-nyUNKa-sAmasu ekaSruti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "यज्ञकर्मणि अ-जप-न्यूङ्ख-सामसु एकश्रुति",
     padaccheda_dev        = "यज्ञकर्मणि · अजप · न्यूङ्ख · सामसु",
     why_dev               = "यज्ञ-कर्मणि अजप-न्यूङ्ख-सामेषु अनुदात्तं विधीयते (१.२.३४)।",
     anuvritti_from        = ("1.2.33",),

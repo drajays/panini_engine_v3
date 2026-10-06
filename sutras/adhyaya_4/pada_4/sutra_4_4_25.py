@@ -4,6 +4,7 @@
 Padaccheda: मुद्गात् अण्
 
 मुद्गादण् (4.4.25)
+Pāṭha: ashtadhyayi.com data.txt row i=44025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mudgAdaR",
     text_dev              = "मुद्गादण्",
+    samagra_slp1          = "tena saMsfzwe iti mudgAt aR",
+    samagra_dev           = "'तेन संसृष्टे' इति मुद्गात् अण्",
     padaccheda_dev        = "मुद्गात् अण्",
     why_dev               = "(सूत्रम् 4.4.25) मुद्गादण्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: गृहपतिना संयुक्ते ञ्यः
 
 गृहपतिना संयुक्ते ञ्यः (4.4.90)
+Pāṭha: ashtadhyayi.com data.txt row i=44090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gfhapatinA saMyukte YyaH",
     text_dev              = "गृहपतिना संयुक्ते ञ्यः",
+    samagra_slp1          = "gfhapatinA saMyukte saMjYAyAm YyaH",
+    samagra_dev           = "गृहपतिना संयुक्ते संज्ञायाम्  ञ्यः",
     padaccheda_dev        = "गृहपतिना संयुक्ते ञ्यः",
     why_dev               = "(सूत्रम् 4.4.90) गृहपतिना संयुक्ते ञ्यः।",
     anuvritti_from        = ('4.1.1',),

@@ -9,6 +9,7 @@ IT-lopa of w → [i]) is replaced by 'a'. This gives the 1sg ending sīya
 
 Engine: arm ``iT_a_recipe`` + ``ashir_liG`` + finds term tagged
 ``tin_adesha_3_4_78`` with single varṇa 'i'.
+Pāṭha: ashtadhyayi.com data.txt row i=34106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -67,6 +68,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'iwot',
     text_dev              = 'इटोऽत्',
+    samagra_slp1          = "liNaH iwaH at",
+    samagra_dev           = "लिङः इटः अत्",
     padaccheda_dev        = "इटः अत्",
     why_dev               = (
         "आशीर्-लिङि आत्मनेपदे १-एक-वचने इट्-जन्य-इकारस्य अकारादेशः — "

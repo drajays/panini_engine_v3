@@ -9,6 +9,7 @@ Engine (``prakriya_17`` — **Phit 4.18** list, *sarvānudātta* block):
     registry placement in the Tripāḍī–*anudātta* neighbourhood.
   • When ``phiSa_pratipadika`` + ``upadesha_slp1`` ∈ ``PHIT_418_…`` and
     ``phit_4_18_recipe``, register ``samjna_registry['phit_418_sarvAnudAtta']``.
+Pāṭha: ashtadhyayi.com data.txt row i=81003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -59,6 +60,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = "anudAttaM ca",
     text_dev       = "अनुदात्तं च",
+    samagra_slp1   = "sarvasya dve anudAttam ca Amreqitam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "सर्वस्य द्वे अनुदात्तम् च आम्रेडितम्",
     padaccheda_dev = "अनुदात्तम् च",
     why_dev        = "फिट् ४.१८-गणे प्रातिपदिकं सर्वानुदात्तम् (पञ्जी, न स्वर-वर्णः)।",
     anuvritti_from = ("8.1.2",),

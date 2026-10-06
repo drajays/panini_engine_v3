@@ -4,6 +4,7 @@
 Padaccheda: उत्तरात् च
 
 उत्तराच्च (5.3.38)
+Pāṭha: ashtadhyayi.com data.txt row i=53038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uttarAcca",
     text_dev              = "उत्तराच्च",
+    samagra_slp1          = "uttarAt saptamI-praTamAByaH dik-deSa-kAlezu dUre AhiH Ac ca",
+    samagra_dev           = "उत्तरात्  सप्तमी-प्रथमाभ्यः दिक्-देश-कालेषु दूरे आहिः आच्  च",
     padaccheda_dev        = "उत्तरात् च",
     why_dev               = "(सूत्रम् 5.3.38) उत्तराच्च।",
     anuvritti_from        = ('4.1.76',),

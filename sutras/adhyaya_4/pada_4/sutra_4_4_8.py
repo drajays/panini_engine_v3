@@ -4,6 +4,7 @@
 Padaccheda: चरति (क्रियापदम्)
 
 चरति (4.4.8)
+Pāṭha: ashtadhyayi.com data.txt row i=44008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "carati",
     text_dev              = "चरति",
+    samagra_slp1          = "tena carati iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तेन चरति' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "चरति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.8) चरति।",
     anuvritti_from        = ('4.1.1',),

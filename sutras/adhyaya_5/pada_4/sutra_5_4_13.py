@@ -4,6 +4,7 @@
 Padaccheda: अनुगादिनः ठक्
 
 अनुगादिनष्ठक् (5.4.13)
+Pāṭha: ashtadhyayi.com data.txt row i=54013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anugAdinazWak",
     text_dev              = "अनुगादिनष्ठक्",
+    samagra_slp1          = "anugAdinaH Wak",
+    samagra_dev           = "अनुगादिनः ठक्",
     padaccheda_dev        = "अनुगादिनः ठक्",
     why_dev               = "(सूत्रम् 5.4.13) अनुगादिनष्ठक्।",
     anuvritti_from        = ('4.1.76',),

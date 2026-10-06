@@ -10,6 +10,7 @@ Gate: ``tasa_lopa_recipe``; completion registered in ``samjna_registry``.
 *luṭ* 2sg (si) path:
   [BU, i+t+A+s, si] → [BU, i+t+A, si]
 Final form: भवितासि.
+Pāṭha: ashtadhyayi.com data.txt row i=74050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -64,6 +65,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tAsastyorlopaH",
     text_dev              = "तासस्त्योर्लोपः",
+    samagra_slp1          = "tAs-astyoH aNgasya si lopaH",
+    samagra_dev           = "तास्-अस्त्योः अङ्गस्य सि लोपः",
     padaccheda_dev        = "तास्-अस्त्योः लोपः",
     why_dev               = "तासि-विकरणस्य अस्-धातोश्च स्-लोपः सकारादौ प्रत्यये (भवितासि, असि)।",
     anuvritti_from        = ('7.1.1',),

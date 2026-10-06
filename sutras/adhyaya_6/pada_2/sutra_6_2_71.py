@@ -4,6 +4,7 @@
 Padaccheda: भक्ताख्याः तदर्थेषु
 
 भक्ताख्यास्तदर्थेषु (6.2.71)
+Pāṭha: ashtadhyayi.com data.txt row i=62071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BaktAKyAstadarTezu",
     text_dev              = "भक्ताख्यास्तदर्थेषु",
+    samagra_slp1          = "AdiH udAttaH BaktAKyAH tadarTezu pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः भक्ताख्याः तदर्थेषु पूर्वपदम्",
     padaccheda_dev        = "भक्ताख्याः तदर्थेषु",
     why_dev               = "(सूत्रम् 6.2.71) भक्ताख्यास्तदर्थेषु।",
     anuvritti_from        = ('6.1.1',),

@@ -1,7 +1,7 @@
 """
 1.2.51  लुपि युक्तवद्व्यक्तिवचने  —  SAMJNA (narrow ``prakriya_45`` / ``prakriya_46``)
 
-**Pāṭha (ashtadhyayi-com ``data.txt`` i=10251):** *lupi yuktavad vyaktivacane* — when an affix is
+**Pāṭha (ashtadhyayi-com ``data.txt`` i=12051):** *lupi yuktavad vyaktivacane* — when an affix is
 removed by *luk*, the derived expression keeps the *liṅga* and *vacana* behaviour “as if” the
 affix were still present (*yuktavat*), keyed to the *vyakti* (here: gender/number alignment with
 the *prakṛti*).
@@ -73,6 +73,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.ATIDESHA,
     text_slp1='lupi yuktavadvyaktivacane',
     text_dev='लुपि युक्तवद्व्यक्तिवचने',
+    samagra_slp1="lupi yuktavat vyakti-vacane",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="लुपि युक्तवत् व्यक्ति-वचने",
     padaccheda_dev="लुपि / युक्तवत् / व्यक्ति-वचने",
     why_dev="लुपि लिङ्ग-वचने प्रकृतिवत् (*prakriya_45* **पञ्चालाः**, *prakriya_46* **गोदौ**)।",
     anuvritti_from=(),

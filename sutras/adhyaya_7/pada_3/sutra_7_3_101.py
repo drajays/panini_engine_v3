@@ -95,6 +95,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "ato dIrGo yaYi",
     text_dev              = "अतो दीर्घो यञि",
+    samagra_slp1          = "ataH aNgasya sArvaDAtuke yaYi dIrGaH",
+    samagra_dev           = "अतः अङ्गस्य सार्वधातुके यञि दीर्घः",
     padaccheda_dev        = "अतः दीर्घः यञि",
     why_dev               = (
         "अङ्ग/विकरण-अन्तस्य ह्रस्व-अकारस्य, यञ्-आदि-प्रत्यय-परे, दीर्घादेशः; "

@@ -105,6 +105,8 @@ SUTRA = SutraRecord(
         'tiptasJisipTasTamibvasmas tAtAMJaTAsATAMDvamiqvahimahiN'
     ),
     text_dev       = 'तिप्तस्झिसिप्थस्थमिब्वस्मस् तातांझथासाथांध्वमिड्वहिमहिङ्',
+    samagra_slp1   = "lasya tip-tas-Ji-sip-Tas-Ta-mip-vas-mas-ta-AtAm-Ja-TAs-ATAm-Dvam-iq-vahi-mahiN pratyayaH DAtoH paraH",
+    samagra_dev    = "लस्य तिप्-तस्-झि-सिप्-थस्-थ-मिप्-वस्-मस्-त-आताम्-झ-थास्-आथाम्-ध्वम्-इड्-वहि-महिङ् प्रत्ययः धातोः परः",
     padaccheda_dev = "लः / तिप्-तस्-झि-… (परस्मैपदादि) / प्रत्ययः / धातोः / परः",
     why_dev        = _WHY,
     anuvritti_from = ("3.1.1", "3.1.2", "3.1.3", "3.1.91", "3.4.77"),

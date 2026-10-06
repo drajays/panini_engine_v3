@@ -4,6 +4,7 @@
 Padaccheda: ह्वः सम्प्रसारणम्
 
 ह्वः सम्प्रसारणम् (6.1.32)
+Pāṭha: ashtadhyayi.com data.txt row i=61032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hvaH samprasAraRam",
     text_dev              = "ह्वः सम्प्रसारणम्",
+    samagra_slp1          = "hvaH samprasAraRam RO ca san-caNoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "ह्वः सम्प्रसारणम् णौ च सन्-चङोः",
     padaccheda_dev        = "ह्वः सम्प्रसारणम्",
     why_dev               = "(सूत्रम् 6.1.32) ह्वः सम्प्रसारणम्।",
     anuvritti_from        = ('6.1.1',),

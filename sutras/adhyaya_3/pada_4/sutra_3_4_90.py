@@ -87,6 +87,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "AmetaH",
     text_dev              = "आमेतः",
+    samagra_slp1          = "lowaH lasya etaH Am",
+    samagra_dev           = "लोटः लस्य एतः आम्",
     padaccheda_dev        = "आम् एतः",
     why_dev               = (
         "लोट्-आत्मनेपद-प्रथम/मध्यम-प्रत्ययेषु (ते, आते, जे, आथे) "

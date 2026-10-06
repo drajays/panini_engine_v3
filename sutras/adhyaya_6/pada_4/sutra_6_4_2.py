@@ -4,6 +4,7 @@
 Padaccheda: हलः
 
 हलः (6.4.2)
+Pāṭha: ashtadhyayi.com data.txt row i=64002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "halaH",
     text_dev              = "हलः",
+    samagra_slp1          = "halaH samprasAraRasya aNgasya dIrGaH",
+    samagra_dev           = "हलः सम्प्रसारणस्य अङ्गस्य दीर्घः",
     padaccheda_dev        = "हलः",
     why_dev               = "हलः परस्य अङ्गान्त-सम्प्रसारणस्य दीर्घः (हूयते, जीयते)।",
     anuvritti_from        = ('6.1.1',),

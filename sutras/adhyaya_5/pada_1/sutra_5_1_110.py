@@ -4,6 +4,7 @@
 Padaccheda: विशाखा-आषाढात् अण् मन्थ-दण्डयोः
 
 विशाखाऽऽषाढादण् मन्थदण्डयोः (5.1.110)
+Pāṭha: ashtadhyayi.com data.txt row i=51110 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'viSAKAzAQAdaR manTadaRqayoH',
     text_dev              = 'विशाखाषाढादण् मन्थदण्डयोः',
+    samagra_slp1          = "tat asya prayojanam iti viSAKA-AzAQAt manTa-daRqayoH aR",
+    samagra_dev           = "'तत् अस्य प्रयोजनम्' (इति) विशाखा-आषाढात् मन्थ-दण्डयोः अण्",
     padaccheda_dev        = "विशाखा-आषाढात् अण् मन्थ-दण्डयोः",
     why_dev               = "(सूत्रम् 5.1.110) विशाखाऽऽषाढादण् मन्थदण्डयोः।",
     anuvritti_from        = ('5.1.18',),

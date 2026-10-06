@@ -4,6 +4,7 @@
 Padaccheda: मयतेः इत् अन्यतरस्याम्
 
 मयतेरिदन्यतरस्याम् (6.4.70)
+Pāṭha: ashtadhyayi.com data.txt row i=64070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mayateridanyatarasyAm",
     text_dev              = "मयतेरिदन्यतरस्याम्",
+    samagra_slp1          = "aNgasya asidDavadatrABAt ArDaDAtuke mayateH it anyatarasyAm lyapi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् आर्धधातुके मयतेः इत् अन्यतरस्याम् ल्यपि",
     padaccheda_dev        = "मयतेः इत् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.4.70) मयतेरिदन्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

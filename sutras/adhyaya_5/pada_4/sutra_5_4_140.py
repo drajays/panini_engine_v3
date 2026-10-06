@@ -4,6 +4,7 @@
 Padaccheda: सङ्‍ख्या-सु-पूर्वस्य
 
 संख्यासुपूर्वस्य (5.4.140)
+Pāṭha: ashtadhyayi.com data.txt row i=54140 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMKyAsupUrvasya",
     text_dev              = "संख्यासुपूर्वस्य",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA saNKyAsupUrvasya bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा सङ्ख्यासुपूर्वस्य बहुव्रीहौ",
     padaccheda_dev        = "सङ्‍ख्या-सु-पूर्वस्य",
     why_dev               = "(सूत्रम् 5.4.140) संख्यासुपूर्वस्य।",
     anuvritti_from        = ('5.4.68',),

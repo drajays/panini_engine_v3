@@ -12,6 +12,7 @@ Module-level frozenset per CONSTITUTION Art. 2 / frozenset policy:
   u  — short u
   f  — short ṛ (ṛikāra)
   x  — short ḷ (ḷikāra)
+Pāṭha: ashtadhyayi.com data.txt row i=14010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -36,6 +37,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.SAMJNA,
     text_slp1              = 'hrasvaM laGu',
     text_dev               = 'ह्रस्वं लघु',
+    samagra_slp1           = "hrasvaM laGu",
+    samagra_dev            = "ह्रस्वं लघु",
     padaccheda_dev         = "ह्रस्वम् / लघु",
     why_dev                = "ह्रस्व-स्वरः लघु-संज्ञकः (अ-इ-उ-ऋ-ऌ)।",
     anuvritti_from         = ("1.4.1",),

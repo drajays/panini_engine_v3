@@ -4,6 +4,7 @@
 Padaccheda: केशात् वः अन्यतरस्याम्
 
 केशाद्वोऽन्यतरस्याम् (5.2.109)
+Pāṭha: ashtadhyayi.com data.txt row i=52109 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'keSAdvonyatarasyAm',
     text_dev              = 'केशाद्वोऽन्यतरस्याम्',
+    samagra_slp1          = "tat asya asmin astIti iti keSAt vaH anyatarasyAm matu~p anyatarasyAm",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) केशात् वः अन्यतरस्याम्, मतुँप् अन्यतरस्याम्",
     padaccheda_dev        = "केशात् वः अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 5.2.109) केशाद्वोऽन्यतरस्याम्।",
     anuvritti_from        = ('4.1.82',),

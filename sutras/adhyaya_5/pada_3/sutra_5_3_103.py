@@ -4,6 +4,7 @@
 Padaccheda: शाखा-आदिभ्यः यत्
 
 शाखाऽऽदिभ्यो यत् (5.3.103)
+Pāṭha: ashtadhyayi.com data.txt row i=53103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'SAKAdiByo yat',
     text_dev              = 'शाखादिभ्यो यत्',
+    samagra_slp1          = "SAKAdiByaH ive yat",
+    samagra_dev           = "शाखादिभ्यः इवे यत्",
     padaccheda_dev        = "शाखा-आदिभ्यः यत्",
     why_dev               = "(सूत्रम् 5.3.103) शाखाऽऽदिभ्यो यत्।",
     anuvritti_from        = ('4.1.76',),

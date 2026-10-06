@@ -4,6 +4,7 @@
 Padaccheda: योजनम् गच्छति (क्रियापदम्)
 
 योजनं गच्छति (5.1.74)
+Pāṭha: ashtadhyayi.com data.txt row i=51074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yojanaM gacCati",
     text_dev              = "योजनं गच्छति",
+    samagra_slp1          = "tat yojanam gacCati iti samarTAnAm praTamAt paraH WaY pratyayaH",
+    samagra_dev           = "'तत् योजनम् गच्छति' (इति) समर्थानाम् प्रथमात् परः ठञ् प्रत्ययः",
     padaccheda_dev        = "योजनम् गच्छति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 5.1.74) योजनं गच्छति।",
     anuvritti_from        = ('5.1.18',),

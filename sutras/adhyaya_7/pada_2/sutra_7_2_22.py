@@ -4,6 +4,7 @@
 Padaccheda: कृच्छ्र-गहनयोः कषः
 
 कृच्छ्रगहनयोः कषः (7.2.22)
+Pāṭha: ashtadhyayi.com data.txt row i=72022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kfcCragahanayoH kazaH",
     text_dev              = "कृच्छ्रगहनयोः कषः",
+    samagra_slp1          = "aNgasya kfcCragahanayoH kazaH na iw nizWAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य कृच्छ्रगहनयोः कषः न इट् निष्ठायाम्",
     padaccheda_dev        = "कृच्छ्र-गहनयोः कषः",
     why_dev               = "(सूत्रम् 7.2.22) कृच्छ्रगहनयोः कषः।",
     anuvritti_from        = ('7.1.1',),

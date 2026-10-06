@@ -4,6 +4,7 @@
 Padaccheda: कुमारः श्रमणा-आदिभिः
 
 kumara with sramana etc. forms karmadharaya compound.
+Pāṭha: ashtadhyayi.com data.txt row i=21070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'kumAraH SramaRAdiBiH',
     text_dev              = 'कुमारः श्रमणादिभिः',
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH kumAraH SramaRa-AdiBiH samAnADikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः कुमारः श्रमण-आदिभिः समानाधिकरणेन",
     padaccheda_dev        = "कुमारः श्रमणा-आदिभिः",
     why_dev               = "कुमारः श्रमण-आदिभिः सह कर्मधारयः (२.१.७०)।",
     anuvritti_from        = ('2.1.3',),

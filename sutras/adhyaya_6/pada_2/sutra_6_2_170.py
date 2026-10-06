@@ -4,6 +4,7 @@
 Padaccheda: जाति-काल-सुख-आदिभ्यः अनाच्छादनात् क्तः अ-कृत-मित-प्रतिपन्नाः
 
 जातिकालसुखादिभ्योऽनाच्छादनात् क्तोऽकृतमितप्रतिपन्नाः (6.2.170)
+Pāṭha: ashtadhyayi.com data.txt row i=62170 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'jAtikAlasuKAdiByonAcCAdanAt ktokftamitapratipannAH',
     text_dev              = 'जातिकालसुखादिभ्योऽनाच्छादनात् क्तोऽकृतमितप्रतिपन्नाः',
+    samagra_slp1          = "uttarapadAdiH antaH jAti-kAla-suKAdiByaH anAcCAdanAt ktaH a-kftamitapratipannAH bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः जाति-काल-सुखादिभ्यः अनाच्छादनात् क्तः अ-कृतमितप्रतिपन्नाः बहुव्रीहौ",
     padaccheda_dev        = "जाति-काल-सुख-आदिभ्यः अनाच्छादनात् क्तः अ-कृत-मित-प्रतिपन्नाः",
     why_dev               = "(सूत्रम् 6.2.170) जातिकालसुखादिभ्योऽनाच्छादनात् क्तोऽकृतमितप्रतिपन्नाः।",
     anuvritti_from        = ('6.1.1',),

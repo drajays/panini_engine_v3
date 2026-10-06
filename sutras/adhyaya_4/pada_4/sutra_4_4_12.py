@@ -4,6 +4,7 @@
 Padaccheda: वेतन-आदिभ्यः जीवति (क्रियापदम्)
 
 वेतनादिभ्यो जीवति (4.4.12)
+Pāṭha: ashtadhyayi.com data.txt row i=44012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vetanAdiByo jIvati",
     text_dev              = "वेतनादिभ्यो जीवति",
+    samagra_slp1          = "tena vetanAdiByaH jIvati iti samarTAnAM praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तेन वेतनादिभ्यः जीवति' (इति) समर्थानां प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "वेतन-आदिभ्यः जीवति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.12) वेतनादिभ्यो जीवति।",
     anuvritti_from        = ('4.1.1',),

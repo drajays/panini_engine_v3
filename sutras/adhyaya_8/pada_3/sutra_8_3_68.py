@@ -4,6 +4,7 @@
 Padaccheda: अवात् च आलम्बन-आविदूर्ययोः
 
 अवाच्चालम्बनाविदूर्ययोः (8.3.68)
+Pāṭha: ashtadhyayi.com data.txt row i=83068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avAccAlambanAvidUryayoH",
     text_dev              = "अवाच्चालम्बनाविदूर्ययोः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH avAt ca Alambana-AvidUryayoH saH aqvyavAye api upasargAt stamBeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः अवात् च आलम्बन-आविदूर्ययोः सः अड्व्यवाये अपि उपसर्गात् स्तम्भेः",
     padaccheda_dev        = "अवात् च आलम्बन-आविदूर्ययोः",
     why_dev               = "(सूत्रम् 8.3.68) अवाच्चालम्बनाविदूर्ययोः।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: विभाषा वृक्ष-मृग-तृण-धान्य-व्यञ्जन-पशु-शकुनी-अश्ववडव-पूर्वापर-अधरोत्तराणाम्
 
 Optional dvandva for tree, animal, grass etc.
+Pāṭha: ashtadhyayi.com data.txt row i=24012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA vfkzamfgatfRaDAnyavyaYjanapaSuSakunyaSvavaqavapUrvAparADarottarARAm",
     text_dev              = "विभाषा वृक्षमृगतृणधान्यव्यञ्जनपशुशकुन्यश्ववडवपूर्वापराधरोत्तराणाम्",
+    samagra_slp1          = "viBAzA vfkza-mfga-tfRa-DAnya-vyaYjana-paSu-Sakuni-aSva-vaqava-pUrva-apara-aDara-uttarARAm ekavacanam dvandvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "विभाषा वृक्ष-मृग-तृण-धान्य-व्यञ्जन-पशु-शकुनि-अश्व-वडव-पूर्व-अपर-अधर-उत्तराणाम् एकवचनम् द्वन्द्वः",
     padaccheda_dev        = "विभाषा वृक्ष-मृग-तृण-धान्य-व्यञ्जन-पशु-शकुनी-अश्ववडव-पूर्वापर-अधरोत्तराणाम्",
     why_dev               = "वृक्ष-मृग-तृण-आदिषु विभाषा (२.४.१२)।",
     anuvritti_from        = ('2.4.1',),

@@ -4,6 +4,7 @@
 Padaccheda: ब्रह्म-हस्तिभ्याम् वर्च्चसः
 
 ब्रह्महस्तिभ्याम् वर्च्चसः (5.4.78)
+Pāṭha: ashtadhyayi.com data.txt row i=54078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "brahmahastiByAm varccasaH",
     text_dev              = "ब्रह्महस्तिभ्याम् वर्च्चसः",
+    samagra_slp1          = "brahma-hastiByAm varcasaH ac",
+    samagra_dev           = "ब्रह्म-हस्तिभ्याम् वर्चसः अच्",
     padaccheda_dev        = "ब्रह्म-हस्तिभ्याम् वर्च्चसः",
     why_dev               = "(सूत्रम् 5.4.78) ब्रह्महस्तिभ्याम् वर्च्चसः।",
     anuvritti_from        = ('5.4.68',),

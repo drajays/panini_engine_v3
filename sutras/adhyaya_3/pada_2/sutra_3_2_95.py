@@ -4,6 +4,7 @@
 Padaccheda: राजनि युधि-कृञः
 
 krt-suffix rule: राजनि युधिकृञः (95)
+Pāṭha: ashtadhyayi.com data.txt row i=32095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAjani yuDikfYaH",
     text_dev              = "राजनि युधिकृञः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte rAjani yuDi-kfYaH kft kvanip",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते राजनि युधि-कृञः कृत् क्वनिप्",
     padaccheda_dev        = "राजनि युधि-कृञः",
     why_dev               = "धातोः कृत्-प्रत्ययः [राजनि युधिकृञः] विहितः (३.२.95)।",
     anuvritti_from        = ('3.1.1',),

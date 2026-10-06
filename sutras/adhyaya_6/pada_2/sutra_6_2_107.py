@@ -4,6 +4,7 @@
 Padaccheda: उदरअश्व-इषुषु
 
 उदराश्वेषुषु (6.2.107)
+Pāṭha: ashtadhyayi.com data.txt row i=62107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "udarASvezuzu",
     text_dev              = "उदराश्वेषुषु",
+    samagra_slp1          = "udAttaH antaH udara-aSva-izuzu pUrvapadam viSvam bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः उदर-अश्व-इषुषु पूर्वपदम् विश्वम् बहुव्रीहौ",
     padaccheda_dev        = "उदरअश्व-इषुषु",
     why_dev               = "(सूत्रम् 6.2.107) उदराश्वेषुषु।",
     anuvritti_from        = ('6.1.1',),

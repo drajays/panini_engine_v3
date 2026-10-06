@@ -4,6 +4,7 @@
 Padaccheda: गोचर-संचर-वह-व्रज-व्यज-आपण-निगमाः च
 
 krt-suffix rule: गोचरसंचरवहव्रजव्यजापणनिगमाश्च
+Pāṭha: ashtadhyayi.com data.txt row i=33119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gocarasaMcaravahavrajavyajApaRanigamASca",
     text_dev              = "गोचरसंचरवहव्रजव्यजापणनिगमाश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH karaRADikaraRayoH gocara-saMcara-vaha-vraja-vyaja-ApaRa-nigamAH ca kft karaRa-aDikaraRayoH saMjYAyAm puMsi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः करणाधिकरणयोः गोचर-संचर-वह-व्रज-व्यज-आपण-निगमाः च कृत् करण-अधिकरणयोः संज्ञायाम् पुंसि",
     padaccheda_dev        = "गोचर-संचर-वह-व्रज-व्यज-आपण-निगमाः च",
     why_dev               = "धातोः प्रत्ययः (३.3.119)।",
     anuvritti_from        = ('3.1.1',),

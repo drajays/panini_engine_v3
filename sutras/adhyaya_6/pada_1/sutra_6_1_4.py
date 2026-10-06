@@ -3,6 +3,7 @@
 
 Glass-box: marks that the first member in a reduplication frame is the abhyāsa.
 Pipelines may arm reduplication and then use this gate for later abhyāsa rules.
+Pāṭha: ashtadhyayi.com data.txt row i=61004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -26,6 +27,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'pUrvoByAsaH',
     text_dev       = 'पूर्वोऽभ्यासः',
+    samagra_slp1   = "pUrvaH aByAsaH",
+    samagra_dev    = "पूर्वः अभ्यासः",
     padaccheda_dev = "पूर्वः / अभ्यासः",
     why_dev        = "द्वित्व-प्रसङ्गे पूर्वभागः अभ्यास-संज्ञकः (ग्लास-बॉक्स् gate)।",
     anuvritti_from = (),

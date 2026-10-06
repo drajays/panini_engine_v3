@@ -4,6 +4,7 @@
 Padaccheda: स्त्रियाः
 
 स्त्रियाः (6.4.79)
+Pāṭha: ashtadhyayi.com data.txt row i=64079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "striyAH",
     text_dev              = "स्त्रियाः",
+    samagra_slp1          = "striyAH aNgasya aci iyaN",
+    samagra_dev           = "स्त्रियाः अङ्गस्य अचि इयङ्",
     padaccheda_dev        = "स्त्रियाः",
     why_dev               = "(सूत्रम् 6.4.79) स्त्रियाः।",
     anuvritti_from        = ('6.1.1',),

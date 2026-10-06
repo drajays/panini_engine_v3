@@ -105,6 +105,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'itaSca',
     text_dev       = 'इतश्च',
+    samagra_slp1   = "NitaH parasmEpadezu itaH lopaH",
+    samagra_dev    = "ङितः परस्मैपदेषु इतः लोपः",
     padaccheda_dev = "इतः / च",
     why_dev        = (
         "लङ्/लुङ्/लृङ्-प्रक्रियायां तिङ्-अन्तस्थ इकारस्य लोपः "

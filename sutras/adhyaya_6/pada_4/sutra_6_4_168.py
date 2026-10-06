@@ -8,6 +8,7 @@ Narrow v3 (``prakriya_18``):
   • When ``state.meta['prakriya_18_sAmanyas']`` and the last ``Term`` is ``yat``
     *taddhita* after ``sAman`` + ``Ni`` frame, register
     ``samjna_registry['6_4_168_yat_prakritibhava_sAman']`` (audit gate for **6.4.144**).
+Pāṭha: ashtadhyayi.com data.txt row i=64168 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'ye cABAvakarmaRoH',
     text_dev       = 'ये चाभावकर्मणोः',
+    samagra_slp1   = "aNgasya asidDavadatrABAt Basya ye ca a-BAvakarmaRoH prakftyA aRi an",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "अङ्गस्य असिद्धवदत्राभात् भस्य ये च अ-भावकर्मणोः प्रकृत्या अणि अन्",
     padaccheda_dev = "ये च अभाव-कर्मणोः",
     why_dev        = "यत्-प्रत्यये प्रकृतिभावः — ६.४.१४४-टिलोप-प्रतिषेधाङ्कनम्।",
     anuvritti_from = ("6.4.144",),

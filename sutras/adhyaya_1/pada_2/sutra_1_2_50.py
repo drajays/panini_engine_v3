@@ -17,6 +17,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'idgoRyAH',
     text_dev                = 'इद्गोण्याः',
+    samagra_slp1            = "it goRyAH tadDita-luki",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "इत् गोण्याः तद्धित-लुकि",
     padaccheda_dev          = "इत् / गोण्याः",
     why_dev                 = (
         "इत्-संज्ञकं गोणी-शब्दं मुख्य-वाचकवद् उपचर्यते — "

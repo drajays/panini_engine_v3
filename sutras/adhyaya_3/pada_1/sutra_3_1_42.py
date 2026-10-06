@@ -4,6 +4,7 @@
 Padaccheda: अभ्युत्सादयाम् प्रजनयाम् चिकयाम् रमयाम् अकः (तिङ्) पावयांक्रियात् (तिङ्) विदामक्रन् (तिङ्) इति छन्दसि
 
 Krt suffix rule from dhatu: अभ्युत्सादयांप्रजनयांचिकयांरमयामकः (42)
+Pāṭha: ashtadhyayi.com data.txt row i=31042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'aByutsAdayAMprajanayAMcikayAMramayAmakaH pAvayAMkriyAdvidAmakranniti cCandasi',
     text_dev              = 'अभ्युत्सादयांप्रजनयांचिकयांरमयामकः पावयांक्रियाद्विदामक्रन्निति च्छन्दसि',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH aByutsAdayAm prajanayAm cikayAm ramayAm akaH pAvayAMkriyAt vidAmakran iti Candasi Am anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः अभ्युत्सादयाम् प्रजनयाम् चिकयाम् रमयाम् अकः पावयांक्रियात् विदामक्रन् इति छन्दसि आम् अन्यतरस्याम्",
     padaccheda_dev        = "अभ्युत्सादयाम् प्रजनयाम् चिकयाम् रमयाम् अकः (तिङ्) पावयांक्रियात् (तिङ्) विदामक्रन् (तिङ्) इति छन्दसि",
     why_dev               = "धातोः [अभ्युत्सादयांप्रजनयांचिकयांरमयामकः]-प्रत्ययः विहितः (३.१.42)।",
     anuvritti_from        = ('3.1.1',),

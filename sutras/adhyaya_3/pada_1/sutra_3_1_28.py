@@ -4,6 +4,7 @@
 Padaccheda: गुपू-धूप-विच्छि-पणि-पनिभ्यः आयः
 
 Krt suffix rule from dhatu: गुपूधूपविच्छिपणिपनिभ्य आयः (28)
+Pāṭha: ashtadhyayi.com data.txt row i=31028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gupUDUpavicCipaRipaniBya AyaH",
     text_dev              = "गुपूधूपविच्छिपणिपनिभ्य आयः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH gupU-DUpa-vicCi-paRi-paniByaH AyaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः गुपू-धूप-विच्छि-पणि-पनिभ्यः आयः",
     padaccheda_dev        = "गुपू-धूप-विच्छि-पणि-पनिभ्यः आयः",
     why_dev               = "धातोः [गुपूधूपविच्छिपणिपनिभ्य आयः]-प्रत्ययः विहितः (३.१.28)।",
     anuvritti_from        = ('3.1.1',),

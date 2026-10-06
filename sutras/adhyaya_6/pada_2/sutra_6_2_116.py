@@ -4,6 +4,7 @@
 Padaccheda: नञः जर-मर-मित्र-मृताः
 
 नञो जरमरमित्रमृताः (6.2.116)
+Pāṭha: ashtadhyayi.com data.txt row i=62116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "naYo jaramaramitramftAH",
     text_dev              = "नञो जरमरमित्रमृताः",
+    samagra_slp1          = "udAttaH uttarapadAdiH naYaH jara-mara-mitra-mftAH bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः नञः जर-मर-मित्र-मृताः बहुव्रीहौ",
     padaccheda_dev        = "नञः जर-मर-मित्र-मृताः",
     why_dev               = "(सूत्रम् 6.2.116) नञो जरमरमित्रमृताः।",
     anuvritti_from        = ('6.1.1',),

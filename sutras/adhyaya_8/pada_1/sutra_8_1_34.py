@@ -4,6 +4,7 @@
 Padaccheda: हि च
 
 हि च (8.1.34)
+Pāṭha: ashtadhyayi.com data.txt row i=81034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hi ca",
     text_dev              = "हि च",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO hi ca tiN na aNga aprAtilomye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ हि च तिङ् न अङ्ग अप्रातिलोम्ये",
     padaccheda_dev        = "हि च",
     why_dev               = "(सूत्रम् 8.1.34) हि च।",
     anuvritti_from        = ('8.1.1',),

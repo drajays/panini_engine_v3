@@ -4,6 +4,7 @@
 Padaccheda: दूरात् हूते च
 
 दूराद्धूते च (8.2.84)
+Pāṭha: ashtadhyayi.com data.txt row i=82084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dUrAdDUte ca",
     text_dev              = "दूराद्धूते च",
+    samagra_slp1          = "dUrAt hUte vAkyasya weH plutaH udAttaH",
+    samagra_dev           = "दूरात् हूते वाक्यस्य टेः प्लुतः उदात्तः",
     padaccheda_dev        = "दूरात् हूते च",
     why_dev               = "(सूत्रम् 8.2.84) दूराद्धूते च।",
     anuvritti_from        = ('8.1.1',),

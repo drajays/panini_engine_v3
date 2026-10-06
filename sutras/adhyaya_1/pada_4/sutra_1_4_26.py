@@ -10,6 +10,7 @@ Example: *devadattāt parājayate* — Devadatta is the asoḍha/apādāna.
 
 *Engine:* A Term carrying ``"asoDya_parAji"`` (pipeline-set) gets tag ``"apAdAna"``.
 ``cond`` reads only structural semantic tags (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -50,6 +51,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = 'parAjerasoQaH',
     text_dev              = 'पराजेरसोढः',
+    samagra_slp1          = "parAjeH asoQaH kArakam apAdAnam",
+    samagra_dev           = "पराजेः असोढः कारकम् अपादानम्",
     padaccheda_dev        = "पराजेः / असोढः",
     why_dev               = (
         "परा-जि-धातोः प्रयोगे योऽसोढः (यं पराजयते) स अपादान-कारक-संज्ञकः — "

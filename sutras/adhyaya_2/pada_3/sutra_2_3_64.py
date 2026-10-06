@@ -4,6 +4,7 @@
 Padaccheda: कृत्वः-अर्थ-प्रयोगे काले अधिकरणे
 
 In krtvas-artha (num-times) usage, time takes saptami.
+Pāṭha: ashtadhyayi.com data.txt row i=23064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'kftvorTaprayoge kAleDikaraRe',
     text_dev              = 'कृत्वोऽर्थप्रयोगे कालेऽधिकरणे',
+    samagra_slp1          = "anaBihite kftvorTa-prayoge kAle aDikaraRe Seze zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते कृत्वोऽर्थ-प्रयोगे काले अधिकरणे शेषे षष्ठी",
     padaccheda_dev        = "कृत्वः-अर्थ-प्रयोगे काले अधिकरणे",
     why_dev               = "कृत्वः-अर्थ-प्रयोगे काले अधिकरणे (२.३.६४)।",
     anuvritti_from        = ('2.3.36',),

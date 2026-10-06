@@ -4,6 +4,7 @@
 Padaccheda: वेत्तेः विभाषा
 
 वेत्तेर्विभाषा (7.1.7)
+Pāṭha: ashtadhyayi.com data.txt row i=71007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vetterviBAzA",
     text_dev              = "वेत्तेर्विभाषा",
+    samagra_slp1          = "aNgasya vetteH viBAzA JaH at ruw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य वेत्तेः विभाषा झः अत् रुट्",
     padaccheda_dev        = "वेत्तेः विभाषा",
     why_dev               = "(सूत्रम् 7.1.7) वेत्तेर्विभाषा।",
     anuvritti_from        = ('7.1.1',),

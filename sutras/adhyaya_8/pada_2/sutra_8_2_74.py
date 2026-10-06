@@ -4,6 +4,7 @@
 Padaccheda: सिपि धातोः रुः वा
 
 सिपि धातो रुर्वा (8.2.74)
+Pāṭha: ashtadhyayi.com data.txt row i=82074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sipi DAto rurvA",
     text_dev              = "सिपि धातो रुर्वा",
+    samagra_slp1          = "padasya pUrvatrAsidDam sipi DAtoH ruH vA daH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् सिपि धातोः रुः वा दः",
     padaccheda_dev        = "सिपि धातोः रुः वा",
     why_dev               = "(सूत्रम् 8.2.74) सिपि धातो रुर्वा।",
     anuvritti_from        = ('8.1.1',),

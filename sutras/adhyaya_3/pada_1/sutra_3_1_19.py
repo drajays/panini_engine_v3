@@ -4,6 +4,7 @@
 Padaccheda: नमो-वरिवस्-चित्रङः क्यच्
 
 Krt suffix rule from dhatu: नमोवरिवश्चित्रङः क्यच् (19)
+Pāṭha: ashtadhyayi.com data.txt row i=31019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "namovarivaScitraNaH kyac",
     text_dev              = "नमोवरिवश्चित्रङः क्यच्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca namo-varivas-citraNaH kyac vA karmaRaH karaRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च नमो-वरिवस्-चित्रङः क्यच् वा कर्मणः करणे",
     padaccheda_dev        = "नमो-वरिवस्-चित्रङः क्यच्",
     why_dev               = "धातोः [नमोवरिवश्चित्रङः क्यच्]-प्रत्ययः विहितः (३.१.19)।",
     anuvritti_from        = ('3.1.1',),

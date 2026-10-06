@@ -41,7 +41,9 @@ def test_no_karmani_luG_shortcut_rows():
 # ashtadhyayi.com readings we deliberately do not follow:
 #   01.0208 पेबृँ — upstream "पेबृ" drops the ँ its own neighbours (पेवृँ …) carry;
 #   01.0925 छदँ — upstream "छदिः" is the इका निर्देश citation, not the upadeśa.
-_KNOWN_DIVERGENCES = {"01.0208", "01.0925"}
+#   02.0007 चक्षिँङ् — upstream Devanāgarī "चक्षिङ्" drops the ँ its own SLP1 row (ca\kzi~\N) has; 1.3.2 decides:
+#           only the anunāsika reading yields the attested चक्ष् (AMENDMENT 20 §2.3).
+_KNOWN_DIVERGENCES = {"01.0208", "01.0925", "02.0007"}
 
 
 def test_dhatupatha_upadesha_matches_ashtadhyayi_com_aupadeshik():

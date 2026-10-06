@@ -4,6 +4,7 @@
 Padaccheda: कृत्य-तुल्याख्याः अजात्या
 
 krtya and tulya-named words with non-jati form karmadharaya.
+Pāṭha: ashtadhyayi.com data.txt row i=21068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kftyatulyAKyA ajAtyA",
     text_dev              = "कृत्यतुल्याख्या अजात्या",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH kftya-tulya-AKyAH ajAtyA samAnADikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः कृत्य-तुल्य-आख्याः अजात्या समानाधिकरणेन",
     padaccheda_dev        = "कृत्य-तुल्याख्याः अजात्या",
     why_dev               = "कृत्य-तुल्याख्याः अजात्या कर्मधारये (२.१.६८)।",
     anuvritti_from        = ('2.1.3',),

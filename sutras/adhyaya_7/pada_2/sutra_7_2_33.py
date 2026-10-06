@@ -4,6 +4,7 @@
 Padaccheda: सोमे ह्वरितः
 
 सोमे ह्वरितः (7.2.33)
+Pāṭha: ashtadhyayi.com data.txt row i=72033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "some hvaritaH",
     text_dev              = "सोमे ह्वरितः",
+    samagra_slp1          = "aNgasya some hvaritaH na iw nizWAyAm Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य सोमे ह्वरितः न इट् निष्ठायाम् छन्दसि",
     padaccheda_dev        = "सोमे ह्वरितः",
     why_dev               = "(सूत्रम् 7.2.33) सोमे ह्वरितः।",
     anuvritti_from        = ('7.1.1',),

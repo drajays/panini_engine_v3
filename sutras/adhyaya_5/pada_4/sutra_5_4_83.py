@@ -4,6 +4,7 @@
 Padaccheda: अनुगवम् आयामे
 
 अनुगवमायामे (5.4.83)
+Pāṭha: ashtadhyayi.com data.txt row i=54083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anugavamAyAme",
     text_dev              = "अनुगवमायामे",
+    samagra_slp1          = "anugavamAyAme nipAtyate",
+    samagra_dev           = "अनुगवमायामे (निपात्यते)",
     padaccheda_dev        = "अनुगवम् आयामे",
     why_dev               = "(सूत्रम् 5.4.83) अनुगवमायामे।",
     anuvritti_from        = ('5.4.68',),

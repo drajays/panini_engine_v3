@@ -4,6 +4,7 @@
 Padaccheda: द्वन्द्व-मनोज्ञ-आदिभ्यः च
 
 द्वंद्वमनोज्ञादिभ्यश्च (5.1.133)
+Pāṭha: ashtadhyayi.com data.txt row i=51133 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'dvandvamanojYAdiByaSca',
     text_dev              = 'द्वन्द्वमनोज्ञादिभ्यश्च',
+    samagra_slp1          = "tasya BAvaH karmaRi ca iti dvandva-manojYAdiByaH vuY",
+    samagra_dev           = "'तस्य भावः, कर्मणि च' (इति) द्वन्द्व-मनोज्ञादिभ्यः वुञ्",
     padaccheda_dev        = "द्वन्द्व-मनोज्ञ-आदिभ्यः च",
     why_dev               = "(सूत्रम् 5.1.133) द्वंद्वमनोज्ञादिभ्यश्च।",
     anuvritti_from        = ('5.1.120',),

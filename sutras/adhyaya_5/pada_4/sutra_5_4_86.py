@@ -4,6 +4,7 @@
 Padaccheda: तत्पुरुषस्य अङ्‍गुलेः सङ्‍ख्या-अव्यय-आदेः
 
 तत्पुरुषस्याङ्गुलेः संख्याऽव्ययादेः (5.4.86)
+Pāṭha: ashtadhyayi.com data.txt row i=54086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tatpuruzasyANguleH saMKyAvyayAdeH',
     text_dev              = 'तत्पुरुषस्याङ्गुलेः संख्याव्ययादेः',
+    samagra_slp1          = "saNKyA-avyayAdeH aNguleH tatpuruzasya ac",
+    samagra_dev           = "सङ्ख्या-अव्ययादेः अङ्गुलेः तत्पुरुषस्य अच्",
     padaccheda_dev        = "तत्पुरुषस्य अङ्‍गुलेः सङ्‍ख्या-अव्यय-आदेः",
     why_dev               = "(सूत्रम् 5.4.86) तत्पुरुषस्याङ्गुलेः संख्याऽव्ययादेः।",
     anuvritti_from        = ('5.4.68',),

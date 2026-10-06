@@ -4,6 +4,7 @@
 Padaccheda: ग्रीवाभ्यः अण् च
 
 ग्रीवाभ्योऽण् च (4.3.57)
+Pāṭha: ashtadhyayi.com data.txt row i=43057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'grIvAByoR ca',
     text_dev              = 'ग्रीवाभ्योऽण् च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA grIvAByaH aR ca tatra BavaH QaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा ग्रीवाभ्यः अण् च तत्र भवः ढञ्",
     padaccheda_dev        = "ग्रीवाभ्यः अण् च",
     why_dev               = "(सूत्रम् 4.3.57) ग्रीवाभ्योऽण् च।",
     anuvritti_from        = ('4.1.1',),

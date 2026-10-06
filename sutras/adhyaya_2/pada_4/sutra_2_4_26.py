@@ -4,6 +4,7 @@
 Padaccheda: पर-वत् लिङ्गम् द्वन्द्व-तत्पुरुषयोः
 
 dvandva and tatpurusha take gender of the latter member.
+Pāṭha: ashtadhyayi.com data.txt row i=24026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paravalliNgaM dvandvatatpuruzayoH",
     text_dev              = "परवल्लिङ्गं द्वन्द्वतत्पुरुषयोः",
+    samagra_slp1          = "paravat liNgam dvandva-tatpuruzayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "परवत् लिङ्गम् द्वन्द्व-तत्पुरुषयोः",
     padaccheda_dev        = "पर-वत् लिङ्गम् द्वन्द्व-तत्पुरुषयोः",
     why_dev               = "द्वन्द्व-तत्पुरुषयोः पर-वत् लिङ्गम् (२.४.२६)।",
     anuvritti_from        = ('2.4.1',),

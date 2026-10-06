@@ -14,6 +14,7 @@ vañcate (he deceives).
 stamp "Atmanepada_1_3_69" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _ROOTS carries the tag "prAlambhana_usage". No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -61,6 +62,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='gfDivaYcyoH pralamBane',
     text_dev='गृधिवञ्च्योः प्रलम्भने',
+    samagra_slp1="gfDi-vaYcyoH pralamBane Atmanepadam ReH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="गृधि-वञ्च्योः प्रलम्भने आत्मनेपदम् णेः",
     padaccheda_dev="गृधि-वञ्च्योः (षष्ठी-द्विवचन) / प्रलम्भने (सप्तमी-एकवचन)",
     why_dev=(
         "गृध्/वञ्च्-धात्वोः प्रलम्भन-अर्थे आत्मनेपदम् — "

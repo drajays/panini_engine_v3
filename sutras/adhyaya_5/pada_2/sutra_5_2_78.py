@@ -4,6 +4,7 @@
 Padaccheda: सः एषाम् ग्रामणीः
 
 स एषां ग्रामणीः (5.2.78)
+Pāṭha: ashtadhyayi.com data.txt row i=52078 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sa ezAM grAmaRIH",
     text_dev              = "स एषां ग्रामणीः",
+    samagra_slp1          = "saH ezAm grAmaRIH  iti kan",
+    samagra_dev           = "'सः एषाम् ग्रामणीः ' (इति) कन्",
     padaccheda_dev        = "सः एषाम् ग्रामणीः",
     why_dev               = "(सूत्रम् 5.2.78) स एषां ग्रामणीः।",
     anuvritti_from        = ('4.1.82',),

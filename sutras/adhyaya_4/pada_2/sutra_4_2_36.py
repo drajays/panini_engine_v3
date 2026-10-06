@@ -4,6 +4,7 @@
 Padaccheda: पितृव्य-मातुल-मातामह-पितामहाः
 
 पितृव्यमातुलमातामहपितामहाः (4.2.36)
+Pāṭha: ashtadhyayi.com data.txt row i=42036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pitfvyamAtulamAtAmahapitAmahAH",
     text_dev              = "पितृव्यमातुलमातामहपितामहाः",
+    samagra_slp1          = "pitfvya-mAtula-mAtAmaha-pitAmahAH",
+    samagra_dev           = "पितृव्य-मातुल-मातामह-पितामहाः",
     padaccheda_dev        = "पितृव्य-मातुल-मातामह-पितामहाः",
     why_dev               = "(सूत्रम् 4.2.36) पितृव्यमातुलमातामहपितामहाः।",
     anuvritti_from        = ('4.1.1',),

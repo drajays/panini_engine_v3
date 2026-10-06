@@ -4,6 +4,7 @@
 Padaccheda: बभूथ (लुप्तप्रथमान्तनिर्देशः) आततन्थ (लुप्तप्रथमान्तनिर्देशः) जगृम्भ (लुप्तप्रथमान्तनिर्देशः) ववर्थ (लुप्तप्रथमान्तनिर्देशः) इति निगमे
 
 बभूथाततन्थजगृम्भववर्थेति निगमे (7.2.64)
+Pāṭha: ashtadhyayi.com data.txt row i=72064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "baBUTAtatanTajagfmBavavarTeti nigame",
     text_dev              = "बभूथाततन्थजगृम्भववर्थेति निगमे",
+    samagra_slp1          = "aNgasya baBUTa AtatanTa jagfmBa vavarTa iti nigame valAdeH iw ArDaDAtukasya na Tali aniwaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य बभूथ आततन्थ जगृम्भ ववर्थ इति निगमे वलादेः इट् आर्धधातुकस्य न थलि अनिटः",
     padaccheda_dev        = "बभूथ (लुप्तप्रथमान्तनिर्देशः) आततन्थ (लुप्तप्रथमान्तनिर्देशः) जगृम्भ (लुप्तप्रथमान्तनिर्देशः) ववर्थ (लुप्तप्रथमान्तनिर्देशः) इति निगमे",
     why_dev               = "(सूत्रम् 7.2.64) बभूथाततन्थजगृम्भववर्थेति निगमे।",
     anuvritti_from        = ('7.1.1',),

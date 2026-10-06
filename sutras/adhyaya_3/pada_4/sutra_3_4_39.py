@@ -4,6 +4,7 @@
 Padaccheda: हस्ते वर्त्ति-ग्रहोः
 
 krt-suffix rule: हस्ते वर्त्तिग्रहोः
+Pāṭha: ashtadhyayi.com data.txt row i=34039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "haste varttigrahoH",
     text_dev              = "हस्ते वर्त्तिग्रहोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH haste vartti-grahoH kft Ramul karaRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः हस्ते वर्त्ति-ग्रहोः कृत् णमुल् करणे",
     padaccheda_dev        = "हस्ते वर्त्ति-ग्रहोः",
     why_dev               = "धातोः प्रत्ययः (३.4.39)।",
     anuvritti_from        = ('3.1.1',),

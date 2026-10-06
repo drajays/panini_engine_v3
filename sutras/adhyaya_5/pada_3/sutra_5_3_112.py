@@ -4,6 +4,7 @@
 Padaccheda: पूगात् ञ्यः अ-ग्रामणी-पूर्वात्
 
 पूगाञ्ञ्योऽग्रामणीपूर्वात् (5.3.112)
+Pāṭha: ashtadhyayi.com data.txt row i=53112 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'pUgAYYyogrAmaRIpUrvAt',
     text_dev              = 'पूगाञ्ञ्योऽग्रामणीपूर्वात्',
+    samagra_slp1          = "agrAmaRIpUrvAt pUgAt YyaH",
+    samagra_dev           = "अग्रामणीपूर्वात् पूगात् ञ्यः",
     padaccheda_dev        = "पूगात् ञ्यः अ-ग्रामणी-पूर्वात्",
     why_dev               = "(सूत्रम् 5.3.112) पूगाञ्ञ्योऽग्रामणीपूर्वात्।",
     anuvritti_from        = ('4.1.76',),

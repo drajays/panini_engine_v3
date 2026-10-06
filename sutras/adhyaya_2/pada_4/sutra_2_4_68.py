@@ -4,6 +4,7 @@
 Padaccheda: तिक-कितव-आदिभ्यः द्वन्द्वे
 
 tika, kitava etc. in dvandva compound.
+Pāṭha: ashtadhyayi.com data.txt row i=24068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tikakitavAdiByo dvandve',
     text_dev              = 'तिककितवादिभ्यो द्वन्द्वे',
+    samagra_slp1          = "tikakitava-AdiByaH dvandve luk bahuzu tena eva astriyAm gotre",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तिककितव-आदिभ्यः द्वन्द्वे लुक् बहुषु तेन एव अस्त्रियाम् गोत्रे",
     padaccheda_dev        = "तिक-कितव-आदिभ्यः द्वन्द्वे",
     why_dev               = "तिक-कितव-आदिभ्यः द्वन्द्वे (२.४.६८)।",
     anuvritti_from        = ('2.4.1',),

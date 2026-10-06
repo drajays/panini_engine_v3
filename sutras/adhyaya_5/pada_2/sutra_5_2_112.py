@@ -4,6 +4,7 @@
 Padaccheda: रजः-कृषि-असुति-परिषदः वलच्
 
 रजःकृष्यासुतिपरिषदो वलच् (5.2.112)
+Pāṭha: ashtadhyayi.com data.txt row i=52112 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rajaHkfzyAsutiparizado valac",
     text_dev              = "रजःकृष्यासुतिपरिषदो वलच्",
+    samagra_slp1          = "tat asya asmin astIti iti rajas-kfzi-Asuti-parizadaH valac",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) रजस्-कृषि-आसुति-परिषदः वलच्",
     padaccheda_dev        = "रजः-कृषि-असुति-परिषदः वलच्",
     why_dev               = "(सूत्रम् 5.2.112) रजःकृष्यासुतिपरिषदो वलच्।",
     anuvritti_from        = ('4.1.82',),

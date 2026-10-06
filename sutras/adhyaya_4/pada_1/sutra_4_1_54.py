@@ -4,6 +4,7 @@
 Padaccheda: स्वाङ्गात् च उपसर्जनात् अ-संयोग-उपधात्
 
 स्वाङ्गाच्चोपसर्जनादसंयोगोपधात् (4.1.54)
+Pāṭha: ashtadhyayi.com data.txt row i=41054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "svANgAccopasarjanAdasaMyogopaDAt",
     text_dev              = "स्वाङ्गाच्चोपसर्जनादसंयोगोपधात्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt sva-aNgAt ca upasarjanAt a-saMyoga-upaDAt NIz vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् स्व-अङ्गात् च उपसर्जनात् अ-संयोग-उपधात् ङीष् वा",
     padaccheda_dev        = "स्वाङ्गात् च उपसर्जनात् अ-संयोग-उपधात्",
     why_dev               = "(सूत्रम् 4.1.54) स्वाङ्गाच्चोपसर्जनादसंयोगोपधात्।",
     anuvritti_from        = ('4.1.1',),

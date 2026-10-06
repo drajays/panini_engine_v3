@@ -10,6 +10,7 @@ or path/distance (*adhvan*).
 Engine: registers the kāla/adhvan + atyantasaṃyoga→dvitīyā gate. ``cond``
 checks only the gate flag, never vibhakti coordinates (CONSTITUTION Art. 2).
 ``r1_form_identity_exempt=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=23005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'kAlADvanoratyantasaMyoge',
     text_dev              = 'कालाध्वनोरत्यन्तसंयोगे',
+    samagra_slp1          = "anaBihite kAla-aDvanoH atyanta-saMyoge dvitIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते काल-अध्वनोः अत्यन्त-संयोगे द्वितीया",
     padaccheda_dev        = "कालाध्वनोः / अत्यन्तसंयोगे",
     why_dev               = (
         "काल-अध्वनोः अत्यन्तसंयोगे द्वितीया-विभक्तिः — "

@@ -4,6 +4,7 @@
 Padaccheda: चतुर्थी तदर्थे
 
 चतुर्थी तदर्थे (6.2.43)
+Pāṭha: ashtadhyayi.com data.txt row i=62043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "caturTI tadarTe",
     text_dev              = "चतुर्थी तदर्थे",
+    samagra_slp1          = "caturTI tadarTe prakftyA pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "चतुर्थी तदर्थे प्रकृत्या पूर्वपदम्",
     padaccheda_dev        = "चतुर्थी तदर्थे",
     why_dev               = "(सूत्रम् 6.2.43) चतुर्थी तदर्थे।",
     anuvritti_from        = ('6.1.1',),

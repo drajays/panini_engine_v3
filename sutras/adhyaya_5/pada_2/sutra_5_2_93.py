@@ -4,6 +4,7 @@
 Padaccheda: इन्द्रियम् इन्द्रलिङ्गम् इन्द्रदृष्टम् इन्द्रसृष्टम् इन्द्रजुष्टम् इन्द्रदत्तम् इति वा
 
 इन्द्रियमिन्द्रलिंगमिन्द्रदृष्टमिन्द्रसृष्टमिन्द्रजुष्टम्इन्द्रदत्तमिति वा (5.2.93)
+Pāṭha: ashtadhyayi.com data.txt row i=52093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'indriyamindraliMgamindradfzwamindrasfzwamindrajuzwamindradattamiti vA',
     text_dev              = 'इन्द्रियमिन्द्रलिंगमिन्द्रदृष्टमिन्द्रसृष्टमिन्द्रजुष्टमिन्द्रदत्तमिति वा',
+    samagra_slp1          = "indraliNgam indradfzwam  indrasfzwam indrajuzwam  indradattam iti vA indriyam nipAtyate",
+    samagra_dev           = "इन्द्रलिङ्गम्, इन्द्रदृष्टम् , इन्द्रसृष्टम्,  इन्द्रजुष्टम् , इन्द्रदत्तम् इति वा 'इन्द्रियम्' (निपात्यते)",
     padaccheda_dev        = "इन्द्रियम् इन्द्रलिङ्गम् इन्द्रदृष्टम् इन्द्रसृष्टम् इन्द्रजुष्टम् इन्द्रदत्तम् इति वा",
     why_dev               = "(सूत्रम् 5.2.93) इन्द्रियमिन्द्रलिंगमिन्द्रदृष्टमिन्द्रसृष्टमिन्द्रजुष्टम्इन्द्रदत्तमिति वा।",
     anuvritti_from        = ('4.1.82',),

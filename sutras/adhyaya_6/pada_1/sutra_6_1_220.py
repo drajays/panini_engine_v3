@@ -4,6 +4,7 @@
 Padaccheda: अन्तः अवत्याः
 
 अन्तोऽवत्याः (6.1.220)
+Pāṭha: ashtadhyayi.com data.txt row i=61220 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'antovatyAH',
     text_dev              = 'अन्तोऽवत्याः',
+    samagra_slp1          = "antaH avatyAH udAttaH saMjYAyAm striyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अन्तः अवत्याः उदात्तः संज्ञायाम् स्त्रियाम्",
     padaccheda_dev        = "अन्तः अवत्याः",
     why_dev               = "(सूत्रम् 6.1.220) अन्तोऽवत्याः।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: धः कर्मणि ष्ट्रन्
 
 krt-suffix rule: धः कर्मणि ष्ट्रन् (181)
+Pāṭha: ashtadhyayi.com data.txt row i=32181 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DaH karmaRi zwran",
     text_dev              = "धः कर्मणि ष्ट्रन्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne DaH karmaRi zwran kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने धः कर्मणि ष्ट्रन् कृत्",
     padaccheda_dev        = "धः कर्मणि ष्ट्रन्",
     why_dev               = "धातोः कृत्-प्रत्ययः [धः कर्मणि ष्ट्रन्] विहितः (३.२.181)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

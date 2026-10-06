@@ -4,6 +4,7 @@
 Padaccheda: नञः तत्पुरुषात्
 
 नञस्तत्पुरुषात् (5.4.71)
+Pāṭha: ashtadhyayi.com data.txt row i=54071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "naYastatpuruzAt",
     text_dev              = "नञस्तत्पुरुषात्",
+    samagra_slp1          = "naYaH tatpuruzAt samAsAntAH na",
+    samagra_dev           = "नञः तत्पुरुषात् समासान्ताः न",
     padaccheda_dev        = "नञः तत्पुरुषात्",
     why_dev               = "(सूत्रम् 5.4.71) नञस्तत्पुरुषात्।",
     anuvritti_from        = ('5.4.68',),

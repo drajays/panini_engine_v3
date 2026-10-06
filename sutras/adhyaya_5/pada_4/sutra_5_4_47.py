@@ -4,6 +4,7 @@
 Padaccheda: हीयमान-पाप-योगात् च
 
 हीयमानपापयोगाच्च (5.4.47)
+Pāṭha: ashtadhyayi.com data.txt row i=54047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hIyamAnapApayogAcca",
     text_dev              = "हीयमानपापयोगाच्च",
+    samagra_slp1          = "hIyamAna-pApa-yogAt tftIyAyAH akartari tasiH",
+    samagra_dev           = "हीयमान-पाप-योगात् तृतीयायाः अकर्तरि तसिः",
     padaccheda_dev        = "हीयमान-पाप-योगात् च",
     why_dev               = "(सूत्रम् 5.4.47) हीयमानपापयोगाच्च।",
     anuvritti_from        = ('4.1.76',),

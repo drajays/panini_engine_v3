@@ -4,6 +4,7 @@
 Padaccheda: णौ गमिः अबोधने
 
 gami in nic (causative) when not in bodhana sense.
+Pāṭha: ashtadhyayi.com data.txt row i=24046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "RO gamiraboDane",
     text_dev              = "णौ गमिरबोधने",
+    samagra_slp1          = "ArDaDAtuke RO gamiH a-boDane iRaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके णौ गमिः अ-बोधने इणः",
     padaccheda_dev        = "णौ गमिः अबोधने",
     why_dev               = "णौ गमिः अबोधने (२.४.४६)।",
     anuvritti_from        = ('2.4.45',),

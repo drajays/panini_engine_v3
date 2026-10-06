@@ -4,6 +4,7 @@
 Padaccheda: किंवृत्ते लिङ्-लृटौ
 
 krt-suffix rule: किंवृत्ते लिङ्लृटौ
+Pāṭha: ashtadhyayi.com data.txt row i=33144 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kiMvftte liNlfwO",
     text_dev              = "किंवृत्ते लिङ्लृटौ",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kiMvftte liNlfwO kft utApyoH garhAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः किंवृत्ते लिङ्लृटौ कृत् उताप्योः गर्हायाम्",
     padaccheda_dev        = "किंवृत्ते लिङ्-लृटौ",
     why_dev               = "धातोः प्रत्ययः (३.3.144)।",
     anuvritti_from        = ('3.1.1',),

@@ -6,6 +6,7 @@
 
 This is a pure SAMJNA.  It MUST write to state.samjna_registry['guṇa']
 and MUST NOT touch any varṇa.
+Pāṭha: ashtadhyayi.com data.txt row i=11002 (Art. 14).
 """
 from engine            import SutraType, SutraRecord, register_sutra
 from engine.state      import State
@@ -46,6 +47,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = "adeN guRaH",
     text_dev       = "अदेङ् गुणः",
+    samagra_slp1   = "at-eN guRaH",
+    samagra_dev    = "अत्-एङ् गुणः",
     padaccheda_dev = "अत्-एङ् गुणः",
     why_dev        = "अ, ए, ओ इति गुण-संज्ञाः भवन्ति।",
     anuvritti_from = (),

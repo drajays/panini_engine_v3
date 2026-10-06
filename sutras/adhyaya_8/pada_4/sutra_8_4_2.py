@@ -178,6 +178,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'awkupvANnumvyavAyepi',
     text_dev       = 'अट्कुप्वाङ्नुम्व्यवायेऽपि',
+    samagra_slp1   = "razAByAm naH RaH samAnapade aw-ku-pu-AN-num-vyavAye api",
+    samagra_dev    = "रषाभ्याम् नः णः समानपदे अट्-कु-पु-आङ्-नुम्-व्यवाये अपि",
     padaccheda_dev = "अट्-कु-प्-वाङ्-नुम्-व्यवाये अपि",
     why_dev        = "र-ष-वर्णात् परस्य न-कारस्य णत्वम् — अट्-कु-पु-आङ्-नुम् "
                      "व्यवधाने अपि (त्रिपादी)।",

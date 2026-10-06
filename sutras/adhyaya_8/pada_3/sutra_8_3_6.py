@@ -4,6 +4,7 @@
 Padaccheda: पुमः खयि अम्-परे
 
 पुमः खय्यम्परे (8.3.6)
+Pāṭha: ashtadhyayi.com data.txt row i=83006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pumaH Kayyampare",
     text_dev              = "पुमः खय्यम्परे",
+    samagra_slp1          = "pumaH ru~ am-pare Kayi",
+    samagra_dev           = "पुमः रुँ अम्-परे खयि",
     padaccheda_dev        = "पुमः खयि अम्-परे",
     why_dev               = "(सूत्रम् 8.3.6) पुमः खय्यम्परे।",
     anuvritti_from        = ('8.1.1',),

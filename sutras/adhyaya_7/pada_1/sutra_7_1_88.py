@@ -4,6 +4,7 @@
 Padaccheda: भस्य टेः लोपः
 
 भस्य टेर्लोपः (7.1.88)
+Pāṭha: ashtadhyayi.com data.txt row i=71088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Basya werlopaH",
     text_dev              = "भस्य टेर्लोपः",
+    samagra_slp1          = "paTi-maTi-fBukzAm Basya weH lopaH",
+    samagra_dev           = "पथि-मथि-ऋभुक्षाम् भस्य टेः लोपः",
     padaccheda_dev        = "भस्य टेः लोपः",
     why_dev               = "(सूत्रम् 7.1.88) भस्य टेर्लोपः।",
     anuvritti_from        = ('7.1.1',),

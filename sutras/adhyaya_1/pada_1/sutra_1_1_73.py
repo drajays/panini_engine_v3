@@ -25,6 +25,7 @@ never receive that optional *vṛddha* licence (``upadesha_slp1`` exact match on
 ``Term.tags`` for those indices (audit; **cond** is still phoneme / *vārttika*
 based only).  No *vṛddhi* *prayoga* here (**vidhi** sūtras only).  See **1.1.1**
 for the *vṛddhi* phoneme set.
+Pāṭha: ashtadhyayi.com data.txt row i=11073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -136,6 +137,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'vfdDiryasyAcAmAdistad vfdDam',
     text_dev       = 'वृद्धिर्यस्याचामादिस्तद् वृद्धम्',
+    samagra_slp1   = "yasya acAmAdiH vfdDiH tat vfdDam",
+    samagra_dev    = "यस्य अचामादिः वृद्धिः, तत् वृद्धम्",
     padaccheda_dev = (
         "वृद्धिः (प्रथमा-एकवचनम्) / यस्य (षष्ठी-एकवचनम्) / "
         "अचाम् (षष्ठी-बहुवचनम्) / आदिः (प्रथमा-एकवचनम्) / "

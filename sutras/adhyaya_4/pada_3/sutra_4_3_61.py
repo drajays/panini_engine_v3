@@ -4,6 +4,7 @@
 Padaccheda: ग्रामात् परि-अनु-पूर्वात्
 
 ग्रामात् पर्यनुपूर्वात् (4.3.61)
+Pāṭha: ashtadhyayi.com data.txt row i=43061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "grAmAt paryanupUrvAt",
     text_dev              = "ग्रामात् पर्यनुपूर्वात्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA grAmAt pari-anu-pUrvAt BavaH tatra avyayIBAvAt ca WaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा ग्रामात् परि-अनु-पूर्वात् भवः तत्र अव्ययीभावात् च ठञ्",
     padaccheda_dev        = "ग्रामात् परि-अनु-पूर्वात्",
     why_dev               = "(सूत्रम् 4.3.61) ग्रामात् पर्यनुपूर्वात्।",
     anuvritti_from        = ('4.1.1',),

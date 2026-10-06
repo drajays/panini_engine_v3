@@ -4,6 +4,7 @@
 Padaccheda: सु-कर्म-पाप-मन्त्र-पुण्येषु कृञः
 
 krt-suffix rule: सुकर्मपापमन्त्रपुण्येषु कृञः (89)
+Pāṭha: ashtadhyayi.com data.txt row i=32089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sukarmapApamantrapuRyezu kfYaH",
     text_dev              = "सुकर्मपापमन्त्रपुण्येषु कृञः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte su-karma-pApa-mantra-puRyezu kfYaH kft karmaRi kvip",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते सु-कर्म-पाप-मन्त्र-पुण्येषु कृञः कृत् कर्मणि क्विप्",
     padaccheda_dev        = "सु-कर्म-पाप-मन्त्र-पुण्येषु कृञः",
     why_dev               = "धातोः कृत्-प्रत्ययः [सुकर्मपापमन्त्रपुण्येषु कृञः] विहितः (३.२.89)।",
     anuvritti_from        = ('3.1.1',),

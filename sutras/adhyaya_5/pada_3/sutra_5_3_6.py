@@ -4,6 +4,7 @@
 Padaccheda: सर्वस्य सः अन्यतरस्याम् दि
 
 सर्वस्य सोऽन्यतरस्यां दि (5.3.6)
+Pāṭha: ashtadhyayi.com data.txt row i=53006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sarvasya sonyatarasyAM di',
     text_dev              = 'सर्वस्य सोऽन्यतरस्यां दि',
+    samagra_slp1          = "sarvasya saH di prAgdiSaH anyatarasyAm",
+    samagra_dev           = "सर्वस्य सः दि प्राग्दिशः अन्यतरस्याम्",
     padaccheda_dev        = "सर्वस्य सः अन्यतरस्याम् दि",
     why_dev               = "(सूत्रम् 5.3.6) सर्वस्य सोऽन्यतरस्यां दि।",
     anuvritti_from        = ('5.3.2',),

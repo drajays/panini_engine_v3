@@ -4,6 +4,7 @@
 Padaccheda: व्रातच्-फञोः अ-स्त्रियाम्
 
 व्रातच्फञोरस्त्रियाम् (5.3.113)
+Pāṭha: ashtadhyayi.com data.txt row i=53113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vrAtacPaYorastriyAm",
     text_dev              = "व्रातच्फञोरस्त्रियाम्",
+    samagra_slp1          = "vrAta-cPaYoH astriyAm YyaH",
+    samagra_dev           = "व्रात-च्फञोः अस्त्रियाम् ञ्यः",
     padaccheda_dev        = "व्रातच्-फञोः अ-स्त्रियाम्",
     why_dev               = "(सूत्रम् 5.3.113) व्रातच्फञोरस्त्रियाम्।",
     anuvritti_from        = ('4.1.76',),

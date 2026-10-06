@@ -4,6 +4,7 @@
 Padaccheda: स्फायः स्फी (लुप्तप्रथमान्तनिर्देशः) निष्ठायाम्
 
 स्फायः स्फी निष्ठायाम् (6.1.22)
+Pāṭha: ashtadhyayi.com data.txt row i=61022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sPAyaH sPI nizWAyAm",
     text_dev              = "स्फायः स्फी निष्ठायाम्",
+    samagra_slp1          = "sPAyaH sPI nizWAyAm samprasAraRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "स्फायः स्फी निष्ठायाम् सम्प्रसारणम्",
     padaccheda_dev        = "स्फायः स्फी (लुप्तप्रथमान्तनिर्देशः) निष्ठायाम्",
     why_dev               = "(सूत्रम् 6.1.22) स्फायः स्फी निष्ठायाम्।",
     anuvritti_from        = ('6.1.1',),

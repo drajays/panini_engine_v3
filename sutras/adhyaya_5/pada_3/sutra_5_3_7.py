@@ -4,6 +4,7 @@
 Padaccheda: पञ्चम्याः तसिल्
 
 पञ्चम्यास्तसिल् (5.3.7)
+Pāṭha: ashtadhyayi.com data.txt row i=53007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paYcamyAstasil",
     text_dev              = "पञ्चम्यास्तसिल्",
+    samagra_slp1          = "paYcamyAH kim-sarvanAmabahuByaH advyAdiByaH tasil",
+    samagra_dev           = "पञ्चम्याः किम्-सर्वनामबहुभ्यः अद्व्यादिभ्यः तसिल्",
     padaccheda_dev        = "पञ्चम्याः तसिल्",
     why_dev               = "(सूत्रम् 5.3.7) पञ्चम्यास्तसिल्।",
     anuvritti_from        = ('5.3.2',),

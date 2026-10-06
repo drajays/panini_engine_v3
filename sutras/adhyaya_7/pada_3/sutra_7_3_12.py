@@ -4,6 +4,7 @@
 Padaccheda: सु-सर्व-अर्धात् जनपदस्य
 
 सुसर्वार्धाज्जनपदस्य (7.3.12)
+Pāṭha: ashtadhyayi.com data.txt row i=73012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "susarvArDAjjanapadasya",
     text_dev              = "सुसर्वार्धाज्जनपदस्य",
+    samagra_slp1          = "aNgasya uttarapadasya susarvArDAt janapadasya vfdDiH acaH YRiti tadDitezu AdeH SvAdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य सुसर्वार्धात् जनपदस्य वृद्धिः अचः ञ्णिति तद्धितेषु आदेः श्वादेः",
     padaccheda_dev        = "सु-सर्व-अर्धात् जनपदस्य",
     why_dev               = "(सूत्रम् 7.3.12) सुसर्वार्धाज्जनपदस्य।",
     anuvritti_from        = ('7.1.1',),

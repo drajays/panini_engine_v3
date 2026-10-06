@@ -4,6 +4,7 @@
 Padaccheda: तस्य पूरणे डट्
 
 तस्य पूरणे डट् (5.2.48)
+Pāṭha: ashtadhyayi.com data.txt row i=52048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tasya pUraRe qaw",
     text_dev              = "तस्य पूरणे डट्",
+    samagra_slp1          = "tasya pUraRe iti saNKyAyAH qaw",
+    samagra_dev           = "'तस्य पूरणे' (इति) सङ्ख्यायाः डट्",
     padaccheda_dev        = "तस्य पूरणे डट्",
     why_dev               = "(सूत्रम् 5.2.48) तस्य पूरणे डट्।",
     anuvritti_from        = ('4.1.82',),

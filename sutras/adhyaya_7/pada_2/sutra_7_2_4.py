@@ -4,6 +4,7 @@
 Padaccheda: न इटि
 
 नेटि (7.2.4)
+Pāṭha: ashtadhyayi.com data.txt row i=72004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "newi",
     text_dev              = "नेटि",
+    samagra_slp1          = "aNgasya na iwi parasmEpadezu vfdDiH sici vadavrajahalantasya acaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न इटि परस्मैपदेषु वृद्धिः सिचि वदव्रजहलन्तस्य अचः",
     padaccheda_dev        = "न इटि",
     why_dev               = "(सूत्रम् 7.2.4) नेटि।",
     anuvritti_from        = ('7.1.1',),

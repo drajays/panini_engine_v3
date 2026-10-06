@@ -119,6 +119,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'tadDitezvacAmAdeH',
     text_dev       = 'तद्धितेष्वचामादेः',
+    samagra_slp1   = "aNgasya acAmAdeH acaH Riti Yiti tadDitezu vfdDiH",
+    samagra_dev    = "अङ्गस्य अचामादेः अचः णिति ञिति तद्धितेषु वृद्धिः",
     padaccheda_dev = "तद्धितेषु / अचाम् / आदेः",
     why_dev        = (
         "णित्/ञित्-तद्धित-प्रत्यये परे अङ्गस्य आद्य-अचः वृद्धिः "

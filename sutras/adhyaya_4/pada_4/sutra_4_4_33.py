@@ -4,6 +4,7 @@
 Padaccheda: रक्षति (क्रियापदम्)
 
 रक्षति (4.4.33)
+Pāṭha: ashtadhyayi.com data.txt row i=44033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rakzati",
     text_dev              = "रक्षति",
+    samagra_slp1          = "tat rakzati iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् रक्षति' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "रक्षति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.33) रक्षति।",
     anuvritti_from        = ('4.1.1',),

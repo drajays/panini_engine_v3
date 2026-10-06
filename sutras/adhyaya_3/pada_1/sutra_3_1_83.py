@@ -4,6 +4,7 @@
 Padaccheda: हलः श्नः शानच् हौ
 
 Krt suffix rule from dhatu: हलः श्नः शानज्झौ (83)
+Pāṭha: ashtadhyayi.com data.txt row i=31083 (Art. 14).
 """
 from __future__ import annotations
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -54,6 +55,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "halaH SnaH SAnajJO",
     text_dev              = "हलः श्नः शानज्झौ",
+    samagra_slp1          = "halaH SnaH SAnac hO",
+    samagra_dev           = "हलः श्नः शानच् हौ",
     padaccheda_dev        = "हलः श्नः शानच् हौ",
     why_dev               = "धातोः [हलः श्नः शानज्झौ]-प्रत्ययः विहितः (३.१.83)।",
     anuvritti_from        = ('3.1.1',),

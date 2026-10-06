@@ -4,6 +4,7 @@
 Padaccheda: वत्सर-अन्तात् छः छन्दसि
 
 वत्सरान्ताच्छश्छन्दसि (5.1.91)
+Pāṭha: ashtadhyayi.com data.txt row i=51091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vatsarAntAcCaSCandasi",
     text_dev              = "वत्सरान्ताच्छश्छन्दसि",
+    samagra_slp1          = "tena nirvfttam taTA tamaDIzwo Bfto BUto BAvI iti vatsarAntAt Candasi CaH",
+    samagra_dev           = "'तेन निर्वृत्तम्' (तथा) 'तमधीष्टो भृतो भूतो भावी' (इति) वत्सरान्तात् छन्दसि छः",
     padaccheda_dev        = "वत्सर-अन्तात् छः छन्दसि",
     why_dev               = "(सूत्रम् 5.1.91) वत्सरान्ताच्छश्छन्दसि।",
     anuvritti_from        = ('5.1.78',),

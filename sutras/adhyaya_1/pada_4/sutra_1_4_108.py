@@ -11,6 +11,7 @@ be the *prathamapuruṣa* row ( **1.4.101** *A* triple — *tip* / *tas* / *jhi*
 
 *Engine:* ``paribhasha_gates``; recipe blocks with ``MADHYAMOTTAMA_105_107_BLOCK_META_KEY``; **R3**-safe
 ``cond``; no *vākyārtha* in ``cond`` (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14108 (Art. 14).
 """
 from __future__ import annotations
 
@@ -47,6 +48,8 @@ SUTRA = SutraRecord(
         'Seze praTamaH'
     ),
     text_dev       = 'शेषे प्रथमः',
+    samagra_slp1   = "Seze upapade samAnADikaraRe sTAnini api praTamaH",
+    samagra_dev    = "शेषे उपपदे समानाधिकरणे स्थानिनि अपि प्रथमः",
     padaccheda_dev = "शेषे (सप्तमी) / उपपदे (समानाधिकरण-चर्चा) / प्रथमः (विकल्पित-पठितम्)",
     why_dev        = (
         "मध्यमोत्तम-निमित्ते १.४.१०५, १.४.१०७ — अन्येभ्यो वाक्येभ्यः "

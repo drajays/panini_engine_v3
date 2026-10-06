@@ -4,6 +4,7 @@
 Padaccheda: आयुधात् छ (लुप्तप्रथमान्तनिर्देशः) च
 
 आयुधाच्छ च (4.4.14)
+Pāṭha: ashtadhyayi.com data.txt row i=44014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AyuDAcCa ca",
     text_dev              = "आयुधाच्छ च",
+    samagra_slp1          = "tena jIvati iti AyuDAt CaH Wan ca",
+    samagra_dev           = "'तेन जीवति' (इति) आयुधात् छः ठन् च",
     padaccheda_dev        = "आयुधात् छ (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 4.4.14) आयुधाच्छ च।",
     anuvritti_from        = ('4.1.1',),

@@ -10,6 +10,7 @@ in fixed order).
 
 *Engine:* tags ``samjna_1_4_104_vibhakti`` on qualifying *pratyaya* ``Term``s; *registry* documents triple groupings
 (R2).  *cond* is blind to ``vibhakti_vacana`` *meta* (Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'viBaktiSca',
     text_dev       = 'विभक्तिश्च',
+    samagra_slp1   = "supaH tiNaH viBaktiH ca",
+    samagra_dev    = "सुपः तिङः विभक्तिः च",
     padaccheda_dev = "सुपः / तिङ् / च / विभक्तिः",
     why_dev        = (
         "सुप्-तिङ्-प्रत्ययानां विभक्ति-संज्ञा; सुप्-सप्त-त्रिकाः, तिङ्-षट्-त्रिकाः (३.४.७८)।"

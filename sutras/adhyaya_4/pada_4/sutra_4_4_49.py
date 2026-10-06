@@ -4,6 +4,7 @@
 Padaccheda: ऋतः अञ्
 
 ऋतोऽञ् (4.4.49)
+Pāṭha: ashtadhyayi.com data.txt row i=44049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ftoY',
     text_dev              = 'ऋतोऽञ्',
+    samagra_slp1          = "tasya Darmyam iti ftaH aY",
+    samagra_dev           = "'तस्य धर्म्यम्' (इति) ऋतः अञ्",
     padaccheda_dev        = "ऋतः अञ्",
     why_dev               = "(सूत्रम् 4.4.49) ऋतोऽञ्।",
     anuvritti_from        = ('4.1.1',),

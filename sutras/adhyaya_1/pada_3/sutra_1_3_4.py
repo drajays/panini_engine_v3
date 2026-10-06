@@ -85,6 +85,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'na viBaktO tusmAH',
     text_dev       = 'न विभक्तौ तुस्माः',
+    samagra_slp1   = "upadeSe viBaktO tusmAH na it",
+    samagra_dev    = "उपदेशे विभक्तौ तुस्माः  न इत्",
     padaccheda_dev = "न विभक्तौ तु-स्माः",
     why_dev        = "विभक्ति-प्रत्यये अन्त्यौ तु-स्म-वर्णौ हलन्त्य-इत् संज्ञां न लभेते; "
                      "विधिः १.३.३ एव न प्रवर्तते (तुस्मान्त-निषेधः)।",

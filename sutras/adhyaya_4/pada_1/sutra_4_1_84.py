@@ -4,6 +4,7 @@
 Padaccheda: अश्वपति-आदिभ्यः च
 
 अश्वपत्यादिभ्यश्च (4.1.84)
+Pāṭha: ashtadhyayi.com data.txt row i=41084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aSvapatyAdiByaSca",
     text_dev              = "अश्वपत्यादिभ्यश्च",
+    samagra_slp1          = "aSvapatyAdiByaH ca prAgdIvyataH aR tadDitaH pratyayaH samarTAnAm praTamAt paraH vA",
+    samagra_dev           = "अश्वपत्यादिभ्यः च प्राग्दीव्यतः अण् तद्धितः प्रत्ययः समर्थानाम् प्रथमात् परः वा",
     padaccheda_dev        = "अश्वपति-आदिभ्यः च",
     why_dev               = "(सूत्रम् 4.1.84) अश्वपत्यादिभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

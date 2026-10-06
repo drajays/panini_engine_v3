@@ -4,6 +4,7 @@
 Padaccheda: स्त्रीभ्यः ढक्
 
 स्त्रीभ्यो ढक् (4.1.120)
+Pāṭha: ashtadhyayi.com data.txt row i=41120 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "strIByo Qak",
     text_dev              = "स्त्रीभ्यो ढक्",
+    samagra_slp1          = "tasya apatyam iti strIByaH Qak",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) स्त्रीभ्यः ढक्",
     padaccheda_dev        = "स्त्रीभ्यः ढक्",
     why_dev               = "(सूत्रम् 4.1.120) स्त्रीभ्यो ढक्।",
     anuvritti_from        = ('4.1.1',),

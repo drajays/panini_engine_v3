@@ -4,6 +4,7 @@
 Padaccheda: उपसर्ग-व्यपेतम् च
 
 उपसर्गव्यपेतं च (8.1.38)
+Pāṭha: ashtadhyayi.com data.txt row i=81038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upasargavyapetaM ca",
     text_dev              = "उपसर्गव्यपेतं च",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO upasargavyapetam ca tiN na yAvadyaTAByAm pUjAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ उपसर्गव्यपेतम् च तिङ् न यावद्यथाभ्याम् पूजायाम्",
     padaccheda_dev        = "उपसर्ग-व्यपेतम् च",
     why_dev               = "(सूत्रम् 8.1.38) उपसर्गव्यपेतं च।",
     anuvritti_from        = ('8.1.1',),

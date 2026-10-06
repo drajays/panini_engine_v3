@@ -4,6 +4,7 @@
 Padaccheda: खिदेः छन्दसि
 
 खिदेश्छन्दसि (6.1.52)
+Pāṭha: ashtadhyayi.com data.txt row i=61052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "KideSCandasi",
     text_dev              = "खिदेश्छन्दसि",
+    samagra_slp1          = "KideH Candasi At ecaH upadeSe viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "खिदेः छन्दसि आत् एचः उपदेशे विभाषा",
     padaccheda_dev        = "खिदेः छन्दसि",
     why_dev               = "(सूत्रम् 6.1.52) खिदेश्छन्दसि।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: द्वि-अष्टनः संख्यायाम् अ-बहुव्रीहि-अशीत्योः
 
 द्व्यष्टनः संख्यायामबहुव्रीह्यशीत्योः (6.3.47)
+Pāṭha: ashtadhyayi.com data.txt row i=63047 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvyazwanaH saMKyAyAmabahuvrIhyaSItyoH",
     text_dev              = "द्व्यष्टनः संख्यायामबहुव्रीह्यशीत्योः",
+    samagra_slp1          = "dvi-azwanaH saNKyAyAmuttarapade abahuvrIhi-aSItyoH At",
+    samagra_dev           = "द्वि-अष्टनः सङ्ख्यायामुत्तरपदे अबहुव्रीहि-अशीत्योः आत्",
     padaccheda_dev        = "द्वि-अष्टनः संख्यायाम् अ-बहुव्रीहि-अशीत्योः",
     why_dev               = "(सूत्रम् 6.3.47) द्व्यष्टनः संख्यायामबहुव्रीह्यशीत्योः।",
     anuvritti_from        = ('6.1.1',),

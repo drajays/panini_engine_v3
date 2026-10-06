@@ -4,6 +4,7 @@
 Padaccheda: नः (लुप्तषष्ठ्यन्तनिर्देशः) च धातु-स्थ-उरु-षुभ्यः
 
 नश्च धातुस्थोरुषुभ्यः (8.4.27)
+Pāṭha: ashtadhyayi.com data.txt row i=84027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "naSca DAtusToruzuByaH",
     text_dev              = "नश्च धातुस्थोरुषुभ्यः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm naH ca DAtusTa-uru-zuByaH razAByAm Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् नः च धातुस्थ-उरु-षुभ्यः रषाभ्याम् छन्दसि",
     padaccheda_dev        = "नः (लुप्तषष्ठ्यन्तनिर्देशः) च धातु-स्थ-उरु-षुभ्यः",
     why_dev               = "(सूत्रम् 8.4.27) नश्च धातुस्थोरुषुभ्यः।",
     anuvritti_from        = ('8.1.1',),

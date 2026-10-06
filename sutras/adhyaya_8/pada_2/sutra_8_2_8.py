@@ -4,6 +4,7 @@
 Padaccheda: न ङि-सम्बुद्ध्योः
 
 न ङिसम्बुद्ध्योः (8.2.8)
+Pāṭha: ashtadhyayi.com data.txt row i=82008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na NisambudDyoH",
     text_dev              = "न ङिसम्बुद्ध्योः",
+    samagra_slp1          = "prAtipadikasya padasya antyasya naH lopaH Ni-sambudDyOH na",
+    samagra_dev           = "प्रातिपदिकस्य पदस्य अन्त्यस्य नः लोपः ङि-सम्बुद्ध्यौः न",
     padaccheda_dev        = "न ङि-सम्बुद्ध्योः",
     why_dev               = "(सूत्रम् 8.2.8) न ङिसम्बुद्ध्योः।",
     anuvritti_from        = ('8.1.1',),

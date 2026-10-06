@@ -4,6 +4,7 @@
 Padaccheda: विभाषा स्वसृ-पत्योः
 
 विभाषा स्वसृपत्योः (6.3.24)
+Pāṭha: ashtadhyayi.com data.txt row i=63024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA svasfpatyoH",
     text_dev              = "विभाषा स्वसृपत्योः",
+    samagra_slp1          = "alug uttarapade viBAzA svasf-patyoH zazWyA ftaH vidyA-yoni-sambanDeByaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे विभाषा स्वसृ-पत्योः षष्ठ्या ऋतः विद्या-योनि-सम्बन्धेभ्यः",
     padaccheda_dev        = "विभाषा स्वसृ-पत्योः",
     why_dev               = "(सूत्रम् 6.3.24) विभाषा स्वसृपत्योः।",
     anuvritti_from        = ('6.1.1',),

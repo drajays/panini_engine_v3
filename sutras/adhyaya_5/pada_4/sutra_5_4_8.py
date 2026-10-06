@@ -4,6 +4,7 @@
 Padaccheda: विभाषा अञ्चेः अ-दिक्-स्त्रियाम्
 
 विभाषा अञ्चेरदिक्स्त्रियाम् (5.4.8)
+Pāṭha: ashtadhyayi.com data.txt row i=54008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA aYceradikstriyAm",
     text_dev              = "विभाषा अञ्चेरदिक्स्त्रियाम्",
+    samagra_slp1          = "adik-striyAmaYceH viBAzA KaH",
+    samagra_dev           = "अदिक्-स्त्रियामञ्चेः विभाषा खः",
     padaccheda_dev        = "विभाषा अञ्चेः अ-दिक्-स्त्रियाम्",
     why_dev               = "(सूत्रम् 5.4.8) विभाषा अञ्चेरदिक्स्त्रियाम्।",
     anuvritti_from        = ('4.1.76',),

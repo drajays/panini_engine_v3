@@ -4,6 +4,7 @@
 Padaccheda: अव्यात्-अवद्यात्-अवक्रमुः-अव्रत-अयम्-अवन्तु-अवस्युषु च
 
 अव्यादवद्यादवक्रमुरव्रतायमवन्त्ववस्युषु च (6.1.116)
+Pāṭha: ashtadhyayi.com data.txt row i=61116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avyAdavadyAdavakramuravratAyamavantvavasyuzu ca",
     text_dev              = "अव्यादवद्यादवक्रमुरव्रतायमवन्त्ववस्युषु च",
+    samagra_slp1          = "saMhitAyAm avyAt-avadyAt-avakramuH-avrata-ayam-avantu-avasyuzu ca ati antaHpAdam prakftyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् अव्यात्-अवद्यात्-अवक्रमुः-अव्रत-अयम्-अवन्तु-अवस्युषु च अति अन्तःपादम् प्रकृत्या",
     padaccheda_dev        = "अव्यात्-अवद्यात्-अवक्रमुः-अव्रत-अयम्-अवन्तु-अवस्युषु च",
     why_dev               = "(सूत्रम् 6.1.116) अव्यादवद्यादवक्रमुरव्रतायमवन्त्ववस्युषु च।",
     anuvritti_from        = ('6.1.1',),

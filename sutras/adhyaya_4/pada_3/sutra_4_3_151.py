@@ -4,6 +4,7 @@
 Padaccheda: नः उत्वत्-वध्र-बिल्वात्
 
 नोत्वद्वर्ध्रबिल्वात् (4.3.151)
+Pāṭha: ashtadhyayi.com data.txt row i=43151 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "notvadvarDrabilvAt",
     text_dev              = "नोत्वद्वर्ध्रबिल्वात्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA na utvat-varDra-bilvAt vikAraH tasya avayave mayaw Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा न उत्वत्-वर्ध्र-बिल्वात् विकारः तस्य अवयवे मयट् छन्दसि",
     padaccheda_dev        = "नः उत्वत्-वध्र-बिल्वात्",
     why_dev               = "(सूत्रम् 4.3.151) नोत्वद्वर्ध्रबिल्वात्।",
     anuvritti_from        = ('4.1.1',),

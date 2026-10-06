@@ -4,6 +4,7 @@
 Padaccheda: आयुध-जीवि-सङ्‍घात् ञ्यट् वाहीकेषु अ-ब्राह्मण-राजन्यात्
 
 आयुधजीविसंघाञ्ञ्यड्वाहीकेष्वब्राह्मणराजन्यात् (5.3.114)
+Pāṭha: ashtadhyayi.com data.txt row i=53114 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AyuDajIvisaMGAYYyaqvAhIkezvabrAhmaRarAjanyAt",
     text_dev              = "आयुधजीविसंघाञ्ञ्यड्वाहीकेष्वब्राह्मणराजन्यात्",
+    samagra_slp1          = "vAhIkezu AyuDajIvisaNGAt abrAhmaRa-rAjanyAt Yyaw",
+    samagra_dev           = "वाहीकेषु आयुधजीविसङ्घात् अब्राह्मण-राजन्यात् ञ्यट्",
     padaccheda_dev        = "आयुध-जीवि-सङ्‍घात् ञ्यट् वाहीकेषु अ-ब्राह्मण-राजन्यात्",
     why_dev               = "(सूत्रम् 5.3.114) आयुधजीविसंघाञ्ञ्यड्वाहीकेष्वब्राह्मणराजन्यात्।",
     anuvritti_from        = ('4.1.76',),

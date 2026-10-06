@@ -4,6 +4,7 @@
 Padaccheda: क्रीतात् करण-पूर्वात्
 
 क्रीतात् करणपूर्वात् (4.1.50)
+Pāṭha: ashtadhyayi.com data.txt row i=41050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "krItAt karaRapUrvAt",
     text_dev              = "क्रीतात् करणपूर्वात्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt krItAt karaRa-pUrvAt NIz",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् क्रीतात् करण-पूर्वात् ङीष्",
     padaccheda_dev        = "क्रीतात् करण-पूर्वात्",
     why_dev               = "(सूत्रम् 4.1.50) क्रीतात् करणपूर्वात्।",
     anuvritti_from        = ('4.1.1',),

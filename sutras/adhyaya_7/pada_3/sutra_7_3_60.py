@@ -4,6 +4,7 @@
 Padaccheda: अजि-वृज्योः च
 
 अजिवृज्योश्च (7.3.60)
+Pāṭha: ashtadhyayi.com data.txt row i=73060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ajivrajyoSca',
     text_dev              = 'अजिव्रज्योश्च',
+    samagra_slp1          = "aNgasya ajivrajyoH ca cajoH ku na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अजिव्रज्योः च चजोः कु न",
     padaccheda_dev        = "अजि-वृज्योः च",
     why_dev               = "(सूत्रम् 7.3.60) अजिवृज्योश्च।",
     anuvritti_from        = ('7.1.1',),

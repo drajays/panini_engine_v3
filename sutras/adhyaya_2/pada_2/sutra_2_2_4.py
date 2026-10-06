@@ -13,6 +13,7 @@ Engine (narrow, mechanically blind):
   Gate key ``2_2_4_prapta_apanne_gate``.  Recipe arms
   ``state.meta['2_2_4_arm']`` and tags a Term with ``prapta_apanna``
   indicating that the accusative compound context holds.
+Pāṭha: ashtadhyayi.com data.txt row i=22004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -38,6 +39,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='prAptApanne ca dvitIyayA',
     text_dev='प्राप्तापन्ने च द्वितीयया',
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH prApta-Apanne ca dvitIyayA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः प्राप्त-आपन्ने च द्वितीयया",
     padaccheda_dev="प्राप्त-आपन्ने / च / द्वितीयया",
     why_dev=(
         "प्राप्त-आपन्नौ द्वितीयान्तेन समस्येते — ग्रामप्राप्तः, आपदापन्नः इत्यादि।"

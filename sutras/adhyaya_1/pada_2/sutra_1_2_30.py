@@ -17,6 +17,7 @@ What this rule does NOT do: It does not mark any vowel in any word as
 anudātta. Actual accent assignment is the work of later vidhi sūtras.
 
 SLP1 representation: "nIcaiH" (= nīcaiḥ, instrumental of nīcais).
+Pāṭha: ashtadhyayi.com data.txt row i=12030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -47,6 +48,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'nIcEranudAttaH',
     text_dev                = 'नीचैरनुदात्तः',
+    samagra_slp1            = "nIcEH ac anudAttaH ",
+    samagra_dev             = "नीचैः अच् अनुदात्तः ।",
     padaccheda_dev          = "नीचैः अनुदात्तः",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.29",),

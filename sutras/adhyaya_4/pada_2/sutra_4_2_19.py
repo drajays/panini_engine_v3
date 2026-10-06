@@ -4,6 +4,7 @@
 Padaccheda: उदश्वितः अन्यतरस्याम्
 
 उदश्वितोऽन्यतरस्याम् (4.2.19)
+Pāṭha: ashtadhyayi.com data.txt row i=42019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'udaSvitonyatarasyAm',
     text_dev              = 'उदश्वितोऽन्यतरस्याम्',
+    samagra_slp1          = "tatra saMskftam BakzAH iti udaSvitaH Wak aR anyatarasyAm",
+    samagra_dev           = "'तत्र संस्कृतम् भक्षाः' (इति)  उदश्वितः ठक्, अण् अन्यतरस्याम्",
     padaccheda_dev        = "उदश्वितः अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 4.2.19) उदश्वितोऽन्यतरस्याम्।",
     anuvritti_from        = ('4.1.1',),

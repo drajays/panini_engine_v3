@@ -4,6 +4,7 @@
 Padaccheda: संशयम् आपन्नः
 
 संशयमापन्नः (5.1.73)
+Pāṭha: ashtadhyayi.com data.txt row i=51073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMSayamApannaH",
     text_dev              = "संशयमापन्नः",
+    samagra_slp1          = "tat saMSayamApannaH iti samarTAnAm praTamAt paraH WaY pratyayaH",
+    samagra_dev           = "'तत् संशयमापन्नः' (इति) समर्थानाम् प्रथमात् परः ठञ् प्रत्ययः",
     padaccheda_dev        = "संशयम् आपन्नः",
     why_dev               = "(सूत्रम् 5.1.73) संशयमापन्नः।",
     anuvritti_from        = ('5.1.18',),

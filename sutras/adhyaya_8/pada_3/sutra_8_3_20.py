@@ -4,6 +4,7 @@
 Padaccheda: ओतः · गार्ग्यस्य
 
 ओतो गार्ग्यस्य (8.3.20)
+Pāṭha: ashtadhyayi.com data.txt row i=83020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "oto gArgyasya",
     text_dev              = "ओतो गार्ग्यस्य",
+    samagra_slp1          = "otaH padasya yaH aSi lopaH gArgyasya",
+    samagra_dev           = "ओतः पदस्य यः अशि लोपः गार्ग्यस्य",
     padaccheda_dev        = "ओतः · गार्ग्यस्य",
     why_dev               = "(सूत्रम् 8.3.20) ओतो गार्ग्यस्य।",
     anuvritti_from        = ('8.1.1',),

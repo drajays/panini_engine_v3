@@ -4,6 +4,7 @@
 Padaccheda: आज्ञायिनि च
 
 आज्ञायिनि च (6.3.5)
+Pāṭha: ashtadhyayi.com data.txt row i=63005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AjYAyini ca",
     text_dev              = "आज्ञायिनि च",
+    samagra_slp1          = "alug uttarapade AjYAyini ca tftIyAyAH manasaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे आज्ञायिनि च तृतीयायाः मनसः",
     padaccheda_dev        = "आज्ञायिनि च",
     why_dev               = "(सूत्रम् 6.3.5) आज्ञायिनि च।",
     anuvritti_from        = ('6.1.1',),

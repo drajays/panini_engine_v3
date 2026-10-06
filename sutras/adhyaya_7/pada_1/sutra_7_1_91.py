@@ -7,6 +7,7 @@ Padaccheda: णल् उत्तमः वा
 in liṭ context. Structurally: fires when the tiṅ ādeśa "Ral" is present on
 the tape (this is the liṭ parasmaipada 1sg ādeśa, only reachable in
 first-person liṭ derivation).
+Pāṭha: ashtadhyayi.com data.txt row i=71091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -46,6 +47,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Raluttamo vA",
     text_dev              = "णलुत्तमो वा",
+    samagra_slp1          = "Ral-uttamaH Rit vA",
+    samagra_dev           = "णल्-उत्तमः णित् वा",
     padaccheda_dev        = "णल् उत्तमः वा",
     why_dev               = "(सूत्रम् 7.1.91) णलुत्तमो वा।",
     anuvritti_from        = ('7.1.1',),

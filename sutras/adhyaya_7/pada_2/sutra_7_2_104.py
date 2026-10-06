@@ -4,6 +4,7 @@
 Padaccheda: कु ति-होः
 
 कु तिहोः (7.2.104)
+Pāṭha: ashtadhyayi.com data.txt row i=72104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ku tihoH",
     text_dev              = "कु तिहोः",
+    samagra_slp1          = "kimaH ti-hoH viBaktO kuH",
+    samagra_dev           = "किमः ति-होः विभक्तौ कुः",
     padaccheda_dev        = "कु ति-होः",
     why_dev               = "(सूत्रम् 7.2.104) कु तिहोः।",
     anuvritti_from        = ('7.1.1',),

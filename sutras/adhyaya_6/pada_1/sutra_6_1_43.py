@@ -4,6 +4,7 @@
 Padaccheda: व्यः च
 
 व्यश्च (6.1.43)
+Pāṭha: ashtadhyayi.com data.txt row i=61043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vyaSca",
     text_dev              = "व्यश्च",
+    samagra_slp1          = "vyaH ca samprasAraRam na lyapi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "व्यः च सम्प्रसारणम् न ल्यपि",
     padaccheda_dev        = "व्यः च",
     why_dev               = "(सूत्रम् 6.1.43) व्यश्च।",
     anuvritti_from        = ('6.1.1',),

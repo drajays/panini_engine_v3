@@ -4,6 +4,7 @@
 Padaccheda: सेधतेः गतौ
 
 सेधतेर्गतौ (8.3.113)
+Pāṭha: ashtadhyayi.com data.txt row i=83113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "seDatergatO",
     text_dev              = "सेधतेर्गतौ",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH seDateH gatO saH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः सेधतेः गतौ सः न",
     padaccheda_dev        = "सेधतेः गतौ",
     why_dev               = "(सूत्रम् 8.3.113) सेधतेर्गतौ।",
     anuvritti_from        = ('8.1.1',),

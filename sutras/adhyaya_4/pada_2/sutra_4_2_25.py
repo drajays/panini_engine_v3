@@ -4,6 +4,7 @@
 Padaccheda: कस्य इत्
 
 कस्येत् (4.2.25)
+Pāṭha: ashtadhyayi.com data.txt row i=42025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kasyet",
     text_dev              = "कस्येत्",
+    samagra_slp1          = "sA asya devatA iti kasya it",
+    samagra_dev           = "'सा अस्य देवता' (इति) कस्य इत्",
     padaccheda_dev        = "कस्य इत्",
     why_dev               = "(सूत्रम् 4.2.25) कस्येत्।",
     anuvritti_from        = ('4.1.1',),

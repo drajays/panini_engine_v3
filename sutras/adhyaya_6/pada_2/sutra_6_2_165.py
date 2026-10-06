@@ -4,6 +4,7 @@
 Padaccheda: संज्ञायाम् मित्र-अजिनयोः
 
 संज्ञायां मित्राजिनयोः (6.2.165)
+Pāṭha: ashtadhyayi.com data.txt row i=62165 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYAyAM mitrAjinayoH",
     text_dev              = "संज्ञायां मित्राजिनयोः",
+    samagra_slp1          = "uttarapadAdiH antaH saMjYAyAm mitra-ajinayoH bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः संज्ञायाम् मित्र-अजिनयोः बहुव्रीहौ",
     padaccheda_dev        = "संज्ञायाम् मित्र-अजिनयोः",
     why_dev               = "(सूत्रम् 6.2.165) संज्ञायां मित्राजिनयोः।",
     anuvritti_from        = ('6.1.1',),

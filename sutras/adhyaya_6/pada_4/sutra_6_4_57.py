@@ -4,6 +4,7 @@
 Padaccheda: विभाषा आपः
 
 विभाषाऽऽपः (6.4.57)
+Pāṭha: ashtadhyayi.com data.txt row i=64057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'viBAzApaH',
     text_dev              = 'विभाषापः',
+    samagra_slp1          = "aNgasya asidDavadatrABAt ArDaDAtuke viBAzA ApaH ReH ay lyapi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् आर्धधातुके विभाषा आपः णेः अय् ल्यपि",
     padaccheda_dev        = "विभाषा आपः",
     why_dev               = "(सूत्रम् 6.4.57) विभाषाऽऽपः।",
     anuvritti_from        = ('6.1.1',),

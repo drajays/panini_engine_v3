@@ -4,6 +4,7 @@
 Padaccheda: घञ्-अपोः च
 
 Also with ghan and ap suffixes.
+Pāṭha: ashtadhyayi.com data.txt row i=24038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "GaYapoSca",
     text_dev              = "घञपोश्च",
+    samagra_slp1          = "ArDaDAtuke GaY-apoH ca adaH Gasx",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके घञ्-अपोः च अदः घसॢ",
     padaccheda_dev        = "घञ्-अपोः च",
     why_dev               = "घञ्-अपोः च (२.४.३८)।",
     anuvritti_from        = ('2.4.35',),

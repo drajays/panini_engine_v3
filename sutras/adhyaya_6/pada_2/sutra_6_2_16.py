@@ -4,6 +4,7 @@
 Padaccheda: प्रीतौ च
 
 प्रीतौ च (6.2.16)
+Pāṭha: ashtadhyayi.com data.txt row i=62016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prItO ca",
     text_dev              = "प्रीतौ च",
+    samagra_slp1          = "prItO ca pUrvapadam prakftyA tatpuruze suKapriyayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रीतौ च पूर्वपदम् प्रकृत्या तत्पुरुषे सुखप्रिययोः",
     padaccheda_dev        = "प्रीतौ च",
     why_dev               = "(सूत्रम् 6.2.16) प्रीतौ च।",
     anuvritti_from        = ('6.1.1',),

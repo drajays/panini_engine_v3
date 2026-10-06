@@ -4,6 +4,7 @@
 Padaccheda: तत् अर्हम्
 
 तदर्हम् (5.1.117)
+Pāṭha: ashtadhyayi.com data.txt row i=51117 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadarham",
     text_dev              = "तदर्हम्",
+    samagra_slp1          = "tat arham iti kriyAyAm vatiH",
+    samagra_dev           = "'तत् अर्हम्' (इति) क्रियायाम्  वतिः",
     padaccheda_dev        = "तत् अर्हम्",
     why_dev               = "(सूत्रम् 5.1.117) तदर्हम्।",
     anuvritti_from        = ('4.1.82',),

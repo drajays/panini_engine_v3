@@ -4,6 +4,7 @@
 Padaccheda: चीरम् उपमानम्
 
 चीरमुपमानम् (6.2.127)
+Pāṭha: ashtadhyayi.com data.txt row i=62127 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "cIramupamAnam",
     text_dev              = "चीरमुपमानम्",
+    samagra_slp1          = "udAttaH uttarapadAdiH cIram upamAnam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः चीरम् उपमानम् तत्पुरुषे",
     padaccheda_dev        = "चीरम् उपमानम्",
     why_dev               = "(सूत्रम् 6.2.127) चीरमुपमानम्।",
     anuvritti_from        = ('6.1.1',),

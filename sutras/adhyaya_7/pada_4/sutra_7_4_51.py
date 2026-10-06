@@ -9,6 +9,7 @@ Gate: ``ri_ca_recipe``; completion registered in ``samjna_registry``.
 This is the *luṭ* 3du (rau) and 3pl (ras) path:
   [BU, i+t+A+s, rO] → [BU, i+t+A, rO]   (3du)
   [BU, i+t+A+s, ras] → [BU, i+t+A, ras]  (3pl)
+Pāṭha: ashtadhyayi.com data.txt row i=74051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -62,6 +63,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ri ca",
     text_dev              = "रि च",
+    samagra_slp1          = "tAsaH aNgasya ri lopaH",
+    samagra_dev           = "तासः अङ्गस्य रि लोपः",
     padaccheda_dev        = "रि च",
     why_dev               = "तासि-विकरणस्य स्-लोपः रि-परे — लुट् ३du/३pl कोशः।",
     anuvritti_from        = ('7.1.1',),

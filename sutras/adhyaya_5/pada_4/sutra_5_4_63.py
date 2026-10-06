@@ -4,6 +4,7 @@
 Padaccheda: सुख-प्रियात् आनुलोम्ये
 
 सुखप्रियादानुलोम्ये (5.4.63)
+Pāṭha: ashtadhyayi.com data.txt row i=54063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "suKapriyAdAnulomye",
     text_dev              = "सुखप्रियादानुलोम्ये",
+    samagra_slp1          = "suKa-priyAt kfYaH Anulomye qAc",
+    samagra_dev           = "सुख-प्रियात् कृञः आनुलोम्ये डाच्",
     padaccheda_dev        = "सुख-प्रियात् आनुलोम्ये",
     why_dev               = "(सूत्रम् 5.4.63) सुखप्रियादानुलोम्ये।",
     anuvritti_from        = ('4.1.76',),

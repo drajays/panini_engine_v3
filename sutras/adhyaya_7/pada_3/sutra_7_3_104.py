@@ -4,6 +4,7 @@
 अङ्गस्य अतः (7.3.101) … एत् (7.3.103): the final अ of an a-ending aṅga becomes
 ए before the sup ``os`` (rAma + os → rAme + os; 6.1.78 then gives rAmayos →
 rAmayoH).  Replaces the old 6.1.78 'insert y' hack.
+Pāṭha: ashtadhyayi.com data.txt row i=73104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -50,6 +51,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = "osi ca",
     text_dev       = "ओसि च",
+    samagra_slp1   = "ataH aNgasya osi supi et",
+    samagra_dev    = "अतः अङ्गस्य ओसि सुपि एत्",
     padaccheda_dev = "ओसि च",
     why_dev        = "ओस्-प्रत्यये परे अदन्त-अङ्गस्य अन्त्य-अकारस्य 'ए'-आदेशः।",
     anuvritti_from = ("7.1.1", "7.3.101", "7.3.103"),

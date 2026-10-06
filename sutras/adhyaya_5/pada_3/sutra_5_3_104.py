@@ -4,6 +4,7 @@
 Padaccheda: द्रव्यम् च भव्ये
 
 द्रव्यं च भव्ये (5.3.104)
+Pāṭha: ashtadhyayi.com data.txt row i=53104 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dravyaM ca Bavye",
     text_dev              = "द्रव्यं च भव्ये",
+    samagra_slp1          = "Bavye dravyam nipAtyate",
+    samagra_dev           = "भव्ये द्रव्यम् (निपात्यते)",
     padaccheda_dev        = "द्रव्यम् च भव्ये",
     why_dev               = "(सूत्रम् 5.3.104) द्रव्यं च भव्ये।",
     anuvritti_from        = ('4.1.76',),

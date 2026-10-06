@@ -4,6 +4,7 @@
 Padaccheda: वा छन्दसि
 
 वा छन्दसि (6.1.106)
+Pāṭha: ashtadhyayi.com data.txt row i=61106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA Candasi",
     text_dev              = "वा छन्दसि",
+    samagra_slp1          = "Candasi - dIrGAt jasi ici praTamayoH pUrvasavarRadIrGaH vA",
+    samagra_dev           = "छन्दसि - दीर्घात् जसि इचि प्रथमयोः पूर्वसवर्णदीर्घः वा",
     padaccheda_dev        = "वा छन्दसि",
     why_dev               = "(सूत्रम् 6.1.106) वा छन्दसि।",
     anuvritti_from        = ('6.1.1',),

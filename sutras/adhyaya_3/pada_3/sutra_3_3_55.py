@@ -4,6 +4,7 @@
 Padaccheda: परौ भुवः अवज्ञाने
 
 krt-suffix rule: परौ भुवोऽवज्ञाने
+Pāṭha: ashtadhyayi.com data.txt row i=33055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'parO BuvovajYAne',
     text_dev              = 'परौ भुवोऽवज्ञाने',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm parO BuvaH avajYAne kft GaY viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् परौ भुवः अवज्ञाने कृत् घञ् विभाषा",
     padaccheda_dev        = "परौ भुवः अवज्ञाने",
     why_dev               = "धातोः प्रत्ययः (३.3.55)।",
     anuvritti_from        = ('3.1.1',),

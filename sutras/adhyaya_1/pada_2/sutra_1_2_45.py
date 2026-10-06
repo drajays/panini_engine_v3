@@ -15,6 +15,7 @@ instead (see that module).
 
 English (one-line): Any meaningful word-form that is not a root, not an
 affix, and not (treated as) affix-terminated is called *prātipadika*.
+Pāṭha: ashtadhyayi.com data.txt row i=12045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -91,6 +92,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'arTavadaDAturapratyayaH prAtipadikam',
     text_dev       = 'अर्थवदधातुरप्रत्ययः प्रातिपदिकम्',
+    samagra_slp1   = "arTavad aDAtuH apratyayaH prAtipadikam",
+    samagra_dev    = "अर्थवद् अधातुः अप्रत्ययः प्रातिपदिकम्",
     padaccheda_dev = "अर्थवत् अधातुः अप्रत्ययः प्रातिपदिकम्",
     why_dev        = (
         "धातु-प्रत्यय-प्रत्ययान्त-वर्जितम् अर्थवच्छब्दरूपं प्रातिपदिकसंज्ञकम्।"

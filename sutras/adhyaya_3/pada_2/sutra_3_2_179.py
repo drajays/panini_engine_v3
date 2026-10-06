@@ -4,6 +4,7 @@
 Padaccheda: भुवः संज्ञा-अन्तरयोः
 
 krt-suffix rule: भुवः संज्ञाऽन्तरयोः (179)
+Pāṭha: ashtadhyayi.com data.txt row i=32179 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'BuvaH saMjYAntarayoH',
     text_dev              = 'भुवः संज्ञाऽन्तरयोः',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne BuvaH saMjYA-antarayoH kft kvip",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने भुवः संज्ञा-अन्तरयोः कृत् क्विप्",
     padaccheda_dev        = "भुवः संज्ञा-अन्तरयोः",
     why_dev               = "धातोः कृत्-प्रत्ययः [भुवः संज्ञाऽन्तरयोः] विहितः (३.२.179)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

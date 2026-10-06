@@ -10,6 +10,7 @@ away from).
 Engine: registers the apa/āṅ/pari→pañcamī gate. ``cond`` checks only the gate
 flag, never vibhakti coordinates (CONSTITUTION Art. 2).
 ``r1_form_identity_exempt=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=23010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'paYcamyapANpariBiH',
     text_dev              = 'पञ्चम्यपाङ्परिभिः',
+    samagra_slp1          = "anaBihite paYcamI apa-AN-pariBiH karmapravacanIya-yukte",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते पञ्चमी अप-आङ्-परिभिः कर्मप्रवचनीय-युक्ते",
     padaccheda_dev        = "पञ्चमी / अप-आङ्-परिभिः",
     why_dev               = (
         "अप-आङ्-पर्युपयोगे पञ्चमी-विभक्तिः — "

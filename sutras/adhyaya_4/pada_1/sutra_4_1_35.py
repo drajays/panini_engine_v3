@@ -4,6 +4,7 @@
 Padaccheda: नित्यम् सपत्नी-आदिषु
 
 नित्यं सपत्न्य्आदिषु (4.1.35)
+Pāṭha: ashtadhyayi.com data.txt row i=41035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nityaM sapatnyAdizu',
     text_dev              = 'नित्यं सपत्न्यादिषु',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt nityam sapatnI-Adizu patyuH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् नित्यम् सपत्नी-आदिषु पत्युः नः",
     padaccheda_dev        = "नित्यम् सपत्नी-आदिषु",
     why_dev               = "(सूत्रम् 4.1.35) नित्यं सपत्न्य्आदिषु।",
     anuvritti_from        = ('4.1.1',),

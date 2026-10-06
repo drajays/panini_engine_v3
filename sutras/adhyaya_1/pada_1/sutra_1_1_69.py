@@ -22,6 +22,7 @@ v3 engine role:
   - cond() reads ONLY samjna_registry (Art. 2 compliant: no vibhakti,
     vacana, lakāra, surface Devanāgarī, data, or reference access).
   - No arm flags.  r1_form_identity_exempt=True (pure SAMJNA, no rewrite).
+Pāṭha: ashtadhyayi.com data.txt row i=11069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'aRudit savarRasya cApratyayaH',
     text_dev                = 'अणुदित् सवर्णस्य चाप्रत्ययः',
+    samagra_slp1            = "apratyayaH aR  udit ca savarRasya grAhakaH",
+    samagra_dev             = "अप्रत्ययः अण् , उदित् च सवर्णस्य (ग्राहकः)",
     padaccheda_dev          = "अण्-उदित् / सवर्णस्य / च / अप्रत्ययः",
     why_dev                 = (
         "अण्-प्रत्याहार-वर्णाः (अ, इ, उ) तथा उदित्-संज्ञकाः वर्णाः "

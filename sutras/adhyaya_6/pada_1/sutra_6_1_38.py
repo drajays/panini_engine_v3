@@ -4,6 +4,7 @@
 Padaccheda: लिटि वयः यः
 
 लिटि वयो यः (6.1.38)
+Pāṭha: ashtadhyayi.com data.txt row i=61038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "liwi vayo yaH",
     text_dev              = "लिटि वयो यः",
+    samagra_slp1          = "liwi vayaH yaH samprasAraRam na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "लिटि वयः यः सम्प्रसारणम् न",
     padaccheda_dev        = "लिटि वयः यः",
     why_dev               = "(सूत्रम् 6.1.38) लिटि वयो यः।",
     anuvritti_from        = ('6.1.1',),

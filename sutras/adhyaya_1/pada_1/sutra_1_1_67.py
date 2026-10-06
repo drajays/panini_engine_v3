@@ -10,6 +10,7 @@ Engine (``split_prakriyas_11/P044.json``):
     ``1.1.67_atiNa_panchami_targets_uttara`` (*atiṅaḥ* in **8.1.28** position).
   - With ``state.meta['siddhi_recipe']``: summary gate
     ``1.1.67_panchami_saptami_positional_semantics`` (paired with **1.1.66**).
+Pāṭha: ashtadhyayi.com data.txt row i=11067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.PARIBHASHA,
     text_slp1='tasmAdityuttarasya',
     text_dev='तस्मादित्युत्तरस्य',
+    samagra_slp1="tasmAt iti nirdizwe uttarasya",
+    samagra_dev="'तस्मात्' इति निर्दिष्टे उत्तरस्य",
     padaccheda_dev="तस्मात् / इति / उत्तरस्य",
     why_dev="परिभाषा-गेट: पञ्चम्यर्थे पर-ग्रहणम् (१.१.६७) — P044।",
     anuvritti_from=(),

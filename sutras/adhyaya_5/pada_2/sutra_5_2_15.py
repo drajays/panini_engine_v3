@@ -4,6 +4,7 @@
 Padaccheda: अनुगु अलंगामी
 
 अनुग्वलंगामी (5.2.15)
+Pāṭha: ashtadhyayi.com data.txt row i=52015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anugvalaMgAmI",
     text_dev              = "अनुग्वलंगामी",
+    samagra_slp1          = "anugu alaNgAmI iti KaH",
+    samagra_dev           = "'अनुगु अलङ्गामी' (इति) खः",
     padaccheda_dev        = "अनुगु अलंगामी",
     why_dev               = "(सूत्रम् 5.2.15) अनुग्वलंगामी।",
     anuvritti_from        = ('4.1.82',),

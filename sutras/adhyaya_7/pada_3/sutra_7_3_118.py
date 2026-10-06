@@ -4,6 +4,7 @@
 Padaccheda: औत्
 
 औत् (7.3.118)
+Pāṭha: ashtadhyayi.com data.txt row i=73118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Ot",
     text_dev              = "औत्",
+    samagra_slp1          = "idudByAmaNgAt NeH Ot",
+    samagra_dev           = "इदुद्भ्यामङ्गात् ङेः औत्",
     padaccheda_dev        = "औत्",
     why_dev               = "(सूत्रम् 7.3.118) औत्।",
     anuvritti_from        = ('7.1.1',),

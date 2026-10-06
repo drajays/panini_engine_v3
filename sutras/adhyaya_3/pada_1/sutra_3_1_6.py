@@ -4,6 +4,7 @@
 Padaccheda: मान्-बध-दान्-शान्भ्यः दीर्घः च अभ्यासस्य
 
 Krt suffix rule from dhatu: मान्बधदान्शान्भ्यो दीर्घश्चाभ्यासस्य (6)
+Pāṭha: ashtadhyayi.com data.txt row i=31006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mAnbaDadAnSAnByo dIrGaScAByAsasya",
     text_dev              = "मान्बधदान्शान्भ्यो दीर्घश्चाभ्यासस्य",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca mAn-baDa-dAn-SAnByaH dIrGaH ca aByAsasya san",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च मान्-बध-दान्-शान्भ्यः दीर्घः च अभ्यासस्य सन्",
     padaccheda_dev        = "मान्-बध-दान्-शान्भ्यः दीर्घः च अभ्यासस्य",
     why_dev               = "धातोः [मान्बधदान्शान्भ्यो दीर्घश्चाभ्यासस्य]-प्रत्ययः विहितः (३.१.6)।",
     anuvritti_from        = ('3.1.1',),

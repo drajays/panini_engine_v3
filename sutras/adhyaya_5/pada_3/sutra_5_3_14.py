@@ -4,6 +4,7 @@
 Padaccheda: इतराभ्यः अपि दृश्यन्ते (क्रियापदम्)
 
 इतराभ्योऽपि दृश्यन्ते (5.3.14)
+Pāṭha: ashtadhyayi.com data.txt row i=53014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'itarAByopi dfSyante',
     text_dev              = 'इतराभ्योऽपि दृश्यन्ते',
+    samagra_slp1          = "viBaktipratyayAH itarAByaH api dfSyante",
+    samagra_dev           = "विभक्तिप्रत्ययाः इतराभ्यः अपि दृश्यन्ते",
     padaccheda_dev        = "इतराभ्यः अपि दृश्यन्ते (क्रियापदम्)",
     why_dev               = "(सूत्रम् 5.3.14) इतराभ्योऽपि दृश्यन्ते।",
     anuvritti_from        = ('5.3.2',),

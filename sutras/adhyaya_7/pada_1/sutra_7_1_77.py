@@ -4,6 +4,7 @@
 Padaccheda: ई (लुप्तप्रथमान्तनिर्देशः) च द्विवचने
 
 ई च द्विवचने (7.1.77)
+Pāṭha: ashtadhyayi.com data.txt row i=71077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "I ca dvivacane",
     text_dev              = "ई च द्विवचने",
+    samagra_slp1          = "aNgasya I ca dvivacane num napuMsakasya asTi-daDi-sakTi-akzRAm anaN Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ई च द्विवचने नुम् नपुंसकस्य अस्थि-दधि-सक्थि-अक्ष्णाम् अनङ् छन्दसि",
     padaccheda_dev        = "ई (लुप्तप्रथमान्तनिर्देशः) च द्विवचने",
     why_dev               = "(सूत्रम् 7.1.77) ई च द्विवचने।",
     anuvritti_from        = ('7.1.1',),

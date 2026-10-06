@@ -9,6 +9,7 @@ Both the abhyāsa (reduplication copy) and the dhātu together are called
 
 Structural trigger: any Term on the tape carries the "abhyasa" tag — which
 6.1.8 sets on the newly created reduplication copy.
+Pāṭha: ashtadhyayi.com data.txt row i=61005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -36,6 +37,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uBe aByastam",
     text_dev              = "उभे अभ्यस्तम्",
+    samagra_slp1          = "uBe aByastam",
+    samagra_dev           = "उभे अभ्यस्तम्",
     padaccheda_dev        = "उभे अभ्यस्तम्",
     why_dev               = "(सूत्रम् 6.1.5) उभे अभ्यस्तम्।",
     anuvritti_from        = ('6.1.1',),

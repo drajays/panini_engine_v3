@@ -4,6 +4,7 @@
 Padaccheda: अव्ययीभावे च अकाले
 
 अव्ययीभावे चाकाले (6.3.81)
+Pāṭha: ashtadhyayi.com data.txt row i=63081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avyayIBAve cAkAle",
     text_dev              = "अव्ययीभावे चाकाले",
+    samagra_slp1          = "uttarapade avyayIBAve ca akAle sahasya saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे अव्ययीभावे च अकाले सहस्य सः",
     padaccheda_dev        = "अव्ययीभावे च अकाले",
     why_dev               = "(सूत्रम् 6.3.81) अव्ययीभावे चाकाले।",
     anuvritti_from        = ('6.1.1',),

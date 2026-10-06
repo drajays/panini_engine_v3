@@ -4,6 +4,7 @@
 Padaccheda: बहुव्रीहौ प्रकृत्या पूर्वपदम्
 
 बहुव्रीहौ प्रकृत्या पूर्वपदम् (6.2.1)
+Pāṭha: ashtadhyayi.com data.txt row i=62001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahuvrIhO prakftyA pUrvapadam",
     text_dev              = "बहुव्रीहौ प्रकृत्या पूर्वपदम्",
+    samagra_slp1          = "bahuvrIhO prakftyA pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "बहुव्रीहौ प्रकृत्या पूर्वपदम्",
     padaccheda_dev        = "बहुव्रीहौ प्रकृत्या पूर्वपदम्",
     why_dev               = "(सूत्रम् 6.2.1) बहुव्रीहौ प्रकृत्या पूर्वपदम्।",
     anuvritti_from        = ('6.1.1',),

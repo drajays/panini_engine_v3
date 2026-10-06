@@ -11,6 +11,7 @@ are optionally prescribed.
 Engine: registers the gatyartha-karma→dvitīyā/caturthī gate. ``cond`` checks
 only the gate flag, never vibhakti coordinates (CONSTITUTION Art. 2).
 ``r1_form_identity_exempt=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=23012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -36,6 +37,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'gatyarTakarmaRi dvitIyAcaturTyO cezwAyAmanaDvani',
     text_dev              = 'गत्यर्थकर्मणि द्वितीयाचतुर्थ्यौ चेष्टायामनध्वनि',
+    samagra_slp1          = "anaBihite gati-arTa-karmaRi dvitIyA-caturTyO cezwAyAm anaDvani",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते गति-अर्थ-कर्मणि द्वितीया-चतुर्थ्यौ चेष्टायाम् अनध्वनि",
     padaccheda_dev        = "गत्यर्थ-कर्मणि / द्वितीया-चतुर्थ्यौ / च / इष्टायाम् / अन-अध्वनि",
     why_dev               = (
         "गत्यर्थ-कर्मणि (इष्टे, अनध्वनि) द्वितीया चतुर्थी च — "

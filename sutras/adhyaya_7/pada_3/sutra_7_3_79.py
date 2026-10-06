@@ -6,6 +6,7 @@
 
 Engine: ``corrected_v2_P012_7_3_79_arm`` — dhātu tape **``jYA``** immediately
 before **``SnA``** → **``jA``** (corrected-v2 **P012** *apajānīte*).
+Pāṭha: ashtadhyayi.com data.txt row i=73079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='jYAjanorjA',
     text_dev='ज्ञाजनोर्जा',
+    samagra_slp1="aNgasya jYAjanoH jA Siti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अङ्गस्य ज्ञाजनोः जा शिति",
     padaccheda_dev="ज्ञा-जनोः / जा",
     why_dev="शिति परे ज्ञा-कार्यम् → जा (प०१२ संक्षिप्तम्)।",
     anuvritti_from=("7.3.78",),

@@ -4,6 +4,7 @@
 Padaccheda: इदमः थमुः
 
 इदमस्थमुः (5.3.24)
+Pāṭha: ashtadhyayi.com data.txt row i=53024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "idamasTamuH",
     text_dev              = "इदमस्थमुः",
+    samagra_slp1          = "prakAravacane idamaH TamuH",
+    samagra_dev           = "प्रकारवचने इदमः थमुः",
     padaccheda_dev        = "इदमः थमुः",
     why_dev               = "(सूत्रम् 5.3.24) इदमस्थमुः।",
     anuvritti_from        = ('5.3.2',),

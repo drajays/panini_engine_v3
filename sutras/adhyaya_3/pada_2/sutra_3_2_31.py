@@ -4,6 +4,7 @@
 Padaccheda: उदि कूले रुजि-वहोः
 
 krt-suffix rule: उदि कूले रुजिवहोः (31)
+Pāṭha: ashtadhyayi.com data.txt row i=32031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "udi kUle rujivahoH",
     text_dev              = "उदि कूले रुजिवहोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH udi kUle ruji-vahoH kft karmaRi anupasarge supi KaS",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः उदि कूले रुजि-वहोः कृत् कर्मणि अनुपसर्गे सुपि खश्",
     padaccheda_dev        = "उदि कूले रुजि-वहोः",
     why_dev               = "धातोः कृत्-प्रत्ययः [उदि कूले रुजिवहोः] विहितः (३.२.31)।",
     anuvritti_from        = ('3.1.1',),

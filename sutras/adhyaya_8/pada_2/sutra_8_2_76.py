@@ -4,6 +4,7 @@
 Padaccheda: ऋ-वोः उपधाया दीर्घ इकः
 
 र्वोरुपधाया दीर्घ इकः (8.2.76)
+Pāṭha: ashtadhyayi.com data.txt row i=82076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rvorupaDAyA dIrGa ikaH",
     text_dev              = "र्वोरुपधाया दीर्घ इकः",
+    samagra_slp1          = "padasya rvoH DAtoH upaDAyAH ikaH dIrGaH",
+    samagra_dev           = "पदस्य र्वोः धातोः उपधायाः इकः दीर्घः",
     padaccheda_dev        = "ऋ-वोः उपधाया दीर्घ इकः",
     why_dev               = "(सूत्रम् 8.2.76) र्वोरुपधाया दीर्घ इकः।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: प्रशंसायाम् रूपप्
 
 प्रशंसायां रूपप् (5.3.66)
+Pāṭha: ashtadhyayi.com data.txt row i=53066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "praSaMsAyAM rUpap",
     text_dev              = "प्रशंसायां रूपप्",
+    samagra_slp1          = "praSaMsAyAm prAtipadikAt tiNaH ca rUpap",
+    samagra_dev           = "प्रशंसायाम् प्रातिपदिकात्  तिङः च रूपप्",
     padaccheda_dev        = "प्रशंसायाम् रूपप्",
     why_dev               = "(सूत्रम् 5.3.66) प्रशंसायां रूपप्।",
     anuvritti_from        = ('4.1.76',),

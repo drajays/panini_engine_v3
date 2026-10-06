@@ -7,6 +7,7 @@ conditions for **8.3.15** visarga at word-final *r*.
 Engine: fires once the form has been merged into a *pada* Term (post sandhi,
 post pada-merge) and before entering the Tripāḍī zone (**8.2.1**).
 Registers ``samjna_registry['1.4.110_avasana']``.
+Pāṭha: ashtadhyayi.com data.txt row i=14110 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'virAmovasAnam',
     text_dev       = 'विरामोऽवसानम्',
+    samagra_slp1   = "virAmaH avasAnam",
+    samagra_dev    = "विरामः अवसानम्",
     padaccheda_dev = "विरामः अवसानम्",
     why_dev        = "विरामः अवसान-संज्ञकः — खर्-अवसानयोः विसर्जनीये प्रसङ्गः।",
     anuvritti_from = ("1.4.1",),

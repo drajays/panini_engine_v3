@@ -4,6 +4,7 @@
 Padaccheda: अह्नः अह्नः एतेभ्यः
 
 अह्नोऽह्न एतेभ्यः (5.4.88)
+Pāṭha: ashtadhyayi.com data.txt row i=54088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ahnohna eteByaH',
     text_dev              = 'अह्नोऽह्न एतेभ्यः',
+    samagra_slp1          = "tatpuruzasya sarva-ekadeSa-saNKyAtAt saNKyA-avyayAdeH ca ahnaH ahnaH",
+    samagra_dev           = "तत्पुरुषस्य  सर्व-एकदेश-सङ्ख्यातात्  सङ्ख्या-अव्ययादेः च अह्नः अह्नः",
     padaccheda_dev        = "अह्नः अह्नः एतेभ्यः",
     why_dev               = "(सूत्रम् 5.4.88) अह्नोऽह्न एतेभ्यः।",
     anuvritti_from        = ('5.4.68',),

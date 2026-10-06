@@ -4,6 +4,7 @@
 Padaccheda: स्वम् स्वामिनि
 
 स्वं स्वामिनि (6.2.17)
+Pāṭha: ashtadhyayi.com data.txt row i=62017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "svaM svAmini",
     text_dev              = "स्वं स्वामिनि",
+    samagra_slp1          = "svam svAmini prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "स्वम् स्वामिनि प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "स्वम् स्वामिनि",
     why_dev               = "(सूत्रम् 6.2.17) स्वं स्वामिनि।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: तस्मै हितम्
 
 तस्मै हितम् (5.1.5)
+Pāṭha: ashtadhyayi.com data.txt row i=51005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tasmE hitam",
     text_dev              = "तस्मै हितम्",
+    samagra_slp1          = "tasmE hitam iti samarTAnAm praTamAt paraH Ca-pratyayaH",
+    samagra_dev           = "'तस्मै हितम्' (इति) समर्थानाम् प्रथमात् परः छ-प्रत्ययः",
     padaccheda_dev        = "तस्मै हितम्",
     why_dev               = "(सूत्रम् 5.1.5) तस्मै हितम्।",
     anuvritti_from        = ('5.1.1',),

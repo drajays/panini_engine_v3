@@ -8,6 +8,7 @@ placeholder for the *tin* spine.
 Engine:
   • ``state.meta['corrected_v2_P014_3_1_40_anuprayoga_arm']``
   • expects final *Term* to be **``IkzAm``** *prātipadika* (no *liṭ* yet)
+Pāṭha: ashtadhyayi.com data.txt row i=31040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -53,6 +54,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="kfY cAnuprayujyate liwi",
     text_dev="कृञ्चानुप्रयुज्यते लिटि",
+    samagra_slp1="AmaH kfY liwi anuprayujyate",
+    samagra_dev="आमः कृञ् लिटि अनुप्रयुज्यते",
     padaccheda_dev="कृञ् / च / अनुप्रयुज्यते / लिटि",
     why_dev="लिटि अनुप्रयोगे कृञ्-धातुः पुनः लिट्-प्रत्ययः — P014।",
     anuvritti_from=("3.1.35",),

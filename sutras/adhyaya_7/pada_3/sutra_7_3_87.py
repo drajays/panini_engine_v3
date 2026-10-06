@@ -4,6 +4,7 @@
 Padaccheda: न अभ्यस्तस्य अचि पिति सार्वधातुके
 
 नाभ्यस्तस्याचि पिति सार्वधातुके (7.3.87)
+Pāṭha: ashtadhyayi.com data.txt row i=73087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nAByastasyAci piti sArvaDAtuke",
     text_dev              = "नाभ्यस्तस्याचि पिति सार्वधातुके",
+    samagra_slp1          = "aNgasya na aByastasya aci piti sArvaDAtuke guRaH pugantalaGUpaDasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न अभ्यस्तस्य अचि पिति सार्वधातुके गुणः पुगन्तलघूपधस्य",
     padaccheda_dev        = "न अभ्यस्तस्य अचि पिति सार्वधातुके",
     why_dev               = "(सूत्रम् 7.3.87) नाभ्यस्तस्याचि पिति सार्वधातुके।",
     anuvritti_from        = ('7.1.1',),

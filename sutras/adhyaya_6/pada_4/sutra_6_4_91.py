@@ -4,6 +4,7 @@
 Padaccheda: वा चित्तविरागे
 
 वा चित्तविरागे (6.4.91)
+Pāṭha: ashtadhyayi.com data.txt row i=64091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA cittavirAge",
     text_dev              = "वा चित्तविरागे",
+    samagra_slp1          = "cittavirAge dozaH upaDAyAH RO Ut vA",
+    samagra_dev           = "चित्तविरागे दोषः उपधायाः णौ ऊत् वा",
     padaccheda_dev        = "वा चित्तविरागे",
     why_dev               = "(सूत्रम् 6.4.91) वा चित्तविरागे।",
     anuvritti_from        = ('6.1.1',),

@@ -10,6 +10,7 @@ or actions).
 Engine: registers the kārakamadhe→saptamī/pañcamī gate. ``cond`` checks only
 the gate flag, never vibhakti coordinates (CONSTITUTION Art. 2).
 ``r1_form_identity_exempt=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=23007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'saptamIpaYcamyO kArakamaDye',
     text_dev              = 'सप्तमीपञ्चम्यौ कारकमध्ये',
+    samagra_slp1          = "anaBihite saptamI-paYcamyO kAraka-maDye kAlADvanoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते सप्तमी-पञ्चम्यौ कारक-मध्ये कालाध्वनोः",
     padaccheda_dev        = "सप्तमी / पञ्चम्यौ / कारकमध्ये",
     why_dev               = (
         "कारकमध्ये सप्तमी च पञ्चमी च — "

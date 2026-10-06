@@ -4,6 +4,7 @@
 Padaccheda: वसोः समूहे च
 
 वसोः समूहे च (4.4.140)
+Pāṭha: ashtadhyayi.com data.txt row i=44140 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vasoH samUhe ca",
     text_dev              = "वसोः समूहे च",
+    samagra_slp1          = "vasoH samUhe maye ca Candasi saMjYAyAm yat ",
+    samagra_dev           = "वसोः समूहे मये च छन्दसि संज्ञायाम् यत् ।",
     padaccheda_dev        = "वसोः समूहे च",
     why_dev               = "(सूत्रम् 4.4.140) वसोः समूहे च।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: श्ना-अभ्यस्तयोः आतः
 
 श्नाऽभ्यस्तयोरातः (6.4.112)
+Pāṭha: ashtadhyayi.com data.txt row i=64112 (Art. 14).
 """
 from __future__ import annotations
 
@@ -84,6 +85,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'SnAByastayorAtaH',
     text_dev              = 'श्नाऽभ्यस्तयोरातः',
+    samagra_slp1          = "SnA-aByastayoH aNgasya AtaH sArvaDAtuke kNiti lopaH",
+    samagra_dev           = "श्ना-अभ्यस्तयोः अङ्गस्य आतः सार्वधातुके क्ङिति लोपः",
     padaccheda_dev        = "श्ना-अभ्यस्तयोः आतः",
     why_dev               = "(सूत्रम् 6.4.112) श्नाऽभ्यस्तयोरातः।",
     anuvritti_from        = ('6.1.1',),

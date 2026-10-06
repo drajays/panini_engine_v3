@@ -4,6 +4,7 @@
 Padaccheda: यावति विन्द-जीवोः
 
 krt-suffix rule: यावति विन्दजीवोः
+Pāṭha: ashtadhyayi.com data.txt row i=34030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yAvati vindajIvoH",
     text_dev              = "यावति विन्दजीवोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH yAvati vinda-jIvoH kft Ramul karmaRi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः यावति विन्द-जीवोः कृत् णमुल् कर्मणि",
     padaccheda_dev        = "यावति विन्द-जीवोः",
     why_dev               = "धातोः प्रत्ययः (३.4.30)।",
     anuvritti_from        = ('3.1.1',),

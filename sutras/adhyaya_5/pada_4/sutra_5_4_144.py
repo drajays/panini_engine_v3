@@ -4,6 +4,7 @@
 Padaccheda: विभाषा श्याव-अरोकाभ्याम्
 
 विभाषा श्यावारोकाभ्याम् (5.4.144)
+Pāṭha: ashtadhyayi.com data.txt row i=54144 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA SyAvArokAByAm",
     text_dev              = "विभाषा श्यावारोकाभ्याम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA viBAzA SyAvArokAByAm bahuvrIhO dantasya datf",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा विभाषा श्यावारोकाभ्याम् बहुव्रीहौ दन्तस्य दतृ",
     padaccheda_dev        = "विभाषा श्याव-अरोकाभ्याम्",
     why_dev               = "(सूत्रम् 5.4.144) विभाषा श्यावारोकाभ्याम्।",
     anuvritti_from        = ('5.4.68',),

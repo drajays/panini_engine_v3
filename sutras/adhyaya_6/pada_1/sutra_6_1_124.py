@@ -4,6 +4,7 @@
 Padaccheda: इन्द्रे च (नित्यम् )
 
 इन्द्रे च (6.1.124)
+Pāṭha: ashtadhyayi.com data.txt row i=61124 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "indre ca",
     text_dev              = "इन्द्रे च",
+    samagra_slp1          = "goH indre avaN",
+    samagra_dev           = "गोः इन्द्रे अवङ्",
     padaccheda_dev        = "इन्द्रे च (नित्यम् )",
     why_dev               = "(सूत्रम् 6.1.124) इन्द्रे च।",
     anuvritti_from        = ('6.1.1',),

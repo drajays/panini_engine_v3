@@ -4,6 +4,7 @@
 Padaccheda: कर्मणि च येन संस्पर्शात् कर्तुः शरीर-सुखम्
 
 krt-suffix rule: कर्मणि च येन संस्पर्शात् कर्तुः शरीरसुखम्
+Pāṭha: ashtadhyayi.com data.txt row i=33116 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karmaRi ca yena saMsparSAt kartuH SarIrasuKam",
     text_dev              = "कर्मणि च येन संस्पर्शात् कर्तुः शरीरसुखम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH karmaRi ca yena saMsparSAt kartuH SarIrasuKam kft napuMsake BAve lyuw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कर्मणि च येन संस्पर्शात् कर्तुः शरीरसुखम् कृत् नपुंसके भावे ल्युट्",
     padaccheda_dev        = "कर्मणि च येन संस्पर्शात् कर्तुः शरीर-सुखम्",
     why_dev               = "धातोः प्रत्ययः (३.3.116)।",
     anuvritti_from        = ('3.1.1',),

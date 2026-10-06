@@ -12,6 +12,7 @@ This sūtra (2.1.14 per the JSON) handles the broader locus (*lakṣaṇa*)
 + *abhi*/*prati* reading.
 
 v3 narrow slice: gate-marks with key ``2_1_14_lakshana_abhi_prati``.
+Pāṭha: ashtadhyayi.com data.txt row i=21014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -47,6 +48,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'lakzaRenABipratI ABimuKye',
     text_dev              = 'लक्षणेनाभिप्रती आभिमुख्ये',
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA avyayIBAvaH lakzaRena aBi-pratI ABimuKye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा अव्ययीभावः लक्षणेन अभि-प्रती आभिमुख्ये",
     padaccheda_dev        = "लक्षणेन / अभि-प्रती / आभिमुख्ये",
     why_dev               = "लक्षण-योगे अभि/प्रति-अव्ययानां आभिमुख्ये अव्ययीभावः (२.१.१४)।",
     anuvritti_from        = ("2.1.5",),

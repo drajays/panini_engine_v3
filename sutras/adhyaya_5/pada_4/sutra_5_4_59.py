@@ -4,6 +4,7 @@
 Padaccheda: सङ्‍ख्यायाः च गुण-अन्तायाः
 
 संख्यायाश्च गुणान्तायाः (5.4.59)
+Pāṭha: ashtadhyayi.com data.txt row i=54059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMKyAyASca guRAntAyAH",
     text_dev              = "संख्यायाश्च गुणान्तायाः",
+    samagra_slp1          = "guRAntAyAH saNKyAyAH kfYaH kfzO qAc",
+    samagra_dev           = "गुणान्तायाः सङ्ख्यायाः कृञः कृषौ डाच्",
     padaccheda_dev        = "सङ्‍ख्यायाः च गुण-अन्तायाः",
     why_dev               = "(सूत्रम् 5.4.59) संख्यायाश्च गुणान्तायाः।",
     anuvritti_from        = ('4.1.76',),

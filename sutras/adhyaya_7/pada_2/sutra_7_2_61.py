@@ -4,6 +4,7 @@
 Padaccheda: अचः तास्-वत् थलि अन्-इटः नित्यम्
 
 अचस्तास्वत् थल्यनिटो नित्यम् (7.2.61)
+Pāṭha: ashtadhyayi.com data.txt row i=72061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "acastAsvat Talyaniwo nityam",
     text_dev              = "अचस्तास्वत् थल्यनिटो नित्यम्",
+    samagra_slp1          = "aNgasya acaH tAsvat Tali aniwaH nityam valAdeH iw ArDaDAtukasya na tAsi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अचः तास्वत् थलि अनिटः नित्यम् वलादेः इट् आर्धधातुकस्य न तासि",
     padaccheda_dev        = "अचः तास्-वत् थलि अन्-इटः नित्यम्",
     why_dev               = "(सूत्रम् 7.2.61) अचस्तास्वत् थल्यनिटो नित्यम्।",
     anuvritti_from        = ('7.1.1',),

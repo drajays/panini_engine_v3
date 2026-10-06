@@ -4,6 +4,7 @@
 Padaccheda: परिवृतः रथः
 
 परिवृतो रथः (4.2.10)
+Pāṭha: ashtadhyayi.com data.txt row i=42010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parivfto raTaH",
     text_dev              = "परिवृतो रथः",
+    samagra_slp1          = "tena parivfto raTaH iti samarTAnAm praTamAt paraH aR pratyayaH",
+    samagra_dev           = "'तेन परिवृतो रथः' (इति) समर्थानाम् प्रथमात् परः अण् प्रत्ययः",
     padaccheda_dev        = "परिवृतः रथः",
     why_dev               = "(सूत्रम् 4.2.10) परिवृतो रथः।",
     anuvritti_from        = ('4.1.1',),

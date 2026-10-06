@@ -8,6 +8,7 @@ Engine: armed ``corrected_v2_P005_B_3_2_97_arm`` — insert **qa** (ड् + अ
 ``jan~`` *dhātu* ``Term`` as a ``kṛt`` *pratyaya* (SLP1 ``q`` = ड्).  The affix is
 tagged ``dit_pratyaya`` so **6.4.143** (*ṭi*-lopa before *ḍit*) can apply under the
 recipe meta arm for this row.
+Pāṭha: ashtadhyayi.com data.txt row i=32097 (Art. 14).
 """
 from __future__ import annotations
 
@@ -59,6 +60,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='saptamyAM janerqaH',
     text_dev='सप्तम्यां जनेर्डः',
+    samagra_slp1="pratyayaH paraSca AdyudAttaSca DAtoH BUte saptamyAm janeH qaH kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते सप्तम्याम् जनेः डः कृत्",
     padaccheda_dev="सप्तम्याम् / जनेः / डः",
     why_dev="उपपद-सप्तम्यां जनेः परः डः कृत् (प००५-ब)।",
     anuvritti_from=("3.1.25",),

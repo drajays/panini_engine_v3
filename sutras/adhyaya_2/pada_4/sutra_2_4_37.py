@@ -2,7 +2,7 @@
 2.4.37  लुङ्सनोर्घसॢ  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=20437
+- ashtadhyayi.com data.txt row i=24037
 - Kāśikā: «लुङि सनोः अदः घसॢ आदेशः» (अघसत्)
 - Cross-validation: tests/unit/test_tinanta_ad_lug_kartari.py
 
@@ -70,6 +70,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="luNsanorGasx",
     text_dev="लुङ्सनोर्घसॢ",
+    samagra_slp1="ArDaDAtuke luN-sanoH Gasx adaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आर्धधातुके लुङ्-सनोः घसॢ अदः",
     padaccheda_dev="लुङ्-सनोः / घसॢ",
     why_dev="लुङि सनोः अद्-धातोः घस्-आदेशः — अघसत्।",
     anuvritti_from=("2.4.35",),

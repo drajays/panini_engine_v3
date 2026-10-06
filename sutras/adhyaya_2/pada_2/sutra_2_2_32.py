@@ -4,6 +4,7 @@
 Padaccheda: द्वन्द्वे घि
 
 In dvandva compound ghi-samjna applies.
+Pāṭha: ashtadhyayi.com data.txt row i=22032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'dvandve Gi',
     text_dev              = 'द्वन्द्वे घि',
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA dvandve Gi pUrvam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा द्वन्द्वे घि पूर्वम्",
     padaccheda_dev        = "द्वन्द्वे घि",
     why_dev               = "द्वन्द्वे घि-संज्ञा (२.२.३२)।",
     anuvritti_from        = ('2.2.1',),

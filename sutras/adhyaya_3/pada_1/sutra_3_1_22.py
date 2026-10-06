@@ -29,6 +29,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.ADHIKARA,
     text_slp1      = 'DAtorekAco halAdeH kriyAsamaBihAre yaN',
     text_dev       = 'धातोरेकाचो हलादेः क्रियासमभिहारे यङ्',
+    samagra_slp1   = "pratyayaH paraSca AdyudAttaSca DAtoH ekAcaH halAdeH kriyAsamaBihAre yaN vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "प्रत्ययः परश्च आद्युदात्तश्च धातोः एकाचः हलादेः क्रियासमभिहारे यङ् वा",
     padaccheda_dev = "धातोः एकाचः हलादेः क्रियासमभिहारे यङ्",
     why_dev        = (
         "धात्वधिकारः (प्रथमः) — ३.१.२२ तः ३.१.९० पर्यन्तम् "

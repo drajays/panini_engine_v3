@@ -4,6 +4,7 @@
 Padaccheda: वत्स-अंसाभ्याम् काम-बले
 
 वत्सांसाभ्यां कामबले (5.2.98)
+Pāṭha: ashtadhyayi.com data.txt row i=52098 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vatsAMsAByAM kAmabale",
     text_dev              = "वत्सांसाभ्यां कामबले",
+    samagra_slp1          = "tat asya asmin astIti iti vatsa-aMsAByAm kAma-bale lac",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) वत्स-अंसाभ्याम् काम-बले लच्",
     padaccheda_dev        = "वत्स-अंसाभ्याम् काम-बले",
     why_dev               = "(सूत्रम् 5.2.98) वत्सांसाभ्यां कामबले।",
     anuvritti_from        = ('4.1.82',),

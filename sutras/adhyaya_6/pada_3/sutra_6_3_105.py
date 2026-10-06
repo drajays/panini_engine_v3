@@ -4,6 +4,7 @@
 Padaccheda: ईषत्-अर्थे
 
 ईषदर्थे (6.3.105)
+Pāṭha: ashtadhyayi.com data.txt row i=63105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "IzadarTe",
     text_dev              = "ईषदर्थे",
+    samagra_slp1          = "uttarapade Izat-arTe koH kA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे ईषत्-अर्थे कोः का",
     padaccheda_dev        = "ईषत्-अर्थे",
     why_dev               = "(सूत्रम् 6.3.105) ईषदर्थे।",
     anuvritti_from        = ('6.1.1',),

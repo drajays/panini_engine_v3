@@ -4,6 +4,7 @@
 Padaccheda: विष्वक्-देवयोः च टेः अद्रि (लुप्तप्रथमान्तनिर्देशः) अञ्चतौ व-प्रत्यये
 
 विष्वग्देवयोश्च टेरद्र्यञ्चतौ वप्रत्यये (6.3.92)
+Pāṭha: ashtadhyayi.com data.txt row i=63092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vizvagdevayoSca weradryaYcatAvapratyaye',
     text_dev              = 'विष्वग्देवयोश्च टेरद्र्यञ्चतावप्रत्यये',
+    samagra_slp1          = "uttarapade vizvak-devayoH ca weH adri aYcatO apratyaye sarvanAmnaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे विष्वक्-देवयोः च टेः अद्रि अञ्चतौ अप्रत्यये सर्वनाम्नः",
     padaccheda_dev        = "विष्वक्-देवयोः च टेः अद्रि (लुप्तप्रथमान्तनिर्देशः) अञ्चतौ व-प्रत्यये",
     why_dev               = "(सूत्रम् 6.3.92) विष्वग्देवयोश्च टेरद्र्यञ्चतौ वप्रत्यये।",
     anuvritti_from        = ('6.1.1',),

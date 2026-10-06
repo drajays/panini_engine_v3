@@ -4,6 +4,7 @@
 Padaccheda: ऋत्-नेभ्यः ङीप्
 
 ऋन्नेभ्यो ङीप् (4.1.5)
+Pāṭha: ashtadhyayi.com data.txt row i=41005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "fnneByo NIp",
     text_dev              = "ऋन्नेभ्यो ङीप्",
+    samagra_slp1          = "ft-neByaH prAtipadikAta striyAm NIp pratyayaH",
+    samagra_dev           = "ऋत्-नेभ्यः प्रातिपदिकात स्त्रियाम् ङीप् प्रत्ययः",
     padaccheda_dev        = "ऋत्-नेभ्यः ङीप्",
     why_dev               = "(सूत्रम् 4.1.5) ऋन्नेभ्यो ङीप्।",
     anuvritti_from        = ('4.1.1',),

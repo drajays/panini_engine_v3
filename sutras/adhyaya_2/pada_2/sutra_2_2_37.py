@@ -4,6 +4,7 @@
 Padaccheda: वा आहित-अग्नि-आदिषु
 
 In ahitagni etc. optionally (vibhasha).
+Pāṭha: ashtadhyayi.com data.txt row i=22037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vAhitAgnyAdizu',
     text_dev              = 'वाहिताग्न्यादिषु',
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA vA AhitAgni-Adizu pUrvam bahuvrIhO nizWA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा वा आहिताग्नि-आदिषु पूर्वम् बहुव्रीहौ निष्ठा",
     padaccheda_dev        = "वा आहित-अग्नि-आदिषु",
     why_dev               = "आहित-अग्नि-आदिषु वा (२.२.३७)।",
     anuvritti_from        = ('2.2.36',),

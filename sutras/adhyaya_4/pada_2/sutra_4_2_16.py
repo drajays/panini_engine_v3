@@ -4,6 +4,7 @@
 Padaccheda: संस्कृतम् भक्षाः
 
 संस्कृतं भक्षाः (4.2.16)
+Pāṭha: ashtadhyayi.com data.txt row i=42016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMskftaM BakzAH",
     text_dev              = "संस्कृतं भक्षाः",
+    samagra_slp1          = "tatra saMskftaM BakzAH iti samarTAnAm praTamAt paraH tadDitaH pratyayaH aR vA",
+    samagra_dev           = "'तत्र संस्कृतं भक्षाः' (इति) समर्थानाम् प्रथमात् परः तद्धितः प्रत्ययः अण् वा",
     padaccheda_dev        = "संस्कृतम् भक्षाः",
     why_dev               = "(सूत्रम् 4.2.16) संस्कृतं भक्षाः।",
     anuvritti_from        = ('4.1.1',),

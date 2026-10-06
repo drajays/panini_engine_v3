@@ -8,6 +8,7 @@
 *Engine:* ``cond`` reads ``upadesha_slp1`` and tags only (CONSTITUTION Art. 2).  Tags
 ``atmanepada`` and removes ``parasmaipada`` on the same *Term* when both were present
 (*eka*‑*sañjñā* *bādhana*).  Registry key ``1.4.100_atmanepada_adesha_slp1``.
+Pāṭha: ashtadhyayi.com data.txt row i=14100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -57,6 +58,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'taNAnAvAtmanepadam',
     text_dev       = 'तङानावात्मनेपदम्',
+    samagra_slp1   = "laH taNAnO Atmanepadam",
+    samagra_dev    = "लः तङानौ आत्मनेपदम्",
     padaccheda_dev = "तङ्-आनौ (प्रथमा-द्विवचनम्) / आत्मनेपदम् (प्रथमा)",
     why_dev        = (
         "लकार-स्थाने तङ्-आदेशाः शानच्-कानच् च आत्मनेपद-संज्ञकाः; "

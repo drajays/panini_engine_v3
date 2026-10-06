@@ -12,6 +12,7 @@ when the luṅ (aorist) lakāra is used. For example: adyota — aorist of dyut.
 stamp "Atmanepada_1_3_91" is absent, (c) a dhātu Term carries the tag
 "dyu_usage" AND the tag "lUN_lakAra".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -64,6 +65,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='dyudByo luNi',
     text_dev='द्युद्भ्यो लुङि',
+    samagra_slp1="dyudByaH luNi kartari parasmEpadam vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="द्युद्भ्यः लुङि कर्तरि परस्मैपदम् वा",
     padaccheda_dev="द्युद्भ्यः (पञ्चमी-बहुवचन) / लुङि (सप्तमी-एकवचन)",
     why_dev=(
         "द्यु-गण-धातूनां लुङि-लकारे आत्मनेपदम् — "

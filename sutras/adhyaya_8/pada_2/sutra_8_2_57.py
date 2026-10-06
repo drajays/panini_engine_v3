@@ -4,6 +4,7 @@
 Padaccheda: न ध्या-ख्या-पॄ-मूर्छि-मदाम्
 
 न ध्याख्यापॄमूर्छिमदाम् (8.2.57)
+Pāṭha: ashtadhyayi.com data.txt row i=82057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na DyAKyApFmUrCimadAm",
     text_dev              = "न ध्याख्यापॄमूर्छिमदाम्",
+    samagra_slp1          = "padasya pUrvatrAsidDam na DyAKyApFmUrCimadAm nizWAtaH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् न ध्याख्यापॄमूर्छिमदाम् निष्ठातः नः",
     padaccheda_dev        = "न ध्या-ख्या-पॄ-मूर्छि-मदाम्",
     why_dev               = "(सूत्रम् 8.2.57) न ध्याख्यापॄमूर्छिमदाम्।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: अश्वाघस्य आत्
 
 अश्वाघस्यात् (7.4.37)
+Pāṭha: ashtadhyayi.com data.txt row i=74037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aSvAGasyAt",
     text_dev              = "अश्वाघस्यात्",
+    samagra_slp1          = "aNgasya aSvAGasya At kyaci Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अश्वाघस्य आत् क्यचि छन्दसि",
     padaccheda_dev        = "अश्वाघस्य आत्",
     why_dev               = "(सूत्रम् 7.4.37) अश्वाघस्यात्।",
     anuvritti_from        = ('7.1.1',),

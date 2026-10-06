@@ -4,6 +4,7 @@
 Padaccheda: आगस्त्य-कौण्डिन्ययोः अगस्ति-कुण्डिनच्
 
 agastya and kaundinyaya as nipatana forms.
+Pāṭha: ashtadhyayi.com data.txt row i=24070 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AgastyakORqinyayoragastikuRqinac",
     text_dev              = "आगस्त्यकौण्डिन्ययोरगस्तिकुण्डिनच्",
+    samagra_slp1          = "Agastya-kORqinyayoH agasti-kuRqinac luk bahuzu tena eva astriyAm gotre",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आगस्त्य-कौण्डिन्ययोः अगस्ति-कुण्डिनच् लुक् बहुषु तेन एव अस्त्रियाम् गोत्रे",
     padaccheda_dev        = "आगस्त्य-कौण्डिन्ययोः अगस्ति-कुण्डिनच्",
     why_dev               = "आगस्त्य-कौण्डिन्ययोः अगस्ति-कुण्डिनच् (२.४.७०)।",
     anuvritti_from        = ('2.4.1',),

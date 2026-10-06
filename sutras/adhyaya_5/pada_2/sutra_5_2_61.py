@@ -4,6 +4,7 @@
 Padaccheda: विमुक्तादिभ्यः अण्
 
 विमुक्तादिभ्योऽण् (5.2.61)
+Pāṭha: ashtadhyayi.com data.txt row i=52061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vimuktAdiByoR',
     text_dev              = 'विमुक्तादिभ्योऽण्',
+    samagra_slp1          = "matO aDyAya-anuvAkayoH vimuktAdiByaH aR",
+    samagra_dev           = "मतौ अध्याय-अनुवाकयोः विमुक्तादिभ्यः अण्",
     padaccheda_dev        = "विमुक्तादिभ्यः अण्",
     why_dev               = "(सूत्रम् 5.2.61) विमुक्तादिभ्योऽण्।",
     anuvritti_from        = ('4.1.82',),

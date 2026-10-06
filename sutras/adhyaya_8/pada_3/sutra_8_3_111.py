@@ -4,6 +4,7 @@
 Padaccheda: सात्-पद-आद्योः
 
 सात्पदाद्योः (8.3.111)
+Pāṭha: ashtadhyayi.com data.txt row i=83111 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sAtpadAdyoH",
     text_dev              = "सात्पदाद्योः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH sAt-padAdyoH saH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः सात्-पदाद्योः सः न",
     padaccheda_dev        = "सात्-पद-आद्योः",
     why_dev               = "(सूत्रम् 8.3.111) सात्पदाद्योः।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: हृदयस्य हृत् लेख-यत्-अण्-लासेषु
 
 हृदयस्य हृल्लेखयदण्लासेषु (6.3.50)
+Pāṭha: ashtadhyayi.com data.txt row i=63050 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hfdayasya hflleKayadaRlAsezu",
     text_dev              = "हृदयस्य हृल्लेखयदण्लासेषु",
+    samagra_slp1          = "uttarapade hfdayasya hft leKa-yat-aR-lAsezu treH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे हृदयस्य हृत् लेख-यत्-अण्-लासेषु त्रेः",
     padaccheda_dev        = "हृदयस्य हृत् लेख-यत्-अण्-लासेषु",
     why_dev               = "(सूत्रम् 6.3.50) हृदयस्य हृल्लेखयदण्लासेषु।",
     anuvritti_from        = ('6.1.1',),

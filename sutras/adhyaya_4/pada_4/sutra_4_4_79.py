@@ -4,6 +4,7 @@
 Padaccheda: एकधुरात् लुक् च
 
 एकधुराल्लुक् च (4.4.79)
+Pāṭha: ashtadhyayi.com data.txt row i=44079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ekaDurAlluk ca",
     text_dev              = "एकधुराल्लुक् च",
+    samagra_slp1          = "tat vahati iti ekaDurAt KaH luk ca",
+    samagra_dev           = "'तत् वहति' इति एकधुरात् खः लुक् च",
     padaccheda_dev        = "एकधुरात् लुक् च",
     why_dev               = "(सूत्रम् 4.4.79) एकधुराल्लुक् च।",
     anuvritti_from        = ('4.1.1',),

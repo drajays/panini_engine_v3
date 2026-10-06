@@ -11,6 +11,7 @@ This file implements a *minimal* structural merge:
   - action: merge into one ``prakriti`` term carrying ``prātipadika``/``anga`` + ``avyaya``.
 
 This is adequate for demos where the goal is to show 1.1.39 → 2.2.20 → 2.4.82.
+Pāṭha: ashtadhyayi.com data.txt row i=22020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -76,6 +77,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1      = 'amEvAvyayena',
     text_dev       = 'अमैवाव्ययेन',
+    samagra_slp1   = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH amA eva avyayena upapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः अमा एव अव्ययेन उपपदम्",
     padaccheda_dev = "अम् एव / अव्ययेन",
     why_dev        = "अमन्त-अव्ययेन सह उपपदस्य समासः (कृन्मेजन्त-प्रसङ्गे)।",
     anuvritti_from = ("2.2.19",),

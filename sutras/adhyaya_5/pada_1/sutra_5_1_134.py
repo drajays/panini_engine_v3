@@ -4,6 +4,7 @@
 Padaccheda: गोत्र-चरणात् श्लाघा-अत्याकार-तदवेतेषु
 
 गोत्रचरणाच्श्लाघाऽत्याकारतदवेतेषु (5.1.134)
+Pāṭha: ashtadhyayi.com data.txt row i=51134 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'gotracaraRAcSlAGAtyAkAratadavetezu',
     text_dev              = 'गोत्रचरणाच्श्लाघात्याकारतदवेतेषु',
+    samagra_slp1          = "tasya BAvaH karmaRi ca iti gotracaraRAt SlAGA-atyAkAra-tadavetezu vuY",
+    samagra_dev           = "'तस्य भावः कर्मणि च' (इति) गोत्रचरणात् श्लाघा-अत्याकार-तदवेतेषु वुञ्",
     padaccheda_dev        = "गोत्र-चरणात् श्लाघा-अत्याकार-तदवेतेषु",
     why_dev               = "(सूत्रम् 5.1.134) गोत्रचरणाच्श्लाघाऽत्याकारतदवेतेषु।",
     anuvritti_from        = ('5.1.120',),

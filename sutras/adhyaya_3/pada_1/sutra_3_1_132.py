@@ -4,6 +4,7 @@
 Padaccheda: चित्य-अग्निचित्ये च
 
 Krt suffix rule from dhatu: चित्याग्निचित्ये च (132)
+Pāṭha: ashtadhyayi.com data.txt row i=31132 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "cityAgnicitye ca",
     text_dev              = "चित्याग्निचित्ये च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH citya-agnicitye ca kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः चित्य-अग्निचित्ये च कृत्",
     padaccheda_dev        = "चित्य-अग्निचित्ये च",
     why_dev               = "धातोः [चित्याग्निचित्ये च]-प्रत्ययः विहितः (३.१.132)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

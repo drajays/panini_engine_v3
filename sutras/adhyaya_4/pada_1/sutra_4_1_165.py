@@ -4,6 +4,7 @@
 Padaccheda: वा अन्यस्मिन् सपिण्डे स्थविरतरे जीवति
 
 वाऽन्यस्मिन् सपिण्डे स्थविरतरे जीवति (4.1.165)
+Pāṭha: ashtadhyayi.com data.txt row i=41165 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vAnyasmin sapiRqe sTaviratare jIvati',
     text_dev              = 'वान्यस्मिन् सपिण्डे स्थविरतरे जीवति',
+    samagra_slp1          = "BrAtari anyasmin sapiRqe sTaviratare jIvati pOtrapraBfteH apatyam jIvati eva yuvA vA ",
+    samagra_dev           = "भ्रातरि अन्यस्मिन् सपिण्डे स्थविरतरे जीवति पौत्रप्रभृतेः अपत्यम् जीवति (एव) युवा वा ।",
     padaccheda_dev        = "वा अन्यस्मिन् सपिण्डे स्थविरतरे जीवति",
     why_dev               = "(सूत्रम् 4.1.165) वाऽन्यस्मिन् सपिण्डे स्थविरतरे जीवति।",
     anuvritti_from        = ('4.1.1',),

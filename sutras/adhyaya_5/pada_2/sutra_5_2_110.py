@@ -4,6 +4,7 @@
 Padaccheda: गाण्ड्य-जगात् संज्ञायाम्
 
 गाण्ड्यजगात् संज्ञायाम् (5.2.110)
+Pāṭha: ashtadhyayi.com data.txt row i=52110 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gARqyajagAt saMjYAyAm",
     text_dev              = "गाण्ड्यजगात् संज्ञायाम्",
+    samagra_slp1          = "tat asya asmin astIti iti saMjYAyAm gARqI-ajagAt vaH",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) संज्ञायाम् गाण्डी-अजगात् वः",
     padaccheda_dev        = "गाण्ड्य-जगात् संज्ञायाम्",
     why_dev               = "(सूत्रम् 5.2.110) गाण्ड्यजगात् संज्ञायाम्।",
     anuvritti_from        = ('4.1.82',),

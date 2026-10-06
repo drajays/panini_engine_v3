@@ -4,6 +4,7 @@
 Padaccheda: हेतु-हेतुमतोः लिङ्
 
 krt-suffix rule: हेतुहेतुमतोर्लिङ्
+Pāṭha: ashtadhyayi.com data.txt row i=33156 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hetuhetumatorliN",
     text_dev              = "हेतुहेतुमतोर्लिङ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH hetu-hetumatoH liN kft viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः हेतु-हेतुमतोः लिङ् कृत् विभाषा",
     padaccheda_dev        = "हेतु-हेतुमतोः लिङ्",
     why_dev               = "धातोः प्रत्ययः (३.3.156)।",
     anuvritti_from        = ('3.1.1',),

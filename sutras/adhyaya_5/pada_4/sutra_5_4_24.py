@@ -4,6 +4,7 @@
 Padaccheda: देवत-अन्तात् तादर्थ्ये यत्
 
 देवतान्तात्तादर्थ्ये यत् (5.4.24)
+Pāṭha: ashtadhyayi.com data.txt row i=54024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "devatAntAttAdarTye yat",
     text_dev              = "देवतान्तात्तादर्थ्ये यत्",
+    samagra_slp1          = "devatAntAt tAdarTye yat",
+    samagra_dev           = "देवतान्तात् तादर्थ्ये यत्",
     padaccheda_dev        = "देवत-अन्तात् तादर्थ्ये यत्",
     why_dev               = "(सूत्रम् 5.4.24) देवतान्तात्तादर्थ्ये यत्।",
     anuvritti_from        = ('4.1.76',),

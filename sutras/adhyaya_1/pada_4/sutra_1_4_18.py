@@ -25,6 +25,7 @@ also allow an initial dīrgha in ``_taddhite_yaci_anga_ok``.  The *aṅga* *befo
 
 First sound of the affix is read from ``Term.varnas[0]`` after the engine's
 *it*-pass (**1.3.9**).
+Pāṭha: ashtadhyayi.com data.txt row i=14018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -187,6 +188,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'yaci Bam',
     text_dev       = 'यचि भम्',
+    samagra_slp1   = "asarvanAmasTAne su~-Adizu yaci Bam",
+    samagra_dev    = "असर्वनामस्थाने सुँ-आदिषु यचि  भम्",
     padaccheda_dev = "असर्वनामस्थाने सुँ-आदिषु यचि भम्",
     why_dev        = (
         "स्वादि-प्रत्यये असर्वनामस्थानके यकारादौ वा अजादौ आदौ च परे "

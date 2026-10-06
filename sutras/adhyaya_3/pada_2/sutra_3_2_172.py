@@ -4,6 +4,7 @@
 Padaccheda: स्वपि-तृषोः नजिङ्
 
 krt-suffix rule: स्वपितृषोर्नजिङ् (172)
+Pāṭha: ashtadhyayi.com data.txt row i=32172 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "svapitfzornajiN",
     text_dev              = "स्वपितृषोर्नजिङ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu svapi-tfzoH najiN kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु स्वपि-तृषोः नजिङ् कृत्",
     padaccheda_dev        = "स्वपि-तृषोः नजिङ्",
     why_dev               = "धातोः कृत्-प्रत्ययः [स्वपितृषोर्नजिङ्] विहितः (३.२.172)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

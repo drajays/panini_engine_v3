@@ -4,6 +4,7 @@
 Padaccheda: तिङः च
 
 तिङश्च (5.3.56)
+Pāṭha: ashtadhyayi.com data.txt row i=53056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tiNaSca",
     text_dev              = "तिङश्च",
+    samagra_slp1          = "tiNaH atiSAyane tamap",
+    samagra_dev           = "तिङः अतिशायने तमप्",
     padaccheda_dev        = "तिङः च",
     why_dev               = "(सूत्रम् 5.3.56) तिङश्च।",
     anuvritti_from        = ('4.1.76',),

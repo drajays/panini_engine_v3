@@ -4,6 +4,7 @@
 Padaccheda: संख्यायाः विधा-अर्थे धा
 
 संख्याया विधाऽर्थे धा (5.3.42)
+Pāṭha: ashtadhyayi.com data.txt row i=53042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'saMKyAyA viDArTe DA',
     text_dev              = 'संख्याया विधार्थे धा',
+    samagra_slp1          = "saNKyAyAH viDArTe DA",
+    samagra_dev           = "सङ्ख्यायाः विधार्थे धा",
     padaccheda_dev        = "संख्यायाः विधा-अर्थे धा",
     why_dev               = "(सूत्रम् 5.3.42) संख्याया विधाऽर्थे धा।",
     anuvritti_from        = ('4.1.76',),

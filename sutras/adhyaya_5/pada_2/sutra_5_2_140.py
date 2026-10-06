@@ -4,6 +4,7 @@
 Padaccheda: अहं-शुभमोः युस्
 
 अहंशुभमोर्युस् (5.2.140)
+Pāṭha: ashtadhyayi.com data.txt row i=52140 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ahaMSuBamoryus",
     text_dev              = "अहंशुभमोर्युस्",
+    samagra_slp1          = "tat asya asmin astIti iti aham-SuBamoH yus",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) अहम्-शुभमोः युस्",
     padaccheda_dev        = "अहं-शुभमोः युस्",
     why_dev               = "(सूत्रम् 5.2.140) अहंशुभमोर्युस्।",
     anuvritti_from        = ('4.1.82',),

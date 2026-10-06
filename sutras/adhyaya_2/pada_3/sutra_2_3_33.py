@@ -4,6 +4,7 @@
 Padaccheda: करणे च स्तोक-अल्प-कृच्छ्र-कतिपयस्य असत्त्ववचनस्य
 
 Tritiya for karana: stoka, alpa, krcchra, katipaya non-entities.
+Pāṭha: ashtadhyayi.com data.txt row i=23033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karaRe ca stokAlpakfcCrakatipayasyAsattvavacanasya",
     text_dev              = "करणे च स्तोकाल्पकृच्छ्रकतिपयस्यासत्त्ववचनस्य",
+    samagra_slp1          = "anaBihite karaRe ca stoka-alpa-kfcCra-katipayasya asattva-vacanasya paYcamI tftIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते करणे च स्तोक-अल्प-कृच्छ्र-कतिपयस्य असत्त्व-वचनस्य पञ्चमी तृतीया",
     padaccheda_dev        = "करणे च स्तोक-अल्प-कृच्छ्र-कतिपयस्य असत्त्ववचनस्य",
     why_dev               = "करणे च स्तोक-अल्प-कृच्छ्र-कतिपयस्य असत्त्ववचनस्य (२.३.३३)।",
     anuvritti_from        = ('2.3.18',),

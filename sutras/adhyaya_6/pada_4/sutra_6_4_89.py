@@ -4,6 +4,7 @@
 The upadhā u of गुहू (guh) becomes ū before an ac-initial affix — गूहति, गूहते, जुगूह, अगूहीत् (KV 6.4.89; Vidyut agrees). The long ū is not laghu,
 so 7.3.86's laghūpadha guṇa has no site (apavāda).
 Source: ashtadhyayi.com data row 64089 (anuvṛtti: अङ्गस्य, अचि).
+Pāṭha: ashtadhyayi.com data.txt row i=64089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="UdupaDAyA gohaH",
     text_dev="ऊदुपधाया गोहः",
+    samagra_slp1="gohaH upaDAyAH Ut aci",
+    samagra_dev="गोहः उपधायाः ऊत् अचि",
     padaccheda_dev="ऊत् उपधायाः गोहः",
     why_dev="गुहू-धातोः उपधा-उकारस्य अजादौ प्रत्यये ऊकारः (गूहति)।",
     anuvritti_from=("6.4.1",),

@@ -4,6 +4,7 @@
 Padaccheda: संज्ञायाम्
 
 संज्ञायाम् (8.2.11)
+Pāṭha: ashtadhyayi.com data.txt row i=82011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYAyAm",
     text_dev              = "संज्ञायाम्",
+    samagra_slp1          = "padasya pUrvatrAsidDam saMjYAyAm vaH matoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् संज्ञायाम् वः मतोः",
     padaccheda_dev        = "संज्ञायाम्",
     why_dev               = "(सूत्रम् 8.2.11) संज्ञायाम्।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: स्फायः वः
 
 स्फायो वः (7.3.41)
+Pāṭha: ashtadhyayi.com data.txt row i=73041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sPAyo vaH",
     text_dev              = "स्फायो वः",
+    samagra_slp1          = "aNgasya sPAyaH vaH RO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य स्फायः वः णौ",
     padaccheda_dev        = "स्फायः वः",
     why_dev               = "(सूत्रम् 7.3.41) स्फायो वः।",
     anuvritti_from        = ('7.1.1',),

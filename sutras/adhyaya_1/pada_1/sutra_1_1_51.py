@@ -185,6 +185,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.PARIBHASHA,
     text_slp1      = 'uraR raparaH',
     text_dev       = 'उरण् रपरः',
+    samagra_slp1   = "uH raparaH aR",
+    samagra_dev    = "उः रपरः अण्",
     padaccheda_dev = "उः / अण् / रपरः",
     why_dev        = "ऋ/ऌ-प्रसङ्गे अण्-आदेशानन्तरं र्/ल्-आगमः (यथासङ्ख्यम्) — "
                      "उरण् रपरः (कृ→कर्, हृ→हर्)।",

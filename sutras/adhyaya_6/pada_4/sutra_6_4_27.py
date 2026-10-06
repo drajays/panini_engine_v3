@@ -4,6 +4,7 @@
 Padaccheda: घञि च भाव-करणयोः
 
 घञि च भावकरणयोः (6.4.27)
+Pāṭha: ashtadhyayi.com data.txt row i=64027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "GaYi ca BAvakaraRayoH",
     text_dev              = "घञि च भावकरणयोः",
+    samagra_slp1          = "raYjeH aNgasya BAvakaraRayoH GaYi nalopaH",
+    samagra_dev           = "रञ्जेः अङ्गस्य भावकरणयोः घञि नलोपः",
     padaccheda_dev        = "घञि च भाव-करणयोः",
     why_dev               = "(सूत्रम् 6.4.27) घञि च भावकरणयोः।",
     anuvritti_from        = ('6.1.1',),

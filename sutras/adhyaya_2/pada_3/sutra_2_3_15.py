@@ -10,6 +10,7 @@ or from a *bhāvavacana* (abstract/action noun).
 Engine: registers the tumārtha/bhāvavacana→caturthī gate. ``cond`` checks only
 the gate flag, never vibhakti coordinates (CONSTITUTION Art. 2).
 ``r1_form_identity_exempt=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=23015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'tumarTAcca BAvavacanAt',
     text_dev              = 'तुमर्थाच्च भाववचनात्',
+    samagra_slp1          = "anaBihite tum-arTAt ca BAvavacanAt caturTI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते तुम्-अर्थात् च भाववचनात् चतुर्थी",
     padaccheda_dev        = "तुमर्थात् / च / भाववचनात्",
     why_dev               = (
         "तुमर्थात् भाववचनाच्च चतुर्थी — "

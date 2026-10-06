@@ -4,6 +4,7 @@
 Padaccheda: तस्मिन् अणि च युष्माक-अस्माकौ
 
 तस्मिन् नणि च युष्माकास्माकौ (4.3.2)
+Pāṭha: ashtadhyayi.com data.txt row i=43002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tasminnaRi ca yuzmAkAsmAkO',
     text_dev              = 'तस्मिन्नणि च युष्माकास्माकौ',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA tasmin aRi ca yuzmAka-asmAkO yuzmad-asmadoH KaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा तस्मिन् अणि च युष्माक-अस्माकौ युष्मद्-अस्मदोः खञ्",
     padaccheda_dev        = "तस्मिन् अणि च युष्माक-अस्माकौ",
     why_dev               = "(सूत्रम् 4.3.2) तस्मिन् नणि च युष्माकास्माकौ।",
     anuvritti_from        = ('4.1.1',),

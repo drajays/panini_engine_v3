@@ -4,6 +4,7 @@
 Padaccheda: गर्हायाम् लट् अपि-जात्वोः
 
 krt-suffix rule: गर्हायां लडपिजात्वोः
+Pāṭha: ashtadhyayi.com data.txt row i=33142 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "garhAyAM laqapijAtvoH",
     text_dev              = "गर्हायां लडपिजात्वोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH garhAyAm law apijAtvoH kft utApyoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः गर्हायाम् लट् अपिजात्वोः कृत् उताप्योः",
     padaccheda_dev        = "गर्हायाम् लट् अपि-जात्वोः",
     why_dev               = "धातोः प्रत्ययः (३.3.142)।",
     anuvritti_from        = ('3.1.1',),

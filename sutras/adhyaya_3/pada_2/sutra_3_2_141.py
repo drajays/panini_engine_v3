@@ -4,6 +4,7 @@
 Padaccheda: शम्-इति (लुप्तपञ्चम्यन्तनिर्देशः) अष्टाभ्यः घिनुँण्
 
 krt-suffix rule: शमित्यष्टाभ्यो घिनुण् (141)
+Pāṭha: ashtadhyayi.com data.txt row i=32141 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SamityazwAByo GinuR",
     text_dev              = "शमित्यष्टाभ्यो घिनुण्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu Samiti-azwAByaH GinuR kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु शमिति-अष्टाभ्यः घिनुण् कृत्",
     padaccheda_dev        = "शम्-इति (लुप्तपञ्चम्यन्तनिर्देशः) अष्टाभ्यः घिनुँण्",
     why_dev               = "धातोः कृत्-प्रत्ययः [शमित्यष्टाभ्यो घिनुण्] विहितः (३.२.141)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

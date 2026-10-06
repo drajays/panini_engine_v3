@@ -4,6 +4,7 @@
 Padaccheda: रुद-आदिभ्यः सार्वधातुके
 
 रुदादिभ्यः सार्वधातुके (7.2.76)
+Pāṭha: ashtadhyayi.com data.txt row i=72076 (Art. 14).
 """
 from __future__ import annotations
 from phonology import mk
@@ -73,6 +74,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "rudAdiByaH sArvaDAtuke",
     text_dev              = "रुदादिभ्यः सार्वधातुके",
+    samagra_slp1          = "aNgasya rudAdiByaH sArvaDAtuke iw valAdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य रुदादिभ्यः सार्वधातुके इट् वलादेः",
     padaccheda_dev        = "रुद-आदिभ्यः सार्वधातुके",
     why_dev               = "(सूत्रम् 7.2.76) रुदादिभ्यः सार्वधातुके।",
     anuvritti_from        = ('7.1.1',),

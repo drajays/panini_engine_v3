@@ -4,6 +4,7 @@
 Padaccheda: हिम-काषि-हतिषु च
 
 हिमकाषिहतिषु च (6.3.54)
+Pāṭha: ashtadhyayi.com data.txt row i=63054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "himakAzihatizu ca",
     text_dev              = "हिमकाषिहतिषु च",
+    samagra_slp1          = "uttarapade hima-kAzi-hatizu ca treH pAdasya pad",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे हिम-काषि-हतिषु च त्रेः पादस्य पद्",
     padaccheda_dev        = "हिम-काषि-हतिषु च",
     why_dev               = "(सूत्रम् 6.3.54) हिमकाषिहतिषु च।",
     anuvritti_from        = ('6.1.1',),

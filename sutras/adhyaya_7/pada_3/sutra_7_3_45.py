@@ -4,6 +4,7 @@
 Padaccheda: न या-सयोः
 
 न यासयोः (7.3.45)
+Pāṭha: ashtadhyayi.com data.txt row i=73045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na yAsayoH",
     text_dev              = "न यासयोः",
+    samagra_slp1          = "aNgasya na yAsayoH it ataH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न यासयोः इत् अतः",
     padaccheda_dev        = "न या-सयोः",
     why_dev               = "(सूत्रम् 7.3.45) न यासयोः।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: नित्यम् मन्त्रे
 
 नित्यं मन्त्रे (6.1.210)
+Pāṭha: ashtadhyayi.com data.txt row i=61210 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nityaM mantre",
     text_dev              = "नित्यं मन्त्रे",
+    samagra_slp1          = "nityam mantre udAttaH AdiH juzwa-arpite",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "नित्यम् मन्त्रे उदात्तः आदिः जुष्ट-अर्पिते",
     padaccheda_dev        = "नित्यम् मन्त्रे",
     why_dev               = "(सूत्रम् 6.1.210) नित्यं मन्त्रे।",
     anuvritti_from        = ('6.1.1',),

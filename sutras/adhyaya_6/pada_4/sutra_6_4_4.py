@@ -4,6 +4,7 @@
 Padaccheda: न तिसृ-चतसृ (लुप्तषष्ठ्यन्तनिर्देशः)
 
 न तिसृचतसृ (6.4.4)
+Pāṭha: ashtadhyayi.com data.txt row i=64004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na tisfcatasf",
     text_dev              = "न तिसृचतसृ",
+    samagra_slp1          = "tisf-catasf-aNgasya nAmi dIrGaH na",
+    samagra_dev           = "तिसृ-चतसृ-अङ्गस्य नामि दीर्घः न",
     padaccheda_dev        = "न तिसृ-चतसृ (लुप्तषष्ठ्यन्तनिर्देशः)",
     why_dev               = "(सूत्रम् 6.4.4) न तिसृचतसृ।",
     anuvritti_from        = ('6.1.1',),

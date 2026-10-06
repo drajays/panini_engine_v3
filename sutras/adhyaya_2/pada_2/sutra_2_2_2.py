@@ -14,6 +14,7 @@ Engine (narrow, mechanically blind):
   ``state.meta['2_2_2_arm']`` and supplies a Term tagged ``ardha_napumsaka``
   preceding a *prātipadika* Term.  Gate is raised on first fire; registry
   stamp records the formation.
+Pāṭha: ashtadhyayi.com data.txt row i=22002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="arDaM napuMsakam",
     text_dev="अर्धं नपुंसकम्",
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH arDam napuMsakam ekadeSinEkADikaraRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः अर्धम् नपुंसकम् एकदेशिनैकाधिकरणे",
     padaccheda_dev="अर्धम् / नपुंसकम्",
     why_dev=(
         "अर्धं नपुंसकं सुबन्तेन समस्यते — अर्धपिप्पलम्, अर्धमासम् इत्यादि।"

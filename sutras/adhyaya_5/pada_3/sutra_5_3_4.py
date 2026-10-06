@@ -4,6 +4,7 @@
 Padaccheda: एत-इतौ र-थोः
 
 एतेतौ रथोः (5.3.4)
+Pāṭha: ashtadhyayi.com data.txt row i=53004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "etetO raToH",
     text_dev              = "एतेतौ रथोः",
+    samagra_slp1          = "prAgdiSaH idamaH raTO eta-itO",
+    samagra_dev           = "प्राग्दिशः इदमः रथौ एत-इतौ",
     padaccheda_dev        = "एत-इतौ र-थोः",
     why_dev               = "(सूत्रम् 5.3.4) एतेतौ रथोः।",
     anuvritti_from        = ('5.3.2',),

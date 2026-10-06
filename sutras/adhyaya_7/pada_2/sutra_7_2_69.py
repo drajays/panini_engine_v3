@@ -4,6 +4,7 @@
 Padaccheda: सनिंससनिवांसम्
 
 सनिंससनिवांसम् (7.2.69)
+Pāṭha: ashtadhyayi.com data.txt row i=72069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saniMsasanivAMsam",
     text_dev              = "सनिंससनिवांसम्",
+    samagra_slp1          = "aNgasya saniMsasanivAMsam ArDaDAtukasya iw valAdeH vasu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य सनिंससनिवांसम् आर्धधातुकस्य इट् वलादेः वसु",
     padaccheda_dev        = "सनिंससनिवांसम्",
     why_dev               = "(सूत्रम् 7.2.69) सनिंससनिवांसम्।",
     anuvritti_from        = ('7.1.1',),

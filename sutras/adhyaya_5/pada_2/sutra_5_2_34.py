@@ -4,6 +4,7 @@
 Padaccheda: उप-अधिभ्याम् त्यकन् आसन्न-आरूढयोः
 
 उपाधिभ्यां त्यकन्नासन्नारूढयोः (5.2.34)
+Pāṭha: ashtadhyayi.com data.txt row i=52034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upADiByAM tyakannAsannArUQayoH",
     text_dev              = "उपाधिभ्यां त्यकन्नासन्नारूढयोः",
+    samagra_slp1          = "upa-aDiByAmAsanna-ArUQayoH saMjYAyAm tyakan",
+    samagra_dev           = "उप-अधिभ्यामासन्न-आरूढयोः संज्ञायाम्  त्यकन्",
     padaccheda_dev        = "उप-अधिभ्याम् त्यकन् आसन्न-आरूढयोः",
     why_dev               = "(सूत्रम् 5.2.34) उपाधिभ्यां त्यकन्नासन्नारूढयोः।",
     anuvritti_from        = ('4.1.82',),

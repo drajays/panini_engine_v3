@@ -4,6 +4,7 @@
 Padaccheda: कुल्माषात् अञ्
 
 कुल्माषादञ् (5.2.83)
+Pāṭha: ashtadhyayi.com data.txt row i=52083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kulmAzAdaY",
     text_dev              = "कुल्माषादञ्",
+    samagra_slp1          = "tat annamasmin iti saMjYAyAm kulmAzAt prAye aY",
+    samagra_dev           = "'तत् अन्नमस्मिन्' (इति) संज्ञायाम् कुल्माषात्  प्राये अञ्",
     padaccheda_dev        = "कुल्माषात् अञ्",
     why_dev               = "(सूत्रम् 5.2.83) कुल्माषादञ्।",
     anuvritti_from        = ('4.1.82',),

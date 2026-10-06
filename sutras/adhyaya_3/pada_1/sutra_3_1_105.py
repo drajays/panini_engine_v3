@@ -4,6 +4,7 @@
 Padaccheda: अजर्यम् संगतम्
 
 Krt suffix rule from dhatu: अजर्यं संगतम् (105)
+Pāṭha: ashtadhyayi.com data.txt row i=31105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ajaryaM saMgatam",
     text_dev              = "अजर्यं संगतम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH ajaryam saMgatam kft yat anupasarge",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः अजर्यम् संगतम् कृत् यत् अनुपसर्गे",
     padaccheda_dev        = "अजर्यम् संगतम्",
     why_dev               = "धातोः [अजर्यं संगतम्]-प्रत्ययः विहितः (३.१.105)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

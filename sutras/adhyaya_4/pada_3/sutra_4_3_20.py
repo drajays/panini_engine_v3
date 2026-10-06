@@ -4,6 +4,7 @@
 Padaccheda: वसन्तात् च
 
 वसन्ताच्च (4.3.20)
+Pāṭha: ashtadhyayi.com data.txt row i=43020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vasantAcca",
     text_dev              = "वसन्ताच्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA vasantAt ca kAlAt Candasi WaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा वसन्तात् च कालात् छन्दसि ठञ्",
     padaccheda_dev        = "वसन्तात् च",
     why_dev               = "(सूत्रम् 4.3.20) वसन्ताच्च।",
     anuvritti_from        = ('4.1.1',),

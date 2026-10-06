@@ -4,6 +4,7 @@
 Padaccheda: हिनु (लुप्तषष्ठ्यन्तनिर्देशः) मीना (लुप्तषष्ठ्यन्तनिर्देशः)
 
 हिनुमीना (8.4.15)
+Pāṭha: ashtadhyayi.com data.txt row i=84015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hinumInA",
     text_dev              = "हिनुमीना",
+    samagra_slp1          = "razAByAM upasargAt hinu mInA naH RaH",
+    samagra_dev           = "रषाभ्यां उपसर्गात् हिनु मीना नः णः",
     padaccheda_dev        = "हिनु (लुप्तषष्ठ्यन्तनिर्देशः) मीना (लुप्तषष्ठ्यन्तनिर्देशः)",
     why_dev               = "(सूत्रम् 8.4.15) हिनुमीना।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: साल्व-अवयव-प्रत्यग्रथ-कलकूट-अश्मकात् इञ्
 
 साल्वावयवप्रत्यग्रथकलकूटाश्मकादिञ् (4.1.173)
+Pāṭha: ashtadhyayi.com data.txt row i=41173 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sAlvAvayavapratyagraTakalakUwASmakAdiY",
     text_dev              = "साल्वावयवप्रत्यग्रथकलकूटाश्मकादिञ्",
+    samagra_slp1          = "tasya apatyam iti kzatriyAt janapadaSabdAt sAlvAvayava-pratyagraTa-kalakUwa-ASmakAt iY",
+    samagra_dev           = "तस्य अपत्यम् (इति) क्षत्रियात् जनपदशब्दात् साल्वावयव-प्रत्यग्रथ-कलकूट-आश्मकात् इञ्",
     padaccheda_dev        = "साल्व-अवयव-प्रत्यग्रथ-कलकूट-अश्मकात् इञ्",
     why_dev               = "(सूत्रम् 4.1.173) साल्वावयवप्रत्यग्रथकलकूटाश्मकादिञ्।",
     anuvritti_from        = ('4.1.1',),

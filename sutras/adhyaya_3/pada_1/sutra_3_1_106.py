@@ -4,6 +4,7 @@
 Padaccheda: वदः सुपि क्यप् च
 
 Krt suffix rule from dhatu: वदः सुपि क्यप् च (106)
+Pāṭha: ashtadhyayi.com data.txt row i=31106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vadaH supi kyap ca",
     text_dev              = "वदः सुपि क्यप् च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca kftyAH DAtoH vadaH supi kyap ca kft yat anupasarge",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च कृत्याः धातोः वदः सुपि क्यप् च कृत् यत् अनुपसर्गे",
     padaccheda_dev        = "वदः सुपि क्यप् च",
     why_dev               = "धातोः [वदः सुपि क्यप् च]-प्रत्ययः विहितः (३.१.106)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),

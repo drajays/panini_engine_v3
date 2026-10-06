@@ -4,6 +4,7 @@
 Padaccheda: उपधायाः च
 
 उपधायाश्च (7.1.101)
+Pāṭha: ashtadhyayi.com data.txt row i=71101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -40,6 +41,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "upaDAyASca",
     text_dev              = "उपधायाश्च",
+    samagra_slp1          = "DAtoH upaDAyAH FtaH it",
+    samagra_dev           = "धातोः उपधायाः ॠतः इत्",
     padaccheda_dev        = "उपधायाः च",
     why_dev               = "धातोः उपधाभूतस्य ॠकारस्य इकारः (रपरः) — कॄत् → कीर्तयति।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: बन्धे च विभाषा
 
 बन्धे च विभाषा (6.3.13)
+Pāṭha: ashtadhyayi.com data.txt row i=63013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "banDe ca viBAzA",
     text_dev              = "बन्धे च विभाषा",
+    samagra_slp1          = "alug uttarapade banDe ca viBAzA haladantAt saptamyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे बन्धे च विभाषा हलदन्तात् सप्तम्याः",
     padaccheda_dev        = "बन्धे च विभाषा",
     why_dev               = "(सूत्रम् 6.3.13) बन्धे च विभाषा।",
     anuvritti_from        = ('6.1.1',),

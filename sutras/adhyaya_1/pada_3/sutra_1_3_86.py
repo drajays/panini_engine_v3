@@ -14,6 +14,7 @@ For example: bodhayate — he causes to know; yodhayate — he causes to fight.
 stamp "Atmanepada_1_3_86" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _ROOTS carries the tag "NI_causative_context".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13086 (Art. 14).
 """
 from __future__ import annotations
 
@@ -70,6 +71,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='buDayuDanaSajaneNprudrusruByo ReH',
     text_dev='बुधयुधनशजनेङ्प्रुद्रुस्रुभ्यो णेः',
+    samagra_slp1="buDa-yuDa-naSa-jana-iN-pru-dru-sruByaH ReH kartari parasmEpadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="बुध-युध-नश-जन-इङ्-प्रु-द्रु-स्रुभ्यः णेः कर्तरि परस्मैपदम्",
     padaccheda_dev="बुध-युध-नश-जन-इङ्-प्रु-द्रु-स्रुभ्यः (पञ्चमी-बहुवचन) / णेः (षष्ठी-एकवचन)",
     why_dev=(
         "बुध-युध-नश-जन-इङ्-प्रु-द्रु-स्रु-धातूनां णि-प्रत्यये परे आत्मनेपदम् — "

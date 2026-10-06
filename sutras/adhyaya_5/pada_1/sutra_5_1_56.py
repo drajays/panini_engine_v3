@@ -4,6 +4,7 @@
 Padaccheda: सः अस्य अंश-वस्न-भृतयः
 
 सोऽस्यांशवस्नभृतयः (5.1.56)
+Pāṭha: ashtadhyayi.com data.txt row i=51056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sosyAMSavasnaBftayaH',
     text_dev              = 'सोऽस्यांशवस्नभृतयः',
+    samagra_slp1          = "saH asya aMSa-vasna-BftayaH iti samarTAnAm praTamAt paraH WaY pratyayaH",
+    samagra_dev           = "'सः अस्य अंश-वस्न-भृतयः' इति समर्थानाम् प्रथमात् परः ठञ् प्रत्ययः",
     padaccheda_dev        = "सः अस्य अंश-वस्न-भृतयः",
     why_dev               = "(सूत्रम् 5.1.56) सोऽस्यांशवस्नभृतयः।",
     anuvritti_from        = ('5.1.19',),

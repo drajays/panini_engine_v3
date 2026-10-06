@@ -4,6 +4,7 @@
 Padaccheda: सेना-अन्त-लक्षण-कारिभ्यः च
 
 सेनान्तलक्षणकारिभ्यश्च (4.1.152)
+Pāṭha: ashtadhyayi.com data.txt row i=41152 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "senAntalakzaRakAriByaSca",
     text_dev              = "सेनान्तलक्षणकारिभ्यश्च",
+    samagra_slp1          = "tasya apatyam iti senAnta-lakzaRa-kAriByaH RyaH",
+    samagra_dev           = "'तस्य अपत्यम्' (इति)  सेनान्त-लक्षण-कारिभ्यः ण्यः",
     padaccheda_dev        = "सेना-अन्त-लक्षण-कारिभ्यः च",
     why_dev               = "(सूत्रम् 4.1.152) सेनान्तलक्षणकारिभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

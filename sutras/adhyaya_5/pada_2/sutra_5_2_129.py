@@ -4,6 +4,7 @@
 Padaccheda: वात-अतिसाराभ्याम् कुक् च
 
 वातातिसाराभ्यां कुक् च (5.2.129)
+Pāṭha: ashtadhyayi.com data.txt row i=52129 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vAtAtisArAByAM kuk ca",
     text_dev              = "वातातिसाराभ्यां कुक् च",
+    samagra_slp1          = "asya asmin astIti iti vAta-atisArAByAm ini kuk ca",
+    samagra_dev           = "'अस्य, अस्मिन् अस्तीति' (इति) वात-अतिसाराभ्याम् इनि, कुक् च",
     padaccheda_dev        = "वात-अतिसाराभ्याम् कुक् च",
     why_dev               = "(सूत्रम् 5.2.129) वातातिसाराभ्यां कुक् च।",
     anuvritti_from        = ('4.1.82',),

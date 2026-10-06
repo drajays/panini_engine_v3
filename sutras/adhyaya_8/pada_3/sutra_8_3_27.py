@@ -4,6 +4,7 @@
 Padaccheda: न-परे नः
 
 नपरे नः (8.3.27)
+Pāṭha: ashtadhyayi.com data.txt row i=83027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "napare naH",
     text_dev              = "नपरे नः",
+    samagra_slp1          = "padasya masya napare he naH",
+    samagra_dev           = "पदस्य मस्य नपरे हे नः",
     padaccheda_dev        = "न-परे नः",
     why_dev               = "(सूत्रम् 8.3.27) नपरे नः।",
     anuvritti_from        = ('8.1.1',),

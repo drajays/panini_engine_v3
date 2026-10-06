@@ -4,6 +4,7 @@
 Padaccheda: वृणोतेः आच्छादने
 
 krt-suffix rule: वृणोतेराच्छादने
+Pāṭha: ashtadhyayi.com data.txt row i=33054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vfRoterAcCAdane",
     text_dev              = "वृणोतेराच्छादने",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm vfRoteH AcCAdane kft GaY viBAzA pre",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् वृणोतेः आच्छादने कृत् घञ् विभाषा प्रे",
     padaccheda_dev        = "वृणोतेः आच्छादने",
     why_dev               = "धातोः प्रत्ययः (३.3.54)।",
     anuvritti_from        = ('3.1.1',),

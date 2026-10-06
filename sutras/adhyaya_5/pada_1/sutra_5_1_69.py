@@ -4,6 +4,7 @@
 Padaccheda: कडङ्गर-दक्षिणात् छ (लुप्तप्रथमान्तनिर्देशः) च
 
 कडङ्गरदक्षिणाच्छ च (5.1.69)
+Pāṭha: ashtadhyayi.com data.txt row i=51069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'kaqaNkaradakziRAcCa ca',
     text_dev              = 'कडङ्करदक्षिणाच्छ च',
+    samagra_slp1          = "tad arhati iti kaqaNkara-dakziRAt CaH yat ca",
+    samagra_dev           = "'तद् अर्हति' (इति)  कडङ्कर-दक्षिणात् छः यत् च",
     padaccheda_dev        = "कडङ्गर-दक्षिणात् छ (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 5.1.69) कडङ्गरदक्षिणाच्छ च।",
     anuvritti_from        = ('5.1.18',),

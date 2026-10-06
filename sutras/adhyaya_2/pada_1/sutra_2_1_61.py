@@ -4,6 +4,7 @@
 Padaccheda: सत्-महत्-परम-उत्तम-उत्कृष्टाः पूज्यमानैः
 
 sat, mahat, parama, uttama, utkrsta with pujyamana form karmadharaya.
+Pāṭha: ashtadhyayi.com data.txt row i=21061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sanmahatparamottamotkfzwAH pUjyamAnEH",
     text_dev              = "सन्महत्परमोत्तमोत्कृष्टाः पूज्यमानैः",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH sat-mahat-parama-uttama-utkfzwAH pUjyamAnEH samAnADikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः सत्-महत्-परम-उत्तम-उत्कृष्टाः पूज्यमानैः समानाधिकरणेन",
     padaccheda_dev        = "सत्-महत्-परम-उत्तम-उत्कृष्टाः पूज्यमानैः",
     why_dev               = "सत्-महत्-परम-उत्तम-उत्कृष्टाः पूज्यमानैः सह कर्मधारयः (२.१.६१)।",
     anuvritti_from        = ('2.1.3',),

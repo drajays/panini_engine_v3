@@ -8,6 +8,7 @@ are, hā, hi) are nipātas when used in a non-substantival sense (asattve).
 v3: registers the ca-ādi set in samjna_registry["nipata_ca_adi"] and sets
     the gate "1_4_57_ca_adi_nipata" so that the same set is not registered
     twice.
+Pāṭha: ashtadhyayi.com data.txt row i=14057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -36,6 +37,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='cAdayosattve',
     text_dev='चादयोऽसत्त्वे',
+    samagra_slp1="ca-AdayaH asatve nipAtAH",
+    samagra_dev="च-आदयः असत्वे निपाताः",
     padaccheda_dev="च-आदयः / असत्त्वे",
     why_dev="असत्त्वे (अद्रव्यवृत्तौ) चकारादयो निपात-संज्ञाः प्राप्नुवन्ति।",
     anuvritti_from=("1.4.56",),

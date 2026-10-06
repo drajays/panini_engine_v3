@@ -4,6 +4,7 @@
 Padaccheda: न य्-वाभ्याम् पद-अन्ताभ्याम् पूर्वौ तु ताभ्याम् ऐच्
 
 न य्वाभ्यां पदान्ताभ्याम् पूर्वौ तु ताभ्यामैच् (7.3.3)
+Pāṭha: ashtadhyayi.com data.txt row i=73003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na yvAByAM padAntAByAm pUrvO tu tAByAmEc",
     text_dev              = "न य्वाभ्यां पदान्ताभ्याम् पूर्वौ तु ताभ्यामैच्",
+    samagra_slp1          = "aNgasya na yvAByAm padAntAByAm pUrvO tu tAByAm Ec vfdDiH acaH YRiti tadDitezu AdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न य्वाभ्याम् पदान्ताभ्याम् पूर्वौ तु ताभ्याम् ऐच् वृद्धिः अचः ञ्णिति तद्धितेषु आदेः",
     padaccheda_dev        = "न य्-वाभ्याम् पद-अन्ताभ्याम् पूर्वौ तु ताभ्याम् ऐच्",
     why_dev               = "(सूत्रम् 7.3.3) न य्वाभ्यां पदान्ताभ्याम् पूर्वौ तु ताभ्यामैच्।",
     anuvritti_from        = ('7.1.1',),

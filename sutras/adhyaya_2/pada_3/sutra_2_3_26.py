@@ -4,6 +4,7 @@
 Padaccheda: षष्ठी हेतुप्रयोगे
 
 Sasthi marks hetu when hetu-word is used.
+Pāṭha: ashtadhyayi.com data.txt row i=23026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zazWI hetuprayoge",
     text_dev              = "षष्ठी हेतुप्रयोगे",
+    samagra_slp1          = "anaBihite zazWI hetu-prayoge hetO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते षष्ठी हेतु-प्रयोगे हेतौ",
     padaccheda_dev        = "षष्ठी हेतुप्रयोगे",
     why_dev               = "षष्ठी हेतुप्रयोगे (२.३.२६)।",
     anuvritti_from        = ('2.3.50',),

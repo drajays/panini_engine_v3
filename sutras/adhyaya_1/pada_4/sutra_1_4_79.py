@@ -8,6 +8,7 @@ E.g., "upaniṣad-kṛ" = to make something into an upaniṣad (by way of
 comparison); "jīvikā-kṛ" = to make one's livelihood of something.
 
 v3: registers samjna_registry["gati_jivika_upanisad"] = frozenset({"jIvikA","upanizad"}).
+Pāṭha: ashtadhyayi.com data.txt row i=14079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1="jIvikopanizadAvOpamye",
     text_dev="जीविकोपनिषदावौपम्ये",
+    samagra_slp1="AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH jIvikA-upanizadO Opamye kriyAyoge gatiH kfYi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः जीविका-उपनिषदौ औपम्ये क्रियायोगे गतिः कृञि",
     padaccheda_dev="जीविका-उपनिषदौ / औपम्ये",
     why_dev="औपम्ये 'जीविका' 'उपनिषद्' गति-संज्ञके — गति-सेटे योज्येते।",
     anuvritti_from=("1.4.60",),

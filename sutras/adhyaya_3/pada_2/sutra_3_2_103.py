@@ -4,6 +4,7 @@
 Padaccheda: सु-यजोः ङ्वनिप्
 
 krt-suffix rule: सुयजोर्ङ्वनिप् (103)
+Pāṭha: ashtadhyayi.com data.txt row i=32103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "suyajorNvanip",
     text_dev              = "सुयजोर्ङ्वनिप्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte suyajoH Nvanip kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते सुयजोः ङ्वनिप् कृत्",
     padaccheda_dev        = "सु-यजोः ङ्वनिप्",
     why_dev               = "धातोः कृत्-प्रत्ययः [सुयजोर्ङ्वनिप्] विहितः (३.२.103)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

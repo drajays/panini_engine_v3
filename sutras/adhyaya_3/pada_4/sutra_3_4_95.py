@@ -4,6 +4,7 @@
 Padaccheda: आतः ऐ (लुप्तप्रथमान्तनिर्देशः)
 
 krt-suffix rule: आत ऐ
+Pāṭha: ashtadhyayi.com data.txt row i=34095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Ata E",
     text_dev              = "आत ऐ",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH lasya AtaH E lewaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः लस्य आतः ऐ लेटः",
     padaccheda_dev        = "आतः ऐ (लुप्तप्रथमान्तनिर्देशः)",
     why_dev               = "धातोः प्रत्ययः (३.4.95)।",
     anuvritti_from        = ('3.1.1',),

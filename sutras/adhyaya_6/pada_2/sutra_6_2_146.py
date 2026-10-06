@@ -4,6 +4,7 @@
 Padaccheda: संज्ञायाम् अनाचित-आदीनाम्
 
 संज्ञायामनाचितादीनाम् (6.2.146)
+Pāṭha: ashtadhyayi.com data.txt row i=62146 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYAyAmanAcitAdInAm",
     text_dev              = "संज्ञायामनाचितादीनाम्",
+    samagra_slp1          = "uttarapadAdiH antaH saMjYAyAm anAcitAdInAm ktaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः संज्ञायाम् अनाचितादीनाम् क्तः",
     padaccheda_dev        = "संज्ञायाम् अनाचित-आदीनाम्",
     why_dev               = "(सूत्रम् 6.2.146) संज्ञायामनाचितादीनाम्।",
     anuvritti_from        = ('6.1.1',),

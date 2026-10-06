@@ -10,6 +10,7 @@ the entity *toward which* the anger is directed receives the saṃjñā
 
 *Engine:* tags bearing ``"kruDa_kopaprApta"`` get ``"sampradAna"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'kruDadruherzyAsUyArTAnAM yaM prati kopaH',
     text_dev             = 'क्रुधद्रुहेर्ष्याऽसूयार्थानां यं प्रति कोपः',
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake kruDa-druha-IrzyA-asUyA-arTAnAm yam prati kopaH sampradAnam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके क्रुध-द्रुह-ईर्ष्या-असूया-अर्थानाम् यम् प्रति कोपः सम्प्रदानम्",
     padaccheda_dev       = "क्रुध-द्रुह-ईर्ष्या-असूया-अर्थानाम् / यम् / प्रति / कोपः",
     why_dev              = (
         "क्रुध्-द्रुह्-ईर्ष्या-असूया-अर्थक-धातूनां यस्मिन् कोपः स सम्प्रदान-संज्ञकः। "

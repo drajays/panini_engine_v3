@@ -4,6 +4,7 @@
 Padaccheda: सु-उपमानात् क्तः
 
 सूपमानात् क्तः (6.2.145)
+Pāṭha: ashtadhyayi.com data.txt row i=62145 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sUpamAnAt ktaH",
     text_dev              = "सूपमानात् क्तः",
+    samagra_slp1          = "uttarapadAdiH antaH sUpamAnAt ktaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः सूपमानात् क्तः",
     padaccheda_dev        = "सु-उपमानात् क्तः",
     why_dev               = "(सूत्रम् 6.2.145) सूपमानात् क्तः।",
     anuvritti_from        = ('6.1.1',),

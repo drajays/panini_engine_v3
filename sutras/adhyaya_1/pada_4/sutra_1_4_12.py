@@ -18,6 +18,7 @@ Module-level frozenset per CONSTITUTION frozenset policy:
   E — ai
   o — o
   O — au
+Pāṭha: ashtadhyayi.com data.txt row i=14012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.SAMJNA,
     text_slp1              = 'dIrGaM ca',
     text_dev               = 'दीर्घं च',
+    samagra_slp1           = "dIrGam guru ca",
+    samagra_dev            = "दीर्घम् गुरु च",
     padaccheda_dev         = "दीर्घम् / च",
     why_dev                = "दीर्घ-स्वरोऽपि गुरु-संज्ञकः (आ-ई-ऊ-ॠ-ॡ-ए-ऐ-ओ-औ)।",
     anuvritti_from         = ("1.4.1", "1.4.10", "1.4.11"),

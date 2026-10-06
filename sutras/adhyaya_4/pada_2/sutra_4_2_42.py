@@ -4,6 +4,7 @@
 Padaccheda: ब्राह्मण-माणव-वाडवात् यन्
 
 ब्राह्मणमाणववाडवाद्यन् (4.2.42)
+Pāṭha: ashtadhyayi.com data.txt row i=42042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "brAhmaRamARavavAqavAdyan",
     text_dev              = "ब्राह्मणमाणववाडवाद्यन्",
+    samagra_slp1          = "tasya samUhaH iti brAhmaRa-mARava-vAqavAt yan",
+    samagra_dev           = "तस्य समूहः (इति) ब्राह्मण-माणव-वाडवात् यन्",
     padaccheda_dev        = "ब्राह्मण-माणव-वाडवात् यन्",
     why_dev               = "(सूत्रम् 4.2.42) ब्राह्मणमाणववाडवाद्यन्।",
     anuvritti_from        = ('4.1.1',),

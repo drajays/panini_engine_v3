@@ -17,6 +17,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = "luk tadDitaluki",
     text_dev                = "लुक् तद्धितलुकि",
+    samagra_slp1            = "luk tadDita-luki striyoH upasarjanasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "लुक् तद्धित-लुकि स्त्रियोः उपसर्जनस्य",
     padaccheda_dev          = "लुक् / तद्धितलुकि",
     why_dev                 = (
         "तद्धितप्रत्ययस्य लुकि जाते पूर्वस्य लुक्-श्रृङ्खलापि प्रवर्तते "

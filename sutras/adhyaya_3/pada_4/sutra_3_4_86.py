@@ -70,6 +70,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="eruH",
     text_dev="एरुः",
+    samagra_slp1="lowaH lasya eH uH",
+    samagra_dev="लोटः लस्य एः उः",
     padaccheda_dev="एः / उः",
     why_dev=(
         "लोटि तिङ्-अन्त्य-इकारस्य उकार-आदेशः: "

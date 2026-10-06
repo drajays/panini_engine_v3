@@ -4,6 +4,7 @@
 Padaccheda: अनः नुट्
 
 अनो नुट् (8.2.16)
+Pāṭha: ashtadhyayi.com data.txt row i=82016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ano nuw",
     text_dev              = "अनो नुट्",
+    samagra_slp1          = "padasya pUrvatrAsidDam anaH nuw matoH saMjYAyAm Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् अनः नुट् मतोः संज्ञायाम् छन्दसि",
     padaccheda_dev        = "अनः नुट्",
     why_dev               = "(सूत्रम् 8.2.16) अनो नुट्।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: सा अस्मिन् पौर्णमासि इति (संज्ञायाम्)
 
 साऽस्मिन् पौर्णमासीति (संज्ञायाम्) (4.2.21)
+Pāṭha: ashtadhyayi.com data.txt row i=42021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sAsmin pOrRamAsIti saMjYAyAm',
     text_dev              = 'सास्मिन् पौर्णमासीति संज्ञायाम्',
+    samagra_slp1          = "sA asmin pOrRamAsI iti saMjYAyAm iti samarTAnAm praTamAt paraH aR pratyayaH",
+    samagra_dev           = "'सा अस्मिन् पौर्णमासी (इति)  संज्ञायाम्' इति समर्थानाम् प्रथमात् परः अण् प्रत्ययः",
     padaccheda_dev        = "सा अस्मिन् पौर्णमासि इति (संज्ञायाम्)",
     why_dev               = "(सूत्रम् 4.2.21) साऽस्मिन् पौर्णमासीति (संज्ञायाम्)।",
     anuvritti_from        = ('4.1.1',),

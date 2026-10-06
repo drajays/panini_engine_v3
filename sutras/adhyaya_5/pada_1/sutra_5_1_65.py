@@ -4,6 +4,7 @@
 Padaccheda: शीर्षच्छेदात् यत् च
 
 शीर्षच्छेदाद्यच्च (5.1.65)
+Pāṭha: ashtadhyayi.com data.txt row i=51065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SIrzacCedAdyacca",
     text_dev              = "शीर्षच्छेदाद्यच्च",
+    samagra_slp1          = "tat nityamarhati iti SIrzacCedAt yat ca",
+    samagra_dev           = "'तत् नित्यमर्हति' (इति) शीर्षच्छेदात् यत्  च",
     padaccheda_dev        = "शीर्षच्छेदात् यत् च",
     why_dev               = "(सूत्रम् 5.1.65) शीर्षच्छेदाद्यच्च।",
     anuvritti_from        = ('5.1.18',),

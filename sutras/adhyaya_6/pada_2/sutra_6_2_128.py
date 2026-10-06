@@ -4,6 +4,7 @@
 Padaccheda: पलल-सूप-शाकम् मिश्रे
 
 पललसूपशाकं मिश्रे (6.2.128)
+Pāṭha: ashtadhyayi.com data.txt row i=62128 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "palalasUpaSAkaM miSre",
     text_dev              = "पललसूपशाकं मिश्रे",
+    samagra_slp1          = "udAttaH uttarapadAdiH palala-sUpa-SAkam miSre tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः पलल-सूप-शाकम् मिश्रे तत्पुरुषे",
     padaccheda_dev        = "पलल-सूप-शाकम् मिश्रे",
     why_dev               = "(सूत्रम् 6.2.128) पललसूपशाकं मिश्रे।",
     anuvritti_from        = ('6.1.1',),

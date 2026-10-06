@@ -2,7 +2,7 @@
 2.4.52  अस्तेर्भूः  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=20452
+- ashtadhyayi.com data.txt row i=24052
 - Kāśikā: अस् → भू (आर्धधातुक-प्रत्यय-विवक्षायाम्)
 - Cross-validation: pipelines/sthanivat_anal_ashrita_lesson.py — ``derive_aster_bhU``
 
@@ -72,6 +72,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="asterBUH",
     text_dev="अस्तेर्भूः",
+    samagra_slp1="ArDaDAtuke asteH BUH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आर्धधातुके अस्तेः भूः",
     padaccheda_dev="अस्तेः भूः",
     why_dev="अस्-धातोः भू-आदेशः; स्थानिवद्भावेन धातुत्वम् अतिदिश्यते (१.१.५६)।",
     anuvritti_from=("2.4.40",),

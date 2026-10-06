@@ -4,6 +4,7 @@
 Padaccheda: पद-उत्तरपदम् गृह्णाति (क्रियापदम्)
 
 पदोत्तरपदं गृह्णाति (4.4.39)
+Pāṭha: ashtadhyayi.com data.txt row i=44039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "padottarapadaM gfhRAti",
     text_dev              = "पदोत्तरपदं गृह्णाति",
+    samagra_slp1          = "tat padottarapadaM gfhRAti iti samarTAnAM praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् पदोत्तरपदं गृह्णाति' (इति) समर्थानां प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "पद-उत्तरपदम् गृह्णाति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.39) पदोत्तरपदं गृह्णाति।",
     anuvritti_from        = ('4.1.1',),

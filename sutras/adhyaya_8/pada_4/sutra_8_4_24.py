@@ -4,6 +4,7 @@
 Padaccheda: अन्तः अदेशे
 
 अन्तरदेशे (8.4.24)
+Pāṭha: ashtadhyayi.com data.txt row i=84024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "antaradeSe",
     text_dev              = "अन्तरदेशे",
+    samagra_slp1          = "antaH atpUrvasya hanteH adeSe naH RaH",
+    samagra_dev           = "अन्तः अत्पूर्वस्य हन्तेः अदेशे नः णः",
     padaccheda_dev        = "अन्तः अदेशे",
     why_dev               = "(सूत्रम् 8.4.24) अन्तरदेशे।",
     anuvritti_from        = ('8.1.1',),

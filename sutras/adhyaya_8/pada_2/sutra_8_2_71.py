@@ -4,6 +4,7 @@
 Padaccheda: भुवः (अविभक्तिकम्) च महाव्याहृतेः
 
 भुवश्च महाव्याहृतेः (8.2.71)
+Pāṭha: ashtadhyayi.com data.txt row i=82071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BuvaSca mahAvyAhfteH",
     text_dev              = "भुवश्च महाव्याहृतेः",
+    samagra_slp1          = "padasya pUrvatrAsidDam BuvaH ca mahAvyAhfteH raH Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् भुवः च महाव्याहृतेः रः छन्दसि",
     padaccheda_dev        = "भुवः (अविभक्तिकम्) च महाव्याहृतेः",
     why_dev               = "(सूत्रम् 8.2.71) भुवश्च महाव्याहृतेः।",
     anuvritti_from        = ('8.1.1',),

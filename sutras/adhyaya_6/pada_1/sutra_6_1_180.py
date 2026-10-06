@@ -4,6 +4,7 @@
 Padaccheda: झलि उप-उत्तमम्
 
 झल्युपोत्तमम् (6.1.180)
+Pāṭha: ashtadhyayi.com data.txt row i=61180 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Jalyupottamam",
     text_dev              = "झल्युपोत्तमम्",
+    samagra_slp1          = "Jali upottamam udAttaH antaH viBaktiH nAm anyatarasyAm zaw-tri-caturByaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "झलि उपोत्तमम् उदात्तः अन्तः विभक्तिः नाम् अन्यतरस्याम् षट्-त्रि-चतुर्भ्यः",
     padaccheda_dev        = "झलि उप-उत्तमम्",
     why_dev               = "(सूत्रम् 6.1.180) झल्युपोत्तमम्।",
     anuvritti_from        = ('6.1.1',),

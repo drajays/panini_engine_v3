@@ -4,6 +4,7 @@
 Padaccheda: अभिजित्-विदभृत्-शालावत्-शिखावत्-शमीवत्-ऊर्णावत्-श्रुमत्-अणः यञ्
 
 अभिजिद्विदभृच्छालावच्छिखावच्छमीवदूर्णावच्छ्रुमदणो यञ् (5.3.118)
+Pāṭha: ashtadhyayi.com data.txt row i=53118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aBijidvidaBfcCAlAvacCiKAvacCamIvadUrRAvacCrumadaRo yaY",
     text_dev              = "अभिजिद्विदभृच्छालावच्छिखावच्छमीवदूर्णावच्छ्रुमदणो यञ्",
+    samagra_slp1          = "aBijit-vidaBft-SAlAvat-SiKAvat-SamIvat-UrRAvat-Srumat-aRaH yaY",
+    samagra_dev           = "अभिजित्-विदभृत्-शालावत्-शिखावत्-शमीवत्-ऊर्णावत्-श्रुमत्-अणः यञ्",
     padaccheda_dev        = "अभिजित्-विदभृत्-शालावत्-शिखावत्-शमीवत्-ऊर्णावत्-श्रुमत्-अणः यञ्",
     why_dev               = "(सूत्रम् 5.3.118) अभिजिद्विदभृच्छालावच्छिखावच्छमीवदूर्णावच्छ्रुमदणो यञ्।",
     anuvritti_from        = ('4.1.76',),

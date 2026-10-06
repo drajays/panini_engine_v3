@@ -4,6 +4,7 @@
 Padaccheda: स्मि-पूङ्‍-ऋ-अञ्जू-अशाम् सनि
 
 स्मिपूङ्रञ्ज्वशां सनि (7.2.74)
+Pāṭha: ashtadhyayi.com data.txt row i=72074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "smipUNraYjvaSAM sani",
     text_dev              = "स्मिपूङ्रञ्ज्वशां सनि",
+    samagra_slp1          = "aNgasya smipUNraYjvaSAm sani ArDaDAtukasya iw valAdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य स्मिपूङ्रञ्ज्वशाम् सनि आर्धधातुकस्य इट् वलादेः",
     padaccheda_dev        = "स्मि-पूङ्‍-ऋ-अञ्जू-अशाम् सनि",
     why_dev               = "(सूत्रम् 7.2.74) स्मिपूङ्रञ्ज्वशां सनि।",
     anuvritti_from        = ('7.1.1',),

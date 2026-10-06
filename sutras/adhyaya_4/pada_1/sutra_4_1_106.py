@@ -4,6 +4,7 @@
 Padaccheda: मधु-बभ्र्वोः ब्राह्मण-कौशिकयोः
 
 मधुबभ्र्वोर्ब्राह्मणकौशिकयोः (4.1.106)
+Pāṭha: ashtadhyayi.com data.txt row i=41106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "maDubaBrvorbrAhmaRakOSikayoH",
     text_dev              = "मधुबभ्र्वोर्ब्राह्मणकौशिकयोः",
+    samagra_slp1          = "tasya gotre apatyam iti maDu-baBrvoH brAhmaRa-kOSikayoH yaY",
+    samagra_dev           = "'तस्य गोत्रे अपत्यम्' (इति) मधु-बभ्र्वोः ब्राह्मण-कौशिकयोः यञ्",
     padaccheda_dev        = "मधु-बभ्र्वोः ब्राह्मण-कौशिकयोः",
     why_dev               = "(सूत्रम् 4.1.106) मधुबभ्र्वोर्ब्राह्मणकौशिकयोः।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: नीक् वञ्चु-स्रंसु-ध्वंसु-भ्रंसु-कस-पत-पद-स्कन्दाम्
 
 नीग्वञ्चुस्रंसुध्वंसुभ्रंसुकसपतपदस्कन्दाम् (7.4.84)
+Pāṭha: ashtadhyayi.com data.txt row i=74084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nIgvaYcusraMsuDvaMsuBraMsukasapatapadaskandAm",
     text_dev              = "नीग्वञ्चुस्रंसुध्वंसुभ्रंसुकसपतपदस्कन्दाम्",
+    samagra_slp1          = "aNgasya aByAsasya nIk vaYcusraMsuDvaMsuBraMsukasapatapadaskandAm yaNlukoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य नीक् वञ्चुस्रंसुध्वंसुभ्रंसुकसपतपदस्कन्दाम् यङ्लुकोः",
     padaccheda_dev        = "नीक् वञ्चु-स्रंसु-ध्वंसु-भ्रंसु-कस-पत-पद-स्कन्दाम्",
     why_dev               = "(सूत्रम् 7.4.84) नीग्वञ्चुस्रंसुध्वंसुभ्रंसुकसपतपदस्कन्दाम्।",
     anuvritti_from        = ('7.1.1',),

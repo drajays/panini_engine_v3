@@ -4,6 +4,7 @@
 Padaccheda: विभाषा साति (लुप्तप्रथमान्तनिर्देशः) कार्त्स्न्ये
 
 विभाषा साति कार्त्स्न्ये (5.4.52)
+Pāṭha: ashtadhyayi.com data.txt row i=54052 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA sAti kArtsnye",
     text_dev              = "विभाषा साति कार्त्स्न्ये",
+    samagra_slp1          = "aBUtatadBAve sampadyakartari kArtsnye viBAzA sAtiH",
+    samagra_dev           = "अभूततद्भावे सम्पद्यकर्तरि कार्त्स्न्ये विभाषा सातिः",
     padaccheda_dev        = "विभाषा साति (लुप्तप्रथमान्तनिर्देशः) कार्त्स्न्ये",
     why_dev               = "(सूत्रम् 5.4.52) विभाषा साति कार्त्स्न्ये।",
     anuvritti_from        = ('4.1.76',),

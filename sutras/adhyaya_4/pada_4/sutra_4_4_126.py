@@ -4,6 +4,7 @@
 Padaccheda: अश्विमान् अण्
 
 अश्विमानण् (4.4.126)
+Pāṭha: ashtadhyayi.com data.txt row i=44126 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aSvimAnaR",
     text_dev              = "अश्विमानण्",
+    samagra_slp1          = "upaDAnaH mantraH AsAm iti aSvimAn iti izwakAsu aR  matoH ca luk",
+    samagra_dev           = "'उपधानः मन्त्रः आसाम्' (इति) 'अश्विमान्' इति इष्टकासु अण् , मतोः च लुक्",
     padaccheda_dev        = "अश्विमान् अण्",
     why_dev               = "(सूत्रम् 4.4.126) अश्विमानण्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: बाष्प-ऊष्माभ्याम् उद्वमने
 
 Krt suffix rule from dhatu: बाष्पोष्माभ्यां उद्वमने (16)
+Pāṭha: ashtadhyayi.com data.txt row i=31016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'bAzpozmaByAmudvamane',
     text_dev              = 'बाष्पोष्मभ्यामुद्वमने',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca bAzpa-UzmaByAm udvamane vA kyaN karmaRaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च बाष्प-ऊष्मभ्याम् उद्वमने वा क्यङ् कर्मणः",
     padaccheda_dev        = "बाष्प-ऊष्माभ्याम् उद्वमने",
     why_dev               = "धातोः [बाष्पोष्माभ्यां उद्वमने]-प्रत्ययः विहितः (३.१.16)।",
     anuvritti_from        = ('3.1.1',),

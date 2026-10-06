@@ -4,6 +4,7 @@
 Padaccheda: अनः च
 
 अनश्च (5.4.108)
+Pāṭha: ashtadhyayi.com data.txt row i=54108 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anaSca",
     text_dev              = "अनश्च",
+    samagra_slp1          = "an-avyayIBAve wac",
+    samagra_dev           = "अन्-अव्ययीभावे टच्",
     padaccheda_dev        = "अनः च",
     why_dev               = "(सूत्रम् 5.4.108) अनश्च।",
     anuvritti_from        = ('5.4.68',),

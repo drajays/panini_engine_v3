@@ -4,6 +4,7 @@
 Padaccheda: ईषत् अन्यतरस्याम्
 
 ईषदन्यतरस्याम् (6.2.54)
+Pāṭha: ashtadhyayi.com data.txt row i=62054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "IzadanyatarasyAm",
     text_dev              = "ईषदन्यतरस्याम्",
+    samagra_slp1          = "Izat anyatarasyAm prakftyA pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "ईषत् अन्यतरस्याम् प्रकृत्या पूर्वपदम्",
     padaccheda_dev        = "ईषत् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 6.2.54) ईषदन्यतरस्याम्।",
     anuvritti_from        = ('6.1.1',),

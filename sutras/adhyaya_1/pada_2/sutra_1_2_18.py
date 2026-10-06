@@ -15,6 +15,7 @@ Engine:
   - Guards re-entry via meta["aniT_ktva_1_2_18"].
   - Removes "seT" tag and adds "aniT" to the dhātu.
   - r1_form_identity_exempt=True: no surface string changes in this step.
+Pāṭha: ashtadhyayi.com data.txt row i=12018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -64,6 +65,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'na ktvA sew',
     text_dev              = 'न क्त्वा सेट्',
+    samagra_slp1          = "na ktvA sew kit",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "न क्त्वा सेट् कित्",
     padaccheda_dev        = "न / क्त्वा / सेट्",
     why_dev               = ("क्त्वा-प्रत्ययस्य पूर्वं सेट्-धातुः अपि अनिट् भवति — "
                              "क्त्वान्तरूपे इडागमो न।"),

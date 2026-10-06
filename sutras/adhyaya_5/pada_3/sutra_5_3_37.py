@@ -4,6 +4,7 @@
 Padaccheda: आहि (लुप्तप्रथमान्तनिर्देशः) च दूरे
 
 आहि च दूरे (5.3.37)
+Pāṭha: ashtadhyayi.com data.txt row i=53037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Ahi ca dUre",
     text_dev              = "आहि च दूरे",
+    samagra_slp1          = "dakziRAt saptamI-praTamAByaH dik-deSa-kAlezu dUre AhiH Ac ca",
+    samagra_dev           = "दक्षिणात् सप्तमी-प्रथमाभ्यः दिक्-देश-कालेषु दूरे आहिः आच् च",
     padaccheda_dev        = "आहि (लुप्तप्रथमान्तनिर्देशः) च दूरे",
     why_dev               = "(सूत्रम् 5.3.37) आहि च दूरे।",
     anuvritti_from        = ('4.1.76',),

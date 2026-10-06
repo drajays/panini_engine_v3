@@ -4,6 +4,7 @@
 Padaccheda: ग्रीष्म-वसन्तात् अन्यतरस्याम्
 
 ग्रीष्मवसन्तादन्यतरस्याम् (4.3.46)
+Pāṭha: ashtadhyayi.com data.txt row i=43046 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "grIzmavasantAdanyatarasyAm",
     text_dev              = "ग्रीष्मवसन्तादन्यतरस्याम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA grIzma-vasantAt anyatarasyAm tatra kAlAt upte",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा ग्रीष्म-वसन्तात् अन्यतरस्याम् तत्र कालात् उप्ते",
     padaccheda_dev        = "ग्रीष्म-वसन्तात् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 4.3.46) ग्रीष्मवसन्तादन्यतरस्याम्।",
     anuvritti_from        = ('4.1.1',),

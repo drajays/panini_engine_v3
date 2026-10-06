@@ -4,6 +4,7 @@
 Padaccheda: अनौ कर्मणि
 
 krt-suffix rule: अनौ कर्मणि (100)
+Pāṭha: ashtadhyayi.com data.txt row i=32100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anO karmaRi",
     text_dev              = "अनौ कर्मणि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte anO karmaRi kft janeH qaH upasarge",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते अनौ कर्मणि कृत् जनेः डः उपसर्गे",
     padaccheda_dev        = "अनौ कर्मणि",
     why_dev               = "धातोः कृत्-प्रत्ययः [अनौ कर्मणि] विहितः (३.२.100)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

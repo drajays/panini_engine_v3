@@ -4,6 +4,7 @@
 Padaccheda: अहः-सर्व-एकदेश-संख्यात-पुण्यात् च रात्रेः
 
 अहस्सर्वैकदेशसंख्यातपुण्याच्च रात्रेः (5.4.87)
+Pāṭha: ashtadhyayi.com data.txt row i=54087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ahassarvEkadeSasaMKyAtapuRyAcca rAtreH",
     text_dev              = "अहस्सर्वैकदेशसंख्यातपुण्याच्च रात्रेः",
+    samagra_slp1          = "tatpuruzasya ahaH-sarva-ekadeSa-saNKyAta-puRyAt saNKyA-avyayAdeH ca rAtreH ac",
+    samagra_dev           = "तत्पुरुषस्य अहः-सर्व-एकदेश-सङ्ख्यात-पुण्यात् सङ्ख्या-अव्ययादेः च रात्रेः अच्",
     padaccheda_dev        = "अहः-सर्व-एकदेश-संख्यात-पुण्यात् च रात्रेः",
     why_dev               = "(सूत्रम् 5.4.87) अहस्सर्वैकदेशसंख्यातपुण्याच्च रात्रेः।",
     anuvritti_from        = ('5.4.68',),

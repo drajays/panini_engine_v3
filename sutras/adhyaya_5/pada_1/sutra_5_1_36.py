@@ -4,6 +4,7 @@
 Padaccheda: द्वि-त्रि-पूर्वात् अण् च
 
 द्वित्रिपूर्वादण् च (5.1.36)
+Pāṭha: ashtadhyayi.com data.txt row i=51036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvitripUrvAdaR ca",
     text_dev              = "द्वित्रिपूर्वादण् च",
+    samagra_slp1          = "A-arhAt SARAt dvitripUrvAt aR yat ca vA",
+    samagra_dev           = "आ-अर्हात् शाणात् द्वित्रिपूर्वात् अण् यत् च वा",
     padaccheda_dev        = "द्वि-त्रि-पूर्वात् अण् च",
     why_dev               = "(सूत्रम् 5.1.36) द्वित्रिपूर्वादण् च।",
     anuvritti_from        = ('5.1.19',),

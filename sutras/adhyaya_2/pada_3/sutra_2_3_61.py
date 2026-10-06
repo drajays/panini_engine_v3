@@ -4,6 +4,7 @@
 Padaccheda: प्रेष्य-ब्रुवोः हविषः देवता-सम्प्रदाने
 
 presya and bruv take caturthy for havish-devata.
+Pāṭha: ashtadhyayi.com data.txt row i=23061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prezyabruvorhavizo devatAsampradAne",
     text_dev              = "प्रेष्यब्रुवोर्हविषो देवतासम्प्रदाने",
+    samagra_slp1          = "anaBihite prezya-bruvoH havizaH devatA-sampradAne Seze zazWI karmaRi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते प्रेष्य-ब्रुवोः हविषः देवता-सम्प्रदाने शेषे षष्ठी कर्मणि",
     padaccheda_dev        = "प्रेष्य-ब्रुवोः हविषः देवता-सम्प्रदाने",
     why_dev               = "प्रेष्य-ब्रुवोः हविषः देवता-सम्प्रदाने (२.३.६१)।",
     anuvritti_from        = ('2.3.13',),

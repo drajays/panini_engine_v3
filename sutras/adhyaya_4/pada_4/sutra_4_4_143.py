@@ -4,6 +4,7 @@
 Padaccheda: शिव-शम्-अरिष्टस्य करे
 
 शिवशमरिष्टस्य करे (4.4.143)
+Pāṭha: ashtadhyayi.com data.txt row i=44143 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SivaSamarizwasya kare",
     text_dev              = "शिवशमरिष्टस्य करे",
+    samagra_slp1          = "kare iti Siva-Sam-arizwasya Candasi saMjYAyAm tAtil",
+    samagra_dev           = "करे (इति) शिव-शम्-अरिष्टस्य छन्दसि संज्ञायाम् तातिल्",
     padaccheda_dev        = "शिव-शम्-अरिष्टस्य करे",
     why_dev               = "(सूत्रम् 4.4.143) शिवशमरिष्टस्य करे।",
     anuvritti_from        = ('4.1.1',),

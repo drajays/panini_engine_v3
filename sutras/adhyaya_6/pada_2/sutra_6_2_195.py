@@ -4,6 +4,7 @@
 Padaccheda: सोः अवक्षेपणे
 
 सोरवक्षेपणे (6.2.195)
+Pāṭha: ashtadhyayi.com data.txt row i=62195 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "soravakzepaRe",
     text_dev              = "सोरवक्षेपणे",
+    samagra_slp1          = "uttarapadAdiH antaH soH avakzepaRe upasargAt tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः सोः अवक्षेपणे उपसर्गात् तत्पुरुषे",
     padaccheda_dev        = "सोः अवक्षेपणे",
     why_dev               = "(सूत्रम् 6.2.195) सोरवक्षेपणे।",
     anuvritti_from        = ('6.1.1',),

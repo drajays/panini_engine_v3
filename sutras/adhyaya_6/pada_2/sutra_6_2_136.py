@@ -4,6 +4,7 @@
 Padaccheda: कुण्डम् वनम्
 
 कुण्डं वनम् (6.2.136)
+Pāṭha: ashtadhyayi.com data.txt row i=62136 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kuRqaM vanam",
     text_dev              = "कुण्डं वनम्",
+    samagra_slp1          = "udAttaH uttarapadAdiH kuRqam vanam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः कुण्डम् वनम् तत्पुरुषे",
     padaccheda_dev        = "कुण्डम् वनम्",
     why_dev               = "(सूत्रम् 6.2.136) कुण्डं वनम्।",
     anuvritti_from        = ('6.1.1',),

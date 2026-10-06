@@ -123,6 +123,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'sarvanAmnaH syAqQrasvaSca',
     text_dev       = 'सर्वनाम्नः स्याड्ढ्रस्वश्च',
+    samagra_slp1   = "sarvanAmnaH ApaH Niti supi syAw aNgasya hrasvaH ca ",
+    samagra_dev    = "सर्वनाम्नः आपः ङिति सुपि स्याट् अङ्गस्य ह्रस्वः च ।",
     padaccheda_dev = (
         "सर्वनाम्नः (पञ्चमी-एकवचनम्), स्याट् (प्रथमा-एकवचनम्), "
         "ह्रस्वः (प्रथमा-एकवचनम्), च (अव्ययम्)"

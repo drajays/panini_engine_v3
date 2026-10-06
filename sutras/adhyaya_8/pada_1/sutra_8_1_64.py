@@ -4,6 +4,7 @@
 Padaccheda: वै-वाव (लुप्तप्रथमान्तनिर्देशः) इति च छन्दसि
 
 वैवावेति च च्छन्दसि (8.1.64)
+Pāṭha: ashtadhyayi.com data.txt row i=81064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vEvAveti ca cCandasi",
     text_dev              = "वैवावेति च च्छन्दसि",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO vEvAva iti ca Candasi tiN na praTamA kziyAyAm viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ वैवाव इति च छन्दसि तिङ् न प्रथमा क्षियायाम् विभाषा",
     padaccheda_dev        = "वै-वाव (लुप्तप्रथमान्तनिर्देशः) इति च छन्दसि",
     why_dev               = "(सूत्रम् 8.1.64) वैवावेति च च्छन्दसि।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: वा एतः अन्यत्र
 
 krt-suffix rule: वैतोऽन्यत्र
+Pāṭha: ashtadhyayi.com data.txt row i=34096 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vEtonyatra',
     text_dev              = 'वैतोऽन्यत्र',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH lasya vA etaH anyatra lewaH E",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः लस्य वा एतः अन्यत्र लेटः ऐ",
     padaccheda_dev        = "वा एतः अन्यत्र",
     why_dev               = "धातोः प्रत्ययः (३.4.96)।",
     anuvritti_from        = ('3.1.1',),

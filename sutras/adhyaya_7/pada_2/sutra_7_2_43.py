@@ -4,6 +4,7 @@
 Padaccheda: ऋतः च संयोग-आदेः
 
 ऋतश्च संयोगादेः (7.2.43)
+Pāṭha: ashtadhyayi.com data.txt row i=72043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ftaSca saMyogAdeH",
     text_dev              = "ऋतश्च संयोगादेः",
+    samagra_slp1          = "aNgasya ftaH ca saMyogAdeH valAdeH iw ArDaDAtukasya vA liNsicoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ऋतः च संयोगादेः वलादेः इट् आर्धधातुकस्य वा लिङ्सिचोः",
     padaccheda_dev        = "ऋतः च संयोग-आदेः",
     why_dev               = "(सूत्रम् 7.2.43) ऋतश्च संयोगादेः।",
     anuvritti_from        = ('7.1.1',),

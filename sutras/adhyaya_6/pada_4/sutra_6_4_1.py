@@ -6,6 +6,7 @@
 Pushes a scope entry covering 6.4.1 through 7.4.97.  Subsequent
 VIDHIs in this span (e.g. 6.4.148 yasyeti ca, 7.1.54 hrasvanadyāpo
 nuṭ, etc.) check the scope via engine.gates.adhikara_in_effect.
+Pāṭha: ashtadhyayi.com data.txt row i=64001 (Art. 14).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
@@ -30,6 +31,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.ADHIKARA,
     text_slp1      = "aNgasya",
     text_dev       = "अङ्गस्य",
+    samagra_slp1   = "aNgasya",
+    samagra_dev    = "अङ्गस्य",
     padaccheda_dev = "अङ्गस्य",
     why_dev        = "६.४.१ तः ७.४.९७ पर्यन्तानि सूत्राणि अङ्गस्य विधयः।",
     anuvritti_from = (),

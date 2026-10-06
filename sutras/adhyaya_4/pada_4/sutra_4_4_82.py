@@ -4,6 +4,7 @@
 Padaccheda: संज्ञायाम् जन्याः
 
 संज्ञायां जन्याः (4.4.82)
+Pāṭha: ashtadhyayi.com data.txt row i=44082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYAyAM janyAH",
     text_dev              = "संज्ञायां जन्याः",
+    samagra_slp1          = "tat vahati iti janyAH saMjYAyAm yat",
+    samagra_dev           = "'तत् वहति' इति जन्याः संज्ञायाम्  यत्",
     padaccheda_dev        = "संज्ञायाम् जन्याः",
     why_dev               = "(सूत्रम् 4.4.82) संज्ञायां जन्याः।",
     anuvritti_from        = ('4.1.1',),

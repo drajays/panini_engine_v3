@@ -4,6 +4,7 @@
 Padaccheda: बहु-अचः इञः प्राच्यभरतेषु
 
 Bahvac with inja in pracya and bharata territory.
+Pāṭha: ashtadhyayi.com data.txt row i=24066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahvacaH iYaH prAcyaBaratezu",
     text_dev              = "बह्वचः इञः प्राच्यभरतेषु",
+    samagra_slp1          = "bahu-acaH iYaH prAcya-Baratezu luk bahuzu tena eva astriyAm gotre",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "बहु-अचः इञः प्राच्य-भरतेषु लुक् बहुषु तेन एव अस्त्रियाम् गोत्रे",
     padaccheda_dev        = "बहु-अचः इञः प्राच्यभरतेषु",
     why_dev               = "बहु-अचः इञः प्राच्यभरतेषु (२.४.६६)।",
     anuvritti_from        = ('2.4.58',),

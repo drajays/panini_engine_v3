@@ -244,6 +244,10 @@ class SutraRecord:
 
     # Metadata (never read by the engine, only shown by tools/)
     anuvritti_from  : Tuple[str, ...]                 = field(default_factory=tuple)
+    # Art. 4 (AMENDMENT 20): text_* is the mūla pāṭha; samagra_* is the anuvṛtti-complete
+    # sentence (ashtadhyayi.com ``ss``). Metadata — the engine never reads it.
+    samagra_slp1    : str                             = ""
+    samagra_dev     : str                             = ""
 
     # The two callables — required for VIDHI/NIYAMA/VIBHASHA, and for
     # any type whose executor actually consults the state (SAMJNA, PARIBHASHA,

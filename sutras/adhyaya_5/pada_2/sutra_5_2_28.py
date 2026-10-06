@@ -4,6 +4,7 @@
 Padaccheda: वेः शालच्-शङ्कटचौ
 
 वेः शालच्छङ्कटचौ (5.2.28)
+Pāṭha: ashtadhyayi.com data.txt row i=52028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "veH SAlacCaNkawacO",
     text_dev              = "वेः शालच्छङ्कटचौ",
+    samagra_slp1          = "veH SAlac-SaNkawacO",
+    samagra_dev           = "वेः शालच्-शङ्कटचौ",
     padaccheda_dev        = "वेः शालच्-शङ्कटचौ",
     why_dev               = "(सूत्रम् 5.2.28) वेः शालच्छङ्कटचौ।",
     anuvritti_from        = ('4.1.82',),

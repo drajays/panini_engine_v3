@@ -4,6 +4,7 @@
 Padaccheda: आशङ्क-आबाध-नेदीयस्सु संभावने
 
 आशङ्काबाधनेदीयस्सु संभावने (6.2.21)
+Pāṭha: ashtadhyayi.com data.txt row i=62021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ASaNkAbADanedIyassu saMBAvane",
     text_dev              = "आशङ्काबाधनेदीयस्सु संभावने",
+    samagra_slp1          = "ASaNka-AbADa-nediyassu saMBAvane prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आशङ्क-आबाध-नेदियस्सु संभावने प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "आशङ्क-आबाध-नेदीयस्सु संभावने",
     why_dev               = "(सूत्रम् 6.2.21) आशङ्काबाधनेदीयस्सु संभावने।",
     anuvritti_from        = ('6.1.1',),

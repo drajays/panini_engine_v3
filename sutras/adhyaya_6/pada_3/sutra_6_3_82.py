@@ -4,6 +4,7 @@
 Padaccheda: वा उपसर्जनस्य
 
 वोपसर्जनस्य (6.3.82)
+Pāṭha: ashtadhyayi.com data.txt row i=63082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vopasarjanasya",
     text_dev              = "वोपसर्जनस्य",
+    samagra_slp1          = "uttarapade vA upasarjanasya sahasya saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे वा उपसर्जनस्य सहस्य सः",
     padaccheda_dev        = "वा उपसर्जनस्य",
     why_dev               = "(सूत्रम् 6.3.82) वोपसर्जनस्य।",
     anuvritti_from        = ('6.1.1',),

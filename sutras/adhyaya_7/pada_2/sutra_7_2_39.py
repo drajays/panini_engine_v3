@@ -4,6 +4,7 @@
 Padaccheda: न लिङि
 
 न लिङि (7.2.39)
+Pāṭha: ashtadhyayi.com data.txt row i=72039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na liNi",
     text_dev              = "न लिङि",
+    samagra_slp1          = "aNgasya na liNi valAdeH iw ArDaDAtukasya dIrGaH vFtaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न लिङि वलादेः इट् आर्धधातुकस्य दीर्घः वॄतः",
     padaccheda_dev        = "न लिङि",
     why_dev               = "(सूत्रम् 7.2.39) न लिङि।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: शीलम्
 
 शीलम् (4.4.61)
+Pāṭha: ashtadhyayi.com data.txt row i=44061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SIlam",
     text_dev              = "शीलम्",
+    samagra_slp1          = "tadasya SIlam iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तदस्य शीलम्' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "शीलम्",
     why_dev               = "(सूत्रम् 4.4.61) शीलम्।",
     anuvritti_from        = ('4.1.1',),

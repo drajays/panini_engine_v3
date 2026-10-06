@@ -4,6 +4,7 @@
 Padaccheda: अधेः उपरिस्थम्
 
 अधेरुपरिस्थम् (6.2.188)
+Pāṭha: ashtadhyayi.com data.txt row i=62188 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDeruparisTam",
     text_dev              = "अधेरुपरिस्थम्",
+    samagra_slp1          = "uttarapadAdiH antaH aDeH uparisTam upasargAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः अधेः उपरिस्थम् उपसर्गात्",
     padaccheda_dev        = "अधेः उपरिस्थम्",
     why_dev               = "(सूत्रम् 6.2.188) अधेरुपरिस्थम्।",
     anuvritti_from        = ('6.1.1',),

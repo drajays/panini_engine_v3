@@ -4,6 +4,7 @@
 Padaccheda: लू-आदिभ्यः
 
 ल्वादिभ्यः (8.2.44)
+Pāṭha: ashtadhyayi.com data.txt row i=82044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lvAdiByaH",
     text_dev              = "ल्वादिभ्यः",
+    samagra_slp1          = "padasya pUrvatrAsidDam lvAdiByaH nizWAtaH naH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् ल्वादिभ्यः निष्ठातः नः",
     padaccheda_dev        = "लू-आदिभ्यः",
     why_dev               = "(सूत्रम् 8.2.44) ल्वादिभ्यः।",
     anuvritti_from        = ('8.1.1',),

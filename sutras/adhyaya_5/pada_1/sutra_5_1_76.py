@@ -4,6 +4,7 @@
 Padaccheda: पन्थः ण (लुप्तप्रथमान्तनिर्देशः) नित्यम्
 
 पन्थो ण नित्यम् (5.1.76)
+Pāṭha: ashtadhyayi.com data.txt row i=51076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "panTo Ra nityam",
     text_dev              = "पन्थो ण नित्यम्",
+    samagra_slp1          = "tat nityam gacCati iti paTaH panTaH RaH",
+    samagra_dev           = "'तत् नित्यम् गच्छति' (इति) पथः पन्थः, णः",
     padaccheda_dev        = "पन्थः ण (लुप्तप्रथमान्तनिर्देशः) नित्यम्",
     why_dev               = "(सूत्रम् 5.1.76) पन्थो ण नित्यम्।",
     anuvritti_from        = ('5.1.18',),

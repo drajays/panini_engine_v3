@@ -4,6 +4,7 @@
 Padaccheda: प्रशस्यस्य श्रः
 
 प्रशस्यस्य श्रः (5.3.60)
+Pāṭha: ashtadhyayi.com data.txt row i=53060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "praSasyasya SraH",
     text_dev              = "प्रशस्यस्य श्रः",
+    samagra_slp1          = "atiSAyane praSasyasya ajAdyoH SraH",
+    samagra_dev           = "अतिशायने प्रशस्यस्य अजाद्योः श्रः",
     padaccheda_dev        = "प्रशस्यस्य श्रः",
     why_dev               = "(सूत्रम् 5.3.60) प्रशस्यस्य श्रः।",
     anuvritti_from        = ('4.1.76',),

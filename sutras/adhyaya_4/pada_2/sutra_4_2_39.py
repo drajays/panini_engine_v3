@@ -4,6 +4,7 @@
 Padaccheda: गोत्र-उक्ष-उष्ट्र-उरभ्र-राज-राजन्य-राजपुत्र-वत्स-मनुष्य-अजात् वुञ्
 
 गोत्रोक्षोष्ट्रोरभ्रराजराजन्यराजपुत्रवत्समनुष्याजाद्वुञ् (4.2.39)
+Pāṭha: ashtadhyayi.com data.txt row i=42039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gotrokzozwroraBrarAjarAjanyarAjaputravatsamanuzyAjAdvuY",
     text_dev              = "गोत्रोक्षोष्ट्रोरभ्रराजराजन्यराजपुत्रवत्समनुष्याजाद्वुञ्",
+    samagra_slp1          = "tasya samUhaH iti gotra-ukzan-uzwra-uraBra-rAjan-rAjanya-rAjaputra-vatsa-manuzya-ajAt vuY",
+    samagra_dev           = "तस्य समूहः (इति) गोत्र-उक्षन्-उष्ट्र-उरभ्र-राजन्-राजन्य-राजपुत्र-वत्स-मनुष्य-अजात्  वुञ्",
     padaccheda_dev        = "गोत्र-उक्ष-उष्ट्र-उरभ्र-राज-राजन्य-राजपुत्र-वत्स-मनुष्य-अजात् वुञ्",
     why_dev               = "(सूत्रम् 4.2.39) गोत्रोक्षोष्ट्रोरभ्रराजराजन्यराजपुत्रवत्समनुष्याजाद्वुञ्।",
     anuvritti_from        = ('4.1.1',),

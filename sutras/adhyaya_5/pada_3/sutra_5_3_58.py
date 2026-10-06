@@ -4,6 +4,7 @@
 Padaccheda: अच्-आदी गुणवचनात् एव
 
 अजादी गुणवचनादेव (5.3.58)
+Pāṭha: ashtadhyayi.com data.txt row i=53058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ajAdI guRavacanAdeva",
     text_dev              = "अजादी गुणवचनादेव",
+    samagra_slp1          = "ajAdI atiSAyane guRavacanAt eva",
+    samagra_dev           = "अजादी अतिशायने गुणवचनात् एव",
     padaccheda_dev        = "अच्-आदी गुणवचनात् एव",
     why_dev               = "(सूत्रम् 5.3.58) अजादी गुणवचनादेव।",
     anuvritti_from        = ('4.1.76',),

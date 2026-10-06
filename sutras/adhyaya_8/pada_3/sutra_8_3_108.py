@@ -4,6 +4,7 @@
 Padaccheda: सनोतेः अनः
 
 सनोतेरनः (8.3.108)
+Pāṭha: ashtadhyayi.com data.txt row i=83108 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sanoteranaH",
     text_dev              = "सनोतेरनः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH sanoteH anaH saH Candasi pUrvapadAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः सनोतेः अनः सः छन्दसि पूर्वपदात्",
     padaccheda_dev        = "सनोतेः अनः",
     why_dev               = "(सूत्रम् 8.3.108) सनोतेरनः।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: संज्ञायाम् मन्-मभ्याम्
 
 संज्ञायां मन्माभ्याम्.ह् (5.2.137)
+Pāṭha: ashtadhyayi.com data.txt row i=52137 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'saMjYAyAM manmAByAm',
     text_dev              = 'संज्ञायां मन्माभ्याम्',
+    samagra_slp1          = "tat asya asmin astIti iti saMjYAyAm man-mAByAm iniH",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) संज्ञायाम् मन्-माभ्याम् इनिः",
     padaccheda_dev        = "संज्ञायाम् मन्-मभ्याम्",
     why_dev               = "(सूत्रम् 5.2.137) संज्ञायां मन्माभ्याम्.ह्।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: लिङ् च ऊर्ध्व-मौहूर्तिके
 
 krt-suffix rule: लिङ् चोर्ध्वमौहूर्तिके
+Pāṭha: ashtadhyayi.com data.txt row i=33009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "liN corDvamOhUrtike",
     text_dev              = "लिङ् चोर्ध्वमौहूर्तिके",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH Bavizyati liN ca UrDvamOhUrtike kft yAvat-purA-nipAtayoH viBAzA low-arTalakzaRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भविष्यति लिङ् च ऊर्ध्वमौहूर्तिके कृत् यावत्-पुरा-निपातयोः विभाषा लोट्-अर्थलक्षणे",
     padaccheda_dev        = "लिङ् च ऊर्ध्व-मौहूर्तिके",
     why_dev               = "धातोः प्रत्ययः (३.3.9)।",
     anuvritti_from        = ('3.1.1',),

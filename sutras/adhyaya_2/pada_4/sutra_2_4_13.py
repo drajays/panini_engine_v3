@@ -4,6 +4,7 @@
 Padaccheda: विप्रतिषिद्धम् च अनधिकरणवाचि
 
 Contradicted non-locus forms in dvandva.
+Pāṭha: ashtadhyayi.com data.txt row i=24013 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vipratizidDaM cAnaDikaraRavAci",
     text_dev              = "विप्रतिषिद्धं चानधिकरणवाचि",
+    samagra_slp1          = "vipratizidDam ca anaDikaraRavAci ekavacanam dvandvaH viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "विप्रतिषिद्धम् च अनधिकरणवाचि एकवचनम् द्वन्द्वः विभाषा",
     padaccheda_dev        = "विप्रतिषिद्धम् च अनधिकरणवाचि",
     why_dev               = "विप्रतिषिद्धम् च अनधिकरण-वाचि (२.४.१३)।",
     anuvritti_from        = ('2.4.1',),

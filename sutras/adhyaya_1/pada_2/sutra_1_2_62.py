@@ -18,6 +18,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'viSAKayoSca',
     text_dev                = 'विशाखयोश्च',
+    samagra_slp1            = "viSAKayoH ca anyatarasyAm nakzatre Candasi ekavacanam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "विशाखयोः च अन्यतरस्याम् नक्षत्रे छन्दसि एकवचनम्",
     padaccheda_dev          = "विशाखयोः / च",
     why_dev                 = (
         "विशाखा-नक्षत्रयुगलस्यापि एकशेष-बहुवचन-विधिः अनुवर्तते — "

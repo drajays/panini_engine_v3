@@ -4,6 +4,7 @@
 Padaccheda: कर्मणः उकञ्
 
 कर्मण उकञ् (5.1.103)
+Pāṭha: ashtadhyayi.com data.txt row i=51103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karmaRa ukaY",
     text_dev              = "कर्मण उकञ्",
+    samagra_slp1          = "tasmE praBavati iti karmaRaH ukaY",
+    samagra_dev           = "'तस्मै प्रभवति' (इति) कर्मणः उकञ्",
     padaccheda_dev        = "कर्मणः उकञ्",
     why_dev               = "(सूत्रम् 5.1.103) कर्मण उकञ्।",
     anuvritti_from        = ('5.1.18',),

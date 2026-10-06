@@ -4,6 +4,7 @@
 Padaccheda: ऐकागारिकट् चौरे
 
 ऐकागारिकट् चौरे (5.1.113)
+Pāṭha: ashtadhyayi.com data.txt row i=51113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "EkAgArikaw cOre",
     text_dev              = "ऐकागारिकट् चौरे",
+    samagra_slp1          = "cOre EkAgArikaw nipAtyate",
+    samagra_dev           = "चौरे ऐकागारिकट् (निपात्यते)",
     padaccheda_dev        = "ऐकागारिकट् चौरे",
     why_dev               = "(सूत्रम् 5.1.113) ऐकागारिकट् चौरे।",
     anuvritti_from        = ('5.1.18',),

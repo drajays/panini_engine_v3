@@ -4,6 +4,7 @@
 Padaccheda: षित्-गौरादिभ्यः च
 
 षिद्गौरादिभ्यश्च (4.1.41)
+Pāṭha: ashtadhyayi.com data.txt row i=41041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zidgOrAdiByaSca",
     text_dev              = "षिद्गौरादिभ्यश्च",
+    samagra_slp1          = "anupasarjanAt zit-gOrAdiByaH striyAm NIz pratyayaH paraSca",
+    samagra_dev           = "अनुपसर्जनात् षित्-गौरादिभ्यः स्त्रियाम् ङीष् प्रत्ययः परश्च",
     padaccheda_dev        = "षित्-गौरादिभ्यः च",
     why_dev               = "(सूत्रम् 4.1.41) षिद्गौरादिभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

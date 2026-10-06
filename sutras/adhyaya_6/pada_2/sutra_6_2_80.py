@@ -4,6 +4,7 @@
 Padaccheda: उपमानम् शब्दार्थप्रकृतौ एव
 
 उपमानं शब्दार्थप्रकृतावेव (6.2.80)
+Pāṭha: ashtadhyayi.com data.txt row i=62080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upamAnaM SabdArTaprakftAveva",
     text_dev              = "उपमानं शब्दार्थप्रकृतावेव",
+    samagra_slp1          = "AdiH udAttaH upamAnam SabdArTa-prakftO eva pUrvapadam Rini",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः उपमानम् शब्दार्थ-प्रकृतौ एव पूर्वपदम् णिनि",
     padaccheda_dev        = "उपमानम् शब्दार्थप्रकृतौ एव",
     why_dev               = "(सूत्रम् 6.2.80) उपमानं शब्दार्थप्रकृतावेव।",
     anuvritti_from        = ('6.1.1',),

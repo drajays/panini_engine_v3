@@ -3,6 +3,7 @@
 
 Before śap the nasal of दंश्, सञ्ज्, स्वञ्ज् drops — दशति, सजति, स्वजते (KV/SK §43: "दंशसञ्जस्वञ्जां शपि").
 Sources: ashtadhyayi.com data row 64025; Kāśikā 6.4.25.
+Pāṭha: ashtadhyayi.com data.txt row i=64025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="daMSasaYjasvaYjAM Sapi",
     text_dev="दंशसञ्जस्वञ्जां शपि",
+    samagra_slp1="daMSa-saYja-svaYjAmaNgasya upaDAyAH Sapi nalopaH",
+    samagra_dev="दंश-सञ्ज-स्वञ्जामङ्गस्य उपधायाः शपि नलोपः",
     padaccheda_dev="दंश-सञ्ज-स्वञ्जाम् शपि",
     why_dev="शपि दंश्-सञ्ज्-स्वञ्जां नलोपः (दशति, सजति)।",
     anuvritti_from=("6.4.1",),

@@ -4,6 +4,7 @@
 Padaccheda: कद्रु-कमण्डल्वोः छन्दसि
 
 कद्रुकमण्डल्वोश्छन्दसि (4.1.71)
+Pāṭha: ashtadhyayi.com data.txt row i=41071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kadrukamaRqalvoSCandasi",
     text_dev              = "कद्रुकमण्डल्वोश्छन्दसि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt kadru-kamaRqalvoH Candasi UN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् कद्रु-कमण्डल्वोः छन्दसि ऊङ्",
     padaccheda_dev        = "कद्रु-कमण्डल्वोः छन्दसि",
     why_dev               = "(सूत्रम् 4.1.71) कद्रुकमण्डल्वोश्छन्दसि।",
     anuvritti_from        = ('4.1.1',),

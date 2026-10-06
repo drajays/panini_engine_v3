@@ -4,6 +4,7 @@
 Padaccheda: शिल्पम्
 
 शिल्पम् (4.4.55)
+Pāṭha: ashtadhyayi.com data.txt row i=44055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Silpam",
     text_dev              = "शिल्पम्",
+    samagra_slp1          = "tadasya Silpam iti samarTAnAM praTamAt paraH Wak tadDitapratyayaH",
+    samagra_dev           = "'तदस्य शिल्पम्' (इति) समर्थानां प्रथमात् परः ठक् तद्धितप्रत्ययः",
     padaccheda_dev        = "शिल्पम्",
     why_dev               = "(सूत्रम् 4.4.55) शिल्पम्।",
     anuvritti_from        = ('4.1.1',),

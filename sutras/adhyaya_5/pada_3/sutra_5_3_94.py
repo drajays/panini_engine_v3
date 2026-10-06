@@ -4,6 +4,7 @@
 Padaccheda: एकात् च प्राचाम्
 
 एकाच्च प्राचाम् (5.3.94)
+Pāṭha: ashtadhyayi.com data.txt row i=53094 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ekAcca prAcAm",
     text_dev              = "एकाच्च प्राचाम्",
+    samagra_slp1          = "dvayoH ekasya nirDAraRe ekAt qatarac bahUnAm ekasya nirDAraRe ekAt qatamac - iti prAcAm matam ",
+    samagra_dev           = "द्वयोः एकस्य निर्धारणे एकात् डतरच्, बहूनाम् एकस्य निर्धारणे एकात् डतमच् - (इति) प्राचाम् (मतम्) ।",
     padaccheda_dev        = "एकात् च प्राचाम्",
     why_dev               = "(सूत्रम् 5.3.94) एकाच्च प्राचाम्।",
     anuvritti_from        = ('5.3.70',),

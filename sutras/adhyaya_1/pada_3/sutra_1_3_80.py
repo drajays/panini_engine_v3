@@ -13,6 +13,7 @@ towards; pratikṣipate — he throws back; atikṣipate — he throws beyond.
 stamp "Atmanepada_1_3_80" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _KSIP_ROOTS carries any of "aBi_prefix", "prati_prefix", "ati_prefix".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -61,6 +62,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='aBipratyatiByaH kzipaH',
     text_dev='अभिप्रत्यतिभ्यः क्षिपः',
+    samagra_slp1="aBi-prati-atiByaH kzipaH kartari parasmEpadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अभि-प्रति-अतिभ्यः क्षिपः कर्तरि परस्मैपदम्",
     padaccheda_dev="अभि-प्रति-अतिभ्यः (पञ्चमी-बहुवचन) / क्षिपः (षष्ठी-एकवचन)",
     why_dev=(
         "अभि-प्रति-अति-पूर्वकस्य क्षिप्-धातोः आत्मनेपदम् — "

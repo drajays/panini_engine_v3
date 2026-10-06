@@ -4,6 +4,7 @@
 Padaccheda: प्राक् एकादशभ्यः अच्छन्दसि
 
 प्रागेकादशभ्योऽच्छन्दसि (5.3.49)
+Pāṭha: ashtadhyayi.com data.txt row i=53049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'prAgekAdaSaByocCandasi',
     text_dev              = 'प्रागेकादशभ्योऽच्छन्दसि',
+    samagra_slp1          = "prAk ekAdaSaByaH pUraRAt BAge acCandasi an",
+    samagra_dev           = "प्राक् एकादशभ्यः पूरणात् भागे अच्छन्दसि अन्",
     padaccheda_dev        = "प्राक् एकादशभ्यः अच्छन्दसि",
     why_dev               = "(सूत्रम् 5.3.49) प्रागेकादशभ्योऽच्छन्दसि।",
     anuvritti_from        = ('4.1.76',),

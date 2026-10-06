@@ -4,6 +4,7 @@
 Padaccheda: इकः ह्रस्वः अङ्यः गालवस्य
 
 इको ह्रस्वोऽङ्यो गालवस्य (6.3.61)
+Pāṭha: ashtadhyayi.com data.txt row i=63061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'iko hrasvoNyo gAlavasya',
     text_dev              = 'इको ह्रस्वोऽङ्यो गालवस्य',
+    samagra_slp1          = "uttarapade ikaH hrasvaH aNyaH gAlavasya treH anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे इकः ह्रस्वः अङ्यः गालवस्य त्रेः अन्यतरस्याम्",
     padaccheda_dev        = "इकः ह्रस्वः अङ्यः गालवस्य",
     why_dev               = "(सूत्रम् 6.3.61) इको ह्रस्वोऽङ्यो गालवस्य।",
     anuvritti_from        = ('6.1.1',),

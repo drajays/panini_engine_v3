@@ -7,6 +7,7 @@
 PARIBHASHA sets an interpretive gate.  Substitution sūtras call
 ``engine.sthanivat.adesha_substitute_varnas`` to copy the eight
 *anal-āśrita* *guṇa-dharma* types onto the *ādeśa* when the gate is on.
+Pāṭha: ashtadhyayi.com data.txt row i=11056 (Art. 14).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
@@ -28,6 +29,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.ATIDESHA,
     text_slp1      = 'sTAnivadAdeSonalviDO',
     text_dev       = 'स्थानिवदादेशोऽनल्विधौ',
+    samagra_slp1   = "analviDO AdeSaH sTAnivat",
+    samagra_dev    = "अनल्विधौ आदेशः स्थानिवत्",
     padaccheda_dev = "स्थानिवत् आदेशः अनल्विधौ",
     why_dev        = "आदेशः स्थानिनः समानधर्मा भवति, परम् अल्-विधिं विहाय।",
     anuvritti_from = (),

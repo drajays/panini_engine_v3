@@ -4,6 +4,7 @@
 Padaccheda: शितेः नित्य-अ-बहु-अच् बहुव्रीहौ अभसत्
 
 शितेर्नित्याबह्वज्बहुव्रीहावभसत् (6.2.138)
+Pāṭha: ashtadhyayi.com data.txt row i=62138 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SiternityAbahvajbahuvrIhAvaBasat",
     text_dev              = "शितेर्नित्याबह्वज्बहुव्रीहावभसत्",
+    samagra_slp1          = "uttarapadAdiH SiteH nitya-abahvavc bahuvrIhO aBasat prakftyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः शितेः नित्य-अबह्वव्च् बहुव्रीहौ अभसत् प्रकृत्या",
     padaccheda_dev        = "शितेः नित्य-अ-बहु-अच् बहुव्रीहौ अभसत्",
     why_dev               = "(सूत्रम् 6.2.138) शितेर्नित्याबह्वज्बहुव्रीहावभसत्।",
     anuvritti_from        = ('6.1.1',),

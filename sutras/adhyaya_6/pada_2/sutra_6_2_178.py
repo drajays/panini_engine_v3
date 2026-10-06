@@ -4,6 +4,7 @@
 Padaccheda: वनम् समासे
 
 वनं समासे (6.2.178)
+Pāṭha: ashtadhyayi.com data.txt row i=62178 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vanaM samAse",
     text_dev              = "वनं समासे",
+    samagra_slp1          = "uttarapadAdiH antaH vanam samAse upasargAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः वनम् समासे उपसर्गात्",
     padaccheda_dev        = "वनम् समासे",
     why_dev               = "(सूत्रम् 6.2.178) वनं समासे।",
     anuvritti_from        = ('6.1.1',),

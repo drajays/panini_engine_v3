@@ -4,6 +4,7 @@
 Padaccheda: ठञ् कवचिनः च
 
 ठञ् कवचिनश्च (4.2.41)
+Pāṭha: ashtadhyayi.com data.txt row i=42041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "WaY kavacinaSca",
     text_dev              = "ठञ् कवचिनश्च",
+    samagra_slp1          = "tasya samUhaH iti kedArAt kavacinaH ca WaY",
+    samagra_dev           = "तस्य समूहः (इति) केदारात् कवचिनः च ठञ्",
     padaccheda_dev        = "ठञ् कवचिनः च",
     why_dev               = "(सूत्रम् 4.2.41) ठञ् कवचिनश्च।",
     anuvritti_from        = ('4.1.1',),

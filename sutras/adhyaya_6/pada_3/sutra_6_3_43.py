@@ -6,6 +6,7 @@
 v3: ``state.meta['6_3_43_NGy_hrasva_arm']``; *aṅga* *strī*; final **I** (*ṅy* proxy); *taddhita*
 *upadeśa* *tarap* / *tamap*; ``count_vowel_letters(anga_flat) > 1``; rightmost mappable dīrgha
 in ``_D2H`` → hrasva.
+Pāṭha: ashtadhyayi.com data.txt row i=63043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -87,6 +88,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='GarUpakalpacelaqbruvagotramatahatezu NyonekAco hrasvaH',
     text_dev='घरूपकल्पचेलड्ब्रुवगोत्रमतहतेषु ङ्योऽनेकाचो ह्रस्वः',
+    samagra_slp1="uttarapade Ga-rUpa-kalpa-celaw-brUva-gotra-mata-hatezu NyaH anekAcaH hrasvaH BAzitapu~skAd na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="उत्तरपदे घ-रूप-कल्प-चेलट्-ब्रूव-गोत्र-मत-हतेषु ङ्यः अनेकाचः ह्रस्वः भाषितपुँस्काद् न",
     padaccheda_dev="घ-प्रत्यय-औ / ङि-अनिक / ह्रस्वः",
     why_dev="घ-संज्ञक-तद्धिते *ङ्य*न्त-अनेकाच-अङ्गे अन्त्य-दीर्घस्य ह्रस्वः (अ।)",
     anuvritti_from=("6.3.1", "6.3.114"),

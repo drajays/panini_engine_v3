@@ -18,6 +18,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'Candasi punarvasvorekavacanam',
     text_dev                = 'छन्दसि पुनर्वस्वोरेकवचनम्',
+    samagra_slp1            = "Candasi punarvasvoH ekavacanam anyatarasyAm dvayoH ca nakzatre",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "छन्दसि पुनर्वस्वोः एकवचनम् अन्यतरस्याम् द्वयोः च नक्षत्रे",
     padaccheda_dev          = "छन्दसि / पुनर्वस्वोः / एकवचनम्",
     why_dev                 = (
         "छन्दसि विषये पुनर्वसु-नक्षत्रस्य द्विवचनस्थाने एकवचनं विधीयते — "

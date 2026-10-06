@@ -113,6 +113,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "AwaSca",
     text_dev              = "आटश्च",
+    samagra_slp1          = "AwaH aci pUrvaparayoH ekaH vfdDiH",
+    samagra_dev           = "आटः अचि पूर्वपरयोः एकः वृद्धिः",
     padaccheda_dev        = "आटः च",
     why_dev               = (
         "लोट् उत्तम-१एक. में आट्-जन्य-आकार एच् (ऐ) से पूर्व: "

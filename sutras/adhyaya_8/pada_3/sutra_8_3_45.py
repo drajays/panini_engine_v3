@@ -4,6 +4,7 @@
 Padaccheda: नित्यम् · समासे · अनुत्तरपदस्थस्य
 
 नित्यं समासेऽनुत्तरपदस्थस्य (8.3.45)
+Pāṭha: ashtadhyayi.com data.txt row i=83045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nityaM samAsenuttarapadasTasya',
     text_dev              = 'नित्यं समासेऽनुत्तरपदस्थस्य',
+    samagra_slp1          = "samAse isusoH visarjanIyasya kupvoH nityam zaH sAmarTye anuttarapadasTasya ",
+    samagra_dev           = "समासे इसुसोः विसर्जनीयस्य कुप्वोः नित्यम् षः सामर्थ्ये, अनुत्तरपदस्थस्य ।",
     padaccheda_dev        = "नित्यम् · समासे · अनुत्तरपदस्थस्य",
     why_dev               = "(सूत्रम् 8.3.45) नित्यं समासेऽनुत्तरपदस्थस्य।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: यथामुख-सम्मुखस्य दर्शनः खः
 
 यथामुखसंमुखस्य दर्शनः खः (5.2.6)
+Pāṭha: ashtadhyayi.com data.txt row i=52006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yaTAmuKasaMmuKasya darSanaH KaH",
     text_dev              = "यथामुखसंमुखस्य दर्शनः खः",
+    samagra_slp1          = "darSanaH iti yaTAmuKa-sammuKasya KaH",
+    samagra_dev           = "'दर्शनः' (इति) यथामुख-सम्मुखस्य खः",
     padaccheda_dev        = "यथामुख-सम्मुखस्य दर्शनः खः",
     why_dev               = "(सूत्रम् 5.2.6) यथामुखसंमुखस्य दर्शनः खः।",
     anuvritti_from        = ('4.1.82',),

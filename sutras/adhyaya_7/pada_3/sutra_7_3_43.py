@@ -4,6 +4,7 @@
 Padaccheda: रुहः पः अन्यतरस्याम्
 
 रुहः पोऽन्यतरस्याम् (7.3.43)
+Pāṭha: ashtadhyayi.com data.txt row i=73043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ruhaH ponyatarasyAm',
     text_dev              = 'रुहः पोऽन्यतरस्याम्',
+    samagra_slp1          = "aNgasya ruhaH paH anyatarasyAm RO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य रुहः पः अन्यतरस्याम् णौ",
     padaccheda_dev        = "रुहः पः अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 7.3.43) रुहः पोऽन्यतरस्याम्।",
     anuvritti_from        = ('7.1.1',),

@@ -21,6 +21,7 @@ Engine:
   - act: adds "seT" tag; sets meta flag; updates samjna_registry.
   - r1_form_identity_exempt=True: no surface string changes at this step.
   - Anuvṛtti: seṭ domain from 1.2.1.
+Pāṭha: ashtadhyayi.com data.txt row i=12025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -74,6 +75,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = "tfzimfzikfSeH kASyapasya",
     text_dev                = "तृषिमृषिकृशेः काश्यपस्य",
+    samagra_slp1            = "tfzi-mfzi-kfSeH kASyapasya kit sew ktvA vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "तृषि-मृषि-कृशेः काश्यपस्य कित् सेट् क्त्वा वा",
     padaccheda_dev          = "तृषि-मृषि-कृशेः / काश्यपस्य",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.1",),

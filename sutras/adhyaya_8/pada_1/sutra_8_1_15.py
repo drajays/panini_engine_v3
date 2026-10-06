@@ -4,6 +4,7 @@
 Padaccheda: द्वन्द्वम् रहस्य-मर्यादावचन-व्युत्क्रमण-यज्ञपात्रप्रयोग-अभिव्यक्तिषु
 
 द्वन्द्वं रहस्यमर्यादावचनव्युत्क्रमणयज्ञपात्रप्रयोगाभिव्यक्तिषु (8.1.15)
+Pāṭha: ashtadhyayi.com data.txt row i=81015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvandvaM rahasyamaryAdAvacanavyutkramaRayajYapAtraprayogABivyaktizu",
     text_dev              = "द्वन्द्वं रहस्यमर्यादावचनव्युत्क्रमणयज्ञपात्रप्रयोगाभिव्यक्तिषु",
+    samagra_slp1          = "sarvasya dve dvandvam rahasyamaryAdAvacanavyutkramaRayajYapAtraprayogABivyaktizu karmaDArayavat",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सर्वस्य द्वे द्वन्द्वम् रहस्यमर्यादावचनव्युत्क्रमणयज्ञपात्रप्रयोगाभिव्यक्तिषु कर्मधारयवत्",
     padaccheda_dev        = "द्वन्द्वम् रहस्य-मर्यादावचन-व्युत्क्रमण-यज्ञपात्रप्रयोग-अभिव्यक्तिषु",
     why_dev               = "(सूत्रम् 8.1.15) द्वन्द्वं रहस्यमर्यादावचनव्युत्क्रमणयज्ञपात्रप्रयोगाभिव्यक्तिषु।",
     anuvritti_from        = ('8.1.1',),

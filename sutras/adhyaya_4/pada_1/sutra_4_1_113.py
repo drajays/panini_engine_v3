@@ -4,6 +4,7 @@
 Padaccheda: अ-वृद्धाभ्यः नदी-मानुषीभ्यः तत्-नामिकाभ्यः
 
 अवृद्धाभ्यो नदीमानुषीभ्यस्तन्नामिकाभ्यः (4.1.113)
+Pāṭha: ashtadhyayi.com data.txt row i=41113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "avfdDAByo nadImAnuzIByastannAmikAByaH",
     text_dev              = "अवृद्धाभ्यो नदीमानुषीभ्यस्तन्नामिकाभ्यः",
+    samagra_slp1          = "tasya apatyam iti avfdDAByaH nadImAnuzIByaH tannAmikAByaH aR",
+    samagra_dev           = "'तस्य अपत्यम्' इति अवृद्धाभ्यः नदीमानुषीभ्यः तन्नामिकाभ्यः अण्",
     padaccheda_dev        = "अ-वृद्धाभ्यः नदी-मानुषीभ्यः तत्-नामिकाभ्यः",
     why_dev               = "(सूत्रम् 4.1.113) अवृद्धाभ्यो नदीमानुषीभ्यस्तन्नामिकाभ्यः।",
     anuvritti_from        = ('4.1.1',),

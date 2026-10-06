@@ -4,6 +4,7 @@
 Padaccheda: सौ अनडुहः
 
 सावनडुहः (7.1.82)
+Pāṭha: ashtadhyayi.com data.txt row i=71082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sAvanaquhaH",
     text_dev              = "सावनडुहः",
+    samagra_slp1          = "anaquhaH aNgasya At sO num",
+    samagra_dev           = "अनडुहः अङ्गस्य आत् सौ नुम्",
     padaccheda_dev        = "सौ अनडुहः",
     why_dev               = "(सूत्रम् 7.1.82) सावनडुहः।",
     anuvritti_from        = ('7.1.1',),

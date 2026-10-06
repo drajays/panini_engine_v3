@@ -4,6 +4,7 @@
 Padaccheda: सत्यम् प्रश्ने
 
 सत्यं प्रश्ने (8.1.32)
+Pāṭha: ashtadhyayi.com data.txt row i=81032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "satyaM praSne",
     text_dev              = "सत्यं प्रश्ने",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO satyam praSne tiN na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ सत्यम् प्रश्ने तिङ् न",
     padaccheda_dev        = "सत्यम् प्रश्ने",
     why_dev               = "(सूत्रम् 8.1.32) सत्यं प्रश्ने।",
     anuvritti_from        = ('8.1.1',),

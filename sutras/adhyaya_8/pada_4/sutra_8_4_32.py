@@ -4,6 +4,7 @@
 Padaccheda: इच्-आदेः स-नुमः
 
 इजादेः सनुमः (8.4.32)
+Pāṭha: ashtadhyayi.com data.txt row i=84032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ijAdeH sanumaH",
     text_dev              = "इजादेः सनुमः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm ijAdeH sanumaH razAByAm upasargAt kfti halaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् इजादेः सनुमः रषाभ्याम् उपसर्गात् कृति हलः",
     padaccheda_dev        = "इच्-आदेः स-नुमः",
     why_dev               = "(सूत्रम् 8.4.32) इजादेः सनुमः।",
     anuvritti_from        = ('8.1.1',),

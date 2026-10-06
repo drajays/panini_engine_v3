@@ -4,6 +4,7 @@
 Padaccheda: नित्यम् कौटिल्ये गतौ
 
 Krt suffix rule from dhatu: नित्यं कौटिल्ये गतौ (23)
+Pāṭha: ashtadhyayi.com data.txt row i=31023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nityaM kOwilye gatO",
     text_dev              = "नित्यं कौटिल्ये गतौ",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH nityam kOwilye gatO yaN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः नित्यम् कौटिल्ये गतौ यङ्",
     padaccheda_dev        = "नित्यम् कौटिल्ये गतौ",
     why_dev               = "धातोः [नित्यं कौटिल्ये गतौ]-प्रत्ययः विहितः (३.१.23)।",
     anuvritti_from        = ('3.1.1',),

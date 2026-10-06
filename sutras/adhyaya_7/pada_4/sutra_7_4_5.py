@@ -4,6 +4,7 @@
 Padaccheda: तिष्ठतेः इत्
 
 तिष्ठतेरित् (7.4.5)
+Pāṭha: ashtadhyayi.com data.txt row i=74005 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tizWaterit",
     text_dev              = "तिष्ठतेरित्",
+    samagra_slp1          = "aNgasya tizWateH it RO caNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य तिष्ठतेः इत् णौ चङि",
     padaccheda_dev        = "तिष्ठतेः इत्",
     why_dev               = "(सूत्रम् 7.4.5) तिष्ठतेरित्।",
     anuvritti_from        = ('7.1.1',),

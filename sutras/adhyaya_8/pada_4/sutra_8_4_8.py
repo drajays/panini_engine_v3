@@ -4,6 +4,7 @@
 Padaccheda: वाहनम् आहितात्
 
 वाहनमाहितात् (8.4.8)
+Pāṭha: ashtadhyayi.com data.txt row i=84008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vAhanamAhitAt",
     text_dev              = "वाहनमाहितात्",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm vAhanam AhitAt razAByAm pUrvapadAt saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् वाहनम् आहितात् रषाभ्याम् पूर्वपदात् संज्ञायाम्",
     padaccheda_dev        = "वाहनम् आहितात्",
     why_dev               = "(सूत्रम् 8.4.8) वाहनमाहितात्।",
     anuvritti_from        = ('8.1.1',),

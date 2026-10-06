@@ -4,6 +4,7 @@
 Padaccheda: छन्दसि शायच् अपि
 
 Krt suffix rule from dhatu: छन्दसि शायजपि (84)
+Pāṭha: ashtadhyayi.com data.txt row i=31084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Candasi SAyajapi",
     text_dev              = "छन्दसि शायजपि",
+    samagra_slp1          = "Candasi SnaH hO SAnac SAyaj api",
+    samagra_dev           = "छन्दसि श्नः हौ शानच् शायज् अपि",
     padaccheda_dev        = "छन्दसि शायच् अपि",
     why_dev               = "धातोः [छन्दसि शायजपि]-प्रत्ययः विहितः (३.१.84)।",
     anuvritti_from        = ('3.1.1',),

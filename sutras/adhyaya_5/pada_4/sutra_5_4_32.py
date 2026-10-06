@@ -4,6 +4,7 @@
 Padaccheda: रक्ते
 
 रक्ते (5.4.32)
+Pāṭha: ashtadhyayi.com data.txt row i=54032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rakte",
     text_dev              = "रक्ते",
+    samagra_slp1          = "lohitAt rakte kan",
+    samagra_dev           = "लोहितात् रक्ते कन्",
     padaccheda_dev        = "रक्ते",
     why_dev               = "(सूत्रम् 5.4.32) रक्ते।",
     anuvritti_from        = ('4.1.76',),

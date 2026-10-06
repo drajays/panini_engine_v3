@@ -4,6 +4,7 @@
 Padaccheda: क्तेन नञ्-विशिष्टेन अनञ्
 
 kta with nan-visista (negated) form ananna karmadharaya.
+Pāṭha: ashtadhyayi.com data.txt row i=21060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ktena naYviSizwenAnaY",
     text_dev              = "क्तेन नञ्विशिष्टेनानञ्",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH ktena naY-viSizwena anaY samAnADikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः क्तेन नञ्-विशिष्टेन अनञ् समानाधिकरणेन",
     padaccheda_dev        = "क्तेन नञ्-विशिष्टेन अनञ्",
     why_dev               = "क्तेन नञ्-विशिष्टेन अनञ् कर्मधारयः (२.1.६०)।",
     anuvritti_from        = ('2.1.3',),

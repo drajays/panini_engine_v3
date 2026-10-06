@@ -4,6 +4,7 @@
 Padaccheda: वर्चस्के अवस्करः
 
 वर्चस्केऽवस्करः (6.1.148)
+Pāṭha: ashtadhyayi.com data.txt row i=61148 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'varcaskevaskaraH',
     text_dev              = 'वर्चस्केऽवस्करः',
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH varcaske avaskaraH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः वर्चस्के अवस्करः",
     padaccheda_dev        = "वर्चस्के अवस्करः",
     why_dev               = "(सूत्रम् 6.1.148) वर्चस्केऽवस्करः।",
     anuvritti_from        = ('6.1.1',),

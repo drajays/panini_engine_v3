@@ -4,6 +4,7 @@
 Padaccheda: कमेः णिङ्
 
 Krt suffix rule from dhatu: कमेर्णिङ् (30)
+Pāṭha: ashtadhyayi.com data.txt row i=31030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kamerRiN",
     text_dev              = "कमेर्णिङ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kameH RiN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कमेः णिङ्",
     padaccheda_dev        = "कमेः णिङ्",
     why_dev               = "धातोः [कमेर्णिङ्]-प्रत्ययः विहितः (३.१.30)।",
     anuvritti_from        = ('3.1.1',),

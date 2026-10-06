@@ -9,6 +9,7 @@ Narrow v3 (``prakriya_28``, Vedic **मेघातिथे मन्महे*
   • Two ``Term``s: vocative ``meGAtithe`` + finite ``manmahe`` (recipe arms +
     tags — no *vibhakti* reads in ``cond``).
   • Registers ``samjna_registry['2.1.2_subAmantrite_parA~ggavat_28']``.
+Pāṭha: ashtadhyayi.com data.txt row i=21002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -49,6 +50,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.ATIDESHA,
     text_slp1='subAmantrite parANgavat svare',
     text_dev='सुबामन्त्रिते पराङ्गवत् स्वरे',
+    samagra_slp1="svare kartavye sup Amantrite parANgavat",
+    samagra_dev="स्वरे (कर्तव्ये)  सुप् आमन्त्रिते पराङ्गवत्",
     padaccheda_dev="सुबान्तम् आमन्त्रिते / पराङ्गवत् / स्वरे",
     why_dev="आमन्त्रित-सुबन्तस्य पराङ्गवत् स्वर-संज्ञा (*prakriya_28*, मेघातिथे-मन्महे)।",
     anuvritti_from=(),

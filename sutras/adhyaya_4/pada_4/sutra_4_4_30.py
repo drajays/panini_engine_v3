@@ -4,6 +4,7 @@
 Padaccheda: प्रयच्छति (क्रियापदम्) गर्ह्यम्
 
 प्रयच्छति गर्ह्यम् (4.4.30)
+Pāṭha: ashtadhyayi.com data.txt row i=44030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prayacCati garhyam",
     text_dev              = "प्रयच्छति गर्ह्यम्",
+    samagra_slp1          = "tat garhyam prayacCati iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् गर्ह्यम् प्रयच्छति' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "प्रयच्छति (क्रियापदम्) गर्ह्यम्",
     why_dev               = "(सूत्रम् 4.4.30) प्रयच्छति गर्ह्यम्।",
     anuvritti_from        = ('4.1.1',),

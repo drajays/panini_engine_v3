@@ -13,6 +13,7 @@ This extends 1.3.86 to cover a semantic class.
 stamp "Atmanepada_1_3_87" is absent, (c) a dhātu Term carries the tag
 "NI_causative_context" AND either "nigaraNa_usage" or "calana_usage".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -59,6 +60,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='nigaraRacalanArTeByaSca',
     text_dev='निगरणचलनार्थेभ्यश्च',
+    samagra_slp1="nigaraRa-calanArTeByaH ca kartari parasmEpadam ReH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="निगरण-चलनार्थेभ्यः च कर्तरि परस्मैपदम् णेः",
     padaccheda_dev="निगरण-चलन-अर्थेभ्यः (पञ्चमी-बहुवचन) / च",
     why_dev=(
         "निगरण-चलन-अर्थक-धातूनां णि-प्रत्यये परे आत्मनेपदम् — "

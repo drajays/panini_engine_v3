@@ -4,6 +4,7 @@
 Padaccheda: ग्राम-जन-बन्धु-सहायेभ्यः तल्
 
 ग्रामजनबन्धुसहायेभ्यः तल् (4.2.43)
+Pāṭha: ashtadhyayi.com data.txt row i=42043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "grAmajanabanDusahAyeByaH tal",
     text_dev              = "ग्रामजनबन्धुसहायेभ्यः तल्",
+    samagra_slp1          = "tasya samUhaH iti grAma-jana-banDu-sahAyeByaH tal",
+    samagra_dev           = "तस्य समूहः (इति) ग्राम-जन-बन्धु-सहायेभ्यः तल्",
     padaccheda_dev        = "ग्राम-जन-बन्धु-सहायेभ्यः तल्",
     why_dev               = "(सूत्रम् 4.2.43) ग्रामजनबन्धुसहायेभ्यः तल्।",
     anuvritti_from        = ('4.1.1',),

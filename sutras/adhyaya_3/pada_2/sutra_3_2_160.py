@@ -4,6 +4,7 @@
 Padaccheda: सृ-घसि-अदः क्मरच्
 
 krt-suffix rule: सृघस्यदः क्मरच् (160)
+Pāṭha: ashtadhyayi.com data.txt row i=32160 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sfGasyadaH kmarac",
     text_dev              = "सृघस्यदः क्मरच्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu sf-Gasi-adaH kmarac kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु सृ-घसि-अदः क्मरच् कृत्",
     padaccheda_dev        = "सृ-घसि-अदः क्मरच्",
     why_dev               = "धातोः कृत्-प्रत्ययः [सृघस्यदः क्मरच्] विहितः (३.२.160)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

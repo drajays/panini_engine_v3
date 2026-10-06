@@ -93,6 +93,10 @@ def resolve_dhatu_identifier(ref: str) -> dict:
             if (e.get("raw_dhatu_after_it_lopa_slp1") or "") == key and e.get("id")]
     for e in sorted(hits, key=lambda e: e.get("mula_dhatu_dev") != e.get("raw_dhatu_after_it_lopa_dev")):
         return get_dhatu_row(e["id"])
+    # Finally the traditional citation root (``citation_dhatu_slp1``: 'nad' for णदँ, 'cint' for चितिँ).
+    for e in iter_dhatu_entries():
+        if (e.get("citation_dhatu_slp1") or "") == key and e.get("id"):
+            return get_dhatu_row(e["id"])
     raise KeyError(
         f"unknown dhātu reference {ref!r}; use upadeśa SLP1 (BU), "
         f"path id (01.0001), or id (BvAdi_01_0001)"

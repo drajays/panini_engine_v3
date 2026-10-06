@@ -4,6 +4,7 @@
 Padaccheda: कुरु-आदिभ्यः ण्यः
 
 कुर्वादिभ्यो ण्यः (4.1.151)
+Pāṭha: ashtadhyayi.com data.txt row i=41151 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kurvAdiByo RyaH",
     text_dev              = "कुर्वादिभ्यो ण्यः",
+    samagra_slp1          = "tasya apatyam iti kurvAdiByaH RyaH",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) कुर्वादिभ्यः ण्यः",
     padaccheda_dev        = "कुरु-आदिभ्यः ण्यः",
     why_dev               = "(सूत्रम् 4.1.151) कुर्वादिभ्यो ण्यः।",
     anuvritti_from        = ('4.1.1',),

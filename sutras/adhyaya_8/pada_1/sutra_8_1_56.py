@@ -4,6 +4,7 @@
 Padaccheda: यत्-हि-तु-परम् छन्दसि
 
 यद्धितुपरं छन्दसि (8.1.56)
+Pāṭha: ashtadhyayi.com data.txt row i=81056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yadDituparaM Candasi",
     text_dev              = "यद्धितुपरं छन्दसि",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO yadDituparam Candasi tiN na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ यद्धितुपरम् छन्दसि तिङ् न",
     padaccheda_dev        = "यत्-हि-तु-परम् छन्दसि",
     why_dev               = "(सूत्रम् 8.1.56) यद्धितुपरं छन्दसि।",
     anuvritti_from        = ('8.1.1',),

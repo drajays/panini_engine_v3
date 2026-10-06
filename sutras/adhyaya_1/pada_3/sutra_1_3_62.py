@@ -15,6 +15,7 @@ san-pratyaya context.
 stamp "Atmanepada_1_3_62" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _MR_ROOTS carries the tag "san_pratyaya". No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -62,6 +63,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="pUrvavat sanaH",
     text_dev="पूर्ववत् सनः",
+    samagra_slp1="pUrvavat sanaH Atmanepadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="पूर्ववत् सनः आत्मनेपदम्",
     padaccheda_dev="पूर्ववत् / सनः (षष्ठी-एकवचन)",
     why_dev=(
         "मृ-धातोः सन्-प्रत्यये परे पूर्ववत् आत्मनेपदम् — "

@@ -4,6 +4,7 @@
 Padaccheda: कास्तीर-अजस्तुन्दे नगरे
 
 कास्तीराजस्तुन्दे नगरे (6.1.155)
+Pāṭha: ashtadhyayi.com data.txt row i=61155 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kAstIrAjastunde nagare",
     text_dev              = "कास्तीराजस्तुन्दे नगरे",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH kAstIra-ajastunde nagare",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः कास्तीर-अजस्तुन्दे नगरे",
     padaccheda_dev        = "कास्तीर-अजस्तुन्दे नगरे",
     why_dev               = "(सूत्रम् 6.1.155) कास्तीराजस्तुन्दे नगरे।",
     anuvritti_from        = ('6.1.1',),

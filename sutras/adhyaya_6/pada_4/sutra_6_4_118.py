@@ -4,6 +4,7 @@
 Padaccheda: लोपः यि
 
 लोपो यि (6.4.118)
+Pāṭha: ashtadhyayi.com data.txt row i=64118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lopo yi",
     text_dev              = "लोपो यि",
+    samagra_slp1          = "jahAteH aNgasya sArvaDAtuke kNiti yi lopaH",
+    samagra_dev           = "जहातेः अङ्गस्य सार्वधातुके क्ङिति यि लोपः",
     padaccheda_dev        = "लोपः यि",
     why_dev               = "(सूत्रम् 6.4.118) लोपो यि।",
     anuvritti_from        = ('6.1.1',),

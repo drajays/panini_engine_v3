@@ -102,6 +102,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'tasmAcCaso naH puMsi',
     text_dev       = 'तस्माच्छसो नः पुंसि',
+    samagra_slp1   = "praTamayoH pUrvasavarRaH tasmAt pu~si SasaH naH",
+    samagra_dev    = "प्रथमयोः पूर्वसवर्णः तस्मात् पुँसि शसः नः",
     padaccheda_dev = "तस्मात् शसः नः पुंसि",
     why_dev        = "पुंलिङ्ग-अदन्त-प्रातिपदिकात् परस्य 'शस्'-प्रत्ययस्य "
                      "पूर्वसवर्ण-दीर्घानन्तरं स-कारस्य न-कारादेशः।",

@@ -4,6 +4,7 @@
 Padaccheda: द्वन्द्वात् वुन् वैर-मैथुनिकयोः
 
 द्वंद्वाद्वुन् वैरमैथुनिकयोः (4.3.125)
+Pāṭha: ashtadhyayi.com data.txt row i=43125 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'dvandvAdvun vEramETunikayoH',
     text_dev              = 'द्वन्द्वाद्वुन् वैरमैथुनिकयोः',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA dvandvAt vun vEra-mETunikayoH tasya idam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा द्वन्द्वात् वुन् वैर-मैथुनिकयोः तस्य इदम्",
     padaccheda_dev        = "द्वन्द्वात् वुन् वैर-मैथुनिकयोः",
     why_dev               = "(सूत्रम् 4.3.125) द्वंद्वाद्वुन् वैरमैथुनिकयोः।",
     anuvritti_from        = ('4.1.1',),

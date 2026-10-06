@@ -4,6 +4,7 @@
 Padaccheda: द्विगोः ष्ठन् च
 
 द्विगोष्ठंश्च (5.1.54)
+Pāṭha: ashtadhyayi.com data.txt row i=51054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'dvigoH zWaMSca',
     text_dev              = 'द्विगोः ष्ठंश्च',
+    samagra_slp1          = "tat samBavati  avaharati pacati iti AQaka-Acita-pAtrAt dvigoH zWan anyatarasyAm KaH ca",
+    samagra_dev           = "'तत् सम्भवति , अवहरति, पचति' (इति) आढक-आचित-पात्रात् द्विगोः ष्ठन्, अन्यतरस्याम् खः च",
     padaccheda_dev        = "द्विगोः ष्ठन् च",
     why_dev               = "(सूत्रम् 5.1.54) द्विगोष्ठंश्च।",
     anuvritti_from        = ('5.1.19',),

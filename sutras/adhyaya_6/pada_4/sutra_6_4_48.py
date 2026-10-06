@@ -2,7 +2,7 @@
 6.4.48  अतो लोपः  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=604048
+- ashtadhyayi.com data.txt row i=64048
 - Kāśikā: अतः लोपः (परनिमित्तकः — उपधा-वृद्धि-निषेधः)
 - Cross-validation: tests/unit/test_kathi_kath_nic.py,
   tests/unit/test_avadhIt_han_lun_ekavacana.py,
@@ -188,6 +188,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="ato lopaH",
     text_dev="अतो लोपः",
+    samagra_slp1="aNgasya asidDavadatrABAt ArDaDAtuke ataH lopaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अङ्गस्य असिद्धवदत्राभात् आर्धधातुके अतः लोपः",
     padaccheda_dev="अतः / लोपः",
     why_dev="अकारान्त-अङ्गस्य परे अकारादौ अ-लोपः; परनिमित्तकः उपधा-वृद्धिं निवारयति।",
     anuvritti_from=("6.4.1",),

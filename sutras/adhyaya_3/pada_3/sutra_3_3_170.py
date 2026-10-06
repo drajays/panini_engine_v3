@@ -4,6 +4,7 @@
 Padaccheda: आवश्यक-आधमर्ण्ययोः णिनिः
 
 krt-suffix rule: आवश्यकाधमर्ण्ययोर्णिनिः
+Pāṭha: ashtadhyayi.com data.txt row i=33170 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AvaSyakADamarRyayorRiniH",
     text_dev              = "आवश्यकाधमर्ण्ययोर्णिनिः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH AvaSyaka-ADamarRyayoH RiniH kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः आवश्यक-आधमर्ण्ययोः णिनिः कृत्",
     padaccheda_dev        = "आवश्यक-आधमर्ण्ययोः णिनिः",
     why_dev               = "धातोः प्रत्ययः (३.3.170)।",
     anuvritti_from        = ('3.1.1',),

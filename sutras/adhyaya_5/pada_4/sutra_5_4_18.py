@@ -4,6 +4,7 @@
 Padaccheda: द्वि-त्रि-चतुर्भ्यः सुच्
 
 द्वित्रिचतुर्भ्यः सुच् (5.4.18)
+Pāṭha: ashtadhyayi.com data.txt row i=54018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvitricaturByaH suc",
     text_dev              = "द्वित्रिचतुर्भ्यः सुच्",
+    samagra_slp1          = "dvi-tri-caturByaH kriyA-aByAvfttigaRane suc",
+    samagra_dev           = "द्वि-त्रि-चतुर्भ्यः क्रिया-अभ्यावृत्तिगणने सुच्",
     padaccheda_dev        = "द्वि-त्रि-चतुर्भ्यः सुच्",
     why_dev               = "(सूत्रम् 5.4.18) द्वित्रिचतुर्भ्यः सुच्।",
     anuvritti_from        = ('4.1.76',),

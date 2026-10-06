@@ -4,6 +4,7 @@
 Padaccheda: यूनि लुक्
 
 यूनि लुक् (4.1.90)
+Pāṭha: ashtadhyayi.com data.txt row i=41090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yUni luk",
     text_dev              = "यूनि लुक्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samarTAnAM praTamAdvA prAgdIvyatoR yUni luk aci",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समर्थानां प्रथमाद्वा प्राग्दीव्यतोऽण् यूनि लुक् अचि",
     padaccheda_dev        = "यूनि लुक्",
     why_dev               = "(सूत्रम् 4.1.90) यूनि लुक्।",
     anuvritti_from        = ('4.1.1',),

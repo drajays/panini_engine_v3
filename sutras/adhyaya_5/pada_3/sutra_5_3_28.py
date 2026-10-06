@@ -4,6 +4,7 @@
 Padaccheda: दक्षिणा-उत्तराभ्याम् अतसुच्
 
 दक्षिणोत्तराभ्यामतसुच् (5.3.28)
+Pāṭha: ashtadhyayi.com data.txt row i=53028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dakziRottarAByAmatasuc",
     text_dev              = "दक्षिणोत्तराभ्यामतसुच्",
+    samagra_slp1          = "dakziRa-uttarAByAm saptamI-paYcamI-praTamAByaH dig-deSa-kAlezu atasuc",
+    samagra_dev           = "दक्षिण-उत्तराभ्याम् सप्तमी-पञ्चमी-प्रथमाभ्यः दिग्-देश-कालेषु अतसुच्",
     padaccheda_dev        = "दक्षिणा-उत्तराभ्याम् अतसुच्",
     why_dev               = "(सूत्रम् 5.3.28) दक्षिणोत्तराभ्यामतसुच्।",
     anuvritti_from        = ('4.1.76',),

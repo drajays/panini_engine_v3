@@ -4,6 +4,7 @@
 Padaccheda: कालात् च
 
 कालाच्च (5.4.33)
+Pāṭha: ashtadhyayi.com data.txt row i=54033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kAlAcca",
     text_dev              = "कालाच्च",
+    samagra_slp1          = "anitye varRe rakte ca kAlAt kan",
+    samagra_dev           = "अनित्ये वर्णे रक्ते च कालात् कन्",
     padaccheda_dev        = "कालात् च",
     why_dev               = "(सूत्रम् 5.4.33) कालाच्च।",
     anuvritti_from        = ('4.1.76',),

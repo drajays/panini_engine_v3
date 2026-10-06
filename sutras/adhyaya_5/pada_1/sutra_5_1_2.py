@@ -4,6 +4,7 @@
 Padaccheda: उ-गवादिभ्यः यत्
 
 उगवादिभ्योऽत् (5.1.2)
+Pāṭha: ashtadhyayi.com data.txt row i=51002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ugavAdiByo yat',
     text_dev              = 'उगवादिभ्यो यत्',
+    samagra_slp1          = "prAk krItAt u-gavAdiByaH yat",
+    samagra_dev           = "प्राक् क्रीतात् उ-गवादिभ्यः यत्",
     padaccheda_dev        = "उ-गवादिभ्यः यत्",
     why_dev               = "(सूत्रम् 5.1.2) उगवादिभ्योऽत्।",
     anuvritti_from        = ('5.1.1',),

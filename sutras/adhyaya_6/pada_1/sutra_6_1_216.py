@@ -4,6 +4,7 @@
 Padaccheda: त्याग-राग-हास-कुह-श्वठ-क्रथानाम्
 
 त्यागरागहासकुहश्वठक्रथानाम् (6.1.216)
+Pāṭha: ashtadhyayi.com data.txt row i=61216 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tyAgarAgahAsakuhaSvaWakraTAnAm",
     text_dev              = "त्यागरागहासकुहश्वठक्रथानाम्",
+    samagra_slp1          = "tyAga-rAga-hAsa-kuha-SvaWa-kraTAnAm udAttaH AdiH viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "त्याग-राग-हास-कुह-श्वठ-क्रथानाम् उदात्तः आदिः विभाषा",
     padaccheda_dev        = "त्याग-राग-हास-कुह-श्वठ-क्रथानाम्",
     why_dev               = "(सूत्रम् 6.1.216) त्यागरागहासकुहश्वठक्रथानाम्।",
     anuvritti_from        = ('6.1.1',),

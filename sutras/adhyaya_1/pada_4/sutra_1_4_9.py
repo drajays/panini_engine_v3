@@ -7,6 +7,7 @@ optionally [receives the *ghi*/*nadī* designation] in Vedic (*chandas*).
 v3: records the optional-in-chandas gate.  The actual tag mutation is deferred
 to context where the chandas flag is active.  ``vibhasha_default=False`` — the
 optional path is OFF by default (classical grammar prefers the niyama from 1.4.8).
+Pāṭha: ashtadhyayi.com data.txt row i=14009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.VIBHASHA,
     text_slp1              = 'zazWIyuktaSCandasi vA',
     text_dev               = 'षष्ठीयुक्तश्छन्दसि वा',
+    samagra_slp1           = "zazWIyuktaH pati Candasi Gi vA",
+    samagra_dev            = "षष्ठीयुक्तः पति छन्दसि घि वा",
     padaccheda_dev         = "षष्ठी-युक्तः / छन्दसि / वा",
     why_dev                = "षष्ठीसमासे पतिशब्दस्य छन्दसि वा नदीसंज्ञा।",
     apavada_of     = ("1.4.8",),   # अपवाद of 1.4.8 — sutra_ref_out resolver.apavada_of

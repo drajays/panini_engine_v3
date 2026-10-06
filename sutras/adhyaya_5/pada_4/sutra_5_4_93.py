@@ -4,6 +4,7 @@
 Padaccheda: अग्राख्यायाम् उरसः
 
 अग्राख्यायामुरसः (5.4.93)
+Pāṭha: ashtadhyayi.com data.txt row i=54093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "agrAKyAyAmurasaH",
     text_dev              = "अग्राख्यायामुरसः",
+    samagra_slp1          = "agra-AKyAyAm tatpuruzasya urasaH wac",
+    samagra_dev           = "अग्र-आख्यायाम् तत्पुरुषस्य उरसः टच्",
     padaccheda_dev        = "अग्राख्यायाम् उरसः",
     why_dev               = "(सूत्रम् 5.4.93) अग्राख्यायामुरसः।",
     anuvritti_from        = ('5.4.68',),

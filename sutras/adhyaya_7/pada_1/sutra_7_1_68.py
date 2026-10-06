@@ -4,6 +4,7 @@
 Padaccheda: न सु-दुर्भ्याम् केवलाभ्याम्
 
 न सुदुर्भ्यां केवलाभ्याम् (7.1.68)
+Pāṭha: ashtadhyayi.com data.txt row i=71068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na sudurByAM kevalAByAm",
     text_dev              = "न सुदुर्भ्यां केवलाभ्याम्",
+    samagra_slp1          = "aNgasya na sudurByAm kevalAByAm num laBeH upasargAt Kal-GaYoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न सुदुर्भ्याम् केवलाभ्याम् नुम् लभेः उपसर्गात् खल्-घञोः",
     padaccheda_dev        = "न सु-दुर्भ्याम् केवलाभ्याम्",
     why_dev               = "(सूत्रम् 7.1.68) न सुदुर्भ्यां केवलाभ्याम्।",
     anuvritti_from        = ('7.1.1',),

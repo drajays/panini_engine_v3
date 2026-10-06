@@ -4,6 +4,7 @@
 Padaccheda: दुरस्युः द्रविणस्युः वृषण्यति (क्रियापदम्) रिषण्यति (क्रियापदम्)
 
 दुरस्युर्द्रविणस्युर्वृषण्यतिरिषण्यति (7.4.36)
+Pāṭha: ashtadhyayi.com data.txt row i=74036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "durasyurdraviRasyurvfzaRyatirizaRyati",
     text_dev              = "दुरस्युर्द्रविणस्युर्वृषण्यतिरिषण्यति",
+    samagra_slp1          = "aNgasya durasyuH draviRasyuH vfzaRyati rizaRyati kyaci Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य दुरस्युः द्रविणस्युः वृषण्यति रिषण्यति क्यचि छन्दसि",
     padaccheda_dev        = "दुरस्युः द्रविणस्युः वृषण्यति (क्रियापदम्) रिषण्यति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 7.4.36) दुरस्युर्द्रविणस्युर्वृषण्यतिरिषण्यति।",
     anuvritti_from        = ('7.1.1',),

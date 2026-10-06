@@ -4,6 +4,7 @@
 Padaccheda: यावत्-यथाभ्याम्
 
 यावद्यथाभ्याम् (8.1.36)
+Pāṭha: ashtadhyayi.com data.txt row i=81036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yAvadyaTAByAm",
     text_dev              = "यावद्यथाभ्याम्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO yAvadyaTAByAm tiN na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ यावद्यथाभ्याम् तिङ् न",
     padaccheda_dev        = "यावत्-यथाभ्याम्",
     why_dev               = "(सूत्रम् 8.1.36) यावद्यथाभ्याम्।",
     anuvritti_from        = ('8.1.1',),

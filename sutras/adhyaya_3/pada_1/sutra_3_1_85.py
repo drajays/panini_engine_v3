@@ -4,6 +4,7 @@
 Padaccheda: व्यत्ययः बहुलम्
 
 Krt suffix rule from dhatu: व्यत्ययो बहुलम् (85)
+Pāṭha: ashtadhyayi.com data.txt row i=31085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vyatyayo bahulam",
     text_dev              = "व्यत्ययो बहुलम्",
+    samagra_slp1          = "Candasi kartari sArvaDAtuke bahulam vyatyayaH",
+    samagra_dev           = "छन्दसि कर्तरि सार्वधातुके बहुलम् व्यत्ययः",
     padaccheda_dev        = "व्यत्ययः बहुलम्",
     why_dev               = "धातोः [व्यत्ययो बहुलम्]-प्रत्ययः विहितः (३.१.85)।",
     anuvritti_from        = ('3.1.1',),

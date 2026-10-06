@@ -4,6 +4,7 @@
 Padaccheda: तुल्य-अर्थे अतुल-उपमाभ्याम् तृतीया अन्यतरस्याम्
 
 Optionally tritiya with tulya-artha and atula, upama words.
+Pāṭha: ashtadhyayi.com data.txt row i=23072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tulyArTEratulopamAByAM tftIyAnyatarasyAm',
     text_dev              = 'तुल्यार्थैरतुलोपमाभ्यां तृतीयाऽन्यतरस्याम्',
+    samagra_slp1          = "anaBihite tulya-arTEH a-tulA-upamAByAm tftIyA anyatarasyAm zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते तुल्य-अर्थैः अ-तुला-उपमाभ्याम् तृतीया अन्यतरस्याम् षष्ठी",
     padaccheda_dev        = "तुल्य-अर्थे अतुल-उपमाभ्याम् तृतीया अन्यतरस्याम्",
     why_dev               = "तृतीया च तुल्य-अर्थे अतुल-उपमाभ्याम् अन्यतरस्याम् (२.३.७२)।",
     anuvritti_from        = ('2.3.18',),

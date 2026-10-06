@@ -13,6 +13,7 @@ Example: *devadattāya śataṃ dhārayati* — Devadatta is the uttamarṇa/sam
 *Engine:* A Term carrying ``"uttamarNa_DArI"`` (pipeline-set) gets tag
 ``"sampradAna"``.  ``cond`` reads only structural semantic tags
 (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -53,6 +54,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = 'DAreruttamarRaH',
     text_dev              = 'धारेरुत्तमर्णः',
+    samagra_slp1          = "AkaqArAt ekA saMjYA kArake DAreH uttamarRaH sampradAnam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा कारके धारेः उत्तमर्णः सम्प्रदानम्",
     padaccheda_dev        = "धारेः / उत्तमर्णः",
     why_dev               = (
         "धारि-धातोः (ऋणे प्रयुक्तस्य) प्रसङ्गे उत्तमर्णः (ऋणदाता) "

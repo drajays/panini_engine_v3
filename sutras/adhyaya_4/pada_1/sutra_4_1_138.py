@@ -4,6 +4,7 @@
 Padaccheda: क्षत्रात् घः
 
 क्षत्राद्घः (4.1.138)
+Pāṭha: ashtadhyayi.com data.txt row i=41138 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kzatrAdGaH",
     text_dev              = "क्षत्राद्घः",
+    samagra_slp1          = "tasya apatyam iti kzatrAt GaH",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) क्षत्रात् घः",
     padaccheda_dev        = "क्षत्रात् घः",
     why_dev               = "(सूत्रम् 4.1.138) क्षत्राद्घः।",
     anuvritti_from        = ('4.1.1',),

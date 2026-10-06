@@ -4,6 +4,7 @@
 Padaccheda: अर्थे
 
 अर्थे (6.2.44)
+Pāṭha: ashtadhyayi.com data.txt row i=62044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "arTe",
     text_dev              = "अर्थे",
+    samagra_slp1          = "arTe prakftyA pUrvapadam caturTI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अर्थे प्रकृत्या पूर्वपदम् चतुर्थी",
     padaccheda_dev        = "अर्थे",
     why_dev               = "(सूत्रम् 6.2.44) अर्थे।",
     anuvritti_from        = ('6.1.1',),

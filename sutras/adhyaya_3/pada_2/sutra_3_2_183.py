@@ -4,6 +4,7 @@
 Padaccheda: हल-सूकरयोः पुवः
 
 krt-suffix rule: हलसूकरयोः पुवः (183)
+Pāṭha: ashtadhyayi.com data.txt row i=32183 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "halasUkarayoH puvaH",
     text_dev              = "हलसूकरयोः पुवः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne hala-sUkarayoH puvaH kft zwran karaRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने हल-सूकरयोः पुवः कृत् ष्ट्रन् करणे",
     padaccheda_dev        = "हल-सूकरयोः पुवः",
     why_dev               = "धातोः कृत्-प्रत्ययः [हलसूकरयोः पुवः] विहितः (३.२.183)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

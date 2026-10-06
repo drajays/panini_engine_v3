@@ -4,6 +4,7 @@
 Padaccheda: गृष्टि-आदिभ्यः च
 
 गृष्ट्यादिभ्यश्च (4.1.136)
+Pāṭha: ashtadhyayi.com data.txt row i=41136 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gfzwyAdiByaSca",
     text_dev              = "गृष्ट्यादिभ्यश्च",
+    samagra_slp1          = "tasya apatyam iti gfzwyAdiByaH QaY",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) गृष्ट्यादिभ्यः ढञ्",
     padaccheda_dev        = "गृष्टि-आदिभ्यः च",
     why_dev               = "(सूत्रम् 4.1.136) गृष्ट्यादिभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

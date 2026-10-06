@@ -4,6 +4,7 @@
 Padaccheda: शरद्वत्-शुनक-दर्भात् भृगु-वत्स-आग्रायणेषु
 
 शरद्वच्छुनकदर्भाद्भृगुवत्साग्रायणेषु (4.1.102)
+Pāṭha: ashtadhyayi.com data.txt row i=41102 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SaradvacCunakadarBAdBfguvatsAgrAyaRezu",
     text_dev              = "शरद्वच्छुनकदर्भाद्भृगुवत्साग्रायणेषु",
+    samagra_slp1          = "tasya gotre apatyam iti Saradvat-Sunaka-darBAt Bfgu-vatsa-AgrAyaRezu Pak",
+    samagra_dev           = "'तस्य गोत्रे अपत्यम्' (इति)  शरद्वत्-शुनक-दर्भात् भृगु-वत्स-आग्रायणेषु फक्",
     padaccheda_dev        = "शरद्वत्-शुनक-दर्भात् भृगु-वत्स-आग्रायणेषु",
     why_dev               = "(सूत्रम् 4.1.102) शरद्वच्छुनकदर्भाद्भृगुवत्साग्रायणेषु।",
     anuvritti_from        = ('4.1.1',),

@@ -8,6 +8,7 @@ Example: *mukham prati* → *pratimukham* ("face to face / proportional to the f
 
 v3 narrow slice: gate-marks the avyayībhāva samāsa (prati-mātrārtha
 usage) with key ``2_1_9_sup_prati_matra``.
+Pāṭha: ashtadhyayi.com data.txt row i=21009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -41,6 +42,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'suppratinA mAtrArTe',
     text_dev              = 'सुप्प्रतिना मात्रार्थे',
+    samagra_slp1          = "sup mAtrArTe pratinA supA saha samAsaH",
+    samagra_dev           = "सुप् मात्रार्थे प्रतिना सुपा सह समासः",
     padaccheda_dev        = "सुप् / प्रतिना / मात्रार्थे",
     why_dev               = "सुप्-प्रति-योगे मात्रार्थे अव्ययीभावः (२.१.९)।",
     anuvritti_from        = ("2.1.5",),

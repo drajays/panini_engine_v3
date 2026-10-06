@@ -4,6 +4,7 @@
 Padaccheda: तिङः गोत्र-आदीनि कुत्सन-आभीक्ष्ण्ययोः
 
 तिङो गोत्रादीनि कुत्सनाभीक्ष्ण्ययोः (8.1.27)
+Pāṭha: ashtadhyayi.com data.txt row i=81027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tiNo gotrAdIni kutsanABIkzRyayoH",
     text_dev              = "तिङो गोत्रादीनि कुत्सनाभीक्ष्ण्ययोः",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO tiNaH gotrAdIni kutsanABIkzRyayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ तिङः गोत्रादीनि कुत्सनाभीक्ष्ण्ययोः",
     padaccheda_dev        = "तिङः गोत्र-आदीनि कुत्सन-आभीक्ष्ण्ययोः",
     why_dev               = "(सूत्रम् 8.1.27) तिङो गोत्रादीनि कुत्सनाभीक्ष्ण्ययोः।",
     anuvritti_from        = ('8.1.1',),

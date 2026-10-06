@@ -4,6 +4,7 @@
 Padaccheda: नरे संज्ञायाम्
 
 नरे संज्ञायाम् (6.3.129)
+Pāṭha: ashtadhyayi.com data.txt row i=63129 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nare saMjYAyAm",
     text_dev              = "नरे संज्ञायाम्",
+    samagra_slp1          = "uttarapade saMhitAyAm nare saMjYAyAm dIrGaH viSvasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् नरे संज्ञायाम् दीर्घः विश्वस्य",
     padaccheda_dev        = "नरे संज्ञायाम्",
     why_dev               = "(सूत्रम् 6.3.129) नरे संज्ञायाम्।",
     anuvritti_from        = ('6.1.1',),

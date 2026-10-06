@@ -4,6 +4,7 @@
 Padaccheda: तत् अस्य संजातम् तारका-आदिभ्यः इतच्
 
 तदस्य संजातं तारकाऽऽदिभ्य इतच् (5.2.36)
+Pāṭha: ashtadhyayi.com data.txt row i=52036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tadasya saMjAtaM tArakAdiBya itac',
     text_dev              = 'तदस्य संजातं तारकादिभ्य इतच्',
+    samagra_slp1          = "saMjAtam tat asya iti tArakAdiByaH itac",
+    samagra_dev           = "'संजातम् तत् अस्य' (इति) तारकादिभ्यः इतच्",
     padaccheda_dev        = "तत् अस्य संजातम् तारका-आदिभ्यः इतच्",
     why_dev               = "(सूत्रम् 5.2.36) तदस्य संजातं तारकाऽऽदिभ्य इतच्।",
     anuvritti_from        = ('4.1.82',),

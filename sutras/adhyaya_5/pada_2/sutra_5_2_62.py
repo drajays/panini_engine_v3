@@ -4,6 +4,7 @@
 Padaccheda: गोषद-आदिभ्यः वुन्
 
 गोषदादिभ्यो वुन् (5.2.62)
+Pāṭha: ashtadhyayi.com data.txt row i=52062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gozadAdiByo vun",
     text_dev              = "गोषदादिभ्यो वुन्",
+    samagra_slp1          = "matO aDyAya-anuvAkayoH gozadAdiByaH vun",
+    samagra_dev           = "मतौ अध्याय-अनुवाकयोः गोषदादिभ्यः वुन्",
     padaccheda_dev        = "गोषद-आदिभ्यः वुन्",
     why_dev               = "(सूत्रम् 5.2.62) गोषदादिभ्यो वुन्।",
     anuvritti_from        = ('4.1.82',),

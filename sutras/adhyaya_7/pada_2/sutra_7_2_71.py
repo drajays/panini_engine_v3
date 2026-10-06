@@ -4,6 +4,7 @@
 Padaccheda: अञ्जेः सिचि
 
 अञ्जेः सिचि (7.2.71)
+Pāṭha: ashtadhyayi.com data.txt row i=72071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aYjeH sici",
     text_dev              = "अञ्जेः सिचि",
+    samagra_slp1          = "aNgasya aYjeH sici ArDaDAtukasya iw valAdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अञ्जेः सिचि आर्धधातुकस्य इट् वलादेः",
     padaccheda_dev        = "अञ्जेः सिचि",
     why_dev               = "(सूत्रम् 7.2.71) अञ्जेः सिचि।",
     anuvritti_from        = ('7.1.1',),

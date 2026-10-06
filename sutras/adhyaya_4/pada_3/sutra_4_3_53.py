@@ -16,6 +16,7 @@ Repetition of *tatra* stops *anuvṛtti* of *tadasya*; *kālāt* *anuvṛtti* ce
 clear **``META_JATI_BLOCK``** (or leave it unset) so **4.3.25** *jāti* sense
 does not claim the context.  **4.1.83** *adhikāra* must be in effect.
 ``cond`` does not read paradigm coordinates (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=43053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     text_dev       = (
         'तत्र भवः'
     ),
+    samagra_slp1   = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA tatra BavaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा तत्र भवः",
     padaccheda_dev = "तत्र (अव्ययम्) / भवः (प्रथमा-एकवचनम्)",
     why_dev        = (
         "सप्तमीसमर्थाद् ङ्याप्प्रातिपदिकाद् भवार्थे (सत्तायाम्, न जन्मनि) "

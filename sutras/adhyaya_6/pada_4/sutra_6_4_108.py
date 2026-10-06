@@ -14,6 +14,7 @@ This accounts for the alternation:
   • kur + u + anti  →  kur + v + anti (6.1.77) = kurvanti (AC-initial, not this rule)
 
 Fires after 6.4.110 (a→u: kar→kur) in the bhuvādi spine.
+Pāṭha: ashtadhyayi.com data.txt row i=64108 (Art. 14).
 """
 from __future__ import annotations
 
@@ -75,6 +76,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nityaM karoteH",
     text_dev              = "नित्यं करोतेः",
+    samagra_slp1          = "karoteH aNgasya utaH pratyayasya mvoH nityaM lopaH",
+    samagra_dev           = "करोतेः अङ्गस्य उतः प्रत्ययस्य म्वोः नित्यं लोपः",
     padaccheda_dev        = "नित्यम् / करोतेः",
     why_dev               = (
         "करोति-धातोः उ-विकरणस्य लोपः नित्यम् — अवल्-आदि-सार्वधातुके परे "

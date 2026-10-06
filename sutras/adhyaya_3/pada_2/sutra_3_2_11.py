@@ -4,6 +4,7 @@
 Padaccheda: आङि ताच्छील्ये
 
 krt-suffix rule: आङि ताच्छील्ये (11)
+Pāṭha: ashtadhyayi.com data.txt row i=32011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ANi tAcCIlye",
     text_dev              = "आङि ताच्छील्ये",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH ANi tAcCIlye kft karmaRi anupasarge supi harateH ac",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः आङि ताच्छील्ये कृत् कर्मणि अनुपसर्गे सुपि हरतेः अच्",
     padaccheda_dev        = "आङि ताच्छील्ये",
     why_dev               = "धातोः कृत्-प्रत्ययः [आङि ताच्छील्ये] विहितः (३.२.11)।",
     anuvritti_from        = ('3.1.1',),

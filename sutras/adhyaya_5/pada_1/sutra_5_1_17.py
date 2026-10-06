@@ -4,6 +4,7 @@
 Padaccheda: परिखायाः ढञ्
 
 परिखाया ढञ् (5.1.17)
+Pāṭha: ashtadhyayi.com data.txt row i=51017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pariKAyA QaY",
     text_dev              = "परिखाया ढञ्",
+    samagra_slp1          = "tat asya syAt iti taTA tat asmin syAt iti iti pariKAyAH QaY",
+    samagra_dev           = "'तत् अस्य स्यात् इति' (तथा)  'तत् अस्मिन् स्यात् इति' (इति) परिखायाः ढञ्",
     padaccheda_dev        = "परिखायाः ढञ्",
     why_dev               = "(सूत्रम् 5.1.17) परिखाया ढञ्।",
     anuvritti_from        = ('5.1.1',),

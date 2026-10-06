@@ -4,6 +4,7 @@
 Padaccheda: तावतिथम् ग्रहणम् इति लुक् वा
 
 तावतिथं ग्रहणमिति लुग्वा (5.2.77)
+Pāṭha: ashtadhyayi.com data.txt row i=52077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tAvatiTaM grahaRamiti lugvA",
     text_dev              = "तावतिथं ग्रहणमिति लुग्वा",
+    samagra_slp1          = "tAvatiTam grahaRam iti luk vA kan",
+    samagra_dev           = "तावतिथम् ग्रहणम् इति लुक् वा, कन्",
     padaccheda_dev        = "तावतिथम् ग्रहणम् इति लुक् वा",
     why_dev               = "(सूत्रम् 5.2.77) तावतिथं ग्रहणमिति लुग्वा।",
     anuvritti_from        = ('4.1.82',),

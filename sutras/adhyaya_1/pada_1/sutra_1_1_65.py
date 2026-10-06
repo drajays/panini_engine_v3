@@ -6,6 +6,7 @@ of the minimal dhātu segment) is called *upadhā*.
 
 Narrow engine use: for a triliteral dhātu shape ``CVC`` (hal–ac–hal), the
 medial vowel index is registered for ``7.2.116`` / paribhāṣā alignment.
+Pāṭha: ashtadhyayi.com data.txt row i=11065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'alontyAt pUrva upaDA',
     text_dev       = 'अलोऽन्त्यात् पूर्व उपधा',
+    samagra_slp1   = "antyAt alaH pUrvaH upaDA",
+    samagra_dev    = "अन्त्यात् अलः पूर्वः उपधा",
     padaccheda_dev = "अलः अन्त्यात् पूर्वः उपधा",
     why_dev        = "अन्त्याल्-वर्णात् पूर्वः वर्णः उपधा-संज्ञकः।",
     anuvritti_from = ("1.1.64",),

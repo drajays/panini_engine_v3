@@ -4,6 +4,7 @@
 Padaccheda: शुष्क-धृष्टौ
 
 शुष्कधृष्टौ (6.1.206)
+Pāṭha: ashtadhyayi.com data.txt row i=61206 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SuzkaDfzwO",
     text_dev              = "शुष्कधृष्टौ",
+    samagra_slp1          = "Suzka-DfzwO udAttaH AdiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "शुष्क-धृष्टौ उदात्तः आदिः",
     padaccheda_dev        = "शुष्क-धृष्टौ",
     why_dev               = "(सूत्रम् 6.1.206) शुष्कधृष्टौ।",
     anuvritti_from        = ('6.1.1',),

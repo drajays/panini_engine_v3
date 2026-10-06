@@ -4,6 +4,7 @@
 Padaccheda: भो · भगो · अघो · अपूर्वस्य · यः · अशि
 
 भोभगोअघोअपूर्वस्य योऽशि (8.3.17)
+Pāṭha: ashtadhyayi.com data.txt row i=83017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'BoBagoaGoapUrvasya yoSi',
     text_dev              = 'भोभगोअघोअपूर्वस्य योऽशि',
+    samagra_slp1          = "Bo-Bago-aGo-apUrvasya padasya roH aSi yaH",
+    samagra_dev           = "भो-भगो-अघो-अपूर्वस्य पदस्य रोः अशि यः",
     padaccheda_dev        = "भो · भगो · अघो · अपूर्वस्य · यः · अशि",
     why_dev               = "(सूत्रम् 8.3.17) भोभगोअघोअपूर्वस्य योऽशि।",
     anuvritti_from        = ('8.1.1',),

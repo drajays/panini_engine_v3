@@ -4,6 +4,7 @@
 Padaccheda: षट्-कति-कतिपय-चतुराम् थुक्
 
 षट्कतिकतिपयचतुरां थुक् (5.2.51)
+Pāṭha: ashtadhyayi.com data.txt row i=52051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "zawkatikatipayacaturAM Tuk",
     text_dev              = "षट्कतिकतिपयचतुरां थुक्",
+    samagra_slp1          = "tasya pUraRe iti qawi zaw-kati-katipaya-caturAm Tuk",
+    samagra_dev           = "'तस्य पूरणे' (इति) डटि षट्-कति-कतिपय-चतुराम् थुक्",
     padaccheda_dev        = "षट्-कति-कतिपय-चतुराम् थुक्",
     why_dev               = "(सूत्रम् 5.2.51) षट्कतिकतिपयचतुरां थुक्।",
     anuvritti_from        = ('4.1.82',),

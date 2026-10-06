@@ -4,6 +4,7 @@
 Padaccheda: अणः अ-प्रगृह्यस्य अनुनासिकः
 
 अणोऽप्रगृह्यस्यानुनासिकः (8.4.57)
+Pāṭha: ashtadhyayi.com data.txt row i=84057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'aRopragfhyasyAnunAsikaH',
     text_dev              = 'अणोऽप्रगृह्यस्यानुनासिकः',
+    samagra_slp1          = "apragfhyasya aRaH avasAne vA anunAsikaH",
+    samagra_dev           = "अप्रगृह्यस्य अणः अवसाने वा अनुनासिकः",
     padaccheda_dev        = "अणः अ-प्रगृह्यस्य अनुनासिकः",
     why_dev               = "(सूत्रम् 8.4.57) अणोऽप्रगृह्यस्यानुनासिकः।",
     anuvritti_from        = ('8.1.1',),

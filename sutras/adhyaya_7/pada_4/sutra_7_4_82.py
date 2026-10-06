@@ -3,6 +3,7 @@
 
 Glass-box scope for `loluv`:
   Apply guṇa to the abhyāsa vowel U→o (lU → lo).
+Pāṭha: ashtadhyayi.com data.txt row i=74082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -48,6 +49,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'guRo yaNlukoH',
     text_dev       = 'गुणो यङ्लुकोः',
+    samagra_slp1   = "aNgasya aByAsasya guRaH yaNlukoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "अङ्गस्य अभ्यासस्य गुणः यङ्लुकोः",
     padaccheda_dev = "गुणः / यङ्-लुकोः",
     why_dev        = "यङ्-प्रसङ्गे अभ्यासस्य गुणः (लू→लो)।",
     anuvritti_from = ("7.4.1",),

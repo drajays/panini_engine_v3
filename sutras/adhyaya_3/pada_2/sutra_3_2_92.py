@@ -4,6 +4,7 @@
 Padaccheda: कर्मणि अग्नि-आख्यायाम्
 
 krt-suffix rule: कर्मण्यग्न्याख्यायाम् (92)
+Pāṭha: ashtadhyayi.com data.txt row i=32092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "karmaRyagnyAKyAyAm",
     text_dev              = "कर्मण्यग्न्याख्यायाम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte karmaRi agnyAKyAyAm kft kvip",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते कर्मणि अग्न्याख्यायाम् कृत् क्विप्",
     padaccheda_dev        = "कर्मणि अग्नि-आख्यायाम्",
     why_dev               = "धातोः कृत्-प्रत्ययः [कर्मण्यग्न्याख्यायाम्] विहितः (३.२.92)।",
     anuvritti_from        = ('3.1.1',),

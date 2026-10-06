@@ -4,6 +4,7 @@
 Padaccheda: लिङ्‍-सिचोः आत्मनेपदेषु
 
 लिङ्सिचोरात्मनेपदेषु (7.2.42)
+Pāṭha: ashtadhyayi.com data.txt row i=72042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "liNsicorAtmanepadezu",
     text_dev              = "लिङ्सिचोरात्मनेपदेषु",
+    samagra_slp1          = "aNgasya liNsicoH Atmanepadezu valAdeH iw ArDaDAtukasya vFtaH vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य लिङ्सिचोः आत्मनेपदेषु वलादेः इट् आर्धधातुकस्य वॄतः वा",
     padaccheda_dev        = "लिङ्‍-सिचोः आत्मनेपदेषु",
     why_dev               = "(सूत्रम् 7.2.42) लिङ्सिचोरात्मनेपदेषु।",
     anuvritti_from        = ('7.1.1',),

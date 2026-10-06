@@ -4,6 +4,7 @@
 Padaccheda: खार्याः ईकन्
 
 खार्या ईकन् (5.1.33)
+Pāṭha: ashtadhyayi.com data.txt row i=51033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "KAryA Ikan",
     text_dev              = "खार्या ईकन्",
+    samagra_slp1          = "A-arhAt KAryAH aDyarDapUrvadvigoH Ikan",
+    samagra_dev           = "आ-अर्हात् खार्याः अध्यर्धपूर्वद्विगोः ईकन्",
     padaccheda_dev        = "खार्याः ईकन्",
     why_dev               = "(सूत्रम् 5.1.33) खार्या ईकन्।",
     anuvritti_from        = ('5.1.19',),

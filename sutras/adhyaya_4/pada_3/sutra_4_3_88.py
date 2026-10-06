@@ -4,6 +4,7 @@
 Padaccheda: शिशु-क्रन्द-यमसभ-द्वन्द्व-इन्द्रजनन-आदिभ्यः छः
 
 शिशुक्रन्दयमसभद्वंद्वेन्द्रजननादिभ्यश्छः (4.3.88)
+Pāṭha: ashtadhyayi.com data.txt row i=43088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'SiSukrandayamasaBadvandvendrajananAdiByaSCaH',
     text_dev              = 'शिशुक्रन्दयमसभद्वन्द्वेन्द्रजननादिभ्यश्छः',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA SiSukranda-yamasaBa-dvandva-indrajanana-AdiByaH CaH tat aDikftya kfte granTe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा शिशुक्रन्द-यमसभ-द्वन्द्व-इन्द्रजनन-आदिभ्यः छः तत् अधिकृत्य कृते ग्रन्थे",
     padaccheda_dev        = "शिशु-क्रन्द-यमसभ-द्वन्द्व-इन्द्रजनन-आदिभ्यः छः",
     why_dev               = "(सूत्रम् 4.3.88) शिशुक्रन्दयमसभद्वंद्वेन्द्रजननादिभ्यश्छः।",
     anuvritti_from        = ('4.1.1',),

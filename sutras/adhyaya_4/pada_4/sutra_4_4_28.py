@@ -4,6 +4,7 @@
 Padaccheda: तत् प्रति-अनु-पूर्वम् ईप-लोम-कूलम्
 
 तत् प्रत्यनुपूर्वमीपलोमकूलम् (4.4.28)
+Pāṭha: ashtadhyayi.com data.txt row i=44028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tat pratyanupUrvamIpalomakUlam",
     text_dev              = "तत् प्रत्यनुपूर्वमीपलोमकूलम्",
+    samagra_slp1          = "tat prati-anupUrvam Ipa-loma-kUlam vartate iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् प्रति-अनुपूर्वम् ईप-लोम-कूलम् वर्तते' इति समर्थानाम् प्रथमात् परः ठक्  प्रत्ययः",
     padaccheda_dev        = "तत् प्रति-अनु-पूर्वम् ईप-लोम-कूलम्",
     why_dev               = "(सूत्रम् 4.4.28) तत् प्रत्यनुपूर्वमीपलोमकूलम्।",
     anuvritti_from        = ('4.1.1',),

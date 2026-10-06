@@ -4,6 +4,7 @@
 Padaccheda: वि-नञ्भ्याम् ना-नाञौ न-सह
 
 विनञ्भ्यां नानाञौ नसह (5.2.27)
+Pāṭha: ashtadhyayi.com data.txt row i=52027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vinaYByAM nAnAYO nasaha",
     text_dev              = "विनञ्भ्यां नानाञौ नसह",
+    samagra_slp1          = "nasaha iti vi-naY-ByAm nA-nAYO",
+    samagra_dev           = "नसह (इति) वि-नञ्-भ्याम् ना-नाञौ",
     padaccheda_dev        = "वि-नञ्भ्याम् ना-नाञौ न-सह",
     why_dev               = "(सूत्रम् 5.2.27) विनञ्भ्यां नानाञौ नसह।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: शेषे विभाषा
 
 शेषे विभाषा (8.1.41)
+Pāṭha: ashtadhyayi.com data.txt row i=81041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Seze viBAzA",
     text_dev              = "शेषे विभाषा",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO Seze viBAzA tiN na aho",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ शेषे विभाषा तिङ् न अहो",
     padaccheda_dev        = "शेषे विभाषा",
     why_dev               = "(सूत्रम् 8.1.41) शेषे विभाषा।",
     anuvritti_from        = ('8.1.1',),

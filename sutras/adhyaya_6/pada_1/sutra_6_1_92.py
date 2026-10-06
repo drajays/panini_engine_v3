@@ -4,6 +4,7 @@
 Padaccheda: वा सुपि आपिशलेः
 
 वा सुप्यापिशलेः (6.1.92)
+Pāṭha: ashtadhyayi.com data.txt row i=61092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA supyApiSaleH",
     text_dev              = "वा सुप्यापिशलेः",
+    samagra_slp1          = "At upasargAt fti supi DAtO pUrvaparayoH vfdDi-ekAdeSaH vA ",
+    samagra_dev           = "आत् उपसर्गात् ऋति सुपि धातौ पूर्वपरयोः वृद्धि-एकादेशः वा ।",
     padaccheda_dev        = "वा सुपि आपिशलेः",
     why_dev               = "(सूत्रम् 6.1.92) वा सुप्यापिशलेः।",
     anuvritti_from        = ('6.1.1',),

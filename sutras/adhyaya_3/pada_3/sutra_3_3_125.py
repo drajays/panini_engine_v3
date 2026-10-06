@@ -4,6 +4,7 @@
 Padaccheda: खनः घ (लुप्तप्रथमान्तनिर्देशः) च
 
 krt-suffix rule: खनो घ च
+Pāṭha: ashtadhyayi.com data.txt row i=33125 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Kano Ga ca",
     text_dev              = "खनो घ च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH karaRADikaraRayoH KanaH Ga ca kft karaRa-aDikaraRayoH puMsi GaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः करणाधिकरणयोः खनः घ च कृत् करण-अधिकरणयोः पुंसि घञ्",
     padaccheda_dev        = "खनः घ (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "धातोः प्रत्ययः (३.3.125)।",
     anuvritti_from        = ('3.1.1',),

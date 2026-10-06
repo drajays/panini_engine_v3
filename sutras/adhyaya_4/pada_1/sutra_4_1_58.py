@@ -4,6 +4,7 @@
 Padaccheda: नख-मुखात् संज्ञायाम्
 
 नखमुखात् संज्ञायाम् (4.1.58)
+Pāṭha: ashtadhyayi.com data.txt row i=41058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "naKamuKAt saMjYAyAm",
     text_dev              = "नखमुखात् संज्ञायाम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt naKa-muKAt saMjYAyAm NIz sva-aNgAt ca upasarjanAt a-saMyoga-upaDAt na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् नख-मुखात् संज्ञायाम् ङीष् स्व-अङ्गात् च उपसर्जनात् अ-संयोग-उपधात् न",
     padaccheda_dev        = "नख-मुखात् संज्ञायाम्",
     why_dev               = "(सूत्रम् 4.1.58) नखमुखात् संज्ञायाम्।",
     anuvritti_from        = ('4.1.1',),

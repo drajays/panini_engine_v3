@@ -4,6 +4,7 @@
 Padaccheda: उपमानानि सामान्य-वचनैः
 
 Comparison bases (upamana) with samanya-vacana form karmadharaya.
+Pāṭha: ashtadhyayi.com data.txt row i=21055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upamAnAni sAmAnyavacanEH",
     text_dev              = "उपमानानि सामान्यवचनैः",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH upamAnAni sAmAnya-vacanEH samAnADikaraRena",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः उपमानानि सामान्य-वचनैः समानाधिकरणेन",
     padaccheda_dev        = "उपमानानि सामान्य-वचनैः",
     why_dev               = "उपमानानि सामान्य-वचनैः सह कर्मधारयः (२.१.५५)।",
     anuvritti_from        = ('2.1.3',),

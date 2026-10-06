@@ -9,6 +9,7 @@ the tiṅ ādeśa `dhve`. Extends 8.2.24's scope to include `dh`.
 Arm flag: state.meta["8_2_25_arm"] must be True.
 Finds tāsi term with final s, where next term starts with D (dha).
 Works before pada-merge (cross-term).
+Pāṭha: ashtadhyayi.com data.txt row i=82025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -67,6 +68,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Di ca",
     text_dev              = "धि च",
+    samagra_slp1          = "padasya pUrvatrAsidDam Di ca lopaH sasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् धि च लोपः सस्य",
     padaccheda_dev        = "धि च",
     why_dev               = "(सूत्रम् 8.2.25) धि च।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: तुः इष्ठ-इमा-ईयस्सु
 
 तुरिष्ठेमेयस्सु (6.4.154)
+Pāṭha: ashtadhyayi.com data.txt row i=64154 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "turizWemeyassu",
     text_dev              = "तुरिष्ठेमेयस्सु",
+    samagra_slp1          = "aNgasya asidDavadatrABAt Basya tuH izWa-iman-Iyassu lopaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् भस्य तुः इष्ठ-इमन्-ईयस्सु लोपः",
     padaccheda_dev        = "तुः इष्ठ-इमा-ईयस्सु",
     why_dev               = "(सूत्रम् 6.4.154) तुरिष्ठेमेयस्सु।",
     anuvritti_from        = ('6.1.1',),

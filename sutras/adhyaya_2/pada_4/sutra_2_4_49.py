@@ -4,6 +4,7 @@
 Padaccheda: गाङ् लिटि
 
 gang root in lit (perfect).
+Pāṭha: ashtadhyayi.com data.txt row i=24049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gAN liwi",
     text_dev              = "गाङ् लिटि",
+    samagra_slp1          = "ArDaDAtuke gAN liwi iNaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके गाङ् लिटि इङः",
     padaccheda_dev        = "गाङ् लिटि",
     why_dev               = "गाङ् लिटि (२.४.४९)।",
     anuvritti_from        = ('2.4.40',),

@@ -97,6 +97,8 @@ SUTRA = SutraRecord(
     text_dev=(
         'अनुदात्तोपदेशवनतितनोत्यादीनामनुनासिक लोपो झलि क्ङिति'
     ),
+    samagra_slp1="anudAttopadeSa-anunAsika-vanati-tanoti-AdInAmaNgasya Jali kNiti lopaH",
+    samagra_dev="अनुदात्तोपदेश-अनुनासिक-वनति-तनोति-आदीनामङ्गस्य झलि क्ङिति लोपः",
     padaccheda_dev=(
         "अनुदात्तोपदेश-… / अनुनासिकस्य / लोपः / झलि / क्ङिति"
     ),

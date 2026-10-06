@@ -40,8 +40,10 @@ exact shape:
     SUTRA = SutraRecord(
         sutra_id       = "X.Y.Z",
         sutra_type     = SutraType.<TYPE>,
-        text_slp1      = "<full sūtra, anuvṛtti baked in>",
-        text_dev       = "<full Devanāgarī, anuvṛtti baked in>",
+        text_slp1      = "<mūla pāṭha, SLP1>",
+        text_dev       = "<mūla pāṭha, Devanāgarī>",
+        samagra_slp1   = "<full sentence, anuvṛtti baked in, SLP1>",   # Art. 4
+        samagra_dev    = "<full sentence, anuvṛtti baked in>",
         padaccheda_dev = "<word-split Devanāgarī>",
         why_dev        = "<one-line Devanāgarī justification>",
         anuvritti_from = ("A.B.C", ...),   # metadata only

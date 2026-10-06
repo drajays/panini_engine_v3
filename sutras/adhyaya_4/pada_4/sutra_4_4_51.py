@@ -4,6 +4,7 @@
 Padaccheda: तत् अस्य पण्यम्
 
 तदस्य पण्यम् (4.4.51)
+Pāṭha: ashtadhyayi.com data.txt row i=44051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadasya paRyam",
     text_dev              = "तदस्य पण्यम्",
+    samagra_slp1          = "tat asya paRyam iti samarTAnAM praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् अस्य पण्यम्' इति समर्थानां प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "तत् अस्य पण्यम्",
     why_dev               = "(सूत्रम् 4.4.51) तदस्य पण्यम्।",
     anuvritti_from        = ('4.1.1',),

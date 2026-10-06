@@ -4,6 +4,7 @@
 Padaccheda: कर्त्रोः जीव-पुरुषयोः नशि-वहोः
 
 krt-suffix rule: कर्त्रोर्जीवपुरुषयोर्नशिवहोः
+Pāṭha: ashtadhyayi.com data.txt row i=34043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kartrorjIvapuruzayornaSivahoH",
     text_dev              = "कर्त्रोर्जीवपुरुषयोर्नशिवहोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kartroH jIva-puruzayoH naSi-vahoH kft Ramul",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कर्त्रोः जीव-पुरुषयोः नशि-वहोः कृत् णमुल्",
     padaccheda_dev        = "कर्त्रोः जीव-पुरुषयोः नशि-वहोः",
     why_dev               = "धातोः प्रत्ययः (३.4.43)।",
     anuvritti_from        = ('3.1.1',),

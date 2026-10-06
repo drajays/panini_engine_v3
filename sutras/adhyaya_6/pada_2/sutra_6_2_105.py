@@ -4,6 +4,7 @@
 Padaccheda: उत्तरपद-वृद्धौ सर्वम् च
 
 उत्तरपदवृद्धौ सर्वं च (6.2.105)
+Pāṭha: ashtadhyayi.com data.txt row i=62105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uttarapadavfdDO sarvaM ca",
     text_dev              = "उत्तरपदवृद्धौ सर्वं च",
+    samagra_slp1          = "udAttaH antaH uttarapadavfdDO sarvam ca pUrvapadam dikSabdAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः उत्तरपदवृद्धौ सर्वम् च पूर्वपदम् दिक्शब्दाः",
     padaccheda_dev        = "उत्तरपद-वृद्धौ सर्वम् च",
     why_dev               = "(सूत्रम् 6.2.105) उत्तरपदवृद्धौ सर्वं च।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: द्वि-अचः अतः तिङः
 
 द्व्यचोऽतस्तिङः (6.3.135)
+Pāṭha: ashtadhyayi.com data.txt row i=63135 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'dvyacotastiNaH',
     text_dev              = 'द्व्यचोऽतस्तिङः',
+    samagra_slp1          = "uttarapade saMhitAyAm dvyacaH ataH tiNaH dIrGaH fci",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् द्व्यचः अतः तिङः दीर्घः ऋचि",
     padaccheda_dev        = "द्वि-अचः अतः तिङः",
     why_dev               = "(सूत्रम् 6.3.135) द्व्यचोऽतस्तिङः।",
     anuvritti_from        = ('6.1.1',),

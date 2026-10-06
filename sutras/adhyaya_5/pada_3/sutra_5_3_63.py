@@ -4,6 +4,7 @@
 Padaccheda: अन्तिक-बाढयोः नेद-साधौ
 
 अन्तिकबाढयोर्नेदसाधौ (5.3.63)
+Pāṭha: ashtadhyayi.com data.txt row i=53063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "antikabAQayornedasADO",
     text_dev              = "अन्तिकबाढयोर्नेदसाधौ",
+    samagra_slp1          = "atiSAyane ajAdyoH antika-bAQayoH neda-sADO",
+    samagra_dev           = "अतिशायने अजाद्योः अन्तिक-बाढयोः नेद-साधौ",
     padaccheda_dev        = "अन्तिक-बाढयोः नेद-साधौ",
     why_dev               = "(सूत्रम् 5.3.63) अन्तिकबाढयोर्नेदसाधौ।",
     anuvritti_from        = ('4.1.76',),

@@ -4,6 +4,7 @@
 Padaccheda: च-अह-लोप एव इति अवधारणम्
 
 चाहलोप एवेत्यवधारणम् (8.1.62)
+Pāṭha: ashtadhyayi.com data.txt row i=81062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "cAhalopa evetyavaDAraRam",
     text_dev              = "चाहलोप एवेत्यवधारणम्",
+    samagra_slp1          = "padasya padAt anudAttaM sarvamApAdAdO cAhalopa eva iti avaDAraRam tiN na praTamA kziyAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पदात् अनुदात्तं सर्वमापादादौ चाहलोप एव इति अवधारणम् तिङ् न प्रथमा क्षियायाम्",
     padaccheda_dev        = "च-अह-लोप एव इति अवधारणम्",
     why_dev               = "(सूत्रम् 8.1.62) चाहलोप एवेत्यवधारणम्।",
     anuvritti_from        = ('8.1.1',),

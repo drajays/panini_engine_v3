@@ -4,6 +4,7 @@
 Padaccheda: विदेः शतुः वसुः
 
 विदेः शतुर्वसुः (7.1.36)
+Pāṭha: ashtadhyayi.com data.txt row i=71036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "videH SaturvasuH",
     text_dev              = "विदेः शतुर्वसुः",
+    samagra_slp1          = "videH SatuH vasuH anyatarasyAm",
+    samagra_dev           = "विदेः शतुः वसुः अन्यतरस्याम्",
     padaccheda_dev        = "विदेः शतुः वसुः",
     why_dev               = "(सूत्रम् 7.1.36) विदेः शतुर्वसुः।",
     anuvritti_from        = ('7.1.1',),

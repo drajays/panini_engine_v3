@@ -4,6 +4,7 @@
 Padaccheda: गुरोः च हलः
 
 krt-suffix rule: गुरोश्च हलः
+Pāṭha: ashtadhyayi.com data.txt row i=33103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "guroSca halaH",
     text_dev              = "गुरोश्च हलः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm striyAm guroH ca halaH kft a",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् स्त्रियाम् गुरोः च हलः कृत् अ",
     padaccheda_dev        = "गुरोः च हलः",
     why_dev               = "धातोः प्रत्ययः (३.3.103)।",
     anuvritti_from        = ('3.1.1',),

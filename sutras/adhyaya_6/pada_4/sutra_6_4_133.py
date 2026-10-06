@@ -4,6 +4,7 @@
 Padaccheda: श्व-युव-मघोनाम् अ-तद्धिते
 
 श्वयुवमघोनामतद्धिते (6.4.133)
+Pāṭha: ashtadhyayi.com data.txt row i=64133 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SvayuvamaGonAmatadDite",
     text_dev              = "श्वयुवमघोनामतद्धिते",
+    samagra_slp1          = "Sva-yuva-maGonAm Basya aNgasya atadDite samprasAraRam",
+    samagra_dev           = "श्व-युव-मघोनाम् भस्य अङ्गस्य अतद्धिते सम्प्रसारणम्",
     padaccheda_dev        = "श्व-युव-मघोनाम् अ-तद्धिते",
     why_dev               = "(सूत्रम् 6.4.133) श्वयुवमघोनामतद्धिते।",
     anuvritti_from        = ('6.1.1',),

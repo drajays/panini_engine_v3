@@ -4,6 +4,7 @@
 Padaccheda: राजन्वान् सौराज्ये
 
 राजन्वान् सौराज्ये (8.2.14)
+Pāṭha: ashtadhyayi.com data.txt row i=82014 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAjanvAn sOrAjye",
     text_dev              = "राजन्वान् सौराज्ये",
+    samagra_slp1          = "padasya pUrvatrAsidDam rAjanvAn sOrAjye vaH matoH saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् राजन्वान् सौराज्ये वः मतोः संज्ञायाम्",
     padaccheda_dev        = "राजन्वान् सौराज्ये",
     why_dev               = "(सूत्रम् 8.2.14) राजन्वान् सौराज्ये।",
     anuvritti_from        = ('8.1.1',),

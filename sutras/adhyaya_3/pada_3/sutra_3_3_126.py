@@ -4,6 +4,7 @@
 Padaccheda: ईषत्-दुस्-सुषु कृच्छ्र-अकृच्छ्र-अर्थेषु खल्
 
 krt-suffix rule: ईषद्दुःसुषु कृच्छ्राकृच्छ्रार्थेषु खल्
+Pāṭha: ashtadhyayi.com data.txt row i=33126 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "IzadduHsuzu kfcCrAkfcCrArTezu Kal",
     text_dev              = "ईषद्दुःसुषु कृच्छ्राकृच्छ्रार्थेषु खल्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH Izat-dus-suzu kfcCra-akfcCra-arTezu Kal kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः ईषत्-दुस्-सुषु कृच्छ्र-अकृच्छ्र-अर्थेषु खल् कृत्",
     padaccheda_dev        = "ईषत्-दुस्-सुषु कृच्छ्र-अकृच्छ्र-अर्थेषु खल्",
     why_dev               = "धातोः प्रत्ययः (३.3.126)।",
     anuvritti_from        = ('3.1.1',),

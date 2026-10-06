@@ -17,6 +17,16 @@ of nouns and laṭ verbs). Menu `c` refreshes the numbers. CLI: `make confident`
 - **Real rules written/repaired this stage:** 7.1.18, 2.4.75 (gaṇa 3), 6.1.10 (ślu witness), 6.1.78 (hears past lopa),
   8.4.46/47 (now VIBHASHA).
 
+## Reference brain + AMENDMENT 20 (2026-10-06) — READ FIRST
+From now on every agent reads the brain before touching a sūtra: `make brain S=<id>` (see AGENTS.md "Brain").
+AMENDMENT 20 **accepted** and merged: `samagra_*` on all 3,983 records (Art. 4 rewritten; 2,413 composed — check
+vipariṇāma before relying on them); row-i citation in every file; anunāsika ≠ anusvāra (joiner + parser fixed,
+`han~` = हनँ; engine it-prakaraṇa verified on all 2,240 dhātus); दृशिँर्, चक्षिँङ् restored by 1.3.2; `sutra_context.json`
+pāṭha = T0 (ashtadhyayi.com data synced to upstream 5744762: 3.1.73 स्वादिभ्यः, 3.1.31 आर्धधातुके …); legacy
+root field RESOLVED: `raw_dhatu_after_it_lopa_*` = engine it-lopa residue, new `citation_dhatu_*` = traditional root,
+all readers updated (`scripts/fill_dhatu_it_lopa.py` after any dhātupāṭha edit; test pins it). AMENDMENT 21 (vārttika ids `X.Y.Z.vN`) proposed,
+deferred to Track G. Open: `curAdi_10_0470` कर्णँ vs mūla कर्ण (adanta?) needs a scholar; brain `anunasika` lists the rest.
+
 ## Known gaps (the 13 gaṇa-1 misses are rule gaps, not loop gaps)
 3.1.79 reads `vana~/zaRa~/kanI~` as tanādi by stem prefix · 7.3.75 (ṣṭhivu~ → ṣṭhīv) unmodelled · `SrA`/`jYA` homonym rows.
 Recipe still makes राधे by a 6.1.87 shortcut; the loop uses the real 7.1.18 → śī route (C4 will reconcile).

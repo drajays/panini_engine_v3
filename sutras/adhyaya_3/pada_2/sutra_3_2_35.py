@@ -4,6 +4,7 @@
 Padaccheda: विधु-अरुषोः तुदः
 
 krt-suffix rule: विध्वरुषोः तुदः (35)
+Pāṭha: ashtadhyayi.com data.txt row i=32035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'viDvaruzostudaH',
     text_dev              = 'विध्वरुषोस्तुदः',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH viDva-ruzoH tudaH kft karmaRi anupasarge supi KaS",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः विध्व-रुषोः तुदः कृत् कर्मणि अनुपसर्गे सुपि खश्",
     padaccheda_dev        = "विधु-अरुषोः तुदः",
     why_dev               = "धातोः कृत्-प्रत्ययः [विध्वरुषोः तुदः] विहितः (३.२.35)।",
     anuvritti_from        = ('3.1.1',),

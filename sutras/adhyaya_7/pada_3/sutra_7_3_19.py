@@ -4,6 +4,7 @@
 Padaccheda: हृद्-भग-सिन्धु-अन्ते पूर्वपदस्य च
 
 हृद्भगसिन्ध्वन्ते पूर्वपदस्य च (7.3.19)
+Pāṭha: ashtadhyayi.com data.txt row i=73019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hfdBagasinDvante pUrvapadasya ca",
     text_dev              = "हृद्भगसिन्ध्वन्ते पूर्वपदस्य च",
+    samagra_slp1          = "aNgasya uttarapadasya hfdBagasinDvante pUrvapadasya ca vfdDiH acaH YRiti tadDitezu AdeH SvAdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य हृद्भगसिन्ध्वन्ते पूर्वपदस्य च वृद्धिः अचः ञ्णिति तद्धितेषु आदेः श्वादेः",
     padaccheda_dev        = "हृद्-भग-सिन्धु-अन्ते पूर्वपदस्य च",
     why_dev               = "(सूत्रम् 7.3.19) हृद्भगसिन्ध्वन्ते पूर्वपदस्य च।",
     anuvritti_from        = ('7.1.1',),

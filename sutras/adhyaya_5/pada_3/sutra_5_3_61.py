@@ -4,6 +4,7 @@
 Padaccheda: ज्य (लुप्तप्रथमान्तनिर्देशः) च
 
 ज्य च (5.3.61)
+Pāṭha: ashtadhyayi.com data.txt row i=53061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jya ca",
     text_dev              = "ज्य च",
+    samagra_slp1          = "atiSAyane praSasyasya ajAdyoH jyaH",
+    samagra_dev           = "अतिशायने प्रशस्यस्य अजाद्योः  ज्यः",
     padaccheda_dev        = "ज्य (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 5.3.61) ज्य च।",
     anuvritti_from        = ('4.1.76',),

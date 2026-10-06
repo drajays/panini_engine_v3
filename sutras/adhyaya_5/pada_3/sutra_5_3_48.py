@@ -4,6 +4,7 @@
 Padaccheda: पूरणात् भागे तीयात् अन्
 
 पूरणाद्भागे तीयादन् (5.3.48)
+Pāṭha: ashtadhyayi.com data.txt row i=53048 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUraRAdBAge tIyAdan",
     text_dev              = "पूरणाद्भागे तीयादन्",
+    samagra_slp1          = "tIyAt pUraRAt BAge an",
+    samagra_dev           = "तीयात् पूरणात् भागे अन्",
     padaccheda_dev        = "पूरणात् भागे तीयात् अन्",
     why_dev               = "(सूत्रम् 5.3.48) पूरणाद्भागे तीयादन्।",
     anuvritti_from        = ('4.1.76',),

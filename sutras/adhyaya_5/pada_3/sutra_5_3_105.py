@@ -4,6 +4,7 @@
 Padaccheda: कुशाग्रात् छः
 
 कुशाग्राच्छः (5.3.105)
+Pāṭha: ashtadhyayi.com data.txt row i=53105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kuSAgrAcCaH",
     text_dev              = "कुशाग्राच्छः",
+    samagra_slp1          = "kuSAgrAt ive CaH",
+    samagra_dev           = "कुशाग्रात् इवे छः",
     padaccheda_dev        = "कुशाग्रात् छः",
     why_dev               = "(सूत्रम् 5.3.105) कुशाग्राच्छः।",
     anuvritti_from        = ('4.1.76',),

@@ -2,6 +2,7 @@
 3.1.1  प्रत्ययः  —  ADHIKARA
 
 Affix (*pratyaya*) scope opener (3.1.1–5.4.160 in traditional layout).
+Pāṭha: ashtadhyayi.com data.txt row i=31001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -27,6 +28,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.ADHIKARA,
     text_slp1      = "pratyayaH",
     text_dev       = "प्रत्ययः",
+    samagra_slp1   = "pratyayaH",
+    samagra_dev    = "प्रत्ययः",
     padaccheda_dev = "प्रत्ययः",
     why_dev        = "अधिकारः प्रत्यय-विधानम् — ३.१.१ तः ५.४.१६० पर्यन्तम्।",
     anuvritti_from = (),

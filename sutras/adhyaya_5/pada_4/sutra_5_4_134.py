@@ -4,6 +4,7 @@
 Padaccheda: जायायाः निङ्
 
 जायाया निङ् (5.4.134)
+Pāṭha: ashtadhyayi.com data.txt row i=54134 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jAyAyA niN",
     text_dev              = "जायाया निङ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA jAyAyAH niN bahuvrIhO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा जायायाः निङ् बहुव्रीहौ",
     padaccheda_dev        = "जायायाः निङ्",
     why_dev               = "(सूत्रम् 5.4.134) जायाया निङ्।",
     anuvritti_from        = ('5.4.68',),

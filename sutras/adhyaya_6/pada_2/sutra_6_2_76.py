@@ -4,6 +4,7 @@
 Padaccheda: शिल्पिनि च अ-कृञः
 
 शिल्पिनि चाकृञः (6.2.76)
+Pāṭha: ashtadhyayi.com data.txt row i=62076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Silpini cAkfYaH",
     text_dev              = "शिल्पिनि चाकृञः",
+    samagra_slp1          = "AdiH udAttaH Silpini ca akfYaH pUrvapadam aRi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः शिल्पिनि च अकृञः पूर्वपदम् अणि",
     padaccheda_dev        = "शिल्पिनि च अ-कृञः",
     why_dev               = "(सूत्रम् 6.2.76) शिल्पिनि चाकृञः।",
     anuvritti_from        = ('6.1.1',),

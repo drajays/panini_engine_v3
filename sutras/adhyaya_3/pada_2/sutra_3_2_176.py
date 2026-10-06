@@ -2,7 +2,7 @@
 3.2.176  यश्च यङः  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=302176
+- ashtadhyayi.com data.txt row i=32176
 - Kāśikā: रदादिभ्यो वरच् (यायावरः — यङन्तात् कर्तृ-कृदन्तम्)
 - Cross-validation: tests/unit/test_yAyAvaraH_yang_varac.py,
   tests/unit/test_yAyAvar_yang_varac_purvavidhau_lesson.py
@@ -43,6 +43,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='yaSca yaNaH',
     text_dev='यश्च यङः',
+    samagra_slp1="pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu yaH ca yaNaH kft varac",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु यः च यङः कृत् वरच्",
     padaccheda_dev="रदादिभ्यः / वरच्",
     why_dev="इत्यादेभ्यो वरच् — प०२९ (*यायावर*)।",
     anuvritti_from=("3.2.1",),

@@ -4,6 +4,7 @@
 Padaccheda: य-उपधात् गुरु-उपोत्तमात् वुञ्
 
 योपधाद्गुरूपोत्तमाद्वुञ् (5.1.132)
+Pāṭha: ashtadhyayi.com data.txt row i=51132 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yopaDAdgurUpottamAdvuY",
     text_dev              = "योपधाद्गुरूपोत्तमाद्वुञ्",
+    samagra_slp1          = "tasya BAvaH karmaRi ca iti yopaDAt gurupottamAt vuY",
+    samagra_dev           = "'तस्य भावः, कर्मणि च' (इति) योपधात् गुरुपोत्तमात् वुञ्",
     padaccheda_dev        = "य-उपधात् गुरु-उपोत्तमात् वुञ्",
     why_dev               = "(सूत्रम् 5.1.132) योपधाद्गुरूपोत्तमाद्वुञ्।",
     anuvritti_from        = ('5.1.120',),

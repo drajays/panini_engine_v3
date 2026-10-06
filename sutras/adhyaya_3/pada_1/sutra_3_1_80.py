@@ -4,6 +4,7 @@
 Padaccheda: धिन्वि-कृण्व्योः अ (लुप्तप्रथमान्तनिर्देशः) च
 
 Krt suffix rule from dhatu: धिन्विकृण्व्योर च (80)
+Pāṭha: ashtadhyayi.com data.txt row i=31080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DinvikfRvyora ca",
     text_dev              = "धिन्विकृण्व्योर च",
+    samagra_slp1          = "karttari sArvaDAtuke Dinvi-kfRvyoH uH aH ca",
+    samagra_dev           = "कर्त्तरि सार्वधातुके धिन्वि-कृण्व्योः उः अः च",
     padaccheda_dev        = "धिन्वि-कृण्व्योः अ (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "धातोः [धिन्विकृण्व्योर च]-प्रत्ययः विहितः (३.१.80)।",
     anuvritti_from        = ('3.1.1',),

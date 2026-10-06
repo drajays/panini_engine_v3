@@ -4,6 +4,7 @@
 Padaccheda: तस्मात् नुट् अचि
 
 तस्मान्नुडचि (6.3.74)
+Pāṭha: ashtadhyayi.com data.txt row i=63074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tasmAnnuqaci",
     text_dev              = "तस्मान्नुडचि",
+    samagra_slp1          = "uttarapade tasmAt nuw aci naYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे तस्मात् नुट् अचि नञः",
     padaccheda_dev        = "तस्मात् नुट् अचि",
     why_dev               = "(सूत्रम् 6.3.74) तस्मान्नुडचि।",
     anuvritti_from        = ('6.1.1',),

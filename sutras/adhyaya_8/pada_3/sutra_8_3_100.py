@@ -4,6 +4,7 @@
 Padaccheda: नक्षत्रात् वा
 
 नक्षत्राद्वा (8.3.100)
+Pāṭha: ashtadhyayi.com data.txt row i=83100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nakzatrAdvA",
     text_dev              = "नक्षत्राद्वा",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH nakzatrAt vA saH eti saMjYAyAm agAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः नक्षत्रात् वा सः एति संज्ञायाम् अगात्",
     padaccheda_dev        = "नक्षत्रात् वा",
     why_dev               = "(सूत्रम् 8.3.100) नक्षत्राद्वा।",
     anuvritti_from        = ('8.1.1',),

@@ -8,6 +8,7 @@ v3: sets the interpretive gate ``1_4_15_naH_kye`` in
 ``state.paribhasha_gates`` to mark that the n-before-kya context is
 operative.  The actual phonemic operation is handled by downstream VIDHI
 rules that consult this gate.
+Pāṭha: ashtadhyayi.com data.txt row i=14015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     sutra_type             = SutraType.NIYAMA,
     text_slp1              = "naH kye",
     text_dev               = "नः क्ये",
+    samagra_slp1           = "naH kye padam",
+    samagra_dev            = "नः क्ये पदम्",
     padaccheda_dev         = "नः / क्ये",
     why_dev                = "क्य-प्रत्यये परे नस्य विशेष-कार्यं प्रवर्तते।",
     apavada_of     = ("1.4.14",),   # अपवाद of 1.4.14 — sutra_ref_out resolver.apavada_of

@@ -4,6 +4,7 @@
 Padaccheda: उपघ्नः आश्रये
 
 krt-suffix rule: उपघ्न आश्रये
+Pāṭha: ashtadhyayi.com data.txt row i=33085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "upaGna ASraye",
     text_dev              = "उपघ्न आश्रये",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm upaGnaH ASraye kft ap hanaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् उपघ्नः आश्रये कृत् अप् हनः",
     padaccheda_dev        = "उपघ्नः आश्रये",
     why_dev               = "धातोः प्रत्ययः (३.3.85)।",
     anuvritti_from        = ('3.1.1',),

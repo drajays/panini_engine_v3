@@ -7,6 +7,7 @@ Glass-box scope for `medyati`:
 
 This is implemented as an explicit apavāda that can fire even if a generic
 guṇa gate would be blocked by k/ṅ-it conditions.
+Pāṭha: ashtadhyayi.com data.txt row i=73082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'miderguRaH',
     text_dev       = 'मिदेर्गुणः',
+    samagra_slp1   = "aNgasya mideH guRaH Siti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "अङ्गस्य मिदेः गुणः शिति",
     padaccheda_dev = "मिदेः / गुणः",
     why_dev        = "मिद्-धातोः (दिवादिगणे) श्यन्-प्रसङ्गे गुणः (इ→ए) — अपवादः।",
     anuvritti_from = ("7.3.84",),

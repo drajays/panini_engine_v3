@@ -12,6 +12,7 @@ named ( *prathama* / *madhyama* *uttama* in the *parasmaipada* and again in the 
 *paradigm* *meta* keys.  *Tripartite* classes are three distinguishable *tags* (A/B/C in code) mapped to
 *prathama* / *madhyama* / *uttama* in the module docstring.  *Registry* R2: ``1.4.101_tiN_tripartite_abc`` holds the
 *triplet* of tag *names* in *śāstrīya* order.
+Pāṭha: ashtadhyayi.com data.txt row i=14101 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'tiNastrIRi trIRi praTamamaDyamottamAH',
     text_dev       = 'तिङस्त्रीणि त्रीणि प्रथममध्यमोत्तमाः',
+    samagra_slp1   = "tiNaH trIRi trIRi praTama-maDyama-uttamAH",
+    samagra_dev    = "तिङः त्रीणि त्रीणि प्रथम-मध्यम-उत्तमाः",
     padaccheda_dev = "तिङ् / त्रीணि-त्रीणि (द्वि-वारम) / प्रथम-मध्यम-उत्तमाः (प्रथमा-बहु)",
     why_dev        = (
         "तिङादेश-अष्टादशानां क्रमेण षड्-त्र्यायाः, प्रथम-मध्यम-उत्तम-संज्ञा (पर-आत्म-नव-नव)।"

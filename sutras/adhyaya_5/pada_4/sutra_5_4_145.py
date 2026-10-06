@@ -4,6 +4,7 @@
 Padaccheda: अग्र-अन्त-शुद्ध-शुभ्र-वृष-वराहेभ्यः च
 
 अग्रान्तशुद्धशुभ्रवृषवराहेभ्यश्च (5.4.145)
+Pāṭha: ashtadhyayi.com data.txt row i=54145 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "agrAntaSudDaSuBravfzavarAheByaSca",
     text_dev              = "अग्रान्तशुद्धशुभ्रवृषवराहेभ्यश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA agrAntaSudDaSuBravfzavarAheByaH ca bahuvrIhO dantasya datf viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा अग्रान्तशुद्धशुभ्रवृषवराहेभ्यः च बहुव्रीहौ दन्तस्य दतृ विभाषा",
     padaccheda_dev        = "अग्र-अन्त-शुद्ध-शुभ्र-वृष-वराहेभ्यः च",
     why_dev               = "(सूत्रम् 5.4.145) अग्रान्तशुद्धशुभ्रवृषवराहेभ्यश्च।",
     anuvritti_from        = ('5.4.68',),

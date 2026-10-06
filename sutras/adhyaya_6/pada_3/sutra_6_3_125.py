@@ -4,6 +4,7 @@
 Padaccheda: अष्टनः संज्ञायाम्
 
 अष्टनः संज्ञायाम् (6.3.125)
+Pāṭha: ashtadhyayi.com data.txt row i=63125 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "azwanaH saMjYAyAm",
     text_dev              = "अष्टनः संज्ञायाम्",
+    samagra_slp1          = "uttarapade saMhitAyAm azwanaH saMjYAyAm dIrGaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् अष्टनः संज्ञायाम् दीर्घः",
     padaccheda_dev        = "अष्टनः संज्ञायाम्",
     why_dev               = "(सूत्रम् 6.3.125) अष्टनः संज्ञायाम्।",
     anuvritti_from        = ('6.1.1',),

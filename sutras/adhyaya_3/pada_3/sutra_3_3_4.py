@@ -4,6 +4,7 @@
 Padaccheda: यावत्-पुरा-निपातयोः लट्
 
 krt-suffix rule: यावत्पुरानिपातयोर्लट्
+Pāṭha: ashtadhyayi.com data.txt row i=33004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yAvatpurAnipAtayorlaw",
     text_dev              = "यावत्पुरानिपातयोर्लट्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH Bavizyati yAvat-purA-nipAtayoH law kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भविष्यति यावत्-पुरा-निपातयोः लट् कृत्",
     padaccheda_dev        = "यावत्-पुरा-निपातयोः लट्",
     why_dev               = "धातोः प्रत्ययः (३.3.4)।",
     anuvritti_from        = ('3.1.1',),

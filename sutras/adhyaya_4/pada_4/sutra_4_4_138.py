@@ -4,6 +4,7 @@
 Padaccheda: मये च
 
 मये च (4.4.138)
+Pāṭha: ashtadhyayi.com data.txt row i=44138 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "maye ca",
     text_dev              = "मये च",
+    samagra_slp1          = "maye iti somam Candasi saMjYAyAm yaH",
+    samagra_dev           = "मये (इति) सोमम् छन्दसि संज्ञायाम् यः",
     padaccheda_dev        = "मये च",
     why_dev               = "(सूत्रम् 4.4.138) मये च।",
     anuvritti_from        = ('4.1.1',),

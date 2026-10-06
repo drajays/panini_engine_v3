@@ -4,6 +4,7 @@
 Padaccheda: ऋ-दृशः अङि गुणः
 
 ऋदृशोऽङि गुणः (7.4.16)
+Pāṭha: ashtadhyayi.com data.txt row i=74016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'fdfSoNi guRaH',
     text_dev              = 'ऋदृशोऽङि गुणः',
+    samagra_slp1          = "aNgasya fdfSaH aNi guRaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य ऋदृशः अङि गुणः",
     padaccheda_dev        = "ऋ-दृशः अङि गुणः",
     why_dev               = "(सूत्रम् 7.4.16) ऋदृशोऽङि गुणः।",
     anuvritti_from        = ('7.1.1',),

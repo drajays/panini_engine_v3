@@ -4,6 +4,7 @@
 Padaccheda: द्वि-अच्-ऋत्-ब्राह्मण-ऋक्-प्रथम-अध्वर-पुरश्चरण-नाम-आख्यातात् ठक्
 
 द्व्यजृद्ब्राह्मणर्क्प्रथमाध्वरपुरश्चरणनामाख्याताट्ठक् (4.3.72)
+Pāṭha: ashtadhyayi.com data.txt row i=43072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvyajfdbrAhmaRarkpraTamADvarapuraScaraRanAmAKyAtAwWak",
     text_dev              = "द्व्यजृद्ब्राह्मणर्क्प्रथमाध्वरपुरश्चरणनामाख्याताट्ठक्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA dvyac-ft-brAhmaRa-fk-praTama-aDvara-puraScaraRa-nAma-AKyAtAt Wak tatra BavaH tasya vyAKyAne vyAKyAtavya-nAmnaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा द्व्यच्-ऋत्-ब्राह्मण-ऋक्-प्रथम-अध्वर-पुरश्चरण-नाम-आख्यातात् ठक् तत्र भवः तस्य व्याख्याने व्याख्यातव्य-नाम्नः",
     padaccheda_dev        = "द्वि-अच्-ऋत्-ब्राह्मण-ऋक्-प्रथम-अध्वर-पुरश्चरण-नाम-आख्यातात् ठक्",
     why_dev               = "(सूत्रम् 4.3.72) द्व्यजृद्ब्राह्मणर्क्प्रथमाध्वरपुरश्चरणनामाख्याताट्ठक्।",
     anuvritti_from        = ('4.1.1',),

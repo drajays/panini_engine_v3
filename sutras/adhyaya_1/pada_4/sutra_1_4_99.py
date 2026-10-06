@@ -13,6 +13,7 @@ eleven *ādeśa* after the **1.4.100** *bādhana* narrative).
 *Engine:* ``cond`` uses only ``Term.meta['upadesha_slp1']`` and tags (CONSTITUTION Art. 2).
 Registers ``1.4.99_parasmaipada_adesha_slp1`` in ``samjna_registry`` and the ``parasmaipada`` *tag* on
 each matching *pratyaya* *Term*.
+Pāṭha: ashtadhyayi.com data.txt row i=14099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -56,6 +57,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'laH parasmEpadam',
     text_dev       = 'लः परस्मैपदम्',
+    samagra_slp1   = "laH parasmEpadam",
+    samagra_dev    = "लः परस्मैपदम्",
     padaccheda_dev = "लः (षष्ठी) / परस्मैपदम् (प्रथमा)",
     why_dev        = (
         "लकार-स्थानि तिङादेशादिषु अन्त्यैकादश-प्रकारेषु परस्मैपद-संज्ञा; "

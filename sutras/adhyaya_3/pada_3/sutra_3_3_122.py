@@ -4,6 +4,7 @@
 Padaccheda: अध्याय-न्याय-उद्याव-संहाराः च
 
 krt-suffix rule: अध्यायन्यायोद्यावसंहाराधारावयाश्च
+Pāṭha: ashtadhyayi.com data.txt row i=33122 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'aDyAyanyAyodyAvasaMhArADArAvAyASca',
     text_dev              = 'अध्यायन्यायोद्यावसंहाराधारावायाश्च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH karaRADikaraRayoH aDyAya-nyAya-udyAva-saMhAra-ADAra-AvayAH ca kft karaRa-aDikaraRayoH puMsi GaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः करणाधिकरणयोः अध्याय-न्याय-उद्याव-संहार-आधार-आवयाः च कृत् करण-अधिकरणयोः पुंसि घञ्",
     padaccheda_dev        = "अध्याय-न्याय-उद्याव-संहाराः च",
     why_dev               = "धातोः प्रत्ययः (३.3.122)।",
     anuvritti_from        = ('3.1.1',),

@@ -14,6 +14,7 @@ upadesha_slp1 is in {"qf", "dA"}, (c) that dhātu carries the tag "A_prefix",
 (d) it does NOT carry "Asya_viharaRa_usage", and (e) idempotency guard
 "Atmanepada_1_3_20" is absent from meta.  No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True because no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -50,6 +51,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='ANo donAsyaviharaRe',
     text_dev='आङो दोऽनास्यविहरणे',
+    samagra_slp1="ANaH daH anAsyaviharaRe Atmanepadam",
+    samagra_dev="आङः दः अनास्यविहरणे आत्मनेपदम्",
     padaccheda_dev="आङः (षष्ठी) / दः (षष्ठी) / अनास्य-विहरणे (सप्तमी)",
     why_dev=(
         "आङ्-पूर्वकस्य दा-धातोः आत्मनेपदं भवति — आस्य-विहरण-अर्थे तु न; "

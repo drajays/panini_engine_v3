@@ -4,6 +4,7 @@
 Padaccheda: क्षुद्रा-भ्रमर-वटर-पादपात् अञ्
 
 क्षुद्राभ्रमरवटरपादपादञ् (4.3.119)
+Pāṭha: ashtadhyayi.com data.txt row i=43119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kzudrABramaravawarapAdapAdaY",
     text_dev              = "क्षुद्राभ्रमरवटरपादपादञ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA kzudrA-Bramara-vawara-pAdapAt aY tena kfte saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा क्षुद्रा-भ्रमर-वटर-पादपात् अञ् तेन कृते संज्ञायाम्",
     padaccheda_dev        = "क्षुद्रा-भ्रमर-वटर-पादपात् अञ्",
     why_dev               = "(सूत्रम् 4.3.119) क्षुद्राभ्रमरवटरपादपादञ्।",
     anuvritti_from        = ('4.1.1',),

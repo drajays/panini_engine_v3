@@ -14,6 +14,7 @@ Mode B (arm-driven, no stem-replacement):
   stays as-is (e.g. 4-3 asmad+bhyam, 5-3 asmad+at, 6-3 asmad+ākam).
 
 शेषे लोपः (7.2.90)
+Pāṭha: ashtadhyayi.com data.txt row i=72090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -86,6 +87,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Seze lopaH",
     text_dev              = "शेषे लोपः",
+    samagra_slp1          = "aNgasya Seze lopaH viBaktO yuzmadasmadoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य शेषे लोपः विभक्तौ युष्मदस्मदोः",
     padaccheda_dev        = "शेषे लोपः",
     why_dev               = "अस्मद्-शब्दे शेषे (द्-अन्त-व्यञ्जनस्य) लोपः "
                             "(सूत्रम् ७.२.९०) — 'अह' अवशिष्यते।",

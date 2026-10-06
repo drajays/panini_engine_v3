@@ -4,6 +4,7 @@
 Padaccheda: रिक्ते विभाषा
 
 रिक्ते विभाषा (6.1.208)
+Pāṭha: ashtadhyayi.com data.txt row i=61208 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rikte viBAzA",
     text_dev              = "रिक्ते विभाषा",
+    samagra_slp1          = "rikte viBAzA udAttaH AdiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "रिक्ते विभाषा उदात्तः आदिः",
     padaccheda_dev        = "रिक्ते विभाषा",
     why_dev               = "(सूत्रम् 6.1.208) रिक्ते विभाषा।",
     anuvritti_from        = ('6.1.1',),

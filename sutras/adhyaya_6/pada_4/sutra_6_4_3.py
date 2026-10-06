@@ -13,6 +13,7 @@ We implement the minimal transformation needed for i/u stems:
 
 Blindness:
   - cond() checks only adjacent term boundary + inserted nuṭ tag.
+Pāṭha: ashtadhyayi.com data.txt row i=64003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -77,6 +78,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'nAmi',
     text_dev       = 'नामि',
+    samagra_slp1   = "aNgasya nAmi dIrGaH",
+    samagra_dev    = "अङ्गस्य नामि दीर्घः",
     padaccheda_dev = "नामि — अङ्गस्य",
     why_dev        = "नुट्-आगमेन नामि-पर्याये अङ्गस्य अन्त्य-स्वरस्य दीर्घः (हरि → हरी; हरिणाम् → हरीणाम्)।",
     anuvritti_from = ("6.4.1",),

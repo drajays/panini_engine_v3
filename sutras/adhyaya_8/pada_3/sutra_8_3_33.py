@@ -4,6 +4,7 @@
 Padaccheda: मयः उञो वः वा
 
 मय उञो वो वा (8.3.33)
+Pāṭha: ashtadhyayi.com data.txt row i=83033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "maya uYo vo vA",
     text_dev              = "मय उञो वो वा",
+    samagra_slp1          = "padasya mayaH uYaH vaH vA aci",
+    samagra_dev           = "पदस्य मयः उञः वः वा अचि",
     padaccheda_dev        = "मयः उञो वः वा",
     why_dev               = "(सूत्रम् 8.3.33) मय उञो वो वा।",
     anuvritti_from        = ('8.1.1',),

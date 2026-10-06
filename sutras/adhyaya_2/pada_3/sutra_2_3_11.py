@@ -10,6 +10,7 @@ dvitīyā) in the senses of *pratinidhi* (substitute / replacement) and
 Engine: registers the pratinidhi/pratidāna→pañcamī gate. ``cond`` checks only
 the gate flag, never vibhakti coordinates (CONSTITUTION Art. 2).
 ``r1_form_identity_exempt=True``.
+Pāṭha: ashtadhyayi.com data.txt row i=23011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "pratiniDipratidAne ca yasmAt",
     text_dev              = "प्रतिनिधिप्रतिदाने च यस्मात्",
+    samagra_slp1          = "anaBihite pratiniDi-pratidAne ca yasmAt karmapravacanIya-yukte paYcamI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते प्रतिनिधि-प्रतिदाने च यस्मात् कर्मप्रवचनीय-युक्ते पञ्चमी",
     padaccheda_dev        = "प्रतिनिधि / प्रतिदाने / च / यस्मात्",
     why_dev               = (
         "प्रतिनिधि-प्रतिदाने यस्मात् पञ्चमी च — "

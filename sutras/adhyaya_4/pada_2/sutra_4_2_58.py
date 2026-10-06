@@ -4,6 +4,7 @@
 Padaccheda: घञः सा अस्याम् क्रिया इति ञः
 
 घञः साऽस्यां क्रियेति ञः (4.2.58)
+Pāṭha: ashtadhyayi.com data.txt row i=42058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'GaYaH sAsyAM kriyeti YaH',
     text_dev              = 'घञः साऽस्यां क्रियेति ञः',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA GaYaH sA asyAm kriyA iti YaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा घञः सा अस्याम् क्रिया इति ञः",
     padaccheda_dev        = "घञः सा अस्याम् क्रिया इति ञः",
     why_dev               = "(सूत्रम् 4.2.58) घञः साऽस्यां क्रियेति ञः।",
     anuvritti_from        = ('4.1.1',),

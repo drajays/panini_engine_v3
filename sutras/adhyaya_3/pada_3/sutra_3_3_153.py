@@ -4,6 +4,7 @@
 Padaccheda: काम-प्रवेदने अ-कच्चिति
 
 krt-suffix rule: कामप्रवेदनेऽकच्चिति
+Pāṭha: ashtadhyayi.com data.txt row i=33153 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'kAmapravedanekacciti',
     text_dev              = 'कामप्रवेदनेऽकच्चिति',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kAmapravedane akacciti kft liN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कामप्रवेदने अकच्चिति कृत् लिङ्",
     padaccheda_dev        = "काम-प्रवेदने अ-कच्चिति",
     why_dev               = "धातोः प्रत्ययः (३.3.153)।",
     anuvritti_from        = ('3.1.1',),

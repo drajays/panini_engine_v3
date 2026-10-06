@@ -4,6 +4,7 @@
 Padaccheda: इक्-अन्त-काल-कपाल-भगाल-शरावेषु द्विगौ
 
 इगन्तकालकपालभगालशरावेषु द्विगौ (6.2.29)
+Pāṭha: ashtadhyayi.com data.txt row i=62029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "igantakAlakapAlaBagAlaSarAvezu dvigO",
     text_dev              = "इगन्तकालकपालभगालशरावेषु द्विगौ",
+    samagra_slp1          = "iganta-kAla-kapAla-BagAla-SarAvezu dvigO prakftyA pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "इगन्त-काल-कपाल-भगाल-शरावेषु द्विगौ प्रकृत्या पूर्वपदम्",
     padaccheda_dev        = "इक्-अन्त-काल-कपाल-भगाल-शरावेषु द्विगौ",
     why_dev               = "(सूत्रम् 6.2.29) इगन्तकालकपालभगालशरावेषु द्विगौ।",
     anuvritti_from        = ('6.1.1',),

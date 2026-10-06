@@ -4,6 +4,7 @@
 Padaccheda: ग्राम-कौटाभ्याम् च तक्ष्णः
 
 ग्रामकौटाभ्यां च तक्ष्णः (5.4.95)
+Pāṭha: ashtadhyayi.com data.txt row i=54095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "grAmakOwAByAM ca takzRaH",
     text_dev              = "ग्रामकौटाभ्यां च तक्ष्णः",
+    samagra_slp1          = "grAmakOwAByAm takzRaH tatpuruzasya wac",
+    samagra_dev           = "ग्रामकौटाभ्याम् तक्ष्णः तत्पुरुषस्य टच्",
     padaccheda_dev        = "ग्राम-कौटाभ्याम् च तक्ष्णः",
     why_dev               = "(सूत्रम् 5.4.95) ग्रामकौटाभ्यां च तक्ष्णः।",
     anuvritti_from        = ('5.4.68',),

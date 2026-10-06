@@ -4,6 +4,7 @@
 Padaccheda: तत् वहति (क्रियापदम्) रथ-युग-प्रासङ्गम्
 
 तद्वहति रथयुगप्रासङ्गम् (4.4.76)
+Pāṭha: ashtadhyayi.com data.txt row i=44076 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tadvahati raTayugaprAsaNgam",
     text_dev              = "तद्वहति रथयुगप्रासङ्गम्",
+    samagra_slp1          = "tat raTa-yuga-prAsaNgam vahati iti samarTAnAm praTamAt paraH yat pratyayaH",
+    samagra_dev           = "'तत् रथ-युग-प्रासङ्गम् वहति' (इति) समर्थानाम् प्रथमात् परः यत् प्रत्ययः",
     padaccheda_dev        = "तत् वहति (क्रियापदम्) रथ-युग-प्रासङ्गम्",
     why_dev               = "(सूत्रम् 4.4.76) तद्वहति रथयुगप्रासङ्गम्।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: रैवतिक-आदिभ्यः छः
 
 रैवतिकादिभ्यश्छः (4.3.131)
+Pāṭha: ashtadhyayi.com data.txt row i=43131 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rEvatikAdiByaSCaH",
     text_dev              = "रैवतिकादिभ्यश्छः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA rEvatika-AdiByaH CaH tasya idam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा रैवतिक-आदिभ्यः छः तस्य इदम्",
     padaccheda_dev        = "रैवतिक-आदिभ्यः छः",
     why_dev               = "(सूत्रम् 4.3.131) रैवतिकादिभ्यश्छः।",
     anuvritti_from        = ('4.1.1',),

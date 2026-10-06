@@ -4,6 +4,7 @@
 Padaccheda: न कर्मव्यतिहारे
 
 न कर्मव्यतिहारे (7.3.6)
+Pāṭha: ashtadhyayi.com data.txt row i=73006 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na karmavyatihAre",
     text_dev              = "न कर्मव्यतिहारे",
+    samagra_slp1          = "aNgasya na karmavyatihAre vfdDiH acaH YRiti tadDitezu AdeH Ec",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न कर्मव्यतिहारे वृद्धिः अचः ञ्णिति तद्धितेषु आदेः ऐच्",
     padaccheda_dev        = "न कर्मव्यतिहारे",
     why_dev               = "(सूत्रम् 7.3.6) न कर्मव्यतिहारे।",
     anuvritti_from        = ('7.1.1',),

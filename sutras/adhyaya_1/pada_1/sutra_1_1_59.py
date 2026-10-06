@@ -18,6 +18,7 @@ v3 engine role:
   - No arm flags.  r1_form_identity_exempt=True (no surface change).
 
 anuvritti: 1.1.58
+Pāṭha: ashtadhyayi.com data.txt row i=11059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -43,6 +44,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = "dvirvacaneci",
     text_dev                = "द्विर्वचनेऽचि",
+    samagra_slp1            = "acaH AdeSaH parasmin aci dvirvacane pUrvaviDO sTAnivat",
+    samagra_dev             = "अचः आदेशः परस्मिन् अचि द्विर्वचने पूर्वविधौ स्थानिवत्",
     padaccheda_dev          = "द्विर्वचने / अचि",
     why_dev                 = (
         "द्विर्वचन-प्रसङ्गे अचि परतः विशेष-नियमः — "

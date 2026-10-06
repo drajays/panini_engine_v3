@@ -103,6 +103,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kidASizi",
     text_dev              = "किदाशिषि",
+    samagra_slp1          = "ASizi liNaH parasmEpadezu yAsuw udAttaH kit",
+    samagra_dev           = "आशिषि लिङः परस्मैपदेषु यासुट् उदात्तः कित्",
     padaccheda_dev        = "कित् आशिषि",
     why_dev               = (
         "आशीर्-लिङि यासुट्-आगमः किद्-भूतः — तेन १.१.५ (क्ङिति च) "

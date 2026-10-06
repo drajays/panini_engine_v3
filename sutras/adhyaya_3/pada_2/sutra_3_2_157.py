@@ -4,6 +4,7 @@
 Padaccheda: जि-दृ-क्षि-विश्रि-इण्-वम-अव्यथ-अभ्यम-परिभू-प्रसूभ्यः च
 
 krt-suffix rule: जिदृक्षिविश्रीण्वमाव्यथाभ्यमपरिभूप्रसूभ्यश्च (157)
+Pāṭha: ashtadhyayi.com data.txt row i=32157 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jidfkziviSrIRvamAvyaTAByamapariBUprasUByaSca",
     text_dev              = "जिदृक्षिविश्रीण्वमाव्यथाभ्यमपरिभूप्रसूभ्यश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu ji-df-kzi-vi-Sri-iR-vama-avyaTa-aByama-pariBU-prasUByaSca ca kft iniH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु जि-दृ-क्षि-वि-श्रि-इण्-वम-अव्यथ-अभ्यम-परिभू-प्रसूभ्यश्च च कृत् इनिः",
     padaccheda_dev        = "जि-दृ-क्षि-विश्रि-इण्-वम-अव्यथ-अभ्यम-परिभू-प्रसूभ्यः च",
     why_dev               = "धातोः कृत्-प्रत्ययः [जिदृक्षिविश्रीण्वमाव्यथाभ्यमपरिभूप्रसूभ्यश्च] विहितः (३.२.157)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

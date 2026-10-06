@@ -6,6 +6,7 @@
 Citation (CONSTITUTION Art. 14)
   Source #1 — ashtadhyayi.com sūtra 7.2.108 (padaccheda: इदमः मः)
   Source #2 — ashtadhyayi.com śabda-prakriyā for इदम् (the sūtra path of each cell, all three liṅgas)
+Pāṭha: ashtadhyayi.com data.txt row i=72108 (Art. 14).
 """
 from __future__ import annotations
 
@@ -65,6 +66,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='idamo maH',
     text_dev='इदमो मः',
+    samagra_slp1="idamaH sO maH",
+    samagra_dev="इदमः सौ मः",
     padaccheda_dev='इदमः मः',
     why_dev='इदम्-शब्दस्य सौ परे अन्त्य मकार को मकार ही (७.२.१०२ का अपवाद)।',
     anuvritti_from=("6.4.1", "7.2.84"),

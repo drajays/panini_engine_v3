@@ -4,6 +4,7 @@
 Padaccheda: हलः तद्धितस्य
 
 हलस्तद्धितस्य (6.4.150)
+Pāṭha: ashtadhyayi.com data.txt row i=64150 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "halastadDitasya",
     text_dev              = "हलस्तद्धितस्य",
+    samagra_slp1          = "aNgasya asidDavadatrABAt Basya halaH tadDitasya lopaH Iti upaDAyAH yaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् भस्य हलः तद्धितस्य लोपः ईति उपधायाः यः",
     padaccheda_dev        = "हलः तद्धितस्य",
     why_dev               = "(सूत्रम् 6.4.150) हलस्तद्धितस्य।",
     anuvritti_from        = ('6.1.1',),

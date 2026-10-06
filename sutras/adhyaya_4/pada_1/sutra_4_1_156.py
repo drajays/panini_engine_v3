@@ -4,6 +4,7 @@
 Padaccheda: अणः द्वि-अचः
 
 अणो द्व्यचः (4.1.156)
+Pāṭha: ashtadhyayi.com data.txt row i=41156 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aRo dvyacaH",
     text_dev              = "अणो द्व्यचः",
+    samagra_slp1          = "tasya apatyam iti dvyacaH aRaH PiY",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) द्व्यचः अणः फिञ्",
     padaccheda_dev        = "अणः द्वि-अचः",
     why_dev               = "(सूत्रम् 4.1.156) अणो द्व्यचः।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: परेः च घ-अङ्कयोः
 
 परेश्च घाङ्कयोः (8.2.22)
+Pāṭha: ashtadhyayi.com data.txt row i=82022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pareSca GANkayoH",
     text_dev              = "परेश्च घाङ्कयोः",
+    samagra_slp1          = "padasya pUrvatrAsidDam pareH ca GANkayoH raH laH viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् परेः च घाङ्कयोः रः लः विभाषा",
     padaccheda_dev        = "परेः च घ-अङ्कयोः",
     why_dev               = "(सूत्रम् 8.2.22) परेश्च घाङ्कयोः।",
     anuvritti_from        = ('8.1.1',),

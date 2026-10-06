@@ -4,6 +4,7 @@
 Padaccheda: न म-पूर्वः अपत्ये अवर्मणः
 
 न मपूर्वोऽपत्येऽवर्मणः (6.4.170)
+Pāṭha: ashtadhyayi.com data.txt row i=64170 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'na mapUrvopatyevarmaRaH',
     text_dev              = 'न मपूर्वोऽपत्येऽवर्मणः',
+    samagra_slp1          = "aNgasya asidDavadatrABAt Basya na mapUrvaH apatye avarmaRaH prakftyA aRi an",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् भस्य न मपूर्वः अपत्ये अवर्मणः प्रकृत्या अणि अन्",
     padaccheda_dev        = "न म-पूर्वः अपत्ये अवर्मणः",
     why_dev               = "(सूत्रम् 6.4.170) न मपूर्वोऽपत्येऽवर्मणः।",
     anuvritti_from        = ('6.1.1',),

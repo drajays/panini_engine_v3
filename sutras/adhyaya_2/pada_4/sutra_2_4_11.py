@@ -4,6 +4,7 @@
 Padaccheda: गव-अश्व-प्रभृतीनि च
 
 Cow, horse etc. also in dvandva compound.
+Pāṭha: ashtadhyayi.com data.txt row i=24011 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gavASvapraBftIni ca",
     text_dev              = "गवाश्वप्रभृतीनि च",
+    samagra_slp1          = "gavASva-praBftIni ca ekavacanam dvandvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "गवाश्व-प्रभृतीनि च एकवचनम् द्वन्द्वः",
     padaccheda_dev        = "गव-अश्व-प्रभृतीनि च",
     why_dev               = "गव-अश्व-आदीनि च द्वन्द्वे (२.४.११)।",
     anuvritti_from        = ('2.4.1',),

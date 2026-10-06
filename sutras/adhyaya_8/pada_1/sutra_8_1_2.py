@@ -8,6 +8,7 @@ Teaching **corrected_prakriyas_v2** **P017**: the **second** of two identical
 Engine:
   • ``state.meta['corrected_v2_P017_8_1_2_arm']`` (cleared in ``act``).
   • layout ``[pawat, pawat, qAc]``.
+Pāṭha: ashtadhyayi.com data.txt row i=81002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='tasya paramAmreqitam',
     text_dev='तस्य परमाम्रेडितम्',
+    samagra_slp1="sarvasya dve tasya paramAmreqitam",
+    samagra_dev="सर्वस्य द्वे, तस्य परमाम्रेडितम्",
     padaccheda_dev="तस्य / परमाम्रेडितम्",
     why_dev="द्वितीय ``pawat`` आम्रेडित-स्मरणम् (P017)।",
     anuvritti_from=("8.1.1",),

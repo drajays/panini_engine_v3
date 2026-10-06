@@ -4,6 +4,7 @@
 Padaccheda: सनि ग्रह-गुहोः च
 
 सनि ग्रहगुहोश्च (7.2.12)
+Pāṭha: ashtadhyayi.com data.txt row i=72012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sani grahaguhoSca",
     text_dev              = "सनि ग्रहगुहोश्च",
+    samagra_slp1          = "aNgasya sani grahaguhoH ca na iw SryukaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य सनि ग्रहगुहोः च न इट् श्र्युकः",
     padaccheda_dev        = "सनि ग्रह-गुहोः च",
     why_dev               = "(सूत्रम् 7.2.12) सनि ग्रहगुहोश्च।",
     anuvritti_from        = ('7.1.1',),

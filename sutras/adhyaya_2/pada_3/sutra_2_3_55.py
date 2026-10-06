@@ -4,6 +4,7 @@
 Padaccheda: आशिषि नाथः
 
 natha in blessings takes sasthi.
+Pāṭha: ashtadhyayi.com data.txt row i=23055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ASizi nATaH",
     text_dev              = "आशिषि नाथः",
+    samagra_slp1          = "anaBihite ASizi nATaH Seze zazWI karmaRi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते आशिषि नाथः शेषे षष्ठी कर्मणि",
     padaccheda_dev        = "आशिषि नाथः",
     why_dev               = "आशिषि नाथः (२.३.५५)।",
     anuvritti_from        = ('2.3.50',),

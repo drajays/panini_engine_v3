@@ -4,6 +4,7 @@
 Padaccheda: न छन्दसि अपुत्रस्य
 
 न च्छन्दस्यपुत्रस्य (7.4.35)
+Pāṭha: ashtadhyayi.com data.txt row i=74035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na cCandasyaputrasya",
     text_dev              = "न च्छन्दस्यपुत्रस्य",
+    samagra_slp1          = "aNgasya na Candasi aputrasya asya kyaci",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न छन्दसि अपुत्रस्य अस्य क्यचि",
     padaccheda_dev        = "न छन्दसि अपुत्रस्य",
     why_dev               = "(सूत्रम् 7.4.35) न च्छन्दस्यपुत्रस्य।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: नावः द्विगोः
 
 नावो द्विगोः (5.4.99)
+Pāṭha: ashtadhyayi.com data.txt row i=54099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nAvo dvigoH",
     text_dev              = "नावो द्विगोः",
+    samagra_slp1          = "tatpuruzasya dvigoH nAvaH atadDitaluki wac",
+    samagra_dev           = "तत्पुरुषस्य द्विगोः नावः अतद्धितलुकि टच्",
     padaccheda_dev        = "नावः द्विगोः",
     why_dev               = "(सूत्रम् 5.4.99) नावो द्विगोः।",
     anuvritti_from        = ('5.4.68',),

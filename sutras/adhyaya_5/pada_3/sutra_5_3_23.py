@@ -4,6 +4,7 @@
 Padaccheda: प्रकारवचने थाल्
 
 प्रकारवचने थाल् (5.3.23)
+Pāṭha: ashtadhyayi.com data.txt row i=53023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prakAravacane TAl",
     text_dev              = "प्रकारवचने थाल्",
+    samagra_slp1          = "kiMsarvanAmabahuByodvyAdiByaH prakAravacane TAl",
+    samagra_dev           = "किंसर्वनामबहुभ्योऽद्व्यादिभ्यः प्रकारवचने थाल्",
     padaccheda_dev        = "प्रकारवचने थाल्",
     why_dev               = "(सूत्रम् 5.3.23) प्रकारवचने थाल्।",
     anuvritti_from        = ('5.3.2',),

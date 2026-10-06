@@ -4,6 +4,7 @@
 Padaccheda: प्रतिपथम् एति (क्रियापदम्) ठन् च
 
 प्रतिपथमेति ठंश्च (4.4.42)
+Pāṭha: ashtadhyayi.com data.txt row i=44042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pratipaTameti WaMSca",
     text_dev              = "प्रतिपथमेति ठंश्च",
+    samagra_slp1          = "tat pratipaTam eti iti samarTAnAm praTamaH Wak Wan ca pratyayaH",
+    samagra_dev           = "'तत् प्रतिपथम् एति' (इति) समर्थानाम् प्रथमः ठक् ठन् च प्रत्ययः",
     padaccheda_dev        = "प्रतिपथम् एति (क्रियापदम्) ठन् च",
     why_dev               = "(सूत्रम् 4.4.42) प्रतिपथमेति ठंश्च।",
     anuvritti_from        = ('4.1.1',),

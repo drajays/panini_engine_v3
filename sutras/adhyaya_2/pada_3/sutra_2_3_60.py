@@ -4,6 +4,7 @@
 Padaccheda: द्वितीया ब्राह्मणे
 
 dvitiya in brahman context.
+Pāṭha: ashtadhyayi.com data.txt row i=23060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvitIyA brAhmaRe",
     text_dev              = "द्वितीया ब्राह्मणे",
+    samagra_slp1          = "anaBihite dvitIyA brAhmaRe zazWI Seze karmaRi divaH tadarTasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते द्वितीया ब्राह्मणे षष्ठी शेषे कर्मणि दिवः तदर्थस्य",
     padaccheda_dev        = "द्वितीया ब्राह्मणे",
     why_dev               = "ब्राह्मणे द्वितीया (२.३.६०)।",
     anuvritti_from        = ('2.3.2',),

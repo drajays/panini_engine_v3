@@ -4,6 +4,7 @@
 Padaccheda: अञ्चेः लुक्
 
 अञ्चेर्लुक् (5.3.30)
+Pāṭha: ashtadhyayi.com data.txt row i=53030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aYcerluk",
     text_dev              = "अञ्चेर्लुक्",
+    samagra_slp1          = "dikSabdeByaH aYceH astAteH luk",
+    samagra_dev           = "दिक्शब्देभ्यः अञ्चेः अस्तातेः लुक्",
     padaccheda_dev        = "अञ्चेः लुक्",
     why_dev               = "(सूत्रम् 5.3.30) अञ्चेर्लुक्।",
     anuvritti_from        = ('4.1.76',),

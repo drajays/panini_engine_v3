@@ -4,6 +4,7 @@
 Padaccheda: द्रवमूर्ति-स्पर्शयोः श्यः
 
 द्रवमूर्तिस्पर्शयोः श्यः (6.1.24)
+Pāṭha: ashtadhyayi.com data.txt row i=61024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dravamUrtisparSayoH SyaH",
     text_dev              = "द्रवमूर्तिस्पर्शयोः श्यः",
+    samagra_slp1          = "dravamUrti-sparSayoH SyaH samprasAraRam nizWAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "द्रवमूर्ति-स्पर्शयोः श्यः सम्प्रसारणम् निष्ठायाम्",
     padaccheda_dev        = "द्रवमूर्ति-स्पर्शयोः श्यः",
     why_dev               = "(सूत्रम् 6.1.24) द्रवमूर्तिस्पर्शयोः श्यः।",
     anuvritti_from        = ('6.1.1',),

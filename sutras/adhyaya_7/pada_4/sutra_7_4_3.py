@@ -4,6 +4,7 @@
 Padaccheda: भ्राज-भास-भाष-दीप-जीव-मील-पीडाम् अन्यतरस्याम्
 
 भ्राजभासभाषदीपजीवमीलपीडामन्यतरस्याम् (7.4.3)
+Pāṭha: ashtadhyayi.com data.txt row i=74003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BrAjaBAsaBAzadIpajIvamIlapIqAmanyatarasyAm",
     text_dev              = "भ्राजभासभाषदीपजीवमीलपीडामन्यतरस्याम्",
+    samagra_slp1          = "aNgasya BrAjaBAsaBAzadIpajIvamIlapIqAm anyatarasyAm upaDAyAH hrasvaH RO caNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य भ्राजभासभाषदीपजीवमीलपीडाम् अन्यतरस्याम् उपधायाः ह्रस्वः णौ चङि",
     padaccheda_dev        = "भ्राज-भास-भाष-दीप-जीव-मील-पीडाम् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 7.4.3) भ्राजभासभाषदीपजीवमीलपीडामन्यतरस्याम्।",
     anuvritti_from        = ('7.1.1',),

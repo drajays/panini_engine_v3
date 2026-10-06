@@ -4,6 +4,7 @@
 Padaccheda: रात् लोपः
 
 राल्लोपः (6.4.21)
+Pāṭha: ashtadhyayi.com data.txt row i=64021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAllopaH",
     text_dev              = "राल्लोपः",
+    samagra_slp1          = "aNgasya rAt lopaH kvi-JaloH kNiti cC-voH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य रात् लोपः क्वि-झलोः क्ङिति च्छ्-वोः",
     padaccheda_dev        = "रात् लोपः",
     why_dev               = "(सूत्रम् 6.4.21) राल्लोपः।",
     anuvritti_from        = ('6.1.1',),

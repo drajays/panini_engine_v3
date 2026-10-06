@@ -12,6 +12,7 @@ whose upadesha_slp1 is in _TAP_ROOTS, (c) that dhātu carries at least one tag
 from _UD_VI, and (d) idempotency guard "Atmanepada_1_3_27" is absent from meta.
 No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True because no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -48,6 +49,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='udviByAM tapaH',
     text_dev='उद्विभ्यां तपः',
+    samagra_slp1="akarmakAt ud-vi-ByAm tapaH Atmanepadam",
+    samagra_dev="अकर्मकात् उद्-वि-भ्याम् तपः आत्मनेपदम्",
     padaccheda_dev="उत्-विभ्याम् (पञ्चमी) / तपः (षष्ठी)",
     why_dev=(
         "उद्-वि-पूर्वकस्य तप्-धातोः आत्मनेपदं भवति; "

@@ -4,6 +4,7 @@
 Padaccheda: कर्त्तृ-करणयोः तृतीया
 
 Tritiya marks kartri and karana roles.
+Pāṭha: ashtadhyayi.com data.txt row i=23018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kartfkaraRayostftIyA",
     text_dev              = "कर्तृकरणयोस्तृतीया",
+    samagra_slp1          = "anaBihite kartf-karaRayoH tftIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते कर्तृ-करणयोः तृतीया",
     padaccheda_dev        = "कर्त्तृ-करणयोः तृतीया",
     why_dev               = "कर्तृ-करणयोः तृतीया (२.३.१८)।",
     anuvritti_from        = ('2.3.1',),

@@ -4,6 +4,7 @@
 Padaccheda: ससूव (क्रियापदम्) इति निगमे
 
 ससूवेति निगमे (7.4.74)
+Pāṭha: ashtadhyayi.com data.txt row i=74074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sasUveti nigame",
     text_dev              = "ससूवेति निगमे",
+    samagra_slp1          = "aNgasya aByAsasya sasUva iti nigame liwi aH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य ससूव इति निगमे लिटि अः",
     padaccheda_dev        = "ससूव (क्रियापदम्) इति निगमे",
     why_dev               = "(सूत्रम् 7.4.74) ससूवेति निगमे।",
     anuvritti_from        = ('7.1.1',),

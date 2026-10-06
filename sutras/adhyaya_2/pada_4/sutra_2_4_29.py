@@ -4,6 +4,7 @@
 Padaccheda: रात्र-अह्न-अहाः पुंसि
 
 raatri, ahna, aha are masculine in compounds.
+Pāṭha: ashtadhyayi.com data.txt row i=24029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAtrAhnAhAH puMsi",
     text_dev              = "रात्राह्नाहाः पुंसि",
+    samagra_slp1          = "rAtra-ahna-ahAH puMsi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "रात्र-अह्न-अहाः पुंसि",
     padaccheda_dev        = "रात्र-अह्न-अहाः पुंसि",
     why_dev               = "रात्र-अह्न-अहाः पुंसि (२.४.२९)।",
     anuvritti_from        = ('2.4.26',),

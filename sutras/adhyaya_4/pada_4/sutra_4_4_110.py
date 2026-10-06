@@ -4,6 +4,7 @@
 Padaccheda: भवे छन्दसि
 
 भवे छन्दसि (4.4.110)
+Pāṭha: ashtadhyayi.com data.txt row i=44110 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Bave Candasi",
     text_dev              = "भवे छन्दसि",
+    samagra_slp1          = "tatra Bave iti Candasi saMjYAyAm yat",
+    samagra_dev           = "'तत्र भवे' (इति) छन्दसि  संज्ञायाम् यत्",
     padaccheda_dev        = "भवे छन्दसि",
     why_dev               = "(सूत्रम् 4.4.110) भवे छन्दसि।",
     anuvritti_from        = ('4.1.1',),

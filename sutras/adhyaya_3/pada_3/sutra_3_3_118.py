@@ -4,6 +4,7 @@
 Padaccheda: पुंसि संज्ञायाम् घः प्रायेण
 
 krt-suffix rule: पुंसि संज्ञायां घः प्रायेण
+Pāṭha: ashtadhyayi.com data.txt row i=33118 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "puMsi saMjYAyAM GaH prAyeRa",
     text_dev              = "पुंसि संज्ञायां घः प्रायेण",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH karaRADikaraRayoH puMsi saMjYAyAm GaH prAyeRa kft karaRa-aDikaraRayoH ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः करणाधिकरणयोः पुंसि संज्ञायाम् घः प्रायेण कृत् करण-अधिकरणयोः च",
     padaccheda_dev        = "पुंसि संज्ञायाम् घः प्रायेण",
     why_dev               = "धातोः प्रत्ययः (३.3.118)।",
     anuvritti_from        = ('3.1.1',),

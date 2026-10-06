@@ -4,6 +4,7 @@
 Padaccheda: उत्तरपथेन आहृतम् च
 
 उत्तरपथेनाहृतं च (5.1.77)
+Pāṭha: ashtadhyayi.com data.txt row i=51077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uttarapaTenAhftaM ca",
     text_dev              = "उत्तरपथेनाहृतं च",
+    samagra_slp1          = "uttarapaTena Ahftam gacCati ca iti samarTAnAm praTamAt paraH WaY-pratyayaH",
+    samagra_dev           = "उत्तरपथेन आहृतम्, गच्छति च  (इति) समर्थानाम् प्रथमात् परः ठञ्-प्रत्ययः",
     padaccheda_dev        = "उत्तरपथेन आहृतम् च",
     why_dev               = "(सूत्रम् 5.1.77) उत्तरपथेनाहृतं च।",
     anuvritti_from        = ('5.1.18',),

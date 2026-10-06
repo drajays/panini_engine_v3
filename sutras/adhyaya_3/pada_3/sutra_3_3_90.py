@@ -4,6 +4,7 @@
 Padaccheda: यज-याच-यत-विच्छ-प्रच्छ-रक्षः नङ्
 
 krt-suffix rule: यजयाचयतविच्छप्रच्छरक्षो नङ्
+Pāṭha: ashtadhyayi.com data.txt row i=33090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yajayAcayatavicCapracCarakzo naN",
     text_dev              = "यजयाचयतविच्छप्रच्छरक्षो नङ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm yaja-yAca-yata-vicCa-pracCa-rakzaH naN kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् यज-याच-यत-विच्छ-प्रच्छ-रक्षः नङ् कृत्",
     padaccheda_dev        = "यज-याच-यत-विच्छ-प्रच्छ-रक्षः नङ्",
     why_dev               = "धातोः प्रत्ययः (३.3.90)।",
     anuvritti_from        = ('3.1.1',),

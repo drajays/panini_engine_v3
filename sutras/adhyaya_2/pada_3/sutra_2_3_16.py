@@ -4,6 +4,7 @@
 Padaccheda: नमःस्वस्ति-स्वाहा-स्वधा-अलं-वषट्-योगात् च
 
 namah svasti svaha svadha alam vashat combine with caturthy.
+Pāṭha: ashtadhyayi.com data.txt row i=23016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'namaHsvastisvAhAsvaDAlamvazaqyogAcca',
     text_dev              = 'नमःस्वस्तिस्वाहास्वधालम्वषड्योगाच्च',
+    samagra_slp1          = "anaBihite namaH-svasti-svAhA-svaDA-alam-vazaw-yogAt ca caturTI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते नमः-स्वस्ति-स्वाहा-स्वधा-अलम्-वषट्-योगात् च चतुर्थी",
     padaccheda_dev        = "नमःस्वस्ति-स्वाहा-स्वधा-अलं-वषट्-योगात् च",
     why_dev               = "नमः-स्वस्ति-स्वाहा-आदिभिः योगे चतुर्थी (२.३.१६)।",
     anuvritti_from        = ('2.3.13',),

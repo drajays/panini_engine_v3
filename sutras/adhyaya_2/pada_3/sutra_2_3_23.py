@@ -4,6 +4,7 @@
 Padaccheda: हेतौ
 
 Tritiya marks the cause (hetu).
+Pāṭha: ashtadhyayi.com data.txt row i=23023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hetO",
     text_dev              = "हेतौ",
+    samagra_slp1          = "anaBihite hetO tftIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते हेतौ तृतीया",
     padaccheda_dev        = "हेतौ",
     why_dev               = "हेतौ (२.३.२३)।",
     anuvritti_from        = ('2.3.18',),

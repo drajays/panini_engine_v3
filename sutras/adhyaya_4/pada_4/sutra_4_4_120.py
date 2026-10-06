@@ -4,6 +4,7 @@
 Padaccheda: दूतस्य भागकर्मणी
 
 दूतस्य भागकर्मणी (4.4.120)
+Pāṭha: ashtadhyayi.com data.txt row i=44120 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dUtasya BAgakarmaRI",
     text_dev              = "दूतस्य भागकर्मणी",
+    samagra_slp1          = "dUtasya BAgakarmaRI vedezu saMjYAyAM yat",
+    samagra_dev           = "दूतस्य भागकर्मणी वेदेषु संज्ञायां यत्",
     padaccheda_dev        = "दूतस्य भागकर्मणी",
     why_dev               = "(सूत्रम् 4.4.120) दूतस्य भागकर्मणी।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: तत् अर्हति (क्रियापदम्)
 
 तद् अर्हति (5.1.63)
+Pāṭha: ashtadhyayi.com data.txt row i=51063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tad arhati",
     text_dev              = "तद् अर्हति",
+    samagra_slp1          = "tad arhati iti samarTAnAM praTamAt paraH WaY-pratyayaH",
+    samagra_dev           = "'तद् अर्हति' (इति) समर्थानां प्रथमात् परः ठञ्-प्रत्ययः",
     padaccheda_dev        = "तत् अर्हति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 5.1.63) तद् अर्हति।",
     anuvritti_from        = ('5.1.19',),

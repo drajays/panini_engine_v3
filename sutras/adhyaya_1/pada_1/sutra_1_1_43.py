@@ -7,6 +7,7 @@ Narrow v3:
   • ``prakriya_21`` — ``state.meta["prakriya_21_1_1_43_am_arm"]`` + *tṛc* stem
     (``krt_tfc``) + ``am`` *sup* → same tag so **7.3.110** / **6.4.11** can see
     *sarvanāmasthāna* without reading ``(vibhakti, vacana)``.
+Pāṭha: ashtadhyayi.com data.txt row i=11043 (Art. 14).
 """
 from __future__ import annotations
 
@@ -129,6 +130,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'suqanapuMsakasya',
     text_dev       = 'सुडनपुंसकस्य',
+    samagra_slp1   = "suw anapuMsakasya sarvanAmasTAnam",
+    samagra_dev    = "सुट् अनपुंसकस्य सर्वनामस्थानम्",
     padaccheda_dev = "सुड्-अनपुंसकस्य",
     why_dev        = "सु-प्रत्ययः (नपुंसकाद् भिन्नः) सर्वनामस्थान-संज्ञकः।",
     anuvritti_from = (),

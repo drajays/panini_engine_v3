@@ -4,6 +4,7 @@
 Padaccheda: दीर्घात् अटि समानपादे
 
 दीर्घादटि समानपदे (8.3.9)
+Pāṭha: ashtadhyayi.com data.txt row i=83009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'dIrGAdawi samAnapAde',
     text_dev              = 'दीर्घादटि समानपादे',
+    samagra_slp1          = "dIrGAt samAnapAde padasya naH ru~ fkzu awi uBayaTA",
+    samagra_dev           = "दीर्घात् समानपादे पदस्य नः रुँ ऋक्षु अटि उभयथा",
     padaccheda_dev        = "दीर्घात् अटि समानपादे",
     why_dev               = "(सूत्रम् 8.3.9) दीर्घादटि समानपदे।",
     anuvritti_from        = ('8.1.1',),

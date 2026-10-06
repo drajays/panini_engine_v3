@@ -4,6 +4,7 @@
 Padaccheda: मद्रेभ्यः अञ्
 
 मद्रेभ्योऽञ् (4.2.108)
+Pāṭha: ashtadhyayi.com data.txt row i=42108 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'madreByoY',
     text_dev              = 'मद्रेभ्योऽञ्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA madreByaH aY dik-pUrvapadAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा मद्रेभ्यः अञ् दिक्-पूर्वपदात्",
     padaccheda_dev        = "मद्रेभ्यः अञ्",
     why_dev               = "(सूत्रम् 4.2.108) मद्रेभ्योऽञ्।",
     anuvritti_from        = ('4.1.1',),

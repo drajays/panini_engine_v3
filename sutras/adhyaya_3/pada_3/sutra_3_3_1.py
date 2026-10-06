@@ -4,6 +4,7 @@
 Padaccheda: उण्-आदयः बहुलम्
 
 krt-suffix rule: उणादयो बहुलम्
+Pāṭha: ashtadhyayi.com data.txt row i=33001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uRAdayo bahulam",
     text_dev              = "उणादयो बहुलम्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne uRAdayaH bahulam kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने उणादयः बहुलम् कृत्",
     padaccheda_dev        = "उण्-आदयः बहुलम्",
     why_dev               = "धातोः प्रत्ययः (३.3.1)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: षष्टि-आदेः च अ-सङ्‍ख्या-आदेः
 
 षष्ट्यादेश्चासंख्याऽऽदेः (5.2.58)
+Pāṭha: ashtadhyayi.com data.txt row i=52058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'zazwyAdeScAsaMKyAdeH',
     text_dev              = 'षष्ट्यादेश्चासंख्यादेः',
+    samagra_slp1          = "tasya pUraRe iti asaNKyAdeH zazwyAdeH qawaH nityam tamaw ",
+    samagra_dev           = "'तस्य पूरणे' (इति) असङ्ख्यादेः षष्ट्यादेः डटः नित्यम् तमट् ।",
     padaccheda_dev        = "षष्टि-आदेः च अ-सङ्‍ख्या-आदेः",
     why_dev               = "(सूत्रम् 5.2.58) षष्ट्यादेश्चासंख्याऽऽदेः।",
     anuvritti_from        = ('4.1.82',),

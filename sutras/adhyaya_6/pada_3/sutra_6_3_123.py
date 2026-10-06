@@ -4,6 +4,7 @@
 Padaccheda: इकः काशे
 
 इकः काशे (6.3.123)
+Pāṭha: ashtadhyayi.com data.txt row i=63123 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ikaH kASe",
     text_dev              = "इकः काशे",
+    samagra_slp1          = "uttarapade saMhitAyAm ikaH kASe dIrGaH upasargasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे संहितायाम् इकः काशे दीर्घः उपसर्गस्य",
     padaccheda_dev        = "इकः काशे",
     why_dev               = "(सूत्रम् 6.3.123) इकः काशे।",
     anuvritti_from        = ('6.1.1',),

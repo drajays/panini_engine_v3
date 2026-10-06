@@ -4,6 +4,7 @@
 Padaccheda: समि यु-द्रु-दुवः
 
 krt-suffix rule: समि युद्रुदुवः
+Pāṭha: ashtadhyayi.com data.txt row i=33023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sami yudruduvaH",
     text_dev              = "समि युद्रुदुवः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm sami yu-dru-duvaH kft GaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् समि यु-द्रु-दुवः कृत् घञ्",
     padaccheda_dev        = "समि यु-द्रु-दुवः",
     why_dev               = "धातोः प्रत्ययः (३.3.23)।",
     anuvritti_from        = ('3.1.1',),

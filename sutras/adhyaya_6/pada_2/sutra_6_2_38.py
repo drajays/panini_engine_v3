@@ -4,6 +4,7 @@
 Padaccheda: महान् व्रीहि-अपराह्ण-गृष्टि-इष्वास-जाबाल-भार-भारत-हैलि-हिल-रौरव-प्रवृद्धेषु
 
 महान् व्रीह्यपराह्णगृष्टीष्वासजाबालभारभारतहैलिहिलरौरवप्रवृद्धेषु (6.2.38)
+Pāṭha: ashtadhyayi.com data.txt row i=62038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mahAn vrIhyaparAhRagfzwIzvAsajAbAlaBAraBAratahElihilarOravapravfdDezu",
     text_dev              = "महान् व्रीह्यपराह्णगृष्टीष्वासजाबालभारभारतहैलिहिलरौरवप्रवृद्धेषु",
+    samagra_slp1          = "mahAn vrIhi-aparAhRa-gfzwi-izvAsa-jAbAla-BAra-BArata-hElihila-rOrava-pravfdDezu prakftyA pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "महान् व्रीहि-अपराह्ण-गृष्टि-इष्वास-जाबाल-भार-भारत-हैलिहिल-रौरव-प्रवृद्धेषु प्रकृत्या पूर्वपदम्",
     padaccheda_dev        = "महान् व्रीहि-अपराह्ण-गृष्टि-इष्वास-जाबाल-भार-भारत-हैलि-हिल-रौरव-प्रवृद्धेषु",
     why_dev               = "(सूत्रम् 6.2.38) महान् व्रीह्यपराह्णगृष्टीष्वासजाबालभारभारतहैलिहिलरौरवप्रवृद्धेषु।",
     anuvritti_from        = ('6.1.1',),

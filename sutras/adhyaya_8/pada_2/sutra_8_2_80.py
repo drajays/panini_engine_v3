@@ -4,6 +4,7 @@
 Padaccheda: अदसः अ-सेः दात् उ (लुप्तप्रथमान्तनिर्देशः) दः मः
 
 अदसोऽसेर्दादु दो मः (8.2.80)
+Pāṭha: ashtadhyayi.com data.txt row i=82080 (Art. 14).
 """
 from __future__ import annotations
 
@@ -46,6 +47,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = 'adasoserdAdu do maH',
     text_dev              = 'अदसोऽसेर्दादु दो मः',
+    samagra_slp1          = "padasya pUrvatrAsidDam adasaH aseH dAt u daH maH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् अदसः असेः दात् उ दः मः",
     padaccheda_dev        = "अदसः अ-सेः दात् उ (लुप्तप्रथमान्तनिर्देशः) दः मः",
     why_dev               = "(सूत्रम् 8.2.80) अदसोऽसेर्दादु दो मः।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: सर्वम् गुण-कार्त्स्न्ये
 
 सर्वं गुणकार्त्स्न्ये (6.2.93)
+Pāṭha: ashtadhyayi.com data.txt row i=62093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sarvaM guRakArtsnye",
     text_dev              = "सर्वं गुणकार्त्स्न्ये",
+    samagra_slp1          = "udAttaH antaH sarvam guRakArtsnye pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः सर्वम् गुणकार्त्स्न्ये पूर्वपदम्",
     padaccheda_dev        = "सर्वम् गुण-कार्त्स्न्ये",
     why_dev               = "(सूत्रम् 6.2.93) सर्वं गुणकार्त्स्न्ये।",
     anuvritti_from        = ('6.1.1',),

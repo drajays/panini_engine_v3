@@ -7,6 +7,7 @@ Here the engine tape after **6.1.77** + *pada*-merge is ``v`` + ``U`` + ``c`` + 
 
 Glass-box *prayoga* slice (recipe-armed only): rewrite ``vUcs`` → ``vivacs`` so the
 later Tripāḍī spine (**8.2.30** / **8.3.46**) yields ``vivakS`` (*vivakṣ-*).
+Pāṭha: ashtadhyayi.com data.txt row i=61112 (Art. 14).
 """
 from __future__ import annotations
 
@@ -48,6 +49,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='KyatyAt parasya',
     text_dev='ख्यत्यात् परस्य',
+    samagra_slp1="Kya-tyAt parasya Nasi-NasoH ataH ut ",
+    samagra_dev="ख्य-त्यात् परस्य ङसि-ङसोः अतः उत् ।",
     padaccheda_dev="—",
     why_dev="वच्+सन्-मध्यावस्था → विवक्ष्-प्रत्यया-pूर्व आकारः (प०३०)।",
     anuvritti_from=("6.1.72",),

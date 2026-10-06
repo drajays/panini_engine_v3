@@ -4,6 +4,7 @@
 Padaccheda: सः अस्य आदिः इति छन्दसः प्रगाथेषु
 
 सोऽस्यादिरिति च्छन्दसः प्रगाथेषु (4.2.55)
+Pāṭha: ashtadhyayi.com data.txt row i=42055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sosyAdiriti cCandasaH pragATezu',
     text_dev              = 'सोऽस्यादिरिति च्छन्दसः प्रगाथेषु',
+    samagra_slp1          = "saH asya AdiH iti cCandasaH pragATezu iti samarTAnAM praTamAt paraH tadDitaH pratyayaH aR vA",
+    samagra_dev           = "'सः अस्य आदिः इति च्छन्दसः प्रगाथेषु' (इति) समर्थानां प्रथमात् परः तद्धितः प्रत्ययः अण् वा",
     padaccheda_dev        = "सः अस्य आदिः इति छन्दसः प्रगाथेषु",
     why_dev               = "(सूत्रम् 4.2.55) सोऽस्यादिरिति च्छन्दसः प्रगाथेषु।",
     anuvritti_from        = ('4.1.1',),

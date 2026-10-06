@@ -4,6 +4,7 @@
 Padaccheda: अलं-खल्वोः प्रतिषेधयोः प्राचाम् क्त्वा
 
 krt-suffix rule: अलङ्खल्वोः प्रतिषेधयोः प्राचां क्त्वा
+Pāṭha: ashtadhyayi.com data.txt row i=34018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "alaNKalvoH pratizeDayoH prAcAM ktvA",
     text_dev              = "अलङ्खल्वोः प्रतिषेधयोः प्राचां क्त्वा",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH alam-KalvoH pratizeDayoH prAcAm ktvA kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः अलम्-खल्वोः प्रतिषेधयोः प्राचाम् क्त्वा कृत्",
     padaccheda_dev        = "अलं-खल्वोः प्रतिषेधयोः प्राचाम् क्त्वा",
     why_dev               = "धातोः प्रत्ययः (३.4.18)।",
     anuvritti_from        = ('3.1.1',),

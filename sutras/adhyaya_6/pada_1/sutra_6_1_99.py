@@ -4,6 +4,7 @@
 Padaccheda: न आम्रेडितस्य अन्त्यस्य तु वा
 
 नाम्रेडितस्यान्त्यस्य तु वा (6.1.99)
+Pāṭha: ashtadhyayi.com data.txt row i=61099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nAmreqitasyAntyasya tu vA',
     text_dev              = 'नाम्रेडितस्यान्त्यस्य तु वा',
+    samagra_slp1          = "Amreqitasya avyaktAnukaraRasya antyasya ataH itO pUrvaparayoH ekaH pararUpam tu vA",
+    samagra_dev           = "आम्रेडितस्य अव्यक्तानुकरणस्य अन्त्यस्य अतः इतौ पूर्वपरयोः एकः पररूपम् तु वा",
     padaccheda_dev        = "न आम्रेडितस्य अन्त्यस्य तु वा",
     why_dev               = "(सूत्रम् 6.1.99) नाम्रेडितस्यान्त्यस्य तु वा।",
     apavada_of     = ("6.1.98",),   # अपवाद of 6.1.98 — sutra_ref_out resolver.apavada_of

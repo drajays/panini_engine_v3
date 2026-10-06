@@ -4,6 +4,7 @@
 Padaccheda: व्रातेन जीवति (क्रियापदम्)
 
 व्रातेन जीवति (5.2.21)
+Pāṭha: ashtadhyayi.com data.txt row i=52021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vrAtena jIvati",
     text_dev              = "व्रातेन जीवति",
+    samagra_slp1          = "vrAtena jIvati iti KaY",
+    samagra_dev           = "'व्रातेन जीवति' (इति) खञ्",
     padaccheda_dev        = "व्रातेन जीवति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 5.2.21) व्रातेन जीवति।",
     anuvritti_from        = ('4.1.82',),

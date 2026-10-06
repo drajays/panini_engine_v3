@@ -4,6 +4,7 @@
 Padaccheda: अत् स्मृ-दृ-त्वर-प्रथ-म्रद-स्तॄ-स्पशाम्
 
 अत् स्मृदृत्वरप्रथम्रदस्तॄस्पशाम् (7.4.95)
+Pāṭha: ashtadhyayi.com data.txt row i=74095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'at smfdFtvarapraTamradastFspaSAm',
     text_dev              = 'अत् स्मृदॄत्वरप्रथम्रदस्तॄस्पशाम्',
+    samagra_slp1          = "aNgasya aByAsasya at smfdftvarapraTamradastFspaSAm caNpare anaglope",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य अत् स्मृदृत्वरप्रथम्रदस्तॄस्पशाम् चङ्परे अनग्लोपे",
     padaccheda_dev        = "अत् स्मृ-दृ-त्वर-प्रथ-म्रद-स्तॄ-स्पशाम्",
     why_dev               = "(सूत्रम् 7.4.95) अत् स्मृदृत्वरप्रथम्रदस्तॄस्पशाम्।",
     anuvritti_from        = ('7.1.1',),

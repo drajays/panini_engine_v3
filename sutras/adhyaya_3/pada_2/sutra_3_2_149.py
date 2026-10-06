@@ -4,6 +4,7 @@
 Padaccheda: अनुदात्त-इतः च हल्-आदेः
 
 krt-suffix rule: अनुदात्तेतश्च हलादेः (149)
+Pāṭha: ashtadhyayi.com data.txt row i=32149 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anudAttetaSca halAdeH",
     text_dev              = "अनुदात्तेतश्च हलादेः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu anudAttetaH ca halAdeH kft akarmakAt yuc",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु अनुदात्तेतः च हलादेः कृत् अकर्मकात् युच्",
     padaccheda_dev        = "अनुदात्त-इतः च हल्-आदेः",
     why_dev               = "धातोः कृत्-प्रत्ययः [अनुदात्तेतश्च हलादेः] विहितः (३.२.149)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

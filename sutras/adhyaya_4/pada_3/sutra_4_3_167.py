@@ -4,6 +4,7 @@
 Padaccheda: हरीतकी-आदिभ्यः च
 
 हरीतक्यादिभ्यश्च (4.3.167)
+Pāṭha: ashtadhyayi.com data.txt row i=43167 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "harItakyAdiByaSca",
     text_dev              = "हरीतक्यादिभ्यश्च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA harItakya-AdiByaH ca tasya vikAraH avayave lup",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा हरीतक्य-आदिभ्यः च तस्य विकारः अवयवे लुप्",
     padaccheda_dev        = "हरीतकी-आदिभ्यः च",
     why_dev               = "(सूत्रम् 4.3.167) हरीतक्यादिभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

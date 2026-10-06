@@ -30,6 +30,7 @@ v3 engine role:
   - No arm flags.  r1_form_identity_exempt=True (no surface change).
   - Phoneme pratyāhāras: phonology/pratyahara.py (AC, HAL, IK, …)
   - Pratyaya pratyāhāras: phonology/pratyaya_pratyahara.py (SUP, TIN, …)
+Pāṭha: ashtadhyayi.com data.txt row i=11071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -55,6 +56,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'Adirantyena sahetA',
     text_dev                = 'आदिरन्त्येन सहेता',
+    samagra_slp1            = "antyena itA saha AdiH svasya rUpasya",
+    samagra_dev             = "अन्त्येन इता सह आदिः स्वस्य रूपस्य",
     padaccheda_dev          = "आदिः / अन्त्येन / सह / इता",
     why_dev                 = (
         "प्रत्याहारे प्रथमः वर्णः अन्त्येन इत्-संज्ञकेन सह मिलित्वा "

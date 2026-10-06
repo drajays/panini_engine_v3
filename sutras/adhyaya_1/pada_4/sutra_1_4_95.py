@@ -11,6 +11,7 @@ surpassing) sense, and also in the *pūjā* sense (by *ca* from **1.4.94**).
 *Engine:* sets paribhāṣā gate for *ati-in-atikramaṇa*.
 ``cond`` never reads vibhakti/vacana/lakāra/surface.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=14095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -36,6 +37,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'atiratikramaRe ca',
     text_dev             = 'अतिरतिक्रमणे च',
+    samagra_slp1         = "AkaqArAt ekA saMjYA prAgrISvarAnnipAtAH karmapravacanIyAH atiH atikramaRe ca pUjAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा प्राग्रीश्वरान्निपाताः कर्मप्रवचनीयाः अतिः अतिक्रमणे च पूजायाम्",
     padaccheda_dev       = "अतिः / अतिक्रमणे / च",
     why_dev              = (
         "अतिक्रमण-अर्थे (पूजायां च) वर्तमानः 'अति' कर्मप्रवचनीय-संज्ञकः (१.४.८३-अधिकार)।"

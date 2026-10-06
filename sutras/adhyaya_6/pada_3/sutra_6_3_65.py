@@ -4,6 +4,7 @@
 Padaccheda: इष्टका-इषीका-मालानाम् चित-तूल-भारिषु
 
 इष्टकेषीकामालानां चिततूलभारिषु (6.3.65)
+Pāṭha: ashtadhyayi.com data.txt row i=63065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "izwakezIkAmAlAnAM citatUlaBArizu",
     text_dev              = "इष्टकेषीकामालानां चिततूलभारिषु",
+    samagra_slp1          = "uttarapade izwakA-izikA-mAlAnAm citatUlaBArizu treH hrasvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे इष्टका-इषिका-मालानाम् चिततूलभारिषु त्रेः ह्रस्वः",
     padaccheda_dev        = "इष्टका-इषीका-मालानाम् चित-तूल-भारिषु",
     why_dev               = "(सूत्रम् 6.3.65) इष्टकेषीकामालानां चिततूलभारिषु।",
     anuvritti_from        = ('6.1.1',),

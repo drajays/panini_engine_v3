@@ -4,6 +4,7 @@
 Padaccheda: शेषः बहुव्रीहिः
 
 Residual compounds are bahuvrihi.
+Pāṭha: ashtadhyayi.com data.txt row i=22023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Sezo bahuvrIhiH",
     text_dev              = "शेषो बहुव्रीहिः",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA SezaH bahuvrIhiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा शेषः बहुव्रीहिः",
     padaccheda_dev        = "शेषः बहुव्रीहिः",
     why_dev               = "शेषः बहुव्रीहिः (२.२.२३)।",
     anuvritti_from        = ('2.2.1',),

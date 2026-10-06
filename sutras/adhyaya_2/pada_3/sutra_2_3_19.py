@@ -4,6 +4,7 @@
 Padaccheda: सह-युक्ते अप्रधाने
 
 saha with non-primary member takes tritiya.
+Pāṭha: ashtadhyayi.com data.txt row i=23019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sahayuktepraDAne',
     text_dev              = 'सहयुक्तेऽप्रधाने',
+    samagra_slp1          = "anaBihite sahayukte apraDAne tftIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते सहयुक्ते अप्रधाने तृतीया",
     padaccheda_dev        = "सह-युक्ते अप्रधाने",
     why_dev               = "सह-युक्ते अप्रधाने (२.३.१९)।",
     anuvritti_from        = ('2.3.18',),

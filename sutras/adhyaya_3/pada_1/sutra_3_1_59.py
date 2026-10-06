@@ -4,6 +4,7 @@
 Padaccheda: कृ-मृ-दृ-रुहिभ्यः छन्दसि
 
 Krt suffix rule from dhatu: कृमृदृरुहिभ्यश्छन्दसि (59)
+Pāṭha: ashtadhyayi.com data.txt row i=31059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kfmfdfruhiByaSCandasi",
     text_dev              = "कृमृदृरुहिभ्यश्छन्दसि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kf-mf-df-ruhiByaH Candasi luNi cleH aN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः कृ-मृ-दृ-रुहिभ्यः छन्दसि लुङि च्लेः अङ्",
     padaccheda_dev        = "कृ-मृ-दृ-रुहिभ्यः छन्दसि",
     why_dev               = "धातोः [कृमृदृरुहिभ्यश्छन्दसि]-प्रत्ययः विहितः (३.१.59)।",
     anuvritti_from        = ('3.1.1',),

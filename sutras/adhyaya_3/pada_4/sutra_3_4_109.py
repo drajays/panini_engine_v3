@@ -4,6 +4,7 @@
 Padaccheda: सिच्-अभ्यस्त-विदिभ्यः च
 
 krt-suffix rule: सिजभ्यस्तविदिभ्यः च
+Pāṭha: ashtadhyayi.com data.txt row i=34109 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sijaByastavidiByaSca',
     text_dev              = 'सिजभ्यस्तविदिभ्यश्च',
+    samagra_slp1          = "sic-aByasta-vidiByaH NitaH JeH jus",
+    samagra_dev           = "सिच्-अभ्यस्त-विदिभ्यः ङितः झेः जुस्",
     padaccheda_dev        = "सिच्-अभ्यस्त-विदिभ्यः च",
     why_dev               = "धातोः प्रत्ययः (३.4.109)।",
     anuvritti_from        = ('3.1.1',),

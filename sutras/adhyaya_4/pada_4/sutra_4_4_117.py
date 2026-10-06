@@ -4,6 +4,7 @@
 Padaccheda: घ-छौ च
 
 घच्छौ च (4.4.117)
+Pāṭha: ashtadhyayi.com data.txt row i=44117 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "GacCO ca",
     text_dev              = "घच्छौ च",
+    samagra_slp1          = "tatra Bave iti agrAt Candasi saMjYAyAm Gan Ga-CO ca",
+    samagra_dev           = "'तत्र भवे' (इतिि) अग्रात् छन्दसि संज्ञायाम् घन्  घ-छौ च",
     padaccheda_dev        = "घ-छौ च",
     why_dev               = "(सूत्रम् 4.4.117) घच्छौ च।",
     anuvritti_from        = ('4.1.1',),

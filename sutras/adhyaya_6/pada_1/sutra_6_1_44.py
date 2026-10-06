@@ -4,6 +4,7 @@
 Padaccheda: विभाषा परेः
 
 विभाषा परेः (6.1.44)
+Pāṭha: ashtadhyayi.com data.txt row i=61044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA pareH",
     text_dev              = "विभाषा परेः",
+    samagra_slp1          = "viBAzA pareH samprasAraRam na lyapi vyaH ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "विभाषा परेः सम्प्रसारणम् न ल्यपि व्यः च",
     padaccheda_dev        = "विभाषा परेः",
     why_dev               = "(सूत्रम् 6.1.44) विभाषा परेः।",
     anuvritti_from        = ('6.1.1',),

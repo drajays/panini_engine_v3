@@ -4,6 +4,7 @@
 Padaccheda: विनय-आदिभ्यः ठक्
 
 विनयादिभ्यष्ठक् (5.4.34)
+Pāṭha: ashtadhyayi.com data.txt row i=54034 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vinayAdiByazWak",
     text_dev              = "विनयादिभ्यष्ठक्",
+    samagra_slp1          = "vinayAdiByaH Wak",
+    samagra_dev           = "विनयादिभ्यः ठक्",
     padaccheda_dev        = "विनय-आदिभ्यः ठक्",
     why_dev               = "(सूत्रम् 5.4.34) विनयादिभ्यष्ठक्।",
     anuvritti_from        = ('4.1.76',),

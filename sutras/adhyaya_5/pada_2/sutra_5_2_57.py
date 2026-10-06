@@ -4,6 +4,7 @@
 Padaccheda: नित्यम् शत-आदि-मास-अर्धमास-संवत्सरात् च
 
 नित्यं शतादिमासार्धमाससंवत्सराच्च (5.2.57)
+Pāṭha: ashtadhyayi.com data.txt row i=52057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nityaM SatAdimAsArDamAsasaMvatsarAcca",
     text_dev              = "नित्यं शतादिमासार्धमाससंवत्सराच्च",
+    samagra_slp1          = "tasya pUraRe iti SatAdi-mAsa-arDamAsa-saMvatsarAt qawaH tamaw anyatarasyAm ca",
+    samagra_dev           = "'तस्य पूरणे' (इति) शतादि-मास-अर्धमास-संवत्सरात् डटः तमट् अन्यतरस्याम् च",
     padaccheda_dev        = "नित्यम् शत-आदि-मास-अर्धमास-संवत्सरात् च",
     why_dev               = "(सूत्रम् 5.2.57) नित्यं शतादिमासार्धमाससंवत्सराच्च।",
     anuvritti_from        = ('4.1.82',),

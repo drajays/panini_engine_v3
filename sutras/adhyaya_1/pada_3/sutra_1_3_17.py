@@ -14,6 +14,7 @@ one dhātu Term has upadesha_slp1 == "viS" and also carries the tag
 (c) the idempotency stamp "Atmanepada_1_3_17" is absent from state.meta.
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs.
+Pāṭha: ashtadhyayi.com data.txt row i=13017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='nerviSaH',
     text_dev='नेर्विशः',
+    samagra_slp1="neH viSaH Atmanepadam",
+    samagra_dev="नेः विशः आत्मनेपदम्",
     padaccheda_dev="नेः (पञ्चमी) / विशः (षष्ठी)",
     why_dev=(
         "नि-पूर्वस्य विश्-धातोः प्रयोगे आत्मनेपदम् — niviśate इत्यादि; "

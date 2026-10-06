@@ -4,6 +4,7 @@
 Padaccheda: माथ-उत्तरपद-पदवी-अनुपदम् धावति (क्रियापदम्)
 
 माथोत्तरपदपदव्यनुपदं धावति (4.4.37)
+Pāṭha: ashtadhyayi.com data.txt row i=44037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mATottarapadapadavyanupadaM DAvati",
     text_dev              = "माथोत्तरपदपदव्यनुपदं धावति",
+    samagra_slp1          = "tat mATa-uttarapada-padavI-anupadam DAvati iti samarTAnAM praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् माथ-उत्तरपद-पदवी-अनुपदम् धावति' इति समर्थानां प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "माथ-उत्तरपद-पदवी-अनुपदम् धावति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.37) माथोत्तरपदपदव्यनुपदं धावति।",
     anuvritti_from        = ('4.1.1',),

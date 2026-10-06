@@ -2,7 +2,7 @@
 6.4.98  गमहनजनखनघसां लोपः क्ङित्यनङि  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=60498
+- ashtadhyayi.com data.txt row i=64098
 - Kāśikā: «गमहनजनखनघसां लोपः क्ङित्यनङि» (घस् → घ्स् in *liṭ* reduplication)
 - Cross-validation: tests/unit/test_tinanta_ad_lit_kartari.py (जक्षतुः …)
 
@@ -96,6 +96,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gamahanajanaKanaGasAM lopaH kNityanaNi",
     text_dev              = "गमहनजनखनघसां लोपः क्ङित्यनङि",
+    samagra_slp1          = "gama-hana-jana-Kana-GasAmupaDAyAH kNiti aci lopaH anaNi",
+    samagra_dev           = "गम-हन-जन-खन-घसामुपधायाः क्ङिति अचि लोपः अनङि",
     padaccheda_dev        = "गम-हन-जन-खन-घसाम् लोपः क्ङिति अन्-अङि",
     why_dev               = "(सूत्रम् 6.4.98) गमहनजनखनघसां लोपः क्ङित्यनङि।",
     anuvritti_from        = ('6.1.1',),

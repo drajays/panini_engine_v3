@@ -9,6 +9,7 @@ Example: *akṣān pari* → *paryakṣam* ("around/through dice").
 
 v3 narrow slice: gate-marks the compound with key
 ``2_1_10_aksha_salaka_pari``.
+Pāṭha: ashtadhyayi.com data.txt row i=21010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -44,6 +45,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'akzaSalAkAsaMKyAH pariRA',
     text_dev              = 'अक्षशलाकासंख्याः परिणा',
+    samagra_slp1          = "akza-SalAkA-saNKyAH pariRA supA saha avyayIBAvaH samAsaH",
+    samagra_dev           = "अक्ष-शलाका-सङ्ख्याः परिणा सुपा सह अव्ययीभावः समासः",
     padaccheda_dev        = "अक्ष-शलाका-संख्याः / परिणा",
     why_dev               = "अक्ष-शलाका-संख्या-शब्दानां परि-अव्ययेन सह अव्ययीभावः (२.१.१०)।",
     anuvritti_from        = ("2.1.5",),

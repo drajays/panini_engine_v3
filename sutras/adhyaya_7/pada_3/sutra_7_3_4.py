@@ -4,6 +4,7 @@
 Padaccheda: द्वार-आदीनाम् च
 
 द्वारादीनां च (7.3.4)
+Pāṭha: ashtadhyayi.com data.txt row i=73004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvArAdInAM ca",
     text_dev              = "द्वारादीनां च",
+    samagra_slp1          = "aNgasya dvArAdInAm ca vfdDiH YRiti acaH AdeH tadDitezu pUrvO tu tAByAm Ec na yvAByAm padAntAByAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य द्वारादीनाम् च वृद्धिः ञ्णिति अचः आदेः तद्धितेषु पूर्वौ तु ताभ्याम् ऐच् न य्वाभ्याम् पदान्ताभ्याम्",
     padaccheda_dev        = "द्वार-आदीनाम् च",
     why_dev               = "(सूत्रम् 7.3.4) द्वारादीनां च।",
     anuvritti_from        = ('7.1.1',),

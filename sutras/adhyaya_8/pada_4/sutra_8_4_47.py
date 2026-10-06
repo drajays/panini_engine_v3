@@ -143,6 +143,8 @@ SUTRA = SutraRecord(
     vibhasha_default=False,   # यरो वा (8.4.45) is carried in: the doubling is the optional reading
     text_slp1="anaci ca",
     text_dev="अनचि च",
+    samagra_slp1="acaH yaraH anaci dve vA saMhitAyAm",
+    samagra_dev="अचः यरः अनचि द्वे वा संहितायाम्",
     padaccheda_dev="अनचि च",
     why_dev=(
         "अचः परो यर् (ह-वर्जितः) अनचि परे विकल्पेन द्वित्वम्; "

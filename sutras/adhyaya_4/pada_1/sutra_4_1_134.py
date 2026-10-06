@@ -4,6 +4,7 @@
 Padaccheda: मातृष्वसुः च
 
 मातृष्वसुश्च (4.1.134)
+Pāṭha: ashtadhyayi.com data.txt row i=41134 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mAtfzvasuSca",
     text_dev              = "मातृष्वसुश्च",
+    samagra_slp1          = "tasya apatyam iti mAtfzvasuH CaR Qaki lopaH ca",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) मातृष्वसुः छण्, ढकि लोपः च",
     padaccheda_dev        = "मातृष्वसुः च",
     why_dev               = "(सूत्रम् 4.1.134) मातृष्वसुश्च।",
     anuvritti_from        = ('4.1.1',),

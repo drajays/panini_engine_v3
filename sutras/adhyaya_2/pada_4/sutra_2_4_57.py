@@ -4,6 +4,7 @@
 Padaccheda: वा यौ
 
 Optional for yau.
+Pāṭha: ashtadhyayi.com data.txt row i=24057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA yO",
     text_dev              = "वा यौ",
+    samagra_slp1          = "ArDaDAtuke vA yO ajeH vI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आर्धधातुके वा यौ अजेः वी",
     padaccheda_dev        = "वा यौ",
     why_dev               = "वा यौ (२.४.५७)।",
     anuvritti_from        = ('2.4.56',),

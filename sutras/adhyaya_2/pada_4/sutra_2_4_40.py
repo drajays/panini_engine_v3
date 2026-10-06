@@ -2,7 +2,7 @@
 2.4.40  लिट्यन्यतरस्याम्  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=20440
+- ashtadhyayi.com data.txt row i=24040
 - Kāśikā: «लिटि अदः घसः अन्यतरस्याम्» (अद्भक्षणे → घस्)
 - Cross-validation: tests/unit/test_tinanta_ad_lit_kartari.py
 
@@ -66,6 +66,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='liwyanyatarasyAm',
     text_dev='लिट्यन्यतरस्याम्',
+    samagra_slp1="ArDaDAtuke liwi anyatarasyAm adaH Gasx",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आर्धधातुके लिटि अन्यतरस्याम् अदः घसॢ",
     padaccheda_dev="लिटि / अन्यतरस्याम्",
     why_dev="लिटि अद्-धातोः घस्-आदेशः — प०३४ (*जक्षतुः*)।",
     anuvritti_from=("2.4.1",),

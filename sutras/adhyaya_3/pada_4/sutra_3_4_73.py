@@ -4,6 +4,7 @@
 Padaccheda: दाश-गोघ्नौ सम्प्रदाने
 
 krt-suffix rule: दाशगोघ्नौ सम्प्रदाने
+Pāṭha: ashtadhyayi.com data.txt row i=34073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dASagoGnO sampradAne",
     text_dev              = "दाशगोघ्नौ सम्प्रदाने",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH dASa-goGnO sampradAne kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः दाश-गोघ्नौ सम्प्रदाने कृत्",
     padaccheda_dev        = "दाश-गोघ्नौ सम्प्रदाने",
     why_dev               = "धातोः प्रत्ययः (३.4.73)।",
     anuvritti_from        = ('3.1.1',),

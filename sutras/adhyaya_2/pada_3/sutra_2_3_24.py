@@ -4,6 +4,7 @@
 Padaccheda: अ-कर्तरि ऋणे पञ्चमी
 
 Pancami marks debt when not from the agent.
+Pāṭha: ashtadhyayi.com data.txt row i=23024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "akartaryfRe paYcamI",
     text_dev              = "अकर्तर्यृणे पञ्चमी",
+    samagra_slp1          = "anaBihite akartari fRe paYcamI hetO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते अकर्तरि ऋणे पञ्चमी हेतौ",
     padaccheda_dev        = "अ-कर्तरि ऋणे पञ्चमी",
     why_dev               = "अ-कर्तरि ऋणे पञ्चमी (२.३.२४)।",
     anuvritti_from        = ('2.3.28',),

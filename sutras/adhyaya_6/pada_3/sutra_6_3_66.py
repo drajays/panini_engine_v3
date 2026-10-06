@@ -4,6 +4,7 @@
 Padaccheda: खिति अन्-अव्ययस्य
 
 खित्यनव्ययस्य (6.3.66)
+Pāṭha: ashtadhyayi.com data.txt row i=63066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Kityanavyayasya",
     text_dev              = "खित्यनव्ययस्य",
+    samagra_slp1          = "uttarapade Kiti anavyayasya treH hrasvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे खिति अनव्ययस्य त्रेः ह्रस्वः",
     padaccheda_dev        = "खिति अन्-अव्ययस्य",
     why_dev               = "(सूत्रम् 6.3.66) खित्यनव्ययस्य।",
     anuvritti_from        = ('6.1.1',),

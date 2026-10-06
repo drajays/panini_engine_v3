@@ -4,6 +4,7 @@
 Padaccheda: कृत्य-उक-इष्णुच्-चारु-आदयः च
 
 कृत्योकेष्णुच्चार्वादयश्च (6.2.160)
+Pāṭha: ashtadhyayi.com data.txt row i=62160 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kftyokezRuccArvAdayaSca",
     text_dev              = "कृत्योकेष्णुच्चार्वादयश्च",
+    samagra_slp1          = "uttarapadAdiH antaH kftya-uka-izRuc-cArvAdayaH ca naYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः कृत्य-उक-इष्णुच्-चार्वादयः च नञः",
     padaccheda_dev        = "कृत्य-उक-इष्णुच्-चारु-आदयः च",
     why_dev               = "(सूत्रम् 6.2.160) कृत्योकेष्णुच्चार्वादयश्च।",
     anuvritti_from        = ('6.1.1',),

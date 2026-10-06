@@ -4,6 +4,7 @@
 Padaccheda: अनः बहुव्रीहेः
 
 अनो बहुव्रीहेः (4.1.12)
+Pāṭha: ashtadhyayi.com data.txt row i=41012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ano bahuvrIheH",
     text_dev              = "अनो बहुव्रीहेः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anaH bahuvrIheH NIp na manaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनः बहुव्रीहेः ङीप् न मनः",
     padaccheda_dev        = "अनः बहुव्रीहेः",
     why_dev               = "(सूत्रम् 4.1.12) अनो बहुव्रीहेः।",
     anuvritti_from        = ('4.1.1',),

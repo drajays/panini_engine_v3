@@ -14,6 +14,7 @@ Narrow v3:
     ``samjna_registry['1.2.40_sannatara_prakriya_34']``.
 
 ``cond`` does not read surface Devanāgarī targets — only ``meta`` arms + ``Term.tags``.
+Pāṭha: ashtadhyayi.com data.txt row i=12040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -68,6 +69,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="udAttasvaritaparasya sannataraH",
     text_dev="उदात्तस्वरितपरस्य सन्नतरः",
+    samagra_slp1="udAtta-svarita-parasya sannataraH anudAttAnAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="उदात्त-स्वरित-परस्य सन्नतरः अनुदात्तानाम्",
     padaccheda_dev="उदात्त-स्वरित-परस्य / सन्नतरः",
     why_dev="उदात्त-स्वरित-परः सन्नतरः (*prakriya_33* / *34*, *śruti*-स्तरः)।",
     anuvritti_from=(),

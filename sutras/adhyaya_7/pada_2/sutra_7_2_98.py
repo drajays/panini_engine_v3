@@ -4,6 +4,7 @@
 Padaccheda: प्रत्यय-उत्तरपदयोः च
 
 प्रत्ययोत्तरपदयोश्च (7.2.98)
+Pāṭha: ashtadhyayi.com data.txt row i=72098 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pratyayottarapadayoSca",
     text_dev              = "प्रत्ययोत्तरपदयोश्च",
+    samagra_slp1          = "aNgasya maparyantasya pratyaya-uttarapadayoH ca viBaktO yuzmadasmadoH tvamO ekavacane",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य मपर्यन्तस्य प्रत्यय-उत्तरपदयोः च विभक्तौ युष्मदस्मदोः त्वमौ एकवचने",
     padaccheda_dev        = "प्रत्यय-उत्तरपदयोः च",
     why_dev               = "(सूत्रम् 7.2.98) प्रत्ययोत्तरपदयोश्च।",
     anuvritti_from        = ('7.1.1',),

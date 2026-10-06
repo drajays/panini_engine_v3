@@ -4,6 +4,7 @@
 Padaccheda: शस् । छः । अटि
 
 शश्छोऽटि (8.4.63)
+Pāṭha: ashtadhyayi.com data.txt row i=84063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'SaSCowi',
     text_dev              = 'शश्छोऽटि',
+    samagra_slp1          = "padAntAt JayaH SaH CaH vA awi",
+    samagra_dev           = "पदान्तात् झयः शः छः वा अटि",
     padaccheda_dev        = "शस् । छः । अटि",
     why_dev               = "(सूत्रम् 8.4.63) शश्छोऽटि।",
     anuvritti_from        = ('8.1.1',),

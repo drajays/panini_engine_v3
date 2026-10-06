@@ -4,6 +4,7 @@
 Padaccheda: एति संज्ञायाम् अ-गात्
 
 ऐति संज्ञायामगात् (8.3.99)
+Pāṭha: ashtadhyayi.com data.txt row i=83099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'eti saMjYAyAmagAt',
     text_dev              = 'एति संज्ञायामगात्',
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH eti saMjYAyAm agAt saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः एति संज्ञायाम् अगात् सः",
     padaccheda_dev        = "एति संज्ञायाम् अ-गात्",
     why_dev               = "(सूत्रम् 8.3.99) ऐति संज्ञायामगात्।",
     anuvritti_from        = ('8.1.1',),

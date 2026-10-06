@@ -23,6 +23,7 @@ it links corresponding positions only (*respectively*).
 the rule is scheduled (after the first **1.3.9** *it*-*lopa* pass in standard
 pipelines).  Individual *vidhi* *cond*/*act* still encode their own pairings;
 this gate records that the *paribhāṣā* is acknowledged for future checks.
+Pāṭha: ashtadhyayi.com data.txt row i=13010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.PARIBHASHA,
     text_slp1      = 'yaTAsaMKyamanudeSaH samAnAm',
     text_dev       = 'यथासंख्यमनुदेशः समानाम्',
+    samagra_slp1   = "samAnAmanudeSaH yaTAsaNKyam",
+    samagra_dev    = "समानामनुदेशः यथासङ्ख्यम्",
     padaccheda_dev = (
         "यथासङ्ख्यम् (अव्ययम्) / अनुदेशः (प्रथमा-एकवचनम्) / समानाम् (षष्ठी-बहुवचनम्)"
     ),

@@ -4,6 +4,7 @@
 Padaccheda: आदि-उदात्तम् द्वि-अच् छन्दसि
 
 आद्युदात्तं द्व्यच् छन्दसि (6.2.119)
+Pāṭha: ashtadhyayi.com data.txt row i=62119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AdyudAttaM dvyac Candasi",
     text_dev              = "आद्युदात्तं द्व्यच् छन्दसि",
+    samagra_slp1          = "udAttaH uttarapadAdiH AdyudAttam dvyac Candasi bahuvrIhO soH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः आद्युदात्तम् द्व्यच् छन्दसि बहुव्रीहौ सोः",
     padaccheda_dev        = "आदि-उदात्तम् द्वि-अच् छन्दसि",
     why_dev               = "(सूत्रम् 6.2.119) आद्युदात्तं द्व्यच् छन्दसि।",
     anuvritti_from        = ('6.1.1',),

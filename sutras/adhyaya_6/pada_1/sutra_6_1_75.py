@@ -12,6 +12,7 @@ Example: mleCCa (म्लेछँ) + anīya → mleC + anīya:
   → by 8.4.40 ścutva (t+C→c): mle-c-C + anīya = "mlecCanIya" (म्लेच्छनीय)
 
 By 1.1.46 (āntaṭakitau): tuk is kit, placed after the dīrgha vowel.
+Pāṭha: ashtadhyayi.com data.txt row i=61075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -59,6 +60,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='dIrGAt',
     text_dev='दीर्घात्',
+    samagra_slp1="dIrGAt Ce tuk saMhitAyAm",
+    samagra_dev="दीर्घात् छे तुक् संहितायाम्",
     padaccheda_dev="दीर्घात्",
     why_dev=(
         "दीर्घस्वरात् परः अव्यवहितः छकारः विद्यते चेत् दीर्घस्वरस्य 'तुक्' आगमः।"

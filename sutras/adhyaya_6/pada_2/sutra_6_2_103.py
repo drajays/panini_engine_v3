@@ -4,6 +4,7 @@
 Padaccheda: दिक्शब्दाः ग्राम-जनपद-आख्यान-चानराटेषु
 
 दिक्शब्दा ग्रामजनपदाख्यानचानराटेषु (6.2.103)
+Pāṭha: ashtadhyayi.com data.txt row i=62103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dikSabdA grAmajanapadAKyAnacAnarAwezu",
     text_dev              = "दिक्शब्दा ग्रामजनपदाख्यानचानराटेषु",
+    samagra_slp1          = "udAttaH antaH dikSabdAH grAma-jana-pada-AKyAna-cAnarAwezu pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः अन्तः दिक्शब्दाः ग्राम-जन-पद-आख्यान-चानराटेषु पूर्वपदम्",
     padaccheda_dev        = "दिक्शब्दाः ग्राम-जनपद-आख्यान-चानराटेषु",
     why_dev               = "(सूत्रम् 6.2.103) दिक्शब्दा ग्रामजनपदाख्यानचानराटेषु।",
     anuvritti_from        = ('6.1.1',),

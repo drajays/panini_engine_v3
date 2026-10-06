@@ -4,6 +4,7 @@
 Padaccheda: किमः संख्या-परिमाणे डति (लुप्तप्रथमान्तनिर्देशः) च
 
 किमः संख्यापरिमाणे डति च (5.2.41)
+Pāṭha: ashtadhyayi.com data.txt row i=52041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kimaH saMKyAparimARe qati ca",
     text_dev              = "किमः संख्यापरिमाणे डति च",
+    samagra_slp1          = "tat asya iti kimaH saNKyAparimARe qatiH vatup ca",
+    samagra_dev           = "'तत् अस्य' (इति) किमः सङ्ख्यापरिमाणे डतिः, वतुप् च",
     padaccheda_dev        = "किमः संख्या-परिमाणे डति (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 5.2.41) किमः संख्यापरिमाणे डति च।",
     anuvritti_from        = ('4.1.82',),

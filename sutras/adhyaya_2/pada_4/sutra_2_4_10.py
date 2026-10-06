@@ -4,6 +4,7 @@
 Padaccheda: शूद्राणाम् अनिरवसितानाम्
 
 dvandva of shudra non-outcaste groups.
+Pāṭha: ashtadhyayi.com data.txt row i=24010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SUdrARAmaniravasitAnAm",
     text_dev              = "शूद्राणामनिरवसितानाम्",
+    samagra_slp1          = "SUdrARAm a-niravasitAnAm ekavacanam dvandvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "शूद्राणाम् अ-निरवसितानाम् एकवचनम् द्वन्द्वः",
     padaccheda_dev        = "शूद्राणाम् अनिरवसितानाम्",
     why_dev               = "शूद्राणाम् अनिरवसितानां द्वन्द्वे (२.४.१०)।",
     anuvritti_from        = ('2.4.1',),

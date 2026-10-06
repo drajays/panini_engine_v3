@@ -4,6 +4,7 @@
 Padaccheda: आकर्षादिभ्यः कन्
 
 आकर्षादिभ्यः कन् (5.2.64)
+Pāṭha: ashtadhyayi.com data.txt row i=52064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AkarzAdiByaH kan",
     text_dev              = "आकर्षादिभ्यः कन्",
+    samagra_slp1          = "tatra kuSalaH iti AkarzAdiByaH kan",
+    samagra_dev           = "'तत्र कुशलः' (इति) आकर्षादिभ्यः कन्",
     padaccheda_dev        = "आकर्षादिभ्यः कन्",
     why_dev               = "(सूत्रम् 5.2.64) आकर्षादिभ्यः कन्।",
     anuvritti_from        = ('4.1.82',),

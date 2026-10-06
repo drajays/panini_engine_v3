@@ -4,6 +4,7 @@
 Padaccheda: सिचः यङि
 
 सिचो यङि (8.3.112)
+Pāṭha: ashtadhyayi.com data.txt row i=83112 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sico yaNi",
     text_dev              = "सिचो यङि",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH sicaH yaNi saH na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः सिचः यङि सः न",
     padaccheda_dev        = "सिचः यङि",
     why_dev               = "(सूत्रम् 8.3.112) सिचो यङि।",
     anuvritti_from        = ('8.1.1',),

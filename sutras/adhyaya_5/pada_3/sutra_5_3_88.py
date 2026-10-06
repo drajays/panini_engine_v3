@@ -4,6 +4,7 @@
 Padaccheda: कुटी-शमी-शुण्डाभ्यः रः
 
 कुटीशमीशुण्डाभ्यो रः (5.3.88)
+Pāṭha: ashtadhyayi.com data.txt row i=53088 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kuwISamISuRqAByo raH",
     text_dev              = "कुटीशमीशुण्डाभ्यो रः",
+    samagra_slp1          = "hrasve kuwI-SamI-SuRqAByaH raH",
+    samagra_dev           = "ह्रस्वे कुटी-शमी-शुण्डाभ्यः रः",
     padaccheda_dev        = "कुटी-शमी-शुण्डाभ्यः रः",
     why_dev               = "(सूत्रम् 5.3.88) कुटीशमीशुण्डाभ्यो रः।",
     anuvritti_from        = ('5.3.70',),

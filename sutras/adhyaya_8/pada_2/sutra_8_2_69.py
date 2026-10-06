@@ -4,6 +4,7 @@
 Padaccheda: रोः · असुपि
 
 रोऽसुपि (8.2.69)
+Pāṭha: ashtadhyayi.com data.txt row i=82069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'rosupi',
     text_dev              = 'रोऽसुपि',
+    samagra_slp1          = "padasya ahnaH asupi raH",
+    samagra_dev           = "पदस्य अह्नः असुपि रः",
     padaccheda_dev        = "रोः · असुपि",
     why_dev               = "(सूत्रम् 8.2.69) रोऽसुपि।",
     anuvritti_from        = ('8.1.1',),

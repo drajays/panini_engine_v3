@@ -4,6 +4,7 @@
 Padaccheda: अ-कर्मधारये राज्यम्
 
 अकर्मधारये राज्यम् (6.2.130)
+Pāṭha: ashtadhyayi.com data.txt row i=62130 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "akarmaDAraye rAjyam",
     text_dev              = "अकर्मधारये राज्यम्",
+    samagra_slp1          = "udAttaH uttarapadAdiH akarmaDAraye rAjyam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः अकर्मधारये राज्यम् तत्पुरुषे",
     padaccheda_dev        = "अ-कर्मधारये राज्यम्",
     why_dev               = "(सूत्रम् 6.2.130) अकर्मधारये राज्यम्।",
     anuvritti_from        = ('6.1.1',),

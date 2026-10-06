@@ -4,6 +4,7 @@
 Padaccheda: दिवः तदर्थस्य
 
 div in its own meaning takes sasthi.
+Pāṭha: ashtadhyayi.com data.txt row i=23058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "divastadarTasya",
     text_dev              = "दिवस्तदर्थस्य",
+    samagra_slp1          = "anaBihite divaH tadarTasya zazWI Seze karmaRi vyavahf-paRoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते दिवः तदर्थस्य षष्ठी शेषे कर्मणि व्यवहृ-पणोः",
     padaccheda_dev        = "दिवः तदर्थस्य",
     why_dev               = "दिवः तदर्थस्य (२.३.५८)।",
     anuvritti_from        = ('2.3.50',),

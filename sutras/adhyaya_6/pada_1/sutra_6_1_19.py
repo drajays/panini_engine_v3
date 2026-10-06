@@ -4,6 +4,7 @@
 Padaccheda: स्वपि-स्यमि-व्येञाम् यङि
 
 स्वपिस्यमिव्येञां यङि (6.1.19)
+Pāṭha: ashtadhyayi.com data.txt row i=61019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "svapisyamivyeYAM yaNi",
     text_dev              = "स्वपिस्यमिव्येञां यङि",
+    samagra_slp1          = "svapi-syami-vyeYAm yaNi samprasAraRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "स्वपि-स्यमि-व्येञाम् यङि सम्प्रसारणम्",
     padaccheda_dev        = "स्वपि-स्यमि-व्येञाम् यङि",
     why_dev               = "(सूत्रम् 6.1.19) स्वपिस्यमिव्येञां यङि।",
     anuvritti_from        = ('6.1.1',),

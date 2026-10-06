@@ -4,6 +4,7 @@
 Padaccheda: याज्या-अन्तः
 
 याज्याऽन्तः (8.2.90)
+Pāṭha: ashtadhyayi.com data.txt row i=82090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'yAjyAntaH',
     text_dev              = 'याज्याऽन्तः',
+    samagra_slp1          = "padasya pUrvatrAsidDam vAkyasya weH plutaH udAttaH yAjyAntaH yajYakarmaRi weH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वाक्यस्य टेः प्लुतः उदात्तः याज्याऽन्तः यज्ञकर्मणि टेः",
     padaccheda_dev        = "याज्या-अन्तः",
     why_dev               = "(सूत्रम् 8.2.90) याज्याऽन्तः।",
     anuvritti_from        = ('8.1.1',),

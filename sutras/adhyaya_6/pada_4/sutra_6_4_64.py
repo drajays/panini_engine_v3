@@ -2,7 +2,7 @@
 6.4.64  आतो लोप इटि च  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=604064
+- ashtadhyayi.com data.txt row i=64064
 - Kāśikā: आतोऽर्थलोप इटि च (क्ङिति-परे आ-लोपः)
 - Cross-validation: tests/unit/test_yAyAvar_yang_varac_purvavidhau_lesson.py
   (**1.1.58** *vareya* blocks after **6.4.48** *yaṅ* *a*-lopa)
@@ -209,6 +209,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='Ato lopa iwi ca',
     text_dev='आतो लोप इटि च',
+    samagra_slp1="aNgasya asidDavadatrABAt ArDaDAtuke AtaH lopaH iwi ca aci kNiti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अङ्गस्य असिद्धवदत्राभात् आर्धधातुके आतः लोपः इटि च अचि क्ङिति",
     padaccheda_dev="आतः · अर्थ-लोपः · इटि · च",
     why_dev="आकारस्य लोपः क्ङिति-परे (इटि-मार्गः, अतुस्-मार्गः प०३५, वरच्-मार्गः)।",
     anuvritti_from=("6.4.1",),

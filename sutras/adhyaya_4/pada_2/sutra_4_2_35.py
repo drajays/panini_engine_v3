@@ -4,6 +4,7 @@
 Padaccheda: महाराज-प्रोष्ठपदात् ठञ्
 
 महाराजप्रोष्ठपदाट्ठञ् (4.2.35)
+Pāṭha: ashtadhyayi.com data.txt row i=42035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mahArAjaprozWapadAwWaY",
     text_dev              = "महाराजप्रोष्ठपदाट्ठञ्",
+    samagra_slp1          = "sA asya devatA iti mahArAja-prozWapadAt WaY",
+    samagra_dev           = "'सा अस्य देवता' (इति)  महाराज-प्रोष्ठपदात् ठञ्",
     padaccheda_dev        = "महाराज-प्रोष्ठपदात् ठञ्",
     why_dev               = "(सूत्रम् 4.2.35) महाराजप्रोष्ठपदाट्ठञ्।",
     anuvritti_from        = ('4.1.1',),

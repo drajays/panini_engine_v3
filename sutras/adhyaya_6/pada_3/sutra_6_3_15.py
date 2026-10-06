@@ -4,6 +4,7 @@
 Padaccheda: प्रावृट्-शरत्-काल-दिवाम् जे
 
 प्रावृट्शरत्कालदिवां जे (6.3.15)
+Pāṭha: ashtadhyayi.com data.txt row i=63015 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prAvfwSaratkAladivAM je",
     text_dev              = "प्रावृट्शरत्कालदिवां जे",
+    samagra_slp1          = "alug uttarapade prAvfw-Sarat-kAla-divAm je haladantAt saptamyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे प्रावृट्-शरत्-काल-दिवाम् जे हलदन्तात् सप्तम्याः",
     padaccheda_dev        = "प्रावृट्-शरत्-काल-दिवाम् जे",
     why_dev               = "(सूत्रम् 6.3.15) प्रावृट्शरत्कालदिवां जे।",
     anuvritti_from        = ('6.1.1',),

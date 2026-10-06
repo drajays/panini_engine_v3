@@ -4,6 +4,7 @@
 Padaccheda: पूर्व-आदिभ्यः नवभ्यः वा
 
 पूर्वादिभ्यो नवभ्यो वा (7.1.16)
+Pāṭha: ashtadhyayi.com data.txt row i=71016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pUrvAdiByo navaByo vA",
     text_dev              = "पूर्वादिभ्यो नवभ्यो वा",
+    samagra_slp1          = "pUrvAdiByaH navaByaH sarvanAmnaH uttarasya Nasi-NyoH vA smAt-sminO",
+    samagra_dev           = "पूर्वादिभ्यः नवभ्यः सर्वनाम्नः उत्तरस्य ङसि-ङ्योः वा स्मात्-स्मिनौ",
     padaccheda_dev        = "पूर्व-आदिभ्यः नवभ्यः वा",
     why_dev               = "(सूत्रम् 7.1.16) पूर्वादिभ्यो नवभ्यो वा।",
     anuvritti_from        = ('7.1.1',),

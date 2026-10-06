@@ -87,6 +87,19 @@ autonomy:
 shabda:
 	python3 -m tools.shabda_table --check
 
+# ── reference brain (read-only; see AGENTS.md "Brain") ──
+BRAIN ?= $(HOME)/data-master/ashtadhyayi-ai
+BRAIN_PY = $(BRAIN)/venv/bin/python $(BRAIN)/agent/knowledge_api.py
+.PHONY: brain scaffold resolve brain-wiki
+brain:      ## make brain S=6.1.77 — rule, meaning, examples ±, prakriyā, graph, conflicts
+	@$(BRAIN_PY) dossier $(S)
+scaffold:   ## make scaffold S=6.1.77 — draft file: metadata, samagra, Art. 14 citations
+	@$(BRAIN_PY) scaffold $(S)
+resolve:    ## make resolve S=6.1.77 — evidence per source conflict, Art. 22 order
+	@$(BRAIN_PY) resolve $(S)
+brain-wiki: ## local wiki of the brain (human view)
+	@open "$(BRAIN)/Brain.command"
+
 # ── multi-agent gate (see AGENTS.md) ──
 .PHONY: preflight claim release claims ratchets scope status hooks
 preflight:

@@ -15,6 +15,7 @@ mṛ always takes ātmanepada. For example: amṛta (luṅ), mriyeta (liṅ).
 stamp "Atmanepada_1_3_61" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _MR_ROOTS carries either "luN_lakara" or "liN_lakara" tag. No arm flags
 (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -63,6 +64,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='mriyaterluNliNoSca',
     text_dev='म्रियतेर्लुङ्लिङोश्च',
+    samagra_slp1="mriyateH luN-liNoH ca Atmanepadam SitaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="म्रियतेः लुङ्-लिङोः च आत्मनेपदम् शितः",
     padaccheda_dev="म्रियतेः (षष्ठी-एकवचन) / लुङ्-लिङोः (सप्तमी-द्विवचन) / च",
     why_dev=(
         "मृ-धातोः लुङ्-लिङ्-लकारयोः आत्मनेपदम् — "

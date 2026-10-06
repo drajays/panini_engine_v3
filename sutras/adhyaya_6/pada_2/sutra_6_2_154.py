@@ -4,6 +4,7 @@
 Padaccheda: मिश्रम् च अनुपसर्गम् असन्धौ
 
 मिश्रं चानुपसर्गमसंधौ (6.2.154)
+Pāṭha: ashtadhyayi.com data.txt row i=62154 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "miSraM cAnupasargamasaMDO",
     text_dev              = "मिश्रं चानुपसर्गमसंधौ",
+    samagra_slp1          = "uttarapadAdiH antaH miSram ca anupasargam asanDO tftIyAyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः मिश्रम् च अनुपसर्गम् असन्धौ तृतीयायाः",
     padaccheda_dev        = "मिश्रम् च अनुपसर्गम् असन्धौ",
     why_dev               = "(सूत्रम् 6.2.154) मिश्रं चानुपसर्गमसंधौ।",
     anuvritti_from        = ('6.1.1',),

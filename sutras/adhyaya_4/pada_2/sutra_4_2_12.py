@@ -4,6 +4,7 @@
 Padaccheda: द्वैप-वैयाघ्रात् अञ्
 
 द्वैपवैयाघ्रादञ् (4.2.12)
+Pāṭha: ashtadhyayi.com data.txt row i=42012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvEpavEyAGrAdaY",
     text_dev              = "द्वैपवैयाघ्रादञ्",
+    samagra_slp1          = "tena parivfto raTaH iti dvEpa-vEyAGrAt aY",
+    samagra_dev           = "'तेन परिवृतो रथः' (इति)  द्वैप-वैयाघ्रात् अञ्",
     padaccheda_dev        = "द्वैप-वैयाघ्रात् अञ्",
     why_dev               = "(सूत्रम् 4.2.12) द्वैपवैयाघ्रादञ्।",
     anuvritti_from        = ('4.1.1',),

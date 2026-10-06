@@ -4,6 +4,7 @@
 Padaccheda: द्वेः तीयः
 
 द्वेस्तीयः (5.2.54)
+Pāṭha: ashtadhyayi.com data.txt row i=52054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvestIyaH",
     text_dev              = "द्वेस्तीयः",
+    samagra_slp1          = "tasya pUraRe iti dveH tIyaH",
+    samagra_dev           = "'तस्य पूरणे' (इति) द्वेः तीयः",
     padaccheda_dev        = "द्वेः तीयः",
     why_dev               = "(सूत्रम् 5.2.54) द्वेस्तीयः।",
     anuvritti_from        = ('4.1.82',),

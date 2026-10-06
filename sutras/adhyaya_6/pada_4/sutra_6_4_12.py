@@ -4,6 +4,7 @@
 Padaccheda: इन्-हन्-पूष-अर्यम्णाम् शौ
 
 इन्हन्पूषार्यम्णां शौ (6.4.12)
+Pāṭha: ashtadhyayi.com data.txt row i=64012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "inhanpUzAryamRAM SO",
     text_dev              = "इन्हन्पूषार्यम्णां शौ",
+    samagra_slp1          = "in-han-pUza-aryamRAmaNgasya asambudDO sarvanAmasTAne upaDAyAH dIrGaH SO",
+    samagra_dev           = "इन्-हन्-पूष-अर्यम्णामङ्गस्य असम्बुद्धौ सर्वनामस्थाने उपधायाः दीर्घः शौ",
     padaccheda_dev        = "इन्-हन्-पूष-अर्यम्णाम् शौ",
     why_dev               = "(सूत्रम् 6.4.12) इन्हन्पूषार्यम्णां शौ।",
     anuvritti_from        = ('6.1.1',),

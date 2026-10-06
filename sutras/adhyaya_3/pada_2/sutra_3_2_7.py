@@ -4,6 +4,7 @@
 Padaccheda: समि ख्यः
 
 krt-suffix rule: समि ख्यः (7)
+Pāṭha: ashtadhyayi.com data.txt row i=32007 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sami KyaH",
     text_dev              = "समि ख्यः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH sami KyaH kft karmaRi kaH anupasarge supi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः समि ख्यः कृत् कर्मणि कः अनुपसर्गे सुपि",
     padaccheda_dev        = "समि ख्यः",
     why_dev               = "धातोः कृत्-प्रत्ययः [समि ख्यः] विहितः (३.२.7)।",
     anuvritti_from        = ('3.1.1',),

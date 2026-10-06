@@ -4,6 +4,7 @@
 Padaccheda: अण् च
 
 अण् च (5.2.103)
+Pāṭha: ashtadhyayi.com data.txt row i=52103 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aR ca",
     text_dev              = "अण् च",
+    samagra_slp1          = "tat asya asmin astIti iti tapaH-sahasrAByAmaR",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) तपः-सहस्राभ्यामण्",
     padaccheda_dev        = "अण् च",
     why_dev               = "(सूत्रम् 5.2.103) अण् च।",
     anuvritti_from        = ('4.1.82',),

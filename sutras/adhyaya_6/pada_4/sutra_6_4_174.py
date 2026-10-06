@@ -4,6 +4,7 @@
 Padaccheda: दाण्डिनायन-हास्तिनायन-आथर्वणिक-जैह्माशिनेय-वाशिनायनि-भ्रौणहत्य-धैवत्य-सारवैक्ष्वाक-मैत्रेय-हिरण्मयानि
 
 दाण्डिनायनहास्तिनायनाथर्वणिकजैह्माशिनेयवाशिनायनिभ्रौणहत्यधैवत्यसारवैक्ष्वाकमैत्रेयहिरण्मयानि (6.4.174)
+Pāṭha: ashtadhyayi.com data.txt row i=64174 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dARqinAyanahAstinAyanATarvaRikajEhmASineyavASinAyaniBrORahatyaDEvatyasAravEkzvAkamEtreyahiraRmayAni",
     text_dev              = "दाण्डिनायनहास्तिनायनाथर्वणिकजैह्माशिनेयवाशिनायनिभ्रौणहत्यधैवत्यसारवैक्ष्वाकमैत्रेयहिरण्मयानि",
+    samagra_slp1          = "aNgasya asidDavadatrABAt Basya dARqinAyana-hAstinAyana-ATarvaRika-jEhmASineya-vAsinAyani-BrORahatya-DEvatya-sArava-EkzvAka-mEtreya-hiraRmayAni",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् भस्य दाण्डिनायन-हास्तिनायन-आथर्वणिक-जैह्माशिनेय-वासिनायनि-भ्रौणहत्य-धैवत्य-सारव-ऐक्ष्वाक-मैत्रेय-हिरण्मयानि",
     padaccheda_dev        = "दाण्डिनायन-हास्तिनायन-आथर्वणिक-जैह्माशिनेय-वाशिनायनि-भ्रौणहत्य-धैवत्य-सारवैक्ष्वाक-मैत्रेय-हिरण्मयानि",
     why_dev               = "(सूत्रम् 6.4.174) दाण्डिनायनहास्तिनायनाथर्वणिकजैह्माशिनेयवाशिनायनिभ्रौणहत्यधैवत्यसारवैक्ष्वाकमैत्रेयहिरण्मयानि।",
     anuvritti_from        = ('6.1.1',),

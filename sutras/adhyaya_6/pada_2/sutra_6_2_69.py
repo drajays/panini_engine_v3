@@ -4,6 +4,7 @@
 Padaccheda: गोत्र-अन्तेवासि-माणव-ब्राह्मणेषु क्षेपे
 
 गोत्रान्तेवासिमाणवब्राह्मणेषु क्षेपे (6.2.69)
+Pāṭha: ashtadhyayi.com data.txt row i=62069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gotrAntevAsimARavabrAhmaRezu kzepe",
     text_dev              = "गोत्रान्तेवासिमाणवब्राह्मणेषु क्षेपे",
+    samagra_slp1          = "AdiH udAttaH gotra-antevAsi-mARava-brAhmaRezu kzepe pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः गोत्र-अन्तेवासि-माणव-ब्राह्मणेषु क्षेपे पूर्वपदम्",
     padaccheda_dev        = "गोत्र-अन्तेवासि-माणव-ब्राह्मणेषु क्षेपे",
     why_dev               = "(सूत्रम् 6.2.69) गोत्रान्तेवासिमाणवब्राह्मणेषु क्षेपे।",
     anuvritti_from        = ('6.1.1',),

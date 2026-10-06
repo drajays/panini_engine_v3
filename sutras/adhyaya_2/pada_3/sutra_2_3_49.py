@@ -4,6 +4,7 @@
 Padaccheda: एकवचनम् सम्बुद्धिः
 
 Sambuddhi (vocative) is the singular.
+Pāṭha: ashtadhyayi.com data.txt row i=23049 (Art. 14).
 """
 from __future__ import annotations
 
@@ -26,6 +27,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = "ekavacanaM saMbudDiH",
     text_dev              = "एकवचनं संबुद्धिः",
+    samagra_slp1          = "samboDane praTamA-ekavacanam sambudDiH",
+    samagra_dev           = "सम्बोधने प्रथमा-एकवचनम् सम्बुद्धिः",
     padaccheda_dev        = "एकवचनम् सम्बुद्धिः",
     why_dev               = "सम्बोधनम् एकवचनम् इत्युच्यते — सम्बुद्धि-संज्ञा (२.३.४९)।",
     anuvritti_from        = ("2.3.1",),

@@ -4,6 +4,7 @@
 Padaccheda: जॄ-स्तम्भु-म्रुचु-म्लुचु-ग्रुचु-ग्लुचु-ग्लुञ्चु-श्विभ्यः च
 
 Krt suffix rule from dhatu: जृस्तम्भुम्रुचुम्लुचुग्रुचुग्लुचुग्लुञ्चुश्विभ्यश्च (58)
+Pāṭha: ashtadhyayi.com data.txt row i=31058 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'jFstamBumrucumlucugrucuglucugluYcuSviByaSca',
     text_dev              = 'जॄस्तम्भुम्रुचुम्लुचुग्रुचुग्लुचुग्लुञ्चुश्विभ्यश्च',
+    samagra_slp1          = "jF-stanBu-mrucu-mlucu-grucu-glucu-gluYcu-SviByaH cleH aN vA",
+    samagra_dev           = "जॄ-स्तन्भु-म्रुचु-म्लुचु-ग्रुचु-ग्लुचु-ग्लुञ्चु-श्विभ्यः च्लेः अङ् वा",
     padaccheda_dev        = "जॄ-स्तम्भु-म्रुचु-म्लुचु-ग्रुचु-ग्लुचु-ग्लुञ्चु-श्विभ्यः च",
     why_dev               = "धातोः [जृस्तम्भुम्रुचुम्लुचुग्रुचुग्लुचुग्लुञ्चुश्विभ्यश्च]-प्रत्ययः विहितः (३.१.58)।",
     anuvritti_from        = ('3.1.1',),

@@ -13,6 +13,7 @@ For example: śīyate (from śad + yak = śīyate, the passive is śit).
 stamp "Atmanepada_1_3_60" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _SAD_ROOTS carries the tag "Sit_pratyaya". No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -60,6 +61,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="SadeH SitaH",
     text_dev="शदेः शितः",
+    samagra_slp1="SadeH SitaH Atmanepadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="शदेः शितः आत्मनेपदम्",
     padaccheda_dev="शदेः (षष्ठी-एकवचन) / शितः (षष्ठी-एकवचन)",
     why_dev=(
         "शद्-धातोः शित्-प्रत्यये परे आत्मनेपदम् — "

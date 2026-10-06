@@ -4,6 +4,7 @@
 Padaccheda: वा द्रुह-मुह-ष्णुह-ष्णिहाम्
 
 वा द्रुहमुहष्णुहष्णिहाम् (8.2.33)
+Pāṭha: ashtadhyayi.com data.txt row i=82033 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA druhamuhazRuhazRihAm",
     text_dev              = "वा द्रुहमुहष्णुहष्णिहाम्",
+    samagra_slp1          = "druha-muha-zRuha-zRihAm DAtoH haH padasya ante Jali GaH vA",
+    samagra_dev           = "द्रुह-मुह-ष्णुह-ष्णिहाम् धातोः हः पदस्य अन्ते झलि घः वा",
     padaccheda_dev        = "वा द्रुह-मुह-ष्णुह-ष्णिहाम्",
     why_dev               = "(सूत्रम् 8.2.33) वा द्रुहमुहष्णुहष्णिहाम्।",
     anuvritti_from        = ('8.1.1',),

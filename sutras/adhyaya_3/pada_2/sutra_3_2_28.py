@@ -4,6 +4,7 @@
 Padaccheda: एजेः खश्
 
 krt-suffix rule: एजेः खश् (28)
+Pāṭha: ashtadhyayi.com data.txt row i=32028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ejeH KaS",
     text_dev              = "एजेः खश्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH ejeH KaS kft karmaRi anupasarge supi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः एजेः खश् कृत् कर्मणि अनुपसर्गे सुपि",
     padaccheda_dev        = "एजेः खश्",
     why_dev               = "धातोः कृत्-प्रत्ययः [एजेः खश्] विहितः (३.२.28)।",
     anuvritti_from        = ('3.1.1',),

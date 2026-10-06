@@ -4,6 +4,7 @@
 Padaccheda: फेनात् इलच् च
 
 फेनादिलच् च (5.2.99)
+Pāṭha: ashtadhyayi.com data.txt row i=52099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "PenAdilac ca",
     text_dev              = "फेनादिलच् च",
+    samagra_slp1          = "tat asya asmin astIti iti PenAt ilac lac matu~p anyatarasyAm",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) फेनात् इलच्, लच्, मतुँप् अन्यतरस्याम्",
     padaccheda_dev        = "फेनात् इलच् च",
     why_dev               = "(सूत्रम् 5.2.99) फेनादिलच् च।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: संज्ञा-औपम्ययोः च
 
 संज्ञौपम्ययोश्च (6.2.113)
+Pāṭha: ashtadhyayi.com data.txt row i=62113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMjYOpamyayoSca",
     text_dev              = "संज्ञौपम्ययोश्च",
+    samagra_slp1          = "udAttaH uttarapadAdiH saMjYA-OpamyayoH ca bahuvrIhO karRaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः संज्ञा-औपम्ययोः च बहुव्रीहौ कर्णः",
     padaccheda_dev        = "संज्ञा-औपम्ययोः च",
     why_dev               = "(सूत्रम् 6.2.113) संज्ञौपम्ययोश्च।",
     anuvritti_from        = ('6.1.1',),

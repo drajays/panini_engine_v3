@@ -4,6 +4,7 @@
 Padaccheda: इच्छार्थेभ्यः विभाषा वर्त्तमाने
 
 krt-suffix rule: इच्छार्थेभ्यो विभाषा वर्तमाने
+Pāṭha: ashtadhyayi.com data.txt row i=33160 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "icCArTeByo viBAzA vartamAne",
     text_dev              = "इच्छार्थेभ्यो विभाषा वर्तमाने",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH icCArTeByo viBAzA varttamAne kft liN",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः इच्छार्थेभ्यो विभाषा वर्त्तमाने कृत् लिङ्",
     padaccheda_dev        = "इच्छार्थेभ्यः विभाषा वर्त्तमाने",
     why_dev               = "धातोः प्रत्ययः (३.3.160)।",
     anuvritti_from        = ('3.1.1',),

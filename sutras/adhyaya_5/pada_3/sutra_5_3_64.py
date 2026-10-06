@@ -4,6 +4,7 @@
 Padaccheda: युव-अल्पयोः कन् अन्यतरस्याम्
 
 युवाल्पयोः कनन्यतरस्याम् (5.3.64)
+Pāṭha: ashtadhyayi.com data.txt row i=53064 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yuvAlpayoH kananyatarasyAm",
     text_dev              = "युवाल्पयोः कनन्यतरस्याम्",
+    samagra_slp1          = "atiSAyane yuva-alpayoH ajAdyoH anyarasyAm kan",
+    samagra_dev           = "अतिशायने युव-अल्पयोः अजाद्योः अन्यरस्याम् कन्",
     padaccheda_dev        = "युव-अल्पयोः कन् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 5.3.64) युवाल्पयोः कनन्यतरस्याम्।",
     anuvritti_from        = ('4.1.76',),

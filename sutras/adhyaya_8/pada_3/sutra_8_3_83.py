@@ -4,6 +4,7 @@
 Padaccheda: ज्योतिः-आयुषः स्तोमः
 
 ज्योतिरायुषः स्तोमः (8.3.83)
+Pāṭha: ashtadhyayi.com data.txt row i=83083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jyotirAyuzaH stomaH",
     text_dev              = "ज्योतिरायुषः स्तोमः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH jyotir-AyuzaH stomaH saH samAse",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः ज्योतिर्-आयुषः स्तोमः सः समासे",
     padaccheda_dev        = "ज्योतिः-आयुषः स्तोमः",
     why_dev               = "(सूत्रम् 8.3.83) ज्योतिरायुषः स्तोमः।",
     anuvritti_from        = ('8.1.1',),

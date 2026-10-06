@@ -4,6 +4,7 @@
 Padaccheda: थ-अथ-घञ्-क्त-अच्-अप्-इत्र-काणाम्
 
 थाथघञ्क्ताजबित्रकाणाम् (6.2.144)
+Pāṭha: ashtadhyayi.com data.txt row i=62144 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "TATaGaYktAjabitrakARAm",
     text_dev              = "थाथघञ्क्ताजबित्रकाणाम्",
+    samagra_slp1          = "uttarapadAdiH antaH Ta-aTa-GaY-kta-acapitra-kARAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः थ-अथ-घञ्-क्त-अचपित्र-काणाम्",
     padaccheda_dev        = "थ-अथ-घञ्-क्त-अच्-अप्-इत्र-काणाम्",
     why_dev               = "(सूत्रम् 6.2.144) थाथघञ्क्ताजबित्रकाणाम्।",
     anuvritti_from        = ('6.1.1',),

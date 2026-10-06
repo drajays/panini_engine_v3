@@ -4,6 +4,7 @@
 Padaccheda: पत्यौ ऐश्वर्ये
 
 पत्यावैश्वर्ये (6.2.18)
+Pāṭha: ashtadhyayi.com data.txt row i=62018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "patyAvESvarye",
     text_dev              = "पत्यावैश्वर्ये",
+    samagra_slp1          = "patyO ESvarye prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पत्यौ ऐश्वर्ये प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "पत्यौ ऐश्वर्ये",
     why_dev               = "(सूत्रम् 6.2.18) पत्यावैश्वर्ये।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: णि-आस-श्रन्थः युच्
 
 krt-suffix rule: ण्यासश्रन्थो युच्
+Pāṭha: ashtadhyayi.com data.txt row i=33107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "RyAsaSranTo yuc",
     text_dev              = "ण्यासश्रन्थो युच्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm striyAm Ri-Asa-SranTaH yuc kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् स्त्रियाम् णि-आस-श्रन्थः युच् कृत्",
     padaccheda_dev        = "णि-आस-श्रन्थः युच्",
     why_dev               = "धातोः प्रत्ययः (३.3.107)।",
     anuvritti_from        = ('3.1.1',),

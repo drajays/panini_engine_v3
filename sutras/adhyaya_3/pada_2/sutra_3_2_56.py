@@ -4,6 +4,7 @@
 Padaccheda: आढ्य-सुभग-स्थूल-पलित-नग्न-अन्ध-प्रियेषु च्वि-अर्थेषु अ-च्वौ कृञः करणे ख्युन्
 
 krt-suffix rule: आढ्यसुभगस्थूलपलितनग्नान्धप्रियेषु च्व्य्र्थेष्वच्वौ कृञः करणे ख्युन् (56)
+Pāṭha: ashtadhyayi.com data.txt row i=32056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'AQyasuBagasTUlapalitanagnAnDapriyezu cvyarTezvacvO kfYaH karaRe Kyun',
     text_dev              = 'आढ्यसुभगस्थूलपलितनग्नान्धप्रियेषु च्व्यर्थेष्वच्वौ कृञः करणे ख्युन्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH AQya-suBaga-sTUla-palita-nagna-anDa-priyezu cvyarTezu acvO kfYaH karaRe Kyun kft karmaRi anupasarge supi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः आढ्य-सुभग-स्थूल-पलित-नग्न-अन्ध-प्रियेषु च्व्यर्थेषु अच्वौ कृञः करणे ख्युन् कृत् कर्मणि अनुपसर्गे सुपि",
     padaccheda_dev        = "आढ्य-सुभग-स्थूल-पलित-नग्न-अन्ध-प्रियेषु च्वि-अर्थेषु अ-च्वौ कृञः करणे ख्युन्",
     why_dev               = "धातोः कृत्-प्रत्ययः [आढ्यसुभगस्थूलपलितनग्नान्धप्रियेषु च्व्य्र्थेष्वच्वौ कृञः करणे ख्युन्] विहितः (३.२.56)।",
     anuvritti_from        = ('3.1.1',),

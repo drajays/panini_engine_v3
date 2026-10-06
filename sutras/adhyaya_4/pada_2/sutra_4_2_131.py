@@ -4,6 +4,7 @@
 Padaccheda: मद्र-वृज्योः कन्
 
 मद्रवृज्योः कन् (4.2.131)
+Pāṭha: ashtadhyayi.com data.txt row i=42131 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "madravfjyoH kan",
     text_dev              = "मद्रवृज्योः कन्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA madra-vfjyoH kan",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा मद्र-वृज्योः कन्",
     padaccheda_dev        = "मद्र-वृज्योः कन्",
     why_dev               = "(सूत्रम् 4.2.131) मद्रवृज्योः कन्।",
     anuvritti_from        = ('4.1.1',),

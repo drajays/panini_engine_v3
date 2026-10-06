@@ -18,6 +18,7 @@ one dhātu Term has upadesha_slp1 in _NIYAM_ROOTS and carries the tag
 (c) the idempotency stamp "Atmanepada_1_3_36" is absent from state.meta.
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -66,6 +67,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='sammAnanotsaYjanAcAryakaraRajYAnaBftivigaRanavyayezu niyaH',
     text_dev='सम्माननोत्सञ्जनाचार्यकरणज्ञानभृतिविगणनव्ययेषु नियः',
+    samagra_slp1="sammAnana-utsaYjana-AcAryakaraRa-jYAna-Bfti-vigaRana-vyayezu niyaH Atmanepadam",
+    samagra_dev="सम्मानन-उत्सञ्जन-आचार्यकरण-ज्ञान-भृति-विगणन-व्ययेषु नियः आत्मनेपदम्",
     padaccheda_dev=(
         "सम्मानन-उत्सञ्जन-आचार्यकरण-ज्ञान-भृति-विगणन-व्ययेषु (सप्तमी-बहुवचन) "
         "/ नियः (षष्ठी-एकवचन)"

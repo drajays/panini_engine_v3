@@ -10,6 +10,7 @@ Narrow v3 (*घृतस्पृक्* commentary spine):
     neighbourhood — full **३.१.६२** selection scope is not modelled).
 
 No ``varṇa`` mutation.
+Pāṭha: ashtadhyayi.com data.txt row i=31062 (Art. 14).
 """
 from __future__ import annotations
 
@@ -41,6 +42,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="acaH karmakartari",
     text_dev="अचः कर्मकर्तरि",
+    samagra_slp1="pratyayaH paraSca AdyudAttaSca DAtoH acaH karmakarttari luNi cleH ciR te anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="प्रत्ययः परश्च आद्युदात्तश्च धातोः अचः कर्मकर्त्तरि लुङि च्लेः चिण् ते अन्यतरस्याम्",
     padaccheda_dev="अचः / कर्मकर्तरि",
     why_dev="अच्-प्रकरणे कर्म-कर्तरि प्रत्ययार्थः (*prakriya_35*, संक्षेप-अङ्कनम्)।",
     anuvritti_from=(),

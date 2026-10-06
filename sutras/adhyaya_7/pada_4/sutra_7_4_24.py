@@ -4,6 +4,7 @@
 Padaccheda: एतेः लिङि
 
 एतेर्लिङि (7.4.24)
+Pāṭha: ashtadhyayi.com data.txt row i=74024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "eterliNi",
     text_dev              = "एतेर्लिङि",
+    samagra_slp1          = "aNgasya eteH liNi yi kNiti upasargAt hrasvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य एतेः लिङि यि क्ङिति उपसर्गात् ह्रस्वः",
     padaccheda_dev        = "एतेः लिङि",
     why_dev               = "(सूत्रम् 7.4.24) एतेर्लिङि।",
     anuvritti_from        = ('7.1.1',),

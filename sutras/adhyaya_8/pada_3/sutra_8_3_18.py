@@ -4,6 +4,7 @@
 Padaccheda: व्योः · लघुप्रयत्नतरः · शाकटायनस्य
 
 व्योर्लघुप्रयत्नतरः शाकटायनस्य (8.3.18)
+Pāṭha: ashtadhyayi.com data.txt row i=83018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vyorlaGuprayatnataraH SAkawAyanasya",
     text_dev              = "व्योर्लघुप्रयत्नतरः शाकटायनस्य",
+    samagra_slp1          = "padasya vyoH aSi laGuprayatnataraH SAkawAyanasya",
+    samagra_dev           = "पदस्य व्योः अशि लघुप्रयत्नतरः शाकटायनस्य",
     padaccheda_dev        = "व्योः · लघुप्रयत्नतरः · शाकटायनस्य",
     why_dev               = "(सूत्रम् 8.3.18) व्योर्लघुप्रयत्नतरः शाकटायनस्य।",
     anuvritti_from        = ('8.1.1',),

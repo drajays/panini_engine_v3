@@ -4,6 +4,7 @@
 Padaccheda: दिति-अदिति-आदित्य-पति-उत्तरपदात् ण्यः
 
 दित्यदित्यादित्यपत्युत्तरपदाण्ण्यः (4.1.85)
+Pāṭha: ashtadhyayi.com data.txt row i=41085 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dityadityAdityapatyuttarapadARRyaH",
     text_dev              = "दित्यदित्यादित्यपत्युत्तरपदाण्ण्यः",
+    samagra_slp1          = "diti-aditi-Aditya-patyuttarapadAt prAgdIvyataH Rya tadDitaH pratyayaH samarTAnAm praTamAt paraH vA",
+    samagra_dev           = "दिति-अदिति-आदित्य-पत्युत्तरपदात् प्राग्दीव्यतः ण्य तद्धितः प्रत्ययः समर्थानाम् प्रथमात् परः वा",
     padaccheda_dev        = "दिति-अदिति-आदित्य-पति-उत्तरपदात् ण्यः",
     why_dev               = "(सूत्रम् 4.1.85) दित्यदित्यादित्यपत्युत्तरपदाण्ण्यः।",
     anuvritti_from        = ('4.1.1',),

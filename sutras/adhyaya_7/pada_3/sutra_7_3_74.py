@@ -3,6 +3,7 @@
 
 The eight roots शम्, तम्, दम्, श्रम्, भ्रम्, क्षम्, क्लम्, मद् (divādi) lengthen
 their vowel before श्यन्: शाम्यति, श्राम्यति, माद्यति.
+Pāṭha: ashtadhyayi.com data.txt row i=73074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="SamAmazwAnAM dIrGaH Syani",
     text_dev="शमामष्टानां दीर्घः श्यनि",
+    samagra_slp1="aNgasya SamAm azwAnAm dIrGaH Syani",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="अङ्गस्य शमाम् अष्टानाम् दीर्घः श्यनि",
     padaccheda_dev="शमाम् अष्टानाम् दीर्घः श्यनि",
     why_dev="शमादीनाम् अष्टानां धातूनाम् अचः दीर्घः श्यनि परे (शाम्यति, भ्राम्यति, माद्यति)।",
     anuvritti_from=("7.3.73",),

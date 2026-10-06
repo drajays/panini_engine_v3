@@ -15,6 +15,7 @@ parasmaipada tiṅ Term whose sthānin (``source_lakara_upadesha``) is laṭ —
 lakāra coordinate. The ādeśa is sarvādeśa per tiṅ (1.1.55); the replacement keeps the sthānin, so the new endings
 are still laṭ's (sārvadhātuka by 3.4.113) and their kit-ness is 1.2.5's, as for the same endings in liṭ — that is why
 विदतुः / विदुः carry no guṇa while वेद / वेत्थ do (ṇit / pit). ``engine.vikalpa.explore`` yields both readings.
+Pāṭha: ashtadhyayi.com data.txt row i=34083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -50,6 +51,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIBHASHA,
     text_slp1="vido lawo vA",
     text_dev="विदो लटो वा",
+    samagra_slp1="vidaH liwaH lasya parasmEpadAnAm Ral-atus-us-Tal-aTus-a-Ral-va-mAH vA",
+    samagra_dev="विदः लिटः लस्य परस्मैपदानाम् णल्-अतुस्-उस्-थल्-अथुस्-अ-णल्-व-माः वा",
     padaccheda_dev="विदः लटः वा",
     why_dev="विद् धातु से परे लट् के परस्मैपद तिङ् विकल्प से णल्-आदि (णल् अतुस् उस् थल् अथुस् अ णल् व म) होते हैं।",
     anuvritti_from=("3.4.82",),

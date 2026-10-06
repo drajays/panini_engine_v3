@@ -177,6 +177,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'svOjasamOwCazwAByAmBisNeByAmByasNasiByAmByasNasosANNyossup',
     text_dev       = 'स्वौजसमौट्छष्टाभ्याम्भिस्ङेभ्याम्भ्यस्ङसिभ्याम्भ्यस्ङसोसाङ्ङ्योस्सुप्',
+    samagra_slp1   = "su~-O-jas-am-Ow-Sas-wA-ByAm-Bis-Ne-ByAm-Byas-Nasi~-ByAm-Byas-Nas-os-Am-Ni-os-sup NyApprAtipadikAt pratyayaH paraSca",
+    samagra_dev    = "सुँ-औ-जस्-अम्-औट्-शस्-टा-भ्याम्-भिस्-ङे-भ्याम्-भ्यस्-ङसिँ-भ्याम्-भ्यस्-ङस्-ओस्-आम्-ङि-ओस्-सुप् ङ्याप्प्रातिपदिकात् प्रत्ययः परश्च",
     padaccheda_dev = "सु-औ-जस्, अम्-औट्-शस्, टा-भ्याम्-भिस्, ङे-भ्याम्-भ्यस्, "
                      "ङसि-भ्याम्-भ्यस्, ङस्-ओस्-आम्, ङि-ओस्-सुप्",
     why_dev        = "एकविंशति सुप्-प्रत्ययाः क्रमेण प्रातिपदिकात् विधीयन्ते; "

@@ -4,6 +4,7 @@
 Padaccheda: प्राणि-रजत-आदिभ्यः अञ्
 
 प्राणिरजतादिभ्योऽञ् (4.3.154)
+Pāṭha: ashtadhyayi.com data.txt row i=43154 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'prARirajatAdiByoY',
     text_dev              = 'प्राणिरजतादिभ्योऽञ्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA prARi-rajata-AdiByaH aY tasya vikAraH avayave",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा प्राणि-रजत-आदिभ्यः अञ् तस्य विकारः अवयवे",
     padaccheda_dev        = "प्राणि-रजत-आदिभ्यः अञ्",
     why_dev               = "(सूत्रम् 4.3.154) प्राणिरजतादिभ्योऽञ्।",
     anuvritti_from        = ('4.1.1',),

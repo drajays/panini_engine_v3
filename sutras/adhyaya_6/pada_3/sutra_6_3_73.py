@@ -4,6 +4,7 @@
 Padaccheda: न-लोपः नञः
 
 नलोपो नञः (6.3.73)
+Pāṭha: ashtadhyayi.com data.txt row i=63073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nalopo naYaH",
     text_dev              = "नलोपो नञः",
+    samagra_slp1          = "uttarapade na lopaH naYaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे न लोपः नञः",
     padaccheda_dev        = "न-लोपः नञः",
     why_dev               = "(सूत्रम् 6.3.73) नलोपो नञः।",
     anuvritti_from        = ('6.1.1',),

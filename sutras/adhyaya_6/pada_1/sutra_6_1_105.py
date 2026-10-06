@@ -4,6 +4,7 @@
 Padaccheda: दीर्घात् जसि च
 
 दीर्घाज्जसि च (6.1.105)
+Pāṭha: ashtadhyayi.com data.txt row i=61105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dIrGAjjasi ca",
     text_dev              = "दीर्घाज्जसि च",
+    samagra_slp1          = "dIrGAt ici jasi ca praTamayoH pUrvasavarRaH na ",
+    samagra_dev           = "दीर्घात् इचि जसि च प्रथमयोः पूर्वसवर्णः न ।",
     padaccheda_dev        = "दीर्घात् जसि च",
     why_dev               = "(सूत्रम् 6.1.105) दीर्घाज्जसि च।",
     anuvritti_from        = ('6.1.1',),

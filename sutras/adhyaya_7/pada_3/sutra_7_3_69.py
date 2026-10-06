@@ -4,6 +4,7 @@
 Padaccheda: भोज्यम् भक्ष्ये
 
 भोज्यं भक्ष्ये (7.3.69)
+Pāṭha: ashtadhyayi.com data.txt row i=73069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BojyaM Bakzye",
     text_dev              = "भोज्यं भक्ष्ये",
+    samagra_slp1          = "aNgasya Bojyam Bakzye cajoH ku na Rye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य भोज्यम् भक्ष्ये चजोः कु न ण्ये",
     padaccheda_dev        = "भोज्यम् भक्ष्ये",
     why_dev               = "(सूत्रम् 7.3.69) भोज्यं भक्ष्ये।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: व्रीहि-शाल्योः ढक्
 
 व्रीहिशाल्योर्ढक् (5.2.2)
+Pāṭha: ashtadhyayi.com data.txt row i=52002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vrIhiSAlyorQak",
     text_dev              = "व्रीहिशाल्योर्ढक्",
+    samagra_slp1          = "DAnyAnAm Bavane kzetre iti vrIhi-SAlyoH Qak",
+    samagra_dev           = "'धान्यानाम् भवने क्षेत्रे'  (इति) व्रीहि-शाल्योः ढक्",
     padaccheda_dev        = "व्रीहि-शाल्योः ढक्",
     why_dev               = "(सूत्रम् 5.2.2) व्रीहिशाल्योर्ढक्।",
     anuvritti_from        = ('4.1.82',),

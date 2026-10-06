@@ -4,6 +4,7 @@
 Padaccheda: वा दान्त-शान्त-पूर्ण-दस्त-स्पष्ट-छन्न-ज्ञप्ताः
 
 वा दान्तशान्तपूर्णदस्तस्पष्टच्छन्नज्ञप्ताः (7.2.27)
+Pāṭha: ashtadhyayi.com data.txt row i=72027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA dAntaSAntapUrRadastaspazwacCannajYaptAH",
     text_dev              = "वा दान्तशान्तपूर्णदस्तस्पष्टच्छन्नज्ञप्ताः",
+    samagra_slp1          = "aNgasya vA dAntaSAntapUrRadastaspazwacCannajYaptAH na iw nizWAyAm ReH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य वा दान्तशान्तपूर्णदस्तस्पष्टच्छन्नज्ञप्ताः न इट् निष्ठायाम् णेः",
     padaccheda_dev        = "वा दान्त-शान्त-पूर्ण-दस्त-स्पष्ट-छन्न-ज्ञप्ताः",
     why_dev               = "(सूत्रम् 7.2.27) वा दान्तशान्तपूर्णदस्तस्पष्टच्छन्नज्ञप्ताः।",
     anuvritti_from        = ('7.1.1',),

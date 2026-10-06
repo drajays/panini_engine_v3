@@ -4,6 +4,7 @@
 Padaccheda: नित्यम् स्मयतेः
 
 नित्यं स्मयतेः (6.1.57)
+Pāṭha: ashtadhyayi.com data.txt row i=61057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nityaM smayateH",
     text_dev              = "नित्यं स्मयतेः",
+    samagra_slp1          = "nityam smayateH At ecaH upadeSe RO hetuBaye",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "नित्यम् स्मयतेः आत् एचः उपदेशे णौ हेतुभये",
     padaccheda_dev        = "नित्यम् स्मयतेः",
     why_dev               = "(सूत्रम् 6.1.57) नित्यं स्मयतेः।",
     anuvritti_from        = ('6.1.1',),

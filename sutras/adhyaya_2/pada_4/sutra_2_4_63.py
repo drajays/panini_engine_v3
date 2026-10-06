@@ -4,6 +4,7 @@
 Padaccheda: यस्क-आदिभ्यः गोत्रे
 
 For yaska etc. in gotra context.
+Pāṭha: ashtadhyayi.com data.txt row i=24063 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yaskAdiByo gotre",
     text_dev              = "यस्कादिभ्यो गोत्रे",
+    samagra_slp1          = "yaska-AdiByaH gotre luk bahuzu tena eva astriyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "यस्क-आदिभ्यः गोत्रे लुक् बहुषु तेन एव अस्त्रियाम्",
     padaccheda_dev        = "यस्क-आदिभ्यः गोत्रे",
     why_dev               = "यस्क-आदिभ्यः गोत्रे (२.४.६३)।",
     anuvritti_from        = ('2.4.62',),

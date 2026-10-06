@@ -11,6 +11,7 @@ Example: *brāhmaṇāya dadāti* — the Brahmin is the sampradāna.
 *Engine:* A Term carrying ``"sampradAna_recipient"`` (pipeline-set) gets tag
 ``"sampradAna"``.  ``cond`` reads only structural semantic tags
 (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = 'karmaRA yamaBiprEti sa sampradAnam',
     text_dev              = 'कर्मणा यमभिप्रैति स सम्प्रदानम्',
+    samagra_slp1          = "AkaqArAt ekA saMjYA kArake karmaRA yam aBiprEti saH sampradAnam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा कारके कर्मणा यम् अभिप्रैति सः सम्प्रदानम्",
     padaccheda_dev        = "कर्मणा / यम् / अभिप्रैति / सः / सम्प्रदानम्",
     why_dev               = (
         "कर्मणा यं पदार्थम् अभिप्रैति (अभिलक्षयति) कर्ता, स सम्प्रदान-कारक-संज्ञकः — "

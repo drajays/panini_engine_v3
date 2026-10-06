@@ -4,6 +4,7 @@
 Padaccheda: लुक् स्त्रियाम्
 
 लुक् स्त्रियाम् (4.1.109)
+Pāṭha: ashtadhyayi.com data.txt row i=41109 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "luk striyAm",
     text_dev              = "लुक् स्त्रियाम्",
+    samagra_slp1          = "tasya ANgirase gotre apatyam iti vataRqAt striyAm luk",
+    samagra_dev           = "'तस्य आङ्गिरसे गोत्रे अपत्यम्'  (इति) वतण्डात् स्त्रियाम् लुक्",
     padaccheda_dev        = "लुक् स्त्रियाम्",
     why_dev               = "(सूत्रम् 4.1.109) लुक् स्त्रियाम्।",
     anuvritti_from        = ('4.1.1',),

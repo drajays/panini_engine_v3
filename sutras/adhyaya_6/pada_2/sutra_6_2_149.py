@@ -4,6 +4,7 @@
 Padaccheda: इत्थम्भूतेन कृतम् इति च
 
 इत्थम्भूतेन कृतमिति च (6.2.149)
+Pāṭha: ashtadhyayi.com data.txt row i=62149 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "itTamBUtena kftamiti ca",
     text_dev              = "इत्थम्भूतेन कृतमिति च",
+    samagra_slp1          = "uttarapadAdiH antaH itTamBUtena kftam iti ca ktaH kArakAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः इत्थम्भूतेन कृतम् इति च क्तः कारकात्",
     padaccheda_dev        = "इत्थम्भूतेन कृतम् इति च",
     why_dev               = "(सूत्रम् 6.2.149) इत्थम्भूतेन कृतमिति च।",
     anuvritti_from        = ('6.1.1',),

@@ -9,6 +9,7 @@
 Structural witness: the right Term is a dhātu whose upadeśa is ``iR`` or ``eDa~``
 and which begins with ``e`` (guṇa already applied), or a ``vah`` dhātu beginning
 with ``U`` (ūṭh).
+Pāṭha: ashtadhyayi.com data.txt row i=61089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -66,6 +67,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = "etyeDatyUWsu",
     text_dev       = "एत्येधत्यूठ्सु",
+    samagra_slp1   = "At eci eti-eDati-UWsu ekaH pUrvaparayoH vfdDiH",
+    samagra_dev    = "आत् एचि एति-एधति-ऊठ्सु एकः पूर्वपरयोः वृद्धिः",
     padaccheda_dev = "एति-एधति-ऊठ्सु",
     why_dev        = "अवर्णात् परे एति/एधति/ऊठ् इत्येषु वृद्धि-एकादेशः।",
     apavada_of     = ("6.1.94", "6.1.88"),

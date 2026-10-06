@@ -4,6 +4,7 @@
 Padaccheda: रङ्कोः अमनुष्ये अण् च
 
 रंकोरमनुष्येऽण् च (4.2.100)
+Pāṭha: ashtadhyayi.com data.txt row i=42100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'raMkoramanuzyeR ca',
     text_dev              = 'रंकोरमनुष्येऽण् च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA raNkoH a-manuzye aR ca zPak",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा रङ्कोः अ-मनुष्ये अण् च ष्फक्",
     padaccheda_dev        = "रङ्कोः अमनुष्ये अण् च",
     why_dev               = "(सूत्रम् 4.2.100) रंकोरमनुष्येऽण् च।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: ढक् च मण्डूकात्
 
 ढक् च मण्डूकात् (4.1.119)
+Pāṭha: ashtadhyayi.com data.txt row i=41119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Qak ca maRqUkAt",
     text_dev              = "ढक् च मण्डूकात्",
+    samagra_slp1          = "tasya apatyam iti maRqUkAt aR Qak vA",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) मण्डूकात् अण् ढक् वा",
     padaccheda_dev        = "ढक् च मण्डूकात्",
     why_dev               = "(सूत्रम् 4.1.119) ढक् च मण्डूकात्।",
     anuvritti_from        = ('4.1.1',),

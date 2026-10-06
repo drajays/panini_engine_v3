@@ -4,6 +4,7 @@
 Padaccheda: गति-अर्थ-अकर्मक-श्लिष-शीङ्-स्था-आस-वस-जन-रुह-जीर्यतिभ्यः च
 
 krt-suffix rule: गत्यर्थाकर्मकश्लिषशीङ्स्थाऽऽसवसजनरुहजीर्यतिभ्यश्च
+Pāṭha: ashtadhyayi.com data.txt row i=34072 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'gatyarTAkarmakaSlizaSINsTAsavasajanaruhajIryatiByaSca',
     text_dev              = 'गत्यर्थाकर्मकश्लिषशीङ्स्थाऽऽसवसजनरुहजीर्यतिभ्यश्च',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH gatyarTa-akarmaka-Sliza-SIN-sTA-Asa-vasa-jana-ruha-jIryatiByaH ca kft ktaH kartari",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः गत्यर्थ-अकर्मक-श्लिष-शीङ्-स्था-आस-वस-जन-रुह-जीर्यतिभ्यः च कृत् क्तः कर्तरि",
     padaccheda_dev        = "गति-अर्थ-अकर्मक-श्लिष-शीङ्-स्था-आस-वस-जन-रुह-जीर्यतिभ्यः च",
     why_dev               = "धातोः प्रत्ययः (३.4.72)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: ति च
 
 ति च (7.4.89)
+Pāṭha: ashtadhyayi.com data.txt row i=74089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ti ca",
     text_dev              = "ति च",
+    samagra_slp1          = "aNgasya aByAsasya ti ca yaNlukoH ut ataH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य ति च यङ्लुकोः उत् अतः",
     padaccheda_dev        = "ति च",
     why_dev               = "(सूत्रम् 7.4.89) ति च।",
     anuvritti_from        = ('7.1.1',),

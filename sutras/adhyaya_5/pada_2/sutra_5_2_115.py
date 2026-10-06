@@ -4,6 +4,7 @@
 Padaccheda: अतः इनि-ठनौ
 
 अत इनिठनौ (5.2.115)
+Pāṭha: ashtadhyayi.com data.txt row i=52115 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ata iniWanO",
     text_dev              = "अत इनिठनौ",
+    samagra_slp1          = "tat asya astIti iti ataH iniWanO matu~p anyatarasyAm",
+    samagra_dev           = "'तत् अस्य अस्तीति' (इति) अतः इनिठनौ, मतुँप् अन्यतरस्याम्",
     padaccheda_dev        = "अतः इनि-ठनौ",
     why_dev               = "(सूत्रम् 5.2.115) अत इनिठनौ।",
     anuvritti_from        = ('4.1.82',),

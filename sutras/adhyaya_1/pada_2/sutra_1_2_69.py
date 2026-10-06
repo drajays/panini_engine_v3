@@ -21,6 +21,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -48,6 +49,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'napuMsakamanapuMsakenEkavaccAsyAnyatarasyAm',
     text_dev                = 'नपुंसकमनपुंसकेनैकवच्चास्यान्यतरस्याम्',
+    samagra_slp1            = "napuMsakam anapuMsakena ekavat ca asya anyatarasyAm ekaSezaH tallakzaRaH cet eva viSezaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "नपुंसकम् अनपुंसकेन एकवत् च अस्य अन्यतरस्याम् एकशेषः तल्लक्षणः चेत् एव विशेषः",
     padaccheda_dev          = "नपुंसकम् / अनपुंसकेन / एकवत् / च / अस्य / अन्यतरस्याम्",
     why_dev                 = (
         "नपुंसकस्य अनपुंसकेन सह एकशेषे नपुंसकं रूपम् अन्यतरस्याम् एकवद् भवति — "

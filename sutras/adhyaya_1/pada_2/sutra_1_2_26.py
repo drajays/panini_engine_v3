@@ -17,6 +17,7 @@ Engine:
   - Guards re-entry via meta["aniT_1_2_26"].
   - Tags the dhātu "aniT".
   - r1_form_identity_exempt=True: no surface string changes in this step.
+Pāṭha: ashtadhyayi.com data.txt row i=12026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -73,6 +74,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ralo vyupaDAdDalAdeH saMSca',
     text_dev              = 'रलो व्युपधाद्धलादेः संश्च',
+    samagra_slp1          = "ralaH vi-upaDAt hala-AdeH san ca kit sew ktvA vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "रलः वि-उपधात् हल-आदेः सन् च कित् सेट् क्त्वा वा",
     padaccheda_dev        = "रलः / व्युपधात् / हलादेः / संश्च (अनिट्)",
     why_dev               = ("र-ल-उपधाकस्य हलादे-र्धातोः सम्-पूर्वकस्य "
                              "अनिट्त्वम् — इडागमो न भवति।"),

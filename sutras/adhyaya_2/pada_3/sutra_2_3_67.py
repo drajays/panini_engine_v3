@@ -4,6 +4,7 @@
 Padaccheda: क्तस्य च वर्त्तमाने
 
 In present context kta also takes kartri/karma as sasthi.
+Pāṭha: ashtadhyayi.com data.txt row i=23067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ktasya ca vartamAne",
     text_dev              = "क्तस्य च वर्तमाने",
+    samagra_slp1          = "anaBihite ktasya ca varttamAne zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते क्तस्य च वर्त्तमाने षष्ठी",
     padaccheda_dev        = "क्तस्य च वर्त्तमाने",
     why_dev               = "वर्त्तमाने क्तस्य च (२.३.६७)।",
     anuvritti_from        = ('2.3.65',),

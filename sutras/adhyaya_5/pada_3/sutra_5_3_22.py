@@ -4,6 +4,7 @@
 Padaccheda: सद्यः परुत् परारी ऐषमः परेद्यवि अद्य पूर्वेद्युः अन्येद्युः अन्यतरेद्युः इतरेद्युः अपरेद्युः अधरेद्युः उभयेद्युः उत्तरेद्युः
 
 सद्यःपरुत्परार्यैषमःपरेद्यव्यद्यपूर्वेद्युरन्येद्युरन्यतरेद्युरितरेद्युरपरेद्युरधरेद्युरुभयेद्युरुत्तरेद्युः (5.3.22)
+Pāṭha: ashtadhyayi.com data.txt row i=53022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sadyaHparutparAryEzamaHparedyavyadyapUrvedyuranyedyuranyataredyuritaredyuraparedyuraDaredyuruBayedyuruttaredyuH",
     text_dev              = "सद्यःपरुत्परार्यैषमःपरेद्यव्यद्यपूर्वेद्युरन्येद्युरन्यतरेद्युरितरेद्युरपरेद्युरधरेद्युरुभयेद्युरुत्तरेद्युः",
+    samagra_slp1          = "saptamyAH kAle sadyaH-parut-parAri-EzamaH-paredyavi-adya-pUrvedyuH-anyedyuH-anyataredyuH-itaredyuH-aparedyuH-aDaredyuH-uBayedyuH-uttaredyuH nipAtyante",
+    samagra_dev           = "सप्तम्याः काले सद्यः-परुत्-परारि-ऐषमः-परेद्यवि-अद्य-पूर्वेद्युः-अन्येद्युः-अन्यतरेद्युः-इतरेद्युः-अपरेद्युः-अधरेद्युः-उभयेद्युः-उत्तरेद्युः (निपात्यन्ते)",
     padaccheda_dev        = "सद्यः परुत् परारी ऐषमः परेद्यवि अद्य पूर्वेद्युः अन्येद्युः अन्यतरेद्युः इतरेद्युः अपरेद्युः अधरेद्युः उभयेद्युः उत्तरेद्युः",
     why_dev               = "(सूत्रम् 5.3.22) सद्यःपरुत्परार्यैषमःपरेद्यव्यद्यपूर्वेद्युरन्येद्युरन्यतरेद्युरितरेद्युरपरेद्युरधरेद्युरुभयेद्युरुत्तरेद्युः।",
     anuvritti_from        = ('5.3.2',),

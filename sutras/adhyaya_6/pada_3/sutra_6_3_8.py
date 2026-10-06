@@ -4,6 +4,7 @@
 Padaccheda: परस्य च
 
 परस्य च (6.3.8)
+Pāṭha: ashtadhyayi.com data.txt row i=63008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parasya ca",
     text_dev              = "परस्य च",
+    samagra_slp1          = "alug uttarapade parasya ca vEyAkaraRAKyAyAm caturTyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे परस्य च वैयाकरणाख्यायाम् चतुर्थ्याः",
     padaccheda_dev        = "परस्य च",
     why_dev               = "(सूत्रम् 6.3.8) परस्य च।",
     anuvritti_from        = ('6.1.1',),

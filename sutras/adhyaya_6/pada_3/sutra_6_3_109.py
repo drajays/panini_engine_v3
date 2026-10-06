@@ -12,6 +12,7 @@ the recipe passes step['nipatana_form_slp1'], we write the given
 varṇa sequence into the last Term and set state.nipatana_flag = True.
 
 If step does not pass a form, we fall back to rec.nipatana_form_slp1.
+Pāṭha: ashtadhyayi.com data.txt row i=63109 (Art. 14).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
@@ -38,6 +39,8 @@ SUTRA = SutraRecord(
     sutra_type         = SutraType.NIPATANA,
     text_slp1          = "pfzodarAdIni yaTopadizwam",
     text_dev           = "पृषोदरादीनि यथोपदिष्टम्",
+    samagra_slp1       = "uttarapade pfzodarAdIni yaTopadizwam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev        = "उत्तरपदे पृषोदरादीनि यथोपदिष्टम्",
     padaccheda_dev     = "पृषोदर-आदीनि यथा-उपदिष्टम्",
     why_dev            = "पृषोदर-आदयः शब्दाः यथा उपदिष्टाः तथैव साधवः (निपातनम्)।",
     anuvritti_from     = (),

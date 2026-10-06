@@ -4,6 +4,7 @@
 Padaccheda: कु-गति-प्र-आदयः
 
 ku, gati, pra etc. in tatpurusha compounds.
+Pāṭha: ashtadhyayi.com data.txt row i=22018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kugatiprAdayaH",
     text_dev              = "कुगतिप्रादयः",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH ku-gati-pra-AdayaH nityaM",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः कु-गति-प्र-आदयः नित्यं",
     padaccheda_dev        = "कु-गति-प्र-आदयः",
     why_dev               = "कु-गति-प्र-आदयः तत्पुरुषे (२.२.१८)।",
     anuvritti_from        = ('2.2.1',),

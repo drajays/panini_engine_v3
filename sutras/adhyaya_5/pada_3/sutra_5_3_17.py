@@ -4,6 +4,7 @@
 Padaccheda: अधुना
 
 अधुना (5.3.17)
+Pāṭha: ashtadhyayi.com data.txt row i=53017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aDunA",
     text_dev              = "अधुना",
+    samagra_slp1          = "aDunA iti nipAtyate",
+    samagra_dev           = "अधुना (इति निपात्यते)",
     padaccheda_dev        = "अधुना",
     why_dev               = "(सूत्रम् 5.3.17) अधुना।",
     anuvritti_from        = ('5.3.2',),

@@ -4,6 +4,7 @@
 Padaccheda: वनम् (षष्ठीस्थाने व्यत्ययेन प्रथमा) पुरगा-मिश्रका-सिध्रका-शारिका-कोटरा-अग्रेभ्यः
 
 वनं पुरगामिश्रकासिध्रकाशारिकाकोटराऽग्रेभ्यः (8.4.4)
+Pāṭha: ashtadhyayi.com data.txt row i=84004 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vanaM puragAmiSrakAsiDrakASArikAkowarAgreByaH',
     text_dev              = 'वनं पुरगामिश्रकासिध्रकाशारिकाकोटराऽग्रेभ्यः',
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm vanam puragA-miSrakA-siDrakA-SArikA-kowarA-agreByaH razAByAm agaH pUrvapadAt saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् वनम् पुरगा-मिश्रका-सिध्रका-शारिका-कोटरा-अग्रेभ्यः रषाभ्याम् अगः पूर्वपदात् संज्ञायाम्",
     padaccheda_dev        = "वनम् (षष्ठीस्थाने व्यत्ययेन प्रथमा) पुरगा-मिश्रका-सिध्रका-शारिका-कोटरा-अग्रेभ्यः",
     why_dev               = "(सूत्रम् 8.4.4) वनं पुरगामिश्रकासिध्रकाशारिकाकोटराऽग्रेभ्यः।",
     anuvritti_from        = ('8.1.1',),

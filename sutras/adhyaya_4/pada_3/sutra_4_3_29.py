@@ -4,6 +4,7 @@
 Padaccheda: पथः पन्थ (लुप्तप्रथमान्तनिर्देशः) च
 
 पथः पन्थ च (4.3.29)
+Pāṭha: ashtadhyayi.com data.txt row i=43029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paTaH panTa ca",
     text_dev              = "पथः पन्थ च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA paTaH panTa ca jAtaH tatra vun",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा पथः पन्थ च जातः तत्र वुन्",
     padaccheda_dev        = "पथः पन्थ (लुप्तप्रथमान्तनिर्देशः) च",
     why_dev               = "(सूत्रम् 4.3.29) पथः पन्थ च।",
     anuvritti_from        = ('4.1.1',),

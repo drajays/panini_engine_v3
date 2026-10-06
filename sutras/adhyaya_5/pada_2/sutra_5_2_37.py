@@ -4,6 +4,7 @@
 Padaccheda: प्रमाणे द्वयसच्-दघ्नच्-मात्रचः
 
 प्रमाणे द्वयसज्दघ्नञ्मात्रचः (5.2.37)
+Pāṭha: ashtadhyayi.com data.txt row i=52037 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pramARe dvayasajdaGnaYmAtracaH",
     text_dev              = "प्रमाणे द्वयसज्दघ्नञ्मात्रचः",
+    samagra_slp1          = "tat asya iti pramARe dvayasac-daGnac-mAtracaH",
+    samagra_dev           = "'तत्  अस्य' (इति) प्रमाणे द्वयसच्-दघ्नच्-मात्रचः",
     padaccheda_dev        = "प्रमाणे द्वयसच्-दघ्नच्-मात्रचः",
     why_dev               = "(सूत्रम् 5.2.37) प्रमाणे द्वयसज्दघ्नञ्मात्रचः।",
     anuvritti_from        = ('4.1.82',),

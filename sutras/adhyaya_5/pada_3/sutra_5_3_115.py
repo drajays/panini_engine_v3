@@ -4,6 +4,7 @@
 Padaccheda: वृकात् टेण्यण्
 
 वृकाट्टेण्यण् (5.3.115)
+Pāṭha: ashtadhyayi.com data.txt row i=53115 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vfkAwweRyaR",
     text_dev              = "वृकाट्टेण्यण्",
+    samagra_slp1          = "AyuDajIvisaNGAt vfkAt weRyaR",
+    samagra_dev           = "आयुधजीविसङ्घात् वृकात् टेण्यण्",
     padaccheda_dev        = "वृकात् टेण्यण्",
     why_dev               = "(सूत्रम् 5.3.115) वृकाट्टेण्यण्।",
     anuvritti_from        = ('4.1.76',),

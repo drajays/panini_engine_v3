@@ -4,6 +4,7 @@
 Padaccheda: दिक्-पूर्वपदात् ङीप्
 
 दिक्पूर्वपदान्ङीप् (4.1.60)
+Pāṭha: ashtadhyayi.com data.txt row i=41060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dikpUrvapadAnNIp",
     text_dev              = "दिक्पूर्वपदान्ङीप्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt dik-pUrvapadAt NIp NIz",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् दिक्-पूर्वपदात् ङीप् ङीष्",
     padaccheda_dev        = "दिक्-पूर्वपदात् ङीप्",
     why_dev               = "(सूत्रम् 4.1.60) दिक्पूर्वपदान्ङीप्।",
     anuvritti_from        = ('4.1.1',),

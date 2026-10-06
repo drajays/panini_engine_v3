@@ -4,6 +4,7 @@
 Padaccheda: बहुलम् छन्दसि अ-माङ्-योगे अपि
 
 बहुलं छन्दस्यमाङ्योगेऽपि (6.4.75)
+Pāṭha: ashtadhyayi.com data.txt row i=64075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'bahulaM CandasyamANyogepi',
     text_dev              = 'बहुलं छन्दस्यमाङ्योगेऽपि',
+    samagra_slp1          = "luNlaNlfNkzu mANgayoge api",
+    samagra_dev           = "लुङ्लङ्लृङ्क्षु माङ्गयोगे अपि",
     padaccheda_dev        = "बहुलम् छन्दसि अ-माङ्-योगे अपि",
     why_dev               = "(सूत्रम् 6.4.75) बहुलं छन्दस्यमाङ्योगेऽपि।",
     anuvritti_from        = ('6.1.1',),

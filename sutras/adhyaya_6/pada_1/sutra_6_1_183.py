@@ -4,6 +4,7 @@
 Padaccheda: दिवः झल्
 
 दिवो झल् (6.1.183)
+Pāṭha: ashtadhyayi.com data.txt row i=61183 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "divo Jal",
     text_dev              = "दिवो झल्",
+    samagra_slp1          = "divaH Jal udAttaH antaH viBaktiH nAm anyatarasyAm na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "दिवः झल् उदात्तः अन्तः विभक्तिः नाम् अन्यतरस्याम् न",
     padaccheda_dev        = "दिवः झल्",
     why_dev               = "(सूत्रम् 6.1.183) दिवो झल्।",
     anuvritti_from        = ('6.1.1',),

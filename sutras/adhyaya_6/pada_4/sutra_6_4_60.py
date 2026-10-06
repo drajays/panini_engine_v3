@@ -4,6 +4,7 @@
 Padaccheda: निष्ठायाम् अ-ण्यत्-अर्थे
 
 निष्ठायां अण्यदर्थे (6.4.60)
+Pāṭha: ashtadhyayi.com data.txt row i=64060 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'nizWAyAmaRyadarTe',
     text_dev              = 'निष्ठायामण्यदर्थे',
+    samagra_slp1          = "aNgasya asidDavadatrABAt ArDaDAtuke nizWAyAm a-Ryat-arTe dIrGaH kziyaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् आर्धधातुके निष्ठायाम् अ-ण्यत्-अर्थे दीर्घः क्षियः",
     padaccheda_dev        = "निष्ठायाम् अ-ण्यत्-अर्थे",
     why_dev               = "(सूत्रम् 6.4.60) निष्ठायां अण्यदर्थे।",
     anuvritti_from        = ('6.1.1',),

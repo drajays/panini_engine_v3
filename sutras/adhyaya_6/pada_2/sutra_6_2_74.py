@@ -4,6 +4,7 @@
 Padaccheda: प्राचाम् क्रीडायाम्
 
 प्राचां क्रीडायाम् (6.2.74)
+Pāṭha: ashtadhyayi.com data.txt row i=62074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prAcAM krIqAyAm",
     text_dev              = "प्राचां क्रीडायाम्",
+    samagra_slp1          = "AdiH udAttaH prAcAm krIqAyAm pUrvapadam ake",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः प्राचाम् क्रीडायाम् पूर्वपदम् अके",
     padaccheda_dev        = "प्राचाम् क्रीडायाम्",
     why_dev               = "(सूत्रम् 6.2.74) प्राचां क्रीडायाम्।",
     anuvritti_from        = ('6.1.1',),

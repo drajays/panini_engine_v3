@@ -4,6 +4,7 @@
 Padaccheda: न न्-द्-राः संयोग-आदयः
 
 न न्द्राः संयोगादयः (6.1.3)
+Pāṭha: ashtadhyayi.com data.txt row i=61003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na ndrAH saMyogAdayaH",
     text_dev              = "न न्द्राः संयोगादयः",
+    samagra_slp1          = "dvitIyasya ekAcaH saMyogAdayaH ndrAH na dve",
+    samagra_dev           = "द्वितीयस्य एकाचः संयोगादयः न्द्राः न द्वे",
     padaccheda_dev        = "न न्-द्-राः संयोग-आदयः",
     why_dev               = "(सूत्रम् 6.1.3) न न्द्राः संयोगादयः।",
     anuvritti_from        = ('6.1.1',),

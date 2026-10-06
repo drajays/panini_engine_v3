@@ -4,6 +4,7 @@
 Padaccheda: समानस्य छन्दसि अ-मूर्ध-प्रभृति-उदर्केषु
 
 समानस्य छन्दस्यमूर्धप्रभृत्युदर्केषु (6.3.84)
+Pāṭha: ashtadhyayi.com data.txt row i=63084 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samAnasya CandasyamUrDapraBftyudarkezu",
     text_dev              = "समानस्य छन्दस्यमूर्धप्रभृत्युदर्केषु",
+    samagra_slp1          = "uttarapade samAnasya Candasi amUrDa-praBfti-ut-arkezu saH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे समानस्य छन्दसि अमूर्ध-प्रभृति-उत्-अर्केषु सः",
     padaccheda_dev        = "समानस्य छन्दसि अ-मूर्ध-प्रभृति-उदर्केषु",
     why_dev               = "(सूत्रम् 6.3.84) समानस्य छन्दस्यमूर्धप्रभृत्युदर्केषु।",
     anuvritti_from        = ('6.1.1',),

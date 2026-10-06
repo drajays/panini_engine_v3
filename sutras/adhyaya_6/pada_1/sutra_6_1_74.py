@@ -4,6 +4,7 @@
 Padaccheda: आङ्-माङोः च
 
 आङ्माङोश्च (6.1.74)
+Pāṭha: ashtadhyayi.com data.txt row i=61074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ANmANoSca",
     text_dev              = "आङ्माङोश्च",
+    samagra_slp1          = "AN-mANoH Ce tuk saMhitAyAm",
+    samagra_dev           = "आङ्-माङोः छे तुक् संहितायाम्",
     padaccheda_dev        = "आङ्-माङोः च",
     why_dev               = "(सूत्रम् 6.1.74) आङ्माङोश्च।",
     anuvritti_from        = ('6.1.1',),

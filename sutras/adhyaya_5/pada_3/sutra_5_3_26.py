@@ -4,6 +4,7 @@
 Padaccheda: था हेतौ च छन्दसि
 
 था हेतौ च च्छन्दसि (5.3.26)
+Pāṭha: ashtadhyayi.com data.txt row i=53026 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "TA hetO ca cCandasi",
     text_dev              = "था हेतौ च च्छन्दसि",
+    samagra_slp1          = "kimaH hetO prakAravacane ca TA Candasi",
+    samagra_dev           = "किमः हेतौ प्रकारवचने च था छन्दसि",
     padaccheda_dev        = "था हेतौ च छन्दसि",
     why_dev               = "(सूत्रम् 5.3.26) था हेतौ च च्छन्दसि।",
     anuvritti_from        = ('5.3.2',),

@@ -4,6 +4,7 @@
 Padaccheda: पञ्चम्याः परौ अधि-अर्थे
 
 पञ्चम्याः परावध्यर्थे (8.3.51)
+Pāṭha: ashtadhyayi.com data.txt row i=83051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paYcamyAH parAvaDyarTe",
     text_dev              = "पञ्चम्याः परावध्यर्थे",
+    samagra_slp1          = "padasya pUrvatrAsidDam saMhitAyAm paYcamyAH parO aDyarTe visarjanIyasya kupvoH saH samAse Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् संहितायाम् पञ्चम्याः परौ अध्यर्थे विसर्जनीयस्य कुप्वोः सः समासे छन्दसि",
     padaccheda_dev        = "पञ्चम्याः परौ अधि-अर्थे",
     why_dev               = "(सूत्रम् 8.3.51) पञ्चम्याः परावध्यर्थे।",
     anuvritti_from        = ('8.1.1',),

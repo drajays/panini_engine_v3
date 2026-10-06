@@ -4,6 +4,7 @@
 Padaccheda: तद्युक्तात् कर्मणः अण्
 
 तद्युक्तात् कर्मणोऽण् (5.4.36)
+Pāṭha: ashtadhyayi.com data.txt row i=54036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tadyuktAt karmaRoR',
     text_dev              = 'तद्युक्तात् कर्मणोऽण्',
+    samagra_slp1          = "vyAhftA-arTAyAm vAcaH tadyuktAt karmaRaH aR",
+    samagra_dev           = "व्याहृता-अर्थायाम् वाचः तद्युक्तात् कर्मणः अण्",
     padaccheda_dev        = "तद्युक्तात् कर्मणः अण्",
     why_dev               = "(सूत्रम् 5.4.36) तद्युक्तात् कर्मणोऽण्।",
     anuvritti_from        = ('4.1.76',),

@@ -4,6 +4,7 @@
 Padaccheda: लोपः शाकल्यस्य
 
 लोपः शाकल्यस्य (8.3.19)
+Pāṭha: ashtadhyayi.com data.txt row i=83019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lopaH SAkalyasya",
     text_dev              = "लोपः शाकल्यस्य",
+    samagra_slp1          = "padasya apUrvayoH vyoH aSi SAkalyasya lopaH",
+    samagra_dev           = "पदस्य अपूर्वयोः व्योः अशि शाकल्यस्य लोपः",
     padaccheda_dev        = "लोपः शाकल्यस्य",
     why_dev               = "(सूत्रम् 8.3.19) लोपः शाकल्यस्य।",
     anuvritti_from        = ('8.1.1',),

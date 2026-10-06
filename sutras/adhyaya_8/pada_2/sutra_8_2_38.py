@@ -4,6 +4,7 @@
 Padaccheda: दधः त-थोः च
 
 दधस्तथोश्च (8.2.38)
+Pāṭha: ashtadhyayi.com data.txt row i=82038 (Art. 14).
 """
 from __future__ import annotations
 
@@ -50,6 +51,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = False,
     text_slp1             = "daDastaToSca",
     text_dev              = "दधस्तथोश्च",
+    samagra_slp1          = "daDaH taToH Jazantasya ekAcaH baSaH Baz svoH taToH ca",
+    samagra_dev           = "दधः तथोः झषन्तस्य एकाचः बशः भष् स्वोः तथोः च",
     padaccheda_dev        = "दधः त-थोः च",
     why_dev               = "(सूत्रम् 8.2.38) दधस्तथोश्च।",
     anuvritti_from        = ('8.1.1',),

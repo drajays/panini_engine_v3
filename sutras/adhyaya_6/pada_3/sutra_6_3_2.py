@@ -4,6 +4,7 @@
 Padaccheda: पञ्चम्याः स्तोक-आदिभ्यः
 
 पञ्चम्याः स्तोकादिभ्यः (6.3.2)
+Pāṭha: ashtadhyayi.com data.txt row i=63002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paYcamyAH stokAdiByaH",
     text_dev              = "पञ्चम्याः स्तोकादिभ्यः",
+    samagra_slp1          = "alug uttarapade paYcamyAH stokAdiByaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे पञ्चम्याः स्तोकादिभ्यः",
     padaccheda_dev        = "पञ्चम्याः स्तोक-आदिभ्यः",
     why_dev               = "(सूत्रम् 6.3.2) पञ्चम्याः स्तोकादिभ्यः।",
     anuvritti_from        = ('6.1.1',),

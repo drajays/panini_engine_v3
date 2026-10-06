@@ -4,6 +4,7 @@
 Padaccheda: तेन यथाकथाच-हस्ताभ्याम् ण-यतौ
 
 तेन यथाकथाचहस्ताभ्यां णयतौ (5.1.98)
+Pāṭha: ashtadhyayi.com data.txt row i=51098 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tena yaTAkaTAcahastAByAM RayatO",
     text_dev              = "तेन यथाकथाचहस्ताभ्यां णयतौ",
+    samagra_slp1          = "tena dIyate kAryam iti yaTAkaTAca-hastAByAm Ra-yatO",
+    samagra_dev           = "'तेन दीयते, कार्यम्' (इति) यथाकथाच-हस्ताभ्याम् ण-यतौ",
     padaccheda_dev        = "तेन यथाकथाच-हस्ताभ्याम् ण-यतौ",
     why_dev               = "(सूत्रम् 5.1.98) तेन यथाकथाचहस्ताभ्यां णयतौ।",
     anuvritti_from        = ('5.1.18',),

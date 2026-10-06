@@ -4,6 +4,7 @@
 Padaccheda: गोत्रात् यूनि अ-स्त्रियाम्
 
 गोत्राद्यून्यस्त्रियाम् (4.1.94)
+Pāṭha: ashtadhyayi.com data.txt row i=41094 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "gotrAdyUnyastriyAm",
     text_dev              = "गोत्राद्यून्यस्त्रियाम्",
+    samagra_slp1          = "yuni gotrAt pratyayaH  astriyAm",
+    samagra_dev           = "युनि गोत्रात् प्रत्ययः ; अस्त्रियाम्",
     padaccheda_dev        = "गोत्रात् यूनि अ-स्त्रियाम्",
     why_dev               = "(सूत्रम् 4.1.94) गोत्राद्यून्यस्त्रियाम्।",
     anuvritti_from        = ('4.1.1',),

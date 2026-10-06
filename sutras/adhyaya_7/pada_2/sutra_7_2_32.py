@@ -4,6 +4,7 @@
 Padaccheda: अपरिह्वृताः च
 
 अपरिह्वृताश्च (7.2.32)
+Pāṭha: ashtadhyayi.com data.txt row i=72032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aparihvftASca",
     text_dev              = "अपरिह्वृताश्च",
+    samagra_slp1          = "aNgasya aparihvftAH ca na iw nizWAyAm Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अपरिह्वृताः च न इट् निष्ठायाम् छन्दसि",
     padaccheda_dev        = "अपरिह्वृताः च",
     why_dev               = "(सूत्रम् 7.2.32) अपरिह्वृताश्च।",
     anuvritti_from        = ('7.1.1',),

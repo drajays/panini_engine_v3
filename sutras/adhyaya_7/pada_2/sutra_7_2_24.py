@@ -4,6 +4,7 @@
 Padaccheda: अर्देः सम्-नि-विभ्यः
 
 अर्देः संनिविभ्यः (7.2.24)
+Pāṭha: ashtadhyayi.com data.txt row i=72024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ardeH saMniviByaH",
     text_dev              = "अर्देः संनिविभ्यः",
+    samagra_slp1          = "aNgasya ardeH sanniviByaH na iw nizWAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अर्देः सन्निविभ्यः न इट् निष्ठायाम्",
     padaccheda_dev        = "अर्देः सम्-नि-विभ्यः",
     why_dev               = "(सूत्रम् 7.2.24) अर्देः संनिविभ्यः।",
     anuvritti_from        = ('7.1.1',),

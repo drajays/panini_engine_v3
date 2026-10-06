@@ -4,6 +4,7 @@
 Padaccheda: णौ च सन्-चङोः
 
 णौ च संश्चङोः (6.1.31)
+Pāṭha: ashtadhyayi.com data.txt row i=61031 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "RO ca saMScaNoH",
     text_dev              = "णौ च संश्चङोः",
+    samagra_slp1          = "RO ca san-caNoH samprasAraRam viBAzA SveH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "णौ च सन्-चङोः सम्प्रसारणम् विभाषा श्वेः",
     padaccheda_dev        = "णौ च सन्-चङोः",
     why_dev               = "(सूत्रम् 6.1.31) णौ च संश्चङोः।",
     anuvritti_from        = ('6.1.1',),

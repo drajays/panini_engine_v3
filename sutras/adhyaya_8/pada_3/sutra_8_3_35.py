@@ -4,6 +4,7 @@
 Padaccheda: शर्परे । विसर्जनीयः
 
 शर्परे विसर्जनीयः (8.3.35)
+Pāṭha: ashtadhyayi.com data.txt row i=83035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Sarpare visarjanIyaH",
     text_dev              = "शर्परे विसर्जनीयः",
+    samagra_slp1          = "Sar-pare Kari visarjanIyasya visarjanIyaH",
+    samagra_dev           = "शर्-परे खरि विसर्जनीयस्य विसर्जनीयः",
     padaccheda_dev        = "शर्परे । विसर्जनीयः",
     why_dev               = "(सूत्रम् 8.3.35) शर्परे विसर्जनीयः।",
     anuvritti_from        = ('8.1.1',),

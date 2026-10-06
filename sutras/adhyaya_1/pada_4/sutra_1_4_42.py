@@ -11,6 +11,7 @@ definition of karaṇa. E.g. *dātreṇa lunāti* — the sickle is karaṇa.
 ``samjna_registry`` has no entry for ``"karaRa"`` yet. ``act`` installs
 the gate entry and also tags any term bearing ``"sADakatama"``.
 ``r1_form_identity_exempt = True``.
+Pāṭha: ashtadhyayi.com data.txt row i=14042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -48,6 +49,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = "sADakatamaM karaRam",
     text_dev             = "साधकतमं करणम्",
+    samagra_slp1         = "AkaqArAt ekA saMjYA kArake sADakatamam karaRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कारके साधकतमम् करणम्",
     padaccheda_dev       = "साधकतमम् / करणम्",
     why_dev              = (
         "क्रियासिद्धौ यत् साधकतमम् (अत्यन्तोपकारकम्) तत् करण-कारक-संज्ञकम्। "

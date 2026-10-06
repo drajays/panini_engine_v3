@@ -4,6 +4,7 @@
 Padaccheda: परोवर-परम्पर-पुत्रपौत्रम् अनुभवति (क्रियापदम्)
 
 परोवरपरम्परपुत्रपौत्रमनुभवति (5.2.10)
+Pāṭha: ashtadhyayi.com data.txt row i=52010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parovaraparamparaputrapOtramanuBavati",
     text_dev              = "परोवरपरम्परपुत्रपौत्रमनुभवति",
+    samagra_slp1          = "tat parovara-parampara-putrapOtramanuBavati iti KaH",
+    samagra_dev           = "'तत् परोवर-परम्पर-पुत्रपौत्रमनुभवति' (इति) खः",
     padaccheda_dev        = "परोवर-परम्पर-पुत्रपौत्रम् अनुभवति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 5.2.10) परोवरपरम्परपुत्रपौत्रमनुभवति।",
     anuvritti_from        = ('4.1.82',),

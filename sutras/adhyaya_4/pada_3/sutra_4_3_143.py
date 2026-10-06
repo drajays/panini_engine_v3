@@ -4,6 +4,7 @@
 Padaccheda: मयट् वा एतयोः भाषायाम् अभक्ष्य-आच्छादनयोः
 
 मयड्वैतयोर्भाषायामभक्ष्याच्छादनयोः (4.3.143)
+Pāṭha: ashtadhyayi.com data.txt row i=43143 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mayaqvEtayorBAzAyAmaBakzyAcCAdanayoH",
     text_dev              = "मयड्वैतयोर्भाषायामभक्ष्याच्छादनयोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA mayaw vA etayoH BAzAyAm a-Bakzya-AcCAdanayoH tasya vikAraH avayave",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा मयट् वा एतयोः भाषायाम् अ-भक्ष्य-आच्छादनयोः तस्य विकारः अवयवे",
     padaccheda_dev        = "मयट् वा एतयोः भाषायाम् अभक्ष्य-आच्छादनयोः",
     why_dev               = "(सूत्रम् 4.3.143) मयड्वैतयोर्भाषायामभक्ष्याच्छादनयोः।",
     anuvritti_from        = ('4.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: शृङ्गम् अवस्थायाम् च
 
 शृङ्गमवस्थायां च (6.2.115)
+Pāṭha: ashtadhyayi.com data.txt row i=62115 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "SfNgamavasTAyAM ca",
     text_dev              = "शृङ्गमवस्थायां च",
+    samagra_slp1          = "udAttaH uttarapadAdiH SfNgam avasTAyAm ca bahuvrIhO saMjYA-OpamyayoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उदात्तः उत्तरपदादिः शृङ्गम् अवस्थायाम् च बहुव्रीहौ संज्ञा-औपम्ययोः",
     padaccheda_dev        = "शृङ्गम् अवस्थायाम् च",
     why_dev               = "(सूत्रम् 6.2.115) शृङ्गमवस्थायां च।",
     anuvritti_from        = ('6.1.1',),

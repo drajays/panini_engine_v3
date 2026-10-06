@@ -4,6 +4,7 @@
 Padaccheda: श्येन-तिलस्य पाते ञे
 
 श्येनतिलस्य पाते ञे (6.3.71)
+Pāṭha: ashtadhyayi.com data.txt row i=63071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "Syenatilasya pAte Ye",
     text_dev              = "श्येनतिलस्य पाते ञे",
+    samagra_slp1          = "uttarapade Syenatilasya pAte Ye mum",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदे श्येनतिलस्य पाते ञे मुम्",
     padaccheda_dev        = "श्येन-तिलस्य पाते ञे",
     why_dev               = "(सूत्रम् 6.3.71) श्येनतिलस्य पाते ञे।",
     anuvritti_from        = ('6.1.1',),

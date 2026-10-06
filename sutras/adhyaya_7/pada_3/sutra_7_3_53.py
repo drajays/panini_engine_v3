@@ -4,6 +4,7 @@
 Padaccheda: न्यङ्‍कु-आदीनाम् च
 
 न्यङ्क्वादीनां च (7.3.53)
+Pāṭha: ashtadhyayi.com data.txt row i=73053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nyaNkvAdInAM ca",
     text_dev              = "न्यङ्क्वादीनां च",
+    samagra_slp1          = "aNgasya nyaNkvAdInAm ca cajoH ku",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न्यङ्क्वादीनाम् च चजोः कु",
     padaccheda_dev        = "न्यङ्‍कु-आदीनाम् च",
     why_dev               = "(सूत्रम् 7.3.53) न्यङ्क्वादीनां च।",
     anuvritti_from        = ('7.1.1',),

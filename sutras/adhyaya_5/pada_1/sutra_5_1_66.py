@@ -4,6 +4,7 @@
 Padaccheda: दण्ड-आदिभ्यः
 
 दण्डादिभ्यः (5.1.66)
+Pāṭha: ashtadhyayi.com data.txt row i=51066 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "daRqAdiByaH",
     text_dev              = "दण्डादिभ्यः",
+    samagra_slp1          = "tat arhati iti daRqAdiByaH yat",
+    samagra_dev           = "'तत् अर्हति' (इति) दण्डादिभ्यः यत्",
     padaccheda_dev        = "दण्ड-आदिभ्यः",
     why_dev               = "(सूत्रम् 5.1.66) दण्डादिभ्यः।",
     anuvritti_from        = ('5.1.18',),

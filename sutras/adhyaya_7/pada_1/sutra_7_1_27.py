@@ -20,6 +20,7 @@ Engine implementation:
     • set upadesha_slp1 = "aS"
     • mark "7_1_27_done" on pratyaya
     Then 1.3.3 marks ś as halantyam-it, 1.3.9 deletes it, leaving [a].
+Pāṭha: ashtadhyayi.com data.txt row i=71027 (Art. 14).
 """
 from __future__ import annotations
 
@@ -77,6 +78,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'yuzmadasmadByAM NasoS',
     text_dev              = 'युष्मदस्मद्भ्यां ङसोऽश्',
+    samagra_slp1          = "aNgasya yuzmad-asmadByAm NasaH aS",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य युष्मद्-अस्मद्भ्याम् ङसः अश्",
     padaccheda_dev        = "युष्मद्-अस्मद्भ्याम् ङसः अश्",
     why_dev               = "अस्मद्-शब्दयोः ङस्-प्रत्ययस्य स्थाने अश् आदेशः "
                             "(सूत्रम् ७.१.२७ युष्मदस्मद्भ्यां ङसोऽश्)।",

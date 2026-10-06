@@ -4,6 +4,7 @@
 Padaccheda: वह-अभ्रे लिहः
 
 krt-suffix rule: वहाभ्रे लिहः (32)
+Pāṭha: ashtadhyayi.com data.txt row i=32032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vahABre lihaH",
     text_dev              = "वहाभ्रे लिहः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vahABre lihaH kft karmaRi anupasarge supi KaS",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वहाभ्रे लिहः कृत् कर्मणि अनुपसर्गे सुपि खश्",
     padaccheda_dev        = "वह-अभ्रे लिहः",
     why_dev               = "धातोः कृत्-प्रत्ययः [वहाभ्रे लिहः] विहितः (३.२.32)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: घन्-इलचौ च
 
 घनिलचौ च (5.3.79)
+Pāṭha: ashtadhyayi.com data.txt row i=53079 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "GanilacO ca",
     text_dev              = "घनिलचौ च",
+    samagra_slp1          = "anukampAyAm nItO tadyuktAt bahvacaH manuzyanAmnaH Gan-ilacO vA",
+    samagra_dev           = "अनुकम्पायाम् नीतौ तद्युक्तात् बह्वचः मनुष्यनाम्नः घन्-इलचौ वा",
     padaccheda_dev        = "घन्-इलचौ च",
     why_dev               = "(सूत्रम् 5.3.79) घनिलचौ च।",
     anuvritti_from        = ('5.3.70',),

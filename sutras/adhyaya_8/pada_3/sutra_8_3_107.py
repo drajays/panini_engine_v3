@@ -4,6 +4,7 @@
 Padaccheda: सुञः
 
 सुञः (8.3.107)
+Pāṭha: ashtadhyayi.com data.txt row i=83107 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "suYaH",
     text_dev              = "सुञः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH suYaH saH Candasi pUrvapadAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः सुञः सः छन्दसि पूर्वपदात्",
     padaccheda_dev        = "सुञः",
     why_dev               = "(सूत्रम् 8.3.107) सुञः।",
     anuvritti_from        = ('8.1.1',),

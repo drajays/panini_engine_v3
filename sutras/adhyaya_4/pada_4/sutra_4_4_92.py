@@ -4,6 +4,7 @@
 Padaccheda: धर्म-पथि-अर्थ-न्यायात् अनपेते
 
 धर्मपथ्यर्थन्यायादनपेते (4.4.92)
+Pāṭha: ashtadhyayi.com data.txt row i=44092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DarmapaTyarTanyAyAdanapete",
     text_dev              = "धर्मपथ्यर्थन्यायादनपेते",
+    samagra_slp1          = "Darma-paTi-arTa-nyAyAt saMjYAyAmanapete iti samarTAnAm praTamAt paraH yat pratyayaH",
+    samagra_dev           = "धर्म-पथि-अर्थ-न्यायात् संज्ञायामनपेते (इति) समर्थानाम् प्रथमात् परः यत् प्रत्ययः",
     padaccheda_dev        = "धर्म-पथि-अर्थ-न्यायात् अनपेते",
     why_dev               = "(सूत्रम् 4.4.92) धर्मपथ्यर्थन्यायादनपेते।",
     anuvritti_from        = ('4.1.1',),

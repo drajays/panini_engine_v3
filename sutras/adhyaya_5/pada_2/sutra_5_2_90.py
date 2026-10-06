@@ -4,6 +4,7 @@
 Padaccheda: अनुपदी अन्वेष्टा
 
 अनुपद्यन्वेष्टा (5.2.90)
+Pāṭha: ashtadhyayi.com data.txt row i=52090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "anupadyanvezwA",
     text_dev              = "अनुपद्यन्वेष्टा",
+    samagra_slp1          = "anvezwA iti anupadI nipAtyate",
+    samagra_dev           = "अन्वेष्टा (इति) अनुपदी (निपात्यते)",
     padaccheda_dev        = "अनुपदी अन्वेष्टा",
     why_dev               = "(सूत्रम् 5.2.90) अनुपद्यन्वेष्टा।",
     anuvritti_from        = ('4.1.82',),

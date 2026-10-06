@@ -2,7 +2,7 @@
 6.1.97  अतो गुणे  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=60197
+- ashtadhyayi.com data.txt row i=61097
 - Kāśikā: अतो गुणे — गुणे पररूपम् (एकादेशः) यत्र अकारो द्विर्वर्तते।
 - Cross-validation: regression tests/unit/test_corrected_prakriyas_v2_bundle.py
   (P013 SuSrUzate, P017 pawapawAyati); pipelines/asmad_subanta.py paradigm cells.
@@ -170,6 +170,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='ato guRe',
     text_dev='अतो गुणे',
+    samagra_slp1="apadAntAt ataH guRe pUrvaparayoH ekaH pararUpam",
+    samagra_dev="अपदान्तात् अतः गुणे पूर्वपरयोः एकः पररूपम्",
     padaccheda_dev="अतः गुणे",
     why_dev="अपदान्त-ह्रस्व-अकारात् गुणे परे पररूप-एकादेशः।",
     apavada_of     = ("6.1.101",),

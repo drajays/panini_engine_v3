@@ -4,6 +4,7 @@
 Padaccheda: से अ-सिचि कृत-चृत-च्छृद-तृद-नृतः
 
 सेऽसिचि कृतचृतच्छृदतृदनृतः (7.2.57)
+Pāṭha: ashtadhyayi.com data.txt row i=72057 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sesici kftacftacCfdatfdanftaH',
     text_dev              = 'सेऽसिचि कृतचृतच्छृदतृदनृतः',
+    samagra_slp1          = "aNgasya se asici kftacftacCfdatfdanftaH ArDaDAtukasya iw valAdeH vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य से असिचि कृतचृतच्छृदतृदनृतः आर्धधातुकस्य इट् वलादेः वा",
     padaccheda_dev        = "से अ-सिचि कृत-चृत-च्छृद-तृद-नृतः",
     why_dev               = "(सूत्रम् 7.2.57) सेऽसिचि कृतचृतच्छृदतृदनृतः।",
     anuvritti_from        = ('7.1.1',),

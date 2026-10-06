@@ -4,6 +4,7 @@
 Padaccheda: न गुण-आदयः अवयवाः
 
 न गुणादयोऽवयवाः (6.2.176)
+Pāṭha: ashtadhyayi.com data.txt row i=62176 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'na guRAdayovayavAH',
     text_dev              = 'न गुणादयोऽवयवाः',
+    samagra_slp1          = "uttarapadAdiH antaH na guRAdayaH avayavAH bahuvrIhO bahoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः न गुणादयः अवयवाः बहुव्रीहौ बहोः",
     padaccheda_dev        = "न गुण-आदयः अवयवाः",
     why_dev               = "(सूत्रम् 6.2.176) न गुणादयोऽवयवाः।",
     anuvritti_from        = ('6.1.1',),

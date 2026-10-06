@@ -4,6 +4,7 @@
 Padaccheda: एक-अच्-उत्तरपदे णः
 
 एकाजुत्तरपदे णः (8.4.12)
+Pāṭha: ashtadhyayi.com data.txt row i=84012 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "ekAjuttarapade RaH",
     text_dev              = "एकाजुत्तरपदे णः",
+    samagra_slp1          = "pUrvapadAt razAByAM prAtipadikAnta-num-viBaktizu ekAc-uttarapade naH RaH  awkupvANnumvyavAye api",
+    samagra_dev           = "पूर्वपदात् रषाभ्यां प्रातिपदिकान्त-नुम्-विभक्तिषु एकाच्-उत्तरपदे नः णः , अट्कुप्वाङ्नुम्व्यवाये अपि",
     padaccheda_dev        = "एक-अच्-उत्तरपदे णः",
     why_dev               = "(सूत्रम् 8.4.12) एकाजुत्तरपदे णः।",
     anuvritti_from        = ('8.1.1',),

@@ -73,6 +73,8 @@ SUTRA = SutraRecord(
     # Readable Velthuis; *e* compact: ``taraptamapaughah``
     text_slp1      = 'taraptamapO GaH',
     text_dev       = 'तरप्तमपौ घः',
+    samagra_slp1   = "tarap-tamapO GaH",
+    samagra_dev    = "तरप्-तमपौ घः",
     padaccheda_dev = "तरप्-तमपौ / घः",
     why_dev        = _WHY,
     anuvritti_from = (),

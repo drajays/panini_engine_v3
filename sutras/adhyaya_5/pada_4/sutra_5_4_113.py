@@ -4,6 +4,7 @@
 Padaccheda: बहुव्रीहौ सक्थि-अक्ष्णोः स्वाङ्गात् षच्
 
 बहुव्रीहौ सक्थ्यक्ष्णोः स्वाङ्गात् षच् (5.4.113)
+Pāṭha: ashtadhyayi.com data.txt row i=54113 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "bahuvrIhO sakTyakzRoH svANgAt zac",
     text_dev              = "बहुव्रीहौ सक्थ्यक्ष्णोः स्वाङ्गात् षच्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA bahuvrIhO sakTyakzRoH svANgAt zac",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा बहुव्रीहौ सक्थ्यक्ष्णोः स्वाङ्गात् षच्",
     padaccheda_dev        = "बहुव्रीहौ सक्थि-अक्ष्णोः स्वाङ्गात् षच्",
     why_dev               = "(सूत्रम् 5.4.113) बहुव्रीहौ सक्थ्यक्ष्णोः स्वाङ्गात् षच्।",
     anuvritti_from        = ('5.4.68',),

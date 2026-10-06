@@ -4,6 +4,7 @@
 Padaccheda: महाकुलात् अञ्-खञौ
 
 महाकुलादञ्खञौ (4.1.141)
+Pāṭha: ashtadhyayi.com data.txt row i=41141 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mahAkulAdaYKaYO",
     text_dev              = "महाकुलादञ्खञौ",
+    samagra_slp1          = "tasya apatyam iti mahAkulAt anyatarasyAmaY-KaYO",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) महाकुलात् अन्यतरस्यामञ्-खञौ",
     padaccheda_dev        = "महाकुलात् अञ्-खञौ",
     why_dev               = "(सूत्रम् 4.1.141) महाकुलादञ्खञौ।",
     anuvritti_from        = ('4.1.1',),

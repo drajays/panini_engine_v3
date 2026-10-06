@@ -4,6 +4,7 @@
 Padaccheda: छाया बाहुल्ये
 
 chaya in bahulya (abundance) context.
+Pāṭha: ashtadhyayi.com data.txt row i=24022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "CAyA bAhulye",
     text_dev              = "छाया बाहुल्ये",
+    samagra_slp1          = "tatpuruzonaYkarmaDArayaH CAyA bAhulye napuMsakam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तत्पुरुषोऽनञ्कर्मधारयः छाया बाहुल्ये नपुंसकम्",
     padaccheda_dev        = "छाया बाहुल्ये",
     why_dev               = "बाहुल्ये छाया (२.४.२२)।",
     anuvritti_from        = ('2.4.18',),

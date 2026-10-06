@@ -4,6 +4,7 @@
 Padaccheda: साक्षात् द्रष्टरि संज्ञायाम्
 
 साक्षाद्द्रष्टरि संज्ञायाम् (5.2.91)
+Pāṭha: ashtadhyayi.com data.txt row i=52091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sAkzAddrazwari saMjYAyAm",
     text_dev              = "साक्षाद्द्रष्टरि संज्ञायाम्",
+    samagra_slp1          = "drazwari iti saMjYAyAm sAkzAt ini",
+    samagra_dev           = "'द्रष्टरि' (इति) संज्ञायाम् साक्षात्  इनि",
     padaccheda_dev        = "साक्षात् द्रष्टरि संज्ञायाम्",
     why_dev               = "(सूत्रम् 5.2.91) साक्षाद्द्रष्टरि संज्ञायाम्।",
     anuvritti_from        = ('4.1.82',),

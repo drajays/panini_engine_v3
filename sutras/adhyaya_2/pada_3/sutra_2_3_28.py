@@ -4,6 +4,7 @@
 Padaccheda: अपादाने पञ्चमी
 
 Pancami marks the apadana (ablative) role.
+Pāṭha: ashtadhyayi.com data.txt row i=23028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "apAdAne paYcamI",
     text_dev              = "अपादाने पञ्चमी",
+    samagra_slp1          = "anaBihite apAdAne paYcamI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते अपादाने पञ्चमी",
     padaccheda_dev        = "अपादाने पञ्चमी",
     why_dev               = "अपादाने पञ्चमी (२.३.२८)।",
     anuvritti_from        = ('2.3.1',),

@@ -4,6 +4,7 @@
 Padaccheda: न गोपवन-आदिभ्यः
 
 NOT for gopavana etc.
+Pāṭha: ashtadhyayi.com data.txt row i=24067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na gopavanAdiByaH",
     text_dev              = "न गोपवनादिभ्यः",
+    samagra_slp1          = "na gopavana-AdiByaH luk bahuzu tena eva astriyAm gotre",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "न गोपवन-आदिभ्यः लुक् बहुषु तेन एव अस्त्रियाम् गोत्रे",
     padaccheda_dev        = "न गोपवन-आदिभ्यः",
     why_dev               = "न गोपवन-आदिभ्यः (२.४.६७)।",
     anuvritti_from        = ('2.4.66',),

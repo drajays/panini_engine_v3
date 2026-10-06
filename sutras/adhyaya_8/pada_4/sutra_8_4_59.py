@@ -20,6 +20,7 @@ Engine (representative, glass-box):
 
 This is intentionally narrow and does not attempt full padānta + yay-only
 scoping; pipelines schedule it only where needed.
+Pāṭha: ashtadhyayi.com data.txt row i=84059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -84,6 +85,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIBHASHA,
     text_slp1      = "vA padAntasya",
     text_dev       = "वा पदान्तस्य",
+    samagra_slp1   = "padAntasya anusvArasya yayi vA parasavarRaH",
+    samagra_dev    = "पदान्तस्य अनुस्वारस्य ययि वा परसवर्णः",
     padaccheda_dev = "वा / पदान्तस्य",
     why_dev        = "पदान्ते विद्यमानस्य अनुस्वारस्य परे वर्णे परसवर्णः विकल्पेन।",
     anuvritti_from = ("8.4.58",),

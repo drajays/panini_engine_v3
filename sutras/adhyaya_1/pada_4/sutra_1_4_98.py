@@ -12,6 +12,7 @@ also function as a regular *upasarga*.  This closes the **1.4.83** adhikāra.
 *Engine:* sets paribhāṣā gate for the optional *adhi-kṛñ* usage.
 ``cond`` never reads vibhakti/vacana/lakāra/surface.
 ``r1_form_identity_exempt = True`` (saṃjñā, no surface change).
+Pāṭha: ashtadhyayi.com data.txt row i=14098 (Art. 14).
 """
 from __future__ import annotations
 
@@ -37,6 +38,8 @@ SUTRA = SutraRecord(
     sutra_type           = SutraType.SAMJNA,
     text_slp1            = 'viBAzA kfYi',
     text_dev             = 'विभाषा कृञि',
+    samagra_slp1         = "AkaqArAt ekA saMjYA karmapravacanIyAH viBAzA kfYi aDiH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev          = "आकडारात् एका संज्ञा कर्मप्रवचनीयाः विभाषा कृञि अधिः",
     padaccheda_dev       = "विभाषा / कृञि",
     why_dev              = (
         "विभाषा — कृञ्-योगे 'अधि' ऐच्छिकरूपेण कर्मप्रवचनीय-संज्ञकः (१.४.८३-१.४.९८-अधिकार-अन्तः)।"

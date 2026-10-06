@@ -12,6 +12,7 @@ sam takes ātmanepada endings. For example: saṃkṣṇute — he sharpens (tog
 stamp "Atmanepada_1_3_65" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _KSNU_ROOTS carries the tag "sam_prefix". No arm flags (CONSTITUTION Art. 13).
 r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -59,6 +60,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="samaH kzRuvaH",
     text_dev="समः क्ष्णुवः",
+    samagra_slp1="samaH kzRuvaH Atmanepadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="समः क्ष्णुवः आत्मनेपदम्",
     padaccheda_dev="समः (पञ्चमी-एकवचन) / क्ष्णुवः (षष्ठी-एकवचन)",
     why_dev=(
         "सम्-पूर्वकस्य क्ष्णु-धातोः आत्मनेपदम् — "

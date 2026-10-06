@@ -4,6 +4,7 @@
 Padaccheda: विध्यति (क्रियापदम्) अधनुषा
 
 विध्यत्यधनुषा (4.4.83)
+Pāṭha: ashtadhyayi.com data.txt row i=44083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viDyatyaDanuzA",
     text_dev              = "विध्यत्यधनुषा",
+    samagra_slp1          = "tat aDanuzA viDyati iti samarTAnAm praTamAt paraH yat pratyayaH",
+    samagra_dev           = "'तत् अधनुषा विध्यति' (इति) समर्थानाम् प्रथमात् परः यत् प्रत्ययः",
     padaccheda_dev        = "विध्यति (क्रियापदम्) अधनुषा",
     why_dev               = "(सूत्रम् 4.4.83) विध्यत्यधनुषा।",
     anuvritti_from        = ('4.1.1',),

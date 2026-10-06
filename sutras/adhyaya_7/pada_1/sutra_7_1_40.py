@@ -4,6 +4,7 @@
 Padaccheda: अमः मश्
 
 अमो मश् (7.1.40)
+Pāṭha: ashtadhyayi.com data.txt row i=71040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "amo maS",
     text_dev              = "अमो मश्",
+    samagra_slp1          = "aNgasya amaH maS Candasi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अमः मश् छन्दसि",
     padaccheda_dev        = "अमः मश्",
     why_dev               = "(सूत्रम् 7.1.40) अमो मश्।",
     anuvritti_from        = ('7.1.1',),

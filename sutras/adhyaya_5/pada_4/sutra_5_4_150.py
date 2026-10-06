@@ -4,6 +4,7 @@
 Padaccheda: सुहृद्-दुर्हृदौ मित्र-अमित्रयोः
 
 सुहृद्दुर्हृदौ मित्रामित्रयोः (5.4.150)
+Pāṭha: ashtadhyayi.com data.txt row i=54150 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "suhfddurhfdO mitrAmitrayoH",
     text_dev              = "सुहृद्दुर्हृदौ मित्रामित्रयोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA suhfddurhfdO mitrAmitrayoH bahuvrIhO lopaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा सुहृद्दुर्हृदौ मित्रामित्रयोः बहुव्रीहौ लोपः",
     padaccheda_dev        = "सुहृद्-दुर्हृदौ मित्र-अमित्रयोः",
     why_dev               = "(सूत्रम् 5.4.150) सुहृद्दुर्हृदौ मित्रामित्रयोः।",
     anuvritti_from        = ('5.4.68',),

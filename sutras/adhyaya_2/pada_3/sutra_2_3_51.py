@@ -4,6 +4,7 @@
 Padaccheda: ज्ञः अ-विद्-अर्थस्य करणे
 
 jna not in knowledge sense takes tritiya for karana.
+Pāṭha: ashtadhyayi.com data.txt row i=23051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'jYovidarTasya karaRe',
     text_dev              = 'ज्ञोऽविदर्थस्य करणे',
+    samagra_slp1          = "anaBihite jYaH avidarTasya karaRe Seze zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते ज्ञः अविदर्थस्य करणे शेषे षष्ठी",
     padaccheda_dev        = "ज्ञः अ-विद्-अर्थस्य करणे",
     why_dev               = "ज्ञः अ-विद्-अर्थस्य करणे (२.३.५१)।",
     anuvritti_from        = ('2.3.50',),

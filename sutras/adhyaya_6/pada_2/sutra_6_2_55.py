@@ -4,6 +4,7 @@
 Padaccheda: हिरण्य-परिमाणम् धने
 
 हिरण्यपरिमाणं धने (6.2.55)
+Pāṭha: ashtadhyayi.com data.txt row i=62055 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "hiraRyaparimARaM Dane",
     text_dev              = "हिरण्यपरिमाणं धने",
+    samagra_slp1          = "hiraRyaparimARam Dane prakftyA pUrvapadam anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "हिरण्यपरिमाणम् धने प्रकृत्या पूर्वपदम् अन्यतरस्याम्",
     padaccheda_dev        = "हिरण्य-परिमाणम् धने",
     why_dev               = "(सूत्रम् 6.2.55) हिरण्यपरिमाणं धने।",
     anuvritti_from        = ('6.1.1',),

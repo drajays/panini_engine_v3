@@ -10,6 +10,7 @@ Citation (CONSTITUTION Art. 14)
 
 Engine: pre-merge (the root and the ending are still separate Terms, as for 8.2.32); reads the ``ah_adesha`` tag that
 3.4.84 gave the root and the first letter of the following pratyaya.
+Pāṭha: ashtadhyayi.com data.txt row i=82035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -45,6 +46,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="AhasTaH",
     text_dev="आहस्थः",
+    samagra_slp1="AhaH ho TaH Jali",
+    samagra_dev="आहः हो थः झलि",
     padaccheda_dev="आहः थः",
     why_dev="आह् के ह् को थ्, थ-आदि प्रत्यय परे (आह + थल् → आथ्थ → आत्थ)।",
     anuvritti_from=("8.2.1",),

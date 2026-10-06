@@ -15,6 +15,7 @@ and the tag "vi_prefix" (encoding prefix vi), and (c) the idempotency stamp
 "Atmanepada_1_3_35" is absent from state.meta.
 No arm flags (CONSTITUTION Art. 13).  r1_form_identity_exempt=True because
 no surface phonological change occurs here.
+Pāṭha: ashtadhyayi.com data.txt row i=13035 (Art. 14).
 """
 from __future__ import annotations
 
@@ -50,6 +51,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='akarmakAcca',
     text_dev='अकर्मकाच्च',
+    samagra_slp1="akarmakAt veH kfYaH Atmanepadam",
+    samagra_dev="अकर्मकात् वेः कृञः आत्मनेपदम्",
     padaccheda_dev="अकर्मकात् (पञ्चमी-एकवचन) / च (अव्यय)",
     why_dev=(
         "वि-पूर्वकस्य अकर्मकस्य धातोः प्रयोगे आत्मनेपदम् — "

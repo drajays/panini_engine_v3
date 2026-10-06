@@ -4,6 +4,7 @@
 Padaccheda: सम्पादिनि
 
 सम्पादिनि (5.1.99)
+Pāṭha: ashtadhyayi.com data.txt row i=51099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sampAdini",
     text_dev              = "सम्पादिनि",
+    samagra_slp1          = "tena sampAdini iti samarTAnAm praTamAt paraH WaY pratyayaH",
+    samagra_dev           = "'तेन सम्पादिनि' (इति) समर्थानाम् प्रथमात् परः ठञ् प्रत्ययः",
     padaccheda_dev        = "सम्पादिनि",
     why_dev               = "(सूत्रम् 5.1.99) सम्पादिनि।",
     anuvritti_from        = ('5.1.18',),

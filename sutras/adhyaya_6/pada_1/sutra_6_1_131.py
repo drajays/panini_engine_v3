@@ -2,7 +2,7 @@
 6.1.131  दिव उत्  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=601131
+- ashtadhyayi.com data.txt row i=61131
 - Kāśikā: "दिवो भ्याम्" (तृतीयाद्विवचनस्य भ्याम् प्रत्यये वकारस्य उ-आदेशः)
 - Cross-validation: regression test tests/unit/test_sthanivat_al_ashrita_exceptions.py
 
@@ -75,6 +75,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1="diva ut",
     text_dev="दिव उत्",
+    samagra_slp1="divaH padasya ut",
+    samagra_dev="दिवः पदस्य उत्",
     padaccheda_dev="दिवः उत्",
     why_dev="दिव्-अन्त्य-व्-स्थाने उ-आदेशः; वकारत्वम् उ-आदेशे न स्थानिवत्।",
     anuvritti_from=("6.1.1",),

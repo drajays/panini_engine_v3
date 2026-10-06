@@ -4,6 +4,7 @@
 Padaccheda: द्वि-अचः छन्दसि
 
 द्व्यचश्छन्दसि (4.3.150)
+Pāṭha: ashtadhyayi.com data.txt row i=43150 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dvyacaSCandasi",
     text_dev              = "द्व्यचश्छन्दसि",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA dvi-acaH Candasi tasya vikAraH avayave mayaw",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा द्वि-अचः छन्दसि तस्य विकारः अवयवे मयट्",
     padaccheda_dev        = "द्वि-अचः छन्दसि",
     why_dev               = "(सूत्रम् 4.3.150) द्व्यचश्छन्दसि।",
     anuvritti_from        = ('4.1.1',),

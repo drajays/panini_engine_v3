@@ -4,6 +4,7 @@
 Padaccheda: ञितः च तत्प्रत्ययात्
 
 ञितश्च तत्प्रत्ययात् (4.3.155)
+Pāṭha: ashtadhyayi.com data.txt row i=43155 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "YitaSca tatpratyayAt",
     text_dev              = "ञितश्च तत्प्रत्ययात्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA YitaH ca tat-pratyayAt tasya vikAraH avayave aY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा ञितः च तत्-प्रत्ययात् तस्य विकारः अवयवे अञ्",
     padaccheda_dev        = "ञितः च तत्प्रत्ययात्",
     why_dev               = "(सूत्रम् 4.3.155) ञितश्च तत्प्रत्ययात्।",
     anuvritti_from        = ('4.1.1',),

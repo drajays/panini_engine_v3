@@ -4,6 +4,7 @@
 Padaccheda: तिरसः · अन्यतरस्याम्
 
 तिरसोऽन्यतरस्याम् (8.3.42)
+Pāṭha: ashtadhyayi.com data.txt row i=83042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'tirasonyatarasyAm',
     text_dev              = 'तिरसोऽन्यतरस्याम्',
+    samagra_slp1          = "tirasaH visarjanIyasya kupvoH anyatarasyAm saH",
+    samagra_dev           = "तिरसः विसर्जनीयस्य कुप्वोः अन्यतरस्याम् सः",
     padaccheda_dev        = "तिरसः · अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 8.3.42) तिरसोऽन्यतरस्याम्।",
     anuvritti_from        = ('8.1.1',),

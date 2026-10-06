@@ -4,6 +4,7 @@
 Padaccheda: सङ्कल-आदिभ्यः च
 
 संकलादिभ्यश्च (4.2.75)
+Pāṭha: ashtadhyayi.com data.txt row i=42075 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saMkalAdiByaSca",
     text_dev              = "संकलादिभ्यश्च",
+    samagra_slp1          = "saNkalAdiByaH tadasminnastIti deSe tannAmni  tena nirvfttam  tasya nivAsaH  adUraBavaSca iti prAgdIvyatIyaH pratyayaH aY",
+    samagra_dev           = "सङ्कलादिभ्यः 'तदस्मिन्नस्तीति देशे तन्नाम्नि , तेन निर्वृत्तम् , तस्य निवासः , अदूरभवश्च' (इति) प्राग्दीव्यतीयः प्रत्ययः अञ्",
     padaccheda_dev        = "सङ्कल-आदिभ्यः च",
     why_dev               = "(सूत्रम् 4.2.75) संकलादिभ्यश्च।",
     anuvritti_from        = ('4.1.1',),

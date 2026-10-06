@@ -4,6 +4,7 @@
 Padaccheda: तस्मात् नुट् द्वि-हलः
 
 तस्मान्नुड् द्विहलः (7.4.71)
+Pāṭha: ashtadhyayi.com data.txt row i=74071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -50,6 +51,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "tasmAnnuq dvihalaH",
     text_dev              = "तस्मान्नुड् द्विहलः",
+    samagra_slp1          = "aNgasya aByAsasya tasmAt nuw dvihalaH liwi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अभ्यासस्य तस्मात् नुट् द्विहलः लिटि",
     padaccheda_dev        = "तस्मात् नुट् द्वि-हलः",
     why_dev               = "दीर्घीभूतात् अभ्यासात् परस्य द्विहलो धातोः नुडागमः (आनर्द, आनञ्च)।",
     anuvritti_from        = ('7.1.1',),

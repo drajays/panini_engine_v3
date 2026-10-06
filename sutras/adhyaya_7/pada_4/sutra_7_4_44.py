@@ -4,6 +4,7 @@
 Padaccheda: विभाषा छन्दसि
 
 विभाषा छन्दसि (7.4.44)
+Pāṭha: ashtadhyayi.com data.txt row i=74044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA Candasi",
     text_dev              = "विभाषा छन्दसि",
+    samagra_slp1          = "aNgasya viBAzA Candasi kiti ti hiH jahAteH ca ktvi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य विभाषा छन्दसि किति ति हिः जहातेः च क्त्वि",
     padaccheda_dev        = "विभाषा छन्दसि",
     why_dev               = "(सूत्रम् 7.4.44) विभाषा छन्दसि।",
     anuvritti_from        = ('7.1.1',),

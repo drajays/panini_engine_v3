@@ -4,6 +4,7 @@
 Padaccheda: स्वसुः छः
 
 स्वसुश्छः (4.1.143)
+Pāṭha: ashtadhyayi.com data.txt row i=41143 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "svasuSCaH",
     text_dev              = "स्वसुश्छः",
+    samagra_slp1          = "tasya apatyam iti svasuH CaH",
+    samagra_dev           = "'तस्य अपत्यम्' (इति) स्वसुः छः",
     padaccheda_dev        = "स्वसुः छः",
     why_dev               = "(सूत्रम् 4.1.143) स्वसुश्छः।",
     anuvritti_from        = ('4.1.1',),

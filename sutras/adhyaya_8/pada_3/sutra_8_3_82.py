@@ -4,6 +4,7 @@
 Padaccheda: अग्नेः स्तुत्-स्तोम-सोमाः
 
 अग्नेः स्तुत्स्तोमसोमाः (8.3.82)
+Pāṭha: ashtadhyayi.com data.txt row i=83082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "agneH stutstomasomAH",
     text_dev              = "अग्नेः स्तुत्स्तोमसोमाः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm apadAntasya mUrDanyaH iRkoH agneH stut-stoma-somAH saH samAse",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् अपदान्तस्य मूर्धन्यः इण्कोः अग्नेः स्तुत्-स्तोम-सोमाः सः समासे",
     padaccheda_dev        = "अग्नेः स्तुत्-स्तोम-सोमाः",
     why_dev               = "(सूत्रम् 8.3.82) अग्नेः स्तुत्स्तोमसोमाः।",
     anuvritti_from        = ('8.1.1',),

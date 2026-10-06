@@ -7,6 +7,7 @@ Glass-box note (भीषयते .md):
 Engine:
   - recipe-armed: ``state.meta['atma_recipe']``.
   - records `state.meta['pada'] = 'Atmanepada'` for downstream scheduling.
+Pāṭha: ashtadhyayi.com data.txt row i=13068 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='BIsmyorhetuBaye',
     text_dev='भीस्म्योर्हेतुभये',
+    samagra_slp1="BI-smyoH hetuBaye Atmanepadam ReH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="भी-स्म्योः हेतुभये आत्मनेपदम् णेः",
     padaccheda_dev="भीस्म्योः / हेतु-भये",
     why_dev="भि/स्मि-धात्वोः हेतु-भय-अर्थे आत्मनेपद-नियमः (डेमो-स्लाइस)।",
     anuvritti_from=("1.3.12",),

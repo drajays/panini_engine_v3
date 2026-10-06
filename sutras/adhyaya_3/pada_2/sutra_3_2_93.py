@@ -4,6 +4,7 @@
 Padaccheda: कर्मणि इनि (लुप्तप्रथमान्तनिर्देशः) विक्रियः
 
 krt-suffix rule: कर्मणीनिर्विक्रियः (93)
+Pāṭha: ashtadhyayi.com data.txt row i=32093 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'karmaRInivikriyaH',
     text_dev              = 'कर्मणीनिविक्रियः',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BUte karmaRi iniH vikriyaH kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते कर्मणि इनिः विक्रियः कृत्",
     padaccheda_dev        = "कर्मणि इनि (लुप्तप्रथमान्तनिर्देशः) विक्रियः",
     why_dev               = "धातोः कृत्-प्रत्ययः [कर्मणीनिर्विक्रियः] विहितः (३.२.93)।",
     anuvritti_from        = ('3.1.1',),

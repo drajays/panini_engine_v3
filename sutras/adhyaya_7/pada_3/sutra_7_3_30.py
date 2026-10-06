@@ -4,6 +4,7 @@
 Padaccheda: नञः शुचि-ईश्वर-क्षेत्रज्ञ-कुशल-निपुणानाम्
 
 नञः शुचीश्वरक्षेत्रज्ञकुशलनिपुणानाम् (7.3.30)
+Pāṭha: ashtadhyayi.com data.txt row i=73030 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "naYaH SucISvarakzetrajYakuSalanipuRAnAm",
     text_dev              = "नञः शुचीश्वरक्षेत्रज्ञकुशलनिपुणानाम्",
+    samagra_slp1          = "aNgasya uttarapadasya naYaH SucISvarakzetrajYakuSalanipuRAnAm vfdDiH YRiti acaH tadDitezu AdeH pUrvasya tu vA parimARasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य नञः शुचीश्वरक्षेत्रज्ञकुशलनिपुणानाम् वृद्धिः ञ्णिति अचः तद्धितेषु आदेः पूर्वस्य तु वा परिमाणस्य",
     padaccheda_dev        = "नञः शुचि-ईश्वर-क्षेत्रज्ञ-कुशल-निपुणानाम्",
     why_dev               = "(सूत्रम् 7.3.30) नञः शुचीश्वरक्षेत्रज्ञकुशलनिपुणानाम्।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: उञ्छति (क्रियापदम्)
 
 उञ्छति (4.4.32)
+Pāṭha: ashtadhyayi.com data.txt row i=44032 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uYCati",
     text_dev              = "उञ्छति",
+    samagra_slp1          = "tat uYCati iti samarTAnAm praTamAt paraH Wak pratyayaH",
+    samagra_dev           = "'तत् उञ्छति' (इति) समर्थानाम् प्रथमात् परः ठक् प्रत्ययः",
     padaccheda_dev        = "उञ्छति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.32) उञ्छति।",
     anuvritti_from        = ('4.1.1',),

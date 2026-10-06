@@ -14,6 +14,7 @@ the upapada and the root is *manyate* (√man, to think), the verb takes
 
 *Engine:* cond checks paribhasha_gates for idempotency.
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=14106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -41,6 +42,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='prahAse ca manyopapade manyateruttama ekavacca',
     text_dev='प्रहासे च मन्योपपदे मन्यतेरुत्तम एकवच्च',
+    samagra_slp1="manya-upapade prahAse maDyamaH  manyateH uttamaH ekavat ca ",
+    samagra_dev="मन्य-उपपदे प्रहासे मध्यमः । मन्यतेः उत्तमः एकवत् च ।",
     padaccheda_dev=(
         "प्रहासे (सप्तमी-एकवचन) / च (अव्यय) / मन्य-उपापदे (सप्तमी-एकवचन) "
         "/ मन्यतेः (षष्ठी-एकवचन) / उत्तमः (प्रथमा-एकवचन) "

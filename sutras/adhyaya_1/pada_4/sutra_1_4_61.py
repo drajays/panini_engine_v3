@@ -10,6 +10,7 @@ karoति/bhavati and obtain gati-saṃjñā enabling kṛt/taddhita behaviour.
 
 v3: extends samjna_registry["gati_set"] with the ūry-ādi members; also
     registers samjna_registry["gati_uryadiR"] as the ūry-ādi-specific frozenset.
+Pāṭha: ashtadhyayi.com data.txt row i=14061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.SAMJNA,
     text_slp1='UryAdicviqAcaSca',
     text_dev='ऊर्यादिच्विडाचश्च',
+    samagra_slp1="UryAdi-cvi-qAcaH nipAtAH kriyAyoge gati",
+    samagra_dev="ऊर्यादि-च्वि-डाचः निपाताः क्रियायोगे गति",
     padaccheda_dev="ऊर्य-आदि / च्वि / डाच् / च",
     why_dev="ऊर्यादयः, च्व्यन्ताः, डाचन्ताश्च गति-संज्ञकाः — ऊर्यादि-सूचिः गति-सेटे योज्यते।",
     anuvritti_from=("1.4.60",),

@@ -4,6 +4,7 @@
 Padaccheda: एकात् धः ध्यमुञ् अन्यतरस्याम्
 
 एकाद्धो ध्यमुञन्यारयाम् (5.3.44)
+Pāṭha: ashtadhyayi.com data.txt row i=53044 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ekAdDo DyamuYanyatarasyAm',
     text_dev              = 'एकाद्धो ध्यमुञन्यतरस्याम्',
+    samagra_slp1          = "ekAt DaH anyatarasyAm DyamuY",
+    samagra_dev           = "एकात् धः अन्यतरस्याम् ध्यमुञ्",
     padaccheda_dev        = "एकात् धः ध्यमुञ् अन्यतरस्याम्",
     why_dev               = "(सूत्रम् 5.3.44) एकाद्धो ध्यमुञन्यारयाम्।",
     anuvritti_from        = ('4.1.76',),

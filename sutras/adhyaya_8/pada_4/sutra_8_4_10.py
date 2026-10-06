@@ -4,6 +4,7 @@
 Padaccheda: वा भाव-करणयोः
 
 वा भावकरणयोः (8.4.10)
+Pāṭha: ashtadhyayi.com data.txt row i=84010 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vA BAvakaraRayoH",
     text_dev              = "वा भावकरणयोः",
+    samagra_slp1          = "pUrvatrAsidDam saMhitAyAm vA BAva-karaRayoH razAByAm pUrvapadAt saMjYAyAm pAnam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पूर्वत्रासिद्धम् संहितायाम् वा भाव-करणयोः रषाभ्याम् पूर्वपदात् संज्ञायाम् पानम्",
     padaccheda_dev        = "वा भाव-करणयोः",
     why_dev               = "(सूत्रम् 8.4.10) वा भावकरणयोः।",
     anuvritti_from        = ('8.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: प्रणवः टेः
 
 प्रणवष्टेः (8.2.89)
+Pāṭha: ashtadhyayi.com data.txt row i=82089 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "praRavazweH",
     text_dev              = "प्रणवष्टेः",
+    samagra_slp1          = "padasya pUrvatrAsidDam vAkyasya weH plutaH udAttaH praRavaH weH yajYakarmaRi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वाक्यस्य टेः प्लुतः उदात्तः प्रणवः टेः यज्ञकर्मणि",
     padaccheda_dev        = "प्रणवः टेः",
     why_dev               = "(सूत्रम् 8.2.89) प्रणवष्टेः।",
     anuvritti_from        = ('8.1.1',),

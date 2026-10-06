@@ -4,6 +4,7 @@
 Padaccheda: समापनात् स-पूर्वपदात्
 
 समापनात् सपूर्वपदात् (5.1.112)
+Pāṭha: ashtadhyayi.com data.txt row i=51112 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samApanAt sapUrvapadAt",
     text_dev              = "समापनात् सपूर्वपदात्",
+    samagra_slp1          = "tad asya prayojanam iti samApanAt sapUrvapadAt CaH",
+    samagra_dev           = "'तद् अस्य प्रयोजनम्' (इति) समापनात् सपूर्वपदात् छः",
     padaccheda_dev        = "समापनात् स-पूर्वपदात्",
     why_dev               = "(सूत्रम् 5.1.112) समापनात् सपूर्वपदात्।",
     anuvritti_from        = ('5.1.18',),

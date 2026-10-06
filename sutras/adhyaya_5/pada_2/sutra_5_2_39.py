@@ -4,6 +4,7 @@
 Padaccheda: यद्-तद्-एतेभ्यः परिमाणे वतुप्
 
 यद्तदेतेभ्यः परिमाणे वतुप् (5.2.39)
+Pāṭha: ashtadhyayi.com data.txt row i=52039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yadtadeteByaH parimARe vatup",
     text_dev              = "यद्तदेतेभ्यः परिमाणे वतुप्",
+    samagra_slp1          = "tat asya iti parimARe yat-tat-eteByaH vatu~p",
+    samagra_dev           = "'तत् अस्य' (इति) परिमाणे यत्-तत्-एतेभ्यः वतुँप्",
     padaccheda_dev        = "यद्-तद्-एतेभ्यः परिमाणे वतुप्",
     why_dev               = "(सूत्रम् 5.2.39) यद्तदेतेभ्यः परिमाणे वतुप्।",
     anuvritti_from        = ('4.1.82',),

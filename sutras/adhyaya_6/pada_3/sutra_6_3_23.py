@@ -4,6 +4,7 @@
 Padaccheda: ऋतः विद्या-योनि-सम्बन्धेभ्यः
 
 ऋतो विद्यायोनिसम्बन्धेभ्यः (6.3.23)
+Pāṭha: ashtadhyayi.com data.txt row i=63023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "fto vidyAyonisambanDeByaH",
     text_dev              = "ऋतो विद्यायोनिसम्बन्धेभ्यः",
+    samagra_slp1          = "alug uttarapade ftaH vidyA-yoni-sambanDeByaH zazWyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे ऋतः विद्या-योनि-सम्बन्धेभ्यः षष्ठ्या",
     padaccheda_dev        = "ऋतः विद्या-योनि-सम्बन्धेभ्यः",
     why_dev               = "(सूत्रम् 6.3.23) ऋतो विद्यायोनिसम्बन्धेभ्यः।",
     anuvritti_from        = ('6.1.1',),

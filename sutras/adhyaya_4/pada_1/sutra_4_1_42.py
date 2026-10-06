@@ -4,6 +4,7 @@
 Padaccheda: जानपद-कुण्ड-गोण-स्थल-भाज-नाग-काल-नील-कुश-कामुक-कबरात् वृत्ति-अमत्र-आवपन-अकृत्रिमा-श्राणा-स्थौल्य-वर्ण-अनाच्छादन-अयोविकार-मैथुनेच्छा-केशवेशेषु
 
 जानपदकुण्डगोणस्थलभाजनागकालनीलकुशकामुककबराद्वृत्त्यमत्रावपनाकृत्रिमाश्राणास्थौल्यवर्णानाच्छादनायोविकारमैथुनेच्छाकेशवेशेषु (4.1.42)
+Pāṭha: ashtadhyayi.com data.txt row i=41042 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "jAnapadakuRqagoRasTalaBAjanAgakAlanIlakuSakAmukakabarAdvfttyamatrAvapanAkftrimASrARAsTOlyavarRAnAcCAdanAyovikAramETunecCAkeSaveSezu",
     text_dev              = "जानपदकुण्डगोणस्थलभाजनागकालनीलकुशकामुककबराद्वृत्त्यमत्रावपनाकृत्रिमाश्राणास्थौल्यवर्णानाच्छादनायोविकारमैथुनेच्छाकेशवेशेषु",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt jAnapada-kuRqa-goRa-sTala-BAja-nAga-kAla-nIla-kuSa-kAmuka-kabarAt vftti-amatra-avapana-akftrima-aSrARA-asTOlya-varRa-anAcCAdana-ayovikAra-mETunecCA-keSaveSezu NIz",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् जानपद-कुण्ड-गोण-स्थल-भाज-नाग-काल-नील-कुश-कामुक-कबरात् वृत्ति-अमत्र-अवपन-अकृत्रिम-अश्राणा-अस्थौल्य-वर्ण-अनाच्छादन-अयोविकार-मैथुनेच्छा-केशवेशेषु ङीष्",
     padaccheda_dev        = "जानपद-कुण्ड-गोण-स्थल-भाज-नाग-काल-नील-कुश-कामुक-कबरात् वृत्ति-अमत्र-आवपन-अकृत्रिमा-श्राणा-स्थौल्य-वर्ण-अनाच्छादन-अयोविकार-मैथुनेच्छा-केशवेशेषु",
     why_dev               = "(सूत्रम् 4.1.42) जानपदकुण्डगोणस्थलभाजनागकालनीलकुशकामुककबराद्वृत्त्यमत्रावपनाकृत्रिमाश्राणास्थौल्यवर्णानाच्छादनायोविकारमैथुनेच्छाकेशवेशेषु।",
     anuvritti_from        = ('4.1.1',),

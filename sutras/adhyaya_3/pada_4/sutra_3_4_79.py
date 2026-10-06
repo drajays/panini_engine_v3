@@ -2,7 +2,7 @@
 3.4.79  टित आत्मनेपदानां टेरे  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=304079
+- ashtadhyayi.com data.txt row i=34079
 - Kāśikā: टित आत्मनेपदानां टेरे (प्रत्ययस्थ-इकारस्य ए-आदेशः)
 - Cross-validation: tests/unit/test_dIdhye_dIdhi_lat_parasmin_lesson.py
 
@@ -92,6 +92,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='wita AtmanepadAnAM were',
     text_dev='टित आत्मनेपदानां टेरे',
+    samagra_slp1="witaH lasya AtmanepadAnAm weH e",
+    samagra_dev="टितः लस्य आत्मनेपदानाम् टेः ए",
     padaccheda_dev="टित् / आत्मनेपदानाम् / टेरे",
     why_dev=(
         "आत्मनेपद-प्रत्ययस्य टि-भागे (अन्तिम-स्वर + अनन्तर) ‘ए’-आदेशः — "

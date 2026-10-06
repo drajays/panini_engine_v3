@@ -4,6 +4,7 @@
 Padaccheda: न अक्-लोपि-शासु-ऋत्-इताम्
 
 नाग्लोपिशास्वृदिताम् (7.4.2)
+Pāṭha: ashtadhyayi.com data.txt row i=74002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nAglopiSAsvfditAm",
     text_dev              = "नाग्लोपिशास्वृदिताम्",
+    samagra_slp1          = "aNgasya na aglopiSAsvfditAm upaDAyAH hrasvaH RO caNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य न अग्लोपिशास्वृदिताम् उपधायाः ह्रस्वः णौ चङि",
     padaccheda_dev        = "न अक्-लोपि-शासु-ऋत्-इताम्",
     why_dev               = "(सूत्रम् 7.4.2) नाग्लोपिशास्वृदिताम्।",
     anuvritti_from        = ('7.1.1',),

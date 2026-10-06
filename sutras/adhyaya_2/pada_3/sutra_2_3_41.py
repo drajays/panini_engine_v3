@@ -4,6 +4,7 @@
 Padaccheda: यतः च निर्द्धारणम्
 
 From which nirdharana (specification) occurs, pancami/sasthi.
+Pāṭha: ashtadhyayi.com data.txt row i=23041 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yataSca nirDAraRam",
     text_dev              = "यतश्च निर्धारणम्",
+    samagra_slp1          = "anaBihite yataH ca nirDAraRam saptamI zazWI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अनभिहिते यतः च निर्धारणम् सप्तमी षष्ठी",
     padaccheda_dev        = "यतः च निर्द्धारणम्",
     why_dev               = "यतः च निर्धारणम् (२.३.४१)।",
     anuvritti_from        = ('2.3.50',),

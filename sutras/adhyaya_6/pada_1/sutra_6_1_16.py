@@ -4,6 +4,7 @@
 Padaccheda: ग्रहि-ज्या-वयि-व्यधि-वष्टि-विचति-वृश्चति-पृच्छति-भृज्जतीनाम् ङ्-इति च
 
 ग्रहिज्यावयिव्यधिवष्टिविचतिवृश्चतिपृच्छतिभृज्जतीनां ङिति च (6.1.16)
+Pāṭha: ashtadhyayi.com data.txt row i=61016 (Art. 14).
 """
 from __future__ import annotations
 
@@ -42,6 +43,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,       # marks the yaṇ; 1.1.45 changes it
     text_slp1             = "grahijyAvayivyaDivazwivicativfScatipfcCatiBfjjatInAM Niti ca",
     text_dev              = "ग्रहिज्यावयिव्यधिवष्टिविचतिवृश्चतिपृच्छतिभृज्जतीनां ङिति च",
+    samagra_slp1          = "grahi-jyA-vayi-vyaDi-vazwi-vicati-vfScati-pfcCati-BfjjatInAm Niti ca samprasAraRam kiti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "ग्रहि-ज्या-वयि-व्यधि-वष्टि-विचति-वृश्चति-पृच्छति-भृज्जतीनाम् ङिति च सम्प्रसारणम् किति",
     padaccheda_dev        = "ग्रहि-ज्या-वयि-व्यधि-वष्टि-विचति-वृश्चति-पृच्छति-भृज्जतीनाम् ङ्-इति च",
     why_dev               = "ग्रह्-ज्या-वयि-व्यध्-वश्-व्यच्-व्रश्च्-प्रच्छ्-भ्रस्जां यणः सम्प्रसारणं किति ङिति च (वृश्चति, पृच्छति, गृह्यते)।",
     anuvritti_from        = ('6.1.1',),

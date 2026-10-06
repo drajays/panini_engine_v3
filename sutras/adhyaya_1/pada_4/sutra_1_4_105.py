@@ -14,6 +14,7 @@ person) endings.
 
 *Engine:* cond checks paribhasha_gates for idempotency.
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=14105 (Art. 14).
 """
 from __future__ import annotations
 
@@ -41,6 +42,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1="yuzmadyupapade samAnADikaraRe sTAninyapi maDyamaH",
     text_dev="युष्मद्युपपदे समानाधिकरणे स्थानिन्यपि मध्यमः",
+    samagra_slp1="yuzmadi upapade samAnADikaraRe sTAnini api maDyamaH",
+    samagra_dev="युष्मदि उपपदे समानाधिकरणे स्थानिनि अपि मध्यमः",
     padaccheda_dev=(
         "युष्मदि (सप्तमी-एकवचन) / उपापदे (सप्तमी-एकवचन) "
         "/ समानाधिकरणे (सप्तमी-एकवचन) / स्थानिनि (सप्तमी-एकवचन) "

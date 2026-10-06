@@ -12,6 +12,7 @@ Narrow v3 (**यूपदारु** ``…/separated_prakriyas/prakriya_39_*.jso
     ``samjna_registry['2.1.36_catvarTI_tad_artha_prakriya_39']``.
 
 No ``varṇa`` mutation (recipe gate only).
+Pāṭha: ashtadhyayi.com data.txt row i=21036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -53,6 +54,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='caturTI tadarTArTabalihitasuKarakzitEH',
     text_dev='चतुर्थी तदर्थार्थबलिहितसुखरक्षितैः',
+    samagra_slp1="AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH caturTI tadarTa-arTa-bali-hita-suKa-rakzitEH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः चतुर्थी तदर्थ-अर्थ-बलि-हित-सुख-रक्षितैः",
     padaccheda_dev="चतुर्थी / तदर्थ-अर्थ-बलि-हित-सुख-रक्षितैः",
     why_dev="चतुर्थ्यन्तैः तदर्थादिभिः तत्पुरुषः (*prakriya_39*, **यूपदारु**)।",
     anuvritti_from=("2.1.35",),

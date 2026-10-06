@@ -4,6 +4,7 @@
 Padaccheda: अत्रि-भृगु-कुत्स-वसिष्ठ-गोतम-अङ्गिरोभ्यः च
 
 Also for atri, bhrgu, kutsa, vasistha, gautama, angiras.
+Pāṭha: ashtadhyayi.com data.txt row i=24065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "atriBfgukutsavasizWagotamANgiroByaSca",
     text_dev              = "अत्रिभृगुकुत्सवसिष्ठगोतमाङ्गिरोभ्यश्च",
+    samagra_slp1          = "atri-Bfgu-kutsa-vasizWa-gotama-aNgiroByaH ca luk bahuzu tena eva astriyAm gotre",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अत्रि-भृगु-कुत्स-वसिष्ठ-गोतम-अङ्गिरोभ्यः च लुक् बहुषु तेन एव अस्त्रियाम् गोत्रे",
     padaccheda_dev        = "अत्रि-भृगु-कुत्स-वसिष्ठ-गोतम-अङ्गिरोभ्यः च",
     why_dev               = "अत्रि-भृगु-कुत्स-वसिष्ठ-गोतम-अङ्गिरोभ्यः च (२.४.६५)।",
     anuvritti_from        = ('2.4.63',),

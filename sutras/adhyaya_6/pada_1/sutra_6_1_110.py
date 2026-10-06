@@ -15,6 +15,7 @@ We implement the minimal mechanical operation:
 
 Blindness:
   - pure phoneme boundary + upadeśa identity (no paradigm coords).
+Pāṭha: ashtadhyayi.com data.txt row i=61110 (Art. 14).
 """
 from __future__ import annotations
 
@@ -70,6 +71,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'NasiNasoSca',
     text_dev       = 'ङसिङसोश्च',
+    samagra_slp1   = "eNaH NasiNasoH ati pUrvaparayoH ekaH pUrvaH",
+    samagra_dev    = "एङः ङसिङसोः अति पूर्वपरयोः एकः पूर्वः",
     padaccheda_dev = "ङसि-ङसोः च",
     why_dev        = "एङन्त-अङ्गात् परे ङसि/ङस्-प्रत्यययोः आद्य-अकारस्य लोपः (हरेऽसि/हरेऽस् → हरेसि/हरेस् → हरेः)।",
     anuvritti_from = ("6.1.84",),

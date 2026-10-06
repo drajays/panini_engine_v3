@@ -4,6 +4,7 @@
 Padaccheda: तृच्-वत् क्रोष्टुः
 
 तृज्वत् क्रोष्टुः (7.1.95)
+Pāṭha: ashtadhyayi.com data.txt row i=71095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tfjvat krozwuH",
     text_dev              = "तृज्वत् क्रोष्टुः",
+    samagra_slp1          = "asambudDO sarvanAmasTAne krozwuH tfc-vat",
+    samagra_dev           = "असम्बुद्धौ सर्वनामस्थाने क्रोष्टुः तृच्-वत्",
     padaccheda_dev        = "तृच्-वत् क्रोष्टुः",
     why_dev               = "(सूत्रम् 7.1.95) तृज्वत् क्रोष्टुः।",
     anuvritti_from        = ('7.1.1',),

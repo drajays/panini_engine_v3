@@ -4,6 +4,7 @@
 Padaccheda: पादशतस्य संख्या-आदेः वीप्सायाम् वुन् लोपः च
 
 पादशतस्य संख्याऽऽदेर्वीप्सायां वुन् लोपश्च (5.4.1)
+Pāṭha: ashtadhyayi.com data.txt row i=54001 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'pAdaSatasya saMKyAdervIpsAyAM vun lopaSca',
     text_dev              = 'पादशतस्य संख्यादेर्वीप्सायां वुन् लोपश्च',
+    samagra_slp1          = "saMKyAdeH pAda-Satasya vIpsAyAm vun lopaH ca",
+    samagra_dev           = "संख्यादेः पाद-शतस्य वीप्सायाम् वुन् लोपः च",
     padaccheda_dev        = "पादशतस्य संख्या-आदेः वीप्सायाम् वुन् लोपः च",
     why_dev               = "(सूत्रम् 5.4.1) पादशतस्य संख्याऽऽदेर्वीप्सायां वुन् लोपश्च।",
     anuvritti_from        = ('4.1.76',),

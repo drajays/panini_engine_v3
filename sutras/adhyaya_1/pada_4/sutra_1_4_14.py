@@ -6,6 +6,7 @@ A nominal or verbal form ending in a *sup* or *tiṅ* affix is called *pada*
 
 Engine: registers the *pada*‑śāstra node for Tripāḍī / sandhi scope (trace).
 Actual *pada* tagging of merged Terms is done structurally in ``subanta._pada_merge``.
+Pāṭha: ashtadhyayi.com data.txt row i=14014 (Art. 14).
 """
 from engine        import SutraType, SutraRecord, register_sutra
 from engine.state  import State
@@ -37,6 +38,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'suptiNantaM padam',
     text_dev       = 'सुप्तिङन्तं पदम्',
+    samagra_slp1   = "sup-tiN-antam padam",
+    samagra_dev    = "सुप्-तिङ्-अन्तम् पदम्",
     padaccheda_dev = "सुप्-तिङ्-अन्तं पदम्",
     why_dev        = "सुप्-अन्तः तिङ्-अन्तः वा शब्दः पद-संज्ञकः (अष्टाध्यायी)।",
     anuvritti_from = ("1.4.1",),

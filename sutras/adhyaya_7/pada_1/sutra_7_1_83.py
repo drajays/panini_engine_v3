@@ -4,6 +4,7 @@
 Padaccheda: दृक्-स्ववस्-स्वतवसाम् छन्दसि
 
 दृक्स्ववस्स्वतवसां छन्दसि (7.1.83)
+Pāṭha: ashtadhyayi.com data.txt row i=71083 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dfksvavassvatavasAM Candasi",
     text_dev              = "दृक्स्ववस्स्वतवसां छन्दसि",
+    samagra_slp1          = "aNgasya dfk-svavas-svatavasAm Candasi num sO",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य दृक्-स्ववस्-स्वतवसाम् छन्दसि नुम् सौ",
     padaccheda_dev        = "दृक्-स्ववस्-स्वतवसाम् छन्दसि",
     why_dev               = "(सूत्रम् 7.1.83) दृक्स्ववस्स्वतवसां छन्दसि।",
     anuvritti_from        = ('7.1.1',),

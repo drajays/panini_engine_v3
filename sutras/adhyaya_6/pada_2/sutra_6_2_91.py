@@ -4,6 +4,7 @@
 Padaccheda: न भूत-अधिक-संजीव-मद्र-अश्म-कज्जलम्
 
 न भूताधिकसंजीवमद्राश्मकज्जलम् (6.2.91)
+Pāṭha: ashtadhyayi.com data.txt row i=62091 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "na BUtADikasaMjIvamadrASmakajjalam",
     text_dev              = "न भूताधिकसंजीवमद्राश्मकज्जलम्",
+    samagra_slp1          = "AdiH udAttaH BUta-aDika-saYjIva-madra-aSman-kajjalam pUrvapadam arme",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आदिः उदात्तः भूत-अधिक-सञ्जीव-मद्र-अश्मन्-कज्जलम् पूर्वपदम् अर्मे",
     padaccheda_dev        = "न भूत-अधिक-संजीव-मद्र-अश्म-कज्जलम्",
     why_dev               = "(सूत्रम् 6.2.91) न भूताधिकसंजीवमद्राश्मकज्जलम्।",
     anuvritti_from        = ('6.1.1',),

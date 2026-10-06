@@ -4,6 +4,7 @@
 Padaccheda: तिसृभ्यः जसः
 
 तिसृभ्यो जसः (6.1.166)
+Pāṭha: ashtadhyayi.com data.txt row i=61166 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tisfByo jasaH",
     text_dev              = "तिसृभ्यो जसः",
+    samagra_slp1          = "tisfByaH jasaH antaH udAttaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "तिसृभ्यः जसः अन्तः उदात्तः",
     padaccheda_dev        = "तिसृभ्यः जसः",
     why_dev               = "(सूत्रम् 6.1.166) तिसृभ्यो जसः।",
     anuvritti_from        = ('6.1.1',),

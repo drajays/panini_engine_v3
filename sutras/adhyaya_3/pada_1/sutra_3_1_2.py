@@ -2,6 +2,7 @@
 3.1.2  परश्च  —  ADHIKARA
 
 The affix follows its *nimitta* (after the base).
+Pāṭha: ashtadhyayi.com data.txt row i=31002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -27,6 +28,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.ADHIKARA,
     text_slp1      = 'paraSca',
     text_dev       = 'परश्च',
+    samagra_slp1   = "pratyayaH paraSca",
+    samagra_dev    = "प्रत्ययः परश्च",
     padaccheda_dev = "परः च",
     why_dev        = "प्रत्ययः निमित्तात् परः।",
     anuvritti_from = ("3.1.1",),

@@ -4,6 +4,7 @@
 Padaccheda: काण्ड-अन्तात् क्षेत्रे
 
 काण्डान्तात् क्षेत्रे (4.1.23)
+Pāṭha: ashtadhyayi.com data.txt row i=41023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kARqAntAt kzetre",
     text_dev              = "काण्डान्तात् क्षेत्रे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt kARqa-antAt kzetre NIp dvigoH na tadDita-luki",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् काण्ड-अन्तात् क्षेत्रे ङीप् द्विगोः न तद्धित-लुकि",
     padaccheda_dev        = "काण्ड-अन्तात् क्षेत्रे",
     why_dev               = "(सूत्रम् 4.1.23) काण्डान्तात् क्षेत्रे।",
     anuvritti_from        = ('4.1.1',),

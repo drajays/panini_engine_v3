@@ -4,6 +4,7 @@
 Padaccheda: आवसथात् ष्ठल्
 
 आवसथात् ष्ठल् (4.4.74)
+Pāṭha: ashtadhyayi.com data.txt row i=44074 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "AvasaTAt zWal",
     text_dev              = "आवसथात् ष्ठल्",
+    samagra_slp1          = "tatra vasati iti AvasaTAt zWal",
+    samagra_dev           = "'तत्र वसति' इति आवसथात् ष्ठल्",
     padaccheda_dev        = "आवसथात् ष्ठल्",
     why_dev               = "(सूत्रम् 4.4.74) आवसथात् ष्ठल्।",
     anuvritti_from        = ('4.1.1',),

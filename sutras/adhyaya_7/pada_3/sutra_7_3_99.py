@@ -4,6 +4,7 @@
 Padaccheda: अट् गार्ग्यगालवयोः
 
 अड्गार्ग्यगालवयोः (7.3.99)
+Pāṭha: ashtadhyayi.com data.txt row i=73099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aqgArgyagAlavayoH",
     text_dev              = "अड्गार्ग्यगालवयोः",
+    samagra_slp1          = "rudaH paYcaByaH aNgAt sArvaDAtuke apfkte piti hali gArgyagAlavayoH aw",
+    samagra_dev           = "रुदः पञ्चभ्यः अङ्गात् सार्वधातुके अपृक्ते पिति हलि गार्ग्यगालवयोः अट्",
     padaccheda_dev        = "अट् गार्ग्यगालवयोः",
     why_dev               = "(सूत्रम् 7.3.99) अड्गार्ग्यगालवयोः।",
     anuvritti_from        = ('7.1.1',),

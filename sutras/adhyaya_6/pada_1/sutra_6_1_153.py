@@ -4,6 +4,7 @@
 Padaccheda: प्रस्कण्व-हरिश्चन्द्रौ ऋषी
 
 प्रस्कण्वहरिश्चन्द्रावृषी (6.1.153)
+Pāṭha: ashtadhyayi.com data.txt row i=61153 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "praskaRvahariScandrAvfzI",
     text_dev              = "प्रस्कण्वहरिश्चन्द्रावृषी",
+    samagra_slp1          = "saMhitAyAm suwkAtpUrvaH praskaRva-hariScandrO fzI",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् सुट्कात्पूर्वः प्रस्कण्व-हरिश्चन्द्रौ ऋषी",
     padaccheda_dev        = "प्रस्कण्व-हरिश्चन्द्रौ ऋषी",
     why_dev               = "(सूत्रम् 6.1.153) प्रस्कण्वहरिश्चन्द्रावृषी।",
     anuvritti_from        = ('6.1.1',),

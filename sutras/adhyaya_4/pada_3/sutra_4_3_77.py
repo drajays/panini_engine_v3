@@ -4,6 +4,7 @@
 Padaccheda: विद्या-योनि-संबन्धेभ्यः वुञ्
 
 विद्यायोनिसंबन्धेभ्यो वुञ् (4.3.77)
+Pāṭha: ashtadhyayi.com data.txt row i=43077 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vidyAyonisaMbanDeByo vuY",
     text_dev              = "विद्यायोनिसंबन्धेभ्यो वुञ्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA vidyA-yoni-saMbanDeByaH vuY AgataH tata",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा विद्या-योनि-संबन्धेभ्यः वुञ् आगतः तत",
     padaccheda_dev        = "विद्या-योनि-संबन्धेभ्यः वुञ्",
     why_dev               = "(सूत्रम् 4.3.77) विद्यायोनिसंबन्धेभ्यो वुञ्।",
     anuvritti_from        = ('4.1.1',),

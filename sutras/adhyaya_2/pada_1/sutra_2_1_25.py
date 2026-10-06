@@ -4,6 +4,7 @@
 Padaccheda: स्वयम् क्तेन
 
 svayam with kta-derived adjective forms tatpurusha compound.
+Pāṭha: ashtadhyayi.com data.txt row i=21025 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "svayaM ktena",
     text_dev              = "स्वयं क्तेन",
+    samagra_slp1          = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA tatpuruzaH svayam ktena dvitIyA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा तत्पुरुषः स्वयम् क्तेन द्वितीया",
     padaccheda_dev        = "स्वयम् क्तेन",
     why_dev               = "स्वयम्-इत्येतस्य क्तान्तेन सह तत्पुरुषः (२.१.२५)।",
     anuvritti_from        = ('2.1.22',),

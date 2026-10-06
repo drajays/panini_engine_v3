@@ -4,6 +4,7 @@
 Padaccheda: ओजः-सहः-अम्भः-तमसः तृतीयायाः
 
 ओजःसहोऽम्भस्तमसः तृतीयायाः (6.3.3)
+Pāṭha: ashtadhyayi.com data.txt row i=63003 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'ojaHsahomBastamasaH tftIyAyAH',
     text_dev              = 'ओजःसहोऽम्भस्तमसः तृतीयायाः',
+    samagra_slp1          = "alug uttarapade ojas-sahas-amBas-tamasaH tftIyAyAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे ओजस्-सहस्-अम्भस्-तमसः तृतीयायाः",
     padaccheda_dev        = "ओजः-सहः-अम्भः-तमसः तृतीयायाः",
     why_dev               = "(सूत्रम् 6.3.3) ओजःसहोऽम्भस्तमसः तृतीयायाः।",
     anuvritti_from        = ('6.1.1',),

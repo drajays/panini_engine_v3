@@ -4,6 +4,7 @@
 Padaccheda: इडायाः वा
 
 इडाया वा (8.3.54)
+Pāṭha: ashtadhyayi.com data.txt row i=83054 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "iqAyA vA",
     text_dev              = "इडाया वा",
+    samagra_slp1          = "padasya pUrvatrAsidDam saMhitAyAm iqAyAH vA visarjanIyasya kupvoH saH samAse Candasi zazWyAH patiputrapfzWapArapadapayaspozezu",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् संहितायाम् इडायाः वा विसर्जनीयस्य कुप्वोः सः समासे छन्दसि षष्ठ्याः पतिपुत्रपृष्ठपारपदपयस्पोषेषु",
     padaccheda_dev        = "इडायाः वा",
     why_dev               = "(सूत्रम् 8.3.54) इडाया वा।",
     anuvritti_from        = ('8.1.1',),

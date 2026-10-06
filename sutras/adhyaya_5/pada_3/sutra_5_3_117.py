@@ -4,6 +4,7 @@
 Padaccheda: पर्शु-आदि-यौधेय-आदिभ्याम् अण्-अञौ
 
 पर्श्वादियौधेयादिभ्यामणञौ (5.3.117)
+Pāṭha: ashtadhyayi.com data.txt row i=53117 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parSvAdiyODeyAdiByAmaRaYO",
     text_dev              = "पर्श्वादियौधेयादिभ्यामणञौ",
+    samagra_slp1          = "AyuDajIvisaNGAt parSvAdi-yODeyAdiByAmaR-aYO",
+    samagra_dev           = "आयुधजीविसङ्घात् पर्श्वादि-यौधेयादिभ्यामण्-अञौ",
     padaccheda_dev        = "पर्शु-आदि-यौधेय-आदिभ्याम् अण्-अञौ",
     why_dev               = "(सूत्रम् 5.3.117) पर्श्वादियौधेयादिभ्यामणञौ।",
     anuvritti_from        = ('4.1.76',),

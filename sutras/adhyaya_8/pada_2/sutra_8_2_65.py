@@ -4,6 +4,7 @@
 Padaccheda: म्-वोः च
 
 म्वोश्च (8.2.65)
+Pāṭha: ashtadhyayi.com data.txt row i=82065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mvoSca",
     text_dev              = "म्वोश्च",
+    samagra_slp1          = "padasya pUrvatrAsidDam mvoH ca maH naH DAtoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् म्वोः च मः नः धातोः",
     padaccheda_dev        = "म्-वोः च",
     why_dev               = "(सूत्रम् 8.2.65) म्वोश्च।",
     anuvritti_from        = ('8.1.1',),

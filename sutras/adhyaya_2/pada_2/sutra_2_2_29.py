@@ -4,6 +4,7 @@
 Engine scope (v3 glass-box):
   Fires when any Term carries the ``dvandva`` tag and the samāsa adhikāra (2.1.3)
   is open on ``adhikara_stack``. No arm flag needed.
+Pāṭha: ashtadhyayi.com data.txt row i=22029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'cArTe dvandvaH',
     text_dev       = 'चार्थे द्वन्द्वः',
+    samagra_slp1   = "AkaqArAt ekA saMjYA prAkkaqArAtsamAsaH supsupA viBAzA ca-arTe dvandvaH anekam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "आकडारात् एका संज्ञा प्राक्कडारात्समासः सुप्सुपा विभाषा च-अर्थे द्वन्द्वः अनेकम्",
     padaccheda_dev = "च-अर्थे / द्वन्द्वः",
     why_dev        = "च-अर्थे द्वन्द्व-समास-संज्ञा (narrow stamp for P013).",
     anuvritti_from = ("2.1.3",),

@@ -4,6 +4,7 @@
 Padaccheda: दक्षिणात् आच्
 
 दक्षिणादाच् (5.3.36)
+Pāṭha: ashtadhyayi.com data.txt row i=53036 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "dakziRAdAc",
     text_dev              = "दक्षिणादाच्",
+    samagra_slp1          = "dakziRAt saptamI-praTamAByaH dik-deSa-kAlezu Ac",
+    samagra_dev           = "दक्षिणात् सप्तमी-प्रथमाभ्यः दिक्-देश-कालेषु आच्",
     padaccheda_dev        = "दक्षिणात् आच्",
     why_dev               = "(सूत्रम् 5.3.36) दक्षिणादाच्।",
     anuvritti_from        = ('4.1.76',),

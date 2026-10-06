@@ -4,6 +4,7 @@
 Padaccheda: जुष्ट-अर्पिते च छन्दसि
 
 जुष्टार्पिते च छन्दसि (6.1.209)
+Pāṭha: ashtadhyayi.com data.txt row i=61209 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "juzwArpite ca Candasi",
     text_dev              = "जुष्टार्पिते च छन्दसि",
+    samagra_slp1          = "juzwa-arpite ca Candasi udAttaH AdiH viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "जुष्ट-अर्पिते च छन्दसि उदात्तः आदिः विभाषा",
     padaccheda_dev        = "जुष्ट-अर्पिते च छन्दसि",
     why_dev               = "(सूत्रम् 6.1.209) जुष्टार्पिते च छन्दसि।",
     anuvritti_from        = ('6.1.1',),

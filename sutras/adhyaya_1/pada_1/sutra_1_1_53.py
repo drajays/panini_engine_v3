@@ -12,6 +12,7 @@ Engine policy (glass-box infrastructure):
 
 CONSTITUTION Art. 2/4: no paradigm coordinates; full anuvṛtti is baked into
 ``text_*``; runtime only stores the gate.
+Pāṭha: ashtadhyayi.com data.txt row i=11053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.PARIBHASHA,
     text_slp1      = 'Nicca',
     text_dev       = 'ङिच्च',
+    samagra_slp1   = "Nit antyasya alaH",
+    samagra_dev    = "ङित् अन्त्यस्य अलः",
     padaccheda_dev = "ङिच् / च",
     why_dev        = "परिभाषा-गेट: ङित्-आदेशे (बह्वक्षरत्वेऽपि) अन्त्यादेश-नियमः।",
     anuvritti_from = ("1.1.52",),

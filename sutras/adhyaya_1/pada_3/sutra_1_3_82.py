@@ -12,6 +12,7 @@ pari takes ātmanepada endings. For example: parimṛṣate — he tolerates/end
 stamp "Atmanepada_1_3_82" is absent, (c) a dhātu Term whose upadesha_slp1 is
 in _MRS_ROOTS carries the tag "pari_prefix".
 No arm flags (CONSTITUTION Art. 13). r1_form_identity_exempt=True.
+Pāṭha: ashtadhyayi.com data.txt row i=13082 (Art. 14).
 """
 from __future__ import annotations
 
@@ -59,6 +60,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt=True,
     text_slp1='parermfzaH',
     text_dev='परेर्मृषः',
+    samagra_slp1="pareH mfzaH kartari parasmEpadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev="परेः मृषः कर्तरि परस्मैपदम्",
     padaccheda_dev="परेः (पञ्चमी-एकवचन) / मृषः (षष्ठी-एकवचन)",
     why_dev=(
         "परि-पूर्वकस्य मृष्-धातोः आत्मनेपदम् — "

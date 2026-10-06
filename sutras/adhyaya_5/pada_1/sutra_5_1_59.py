@@ -4,6 +4,7 @@
 Padaccheda: पङ्‍क्ति-विंशति-त्रिंशत्-चत्वारिंशत्-पञ्चाशत्-षष्टि-सप्तति-अशीति-नवति-शतम्
 
 पङ्क्तिविंशतित्रिंशत्चत्वारिंशत्पञ्चाशत्षष्टिसप्तत्यशीतिनवतिशतम् (5.1.59)
+Pāṭha: ashtadhyayi.com data.txt row i=51059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "paNktiviMSatitriMSatcatvAriMSatpaYcASatzazwisaptatyaSItinavatiSatam",
     text_dev              = "पङ्क्तिविंशतित्रिंशत्चत्वारिंशत्पञ्चाशत्षष्टिसप्तत्यशीतिनवतिशतम्",
+    samagra_slp1          = "tat asya parimARam iti paNkti tat asya saNGasya parimARam iti viMSati-triMSat-catvAriMSat-paYcASat-zazwi-saptati-aSIti-navati-Satam",
+    samagra_dev           = "'तत् अस्य परिमाणम्' (इति) पङ्क्ति; 'तत् अस्य सङ्घस्य परिमाणम्' (इति)  विंशति-त्रिंशत्-चत्वारिंशत्-पञ्चाशत्-षष्टि-सप्तति-अशीति-नवति-शतम्",
     padaccheda_dev        = "पङ्‍क्ति-विंशति-त्रिंशत्-चत्वारिंशत्-पञ्चाशत्-षष्टि-सप्तति-अशीति-नवति-शतम्",
     why_dev               = "(सूत्रम् 5.1.59) पङ्क्तिविंशतित्रिंशत्चत्वारिंशत्पञ्चाशत्षष्टिसप्तत्यशीतिनवतिशतम्।",
     anuvritti_from        = ('5.1.19',),

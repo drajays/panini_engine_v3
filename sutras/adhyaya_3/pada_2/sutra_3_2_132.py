@@ -4,6 +4,7 @@
 Padaccheda: सुञः यज्ञ-संयोगे
 
 krt-suffix rule: सुञो यज्ञसंयोगे (132)
+Pāṭha: ashtadhyayi.com data.txt row i=32132 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "suYo yajYasaMyoge",
     text_dev              = "सुञो यज्ञसंयोगे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne suYaH yajYasaMyoge kft Satf",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने सुञः यज्ञसंयोगे कृत् शतृ",
     padaccheda_dev        = "सुञः यज्ञ-संयोगे",
     why_dev               = "धातोः कृत्-प्रत्ययः [सुञो यज्ञसंयोगे] विहितः (३.२.132)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

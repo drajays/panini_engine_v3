@@ -4,6 +4,7 @@
 Padaccheda: तेन दीव्यति (क्रियापदम्) खनति (क्रियापदम्) जयति (क्रियापदम्) जितम्
 
 तेन दीव्यति खनति जयति जितम् (4.4.2)
+Pāṭha: ashtadhyayi.com data.txt row i=44002 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "tena dIvyati Kanati jayati jitam",
     text_dev              = "तेन दीव्यति खनति जयति जितम्",
+    samagra_slp1          = "tena dIvyati Kanati jayati jitam iti samarTAnAm praTamAt paraH Wak ",
+    samagra_dev           = "'तेन दीव्यति, खनति, जयति, जितम्' (इति) समर्थानाम् प्रथमात् परः ठक् ।",
     padaccheda_dev        = "तेन दीव्यति (क्रियापदम्) खनति (क्रियापदम्) जयति (क्रियापदम्) जितम्",
     why_dev               = "(सूत्रम् 4.4.2) तेन दीव्यति खनति जयति जितम्।",
     anuvritti_from        = ('4.1.1',),

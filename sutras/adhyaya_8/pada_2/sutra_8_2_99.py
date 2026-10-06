@@ -4,6 +4,7 @@
 Padaccheda: प्रतिश्रवणे च
 
 प्रतिश्रवणे च (8.2.99)
+Pāṭha: ashtadhyayi.com data.txt row i=82099 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pratiSravaRe ca",
     text_dev              = "प्रतिश्रवणे च",
+    samagra_slp1          = "padasya pUrvatrAsidDam vAkyasya weH plutaH udAttaH pratiSravaRe ca",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पदस्य पूर्वत्रासिद्धम् वाक्यस्य टेः प्लुतः उदात्तः प्रतिश्रवणे च",
     padaccheda_dev        = "प्रतिश्रवणे च",
     why_dev               = "(सूत्रम् 8.2.99) प्रतिश्रवणे च।",
     anuvritti_from        = ('8.1.1',),

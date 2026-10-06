@@ -97,6 +97,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'yAqApaH',
     text_dev       = 'याडापः',
+    samagra_slp1   = "ApaH aNAt Niti supi yAw",
+    samagra_dev    = "आपः अङात् ङिति सुपि याट्",
     padaccheda_dev = "आपः (सप्तम्येकवचनम्), ङिति (सप्तम्येकवचनम्), सुपि (सप्तम्येकवचनम्)",
     why_dev        = (
         "आबन्तात् न-सर्वनाम्नः परे ङिति ङे याट्-आगमः; अङ्गे ह्रस्वो न भवति।"

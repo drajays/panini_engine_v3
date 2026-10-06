@@ -5,6 +5,7 @@ Glass-box slice (हिडनीय.md):
   For a *mit* dhātu followed by ṇic, shorten the **upadhā** vowel before ṇic.
   Here: ``heq`` (हेड्) → ``hiq`` (हिड्), i.e. penultimate *एच्* → *इक्* — delegated to
   ``phonology.ec_ig_hrasva`` (same resolver bundle as **1.1.48**).
+Pāṭha: ashtadhyayi.com data.txt row i=64092 (Art. 14).
 """
 from __future__ import annotations
 
@@ -61,6 +62,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='mitAM hrasvaH',
     text_dev='मितां ह्रस्वः',
+    samagra_slp1="mitAmaNgasya upaDAyAH RO hrasvaH",
+    samagra_dev="मितामङ्गस्य उपधायाः णौ ह्रस्वः",
     padaccheda_dev="मिताम् / ह्रस्वः",
     why_dev="मित्-धातोः उपधायाः ह्रस्वः णिचि परे (हेड्→हिड्)।",
     anuvritti_from=("6.4.1",),

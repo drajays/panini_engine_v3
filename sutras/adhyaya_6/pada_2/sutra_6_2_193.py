@@ -4,6 +4,7 @@
 Padaccheda: प्रतेः अंशु-आदयः तत्पुरुषे
 
 प्रतेरंश्वादयस्तत्पुरुषे (6.2.193)
+Pāṭha: ashtadhyayi.com data.txt row i=62193 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "prateraMSvAdayastatpuruze",
     text_dev              = "प्रतेरंश्वादयस्तत्पुरुषे",
+    samagra_slp1          = "uttarapadAdiH antaH prateH aMSvAdayaH tatpuruze upasargAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः प्रतेः अंश्वादयः तत्पुरुषे उपसर्गात्",
     padaccheda_dev        = "प्रतेः अंशु-आदयः तत्पुरुषे",
     why_dev               = "(सूत्रम् 6.2.193) प्रतेरंश्वादयस्तत्पुरुषे।",
     anuvritti_from        = ('6.1.1',),

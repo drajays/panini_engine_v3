@@ -4,6 +4,7 @@
 Padaccheda: देवपथ-आदिभ्यः च
 
 देवपथादिभ्यश्च (5.3.100)
+Pāṭha: ashtadhyayi.com data.txt row i=53100 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "devapaTAdiByaSca",
     text_dev              = "देवपथादिभ्यश्च",
+    samagra_slp1          = "ive kanaH devapaTAdiByaH lup",
+    samagra_dev           = "इवे कनः देवपथादिभ्यः लुप्",
     padaccheda_dev        = "देवपथ-आदिभ्यः च",
     why_dev               = "(सूत्रम् 5.3.100) देवपथादिभ्यश्च।",
     anuvritti_from        = ('4.1.76',),

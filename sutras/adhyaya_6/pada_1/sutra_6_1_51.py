@@ -4,6 +4,7 @@
 Padaccheda: विभाषा लीयतेः
 
 विभाषा लीयतेः (6.1.51)
+Pāṭha: ashtadhyayi.com data.txt row i=61051 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "viBAzA lIyateH",
     text_dev              = "विभाषा लीयतेः",
+    samagra_slp1          = "viBAzA lIyateH At ecaH upadeSe lyapi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "विभाषा लीयतेः आत् एचः उपदेशे ल्यपि",
     padaccheda_dev        = "विभाषा लीयतेः",
     why_dev               = "(सूत्रम् 6.1.51) विभाषा लीयतेः।",
     anuvritti_from        = ('6.1.1',),

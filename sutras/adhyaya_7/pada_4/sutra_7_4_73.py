@@ -12,6 +12,7 @@ Engine:
     find abhyāsa term whose last vowel (or only vowel) is ``u`` (hrasva).
   - act: replace that ``u`` varna with ``a``.
   - state.samjna_registry["7_4_73_bhavatеra"] = True
+Pāṭha: ashtadhyayi.com data.txt row i=74073 (Art. 14).
 """
 from __future__ import annotations
 
@@ -73,6 +74,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BavateraH",
     text_dev              = "भवतेरः",
+    samagra_slp1          = "BavateH aByAsasya liwi aH",
+    samagra_dev           = "भवतेः अभ्यासस्य लिटि अः",
     padaccheda_dev        = "भवतेः अः",
     why_dev               = "भू-धातोः अभ्यासे उ-वर्णस्य अ-आदेशः (७.४.५९ ह्रस्व-परे); ब-भू → ब-भू → बभू।",
     anuvritti_from        = ('7.1.1',),

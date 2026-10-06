@@ -4,6 +4,7 @@
 Padaccheda: सविध-सनीड-समर्याद-सवेश-सदेशेषु सामीप्ये
 
 सविधसनीडसमर्यादसवेशसदेशेषु सामीप्ये (6.2.23)
+Pāṭha: ashtadhyayi.com data.txt row i=62023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saviDasanIqasamaryAdasaveSasadeSezu sAmIpye",
     text_dev              = "सविधसनीडसमर्यादसवेशसदेशेषु सामीप्ये",
+    samagra_slp1          = "saviDa-sanIqa-samaryAda-saveSa-sadeSezu sAmIpye prakftyA pUrvapadam tatpuruze",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "सविध-सनीड-समर्याद-सवेश-सदेशेषु सामीप्ये प्रकृत्या पूर्वपदम् तत्पुरुषे",
     padaccheda_dev        = "सविध-सनीड-समर्याद-सवेश-सदेशेषु सामीप्ये",
     why_dev               = "(सूत्रम् 6.2.23) सविधसनीडसमर्यादसवेशसदेशेषु सामीप्ये।",
     anuvritti_from        = ('6.1.1',),

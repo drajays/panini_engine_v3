@@ -4,6 +4,7 @@
 Padaccheda: नञः गुणप्रतिषेधे सम्पादी-अर्ह-हित-अलम्-अर्थाः तद्धिताः
 
 नञो गुणप्रतिषेधे सम्पाद्यर्हहितालमर्थास्तद्धिताः (6.2.155)
+Pāṭha: ashtadhyayi.com data.txt row i=62155 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "naYo guRapratizeDe sampAdyarhahitAlamarTAstadDitAH",
     text_dev              = "नञो गुणप्रतिषेधे सम्पाद्यर्हहितालमर्थास्तद्धिताः",
+    samagra_slp1          = "uttarapadAdiH antaH naYaH guRapratizeDe sampAdi-arha-hita-alam-arTAH tadDitAH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः नञः गुणप्रतिषेधे सम्पादि-अर्ह-हित-अलम्-अर्थाः तद्धिताः",
     padaccheda_dev        = "नञः गुणप्रतिषेधे सम्पादी-अर्ह-हित-अलम्-अर्थाः तद्धिताः",
     why_dev               = "(सूत्रम् 6.2.155) नञो गुणप्रतिषेधे सम्पाद्यर्हहितालमर्थास्तद्धिताः।",
     anuvritti_from        = ('6.1.1',),

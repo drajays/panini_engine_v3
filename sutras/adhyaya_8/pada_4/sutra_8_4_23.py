@@ -4,6 +4,7 @@
 Padaccheda: व-मोः वा
 
 वमोर्वा (8.4.23)
+Pāṭha: ashtadhyayi.com data.txt row i=84023 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vamorvA",
     text_dev              = "वमोर्वा",
+    samagra_slp1          = "razAByAm upasargAt hanteH atpUrvasya naH vamoH vA RaH",
+    samagra_dev           = "रषाभ्याम्  उपसर्गात् हन्तेः अत्पूर्वस्य  नः वमोः वा णः",
     padaccheda_dev        = "व-मोः वा",
     why_dev               = "(सूत्रम् 8.4.23) वमोर्वा।",
     anuvritti_from        = ('8.1.1',),

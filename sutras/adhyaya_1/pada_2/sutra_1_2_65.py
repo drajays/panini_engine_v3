@@ -21,6 +21,7 @@ Blindness:
   - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
     lakāra, surface Devanāgarī, data, or reference access (Art. 2).
   - No arm flags; no paradigm coordinates.
+Pāṭha: ashtadhyayi.com data.txt row i=12065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -47,6 +48,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'vfdDo yUnA tallakzaRaScedeva viSezaH',
     text_dev                = 'वृद्धो यूना तल्लक्षणश्चेदेव विशेषः',
+    samagra_slp1            = "vfdDaH yUnA tat-lakzaRaH cet eva viSezaH eka-SezaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "वृद्धः यूना तत्-लक्षणः चेत् एव विशेषः एक-शेषः",
     padaccheda_dev          = "वृद्धः / यूना / तत्-लक्षणः / चेत् / एव / विशेषः",
     why_dev                 = (
         "वृद्धस्य यूना सह एकशेषे तल्लक्षण एव विशेषो यदा भवति तदा एकशेषः सिध्यति — "

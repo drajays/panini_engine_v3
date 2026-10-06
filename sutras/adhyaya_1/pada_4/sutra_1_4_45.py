@@ -13,6 +13,7 @@ action insofar as it bears the *vyāpāra* of the *kartṛ* or the *phala* of th
 The recipe sets ``state.meta[META_LOCUS_INDICES]`` to a non-empty ``tuple`` of
 valid term indices (caller supplies *vākya*-level analysis). **R2**-safe;
 ``cond`` does not read paradigm coordinates (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14045 (Art. 14).
 """
 from __future__ import annotations
 
@@ -64,6 +65,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.SAMJNA,
     text_slp1      = 'ADAroDikaraRam',
     text_dev       = 'आधारोऽधिकरणम्',
+    samagra_slp1   = "AkaqArAt ekA saMjYA kArake ADAraH aDikaraRam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "आकडारात् एका संज्ञा कारके आधारः अधिकरणम्",
     padaccheda_dev = "कारके / आधारः / अधिकरणम्",
     why_dev        = (
         "क्रियायाः कर्तुः कर्मणो वा यः पदार्थ आधारः, स अधिकरण-कारक-संज्ञकः "

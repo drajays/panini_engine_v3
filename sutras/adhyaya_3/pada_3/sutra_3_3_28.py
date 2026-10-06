@@ -4,6 +4,7 @@
 Padaccheda: निर्-अभ्योः पू-ल्वोः
 
 krt-suffix rule: निरभ्योः पूल्वोः
+Pāṭha: ashtadhyayi.com data.txt row i=33028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "niraByoH pUlvoH",
     text_dev              = "निरभ्योः पूल्वोः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH BAve akartari ca kArake saMjYAyAm nir-aByoH pU-lvoH kft GaY",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भावे अकर्तरि च कारके संज्ञायाम् निर्-अभ्योः पू-ल्वोः कृत् घञ्",
     padaccheda_dev        = "निर्-अभ्योः पू-ल्वोः",
     why_dev               = "धातोः प्रत्ययः (३.3.28)।",
     anuvritti_from        = ('3.1.1',),

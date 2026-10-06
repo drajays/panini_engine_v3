@@ -4,6 +4,7 @@
 Padaccheda: कृकण-पर्णात् भारद्वाजे
 
 कृकणपर्णाद्भारद्वाजे (4.2.145)
+Pāṭha: ashtadhyayi.com data.txt row i=42145 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kfkaRaparRAdBAradvAje",
     text_dev              = "कृकणपर्णाद्भारद्वाजे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA kfkaRa-parRAt BAradvAje CaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा कृकण-पर्णात् भारद्वाजे छः",
     padaccheda_dev        = "कृकण-पर्णात् भारद्वाजे",
     why_dev               = "(सूत्रम् 4.2.145) कृकणपर्णाद्भारद्वाजे।",
     anuvritti_from        = ('4.1.1',),

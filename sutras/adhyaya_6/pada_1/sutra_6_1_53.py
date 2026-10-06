@@ -4,6 +4,7 @@
 Padaccheda: अपगुरः णमुँल्ि
 
 अपगुरो णमुलि (6.1.53)
+Pāṭha: ashtadhyayi.com data.txt row i=61053 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "apaguro Ramuli",
     text_dev              = "अपगुरो णमुलि",
+    samagra_slp1          = "apaguraH Ramuli At ecaH upadeSe viBAzA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अपगुरः णमुलि आत् एचः उपदेशे विभाषा",
     padaccheda_dev        = "अपगुरः णमुँल्ि",
     why_dev               = "(सूत्रम् 6.1.53) अपगुरो णमुलि।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: न इन्द्रस्य परस्य
 
 नेन्द्रस्य परस्य (7.3.22)
+Pāṭha: ashtadhyayi.com data.txt row i=73022 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "nendrasya parasya",
     text_dev              = "नेन्द्रस्य परस्य",
+    samagra_slp1          = "aNgasya uttarapadasya na indrasya parasya vfdDiH YRiti acaH AdeH tadDitezu pUrvapadasya devatAdvandve",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य उत्तरपदस्य न इन्द्रस्य परस्य वृद्धिः ञ्णिति अचः आदेः तद्धितेषु पूर्वपदस्य देवताद्वन्द्वे",
     padaccheda_dev        = "न इन्द्रस्य परस्य",
     why_dev               = "(सूत्रम् 7.3.22) नेन्द्रस्य परस्य।",
     anuvritti_from        = ('7.1.1',),

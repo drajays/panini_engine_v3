@@ -16,6 +16,7 @@ Engine:
   - Guards re-entry via meta["seT_1_2_24"].
   - Adds "seT"; stores the group frozenset in samjna_registry.
   - r1_form_identity_exempt=True: no surface string changes at this step.
+Pāṭha: ashtadhyayi.com data.txt row i=12024 (Art. 14).
 """
 from __future__ import annotations
 
@@ -63,6 +64,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'vaYciluYcyftaSca',
     text_dev              = 'वञ्चिलुञ्च्यृतश्च',
+    samagra_slp1          = "vaYci-luYci-ftaH ca kit sew ktvA vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "वञ्चि-लुञ्चि-ऋतः च कित् सेट् क्त्वा वा",
     padaccheda_dev        = "वञ्चि-लुञ्चि-ऋतः / च",
     why_dev               = ("वञ्च्-लुञ्च्-ऋत्-धातवः अपि सेट् भवन्ति — "
                              "एतेभ्यः इडागमो नित्यं भवति।"),

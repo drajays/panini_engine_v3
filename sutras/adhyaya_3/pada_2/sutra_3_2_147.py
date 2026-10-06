@@ -4,6 +4,7 @@
 Padaccheda: देवि-क्रुशोः च उपसर्गे
 
 krt-suffix rule: देविक्रुशोश्चोपसर्गे (147)
+Pāṭha: ashtadhyayi.com data.txt row i=32147 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "devikruSoScopasarge",
     text_dev              = "देविक्रुशोश्चोपसर्गे",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu devi-kruSoH ca upasarge kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु देवि-क्रुशोः च उपसर्गे कृत्",
     padaccheda_dev        = "देवि-क्रुशोः च उपसर्गे",
     why_dev               = "धातोः कृत्-प्रत्ययः [देविक्रुशोश्चोपसर्गे] विहितः (३.२.147)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

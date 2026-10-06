@@ -4,6 +4,7 @@
 Padaccheda: क्षुब्ध-स्वान्त-ध्वान्त-लग्न-म्लिष्ट-विरिब्ध-फाण्ट-बाढानि मन्थ-मनः-तमः-सक्त-अविस्पष्ट-स्वर-अनायास-भृशेषु
 
 क्षुब्धस्वान्तध्वान्तलग्नम्लिष्टविरिब्धफाण्टबाढानि मन्थमनस्तमःसक्ताविस्पष्टस्वरानायासभृशेषु (7.2.18)
+Pāṭha: ashtadhyayi.com data.txt row i=72018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kzubDasvAntaDvAntalagnamlizwaviribDaPARwabAQAni manTamanastamaHsaktAvispazwasvarAnAyAsaBfSezu",
     text_dev              = "क्षुब्धस्वान्तध्वान्तलग्नम्लिष्टविरिब्धफाण्टबाढानि मन्थमनस्तमःसक्ताविस्पष्टस्वरानायासभृशेषु",
+    samagra_slp1          = "aNgasya kzubDa-svAnta-DvAnta-lagna-mlizwa-viribDa-PARwa-bAQAni manTa-manas-tamas-sakta-avispazwa-svara-anAyAsa-BfSezu na iw nizWAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य क्षुब्ध-स्वान्त-ध्वान्त-लग्न-म्लिष्ट-विरिब्ध-फाण्ट-बाढानि मन्थ-मनस्-तमस्-सक्त-अविस्पष्ट-स्वर-अनायास-भृशेषु न इट् निष्ठायाम्",
     padaccheda_dev        = "क्षुब्ध-स्वान्त-ध्वान्त-लग्न-म्लिष्ट-विरिब्ध-फाण्ट-बाढानि मन्थ-मनः-तमः-सक्त-अविस्पष्ट-स्वर-अनायास-भृशेषु",
     why_dev               = "(सूत्रम् 7.2.18) क्षुब्धस्वान्तध्वान्तलग्नम्लिष्टविरिब्धफाण्टबाढानि मन्थमनस्तमःसक्ताविस्पष्टस्वरानायासभृशेषु।",
     anuvritti_from        = ('7.1.1',),

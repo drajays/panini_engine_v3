@@ -4,6 +4,7 @@
 Padaccheda: ङ्याः छन्दसि बहुलम्
 
 ङ्याश्छन्दसि बहुलम् (6.1.178)
+Pāṭha: ashtadhyayi.com data.txt row i=61178 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "NyASCandasi bahulam",
     text_dev              = "ङ्याश्छन्दसि बहुलम्",
+    samagra_slp1          = "NyAH Candasi bahulam antaH udAttaH viBaktiH nAm anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "ङ्याः छन्दसि बहुलम् अन्तः उदात्तः विभक्तिः नाम् अन्यतरस्याम्",
     padaccheda_dev        = "ङ्याः छन्दसि बहुलम्",
     why_dev               = "(सूत्रम् 6.1.178) ङ्याश्छन्दसि बहुलम्।",
     anuvritti_from        = ('6.1.1',),

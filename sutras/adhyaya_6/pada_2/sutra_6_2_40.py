@@ -4,6 +4,7 @@
 Padaccheda: उष्ट्रः सादि-वाम्योः
 
 उष्ट्रः सादिवाम्योः (6.2.40)
+Pāṭha: ashtadhyayi.com data.txt row i=62040 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uzwraH sAdivAmyoH",
     text_dev              = "उष्ट्रः सादिवाम्योः",
+    samagra_slp1          = "uzwraH sAdivAmyoH prakftyA pUrvapadam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उष्ट्रः सादिवाम्योः प्रकृत्या पूर्वपदम्",
     padaccheda_dev        = "उष्ट्रः सादि-वाम्योः",
     why_dev               = "(सूत्रम् 6.2.40) उष्ट्रः सादिवाम्योः।",
     anuvritti_from        = ('6.1.1',),

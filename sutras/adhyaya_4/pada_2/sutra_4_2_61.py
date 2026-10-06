@@ -4,6 +4,7 @@
 Padaccheda: क्रम-आदिभ्यः वुन्
 
 क्रमादिभ्यो वुन् (4.2.61)
+Pāṭha: ashtadhyayi.com data.txt row i=42061 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kramAdiByo vun",
     text_dev              = "क्रमादिभ्यो वुन्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA krama-AdiByaH vun tat aDIte veda",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा क्रम-आदिभ्यः वुन् तत् अधीते वेद",
     padaccheda_dev        = "क्रम-आदिभ्यः वुन्",
     why_dev               = "(सूत्रम् 4.2.61) क्रमादिभ्यो वुन्।",
     anuvritti_from        = ('4.1.1',),

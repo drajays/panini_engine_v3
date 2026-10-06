@@ -4,6 +4,7 @@
 Padaccheda: रात्रि-अहः-संवत्सरात् च
 
 रात्र्यहस्संवत्सराच्च (5.1.87)
+Pāṭha: ashtadhyayi.com data.txt row i=51087 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rAtryahassaMvatsarAcca",
     text_dev              = "रात्र्यहस्संवत्सराच्च",
+    samagra_slp1          = "tamaDIzwo Bfto BUto BAvI taTA tena nirvfttam iti rAtri-ahaH-saMvatsarAt dvigoH KaH vA",
+    samagra_dev           = "'तमधीष्टो भृतो भूतो भावी' (तथा) 'तेन निर्वृत्तम्' (इति) रात्रि-अहः-संवत्सरात् द्विगोः खः वा",
     padaccheda_dev        = "रात्रि-अहः-संवत्सरात् च",
     why_dev               = "(सूत्रम् 5.1.87) रात्र्यहस्संवत्सराच्च।",
     anuvritti_from        = ('5.1.78',),

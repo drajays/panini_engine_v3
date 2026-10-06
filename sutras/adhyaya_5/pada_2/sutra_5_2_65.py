@@ -4,6 +4,7 @@
 Padaccheda: धन-हिरण्यात् कामे
 
 धनहिरण्यात् कामे (5.2.65)
+Pāṭha: ashtadhyayi.com data.txt row i=52065 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DanahiraRyAt kAme",
     text_dev              = "धनहिरण्यात् कामे",
+    samagra_slp1          = "tatra kAme iti Dana-hiraRyAt kan",
+    samagra_dev           = "'तत्र कामे' (इति) धन-हिरण्यात् कन्",
     padaccheda_dev        = "धन-हिरण्यात् कामे",
     why_dev               = "(सूत्रम् 5.2.65) धनहिरण्यात् कामे।",
     anuvritti_from        = ('4.1.82',),

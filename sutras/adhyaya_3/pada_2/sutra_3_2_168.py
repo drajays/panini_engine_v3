@@ -4,6 +4,7 @@
 Padaccheda: सन्-आशंस-भिक्षः उः
 
 krt-suffix rule: सनाशंसभिक्ष उः (168)
+Pāṭha: ashtadhyayi.com data.txt row i=32168 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "sanASaMsaBikza uH",
     text_dev              = "सनाशंसभिक्ष उः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH vartamAne A kvestacCIlatadDarmatatsADukArizu san-ASaMsa-BikzaH uH kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः वर्तमाने आ क्वेस्तच्छीलतद्धर्मतत्साधुकारिषु सन्-आशंस-भिक्षः उः कृत्",
     padaccheda_dev        = "सन्-आशंस-भिक्षः उः",
     why_dev               = "धातोः कृत्-प्रत्ययः [सनाशंसभिक्ष उः] विहितः (३.२.168)।",
     anuvritti_from        = ('3.1.1', '3.2.78'),

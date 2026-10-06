@@ -4,6 +4,7 @@
 Padaccheda: अस्यतेः थुक्
 
 अस्यतेस्थुक् (7.4.17)
+Pāṭha: ashtadhyayi.com data.txt row i=74017 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "asyatesTuk",
     text_dev              = "अस्यतेस्थुक्",
+    samagra_slp1          = "aNgasya asyateH Tuk aNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य अस्यतेः थुक् अङि",
     padaccheda_dev        = "अस्यतेः थुक्",
     why_dev               = "(सूत्रम् 7.4.17) अस्यतेस्थुक्।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: परिमुखम् च
 
 परिमुखं च (4.4.29)
+Pāṭha: ashtadhyayi.com data.txt row i=44029 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "parimuKaM ca",
     text_dev              = "परिमुखं च",
+    samagra_slp1          = "tat parimuKam vartate iti samarTAnAm praTamAt Wak",
+    samagra_dev           = "'तत् परिमुखम् वर्तते' (इति) समर्थानाम् प्रथमात् ठक्",
     padaccheda_dev        = "परिमुखम् च",
     why_dev               = "(सूत्रम् 4.4.29) परिमुखं च।",
     anuvritti_from        = ('4.1.1',),

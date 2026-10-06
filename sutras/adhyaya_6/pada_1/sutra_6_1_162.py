@@ -4,6 +4,7 @@
 Padaccheda: धातोः
 
 धातोः (6.1.162)
+Pāṭha: ashtadhyayi.com data.txt row i=61162 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "DAtoH",
     text_dev              = "धातोः",
+    samagra_slp1          = "DAtoH antaH udAttaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "धातोः अन्तः उदात्तः",
     padaccheda_dev        = "धातोः",
     why_dev               = "(सूत्रम् 6.1.162) धातोः।",
     anuvritti_from        = ('6.1.1',),

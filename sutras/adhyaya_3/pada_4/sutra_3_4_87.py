@@ -2,7 +2,7 @@
 3.4.87  सेर्ह्यपिच्च  —  VIDHI (*loṭ* *sip* → *hi*)
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=304087
+- ashtadhyayi.com data.txt row i=34087
 - Kāśikā: लोटि सिप्-स्थाने हि (अपित् — न पित्)
 - Cross-validation: tests/unit/test_sthanivat_it_samjna.py
 
@@ -52,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.ATIDESHA,
     text_slp1='serhyapicca',
     text_dev='सेर्ह्यपिच्च',
+    samagra_slp1="lowaH lasya seH hi apit ca",
+    samagra_dev="लोटः लस्य सेः हि अपित् च",
     padaccheda_dev="सेः / हि / अपि / च",
     why_dev="लोटि सिप्-स्थाने हि-आदेशः; अपित्-स्थानिवत् (पित् न)।",
     anuvritti_from=("3.4.86",),

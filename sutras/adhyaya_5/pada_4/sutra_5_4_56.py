@@ -4,6 +4,7 @@
 Padaccheda: देव-मनुष्य-पुरुष-मर्त्येभ्यः द्वितीया-सप्तम्योः बहुलम्
 
 देवमनुष्यपुरुषमर्त्येभ्यो द्वितीयासप्तम्योर्बहुलम् (5.4.56)
+Pāṭha: ashtadhyayi.com data.txt row i=54056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'devamanuzyapuruzapurumartyeByo dvitIyAsaptamyorbahulam',
     text_dev              = 'देवमनुष्यपुरुषपुरुमर्त्येभ्यो द्वितीयासप्तम्योर्बहुलम्',
+    samagra_slp1          = "deva-manuzya-puruza-puru-martyeByaH dvitIyA-saptamyoH bahulam trA",
+    samagra_dev           = "देव-मनुष्य-पुरुष-पुरु-मर्त्येभ्यः द्वितीया-सप्तम्योः बहुलम् त्रा",
     padaccheda_dev        = "देव-मनुष्य-पुरुष-मर्त्येभ्यः द्वितीया-सप्तम्योः बहुलम्",
     why_dev               = "(सूत्रम् 5.4.56) देवमनुष्यपुरुषमर्त्येभ्यो द्वितीयासप्तम्योर्बहुलम्।",
     anuvritti_from        = ('4.1.76',),

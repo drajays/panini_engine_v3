@@ -11,6 +11,7 @@ Example: *devadattāt antardhīyate* — Devadatta is the apādāna (one hides f
 
 *Engine:* A Term carrying ``"antardDau_hider"`` (pipeline-set) gets tag ``"apAdAna"``.
 ``cond`` reads only structural semantic tags (CONSTITUTION Art. 2).
+Pāṭha: ashtadhyayi.com data.txt row i=14028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -51,6 +52,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.SAMJNA,
     text_slp1             = 'antardDO yenAdarSanamicCati',
     text_dev              = 'अन्तर्द्धौ येनादर्शनमिच्छति',
+    samagra_slp1          = "antarDO yena adarSanam icCati tat kArakam apAdAnam",
+    samagra_dev           = "अन्तर्धौ येन अदर्शनम् इच्छति तत् कारकम् अपादानम्",
     padaccheda_dev        = "अन्तर्द्धौ / येन / अदर्शनम् / इच्छति",
     why_dev               = (
         "अन्तर्धान-प्रसङ्गे येन सकाशाद् अदर्शनम् इच्छति स "

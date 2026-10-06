@@ -4,6 +4,7 @@
 Padaccheda: सर्वत्र लोहित-आदि-कत-अन्तेभ्यः
 
 सर्वत्र लोहितादिकतान्तेभ्यः (4.1.18)
+Pāṭha: ashtadhyayi.com data.txt row i=41018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'sarvatra lohitAdikatanteByaH',
     text_dev              = 'सर्वत्र लोहितादिकतन्तेभ्यः',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt striyAm anupasarjanAt sarvatra lohitAdi-katanteByaH NIp yaYaH zPaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् स्त्रियाम् अनुपसर्जनात् सर्वत्र लोहितादि-कतन्तेभ्यः ङीप् यञः ष्फः",
     padaccheda_dev        = "सर्वत्र लोहित-आदि-कत-अन्तेभ्यः",
     why_dev               = "(सूत्रम् 4.1.18) सर्वत्र लोहितादिकतान्तेभ्यः।",
     anuvritti_from        = ('4.1.1',),

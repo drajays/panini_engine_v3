@@ -4,6 +4,7 @@
 Padaccheda: मीनातेः निगमे
 
 मीनातेर्निगमे (7.3.81)
+Pāṭha: ashtadhyayi.com data.txt row i=73081 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "mInAternigame",
     text_dev              = "मीनातेर्निगमे",
+    samagra_slp1          = "aNgasya mInAteH nigame Siti hrasvaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य मीनातेः निगमे शिति ह्रस्वः",
     padaccheda_dev        = "मीनातेः निगमे",
     why_dev               = "(सूत्रम् 7.3.81) मीनातेर्निगमे।",
     anuvritti_from        = ('7.1.1',),

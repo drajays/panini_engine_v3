@@ -94,6 +94,8 @@ SUTRA = SutraRecord(
     sutra_type=SutraType.VIDHI,
     text_slp1='RiSridrusruByaH kartari caN',
     text_dev='णिश्रिद्रुस्रुभ्यः कर्तरि चङ्',
+    samagra_slp1="Ri-Sri-dru-sruByaH cleH kartari caN",
+    samagra_dev="णि-श्रि-द्रु-स्रुभ्यः च्लेः कर्तरि चङ्",
     padaccheda_dev="णि-श्रि-द्रु-स्रु-भ्यः कर्तरि चङ्",
     why_dev=(
         "ण्यन्त-आदिषु धातुषु कर्तरि लुङि चङावागमः (ग्लास-बॉक्स्: P३७ — "

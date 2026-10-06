@@ -4,6 +4,7 @@
 Padaccheda: वचः उम्
 
 वच उम् (7.4.20)
+Pāṭha: ashtadhyayi.com data.txt row i=74020 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vaca um",
     text_dev              = "वच उम्",
+    samagra_slp1          = "aNgasya vacaH um aNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य वचः उम् अङि",
     padaccheda_dev        = "वचः उम्",
     why_dev               = "(सूत्रम् 7.4.20) वच उम्।",
     anuvritti_from        = ('7.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: वन्दिते भ्रातुः
 
 वन्दिते भ्रातुः (5.4.157)
+Pāṭha: ashtadhyayi.com data.txt row i=54157 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vandite BrAtuH",
     text_dev              = "वन्दिते भ्रातुः",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH samAsAntAH vA vandite BrAtuH bahuvrIhO kap na",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः समासान्ताः वा वन्दिते भ्रातुः बहुव्रीहौ कप् न",
     padaccheda_dev        = "वन्दिते भ्रातुः",
     why_dev               = "(सूत्रम् 5.4.157) वन्दिते भ्रातुः।",
     anuvritti_from        = ('5.4.68',),

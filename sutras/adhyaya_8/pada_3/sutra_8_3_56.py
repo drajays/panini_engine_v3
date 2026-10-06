@@ -4,6 +4,7 @@
 Padaccheda: सहेः साडः सः
 
 सहेः साडः सः (8.3.56)
+Pāṭha: ashtadhyayi.com data.txt row i=83056 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "saheH sAqaH saH",
     text_dev              = "सहेः साडः सः",
+    samagra_slp1          = "saheH sAqaH apadAntasya saH mUrDanyaH",
+    samagra_dev           = "सहेः साडः अपदान्तस्य सः मूर्धन्यः",
     padaccheda_dev        = "सहेः साडः सः",
     why_dev               = "(सूत्रम् 8.3.56) सहेः साडः सः।",
     anuvritti_from        = ('8.1.1',),

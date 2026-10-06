@@ -4,6 +4,7 @@
 Padaccheda: युजेः अ-समासे
 
 युजेरसमासे (7.1.71)
+Pāṭha: ashtadhyayi.com data.txt row i=71071 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "yujerasamAse",
     text_dev              = "युजेरसमासे",
+    samagra_slp1          = "asamAse yujeH aNgasya sarvanAmasTAne num",
+    samagra_dev           = "असमासे युजेः अङ्गस्य सर्वनामस्थाने नुम्",
     padaccheda_dev        = "युजेः अ-समासे",
     why_dev               = "(सूत्रम् 7.1.71) युजेरसमासे।",
     anuvritti_from        = ('7.1.1',),

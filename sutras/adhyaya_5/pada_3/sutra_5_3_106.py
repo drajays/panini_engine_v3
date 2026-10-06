@@ -4,6 +4,7 @@
 Padaccheda: समासात् च तद्विषयात्
 
 समासाच्च तद्विषयात् (5.3.106)
+Pāṭha: ashtadhyayi.com data.txt row i=53106 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "samAsAcca tadvizayAt",
     text_dev              = "समासाच्च तद्विषयात्",
+    samagra_slp1          = "tadvizayAt samAsAt ive CaH",
+    samagra_dev           = "तद्विषयात् समासात् इवे छः",
     padaccheda_dev        = "समासात् च तद्विषयात्",
     why_dev               = "(सूत्रम् 5.3.106) समासाच्च तद्विषयात्।",
     anuvritti_from        = ('4.1.76',),

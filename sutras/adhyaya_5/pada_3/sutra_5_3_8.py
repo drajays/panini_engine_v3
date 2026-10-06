@@ -4,6 +4,7 @@
 Padaccheda: तसेः च
 
 तसेश्च (5.3.8)
+Pāṭha: ashtadhyayi.com data.txt row i=53008 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "taseSca",
     text_dev              = "तसेश्च",
+    samagra_slp1          = "kim-sarvanAmabahuByaH advyAdiByaH taseH tasil",
+    samagra_dev           = "किम्-सर्वनामबहुभ्यः अद्व्यादिभ्यः तसेः तसिल्",
     padaccheda_dev        = "तसेः च",
     why_dev               = "(सूत्रम् 5.3.8) तसेश्च।",
     anuvritti_from        = ('5.3.2',),

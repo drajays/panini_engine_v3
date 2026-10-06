@@ -12,6 +12,7 @@ inherent-``a`` row is inserted before ``r`` + ``I`` so ``flat_slp1`` yields
 ``marI`` (मरी), not ``mrI``.
 
 Arm with ``state.meta["rIk_recipe"]`` in the recipe.
+Pāṭha: ashtadhyayi.com data.txt row i=74090 (Art. 14).
 """
 from __future__ import annotations
 
@@ -69,6 +70,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'rIgfdupaDasya ca',
     text_dev       = 'रीगृदुपधस्य च',
+    samagra_slp1   = "aNgasya aByAsasya rIk fdupaDasya ca yaNlukoH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "अङ्गस्य अभ्यासस्य रीक् ऋदुपधस्य च यङ्लुकोः",
     padaccheda_dev = "रीक् / गृदुपधस्य / च",
     why_dev        = "यङ्लुगन्ते गृदुपध-ऋकारे अभ्यासस्य री-आगमः (ग्लास-बॉक्स्)।",
     anuvritti_from = ("7.4.1",),

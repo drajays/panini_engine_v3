@@ -4,6 +4,7 @@
 Padaccheda: हल्-अत्-अन्तात् सप्तम्याः संज्ञायाम्
 
 हलदन्तात् सप्तम्याः संज्ञायाम् (6.3.9)
+Pāṭha: ashtadhyayi.com data.txt row i=63009 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "haladantAt saptamyAH saMjYAyAm",
     text_dev              = "हलदन्तात् सप्तम्याः संज्ञायाम्",
+    samagra_slp1          = "alug uttarapade haladantAt saptamyAH saMjYAyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अलुग् उत्तरपदे हलदन्तात् सप्तम्याः संज्ञायाम्",
     padaccheda_dev        = "हल्-अत्-अन्तात् सप्तम्याः संज्ञायाम्",
     why_dev               = "(सूत्रम् 6.3.9) हलदन्तात् सप्तम्याः संज्ञायाम्।",
     anuvritti_from        = ('6.1.1',),

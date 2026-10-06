@@ -4,6 +4,7 @@
 Padaccheda: पैल-आदिभ्यः च
 
 Also for paila etc.
+Pāṭha: ashtadhyayi.com data.txt row i=24059 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pElAdiByaSca",
     text_dev              = "पैलादिभ्यश्च",
+    samagra_slp1          = "pEla-AdiByaH ca yUni luk",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "पैल-आदिभ्यः च यूनि लुक्",
     padaccheda_dev        = "पैल-आदिभ्यः च",
     why_dev               = "पैल-आदिभ्यः च (२.४.५९)।",
     anuvritti_from        = ('2.4.58',),

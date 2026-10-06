@@ -20,6 +20,7 @@ Engine:
   - act: set paribhasha_gates["1_2_39_svaritAt_saMhitAyAm"] = True;
          set samjna_registry["1_2_39_svaritAt_saMhitAyAm"] = True; return state.
   - r1_form_identity_exempt=True: no surface string changes.
+Pāṭha: ashtadhyayi.com data.txt row i=12039 (Art. 14).
 """
 from __future__ import annotations
 
@@ -52,6 +53,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1               = 'svaritAt saMhitAyAmanudAttAnAm',
     text_dev                = 'स्वरितात् संहितायामनुदात्तानाम्',
+    samagra_slp1            = "svaritAt saMhitAyAm anudAttAnAm ekaSruti",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev             = "स्वरितात् संहितायाम् अनुदात्तानाम् एकश्रुति",
     padaccheda_dev          = "स्वरितात् / संहितायाम् / अनुदात्तानाम्",
     why_dev                 = _WHY_DEV,
     anuvritti_from          = ("1.2.30", "1.2.31"),

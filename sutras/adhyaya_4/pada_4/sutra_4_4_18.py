@@ -4,6 +4,7 @@
 Padaccheda: अण् कुटिलिकायाः
 
 अण् कुटिलिकायाः (4.4.18)
+Pāṭha: ashtadhyayi.com data.txt row i=44018 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "aR kuwilikAyAH",
     text_dev              = "अण् कुटिलिकायाः",
+    samagra_slp1          = "tena harati iti kuwilikAyAH aR",
+    samagra_dev           = "'तेन हरति' (इति) कुटिलिकायाः अण्",
     padaccheda_dev        = "अण् कुटिलिकायाः",
     why_dev               = "(सूत्रम् 4.4.18) अण् कुटिलिकायाः।",
     anuvritti_from        = ('4.1.1',),

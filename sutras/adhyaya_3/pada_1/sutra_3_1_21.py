@@ -4,6 +4,7 @@
 Padaccheda: मुण्ड-मिश्र-श्लक्ष्ण-लवण-व्रत-वस्त्र-हल-कल-कृत-तूस्तेभ्यः णिच्
 
 Krt suffix rule from dhatu: मुण्डमिश्रश्लक्ष्णलवणव्रतवस्त्रहलकलकृततूस्तेभ्यो (21)
+Pāṭha: ashtadhyayi.com data.txt row i=31021 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'muRqamiSraSlakzRalavaRavratavastrahalakalakftatUsteByo Ric',
     text_dev              = 'मुण्डमिश्रश्लक्ष्णलवणव्रतवस्त्रहलकलकृततूस्तेभ्यो णिच्',
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca muRqa-miSra-SlakzRa-lavaRa-vrata-vastra-hala-kala-kfta-tUsteByaH Ric vA karaRe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च मुण्ड-मिश्र-श्लक्ष्ण-लवण-व्रत-वस्त्र-हल-कल-कृत-तूस्तेभ्यः णिच् वा करणे",
     padaccheda_dev        = "मुण्ड-मिश्र-श्लक्ष्ण-लवण-व्रत-वस्त्र-हल-कल-कृत-तूस्तेभ्यः णिच्",
     why_dev               = "धातोः [मुण्डमिश्रश्लक्ष्णलवणव्रतवस्त्रहलकलकृततूस्तेभ्यो]-प्रत्ययः विहितः (३.१.21)।",
     anuvritti_from        = ('3.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: क्रव्ये च
 
 krt-suffix rule: क्रव्ये च (69)
+Pāṭha: ashtadhyayi.com data.txt row i=32069 (Art. 14).
 """
 from __future__ import annotations
 
@@ -35,6 +36,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kravye ca",
     text_dev              = "क्रव्ये च",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH kravye ca kft supi api upasarge viw adaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः क्रव्ये च कृत् सुपि अपि उपसर्गे विट् अदः",
     padaccheda_dev        = "क्रव्ये च",
     why_dev               = "धातोः कृत्-प्रत्ययः [क्रव्ये च] विहितः (३.२.69)।",
     anuvritti_from        = ('3.1.1',),

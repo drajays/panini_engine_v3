@@ -4,6 +4,7 @@
 Padaccheda: स्तेनात् यत् नलोपः च
 
 स्तेनाद्यन्नलोपश्च (5.1.125)
+Pāṭha: ashtadhyayi.com data.txt row i=51125 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "stenAdyannalopaSca",
     text_dev              = "स्तेनाद्यन्नलोपश्च",
+    samagra_slp1          = "tasya BAvaH karmaRi ca iti stenAt yat nalopaH ca",
+    samagra_dev           = "'तस्य भावः, कर्मणि च' (इति) स्तेनात् यत्, नलोपः च",
     padaccheda_dev        = "स्तेनात् यत् नलोपः च",
     why_dev               = "(सूत्रम् 5.1.125) स्तेनाद्यन्नलोपश्च।",
     anuvritti_from        = ('5.1.120',),

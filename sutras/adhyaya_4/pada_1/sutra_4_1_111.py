@@ -4,6 +4,7 @@
 Padaccheda: भर्गात् त्रैगर्ते
 
 भर्गात् त्रैगर्ते (4.1.111)
+Pāṭha: ashtadhyayi.com data.txt row i=41111 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "BargAt trEgarte",
     text_dev              = "भर्गात् त्रैगर्ते",
+    samagra_slp1          = "tasya gotre apatyam iti trEgarte BargAt PaY",
+    samagra_dev           = "'तस्य गोत्रे अपत्यम्' (इति) त्रैगर्ते भर्गात् फञ्",
     padaccheda_dev        = "भर्गात् त्रैगर्ते",
     why_dev               = "(सूत्रम् 4.1.111) भर्गात् त्रैगर्ते।",
     anuvritti_from        = ('4.1.1',),

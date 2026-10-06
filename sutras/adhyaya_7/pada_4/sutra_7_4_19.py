@@ -4,6 +4,7 @@
 Padaccheda: पतः पुम्
 
 पतः पुम् (7.4.19)
+Pāṭha: ashtadhyayi.com data.txt row i=74019 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "pataH pum",
     text_dev              = "पतः पुम्",
+    samagra_slp1          = "aNgasya pataH pum aNi",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य पतः पुम् अङि",
     padaccheda_dev        = "पतः पुम्",
     why_dev               = "(सूत्रम् 7.4.19) पतः पुम्।",
     anuvritti_from        = ('7.1.1',),

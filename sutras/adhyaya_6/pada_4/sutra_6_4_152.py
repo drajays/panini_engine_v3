@@ -4,6 +4,7 @@
 Padaccheda: क्य-च्व्योः च
 
 क्यच्व्योश्च (6.4.152)
+Pāṭha: ashtadhyayi.com data.txt row i=64152 (Art. 14).
 """
 from __future__ import annotations
 
@@ -32,6 +33,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "kyacvyoSca",
     text_dev              = "क्यच्व्योश्च",
+    samagra_slp1          = "aNgasya asidDavadatrABAt Basya kya-cvyoH ca lopaH yaH halaH Apatyasya tadDite",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य असिद्धवदत्राभात् भस्य क्य-च्व्योः च लोपः यः हलः आपत्यस्य तद्धिते",
     padaccheda_dev        = "क्य-च्व्योः च",
     why_dev               = "(सूत्रम् 6.4.152) क्यच्व्योश्च।",
     anuvritti_from        = ('6.1.1',),

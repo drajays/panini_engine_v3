@@ -4,6 +4,7 @@
 Padaccheda: रस-आदिभ्यः च
 
 रसादिभ्यश्च (5.2.95)
+Pāṭha: ashtadhyayi.com data.txt row i=52095 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "rasAdiByaSca",
     text_dev              = "रसादिभ्यश्च",
+    samagra_slp1          = "tat asya asmin astIti iti rasAdiByaH matup",
+    samagra_dev           = "'तत् अस्य, अस्मिन् अस्तीति' (इति) रसादिभ्यः मतुप्",
     padaccheda_dev        = "रस-आदिभ्यः च",
     why_dev               = "(सूत्रम् 5.2.95) रसादिभ्यश्च।",
     anuvritti_from        = ('4.1.82',),

@@ -4,6 +4,7 @@
 Padaccheda: ञ्य-आदयः तद्राजाः
 
 ञ्य्आदयस्तद्राजाः (5.3.119)
+Pāṭha: ashtadhyayi.com data.txt row i=53119 (Art. 14).
 """
 from __future__ import annotations
 
@@ -39,6 +40,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'YyAdayastadrAjAH',
     text_dev              = 'ञ्यादयस्तद्राजाः',
+    samagra_slp1          = "Yya-AdayaH tadrAjAH",
+    samagra_dev           = "ञ्य-आदयः तद्राजाः",
     padaccheda_dev        = "ञ्य-आदयः तद्राजाः",
     why_dev               = "(सूत्रम् 5.3.119) ञ्य्आदयस्तद्राजाः।",
     anuvritti_from        = ('4.1.76',),

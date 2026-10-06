@@ -4,6 +4,7 @@
 Padaccheda: प्रकृत्या अन्तःपादम् अ-व्-य-परे
 
 प्रकृत्याऽन्तःपादमव्यपरे (6.1.115)
+Pāṭha: ashtadhyayi.com data.txt row i=61115 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = 'prakftyAntaHpAdamavyapare',
     text_dev              = 'प्रकृत्याऽन्तःपादमव्यपरे',
+    samagra_slp1          = "saMhitAyAm prakftyA antaHpAdam avyapare ati",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "संहितायाम् प्रकृत्या अन्तःपादम् अव्यपरे अति",
     padaccheda_dev        = "प्रकृत्या अन्तःपादम् अ-व्-य-परे",
     why_dev               = "(सूत्रम् 6.1.115) प्रकृत्याऽन्तःपादमव्यपरे।",
     anuvritti_from        = ('6.1.1',),

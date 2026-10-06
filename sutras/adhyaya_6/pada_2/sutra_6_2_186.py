@@ -4,6 +4,7 @@
 Padaccheda: अपात् च
 
 अपाच्च (6.2.186)
+Pāṭha: ashtadhyayi.com data.txt row i=62186 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "apAcca",
     text_dev              = "अपाच्च",
+    samagra_slp1          = "uttarapadAdiH antaH apAt ca upasargAt muKam",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "उत्तरपदादिः अन्तः अपात् च उपसर्गात् मुखम्",
     padaccheda_dev        = "अपात् च",
     why_dev               = "(सूत्रम् 6.2.186) अपाच्च।",
     anuvritti_from        = ('6.1.1',),

@@ -4,6 +4,7 @@
 Padaccheda: वसु (लुप्तसप्तम्यन्तनिर्देशः) एक-अच्-आत्-घसाम्
 
 वस्वेकाजाद्घसाम् (7.2.67)
+Pāṭha: ashtadhyayi.com data.txt row i=72067 (Art. 14).
 """
 from __future__ import annotations
 
@@ -33,6 +34,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "vasvekAjAdGasAm",
     text_dev              = "वस्वेकाजाद्घसाम्",
+    samagra_slp1          = "aNgasya vasu ekAjAdGasAm ArDaDAtukasya iw valAdeH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "अङ्गस्य वसु एकाजाद्घसाम् आर्धधातुकस्य इट् वलादेः",
     padaccheda_dev        = "वसु (लुप्तसप्तम्यन्तनिर्देशः) एक-अच्-आत्-घसाम्",
     why_dev               = "(सूत्रम् 7.2.67) वस्वेकाजाद्घसाम्।",
     anuvritti_from        = ('7.1.1',),

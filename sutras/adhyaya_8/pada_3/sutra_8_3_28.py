@@ -4,6 +4,7 @@
 Padaccheda: ङ्‍-णोः कुक्-ट्टुक् शरि
 
 ङ्णोः कुक्टुक् शरि (8.3.28)
+Pāṭha: ashtadhyayi.com data.txt row i=83028 (Art. 14).
 """
 from __future__ import annotations
 
@@ -31,6 +32,8 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "NRoH kukwuk Sari",
     text_dev              = "ङ्णोः कुक्टुक् शरि",
+    samagra_slp1          = "padasya NRoH Sari kuk wuk vA",
+    samagra_dev           = "पदस्य ङ्णोः शरि कुक् टुक् वा",
     padaccheda_dev        = "ङ्‍-णोः कुक्-ट्टुक् शरि",
     why_dev               = "(सूत्रम् 8.3.28) ङ्णोः कुक्टुक् शरि।",
     anuvritti_from        = ('8.1.1',),
