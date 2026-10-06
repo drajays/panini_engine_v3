@@ -70,6 +70,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "जस्-शसोः शिः",
     why_dev        = "नपुंसक-अङ्गात् परयोः जस्/शस्-प्रत्यययोः ‘शि’-आदेशः (ज्ञानानि)।",
     anuvritti_from = ("6.4.1",),
+    apavada_of     = ("7.3.109",),   # neuter jas → śi removes the jas that jasi ca needs (vārīṇi, madhūni — not *vāreṇi); the guṇa is alvidhi, so śi is not sthānivat jas (1.1.56)
     cond           = cond,
     act            = act,
 )

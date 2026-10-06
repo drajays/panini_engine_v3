@@ -16,6 +16,16 @@
       "weight": 216
     },
     {
+      "source": "1.4.14",
+      "target": "1.4.18",
+      "weight": 201
+    },
+    {
+      "source": "1.4.18",
+      "target": "1.4.103",
+      "weight": 201
+    },
+    {
       "source": "1.2.45",
       "target": "4.1.2",
       "weight": 192
@@ -44,16 +54,6 @@
       "source": "8.2.66",
       "target": "8.3.15",
       "weight": 165
-    },
-    {
-      "source": "1.4.14",
-      "target": "1.4.18",
-      "weight": 161
-    },
-    {
-      "source": "1.4.18",
-      "target": "1.4.103",
-      "weight": 161
     },
     {
       "source": "1.3.8",
@@ -179,16 +179,6 @@
       "source": "1.3.4",
       "target": "1.3.7",
       "weight": 41
-    },
-    {
-      "source": "1.4.14",
-      "target": "1.4.16",
-      "weight": 40
-    },
-    {
-      "source": "1.4.16",
-      "target": "1.4.103",
-      "weight": 40
     },
     {
       "source": "6.1.78",
@@ -506,6 +496,11 @@
       "weight": 9
     },
     {
+      "source": "7.2.102",
+      "target": "1.4.18",
+      "weight": 9
+    },
+    {
       "source": "1.4.103",
       "target": "7.1.15",
       "weight": 8
@@ -558,11 +553,6 @@
     {
       "source": "7.1.54",
       "target": "6.4.3",
-      "weight": 7
-    },
-    {
-      "source": "7.2.102",
-      "target": "1.4.18",
       "weight": 7
     },
     {
@@ -826,11 +816,6 @@
       "weight": 2
     },
     {
-      "source": "1.4.16",
-      "target": "7.3.104",
-      "weight": 2
-    },
-    {
       "source": "1.4.17",
       "target": "7.3.103",
       "weight": 2
@@ -843,6 +828,11 @@
     {
       "source": "1.4.18",
       "target": "7.1.15",
+      "weight": 2
+    },
+    {
+      "source": "1.4.18",
+      "target": "7.3.104",
       "weight": 2
     },
     {
@@ -893,11 +883,6 @@
     {
       "source": "6.1.97",
       "target": "8.3.59",
-      "weight": 2
-    },
-    {
-      "source": "7.2.102",
-      "target": "1.4.16",
       "weight": 2
     },
     {

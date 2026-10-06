@@ -10,7 +10,7 @@
     {
       "fire_count": 501,
       "hub_type": "broadcast",
-      "in_degree": 4,
+      "in_degree": 3,
       "out_degree": 28,
       "sutra_id": "1.4.103"
     },

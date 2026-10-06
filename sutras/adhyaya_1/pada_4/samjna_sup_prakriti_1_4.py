@@ -68,6 +68,10 @@ def raw_final_is_hal_s(raw: str) -> bool:
     return last == "s" and last in HAL_DEV
 
 
+_VIBHAKTI_4_1_2 = frozenset({"su~", "O", "jas", "am", "OW", "Sas", "wA", "ByAm", "Bis", "Ne", "Byas", "Nasi", "Nas", "os", "Am", "Ni", "sup",
+                             "su", "Os", "As", "jas~", "Sas~"})
+
+
 def is_siti_pada_context(pr: Term, anga: Term) -> bool:
     """**1.4.16** — *siti* + *asarvanāmasthāna* *svādi* (*ca* extends **1.4.14** *pada*)."""
     if "sup" not in pr.tags or "anga" not in anga.tags:
@@ -75,6 +79,10 @@ def is_siti_pada_context(pr: Term, anga: Term) -> bool:
     if is_sarvanamasthana_sup(pr, anga):
         return False
     raw = pr.meta.get("upadesha_slp1") or ""
+    # siti = the affix has an *it* s. The s of a 4.1.2 vibhakti is never it (1.3.4 na vibhaktau tusmāḥ: jas, śas, os, bhyas,
+    # ṅas …): os is a bha-trigger (rājñoḥ), not a pada-trigger. (A non-vibhakti affix tagged sup, e.g. yus, still is sit.)
+    if raw in _VIBHAKTI_4_1_2:
+        return False
     if not raw_final_is_hal_s(raw):
         return False
     return yaci_onset_strict_siti(raw)
