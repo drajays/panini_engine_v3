@@ -11,6 +11,7 @@ Not blockers. Add one line per item: area · what · evidence · what is needed.
 - Intermittent: hrage~ / fDu~ liṭ lost 6.1.8 once in one ledger_recheck run; a full-suite run hung once at bhū laG-2-2. Not reproducible (12 reruns, 12 hash seeds).
 - SK §43: 40 gate-only sūtras (docs/SK43_COVERAGE.md): prefix-dependent ṣatva/ṇatva (8.3.117/118, 8.4.14), liṭ samprasāraṇa of vye/hve (6.1.15–19, 37–40) — verified implementable, correct numbers in PARKED_ISSUES_RESOLVED.md.
 - Stale recipe pipeline disagrees with the (correct) loop for ajādi ṇijanta caṅ (awwa~) — recipe is being retired, ignore.
+- Dhātu svara (udātta/anudātta/svarita) reconstructed in reverse from `pada_label_dev` + structural ṅit/ñit (1.3.11/1.3.12/1.3.72/1.3.78), additive only: `data/inputs/dhatu_svara_reconstructed.json` (docs/DHATU_SVARA_RECONSTRUCTION.md). 4 flagged anomalies need a human/brain re-check: BvAdi_nIY (नीञ् labeled परस्मैपदी despite trailing ञ्), and 3 rows (BvAdi_950/hfY/zwuY) missing `pada_label_dev` entirely. The live 1.3.12/1.3.72/1.3.78 mechanism is untouched — swapping it to read this reconstruction instead of `pada_label_dev` is the larger, still-parked project.
 
 ## subanta (from the 9,005-stem ashtadhyayi.com gold sweep, 2026-10-06; harness = bench/ashtadhyayi_gold.py --kind subanta)
 Remaining differences are almost all *not* missing sūtras but missing stem metadata. Each needs a stem-origin input (like `ugit`, `tfc`, `han_dhatu`) or samāsa/upasarga info:
