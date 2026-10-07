@@ -100,5 +100,15 @@ def test_ugit_at_stems_7_1_70_6_4_14_8_2_23():  # भवान् / भवन्
     assert f.index("7.1.70") < f.index("6.4.14") < f.index("6.1.68") < f.index("8.2.23")
 
 
-def test_ugit_is_an_input_not_a_guess():  # without the tag the stem is an ordinary a-t stem (7.1.70 needs ugit)
-    assert derive("Bavat", 1, 2).flat_dev() == "भवतौ"
+def test_ugit_is_a_declared_origin_fact_not_a_guess():
+    # data/inputs/subanta_krt_origin_lexicon.json now declares Bavat's origin
+    # (BU+śatṛ) directly, so the caller no longer has to pass ugit=True by
+    # hand — the lexicon is the "input", not a per-call flag (Lexicon
+    # architecture; see docs/LEXICON_ARCHITECTURE.md). The flag still exists
+    # for a stem the lexicon doesn't cover — without the lexicon AND without
+    # the flag, an a-t stem gets no nuṃ (an ordinary, non-ugit stem).
+    assert derive("Bavat", 1, 2).flat_dev() == "भवन्तौ"
+    from engine.registries.subanta_origin_lookup import is_known_stem
+    assert not is_known_stem("kftimat")                               # not in the lexicon
+    assert derive("kftimat", 1, 2).flat_dev() != "कृतिमन्तौ"            # so no flag -> plain stem (no nuṃ)
+    assert derive("kftimat", 1, 2, ugit=True).flat_dev() == "कृतिमन्तौ"  # the flag still works for unlisted stems

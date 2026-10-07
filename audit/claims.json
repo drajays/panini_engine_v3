@@ -189,5 +189,21 @@
   "status": "released",
   "hotspots": [],
   "updated": 1791336324.1905658
+ },
+ {
+  "id": "lexicon-subanta-origin",
+  "agent": "claude",
+  "scope": [
+   "pipelines/subanta.py",
+   "engine/registries/subanta_origin_lookup.py",
+   "data/inputs/subanta_krt_origin_lexicon.json",
+   "bench/ashtadhyayi_gold.py",
+   "tests/unit/test_subanta_origin_lexicon.py",
+   "docs/LEXICON_ARCHITECTURE.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1791337038.412791
  }
 ]

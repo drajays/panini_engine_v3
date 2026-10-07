@@ -832,6 +832,17 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
         matra_prathama_2_3_46=matra_prathama_2_3_46,
         nAmadheya_vrddha_term_indices=nAmadheya_vrddha_term_indices,
     )
+    # Lexicon-declared origin (data/inputs/subanta_krt_origin_lexicon.json) is
+    # consulted first; an explicit caller flag (still honoured for stems the
+    # lexicon doesn't cover yet) only ADDS a True, never overrides a declared
+    # False (e.g. pitṛ is declared tfc=False — a kinship noun, not a tṛc
+    # agent noun — so a stray tfc=True from an old call site can't relitigate
+    # that). See engine/registries/subanta_origin_lookup.py.
+    from engine.registries.subanta_origin_lookup import origin_flags
+    lex = origin_flags(stem_slp1)
+    ugit = lex.get("ugit", ugit)
+    tfc = lex.get("tfc", tfc)
+    han_dhatu = lex.get("han_dhatu", han_dhatu)
     if anvadesha:
         s.terms[0].tags.add("anvadesha")
     if ugit:

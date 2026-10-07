@@ -1,0 +1,20 @@
+{
+  "_comment": "Structured origin facts for prātipadika stems the subanta pipeline cannot derive its own history for (pipelines/subanta.derive() takes a bare stem string, not a Term with provenance). Each entry declares WHERE the stem came from (root + kṛt-pratyaya / samāsa), not a guessed surface property. Consumed by engine/registries/subanta_origin_lookup.py; falls back to bench/ashtadhyayi_gold.py's suffix heuristic only for stems not listed here. See docs/LEXICON_ARCHITECTURE.md.",
+  "entries": {
+    "Bavat": {"root": "BU", "krt": "SatfL", "flags": {"ugit": true}, "note": "BU + zatf (asti) -> Bavat; 7.1.70 udAharaNa"},
+    "guRavat": {"root": "guRa", "krt": "matup", "flags": {"ugit": true}, "note": "guRa + matup -> guRavat; test_idam_strI_sarvanama_paradigms"},
+    "Bavitf": {"root": "BU", "krt": "tfc", "flags": {"tfc": true}, "note": "BU + tfc (RvultfcO 3.1.133) -> Bavitf; test_gita_gap_fixes"},
+    "kartf": {"root": "kf", "krt": "tfc", "flags": {"tfc": true}, "note": "kf + tfc -> kartf (SK udAharaNa for 6.4.11)"},
+    "dAtf": {"root": "dA", "krt": "tfc", "flags": {"tfc": true}, "note": "dA + tfc -> dAtf"},
+    "netf": {"root": "nI", "krt": "tfc", "flags": {"tfc": true}, "note": "nI + tfc -> netf"},
+    "Satruhan": {"samasa": "Satru+han", "flags": {"han_dhatu": true}, "note": "a han-kvip compound (3.2.87), not a mere -han spelling; test_gita_gap_fixes"},
+    "SreyAMs": {"root": "Sri", "krt": "IyasuN", "flags": {"ugit": true}, "note": "Sri + IyasuN -> SreyAMs; 7.1.70 udAharaNa (zreyAn zreyAMsO)"},
+    "pacat": {"root": "paca~", "krt": "Satf", "flags": {"ugit": true}, "note": "pac + zatf -> pacat; 7.1.70 udAharaNa"},
+    "pitf": {"root": null, "krt": null, "flags": {"tfc": false}, "note": "kinship noun (7.1.94 apavAda), NOT a tfc agent noun despite the -tf spelling -- the suffix-heuristic's own _NOT_TFC exception, declared properly instead of blocklisted"},
+    "mAtf": {"root": null, "krt": null, "flags": {"tfc": false}, "note": "kinship noun, not tfc -- see pitf"},
+    "BrAtf": {"root": null, "krt": null, "flags": {"tfc": false}, "note": "kinship noun, not tfc -- see pitf"},
+    "jAmAtf": {"root": null, "krt": null, "flags": {"tfc": false}, "note": "kinship noun, not tfc -- see pitf"},
+    "duhitf": {"root": null, "krt": null, "flags": {"tfc": false}, "note": "kinship noun, not tfc -- see pitf"},
+    "naptf": {"root": null, "krt": null, "flags": {"tfc": false}, "note": "kinship noun, not tfc -- see pitf"}
+  }
+}

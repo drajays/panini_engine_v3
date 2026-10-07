@@ -95,13 +95,19 @@ def subanta_jobs(sample: int | None, seed: int):
 
 
 # The gold list gives stems, not derivations. A stem string carries no history (tests/unit/test_idam_strI_sarvanama_paradigms.py:
-# ugit is an input, not a guess), so the *harness* supplies the origin flags from the stem's shape — it is the test's lexicon.
+# ugit is an input, not a guess) — data/inputs/subanta_krt_origin_lexicon.json declares the real origin (root + kṛt-pratyaya)
+# for the stems it covers; pipelines.subanta.derive() already consults it internally, so passing these flags here is a no-op
+# for a listed stem (the lexicon wins) and only still matters as a fallback *guess* for the thousands of stems the hand-
+# curated lexicon doesn't cover yet (see docs/LEXICON_ARCHITECTURE.md — this is the known-remaining shortcut, not a new one):
 #   ugit (7.1.70): matup/vatup (-mat, -vat), -īyas (īyasun), -ivas (kvasu), vidvas.
-#   tfc (6.4.11): tṛc/tṛn agent nouns — -tṛ/-ṭṛ, except the kinship nouns of 7.1.94.
+#   tfc (6.4.11): tṛc/tṛn agent nouns — -tṛ/-ṭṛ, except the kinship nouns of 7.1.94 (declared tfc=False in the lexicon).
 _NOT_TFC = ("pitf", "mAtf", "BrAtf", "jAmAtf", "duhitf", "naptf")
 
 
 def _origin_flags(stem: str) -> dict:
+    from engine.registries.subanta_origin_lookup import is_known_stem, origin_flags
+    if is_known_stem(stem):
+        return origin_flags(stem)
     return {"ugit": stem.endswith(("mat", "vat", "Iyas", "ivas", "vidvas")),
             "tfc": stem.endswith(("tf", "wf")) and not stem.endswith(_NOT_TFC)}
 

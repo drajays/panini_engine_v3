@@ -164,7 +164,10 @@ def test_trc_stems_6_4_11_with_the_tfc_input():
     cells = ["1-1", "1-2", "1-3", "2-1", "2-3", "5-1", "6-3", "8-1", "8-2"]
     assert [sub("Bavitf", *map(int, c.split("-")), tfc=True).flat_dev() for c in cells] == \
         ["भविता", "भवितारौ", "भवितारः", "भवितारम्", "भवितॄन्", "भवितुः", "भवितॄणाम्", "भवितः", "भवितारौ"]
-    assert sub("Bavitf", 1, 2).flat_dev() == "भवितरौ"          # without the origin tag the stem is a plain ṛ-stem
+    # Bavitf's origin (BU+tṝc) is now declared in data/inputs/subanta_krt_origin_lexicon.json,
+    # so the caller no longer has to pass tfc=True (Lexicon architecture; docs/LEXICON_ARCHITECTURE.md).
+    assert sub("Bavitf", 1, 2).flat_dev() == "भवितारौ"
+    assert sub("kftimatf", 1, 2).flat_dev() == "कृतिमतरौ"       # not in the lexicon: still a plain ṛ-stem without the flag
 
 
 def test_named_stems_of_6_4_11_need_no_tag():
