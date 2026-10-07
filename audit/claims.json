@@ -176,5 +176,18 @@
   "status": "released",
   "hotspots": [],
   "updated": 1791305639.2776866
+ },
+ {
+  "id": "sutra-7-3-84-sapta-svaritet",
+  "agent": "claude",
+  "scope": [
+   "sutras/adhyaya_7/pada_3/sutra_7_3_84.py",
+   "tests/unit/test_7_3_84_sapta_svaritet_vibhasha.py",
+   "docs/PARKED_ISSUES.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1791336324.1905658
  }
 ]

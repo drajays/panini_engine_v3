@@ -240,6 +240,20 @@ def _ngit_vikarana_own_guna(state: State) -> int | None:
     return di if _vikarana_ik_eligible(state, di) else None
 
 
+_SAPTA_SVARITET_UPADHA_GUNA_VIBHASHA = frozenset({"fRu~", "tfRu~", "kziRu~"})
+_SAPTA_SVARITET_VIBHASHA_ID = "7.3.84_sapta_svaritet_upadha_guna"
+
+
+def _sapta_svaritet_upadha_root(d0) -> bool:
+    """ऋणु/तृणु/क्षिणु (तनादि): SK (अथ सप्त स्वरितेतः, 24079) gives दोनों रूप for these
+    — ऋणोति/अर्णोति, तृणोति/तर्णोति, क्षिणोति/क्षेणोति — citing the paribhāṣā
+    'संज्ञापूर्वको विधिरनित्यः': आत्रेयादयः treat this root-vowel guṇa as अनित्य
+    (optional), अन्ये as नित्य (obligatory). तनु/सनु/क्षणु/घृणु/वनु/मनु (same
+    "sapta svaritet" set) show no such pair in SK — not included here.
+    Source: upstream/sutraani/kaumudi.txt i=24079 (Siddhāntakaumudī)."""
+    return (d0.meta.get("upadesha_slp1") or "").strip() in _SAPTA_SVARITET_UPADHA_GUNA_VIBHASHA
+
+
 def cond(state: State) -> bool:
     from sutras.adhyaya_7.pada_3.sutra_7_3_86 import _vij_it_kit
     if _vij_it_kit(state):
@@ -285,6 +299,20 @@ def cond(state: State) -> bool:
         # कुर्यात्, not करुयात्/कर्+उ+यात्. Flag set/cleared around
         # _apply_vikarana in _derive_liG.
         if state.meta.get("liG_yasut_expected"):
+            return False
+        if _sapta_svaritet_upadha_root(d0) and not d0.meta.get("anga_guna_7_3_84"):
+            # वा (SK 24079, आत्रेयादयः): decide + record here, not in act(), so a
+            # decline leaves the form unchanged *and* cond() reports no firing —
+            # a VIDHI that "fires but changes nothing" trips R1 (engine/r1_check.py).
+            from engine.vikalpa import policy_choice
+            from engine.trace   import make_blocked_step, GATE_VIBHASHA
+            if policy_choice(_SAPTA_SVARITET_VIBHASHA_ID, True):
+                return True
+            d0.meta["anga_guna_7_3_84"] = True
+            state.trace.append(make_blocked_step(
+                _SAPTA_SVARITET_VIBHASHA_ID, "VIBHASHA", "विभाषा", state.flat_slp1(),
+                "सप्त स्वरितेतः (ऋणु/तृणु/क्षिणु): उपधा-गुणः विकल्पेन (SK 24079)",
+                GATE_VIBHASHA))
             return False
         return True
     # No IK in dhātu (consonant-final tanādi like van, tan): fire on vikaraṇa u.
@@ -336,6 +364,16 @@ def act(state: State) -> State:
         # No IK in dhātu (e.g. van, tan): fire on tanādi u-vikaraṇa directly
         if _tanadi_vikarana_ik_eligible(state, di):
             _apply_guna_to_dhatu(state.terms[di + 1])
+        return state
+    if _sapta_svaritet_upadha_root(d0):
+        # cond() already confirmed the choice is "apply" (a decline returns False
+        # from cond() itself, so act() is never reached for that branch).
+        from engine.trace import make_applied_step
+        form = state.flat_slp1()
+        _apply_guna_to_dhatu(d0)
+        state.trace.append(make_applied_step(
+            _SAPTA_SVARITET_VIBHASHA_ID, "VIBHASHA", "विभाषा", form, state.flat_slp1(),
+            "सप्त स्वरितेतः (ऋणु/तृणु/क्षिणु): उपधा-गुणः विकल्पेन (SK 24079)"))
         return state
     _apply_guna_to_dhatu(d0)
     return state
