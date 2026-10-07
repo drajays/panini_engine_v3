@@ -18,6 +18,25 @@ Next (per docs/PARKED_ISSUES_RESOLVED.md item g, citations already in hand): 8.3
 6.1.15–19, 37–40 (prefix ṣatva/ṇatva + vye/hve/ve/vay liṭ samprasāraṇa) — several are gate-only placeholders
 today (e.g. 6.1.38/6.1.39 just set paribhāṣā flags, no real phonology).
 
+## 2026-10-07 (b/g/lexicon pass — user directive "do this")
+**Item (b) CLOSED.** Found the real citation: SK upstream/sutraani/kaumudi.txt i=24079 ("अथ सप्त स्वरितेतः") —
+ऋणु/तृणु/क्षिणु (3 of the 7 svaritet tanādi roots) get dual forms (ऋणोति/अर्णोति etc.), citing "संज्ञापूर्वको
+विधिरनित्यः" (आत्रेयादयः: optional; अन्ये: obligatory). Root cause: `sutra_7_3_84.py`'s "root has its own ik
+vowel" branch guṇa'd unconditionally, no kṅit/apit check — fixed with a vibhāṣā fork scoped to exactly these
+3 roots via `engine.vikalpa` (8b7bf26). Verified against SK directly and against the original loṭ-2sg
+comparison. Full suite green.
+**Item (g): scope corrected, not implemented.** 6.1.15/17 are already real (वच्/स्वप्/यजादि). The actual target
+is 2.4.41 + 6.1.38–40 (वे/वय्/वेञ् in liṭ) — but found a real risk first: 6.1.37 is a general-purpose niyama
+(its own examples are युवन्-declension, unrelated), and 6.1.40's SK examples (ववौ, no vayādeśa) don't match
+2.4.41's वे\Y examples (उवाय) — likely two homonymous roots both traditionally cited वेञ्. Left as gate-only
+rather than implement against a possibly-wrong root ID (b1730de). Needs the homonym resolved first.
+**Lexicon architecture: first bounded slice landed.** `data/inputs/subanta_krt_origin_lexicon.json` +
+`engine/registries/subanta_origin_lookup.py` replace the `ugit`/`tfc`/`han_dhatu` caller flags and
+`bench/ashtadhyayi_gold.py`'s spelling-suffix guess with declared per-stem origin facts (root+kṛt-pratyaya),
+for the 15 stems currently listed (9c901d6). `docs/LEXICON_ARCHITECTURE.md` lays out what's NOT done: no
+Term-level upasarga/samāsa boundary tracking, no 6.4.77–83/8.4.58 changes, lexicon coverage is tiny (15
+stems vs. the gold sweep's ~250 śatṛ/-vat/-tṛ cells) — all real, bounded follow-on work.
+
 **Plan of record:** `docs/SUTRA_COVERAGE_100_PLAN.md` (v2) · **Law:** `CONSTITUTION.md` · **Program:** `ROADMAP.md`
 **See it:** double-click `Panini Engine.command` → `/coverage` (confident sūtras by pāda; live recipe-free derivation
 of nouns and laṭ verbs). Menu `c` refreshes the numbers. CLI: `make confident`, `make autonomy`.
