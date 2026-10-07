@@ -1,5 +1,16 @@
 # Dhātu svara (udātta/anudātta/svarita), reconstructed in reverse
 
+> **⚠ Circular with respect to `pada_label_dev`. Never a `cond()` input.**
+> Every `reconstructed_svara` below was computed *from* `pada_label_dev`
+> (plus structural ṅit/ñit). Wiring it into 1.3.12/1.3.72/1.3.78's
+> `cond()`/`act()` to re-derive `pada` would not be a structural fix — it
+> would be `pada_label_dev` re-deriving itself through one extra hop,
+> indistinguishable from today's lookup except harder to audit (Article 0:
+> "a classical scholar could audit line-by-line"). It becomes a legitimate
+> `cond()` input only after `reconstructed_svara` is replaced by a svara
+> read from the brain's real accented upadeśa, independently of
+> `pada_label_dev` — see Caveat 1 below.
+
 **Date:** 2026-10-07
 **Scope:** `data/inputs/dhatu_svara_reconstructed.json`, built by
 `scripts/derive_dhatu_svara_reconstructed.py` from

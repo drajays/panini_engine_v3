@@ -139,6 +139,16 @@ def _reconstruct(entry: dict) -> dict:
     }
 
 
+_WARNING = (
+    "CIRCULAR WRT pada_label_dev — DO NOT wire into 1.3.12/1.3.72/1.3.78 cond()/act(). "
+    "Every reconstructed_svara here was computed FROM pada_label_dev (plus structural "
+    "ngit/yit); feeding it back to re-derive pada is pada_label_dev re-deriving itself "
+    "through an extra hop, not an independent structural check. It only becomes a "
+    "legitimate cond() input once it is replaced by svara read from the brain's real "
+    "accented upadesha (see docs/DHATU_SVARA_RECONSTRUCTION.md Caveats)."
+)
+
+
 def _payload() -> dict:
     src = json.loads(SRC.read_text(encoding="utf-8"))
     rows = [_reconstruct(e) for e in src["entries"]]
@@ -157,6 +167,7 @@ def _payload() -> dict:
                    "pada_label_dev + structural ṅit/ñit, per 1.3.11/1.3.12/1.3.72/1.3.78",
         "_source": str(SRC.relative_to(ROOT)),
         "_method": "docs/DHATU_SVARA_RECONSTRUCTION.md",
+        "_warning": _WARNING,
         "_stats": {"by_pada_and_basis": stats, "by_confidence": confidence_counts, "total": len(rows)},
         "entries": rows,
     }
