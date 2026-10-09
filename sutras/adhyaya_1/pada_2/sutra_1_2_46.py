@@ -24,6 +24,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.lopa_ghost import term_sup_phonetically_live
+from engine import origin
 from engine.state import State
 
 
@@ -406,6 +407,11 @@ def act(state: State) -> State:
                 t.tags.add("prātipadika")
             if "taddhita" in t.tags or "krt" in t.tags:
                 t.tags.add("prātipadika")
+        # The stem now *is* a prātipadika because of its last kṛt/taddhita: that pratyaya (its upadeśa and the it-letters the real
+        # it-prakaraṇa took from it) and the dhātu are what 7.1.70 / 6.4.11 / 6.4.12 later read (engine/origin.py, AMENDMENT 22).
+        _rec = origin.record_from_terms(state.terms)
+        for t in state.terms:
+            t.tags |= _rec
         # Do NOT return: specific glass-box branches may need to set their
         # own audit registry flags (e.g. 1.2.46_sAlIya_avayava).
     # Case C: record prātipadika-saṃjñā for dik compound (structure unchanged).

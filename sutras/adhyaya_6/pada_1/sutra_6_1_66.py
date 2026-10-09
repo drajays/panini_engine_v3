@@ -20,6 +20,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine import origin
 from engine.vareya_1_1_58 import (
     aca_sthanivat_blocks_yakaralopa,
     is_vyor_vali_following,
@@ -35,7 +36,7 @@ def _find_tfc_aprkta(state: State):
         return None
     ang = state.terms[0]
     sup = state.terms[-1]
-    if "krt_tfc" not in ang.tags or "prātipadika" not in ang.tags or "sup" not in sup.tags:
+    if not origin.is_trc_anta(ang) or "prātipadika" not in ang.tags or "sup" not in sup.tags:
         return None
     if ang.meta.get("apṛkta_hal_lopa_6_1_66_done"):
         return None

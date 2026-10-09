@@ -20,6 +20,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine import origin
 from phonology    import mk
 from phonology.varna import AC_DEV
 
@@ -28,7 +29,7 @@ def _eligible(state: State) -> bool:
     if len(state.terms) < 2:
         return False
     anga, pr = state.terms[-2], state.terms[-1]
-    if "anga" not in anga.tags or "ugit" not in anga.tags:
+    if "anga" not in anga.tags or not origin.is_ugit(anga):
         return False
     if "dhatu" in anga.tags:
         return False

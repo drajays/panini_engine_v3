@@ -375,13 +375,6 @@ def derive_anya_pullinga(vibhakti: int, vacana: int) -> State:
 
 # A final -han is the root हन् (kvip / kvun compounds: ब्रह्महन्, वृत्रहन्, शत्रुहन्, वीरहन्, तमिस्रहन्) except the few words that merely
 # end that way: अहन् (day) and its -āhan compounds (दीर्घाहन्), and प्लीहन्. A lexical fact, so a short named list, not a spelling rule.
-_HAN_NOT_THE_ROOT = frozenset({"ahan", "plIhan"})
-
-
-def _han_is_root(stem_slp1: str) -> bool:
-    return stem_slp1.endswith("han") and stem_slp1 not in _HAN_NOT_THE_ROOT and not stem_slp1.endswith("Ahan")
-
-
 # Structural step in ``run_subanta_post_4_1_2`` (not a sūtra id).
 PADA_MERGE_STEP = "__PADA_MERGE__"
 
@@ -789,22 +782,14 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
            nAmadheya_vrddha_term_indices: tuple[int, ...] | frozenset[int] | None = None,
            autonomous_scanner: bool | None = None,
            anvadesha: bool = False,
-           ugit: bool = False,
-           han_dhatu: bool = False,
-           tfc: bool = False,
            ) -> State:
     """
     Aṣṭādhyāyī-kram pipeline.  Returns final state with complete trace.
 
-    ``ugit`` — the stem is *ugit* (it came from matup / vatup / śatṛ / ḍavatu …: भवत्, गुणवत्, पचत्); tags the stem so
-    **7.1.70** gives it nuṃ. Derivation history is not in a stem string, so this is an input, like ``anvadesha``.
-
-    ``tfc`` — the stem is a tṛc / tṛn agent noun (कर्तृ, दातृ, भवितृ): 6.4.11 lengthens its upadhā before the strong sups
-    (कर्तारम्, but पितरम् — पितृ is not a tṛc stem). Origin, so an input like ``ugit``.
-
-    ``han_dhatu`` — the stem ends in the *root* हन् (a kvip compound, 3.2.87: वृत्रहन्, शत्रुहन्): 6.4.12 limits its upadhā-dīrgha
-    to śi / su. A final ``han`` is taken to be the root except for the few words that merely end that way (अहन्, -आहन्, प्लीहन्);
-    pass ``han_dhatu=True`` for any other case.
+    A stem's origin (made by matup / tṛc / kvip, from the dhātu han …) is **not** an argument: it comes from the Lexicon
+    (``data/inputs/subanta_lexicon.json``, AMENDMENT 22). ``engine.lexicon.compose`` runs the entry's components through the
+    real it-prakaraṇa and leaves a vyutpatti record on the stem (``engine/origin.py``); 7.1.70 (ugit), 6.4.11 (tṛc), 6.4.12/13
+    (han) read that record. A stem with no entry is an avyutpanna prātipadika (1.2.45).
 
     ``anvadesha`` — the stem is in *anvādeśa* (2.4.32: a second mention, new predicate); tags the stem so
     **2.4.34** can give इदम् / एतद् → एन (एनम्, एनेन, एनयोः).  A fact about the sentence, so an input.
@@ -827,19 +812,20 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
         from sutras.adhyaya_1.pada_1.sutra_1_1_27 import _load_sarvadi
         if stem_slp1[:-1] + "a" in _load_sarvadi():
             stem_slp1 = stem_slp1[:-1] + "a"
+    from engine import lexicon
+    entry = lexicon.lookup(stem_slp1, linga)
+    origin_record: set[str] = set()
+    if entry is not None:
+        _surface, origin_record = lexicon.compose(entry)       # LexiconGap if the analysis does not reproduce the stem (Art. 17/18)
     s = build_initial_state(
         stem_slp1, vibhakti, vacana, linga,
         matra_prathama_2_3_46=matra_prathama_2_3_46,
         nAmadheya_vrddha_term_indices=nAmadheya_vrddha_term_indices,
+        derived_pratipadika=entry is not None,
     )
+    s.terms[0].tags |= origin_record
     if anvadesha:
         s.terms[0].tags.add("anvadesha")
-    if ugit:
-        s.terms[0].tags.add("ugit")
-    if tfc:
-        s.terms[0].tags.add("krt_tfc")
-    if han_dhatu or _han_is_root(stem_slp1):
-        s.terms[0].tags.add("han_dhatu")
     # sakhī-class i-stem masculine: tag and set 7.1.92/7.1.93 arms
     _SAKHI_CLASS = {"sakhI", "sakhi"}
     if stem_slp1.strip() in _SAKHI_CLASS and linga == "pulliṅga":

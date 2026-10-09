@@ -32,6 +32,7 @@ from typing import List
 import sutras  # noqa: F401  (ensure registry loaded)
 
 from engine       import apply_rule
+from engine import origin
 from engine.state import State, Term, Varna
 from pipelines.it_prakarana import run_it_prakarana
 from pipelines.preflight_lopa_samjna import apply_preflight_luk_samjna_block
@@ -115,7 +116,7 @@ def _structural_merge_trc_pratipadika(state: State, *, upadesha_slp1: str) -> St
     prat = Term(
         kind="prakriti",
         varnas=all_varnas,
-        tags={"prātipadika", "anga", "krt_tfc"},
+        tags={"prātipadika", "anga"} | origin.record_from_terms(s.terms),   # tṛc/tṛn-anta is read off the live pratyaya Term (6.4.11)
         meta={
             "upadesha_slp1": upadesha_slp1,
         },

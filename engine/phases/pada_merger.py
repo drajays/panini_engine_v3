@@ -53,7 +53,6 @@ def pada_merge(state: State) -> None:
     keep_bha = any("bha" in t.tags for t in terms)
     keep_pratipadika = any("prātipadika" in t.tags for t in terms)
     keep_anga = any("anga" in t.tags for t in terms)
-    keep_krt_tfc = any("krt_tfc" in t.tags for t in terms)
     keep_an_pratipadika = any("an_pratipadika" in t.tags for t in terms)
     keep_sambuddhi = any("sambuddhi" in t.tags for t in terms)
     keep_ngi = any("ngi" in t.tags for t in terms)
@@ -94,8 +93,7 @@ def pada_merge(state: State) -> None:
         tags.add("prātipadika")
     if keep_anga:
         tags.add("anga")
-    if keep_krt_tfc:
-        tags.add("krt_tfc")
+    tags |= {g for t in terms for g in t.tags if g.startswith(("origin_pratyaya:", "origin_it:", "origin_dhatu:"))}   # vyutpatti record (engine/origin.py)
     if keep_an_pratipadika:
         tags.add("an_pratipadika")
     if keep_sambuddhi:

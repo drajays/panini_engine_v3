@@ -12,7 +12,7 @@ def test_7_3_110_replaces_final_f_before_sarvanamasthana_am() -> None:
     ang = Term(
         kind="prakriti",
         varnas=list(parse_slp1_upadesha_sequence("hotf")),
-        tags={"anga", "prātipadika", "krt_tfc"},
+        tags={"anga", "prātipadika", "origin_pratyaya:tfc"},
         meta={"upadesha_slp1": "hotf"},
     )
     am = Term(

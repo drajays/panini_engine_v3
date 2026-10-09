@@ -93,12 +93,13 @@ def test_ena_only_in_anvadesha_and_traced():
 
 def test_ugit_at_stems_7_1_70_6_4_14_8_2_23():  # भवान् / भवन्तौ / भवन्तम् / हे भवन् ; गुणवान्
     cells = [(1, 1), (1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (8, 1)]
-    assert [derive("Bavat", v, n, ugit=True).flat_dev() for v, n in cells] == \
-        ["भवान्", "भवन्तौ", "भवन्तः", "भवन्तम्", "भवतः", "भवता", "भवन्"]
-    assert derive("guRavat", 1, 1, ugit=True).flat_dev() == "गुणवान्"
-    f = _fired(derive("Bavat", 1, 1, ugit=True))
+    # ugit is not given: guṇavat's lexicon entry is guṇa + matup, the real it-prakaraṇa takes u (and p) from matu~p, and 7.1.70
+    # reads "an uk is it of the aṅga's pratyaya" (Nyāsa/Padamañjarī 7.1.70: aṅgam apy ugid eva)
+    assert [derive("guRavat", v, n).flat_dev() for v, n in cells] == \
+        ["गुणवान्", "गुणवन्तौ", "गुणवन्तः", "गुणवन्तम्", "गुणवतः", "गुणवता", "गुणवन्"]
+    f = _fired(derive("guRavat", 1, 1))
     assert f.index("7.1.70") < f.index("6.4.14") < f.index("6.1.68") < f.index("8.2.23")
 
 
-def test_ugit_is_an_input_not_a_guess():  # without the tag the stem is an ordinary a-t stem (7.1.70 needs ugit)
+def test_ugit_is_derived_not_given():  # a stem with no lexicon entry is an avyutpanna a-t stem: no pratyaya, no it-u, no 7.1.70
     assert derive("Bavat", 1, 2).flat_dev() == "भवतौ"

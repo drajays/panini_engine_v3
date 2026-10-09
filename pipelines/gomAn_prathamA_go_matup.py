@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from engine       import apply_rule
+from engine       import apply_rule, origin
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -33,7 +33,7 @@ def _structural_merge_gomat(s: State) -> State:
     merged = Term(
         kind="prakriti",
         varnas=all_varnas,
-        tags={"prātipadika", "anga", "pulliṅga"},
+        tags={"prātipadika", "anga", "pulliṅga"} | origin.record_from_terms(s.terms),   # ugit comes from matup's it-u (7.1.70), not a stamp
         meta={"upadesha_slp1": "gomat"},
     )
     before = s.flat_slp1()

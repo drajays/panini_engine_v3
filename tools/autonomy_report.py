@@ -46,6 +46,7 @@ class Run:
     offered: int = 0
     effective: int = 0
     blocked_at: str = ""
+    state: Any = None                # the tape the loop left (engine/lexicon.py reads the vyutpatti record from it)
 
 
 from engine.scheduler import effective_candidates  # noqa: E402,F401  (C2 moved it into the engine)
@@ -80,6 +81,7 @@ def run_autonomously(state: Any, expected: str, case: str, budget: int) -> Run:
     else:
         result.outcome = "diverged"
     result.surface = state.flat_slp1()
+    result.state = state
     if result.surface == expected:
         result.outcome = "reached"
     return result

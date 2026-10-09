@@ -21,6 +21,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine import origin
 from phonology    import mk
 from phonology.pratyahara import is_hrasva
 
@@ -30,7 +31,7 @@ def _eligible_cetan_path(state: State) -> bool:
         return False
     ang = state.terms[0]
     sup = state.terms[-1]
-    if "krt_tfc" not in ang.tags or "prātipadika" not in ang.tags or "sup" not in sup.tags:
+    if not origin.is_trc_anta(ang) or "prātipadika" not in ang.tags or "sup" not in sup.tags:
         return False
     if ang.meta.get("upadha_dirgha_6_4_11_done"):
         return False
@@ -47,7 +48,7 @@ def _eligible_cetan_path(state: State) -> bool:
     return True
 
 
-# 6.4.11's own enumeration (besides the tṛc / tṛn agent nouns, tagged ``krt_tfc``): स्वसृ नप्तृ नेष्टृ त्वष्टृ क्षत्तृ होतृ पोतृ प्रशास्तृ
+# 6.4.11's own enumeration (besides the tṛc / tṛn agent nouns, whose last pratyaya is tṛc/tṛn, engine/origin.py): स्वसृ नप्तृ नेष्टृ त्वष्टृ क्षत्तृ होतृ पोतृ प्रशास्तृ
 _NAMED_STEMS = frozenset({"svasf", "naptf", "nezwf", "tvazwf", "kzattf", "hotf", "potf", "praSAstf"})
 
 
@@ -59,7 +60,7 @@ def _eligible_hotr_prakriya_21(state: State) -> bool:
     sup = state.terms[-1]
     if "prātipadika" not in ang.tags or "sup" not in sup.tags:
         return False
-    if "krt_tfc" not in ang.tags and (ang.meta.get("upadesha_slp1") or "").strip() not in _NAMED_STEMS:
+    if not origin.is_trc_anta(ang) and (ang.meta.get("upadesha_slp1") or "").strip() not in _NAMED_STEMS:
         return False
     if "sarvanamasthana" not in sup.tags or "sambuddhi" in sup.tags:
         return False

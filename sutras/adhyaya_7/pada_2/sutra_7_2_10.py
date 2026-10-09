@@ -15,7 +15,7 @@ from engine.state import State
 
 # ārdhadhātuka val-initial affixes that would take iṭ by 7.2.35 (sya, tās,
 # sic, sīyuṭ); liṭ endings are not here — there 7.2.13 (krādi-niyama) decides.
-_VALADI_ARDHADHATUKA = frozenset({"sya", "tAs", "tAsi", "tAsi~", "sic", "sIyuw", "sIy"})
+_VALADI_ARDHADHATUKA = frozenset({"sya", "tAs", "tAsi", "tAsi~", "sic", "sIyuw", "sIy", "tfc", "tfn"})   # tṛc / tṛn are val-ādi ārdhadhātuka kṛt too
 
 
 def _anudatta_ekac_before_valadi(state: State) -> bool:

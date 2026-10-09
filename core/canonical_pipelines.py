@@ -801,7 +801,6 @@ def P00_ugit_pratipadika_prathama_sup_tail(s: State) -> State:
     from pipelines.subanta import _pada_merge
 
     t0 = s.terms[0]
-    t0.tags.add("ugit")
     t0.tags.add("prātipadika")
     t0.tags.add("anga")
     s.meta["vibhakti_vacana"] = "1-1"
@@ -850,6 +849,10 @@ def P00_ciY_ktavatu_nistha_prathama_tail(s: State) -> State:
     from pipelines.subanta import _pada_merge
 
     s = apply_rule("6.1.111", s)
+    from engine import origin  # noqa: PLC0415
+    _rec = origin.record_from_terms(s.terms)      # ktavatu~'s it-u (from the real it-prakaraṇa) is what 7.1.70 reads
+    for t in s.terms:
+        t.tags |= _rec
     _pada_merge(s)
     s.meta.pop("ktavatu_mfz_stuta_arm", None)   # ष्टुत्व now comes in the tripādī (8.4.41)
     return P00_ugit_pratipadika_prathama_sup_tail(s)

@@ -13,6 +13,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine import origin
 
 TAG = "sarvanamasthana"
 
@@ -53,7 +54,7 @@ def _eligible_prakriya_21_am(state: State) -> bool:
         return False
     ang = state.terms[-2]
     pr = state.terms[-1]
-    if "krt_tfc" not in ang.tags or "prātipadika" not in ang.tags:
+    if not origin.is_trc_anta(ang) or "prātipadika" not in ang.tags:
         return False
     if pr.kind != "pratyaya" or "sup" not in pr.tags:
         return False

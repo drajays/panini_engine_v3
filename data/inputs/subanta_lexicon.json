@@ -1,0 +1,1254 @@
+{
+ "_doc": "AMENDMENT 22 — Lexicon of stem vyutpatti. Written by tools/propose_vyutpatti.py; every entry reproduces its stem through engine.lexicon.compose. Lexical facts only (components); never a derived property.",
+ "version": 1,
+ "entries": [
+  {
+   "stem": "Ayuzmat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Ayuz"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "Ayuzmat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Ayuz"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "BAsvat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "BAs"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "Bagavat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Baga"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "Bartf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "BfY",
+     "dhatu_id": "01.1045"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "Bavitf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "BU",
+     "dhatu_id": "01.0001"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "DAtf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "Dew",
+     "dhatu_id": "01.1050"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "Danuzmat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Danuz"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "ISitf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "ISa~",
+     "dhatu_id": "02.0010"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "Palavat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Pala"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "Palavat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Pala"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "Saktimat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Sakti"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "SarkarAvat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "SarkarA"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "SarkarAvat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "SarkarA"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "Satruhan",
+   "linga": "pulliṅga",
+   "source": "Kāśikā 3.2.87 / 3.2.? śatruhan: han + kvip",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Satru"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "han",
+     "dhatu_id": "02.0002"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ]
+  },
+  {
+   "stem": "SiKAvat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "SiKA"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "SrImat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "SrI"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "SrImat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "SrI"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "Srotf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "Sru",
+     "dhatu_id": "01.1092"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "Srutavat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Sruta"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "Urmimat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Urmi"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "Urmimat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Urmi"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "Uzavat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Uza"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "Uzavat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Uza"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "ahaNkAravat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "ahaNkAra"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "ahaNkAravat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "ahaNkAra"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "balavat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "bala"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "budDimat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "budDi"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "dAtf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "dEp",
+     "dhatu_id": "01.1073"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "gantf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "gamx~",
+     "dhatu_id": "01.1137"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "garutmat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "garut"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "guRavat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "guRa"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "hantf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "hana~",
+     "dhatu_id": "02.0002"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "hartf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "hfY",
+     "dhatu_id": "01.1046"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "himavat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "hima"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "hotf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "hu",
+     "dhatu_id": "03.0001"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "jAgaritf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "jAgf",
+     "dhatu_id": "02.0067"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "jYAtf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "jYA",
+     "dhatu_id": "09.0043"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "jetf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "ji",
+     "dhatu_id": "01.0642"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "kARqavat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "kARqa"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "kamitf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "kamu~",
+     "dhatu_id": "01.0511"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "kartf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "kfY",
+     "dhatu_id": "05.0007"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "kretf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "qukrIY",
+     "dhatu_id": "09.0001"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "kriyAvat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "kriyA"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "kriyAvat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "kriyA"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "kzamitf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "kzamU~z",
+     "dhatu_id": "01.0510"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "lakzmIvat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "lakzmI"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "mAlyavat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "mAlya"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "mUrtimat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "mUrti"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "mUrtimat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "mUrti"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "mantf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "mana~",
+     "dhatu_id": "04.0073"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "naBasvat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "naBas"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "netf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "RIY",
+     "dhatu_id": "01.1049"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "paravat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "para"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "paravat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "para"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "puRyavat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "puRya"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "puRyavat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "puRya"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "puzpavat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "puzpa"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "rAjanvat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "rAjan"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "rAjanvat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "rAjan"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "rakzitf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "rakza~",
+     "dhatu_id": "01.0746"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "saNKyAvat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "saNKyA"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "sarasvat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "saras"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "savitf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "zUN",
+     "dhatu_id": "02.0025"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "sikatAvat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "sikatA"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "sikatAvat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "sikatA"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "smartf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "smf",
+     "dhatu_id": "01.0919"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "tamisrahan",
+   "linga": "pulliṅga",
+   "source": "han + kvip (tamisrahā 'destroyer of darkness')",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "tamisra"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "han",
+     "dhatu_id": "02.0002"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ]
+  },
+  {
+   "stem": "taqitvat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "taqit"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "unmAdavat",
+   "linga": "napuṃsaka",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "unmAda"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "unmAdavat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "unmAda"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "urasvat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "uras"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "vIrahan",
+   "linga": "pulliṅga",
+   "source": "Kāśikā 3.2.87 (vīrahan: han + kvip)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "vIra"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "han",
+     "dhatu_id": "02.0002"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ]
+  },
+  {
+   "stem": "vaktf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "vaca~",
+     "dhatu_id": "02.0058"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  },
+  {
+   "stem": "vftrahan",
+   "linga": "pulliṅga",
+   "source": "Kāśikā 3.2.87 brahmabhrūṇavṛtreṣu kvip",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "vftra"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "han",
+     "dhatu_id": "02.0002"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ]
+  },
+  {
+   "stem": "vidyAvat",
+   "linga": "pulliṅga",
+   "source": "matup 5.2.94 (+ 8.2.9 / 8.2.10 vatva)",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "vidyA"
+    },
+    {
+     "kind": "taddhita",
+     "upadesha": "matu~p",
+     "artha": "tadasyAstyasminniti"
+    }
+   ]
+  },
+  {
+   "stem": "yantf",
+   "linga": "pulliṅga",
+   "source": "tṛc 3.1.133 — the stem is generated from the dhātu by the loop",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "yama~",
+     "dhatu_id": "01.1031"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "tfc"
+    }
+   ]
+  }
+ ]
+}

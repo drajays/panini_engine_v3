@@ -27,13 +27,14 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine import origin
 from phonology    import mk
 
 
 def _niyama_stem(anga) -> bool:
     """6.4.12's four: -in, -han (the root हन्), -pūṣan, -aryaman."""
     flat = "".join(v.slp1 for v in anga.varnas)
-    return flat.endswith(("in", "pUzan", "aryaman")) or (flat.endswith("han") and "han_dhatu" in anga.tags)
+    return flat.endswith(("in", "pUzan", "aryaman")) or (flat.endswith("han") and origin.has_dhatu(anga, "han"))
 
 
 def _matches(state: State) -> bool:
