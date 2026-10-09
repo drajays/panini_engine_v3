@@ -1,0 +1,82 @@
+{
+ "BU/laT/13": {
+  "steps": 23,
+  "scanned": 91609,
+  "cond_calls": 14204,
+  "outcome": "reached",
+  "fired": 24,
+  "modules_touched": [
+   "P01",
+   "P02",
+   "P09",
+   "P11",
+   "P13",
+   "P14",
+   "P16",
+   "P17",
+   "P18",
+   "P19"
+  ],
+  "union_size": 1918,
+  "scanned_per_step": 3983.0
+ },
+ "BU/luG/13": {
+  "steps": 26,
+  "scanned": 103558,
+  "cond_calls": 17398,
+  "outcome": "reached",
+  "fired": 25,
+  "modules_touched": [
+   "P01",
+   "P02",
+   "P12",
+   "P13",
+   "P14",
+   "P16",
+   "P17",
+   "P18",
+   "P30",
+   "P32"
+  ],
+  "union_size": 1556,
+  "scanned_per_step": 3983.0
+ },
+ "gam/liT/13": {
+  "steps": 16,
+  "scanned": 63728,
+  "cond_calls": 11397,
+  "outcome": "reached",
+  "fired": 20,
+  "modules_touched": [
+   "P01",
+   "P02",
+   "P04",
+   "P08",
+   "P12",
+   "P13",
+   "P14",
+   "P17",
+   "P18"
+  ],
+  "union_size": 1432,
+  "scanned_per_step": 3983.0
+ },
+ "han/laT/11": {
+  "steps": 17,
+  "scanned": 67711,
+  "cond_calls": 10532,
+  "outcome": "reached",
+  "fired": 17,
+  "modules_touched": [
+   "P01",
+   "P02",
+   "P14",
+   "P16",
+   "P17",
+   "P18",
+   "P30"
+  ],
+  "union_size": 916,
+  "scanned_per_step": 3983.0
+ }
+}

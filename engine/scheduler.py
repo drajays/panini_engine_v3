@@ -285,6 +285,10 @@ def effective_candidates(candidates: List[str], state: State) -> List[str]:
     return keep
 
 
+# P0 (PRAKARANA_MACHINE_PLAN): per-process counters; read by tools/scan_stats.py. Observation only.
+SCAN_STATS = {"steps": 0, "scanned": 0, "cond_calls": 0}
+
+
 def enumerate_candidates(state: State) -> List[str]:
     """
     Return sūtra ids whose cond(state) fires on the current state and
@@ -307,7 +311,9 @@ def enumerate_candidates(state: State) -> List[str]:
     """
     out = []
     in_tripadi = state.tripadi_zone
+    SCAN_STATS["steps"] += 1
     for sid, rec in SUTRA_REGISTRY.items():
+        SCAN_STATS["scanned"] += 1
         if rec.sutra_type not in _LOOP_TYPES:
             continue
         if not _in_scheduler_phase(sid, state):
@@ -332,6 +338,7 @@ def enumerate_candidates(state: State) -> List[str]:
         if is_frozen_by_nipatana(rec.sutra_type, state):
             continue
         try:
+            SCAN_STATS["cond_calls"] += 1
             if rec.cond is not None and rec.cond(state):
                 out.append(sid)
         except (MemoryError, RecursionError):
