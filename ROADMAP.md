@@ -3,6 +3,9 @@
 *Written 2026-09-15. Every number below was measured on this repository today; §1 says how to
 reproduce each one.*
 
+> **2026-10-09 revision:** the prakaraṇa-wise machine (Pratyayabheda L1 · 13-stage L2 · adhikāra-scoped dispatch · completeness invariant) is planned in
+> [`docs/PRAKARANA_MACHINE_PLAN.md`](docs/PRAKARANA_MACHINE_PLAN.md) under Art. 23 (AMENDMENT 23). It is molded onto this roadmap, not a replacement: P0–P2 are measurement/data (no behaviour change); read it before Phase C.
+
 **Companion documents:** [`CONSTITUTION.md`](CONSTITUTION.md) (law) · [`docs/AMENDMENT_15.md`](docs/AMENDMENT_15.md) (Articles 15–19, proposed — the law this document assumes) · [`final_plan.md`](final_plan.md) (v4 engine internals).
 
 **What this document is.** The program: what "best" means in checkable terms, what the machine
