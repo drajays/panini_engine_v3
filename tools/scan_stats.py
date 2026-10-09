@@ -39,6 +39,11 @@ def main() -> dict:
         mods = {m for f in fired for m in prakarana.of(f)}
         s["fired"], s["modules_touched"] = len(fired), sorted(mods)
         s["union_size"] = len({x for m in mods for x in prakarana.members(m)})  # P2 upper bound on scan, if blocks were exact
+        sc = json.loads((ROOT / "data" / "inputs" / "adhikara_scope_index.json").read_text())["scope"]
+        heads = {h for f in fired for h in sc.get(f, [])}
+        s["heads_touched"] = len(heads)
+        # P1 shadow bound: free (ungoverned) sutras + members of the heads the derivation actually lived under
+        s["head_scoped_size"] = sum(1 for k, v in sc.items() if not v or heads & set(v))
         s["scanned_per_step"] = round(s["scanned"] / max(s["steps"], 1), 1)
         rows[f"{root}/{lak}/{pur}{vac}"] = s
     return rows

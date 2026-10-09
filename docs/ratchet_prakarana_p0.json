@@ -18,6 +18,8 @@
    "P19"
   ],
   "union_size": 1918,
+  "heads_touched": 12,
+  "head_scoped_size": 3587,
   "scanned_per_step": 3983.0
  },
  "BU/luG/13": {
@@ -39,6 +41,8 @@
    "P32"
   ],
   "union_size": 1556,
+  "heads_touched": 10,
+  "head_scoped_size": 3149,
   "scanned_per_step": 3983.0
  },
  "gam/liT/13": {
@@ -59,6 +63,8 @@
    "P18"
   ],
   "union_size": 1432,
+  "heads_touched": 11,
+  "head_scoped_size": 3160,
   "scanned_per_step": 3983.0
  },
  "han/laT/11": {
@@ -77,6 +83,8 @@
    "P30"
   ],
   "union_size": 916,
+  "heads_touched": 7,
+  "head_scoped_size": 2537,
   "scanned_per_step": 3983.0
  }
 }
