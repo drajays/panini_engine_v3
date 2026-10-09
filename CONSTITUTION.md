@@ -577,7 +577,8 @@ operation. The Kāśikā marks them अर्थनिर्देश, which are
 When two or more sūtras claim the same position, the winner is decided by
 Ladder 1, in order: pāṭha/anuvṛtti → asiddhatva → pratiṣedha → nipātana
 freeze → **vikalpa stop (fork)** → nitya → antaraṅga → apavāda → para
-(1.4.2) → pūrva → sakṛdgati → jñāpaka.
+(1.4.2) → pūrva → sakṛdgati → jñāpaka → **ācārya-prakriyā** (Art. 23 §2a;
+`not_modelled` until docs/PRAKARANA_MACHINE_PLAN.md P4/P5).
 
 The executable meta-rule book is Nāgeśa's **परिभाषेन्दुशेखर**, vendored as
 `data/inputs/paribhasha_shekhara.json` (full 133-paribhāṣā pāṭha from
@@ -648,8 +649,13 @@ copied into `cond()`. See `data/inputs/grantha_catalog.json`.
 
 ## Article 23 — Ācārya-prāmāṇya: concepts and conflict resolution
 
-> Added by **AMENDMENT 23** (see `docs/AMENDMENT_23.md`).
+> Added by **AMENDMENT 23** (see `docs/AMENDMENT_23.md`); §0, §2a and §6 widened by
+> **AMENDMENT 24** (see `docs/AMENDMENT_24.md`).
 
+0. **Basis.** Every runtime decision rests on the sūtras, the vṛtti (Art. 22 T7),
+   the vārttikas (T1) and the paribhāṣās (Paribhāṣenduśekhara, the Bhāṣya's
+   paribhāṣās), and its record names that basis. Nothing else may decide: not a
+   teacher's name, a surface form, a count, or an unnamed heuristic.
 1. **Two keys.** A claim about a *concept* (what a saṃjñā covers, how a block
    of sūtras is entered, in what order kāryas happen) or a *conflict
    resolution* (which of two sūtras wins, and why) is implemented only when
@@ -663,6 +669,12 @@ copied into `cond()`. See `data/inputs/grantha_catalog.json`.
    divided, ambiguous, or the ruling cannot be carried out mechanically),
    **Pushpa Dixit** decides. Where Neelesh Bodas differs from her, her reading
    is implemented and his is recorded as a declared conflict (Art. 15).
+   **§2a — further method.** Pushpa Dixit's method is also the final layer of
+   Art. 21's ladder (*ācārya-prakriyā*): when every modelled layer leaves two or
+   more candidates, the accepted concept cards decide (prakaraṇa block, stage
+   order, aṅga per pratyaya, same-stage asiddha). A card enters the engine only
+   as sūtra-grounded data; the decision record names the card and its sūtras,
+   never a person.
 3. **Override by fact only.** Her reading yields only to a clear fact: the
    pāṭha / anuvṛtti / adhikāra text itself, or an attested form (Art. 19). The
    Aṣṭādhyāyī data is then followed, and the card is marked `overruled` with
@@ -679,7 +691,9 @@ copied into `cond()`. See `data/inputs/grantha_catalog.json`.
    delimited by Pāṇini's own adhikāra heads (`adhikara_scope` in the sūtra's
    record) may decide which sūtras are *eligible*. It never reorders sūtras
    inside the block (Art. 3, Art. 21). Numeric sūtra-id ranges standing in for
-   blocks are replaced by adhikāra-scope records over time (a ratchet).
+   blocks are replaced by adhikāra-scope records over time (a ratchet). A block
+   may also be delimited by the anuvṛtti descent of a kārya word from a head
+   sūtra (e.g. नुम् from 7.1.58) — AMENDMENT 24.
 
 *Enforcement:* concept-card schema test (with the cards); Art. 3's
 `test_no_kaumudi_leakage.py` is unchanged.
