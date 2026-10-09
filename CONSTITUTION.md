@@ -71,7 +71,8 @@ The engine is **blind** in the following strict sense:
    - Surface Devanāgarī spelling of any Term
    - The target form being derived
    - Any file in `data/reference/`
-   - Kaumudī headings, ordering, or "prakaraṇa" labels
+   - Kaumudī headings, ordering, or Kaumudī "prakaraṇa" labels (a block
+     delimited by Pāṇini's own adhikāra heads is scope data — Art. 23 §6)
 
 A static test (`tests/constitutional/test_no_vibhakti_read_in_cond.py`)
 refuses commits that violate rule (3).
@@ -219,7 +220,7 @@ engine paths that bypass `apply_rule()`.
 
 ## Article 10 — Amendment Procedure
 
-These **twenty-three** Articles (numbered 0 through 22) are amended only by:
+These **twenty-four** Articles (numbered 0 through 23) are amended only by:
 1. Opening `docs/AMENDMENT_<N>.md` with the proposed change and rationale.
 2. Passing every constitutional, forward, backward, and regression test
    with the proposed change applied to a branch.
@@ -606,6 +607,7 @@ never an input to `cond()`.
 
 | # | Authority | Notes |
 |---|---|---|
+| T-A | Pushpa Dixit, then Neelesh Bodas (**Art. 23**) | concepts and conflict resolution only; needs Aṣṭādhyāyī data agreement; yields to clear fact |
 | T0 | pāṭha | ashtadhyayi.com data; Bhāṣya-supported when MSS differ |
 | T1 | वार्त्तिक (Kātyāyana) | śāstra, not commentary |
 | T2 | महाभाष्य (Patañjali) | ceiling of interpretation |
@@ -614,7 +616,7 @@ never an input to `cond()`.
 | T5 | लघुशब्देन्दुशेखर | SK-level prakriyā disputes; zero kram authority (Art. 3) |
 | T6 | SK cluster | which rules tradition cites together; zero kram authority |
 | T7 | Kāśikā → Nyāsa → Padamañjarī; **ashtadhyayi.com sūtra data incl. `sutra_prayogas` examples** (AMENDMENT 18) | udāharaṇa; equal evidence to Prathamāvṛtti/Kāśikā; T2 wins on conflict |
-| T8 | प्रक्रिया primers | pedagogical; no deciding authority |
+| T8 | प्रक्रिया primers other than the ācāryas of Art. 23 | pedagogical; no deciding authority |
 | T9 | modern scholarship | zero prāmāṇya; modelling only (Kiparsky on strata) |
 | T10 | oracles | Art. 19: can prove wrong, never prove right |
 
@@ -641,3 +643,40 @@ copied into `cond()`. See `data/inputs/grantha_catalog.json`.
 
 *Enforcement:* `tests/constitutional/test_vipratisedha_resolver.py`
 (`runtime_granthas` is PŚ only; LŚ excerpts are quoted, not executed).
+
+---
+
+## Article 23 — Ācārya-prāmāṇya: concepts and conflict resolution
+
+> Added by **AMENDMENT 23** (see `docs/AMENDMENT_23.md`).
+
+1. **Two keys.** A claim about a *concept* (what a saṃjñā covers, how a block
+   of sūtras is entered, in what order kāryas happen) or a *conflict
+   resolution* (which of two sūtras wins, and why) is implemented only when
+   **both**: **A** — the Aṣṭādhyāyī data (Art. 22 T0 pāṭha, T7 ashtadhyayi.com
+   sūtra data: anuvṛtti, adhikāra, `sutra_prayogas`) does not contradict it;
+   **B** — **Pushpa Dixit** or **Neelesh Bodas** agrees, cited in a concept card
+   by video id and timestamp.
+2. **Order.** Pushpa Dixit is the topmost authority. Where Neelesh Bodas
+   differs, her reading is implemented and his is recorded as a declared
+   conflict (Art. 15).
+3. **Override by fact only.** Her reading yields only to a clear fact: the
+   pāṭha / anuvṛtti / adhikāra text itself, or an attested form (Art. 19). The
+   Aṣṭādhyāyī data is then followed, and the card is marked `overruled` with
+   the evidence. A commentator's opinion alone is not a clear fact; it is
+   recorded as a conflict item and her reading stands.
+4. **Scope.** Concepts and conflict resolution only — not surface forms
+   (Art. 19), not the words of a sūtra (Art. 22 T0–T2). Never an input to
+   `cond()` (Art. 2); the runtime meta-rule book remains the
+   Paribhāṣenduśekhara (Art. 21).
+5. **Citation grade.** Raw auto-transcripts are not citation grade. A card may
+   rest on a transcript passage only if every sūtra it names resolves in the
+   brain's sūtra tables; otherwise it is `gist-only` and cannot be key **B**.
+6. **Pāṇinian prakaraṇa is scope, Kaumudī prakaraṇa is banned.** A block
+   delimited by Pāṇini's own adhikāra heads (`adhikara_scope` in the sūtra's
+   record) may decide which sūtras are *eligible*. It never reorders sūtras
+   inside the block (Art. 3, Art. 21). Numeric sūtra-id ranges standing in for
+   blocks are replaced by adhikāra-scope records over time (a ratchet).
+
+*Enforcement:* concept-card schema test (with the cards); Art. 3's
+`test_no_kaumudi_leakage.py` is unchanged.
