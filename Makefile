@@ -90,7 +90,7 @@ shabda:
 # ── reference brain (read-only; see AGENTS.md "Brain") ──
 BRAIN ?= $(HOME)/data-master/ashtadhyayi-ai
 BRAIN_PY = $(BRAIN)/venv/bin/python $(BRAIN)/agent/knowledge_api.py
-.PHONY: brain scaffold resolve brain-wiki prakarana
+.PHONY: brain scaffold resolve brain-wiki prakarana prakarana-sync
 brain:      ## make brain S=6.1.77 — rule, meaning, examples ±, prakriyā, graph, conflicts
 	@$(BRAIN_PY) dossier $(S)
 scaffold:   ## make scaffold S=6.1.77 — draft file: metadata, samagra, Art. 14 citations
@@ -99,6 +99,8 @@ resolve:    ## make resolve S=6.1.77 — evidence per source conflict, Art. 22 o
 	@$(BRAIN_PY) resolve $(S)
 prakarana:  ## make prakarana S=6.1.8 | P04 | C-007 — prakaraṇa (Pāṇini data, Pushpa Dixit names) + concept cards
 	@$(BRAIN_PY) prakarana $(S)
+prakarana-sync: ## refresh data/inputs/prakarana_map.json from the brain (rebuild the map there first)
+	@cd $(BRAIN) && venv/bin/python graph/build_prakarana.py | head -1 && cp graph/prakarana_map.json $(CURDIR)/data/inputs/prakarana_map.json
 brain-wiki: ## local wiki of the brain (human view)
 	@open "$(BRAIN)/Brain.command"
 
