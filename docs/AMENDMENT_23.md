@@ -18,8 +18,10 @@ Branch `amendment-23`; merged only after the gates in *Verification* are green.
 1. **Two keys.** A claim about a *concept* or a *conflict resolution* is implemented only when **both** hold:
    **Key A** — the Aṣṭādhyāyī data (Art. 22 T0 pāṭha; T7 ashtadhyayi.com sūtra data: anuvṛtti, adhikāra, `sutra_prayogas`) does not
    contradict it; **Key B** — Pushpa Dixit or Neelesh Bodas agrees, cited in a *concept card* by video id and timestamp.
-2. **Order of ācāryas.** Pushpa Dixit first. Where Neelesh Bodas differs from her, her reading is implemented and his is recorded
-   as a declared conflict (Art. 15).
+2. **Order.** Authentic granthas (T1–T4) decide where their ruling is objective and workable; in doubt Pushpa Dixit decides.
+   Where Neelesh Bodas differs from her, her reading is implemented and his is recorded as a declared conflict (Art. 15).
+   *(Owner's clarification, 2026-10-09: "authentic granthas decide if they are objective and working; in case we have doubt then
+   Pushpa Dixit will win".)*
 3. **Override by fact only.** Her reading yields only to a *clear fact*: (a) the pāṭha / anuvṛtti / adhikāra text itself, or
    (b) an attested form (Art. 19). The Aṣṭādhyāyī data is then followed; the card is marked `overruled` with the evidence and shown to
    the owner. A commentator's opinion alone is not a clear fact — it is recorded as a conflict item and her reading stands.
@@ -36,11 +38,11 @@ Branch `amendment-23`; merged only after the gates in *Verification* are green.
    the ācāryas named in Art. 23".
 8. **Art. 10** counts twenty-four Articles (0 through 23).
 
-## Interpretation defaults the owner may revise
-- **Bhāṣya / vārttika vs Pushpa Dixit.** Read as: T1–T2 still say what a sūtra *means*; on a *concept or conflict* where they disagree
-  with her and no clear fact (§3) separates them, her reading is implemented and the disagreement is a recorded conflict (Art. 15).
-  This reverses the 2026-10-06 working rule "authentic granthas decide" for concepts and conflicts.
-- **"Clear fact"** is limited to pāṭha text and attested forms, so a teacher is never overruled by another teacher or commentator alone.
+## Interpretation (settled by the owner, 2026-10-09)
+- **Bhāṣya / vārttika vs Pushpa Dixit.** Granthas win when objective and workable; in doubt she wins and the disagreement is a
+  recorded conflict (Art. 15). This restores, with a doubt clause, the 2026-10-06 rule "authentic granthas decide".
+- **"Clear fact"** (§3) is limited to pāṭha text and attested forms, so a teacher is never overruled by another teacher or
+  commentator alone.
 
 ## Verification (Art. 10 §2)
 `pytest tests/constitutional` on the branch; grep that nothing else cites "twenty-three Articles"; `git diff` limited to

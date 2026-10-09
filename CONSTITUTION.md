@@ -607,7 +607,7 @@ never an input to `cond()`.
 
 | # | Authority | Notes |
 |---|---|---|
-| T-A | Pushpa Dixit, then Neelesh Bodas (**Art. 23**) | concepts and conflict resolution only; needs Aṣṭādhyāyī data agreement; yields to clear fact |
+| T-A | Pushpa Dixit, then Neelesh Bodas (**Art. 23**) | concepts and conflict resolution only; decides where T1–T4 are in doubt; needs Aṣṭādhyāyī data agreement; yields to clear fact |
 | T0 | pāṭha | ashtadhyayi.com data; Bhāṣya-supported when MSS differ |
 | T1 | वार्त्तिक (Kātyāyana) | śāstra, not commentary |
 | T2 | महाभाष्य (Patañjali) | ceiling of interpretation |
@@ -657,9 +657,12 @@ copied into `cond()`. See `data/inputs/grantha_catalog.json`.
    sūtra data: anuvṛtti, adhikāra, `sutra_prayogas`) does not contradict it;
    **B** — **Pushpa Dixit** or **Neelesh Bodas** agrees, cited in a concept card
    by video id and timestamp.
-2. **Order.** Pushpa Dixit is the topmost authority. Where Neelesh Bodas
-   differs, her reading is implemented and his is recorded as a declared
-   conflict (Art. 15).
+2. **Order.** Where the authentic granthas (Art. 22 T1–T4) give an
+   *objective, workable* ruling — one a rule can carry out without a further
+   choice — they decide. Where there is doubt (the granthas are silent,
+   divided, ambiguous, or the ruling cannot be carried out mechanically),
+   **Pushpa Dixit** decides. Where Neelesh Bodas differs from her, her reading
+   is implemented and his is recorded as a declared conflict (Art. 15).
 3. **Override by fact only.** Her reading yields only to a clear fact: the
    pāṭha / anuvṛtti / adhikāra text itself, or an attested form (Art. 19). The
    Aṣṭādhyāyī data is then followed, and the card is marked `overruled` with
