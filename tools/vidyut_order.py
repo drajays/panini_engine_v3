@@ -1,9 +1,10 @@
-"""tools/vidyut_order.py — the Vidyut ORDER floor (owner's rule, 2026-10-10).
+"""tools/vidyut_order.py — Vidyut as VALIDATOR of sūtra order, never as authority (owner's rule, 2026-10-10).
 
-Vidyut's sūtra sequence for a form is a minimum: our loop's sequence must contain it as an ordered subsequence
-(extra sūtras may come before, between, after). A pair (a, b) that Vidyut orders a→b but we order b→a — or a Vidyut sūtra we never
-fire — is a *deviation*; it is allowed only if `data/inputs/vidyut_order_overrides.json` records it with a reason and an
-authority (Pushpa Dixit card / Aṣṭādhyāyī data). Otherwise it is a bug or an Art. 18 gap.
+We follow what the Aṣṭādhyāyī says, supported by Pushpa Dixit and the data; the loop's order is the glass box. Vidyut's sequence is
+only a cross-check: every disagreement (a Vidyut sūtra we never fire, or a pair ordered a→b by Vidyut and b→a by us) is a *flag to
+adjudicate*, not an error and not a thing to copy. Each flag gets a verdict in `data/inputs/vidyut_order_overrides.json`:
+``ours`` (Pāṇini/Pushpa support our order — reason + authority recorded) or ``engine`` (we are wrong → fix) or stays open.
+`--evidence` tallies the order in the brain's non-Vidyut derivations (ashtadhyayi.com subanta / sutrartha) as first evidence.
 
     .venv/bin/python -m tools.vidyut_order [--gana N] [--lakara laT ...] [--roots K] [--write]
 """
@@ -54,6 +55,22 @@ def deviations_unexplained(cmp: dict, ovr: dict) -> dict:
             "inverted": [p for p in cmp["inverted"] if f"{p[0]}<{p[1]}" not in ovr]}
 
 
+def evidence(pairs) -> dict:
+    """For each (a,b): how many authentic (non-Vidyut) derivations in the brain order a<b vs b<a."""
+    import sqlite3
+    c = sqlite3.connect(f"file:{Path.home()}/data-master/ashtadhyayi-ai/db/ashtadhyayi.db?mode=ro", uri=True)
+    seqs: dict[int, list[str]] = {}
+    for d, st in c.execute("select s.deriv_id, s.sutras from steps s join derivations d on d.id=s.deriv_id "
+                           "where d.source not like 'vidyut%' order by s.deriv_id, s.step_no"):
+        seqs.setdefault(d, []).extend(x for x in str(st).replace(",", " ").split() if x.count(".") == 2)
+    out = {}
+    for a, b in pairs:
+        ab = sum(1 for q in seqs.values() if a in q and b in q and q.index(a) < q.index(b))
+        ba = sum(1 for q in seqs.values() if a in q and b in q and q.index(a) > q.index(b))
+        out[f"{a}<{b}"] = {"vidyut_order_in_authentic": ab, "our_order_in_authentic": ba}
+    return out
+
+
 def main(gana: int, lakaras: list[str], roots: int) -> dict:
     import sutras  # noqa: F401
     from pipelines.dhatupatha import iter_dhatu_entries
@@ -88,8 +105,9 @@ def main(gana: int, lakaras: list[str], roots: int) -> dict:
             bad.append(f"{root}/{lak}")
             miss.update(un["missing"])
             inv.update(f"{a}<{b}" for a, b in un["inverted"])
-    return {"gana": gana, "cells": cells, "floor_ok": ok, "bad_cells": bad[:50],
-            "missing": miss.most_common(40), "inverted": inv.most_common(40)}
+    ev = evidence([tuple(k.split("<")) for k, _ in inv.most_common(40)])
+    return {"gana": gana, "cells": cells, "agree_with_vidyut": ok, "flagged_cells": bad[:50],
+            "missing": miss.most_common(40), "inverted": inv.most_common(40), "authentic_evidence": ev}
 
 
 def _vidyut_seq(vy, row, lak):

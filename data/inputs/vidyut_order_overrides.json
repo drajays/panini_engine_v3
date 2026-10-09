@@ -1,5 +1,5 @@
 {
- "_doc": "Deviations from the Vidyut order floor, each with reason+authority. Keys: 'missing:<id>' or '<a><<b>' (Vidyut a before b, we b before a). 'classes' are policy overrides.",
+ "_doc": "Verdicts on Vidyut-vs-ours order/set flags. Vidyut validates; Aṣṭādhyāyī + Pushpa Dixit + data decide. Keys: 'missing:<id>' or '<a>&lt;<b>' (Vidyut a before b, we b before a). value: {verdict: ours|engine, reason, authority}. 'classes' are policy.",
  "classes": {
   "non_operational": {
    "reason": "SAMJNA/ADHIKARA/ATIDESHA/PARIBHASHA/ANUVADA change no tape; Vidyut stamps them at the citing operation, the loop when first consulted. Set checked, order not.",
