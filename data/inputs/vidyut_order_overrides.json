@@ -1,0 +1,11 @@
+{
+ "_doc": "Deviations from the Vidyut order floor, each with reason+authority. Keys: 'missing:<id>' or '<a><<b>' (Vidyut a before b, we b before a). 'classes' are policy overrides.",
+ "classes": {
+  "non_operational": {
+   "reason": "SAMJNA/ADHIKARA/ATIDESHA/PARIBHASHA/ANUVADA change no tape; Vidyut stamps them at the citing operation, the loop when first consulted. Set checked, order not.",
+   "authority": "PROPOSED by agent 2026-10-10 - needs owner/Pushpa Dixit card (Art. 23) to confirm",
+   "status": "proposed"
+  }
+ },
+ "overrides": {}
+}
