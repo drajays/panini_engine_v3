@@ -7,5 +7,11 @@
    "status": "proposed"
   }
  },
- "overrides": {}
+ "overrides": {
+  "7.4.60<7.4.59": {
+   "verdict": "ours",
+   "reason": "7.4.59 (hrasvaḥ) and 7.4.60 (halādiḥ śeṣaḥ) leave each other a site and end identically (gADgADe → gagADe either way); Pāṇini's own sūtra order puts 7.4.59 first (Art. 21 पूर्व). Authentic prakriyās and Vidyut reorder them; that is a later teaching convention, not the Aṣṭādhyāyī.",
+   "authority": "Aṣṭādhyāyī kram 7.4.59 < 7.4.60 (owner 2026-10-11: follow Pāṇini, not Siddhānta-kaumudī)"
+  }
+ }
 }

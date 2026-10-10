@@ -72,7 +72,7 @@ def evidence(pairs) -> dict:
 
 
 def sk_krama(pairs) -> dict:
-    """Siddhānta-kaumudī order of the two sūtras (the tradition's own derivation order): +1 = a before b (Vidyut's order), -1 = b first."""
+    """Siddhānta-kaumudī order — DISPLAY ONLY (a later text, not Pāṇini's framework authority; never feeds propose())."""
     import sqlite3
     c = sqlite3.connect(f"file:{Path.home()}/data-master/ashtadhyayi-ai/db/ashtadhyayi.db?mode=ro", uri=True)
     pos = lambda i: (c.execute("select sk_krama from sutras where id=?", (i,)).fetchone() or ("",))[0]
@@ -84,10 +84,10 @@ def sk_krama(pairs) -> dict:
 
 
 def propose(e: dict) -> str:
-    """Only a proposal from Pāṇinian-tradition evidence (authentic derivations + SK order). Confirmed by a card, never by this."""
-    signs = {1 if e["vidyut_order_in_authentic"] > e["our_order_in_authentic"] else -1 if e["our_order_in_authentic"] > e["vidyut_order_in_authentic"] else 0,
-             e["sk_krama"]} - {0}
-    return "open" if len(signs) != 1 else ("engine" if signs == {1} else "ours")
+    """Aṣṭādhyāyī kram is the law: for rules that do not conflict, the engine follows it (Art. 21 पूर्व), so a flag is only
+    ever 'engine' if the *sūtra text* (anuvṛtti / nimitta / bādhya) demands the other order — which this tool cannot see. Authentic
+    ashtadhyayi.com derivations are shown as evidence; Siddhānta-kaumudī order is NOT authority (owner, 2026-10-11) and is not used."""
+    return "open" if e["vidyut_order_in_authentic"] > e["our_order_in_authentic"] else "ours"
 
 
 def main(gana: int, lakaras: list[str], roots: int) -> dict:
