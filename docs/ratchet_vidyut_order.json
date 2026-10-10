@@ -129,47 +129,69 @@
  "authentic_evidence": {
   "3.2.115<1.3.12": {
    "vidyut_order_in_authentic": 0,
-   "our_order_in_authentic": 0
+   "our_order_in_authentic": 0,
+   "sk_krama": -1,
+   "proposed_verdict": "ours"
   },
   "3.2.110<1.3.12": {
    "vidyut_order_in_authentic": 0,
-   "our_order_in_authentic": 0
+   "our_order_in_authentic": 0,
+   "sk_krama": -1,
+   "proposed_verdict": "ours"
   },
   "7.2.35<6.4.71": {
    "vidyut_order_in_authentic": 0,
-   "our_order_in_authentic": 1
+   "our_order_in_authentic": 1,
+   "sk_krama": -1,
+   "proposed_verdict": "ours"
   },
   "7.4.60<7.4.59": {
    "vidyut_order_in_authentic": 5,
-   "our_order_in_authentic": 0
+   "our_order_in_authentic": 0,
+   "sk_krama": 1,
+   "proposed_verdict": "engine"
   },
   "3.2.115<1.3.9": {
    "vidyut_order_in_authentic": 0,
-   "our_order_in_authentic": 0
+   "our_order_in_authentic": 0,
+   "sk_krama": -1,
+   "proposed_verdict": "ours"
   },
   "3.2.115<1.3.78": {
    "vidyut_order_in_authentic": 0,
-   "our_order_in_authentic": 0
+   "our_order_in_authentic": 0,
+   "sk_krama": -1,
+   "proposed_verdict": "ours"
   },
   "3.2.110<1.3.9": {
    "vidyut_order_in_authentic": 2,
-   "our_order_in_authentic": 0
+   "our_order_in_authentic": 0,
+   "sk_krama": -1,
+   "proposed_verdict": "open"
   },
   "3.2.110<1.3.78": {
    "vidyut_order_in_authentic": 0,
-   "our_order_in_authentic": 0
+   "our_order_in_authentic": 0,
+   "sk_krama": -1,
+   "proposed_verdict": "ours"
   },
   "2.4.77<3.4.100": {
    "vidyut_order_in_authentic": 0,
-   "our_order_in_authentic": 0
+   "our_order_in_authentic": 0,
+   "sk_krama": -1,
+   "proposed_verdict": "ours"
   },
   "7.2.35<6.4.72": {
    "vidyut_order_in_authentic": 0,
-   "our_order_in_authentic": 1
+   "our_order_in_authentic": 1,
+   "sk_krama": -1,
+   "proposed_verdict": "ours"
   },
   "7.4.62<7.4.59": {
    "vidyut_order_in_authentic": 1,
-   "our_order_in_authentic": 2
+   "our_order_in_authentic": 2,
+   "sk_krama": -1,
+   "proposed_verdict": "ours"
   }
  }
 }

@@ -71,6 +71,25 @@ def evidence(pairs) -> dict:
     return out
 
 
+def sk_krama(pairs) -> dict:
+    """Siddhānta-kaumudī order of the two sūtras (the tradition's own derivation order): +1 = a before b (Vidyut's order), -1 = b first."""
+    import sqlite3
+    c = sqlite3.connect(f"file:{Path.home()}/data-master/ashtadhyayi-ai/db/ashtadhyayi.db?mode=ro", uri=True)
+    pos = lambda i: (c.execute("select sk_krama from sutras where id=?", (i,)).fetchone() or ("",))[0]
+    out = {}
+    for a, b in pairs:
+        pa, pb = pos(a), pos(b)
+        out[f"{a}<{b}"] = 0 if not (pa and pb) else (1 if int(pa) < int(pb) else -1)
+    return out
+
+
+def propose(e: dict) -> str:
+    """Only a proposal from Pāṇinian-tradition evidence (authentic derivations + SK order). Confirmed by a card, never by this."""
+    signs = {1 if e["vidyut_order_in_authentic"] > e["our_order_in_authentic"] else -1 if e["our_order_in_authentic"] > e["vidyut_order_in_authentic"] else 0,
+             e["sk_krama"]} - {0}
+    return "open" if len(signs) != 1 else ("engine" if signs == {1} else "ours")
+
+
 def main(gana: int, lakaras: list[str], roots: int) -> dict:
     import sutras  # noqa: F401
     from pipelines.dhatupatha import iter_dhatu_entries
@@ -105,7 +124,12 @@ def main(gana: int, lakaras: list[str], roots: int) -> dict:
             bad.append(f"{root}/{lak}")
             miss.update(un["missing"])
             inv.update(f"{a}<{b}" for a, b in un["inverted"])
-    ev = evidence([tuple(k.split("<")) for k, _ in inv.most_common(40)])
+    pairs = [tuple(k.split("<")) for k, _ in inv.most_common(40)]
+    ev = evidence(pairs)
+    sk = sk_krama(pairs)
+    for k in ev:
+        ev[k]["sk_krama"] = sk[k]
+        ev[k]["proposed_verdict"] = propose(ev[k])
     return {"gana": gana, "cells": cells, "agree_with_vidyut": ok, "flagged_cells": bad[:50],
             "missing": miss.most_common(40), "inverted": inv.most_common(40), "authentic_evidence": ev}
 
