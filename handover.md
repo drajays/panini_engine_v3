@@ -1,5 +1,20 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
+## SESSION 2026-10-10/11 — prakaraṇa track P0/P1 + Vidyut-as-validator (READ FIRST, then the older notes below)
+**Rulings (owner):** Aṣṭādhyāyī kram is the law; Patañjali/Kātyāyana/Pushpa Dixit/Neelesh Bodas only clarify within it. Siddhānta-kaumudī order is NOT authority.
+Vidyut = validator only: a disagreement is a flag that needs a recorded verdict (`ours`|`engine`, reason, authority) in `data/inputs/vidyut_order_overrides.json`.
+**Committed (main):** AMENDMENT 22 lexicon/vyutpatti records (`engine/lexicon.py`, `engine/origin.py`, `data/inputs/subanta_lexicon.json`, `lexicon_compose_rules.json`; real 8.2.9/8.2.10) ·
+P0 `SCAN_STATS` in scheduler + `tools/scan_stats.py` (`docs/ratchet_prakarana_p0.json`) · P1 `tools/build_scope_index.py` → `data/inputs/adhikara_scope_index.json` (+ test) ·
+`tools/stage_order.py` (empirical prakaraṇa order, 171 tiṅanta derivations) · `tools/vidyut_order.py` (`.venv/bin/python -m tools.vidyut_order --gana 1 --roots 10 --lakara laT liT luG --write`).
+**Measured:** scheduler scans all 3,983 records every step (~600 cond calls/step). Adhikāra heads alone cut little (2.5–3.6k); prakaraṇa-module union 0.9–1.9k (2–4×). 10× needs the L2 stage order → concept cards.
+**Brain has NO Pāṇinian tiṅanta/kṛt/taddhita derivations** (only 4,863 subanta, 171 words; commentaries are prose). Order evidence for verbs = Aṣṭādhyāyī text + Pushpa/Neelesh cards (to be written). `~/data-master/ashtadhyayi-ai/graph/build_lecture_orders.py` (uncommitted, 76 paragraphs only) is thin.
+**Vidyut-order baseline (30 gaṇa-1 cells, laṭ/liṭ/luṅ):** 0 clean. Set gaps: 1.4.13 (all), 8.4.68, 6.1.4/6.1.5 (liṭ), 8.3.111, 7.4.61, 1.3.2, 1.3.7, 3.4.114, 1.1.5, 8.3.24. Order flags: 7.4.60<7.4.59 = ours (verdict written);
+7.2.35<6.4.71/72, 7.4.62<7.4.59 agree with kram (verdicts NOT yet written); 3.2.110/3.2.115 vs 1.3.9/1.3.12/1.3.78 pada-selection and 3.2.110<1.3.9 open (check brain Mahābhāṣya); class override `non_operational` (saṃjñā/adhikāra/atideśa/paribhāṣā/anuvāda order not checked) is PROPOSED, needs owner sign-off.
+**Real bug found:** 2.4.77 (sic-luk) fires after 3.4.100/3.4.114 in `aBUt` though kram puts it first and its cond is already true → suspect phase/range gating (`engine/phase.py`, `scheduler._skip_*`, W2). Fix via P2.
+**Next, in order:** (1) write verdicts for the kram-consistent flags with `make brain S=…` citations; (2) P2: replace `_PHASE_RANGES`/`_MULTI_TERM_RANGES` by prakaraṇa/adhikāra scopes, parity with `docs/ratchet_prakarana_p0.json` + sweeps, start with 2.4.x; (3) shadow assertion "fired module's always-before modules already touched" (extend stage_order to subanta/kṛdanta first); (4) set gaps above; (5) Pushpa Dixit cards per L2 stage (needs transcripts_repo listening). Resolver/scheduler are coordinator-only (`COORDINATOR=1`).
+**Gotchas:** full suite ≈6 min, serial only; `test_autonomy_tinanta_grid[1-1-pac]` flaked once under `-x` (passes alone/HEAD). Untracked and left alone: `panini_audit_report.md`, `scratch/`, `.audit/*.out`. Old stash `trace noise` is not ours.
+
+
 **Plan of record:** `docs/SUTRA_COVERAGE_100_PLAN.md` (v2) · **Law:** `CONSTITUTION.md` · **Program:** `ROADMAP.md`
 **See it:** double-click `Panini Engine.command` → `/coverage` (confident sūtras by pāda; live recipe-free derivation
 of nouns and laṭ verbs). Menu `c` refreshes the numbers. CLI: `make confident`, `make autonomy`.
