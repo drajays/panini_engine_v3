@@ -366,4 +366,19 @@ def apply_rule(
             _applied_step["why_now_dev"] = _why_now
         _applied_step["parts"] = term_parts(new_state)
         _append_traced_step(new_state, _applied_step, prev_sutra, sutra_id)
+        if rec.operates_on_samjna_of and form_changed:
+            _mark_samjna_licensors(sutra_id, frozenset(rec.operates_on_samjna_of), new_state)
     return _finish_apply_rule(prev_sutra, sutra_id, new_state)
+
+
+def _mark_samjna_licensors(sutra_id: str, samjna_ids: frozenset, state: State) -> None:
+    """A rule that carries out a saṃjñā (1.3.9 तस्य लोपः removes what 1.3.2–1.3.8 named it) acts only on what those
+    sūtras named. Mark their applied steps on the same tape (back to the previous form change) as licensing it, so
+    every trace view shows the pair: 1.3.2 स्कुदिँ (इँ इत्) → 1.3.9 स्कुद्."""
+    trace = state.trace
+    before = trace[-1].get("form_before")
+    for step in reversed(trace[:-1]):
+        if step.get("form_after") != before or step.get("form_before") != step.get("form_after"):
+            break
+        if step.get("sutra_id") in samjna_ids and step.get("status") == "APPLIED":
+            step["licenses"] = sutra_id

@@ -222,7 +222,7 @@ function load(meta, rec) {
   let last = steps.length ? steps[0].form_before : "";
   for (const s of steps) {
     if (s.form_before !== last) story.push({gap: true, at: s.i, before: last, after: s.form_before});
-    if (s.status === "APPLIED" && s.form_before !== s.form_after) story.push({gap: false, i: s.i});
+    if (s.status === "APPLIED" && (s.form_before !== s.form_after || s.licenses)) story.push({gap: false, i: s.i});
     else if (s.form_before !== s.form_after) story.push({gap: true, at: s.i + 1, before: s.form_before, after: s.form_after, row: s});
     last = s.form_after;
   }

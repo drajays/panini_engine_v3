@@ -147,7 +147,7 @@ Click any cell to compare the derivations sūtra by sūtra — a sūtra Vidyut f
     if (!E.trace) return `<div class="dr-step">${esc(E.error || "")}</div>`;
     const rupa = $("f-rupa") ? $("f-rupa").checked : true, audit = !!$("f-audit") && $("f-audit").checked, skip = !!$("f-skip") && $("f-skip").checked;
     return E.trace.filter(s => {
-      if (["APPLIED","APPLIED_VACUOUS"].includes(s.status)) return !rupa || s.form_before !== s.form_after || s._is_structural;
+      if (["APPLIED","APPLIED_VACUOUS"].includes(s.status)) return !rupa || s.form_before !== s.form_after || s._is_structural || !!s.licenses;
       if (s.status === "SKIPPED") return skip;
       return audit;
     }).map(s => `<div class="dr-step"><b><a href="/sutra/${esc(s.sutra_id)}" target="_blank" rel="noopener">${esc(s.sutra_id)}</a></b><span class="r">${esc(s.form_before)} → ${esc(s.form_after)}</span>${s.why_now_dev || s.why_dev ? `<div class="r" style="font-family:var(--dev);font-size:.78rem">${esc(s.why_now_dev || s.why_dev)}</div>` : ""}</div>`).join("");

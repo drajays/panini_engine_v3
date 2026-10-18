@@ -126,7 +126,7 @@ function open(slug) {
 function render(meta, rec) {
   const surface = $("#surface").checked;
   const rows = (rec.trace || []).map((s, i) => ({ ...s, n: i + 1 }))
-    .filter(s => !surface || s.form_before !== s.form_after);
+    .filter(s => !surface || s.form_before !== s.form_after || !!s.licenses);
   $("#pane").innerHTML = `
     <h2>${rec.ok ? esc(tr(rec.final_flat_slp1)) : "—"}</h2>
     <div class="slp">${esc(rec.final_flat_slp1 || "")} · ${esc(rec.module)}.${esc(rec.callable)}()</div>

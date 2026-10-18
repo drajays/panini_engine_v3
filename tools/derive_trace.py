@@ -34,10 +34,14 @@ def main(argv: list[str]) -> int:
             return slp1_to_devanagari([mk(c) for c in s if c.isalpha()])
         except Exception:          # a display helper: fall back to the SLP1 string
             return s
-    for n, (sid, before, after, why) in enumerate(run.steps, 1):
+    shown = [s for s in run.state.trace                      # start-state steps (dhātu it-prakaraṇa …) and the loop's
+             if s.get("status") == "APPLIED" and (s.get("form_before") != s.get("form_after") or s.get("licenses"))]
+    for n, s in enumerate(shown, 1):
+        sid, before, after = s.get("sutra_id", ""), s.get("form_before", ""), s.get("form_after", "")
         text = getattr(SUTRA_REGISTRY.get(sid), "text_dev", "") or ""
-        mark = "→" if before != after else " "
-        print(f"{n:>3}. {sid:<8} {text[:28]:<28} {dev(before):<16} {mark} {dev(after):<16} [{why}]")
+        mark = "→" if before != after else "·"
+        note = "  (इत्-संज्ञा → १.३.९)" if s.get("licenses") else ""
+        print(f"{n:>3}. {sid:<8} {text[:28]:<28} {dev(before):<16} {mark} {dev(after):<16}{note}")
     print(f"\n  {dhatu} {lakara} {purusha}-{vacana}{' ' + pada if pada else ''}:  {dev(run.surface)}   ({run.surface})")
     return 0
 

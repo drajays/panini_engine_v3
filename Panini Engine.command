@@ -73,7 +73,6 @@ EOF
     j=$((j + 1)); sleep 1
   done
   open "http://127.0.0.1:${API_PORT}/"
-  open "http://127.0.0.1:${API_PORT}/pages/improvements.html"
   wait
   exit 0
 }

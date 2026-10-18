@@ -97,7 +97,7 @@ function _traceStepInFilter(step, active) {
     if (step._is_structural) return true;  // pada-merging, etc.
     const before = step.form_before || "";
     const after  = step.form_after  || "";
-    return before !== after;
+    return before !== after || Boolean(step.licenses);   // the it-saṃjñā (1.3.2…) that licenses a 1.3.9 lopa
   }
   if (step._is_structural) return active.has("STRUCTURAL");
   const st = step.status || "APPLIED";

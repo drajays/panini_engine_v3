@@ -263,6 +263,9 @@ class SutraRecord:
     # relation is the ONLY sanctioned way to win a conflict (Art. 15): a cond
     # may never be narrowed to dodge the utsarga it displaces.
     apavada_of       : Tuple[str, ...]                = field(default_factory=tuple)
+    # The saṃjñā sūtras whose naming this rule carries out (1.3.9 तस्य लोपः: "तस्य" = what 1.3.2–1.3.8 named
+    # it). The dispatcher marks those applied steps on the same tape as licensing it, so traces show the pair.
+    operates_on_samjna_of : Tuple[str, ...]           = field(default_factory=tuple)
     adhikara_scope   : Tuple[str, str]                = field(default=("", ""))
     # अर्थनिर्देश (Art. 20) — only on an ADHIKARA whose vṛtti attests that it
     # also attaches to the affixes taught *before* it (पूर्वैरुत्तरैश्च).
