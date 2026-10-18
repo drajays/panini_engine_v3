@@ -6,9 +6,11 @@ Done: `State.vivaksha` + `engine/vivaksha.py` (vocabulary generated from the sū
 tape records artha from prayoga (3.4.69); `data/inputs/dhatu_karmakatva.json` from ashtadhyayi.com `karma` (2,229 rows,
 10 gaps) copied onto the dhātu Term; dispatcher stamps `origin:<sūtra>` on created varṇas (ignored by vacuity/marks);
 Art. 2 §2 amended; `tests/constitutional/test_amendment_25_vivaksha.py`. Not yet: upapada Term (with kṛt), niṣṭhā-seṭ probe.
-**Found (pre-existing at 45e6f9a3, not caused today):** the loop depends on set-hash order — `PYTHONHASHSEED=2` makes
-`test_autonomy_tinanta_grid` pac cells and `test_luG_set_no_vrddhi[pac]` diverge (slow, 150 s). Glass-box violation; fix in
-Phase 2 (find the unordered set iteration in scheduler/resolver candidate order). Run suites with `PYTHONHASHSEED=0` until then.
+**Fixed (2026-10-18 night):** the loop depended on set-hash order (pre-existing at 45e6f9a3; `PYTHONHASHSEED=2` diverged pac
+laṭ). Cause: `scheduler.tape_fingerprint` and `resolver._term_sig` compared `repr()` of Term.meta, and a set's repr depends on the
+hash seed and insertion history — an unchanged tape could look changed (vacuity filter, antaraṅga zones). Now `scheduler._canonical`
+(sets sorted, recursively); memo keys too. `tests/regression/test_hash_seed_independence.py` derives in subprocesses under seeds
+0/2/7 and requires identical sūtra sequences. Launchers no longer pin the seed.
 `Test Engine.command` (double-click): derive any verb with every sūtra step (`tools/derive_trace.py`), the Kāśikā probe, quick
 and full tests, or start the web UI. Brain card agents TR_s01–03 stalled on permission prompts after 4 cards (C-1800 = the 13
 sopānas, closes C-013); 10 videos of those slices still to card.

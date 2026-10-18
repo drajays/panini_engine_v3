@@ -5,9 +5,6 @@
 # check the Kāśikā forms fixed on 2026-10-18, or run the test suites.
 # ─────────────────────────────────────────────────────────────────
 cd "$(dirname "$0")" || exit 1
-# The loop still has one known order-dependence on Python's set hashing (pac laṭ diverges under some seeds;
-# open item in handover.md). A fixed seed makes every run here reproducible.
-export PYTHONHASHSEED=0
 
 PY=""
 for cand in .venv/bin/python3 python3; do

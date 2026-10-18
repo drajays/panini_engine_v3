@@ -104,7 +104,7 @@ in the brain. Generated {datetime.now():%Y-%m-%d %H:%M} by <code>tools/improveme
 <table><tr><th>status</th><th>dhātu</th><th>Kāśikā</th><th>loop before</th><th>loop now</th><th>sūtras that changed the form</th></tr>{trs}</table>
 <h2>AMENDMENT 25 — vivakṣā inputs, from authentic data only</h2><ul>{amend}</ul>
 <p><small>Known gaps stay strict xfails in <code>tests/regression/test_findings_probe_loop.py</code>; a fixed gap fails the test
-until it is moved out. Open item: the loop depends on set-hash order (PYTHONHASHSEED=2 diverges pac laṭ) — Phase 2.</small></p>
+until it is moved out. Fixed the same day: the loop no longer depends on Python's set-hash order (tests/regression/test_hash_seed_independence.py).</small></p>
 </body></html>
 """
     OUT.write_text(page, encoding="utf-8")

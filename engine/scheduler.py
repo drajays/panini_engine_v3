@@ -40,7 +40,7 @@ Scheduler discipline (Phase 4):
 """
 from __future__ import annotations
 
-from typing import List
+from typing import Any, List
 
 from engine.gates      import (
     asiddha_violates,
@@ -196,6 +196,18 @@ def probe(sutra_id: str, state: State) -> State:
         _DRY_DEPTH -= 1
 
 
+def _canonical(value: Any) -> Any:
+    """An order-free image of a meta value. ``repr`` of a set depends on the hash seed and insertion history, so two
+    equal tapes could fingerprint differently and a vacuous rule look effective (the loop's PYTHONHASHSEED dependence)."""
+    if isinstance(value, dict):
+        return tuple(sorted(((repr(k), _canonical(v)) for k, v in value.items()), key=lambda kv: kv[0]))
+    if isinstance(value, (set, frozenset)):
+        return ("set", tuple(sorted((_canonical(v) for v in value), key=repr)))
+    if isinstance(value, (list, tuple)):
+        return tuple(_canonical(v) for v in value)
+    return value
+
+
 def tape_fingerprint(state: State) -> tuple:
     """What a rule can *do* to the derivation: the terms, their varṇas and every
     tag on them. Gate keys and ``state.meta`` are excluded on purpose — a rule
@@ -203,7 +215,7 @@ def tape_fingerprint(state: State) -> tuple:
     not an effect, so it is left out."""
     return (
         tuple(
-            (t.kind, tuple(sorted(t.tags)), repr(sorted(t.meta.items(), key=lambda kv: kv[0])),
+            (t.kind, tuple(sorted(t.tags)), repr(_canonical(t.meta)),
              tuple((v.slp1, tuple(sorted(g for g in v.tags if not g.startswith("origin:")))) for v in t.varnas))
             for t in state.terms
         ),
@@ -239,19 +251,19 @@ def _vikalpa_policy() -> dict:
 
 def _meta_key(state: State) -> tuple:
     """Everything in ``state.meta`` a rule might read, minus bookkeeping that grows every step."""
-    return tuple(sorted((k, repr(v)) for k, v in state.meta.items() if k not in _META_NOISE))
+    return tuple(sorted((k, repr(_canonical(v))) for k, v in state.meta.items() if k not in _META_NOISE))
 
 
 def _term_meta_key(state: State) -> int:
     """Rules read Term.meta too (ekac_dhatu, gana, anit_dhatu, upadesha…): two roots whose tapes coincide at some step must
     not share a memoised answer — the sweeps showed 6.1.8 skipped on a tape another root had made ineffective."""
-    return hash(tuple(tuple(sorted((k, repr(v)) for k, v in t.meta.items() if k not in _META_NOISE)) for t in state.terms))
+    return hash(tuple(tuple(sorted((k, repr(_canonical(v))) for k, v in t.meta.items() if k not in _META_NOISE)) for t in state.terms))
 
 
 def _gate_key(state: State) -> tuple:
     """Gates and saṃjñā registry are not on the tape but rules read them (7.2.13 → 7.2.35): two states with one tape
     and different gates must not share a memoised answer."""
-    return (tuple(sorted((k, repr(v)) for k, v in state.paribhasha_gates.items())),
+    return (tuple(sorted((k, repr(_canonical(v))) for k, v in state.paribhasha_gates.items())),
             tuple(sorted(map(repr, state.samjna_registry))),
             tuple(repr(e.get("id")) for e in state.adhikara_stack))       # adhikara_in_effect() reads this (7.1.35, 7.2.77…)
 

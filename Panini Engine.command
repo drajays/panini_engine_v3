@@ -6,9 +6,6 @@
 # dependency install).  Pass `menu` for tests / benches / publish.
 # ─────────────────────────────────────────────────────────────────
 cd "$(dirname "$0")" || exit 1
-# The rule loop still has one known order-dependence on Python's set hashing (handover.md, Phase 2); a fixed
-# seed keeps every derivation shown here reproducible.
-export PYTHONHASHSEED=0
 
 API_PORT=8000
 WEB_PORT=5050

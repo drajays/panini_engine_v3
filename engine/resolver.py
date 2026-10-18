@@ -119,8 +119,9 @@ def _apavada_winner(candidate_ids: List[str]) -> Optional[str]:
 
 
 def _term_sig(term) -> tuple:
-    return ("".join(v.slp1 for v in term.varnas), frozenset(term.tags),
-            tuple(sorted((k, repr(v)) for k, v in term.meta.items())))
+    from engine.scheduler import _canonical          # set order is not content: a repr'd set made zones seed-dependent
+
+    return ("".join(v.slp1 for v in term.varnas), frozenset(term.tags), repr(_canonical(term.meta)))
 
 
 def _changed_terms(sid: str, state: State) -> frozenset[int]:
