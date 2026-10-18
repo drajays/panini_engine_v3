@@ -6,6 +6,9 @@
 # dependency install).  Pass `menu` for tests / benches / publish.
 # ─────────────────────────────────────────────────────────────────
 cd "$(dirname "$0")" || exit 1
+# The rule loop still has one known order-dependence on Python's set hashing (handover.md, Phase 2); a fixed
+# seed keeps every derivation shown here reproducible.
+export PYTHONHASHSEED=0
 
 API_PORT=8000
 WEB_PORT=5050
@@ -70,6 +73,7 @@ EOF
     j=$((j + 1)); sleep 1
   done
   open "http://127.0.0.1:${API_PORT}/"
+  open "http://127.0.0.1:${API_PORT}/pages/improvements.html"
   wait
   exit 0
 }
@@ -106,6 +110,8 @@ while :; do
    7  Download ashtadhyayi.com data   (needed once for 4–6)
    c  Coverage refresh      run suite ledger → confident list → autonomy → open /coverage
    i  It-letters of an upadeśa  which it, which sūtra, kit/ṅit/ñīt …
+   u  Improvements page     re-derive the Kāśikā forms now and open the report (~30 s)
+   t  Test menu             derive any verb with every sūtra step · quick tests
 
    8  Rebuild website data   (docs/data, local only)
    9  Publish                rebuild → test → commit → push → site updates
@@ -137,6 +143,8 @@ EOF
       # shellcheck disable=SC2086
       [ -n "$it_args" ] && "$PY" -m tools.it_report $it_args
       pause ;;
+    u|U) "$PY" -m tools.improvements_report && open "docs/improvements.html"; pause ;;
+    t|T) sh "./Test Engine.command" ;;
     8) "$PY" -m tools.build_pages && "$PY" -m tools.build_shabda_page; pause ;;
     9) publish; pause ;;
     0|q|Q) exit 0 ;;
