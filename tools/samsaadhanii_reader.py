@@ -169,8 +169,8 @@ def _derive_tinanta(key: str, fields: str) -> tuple[str, str, str]:
 
 
 @lru_cache(maxsize=8192)
-def _derive_subanta(stem: str, v: int, vac: int, linga: str, anvadesha: bool = False,
-                    ugit: bool = False) -> tuple[str, str, str]:
+def _derive_subanta(stem: str, v: int, vac: int, linga: str, anvadesha: bool = False) -> tuple[str, str, str]:
+    """A stem's origin (matup, śatṛ, tṛc …) is not an argument: the engine reads it from the Lexicon (AMENDMENT 22)."""
     from pipelines.subanta import derive
 
     try:
@@ -179,7 +179,7 @@ def _derive_subanta(stem: str, v: int, vac: int, linga: str, anvadesha: bool = F
                 from pipelines import asmad_subanta as _pr
                 s = (_pr.derive_asmad if stem == "asmad" else _pr.derive_yuzmad)(v, vac)
             else:
-                s = derive(stem, v, vac, linga=linga, anvadesha=anvadesha, ugit=ugit)
+                s = derive(stem, v, vac, linga=linga, anvadesha=anvadesha)
         return "ok", s.flat_slp1(), s.flat_dev()
     except Exception as e:  # noqa: BLE001
         return "error", "", f"{type(e).__name__}: {e}"[:200]
@@ -266,8 +266,6 @@ def verify(kind: str, tag: str, word_slp1: str) -> dict:
             proposals = []
             if c.stem_slp1 in ("idam", "etad") and word_slp1.startswith("en"):
                 proposals.append(("anvadesha", "anvādeśa (2.4.32) taken from the text; 2.4.34 gives एन"))
-            if c.stem_slp1.endswith("at") and c.stem_slp1[-3:-2] in ("v", "m", "u", "a"):
-                proposals.append(("ugit", "ugit stem (matup / vatup / śatṛ / ḍavatu) taken from the text; 7.1.70 gives नुँम्"))
             for flag, why in proposals:
                 st2, slp2, dev2 = _derive_subanta(c.stem_slp1, c.vibhakti, c.vacana, c.linga, **{flag: True})
                 if st2 != "error" and slp2 == word_slp1:
@@ -301,8 +299,7 @@ def derive_request(req: dict):
         from pipelines.subanta import derive
 
         return derive(req["stem_slp1"], int(req["vibhakti"]), int(req["vacana"]),
-                      linga=req.get("linga") or "pulliṅga", anvadesha=bool(req.get("anvadesha")),
-                      ugit=bool(req.get("ugit")))
+                      linga=req.get("linga") or "pulliṅga", anvadesha=bool(req.get("anvadesha")))
     raise ValueError(f"unknown request kind {req.get('kind')!r}")
 
 
