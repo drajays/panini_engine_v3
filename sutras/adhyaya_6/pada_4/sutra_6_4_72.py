@@ -60,7 +60,9 @@ def act(state: State) -> State:
     if dh is None or not _site(state):
         return state
     from sutras.adhyaya_3.pada_2.sutra_3_2_111 import AT_AGAMA_CONTEXT_TAG
-    dh.varnas.insert(0, mk("A"))
+    aa = mk("A")
+    aa.tags.add("aT_agama_v")            # like 6.4.71's aṭ: the āgama is not the dhātu's own varṇa
+    dh.varnas.insert(0, aa)
     dh.tags.add("aTa_agama")
     dh.tags.discard(AT_AGAMA_CONTEXT_TAG)
     dh.meta["Aq_agama_6_4_72_done"] = True

@@ -1,3 +1,22 @@
+# Sūtra Coverage → 100 % — v3 phase order (owner-approved 2026-10-18; v2 below stays the per-class definition and gates)
+
+**Engine pulls, brain supplies.** The brain has ~520 concept cards (50 grade-A); the transcript job is closed
+(`~/transcript_repo/_skipped/SKIPPED.tsv`: 137 deferred, 389 skipped; deferred ones are carded on demand when their
+prakaraṇa batch starts). Every batch: `make preflight` → `make brain`/`make resolve` → claim → failing test from Kāśikā →
+`cond`/`act` → conflicts declared → focused tests → full suite (serial, never beside sweeps) → release.
+
+| Phase | Work | Gate |
+|---|---|---|
+| 0 | Ledgers regenerated (`tools.firing_coverage`, `tools.sutra_class`, `make coverage`, `make bench`); suite baseline 20,314 passed | numbers committed |
+| 1 | Bugs from the brain's `ENGINE_FINDINGS.md` that change output today, measured on the loop by `tools/findings_probe.py` | probe cases pass or are strict xfails |
+| 2 | Prakaraṇa machine P2 (scope index replaces `_PHASE_RANGES` / `_MULTI_TERM_RANGES` / `_skip_krt_window`), 2.4.77 timing, Vidyut-order verdicts; P5 dvitva-as-one-prakaraṇa, aṅga per pratyaya; the loop records BLOCKED for candidates a pratiṣedha removes | sweeps = baselines; scans/step ↓ |
+| 3 | Tiṅanta closed: every gaṇa × lakāra × pada vs Vidyut (`tools.tri_compare`, verdict per disagreement); 6.1.33/6.1.45–46, 6.4.34, sannanta, yaṅ, ṇic, Ām; flip tiṅanta default to the loop; delete recipe code each real rule replaces | Gate C (364 shipped derivations through the loop) |
+| 4 | AMENDMENT 25 (vivakṣā inputs: artha, upapada Term, karmakatva data, niṣṭhā-seṭ by probe, varṇa `origin:` tags) → pada block 1.3.12–93, then M7 kṛt, M8 taddhita, M6 samāsa, M5 kāraka, one mechanism per batch | pilot per mechanism with zero engine edits |
+| 5 | Sweep prakaraṇa by prakaraṇa (Aṣṭādhyāyī order inside each): Adh. 6 placeholders → 7 → 8 → 3.1 sanādi → 3.2–3.4 kṛt → 4.1 strī → taddhita → samāsa → kāraka; accent/Vedic last (Track G); a generator emits records + test tables from pāṭha/gaṇapāṭha/Kāśikā | per-batch gate (v2 §3) |
+| 6 | Completeness invariant (every applicable sūtra fired / blocked / lost / gap) + Vidyut-floor test | zero unexplained applicable sūtras on sweeps |
+
+---
+
 # Sūtra Coverage → 100 % — Final Plan (v2)
 
 > Supersedes the 2026-10-03 draft. Companion to [`CONSTITUTION.md`](../CONSTITUTION.md) (law) ·

@@ -1,16 +1,20 @@
 """
 6.4.25  दंशसञ्जस्वञ्जां शपि  —  VIDHI
 
-Before śap the nasal of दंश्, सञ्ज्, स्वञ्ज् drops — दशति, सजति, स्वजते (KV/SK §43: "दंशसञ्जस्वञ्जां शपि").
-Sources: ashtadhyayi.com data row 64025; Kāśikā 6.4.25.
-Pāṭha: ashtadhyayi.com data.txt row i=64025 (Art. 14).
+Sources consulted:
+- ashtadhyayi.com data.txt row i=64025
+- Kāśikā: "दशति, सजति, परिष्वजते"
+- Cross-validation: tests/regression/test_findings_probe_loop.py (दशति)
+
+Before śap the upadhā nasal of daṃś, ṣañj, ṣvañj is elided. The dhātupāṭha input spells these roots with a plain
+nasal (danSa~, zanja~, zvanja~; owner ruling on C-023); the older Y/M spellings stay for recipe callers.
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-_ROOTS = frozenset({"daMSa~", "zaYja~", "zvaYja~"})
+_ROOTS = frozenset({"danSa~", "zanja~", "zvanja~", "daMSa~", "zaYja~", "zvaYja~"})
 _NASAL = frozenset("nNYmM")
 
 

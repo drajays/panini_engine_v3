@@ -1,5 +1,18 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
+## SESSION 2026-10-18 — cursor: plan v3, Phase 0 + Phase 1 (READ FIRST)
+**Plan of record:** v3 phase table at the top of `docs/SUTRA_COVERAGE_100_PLAN.md` (engine pulls, brain supplies). Transcript job closed
+(`~/transcript_repo/_skipped/SKIPPED.tsv`; 3 last Pushpa gap slices TR_s01–03 carded in the brain). **AMENDMENT 25** drafted
+(`docs/AMENDMENT_25.md`, vivakṣā inputs) — needs owner signature before Phase 4.
+**Phase 0:** ledgers regenerated (firing 714 invoked / 428 moved; confident 286; lint implemented 315). Suite 20,343 passed, 14 skipped, 7 xfailed.
+`make bench` not rerun (Vidyut oracle; next session).
+**Phase 1:** `tools/findings_probe.py` + `tests/regression/test_findings_probe_loop.py` (26/30; 4 strict xfails: hve 6.1.33, vye 6.1.46, bhī loṭ āni,
+śās 6.4.34). Real rules: 8.3.60, 7.3.55/56/57 split, 6.4.25 root spelling, 7.3.88 PRATISHEDHA (+ `vikarana_luk` tag from 2.4.72/2.4.77; 6.4.77 uvaṅ
+when guṇa forbidden), 6.4.42 (+ `origin:` varṇa tag, `engine/strata.varna_visible` for 6.4.22), 7.4.68, 7.4.69, 6.4.81, 6.4.72 āṭ tag, 6.4.122
+(moved out of 6.4.120), 7.2.114, 8.2.36 apavāda of 8.2.30. Details: brain `transcript_work/ENGINE_FINDINGS.md` top section.
+**Next:** the 4 xfails; 6.1.70 file holds a 6.1.66 slice (move to 6.1.66, write real 6.1.70; 6.1.66 also carries 6.1.68 work); then Phase 2 (P2 scope
+index; loop should record BLOCKED for pratiṣedha-removed candidates). Gotcha: never edit a sūtra file while a run imports it (gave a phantom tFa).
+
 ## SESSION 2026-10-10/11 — prakaraṇa track P0/P1 + Vidyut-as-validator (READ FIRST, then the older notes below)
 **Rulings (owner):** Aṣṭādhyāyī kram is the law; Patañjali/Kātyāyana/Pushpa Dixit/Neelesh Bodas only clarify within it. Siddhānta-kaumudī order is NOT authority.
 Vidyut = validator only: a disagreement is a flag that needs a recorded verdict (`ours`|`engine`, reason, authority) in `data/inputs/vidyut_order_overrides.json`.

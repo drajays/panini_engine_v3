@@ -65,6 +65,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "व्रश्च-भ्रस्ज-सृज-मृज-यज-राज-भ्राज-च्छ-शाम् / षः",
     why_dev        = "व्रश्चभ्रस्ज…च्छशां षः: a dhātu-final श्/छ् (and सृज्, मृज्, यज्, राज्, भ्राज्) → ष् before a jhal or at the pada end (apavāda of 8.2.30) — दंश्+स्य, सृज्+त → सृष्ट.",
     anuvritti_from = ("8.2.1",),
+    apavada_of     = ("8.2.30",),   # ṣa displaces coḥ kuḥ on these finals (mṛṣṭaḥ, not *mṛktaḥ)
     cond           = cond,
     act            = act,
 )

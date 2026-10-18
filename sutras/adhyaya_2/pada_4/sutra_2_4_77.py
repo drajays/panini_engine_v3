@@ -66,6 +66,8 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     j = _find_sic_index(state)
     if j is not None:
+        if j:
+            state.terms[j - 1].tags.add("vikarana_luk")   # the aṅga remembers its luk'd vikaraṇa (7.3.88, 1.1.63)
         state.terms.pop(j)
         state.samjna_registry["2.4.77_sic_luk"] = True
         return state

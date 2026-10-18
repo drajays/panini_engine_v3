@@ -138,5 +138,45 @@
    "CONSTITUTION.md"
   ],
   "updated": 1791263637.142899
+ },
+ {
+  "id": "p0-ledgers",
+  "agent": "cursor",
+  "scope": [
+   "sig/",
+   "docs/STATUS.md",
+   "docs/CONFIDENT_SUTRAS.md",
+   "bench/report/"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792303668.225933
+ },
+ {
+  "id": "p1-loop-findings",
+  "agent": "cursor",
+  "scope": [
+   "sutras/adhyaya_8/pada_3/sutra_8_3_60.py",
+   "sutras/adhyaya_7/pada_3/sutra_7_3_57.py",
+   "sutras/adhyaya_6/pada_4/sutra_6_4_25.py",
+   "sutras/adhyaya_7/pada_3/sutra_7_3_88.py",
+   "sutras/adhyaya_6/pada_4/sutra_6_4_42.py",
+   "sutras/adhyaya_7/pada_4/sutra_7_4_68.py",
+   "sutras/adhyaya_6/pada_1/sutra_6_1_46.py",
+   "sutras/adhyaya_6/pada_1/sutra_6_1_33.py",
+   "sutras/adhyaya_6/pada_4/sutra_6_4_81.py",
+   "sutras/adhyaya_7/pada_4/sutra_7_4_69.py",
+   "sutras/adhyaya_6/pada_4/sutra_6_4_122.py",
+   "sutras/adhyaya_7/pada_2/sutra_7_2_114.py",
+   "sutras/adhyaya_6/pada_1/sutra_6_1_66.py",
+   "sutras/adhyaya_6/pada_1/sutra_6_1_70.py",
+   "tools/findings_probe.py",
+   "tests/regression/test_findings_probe_loop.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792303668.275266
  }
 ]

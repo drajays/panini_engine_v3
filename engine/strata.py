@@ -123,6 +123,16 @@ def visible(observer: str, effect_of: str) -> Visibility:
     return Visibility(True)
 
 
+ORIGIN_TAG = "origin:"
+
+
+def varna_visible(observer: str, varna: Any) -> bool:
+    """Can ``observer`` see this varṇa? A varṇa an operation created carries ``origin:<sūtra>``; it is
+    invisible to a rule for which that sūtra's work is asiddha (6.4.22 inside the ābhīya section: the ā
+    6.4.42 makes of jan's n is still n for 6.4.113 — jajātaḥ)."""
+    return all(visible(observer, tag[len(ORIGIN_TAG):]) for tag in varna.tags if tag.startswith(ORIGIN_TAG))
+
+
 def explain(observer: str, effect_of: str) -> str:
     verdict = visible(observer, effect_of)
     if verdict.visible:

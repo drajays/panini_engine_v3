@@ -29,8 +29,6 @@ from phonology.pratyahara import HAL
 
 _VOWELS = frozenset("aAiIuUfFxXeEoO")
 _ASPIRATE = frozenset("KGCJWQTDPB")          # 8.4.54 re-makes their abhyāsa: an ādeśa
-# 6.4.122 तॄफलभजत्रपश्च — e/abhyāsa-lopa despite ādeśādi (फल्, भज्) or saṃyoga (त्रप्)
-_6_4_122 = frozenset({"Pal", "Baj", "trap"})
 # 6.4.126 न शसददवादिगुणानाम्
 _6_4_126 = frozenset({"Sas", "dad"})
 
@@ -58,8 +56,6 @@ def _find(state: State) -> int | None:
         if not _ending_licenses(nxt):
             continue
         vs = [v.slp1 for v in t.varnas]
-        if "".join(vs) in _6_4_122:
-            return i
         if len(vs) != 3 or vs[1] != "a" or vs[0] in _VOWELS or vs[2] in _VOWELS:
             continue          # एकहल्मध्ये: a between single consonants
         if "".join(vs) in _6_4_126 or vs[0] == "v":

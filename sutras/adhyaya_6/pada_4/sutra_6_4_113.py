@@ -14,6 +14,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.strata import varna_visible
 from phonology import mk
 
 _META_P009 = "corrected_v2_P009_6_4_113_arm"
@@ -53,6 +54,8 @@ def _hit_abhyasta(state: State) -> int | None:
         if t.meta.get("6_4_113_I_done") or not any("abhyasa" in u.tags for u in state.terms):
             continue
         if "".join(v.slp1 for v in t.varnas) in {"dA", "DA"}:          # aghoḥ
+            continue
+        if not varna_visible("6.4.113", t.varnas[-1]):                 # 6.4.22: jan's ā (6.4.42) is asiddha here
             continue
         nxt = state.terms[i + 1]
         if "yasut_agama" in nxt.tags:

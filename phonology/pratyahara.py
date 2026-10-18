@@ -83,7 +83,8 @@ EC    = build_pratyahara("e", "c")
 YAN   = build_pratyahara("y", "R")   # antaḥsthā y v r l
 JHAL  = build_pratyahara("J", "l")
 KHAR  = build_pratyahara("K", "r")
-# AK, IN, AN, ENG could be added here as needed — pattern identical.
+IN    = build_pratyahara("i", "R")   # iṇ with the second ṇ (laṇ): 8.3.57 iṇkoḥ
+# AK, AN, ENG could be added here as needed — pattern identical.
 
 
 # ──────────────────────────────────────────────────────────────

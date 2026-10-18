@@ -53,6 +53,8 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     idxs = _sap_indexes(state)
     for i in reversed(idxs):
+        if i:
+            state.terms[i - 1].tags.add("vikarana_luk")   # the aṅga remembers its luk'd vikaraṇa (7.3.88, 1.1.63)
         del state.terms[i]
     state.meta["2_4_72_sap_luk"] = True
     return state

@@ -13,6 +13,10 @@ Format (data/inputs/maheshvara_sutras.json):
 ]
 
 The `it` letter is NOT mixed into `phonemes`; it is the group-closer.
+
+The `it` field is a closer id, not SLP1: the first ṇ (अइउण्) is "N", the second ṇ (लण्) is "R" and ṅ (एओङ्) is "g",
+so that aṇ with the first ṇ (1.1.51) and with the second (1.1.69) stay distinct. build_pratyahara matches closers only
+against closers, so these ids never collide with the phonemes N, R, g.
 """
 from __future__ import annotations
 

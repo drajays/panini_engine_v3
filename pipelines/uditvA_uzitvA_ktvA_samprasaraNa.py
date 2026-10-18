@@ -84,7 +84,6 @@ def derive_uzitvA() -> State:
     s = _samprasaran_v_to_u_on_first_term(s)
     s = apply_rule("6.1.108", s)
     s = P00_ktva_avyaya_then_tripadi(s)  # tripādī last: 8.3.60 शासिवसिघसीनां च
-    s.meta["shasi_vasi_recipe"] = True
     s = apply_rule("8.3.60", s)
     return s
 

@@ -33,8 +33,10 @@ def _find(state: State):
             j += 1
         tin = state.terms[j]
         if ("tin_adesha_3_4_78" in tin.tags and "kngiti" not in tin.tags and not tin.meta.get("is_apit")
-                and "ardhadhatuka" not in tin.tags and any(t.startswith("sarvadhatuka") for t in tin.tags)):
-            continue                                   # a pit sārvadhātuka (āni, ni…) takes guṇa first: biBayAni, not *biBeyAni
+                and "ardhadhatuka" not in tin.tags and any(t.startswith("sarvadhatuka") for t in tin.tags)
+                and "7.3.84" not in state.blocked_sutras):
+            continue                                   # a pit sārvadhātuka (āni, ni…) takes guṇa first: biBayAni, not *biBeyAni;
+                                                       # where guṇa is forbidden (7.3.88 sū) uvaṅ goes ahead: suvAni
         if len(dh.varnas) == 1 and dh.varnas[0].slp1 == "i":
             continue                                   # 6.4.81 इणो यण्
         if (not any("abhyasa" in u.tags for u in state.terms)

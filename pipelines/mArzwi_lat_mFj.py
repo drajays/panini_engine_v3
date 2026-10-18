@@ -51,8 +51,9 @@ def derive_mArzwi() -> State:
     s = apply_rule("1.1.60", s)
     s = apply_rule("2.4.72", s)
 
-    # Aṅga saṃjñā
+    # Aṅga saṃjñā; tip is sārvadhātuka (7.2.114 replaces the guṇa a sārvadhātuka would bring)
     s = apply_rule("1.4.13", s)
+    s = apply_rule("3.4.113", s)
 
     # mṛjeḥ vṛddhiḥ (ṛ → Ar) + uRaN-rapara.
     s = apply_rule("1.1.1", s)
