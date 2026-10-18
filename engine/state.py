@@ -70,6 +70,9 @@ class Term:
                  meta['upadesha_slp1']  : str — pratyaya's upadeśa id
                  meta['gana']           : int — dhātu's gaṇa
                  meta['dhatu_it']       : set of str — old it-markers from upadeśa
+                 meta['karmakatva']     : sakarmaka | akarmaka | dvikarmaka — copied from
+                                          data/inputs/dhatu_karmakatva.json (ashtadhyayi.com) by
+                                          engine/tape_init, never set by a recipe (AMENDMENT 25)
                FORBIDDEN keys (tests enforce):
                  'vibhakti', 'vacana', 'purusha', 'lakara', 'surface_gold'
     """
@@ -139,6 +142,9 @@ class State:
     phase            : str                           = "angakarya"
     trace            : List[Dict[str, Any]]          = field(default_factory=list)
     meta             : Dict[str, Any]                = field(default_factory=dict)
+    # AMENDMENT 25: what the speaker wants to say (artha, kāla, kartrabhiprāya …). Set only by engine/tape_init
+    # from the request; read only through engine.vivaksha.vivaksita.
+    vivaksha         : Dict[str, Any]                = field(default_factory=dict)
 
     # ─────────────────────────────────────────────────────────────────
     # Mutation discipline:  every exec_* MUST call state.clone() first,
@@ -164,6 +170,7 @@ class State:
             phase            = self.phase,
             trace            = [dict(s) for s in self.trace],
             meta             = deepcopy(self.meta),
+            vivaksha         = dict(self.vivaksha),
         )
 
     def fork(self) -> "State":

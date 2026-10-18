@@ -256,10 +256,15 @@ def _select_tin_adesha(lakara_slp1: str, pada: str, purusha: int, vacana: int) -
 
 
 def _prep_bhave(state: State) -> State:
-    """3.4.69 prayoga gates + *akarmaka* default on dhātu (bhāve kartari)."""
+    """3.4.69 prayoga gates for bhāve. The dhātu's karmakatva comes from the dhātupāṭha data. Kāśikā 3.4.69:
+    "सकर्मकेभ्यो भावे न भवन्ति"; a sakarmaka root asked in bhāve is akarmaka by non-intention of its karman —
+    "प्रसिद्धेरविवक्षातः कर्मणोऽकर्मिका क्रिया" (Padamañjarī 1.3.29, Bālamanoramā 1.3.28) — which the gate reads."""
     for t in state.terms:
         if "dhatu" in t.tags:
-            t.meta.setdefault("karmakatva", "akarmaka")
+            if t.meta.get("karmakatva") in ("sakarmaka", "dvikarmaka"):
+                t.meta["avivakshita_karma"] = True
+            else:
+                t.meta.setdefault("karmakatva", "akarmaka")
             break
     return apply_rule("3.4.69", state)
 

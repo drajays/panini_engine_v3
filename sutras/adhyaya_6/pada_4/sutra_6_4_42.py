@@ -42,9 +42,7 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     t = state.terms[_find(state)]
-    aa = mk("A")
-    aa.tags.add("origin:6.4.42")          # asiddhavat for the rest of the ābhīya section (6.4.22): jajātaḥ, not *jajītaḥ
-    t.varnas[-1] = aa
+    t.varnas[-1] = mk("A")            # the dispatcher stamps origin:6.4.42 — asiddhavat for 6.4.113 (6.4.22): jajātaḥ
     return state
 
 

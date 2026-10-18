@@ -31,7 +31,7 @@ def effective_karmakatva_for_lac(term: Term) -> Optional[str]:
     raw = term.meta.get("karmakatva")
     if raw is None:
         return None
-    if raw == "dvyarma":
+    if raw in ("dvyarma", "dvikarmaka"):          # a dvikarmaka dhātu is sakarmaka (data: ashtadhyayi.com 'D')
         raw = "sakarmaka"
     if raw not in ("sakarmaka", "akarmaka"):
         return None

@@ -132,11 +132,34 @@ def _is_tripadi(sutra_id: str) -> bool:
 
 
 def _tape_marks(state: State):
-    """The saṃjñās/marks carried on the tape: term kinds and tags, varṇa tags."""
+    """The saṃjñās/marks carried on the tape: term kinds and tags, varṇa tags (not ``origin:`` history)."""
     return tuple(
-        (t.kind, frozenset(t.tags), tuple((v.slp1, frozenset(v.tags)) for v in t.varnas))
+        (t.kind, frozenset(t.tags), tuple((v.slp1, frozenset(g for g in v.tags if not g.startswith(ORIGIN_TAG)))
+                                          for v in t.varnas))
         for t in state.terms
     )
+
+
+ORIGIN_TAG = "origin:"
+_PRESENT = "__present_before_step__"
+
+
+def _mark_present(state: State) -> None:
+    for t in state.terms:
+        for v in t.varnas:
+            v.tags.add(_PRESENT)
+
+
+def _stamp_origin(sutra_id: str, state: State) -> None:
+    """AMENDMENT 25 §6: every varṇa the step created carries ``origin:<sūtra>`` (6.1.80, 6.4.22 read it)."""
+    states = [state] + [f for f in state.vibhasha_forks if isinstance(f, State)]
+    for s in states:
+        for t in s.terms:
+            for v in t.varnas:
+                if _PRESENT in v.tags:
+                    v.tags.discard(_PRESENT)
+                else:
+                    v.tags.add(ORIGIN_TAG + sutra_id)
 
 
 def apply_rule(
@@ -254,6 +277,7 @@ def apply_rule(
 
     # ── Dispatch to executor (the ONLY place we call exec_*) ─────────
     exec_fn = _EXEC_TABLE[stype]
+    _mark_present(new_state)
     try:
         new_state, fired = exec_fn(rec, new_state, recipe_step)
     except Exception as ex:
@@ -261,6 +285,7 @@ def apply_rule(
         raise RuntimeError(
             f"executor for {sutra_id} ({stype.name}) raised: {ex}"
         ) from ex
+    _stamp_origin(sutra_id, new_state)
 
     form_after = new_state.render()
 

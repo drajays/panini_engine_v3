@@ -6,9 +6,14 @@ sūtra ``cond()``), and walks phases for autonomous loop entry.
 """
 from __future__ import annotations
 
+import json
+from functools import lru_cache
+from pathlib import Path
+
 from engine.adhikara_automation import ensure_adhikara_for_phase
 from engine.phase import set_phase
 from engine.state import State, Term
+from engine.vivaksha import set_vivaksha
 from phonology import mk
 from phonology.varna import parse_slp1_upadesha_sequence
 
@@ -25,6 +30,21 @@ _LAKARA_TAG = {
     "lRN": "lrn_derivation",
     "AsIrliG": "asirlig_derivation",
 }
+
+
+_KARMAKATVA = Path(__file__).resolve().parents[2] / "data" / "inputs" / "dhatu_karmakatva.json"
+# 3.4.69 लः कर्मणि च भावे चाकर्मकेभ्यः: the lakāra is taught in the meaning kartṛ, karman or bhāva
+_PRAYOGA_ARTHA = {"kartari": "kartf", "karmani": "karman", "bhave": "BAva"}
+
+
+@lru_cache(maxsize=1)
+def dhatu_karmakatva() -> dict[str, str]:
+    return json.loads(_KARMAKATVA.read_text(encoding="utf-8"))["values"]
+
+
+def _record_vivaksha(state: State, prayoga: str) -> State:
+    set_vivaksha(state, artha=_PRAYOGA_ARTHA.get(prayoga))
+    return state
 
 
 def dhatu_term_from_row(row: dict, prayoga: str, lakara: str) -> Term:
@@ -50,6 +70,9 @@ def dhatu_term_from_row(row: dict, prayoga: str, lakara: str) -> Term:
         # antargaṇa membership (प्वादिः, घटादिः …) — lexical, like the gaṇa
         "antarganas": tuple(row.get("antarganas") or ()),
     }
+    karmakatva = dhatu_karmakatva().get(row.get("dhatupatha_id") or "")
+    if karmakatva:                        # ashtadhyayi.com dhātupāṭha 'karma' (AMENDMENT 25 §4); a gap row has none
+        meta["karmakatva"] = karmakatva
     if atmane:
         meta["kartari_atmanepada_licensed"] = True
     if ubhaya:
@@ -82,7 +105,7 @@ def build_tinanta_recipe_state(row: dict, lakara: str, prayoga: str) -> State:
 
     Leaves ``phase=angakarya`` (recipe default) so existing spines unchanged.
     """
-    return State(
+    return _record_vivaksha(State(
         terms=[dhatu_term_from_row(row, prayoga, lakara)],
         meta={
             "derivation_class": "tinanta",
@@ -90,7 +113,7 @@ def build_tinanta_recipe_state(row: dict, lakara: str, prayoga: str) -> State:
             "prayoga": prayoga,
         },
         trace=[],
-    )
+    ), prayoga)
 
 
 def _base_dhatu_term(upadesha_slp1: str, prayoga: str, lakara: str) -> Term:
@@ -133,6 +156,7 @@ def build_tinanta_initial_state(
     state.meta["derivation_class"] = "tinanta"
     state.meta["lakara"] = lakara
     state.meta["prayoga"] = prayoga
+    _record_vivaksha(state, prayoga)
     ensure_adhikara_for_phase(state, "upadesha")
     return state
 

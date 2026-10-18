@@ -66,6 +66,11 @@ The engine is **blind** in the following strict sense:
    - It-tags on Varṇas
    - Adhikāra stack
    - Upadeśa identity on a pratyaya Term (`upadesha_slp1 == "Ne"`)
+   - *(AMENDMENT 25)* the vivakṣā, only as `engine.vivaksha.vivaksita(state, key, value)` and only for a value
+     whose word form stands in that sūtra's own samagra text (the vocabulary is `data/inputs/vivaksha_schema.json`,
+     every value cited to the sūtras that name it); a Term of kind `upapada` and its tags; `Term.meta['karmakatva']`
+     (copied from ashtadhyayi.com dhātupāṭha data, never set by a recipe); varṇa tags `origin:<sūtra>` (written
+     by the dispatcher on every varṇa a step creates)
 3. `cond(state)` **may not** inspect:
    - `(vibhakti, vacana)` or `(lakāra, puruṣa, vacana)` coordinates
    - Surface Devanāgarī spelling of any Term

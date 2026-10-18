@@ -180,6 +180,7 @@ def _probe_clone(state: State) -> State:
         phase=state.phase,
         trace=[],
         meta={k: (copy.copy(v) if isinstance(v, (list, dict, set)) else v) for k, v in state.meta.items()},
+        vivaksha=dict(state.vivaksha),
     )
 
 
@@ -198,11 +199,12 @@ def probe(sutra_id: str, state: State) -> State:
 def tape_fingerprint(state: State) -> tuple:
     """What a rule can *do* to the derivation: the terms, their varṇas and every
     tag on them. Gate keys and ``state.meta`` are excluded on purpose — a rule
-    that only records that it ran has done nothing."""
+    that only records that it ran has done nothing. A varṇa's ``origin:`` provenance (AMENDMENT 25) is history,
+    not an effect, so it is left out."""
     return (
         tuple(
             (t.kind, tuple(sorted(t.tags)), repr(sorted(t.meta.items(), key=lambda kv: kv[0])),
-             tuple((v.slp1, tuple(sorted(v.tags))) for v in t.varnas))
+             tuple((v.slp1, tuple(sorted(g for g in v.tags if not g.startswith("origin:")))) for v in t.varnas))
             for t in state.terms
         ),
         frozenset(state.blocked_sutras),
