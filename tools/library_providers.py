@@ -412,6 +412,9 @@ class AshtadhyayiCom:
             raise KeyError(sec)
         return {"label": lab, "items": w.items(sec)}
 
+    def section_full(self, slug: str, sec: str) -> list[dict]:
+        return self._w(slug).items(sec, full=True)
+
     def item(self, slug: str, sec: str, item_id: str) -> dict:
         it = next((x for x in self._w(slug).items(sec, full=True) if x["id"] == item_id), None)
         if it is None:
@@ -476,6 +479,27 @@ def section(work_id: str, sec: str) -> dict:
 def item(work_id: str, sec: str, item_id: str) -> dict:
     p, slug = provider_of(work_id)
     return {"work": work_id, "section": sec, **p.item(slug, sec, item_id)}
+
+
+def passages(work_id: str) -> list[dict]:
+    """Every item of a work with all of its text (mūla, passages, commentaries) flattened — for a client's index.
+    ``{section, item, ref, text, commentary}``; ``commentary`` kept apart so a client can weigh the two."""
+    p, slug = provider_of(work_id)
+    out = []
+    for s in p.sections(slug):
+        if hasattr(p, "section_full"):  # one pass per section instead of one per item
+            fulls = p.section_full(slug, s["id"])
+        else:
+            fulls = [p.item(slug, s["id"], it["id"]) for it in p.section(slug, s["id"])["items"]]
+        for full in fulls:
+            it = full
+            comm = [c.get("text") or "\n".join(r["text"] for r in c.get("rows", [])) for c in full.get("commentaries", [])]
+            for ps in full.get("passages", []):
+                comm.append(ps["text"])
+                comm += [c.get("text") or "\n".join(r["text"] for r in c.get("rows", [])) for c in ps.get("commentaries", [])]
+            out.append({"section": s["id"], "item": it["id"], "ref": it["ref"], "text": full["text"],
+                        "commentary": "\n".join(x for x in comm if x)})
+    return out
 
 
 def search(q: str, limit: int = 60, provider: str | None = None) -> list[dict]:

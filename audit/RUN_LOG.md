@@ -242,6 +242,14 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-10-20 18:00  [cursor]  Concept graph of the whole literature (Subhastini #/graph)
+
+`/v1/library/text/{work}` (`library_providers.passages`: every item with mūla + commentary, one pass per section — Aṣṭādhyāyī
+118 s → 1 s; `as:` loopback only). Subhastini `tools/litgraph.py` tags every passage of 65 works (library, thoughts, 50 engine
+works; 163,815 passages) with concepts.txt; engine part cached as counts/refs in `.cache/`. Graph: works ↔ concepts by lift,
+concept co-occurrence, click-through to passages. Lexical (Aṣṭādhyāyī → guṇa/yoga/prakṛti as technical terms) — stated on the page.
+**Tests:** `tests/unit/test_library_api.py` 10 passed.
+
 ### 2026-10-20 14:30  [cursor]  All Sanskrit literature in one place — Subhastini front door, engine `/v1/library`
 
 Owner: "all Sanskrit literature from all 3 repos integrated in one place; future ones added too". Rulings: Subhastini is the place;

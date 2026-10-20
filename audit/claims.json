@@ -258,5 +258,21 @@
   "status": "released",
   "hotspots": [],
   "updated": 1792495933.650955
+ },
+ {
+  "id": "literature-graph",
+  "agent": "cursor",
+  "scope": [
+   "api/main.py",
+   "tools/library_providers.py",
+   "tests/unit/test_library_api.py",
+   "audit/RUN_LOG.md",
+   "audit/claims.json",
+   "handover.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792498546.8588128
  }
 ]

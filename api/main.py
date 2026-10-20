@@ -652,6 +652,14 @@ def library_search(q: str = Query(..., min_length=1), limit: int = Query(60, ge=
     return {"q": q, "total": len(hits), "hits": hits}
 
 
+@app.get("/v1/library/text/{work_id}", tags=["library"])
+def library_text(work_id: str, request: Request) -> dict[str, Any]:
+    """All items of one work with their full text, for a client's index (Subhastini's concept graph)."""
+    from tools import library_providers as lib
+
+    return {"work": work_id, "passages": _library(lib.passages, work_id, request=request, work_id=work_id)}
+
+
 @app.get("/v1/library/works/{work_id}", tags=["library"])
 def library_work(work_id: str, request: Request) -> dict[str, Any]:
     from tools import library_providers as lib

@@ -66,6 +66,22 @@ def test_advaita_sharada_is_served_to_this_machine_only():
     assert it["links"]["source"].startswith("https://advaitasharada.sringeri.net/")
 
 
+@pytest.mark.skipif(not _AC, reason="~/data-master (ashtadhyayi.com data) not on this machine")
+def test_bulk_text_carries_commentary_apart():
+    rows = api.library_text("ac:paniniya-shiksha", REMOTE)["passages"]
+    assert rows and {"section", "item", "ref", "text", "commentary"} <= set(rows[0])
+    assert "शिक्षां" in rows[0]["text"] and rows[0]["commentary"]
+
+
+@pytest.mark.skipif(not _AS, reason="Advaita Sharada cache not on this machine")
+def test_bulk_text_is_local_only_for_advaita_sharada():
+    with pytest.raises(HTTPException) as e:
+        api.library_text("as:isha-bhashya", REMOTE)
+    assert e.value.status_code == 403
+    rows = api.library_text("as:isha-bhashya", LOCAL)["passages"]
+    assert len(rows) == 18 and "ईष्टे" in rows[0]["commentary"]
+
+
 def test_search_finds_across_providers():
     hits = api.library_search("ब्रह्म", 5, None)["hits"]
     assert all({"work", "section", "item", "snippet"} <= set(h) for h in hits)
