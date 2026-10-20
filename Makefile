@@ -74,6 +74,9 @@ bench:
 gaps:
 	python3 -m tools.gaps_report
 
+corpus-gaps:   ## Subhastini's library through /v1/analyze, gaps ranked by tokens → .audit/corpus_gaps.json
+	python3 -m tools.corpus_gaps
+
 index:
 	python3 -m tools.build_form_index
 	python3 -m tools.build_form_index --verify 300
