@@ -269,6 +269,26 @@ def practice_lemmas(kind: Literal["subanta", "tinanta"] = "subanta") -> dict[str
     return {"lemmas": lemmas(kind)}
 
 
+@app.get("/v1/practice/sentences", tags=["abhyāsa"])
+def practice_sentence_sets() -> dict[str, Any]:
+    """Sentence sets for practice (Saṃsādhanī "1000 Sentences"), with counts."""
+    from tools.practice_sentences import ROLES, sets
+    return {"sets": sets(), "roles": ROLES}
+
+
+@app.get("/v1/practice/sentences/{set_id}", tags=["abhyāsa"])
+def practice_sentence_list(set_id: str) -> dict[str, Any]:
+    from tools.practice_sentences import sentences
+    return {"set": set_id, "sentences": _run(sentences, set_id)}
+
+
+@app.get("/v1/practice/sentences/{set_id}/{sid}", tags=["abhyāsa"])
+def practice_sentence(set_id: str, sid: str) -> dict[str, Any]:
+    """One sentence with every word's form, written-out tag, gloss, kāraka role (+ sūtras) and engine verdict."""
+    from tools.practice_sentences import sentence
+    return _run(sentence, set_id, sid)
+
+
 @app.get("/practice", response_class=HTMLResponse, include_in_schema=False)
 def practice_page() -> str:
     """अभ्यास — practice with a sūtra-by-sūtra explanation of every answer."""

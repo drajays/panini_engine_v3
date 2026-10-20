@@ -274,5 +274,53 @@
   "status": "released",
   "hotspots": [],
   "updated": 1792498546.8588128
+ },
+ {
+  "id": "abhyasa-sentences",
+  "agent": "cursor",
+  "scope": [
+   "tools/practice_sentences.py",
+   "api/main.py",
+   "tests/unit/test_practice_sentences.py",
+   "docs/INTEGRATION_CLIENTS.md",
+   "audit/RUN_LOG.md",
+   "audit/claims.json",
+   "handover.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792500880.185132
+ },
+ {
+  "id": "dcs-gap-bench",
+  "agent": "cursor",
+  "scope": [
+   "tools/fetch_dcs.py",
+   "tools/dcs_reader.py",
+   "scripts/dcs_gap_report.py",
+   "data/reference/dcs",
+   "tests/tools/test_dcs_reader.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792499959.426019
+ },
+ {
+  "id": "dcs-gap-bench",
+  "agent": "cursor",
+  "scope": [
+   "tools/fetch_dcs.py",
+   "tools/dcs_reader.py",
+   "scripts/dcs_gap_report.py",
+   "data/reference/dcs",
+   "tests/unit/test_dcs_reader.py",
+   ".gitignore"
+  ],
+  "out_of_scope": "",
+  "status": "in-progress",
+  "hotspots": [],
+  "updated": 1792499959.4843378
  }
 ]

@@ -242,6 +242,16 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-10-20 19:00  [cursor]  Sentence practice without AI (S1); AI book tutor retired
+
+Owner: the book with local AI is a bad idea; practise sentences deterministically. Rulings: retire the tutor from Subhastini;
+book sentences only after proofreading; start with the ready-made Saṃsādhanī "1000 Sentences".
+- **Engine:** `tools/practice_sentences.py` (sentence record: form, written-out tag, gloss, role → head + sūtras, engine verdict)
+  + `GET /v1/practice/sentences[/{set}[/{id}]]`; `tests/unit/test_practice_sentences.py`.
+- **Subhastini:** `#/abhyasa` (nav *Practice*): build / fill / kāraka / order / meaning drills, exact-match checks, Leitner boxes
+  in `practice.json`; "Ask the book" view, route, client and launcher entry removed.
+- **Plan of record:** `docs/INTEGRATION_CLIENTS.md` "Sentence practice without AI" (S2 extraction → S3 proofreading → S4 lessons → S5 transformations).
+
 ### 2026-10-20 18:00  [cursor]  Concept graph of the whole literature (Subhastini #/graph)
 
 `/v1/library/text/{work}` (`library_providers.passages`: every item with mūla + commentary, one pass per section — Aṣṭādhyāyī

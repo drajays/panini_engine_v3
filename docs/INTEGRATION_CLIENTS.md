@@ -10,7 +10,7 @@ local applications. The engine stays a separate service; nothing here changes `e
 |---|---|---|
 | `~/panini_engine_v3` — `make api`, :8000 | derivation, analysis (Art. 17), gaps (Art. 18), Vidyut oracle (Art. 19) | the only grammar authority |
 | `~/subhastini` — `Start Subhastini.command` | **front door**: reading, writing, library, notes, translation | text provenance (its `RULES.md`) |
-| `~/sanskrit_learning` — tutor, :8100 (`server.py`) | book-grounded concept answers (*Sanskrit Swayam Shikshak*), page-cited | machine output, labelled; never a source |
+| `~/sanskrit_learning` | *Sanskrit Swayam Shikshak* — source of book lessons for sentence practice (AI tutor retired 2026-10-20) | the book, once proofread; local only (in copyright to 2029) |
 | Ollama :11434 | shared by Subhastini translation and the tutor | — |
 
 Dependencies point one way: clients call the engine; the engine imports neither client.
@@ -38,11 +38,27 @@ Subhastini is where everything is read. Texts stay where they live and are read 
 | Advaita Sharada — 28 works with bhāṣya + ṭīkā (local reading copy, "All rights reserved") | engine `data/reference/advaita_sharada/raw/` | `/v1/library` (`as:`), loopback only |
 | Saṃsādhanī e-readers (10, engine-verified words) | engine `data/reference/samsaadhanii/raw/` | `/v1/library` (`scl:`) + `/reader` links |
 | ashtadhyayi.com granthas — Aṣṭādhyāyī with 16 vṛttis, Kaumudīs, Mahābhāṣya, Vākyapadīya, PŚ, Bhūṣaṇasāra, Mañjūṣā, Liṅgānuśāsana, Uṇādi, Śikṣā, Tarkasaṅgraha | `~/data-master` | `/v1/library` (`ac:`) |
-| *Sanskrit Swayam Shikshak* (tutor) | `~/sanskrit_learning` | `:8100/ask` → Subhastini "Ask the book" |
+| *Sanskrit Swayam Shikshak* | `~/sanskrit_learning` | (book lessons → sentence practice, phases S2–S5 below) |
+
+## Sentence practice without AI (2026-10-20, owner: "the book with local AI is a bad idea")
+
+Subhastini **वाक्याभ्यासः** (`#/abhyasa`). The text is the answer key; the engine checks every form; nothing is generated.
+
+| phase | deliverable | check | status |
+|---|---|---|---|
+| S1 | drills on Saṃsādhanī "1000 Sentences": build from glosses, fill the form, kāraka, order, meaning; Leitner review | exact match; a blank only for an engine-derived word; kāraka from SCL tag + 1.4.x / 2.3.x | done |
+| S2 | `~/sanskrit_learning/lessons/NN.json` per pāṭha: शब्द lists, वाक्य pairs, paradigm tables, page refs — rule-based extraction | every item points to its page | |
+| S3 | proofreading screen: sentence beside the page image; words neither the engine nor the koshas know are flagged | only proofread items are drilled | |
+| S4 | the book's lessons in its order + vocabulary flashcards | as S1 | |
+| S5 | transformation drills (tense / person / number, न, किम्) — the engine derives the target form | exact match to the engine's form | |
+
+Book material stays local and out of git (Sātavalekar d. 1968 — in copyright in India until 2029).
+API: `GET /v1/practice/sentences` (sets, quiz roles) · `/v1/practice/sentences/{set}` · `/v1/practice/sentences/{set}/{id}`
+(each word: form, written-out tag, gloss, role → head with sūtras, engine verdict).
 
 Nothing is copied between repos. A new source is a provider class in `tools/library_providers.py`
 (`works / sections / section / item / search`) — Subhastini needs no change to list it.
-`Start Subhastini.command` starts the engine API, the engine web UI and the tutor when they are not running.
+`Start Subhastini.command` starts the engine API and the engine web UI when they are not running.
 
 ## API contract used by clients
 

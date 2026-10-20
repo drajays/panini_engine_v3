@@ -1,5 +1,10 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
+## SESSION 2026-10-20 (evening) — cursor: sentence practice without AI
+Subhastini **Practice** (`#/abhyasa`) drills Saṃsādhanī's 1000 Sentences from `/v1/practice/sentences` (`tools/practice_sentences.py`);
+answers are exact-matched, every blank is an engine-derived form. AI tutor retired. Next: S2 book extraction, S3 proofreading screen
+(`docs/INTEGRATION_CLIENTS.md` "Sentence practice without AI").
+
 ## SESSION 2026-10-20 (afternoon) — cursor: all Sanskrit literature in one place
 Subhastini is the reading front door for everything; this engine serves what it holds at `/v1/library` (`tools/library_providers.py`,
 providers as / scl / ac — add a provider class for a new source). Plan + contract: `docs/INTEGRATION_CLIENTS.md` "One place".
