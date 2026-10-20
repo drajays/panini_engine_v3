@@ -378,8 +378,20 @@ def _resolve_dhatu(dhatu: str) -> str:
     raise HTTPException(404, f"Devanāgarī dhātu not found: {dhatu}")
 
 
+def _homograph_rows(dhatu: str, used_id: str) -> list[dict[str, Any]]:
+    """Other dhātupāṭha rows behind the same bare upadeśa. Our upadeśas carry no svara, so शासुँ इच्छायाम्
+    (02.0012, ātmanepadī) and शासुँ अनुशिष्टौ (02.0070, parasmaipadī) are both ``SAsu~``; a pāṭha id names one."""
+    if not dhatu or dhatu[:1].isdigit():
+        return []
+    from pipelines.dhatupatha import _envelope, _payload
+    return [e for e in _envelope(_payload())["entries"]
+            if e["upadesha_slp1"] == dhatu and e.get("dhatupatha_id") != used_id]
+
+
 @app.post("/v1/tinanta", tags=["tinanta"])
 def tinanta(req: TinantaReq) -> dict[str, Any]:
+    """One tiṅanta cell. When a bare upadeśa names several dhātus, the first in pāṭha order is derived
+    and ``homographs`` lists the others, each with its own form — pass a pāṭha id (``02.0070``) to choose."""
     from pipelines.tinanta import _dhatu_row_by_upadesha, derive
     upadesha = _resolve_dhatu(req.dhatu)
     row = _run(_dhatu_row_by_upadesha, upadesha)
@@ -395,6 +407,20 @@ def tinanta(req: TinantaReq) -> dict[str, Any]:
         "artha_en": row.get("artha_en", ""),
         "pada_dev": row.get("pada_label_dev", ""),
     }
+    homographs = []
+    for e in _homograph_rows(upadesha, row.get("dhatupatha_id", "")):
+        alt = {"dhatupatha_id": e["dhatupatha_id"], "gana": e.get("gana"), "artha_dev": e.get("artha_dev", ""),
+               "pada_dev": e.get("pada_label_dev", "")}
+        try:
+            s = derive(e["dhatupatha_id"], req.lakara, req.prayoga, req.purusha, req.vacana, **kw)
+            alt["surface"] = {"slp1": s.flat_slp1(), "dev": s.flat_dev()}
+        except Exception as ex:  # noqa: BLE001 — that row's own gap, reported beside it
+            alt["error"] = f"{type(ex).__name__}: {ex}"[:200]
+        homographs.append(alt)
+    if homographs:
+        out["homographs"] = homographs
+        out["note"] = (f"upadeśa {upadesha} names {len(homographs) + 1} dhātus; this derivation is "
+                       f"{row.get('dhatupatha_id')} ({row.get('artha_dev', '')}). Pass a pāṭha id to choose another.")
     return out
 
 
@@ -417,7 +443,18 @@ def tinanta_paradigm(
             except Exception as ex:
                 cell["error"] = f"{type(ex).__name__}: {ex}"
             cells.append(cell)
-    return {"input": {"dhatu": upadesha, "lakara": lakara, "prayoga": prayoga}, "cells": cells}
+    out: dict[str, Any] = {"input": {"dhatu": upadesha, "lakara": lakara, "prayoga": prayoga}, "cells": cells}
+    try:
+        from pipelines.tinanta import _dhatu_row_by_upadesha
+        used = _dhatu_row_by_upadesha(upadesha).get("dhatupatha_id", "")
+    except KeyError:
+        return out
+    alts = _homograph_rows(upadesha, used)
+    if alts:
+        out["dhatupatha_id"] = used
+        out["homographs"] = [{"dhatupatha_id": e["dhatupatha_id"], "gana": e.get("gana"), "artha_dev": e.get("artha_dev", ""),
+                              "pada_dev": e.get("pada_label_dev", "")} for e in alts]
+    return out
 
 
 # ─────────────────────────────────────────────────────────────────
