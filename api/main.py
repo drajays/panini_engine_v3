@@ -488,6 +488,30 @@ def krdanta(req: KrdantaReq) -> dict[str, Any]:
 
 
 # ─────────────────────────────────────────────────────────────────
+# विश्लेषणम् — analysis proposes, generation verifies (Art. 17)
+# ─────────────────────────────────────────────────────────────────
+
+class AnalyzeReq(BaseModel):
+    text: str = Field(..., max_length=4000, description="Devanāgarī: a word, a line or a verse")
+    steps: bool = Field(False, description="attach the forward derivation of the first verified readings of each word")
+
+
+@app.post("/v1/analyze", tags=["analysis"])
+def analyze(req: AnalyzeReq) -> dict[str, Any]:
+    """Each word → readings proposed by the form index and Vidyut's kosha, each re-derived by
+    the engine. ``verified`` only when a derivation reproduces the word exactly (core/analyze)."""
+    from core.analyze import analyze_text, rederive
+
+    out = analyze_text(req.text)
+    if req.steps:
+        for line in out["lines"]:
+            for word in line:
+                for r in [r for r in word["readings"] if r["status"] == "derived"][:8]:
+                    r["derivation"] = _derivation(_run(rederive, r["request"]), **r["request"])
+    return out
+
+
+# ─────────────────────────────────────────────────────────────────
 # Transliteration (SLP1 ↔ Devanāgarī) — handy for clients
 # ─────────────────────────────────────────────────────────────────
 
