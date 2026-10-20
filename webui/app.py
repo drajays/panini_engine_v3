@@ -1384,14 +1384,24 @@ def bhatti_page():
 # ग्रन्थ-पाठकः — e-reader: Saṃsādhanī annotation, engine verification
 # ─────────────────────────────────────────────────────────────────
 
+def _reader_for(unit: str):
+    """Advaita Sharada units are ``as:<slug>``; every other unit is a Saṃsādhanī e-reader."""
+    if unit.startswith("as:"):
+        from tools import advaita_sharada_reader as ar
+        return ar
+    from tools import samsaadhanii_reader as rd
+    return rd
+
+
 @app.route("/reader")
 def reader_page():
+    from tools import advaita_sharada_reader as ar
     from tools import samsaadhanii_reader as rd
     return render_template(
         "reader.html",
         nav_active="reader",
         cov=coverage_report(SUTRA_REGISTRY),
-        available=rd.available(),
+        available=rd.available() or ar.available(),
         attribution=rd.ATTRIBUTION,
     )
 
@@ -1410,38 +1420,43 @@ def api_text_meanings():
 
 @app.route("/api/reader/catalogue")
 def api_reader_catalogue():
+    from tools import advaita_sharada_reader as ar
     from tools import samsaadhanii_reader as rd
-    return jsonify({"available": rd.available(), "units": rd.catalogue()})
+    return jsonify({"available": rd.available() or ar.available(), "units": rd.catalogue() + ar.catalogue()})
 
 
 @app.route("/api/reader/verses")
 def api_reader_verses():
-    from tools import samsaadhanii_reader as rd
     try:
-        return jsonify(rd.verses(request.args["unit"], request.args["chapter"]))
+        return jsonify(_reader_for(request.args["unit"]).verses(request.args["unit"], request.args["chapter"]))
     except KeyError as e:
         return jsonify({"error": f"not found: {e}"}), 404
 
 
 @app.route("/api/reader/coverage")
 def api_reader_coverage():
-    from tools import samsaadhanii_reader as rd
     try:
-        return jsonify(rd.coverage(request.args["unit"], request.args["chapter"]))
+        return jsonify(_reader_for(request.args["unit"]).coverage(request.args["unit"], request.args["chapter"]))
     except KeyError as e:
         return jsonify({"error": f"not found: {e}"}), 404
 
 
 @app.route("/api/reader/verse")
 def api_reader_verse():
-    from tools import samsaadhanii_reader as rd
     a = request.args
     try:
-        v = rd.verse(a["unit"], a["chapter"], a["sloka"])
+        v = _reader_for(a["unit"]).verse(a["unit"], a["chapter"], a["sloka"])
     except KeyError as e:
         return jsonify({"error": f"not found: {e}"}), 404
     _reader_attach_vidyut(v)
     return jsonify(v)
+
+
+@app.route("/api/reader/word")
+def api_reader_word():
+    """A bhāṣya word: the deposit's analysis, judged by the engine."""
+    from tools import advaita_sharada_reader as ar
+    return jsonify(ar.bhashya_word(request.args.get("q", "")))
 
 
 _READER_VIDYUT_LAKARA = {ours: vid for vid, ours, _dev, _note in [  # our lakāra key → Vidyut's
@@ -1541,10 +1556,10 @@ def _sutra_text_dev(code: str | None) -> str:
 
 @app.route("/api/reader/search")
 def api_reader_search():
-    from tools import samsaadhanii_reader as rd
     try:
         limit = min(int(request.args.get("limit", 80)), 200)
-        return jsonify(rd.search(request.args["unit"], request.args.get("q", ""), limit=limit))
+        return jsonify(_reader_for(request.args["unit"]).search(request.args["unit"], request.args.get("q", ""),
+                                                                limit=limit))
     except KeyError as e:
         return jsonify({"error": f"not found: {e}"}), 404
 

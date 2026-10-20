@@ -178,5 +178,49 @@
   "status": "released",
   "hotspots": [],
   "updated": 1792303668.275266
+ },
+ {
+  "id": "advaita-sharada-reader",
+  "agent": "cursor",
+  "scope": [
+   "tools/fetch_advaita_sharada.py",
+   "tools/advaita_sharada_reader.py",
+   "data/reference/advaita_sharada/SOURCE.json",
+   ".gitignore",
+   "data/inputs/grantha_catalog.json",
+   "webui/app.py",
+   "webui/templates/reader.html",
+   "tests/unit/test_advaita_sharada_reader.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792466301.9091232
+ },
+ {
+  "id": "integration-clients-p0p1",
+  "agent": "cursor",
+  "scope": [
+   "docs/INTEGRATION_CLIENTS.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792470813.155777
+ },
+ {
+  "id": "advaita-sharada-words",
+  "agent": "cursor",
+  "scope": [
+   "tools/fetch_prasthanatrayi_words.py",
+   "data/reference/prasthanatrayi_words/SOURCE.json",
+   "audit/RUN_LOG.md",
+   "audit/claims.json",
+   "handover.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792466301.9369311
  }
 ]

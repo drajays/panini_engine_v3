@@ -46,6 +46,26 @@
       "kind": "learner_practice",
       "runtime": false,
       "role": "Independent अभ्यास (subanta, tinanta, kṛt, taddhita, nāmadhātu, sandhi). Surface gold + drill UX for /practice. Not a second pāṭha; never copied into cond() (Art. 0, Art. 19 T10)."
+    },
+    {
+      "id": "advaita-sharada",
+      "url": "https://advaitasharada.sringeri.net/",
+      "kind": "reading_corpus",
+      "runtime": false,
+      "rights": "© Dakshinamnaya Sri Sharada Peetham, Sringeri. All rights reserved.",
+      "fetcher": "tools/fetch_advaita_sharada.py",
+      "local_cache": "data/reference/advaita_sharada/raw/ (gitignored; never committed or served publicly)",
+      "role": "Śāṅkara-granthāvalī text for the /reader ग्रन्थ-पाठकः: Prasthānatrayī mūla, avatārikā, bhāṣya, and ṭīkās aligned to bhāṣya passages (Ānandagiri, Bhāmatī, Ratnaprabhā, vārtikas). Text only — no word analysis, no rule logic (Art. 6)."
+    },
+    {
+      "id": "prasthanatrayi-word-reader",
+      "url": "https://doi.org/10.5281/zenodo.21279193",
+      "kind": "word_analyses",
+      "runtime": false,
+      "license": "CC-BY-4.0",
+      "fetcher": "tools/fetch_prasthanatrayi_words.py",
+      "local_cache": "data/reference/prasthanatrayi_words/raw/ (gitignored; 35 MB)",
+      "role": "Tamal Maharaj (RKMVERI), word-level padaccheda + grammar + gloss for the Prasthānatrayī mūla and Śāṅkara-bhāṣya (LLM-drafted, verified, confidence-banded). In /reader a hypothesis: ✓ only when the engine re-derives the pada (Art. 17); never a cond() input."
     }
   ],
   "paribhasha_granthas": [

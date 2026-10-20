@@ -59,6 +59,19 @@
   .rd-verdict { padding: 6px 8px; border-radius: 4px; margin: 8px 0; font-size: 13px; background: var(--bg-subtle); }
   .rd-sutra-list div { font-size: 13px; margin: 2px 0; } .rd-sutra-list .t { font-family: var(--dev); }
   .rd-attrib { font-size: 11px; color: var(--ink-faint); margin-top: 10px; }
+  .as-p { margin: 10px 0; padding: 6px 10px; border-left: 3px solid var(--line); font-family: var(--dev); font-size: 16px; line-height: 1.85; }
+  .as-p.as-bhashya { border-left-color: var(--accent); }
+  .as-p.as-avatarika, .as-p.as-prose { border-left-color: #c9a227; background: #fffaf0; }
+  .as-p.as-heading { border: none; font-weight: 600; text-align: center; padding: 0; }
+  .as-p.as-colophon { border: none; text-align: center; color: var(--ink-dim); }
+  .as-kind { font-size: 11px; color: var(--ink-faint); font-family: var(--sans, inherit); }
+  .as-kind a { text-decoration: none; margin-left: 4px; }
+  .bw { cursor: pointer; } .bw:hover { background: #fff3dd; } .bw.sel { background: #ffe0a8; }
+  details.as-tika { margin: 6px 0 0; font-size: 14px; background: var(--bg-subtle); border-radius: 4px; padding: 2px 8px; }
+  details.as-tika summary { cursor: pointer; font-size: 12px; color: var(--accent); }
+  details.as-tika .row { margin: 6px 0; border-top: 1px dashed var(--line-soft); padding-top: 4px; }
+  b.pratika { color: #8b2e00; }
+  .as-part { border: 1px solid var(--line-soft); border-radius: 4px; padding: 6px 8px; margin: 6px 0; }
   @media (max-width: 1200px) { .rd-layout { grid-template-columns: 220px 1fr; } .rd-detail { grid-column: 1 / -1; } }
   @media (max-width: 760px)  { .rd-layout { grid-template-columns: 1fr; } .rd-verses { max-height: 30vh; } }
 </style>
@@ -94,14 +107,16 @@
       <h2 id="rd-title">—</h2>
       <button class="secondary" id="rd-next" title="→ अग्रिमः">›</button>
       <span class="sp"></span>
-      <a id="rd-export" class="secondary" style="font-size:12px;" href="#">XLSX ↓</a>
+      <a id="rd-source" style="font-size:12px;display:none;" target="_blank" rel="noopener">अद्वैतशारदा ↗</a>
+      <a id="rd-export" class="secondary scl-only" style="font-size:12px;" href="#">XLSX ↓</a>
     </div>
     <div class="rd-text" id="rd-text"></div>
     <div class="rd-stats" id="rd-stats"></div>
-    <div id="rd-gaps" style="font-size:13px;margin:6px 0"></div>
+    <div id="rd-gaps" class="scl-only" style="font-size:13px;margin:6px 0"></div>
     <p><button class="secondary" id="rd-cov-btn">अध्याय-कवरेज (whole-chapter gaps)</button></p>
     <div id="rd-cov" style="font-size:13px"></div>
-    <div class="rd-filter" id="rd-filter">
+    <div id="rd-as" style="display:none;"></div>
+    <div class="rd-filter scl-only" id="rd-filter">
       <button class="secondary active" data-f="all">सर्वाणि</button>
       <button class="secondary" data-f="tinanta">तिङन्तम्</button>
       <button class="secondary" data-f="subanta">सुबन्तम्</button>
@@ -109,17 +124,19 @@
       <button class="secondary" data-f="differs">✗ भिन्नम्</button>
     </div>
 
-    <div class="rd-tabs">
+    <div class="rd-tabs scl-only">
       <button data-tab="table" class="active">विश्लेषण-सारणी</button>
       <button data-tab="anvaya">अन्वयः</button>
       <button data-tab="graph">सम्बन्ध-चित्रम्</button>
       <button data-tab="kosha">कोशः</button>
     </div>
-    <div id="rd-tab-table"></div>
-    <div id="rd-tab-anvaya" style="display:none;"></div>
-    <div id="rd-tab-graph" style="display:none;"></div>
-    <div id="rd-tab-kosha" style="display:none;"></div>
-    <div class="rd-attrib">{{ attribution }}</div>
+    <div class="scl-only" id="rd-scl-tabs">
+      <div id="rd-tab-table"></div>
+      <div id="rd-tab-anvaya" style="display:none;"></div>
+      <div id="rd-tab-graph" style="display:none;"></div>
+      <div id="rd-tab-kosha" style="display:none;"></div>
+    </div>
+    <div class="rd-attrib" id="rd-attrib">{{ attribution }}</div>
   </div>
 
   <!-- Word detail + prakriyā -->
@@ -184,7 +201,10 @@ async function getJSON(url, opts) {
 async function init() {
   const cat = await getJSON("/api/reader/catalogue");
   units = cat.units;
-  $("rd-unit").innerHTML = units.map(u => `<option value="${esc(u.id)}">${esc(u.label)}</option>`).join("");
+  const opt = u => `<option value="${esc(u.id)}">${esc(u.label)}</option>`;
+  const scl = units.filter(u => u.source !== "advaita_sharada"), as = units.filter(u => u.source === "advaita_sharada");
+  $("rd-unit").innerHTML = (scl.length ? `<optgroup label="संसाधनी — e-readers">${scl.map(opt).join("")}</optgroup>` : "") +
+    (as.length ? `<optgroup label="प्रस्थानत्रयी — शाङ्करभाष्यम् (अद्वैतशारदा)">${as.map(opt).join("")}</optgroup>` : "");
   $("rd-unit").onchange = () => selectUnit($("rd-unit").value);
   $("rd-chapter").onchange = () => selectChapter($("rd-chapter").value);
   $("rd-prev").onclick = () => step(-1);
@@ -220,7 +240,7 @@ async function selectChapter(ch, sloka) {
   cur.chapter = ch; $("rd-chapter").value = ch;
   verseList = await getJSON(`/api/reader/verses?unit=${encodeURIComponent(cur.unit)}&chapter=${encodeURIComponent(ch)}`);
   $("rd-verses").innerHTML = verseList.map((v, i) =>
-    `<div class="rd-verse-item" data-i="${i}"><span class="no">${esc(v.sloka)}</span>${esc((v.text[0] || "").slice(0, 38))}…</div>`).join("");
+    `<div class="rd-verse-item" data-i="${i}"><span class="no">${esc(v.ref || v.sloka)}</span>${esc((v.text[0] || "").slice(0, 38))}…</div>`).join("");
   $("rd-verses").querySelectorAll(".rd-verse-item").forEach(el => el.onclick = () => selectVerse(verseList[+el.dataset.i].sloka));
   const first = verseList.find(v => v.sloka === sloka) || verseList[0];
   if (first) await selectVerse(first.sloka);
@@ -245,10 +265,14 @@ async function selectVerse(sloka) {
   $("rd-export").href = "/api/reader/export.xlsx?" + q;
   data = await getJSON("/api/reader/verse?" + q);
   if (data.sloka !== cur.sloka) return;
-  render();
+  selKey = null;
+  if (data.source === "advaita_sharada") renderAS(); else render();
 }
 
 function render() {
+  document.querySelectorAll(".scl-only").forEach(el => el.style.display = "");
+  $("rd-as").style.display = "none"; $("rd-source").style.display = "none";
+  $("rd-attrib").textContent = data.attribution || "";
   $("rd-text").innerHTML = (data.spans && data.spans.length ? data.spans : data.text.map(t => [{text: t, keys: []}]))
     .map(pada => pada.map(seg => {
       if (!seg.keys || !seg.keys.length) return esc(seg.text);
@@ -556,12 +580,140 @@ function renderVidyut(v, ours) {
       `<li><b class="mono">${esc(st.code)}</b> <span class="dev">${esc(st.text_dev || "")}</span> — <span class="mono">${esc((st.result || []).join(" + "))}</span></li>`).join("")}</ol>`;
 }
 
+/* ── प्रस्थानत्रयी (Advaita Sharada text + word-level analyses) ── */
+const AS_KIND = { heading: "", prose: "उपोद्घातः", avatarika: "अवतरणिका", bhashya: "भाष्यम्", colophon: "", mula: "मूलम्" };
+const CONF = { h: "उच्चः", m: "मध्यमः", l: "न्यूनः" };
+
+function bwords(s) {
+  return String(s || "").split(/(\s+)/).map(t => /^\s+$/.test(t) ? t.replace(/\n/g, "<br>")
+    : (t ? `<span class="bw">${esc(t)}</span>` : "")).join("");
+}
+
+function richText(text, prat) {
+  let out = "", rest = String(text || "");
+  for (const p of prat || []) {
+    const j = rest.indexOf(p);
+    if (!p || j < 0) continue;
+    out += bwords(rest.slice(0, j)) + `<b class="pratika">${bwords(p)}</b>`;
+    rest = rest.slice(j + p.length);
+  }
+  return out + bwords(rest);
+}
+
+function asPassage(p, pageUrl) {
+  if (p.kind === "mula") return "";
+  const tika = (p.tika || []).map(t => `<details class="as-tika"><summary>${esc(t.title)} · ${t.rows.length}</summary>${
+    t.rows.map(r => `<div class="row">${richText(r.text, r.pratika)}</div>`).join("")}</details>`).join("");
+  const label = AS_KIND[p.kind] ?? p.kind;
+  return `<div class="as-p as-${esc(p.kind)}">${label ? `<div class="as-kind">${esc(label)}<a href="${esc(pageUrl)}#${esc(p.id)}" target="_blank" rel="noopener" title="${esc(p.id)}">↗</a></div>` : ""}
+    <div>${bwords(p.text)}</div>${tika}</div>`;
+}
+
+function asStatus(part) { return part.engine.status; }
+
+function renderAS() {
+  document.querySelectorAll(".scl-only").forEach(el => el.style.display = "none");
+  const u = units.find(x => x.id === cur.unit), pageUrl = data.url.split("#")[0];
+  $("rd-title").textContent = `${u.book} ${data.ref}`;
+  $("rd-source").href = data.url; $("rd-source").style.display = "";
+  $("rd-attrib").textContent = data.attribution || "";
+  $("rd-text").innerHTML = data.spans.map(line => line.map(seg => seg.key == null ? esc(seg.text)
+    : `<span class="hit${selKey === "m" + seg.key ? " sel" : ""}" data-m="${seg.key}">${esc(seg.text)}</span>`).join("")).join("<br>");
+  $("rd-text").querySelectorAll("[data-m]").forEach(el => el.onclick = () => selectMula(+el.dataset.m));
+  const c = data.counts, tried = c.derived + c.differs + c.error;
+  $("rd-stats").innerHTML =
+    `<span class="st-derived">✓ ${c.derived}/${tried} यन्त्र-सिद्धानि</span>` +
+    `<span class="st-differs">✗ ${c.differs}</span><span class="st-error">! ${c.error}</span>` +
+    `<span class="st-unresolved">? ${c.unresolved}</span><span class="st-not_attempted">· ${c.not_attempted}</span>`;
+  let t = `<table class="rd-table"><tr><th>पदम्</th><th>पदच्छेदः</th><th>रूप-विश्लेषणम्</th><th>अर्थः</th><th>विश्वासः</th><th>यन्त्रम्</th><th title="Vidyut (ambuda-org) — independent prakriyā engine">Vidyut</th></tr>`;
+  data.words.forEach(w => w.parts.forEach((p, j) => {
+    const e = p.engine;
+    t += `<tr data-m="${w.i}" class="${selKey === "m" + w.i ? "sel" : ""}">
+      <td class="dev">${j ? "" : esc(w.w)}</td><td class="dev">${esc(p.p)}</td>
+      <td class="dev" style="font-size:12px">${esc(p.g)}</td><td style="font-size:12px">${j ? "" : esc(w.m)}</td>
+      <td style="font-size:11px">${j ? "" : esc(CONF[w.c] || w.c)}</td>
+      <td class="st-${e.status}" title="${esc(ST[e.status][1])}">${ST[e.status][0]} <span class="dev">${esc(e.status === "differs" ? e.produced_dev || "" : "")}</span></td>
+      <td>${vidyutCell(p)}</td></tr>`;
+  }));
+  t += "</table>";
+  const passages = [...data.pre, ...data.post].map(p => asPassage(p, pageUrl)).join("");
+  $("rd-as").innerHTML = `<h3 style="margin:10px 0 4px;font-family:var(--dev)">पद-विश्लेषणम्</h3>${t}
+    <h3 style="margin:14px 0 4px;font-family:var(--dev)">भाष्यम् · टीका</h3>
+    <p class="muted" style="font-size:11px;margin:0">भाष्य-पदं नुदतु — its analysis and prakriyā appear on the right.</p>${passages}`;
+  $("rd-as").style.display = "";
+  $("rd-as").querySelectorAll("tr[data-m]").forEach(el => el.onclick = () => selectMula(+el.dataset.m));
+  $("rd-as").onclick = ev => { if (ev.target.classList.contains("bw")) selectBhashyaWord(ev.target); };
+}
+
+function selectMula(i) {
+  selKey = "m" + i;
+  renderAS();
+  const w = data.words[i];
+  showAnalysis(w.w, w);
+}
+
+async function selectBhashyaWord(el) {
+  document.querySelectorAll(".bw.sel").forEach(x => x.classList.remove("sel"));
+  el.classList.add("sel");
+  const r = await getJSON("/api/reader/word?q=" + encodeURIComponent(el.textContent));
+  if (!r.found) {
+    $("rd-detail-empty").style.display = "none"; $("rd-detail-body").style.display = "";
+    $("rd-word").innerHTML = `<h3>${esc(r.surface)}</h3><div class="muted">न लब्धम् — not in the deposit's bhāṣya dictionary.</div>`;
+    $("rd-trace-area").style.display = "none"; $("sutra-detail").innerHTML = "";
+    return;
+  }
+  showAnalysis(r.surface, r);
+}
+
+function partHtml(p, j) {
+  const e = p.engine, inp = e.inputs || {};
+  let niv = "";
+  if (p.kind === "tinanta" && inp.dhatu_id)
+    niv = `${inp.dhatu_upadesha_slp1} (${inp.dhatu_id}) · ${inp.lakara} · ${inp.prayoga} · ${inp.purusha}/${inp.vacana}${inp.pada ? " · " + inp.pada : ""}${(inp.upasargas || []).length ? " · +" + inp.upasargas.join("+") : ""}${inp.sanadi ? " · " + inp.sanadi : ""}`;
+  if (p.kind === "subanta" && inp.stem_slp1)
+    niv = `${inp.stem_slp1} · ${inp.linga} · ${VIB[inp.vibhakti] || inp.vibhakti} · ${inp.vacana}`;
+  return `<div class="as-part"><div class="rd-kv">
+      <div class="k">पदम्</div><div class="v dev">${esc(p.p)} <span class="muted">(${esc(KIND[p.kind] || p.kind)})</span></div>
+      <div class="k">रूप-विश्लेषणम्</div><div class="v dev">${esc(p.g)}</div>
+      ${niv ? `<div class="k">यन्त्र-निवेशः</div><div class="v">${esc(niv)}</div>` : ""}</div>
+    <div class="rd-verdict st-${e.status}">${ST[e.status][0]} ${esc(ST[e.status][1])}
+      ${e.produced_dev ? `<br>यन्त्र-रूपम्: <b class="dev">${esc(e.produced_dev)}</b>` : ""}
+      ${e.note ? `<br><span class="muted">${esc(e.note)}</span>` : ""}</div>
+    ${(e.sutras || []).length ? `<div class="rd-sutra-list">${e.sutras.map(sutraLine).join("")}</div>` : ""}
+    ${e.request ? `<button class="secondary" data-part="${j}" style="font-size:12px">प्रक्रिया ↓</button>` : ""}</div>`;
+}
+
+async function showAnalysis(title, entry) {
+  $("rd-detail-empty").style.display = "none"; $("rd-detail-body").style.display = "";
+  const kv = [["पदच्छेदः", entry.p], ["अर्थः", entry.m], ["विश्वासः", CONF[entry.c] || entry.c]];
+  $("rd-word").innerHTML = `<h3>${esc(title)}</h3>
+    <div class="rd-kv">${kv.filter(r => r[1]).map(([a, b]) => `<div class="k">${esc(a)}</div><div class="v dev">${esc(b)}</div>`).join("")}</div>
+    ${entry.parts.map(partHtml).join("")}
+    <p class="muted" style="font-size:11px">Analysis: Tamal Maharaj (CC BY 4.0), a hypothesis — ✓ only when the engine re-derives it.</p>`;
+  $("sutra-detail").innerHTML = "";
+  $("rd-trace-area").style.display = "none";
+  $("rd-word").querySelectorAll("button[data-part]").forEach(b => b.onclick = () => loadTrace(entry.parts[+b.dataset.part].engine.request));
+  const first = entry.parts.find(p => p.engine.request);
+  if (first) loadTrace(first.engine.request);
+}
+
+async function loadTrace(req) {
+  try {
+    const t = await getJSON("/api/reader/trace", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(req) });
+    $("rd-trace-area").style.display = "";
+    renderTrace(t.trace);
+    renderVidyut(t.vidyut, t.surface_slp1);
+  } catch (err) {
+    $("sutra-detail").innerHTML = `<div class="muted">${esc(err.message)}</div>`;
+  }
+}
+
 async function runSearch() {
   const q = $("rd-q").value.trim();
   if (!q) { $("rd-hits").innerHTML = ""; return; }
   const hits = await getJSON(`/api/reader/search?unit=${encodeURIComponent(cur.unit)}&q=${encodeURIComponent(q)}`);
   $("rd-hits").innerHTML = hits.map(h =>
-    `<div class="rd-hit" data-ch="${esc(h.chapter)}" data-sl="${esc(h.sloka)}"><span class="no">${esc(h.chapter)}.${esc(h.sloka)}</span> ${esc(h.word)} <span class="muted">${esc((h.hindi || "").slice(0, 24))}</span></div>`).join("")
+    `<div class="rd-hit" data-ch="${esc(h.chapter)}" data-sl="${esc(h.sloka)}"><span class="no">${esc(h.ref || (h.chapter + "." + h.sloka))}</span> ${esc(h.word)} <span class="muted">${esc((h.hindi || AS_KIND[h.kind] || "").slice(0, 24))}</span></div>`).join("")
     || `<div class="muted">न लब्धम्</div>`;
   $("rd-hits").querySelectorAll(".rd-hit").forEach(el => el.onclick = () => {
     const ch = el.dataset.ch, sl = el.dataset.sl;

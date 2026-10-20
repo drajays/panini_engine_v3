@@ -1,5 +1,16 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
+## SESSION 2026-10-20 — cursor: integration clients P0 + P1 (Subhastini front door, sanskrit_learning tutor)
+Plan of record: `docs/INTEGRATION_CLIENTS.md`. Done: Subhastini launcher starts this API; word → vidyut readings → engine derivation
+(exact match only). Next: P2 `POST /v1/analyze`. Open work item: homograph dhātus share an upadeśa (`SAsu~`), see RUN_LOG §C 2026-10-20 10:05.
+
+## SESSION 2026-10-20 — cursor: ग्रन्थ-पाठकः gains the Prasthānatrayī with Śāṅkara-bhāṣya
+`/reader` now lists 13 Prasthānatrayī bhāṣyas (optgroup "प्रस्थानत्रयी") beside the Saṃsādhanī e-readers. Text, structure and aligned ṭīkās
+come from Advaita Sharada (Sringeri) — **"All rights reserved": local cache only, never commit `data/reference/advaita_sharada/raw/`**.
+Word analyses come from Tamal Maharaj's CC BY Zenodo deposit; every mūla/bhāṣya word is re-derived by the engine before it is ✓.
+Rebuild a clone: `python3 -m tools.fetch_advaita_sharada && python3 -m tools.fetch_prasthanatrayi_words` (~5 min, 111 MB local).
+Not yet: other Advaita Sharada works; 6.4.74 māṅ context; samāsa members judged separately. Details: RUN_LOG §C 2026-10-20.
+
 ## SESSION 2026-10-18 (afternoon) — AMENDMENT 25 accepted and implemented; `Test Engine.command`
 Owner: "all must be based on authentic reference, never discover any rule, see Aṣṭādhyāyī data for any confirmation".
 Done: `State.vivaksha` + `engine/vivaksha.py` (vocabulary generated from the sūtras' samagra, each value cited); tiṅanta

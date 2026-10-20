@@ -207,6 +207,7 @@ abandoned. **Never** start work on a file path that appears under
 | 2026-10-01 09:55 | cursor | P1 CURSOR_HANDOVER T0 baseline + T1 adhikāra gate-scope test, 4.1.92 conflicts, audit regen | docs/ratchet_log.md, docs/SOURCE_CONFLICTS.md (new), tests/unit/test_adhikara_gate_scope.py (new), docs/ADHIKARA_AUDIT.md, audit/RUN_LOG.md | released |
 | 2026-10-01 10:20 | cursor | P1 CURSOR_HANDOVER T2 sutra_context import | scripts/build_sutra_context.py, data/inputs/sutra_context{,.SOURCE,.conflicts}.json, tests/unit/test_sutra_context.py, docs/SOURCE_CONFLICTS.md, audit/RUN_LOG.md | released |
 | 2026-10-01 13:05 | cursor | P1 SC-001 ruling → AMENDMENT 16 / Art. 20 ArthaNirdesha; 4.1.92 frame 4.1.83–4.1.178 | CONSTITUTION.md, docs/AMENDMENT_16.md, engine/sutra_type.py, engine/gates.py, engine/__init__.py, sutras/adhyaya_4/pada_1/sutra_4_1_92.py, tests/constitutional/test_artha_nirdesha.py, tests/unit/test_sutra_4_1_92_prAgdIvyatIyaSezAdhikAra.py, tests/unit/test_adhikara_gate_scope.py, core/i18n_hi.py, docs/SOURCE_CONFLICTS.md, audit/RUN_LOG.md | released |
+| 2026-10-20 08:30 | cursor | P2 /reader — Advaita Sharada (Sringeri) Prasthānatrayī bhāṣya + Ānandagiri, local gitignored cache only (All rights reserved) | tools/fetch_advaita_sharada.py, tools/advaita_sharada_reader.py, data/reference/advaita_sharada/SOURCE.json, .gitignore, data/inputs/grantha_catalog.json, webui/app.py, webui/templates/reader.html, tests/unit/test_advaita_sharada_reader.py, tools/fetch_prasthanatrayi_words.py, data/reference/prasthanatrayi_words/SOURCE.json, handover.md, audit/RUN_LOG.md | released |
 | 2026-10-01 07:25 | cursor | P1 fix 20 failing tests (BU bhāve/karmaṇi āśīrliṅ+luṅ, आयच्छते) + glass-box ratchets + work queue | pipelines/tinanta.py, sutras/**, engine/**, tests/**, tools/**, docs/LEARN_AND_ORACLE_PLAN.md, audit/RUN_LOG.md | released |
 
 ---
@@ -240,6 +241,42 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 ---
 
 ## C. Action history (newest at top)
+
+### 2026-10-20 10:05  [cursor]  Integration clients P0 + P1 — Subhastini and sanskrit_learning on the engine API
+
+Ajay: integrate `~/subhastini` and `~/sanskrit_learning` with the engine periphery (engine + Vidyut for real use). Owner chose:
+Subhastini is the front door; `/reader` stays here and is later exposed to Subhastini as a commentary source.
+- **This repo:** `docs/INTEGRATION_CLIENTS.md` only (roles, Art. 6/17/18/19 boundaries, API contract, phases P0–P5). No engine/sūtra/pipeline change.
+- **~/subhastini:** launcher starts `uvicorn api.main:app` on :8000 if absent; `POST /api/derive` (tools/grammar.py `derive`) —
+  vidyut kosha proposes readings, `/v1/subanta` / `/v1/tinanta` derive each, accepted only on exact surface match; kṛdanta stems,
+  upasarga/sanādi roots and लेट् are reported "not asked". Click a coloured word or "How is it derived?" on a word card.
+- **~/sanskrit_learning:** `git init` + `.gitignore` (venv, chroma_db, PDF). No commit.
+- **Finding (Art. 19 work items, not fixed):** `dhatupatha_upadesha.json` drops svara marks, so homographs share an upadeśa
+  (`SAsu~` 02.0012 इच्छायाम् / 02.0070 अनुशिष्टौ); `/v1/tinanta` with the bare upadeśa takes the first row (शास्ते). Client now
+  resolves by gaṇa + artha → pāṭha id. Also seen: BU (10) laṅ → अभावयत where vidyut has अभवत्; napuṃsaka sambodhana returns one vibhāṣā form.
+- **Verified:** live engine + Subhastini HTTP: कर्मणि, गच्छति, भवन्ति, रामेण, शास्ति, जुहोति, क्रीणाति, चोरयति, अभवत्, फलेषु verified;
+  एवाधिकारस्ते → no reading; engine down → "offline". `python3 tools/check.py` OK; browser check on gita.2.47.
+- **Next:** P2 `POST /v1/analyze` (`core/analyze.py`, forms.db + vidyut candidates, forward-verified).
+
+### 2026-10-20 09:30  [cursor]  /reader: Prasthānatrayī with Śāṅkara-bhāṣya (Advaita Sharada text + CC BY word analyses)
+
+Ajay: copy Advaita Sharada (advaitasharada.sringeri.net) into the ग्रन्थ-पाठकः; owner ruled **local cache only** (site is "All rights reserved"),
+scope Prasthānatrayī bhāṣyas + Ānandagiri first, and use Tamal Maharaj's CC BY word-level deposit where it covers the text.
+- `tools/fetch_advaita_sharada.py`: 13 bhāṣyas (67 pages) + ṭīkā alignment JSON (`/vyakhya/<slug>/<chunk>.<code>.json`) → gitignored
+  `data/reference/advaita_sharada/raw/`; committed `SOURCE.json` = provenance + sha256 only, no text. ṭīkās that came with the pages:
+  Ānandagiri (12), Bhāmatī / Ratnaprabhā / Nyāyanirṇaya / Pañcapādikā (BS), Bṛhad- and Taittirīya-vārtika, Vanamālā.
+- `tools/fetch_prasthanatrayi_words.py`: Zenodo 10.5281/zenodo.21279193 pinned by sha256 → gitignored `data/reference/prasthanatrayi_words/raw/`.
+  Mūla refs align 1:1 with Advaita Sharada ids (Gītā 700, BS 555, Chāndogya 629 …).
+- `tools/advaita_sharada_reader.py`: groups each mūla with avatārikā / bhāṣya / ṭīkā; rewrites each grammar string as a Saṃsādhanī tag and
+  judges it with `samsaadhanii_reader.verify` (gaṇa, when absent, = the dhātupāṭha row whose derivation reaches the text); yuṣmad/asmad via
+  `reader_enclitic` (8.1.20–26). Gītā 1–2: 966/1086 attempted parts re-derived. Known ✗ classes: māṅ-yoga luṅ (6.4.74, no engine context),
+  compounds given as one stem, analysis stems the ṭīkā itself rejects (ईशा: ईश vs ईट्).
+- `webui/app.py` `/api/reader/*` dispatch on `as:` units + `/api/reader/word` (bhāṣya word → analysis → engine); `reader.html` AS layout.
+- Catalogue: `advaita-sharada` (reading_corpus) and `prasthanatrayi-word-reader` (word_analyses) in `grantha_catalog.json`, both `runtime: false`.
+
+**Tests:** `tests/unit/test_advaita_sharada_reader.py` (12, cache-free except one skip-if) + reader/API smoke: 36 passed. `make full-check`: ALL CHECKS PASSED (20,437 passed, 14 skipped, 7 xfailed).
+
+**Next:** other Advaita Sharada works (prakaraṇas, stotras, remaining ṭīkās) behind the same fetcher; māṅ context for 6.4.74; samāsa members.
 
 ### 2026-10-01 18:40  [claude]  Finished cursor's सुँ 1.3.2/1.3.9 claim
 `term_phonetic_slp1` emits `~` after anunāsika vowels; sup it-lopa paths (`P00_*`, `sup_attach_it_chain`, `SUBANTA_RULE_IDS_POST_4_1_2`) all route via `run_it_prakarana`. Full suite: 19763 pass; only `test_sutra_context::test_build_is_deterministic` fails (venv lacks `openpyxl`, env issue). Claim released.

@@ -1,0 +1,31 @@
+{
+ "source": "Tamal Maharaj, A Word-Level Digital Reader of the Prasthānatrayī with Śaṅkara's Bhāṣya",
+ "doi": "10.5281/zenodo.21279193",
+ "paper": "arXiv:2607.07282",
+ "version": "1.0.0",
+ "license": "CC-BY-4.0",
+ "url": "https://zenodo.org/api/records/21279193/files/prasthanatrayi-zenodo-deposit.zip/content",
+ "sha256": "e40cb46eecb51cca2e92ef6f68d7b19fde18d18421c0cc34a82356c28394aea5",
+ "kept": "data/*.json word analyses + licence files",
+ "fetched": "2026-10-20",
+ "files": {
+  "LICENSE": 1729,
+  "CITATION.cff": 1404,
+  "prasthan-words-Gita.json": 1565730,
+  "prasthan-words-Kena_vakya.json": 111411,
+  "prasthan-words-Kathaka.json": 359521,
+  "prasthan-words-Mandukya.json": 536951,
+  "prasthan-words-Mundaka.json": 235982,
+  "prasthan-words-Taitiriya.json": 375053,
+  "prasthan-words-BS.json": 432661,
+  "prasthan-words-Isha.json": 45041,
+  "prasthan-words-Aitareya.json": 146792,
+  "prasthan-words-Brha.json": 2655816,
+  "prasthan-words-Prashna.json": 253250,
+  "bhasya-words-ALL.json": 28479754,
+  "prasthan-words-Chandogya.json": 2310455,
+  "prasthan-words-Kena_pada.json": 106770,
+  "ATTRIBUTIONS.md": 1991,
+  "README.md": 4982
+ }
+}
