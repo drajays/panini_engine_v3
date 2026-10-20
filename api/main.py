@@ -22,7 +22,7 @@ from pathlib import Path
 from typing import Any, Literal
 from uuid import uuid4
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -615,6 +615,62 @@ def autonomy_tinanta(
         "steps": [{"sutra_id": s, "before": b, "after": a, "layer": l, "moved": b != a}
                   for s, b, a, l in run.steps],
     }
+
+
+# ─────────────────────────────────────────────────────────────────
+# Library — the Sanskrit literature this machine holds, for reading clients
+# (Subhastini, docs/INTEGRATION_CLIENTS.md). Reference text, not engine input.
+# ─────────────────────────────────────────────────────────────────
+
+def _library(fn, *args, request: Request | None = None, work_id: str | None = None) -> Any:
+    from tools import library_providers as lib
+
+    if work_id and lib.is_local_only(work_id) and request is not None \
+            and (request.client is None or request.client.host not in ("127.0.0.1", "::1")):
+        raise HTTPException(403, "this text is a local reading copy (All rights reserved); served to this machine only")
+    try:
+        return fn(*args)
+    except KeyError as ex:
+        raise HTTPException(404, f"not found: {ex}") from ex
+
+
+@app.get("/v1/library", tags=["library"])
+def library_catalogue() -> dict[str, Any]:
+    """Every work the engine can serve, from every provider (Advaita Sharada, Saṃsādhanī, ashtadhyayi.com)."""
+    from tools import library_providers as lib
+
+    works = lib.catalogue()
+    return {"providers": list(lib.PROVIDERS), "total": len(works), "works": works}
+
+
+@app.get("/v1/library/search", tags=["library"])
+def library_search(q: str = Query(..., min_length=1), limit: int = Query(60, ge=1, le=300),
+                   provider: str | None = None) -> dict[str, Any]:
+    from tools import library_providers as lib
+
+    hits = lib.search(q, limit, provider)
+    return {"q": q, "total": len(hits), "hits": hits}
+
+
+@app.get("/v1/library/works/{work_id}", tags=["library"])
+def library_work(work_id: str, request: Request) -> dict[str, Any]:
+    from tools import library_providers as lib
+
+    return _library(lib.work, work_id, request=request, work_id=work_id)
+
+
+@app.get("/v1/library/works/{work_id}/{section}", tags=["library"])
+def library_section(work_id: str, section: str, request: Request) -> dict[str, Any]:
+    from tools import library_providers as lib
+
+    return _library(lib.section, work_id, section, request=request, work_id=work_id)
+
+
+@app.get("/v1/library/works/{work_id}/{section}/{item_id}", tags=["library"])
+def library_item(work_id: str, section: str, item_id: str, request: Request) -> dict[str, Any]:
+    from tools import library_providers as lib
+
+    return _library(lib.item, work_id, section, item_id, request=request, work_id=work_id)
 
 
 @app.get("/coverage", response_class=HTMLResponse, include_in_schema=False)

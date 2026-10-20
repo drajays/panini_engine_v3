@@ -242,6 +242,21 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-10-20 14:30  [cursor]  All Sanskrit literature in one place — Subhastini front door, engine `/v1/library`
+
+Owner: "all Sanskrit literature from all 3 repos integrated in one place; future ones added too". Rulings: Subhastini is the place;
+engine-held texts are fetched live (nothing copied — Advaita Sharada stays a local reading copy).
+- **Engine:** `tools/library_providers.py` — providers `as` (Advaita Sharada, 28 works), `scl` (Saṃsādhanī, 10), `ac`
+  (ashtadhyayi.com from `~/data-master`: Aṣṭādhyāyī + 16 vṛttis, SK, LSK, Mahābhāṣya, Vākyapadīya, PŚ, Bhūṣaṇasāra, PLM,
+  Liṅgānuśāsana, Uṇādi, Śikṣā, Tarkasaṅgraha) behind one shape; `api/main.py` `/v1/library*`, `as:` refused to non-loopback (403).
+  Not included (not guessed): `ska/data.txt` (unnamed 6,481-sūtra pāṭha), `shiksha/laghu_patha.txt` (malformed JSON).
+- **Subhastini:** Library "From the Pāṇini engine" (50 works), `#/shelf/…` reader with notes/progress (`notes/shelf/`), engine hits in
+  search, Gītā verses carry Śāṅkara-bhāṣya + Ānandagiri; Manusmṛti (2,680 ślokas, unverified, edition not recorded) and Arthaśāstra
+  (5,367 sentences, GRETIL/Kangle, analysis shown, not rejoined) imported; "Ask the book"; one launcher starts API, web UI, tutor.
+- **sanskrit_learning:** `tutor.py` + `server.py` (:8100); fixed: an empty `chroma_db/` was trusted forever (0 embeddings) and one
+  728-chunk embedding request crashed Ollama — now rebuilt in batches. Default model gemma3:27b (llama3.2 invented an answer).
+**Tests:** `tests/unit/test_library_api.py` (8) + API smoke; Subhastini `tools/check.py` OK (137,223 verses, 25 works); `make full-check`: ALL CHECKS PASSED (20,446 passed).
+
 ### 2026-10-20 10:30  [cursor]  /reader: the rest of Advaita Sharada (prakaraṇas, stotras, other granthas)
 
 `tools/fetch_advaita_sharada.py` now takes the site's five sections (`GROUPS`): 29 works cached (local only, as before). A work that

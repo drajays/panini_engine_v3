@@ -1,5 +1,10 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
+## SESSION 2026-10-20 (afternoon) — cursor: all Sanskrit literature in one place
+Subhastini is the reading front door for everything; this engine serves what it holds at `/v1/library` (`tools/library_providers.py`,
+providers as / scl / ac — add a provider class for a new source). Plan + contract: `docs/INTEGRATION_CLIENTS.md` "One place".
+`Start Subhastini.command` starts this API, the web UI and `~/sanskrit_learning`'s tutor. Details: RUN_LOG §C 2026-10-20 14:30.
+
 ## SESSION 2026-10-20 — cursor: integration clients P0 + P1 (Subhastini front door, sanskrit_learning tutor)
 Plan of record: `docs/INTEGRATION_CLIENTS.md`. Done: Subhastini launcher starts this API; word → vidyut readings → engine derivation
 (exact match only). Next: P2 `POST /v1/analyze`. Open work item: homograph dhātus share an upadeśa (`SAsu~`), see RUN_LOG §C 2026-10-20 10:05.

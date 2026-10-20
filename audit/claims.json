@@ -240,5 +240,23 @@
   "status": "released",
   "hotspots": [],
   "updated": 1792472221.3362072
+ },
+ {
+  "id": "library-one-place",
+  "agent": "cursor",
+  "scope": [
+   "api/main.py",
+   "tools/library_providers.py",
+   "tools/ashtadhyayi_texts.py",
+   "tests/unit/test_library_api.py",
+   "docs/INTEGRATION_CLIENTS.md",
+   "audit/RUN_LOG.md",
+   "audit/claims.json",
+   "handover.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792495933.650955
  }
 ]

@@ -10,7 +10,7 @@ local applications. The engine stays a separate service; nothing here changes `e
 |---|---|---|
 | `~/panini_engine_v3` — `make api`, :8000 | derivation, analysis (Art. 17), gaps (Art. 18), Vidyut oracle (Art. 19) | the only grammar authority |
 | `~/subhastini` — `Start Subhastini.command` | **front door**: reading, writing, library, notes, translation | text provenance (its `RULES.md`) |
-| `~/sanskrit_learning` — tutor, :8100 (P4) | book-grounded concept answers (*Sanskrit Swayam Shikshak*) | machine output, labelled; never a source |
+| `~/sanskrit_learning` — tutor, :8100 (`server.py`) | book-grounded concept answers (*Sanskrit Swayam Shikshak*), page-cited | machine output, labelled; never a source |
 | Ollama :11434 | shared by Subhastini translation and the tutor | — |
 
 Dependencies point one way: clients call the engine; the engine imports neither client.
@@ -25,8 +25,24 @@ A client degrades gracefully when the engine is down.
 - **Art. 19.** Engine ≠ Vidyut is a work item, not a verdict.
 - **Art. 6.** Subhastini's `library/` (ODbL) never enters `data/inputs/`. Only `tools/` and
   `bench/` may read it, by path, read-only.
-- The `/reader` in `webui/` (Prasthānatrayī bhāṣya) stays here and is later exposed to
+- The `/reader` in `webui/` (Prasthānatrayī bhāṣya) stays here and is exposed to
   Subhastini as a commentary source over the API; Subhastini does not grow a second reader.
+
+## One place for the literature (2026-10-20, owner: "all Sanskrit literature in one place")
+
+Subhastini is where everything is read. Texts stay where they live and are read live:
+
+| source | lives in | reaches Subhastini through |
+|---|---|---|
+| Subhastini library (Gītā, itihāsa, purāṇa, Veda, kāvya, Manusmṛti, Arthaśāstra …) | `~/subhastini/library/` | itself |
+| Advaita Sharada — 28 works with bhāṣya + ṭīkā (local reading copy, "All rights reserved") | engine `data/reference/advaita_sharada/raw/` | `/v1/library` (`as:`), loopback only |
+| Saṃsādhanī e-readers (10, engine-verified words) | engine `data/reference/samsaadhanii/raw/` | `/v1/library` (`scl:`) + `/reader` links |
+| ashtadhyayi.com granthas — Aṣṭādhyāyī with 16 vṛttis, Kaumudīs, Mahābhāṣya, Vākyapadīya, PŚ, Bhūṣaṇasāra, Mañjūṣā, Liṅgānuśāsana, Uṇādi, Śikṣā, Tarkasaṅgraha | `~/data-master` | `/v1/library` (`ac:`) |
+| *Sanskrit Swayam Shikshak* (tutor) | `~/sanskrit_learning` | `:8100/ask` → Subhastini "Ask the book" |
+
+Nothing is copied between repos. A new source is a provider class in `tools/library_providers.py`
+(`works / sections / section / item / search`) — Subhastini needs no change to list it.
+`Start Subhastini.command` starts the engine API, the engine web UI and the tutor when they are not running.
 
 ## API contract used by clients
 
@@ -37,6 +53,8 @@ A client degrades gracefully when the engine is down.
 | `POST /v1/tinanta` `{dhatu, lakara, prayoga, purusha, vacana}` | verify a verbal reading (`purusha` 3 = prathama) |
 | `POST /v1/reviews` | "report wrong derivation" (P3) |
 | `POST /v1/analyze` | word / text analysis (P2, not built yet) |
+| `GET /v1/library` · `/v1/library/search?q=` | catalogue of every work the engine holds · search across them |
+| `GET /v1/library/works/{work}[/{section}[/{item}]]` | sections · items (text + commentary titles) · one item with passages and commentaries; `as:` works answer loopback clients only (403 otherwise) |
 
 Vidyut → engine mapping: dhātu `aupadeshika` with svara marks (`\`, `^`) removed is the
 engine upadeśa (`ga\mx~` → `gamx~`); `la~w`→`laT`, `viDili~N`→`liG`, `ASIrli~N`→`AsIrliG`
