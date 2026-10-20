@@ -1,5 +1,5 @@
 """
-tools/advaita_sharada_reader.py — /reader service for the Prasthānatrayī with Śāṅkara-bhāṣya.
+tools/advaita_sharada_reader.py — /reader service for Advaita Sharada: Prasthānatrayī-bhāṣya, prakaraṇas, stotras.
 ─────────────────────────────────────────────────────────────────────────────────────────────
 
 Two sources, each used for what it is:
@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import json
 import re
+from collections import Counter
 from functools import lru_cache
 
 from core.transliterate import dev_to_slp1
@@ -34,8 +35,9 @@ from tools.fetch_prasthanatrayi_words import ATTRIBUTION as WORDS_ATTRIBUTION, R
 from tools.samsaadhanii_tags import GANA, LAKARA, _dhatu_index, _upasarga
 
 PREFIX = "as:"
-ATTRIBUTION = (f"Text: Advaita Sharada, advaitasharada.sringeri.net — {RIGHTS} Local reading copy; "
-               f"each passage links to its page. " + WORDS_ATTRIBUTION)
+TEXT_ATTRIBUTION = (f"Text: Advaita Sharada, advaitasharada.sringeri.net — {RIGHTS} Local reading copy; "
+                    f"each passage links to its page.")
+ATTRIBUTION = TEXT_ATTRIBUTION + " " + WORDS_ATTRIBUTION
 
 # Advaita Sharada slug → Tamal deposit work key.
 WORDS_KEY = {
@@ -45,17 +47,22 @@ WORDS_KEY = {
     "mandukya-karika-bhashya": "Mandukya", "mundaka-bhashya": "Mundaka", "prashna-bhashya": "Prashna",
     "taittiriya-bhashya": "Taitiriya",
 }
-_MULA_ID = re.compile(r"^[A-Za-z]+(?:_C\d+)(?:_S\d+)?_[Vv]\d+[a-z]?$")
+# The site's own sections (its सम्पादनालय "विभागः" list), in its order.
+GROUPS = {
+    "prasthanatraya-bhashya": "प्रस्थानत्रयभाष्याणि", "shankara-prakarana": "शाङ्कराः प्रकरणग्रन्थाः",
+    "shankara-stotra": "शाङ्कराणि स्तोत्राणि", "itara-prakarana": "इतरे प्रकरणग्रन्थाः", "itara-grantha": "इतरे ग्रन्थाः",
+}
+_SLUG = re.compile(r"^[a-z0-9-]+$")
 
 
 def available() -> bool:
-    return any(AS_RAW.glob("*.json"))
+    return any(p.name != "cite-maps-index.json" for p in AS_RAW.glob("*.json"))
 
 
-@lru_cache(maxsize=16)
+@lru_cache(maxsize=48)
 def _doc(slug: str) -> dict:
     path = AS_RAW / f"{slug}.json"
-    if slug not in WORDS_KEY or not path.is_file():
+    if not _SLUG.match(slug) or slug == "cite-maps-index" or not path.is_file():
         raise KeyError(slug)
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -79,17 +86,21 @@ def _verses(slug: str, chunk: str) -> tuple[dict, ...]:
     if page is None:
         raise KeyError(f"{slug}/{chunk}")
     tika = {v["code"]: v for v in page["vyakhya"]}
+    # a reading item is a mūla unit; a work with no mūla (Vedāntasāra, Advaitasiddhi …) is read paragraph by paragraph
+    kinds = Counter(u["kind"] for p in _doc(slug)["pages"] for u in p["units"])
+    anchor = "mula" if kinds["mula"] else max(("prose", "bhashya"), key=lambda k: kinds[k])
     out: list[dict] = []
     pending: list[dict] = []
     cur = None
     for u in page["units"]:
         p = {**u, "tika": [{"code": c, "title": v["title"], "slug": v["slug"], "rows": v["aligned"][u["id"]]}
                            for c, v in tika.items() if u["id"] in v["aligned"]]}
-        if u["kind"] == "mula" and _MULA_ID.match(u["id"]):
+        if u["kind"] == anchor:
             cur = {"id": u["id"], "ref": ref_of(u["id"]), "mula": p, "pre": pending, "post": []}
             out.append(cur)
             pending = []
-        elif cur and (u["id"].lower().startswith(cur["id"].lower() + "_") or u["kind"] in ("bhashya", "colophon")):
+        elif cur and (u["id"].lower().startswith(cur["id"].lower() + "_") or u["kind"] in ("bhashya", "colophon")
+                      and u["kind"] != anchor):
             cur["post"].append(p)
         else:
             pending.append(p)
@@ -99,15 +110,17 @@ def _verses(slug: str, chunk: str) -> tuple[dict, ...]:
 
 
 def catalogue() -> list[dict]:
-    units = []
-    for slug in WORDS_KEY:
+    docs = []
+    for path in sorted(AS_RAW.glob("*.json")):
         try:
-            d = _doc(slug)
+            docs.append(_doc(path.stem))
         except KeyError:
             continue
-        units.append({"id": PREFIX + slug, "source": "advaita_sharada", "book": d["title"], "label": d["title"],
-                      "chapters": [p["chunk"] for p in d["pages"]]})
-    return units
+    order = list(GROUPS)
+    docs.sort(key=lambda d: order.index(d.get("group")) if d.get("group") in order else len(order))
+    return [{"id": PREFIX + d["slug"], "source": "advaita_sharada", "group": d.get("group"),
+             "group_label": GROUPS.get(d.get("group"), ""), "book": d["title"], "label": d["title"],
+             "words": d["slug"] in WORDS_KEY, "chapters": [p["chunk"] for p in d["pages"]]} for d in docs]
 
 
 def verses(uid: str, chapter: str) -> list[dict]:
@@ -284,7 +297,7 @@ def verse(uid: str, chapter: str, sloka: str) -> dict:
     v = next((x for x in _verses(slug, chapter) if x["id"] == sloka), None)
     if v is None:
         raise KeyError(f"{uid} {chapter} {sloka}")
-    raw = _mula_words().get(WORDS_KEY[slug], {}).get(v["ref"], [])
+    raw = _mula_words().get(WORDS_KEY.get(slug, ""), {}).get(v["ref"], []) if v["mula"]["kind"] == "mula" else []
     words = [{"i": i, "w": w["w"], "p": w["p"], "g": w["g"], "m": w.get("m", ""), "c": w.get("c", ""),
               "parts": analyse(w["p"], w["g"])} for i, w in enumerate(raw)]
     lines = v["mula"]["text"].split("\n")
@@ -302,10 +315,10 @@ def verse(uid: str, chapter: str, sloka: str) -> dict:
     return {
         "source": "advaita_sharada", "unit": uid, "chapter": chapter, "sloka": sloka, "ref": v["ref"],
         "url": f"{page['url']}#{sloka}", "text": lines, "spans": _spans(lines, words), "words": words,
-        "pre": v["pre"], "mula": v["mula"], "post": v["post"], "counts": counts,
+        "anchor_kind": v["mula"]["kind"], "pre": v["pre"], "mula": v["mula"], "post": v["post"], "counts": counts,
         # one pseudo-sentence of all parts, so the Vidyut cross-check attaches like any reader verse
         "sentences": [{"words": [p for w in words for p in w["parts"]]}],
-        "attribution": ATTRIBUTION,
+        "attribution": ATTRIBUTION if slug in WORDS_KEY else TEXT_ATTRIBUTION,
     }
 
 

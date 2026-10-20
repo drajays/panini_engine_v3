@@ -5,17 +5,49 @@
  "policy": "local reading cache only: raw/ is gitignored, never committed or served publicly; every passage links back to its page on the site",
  "pages": "https://advaitasharada.sringeri.net/read/<slug>/<chunk>/",
  "tika_alignment": "https://advaitasharada.sringeri.net/vyakhya/<slug>/<chunk>.<code>.json",
- "group": "prasthanatraya-bhashya",
+ "groups": [
+  "prasthanatraya-bhashya",
+  "shankara-prakarana",
+  "shankara-stotra",
+  "itara-prakarana",
+  "itara-grantha"
+ ],
  "fetched": "2026-10-20",
  "stats": {
+  "advaitasiddhi": {
+   "group": "itara-prakarana",
+   "pages": 4,
+   "mula": 0,
+   "passages": 357,
+   "tika_passages": 0,
+   "sha256": "b749d9ac97261bd96700c764bf31a561bd381954bec11b23383ba20e2b1f79dd"
+  },
   "aitareya-bhashya": {
+   "group": "prasthanatraya-bhashya",
    "pages": 3,
    "mula": 33,
    "passages": 80,
    "tika_passages": 621,
    "sha256": "650e9d425020b895f597c89f8b7a4df183d21cb28786631aaf94ff9a834b2c59"
   },
+  "aparoksanubhutih": {
+   "group": "shankara-prakarana",
+   "pages": 1,
+   "mula": 142,
+   "passages": 144,
+   "tika_passages": 0,
+   "sha256": "62b762b0fa9a3c53249c41de0dbf0385125939bd5961e416e318114ecde3f380"
+  },
+  "bhagavadgita-bhashya": {
+   "group": "prasthanatraya-bhashya",
+   "pages": 18,
+   "mula": 700,
+   "passages": 2025,
+   "tika_passages": 5098,
+   "sha256": "3babd7e9ebfacdba78b4c60714d72f6cbdbd109d9705fbd8d3da96ef9bb3d887"
+  },
   "brahmasutra-bhashya": {
+   "group": "prasthanatraya-bhashya",
    "pages": 5,
    "mula": 555,
    "passages": 1434,
@@ -23,6 +55,7 @@
    "sha256": "eafcf7346361ee9340ea16bfa81911f0e7949e1e60f5f3b69e1a5526155352ab"
   },
   "brihadaranyaka-bhashya": {
+   "group": "prasthanatraya-bhashya",
    "pages": 6,
    "mula": 441,
    "passages": 1149,
@@ -30,20 +63,31 @@
    "sha256": "bf6a5c948a5b062ff8455097f75e55b67ec1fb7d8b1faefa85e988be6865cd14"
   },
   "chandogya-bhashya": {
+   "group": "prasthanatraya-bhashya",
    "pages": 8,
    "mula": 629,
    "passages": 1578,
    "tika_passages": 3342,
    "sha256": "92dd4b887353d0ed6eaffcb3d267429f3e4ff3060494f507ce8570bca65a4a19"
   },
-  "bhagavadgita-bhashya": {
-   "pages": 18,
-   "mula": 700,
-   "passages": 2025,
-   "tika_passages": 5098,
-   "sha256": "3babd7e9ebfacdba78b4c60714d72f6cbdbd109d9705fbd8d3da96ef9bb3d887"
+  "hastamalakiya-bhashya": {
+   "group": "shankara-prakarana",
+   "pages": 1,
+   "mula": 12,
+   "passages": 51,
+   "tika_passages": 0,
+   "sha256": "6eb4e94fdf489209ee482fda2b6e6c9988389e88e9dfcfc9c8848c4000c4487c"
+  },
+  "hastamalakiyam": {
+   "group": "itara-grantha",
+   "pages": 1,
+   "mula": 12,
+   "passages": 13,
+   "tika_passages": 0,
+   "sha256": "bc6744b560156f6bacb10beaf4c482638dd563dee3541c45eeed6809259d9a97"
   },
   "isha-bhashya": {
+   "group": "prasthanatraya-bhashya",
    "pages": 1,
    "mula": 18,
    "passages": 55,
@@ -51,6 +95,7 @@
    "sha256": "07a2e57ef68a2f36409d8c9e531521eaa0c534db42926a1de469342329a6d2d6"
   },
   "kathaka-bhashya": {
+   "group": "prasthanatraya-bhashya",
    "pages": 2,
    "mula": 120,
    "passages": 260,
@@ -58,6 +103,7 @@
    "sha256": "0a851dbd697762f35457995587837e5bd1696da7d9c05ac935ed902658e3a974"
   },
   "kena-pada-bhashya": {
+   "group": "prasthanatraya-bhashya",
    "pages": 4,
    "mula": 35,
    "passages": 73,
@@ -65,6 +111,7 @@
    "sha256": "7bf75f8c2c5cde79301b1b46c56bb4d65fc8f9f50dc0e80f19ed150908ee874e"
   },
   "kena-vakya-bhashya": {
+   "group": "prasthanatraya-bhashya",
    "pages": 4,
    "mula": 35,
    "passages": 69,
@@ -72,6 +119,7 @@
    "sha256": "f06810dde5abaf255ab79c1daa0a01ab7bc3af3941b151ffe25077bb6767b4df"
   },
   "mandukya-karika-bhashya": {
+   "group": "prasthanatraya-bhashya",
    "pages": 4,
    "mula": 227,
    "passages": 461,
@@ -79,25 +127,116 @@
    "sha256": "6156661082468cd24c3e4913dfa591a8be4d2d394dc8971d7d9c5403414c3d36"
   },
   "mundaka-bhashya": {
+   "group": "prasthanatraya-bhashya",
    "pages": 3,
    "mula": 65,
    "passages": 150,
    "tika_passages": 103,
    "sha256": "fb7b9b87cb19f27e2d57d81097f97388df724daa5c49ad546c2a094e922addcc"
   },
+  "nyayarakshamani": {
+   "group": "itara-prakarana",
+   "pages": 3,
+   "mula": 133,
+   "passages": 1207,
+   "tika_passages": 0,
+   "sha256": "6db671a9007db1c910ce9ea3946298120139e06a79040fb3b6ac3029003b326e"
+  },
+  "pancharatna-stotrani": {
+   "group": "shankara-stotra",
+   "pages": 12,
+   "mula": 62,
+   "passages": 74,
+   "tika_passages": 0,
+   "sha256": "ac2e74c00250b980f7b92819720998ab071871d254da29b8f5cb3c34aa842dd7"
+  },
   "prashna-bhashya": {
+   "group": "prasthanatraya-bhashya",
    "pages": 6,
    "mula": 67,
    "passages": 147,
    "tika_passages": 565,
    "sha256": "ed3ca441a9145c39e163715333f30ab2bff319c8b9f6ef667e7f898a8f44f6e2"
   },
+  "sarvavedantasiddhantasarasangraha": {
+   "group": "shankara-prakarana",
+   "pages": 3,
+   "mula": 1006,
+   "passages": 1010,
+   "tika_passages": 0,
+   "sha256": "6631296dd833537e839dbd2614cb64512c1b9a6a118e6f63b7ef6373b229edb8"
+  },
+  "shastra-siddanthalesha-sangraha": {
+   "group": "itara-prakarana",
+   "pages": 4,
+   "mula": 0,
+   "passages": 442,
+   "tika_passages": 2778,
+   "sha256": "1faa0b0a203a90ad916a8b031a56f8594b5525535c3d91d2521712b03a4bced3"
+  },
+  "shatashloki": {
+   "group": "shankara-prakarana",
+   "pages": 1,
+   "mula": 101,
+   "passages": 103,
+   "tika_passages": 0,
+   "sha256": "8f9f944e64dd8cb342ecf1864013bb43d8cd5f677628dada413fcaa031fa6f9c"
+  },
+  "shrutisarasamuddharanam": {
+   "group": "itara-grantha",
+   "pages": 1,
+   "mula": 179,
+   "passages": 181,
+   "tika_passages": 0,
+   "sha256": "e78fd9351d2238dc19bfe2dc2ed20c188cfbab5a70906187ae8702b2e011e95e"
+  },
+  "sridaksinamurtistotram": {
+   "group": "shankara-stotra",
+   "pages": 1,
+   "mula": 10,
+   "passages": 11,
+   "tika_passages": 0,
+   "sha256": "234677adf2c3bc7e80de4dcdc162ed8e30f88d3327bf6c97c6016015548f16d3"
+  },
   "taittiriya-bhashya": {
+   "group": "prasthanatraya-bhashya",
    "pages": 3,
    "mula": 53,
    "passages": 197,
    "tika_passages": 2195,
    "sha256": "b8eb3991e0db7c29d3e994c1071b0734a7d7e98a14bde8f5d86bcea5b1c3231c"
+  },
+  "vedantaparibhasha": {
+   "group": "itara-prakarana",
+   "pages": 8,
+   "mula": 0,
+   "passages": 179,
+   "tika_passages": 0,
+   "sha256": "c9763d3071e6fc882a7bd0419aa0d763abb89ffc1eeeed0e533ccb0409722be6"
+  },
+  "vedantasara": {
+   "group": "itara-prakarana",
+   "pages": 1,
+   "mula": 0,
+   "passages": 40,
+   "tika_passages": 0,
+   "sha256": "d704054462a212eb5c7e0e984393b86dc64fa47f0dc6794dbed82cdb6f800d08"
+  },
+  "vivaranaprameyasangraha": {
+   "group": "itara-prakarana",
+   "pages": 4,
+   "mula": 0,
+   "passages": 245,
+   "tika_passages": 0,
+   "sha256": "e41e4b451f1c759f6341fa0788bef2904670134de07d5c363e2450483ef763c8"
+  },
+  "vivekachudamani": {
+   "group": "shankara-prakarana",
+   "pages": 5,
+   "mula": 590,
+   "passages": 1851,
+   "tika_passages": 0,
+   "sha256": "3704f08f1c17715f2ced6aa6911fbf92be4f10f065feeb2fb99f2109ed233bbe"
   }
  }
 }

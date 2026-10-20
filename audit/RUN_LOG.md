@@ -242,6 +242,16 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-10-20 10:30  [cursor]  /reader: the rest of Advaita Sharada (prakaraṇas, stotras, other granthas)
+
+`tools/fetch_advaita_sharada.py` now takes the site's five sections (`GROUPS`): 29 works cached (local only, as before). A work that
+already arrives as a ṭīkā of another is not fetched separately (Kṛṣṇālaṅkāra = Siddhāntaleśa's ṭīkā, 2,778 aligned passages).
+`advaita_sharada_reader`: any cached work is listed (optgroups by section); reading item = mūla unit, or — in works with no mūla
+(Vedāntasāra, Advaitasiddhi, Vedāntaparibhāṣā, Siddhāntaleśa, Vivaraṇaprameyasaṅgraha) — the work's paragraph kind. Word analyses and
+engine verdicts only where the CC BY deposit covers the text (the 13 bhāṣyas); others are text + ṭīkā. Fixed: ṭīkā aligned to a mūla unit
+itself (202 groups, e.g. Bhāmatī on sūtras) was hidden. Also committed Subhastini (integration code + owner content) and sanskrit_learning
+(first commit). **Tests:** reader tests 13 + smoke; `make full-check` green.
+
 ### 2026-10-20 10:05  [cursor]  Integration clients P0 + P1 — Subhastini and sanskrit_learning on the engine API
 
 Ajay: integrate `~/subhastini` and `~/sanskrit_learning` with the engine periphery (engine + Vidyut for real use). Owner chose:

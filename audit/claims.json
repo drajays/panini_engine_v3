@@ -222,5 +222,23 @@
   "status": "released",
   "hotspots": [],
   "updated": 1792466301.9369311
+ },
+ {
+  "id": "advaita-sharada-prakarana",
+  "agent": "cursor",
+  "scope": [
+   "tools/fetch_advaita_sharada.py",
+   "tools/advaita_sharada_reader.py",
+   "data/reference/advaita_sharada/SOURCE.json",
+   "webui/templates/reader.html",
+   "tests/unit/test_advaita_sharada_reader.py",
+   "audit/RUN_LOG.md",
+   "audit/claims.json",
+   "handover.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792472221.3362072
  }
 ]

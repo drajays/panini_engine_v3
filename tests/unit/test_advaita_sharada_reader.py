@@ -75,6 +75,24 @@ def test_passages_group_under_their_mula(monkeypatch):
     assert [p["id"] for p in v2["post"]] == ["IS_C01_E001"]
 
 
+def test_work_without_mula_is_read_paragraph_by_paragraph(monkeypatch):
+    units = [{"id": "VPS_C01", "kind": "heading", "text": "प्रथमं वर्णकम्"},
+             {"id": "VPS_C01_S01_M01", "kind": "mangala", "text": "नमः"},
+             {"id": "VPS_C01_S01_B01", "kind": "bhashya", "text": "अथातो ब्रह्मजिज्ञासा ।"},
+             {"id": "VPS_C01_S01_B02", "kind": "bhashya", "text": "अत्र अथशब्दः ।"},
+             {"id": "VPS_C01_S01_E001", "kind": "colophon", "text": "इति ।"}]
+    page = {"chunk": "1", "vyakhya": [], "units": units, "url": "x"}
+    monkeypatch.setattr(ar, "_doc", lambda slug: {"pages": [page], "title": "t"})
+    ar._verses.cache_clear()
+    try:
+        items = ar._verses("vivaranaprameyasangraha", "1")
+    finally:
+        ar._verses.cache_clear()
+    assert [v["id"] for v in items] == ["VPS_C01_S01_B01", "VPS_C01_S01_B02"]
+    assert [p["id"] for p in items[0]["pre"]] == ["VPS_C01", "VPS_C01_S01_M01"]
+    assert [p["id"] for p in items[1]["post"]] == ["VPS_C01_S01_E001"]
+
+
 def test_ref_of_matches_deposit_keys():
     assert ar.ref_of("IS_C01_V01") == "1.1"
     assert ar.ref_of("BR_C01_S05_V16") == "1.5.16"

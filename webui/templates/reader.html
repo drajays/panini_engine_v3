@@ -71,6 +71,7 @@
   details.as-tika summary { cursor: pointer; font-size: 12px; color: var(--accent); }
   details.as-tika .row { margin: 6px 0; border-top: 1px dashed var(--line-soft); padding-top: 4px; }
   b.pratika { color: #8b2e00; }
+  .rd-text.as-prose-anchor { font-size: 16px; text-align: left; line-height: 1.85; }
   .as-part { border: 1px solid var(--line-soft); border-radius: 4px; padding: 6px 8px; margin: 6px 0; }
   @media (max-width: 1200px) { .rd-layout { grid-template-columns: 220px 1fr; } .rd-detail { grid-column: 1 / -1; } }
   @media (max-width: 760px)  { .rd-layout { grid-template-columns: 1fr; } .rd-verses { max-height: 30vh; } }
@@ -203,8 +204,9 @@ async function init() {
   units = cat.units;
   const opt = u => `<option value="${esc(u.id)}">${esc(u.label)}</option>`;
   const scl = units.filter(u => u.source !== "advaita_sharada"), as = units.filter(u => u.source === "advaita_sharada");
+  const groups = [...new Set(as.map(u => u.group_label))];
   $("rd-unit").innerHTML = (scl.length ? `<optgroup label="संसाधनी — e-readers">${scl.map(opt).join("")}</optgroup>` : "") +
-    (as.length ? `<optgroup label="प्रस्थानत्रयी — शाङ्करभाष्यम् (अद्वैतशारदा)">${as.map(opt).join("")}</optgroup>` : "");
+    groups.map(g => `<optgroup label="अद्वैतशारदा — ${esc(g)}">${as.filter(u => u.group_label === g).map(opt).join("")}</optgroup>`).join("");
   $("rd-unit").onchange = () => selectUnit($("rd-unit").value);
   $("rd-chapter").onchange = () => selectChapter($("rd-chapter").value);
   $("rd-prev").onclick = () => step(-1);
@@ -272,6 +274,8 @@ async function selectVerse(sloka) {
 function render() {
   document.querySelectorAll(".scl-only").forEach(el => el.style.display = "");
   $("rd-as").style.display = "none"; $("rd-source").style.display = "none";
+  $("rd-text").classList.remove("as-prose-anchor"); $("rd-text").onclick = null;
+  $("rd-stats").style.display = ""; $("rd-cov-btn").style.display = "";
   $("rd-attrib").textContent = data.attribution || "";
   $("rd-text").innerHTML = (data.spans && data.spans.length ? data.spans : data.text.map(t => [{text: t, keys: []}]))
     .map(pada => pada.map(seg => {
@@ -581,7 +585,8 @@ function renderVidyut(v, ours) {
 }
 
 /* ── प्रस्थानत्रयी (Advaita Sharada text + word-level analyses) ── */
-const AS_KIND = { heading: "", prose: "उपोद्घातः", avatarika: "अवतरणिका", bhashya: "भाष्यम्", colophon: "", mula: "मूलम्" };
+const AS_KIND = { heading: "", prose: "उपोद्घातः", avatarika: "अवतरणिका", bhashya: "भाष्यम्", colophon: "", mula: "मूलम्",
+                  mangala: "मङ्गलम्", padya: "पद्यम्" };
 const CONF = { h: "उच्चः", m: "मध्यमः", l: "न्यूनः" };
 
 function bwords(s) {
@@ -601,9 +606,9 @@ function richText(text, prat) {
 }
 
 function asPassage(p, pageUrl) {
-  if (p.kind === "mula") return "";
   const tika = (p.tika || []).map(t => `<details class="as-tika"><summary>${esc(t.title)} · ${t.rows.length}</summary>${
     t.rows.map(r => `<div class="row">${richText(r.text, r.pratika)}</div>`).join("")}</details>`).join("");
+  if (p.id === data.sloka) return tika ? `<div class="as-p as-${esc(p.kind)}">${tika}</div>` : "";  // text is above
   const label = AS_KIND[p.kind] ?? p.kind;
   return `<div class="as-p as-${esc(p.kind)}">${label ? `<div class="as-kind">${esc(label)}<a href="${esc(pageUrl)}#${esc(p.id)}" target="_blank" rel="noopener" title="${esc(p.id)}">↗</a></div>` : ""}
     <div>${bwords(p.text)}</div>${tika}</div>`;
@@ -617,9 +622,14 @@ function renderAS() {
   $("rd-title").textContent = `${u.book} ${data.ref}`;
   $("rd-source").href = data.url; $("rd-source").style.display = "";
   $("rd-attrib").textContent = data.attribution || "";
-  $("rd-text").innerHTML = data.spans.map(line => line.map(seg => seg.key == null ? esc(seg.text)
+  const prose = data.anchor_kind !== "mula", hasWords = data.words.length > 0;
+  $("rd-text").classList.toggle("as-prose-anchor", prose);
+  $("rd-text").innerHTML = prose ? bwords(data.mula.text) : data.spans.map(line => line.map(seg => seg.key == null ? esc(seg.text)
     : `<span class="hit${selKey === "m" + seg.key ? " sel" : ""}" data-m="${seg.key}">${esc(seg.text)}</span>`).join("")).join("<br>");
   $("rd-text").querySelectorAll("[data-m]").forEach(el => el.onclick = () => selectMula(+el.dataset.m));
+  $("rd-text").onclick = prose ? ev => { if (ev.target.classList.contains("bw")) selectBhashyaWord(ev.target); } : null;
+  $("rd-stats").style.display = hasWords ? "" : "none";
+  $("rd-cov-btn").style.display = hasWords ? "" : "none";
   const c = data.counts, tried = c.derived + c.differs + c.error;
   $("rd-stats").innerHTML =
     `<span class="st-derived">✓ ${c.derived}/${tried} यन्त्र-सिद्धानि</span>` +
@@ -636,9 +646,9 @@ function renderAS() {
       <td>${vidyutCell(p)}</td></tr>`;
   }));
   t += "</table>";
-  const passages = [...data.pre, ...data.post].map(p => asPassage(p, pageUrl)).join("");
-  $("rd-as").innerHTML = `<h3 style="margin:10px 0 4px;font-family:var(--dev)">पद-विश्लेषणम्</h3>${t}
-    <h3 style="margin:14px 0 4px;font-family:var(--dev)">भाष्यम् · टीका</h3>
+  const passages = [...data.pre, data.mula, ...data.post].map(p => asPassage(p, pageUrl)).join("");
+  $("rd-as").innerHTML = (hasWords ? `<h3 style="margin:10px 0 4px;font-family:var(--dev)">पद-विश्लेषणम्</h3>${t}` : "") + `
+    <h3 style="margin:14px 0 4px;font-family:var(--dev)">${hasWords ? "भाष्यम् · टीका" : "पाठः"}</h3>
     <p class="muted" style="font-size:11px;margin:0">भाष्य-पदं नुदतु — its analysis and prakriyā appear on the right.</p>${passages}`;
   $("rd-as").style.display = "";
   $("rd-as").querySelectorAll("tr[data-m]").forEach(el => el.onclick = () => selectMula(+el.dataset.m));

@@ -9,7 +9,8 @@ Plan of record: `docs/INTEGRATION_CLIENTS.md`. Done: Subhastini launcher starts 
 come from Advaita Sharada (Sringeri) — **"All rights reserved": local cache only, never commit `data/reference/advaita_sharada/raw/`**.
 Word analyses come from Tamal Maharaj's CC BY Zenodo deposit; every mūla/bhāṣya word is re-derived by the engine before it is ✓.
 Rebuild a clone: `python3 -m tools.fetch_advaita_sharada && python3 -m tools.fetch_prasthanatrayi_words` (~5 min, 111 MB local).
-Not yet: other Advaita Sharada works; 6.4.74 māṅ context; samāsa members judged separately. Details: RUN_LOG §C 2026-10-20.
+10:30 — all 29 Advaita Sharada works now in `/reader` (prakaraṇas, stotras, Siddhāntaleśa + Kṛṣṇālaṅkāra; prose works read by paragraph).
+Not yet: 6.4.74 māṅ context; samāsa members judged separately. Details: RUN_LOG §C 2026-10-20.
 
 ## SESSION 2026-10-18 (afternoon) — AMENDMENT 25 accepted and implemented; `Test Engine.command`
 Owner: "all must be based on authentic reference, never discover any rule, see Aṣṭādhyāyī data for any confirmation".

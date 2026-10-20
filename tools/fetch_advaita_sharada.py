@@ -1,5 +1,5 @@
 """
-tools/fetch_advaita_sharada.py — Advaita Sharada (Sringeri) Prasthānatrayī bhāṣyas for the /reader page.
+tools/fetch_advaita_sharada.py — Advaita Sharada (Sringeri) bhāṣyas, prakaraṇas and stotras for the /reader page.
 ───────────────────────────────────────────────────────────────────────────────────────────────────────
 
 advaitasharada.sringeri.net is the Dakshinamnaya Sri Sharada Peetham's digital
@@ -43,7 +43,7 @@ RAW = OUT / "raw"
 HTML = RAW / "html"
 BASE = "https://advaitasharada.sringeri.net"
 UA = "panini-engine-v3 reader cache (local, non-redistributed; contact via online@sringeri.net feedback)"
-GROUP = "prasthanatraya-bhashya"
+GROUPS = ("prasthanatraya-bhashya", "shankara-prakarana", "shankara-stotra", "itara-prakarana", "itara-grantha")
 RIGHTS = "© Dakshinamnaya Sri Sharada Peetham, Sringeri. All rights reserved."
 DELAY = 1.0
 
@@ -203,32 +203,45 @@ def write_source(stats: dict) -> None:
                   "every passage links back to its page on the site",
         "pages": BASE + "/read/<slug>/<chunk>/",
         "tika_alignment": BASE + "/vyakhya/<slug>/<chunk>.<code>.json",
-        "group": GROUP,
+        "groups": list(GROUPS),
         "fetched": _dt.date.today().isoformat(),
         "stats": stats,
     }, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
+def cached_docs() -> list[Path]:
+    return sorted(p for p in RAW.glob("*.json") if p.name != "cite-maps-index.json")
+
+
+def _stats(path: Path) -> dict:
+    doc = json.loads(path.read_text(encoding="utf-8"))
+    units = [u for p in doc["pages"] for u in p["units"]]
+    return {"group": doc.get("group"), "pages": len(doc["pages"]), "mula": sum(u["kind"] == "mula" for u in units),
+            "passages": len(units),
+            "tika_passages": sum(len(rows) for p in doc["pages"] for v in p["vyakhya"] for rows in v["aligned"].values()),
+            "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--work", help="one slug (default: every Prasthānatrayī bhāṣya)")
+    ap.add_argument("--work", help="one slug (default: every work in GROUPS)")
     ap.add_argument("--no-fetch", action="store_true", help="rebuild from raw/html only")
     ap.add_argument("--refresh", action="store_true", help="re-download pages already cached")
     a = ap.parse_args(argv)
 
     RAW.mkdir(parents=True, exist_ok=True)
     idx = works()
-    todo = {c: m for c, m in idx.items() if m.get("group") == GROUP and (not a.work or m["slug"] == a.work)}
-    stats = {}
+    todo = {c: m for c, m in idx.items() if m.get("group") in GROUPS and (not a.work or m["slug"] == a.work)}
+    tika_slugs = {v["slug"] for p in cached_docs() for pg in json.loads(p.read_text(encoding="utf-8"))["pages"]
+                  for v in pg["vyakhya"]}
     for code, meta in todo.items():
+        if meta["slug"] in tika_slugs:  # a ṭīkā already aligned to its mūla work's passages
+            print(f"  {meta['slug']}: arrives as a ṭīkā, not fetched separately")
+            continue
         doc = build_work(code, meta, fetch=not a.no_fetch, refresh=a.refresh)
-        units = [u for p in doc["pages"] for u in p["units"]]
-        tika = sum(len(rows) for p in doc["pages"] for v in p["vyakhya"] for rows in v["aligned"].values())
-        stats[meta["slug"]] = {"pages": len(doc["pages"]), "mula": sum(u["kind"] == "mula" for u in units),
-                               "passages": len(units), "tika_passages": tika,
-                               "sha256": hashlib.sha256((RAW / f"{meta['slug']}.json").read_bytes()).hexdigest()}
-    if not a.work:
-        write_source(stats)
+        tika_slugs |= {v["slug"] for pg in doc["pages"] for v in pg["vyakhya"]}
+    stats = {p.stem: _stats(p) for p in cached_docs()}
+    write_source(stats)
     print(json.dumps({k: {x: y for x, y in v.items() if x != "sha256"} for k, v in stats.items()}, ensure_ascii=False))
     return 0
 
