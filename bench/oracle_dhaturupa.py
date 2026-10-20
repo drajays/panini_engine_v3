@@ -48,9 +48,35 @@ def _subanta(q: dict, vibhakti: int, vacana: int):
                         vacana=getattr(Vacana, _VACANA[vacana]))
 
 
+def _reader_item(v, item: dict) -> dict:
+    """One word of the e-reader: {"kind": "tinanta"|"subanta", …} → {"forms": [...], "steps": [...]} (steps of the
+    form equal to ``item['want']`` if Vidyut reaches it, else of the first form; only when ``item['steps']``)."""
+    try:
+        if item["kind"] == "tinanta":
+            p = _pada({**item, "prefix": None}, v, item["lakara"], item["purusha"], item["vacana"])
+            if item.get("prefixes"):              # upasargas: rebuild the dhātu with all of them
+                from vidyut.prakriya import Pada
+                p = Pada.Tinanta(dhatu=p.dhatu.with_prefixes(list(item["prefixes"])), prayoga=p.prayoga,
+                                 lakara=p.lakara, purusha=p.purusha, vacana=p.vacana,
+                                 **({"dhatu_pada": p.dhatu_pada} if item.get("pada") else {}))
+        else:
+            p = _subanta(item, item["vibhakti"], item["vacana"])
+        prakriyas = list(v.derive(p))
+    except Exception as ex:
+        return {"forms": [], "error": f"{type(ex).__name__}: {ex}"[:200]}
+    out = {"forms": sorted({x.text for x in prakriyas})}
+    if item.get("steps") and prakriyas:
+        pick = next((x for x in prakriyas if x.text == item.get("want")), prakriyas[0])
+        out["steps"] = [{"code": s.code, "result": list(s.result)} for s in pick.history]
+    return out
+
+
 def main() -> int:
     from vidyut.prakriya import Vyakarana
     v, q = Vyakarana(), json.load(sys.stdin)
+    if q["op"] == "reader_batch":                 # e-reader words, any grantha: [{kind, …}] → [{forms, steps?}]
+        json.dump([_reader_item(v, it) for it in q["items"]], sys.stdout)
+        return 0
     if q["op"] == "subgrid":                      # 8 vibhakti × 3 vacana, row-major
         out = []
         for vb in range(1, 9):

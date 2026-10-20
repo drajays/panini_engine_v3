@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from collections import defaultdict
 from functools import lru_cache
 from pathlib import Path
@@ -23,6 +24,8 @@ def _index() -> dict[str, list[dict]]:
     for f in sorted(_ROOT.glob("*/json/*.json")):
         for key, entries in json.loads(f.read_text(encoding="utf-8")).items():
             for head, linga, syns, verse, ref, *_ in entries:
+                if isinstance(syns, str):          # some kośa files store the synonyms as one string
+                    syns = [s for s in re.split(r"[,;।\s]+", syns) if s]
                 rec = {"kosha": f.stem, "headword": head, "linga": linga,
                        "synonyms": syns, "verse": verse.replace("<BR>", "\n"), "ref": ref}
                 for w in {key, head, *syns}:

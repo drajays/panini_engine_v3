@@ -138,6 +138,7 @@
           <label><input type="checkbox" value="STRUCTURAL" checked> संरचनात्मकम्</label>
         </div>
         <ol class="trace" id="trace" style="max-height:340px;overflow-y:auto;margin:0;"></ol>
+        <div id="rd-vidyut"></div>
       </div>
       <div id="sutra-detail"></div>
     </div>
@@ -307,7 +308,7 @@ function renderAnvaya() {
 
 function renderTable() {
   let h = `<table class="rd-table"><tr><th>अन्वयः</th><th>पदम्</th><th>सन्धि-रूपम्</th><th>रूप-विश्लेषणम्</th>
-    <th>सम्बन्धः</th><th>समासः</th><th>अर्थः</th><th>सूत्राणि</th><th>विभक्तिः</th><th>यन्त्रम्</th></tr>`;
+    <th>सम्बन्धः</th><th>समासः</th><th>अर्थः</th><th>सूत्राणि</th><th>विभक्तिः</th><th>यन्त्रम्</th><th title="Vidyut (ambuda-org) — independent prakriyā engine">Vidyut</th></tr>`;
   data.sentences.forEach((s, si) => s.words.filter(passFilter).forEach(w => {
     const rel = w.relation, vc = w.vibhakti_check, e = w.engine;
     const sut = [...(rel ? rel.sutras : []), ...e.sutras].map(sutraTag).join("");
@@ -321,10 +322,24 @@ function renderTable() {
       <td class="dev" style="font-size:12px">${esc(w.samasa || "")}</td>
       <td class="dev" style="font-size:12px">${esc(w.hindi || "")}</td>
       <td>${sut}</td><td>${vch}</td>
-      <td class="st-${e.status}" title="${esc(ST[e.status][1])}">${ST[e.status][0]} <span class="dev">${esc(e.produced_dev && e.status === "differs" ? e.produced_dev : "")}</span></td></tr>`;
+      <td class="st-${e.status}" title="${esc(ST[e.status][1])}">${ST[e.status][0]} <span class="dev">${esc(e.produced_dev && e.status === "differs" ? e.produced_dev : "")}</span></td>
+      <td>${vidyutCell(w)}</td></tr>`;
   }));
   $("rd-tab-table").innerHTML = h + "</table>";
   bindWords($("rd-tab-table"));
+}
+
+function synList(k, n) {      // kośa synonyms: a list, or (some kośa files) one string
+  const s = Array.isArray(k.synonyms) ? k.synonyms : String(k.synonyms || "").split(/[,;।\s]+/).filter(Boolean);
+  return s.slice(0, n).join(", ");
+}
+
+function vidyutCell(w) {        // Vidyut beside our engine: ✓ it reaches the text's form; = it agrees with ours
+  const v = w.vidyut;
+  if (!v) return "";
+  if (v.error) return `<span class="muted" title="${esc(v.error)}">—</span>`;
+  const mark = v.has_text_form ? "✓" : "✗", cls = v.has_text_form ? "st-derived" : "st-differs";
+  return `<span class="${cls}" title="Vidyut: ${esc(v.forms.join(", "))}${v.agrees_with_engine ? " · agrees with our engine" : " · differs from our engine"}">${mark}${v.agrees_with_engine ? " =" : " ≠"}</span>`;
 }
 
 function renderKosha() {
@@ -334,7 +349,7 @@ function renderKosha() {
       <td class="dev">${esc(w.word)}</td><td class="dev">${esc(w.hindi || "")}</td>
       <td>${esc(w.english || "")}</td><td class="dev">${esc(w.sarvanama || "")}</td>
       <td class="dev">${esc(w.name_class || "")}</td>
-      <td class="dev">${esc((w.kosha || []).map(k => `${k.headword}${k.linga ? " (" + k.linga + ")" : ""}: ${k.synonyms.slice(0, 5).join(", ")} [${k.kosha}]`).join(" | "))}</td></tr>`;
+      <td class="dev">${esc((w.kosha || []).map(k => `${k.headword}${k.linga ? " (" + k.linga + ")" : ""}: ${synList(k, 5)} [${k.kosha}]`).join(" | "))}</td></tr>`;
   }));
   $("rd-tab-kosha").innerHTML = h + "</table><p class=\"muted\" style=\"font-size:11px\">Glosses are Saṃsādhanī lexical notes (not a prakriyā).</p>";
   bindWords($("rd-tab-kosha"));
@@ -487,7 +502,7 @@ async function selectWord(k) {
   let kv = [["प्रकारः", KIND[w.kind] || w.kind], ["रूप-विश्लेषणम्", w.morph],
             ["सन्धि-रूपम्", w.sandhied_word], ["समासः", w.samasa],
             ["अर्थः", [w.hindi, w.english].filter(x => x && x !== "-").join(" · ")],
-            ["कोशः", (w.kosha || []).map(k => `${k.synonyms.slice(0, 6).join(", ")} — ${k.kosha} ${k.ref}`).join(" | ")]];
+            ["कोशः", (w.kosha || []).map(k => `${synList(k, 6)} — ${k.kosha} ${k.ref}`).join(" | ")]];
   if (w.kind === "tinanta" && inp.dhatu_id)
     kv.push(["यन्त्र-निवेशः", `${inp.dhatu_upadesha_slp1} (${inp.dhatu_id}) · ${inp.lakara} · ${inp.prayoga} · ${inp.purusha}/${inp.vacana}${inp.pada ? " · " + inp.pada : ""}${(inp.upasargas || []).length ? " · +" + inp.upasargas.join("+") : ""}${inp.sanadi ? " · " + inp.sanadi : ""}`]);
   if (w.kind === "subanta" && inp.stem_slp1)
@@ -523,9 +538,22 @@ async function selectWord(k) {
     if (selKey !== k) return;
     $("rd-trace-area").style.display = "";
     renderTrace(t.trace);
+    renderVidyut(t.vidyut, t.surface_slp1);
   } catch (err) {
     $("sutra-detail").innerHTML = `<div class="muted">${esc(err.message)}</div>`;
   }
+}
+
+function renderVidyut(v, ours) {
+  const box = $("rd-vidyut");
+  if (!v) { box.innerHTML = `<div class="muted">Vidyut: not available for this word.</div>`; return; }
+  if (v.error) { box.innerHTML = `<div class="muted">Vidyut: ${esc(v.error)}</div>`; return; }
+  const agree = v.agrees_with_engine;
+  box.innerHTML = `<h3 style="margin:12px 0 6px;">Vidyut-प्रक्रिया <span class="muted" style="font-size:12px">(ambuda-org/vidyut — independent cross-check)</span></h3>
+    <div class="rd-verdict ${agree ? "st-derived" : "st-differs"}">${agree ? "✓ agrees with our engine" : "≠ differs from our engine"} —
+      Vidyut: <b>${esc(v.forms.join(", "))}</b>${agree ? "" : ` · ours: <b>${esc(ours)}</b>`}</div>
+    <ol class="trace" style="max-height:260px;overflow-y:auto;margin:0;">${(v.steps || []).map(st =>
+      `<li><b class="mono">${esc(st.code)}</b> <span class="dev">${esc(st.text_dev || "")}</span> — <span class="mono">${esc((st.result || []).join(" + "))}</span></li>`).join("")}</ol>`;
 }
 
 async function runSearch() {

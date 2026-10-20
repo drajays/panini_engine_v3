@@ -1437,9 +1437,76 @@ def api_reader_verse():
     from tools import samsaadhanii_reader as rd
     a = request.args
     try:
-        return jsonify(rd.verse(a["unit"], a["chapter"], a["sloka"]))
+        v = rd.verse(a["unit"], a["chapter"], a["sloka"])
     except KeyError as e:
         return jsonify({"error": f"not found: {e}"}), 404
+    _reader_attach_vidyut(v)
+    return jsonify(v)
+
+
+_READER_VIDYUT_LAKARA = {ours: vid for vid, ours, _dev, _note in [  # our lakāra key → Vidyut's
+    ("Lat", "laT", 0, 0), ("Lit", "liT", 0, 0), ("Lut", "luT", 0, 0), ("Lrt", "lRT", 0, 0), ("Lot", "loT", 0, 0),
+    ("Lan", "laG", 0, 0), ("VidhiLin", "liG", 0, 0), ("AshirLin", "AsIrliG", 0, 0), ("Lun", "luG", 0, 0),
+    ("Lrn", "lRG", 0, 0)]}
+_READER_VIDYUT_SANADI = {"nic": "Ric", "san": "san"}
+_READER_VIDYUT_CACHE: dict = {}
+
+
+def _reader_vidyut_item(req: dict, want: str | None = None, steps: bool = False) -> dict | None:
+    """A reader word request → a Vidyut oracle item (bench/oracle_dhaturupa ``reader_batch``); None if not mappable."""
+    if not req:
+        return None
+    if req.get("kind") == "tinanta":
+        try:
+            row = _dr_row(req.get("dhatu_id") or req.get("dhatu_upadesha_slp1"))
+        except Exception:
+            return None
+        lak = _READER_VIDYUT_LAKARA.get(req.get("lakara") or "")
+        if not row or not lak or not req.get("purusha") or not req.get("vacana"):
+            return None
+        return {"kind": "tinanta", "upadesha": row["upadesha_slp1"], "path_id": row["dhatupatha_id"],
+                "prayoga": req.get("prayoga") or "kartari", "pada": req.get("pada") or None,
+                "sanadi": _READER_VIDYUT_SANADI.get(req.get("sanadi") or ""), "prefixes": req.get("upasargas") or [],
+                "lakara": lak, "purusha": int(req["purusha"]), "vacana": int(req["vacana"]), "want": want, "steps": steps}
+    if req.get("kind") == "subanta" and req.get("stem_slp1") and req.get("vibhakti") and req.get("vacana"):
+        lg = req.get("linga") or "pulliṅga"
+        linga = "stri" if lg.startswith("str") else "napumsaka" if lg.startswith("nap") else "pum"
+        return {"kind": "subanta", "stem": req["stem_slp1"], "linga": linga, "vibhakti": int(req["vibhakti"]),
+                "vacana": int(req["vacana"]), "want": want, "steps": steps}
+    return None
+
+
+def _reader_vidyut(items: list[dict]) -> list[dict | None]:
+    """Run Vidyut on many reader words in one subprocess (the .venv has vidyut); None per item when unavailable."""
+    venv_py = _ROOT / ".venv" / "bin" / "python"
+    todo = [it for it in items if it is not None and json.dumps(it, sort_keys=True) not in _READER_VIDYUT_CACHE]
+    if todo and venv_py.exists():
+        try:
+            r = subprocess.run([str(venv_py), "-m", "bench.oracle_dhaturupa"], cwd=_ROOT,
+                               input=json.dumps({"op": "reader_batch", "items": todo}), capture_output=True,
+                               text=True, timeout=300)
+            if r.returncode == 0:
+                for it, res in zip(todo, json.loads(r.stdout)):
+                    _READER_VIDYUT_CACHE[json.dumps(it, sort_keys=True)] = res
+        except (subprocess.TimeoutExpired, json.JSONDecodeError):
+            pass
+    return [None if it is None else _READER_VIDYUT_CACHE.get(json.dumps(it, sort_keys=True)) for it in items]
+
+
+def _reader_attach_vidyut(verse: dict) -> None:
+    """Every tiṅanta/subanta word of a verse gets ``vidyut: {forms, agrees}`` beside our engine's verdict."""
+    words = [w for s in verse.get("sentences") or [] for w in s.get("words") or []]
+    reqs = [((w.get("engine") or {}).get("request"), w) for w in words]
+    items = [_reader_vidyut_item(r) for r, _w in reqs]
+    for (r, w), res in zip(reqs, _reader_vidyut(items)):
+        if res is None:
+            continue
+        ours = (w.get("engine") or {}).get("produced_slp1")
+        from core.transliterate import dev_to_slp1
+        attested = dev_to_slp1(w.get("word_dev") or w.get("word") or "")      # the text's form, as SLP1
+        w["vidyut"] = {"forms": res.get("forms") or [], "error": res.get("error"),
+                       "agrees_with_engine": bool(ours) and ours in (res.get("forms") or []),
+                       "has_text_form": bool(attested) and attested in (res.get("forms") or [])}
 
 
 @app.route("/api/reader/trace", methods=["POST"])
@@ -1452,12 +1519,24 @@ def api_reader_trace():
         return jsonify({"error": f"Not implemented: {e}"}), 501
     except Exception as ex:
         return jsonify({"error": f"{type(ex).__name__}: {ex}"}), 500
+    ours = state.flat_slp1()
+    vid = _reader_vidyut([_reader_vidyut_item(req, want=ours, steps=True)])[0]
     return jsonify({
         "request": req,
         "surface_dev": state.flat_dev(),
-        "surface_slp1": state.flat_slp1(),
+        "surface_slp1": ours,
         "trace": _enrich_trace(state.trace),
+        "vidyut": vid and {**vid, "agrees_with_engine": ours in (vid.get("forms") or []),
+                           "steps": [{**s, "text_dev": _sutra_text_dev(s.get("code"))} for s in vid.get("steps") or []]},
     })
+
+
+def _sutra_text_dev(code: str | None) -> str:
+    try:
+        from engine import SUTRA_REGISTRY
+        return getattr(SUTRA_REGISTRY.get(code or ""), "text_dev", "") or ""
+    except Exception:
+        return ""
 
 
 @app.route("/api/reader/search")
