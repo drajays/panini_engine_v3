@@ -242,6 +242,17 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-10-21 09:30  [cursor]  Absolutives step (a): vivakṣā pUrvakAla + samAnakartfka
+
+Owner: "start step 1 of the absolutives plan in docs/INTEGRATION_CLIENTS.md" (Decisions item 4, step a).
+- `tools/build_vivaksha_schema.py`: kāla `pUrvakAla` (form pUrvakAle → 3.4.21–26) and key `samAnakartfka` (forms
+  samAnakarttfkayoH / samAnakartfkezu / samAnakartfkAt → 3.1.7, 3.3.158, 3.3.159, 3.4.21–26). ashtadhyayi.com spells the
+  3.4.21 pada with कर्त्तृ, so that form is listed as found. `data/inputs/vivaksha_schema.json` regenerated (additions only).
+- `tests/constitutional/test_amendment_25_vivaksha.py`: both values are named by 3.4.21's samagra (step b's lint precondition).
+- `docs/AMENDMENT_25.md` status row updated. No sūtra reads the new values yet.
+- **Tests:** `make full-check` EXIT 0 — 20,494 passed, 13 skipped, 7 xfailed (constitutional 17,058 passed); runs to the end.
+- **Next:** step (b) — 3.4.21 via `vivaksita`, upadeśa `ktvA`, drop `ktvA_recipe`; needs a kṛdanta builder in `engine/tape_init/`.
+
 ### 2026-10-21 03:45  [cursor]  Integration P2 / P3 / S2 / P5 + three engine findings (docs/INTEGRATION_CLIENTS.md)
 
 Owner: "go ahead" on P2–P5 + findings; ruled P4 (AI tutor) → S2 (it was retired 19:00), one commit per phase.

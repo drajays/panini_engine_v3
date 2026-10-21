@@ -110,7 +110,8 @@ liṭ abhyāsa (ददर्श) — the same clusters the DCS benchmark ranks.
    tape, run by the recipe-free loop (25 steps), already gives भूत्वा and त्यक्त्वा; गन्त्वा for गत्वा shows 6.4.37 unreached;
    3.4.114 never names the kṛt ārdhadhātuka, so 7.2.35 / 7.2.10 / 7.2.11 iṭ decisions never run; `run_sapadasaptadhyayi`
    does not converge on a kṛt tape. Steps, in order: (a) vivakṣā `kala=pUrvakAla` + `samAnakartfka` from 3.4.21's samagra
-   (`tools/build_vivaksha_schema.py`); (b) 3.4.21 cond via `vivaksita`, act attaches upadeśa `ktvA` — the recipe gate goes
+   (`tools/build_vivaksha_schema.py`) — **done 2026-10-21** (pUrvakAla cited by 3.4.21–26; samAnakartfka by 3.1.7,
+   3.3.158–159, 3.4.21–26); (b) 3.4.21 cond via `vivaksita`, act attaches upadeśa `ktvA` — the recipe gate goes
    (arm count falls); (c) 3.4.114 for kṛt, the iṭ sūtras, 6.4.37, then 7.1.37 lyap with upasarga; (d) loop convergence on
    kṛt tapes (`engine/core_loop.py`, coordinator); (e) the ktvā lessons become regression tests of the one spine (Art. 12);
    (f) `core/analyze` proposes kṛdanta readings.

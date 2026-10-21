@@ -388,5 +388,19 @@
   "status": "released",
   "hotspots": [],
   "updated": 1792534440.5629718
+ },
+ {
+  "id": "ktva-a-vivaksha",
+  "agent": "cursor",
+  "scope": [
+   "tools/build_vivaksha_schema.py",
+   "data/inputs/vivaksha_schema.json",
+   "docs/AMENDMENT_25.md",
+   "tests/constitutional/test_amendment_25_vivaksha.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792554259.442761
  }
 ]

@@ -22,8 +22,10 @@ VOCABULARY = {
         "kartf": ["kartari"], "karman": ["karmaRi"], "BAva": ["BAve"], "karaRa": ["karaRe"],
         "aDikaraRa": ["aDikaraRe"], "sampradAna": ["sampradAne"], "apAdAna": ["apAdAne"],
     },
-    "kala": {"BUta": ["BUte"], "vartamAna": ["vartamAne"], "Bavizyat": ["Bavizyati"]},
+    "kala": {"BUta": ["BUte"], "vartamAna": ["vartamAne"], "Bavizyat": ["Bavizyati"], "pUrvakAla": ["pUrvakAle"]},
     "kartrabhiprAya": {"kartraBiprAya": ["kartraBiprAye"]},
+    # ashtadhyayi.com spells the 3.4.21 pada कर्त्तृ (samAnakarttfkayoH); 3.1.7 and 3.3.158 have one t
+    "samAnakartfka": {"samAnakartfka": ["samAnakarttfkayoH", "samAnakartfkezu", "samAnakartfkAt"]},
 }
 _SPLIT = re.compile(r"[\s\-,.;:|।॥()'\"]+")
 

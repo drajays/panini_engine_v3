@@ -31,6 +31,12 @@ def test_schema_values_are_named_by_the_sutras_they_cite():
                 assert _samagra_words(sid) & set(entry["forms"]), f"{key}={value}: {sid} does not name it"
 
 
+def test_ktva_vivaksha_is_named_by_3_4_21():
+    for key, value in (("kala", "pUrvakAla"), ("samAnakartfka", "samAnakartfka")):
+        assert "3.4.21" in schema()[key][value]["sutras"], f"{key}={value}"
+        assert _samagra_words("3.4.21") & set(schema()[key][value]["forms"])
+
+
 def _vivaksita_calls(tree):
     for node in ast.walk(tree):
         if isinstance(node, ast.Call) and getattr(node.func, "id", getattr(node.func, "attr", None)) == "vivaksita":

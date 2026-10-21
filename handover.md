@@ -1,5 +1,13 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
+## SESSION 2026-10-21 (morning) — cursor: absolutives step (a) done
+Plan: `docs/INTEGRATION_CLIENTS.md` "Decisions" item 4. Step (a) landed: vivakṣā `kala=pUrvakAla` and `samAnakartfka`
+(`data/inputs/vivaksha_schema.json`, cited from samagra). `make full-check` green end to end (env item 1 confirmed).
+**Next: step (b)** — 3.4.21 cond asks `vivaksita(state, "kala", "pUrvakAla")` + `samAnakartfka`, act attaches upadeśa `ktvA`;
+the `ktvA_recipe` gate goes. Needs a kṛdanta start-state builder in `engine/tape_init/` (only `tinanta.py` exists; AMENDMENT 25
+lists `engine/tape_init/` as coordinator-only) and the three `ktvA_recipe` writers (`core/canonical_pipelines.py`,
+`pipelines/prakftya_lyap_split_prakriyas.py`, `pipelines/sthanivat_anal_ashrita_lesson.py`) moved onto it.
+
 ## SESSION 2026-10-21 — cursor: integration P2 / P3 / S2 / P5 closed; engine work is next
 Clients now ask the engine, never Vidyut directly: `POST /v1/analyze` (`core/analyze.py` — form index + Vidyut kosha propose,
 every reading re-derived; Chedaka splits accepted only when `pipelines/pada_samhita.join` re-joins them via the 6.1 ac-sandhi
