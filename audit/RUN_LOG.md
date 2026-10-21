@@ -242,6 +242,28 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-10-21 03:45  [cursor]  Integration P2 / P3 / S2 / P5 + three engine findings (docs/INTEGRATION_CLIENTS.md)
+
+Owner: "go ahead" on P2–P5 + findings; ruled P4 (AI tutor) → S2 (it was retired 19:00), one commit per phase.
+- **P2** `POST /v1/analyze` (`core/analyze.py`): form index + Vidyut kosha (`bench/oracle_kosha`, data now in engine
+  `.venv/vidyut-data`) propose; every reading re-derived (vibhāṣā branches via `engine.vikalpa.explore`, ubhayapadī pada
+  retried only for उभयपदी rows, asmad/yuṣmad via their glass-box paradigm); statuses verified / split / avyaya /
+  oracle_only / unknown; written ं for final म् accepted only by name (8.3.23). Subhastini colour + "How is it derived?" use it.
+- **P3** `make corpus-gaps` (`tools/corpus_gaps.py`): 2,000 most frequent words of Subhastini's classical texts (77,792 /
+  206,345 tokens): verified 82.3 % · avyaya 7.3 % · oracle_only 4.1 % · unknown 6.3 %; top clusters kṛt absolutives,
+  ṇic liṅ, स्त्रियः/पुंसः, नृणाम्, liṭ abhyāsa (same as DCS). Subhastini "Report wrong derivation" → `/v1/reviews`.
+- **S2** `~/sanskrit_learning/extract_lessons.py`: 91 lessons (60 drill, 31 passage) · 1,367 words · 1,314 sentences ·
+  66 tables, page + raw OCR line per item, `proofread: false`; `lessons/` gitignored (copyright).
+- **P5** `pipelines/pada_samhita.join`: 6.1.72 + resolver over the 6.1 ac-sandhi pool (no hand order); Chedaka
+  (`bench/oracle_cheda`) proposes, `split` only when every part derives and the engine re-joins (एवाभिरक्षति 6.1.101,
+  तवैव 6.1.88). Visarga / consonant seams are named gaps (no multi-pada tripāḍī yet).
+- **Findings:** (1) 319 upadeśa spellings name 717 rows — `/v1/tinanta` now returns `homographs` with forms; root fix
+  (svara-marked upadeśa / `_dhatu_row_by_upadesha`) is coordinator work. (2) ādhṛṣīya optional ṇic missing (183 rows tagged
+  णिज्विकल्पः; 10.0382 भू: engine अभावयत ✓, अभवत missing; Vidyut अभवत् has the wrong pada) — `pipelines/tinanta.py`, coordinator.
+  (3) neuter sambuddhi हे वारि missing (Kāśikā 7.1.73 jñāpaka: 1.1.63 anitya) — needs an owner ruling (Art. 22).
+- **Tests:** suite minus the uncommitted `tests/unit/test_dcs_reader.py` (needs `indic_transliteration`, not mine):
+  20,463 passed; constitutional + new suites 17,089 passed. `make full-check` itself stops at that DCS test.
+
 ### 2026-10-20 19:00  [cursor]  Sentence practice without AI (S1); AI book tutor retired
 
 Owner: the book with local AI is a bad idea; practise sentences deterministically. Rulings: retire the tutor from Subhastini;

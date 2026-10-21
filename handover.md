@@ -1,5 +1,17 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
+## SESSION 2026-10-21 — cursor: integration P2 / P3 / S2 / P5 closed; engine work is next
+Clients now ask the engine, never Vidyut directly: `POST /v1/analyze` (`core/analyze.py` — form index + Vidyut kosha propose,
+every reading re-derived; Chedaka splits accepted only when `pipelines/pada_samhita.join` re-joins them via the 6.1 ac-sandhi
+pool and the resolver). `make corpus-gaps` ranks what the engine cannot derive in Subhastini's classical texts; book lessons are
+`~/sanskrit_learning/extract_lessons.py` (S2). Plan, measurements and the three engine findings: `docs/INTEGRATION_CLIENTS.md`.
+**Engine work queued by real use:** (1) svara-marked upadeśas so 319 homograph spellings stop resolving to the first row
+(`pipelines/tinanta._dhatu_row_by_upadesha`, coordinator); (2) ādhṛṣīya optional ṇic, 183 rows (curādi spine, coordinator);
+(3) neuter sambuddhi हे वारि — owner ruling on an anitya 1.1.63 first; (4) multi-pada tripāḍī so visarga / consonant seams join
+(P5 does vowel seams only); (5) the corpus-gaps clusters (kṛt absolutives, ṇic liṅ, iyaṅ/uvaṅ, nṛ, liṭ abhyāsa).
+**Env:** `make full-check` stops at the uncommitted `tests/unit/test_dcs_reader.py` until `indic-transliteration`
+(requirements.txt) is installed — Homebrew Python refuses plain pip (PEP 668): needs `--break-system-packages` or a venv.
+
 ## SESSION 2026-10-20 (evening) — cursor: sentence practice without AI
 Subhastini **Practice** (`#/abhyasa`) drills Saṃsādhanī's 1000 Sentences from `/v1/practice/sentences` (`tools/practice_sentences.py`);
 answers are exact-matched, every blank is an engine-derived form. AI tutor retired. Next: S2 book extraction, S3 proofreading screen

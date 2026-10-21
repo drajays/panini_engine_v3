@@ -88,8 +88,8 @@ engine upadeśa (`ga\mx~` → `gamx~`); `la~w`→`laT`, `viDili~N`→`liG`, `ASI
 | P5 | `pipelines/pada_samhita.join`: two padas, 6.1.72, the resolver picks among the 6.1 ac-sandhi sūtras. Chedaka (`bench/oracle_cheda`) proposes splits of unread words; status `split` only when every part is engine-derived and the engine re-joins them. Visarga / consonant seams are named gaps | vowel seams done 2026-10-20 |
 
 **Measured (2026-10-20, `make corpus-gaps`, 2,000 most frequent words = 77,792 of 206,345 tokens of Gītā, Bhāgavata,
-Manusmṛti, Arthaśāstra and the kāvya/nīti works):** verified 82.3 % · avyaya 7.3 % · oracle-only 4.1 % · unknown 6.3 %
-(before P5 splits). Top clusters: kṛt absolutives (दृष्ट्वा, निशम्य: 1,501 tokens), ṇic in liṅ (कारयेत्), स्त्रियः / पुंसः, नृणाम्,
+Manusmṛti, Arthaśāstra and the kāvya/nīti works):** verified 82.3 % · split 0.9 % · avyaya 7.3 % · oracle-only 4.1 % ·
+unknown 5.3 % (6.3 % before P5 splits). Top clusters: kṛt absolutives (दृष्ट्वा, निशम्य: 1,501 tokens), ṇic in liṅ (कारयेत्), स्त्रियः / पुंसः, नृणाम्,
 liṭ abhyāsa (ददर्श) — the same clusters the DCS benchmark ranks.
 
 ## Engine findings from real use (work items, Art. 19)
