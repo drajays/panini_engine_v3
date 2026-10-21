@@ -242,6 +242,21 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-10-21 14:30  [cursor, coordinator]  Brain = final reference: B0 + B1
+
+Owner: "make ~/data-master/ashtadhyayi-ai the final reference … 100 % authentic … integrate Pushpa Dixit cards"; yes to
+rulings-in-brain, AMENDMENT 26 draft, pushing the brain; raw-ASR cards stay gist-only (agent may mark `verified`).
+- Brain 660ceb1 (pushed): `rulings/R-001..011` (SC-001..007 + SC-T + three brain rulings of 2026-10-11), evidence verified in
+  the brain DB by `rulings/validate.py`; `corrections/X-001` (अन्यतरस्याम् does not reach 7.1.37); dossier prints
+  "Rulings & corrections" and applies the correction (samagra, anuvṛtti); AI_AGENT_GUIDE "Final reference" section.
+  PŚ number: येन नाप्राप्ते is PŚ 58 in the brain (owner wrote 57).
+- Engine: `tests/constitutional/test_brain_rulings_mirror.py` (SC ↔ R mirror, validator passes, pinned commit exists),
+  `data/inputs/brain_version.json`; SOURCE_CONFLICTS headed by the brain rule, SC-007 (7.2.11) added; 7.1.37 samagra
+  corrected; `tools/kashika_quote_check.py` + ratchet (106 docstrings label a paraphrase "Kāśikā"; 3.4.21 / 7.2.11 quotes
+  made verbatim, 2.2.18 citation relabelled); `docs/BRAIN_FINAL_REFERENCE_PLAN.md`, `docs/AMENDMENT_26.md` (draft, unsigned);
+  AGENTS.md "brain is the final reference".
+- **Next:** B1 samagra/pāṭha equality; B2 `make brain-sync`; B3 cards → tests + `verified` status.
+
 ### 2026-10-21 13:45  [cursor, coordinator]  Owner rulings applied: kṅit engine-wide, 1.2.18, 7.4.46 दथ्, तीर्त्वा
 
 Owner: always consult the brain (~/data-master), never bypass a rule, ask doubts; rulings recorded in

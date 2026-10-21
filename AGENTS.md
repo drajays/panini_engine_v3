@@ -34,6 +34,9 @@ Art. 22 tier. SLP1 throughout; anunāsika `~` ≠ anusvāra `M` (Art. 4 §2).
 - Anunāsika doubt → apply 1.3.2: the upadeśa whose it-lopa yields the attested form wins
   (`$(BRAIN_PY) itcheck <upadeśa>` / `anunasika`).
 - Vidyut in the brain is a T10 minimum-rule floor for a form, never a template or an authority.
+- **The brain is the final reference (owner, 2026-10-21; draft AMENDMENT 26).** Owner rulings live in its `rulings/R-*.json`,
+ upstream corrections in `corrections/X-*.json` — record there first, then mirror in `docs/SOURCE_CONFLICTS.md` (a test
+ checks both). Doubt → ask the owner, record the answer as a ruling, apply it everywhere the same situation arises.
 
 - **Authority (Art. 23, 2026-10-09):** concepts and conflict resolution need Aṣṭādhyāyī data **and** Pushpa Dixit / Neelesh Bodas (concept card, video id + timestamp). Granthas decide when objective and workable; in doubt Pushpa Dixit.
 - **Plan of record for the prakaraṇa machine:** `docs/PRAKARANA_MACHINE_PLAN.md` (phases P0–P7, brain wiring, handover). Brain extras: `agent/transcripts.py` (search teachers' lectures; grades A/D/W/L/T — only A is citation grade), `graph/machine_l0_l2.json`, `sources/slides_neelesh/`.

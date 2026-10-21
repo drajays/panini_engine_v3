@@ -4,7 +4,7 @@
 Sources consulted:
 - ashtadhyayi.com data.txt row i=22018 · padaccheda कु-गति-प्र-आदयः · anuvṛtti समासः, सुप् सुपा, तत्पुरुषः, नित्यम्
 - Kāśikā: "कुगतिप्रादयः समर्थेन शब्दान्तरेण सह नित्यं समस्यन्ते, तत्पुरुषश्च समासो भवति। … गति — उररीकृतम्।"
-  (with 1.4.60: "प्रकृत्य ([[२.२.१८]])")
+- Kāśikā on 1.4.60 cites this sūtra for प्रकृत्य
 - Mahābhāṣya vārttika (2.2.19): "गतिकारकोपपदानां कृद्भिः सह समासवचनं प्राक् सुबुत्पत्तेः"
 - Cross-validation: tests/regression/test_ktva_loop.py (प्रकृत्य, आगत्य, प्रपठ्य); Kāśikā 7.1.37 प्रकृत्य, प्रहृत्य
 

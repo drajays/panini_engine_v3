@@ -499,5 +499,38 @@
   "status": "released",
   "hotspots": [],
   "updated": 1792566281.829661
+ },
+ {
+  "id": "brain-final-ref",
+  "agent": "cursor",
+  "scope": [
+   "7.1.37",
+   "AGENTS.md",
+   "docs/SOURCE_CONFLICTS.md",
+   "docs/BRAIN_FINAL_REFERENCE_PLAN.md",
+   "docs/AMENDMENT_26.md",
+   "data/inputs/brain_version.json",
+   "tests/constitutional/test_brain_rulings_mirror.py",
+   "sutras/adhyaya_7/pada_1/sutra_7_1_37.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792585076.72311
+ },
+ {
+  "id": "brain-final-ref-2",
+  "agent": "cursor",
+  "scope": [
+   "2.2.18",
+   "3.4.21",
+   "7.2.11",
+   "tools/kashika_quote_check.py",
+   "tests/constitutional/test_kashika_quotes_ratchet.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792585076.790825
  }
 ]

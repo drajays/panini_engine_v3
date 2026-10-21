@@ -1,0 +1,6 @@
+{
+ "commit": "660ceb1f422d6cb49fb2f3d86d0ef91286c3c5d9",
+ "repo": "github.com/drajays/Ashtadhyayi_brain",
+ "checked": "2026-10-21",
+ "_doc": "The brain commit the engine was last checked against (rulings, corrections). Re-pin after pulling the brain and re-running make full-check."
+}

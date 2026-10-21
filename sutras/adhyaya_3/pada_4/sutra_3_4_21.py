@@ -5,7 +5,7 @@ Sources consulted:
 - ashtadhyayi.com data.txt row i=34021 · padaccheda समान-कर्त्तृकयोः पूर्व-काले ·
   anuvṛtti 31001 प्रत्ययः | 31002 परः च | 31091 धातोः | 31093 कृत् | 34018 क्त्वा
 - Kāśikā: "समानः कर्ता ययोर्धात्वर्थयोस्तत्र पूर्वकाले धात्वर्थे वर्तमानाद् धातोः क्त्वाप्रत्ययो भवति।
-  भुक्त्वा व्रजति। पीत्वा व्रजति। स्नात्वा पीत्वा भुक्त्वा दत्त्वा व्रजति।"
+  भुक्त्वा व्रजति। पीत्वा व्रजति। द्विवचनमतन्त्रम्। स्नात्वा पीत्वा भुक्त्वा दत्त्वा व्रजति।"
   pratyudāharaṇa: "समानकर्तृकयोरिति किम्? भुक्तवति ब्राह्मणे व्रजति देवदत्तः। पूर्वकाल इति किम्? व्रजति च जल्पति च"
 - Cross-validation: regression test tests/regression/test_ktva_3_4_21_vivaksha.py (the pratyudāharaṇas leave the
   tape alone); lyap spine tests/unit/test_prakftya_lyap_split_prakriyas.py, tests/unit/test_lyap_6_4_38_nitya.py

@@ -1,5 +1,11 @@
 # Source conflicts
 
+**The brain is the final reference (owner, 2026-10-21).** Every ruling lives first in
+`~/data-master/ashtadhyayi-ai/rulings/R-*.json` (evidence checked against the brain's own tables by
+`rulings/validate.py`), every upstream correction in `corrections/X-*.json`. Each `SC-NNN` below is the engine's
+mirror of the brain ruling whose `engine.mirror` names it; `tests/constitutional/test_brain_rulings_mirror.py`
+keeps the two in step. Record a new ruling in the brain first, then mirror it here.
+
 Disagreements between sources (or between a source and the engine) that the
 engine must not resolve silently. Runtime conflict is Art. 21 (Paribhāṣenduśekhara).
 Meaning disputes are Art. 22. Notable disagreements stay here until Ajay rules;
@@ -192,20 +198,20 @@ against Kāśikā before the engine relies on that field.
 
 ---
 
-## SC-004 — 7.1.37 समासेऽनञ्पूर्वे क्त्वो ल्यप्: `data.txt` carries अन्यतरस्याम् (71035) — RESOLVED 2026-10-21
+## SC-004 — 7.1.37 समासेऽनञ्पूर्वे क्त्वो ल्यप्: `data.txt` carries अन्यतरस्याम् (71035) — RESOLVED 2026-10-21 (brain R-004, correction X-001)
 
 **Ruling (Ajay):** lyap is nitya in bhāṣā; the anuvṛtti does not reach 7.1.37 (the site's graph over-carries it).
 Evidence: 7.1.38 क्त्वाऽपि छन्दसि would be vyartha if ktvā were optional in bhāṣā; Kāśikā gives कृत्वा/हृत्वा only as
 the असमासे pratyudāharaṇa; SK "ल्यबादेशः स्यात्" (no वा). The owner also cited SK on 7.1.38 "भाषायां तु ल्यबेव" — the
 brain's `kaumudi.txt` 71038 has only "यजमानं परिधापयित्वा ॥", so that line is not cited in code. Engine: 7.1.37 VIDHI.
 
-## SC-005 — 7.4.46 दो दद् घोः: ādeśa दद् (sūtra) or दथ् (SK, Kāśikā iṣṭi) — RESOLVED 2026-10-21
+## SC-005 — 7.4.46 दो दद् घोः: ādeśa दद् (sūtra) or दथ् (SK, Kāśikā iṣṭi) — RESOLVED 2026-10-21 (brain R-005)
 
 **Ruling (Ajay):** the engine inserts **दथ्** (SK "दथ् स्यात्"; Kāśikā "अयमादेशः थान्तः इष्यते"; `data.txt` samagra
 "अङ्गस्य दः दथ् घोः ति किति"). 7.4.46 is an **apavāda** of 6.4.66 घुमास्थागापाजहातिसां हलि by येन नाप्राप्ते (PŚ);
 paratva agrees. दत्त्वा = दथ् + त्वा → 8.4.55. Open: दो (7.4.40 द्यति…) and देङ् are not taken by 7.4.46 yet.
 
-## SC-006 — kṅit is read from one source engine-wide — RESOLVED 2026-10-21
+## SC-006 — kṅit is read from one source engine-wide — RESOLVED 2026-10-21 (brain R-006)
 
 **Ruling (Ajay):** a pratyaya whose it is k or ṅ (it-saṃjñā 1.3.x) is kṅit for every rule (1.1.5 क्ङिति च), the same locus
 tag the 1.2.x atideśas set; 1.2.18 न क्त्वा सेट् withdraws it from a ktvā with iṭ (Kāśikā देवित्वा, वर्तित्वा). An āgama's
@@ -213,3 +219,8 @@ k (vuk, tuk) is not a kit affix. Implemented in `engine/it_samjna.record_it_lopa
 **Pending owner confirmation (engine choice, status quo kept):** a *lakāra*'s ṅ (laṅ/liṅ/luṅ/lṛṅ) and the copy its tiṅ
 carries do not make the tiṅ kṅit for 1.1.5 — they serve 3.4.99 ff.; 3.4.103 यासुट् … ङिच्च would be needless otherwise
 (भविषीष्ट keeps guṇa). महिङ्'s ṅ forms the pratyāhāras तिङ्/तङ् and does not make it kṅit (भविषीमहि).
+
+## SC-007 — 7.2.11 श्र्युकः किति as a pratiṣedha of 7.2.35's iṭ — RESOLVED 2026-10-21 (brain R-007)
+
+**Ruling (Ajay):** yes, as 7.2.10: blocks the iṭ of 7.2.35 for an ekāc श्रिञ्/uk-final dhātu before a kit *pratyaya* (not an
+āgama: 6.4.88 vuk); in liṭ the niyama 7.2.13 decides (Kāśikā क्रादय एव लिट्यनिटः — बभूविव, लुलुविव).
