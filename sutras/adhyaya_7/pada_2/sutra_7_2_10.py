@@ -1,6 +1,11 @@
 """
 7.2.10  एकाच उपदेशेऽनुदात्तात्  —  PRATISHEDHA
 
+Sources consulted:
+- ashtadhyayi.com data.txt row i=72010
+- Kāśikā: "उपदेशे य एकाच् धातुरनुदात्तश्च तस्मादिडागमो न भवति। … दाता। नेता। चेता। स्तोता। कर्ता। हर्ता।"
+- Cross-validation: tests/regression/test_ktva_loop.py (त्यक्त्वा, कृत्वा, गत्वा); tests/forward/test_forward_krdanta_trc.py
+
 Narrow v3: blocks **7.2.35** (iṭ-āgama) when the pipeline marks a one-vowel
 (ekāc) **anudātta** dhātu — ``state.meta['ekac_dhatu']`` and **not**
 ``state.meta['udatta_dhatu']`` (seṭ / udātta-śāstra rows from
@@ -11,11 +16,13 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from phonology.pratyahara import HAL
 
 
 # ārdhadhātuka val-initial affixes that would take iṭ by 7.2.35 (sya, tās,
 # sic, sīyuṭ); liṭ endings are not here — there 7.2.13 (krādi-niyama) decides.
 _VALADI_ARDHADHATUKA = frozenset({"sya", "tAs", "tAsi", "tAsi~", "sic", "sIyuw", "sIy", "tfc", "tfn"})   # tṛc / tṛn are val-ādi ārdhadhātuka kṛt too
+_VAL = HAL - {"y"}                                     # वल्: every hal from व onwards
 
 
 def _anudatta_ekac_before_valadi(state: State) -> bool:
@@ -30,6 +37,9 @@ def _anudatta_ekac_before_valadi(state: State) -> bool:
     rest = state.terms[state.terms.index(dh) + 1:]
     after = [(t.meta.get("upadesha_slp1") or "").strip() for t in rest]
     hit = next((u for u in after if u in _VALADI_ARDHADHATUKA), None)
+    if hit is None and rest and "krt" in rest[0].tags and "ardhadhatuka" in rest[0].tags and rest[0].varnas \
+            and rest[0].varnas[0].slp1 in _VAL:
+        hit = "krt"                                    # any val-ādi ārdhadhātuka kṛt: tyaktvA, kartum
     if hit is None and any(t.meta.get("source_lakara_upadesha") == "liG" and "ardhadhatuka" in t.tags and t.varnas
                            and t.varnas[0].slp1 not in "aAiIuUfFxXeEoOy" for t in rest):
         hit = "sIyuw"                                  # āśīrliṅ is ārdhadhātuka (3.4.116): कृषीष्ट

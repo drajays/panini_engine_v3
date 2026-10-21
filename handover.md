@@ -1,14 +1,19 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
-## SESSION 2026-10-21 (morning) — cursor: absolutives steps (a) + (b) done
+## SESSION 2026-10-21 (morning) — cursor: absolutives steps (a), (b), (c) ārdhadhātuka/iṭ done
 Plan: `docs/INTEGRATION_CLIENTS.md` "Decisions" item 4. (a) vivakṣā `kala=pUrvakAla` and `samAnakartfka`
 (`data/inputs/vivaksha_schema.json`, cited from samagra). (b) 3.4.21 asks both through `vivaksita` and attaches the upadeśa
 `ktvA`; requests start from `engine/tape_init/krdanta.build_krdanta_state(terms, **PURVAKALA_SAMANAKARTRKA)` (also via
 `pipelines/krdanta.build_dhatu_state(ref, **vivaksha)`; `derive_krt(krt="lyap")` passes it). `ktvA_recipe` is gone.
 Found on the way: the प्रपठ्य lesson gave *prapayaitvA (second ktvā + paW's ठ taken as it) — now प्रपठ्य.
-**Next: step (c)** — 3.4.114 names the kṛt ktvā ārdhadhātuka, then the iṭ sūtras (7.2.35 / 7.2.10 / 7.2.11), 6.4.37 (गत्वा),
-7.1.37 lyap from the upasarga instead of `lyap_recipe`. Loop probe: भू + the vivakṣā reaches BUtvA then cycles in sandhi
-(500 iterations) — step (d), `engine/core_loop.py`.
+(c) ārdhadhātuka / iṭ / 6.4.37: 3.4.114 names every non-śit kṛt; 7.2.10 sees any val-ādi ārdhadhātuka kṛt; 7.2.11 is a
+real PRATISHEDHA of 7.2.35 (kit pratyaya only, liṭ left to 7.2.13); 6.4.37 reads it:kit; a vikaraṇa needs a sārvadhātuka
+(no śnam before ktvā); 6.4.48's "kṛt starting with t = ktic" guess removed (gave *gtvA). 16/18 Kāśikā ktvā forms through
+the loop (`tests/regression/test_ktva_loop.py`); xfail तीर्त्वा (7.1.100), दत्त्वा (7.4.46 vs 6.4.66).
+**Loop finding (step d):** `engine/core_loop.run_sapadasaptadhyayi` has no vacuity filter, so ~400 gate stubs each fire once
+and exhaust the 500 budget — no cycle. `tools.autonomy_report.run_autonomously` (effective_candidates) is the working loop.
+**Next:** lyap = (c2): 1.4.60 gati + 2.2.18 gati-samāsa before sup (vārttika prāk subutpatteḥ) + 7.1.37 without `lyap_recipe`;
+then (d) give core_loop the vacuity filter.
 
 ## SESSION 2026-10-21 — cursor: integration P2 / P3 / S2 / P5 closed; engine work is next
 Clients now ask the engine, never Vidyut directly: `POST /v1/analyze` (`core/analyze.py` — form index + Vidyut kosha propose,

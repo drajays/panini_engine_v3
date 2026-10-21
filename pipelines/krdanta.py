@@ -168,9 +168,12 @@ def build_dhatu_state(dhatu_ref: str, **vivaksha: str) -> State:
         meta = _dhatu_meta_from_row(row)
     else:
         meta = {"upadesha_slp1": dhatu_ref}
+    varnas = parse_slp1_upadesha_sequence(meta["upadesha_slp1"])
+    for v in varnas:
+        v.tags.add("mula_dhatu_v")      # the dhātu's own upadeśa sounds (6.4.37, 8.3.59), as tape_init.tinanta marks them
     dhatu = Term(
         kind="prakriti",
-        varnas=parse_slp1_upadesha_sequence(meta["upadesha_slp1"]),
+        varnas=varnas,
         tags={"dhatu", "anga", "upadesha"},
         meta=meta,
     )

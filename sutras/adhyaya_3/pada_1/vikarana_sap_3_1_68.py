@@ -137,11 +137,21 @@ def find_sap_insertion_dhatu_index(state: State) -> int | None:
 def sarvadhatuka_lakara_context(state: State) -> bool:
     """A vikaraṇa (śap, śnu, śa, śnam, u, śnā…) stands only before a *sārvadhātuka* ending: the tiṅ of laṭ, loṭ, laṅ,
     vidhi-liṅ. Not before liṭ, luṭ, lṛṭ, luṅ, lṛṅ or āśīr-liṅ, whose affixes are ārdhadhātuka (3.4.114–116). With no
-    tiṅ on the tape yet (a recipe's placeholder), the question is open and the answer is yes."""
+    tiṅ on the tape yet (a recipe's lakāra placeholder), the question is open and the answer is yes. A kṛdanta has no
+    tiṅ: its kṛt decides — only a śit kṛt (śatṛ, śānac) is sārvadhātuka (3.4.113), ktvā, tṛc, kta … are not. With no
+    affix at all after the dhātu there is nothing for the vikaraṇa to stand before."""
     for t in state.terms:
         if "tin_adesha_3_4_78" in t.tags:
             src = (t.meta.get("source_lakara_upadesha") or "").strip()
             if "ashir_liG" in t.tags or "ardhadhatuka" in t.tags:
                 return False
             return src in ("", "laT", "loT", "laG", "liG")
+    affixes = [t for t in state.terms if t.kind == "pratyaya" or "pratyaya" in t.tags]
+    if not affixes:
+        return False
+    krt = [t for t in affixes if "krt" in t.tags]
+    if krt:
+        return any("sarvadhatuka_3_4_113" in t.tags
+                   or is_sarvadhatuka_upadesha_slp1(t.meta.get("upadesha_slp1_original") or t.meta.get("upadesha_slp1") or "")
+                   for t in krt)
     return True

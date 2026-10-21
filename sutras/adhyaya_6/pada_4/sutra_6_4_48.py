@@ -106,10 +106,8 @@ def _ktic_krt_follows(terms: list, ang_i: int) -> bool:
     nxt = terms[ang_i + 1]
     if nxt.kind != "pratyaya":
         return False
-    up = (nxt.meta.get("upadesha_slp1") or "").strip()
-    if up in _KTIC_UPADESHA:
-        return True
-    return "krt" in nxt.tags and bool(nxt.varnas) and nxt.varnas[0].slp1 == "t"
+    up = (nxt.meta.get("upadesha_slp1_original") or nxt.meta.get("upadesha_slp1") or "").strip()
+    return up in _KTIC_UPADESHA
 
 
 def _ktic_site(state: State) -> int | None:

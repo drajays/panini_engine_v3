@@ -1,5 +1,14 @@
 """
-6.4.37  अनुदात्तोपदेशवनतितनोत्यादीनामनुनासिक लोपो झलि क्ङिति  —  VIDHI (narrow demo)
+6.4.37  अनुदात्तोपदेशवनतितनोत्यादीनामनुनासिक लोपो झलि क्ङिति  —  VIDHI
+
+Sources consulted:
+- ashtadhyayi.com data.txt row i=64037
+- Kāśikā: "यमु — यत्वा। यतः। यतवान्। … रमु — रत्वा। … अनुदात्तोपदेशा अनुनासिकान्ता यमिरमिनमिगमिहनिमन्यतयः।"
+  pratyudāharaṇa: "शान्तः। तान्तः। दान्तः (not anudāttopadeśa) · पक्वः (no anunāsika) · गम्यते (not jhal)"
+- Cross-validation: tests/regression/test_ktva_loop.py (गत्वा); tests/unit/test_saGgasIzwa_sam_gam_ashir_ling.py
+
+The structural site: an ekāc anudātta-upadeśa dhātu ending in its own n/m before a jhal-initial affix that is kit or
+ṅit — read from the saṃjñā tag or from the it-letter the it-prakaraṇa recorded (ktvā → it:kit).
 
 Narrow v3 (संगसीष्ट / ``saGgasIzwa``):
   When the *dhātu* गमॢँ (upadeśa ``gamx~``, it-lopa → ``gam``) retains a final *anunāsika* ``m`` before a *jhal*‑initial
@@ -40,7 +49,8 @@ def _structural_site(state: State):
         if t.varnas[-1].slp1 not in ("n", "m") or "mula_dhatu_v" not in t.varnas[-1].tags:
             continue
         nxt = state.terms[i + 1]
-        if "kngiti" in nxt.tags and nxt.varnas and nxt.varnas[0].slp1 in JHAL:
+        # क्ङिति: the saṃjñā tag, or the it-letter itself as the it-prakaraṇa records it (ktvā's k: it:kit)
+        if {"kngiti", "it:kit", "it:Git"} & nxt.tags and nxt.varnas and nxt.varnas[0].slp1 in JHAL:
             return i
     return None
 

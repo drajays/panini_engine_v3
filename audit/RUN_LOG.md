@@ -242,6 +242,23 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-10-21 11:30  [cursor, coordinator]  Absolutives step (c): ārdhadhātuka, iṭ, 6.4.37 for ktvā
+
+Owner: "next". Measured with `tools.autonomy_report.run_autonomously` (scheduler + effective_candidates + resolver) from
+dhātu + the 3.4.21 vivakṣā (`.audit/ktva_auto.py`). Before: 6/9 (gantvA, pawwvA, BunaktvA).
+- `vikarana_sap_3_1_68.sarvadhatuka_lakara_context`: a kṛdanta's kṛt decides (only śit kṛt is sārvadhātuka); nothing after
+  the dhātu → no vikaraṇa (रुधादि śnam stood before ktvā).
+- 3.4.114: every kṛt that is not śit is ārdhadhātuka (was a 9-affix list); Art. 14 docstring (Kāśikā लविता, pratyudāharaṇa वृक्षत्वम्).
+- 7.2.10: any val-ādi ārdhadhātuka kṛt right after the dhātu counts (त्यक्त्वा, कृत्वा).
+- 7.2.11 श्र्युकः किति: gate stub → PRATISHEDHA blocking 7.2.35 (as 7.2.10): ekāc श्रिञ्/uk-final dhātu before a kit
+  *pratyaya* (not an āgama: 6.4.88 vuk gave *baBUva); liṭ left to 7.2.13 (Kāśikā 7.2.13 लुलुविव; SK क्रादिनियमान्नित्यमिट्).
+- 6.4.37: kṅit read from it:kit/it:Git too; Art. 14 docstring (Kāśikā यत्वा, रत्वा). `pipelines/krdanta.build_dhatu_state`
+  marks the dhātu's sounds `mula_dhatu_v` like tape_init.tinanta.
+- 6.4.48: removed the "kṛt starting with t ⇒ ktic" guess (ato-lopa ate gatvA's a → *gtvA, and would for kta गत).
+- `tests/regression/test_ktva_loop.py`: 16 Kāśikā/corpus forms ✓; strict xfail तीर्त्वा (7.1.100), दत्त्वा (7.4.46 vs 6.4.66).
+- Finding: `core_loop.run_sapadasaptadhyayi` lacks the vacuity filter — ~400 gate stubs fire once each, budget 500 runs out (no cycle).
+- **Next:** (c2) lyap: 1.4.60 gati, 2.2.18 gati-samāsa prāk subutpatteḥ, 7.1.37 without `lyap_recipe`; (d) vacuity filter in core_loop.
+
 ### 2026-10-21 10:15  [cursor, coordinator]  Absolutives step (b): 3.4.21 from vivakṣā, recipe gate removed
 
 Owner: "yes" (step b as coordinator).

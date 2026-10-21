@@ -422,5 +422,38 @@
   "status": "released",
   "hotspots": [],
   "updated": 1792556711.862365
+ },
+ {
+  "id": "ktva-c-angakarya",
+  "agent": "cursor",
+  "scope": [
+   "3.4.114",
+   "6.4.37",
+   "7.2.35",
+   "7.2.10",
+   "7.2.11",
+   "3.1.78",
+   "sutras/adhyaya_3/pada_1/vikarana_sap_3_1_68.py",
+   "sutras/adhyaya_3/pada_4/sutra_3_4_114.py",
+   "sutras/adhyaya_6/pada_4/sutra_6_4_37.py",
+   "pipelines/krdanta.py",
+   "tests/regression/test_ktva_loop.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792561315.869705
+ },
+ {
+  "id": "ktva-c-6-4-48",
+  "agent": "cursor",
+  "scope": [
+   "6.4.48",
+   "sutras/adhyaya_6/pada_4/sutra_6_4_48.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792561315.928565
  }
 ]

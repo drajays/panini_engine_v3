@@ -1,18 +1,22 @@
 """
 3.4.114  आर्धधातुकं शेषः  —  SAMJNA
 
-Śeṣa pratyayas that are not sārvadhātuka (3.4.113) are ārdhadhātuka.
-Narrow v3 use: tag a *kṛt* pratyaya (**tfc**, **gsnuC**/**snu**, **kta**, …) so
-**7.2.35** / **7.3.84** can key off ``ardhadhatuka`` without reading string goals.
+Sources consulted:
+- ashtadhyayi.com data.txt row i=34114
+- Kāśikā: "तिङः शितश्च वर्जयित्वान्यः प्रत्ययः शेषो धातुसंशब्दनेन विहित आर्धधातुकसंज्ञो भवति। लविता। लवितुम्। लवितव्यम्।"
+  pratyudāharaṇa: "धातोरित्येव — वृक्षत्वम्, वृक्षतास्ति। लूभ्याम्, लूभिः।"
+- Cross-validation: tests/regression/test_ktva_loop.py (ktvā: पठित्वा takes iṭ, भूत्वा / गत्वा do not);
+  tests/forward/test_forward_krdanta_trc.py
 
-When a recipe sets ``state.meta['3_4_114_luN_sic_samjna_arm']``, the *luṅ* *sic*
-vikaraṇa placeholder is likewise tagged **ārdhadhātuka** (P026).
-Pāṭha: ashtadhyayi.com data.txt row i=34114 (Art. 14).
+Śeṣa pratyayas that are not sārvadhātuka (3.4.113) are ārdhadhātuka. A *kṛt* — taught after a dhātu (3.1.91) — is
+ārdhadhātuka unless it is śit (śatṛ, śānac, śa …: 3.4.113), so **7.2.35** / **7.3.84** read ``ardhadhatuka``. The
+vikaraṇas sic, aṅ, sya, tāsi are named the same way.
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import SIT_KRT_SARVADHATUKA_SLP1
 
 
 def _krt_term(state: State):
@@ -20,6 +24,14 @@ def _krt_term(state: State):
         if t.kind == "pratyaya" and "krt" in t.tags:
             return t
     return None
+
+
+def _sesa_krt(pr) -> bool:
+    """तिङ्शिद्भ्योऽन्यः: a kṛt not yet named, and not śit (its upadeśa's initial ś is an it, 1.3.8)."""
+    if pr is None or "ardhadhatuka" in pr.tags or "sarvadhatuka_3_4_113" in pr.tags:
+        return False
+    up = (pr.meta.get("upadesha_slp1_original") or pr.meta.get("upadesha_slp1") or "").strip()
+    return not (up.startswith("S") or up in SIT_KRT_SARVADHATUKA_SLP1 or "S" in (pr.meta.get("it_markers") or ()))
 
 
 def _aG_luG_term(state: State):
@@ -84,11 +96,8 @@ def _tasi_lut_term(state: State):
 def cond(state: State) -> bool:
     if _tasi_lut_term(state) is not None:
         return True
-    pr = _krt_term(state)
-    if pr is not None and "ardhadhatuka" not in pr.tags:
-        upa = (pr.meta.get("upadesha_slp1") or "").strip()
-        if upa in {"tfc", "gsnuC", "snu", "kta", "ktavatu~", "lyuw", "aTuc", "ktri", "ktrim"}:
-            return True
+    if _sesa_krt(_krt_term(state)):
+        return True
     if _aG_luG_term(state) is not None:
         return True
     pr2 = _sic_luG_term(state)
@@ -108,11 +117,9 @@ def act(state: State) -> State:
         state.samjna_registry["3.4.114_ardhadhatuka_tasi_lut"] = True
         return state
     pr = _krt_term(state)
-    if pr is not None and "ardhadhatuka" not in pr.tags:
-        upa = (pr.meta.get("upadesha_slp1") or "").strip()
-        if upa in {"tfc", "gsnuC", "snu", "kta", "ktavatu~", "lyuw", "aTuc", "ktri", "ktrim"}:
-            pr.tags.add("ardhadhatuka")
-            state.samjna_registry["3.4.114_ardhadhatuka"] = True
+    if _sesa_krt(pr):
+        pr.tags.add("ardhadhatuka")
+        state.samjna_registry["3.4.114_ardhadhatuka"] = True
     pr_aG = _aG_luG_term(state)
     if pr_aG is not None:
         pr_aG.tags.add("ardhadhatuka")
