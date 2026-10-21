@@ -264,6 +264,44 @@ Owner: "go ahead" on P2–P5 + findings; ruled P4 (AI tutor) → S2 (it was reti
 - **Tests:** suite minus the uncommitted `tests/unit/test_dcs_reader.py` (needs `indic_transliteration`, not mine):
   20,463 passed; constitutional + new suites 17,089 passed. `make full-check` itself stops at that DCS test.
 
+### 2026-10-21 00:30  [cursor]  DCS benchmark: Rāmāyaṇa + Mahābhārata (local only)
+
+Subhastini's `library/{ramayana,mahabharata}.jsonl` (DharmicData, ODbL) is untagged verse text, so the DCS tags were fetched
+(local, gitignored; `data/reference/dcs/raw/` now 294 MB). `tools/fetch_dcs.py` now uses a blob-less sparse git checkout
+(raw.githubusercontent.com throttled per-file downloads to ~2/min; both epics now in ~1 min), per-file download kept as fallback.
+`coverage(..., every=K)` / `--every K` samples every K-th chapter; `--out PATH`. New verdict `derived_surface`: the last word
+of a multiword token whose written string ends in the engine's form when DCS reconstructs both FORM and Unsandhied wrongly
+(MBh guṇāṃstāta → "tātaiḥ"). Upstream has 1,995 MBh chapters (not 3,990 as first reported).
+- **Rāmāyaṇa (all 606 chapters):** subanta 127,438/133,739 (95.3 %), tiṅanta 14,982/20,210 (74.1 %).
+- **Mahābhārata (every 10th of 1,995 chapters):** subanta 56,956/59,872 (95.1 %), tiṅanta 7,598/10,555 (72.0 %).
+- **New epic clusters:** as 7.3.96 AsIt (125 in MBh sample), liṭ abhyāsa with saṃyoga (cicCeda, patkpracCa, jaqgrAha),
+  brū abruvan (6.4.77 uvaṅ), śī 7.4.21 (Sete), han jahi (6.4.36), 6.4.14 for -as/-vat/-mat (tejAH 274, mahAn, BavAn),
+  ṇatva overapplied across compounds (raGuRandana, SatruGRa), plus the upasarga ac-sandhi cluster again (aBiayAt, aBiagacCat).
+- **Tests:** `tests/unit/test_dcs_reader.py` 14; constitutional 17,079 passed; ratchets unchanged.
+
+### 2026-10-20 23:30  [cursor]  DCS gap benchmark (kāvya + Āyurveda, analysis-by-synthesis)
+
+Owner chose the DCS benchmark after a survey of outside repos (only DCS, shreevatsa's metre identifier and the stardict kośas
+had incremental merit). DCS = Hellwig's Digital Corpus of Sanskrit, CC BY 4.0, source #20; tags are a hypothesis, engine judges (Art. 17).
+- **New:** `tools/fetch_dcs.py` (pinned upstream commit, `data/reference/dcs/SOURCE.json`; raw/ gitignored, 79 MB for 13 texts),
+  `tools/dcs_reader.py` (CoNLL-U → engine requests; reuses `samsaadhanii_reader._derive_*` and `reader_enclitic.judge`),
+  `scripts/dcs_gap_report.py` (→ `.audit/dcs_gaps.json`), `tests/unit/test_dcs_reader.py` (12).
+- **Mapping is proposal-only:** Past → liṭ | luṅ, Fut → lṛṭ | luṭ; every dhātupāṭha row × pada (engine's own 1.3.x first);
+  ṇic stems via named reversals (7.2.115/116, 7.3.86, 7.3.36, 6.4.48); preverb seams (6.1.77/87/101, 8.2.66); DCS lemma
+  conventions (ka = kim, enad = anvādeśa etad/idam, paś = dṛś 7.3.78, kḷp = kṛp 8.2.18). Accepted surface equivalences are
+  named vibhāṣās only: 8.4.56, 8.4.59, 8.3.17/22, 8.1.20–26 in context (pāda approximate). DCS quirks: ḷ = U+FFB1, ṝ = U+FFDE;
+  `Unsandhied` is machine-reconstructed and sometimes wrong (FORM also tried); split `-tva` is not judged.
+- **Result (`--limit 2000` sentences/text):** subanta 67,957/71,866 (94.6 %), tiṅanta 8,729/11,222 (77.8 %); not attempted:
+  samāsa members 37,412, kṛdanta 11,695, avyaya 26,748. Kirātārjunīya lowest (68.9 % tiṅanta), Hitopadeśa highest (89.4 %).
+- **Top engine gaps (counts = occurrences):** upasarga + vowel-initial dhātu ac-sandhi not applied (upaeti 34, aDiAste, atieti,
+  aBiavarzan, avAApa); dṛś liṭ abhyāsa → dajdarSa (68); ṇic ignored in loṭ / laṭ wrong (darSaya → paSya; janayati → janayate 30);
+  tudādi śa still guṇates (AdeSet, praveSa); iyaṅ/uvaṅ 6.4.77–79 (Sriyam, striyaH, Buvi: 170+); numerals 7.1.22 / 7.2.102
+  (paYca, dvO, catvAraH, zaz, azwa: 140+); ugit num 7.1.70 + 6.4.14 (BavAn, mahAn, vidvAn, manAH: 120+); han 6.4.98 (Gnanti),
+  grah 6.1.16 (gfhRAti), dā 6.4.119 (dehi), as 7.3.96 (AsIt), jñā 7.3.79 (jAne), bhuj rudhādi ātmanepada (BuNkte), kḷp 8.2.18.
+- **Tests:** `make full-check` ALL CHECKS PASSED (20,467 passed, 13 skipped, 7 xfailed); ratchets unchanged.
+- **Next:** take the gap clusters above in order of count; denominatives / desideratives (161) and māṅ-injunctive (51) are reader
+  limits, not yet proposed.
+
 ### 2026-10-20 19:00  [cursor]  Sentence practice without AI (S1); AI book tutor retired
 
 Owner: the book with local AI is a bad idea; practise sentences deterministically. Rulings: retire the tutor from Subhastini;

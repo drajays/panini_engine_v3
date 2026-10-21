@@ -12,6 +12,13 @@ pool and the resolver). `make corpus-gaps` ranks what the engine cannot derive i
 **Env:** `make full-check` stops at the uncommitted `tests/unit/test_dcs_reader.py` until `indic-transliteration`
 (requirements.txt) is installed — Homebrew Python refuses plain pip (PEP 668): needs `--break-system-packages` or a venv.
 
+## SESSION 2026-10-20 (night) — cursor: DCS gap benchmark
+`python3 -m tools.fetch_dcs` (13 kāvya + Āyurveda texts, CC BY 4.0) then `python3 scripts/dcs_gap_report.py [TEXT] [--limit N]`
+(≈25 min for all at 2000 sentences/text). Engine re-derives 94.6 % of DCS-tagged subantas and 77.8 % of tiṅantas; the ranked engine
+gaps (upasarga ac-sandhi, dṛś liṭ, ṇic in loṭ, tudādi guṇa, iyaṅ/uvaṅ, numerals, ugit) are in RUN_LOG §C 2026-10-20 23:30.
+Epics (local): `python3 -m tools.fetch_dcs --text Rāmāyaṇa --text Mahābhārata` (~1 min), then
+`scripts/dcs_gap_report.py Mahābhārata --every 10` (~30 min). Rām 95.3 % / 74.1 %, MBh sample 95.1 % / 72.0 % (RUN_LOG §C 2026-10-21 00:30).
+
 ## SESSION 2026-10-20 (evening) — cursor: sentence practice without AI
 Subhastini **Practice** (`#/abhyasa`) drills Saṃsādhanī's 1000 Sentences from `/v1/practice/sentences` (`tools/practice_sentences.py`);
 answers are exact-matched, every blank is an engine-derived form. AI tutor retired. Next: S2 book extraction, S3 proofreading screen

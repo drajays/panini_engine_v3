@@ -41,6 +41,7 @@ data/upstream/
 data/reference/ashtadhyayi_com/*
 !data/reference/ashtadhyayi_com/SOURCE.json
 data/reference/samsaadhanii/raw/
+data/reference/dcs/raw/
 # Advaita Sharada (Sringeri, "All rights reserved"): local reading cache only — never commit
 data/reference/advaita_sharada/raw/
 data/reference/prasthanatrayi_words/raw/

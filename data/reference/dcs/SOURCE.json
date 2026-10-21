@@ -1,0 +1,23 @@
+{
+ "source": "github.com/OliverHellwig/sanskrit/tree/8aeed5a1343d0e48b64eb32af8c00e8c6eb29359/dcs/data/conllu",
+ "licence": "CC BY 4.0 — Oliver Hellwig: Digital Corpus of Sanskrit (DCS), 2010–2024",
+ "commit": "8aeed5a1343d0e48b64eb32af8c00e8c6eb29359",
+ "fetched": "2026-10-20",
+ "texts": {
+  "Meghadūta": 2,
+  "Kumārasaṃbhava": 8,
+  "Kirātārjunīya": 18,
+  "Ṛtusaṃhāra": 6,
+  "Amaruśataka": 1,
+  "Śatakatraya": 3,
+  "Gītagovinda": 12,
+  "Buddhacarita": 14,
+  "Saundarānanda": 18,
+  "Hitopadeśa": 5,
+  "Carakasaṃhitā": 82,
+  "Suśrutasaṃhitā": 186,
+  "Aṣṭāṅgahṛdayasaṃhitā": 120,
+  "Rāmāyaṇa": 606,
+  "Mahābhārata": 1995
+ }
+}
