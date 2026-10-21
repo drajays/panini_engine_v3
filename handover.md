@@ -17,6 +17,9 @@ and exhaust the 500 budget — no cycle. `tools.autonomy_report.run_autonomously
 samāsa 2.1.1–2.2.38 in the pratyaya phase; 7.1.37 reads the compound + anañpūrve, `lyap_recipe` gone (recipes call
 `P00_gati_samasa`). Loop: प्रकृत्य, प्रहृत्य, आगत्य, प्रपठ्य, निशम्य, विदृश्य. Note: ashtadhyayi.com `an` for 71037 lists
 अन्यतरस्याम् (71035); Kāśikā/SK/Padamañjarī and 7.1.38 read lyap as nitya — kept nitya, flagged to the owner.
+**Owner rulings (docs/SOURCE_CONFLICTS.md SC-004..006):** kṅit from the it-saṃjñā engine-wide (`engine/it_samjna`), real
+1.2.18, 7.4.46 दथ् apavāda of 6.4.66 → तीर्त्वा, दत्त्वा, देवित्वा through the loop. Open questions for the owner: lakāra/महिङ्
+ṅ exclusion; 7.4.46 for दो/देङ्; 1.2.19/20/22 misreadings; 7.3.84 vs 7.3.86 (देवित्वा); 7.2.56 उदितो वा.
 **Next:** (d) give `engine/core_loop.run_sapadasaptadhyayi` the vacuity filter; (e) ktvā lessons → regression of the spine;
 (f) `core/analyze` proposes kṛdanta readings.
 

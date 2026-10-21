@@ -224,6 +224,14 @@ def record_it_lopa(term: Any, removed: List[Tuple[int, Any]], n_before: int) -> 
                 names.add(r["name"])
                 term.tags.add(TAG_PREFIX + r["name"])
         term.meta[META_NAMES] = frozenset(names)
+        # क्ङिति (1.1.5 …): an affix whose it is k or ṅ is kṅit for every rule that asks — one locus tag, the same one
+        # the atideśas 1.2.1 ff. set; 1.2.18 न क्त्वा सेट् takes it away again. An āgama's k (vuk, tuk) is no kit affix.
+        # Only the term's own it-letters count. A lakāra's ṅ (laṅ, liṅ, luṅ, lṛṅ), and the copy its tiṅ carries, serve
+        # 3.4.99 ff. (ङितः), not 1.1.5 — 3.4.103 has to make yāsuṭ ṅit (भविषीष्ट); महिङ्'s ṅ makes the pratyāhāras तिङ्/तङ्.
+        own = {r["name"] for r in out}
+        if (own & {"kit", "Git"} and (term.kind == "pratyaya" or _PRATYAYA_TAGS & term.tags)
+                and not {"agama", "lakAra_pratyaya_placeholder", "tin", "tin_adesha_3_4_78"} & term.tags):
+            term.tags.add("kngiti")
     return out
 
 

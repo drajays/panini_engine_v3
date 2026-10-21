@@ -35,14 +35,13 @@ CASES = [
     ("BvAdi_01_1031", "yatvA"),        # यत्वा (Kāśikā 6.4.37)
     ("BvAdi_01_0989", "ratvA"),        # रत्वा
     ("Adadi_02_0047", "snAtvA"),       # स्नात्वा (Kāśikā 3.4.21)
+    ("BvAdi_01_1124", "tIrtvA"),       # तीर्त्वा (Kāśikā 7.2.11): 7.1.100 → 1.1.51 → 8.2.77 (owner ruling)
+    ("JuhotyAdi_03_0010", "dattvA"),   # दत्त्वा: 7.4.46 दथ् (apavāda of 6.4.66) → 8.4.55 (owner ruling)
+    ("divAdi_04_0001", "devitvA"),     # देवित्वा (Kāśikā 1.2.18: seṭ ktvā is not kit → guṇa)
+    ("BvAdi_01_0862", "vartitvA"),     # वर्तित्वा (Kāśikā 1.2.18)
 ]
 
-GAPS = [
-    pytest.param("BvAdi_01_1124", "tIrtvA", marks=pytest.mark.xfail(strict=True,
-                 reason="7.1.100 ॠत इद्धातोः + hali dīrgha not reached on a kṛt tape (gives tFtvA)")),
-    pytest.param("JuhotyAdi_03_0010", "dattvA", marks=pytest.mark.xfail(strict=True,
-                 reason="7.4.46 दो दद्घोः loses to 6.4.66 घुमास्था… (gives dItvA)")),
-]
+GAPS: list = []
 
 
 def _derive(ref: str, expected: str):

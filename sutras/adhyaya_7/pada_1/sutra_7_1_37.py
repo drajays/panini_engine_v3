@@ -2,8 +2,8 @@
 7.1.37  समासेऽनञ्पूर्वे क्त्वो ल्यप्  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=71037 (its `an` lists अन्यतरस्याम् from 71035; Kāśikā, SK and 7.1.38 क्त्वाऽपि छन्दसि
-  read the ādeśa as nitya in bhāṣā, as this record has always been typed)
+- ashtadhyayi.com data.txt row i=71037 (its `an` lists अन्यतरस्याम् from 71035 — over-carried; owner ruling
+  docs/SOURCE_CONFLICTS.md SC-004: nitya in bhāṣā, by the jñāpaka 7.1.38 क्त्वाऽपि छन्दसि, Kāśikā and SK)
 - Kāśikā: "समासेऽनञ्पूर्वे क्त्वा इत्येतस्य ल्यबित्ययमादेशो भवति। प्रकृत्य। प्रहृत्य।"
   pratyudāharaṇa: "समास इति किम्? कृत्वा। हृत्वा। अनञ्पूर्व इति किम्? अकृत्वा। अहृत्वा।"
 - Padamañjarī: "प्रकृत्येति। समानकर्तृकयोः पूर्वकाले इति क्त्वा, कुगतिप्रादयः इति समासः, ल्यपि सति ह्रस्वस्य तुक्।"

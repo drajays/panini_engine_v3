@@ -477,5 +477,27 @@
   "status": "released",
   "hotspots": [],
   "updated": 1792564162.737342
+ },
+ {
+  "id": "kngit-dath",
+  "agent": "cursor",
+  "scope": [
+   "1.2.18",
+   "7.1.100",
+   "7.4.46",
+   "8.2.77",
+   "1.1.5",
+   "engine/it_samjna.py",
+   "sutras/adhyaya_1/pada_2/sutra_1_2_18.py",
+   "sutras/adhyaya_7/pada_1/sutra_7_1_100.py",
+   "sutras/adhyaya_7/pada_4/sutra_7_4_46.py",
+   "sutras/adhyaya_8/pada_2/sutra_8_2_77.py",
+   "tests/regression/test_ktva_loop.py",
+   "tests/regression/test_kngit_from_it_samjna.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792566281.829661
  }
 ]

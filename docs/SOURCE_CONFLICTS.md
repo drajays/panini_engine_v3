@@ -189,3 +189,27 @@ against Kāśikā before the engine relies on that field.
 - 3.4.115: workbook ['3.4.114'] · ashtadhyayi.com ['3.4.113', '3.4.114']
 - 3.4.116: workbook ['3.4.114'] · ashtadhyayi.com ['3.4.113', '3.4.114']
 - 4.1.10: workbook ['3.1.1', '3.1.2', '4.1.1', '4.1.3'] · ashtadhyayi.com ['4.1.5']
+
+---
+
+## SC-004 — 7.1.37 समासेऽनञ्पूर्वे क्त्वो ल्यप्: `data.txt` carries अन्यतरस्याम् (71035) — RESOLVED 2026-10-21
+
+**Ruling (Ajay):** lyap is nitya in bhāṣā; the anuvṛtti does not reach 7.1.37 (the site's graph over-carries it).
+Evidence: 7.1.38 क्त्वाऽपि छन्दसि would be vyartha if ktvā were optional in bhāṣā; Kāśikā gives कृत्वा/हृत्वा only as
+the असमासे pratyudāharaṇa; SK "ल्यबादेशः स्यात्" (no वा). The owner also cited SK on 7.1.38 "भाषायां तु ल्यबेव" — the
+brain's `kaumudi.txt` 71038 has only "यजमानं परिधापयित्वा ॥", so that line is not cited in code. Engine: 7.1.37 VIDHI.
+
+## SC-005 — 7.4.46 दो दद् घोः: ādeśa दद् (sūtra) or दथ् (SK, Kāśikā iṣṭi) — RESOLVED 2026-10-21
+
+**Ruling (Ajay):** the engine inserts **दथ्** (SK "दथ् स्यात्"; Kāśikā "अयमादेशः थान्तः इष्यते"; `data.txt` samagra
+"अङ्गस्य दः दथ् घोः ति किति"). 7.4.46 is an **apavāda** of 6.4.66 घुमास्थागापाजहातिसां हलि by येन नाप्राप्ते (PŚ);
+paratva agrees. दत्त्वा = दथ् + त्वा → 8.4.55. Open: दो (7.4.40 द्यति…) and देङ् are not taken by 7.4.46 yet.
+
+## SC-006 — kṅit is read from one source engine-wide — RESOLVED 2026-10-21
+
+**Ruling (Ajay):** a pratyaya whose it is k or ṅ (it-saṃjñā 1.3.x) is kṅit for every rule (1.1.5 क्ङिति च), the same locus
+tag the 1.2.x atideśas set; 1.2.18 न क्त्वा सेट् withdraws it from a ktvā with iṭ (Kāśikā देवित्वा, वर्तित्वा). An āgama's
+k (vuk, tuk) is not a kit affix. Implemented in `engine/it_samjna.record_it_lopa` + `sutras/.../sutra_1_2_18.py`.
+**Pending owner confirmation (engine choice, status quo kept):** a *lakāra*'s ṅ (laṅ/liṅ/luṅ/lṛṅ) and the copy its tiṅ
+carries do not make the tiṅ kṅit for 1.1.5 — they serve 3.4.99 ff.; 3.4.103 यासुट् … ङिच्च would be needless otherwise
+(भविषीष्ट keeps guṇa). महिङ्'s ṅ forms the pratyāhāras तिङ्/तङ् and does not make it kṅit (भविषीमहि).

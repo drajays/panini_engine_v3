@@ -242,6 +242,21 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-10-21 13:45  [cursor, coordinator]  Owner rulings applied: kṅit engine-wide, 1.2.18, 7.4.46 दथ्, तीर्त्वा
+
+Owner: always consult the brain (~/data-master), never bypass a rule, ask doubts; rulings recorded in
+docs/SOURCE_CONFLICTS.md SC-004 (7.1.37 nitya), SC-005 (7.4.46 दथ्, apavāda of 6.4.66), SC-006 (kṅit from the it-saṃjñā).
+- `engine/it_samjna.record_it_lopa`: a pratyaya's own k/ṅ it-letter adds `kngiti` (64 sūtra files read it; 61 never saw
+  1.3.8's k). Not for āgamas (vuk), lakāras or tiṅ (lakāra ṅ → 3.4.99 ff.; महिङ् ṅ is pratyāhārārtha) — the first try
+  without these exclusions broke भविषीष्ट / भविषीय / भविषीमहि (āśīrliṅ guṇa); exclusions pending owner confirmation.
+- 1.2.18 rewritten from the Kāśikā (was "ktvā is always aniṭ"): a ktvā with iṭ loses kit → देवित्वा, वर्तित्वा; कृत्वा stays kit.
+  1.2.19/1.2.20/1.2.22 carry the same misreading (seṭ/aniṭ tags on the dhātu) — not touched, reported.
+- 7.4.46 real: डुदाञ्/दाण् before a t-ādi kit → दथ् (ashtadhyayi.com samagra already दथ्); `apavada_of=("6.4.66",)`;
+  दो/देङ् left out (owner question). 7.1.100 now fires before ktvā (kngiti) → तीर्त्वा via 1.1.51, 8.2.77.
+- Tests: `test_ktva_loop.py` 20 ktvā + 6 lyap all pass (xfails gone); `test_kngit_from_it_samjna.py`. full-check EXIT 0:
+  20,535 passed, 13 skipped, 7 xfailed.
+- Noticed, not changed: देव् guṇa came from 7.3.84 (laghūpadha is 7.3.86); 7.2.56 उदितो वा (द्यूत्वा) does not fire.
+
 ### 2026-10-21 12:30  [cursor, coordinator]  Absolutives step (c2): lyap from the gati-samāsa
 
 Owner: "next" (and: report any stuck case with input/output/expected so the owner can name the rule).

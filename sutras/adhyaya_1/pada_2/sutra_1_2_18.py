@@ -1,21 +1,14 @@
 """
 1.2.18  न क्त्वा सेट्  —  NIYAMA
 
-Meaning: Before the suffix "ktvā" (the gerund suffix), a root that would
-otherwise be seṭ is NOT seṭ — i.e., ktvā always takes aniṭ (no iṭ augment).
+Sources consulted:
+- ashtadhyayi.com data.txt row i=12018 · anuvṛtti कित् (1.2.5 ff.)
+- Kāśikā: "क्त्वाप्रत्ययः सेट् न किद् भवति। देवित्वा। वर्तित्वा।"
+  pratyudāharaṇa: "सेडिति किम्? कृत्वा। हृत्वा। क्त्वाग्रहणं किम्? निगृहीतिः।"
+- Cross-validation: tests/regression/test_kngit_from_it_samjna.py (देवित्वा, वर्तित्वा take guṇa; कृत्वा stays kit)
 
-This is a niyama (restriction): the general seṭ property of a dhātu does
-not apply when the following pratyaya is ktvā. The rule is overridden by
-explicit exceptions (e.g. 1.2.22 for pūṅ).
-
-Engine:
-  - Finds a dhātu Term carrying the "seT" tag.
-  - Checks that the immediately following pratyaya Term has
-    upadesha_slp1 == "ktvA".
-  - Guards re-entry via meta["aniT_ktva_1_2_18"].
-  - Removes "seT" tag and adds "aniT" to the dhātu.
-  - r1_form_identity_exempt=True: no surface string changes in this step.
-Pāṭha: ashtadhyayi.com data.txt row i=12018 (Art. 14).
+A ktvā that has taken iṭ (7.2.35) is not kit: the kṅit locus the it-saṃjñā gave it (1.3.8 k → ``kngiti``, ``it:kit``)
+is withdrawn, so 1.1.5 no longer stops guṇa (7.3.84, 7.3.86). The it-record itself stays in the term's history.
 """
 from __future__ import annotations
 
@@ -24,23 +17,15 @@ from engine.state import State
 
 
 def _find(state: State) -> int | None:
-    """Return the index of a dhātu Term to be made aniṭ, or None."""
+    """A seṭ ktvā that is still kit."""
     for i, t in enumerate(state.terms):
-        if "dhatu" not in t.tags:
+        if t.kind != "pratyaya" or t.meta.get("1_2_18_akit"):
             continue
-        if t.meta.get("aniT_ktva_1_2_18"):
+        if (t.meta.get("upadesha_slp1_original") or t.meta.get("upadesha_slp1") or "").strip() != "ktvA":
             continue
-        if "seT" not in t.tags:
-            continue
-        # Look for a following pratyaya with upadesha ktvA
-        for j in range(i + 1, len(state.terms)):
-            pt = state.terms[j]
-            if "pratyaya" not in pt.tags:
-                continue
-            up = (pt.meta.get("upadesha_slp1") or "").strip()
-            if up == "ktvA":
-                return i
-            break  # Only check the immediately relevant pratyaya
+        set_ = t.meta.get("it_agama_7_2_35_done") or (t.varnas and "it_agama" in t.varnas[0].tags)
+        if set_ and {"kngiti", "it:kit", "kit"} & t.tags:
+            return i
     return None
 
 
@@ -52,10 +37,8 @@ def act(state: State) -> State:
     i = _find(state)
     if i is None:
         return state
-    state.terms[i].tags.discard("seT")
-    state.terms[i].tags.add("aniT")
-    state.terms[i].meta["aniT_ktva_1_2_18"] = True
-    state.samjna_registry["1_2_18_na_ktvA_seT"] = True
+    state.terms[i].tags -= {"kngiti", "it:kit", "kit"}
+    state.terms[i].meta["1_2_18_akit"] = True
     return state
 
 
@@ -68,8 +51,7 @@ SUTRA = SutraRecord(
     samagra_slp1          = "na ktvA sew kit",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
     samagra_dev           = "न क्त्वा सेट् कित्",
     padaccheda_dev        = "न / क्त्वा / सेट्",
-    why_dev               = ("क्त्वा-प्रत्ययस्य पूर्वं सेट्-धातुः अपि अनिट् भवति — "
-                             "क्त्वान्तरूपे इडागमो न।"),
+    why_dev               = "सेट् क्त्वाप्रत्ययः न कित् (देवित्वा, वर्तित्वा)।",
     anuvritti_from        = ("1.2.1",),
     cond                  = cond,
     act                   = act,
