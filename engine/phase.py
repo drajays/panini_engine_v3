@@ -38,6 +38,9 @@ _PHASE_RANGES: dict[str, tuple[tuple[tuple[int, ...], tuple[int, ...]], ...]] = 
         ((1, 4, 1), (1, 4, 17)),
     ),
     "pratyaya": (
+        # samāsa (2.1.3–2.2.38): a gati / kāraka / upapada compounds with a kṛdanta before the sup arrives
+        # (वा॰ गतिकारकोपपदानां कृद्भिः सह समासवचनं प्राक् सुबुत्पत्तेः) — प्र + कृ + क्त्वा, then 7.1.37
+        ((2, 1, 1), (2, 2, 38)),
         ((2, 4, 1), (2, 4, 85)),
         ((3, 1, 1), (3, 4, 117)),
     ),

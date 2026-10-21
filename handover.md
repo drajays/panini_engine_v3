@@ -1,6 +1,6 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
-## SESSION 2026-10-21 (morning) — cursor: absolutives steps (a), (b), (c) ārdhadhātuka/iṭ done
+## SESSION 2026-10-21 (morning) — cursor: absolutives steps (a), (b), (c) incl. lyap done
 Plan: `docs/INTEGRATION_CLIENTS.md` "Decisions" item 4. (a) vivakṣā `kala=pUrvakAla` and `samAnakartfka`
 (`data/inputs/vivaksha_schema.json`, cited from samagra). (b) 3.4.21 asks both through `vivaksita` and attaches the upadeśa
 `ktvA`; requests start from `engine/tape_init/krdanta.build_krdanta_state(terms, **PURVAKALA_SAMANAKARTRKA)` (also via
@@ -12,8 +12,13 @@ real PRATISHEDHA of 7.2.35 (kit pratyaya only, liṭ left to 7.2.13); 6.4.37 rea
 the loop (`tests/regression/test_ktva_loop.py`); xfail तीर्त्वा (7.1.100), दत्त्वा (7.4.46 vs 6.4.66).
 **Loop finding (step d):** `engine/core_loop.run_sapadasaptadhyayi` has no vacuity filter, so ~400 gate stubs each fire once
 and exhaust the 500 budget — no cycle. `tools.autonomy_report.run_autonomously` (effective_candidates) is the working loop.
-**Next:** lyap = (c2): 1.4.60 gati + 2.2.18 gati-samāsa before sup (vārttika prāk subutpatteḥ) + 7.1.37 without `lyap_recipe`;
-then (d) give core_loop the vacuity filter.
+(c2) lyap: 1.4.60 tags upasargas `gati` (saṃjñā-samāveśa); 2.2.18 compounds a gati with the kṛdanta before sup
+(Mahābhāṣya vārttika prāk subutpatteḥ; tags `samasa_member`/`samasa_purvapada`/`tatpurusha`); `engine/phase.py` puts
+samāsa 2.1.1–2.2.38 in the pratyaya phase; 7.1.37 reads the compound + anañpūrve, `lyap_recipe` gone (recipes call
+`P00_gati_samasa`). Loop: प्रकृत्य, प्रहृत्य, आगत्य, प्रपठ्य, निशम्य, विदृश्य. Note: ashtadhyayi.com `an` for 71037 lists
+अन्यतरस्याम् (71035); Kāśikā/SK/Padamañjarī and 7.1.38 read lyap as nitya — kept nitya, flagged to the owner.
+**Next:** (d) give `engine/core_loop.run_sapadasaptadhyayi` the vacuity filter; (e) ktvā lessons → regression of the spine;
+(f) `core/analyze` proposes kṛdanta readings.
 
 ## SESSION 2026-10-21 — cursor: integration P2 / P3 / S2 / P5 closed; engine work is next
 Clients now ask the engine, never Vidyut directly: `POST /v1/analyze` (`core/analyze.py` — form index + Vidyut kosha propose,

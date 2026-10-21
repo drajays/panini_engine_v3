@@ -6,7 +6,8 @@ Source: ``…/my_scripts/final/split_prakriyas_11/P017.json``.
 Spine (rule-based ``apply_rule`` only):
   - upasarga ``pra`` + dhātu ``kf``
   - **3.4.21** attach ktvā (vivakṣā pūrvakāla + samānakartṛka)
-  - **7.1.37** ktvā → lyap (recipe-armed)
+  - **1.4.59** / **1.4.60** upasarga + gati, **2.2.18** gati-samāsa with the kṛdanta
+  - **7.1.37** ktvā → lyap (samāse 'nañpūrve)
   - *it* chain on ``lyap``: **1.3.8** → **1.3.3** → **1.3.9** ⇒ surface ``ya``
   - **6.1.71** insert *tuk* ⇒ ``tya``
   - **1.1.40** marks lyap/ktvā chain as avyaya (uses ancestry ``upadesha_slp1_original``)
@@ -23,7 +24,7 @@ from __future__ import annotations
 
 import sutras  # noqa: F401
 
-from core.canonical_pipelines import P00_vikarana_it_lopa, P00_avyaya_sup_luk
+from core.canonical_pipelines import P00_avyaya_sup_luk, P00_gati_samasa, P00_vikarana_it_lopa
 from engine import apply_rule
 from engine.state import State, Term
 from engine.tape_init.krdanta import PURVAKALA_SAMANAKARTRKA, build_krdanta_state
@@ -54,7 +55,7 @@ def derive_prakftya_lyap_split_prakriyas_P017() -> State:
 
     s = apply_rule("3.4.21", s)
 
-    s.meta["lyap_recipe"] = True
+    s = P00_gati_samasa(s)
     s = apply_rule("7.1.37", s)
 
     s = P00_vikarana_it_lopa(s)

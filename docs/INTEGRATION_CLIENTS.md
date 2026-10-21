@@ -115,8 +115,9 @@ liṭ abhyāsa (ददर्श) — the same clusters the DCS benchmark ranks.
    (arm count falls) — **done 2026-10-21** (`engine/tape_init/krdanta.build_krdanta_state`; `ktvA_recipe` gone; the
    loop on भू now reaches BUtvA and then cycles in sandhi = step d); (c) — **ārdhadhātuka / iṭ / 6.4.37 done
    2026-10-21**: 16 of 18 Kāśikā ktvā udāharaṇas through `tools.autonomy_report.run_autonomously`
-   (`tests/regression/test_ktva_loop.py`; gaps तीर्त्वा 7.1.100, दत्त्वा 7.4.46); lyap still needs gati-samāsa
-   (1.4.60 and 2.2.18 are stubs) — 3.4.114 for kṛt, the iṭ sūtras, 6.4.37, then 7.1.37 lyap with upasarga; (d) loop convergence on
+   (`tests/regression/test_ktva_loop.py`; gaps तीर्त्वा 7.1.100, दत्त्वा 7.4.46); **lyap done 2026-10-21**: 1.4.60 gati,
+   2.2.18 gati-samāsa before sup (samāsa 2.1–2.2 now in the pratyaya phase), 7.1.37 without `lyap_recipe` — प्रकृत्य,
+   प्रहृत्य, आगत्य, प्रपठ्य, निशम्य, विदृश्य through the loop — 3.4.114 for kṛt, the iṭ sūtras, 6.4.37, then 7.1.37 lyap with upasarga; (d) loop convergence on
    kṛt tapes (`engine/core_loop.py`, coordinator); (e) the ktvā lessons become regression tests of the one spine (Art. 12);
    (f) `core/analyze` proposes kṛdanta readings.
 5. **Then:** ādhṛṣīya optional ṇic (curādi spine) and the multi-pada tripāḍī (visarga / consonant seams for P5).

@@ -242,6 +242,23 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-10-21 12:30  [cursor, coordinator]  Absolutives step (c2): lyap from the gati-samāsa
+
+Owner: "next" (and: report any stuck case with input/output/expected so the owner can name the rule).
+- 1.4.60 गतिश्च: upasarga terms gain `gati` (Kāśikā चकारः संज्ञासमावेशार्थः); `gati_set` registry kept for 1.4.61 ff.
+- 2.2.18 कुगतिप्रादयः: gatis right before a dhātu that has its kṛt compound with it, nitya, before sup (Mahābhāṣya vārttika
+  गतिकारकोपपदानां कृद्भिः सह समासवचनं प्राक् सुबुत्पत्तेः); tags `samasa_member`, `samasa_purvapada`, `tatpurusha`. Old gate path kept.
+- `engine/phase.py`: samāsa 2.1.1–2.2.38 added to the pratyaya phase (kram: before 2.4 and 3.x).
+- 7.1.37: cond = ktvā + a pūrvapada of its compound + no nañ pūrvapada; `lyap_recipe` gone. Recipes use
+  `core/canonical_pipelines.P00_gati_samasa` (1.4.59 → 1.4.60 → 2.2.18). Source note: ashtadhyayi.com `an` 71037 carries
+  अन्यतरस्याम् from 71035, but Kāśikā (कृत्वा only as asamāsa pratyudāharaṇa), SK (ल्यबादेशः स्यात्), Padamañjarī and 7.1.38
+  क्त्वाऽपि छन्दसि read it nitya — kept nitya (status quo), flagged to the owner.
+- Lessons: अपकृत्य lesson had no अप on its tape (added, per ashtadhyayi.com prakriyā 1.1.56); `sthanivat_it_samjna_lesson._pratyaya`
+  put `tags=` into meta, so ktvā was never kṛt (fixed).
+- `tests/regression/test_ktva_loop.py`: + प्रकृत्य, प्रहृत्य, आगत्य, प्रपठ्य, निशम्य, विदृश्य through the loop (2.2.18 before 7.1.37),
+  pratyudāharaṇa अकृत्वा (nañ pūrvapada keeps ktvā).
+- **Next:** (d) vacuity filter in core_loop; (e) lessons → regression; (f) analyze proposes kṛdanta.
+
 ### 2026-10-21 11:30  [cursor, coordinator]  Absolutives step (c): ārdhadhātuka, iṭ, 6.4.37 for ktvā
 
 Owner: "next". Measured with `tools.autonomy_report.run_autonomously` (scheduler + effective_candidates + resolver) from

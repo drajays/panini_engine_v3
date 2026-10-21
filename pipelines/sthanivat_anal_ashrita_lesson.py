@@ -17,6 +17,7 @@ from phonology.varna import parse_slp1_upadesha_sequence
 from core.canonical_pipelines import (
     P00_avyaya_sup_luk,
     P00_dhatu_upadesha_it_lopa,
+    P00_gati_samasa,
     P00_vikarana_it_lopa,
     P06a_pratyaya_adhikara_3_1_1_to_3,
 )
@@ -84,13 +85,14 @@ def derive_kim_ka_kAByAm() -> State:
 
 # 3) कृत्-प्रत्ययत्वम् — क्त्वा → ल्यप् (7.1.37) + तुक् (6.1.71)
 def derive_apakr_lyap_tuk() -> State:
-    s = State(
-        terms=[_dhatu("kf"), _pratyaya("ktvA", tags=frozenset({"krt"}))],
+    s = State(        # ashtadhyayi.com prakriyā under 1.1.56: अप + कृ + क्त्वा → ल्यप् → अपकृत्य
+        terms=[Term(kind="upasarga", varnas=parse_slp1_upadesha_sequence("apa"), tags=set(), meta={"upadesha_slp1": "apa"}),
+               _dhatu("kf"), _pratyaya("ktvA", tags=frozenset({"krt"}))],
         meta={},
         trace=[],
     )
     s = _with_sthanivat(s)
-    s.meta["lyap_recipe"] = True
+    s = P00_gati_samasa(s)
     s = apply_rule("7.1.37", s)
     s = P00_vikarana_it_lopa(s)
     s = apply_rule("6.1.71", s)
@@ -124,7 +126,7 @@ def derive_pra_paW_lyap_avyaya() -> State:
     s = P00_dhatu_upadesha_it_lopa(s)
     s = apply_rule("3.4.21", s)
     s = _with_sthanivat(s)
-    s.meta["lyap_recipe"] = True
+    s = P00_gati_samasa(s)
     s = apply_rule("7.1.37", s)
     s = P00_vikarana_it_lopa(s)
     _pada_merge(s)

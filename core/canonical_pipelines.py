@@ -1709,13 +1709,20 @@ def P00_vikarana_it_lopa(s: State) -> State:
     return s
 
 
+def P00_gati_samasa(s: State) -> State:
+    """Upasarga + kṛdanta compound before sup: 1.4.59 upasarga → 1.4.60 gati → 2.2.18 कुगतिप्रादयः."""
+    for sid in ("1.4.59", "1.4.60", "2.2.18"):
+        s = apply_rule(sid, s)
+    return s
+
+
 def P00_lyap_krt(s: State) -> State:
     """ल्यप् kṛt: ktvā → lyap (3.4.21, 7.1.37) → वा ल्यपि 6.4.38 → it-lopa → 6.1.71 → 1.1.57.
 
     ``s`` must start from ``engine.tape_init.krdanta.build_krdanta_state`` with the 3.4.21 vivakṣā.
     """
     s = apply_rule("3.4.21", s)
-    s.meta["lyap_recipe"] = True
+    s = P00_gati_samasa(s)
     s = apply_rule("7.1.37", s)
     s = apply_rule("6.4.38", s)  # optional (vikalpa)
     s = P00_vikarana_it_lopa(s)
@@ -1890,6 +1897,7 @@ def P00_a_lopa_sthanivat_1_1_58(s: State) -> State:
 
 
 __all__ = [
+    "P00_gati_samasa",
     "P00_lyap_krt",
     "P01_subanta_bootstrap",
     "P01_taddhita_bootstrap_idle",

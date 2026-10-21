@@ -1,19 +1,25 @@
 """
-7.1.37  समासेऽनञ्पूर्वे क्त्वो ल्यप्  —  VIDHI (narrow: ktvā → lyap)
+7.1.37  समासेऽनञ्पूर्वे क्त्वो ल्यप्  —  VIDHI
 
 Sources consulted:
-- ashtadhyayi.com data.txt row i=71037
-- Kāśikā: "प्रकृत्य, प्रहृत्य"
-- Cross-validation: pipelines/prakftya_lyap_split_prakriyas.py,
-  tests/unit/test_agaty_gam_lyap_acah_lesson.py
+- ashtadhyayi.com data.txt row i=71037 (its `an` lists अन्यतरस्याम् from 71035; Kāśikā, SK and 7.1.38 क्त्वाऽपि छन्दसि
+  read the ādeśa as nitya in bhāṣā, as this record has always been typed)
+- Kāśikā: "समासेऽनञ्पूर्वे क्त्वा इत्येतस्य ल्यबित्ययमादेशो भवति। प्रकृत्य। प्रहृत्य।"
+  pratyudāharaṇa: "समास इति किम्? कृत्वा। हृत्वा। अनञ्पूर्व इति किम्? अकृत्वा। अहृत्वा।"
+- Padamañjarī: "प्रकृत्येति। समानकर्तृकयोः पूर्वकाले इति क्त्वा, कुगतिप्रादयः इति समासः, ल्यपि सति ह्रस्वस्य तुक्।"
+- Cross-validation: tests/regression/test_ktva_loop.py (प्रकृत्य, आगत्य, प्रपठ्य, निशम्य through the loop);
+  tests/unit/test_prakftya_lyap_split_prakriyas.py, tests/unit/test_agaty_gam_lyap_acah_lesson.py
 
-**1.1.56** extends *kṛt-pratyayatva*, *kit* it-saṃjñā (from *ktvā*), and *avyayatva* to *lyap*.
+समासे: the ktvā belongs to a compound — a pūrvapada (2.2.18 tags the gati) stands before its dhātu. अनञ्पूर्वे: no
+pūrvapada of that compound is nañ. **1.1.56** extends kṛt-pratyayatva, kit it-saṃjñā (from ktvā) and avyayatva to lyap.
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from engine.sthanivat import AVYAYATVA, KRT_PRATYAYATVA, adesha_substitute_varnas
+
+_NAN = frozenset({"naY", "a", "an"})
 
 
 def _find_ktva(state: State) -> int | None:
@@ -29,13 +35,16 @@ def _find_ktva(state: State) -> int | None:
     return None
 
 
+def _in_anan_samasa(state: State, k: int) -> bool:
+    purva = [t for t in state.terms[:k] if "samasa_purvapada" in t.tags]
+    return bool(purva) and not any((t.meta.get("upadesha_slp1") or "").strip() in _NAN for t in purva)
+
+
 def cond(state: State) -> bool:
-    if not state.meta.get("lyap_recipe"):
-        return False
     i = _find_ktva(state)
-    if i is None:
+    if i is None or state.terms[i].meta.get("7_1_37_ktvA_to_lyap_done"):
         return False
-    return not state.terms[i].meta.get("7_1_37_ktvA_to_lyap_done")
+    return _in_anan_samasa(state, i)
 
 
 def act(state: State) -> State:
@@ -52,7 +61,6 @@ def act(state: State) -> State:
     )
     pr.tags.add("upadesha")
     pr.meta["7_1_37_ktvA_to_lyap_done"] = True
-    state.meta["lyap_recipe"] = False
     return state
 
 
@@ -64,11 +72,10 @@ SUTRA = SutraRecord(
     samagra_slp1   = "aNgasya samAse anaYpUrve ktvaH lyap anyatarasyAm",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
     samagra_dev    = "अङ्गस्य समासे अनञ्पूर्वे क्त्वः ल्यप् अन्यतरस्याम्",
     padaccheda_dev = "समासे / अनञ्-पूर्वे / क्त्वः / ल्यप्",
-    why_dev        = "उपसर्गादि-पूर्वे क्त्वा-प्रत्ययस्य ल्यप्-आदेशः (नरूप्य-डेमो)।",
+    why_dev        = "अनञ्पूर्वे समासे क्त्वः ल्यबादेशः (प्रकृत्य)।",
     anuvritti_from = ("7.1.12",),
     cond           = cond,
     act            = act,
 )
 
 register_sutra(SUTRA)
-

@@ -6,6 +6,7 @@ from __future__ import annotations
 import sutras  # noqa: F401
 
 from core.canonical_pipelines import (
+    P00_gati_samasa,
     P00_krt_it_lopa,
     P00_nvul_krt_prefix,
     P00_nvul_133_7_1_1,
@@ -32,13 +33,13 @@ def _dhatu(up: str, **meta) -> Term:
     )
 
 
-def _pratyaya(up: str, **meta) -> Term:
+def _pratyaya(up: str, tags: set[str] | None = None, **meta) -> Term:
     m = {"upadesha_slp1": up}
     m.update(meta)
     return Term(
         kind="pratyaya",
         varnas=list(parse_slp1_upadesha_sequence(up)),
-        tags={"pratyaya"},
+        tags={"pratyaya"} | set(tags or ()),
         meta=m,
     )
 
@@ -59,8 +60,8 @@ def derive_pra_bhU_lyap_kngiti() -> State:
         meta={},
         trace=[],
     )
-    s.meta["lyap_recipe"] = True
     s = _with_sthanivat(s)
+    s = P00_gati_samasa(s)
     s = apply_rule("7.1.37", s)
     s = apply_rule("1.1.5", s)
     s = apply_rule("7.3.84", s)
