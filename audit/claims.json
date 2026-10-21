@@ -305,7 +305,7 @@
   "out_of_scope": "",
   "status": "released",
   "hotspots": [],
-  "updated": 1792499959.426019
+  "updated": 1792506231.9853508
  },
  {
   "id": "dcs-gap-bench",
@@ -319,8 +319,74 @@
    ".gitignore"
   ],
   "out_of_scope": "",
-  "status": "in-progress",
+  "status": "released",
   "hotspots": [],
-  "updated": 1792499959.4843378
+  "updated": 1792506231.985352
+ },
+ {
+  "id": "dcs-epics",
+  "agent": "cursor",
+  "scope": [
+   "tools/dcs_reader.py",
+   "scripts/dcs_gap_report.py",
+   "tests/unit/test_dcs_reader.py",
+   "data/reference/dcs"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792516721.783645
+ },
+ {
+  "id": "integration-p2-analyze",
+  "agent": "cursor",
+  "scope": [
+   "core/analyze.py",
+   "bench/oracle_kosha.py",
+   "api/main.py",
+   "tests/unit/test_analyze.py",
+   "docs/INTEGRATION_CLIENTS.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792534440.476609
+ },
+ {
+  "id": "integration-p3-corpus-gaps",
+  "agent": "cursor",
+  "scope": [
+   "tools/corpus_gaps.py",
+   "tests/unit/test_corpus_gaps.py",
+   "Makefile"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792534440.507047
+ },
+ {
+  "id": "integration-p5-samhita",
+  "agent": "cursor",
+  "scope": [
+   "pipelines/pada_samhita.py",
+   "bench/oracle_cheda.py",
+   "tests/unit/test_pada_samhita.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792534440.5357351
+ },
+ {
+  "id": "engine-findings",
+  "agent": "cursor",
+  "scope": [
+   "tests/unit/test_api_homographs.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792534440.5629718
  }
 ]
