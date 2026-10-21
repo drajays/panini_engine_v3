@@ -242,6 +242,27 @@ unless §B says otherwise. **T3 P008–P019:** merged into `tinanta.py` (bundle 
 
 ## C. Action history (newest at top)
 
+### 2026-10-21 10:15  [cursor, coordinator]  Absolutives step (b): 3.4.21 from vivakṣā, recipe gate removed
+
+Owner: "yes" (step b as coordinator).
+- `engine/tape_init/krdanta.py` (new): `build_krdanta_state(terms, **vivaksha)`, `PURVAKALA_SAMANAKARTRKA` — the only
+  writer of a kṛt request's vivakṣā. `pipelines/krdanta.build_dhatu_state[_from_varnas](..., **vivaksha)` route through it;
+  `derive_krt(krt="lyap")` records 3.4.21's meaning.
+- `sutras/.../sutra_3_4_21.py`: cond = `vivaksita` kāla pUrvakAla ∧ samAnakartfka ∧ the tape ends in a dhātu (DAtoH paraH);
+  act appends upadeśa `ktvA` (pratyaya, kṛt). No pre-encoded `itvA`, no `it_markers`, no ārdhadhātuka (3.4.114's job).
+  Docstring: Kāśikā udāharaṇa + both pratyudāharaṇas.
+- `ktvA_recipe` removed from `core/canonical_pipelines.P00_lyap_krt`, `pipelines/prakftya_lyap_split_prakriyas.py`,
+  `pipelines/sthanivat_anal_ashrita_lesson.py`; `pipelines/agaty_gam_lyap_acah_lesson.py` and `tests/unit/test_lyap_6_4_38_nitya.py`
+  start from the vivakṣā.
+- Bug surfaced: `derive_pra_paW_lyap_avyaya` gave *prapayaitvA (pre-placed ktvā + the old cond appended another; bare `paW`
+  lost ठ to 1.3.3). Now upadeśa पठँ + 1.3.2/1.3.9 first → प्रपठ्य (ashtadhyayi.com prakriyā under 1.1.56). Other lyap
+  spines identical to HEAD (sūtra sequence and surface).
+- `tests/regression/test_ktva_3_4_21_vivaksha.py`: udāharaṇa, three pratyudāharaṇa vivakṣās, once-only, no recipe flag, lyap spines.
+- Loop probe: भू + vivakṣā → scheduler offers 3.4.21 in the pratyaya phase only with the vivakṣā; reaches BUtvA, then
+  cycles in sandhi to 500 iterations (step d).
+- **Tests:** `make full-check` EXIT 0 — 20,504 passed, 13 skipped, 7 xfailed.
+- **Next:** step (c) — 3.4.114 for kṛt ktvā, iṭ (7.2.35/7.2.10/7.2.11), 6.4.37, 7.1.37 without `lyap_recipe`.
+
 ### 2026-10-21 09:30  [cursor]  Absolutives step (a): vivakṣā pUrvakAla + samAnakartfka
 
 Owner: "start step 1 of the absolutives plan in docs/INTEGRATION_CLIENTS.md" (Decisions item 4, step a).

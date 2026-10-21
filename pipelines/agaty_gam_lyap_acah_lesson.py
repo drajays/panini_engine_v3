@@ -14,6 +14,7 @@ import sutras  # noqa: F401
 
 from core.canonical_pipelines import P00_dhatu_upadesha_it_lopa, P00_lyap_krt
 from engine.state import State, Term
+from engine.tape_init.krdanta import PURVAKALA_SAMANAKARTRKA
 from phonology.varna import parse_slp1_upadesha_sequence
 from pipelines.krdanta import build_dhatu_state
 
@@ -28,7 +29,7 @@ def _upasarga_a() -> Term:
 
 
 def derive_agaty_gam_lyap_acah_lesson() -> State:
-    s = build_dhatu_state("gamx~")
+    s = build_dhatu_state("gamx~", **PURVAKALA_SAMANAKARTRKA)
     s.terms = [_upasarga_a()] + s.terms
     s = P00_dhatu_upadesha_it_lopa(s)           # गमॢँ → गम्
 

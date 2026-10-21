@@ -112,7 +112,8 @@ liṭ abhyāsa (ददर्श) — the same clusters the DCS benchmark ranks.
    does not converge on a kṛt tape. Steps, in order: (a) vivakṣā `kala=pUrvakAla` + `samAnakartfka` from 3.4.21's samagra
    (`tools/build_vivaksha_schema.py`) — **done 2026-10-21** (pUrvakAla cited by 3.4.21–26; samAnakartfka by 3.1.7,
    3.3.158–159, 3.4.21–26); (b) 3.4.21 cond via `vivaksita`, act attaches upadeśa `ktvA` — the recipe gate goes
-   (arm count falls); (c) 3.4.114 for kṛt, the iṭ sūtras, 6.4.37, then 7.1.37 lyap with upasarga; (d) loop convergence on
+   (arm count falls) — **done 2026-10-21** (`engine/tape_init/krdanta.build_krdanta_state`; `ktvA_recipe` gone; the
+   loop on भू now reaches BUtvA and then cycles in sandhi = step d); (c) 3.4.114 for kṛt, the iṭ sūtras, 6.4.37, then 7.1.37 lyap with upasarga; (d) loop convergence on
    kṛt tapes (`engine/core_loop.py`, coordinator); (e) the ktvā lessons become regression tests of the one spine (Art. 12);
    (f) `core/analyze` proposes kṛdanta readings.
 5. **Then:** ādhṛṣīya optional ṇic (curādi spine) and the multi-pada tripāḍī (visarga / consonant seams for P5).

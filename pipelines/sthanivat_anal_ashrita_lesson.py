@@ -11,9 +11,15 @@ import sutras  # noqa: F401
 
 from engine import apply_rule
 from engine.state import State, Term
+from engine.tape_init.krdanta import PURVAKALA_SAMANAKARTRKA, build_krdanta_state
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from core.canonical_pipelines import P06a_pratyaya_adhikara_3_1_1_to_3, P00_vikarana_it_lopa, P00_avyaya_sup_luk
+from core.canonical_pipelines import (
+    P00_avyaya_sup_luk,
+    P00_dhatu_upadesha_it_lopa,
+    P00_vikarana_it_lopa,
+    P06a_pratyaya_adhikara_3_1_1_to_3,
+)
 from pipelines.subanta import (
     PADA_MERGE_STEP,
     SUBANTA_RULE_IDS_POST_4_1_2,
@@ -108,16 +114,14 @@ def derive_Tak_to_ika() -> State:
 
 # 5) अव्ययत्वम् — क्त्वा → ल्यप् + 1.1.40 + 2.4.82 (प्रपठ्य)
 def derive_pra_paW_lyap_avyaya() -> State:
-    s = State(
-        terms=[
+    s = build_krdanta_state(
+        [
             Term(kind="upasarga", varnas=parse_slp1_upadesha_sequence("pra"), tags={"upasarga"}, meta={}),
-            _dhatu("paW", pratipadika=True),
-            _pratyaya("ktvA", tags=frozenset({"krt"})),
+            _dhatu("paWa~", pratipadika=True),        # पठँ व्यक्तायां वाचि (01.0381)
         ],
-        meta={},
-        trace=[],
+        **PURVAKALA_SAMANAKARTRKA,
     )
-    s.meta["ktvA_recipe"] = True
+    s = P00_dhatu_upadesha_it_lopa(s)
     s = apply_rule("3.4.21", s)
     s = _with_sthanivat(s)
     s.meta["lyap_recipe"] = True

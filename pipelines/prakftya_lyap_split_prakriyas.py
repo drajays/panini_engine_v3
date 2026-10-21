@@ -5,7 +5,7 @@ Source: ``…/my_scripts/final/split_prakriyas_11/P017.json``.
 
 Spine (rule-based ``apply_rule`` only):
   - upasarga ``pra`` + dhātu ``kf``
-  - **3.4.21** attach ktvā (recipe-armed)
+  - **3.4.21** attach ktvā (vivakṣā pūrvakāla + samānakartṛka)
   - **7.1.37** ktvā → lyap (recipe-armed)
   - *it* chain on ``lyap``: **1.3.8** → **1.3.3** → **1.3.9** ⇒ surface ``ya``
   - **6.1.71** insert *tuk* ⇒ ``tya``
@@ -26,6 +26,7 @@ import sutras  # noqa: F401
 from core.canonical_pipelines import P00_vikarana_it_lopa, P00_avyaya_sup_luk
 from engine import apply_rule
 from engine.state import State, Term
+from engine.tape_init.krdanta import PURVAKALA_SAMANAKARTRKA, build_krdanta_state
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
@@ -48,10 +49,9 @@ def _dhatu_kf() -> Term:
 
 
 def derive_prakftya_lyap_split_prakriyas_P017() -> State:
-    s = State(terms=[_upasarga("pra"), _dhatu_kf()], meta={}, trace=[])
+    s = build_krdanta_state([_upasarga("pra"), _dhatu_kf()], **PURVAKALA_SAMANAKARTRKA)
     s.meta["prakriya_P017_prakftya_split_prakriyas_11"] = True
 
-    s.meta["ktvA_recipe"] = True
     s = apply_rule("3.4.21", s)
 
     s.meta["lyap_recipe"] = True

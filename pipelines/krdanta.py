@@ -34,6 +34,7 @@ import sutras  # noqa: F401  (ensure registry loaded)
 from engine       import apply_rule
 from engine import origin
 from engine.state import State, Term, Varna
+from engine.tape_init.krdanta import PURVAKALA_SAMANAKARTRKA, build_krdanta_state
 from pipelines.it_prakarana import run_it_prakarana
 from pipelines.preflight_lopa_samjna import apply_preflight_luk_samjna_block
 from core.canonical_pipelines import (
@@ -149,7 +150,7 @@ def _dhatu_meta_from_row(row: dict) -> dict:
     }
 
 
-def build_dhatu_state(dhatu_ref: str) -> State:
+def build_dhatu_state(dhatu_ref: str, **vivaksha: str) -> State:
     """Dhātu Term in aupadeśika form (डुपचँष्, गमॢँ, विदँ …) with its it-markers.
 
     ``dhatu_ref`` is a dhātupāṭha id (``Adadi_02_0059``), path id (``02.0059``)
@@ -173,17 +174,17 @@ def build_dhatu_state(dhatu_ref: str) -> State:
         tags={"dhatu", "anga", "upadesha"},
         meta=meta,
     )
-    return State(terms=[dhatu])
+    return build_krdanta_state([dhatu], **vivaksha)
 
 
-def build_dhatu_state_from_varnas(dhatu_varnas: List[Varna], *, upadesha_slp1: str) -> State:
+def build_dhatu_state_from_varnas(dhatu_varnas: List[Varna], *, upadesha_slp1: str, **vivaksha: str) -> State:
     dhatu = Term(
         kind="prakriti",
         varnas=[v.clone() for v in dhatu_varnas],
         tags={"dhatu", "anga", "upadesha"},
         meta={"upadesha_slp1": upadesha_slp1},
     )
-    return State(terms=[dhatu])
+    return build_krdanta_state([dhatu], **vivaksha)
 
 
 def derive_krt(
@@ -204,10 +205,12 @@ def derive_krt(
     should match the expected ``flat_slp1()`` stem (without extra inherent-a
     duplication in the label string — the merge step appends inherent-a).
     """
+    # lyap stands for ktvā (7.1.37): the request is 3.4.21's meaning
+    vivaksha = PURVAKALA_SAMANAKARTRKA if krt_upadesha_slp1 == "lyap" else {}
     if dhatu_varnas is not None:
-        s = build_dhatu_state_from_varnas(dhatu_varnas, upadesha_slp1=dhatu_upadesha_slp1)
+        s = build_dhatu_state_from_varnas(dhatu_varnas, upadesha_slp1=dhatu_upadesha_slp1, **vivaksha)
     else:
-        s = build_dhatu_state(dhatu_upadesha_slp1)
+        s = build_dhatu_state(dhatu_upadesha_slp1, **vivaksha)
     if prefix_terms:
         s.terms = list(prefix_terms) + s.terms
     if dhatu_meta:

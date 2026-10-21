@@ -5,6 +5,7 @@ from __future__ import annotations
 import sutras  # noqa: F401
 
 from core.canonical_pipelines import P00_dhatu_upadesha_it_lopa, P00_lyap_krt
+from engine.tape_init.krdanta import PURVAKALA_SAMANAKARTRKA
 from engine.vikalpa import choose
 from pipelines.agaty_gam_lyap_acah_lesson import _upasarga_a
 from pipelines.krdanta import build_dhatu_state
@@ -12,7 +13,7 @@ from pipelines.subanta import _pada_merge
 
 
 def _A_lyap(ref: str) -> str:
-    s = build_dhatu_state(ref)
+    s = build_dhatu_state(ref, **PURVAKALA_SAMANAKARTRKA)
     s.terms = [_upasarga_a()] + s.terms
     s = P00_dhatu_upadesha_it_lopa(s)
     s = P00_lyap_krt(s)

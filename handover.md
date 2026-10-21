@@ -1,12 +1,14 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
-## SESSION 2026-10-21 (morning) — cursor: absolutives step (a) done
-Plan: `docs/INTEGRATION_CLIENTS.md` "Decisions" item 4. Step (a) landed: vivakṣā `kala=pUrvakAla` and `samAnakartfka`
-(`data/inputs/vivaksha_schema.json`, cited from samagra). `make full-check` green end to end (env item 1 confirmed).
-**Next: step (b)** — 3.4.21 cond asks `vivaksita(state, "kala", "pUrvakAla")` + `samAnakartfka`, act attaches upadeśa `ktvA`;
-the `ktvA_recipe` gate goes. Needs a kṛdanta start-state builder in `engine/tape_init/` (only `tinanta.py` exists; AMENDMENT 25
-lists `engine/tape_init/` as coordinator-only) and the three `ktvA_recipe` writers (`core/canonical_pipelines.py`,
-`pipelines/prakftya_lyap_split_prakriyas.py`, `pipelines/sthanivat_anal_ashrita_lesson.py`) moved onto it.
+## SESSION 2026-10-21 (morning) — cursor: absolutives steps (a) + (b) done
+Plan: `docs/INTEGRATION_CLIENTS.md` "Decisions" item 4. (a) vivakṣā `kala=pUrvakAla` and `samAnakartfka`
+(`data/inputs/vivaksha_schema.json`, cited from samagra). (b) 3.4.21 asks both through `vivaksita` and attaches the upadeśa
+`ktvA`; requests start from `engine/tape_init/krdanta.build_krdanta_state(terms, **PURVAKALA_SAMANAKARTRKA)` (also via
+`pipelines/krdanta.build_dhatu_state(ref, **vivaksha)`; `derive_krt(krt="lyap")` passes it). `ktvA_recipe` is gone.
+Found on the way: the प्रपठ्य lesson gave *prapayaitvA (second ktvā + paW's ठ taken as it) — now प्रपठ्य.
+**Next: step (c)** — 3.4.114 names the kṛt ktvā ārdhadhātuka, then the iṭ sūtras (7.2.35 / 7.2.10 / 7.2.11), 6.4.37 (गत्वा),
+7.1.37 lyap from the upasarga instead of `lyap_recipe`. Loop probe: भू + the vivakṣā reaches BUtvA then cycles in sandhi
+(500 iterations) — step (d), `engine/core_loop.py`.
 
 ## SESSION 2026-10-21 — cursor: integration P2 / P3 / S2 / P5 closed; engine work is next
 Clients now ask the engine, never Vidyut directly: `POST /v1/analyze` (`core/analyze.py` — form index + Vidyut kosha propose,

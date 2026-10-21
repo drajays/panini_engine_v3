@@ -402,5 +402,25 @@
   "status": "released",
   "hotspots": [],
   "updated": 1792554259.442761
+ },
+ {
+  "id": "ktva-b-3-4-21",
+  "agent": "cursor",
+  "scope": [
+   "3.4.21",
+   "engine/tape_init/krdanta.py",
+   "sutras/adhyaya_3/pada_4/sutra_3_4_21.py",
+   "core/canonical_pipelines.py",
+   "pipelines/prakftya_lyap_split_prakriyas.py",
+   "pipelines/sthanivat_anal_ashrita_lesson.py",
+   "pipelines/agaty_gam_lyap_acah_lesson.py",
+   "pipelines/krdanta.py",
+   "tests/unit/test_lyap_6_4_38_nitya.py",
+   "tests/regression/test_ktva_3_4_21_vivaksha.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792556711.862365
  }
 ]

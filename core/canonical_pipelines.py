@@ -1710,8 +1710,10 @@ def P00_vikarana_it_lopa(s: State) -> State:
 
 
 def P00_lyap_krt(s: State) -> State:
-    """ल्यप् kṛt: ktvā → lyap (3.4.21, 7.1.37) → वा ल्यपि 6.4.38 → it-lopa → 6.1.71 → 1.1.57."""
-    s.meta["ktvA_recipe"] = True
+    """ल्यप् kṛt: ktvā → lyap (3.4.21, 7.1.37) → वा ल्यपि 6.4.38 → it-lopa → 6.1.71 → 1.1.57.
+
+    ``s`` must start from ``engine.tape_init.krdanta.build_krdanta_state`` with the 3.4.21 vivakṣā.
+    """
     s = apply_rule("3.4.21", s)
     s.meta["lyap_recipe"] = True
     s = apply_rule("7.1.37", s)
