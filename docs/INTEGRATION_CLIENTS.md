@@ -92,6 +92,30 @@ Manusmṛti, Arthaśāstra and the kāvya/nīti works):** verified 82.3 % · spl
 unknown 5.3 % (6.3 % before P5 splits). Top clusters: kṛt absolutives (दृष्ट्वा, निशम्य: 1,501 tokens), ṇic in liṅ (कारयेत्), स्त्रियः / पुंसः, नृणाम्,
 liṭ abhyāsa (ददर्श) — the same clusters the DCS benchmark ranks.
 
+## Decisions (owner delegated, 2026-10-21) — the order for engine work
+
+1. **Environment.** `indic-transliteration` (already in `requirements.txt`) installed into the test Python;
+   `tests/unit/test_dcs_reader.py` passes, so `make full-check` runs to the end again.
+2. **Homographs — policy, no data migration.** The dhātupāṭha's identity is the pāṭha id (ashtadhyayi.com `baseindex`);
+   a bare upadeśa is ambiguous input. New code passes pāṭha ids (form index, `core/analyze`); `/v1/tinanta` reports the
+   rest. Re-encoding 2,240 upadeśas with svara would churn the it-prakaraṇa for no gain in correctness.
+3. **हे वारे / हे वारि — both correct** (Kāśikā 7.1.73: the ac-grahaṇa is a jñāpaka that 1.1.63 is anitya; SK: "हे वारे,
+   हे वारि"). The engine has no anitya-paribhāṣā mechanism: 1.1.63 sets a gate no vidhi reads, and options exist only for
+   VIBHASHA records (dispatcher Gate 4). Permanent fix = a dispatcher capability: a PARIBHASHA / PRATISHEDHA record with an
+   `anitya_scope`, whose block is recorded in `vibhasha_forks` like a declined vibhāṣā so `engine.vikalpa.explore` shows both
+   readings; then 7.3.108 consults 1.1.63. `engine/dispatcher.py` is a hotspot — coordinator. A `cond()`-level workaround is
+   refused (Art. 2).
+4. **Absolutives (ktvā / lyap) first — the largest measured gap (1,501 tokens).** Today only per-word lessons exist and
+   3.4.21 is recipe-gated (`ktvA_recipe`) and attaches a pre-encoded `itvA`. Measured: the true upadeśa `ktvA` on a dhātu
+   tape, run by the recipe-free loop (25 steps), already gives भूत्वा and त्यक्त्वा; गन्त्वा for गत्वा shows 6.4.37 unreached;
+   3.4.114 never names the kṛt ārdhadhātuka, so 7.2.35 / 7.2.10 / 7.2.11 iṭ decisions never run; `run_sapadasaptadhyayi`
+   does not converge on a kṛt tape. Steps, in order: (a) vivakṣā `kala=pUrvakAla` + `samAnakartfka` from 3.4.21's samagra
+   (`tools/build_vivaksha_schema.py`); (b) 3.4.21 cond via `vivaksita`, act attaches upadeśa `ktvA` — the recipe gate goes
+   (arm count falls); (c) 3.4.114 for kṛt, the iṭ sūtras, 6.4.37, then 7.1.37 lyap with upasarga; (d) loop convergence on
+   kṛt tapes (`engine/core_loop.py`, coordinator); (e) the ktvā lessons become regression tests of the one spine (Art. 12);
+   (f) `core/analyze` proposes kṛdanta readings.
+5. **Then:** ādhṛṣīya optional ṇic (curādi spine) and the multi-pada tripāḍī (visarga / consonant seams for P5).
+
 ## Engine findings from real use (work items, Art. 19)
 
 1. **Homograph dhātus.** `dhatupatha_upadesha.json` drops svara, so 319 upadeśa spellings name 717 of 2,240 rows
