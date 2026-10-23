@@ -517,6 +517,7 @@ def _apply_vikarana(state: State, gana: int) -> State:
         state = P00_juhotyadi_slu_dvitva_abhyasakarya(state)
         # 7.1.4 अदभ्यस्तात् (apavāda of 7.1.3 झोऽन्तः): abhyasta jhi → ati, not
         # anti (जुह्वति). Must run before P00_jha_adesha's 7.1.3 below.
+        state = apply_rule("3.4.108", state)   # 3.4.109 अभ्यस्तात् in laṅ: jhi → jus (अजुहवुः), before 7.1.4 sees a jhi
         state = apply_rule("7.1.4", state)
         # NOTE (next session): jhaṣ-initial roots (भृ, भी, धा…) still need
         # 8.4.54 अभ्यासे चर्च (बिभर्ति, not भिभर्ति) — but that's a tripāḍī
@@ -1267,6 +1268,10 @@ def _derive_laG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = _apply_vikarana(state, gana)
 
     # ── Stage: laṅ-specific tiṅ substitutions ───────────────────────────────
+    state = apply_rule("6.1.6", state)     # जक्षित्यादयः षट्: abhyasta
+    state = apply_rule("3.4.108", state)   # झेर्जुस् (3.4.109 अभ्यस्तात्): अजक्षुः, अजागरुः
+    state = apply_rule("7.3.83", state)    # जुसि च: अजागरुः
+    state = apply_rule("6.4.112", state)   # abhyasta ā-final root before ṅit jus: अदरिद्रुः
     # 3.4.101 (apavāda) BEFORE 3.4.100: tas→tām, Tas→tam, Ta→ta, mi→am
     state = apply_rule("3.4.101", state)
     # 3.4.100: ti→t, si→s, jhi→jh (final 'i' dropped in laṅ/luṅ/lṛṅ)

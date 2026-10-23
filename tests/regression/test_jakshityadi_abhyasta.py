@@ -20,3 +20,11 @@ def test_other_adadi_roots_keep_anti(root, form):
                                        ("daridrA", "daridratu"), ("ad", "adantu"), ("yA", "yAntu")])
 def test_lot_3pl(root, form):
     assert derive(root, "loT", "kartari", 3, 3).render() == form
+
+
+@pytest.mark.parametrize("root,form", [("jakz", "ajakzuH"), ("cakAs", "acakAsuH"), ("jAgf", "ajAgaruH"),
+                                       ("daridrA", "adaridruH"), ("BI", "abiBayuH"), ("hu", "ajuhavuH"),
+                                       ("DA", "adaDuH"), ("ad", "Adan"), ("BU", "aBavan")])
+def test_lan_3pl_jus_after_abhyasta(root, form):
+    """3.4.109 सिजभ्यस्तविदिभ्यश्च: jhi → jus after an abhyasta aṅga; ordinary roots keep 7.1.3."""
+    assert derive(root, "laG", "kartari", 3, 3).render() == form
