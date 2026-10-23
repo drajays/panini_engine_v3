@@ -9,29 +9,34 @@ Pāṭha: ashtadhyayi.com data.txt row i=72085 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine.declension import anga_and_sup, is_stem
 from engine.state import State
+from phonology import mk
+from phonology.pratyahara import HAL
 
-_GATE_KEY: str = "7_2_85_rAyo_85"
+def _site(state: State):
+    """रायो हलि विभक्तौ आः — the word रै (rE, with tadantavidhi) before a hal-initial vibhakti: राभ्याम्, राभिः, रासु (not रायौ, रायः)."""
+    hit = anga_and_sup(state, "7.2.85")
+    if hit is None:
+        return None
+    anga, sup = hit
+    if not is_stem(anga, "rE", tadanta=True) or anga.varnas[-1].slp1 != "E" or not sup.varnas:
+        return None
+    return anga if sup.varnas[0].slp1 in HAL else None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.85", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.85"
+    _site(state).varnas[-1] = mk("A")
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.2.85",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "rAyo hali",
     text_dev              = "रायो हलि",
     samagra_slp1          = "rAyaH aNgasya hali viBaktO A",

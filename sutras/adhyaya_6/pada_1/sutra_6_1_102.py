@@ -85,6 +85,9 @@ def _matches(state: State) -> bool:
         # not narrow itself to dodge that — utsarga/apavāda stays visible.
         if pratyaya.meta.get("au_purvasavarna_done"):
             return False
+        vib = {t for t in pratyaya.tags if t.startswith("vib_")}
+        if vib and not (vib & {"vib_prathama", "vib_dvitiya", "vib_sambodhana"}):
+            return False        # प्रथमयोः: the औ that ṅi became (saptamī: सख्यौ, हरौ) is not the prathamā / dvitīyā dual
         if not anga.varnas or not pratyaya.varnas:
             return False
         if pratyaya.varnas[0].slp1 != "O":

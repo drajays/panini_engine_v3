@@ -16,61 +16,33 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from phonology     import mk
+from engine.declension import anga_and_sup, is_stem
 
-_GATE_KEY: str = "7_1_92_saKyurasam_92"
-
-
-def _find_sakhi_pratyaya_boundary(state: State) -> int | None:
-    """Return index of sakhi-type stem to apply vṛddhi, or None."""
-    for i, t in enumerate(state.terms):
-        if "sakhi_ikarant" not in t.tags:
-            continue
-        if t.meta.get("7_1_92_done"):
-            continue
-        if not t.varnas or t.varnas[-1].slp1 not in {"i", "I"}:
-            continue
-        # Check that the next term is sarvananāmasthāna and not sambodhana
-        if i + 1 >= len(state.terms):
-            continue
-        pr = state.terms[i + 1]
-        if "samboddhi" in pr.tags or "sambuddhi" in pr.tags:
-            continue
-        if "sarvanamasthana" not in pr.tags and "sup_sarvanamasthana_eligible" not in pr.tags:
-            continue
-        return i
-    return None
+def _site(state: State):
+    """सखि-aṅga (the word, 1.4.7's asakhi; with tadantavidhi) + a sarvanāmasthāna sup that is not sambuddhi."""
+    hit = anga_and_sup(state, "7.1.92")
+    if hit is None:
+        return None
+    anga, sup = hit
+    if not is_stem(anga, "saKi", tadanta=True) or "sarvanamasthana" not in sup.tags or "sambuddhi" in sup.tags:
+        return None
+    return None if "Nidvat" in sup.tags else sup
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not state.meta.get("sakhyu_recipe"):
-        return False
-    return _find_sakhi_pratyaya_boundary(state) is not None
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    idx = _find_sakhi_pratyaya_boundary(state)
-    if idx is None:
-        return state
-    t = state.terms[idx]
-    # vṛddhi of final 'i'/'I' → 'ai' (E in SLP1)
-    t.varnas[-1] = mk("E")
-    t.meta["upadesha_slp1"] = "".join(v.slp1 for v in t.varnas)
-    t.meta["7_1_92_done"] = True
-    # vṛddhi changes the stem — no longer pragṛhya (6.1.78 must fire on E)
-    t.tags.discard("pragrahya")
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta.pop("sakhyu_recipe", None)
+    sup = _site(state)
+    sup.tags.add("Nidvat")      # 7.2.115 (अचो ञ्णिति) reads it: सखि → सखै → (6.1.78) सखाय्
+    state.atidesha_map[("sup_after_saKi", "Nit")] = "Nidvat"
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.1.92",
     sutra_type            = SutraType.ATIDESHA,
-    r1_form_identity_exempt = True,
     text_slp1             = "saKyurasambudDO",
     text_dev              = "सख्युरसम्बुद्धौ",
     samagra_slp1          = "asambudDO sarvanAmasTAne saKyuH Rit",

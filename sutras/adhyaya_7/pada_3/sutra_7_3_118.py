@@ -9,29 +9,39 @@ Pāṭha: ashtadhyayi.com data.txt row i=73118 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology import mk
 
-_GATE_KEY: str = "7_3_118_Ot_118"
+def _site(state: State):
+    """इदुद्भ्यामङ्गात् ङेः औत् — an i/u-final aṅga that is neither nadī (7.3.116/117) nor ghi (7.3.119 takes it with its own at): सख्यौ, पत्यौ."""
+    if len(state.terms) < 2:
+        return None
+    anga, pr = state.terms[-2], state.terms[-1]
+    if "sup" not in pr.tags or "prātipadika" not in anga.tags or not anga.varnas:
+        return None
+    if (pr.meta.get("upadesha_slp1") or "").strip() != "Ni" or pr.meta.get("ngi_to_au_done"):
+        return None
+    if "nadi" in anga.tags or "ghi" in anga.tags or anga.varnas[-1].slp1 not in {"i", "u"}:
+        return None
+    return pr
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.3.118", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.3.118"
+    pr = _site(state)
+    pr.varnas = [mk("O")]
+    pr.meta["ngi_to_au_done"] = True
+    pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "Ni")
+    pr.meta["upadesha_slp1"] = "O"
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.3.118",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "Ot",
     text_dev              = "औत्",
     samagra_slp1          = "idudByAmaNgAt NeH Ot",

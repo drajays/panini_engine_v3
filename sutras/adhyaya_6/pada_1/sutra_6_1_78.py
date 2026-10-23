@@ -74,8 +74,8 @@ def _find_eco_aci_boundary(state: State) -> tuple[int, int] | None:
         if left.meta.get("eco_ayavayava_done") or PRAGHYA_TERM_TAG in left.tags:
             continue  # pragṛhya ‖ ac: 6.1.125 prakṛti-bhāva
         # ṅasi/ṅas pūrvarūpa is 6.1.110's business.
-        if nxt.meta.get("upadesha_slp1") in {"Nasi", "Nas"}:
-            continue
+        if nxt.meta.get("upadesha_slp1") in {"Nasi", "Nas"} and left.varnas[-1].slp1 in {"e", "o"}:
+            continue            # (e / o only: ऐ, औ before the a of ṅasi / ṅas are split — रायः, नावः, ग्लावः)
         if padanta_eng_before_short_a(left, nxt):
             continue  # 6.1.109 एङः पदान्तादति
         if left.varnas[-1].slp1 in _ECO_SPLIT and nxt.varnas[0].slp1 in _AC_ALL:

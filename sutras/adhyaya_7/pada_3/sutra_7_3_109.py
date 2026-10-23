@@ -52,6 +52,8 @@ def _matches(state: State) -> bool:
         return False
     if pr.meta.get("upadesha_slp1") != "jas":
         return False
+    if (anga.meta.get("upadesha_slp1") or "").strip() == "saKi":
+        return False        # सखि is not ghi (1.4.7 असखि): सखायः by 7.1.92, not *सखयः
     if pr.meta.get("jasi_guna_done"):
         return False
     if not anga.varnas:

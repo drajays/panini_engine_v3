@@ -1249,6 +1249,393 @@
      "upadesha": "tfc"
     }
    ]
+  },
+  {
+   "stem": "nI",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "RIY"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 6.4.77 (nī + kvip: नियौ, नियः)"
+  },
+  {
+   "stem": "nI",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "RIY"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 6.4.77 (nī + kvip: नियौ, नियः)"
+  },
+  {
+   "stem": "nI",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "RIY"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 6.4.77 (nī + kvip: नियौ, नियः)"
+  },
+  {
+   "stem": "grAmaRI",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "grAma"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "RIY"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "grāma + nī + kvip (3.2.61 supi sthaḥ… kvip; Kāśikā 6.4.82 grāmaṇyam)"
+  },
+  {
+   "stem": "grAmaRI",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "grAma"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "RIY"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "grāma + nī + kvip (3.2.61 supi sthaḥ… kvip; Kāśikā 6.4.82 grāmaṇyam)"
+  },
+  {
+   "stem": "grAmaRI",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "grAma"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "RIY"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "grāma + nī + kvip (3.2.61 supi sthaḥ… kvip; Kāśikā 6.4.82 grāmaṇyam)"
+  },
+  {
+   "stem": "sulU",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "su"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "lUY"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "su + lū + kvip (3.2.76 / 3.2.61)"
+  },
+  {
+   "stem": "sulU",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "su"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "lUY"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "su + lū + kvip (3.2.76 / 3.2.61)"
+  },
+  {
+   "stem": "sulU",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "su"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "lUY"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "su + lū + kvip (3.2.76 / 3.2.61)"
+  },
+  {
+   "stem": "KalapU",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Kala"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "pUY"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "khala + pū + kvip (Kāśikā 6.4.82 khalapvam)"
+  },
+  {
+   "stem": "KalapU",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Kala"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "pUY"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "khala + pū + kvip (Kāśikā 6.4.82 khalapvam)"
+  },
+  {
+   "stem": "KalapU",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "Kala"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "pUY"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "khala + pū + kvip (Kāśikā 6.4.82 khalapvam)"
+  },
+  {
+   "stem": "varzABU",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "varzA"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "BU"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "varṣā + bhū + kvip (3.2.61)"
+  },
+  {
+   "stem": "varzABU",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "varzA"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "BU"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "varṣā + bhū + kvip (3.2.61)"
+  },
+  {
+   "stem": "varzABU",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "varzA"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "BU"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "varṣā + bhū + kvip (3.2.61)"
+  },
+  {
+   "stem": "svaBU",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "sva"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "BU"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "sva + bhū + kvip (3.2.61)"
+  },
+  {
+   "stem": "svaBU",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "sva"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "BU"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "sva + bhū + kvip (3.2.61)"
+  },
+  {
+   "stem": "svaBU",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "sva"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "BU"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "sva + bhū + kvip (3.2.61)"
+  },
+  {
+   "stem": "svayamBU",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "svayam"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "BU"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "svayam + bhū + kvip (3.2.61)"
+  },
+  {
+   "stem": "svayamBU",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "svayam"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "BU"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "svayam + bhū + kvip (3.2.61)"
+  },
+  {
+   "stem": "svayamBU",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "svayam"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "BU"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "svayam + bhū + kvip (3.2.61)"
   }
  ]
 }

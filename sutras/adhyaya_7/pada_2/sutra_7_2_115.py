@@ -48,6 +48,18 @@ def _vrddhi_vowel(ch: str, state: State) -> Optional[str]:
     return None
 
 
+def _find_subanta(state: State):
+    """A non-dhātu aṅga before a sup that is ṇit by atideśa (7.1.90 गोतो णित्, 7.1.92 सख्युरसम्बुद्धौ): सखि → सखै, गो → गौ."""
+    pr, anga = state.terms[-1], state.terms[-2]
+    if "sup" not in pr.tags or "Nidvat" not in pr.tags or "prātipadika" not in anga.tags or anga.meta.get("aco_nniti_vrddhi_done"):
+        return None
+    last = anga.varnas[-1].slp1
+    rep = {"e": "E", "o": "O"}.get(last) or _vrddhi_vowel(last, state)       # (गो → गौ: the o of a non-dhātu aṅga takes vṛddhi)
+    if rep is None or rep == last:
+        return None
+    return (len(state.terms) - 2, len(anga.varnas) - 1, rep)
+
+
 def _find(state: State):
     # Karmani luṭ arm: direct vṛddhi on dhātu (ciṇvat iṭ from 6.4.62)
     if state.meta.get("7_2_115_karmani_lut_arm"):
@@ -69,7 +81,7 @@ def _find(state: State):
         return None
     dhatu = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
     if dhatu is None:
-        return None
+        return _find_subanta(state)
     pr = state.terms[-1]
     if "pratyaya" not in pr.tags:
         return None

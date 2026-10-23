@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.declension import anga_and_sup, dhatu_aṅga, vowel_initial
 from phonology    import mk
 
 
@@ -73,12 +74,30 @@ def _snu_samyogapurva(state: State):
     return None
 
 
+def _find_subanta(state: State):
+    """A dhātu-aṅga (kṛdanta of ī/ū-final dhātu: नी, लू, भ्रू …) before an ac-initial sup: iyaṅ / uvaṅ (नियौ, भ्रुवौ).
+    6.4.82 / 6.4.83 (anekāc, asaṃyogapūrva) are the apavāda; 6.4.85 stops them for भू, सुधी."""
+    hit = anga_and_sup(state, "6.4.77")
+    if hit is None:
+        return None
+    anga, sup = hit
+    if not dhatu_aṅga(anga) or anga.meta.get("6_4_77_uvang_done") or not vowel_initial(sup):
+        return None
+    return anga if anga.varnas[-1].slp1 in _IYUV else None
+
+
 def cond(state: State) -> bool:
-    return _find(state) is not None or _snu_samyogapurva(state) is not None
+    return _find(state) is not None or _snu_samyogapurva(state) is not None or _find_subanta(state) is not None
 
 
 def act(state: State) -> State:
     i = _find(state)
+    if i is None and _find_subanta(state) is not None:
+        anga = _find_subanta(state)
+        a, b = _IYUV[anga.varnas[-1].slp1]
+        anga.varnas[-1:] = [mk(a), mk(b)]
+        anga.meta["6_4_77_uvang_done"] = True
+        return state
     if i is None:
         k = _snu_samyogapurva(state)
         if k is not None:

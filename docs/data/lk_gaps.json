@@ -1,0 +1,3527 @@
+{
+"1.1.28": {
+"words": 6,
+"verified": 2,
+"oracle_only": 2,
+"unknown": 1,
+"gap_words": [
+"तृतीयस्याः",
+"तृतीयस्यै"
+]
+},
+"1.1.33": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"1.1.35": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"1.1.36": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"1.1.37": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"1.1.47": {
+"words": 12,
+"verified": 6,
+"oracle_only": 5,
+"unknown": 1,
+"gap_words": [
+"अनड्वान्",
+"कम्पनीय",
+"नंष्टव्य",
+"मङ्क्तृ",
+"रन्धनीय"
+]
+},
+"1.1.56": {
+"words": 11,
+"verified": 9,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"पन्थाः",
+"प्रपठ्य"
+]
+},
+"1.1.57": {
+"words": 11,
+"verified": 5,
+"oracle_only": 5,
+"unknown": 1,
+"gap_words": [
+"आगत्य",
+"कथि",
+"गौः",
+"दीध्ये",
+"हिडनीय"
+]
+},
+"1.1.59": {
+"words": 10,
+"verified": 5,
+"oracle_only": 4,
+"unknown": 1,
+"gap_words": [
+"आटिटत्",
+"जघान",
+"जघ्नतुः",
+"जेघ्रीय"
+]
+},
+"1.1.69": {
+"words": 2,
+"verified": 1,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"तरणीय"
+]
+},
+"1.1.70": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"1.2.4": {
+"words": 6,
+"verified": 3,
+"oracle_only": 3,
+"unknown": 0,
+"gap_words": [
+"आघ्नीय",
+"पिण्ढि",
+"शंशान्तः"
+]
+},
+"1.2.5": {
+"words": 7,
+"verified": 5,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"जघ्नतुः",
+"दिदीये"
+]
+},
+"1.2.27": {
+"words": 2,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"प्रच्छनीय",
+"म्लेच्छनीय"
+]
+},
+"1.2.44": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"1.3.13": {
+"words": 4,
+"verified": 4,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"1.3.63": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"1.4.2": {
+"words": 8,
+"verified": 5,
+"oracle_only": 3,
+"unknown": 0,
+"gap_words": [
+"ऊढ",
+"तिसृणाम्",
+"नयनीय"
+]
+},
+"1.4.3": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"1.4.5": {
+"words": 2,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"1.4.6": {
+"words": 6,
+"verified": 2,
+"oracle_only": 4,
+"unknown": 0,
+"gap_words": [
+"धेन्वाः",
+"धेन्वाम्",
+"धेन्वै",
+"मत्यै"
+]
+},
+"1.4.11": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"1.4.12": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"1.4.15": {
+"words": 4,
+"verified": 3,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"1.4.19": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"1.4.57": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"2.1.36": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"2.1.50": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"2.1.52": {
+"words": 3,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"2.1.57": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"2.2.8": {
+"words": 16,
+"verified": 9,
+"oracle_only": 0,
+"unknown": 5,
+"gap_words": []
+},
+"2.2.18": {
+"words": 3,
+"verified": 0,
+"oracle_only": 3,
+"unknown": 0,
+"gap_words": [
+"अधीत्य",
+"अवयाः",
+"उपकृत्य"
+]
+},
+"2.2.19": {
+"words": 12,
+"verified": 6,
+"oracle_only": 2,
+"unknown": 4,
+"gap_words": [
+"उक्थशाः",
+"श्रीपम्"
+]
+},
+"2.2.24": {
+"words": 24,
+"verified": 15,
+"oracle_only": 0,
+"unknown": 9,
+"gap_words": []
+},
+"2.3.49": {
+"words": 17,
+"verified": 8,
+"oracle_only": 6,
+"unknown": 3,
+"gap_words": [
+"अक्क",
+"अनड्वन्",
+"अल्",
+"अल्ल",
+"चत्वः",
+"विकासिन्"
+]
+},
+"2.4.2": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"2.4.17": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"2.4.34": {
+"words": 12,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 7,
+"gap_words": [
+"एनाः",
+"एनौ"
+]
+},
+"2.4.40": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"2.4.43": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"2.4.52": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"2.4.72": {
+"words": 19,
+"verified": 7,
+"oracle_only": 11,
+"unknown": 1,
+"gap_words": [
+"अजर्घाः",
+"अपास्पाः",
+"आघ्नीय",
+"उपैति",
+"उपैत्",
+"चक्षै",
+"चष्टे",
+"दीध्ये",
+"बोभोति",
+"शंशान्तः",
+"शाधि"
+]
+},
+"2.4.74": {
+"words": 8,
+"verified": 0,
+"oracle_only": 7,
+"unknown": 1,
+"gap_words": [
+"अजर्घाः",
+"अपास्पाः",
+"जेघ्रीय",
+"बोभोति",
+"मरीमृज",
+"लोलुव",
+"शंशान्तः"
+]
+},
+"2.4.75": {
+"words": 3,
+"verified": 3,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"2.4.81": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"2.4.85": {
+"words": 3,
+"verified": 2,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"सोढा"
+]
+},
+"3.1.7": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"3.1.8": {
+"words": 4,
+"verified": 3,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"3.1.25": {
+"words": 5,
+"verified": 0,
+"oracle_only": 5,
+"unknown": 0,
+"gap_words": [
+"कथि",
+"कीर्तनीय",
+"छत्",
+"प्रकथय्य",
+"वेल्"
+]
+},
+"3.1.26": {
+"words": 6,
+"verified": 3,
+"oracle_only": 3,
+"unknown": 0,
+"gap_words": [
+"आटिटत्",
+"क्नोपनीय",
+"हिडनीय"
+]
+},
+"3.1.31": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"ऋत्"
+]
+},
+"3.1.36": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.1.40": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.1.48": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"आटिटत्"
+]
+},
+"3.1.67": {
+"words": 3,
+"verified": 3,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.1.69": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.1.77": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.1.78": {
+"words": 8,
+"verified": 3,
+"oracle_only": 2,
+"unknown": 3,
+"gap_words": [
+"पिण्ढि",
+"शिण्ढि"
+]
+},
+"3.1.81": {
+"words": 2,
+"verified": 1,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"खौनाति"
+]
+},
+"3.1.96": {
+"words": 22,
+"verified": 2,
+"oracle_only": 20,
+"unknown": 0,
+"gap_words": [
+"अङ्कनीय",
+"कम्पनीय",
+"कीर्तनीय",
+"कुण्ठनीय",
+"क्नोपनीय",
+"चयनीय",
+"जम्भितव्य",
+"तरणीय",
+"दम्भनीय",
+"नंष्टव्य",
+"नयनीय",
+"पचनीय"
+]
+},
+"3.1.98": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"गम्य"
+]
+},
+"3.1.113": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"मृज्य"
+]
+},
+"3.1.124": {
+"words": 2,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"पाठ्य",
+"भ्रद्ग्य"
+]
+},
+"3.1.133": {
+"words": 9,
+"verified": 5,
+"oracle_only": 4,
+"unknown": 0,
+"gap_words": [
+"चायक",
+"चि॒कीर्ष॑क",
+"भवितृ",
+"मङ्क्तृ"
+]
+},
+"3.2.1": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.2.58": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"स्पृक्"
+]
+},
+"3.2.59": {
+"words": 5,
+"verified": 1,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"क्रुक्",
+"दिक्"
+]
+},
+"3.2.60": {
+"words": 2,
+"verified": 1,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"दृक्"
+]
+},
+"3.2.75": {
+"words": 8,
+"verified": 4,
+"oracle_only": 2,
+"unknown": 2,
+"gap_words": [
+"इत्वः",
+"श्रीपम्"
+]
+},
+"3.2.76": {
+"words": 35,
+"verified": 8,
+"oracle_only": 24,
+"unknown": 1,
+"gap_words": [
+"ईर्ण्",
+"ऋत्",
+"गीः",
+"गीर्षु",
+"घिन्ण्",
+"घीर्ण्",
+"घुद्",
+"घुन्ण्",
+"घृद्",
+"छत्",
+"तीः",
+"तीन्"
+]
+},
+"3.2.102": {
+"words": 23,
+"verified": 16,
+"oracle_only": 6,
+"unknown": 1,
+"gap_words": [
+"ऊढ",
+"कृतवान्",
+"तृढ",
+"पीनवत्",
+"प्रत्त",
+"लब्ध"
+]
+},
+"3.2.107": {
+"words": 3,
+"verified": 1,
+"oracle_only": 1,
+"unknown": 1,
+"gap_words": [
+"पपुषः"
+]
+},
+"3.2.110": {
+"words": 4,
+"verified": 2,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"अवोढ",
+"आटिटत्"
+]
+},
+"3.2.177": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.3.10": {
+"words": 4,
+"verified": 1,
+"oracle_only": 3,
+"unknown": 0,
+"gap_words": [
+"दोग्धुम्",
+"बेभिदितुम्",
+"सोढुम्"
+]
+},
+"3.3.13": {
+"words": 2,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"3.3.15": {
+"words": 3,
+"verified": 2,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"सोढा"
+]
+},
+"3.3.56": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.3.90": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.3.103": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.3.113": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.3.115": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.3.126": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.3.161": {
+"words": 3,
+"verified": 2,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"आघ्नीय"
+]
+},
+"3.3.162": {
+"words": 9,
+"verified": 5,
+"oracle_only": 4,
+"unknown": 0,
+"gap_words": [
+"चक्षै",
+"पिण्ढि",
+"शाधि",
+"शिण्ढि"
+]
+},
+"3.4.81": {
+"words": 4,
+"verified": 4,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.4.82": {
+"words": 9,
+"verified": 6,
+"oracle_only": 3,
+"unknown": 0,
+"gap_words": [
+"जघान",
+"जघ्नतुः",
+"दिदीये"
+]
+},
+"3.4.92": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"चक्षै"
+]
+},
+"3.4.106": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"आघ्नीय"
+]
+},
+"3.4.110": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.4.111": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"3.4.115": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.1.5": {
+"words": 2,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 2,
+"gap_words": []
+},
+"4.1.6": {
+"words": 2,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"4.1.10": {
+"words": 5,
+"verified": 5,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.1.15": {
+"words": 19,
+"verified": 10,
+"oracle_only": 1,
+"unknown": 8,
+"gap_words": [
+"नश्वरी"
+]
+},
+"4.1.16": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.1.17": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.1.21": {
+"words": 3,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"4.1.41": {
+"words": 7,
+"verified": 5,
+"oracle_only": 0,
+"unknown": 2,
+"gap_words": []
+},
+"4.1.45": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.1.73": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"4.1.85": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.1.86": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.1.87": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"4.1.95": {
+"words": 2,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"4.1.105": {
+"words": 3,
+"verified": 3,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.1.120": {
+"words": 2,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"4.1.172": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.2.3": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"कार्तिक"
+]
+},
+"4.2.24": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.2.114": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.3.3": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.3.11": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.3.53": {
+"words": 2,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 1,
+"gap_words": [
+"हृदय्या"
+]
+},
+"4.3.55": {
+"words": 2,
+"verified": 1,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"हृदय्या"
+]
+},
+"4.3.120": {
+"words": 8,
+"verified": 8,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.3.160": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.4.2": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.4.5": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.4.20": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"4.4.91": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"5.1.119": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"5.2.40": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"5.2.94": {
+"words": 5,
+"verified": 4,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"5.3.3": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"5.3.11": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"5.3.57": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"5.3.71": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"5.3.73": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"5.4.50": {
+"words": 3,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 3,
+"gap_words": []
+},
+"5.4.74": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"5.4.87": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"5.4.154": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"6.1.9": {
+"words": 8,
+"verified": 1,
+"oracle_only": 6,
+"unknown": 1,
+"gap_words": [
+"अजर्घाः",
+"अपास्पाः",
+"बोभोति",
+"मरीमृज",
+"लोलुव",
+"शंशान्तः"
+]
+},
+"6.1.10": {
+"words": 3,
+"verified": 3,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.1.11": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"आटिटत्"
+]
+},
+"6.1.15": {
+"words": 8,
+"verified": 6,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"ऊढ",
+"हूषु"
+]
+},
+"6.1.16": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.1.37": {
+"words": 6,
+"verified": 4,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"यूना",
+"यूनोः"
+]
+},
+"6.1.45": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.1.64": {
+"words": 4,
+"verified": 1,
+"oracle_only": 3,
+"unknown": 0,
+"gap_words": [
+"सोढा",
+"सोढुम्",
+"स्तुत्य"
+]
+},
+"6.1.65": {
+"words": 4,
+"verified": 0,
+"oracle_only": 3,
+"unknown": 0,
+"gap_words": [
+"नंष्टव्य",
+"नयनीय",
+"प्रणम्य"
+]
+},
+"6.1.69": {
+"words": 14,
+"verified": 10,
+"oracle_only": 3,
+"unknown": 1,
+"gap_words": [
+"अक्क",
+"अल्ल",
+"गौः"
+]
+},
+"6.1.73": {
+"words": 5,
+"verified": 1,
+"oracle_only": 2,
+"unknown": 1,
+"gap_words": [
+"प्रच्छनीय",
+"म्लेच्छनीय"
+]
+},
+"6.1.79": {
+"words": 6,
+"verified": 6,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.1.89": {
+"words": 12,
+"verified": 1,
+"oracle_only": 3,
+"unknown": 4,
+"gap_words": [
+"उपैति",
+"उपैत्",
+"खौनाति"
+]
+},
+"6.1.90": {
+"words": 45,
+"verified": 30,
+"oracle_only": 13,
+"unknown": 2,
+"gap_words": [
+"आटिटत्",
+"उपैत्",
+"चक्षै",
+"धेन्वाः",
+"धेन्वाम्",
+"धेन्वै",
+"भ्रुवाः",
+"भ्रुवाम्",
+"भ्रुवै",
+"मत्यै",
+"स्त्रियाः",
+"स्त्रियाम्"
+]
+},
+"6.1.96": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.1.105": {
+"words": 6,
+"verified": 6,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.1.110": {
+"words": 10,
+"verified": 10,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.1.111": {
+"words": 10,
+"verified": 8,
+"oracle_only": 0,
+"unknown": 2,
+"gap_words": []
+},
+"6.1.112": {
+"words": 4,
+"verified": 1,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"पत्युः",
+"सख्युः"
+]
+},
+"6.1.113": {
+"words": 6,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 5,
+"gap_words": [
+"कोऽस्य"
+]
+},
+"6.1.114": {
+"words": 21,
+"verified": 15,
+"oracle_only": 3,
+"unknown": 3,
+"gap_words": [
+"अहोभिः",
+"अहोभ्यः",
+"अहोभ्याम्"
+]
+},
+"6.1.127": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.1.131": {
+"words": 12,
+"verified": 11,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"6.1.134": {
+"words": 6,
+"verified": 3,
+"oracle_only": 2,
+"unknown": 1,
+"gap_words": [
+"शक्ना",
+"शक्नि"
+]
+},
+"6.3.34": {
+"words": 3,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 3,
+"gap_words": []
+},
+"6.3.90": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"6.3.91": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.3.94": {
+"words": 8,
+"verified": 3,
+"oracle_only": 1,
+"unknown": 4,
+"gap_words": [
+"तिर्यङ्"
+]
+},
+"6.3.111": {
+"words": 13,
+"verified": 6,
+"oracle_only": 6,
+"unknown": 1,
+"gap_words": [
+"अजर्घाः",
+"अपास्पाः",
+"अवोढ",
+"ऊढ",
+"सोढा",
+"सोढुम्"
+]
+},
+"6.3.112": {
+"words": 5,
+"verified": 1,
+"oracle_only": 4,
+"unknown": 0,
+"gap_words": [
+"अवोढ",
+"ऊढ",
+"सोढा",
+"सोढुम्"
+]
+},
+"6.3.128": {
+"words": 7,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 7,
+"gap_words": []
+},
+"6.3.138": {
+"words": 24,
+"verified": 7,
+"oracle_only": 4,
+"unknown": 10,
+"gap_words": [
+"प्राचाम्",
+"प्राचे",
+"प्राचोः",
+"समीचा"
+]
+},
+"6.4.2": {
+"words": 2,
+"verified": 1,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"हूषु"
+]
+},
+"6.4.3": {
+"words": 46,
+"verified": 39,
+"oracle_only": 5,
+"unknown": 2,
+"gap_words": [
+"द्वितीयानाम्",
+"निर्जराणाम्",
+"प्रथमानाम्",
+"विश्वानाम्",
+"सुनूनाम्"
+]
+},
+"6.4.4": {
+"words": 2,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"चतसृणाम्",
+"तिसृणाम्"
+]
+},
+"6.4.6": {
+"words": 2,
+"verified": 1,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"नृणाम्"
+]
+},
+"6.4.8": {
+"words": 75,
+"verified": 63,
+"oracle_only": 8,
+"unknown": 3,
+"gap_words": [
+"अनेहा",
+"ऋभुक्षाणः",
+"ऋभुक्षाणम्",
+"ऋभुक्षाणौ",
+"धातॄणि",
+"पञ्चा",
+"सखा",
+"सुनूनि"
+]
+},
+"6.4.10": {
+"words": 16,
+"verified": 6,
+"oracle_only": 4,
+"unknown": 5,
+"gap_words": [
+"विद्वांसः",
+"विद्वांसम्",
+"विद्वांसौ",
+"विद्वान्"
+]
+},
+"6.4.13": {
+"words": 9,
+"verified": 8,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"विकासी"
+]
+},
+"6.4.14": {
+"words": 9,
+"verified": 2,
+"oracle_only": 5,
+"unknown": 2,
+"gap_words": [
+"अवयाः",
+"कृतवान्",
+"धीमान्",
+"विद्वाः",
+"विहायाः"
+]
+},
+"6.4.15": {
+"words": 9,
+"verified": 0,
+"oracle_only": 9,
+"unknown": 0,
+"gap_words": [
+"ईर्ण्",
+"घीर्ण्",
+"तीन्",
+"तीर्ण्",
+"मीन्",
+"वेण्",
+"वेन्",
+"व्राण्",
+"शंशान्तः"
+]
+},
+"6.4.19": {
+"words": 4,
+"verified": 2,
+"oracle_only": 1,
+"unknown": 1,
+"gap_words": [
+"खौनाति"
+]
+},
+"6.4.21": {
+"words": 4,
+"verified": 4,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.4.23": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"6.4.27": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.4.34": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.4.36": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.4.37": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"आघ्नीय"
+]
+},
+"6.4.41": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.4.49": {
+"words": 2,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"बेभिदितुम्",
+"लोलुव"
+]
+},
+"6.4.51": {
+"words": 9,
+"verified": 2,
+"oracle_only": 6,
+"unknown": 1,
+"gap_words": [
+"आटिटत्",
+"कीर्तनीय",
+"क्नोपनीय",
+"छत्",
+"वेल्",
+"हिडनीय"
+]
+},
+"6.4.63": {
+"words": 2,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"दिदीये",
+"लोलुव"
+]
+},
+"6.4.66": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.4.72": {
+"words": 7,
+"verified": 4,
+"oracle_only": 2,
+"unknown": 1,
+"gap_words": [
+"आटिटत्",
+"उपैत्"
+]
+},
+"6.4.77": {
+"words": 71,
+"verified": 11,
+"oracle_only": 21,
+"unknown": 36,
+"gap_words": [
+"नयनीय",
+"नियः",
+"नियम्",
+"निया",
+"नियाम्",
+"निये",
+"नियौ",
+"भ्रुवः",
+"भ्रुवम्",
+"भ्रुवा",
+"भ्रुवाः",
+"भ्रुवाम्"
+]
+},
+"6.4.78": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.4.79": {
+"words": 8,
+"verified": 0,
+"oracle_only": 7,
+"unknown": 1,
+"gap_words": [
+"स्त्रियः",
+"स्त्रिया",
+"स्त्रियाः",
+"स्त्रियाम्",
+"स्त्रियै",
+"स्त्रियोः",
+"स्त्रियौ"
+]
+},
+"6.4.80": {
+"words": 2,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"स्त्रियः",
+"स्त्रियम्"
+]
+},
+"6.4.82": {
+"words": 16,
+"verified": 10,
+"oracle_only": 3,
+"unknown": 2,
+"gap_words": [
+"दिदीये",
+"प्रध्यम्",
+"प्रध्ये"
+]
+},
+"6.4.83": {
+"words": 14,
+"verified": 9,
+"oracle_only": 0,
+"unknown": 4,
+"gap_words": []
+},
+"6.4.84": {
+"words": 8,
+"verified": 6,
+"oracle_only": 1,
+"unknown": 1,
+"gap_words": [
+"वर्षाभ्वम्"
+]
+},
+"6.4.85": {
+"words": 6,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 6,
+"gap_words": []
+},
+"6.4.88": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.4.92": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"हिडनीय"
+]
+},
+"6.4.98": {
+"words": 3,
+"verified": 1,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"आघ्नीय",
+"जघ्नतुः"
+]
+},
+"6.4.101": {
+"words": 3,
+"verified": 0,
+"oracle_only": 3,
+"unknown": 0,
+"gap_words": [
+"पिण्ढि",
+"शाधि",
+"शिण्ढि"
+]
+},
+"6.4.127": {
+"words": 13,
+"verified": 10,
+"oracle_only": 3,
+"unknown": 0,
+"gap_words": [
+"अर्वन्तः",
+"अर्वन्तम्",
+"अर्वन्तौ"
+]
+},
+"6.4.130": {
+"words": 8,
+"verified": 8,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.4.131": {
+"words": 8,
+"verified": 7,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"पपुषः"
+]
+},
+"6.4.132": {
+"words": 6,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 3,
+"gap_words": []
+},
+"6.4.133": {
+"words": 19,
+"verified": 10,
+"oracle_only": 9,
+"unknown": 0,
+"gap_words": [
+"मघोनः",
+"मघोना",
+"मघोनाम्",
+"मघोनि",
+"मघोने",
+"मघोनोः",
+"यूना",
+"यूनोः",
+"शुनोः"
+]
+},
+"6.4.134": {
+"words": 46,
+"verified": 32,
+"oracle_only": 5,
+"unknown": 9,
+"gap_words": [
+"दध्ना",
+"दध्नोः",
+"दीव्ना",
+"वृत्रघ्नि",
+"वृत्रहणि"
+]
+},
+"6.4.136": {
+"words": 9,
+"verified": 3,
+"oracle_only": 6,
+"unknown": 0,
+"gap_words": [
+"अर्यमणि",
+"अहनि",
+"अहनी",
+"दधनि",
+"दध्नि",
+"पूषणि"
+]
+},
+"6.4.137": {
+"words": 12,
+"verified": 12,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.4.138": {
+"words": 30,
+"verified": 11,
+"oracle_only": 4,
+"unknown": 11,
+"gap_words": [
+"प्राचाम्",
+"प्राचे",
+"प्राचोः",
+"समीचा"
+]
+},
+"6.4.139": {
+"words": 6,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 5,
+"gap_words": []
+},
+"6.4.140": {
+"words": 12,
+"verified": 8,
+"oracle_only": 2,
+"unknown": 2,
+"gap_words": [
+"गोपोः",
+"विश्वपः"
+]
+},
+"6.4.143": {
+"words": 15,
+"verified": 9,
+"oracle_only": 3,
+"unknown": 3,
+"gap_words": [
+"अवयाः",
+"उक्थशाः",
+"सोढा"
+]
+},
+"6.4.150": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"6.4.155": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"7.1.13": {
+"words": 9,
+"verified": 5,
+"oracle_only": 4,
+"unknown": 0,
+"gap_words": [
+"द्वितीयाय",
+"निर्जराय",
+"प्रथमाय",
+"विश्वाय"
+]
+},
+"7.1.16": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.1.19": {
+"words": 34,
+"verified": 23,
+"oracle_only": 9,
+"unknown": 2,
+"gap_words": [
+"अहनी",
+"तुदती",
+"तुदन्ती",
+"ददती",
+"दीव्यन्ती",
+"पचन्ती",
+"सुधिनी",
+"सुनुनी",
+"सुलुनी"
+]
+},
+"7.1.22": {
+"words": 4,
+"verified": 4,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.1.27": {
+"words": 3,
+"verified": 2,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"आगत्य"
+]
+},
+"7.1.28": {
+"words": 10,
+"verified": 10,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.1.29": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.1.30": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.1.32": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.1.33": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.1.53": {
+"words": 2,
+"verified": 1,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"तिसृणाम्"
+]
+},
+"7.1.55": {
+"words": 3,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 1,
+"gap_words": [
+"चतुर्णाम्",
+"षण्णाम्"
+]
+},
+"7.1.58": {
+"words": 8,
+"verified": 2,
+"oracle_only": 5,
+"unknown": 1,
+"gap_words": [
+"अङ्कनीय",
+"कम्पनीय",
+"कुण्ठनीय",
+"घिन्ण्",
+"घुन्ण्"
+]
+},
+"7.1.59": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.1.60": {
+"words": 3,
+"verified": 1,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"नंष्टव्य",
+"मङ्क्तृ"
+]
+},
+"7.1.71": {
+"words": 2,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"युन्"
+]
+},
+"7.1.72": {
+"words": 18,
+"verified": 14,
+"oracle_only": 0,
+"unknown": 3,
+"gap_words": []
+},
+"7.1.73": {
+"words": 51,
+"verified": 27,
+"oracle_only": 18,
+"unknown": 6,
+"gap_words": [
+"धातृणि",
+"धातॄणि",
+"सुधिनः",
+"सुधिनि",
+"सुधिनी",
+"सुधिने",
+"सुधिनोः",
+"सुनुनः",
+"सुनुनि",
+"सुनुनी",
+"सुनुने",
+"सुनुनोः"
+]
+},
+"7.1.74": {
+"words": 18,
+"verified": 10,
+"oracle_only": 0,
+"unknown": 8,
+"gap_words": []
+},
+"7.1.75": {
+"words": 7,
+"verified": 3,
+"oracle_only": 4,
+"unknown": 0,
+"gap_words": [
+"दधनि",
+"दध्ना",
+"दध्नि",
+"दध्नोः"
+]
+},
+"7.1.79": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"ददन्ति"
+]
+},
+"7.1.80": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"तुदन्ती"
+]
+},
+"7.1.81": {
+"words": 2,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"दीव्यन्ती",
+"पचन्ती"
+]
+},
+"7.1.82": {
+"words": 2,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"अनड्वन्",
+"अनड्वान्"
+]
+},
+"7.1.84": {
+"words": 2,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"द्यौः",
+"सुद्यौः"
+]
+},
+"7.1.85": {
+"words": 3,
+"verified": 2,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"पन्थाः"
+]
+},
+"7.1.87": {
+"words": 9,
+"verified": 7,
+"oracle_only": 1,
+"unknown": 1,
+"gap_words": [
+"पन्थाः"
+]
+},
+"7.1.88": {
+"words": 25,
+"verified": 21,
+"oracle_only": 4,
+"unknown": 0,
+"gap_words": [
+"ऋभुक्षा",
+"ऋभुक्षोः",
+"पथा",
+"पथोः"
+]
+},
+"7.1.89": {
+"words": 5,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 5,
+"gap_words": []
+},
+"7.1.90": {
+"words": 7,
+"verified": 1,
+"oracle_only": 6,
+"unknown": 0,
+"gap_words": [
+"गावः",
+"गावौ",
+"गौः",
+"द्यावः",
+"द्यावौ",
+"द्यौः"
+]
+},
+"7.1.93": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"सखा"
+]
+},
+"7.1.94": {
+"words": 15,
+"verified": 14,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"अनेहा"
+]
+},
+"7.1.95": {
+"words": 4,
+"verified": 3,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"क्रोष्टारम्"
+]
+},
+"7.1.98": {
+"words": 8,
+"verified": 0,
+"oracle_only": 7,
+"unknown": 1,
+"gap_words": [
+"अनड्वान्",
+"अनड्वाहः",
+"अनड्वाहम्",
+"अनड्वाहौ",
+"चत्वाः",
+"चत्वारः",
+"चत्वारि"
+]
+},
+"7.1.99": {
+"words": 2,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"अनड्वन्",
+"चत्वः"
+]
+},
+"7.1.102": {
+"words": 3,
+"verified": 2,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"वूः"
+]
+},
+"7.2.3": {
+"words": 2,
+"verified": 1,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"अवोढ"
+]
+},
+"7.2.8": {
+"words": 34,
+"verified": 7,
+"oracle_only": 25,
+"unknown": 0,
+"gap_words": [
+"ईर्ण्",
+"ऋत्",
+"घिन्ण्",
+"घीर्ण्",
+"घुद्",
+"घुन्ण्",
+"घृद्",
+"छत्",
+"तीः",
+"तीन्",
+"तीर्ण्",
+"त्रुन्"
+]
+},
+"7.2.80": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.84": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.85": {
+"words": 6,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 4,
+"gap_words": []
+},
+"7.2.86": {
+"words": 6,
+"verified": 6,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.87": {
+"words": 4,
+"verified": 4,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.88": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.89": {
+"words": 6,
+"verified": 6,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.90": {
+"words": 17,
+"verified": 14,
+"oracle_only": 2,
+"unknown": 1,
+"gap_words": [
+"अस्मत्",
+"युष्मत्"
+]
+},
+"7.2.92": {
+"words": 6,
+"verified": 6,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.93": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.94": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.95": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.97": {
+"words": 8,
+"verified": 8,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.99": {
+"words": 12,
+"verified": 8,
+"oracle_only": 4,
+"unknown": 0,
+"gap_words": [
+"चतसृणाम्",
+"चतस्रः",
+"तिसृणाम्",
+"तिस्रः"
+]
+},
+"7.2.100": {
+"words": 2,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"चतस्रः",
+"तिस्रः"
+]
+},
+"7.2.101": {
+"words": 15,
+"verified": 7,
+"oracle_only": 1,
+"unknown": 7,
+"gap_words": [
+"जरस्"
+]
+},
+"7.2.103": {
+"words": 30,
+"verified": 29,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"कोऽस्य"
+]
+},
+"7.2.106": {
+"words": 8,
+"verified": 7,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"7.2.107": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.108": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.110": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.111": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.112": {
+"words": 3,
+"verified": 3,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.2.114": {
+"words": 4,
+"verified": 1,
+"oracle_only": 3,
+"unknown": 0,
+"gap_words": [
+"मरीमृज",
+"मार्जनीय",
+"मृज्य"
+]
+},
+"7.2.118": {
+"words": 3,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"7.3.36": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"क्नोपनीय"
+]
+},
+"7.3.52": {
+"words": 3,
+"verified": 2,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"भ्रद्ग्य"
+]
+},
+"7.3.54": {
+"words": 7,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 5,
+"gap_words": [
+"आघ्नीय",
+"वृत्रघ्नि"
+]
+},
+"7.3.55": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"जघान"
+]
+},
+"7.3.96": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.3.104": {
+"words": 30,
+"verified": 28,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"7.3.105": {
+"words": 28,
+"verified": 26,
+"oracle_only": 0,
+"unknown": 2,
+"gap_words": []
+},
+"7.3.106": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.3.107": {
+"words": 3,
+"verified": 1,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"अक्क",
+"अल्ल"
+]
+},
+"7.3.108": {
+"words": 5,
+"verified": 3,
+"oracle_only": 1,
+"unknown": 1,
+"gap_words": [
+"अल्"
+]
+},
+"7.3.109": {
+"words": 6,
+"verified": 6,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.3.110": {
+"words": 25,
+"verified": 23,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"क्रोष्टारम्",
+"धातारम्"
+]
+},
+"7.3.111": {
+"words": 12,
+"verified": 12,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.3.112": {
+"words": 37,
+"verified": 26,
+"oracle_only": 10,
+"unknown": 1,
+"gap_words": [
+"धेन्वाः",
+"धेन्वाम्",
+"धेन्वै",
+"भ्रुवाः",
+"भ्रुवाम्",
+"भ्रुवै",
+"मत्यै",
+"स्त्रियाः",
+"स्त्रियाम्",
+"स्त्रियै"
+]
+},
+"7.3.116": {
+"words": 26,
+"verified": 21,
+"oracle_only": 5,
+"unknown": 0,
+"gap_words": [
+"अमुष्याम्",
+"द्वितीयायाम्",
+"नियाम्",
+"भ्रुवाम्",
+"स्त्रियाम्"
+]
+},
+"7.3.117": {
+"words": 2,
+"verified": 1,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"धेन्वाम्"
+]
+},
+"7.3.118": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.3.119": {
+"words": 5,
+"verified": 5,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.3.120": {
+"words": 11,
+"verified": 6,
+"oracle_only": 4,
+"unknown": 1,
+"gap_words": [
+"अमुना",
+"सुधिना",
+"सुनुना",
+"सुलुना"
+]
+},
+"7.4.25": {
+"words": 4,
+"verified": 4,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.4.33": {
+"words": 2,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"7.4.46": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.4.61": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"अपास्पाः"
+]
+},
+"7.4.66": {
+"words": 2,
+"verified": 1,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"मरीमृज"
+]
+},
+"7.4.73": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.4.76": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"7.4.82": {
+"words": 5,
+"verified": 0,
+"oracle_only": 4,
+"unknown": 1,
+"gap_words": [
+"अजर्घाः",
+"जेघ्रीय",
+"बोभोति",
+"लोलुव"
+]
+},
+"7.4.83": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"अपास्पाः"
+]
+},
+"7.4.90": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"मरीमृज"
+]
+},
+"8.1.21": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"8.2.2": {
+"words": 48,
+"verified": 41,
+"oracle_only": 4,
+"unknown": 2,
+"gap_words": [
+"अर्यमसु",
+"पूषसु",
+"मघवसु",
+"युवसु"
+]
+},
+"8.2.3": {
+"words": 4,
+"verified": 3,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"अमुना"
+]
+},
+"8.2.8": {
+"words": 3,
+"verified": 2,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"विकासिन्"
+]
+},
+"8.2.9": {
+"words": 2,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"8.2.10": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"8.2.23": {
+"words": 68,
+"verified": 9,
+"oracle_only": 32,
+"unknown": 22,
+"gap_words": [
+"अनड्वन्",
+"अनड्वान्",
+"अपास्पाः",
+"उदङ्",
+"कृतवान्",
+"क्रुक्",
+"क्रुङ्",
+"क्रुङ्भिः",
+"क्रुङ्भ्यः",
+"क्रुङ्भ्याम्",
+"क्रुङ्षु",
+"क्रुन्"
+]
+},
+"8.2.24": {
+"words": 16,
+"verified": 10,
+"oracle_only": 6,
+"unknown": 0,
+"gap_words": [
+"अपास्पाः",
+"चिकीः",
+"चिकीर्भिः",
+"चिकीर्भ्यः",
+"चिकीर्भ्याम्",
+"चिकीर्षु"
+]
+},
+"8.2.26": {
+"words": 2,
+"verified": 1,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"अवोढ"
+]
+},
+"8.2.28": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"8.2.31": {
+"words": 46,
+"verified": 15,
+"oracle_only": 18,
+"unknown": 13,
+"gap_words": [
+"अवोढ",
+"ऊढ",
+"तुराषाट्त्सु",
+"तुराषाट्सु",
+"तृढ",
+"दोग्धुम्",
+"ध्रुट्",
+"ध्रुट्त्सु",
+"ध्रुट्सु",
+"ध्रुड्",
+"ध्रुड्भिः",
+"ध्रुड्भ्यः"
+]
+},
+"8.2.32": {
+"words": 8,
+"verified": 0,
+"oracle_only": 7,
+"unknown": 0,
+"gap_words": [
+"दोग्धुम्",
+"धुक्",
+"धुक्षु",
+"धुग्",
+"धुग्भिः",
+"धुग्भ्यः",
+"धुग्भ्याम्"
+]
+},
+"8.2.33": {
+"words": 7,
+"verified": 0,
+"oracle_only": 7,
+"unknown": 0,
+"gap_words": [
+"ध्रुक्",
+"ध्रुक्षु",
+"ध्रुग्",
+"ध्रुग्भिः",
+"ध्रुग्भ्यः",
+"ध्रुग्भ्याम्",
+"स्निक्"
+]
+},
+"8.2.34": {
+"words": 7,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 6,
+"gap_words": []
+},
+"8.2.36": {
+"words": 80,
+"verified": 16,
+"oracle_only": 42,
+"unknown": 20,
+"gap_words": [
+"दिक्",
+"दिक्षु",
+"दिग्भिः",
+"दिग्भ्यः",
+"दिग्भ्याम्",
+"दृक्",
+"दृक्षु",
+"दृग्भिः",
+"दृग्भ्यः",
+"दृग्भ्याम्",
+"नंष्टव्य",
+"नक्षु"
+]
+},
+"8.2.37": {
+"words": 23,
+"verified": 0,
+"oracle_only": 22,
+"unknown": 0,
+"gap_words": [
+"अजर्घाः",
+"घुद्",
+"घृद्",
+"धुक्",
+"धुक्षु",
+"धुग्",
+"धुग्भिः",
+"धुग्भ्यः",
+"धुग्भ्याम्",
+"ध्रुक्",
+"ध्रुक्षु",
+"ध्रुग्"
+]
+},
+"8.2.39": {
+"words": 341,
+"verified": 145,
+"oracle_only": 118,
+"unknown": 71,
+"gap_words": [
+"अजर्घाः",
+"अपास्पाः",
+"उदक्षु",
+"उदग्भिः",
+"उदग्भ्यः",
+"उदग्भ्याम्",
+"ऋत्",
+"गुप्",
+"गुप्सु",
+"गुब्",
+"गुब्भिः",
+"गुब्भ्यः"
+]
+},
+"8.2.40": {
+"words": 14,
+"verified": 7,
+"oracle_only": 7,
+"unknown": 0,
+"gap_words": [
+"अवोढ",
+"ऊढ",
+"तृढ",
+"दोग्धुम्",
+"लब्ध",
+"सोढा",
+"सोढुम्"
+]
+},
+"8.2.44": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"8.2.45": {
+"words": 3,
+"verified": 2,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"पीनवत्"
+]
+},
+"8.2.51": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"8.2.52": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"8.2.62": {
+"words": 65,
+"verified": 7,
+"oracle_only": 30,
+"unknown": 24,
+"gap_words": [
+"उदङ्",
+"क्रुक्",
+"क्रुङ्",
+"क्रुङ्भिः",
+"क्रुङ्भ्यः",
+"क्रुङ्भ्याम्",
+"क्रुङ्षु",
+"तिर्यङ्",
+"दधृक्षु",
+"दधृग्भिः",
+"दधृग्भ्यः",
+"दधृग्भ्याम्"
+]
+},
+"8.2.63": {
+"words": 6,
+"verified": 0,
+"oracle_only": 5,
+"unknown": 0,
+"gap_words": [
+"नक्षु",
+"नग्",
+"नग्भिः",
+"नग्भ्यः",
+"नग्भ्याम्"
+]
+},
+"8.2.64": {
+"words": 8,
+"verified": 0,
+"oracle_only": 2,
+"unknown": 5,
+"gap_words": [
+"तीन्",
+"मीन्"
+]
+},
+"8.2.68": {
+"words": 12,
+"verified": 3,
+"oracle_only": 6,
+"unknown": 3,
+"gap_words": [
+"अहःसु",
+"अहर्निश",
+"अहस्सु",
+"अहोभिः",
+"अहोभ्यः",
+"अहोभ्याम्"
+]
+},
+"8.2.69": {
+"words": 6,
+"verified": 3,
+"oracle_only": 1,
+"unknown": 2,
+"gap_words": [
+"अहर्निश"
+]
+},
+"8.2.72": {
+"words": 15,
+"verified": 0,
+"oracle_only": 9,
+"unknown": 6,
+"gap_words": [
+"अनडुत्सु",
+"अनडुद्भिः",
+"अनडुद्भ्यः",
+"अनडुद्भ्याम्",
+"वत्",
+"विद्वत्सु",
+"विद्वद्भिः",
+"विद्वद्भ्यः",
+"विद्वद्भ्याम्"
+]
+},
+"8.2.74": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"8.2.75": {
+"words": 6,
+"verified": 2,
+"oracle_only": 2,
+"unknown": 2,
+"gap_words": [
+"अजर्घाः",
+"अपास्पाः"
+]
+},
+"8.2.76": {
+"words": 26,
+"verified": 2,
+"oracle_only": 17,
+"unknown": 6,
+"gap_words": [
+"आशीःषु",
+"आशीर्भिः",
+"आशीर्भ्यः",
+"आशीर्भ्याम्",
+"आशीष्षु",
+"गीः",
+"गीर्भिः",
+"गीर्भ्यः",
+"गीर्भ्याम्",
+"गीर्षु",
+"तीः",
+"पिपठीःषु"
+]
+},
+"8.2.77": {
+"words": 3,
+"verified": 2,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"दीव्ना"
+]
+},
+"8.2.80": {
+"words": 20,
+"verified": 9,
+"oracle_only": 10,
+"unknown": 0,
+"gap_words": [
+"अमुना",
+"अमुष्याः",
+"अमुष्याम्",
+"अमुष्यै",
+"अमूः",
+"अमूभिः",
+"अमूभ्यः",
+"अमूम्",
+"अमूषाम्",
+"अमूषु"
+]
+},
+"8.2.81": {
+"words": 5,
+"verified": 5,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"8.3.4": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"8.3.14": {
+"words": 5,
+"verified": 2,
+"oracle_only": 2,
+"unknown": 1,
+"gap_words": [
+"अजर्घाः",
+"अपास्पाः"
+]
+},
+"8.3.16": {
+"words": 4,
+"verified": 2,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"गीर्षु",
+"चिकीर्षु"
+]
+},
+"8.3.17": {
+"words": 3,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 3,
+"gap_words": []
+},
+"8.3.19": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"8.3.22": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"8.3.28": {
+"words": 4,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 4,
+"gap_words": []
+},
+"8.3.29": {
+"words": 12,
+"verified": 0,
+"oracle_only": 9,
+"unknown": 3,
+"gap_words": [
+"तुराषाट्त्सु",
+"त्विट्त्सु",
+"त्विट्सु",
+"ध्रुट्त्सु",
+"नट्त्सु",
+"भृट्त्सु",
+"राट्त्सु",
+"लिट्त्सु",
+"विट्त्सु"
+]
+},
+"8.3.30": {
+"words": 3,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 3,
+"gap_words": []
+},
+"8.3.32": {
+"words": 3,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 3,
+"gap_words": []
+},
+"8.3.36": {
+"words": 13,
+"verified": 2,
+"oracle_only": 9,
+"unknown": 2,
+"gap_words": [
+"अनेहःसु",
+"अहःसु",
+"अहस्सु",
+"आशीःषु",
+"आशीष्षु",
+"उशनःसु",
+"पिपठीःषु",
+"पिपठीष्षु",
+"वेधःसु"
+]
+},
+"8.3.56": {
+"words": 7,
+"verified": 5,
+"oracle_only": 2,
+"unknown": 0,
+"gap_words": [
+"तुराषाट्त्सु",
+"तुराषाट्सु"
+]
+},
+"8.3.58": {
+"words": 3,
+"verified": 2,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"धनुःषु"
+]
+},
+"8.3.60": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"8.3.111": {
+"words": 9,
+"verified": 5,
+"oracle_only": 2,
+"unknown": 1,
+"gap_words": [
+"सखा",
+"स्निक्"
+]
+},
+"8.4.2": {
+"words": 97,
+"verified": 73,
+"oracle_only": 11,
+"unknown": 13,
+"gap_words": [
+"अर्यमणि",
+"ऋभुक्षाणः",
+"ऋभुक्षाणम्",
+"ऋभुक्षाणौ",
+"चतसृणाम्",
+"तरणीय",
+"धातृणि",
+"धातॄणि",
+"निर्जराणाम्",
+"नृणाम्",
+"वृत्रहणि"
+]
+},
+"8.4.3": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"8.4.12": {
+"words": 3,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 3,
+"gap_words": []
+},
+"8.4.14": {
+"words": 1,
+"verified": 0,
+"oracle_only": 1,
+"unknown": 0,
+"gap_words": [
+"प्रणम्य"
+]
+},
+"8.4.37": {
+"words": 10,
+"verified": 7,
+"oracle_only": 2,
+"unknown": 1,
+"gap_words": [
+"क्रुन्",
+"त्रुन्"
+]
+},
+"8.4.40": {
+"words": 32,
+"verified": 16,
+"oracle_only": 10,
+"unknown": 4,
+"gap_words": [
+"भृज्जः",
+"भृज्जम्",
+"भृज्जा",
+"भृज्जाम्",
+"भृज्जि",
+"भृज्जोः",
+"भृज्जौ",
+"भ्रज्जनीय",
+"म्लेच्छनीय",
+"व्रश्चनीय"
+]
+},
+"8.4.42": {
+"words": 3,
+"verified": 0,
+"oracle_only": 3,
+"unknown": 0,
+"gap_words": [
+"घिन्ण्",
+"घुन्ण्",
+"षण्णाम्"
+]
+},
+"8.4.44": {
+"words": 1,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"8.4.45": {
+"words": 7,
+"verified": 2,
+"oracle_only": 1,
+"unknown": 4,
+"gap_words": [
+"षण्णाम्"
+]
+},
+"8.4.46": {
+"words": 2,
+"verified": 1,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"8.4.53": {
+"words": 20,
+"verified": 5,
+"oracle_only": 14,
+"unknown": 1,
+"gap_words": [
+"दोग्धुम्",
+"पिण्ढि",
+"भृज्जः",
+"भृज्जम्",
+"भृज्जा",
+"भृज्जाम्",
+"भृज्जि",
+"भृज्जोः",
+"भृज्जौ",
+"भ्रज्जनीय",
+"भ्रद्ग्य",
+"लब्ध"
+]
+},
+"8.4.54": {
+"words": 7,
+"verified": 4,
+"oracle_only": 3,
+"unknown": 0,
+"gap_words": [
+"जघ्नतुः",
+"जेघ्रीय",
+"बोभोति"
+]
+},
+"8.4.56": {
+"words": 80,
+"verified": 43,
+"oracle_only": 22,
+"unknown": 11,
+"gap_words": [
+"ऋत्",
+"गुप्",
+"छत्",
+"जक्षत्",
+"तुदत्",
+"ददत्",
+"दिक्",
+"दृक्",
+"द्वितीयात्",
+"धुक्",
+"ध्रुक्",
+"ध्रुट्"
+]
+},
+"8.4.58": {
+"words": 75,
+"verified": 43,
+"oracle_only": 32,
+"unknown": 0,
+"gap_words": [
+"अङ्कनीय",
+"अर्वन्तः",
+"अर्वन्तम्",
+"अर्वन्तौ",
+"उदञ्चः",
+"उदञ्चम्",
+"कम्पनीय",
+"कुण्ठनीय",
+"खञ्जः",
+"खञ्जम्",
+"खञ्जि",
+"खञ्जोः"
+]
+},
+"8.4.59": {
+"words": 7,
+"verified": 0,
+"oracle_only": 3,
+"unknown": 4,
+"gap_words": [
+"पुम्भिः",
+"पुम्भ्यः",
+"पुम्भ्याम्"
+]
+},
+"8.4.60": {
+"words": 2,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 2,
+"gap_words": []
+},
+"8.4.61": {
+"words": 2,
+"verified": 2,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"8.4.62": {
+"words": 1,
+"verified": 0,
+"oracle_only": 0,
+"unknown": 1,
+"gap_words": []
+},
+"8.4.64": {
+"words": 5,
+"verified": 5,
+"oracle_only": 0,
+"unknown": 0,
+"gap_words": []
+},
+"8.4.65": {
+"words": 7,
+"verified": 2,
+"oracle_only": 4,
+"unknown": 1,
+"gap_words": [
+"कार्तिक",
+"पिण्ढि",
+"प्रत्त",
+"शिण्ढि"
+]
+}
+}

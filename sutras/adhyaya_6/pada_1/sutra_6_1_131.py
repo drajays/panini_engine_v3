@@ -36,7 +36,9 @@ def _div_index(state: State) -> int | None:
         # bh-sup (Byām…) or a padānta div before any consonant (dyukāma, dyubhyām)
         if nxt.varnas[0].slp1 in AC_DEV:
             continue
-        if nxt.varnas[0].slp1 not in {"B", "b"} and "pada" not in t.tags:
+        # the aṅga is a pada before a hal-initial svādi sup that is not sarvanāmasthāna (1.4.17): bhyām, bhis, bhyas, su (loc. pl.)
+        is_pada = "sup" in nxt.tags and "sarvanamasthana" not in nxt.tags
+        if nxt.varnas[0].slp1 not in {"B", "b"} and "pada" not in t.tags and not is_pada:
             if not state.meta.get("sthanivat_lesson_div_byam"):
                 continue
         return i

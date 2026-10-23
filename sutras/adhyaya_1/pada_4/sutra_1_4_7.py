@@ -40,6 +40,8 @@ def _eligible_angas(state: State):
         # it after 7.3.107 shortens its ī (नदि, not ghi: हे नदि).
         if "nadi" in t.tags:
             continue
+        if (t.meta.get("upadesha_slp1") or "").strip() == "saKi":     # असखि: the word सखि alone (अतिसखि is ghi)
+            continue
         yield t
 
 

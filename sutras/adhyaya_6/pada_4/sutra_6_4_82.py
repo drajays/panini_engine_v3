@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
+from engine.declension import anga_and_sup, dhatu_aṅga, n_vowels, samyoga_purva, vowel_initial
 from engine.state import State
 from engine.krt_eligibility import samhita_gate_eligible
 
@@ -33,11 +34,31 @@ def _site(state: State):
     return None
 
 
+def _site_subanta(state: State):
+    """The kṛdanta aṅga of an i/ī-final dhātu (ग्रामणी: ग्राम + नी + क्विप्) that is anekāc and not after a conjunct, before an ac-initial
+    sup: yaṇ — ग्रामण्यौ, ग्रामण्यः (a one-vowel नी / a conjunct-final श्री takes iyaṅ, 6.4.77)."""
+    hit = anga_and_sup(state, "6.4.82")
+    if hit is None:
+        return None
+    anga, sup = hit
+    if not dhatu_aṅga(anga) or anga.meta.get("6_4_82_yaN_done") or not vowel_initial(sup):
+        return None
+    if anga.varnas[-1].slp1 not in {"i", "I"} or n_vowels(anga) < 2 or samyoga_purva(anga):
+        return None
+    return anga
+
+
 def cond(state: State) -> bool:
-    return _site(state) is not None
+    return _site(state) is not None or _site_subanta(state) is not None
 
 
 def act(state: State) -> State:
+    anga = _site_subanta(state)
+    if anga is not None and _site(state) is None:
+        from phonology import mk
+        anga.varnas[-1] = mk("y")
+        anga.meta["6_4_82_yaN_done"] = True
+        return state
     i = _site(state)
     if i is None:
         return state
@@ -59,7 +80,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "एः अन्-एक-अचः अ-संयोग-पूर्वस्य",
     why_dev               = "(सूत्रम् 6.4.82) एरनेकाचोऽसंयोगपूर्वस्य।",
     anuvritti_from        = ('6.1.1',),
-    apavada_of            = ("6.1.101", "6.1.77"),
+    apavada_of            = ("6.1.101", "6.1.77", "6.4.77"),
     cond                  = cond,
     act                   = act,
 )

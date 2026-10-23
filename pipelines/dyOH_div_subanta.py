@@ -47,8 +47,11 @@ def derive_dyOH_div_subanta_P022() -> State:
     # Mark the sup as sarvanāmasthāna so 7.1.84 can see it.
     s = apply_rule("1.1.43", s)
 
-    # div → dyOv before sarvanāmasthāna.
+    # div → dyOv before sarvanāmasthāna (aṅga-saṃjñā and the aṅgādhikāra first).
+    s = apply_rule("1.4.13", s)
+    s = apply_rule("6.4.1", s)
     s = apply_rule("7.1.84", s)
+    s = apply_rule("6.1.77", s)      # di + au → dy + au (the v of div is replaced by au)
 
     # it-lopa: s~ → s so that 8.2.66 can fire.
     # Must run BEFORE entering Tripāḍī (8.2.1 pūrvatrāsiddham gate).

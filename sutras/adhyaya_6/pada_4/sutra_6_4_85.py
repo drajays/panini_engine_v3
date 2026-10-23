@@ -9,28 +9,32 @@ Pāṭha: ashtadhyayi.com data.txt row i=64085 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
-from engine.krt_eligibility import samhita_gate_eligible
+from engine.declension import anga_and_sup, dhatu_aṅga, is_stem, n_vowels, samyoga_purva, vowel_initial
+from phonology import mk
 
-_GATE_KEY: str = "6_4_85_na_85"
+def _site(state: State):
+    """न भूसुधियोः — no yaṇ (6.4.82 / 6.4.83) for the aṅga भू (svayambhū, with tadantavidhi) or सुधी: svayambhuvaḥ, sudhiyaḥ; वर्षाभू is 6.4.84's."""
+    hit = anga_and_sup(state, "6.4.85")
+    if hit is None:
+        return None
+    anga, sup = hit
+    if is_stem(anga, "varzABU") or not vowel_initial(sup):
+        return None
+    return anga if is_stem(anga, "BU", "suDI", tadanta=True) else None
 
 
 def cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.4.85", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.4.85"
+    state.blocked_sutras.update({"6.4.82", "6.4.83"})
     return state
-
 
 SUTRA = SutraRecord(
     sutra_id              = "6.4.85",
     sutra_type            = SutraType.PRATISHEDHA,
-    r1_form_identity_exempt = True,
     text_slp1             = "na BUsuDiyoH",
     text_dev              = "न भूसुधियोः",
     samagra_slp1          = "BUsuDiyoH aNgasya supi aci yaR na",
@@ -38,6 +42,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "न भू-सुधियोः",
     why_dev               = "(सूत्रम् 6.4.85) न भूसुधियोः।",
     anuvritti_from        = ('6.1.1',),
+    blocks_sutra_ids      = ('6.4.82', '6.4.83'),
     cond                  = cond,
     act                   = act,
 )

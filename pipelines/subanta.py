@@ -396,6 +396,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.4.14",
     *IT_PRAKARANA_SEQUENCE,  # 1.3.2–1.3.8 saṃjñā, then 1.3.9 lopa
     "1.3.10",
+    "7.1.84",  # दिव औत् — div + su: v → au (द्यौः)
     "7.1.93",  # anang sau: sakhī 1sg → sakhān (i → an; arm-gated)
     "6.4.13",  # सौ च — in / han / pūṣan / aryaman: dīrgha in the nominative singular (योगी, वृत्रहा)
     "6.4.8",   # dīrgha before sarvananāmasthāna (fires here for anang; idempotent)
@@ -461,6 +462,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     # 7.2.113 needs the sup's real first letter (śī / śi are vowel-initial only once their ś is gone),
     # and every sup ādeśa (smai, smāt, smin, sya, sām) is in final shape by now: अस्मै, अस्य, एषाम्
     "7.2.113",  # हलि लोपः — once every sup is in final shape (smai, smāt, smin, sya, sām): अस्मै, अस्य, एषाम्
+    "7.2.85",   # रायो हलि विभक्तौ आः — राभ्याम्, रासु
     "7.2.109",  # दश्च — the d that 7.2.112 / 7.2.113 left: इमौ, इमे, इमम्, इमानि
     "7.1.72",
     "7.1.73",   # इकोऽचि विभक्तौ — nuṃ for a neuter ik-final aṅga before an ac-initial vibhakti (vāriṇā, madhunī)
@@ -490,19 +492,32 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.3.109",
     "7.3.111",
     "7.3.105",  # आङि चापः — āp-anta sarvanāma + ṭā: ā → e (इदा → अने + आ), then 6.1.78
+    "7.3.118",  # इदुद्भ्यामङ्गात् ङेः औत् — after the nadī (7.3.116/117) and ghi (7.3.119) cases: सख्यौ
     "7.3.119",
     "7.3.120",
     "6.1.104",  # नादिचि — निषेध of 6.1.102 when the pūrva is आत्
     "6.1.102",
     "1.1.11",
     "6.1.103",
-    "7.1.92",  # sakhyur-asambauddhou: vṛddhi (i→E=ai) before sarvananāmasthāna (arm-gated)
+    "7.1.92",  # सख्युरसम्बुद्धौ: the sarvanāmasthāna sup is ṇit by atideśa
+    "7.1.90",  # गोतो णित् — the sarvanāmasthāna after go (dyo) is ṇit by atideśa
+    "7.2.115",  # अचो ञ्णिति: …so the aṅga's final i takes vṛddhi (सखि → सखै), then 6.1.78 → सखाय्
     "6.1.78",
+    "6.1.93",   # औतोऽम्शसोः — गां, गाः, द्याम् (para over 6.1.78)
     "6.1.107",
     "6.1.125",
     "6.1.111",  # ऋत उत् — pitṛ + ṅasi/ṅas → पितुः (the apavāda must precede yaṇ)
     "1.1.51",   # uraṇ raparaḥ — the r of that ut
+    "6.4.80",   # वाऽम्शसोः — the ī-keeping reading (स्त्रीम्, स्त्रीः); declined by default, both read by explore()
+    "6.4.79",   # स्त्रियाः — स्त्री + ac-sup: iyaṅ (स्त्रियौ, स्त्रियः)
+    "6.4.84",   # वर्षाभ्वश्च — वर्षाभ्वः
+    "6.4.85",   # न भूसुधियोः — blocks 6.4.82 / 6.4.83 for भू, सुधी
+    "6.4.82",   # एरनेकाचोऽसंयोगपूर्वस्य — ग्रामण्यौ
+    "6.4.83",   # ओः सुपि — खलप्वौ
+    "6.4.77",   # अचि श्नुधातुभ्रुवां — नियौ, भ्रुवौ, स्वयम्भुवः
+    "6.1.131",  # दिव उत् — द्युभ्याम्, द्युषु: the v of div → u at pada end, then yaṇ
     "6.1.77",
+    "6.1.112",  # ख्यत्यात् परस्य — सख्युः, पत्युः: the a of ṅasi / ṅas after the yaṇ of khi / ti becomes u
     "6.1.87",
     "6.1.88",
     "6.1.110",
@@ -630,6 +645,13 @@ def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
             for sid in remaining:
                 rec = get_sutra(sid)
                 if is_blocked(sid, s):
+                    # Art. 15 glass box: a rule a pratiṣedha withholds says so in the trace (once), when it would otherwise have applied
+                    if rec.cond is not None and not any(r.get("sutra_id") == sid and r.get("status") == "BLOCKED" for r in s.trace):
+                        try:
+                            if rec.cond(s):
+                                s = apply_rule(sid, s)      # the dispatcher's pratiṣedha gate writes the BLOCKED row
+                        except Exception:
+                            pass
                     continue
                 if asiddha_violates(sid, s):
                     continue
@@ -698,8 +720,8 @@ def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
                   if sid.startswith("6.1.") or (first6 <= i <= last6 and sid.startswith("1.") and not sid.startswith("1.3."))]
     angakarya_ids = [
         sid for sid in all_ids
-        if sid not in set(it_ids) and not sid.startswith("6.1.") and not is_tripadi_sutra(sid)
-    ]       # Adhyāya 1 stays in this pool too (see sandhi_ids)
+        if sid not in set(it_ids) and (not sid.startswith("6.1.") or sid == "6.1.93") and not is_tripadi_sutra(sid)
+    ]       # Adhyāya 1 stays in this pool too (see sandhi_ids); 6.1.93 competes with 7.2.115 here — the apavāda that takes away the vṛddhi of गो + अम् / शस्
 
     def _why_not(ids: list[str]) -> None:
         """Glass box: a rule of the pool that never came up still shows in the trace as SKIPPED
@@ -826,21 +848,6 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
     s.terms[0].tags |= origin_record
     if anvadesha:
         s.terms[0].tags.add("anvadesha")
-    # sakhī-class i-stem masculine: tag and set 7.1.92/7.1.93 arms
-    _SAKHI_CLASS = {"sakhI", "sakhi"}
-    if stem_slp1.strip() in _SAKHI_CLASS and linga == "pulliṅga":
-        for t in s.terms:
-            if "prātipadika" in t.tags:
-                t.tags.add("sakhi_ikarant")
-        # 7.1.93: anang fires for 1sg (sau = su context)
-        if vibhakti == 1 and vacana == 1:
-            s.meta["anaN_recipe"] = True
-            s.meta["n_lopa_recipe"]  = True  # n-lopa: sakhān → sakhā after anang
-        # 7.1.92: ṇidvat fires for all sarvananāmasthāna non-sambodhana cells
-        # sarvananāmasthāna = 1st/2nd vibhakti sg/du/pl + 8th is samboddhi (excluded)
-        _SARVANAM = {(1,1),(1,2),(1,3),(2,1),(2,2),(2,3)}
-        if (vibhakti, vacana) in _SARVANAM and vibhakti != 8:
-            s.meta["sakhyu_recipe"] = True
     if autonomous_scanner is None:
         autonomous_scanner = not _recipe_only(stem_slp1, linga, anvadesha)
     if autonomous_scanner:

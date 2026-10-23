@@ -37,8 +37,8 @@ def _matches(state: State) -> bool:
         return False
     anga = state.terms[-2]
     pr   = state.terms[-1]
-    if "anga" not in anga.tags or "ghi" not in anga.tags:
-        return False
+    if "anga" not in anga.tags or not ("ghi" in anga.tags or (anga.meta.get("upadesha_slp1") or "").strip() == "saKi"):
+        return False             # हे सखे: the word सखि takes the guṇa too though 1.4.7 does not call it ghi
     if "sup" not in pr.tags or "sambuddhi" not in pr.tags:
         return False
     if pr.meta.get("sambuddhi_guna_done"):

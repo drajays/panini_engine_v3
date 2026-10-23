@@ -66,6 +66,26 @@ def install() -> None:
     dispatcher.apply_rule = recording_apply_rule
     engine.apply_rule = recording_apply_rule
 
+    # The rules the resolver beat (or a pratiṣedha removed) get BLOCKED rows in record_decision, though nothing called them:
+    # BLOCKED is still their status, and a निषेध that says no must show in the ledger (Art. 15).
+    import engine.resolver as resolver
+
+    original_record = resolver.record_decision
+
+    def recording_record_decision(state: Any, decision: Any) -> Any:
+        n = len(getattr(state, "trace", ()) or ())
+        out = original_record(state, decision)
+        for row in (getattr(state, "trace", ()) or ())[n:]:
+            if row.get("status") == "BLOCKED" and row.get("sutra_id"):
+                b = STATUS.setdefault(row["sutra_id"], {})
+                b["BLOCKED"] = b.get("BLOCKED", 0) + 1
+        return out
+
+    resolver.record_decision = recording_record_decision
+    import engine.core_loop as core_loop
+
+    core_loop.record_decision = recording_record_decision
+
 
 def _record_interaction(sutra_id: str, result: Any) -> None:
     """Outcome of this firing, and which sūtra it followed in the same derivation."""
@@ -111,7 +131,7 @@ def write_suite_sig(path: Path = SUITE_SIG_PATH) -> dict[str, Any]:
                 "status": STATUS.get(sid, {}),
                 "moves": sid in MOVED,
             }
-            for sid in sorted(INVOKED)
+            for sid in sorted(INVOKED | set(STATUS))       # (a rule only ever BLOCKED was never invoked, but it has a status)
         },
         "edges": dict(sorted(EDGES.items(), key=lambda kv: (-kv[1], kv[0]))),
     }

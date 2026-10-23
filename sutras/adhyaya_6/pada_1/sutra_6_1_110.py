@@ -42,7 +42,7 @@ def _matches(state: State) -> bool:
         return False
     if not anga.varnas or not pr.varnas:
         return False
-    if anga.varnas[-1].slp1 not in EC:
+    if anga.varnas[-1].slp1 not in {"e", "o"}:       # एङः: e, o only (ऐ, औ are split by 6.1.78: रायः, नावः)
         return False
     if pr.varnas[0].slp1 != "a":
         return False

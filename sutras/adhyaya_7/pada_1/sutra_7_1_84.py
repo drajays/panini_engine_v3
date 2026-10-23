@@ -18,25 +18,21 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from phonology.varna import parse_slp1_upadesha_sequence
+from engine.declension import anga_and_sup
+from phonology import mk
 
 
 def _site(state: State):
-    if len(state.terms) < 2:
+    """दिव औत् — the word दिव् (div, niranubandha) before su (sau): the aṅga's final v becomes औ (द्यौः); yaṇ then gives dy."""
+    hit = anga_and_sup(state, "7.1.84")
+    if hit is None:
         return None
-    if state.meta.get("P022_7_1_84_div_aut_done"):
+    anga, sup = hit
+    if (anga.meta.get("upadesha_slp1") or "").strip() != "div" or anga.meta.get("7_1_84_done"):
         return None
-    ang = state.terms[0]
-    sup = state.terms[1]
-    if (ang.meta.get("upadesha_slp1") or "").strip() not in {"div", "dyOv"}:
-        # Fallback: accept bare varṇa identity "div".
-        if [v.slp1 for v in ang.varnas] != ["d", "i", "v"]:
-            return None
-    if sup.kind != "pratyaya" or "sup" not in sup.tags:
+    if (sup.meta.get("upadesha_slp1") or "").strip() not in {"s~", "su", "su~"} or anga.varnas[-1].slp1 != "v":
         return None
-    if "sarvanamasthana" not in sup.tags:
-        return None
-    return 0
+    return anga
 
 
 def cond(state: State) -> bool:
@@ -44,13 +40,9 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    i = _site(state)
-    if i is None:
-        return state
-    ang = state.terms[i]
-    ang.varnas = list(parse_slp1_upadesha_sequence("dyOv"))
-    ang.meta["upadesha_slp1"] = "dyOv"
-    state.meta["P022_7_1_84_div_aut_done"] = True
+    anga = _site(state)
+    anga.varnas[-1] = mk("O")
+    anga.meta["7_1_84_done"] = True
     return state
 
 

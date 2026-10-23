@@ -19,51 +19,37 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.declension import anga_and_sup, is_stem
 from phonology     import mk
 
-_GATE_KEY: str = "7_1_93_anaN_93"
-
-
-def _find_sakhi_stem(state: State) -> int | None:
-    for i, t in enumerate(state.terms):
-        if "sakhi_ikarant" not in t.tags:
-            continue
-        if t.meta.get("7_1_93_done"):
-            continue
-        if not t.varnas or t.varnas[-1].slp1 not in {"i", "I"}:
-            continue
-        return i
-    return None
+def _site(state: State):
+    """सखि + su (sau) that is not sambuddhi: the aṅga's last letter i becomes अनङ् (a n; ṅit, so it replaces only the final)."""
+    hit = anga_and_sup(state, "7.1.93")
+    if hit is None:
+        return None
+    anga, sup = hit
+    if not is_stem(anga, "saKi", tadanta=True) or "sambuddhi" in sup.tags or anga.meta.get("7_1_93_done"):
+        return None
+    if (sup.meta.get("upadesha_slp1") or "").strip() not in {"s~", "su", "su~"} or "vib_prathama" not in sup.tags:
+        return None
+    return anga if anga.varnas[-1].slp1 == "i" else None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not state.meta.get("anaN_recipe"):
-        return False
-    return _find_sakhi_stem(state) is not None
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    idx = _find_sakhi_stem(state)
-    if idx is None:
-        return state
-    t = state.terms[idx]
-    # Replace final 'i' with [a, n] (anang = aN after ṅ-IT lopa)
-    t.varnas[-1] = mk("a")
-    t.varnas.append(mk("n"))
-    t.meta["upadesha_slp1"] = "".join(v.slp1 for v in t.varnas)
-    t.meta["7_1_93_done"] = True
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta.pop("anaN_recipe", None)
+    anga = _site(state)
+    anga.varnas[-1:] = [mk("a"), mk("n")]
+    anga.meta["7_1_93_done"] = True
+    anga.tags.add("an_pratipadika")        # the anaṅ-made न् is a prātipadika-final न्: 8.2.7 reads it (as after 7.1.94)
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.1.93",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "anaN sO",
     text_dev              = "अनङ् सौ",
     samagra_slp1          = "asambudDO sO saKyuH anaN",
@@ -75,6 +61,7 @@ SUTRA = SutraRecord(
         "सखि → सखन् → सखान् → सखा।"
     ),
     anuvritti_from        = ('7.1.1',),
+    apavada_of            = ('7.1.92',),     # su: अनङ्, not the ṇidvat of the other sarvanāmasthānas
     cond                  = cond,
     act                   = act,
 )
