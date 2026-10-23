@@ -10,37 +10,36 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from engine.ang_adesha import cli_and_root, parasmaipada, stem, to_ang, vikalpa_ang
 
-_GATE_KEY: str = "3_1_56_sarttiSAstya_56"
+_STEMS = frozenset({"sf", "SAs", "f"})      # सृ गतौ, शासु अनुशिष्टौ, ऋ गतौ: असरत्, अशिषत्, आरत्
+
+
+def _site(state: State):
+    hit = cli_and_root(state)
+    return hit if hit is not None and parasmaipada(state) and stem(hit[1]) in _STEMS else None
 
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.1.56", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.1.56"
+    to_ang(_site(state)[0])
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "3.1.56",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "sarttiSAstyartiByaSca",
     text_dev              = "सर्त्तिशास्त्यर्तिभ्यश्च",
     samagra_slp1          = "sarti-SAs-artiByaH cleH aN",
     samagra_dev           = "सर्ति-शास्-अर्तिभ्यः च्लेः अङ्",
     padaccheda_dev        = "सर्त्ति-शास्ति-अर्तिभ्यः च",
     why_dev               = "धातोः [सर्त्तिशास्त्यर्तिभ्यश्च]-प्रत्ययः विहितः (३.१.56)।",
-    anuvritti_from        = ('3.1.1',),
+    anuvritti_from        = ('3.1.43', '3.1.44', '3.1.48', '3.1.52'),
+    apavada_of            = ('3.1.44',),     # cli → sic is the utsarga; aṅ displaces it for these roots
     cond                  = cond,
     act                   = act,
 )

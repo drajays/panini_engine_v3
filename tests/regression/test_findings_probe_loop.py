@@ -17,8 +17,6 @@ KNOWN_GAPS = {
     ("BvAdi_01_1163", "liT", 3, 1),       # hve: 6.1.33 abhyastasya ca not modelled (juhAva)
     ("BvAdi_01_1162", "liT", 3, 1),       # vye: 6.1.46 na vyo liṭi + 6.1.17 for vyeñ (vivyAya)
     ("JuhotyAdi_03_0002", "loT", 1, 1),   # bhī: guṇa before pit āni (biBayAni)
-    ("Adadi_02_0070", "laT", 3, 2),       # śās: 6.4.34 needs the row's artha (AMENDMENT 25) or svara upadeśa to exempt
-                                          # āṅ-śās icchāyām (02.0012, āśāste); both rows are SAsu~ on the tape (SizwaH)
 }
 
 

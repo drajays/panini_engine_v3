@@ -70,6 +70,8 @@ def dhatu_term_from_row(row: dict, prayoga: str, lakara: str) -> Term:
         # antargaṇa membership (प्वादिः, घटादिः …) — lexical, like the gaṇa
         "antarganas": tuple(row.get("antarganas") or ()),
     }
+    if row.get("dhatu_prefix_slp1"):      # धातुपाठ 2.12 आङः शासु इच्छायाम्: the āṅ belongs to the dhātu (आशास्), so 6.4.34's शास् is not this root
+        meta["dhatu_prefix_slp1"] = row["dhatu_prefix_slp1"]
     karmakatva = dhatu_karmakatva().get(row.get("dhatupatha_id") or "")
     if karmakatva:                        # ashtadhyayi.com dhātupāṭha 'karma' (AMENDMENT 25 §4); a gap row has none
         meta["karmakatva"] = karmakatva

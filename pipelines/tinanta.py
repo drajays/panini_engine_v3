@@ -1451,6 +1451,9 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
     # 3.1.55 cli→aṅ for puṣyādi/dyutādi (parasmaipada only); structural cond (dyut+cli)
     if pada_key == "parasmai":
         state = apply_rule("3.1.55", state)
+    state.meta["pada_asked"] = pada_key        # the cli → aṅ rules are pada-sensitive (3.1.53 parasmai, 3.1.54 ātmane) and the tiṅ is not on the tape yet
+    for _sid in ("3.1.52", "3.1.53", "3.1.54", "3.1.56", "3.1.57", "3.1.58"):    # cli → aṅ: each names its own roots and padas
+        state = apply_rule(_sid, state)
     state = apply_rule("3.1.44", state)   # cli → sic; vacuous if 3.1.55 already fired
     # 3.1.45 शल इगुपधादनिटः क्सः (apavāda of 3.1.44 for शल्-अंत इक्-उपधा अनिट्
     # roots): marks the recipe so 7.2.3/7.3.96 skip वृद्धि/ईट् below (अशिक्षत्,
@@ -1514,6 +1517,11 @@ def _derive_luG(state: State, pada_key: str, purusha: int, vacana: int) -> State
 
     # ── Stage: 1.2.4 apit sārvadhatuka → kṅit ───────────────────────────────
     state = apply_rule("1.2.4", state)
+
+    state = apply_rule("6.1.45", state)    # आदेच उपदेशेऽशिति: ह्वे → ह्वा before the ṅit aṅ
+    state = apply_rule("6.4.64", state)    # आतो लोप इटि च क्ङिति: ahvA+a → ahv+a (अह्वत्)
+    state = apply_rule("6.4.34", state)    # शास इदङ्हलोः: aSizat
+    state = apply_rule("7.4.16", state)    # ऋदृशोऽङि गुणः: asarat, Arat, adarSat
 
     # ── Stage: tiṅ substitutions ─────────────────────────────────────────────
     state = apply_rule("3.4.101", state)   # tas→tām, Tas→tam, Ta→ta, mi→am
@@ -2456,6 +2464,7 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.1.6", state)     # जक्षित्यादयः षट्: abhyasta, so 7.1.4 gives jhi → ati (जाग्रति)
     state = apply_rule("7.1.4", state)
     state = P00_jha_adesha(state)
+    state = apply_rule("6.4.34", state)    # शास इदङ्हलोः: शिष्टः (hal-initial ṅit tiṅ; jhi is anti by now: शासति)
     # 6.4.77 अचि श्नु धातुभ्रुवां य्वोरियुवङौ — ū-final dhātu + a-initial
     # affix → uv (ब्रू+अन्ति → ब्रुव्+अन्ति, after 7.1.3 turns jhi → anti).
     # General (any ū-final dhātu), decisively a no-op for अद्/अस्/दुह्.

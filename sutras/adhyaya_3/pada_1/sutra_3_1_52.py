@@ -13,7 +13,6 @@ from engine.state import State
 from phonology import mk
 
 _ANG_ALL = frozenset({"vac", "KyA"})                    # 3.1.52 वक्ति (also brū's vac), ख्याति — asyati (asu~) needs thuk (7.4.17), not yet
-_ANG_PARASMAI = frozenset({"lip", "sic", "hvA", "hve"})        # 3.1.53 लिपिसिचिह्वश्च (ātmanepada: optional, 3.1.54 — one output only)
 
 
 def _cli_and_root(state: State):
@@ -22,9 +21,7 @@ def _cli_and_root(state: State):
     if cli is None or dh is None or "kartari" not in dh.tags:
         return None
     flat = "".join(v.slp1 for v in dh.varnas)
-    parasmai = not any("atmanepada" in t.tags or ("tin_adesha_3_4_78" in t.tags and "parasmaipada" not in t.tags) for t in state.terms)
-    if flat in _ANG_ALL or (flat in _ANG_PARASMAI and parasmai and (dh.meta.get("upadesha_slp1") or "").strip() in
-                           ("lipa~", "zica~", "hveY", "hvAY", "hve~")):
+    if flat in _ANG_ALL:
         return cli, dh
     return None
 

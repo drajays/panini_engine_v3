@@ -9,29 +9,39 @@ Pāṭha: ashtadhyayi.com data.txt row i=74016 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from engine.ang_adesha import stem
+from phonology import mk
 
-_GATE_KEY: str = "7_4_16_fdfSoNi_16"
+def _site(state: State):
+    """ऋवर्णान्तानां दृशेश्च, before aṅ (the ṅit vikaraṇa of 3.1.52–58): असरत्, आरत्, अदर्शत्. The root is read after it-lopa."""
+    ang = next((i for i, t in enumerate(state.terms) if (t.meta.get("upadesha_slp1") or "").strip() == "aG"), None)
+    if ang is None:
+        return None
+    for t in state.terms[:ang]:
+        if "dhatu" not in t.tags or "abhyasa" in t.tags or t.meta.get("7_4_16_done"):
+            continue
+        root = stem(t)
+        ix = [k for k, v in enumerate(t.varnas) if v.slp1 in "fF"]
+        if ix and (root[-1:] in ("f", "F") or root == "dfS"):
+            return t, ix[-1]
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.4.16", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.4.16"
+    t, k = _site(state)
+    t.varnas[k:k + 1] = [mk("a"), mk("r")]            # guṇa a + rapara r (1.1.51)
+    t.meta["7_4_16_done"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.4.16",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = 'fdfSoNi guRaH',
     text_dev              = 'ऋदृशोऽङि गुणः',
     samagra_slp1          = "aNgasya fdfSaH aNi guRaH",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked

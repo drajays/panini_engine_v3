@@ -10,37 +10,38 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from engine.ang_adesha import cli_and_root, parasmaipada, stem, to_ang, vikalpa_ang
 
-_GATE_KEY: str = "3_1_58_jfstamBumruc_58"
+_STEMS = frozenset({"stamB", "mruc", "mluc", "gruc", "gluc", "glunc", "zasj", "Svi"})   # Kāśikā 3.1.58 (जृष् is not in our dhātupāṭha data yet: ajarat/ajArIt)
+
+
+def _site(state: State):
+    hit = cli_and_root(state)
+    if hit is None or not parasmaipada(state) or stem(hit[1]) not in _STEMS:
+        return None
+    return hit if vikalpa_ang("3.1.58") else None
 
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.1.58", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.1.58"
+    to_ang(_site(state)[0])
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "3.1.58",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = 'jFstamBumrucumlucugrucuglucugluYcuSviByaSca',
     text_dev              = 'जॄस्तम्भुम्रुचुम्लुचुग्रुचुग्लुचुग्लुञ्चुश्विभ्यश्च',
     samagra_slp1          = "jF-stanBu-mrucu-mlucu-grucu-glucu-gluYcu-SviByaH cleH aN vA",
     samagra_dev           = "जॄ-स्तन्भु-म्रुचु-म्लुचु-ग्रुचु-ग्लुचु-ग्लुञ्चु-श्विभ्यः च्लेः अङ् वा",
     padaccheda_dev        = "जॄ-स्तम्भु-म्रुचु-म्लुचु-ग्रुचु-ग्लुचु-ग्लुञ्चु-श्विभ्यः च",
     why_dev               = "धातोः [जृस्तम्भुम्रुचुम्लुचुग्रुचुग्लुचुग्लुञ्चुश्विभ्यश्च]-प्रत्ययः विहितः (३.१.58)।",
-    anuvritti_from        = ('3.1.1',),
+    anuvritti_from        = ('3.1.43', '3.1.44', '3.1.48', '3.1.52'),
+    apavada_of            = ('3.1.44',),     # cli → sic is the utsarga; aṅ displaces it for these roots
     cond                  = cond,
     act                   = act,
 )
