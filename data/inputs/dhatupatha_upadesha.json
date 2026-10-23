@@ -40911,10 +40911,10 @@
         "अँ"
       ],
       "flags": {
-        "anit": false,
-        "set": true,
+        "anit": true,
+        "set": false,
         "vet": false,
-        "ekac": false,
+        "ekac": true,
         "udatta": false
       },
       "notes": "अद्भक्षणे laṭ kartari — śap + 2.4.72 luk, खरि च 8.4.55, no guṇa."

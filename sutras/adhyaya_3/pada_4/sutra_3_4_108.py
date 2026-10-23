@@ -94,7 +94,7 @@ SUTRA = SutraRecord(
         "विधि-लिङि झि-आदेशस्य स्थाने जुस् (j-cuṭु-it → लोपः → [u,s])।"
     ),
     anuvritti_from        = ('3.4.102',),
-    apavada_of            = ("7.1.3",),   # झोऽन्तापवादः — Kāśikā 3.4.108 (cited above)
+    apavada_of            = ("7.1.3", "7.1.4"),   # झोऽन्तापवादः; 3.4.109 अभ्यस्तात् also displaces 7.1.4 अदभ्यस्तात् in laṅ (अजक्षुः, not *अजक्षत्) — Kāśikā 3.4.108 (cited above)
     cond                  = cond,
     act                   = act,
 )

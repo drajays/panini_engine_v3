@@ -43,6 +43,8 @@ _PHASE_RANGES: dict[str, tuple[tuple[tuple[int, ...], tuple[int, ...]], ...]] = 
         ((2, 1, 1), (2, 2, 38)),
         ((2, 4, 1), (2, 4, 85)),
         ((3, 1, 1), (3, 4, 117)),
+        # 6.1.6 जक्षित्यादयः षट्: abhyasta saṃjñā of the root — 3.4.109 अभ्यस्तात् (jus in laṅ) reads it in this phase
+        ((6, 1, 6), (6, 1, 6)),
     ),
     "angakarya": (
         # 6.1.1–6.1.71 (dvitva, samprasāraṇa, ṣatva…) come *before* saṃhitā (6.1.72 संहितायाम्) and, by

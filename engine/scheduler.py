@@ -282,6 +282,23 @@ def effective_candidates(candidates: List[str], state: State) -> List[str]:
     for sid in candidates:
         if is_gate_only(sid):
             continue
+        rec = SUTRA_REGISTRY.get(sid)
+        if getattr(rec, "sutra_type", None) is SutraType.VIBHASHA and not any(
+                isinstance(f, dict) and f.get("sutra_id") == sid for f in state.vibhasha_forks):
+            # a वा / विभाषा that the reading declines is still a question the derivation put (engine.vikalpa.explore reads it) —
+            # when the other reading would change the tape; asked once
+            from engine.vikalpa import choose
+
+            try:
+                with choose({sid: True}):
+                    other = tape_fingerprint(probe(sid, state)) != before
+            except (MemoryError, RecursionError):
+                raise
+            except Exception:
+                other = False
+            if other:
+                keep.append(sid)
+                continue
         key = (sid, before, state.phase, _meta_key(state), _term_meta_key(state), _gate_key(state), tuple(sorted(_vikalpa_policy().items())))
         hit = _EFFECTIVE_MEMO.get(key)
         if hit is None:

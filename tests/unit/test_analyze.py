@@ -38,7 +38,7 @@ def test_vidyut_reading_verified_by_derivation():
 def test_wrong_reading_is_a_gap_not_an_answer():
     w = an._word("शास्ति", [_tin(SAS, purusha="uttama")])
     assert w["status"] == "oracle_only"
-    assert w["readings"][0]["status"] == "differs" and w["readings"][0]["produced_dev"] == "शास्मि"
+    assert w["readings"][0]["status"] == "differs" and "शास्मि" in w["readings"][0]["produced_dev"].split(" / ")   # 8.4.47 anaci ca: शास्स्मि is the other reading
 
 
 def test_avyaya_and_unknown():

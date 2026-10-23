@@ -162,6 +162,33 @@ def run_sapadasaptadhyayi(state: State) -> State:
     return state
 
 
+# (gaṇa, lakāra, pada) classes whose forms the rule-driven loop derives instead of the hand-ordered recipe spines.
+# Ratcheted by measurement: a class enters only when `tools.tri_compare` shows loop = Vidyut on its roots (the recipe
+# for the class then stays only as a fixture); the set never shrinks without a failing test to name the reason.
+LOOP_CLASSES: frozenset[tuple[int, str, str]] = frozenset({
+    # gaṇa 2 parasmaipada, all ten lakāras: loop vs Vidyut 60 of 4,050 cells off (daridrā 6.4.114, vaś, zasti), recipe 815 of 4,680
+    # liṭ stays on the recipe: its start tape in the loop lacks 3.2.115's lakara_liT, so 2.4.40 (ad → ghas, optional) never fires
+    (2, lak, "parasmai") for lak in ("laT", "luT", "lRT", "loT", "laG", "liG", "AsIrliG", "luG", "lRG")
+})
+
+
+def _loop_routed(row: dict, lakara: str, prayoga: str, pada: str | None, upasargas, san_recipe: bool, nic_recipe: bool) -> bool:
+    if prayoga != "kartari" or upasargas or san_recipe or nic_recipe:
+        return False
+    label = row.get("pada_label_dev", "")
+    asked = pada or ("parasmai" if "परस्मैपदी" in label else "atmane" if "आत्मनेपदी" in label else None)
+    return (row.get("gana"), lakara, asked) in LOOP_CLASSES
+
+
+def derive_tinanta_by_loop(ref: str, lakara: str, purusha: int, vacana: int, pada: str | None) -> State:
+    """The plain kartari tiṅanta through the scanner + resolver loop (start tape: dhātu + lakāra + the tiṅ vivakṣā picks)."""
+    from types import SimpleNamespace
+    from tools.autonomy_report import run_autonomously, start_state     # ponytail: the loop driver lives in tools; move it here when the recipes go
+
+    case = SimpleNamespace(kind="tinanta", args=(ref, lakara, purusha, vacana), pada=pada)
+    return run_autonomously(start_state(case), "", ref, 250).state
+
+
 def derive_autonomous_tinanta(
     upadesha_slp1: str,
     lakara: str,
@@ -196,6 +223,8 @@ def derive_autonomous_tinanta(
         return run_sapadasaptadhyayi(state)
 
     row = _dhatu_row_by_upadesha(upadesha_slp1)
+    if _loop_routed(row, lakara, prayoga, pada, upasargas, san_recipe, nic_recipe):
+        return derive_tinanta_by_loop(upadesha_slp1, lakara, purusha, vacana, pada)
     state, gana, pada_key, complete = _bootstrap_tinanta_derivation(
         row,
         lakara,

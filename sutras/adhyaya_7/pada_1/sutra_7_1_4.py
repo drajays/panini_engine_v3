@@ -37,10 +37,13 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
-def _has_abhyasa(state: State) -> bool:
+def _has_abhyasa(state: State, jh_idx: int | None = None) -> bool:
     if any((t.meta.get("upadesha_slp1") or "").strip() == "caG" for t in state.terms):
         return False        # the aṅga of a caṅ-luṅ is dhātu+caṅ, not an abhyasta ending: अचूचुरन्, not *अचूचुरत्
-    return any("abhyasa" in t.tags or "abhyasta" in t.tags or t.meta.get("slu_replaced_sap") for t in state.terms)   # ślu ⇒ abhyasta (6.1.10) to come
+    if any("abhyasa" in t.tags or t.meta.get("slu_replaced_sap") for t in state.terms):
+        return True
+    # 6.1.6 roots are abhyasta without a reduplication; the aṅga is abhyasta only while nothing (aṅ: अशिषन्) stands between the root and jhi
+    return jh_idx is not None and jh_idx > 0 and "abhyasta" in state.terms[jh_idx - 1].tags   # ślu ⇒ abhyasta (6.1.10) to come
 
 
 def _find_jh_term(state: State):
@@ -64,14 +67,13 @@ def _find_jh_term(state: State):
 
 
 def cond(state: State) -> bool:
-    return _has_abhyasa(state) and _find_jh_term(state) is not None
+    hit = _find_jh_term(state)
+    return hit is not None and _has_abhyasa(state, hit[0])
 
 
 def act(state: State) -> State:
-    if not _has_abhyasa(state):
-        return state
     result = _find_jh_term(state)
-    if result is None:
+    if result is None or not _has_abhyasa(state, result[0]):
         return state
     idx, kind = result
     old = state.terms[idx]
