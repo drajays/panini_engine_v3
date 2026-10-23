@@ -46,7 +46,7 @@ def _find_ghu_abhyasta(state: State) -> int | None:
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags or "abhyasa" in t.tags:
             continue
-        if not any("abhyasa" in u.tags for u in state.terms):
+        if "abhyasta" not in t.tags and not any("abhyasa" in u.tags for u in state.terms):    # 6.1.6 roots are abhyasta unreduplicated
             continue
         nxt = state.terms[i + 1]
         if "kngiti" not in nxt.tags and not nxt.meta.get("is_apit"):

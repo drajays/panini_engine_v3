@@ -1,5 +1,12 @@
 # Handover — Sūtra Coverage → 100 %  (ON HOLD as of 2026-10-03; resume from here)
 
+## SESSION 2026-10-23 — claude: all-sūtra plan (`docs/ALL_SUTRA_PLAN.md`, LK-first worklist `docs/data/lk_worklist.json`)
+6.1.6 real (jakṣ-ādi = abhyasta from `antarganas`); 7.1.4 / 6.4.112 read it; adādi laṭ + loṭ spines wired (jakṣati, jāgrati,
+daridrati, cakāsati; loṭ …atu; yāntu fixed by 6.1.101). Tests `tests/regression/test_jakshityadi_abhyasta.py`.
+**Gaps found (not fixed):** (1) no gaṇa-2 spine for laṅ/liṅ/āśīrliṅ/lṛṭ/lṛṅ except `ad` (laṅ ad gives *Adt*); (2) loṭ 3sg jāgṛ gives
+*jAgftu* — 3.4.86 tu must stay pit (1.1.56 sthānivat) → jāgartu; (3) 6.4.114 is a narrow demo with an arm key (daridritaḥ);
+(4) homographs "as"/"SAs" resolve to the wrong row. **Next:** gaṇa-2 laṅ spine, then 6.1.7–6.1.12 (dvitva block).
+
 ## SESSION 2026-10-21 (morning) — cursor: absolutives steps (a), (b), (c) incl. lyap done
 Plan: `docs/INTEGRATION_CLIENTS.md` "Decisions" item 4. (a) vivakṣā `kala=pUrvakAla` and `samAnakartfka`
 (`data/inputs/vivaksha_schema.json`, cited from samagra). (b) 3.4.21 asks both through `vivaksita` and attaches the upadeśa

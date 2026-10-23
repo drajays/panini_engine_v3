@@ -2282,6 +2282,8 @@ def _derive_loT_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
     if purusha == 2 and vacana == 1:
         state = apply_rule("3.4.87", state)
 
+    state = apply_rule("6.1.6", state)     # जक्षित्यादयः षट्: abhyasta → 7.1.4 (jhi → ati → atu)
+    state = apply_rule("7.1.4", state)
     state = P00_jha_adesha(state)
 
     state = apply_rule("3.4.86", state)
@@ -2300,6 +2302,9 @@ def _derive_loT_ad(state: State, pada_key: str, purusha: int, vacana: int) -> St
     if purusha == 2 and vacana == 1:
         state = apply_rule("6.4.101", state)
 
+    state = apply_rule("6.4.112", state)   # abhyasta ā-final root before ṅit ati/atu (दरिद्रतु)
+    state = apply_rule("6.1.77", state)    # जाग्रतु
+    state = apply_rule("6.1.101", state)   # यान्तु
     state = apply_rule("1.4.14", state)
 
     state = _merge_pada(state)
@@ -2430,6 +2435,8 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("6.4.111", state)
     # 7.4.50 तासस्त्योर्लोपः — अस्+सि → असि (s of the root before s-initial sip)
     state = apply_rule("7.4.50", state)
+    state = apply_rule("6.1.6", state)     # जक्षित्यादयः षट्: abhyasta, so 7.1.4 gives jhi → ati (जाग्रति)
+    state = apply_rule("7.1.4", state)
     state = P00_jha_adesha(state)
     # 6.4.77 अचि श्नु धातुभ्रुवां य्वोरियुवङौ — ū-final dhātu + a-initial
     # affix → uv (ब्रू+अन्ति → ब्रुव्+अन्ति, after 7.1.3 turns jhi → anti).
@@ -2439,6 +2446,8 @@ def _derive_laT_adadi_kartari(state: State, purusha: int, vacana: int) -> State:
     state = apply_rule("1.4.14", state)
     # 6.1.101 अकः सवर्णे दीर्घः — ā-final root + a-initial affix (या + अन्ति → यान्ति); a no-op for the
     # consonant-final roots (अद्, दुह्) and for अस् / ब्रू, whose a / ū are gone or changed by now.
+    state = apply_rule("6.4.112", state)   # श्नाभ्यस्तयोरातः: abhyasta ā-final root loses ā before ṅit ati (दरिद्रति)
+    state = apply_rule("6.1.77", state)    # इको यणचि: जागृ + अति → जाग्रति
     state = apply_rule("6.1.101", state)
     # 8.2.32 दादेर्धातोर्घः — द्-initial ह्-final dhātu (दुह्, दिह्…) → घ् before
     # a झल्-initial affix (दुह्+ति → दुघ्+ति, apavāda to 8.2.31 हो ढः). Needs

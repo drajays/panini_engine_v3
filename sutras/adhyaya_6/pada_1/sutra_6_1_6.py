@@ -10,19 +10,25 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import samhita_gate_eligible
 
-_GATE_KEY: str = "6_1_6_jakzityAda_6"
+# जक्षित्यादिः is the dhātupāṭha's antargaṇa (7 roots: jakṣ + the following ṣaṭ, Kāśikā/SK); it is read
+# from the dhātu Term (meta["antarganas"], lexical like the gaṇa), as 1.2.1 reads कुटादिः.
+_ANTARGANA = "जक्षित्यादिः"
+
+
+def _site(state: State):
+    for t in state.terms:
+        if "dhatu" in t.tags and "abhyasta" not in t.tags and _ANTARGANA in (t.meta.get("antarganas") or ()):
+            return t
+    return None
 
 
 def cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.1.6", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.1.6"
+    _site(state).tags.add("abhyasta")      # abhyasta saṃjñā without reduplication; 7.1.4 reads it (jAgrati, not *jAgfanti)
     return state
 
 
