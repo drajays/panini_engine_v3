@@ -10,27 +10,44 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import samhita_gate_eligible
+from engine.nimitta_predicates import is_kit
+from phonology import JHAL, mk
 
-_GATE_KEY: str = "6_1_58_sfjidfSorJ_58"
+# सृजि-दृशोः: the two roots the sūtra names (Kāśikā: सृज विसर्गे, दृशिर् प्रेक्षणे), read as the dhātu stands after it-lopa
+_ROOTS = {"sfj", "dfS"}
+
+
+def _site(state: State):
+    """The dhātu followed by a non-kit affix that begins with a jhal (the iṭ of 7.2.35 is a vowel: dadarSiTa takes no am)."""
+    for i, t in enumerate(state.terms[:-1]):
+        lopa = t.meta.get("it_lopa_done")       # the root as it stood after it-lopa — guṇa may already have changed the tape
+        stem = lopa[-1] if lopa else "".join(v.slp1 for v in t.varnas)
+        if "dhatu" not in t.tags or t.meta.get("6_1_58_done") or stem not in _ROOTS:
+            continue
+        nxt = next((u for u in state.terms[i + 1:] if u.varnas), None)
+        if nxt is None or nxt.varnas[0].slp1 not in JHAL or is_kit(nxt) or "it:kit" in nxt.tags:
+            continue
+        return t
+    return None
 
 
 def cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.1.58", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.1.58"
+    t = _site(state)
+    # अम् is mit (1.1.47): its a stands after the last vowel; yaṇ (6.1.77) then gives sra-j, dra-ś
+    k = max(n for n, v in enumerate(t.varnas) if v.slp1 in "aAiIuUfFxXeEoO")
+    t.varnas.insert(k + 1, mk("a", "am_agama"))
+    t.meta["6_1_58_done"] = True
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "6.1.58",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
-    text_slp1             = "sfjidfSorJalyamakiti",
+        text_slp1             = "sfjidfSorJalyamakiti",
     text_dev              = "सृजिदृशोर्झल्यमकिति",
     samagra_slp1          = "sfji-dfSoH Jali am akiti upadeSe",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
     samagra_dev           = "सृजि-दृशोः झलि अम् अकिति उपदेशे",

@@ -108,6 +108,8 @@ def pada_merge(state: State) -> None:
 
     dh = next((t for t in terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
     pada_meta = {"dhatu_upadesha": (dh.meta.get("upadesha_slp1") or "") if dh else ""}
+    if dh is not None and dh.meta.get("it_lopa_done"):    # the root's identity after it-lopa survives the merge (8.2.36 names sfj, not "sraj")
+        pada_meta["it_lopa_done"] = dh.meta["it_lopa_done"]
     stem = next((t for t in terms if "prātipadika" in t.tags and t.meta.get("upadesha_slp1")), None)
     if stem is not None:  # lexical identity of the stem survives the merge (pronoun ādeśas, 8.1.20–26)
         pada_meta["stem_upadesha_slp1"] = stem.meta["upadesha_slp1"]

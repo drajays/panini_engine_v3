@@ -42,3 +42,9 @@ aṅga rule); with iṭ on the sic, 7.2.4 neṭi forbids the hal-anta vṛddhi o
 
 ajādi ṇijanta before caṅ (aṭ→āṭ, `awi`): the second ekāc `wi` is doubled while the ṇi is still there, then 6.4.51 drops it from the root only → `Awiwat`. Evidence: brain prakriyā of
 `aṭ` luṅ (deriv 142, step 10: 6.1.11 / 6.4.51 / 1.1.59 / 6.1.2). Pinned by `tests/regression/test_tinanta_nijanta_ajadi_caN.py`.
+
+## Addition (2026-10-23): named override 6.1.58 over 7.3.84 / 7.3.86
+
+sṛj / dṛś before a non-kit jhal-initial affix: am (a after the last vowel) goes in first — `sṛj + tā → sra-j + tā → स्रष्टा`, `द्रष्टा`, `द्रष्टव्य`, `दद्रष्ट` — not guṇa first (`*सर्क्ता`, `*दर्ष्टा`).
+The two are not a mutual विप्रतिषेध: 6.1.58 stays applicable after the guṇa (so it is nitya, PŚ 38) while the am removes the guṇa's site. The resolver's `purva`
+layer reads one-sided kills as conflict and would hand it to para. Evidence: brain 6.1.58 (Kāśikā; SK `drazwA`, `srazwA`; Vidyut floor lists 6.1.58 before 1.4.13). Pinned by `tests/regression/test_6_1_58_am.py`.

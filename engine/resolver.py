@@ -46,6 +46,8 @@ CONFLICT_OVERRIDES: Dict[FrozenSet[str], str] = {
     frozenset({"6.4.71", "6.1.11", "6.4.51"}): "6.4.71",   # likewise the aṭ
     frozenset({"6.1.11", "6.4.51"}): "6.1.11",     # docs/AMENDMENT_19.md: ṇijanta caṅ — dvitva of the ṇyanta aṅga first, ṇi-lopa after (Awiwwat; 1.1.59 dvirvacane'ci)
     frozenset({"6.1.8", "6.1.45"}): "6.1.45",       # docs/AMENDMENT_19.md: glai/ṣṭyai/vai liṭ — ātva on the bare root, then dvitva (jaglau)
+    frozenset({"6.1.58", "7.3.84"}): "6.1.58",       # docs/AMENDMENT_19.md: srazwA, drazwA — am goes in first (nitya: guṇa first would not undo it, am undoes the guṇa site)
+    frozenset({"6.1.58", "7.3.86"}): "6.1.58",
     frozenset({"7.3.96", "7.4.50"}): "7.3.96",     # docs/AMENDMENT_19.md: आसीः — īṭ comes first, so the two s's are no longer adjacent
 }
 

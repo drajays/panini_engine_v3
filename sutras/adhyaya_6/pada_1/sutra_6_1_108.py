@@ -40,10 +40,7 @@ def _find(state: State):
         if at + 1 < len(vs) and vs[at + 1].slp1 in "aAiIuUfFxeEoO":
             return (dh_i, at + 1)
         return None
-    for i in range(len(vs) - 1):
-        if vs[i].slp1 in IK and vs[i + 1].slp1 == "a":
-            return (dh_i, i + 1)
-    return None
+    return None            # no samprasāraṇa on the tape: an ik followed by a is yaṇ's site (6.1.77: sra-j), not pūrvarūpa
 
 
 def cond(state: State) -> bool:

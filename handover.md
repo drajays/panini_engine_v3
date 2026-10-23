@@ -5,7 +5,9 @@
 daridrati, cakāsati; loṭ …atu; yāntu fixed by 6.1.101). Tests `tests/regression/test_jakshityadi_abhyasta.py`.
 **Gaps found (not fixed):** (1) no gaṇa-2 spine for laṅ/liṅ/āśīrliṅ/lṛṭ/lṛṅ except `ad` (laṅ ad gives *Adt*); (2) loṭ 3sg jāgṛ gives
 *jAgftu* — 3.4.86 tu must stay pit (1.1.56 sthānivat) → jāgartu; (3) 6.4.114 is a narrow demo with an arm key (daridritaḥ);
-(4) homographs "as"/"SAs" resolve to the wrong row. **Next:** gaṇa-2 laṅ spine, then 6.1.7–6.1.12 (dvitva block).
+(4) homographs "as"/"SAs" resolve to the wrong row. **Done after that:** laṅ jus after abhyasta (3.4.109); 6.1.58 am-āgama (override over 7.3.84/86 in AMENDMENT_19; 6.1.108 surface fallback removed;
+8.2.36 reads `it_lopa_done`, kept on the merged pada). 6.1.7/6.1.12 are Vedic → Vedic phase. **Open:** liṭ dṛś *dajdarSa*; liṭ 2sg sṛj lacks the
+iṭ/am fork; **Next:** 6.1.37, 6.1.59, then the other LK items among 6.1 placeholders (`docs/data/lk_worklist.json`).
 
 ## SESSION 2026-10-21 (morning) — cursor: absolutives steps (a), (b), (c) incl. lyap done
 Plan: `docs/INTEGRATION_CLIENTS.md` "Decisions" item 4. (a) vivakṣā `kala=pUrvakAla` and `samAnakartfka`

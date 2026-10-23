@@ -1663,9 +1663,18 @@ def P00_mRj_abhyasa_hrasva(s: State, *, first_hal_only: bool = False) -> State:
 
 # ── Round-3 deduplication canonicals ─────────────────────────────────────────
 
+def _am_agama_6_1_58(s: State) -> State:
+    """6.1.58 सृजिदृशोर्झल्यमकिति — am goes in before the guṇa takes its site; yaṇ (6.1.77) then gives sra-j / dra-ś."""
+    s = apply_rule("6.1.58", s)
+    if any(t.meta.get("6_1_58_done") for t in s.terms):
+        s = apply_rule("6.1.77", s)
+    return s
+
+
 def P00_guna_7_3_84(s: State) -> State:
     """aṅga guṇa: 1.2.1 (kuṭādi/गाङ् → ṅit, 1.1.5 blocks guṇa) → 7.3.84 सार्वधातुकार्धधातुकयोः
     → 1.1.51 उरण् रपरः (ṛ → ar: स्मरतु)."""
+    s = _am_agama_6_1_58(s)
     s = apply_rule("1.2.1", s)
     s = apply_rule("7.3.84", s)
     s = apply_rule("1.1.51", s)
@@ -1674,6 +1683,7 @@ def P00_guna_7_3_84(s: State) -> State:
 
 def P00_guna_7_3_86(s: State) -> State:
     """laghūpadha guṇa: 1.2.1 (kuṭādi → ṅit) → 7.3.86 पुगन्तलघूपधस्य च (कुटिता, not कोटिता)."""
+    s = _am_agama_6_1_58(s)
     s = apply_rule("1.2.1", s)
     s = apply_rule("7.3.86", s)
     return s

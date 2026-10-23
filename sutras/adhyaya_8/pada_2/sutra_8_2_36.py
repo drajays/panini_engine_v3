@@ -40,7 +40,8 @@ def _site(state: State):
         if not span or span[1] != k:
             continue
         root = "".join(slp(x) for x in c[span[0]:span[1] + 1])
-        if ch in ("S", "C") or root in _J_ROOTS:
+        lopa = c[k][0].meta.get("it_lopa_done")      # the root as it stood after it-lopa: am (6.1.58) or guṇa may have changed the tape
+        if ch in ("S", "C") or root in _J_ROOTS or (lopa and lopa[-1] in _J_ROOTS):
             return c[k]
     return None
 
