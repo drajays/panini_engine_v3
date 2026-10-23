@@ -341,6 +341,13 @@ def _samprasarana(state: State) -> State:
     return state
 
 
+def _samprasarana_ngiti(state: State) -> State:
+    """6.1.16 ङिति च for a root already doubled (liṭ): 6.1.16 → 1.1.45 → 6.1.108 → 6.4.2 (self-gating)."""
+    for sid in ("6.1.16", "1.1.45", "6.1.108", "6.4.2"):
+        state = apply_rule(sid, state)
+    return state
+
+
 def _lit_samprasarana(state: State) -> State:
     """liṭ: 6.1.15 वचिस्वपियजादीनां किति only (not the ṅiti list 6.1.16: वय् stays) → 1.1.45 → 6.1.108 → 6.4.2.
     वे / व्ये / ह्वे / श्वि wait for their own ādeśas (see sutra_6_1_17.NOT_YET_DERIVED)."""
@@ -418,6 +425,7 @@ def _apply_vikarana(state: State, gana: int) -> State:
         # second 1.2.4 pass (see the upasarga+kṛ ātmanepada spine above).
         state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
         state = apply_rule("1.2.4", state)
+        state = _samprasarana(state)       # 6.1.16 ङिति: व्यध् → विध्यति
         # 6.4.24 अनिदितां हल उपधायाः क्ङिति: nasal upadhā drops before the ṅit
         # vikaraṇa (स्कुभ्नाति, रज्यति)
         state = apply_rule("6.4.24", state)
@@ -493,6 +501,8 @@ def _apply_vikarana(state: State, gana: int) -> State:
         state = P00_lashakvataddhite_it_lopa_chain(state)
         state.samjna_registry.pop("1.2.4_sarvadhatukam_apit", None)
         state = apply_rule("1.2.4", state)
+        state = _samprasarana(state)       # 6.1.16 ङिति: ग्रह् → गृह्णाति, ज्या → जिनाति
+        state = apply_rule("7.3.80", state)    # प्वादीनां ह्रस्वः again: 6.4.2 made jyA→jI long, the pvādi list shortens it (जिनाति)
         # 6.4.24 अनिदितां हल उपधायाः क्ङिति: nasal upadhā drops before the ṅit
         # vikaraṇa (स्कुभ्नाति, रज्यति)
         state = apply_rule("6.4.24", state)
@@ -817,6 +827,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("6.1.4", state)
         state.meta["sandhi_6_1_5_recipe"] = True
         state = apply_rule("6.1.5", state)
+        state = _samprasarana_ngiti(state)    # 6.1.16 ङिति च (see the no-iṭ path)
         state = apply_rule("6.1.17", state)   # लिट्यभ्यासस्योभयेषाम्
         # 7.4.60 halādiḥ śeṣaḥ — trim CVC abhyāsa to CV (e.g. paW → pa)
         state = apply_rule("7.4.60", state)
@@ -843,6 +854,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
         state = apply_rule("6.1.4", state)
         state.meta["sandhi_6_1_5_recipe"] = True
         state = apply_rule("6.1.5", state)
+        state = _samprasarana_ngiti(state)    # 6.1.16 ङिति च: kit liṭ ending — विविधतुः, जगृहतुः (after the dvitva, as 6.1.17 has run on the abhyāsa)
         state = apply_rule("6.1.17", state)   # लिट्यभ्यासस्योभयेषाम्: the abhyāsa of वच् / स्वप् / यजादि: उ-वच्, इ-यज्, सु-स्वप्
         # 7.4.60 halādiḥ śeṣaḥ — trim CVC abhyāsa to CV (e.g. paW → pa)
         state = apply_rule("7.4.60", state)
@@ -888,6 +900,7 @@ def _derive_lit(state: State, pada_key: str, purusha: int, vacana: int) -> State
     state = apply_rule("6.4.120", state)
     # 6.4.98 गमहनजनखनघसां लोपः क्ङित्यनङि — जग्मतुः, जघ्नुः (self-gates)
     state = apply_rule("6.4.98", state)
+    state = apply_rule("7.4.60", state)    # halādiḥ śeṣaḥ again: the abhyāsa jfh → jah (6.1.17 gave it the root's h) → ja (जगृहतुः)
 
     # ── 7.4.73 bhavateraḥ (abhyāsa u→a) — only for bhū ─────────────────────────
     _dht = next((t for t in state.terms if "dhatu" in t.tags and "abhyasa" not in t.tags), None)
