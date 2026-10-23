@@ -169,6 +169,16 @@ LOOP_CLASSES: frozenset[tuple[int, str, str]] = frozenset({
     # gaṇa 2 parasmaipada, all ten lakāras: loop vs Vidyut 60 of 4,050 cells off (daridrā 6.4.114, vaś, zasti), recipe 815 of 4,680
     # liṭ stays on the recipe: its start tape in the loop lacks 3.2.115's lakara_liT, so 2.4.40 (ad → ghas, optional) never fires
     (2, lak, "parasmai") for lak in ("laT", "luT", "lRT", "loT", "laG", "liG", "AsIrliG", "luG", "lRG")
+} | {
+    # sig/loop_gauge.json (loop vs Vidyut, 8 roots × 9 cells) against tools.vsweep (recipe): the classes the loop clearly wins
+    (9, lak, "parasmai") for lak in ("laT", "liT", "luT", "lRT", "loT", "laG", "liG", "AsIrliG", "luG", "lRG")
+} | {
+    (5, lak, "parasmai") for lak in ("laT", "luT", "lRT", "loT", "laG", "liG", "AsIrliG", "lRG")
+} | {
+    (7, "liT", "parasmai"), (7, "loT", "parasmai"), (7, "AsIrliG", "parasmai"),
+    (3, "liT", "parasmai"), (3, "liG", "parasmai"),
+    (6, "AsIrliG", "parasmai"), (6, "lRG", "parasmai"),
+    (10, "luG", "parasmai"),      # gaṇa 1 āśīrliṅ stays: its loop trace applies tripāḍī rules before 8.2.1 opens (test_the_tripadi_is_asiddha_both_ways)
 })
 
 
