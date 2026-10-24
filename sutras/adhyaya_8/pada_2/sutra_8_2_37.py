@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from phonology.pratyahara import HAL
 from phonology    import mk
 from sutras.adhyaya_8.pada_2._tape import (
     AC, BAS_TO_BHAS, JHAS, dhatu_span, flat, followed_by_jhal_or_end, slp, substitute,
@@ -35,7 +36,13 @@ def _site(state: State):
             continue                                   # एकाचः
         nxt = slp(c[b + 1]) if b + 1 < len(c) else ""
         nxt2 = slp(c[b + 2]) if b + 2 < len(c) else ""
-        if nxt == "s" or (nxt == "D" and nxt2 == "v") or b + 1 >= len(c):
+        # पदान्ते: the stem of a subanta is a pada before a hal-initial sup (1.4.17), though the tape is cut into one word only after
+        pada_end_before_sup = False
+        if b + 1 < len(c):
+            term, vi, _ = c[b + 1]
+            pada_end_before_sup = ("prātipadika" in term.tags and "pratyaya_start_v" in term.varnas[vi].tags
+                                   and term.varnas[vi].slp1 in HAL)
+        if nxt == "s" or (nxt == "D" and nxt2 == "v") or b + 1 >= len(c) or pada_end_before_sup:
             return c[a]
     return None
 

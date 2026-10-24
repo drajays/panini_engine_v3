@@ -24,6 +24,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from phonology.pratyahara import HAL
 
 
 def _hit(state: State):
@@ -35,8 +36,8 @@ def _hit(state: State):
     vs = state.terms[0].varnas
     if len(vs) < 2:
         return None
-    if vs[-1].slp1 != "t" or vs[-2].slp1 != "n":
-        return None
+    if vs[-1].slp1 not in HAL or vs[-2].slp1 not in HAL or "sambuddhi" in state.terms[0].tags and vs[-1].slp1 == "n":
+        return None             # a conjunct at the end of the pada loses its last letter (भवान्त् → भवान्, अनड्वान्ह् → अनड्वान्)
     return len(vs) - 1
 
 
@@ -73,15 +74,37 @@ def _hit_P022_final_v(state: State):
     return 0, len(left.varnas) - 1
 
 
+def _hit_premerge(state: State):
+    """संयोगान्तस्य लोपः before the pada is cut: a stem that ends in a conjunct (पुम्स्, दिव्य् …) followed by a hal-initial svādi sup is a pada
+    (1.4.17); its last letter goes before 8.2.66 can make it a ru (Pāṇini's order inside the tripāḍī: 8.2.23 before 8.2.66)."""
+    if len(state.terms) < 2:
+        return None
+    stem, sup = state.terms[-2], state.terms[-1]
+    if "sup" not in sup.tags or "prātipadika" not in stem.tags or not sup.varnas or sup.varnas[0].slp1 not in HAL:
+        return None
+    if "sarvanamasthana" in sup.tags or stem.meta.get("8_2_23_done"):
+        return None
+    vs = stem.varnas
+    if len(vs) < 2 or vs[-1].slp1 != "s" or vs[-2].slp1 not in {"m", "M"}:
+        return None
+    return len(vs) - 1
+
+
 def cond(state: State) -> bool:
     return (
-        _hit(state) is not None
+        _hit_premerge(state) is not None
+        or _hit(state) is not None
         or _hit_P022_final_v(state) is not None
         or _hit_asmad_ns(state) is not None
     )
 
 
 def act(state: State) -> State:
+    pre = _hit_premerge(state)
+    if pre is not None:
+        del state.terms[-2].varnas[pre]
+        state.terms[-2].meta["8_2_23_done"] = True
+        return state
     hit = _hit_P022_final_v(state)
     if hit is not None:
         ti, vi = hit

@@ -13,8 +13,23 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
+from engine.declension import PATHIN_WORDS, anga_and_sup, is_stem
 from engine.state import State
 from phonology import mk
+
+
+def _site_real(state: State):
+    """इतोऽत् सर्वनामस्थाने — पथिन् / मथिन् / ऋभुक्षिन् before a sarvanāmasthāna sup: the i of the aṅga becomes a (पन्थानौ, ऋभुक्षाणः)."""
+    hit = anga_and_sup(state, "7.1.86")
+    if hit is None:
+        return None
+    anga, sup = hit
+    if not is_stem(anga, *PATHIN_WORDS, tadanta=True) or "sarvanamasthana" not in sup.tags or anga.meta.get("7_1_86_done"):
+        return None
+    for vi, v in enumerate(anga.varnas):
+        if v.slp1 == "i" and vi == len(anga.varnas) - 2:        # the i of -in (or, after 7.1.85's ā, of -iA)
+            return anga, vi
+    return None
 
 
 def _site(state: State) -> int | None:
@@ -42,10 +57,16 @@ def _site(state: State) -> int | None:
 
 
 def cond(state: State) -> bool:
-    return _site(state) is not None
+    return _site(state) is not None or _site_real(state) is not None
 
 
 def act(state: State) -> State:
+    real = _site_real(state)
+    if real is not None:
+        anga, vi = real
+        anga.varnas[vi] = mk("a")
+        anga.meta["7_1_86_done"] = True
+        return state
     hit = _site(state)
     if hit is None:
         return state

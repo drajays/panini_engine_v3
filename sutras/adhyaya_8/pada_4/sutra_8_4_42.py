@@ -10,26 +10,38 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import tripadi_gate_eligible
 
-_GATE_KEY: str = "8_4_42_na_42"
+_TT = frozenset({"w", "W", "q", "Q", "R"})            # ṭ-varga
+_STU = frozenset({"s", "t", "T", "d", "D", "n"})       # स्तु: s and the ta-varga
+
+
+def _site(state: State):
+    """न पदान्ताट्टोरनाम् — a ṭ-varga letter at the end of the stem-pada (before the sup) does not draw the following s / ta-varga into ṣṭutva:
+    विट्सु, मधुलिट्सु (not *विट्षु); the आम् of षण्णाम् is excepted (अनाम्)."""
+    if not state.tripadi_zone or len(state.terms) != 1:
+        return None
+    t = state.terms[0]
+    if "prātipadika" not in t.tags:
+        return None
+    for k in range(len(t.varnas) - 1):
+        a, b = t.varnas[k], t.varnas[k + 1]
+        if a.slp1 in _TT and b.slp1 in _STU and "pratyaya_start_v" in b.tags:
+            return t
+    return None
 
 
 def cond(state: State) -> bool:
-    return tripadi_gate_eligible(state, "8.4.42", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["sandhi_kind"]             = "8.4.42"
+    state.blocked_sutras.add("8.4.41")
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "8.4.42",
     sutra_type            = SutraType.PRATISHEDHA,
-    r1_form_identity_exempt = True,
     text_slp1             = "na padAntAwworanAm",
     text_dev              = "न पदान्ताट्टोरनाम्",
     samagra_slp1          = "padAntAt woH anAm stoH zwuH na ",
@@ -37,6 +49,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "न · पदान्तात् · टोः · नाम्",
     why_dev               = "(सूत्रम् 8.4.42) न पदान्ताट्टोरनाम्।",
     anuvritti_from        = ('8.1.1',),
+    blocks_sutra_ids      = ('8.4.41',),
     cond                  = cond,
     act                   = act,
 )

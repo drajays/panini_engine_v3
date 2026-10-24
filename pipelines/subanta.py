@@ -213,8 +213,8 @@ def build_initial_state(stem_slp1: str, vibhakti: int, vacana: int,
     # आदेशप्रत्यययोः (8.3.59): the *s* of a stem is neither ādeśa nor pratyaya — पुस्तकम्, कुसुमम्, हिंसा keep it. The stem-final
     # *s* of the as / is / us stems (मनस्, हविस्, चक्षुस्, विद्वस्, श्रेयस्) is itself a suffix s, so that one stays eligible.
     for k, v in enumerate(varnas):
-        if v.slp1 == "s" and k < len(varnas) - 1:
-            v.tags.add("mula_prakrti_v")
+        if v.slp1 == "s" and (k < len(varnas) - 1 or (k >= 1 and varnas[k - 1].slp1 not in "aiu")):
+            v.tags.add("mula_prakrti_v")      # (a final s not after a/i/u — पुंस् — is no suffix s either)
 
     stem = Term(
         kind   = "prakriti",
@@ -397,6 +397,10 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     *IT_PRAKARANA_SEQUENCE,  # 1.3.2–1.3.8 saṃjñā, then 1.3.9 lopa
     "1.3.10",
     "7.1.84",  # दिव औत् — div + su: v → au (द्यौः)
+    "7.1.85",  # पथिमथ्यृभुक्षामात् — su: the n of पथिन् / मथिन् / ऋभुक्षिन् → ā (पन्थाः)
+    "7.1.86",  # इतोऽत् सर्वनामस्थाने — its i → a
+    "7.1.87",  # थो न्थः — th → nth (पन्थानौ)
+    "7.1.88",  # भस्य टेर्लोपः — पथः, पथा
     "7.1.93",  # anang sau: sakhī 1sg → sakhān (i → an; arm-gated)
     "6.4.13",  # सौ च — in / han / pūṣan / aryaman: dīrgha in the nominative singular (योगी, वृत्रहा)
     "6.4.8",   # dīrgha before sarvananāmasthāna (fires here for anang; idempotent)
@@ -411,6 +415,12 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "7.2.103",  # kim → ka (apavāda of 7.2.102, so it is tried first)
     "7.2.102",  # tyadādi final hal→a (must precede 6.1.68; after substitution stem is vowel-final)
     "6.4.1",    # अङ्गस्य — the aṅgakārya adhikāra must be open before 6.4.14 (it is also re-opened harmlessly below)
+    "7.1.89",   # पुंसोऽसुङ् — पुंस् → पुमस्: ugit, so 7.1.70 gives nuṃ (पुमान्, पुमांसौ)
+    "7.1.98",   # चतुरनडुहोरामुदात्तः — अनडु + आ + ह्, चतु + आ + र्
+    "7.1.99",   # अम् सम्बुद्धौ — हे अनड्वन्
+    "7.2.99",   # त्रिचतुरोः स्त्रियां तिसृचतसृ
+    "7.2.100",  # अचि र ऋतः — तिस्रः, चतस्रः
+    "7.1.82",   # सावनडुहः — नुम् in su: अनड्वान्
     "7.1.70",   # उगिदचां सर्वनामस्थानेऽधातोः — nuṃ for an ugit stem; before su-lopa (भवान्त्+स्): भवन्तौ, भवान्
     "6.4.14",   # अत्वसन्तस्य चाधातोः — nominative singular only: भवान्त्
     "6.1.68",
@@ -455,7 +465,9 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.4.17",
     "1.4.16",
     "1.4.18",
+    "7.1.53",   # त्रेस्त्रयः — त्रयाणाम्
     "7.1.54",
+    "7.1.55",   # षट्चतुर्भ्यश्च — नुट् for चतुर्, षट्: चतुर्णाम्
     "7.1.52",
     # it-prakaraṇa over substitutes / āgamas (śī, śi, suṭ): 1.3.8 names their ś it.
     *IT_PRAKARANA_SEQUENCE,
@@ -476,6 +488,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     # stems (rAjan, kumArI...) re-check harmlessly: their sup term is gone,
     # so _find_eligible_boundary has nothing to match.
     "6.1.68",
+    "6.4.4",    # न तिसृचतसृ — blocks 6.4.3 for तिसृ / चतसृ
     "6.4.3",
     "7.3.103",
     "7.3.104",  # ओसि च — a → e before os (then 6.1.78: rAmayoH)
@@ -555,6 +568,12 @@ def _subanta_scanner_winner_by_spine_order(candidates: list[str], spine_ids: lis
         raise ValueError("subanta scanner needs at least one candidate")
     if len(candidates) == 1:
         return candidates[0]
+    from engine.sutra_type import SutraType as _STp
+    from engine.registry import get_sutra as _gs
+
+    prohibitions = [c for c in candidates if _gs(c).sutra_type is _STp.PRATISHEDHA]
+    if prohibitions:
+        return prohibitions[0]          # Art. 21 Ladder 1, step 3: prohibitions are settled before rules contend (core_loop.apply_pratishedhas)
     from engine.resolver import record_decision, resolve_with_reason
 
     decision = resolve_with_reason(candidates, state)
@@ -672,7 +691,7 @@ def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
 
             # An adhikāra (6.4.1 अङ्गस्य, 8.2.1 पूर्वत्रासिद्धम्) changes no letter but opens the
             # scope every later rule reads; it is exempt from the vacuity test.
-            scopes = [c for c in candidates if get_sutra(c).sutra_type is _ST2.ADHIKARA]
+            scopes = [c for c in candidates if get_sutra(c).sutra_type in (_ST2.ADHIKARA, _ST2.PRATISHEDHA)]       # a निषेध changes no letter either
             rest = [c for c in candidates if c not in scopes]
             # One rule left needs no contest; the no-progress ledger below catches it if it is vacuous.
             # Probing every candidate on a clone is what makes this path slow, so only contested
@@ -682,10 +701,11 @@ def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
                 return
 
             winner = _subanta_scanner_winner_by_spine_order(candidates, all_ids, s)
-            _note_tripadi(s, winner)
             sig_before = _state_sig(s)
             before_len = len(s.trace)
             s = apply_rule(winner, s)
+            if (_state_sig(s) != sig_before or winner == "8.2.1") and get_sutra(winner).sutra_type is not _ST2.PRATISHEDHA:
+                _note_tripadi(s, winner)       # (a niṣedha is no step of the order: it forbids, it does not run)       # 8.2.1: only a rule that did something puts the later ones out of reach (a declined vā rule does not)
             # Whatever the status (a declined vibhāṣā is not FIRED), a step that left the state
             # signature unchanged may not run again on that same signature.
             if _state_sig(s) == sig_before:
@@ -707,7 +727,7 @@ def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
     tripadi_ids = sorted(
         (sid for sid, rec in SUTRA_REGISTRY.items()
          if is_tripadi_sutra(sid) and (
-             rec.sutra_type in (_ST.VIDHI, _ST.NIYAMA, _ST.VIBHASHA, _ST.NIPATANA)
+             rec.sutra_type in (_ST.VIDHI, _ST.NIYAMA, _ST.VIBHASHA, _ST.NIPATANA, _ST.PRATISHEDHA)
              or rec.sutra_type is _ST.ADHIKARA)),      # 8.2.1 itself: it opens the stratum
         key=lambda sid: tuple(int(x) for x in sid.split(".")),
     )
@@ -748,7 +768,8 @@ def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
     _scan_pool(sandhi_ids)
     # Pre-merge rutva: enter tripāḍī zone and convert stem-final s→r before HAL-initial sup
     # (8.2.66 _target_premerge requires len(terms)≥2, so must run before _pada_merge)
-    _scan_pool(["8.2.1", "8.2.7", "8.2.66"])
+    _scan_pool(["8.2.1", "8.2.7", "8.2.23", "8.2.72", "8.2.66"])
+    s.meta.pop("tripadi_cursor", None)    # the stem as a pada (8.2.23 / 8.2.72 / 8.2.66 on its own end) is one site, the word's end another: 8.2.1 orders within a site
     _scan_pool(["6.1.113", "6.1.114", "6.1.87"])   # ru after a → u before a haś (manaru+bhyām), then a+u → o: manobhyām
 
     _pada_merge(s)          # always: a single term (su already lopa'd) still becomes the pada (8.2.7 reads it)
@@ -846,6 +867,21 @@ def derive(stem_slp1: str, vibhakti: int, vacana: int,
         derived_pratipadika=entry is not None,
     )
     s.terms[0].tags |= origin_record
+    if entry is not None:
+        # the stem ends in the dhātu itself (kvip leaves nothing but it): its letters are the dhātu's own, for the tripāḍī rules that say
+        # "dhātoḥ" (8.2.31–8.2.37) and name roots (8.2.36). The lexicon's record names the dhātu; the tape is only marked, not changed.
+        from pipelines.dhatupatha import resolve_dhatu_identifier
+        for tag in origin_record:
+            if tag.startswith("origin_dhatu:"):
+                try:
+                    root = (resolve_dhatu_identifier(tag.split(":", 1)[1]).get("raw_dhatu_after_it_lopa_slp1") or "").replace("~", "")
+                except KeyError:
+                    continue
+                vs = s.terms[0].varnas
+                if root and "".join(v.slp1 for v in vs).endswith(root):
+                    for v in vs[len(vs) - len(root):]:
+                        v.tags |= {"dhatu_v", "mula_dhatu_v"}
+                    s.terms[0].meta["it_lopa_done"] = (tag.split(":", 1)[1], root)
     if anvadesha:
         s.terms[0].tags.add("anvadesha")
     if autonomous_scanner is None:

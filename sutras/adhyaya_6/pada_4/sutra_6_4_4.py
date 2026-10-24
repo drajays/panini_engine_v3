@@ -9,28 +9,31 @@ Pāṭha: ashtadhyayi.com data.txt row i=64004 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine.declension import anga_and_sup
 from engine.state import State
 from engine.krt_eligibility import samhita_gate_eligible
 
-_GATE_KEY: str = "6_4_4_na_4"
+def _site(state: State):
+    """न तिसृचतसृ — no dīrgha (6.4.3) for the aṅga तिसृ / चतसृ before the nuṭ-āma: तिसृणाम्, चतसृणाम्."""
+    hit = anga_and_sup(state, "6.4.4")
+    if hit is None:
+        return None
+    anga, sup = hit
+    return anga if anga.meta.get("7_2_99_done") and sup.varnas and "nut_agama_inserted" in sup.varnas[0].tags else None
 
 
 def cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.4.4", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.4.4"
+    state.blocked_sutras.add("6.4.3")
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "6.4.4",
     sutra_type            = SutraType.PRATISHEDHA,
-    r1_form_identity_exempt = True,
     text_slp1             = "na tisfcatasf",
     text_dev              = "न तिसृचतसृ",
     samagra_slp1          = "tisf-catasf-aNgasya nAmi dIrGaH na",
@@ -38,6 +41,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "न तिसृ-चतसृ (लुप्तषष्ठ्यन्तनिर्देशः)",
     why_dev               = "(सूत्रम् 6.4.4) न तिसृचतसृ।",
     anuvritti_from        = ('6.1.1',),
+    blocks_sutra_ids      = ('6.4.3',),
     cond                  = cond,
     act                   = act,
 )

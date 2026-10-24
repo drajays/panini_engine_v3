@@ -16,7 +16,7 @@ from engine.gates import adhikara_in_effect
 from engine.state import State
 from engine.sthanivat import BLOCK_AL_AFTER_STHANIN, adesha_substitute_varnas
 
-_PATHIN_STEMS = frozenset({"pathin", "maTin", "fBu", "kzAm"})
+_PATHIN_STEMS = frozenset({"pathin", "paTin", "maTin", "fBukzin"})
 
 
 def _pathin_anga_index(state: State) -> int | None:
@@ -29,7 +29,7 @@ def _pathin_anga_index(state: State) -> int | None:
         if "anga" not in t.tags:
             continue
         up = (t.meta.get("upadesha_slp1") or "").strip()
-        if up not in _PATHIN_STEMS:
+        if not any(up.endswith(w) for w in _PATHIN_STEMS):      # tadantavidhi: सुपथिन्, सुमथिन्
             if [v.slp1 for v in t.varnas] not in (
                 ["p", "a", "T", "i", "n"],
                 ["p", "a", "T", "i"],
@@ -41,6 +41,8 @@ def _pathin_anga_index(state: State) -> int | None:
             continue
         if "sup" not in state.terms[i + 1].tags:
             continue
+        if (state.terms[i + 1].meta.get("upadesha_slp1") or "").strip() not in {"s~", "su", "su~"}:
+            continue                      # सौ: the ending su only (also sambuddhi: हे पन्थाः)
         return i
     return None
 

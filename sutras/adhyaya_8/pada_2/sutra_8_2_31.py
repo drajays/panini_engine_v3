@@ -42,7 +42,7 @@ def _apavada_site(c, k: int) -> bool:
     if not span or span[1] != k:
         return False
     root = "".join(slp(x) for x in c[span[0]:k + 1])
-    return root.startswith("d") or root == "nah"
+    return (root.startswith("d") and root != "druh") or root == "nah"      # (द्रुह्: 8.2.33's vā decides gh, else this rule)
 
 
 def cond(state: State) -> bool:

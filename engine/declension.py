@@ -53,3 +53,6 @@ def samyoga_purva(anga: Term) -> bool:
 def dhatu_aṅga(anga: Term) -> bool:
     """The aṅga is (a kṛdanta of) a dhātu: the lexicon's vyutpatti record says so (engine/origin), or it is the word भ्रू (6.4.77 names it)."""
     return any(t.startswith("origin_dhatu:") for t in anga.tags) or (anga.meta.get("upadesha_slp1") or "").strip() == "BrU"
+
+
+PATHIN_WORDS = ("paTin", "maTin", "fBukzin")       # पथिन्, मथिन्, ऋभुक्षिन् — the words 7.1.85–7.1.88 name (lexical)

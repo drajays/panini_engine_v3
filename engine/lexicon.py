@@ -118,7 +118,8 @@ def compose(entry: dict) -> tuple[str, set[str]]:
 def generate(entry: dict) -> tuple[str, set[str]]:
     """Make the stem from its components by the engine's own rules; return (surface, origin tags).
 
-    * dhātu + kṛt (kartṛ = kṛ + tṛc): the tape [dhātu][kṛt] goes to the autonomous loop — it-lopa, 3.4.114, iṭ (7.2.35 / 7.2.10),
+    * dhātu + kṛt (kartṛ = kṛ + tṛc): the tape [dhātu][kṛt] goes to the autonomous loop (kvip is laid out instead, below: its stem is the
+      dhātu itself once the apṛkta v goes — the loop would carry a consonant-final stem on into the tripāḍī) — it-lopa, 3.4.114, iṭ (7.2.35 / 7.2.10),
       guṇa (7.3.84), raparatva (1.1.51) … — exactly as a tiṅanta tape does. Nothing is concatenated.
     * a nominal base + taddhita matup, or upapada + dhātu + kvip: the components are laid out as Terms, the real it-prakaraṇa
       (1.3.2–1.3.9) runs, then 6.1.67 (kvip) and the tripāḍī 8.2.9 / 8.2.10 (matup's m → v).
@@ -132,7 +133,7 @@ def generate(entry: dict) -> tuple[str, set[str]]:
     from pipelines.it_prakarana import run_it_prakarana
 
     comps = entry["components"]
-    if len(comps) == 2 and comps[0]["kind"] == "dhatu" and comps[1]["kind"] == "krt":
+    if len(comps) == 2 and comps[0]["kind"] == "dhatu" and comps[1]["kind"] == "krt" and comps[1]["upadesha"] != "kvip":
         from engine.tape_init.tinanta import dhatu_term_from_row
         from tools.autonomy_report import run_autonomously
 

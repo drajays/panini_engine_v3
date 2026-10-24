@@ -26,6 +26,14 @@ def test_brain_cell(stem, vib, vac, want):
     assert want in got, sorted(got)[:6]
 
 
+def test_6_4_4_and_8_4_42_say_no():
+    """6.4.4 stops the dīrgha of 6.4.3 for तिसृ (तिसृणाम्, not *तिसॄणाम्); 8.4.42 stops ṣṭutva after a pada-final ṭ-varga (विट्सु, not *विट्षु)."""
+    s = derive("tri", 6, 3, linga="strīliṅga")
+    assert s.flat_slp1() == "tisfRAm" and "6.4.3" in s.blocked_sutras
+    v = derive("viS", 7, 3, linga="pulliṅga")
+    assert v.flat_slp1() == "viwsu" and "8.4.41" in v.blocked_sutras
+
+
 def test_6_4_85_blocks_yan_for_bhu_and_sudhi():
     """na bhūsudhiyoḥ: svayambhuvaḥ (uvaṅ), not *svayambhvaḥ — 6.4.85 is BLOCKED-by-name on 6.4.82 / 6.4.83."""
     s = derive("svaBU", 1, 3, linga="pulliṅga")          # sva + bhū: anekāc and asaṃyogapūrva, so 6.4.83 would give *svabhvaḥ

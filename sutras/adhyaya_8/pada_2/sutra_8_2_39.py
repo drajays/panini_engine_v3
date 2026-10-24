@@ -57,6 +57,19 @@ _JHAL_TO_JAS: dict = {
 _OTHER_RULE_HAS_IT = frozenset("cCjJhSs")
 
 
+def _stem_end_before_su(state: State):
+    """The stem of a subanta is a pada before the sup su (1.4.17), so its last jhal is a pada-final: (i, k) of that letter in the merged word."""
+    for i, t in enumerate(state.terms):
+        if "pada" not in t.tags or "prātipadika" not in t.tags:
+            continue
+        for k in range(len(t.varnas) - 1):
+            v, nxt = t.varnas[k], t.varnas[k + 1]
+            if (nxt.slp1 == "s" and "pratyaya_start_v" in nxt.tags and v.slp1 in _JHAL_TO_JAS and v.slp1 not in _OTHER_RULE_HAS_IT
+                    and _JHAL_TO_JAS[v.slp1] != v.slp1 and "jas_8_2_39" not in v.tags):
+                return i, k
+    return None
+
+
 def _find_target(state: State):
     for i, t in enumerate(state.terms):
         if "8_2_39_done" in t.tags:
@@ -76,10 +89,17 @@ def _find_target(state: State):
 
 
 def cond(state: State) -> bool:
-    return _find_target(state) is not None
+    return _find_target(state) is not None or _stem_end_before_su(state) is not None
 
 
 def act(state: State) -> State:
+    mid = _stem_end_before_su(state)
+    if mid is not None and _find_target(state) is None:
+        i, k = mid
+        new = parse_slp1_upadesha_sequence(_JHAL_TO_JAS[state.terms[i].varnas[k].slp1])[0]
+        new.tags.add("jas_8_2_39")
+        state.terms[i].varnas[k] = new
+        return state
     i = _find_target(state)
     if i is None:
         return state

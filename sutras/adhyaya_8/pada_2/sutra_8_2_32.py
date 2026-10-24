@@ -40,6 +40,8 @@ def _site(state: State):
             continue
         span = dhatu_span(c, k)
         if span and span[1] == k and slp(c[span[0]]) == "d":
+            if "".join(slp(x) for x in c[span[0]:span[1] + 1]) == "druh":
+                continue            # द्रुह् is 8.2.33's: the ghatva that 8.2.32 would make nitya is there optional (ध्रुक् / ध्रुट्)
             return c[k]
     return None
 

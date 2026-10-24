@@ -1636,6 +1636,606 @@
     }
    ],
    "source": "svayam + bhū + kvip (3.2.61)"
+  },
+  {
+   "stem": "druh",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "druha~",
+     "dhatu_id": "04.0094"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "druh",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "druha~",
+     "dhatu_id": "04.0094"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "druh",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "druha~",
+     "dhatu_id": "04.0094"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "duh",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "duhi~r",
+     "dhatu_id": "01.0839"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "duh",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "duhi~r",
+     "dhatu_id": "01.0839"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "duh",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "duhi~r",
+     "dhatu_id": "01.0839"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "lih",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "liha~",
+     "dhatu_id": "02.0006"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "lih",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "liha~",
+     "dhatu_id": "02.0006"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "lih",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "liha~",
+     "dhatu_id": "02.0006"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "muh",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "muha~",
+     "dhatu_id": "04.0095"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "muh",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "muha~",
+     "dhatu_id": "04.0095"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "muh",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "muha~",
+     "dhatu_id": "04.0095"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "viS",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "viSa~",
+     "dhatu_id": "06.0160"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "viS",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "viSa~",
+     "dhatu_id": "06.0160"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "viS",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "viSa~",
+     "dhatu_id": "06.0160"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "diS",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "diSa~",
+     "dhatu_id": "06.0003"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "diS",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "diSa~",
+     "dhatu_id": "06.0003"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "diS",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "diSa~",
+     "dhatu_id": "06.0003"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "dfS",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "dfSi~r",
+     "dhatu_id": "01.1143"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "dfS",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "dfSi~r",
+     "dhatu_id": "01.1143"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "dfS",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "dfSi~r",
+     "dhatu_id": "01.1143"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "spfS",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "spfSa~",
+     "dhatu_id": "06.0158"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "spfS",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "spfSa~",
+     "dhatu_id": "06.0158"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "spfS",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "spfSa~",
+     "dhatu_id": "06.0158"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "rAj",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "rAjf~",
+     "dhatu_id": "01.0956"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "rAj",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "rAjf~",
+     "dhatu_id": "01.0956"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "rAj",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "rAjf~",
+     "dhatu_id": "01.0956"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "tviz",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "tviza~",
+     "dhatu_id": "01.1156"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "tviz",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "tviza~",
+     "dhatu_id": "01.1156"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "tviz",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "dhatu",
+     "upadesha": "tviza~",
+     "dhatu_id": "01.1156"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "viSvarAj",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "viSva"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "rAjf~",
+     "dhatu_id": "01.0956"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "viSvarAj",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "viSva"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "rAjf~",
+     "dhatu_id": "01.0956"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "viSvarAj",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "viSva"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "rAjf~",
+     "dhatu_id": "01.0956"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "suyuj",
+   "linga": "pulliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "su"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "yuja~",
+     "dhatu_id": "04.0074"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "suyuj",
+   "linga": "strīliṅga",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "su"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "yuja~",
+     "dhatu_id": "04.0074"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
+  },
+  {
+   "stem": "suyuj",
+   "linga": "napuṃsaka",
+   "components": [
+    {
+     "kind": "prakriti",
+     "upadesha": "su"
+    },
+    {
+     "kind": "dhatu",
+     "upadesha": "yuja~",
+     "dhatu_id": "04.0074"
+    },
+    {
+     "kind": "krt",
+     "upadesha": "kvip"
+    }
+   ],
+   "source": "Kāśikā 3.2.61 supi sthaḥ / 3.2.76 kvip (the stem is the dhātu itself once kvip's apṛkta v is lopa'd, 6.1.67)"
   }
  ]
 }

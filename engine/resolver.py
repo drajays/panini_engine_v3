@@ -356,6 +356,7 @@ def resolve_with_reason(
                 return False          # a saṃjñā is a definition: it applies as soon as its condition holds, before the vidhis that read it (ghi before 7.3.118)
             return any(
                 r != c and r in info and _id_key(r) > _id_key(c)
+                and not (is_tripadi_sutra(c) and is_tripadi_sutra(r))       # 8.2.1 पूर्वत्रासिद्धम्: inside the tripāḍī the earlier rule goes first, always
                 and (_kills(c, r) or _kills(r, c) or _order_matters(c, r))
                 for r in survivors
             )

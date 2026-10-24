@@ -9,29 +9,38 @@ Pāṭha: ashtadhyayi.com data.txt row i=71055 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from engine.declension import anga_and_sup, is_stem
+from phonology import mk
 
-_GATE_KEY: str = "7_1_55_zawcaturBy_55"
+_SHAT = ("zaz", "paYcan", "saptan", "azwan", "navan", "daSan")      # ṣaṭ-saṃjñā (1.1.24): the ṣ- / ṇ-final numerals
+
+
+def _site(state: State):
+    """षट्चतुर्भ्यश्च — a ṣaṭ numeral or चतुर् (tadantavidhi) before आम्: नुट् (चतुर्णाम्, पञ्चानाम्, षण्णाम्)."""
+    hit = anga_and_sup(state, "7.1.55")
+    if hit is None:
+        return None
+    anga, sup = hit
+    if not is_stem(anga, "catur", *_SHAT, tadanta=True):
+        return None
+    if (sup.meta.get("upadesha_slp1") or "").strip() != "Am" or (sup.varnas and "nut_agama_inserted" in sup.varnas[0].tags):
+        return None
+    return sup
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.1.55", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.1.55"
+    sup = _site(state)
+    sup.varnas.insert(0, mk("n", "nut_agama_inserted"))
     return state
-
 
 SUTRA = SutraRecord(
     sutra_id              = "7.1.55",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "zawcaturByaSca",
     text_dev              = "षट्चतुर्भ्यश्च",
     samagra_slp1          = "zaw-caturByaH Ami nuw ca",
