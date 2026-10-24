@@ -108,24 +108,23 @@ def explore(run: Callable[[], Any], *, limit: int = MAX_OPTIONAL_RULES) -> list[
     ``run`` must be a zero-argument callable that performs the derivation, so
     it can be replayed once per combination.
     """
-    first = run()
-    optional = optional_rules_reached(first)[:limit]
-    multi = multiway_reached(first)
-    if not optional and not multi:
-        return [Branch((), first.flat_slp1(), first.flat_dev(), first)]
-
     seen: dict[str, Branch] = {}
-    axes = [[True, False]] * len(optional) + [list(range(n)) for _sid, n in multi]
-    names = optional + [sid for sid, _n in multi]
-    for combination in itertools.product(*axes):
-        choices = dict(zip(names, combination))
+    todo: list[dict] = [{}]
+    while todo:                           # a choice can open a rule the first walk never reached (3.1.124 declined → 3.1.96): expand on demand
+        choices = todo.pop()
         with choose(choices):
             try:
                 state = run()
             except Exception:
                 continue                  # a branch the engine cannot walk yet
+        axes = {sid: [True, False] for sid in optional_rules_reached(state)[:limit]}
+        axes.update({sid: list(range(n)) for sid, n in multiway_reached(state)})
+        new = [sid for sid in axes if sid not in choices]
+        if new:
+            sid = new[0]
+            todo.extend({**choices, sid: v} for v in axes[sid])
+            continue
         surface = state.flat_slp1()
         if surface not in seen:
-            seen[surface] = Branch(tuple(choices.items()), surface,
-                                   state.flat_dev(), state)
+            seen[surface] = Branch(tuple(choices.items()), surface, state.flat_dev(), state)
     return list(seen.values())

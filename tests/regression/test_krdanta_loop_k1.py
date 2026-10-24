@@ -29,6 +29,8 @@ CASES = [   # (dhātu, vibhakti, vacana, liṅga, vivakṣā, form that must be 
     ("BvAdi_01_1137", 1, 1, "napuṃsaka", KRTYA, "gantavyam"),
     ("RIY", 1, 1, "napuṃsaka", KRTYA, "netavyam"),
     ("BvAdi_01_1092", 1, 1, "napuṃsaka", KRTYA, "Srotavyam"),
+    ("qukfY", 1, 1, "napuṃsaka", KRTYA, "kAryam"),          # कार्यम् (3.1.124 ṇyat, ṛ-final)
+    ("qupaca~z", 1, 1, "napuṃsaka", KRTYA, "pAcyam"),       # पाच्यम् (hal-final; 7.3.52 kutva blocked here — c stays)
     ("qukfY", 1, 1, "pulliṅga", AGENT, "kArakaH"),          # कारकः
     ("qukfY", 1, 1, "pulliṅga", AGENT, "kartA"),            # कर्ता
     ("RIY", 1, 1, "pulliṅga", AGENT, "nAyakaH"),

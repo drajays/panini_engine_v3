@@ -10,23 +10,27 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from engine.krt_attach import attach_krt, dhatu_ends_tape
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
+from phonology.pratyahara import HAL
 
-_GATE_KEY: str = "3_1_124_fhalorRyat_124"
+_DECLINED = "3_1_124_declined"
 
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.1.124", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
+    """कृत्याः (3.1.95) ṇyat after a dhātu ending in ṛ-varṇa or a hal (ऋहलोः) — in the kṛtya sense the speaker means."""
+    if state.meta.get(_DECLINED) or not (vivaksita(state, "krt", "kftya") and dhatu_ends_tape(state)):
         return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    last = state.terms[-1].varnas[-1].slp1 if state.terms[-1].varnas else ""
+    return last in ("f", "F") or last in HAL
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.1.124"
+    # ṇyat stands beside tavyat-tavya-anīyar (3.1.96); the reading takes one — engine.vikalpa.choose({"3.1.124": 1}) leaves ṇyat for them
+    if policy_pick(state, "3.1.124", 2) == 0:
+        return attach_krt(state, "Ryat")
+    state.meta[_DECLINED] = True
     return state
 
 
