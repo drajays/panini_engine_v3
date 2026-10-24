@@ -11,15 +11,25 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from engine.krt_eligibility import krt_insertion_eligible
+from engine.krt_attach import attach_krt, upapada_open, kftya_stem
 
 _GATE_KEY: str = "3_2_2_hvAvAmaSca_2"
 
 
+def _site(state: State) -> bool:
+    """hve, ve, mā in karmaṇy upapade take aṇ, the apavāda of ka (svargahvāyaḥ, tantuvāyaḥ, dhānyamāyaḥ)."""
+    return upapada_open(state) and kftya_stem(state) in ("hve", "ve", "mA")
+
+
 def cond(state: State) -> bool:
+    if _site(state):
+        return True
     return krt_insertion_eligible(state, "3.2.2", gate_key=_GATE_KEY, adhikara_id="3.1.1")
 
 
 def act(state: State) -> State:
+    if _site(state):
+        return attach_krt(state, "aR")
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["krt_kind"] = "3.2.2"

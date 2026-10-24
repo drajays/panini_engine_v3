@@ -49,15 +49,30 @@ def _witness_b(state: State) -> bool:
     return True
 
 
+def _request_site(state: State):
+    """A word stated in a kāraka for the kṛt that follows (kumbham karmaṇi, 3.2.1): it stands before the dhātu and is not yet named."""
+    if len(state.terms) >= 2 and "dhatu" in state.terms[-1].tags and not any("krt" in t.tags and "pratyaya" in t.tags for t in state.terms):
+        t = state.terms[-2]
+        if t.meta.get("kAraka") and "upapada" not in t.tags:
+            return t
+    return None
+
+
 def cond(state: State) -> bool:
     if not state.terms:
         return False
+    if _request_site(state) is not None:
+        return True
     if "upapada" in state.terms[0].tags:
         return False
     return _witness_a(state) or _witness_b(state)
 
 
 def act(state: State) -> State:
+    site = _request_site(state)
+    if site is not None:
+        site.tags.add("upapada")
+        return state
     if _witness_a(state):
         state.terms[0].tags.add("upapada")
         state.samjna_registry["3.1.92_P005_A_upapada"] = True

@@ -45,3 +45,10 @@ def kftya_attach(state: State, sutra_id: str, upadesha_slp1: str, *, bars: tuple
     for b in bars:
         state.meta[f"kftya_declined:{b}"] = True
     return state
+
+
+# --- upapada kṛts (3.2.1 …): the word that stands in the sūtra's case, on the tape before the dhātu -----------------------------
+
+def upapada_open(state: State, kaaraka: str = "karman") -> bool:
+    """3.1.92: a named upapada (the word the kṛt sūtra states in the saptamī, here ``kaaraka`` = karmaṇi) stands before the dhātu that ends the tape."""
+    return dhatu_ends_tape(state) and len(state.terms) >= 2 and "upapada" in state.terms[-2].tags and state.terms[-2].meta.get("kAraka") == kaaraka

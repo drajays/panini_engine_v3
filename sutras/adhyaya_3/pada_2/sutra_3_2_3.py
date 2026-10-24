@@ -15,6 +15,7 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
 from engine.krt_eligibility import krt_insertion_eligible, requested_krt_upadesha
+from engine.krt_attach import upapada_open, kftya_stem
 from phonology.varna import parse_slp1_upadesha_sequence
 
 _GATE_KEY: str = "3_2_3_Atonupasa_3"
@@ -24,7 +25,14 @@ def _dhatu(state: State):
     return next((t for t in state.terms if "dhatu" in t.tags), None)
 
 
+def _site(state: State) -> bool:
+    """karmaṇy upapade an anupasarga ā-final dhātu takes ka, the apavāda of aṇ (godaḥ, kambaladaḥ); hve ve mā keep aṇ (3.2.2)."""
+    return upapada_open(state) and kftya_stem(state).endswith("A") and kftya_stem(state) != "mA" and not any("upasarga" in t.tags for t in state.terms)
+
+
 def cond(state: State) -> bool:
+    if _site(state):
+        return True
     if not krt_insertion_eligible(state, "3.2.3", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
         return False
     if requested_krt_upadesha(state) != "ka":
@@ -38,6 +46,9 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    if _site(state):
+        from engine.krt_attach import attach_krt
+        return attach_krt(state, "ka")
     pr = Term(
         kind="pratyaya",
         varnas=list(parse_slp1_upadesha_sequence("ka")),

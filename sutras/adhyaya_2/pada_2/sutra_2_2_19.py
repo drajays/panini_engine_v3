@@ -15,13 +15,27 @@ from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
 
+def _kft_upapada(state: State):
+    """An upapada followed by the dhātu and the kṛt that stands for it (kumbha + kṛ + aṇ): not yet a compound."""
+    if len(state.terms) >= 3 and "upapada" in state.terms[0].tags and "dhatu" in state.terms[1].tags \
+            and "krt" in state.terms[2].tags and not state.terms[0].meta.get("samasa"):
+        return state.terms[0]
+    return None
+
+
 def cond(state: State) -> bool:
+    if _kft_upapada(state) is not None:
+        return True
     if not any("upapada" in t.tags for t in state.terms):
         return False
     return not bool(state.samjna_registry.get("2.2.19_upapada_atiNg"))
 
 
 def act(state: State) -> State:
+    up = _kft_upapada(state)
+    if up is not None:
+        up.meta["samasa"] = "tatpuruzaH"            # upapada-tatpuruṣa, before any sup (prāk subutpatteḥ): the whole is one prātipadika (1.2.46)
+        return state
     state.samjna_registry["2.2.19_upapada_atiNg"] = True
     return state
 

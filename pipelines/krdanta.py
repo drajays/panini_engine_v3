@@ -150,7 +150,13 @@ def _dhatu_meta_from_row(row: dict) -> dict:
     }
 
 
-def build_dhatu_state(dhatu_ref: str, **vivaksha: str) -> State:
+def _upapada_term(stem_slp1: str, kaaraka: str) -> Term:
+    """The word a kṛt sūtra states in the saptamī (kumbham in karmaṇi): a bare prātipadika before the dhātu — its sup never arrives (samāsa precedes it:
+    gatikārakopapadānāṃ kṛdbhiḥ saha samāsavacanaṃ prāk subutpatteḥ); 3.1.92 names it upapada."""
+    return Term(kind="prakriti", varnas=parse_slp1_upadesha_sequence(stem_slp1), tags={"prātipadika"}, meta={"upadesha_slp1": stem_slp1, "kAraka": kaaraka})
+
+
+def build_dhatu_state(dhatu_ref: str, *, upapada: tuple[str, str] | None = None, **vivaksha: str) -> State:
     """Dhātu Term in aupadeśika form (डुपचँष्, गमॢँ, विदँ …) with its it-markers.
 
     ``dhatu_ref`` is a dhātupāṭha id (``Adadi_02_0059``), path id (``02.0059``)
@@ -177,7 +183,7 @@ def build_dhatu_state(dhatu_ref: str, **vivaksha: str) -> State:
         tags={"dhatu", "anga", "upadesha"},
         meta=meta,
     )
-    return build_krdanta_state([dhatu], **vivaksha)
+    return build_krdanta_state(([_upapada_term(*upapada)] if upapada else []) + [dhatu], **vivaksha)
 
 
 def build_dhatu_state_from_varnas(dhatu_varnas: List[Varna], *, upadesha_slp1: str, **vivaksha: str) -> State:
@@ -685,24 +691,24 @@ def derive_idDaH() -> State:
     return _nistha_prathama_then_tripadi(s)       # 8.2.40 / 8.4.53 in the tripādī
 
 
-def derive_krdanta_stem(dhatu_ref: str, **vivaksha: str) -> tuple[str, set[str], dict]:
+def derive_krdanta_stem(dhatu_ref: str, *, upapada: tuple[str, str] | None = None, **vivaksha: str) -> tuple[str, set[str], dict]:
     """The kṛdanta stem a vivakṣā leads to, by the loop and no recipe: (stem SLP1, its origin record — dhātu, kṛt, it-letters). The loop
     runs through aṅgakārya and sandhi and stops where the tripāḍī would begin: that stratum belongs to the word with its sup."""
     from engine import origin
     from tools.autonomy_report import run_autonomously
 
-    s = build_dhatu_state(dhatu_ref, **vivaksha)
+    s = build_dhatu_state(dhatu_ref, upapada=upapada, **vivaksha)
     s.phase = "upadesha"
     run = run_autonomously(s, "", dhatu_ref, 300, stop_before_tripadi=True)
     st = run.state
     return "".join(v.slp1 for t in st.terms for v in t.varnas), set(origin.record_from_terms(st.terms)), dict(st.meta.get("vikalpa_multi") or {})
 
 
-def derive_krdanta(dhatu_ref: str, vibhakti: int, vacana: int, linga: str = "pulliṅga", **vivaksha: str) -> State:
+def derive_krdanta(dhatu_ref: str, vibhakti: int, vacana: int, linga: str = "pulliṅga", *, upapada: tuple[str, str] | None = None, **vivaksha: str) -> State:
     """A kṛdanta word: the stem from :func:`derive_krdanta_stem`, then the subanta with its sup (the stem is a derived prātipadika, 1.2.46)."""
     from pipelines.subanta import build_initial_state, run_subanta_sup_attach_and_finish_scanner
 
-    stem, origin_tags, multi = derive_krdanta_stem(dhatu_ref, **vivaksha)
+    stem, origin_tags, multi = derive_krdanta_stem(dhatu_ref, upapada=upapada, **vivaksha)
     s = build_initial_state(stem, vibhakti, vacana, linga, derived_pratipadika=True)
     s.terms[0].tags |= origin_tags
     if multi:
