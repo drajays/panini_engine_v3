@@ -12,6 +12,9 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
+from engine.krt_attach import dhatu_ends_tape
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
 from engine.krt_eligibility import krt_insertion_eligible, requested_krt_upadesha
 from phonology.pratyahara import IK
 from phonology.varna import parse_slp1_upadesha_sequence
@@ -37,7 +40,18 @@ def _ig_upadha(dh) -> bool:
     return False
 
 
+def _agent_site(state: State) -> bool:
+    """The agent sense (vivakṣā krt=Rvultfc): ka stands beside ṇvul-tṛc for an iguṇa-upadha dhātu, jñā, prī, kṝ."""
+    if not (vivaksita(state, "krt", "Rvultfc") and dhatu_ends_tape(state)):
+        return False
+    dh = _dhatu(state)
+    flat = "".join(v.slp1 for v in dh.varnas)
+    return flat in _NAMED or (len(flat) >= 2 and flat[-1] not in "aAiIuUfFxXeEoO" and flat[-2] in IK)
+
+
 def cond(state: State) -> bool:
+    if _agent_site(state):
+        return True
     if not krt_insertion_eligible(state, "3.1.135", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
         return False
     if requested_krt_upadesha(state) != "ka":
@@ -53,6 +67,8 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    if _agent_site(state) and policy_pick(state, "3.1.135", 2) == 1:      # beside ṇvul-tṛc (3.1.133): decline and leave the tape to them
+        return state
     pr = Term(
         kind="pratyaya",
         varnas=list(parse_slp1_upadesha_sequence("ka")),
@@ -71,8 +87,8 @@ SUTRA = SutraRecord(
     sutra_type            = SutraType.VIDHI,
     text_slp1             = "igupaDajYAprIkiraH kaH",
     text_dev              = "इगुपधज्ञाप्रीकिरः कः",
-    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH igupaDa-jYA-prI-kiraH kaH kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
-    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः इगुपध-ज्ञा-प्री-किरः कः कृत्",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH igupaDa-jYA-prI-kiraH kaH Rvul-tfcO kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च धातोः इगुपध-ज्ञा-प्री-किरः कः ण्वुल्-तृचौ कृत्",
     padaccheda_dev        = "इक्-उपध-ज्ञा-प्री-किरः कः",
     why_dev               = "इगुपध-ज्ञा-प्री-किरः क-प्रत्ययः (बुध → विबुध)।",
     anuvritti_from        = ('3.1.1',),
