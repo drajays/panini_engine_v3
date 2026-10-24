@@ -10,24 +10,16 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
-
-_GATE_KEY: str = "3_1_110_fdupaDAccAkx_110"
-
+from engine.krt_attach import kftya_attach, kftya_open, kftya_stem
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.1.110", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    """ṛ-upadha dhātu → kyap (vṛtyam, vṛdhyam), except kḷp and cṛt; mṛj and vṛṣ wait for 3.1.113 / 3.1.120."""
+    st = kftya_stem(state)
+    return kftya_open(state, "3.1.110") and len(st) >= 2 and st[-2] == "f" and st[-1] not in "aAiIuUfFxXeEoO" and st not in ("kxp", "kfp", "cft", "mfj", "vfz")
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.1.110"
-    return state
+    return kftya_attach(state, "3.1.110", "kyap")
 
 
 SUTRA = SutraRecord(
@@ -41,6 +33,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "ऋत्-उपधात् च अ-कॢपि-चृतेः",
     why_dev               = "धातोः [ऋदुपधाच्चाकॢपिचृतेः]-प्रत्ययः विहितः (३.१.110)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),
+    apavada_of            = ('3.1.97', '3.1.124'),
     cond                  = cond,
     act                   = act,
 )

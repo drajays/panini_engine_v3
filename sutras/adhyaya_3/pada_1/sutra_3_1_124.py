@@ -14,7 +14,7 @@ from engine.registry import get_sutra
 from engine.krt_attach import kftya_attach, kftya_open
 from phonology.pratyahara import HAL
 
-_APAVADAS = ("3.1.98", "3.1.99", "3.1.100")      # yat after pavargānta a-upadha; śak sah; gad mad car yam
+_APAVADAS = ("3.1.98", "3.1.99", "3.1.100", "3.1.109", "3.1.110", "3.1.111", "3.1.112", "3.1.126")      # yat after pavargānta a-upadha; śak sah; gad mad car yam; kyap: i stu śās vṛ juṣ / ṛ-upadha / bhṛ
 
 
 def cond(state: State) -> bool:

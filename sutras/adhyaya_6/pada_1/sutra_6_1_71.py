@@ -35,7 +35,7 @@ def _find_site(state: State):
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya":
             continue
-        if (t.meta.get("upadesha_slp1") or "").strip() != "lyap":
+        if (t.meta.get("upadesha_slp1") or "").strip() not in ("lyap", "kyap"):      # pit kṛts: ityam, stutyam, vṛtyam
             continue
         if t.meta.get("6_1_71_tuk_done"):
             continue

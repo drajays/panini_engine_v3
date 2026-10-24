@@ -14,7 +14,9 @@ from engine.krt_attach import kftya_attach, kftya_open
 
 def _yat_site(state: State) -> bool:
     """अचो यत् — an ac-final dhātu takes yat in the kṛtya sense (geyam, peyam, ceyam, jeyam)."""
-    return kftya_open(state, "3.1.97") and bool(state.terms[-1].varnas) and state.terms[-1].varnas[-1].slp1 in "aAiIuUfFxXeEoO"   # ac, long vowels included
+    from engine.registry import get_sutra
+    return (kftya_open(state, "3.1.97") and bool(state.terms[-1].varnas) and state.terms[-1].varnas[-1].slp1 in "aAiIuUfFxXeEoO"   # ac, long vowels included
+            and not any(get_sutra(a).cond(state) for a in ("3.1.109", "3.1.112", "3.1.126")))     # kyap and the ṇyat list take yat's site away
 
 
 def cond(state: State) -> bool:

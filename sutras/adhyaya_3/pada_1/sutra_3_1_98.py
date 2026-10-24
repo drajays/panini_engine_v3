@@ -19,7 +19,8 @@ def cond(state: State) -> bool:
     if not kftya_open(state, "3.1.98"):
         return False
     st = kftya_stem(state)
-    return len(st) >= 2 and st[-1] in "pPbBm" and st[-2] == "a"
+    from engine.registry import get_sutra
+    return len(st) >= 2 and st[-1] in "pPbBm" and st[-2] == "a" and not get_sutra("3.1.126").cond(state)   # vap rap lap trap cam: ṇyat (3.1.126)
 
 
 def act(state: State) -> State:
