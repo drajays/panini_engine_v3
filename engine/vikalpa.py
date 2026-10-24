@@ -27,14 +27,23 @@ from contextlib import contextmanager
 from dataclasses import dataclass
 from typing import Any, Callable, Iterator
 
-_POLICY: dict[str, bool] = {}
+_POLICY: dict[str, "bool | int"] = {}
 
 MAX_OPTIONAL_RULES = 6           # 2**6 = 64 branches, an auditable ceiling
 
 
 def policy_choice(sutra_id: str, default: bool) -> bool:
     """The dispatcher's hook: an explicit choice, else the sūtra's default."""
-    return _POLICY.get(sutra_id, default)
+    return bool(_POLICY.get(sutra_id, default))
+
+
+def policy_pick(state: Any, sutra_id: str, options: int, default: int = 0) -> int:
+    """A sūtra that lists several affixes or forms side by side (तव्यत्तव्यानीयरः, ण्वुल्तृचौ, तुमुन्ण्वुलौ) leaves the choice among them to the
+    reading: ``choose({sid: i})`` takes the i-th (0-based); the default is the first. The sūtra tells the state how many it offered so that
+    :func:`explore` can walk every one."""
+    state.meta.setdefault("vikalpa_multi", {})[sutra_id] = options
+    pick = _POLICY.get(sutra_id, default)
+    return int(pick) % options if not isinstance(pick, bool) else default
 
 
 @contextmanager
@@ -47,6 +56,11 @@ def choose(choices: dict[str, bool]) -> Iterator[None]:
     finally:
         _POLICY.clear()
         _POLICY.update(previous)
+
+
+def multiway_reached(state: Any) -> list[tuple[str, int]]:
+    """The side-by-side lists (policy_pick) this derivation put a question to: [(sūtra id, how many)]."""
+    return sorted((getattr(state, "meta", {}) or {}).get("vikalpa_multi", {}).items())
 
 
 def optional_rules_reached(state: Any) -> list[str]:
@@ -96,12 +110,15 @@ def explore(run: Callable[[], Any], *, limit: int = MAX_OPTIONAL_RULES) -> list[
     """
     first = run()
     optional = optional_rules_reached(first)[:limit]
-    if not optional:
+    multi = multiway_reached(first)
+    if not optional and not multi:
         return [Branch((), first.flat_slp1(), first.flat_dev(), first)]
 
     seen: dict[str, Branch] = {}
-    for combination in itertools.product([True, False], repeat=len(optional)):
-        choices = dict(zip(optional, combination))
+    axes = [[True, False]] * len(optional) + [list(range(n)) for _sid, n in multi]
+    names = optional + [sid for sid, _n in multi]
+    for combination in itertools.product(*axes):
+        choices = dict(zip(names, combination))
         with choose(choices):
             try:
                 state = run()

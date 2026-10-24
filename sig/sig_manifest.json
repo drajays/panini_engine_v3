@@ -168,17 +168,17 @@
     }
   ],
   "gaps": [],
-  "generated_utc": "2026-10-06T10:10:13.305581+00:00",
+  "generated_utc": "2026-10-23T15:03:49.816302+00:00",
   "generator": "panini_engine_v3.tools.sig_benchmark",
   "sutra_coverage": {
     "conditions": {
-      "cited": 1617,
-      "invoked": 930,
-      "moved": 490,
-      "tested": 654
+      "cited": 1628,
+      "invoked": 713,
+      "moved": 447,
+      "tested": 671
     },
-    "coverage_pct": 7.83,
-    "implemented": 312,
+    "coverage_pct": 7.96,
+    "implemented": 317,
     "registered": 3983
   },
   "total_derivations": 505

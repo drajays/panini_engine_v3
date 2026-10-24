@@ -73,6 +73,13 @@
   b.pratika { color: #8b2e00; }
   .rd-text.as-prose-anchor { font-size: 16px; text-align: left; line-height: 1.85; }
   .as-part { border: 1px solid var(--line-soft); border-radius: 4px; padding: 6px 8px; margin: 6px 0; }
+  .rd-notes { margin: 6px 0 10px; border: 1px solid var(--line-soft); border-radius: 4px; padding: 4px 10px; }
+  .rd-notes summary { cursor: pointer; font-family: var(--dev); color: var(--accent); }
+  .rd-notes textarea { width: 100%; box-sizing: border-box; font-family: var(--dev); font-size: 15px; line-height: 1.6; padding: 6px; margin: 6px 0 2px; }
+  .rd-notes .sb-bar { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin: 6px 0; font-size: 12px; }
+  .rd-notes .sb-bar button.on { border-color: var(--accent); color: var(--accent); }
+  .rd-notes .sb-hl { font-family: var(--dev); font-size: 14px; margin: 3px 0; }
+  .rd-notes mark { color: inherit; border-radius: 2px; padding: 0 2px; }
   @media (max-width: 1200px) { .rd-layout { grid-template-columns: 220px 1fr; } .rd-detail { grid-column: 1 / -1; } }
   @media (max-width: 760px)  { .rd-layout { grid-template-columns: 1fr; } .rd-verses { max-height: 30vh; } }
 </style>
@@ -112,6 +119,7 @@
       <a id="rd-export" class="secondary scl-only" style="font-size:12px;" href="#">XLSX ↓</a>
     </div>
     <div class="rd-text" id="rd-text"></div>
+    <details class="rd-notes" id="rd-notes" open><summary>टिप्पणी · your notes <span class="muted" style="font-size:11px">— kept in Subhastini, the same note everywhere</span></summary><div id="rd-notes-body"></div></details>
     <div class="rd-stats" id="rd-stats"></div>
     <div id="rd-gaps" class="scl-only" style="font-size:13px;margin:6px 0"></div>
     <p><button class="secondary" id="rd-cov-btn">अध्याय-कवरेज (whole-chapter gaps)</button></p>
@@ -262,6 +270,7 @@ async function selectVerse(sloka) {
   const act = $("rd-verses").querySelector(".active"); if (act) act.scrollIntoView({ block: "nearest" });
   const u = units.find(x => x.id === cur.unit);
   $("rd-title").textContent = `${u.book} ${cur.chapter}.${sloka}`;
+  loadNotes();
   $("rd-text").innerHTML = '<span class="muted" style="font-size:13px">यन्त्रं व्युत्पादयति…</span>';
   const q = `unit=${encodeURIComponent(cur.unit)}&chapter=${encodeURIComponent(cur.chapter)}&sloka=${encodeURIComponent(sloka)}`;
   $("rd-export").href = "/api/reader/export.xlsx?" + q;
@@ -729,6 +738,57 @@ async function runSearch() {
     const ch = el.dataset.ch, sl = el.dataset.sl;
     if (ch !== cur.chapter) selectChapter(ch, sl);
     else selectVerse(sl);
+  });
+}
+
+// ── टिप्पणी: the owner's notes and marks on a passage live in Subhastini (~/subhastini notes/shelf/, marks.json),
+// read and written through /api/subhastini/ — one copy, shown in both apps. Unsent text waits in localStorage.
+const SB = "/api/subhastini/", SB_APP = "http://127.0.0.1:18765/";
+const SB_HL = { key: "#E8C547", imp: "#E58B6B", doubt: "#7FB3D5", def: "#9CCB86", word: "#C39BD3" };
+const sbWork = u => u.startsWith("as:") ? u : "scl:" + u;
+const sbAt = () => ({ work: sbWork(cur.unit), section: cur.chapter, item: cur.sloka });
+const sbKeyOf = a => `shelf:${a.work}|${a.section}|${a.item}`;
+const sbHref = a => "#/shelf/" + [a.work, a.section, a.item].map(encodeURIComponent).join("/");
+let sbTimer = null, sbJob = null, sbMarks = {};
+const sbPost = (p, body, keepalive) => getJSON(SB + p, { method: "POST", keepalive, headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+function sbFlush() { clearTimeout(sbTimer); const j = sbJob; sbJob = null; return j ? j() : Promise.resolve(); }
+addEventListener("pagehide", () => { if (sbJob) sbJob(true); });
+
+async function loadNotes() {
+  await sbFlush();
+  const at = sbAt(), key = sbKeyOf(at), box = $("rd-notes-body");
+  box.innerHTML = '<span class="muted" style="font-size:12px">…</span>';
+  let n, m;
+  try { [n, m] = await Promise.all([getJSON(SB + "shelf/note?" + new URLSearchParams(at)), getJSON(SB + "marks")]); }
+  catch (err) { box.innerHTML = `<p class="muted" style="font-size:12px">Notes live in Subhastini — start it (Start Subhastini.command) to see and add them. (${esc(err.message)})</p>`; return; }
+  if (key !== sbKeyOf(sbAt())) return;
+  sbMarks = m;
+  const e = m[key] || {};
+  box.innerHTML = `<div class="sb-bar">
+      <button class="secondary${e.best ? " on" : ""}" data-m="best">${e.best ? "★" : "☆"} Best</button>
+      <button class="secondary${e.saved ? " on" : ""}" data-m="saved">${e.saved ? "✓ Saved" : "+ Save"}</button>
+      <button class="secondary${e.read ? " on" : ""}" data-m="read">✓ Read &amp; keep</button>
+      <a href="${SB_APP}${sbHref(at)}" target="_blank" rel="noopener">open in Subhastini ↗ (highlight, Q&amp;A, 5/10 view)</a></div>
+    <textarea id="rd-note" rows="4" placeholder="आपकी टिप्पणी — saved as you type; the same note Subhastini shows"></textarea>
+    <div class="muted" id="rd-note-st" style="font-size:11px"></div>
+    ${(e.hl || []).map(h => `<div class="sb-hl"><mark style="background:color-mix(in srgb, ${SB_HL[h.kind] || SB_HL.key} 45%, transparent)">${esc(h.text)}</mark>${h.comment ? " — " + esc(h.comment) : ""}</div>`).join("")}
+    ${(e.qa || []).filter(x => x.q || x.a).map(x => `<div class="sb-hl"><b>Q</b> ${esc(x.q)}<br><b>A</b> ${esc(x.a)}</div>`).join("")}`;
+  const ta = $("rd-note"), st = $("rd-note-st"), dk = "sbdraft:" + key, draft = localStorage.getItem(dk);
+  ta.value = draft != null && draft !== n.text ? draft : n.text;
+  const save = keepalive => {
+    const text = ta.value;
+    return sbPost("shelf/note", { ...at, text }, keepalive === true)
+      .then(() => { if (ta.value === text) localStorage.removeItem(dk); st.textContent = "saved " + new Date().toLocaleTimeString(); })
+      .catch(() => { st.textContent = "⚠ NOT saved yet — retrying (kept in this browser)"; sbJob = save; sbTimer = setTimeout(sbFlush, 3000); });
+  };
+  ta.oninput = () => { localStorage.setItem(dk, ta.value); st.textContent = "…"; sbJob = save; clearTimeout(sbTimer); sbTimer = setTimeout(sbFlush, 700); };
+  if (draft != null && draft !== n.text) { st.textContent = "restored an unsaved draft — saving…"; sbJob = save; sbFlush(); }
+  box.querySelectorAll("[data-m]").forEach(b => b.onclick = async () => {
+    const f = b.dataset.m, cur0 = (sbMarks[key] || {})[f];
+    const set = f === "read" ? (cur0 ? { read: false } : { read: true, saved: false }) : { [f]: !cur0 };
+    const text = data && data.text ? [].concat(data.text).join("\n") : "";
+    await sbPost("marks", { key, set, meta: { ref: $("rd-title").textContent, href: sbHref(at), text } });
+    loadNotes();
   });
 }
 

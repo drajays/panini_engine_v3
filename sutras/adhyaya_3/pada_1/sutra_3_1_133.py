@@ -33,7 +33,10 @@ from pathlib import Path
 from typing import Any, Dict, Optional
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.krt_attach import attach_krt, dhatu_ends_tape
 from engine.state import State, Term
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
 from phonology    import mk
 
 
@@ -74,11 +77,18 @@ def _matches(state: State) -> bool:
     return False
 
 
+def _agent_vivaksita(state: State) -> bool:
+    return vivaksita(state, "krt", "Rvultfc") and dhatu_ends_tape(state)
+
+
 def cond(state: State) -> bool:
-    return _matches(state)
+    return _agent_vivaksita(state) or _matches(state)
 
 
 def act(state: State) -> State:
+    if _agent_vivaksita(state):
+        # ण्वुल्तृचौ: the two stand side by side — ṇvul (कारकः) or tṛc (कर्ता); the reading takes one (choose({"3.1.133": i}) / explore)
+        return attach_krt(state, ("Rvul", "tfc")[policy_pick(state, "3.1.133", 2)])
     if not _matches(state):
         return state
     upa = state.meta.get("krt_upadesha_slp1")

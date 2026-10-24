@@ -41,7 +41,7 @@ def test_2_brU_nit_vac_adesha_atmanepada() -> None:
 def test_3_nvul_nit_ak_vrddhi() -> None:
     s = derive_bhU_Nvul_ak_vrddhi()
     ak = s.terms[-1]
-    assert ak.meta.get("upadesha_slp1") == "ak"
+    assert ak.meta.get("upadesha_slp1") == "aka"      # 7.1.1 yuvor anākau: vu → aka
     assert term_has_it_samjna(ak, NIT_SAMJNA)
     assert _applied(s, "7.2.115")
 

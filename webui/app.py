@@ -1406,6 +1406,30 @@ def reader_page():
     )
 
 
+@app.route("/api/subhastini/<path:p>", methods=["GET", "POST"])
+def api_subhastini(p):
+    """The owner's notes and marks on a passage live in Subhastini (~/subhastini, one copy). The reader reads and
+    writes them through Subhastini's own API, so a note added here is the same note there."""
+    import os
+    import urllib.error
+    import urllib.request
+    if p not in ("shelf/note", "marks", "gloss"):
+        abort(404)
+    if request.method == "POST" and request.mimetype != "application/json":  # same cross-site guard as Subhastini
+        return jsonify({"error": "json only"}), 415
+    base = os.environ.get("SUBHASTINI_URL", "http://127.0.0.1:18765")
+    url = f"{base}/api/{p}" + (f"?{request.query_string.decode()}" if request.query_string else "")
+    req = urllib.request.Request(url, data=request.get_data() if request.method == "POST" else None,
+                                 headers={"Content-Type": "application/json"}, method=request.method)
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return app.response_class(r.read(), status=r.status, mimetype="application/json")
+    except urllib.error.HTTPError as e:
+        return app.response_class(e.read(), status=e.code, mimetype="application/json")
+    except (urllib.error.URLError, OSError):
+        return jsonify({"error": "Subhastini is not running", "offline": True}), 503
+
+
 @app.route("/text")
 def text_page():
     return render_template("text.html", nav_active="text")

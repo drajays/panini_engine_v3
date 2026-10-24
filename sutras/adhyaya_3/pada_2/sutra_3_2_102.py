@@ -19,7 +19,9 @@ rewrites ``Bid`` → ``Binn`` on the *dhātu* tape before the *kṛt* is appende
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.krt_attach import attach_krt, dhatu_ends_tape
 from engine.state import State, Term
+from engine.vivaksha import vivaksita
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
@@ -31,7 +33,14 @@ def _target_upadesha(state: State) -> str:
     return "ciY"
 
 
+def _nistha_vivaksita(state: State) -> bool:
+    """भूते + निष्ठा: the action is past (kala BUta) and no other kṛt has been chosen."""
+    return vivaksita(state, "kala", "BUta") and dhatu_ends_tape(state)
+
+
 def cond(state: State) -> bool:
+    if _nistha_vivaksita(state):
+        return True
     if not (state.meta.get("kta_recipe") or state.meta.get("ktavatu_recipe")):
         return False
     if len(state.terms) != 1:
@@ -47,6 +56,9 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    if _nistha_vivaksita(state):
+        # निष्ठा is kta and ktavatu: kartari kṛt (3.4.67) takes the kartṛ-word ktavatu; otherwise kta (3.4.70: karmaṇi / bhāve)
+        return attach_krt(state, "ktavatu~" if vivaksita(state, "artha", "kartf") else "kta")
     t0 = state.terms[0]
     if state.meta.get("ktavatu_recipe") and state.meta.get("bhinn_before_tavat_recipe"):
         if "".join(v.slp1 for v in t0.varnas) == "Bid":
@@ -77,8 +89,8 @@ SUTRA = SutraRecord(
     sutra_type     = SutraType.VIDHI,
     text_slp1      = 'nizWA',
     text_dev       = 'निष्ठा',
-    samagra_slp1   = "pratyayaH paraSca AdyudAttaSca DAtoH BUte nizWA kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
-    samagra_dev    = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते निष्ठा कृत्",
+    samagra_slp1   = "pratyayaH paraSca AdyudAttaSca DAtoH BUte kartari nizWA kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    samagra_dev    = "प्रत्ययः परश्च आद्युदात्तश्च धातोः भूते कर्तरि निष्ठा कृत्",
     padaccheda_dev = "निष्ठा",
     why_dev        = "भूतकालादौ धातोः क्त/क्तवतु-प्रत्ययः (ग्लास-बॉक्स्: चि+क्त → चित; चि+क्तवतु → चितवत्)।",
     anuvritti_from = ("3.1.91",),

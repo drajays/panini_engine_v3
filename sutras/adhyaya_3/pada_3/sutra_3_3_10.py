@@ -10,26 +10,26 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from engine.krt_attach import attach_krt, dhatu_ends_tape
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
 
-_GATE_KEY: str = "3_3_10_tumunRvulO_10"
+def _site(state: State) -> bool:
+    """तुमुन्ण्वुलौ क्रियायां क्रियार्थायाम् — भविष्यति, for an action whose purpose is another action (भोक्तुं व्रजति / भोजको व्रजति)."""
+    return vivaksita(state, "kala", "Bavizyat") and vivaksita(state, "kriyArTA", "kriyArTA") and dhatu_ends_tape(state)
 
 
 def cond(state: State) -> bool:
-    return krt_insertion_eligible(state, "3.3.10", gate_key=_GATE_KEY, adhikara_id="3.1.1")
+    return _site(state)
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.3.10"
-    return state
+    return attach_krt(state, ("tumu~n", "Rvul")[policy_pick(state, "3.3.10", 2)])        # तुमुन् and ण्वुल् stand side by side
 
 
 SUTRA = SutraRecord(
     sutra_id              = "3.3.10",
     sutra_type            = SutraType.VIDHI,
-    r1_form_identity_exempt = True,
     text_slp1             = "tumunRvulO kriyAyAM kriyArTAyAm",
     text_dev              = "तुमुन्ण्वुलौ क्रियायां क्रियार्थायाम्",
     samagra_slp1          = "pratyayaH paraSca AdyudAttaSca DAtoH Bavizyati tumun-RvulO kriyAyAm kriyArTAyAm kft",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked

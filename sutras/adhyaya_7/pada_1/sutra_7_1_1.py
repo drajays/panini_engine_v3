@@ -36,9 +36,6 @@ def _matches_nvul(state: State) -> bool:
         return False
     if pr.meta.get("upadesha_slp1") != "Rvul":
         return False
-    itm = pr.meta.get("it_markers", set())
-    if not isinstance(itm, set) or not ("N" in itm or "R" in itm):
-        return False
     if pr.meta.get("vu_to_ak_done"):
         return False
     if "".join(v.slp1 for v in pr.varnas) != "vu":
@@ -87,7 +84,7 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if _matches_nvul(state):
         pr = state.terms[-1]
-        adesha_substitute_varnas(pr, "ak", state, sutra_id="7.1.1")
+        adesha_substitute_varnas(pr, "aka", state, sutra_id="7.1.1")
         pr.meta["vu_to_ak_done"] = True
         pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "Rvul")
         return state
@@ -118,6 +115,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "युवोः अनाकौ",
     why_dev        = "‘यु’-‘वु’-स्थाने ‘अन्’-‘अक्’ आदेशः (ण्वुल् / ल्युट् इति संकीर्णम्)।",
     anuvritti_from = ("7.1.0",),
+    apavada_of     = ("7.2.35",),      # the ādeśa of the pratyaya itself comes before the iṭ that would look at its first letter: कारकः, not *कारिवुः (antaraṅga)
     cond           = cond,
     act            = act,
 )

@@ -52,7 +52,7 @@ class Run:
 from engine.scheduler import effective_candidates  # noqa: E402,F401  (C2 moved it into the engine)
 
 
-def run_autonomously(state: Any, expected: str, case: str, budget: int) -> Run:
+def run_autonomously(state: Any, expected: str, case: str, budget: int, *, stop_before_tripadi: bool = False) -> Run:
     from engine import apply_rule
     from engine.resolver import resolve_with_reason
     from engine.core_loop import apply_pratishedhas, note_tripadi_progress, open_adhikaras
@@ -68,6 +68,9 @@ def run_autonomously(state: Any, expected: str, case: str, budget: int) -> Run:
         if not usable:
             from engine.core_loop import advance_phase
 
+            if stop_before_tripadi and state.phase == "sandhi":      # a kṛdanta stem: the word's own tripāḍī belongs to the sup that follows
+                result.outcome = "stem"
+                break
             if advance_phase(state):     # this stratum is exhausted — Art. 3 moves on
                 continue
             result.outcome = "halted"

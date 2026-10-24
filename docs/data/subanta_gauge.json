@@ -9371,7 +9371,7 @@
 "got": {
 "pulliṅga": "viSSvapAH/viSvapAH",
 "strīliṅga": "viSSvapA/viSvapA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viSSvapA/viSvapA"
 },
 "ok": true,
 "sutras": [
@@ -9419,7 +9419,7 @@
 "got": {
 "pulliṅga": "viSSvapAmm/viSvapAm",
 "strīliṅga": "viSSvapAmm/viSvapAm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viSSvapA/viSvapA"
 },
 "ok": true,
 "sutras": [
@@ -9694,7 +9694,7 @@
 "got": {
 "pulliṅga": "viSSvapAH/viSvapAH",
 "strīliṅga": "viSSvape/viSvape",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viSSvapA/viSvapA"
 },
 "ok": true,
 "sutras": [
@@ -9742,7 +9742,7 @@
 "got": {
 "pulliṅga": "hAhAH",
 "strīliṅga": "hAhA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "hAhA"
 },
 "ok": true,
 "sutras": [
@@ -9790,7 +9790,7 @@
 "got": {
 "pulliṅga": "hAhAm/hAhAmm",
 "strīliṅga": "hAhAm/hAhAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "hAhA"
 },
 "ok": true,
 "sutras": [
@@ -10061,7 +10061,7 @@
 "got": {
 "pulliṅga": "hAhAH",
 "strīliṅga": "hAhe",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "hAhA"
 },
 "ok": true,
 "sutras": [
@@ -10109,7 +10109,7 @@
 "got": {
 "pulliṅga": "hariH",
 "strīliṅga": "hariH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "hari"
 },
 "ok": true,
 "sutras": [
@@ -10163,7 +10163,7 @@
 "got": {
 "pulliṅga": "harim/harimm",
 "strīliṅga": "harim/harimm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "hari"
 },
 "ok": true,
 "sutras": [
@@ -10462,7 +10462,7 @@
 "got": {
 "pulliṅga": "hare",
 "strīliṅga": "hare",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "hare"
 },
 "ok": true,
 "sutras": [
@@ -10514,7 +10514,7 @@
 "got": {
 "pulliṅga": "saKA",
 "strīliṅga": "saKA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "saKa"
 },
 "ok": true,
 "sutras": [
@@ -10568,7 +10568,7 @@
 "got": {
 "pulliṅga": "saKAyam/saKAyamm",
 "strīliṅga": "saKAyam/saKAyamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "saKi"
 },
 "ok": true,
 "sutras": [
@@ -10854,7 +10854,7 @@
 "got": {
 "pulliṅga": "saKe",
 "strīliṅga": "saKe",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "saKe"
 },
 "ok": true,
 "sutras": [
@@ -10906,7 +10906,7 @@
 "got": {
 "pulliṅga": "patiH",
 "strīliṅga": "patiH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pati"
 },
 "ok": true,
 "sutras": [
@@ -10957,7 +10957,7 @@
 "got": {
 "pulliṅga": "patim/patimm",
 "strīliṅga": "patim/patimm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pati"
 },
 "ok": true,
 "sutras": [
@@ -11231,7 +11231,7 @@
 "got": {
 "pulliṅga": "pate",
 "strīliṅga": "pate",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pate"
 },
 "ok": true,
 "sutras": [
@@ -11655,7 +11655,7 @@
 "got": {
 "pulliṅga": "papIH",
 "strīliṅga": "papI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "papI"
 },
 "ok": true,
 "sutras": [
@@ -11703,7 +11703,7 @@
 "got": {
 "pulliṅga": "papIm/papImm",
 "strīliṅga": "papIm/papImm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "papI"
 },
 "ok": true,
 "sutras": [
@@ -11979,7 +11979,7 @@
 "got": {
 "pulliṅga": "papIH",
 "strīliṅga": "papi",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "papI"
 },
 "ok": true,
 "sutras": [
@@ -12027,7 +12027,7 @@
 "got": {
 "pulliṅga": "bahuSSreyasIH/bahuSreyasIH",
 "strīliṅga": "bahuSSreyasI/bahuSreyasI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "bahuSSreyasI/bahuSreyasI"
 },
 "ok": true,
 "sutras": [
@@ -12074,7 +12074,7 @@
 "got": {
 "pulliṅga": "bahuSSreyasImm/bahuSreyasIm",
 "strīliṅga": "bahuSSreyasImm/bahuSreyasIm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "bahuSSreyasI/bahuSreyasI"
 },
 "ok": true,
 "sutras": [
@@ -12360,7 +12360,7 @@
 "got": {
 "pulliṅga": "bahuSSreyasIH/bahuSreyasIH",
 "strīliṅga": "bahuSSreyasi/bahuSreyasi",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "bahuSSreyasI/bahuSreyasI"
 },
 "ok": true,
 "sutras": [
@@ -12408,7 +12408,7 @@
 "got": {
 "pulliṅga": "atilakzmIH/atilakzzmIH",
 "strīliṅga": "atilakzmI/atilakzzmI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "atilakzmI/atilakzzmI"
 },
 "ok": true,
 "sutras": [
@@ -12456,7 +12456,7 @@
 "got": {
 "pulliṅga": "atilakzmIm/atilakzzmImm",
 "strīliṅga": "atilakzmIm/atilakzzmImm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "atilakzmI/atilakzzmI"
 },
 "ok": true,
 "sutras": [
@@ -12743,7 +12743,7 @@
 "got": {
 "pulliṅga": "atilakzmIH/atilakzzmIH",
 "strīliṅga": "atilakzmi/atilakzzmi",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "atilakzmI/atilakzzmI"
 },
 "ok": true,
 "sutras": [
@@ -12791,7 +12791,7 @@
 "got": {
 "pulliṅga": "praDIH/prraDIH",
 "strīliṅga": "praDI/prraDI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "praDI/prraDI"
 },
 "ok": true,
 "sutras": [
@@ -12839,7 +12839,7 @@
 "got": {
 "pulliṅga": "praDIm/prraDImm",
 "strīliṅga": "praDIm/prraDImm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "praDI/prraDI"
 },
 "ok": false,
 "sutras": [
@@ -13126,7 +13126,7 @@
 "got": {
 "pulliṅga": "praDIH/prraDIH",
 "strīliṅga": "praDi/prraDi",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "praDI/prraDI"
 },
 "ok": true,
 "sutras": [
@@ -13174,7 +13174,7 @@
 "got": {
 "pulliṅga": "praDIH/prraDIH",
 "strīliṅga": "praDI/prraDI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "praDI/prraDI"
 },
 "ok": true,
 "sutras": [
@@ -13222,7 +13222,7 @@
 "got": {
 "pulliṅga": "praDIm/prraDImm",
 "strīliṅga": "praDIm/prraDImm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "praDI/prraDI"
 },
 "ok": false,
 "sutras": [
@@ -13499,7 +13499,7 @@
 "got": {
 "pulliṅga": "praDIH/prraDIH",
 "strīliṅga": "praDi/prraDi",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "praDI/prraDI"
 },
 "ok": true,
 "sutras": [
@@ -13547,7 +13547,7 @@
 "got": {
 "pulliṅga": "grAmaRIH/grrAmaRIH",
 "strīliṅga": "grAmaRI/grrAmaRI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "grAmaRI/grrAmaRI"
 },
 "ok": true,
 "sutras": [
@@ -13595,7 +13595,7 @@
 "got": {
 "pulliṅga": "grAmaRyam/grrAmaRRyyamm",
 "strīliṅga": "grAmaRyam/grrAmaRRyyamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "grAmaRI/grrAmaRI"
 },
 "ok": true,
 "sutras": [
@@ -13873,7 +13873,7 @@
 "got": {
 "pulliṅga": "grAmaRIH/grrAmaRIH",
 "strīliṅga": "grAmaRi/grrAmaRi",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "grAmaRI/grrAmaRI"
 },
 "ok": true,
 "sutras": [
@@ -13921,7 +13921,7 @@
 "got": {
 "pulliṅga": "nIH",
 "strīliṅga": "nI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "nI"
 },
 "ok": true,
 "sutras": [
@@ -13969,7 +13969,7 @@
 "got": {
 "pulliṅga": "niyam/niyamm",
 "strīliṅga": "niyam/niyamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "nI"
 },
 "ok": true,
 "sutras": [
@@ -14246,7 +14246,7 @@
 "got": {
 "pulliṅga": "nIH",
 "strīliṅga": "ni",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "nI"
 },
 "ok": true,
 "sutras": [
@@ -14294,7 +14294,7 @@
 "got": {
 "pulliṅga": "suSSrIH/suSrIH",
 "strīliṅga": "suSSrI/suSrI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suSSrI/suSrI"
 },
 "ok": true,
 "sutras": [
@@ -14342,7 +14342,7 @@
 "got": {
 "pulliṅga": "suSSrImm/suSrIm",
 "strīliṅga": "suSSrImm/suSrIm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suSSrI/suSrI"
 },
 "ok": false,
 "sutras": [
@@ -14619,7 +14619,7 @@
 "got": {
 "pulliṅga": "suSSrIH/suSrIH",
 "strīliṅga": "suSSri/suSri",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suSSrI/suSrI"
 },
 "ok": true,
 "sutras": [
@@ -14667,7 +14667,7 @@
 "got": {
 "pulliṅga": "SudDaDIH/SuddDaDIH",
 "strīliṅga": "SudDaDI/SuddDaDI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "SudDaDI/SuddDaDI"
 },
 "ok": true,
 "sutras": [
@@ -14715,7 +14715,7 @@
 "got": {
 "pulliṅga": "SudDaDIm/SuddDaDImm",
 "strīliṅga": "SudDaDIm/SuddDaDImm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "SudDaDI/SuddDaDI"
 },
 "ok": false,
 "sutras": [
@@ -14992,7 +14992,7 @@
 "got": {
 "pulliṅga": "SudDaDIH/SuddDaDIH",
 "strīliṅga": "SudDaDi/SuddDaDi",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "SudDaDI/SuddDaDI"
 },
 "ok": true,
 "sutras": [
@@ -15040,7 +15040,7 @@
 "got": {
 "pulliṅga": "suDIH",
 "strīliṅga": "suDI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suDI"
 },
 "ok": true,
 "sutras": [
@@ -15088,7 +15088,7 @@
 "got": {
 "pulliṅga": "suDIm/suDImm",
 "strīliṅga": "suDIm/suDImm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suDI"
 },
 "ok": false,
 "sutras": [
@@ -15356,7 +15356,7 @@
 "got": {
 "pulliṅga": "suDIH",
 "strīliṅga": "suDi",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suDI"
 },
 "ok": true,
 "sutras": [
@@ -15404,7 +15404,7 @@
 "got": {
 "pulliṅga": "SamBuH",
 "strīliṅga": "SamBuH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "SamBu"
 },
 "ok": true,
 "sutras": [
@@ -15453,7 +15453,7 @@
 "got": {
 "pulliṅga": "SamBum/SamBumm",
 "strīliṅga": "SamBum/SamBumm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "SamBu"
 },
 "ok": true,
 "sutras": [
@@ -15734,7 +15734,7 @@
 "got": {
 "pulliṅga": "SamBo",
 "strīliṅga": "SamBo",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "SamBo"
 },
 "ok": true,
 "sutras": [
@@ -15783,7 +15783,7 @@
 "got": {
 "pulliṅga": "krozwuH/krrozwwuH",
 "strīliṅga": "krozwuH/krrozwwuH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "krozwu/krrozwwu"
 },
 "ok": false,
 "sutras": [
@@ -15838,7 +15838,7 @@
 "got": {
 "pulliṅga": "krozwum/krrozwwumm",
 "strīliṅga": "krozwum/krrozwwumm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "krozwu/krrozwwu"
 },
 "ok": false,
 "sutras": [
@@ -16244,7 +16244,7 @@
 "got": {
 "pulliṅga": "krozwo/krrozwwo",
 "strīliṅga": "krozwo/krrozwwo",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "krozwo/krrozwwo"
 },
 "ok": true,
 "sutras": [
@@ -16296,7 +16296,7 @@
 "got": {
 "pulliṅga": "hUhUH",
 "strīliṅga": "hUhUH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "hUhU"
 },
 "ok": true,
 "sutras": [
@@ -16344,7 +16344,7 @@
 "got": {
 "pulliṅga": "hUhUm/hUhUmm",
 "strīliṅga": "hUhUm/hUhUmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "hUhU"
 },
 "ok": true,
 "sutras": [
@@ -16620,7 +16620,7 @@
 "got": {
 "pulliṅga": "hUhUH",
 "strīliṅga": "hUhu",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "hUhU"
 },
 "ok": true,
 "sutras": [
@@ -16668,7 +16668,7 @@
 "got": {
 "pulliṅga": "aticamUH",
 "strīliṅga": "aticamUH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aticamU"
 },
 "ok": true,
 "sutras": [
@@ -16716,7 +16716,7 @@
 "got": {
 "pulliṅga": "aticamUm/aticamUmm",
 "strīliṅga": "aticamUm/aticamUmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aticamU"
 },
 "ok": true,
 "sutras": [
@@ -17002,7 +17002,7 @@
 "got": {
 "pulliṅga": "aticamUH",
 "strīliṅga": "aticamu",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aticamU"
 },
 "ok": true,
 "sutras": [
@@ -17050,7 +17050,7 @@
 "got": {
 "pulliṅga": "KalapUH",
 "strīliṅga": "KalapUH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "KalapU"
 },
 "ok": true,
 "sutras": [
@@ -17098,7 +17098,7 @@
 "got": {
 "pulliṅga": "Kalappvvamm/Kalapvam",
 "strīliṅga": "Kalappvvamm/Kalapvam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "KalapU"
 },
 "ok": true,
 "sutras": [
@@ -17372,7 +17372,7 @@
 "got": {
 "pulliṅga": "KalapUH",
 "strīliṅga": "Kalapu",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "KalapU"
 },
 "ok": true,
 "sutras": []
@@ -17417,7 +17417,7 @@
 "got": {
 "pulliṅga": "svaBUH",
 "strīliṅga": "svaBUH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svaBU"
 },
 "ok": true,
 "sutras": [
@@ -17465,7 +17465,7 @@
 "got": {
 "pulliṅga": "svaBuvam/svaBuvamm",
 "strīliṅga": "svaBuvam/svaBuvamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svaBU"
 },
 "ok": true,
 "sutras": [
@@ -17739,7 +17739,7 @@
 "got": {
 "pulliṅga": "svaBUH",
 "strīliṅga": "svaBu",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svaBU"
 },
 "ok": true,
 "sutras": [
@@ -17787,7 +17787,7 @@
 "got": {
 "pulliṅga": "varzABUH/varzzABUH",
 "strīliṅga": "varzABUH/varzzABUH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "varzABU/varzzABU"
 },
 "ok": true,
 "sutras": [
@@ -17835,7 +17835,7 @@
 "got": {
 "pulliṅga": "varzABvam/varzAbBvvamm/varzzABvam/varzzAbBvvamm",
 "strīliṅga": "varzABvam/varzAbBvvamm/varzzABvam/varzzAbBvvamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "varzABU/varzzABU"
 },
 "ok": true,
 "sutras": [
@@ -18103,7 +18103,7 @@
 "got": {
 "pulliṅga": "varzABUH/varzzABUH",
 "strīliṅga": "varzABu/varzzABu",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "varzABU/varzzABU"
 },
 "ok": true,
 "sutras": [
@@ -18151,7 +18151,7 @@
 "got": {
 "pulliṅga": "DAtA",
 "strīliṅga": "DAtA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "DAta"
 },
 "ok": true,
 "sutras": [
@@ -18203,7 +18203,7 @@
 "got": {
 "pulliṅga": "DAtAram/DAtAramm",
 "strīliṅga": "DAtaram/DAtaramm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "DAtf"
 },
 "ok": true,
 "sutras": [
@@ -18485,7 +18485,7 @@
 "got": {
 "pulliṅga": "DAtaH",
 "strīliṅga": "DAtaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "DAtf"
 },
 "ok": true,
 "sutras": [
@@ -18536,7 +18536,7 @@
 "got": {
 "pulliṅga": "pitA",
 "strīliṅga": "pitA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pita"
 },
 "ok": true,
 "sutras": [
@@ -18586,7 +18586,7 @@
 "got": {
 "pulliṅga": "pitaram/pitaramm",
 "strīliṅga": "pitaram/pitaramm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pitf"
 },
 "ok": true,
 "sutras": [
@@ -18866,7 +18866,7 @@
 "got": {
 "pulliṅga": "pitaH",
 "strīliṅga": "pitaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pitf"
 },
 "ok": true,
 "sutras": [
@@ -18915,7 +18915,7 @@
 "got": {
 "pulliṅga": "nA",
 "strīliṅga": "nA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "na"
 },
 "ok": true,
 "sutras": [
@@ -18965,7 +18965,7 @@
 "got": {
 "pulliṅga": "naram/naramm",
 "strīliṅga": "naram/naramm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "nf"
 },
 "ok": true,
 "sutras": [
@@ -19262,7 +19262,7 @@
 "got": {
 "pulliṅga": "naH",
 "strīliṅga": "naH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "nf"
 },
 "ok": true,
 "sutras": [
@@ -19311,7 +19311,7 @@
 "got": {
 "pulliṅga": "gOH",
 "strīliṅga": "gOH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "go"
 },
 "ok": true,
 "sutras": [
@@ -19365,7 +19365,7 @@
 "got": {
 "pulliṅga": "gAm/gAmm",
 "strīliṅga": "gAm/gAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "go"
 },
 "ok": true,
 "sutras": [
@@ -19644,7 +19644,7 @@
 "got": {
 "pulliṅga": "gOH",
 "strīliṅga": "gOH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "go"
 },
 "ok": true,
 "sutras": [
@@ -19698,7 +19698,7 @@
 "got": {
 "pulliṅga": "rAH",
 "strīliṅga": "rA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rE"
 },
 "ok": true,
 "sutras": [
@@ -19747,7 +19747,7 @@
 "got": {
 "pulliṅga": "rAyam/rAyamm",
 "strīliṅga": "rAyam/rAyamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rE"
 },
 "ok": true,
 "sutras": [
@@ -20015,7 +20015,7 @@
 "got": {
 "pulliṅga": "rAH",
 "strīliṅga": "re",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rE"
 },
 "ok": true,
 "sutras": [
@@ -20064,7 +20064,7 @@
 "got": {
 "pulliṅga": "glOH/gllOH",
 "strīliṅga": "glOH/gllOH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "glO/gllO"
 },
 "ok": true,
 "sutras": [
@@ -20112,7 +20112,7 @@
 "got": {
 "pulliṅga": "glAvam/gllAvamm",
 "strīliṅga": "glAvam/gllAvamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "glO/gllO"
 },
 "ok": true,
 "sutras": [
@@ -20389,7 +20389,7 @@
 "got": {
 "pulliṅga": "glOH/gllOH",
 "strīliṅga": "glOH/gllOH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "glO/gllO"
 },
 "ok": true,
 "sutras": [
@@ -20437,7 +20437,7 @@
 "got": {
 "pulliṅga": "ramAH",
 "strīliṅga": "ramA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ramA"
 },
 "ok": true,
 "sutras": [
@@ -20485,7 +20485,7 @@
 "got": {
 "pulliṅga": "ramAm/ramAmm",
 "strīliṅga": "ramAm/ramAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ramA"
 },
 "ok": true,
 "sutras": [
@@ -20771,7 +20771,7 @@
 "got": {
 "pulliṅga": "ramAH",
 "strīliṅga": "rame",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ramA"
 },
 "ok": true,
 "sutras": [
@@ -20820,7 +20820,7 @@
 "got": {
 "pulliṅga": "sarvAH/sarvvAH",
 "strīliṅga": "sarvA/sarvvA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sarvA/sarvvA"
 },
 "ok": true,
 "sutras": [
@@ -20868,7 +20868,7 @@
 "got": {
 "pulliṅga": "sarvAm/sarvAmm/sarvvAm/sarvvAmm",
 "strīliṅga": "sarvAm/sarvAmm/sarvvAm/sarvvAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sarvA/sarvvA"
 },
 "ok": true,
 "sutras": [
@@ -21153,7 +21153,7 @@
 "got": {
 "pulliṅga": "sarvAH/sarvvAH",
 "strīliṅga": "sarve/sarvve",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sarvA/sarvvA"
 },
 "ok": true,
 "sutras": [
@@ -21202,7 +21202,7 @@
 "got": {
 "pulliṅga": "uttarapUrvAH/uttarapUrvvAH/utttarapUrvAH/utttarapUrvvAH",
 "strīliṅga": "uttarapUrvA/uttarapUrvvA/utttarapUrvA/utttarapUrvvA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "uttarapUrvA/uttarapUrvvA/utttarapUrvA/utttarapUrvvA"
 },
 "ok": true,
 "sutras": [
@@ -21250,7 +21250,7 @@
 "got": {
 "pulliṅga": "uttarapUrvAm/uttarapUrvvAm/utttarapUrvAmm/utttarapUrvvAmm",
 "strīliṅga": "uttarapUrvAm/uttarapUrvvAm/utttarapUrvAmm/utttarapUrvvAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "uttarapUrvA/uttarapUrvvA/utttarapUrvA/utttarapUrvvA"
 },
 "ok": true,
 "sutras": [
@@ -21623,7 +21623,7 @@
 "got": {
 "pulliṅga": "uttarapUrvAH/uttarapUrvvAH/utttarapUrvAH/utttarapUrvvAH",
 "strīliṅga": "uttarapUrve/uttarapUrvve/utttarapUrve/utttarapUrvve",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "uttarapUrvA/uttarapUrvvA/utttarapUrvA/utttarapUrvvA"
 },
 "ok": true,
 "sutras": [
@@ -21672,7 +21672,7 @@
 "got": {
 "pulliṅga": "dvitIyAH/dvvitIyAH",
 "strīliṅga": "dvitIyA/dvvitIyA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dvitIyA/dvvitIyA"
 },
 "ok": true,
 "sutras": [
@@ -21720,7 +21720,7 @@
 "got": {
 "pulliṅga": "dvitIyAm/dvvitIyAmm",
 "strīliṅga": "dvitIyAm/dvvitIyAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dvitIyA/dvvitIyA"
 },
 "ok": true,
 "sutras": [
@@ -22076,7 +22076,7 @@
 "got": {
 "pulliṅga": "dvitIyAH/dvvitIyAH",
 "strīliṅga": "dvitIye/dvvitIye",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dvitIyA/dvvitIyA"
 },
 "ok": true,
 "sutras": [
@@ -22125,7 +22125,7 @@
 "got": {
 "pulliṅga": "tftIyAH",
 "strīliṅga": "tftIyA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tftIyA"
 },
 "ok": true,
 "sutras": [
@@ -22173,7 +22173,7 @@
 "got": {
 "pulliṅga": "tftIyAm/tftIyAmm",
 "strīliṅga": "tftIyAm/tftIyAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tftIyA"
 },
 "ok": true,
 "sutras": [
@@ -22529,7 +22529,7 @@
 "got": {
 "pulliṅga": "tftIyAH",
 "strīliṅga": "tftIye",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tftIyA"
 },
 "ok": true,
 "sutras": [
@@ -22578,7 +22578,7 @@
 "got": {
 "pulliṅga": "ambAH",
 "strīliṅga": "ambA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ambA"
 },
 "ok": true,
 "sutras": [
@@ -22626,7 +22626,7 @@
 "got": {
 "pulliṅga": "ambAm/ambAmm",
 "strīliṅga": "ambAm/ambAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ambA"
 },
 "ok": true,
 "sutras": [
@@ -22911,7 +22911,7 @@
 "got": {
 "pulliṅga": "ambAH",
 "strīliṅga": "ambe",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ambA"
 },
 "ok": false,
 "sutras": [
@@ -22960,7 +22960,7 @@
 "got": {
 "pulliṅga": "jarAH",
 "strīliṅga": "jarA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "jarA"
 },
 "ok": true,
 "sutras": [
@@ -23040,7 +23040,7 @@
 "got": {
 "pulliṅga": "jarAm/jarAmm",
 "strīliṅga": "jarAm/jarAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "jarA"
 },
 "ok": true,
 "sutras": [
@@ -23055,7 +23055,7 @@
 "got": {
 "pulliṅga": "jarAm/jarAmm",
 "strīliṅga": "jarAm/jarAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "jarA"
 },
 "ok": false,
 "sutras": [
@@ -23467,7 +23467,7 @@
 "got": {
 "pulliṅga": "jarAH",
 "strīliṅga": "jare",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "jarA"
 },
 "ok": true,
 "sutras": [
@@ -23548,7 +23548,7 @@
 "got": {
 "pulliṅga": "gopAH",
 "strīliṅga": "gopA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "gopA"
 },
 "ok": true,
 "sutras": [
@@ -23596,7 +23596,7 @@
 "got": {
 "pulliṅga": "gopAm/gopAmm",
 "strīliṅga": "gopAm/gopAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "gopA"
 },
 "ok": true,
 "sutras": [
@@ -23871,7 +23871,7 @@
 "got": {
 "pulliṅga": "gopAH",
 "strīliṅga": "gope",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "gopA"
 },
 "ok": true,
 "sutras": [
@@ -23919,7 +23919,7 @@
 "got": {
 "pulliṅga": "matiH",
 "strīliṅga": "matiH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "mati"
 },
 "ok": true,
 "sutras": [
@@ -23968,7 +23968,7 @@
 "got": {
 "pulliṅga": "matim/matimm",
 "strīliṅga": "matim/matimm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "mati"
 },
 "ok": true,
 "sutras": [
@@ -24327,7 +24327,7 @@
 "got": {
 "pulliṅga": "mate",
 "strīliṅga": "mate",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "mate"
 },
 "ok": true,
 "sutras": [
@@ -24622,7 +24622,7 @@
 "got": {
 "pulliṅga": "gOrIH",
 "strīliṅga": "gOrI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "gOrI"
 },
 "ok": true,
 "sutras": [
@@ -24669,7 +24669,7 @@
 "got": {
 "pulliṅga": "gOrIm/gOrImm",
 "strīliṅga": "gOrIm/gOrImm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "gOrI"
 },
 "ok": true,
 "sutras": [
@@ -24957,7 +24957,7 @@
 "got": {
 "pulliṅga": "gOrIH",
 "strīliṅga": "gOri",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "gOrI"
 },
 "ok": true,
 "sutras": [
@@ -25005,7 +25005,7 @@
 "got": {
 "pulliṅga": "lakzmIH/lakzzmIH",
 "strīliṅga": "lakzmI/lakzzmI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "lakzmI/lakzzmI"
 },
 "ok": true,
 "sutras": [
@@ -25053,7 +25053,7 @@
 "got": {
 "pulliṅga": "lakzmIm/lakzzmImm",
 "strīliṅga": "lakzmIm/lakzzmImm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "lakzmI/lakzzmI"
 },
 "ok": true,
 "sutras": [
@@ -25341,7 +25341,7 @@
 "got": {
 "pulliṅga": "lakzmIH/lakzzmIH",
 "strīliṅga": "lakzmi/lakzzmi",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "lakzmI/lakzzmI"
 },
 "ok": true,
 "sutras": [
@@ -25389,7 +25389,7 @@
 "got": {
 "pulliṅga": "SrIH",
 "strīliṅga": "SrI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "SrI"
 },
 "ok": true,
 "sutras": [
@@ -25437,7 +25437,7 @@
 "got": {
 "pulliṅga": "SrIm/SrImm",
 "strīliṅga": "SrIm/SrImm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "SrI"
 },
 "ok": false,
 "sutras": [
@@ -25804,7 +25804,7 @@
 "got": {
 "pulliṅga": "SrIH",
 "strīliṅga": "Sri",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "SrI"
 },
 "ok": true,
 "sutras": [
@@ -25852,7 +25852,7 @@
 "got": {
 "pulliṅga": "strIH/sttrrIH",
 "strīliṅga": "strI/sttrrI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "strI/sttrrI"
 },
 "ok": true,
 "sutras": [
@@ -25903,7 +25903,7 @@
 "got": {
 "pulliṅga": "strIm/striyam/sttrrImm/sttrriyamm",
 "strīliṅga": "strIm/striyam/sttrrImm/sttrriyamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "strI/sttrrI"
 },
 "ok": true,
 "sutras": [
@@ -25918,7 +25918,7 @@
 "got": {
 "pulliṅga": "strIm/striyam/sttrrImm/sttrriyamm",
 "strīliṅga": "strIm/striyam/sttrrImm/sttrriyamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "strI/sttrrI"
 },
 "ok": true,
 "sutras": [
@@ -26240,7 +26240,7 @@
 "got": {
 "pulliṅga": "strIH/sttrrIH",
 "strīliṅga": "stri/sttrri",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "strI/sttrrI"
 },
 "ok": true,
 "sutras": [
@@ -26292,7 +26292,7 @@
 "got": {
 "pulliṅga": "DenuH",
 "strīliṅga": "DenuH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Denu"
 },
 "ok": true,
 "sutras": [
@@ -26341,7 +26341,7 @@
 "got": {
 "pulliṅga": "Denum/Denumm",
 "strīliṅga": "Denum/Denumm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Denu"
 },
 "ok": true,
 "sutras": [
@@ -26700,7 +26700,7 @@
 "got": {
 "pulliṅga": "Deno",
 "strīliṅga": "Deno",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Deno"
 },
 "ok": true,
 "sutras": [
@@ -26749,7 +26749,7 @@
 "got": {
 "pulliṅga": "vaDUH",
 "strīliṅga": "vaDUH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vaDU"
 },
 "ok": false,
 "sutras": []
@@ -26794,7 +26794,7 @@
 "got": {
 "pulliṅga": "vaDUm/vaDUmm",
 "strīliṅga": "vaDUm/vaDUmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vaDU"
 },
 "ok": true,
 "sutras": [
@@ -27081,7 +27081,7 @@
 "got": {
 "pulliṅga": "vaDUH",
 "strīliṅga": "vaDu",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vaDU"
 },
 "ok": true,
 "sutras": [
@@ -27129,7 +27129,7 @@
 "got": {
 "pulliṅga": "BrUH/BrrUH",
 "strīliṅga": "BrUH/BrrUH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "BrU/BrrU"
 },
 "ok": true,
 "sutras": [
@@ -27177,7 +27177,7 @@
 "got": {
 "pulliṅga": "Brruvamm/Bruvam",
 "strīliṅga": "Brruvamm/Bruvam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "BrU/BrrU"
 },
 "ok": true,
 "sutras": [
@@ -27544,7 +27544,7 @@
 "got": {
 "pulliṅga": "BrUH/BrrUH",
 "strīliṅga": "Brru/Bru",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "BrU/BrrU"
 },
 "ok": true,
 "sutras": [
@@ -27592,7 +27592,7 @@
 "got": {
 "pulliṅga": "svayamBUH",
 "strīliṅga": "svayamBUH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svayamBU"
 },
 "ok": true,
 "sutras": [
@@ -27640,7 +27640,7 @@
 "got": {
 "pulliṅga": "svayamBuvam/svayamBuvamm",
 "strīliṅga": "svayamBuvam/svayamBuvamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svayamBU"
 },
 "ok": true,
 "sutras": [
@@ -27914,7 +27914,7 @@
 "got": {
 "pulliṅga": "svayamBUH",
 "strīliṅga": "svayamBu",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svayamBU"
 },
 "ok": true,
 "sutras": [
@@ -27962,7 +27962,7 @@
 "got": {
 "pulliṅga": "svasA",
 "strīliṅga": "svasA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svasa"
 },
 "ok": true,
 "sutras": [
@@ -28014,7 +28014,7 @@
 "got": {
 "pulliṅga": "svasAram/svasAramm",
 "strīliṅga": "svasAram/svasAramm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svasf"
 },
 "ok": true,
 "sutras": [
@@ -28297,7 +28297,7 @@
 "got": {
 "pulliṅga": "svasaH",
 "strīliṅga": "svasaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svasf"
 },
 "ok": true,
 "sutras": [
@@ -28348,7 +28348,7 @@
 "got": {
 "pulliṅga": "mAtA",
 "strīliṅga": "mAtA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "mAta"
 },
 "ok": true,
 "sutras": [
@@ -28398,7 +28398,7 @@
 "got": {
 "pulliṅga": "mAtaram/mAtaramm",
 "strīliṅga": "mAtaram/mAtaramm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "mAtf"
 },
 "ok": true,
 "sutras": [
@@ -28679,7 +28679,7 @@
 "got": {
 "pulliṅga": "mAtaH",
 "strīliṅga": "mAtaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "mAtf"
 },
 "ok": true,
 "sutras": [
@@ -28728,7 +28728,7 @@
 "got": {
 "pulliṅga": "dyOH/dyyOH",
 "strīliṅga": "dyOH/dyyOH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dyo/dyyo"
 },
 "ok": true,
 "sutras": [
@@ -28782,7 +28782,7 @@
 "got": {
 "pulliṅga": "dyAm/dyyAmm",
 "strīliṅga": "dyAm/dyyAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dyo/dyyo"
 },
 "ok": true,
 "sutras": [
@@ -29061,7 +29061,7 @@
 "got": {
 "pulliṅga": "dyOH/dyyOH",
 "strīliṅga": "dyOH/dyyOH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dyo/dyyo"
 },
 "ok": true,
 "sutras": [
@@ -29115,7 +29115,7 @@
 "got": {
 "pulliṅga": "rAH",
 "strīliṅga": "rA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rE"
 },
 "ok": true,
 "sutras": [
@@ -29164,7 +29164,7 @@
 "got": {
 "pulliṅga": "rAyam/rAyamm",
 "strīliṅga": "rAyam/rAyamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rE"
 },
 "ok": true,
 "sutras": [
@@ -29432,7 +29432,7 @@
 "got": {
 "pulliṅga": "rAH",
 "strīliṅga": "re",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rE"
 },
 "ok": true,
 "sutras": [
@@ -29481,7 +29481,7 @@
 "got": {
 "pulliṅga": "nOH",
 "strīliṅga": "nOH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "nO"
 },
 "ok": true,
 "sutras": [
@@ -29529,7 +29529,7 @@
 "got": {
 "pulliṅga": "nAvam/nAvamm",
 "strīliṅga": "nAvam/nAvamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "nO"
 },
 "ok": true,
 "sutras": [
@@ -29806,7 +29806,7 @@
 "got": {
 "pulliṅga": "nOH",
 "strīliṅga": "nOH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "nO"
 },
 "ok": true,
 "sutras": [
@@ -31145,9 +31145,9 @@
 "got": {
 "pulliṅga": "vAriH",
 "strīliṅga": "vAriH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vAri"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23"
 ]
@@ -31195,9 +31195,9 @@
 "got": {
 "pulliṅga": "vArim/vArimm",
 "strīliṅga": "vArim/vArimm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vAri"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23"
 ]
@@ -31484,7 +31484,7 @@
 "got": {
 "pulliṅga": "vAre",
 "strīliṅga": "vAre",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vAre"
 },
 "ok": false,
 "sutras": [
@@ -31499,7 +31499,7 @@
 "got": {
 "pulliṅga": "vAre",
 "strīliṅga": "vAre",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vAre"
 },
 "ok": true,
 "sutras": [
@@ -31550,9 +31550,9 @@
 "got": {
 "pulliṅga": "daDiH",
 "strīliṅga": "daDiH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "daDi"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23"
 ]
@@ -31598,9 +31598,9 @@
 "got": {
 "pulliṅga": "daDim/daDimm",
 "strīliṅga": "daDim/daDimm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "daDi"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23"
 ]
@@ -31900,7 +31900,7 @@
 "got": {
 "pulliṅga": "daDe",
 "strīliṅga": "daDe",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "daDe"
 },
 "ok": false,
 "sutras": [
@@ -31915,7 +31915,7 @@
 "got": {
 "pulliṅga": "daDe",
 "strīliṅga": "daDe",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "daDe"
 },
 "ok": true,
 "sutras": [
@@ -31964,7 +31964,7 @@
 "got": {
 "pulliṅga": "suDIH",
 "strīliṅga": "suDI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suDI"
 },
 "ok": false,
 "sutras": [
@@ -32012,7 +32012,7 @@
 "got": {
 "pulliṅga": "suDIm/suDImm",
 "strīliṅga": "suDIm/suDImm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suDI"
 },
 "ok": false,
 "sutras": [
@@ -32435,7 +32435,7 @@
 "got": {
 "pulliṅga": "suDIH",
 "strīliṅga": "suDi",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suDI"
 },
 "ok": true,
 "sutras": [
@@ -32450,7 +32450,7 @@
 "got": {
 "pulliṅga": "suDIH",
 "strīliṅga": "suDi",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suDI"
 },
 "ok": false,
 "sutras": [
@@ -32499,9 +32499,9 @@
 "got": {
 "pulliṅga": "maDuH",
 "strīliṅga": "maDuH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "maDu"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23"
 ]
@@ -32547,9 +32547,9 @@
 "got": {
 "pulliṅga": "maDum/maDumm",
 "strīliṅga": "maDum/maDumm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "maDu"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23"
 ]
@@ -32826,7 +32826,7 @@
 "got": {
 "pulliṅga": "maDo",
 "strīliṅga": "maDo",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "maDo"
 },
 "ok": false,
 "sutras": [
@@ -32841,7 +32841,7 @@
 "got": {
 "pulliṅga": "maDo",
 "strīliṅga": "maDo",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "maDo"
 },
 "ok": true,
 "sutras": [
@@ -32890,7 +32890,7 @@
 "got": {
 "pulliṅga": "sulUH",
 "strīliṅga": "sulUH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sulU"
 },
 "ok": false,
 "sutras": [
@@ -32938,7 +32938,7 @@
 "got": {
 "pulliṅga": "sullvamm/sulvam",
 "strīliṅga": "sullvamm/sulvam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sulU"
 },
 "ok": false,
 "sutras": [
@@ -33353,7 +33353,7 @@
 "got": {
 "pulliṅga": "sulUH",
 "strīliṅga": "sulu",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sulU"
 },
 "ok": true,
 "sutras": [
@@ -33368,7 +33368,7 @@
 "got": {
 "pulliṅga": "sulUH",
 "strīliṅga": "sulu",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sulU"
 },
 "ok": false,
 "sutras": [
@@ -33417,7 +33417,7 @@
 "got": {
 "pulliṅga": "DAtA",
 "strīliṅga": "DAtA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "DAta"
 },
 "ok": false,
 "sutras": [
@@ -33467,9 +33467,9 @@
 "got": {
 "pulliṅga": "DAtAram/DAtAramm",
 "strīliṅga": "DAtaram/DAtaramm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "DAtf"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23"
 ]
@@ -33879,9 +33879,9 @@
 "got": {
 "pulliṅga": "DAtaH",
 "strīliṅga": "DAtaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "DAtf"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23"
 ]
@@ -33894,7 +33894,7 @@
 "got": {
 "pulliṅga": "DAtaH",
 "strīliṅga": "DAtaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "DAtf"
 },
 "ok": true,
 "sutras": [
@@ -33946,7 +33946,7 @@
 "got": {
 "pulliṅga": "prarAH/prrarAH",
 "strīliṅga": "prarA/prrarA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "prarE/prrarE"
 },
 "ok": false,
 "sutras": [
@@ -33997,7 +33997,7 @@
 "got": {
 "pulliṅga": "prarAyam/prrarAyamm",
 "strīliṅga": "prarAyam/prrarAyamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "prarE/prrarE"
 },
 "ok": false,
 "sutras": [
@@ -34295,7 +34295,7 @@
 "got": {
 "pulliṅga": "prarAH/prrarAH",
 "strīliṅga": "prare/prrare",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "prarE/prrarE"
 },
 "ok": false,
 "sutras": [
@@ -34310,7 +34310,7 @@
 "got": {
 "pulliṅga": "prarAH/prrarAH",
 "strīliṅga": "prare/prrare",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "prarE/prrarE"
 },
 "ok": true,
 "sutras": [
@@ -34361,7 +34361,7 @@
 "got": {
 "pulliṅga": "pradyoH/prraddyyoH",
 "strīliṅga": "pradyoH/prraddyyoH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pradyo/prraddyyo"
 },
 "ok": false,
 "sutras": [
@@ -34411,7 +34411,7 @@
 "got": {
 "pulliṅga": "pradyAm/prraddyyAmm",
 "strīliṅga": "pradyAm/prraddyyAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pradyo/prraddyyo"
 },
 "ok": false,
 "sutras": [
@@ -34690,7 +34690,7 @@
 "got": {
 "pulliṅga": "pradyo/prraddyyo",
 "strīliṅga": "pradyo/prraddyyo",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pradyo/prraddyyo"
 },
 "ok": false,
 "sutras": [
@@ -34705,7 +34705,7 @@
 "got": {
 "pulliṅga": "pradyo/prraddyyo",
 "strīliṅga": "pradyo/prraddyyo",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pradyo/prraddyyo"
 },
 "ok": true,
 "sutras": [
@@ -34754,7 +34754,7 @@
 "got": {
 "pulliṅga": "sunOH",
 "strīliṅga": "sunOH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sunO"
 },
 "ok": false,
 "sutras": [
@@ -34803,7 +34803,7 @@
 "got": {
 "pulliṅga": "sunAvam/sunAvamm",
 "strīliṅga": "sunAvam/sunAvamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sunO"
 },
 "ok": false,
 "sutras": [
@@ -35082,7 +35082,7 @@
 "got": {
 "pulliṅga": "sunOH",
 "strīliṅga": "sunOH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sunO"
 },
 "ok": false,
 "sutras": [
@@ -35097,7 +35097,7 @@
 "got": {
 "pulliṅga": "sunOH",
 "strīliṅga": "sunOH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sunO"
 },
 "ok": false,
 "sutras": [
@@ -35146,7 +35146,7 @@
 "got": {
 "pulliṅga": "liq/liqq/liqw/liw",
 "strīliṅga": "liq/liqq/liqw/liw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "liq/liqq/liqw/liw"
 },
 "ok": true,
 "sutras": [
@@ -35163,7 +35163,7 @@
 "got": {
 "pulliṅga": "liq/liqq/liqw/liw",
 "strīliṅga": "liq/liqq/liqw/liw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "liq/liqq/liqw/liw"
 },
 "ok": true,
 "sutras": [
@@ -35210,7 +35210,7 @@
 "got": {
 "pulliṅga": "liham/lihamm",
 "strīliṅga": "liham/lihamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "liq/liqq/liqw/liw"
 },
 "ok": true,
 "sutras": []
@@ -35505,7 +35505,7 @@
 "got": {
 "pulliṅga": "liq/liqq/liqw/liw",
 "strīliṅga": "liq/liqq/liqw/liw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "liq/liqq/liqw/liw"
 },
 "ok": true,
 "sutras": [
@@ -35522,7 +35522,7 @@
 "got": {
 "pulliṅga": "liq/liqq/liqw/liw",
 "strīliṅga": "liq/liqq/liqw/liw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "liq/liqq/liqw/liw"
 },
 "ok": true,
 "sutras": [
@@ -35569,7 +35569,7 @@
 "got": {
 "pulliṅga": "Dug/Dugg/Dugk/Duk",
 "strīliṅga": "Dug/Dugg/Dugk/Duk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Dug/Dugg/Dugk/Duk"
 },
 "ok": true,
 "sutras": [
@@ -35587,7 +35587,7 @@
 "got": {
 "pulliṅga": "Dug/Dugg/Dugk/Duk",
 "strīliṅga": "Dug/Dugg/Dugk/Duk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Dug/Dugg/Dugk/Duk"
 },
 "ok": true,
 "sutras": [
@@ -35635,7 +35635,7 @@
 "got": {
 "pulliṅga": "duham/duhamm",
 "strīliṅga": "duham/duhamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Dug/Dugg/Dugk/Duk"
 },
 "ok": true,
 "sutras": []
@@ -35920,7 +35920,7 @@
 "got": {
 "pulliṅga": "Dug/Dugg/Dugk/Duk",
 "strīliṅga": "Dug/Dugg/Dugk/Duk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Dug/Dugg/Dugk/Duk"
 },
 "ok": true,
 "sutras": [
@@ -35938,7 +35938,7 @@
 "got": {
 "pulliṅga": "Dug/Dugg/Dugk/Duk",
 "strīliṅga": "Dug/Dugg/Dugk/Duk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Dug/Dugg/Dugk/Duk"
 },
 "ok": true,
 "sutras": [
@@ -35986,7 +35986,7 @@
 "got": {
 "pulliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
 "strīliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw"
 },
 "ok": true,
 "sutras": [
@@ -36004,7 +36004,7 @@
 "got": {
 "pulliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
 "strīliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw"
 },
 "ok": true,
 "sutras": [
@@ -36023,7 +36023,7 @@
 "got": {
 "pulliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
 "strīliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw"
 },
 "ok": true,
 "sutras": [
@@ -36041,7 +36041,7 @@
 "got": {
 "pulliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
 "strīliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw"
 },
 "ok": true,
 "sutras": [
@@ -36089,7 +36089,7 @@
 "got": {
 "pulliṅga": "drruhamm/druham",
 "strīliṅga": "drruhamm/druham",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw"
 },
 "ok": true,
 "sutras": []
@@ -36519,7 +36519,7 @@
 "got": {
 "pulliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
 "strīliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw"
 },
 "ok": true,
 "sutras": [
@@ -36537,7 +36537,7 @@
 "got": {
 "pulliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
 "strīliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw"
 },
 "ok": true,
 "sutras": [
@@ -36556,7 +36556,7 @@
 "got": {
 "pulliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
 "strīliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw"
 },
 "ok": true,
 "sutras": [
@@ -36574,7 +36574,7 @@
 "got": {
 "pulliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
 "strīliṅga": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Drrugg/Drrugk/Drruqq/Drruqw/Drug/Druk/Druq/Druw"
 },
 "ok": true,
 "sutras": [
@@ -36622,7 +36622,7 @@
 "got": {
 "pulliṅga": "viSSvavAqq/viSSvavAqw/viSvavAq/viSvavAw",
 "strīliṅga": "viSSvavAqq/viSSvavAqw/viSvavAq/viSvavAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viSSvavAqq/viSSvavAqw/viSvavAq/viSvavAw"
 },
 "ok": true,
 "sutras": [
@@ -36639,7 +36639,7 @@
 "got": {
 "pulliṅga": "viSSvavAqq/viSSvavAqw/viSvavAq/viSvavAw",
 "strīliṅga": "viSSvavAqq/viSSvavAqw/viSvavAq/viSvavAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viSSvavAqq/viSSvavAqw/viSvavAq/viSvavAw"
 },
 "ok": true,
 "sutras": [
@@ -36686,7 +36686,7 @@
 "got": {
 "pulliṅga": "viSSvavAhamm/viSvavAham",
 "strīliṅga": "viSSvavAhamm/viSvavAham",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viSSvavAqq/viSSvavAqw/viSvavAq/viSvavAw"
 },
 "ok": true,
 "sutras": []
@@ -37012,7 +37012,7 @@
 "got": {
 "pulliṅga": "viSSvavAqq/viSSvavAqw/viSvavAq/viSvavAw",
 "strīliṅga": "viSSvavAqq/viSSvavAqw/viSvavAq/viSvavAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viSSvavAqq/viSSvavAqw/viSvavAq/viSvavAw"
 },
 "ok": true,
 "sutras": [
@@ -37029,7 +37029,7 @@
 "got": {
 "pulliṅga": "viSSvavAqq/viSSvavAqw/viSvavAq/viSvavAw",
 "strīliṅga": "viSSvavAqq/viSSvavAqw/viSvavAq/viSvavAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viSSvavAqq/viSSvavAqw/viSvavAq/viSvavAw"
 },
 "ok": true,
 "sutras": [
@@ -37076,7 +37076,7 @@
 "got": {
 "pulliṅga": "anaqqvvAnn/anaqvAn",
 "strīliṅga": "anaqqvvAnn/anaqvAn",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "anaquq/anaquqq/anaquqw/anaquw"
 },
 "ok": true,
 "sutras": [
@@ -37129,7 +37129,7 @@
 "got": {
 "pulliṅga": "anaqqvvAhamm/anaqvAham",
 "strīliṅga": "anaqqvvAhamm/anaqvAham",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "anaquq/anaquqq/anaquqw/anaquw"
 },
 "ok": true,
 "sutras": [
@@ -37405,7 +37405,7 @@
 "got": {
 "pulliṅga": "anaqqvvann/anaqvan",
 "strīliṅga": "anaqqvvann/anaqvan",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "anaqqvvann/anaqvan"
 },
 "ok": true,
 "sutras": [
@@ -37458,7 +37458,7 @@
 "got": {
 "pulliṅga": "turAsAq/turAsAqq/turAsAqw/turAsAw",
 "strīliṅga": "turAsAq/turAsAqq/turAsAqw/turAsAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "turAsAq/turAsAqq/turAsAqw/turAsAw"
 },
 "ok": false,
 "sutras": [
@@ -37476,7 +37476,7 @@
 "got": {
 "pulliṅga": "turAsAq/turAsAqq/turAsAqw/turAsAw",
 "strīliṅga": "turAsAq/turAsAqq/turAsAqw/turAsAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "turAsAq/turAsAqq/turAsAqw/turAsAw"
 },
 "ok": false,
 "sutras": [
@@ -37524,7 +37524,7 @@
 "got": {
 "pulliṅga": "turAsAham/turAsAhamm",
 "strīliṅga": "turAsAham/turAsAhamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "turAsAq/turAsAqq/turAsAqw/turAsAw"
 },
 "ok": true,
 "sutras": []
@@ -37827,7 +37827,7 @@
 "got": {
 "pulliṅga": "turAsAq/turAsAqq/turAsAqw/turAsAw",
 "strīliṅga": "turAsAq/turAsAqq/turAsAqw/turAsAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "turAsAq/turAsAqq/turAsAqw/turAsAw"
 },
 "ok": false,
 "sutras": [
@@ -37845,7 +37845,7 @@
 "got": {
 "pulliṅga": "turAsAq/turAsAqq/turAsAqw/turAsAw",
 "strīliṅga": "turAsAq/turAsAqq/turAsAqw/turAsAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "turAsAq/turAsAqq/turAsAqw/turAsAw"
 },
 "ok": false,
 "sutras": [
@@ -37893,7 +37893,7 @@
 "got": {
 "pulliṅga": "sudiv/sudivv",
 "strīliṅga": "sudiv/sudivv",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sudiv/sudivv"
 },
 "ok": false,
 "sutras": [
@@ -37940,7 +37940,7 @@
 "got": {
 "pulliṅga": "sudivam/sudivamm",
 "strīliṅga": "sudivam/sudivamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sudiv/sudivv"
 },
 "ok": true,
 "sutras": []
@@ -38216,7 +38216,7 @@
 "got": {
 "pulliṅga": "sudiv/sudivv",
 "strīliṅga": "sudiv/sudivv",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sudiv/sudivv"
 },
 "ok": false,
 "sutras": [
@@ -38442,7 +38442,7 @@
 "got": {
 "pulliṅga": "praSAmam/prraSAmamm",
 "strīliṅga": "praSAmam/prraSAmamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "praSAm/prraSAmm"
 },
 "ok": true,
 "sutras": []
@@ -38728,7 +38728,7 @@
 "got": {
 "pulliṅga": "praSAm/prraSAmm",
 "strīliṅga": "praSAm/prraSAmm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "praSAm/prraSAmm"
 },
 "ok": false,
 "sutras": [
@@ -38823,7 +38823,7 @@
 "got": {
 "pulliṅga": "kam/kamm",
 "strīliṅga": "kAm",
-"napuṃsaka": "ERR:RuntimeError"
+"napuṃsaka": "kim"
 },
 "ok": true,
 "sutras": [
@@ -39202,7 +39202,7 @@
 "got": {
 "pulliṅga": "imam",
 "strīliṅga": "imAm",
-"napuṃsaka": "ERR:RuntimeError"
+"napuṃsaka": "idam"
 },
 "ok": true,
 "sutras": [
@@ -39220,7 +39220,7 @@
 "got": {
 "pulliṅga": "imam",
 "strīliṅga": "imAm",
-"napuṃsaka": "ERR:RuntimeError"
+"napuṃsaka": "idam"
 },
 "ok": false,
 "sutras": [
@@ -39648,7 +39648,7 @@
 "got": {
 "pulliṅga": "rAjA",
 "strīliṅga": "rAjA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rAja"
 },
 "ok": true,
 "sutras": [
@@ -39697,7 +39697,7 @@
 "got": {
 "pulliṅga": "rAjAnam/rAjAnamm",
 "strīliṅga": "rAjAnam/rAjAnamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rAja"
 },
 "ok": true,
 "sutras": [
@@ -40014,7 +40014,7 @@
 "got": {
 "pulliṅga": "rAjan/rAjann",
 "strīliṅga": "rAjan/rAjann",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rAjan/rAjann"
 },
 "ok": true,
 "sutras": [
@@ -40062,7 +40062,7 @@
 "got": {
 "pulliṅga": "yajjvvA/yajvA",
 "strīliṅga": "yajjvvA/yajvA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "yajjvva/yajva"
 },
 "ok": true,
 "sutras": [
@@ -40111,7 +40111,7 @@
 "got": {
 "pulliṅga": "yajjvvAnamm/yajvAnam",
 "strīliṅga": "yajjvvAnamm/yajvAnam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "yajjvva/yajva"
 },
 "ok": true,
 "sutras": [
@@ -40404,7 +40404,7 @@
 "got": {
 "pulliṅga": "yajjvvann/yajvan",
 "strīliṅga": "yajjvvann/yajvan",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "yajjvvann/yajvan"
 },
 "ok": true,
 "sutras": [
@@ -40452,7 +40452,7 @@
 "got": {
 "pulliṅga": "aryamA/aryyamA",
 "strīliṅga": "aryamA/aryyamA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aryama/aryyama"
 },
 "ok": true,
 "sutras": [
@@ -40501,7 +40501,7 @@
 "got": {
 "pulliṅga": "aryamaRam/aryamaRamm/aryyamaRam/aryyamaRamm",
 "strīliṅga": "aryamaRam/aryamaRamm/aryyamaRam/aryyamaRamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aryama/aryyama"
 },
 "ok": true,
 "sutras": [
@@ -40819,7 +40819,7 @@
 "got": {
 "pulliṅga": "aryaman/aryamann/aryyaman/aryyamann",
 "strīliṅga": "aryaman/aryamann/aryyaman/aryyamann",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aryaman/aryamann/aryyaman/aryyamann"
 },
 "ok": true,
 "sutras": [
@@ -40866,7 +40866,7 @@
 "got": {
 "pulliṅga": "brahmA/brahmmA/brrahmA/brrahmmA",
 "strīliṅga": "brahmA/brahmmA/brrahmA/brrahmmA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "brahma/brahmma/brrahma/brrahmma"
 },
 "ok": true,
 "sutras": [
@@ -40917,7 +40917,7 @@
 "got": {
 "pulliṅga": "brahmARam/brahmmARam/brrahmARamm/brrahmmARamm",
 "strīliṅga": "brahmARam/brahmmARam/brrahmARamm/brrahmmARamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "brahma/brahmma/brrahma/brrahmma"
 },
 "ok": true,
 "sutras": [
@@ -41221,7 +41221,7 @@
 "got": {
 "pulliṅga": "brahman/brahmman/brrahmann/brrahmmann",
 "strīliṅga": "brahman/brahmman/brrahmann/brrahmmann",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "brahman/brahmman/brrahmann/brrahmmann"
 },
 "ok": true,
 "sutras": [
@@ -41271,7 +41271,7 @@
 "got": {
 "pulliṅga": "SArNNNgI/SArNNgI/SArNgI",
 "strīliṅga": "SArNNNgI/SArNNgI/SArNgI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "SArNNNgi/SArNNgi/SArNgi"
 },
 "ok": true,
 "sutras": [
@@ -41322,7 +41322,7 @@
 "got": {
 "pulliṅga": "SArNNNgiRamm/SArNNgiRam/SArNNgiRamm/SArNgiRam",
 "strīliṅga": "SArNNNgiRamm/SArNNgiRam/SArNNgiRamm/SArNgiRam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "SArNNNgi/SArNNgi/SArNgi"
 },
 "ok": true,
 "sutras": [
@@ -41618,7 +41618,7 @@
 "got": {
 "pulliṅga": "SArNNNginn/SArNNgin/SArNNginn/SArNgin",
 "strīliṅga": "SArNNNginn/SArNNgin/SArNNginn/SArNgin",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "SArNNNginn/SArNNgin/SArNNginn/SArNgin"
 },
 "ok": true,
 "sutras": [
@@ -41666,7 +41666,7 @@
 "got": {
 "pulliṅga": "SvA",
 "strīliṅga": "SvA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Sva"
 },
 "ok": true,
 "sutras": [
@@ -41715,7 +41715,7 @@
 "got": {
 "pulliṅga": "SvAnam/SvAnamm",
 "strīliṅga": "SvAnam/SvAnamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Sva"
 },
 "ok": true,
 "sutras": [
@@ -42017,7 +42017,7 @@
 "got": {
 "pulliṅga": "Svan/Svann",
 "strīliṅga": "Svan/Svann",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Svan/Svann"
 },
 "ok": true,
 "sutras": [
@@ -42065,7 +42065,7 @@
 "got": {
 "pulliṅga": "panTyAH/panTyyAH",
 "strīliṅga": "panTyAH/panTyyAH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pad/padd/padt/pat"
 },
 "ok": false,
 "sutras": [
@@ -42125,7 +42125,7 @@
 "got": {
 "pulliṅga": "panTAnam/panTAnamm",
 "strīliṅga": "panTAnam/panTAnamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pad/padd/padt/pat"
 },
 "ok": true,
 "sutras": [
@@ -42420,7 +42420,7 @@
 "got": {
 "pulliṅga": "panTAH",
 "strīliṅga": "panTe",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pad/padd/padt/pat"
 },
 "ok": true,
 "sutras": [
@@ -42480,7 +42480,7 @@
 "got": {
 "pulliṅga": "yaSassvI/yaSasvI",
 "strīliṅga": "yaSassvI/yaSasvI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "yaSassvi/yaSasvi"
 },
 "ok": true,
 "sutras": [
@@ -42529,7 +42529,7 @@
 "got": {
 "pulliṅga": "yaSassvinamm/yaSasvinam",
 "strīliṅga": "yaSassvinamm/yaSasvinam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "yaSassvi/yaSasvi"
 },
 "ok": true,
 "sutras": [
@@ -42811,7 +42811,7 @@
 "got": {
 "pulliṅga": "yaSassvinn/yaSasvin",
 "strīliṅga": "yaSassvinn/yaSasvin",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "yaSassvinn/yaSasvin"
 },
 "ok": true,
 "sutras": [
@@ -42859,7 +42859,7 @@
 "got": {
 "pulliṅga": "vftrahA/vfttrrahA",
 "strīliṅga": "vftrahA/vfttrrahA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vftraha/vfttrraha"
 },
 "ok": true,
 "sutras": [
@@ -42910,7 +42910,7 @@
 "got": {
 "pulliṅga": "vftrahaRam/vfttrrahaRamm",
 "strīliṅga": "vftrahARam/vfttrrahARamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vftraha/vfttrraha"
 },
 "ok": true,
 "sutras": [
@@ -43229,7 +43229,7 @@
 "got": {
 "pulliṅga": "vftrahan/vfttrrahann",
 "strīliṅga": "vftrahan/vfttrrahann",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vftrahan/vfttrrahann"
 },
 "ok": true,
 "sutras": [
@@ -43277,7 +43277,7 @@
 "got": {
 "pulliṅga": "maGavA",
 "strīliṅga": "maGavA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "maGava"
 },
 "ok": false,
 "sutras": [
@@ -43331,7 +43331,7 @@
 "got": {
 "pulliṅga": "maGavAnam/maGavAnamm",
 "strīliṅga": "maGavAnam/maGavAnamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "maGava"
 },
 "ok": false,
 "sutras": [
@@ -43609,7 +43609,7 @@
 "got": {
 "pulliṅga": "maGavan/maGavann",
 "strīliṅga": "maGavan/maGavann",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "maGavan/maGavann"
 },
 "ok": true,
 "sutras": [
@@ -43662,7 +43662,7 @@
 "got": {
 "pulliṅga": "maGavA",
 "strīliṅga": "maGavA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "maGava"
 },
 "ok": true,
 "sutras": [
@@ -43711,7 +43711,7 @@
 "got": {
 "pulliṅga": "maGavAnam/maGavAnamm",
 "strīliṅga": "maGavAnam/maGavAnamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "maGava"
 },
 "ok": true,
 "sutras": [
@@ -44022,7 +44022,7 @@
 "got": {
 "pulliṅga": "maGavan/maGavann",
 "strīliṅga": "maGavan/maGavann",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "maGavan/maGavann"
 },
 "ok": true,
 "sutras": [
@@ -44070,7 +44070,7 @@
 "got": {
 "pulliṅga": "pUzA",
 "strīliṅga": "pUzA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pUza"
 },
 "ok": true,
 "sutras": [
@@ -44119,7 +44119,7 @@
 "got": {
 "pulliṅga": "pUzaRam/pUzaRamm",
 "strīliṅga": "pUzaRam/pUzaRamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pUza"
 },
 "ok": true,
 "sutras": [
@@ -44437,7 +44437,7 @@
 "got": {
 "pulliṅga": "pUzan/pUzann",
 "strīliṅga": "pUzan/pUzann",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pUzan/pUzann"
 },
 "ok": true,
 "sutras": [
@@ -44485,7 +44485,7 @@
 "got": {
 "pulliṅga": "yuvA",
 "strīliṅga": "yuvA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "yuva"
 },
 "ok": true,
 "sutras": [
@@ -44534,7 +44534,7 @@
 "got": {
 "pulliṅga": "yuvAnam/yuvAnamm",
 "strīliṅga": "yuvAnam/yuvAnamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "yuva"
 },
 "ok": true,
 "sutras": [
@@ -44854,7 +44854,7 @@
 "got": {
 "pulliṅga": "yuvan/yuvann",
 "strīliṅga": "yuvan/yuvann",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "yuvan/yuvann"
 },
 "ok": true,
 "sutras": [
@@ -44902,7 +44902,7 @@
 "got": {
 "pulliṅga": "manTyAH/manTyyAH",
 "strīliṅga": "manTyAH/manTyyAH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "mad/madd/madt/mat"
 },
 "ok": false,
 "sutras": [
@@ -44962,7 +44962,7 @@
 "got": {
 "pulliṅga": "manTAnam/manTAnamm",
 "strīliṅga": "manTAnam/manTAnamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "mad/madd/madt/mat"
 },
 "ok": true,
 "sutras": [
@@ -45257,7 +45257,7 @@
 "got": {
 "pulliṅga": "manTAH",
 "strīliṅga": "manTe",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "mad/madd/madt/mat"
 },
 "ok": true,
 "sutras": [
@@ -45317,7 +45317,7 @@
 "got": {
 "pulliṅga": "arvA/arvvA",
 "strīliṅga": "arvA/arvvA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "arva/arvva"
 },
 "ok": true,
 "sutras": [
@@ -45372,7 +45372,7 @@
 "got": {
 "pulliṅga": "arvARam/arvARamm/arvvARam/arvvARamm",
 "strīliṅga": "arvARam/arvARamm/arvvARam/arvvARamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "arva/arvva"
 },
 "ok": false,
 "sutras": [
@@ -45672,7 +45672,7 @@
 "got": {
 "pulliṅga": "arvan/arvann/arvvan/arvvann",
 "strīliṅga": "arvan/arvann/arvvan/arvvann",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "arvan/arvann/arvvan/arvvann"
 },
 "ok": true,
 "sutras": [
@@ -45726,7 +45726,7 @@
 "got": {
 "pulliṅga": "fBukzyAH/fBukzzyAH",
 "strīliṅga": "fBukzyAH/fBukzzyAH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "fBuq/fBuqq/fBuqw/fBuw"
 },
 "ok": false,
 "sutras": [
@@ -45781,7 +45781,7 @@
 "got": {
 "pulliṅga": "fBukzARam/fBukzzARamm",
 "strīliṅga": "fBukzARam/fBukzzARamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "fBuq/fBuqq/fBuqw/fBuw"
 },
 "ok": true,
 "sutras": [
@@ -46072,7 +46072,7 @@
 "got": {
 "pulliṅga": "fBukzAH/fBukzzAH",
 "strīliṅga": "fBukze/fBukzze",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "fBuq/fBuqq/fBuqw/fBuw"
 },
 "ok": true,
 "sutras": [
@@ -46127,7 +46127,7 @@
 "got": {
 "pulliṅga": "fttvvigg/fttvvigk/ftvig/ftvik",
 "strīliṅga": "fttvvigg/fttvvigk/ftvig/ftvik",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "fttvvigg/fttvvigk/ftvig/ftvik"
 },
 "ok": true,
 "sutras": [
@@ -46145,7 +46145,7 @@
 "got": {
 "pulliṅga": "fttvvigg/fttvvigk/ftvig/ftvik",
 "strīliṅga": "fttvvigg/fttvvigk/ftvig/ftvik",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "fttvvigg/fttvvigk/ftvig/ftvik"
 },
 "ok": true,
 "sutras": [
@@ -46193,7 +46193,7 @@
 "got": {
 "pulliṅga": "fttvvijamm/ftvijam",
 "strīliṅga": "fttvvijamm/ftvijam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "fttvvigg/fttvvigk/ftvig/ftvik"
 },
 "ok": true,
 "sutras": []
@@ -46478,7 +46478,7 @@
 "got": {
 "pulliṅga": "fttvvigg/fttvvigk/ftvig/ftvik",
 "strīliṅga": "fttvvigg/fttvvigk/ftvig/ftvik",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "fttvvigg/fttvvigk/ftvig/ftvik"
 },
 "ok": true,
 "sutras": [
@@ -46496,7 +46496,7 @@
 "got": {
 "pulliṅga": "fttvvigg/fttvvigk/ftvig/ftvik",
 "strīliṅga": "fttvvigg/fttvvigk/ftvig/ftvik",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "fttvvigg/fttvvigk/ftvig/ftvik"
 },
 "ok": true,
 "sutras": [
@@ -46544,7 +46544,7 @@
 "got": {
 "pulliṅga": "KaY/KaYY",
 "strīliṅga": "KaY/KaYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "KaY/KaYY"
 },
 "ok": false,
 "sutras": [
@@ -46594,7 +46594,7 @@
 "got": {
 "pulliṅga": "KaYYjamm/KaYjam",
 "strīliṅga": "KaYYjamm/KaYjam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "KaY/KaYY"
 },
 "ok": true,
 "sutras": [
@@ -46925,7 +46925,7 @@
 "got": {
 "pulliṅga": "KaY/KaYY",
 "strīliṅga": "KaY/KaYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "KaY/KaYY"
 },
 "ok": false,
 "sutras": [
@@ -46975,7 +46975,7 @@
 "got": {
 "pulliṅga": "suyug/suyugg/suyugk/suyuk",
 "strīliṅga": "suyug/suyugg/suyugk/suyuk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suyug/suyugg/suyugk/suyuk"
 },
 "ok": true,
 "sutras": [
@@ -46991,7 +46991,7 @@
 "got": {
 "pulliṅga": "suyug/suyugg/suyugk/suyuk",
 "strīliṅga": "suyug/suyugg/suyugk/suyuk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suyug/suyugg/suyugk/suyuk"
 },
 "ok": true,
 "sutras": [
@@ -47037,7 +47037,7 @@
 "got": {
 "pulliṅga": "suyujam/suyujamm",
 "strīliṅga": "suyujam/suyujamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suyug/suyugg/suyugk/suyuk"
 },
 "ok": true,
 "sutras": []
@@ -47308,7 +47308,7 @@
 "got": {
 "pulliṅga": "suyug/suyugg/suyugk/suyuk",
 "strīliṅga": "suyug/suyugg/suyugk/suyuk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suyug/suyugg/suyugk/suyuk"
 },
 "ok": true,
 "sutras": [
@@ -47324,7 +47324,7 @@
 "got": {
 "pulliṅga": "suyug/suyugg/suyugk/suyuk",
 "strīliṅga": "suyug/suyugg/suyugk/suyuk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "suyug/suyugg/suyugk/suyuk"
 },
 "ok": true,
 "sutras": [
@@ -47370,7 +47370,7 @@
 "got": {
 "pulliṅga": "rAq/rAqq/rAqw/rAw",
 "strīliṅga": "rAq/rAqq/rAqw/rAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rAq/rAqq/rAqw/rAw"
 },
 "ok": true,
 "sutras": [
@@ -47387,7 +47387,7 @@
 "got": {
 "pulliṅga": "rAq/rAqq/rAqw/rAw",
 "strīliṅga": "rAq/rAqq/rAqw/rAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rAq/rAqq/rAqw/rAw"
 },
 "ok": true,
 "sutras": [
@@ -47434,7 +47434,7 @@
 "got": {
 "pulliṅga": "rAjam/rAjamm",
 "strīliṅga": "rAjam/rAjamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rAq/rAqq/rAqw/rAw"
 },
 "ok": true,
 "sutras": []
@@ -47729,7 +47729,7 @@
 "got": {
 "pulliṅga": "rAq/rAqq/rAqw/rAw",
 "strīliṅga": "rAq/rAqq/rAqw/rAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rAq/rAqq/rAqw/rAw"
 },
 "ok": true,
 "sutras": [
@@ -47746,7 +47746,7 @@
 "got": {
 "pulliṅga": "rAq/rAqq/rAqw/rAw",
 "strīliṅga": "rAq/rAqq/rAqw/rAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "rAq/rAqq/rAqw/rAw"
 },
 "ok": true,
 "sutras": [
@@ -47793,7 +47793,7 @@
 "got": {
 "pulliṅga": "viSSvarAqq/viSSvarAqw/viSvarAq/viSvarAw",
 "strīliṅga": "viSSvarAqq/viSSvarAqw/viSvarAq/viSvarAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viSSvarAqq/viSSvarAqw/viSvarAq/viSvarAw"
 },
 "ok": false,
 "sutras": [
@@ -47811,7 +47811,7 @@
 "got": {
 "pulliṅga": "viSSvarAqq/viSSvarAqw/viSvarAq/viSvarAw",
 "strīliṅga": "viSSvarAqq/viSSvarAqw/viSvarAq/viSvarAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viSSvarAqq/viSSvarAqw/viSvarAq/viSvarAw"
 },
 "ok": false,
 "sutras": [
@@ -47859,7 +47859,7 @@
 "got": {
 "pulliṅga": "viSSvarAjamm/viSvarAjam",
 "strīliṅga": "viSSvarAjamm/viSvarAjam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viSSvarAqq/viSSvarAqw/viSvarAq/viSvarAw"
 },
 "ok": true,
 "sutras": []
@@ -48162,7 +48162,7 @@
 "got": {
 "pulliṅga": "viSSvarAqq/viSSvarAqw/viSvarAq/viSvarAw",
 "strīliṅga": "viSSvarAqq/viSSvarAqw/viSvarAq/viSvarAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viSSvarAqq/viSSvarAqw/viSvarAq/viSvarAw"
 },
 "ok": false,
 "sutras": [
@@ -48180,7 +48180,7 @@
 "got": {
 "pulliṅga": "viSSvarAqq/viSSvarAqw/viSvarAq/viSvarAw",
 "strīliṅga": "viSSvarAqq/viSSvarAqw/viSvarAq/viSvarAw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viSSvarAqq/viSSvarAqw/viSvarAq/viSvarAw"
 },
 "ok": false,
 "sutras": [
@@ -48228,7 +48228,7 @@
 "got": {
 "pulliṅga": "BfH",
 "strīliṅga": "BfH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Bfg/Bfgg/Bfgk/Bfk"
 },
 "ok": false,
 "sutras": [
@@ -48246,7 +48246,7 @@
 "got": {
 "pulliṅga": "BfH",
 "strīliṅga": "BfH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Bfg/Bfgg/Bfgk/Bfk"
 },
 "ok": false,
 "sutras": [
@@ -48299,7 +48299,7 @@
 "got": {
 "pulliṅga": "Bfjjam/Bfjjjamm",
 "strīliṅga": "Bfjjam/Bfjjjamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Bfg/Bfgg/Bfgk/Bfk"
 },
 "ok": true,
 "sutras": [
@@ -48630,7 +48630,7 @@
 "got": {
 "pulliṅga": "BfH",
 "strīliṅga": "BfH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Bfg/Bfgg/Bfgk/Bfk"
 },
 "ok": false,
 "sutras": [
@@ -48648,7 +48648,7 @@
 "got": {
 "pulliṅga": "BfH",
 "strīliṅga": "BfH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Bfg/Bfgg/Bfgk/Bfk"
 },
 "ok": false,
 "sutras": [
@@ -50397,7 +50397,7 @@
 "got": {
 "pulliṅga": "tvam/tvvamm",
 "strīliṅga": "tvam/tvvamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tva/tvva"
 },
 "ok": true,
 "sutras": [
@@ -50415,7 +50415,7 @@
 "got": {
 "pulliṅga": "tvam/tvvamm",
 "strīliṅga": "tvam/tvvamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tva/tvva"
 },
 "ok": false,
 "sutras": [
@@ -50435,7 +50435,7 @@
 "got": {
 "pulliṅga": "tvam/tvvamm",
 "strīliṅga": "tvam/tvvamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tva/tvva"
 },
 "ok": false,
 "sutras": [
@@ -50453,7 +50453,7 @@
 "got": {
 "pulliṅga": "tvam/tvvamm",
 "strīliṅga": "tvam/tvvamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tva/tvva"
 },
 "ok": false,
 "sutras": [
@@ -50473,7 +50473,7 @@
 "got": {
 "pulliṅga": "tvam/tvvamm",
 "strīliṅga": "tvam/tvvamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tva/tvva"
 },
 "ok": false,
 "sutras": [
@@ -50564,7 +50564,7 @@
 "got": {
 "pulliṅga": "tvam/tvvamm",
 "strīliṅga": "tvam/tvvamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tva/tvva"
 },
 "ok": false,
 "sutras": [
@@ -50757,7 +50757,7 @@
 "got": {
 "pulliṅga": "tvam/tvvamm",
 "strīliṅga": "tvam/tvvamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tva/tvva"
 },
 "ok": false,
 "sutras": [
@@ -50773,7 +50773,7 @@
 "got": {
 "pulliṅga": "aham/ahamm",
 "strīliṅga": "aham/ahamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aha"
 },
 "ok": true,
 "sutras": [
@@ -50791,7 +50791,7 @@
 "got": {
 "pulliṅga": "aham/ahamm",
 "strīliṅga": "aham/ahamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aha"
 },
 "ok": false,
 "sutras": [
@@ -50811,7 +50811,7 @@
 "got": {
 "pulliṅga": "aham/ahamm",
 "strīliṅga": "aham/ahamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aha"
 },
 "ok": false,
 "sutras": [
@@ -50829,7 +50829,7 @@
 "got": {
 "pulliṅga": "aham/ahamm",
 "strīliṅga": "aham/ahamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aha"
 },
 "ok": false,
 "sutras": [
@@ -50849,7 +50849,7 @@
 "got": {
 "pulliṅga": "aham/ahamm",
 "strīliṅga": "aham/ahamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aha"
 },
 "ok": false,
 "sutras": [
@@ -50940,7 +50940,7 @@
 "got": {
 "pulliṅga": "aham/ahamm",
 "strīliṅga": "aham/ahamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aha"
 },
 "ok": false,
 "sutras": [
@@ -51133,7 +51133,7 @@
 "got": {
 "pulliṅga": "aham/ahamm",
 "strīliṅga": "aham/ahamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aha"
 },
 "ok": false,
 "sutras": [
@@ -51149,7 +51149,7 @@
 "got": {
 "pulliṅga": "supAd/supAdd/supAdt/supAt",
 "strīliṅga": "supAd/supAdd/supAdt/supAt",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "supad/supadd/supadt/supat"
 },
 "ok": true,
 "sutras": [
@@ -51164,7 +51164,7 @@
 "got": {
 "pulliṅga": "supAd/supAdd/supAdt/supAt",
 "strīliṅga": "supAd/supAdd/supAdt/supAt",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "supad/supadd/supadt/supat"
 },
 "ok": true,
 "sutras": [
@@ -51209,7 +51209,7 @@
 "got": {
 "pulliṅga": "supAdam/supAdamm",
 "strīliṅga": "supAdam/supAdamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "supad/supadd/supadt/supat"
 },
 "ok": true,
 "sutras": []
@@ -51482,7 +51482,7 @@
 "got": {
 "pulliṅga": "supAd/supAdd/supAdt/supAt",
 "strīliṅga": "supAd/supAdd/supAdt/supAt",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "supad/supadd/supadt/supat"
 },
 "ok": true,
 "sutras": [
@@ -51497,7 +51497,7 @@
 "got": {
 "pulliṅga": "supAd/supAdd/supAdt/supAt",
 "strīliṅga": "supAd/supAdd/supAdt/supAt",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "supad/supadd/supadt/supat"
 },
 "ok": true,
 "sutras": [
@@ -51542,7 +51542,7 @@
 "got": {
 "pulliṅga": "aggnimadd/aggnimadt/agnimad/agnimat",
 "strīliṅga": "aggnimadd/aggnimadt/agnimad/agnimat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aggnimadd/aggnimadt/agnimad/agnimat"
 },
 "ok": true,
 "sutras": [
@@ -51558,7 +51558,7 @@
 "got": {
 "pulliṅga": "aggnimadd/aggnimadt/agnimad/agnimat",
 "strīliṅga": "aggnimadd/aggnimadt/agnimad/agnimat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aggnimadd/aggnimadt/agnimad/agnimat"
 },
 "ok": true,
 "sutras": [
@@ -51604,7 +51604,7 @@
 "got": {
 "pulliṅga": "aggnimaTamm/agnimaTam",
 "strīliṅga": "aggnimaTamm/agnimaTam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aggnimadd/aggnimadt/agnimad/agnimat"
 },
 "ok": true,
 "sutras": []
@@ -51874,7 +51874,7 @@
 "got": {
 "pulliṅga": "aggnimadd/aggnimadt/agnimad/agnimat",
 "strīliṅga": "aggnimadd/aggnimadt/agnimad/agnimat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aggnimadd/aggnimadt/agnimad/agnimat"
 },
 "ok": true,
 "sutras": [
@@ -51890,7 +51890,7 @@
 "got": {
 "pulliṅga": "aggnimadd/aggnimadt/agnimad/agnimat",
 "strīliṅga": "aggnimadd/aggnimadt/agnimad/agnimat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aggnimadd/aggnimadt/agnimad/agnimat"
 },
 "ok": true,
 "sutras": [
@@ -51936,7 +51936,7 @@
 "got": {
 "pulliṅga": "prAY/prrAYY",
 "strīliṅga": "prAY/prrAYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "prAY/prrAYY"
 },
 "ok": false,
 "sutras": [
@@ -51993,7 +51993,7 @@
 "got": {
 "pulliṅga": "prAYcam/prrAYYcamm",
 "strīliṅga": "prAYcam/prrAYYcamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "prAY/prrAYY"
 },
 "ok": true,
 "sutras": [
@@ -52312,7 +52312,7 @@
 "got": {
 "pulliṅga": "prAY/prrAYY",
 "strīliṅga": "prAY/prrAYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "prAY/prrAYY"
 },
 "ok": false,
 "sutras": [
@@ -52369,7 +52369,7 @@
 "got": {
 "pulliṅga": "pratyaY/prrattyyaYY",
 "strīliṅga": "pratyaY/prrattyyaYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pratyaY/prrattyyaYY"
 },
 "ok": false,
 "sutras": [
@@ -52426,7 +52426,7 @@
 "got": {
 "pulliṅga": "pratyaYcam/prrattyyaYYcamm",
 "strīliṅga": "pratyaYcam/prrattyyaYYcamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pratyaY/prrattyyaYY"
 },
 "ok": true,
 "sutras": [
@@ -52743,7 +52743,7 @@
 "got": {
 "pulliṅga": "pratyaY/prrattyyaYY",
 "strīliṅga": "pratyaY/prrattyyaYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pratyaY/prrattyyaYY"
 },
 "ok": false,
 "sutras": [
@@ -52800,7 +52800,7 @@
 "got": {
 "pulliṅga": "sammyyaYY/samyaY",
 "strīliṅga": "sammyyaYY/samyaY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sammyyaYY/samyaY"
 },
 "ok": false,
 "sutras": [
@@ -52857,7 +52857,7 @@
 "got": {
 "pulliṅga": "sammyyaYYcamm/samyaYcam",
 "strīliṅga": "sammyyaYYcamm/samyaYcam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sammyyaYY/samyaY"
 },
 "ok": true,
 "sutras": [
@@ -53174,7 +53174,7 @@
 "got": {
 "pulliṅga": "sammyyaYY/samyaY",
 "strīliṅga": "sammyyaYY/samyaY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sammyyaYY/samyaY"
 },
 "ok": false,
 "sutras": [
@@ -53231,7 +53231,7 @@
 "got": {
 "pulliṅga": "saDryaY/sadDrryaYY",
 "strīliṅga": "saDryaY/sadDrryaYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "saDryaY/sadDrryaYY"
 },
 "ok": false,
 "sutras": [
@@ -53288,7 +53288,7 @@
 "got": {
 "pulliṅga": "saDryaYcam/sadDrryaYYcamm",
 "strīliṅga": "saDryaYcam/sadDrryaYYcamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "saDryaY/sadDrryaYY"
 },
 "ok": true,
 "sutras": [
@@ -53605,7 +53605,7 @@
 "got": {
 "pulliṅga": "saDryaY/sadDrryaYY",
 "strīliṅga": "saDryaY/sadDrryaYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "saDryaY/sadDrryaYY"
 },
 "ok": false,
 "sutras": [
@@ -53662,7 +53662,7 @@
 "got": {
 "pulliṅga": "udaY/udaYY",
 "strīliṅga": "udaY/udaYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "udaY/udaYY"
 },
 "ok": false,
 "sutras": [
@@ -53716,7 +53716,7 @@
 "got": {
 "pulliṅga": "udaYYcamm/udaYcam",
 "strīliṅga": "udaYYcamm/udaYcam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "udaY/udaYY"
 },
 "ok": true,
 "sutras": [
@@ -54015,7 +54015,7 @@
 "got": {
 "pulliṅga": "udaY/udaYY",
 "strīliṅga": "udaY/udaYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "udaY/udaYY"
 },
 "ok": false,
 "sutras": [
@@ -54069,7 +54069,7 @@
 "got": {
 "pulliṅga": "tiryaY/tiryaYY/tiryyaY/tiryyaYY",
 "strīliṅga": "tiryaY/tiryaYY/tiryyaY/tiryyaYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tiryaY/tiryaYY/tiryyaY/tiryyaYY"
 },
 "ok": false,
 "sutras": [
@@ -54131,7 +54131,7 @@
 "got": {
 "pulliṅga": "tiryaYYcamm/tiryaYcam/tiryyaYYcamm/tiryyaYcam",
 "strīliṅga": "tiryaYYcamm/tiryaYcam/tiryyaYYcamm/tiryyaYcam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tiryaY/tiryaYY/tiryyaY/tiryyaYY"
 },
 "ok": true,
 "sutras": [
@@ -54459,7 +54459,7 @@
 "got": {
 "pulliṅga": "tiryaY/tiryaYY/tiryyaY/tiryyaYY",
 "strīliṅga": "tiryaY/tiryaYY/tiryyaY/tiryyaYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tiryaY/tiryaYY/tiryyaY/tiryyaYY"
 },
 "ok": false,
 "sutras": [
@@ -54521,7 +54521,7 @@
 "got": {
 "pulliṅga": "prAY/prrAYY",
 "strīliṅga": "prAY/prrAYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "prAY/prrAYY"
 },
 "ok": false,
 "sutras": [
@@ -54571,7 +54571,7 @@
 "got": {
 "pulliṅga": "prAYcam/prrAYYcamm",
 "strīliṅga": "prAYcam/prrAYYcamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "prAY/prrAYY"
 },
 "ok": true,
 "sutras": [
@@ -54910,7 +54910,7 @@
 "got": {
 "pulliṅga": "prAY/prrAYY",
 "strīliṅga": "prAY/prrAYY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "prAY/prrAYY"
 },
 "ok": false,
 "sutras": [
@@ -54960,7 +54960,7 @@
 "got": {
 "pulliṅga": "krruYY/kruY",
 "strīliṅga": "krruYY/kruY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "krruYY/kruY"
 },
 "ok": false,
 "sutras": [
@@ -55006,7 +55006,7 @@
 "got": {
 "pulliṅga": "krruYYcamm/kruYcam",
 "strīliṅga": "krruYYcamm/kruYcam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "krruYY/kruY"
 },
 "ok": true,
 "sutras": []
@@ -55319,7 +55319,7 @@
 "got": {
 "pulliṅga": "krruYY/kruY",
 "strīliṅga": "krruYY/kruY",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "krruYY/kruY"
 },
 "ok": false,
 "sutras": [
@@ -55365,7 +55365,7 @@
 "got": {
 "pulliṅga": "payomug/payomugg/payomugk/payomuk",
 "strīliṅga": "payomug/payomugg/payomugk/payomuk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "payomug/payomugg/payomugk/payomuk"
 },
 "ok": true,
 "sutras": [
@@ -55382,7 +55382,7 @@
 "got": {
 "pulliṅga": "payomug/payomugg/payomugk/payomuk",
 "strīliṅga": "payomug/payomugg/payomugk/payomuk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "payomug/payomugg/payomugk/payomuk"
 },
 "ok": true,
 "sutras": [
@@ -55429,7 +55429,7 @@
 "got": {
 "pulliṅga": "payomucam/payomucamm",
 "strīliṅga": "payomucam/payomucamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "payomug/payomugg/payomugk/payomuk"
 },
 "ok": true,
 "sutras": []
@@ -55707,7 +55707,7 @@
 "got": {
 "pulliṅga": "payomug/payomugg/payomugk/payomuk",
 "strīliṅga": "payomug/payomugg/payomugk/payomuk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "payomug/payomugg/payomugk/payomuk"
 },
 "ok": true,
 "sutras": [
@@ -55724,7 +55724,7 @@
 "got": {
 "pulliṅga": "payomug/payomugg/payomugk/payomuk",
 "strīliṅga": "payomug/payomugg/payomugk/payomuk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "payomug/payomugg/payomugk/payomuk"
 },
 "ok": true,
 "sutras": [
@@ -55771,7 +55771,7 @@
 "got": {
 "pulliṅga": "mahad/mahadd/mahadt/mahat",
 "strīliṅga": "mahad/mahadd/mahadt/mahat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "mahad/mahadd/mahadt/mahat"
 },
 "ok": false,
 "sutras": [
@@ -55827,7 +55827,7 @@
 "got": {
 "pulliṅga": "mahatam/mahatamm",
 "strīliṅga": "mahatam/mahatamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "mahad/mahadd/mahadt/mahat"
 },
 "ok": false,
 "sutras": [
@@ -56107,7 +56107,7 @@
 "got": {
 "pulliṅga": "mahad/mahadd/mahadt/mahat",
 "strīliṅga": "mahad/mahadd/mahadt/mahat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "mahad/mahadd/mahadt/mahat"
 },
 "ok": false,
 "sutras": [
@@ -56162,7 +56162,7 @@
 "got": {
 "pulliṅga": "DImad/DImadd/DImadt/DImat",
 "strīliṅga": "DImad/DImadd/DImadt/DImat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "DImad/DImadd/DImadt/DImat"
 },
 "ok": false,
 "sutras": [
@@ -56216,7 +56216,7 @@
 "got": {
 "pulliṅga": "DImatam/DImatamm",
 "strīliṅga": "DImatam/DImatamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "DImad/DImadd/DImadt/DImat"
 },
 "ok": false,
 "sutras": [
@@ -56494,7 +56494,7 @@
 "got": {
 "pulliṅga": "DImad/DImadd/DImadt/DImat",
 "strīliṅga": "DImad/DImadd/DImadt/DImat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "DImad/DImadd/DImadt/DImat"
 },
 "ok": false,
 "sutras": [
@@ -56547,7 +56547,7 @@
 "got": {
 "pulliṅga": "Bavad/Bavadd/Bavadt/Bavat",
 "strīliṅga": "Bavad/Bavadd/Bavadt/Bavat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Bavad/Bavadd/Bavadt/Bavat"
 },
 "ok": false,
 "sutras": [
@@ -56601,7 +56601,7 @@
 "got": {
 "pulliṅga": "Bavatam/Bavatamm",
 "strīliṅga": "Bavatam/Bavatamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Bavad/Bavadd/Bavadt/Bavat"
 },
 "ok": false,
 "sutras": [
@@ -56879,7 +56879,7 @@
 "got": {
 "pulliṅga": "Bavad/Bavadd/Bavadt/Bavat",
 "strīliṅga": "Bavad/Bavadd/Bavadt/Bavat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Bavad/Bavadd/Bavadt/Bavat"
 },
 "ok": false,
 "sutras": [
@@ -56932,7 +56932,7 @@
 "got": {
 "pulliṅga": "dadad/dadadd/dadadt/dadat",
 "strīliṅga": "dadad/dadadd/dadadt/dadat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dadad/dadadd/dadadt/dadat"
 },
 "ok": true,
 "sutras": [
@@ -56948,7 +56948,7 @@
 "got": {
 "pulliṅga": "dadad/dadadd/dadadt/dadat",
 "strīliṅga": "dadad/dadadd/dadadt/dadat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dadad/dadadd/dadadt/dadat"
 },
 "ok": true,
 "sutras": [
@@ -56994,7 +56994,7 @@
 "got": {
 "pulliṅga": "dadatam/dadatamm",
 "strīliṅga": "dadatam/dadatamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dadad/dadadd/dadadt/dadat"
 },
 "ok": true,
 "sutras": []
@@ -57264,7 +57264,7 @@
 "got": {
 "pulliṅga": "dadad/dadadd/dadadt/dadat",
 "strīliṅga": "dadad/dadadd/dadadt/dadat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dadad/dadadd/dadadt/dadat"
 },
 "ok": true,
 "sutras": [
@@ -57280,7 +57280,7 @@
 "got": {
 "pulliṅga": "dadad/dadadd/dadadt/dadat",
 "strīliṅga": "dadad/dadadd/dadadt/dadat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dadad/dadadd/dadadt/dadat"
 },
 "ok": true,
 "sutras": [
@@ -57326,7 +57326,7 @@
 "got": {
 "pulliṅga": "jakzad/jakzat/jakzzadd/jakzzadt",
 "strīliṅga": "jakzad/jakzat/jakzzadd/jakzzadt",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "jakzad/jakzat/jakzzadd/jakzzadt"
 },
 "ok": true,
 "sutras": [
@@ -57342,7 +57342,7 @@
 "got": {
 "pulliṅga": "jakzad/jakzat/jakzzadd/jakzzadt",
 "strīliṅga": "jakzad/jakzat/jakzzadd/jakzzadt",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "jakzad/jakzat/jakzzadd/jakzzadt"
 },
 "ok": true,
 "sutras": [
@@ -57388,7 +57388,7 @@
 "got": {
 "pulliṅga": "jakzatam/jakzzatamm",
 "strīliṅga": "jakzatam/jakzzatamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "jakzad/jakzat/jakzzadd/jakzzadt"
 },
 "ok": true,
 "sutras": []
@@ -57658,7 +57658,7 @@
 "got": {
 "pulliṅga": "jakzad/jakzat/jakzzadd/jakzzadt",
 "strīliṅga": "jakzad/jakzat/jakzzadd/jakzzadt",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "jakzad/jakzat/jakzzadd/jakzzadt"
 },
 "ok": true,
 "sutras": [
@@ -57674,7 +57674,7 @@
 "got": {
 "pulliṅga": "jakzad/jakzat/jakzzadd/jakzzadt",
 "strīliṅga": "jakzad/jakzat/jakzzadd/jakzzadt",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "jakzad/jakzat/jakzzadd/jakzzadt"
 },
 "ok": true,
 "sutras": [
@@ -57720,7 +57720,7 @@
 "got": {
 "pulliṅga": "gub/gubb/gubp/gup",
 "strīliṅga": "gub/gubb/gubp/gup",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "gub/gubb/gubp/gup"
 },
 "ok": true,
 "sutras": [
@@ -57736,7 +57736,7 @@
 "got": {
 "pulliṅga": "gub/gubb/gubp/gup",
 "strīliṅga": "gub/gubb/gubp/gup",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "gub/gubb/gubp/gup"
 },
 "ok": true,
 "sutras": [
@@ -57782,7 +57782,7 @@
 "got": {
 "pulliṅga": "gupam/gupamm",
 "strīliṅga": "gupam/gupamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "gub/gubb/gubp/gup"
 },
 "ok": true,
 "sutras": []
@@ -58052,7 +58052,7 @@
 "got": {
 "pulliṅga": "gub/gubb/gubp/gup",
 "strīliṅga": "gub/gubb/gubp/gup",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "gub/gubb/gubp/gup"
 },
 "ok": true,
 "sutras": [
@@ -58068,7 +58068,7 @@
 "got": {
 "pulliṅga": "gub/gubb/gubp/gup",
 "strīliṅga": "gub/gubb/gubp/gup",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "gub/gubb/gubp/gup"
 },
 "ok": true,
 "sutras": [
@@ -58114,7 +58114,7 @@
 "got": {
 "pulliṅga": "tAdfS/tAdfSS",
 "strīliṅga": "tAdfS/tAdfSS",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tAdfS/tAdfSS"
 },
 "ok": false,
 "sutras": [
@@ -58132,7 +58132,7 @@
 "got": {
 "pulliṅga": "tAdfS/tAdfSS",
 "strīliṅga": "tAdfS/tAdfSS",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tAdfS/tAdfSS"
 },
 "ok": false,
 "sutras": [
@@ -58180,7 +58180,7 @@
 "got": {
 "pulliṅga": "tAdfSam/tAdfSamm",
 "strīliṅga": "tAdfSam/tAdfSamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tAdfS/tAdfSS"
 },
 "ok": true,
 "sutras": []
@@ -58465,7 +58465,7 @@
 "got": {
 "pulliṅga": "tAdfS/tAdfSS",
 "strīliṅga": "tAdfS/tAdfSS",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tAdfS/tAdfSS"
 },
 "ok": false,
 "sutras": [
@@ -58483,7 +58483,7 @@
 "got": {
 "pulliṅga": "tAdfS/tAdfSS",
 "strīliṅga": "tAdfS/tAdfSS",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tAdfS/tAdfSS"
 },
 "ok": false,
 "sutras": [
@@ -58531,7 +58531,7 @@
 "got": {
 "pulliṅga": "viq/viqq/viqw/viw",
 "strīliṅga": "viq/viqq/viqw/viw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viq/viqq/viqw/viw"
 },
 "ok": true,
 "sutras": [
@@ -58548,7 +58548,7 @@
 "got": {
 "pulliṅga": "viq/viqq/viqw/viw",
 "strīliṅga": "viq/viqq/viqw/viw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viq/viqq/viqw/viw"
 },
 "ok": true,
 "sutras": [
@@ -58595,7 +58595,7 @@
 "got": {
 "pulliṅga": "viSam/viSamm",
 "strīliṅga": "viSam/viSamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viq/viqq/viqw/viw"
 },
 "ok": true,
 "sutras": []
@@ -58890,7 +58890,7 @@
 "got": {
 "pulliṅga": "viq/viqq/viqw/viw",
 "strīliṅga": "viq/viqq/viqw/viw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viq/viqq/viqw/viw"
 },
 "ok": true,
 "sutras": [
@@ -58907,7 +58907,7 @@
 "got": {
 "pulliṅga": "viq/viqq/viqw/viw",
 "strīliṅga": "viq/viqq/viqw/viw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viq/viqq/viqw/viw"
 },
 "ok": true,
 "sutras": [
@@ -58954,7 +58954,7 @@
 "got": {
 "pulliṅga": "naS/naSS",
 "strīliṅga": "naS/naSS",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "naS/naSS"
 },
 "ok": false,
 "sutras": [
@@ -58971,7 +58971,7 @@
 "got": {
 "pulliṅga": "naS/naSS",
 "strīliṅga": "naS/naSS",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "naS/naSS"
 },
 "ok": false,
 "sutras": [
@@ -58989,7 +58989,7 @@
 "got": {
 "pulliṅga": "naS/naSS",
 "strīliṅga": "naS/naSS",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "naS/naSS"
 },
 "ok": false,
 "sutras": [
@@ -59008,7 +59008,7 @@
 "got": {
 "pulliṅga": "naS/naSS",
 "strīliṅga": "naS/naSS",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "naS/naSS"
 },
 "ok": false,
 "sutras": [
@@ -59055,7 +59055,7 @@
 "got": {
 "pulliṅga": "naSam/naSamm",
 "strīliṅga": "naSam/naSamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "naS/naSS"
 },
 "ok": true,
 "sutras": []
@@ -59477,7 +59477,7 @@
 "got": {
 "pulliṅga": "naS/naSS",
 "strīliṅga": "naS/naSS",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "naS/naSS"
 },
 "ok": false,
 "sutras": [
@@ -59494,7 +59494,7 @@
 "got": {
 "pulliṅga": "naS/naSS",
 "strīliṅga": "naS/naSS",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "naS/naSS"
 },
 "ok": false,
 "sutras": [
@@ -59512,7 +59512,7 @@
 "got": {
 "pulliṅga": "naS/naSS",
 "strīliṅga": "naS/naSS",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "naS/naSS"
 },
 "ok": false,
 "sutras": [
@@ -59531,7 +59531,7 @@
 "got": {
 "pulliṅga": "naS/naSS",
 "strīliṅga": "naS/naSS",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "naS/naSS"
 },
 "ok": false,
 "sutras": [
@@ -59578,7 +59578,7 @@
 "got": {
 "pulliṅga": "Gftaspfg/Gftaspfk/Gftasppfgg/Gftasppfgk",
 "strīliṅga": "Gftaspfg/Gftaspfk/Gftasppfgg/Gftasppfgk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Gftaspfg/Gftaspfk/Gftasppfgg/Gftasppfgk"
 },
 "ok": true,
 "sutras": [
@@ -59596,7 +59596,7 @@
 "got": {
 "pulliṅga": "Gftaspfg/Gftaspfk/Gftasppfgg/Gftasppfgk",
 "strīliṅga": "Gftaspfg/Gftaspfk/Gftasppfgg/Gftasppfgk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Gftaspfg/Gftaspfk/Gftasppfgg/Gftasppfgk"
 },
 "ok": true,
 "sutras": [
@@ -59644,7 +59644,7 @@
 "got": {
 "pulliṅga": "GftaspfSam/GftasppfSamm",
 "strīliṅga": "GftaspfSam/GftasppfSamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Gftaspfg/Gftaspfk/Gftasppfgg/Gftasppfgk"
 },
 "ok": true,
 "sutras": []
@@ -59929,7 +59929,7 @@
 "got": {
 "pulliṅga": "Gftaspfg/Gftaspfk/Gftasppfgg/Gftasppfgk",
 "strīliṅga": "Gftaspfg/Gftaspfk/Gftasppfgg/Gftasppfgk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Gftaspfg/Gftaspfk/Gftasppfgg/Gftasppfgk"
 },
 "ok": true,
 "sutras": [
@@ -59947,7 +59947,7 @@
 "got": {
 "pulliṅga": "Gftaspfg/Gftaspfk/Gftasppfgg/Gftasppfgk",
 "strīliṅga": "Gftaspfg/Gftaspfk/Gftasppfgg/Gftasppfgk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Gftaspfg/Gftaspfk/Gftasppfgg/Gftasppfgk"
 },
 "ok": true,
 "sutras": [
@@ -59995,7 +59995,7 @@
 "got": {
 "pulliṅga": "pipaWiq/pipaWiqq/pipaWiqw/pipaWiw",
 "strīliṅga": "pipaWiq/pipaWiqq/pipaWiqw/pipaWiw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pipaWiq/pipaWiqq/pipaWiqw/pipaWiw"
 },
 "ok": false,
 "sutras": [
@@ -60042,7 +60042,7 @@
 "got": {
 "pulliṅga": "pipaWizam/pipaWizamm",
 "strīliṅga": "pipaWizam/pipaWizamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pipaWiq/pipaWiqq/pipaWiqw/pipaWiw"
 },
 "ok": true,
 "sutras": []
@@ -60336,7 +60336,7 @@
 "got": {
 "pulliṅga": "pipaWiq/pipaWiqq/pipaWiqw/pipaWiw",
 "strīliṅga": "pipaWiq/pipaWiqq/pipaWiqw/pipaWiw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pipaWiq/pipaWiqq/pipaWiqw/pipaWiw"
 },
 "ok": false,
 "sutras": [
@@ -60383,7 +60383,7 @@
 "got": {
 "pulliṅga": "cikIH",
 "strīliṅga": "cikIH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "cikIH"
 },
 "ok": true,
 "sutras": [
@@ -60429,7 +60429,7 @@
 "got": {
 "pulliṅga": "cikIrzam/cikIrzamm/cikIrzzam/cikIrzzamm",
 "strīliṅga": "cikIrzam/cikIrzamm/cikIrzzam/cikIrzzamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "cikIH"
 },
 "ok": true,
 "sutras": []
@@ -60700,7 +60700,7 @@
 "got": {
 "pulliṅga": "cikIH",
 "strīliṅga": "cikIH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "cikIH"
 },
 "ok": true,
 "sutras": [
@@ -60746,7 +60746,7 @@
 "got": {
 "pulliṅga": "daDfq/daDfqq/daDfqw/daDfw",
 "strīliṅga": "daDfq/daDfqq/daDfqw/daDfw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "daDfq/daDfqq/daDfqw/daDfw"
 },
 "ok": false,
 "sutras": [
@@ -60763,7 +60763,7 @@
 "got": {
 "pulliṅga": "daDfq/daDfqq/daDfqw/daDfw",
 "strīliṅga": "daDfq/daDfqq/daDfqw/daDfw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "daDfq/daDfqq/daDfqw/daDfw"
 },
 "ok": false,
 "sutras": [
@@ -60810,7 +60810,7 @@
 "got": {
 "pulliṅga": "daDfzam/daDfzamm",
 "strīliṅga": "daDfzam/daDfzamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "daDfq/daDfqq/daDfqw/daDfw"
 },
 "ok": true,
 "sutras": []
@@ -61088,7 +61088,7 @@
 "got": {
 "pulliṅga": "daDfq/daDfqq/daDfqw/daDfw",
 "strīliṅga": "daDfq/daDfqq/daDfqw/daDfw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "daDfq/daDfqq/daDfqw/daDfw"
 },
 "ok": false,
 "sutras": [
@@ -61105,7 +61105,7 @@
 "got": {
 "pulliṅga": "daDfq/daDfqq/daDfqw/daDfw",
 "strīliṅga": "daDfq/daDfqq/daDfqw/daDfw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "daDfq/daDfqq/daDfqw/daDfw"
 },
 "ok": false,
 "sutras": [
@@ -61152,7 +61152,7 @@
 "got": {
 "pulliṅga": "ratnamuq/ratnamuw/rattnamuqq/rattnamuqw",
 "strīliṅga": "ratnamuq/ratnamuw/rattnamuqq/rattnamuqw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ratnamuq/ratnamuw/rattnamuqq/rattnamuqw"
 },
 "ok": true,
 "sutras": [
@@ -61169,7 +61169,7 @@
 "got": {
 "pulliṅga": "ratnamuq/ratnamuw/rattnamuqq/rattnamuqw",
 "strīliṅga": "ratnamuq/ratnamuw/rattnamuqq/rattnamuqw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ratnamuq/ratnamuw/rattnamuqq/rattnamuqw"
 },
 "ok": true,
 "sutras": [
@@ -61214,7 +61214,7 @@
 "got": {
 "pulliṅga": "ratnamuzam/rattnamuzamm",
 "strīliṅga": "ratnamuzam/rattnamuzamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ratnamuq/ratnamuw/rattnamuqq/rattnamuqw"
 },
 "ok": true,
 "sutras": []
@@ -61501,7 +61501,7 @@
 "got": {
 "pulliṅga": "ratnamuq/ratnamuw/rattnamuqq/rattnamuqw",
 "strīliṅga": "ratnamuq/ratnamuw/rattnamuqq/rattnamuqw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ratnamuq/ratnamuw/rattnamuqq/rattnamuqw"
 },
 "ok": true,
 "sutras": [
@@ -61518,7 +61518,7 @@
 "got": {
 "pulliṅga": "ratnamuq/ratnamuw/rattnamuqq/rattnamuqw",
 "strīliṅga": "ratnamuq/ratnamuw/rattnamuqq/rattnamuqw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ratnamuq/ratnamuw/rattnamuqq/rattnamuqw"
 },
 "ok": true,
 "sutras": [
@@ -61563,7 +61563,7 @@
 "got": {
 "pulliṅga": "viddvvaH/vidvaH",
 "strīliṅga": "viddvvaH/vidvaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viddvvaH/vidvaH"
 },
 "ok": false,
 "sutras": [
@@ -61617,7 +61617,7 @@
 "got": {
 "pulliṅga": "viddvvasamm/vidvasam",
 "strīliṅga": "viddvvasamm/vidvasam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viddvvaH/vidvaH"
 },
 "ok": false,
 "sutras": [
@@ -61926,7 +61926,7 @@
 "got": {
 "pulliṅga": "viddvvaH/vidvaH",
 "strīliṅga": "viddvvaH/vidvaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "viddvvaH/vidvaH"
 },
 "ok": false,
 "sutras": [
@@ -61979,7 +61979,7 @@
 "got": {
 "pulliṅga": "pumAn/pumAnn",
 "strīliṅga": "pumAn/pumAnn",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "puMH"
 },
 "ok": true,
 "sutras": [
@@ -62036,7 +62036,7 @@
 "got": {
 "pulliṅga": "pumAMsam/pumAMsamm",
 "strīliṅga": "pumAMsam/pumAMsamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "puMH"
 },
 "ok": true,
 "sutras": [
@@ -62431,7 +62431,7 @@
 "got": {
 "pulliṅga": "pumAn/pumAnn",
 "strīliṅga": "pumAn/pumAnn",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "puMH"
 },
 "ok": false,
 "sutras": [
@@ -62484,7 +62484,7 @@
 "got": {
 "pulliṅga": "uSanaH",
 "strīliṅga": "uSanaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "uSanaH"
 },
 "ok": false,
 "sutras": [
@@ -62529,7 +62529,7 @@
 "got": {
 "pulliṅga": "uSanasam/uSanasamm",
 "strīliṅga": "uSanasam/uSanasamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "uSanaH"
 },
 "ok": true,
 "sutras": []
@@ -62826,7 +62826,7 @@
 "got": {
 "pulliṅga": "uSanaH",
 "strīliṅga": "uSanaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "uSanaH"
 },
 "ok": false,
 "sutras": [
@@ -62843,7 +62843,7 @@
 "got": {
 "pulliṅga": "uSanaH",
 "strīliṅga": "uSanaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "uSanaH"
 },
 "ok": false,
 "sutras": [
@@ -62860,7 +62860,7 @@
 "got": {
 "pulliṅga": "uSanaH",
 "strīliṅga": "uSanaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "uSanaH"
 },
 "ok": true,
 "sutras": [
@@ -62904,7 +62904,7 @@
 "got": {
 "pulliṅga": "anehaH",
 "strīliṅga": "anehaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "anehaH"
 },
 "ok": false,
 "sutras": [
@@ -62952,7 +62952,7 @@
 "got": {
 "pulliṅga": "anehasam/anehasamm",
 "strīliṅga": "anehasam/anehasamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "anehaH"
 },
 "ok": true,
 "sutras": []
@@ -63249,7 +63249,7 @@
 "got": {
 "pulliṅga": "anehaH",
 "strīliṅga": "anehaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "anehaH"
 },
 "ok": true,
 "sutras": [
@@ -63292,7 +63292,7 @@
 "got": {
 "pulliṅga": "veDaH",
 "strīliṅga": "veDaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "veDaH"
 },
 "ok": false,
 "sutras": [
@@ -63339,7 +63339,7 @@
 "got": {
 "pulliṅga": "veDasam/veDasamm",
 "strīliṅga": "veDasam/veDasamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "veDaH"
 },
 "ok": true,
 "sutras": []
@@ -63636,7 +63636,7 @@
 "got": {
 "pulliṅga": "veDaH",
 "strīliṅga": "veDaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "veDaH"
 },
 "ok": true,
 "sutras": [
@@ -64079,7 +64079,7 @@
 "got": {
 "pulliṅga": "upAnaq/upAnaqq/upAnaqw/upAnaw",
 "strīliṅga": "upAnaq/upAnaqq/upAnaqw/upAnaw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "upAnaq/upAnaqq/upAnaqw/upAnaw"
 },
 "ok": false,
 "sutras": [
@@ -64096,7 +64096,7 @@
 "got": {
 "pulliṅga": "upAnaq/upAnaqq/upAnaqw/upAnaw",
 "strīliṅga": "upAnaq/upAnaqq/upAnaqw/upAnaw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "upAnaq/upAnaqq/upAnaqw/upAnaw"
 },
 "ok": false,
 "sutras": [
@@ -64140,7 +64140,7 @@
 "got": {
 "pulliṅga": "upAnaham/upAnahamm",
 "strīliṅga": "upAnaham/upAnahamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "upAnaq/upAnaqq/upAnaqw/upAnaw"
 },
 "ok": true,
 "sutras": []
@@ -64414,7 +64414,7 @@
 "got": {
 "pulliṅga": "upAnaq/upAnaqq/upAnaqw/upAnaw",
 "strīliṅga": "upAnaq/upAnaqq/upAnaqw/upAnaw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "upAnaq/upAnaqq/upAnaqw/upAnaw"
 },
 "ok": false,
 "sutras": [
@@ -64431,7 +64431,7 @@
 "got": {
 "pulliṅga": "upAnaq/upAnaqq/upAnaqw/upAnaw",
 "strīliṅga": "upAnaq/upAnaqq/upAnaqw/upAnaw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "upAnaq/upAnaqq/upAnaqw/upAnaw"
 },
 "ok": false,
 "sutras": [
@@ -64475,7 +64475,7 @@
 "got": {
 "pulliṅga": "uzRiq/uzRiw/uzzRiqq/uzzRiqw",
 "strīliṅga": "uzRiq/uzRiw/uzzRiqq/uzzRiqw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "uzRiq/uzRiw/uzzRiqq/uzzRiqw"
 },
 "ok": false,
 "sutras": [
@@ -64493,7 +64493,7 @@
 "got": {
 "pulliṅga": "uzRiq/uzRiw/uzzRiqq/uzzRiqw",
 "strīliṅga": "uzRiq/uzRiw/uzzRiqq/uzzRiqw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "uzRiq/uzRiw/uzzRiqq/uzzRiqw"
 },
 "ok": false,
 "sutras": [
@@ -64541,7 +64541,7 @@
 "got": {
 "pulliṅga": "uzRiham/uzzRihamm",
 "strīliṅga": "uzRiham/uzzRihamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "uzRiq/uzRiw/uzzRiqq/uzzRiqw"
 },
 "ok": true,
 "sutras": []
@@ -64826,7 +64826,7 @@
 "got": {
 "pulliṅga": "uzRiq/uzRiw/uzzRiqq/uzzRiqw",
 "strīliṅga": "uzRiq/uzRiw/uzzRiqq/uzzRiqw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "uzRiq/uzRiw/uzzRiqq/uzzRiqw"
 },
 "ok": false,
 "sutras": [
@@ -64844,7 +64844,7 @@
 "got": {
 "pulliṅga": "uzRiq/uzRiw/uzzRiqq/uzzRiqw",
 "strīliṅga": "uzRiq/uzRiw/uzzRiqq/uzzRiqw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "uzRiq/uzRiw/uzzRiqq/uzzRiqw"
 },
 "ok": false,
 "sutras": [
@@ -64892,7 +64892,7 @@
 "got": {
 "pulliṅga": "dyOH/dyyOH",
 "strīliṅga": "dyOH/dyyOH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dyO/dyyO"
 },
 "ok": true,
 "sutras": [
@@ -64939,7 +64939,7 @@
 "got": {
 "pulliṅga": "divam/divamm",
 "strīliṅga": "divam/divamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "div/divv"
 },
 "ok": true,
 "sutras": []
@@ -65216,7 +65216,7 @@
 "got": {
 "pulliṅga": "dyOH/dyyOH",
 "strīliṅga": "dyOH/dyyOH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dyO/dyyO"
 },
 "ok": true,
 "sutras": [
@@ -65263,7 +65263,7 @@
 "got": {
 "pulliṅga": "giH",
 "strīliṅga": "giH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "giH"
 },
 "ok": false,
 "sutras": [
@@ -65309,7 +65309,7 @@
 "got": {
 "pulliṅga": "giram/giramm",
 "strīliṅga": "giram/giramm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "giH"
 },
 "ok": true,
 "sutras": []
@@ -65579,7 +65579,7 @@
 "got": {
 "pulliṅga": "giH",
 "strīliṅga": "giH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "giH"
 },
 "ok": false,
 "sutras": [
@@ -65802,7 +65802,7 @@
 "got": {
 "pulliṅga": "kam/kamm",
 "strīliṅga": "kAm",
-"napuṃsaka": "ERR:RuntimeError"
+"napuṃsaka": "kim"
 },
 "ok": true,
 "sutras": [
@@ -66199,7 +66199,7 @@
 "got": {
 "pulliṅga": "imam",
 "strīliṅga": "imAm",
-"napuṃsaka": "ERR:RuntimeError"
+"napuṃsaka": "idam"
 },
 "ok": true,
 "sutras": [
@@ -66219,7 +66219,7 @@
 "got": {
 "pulliṅga": "imam",
 "strīliṅga": "imAm",
-"napuṃsaka": "ERR:RuntimeError"
+"napuṃsaka": "idam"
 },
 "ok": false,
 "sutras": [
@@ -68066,7 +68066,7 @@
 "got": {
 "pulliṅga": "vAg/vAgg/vAgk/vAk",
 "strīliṅga": "vAg/vAgg/vAgk/vAk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vAg/vAgg/vAgk/vAk"
 },
 "ok": true,
 "sutras": [
@@ -68083,7 +68083,7 @@
 "got": {
 "pulliṅga": "vAg/vAgg/vAgk/vAk",
 "strīliṅga": "vAg/vAgg/vAgk/vAk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vAg/vAgg/vAgk/vAk"
 },
 "ok": true,
 "sutras": [
@@ -68130,7 +68130,7 @@
 "got": {
 "pulliṅga": "vAcam/vAcamm",
 "strīliṅga": "vAcam/vAcamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vAg/vAgg/vAgk/vAk"
 },
 "ok": true,
 "sutras": []
@@ -68408,7 +68408,7 @@
 "got": {
 "pulliṅga": "vAg/vAgg/vAgk/vAk",
 "strīliṅga": "vAg/vAgg/vAgk/vAk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vAg/vAgg/vAgk/vAk"
 },
 "ok": true,
 "sutras": [
@@ -68425,7 +68425,7 @@
 "got": {
 "pulliṅga": "vAg/vAgg/vAgk/vAk",
 "strīliṅga": "vAg/vAgg/vAgk/vAk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vAg/vAgg/vAgk/vAk"
 },
 "ok": true,
 "sutras": [
@@ -68472,7 +68472,7 @@
 "got": {
 "pulliṅga": "dig/digg/digk/dik",
 "strīliṅga": "dig/digg/digk/dik",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dig/digg/digk/dik"
 },
 "ok": true,
 "sutras": [
@@ -68490,7 +68490,7 @@
 "got": {
 "pulliṅga": "dig/digg/digk/dik",
 "strīliṅga": "dig/digg/digk/dik",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dig/digg/digk/dik"
 },
 "ok": true,
 "sutras": [
@@ -68538,7 +68538,7 @@
 "got": {
 "pulliṅga": "diSam/diSamm",
 "strīliṅga": "diSam/diSamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dig/digg/digk/dik"
 },
 "ok": true,
 "sutras": []
@@ -68818,7 +68818,7 @@
 "got": {
 "pulliṅga": "dig/digg/digk/dik",
 "strīliṅga": "dig/digg/digk/dik",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dig/digg/digk/dik"
 },
 "ok": true,
 "sutras": [
@@ -68836,7 +68836,7 @@
 "got": {
 "pulliṅga": "dig/digg/digk/dik",
 "strīliṅga": "dig/digg/digk/dik",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dig/digg/digk/dik"
 },
 "ok": true,
 "sutras": [
@@ -68884,7 +68884,7 @@
 "got": {
 "pulliṅga": "dfg/dfgg/dfgk/dfk",
 "strīliṅga": "dfg/dfgg/dfgk/dfk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dfg/dfgg/dfgk/dfk"
 },
 "ok": true,
 "sutras": [
@@ -68902,7 +68902,7 @@
 "got": {
 "pulliṅga": "dfg/dfgg/dfgk/dfk",
 "strīliṅga": "dfg/dfgg/dfgk/dfk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dfg/dfgg/dfgk/dfk"
 },
 "ok": true,
 "sutras": [
@@ -68950,7 +68950,7 @@
 "got": {
 "pulliṅga": "dfSam/dfSamm",
 "strīliṅga": "dfSam/dfSamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dfg/dfgg/dfgk/dfk"
 },
 "ok": true,
 "sutras": []
@@ -69230,7 +69230,7 @@
 "got": {
 "pulliṅga": "dfg/dfgg/dfgk/dfk",
 "strīliṅga": "dfg/dfgg/dfgk/dfk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dfg/dfgg/dfgk/dfk"
 },
 "ok": true,
 "sutras": [
@@ -69248,7 +69248,7 @@
 "got": {
 "pulliṅga": "dfg/dfgg/dfgk/dfk",
 "strīliṅga": "dfg/dfgg/dfgk/dfk",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dfg/dfgg/dfgk/dfk"
 },
 "ok": true,
 "sutras": [
@@ -69296,7 +69296,7 @@
 "got": {
 "pulliṅga": "tviq/tviw/tvviqq/tvviqw",
 "strīliṅga": "tviq/tviw/tvviqq/tvviqw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tviq/tviw/tvviqq/tvviqw"
 },
 "ok": true,
 "sutras": [
@@ -69313,7 +69313,7 @@
 "got": {
 "pulliṅga": "tviq/tviw/tvviqq/tvviqw",
 "strīliṅga": "tviq/tviw/tvviqq/tvviqw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tviq/tviw/tvviqq/tvviqw"
 },
 "ok": true,
 "sutras": [
@@ -69358,7 +69358,7 @@
 "got": {
 "pulliṅga": "tvizam/tvvizamm",
 "strīliṅga": "tvizam/tvvizamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tviq/tviw/tvviqq/tvviqw"
 },
 "ok": true,
 "sutras": []
@@ -69646,7 +69646,7 @@
 "got": {
 "pulliṅga": "tviq/tviw/tvviqq/tvviqw",
 "strīliṅga": "tviq/tviw/tvviqq/tvviqw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tviq/tviw/tvviqq/tvviqw"
 },
 "ok": true,
 "sutras": [
@@ -69663,7 +69663,7 @@
 "got": {
 "pulliṅga": "tviq/tviw/tvviqq/tvviqw",
 "strīliṅga": "tviq/tviw/tvviqq/tvviqw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tviq/tviw/tvviqq/tvviqw"
 },
 "ok": true,
 "sutras": [
@@ -69708,7 +69708,7 @@
 "got": {
 "pulliṅga": "sajuq/sajuqq/sajuqw/sajuw",
 "strīliṅga": "sajuq/sajuqq/sajuqw/sajuw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sajuq/sajuqq/sajuqw/sajuw"
 },
 "ok": false,
 "sutras": [
@@ -69755,7 +69755,7 @@
 "got": {
 "pulliṅga": "sajuzam/sajuzamm",
 "strīliṅga": "sajuzam/sajuzamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sajuq/sajuqq/sajuqw/sajuw"
 },
 "ok": true,
 "sutras": []
@@ -70049,7 +70049,7 @@
 "got": {
 "pulliṅga": "sajuq/sajuqq/sajuqw/sajuw",
 "strīliṅga": "sajuq/sajuqq/sajuqw/sajuw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "sajuq/sajuqq/sajuqw/sajuw"
 },
 "ok": false,
 "sutras": [
@@ -70096,7 +70096,7 @@
 "got": {
 "pulliṅga": "ASiq/ASiqq/ASiqw/ASiw",
 "strīliṅga": "ASiq/ASiqq/ASiqw/ASiw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ASiq/ASiqq/ASiqw/ASiw"
 },
 "ok": false,
 "sutras": [
@@ -70143,7 +70143,7 @@
 "got": {
 "pulliṅga": "ASizam/ASizamm",
 "strīliṅga": "ASizam/ASizamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ASiq/ASiqq/ASiqw/ASiw"
 },
 "ok": true,
 "sutras": []
@@ -70437,7 +70437,7 @@
 "got": {
 "pulliṅga": "ASiq/ASiqq/ASiqw/ASiw",
 "strīliṅga": "ASiq/ASiqq/ASiqw/ASiw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ASiq/ASiqq/ASiqw/ASiw"
 },
 "ok": false,
 "sutras": [
@@ -70925,7 +70925,7 @@
 "got": {
 "pulliṅga": "svanaqqvvAnn/svanaqvAn",
 "strīliṅga": "svanaqqvvAnn/svanaqvAn",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svanaquq/svanaquqq/svanaquqw/svanaquw"
 },
 "ok": false,
 "sutras": [
@@ -70941,7 +70941,7 @@
 "got": {
 "pulliṅga": "svanaqqvvAnn/svanaqvAn",
 "strīliṅga": "svanaqqvvAnn/svanaqvAn",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svanaquq/svanaquqq/svanaquqw/svanaquw"
 },
 "ok": false,
 "sutras": [
@@ -70992,7 +70992,7 @@
 "got": {
 "pulliṅga": "svanaqqvvAnn/svanaqvAn",
 "strīliṅga": "svanaqqvvAnn/svanaqvAn",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svanaquq/svanaquqq/svanaquqw/svanaquw"
 },
 "ok": false,
 "sutras": [
@@ -71008,7 +71008,7 @@
 "got": {
 "pulliṅga": "svanaqqvvAnn/svanaqvAn",
 "strīliṅga": "svanaqqvvAnn/svanaqvAn",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svanaquq/svanaquqq/svanaquqw/svanaquw"
 },
 "ok": false,
 "sutras": [
@@ -71287,7 +71287,7 @@
 "got": {
 "pulliṅga": "svanaqqvvann/svanaqvan",
 "strīliṅga": "svanaqqvvann/svanaqvan",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svanaqqvvann/svanaqvan"
 },
 "ok": false,
 "sutras": [
@@ -71303,7 +71303,7 @@
 "got": {
 "pulliṅga": "svanaqqvvann/svanaqvan",
 "strīliṅga": "svanaqqvvann/svanaqvan",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "svanaqqvvann/svanaqvan"
 },
 "ok": false,
 "sutras": [
@@ -71354,7 +71354,7 @@
 "got": {
 "pulliṅga": "vAH",
 "strīliṅga": "vAH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vAH"
 },
 "ok": true,
 "sutras": [
@@ -71400,9 +71400,9 @@
 "got": {
 "pulliṅga": "vAram/vAramm",
 "strīliṅga": "vAram/vAramm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vAH"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.3.15"
@@ -71662,7 +71662,7 @@
 "got": {
 "pulliṅga": "vAH",
 "strīliṅga": "vAH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "vAH"
 },
 "ok": true,
 "sutras": [
@@ -71891,9 +71891,9 @@
 "got": {
 "pulliṅga": "kam/kamm",
 "strīliṅga": "kAm",
-"napuṃsaka": "ERR:RuntimeError"
+"napuṃsaka": "kim"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23"
 ]
@@ -72271,9 +72271,9 @@
 "got": {
 "pulliṅga": "imam",
 "strīliṅga": "imAm",
-"napuṃsaka": "ERR:RuntimeError"
+"napuṃsaka": "idam"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23"
 ]
@@ -72286,7 +72286,7 @@
 "got": {
 "pulliṅga": "imam",
 "strīliṅga": "imAm",
-"napuṃsaka": "ERR:RuntimeError"
+"napuṃsaka": "idam"
 },
 "ok": false,
 "sutras": [
@@ -72301,7 +72301,7 @@
 "got": {
 "pulliṅga": "imam",
 "strīliṅga": "imAm",
-"napuṃsaka": "ERR:RuntimeError"
+"napuṃsaka": "idam"
 },
 "ok": false,
 "sutras": [
@@ -72737,7 +72737,7 @@
 "got": {
 "pulliṅga": "ahA",
 "strīliṅga": "ahA",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aha"
 },
 "ok": false,
 "sutras": [
@@ -72802,7 +72802,7 @@
 "got": {
 "pulliṅga": "ahAnam/ahAnamm",
 "strīliṅga": "ahAnam/ahAnamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "aha"
 },
 "ok": false,
 "sutras": [
@@ -73153,7 +73153,7 @@
 "got": {
 "pulliṅga": "ahan/ahann",
 "strīliṅga": "ahan/ahann",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "ahan/ahann"
 },
 "ok": false,
 "sutras": [
@@ -73218,9 +73218,9 @@
 "got": {
 "pulliṅga": "daRRqI/daRqI",
 "strīliṅga": "daRRqI/daRqI",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "daRRqi/daRqi"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.7"
@@ -73265,9 +73265,9 @@
 "got": {
 "pulliṅga": "daRRqinamm/daRqinam",
 "strīliṅga": "daRRqinamm/daRqinam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "daRRqi/daRqi"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.7"
@@ -73540,7 +73540,7 @@
 "got": {
 "pulliṅga": "daRRqinn/daRqin",
 "strīliṅga": "daRRqinn/daRqin",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "daRRqinn/daRqin"
 },
 "ok": true,
 "sutras": [
@@ -73556,7 +73556,7 @@
 "got": {
 "pulliṅga": "daRRqinn/daRqin",
 "strīliṅga": "daRRqinn/daRqin",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "daRRqinn/daRqin"
 },
 "ok": false,
 "sutras": [
@@ -73603,7 +73603,7 @@
 "got": {
 "pulliṅga": "supanTyAH/supanTyyAH",
 "strīliṅga": "supanTyAH/supanTyyAH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "supad/supadd/supadt/supat"
 },
 "ok": false,
 "sutras": [
@@ -73653,7 +73653,7 @@
 "got": {
 "pulliṅga": "supanTAnam/supanTAnamm",
 "strīliṅga": "supanTAnam/supanTAnamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "supad/supadd/supadt/supat"
 },
 "ok": false,
 "sutras": [
@@ -73943,7 +73943,7 @@
 "got": {
 "pulliṅga": "supanTAH",
 "strīliṅga": "supanTe",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "supad/supadd/supadt/supat"
 },
 "ok": false,
 "sutras": [
@@ -73959,7 +73959,7 @@
 "got": {
 "pulliṅga": "supanTAH",
 "strīliṅga": "supanTe",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "supad/supadd/supadt/supat"
 },
 "ok": false,
 "sutras": [
@@ -74009,7 +74009,7 @@
 "got": {
 "pulliṅga": "UH",
 "strīliṅga": "UH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "UH"
 },
 "ok": false,
 "sutras": [
@@ -74025,7 +74025,7 @@
 "got": {
 "pulliṅga": "UH",
 "strīliṅga": "UH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "UH"
 },
 "ok": false,
 "sutras": [
@@ -74073,7 +74073,7 @@
 "got": {
 "pulliṅga": "Urjam/Urjjam/Urjjamm/Urjjjamm",
 "strīliṅga": "Urjam/Urjjam/Urjjamm/Urjjjamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "UH"
 },
 "ok": false,
 "sutras": [
@@ -74089,7 +74089,7 @@
 "got": {
 "pulliṅga": "Urjam/Urjjam/Urjjamm/Urjjjamm",
 "strīliṅga": "Urjam/Urjjam/Urjjamm/Urjjjamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "UH"
 },
 "ok": false,
 "sutras": [
@@ -74366,7 +74366,7 @@
 "got": {
 "pulliṅga": "UH",
 "strīliṅga": "UH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "UH"
 },
 "ok": false,
 "sutras": [
@@ -74382,7 +74382,7 @@
 "got": {
 "pulliṅga": "UH",
 "strīliṅga": "UH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "UH"
 },
 "ok": false,
 "sutras": [
@@ -75837,7 +75837,7 @@
 "got": {
 "pulliṅga": "Sakfd/Sakfdd/Sakfdt/Sakft",
 "strīliṅga": "Sakfd/Sakfdd/Sakfdt/Sakft",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Sakfd/Sakfdd/Sakfdt/Sakft"
 },
 "ok": true,
 "sutras": [
@@ -75854,7 +75854,7 @@
 "got": {
 "pulliṅga": "Sakfd/Sakfdd/Sakfdt/Sakft",
 "strīliṅga": "Sakfd/Sakfdd/Sakfdt/Sakft",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Sakfd/Sakfdd/Sakfdt/Sakft"
 },
 "ok": true,
 "sutras": [
@@ -75903,9 +75903,9 @@
 "got": {
 "pulliṅga": "Sakftam/Sakftamm",
 "strīliṅga": "Sakftam/Sakftamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Sakfd/Sakfdd/Sakfdt/Sakft"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.39",
@@ -75920,9 +75920,9 @@
 "got": {
 "pulliṅga": "Sakftam/Sakftamm",
 "strīliṅga": "Sakftam/Sakftamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Sakfd/Sakfdd/Sakfdt/Sakft"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.39"
@@ -76467,7 +76467,7 @@
 "got": {
 "pulliṅga": "Sakfd/Sakfdd/Sakfdt/Sakft",
 "strīliṅga": "Sakfd/Sakfdd/Sakfdt/Sakft",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Sakfd/Sakfdd/Sakfdt/Sakft"
 },
 "ok": true,
 "sutras": [
@@ -76484,7 +76484,7 @@
 "got": {
 "pulliṅga": "Sakfd/Sakfdd/Sakfdt/Sakft",
 "strīliṅga": "Sakfd/Sakfdd/Sakfdt/Sakft",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Sakfd/Sakfdd/Sakfdt/Sakft"
 },
 "ok": true,
 "sutras": [
@@ -76533,7 +76533,7 @@
 "got": {
 "pulliṅga": "dadad/dadadd/dadadt/dadat",
 "strīliṅga": "dadad/dadadd/dadadt/dadat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dadad/dadadd/dadadt/dadat"
 },
 "ok": true,
 "sutras": [
@@ -76550,7 +76550,7 @@
 "got": {
 "pulliṅga": "dadad/dadadd/dadadt/dadat",
 "strīliṅga": "dadad/dadadd/dadadt/dadat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dadad/dadadd/dadadt/dadat"
 },
 "ok": true,
 "sutras": [
@@ -76614,9 +76614,9 @@
 "got": {
 "pulliṅga": "dadatam/dadatamm",
 "strīliṅga": "dadatam/dadatamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dadad/dadadd/dadadt/dadat"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.39",
@@ -76631,9 +76631,9 @@
 "got": {
 "pulliṅga": "dadatam/dadatamm",
 "strīliṅga": "dadatam/dadatamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dadad/dadadd/dadadt/dadat"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.39"
@@ -76923,7 +76923,7 @@
 "got": {
 "pulliṅga": "dadad/dadadd/dadadt/dadat",
 "strīliṅga": "dadad/dadadd/dadadt/dadat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dadad/dadadd/dadadt/dadat"
 },
 "ok": true,
 "sutras": [
@@ -76940,7 +76940,7 @@
 "got": {
 "pulliṅga": "dadad/dadadd/dadadt/dadat",
 "strīliṅga": "dadad/dadadd/dadadt/dadat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dadad/dadadd/dadadt/dadat"
 },
 "ok": true,
 "sutras": [
@@ -77004,7 +77004,7 @@
 "got": {
 "pulliṅga": "tudad/tudadd/tudadt/tudat",
 "strīliṅga": "tudad/tudadd/tudadt/tudat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tudad/tudadd/tudadt/tudat"
 },
 "ok": true,
 "sutras": [
@@ -77021,7 +77021,7 @@
 "got": {
 "pulliṅga": "tudad/tudadd/tudadt/tudat",
 "strīliṅga": "tudad/tudadd/tudadt/tudat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tudad/tudadd/tudadt/tudat"
 },
 "ok": true,
 "sutras": [
@@ -77088,9 +77088,9 @@
 "got": {
 "pulliṅga": "tudatam/tudatamm",
 "strīliṅga": "tudatam/tudatamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tudad/tudadd/tudadt/tudat"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.39",
@@ -77105,9 +77105,9 @@
 "got": {
 "pulliṅga": "tudatam/tudatamm",
 "strīliṅga": "tudatam/tudatamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tudad/tudadd/tudadt/tudat"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.39"
@@ -77400,7 +77400,7 @@
 "got": {
 "pulliṅga": "tudad/tudadd/tudadt/tudat",
 "strīliṅga": "tudad/tudadd/tudadt/tudat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tudad/tudadd/tudadt/tudat"
 },
 "ok": true,
 "sutras": [
@@ -77417,7 +77417,7 @@
 "got": {
 "pulliṅga": "tudad/tudadd/tudadt/tudat",
 "strīliṅga": "tudad/tudadd/tudadt/tudat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "tudad/tudadd/tudadt/tudat"
 },
 "ok": true,
 "sutras": [
@@ -77484,7 +77484,7 @@
 "got": {
 "pulliṅga": "pacad/pacadd/pacadt/pacat",
 "strīliṅga": "pacad/pacadd/pacadt/pacat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pacad/pacadd/pacadt/pacat"
 },
 "ok": true,
 "sutras": [
@@ -77501,7 +77501,7 @@
 "got": {
 "pulliṅga": "pacad/pacadd/pacadt/pacat",
 "strīliṅga": "pacad/pacadd/pacadt/pacat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pacad/pacadd/pacadt/pacat"
 },
 "ok": true,
 "sutras": [
@@ -77553,9 +77553,9 @@
 "got": {
 "pulliṅga": "pacatam/pacatamm",
 "strīliṅga": "pacatam/pacatamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pacad/pacadd/pacadt/pacat"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.39",
@@ -77570,9 +77570,9 @@
 "got": {
 "pulliṅga": "pacatam/pacatamm",
 "strīliṅga": "pacatam/pacatamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pacad/pacadd/pacadt/pacat"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.39"
@@ -77850,7 +77850,7 @@
 "got": {
 "pulliṅga": "pacad/pacadd/pacadt/pacat",
 "strīliṅga": "pacad/pacadd/pacadt/pacat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pacad/pacadd/pacadt/pacat"
 },
 "ok": true,
 "sutras": [
@@ -77867,7 +77867,7 @@
 "got": {
 "pulliṅga": "pacad/pacadd/pacadt/pacat",
 "strīliṅga": "pacad/pacadd/pacadt/pacat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "pacad/pacadd/pacadt/pacat"
 },
 "ok": true,
 "sutras": [
@@ -77955,9 +77955,9 @@
 "got": {
 "pulliṅga": "dIvvyatamm/dIvyatam",
 "strīliṅga": "dIvvyatamm/dIvyatam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dIvvyadd/dIvvyadt/dIvyad/dIvyat"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.39",
@@ -77972,9 +77972,9 @@
 "got": {
 "pulliṅga": "dIvvyatamm/dIvyatam",
 "strīliṅga": "dIvvyatamm/dIvyatam",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dIvvyadd/dIvvyadt/dIvyad/dIvyat"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.39"
@@ -78252,7 +78252,7 @@
 "got": {
 "pulliṅga": "dIvvyadd/dIvvyadt/dIvyad/dIvyat",
 "strīliṅga": "dIvvyadd/dIvvyadt/dIvyad/dIvyat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dIvvyadd/dIvvyadt/dIvyad/dIvyat"
 },
 "ok": true,
 "sutras": [
@@ -78269,7 +78269,7 @@
 "got": {
 "pulliṅga": "dIvvyadd/dIvvyadt/dIvyad/dIvyat",
 "strīliṅga": "dIvvyadd/dIvvyadt/dIvyad/dIvyat",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "dIvvyadd/dIvvyadt/dIvyad/dIvyat"
 },
 "ok": true,
 "sutras": [
@@ -78321,7 +78321,7 @@
 "got": {
 "pulliṅga": "Danuq/Danuqq/Danuqw/Danuw",
 "strīliṅga": "Danuq/Danuqq/Danuqw/Danuw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Danuq/Danuqq/Danuqw/Danuw"
 },
 "ok": false,
 "sutras": [
@@ -78372,7 +78372,7 @@
 "got": {
 "pulliṅga": "Danuzam/Danuzamm",
 "strīliṅga": "Danuzam/Danuzamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Danuq/Danuqq/Danuqw/Danuw"
 },
 "ok": false,
 "sutras": [
@@ -78668,7 +78668,7 @@
 "got": {
 "pulliṅga": "Danuq/Danuqq/Danuqw/Danuw",
 "strīliṅga": "Danuq/Danuqq/Danuqw/Danuw",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "Danuq/Danuqq/Danuqw/Danuw"
 },
 "ok": false,
 "sutras": [
@@ -78719,7 +78719,7 @@
 "got": {
 "pulliṅga": "payaH",
 "strīliṅga": "payaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "payaH"
 },
 "ok": true,
 "sutras": [
@@ -78769,9 +78769,9 @@
 "got": {
 "pulliṅga": "payasam/payasamm",
 "strīliṅga": "payasam/payasamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "payaH"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.66",
@@ -79073,7 +79073,7 @@
 "got": {
 "pulliṅga": "payaH",
 "strīliṅga": "payaH",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "payaH"
 },
 "ok": true,
 "sutras": [
@@ -79123,9 +79123,9 @@
 "got": {
 "pulliṅga": "supumAn/supumAnn",
 "strīliṅga": "supumAn/supumAnn",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "supum/supumm"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.23"
@@ -79174,9 +79174,9 @@
 "got": {
 "pulliṅga": "supumAMsam/supumAMsamm",
 "strīliṅga": "supumAMsam/supumAMsamm",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "supum/supumm"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.23"
@@ -79579,9 +79579,9 @@
 "got": {
 "pulliṅga": "supumAn/supumAnn",
 "strīliṅga": "supumAn/supumAnn",
-"napuṃsaka": "ERR:IndexError"
+"napuṃsaka": "supum/supumm"
 },
-"ok": false,
+"ok": true,
 "sutras": [
 "7.1.23",
 "8.2.23"

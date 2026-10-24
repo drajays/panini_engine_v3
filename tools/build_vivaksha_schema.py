@@ -24,6 +24,10 @@ VOCABULARY = {
     },
     "kala": {"BUta": ["BUte"], "vartamAna": ["vartamAne"], "Bavizyat": ["Bavizyati"], "pUrvakAla": ["pUrvakAle"]},
     "kartrabhiprAya": {"kartraBiprAya": ["kartraBiprAye"]},
+    # AMENDMENT 25 addendum (2026-10-24, owner: "update if as per the sūtra"): the kṛt families the Aṣṭādhyāyī itself sets side by side
+    # as adhikāra-level choices — कृत्याः (3.1.95), ण्वुल्तृचौ (3.1.133) — and the kriyārthā sense of 3.3.10. The word is the sūtra's own.
+    "krt": {"kftya": ["kftyAH"], "Rvultfc": ["tfcO"]},
+    "kriyArTA": {"kriyArTA": ["kriyArTAyAm"]},
     # ashtadhyayi.com spells the 3.4.21 pada कर्त्तृ (samAnakarttfkayoH); 3.1.7 and 3.3.158 have one t
     "samAnakartfka": {"samAnakartfka": ["samAnakarttfkayoH", "samAnakartfkezu", "samAnakartfkAt"]},
 }

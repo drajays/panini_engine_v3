@@ -683,3 +683,28 @@ def derive_idDaH() -> State:
         s.terms[0].meta["upadesha_slp1"] = "inD"
     s = apply_rule("6.4.24", s)
     return _nistha_prathama_then_tripadi(s)       # 8.2.40 / 8.4.53 in the tripādī
+
+
+def derive_krdanta_stem(dhatu_ref: str, **vivaksha: str) -> tuple[str, set[str], dict]:
+    """The kṛdanta stem a vivakṣā leads to, by the loop and no recipe: (stem SLP1, its origin record — dhātu, kṛt, it-letters). The loop
+    runs through aṅgakārya and sandhi and stops where the tripāḍī would begin: that stratum belongs to the word with its sup."""
+    from engine import origin
+    from tools.autonomy_report import run_autonomously
+
+    s = build_dhatu_state(dhatu_ref, **vivaksha)
+    s.phase = "upadesha"
+    run = run_autonomously(s, "", dhatu_ref, 300, stop_before_tripadi=True)
+    st = run.state
+    return "".join(v.slp1 for t in st.terms for v in t.varnas), set(origin.record_from_terms(st.terms)), dict(st.meta.get("vikalpa_multi") or {})
+
+
+def derive_krdanta(dhatu_ref: str, vibhakti: int, vacana: int, linga: str = "pulliṅga", **vivaksha: str) -> State:
+    """A kṛdanta word: the stem from :func:`derive_krdanta_stem`, then the subanta with its sup (the stem is a derived prātipadika, 1.2.46)."""
+    from pipelines.subanta import build_initial_state, run_subanta_sup_attach_and_finish_scanner
+
+    stem, origin_tags, multi = derive_krdanta_stem(dhatu_ref, **vivaksha)
+    s = build_initial_state(stem, vibhakti, vacana, linga, derived_pratipadika=True)
+    s.terms[0].tags |= origin_tags
+    if multi:
+        s.meta["vikalpa_multi"] = multi          # the kṛt's own side-by-side choice (3.1.96 …) stays visible to explore()
+    return run_subanta_sup_attach_and_finish_scanner(s)

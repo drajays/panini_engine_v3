@@ -102,7 +102,16 @@ def dhatu_ids(aupadeshika: str, gana: str, artha: str) -> list[str]:
     rows = [r for r in _dhatu_rows().get(re.sub(r"[\\^]", "", aupadeshika), [])
             if GANA.get(gana) in (None, int(r.get("gana") or 0))]
     hit = [r for r in rows if dev_to_slp1(r.get("artha_dev") or "") == artha]
-    return [r["dhatupatha_id"] for r in (hit or rows)]
+    return [r["dhatupatha_id"] for r in (hit or rows) if r.get("dhatupatha_id")]
+
+
+# Vidyut's kṛt name → the vivakṣā the engine's kṛt sūtras read (AMENDMENT 25). Only the families the loop derives from a meaning are here:
+# niṣṭhā (3.2.102: kta in karmaṇi / bhāve, ktavatu for the kartṛ), the kṛtyas (3.1.96) and ṇvul / tṛc (3.1.133).
+KRT_VIVAKSHA = {
+    "kta": {"kala": "BUta", "artha": "karman"}, "ktavatu~": {"kala": "BUta", "artha": "kartf"},
+    "tavya": {"krt": "kftya"}, "tavyat": {"krt": "kftya"}, "anIyar": {"krt": "kftya"},
+    "Rvu~l": {"krt": "Rvultfc"}, "tfc": {"krt": "Rvultfc"},
+}
 
 
 def _from_kosha(k: dict) -> list[dict]:
@@ -111,8 +120,13 @@ def _from_kosha(k: dict) -> list[dict]:
         v, n, g = VIBHAKTI.get(k["vibhakti"]), VACANA.get(k["vacana"]), LINGA.get(k["linga"])
         if not k.get("stem"):
             d = k["krdanta"]["dhatu"]
+            spec = KRT_VIVAKSHA.get(k["krdanta"]["krt"])
+            ids = dhatu_ids(d["aupadeshika"], d["gana"], d["artha"]) if spec and not d["prefixes"] and not d["sanadi"] else []
+            if ids:
+                return [{"kind": "krdanta", "dhatu_id": i, "vivaksha": spec, "vibhakti": v, "vacana": n, "linga": g,
+                         "lemma": d["clean"]} for i in ids]
             return [{"kind": "krdanta", "not_attempted": f"kṛdanta stem ({d['clean']} + {k['krdanta']['krt']}) — "
-                     "the kṛt spine is not yet an analysis target", "features": {"linga": g, "vibhakti": v, "vacana": n},
+                     "this kṛt (or its upasarga / sanādi) is not an analysis target yet", "features": {"linga": g, "vibhakti": v, "vacana": n},
                      "lemma": d["clean"]}]
         return [{"kind": "subanta", "stem_slp1": k["stem"], "vibhakti": v, "vacana": n, "linga": g}]
     if k["kind"] == "tinanta":
@@ -160,6 +174,9 @@ def rederive(req: dict):
     """Run one reading forward and return the State. asmad / yuṣmad have their own glass-box
     paradigm (7.1.27–7.2.97); everything else is the reader's request shape."""
     from tools.samsaadhanii_reader import derive_request
+    if req["kind"] == "krdanta":
+        from pipelines.krdanta import derive_krdanta
+        return derive_krdanta(req["dhatu_id"], req["vibhakti"], req["vacana"], req["linga"], **req["vivaksha"])
     if req["kind"] == "subanta" and req["stem_slp1"] in ("asmad", "yuzmad") and 1 <= req["vibhakti"] <= 7:
         from pipelines import asmad_subanta as pr
         return (pr.derive_asmad if req["stem_slp1"] == "asmad" else pr.derive_yuzmad)(req["vibhakti"], req["vacana"])

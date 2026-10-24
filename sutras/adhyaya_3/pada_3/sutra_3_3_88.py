@@ -22,6 +22,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
+from engine.vivaksha import vivaksita
 from phonology.varna import parse_slp1_upadesha_sequence
 
 META_ARM_A = "corrected_v2_P003_A_3_3_88_arm"
@@ -41,6 +42,13 @@ def cond(state: State) -> bool:
         return False
     t0 = state.terms[0]
     if "dhatu" not in t0.tags:
+        return False
+    # डुः it-letter of the dhātu (qukfY, qupaca~z, quvapa~): ḍvit. In the bhāve sense (3.3.18) the one-vowel…: ktri, 'paktrimam'.
+    # Outside a derivation that asks the bhāva sense the old glass-box recipes (which never set vivakṣā) keep the stem test below.
+    if "qvit" in (t0.meta.get("it_samjna_names") or ()) and vivaksita(state, "artha", "BAva") and not state.vivaksha.get("krt") \
+            and not state.vivaksha.get("kala"):
+        return True
+    if state.vivaksha:                  # a derivation that states its meaning (the loop) is not the glass-box recipe below
         return False
     st = _stem(t0)
     if st == "pac":
