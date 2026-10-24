@@ -1945,5 +1945,54 @@
       "lyap",
       "tumun"
     ]
+  },
+  "kvin": {
+    "upadesha_devanagari": "क्विन्",
+    "upadesha_slp1": "kvin",
+    "vidhana_sutra": "3.2.58",
+    "vidhana_sutra_dev": "स्पृशोऽनुदके क्विन्",
+    "vidhana_sutra_range": "3.2.58–3.2.59 (spṛś, dṛś … kvin)",
+    "artha_codes": [
+      "kartari",
+      "sambandhe"
+    ],
+    "artha_dev": "कर्तरि / सम्बन्धे",
+    "it_varna_slp1": [
+      "k",
+      "n"
+    ],
+    "prakriya_base_slp1": "",
+    "adesha_slp1": null,
+    "adesha_sutra": null,
+    "anubandha_flags": {
+      "is_kit": true,
+      "is_vit": false,
+      "is_pit": false
+    },
+    "dhatuka_type": "ardhadhatuka",
+    "iT_behavior": "anit",
+    "is_krtya": false,
+    "is_nishtha": false,
+    "is_krit_samjna": true,
+    "pada_niyama": null,
+    "guna_vrddhi_trigger": "kit → no guṇa/vṛddhi (1.1.5)",
+    "accent_rule": "nit → 6.1.197 ādyudātta",
+    "linga_default": "depends on upasarga/context",
+    "stem_type": "zero-suffix (pratyaya = zero after all lopa)",
+    "kvip_note": "k and n are it; vi remains and goes by 6.1.67 (veraprktasya). Remaining base = empty string. Dhātu form itself becomes the stem; 8.2.62 makes its pada-final a ku-varga letter.",
+    "nishedhaka_sutras": [],
+    "samprasarana_applicable": false,
+    "dhatu_condition_slp1": "specific dhātus per context",
+    "dhatu_condition_dev": "विशिष्ट प्रसंगों में",
+    "examples_dev": [
+      "स्पृश् (घृतस्पृश्+क्विन्)",
+      "दृश् (तादृश्+क्विन्)"
+    ],
+    "examples_slp1": [
+      "spfS",
+      "dfS"
+    ],
+    "special_interactions": "kit prevents guṇa/vṛddhi. The entire pratyaya disappears after lopa; dhātu = stem.",
+    "effects": "kit (no guṇa), vit, pit. Zero-suffix pratyaya. dhātu form serves as stem."
   }
 }

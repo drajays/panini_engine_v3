@@ -133,7 +133,7 @@ def generate(entry: dict) -> tuple[str, set[str]]:
     from pipelines.it_prakarana import run_it_prakarana
 
     comps = entry["components"]
-    if len(comps) == 2 and comps[0]["kind"] == "dhatu" and comps[1]["kind"] == "krt" and comps[1]["upadesha"] != "kvip":
+    if len(comps) == 2 and comps[0]["kind"] == "dhatu" and comps[1]["kind"] == "krt" and comps[1]["upadesha"] not in ("kvip", "kvin"):
         from engine.tape_init.tinanta import dhatu_term_from_row
         from tools.autonomy_report import run_autonomously
 

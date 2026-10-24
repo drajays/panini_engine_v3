@@ -41,6 +41,9 @@ def _find_upadhā_a(state: State):
         anga = state.terms[ti]
         if "anga" not in anga.tags or "bha" not in anga.tags:
             continue
+        nxt = state.terms[ti + 1]
+        if not nxt.varnas or nxt.varnas[0].slp1 not in "aAiIuUfFxXeEoOy":
+            continue                      # bha is yaci (1.4.18): the stem before su, bhyām … is a pada, whatever the loose tag says
         if not adhikara_in_effect("6.4.134", state, "6.4.1"):
             continue
         if not adhikara_in_effect("6.4.134", state, "6.4.129"):

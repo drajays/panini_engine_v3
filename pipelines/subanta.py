@@ -522,6 +522,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "6.1.111",  # ऋत उत् — pitṛ + ṅasi/ṅas → पितुः (the apavāda must precede yaṇ)
     "1.1.51",   # uraṇ raparaḥ — the r of that ut
     "6.4.80",   # वाऽम्शसोः — the ī-keeping reading (स्त्रीम्, स्त्रीः); declined by default, both read by explore()
+    "6.4.133",  # श्वयुवमघोनामतद्धिते — शुनः, यूनः, मघोनः
     "6.4.79",   # स्त्रियाः — स्त्री + ac-sup: iyaṅ (स्त्रियौ, स्त्रियः)
     "6.4.84",   # वर्षाभ्वश्च — वर्षाभ्वः
     "6.4.85",   # न भूसुधियोः — blocks 6.4.82 / 6.4.83 for भू, सुधी

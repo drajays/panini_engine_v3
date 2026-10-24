@@ -33,7 +33,7 @@ def _target_index(state: State) -> int | None:
     for i, t in enumerate(state.terms):
         if "krt" not in t.tags:
             continue
-        if t.meta.get("upadesha_slp1") != "kvip":
+        if t.meta.get("upadesha_slp1") not in ("kvip", "kvin"):
             continue
         surf = "".join(v.slp1 for v in t.varnas)
         if surf in ("vi", "v"):
