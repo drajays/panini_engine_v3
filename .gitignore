@@ -49,3 +49,9 @@ data/reference/prasthanatrayi_words/raw/
 # machine-local / regenerable
 .claude/.headroom_*
 .audit/gold_diff.jsonl
+# sweep / run output (hundreds of MB); tracked baselines stay tracked, probe scripts (*.py) are not ignored
+.audit/*.out
+.audit/*.done
+.audit/*.json
+.audit/*.txt
+.audit/tmp/

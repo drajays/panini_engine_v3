@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>{% block title %}पाणिनि-यन्त्रम्{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>.lipi-dv{font-family:var(--dev);word-spacing:.15em}</style>
   {% block head_extra %}{% endblock %}
 </head>
 <body>
@@ -49,6 +50,8 @@
   <a href="https://claude.ai">Claude-सहायेन निर्मितम्</a>
 </footer>
 
+<script src="{{ url_for('static', filename='transliterate.js') }}"></script>
+<script src="{{ url_for('static', filename='lipi.js') }}"></script>
 {% block body_extra %}{% endblock %}
 </body>
 </html>

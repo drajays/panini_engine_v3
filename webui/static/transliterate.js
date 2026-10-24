@@ -237,6 +237,25 @@ const Transliterate = (() => {
     return out;
   }
 
+  // ── SLP1 → Devanāgarī varṇa-vibhāga (unmerged: अ क् ष् अ ङ् ए) ─────────────
+  // Each vyañjana keeps its halanta, each svara is the independent letter.
+  // Marks that qualify the preceding varṇa (anunāsika, svara accents) stay on it.
+  const VARNA_MARK = {"~": "ँ", "\\": "॒", "^": "॑"};
+  function slp1ToVarnas(text) {
+    const part = p => {
+      const out = [];
+      for (const c of p) {
+        if (VARNA_MARK[c] && out.length) out[out.length - 1] += VARNA_MARK[c];
+        else if (CONS_SET.has(c)) out.push(slp1Dev[c] + HALANT);
+        else if (slp1Ind[c] !== undefined) out.push(slp1Ind[c]);
+        else out.push(c);
+      }
+      return out.join(" ");
+    };
+    return String(text || "").trim().replace(/\s*\+\s*/g, "+").split(/\s+/)
+      .map(w => w.split("+").map(part).join(" + ")).join("  ·  ");
+  }
+
   // ── SLP1 → target scheme ───────────────────────────────────────────────────
   function fromSLP1(text, scheme) {
     scheme = scheme || "slp1";
@@ -250,7 +269,7 @@ const Transliterate = (() => {
     return out;
   }
 
-  return { SCHEME_LABELS, toSLP1, fromSLP1,
+  return { SCHEME_LABELS, toSLP1, fromSLP1, slp1ToVarnas,
     preview: (t, s) => { const slp1 = toSLP1(t, s); return { slp1, dev: slp1ToDev(slp1) }; }
   };
 })();

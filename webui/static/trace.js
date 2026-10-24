@@ -68,10 +68,13 @@ function statusIcon(step) {
  * renderTrace(trace, container) — extended API: renders directly into `container`
  *   element without filter support (used by pages that supply their own container).
  */
+let _traceContainer = null;
+
 function renderTrace(trace, container) {
+  _currentTrace = trace;
+  _traceContainer = container || null;
   if (container) {
     // Extended API: render directly into given container, no filter.
-    _currentTrace = trace;
     container.innerHTML = "";
     trace.forEach((step, idx) => {
       container.appendChild(renderStep(step, idx));
@@ -79,12 +82,24 @@ function renderTrace(trace, container) {
     return;
   }
   // Original API: use #trace + filter checkboxes.
-  _currentTrace = trace;
+  _injectLipiSelect();
   applyTraceFilter();
   document.querySelectorAll("#trace-filter input").forEach(cb => {
     cb.onchange = applyTraceFilter;
   });
 }
+
+function _injectLipiSelect() {
+  const bar = document.getElementById("trace-filter");
+  if (typeof Lipi === "undefined" || !bar || document.getElementById("trace-lipi")) return;
+  bar.insertAdjacentHTML("beforeend", Lipi.select("trace-lipi"));
+  Lipi.bind("trace-lipi");
+}
+
+window.addEventListener("lipi-change", () => {
+  if (_traceContainer) renderTrace(_currentTrace, _traceContainer);
+  else if (document.getElementById("trace")) applyTraceFilter();
+});
 
 function _traceStepInFilter(step, active) {
   // रूप-परिवर्तन-मात्रम् — show every step that actually changes the form,
@@ -135,7 +150,11 @@ function renderStep(step, idx) {
   const displayId   = step._is_structural ? structLabel : sid;
 
   let formHtml = "";
-  if (beforeDev !== afterDev) {
+  if (typeof Lipi !== "undefined" && typeof step.form_before === "string" && typeof step.form_after === "string") {
+    formHtml = step.form_before !== step.form_after || sid === "__MERGE__"
+      ? `<span class="ts-form-dev">${Lipi.step(_currentTrace, step)}</span>`
+      : `<span class="ts-form-dev ts-form-unchanged">${Lipi.form(_currentTrace, step)}</span>`;
+  } else if (beforeDev !== afterDev) {
     formHtml = `<span class="ts-form-dev dev">${escapeHtml(beforeDev)}</span>`
              + `<span class="arrow">→</span>`
              + `<span class="ts-form-dev dev ts-form-after">${escapeHtml(afterDev)}</span>`;
