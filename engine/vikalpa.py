@@ -23,11 +23,31 @@ Two pieces:
 from __future__ import annotations
 
 import itertools
+from collections.abc import Mapping
 from contextlib import contextmanager
+from contextvars import ContextVar
 from dataclasses import dataclass
 from typing import Any, Callable, Iterator
 
-_POLICY: dict[str, "bool | int"] = {}
+# One reading per running derivation (thread / task): the web UI serves requests on parallel threads, and a
+# process-wide dict let one request's choose() outlive its block and switch a विभाषा on for every later request.
+_CURRENT: ContextVar[dict[str, "bool | int"]] = ContextVar("vikalpa_policy", default={})
+
+
+class _Policy(Mapping):
+    """Read-only view of the readings in force in the current context."""
+
+    def __getitem__(self, sutra_id: str) -> "bool | int":
+        return _CURRENT.get()[sutra_id]
+
+    def __iter__(self):
+        return iter(_CURRENT.get())
+
+    def __len__(self) -> int:
+        return len(_CURRENT.get())
+
+
+_POLICY: Mapping[str, "bool | int"] = _Policy()
 
 MAX_OPTIONAL_RULES = 6           # 2**6 = 64 branches, an auditable ceiling
 
@@ -49,13 +69,11 @@ def policy_pick(state: Any, sutra_id: str, options: int, default: int = 0) -> in
 @contextmanager
 def choose(choices: dict[str, bool]) -> Iterator[None]:
     """Fix the reading of named विभाषा rules for the duration of the block."""
-    previous = dict(_POLICY)
-    _POLICY.update(choices)
+    token = _CURRENT.set({**_CURRENT.get(), **choices})
     try:
         yield
     finally:
-        _POLICY.clear()
-        _POLICY.update(previous)
+        _CURRENT.reset(token)
 
 
 def multiway_reached(state: Any) -> list[tuple[str, int]]:
