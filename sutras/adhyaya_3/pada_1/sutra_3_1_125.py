@@ -10,24 +10,17 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
-
-_GATE_KEY: str = "3_1_125_orAvaSyake_125"
-
+from engine.krt_attach import kftya_attach, kftya_open, kftya_stem
+from engine.vivaksha import vivaksita
+from phonology import mk
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.1.125", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    """u-final dhātu → ṇyat when the thing must be done (lAvyam, pAvyam); apavāda of yat."""
+    return kftya_open(state, "3.1.125") and vivaksita(state, "artha", "AvaSyaka") and kftya_stem(state)[-1:] in ("u", "U")
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.1.125"
-    return state
+    return kftya_attach(state, "3.1.125", "Ryat")
 
 
 SUTRA = SutraRecord(
@@ -41,6 +34,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "ओः आवश्यके",
     why_dev               = "धातोः [ओरावश्यके]-प्रत्ययः विहितः (३.१.125)।",
     anuvritti_from        = ('3.1.1', '3.1.92'),
+    apavada_of            = ('3.1.97',),
     cond                  = cond,
     act                   = act,
 )

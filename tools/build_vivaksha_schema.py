@@ -19,8 +19,10 @@ OUT = _ROOT / "data" / "inputs" / "vivaksha_schema.json"
 # key -> value (SLP1 stem) -> the inflected forms in which Pāṇini states that meaning in a sūtra
 VOCABULARY = {
     "artha": {
-        "kartf": ["kartari"], "karman": ["karmaRi"], "BAva": ["BAve"], "karaRa": ["karaRe"],
+        "kartf": ["kartari"], "karman": ["karmaRi"], "BAva": ["BAve"], "karaRa": ["karaRe", "karaRam"],
         "aDikaraRa": ["aDikaraRe"], "sampradAna": ["sampradAne"], "apAdAna": ["apAdAne"],
+        # the meanings the kṛtya sūtras 3.1.103, 115, 116, 121, 125 name in their own words
+        "svAmivESya": ["vESyayoH"], "nada": ["nade"], "nakzatra": ["nakzatre"], "patra": ["patre"], "AvaSyaka": ["AvaSyake"],
     },
     "kala": {"BUta": ["BUte"], "vartamAna": ["vartamAne"], "Bavizyat": ["Bavizyati"], "pUrvakAla": ["pUrvakAle"]},
     "kartrabhiprAya": {"kartraBiprAya": ["kartraBiprAye"]},
