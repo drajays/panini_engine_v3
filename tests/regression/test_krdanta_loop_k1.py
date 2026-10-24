@@ -31,6 +31,13 @@ CASES = [   # (dhātu, vibhakti, vacana, liṅga, vivakṣā, form that must be 
     ("BvAdi_01_1092", 1, 1, "napuṃsaka", KRTYA, "Srotavyam"),
     ("qukfY", 1, 1, "napuṃsaka", KRTYA, "kAryam"),          # कार्यम् (3.1.124 ṇyat, ṛ-final)
     ("qupaca~z", 1, 1, "napuṃsaka", KRTYA, "pAcyam"),       # पाच्यम् (hal-final; 7.3.52 kutva blocked here — c stays)
+    ("BvAdi_01_0001", 1, 1, "napuṃsaka", KRTYA, "Bavyam"),    # 3.1.97 aco yat; 7.3.84 guṇa; 6.1.79 vānto yi pratyaye
+    ("BvAdi_01_1092", 1, 1, "napuṃsaka", KRTYA, "Sravyam"),
+    ("RIY", 1, 1, "napuṃsaka", KRTYA, "neyam"),
+    ("qudAY", 1, 1, "napuṃsaka", KRTYA, "deyam"),            # 6.4.65 ईद्यति: dA → dI, then guṇa
+    ("pA", 1, 1, "napuṃsaka", KRTYA, "peyam"),
+    ("BvAdi_01_1137", 1, 1, "napuṃsaka", KRTYA, "gamyam"),   # 3.1.98 पोरदुपधात्: yat, the apavāda of ṇyat
+    ("qulaBa~z", 1, 1, "napuṃsaka", KRTYA, "laByam"),        # labhyam, not *lābhyam
     ("qukfY", 1, 1, "pulliṅga", AGENT, "kArakaH"),          # कारकः
     ("qukfY", 1, 1, "pulliṅga", AGENT, "kartA"),            # कर्ता
     ("RIY", 1, 1, "pulliṅga", AGENT, "nAyakaH"),

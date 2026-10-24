@@ -11,19 +11,23 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
 from engine.state import State
-from engine.krt_eligibility import samhita_gate_eligible
+from phonology import mk
 
-_GATE_KEY: str = "6_4_65_Idyati_65"
+def _site(state: State):
+    """ईद्यति — an ā-final aṅga before the kṛtya yat: ā → ī (dīya- → deya by 7.3.84, ghīya- → gheya)."""
+    live = [t for t in state.terms if t.varnas]
+    for left, nxt in zip(live, live[1:]):
+        if "dhatu" in left.tags and left.varnas[-1].slp1 == "A" and nxt.meta.get("upadesha_slp1") == "yat" and "krt" in nxt.tags:
+            return left
+    return None
 
 
 def cond(state: State) -> bool:
-    return samhita_gate_eligible(state, "6.4.65", gate_key=_GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "6.4.65"
+    _site(state).varnas[-1] = mk("I")
     return state
 
 

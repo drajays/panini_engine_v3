@@ -267,6 +267,9 @@ class SutraRecord:
     # it). The dispatcher marks those applied steps on the same tape as licensing it, so traces show the pair.
     operates_on_samjna_of : Tuple[str, ...]           = field(default_factory=tuple)
     adhikara_scope   : Tuple[str, str]                = field(default=("", ""))
+    # An ADHIKARA the pāṭha types so whose own words are also a vidhi (3.1.97 अचो यत् opens the kṛtya scope and is the yat vidhi,
+    # Kāśikā: अजन्ताद् धातोर्यत् प्रत्ययो भवति): the loop enumerates it like a VIDHI; its cond/act do the vidhi.
+    also_vidhi       : bool                           = False
     # अर्थनिर्देश (Art. 20) — only on an ADHIKARA whose vṛtti attests that it
     # also attaches to the affixes taught *before* it (पूर्वैरुत्तरैश्च).
     artha_nirdesha   : Optional["ArthaNirdesha"]      = None

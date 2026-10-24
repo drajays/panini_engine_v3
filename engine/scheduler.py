@@ -345,7 +345,7 @@ def enumerate_candidates(state: State) -> List[str]:
     SCAN_STATS["steps"] += 1
     for sid, rec in SUTRA_REGISTRY.items():
         SCAN_STATS["scanned"] += 1
-        if rec.sutra_type not in _LOOP_TYPES:
+        if rec.sutra_type not in _LOOP_TYPES and not rec.also_vidhi:
             continue
         if not _in_scheduler_phase(sid, state):
             continue

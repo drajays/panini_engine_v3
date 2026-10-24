@@ -10,17 +10,18 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_attach import attach_krt, dhatu_ends_tape
-from engine.vikalpa import policy_pick
-from engine.vivaksha import vivaksita
+from engine.registry import get_sutra
+from engine.krt_attach import kftya_attach, kftya_open
 from phonology.pratyahara import HAL
 
-_DECLINED = "3_1_124_declined"
+_APAVADAS = ("3.1.98", "3.1.99", "3.1.100")      # yat after pavargānta a-upadha; śak sah; gad mad car yam
 
 
 def cond(state: State) -> bool:
     """कृत्याः (3.1.95) ṇyat after a dhātu ending in ṛ-varṇa or a hal (ऋहलोः) — in the kṛtya sense the speaker means."""
-    if state.meta.get(_DECLINED) or not (vivaksita(state, "krt", "kftya") and dhatu_ends_tape(state)):
+    if not kftya_open(state, "3.1.124"):
+        return False
+    if any(get_sutra(a).cond(state) for a in _APAVADAS):        # an apavāda takes its site away, whether or not the reading takes its affix
         return False
     last = state.terms[-1].varnas[-1].slp1 if state.terms[-1].varnas else ""
     return last in ("f", "F") or last in HAL
@@ -28,10 +29,7 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     # ṇyat stands beside tavyat-tavya-anīyar (3.1.96); the reading takes one — engine.vikalpa.choose({"3.1.124": 1}) leaves ṇyat for them
-    if policy_pick(state, "3.1.124", 2) == 0:
-        return attach_krt(state, "Ryat")
-    state.meta[_DECLINED] = True
-    return state
+    return kftya_attach(state, "3.1.124", "Ryat")
 
 
 SUTRA = SutraRecord(
