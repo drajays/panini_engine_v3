@@ -63,7 +63,7 @@ def _kryadi_dhatu(state: State) -> int | None:
             continue
         if any("vikarana" in u.tags or "vikaraṇa" in u.tags for u in state.terms[i + 1:]):
             return None
-        if any("tin_adesha_3_4_78" in u.tags for u in state.terms[i + 1:]):
+        if any("tin_adesha_3_4_78" in u.tags or "krt" in u.tags for u in state.terms[i + 1:]):      # a tiṅ, or a śit kṛt (śatṛ, śānac)
             return i + 1
     return None
 

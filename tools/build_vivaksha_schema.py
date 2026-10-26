@@ -30,6 +30,8 @@ VOCABULARY = {
     # as adhikāra-level choices — कृत्याः (3.1.95), ण्वुल्तृचौ (3.1.133) — and the kriyārthā sense of 3.3.10. The word is the sūtra's own.
     "krt": {"kftya": ["kftyAH"], "Rvultfc": ["tfcO"]},
     "kriyArTA": {"kriyArTA": ["kriyArTAyAm"]},
+    # 3.2.124: śatṛ-śānac replace laṭ when the word agrees with a noun that is not in the first case (pacantaṃ caitram paśya)
+    "samAnADikaraRa": {"apraTamA": ["apraTamAsamAnADikaraRe"]},
     # ashtadhyayi.com spells the 3.4.21 pada कर्त्तृ (samAnakarttfkayoH); 3.1.7 and 3.3.158 have one t
     "samAnakartfka": {"samAnakartfka": ["samAnakarttfkayoH", "samAnakartfkezu", "samAnakartfkAt"]},
 }

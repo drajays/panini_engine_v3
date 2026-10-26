@@ -11,20 +11,30 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology import mk
 
 _GATE_KEY: str = "7_2_82_Ane_82"
 
 
+def _site(state: State):
+    """आने मुक्: an a-final aṅga (dhātu + śap / śa / śyan …) before the ātmanepada participle āna takes muk — pacamānaḥ, tudamānaḥ, divyamānaḥ."""
+    for k, t in enumerate(state.terms):
+        if (t.meta.get("upadesha_slp1") or "").strip() == "SAnac" and t.varnas and t.varnas[0].slp1 == "A" and k > 0 \
+                and state.terms[k - 1].varnas and state.terms[k - 1].varnas[-1].slp1 == "a" and not t.meta.get("7_2_82_muk_done"):
+            return t
+    return None
+
+
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.2.82", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.2.82"
+    t = _site(state)
+    k = state.terms.index(t)
+    state.terms[k - 1].varnas.append(mk("m"))          # kit: muk is the aṅga's final āgama (1.1.46), so 7.3.101 does not see a yañ-initial affix
+    state.terms[k - 1].tags.discard("upadesha")           # the new final m is no halantyam it (as 6.1.79)
+    t.meta["7_2_82_muk_done"] = True
     return state
 
 

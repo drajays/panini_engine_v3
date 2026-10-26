@@ -57,7 +57,7 @@ def _find_dhatu_for_u(state: State) -> int | None:
         head = next((u for u in state.terms[i + 1:] if u.kind == "pratyaya" and u.varnas), None)
         if head is None or "ardhadhatuka" in head.tags:
             continue
-        if not any("tin_adesha_3_4_78" in t2.tags for t2 in state.terms):
+        if not any("tin_adesha_3_4_78" in t2.tags or "krt" in t2.tags for t2 in state.terms):      # a tiṅ, or a śit kṛt (śatṛ: kurvan) — sarvadhatuka_lakara_context asks which
             continue
         return i
     return None
