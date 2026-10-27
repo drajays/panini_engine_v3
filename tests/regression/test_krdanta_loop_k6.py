@@ -28,9 +28,3 @@ CASES = [   # (dhātu id, vibhakti, vacana, liṅga, form that must be one of th
 def test_present_participle(ref, vib, vac, linga, want):
     got = {b.surface_slp1 for b in explore(lambda: derive_krdanta(ref, vib, vac, linga, **V))}
     assert want in got, sorted(got)
-
-
-@pytest.mark.xfail(reason="strī-pratyaya ṅīp for an ugit kṛt (4.1.6) is a gate-only stub; paWantI not derived", strict=True)
-def test_feminine_not_yet():
-    got = {b.surface_slp1 for b in explore(lambda: derive_krdanta("01.0381", 1, 1, "strīliṅga", **V))}
-    assert "paWantI" in got, sorted(got)

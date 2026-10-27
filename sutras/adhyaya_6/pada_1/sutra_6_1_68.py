@@ -74,6 +74,14 @@ def _stamp_demo_6_1_68_aliases(state: State, anga_i: int) -> None:
         state.samjna_registry[reg_key] = True
 
 
+def _sup_index(state: State, i: int) -> int:
+    """The Term after ``terms[i]``, past a ṭāp that 6.1.101 has already joined to the stem (it stays as an empty Term)."""
+    j = i + 1
+    while j < len(state.terms) - 1 and not state.terms[j].varnas and "stri_wAp" in state.terms[j].tags:
+        j += 1
+    return j
+
+
 def _find_eligible_boundary(state: State) -> int | None:
     """
     Return index *i* such that ``terms[i]`` is an *aṅga* eligible under 6.1.68
@@ -81,7 +89,7 @@ def _find_eligible_boundary(state: State) -> int | None:
     """
     for i in range(len(state.terms) - 1):
         anga = state.terms[i]
-        pr = state.terms[i + 1]
+        pr = state.terms[_sup_index(state, i)]
         if "anga" not in anga.tags:
             continue
         if not anga.varnas:
@@ -155,9 +163,9 @@ def act(state: State) -> State:
     i = _find_eligible_boundary(state)
     if i is None:
         return state
-    pr = state.terms[i + 1]
-    pr.varnas.clear()
-    state.terms.pop(i + 1)
+    j = _sup_index(state, i)
+    state.terms[j].varnas.clear()
+    state.terms.pop(j)
     state.samjna_registry["6.1.68_aprkta_sup_lopa"] = True
     _stamp_demo_6_1_68_aliases(state, i)
     return state

@@ -6,25 +6,49 @@ Padaccheda: शप्-श्यनोः नित्यम्
 शप्श्यनोर्नित्यम् (7.1.81)
 Pāṭha: ashtadhyayi.com data.txt row i=71081 (Art. 14).
 """
+
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
+from engine       import SutraType, SutraRecord, register_sutra, origin
 from engine.gates import adhikara_in_effect
 from engine.state import State
+from phonology    import mk
+from phonology.varna import AC_DEV
 
-_GATE_KEY: str = "7_1_81_SapSyanorn_81"
+
+def num_site(state: State, *vikaranas: str):
+    """The Śatṛ-anta aṅga whose vikaraṇa is one of ``vikaranas`` and which a nadī (the ṅīp of 4.1.6) follows; not abhyasta (7.1.78)."""
+    if not adhikara_in_effect("7.1.81", state, "6.4.1"):
+        return None
+    for i, t in enumerate(state.terms[:-1]):
+        if (origin.last_pratyaya(t) == "Satf~" and origin.has_vikarana(t, *vikaranas) and not origin.is_abhyasta(t)
+                and "nadi" in state.terms[i + 1].tags and not t.meta.get("7_1_80_num_done") and t.varnas):
+            return t
+    return None
+
+
+def _site(state: State):
+    return num_site(state, "Sap", "Syan")
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.1.81", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
+
+def put_num(anga) -> None:
+    j = max((k for k, v in enumerate(anga.varnas) if v.slp1 in AC_DEV), default=None)
+    if j is None:
+        return
+    n = mk("n")
+    n.tags.add("mit")
+    anga.varnas.insert(j + 1, n)                 # mit: after the last ac (1.1.47)
+    anga.meta["7_1_80_num_done"] = True
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.1.81"
+    anga = _site(state)
+    if anga is not None:
+        put_num(anga)
     return state
 
 

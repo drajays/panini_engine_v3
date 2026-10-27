@@ -6,6 +6,8 @@ A stem built from a Lexicon entry carries, as Term tags, a *record* of its vyutp
     origin_pratyaya:<upadeśa>   the pratyaya that ends the stem (matu~p, tfc, kvip …)
     origin_it:<letter>          an it-letter that the real it-prakaraṇa (1.3.2–1.3.9) took from that pratyaya
     origin_dhatu:<upadeśa>      a dhātu the stem was made from
+    origin_vikarana:<upadeśa>   the vikaraṇa between dhātu and kṛt (Sap, Syan, Sa …; 7.1.80–81 read it)
+    origin_abhyasta             the dhātu was reduplicated (7.1.78)
 
 These are facts about the tape's history, never saṃjñā. The saṃjñās are *derived* here, each by the definition its sūtra gives:
 
@@ -23,7 +25,9 @@ from typing import Iterable
 PRATYAYA = "origin_pratyaya:"
 IT = "origin_it:"
 DHATU = "origin_dhatu:"
-ORIGIN_PREFIXES = (PRATYAYA, IT, DHATU)
+VIKARANA = "origin_vikarana:"
+ABHYASTA = "origin_abhyasta"
+ORIGIN_PREFIXES = (PRATYAYA, IT, DHATU, VIKARANA)
 
 _UK = frozenset("uUfFxX")          # u, ṛ, ḷ (the uk pratyāhāra, short and long)
 _TRC = frozenset({"tfc", "tfn"})
@@ -56,6 +60,14 @@ def is_trc_anta(term) -> bool:
     return last_pratyaya(term) in _TRC
 
 
+def has_vikarana(term, *upadeshas: str) -> bool:
+    return any(t.startswith(VIKARANA) and t[len(VIKARANA):] in upadeshas for t in _tags(term))
+
+
+def is_abhyasta(term) -> bool:
+    return ABHYASTA in _tags(term)
+
+
 def has_dhatu(term, upadesha_prefix: str) -> bool:
     """The stem was made from the dhātu whose upadeśa starts with ``upadesha_prefix`` (han → 'han')."""
     return any(t.startswith(DHATU) and t[len(DHATU):].startswith(upadesha_prefix) for t in _tags(term))
@@ -70,5 +82,9 @@ def record_from_terms(terms) -> set[str]:
     terms = list(terms)
     last = terms[-1] if terms and terms[-1].kind == "pratyaya" else None
     dhatus = [(t.meta.get("upadesha_slp1") or "") for t in terms if "dhatu" in t.tags and "abhyasa" not in t.tags]
-    return origin_tags_of(last.meta.get("upadesha_slp1") if last is not None else None,
-                          sorted(last.meta.get("it_markers", ())) if last is not None else [], dhatus)
+    out = origin_tags_of(last.meta.get("upadesha_slp1") if last is not None else None,
+                         sorted(last.meta.get("it_markers", ())) if last is not None else [], dhatus)
+    out |= {VIKARANA + (t.meta.get("upadesha_slp1") or "") for t in terms if "vikarana" in t.tags and t.kind == "pratyaya"}
+    if any("abhyasa" in t.tags for t in terms):
+        out.add(ABHYASTA)
+    return out

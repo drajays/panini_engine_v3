@@ -8,29 +8,36 @@ Pāṭha: ashtadhyayi.com data.txt row i=41006 (Art. 14).
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
-from engine.state import State
+from engine       import SutraType, SutraRecord, register_sutra, origin
+from engine.state import State, Term
+from phonology.varna import parse_slp1_upadesha_sequence
 
-_GATE_KEY: str = "4_1_6_ugitaSca_6"
+
+def _site(state: State):
+    """The prātipadika that ends in an ugit pratyaya (u/ṛ/ḷ as its it-letter), before any sup or strī pratyaya (4.1.3 open)."""
+    if not any(e.get("id") == "4.1.3" for e in state.adhikara_stack):
+        return None
+    if any(t.kind == "pratyaya" for t in state.terms):
+        return None
+    for t in state.terms:
+        if t.kind == "prakriti" and "prātipadika" in t.tags and "strīliṅga" in t.tags and origin.is_ugit(t):
+            return t
+    return None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not adhikara_in_effect("4.1.6", state, "4.1.1"):
-        return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "4.1.6"
+    if _site(state) is None:
+        return state
+    state.terms.append(Term(
+        kind="pratyaya",
+        varnas=list(parse_slp1_upadesha_sequence("NIp")),
+        tags={"pratyaya", "upadesha", "stri_pratyaya", "prātipadika", "strīliṅga", "anga"},   # ṅyāp-prātipadika (4.1.1): the aṅga of the sup
+        meta={"upadesha_slp1": "NIp"},
+    ))
     return state
 
 

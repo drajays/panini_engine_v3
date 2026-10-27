@@ -9,28 +9,33 @@ Pāṭha: ashtadhyayi.com data.txt row i=71080 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
+from sutras.adhyaya_7.pada_1.sutra_7_1_81 import num_site, put_num
 
-_GATE_KEY: str = "7_1_80_AcCInadyor_80"
+
+def _site(state: State):
+    from engine.registry import get_sutra
+    if get_sutra("7.1.81").cond(state):      # Sap / Syan: 7.1.81 is nitya, the apavāda
+        return None
+    return num_site(state, "Sa")
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if adhikara_in_effect("7.1.80", state, "6.4.1") and any("anga" in t.tags for t in state.terms):
-        return True
+    return _site(state) is not None
+
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["anga_kind"]             = "7.1.80"
+    anga = _site(state)
+    if anga is not None:
+        put_num(anga)
     return state
 
 
 SUTRA = SutraRecord(
     sutra_id              = "7.1.80",
-    sutra_type            = SutraType.VIDHI,
+    sutra_type            = SutraType.VIBHASHA,
+    vibhasha_scope        = lambda state: _site(state) is not None,     # the vā gate only where nuṃ has a site
+    vibhasha_default      = True,
     r1_form_identity_exempt = True,
     text_slp1             = "AcCInadyornum",
     text_dev              = "आच्छीनद्योर्नुम्",

@@ -227,3 +227,10 @@ Fresh-session prompt: "Continue Laghu Siddhānta Kaumudī from handover.md, 2026
 
 **Next (in order):** (1) strī-pratyaya machinery 4.1.3 ff incl. 4.1.6 ugitaś ca ṅīp (unblocks feminine kṛdantas); (2) 3.2.125–135 (saṃbodhana, lakṣaṇa-hetu, sat-saṃjñā, 3.2.128 śānan pū/yaj, 3.2.129–130, tācchīlya 3.2.134–135); (3) more upapada kṛts 3.2.4 ff (kvip/ḍa/ṭak/khac…; extend `upapada_open(state, kaaraka)`); (4) 3.3 bhāve/karaṇe kṛts (ghañ, ap, lyuṭ…); (5) 4–5 taddhita. Laghukaumudī worklist: `python3 -m tools.lk_plan`, `docs/data/lk_worklist.json`, `python3 -m tools.lk_show <id>`.
 **Routine:** lk_show text → implement → check forms via `explore(lambda: derive_krdanta(...))` → K-style test → focused tests → full suite once (background) → append Update to this section → commit/push only own files.
+
+**Update K7 (feminine of Śatṛ/Śānac, tests `test_krdanta_loop_k7.py`; suite 21,092 passed, 13 skipped, 8 xfailed):**
+- 4.1.6 real: appends `NIp` (tagged prātipadika/strīliṅga/anga, so 1.4.3, 6.1.68, 7.3.107 see the ī as the aṅga) after an ugit stem (`origin.is_ugit`); called from `P00_stri_4_1_wap`. 1.4.3 added to the subanta pool.
+- 7.1.81 (Sap/Syan nitya) and 7.1.80 (Sa, VIBHASHA; apavāda by site check) real; `engine/origin.py` now records `origin_vikarana:<upadeśa>` and `origin_abhyasta`. 7.1.78/79 still stubs (abhyasta handled by the tag).
+- ṭāp feminine fix: 1.4.13 tags the stem aṅga before `stri_wAp`; 6.1.68 skips the empty ṭāp Term (`_sup_index`). `eDamAnA`, `ajA` now lose their su.
+- Gaps: ā-final luk dhātus (yā: yāntī/yātī), 4.1.6 vārttikas (dhātor ugitaḥ pratiṣedha, añcateś copasaṃkhyānam), tṛc feminine (4.1.5), duplicate yy/vv readings (8.4.47). Next: 4.1.5 and the remaining strī sūtras, then item (2) above.
+
