@@ -299,7 +299,8 @@ def effective_candidates(candidates: List[str], state: State) -> List[str]:
             if other:
                 keep.append(sid)
                 continue
-        key = (sid, before, state.phase, _meta_key(state), _term_meta_key(state), _gate_key(state), tuple(sorted(_vikalpa_policy().items())))
+        key = (sid, before, state.phase, _meta_key(state), _term_meta_key(state), _gate_key(state), tuple(sorted(_vikalpa_policy().items())),
+               tuple(sorted(repr(kv) for kv in state.vivaksha.items())))      # the speaker's vivakṣā: a rule may be effective under one and not another
         hit = _EFFECTIVE_MEMO.get(key)
         if hit is None:
             try:

@@ -71,3 +71,23 @@ def upapada_site(state: State, kaaraka: str | None = "karman", *, dhatus: frozen
 
 def no_upasarga(state: State) -> bool:
     return not any("upasarga" in t.tags for t in state.terms)
+
+
+def bhava_site(state: State, *oks: bool, dhatus: frozenset[str] | None = None, final=None, upapada_stems: frozenset[str] | None = None):
+    """A bhāve / kāraka kṛt (3.3.18 ff.): the dhātu ends the tape. The sūtra asks its own vivakṣā (literals, as the constitution requires) and
+    passes the answers as ``oks``; ``dhatus`` / ``final`` (a predicate on the dhātu's upadeśa and its letters) narrow it as the sūtra does;
+    ``upapada_stems`` asks for an upapada among them, otherwise there must be none."""
+    if not (dhatu_ends_tape(state) and all(oks)):
+        return None
+    dh = state.terms[-1]
+    has_up = len(state.terms) >= 2 and "upapada" in state.terms[-2].tags
+    if upapada_stems is None:
+        if has_up:
+            return None
+    elif not (has_up and (state.terms[-2].meta.get("upadesha_slp1") or "") in upapada_stems):
+        return None
+    if dhatus is not None and (dh.meta.get("upadesha_slp1") or "") not in dhatus:
+        return None
+    if final is not None and not final("".join(v.slp1 for v in dh.varnas)):
+        return None
+    return dh

@@ -10,20 +10,23 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from engine.krt_attach import attach_krt, bhava_site
+from engine.vikalpa import policy_pick  # noqa: F401
+from engine.vivaksha import vivaksita
 
-_GATE_KEY: str = "3_3_90_yajayAcaya_90"
+
+def _site(state: State):
+    return bhava_site(state, vivaksita(state, "artha", "BAva"), dhatus=frozenset({"yaja~", "yAca~", "yata~", "vica~", "pracCa~", "rakza~"}))
 
 
 def cond(state: State) -> bool:
-    return krt_insertion_eligible(state, "3.3.90", gate_key=_GATE_KEY, adhikara_id="3.1.1")
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.3.90"
-    return state
+    if _site(state) is None:
+        return state
+    return attach_krt(state, "naN")
 
 
 SUTRA = SutraRecord(
@@ -37,6 +40,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "यज-याच-यत-विच्छ-प्रच्छ-रक्षः नङ्",
     why_dev               = "धातोः प्रत्ययः (३.3.90)।",
     anuvritti_from        = ('3.1.1',),
+    apavada_of     = ("3.3.18",),
     cond                  = cond,
     act                   = act,
 )

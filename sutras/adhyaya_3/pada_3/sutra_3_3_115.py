@@ -11,27 +11,25 @@ Pāṭha: ashtadhyayi.com data.txt row i=33115 (Art. 14).
 """
 from __future__ import annotations
 
-from engine import SutraType, SutraRecord, register_sutra
+from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.krt_attach import attach_krt, bhava_site
+from engine.vikalpa import policy_pick  # noqa: F401
+from engine.vivaksha import vivaksita
 
-META_ARM = "corrected_v2_P006_3_3_115_arm"
-_DHATU_UPA = "ciY"
 
-
-def _stem_slp1(t) -> str:
-    return "".join(v.slp1 for v in t.varnas)
+def _site(state: State):
+    return bhava_site(state, vivaksita(state, "artha", "BAva"), vivaksita(state, "linga", "napuMsaka"))
 
 
 def cond(state: State) -> bool:
-    if len(state.terms) != 1:
-        return False
-    t0 = state.terms[0]
-    if "dhatu" not in t0.tags:
-        return False
-    up = (t0.meta.get("upadesha_slp1") or "").strip()
-    if up != _DHATU_UPA:
-        return False
-    return _stem_slp1(t0) == "ci"
+    return _site(state) is not None
+
+
+def act(state: State) -> State:
+    if _site(state) is None:
+        return state
+    return attach_krt(state, "lyuw")
 
 
 SUTRA = SutraRecord(
@@ -44,8 +42,10 @@ SUTRA = SutraRecord(
     padaccheda_dev="ल्युट् च",
     why_dev="भावादौ धातोः ल्युट्-विधानम् — अनुवादः (प००६ आर्म्)।",
     anuvritti_from=("3.1.91",),
+    apavada_of     = ("3.3.18",),
     cond=cond,
-    act=None,
+    also_vidhi=True,          # ANUVADA in the pāṭha, and the vidhi of lyuṭ in napuṃsake bhāve
+    act=act,
 )
 
 register_sutra(SUTRA)

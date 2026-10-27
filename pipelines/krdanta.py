@@ -150,10 +150,14 @@ def _dhatu_meta_from_row(row: dict) -> dict:
     }
 
 
+# SHORTCUT S13: the avyaya upapadas, by name — the Lexicon has no avyaya list yet (6.3.67 anavyayasya reads the tag)
+_AVYAYA_UPAPADAS = frozenset({"su", "dus", "Izat", "saha", "nAnA", "alam"})
+
+
 def _upapada_term(stem_slp1: str, kaaraka: str) -> Term:
     """The word a kṛt sūtra states in the saptamī (kumbham in karmaṇi): a bare prātipadika before the dhātu — its sup never arrives (samāsa precedes it:
     gatikārakopapadānāṃ kṛdbhiḥ saha samāsavacanaṃ prāk subutpatteḥ); 3.1.92 names it upapada."""
-    return Term(kind="prakriti", varnas=parse_slp1_upadesha_sequence(stem_slp1), tags={"prātipadika"}, meta={"upadesha_slp1": stem_slp1, "kAraka": kaaraka})
+    return Term(kind="prakriti", varnas=parse_slp1_upadesha_sequence(stem_slp1), tags={"prātipadika"} | ({"avyaya"} if stem_slp1 in _AVYAYA_UPAPADAS else set()), meta={"upadesha_slp1": stem_slp1, "kAraka": kaaraka})
 
 
 # the meanings that place śatṛ / śānac / śānan / cānaś in laṭ's stead (3.2.124–133)
@@ -716,6 +720,8 @@ def derive_krdanta(dhatu_ref: str, vibhakti: int, vacana: int, linga: str = "pul
     """A kṛdanta word: the stem from :func:`derive_krdanta_stem`, then the subanta with its sup (the stem is a derived prātipadika, 1.2.46)."""
     from pipelines.subanta import build_initial_state, run_subanta_sup_attach_and_finish_scanner
 
+    # the gender is also a fact the bhāve kṛts are taught for (3.3.94 striyām, 3.3.115 napuṃsake, 3.3.121 puṃsi): the speaker's vivakṣā
+    vivaksha.setdefault("linga", {"strīliṅga": "strI", "napuṃsaka": "napuMsaka", "pulliṅga": "puM"}[linga])
     stem, origin_tags, multi = derive_krdanta_stem(dhatu_ref, upapada=upapada, **vivaksha)
     s = build_initial_state(stem, vibhakti, vacana, linga, derived_pratipadika=True)
     s.terms[0].tags |= origin_tags

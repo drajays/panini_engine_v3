@@ -33,6 +33,8 @@ def _upapada_idx(state: State) -> int | None:
             continue
         if "dhatu" in t.tags or t.kind == "pratyaya":
             continue
+        if "avyaya" in t.tags:
+            continue                    # anavyayasya: su, dus, īṣat … take no mum (sukaraḥ, not suṅkaraḥ)
         if not t.varnas:
             continue
         flat = "".join(v.slp1 for v in t.varnas)

@@ -10,20 +10,35 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from engine.krt_attach import attach_krt, bhava_site
+from engine.vikalpa import policy_pick  # noqa: F401
+from engine.vivaksha import vivaksita
 
-_GATE_KEY: str = "3_3_103_guroSca_103"
+
+def _gurumat_halanta(f: str) -> bool:
+    """guroḥ halaḥ: a dhātu ending in a consonant that has a guru vowel in it (long, or short before a conjunct): īh, kuṇḍ — not bhaj."""
+    if not f or f[-1] in "aAiIuUfFxXeEoO":
+        return False
+    for i, c in enumerate(f):
+        if c in "AIUFXeEoO":
+            return True
+        if c in "aiufx" and len(f) - i - 1 >= 2 and f[i + 1] not in "aAiIuUfFxXeEoO" and f[i + 2] not in "aAiIuUfFxXeEoO":
+            return True
+    return False
+
+
+def _site(state: State):
+    return bhava_site(state, vivaksita(state, "artha", "BAva"), vivaksita(state, "linga", "strI"), final=_gurumat_halanta)
 
 
 def cond(state: State) -> bool:
-    return krt_insertion_eligible(state, "3.3.103", gate_key=_GATE_KEY, adhikara_id="3.1.1")
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.3.103"
-    return state
+    if _site(state) is None:
+        return state
+    return attach_krt(state, "a")
 
 
 SUTRA = SutraRecord(
@@ -37,6 +52,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "गुरोः च हलः",
     why_dev               = "धातोः प्रत्ययः (३.3.103)।",
     anuvritti_from        = ('3.1.1',),
+    apavada_of     = ("3.3.94",),
     cond                  = cond,
     act                   = act,
 )

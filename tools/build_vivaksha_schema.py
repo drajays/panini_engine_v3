@@ -19,8 +19,8 @@ OUT = _ROOT / "data" / "inputs" / "vivaksha_schema.json"
 # key -> value (SLP1 stem) -> the inflected forms in which Pāṇini states that meaning in a sūtra
 VOCABULARY = {
     "artha": {
-        "kartf": ["kartari"], "karman": ["karmaRi"], "BAva": ["BAve"], "karaRa": ["karaRe", "karaRam"],
-        "aDikaraRa": ["aDikaraRe"], "sampradAna": ["sampradAne"], "apAdAna": ["apAdAne"],
+        "kartf": ["kartari"], "karman": ["karmaRi"], "BAva": ["BAve"], "karaRa": ["karaRe", "karaRam", "karaRADikaraRayoH"],
+        "aDikaraRa": ["aDikaraRe", "karaRADikaraRayoH"], "sampradAna": ["sampradAne"], "apAdAna": ["apAdAne"],
         # the meanings the kṛtya sūtras 3.1.103, 115, 116, 121, 125 name in their own words
         "svAmivESya": ["vESyayoH"], "nada": ["nade"], "nakzatra": ["nakzatre"], "patra": ["patre"], "AvaSyaka": ["AvaSyake"],
     },
@@ -40,6 +40,8 @@ VOCABULARY = {
     "yajYasaMyoga": {"yajYasaMyoga": ["yajYasaMyoge"]}, "praSaMsA": {"praSaMsA": ["praSaMsAyAm"]},
     # 3.2.20 (kṛñ + ṭa) and 3.2.78 (ṇini), 3.2.83 (khaś / ṇini)
     "hetutAcCIlyAnulomya": {"hetu": ["hetu"], "tAcCIlya": ["tAcCIlya"], "Anulomya": ["anulomyezu"]},
+    # the gender a bhāve kṛt is taught for (3.3.94 striyām ktin, 3.3.115 napuṃsake lyuṭ, 3.3.121 puṃsi)
+    "linga": {"strI": ["striyAm"], "napuMsaka": ["napuMsake"], "puM": ["puMsi"]},
     "tAcCIlya": {"tAcCIlya": ["tAcCIlye"]}, "AtmamAna": {"AtmamAna": ["AtmamAne"]},
     # ashtadhyayi.com spells the 3.4.21 pada कर्त्तृ (samAnakarttfkayoH); 3.1.7 and 3.3.158 have one t
     "samAnakartfka": {"samAnakartfka": ["samAnakarttfkayoH", "samAnakartfkezu", "samAnakartfkAt"]},
