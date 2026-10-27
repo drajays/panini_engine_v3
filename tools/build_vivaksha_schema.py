@@ -32,6 +32,12 @@ VOCABULARY = {
     "kriyArTA": {"kriyArTA": ["kriyArTAyAm"]},
     # 3.2.124: śatṛ-śānac replace laṭ when the word agrees with a noun that is not in the first case (pacantaṃ caitram paśya)
     "samAnADikaraRa": {"apraTamA": ["apraTamAsamAnADikaraRe"]},
+    # 3.2.125–133: the meanings that place śatṛ / śānac / śānan / cānaś in laṭ's stead (each word is the sūtra's own)
+    "sambodhana": {"sambodhana": ["samboDane"]},
+    "lakzaRahetu": {"lakzaRa": ["lakzaRahetvoH"], "hetu": ["lakzaRahetvoH"]},
+    "tAcCIlyAdi": {"tAcCIlya": ["tAcCIlya"], "vayovacana": ["vayovacana"], "Sakti": ["Saktizu"]},
+    "akfcCra": {"akfcCra": ["akfcCriRi"]}, "amitra": {"amitra": ["amitre"]},
+    "yajYasaMyoga": {"yajYasaMyoga": ["yajYasaMyoge"]}, "praSaMsA": {"praSaMsA": ["praSaMsAyAm"]},
     # ashtadhyayi.com spells the 3.4.21 pada कर्त्तृ (samAnakarttfkayoH); 3.1.7 and 3.3.158 have one t
     "samAnakartfka": {"samAnakartfka": ["samAnakarttfkayoH", "samAnakartfkezu", "samAnakartfkAt"]},
 }

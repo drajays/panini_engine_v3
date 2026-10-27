@@ -10,23 +10,24 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
 
-_GATE_KEY: str = "3_2_127_tO_127"
+# tau = the two of 3.2.124 ff: śatṛ and śānac (and the śānan / cānaś that stand beside śānac)
+_TAU = frozenset({"Satf~", "Satf", "SAnac", "SAnan", "cAnaS"})
+
+
+def _sites(state: State):
+    return [t for t in state.terms if t.kind == "pratyaya" and "krt" in t.tags and "sat" not in t.tags
+            and (t.meta.get("upadesha_slp1") or "") in _TAU]
 
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.2.127", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    return bool(_sites(state))
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.2.127"
+    for t in _sites(state):
+        t.tags.add("sat")                 # sat-saṃjñā: 2.2.11 (sat-pradeśa) and the other sat rules read it
+    state.samjna_registry["sat"] = True
     return state
 
 

@@ -659,6 +659,110 @@
     ]
    }
   },
+  "sambodhana": {
+   "sambodhana": {
+    "forms": [
+     "samboDane"
+    ],
+    "sutras": [
+     "2.3.47",
+     "2.3.48",
+     "2.3.49",
+     "3.2.125"
+    ]
+   }
+  },
+  "lakzaRahetu": {
+   "lakzaRa": {
+    "forms": [
+     "lakzaRahetvoH"
+    ],
+    "sutras": [
+     "3.2.126"
+    ]
+   },
+   "hetu": {
+    "forms": [
+     "lakzaRahetvoH"
+    ],
+    "sutras": [
+     "3.2.126"
+    ]
+   }
+  },
+  "tAcCIlyAdi": {
+   "tAcCIlya": {
+    "forms": [
+     "tAcCIlya"
+    ],
+    "sutras": [
+     "3.2.20",
+     "3.2.129"
+    ]
+   },
+   "vayovacana": {
+    "forms": [
+     "vayovacana"
+    ],
+    "sutras": [
+     "3.2.129",
+     "5.1.129"
+    ]
+   },
+   "Sakti": {
+    "forms": [
+     "Saktizu"
+    ],
+    "sutras": [
+     "3.2.129"
+    ]
+   }
+  },
+  "akfcCra": {
+   "akfcCra": {
+    "forms": [
+     "akfcCriRi"
+    ],
+    "sutras": [
+     "3.2.130"
+    ]
+   }
+  },
+  "amitra": {
+   "amitra": {
+    "forms": [
+     "amitre"
+    ],
+    "sutras": [
+     "3.2.131"
+    ]
+   }
+  },
+  "yajYasaMyoga": {
+   "yajYasaMyoga": {
+    "forms": [
+     "yajYasaMyoge"
+    ],
+    "sutras": [
+     "3.2.132"
+    ]
+   }
+  },
+  "praSaMsA": {
+   "praSaMsA": {
+    "forms": [
+     "praSaMsAyAm"
+    ],
+    "sutras": [
+     "3.2.133",
+     "5.3.66",
+     "5.4.40",
+     "5.4.41",
+     "6.2.63",
+     "7.1.66"
+    ]
+   }
+  },
   "samAnakartfka": {
    "samAnakartfka": {
     "forms": [

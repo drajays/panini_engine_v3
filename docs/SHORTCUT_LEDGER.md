@@ -13,3 +13,5 @@ Rule: no shortcut by default. A temporary shortcut is allowed only when it keeps
 | S7 | 4.1.3 / 4.1.5 / 4.1.6 | the new NIp Term carries `prātipadika` + `anga` tags so existing nadī rules read it | a pratyayānta-prātipadika merge (4.1.1) done once, not per sūtra | open |
 | S8 | sutra_4_1_5 | ṅīp only for derived (vyutpanna) ṛ-/n-final stems; avyutpanna masculine stems (rājan → rājñī) get none | Lexicon fact: which avyutpanna stems are strī-less words vs nitya-strī (svasṛ, mātṛ) | open |
 | S2b | pipelines/subanta.py + 6.1.101 | the ṭāp ekādeśa runs as a scoped pre-pass (meta ekadesha_scope=tap) before the aṅgakārya pool | scheduler orders 6.1.101 by sūtra order across pools | open |
+| S9 | 3.2.130 | iṅ / dhāri: only the bare dhātu iN is wired (no adhi- upasarga, no ṇijanta dhāri); its form comes out `yan` | upasarga + ṇic through the loop, then 6.4.77 iyaṅ (adhīyan, dhārayan) | open |
+| S10 | sutra_3_2_127 | sat-saṃjñā is a tag on the participle's pratyaya Term; it is not carried to the merged stem's origin record, so 2.2.11 cannot read it yet | add `origin_sat` to engine/origin.py when 2.2.11 is made real | open |

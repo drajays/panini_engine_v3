@@ -1048,6 +1048,7 @@ def P00_luk_samjna_60_62(s: State) -> State:
 def P00_stri_4_1_wap(s: State) -> State:
     """Strī ṭāp suffix: 4.1.3 (ṭāp) → 4.1.4 (ā-adhikāra). Caller must have called 4.1.1 first."""
     s = apply_rule("4.1.3", s)
+    s = apply_rule("4.1.15", s)
     s = apply_rule("4.1.4", s)
     s = apply_rule("4.1.5", s)
     s = apply_rule("4.1.6", s)

@@ -156,6 +156,10 @@ def _upapada_term(stem_slp1: str, kaaraka: str) -> Term:
     return Term(kind="prakriti", varnas=parse_slp1_upadesha_sequence(stem_slp1), tags={"prātipadika"}, meta={"upadesha_slp1": stem_slp1, "kAraka": kaaraka})
 
 
+# the meanings that place śatṛ / śānac / śānan / cānaś in laṭ's stead (3.2.124–133)
+_PARTICIPLE_MEANINGS = ("sambodhana", "lakzaRahetu", "tAcCIlyAdi", "akfcCra", "amitra", "yajYasaMyoga", "praSaMsA")
+
+
 def build_dhatu_state(dhatu_ref: str, *, upapada: tuple[str, str] | None = None, **vivaksha: str) -> State:
     """Dhātu Term in aupadeśika form (डुपचँष्, गमॢँ, विदँ …) with its it-markers.
 
@@ -183,7 +187,8 @@ def build_dhatu_state(dhatu_ref: str, *, upapada: tuple[str, str] | None = None,
         tags={"dhatu", "anga", "upadesha"},
         meta=meta,
     )
-    if vivaksha.get("kala") == "vartamAna" and vivaksha.get("samAnADikaraRa") == "apraTamA" and row is not None:
+    if vivaksha.get("kala") == "vartamAna" and row is not None and (
+            vivaksha.get("samAnADikaraRa") == "apraTamA" or any(k in vivaksha for k in _PARTICIPLE_MEANINGS)):
         from engine.tape_init.tinanta import dhatu_term_from_row      # śatṛ-śānac stand for laṭ: the dhātu carries what 1.3.12–1.3.78 read for the pada
         dhatu = dhatu_term_from_row(row, "kartari", "laT")
     return build_krdanta_state(([_upapada_term(*upapada)] if upapada else []) + [dhatu], **vivaksha)

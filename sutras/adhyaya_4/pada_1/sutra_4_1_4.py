@@ -98,6 +98,9 @@ def _insert_site(state: State):
     if hit is None:
         return None
     idx, t = hit
+    from engine.registry import get_sutra
+    if get_sutra("4.1.15").cond(state):
+        return None        # 4.1.15 is the apavāda of ṭāp for a ṭit / listed-pratyaya stem (kumbhakārī, not kumbhakārā)
     if t.meta.get("stri_TAp_4_1_4") and not _fem_sarvanama_site(t):
         return None        # the ṭāp of this stem has been given (and, after 6.1.101, lies inside it)
     sup_present = _has_sup(state)

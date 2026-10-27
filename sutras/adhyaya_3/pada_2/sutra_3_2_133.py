@@ -10,24 +10,22 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from engine.vivaksha import vivaksita
+from sutras.adhyaya_3.pada_2.sutra_3_2_124 import participle_site, attach_participle, _atmanepada, SAnan_DHATUS  # noqa: F401
 
-_GATE_KEY: str = "3_2_133_arhaH_133"
+
+def _site(state: State):
+    return participle_site(state, vivaksita(state, "kala", "vartamAna"), vivaksita(state, "praSaMsA", "praSaMsA"), dhatus=frozenset({"arha~"}))
 
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.2.133", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.2.133"
-    return state
+    if _site(state) is None:
+        return state
+    return attach_participle(state, "Satf~")
 
 
 SUTRA = SutraRecord(

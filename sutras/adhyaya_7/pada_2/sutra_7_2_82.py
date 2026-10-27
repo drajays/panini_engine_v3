@@ -19,7 +19,7 @@ _GATE_KEY: str = "7_2_82_Ane_82"
 def _site(state: State):
     """आने मुक्: an a-final aṅga (dhātu + śap / śa / śyan …) before the ātmanepada participle āna takes muk — pacamānaḥ, tudamānaḥ, divyamānaḥ."""
     for k, t in enumerate(state.terms):
-        if (t.meta.get("upadesha_slp1") or "").strip() == "SAnac" and t.varnas and t.varnas[0].slp1 == "A" and k > 0 \
+        if (t.meta.get("upadesha_slp1") or "").strip() in ("SAnac", "SAnan", "cAnaS") and t.varnas and t.varnas[0].slp1 == "A" and k > 0 \
                 and state.terms[k - 1].varnas and state.terms[k - 1].varnas[-1].slp1 == "a" and not t.meta.get("7_2_82_muk_done"):
             return t
     return None

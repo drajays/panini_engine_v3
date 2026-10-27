@@ -3,38 +3,52 @@
 
 *Śāstra (laghu):* under the *ṭit* *kṛt* class, *strīliṅga* takes **ṅīp**.
 
-Engine: when ``corrected_v2_P005_A_4_1_15_arm`` and a single merged stem carries
-``corrected_v2_P005_A_kurucara_stem``, append **NIp** (ङीप्; SLP1 ``N`` = ङ्, not ``Ng``)
-as an affix ``Term``.
+Engine: the strī adhikāra (4.1.3) is open and the stem is a-final, anupasarjana and ends in a ṭit or listed pratyaya (origin record):
+**NIp** is appended (``append_nip``). The older P005-A arm (``kurucarī``) is kept beside it until that demo is retired.
 Pāṭha: ashtadhyayi.com data.txt row i=41015 (Art. 14).
 """
 from __future__ import annotations
 
-from engine import SutraType, SutraRecord, register_sutra
+from engine import SutraType, SutraRecord, register_sutra, origin
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
+from sutras.adhyaya_4.pada_1.sutra_4_1_6 import strI_site, append_nip
 
 _META_ARM = "corrected_v2_P005_A_4_1_15_arm"
 
+# ṭit (an it-letter ṭ) and the listed pratyayas: ḍha, aṇ, añ, dvayasac, daghnac, mātrac, tayap, ṭhak, ṭhañ, kañ, kvarap
+_LISTED = frozenset({"Qa", "aR", "aY", "dvayasac", "daGnac", "mAtrac", "tayap", "Wak", "WaY", "kaY", "kvarap"})
+
+
+def _wanted(t) -> bool:
+    """anupasarjana, a-final (``at`` runs through the whole strī adhikāra), made by a ṭit or listed pratyaya."""
+    return (bool(t.varnas) and t.varnas[-1].slp1 == "a" and "upasarjana" not in t.tags
+            and (origin.last_pratyaya(t) in _LISTED or origin.IT + "w" in t.tags))
+
+
+def _site(state: State):
+    return strI_site(state, _wanted)
+
+
+def _legacy(state: State) -> bool:
+    return len(state.terms) == 1 and bool(state.terms[0].meta.get("corrected_v2_P005_A_kurucara_stem"))
+
 
 def cond(state: State) -> bool:
-    if len(state.terms) != 1:
-        return False
-    t0 = state.terms[0]
-    return bool(t0.meta.get("corrected_v2_P005_A_kurucara_stem"))
+    return _site(state) is not None or _legacy(state)
 
 
 def act(state: State) -> State:
-    if not cond(state):
-        return state
-    nIp = Term(
-        kind="pratyaya",
-        varnas=list(parse_slp1_upadesha_sequence("NIp")),
-        tags={"pratyaya", "upadesha"},
-        meta={"upadesha_slp1": "NIp"},
-    )
-    state.terms.append(nIp)
-    state.samjna_registry["4.1.15_P005_A_NIp"] = True
+    if _site(state) is not None:
+        return append_nip(state)
+    if _legacy(state):
+        state.terms.append(Term(
+            kind="pratyaya",
+            varnas=list(parse_slp1_upadesha_sequence("NIp")),
+            tags={"pratyaya", "upadesha"},
+            meta={"upadesha_slp1": "NIp"},
+        ))
+        state.samjna_registry["4.1.15_P005_A_NIp"] = True
     return state
 
 
