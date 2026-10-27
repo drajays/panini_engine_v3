@@ -283,7 +283,7 @@ def effective_candidates(candidates: List[str], state: State) -> List[str]:
         if is_gate_only(sid):
             continue
         rec = SUTRA_REGISTRY.get(sid)
-        if getattr(rec, "sutra_type", None) is SutraType.ADHIKARA:
+        if getattr(rec, "sutra_type", None) is SutraType.ADHIKARA or getattr(rec, "also_vidhi", False):
             keep.append(sid)        # an adhikāra that is also a vidhi (also_vidhi) opens a scope: it changes no letter, as the subanta scanner knows too
             continue
         if getattr(rec, "sutra_type", None) is SutraType.VIBHASHA and not any(

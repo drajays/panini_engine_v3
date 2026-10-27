@@ -63,7 +63,7 @@ def proposed_cha_eligible_indices(state: State) -> FrozenSet[int]:
     return _requested_indices(state) & _vrddham_indices(state)
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if not adhikara_in_effect("4.2.114", state, "4.2.92"):
         return False
     new = proposed_cha_eligible_indices(state)
@@ -73,9 +73,29 @@ def cond(state: State) -> bool:
     return new != old
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.samjna_registry[SAMJNA_KEY] = proposed_cha_eligible_indices(state)
     return state
+
+
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+def _site(state: State):
+    return taddhita_site(state, "Seza", has_tag="vṛddha")
+
+
+def _new_cond(state: State) -> bool:
+    return _site(state) is not None
+
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _site(state) is not None:
+        return attach_taddhita(state, "Ca")
+    return _legacy_act(state)
 
 
 SUTRA = SutraRecord(
@@ -104,6 +124,7 @@ SUTRA = SutraRecord(
         "4.1.83",
         "4.2.92",
     ),
+    apavada_of     = ('4.1.83',),
     cond            = cond,
     act             = act,
 )

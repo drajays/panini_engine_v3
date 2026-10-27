@@ -22,3 +22,8 @@ def members(name: str) -> frozenset[str]:
 
 def in_gana(name: str, stem_slp1: str) -> bool:
     return stem_slp1 in members(name)
+
+
+def in_gana_of_sutra(sutra_id: str, stem_slp1: str) -> bool:
+    """Is the stem in a gaṇa that the Gaṇapāṭha attaches to this sūtra (``gargādibhyaḥ`` → the gaṇa filed under 4.1.105)?"""
+    return any(stem_slp1 in g["members"] for g in _all().values() if g.get("sutra") == sutra_id)

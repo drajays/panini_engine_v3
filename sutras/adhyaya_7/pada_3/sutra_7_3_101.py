@@ -63,8 +63,8 @@ def _find(state: State) -> int | None:
             continue
         if t2.varnas[0].slp1 not in _YAJ:
             continue
-        if "pratyaya" not in t2.tags:
-            continue
+        if "pratyaya" not in t2.tags or "taddhita" in t2.tags:
+            continue            # sārvadhātuke only: a taddhita (valac …) lengthens nothing
         if t1.meta.get("7_3_101_done"):
             continue
         if not _sarvadhatuke(state, t2):

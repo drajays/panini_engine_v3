@@ -67,7 +67,7 @@ def _is_ac(v_slp1: str) -> bool:
     return bool(is_hrasva(v_slp1) or is_dirgha(v_slp1) or v_slp1 in ("e", "E", "o", "O"))
 
 
-def _find(state: State):
+def _find(state: State, markers=("Y", "N", "R")):
     if not adhikara_in_effect("7.2.117", state, "6.4.1"):
         return None
     if len(state.terms) < 2:
@@ -81,7 +81,7 @@ def _find(state: State):
         itm = pr.meta.get("it_markers", set())
         if not isinstance(itm, set):
             continue
-        if not (("Y" in itm) or ("N" in itm) or ("R" in itm)):
+        if not any(m in itm for m in markers):
             continue
         k = pj - 1
         while k >= 0 and term_is_sup_luk_ghost(state.terms[k]):

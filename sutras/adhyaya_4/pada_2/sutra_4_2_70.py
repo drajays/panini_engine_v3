@@ -31,15 +31,33 @@ def _site(state: State) -> bool:
     return True
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return _site(state)
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     if not _site(state):
         return state
     state.samjna_registry["4.2.70_adUrabhava_prakriya_46"] = True
     return state
+
+
+from engine.taddhita_attach import frame_open, stem_ends_tape
+from engine.vivaksha import vivaksita
+def _new_cond(state: State) -> bool:
+    return stem_ends_tape(state) and vivaksita(state, "taddhitArtha", "adUraBava") and not frame_open(state, "cAturarTika")
+
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _new_cond(state):
+        state.adhikara_stack.append({"id": "4.2.70", "scope_end": "4.3.168", "artha": "cAturarTika", "text_dev": "adUraBava"})      # aṇ comes from 4.1.83 under the frame
+        return state
+    return _legacy_act(state)
 
 
 SUTRA = SutraRecord(
@@ -54,6 +72,7 @@ SUTRA = SutraRecord(
         "अदूरभवार्थे अण् (*prakriya_46*, **गोदौ ग्रामः** विग्रहादेशः) — संज्ञा-चिह्नम्।"
     ),
     anuvritti_from=(),
+    also_vidhi     = True,          # the sense-frame is opened by the loop: the speaker's taddhitArtha
     cond=cond,
     act=act,
 )

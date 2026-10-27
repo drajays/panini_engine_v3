@@ -84,13 +84,12 @@ def _phadi_replacement(varnas: List[Varna], state: Optional[State] = None) -> Op
     # ḍhak (vinatā + Ḍhak)
     if (
         c0 == "Q"
-        and len(varnas) >= 3
-        and varnas[1].slp1 == "a"
-        and varnas[2].slp1 == "k"
+        and varnas[1:2] and varnas[1].slp1 == "a"
+        and (len(varnas) == 2 or (len(varnas) >= 3 and varnas[2].slp1 == "k"))      # Qak, or Qa once its k has gone by it-lopa
     ):
         return ("eya", parse_slp1_upadesha_sequence("eya"))
     # kh (kulāt khah)
-    if c0 == "K" and len(varnas) == 1:
+    if c0 == "K" and (len(varnas) == 1 or (len(varnas) == 2 and varnas[1].slp1 == "a")):
         return ("Ina", parse_slp1_upadesha_sequence("Ina"))
     # chah (vṛddhāc chaḥ) — Ca or CaH
     if c0 == "C":

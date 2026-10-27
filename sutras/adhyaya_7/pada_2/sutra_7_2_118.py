@@ -80,11 +80,23 @@ def _matches(state: State) -> bool:
     return _adi_i_to_E(anga) is not None
 
 
+def _generic(state: State):
+    """kiti ca: the first vowel of the aṅga takes vṛddhi before a kit taddhita too (ḍhak: vainateya, kāleya) — the shared finder of 7.2.117 with k for its it-letter."""
+    from sutras.adhyaya_7.pada_2.sutra_7_2_117 import _find
+    return _find(state, markers=("k",))
+
+
 def cond(state: State) -> bool:
-    return _matches(state)
+    return _matches(state) or _generic(state) is not None
 
 
 def act(state: State) -> State:
+    hit = _generic(state)
+    if hit is not None and not _matches(state):
+        ti, j, rep = hit
+        state.terms[ti].varnas[j] = mk(rep)
+        state.terms[ti].meta["7_2_117_adi_vrddhi_done"] = True
+        return state
     if not _matches(state):
         return state
     pj = _itika_kit_taddhita_index(state)

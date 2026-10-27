@@ -29,7 +29,7 @@ from engine.vivaksha import vivaksita  # noqa: F401
 
 
 def _site(state: State):
-    return taddhita_site(state, final=lambda f: f.endswith("a"))
+    return taddhita_site(state, "apatya", final=lambda f: f.endswith("a"))
 
 
 def cond(state: State) -> bool:

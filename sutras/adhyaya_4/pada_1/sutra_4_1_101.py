@@ -15,7 +15,7 @@ from engine.taddhita_attach import taddhita_site, attach_taddhita
 
 def _site(state: State):
     """The apatya of a gotra-pratyayānta stem (one that ends in yañ or iñ): the yuvan (4.1.94), taught phak."""
-    return taddhita_site(state, origin="yaY") or taddhita_site(state, origin="iY")
+    return taddhita_site(state, "apatya", origin="yaY") or taddhita_site(state, "apatya", origin="iY")
 
 
 def cond(state: State) -> bool:

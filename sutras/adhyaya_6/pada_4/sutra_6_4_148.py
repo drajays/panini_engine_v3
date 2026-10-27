@@ -251,12 +251,16 @@ def _find_target(state: State):
             continue
         if not anga.varnas or not nxt.varnas:
             continue
+        if anga.meta.get("6_4_143_dit_done"):
+            continue                # ḍity abhasyāpi ṭer lopaḥ has already elided it
         finals_ok = _finals_for_pair(anga, nxt)
         if not finals_ok:
             continue
         last = anga.varnas[-1]
         first = nxt.varnas[0]
-        taddhita_any = "taddhita" in nxt.tags and "sup" not in nxt.tags      # Kāśikā: īkāre pare tadDite ca — any taddhita after a bha aṅga (dākṣi, gārgya, āśvapata)
+        if "taddhita" in nxt.tags and "sup" not in nxt.tags and "bha" not in anga.tags:
+            pass                    # only a bha aṅga (1.4.18: before a vowel or y) — a consonant-initial taddhita (tal, tva) leaves the vowel alone
+        taddhita_any = "taddhita" in nxt.tags and "sup" not in nxt.tags and "bha" in anga.tags      # Kāśikā: īkāre pare tadDite ca — any taddhita after a bha aṅga (dākṣi, gārgya, āśvapata)
         if last.slp1 not in finals_ok or (first.slp1 not in _NEXT_OK and not taddhita_any):
             continue
         # In sup context, a+i → guṇa e by 6.1.87 (e.g. rāma+ṭā → rāmeṇa); skip.
@@ -289,6 +293,7 @@ def act(state: State) -> State:
     hit_p05 = _p005_a_kurucara_final_a_before_I(state)
     ti, vi = hit
     del state.terms[ti].varnas[vi]
+    state.terms[ti].meta["6_4_148_lopa_done"] = True
     if hit_s2 is not None and hit_s2 == hit:
         state.meta.pop(META_P004_A_STAGE2_148, None)
     return state

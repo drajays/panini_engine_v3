@@ -22,18 +22,23 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.taddhita_attach import frame_open, stem_ends_tape
+from engine.vivaksha import vivaksita
 
 
-def cond(state: State) -> bool:
+def _open(state: State) -> bool:
     return not any(e.get("id") == "4.2.92" for e in state.adhikara_stack)
 
 
+def cond(state: State) -> bool:
+    return _open(state)
+
+
 def act(state: State) -> State:
-    state.adhikara_stack.append({
-        "id"        : "4.2.92",
-        "scope_end" : "4.3.134",
-        "text_dev"  : 'शेषे',
-    })
+    entry = {"id": "4.2.92", "scope_end": "4.3.134", "text_dev": "शेषे"}
+    if stem_ends_tape(state) and vivaksita(state, "taddhitArtha", "Seza"):
+        entry["artha"] = "Seza"            # the speaker means the śeṣa sense: aṇ comes from 4.1.83 under the frame, the specials read it
+    state.adhikara_stack.append(entry)
     return state
 
 
@@ -62,6 +67,7 @@ SUTRA = SutraRecord(
         "4.1.82",
         "4.1.83",
     ),
+    also_vidhi     = True,          # the sense-frame is opened by the loop: the speaker's taddhitArtha
     cond            = cond,
     act             = act,
     adhikara_scope  = ("4.2.92", "4.3.134"),

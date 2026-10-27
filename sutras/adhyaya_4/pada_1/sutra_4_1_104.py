@@ -15,7 +15,7 @@ from engine.vivaksha import vivaksita  # noqa: F401
 
 
 def _site(state: State):
-    return taddhita_site(state, gana_name="bidAdiH") if vivaksita(state, "apatyaBeda", "gotra") else None
+    return taddhita_site(state, "apatya", gana_name="bidAdiH") if vivaksita(state, "apatyaBeda", "gotra") else None
 
 
 def cond(state: State) -> bool:

@@ -43,7 +43,7 @@ VOCABULARY = {
     # the gender a bhāve kṛt is taught for (3.3.94 striyām ktin, 3.3.115 napuṃsake lyuṭ, 3.3.121 puṃsi)
     "linga": {"strI": ["striyAm"], "napuMsaka": ["napuMsake"], "puM": ["puMsi"]},
     # taddhita: the sense a pratyaya is taught in (the frame an ADHIKARA opens: 4.1.92 tasyāpatyam …) and, for apatya, which descendant (4.1.162 gotra, 4.1.163 yuvan)
-    "taddhitArtha": {"apatya": ["apatyam"]},
+    "taddhitArtha": {"apatya": ["apatyam"], "rakta": ["raktaM"], "yukta": ["yuktaH"], "dfzwa": ["dfzwaM"], "parivfta": ["parivfto"], "udDfta": ["udDftamamatreByaH"], "saMskfta": ["saMskftaM"], "devatA": ["devatA"], "samUha": ["samUhaH"], "asti": ["astIti"], "nirvfta": ["nirvfttam"], "nivAsa": ["nivAsaH"], "adUraBava": ["adUraBavaH"], "Seza": ["Seze"]},
     "apatyaBeda": {"gotra": ["gotre", "gotrApatye"], "yuvan": ["yuni"]},
     "tAcCIlya": {"tAcCIlya": ["tAcCIlye"]}, "AtmamAna": {"AtmamAna": ["AtmamAne"]},
     # ashtadhyayi.com spells the 3.4.21 pada कर्त्तृ (samAnakarttfkayoH); 3.1.7 and 3.3.158 have one t

@@ -114,7 +114,24 @@ def _find_p005_b_jan_before_dit_a(state: State) -> int | None:
     return None
 
 
+def _find_dit_taddhita(state: State):
+    """ḍity abhasyāpi ṭer lopaḥ: before a ḍit taddhita (ḍvalac …) the ṭi of the aṅga goes — from its last vowel to the end — bha or not."""
+    for j in range(1, len(state.terms)):
+        pr = state.terms[j]
+        if "taddhita" not in pr.tags or "q" not in (pr.meta.get("it_markers") or ()):
+            continue
+        an = state.terms[j - 1]
+        if "anga" not in an.tags or an.meta.get("6_4_143_dit_done") or an.meta.get("6_4_148_lopa_done") or not an.varnas:      # one elision of the same vowel: 6.4.148 may have taken it
+            continue
+        vows = [k for k, v in enumerate(an.varnas) if v.slp1 in "aAiIuUfFxXeEoO"]
+        if vows:
+            return (j - 1, vows[-1])
+    return None
+
+
 def cond(state: State) -> bool:
+    if _find_dit_taddhita(state) is not None:
+        return True
     if _find_p017_te_lopa(state) is not None:
         return True
     if _find_p005_b_jan_before_dit_a(state) is not None:
@@ -129,6 +146,12 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
+    hit_dit = _find_dit_taddhita(state)
+    if hit_dit is not None:
+        ti, vi = hit_dit
+        del state.terms[ti].varnas[vi:]
+        state.terms[ti].meta["6_4_143_dit_done"] = True
+        return state
     pi = _find_p017_te_lopa(state)
     if pi is not None:
         vs = state.terms[pi].varnas

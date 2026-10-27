@@ -48,6 +48,8 @@ _META_P004_A_CA_PHAYA = "caPhaya_taddhita_frame"
 
 
 def _taddhite_yaci_anga_ok(pr) -> bool:
+    if "taddhita" in pr.tags and pr.varnas and pr.varnas[0].slp1 in ("v", "r", "l"):
+        return False        # yaci bham: a taddhita beginning with y or a vowel (Kāśikā: यकारादावजादौ च) — valac, rūpya's r … are not
     if yaci_onset_loose(pr):
         return True
     if not pr.varnas:

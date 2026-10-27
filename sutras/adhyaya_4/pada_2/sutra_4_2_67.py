@@ -9,28 +9,18 @@ Pāṭha: ashtadhyayi.com data.txt row i=42067 (Art. 14).
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
 from engine.state import State
-
-_GATE_KEY: str = "4_2_67_tadasminna_67"
+from engine.taddhita_attach import frame_open, stem_ends_tape
+from engine.vivaksha import vivaksita
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not adhikara_in_effect("4.2.67", state, "4.1.76"):
-        return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+    return stem_ends_tape(state) and vivaksita(state, "taddhitArtha", "asti") and not frame_open(state, "cAturarTika")
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "4.2.67"
+    if cond(state):
+        state.adhikara_stack.append({"id": "4.2.67", "scope_end": "4.3.168", "artha": "cAturarTika", "text_dev": "asti"})      # aṇ comes from 4.1.83 under the frame
     return state
 
 
@@ -45,6 +35,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "तत् अस्मिन् अस्ति (क्रियापदम्) इति देशे तन्नाम्नि",
     why_dev               = "(सूत्रम् 4.2.67) तदस्मिन्नस्तीति देशे तन्नाम्नि।",
     anuvritti_from        = ('4.1.1',),
+    also_vidhi     = True,          # the sense-frame is opened by the loop: the speaker's taddhitArtha
     cond                  = cond,
     act                   = act,
 )
