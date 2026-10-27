@@ -437,6 +437,7 @@ SUBANTA_RULE_IDS_POST_4_1_2: tuple[str, ...] = (
     "1.4.3",    # यू स्त्र्याख्यौ नदी — the ī of a ṅīp that 4.1.6 attached (its ṅ, p go by it-lopa after 4.1.2): nuṃ 7.1.80–81 and 7.3.107 read nadī
     "7.1.81",   # शप्श्यनोर्नित्यम् — nuṃ of a Śatṛ-anta aṅga before the nadī (pacantī); before 7.1.80, its utsarga
     "7.1.80",   # आच्छीनद्योर्नुम् — vā, after Sa (tudantī / tudatī)
+    "7.3.44",   # प्रत्ययस्थात् कात् पूर्वस्यात इदाप्यसुपः — pāṭhaka + ā → pāṭhikā (the ṭāp is already in the aṅga, S2)
     "7.3.106",
     # 7.3.107 must precede 6.1.69: the सु is dropped *after* a hrasva,
     # and it is this rule that makes नदी short in सम्बुद्धि.
@@ -764,6 +765,12 @@ def _run_subanta_post_4_1_2_scanner(s: State, *, max_steps: int = 500) -> State:
             s = apply_rule(sid, s)
 
     _scan_pool(it_ids)
+    if any("stri_wAp" in u.tags and u.varnas for u in s.terms):
+        # SHORTCUT S2: the ṭāp joins its stem (a + ā → ā, 6.1.101) inside the aṅga first, so that 7.3.105 / 106 / 113 and the ā-stem rules
+        # see an ā-final aṅga, as for a lexicon stem like KawvA. Correct form: the scheduler orders 6.1.101 by the sūtra order.
+        s.meta["ekadesha_scope"] = "tap"
+        _scan_pool(["6.1.101"])
+        s.meta.pop("ekadesha_scope", None)
     _scan_pool(angakarya_ids)
     _why_not(angakarya_ids)
     # Second it-prakaraṇa pass over substitutes created in aṅgakārya (śī 7.1.17/19,

@@ -62,6 +62,8 @@ def _find_pair(state: State):
                 # (6.1.125 prakṛti-bhāva; 1.1.11 tag on the left *term*).
                 continue
             rt = state.terms[ti2]
+            if state.meta.get("ekadesha_scope") == "tap" and "stri_wAp" not in rt.tags:
+                continue        # SHORTCUT S2: the ṭāp's own ekādeśa is taken inside the aṅga before the aṅgakārya pool; every other junction waits
             if (ti1 != ti2 and vi2 == 0 and v1.slp1 == "a" and "sup" in rt.tags
                     and (rt.meta.get("upadesha_slp1") or "") in _PARA_SUPS):
                 # vipratiṣedha (1.4.2): after an a-final stem, ṭā → ina (7.1.12) and ām → sām (7.1.52) / nuṭ (7.1.54)
@@ -97,6 +99,9 @@ def act(state: State) -> State:
     ti1, vi1, ti2, vi2, d = hit
     state.terms[ti1].varnas[vi1] = mk(d)
     del state.terms[ti2].varnas[vi2]
+    if not state.terms[ti2].varnas and "stri_wAp" in state.terms[ti2].tags:
+        del state.terms[ti2]        # the ṭāp lies wholly in the ekādeśa: the stem, now ā-final, is the aṅga of the sup
+        state.terms[ti1].tags |= {"TAp_anta", "strīliṅga", "stri_wAp"}      # as 4.1.4 marks the stem when it joins the ṭāp itself
     return state
 
 

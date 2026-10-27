@@ -40,3 +40,10 @@ def test_trc_feminine_4_1_5(ref, vib, vac, want):
     """4.1.5 ṛnnebhyo ṅīp: the tṛc stem ends in ṛ; the sup's aṅga is the ī, so 7.1.94 anaṅ stands aside (kartrī, not kartānī)."""
     got = {b.surface_slp1 for b in explore(lambda: derive_krdanta(ref, vib, vac, "strīliṅga", krt="Rvultfc"))}
     assert want in got and "paWitAnI" not in got, sorted(got)
+
+
+@pytest.mark.parametrize("ref,vib,vac,want", [("01.0381", 1, 1, "pAWikA"), ("01.0381", 3, 1, "pAWikayA"), ("01.0381", 8, 1, "pAWike"), ("01.1049", 1, 1, "nAyikA"), ("01.1049", 7, 3, "nAyikAsu")])
+def test_ika_7_3_44(ref, vib, vac, want):
+    """7.3.44: the a before the ka of a pratyaya becomes i before āp (pāṭhikā, nāyikā — Laghukaumudī: kārikā, sarvikā)."""
+    got = {b.surface_slp1 for b in explore(lambda: derive_krdanta(ref, vib, vac, "strīliṅga", krt="Rvultfc"))}
+    assert want in got and "pAWakA" not in got, sorted(got)

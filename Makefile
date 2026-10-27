@@ -34,6 +34,10 @@ audit-constitutional:
 test-unity:
 	$(PYTHON) -m pytest tests/test_pipeline_unity.py -v --tb=short
 
+.PHONY: quick
+quick:   ## only the tests a git change can reach (tools/test_impact.py); `make quick` after `python3 -m tools.test_impact record`
+	$(PYTHON) -m tools.test_impact quick
+
 .PHONY: test-all
 test-all:
 	$(PYTHON) -m pytest tests/ -v --tb=short -x

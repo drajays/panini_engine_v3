@@ -98,6 +98,8 @@ def _insert_site(state: State):
     if hit is None:
         return None
     idx, t = hit
+    if t.meta.get("stri_TAp_4_1_4") and not _fem_sarvanama_site(t):
+        return None        # the ṭāp of this stem has been given (and, after 6.1.101, lies inside it)
     sup_present = _has_sup(state)
     if sup_present and not _fem_sarvanama_site(t):
         return None   # a ṭāp *after* sup attachment is only the feminine sarvanāma case below

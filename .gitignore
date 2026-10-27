@@ -55,3 +55,4 @@ data/reference/prasthanatrayi_words/raw/
 .audit/*.json
 .audit/*.txt
 .audit/tmp/
+sig/test_impact.json
