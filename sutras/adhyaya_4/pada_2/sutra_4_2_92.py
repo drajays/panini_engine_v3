@@ -26,13 +26,24 @@ from engine.taddhita_attach import frame_open, stem_ends_tape
 from engine.vivaksha import vivaksita
 
 
-def cond(state: State) -> bool:
+def _open(state: State) -> bool:
+    return not any(e.get("id") == "4.2.92" for e in state.adhikara_stack)
+
+
+def _framed(state: State) -> bool:
     return stem_ends_tape(state) and vivaksita(state, "taddhitArtha", "Seza") and not frame_open(state, "Seza")
 
 
+def cond(state: State) -> bool:
+    return _open(state)
+
+
 def act(state: State) -> State:
-    if cond(state):
-        state.adhikara_stack.append({"id": "4.2.92", "scope_end": "4.3.168", "artha": "Seza", "text_dev": "Seza"})      # aṇ comes from 4.1.83 under the frame
+    if _open(state):
+        entry = {"id": "4.2.92", "scope_end": "4.3.168", "text_dev": "Seza"}
+        if _framed(state):
+            entry["artha"] = "Seza"      # aṇ comes from 4.1.83 under the frame
+        state.adhikara_stack.append(entry)
     return state
 
 
