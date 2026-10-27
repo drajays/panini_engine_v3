@@ -13,25 +13,19 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
-def _site(state: State):
-    """The prātipadika that ends in an ugit pratyaya (u/ṛ/ḷ as its it-letter), before any sup or strī pratyaya (4.1.3 open)."""
+def strI_site(state: State, wanted):
+    """The prātipadika ``wanted(term)`` accepts, in the strī adhikāra (4.1.3 open), before any sup or strī pratyaya."""
     if not any(e.get("id") == "4.1.3" for e in state.adhikara_stack):
         return None
     if any(t.kind == "pratyaya" for t in state.terms):
         return None
     for t in state.terms:
-        if t.kind == "prakriti" and "prātipadika" in t.tags and "strīliṅga" in t.tags and origin.is_ugit(t):
+        if t.kind == "prakriti" and "prātipadika" in t.tags and "strīliṅga" in t.tags and wanted(t):
             return t
     return None
 
 
-def cond(state: State) -> bool:
-    return _site(state) is not None
-
-
-def act(state: State) -> State:
-    if _site(state) is None:
-        return state
+def append_nip(state: State) -> State:
     state.terms.append(Term(
         kind="pratyaya",
         varnas=list(parse_slp1_upadesha_sequence("NIp")),
@@ -39,6 +33,19 @@ def act(state: State) -> State:
         meta={"upadesha_slp1": "NIp"},
     ))
     return state
+
+
+def _site(state: State):
+    """The prātipadika that ends in an ugit pratyaya (u/ṛ/ḷ as its it-letter)."""
+    return strI_site(state, origin.is_ugit)
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None
+
+
+def act(state: State) -> State:
+    return append_nip(state) if _site(state) is not None else state
 
 
 SUTRA = SutraRecord(

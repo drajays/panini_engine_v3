@@ -234,3 +234,6 @@ Fresh-session prompt: "Continue Laghu Siddhānta Kaumudī from handover.md, 2026
 - ṭāp feminine fix: 1.4.13 tags the stem aṅga before `stri_wAp`; 6.1.68 skips the empty ṭāp Term (`_sup_index`). `eDamAnA`, `ajA` now lose their su.
 - Gaps: ā-final luk dhātus (yā: yāntī/yātī), 4.1.6 vārttikas (dhātor ugitaḥ pratiṣedha, añcateś copasaṃkhyānam), tṛc feminine (4.1.5), duplicate yy/vv readings (8.4.47). Next: 4.1.5 and the remaining strī sūtras, then item (2) above.
 
+
+**Update K7b (4.1.5 ṛnnebhyo ṅīp):** 4.1.5 real, shares `strI_site`/`append_nip` with 4.1.6; 7.1.94 anaṅ stands aside when a `stri_pratyaya` Term stands between stem and sup (kartrī, not kartānī). Tests in `test_krdanta_loop_k7.py`.
+Open (found, not fixed): (a) 7.3.44 stub — ṇvul/ka feminine gives `pAWakA` not `pAWikA`; (b) ṭāp stems built during derivation (`aja`, kṛdanta a-stems) decline correctly only in prathamā-eka: 6.1.101 joins a+ā after the aṅgakārya pool, so 7.3.105/106 (and ā-stem ādeśas) never see an ā-final aṅga (`derive("aja",8,1,"strīliṅga")` → ajAH; lexicon A-stems like KawvA are fine). Fix = merge ṭāp at 4.1.4 time for non-sarvanāma stems (as its sup-present branch already does) and re-run the 4.1.4 / taddhita tests.

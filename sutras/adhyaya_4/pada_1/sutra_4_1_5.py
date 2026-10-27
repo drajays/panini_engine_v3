@@ -8,30 +8,25 @@ Pāṭha: ashtadhyayi.com data.txt row i=41005 (Art. 14).
 """
 from __future__ import annotations
 
-from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine       import SutraType, SutraRecord, register_sutra, origin
 from engine.state import State
+from sutras.adhyaya_4.pada_1.sutra_4_1_6 import strI_site, append_nip
 
-_GATE_KEY: str = "4_1_5_fnneByo_5"
+
+def _site(state: State):
+    """A prātipadika that ends in ṛ (short or long) or in n.
+
+    SHORTCUT S8: only a derived stem (a kṛt / taddhita made it: kartṛ, daṇḍin) — svasṛ, mātṛ, duhitṛ are strī words already and
+    take no ṅīp, and the Lexicon does not yet say which avyutpanna stems are masculine words (rājan → rājñī)."""
+    return strI_site(state, lambda t: bool(t.varnas) and t.varnas[-1].slp1 in ("f", "F", "n") and origin.last_pratyaya(t) is not None)
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not adhikara_in_effect("4.1.5", state, "4.1.1"):
-        return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "4.1.5"
-    return state
+    return append_nip(state) if _site(state) is not None else state
 
 
 SUTRA = SutraRecord(

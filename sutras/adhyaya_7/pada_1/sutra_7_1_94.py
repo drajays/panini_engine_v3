@@ -34,6 +34,8 @@ def cond(state: State) -> bool:
     sup = state.terms[-1]
     if "prātipadika" not in ang.tags or "sup" not in sup.tags:
         return False
+    if any("stri_pratyaya" in u.tags for u in state.terms[1:-1]):
+        return False        # the aṅga of the sup is then the ṅīp's ī (kartrī), not the ṛ-stem
     if ang.meta.get("anaN_7_1_94_done"):
         return False
     if not ang.varnas or ang.varnas[-1].slp1 != "f":

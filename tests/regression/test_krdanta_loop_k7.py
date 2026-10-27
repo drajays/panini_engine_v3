@@ -33,3 +33,10 @@ def test_feminine_participle(ref, vib, vac, want):
 def test_no_nuM_wrongly(ref, wrong):
     got = {b.surface_slp1 for b in explore(lambda: derive_krdanta(ref, 1, 1, "strīliṅga", **V))}
     assert wrong not in got, sorted(got)
+
+
+@pytest.mark.parametrize("ref,vib,vac,want", [("01.0381", 1, 1, "paWitrI"), ("01.0381", 1, 2, "paWitryO"), ("01.0381", 8, 1, "paWitri"), ("01.1049", 1, 1, "netrI")])
+def test_trc_feminine_4_1_5(ref, vib, vac, want):
+    """4.1.5 ṛnnebhyo ṅīp: the tṛc stem ends in ṛ; the sup's aṅga is the ī, so 7.1.94 anaṅ stands aside (kartrī, not kartānī)."""
+    got = {b.surface_slp1 for b in explore(lambda: derive_krdanta(ref, vib, vac, "strīliṅga", krt="Rvultfc"))}
+    assert want in got and "paWitAnI" not in got, sorted(got)
