@@ -10,24 +10,25 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from engine.krt_attach import attach_krt, upapada_site, no_upasarga
+from engine.vikalpa import policy_pick  # noqa: F401
+from engine.vivaksha import vivaksita
 
-_GATE_KEY: str = "3_2_85_karaRe_85"
+
+def _site(state: State):
+    return upapada_site(state, "karaRa", dhatus=frozenset({"yaja~"})) if vivaksita(state, "kala", "BUta") else None
 
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.2.85", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.2.85"
-    return state
+    if _site(state) is None:
+        return state
+    if policy_pick(state, "3.2.85", 2) == 1:      # beside niṣṭhā (3.2.102): decline and leave the tape to it
+        return state
+    return attach_krt(state, "Rin")      # SHORTCUT S12: ṇini is taken as ṇin (the final i of the sūtra's word as uccāraṇa)
 
 
 SUTRA = SutraRecord(
@@ -41,6 +42,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "करणे यजः",
     why_dev               = "धातोः कृत्-प्रत्ययः [करणे यजः] विहितः (३.२.85)।",
     anuvritti_from        = ('3.1.1',),
+    apavada_of            = ("3.2.102",),      # bhūte karmaṇi / kartari: the special kṛt takes the site from niṣṭhā
     cond                  = cond,
     act                   = act,
 )

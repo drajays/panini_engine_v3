@@ -763,6 +763,60 @@
     ]
    }
   },
+  "hetutAcCIlyAnulomya": {
+   "hetu": {
+    "forms": [
+     "hetu"
+    ],
+    "sutras": [
+     "2.3.26",
+     "2.3.27",
+     "3.2.20",
+     "3.3.156",
+     "4.3.81",
+     "4.3.82"
+    ]
+   },
+   "tAcCIlya": {
+    "forms": [
+     "tAcCIlya"
+    ],
+    "sutras": [
+     "3.2.20",
+     "3.2.129"
+    ]
+   },
+   "Anulomya": {
+    "forms": [
+     "anulomyezu"
+    ],
+    "sutras": [
+     "3.2.20"
+    ]
+   }
+  },
+  "tAcCIlya": {
+   "tAcCIlya": {
+    "forms": [
+     "tAcCIlye"
+    ],
+    "sutras": [
+     "3.2.11",
+     "3.2.78",
+     "6.4.172"
+    ]
+   }
+  },
+  "AtmamAna": {
+   "AtmamAna": {
+    "forms": [
+     "AtmamAne"
+    ],
+    "sutras": [
+     "3.2.83"
+    ]
+   }
+  },
   "samAnakartfka": {
    "samAnakartfka": {
     "forms": [

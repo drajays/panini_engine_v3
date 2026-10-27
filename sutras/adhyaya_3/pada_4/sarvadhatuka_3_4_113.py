@@ -35,6 +35,7 @@ _SIT_KRT: Final[Tuple[str, ...]] = (
     "SAnan",
     "cAnaS",
     "Khas",
+    "KaS",
     "eS",
     "zadhyE",
     "zadhyOn",

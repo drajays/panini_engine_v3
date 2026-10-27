@@ -38,6 +38,9 @@ VOCABULARY = {
     "tAcCIlyAdi": {"tAcCIlya": ["tAcCIlya"], "vayovacana": ["vayovacana"], "Sakti": ["Saktizu"]},
     "akfcCra": {"akfcCra": ["akfcCriRi"]}, "amitra": {"amitra": ["amitre"]},
     "yajYasaMyoga": {"yajYasaMyoga": ["yajYasaMyoge"]}, "praSaMsA": {"praSaMsA": ["praSaMsAyAm"]},
+    # 3.2.20 (kṛñ + ṭa) and 3.2.78 (ṇini), 3.2.83 (khaś / ṇini)
+    "hetutAcCIlyAnulomya": {"hetu": ["hetu"], "tAcCIlya": ["tAcCIlya"], "Anulomya": ["anulomyezu"]},
+    "tAcCIlya": {"tAcCIlya": ["tAcCIlye"]}, "AtmamAna": {"AtmamAna": ["AtmamAne"]},
     # ashtadhyayi.com spells the 3.4.21 pada कर्त्तृ (samAnakarttfkayoH); 3.1.7 and 3.3.158 have one t
     "samAnakartfka": {"samAnakartfka": ["samAnakarttfkayoH", "samAnakartfkezu", "samAnakartfkAt"]},
 }

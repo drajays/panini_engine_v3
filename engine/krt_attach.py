@@ -52,3 +52,22 @@ def kftya_attach(state: State, sutra_id: str, upadesha_slp1: str, *, bars: tuple
 def upapada_open(state: State, kaaraka: str = "karman") -> bool:
     """3.1.92: a named upapada (the word the kṛt sūtra states in the saptamī, here ``kaaraka`` = karmaṇi) stands before the dhātu that ends the tape."""
     return dhatu_ends_tape(state) and len(state.terms) >= 2 and "upapada" in state.terms[-2].tags and state.terms[-2].meta.get("kAraka") == kaaraka
+
+
+def upapada_site(state: State, kaaraka: str | None = "karman", *, dhatus: frozenset[str] | None = None, stems: frozenset[str] | None = None):
+    """3.1.92 … the dhātu that ends the tape, with an upapada before it: in the case ``kaaraka`` (None = any), among the ``stems`` the sūtra
+    names, for the ``dhatus`` it lists (upadeśa, it-letters on). A sūtra that says anupasarge also checks ``no_upasarga`` itself."""
+    if not (dhatu_ends_tape(state) and len(state.terms) >= 2 and "upapada" in state.terms[-2].tags):
+        return None
+    up, dh = state.terms[-2], state.terms[-1]
+    if kaaraka is not None and up.meta.get("kAraka") != kaaraka:
+        return None
+    if stems is not None and (up.meta.get("upadesha_slp1") or "") not in stems:
+        return None
+    if dhatus is not None and (dh.meta.get("upadesha_slp1") or "") not in dhatus:
+        return None
+    return dh
+
+
+def no_upasarga(state: State) -> bool:
+    return not any("upasarga" in t.tags for t in state.terms)

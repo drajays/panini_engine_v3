@@ -18,7 +18,11 @@ _GATE_KEY: str = "3_2_1_karmaRyaR_1"
 
 def _site(state: State) -> bool:
     """karmaṇy upapade: aṇ after any dhātu but the ā-final (3.2.3 ka) and hve / ve / mā (3.2.2 aṇ)."""
-    return upapada_open(state) and not kftya_stem(state).endswith("A") and kftya_stem(state) not in ("hve", "ve")
+    if not (upapada_open(state) and not kftya_stem(state).endswith("A") and kftya_stem(state) not in ("hve", "ve")):
+        return False
+    from engine.registry import get_sutra
+    # the special aṇ-takers' apavādas (3.2.20 ṭa, 3.2.38 khac, 3.2.78 ṇini, 3.2.83 ṇini / khaś, 3.2.94 kvanip) take the site away
+    return not any(get_sutra(s).cond(state) for s in ("3.2.20", "3.2.38", "3.2.78", "3.2.83", "3.2.94"))
 
 
 def cond(state: State) -> bool:

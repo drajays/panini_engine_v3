@@ -10,24 +10,26 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from engine.krt_attach import attach_krt, upapada_site, no_upasarga
+from sutras.adhyaya_3.pada_2.sutra_3_2_124 import attach_participle
+from engine.vikalpa import policy_pick  # noqa: F401
+from engine.vivaksha import vivaksita
 
-_GATE_KEY: str = "3_2_83_AtmamAne_83"
+
+def _site(state: State):
+    return upapada_site(state, "karman", dhatus=frozenset({"mana~"})) if vivaksita(state, "AtmamAna", "AtmamAna") else None
 
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.2.83", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.2.83"
-    return state
+    if _site(state) is None:
+        return state
+    if policy_pick(state, "3.2.83", 2) == 0:
+        return attach_participle(state, "KaS")      # khaś is śit: dhātoḥ (3.1.91) governs it as it does śatṛ, so Syan / śap come between
+    return attach_krt(state, "Rin")      # SHORTCUT S12: ṇini held as ṇin; and by the ca ṇini beside khaś
 
 
 SUTRA = SutraRecord(

@@ -85,7 +85,11 @@ def _eligible(t: Term, state: State) -> bool:
     # **tām** (narrow **3.4.101** output): final nasal *m* is not *halantyam-it*.
     if up_tin == "tAm" and last.slp1 == "m":
         return False
-    # **ktrim** (*ktri* + Vt. **4.4.20** *mam*): final **m** is the augment, not
+    # **ṇini** (3.2.78 ff.): the pratyaya is "in"; the sūtra's final i only lets the n be said. SHORTCUT S12: the upadeśa is held as ``Rin``
+    # and its n is kept here — to be settled by a brain ruling (docs/SHORTCUT_LEDGER.md).
+    if up_tin == "Rin" and last.slp1 == "n":
+        return False
+        # **ktrim** (*ktri* + Vt. **4.4.20** *mam*): final **m** is the augment, not
     # *halantyam-it* (corrected-v2 **P003**).
     if up_tin == "ktrim" and last.slp1 == "m":
         return False

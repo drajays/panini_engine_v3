@@ -10,24 +10,29 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.krt_eligibility import krt_insertion_eligible
+from engine.krt_attach import attach_krt, upapada_site, no_upasarga
+from engine.vikalpa import policy_pick  # noqa: F401
+from engine.vivaksha import vivaksita
 
-_GATE_KEY: str = "3_2_78_supyajAtO_78"
+_JATI = frozenset()      # SHORTCUT S11: ajāti — the Lexicon does not yet say which upapada stems name a jāti (brāhmaṇa …); none is excluded
+
+
+def _jati(state: State) -> bool:
+    return (state.terms[-2].meta.get("upadesha_slp1") or "") in _JATI
+
+
+def _site(state: State):
+    return upapada_site(state, None) if no_upasarga(state) and vivaksita(state, "tAcCIlya", "tAcCIlya") and not _jati(state) else None
 
 
 def cond(state: State) -> bool:
-    if not krt_insertion_eligible(state, "3.2.78", gate_key=_GATE_KEY, adhikara_id="3.1.1"):
-        return False
-    return not any(
-        "krt" in t.tags and "pratyaya" in t.tags for t in state.terms
-    )
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["krt_kind"] = "3.2.78"
-    return state
+    if _site(state) is None:
+        return state
+    return attach_krt(state, "Rin")      # SHORTCUT S12: ṇini is taken as ṇin (the final i of the sūtra's word as uccāraṇa)
 
 
 SUTRA = SutraRecord(
