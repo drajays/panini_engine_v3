@@ -283,6 +283,9 @@ def effective_candidates(candidates: List[str], state: State) -> List[str]:
         if is_gate_only(sid):
             continue
         rec = SUTRA_REGISTRY.get(sid)
+        if getattr(rec, "sutra_type", None) is SutraType.ADHIKARA:
+            keep.append(sid)        # an adhikāra that is also a vidhi (also_vidhi) opens a scope: it changes no letter, as the subanta scanner knows too
+            continue
         if getattr(rec, "sutra_type", None) is SutraType.VIBHASHA and not any(
                 isinstance(f, dict) and f.get("sutra_id") == sid for f in state.vibhasha_forks):
             # a वा / विभाषा that the reading declines is still a question the derivation put (engine.vikalpa.explore reads it) —

@@ -101,9 +101,11 @@ def _find_u_before_a(state: State):
             continue
         if not adhikara_in_effect("6.4.146", state, "6.4.129"):
             continue
-        if anga.varnas[-1].slp1 != "u":
+        taddhita_pr = "taddhita" in pr.tags and "sup" not in pr.tags
+        if anga.varnas[-1].slp1 != "u" and not (anga.varnas[-1].slp1 == "U" and taddhita_pr):
             continue
-        if pr.varnas[0].slp1 != "a":
+        # oḥ guṇaḥ: before a taddhita (bāhu + iñ → bāhavi, upagu + aṇ → aupagava) — or, as the older glass-box spines had it, before a-initial
+        if not (pr.varnas[0].slp1 == "a" or taddhita_pr):
             continue
         # śas (accusative plural) is handled by 6.1.102–6.1.103, not by bhasya guṇa.
         if pr.meta.get("upadesha_slp1") == "Sas":

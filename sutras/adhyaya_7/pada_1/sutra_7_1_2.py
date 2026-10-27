@@ -103,7 +103,7 @@ def _phadi_replacement(varnas: List[Varna], state: Optional[State] = None) -> Op
         if len(varnas) >= 2 and varnas[1].slp1 == "a":
             return ("Iya", parse_slp1_upadesha_sequence("Iya"))
     # gh (kṣatrād ghah)
-    if c0 == "G" and len(varnas) == 1:
+    if c0 == "G" and (len(varnas) == 1 or (len(varnas) == 2 and varnas[1].slp1 == "a")):
         return ("iya", parse_slp1_upadesha_sequence("iya"))
     return None
 

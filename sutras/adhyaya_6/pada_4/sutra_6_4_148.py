@@ -41,8 +41,8 @@ def _finals_for_pair(anga, pr) -> frozenset[str]:
         if "bha" not in anga.tags:
             return frozenset()
         return frozenset({"a", "A", "i", "I"})
-    # Taddhita (non-sup): include short 'a' — e.g. dāśaratha + iñ → dāśarathi
-    return frozenset({"a", "A", "I"})
+    # Taddhita (non-sup): include short 'a' — e.g. dāśaratha + iñ → dāśarathi; and short 'i' before ya (aditi + ṇya → āditya)
+    return frozenset({"a", "A", "i", "I"})
 
 
 def _p005_a_kurucara_final_a_before_I(state: State) -> tuple[int, int] | None:
@@ -256,14 +256,15 @@ def _find_target(state: State):
             continue
         last = anga.varnas[-1]
         first = nxt.varnas[0]
-        if last.slp1 not in finals_ok or first.slp1 not in _NEXT_OK:
+        taddhita_any = "taddhita" in nxt.tags and "sup" not in nxt.tags      # Kāśikā: īkāre pare tadDite ca — any taddhita after a bha aṅga (dākṣi, gārgya, āśvapata)
+        if last.slp1 not in finals_ok or (first.slp1 not in _NEXT_OK and not taddhita_any):
             continue
         # In sup context, a+i → guṇa e by 6.1.87 (e.g. rāma+ṭā → rāmeṇa); skip.
         # In taddhita context, 6.4.148 lopa applies (e.g. dāśaratha+iñ → dāśarathi).
         if last.slp1 == "a" and first.slp1 == "i" and "sup" in nxt.tags:
             continue
         # *ikārānta* + affix-initial short *i* (e.g. *hari* + *Ni* → *harau*) — not this lopa.
-        if last.slp1 == "i" and first.slp1 == "i":
+        if last.slp1 == "i" and first.slp1 == "i" and not taddhita_any:
             continue
         # *a* + *ī* before *sarvanāmasthāna* / dual-*O* paths is not this *lopa*
         # (e.g. *jñāna* + dual → *jñāne*; meta may still read ``O`` or ``Si``).

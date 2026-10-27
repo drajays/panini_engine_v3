@@ -32,6 +32,7 @@ from __future__ import annotations
 
 from engine       import ArthaNirdesha, SutraType, SutraRecord, register_sutra
 from engine.state import State
+from engine.vivaksha import vivaksita
 
 ARTHA = ArthaNirdesha(
     artha      = "apatya",
@@ -42,8 +43,12 @@ ARTHA = ArthaNirdesha(
 SCOPE_END = "4.1.178"
 
 
-def cond(state: State) -> bool:
+def _open(state: State) -> bool:
     return not any(e.get("id") == "4.1.92" for e in state.adhikara_stack)
+
+
+def cond(state: State) -> bool:
+    return _open(state) and (not state.vivaksha or vivaksita(state, "taddhitArtha", "apatya"))
 
 
 def act(state: State) -> State:
@@ -67,6 +72,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "तस्य / अपत्यम्",
     why_dev        = "अर्थनिर्देशः — पूर्वैरुत्तरैश्च प्रत्ययैरभिसंबध्यते; स्वरितत्वादपत्याधिकारः ४.१.९२ तः ४.१.१७८ पर्यन्तम्।",
     anuvritti_from = (),
+    also_vidhi     = True,          # the frame is opened by the loop: the speaker's taddhitArtha=apatya
     cond           = cond,
     act            = act,
     adhikara_scope = ("4.1.92", SCOPE_END),

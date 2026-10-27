@@ -23,48 +23,23 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
-from engine.state import State, Term
-from phonology.varna import parse_slp1_upadesha_sequence
-
-_GATE_KEY: str = "4_1_95_ata_iY"
+from engine.state import State
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vivaksha import vivaksita  # noqa: F401
 
 
-def _site(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not adhikara_in_effect("4.1.95", state, "4.1.92"):
-        return False
-    if not state.terms:
-        return False
-    t0 = state.terms[0]
-    if "prātipadika" not in t0.tags:   # a prātipadika saṃjñā, not aṅga
-        return False
-    if not t0.varnas or t0.varnas[-1].slp1 != "a":
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+def _site(state: State):
+    return taddhita_site(state, final=lambda f: f.endswith("a"))
 
 
 def cond(state: State) -> bool:
-    return _site(state)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    if not _site(state):
+    if _site(state) is None:
         return state
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY] = True
-    state.meta["taddhita_kind"] = "4.1.95"
-    pr = Term(
-        kind="pratyaya",
-        varnas=parse_slp1_upadesha_sequence("iY"),
-        tags={"pratyaya", "taddhita", "upadesha"},
-        meta={"upadesha_slp1": "iY"},
-    )
-    state.terms.append(pr)
-    return state
+    return attach_taddhita(state, "iY")
 
 
 SUTRA = SutraRecord(
@@ -78,6 +53,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "अतः इञ्",
     why_dev               = "(सूत्रम् 4.1.95) अत इञ्।",
     anuvritti_from        = ('4.1.1',),
+    apavada_of     = ('4.1.83',),
     cond                  = cond,
     act                   = act,
 )

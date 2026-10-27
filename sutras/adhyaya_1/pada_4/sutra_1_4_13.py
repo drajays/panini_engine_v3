@@ -42,6 +42,9 @@ def cond(state: State) -> bool:
         # *prātipadika* + *sup*: the prātipadika is aṅga with respect to sup.
         if "prātipadika" in t0.tags and ("sup" in t1.tags or "stri_wAp" in t1.tags):
             return True
+        # a taddhita: the prātipadika is the aṅga of the pratyaya that follows it (4.1.76 ff.; the pipelines' flags below are older, narrower forms)
+        if "prātipadika" in t0.tags and "dhatu" not in t0.tags and "taddhita" in t1.tags and "sup" not in t1.tags:
+            return True
         # *śālīya* taddhita: *aṅga* = *prakriti* (not *dhātu*) *nimitta* of *taddhita*.
         if (
             state.meta.get("prakriya_sAlIya")

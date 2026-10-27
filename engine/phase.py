@@ -43,6 +43,8 @@ _PHASE_RANGES: dict[str, tuple[tuple[tuple[int, ...], tuple[int, ...]], ...]] = 
         ((2, 1, 1), (2, 2, 38)),
         ((2, 4, 1), (2, 4, 85)),
         ((3, 1, 1), (3, 4, 117)),
+        # taddhita (4.1.76 – 5.3.x; the samāsānta rules of 5.4 wait for the samāsa machine): the pratyaya is chosen by the meaning (vivakṣā ``taddhitArtha``) once a prātipadika stands on the tape
+        ((4, 1, 76), (5, 3, 999)),
         # 6.1.6 जक्षित्यादयः षट्: abhyasta saṃjñā of the root — 3.4.109 अभ्यस्तात् (jus in laṅ) reads it in this phase
         ((6, 1, 6), (6, 1, 6)),
     ),

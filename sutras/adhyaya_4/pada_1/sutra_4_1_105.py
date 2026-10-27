@@ -25,7 +25,11 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vivaksha import vivaksita  # noqa: F401
 
+
+# the older recipe demos (P042 garga, P004-A kauñjāyana) attach yañ by their own markers; kept beside the gaṇa rule
 _META_P004_A_STAGE2 = "corrected_v2_P004_A_stage2_yaY_arm"
 _UPA_KAU_YJ_AYANA = "kauYjAyana"
 
@@ -56,7 +60,7 @@ def _site_p004_a(state: State) -> int | None:
     return None
 
 
-def _site(state: State) -> int | None:
+def _legacy_site(state: State) -> int | None:
     i = _site_p042(state)
     if i is not None:
         return i
@@ -67,12 +71,21 @@ def _has_yaY(state: State) -> bool:
     return any((t.meta.get("upadesha_slp1") or "").strip() == "yaY" for t in state.terms)
 
 
+
+def _site(state: State):
+    return taddhita_site(state, gana_name="gargAdiH") if vivaksita(state, "apatyaBeda", "gotra") else None
+
+
 def cond(state: State) -> bool:
-    return _site(state) is not None and not _has_yaY(state)
+    if _site(state) is not None:
+        return True
+    return _legacy_site(state) is not None and not _has_yaY(state)
 
 
 def act(state: State) -> State:
-    i = _site(state)
+    if _site(state) is not None:
+        return attach_taddhita(state, "yaY")
+    i = _legacy_site(state)
     if i is None:
         return state
     yaY = Term(
@@ -95,6 +108,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "गर्गादिभ्यः / यञ्",
     why_dev        = "गर्गादि-गणात् यञ् — P042; कौञ्जायनाद् युवापत्ये प००४-अ।",
     anuvritti_from = ("4.1.76",),
+    apavada_of     = ('4.1.83', '4.1.95'),
     cond           = cond,
     act            = act,
 )
