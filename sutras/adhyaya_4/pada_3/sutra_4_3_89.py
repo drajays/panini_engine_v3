@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "4_3_89_sosya_89"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("4.3.89", state, "4.1.76"):
@@ -27,11 +27,32 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "4.3.89"
     return state
+
+
+
+from engine.taddhita_attach import frame_open, stem_ends_tape
+from engine.vivaksha import vivaksita
+def _new_cond(state: State) -> bool:
+    return stem_ends_tape(state) and vivaksita(state, "taddhitArtha", "nivAsa") and not frame_open(state, "nivAsa")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _new_cond(state):
+        # the sense, and the śeṣa group it lies in (4.2.92 … 4.3.134): aṇ comes from 4.1.83, the specials of both read these frames
+        state.adhikara_stack.append({"id": "4.3.89", "scope_end": "4.3.134", "artha": "nivAsa", "text_dev": "nivAsa"})
+        if not frame_open(state, "Seza"):
+            state.adhikara_stack.append({"id": "4.2.92", "scope_end": "4.3.134", "artha": "Seza", "text_dev": "शेषे"})
+        return state
+    return _legacy_act(state)
 
 
 SUTRA = SutraRecord(
@@ -45,6 +66,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "सः अस्य निवासः",
     why_dev               = "(सूत्रम् 4.3.89) सोऽस्य निवासः।",
     anuvritti_from        = ('4.1.1',),
+    also_vidhi     = True,          # the loop opens this sense-frame / attaches from the speaker's taddhitArtha
     cond                  = cond,
     act                   = act,
 )

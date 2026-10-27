@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "4_3_2_tasmin_2"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("4.3.2", state, "4.1.76"):
@@ -27,11 +27,40 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "4.3.2"
     return state
+
+
+
+from phonology.varna import parse_slp1_upadesha_sequence
+def _site(state: State):
+    for i in range(len(state.terms) - 1):
+        t, pr = state.terms[i], state.terms[i + 1]
+        if ((t.meta.get("upadesha_slp1") or "") in ("yuzmad", "asmad") and "taddhita" in pr.tags
+                and (pr.meta.get("upadesha_slp1") or "") in ("KaY", "aR") and not t.meta.get("4_3_2_adesha")):
+            return i
+    return None
+
+
+def _new_cond(state: State) -> bool:
+    return _site(state) is not None
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    i = _site(state)
+    if i is not None:
+        t = state.terms[i]
+        t.varnas = list(parse_slp1_upadesha_sequence("yuzmAka" if (t.meta.get("upadesha_slp1") == "yuzmad") else "asmAka"))
+        t.meta["4_3_2_adesha"] = True
+        return state
+    return _legacy_act(state)
 
 
 SUTRA = SutraRecord(

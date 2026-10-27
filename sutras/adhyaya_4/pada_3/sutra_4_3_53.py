@@ -29,7 +29,7 @@ META_ELIGIBLE = "4_3_53_tatra_bhava_eligible"
 META_JATI_BLOCK = "4_3_25_tatra_jAta_sense"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if not adhikara_in_effect("4.3.53", state, "4.1.83"):
         return False
     if state.meta.get(META_JATI_BLOCK):
@@ -39,9 +39,30 @@ def cond(state: State) -> bool:
     return state.samjna_registry.get(SAMJNA_KEY) is not True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.samjna_registry[SAMJNA_KEY] = True
     return state
+
+
+
+from engine.taddhita_attach import frame_open, stem_ends_tape
+from engine.vivaksha import vivaksita
+def _new_cond(state: State) -> bool:
+    return stem_ends_tape(state) and vivaksita(state, "taddhitArtha", "Bava") and not frame_open(state, "Bava")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _new_cond(state):
+        # the sense, and the śeṣa group it lies in (4.2.92 … 4.3.134): aṇ comes from 4.1.83, the specials of both read these frames
+        state.adhikara_stack.append({"id": "4.3.53", "scope_end": "4.3.134", "artha": "Bava", "text_dev": "Bava"})
+        if not frame_open(state, "Seza"):
+            state.adhikara_stack.append({"id": "4.2.92", "scope_end": "4.3.134", "artha": "Seza", "text_dev": "शेषे"})
+        return state
+    return _legacy_act(state)
 
 
 SUTRA = SutraRecord(
@@ -70,6 +91,7 @@ SUTRA = SutraRecord(
         "4.1.82",
         "4.1.83",
     ),
+    also_vidhi     = True,          # the loop opens this sense-frame / attaches from the speaker's taddhitArtha
     cond           = cond,
     act            = act,
 )

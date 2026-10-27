@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "4_3_42_koSAqQaY_42"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("4.3.42", state, "4.1.76"):
@@ -27,11 +27,31 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "4.3.42"
     return state
+
+
+
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+def _site(state: State):
+    return taddhita_site(state, "Bava", stems=frozenset({"koSa"}))
+
+
+def _new_cond(state: State) -> bool:
+    return _site(state) is not None
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _site(state) is not None:
+        return attach_taddhita(state, "QaY")
+    return _legacy_act(state)
 
 
 SUTRA = SutraRecord(
@@ -45,6 +65,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "कोशात् ढञ्",
     why_dev               = "(सूत्रम् 4.3.42) कोशाड्ढञ्।",
     anuvritti_from        = ('4.1.1',),
+    apavada_of     = ('4.1.83',),
     cond                  = cond,
     act                   = act,
 )

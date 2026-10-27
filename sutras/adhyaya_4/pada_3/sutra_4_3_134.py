@@ -39,15 +39,36 @@ def _site(state: State) -> bool:
     return True
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return _site(state)
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     if not _site(state):
         return state
     state.samjna_registry["4.3.134_tasya_vikAra_prakriya_44"] = True
     return state
+
+
+
+from engine.taddhita_attach import frame_open, stem_ends_tape
+from engine.vivaksha import vivaksita
+def _new_cond(state: State) -> bool:
+    return stem_ends_tape(state) and vivaksita(state, "taddhitArtha", "vikAra") and not frame_open(state, "vikAra")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _new_cond(state):
+        # the sense, and the śeṣa group it lies in (4.2.92 … 4.3.134): aṇ comes from 4.1.83, the specials of both read these frames
+        state.adhikara_stack.append({"id": "4.3.134", "scope_end": "4.3.168", "artha": "vikAra", "text_dev": "vikAra"})      # tasya vikāro 'vayavaś ca … to 4.3.168
+        if not frame_open(state, "Seza"):
+            state.adhikara_stack.append({"id": "4.2.92", "scope_end": "4.3.134", "artha": "Seza", "text_dev": "शेषे"})
+        return state
+    return _legacy_act(state)
 
 
 SUTRA = SutraRecord(
@@ -60,6 +81,7 @@ SUTRA = SutraRecord(
     padaccheda_dev="तस्य विकारः",
     why_dev="विकारार्थे तद्धितः (*prakriya_44*, **आमलकम्**)।",
     anuvritti_from=(),
+    also_vidhi     = True,          # the loop opens this sense-frame / attaches from the speaker's taddhitArtha
     cond=cond,
     act=act,
 )

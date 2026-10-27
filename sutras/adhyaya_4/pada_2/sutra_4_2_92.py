@@ -26,19 +26,13 @@ from engine.taddhita_attach import frame_open, stem_ends_tape
 from engine.vivaksha import vivaksita
 
 
-def _open(state: State) -> bool:
-    return not any(e.get("id") == "4.2.92" for e in state.adhikara_stack)
-
-
 def cond(state: State) -> bool:
-    return _open(state)
+    return stem_ends_tape(state) and vivaksita(state, "taddhitArtha", "Seza") and not frame_open(state, "Seza")
 
 
 def act(state: State) -> State:
-    entry = {"id": "4.2.92", "scope_end": "4.3.134", "text_dev": "शेषे"}
-    if stem_ends_tape(state) and vivaksita(state, "taddhitArtha", "Seza"):
-        entry["artha"] = "Seza"            # the speaker means the śeṣa sense: aṇ comes from 4.1.83 under the frame, the specials read it
-    state.adhikara_stack.append(entry)
+    if cond(state):
+        state.adhikara_stack.append({"id": "4.2.92", "scope_end": "4.3.168", "artha": "Seza", "text_dev": "Seza"})      # aṇ comes from 4.1.83 under the frame
     return state
 
 

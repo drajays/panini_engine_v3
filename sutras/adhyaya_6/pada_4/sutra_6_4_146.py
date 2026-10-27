@@ -51,6 +51,8 @@ def _find_o_before_y(state: State):
             continue
         if pr.varnas[0].slp1 != "y":
             continue
+        if "taddhita" in pr.tags and "sup" not in pr.tags:
+            continue                # go + yat is gavya by 6.1.79 vānto yi pratyaye, not this older glass-box step
         return (ti, len(anga.varnas) - 1)
     return None
 

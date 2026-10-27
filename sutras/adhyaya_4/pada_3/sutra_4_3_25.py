@@ -48,11 +48,11 @@ def _has_aR(state: State) -> bool:
     return False
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return _site(state) is not None and not _has_aR(state)
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     i = _site(state)
     if i is None:
         return state
@@ -66,6 +66,27 @@ def act(state: State) -> State:
     return state
 
 
+
+from engine.taddhita_attach import frame_open, stem_ends_tape
+from engine.vivaksha import vivaksita
+def _new_cond(state: State) -> bool:
+    return stem_ends_tape(state) and vivaksita(state, "taddhitArtha", "jAta") and not frame_open(state, "jAta")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _new_cond(state):
+        # the sense, and the śeṣa group it lies in (4.2.92 … 4.3.134): aṇ comes from 4.1.83, the specials of both read these frames
+        state.adhikara_stack.append({"id": "4.3.25", "scope_end": "4.3.134", "artha": "jAta", "text_dev": "jAta"})
+        if not frame_open(state, "Seza"):
+            state.adhikara_stack.append({"id": "4.2.92", "scope_end": "4.3.134", "artha": "Seza", "text_dev": "शेषे"})
+        return state
+    return _legacy_act(state)
+
+
 SUTRA = SutraRecord(
     sutra_id       = "4.3.25",
     sutra_type     = SutraType.VIDHI,
@@ -76,6 +97,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "तत्र / भवः",
     why_dev        = "विशाखायां जात इति प्रसङ्गे अण् (४.३.२५) — P039।",
     anuvritti_from = ("4.3.1",),
+    also_vidhi     = True,          # the loop opens this sense-frame / attaches from the speaker's taddhitArtha
     cond           = cond,
     act            = act,
 )
