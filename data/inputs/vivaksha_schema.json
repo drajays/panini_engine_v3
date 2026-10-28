@@ -2123,6 +2123,134 @@
     "sutras": [
      "5.1.37"
     ]
+   },
+   "nimitta": {
+    "forms": [
+     "nimittam",
+     "nimittaM"
+    ],
+    "sutras": [
+     "5.1.38",
+     "5.1.39",
+     "5.1.40",
+     "5.1.41"
+    ]
+   },
+   "Izvara": {
+    "forms": [
+     "ISvaraH"
+    ],
+    "sutras": [
+     "5.1.42"
+    ]
+   },
+   "vidita": {
+    "forms": [
+     "viditaH"
+    ],
+    "sutras": [
+     "5.1.43",
+     "5.1.44"
+    ]
+   },
+   "vApa": {
+    "forms": [
+     "vApaH"
+    ],
+    "sutras": [
+     "5.1.45",
+     "5.1.46"
+    ]
+   },
+   "vfdDyAdi": {
+    "forms": [
+     "upadAH"
+    ],
+    "sutras": [
+     "5.1.47",
+     "5.1.48",
+     "5.1.49"
+    ]
+   },
+   "bhArahAra": {
+    "forms": [
+     "Avahati"
+    ],
+    "sutras": [
+     "5.1.50",
+     "5.1.51"
+    ]
+   },
+   "samBavati": {
+    "forms": [
+     "samBavati"
+    ],
+    "sutras": [
+     "5.1.52",
+     "5.1.53",
+     "5.1.54",
+     "5.1.55"
+    ]
+   },
+   "avaharati": {
+    "forms": [
+     "avaharati"
+    ],
+    "sutras": [
+     "5.1.52",
+     "5.1.53",
+     "5.1.54",
+     "5.1.55"
+    ]
+   },
+   "pacati": {
+    "forms": [
+     "pacati"
+    ],
+    "sutras": [
+     "5.1.52",
+     "5.1.53",
+     "5.1.54",
+     "5.1.55"
+    ]
+   },
+   "aMSavasnaBfti": {
+    "forms": [
+     "aMSa",
+     "vasna",
+     "BftayaH"
+    ],
+    "sutras": [
+     "5.1.51",
+     "5.1.56"
+    ]
+   },
+   "tadasyaparimARam": {
+    "forms": [
+     "parimARam"
+    ],
+    "sutras": [
+     "5.1.57",
+     "5.1.58",
+     "5.1.59",
+     "5.1.60",
+     "5.1.61",
+     "5.1.62"
+    ]
+   },
+   "arhati": {
+    "forms": [
+     "arhati"
+    ],
+    "sutras": [
+     "5.1.63",
+     "5.1.66",
+     "5.1.67",
+     "5.1.68",
+     "5.1.69",
+     "5.1.70",
+     "5.1.71"
+    ]
    }
   },
   "arthaViSeSa": {
@@ -2539,6 +2667,15 @@
      "8.4.9",
      "8.4.10",
      "8.4.11"
+    ]
+   },
+   "brAhmaRasaMjYA": {
+    "forms": [
+     "brAhmaRe"
+    ],
+    "sutras": [
+     "2.3.60",
+     "5.1.62"
     ]
    }
   },

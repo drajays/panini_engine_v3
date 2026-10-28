@@ -62,8 +62,12 @@ VOCABULARY = {
         # 5.1.5 – 17 (cha)
         "tasmEhita": ["hitam"], "prakfti": ["prakftO"], "syAt": ["syAt"],
         # 5.1.37
-        "krIta": ["krItam"]},
-    "arthaViSeSa": {"garhya": ["garhyam"], "saMjYA": ["saMjYAyAm", "saMjYA"]},
+        "krIta": ["krItam"],
+        # 5.1.38 – 63 (the other senses of the ārhīya group)
+        "nimitta": ["nimittam", "nimittaM"], "Izvara": ["ISvaraH"], "vidita": ["viditaH"], "vApa": ["vApaH"], "vfdDyAdi": ["upadAH"],
+        "bhArahAra": ["Avahati"], "samBavati": ["samBavati"], "avaharati": ["avaharati"], "pacati": ["pacati"],
+        "aMSavasnaBfti": ["aMSa", "vasna", "BftayaH"], "tadasyaparimARam": ["parimARam"], "arhati": ["arhati"]},
+    "arthaViSeSa": {"garhya": ["garhyam"], "saMjYA": ["saMjYAyAm", "saMjYA"], "brAhmaRasaMjYA": ["brAhmaRe"]},
     # 4.3.3: the yuṣmad / asmad that speaks of one person
     "ekavacana": {"ekavacana": ["ekavacane"]},
     # inside the vikāra group (4.3.134 – 168): which vikāra the speaker means

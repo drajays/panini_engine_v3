@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_1_45_tasya_45"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.1.45", state, "5.1.19"):
@@ -27,11 +27,35 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.1.45"
     return state
+
+
+from engine.taddhita_attach import open_sense, open_default_frame
+
+_SENSES = ('vApa',)
+
+
+def _sense(state: State):
+    return next((v for v in _SENSES if open_sense(state, "5.1.45", v)), None)
+
+
+def _new_cond(state: State) -> bool:
+    return _sense(state) is not None
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    v = _sense(state)
+    if v is None:
+        return _legacy_act(state)
+    return open_default_frame(state, "5.1.45", v, "5.1.18", "5.1.114")      # ṭhañ (5.1.18) is the default to 5.1.114, ṭhak (5.1.19) to 5.1.63
 
 
 SUTRA = SutraRecord(
@@ -45,6 +69,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "तस्य वापः",
     why_dev               = "(सूत्रम् 5.1.45) तस्य वापः।",
     anuvritti_from        = ('5.1.19',),
+    also_vidhi     = True,          # the loop opens this sense-frame from the speaker's taddhitArtha
     cond                  = cond,
     act                   = act,
 )

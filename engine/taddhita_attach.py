@@ -66,6 +66,7 @@ def _only_ok(only: dict | None, t: Term) -> bool:
     flat = "".join(v.slp1 for v in t.varnas)
     name = t.meta.get("upadesha_slp1") or flat
     return (name in only.get("stems", ()) or any(flat.endswith(f) for f in only.get("final", ()))
+            or any(flat.endswith(tail) and gana.in_gana(g, flat[:-len(tail)]) for g, tail in only.get("gana_tail", ()))
             or any(gana.in_gana_of_sutra(g, name) for g in only.get("gana", ())) or any(f"lex:{x}" in t.tags for x in only.get("tag", ())))
 
 
@@ -99,3 +100,19 @@ def default_site(state: State, dflt: str, ids: tuple[str, str] | None = None):
 def group_open(state: State, dflt: str) -> bool:
     """Some sense frame of the group whose default is ``dflt`` is open: its specials apply in every one of its senses (5.1.2 – 4 in the cha group)."""
     return any(e.get("dflt") == dflt and e.get("artha") for e in state.adhikara_stack)
+
+
+def sense_in(state: State, *ids: str) -> bool:
+    """Some sense frame opened by one of these sūtras is open: the pratyaya sūtras after it read it as the anuvṛtti of that sense (5.1.41 in 5.1.38, 42, 43)."""
+    return any(e.get("artha") and e.get("id") in ids for e in state.adhikara_stack)
+
+
+def arhiya_site(state: State, *ids: str, **kw):
+    """:func:`taddhita_site` in the senses opened by ``ids``."""
+    return taddhita_site(state, None, ok=sense_in(state, *ids), **kw)
+
+
+def open_sense(state: State, sid: str, value: str) -> bool:
+    """The speaker's ``taddhitArtha`` is the sense this opener teaches and its frame is not yet open (a stem ends the tape)."""
+    from engine.vivaksha import vivaksita
+    return stem_ends_tape(state) and vivaksita(state, "taddhitArtha", value) and not any(e.get("id") == sid for e in state.adhikara_stack)
