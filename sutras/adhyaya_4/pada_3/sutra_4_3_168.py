@@ -6,6 +6,7 @@ Padaccheda: कंसीय-परशव्ययोः यञ्-अञौ ल�
 कंसीयपरशव्ययोर्यञञौ लुक् च (4.3.168)
 Pāṭha: ashtadhyayi.com data.txt row i=43168 (Art. 14).
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra

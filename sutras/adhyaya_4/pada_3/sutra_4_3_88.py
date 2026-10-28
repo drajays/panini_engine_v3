@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "4_3_88_SiSukranda_88"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("4.3.88", state, "4.1.76"):
@@ -27,11 +27,34 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "4.3.88"
     return state
+
+
+
+from phonology import mk
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vivaksha import vivaksita
+from engine.vikalpa import policy_pick
+def _site(state: State):
+    return taddhita_site(state, "granTa", stems=frozenset({"SiSukranda", "yamasaBa", "indrajanana"}))
+
+
+def _new_cond(state: State) -> bool:
+    return _site(state) is not None
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _new_cond(state):
+        return attach_taddhita(state, "Ca")
+    return _legacy_act(state)
 
 
 SUTRA = SutraRecord(
@@ -45,6 +68,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "शिशु-क्रन्द-यमसभ-द्वन्द्व-इन्द्रजनन-आदिभ्यः छः",
     why_dev               = "(सूत्रम् 4.3.88) शिशुक्रन्दयमसभद्वंद्वेन्द्रजननादिभ्यश्छः।",
     anuvritti_from        = ('4.1.1',),
+    apavada_of     = ('4.1.83',),
     cond                  = cond,
     act                   = act,
 )

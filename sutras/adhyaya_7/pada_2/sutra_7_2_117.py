@@ -59,7 +59,10 @@ def _vrddhi_vowel(ch: str, state: State) -> Optional[str]:
         return "E"
     if ch in ("o", "O"):
         return "O"
-    # Vocalic r/l are intentionally not handled in this v3 slice.
+    if ch in ("f", "F"):
+        return "Ar"      # ṛ → ār (1.1.51 uraṇ raparaḥ: the r is the replacement's own)
+    if ch in ("x", "X"):
+        return "Al"
     return None
 
 
@@ -109,7 +112,7 @@ def act(state: State) -> State:
     if hit is None:
         return state
     ti, j, rep = hit
-    state.terms[ti].varnas[j] = mk(rep)
+    state.terms[ti].varnas[j:j + 1] = [mk(c) for c in rep]
     state.terms[ti].meta["7_2_117_adi_vrddhi_done"] = True
     return state
 

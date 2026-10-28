@@ -73,8 +73,17 @@ def _matches_tyup(state: State) -> bool:
     return True
 
 
+def _matches_vuY(state: State) -> bool:
+    """The taddhita vuñ (4.3.157 auṣṭrakaḥ): ñ goes as an it, the vu that is left becomes aka."""
+    if len(state.terms) < 2:
+        return False
+    pr = state.terms[-1]
+    return ("taddhita" in pr.tags and pr.meta.get("upadesha_slp1") == "vuY" and not pr.meta.get("vu_to_ak_done")
+            and "".join(v.slp1 for v in pr.varnas) == "vu")
+
+
 def _matches(state: State) -> bool:
-    return _matches_nvul(state) or _matches_lyuw(state) or _matches_tyup(state)
+    return _matches_nvul(state) or _matches_lyuw(state) or _matches_tyup(state) or _matches_vuY(state)
 
 
 def cond(state: State) -> bool:
@@ -87,6 +96,11 @@ def act(state: State) -> State:
         adesha_substitute_varnas(pr, "aka", state, sutra_id="7.1.1")
         pr.meta["vu_to_ak_done"] = True
         pr.meta["upadesha_slp1_original"] = pr.meta.get("upadesha_slp1_original", "Rvul")
+        return state
+    if _matches_vuY(state):
+        pr = state.terms[-1]
+        adesha_substitute_varnas(pr, "aka", state, sutra_id="7.1.1")
+        pr.meta["vu_to_ak_done"] = True
         return state
     if _matches_lyuw(state):
         pr = state.terms[-1]

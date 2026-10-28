@@ -6,6 +6,7 @@ Padaccheda: शिव-शम्-अरिष्टस्य करे
 शिवशमरिष्टस्य करे (4.4.143)
 Pāṭha: ashtadhyayi.com data.txt row i=44143 (Art. 14).
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra

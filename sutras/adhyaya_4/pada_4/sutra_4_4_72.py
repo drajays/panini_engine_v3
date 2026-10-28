@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "4_4_72_kaWinAntap_72"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("4.4.72", state, "4.1.76"):
@@ -27,11 +27,38 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "4.4.72"
     return state
+
+
+
+from engine.taddhita_attach import frame_open, stem_ends_tape, open_default_frame, default_site, taddhita_site, attach_taddhita
+from engine.vivaksha import vivaksita
+from engine.vikalpa import policy_pick
+def _sense(state: State):
+    if not stem_ends_tape(state):
+        return None
+    if vivaksita(state, "taddhitArtha", "vyavaharati") and not any(e.get("id") == "4.4.72" for e in state.adhikara_stack):
+        return ('vyavaharati', {'stems': ['prastAra', 'saMsTAna'], 'final': ['kaWina']})
+    return None
+
+
+def _new_cond(state: State) -> bool:
+    return _sense(state) is not None
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _sense(state) is not None:
+        v, only = _sense(state)
+        return open_default_frame(state, "4.4.72", v, "4.4.1", "4.4.74", only)
+    return _legacy_act(state)
 
 
 SUTRA = SutraRecord(
@@ -45,6 +72,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "कठिनान्त-प्रस्तार-संस्थानेषु व्यवहरति (क्रियापदम्)",
     why_dev               = "(सूत्रम् 4.4.72) कठिनान्तप्रस्तारसंस्थानेषु व्यवहरति।",
     anuvritti_from        = ('4.1.1',),
+    also_vidhi     = True,          # the loop opens this sense-frame / attaches from the speaker's taddhitArtha
     cond                  = cond,
     act                   = act,
 )

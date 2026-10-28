@@ -31,11 +31,31 @@ def _eligible(state: State) -> bool:
     return True
 
 
+def _in_site(state: State):
+    """नस्तद्धिते for the in-stems (pakṣin + ika → pākṣikaḥ): the ṭi (in) of a bha aṅga goes before a taddhita; 6.4.164 keeps it before a non-apatya aṇ.
+    SHORTCUT S21: the an-stems (rājan …) are not here — 6.4.134 / 6.4.137 still give their forms."""
+    for i in range(len(state.terms) - 1):
+        t, pr = state.terms[i], state.terms[i + 1]
+        if not ({"bha", "anga"} <= t.tags and "taddhita" in pr.tags and "pratyaya" in pr.tags) or t.meta.get("6_4_144_ti_done"):
+            continue
+        if len(t.varnas) < 3 or t.varnas[-1].slp1 != "n" or t.varnas[-2].slp1 != "i":
+            continue
+        if (pr.meta.get("upadesha_slp1") or "") == "aR" and not any(e.get("artha") == "apatya" for e in state.adhikara_stack):
+            continue                      # 6.4.164 inaṇyanapatye: prakṛtibhāva
+        return t
+    return None
+
+
 def cond(state: State) -> bool:
-    return _eligible(state)
+    return _eligible(state) or _in_site(state) is not None
 
 
 def act(state: State) -> State:
+    t = _in_site(state)
+    if t is not None:
+        del t.varnas[-2:]
+        t.meta["6_4_144_ti_done"] = True
+        return state
     if not _eligible(state):
         return state
     t0 = state.terms[0]

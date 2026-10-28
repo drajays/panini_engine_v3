@@ -6,6 +6,7 @@ Padaccheda: मत-जन-हलात् करण-जल्प-कर्षे
 मतजनहलात् करणजल्पकर्षेषु (4.4.97)
 Pāṭha: ashtadhyayi.com data.txt row i=44097 (Art. 14).
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra

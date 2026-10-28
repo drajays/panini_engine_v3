@@ -18,6 +18,7 @@ Citation (CONSTITUTION Art. 14)
   Cross-check — surface pinned by: tests/unit/test_kRtrimam_ktri_kf.py, tests/unit/test_paktrimam_ktri_qupac.py, tests/unit/test_uptrimam_ktri_quvap.py
   Reference record: sutra_ref_out/4_4_20.json
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra

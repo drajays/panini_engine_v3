@@ -43,7 +43,27 @@ VOCABULARY = {
     # the gender a bhāve kṛt is taught for (3.3.94 striyām ktin, 3.3.115 napuṃsake lyuṭ, 3.3.121 puṃsi)
     "linga": {"strI": ["striyAm"], "napuMsaka": ["napuMsake"], "puM": ["puMsi"]},
     # taddhita: the sense a pratyaya is taught in (the frame an ADHIKARA opens: 4.1.92 tasyāpatyam …) and, for apatya, which descendant (4.1.162 gotra, 4.1.163 yuvan)
-    "taddhitArtha": {"apatya": ["apatyam"], "rakta": ["raktaM"], "yukta": ["yuktaH"], "dfzwa": ["dfzwaM"], "parivfta": ["parivfto"], "udDfta": ["udDftamamatreByaH"], "saMskfta": ["saMskftaM"], "devatA": ["devatA"], "samUha": ["samUhaH"], "asti": ["astIti"], "nirvfta": ["nirvfttam"], "nivAsa": ["nivAsaH"], "adUraBava": ["adUraBavaH"], "Seza": ["Seze"], "prAyaBava": ["prAya"], "praBavati": ["praBavati"], "granTa": ["granTe"], "idam": ["idam"], "vikAra": ["vikAraH"], "jAta": ["jAtaH"], "Bava": ["BavaH"], "Agata": ["AgataH"]},
+    "taddhitArtha": {"apatya": ["apatyam"], "rakta": ["raktaM"], "yukta": ["yuktaH"], "dfzwa": ["dfzwaM"], "parivfta": ["parivfto"], "udDfta": ["udDftamamatreByaH"], "saMskfta": ["saMskftaM"], "devatA": ["devatA"], "samUha": ["samUhaH"], "asti": ["astIti"], "nirvfta": ["nirvfttam"], "nivAsa": ["nivAsaH"], "adUraBava": ["adUraBavaH"], "Seza": ["Seze"], "prAyaBava": ["prAya"], "praBavati": ["praBavati"], "granTa": ["granTe"], "idam": ["idam"], "vikAra": ["vikAraH"], "jAta": ["jAtaH"], "Bava": ["BavaH"], "Agata": ["AgataH"],
+        # 4.3.85 / 86 / 135: the senses that name their own word
+        "gacCatiPaTiDUta": ["paTidUtayoH"], "abhinizkrAmati": ["aBinizkrAmati"], "avayava": ["avayave"],
+        # 4.4.2 – 74 (ṭhak): the senses each sūtra names in its own words
+        "dIvyati": ["dIvyati"], "Kanati": ["Kanati"], "jayati": ["jayati"], "jita": ["jitam"], "tenasaMskfta": ["saMskftam"], "tenanirvfta": ["nirvftte"], "tarati": ["tarati"],
+        "carati": ["carati"], "jIvati": ["jIvati"], "harati": ["harati"], "saMsfzwa": ["saMsfzwe"], "upasikta": ["upasikte"], "vartate": ["vartate"],
+        "prayacCati": ["prayacCati"], "uYCati": ["uYCati"], "rakzati": ["rakzati"], "karoti": ["karoti"], "hanti": ["hanti"], "tizWati": ["tizWati"],
+        "DAvati": ["DAvati"], "gfhRAti": ["gfhRAti"], "eti": ["eti"], "samavEti": ["samavEti"], "paSyati": ["paSyati"], "Darmya": ["Darmyam"],
+        "avakraya": ["avakrayaH"], "paRya": ["paRyam"], "Silpa": ["Silpam"], "praharaRa": ["praharaRam"], "mati": ["matiH"], "SIla": ["SIlam"],
+        "vftta": ["vfttam"], "hita": ["hitam"], "dIyate": ["dIyate"], "niyukta": ["niyuktaH"], "aDyAyin": ["aDyAyini"], "vyavaharati": ["vyavaharati"],
+        "vasati": ["vasati"],
+        # 4.4.76 – 109 (yat)
+        "vahati": ["vahati"], "viDyati": ["viDyati"], "labDA": ["labDA"], "gata": ["gataH"], "dfSya": ["dfSyamasmin"], "Abarhi": ["Abarhi"],
+        "saMyukta": ["saMyukte"], "tArya": ["tArya"], "tulya": ["tulya"], "prApya": ["prApya"], "vaDya": ["vaDya"], "AnAmya": ["AnAmya"],
+        "sama": ["sama"], "samita": ["samita"], "sammita": ["sammitezu"], "anapeta": ["saMjYAyAmanapete"], "nirmita": ["nirmite", "nirmitaH"],
+        "priya": ["priyaH"], "sADu": ["sADuH"], "vAsI": ["vAsI"], "Sayita": ["SayitaH"]},
+    "arthaViSeSa": {"garhya": ["garhyam"], "saMjYA": ["saMjYAyAm"]},
+    # 4.3.3: the yuṣmad / asmad that speaks of one person
+    "ekavacana": {"ekavacana": ["ekavacane"]},
+    # inside the vikāra group (4.3.134 – 168): which vikāra the speaker means
+    "vikAraBeda": {"purIza": ["purIze"], "saMjYA": ["saMjYAyAm"], "puroqASa": ["puroqASe"], "parimARa": ["parimARe"], "mAna": ["mAne"], "Pala": ["Pale"]},
     "apatyaBeda": {"gotra": ["gotre", "gotrApatye"], "yuvan": ["yuni"]},
     "tAcCIlya": {"tAcCIlya": ["tAcCIlye"]}, "AtmamAna": {"AtmamAna": ["AtmamAne"]},
     # ashtadhyayi.com spells the 3.4.21 pada कर्त्तृ (samAnakarttfkayoH); 3.1.7 and 3.3.158 have one t

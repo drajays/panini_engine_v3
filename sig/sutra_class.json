@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-23T23:38:27+00:00",
+ "generated_at": "2026-10-28T05:42:42+00:00",
  "min_mentions": 5,
  "rows": [
   {
@@ -506,7 +506,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 2,
+   "mentions": 3,
    "status": "confident_structural"
   },
   {
@@ -3171,8 +3171,8 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 0,
-   "status": "pending_structural"
+   "mentions": 1,
+   "status": "confident_structural"
   },
   {
    "id": "1.4.4",
@@ -3366,7 +3366,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 21,
+   "mentions": 22,
    "status": "confident_structural"
   },
   {
@@ -5745,7 +5745,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 3,
+   "mentions": 4,
    "status": "gate_only"
   },
   {
@@ -8007,7 +8007,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 11,
+   "mentions": 12,
    "status": "confident"
   },
   {
@@ -8930,7 +8930,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 30,
+   "mentions": 31,
    "status": "confident"
   },
   {
@@ -8943,7 +8943,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 1,
+   "mentions": 2,
    "status": "working"
   },
   {
@@ -8995,7 +8995,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 8,
+   "mentions": 9,
    "status": "confident"
   },
   {
@@ -9047,8 +9047,8 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 4,
-   "status": "working"
+   "mentions": 5,
+   "status": "confident"
   },
   {
    "id": "3.1.78",
@@ -9073,7 +9073,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 5,
+   "mentions": 6,
    "status": "confident"
   },
   {
@@ -9099,7 +9099,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 1,
+   "mentions": 2,
    "status": "working"
   },
   {
@@ -9242,8 +9242,8 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 0,
-   "status": "pending_structural"
+   "mentions": 1,
+   "status": "confident_structural"
   },
   {
    "id": "3.1.93",
@@ -9281,7 +9281,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "pending_structural"
   },
   {
@@ -9294,7 +9294,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 2,
+   "mentions": 3,
    "status": "working"
   },
   {
@@ -9307,7 +9307,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 8,
+   "mentions": 9,
    "status": "confident_structural"
   },
   {
@@ -9320,7 +9320,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -9372,7 +9372,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -9385,7 +9385,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -9463,7 +9463,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 3,
    "status": "unexercised"
   },
   {
@@ -9476,7 +9476,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -9489,7 +9489,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -9502,7 +9502,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -9515,7 +9515,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -9541,7 +9541,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -9554,7 +9554,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -9606,7 +9606,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -9619,7 +9619,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -9658,7 +9658,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -9671,7 +9671,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -9684,7 +9684,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -9775,8 +9775,8 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 3,
-   "status": "working"
+   "mentions": 6,
+   "status": "confident"
   },
   {
    "id": "3.1.134",
@@ -9801,7 +9801,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 1,
+   "mentions": 3,
    "status": "working"
   },
   {
@@ -9892,7 +9892,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 3,
    "status": "unexercised"
   },
   {
@@ -9905,7 +9905,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -10009,7 +10009,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -10022,7 +10022,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -10035,7 +10035,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 1,
+   "mentions": 3,
    "status": "working"
   },
   {
@@ -10204,7 +10204,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "working"
   },
   {
@@ -10217,7 +10217,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -10256,7 +10256,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -10490,7 +10490,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -11010,7 +11010,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -11075,7 +11075,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 3,
    "status": "unexercised"
   },
   {
@@ -11101,7 +11101,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -11218,7 +11218,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -11244,7 +11244,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -11322,8 +11322,8 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 3,
-   "status": "working"
+   "mentions": 6,
+   "status": "confident"
   },
   {
    "id": "3.2.103",
@@ -11608,7 +11608,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -11621,7 +11621,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -11634,7 +11634,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -11647,7 +11647,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "pending_structural"
   },
   {
@@ -11660,7 +11660,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -11673,7 +11673,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -11699,7 +11699,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 3,
    "status": "unexercised"
   },
   {
@@ -11712,7 +11712,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -11725,7 +11725,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 3,
    "status": "unexercised"
   },
   {
@@ -12564,14 +12564,14 @@
    "id": "3.3.10",
    "pada": "3.3",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": false,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": true,
-   "mentions": 0,
-   "status": "unexercised"
+   "mentions": 2,
+   "status": "working"
   },
   {
    "id": "3.3.11",
@@ -12674,7 +12674,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 8,
+   "mentions": 10,
    "status": "confident_structural"
   },
   {
@@ -13181,7 +13181,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -13610,7 +13610,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -13662,7 +13662,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 8,
+   "mentions": 10,
    "status": "confident_structural"
   },
   {
@@ -13779,7 +13779,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -13935,7 +13935,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "pending_structural"
   },
   {
@@ -14078,7 +14078,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -15599,7 +15599,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 2,
+   "mentions": 3,
    "status": "gate_only"
   },
   {
@@ -15638,7 +15638,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -16301,7 +16301,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 11,
+   "mentions": 14,
    "status": "confident"
   },
   {
@@ -16314,7 +16314,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -16327,7 +16327,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -16444,7 +16444,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 0,
+   "mentions": 4,
    "status": "working"
   },
   {
@@ -17328,7 +17328,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 20,
+   "mentions": 22,
    "status": "confident_structural"
   },
   {
@@ -17341,7 +17341,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -17354,7 +17354,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -17367,7 +17367,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -17445,7 +17445,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 21,
+   "mentions": 22,
    "status": "confident_structural"
   },
   {
@@ -17484,7 +17484,7 @@
    "invoked": true,
    "moved": true,
    "cited": false,
-   "mentions": 4,
+   "mentions": 5,
    "status": "working"
   },
   {
@@ -17497,7 +17497,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -17562,7 +17562,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -17601,7 +17601,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -17614,7 +17614,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 1,
+   "mentions": 2,
    "status": "working"
   },
   {
@@ -17705,7 +17705,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -18043,7 +18043,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -18576,7 +18576,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 1,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -18589,7 +18589,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -18602,7 +18602,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -18654,7 +18654,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -18667,7 +18667,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -18680,7 +18680,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -18693,7 +18693,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -18706,7 +18706,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -18719,7 +18719,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -18745,7 +18745,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -18875,7 +18875,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -18953,7 +18953,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -19044,7 +19044,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -19057,7 +19057,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -19122,7 +19122,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -19434,7 +19434,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -19473,7 +19473,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 3,
+   "mentions": 4,
    "status": "gate_only"
   },
   {
@@ -19707,7 +19707,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -19720,7 +19720,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -19759,7 +19759,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 14,
+   "mentions": 16,
    "status": "confident_structural"
   },
   {
@@ -19772,7 +19772,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 3,
    "status": "unexercised"
   },
   {
@@ -19837,7 +19837,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -19915,7 +19915,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -20045,7 +20045,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 12,
+   "mentions": 15,
    "status": "gate_only"
   },
   {
@@ -20357,7 +20357,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -20461,7 +20461,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 4,
    "status": "unexercised"
   },
   {
@@ -20474,7 +20474,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -20487,7 +20487,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -20591,7 +20591,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -20773,7 +20773,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 1,
+   "mentions": 2,
    "status": "working"
   },
   {
@@ -20786,7 +20786,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -20955,7 +20955,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -20994,7 +20994,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -21163,7 +21163,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -21501,7 +21501,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -21540,7 +21540,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -21553,7 +21553,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -21566,7 +21566,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -21579,7 +21579,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -21592,7 +21592,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22008,7 +22008,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22190,7 +22190,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 5,
+   "mentions": 6,
    "status": "gate_only"
   },
   {
@@ -22203,7 +22203,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -22216,7 +22216,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -22229,7 +22229,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22242,7 +22242,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "working"
   },
   {
@@ -22281,7 +22281,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22294,7 +22294,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22307,7 +22307,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22320,7 +22320,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22333,7 +22333,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22346,7 +22346,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22359,7 +22359,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22372,7 +22372,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22385,7 +22385,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22424,7 +22424,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22450,7 +22450,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22489,7 +22489,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22502,7 +22502,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22515,7 +22515,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22528,7 +22528,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22541,7 +22541,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22554,7 +22554,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22580,7 +22580,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22593,7 +22593,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22645,7 +22645,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 3,
    "status": "pending_structural"
   },
   {
@@ -22658,7 +22658,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -22671,7 +22671,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22684,7 +22684,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22697,7 +22697,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22710,7 +22710,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22723,7 +22723,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22749,7 +22749,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22762,7 +22762,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22775,7 +22775,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22788,7 +22788,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22801,7 +22801,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22814,7 +22814,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22827,7 +22827,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22840,7 +22840,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22853,7 +22853,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22866,7 +22866,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22879,7 +22879,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22905,7 +22905,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22931,7 +22931,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22957,7 +22957,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22970,7 +22970,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22983,7 +22983,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22996,7 +22996,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23022,7 +23022,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23035,7 +23035,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23048,7 +23048,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23061,7 +23061,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23074,7 +23074,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23087,7 +23087,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23100,7 +23100,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23113,7 +23113,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23126,7 +23126,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23139,7 +23139,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23178,7 +23178,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23191,7 +23191,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23204,7 +23204,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23217,7 +23217,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23230,7 +23230,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23243,7 +23243,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23256,7 +23256,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23269,7 +23269,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23282,7 +23282,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23295,7 +23295,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23308,7 +23308,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23347,7 +23347,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23360,7 +23360,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23373,7 +23373,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23386,7 +23386,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23399,7 +23399,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23412,7 +23412,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23425,7 +23425,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23438,7 +23438,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23477,7 +23477,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23503,7 +23503,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23516,7 +23516,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23529,7 +23529,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23542,7 +23542,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23568,7 +23568,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23581,7 +23581,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23594,7 +23594,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23607,7 +23607,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 8,
+   "mentions": 11,
    "status": "confident_structural"
   },
   {
@@ -23620,7 +23620,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23633,7 +23633,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23646,7 +23646,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23659,7 +23659,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23672,7 +23672,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23685,7 +23685,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23698,7 +23698,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23711,7 +23711,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23724,7 +23724,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23737,7 +23737,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23750,7 +23750,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23763,7 +23763,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23776,7 +23776,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23802,7 +23802,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23815,7 +23815,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23828,7 +23828,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23841,7 +23841,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23854,7 +23854,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23919,7 +23919,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23932,7 +23932,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23945,7 +23945,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23958,7 +23958,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23971,7 +23971,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23984,7 +23984,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -23997,7 +23997,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24049,7 +24049,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -32603,7 +32603,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 19,
+   "mentions": 20,
    "status": "confident"
   },
   {
@@ -32741,13 +32741,13 @@
    "pada": "6.1",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 2,
+   "status": "unexercised"
   },
   {
    "id": "6.1.80",
@@ -33032,7 +33032,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 45,
+   "mentions": 46,
    "status": "confident"
   },
   {
@@ -38076,7 +38076,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 1,
+   "mentions": 2,
    "status": "working"
   },
   {
@@ -39051,20 +39051,20 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 4,
-   "status": "working"
+   "mentions": 6,
+   "status": "confident"
   },
   {
    "id": "6.4.4",
    "pada": "6.4",
    "type": "PRATISHEDHA",
-   "exempt": true,
-   "placeholder": true,
+   "exempt": false,
+   "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "pending_structural"
   },
   {
@@ -39454,7 +39454,7 @@
    "invoked": true,
    "moved": true,
    "cited": false,
-   "mentions": 3,
+   "mentions": 4,
    "status": "working"
   },
   {
@@ -39852,13 +39852,13 @@
    "pada": "6.4",
    "type": "VIDHI",
    "exempt": true,
-   "placeholder": true,
+   "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
-   "status": "placeholder"
+   "mentions": 1,
+   "status": "unexercised"
   },
   {
    "id": "6.4.66",
@@ -40735,14 +40735,14 @@
    "id": "6.4.133",
    "pada": "6.4",
    "type": "VIDHI",
-   "exempt": true,
-   "placeholder": true,
+   "exempt": false,
+   "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "placeholder"
+   "status": "working"
   },
   {
    "id": "6.4.134",
@@ -40871,7 +40871,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 1,
+   "mentions": 2,
    "status": "working"
   },
   {
@@ -40910,7 +40910,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 5,
+   "mentions": 7,
    "status": "confident"
   },
   {
@@ -40936,7 +40936,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 17,
+   "mentions": 18,
    "status": "confident"
   },
   {
@@ -41300,7 +41300,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 5,
+   "mentions": 7,
    "status": "confident"
   },
   {
@@ -41313,7 +41313,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 28,
+   "mentions": 29,
    "status": "confident"
   },
   {
@@ -41970,14 +41970,14 @@
    "id": "7.1.53",
    "pada": "7.1",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "7.1.54",
@@ -41996,14 +41996,14 @@
    "id": "7.1.55",
    "pada": "7.1",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "7.1.56",
@@ -42197,7 +42197,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 6,
+   "mentions": 7,
    "status": "confident"
   },
   {
@@ -42301,7 +42301,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "pending_structural"
   },
   {
@@ -42320,14 +42320,14 @@
   {
    "id": "7.1.80",
    "pada": "7.1",
-   "type": "VIDHI",
+   "type": "VIBHASHA",
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -42340,21 +42340,21 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
    "id": "7.1.82",
    "pada": "7.1",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "7.1.83",
@@ -42425,27 +42425,27 @@
    "id": "7.1.88",
    "pada": "7.1",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "7.1.89",
    "pada": "7.1",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "7.1.90",
@@ -42509,8 +42509,8 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 4,
-   "status": "working"
+   "mentions": 5,
+   "status": "confident"
   },
   {
    "id": "7.1.95",
@@ -42555,27 +42555,27 @@
    "id": "7.1.98",
    "pada": "7.1",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "7.1.99",
    "pada": "7.1",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "7.1.100",
@@ -43692,7 +43692,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -43907,27 +43907,27 @@
    "id": "7.2.99",
    "pada": "7.2",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "7.2.100",
    "pada": "7.2",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "7.2.101",
@@ -44147,7 +44147,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 17,
+   "mentions": 18,
    "status": "confident"
   },
   {
@@ -44732,7 +44732,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -44810,7 +44810,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 3,
+   "mentions": 4,
    "status": "working"
   },
   {
@@ -44836,7 +44836,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 0,
+   "mentions": 1,
    "status": "working"
   },
   {
@@ -45252,7 +45252,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 65,
+   "mentions": 66,
    "status": "confident"
   },
   {
@@ -45525,7 +45525,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 3,
+   "mentions": 4,
    "status": "working"
   },
   {
@@ -45538,7 +45538,7 @@
    "invoked": true,
    "moved": true,
    "cited": false,
-   "mentions": 1,
+   "mentions": 2,
    "status": "working"
   },
   {
@@ -45551,7 +45551,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 1,
+   "mentions": 2,
    "status": "working"
   },
   {
@@ -45629,7 +45629,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 5,
+   "mentions": 6,
    "status": "confident"
   },
   {
@@ -45692,10 +45692,10 @@
    "placeholder": false,
    "stub_gloss": true,
    "invoked": true,
-   "moved": true,
+   "moved": false,
    "cited": false,
    "mentions": 1,
-   "status": "working"
+   "status": "gate_only"
   },
   {
    "id": "7.3.119",
@@ -47979,7 +47979,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -48044,7 +48044,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -48253,10 +48253,10 @@
    "placeholder": false,
    "stub_gloss": false,
    "invoked": true,
-   "moved": true,
+   "moved": false,
    "cited": true,
    "mentions": 1,
-   "status": "working"
+   "status": "gate_only"
   },
   {
    "id": "8.2.25",
@@ -48365,15 +48365,15 @@
   {
    "id": "8.2.33",
    "pada": "8.2",
-   "type": "VIDHI",
-   "exempt": true,
+   "type": "VIBHASHA",
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "8.2.34",
@@ -48681,7 +48681,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -48743,14 +48743,14 @@
    "id": "8.2.62",
    "pada": "8.2",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "8.2.63",
@@ -48873,14 +48873,14 @@
    "id": "8.2.72",
    "pada": "8.2",
    "type": "VIDHI",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "8.2.73",
@@ -48967,7 +48967,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -49717,15 +49717,15 @@
   {
    "id": "8.3.29",
    "pada": "8.3",
-   "type": "VIDHI",
-   "exempt": true,
+   "type": "VIBHASHA",
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
-   "moved": false,
+   "invoked": true,
+   "moved": true,
    "cited": false,
    "mentions": 0,
-   "status": "unexercised"
+   "status": "working"
   },
   {
    "id": "8.3.30",
@@ -50127,7 +50127,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 2,
+   "mentions": 4,
    "status": "working"
   },
   {
@@ -50774,7 +50774,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -51333,7 +51333,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,
@@ -51427,20 +51427,20 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 13,
+   "mentions": 14,
    "status": "confident"
   },
   {
    "id": "8.4.42",
    "pada": "8.4",
    "type": "PRATISHEDHA",
-   "exempt": true,
+   "exempt": false,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
-   "mentions": 1,
+   "mentions": 2,
    "status": "pending_structural"
   },
   {
@@ -51492,8 +51492,8 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 4,
-   "status": "working"
+   "mentions": 5,
+   "status": "confident"
   },
   {
    "id": "8.4.47",
@@ -51505,7 +51505,7 @@
    "invoked": true,
    "moved": true,
    "cited": true,
-   "mentions": 8,
+   "mentions": 16,
    "status": "confident"
   },
   {
@@ -51515,7 +51515,7 @@
    "exempt": true,
    "placeholder": false,
    "stub_gloss": true,
-   "invoked": false,
+   "invoked": true,
    "moved": false,
    "cited": false,
    "mentions": 0,

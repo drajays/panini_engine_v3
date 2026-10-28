@@ -26,6 +26,7 @@ Citation (CONSTITUTION Art. 14)
   Cross-check — surface pinned by: tests/unit/test_dADikam_taddhita_split_prakriyas.py
   Reference record: sutra_ref_out/4_4_135.json
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra

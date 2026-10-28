@@ -11,17 +11,35 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return not any(e.get("id") == "4.4.75" for e in state.adhikara_stack)
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.adhikara_stack.append({
         "id"        : "4.4.75",
         "scope_end" : "5.1.136",
         "text_dev"  : 'प्राग्घिताद्यत्',
     })
     return state
+
+
+
+from engine.taddhita_attach import frame_open, stem_ends_tape, open_default_frame, default_site, taddhita_site, attach_taddhita
+from engine.vivaksha import vivaksita
+from engine.vikalpa import policy_pick
+def _new_cond(state: State) -> bool:
+    return default_site(state, "4.4.75") is not None
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _new_cond(state):
+        return attach_taddhita(state, "yat")
+    return _legacy_act(state)
 
 
 SUTRA = SutraRecord(
@@ -34,6 +52,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "प्राक् / हितात् / यत्",
     why_dev        = "यदधिकारः प्राग्घितीयः — ४.४.७५ तः ५.१.१३६ पर्यन्तम्।",
     anuvritti_from = (),
+    also_vidhi     = True,          # the loop opens this sense-frame / attaches from the speaker's taddhitArtha
     cond           = cond,
     act            = act,
     adhikara_scope = ("4.4.75", "5.1.136"),

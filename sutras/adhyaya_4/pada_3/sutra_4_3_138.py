@@ -41,11 +41,11 @@ def _matches(state: State) -> bool:
     return True
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return _matches(state)
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     if not _matches(state):
         return state
 
@@ -70,6 +70,32 @@ def act(state: State) -> State:
     return state
 
 
+
+from phonology import mk
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vivaksha import vivaksita
+from engine.vikalpa import policy_pick
+def _site(state: State):
+    return taddhita_site(state, "vikAra", stems=frozenset({"trapu", "jatu"}))
+
+
+def _new_cond(state: State) -> bool:
+    return _site(state) is not None
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _new_cond(state):
+        state = attach_taddhita(state, "aR")
+        state.terms[-2].varnas.append(mk("z"))          # ṣuk, a kit āgama: the stem's final (1.1.46)
+        state.terms[-2].tags.discard("upadesha")
+        return state
+    return _legacy_act(state)
+
+
 SUTRA = SutraRecord(
     sutra_id="4.3.138",
     sutra_type=SutraType.VIDHI,
@@ -81,6 +107,7 @@ SUTRA = SutraRecord(
     padaccheda_dev="त्रपु-जतु-नोः षुक्",
     why_dev="त्रपु/जतु-शब्दयोः तद्धिते षुक्-आगमः (विकार-अर्थे, अण्-सह)।",
     anuvritti_from=("4.3.134",),
+    apavada_of     = ('4.1.83', '4.3.139'),
     cond=cond,
     act=act,
 )

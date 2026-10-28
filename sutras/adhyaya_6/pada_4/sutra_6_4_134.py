@@ -55,6 +55,8 @@ def _find_upadhā_a(state: State):
             continue
         if vs[-2].slp1 != "a":
             continue
+        if anga.meta.get("6_4_148_lopa_done"):
+            continue                      # the aṅga's own final a went by 6.4.148 (vaitan-ika): it is still a-final (1.1.56), not an an-aṅga
         if samyogad_vamanta([v.slp1 for v in vs]):
             continue                              # 6.4.137 न संयोगाद्वमन्तात्
         return (ti, len(vs) - 2)

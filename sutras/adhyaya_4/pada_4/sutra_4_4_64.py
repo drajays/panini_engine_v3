@@ -6,6 +6,7 @@ Padaccheda: बहु-अच्-पूर्वपदात् ठच्
 बह्वच्पूर्वपदाट्ठच् (4.4.64)
 Pāṭha: ashtadhyayi.com data.txt row i=44064 (Art. 14).
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra

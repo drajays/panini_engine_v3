@@ -42,11 +42,11 @@ def _eligible(state: State) -> bool:
     return True
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return _eligible(state)
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     if not _eligible(state):
         return state
     yat = Term(
@@ -59,6 +59,33 @@ def act(state: State) -> State:
     return state
 
 
+
+from engine.taddhita_attach import frame_open, stem_ends_tape, open_default_frame, default_site, taddhita_site, attach_taddhita
+from engine.vivaksha import vivaksita
+from engine.vikalpa import policy_pick
+def _sense(state: State):
+    if not stem_ends_tape(state):
+        return None
+    if vivaksita(state, "taddhitArtha", "sADu") and not any(e.get("id") == "4.4.98" for e in state.adhikara_stack) and vivaksita(state, "arthaViSeSa", "saMjYA"):
+        return ('sADu', None)
+    return None
+
+
+def _new_cond(state: State) -> bool:
+    return _sense(state) is not None
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _sense(state) is not None:
+        v, only = _sense(state)
+        return open_default_frame(state, "4.4.98", v, "4.4.75", "5.1.4", only)
+    return _legacy_act(state)
+
+
 SUTRA = SutraRecord(
     sutra_id       = "4.4.98",
     sutra_type     = SutraType.VIDHI,
@@ -69,6 +96,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "तत्र साधुः",
     why_dev        = "तत्रार्थे साधौ यत्-प्रत्ययः (सामसु साधुः → सामन्यः)।",
     anuvritti_from = ("4.4.75",),
+    also_vidhi     = True,          # the loop opens this sense-frame / attaches from the speaker's taddhitArtha
     cond           = cond,
     act            = act,
 )

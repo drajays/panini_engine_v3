@@ -6,6 +6,7 @@ Padaccheda: तद्वान् आसाम् उपधानः मन्�
 तद्वानासामुपधानो मन्त्र इतीष्टकासु लुक् च मतोः (4.4.125)
 Pāṭha: ashtadhyayi.com data.txt row i=44125 (Art. 14).
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra

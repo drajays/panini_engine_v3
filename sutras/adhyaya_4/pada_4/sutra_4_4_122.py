@@ -6,6 +6,7 @@ Padaccheda: रेवती-जगती-हविष्याभ्यः प�
 रेवतीजगतीहविष्याभ्यः प्रशस्ये (4.4.122)
 Pāṭha: ashtadhyayi.com data.txt row i=44122 (Art. 14).
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra

@@ -94,7 +94,7 @@ def act(state: State) -> State:
     hit = _generic(state)
     if hit is not None and not _matches(state):
         ti, j, rep = hit
-        state.terms[ti].varnas[j] = mk(rep)
+        state.terms[ti].varnas[j:j + 1] = [mk(c) for c in rep]
         state.terms[ti].meta["7_2_117_adi_vrddhi_done"] = True
         return state
     if not _matches(state):

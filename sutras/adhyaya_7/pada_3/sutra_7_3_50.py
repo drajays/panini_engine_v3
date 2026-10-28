@@ -19,7 +19,7 @@ def _find(state: State) -> int | None:
     for i, t in enumerate(state.terms):
         if t.kind != "pratyaya" or "taddhita" not in t.tags:
             continue
-        if (t.meta.get("upadesha_slp1") or "").strip() not in ("Tak", "Wak", "WaY", "Wan"):      # ṭh- (SLP1 W); "Tak" is the older recipes' spelling
+        if (t.meta.get("upadesha_slp1") or "").strip() not in ("Tak", "Wak", "WaY", "Wan", "zWan", "zWal", "zWac", "wiWan"):      # ṭh- (SLP1 W); "Tak" is the older recipes' spelling
             continue
         if t.meta.get("7_3_50_Tak_to_ika_done"):
             continue

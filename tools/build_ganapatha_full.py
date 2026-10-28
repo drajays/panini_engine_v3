@@ -29,6 +29,8 @@ def main() -> int:
             if not w or "(" in w:
                 continue
             members.append(devanagari_to_slp1_flat(w))
+            if members[-1] == "tAlAdDanuzi":
+                members.append("tAla")          # the gaṇasūtra tālād dhanuṣi names its first member (S18: the dhanus restriction is not modelled)
         key = name_slp1 if name_slp1 not in out["ganas"] else f"{name_slp1}#{sutra}"      # two gaṇas may share a name (SarAdiH of 4.3.144 and of 6.3.120)
         out["ganas"][key] = {"sutra": sutra, "members": members, "akrti": "AkftigaRa" in (name_slp1 or "")}
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")

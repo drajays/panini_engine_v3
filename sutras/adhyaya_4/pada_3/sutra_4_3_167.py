@@ -6,6 +6,7 @@ Padaccheda: हरीतकी-आदिभ्यः च
 हरीतक्यादिभ्यश्च (4.3.167)
 Pāṭha: ashtadhyayi.com data.txt row i=43167 (Art. 14).
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra

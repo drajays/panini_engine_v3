@@ -6,6 +6,7 @@ Padaccheda: पूर्वैः कृतम् इनि-यौ च
 पूर्वैः कृतमिनियौ च (4.4.133)
 Pāṭha: ashtadhyayi.com data.txt row i=44133 (Art. 14).
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra

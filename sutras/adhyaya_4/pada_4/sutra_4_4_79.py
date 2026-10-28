@@ -6,6 +6,7 @@ Padaccheda: एकधुरात् लुक् च
 एकधुराल्लुक् च (4.4.79)
 Pāṭha: ashtadhyayi.com data.txt row i=44079 (Art. 14).
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
@@ -15,7 +16,7 @@ from engine.state import State
 _GATE_KEY: str = "4_4_79_ekaDurAllu_79"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("4.4.79", state, "4.1.76"):
@@ -27,11 +28,36 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "4.4.79"
     return state
+
+
+
+from engine.taddhita_attach import frame_open, stem_ends_tape, open_default_frame, default_site, taddhita_site, attach_taddhita
+from engine.vivaksha import vivaksita
+from engine.vikalpa import policy_pick
+def _attach(state: State):
+    if taddhita_site(state, "vahati", stems=frozenset(['ekaDurA'])) is not None:
+        return 'Ka'
+    return None
+
+
+def _new_cond(state: State) -> bool:
+    return _attach(state) is not None
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _attach(state) is not None:
+        up = _attach(state)
+        return attach_taddhita(state, up if isinstance(up, str) else up[0 if policy_pick(state, "4.4.79", len(up)) == 0 else 1])
+    return _legacy_act(state)
 
 
 SUTRA = SutraRecord(
@@ -45,6 +71,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "एकधुरात् लुक् च",
     why_dev               = "(सूत्रम् 4.4.79) एकधुराल्लुक् च।",
     anuvritti_from        = ('4.1.1',),
+    apavada_of     = ('4.4.75',),
     cond                  = cond,
     act                   = act,
 )

@@ -6,6 +6,7 @@ Padaccheda: सगर्भ-सयूथ-सनुतात् यन्
 सगर्भसयूथसनुताद्यन् (4.4.114)
 Pāṭha: ashtadhyayi.com data.txt row i=44114 (Art. 14).
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra

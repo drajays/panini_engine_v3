@@ -377,7 +377,7 @@
 },
 {
 "id": "1.4.3",
-"status": "pending_structural"
+"status": "confident_structural"
 },
 {
 "id": "1.4.5",
@@ -957,7 +957,7 @@
 },
 {
 "id": "3.1.77",
-"status": "working"
+"status": "confident"
 },
 {
 "id": "3.1.78",
@@ -989,7 +989,7 @@
 },
 {
 "id": "3.1.92",
-"status": "pending_structural"
+"status": "confident_structural"
 },
 {
 "id": "3.1.93",
@@ -1025,7 +1025,7 @@
 },
 {
 "id": "3.1.133",
-"status": "working"
+"status": "confident"
 },
 {
 "id": "3.1.134",
@@ -1113,7 +1113,7 @@
 },
 {
 "id": "3.2.102",
-"status": "working"
+"status": "confident"
 },
 {
 "id": "3.2.107",
@@ -1157,7 +1157,7 @@
 },
 {
 "id": "3.3.10",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "3.3.13",
@@ -2289,7 +2289,7 @@
 },
 {
 "id": "6.1.79",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.1.85",
@@ -2529,7 +2529,7 @@
 },
 {
 "id": "6.4.3",
-"status": "working"
+"status": "confident"
 },
 {
 "id": "6.4.4",
@@ -2677,7 +2677,7 @@
 },
 {
 "id": "6.4.65",
-"status": "placeholder"
+"status": "unexercised"
 },
 {
 "id": "6.4.66",
@@ -2869,7 +2869,7 @@
 },
 {
 "id": "6.4.133",
-"status": "placeholder"
+"status": "working"
 },
 {
 "id": "6.4.134",
@@ -3077,7 +3077,7 @@
 },
 {
 "id": "7.1.53",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.1.54",
@@ -3085,7 +3085,7 @@
 },
 {
 "id": "7.1.55",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.1.58",
@@ -3145,7 +3145,7 @@
 },
 {
 "id": "7.1.82",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.1.84",
@@ -3161,11 +3161,11 @@
 },
 {
 "id": "7.1.88",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.1.89",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.1.90",
@@ -3181,7 +3181,7 @@
 },
 {
 "id": "7.1.94",
-"status": "working"
+"status": "confident"
 },
 {
 "id": "7.1.95",
@@ -3189,11 +3189,11 @@
 },
 {
 "id": "7.1.98",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.1.99",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.1.100",
@@ -3405,11 +3405,11 @@
 },
 {
 "id": "7.2.99",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.2.100",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "7.2.101",
@@ -3673,7 +3673,7 @@
 },
 {
 "id": "7.3.118",
-"status": "working"
+"status": "gate_only"
 },
 {
 "id": "7.3.119",
@@ -3913,7 +3913,7 @@
 },
 {
 "id": "8.2.24",
-"status": "working"
+"status": "gate_only"
 },
 {
 "id": "8.2.25",
@@ -3949,7 +3949,7 @@
 },
 {
 "id": "8.2.33",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "8.2.34",
@@ -4005,7 +4005,7 @@
 },
 {
 "id": "8.2.62",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "8.2.63",
@@ -4033,7 +4033,7 @@
 },
 {
 "id": "8.2.72",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "8.2.73",
@@ -4141,7 +4141,7 @@
 },
 {
 "id": "8.3.29",
-"status": "unexercised"
+"status": "working"
 },
 {
 "id": "8.3.30",
@@ -4289,7 +4289,7 @@
 },
 {
 "id": "8.4.46",
-"status": "working"
+"status": "confident"
 },
 {
 "id": "8.4.47",

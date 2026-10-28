@@ -55,3 +55,29 @@ def attach_taddhita(state: State, upadesha_slp1: str) -> State:
         meta={"upadesha_slp1": upadesha_slp1},
     ))
     return state
+
+
+def _only_ok(only: dict | None, t: Term) -> bool:
+    """The stems a default pratyaya (4.4.1 ṭhak …) is taught for in a sense whose opener names them: any one of the listed stems, a final, a gaṇa, a lexical tag."""
+    if not only:
+        return True
+    flat = "".join(v.slp1 for v in t.varnas)
+    name = t.meta.get("upadesha_slp1") or flat
+    return (name in only.get("stems", ()) or any(flat.endswith(f) for f in only.get("final", ()))
+            or any(gana.in_gana_of_sutra(g, name) for g in only.get("gana", ())) or any(f"lex:{x}" in t.tags for x in only.get("tag", ())))
+
+
+def open_default_frame(state: State, sid: str, artha: str, dflt: str, group_end: str, only: dict | None = None) -> State:
+    """A sense of the 4.4.1 – 74 group (ṭhak) or 4.4.75 – 117 (yat): the sense frame, with the stems its opener limits the default to, and the default's own marker."""
+    state.adhikara_stack.append({"id": sid, "scope_end": group_end, "artha": artha, "dflt": dflt, "only": only})
+    if not any(e.get("id") == dflt for e in state.adhikara_stack):
+        state.adhikara_stack.append({"id": dflt, "scope_end": group_end, "text_dev": dflt})
+    return state
+
+
+def default_site(state: State, dflt: str):
+    """The stem Term when some sense frame of the group admits it: the default pratyaya of the group (ṭhak, yat) attaches."""
+    if not stem_ends_tape(state):
+        return None
+    t = state.terms[-1]
+    return t if any(e.get("dflt") == dflt and _only_ok(e.get("only"), t) for e in state.adhikara_stack) else None

@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "4_3_135_avayave_135"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("4.3.135", state, "4.1.76"):
@@ -27,11 +27,34 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "4.3.135"
     return state
+
+
+
+from engine.taddhita_attach import frame_open, stem_ends_tape
+from engine.vivaksha import vivaksita
+def _new_cond(state: State) -> bool:
+    return (stem_ends_tape(state) and vivaksita(state, "taddhitArtha", "avayava") and not frame_open(state, "avayava")
+            and any(x in state.terms[-1].tags for x in ("lex:prANi", "lex:ozaDi", "lex:vfkza")))
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _new_cond(state):
+        state.adhikara_stack.append({"id": "4.3.135", "scope_end": "4.3.168", "artha": "avayava", "text_dev": "avayava"})
+        if not frame_open(state, "vikAra"):
+            state.adhikara_stack.append({"id": "4.3.134", "scope_end": "4.3.168", "artha": "vikAra", "text_dev": "vikAra"})      # cakāra: vikāra too
+        if not frame_open(state, "Seza"):
+            state.adhikara_stack.append({"id": "4.2.92", "scope_end": "4.3.134", "artha": "Seza", "text_dev": "शेषे"})
+        return state
+    return _legacy_act(state)
 
 
 SUTRA = SutraRecord(
@@ -45,6 +68,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "अवयवे च प्राणि-ओषधि-वृक्षेभ्यः",
     why_dev               = "(सूत्रम् 4.3.135) अवयवे च प्राण्योषधिवृक्षेभ्यः।",
     anuvritti_from        = ('4.1.1',),
+    also_vidhi     = True,          # the loop opens this sense-frame / attaches from the speaker's taddhitArtha
     cond                  = cond,
     act                   = act,
 )

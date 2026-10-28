@@ -6,6 +6,7 @@ Padaccheda: नः उत्वत्-वध्र-बिल्वात्
 नोत्वद्वर्ध्रबिल्वात् (4.3.151)
 Pāṭha: ashtadhyayi.com data.txt row i=43151 (Art. 14).
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra

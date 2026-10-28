@@ -51,7 +51,10 @@ def cond(state: State) -> bool:
 
 def act(state: State) -> State:
     if _site(state) is not None:
-        return attach_taddhita(state, "Ca" if policy_pick(state, "4.3.1", 2) == 0 else "KaY")
+        pick = policy_pick(state, "4.3.1", 3)
+        if pick == 2:
+            return state                       # anyatarasyām: the aṇ of 4.1.83 stays a reading (tāvakaḥ, yauṣmākaḥ)
+        return attach_taddhita(state, "Ca" if pick == 0 else "KaY")
     return _legacy_act(state)
 
 

@@ -18,11 +18,16 @@ def _site(state: State):
 
 
 def _open(state: State) -> bool:
-    return not any(e.get("id") == "4.1.83" for e in state.adhikara_stack)
+    # once a sense of 4.4 (prāg dīvyataḥ ends at 4.4.2) has opened its default group, the adhikāra the dispatcher purged does not come back
+    return not any(e.get("id") == "4.1.83" or e.get("dflt") for e in state.adhikara_stack)
+
+
+def _live(state: State) -> bool:
+    return any(e.get("id") == "4.1.83" for e in state.adhikara_stack)
 
 
 def cond(state: State) -> bool:
-    return _open(state) or _site(state) is not None
+    return _open(state) or (_live(state) and _site(state) is not None)
 
 
 def act(state: State) -> State:

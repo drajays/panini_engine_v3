@@ -6,6 +6,7 @@ Padaccheda: ढः छन्दसि
 ढश्छन्दसि (4.4.106)
 Pāṭha: ashtadhyayi.com data.txt row i=44106 (Art. 14).
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra

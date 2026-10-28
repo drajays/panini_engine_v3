@@ -6,6 +6,7 @@ Padaccheda: क्रीत-वत् परिमाणात्
 क्रीतवत् परिमाणात् (4.3.156)
 Pāṭha: ashtadhyayi.com data.txt row i=43156 (Art. 14).
 """
+# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
