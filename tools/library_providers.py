@@ -14,6 +14,9 @@ Subhastini is the reading front door (docs/INTEGRATION_CLIENTS.md); it reads the
            source_url, has_words}
     item  {id, ref, kind, text, commentary_titles, passages?, commentaries?, links?}
 
+A provider with ``has_words`` also answers ``words(slug, sec, item_id)`` (word analysis + engine verdict per
+word) and ``find(slug, chapter, verse)`` (which item holds a numbered verse).
+
 A new source is a new provider class appended to ``PROVIDERS``. Providers:
 
 * ``as``  — Advaita Sharada (Sringeri), local cache only ("All rights reserved"): local_only = True.
@@ -117,6 +120,17 @@ class AdvaitaSharada:
 
 # ── Saṃsādhanī e-readers ──────────────────────────────────────────────────
 
+def _covers(sloka_id: str) -> set[int]:
+    """Verse numbers an e-reader item holds: ``001_002_003`` → {1, 2, 3}, ``004-006`` → {4, 5, 6}; dotted
+    sub-numbering (``1.2``) names no whole verse."""
+    out: set[int] = set()
+    for part in sloka_id.strip().split("_"):
+        ends = part.strip().split("-")
+        if all(x.isdigit() for x in ends):
+            out.update(range(int(ends[0]), int(ends[-1]) + 1))
+    return out
+
+
 class Samsaadhanii:
     id = "scl"
     rights = "Saṃsādhanī e-readers, University of Hyderabad (GPL-2.0); word analyses re-derived by the engine."
@@ -146,6 +160,39 @@ class Samsaadhanii:
             raise KeyError(item_id)
         return {"id": item_id, "ref": f"{sec}.{item_id}", "kind": "mula", "text": "\n".join(v["text"]),
                 "passages": [], "commentaries": [], "links": {"analysis": f"{READER}#{slug}/{sec}/{item_id}"}}
+
+    def words(self, slug: str, sec: str, item_id: str) -> dict:
+        """The e-reader's word analysis of one item, each word with the engine's verdict (``derived`` = re-derived)."""
+        rd = self._rd()
+        v = rd.verse(slug, sec, item_id)
+        out = []
+        for s in v["sentences"]:
+            by = {w["anvaya_no"]: w for w in s["words"]}
+            for w in s["words"]:
+                e, rel = w.get("engine") or {}, w.get("relation") or {}
+                out.append({
+                    "anvaya_no": w["anvaya_no"], "word": w["word_dev"], "kind": w["kind"], "morph": w["morph"],
+                    "status": e.get("status"), "produced": e.get("produced_dev"), "note": e.get("note"),
+                    "sutras": e.get("sutras") or [],
+                    "relation": rel and {"label": rel["label"], "sutras": rel.get("sutras") or [],
+                                         "head": (by.get(rel.get("target")) or {}).get("word_dev")},
+                    "vibhakti_check": w.get("vibhakti_check"),
+                    "samasa": w.get("samasa"), "hindi": w.get("hindi"), "english": w.get("english"),
+                })
+        return {"ref": f"{sec}.{item_id}", "text": "\n".join(v["text"]), "words": out, "counts": v["counts"],
+                "attribution": rd.ATTRIBUTION, "links": {"analysis": f"{READER}#{slug}/{sec}/{item_id}"}}
+
+    def find(self, slug: str, chapter: int, verse: int) -> tuple[str, str] | None:
+        """(section, item) holding verse ``verse`` of chapter ``chapter``: e-reader items group verses
+        (``001_002_003``, ``004-006``) and spell a chapter more than one way (``3`` / ``03``)."""
+        rd = self._rd()
+        for sec in rd.chapters(slug):
+            if not sec.isdigit() or int(sec) != chapter:
+                continue
+            for v in rd.verses(slug, sec):
+                if verse in _covers(v["sloka"]):
+                    return sec, v["sloka"]
+        return None
 
     def search(self, q: str, limit: int) -> list[dict]:
         hits = []
@@ -479,6 +526,23 @@ def section(work_id: str, sec: str) -> dict:
 def item(work_id: str, sec: str, item_id: str) -> dict:
     p, slug = provider_of(work_id)
     return {"work": work_id, "section": sec, **p.item(slug, sec, item_id)}
+
+
+def words(work_id: str, sec: str, item_id: str) -> dict:
+    """Word-by-word analysis of one item, engine-verified — only providers with ``has_words`` (``scl:``)."""
+    p, slug = provider_of(work_id)
+    if not hasattr(p, "words"):
+        raise KeyError(f"{work_id} has no word analysis")
+    return {"work": work_id, "section": sec, "item": item_id, **p.words(slug, sec, item_id)}
+
+
+def words_at(work_id: str, chapter: int, verse: int) -> dict:
+    """The analysis of the item holding chapter.verse — for a client that numbers verses itself (Subhastini's Gītā)."""
+    p, slug = provider_of(work_id)
+    hit = p.find(slug, chapter, verse) if hasattr(p, "find") else None
+    if hit is None:
+        raise KeyError(f"{work_id} {chapter}.{verse}")
+    return words(work_id, *hit)
 
 
 def passages(work_id: str) -> list[dict]:

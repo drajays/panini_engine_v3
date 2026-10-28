@@ -532,5 +532,60 @@
   "status": "released",
   "hotspots": [],
   "updated": 1792585076.790825
+ },
+ {
+  "id": "ui-shabdarupa-varna-view",
+  "agent": "cursor",
+  "scope": [
+   "webui/templates/shabdarupa.html",
+   "webui/static/transliterate.js"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792852745.749386
+ },
+ {
+  "id": "ui-lipi-everywhere",
+  "agent": "cursor",
+  "scope": [
+   "webui/static/lipi.js",
+   "webui/static/trace.js",
+   "webui/static/transliterate.js",
+   "webui/templates/base.html",
+   "webui/templates/shabdarupa.html",
+   "webui/templates/dhaturupa.html",
+   "webui/templates/derive.html"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792853615.6321962
+ },
+ {
+  "id": "vikalpa-thread-leak",
+  "agent": "cursor",
+  "scope": [
+   "engine/vikalpa.py",
+   "tests/unit/test_vikalpa_isolation.py"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792855545.445558
+ },
+ {
+  "id": "library-words-api",
+  "agent": "cursor",
+  "scope": [
+   "tools/library_providers.py",
+   "api/main.py",
+   "tests/unit/test_library_words.py",
+   "docs/INTEGRATION_CLIENTS.md"
+  ],
+  "out_of_scope": "",
+  "status": "released",
+  "hotspots": [],
+  "updated": 1792911356.279234
  }
 ]

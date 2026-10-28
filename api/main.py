@@ -762,6 +762,23 @@ def library_item(work_id: str, section: str, item_id: str, request: Request) -> 
     return _library(lib.item, work_id, section, item_id, request=request, work_id=work_id)
 
 
+@app.get("/v1/library/words/{work_id}", tags=["library"])
+def library_words_at(work_id: str, chapter: int = Query(..., ge=0), verse: int = Query(..., ge=0)) -> dict[str, Any]:
+    """The word analysis of the item holding ``chapter.verse`` (e-reader items group verses: 16.1–3 is one item)."""
+    from tools import library_providers as lib
+
+    return _library(lib.words_at, work_id, chapter, verse)
+
+
+@app.get("/v1/library/words/{work_id}/{section}/{item_id}", tags=["library"])
+def library_words(work_id: str, section: str, item_id: str) -> dict[str, Any]:
+    """Saṃsādhanī's word-by-word analysis of one item; every word carries the engine's verdict
+    (``status: derived`` = the engine re-derives the attested form from the tagged inputs)."""
+    from tools import library_providers as lib
+
+    return _library(lib.words, work_id, section, item_id)
+
+
 @app.get("/coverage", response_class=HTMLResponse, include_in_schema=False)
 def coverage_page() -> str:
     return (Path(__file__).parent / "coverage.html").read_text(encoding="utf-8")

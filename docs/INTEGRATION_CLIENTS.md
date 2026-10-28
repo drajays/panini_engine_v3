@@ -71,6 +71,7 @@ Nothing is copied between repos. A new source is a provider class in `tools/libr
 | `POST /v1/analyze` `{text, steps?}` | word / line / verse → per word `verified` · `split` · `avyaya` · `oracle_only` · `unknown`, readings with verdicts; `steps` attaches the forward derivations (core/analyze) |
 | `GET /v1/library` · `/v1/library/search?q=` | catalogue of every work the engine holds · search across them |
 | `GET /v1/library/works/{work}[/{section}[/{item}]]` | sections · items (text + commentary titles) · one item with passages and commentaries; `as:` works answer loopback clients only (403 otherwise) |
+| `GET /v1/library/words/{work}/{section}/{item}` · `/v1/library/words/{work}?chapter=&verse=` | `scl:` works: Saṃsādhanī's word analysis of an item (or of the item holding a numbered verse), each word with the engine's verdict — `status: derived` is the ✓; show `attribution` with it |
 
 Vidyut → engine mapping: dhātu `aupadeshika` with svara marks (`\`, `^`) removed is the
 engine upadeśa (`ga\mx~` → `gamx~`); `la~w`→`laT`, `viDili~N`→`liG`, `ASIrli~N`→`AsIrliG`
