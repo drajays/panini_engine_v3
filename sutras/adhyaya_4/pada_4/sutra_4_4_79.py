@@ -39,6 +39,7 @@ def _legacy_act(state: State) -> State:
 from engine.taddhita_attach import frame_open, stem_ends_tape, open_default_frame, default_site, taddhita_site, attach_taddhita
 from engine.vivaksha import vivaksita
 from engine.vikalpa import policy_pick
+from engine.luk import take_away
 def _attach(state: State):
     if taddhita_site(state, "vahati", stems=frozenset(['ekaDurA'])) is not None:
         return 'Ka'
@@ -56,7 +57,9 @@ def cond(state: State) -> bool:
 def act(state: State) -> State:
     if _attach(state) is not None:
         up = _attach(state)
-        return attach_taddhita(state, up if isinstance(up, str) else up[0 if policy_pick(state, "4.4.79", len(up)) == 0 else 1])
+        luk = policy_pick(state, "4.4.79", 2) == 1      # "ca": the kha, and (vacanasāmarthyāt, in one reading) its luk — ekadhurīṇaḥ, ekadhuraḥ
+        state = attach_taddhita(state, up if isinstance(up, str) else up[0])
+        return take_away(state, len(state.terms) - 1, "luk") if luk else state
     return _legacy_act(state)
 
 

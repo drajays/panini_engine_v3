@@ -23,6 +23,8 @@ No ``varṇa`` mutation (recipe gate only); **6.1.88** *vṛddhi* etc. are out o
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
+from engine.lexicon import LINGAS
+from engine.luk import lopa_kind
 from engine.state import State
 
 
@@ -54,11 +56,26 @@ def _site_prakriya_46(state: State) -> bool:
     return True
 
 
+_TAG = "yuktavad_linga:"
+
+
+def lup_stem(state: State):
+    """The stem whose pratyaya luk/ślu/lup named *lup* took away (engine.luk), until this sūtra has spoken."""
+    if len(state.terms) < 2 or any(x.startswith(_TAG) for x in state.terms[-2].tags):
+        return None
+    return state.terms[-2] if lopa_kind(state.terms[-1]) == "lup" else None
+
+
 def cond(state: State) -> bool:
-    return _site_prakriya_45(state) or _site_prakriya_46(state)
+    return lup_stem(state) is not None or _site_prakriya_45(state) or _site_prakriya_46(state)
 
 
 def act(state: State) -> State:
+    stem = lup_stem(state)
+    if stem is not None:
+        # the liṅga of the word is the prakṛti's (``derive_taddhita`` reads it); its vacana is the caller's vivakṣā — SHORTCUT S26 (see ledger)
+        stem.tags.add(_TAG + next((x for x in stem.tags if x in LINGAS), ""))
+        return state
     if _site_prakriya_45(state):
         state.samjna_registry["1.2.51_lupi_yuktavad_prakriya_45"] = True
         return state

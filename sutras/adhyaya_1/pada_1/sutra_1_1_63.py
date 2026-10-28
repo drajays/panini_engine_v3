@@ -32,8 +32,14 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-from sutras.adhyaya_1.pada_1.na_lumatangasya_1_1_63 import NA_LUMATANGASYA_GATE
-from sutras.adhyaya_1.pada_1.pratyayalakshanam_1_1_62 import (
+
+NA_LUMATANGASYA_GATE: Final[str] = "1.1.63_na_lumatangasya"
+
+
+def na_lumatangasya_paribhasha_is_active(state: State) -> bool:
+    return bool(state.paribhasha_gates.get(NA_LUMATANGASYA_GATE))
+
+from sutras.adhyaya_1.pada_1.sutra_1_1_62 import (
     pratyayalakshanam_paribhasha_is_active,
 )
 

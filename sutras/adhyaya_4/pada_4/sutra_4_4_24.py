@@ -5,34 +5,31 @@ Padaccheda: लवणात् लुक्
 
 लवणाल्लुक् (4.4.24)
 Pāṭha: ashtadhyayi.com data.txt row i=44024 (Art. 14).
+
+Kāśikā: संसृष्ट इत्यनेनोत्पन्नस्य ठको लवणशब्दाद् लुग् भवति — लवणः सूपः, लवणं शाकम्, लवणा यवागूः.
+The ṭhak (4.4.1) of the saṃsṛṣṭa sense (4.4.22) is taken away as *luk* (``engine.luk``): the word keeps the liṅga of the thing it qualifies, which is the speaker's vivakṣā.
 """
-# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine.luk   import live_taddhita, take_away
 from engine.state import State
+from engine.taddhita_attach import frame_open
 
-_GATE_KEY: str = "4_4_24_lavaRAlluk_24"
+
+def _site(state: State):
+    i = live_taddhita(state, upadesha=("Wak",))
+    if i is None or i == 0 or not frame_open(state, "saMsfzwa"):
+        return None
+    return i if state.terms[i - 1].meta.get("upadesha_slp1") == "lavaRa" else None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not adhikara_in_effect("4.4.24", state, "4.1.76"):
-        return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "4.4.24"
-    return state
+    return take_away(state, _site(state), "luk")
 
 
 SUTRA = SutraRecord(
@@ -46,6 +43,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "लवणात् लुक्",
     why_dev               = "(सूत्रम् 4.4.24) लवणाल्लुक्।",
     anuvritti_from        = ('4.1.1',),
+    apavada_of            = ('4.4.1',),
     cond                  = cond,
     act                   = act,
 )

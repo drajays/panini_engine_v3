@@ -1,40 +1,47 @@
 """
-1.2.49  लुक् तद्धितलुकि  —  PARIBHASHA (NIYAMA)
+1.2.49  लुक् तद्धितलुकि  —  VIDHI
 
-*Padaccheda:* **लुक्** / **तद्धितलुकि**
+*Padaccheda:* **लुक्** / **तद्धितलुकि**   (anuvṛtti: 1.2.48 striyoḥ — the strī-pratyaya of the prātipadika)
 
-When *luk* (zero-elision) of a *taddhita* suffix occurs, [the prior
-operation that required that taddhita] also undergoes *luk* — the luk-chain
-propagates back through the taddhita derivation.
+Kāśikā: when a taddhita takes luk, the strī-pratyaya before it takes luk too — āmalakyāḥ phalam āmalakam, badaram, kuvalam (4.3.163), jambu (jambūḥ, 4.3.165).
 
-Operational role (v3):
-  - Registers the gate ``1_2_49_luk_tadDitaluki`` in both
-    ``paribhasha_gates`` and ``samjna_registry``.
-  - Downstream recipes for taddhita-luk contexts check this gate to
-    determine whether the full luk-chain should propagate.
-
-Blindness:
-  - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
-    lakāra, surface Devanāgarī, data, or reference access (Art. 2).
-  - No arm flags; no paradigm coordinates.
+Engine: fires on a taddhita pratyaya that ``engine.luk`` took away *as luk* (not ślu/lup) while the stem ends in a strī-pratyaya (``origin_pratyaya:`` ṅīp, ṅīṣ,
+ṅīn, ṭāp, cāp, ūṅ).  SHORTCUT S25: a lexical stem is one Term, so the strī-pratyaya is not a Term of its own; its luk is done on the stem's last varṇa and the
+vowel the pratyaya had displaced comes back (ī, ā → a by the nimittāpāya of 6.4.148; ū → u) — "naimittikasyāpy apāyaḥ".
 Pāṭha: ashtadhyayi.com data.txt row i=12049 (Art. 14).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
+from engine.luk   import lopa_kind
 from engine.state import State
-from engine.subanta_eligibility import accent_paribhasha_gate_eligible
+from phonology.varna import parse_slp1_upadesha_sequence
 
-_GATE_KEY = "1_2_49_luk_tadDitaluki"
+_STRI = frozenset({"NIp", "NIz", "NIn", "wAp", "cAp", "qAp", "UN"})
+_BACK = {"I": "a", "A": "a", "U": "u"}            # S25: what the strī-pratyaya had displaced
+
+
+def _site(state: State):
+    if len(state.terms) < 2:
+        return None
+    pr, stem = state.terms[-1], state.terms[-2]
+    if pr.kind != "pratyaya" or "taddhita" not in pr.tags or lopa_kind(pr) != "luk":
+        return None
+    if not any(f"origin_pratyaya:{p}" in stem.tags for p in _STRI) or stem.meta.get("1.2.49_done"):
+        return None
+    if not stem.varnas or stem.varnas[-1].slp1 not in _BACK:
+        return None
+    return stem
 
 
 def cond(state: State) -> bool:
-    return accent_paribhasha_gate_eligible(state, _GATE_KEY)
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY] = True
+    stem = _site(state)
+    stem.varnas[-1:] = parse_slp1_upadesha_sequence(_BACK[stem.varnas[-1].slp1])
+    stem.meta["1.2.49_done"] = True
     return state
 
 
@@ -47,11 +54,8 @@ SUTRA = SutraRecord(
     samagra_slp1            = "luk tadDita-luki striyoH upasarjanasya",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
     samagra_dev             = "लुक् तद्धित-लुकि स्त्रियोः उपसर्जनस्य",
     padaccheda_dev          = "लुक् / तद्धितलुकि",
-    why_dev                 = (
-        "तद्धितप्रत्ययस्य लुकि जाते पूर्वस्य लुक्-श्रृङ्खलापि प्रवर्तते "
-        "— तद्धितलुक्-प्रसङ्गे लुग्-अनुवर्तनं सिद्ध्यति।"
-    ),
-    anuvritti_from          = (),
+    why_dev                 = "तद्धितस्य लुकि सति तत्पूर्वस्य स्त्रीप्रत्ययस्यापि लुक् (आमलक्याः फलम् → आमलकम्)।",
+    anuvritti_from          = ("1.2.48",),
     cond                    = cond,
     act                     = act,
 )

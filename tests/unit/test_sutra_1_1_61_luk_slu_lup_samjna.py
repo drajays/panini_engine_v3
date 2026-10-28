@@ -10,7 +10,7 @@ from engine.sutra_type import SutraType
 from engine.state import State, Term
 from phonology import mk
 
-from sutras.adhyaya_1.pada_1.luk_slu_lup_samjna_1_1_61 import (
+from sutras.adhyaya_1.pada_1.sutra_1_1_61 import (
     LUK_SLU_LUP_REGISTER_VALUE,
     LUK_SLU_LUP_SAMJNA_KEY,
     luk_slu_lup_samjna_is_registered,

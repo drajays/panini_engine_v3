@@ -1,39 +1,35 @@
 """
 4.3.166  लुप् च  —  VIDHI
 
-Padaccheda: लुप् च
-
-लुप् च (4.3.166)
+Sense: see the Kāśikā on this sūtra (`make brain S=4.3.166`); examples — jambūḥ, jambu, jāmbavam.
+(aṇ stays) and jambu (the aṇ of 4.1.83 taken by luk 4.3.163, the ūṅ by 1.2.49).
 Pāṭha: ashtadhyayi.com data.txt row i=43166 (Art. 14).
 """
-# DEFERRED: not yet real — reason, missing feature and the stage that finishes it are in docs/DEFERRED_SUTRAS.md
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from engine.gates import adhikara_in_effect
+from engine       import gana
+from engine.luk   import live_taddhita, take_away
 from engine.state import State
+from engine.taddhita_attach import frame_open
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
 
-_GATE_KEY: str = "4_3_166_lup_166"
+def _site(state: State):
+    i = live_taddhita(state, only_from=("4.3.165",))
+    if i is None or not (frame_open(state, "vikAra") or frame_open(state, "avayava")):
+        return None
+    return i if vivaksita(state, "vikAraBeda", "Pala") else None
 
 
 def cond(state: State) -> bool:
-    if state.paribhasha_gates.get(_GATE_KEY) is True:
-        return False
-    if not adhikara_in_effect("4.3.166", state, "4.1.76"):
-        return False
-    if not any("prātipadika" in t.tags or "anga" in t.tags for t in state.terms):
-        return False
-    if any("taddhita" in t.tags and "pratyaya" in t.tags for t in state.terms):
-        return False
-    return True
+    return _site(state) is not None
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY]  = True
-    state.meta["taddhita_kind"]             = "4.3.166"
-    return state
-
+    if policy_pick(state, "4.3.166", 2) == 1:
+        return state                      # vā: the aṇ of 4.3.165 stays a reading
+    return take_away(state, _site(state), "lup")
 
 SUTRA = SutraRecord(
     sutra_id              = "4.3.166",
@@ -41,11 +37,12 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "lup ca",
     text_dev              = "लुप् च",
-    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA lup ca vikAraH tasya avayave jambvAH vA",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
-    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा लुप् च विकारः तस्य अवयवे जम्ब्वाः वा",
+    samagra_slp1          = "pratyayaH paraSca AdyudAttaSca NyApprAtipadikAt tadDitAH prAgdIvyatoR samarTAnAM praTamAdvA lup ca vikAraH tasya avayave Pale jambvAH vA",
+    samagra_dev           = "प्रत्ययः परश्च आद्युदात्तश्च ङ्याप्प्रातिपदिकात् तद्धिताः प्राग्दीव्यतोऽण् समर्थानां प्रथमाद्वा लुप् च विकारः तस्य अवयवे फले जम्ब्वाः वा",
     padaccheda_dev        = "लुप् च",
     why_dev               = "(सूत्रम् 4.3.166) लुप् च।",
     anuvritti_from        = ('4.1.1',),
+    apavada_of            = ('4.3.163',),
     cond                  = cond,
     act                   = act,
 )

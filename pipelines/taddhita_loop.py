@@ -19,7 +19,9 @@ def derive_taddhita_stem(stem_slp1: str, origin_tags: set[str] | None = None, st
     s.phase = "upadesha"
     run = run_autonomously(s, "", stem_slp1, 300, stop_before_tripadi=True)
     st = run.state
-    return "".join(v.slp1 for t in st.terms for v in t.varnas), set(origin.record_from_terms(st.terms)), dict(st.meta.get("vikalpa_multi") or {})
+    tags = set(origin.record_from_terms(st.terms))
+    tags |= {x for t in st.terms for x in t.tags if x.startswith("yuktavad_linga:") and x != "yuktavad_linga:"}      # 1.2.51 lupi yuktavad vyaktivacane
+    return "".join(v.slp1 for t in st.terms for v in t.varnas), tags, dict(st.meta.get("vikalpa_multi") or {})
 
 
 def derive_taddhita(stem_slp1: str, vibhakti: int, vacana: int, linga: str = "pulliṅga", *, origin_tags: set[str] | None = None,
@@ -27,6 +29,7 @@ def derive_taddhita(stem_slp1: str, vibhakti: int, vacana: int, linga: str = "pu
     from pipelines.subanta import build_initial_state, run_subanta_sup_attach_and_finish_scanner
 
     stem, tags, multi = derive_taddhita_stem(stem_slp1, origin_tags, stem_linga, **vivaksha)
+    linga = next((x.split(":", 1)[1] for x in tags if x.startswith("yuktavad_linga:")), linga)
     s = build_initial_state(stem, vibhakti, vacana, linga, derived_pratipadika=True)
     s.terms[0].tags |= tags
     if multi:

@@ -28,7 +28,14 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-from sutras.adhyaya_1.pada_1.pratyayalakshanam_1_1_62 import PRATYAYALAKSHANAM_GATE
+
+# R2-style key: stable across refactors; value is ``True`` once registered.
+PRATYAYALAKSHANAM_GATE: Final[str] = "1.1.62_pratyayalope_pratyayalakshanam"
+
+
+def pratyayalakshanam_paribhasha_is_active(state: State) -> bool:
+    return bool(state.paribhasha_gates.get(PRATYAYALAKSHANAM_GATE))
+
 
 
 def cond(state: State) -> bool:

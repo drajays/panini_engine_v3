@@ -1,39 +1,30 @@
 """
-1.2.53  तदशिष्यं संज्ञाप्रमाणत्वात्  —  PARIBHASHA
+1.2.53  तदशिष्यं संज्ञाप्रमाणत्वात्  —  VIDHI
 
 *Padaccheda:* **तत्** / **अशिष्यम्** / **संज्ञा-प्रमाणत्वात्**
 
-"That [rule] is not to be taught [again] because the saṃjñā [itself] is the
-authority."  This paribhāṣā prevents redundant re-definition: once a saṃjñā
-is established, it does not need to be re-stated.
+"That [yuktavadbhāva of 1.2.51] is not to be taught, because a name (saṃjñā) has its usage as authority": the liṅga and vacana of a name whose pratyaya went by
+lup (varaṇāḥ, pañcālāḥ …) are what the language gives it, not what 1.2.51 would copy from the prakṛti.
 
-Operational role (v3):
-  - Registers the gate ``1_2_53_tad_aSizya`` in both ``paribhasha_gates``
-    and ``samjna_registry``.
-  - Downstream rules consult this gate to avoid redundant saṃjñā teaching.
-
-Blindness:
-  - cond() reads only ``state.paribhasha_gates`` — no vibhakti, vacana,
-    lakāra, surface Devanāgarī, data, or reference access (Art. 2).
-  - No arm flags; no paradigm coordinates.
+Engine: on the site of 1.2.51 (a stem whose pratyaya lup took away), under the vivakṣā ``arthaViSeSa=saMjYA``, it stands before 1.2.51 as its exception
+(``apavada_of``) and leaves the stem the empty ``yuktavad_linga:`` mark: 1.2.51 then finds the stem spoken for and forces no liṅga.
+1.2.54 (lupyogāprakhyānāt) is the reason given for this sūtra and does nothing of its own.
 Pāṭha: ashtadhyayi.com data.txt row i=12053 (Art. 14).
 """
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from engine.subanta_eligibility import accent_paribhasha_gate_eligible
-
-_GATE_KEY = "1_2_53_tad_aSizya"
+from engine.vivaksha import vivaksita
+from sutras.adhyaya_1.pada_2.sutra_1_2_51 import lup_stem, _TAG
 
 
 def cond(state: State) -> bool:
-    return accent_paribhasha_gate_eligible(state, _GATE_KEY)
+    return lup_stem(state) is not None and vivaksita(state, "arthaViSeSa", "saMjYA")
 
 
 def act(state: State) -> State:
-    state.paribhasha_gates[_GATE_KEY] = True
-    state.samjna_registry[_GATE_KEY] = True
+    lup_stem(state).tags.add(_TAG)
     return state
 
 
@@ -41,16 +32,14 @@ SUTRA = SutraRecord(
     sutra_id                = "1.2.53",
     sutra_type              = SutraType.VIDHI,
     r1_form_identity_exempt = True,
-    text_slp1               = 'tadaSizyaM saMjYApramARatvAt',
-    text_dev                = 'तदशिष्यं संज्ञाप्रमाणत्वात्',
-    samagra_slp1            = "tat a-Sizyam saMjYA-pramARatvAt",  # samagra composed: adhikāra + padas + anuvṛtti (ashtadhyayi.com); vipariṇāma unchecked
+    text_slp1               = "tadaSizyaM saMjYApramARatvAt",
+    text_dev                = "तदशिष्यं संज्ञाप्रमाणत्वात्",
+    samagra_slp1            = "tat aSizyam saMjYA-pramARatvAt",
     samagra_dev             = "तत् अ-शिष्यम् संज्ञा-प्रमाणत्वात्",
     padaccheda_dev          = "तत् / अशिष्यम् / संज्ञा-प्रमाणत्वात्",
-    why_dev                 = (
-        "संज्ञैव प्रमाणम् इति कृत्वा तस्य पुनः शासनम् अनावश्यकम् — "
-        "एकदा निर्दिष्टायाः संज्ञायाः पुनर्विधानं न कर्तव्यम् इति परिभाषा।"
-    ),
-    anuvritti_from          = (),
+    why_dev                 = "संज्ञायां लुपि लिङ्गवचनं लोकप्रमाणम्, न युक्तवद्भावशिष्यम्।",
+    anuvritti_from          = ("1.2.51",),
+    apavada_of              = ("1.2.51",),
     cond                    = cond,
     act                     = act,
 )

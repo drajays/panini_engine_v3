@@ -61,12 +61,15 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-from sutras.adhyaya_1.pada_1.lopa_samjna_1_1_60 import lopa_samjna_is_registered
-from sutras.adhyaya_1.pada_1.luk_slu_lup_samjna_1_1_61 import (
-    LUK_SLU_LUP_REGISTER_VALUE,
-    LUK_SLU_LUP_SAMJNA_KEY,
-    luk_slu_lup_samjna_is_registered,
-)
+from sutras.adhyaya_1.pada_1.sutra_1_1_60 import lopa_samjna_is_registered
+
+LUK_SLU_LUP_SAMJNA_KEY: Final[str] = "1.1.61_luk_slu_lup"
+LUK_SLU_LUP_REGISTER_VALUE: Final[frozenset[str]] = frozenset({"luk", "slu", "lup"})
+
+
+def luk_slu_lup_samjna_is_registered(state: State) -> bool:
+    return state.samjna_registry.get(LUK_SLU_LUP_SAMJNA_KEY) == LUK_SLU_LUP_REGISTER_VALUE
+
 
 
 def cond(state: State) -> bool:

@@ -25,11 +25,16 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-from sutras.adhyaya_1.pada_1.lopa_samjna_1_1_60 import (
-    LOPA_REGISTER_VALUE,
-    LOPA_SAMJNA_KEY,
-    lopa_samjna_is_registered,
-)
+
+# R2 payload after successful ``apply_rule("1.1.60", ...)`` — definiens token.
+LOPA_REGISTER_VALUE: Final[frozenset[str]] = frozenset({"1.1.60_sTAne_adarSanam"})
+
+LOPA_SAMJNA_KEY: Final[str] = "lopa"
+
+
+def lopa_samjna_is_registered(state: State) -> bool:
+    return state.samjna_registry.get(LOPA_SAMJNA_KEY) == LOPA_REGISTER_VALUE
+
 
 
 def cond(state: State) -> bool:

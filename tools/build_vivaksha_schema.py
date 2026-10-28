@@ -61,7 +61,7 @@ VOCABULARY = {
         "priya": ["priyaH"], "sADu": ["sADuH"], "vAsI": ["vAsI"], "Sayita": ["SayitaH"],
         # 5.1.5 – 17 (cha)
         "tasmEhita": ["hitam"], "prakfti": ["prakftO"], "syAt": ["syAt"]},
-    "arthaViSeSa": {"garhya": ["garhyam"], "saMjYA": ["saMjYAyAm"]},
+    "arthaViSeSa": {"garhya": ["garhyam"], "saMjYA": ["saMjYAyAm", "saMjYA"]},
     # 4.3.3: the yuṣmad / asmad that speaks of one person
     "ekavacana": {"ekavacana": ["ekavacane"]},
     # inside the vikāra group (4.3.134 – 168): which vikāra the speaker means

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-28T05:42:42+00:00",
+ "generated_at": "2026-10-28T10:00:59+00:00",
  "min_mentions": 5,
  "rows": [
   {
@@ -779,7 +779,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 21,
+   "mentions": 22,
    "status": "confident_structural"
   },
   {
@@ -818,7 +818,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 12,
+   "mentions": 14,
    "status": "confident_structural"
   },
   {
@@ -1611,7 +1611,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 3,
    "status": "unexercised"
   },
   {
@@ -1637,7 +1637,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 4,
+   "mentions": 7,
    "status": "gate_only"
   },
   {
@@ -1663,7 +1663,7 @@
    "invoked": false,
    "moved": false,
    "cited": true,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -22567,7 +22567,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -22580,7 +22580,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 1,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -22593,7 +22593,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 1,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -22619,7 +22619,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -22632,7 +22632,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 2,
+   "mentions": 3,
    "status": "unexercised"
   },
   {
@@ -22944,7 +22944,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -23659,7 +23659,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 1,
+   "mentions": 2,
    "status": "unexercised"
   },
   {
@@ -24517,7 +24517,7 @@
    "invoked": true,
    "moved": false,
    "cited": true,
-   "mentions": 9,
+   "mentions": 14,
    "status": "confident_structural"
   },
   {
@@ -24530,7 +24530,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24543,7 +24543,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24556,7 +24556,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24569,7 +24569,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24582,7 +24582,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24595,7 +24595,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24608,7 +24608,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24621,7 +24621,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24634,7 +24634,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24647,7 +24647,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24686,7 +24686,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24699,7 +24699,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24712,7 +24712,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 0,
+   "mentions": 1,
    "status": "unexercised"
   },
   {
@@ -24725,7 +24725,7 @@
    "invoked": false,
    "moved": false,
    "cited": false,
-   "mentions": 3,
+   "mentions": 4,
    "status": "unexercised"
   },
   {

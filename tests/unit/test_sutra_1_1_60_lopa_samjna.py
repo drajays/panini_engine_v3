@@ -6,7 +6,7 @@ from engine.state import State
 
 import sutras  # noqa: F401
 
-from sutras.adhyaya_1.pada_1.lopa_samjna_1_1_60 import LOPA_REGISTER_VALUE, lopa_samjna_is_registered
+from sutras.adhyaya_1.pada_1.sutra_1_1_60 import LOPA_REGISTER_VALUE, lopa_samjna_is_registered
 
 
 def test_registry() -> None:
