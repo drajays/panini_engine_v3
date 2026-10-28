@@ -20,7 +20,7 @@ def frame_open(state: State, artha: str | None = None) -> bool:
 
 def taddhita_site(state: State, artha: str | None = None, *, gana_name: str | None = None, final=None, origin: str | None = None,
                   ok: bool | None = None, stems: frozenset[str] | None = None, tag: str | None = None, gana_of: str | None = None,
-                  has_tag: str | None = None):
+                  has_tag: str | None = None, lacks: tuple[str, ...] = ()):
     """The stem Term when the frame is open, the stem ends the tape and the sūtra's own condition on it holds: membership of a gaṇa, its final
     letters (a predicate on the SLP1 string), the pratyaya it already ends in (``origin``, for gotra-pratyayānta stems)."""
     if ok is None:
@@ -38,6 +38,8 @@ def taddhita_site(state: State, artha: str | None = None, *, gana_name: str | No
         return None            # a lexical category of the stem (rāga, nakṣatra …): the caller's Lexicon fact, never derived
     if has_tag is not None and has_tag not in t.tags:
         return None            # a saṃjñā the loop itself gave the stem (vṛddha 1.1.73 …)
+    if any(f"lex:{x}" in t.tags for x in lacks):
+        return None            # the stem must NOT carry these lexical facts (asamāse: a compound is lex:samAsa)
     if gana_of is not None and not gana.in_gana_of_sutra(gana_of, name):
         return None
     if final is not None and not final(flat):
@@ -75,12 +77,23 @@ def open_default_frame(state: State, sid: str, artha: str, dflt: str, group_end:
     return state
 
 
-def default_site(state: State, dflt: str):
-    """The stem Term when some sense frame of the group admits it: the default pratyaya of the group (ṭhak, yat) attaches."""
+def _sid(s: str) -> tuple[int, ...]:
+    return tuple(int(x) for x in s.split("."))
+
+
+def frame_in(state: State, dflt: str, ids: tuple[str, str]) -> bool:
+    """Some sense frame of the ``dflt`` group was opened by a sūtra in the range ``ids`` (the ārhīya senses 5.1.37 – 63 of the ṭhañ group)."""
+    return any(e.get("dflt") == dflt and e.get("artha") and _sid(ids[0]) <= _sid(e["id"]) <= _sid(ids[1]) for e in state.adhikara_stack)
+
+
+def default_site(state: State, dflt: str, ids: tuple[str, str] | None = None):
+    """The stem Term when some sense frame of the group admits it: the default pratyaya of the group (ṭhak, yat) attaches.
+    ``ids``: only frames whose opener lies in this sūtra range (5.1.19 ṭhak reaches the senses 5.1.37 – 63 of the ṭhañ group)."""
     if not stem_ends_tape(state):
         return None
     t = state.terms[-1]
-    return t if any(e.get("dflt") == dflt and _only_ok(e.get("only"), t) for e in state.adhikara_stack) else None
+    return t if any(e.get("dflt") == dflt and _only_ok(e.get("only"), t) and (ids is None or _sid(ids[0]) <= _sid(e["id"]) <= _sid(ids[1]))
+                    for e in state.adhikara_stack) else None
 
 
 def group_open(state: State, dflt: str) -> bool:

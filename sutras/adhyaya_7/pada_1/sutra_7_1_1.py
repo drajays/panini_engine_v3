@@ -74,11 +74,11 @@ def _matches_tyup(state: State) -> bool:
 
 
 def _matches_vuY(state: State) -> bool:
-    """The taddhita vuñ (4.3.157 auṣṭrakaḥ): ñ goes as an it, the vu that is left becomes aka."""
+    """A taddhita pratyaya that is *vu* once its it is gone (vuñ 4.3.157 auṣṭrakaḥ, ḍvun 5.1.24 viṃśakaḥ): the vu becomes aka."""
     if len(state.terms) < 2:
         return False
     pr = state.terms[-1]
-    return ("taddhita" in pr.tags and pr.meta.get("upadesha_slp1") == "vuY" and not pr.meta.get("vu_to_ak_done")
+    return ("taddhita" in pr.tags and not pr.meta.get("vu_to_ak_done")
             and "".join(v.slp1 for v in pr.varnas) == "vu")
 
 

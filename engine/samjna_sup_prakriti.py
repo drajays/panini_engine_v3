@@ -89,9 +89,9 @@ def is_siti_pada_context(pr: Term, anga: Term) -> bool:
 
 
 def is_asarvanamasthana_svadi_sup(pr: Term, anga: Term) -> bool:
-    """**1.4.17** — *svādiṣv asarvanāmasthāne* (no *yaci* condition)."""
+    """**1.4.17** — *svādiṣv asarvanāmasthāne* (no *yaci* condition). svādi runs from sup (4.1.2) to kap (5.4.151): the taddhita pratyayas too."""
     return (
-        "sup" in pr.tags
+        ("sup" in pr.tags or ("taddhita" in pr.tags and "pratyaya" in pr.tags and bool(pr.varnas)))
         and "anga" in anga.tags
         and not is_sarvanamasthana_sup(pr, anga)
     )

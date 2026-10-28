@@ -38,13 +38,13 @@ def _target_premerge(state: State):
         return None
     for i in range(len(state.terms) - 1):
         stem, pratyaya = state.terms[i], state.terms[i + 1]
-        if "an_pratipadika" not in stem.tags:
+        if "an_pratipadika" not in stem.tags and not ("pada" in stem.tags and "prātipadika" in stem.tags):      # a stem 1.4.17 made pada before a taddhita (paYcan + kan)
             continue
         if stem.meta.get("nalopa_8_2_7_done"):
             continue
         if not stem.varnas or stem.varnas[-1].slp1 != "n":
             continue
-        if "sup" not in pratyaya.tags or not pratyaya.varnas:
+        if not ({"sup"} <= pratyaya.tags or {"taddhita", "pratyaya"} <= pratyaya.tags) or not pratyaya.varnas:
             continue
         if pratyaya.varnas[0].slp1 not in HAL:
             continue

@@ -23,7 +23,7 @@ CASES = [   # (stem, lexical tags, sense, extra vivakṣā, form that must be on
     ("dru", None, "vikAra", {}, "dravyaH"),                                   # 4.3.161 yat
     ("palASa", None, "vikAra", {}, "pAlASaH"),                                # 4.3.141
     ("SamI", None, "vikAra", {}, "SAmIlaH"),                                  # 4.3.142 ṭlañ
-    ("aSman", None, "vikAra", {}, "aSmanmayaH"),                              # 4.3.143 mayaṭ (vā)
+    ("aSman", None, "vikAra", {}, "aSmamayaH"),                               # 4.3.143 mayaṭ (vā); 8.2.7 nalopa — Kāśikā aśmamayam
     ("aSman", None, "vikAra", {}, "ASmanaH"),
     ("go", None, "vikAra", {"vikAraBeda": "purIza"}, "gomayaH"),              # 4.3.145
     ("pizwa", None, "vikAra", {}, "pizwamayaH"),                              # 4.3.146

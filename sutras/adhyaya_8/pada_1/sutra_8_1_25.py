@@ -18,7 +18,7 @@ Pāṭha: ashtadhyayi.com data.txt row i=81025 (Art. 14).
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
-from engine.enclitic import ADESHA_SUTRAS, target
+from sutras.adhyaya_8.pada_1.sutra_8_1_20 import ADESHA_SUTRAS, target
 from engine.state import State
 
 

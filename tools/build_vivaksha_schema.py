@@ -60,7 +60,9 @@ VOCABULARY = {
         "sama": ["sama"], "samita": ["samita"], "sammita": ["sammitezu"], "anapeta": ["saMjYAyAmanapete"], "nirmita": ["nirmite", "nirmitaH"],
         "priya": ["priyaH"], "sADu": ["sADuH"], "vAsI": ["vAsI"], "Sayita": ["SayitaH"],
         # 5.1.5 – 17 (cha)
-        "tasmEhita": ["hitam"], "prakfti": ["prakftO"], "syAt": ["syAt"]},
+        "tasmEhita": ["hitam"], "prakfti": ["prakftO"], "syAt": ["syAt"],
+        # 5.1.37
+        "krIta": ["krItam"]},
     "arthaViSeSa": {"garhya": ["garhyam"], "saMjYA": ["saMjYAyAm", "saMjYA"]},
     # 4.3.3: the yuṣmad / asmad that speaks of one person
     "ekavacana": {"ekavacana": ["ekavacane"]},
