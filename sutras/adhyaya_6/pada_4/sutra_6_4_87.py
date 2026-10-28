@@ -18,7 +18,7 @@ _AC = frozenset("aAiIuUfFxXeEoO")
 def _weak_after(ts, k: int) -> bool:
     """The affix right after the vikaraṇa (an āgama such as āṭ belongs to it) is not pit: weak (cinvanti), whether or not
     1.2.4 has already tagged it. A pit one (tip, mip, loṭ ni…) takes guṇa first: cinoti, cinavAni, acinavam."""
-    from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import sthanin_was_pit
+    from sutras.adhyaya_3.pada_4.sutra_3_4_113 import sthanin_was_pit
     j = k + 1
     while j + 1 < len(ts) and "agama" in ts[j].tags:
         j += 1

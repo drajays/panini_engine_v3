@@ -20,10 +20,30 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
 
-from sutras.adhyaya_1.pada_4.parasmaipada_1_4_99 import (
-    PARASMAI_UPADESHA_SLP1,
-    is_parasmaipada_upadesha_slp1,
+
+# --- helpers of this sūtra (formerly parasmaipada_1_4_99.py; one sūtra, one file) ---
+from typing import Final, FrozenSet, Tuple
+
+from sutras.adhyaya_3.pada_4.sutra_3_4_78 import TIN_ADESHA_18
+
+# First nine of **3.4.78** = *parasmaipadīya* *tiṅ* (see ``TIN_ADESHA_18`` order) + *śatṛ* (3.2.124) + *kvasu* (3.2.107).
+# SLP1 follows ``phonology.varna`` (``T``/``Ta``/…).
+_PARASMAI_TIN9: Final[Tuple[str, ...]] = TIN_ADESHA_18[:9]
+# *anti* is the **7.1.3** *ādeśa* for *jhi* (same *parasmaipada* cell as *jhi*).
+PARASMAI_UPADESHA_SLP1: Final[FrozenSet[str]] = (
+    frozenset(_PARASMAI_TIN9) | frozenset({"Satf", "kvasu", "anti"})
 )
+
+
+def is_parasmaipada_upadesha_slp1(s: str) -> bool:
+    t = s.strip()
+    if t in PARASMAI_UPADESHA_SLP1:
+        return True
+    if t.endswith("~") and t[:-1] in PARASMAI_UPADESHA_SLP1:
+        return True
+    return False
+
+
 
 
 def _parasmai_pratyaya_needing_tag(state: State) -> list[Term]:

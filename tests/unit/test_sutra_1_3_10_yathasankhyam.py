@@ -6,7 +6,7 @@ import sutras  # noqa: F401
 from engine import SUTRA_REGISTRY, apply_rule
 from engine.state import State
 
-from sutras.adhyaya_1.pada_3.yathasankhyam_1_3_10 import (
+from sutras.adhyaya_1.pada_3.sutra_1_3_10 import (
     YATHASANKHYAM_GATE,
     yathasankhyam_paribhasha_is_active,
 )

@@ -15,10 +15,28 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
 
-from sutras.adhyaya_1.pada_4.atmanepada_1_4_100 import (
-    ATMANE_UPADESHA_SLP1,
-    is_atmanepada_upadesha_slp1,
+
+# --- helpers of this sūtra (formerly atmanepada_1_4_100.py; one sūtra, one file) ---
+from typing import Final, FrozenSet, Tuple
+
+from sutras.adhyaya_3.pada_4.sutra_3_4_78 import TIN_ADESHA_18
+
+# Last nine of **3.4.78** = *taṅ* block (*ta* … *mahiG*) + *śānac* + *kānac*.
+_ATMANE_TIN9: Final[Tuple[str, ...]] = TIN_ADESHA_18[9:]
+ATMANE_UPADESHA_SLP1: Final[FrozenSet[str]] = (
+    frozenset(_ATMANE_TIN9) | frozenset({"SAnac", "kAnac"})
 )
+
+
+def is_atmanepada_upadesha_slp1(s: str) -> bool:
+    t = s.strip()
+    if t in ATMANE_UPADESHA_SLP1:
+        return True
+    if t.endswith("~") and t[:-1] in ATMANE_UPADESHA_SLP1:
+        return True
+    return False
+
+
 
 
 def _atmane_pratyaya_needing_tag(state: State) -> list[Term]:

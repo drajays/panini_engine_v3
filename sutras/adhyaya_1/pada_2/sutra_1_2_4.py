@@ -36,7 +36,7 @@ from __future__ import annotations
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import (
+from sutras.adhyaya_3.pada_4.sutra_3_4_113 import (
     is_sarvadhatuka_upadesha_slp1,
     sthanin_was_pit,
     tin_by_sthanin,

@@ -12,7 +12,7 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology.pratyahara import HAL
 from phonology    import mk
-from sutras.adhyaya_8.pada_2._tape import (
+from engine.tape_8_2 import (
     AC, BAS_TO_BHAS, JHAS, dhatu_span, flat, followed_by_jhal_or_end, slp, substitute,
 )
 

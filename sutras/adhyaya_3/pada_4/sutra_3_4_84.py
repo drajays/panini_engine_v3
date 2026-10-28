@@ -20,7 +20,7 @@ from __future__ import annotations
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from engine.sthanivat import ANGATVA, DHATUTVA, adesha_substitute_varnas
-from sutras.adhyaya_3.pada_4.nal_adi_common import FIRST_FIVE, lat_parasmai_tin, replace_tin
+from engine.nal_adi import FIRST_FIVE, lat_parasmai_tin, replace_tin
 
 _ROOT = "brUY"
 

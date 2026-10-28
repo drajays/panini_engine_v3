@@ -18,7 +18,7 @@ _STEMS = frozenset({"kfp", "karp", "kArp", "kFp"})       # kṛp as the tape sho
 def _site(state: State):
     if not state.tripadi_zone:
         return None
-    from sutras.adhyaya_8.pada_2._tape import dhatu_span, flat, slp
+    from engine.tape_8_2 import dhatu_span, flat, slp
     c = flat(state)
     k = 0
     while k < len(c):
@@ -38,7 +38,7 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    from sutras.adhyaya_8.pada_2._tape import slp, substitute
+    from engine.tape_8_2 import slp, substitute
     cells = _site(state)
     if cells is not None:
         for x in cells:

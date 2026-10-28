@@ -10,7 +10,7 @@ from engine.sutra_type import SutraType
 from engine.state      import State, Term
 from phonology         import mk
 
-from sutras.adhyaya_1.pada_4.dvi_eka_1_4_22 import (
+from sutras.adhyaya_1.pada_4.sutra_1_4_22 import (
     DVI_EKA_NIMITTA_KEY,
     GATE_KEY,
     dvi_eka_22_licences,

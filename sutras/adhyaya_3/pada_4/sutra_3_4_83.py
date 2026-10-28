@@ -21,7 +21,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from sutras.adhyaya_3.pada_4.nal_adi_common import ADESHA, lat_parasmai_tin, replace_tin
+from engine.nal_adi import ADESHA, lat_parasmai_tin, replace_tin
 
 _ROOT = "vida~"
 _GANA_JNANA = 2  # adādi vid (jñāne); not the divādi sattāyām or the tudādi lābhe vid

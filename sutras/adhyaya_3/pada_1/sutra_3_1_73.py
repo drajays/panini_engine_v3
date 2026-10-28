@@ -13,7 +13,7 @@ The inserted *Term* carries ``kngiti`` so **1.1.5** / **7.3.84** treat *apit*
 from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
-from sutras.adhyaya_3.pada_1.vikarana_sap_3_1_68 import sarvadhatuka_lakara_context
+from sutras.adhyaya_3.pada_1.sutra_3_1_68 import sarvadhatuka_lakara_context
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 

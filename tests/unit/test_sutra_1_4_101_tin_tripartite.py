@@ -10,7 +10,7 @@ from engine.sutra_type import SutraType
 from engine.state      import State, Term
 from phonology.varna   import parse_slp1_upadesha_sequence
 
-from sutras.adhyaya_1.pada_4.tin_tripartite_1_4_101 import (
+from sutras.adhyaya_1.pada_4.sutra_1_4_101 import (
     TIN_101_TAG_TRIPARTITE_A,
     TIN_101_TAG_TRIPARTITE_B,
     TIN_101_TAG_TRIPARTITE_C,

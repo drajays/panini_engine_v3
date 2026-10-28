@@ -52,7 +52,7 @@ def _is_bhu_dhatu(state: State) -> bool:
 def _lakara_identities(state: State) -> set[str]:
     """The lakāras the affixes on the tape come from — read from the affixes' own upadeśa (the lakāra
     placeholder before 3.4.78, ``source_lakara_upadesha`` after it), never from a coordinate (Art. 2)."""
-    from sutras.adhyaya_3.pada_4.tin_adesha_3_4_78 import LAKAARA_UPADESHA_SLP1
+    from sutras.adhyaya_3.pada_4.sutra_3_4_78 import LAKAARA_UPADESHA_SLP1
 
     out: set[str] = set()
     for t in state.terms:

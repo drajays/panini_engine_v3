@@ -30,7 +30,19 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-from sutras.adhyaya_1.pada_3.yathasankhyam_1_3_10 import YATHASANKHYAM_GATE
+
+# --- helpers of this sūtra (formerly yathasankhyam_1_3_10.py; one sūtra, one file) ---
+from typing import Final
+
+from engine.state import State
+
+YATHASANKHYAM_GATE: Final[str] = "1.3.10_samAnAm_anudesa_yathAsaNKyam"
+
+
+def yathasankhyam_paribhasha_is_active(state: State) -> bool:
+    return bool(state.paribhasha_gates.get(YATHASANKHYAM_GATE))
+
+
 
 
 def cond(state: State) -> bool:

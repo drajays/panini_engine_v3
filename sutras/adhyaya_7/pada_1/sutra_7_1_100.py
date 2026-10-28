@@ -36,7 +36,7 @@ from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 from phonology    import mk
 
-from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import is_sarvadhatuka_upadesha_slp1
+from sutras.adhyaya_3.pada_4.sutra_3_4_113 import is_sarvadhatuka_upadesha_slp1
 
 _DONE = "7_1_100_Fta_id_done"
 

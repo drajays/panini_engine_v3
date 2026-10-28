@@ -10,7 +10,7 @@ from engine.sutra_type import SutraType
 from engine.state      import State, Term
 from phonology.varna   import parse_slp1_upadesha_sequence
 
-from sutras.adhyaya_1.pada_4.parasmaipada_1_4_99 import (
+from sutras.adhyaya_1.pada_4.sutra_1_4_99 import (
     is_parasmaipada_upadesha_slp1,
 )
 

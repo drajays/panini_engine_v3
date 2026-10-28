@@ -10,7 +10,7 @@ from engine.sutra_type import SutraType
 from engine.state      import State, Term
 from phonology         import mk
 
-from sutras.adhyaya_1.pada_4.seza_prathama_1_4_108 import (
+from sutras.adhyaya_1.pada_4.sutra_1_4_108 import (
     GATE_KEY,
     MADHYAMOTTAMA_105_107_BLOCK_META_KEY,
     seza_108_licences_prathama_tin,

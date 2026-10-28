@@ -26,7 +26,7 @@ from engine.lopa_ghost import LUK_LOPA_GHOST_TAG
 from engine.state  import State
 from phonology     import HAL, TUSMA
 
-from sutras.adhyaya_1.pada_4.vibhakti_samjna_1_4_104 import (
+from sutras.adhyaya_1.pada_4.sutra_1_4_104 import (
     TAG_1_4_104_VIBHAKTI,
     is_tin_vibhakti_pratyaya,
 )

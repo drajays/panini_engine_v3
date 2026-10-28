@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from sutras.adhyaya_1.pada_2._ling_sic_kit import hal_ik, ling_sic_after
+from engine.ling_sic_kit import hal_ik, ling_sic_after
 
 
 def cond(state: State) -> bool:

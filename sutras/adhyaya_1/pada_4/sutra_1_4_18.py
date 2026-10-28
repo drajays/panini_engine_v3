@@ -32,7 +32,7 @@ from __future__ import annotations
 from engine import SutraType, SutraRecord, register_sutra
 from engine.lopa_ghost import term_is_sup_luk_ghost
 from engine.state import State
-from sutras.adhyaya_1.pada_4.samjna_sup_prakriti_1_4 import (
+from engine.samjna_sup_prakriti import (
     is_sarvanamasthana_sup,
     yaci_onset_loose,
 )

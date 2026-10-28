@@ -33,7 +33,7 @@ from engine.state import State
 from phonology    import mk
 from phonology.pratyahara import IK, HAL
 
-from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import is_sarvadhatuka_upadesha_slp1
+from sutras.adhyaya_3.pada_4.sutra_3_4_113 import is_sarvadhatuka_upadesha_slp1
 from sutras.adhyaya_1.pada_1.sutra_1_1_4 import ik_guna_vriddhi_blocked_by_1_1_4
 from sutras.adhyaya_1.pada_1.sutra_1_1_5 import ik_guna_vriddhi_blocked_by_1_1_5
 from sutras.adhyaya_1.pada_1.sutra_1_1_6 import dhatu_blocked_by_1_1_6
@@ -234,7 +234,7 @@ def _ngit_vikarana_own_guna(state: State) -> int | None:
         return None
     loT_uttama = ((tin.meta.get("source_lakara_upadesha") or "").strip() == "loT"
                   and up in {"mip", "vas", "mas", "ni", "va", "ma", "iw", "vahi", "mahiG", "e", "vahe", "mahe", "E", "vahE", "mahE"})   # 3.4.92 आडुत्तमस्य पिच्च
-    from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import sthanin_was_pit
+    from sutras.adhyaya_3.pada_4.sutra_3_4_113 import sthanin_was_pit
     if not (up.endswith(("p", "P")) or tin.meta.get("pit") or loT_uttama or sthanin_was_pit(tin)):   # am for mip (1.1.56)
         return None
     return di if _vikarana_ik_eligible(state, di) else None

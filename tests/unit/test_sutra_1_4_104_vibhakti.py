@@ -11,12 +11,12 @@ from engine.state      import State, Term
 from phonology.varna   import parse_slp1_upadesha_sequence
 
 from engine.lopa_ghost import LUK_LOPA_GHOST_TAG
-from sutras.adhyaya_1.pada_4.vibhakti_samjna_1_4_104 import (
+from sutras.adhyaya_1.pada_4.sutra_1_4_104 import (
     TAG_1_4_104_VIBHAKTI,
     is_sup_vibhakti_pratyaya,
     terms_needing_1_4_104_vibhakti,
 )
-from sutras.adhyaya_3.pada_1.vikarana_sap_3_1_68 import SAP_INSERT_TAG
+from sutras.adhyaya_3.pada_1.sutra_3_1_68 import SAP_INSERT_TAG
 
 
 def _tin(slp1: str) -> Term:

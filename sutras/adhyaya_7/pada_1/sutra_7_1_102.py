@@ -20,7 +20,7 @@ _DONE = "7_1_102_ur_done"
 def _find(state: State):
     """उदोष्ठ्यपूर्वस्य: a dhātu in ṝ after a labial takes ur (not ir, 7.1.100): pF → pur; 8.2.77 then lengthens before a
     consonant (pipUrtAm), 1.1.51 makes the r (pipuratu)."""
-    from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import is_sarvadhatuka_upadesha_slp1
+    from sutras.adhyaya_3.pada_4.sutra_3_4_113 import is_sarvadhatuka_upadesha_slp1
     for i, t in enumerate(state.terms[:-1]):
         if "dhatu" not in t.tags or t.meta.get(_DONE) or t.meta.get("anga_guna_7_3_84"):
             continue

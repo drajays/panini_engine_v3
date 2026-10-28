@@ -20,7 +20,7 @@ from phonology import mk
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.gates import adhikara_in_effect
 from engine.state import State
-from sutras.adhyaya_1.pada_4.parasmaipada_1_4_99 import is_parasmaipada_upadesha_slp1
+from sutras.adhyaya_1.pada_4.sutra_1_4_99 import is_parasmaipada_upadesha_slp1
 
 _GATE_KEY: str = "7_1_5_Atmanepade_5"
 

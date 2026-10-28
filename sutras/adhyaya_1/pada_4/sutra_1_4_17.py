@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state  import State
-from sutras.adhyaya_1.pada_4.samjna_sup_prakriti_1_4 import (
+from engine.samjna_sup_prakriti import (
     yaci_onset_loose,
     is_asarvanamasthana_svadi_sup,
 )

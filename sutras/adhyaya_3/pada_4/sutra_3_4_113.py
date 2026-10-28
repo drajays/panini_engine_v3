@@ -18,11 +18,83 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
 
-from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import (
-    SARVADHATUKA_UPADESHA_SLP1,
-    is_sarvadhatuka_upadesha_slp1,
-    tin_by_sthanin,
+
+# --- helpers of this sūtra (formerly sarvadhatuka_3_4_113.py; one sūtra, one file) ---
+from typing import Final, FrozenSet, Tuple
+
+from sutras.adhyaya_1.pada_4.sutra_1_4_104 import TIN_SURFACE_AADESHA_SLP1_EXTRA
+from sutras.adhyaya_3.pada_4.sutra_3_4_78 import TIN_ADESHA_18, TIN_ADESHA_SET
+
+# Vikaraṇa (śit).
+_SIT_VIK: Final[Tuple[str, ...]] = (
+    "Sap",
+    "Syan",
+    "Snu",
+    "SnuM",
+    "Sa",
+    "Snam",
+    "SnA",
 )
+# *Kṛt* (śit) — *Sa* may coincide with vik. *upadeśa* in the *śāstra* list.
+_SIT_KRT: Final[Tuple[str, ...]] = (
+    "Satf",
+    "SAnac",
+    "SAnan",
+    "cAnaS",
+    "Khas",
+    "KaS",
+    "eS",
+    "zadhyE",
+    "zadhyOn",
+)
+
+SIT_VIK_SARVADHATUKA_SLP1: Final[FrozenSet[str]] = frozenset(_SIT_VIK)
+SIT_KRT_SARVADHATUKA_SLP1: Final[FrozenSet[str]] = frozenset(_SIT_KRT)
+SIT_SARVADHATUKA_SLP1: Final[FrozenSet[str]] = SIT_VIK_SARVADHATUKA_SLP1 | SIT_KRT_SARVADHATUKA_SLP1
+# *anti* (**7.1.3** *ādeśa* for *jhi*) — *sārvadhātuka* *tiṅ*-class for narrow inventory checks.
+_TIN_713_EXTRA: Final[Tuple[str, ...]] = ("anti",)
+# **3.4.79** टेरे / **3.4.80** थासः से rewrite a taṅ ādeśa's upadeśa (ta → te,
+# AtAm → Ate, TAs → se …); by **1.1.56** स्थानिवत् it stays sārvadhātuka. Without
+# these, 1.2.4 missed Ate (no ṅit → no 7.2.81: एधिष्यआते) and 3.1.68 missed te.
+TIN_3_4_79_ADESHA: Final[Tuple[str, ...]] = (
+    "te", "Ate", "Je", "se", "ATe", "Dve", "e", "vahe", "mahe",
+)
+SARVADHATUKA_UPADESHA_SLP1: Final[FrozenSet[str]] = (
+    TIN_ADESHA_SET | SIT_SARVADHATUKA_SLP1 | frozenset(_TIN_713_EXTRA)
+    | frozenset(TIN_3_4_79_ADESHA) | TIN_SURFACE_AADESHA_SLP1_EXTRA
+)
+
+TIN_COUNT: Final[int] = len(TIN_ADESHA_18)
+SIT_COUNT: Final[int] = len(SIT_SARVADHATUKA_SLP1)
+# Union size (32 if one overlap between vik/kṛt in set theory).
+SARVADHATUKA_INVENTORY_N: Final[int] = len(SARVADHATUKA_UPADESHA_SLP1)
+
+
+def is_sarvadhatuka_upadesha_slp1(s: str) -> bool:
+    t = s.strip()
+    if t in SARVADHATUKA_UPADESHA_SLP1:
+        return True
+    if t.endswith("~") and t[:-1] in SARVADHATUKA_UPADESHA_SLP1:
+        return True
+    return False
+
+
+# Sthānin lakāras whose tiṅ are sārvadhātuka (liṭ's are ārdhadhātuka by 3.4.115, āśīr-liṅ by 3.4.116).
+_SARVADHATUKA_STHANIN = frozenset({"laT", "loT", "laG", "liG"})
+
+
+def tin_by_sthanin(term) -> bool:
+    """A tiṅ ādeśa that replaced a sārvadhātuka tiṅ (e.g. 3.4.83's ṇal for laṭ's tip) is still that tiṅ — 1.1.56."""
+    return ("tin_adesha_3_4_78" in term.tags
+            and (term.meta.get("source_lakara_upadesha") or "").strip() in _SARVADHATUKA_STHANIN
+            and "tin_before_3_4_83" in term.meta)
+
+
+def sthanin_was_pit(term) -> bool:
+    """1.1.56: the ādeśa inherits the sthānin's pit-ness (ṇal for tip, thal for sip, ṇal for mip)."""
+    return (term.meta.get("tin_before_3_4_83") or "").endswith(("p", "P"))
+
+
 
 
 SARVADHATUKA_113 = "sarvadhatuka_3_4_113"

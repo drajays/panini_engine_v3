@@ -37,11 +37,79 @@ from engine.state import State
 from engine.sthanivat import TING_PRATYAYATVA, adesha_substitute_varnas
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from sutras.adhyaya_3.pada_4.tin_adesha_3_4_78 import (
-    LAKAARA_UPADESHA_SLP1,
-    TIN_ADESHA_18,
-    is_tin_adesha,
+
+# --- helpers of this sūtra (formerly tin_adesha_3_4_78.py; one sūtra, one file) ---
+from typing import Final, FrozenSet, Tuple
+
+# Ten *lakāra* *upadeśa* forms (l + medial + final consonant of the name).
+LAKAARA_UPADESHA_SLP1: Final[FrozenSet[str]] = frozenset(
+    {
+        "laT",
+        "liT",
+        "luT",
+        "lRT",
+        "leT",
+        "loT",
+        "laG",
+        "liG",
+        "luG",
+        "lRG",
+    }
 )
+
+# 3.4.78 *ādeśa* list (one-to-one with the *Pāṇini* *ṣoḍaśa* + *dva* = 18 items).
+TIN_ADESHA_18: Final[Tuple[str, ...]] = (
+    "tip",
+    "tas",
+    "Ji",
+    "sip",
+    "Tas",
+    "Ta",
+    "mip",
+    "vas",
+    "mas",
+    "ta",
+    "AtAm",
+    "Ja",
+    "TAs",
+    "ATAm",
+    "Dvam",
+    "iw",
+    "vahi",
+    "mahiG",
+    # āśīr-liṅ ātmanepada composite ādeśas (sīyuṭ+suṭ+tiṅ pre-encoded)
+    "sIzwa",
+    "sIyAstAm",
+    "sIran",
+    "sIzWAH",
+    "sIyAsTAm",
+    "sIDvam",
+    "sIya",
+    "sIvahi",
+    "sImahi",
+    # luṅ karmani ātmanepada composite ādeśas (ciṇ[i]+suṭ+tiṅ pre-encoded)
+    "i",
+    "isAtAm",
+    "isata",
+    "isWAs",
+    "isATAm",
+    "iDvam",
+    "isi",
+    "isvahi",
+    "ismahi",
+)
+
+TIN_ADESHA_SET: Final[FrozenSet[str]] = frozenset(TIN_ADESHA_18)
+
+
+def is_tin_adesha(s: str) -> bool:
+    return s in TIN_ADESHA_SET
+
+
+def is_lakara_upadesha(s: str) -> bool:
+    return s.strip() in LAKAARA_UPADESHA_SLP1
+
+
 
 
 def _lakara_pratyaya_index(state: State) -> int | None:

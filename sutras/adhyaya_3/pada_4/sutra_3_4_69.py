@@ -26,12 +26,83 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-from sutras.adhyaya_3.pada_4.lakara_prayoga_3_4_69 import (
-    build_gates,
-    dhatu_slp1_snapshot,
-    effective_karmakatva_for_lac,
-    find_lac_prayoga_terms,
-)
+
+# --- helpers of this sūtra (formerly lakara_prayoga_3_4_69.py; one sūtra, one file) ---
+from typing import Any, Dict, List, Optional, Tuple
+
+from engine.state import State, Term
+
+# Stable gate prefix so downstream sūtras can consult without string typos.
+GATE_PFX = "prayoga_3_4_69"
+
+
+def effective_karmakatva_for_lac(term: Term) -> Optional[str]:
+    """
+    Return an internal label used only to compute paribhāṣā gates:
+
+    - ``sakarmaka`` — *dvy-artha* / *sakarmaka* in full sense → kartari + karmaṇi
+    - ``akarmaka`` — *nityākarmaka* / *akarmaka* → kartari + bhāve, not karmaṇi
+    - ``sakarmaka_candra`` — *sakarmaka* with *anādarita-karman* (teaching: treat like
+      *akarmaka* for prayoga: kartari + bhāve, not karmaṇi locus in the same way)
+    """
+    if "dhatu" not in term.tags:
+        return None
+    raw = term.meta.get("karmakatva")
+    if raw is None:
+        return None
+    if raw in ("dvyarma", "dvikarmaka"):          # a dvikarmaka dhātu is sakarmaka (data: ashtadhyayi.com 'D')
+        raw = "sakarmaka"
+    if raw not in ("sakarmaka", "akarmaka"):
+        return None
+    if raw == "sakarmaka" and bool(term.meta.get("avivakshita_karma")):
+        return "sakarmaka_candra"
+    return raw
+
+
+def dhatu_slp1_snapshot(term: Term) -> str:
+    m = (term.meta.get("upadesha_slp1") or "").strip()
+    if m:
+        return m
+    return "".join(v.slp1 for v in term.varnas)
+
+
+def build_gates(eff: str, dhatu_slp1: str) -> Dict[str, Any]:
+    """
+    Boolean licences (downstream *prayoga* / *lakāra* logic may read these only).
+
+    For *sakarmaka*: *kartari* + *karmaṇi* (not the *bhāve* distribution of 3.4.69
+    in the *akarmaka* half).
+
+    For *akarmaka* and *sakarmaka* with *anādarita-karman*: *kartari* + *bhāve*.
+    """
+    g: Dict[str, Any] = {
+        f"{GATE_PFX}_dhatu_upadesha": dhatu_slp1,
+        f"{GATE_PFX}_effective_karmakatva": eff,
+    }
+    if eff == "sakarmaka":
+        g[f"{GATE_PFX}_licenses_kartari"] = True
+        g[f"{GATE_PFX}_licenses_karmani"] = True
+        g[f"{GATE_PFX}_licenses_bhave"] = False
+    elif eff in ("akarmaka", "sakarmaka_candra"):
+        g[f"{GATE_PFX}_licenses_kartari"] = True
+        g[f"{GATE_PFX}_licenses_karmani"] = False
+        g[f"{GATE_PFX}_licenses_bhave"] = True
+    else:
+        g[f"{GATE_PFX}_licenses_kartari"] = False
+        g[f"{GATE_PFX}_licenses_karmani"] = False
+        g[f"{GATE_PFX}_licenses_bhave"] = False
+    return g
+
+
+def find_lac_prayoga_terms(state: State) -> List[Tuple[int, Term]]:
+    """(index, term) for terms tagged *dhatu* with usable *karmakatva*."""
+    out: list[Tuple[int, Term]] = []
+    for i, t in enumerate(state.terms):
+        if effective_karmakatva_for_lac(t) is not None:
+            out.append((i, t))
+    return out
+
+
 
 
 def _strip_old_gates(g: dict) -> None:

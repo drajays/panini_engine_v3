@@ -15,7 +15,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state  import State
-from sutras.adhyaya_1.pada_4.samjna_sup_prakriti_1_4 import is_siti_pada_context
+from engine.samjna_sup_prakriti import is_siti_pada_context
 
 
 _REGISTRY = "1.4.16_pada_anga_indices"

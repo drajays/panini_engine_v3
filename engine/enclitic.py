@@ -1,5 +1,5 @@
 """
-sutras/adhyaya_8/pada_1/enclitic_common.py — shared predicates for **8.1.20–26** (yuṣmad / asmad ādeśas: वाम् नौ वस् नस् ते मे त्वा मा).
+engine/enclitic.py — shared predicates for **8.1.20–26** (yuṣmad / asmad ādeśas: वाम् नौ वस् नस् ते मे त्वा मा).
 
 Mechanically blind (Art. 2): everything read here is a Term tag, a lexical identity named in the
 sūtras (yuṣmad / asmad; ca vā ha aha eva), or the adhikāra stack. Never the (vibhakti, vacana)

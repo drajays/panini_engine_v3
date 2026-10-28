@@ -19,12 +19,59 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
 
-from sutras.adhyaya_1.pada_4.tin_vacana_1_4_102 import (
-    TIN_102_ALL_VACANA_TAGS,
-    TIN_102_VACANA_ORDER,
-    terms_needing_tin_102_vacana,
-    vacana_102_tag_for_tin_adesha,
-)
+
+# --- helpers of this sūtra (formerly tin_vacana_1_4_102.py; one sūtra, one file) ---
+from typing import Final, Tuple
+
+from engine.state import State, Term
+
+from sutras.adhyaya_3.pada_4.sutra_3_4_78 import TIN_ADESHA_18, TIN_ADESHA_SET
+
+# *Term* tags (no ``meta['vacana']``; CONSTITUTION Art. 2 *cond* scan on *sūtra* files).
+TIN_102_TAG_EKA: Final[str] = "tin_102_ekavacana"
+TIN_102_TAG_DVI: Final[str] = "tin_102_dvivacana"
+TIN_102_TAG_BAHU: Final[str] = "tin_102_bahuvacana"
+
+TIN_102_VACANA_ORDER: Final[Tuple[str, str, str]] = (TIN_102_TAG_EKA, TIN_102_TAG_DVI, TIN_102_TAG_BAHU)
+TIN_102_ALL_VACANA_TAGS: Final[frozenset[str]] = frozenset(TIN_102_VACANA_ORDER)
+
+
+def _normalise_tin_adesha_form(s: str) -> str:
+    t = s.strip()
+    if t in TIN_ADESHA_SET:
+        return t
+    if t.endswith("~") and t[:-1] in TIN_ADESHA_SET:
+        return t[:-1]
+    return t
+
+
+def vacana_102_tag_for_tin_adesha(s: str) -> str | None:
+    """Return the *1.4.102* *vacana* *tag* for a normalised *tiṅ* *ādeśa* *upadeśa*, or *None*."""
+    key = _normalise_tin_adesha_form(s)
+    if key not in TIN_ADESHA_SET:
+        return None
+    i = TIN_ADESHA_18.index(key)
+    return TIN_102_VACANA_ORDER[i % 3]
+
+
+def tin_vacana_102_is_registered(t: Term) -> bool:
+    return bool(t.tags & TIN_102_ALL_VACANA_TAGS)
+
+
+def terms_needing_tin_102_vacana(state: State) -> list[Term]:
+    out: list[Term] = []
+    for t in state.terms:
+        if t.kind != "pratyaya":
+            continue
+        up = (t.meta.get("upadesha_slp1") or "").strip()
+        if vacana_102_tag_for_tin_adesha(up) is None:
+            continue
+        if tin_vacana_102_is_registered(t):
+            continue
+        out.append(t)
+    return out
+
+
 
 # Tag applied to sup terms after 1.4.102 has recorded their vacana saṃjñā
 _SUP_102_DONE_TAG = "sup_102_vacana_registered"

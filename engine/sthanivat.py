@@ -24,8 +24,6 @@ from engine.it_samjna import META_RECORDS, inherit_it_records
 from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
-from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import is_sarvadhatuka_upadesha_slp1
-from sutras.adhyaya_3.pada_4.tin_adesha_3_4_78 import is_tin_adesha
 
 # ── Eight guṇa-dharma keys (pedagogy + meta trace) ───────────────────────
 DHATUTVA = "dhatutva"
@@ -216,6 +214,8 @@ def sthanivat_blocked(term: Term, *reasons: str) -> bool:
 
 def gunadharmas_of_term(term: Term) -> frozenset[str]:
     """Classify which *anal-āśrita* properties the *sthānin* carries."""
+    from sutras.adhyaya_3.pada_4.sutra_3_4_113 import is_sarvadhatuka_upadesha_slp1  # lazy: those sūtra files import this module
+    from sutras.adhyaya_3.pada_4.sutra_3_4_78 import is_tin_adesha
     out: set[str] = set()
     tags = term.tags
     up = (term.meta.get("upadesha_slp1") or "").strip()
@@ -286,6 +286,8 @@ def apply_sthanivat_bhava(
     block: str | None = None,
 ) -> None:
     """Copy inherited *anal-āśrita* *guṇa-dharma* onto *ādeśa* (in-place)."""
+    from sutras.adhyaya_3.pada_4.sutra_3_4_113 import is_sarvadhatuka_upadesha_slp1  # lazy: those sūtra files import this module
+    from sutras.adhyaya_3.pada_4.sutra_3_4_78 import is_tin_adesha
     if block:
         mark_sthanivat_block(adesha, block)
         return

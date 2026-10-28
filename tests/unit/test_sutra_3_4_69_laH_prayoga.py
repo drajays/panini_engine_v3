@@ -10,7 +10,7 @@ from engine.state import State, Term
 from phonology import mk
 from phonology.varna import AC_DEV, HAL_DEV
 
-from sutras.adhyaya_3.pada_4.lakara_prayoga_3_4_69 import build_gates, effective_karmakatva_for_lac
+from sutras.adhyaya_3.pada_4.sutra_3_4_69 import build_gates, effective_karmakatva_for_lac
 
 
 def _varnas_from_slp1(slp1: str) -> list:

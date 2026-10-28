@@ -11,7 +11,7 @@ from engine.state      import State, Term
 from phonology         import mk
 from phonology.varna   import parse_slp1_upadesha_sequence
 
-from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import (
+from sutras.adhyaya_3.pada_4.sutra_3_4_113 import (
     SARVADHATUKA_INVENTORY_N,
     is_sarvadhatuka_upadesha_slp1,
 )

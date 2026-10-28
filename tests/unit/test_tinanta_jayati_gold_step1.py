@@ -35,10 +35,10 @@ from tools.tinanta_jayati_gold import (
     term_has_any_it_marker,
 )
 
-from sutras.adhyaya_1.pada_4.dvi_eka_1_4_22 import DVI_EKA_NIMITTA_KEY
-from sutras.adhyaya_1.pada_4.tin_tripartite_1_4_101 import TIN_101_TAG_TRIPARTITE_A
-from sutras.adhyaya_1.pada_4.tin_vacana_1_4_102 import TIN_102_TAG_EKA
-from sutras.adhyaya_3.pada_1.vikarana_sap_3_1_68 import SAP_INSERT_TAG
+from sutras.adhyaya_1.pada_4.sutra_1_4_22 import DVI_EKA_NIMITTA_KEY
+from sutras.adhyaya_1.pada_4.sutra_1_4_101 import TIN_101_TAG_TRIPARTITE_A
+from sutras.adhyaya_1.pada_4.sutra_1_4_102 import TIN_102_TAG_EKA
+from sutras.adhyaya_3.pada_1.sutra_3_1_68 import SAP_INSERT_TAG
 from engine import apply_rule
 from sutras.adhyaya_3.pada_4.sutra_3_4_113 import SARVADHATUKA_113
 

@@ -27,8 +27,8 @@ from core.canonical_pipelines import (
     P00_ciY_lat_tas_snu_tripadi_tail,
     P00_lat_vartamane_tas_and_sap,
 )
-from sutras.adhyaya_1.pada_3.kartari_pada_1_3_78 import find_primary_dhatu
-from sutras.adhyaya_1.pada_4.dvi_eka_1_4_22 import DVI_EKA_NIMITTA_KEY
+from sutras.adhyaya_1.pada_3.sutra_1_3_78 import find_primary_dhatu
+from sutras.adhyaya_1.pada_4.sutra_1_4_22 import DVI_EKA_NIMITTA_KEY
 
 
 def _build_state() -> State:

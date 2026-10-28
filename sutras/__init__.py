@@ -48,6 +48,11 @@ def _load_all_sutras() -> None:
                     f"sutras.{adhyaya_dir.name}.{pada_dir.name}.{path.stem}"
                 )
                 importlib.import_module(mod_name)
+    # A sūtra file that imports another registers it first; restore Aṣṭādhyāyī order.
+    from engine.registry import SUTRA_REGISTRY
+    ordered = sorted(SUTRA_REGISTRY.items(), key=lambda kv: tuple(map(int, kv[0].split("."))))
+    SUTRA_REGISTRY.clear()
+    SUTRA_REGISTRY.update(ordered)
 
 
 # Load on package import.

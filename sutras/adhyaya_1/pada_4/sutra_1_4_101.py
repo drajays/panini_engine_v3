@@ -19,12 +19,64 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
 
-from sutras.adhyaya_1.pada_4.tin_tripartite_1_4_101 import (
-    TIN_101_ALL_TRIPARTITE_TAGS,
-    TIN_101_TRIPARTITE,
-    terms_needing_tin_101_tripartite,
-    tripartite_101_tag_for_tin_adesha,
+
+# --- helpers of this sūtra (formerly tin_tripartite_1_4_101.py; one sūtra, one file) ---
+from typing import Final, Tuple
+
+from engine.state import State, Term
+
+from sutras.adhyaya_3.pada_4.sutra_3_4_78 import TIN_ADESHA_18, TIN_ADESHA_SET
+
+# Distinct *Term* tags (avoid ``'puruṣa'`` as a *meta* key; CONSTITUTION Art. 2 *cond* scan).
+TIN_101_TAG_TRIPARTITE_A: Final[str] = "tin_101_tripartite_A"  # प्रथम (first triple in each *pari*)
+TIN_101_TAG_TRIPARTITE_B: Final[str] = "tin_101_tripartite_B"  # मध्यम
+TIN_101_TAG_TRIPARTITE_C: Final[str] = "tin_101_tripartite_C"  # उत्तम
+
+# Human-readable (trace / UIs): *prathama* = A, *madhyama* = B, *uttama* = C in each block of nine.
+TIN_101_TRIPARTITE: Final[Tuple[str, str, str]] = (
+    TIN_101_TAG_TRIPARTITE_A,
+    TIN_101_TAG_TRIPARTITE_B,
+    TIN_101_TAG_TRIPARTITE_C,
 )
+TIN_101_ALL_TRIPARTITE_TAGS: Final[frozenset[str]] = frozenset(TIN_101_TRIPARTITE)
+
+
+def _normalise_tin_adesha_form(s: str) -> str:
+    t = s.strip()
+    if t in TIN_ADESHA_SET:
+        return t
+    if t.endswith("~") and t[:-1] in TIN_ADESHA_SET:
+        return t[:-1]
+    return t
+
+
+def tripartite_101_tag_for_tin_adesha(s: str) -> str | None:
+    """Return the *tiṅ* *tripartite* *tag* for a normalised *ādeśa* *upadeśa* string, or *None*."""
+    key = _normalise_tin_adesha_form(s)
+    if key not in TIN_ADESHA_SET:
+        return None
+    i = TIN_ADESHA_18.index(key)
+    return TIN_101_TRIPARTITE[i // 3 % 3]
+
+
+def tin_tripartite_101_is_registered(t: Term) -> bool:
+    return bool(t.tags & TIN_101_ALL_TRIPARTITE_TAGS)
+
+
+def terms_needing_tin_101_tripartite(state: State) -> list[Term]:
+    out: list[Term] = []
+    for t in state.terms:
+        if t.kind != "pratyaya":
+            continue
+        up = (t.meta.get("upadesha_slp1") or "").strip()
+        if tripartite_101_tag_for_tin_adesha(up) is None:
+            continue
+        if tin_tripartite_101_is_registered(t):
+            continue
+        out.append(t)
+    return out
+
+
 
 
 def cond(state: State) -> bool:

@@ -10,7 +10,7 @@ from engine.sutra_type import SutraType
 from engine.state      import State, Term
 from phonology.varna   import parse_slp1_upadesha_sequence
 
-from sutras.adhyaya_1.pada_4.atmanepada_1_4_100 import is_atmanepada_upadesha_slp1
+from sutras.adhyaya_1.pada_4.sutra_1_4_100 import is_atmanepada_upadesha_slp1
 
 
 def _pratyaya(slp1: str) -> Term:

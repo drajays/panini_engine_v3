@@ -10,7 +10,7 @@ from engine.sutra_type import SutraType
 from engine.state      import State, Term
 from phonology         import mk
 
-from sutras.adhyaya_1.pada_3.kartari_pada_1_3_78 import (
+from sutras.adhyaya_1.pada_3.sutra_1_3_78 import (
     ATMANE_LICENSE_META_KEY,
     GATE_KEY,
     kartari_parasmaipada_seza_active,

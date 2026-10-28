@@ -26,7 +26,7 @@ from __future__ import annotations
 from engine import SutraType, SutraRecord, register_sutra
 from engine.state import State, Term
 
-from sutras.adhyaya_1.pada_3.kartari_pada_1_3_78 import ATMANE_LICENSE_META_KEY
+from sutras.adhyaya_1.pada_3.sutra_1_3_78 import ATMANE_LICENSE_META_KEY
 
 _YAM_STEMS = frozenset({"yam", "han"})
 

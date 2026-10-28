@@ -18,13 +18,58 @@ from __future__ import annotations
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
 
-from sutras.adhyaya_1.pada_3.kartari_pada_1_3_78 import (
-    ATMANE_LICENSE_META_KEY,
-    GATE_KEY,
-    find_primary_dhatu,
-    seza_parasmaipada_gate_needs_update,
-    _desired_gate_active,
-)
+
+# --- helpers of this sūtra (formerly kartari_pada_1_3_78.py; one sūtra, one file) ---
+from typing import Final
+
+from engine.state import State, Term
+
+GATE_KEY: Final[str] = "prayoga_1_3_78_seza_kartari_parasmaipada"
+
+# Recipe / 1.3.12–77 chain: truthy ⇒ *ātmanepada* licensed for *kartari* for this *dhātu*.
+ATMANE_LICENSE_META_KEY: Final[str] = "kartari_atmanepada_licensed"
+
+
+def find_primary_dhatu(state: State) -> Term | None:
+    for t in state.terms:
+        if "dhatu" in t.tags:
+            return t
+    return None
+
+
+def kartari_parasmaipada_seza_active(state: State) -> bool:
+    """True iff the **1.3.78** gate says *śeṣa* → *parasmaipada* in *kartari*."""
+    return state.paribhasha_gates.get(GATE_KEY, {}).get("active") is True
+
+
+def _desired_gate_active(dhatu: Term) -> bool:
+    val = dhatu.meta.get(ATMANE_LICENSE_META_KEY)
+    # "ubhaya" = dhātu can take both padas; 1.3.78 śeṣa still gives parasmaipada
+    # as the default in kartari (ātmanepada requires a specific 1.3.12–77 context).
+    if val == "ubhaya":
+        return True
+    return not bool(val)
+
+
+def seza_parasmaipada_gate_needs_update(state: State) -> bool:
+    # 1.3.78's true locus is tiṅanta pada-nirṇaya, not any bare dhātu Term
+    # (a kṛdanta/subanta derivation over the same dhātu never reaches this
+    # gate). cond() false-positive audit: audit/cond_discipline_auditor.py.
+    if state.meta.get("derivation_class") != "tinanta":
+        return False
+    d = find_primary_dhatu(state)
+    if d is None:
+        return False
+    # gaṇa-nirṇaya (P01_samjna_dhatu_class) has already run by the time the
+    # real tiṅanta bootstrap reaches pada-nirṇaya — a tape-init-only probe
+    # (build_tinanta_initial_state, pre-P01) never sets this.
+    if "gana" not in d.meta:
+        return False
+    desired = _desired_gate_active(d)
+    cur = state.paribhasha_gates.get(GATE_KEY, {}).get("active")
+    return cur is None or cur is not desired
+
+
 
 
 def cond(state: State) -> bool:

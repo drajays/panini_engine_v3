@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from sutras.adhyaya_8.pada_2._tape import dhatu_span, flat, followed_by_jhal_or_end, slp, substitute
+from engine.tape_8_2 import dhatu_span, flat, followed_by_jhal_or_end, slp, substitute
 
 _ROOTS = {"druh", "muh", "snuh", "snih"}      # द्रुह्, मुह्, ष्णुह्, ष्णिह् (the ष्-initial ones stand as snuh / snih on the tape)
 

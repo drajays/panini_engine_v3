@@ -48,8 +48,8 @@ from phonology.varna import mk, parse_slp1_upadesha_sequence
 
 from pipelines.dhatupatha import get_dhatu_row
 
-from sutras.adhyaya_1.pada_3.kartari_pada_1_3_78 import find_primary_dhatu
-from sutras.adhyaya_1.pada_4.dvi_eka_1_4_22 import DVI_EKA_NIMITTA_KEY
+from sutras.adhyaya_1.pada_3.sutra_1_3_78 import find_primary_dhatu
+from sutras.adhyaya_1.pada_4.sutra_1_4_22 import DVI_EKA_NIMITTA_KEY
 
 _GOLD_JSON = (
     Path(__file__).resolve().parent.parent

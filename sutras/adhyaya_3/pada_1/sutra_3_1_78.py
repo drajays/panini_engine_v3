@@ -25,7 +25,7 @@ Citation (CONSTITUTION Art. 14)
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
-from sutras.adhyaya_3.pada_1.vikarana_sap_3_1_68 import sarvadhatuka_lakara_context
+from sutras.adhyaya_3.pada_1.sutra_3_1_68 import sarvadhatuka_lakara_context
 from engine.state import State
 from phonology import mk
 from phonology.pratyahara import is_dirgha, is_hrasva

@@ -16,7 +16,7 @@ from __future__ import annotations
 
 from engine       import SutraType, SutraRecord, register_sutra
 from engine.state import State
-from sutras.adhyaya_3.pada_4.sarvadhatuka_3_4_113 import SIT_KRT_SARVADHATUKA_SLP1
+from sutras.adhyaya_3.pada_4.sutra_3_4_113 import SIT_KRT_SARVADHATUKA_SLP1
 
 
 def _krt_term(state: State):

@@ -16,7 +16,7 @@ Pāṭha: ashtadhyayi.com data.txt row i=81021 (Art. 14).
 from __future__ import annotations
 
 from engine import SutraType, SutraRecord, register_sutra
-from sutras.adhyaya_8.pada_1.enclitic_common import STHA_VIBHAKTI, replace, target
+from engine.enclitic import STHA_VIBHAKTI, replace, target
 from engine.state import State
 
 _ADESHA = {'yuzmad': 'vas', 'asmad': 'nas'}
