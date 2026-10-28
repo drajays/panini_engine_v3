@@ -58,7 +58,9 @@ VOCABULARY = {
         "vahati": ["vahati"], "viDyati": ["viDyati"], "labDA": ["labDA"], "gata": ["gataH"], "dfSya": ["dfSyamasmin"], "Abarhi": ["Abarhi"],
         "saMyukta": ["saMyukte"], "tArya": ["tArya"], "tulya": ["tulya"], "prApya": ["prApya"], "vaDya": ["vaDya"], "AnAmya": ["AnAmya"],
         "sama": ["sama"], "samita": ["samita"], "sammita": ["sammitezu"], "anapeta": ["saMjYAyAmanapete"], "nirmita": ["nirmite", "nirmitaH"],
-        "priya": ["priyaH"], "sADu": ["sADuH"], "vAsI": ["vAsI"], "Sayita": ["SayitaH"]},
+        "priya": ["priyaH"], "sADu": ["sADuH"], "vAsI": ["vAsI"], "Sayita": ["SayitaH"],
+        # 5.1.5 – 17 (cha)
+        "tasmEhita": ["hitam"], "prakfti": ["prakftO"], "syAt": ["syAt"]},
     "arthaViSeSa": {"garhya": ["garhyam"], "saMjYA": ["saMjYAyAm"]},
     # 4.3.3: the yuṣmad / asmad that speaks of one person
     "ekavacana": {"ekavacana": ["ekavacane"]},

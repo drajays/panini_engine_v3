@@ -81,3 +81,8 @@ def default_site(state: State, dflt: str):
         return None
     t = state.terms[-1]
     return t if any(e.get("dflt") == dflt and _only_ok(e.get("only"), t) for e in state.adhikara_stack) else None
+
+
+def group_open(state: State, dflt: str) -> bool:
+    """Some sense frame of the group whose default is ``dflt`` is open: its specials apply in every one of its senses (5.1.2 – 4 in the cha group)."""
+    return any(e.get("dflt") == dflt and e.get("artha") for e in state.adhikara_stack)
