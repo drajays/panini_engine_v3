@@ -31,7 +31,6 @@ CASES = [   # (sense, stem, lexical tags, extra vivakṣā, a form that must be 
 ]
 
 
-@pytest.mark.xfail(reason="S21: 6.4.144 does not yet drop the ṭi of an-stems (karman + ukaÑ gives kArmaRukam, not kArmukam)", strict=True)
 def test_karman_ukan():
     got = {b.surface_slp1 for b in explore(lambda: derive_taddhita("karman", 1, 1, "napuṃsaka", taddhitArtha="tasmaiPraBavati"))}
     assert "kArmukam" in got, sorted(got)      # 5.1.103

@@ -32,18 +32,35 @@ def _eligible(state: State) -> bool:
 
 
 def _in_site(state: State):
-    """नस्तद्धिते for the in-stems (pakṣin + ika → pākṣikaḥ): the ṭi (in) of a bha aṅga goes before a taddhita; 6.4.164 keeps it before a non-apatya aṇ.
-    SHORTCUT S21: the an-stems (rājan …) are not here — 6.4.134 / 6.4.137 still give their forms."""
+    """नस्तद्धिते for the in- and an-stems (pakṣin + ika → pākṣikaḥ, karman + ukañ → kārmukam): the ṭi (in / an) of a bha aṅga goes before a taddhita; 6.4.164 keeps it before a non-apatya aṇ."""
     for i in range(len(state.terms) - 1):
         t, pr = state.terms[i], state.terms[i + 1]
         if not ({"bha", "anga"} <= t.tags and "taddhita" in pr.tags and "pratyaya" in pr.tags) or t.meta.get("6_4_144_ti_done"):
             continue
-        if t.meta.get("6_4_148_lopa_done") or len(t.varnas) < 3 or t.varnas[-1].slp1 != "n" or t.varnas[-2].slp1 != "i":      # the in of dANqAjin is what 6.4.148 left of a-stem, not an in-stem
+        if t.meta.get("6_4_148_lopa_done") or len(t.varnas) < 3 or t.varnas[-1].slp1 != "n" or t.varnas[-2].slp1 not in ("i", "a"):      # the in of dANqAjin is what 6.4.148 left of a-stem, not an in-stem; ṭi = in / an
             continue
+        if t.varnas[-2].slp1 == "a" and (_an_barred(state, t, pr) or "q" in (pr.meta.get("it_markers") or ()) or t.meta.get("6_4_143_dit_done")):
+            continue                      # (a ḍit taddhita: 6.4.143 takes the same ṭi)
         if (pr.meta.get("upadesha_slp1") or "") == "aR" and not any(e.get("artha") == "apatya" for e in state.adhikara_stack):
             continue                      # 6.4.164 inaṇyanapatye: prakṛtibhāva
         return t
     return None
+
+
+def _an_barred(state: State, t, pr) -> bool:
+    """The prakṛtibhāva exceptions to 6.4.144 for an-stems: 6.4.145 ahan keeps its ṭi except before ṭ / kha, 6.4.167 an before aṇ (apatya or not),
+    6.4.168 an before a y-initial taddhita unless the sense is bhāva / karman (the frames 5.1.119 – 136), 6.4.169 ātman / adhvan before kha.
+    SHORTCUT S21b: the bhāva / karman sense is read off the open frame (5.1.119 – 136), not asked as a vivakṣā value."""
+    flat = "".join(v.slp1 for v in t.varnas)
+    up = pr.meta.get("upadesha_slp1") or ""
+    org = next((x.split(":", 1)[1] for x in pr.tags if x.startswith("origin_pratyaya:")), up)      # kha may already stand as īna (7.1.2)
+    if flat == "ahan":
+        return not (org.startswith("w") or org == "Ka")
+    if up == "aR":
+        return True
+    if flat in ("Atman", "aDvan") and org == "Ka":
+        return True
+    return up.startswith("y") and not any("5.1.119" <= e.get("id", "") <= "5.1.136" and e.get("artha") for e in state.adhikara_stack)      # 6.4.168 (string order is fine within 5.1.1xx)
 
 
 def cond(state: State) -> bool:

@@ -47,7 +47,7 @@ BARRED = [  # kap does not follow: 155 in a name, 156 Iyas, 159 nāḍī of the 
     ("bahunADI", {"bahuvrIhi", "svAfga"}, {}, P, "bahunADIkaH"),
     ("bahuBrAtf", {"bahuvrIhi"}, {"arthaViSeSa": "vandita"}, P, "bahuBrAtfkaH"),       # 157
 ]
-AN_STEMS = [   # S21: 6.4.144 does not yet drop the ṭi of an-stems
+AN_STEMS = [   # 6.4.144 drops the ṭi of an-stems (S21 closed)
     ("prADvan", {"samAsa"}, {}, P, "prADvaH"),                                       # 85
     ("paramarAjan", {"tatpuruza"}, {}, P, "paramarAjaH"),                            # 91
     ("grAmatakzan", {"tatpuruza"}, {}, P, "grAmatakzaH"),                            # 95
@@ -78,7 +78,6 @@ def test_kap_barred(stem, tags, extra, linga, nowant):
 
 
 @pytest.mark.parametrize("stem,tags,extra,linga,want", AN_STEMS, ids=lambda c: None)
-@pytest.mark.xfail(reason="S21: 6.4.144 does not yet drop the ṭi of an-stems before a taddhita (the pratyaya itself is the right one)", strict=True)
 def test_an_stems(stem, tags, extra, linga, want):
     got = _forms(stem, tags, extra, linga)
     assert want in got, sorted(got)
