@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_3_91_vatsokzASv_91"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.3.91", state, "5.3.70"):
@@ -27,11 +27,40 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.3.91"
     return state
+
+
+from engine.taddhita_attach import sense_in, taddhita_site, attach_taddhita
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
+
+
+def _attach(state: State):
+    return "ztarac" if sense_in(state, "5.3.86") and vivaksita(state, "arthaViSeSa", "tanutva") and taddhita_site(state, None, ok=True, stems=frozenset({"vatsa", "ukzan", "aSva", "fzaBa"})) is not None else None
+
+
+def _new_cond(state: State) -> bool:
+    return _attach(state) is not None and not state.meta.get("declined:5.3.91")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    up = _attach(state) if _new_cond(state) else None
+    if up is None:
+        return _legacy_act(state)
+    if not isinstance(up, str):
+        up = up[policy_pick(state, "5.3.91", len(up))]
+    if up == "-":                                  # the vā: this sūtra stands aside
+        state.meta["declined:5.3.91"] = True
+        return state
+    return attach_taddhita(state, up)
 
 
 SUTRA = SutraRecord(
@@ -45,6 +74,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "वत्स-उक्ष-अश्व-ऋषभेभ्यः च तनुत्वे",
     why_dev               = "(सूत्रम् 5.3.91) वत्सोक्षाश्वर्षभेभ्यश्च तनुत्वे।",
     anuvritti_from        = ('5.3.70',),
+    apavada_of     = ('5.3.70',),
     cond                  = cond,
     act                   = act,
 )

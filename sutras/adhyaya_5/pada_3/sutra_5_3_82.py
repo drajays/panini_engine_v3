@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_3_82_ajinAntasy_82"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.3.82", state, "5.3.70"):
@@ -27,11 +27,46 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.3.82"
     return state
+
+
+from engine.taddhita_attach import sense_in, taddhita_site, attach_taddhita
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
+
+
+def _attach(state: State):
+    return "kan" if taddhita_site(state, None, ok=sense_in(state, "5.3.76", "5.3.77"), tag="manuzyanAman", final=lambda f: f.endswith(("ajina", "Ajina"))) is not None else None
+
+
+def _new_cond(state: State) -> bool:
+    return _attach(state) is not None and not state.meta.get("declined:5.3.82")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    up = _attach(state) if _new_cond(state) else None
+    if up is None:
+        return _legacy_act(state)
+    if not isinstance(up, str):
+        up = up[policy_pick(state, "5.3.82", len(up))]
+    if up == "-":                                  # the vā: this sūtra stands aside
+        state.meta["declined:5.3.82"] = True
+        return state
+    t = state.terms[-1]      # SHORTCUT S54: uttarapadalopa of ajina; the pada boundary of the compound is not a Term, so vyAGrAjina (savarṇadīrgha) gives back its a
+    if t.varnas[-5].slp1 == "a":
+        del t.varnas[-5:]
+    else:
+        del t.varnas[-4:]
+        t.varnas[-1].slp1, t.varnas[-1].dev = "a", ""
+    return attach_taddhita(state, up)
 
 
 SUTRA = SutraRecord(
@@ -45,6 +80,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "अजिन-अन्तस्य उत्तरपद-लोपः च",
     why_dev               = "(सूत्रम् 5.3.82) अजिनान्तस्योत्तरपदलोपश्च।",
     anuvritti_from        = ('5.3.70',),
+    apavada_of     = ('5.3.70',),
     cond                  = cond,
     act                   = act,
 )
