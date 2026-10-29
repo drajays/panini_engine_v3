@@ -49,3 +49,5 @@ Rule: no shortcut by default. A temporary shortcut is allowed only when it keeps
 | S44 | pipelines/taddhita_loop.py | 8.2.9 (matup inside a taddhita stem: Dhana + matup → DanavAn) is called by the pipeline after the loop, not offered by the scheduler | let the scheduler offer 8.2.9 (as S29) | open |
 | S45 | 5.2.117, 127 | a stem in two gaṇas (tunda) is not explored across the two sūtras | explore the vikalpa between competing sūtras | open |
 | S46 | 5.2.94 – 140 | prāṇistha, samāsa, pūraṇa are caller `lex:` tags; stem lists are inline; man-stems of 5.2.137 wait for S21 | Lexicon tables; S21 | open |
+| S58 | 5.4.56, 58 – 67 | the yoga with kṛ / bhū / as and the samartha-vibhakti are not checked; the sense (kṛṣi, yāpanā …) is a vivakṣā value | S16 (samartha-vibhakti) plus the verb context | open |
+| S59 | 5.4.1 – 67 | `lex:saMKyAdi`, `lex:ktAnta`, `lex:jAtyanta` are caller tags; the stems of 5.4.6, 16, 25, 26, 30 – 33, 35 – 37, 40, 56, 59 – 67 are inline sets; the sense restrictions (anitya, ajāti, aviprakṛṣṭakāla, vīpsā, daṇḍa / vyavasarga) are vivakṣā values; 5.4.2 pairs daṇḍa and vyavasarga as two values | Lexicon tables (S14) | open |
