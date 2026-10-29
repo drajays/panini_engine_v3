@@ -38,7 +38,7 @@ def _in_site(state: State):
         t, pr = state.terms[i], state.terms[i + 1]
         if not ({"bha", "anga"} <= t.tags and "taddhita" in pr.tags and "pratyaya" in pr.tags) or t.meta.get("6_4_144_ti_done"):
             continue
-        if len(t.varnas) < 3 or t.varnas[-1].slp1 != "n" or t.varnas[-2].slp1 != "i":
+        if t.meta.get("6_4_148_lopa_done") or len(t.varnas) < 3 or t.varnas[-1].slp1 != "n" or t.varnas[-2].slp1 != "i":      # the in of dANqAjin is what 6.4.148 left of a-stem, not an in-stem
             continue
         if (pr.meta.get("upadesha_slp1") or "") == "aR" and not any(e.get("artha") == "apatya" for e in state.adhikara_stack):
             continue                      # 6.4.164 inaṇyanapatye: prakṛtibhāva

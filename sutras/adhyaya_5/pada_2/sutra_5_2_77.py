@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_2_77_tAvatiTaM_77"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.2.77", state, "4.1.82"):
@@ -27,10 +27,50 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.2.77"
+    return state
+
+
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.luk import live_taddhita, take_away
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
+
+
+def _ok(state: State) -> bool:
+    return vivaksita(state, "taddhitArtha", "grahaRa")
+
+
+def _attach(state: State):
+    return "kan" if taddhita_site(state, None, ok=_ok(state), stems=frozenset({"tAvatiTa"})) is not None else None
+
+
+def _luk_site(state: State):
+    i = live_taddhita(state, only_from=("5.2.77",), upadesha=("kan",))
+    return i if i is not None and i > 0 and _ok(state) and not state.meta.get("done:5.2.77") else None
+
+
+def _new_cond(state: State) -> bool:
+    return _attach(state) is not None or _luk_site(state) is not None
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    up = _attach(state)
+    if up is not None:
+        return attach_taddhita(state, up)
+    i = _luk_site(state)
+    if i is None:
+        return _legacy_act(state)
+    state.meta["done:5.2.77"] = True
+    if policy_pick(state, "5.2.77.luk", 2) == 0:       # lug vā
+        take_away(state, i, "luk")
     return state
 
 

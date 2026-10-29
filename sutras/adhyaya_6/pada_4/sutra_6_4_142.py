@@ -66,7 +66,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "ति (लुप्तषष्ठ्यन्तनिर्देशः) विंशतेः डिति",
     why_dev               = "(सूत्रम् 6.4.142) ति विंशतेर्डिति।",
     anuvritti_from        = ('6.1.1',),
-    apavada_of            = ('6.4.143',),
+    apavada_of            = ('6.4.143', '6.4.148'),      # viṃśati + ḍa: viṃśa, not viṃśata (the i alone)
     cond                  = cond,
     act                   = act,
 )

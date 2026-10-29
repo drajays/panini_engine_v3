@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_2_55_treH_55"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.2.55", state, "4.1.82"):
@@ -27,11 +27,34 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.2.55"
     return state
+
+
+# SHORTCUT S43: saṃkhyā / saṃkhyādi are lex: tags from the caller (S33)
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vivaksha import vivaksita
+
+
+def _site(state: State):
+    return taddhita_site(state, None, ok=vivaksita(state, "taddhitArtha", "tasyapUraRa"), stems=frozenset({"tri"}))
+
+
+def cond(state: State) -> bool:
+    return _site(state) is not None or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    t = _site(state)
+    if t is None:
+        return _legacy_act(state)
+    del t.varnas[-2:]                    # SHORTCUT S40: samprasāraṇa of tri done here (r -> ṛ, the i taken by 6.1.108), not through 1.1.45 / 6.1.108 (dhātu-bound)
+    from phonology.varna import parse_slp1_upadesha_sequence
+    t.varnas.extend(parse_slp1_upadesha_sequence("f"))
+    return attach_taddhita(state, "tIya")
 
 
 SUTRA = SutraRecord(
@@ -45,6 +68,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "त्रेः सम्प्रसारणम् च",
     why_dev               = "(सूत्रम् 5.2.55) त्रेः सम्प्रसारणम् च।",
     anuvritti_from        = ('4.1.82',),
+    apavada_of     = ('5.2.48',),
     cond                  = cond,
     act                   = act,
 )
