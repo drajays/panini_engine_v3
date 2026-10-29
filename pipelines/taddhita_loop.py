@@ -26,6 +26,10 @@ def derive_taddhita_stem(stem_slp1: str, origin_tags: set[str] | None = None, st
         st.tripadi_zone = True
         st = apply_rule("8.2.7", st)
         st.tripadi_zone = False
+    st.tripadi_zone = True      # SHORTCUT S44: 8.2.9 (mato vaḥ) of a matup inside the taddhita stem is called by the pipeline, as 8.2.7 is (S29)
+    if SUTRA_REGISTRY["8.2.9"].cond(st):
+        st = apply_rule("8.2.9", st)
+    st.tripadi_zone = False
     tags = set(origin.record_from_terms(st.terms))
     tags |= {x for t in st.terms for x in t.tags if x.startswith("yuktavad_linga:") and x != "yuktavad_linga:"}      # 1.2.51 lupi yuktavad vyaktivacane
     return "".join(v.slp1 for t in st.terms for v in t.varnas), tags, dict(st.meta.get("vikalpa_multi") or {})

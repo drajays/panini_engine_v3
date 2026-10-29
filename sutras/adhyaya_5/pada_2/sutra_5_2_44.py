@@ -45,8 +45,9 @@ _RULES = (      # (the senses the sūtra names itself, what it says of the stem,
 
 
 def _attach(state: State):
+    said = {"saMKyAvayava": vivaksita(state, "taddhitArtha", "saMKyAvayava")}      # the senses are named by the sūtra itself: literals only
     for senses, kw, up in _RULES:
-        if any(vivaksita(state, "taddhitArtha", v) for v in senses) and taddhita_site(state, None, ok=True, **kw) is not None:
+        if any(said[v] for v in senses) and taddhita_site(state, None, ok=True, **kw) is not None:
             return up
     return None
 
@@ -74,7 +75,7 @@ SUTRA = SutraRecord(
     r1_form_identity_exempt = True,
     text_slp1             = "uBAdudAtto nityam",
     text_dev              = "उभादुदात्तो नित्यम्",
-    samagra_slp1          = "uBAt tayasya nityamudAttaH ayac",
+    samagra_slp1          = "tat asya iti saNKyAyAH avayave uBAt tayasya nityamudAttaH ayac",
     samagra_dev           = "उभात् तयस्य नित्यमुदात्तः अयच्",
     padaccheda_dev        = "उभात् उदात्तः नित्यम्",
     why_dev               = "(सूत्रम् 5.2.44) उभादुदात्तो नित्यम्।",

@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_2_105_deSe_105"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.2.105", state, "4.1.82"):
@@ -27,11 +27,49 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.2.105"
     return state
+
+
+from engine.taddhita_attach import sense_in, taddhita_site, attach_taddhita
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
+
+
+def _site(state: State, **kw):
+    return taddhita_site(state, None, ok=sense_in(state, "5.2.94"), **kw)
+
+
+
+from engine.luk import live_taddhita, take_away
+
+
+def _attach(state: State):
+    return "ilac" if state.meta.get("hold:5.2.105") and _site(state, stems=frozenset({"sikatA", "SarkarA"})) is not None else None
+
+
+def _lup_site(state: State):
+    i = live_taddhita(state, only_from=("5.2.104",))
+    return i if i is not None and vivaksita(state, "arthaViSeSa", "deSa") and sense_in(state, "5.2.94") and not state.meta.get("done:5.2.105") else None
+
+
+def cond(state: State) -> bool:
+    return _attach(state) is not None or _lup_site(state) is not None or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    up = _attach(state)
+    if up is not None:
+        state.meta["hold:5.2.105"] = False
+        return attach_taddhita(state, up)
+    i = _lup_site(state)
+    if i is None:
+        return _legacy_act(state)
+    state.meta["done:5.2.105"] = True
+    return take_away(state, i, "lup")      # deśe lub: the aṇ of 5.2.104 is taken away in the sense of a place
 
 
 SUTRA = SutraRecord(
@@ -45,6 +83,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "देशे लुप्-इलचौ च",
     why_dev               = "(सूत्रम् 5.2.105) देशे लुबिलचौ च।",
     anuvritti_from        = ('4.1.82',),
+    apavada_of     = ('5.2.94', '5.2.115'),
     cond                  = cond,
     act                   = act,
 )

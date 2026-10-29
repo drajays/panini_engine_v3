@@ -26,7 +26,7 @@ from engine.state import State, Term
 from phonology.varna import parse_slp1_upadesha_sequence
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if not state.meta.get("matup_recipe"):
         return False
     if len(state.terms) != 2:
@@ -38,7 +38,7 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     if not state.meta.get("matup_recipe"):
         return state
     if len(state.terms) != 2 or "sup" not in state.terms[1].tags:
@@ -57,6 +57,29 @@ def act(state: State) -> State:
     return state
 
 
+from engine.taddhita_attach import open_sense, open_default_frame, default_site, attach_taddhita
+
+
+def _opening(state: State) -> bool:
+    return open_sense(state, "5.2.94", "astyasya")
+
+
+def _attaching(state: State) -> bool:
+    return default_site(state, "5.2.94") is not None and not any(k.startswith("hold:") and v for k, v in state.meta.items())      # a ca-chain (5.2.102 → 103, 104 → 105) holds matup back until its next sūtra has acted
+
+
+def cond(state: State) -> bool:
+    return _opening(state) or _attaching(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    if _opening(state):
+        return open_default_frame(state, "5.2.94", "astyasya", "5.2.94", "5.2.140")      # matup is the default of the whole group; 5.2.95 ff are its apavādas
+    if _attaching(state):
+        return attach_taddhita(state, "matu~p")
+    return _legacy_act(state)
+
+
 SUTRA = SutraRecord(
     sutra_id       = "5.2.94",
     sutra_type     = SutraType.VIDHI,
@@ -67,6 +90,7 @@ SUTRA = SutraRecord(
     padaccheda_dev = "तद्-अस्य / अस्ति-अर्थे / मतुप्",
     why_dev        = "‘तदस्य अस्ति’ इत्यर्थे मतुप्-प्रत्ययः (गोमान्-प्रक्रिया)।",
     anuvritti_from = (),
+    also_vidhi     = True,          # the loop opens this sense-frame from the speaker's taddhitArtha
     cond           = cond,
     act            = act,
 )

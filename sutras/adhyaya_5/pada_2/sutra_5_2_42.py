@@ -44,8 +44,9 @@ _RULES = (      # (the senses the sūtra names itself, what it says of the stem,
 
 
 def _attach(state: State):
+    said = {"saMKyAvayava": vivaksita(state, "taddhitArtha", "saMKyAvayava")}      # the senses are named by the sūtra itself: literals only
     for senses, kw, up in _RULES:
-        if any(vivaksita(state, "taddhitArtha", v) for v in senses) and taddhita_site(state, None, ok=True, **kw) is not None:
+        if any(said[v] for v in senses) and taddhita_site(state, None, ok=True, **kw) is not None:
             return up
     return None
 

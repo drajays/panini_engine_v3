@@ -73,9 +73,26 @@ VOCABULARY = {
         "kAlaparijayya": ["parijayya"], "kAlalaBya": ["laBya"], "kAlakArya": ["kArya"], "kAlasukara": ["sukaram"], "kAlabrahmacarya": ["brahmacaryam"],
         # 5.1.95 – 112 (dakṣiṇā, bhava-vat, sampādin, prabhavati, prāpta, prayojana)
         "dakziRA": ["dakziRA"], "kAladIyate": ["dIyate"], "kAlatatrakArya": ["kAryam"], "tenadIyate": ["dIyate"], "tenakArya": ["kAryam"],
-        "sampAdin": ["sampAdini"], "tasmaiPraBavati": ["praBavati"], "prApta": ["prAptam"], "prakfzwa": ["prakfzwe"], "prayojana": ["prayojanam"]},
-    "arthaViSeSa": {"garhya": ["garhyam"], "saMjYA": ["saMjYAyAm", "saMjYA"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
-                      "manTa": ["manTa"], "daRqa": ["daRqayoH"]},
+        "sampAdin": ["sampAdini"], "tasmaiPraBavati": ["praBavati"], "prApta": ["prAptam"], "prakfzwa": ["prakfzwe"], "prayojana": ["prayojanam"],
+        # 5.2.1 – 45 (agent A)
+        "kzetra": ["kzetre"], "sarvacarmakfta": ["kftaH"], "darSana": ["darSanaH"], "vyApnoti": ["vyApnoti"], "prApnoti": ["prApnoti"],
+        "baddhA": ["badDA"], "Bakzayati": ["Bakzayati"], "neya": ["neyezu"], "anuBavati": ["putrapOtramanuBavati"], "gAmI": ["gAmI"], "alaMgAmI": ["alaNgAmI"],
+        "BUtapUrva": ["BUtapUrve"], "ekAhagama": ["ekAhagamaH"], "vrAtajIvati": ["jIvati"], "pAka": ["pAka"], "mUla": ["mUle"], "vitta": ["vittaH"],
+        "karmaGawa": ["GawaH"], "saMjAta": ["saMjAtam"], "pramANa": ["pramARe"], "parimARa": ["parimARe"], "saMKyAparimARa": ["saNKyAparimARe"],
+        "saMKyAvayava": ["avayave"], "aDika": ["aDikam"],
+        # 5.2.46 – 88 (agent B)
+        "tadasminnaDika": ["aDikam"], "guRanimAna": ["nimAne"], "tasyapUraRa": ["pUraRe"], "matvartha": ["matvarTayoH", "matau", "matO"], "kuSala": ["kuSalaH"],
+        "kAma": ["kAme"], "prasita": ["prasite"], "parijAta": ["parijAtaH"], "aMSaMhArI": ["hArI"], "acirApahfta": ["apahfte"], "kAriRi": ["kAriRi"],
+        "anvicCati": ["anvicCati", "daRqAjinAByAmanvicCati"], "grahaRa": ["grahaRam"], "grAmaRI": ["grAmaRIH"], "bandhana": ["banDanamasya"],
+        "annaprAya": ["prAye"], "SrAddhaBukta": ["Buktam"], "anena": ["anena"],
+        # 5.2.94 – 140 (agent C)
+        "astyasya": ["astIti"]},
+    "arthaViSeSa": {"garhya": ["garhyam", "garhyAt"], "saMjYA": ["saMjYAyAm", "saMjYA"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
+                      "manTa": ["manTa"], "daRqa": ["daRqayoH"],
+                      # 5.2 (agents B, C)
+                      "sUkta": ["sUktasAmnoH"], "sAman": ["sUktasAmnoH"], "aDyAya": ["aDyAya"], "anuvAka": ["anuvAkayoH"], "AdyUna": ["Adyune"], "karaBa": ["karaBe"],
+                      "kAma": ["kAma"], "bala": ["bale"], "deSa": ["deSe"], "unnata": ["unnataH"], "Ahata": ["Ahata"], "praSaMsA": ["praSaMsayoH"],
+                      "bahuBAzin": ["bahuBAziRi"], "dvandva": ["dvandva"], "upatApa": ["upatApa"], "jAti": ["jAtO"], "brahmacAri": ["brahmacAriRi"]},
     # 5.1.64 / 5.1.89: the pratyaya for what is always so (niyatam, nityam)
     "nityatA": {"nitya": ["nityam", "nityamarhati"]},
     # 7.3.16: the sense is not the future (bhāvī): the speaker says so
