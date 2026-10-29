@@ -46,11 +46,11 @@ def _site(state: State):
     return True
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return _site(state) is not None
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     if _site(state) is None:
         return state
     kap = Term(
@@ -64,6 +64,47 @@ def act(state: State) -> State:
     return state
 
 
+import re
+from engine.gates import adhikara_in_effect
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vikalpa import policy_pick
+
+_RX = re.compile(r"[a-zA-Z]+[^fIU]$")      # SHORTCUT S62: the compound is one Term (S30 / S36); its kind and its last member are read off the lex: tags and the letters
+
+
+def _attach(state: State):
+    if not adhikara_in_effect("5.4.154", state, "5.4.68") or state.meta.get("kap_barred"):
+        return None
+    t = taddhita_site(state, None, ok=True, final=lambda f: _RX.search(f) is not None)
+    if t is None:
+        return None
+    if not all(f"lex:{x}" in t.tags for x in ('bahuvrIhi',)):
+        return None
+    return ('kap', '-')
+
+
+def _new_cond(state: State) -> bool:
+    return _attach(state) is not None and not state.meta.get("declined:5.4.154")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    up = _attach(state) if _new_cond(state) else None
+    if up is None:
+        return _legacy_act(state)
+    if not isinstance(up, str):
+        up = up[policy_pick(state, "5.4.154", len(up))]
+    if up == "-":                                  # the vā: this sūtra stands aside
+        state.meta["declined:5.4.154"] = True
+        return state
+    state = attach_taddhita(state, up)
+    state.terms[-1].tags.add("samasanta")
+    return state
+
+
 SUTRA = SutraRecord(
     sutra_id="5.4.154",
     sutra_type=SutraType.VIDHI,
@@ -74,6 +115,7 @@ SUTRA = SutraRecord(
     padaccheda_dev="शेषात् / विभाषा",
     why_dev="समासान्ते शेष-विषये कप्-प्रत्ययः विभाषा (P027 — बहु+खट्वा)।",
     anuvritti_from=("5.4.1",),
+    also_vidhi     = True,          # the vā reading leaves the tape as it is
     cond=cond,
     act=act,
 )

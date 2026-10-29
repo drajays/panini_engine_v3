@@ -85,6 +85,8 @@ VOCABULARY = {
         "kAma": ["kAme"], "prasita": ["prasite"], "parijAta": ["parijAtaH"], "aMSaMhArI": ["hArI"], "acirApahfta": ["apahfte"], "kAriRi": ["kAriRi"],
         "anvicCati": ["anvicCati", "daRqAjinAByAmanvicCati"], "grahaRa": ["grahaRam"], "grAmaRI": ["grAmaRIH"], "bandhana": ["banDanamasya"],
         "annaprAya": ["prAye"], "SrAddhaBukta": ["Buktam"], "anena": ["anena"],
+        # 5.4.68: the samāsānta frame (the speaker forms a compound)
+        "samAsAnta": ["samAsAntAH"],
         # 5.2.94 – 140 (agent C)
         "astyasya": ["astIti"],
         # 5.4.3 – 67 (agent G)
@@ -99,13 +101,17 @@ VOCABULARY = {
         # 5.3.61 – 110 (agent F)
         "praSaMsA": ["praSaMsAyAm"], "IzadasamApti": ["asamAptO"], "prakAra": ["prakAravacane"], "ajYAta": ["ajYAte"], "kutsita": ["kutsite"],
         "anukampA": ["anukampAyAm"], "nIti": ["nItO"], "alpa": ["alpe"], "hrasva": ["hrasve"], "nirDAraRadvaya": ["dvayoH"], "nirDAraRabahu": ["bahUnAm"],
-        "avakzepaRa": ["avakzepaRe"], "iva": ["ive"]},
-    "arthaViSeSa": {"garhya": ["garhyam", "garhyAt"], "saMjYA": ["saMjYAyAm", "saMjYA", "saMjYAyAM"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
+        "avakzepaRa": ["avakzepaRe"], "iva": ["ive"],
+        # 5.4.68 ff (agent H)
+        "samAsAnta": ["samAsAntAH"]},
+    "arthaViSeSa": {"garhya": ["garhyam", "garhyAt"], "saMjYA": ["saMjYAyAm", "saMjYA", "saMjYAyAM", "saMjYayoH"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
                       "manTa": ["manTa"], "daRqa": ["daRqayoH", "daRqa"], "anadyatana": ["anadyatane"], "dvivacanavibhajya": ["upapade"],
                       # 5.2 (agents B, C)
                       "sUkta": ["sUktasAmnoH"], "sAman": ["sUktasAmnoH"], "aDyAya": ["aDyAya"], "anuvAka": ["anuvAkayoH"], "AdyUna": ["Adyune"], "karaBa": ["karaBe"],
                       "kAma": ["kAma"], "bala": ["bale"], "deSa": ["deSe"], "unnata": ["unnataH"], "Ahata": ["Ahata"], "praSaMsA": ["praSaMsayoH", "praSaMsAyAm"],
-                      "bahuBAzin": ["bahuBAziRi"], "dvandva": ["dvandva"], "upatApa": ["upatApa"], "jAti": ["jAtO"], "brahmacAri": ["brahmacAriRi"],
+                      "bahuBAzin": ["bahuBAziRi"], "dvandva": ["dvandva"], "upatApa": ["upatApa"], "jAti": ["jAtO", "jAti"], "brahmacAri": ["brahmacAriRi"],
+                      # 5.4.104 – 157 (agent H)
+                      "jAnapadAKyA": ["jAnapadAKyAyAm"], "dAru": ["dAruRi"], "karmavyatihAra": ["karmavyatihAre"], "vandita": ["vandite"],
                       "aviprakfzwakAla": ["aviprakfzwakAle"], "anitya": ["anitye"], "ajAti": ["ajAtO"], "vIpsA": ["vIpsAyAm"], "vyavasarga": ["vyavasargayoH"],
                       "tanutva": ["tanutve"], "prAcAm": ["prAcAm"], "jAtiparipraSna": ["jAtiparipraSne"], "pratikfti": ["pratikftO"]},
     # 5.3.98 – 99: who or what is meant when the kan is taken away (lup)
