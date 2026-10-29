@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_2_7_tatsarvAde_7"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.2.7", state, "4.1.82"):
@@ -27,11 +27,52 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.2.7"
     return state
+
+
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
+from engine import gana
+
+_TAILS = ("paTin", "aNga", "karman", "patra", "pAtra")
+
+
+def _sarvadi_final(f: str) -> bool:      # SHORTCUT S36: the compound is one lex:samAsa Term; the sarvādi pūrvapada is read off its letters
+    return any(f.endswith(x) and gana.in_gana("sarvAdiH", f[:-len(x)]) for x in _TAILS)
+
+
+_RULES = (      # (the senses the sūtra names itself, what it says of the stem, the pratyaya or its readings)
+    (('vyApnoti',), dict(tag="samAsa", final=_sarvadi_final), 'Ka'),
+)
+
+
+def _attach(state: State):
+    for senses, kw, up in _RULES:
+        if any(vivaksita(state, "taddhitArtha", v) for v in senses) and taddhita_site(state, None, ok=True, **kw) is not None:
+            return up
+    return None
+
+
+def _new_cond(state: State) -> bool:
+    return _attach(state) is not None and not state.meta.get("declined:5.2.7")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    up = _attach(state) if _new_cond(state) else None
+    if up is None:
+        return _legacy_act(state)
+    if not isinstance(up, str):
+        up = up[policy_pick(state, "5.2.7", len(up))]
+    return attach_taddhita(state, up)
 
 
 SUTRA = SutraRecord(

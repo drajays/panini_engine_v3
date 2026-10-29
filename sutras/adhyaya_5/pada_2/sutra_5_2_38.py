@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_2_38_puruzahast_38"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.2.38", state, "4.1.82"):
@@ -27,11 +27,44 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.2.38"
     return state
+
+
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
+
+_RULES = (      # (the senses the sūtra names itself, what it says of the stem, the pratyaya or its readings)
+    (('pramANa',), dict(stems=frozenset({"puruza", "hastin"})), ('dvayasac', 'daGnac', 'mAtrac', 'aR')),
+)
+
+
+def _attach(state: State):
+    for senses, kw, up in _RULES:
+        if any(vivaksita(state, "taddhitArtha", v) for v in senses) and taddhita_site(state, None, ok=True, **kw) is not None:
+            return up
+    return None
+
+
+def _new_cond(state: State) -> bool:
+    return _attach(state) is not None and not state.meta.get("declined:5.2.38")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    up = _attach(state) if _new_cond(state) else None
+    if up is None:
+        return _legacy_act(state)
+    if not isinstance(up, str):
+        up = up[policy_pick(state, "5.2.38", len(up))]
+    return attach_taddhita(state, up)
 
 
 SUTRA = SutraRecord(
@@ -45,6 +78,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "पुरुष-हस्तिभ्याम् अण् च",
     why_dev               = "(सूत्रम् 5.2.38) पुरुषहस्तिभ्यामण् च।",
     anuvritti_from        = ('4.1.82',),
+    apavada_of     = ('5.2.37',),
     cond                  = cond,
     act                   = act,
 )
