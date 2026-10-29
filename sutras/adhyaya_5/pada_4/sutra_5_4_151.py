@@ -50,11 +50,11 @@ def _site(state: State):
     return True
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return _site(state) is not None
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     if _site(state) is None:
         return state
     kap = Term(
@@ -68,6 +68,48 @@ def act(state: State) -> State:
     return state
 
 
+import re
+from engine import gana
+from engine.gates import adhikara_in_effect
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vikalpa import policy_pick
+
+_MEMBERS = gana.members("uraHpraBftayaH")      # SHORTCUT S62: the compound is one Term; its last member is read off the letters
+
+
+def _attach(state: State):
+    if not adhikara_in_effect("5.4.151", state, "5.4.68") or state.meta.get("kap_barred"):
+        return None
+    t = taddhita_site(state, None, ok=True, final=lambda f: any(f.endswith(m) and f != m for m in _MEMBERS))
+    if t is None:
+        return None
+    if not all(f"lex:{x}" in t.tags for x in ('bahuvrIhi',)):
+        return None
+    return 'kap'
+
+
+def _new_cond(state: State) -> bool:
+    return _attach(state) is not None and not state.meta.get("declined:5.4.151")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    up = _attach(state) if _new_cond(state) else None
+    if up is None:
+        return _legacy_act(state)
+    if not isinstance(up, str):
+        up = up[policy_pick(state, "5.4.151", len(up))]
+    if up == "-":                                  # the vā: this sūtra stands aside
+        state.meta["declined:5.4.151"] = True
+        return state
+    state = attach_taddhita(state, up)
+    state.terms[-1].tags.add("samasanta")
+    return state
+
+
 SUTRA = SutraRecord(
     sutra_id="5.4.151",
     sutra_type=SutraType.VIDHI,
@@ -78,6 +120,7 @@ SUTRA = SutraRecord(
     padaccheda_dev="उरः / प्रभृतिभ्यः / कप्",
     why_dev="उर-आदिभ्यः कप्-प्रत्ययः (P024 — महत्+उरस्)।",
     anuvritti_from=("5.4.1",),
+    apavada_of     = ('5.4.154',),
     cond=cond,
     act=act,
 )

@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_4_127_ic_127"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.4.127", state, "5.4.68"):
@@ -27,10 +27,54 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.4.127"
+    return state
+
+
+import re
+from engine.gates import adhikara_in_effect
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
+
+_RX = re.compile(r"[a-zA-Z]+$")      # SHORTCUT S62: the compound is one Term (S30 / S36); its kind and its last member are read off the lex: tags and the letters
+
+
+def _attach(state: State):
+    if not adhikara_in_effect("5.4.127", state, "5.4.68") or False:
+        return None
+    t = taddhita_site(state, None, ok=True, final=lambda f: _RX.search(f) is not None)
+    if t is None:
+        return None
+    if not all(f"lex:{x}" in t.tags for x in ('bahuvrIhi',)):
+        return None
+    if not vivaksita(state, "arthaViSeSa", "karmavyatihAra"):
+        return None
+    return 'ic'
+
+
+def _new_cond(state: State) -> bool:
+    return _attach(state) is not None and not state.meta.get("declined:5.4.127")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    up = _attach(state) if _new_cond(state) else None
+    if up is None:
+        return _legacy_act(state)
+    if not isinstance(up, str):
+        up = up[policy_pick(state, "5.4.127", len(up))]
+    if up == "-":                                  # the vā: this sūtra stands aside
+        state.meta["declined:5.4.127"] = True
+        return state
+    state = attach_taddhita(state, up)
+    state.terms[-1].tags.add("samasanta")
     return state
 
 
@@ -45,6 +89,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "इच् कर्मव्यतिहारे",
     why_dev               = "(सूत्रम् 5.4.127) इच् कर्मव्यतिहारे।",
     anuvritti_from        = ('5.4.68',),
+    apavada_of     = ('5.4.154',),
     cond                  = cond,
     act                   = act,
 )

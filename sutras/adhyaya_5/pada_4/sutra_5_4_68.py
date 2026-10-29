@@ -15,11 +15,12 @@ def cond(state: State) -> bool:
 
 
 def act(state: State) -> State:
-    state.adhikara_stack.append({
+    entry = {
         "id"        : "5.4.68",
         "scope_end" : "5.4.160",
         "text_dev"  : "समासान्ताः",
-    })
+    }
+    state.adhikara_stack.append(entry)
     return state
 
 
@@ -35,6 +36,7 @@ SUTRA = SutraRecord(
     anuvritti_from = (),
     cond           = cond,
     act            = act,
+    also_vidhi     = True,          # the loop opens the samāsānta frame for a compound (the pratyayas 5.4.69 – 160 check it with adhikara_in_effect)
     adhikara_scope = ("5.4.68", "5.4.160"),
 )
 
