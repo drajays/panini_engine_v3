@@ -43,7 +43,7 @@ VOCABULARY = {
     # the gender a bhāve kṛt is taught for (3.3.94 striyām ktin, 3.3.115 napuṃsake lyuṭ, 3.3.121 puṃsi)
     "linga": {"strI": ["striyAm"], "napuMsaka": ["napuMsake"], "puM": ["puMsi"]},
     # taddhita: the sense a pratyaya is taught in (the frame an ADHIKARA opens: 4.1.92 tasyāpatyam …) and, for apatya, which descendant (4.1.162 gotra, 4.1.163 yuvan)
-    "taddhitArtha": {"apatya": ["apatyam"], "rakta": ["raktaM"], "yukta": ["yuktaH"], "dfzwa": ["dfzwaM"], "parivfta": ["parivfto"], "udDfta": ["udDftamamatreByaH"], "saMskfta": ["saMskftaM"], "devatA": ["devatA"], "samUha": ["samUhaH"], "asti": ["astIti"], "nirvfta": ["nirvfttam"], "nivAsa": ["nivAsaH"], "adUraBava": ["adUraBavaH"], "Seza": ["Seze"], "prAyaBava": ["prAya"], "praBavati": ["praBavati"], "granTa": ["granTe"], "idam": ["idam"], "vikAra": ["vikAraH"], "jAta": ["jAtaH"], "Bava": ["BavaH"], "Agata": ["AgataH"],
+    "taddhitArtha": {"apatya": ["apatyam"], "rakta": ["raktaM", "rakte"], "yukta": ["yuktaH"], "dfzwa": ["dfzwaM"], "parivfta": ["parivfto"], "udDfta": ["udDftamamatreByaH"], "saMskfta": ["saMskftaM"], "devatA": ["devatA"], "samUha": ["samUhaH"], "asti": ["astIti"], "nirvfta": ["nirvfttam"], "nivAsa": ["nivAsaH"], "adUraBava": ["adUraBavaH"], "Seza": ["Seze"], "prAyaBava": ["prAya"], "praBavati": ["praBavati"], "granTa": ["granTe"], "idam": ["idam"], "vikAra": ["vikAraH"], "jAta": ["jAtaH"], "Bava": ["BavaH"], "Agata": ["AgataH"],
         # 4.3.85 / 86 / 135: the senses that name their own word
         "gacCatiPaTiDUta": ["paTidUtayoH"], "abhinizkrAmati": ["aBinizkrAmati"], "avayava": ["avayave"],
         # 4.4.2 – 74 (ṭhak): the senses each sūtra names in its own words
@@ -86,13 +86,20 @@ VOCABULARY = {
         "anvicCati": ["anvicCati", "daRqAjinAByAmanvicCati"], "grahaRa": ["grahaRam"], "grAmaRI": ["grAmaRIH"], "bandhana": ["banDanamasya"],
         "annaprAya": ["prAye"], "SrAddhaBukta": ["Buktam"], "anena": ["anena"],
         # 5.2.94 – 140 (agent C)
-        "astyasya": ["astIti"]},
+        "astyasya": ["astIti"],
+        # 5.4.3 – 67 (agent G)
+        "prakAravacana": ["prakAravacane"], "anatyantagati": ["anatyantagatO"], "AcCAdana": ["AcCAdane"], "banDu": ["banDuni"], "sasTAna": ["sasTAnena"],
+        "matsya": ["matsye"], "kriyAaByAvftti": ["aByAvfttigaRane"], "prakfta": ["prakftavacane"], "tAdarTya": ["tAdarTye", "tAdaraTye"], "maRi": ["maRO"],
+        "varRa": ["varRe"], "vyAhftArTA": ["arTAyAm"], "dvitIyAsaptamI": ["saptamyoH"], "kfzi": ["kfzO"],
+        "yApanA": ["yApanAyAm"], "ativyaTana": ["ativyaTane"], "nizkozaRa": ["nizkozaRe"], "Anulomya": ["Anulomye"], "prAtilomya": ["prAtilomye"],
+        "pAkaviSaya": ["pAke"], "aSapaTa": ["aSapaTe"], "parivApaRa": ["parivApaRe"]},
     "arthaViSeSa": {"garhya": ["garhyam", "garhyAt"], "saMjYA": ["saMjYAyAm", "saMjYA"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
-                      "manTa": ["manTa"], "daRqa": ["daRqayoH"],
+                      "manTa": ["manTa"], "daRqa": ["daRqayoH", "daRqa"],
                       # 5.2 (agents B, C)
                       "sUkta": ["sUktasAmnoH"], "sAman": ["sUktasAmnoH"], "aDyAya": ["aDyAya"], "anuvAka": ["anuvAkayoH"], "AdyUna": ["Adyune"], "karaBa": ["karaBe"],
-                      "kAma": ["kAma"], "bala": ["bale"], "deSa": ["deSe"], "unnata": ["unnataH"], "Ahata": ["Ahata"], "praSaMsA": ["praSaMsayoH"],
-                      "bahuBAzin": ["bahuBAziRi"], "dvandva": ["dvandva"], "upatApa": ["upatApa"], "jAti": ["jAtO"], "brahmacAri": ["brahmacAriRi"]},
+                      "kAma": ["kAma"], "bala": ["bale"], "deSa": ["deSe"], "unnata": ["unnataH"], "Ahata": ["Ahata"], "praSaMsA": ["praSaMsayoH", "praSaMsAyAm"],
+                      "bahuBAzin": ["bahuBAziRi"], "dvandva": ["dvandva"], "upatApa": ["upatApa"], "jAti": ["jAtO"], "brahmacAri": ["brahmacAriRi"],
+                      "aviprakfzwakAla": ["aviprakfzwakAle"], "anitya": ["anitye"], "ajAti": ["ajAtO"], "vIpsA": ["vIpsAyAm"], "vyavasarga": ["vyavasargayoH"]},
     # 5.1.64 / 5.1.89: the pratyaya for what is always so (niyatam, nityam)
     "nityatA": {"nitya": ["nityam", "nityamarhati"]},
     # 7.3.16: the sense is not the future (bhāvī): the speaker says so

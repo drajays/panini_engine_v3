@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_4_32_rakte_32"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.4.32", state, "4.1.76"):
@@ -27,11 +27,48 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.4.32"
     return state
+
+
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
+
+_RULES = (      # (the senses the sūtra names itself, all of one alternative together; what it says of the stem; the pratyaya or its readings)
+    ((("taddhitArtha:rakta", ),), dict(stems=frozenset(['lohita'])), 'kan'),
+)
+
+
+def _attach(state: State):
+    said = {"taddhitArtha:rakta": vivaksita(state, "taddhitArtha", "rakta")}      # the senses are named by the sūtra itself: literals only
+    for alts, kw, up in _RULES:
+        if any(all(said[x] for x in alt) for alt in alts) and taddhita_site(state, None, ok=True, **kw) is not None:
+            return up
+    return None
+
+
+def _new_cond(state: State) -> bool:
+    return _attach(state) is not None and not state.meta.get("declined:5.4.32")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    up = _attach(state) if _new_cond(state) else None
+    if up is None:
+        return _legacy_act(state)
+    if not isinstance(up, str):
+        up = up[policy_pick(state, "5.4.32", len(up))]
+    if up == "-":                                  # the vā: this sūtra stands aside and the general pratyaya stays
+        state.meta["declined:5.4.32"] = True
+        return state
+    return attach_taddhita(state, up)
 
 
 SUTRA = SutraRecord(
