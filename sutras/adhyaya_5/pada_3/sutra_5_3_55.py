@@ -44,11 +44,11 @@ def _site(state: State) -> int | None:
     return None
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     return _site(state) is not None
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     if _site(state) is None:
         return state
     p = Term(
@@ -60,6 +60,46 @@ def act(state: State) -> State:
     state.terms.append(p)
     state.meta.pop("5_3_55_tamap_arm", None)
     state.meta.pop("5_3_55_tamap_pullinga_arm", None)
+    return state
+
+
+from engine.taddhita_attach import taddhita_site, attach_taddhita
+from engine.vikalpa import policy_pick
+from engine.vivaksha import vivaksita
+
+_RULES = (
+    ({}, 'tamap'),
+)      # (the stems the sūtra names, the pratyaya or its readings)
+
+
+def _attach(state: State):
+    ok = vivaksita(state, "taddhitArtha", "atiSAyana")
+    if not ok:
+        return None
+    for kw, up in _RULES:
+        if taddhita_site(state, None, ok=True, **{k: (frozenset(v) if k == "stems" else v) for k, v in kw.items()}) is not None:
+            return up
+    return None
+
+
+def _new_cond(state: State) -> bool:
+    return _attach(state) is not None and not state.meta.get("declined:5.3.55")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    up = _attach(state) if _new_cond(state) else None
+    if up is None:
+        return _legacy_act(state)
+    if not isinstance(up, str):
+        up = up[policy_pick(state, "5.3.55", len(up))]
+    if up == "-":                                  # the vā: this sūtra stands aside and the general pratyaya stays
+        state.meta["declined:5.3.55"] = True
+        return state
+    state = attach_taddhita(state, up)
     return state
 
 

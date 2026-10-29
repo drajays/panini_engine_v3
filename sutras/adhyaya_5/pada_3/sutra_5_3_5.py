@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_3_5_etadoS_5"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.3.5", state, "5.3.2"):
@@ -27,10 +27,55 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.3.5"
+    return state
+
+
+from engine.vikalpa import policy_pick
+from phonology import mk
+from sutras.adhyaya_1.pada_1.sutra_1_1_38 import META_ASARVA_VIBHAKTI_TADDHITA
+
+_RULES = {'etad': [(None, ('a',))]}      # {the sthānin: ((the first letter of the pratyaya or None, the ādeśa), ...)}
+_PRATYAYAS = ()      # the pratyayas the ādeśa is taught before (empty: any vibhakti pratyaya of 5.3.2 ff.)
+
+
+def _site(state: State):
+    for i in range(len(state.terms) - 1):
+        t, pr = state.terms[i], state.terms[i + 1]
+        if t.meta.get("upadesha_slp1") not in _RULES or t.meta.get("adesha_done:5.3.5") or t.meta.get("adesha_of_stem"):
+            continue
+        if _PRATYAYAS and pr.meta.get("upadesha_slp1") not in _PRATYAYAS:
+            continue
+        if "taddhita" not in pr.tags or not pr.meta.get(META_ASARVA_VIBHAKTI_TADDHITA) or not pr.varnas:
+            continue
+        for first, new in _RULES[t.meta["upadesha_slp1"]]:
+            if first is None or pr.varnas[0].slp1 == first:
+                return t, new
+    return None
+
+
+def _new_cond(state: State) -> bool:
+    return _site(state) is not None and not state.meta.get("declined:5.3.5")
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    site = _site(state) if _new_cond(state) else None
+    if site is None:
+        return _legacy_act(state)
+    t, new = site
+    t.varnas = [mk(c) for c in new]
+    t.meta["adesha_sthani"] = t.meta["upadesha_slp1"]
+    t.meta["upadesha_slp1"] = "".join(new)      # the ādeśa is the word now (not a tyadādi member: 1.2.72 / 7.2.102 leave it)
+    t.tags.discard("tyadadi")
+    t.meta["adesha_of_stem"] = "5.3.5"
+    t.meta["adesha_done:5.3.5"] = True
     return state
 
 

@@ -86,9 +86,12 @@ VOCABULARY = {
         "anvicCati": ["anvicCati", "daRqAjinAByAmanvicCati"], "grahaRa": ["grahaRam"], "grAmaRI": ["grAmaRIH"], "bandhana": ["banDanamasya"],
         "annaprAya": ["prAye"], "SrAddhaBukta": ["Buktam"], "anena": ["anena"],
         # 5.2.94 – 140 (agent C)
-        "astyasya": ["astIti"]},
+        "astyasya": ["astIti"],
+        # 5.3.1 – 60 (agent E)
+        "paYcamIvib": ["paYcamyAH"], "saptamIvib": ["saptamyAH"], "kAle": ["kAle"], "prakAravacana": ["prakAravacane"],
+        "viDArTa": ["viDArTe"], "aDikaraRavicAla": ["aDikaraRavicAle"], "yApya": ["yApye"], "BAga": ["BAge"], "asahAya": ["asahAye"], "atiSAyana": ["atiSAyane"], "dik": ["dig"]},
     "arthaViSeSa": {"garhya": ["garhyam", "garhyAt"], "saMjYA": ["saMjYAyAm", "saMjYA"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
-                      "manTa": ["manTa"], "daRqa": ["daRqayoH"],
+                      "manTa": ["manTa"], "daRqa": ["daRqayoH"], "anadyatana": ["anadyatane"], "dvivacanavibhajya": ["upapade"],
                       # 5.2 (agents B, C)
                       "sUkta": ["sUktasAmnoH"], "sAman": ["sUktasAmnoH"], "aDyAya": ["aDyAya"], "anuvAka": ["anuvAkayoH"], "AdyUna": ["Adyune"], "karaBa": ["karaBe"],
                       "kAma": ["kAma"], "bala": ["bale"], "deSa": ["deSe"], "unnata": ["unnataH"], "Ahata": ["Ahata"], "praSaMsA": ["praSaMsayoH"],
