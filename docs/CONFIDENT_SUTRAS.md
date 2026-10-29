@@ -1,18 +1,18 @@
 # Sūtras the engine does confidently (generated — do not edit)
 
-Generated 2026-10-29 by `python3 -m tools.sutra_class`. **300 of 3983** are confident.
+Generated 2026-10-29 by `python3 -m tools.sutra_class`. **302 of 3983** are confident.
 
 *Operational*: invoked + really moves the tape (exempt flag ignored) + cited + not a gate-only placeholder + named in tests ≥5×. *(S)* = structural/definitional class: invoked + cited + tested + real cond (class proof pending, plan §1).
 
 | status | count |
 |---|---|
-| confident | 121 |
+| confident | 123 |
 | confident_structural | 179 |
 | gate_only | 105 |
 | pending_structural | 208 |
 | placeholder | 563 |
 | unexercised | 2478 |
-| working | 329 |
+| working | 327 |
 
 | pāda | confident | of |
 |---|---|---|
@@ -34,14 +34,14 @@ Generated 2026-10-29 by `python3 -m tools.sutra_class`. **300 of 3983** are conf
 | 4.4 | 1 | 144 |
 | 5.1 | 5 | 136 |
 | 5.2 | 0 | 140 |
-| 5.3 | 3 | 119 |
+| 5.3 | 4 | 119 |
 | 5.4 | 1 | 160 |
 | 6.1 | 28 | 223 |
 | 6.2 | 4 | 199 |
 | 6.3 | 2 | 139 |
 | 6.4 | 17 | 175 |
 | 7.1 | 19 | 103 |
-| 7.2 | 11 | 118 |
+| 7.2 | 12 | 118 |
 | 7.3 | 9 | 120 |
 | 7.4 | 5 | 97 |
 | 8.1 | 11 | 74 |
@@ -65,14 +65,14 @@ Generated 2026-10-29 by `python3 -m tools.sutra_class`. **300 of 3983** are conf
 **4.2** — 92ˢ, 113ˢ  
 **4.4** — 75ˢ  
 **5.1** — 1ˢ, 18ˢ, 19ˢ, 78ˢ, 120ˢ  
-**5.3** — 1ˢ, 2ˢ, 70ˢ  
+**5.3** — 1ˢ, 2ˢ, 55, 70ˢ  
 **5.4** — 68ˢ  
 **6.1** — 1ˢ, 8, 17, 66, 67, 68, 71, 72ˢ, 77, 78, 84ˢ, 87, 88, 97, 101, 102, 103, 104ˢ, 107, 108, 135ˢ, 152ˢ, 158ˢ, 163ˢ, 185ˢ, 197ˢ, 198ˢ, 213ˢ  
 **6.2** — 64ˢ, 92ˢ, 111ˢ, 143ˢ  
 **6.3** — 1ˢ, 114ˢ  
 **6.4** — 1ˢ, 3, 11, 22ˢ, 24, 38, 46ˢ, 48, 64, 71, 105, 110, 111, 120, 129ˢ, 146, 148  
 **7.1** — 1, 2, 3, 9, 11ˢ, 12, 14, 15, 17, 18, 23, 24, 35, 37, 52, 54, 70, 94, 100  
-**7.2** — 7, 10ˢ, 11ˢ, 35, 79, 91ˢ, 102, 113, 115, 116, 117  
+**7.2** — 7, 10ˢ, 11ˢ, 35, 79, 91ˢ, 102, 103, 113, 115, 116, 117  
 **7.3** — 10ˢ, 84, 86, 88ˢ, 101, 102, 103, 113, 114  
 **7.4** — 53, 58ˢ, 59, 60, 62  
 **8.1** — 1ˢ, 16ˢ, 17ˢ, 18ˢ, 19ˢ, 22, 23, 24ˢ, 25ˢ, 28ˢ, 73ˢ  
