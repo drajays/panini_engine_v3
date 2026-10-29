@@ -578,6 +578,7 @@ class ReviewIn(BaseModel):
     expected_form: str = ""
     expected_sutra: str = ""
     note: str = ""
+    dry_run: bool = Field(False, description="validate and echo the record without writing it (API tests)")
 
 
 def _read_reviews() -> list[dict[str, Any]]:
@@ -599,8 +600,10 @@ def add_review(req: ReviewIn) -> dict[str, Any]:
     rec = {
         "id": uuid4().hex[:12],
         "at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        **req.model_dump(),
+        **req.model_dump(exclude={"dry_run"}),
     }
+    if req.dry_run:
+        return {**rec, "dry_run": True}
     REVIEW_FILE.parent.mkdir(parents=True, exist_ok=True)
     with REVIEW_FILE.open("a", encoding="utf-8") as fp:
         fp.write(json.dumps(rec, ensure_ascii=False) + "\n")
