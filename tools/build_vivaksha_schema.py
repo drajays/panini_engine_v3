@@ -70,8 +70,12 @@ VOCABULARY = {
         # 5.1.72 – 94 (the ṭhañ group: what he does, where he goes, and the kāla senses)
         "vartayati": ["vartayati"], "saMSayApanna": ["saMSayamApannaH"], "yojanagacCati": ["yojanam"], "gacCati": ["gacCati"], "uttarapaTa": ["Ahftam"],
         "kAlanirvftta": ["nirvfttam"], "kAlAdhIzwa": ["tamaDIzwaH"], "kAlaBfta": ["BftaH"], "kAlaBUta": ["BUtaH"], "kAlaBAvI": ["BAvI"],
-        "kAlaparijayya": ["parijayya"], "kAlalaBya": ["laBya"], "kAlakArya": ["kArya"], "kAlasukara": ["sukaram"], "kAlabrahmacarya": ["brahmacaryam"]},
-    "arthaViSeSa": {"garhya": ["garhyam"], "saMjYA": ["saMjYAyAm", "saMjYA"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"]},
+        "kAlaparijayya": ["parijayya"], "kAlalaBya": ["laBya"], "kAlakArya": ["kArya"], "kAlasukara": ["sukaram"], "kAlabrahmacarya": ["brahmacaryam"],
+        # 5.1.95 – 112 (dakṣiṇā, bhava-vat, sampādin, prabhavati, prāpta, prayojana)
+        "dakziRA": ["dakziRA"], "kAladIyate": ["dIyate"], "kAlatatrakArya": ["kAryam"], "tenadIyate": ["dIyate"], "tenakArya": ["kAryam"],
+        "sampAdin": ["sampAdini"], "tasmaiPraBavati": ["praBavati"], "prApta": ["prAptam"], "prakfzwa": ["prakfzwe"], "prayojana": ["prayojanam"]},
+    "arthaViSeSa": {"garhya": ["garhyam"], "saMjYA": ["saMjYAyAm", "saMjYA"], "brAhmaRasaMjYA": ["brAhmaRe"], "vayas": ["vayasi"], "avayas": ["avayasi"], "cittavat": ["cittavati"],
+                      "manTa": ["manTa"], "daRqa": ["daRqayoH"]},
     # 5.1.64 / 5.1.89: the pratyaya for what is always so (niyatam, nityam)
     "nityatA": {"nitya": ["nityam", "nityamarhati"]},
     # 7.3.16: the sense is not the future (bhāvī): the speaker says so

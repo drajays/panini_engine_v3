@@ -15,7 +15,7 @@ from engine.state import State
 _GATE_KEY: str = "5_1_96_tatra_96"
 
 
-def cond(state: State) -> bool:
+def _legacy_cond(state: State) -> bool:
     if state.paribhasha_gates.get(_GATE_KEY) is True:
         return False
     if not adhikara_in_effect("5.1.96", state, "5.1.78"):
@@ -27,10 +27,34 @@ def cond(state: State) -> bool:
     return True
 
 
-def act(state: State) -> State:
+def _legacy_act(state: State) -> State:
     state.paribhasha_gates[_GATE_KEY] = True
     state.samjna_registry[_GATE_KEY]  = True
     state.meta["taddhita_kind"]             = "5.1.96"
+    return state
+
+
+_SENSES = ("kAladIyate", "kAlatatrakArya")
+
+
+def _sense(state: State):
+    from engine.taddhita_attach import open_sense
+    return next((v for v in _SENSES if open_sense(state, "5.1.96", v)), None)
+
+
+def _new_cond(state: State) -> bool:
+    return _sense(state) is not None
+
+
+def cond(state: State) -> bool:
+    return _new_cond(state) or _legacy_cond(state)
+
+
+def act(state: State) -> State:
+    v = _sense(state)
+    if v is None:
+        return _legacy_act(state)
+    state.adhikara_stack.append({"id": "5.1.96", "scope_end": "5.1.98", "artha": v})      # SHORTCUT S34: bhavavat names the pratyayas of the bhava sense (4.3.11 ff, not yet real); no default pratyaya opens here
     return state
 
 
@@ -45,6 +69,7 @@ SUTRA = SutraRecord(
     padaccheda_dev        = "तत्र च दीयते (क्रियापदम्) कार्यम् भव-वत्",
     why_dev               = "(सूत्रम् 5.1.96) तत्र च दीयते कार्यं भववत्।",
     anuvritti_from        = ('5.1.78',),
+    also_vidhi     = True,          # the loop opens this sense-frame from the speaker's taddhitArtha
     cond                  = cond,
     act                   = act,
 )
